@@ -1,0 +1,18 @@
+@import 'settings/typography';
+
+:root {
+  /* Input Widths */
+  --input-width-small: 120px;
+  --input-width-medium: 240px;
+  --input-width-large: 420px;
+
+  /* Vertical Spacing */
+  --vertical-spacing-2xs: calc(1rem * (4 / var(--rem-base))); /* 4px */
+  --vertical-spacing-xs: calc(1rem * (8 / var(--rem-base))); /* 8px */
+  --vertical-spacing-s: calc(1rem * (14 / var(--rem-base))); /* 14px */
+  --vertical-spacing-m: calc(1rem * (20 / var(--rem-base))); /* 20px */
+  --vertical-spacing-l: calc(1rem * (28 / var(--rem-base))); /* 28px */
+  --vertical-spacing-xl: calc(1rem * (40 / var(--rem-base))); /* 40px */
+  --vertical-spacing-2xl: calc(1rem * (60 / var(--rem-base))); /* 60px */
+  --vertical-spacing-3xl: calc(1rem * (80 / var(--rem-base))); /* 80px */
+}

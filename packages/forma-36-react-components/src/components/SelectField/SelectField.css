@@ -1,0 +1,23 @@
+@import 'settings/colors';
+@import 'settings/typography';
+@import 'settings/transitions';
+
+.SelectField {
+  display: block;
+}
+
+.SelectField__label-wrapper {
+  display: flex;
+  font-size: var(--font-size-paragraph);
+  align-items: center;
+}
+
+.SelectField__label-link {
+  margin-left: auto;
+  margin-bottom: calc(1rem * (8 / var(--rem-base)));
+}
+
+.SelectField__validation-message,
+.SelectField__help-text {
+  margin-top: calc(1rem * (8 / var(--rem-base)));
+}

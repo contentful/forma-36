@@ -1,0 +1,64 @@
+@import 'settings/colors';
+@import 'settings/typography';
+@import 'settings/transitions';
+
+.CardLoading {
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  font-family: var(--font-stack-primary);
+  font-size: var(--font-size-paragraph);
+  line-height: var(--line-height-default);
+  color: var(--color-text-dark);
+}
+
+.CardLoading--is-loading {
+  height: 80px; /* Provides a default height as card only contains a Spinner */
+  overflow: hidden;
+}
+
+.CardLoading__spinner {
+  position: absolute;
+  top: calc(50% - 10px); /* 10px for offsetting spinner by its height */
+  left: calc(50% - 10px); /* 10px for offsetting spinner by its width */
+}
+
+.CardLoading__spinner--enter {
+  opacity: 0;
+}
+
+.CardLoading__spinner--enter-active {
+  opacity: 1;
+  transition: opacity var(--transition-duration-short)
+    var(--transition-easing-default);
+}
+
+.CardLoading__spinner--exit {
+  opacity: 1;
+}
+
+.CardLoading__spinner--exit-active {
+  opacity: 0;
+  transition: opacity var(--transition-duration-short)
+    var(--transition-easing-default);
+}
+
+.CardLoading__wrapper--enter {
+  opacity: 0;
+}
+
+.CardLoading__wrapper--enter-active {
+  transition: opacity var(--transition-duration-short)
+    var(--transition-easing-default);
+  opacity: 1;
+}
+
+.CardLoading__wrapper--exit {
+  opacity: 1;
+}
+
+.CardLoading__wrapper--exit-active {
+  opacity: 0;
+  transition: opacity var(--transition-duration-short)
+    var(--transition-easing-default);
+}

@@ -1,0 +1,129 @@
+@import 'settings/colors';
+@import 'settings/typography';
+@import 'settings/transitions';
+
+.TextLink {
+  /* Composes only works on a single selector */
+  composes: focus-outline--default from './../../styles/settings/a11y.css';
+}
+
+.TextLink,
+.TextLink:link {
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  border: 0;
+  padding: 0;
+  font-family: var(--font-stack-primary);
+  text-decoration: underline;
+  background: none;
+  transition: color var(--transition-duration-short)
+    var(--transition-easing-default);
+  appearance: none;
+  white-space: normal;
+  text-align: left;
+
+  & > span {
+    outline: 0;
+    display: inherit;
+  }
+
+  &:hover,
+  &:focus {
+    color: var(--color-text-dark);
+    cursor: pointer;
+  }
+}
+
+.TextLink--primary,
+.TextLink--primary:link {
+  color: var(--color-blue-base);
+}
+
+.TextLink--positive,
+.TextLink--positive:link {
+  color: var(--color-green-base);
+}
+
+.TextLink--negative,
+.TextLink--negative:link {
+  color: var(--color-red-base);
+}
+
+.TextLink--secondary,
+.TextLink--secondary:link {
+  color: var(--color-text-mid);
+}
+
+.TextLink--muted,
+.TextLink--muted:link {
+  color: var(--color-text-light);
+}
+
+.TextLink--disabled,
+.TextLink--disabled:link {
+  opacity: 0.5;
+
+  &:hover {
+    cursor: not-allowed;
+  }
+
+  &.TextLink--primary:hover {
+    & .TextLink__icon {
+      fill: var(--color-blue-base);
+    }
+
+    color: var(--color-blue-base);
+  }
+
+  &.TextLink--positive:hover {
+    & .TextLink__icon {
+      fill: var(--color-green-base);
+    }
+
+    color: var(--color-green-base);
+  }
+
+  &.TextLink--negative:hover {
+    & .TextLink__icon {
+      fill: var(--color-red-base);
+    }
+
+    color: var(--color-red-base);
+  }
+
+  &.TextLink--secondary:hover {
+    & .TextLink__icon {
+      fill: var(--color-text-mid);
+    }
+
+    color: var(--color-text-mid);
+  }
+
+  &.TextLink--muted:hover {
+    & .TextLink__icon {
+      fill: var(--color-text-light);
+    }
+
+    color: var(--color-text-light);
+  }
+}
+
+.TextLink__icon {
+  vertical-align: middle;
+  transition: fill var(--transition-duration-short)
+    var(--transition-easing-default);
+  position: relative;
+  bottom: 1px; /* For optical alignment of icon with TextLink text */
+}
+
+.TextLink:hover .TextLink__icon,
+.TextLink:focus .TextLink__icon,
+.TextLink:hover .TextLink__icon:link,
+.TextLink:focus .TextLink__icon:link {
+  fill: var(--color-text-dark);
+}
+
+.TextLink__icon-wrapper {
+  margin-right: 4px;
+}

@@ -1,0 +1,18 @@
+@import 'settings/colors';
+
+.line-chart {
+  margin-top: -1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: solid 1px transparent;
+  transition: outline 1s linear;
+}
+
+.line-chart--empty,
+.line-chart--loading {
+  outline-color: var(--color-contrast-light);
+  & .line-chart__mount {
+    display: none;
+  }
+}

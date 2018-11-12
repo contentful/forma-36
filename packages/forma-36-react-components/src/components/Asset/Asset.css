@@ -1,0 +1,89 @@
+@import 'settings/colors';
+@import 'settings/typography';
+@import 'settings/transitions';
+
+.Asset {
+  display: block;
+  max-height: inherit;
+}
+
+.Asset__image-container {
+  min-height: 240px;
+  position: relative;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  max-height: inherit;
+}
+
+.Asset__image-container__image {
+  width: auto;
+  height: 100%;
+  max-height: inherit;
+}
+
+.Asset__image-container__title-container {
+  opacity: 0;
+  transition: opacity var(--transition-duration-default)
+    var(--transition-easing-default);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 100%;
+  color: var(--color-white);
+  font-size: var(--font-size-paragraph);
+  font-family: var(--font-stack-primary);
+  padding: calc(1rem * (14 / var(--rem-base)));
+  display: flex;
+  overflow: hidden;
+  align-items: flex-end;
+  box-sizing: border-box;
+  background: linear-gradient(
+    0deg,
+    var(--color-text-dark) 0%,
+    transparent calc(1rem * (100 / var(--rem-base))),
+    transparent 100%
+  );
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.Asset__image-container__title-container__title {
+  bottom: 0;
+  height: calc(1rem * (44 / var(--rem-base)));
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Asset__asset-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-height: inherit;
+  overflow: hidden;
+  width: calc(1rem * (220 / var(--rem-base)));
+  max-width: calc(1rem * (220 / var(--rem-base)));
+  padding: calc(1rem * calc(10 / var(--rem-base)));
+}
+
+.Asset__asset-container__title {
+  color: var(--color-text-light);
+  font-size: var(--font-size-paragraph);
+  font-family: var(--font-stack-primary);
+  max-height: calc(1rem * (40 / var(--rem-base)));
+  overflow: hidden;
+}
+
+.Asset__illustration-container {
+  width: 100%;
+  display: flex;
+  width: calc(1rem * (240 / var(--rem-base)));
+  justify-content: center;
+  margin-bottom: calc(1rem * calc(20 / var(--rem-base)));
+  margin-top: calc(1rem * calc(20 / var(--rem-base)));
+}

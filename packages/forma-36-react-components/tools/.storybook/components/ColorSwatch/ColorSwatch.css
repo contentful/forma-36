@@ -1,0 +1,39 @@
+@import 'settings/typography';
+@import 'settings/colors';
+
+.ColorSwatch {
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 8px;
+  width: calc(25% - 16px);
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+.ColorSwatch__swatch {
+  height: 100px;
+  border-radius: 4px 4px 0 0;
+}
+
+.ColorSwatch__label {
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 0 0 4px 4px;
+  padding: 8px;
+  color: var(--color-text-light);
+}
+
+.ColorSwatch__name {
+  font-weight: bold;
+  color: var(--color-text-dark);
+}
+
+.ColorSwatch__hex {
+  font-family: var(--font-stack-monospace);
+}
+
+.ColorSwatch__css-var,
+.ColorSwatch__hex {
+  cursor: pointer;
+}

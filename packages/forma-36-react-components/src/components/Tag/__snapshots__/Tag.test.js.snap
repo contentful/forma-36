@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a "muted" Tag 1`] = `
+<div
+  className="Tag Tag--muted"
+  data-test-id="cf-ui-tag"
+>
+  Tag
+</div>
+`;
+
+exports[`renders a "negative" Tag 1`] = `
+<div
+  className="Tag Tag--negative"
+  data-test-id="cf-ui-tag"
+>
+  Tag
+</div>
+`;
+
+exports[`renders a "positive" Tag 1`] = `
+<div
+  className="Tag Tag--positive"
+  data-test-id="cf-ui-tag"
+>
+  Tag
+</div>
+`;
+
+exports[`renders a "primary" Tag 1`] = `
+<div
+  className="Tag Tag--primary"
+  data-test-id="cf-ui-tag"
+>
+  Tag
+</div>
+`;
+
+exports[`renders a "secondary" Tag 1`] = `
+<div
+  className="Tag Tag--secondary"
+  data-test-id="cf-ui-tag"
+>
+  Tag
+</div>
+`;
+
+exports[`renders a "warning" Tag 1`] = `
+<div
+  className="Tag Tag--warning"
+  data-test-id="cf-ui-tag"
+>
+  Tag
+</div>
+`;
+
+exports[`renders the component 1`] = `
+<div
+  className="Tag Tag--primary"
+  data-test-id="cf-ui-tag"
+>
+  Tag
+</div>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+<div
+  className="Tag my-extra-class Tag--primary"
+  data-test-id="cf-ui-tag"
+>
+  Tag
+</div>
+`;

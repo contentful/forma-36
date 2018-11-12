@@ -1,0 +1,185 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component 1`] = `
+<React.Fragment>
+  <Tooltip
+    containerElement="span"
+    isVisible={false}
+    maxWidth={360}
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseLeave={[Function]}
+    onMouseOver={[Function]}
+    place="top"
+    testId="cf-ui-tooltip"
+  >
+    <IconButton
+      buttonType="secondary"
+      disabled={false}
+      extraClassNames="EditorToolbarButton"
+      iconProps={
+        Object {
+          "icon": "HeadingOne",
+        }
+      }
+      label="H1"
+      testId="cf-ui-editor-toolbar-button"
+      withDropdown={false}
+    />
+  </Tooltip>
+</React.Fragment>
+`;
+
+exports[`renders the component as active 1`] = `
+<React.Fragment>
+  <Tooltip
+    containerElement="span"
+    content="H1"
+    isVisible={false}
+    maxWidth={360}
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseLeave={[Function]}
+    onMouseOver={[Function]}
+    place="top"
+    testId="cf-ui-tooltip"
+  >
+    <IconButton
+      buttonType="secondary"
+      disabled={false}
+      extraClassNames="EditorToolbarButton EditorToolbarButton--is-active"
+      iconProps={
+        Object {
+          "icon": "HeadingOne",
+        }
+      }
+      label="H1"
+      testId="cf-ui-editor-toolbar-button"
+      withDropdown={false}
+    />
+  </Tooltip>
+</React.Fragment>
+`;
+
+exports[`renders the component as disabled 1`] = `
+<React.Fragment>
+  <Tooltip
+    containerElement="span"
+    isVisible={false}
+    maxWidth={360}
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseLeave={[Function]}
+    onMouseOver={[Function]}
+    place="top"
+    testId="cf-ui-tooltip"
+  >
+    <IconButton
+      buttonType="secondary"
+      disabled={true}
+      extraClassNames="EditorToolbarButton"
+      iconProps={
+        Object {
+          "icon": "HeadingOne",
+        }
+      }
+      label="H1"
+      onClick={null}
+      testId="cf-ui-editor-toolbar-button"
+      withDropdown={false}
+    />
+  </Tooltip>
+</React.Fragment>
+`;
+
+exports[`renders the component with a tooltip 1`] = `
+<React.Fragment>
+  <Tooltip
+    containerElement="span"
+    content="H1"
+    isVisible={false}
+    maxWidth={360}
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseLeave={[Function]}
+    onMouseOver={[Function]}
+    place="top"
+    testId="cf-ui-tooltip"
+  >
+    <IconButton
+      buttonType="secondary"
+      disabled={false}
+      extraClassNames="EditorToolbarButton"
+      iconProps={
+        Object {
+          "icon": "HeadingOne",
+        }
+      }
+      label="H1"
+      testId="cf-ui-editor-toolbar-button"
+      withDropdown={false}
+    />
+  </Tooltip>
+</React.Fragment>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+<React.Fragment>
+  <Tooltip
+    containerElement="span"
+    isVisible={false}
+    maxWidth={360}
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseLeave={[Function]}
+    onMouseOver={[Function]}
+    place="top"
+    testId="cf-ui-tooltip"
+  >
+    <IconButton
+      buttonType="secondary"
+      disabled={false}
+      extraClassNames="EditorToolbarButton my-extra-class"
+      iconProps={
+        Object {
+          "icon": "HeadingOne",
+        }
+      }
+      label="H1"
+      testId="cf-ui-editor-toolbar-button"
+      withDropdown={false}
+    />
+  </Tooltip>
+</React.Fragment>
+`;
+
+exports[`renders with a dropdown indicator 1`] = `
+<React.Fragment>
+  <Tooltip
+    containerElement="span"
+    content="H1"
+    isVisible={false}
+    maxWidth={360}
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseLeave={[Function]}
+    onMouseOver={[Function]}
+    place="top"
+    testId="cf-ui-tooltip"
+  >
+    <IconButton
+      buttonType="secondary"
+      disabled={false}
+      extraClassNames="EditorToolbarButton"
+      iconProps={
+        Object {
+          "icon": "HeadingOne",
+        }
+      }
+      label="H1"
+      testId="cf-ui-editor-toolbar-button"
+      withDropdown={true}
+    />
+  </Tooltip>
+</React.Fragment>
+`;

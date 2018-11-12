@@ -1,0 +1,6 @@
+@import 'settings/colors';
+
+.Table {
+  width: 100%;
+  border: 1px solid var(--color-element-light);
+}

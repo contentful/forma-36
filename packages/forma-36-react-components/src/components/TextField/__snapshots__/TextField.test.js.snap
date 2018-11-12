@@ -1,0 +1,510 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component 1`] = `
+<div
+  className="TextField"
+  data-test-id="cf-ui-text-field"
+>
+  <div
+    className="TextField__label-wrapper"
+  >
+    <FormLabel
+      htmlFor="someComponent"
+      required={false}
+      requiredText="required"
+      testId="cf-ui-form-label"
+    >
+      test
+    </FormLabel>
+  </div>
+  <TextInput
+    disabled={false}
+    error={false}
+    id="someComponent"
+    name="someComponent"
+    onChange={[Function]}
+    required={false}
+    testId="cf-ui-text-input"
+    width="full"
+    withCopyButton={false}
+  />
+</div>
+`;
+
+exports[`renders the component with a copybutton 1`] = `
+<div
+  className="TextField"
+  data-test-id="cf-ui-text-field"
+>
+  <div
+    className="TextField__label-wrapper"
+  >
+    <FormLabel
+      htmlFor="someComponent"
+      required={false}
+      requiredText="required"
+      testId="cf-ui-form-label"
+    >
+      test
+    </FormLabel>
+  </div>
+  <TextInput
+    disabled={false}
+    error={false}
+    id="someComponent"
+    name="someComponent"
+    onChange={[Function]}
+    required={false}
+    testId="cf-ui-text-input"
+    width="full"
+    withCopyButton={true}
+  />
+</div>
+`;
+
+exports[`renders the component with a placeholder text 1`] = `
+<div
+  className="TextField"
+  data-test-id="cf-ui-text-field"
+>
+  <div
+    className="TextField__label-wrapper"
+  >
+    <FormLabel
+      htmlFor="someComponent"
+      required={false}
+      requiredText="required"
+      testId="cf-ui-form-label"
+    >
+      test
+    </FormLabel>
+  </div>
+  <TextInput
+    disabled={false}
+    error={false}
+    id="someComponent"
+    name="someComponent"
+    onChange={[Function]}
+    placeholder="placeholder"
+    required={false}
+    testId="cf-ui-text-input"
+    width="full"
+    withCopyButton={false}
+  />
+</div>
+`;
+
+exports[`renders the component with a rows defined 1`] = `
+<div
+  className="TextField"
+  data-test-id="cf-ui-text-field"
+>
+  <div
+    className="TextField__label-wrapper"
+  >
+    <FormLabel
+      htmlFor="someComponent"
+      required={false}
+      requiredText="required"
+      testId="cf-ui-form-label"
+    >
+      test
+    </FormLabel>
+  </div>
+  <TextInput
+    disabled={false}
+    error={false}
+    id="someComponent"
+    name="someComponent"
+    onChange={[Function]}
+    required={false}
+    rows={2}
+    testId="cf-ui-text-input"
+    width="full"
+    withCopyButton={false}
+  />
+</div>
+`;
+
+exports[`renders the component with a textlink 1`] = `
+<div
+  className="TextField"
+  data-test-id="cf-ui-text-field"
+>
+  <div
+    className="TextField__label-wrapper"
+  >
+    <FormLabel
+      htmlFor="someComponent"
+      required={false}
+      requiredText="required"
+      testId="cf-ui-form-label"
+    >
+      test
+    </FormLabel>
+    <TextLink
+      disabled={false}
+      extraClassNames="TextField__label-link"
+      icon="Lock"
+      linkType="primary"
+      onClick={[Function]}
+      testId="cf-ui-text-link"
+      text="Unlock to edit"
+    >
+      Unlock to edit
+    </TextLink>
+  </div>
+  <TextInput
+    disabled={false}
+    error={false}
+    id="someComponent"
+    name="someComponent"
+    onChange={[Function]}
+    required={false}
+    testId="cf-ui-text-input"
+    width="full"
+    withCopyButton={false}
+  />
+</div>
+`;
+
+exports[`renders the component with a value 1`] = `
+<div
+  className="TextField"
+  data-test-id="cf-ui-text-field"
+>
+  <div
+    className="TextField__label-wrapper"
+  >
+    <FormLabel
+      htmlFor="someComponent"
+      required={false}
+      requiredText="required"
+      testId="cf-ui-form-label"
+    >
+      test
+    </FormLabel>
+  </div>
+  <TextInput
+    disabled={false}
+    error={false}
+    id="someComponent"
+    name="someComponent"
+    onChange={[Function]}
+    required={false}
+    testId="cf-ui-text-input"
+    value="1234"
+    width="full"
+    withCopyButton={false}
+  />
+</div>
+`;
+
+exports[`renders the component with additional prop 1`] = `
+<div
+  className="TextField"
+  data-test-id="cf-ui-text-field"
+>
+  <div
+    className="TextField__label-wrapper"
+  >
+    <FormLabel
+      htmlFor="someComponent"
+      required={false}
+      requiredText="required"
+      testId="cf-ui-form-label"
+    >
+      test
+    </FormLabel>
+  </div>
+  <TextInput
+    data-test-id="test"
+    disabled={false}
+    error={false}
+    id="someComponent"
+    name="someComponent"
+    onChange={[Function]}
+    required={false}
+    testId="cf-ui-text-input"
+    width="full"
+    withCopyButton={false}
+  />
+</div>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+<div
+  className="TextField my-extra-class"
+  data-test-id="cf-ui-text-field"
+>
+  <div
+    className="TextField__label-wrapper"
+  >
+    <FormLabel
+      htmlFor="someComponent"
+      required={false}
+      requiredText="required"
+      testId="cf-ui-form-label"
+    >
+      test
+    </FormLabel>
+  </div>
+  <TextInput
+    disabled={false}
+    error={false}
+    id="someComponent"
+    name="someComponent"
+    onChange={[Function]}
+    required={false}
+    testId="cf-ui-text-input"
+    width="full"
+    withCopyButton={false}
+  />
+</div>
+`;
+
+exports[`renders the component with as textarea 1`] = `
+<div
+  className="TextField"
+  data-test-id="cf-ui-text-field"
+>
+  <div
+    className="TextField__label-wrapper"
+  >
+    <FormLabel
+      htmlFor="someComponent"
+      required={false}
+      requiredText="required"
+      testId="cf-ui-form-label"
+    >
+      test
+    </FormLabel>
+  </div>
+  <Textarea
+    disabled={false}
+    error={false}
+    id="someComponent"
+    name="someComponent"
+    onChange={[Function]}
+    required={false}
+    testId="cf-ui-textarea"
+    width="full"
+  />
+</div>
+`;
+
+exports[`renders the component with characters count 1`] = `
+<div
+  className="TextField"
+  data-test-id="cf-ui-text-field"
+>
+  <div
+    className="TextField__label-wrapper"
+  >
+    <FormLabel
+      htmlFor="someComponent"
+      required={false}
+      requiredText="required"
+      testId="cf-ui-form-label"
+    >
+      test
+    </FormLabel>
+  </div>
+  <TextInput
+    disabled={false}
+    error={false}
+    id="someComponent"
+    maxLength={20}
+    name="someComponent"
+    onChange={[Function]}
+    required={false}
+    testId="cf-ui-text-input"
+    width="full"
+    withCopyButton={false}
+  />
+  <div
+    className="TextField__hints"
+  >
+    <HelpText
+      extraClassNames="TextField__help-text TextField__count"
+      testId="cf-ui-help-text"
+    >
+      0
+      /
+      20
+    </HelpText>
+  </div>
+</div>
+`;
+
+exports[`renders the component with help text 1`] = `
+<div
+  className="TextField"
+  data-test-id="cf-ui-text-field"
+>
+  <div
+    className="TextField__label-wrapper"
+  >
+    <FormLabel
+      htmlFor="someComponent"
+      required={false}
+      requiredText="required"
+      testId="cf-ui-form-label"
+    >
+      test
+    </FormLabel>
+  </div>
+  <TextInput
+    disabled={false}
+    error={false}
+    id="someComponent"
+    name="someComponent"
+    onChange={[Function]}
+    required={false}
+    testId="cf-ui-text-input"
+    width="full"
+    withCopyButton={false}
+  />
+  <div
+    className="TextField__hints"
+  >
+    <HelpText
+      extraClassNames="TextField__help-text"
+      testId="cf-ui-help-text"
+    >
+      You need to fill out this field
+    </HelpText>
+  </div>
+</div>
+`;
+
+exports[`renders the component with max length of characters 1`] = `
+<div
+  className="TextField"
+  data-test-id="cf-ui-text-field"
+>
+  <div
+    className="TextField__label-wrapper"
+  >
+    <FormLabel
+      htmlFor="someComponent"
+      required={false}
+      requiredText="required"
+      testId="cf-ui-form-label"
+    >
+      test
+    </FormLabel>
+  </div>
+  <TextInput
+    disabled={false}
+    error={false}
+    id="someComponent"
+    maxLength={10}
+    name="someComponent"
+    onChange={[Function]}
+    required={false}
+    testId="cf-ui-text-input"
+    width="full"
+    withCopyButton={false}
+  />
+</div>
+`;
+
+exports[`renders the component with required text 1`] = `
+<div
+  className="TextField"
+  data-test-id="cf-ui-text-field"
+>
+  <div
+    className="TextField__label-wrapper"
+  >
+    <FormLabel
+      htmlFor="someComponent"
+      required={false}
+      requiredText="required"
+      testId="cf-ui-form-label"
+    >
+      test
+    </FormLabel>
+  </div>
+  <TextInput
+    disabled={false}
+    error={false}
+    id="someComponent"
+    name="someComponent"
+    onChange={[Function]}
+    required={false}
+    testId="cf-ui-text-input"
+    width="full"
+    withCopyButton={false}
+  />
+</div>
+`;
+
+exports[`renders the component with small width 1`] = `
+<div
+  className="TextField"
+  data-test-id="cf-ui-text-field"
+>
+  <div
+    className="TextField__label-wrapper"
+  >
+    <FormLabel
+      htmlFor="someComponent"
+      required={false}
+      requiredText="required"
+      testId="cf-ui-form-label"
+    >
+      test
+    </FormLabel>
+  </div>
+  <TextInput
+    disabled={false}
+    error={false}
+    id="someComponent"
+    name="someComponent"
+    onChange={[Function]}
+    required={false}
+    testId="cf-ui-text-input"
+    width="small"
+    withCopyButton={false}
+  />
+</div>
+`;
+
+exports[`renders the component with validation message 1`] = `
+<div
+  className="TextField"
+  data-test-id="cf-ui-text-field"
+>
+  <div
+    className="TextField__label-wrapper"
+  >
+    <FormLabel
+      htmlFor="someComponent"
+      required={false}
+      requiredText="required"
+      testId="cf-ui-form-label"
+    >
+      test
+    </FormLabel>
+  </div>
+  <TextInput
+    disabled={false}
+    error={true}
+    id="someComponent"
+    name="someComponent"
+    onChange={[Function]}
+    required={false}
+    testId="cf-ui-text-input"
+    width="full"
+    withCopyButton={false}
+  />
+  <ValidationMessage
+    extraClassNames="TextField__validation-message"
+    testId="cf-ui-validation-message"
+  >
+    Field is required
+  </ValidationMessage>
+</div>
+`;

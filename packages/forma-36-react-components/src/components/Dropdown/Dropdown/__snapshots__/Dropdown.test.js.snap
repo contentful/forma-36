@@ -1,0 +1,159 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component 1`] = `
+<div
+  className="Dropdown"
+  data-test-id="cf-ui-dropdown"
+  position="bottom-left"
+>
+  <Button
+    buttonType="primary"
+    disabled={false}
+    indicateDropdown={false}
+    isFullWidth={false}
+    loading={false}
+    onClick={[Function]}
+    testId="cf-ui-button"
+  >
+    Toggle
+  </Button>
+</div>
+`;
+
+exports[`renders the component as open 1`] = `
+<div
+  className="Dropdown"
+  data-test-id="cf-ui-dropdown"
+  position="bottom-left"
+>
+  <Button
+    buttonType="primary"
+    disabled={false}
+    indicateDropdown={false}
+    isFullWidth={false}
+    loading={false}
+    onClick={[Function]}
+    testId="cf-ui-button"
+  >
+    Toggle
+  </Button>
+  <div
+    className="Dropdown__container Dropdown__container-position--bottom-left"
+    onFocus={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <InViewport
+      offset={0}
+      onOverflowBottom={[Function]}
+      onOverflowLeft={[Function]}
+      onOverflowRight={[Function]}
+      onOverflowTop={[Function]}
+      testId="cf-ui-in-viewport"
+    >
+      <DropdownList
+        testId="cf-ui-dropdown-list"
+      >
+        <DropdownListItem
+          isActive={false}
+          isDisabled={false}
+          isTitle={false}
+          onEnter={[Function]}
+          onLeave={[Function]}
+          testId="cf-ui-dropdown-list-item"
+        >
+          entry
+        </DropdownListItem>
+      </DropdownList>
+    </InViewport>
+  </div>
+</div>
+`;
+
+exports[`renders the component with a submenu 1`] = `
+<div
+  className="Dropdown"
+  data-test-id="cf-ui-dropdown"
+  position="bottom-left"
+>
+  <Button
+    buttonType="primary"
+    disabled={false}
+    indicateDropdown={false}
+    isFullWidth={false}
+    loading={false}
+    onClick={[Function]}
+    testId="cf-ui-button"
+  >
+    Toggle
+  </Button>
+  <div
+    className="Dropdown__container Dropdown__container-position--bottom-left"
+    onFocus={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <InViewport
+      offset={0}
+      onOverflowBottom={[Function]}
+      onOverflowLeft={[Function]}
+      onOverflowRight={[Function]}
+      onOverflowTop={[Function]}
+      testId="cf-ui-in-viewport"
+    >
+      <DropdownList
+        testId="cf-ui-dropdown-list"
+      >
+        <DropdownListItem
+          isActive={false}
+          isDisabled={false}
+          isTitle={false}
+          onEnter={[Function]}
+          onLeave={[Function]}
+          testId="cf-ui-dropdown-list-item"
+        >
+          entry
+        </DropdownListItem>
+        <Dropdown
+          isOpen={true}
+          position="bottom-left"
+          submenuToggleLabel="Submenu"
+          testId="cf-ui-dropdown"
+        >
+          <DropdownListItem
+            isActive={false}
+            isDisabled={false}
+            isTitle={false}
+            onEnter={[Function]}
+            onLeave={[Function]}
+            testId="cf-ui-dropdown-list-item"
+          >
+            entry
+          </DropdownListItem>
+        </Dropdown>
+        ,
+      </DropdownList>
+    </InViewport>
+  </div>
+</div>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+<div
+  className="Dropdown"
+  data-test-id="cf-ui-dropdown"
+  position="bottom-left"
+>
+  <Button
+    buttonType="primary"
+    disabled={false}
+    indicateDropdown={false}
+    isFullWidth={false}
+    loading={false}
+    onClick={[Function]}
+    testId="cf-ui-button"
+  >
+    Toggle
+  </Button>
+</div>
+`;

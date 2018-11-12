@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component 1`] = `
+<div
+  aria-live="polite"
+  className="NotificationItem NotificationItem--success"
+  data-intent="success"
+  data-test-id="cf-ui-notification"
+  role="alert"
+>
+  <div
+    className="NotificationItem__intent"
+  >
+    success
+  </div>
+  <div
+    aria-hidden="true"
+    className="NotificationItem__icon"
+  >
+    <Icon
+      color="white"
+      icon="CheckCircle"
+      size="small"
+      testId="cf-ui-icon"
+    />
+  </div>
+  <div
+    className="NotificationItem__text"
+  >
+    Notification text
+  </div>
+  <IconButton
+    buttonType="primary"
+    className="NotificationItem__dismiss"
+    disabled={false}
+    iconProps={
+      Object {
+        "icon": "Close",
+      }
+    }
+    label="Dismiss"
+    onClick={[Function]}
+    testId="cf-ui-notification-close"
+    withDropdown={false}
+  />
+</div>
+`;

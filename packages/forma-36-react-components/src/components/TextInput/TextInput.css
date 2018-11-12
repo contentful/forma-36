@@ -1,0 +1,79 @@
+@import 'settings/colors';
+@import 'settings/typography';
+@import 'settings/dimensions';
+@import 'settings/transitions';
+
+.TextInput {
+  display: flex;
+}
+
+.TextInput__input {
+  composes: focus-border--default from './../../styles/settings/a11y.css';
+  outline: none;
+  border: 1px solid var(--color-element-mid);
+  max-height: calc(1rem * (40 / var(--rem-base)));
+  color: var(--color-text-mid);
+  font-family: var(--font-stack-primary);
+  font-size: var(--font-size-paragraph);
+  padding: calc(1rem * (11 / var(--rem-base)));
+  width: 100%;
+
+  &::-webkit-input-placeholder {
+    color: var(--color-ice-dark);
+  }
+
+  &:active {
+    border-color: var(--color-primary);
+  }
+}
+
+.TextInput__input:focus {
+  z-index: 1;
+}
+
+.TextInput--small {
+  width: var(--input-width-small);
+}
+
+.TextInput--medium {
+  width: var(--input-width-medium);
+}
+
+.TextInput--large {
+  width: var(--input-width-large);
+}
+
+.TextInput--full {
+  width: 100%;
+}
+
+.TextInput--disabled {
+  & .TextInput__input {
+    background: var(--color-element-lightest);
+
+    &:focus,
+    &:active {
+      border-color: var(--color-element-mid);
+    }
+  }
+}
+
+.TextInput--negative {
+  & .TextInput__input {
+    border-color: var(--color-negative);
+    &:focus {
+      box-shadow: 0px 0px 5px var(--color-negative);
+    }
+  }
+}
+
+.TextInput__copy-button {
+  & > button {
+    border-left: none;
+    height: 100%;
+  }
+
+  &:focus-within {
+    z-index: 1;
+  }
+}

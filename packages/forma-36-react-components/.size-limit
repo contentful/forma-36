@@ -1,0 +1,21 @@
+[
+    {
+      "path": "dist/index.js",
+      "name": "gzipped js",
+      "limit": "84 KB",
+      "ignore": [
+        "react",
+        "react-dom"
+      ]
+    },
+    {
+      "path": "dist/index.umd.js",
+      "name": "gzipped UMD js",
+      "limit": "82 KB"
+    },
+    {
+      "path": "dist/styles.css",
+      "name": "gzipped css",
+      "limit": "15 KB"
+    }
+  ]

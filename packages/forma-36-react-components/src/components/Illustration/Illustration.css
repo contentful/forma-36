@@ -1,0 +1,12 @@
+@import 'settings/colors';
+
+.Illustration {
+  display: inline-block;
+  width: 39px;
+  height: 39px;
+}
+
+.Illustration g,
+.Illustration path {
+  stroke: var(--color-text-light);
+}

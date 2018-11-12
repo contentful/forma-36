@@ -1,0 +1,318 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`allows passing additional props not consumed by the component 1`] = `
+<button
+  className="IconButton IconButton--primary"
+  data-test-id="Testing ID"
+  disabled={false}
+>
+  <TabFocusTrap
+    extraClassNames="IconButton__inner"
+  >
+    <Icon
+      color="primary"
+      extraClassNames="IconButton__icon"
+      icon="ArrowDown"
+      size="small"
+      testId="cf-ui-icon"
+    />
+    <span
+      className="IconButton__label"
+    >
+      My Icon
+    </span>
+  </TabFocusTrap>
+</button>
+`;
+
+exports[`calls an onClick function 1`] = `
+<button
+  className="IconButton IconButton--primary"
+  data-test-id="cf-ui-icon-button"
+  disabled={false}
+  onClick={
+    [MockFunction] {
+      "calls": Array [
+        Array [],
+      ],
+    }
+  }
+>
+  <TabFocusTrap
+    extraClassNames="IconButton__inner"
+  >
+    <Icon
+      color="primary"
+      extraClassNames="IconButton__icon"
+      icon="ArrowDown"
+      size="small"
+      testId="cf-ui-icon"
+    />
+    <span
+      className="IconButton__label"
+    >
+      My Icon
+    </span>
+  </TabFocusTrap>
+</button>
+`;
+
+exports[`prevents an onClick function from being called when disabled 1`] = `
+<button
+  className="IconButton IconButton--disabled IconButton--primary"
+  data-test-id="cf-ui-icon-button"
+  disabled={true}
+  href={null}
+  onClick={null}
+>
+  <TabFocusTrap
+    extraClassNames="IconButton__inner"
+  >
+    <Icon
+      color="primary"
+      extraClassNames="IconButton__icon"
+      icon="ArrowDown"
+      size="small"
+      testId="cf-ui-icon"
+    />
+    <span
+      className="IconButton__label"
+    >
+      My Icon
+    </span>
+  </TabFocusTrap>
+</button>
+`;
+
+exports[`renders as a "muted" link type 1`] = `
+<button
+  className="IconButton IconButton--muted"
+  data-test-id="cf-ui-icon-button"
+  disabled={false}
+>
+  <TabFocusTrap
+    extraClassNames="IconButton__inner"
+  >
+    <Icon
+      color="primary"
+      extraClassNames="IconButton__icon"
+      icon="ArrowDown"
+      size="small"
+      testId="cf-ui-icon"
+    />
+    <span
+      className="IconButton__label"
+    >
+      My Icon
+    </span>
+  </TabFocusTrap>
+</button>
+`;
+
+exports[`renders as a "negative" link type 1`] = `
+<button
+  className="IconButton IconButton--negative"
+  data-test-id="cf-ui-icon-button"
+  disabled={false}
+>
+  <TabFocusTrap
+    extraClassNames="IconButton__inner"
+  >
+    <Icon
+      color="primary"
+      extraClassNames="IconButton__icon"
+      icon="ArrowDown"
+      size="small"
+      testId="cf-ui-icon"
+    />
+    <span
+      className="IconButton__label"
+    >
+      My Icon
+    </span>
+  </TabFocusTrap>
+</button>
+`;
+
+exports[`renders as a "positive" link type 1`] = `
+<button
+  className="IconButton IconButton--positive"
+  data-test-id="cf-ui-icon-button"
+  disabled={false}
+>
+  <TabFocusTrap
+    extraClassNames="IconButton__inner"
+  >
+    <Icon
+      color="primary"
+      extraClassNames="IconButton__icon"
+      icon="ArrowDown"
+      size="small"
+      testId="cf-ui-icon"
+    />
+    <span
+      className="IconButton__label"
+    >
+      My Icon
+    </span>
+  </TabFocusTrap>
+</button>
+`;
+
+exports[`renders as a "primary" link type 1`] = `
+<button
+  className="IconButton IconButton--primary"
+  data-test-id="cf-ui-icon-button"
+  disabled={false}
+>
+  <TabFocusTrap
+    extraClassNames="IconButton__inner"
+  >
+    <Icon
+      color="primary"
+      extraClassNames="IconButton__icon"
+      icon="ArrowDown"
+      size="small"
+      testId="cf-ui-icon"
+    />
+    <span
+      className="IconButton__label"
+    >
+      My Icon
+    </span>
+  </TabFocusTrap>
+</button>
+`;
+
+exports[`renders as a "secondary" link type 1`] = `
+<button
+  className="IconButton IconButton--secondary"
+  data-test-id="cf-ui-icon-button"
+  disabled={false}
+>
+  <TabFocusTrap
+    extraClassNames="IconButton__inner"
+  >
+    <Icon
+      color="primary"
+      extraClassNames="IconButton__icon"
+      icon="ArrowDown"
+      size="small"
+      testId="cf-ui-icon"
+    />
+    <span
+      className="IconButton__label"
+    >
+      My Icon
+    </span>
+  </TabFocusTrap>
+</button>
+`;
+
+exports[`renders as a link 1`] = `
+<a
+  className="IconButton IconButton--primary"
+  data-test-id="cf-ui-icon-button"
+  disabled={false}
+  href="#"
+>
+  <TabFocusTrap
+    extraClassNames="IconButton__inner"
+  >
+    <Icon
+      color="primary"
+      extraClassNames="IconButton__icon"
+      icon="ArrowDown"
+      size="small"
+      testId="cf-ui-icon"
+    />
+    <span
+      className="IconButton__label"
+    >
+      My Icon
+    </span>
+  </TabFocusTrap>
+</a>
+`;
+
+exports[`renders the component 1`] = `
+<button
+  className="IconButton IconButton--primary"
+  data-test-id="cf-ui-icon-button"
+  disabled={false}
+>
+  <TabFocusTrap
+    extraClassNames="IconButton__inner"
+  >
+    <Icon
+      color="primary"
+      extraClassNames="IconButton__icon"
+      icon="ArrowDown"
+      size="small"
+      testId="cf-ui-icon"
+    />
+    <span
+      className="IconButton__label"
+    >
+      My Icon
+    </span>
+  </TabFocusTrap>
+</button>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+<button
+  className="IconButton my-extra-class IconButton--primary"
+  data-test-id="cf-ui-icon-button"
+  disabled={false}
+>
+  <TabFocusTrap
+    extraClassNames="IconButton__inner"
+  >
+    <Icon
+      color="primary"
+      extraClassNames="IconButton__icon"
+      icon="ArrowDown"
+      size="small"
+      testId="cf-ui-icon"
+    />
+    <span
+      className="IconButton__label"
+    >
+      My Icon
+    </span>
+  </TabFocusTrap>
+</button>
+`;
+
+exports[`renders with a dropdown indicator 1`] = `
+<button
+  className="IconButton IconButton--primary"
+  data-test-id="cf-ui-icon-button"
+  disabled={false}
+>
+  <TabFocusTrap
+    extraClassNames="IconButton__inner"
+  >
+    <Icon
+      color="primary"
+      extraClassNames="IconButton__icon"
+      icon="ArrowDown"
+      size="small"
+      testId="cf-ui-icon"
+    />
+    <span
+      className="IconButton__label"
+    >
+      My Icon
+    </span>
+    <Icon
+      color="secondary"
+      extraClassNames="IconButton__dropdown"
+      icon="ChevronDown"
+      size="small"
+      testId="cf-ui-icon"
+    />
+  </TabFocusTrap>
+</button>
+`;

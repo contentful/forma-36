@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component 1`] = `
+<div
+  className="EditorToolbar"
+  data-test-id="cf-ui-editor-toolbar"
+>
+  EditorToolbar
+</div>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+<div
+  className="EditorToolbar my-extra-class"
+  data-test-id="cf-ui-editor-toolbar"
+>
+  EditorToolbar
+</div>
+`;

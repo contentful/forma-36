@@ -1,0 +1,102 @@
+@import 'settings/colors';
+@import 'settings/borders';
+@import 'settings/typography';
+@import 'settings/transitions';
+
+.Modal__portal {
+  display: block;
+}
+
+/*
+  Overlay
+*/
+
+.Modal__overlay {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity var(--transition-duration-default)
+    var(--transition-easing-default);
+  position: fixed;
+  overflow-y: auto;
+  /* prettier-ignore */
+  background-color: var(--color-contrast-dark)bf;
+  text-align: center;
+}
+
+.Modal__overlay--after-open {
+  opacity: 1;
+}
+
+.Modal__overlay--before-close {
+  opacity: 0;
+}
+
+/*
+  Overlay if modal is centered
+*/
+
+.Modal__overlay--centered:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  width: 0;
+}
+
+.Modal__overlay--centered .Modal__wrap {
+  vertical-align: middle;
+}
+
+/*
+  Modal wrap
+*/
+
+.Modal__wrap {
+  z-index: 1001;
+  position: relative;
+  padding: 0;
+  display: inline-block;
+  margin: 0 auto;
+  text-align: left;
+  outline: none;
+}
+
+.Modal__wrap--after-open .Modal {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.Modal__wrap--before-close .Modal {
+  opacity: 0.5;
+  transform: scale(0.85);
+}
+
+.Modal {
+  transition: opacity var(--transition-duration-long)
+      var(--transition-easing-default),
+    transform var(--transition-duration-long) var(--transition-cubic-bezier);
+  opacity: 0.5;
+  margin: calc(1rem * (50 / var(--rem-base)));
+  transform: scale(0.85);
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-small);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.35);
+  max-height: calc(100vh - 1rem * (100 / var(--rem-base)));
+  max-width: calc(100vw - 1rem * (100 / var(--rem-base)));
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  /* fix for non-scrollable IE11 */
+  -ms-overflow-y: scroll;
+}
+
+.Modal.Modal--overflow {
+  overflow: auto;
+  max-height: none;
+  max-width: none;
+}

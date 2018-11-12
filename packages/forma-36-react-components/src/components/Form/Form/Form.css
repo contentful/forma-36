@@ -1,0 +1,17 @@
+@import 'settings/typography';
+
+.Form {
+  display: block;
+}
+
+.Form__item {
+  display: block;
+}
+
+.Form__item--default {
+  margin-bottom: calc(1rem * (40 / var(--rem-base)));
+}
+
+.Form__item--condensed {
+  margin-bottom: calc(1rem * (28 / var(--rem-base)));
+}

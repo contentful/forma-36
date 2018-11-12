@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component 1`] = `
+<Archive
+  className="Illustration"
+  data-test-id="cf-ui-icon"
+  height="24"
+  viewBox="0 0 24 24"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+/>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+<Archive
+  className="Illustration my-extra-class"
+  data-test-id="cf-ui-icon"
+  height="24"
+  viewBox="0 0 24 24"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+/>
+`;

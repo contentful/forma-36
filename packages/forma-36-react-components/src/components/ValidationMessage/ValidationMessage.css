@@ -1,0 +1,22 @@
+@import 'settings/colors';
+@import 'settings/typography';
+@import 'settings/transitions';
+
+.ValidationMessage {
+  display: flex;
+  align-items: center;
+}
+
+.ValidationMessage__icon {
+  margin-right: calc(1rem * (7 / var(--rem-base)));
+  margin-bottom: calc(1rem * (1 / var(--rem-base)));
+}
+
+.ValidationMessage__text {
+  display: inline-block;
+  font-size: var(--font-size-paragraph);
+  font-family: var(--font-stack-primary);
+  color: var(--color-negative);
+  margin: 0;
+  line-height: var(--line-height-default);
+}

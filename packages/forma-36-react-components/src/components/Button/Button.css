@@ -1,0 +1,199 @@
+@import 'settings/colors';
+@import 'settings/typography';
+@import 'settings/transitions';
+
+.Button {
+  composes: focus-border--default from './../../styles/settings/a11y.css';
+}
+
+.Button,
+.Button:link {
+  box-sizing: border-box;
+  height: calc(1rem * (40 / var(--rem-base)));
+  display: inline-block;
+  padding: 0;
+  border: calc(1rem * (1 / var(--rem-base))) solid var(--color-element-dark);
+  border-radius: calc(1rem * (2 / var(--rem-base)));
+  font-family: var(--font-stack-primary);
+  font-size: calc(1rem * (14 / var(--rem-base)));
+  overflow: hidden;
+  transition: all var(--transition-duration-default)
+    var(--transition-easing-default);
+  vertical-align: middle;
+  text-decoration: none;
+
+  &:hover:not(.Button--disabled) {
+    cursor: pointer;
+  }
+}
+
+.Button__icon {
+  min-width: calc(1rem * (18 / var(--rem-base)));
+}
+
+.Button--full-width {
+  width: 100%;
+}
+
+.Button--muted {
+  background: var(--color-element-light);
+
+  &:hover:not(.Button--disabled),
+  &:focus:not(.Button--disabled) {
+    background: var(--color-element-mid);
+  }
+}
+
+.Button--naked {
+  background: transparent;
+  border: none;
+
+  &:hover:not(.Button--disabled),
+  &:focus:not(.Button--disabled) {
+    background: var(--color-element-light);
+  }
+}
+
+.Button--primary {
+  border-color: var(--color-blue-dark);
+  background: linear-gradient(
+    to top,
+    var(--color-blue-base),
+    var(--color-blue-light)
+  );
+  background-size: 100% 200%;
+
+  &:hover:not(.Button--disabled),
+  &:focus:not(.Button--disabled) {
+    background-position: 0 100%;
+  }
+
+  &:focus:not(.Button--disabled) {
+    border-color: var(--color-blue-dark);
+    box-shadow: 0px 0px 5px var(--color-blue-dark);
+  }
+
+  & .Button__label {
+    color: var(--color-element-lightest);
+  }
+}
+
+.Button--positive {
+  border-color: var(--color-green-dark);
+  background: linear-gradient(
+    to top,
+    var(--color-green-base),
+    var(--color-green-light)
+  );
+  background-size: 100% 200%;
+
+  &:hover:not(.Button--disabled),
+  &:focus:not(.Button--disabled) {
+    background-position: 0 100%;
+  }
+
+  &:focus:not(.Button--disabled) {
+    border-color: var(--color-green-dark);
+    box-shadow: 0px 0px 5px var(--color-green-dark);
+  }
+
+  & .Button__label {
+    color: var(--color-element-lightest);
+  }
+}
+
+.Button--negative {
+  border-color: var(--color-red-dark);
+  background: linear-gradient(
+    to top,
+    var(--color-red-base),
+    var(--color-red-light)
+  );
+  background-size: 100% 200%;
+
+  &:hover:not(.Button--disabled),
+  &:focus:not(.Button--disabled) {
+    background-position: 0 100%;
+  }
+
+  &:focus:not(.Button--disabled) {
+    border-color: var(--color-red-dark);
+    box-shadow: 0px 0px 5px var(--color-red-dark);
+  }
+
+  & .Button__label {
+    color: var(--color-element-lightest);
+  }
+}
+
+.Button--disabled {
+  opacity: 0.5;
+  &:hover {
+    cursor: not-allowed;
+  }
+}
+
+.Button__inner-wrapper {
+  display: flex;
+  height: 100%;
+  z-index: 1;
+  padding: 0 calc(1rem * (14 / var(--rem-base)));
+  align-items: center;
+  justify-content: center;
+}
+
+.Button__label {
+  margin: 0 calc(1rem * (4 / var(--rem-base)));
+  color: var(--color-text-mid);
+  line-height: 1.5;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.Button--small,
+.Button--small:link {
+  height: calc(1rem * (30 / var(--rem-base)));
+
+  & .Button__inner-wrapper {
+    padding: 0 calc(1rem * (10 / var(--rem-base)));
+  }
+
+  & .Button__label {
+    font-size: calc(1rem * (14 / var(--rem-base)));
+  }
+}
+
+.Button--large {
+  height: calc(1rem * (48 / var(--rem-base)));
+  & .Button__label {
+    line-height: 1;
+    margin: 0.25rem;
+    font-size: 1.15rem;
+  }
+}
+
+.Button__spinner {
+  transition: opacity,
+    width var(--transition-duration-default) var(--transition-easing-default);
+}
+
+.Button--spinner--enter {
+  opacity: 0;
+  width: 0px;
+}
+
+.Button--spinner-active {
+  opacity: 1;
+  width: 14px;
+}
+
+.Button--spinner--exit {
+  opacity: 1;
+  width: 14px;
+}
+
+.Button--spinner-exit-active {
+  opacity: 0;
+  width: 0px;
+}

@@ -1,0 +1,23 @@
+@import 'settings/typography';
+
+.CheckboxField {
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.CheckboxField--disabled {
+  opacity: 0.7;
+}
+
+.CheckboxField__checkbox {
+  margin-right: calc(1rem * (8 / var(--rem-base)));
+  transform: translateY(1px);
+}
+
+.CheckboxField__label {
+  margin-bottom: 0;
+}
+
+.CheckboxField__label--light {
+  font-weight: 300;
+}

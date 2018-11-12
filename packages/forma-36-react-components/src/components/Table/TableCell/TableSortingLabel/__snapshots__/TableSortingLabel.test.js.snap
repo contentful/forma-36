@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component 1`] = `
+<button
+  className="TableSortingLabel__button"
+  direction="asc"
+>
+  <TabFocusTrap
+    extraClassNames="TableSortingLabel__button__text"
+  >
+    Foo
+    <Icon
+      color="muted"
+      extraClassNames="TableSortingLabel__icon TableSortingLabel__icon--asc"
+      icon="ArrowUp"
+      size="small"
+      testId="cf-ui-icon"
+    />
+  </TabFocusTrap>
+</button>
+`;
+
+exports[`renders the component inactive 1`] = `
+<button
+  className="TableSortingLabel__button"
+  direction="desc"
+>
+  <TabFocusTrap
+    extraClassNames="TableSortingLabel__button__text"
+  >
+    Foo
+  </TabFocusTrap>
+</button>
+`;

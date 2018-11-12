@@ -1,0 +1,84 @@
+@import 'settings/colors';
+@import 'settings/dimensions';
+@import 'settings/transitions';
+
+.Select__wrapper {
+  position: relative;
+  display: block;
+}
+
+.Select {
+  width: 100%;
+  display: block;
+  appearance: none;
+  padding: calc(1rem * (10 / var(--rem-base)));
+  padding-right: calc(1rem * (39 / var(--rem-base)));
+  background: transparent;
+  color: var(--color-text-mid);
+  font-size: var(--font-size-paragraph);
+  font-family: var(--font-stack-primary);
+  border: 1px solid var(--color-element-mid);
+  border-radius: 0;
+  height: calc(1rem * (40 / var(--rem-base)));
+  &:focus {
+    outline: 0;
+  }
+  composes: focus-border--default from './../../../styles/settings/a11y.css';
+  cursor: pointer;
+
+  &:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+  }
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+.Select--disabled {
+  background: var(--color-element-lightest);
+  cursor: not-allowed;
+  color: var(--color-text-light);
+
+  &:focus,
+  &:active {
+    border-color: var(--color-element-mid);
+  }
+}
+
+.Select--small {
+  width: var(--input-width-small);
+}
+
+.Select--medium {
+  width: var(--input-width-medium);
+}
+
+.Select--large {
+  width: var(--input-width-large);
+}
+
+.Select--full {
+  width: 100%;
+}
+
+.Select--auto {
+  width: auto;
+}
+
+.Select--negative {
+  border-color: var(--color-negative);
+  &:focus {
+    border-color: var(--color-negative);
+    box-shadow: 0px 0px 5px var(--color-negative);
+  }
+}
+
+.Select__icon {
+  position: absolute;
+  right: calc(1rem * (12 / var(--rem-base)));
+  top: 50%;
+  margin-top: -10px;
+  pointer-events: none;
+}

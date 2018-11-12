@@ -1,0 +1,24 @@
+@import 'settings/colors';
+@import 'settings/typography';
+@import 'settings/transitions';
+
+.ModalHeader {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  /* prettier-ignore */
+  padding: calc(1rem * (23 / var(--rem-base))) calc(1rem * (30 / var(--rem-base)));
+  background-color: var(--color-element-lightest);
+  border-radius: 3px 3px 0 0;
+  border-bottom: 1px solid var(--color-element-dark);
+}
+
+.ModalHeader__title {
+  flex-grow: 1;
+  margin: 0;
+  color: var(--color-text-dark);
+  font-weight: var(--font-weight-demi-bold);
+  font-family: var(--font-stack-primary);
+  font-size: 1rem;
+  line-height: var(--line-height-default);
+}

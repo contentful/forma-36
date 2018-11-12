@@ -1,0 +1,5 @@
+@import 'settings/colors';
+
+.TableRow:hover {
+  background-color: var(--color-element-lightest);
+}

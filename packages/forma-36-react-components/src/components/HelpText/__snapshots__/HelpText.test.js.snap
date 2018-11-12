@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component 1`] = `
+<p
+  className="HelpText"
+  data-test-id="cf-ui-help-text"
+>
+  Lorem Ipsum dolor sit amet
+</p>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+<p
+  className="HelpText my-extra-class"
+  data-test-id="cf-ui-help-text"
+>
+  Lorem Ipsum dolor sit amet
+</p>
+`;

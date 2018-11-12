@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component 1`] = `<[object Object] />`;
+
+exports[`renders the component inactive 1`] = `<[object Object] />`;

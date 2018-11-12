@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component 1`] = `
+<div
+  className="FieldGroup extraClassNames"
+>
+  <div
+    className="FieldGroup__item"
+    key=".0"
+  >
+    <CheckboxField
+      helpText="Click if you agree"
+      id="agree"
+      labelText="Do you agree?"
+      light={false}
+      testId="cf-ui-checkbox-field"
+    />
+  </div>
+  <div
+    className="FieldGroup__item"
+    key=".1"
+  >
+    <CheckboxField
+      helpText="Click if you really agree"
+      id="reallyAgree"
+      labelText="Do you really agree?"
+      light={false}
+      testId="cf-ui-checkbox-field"
+    />
+  </div>
+</div>
+`;
+
+exports[`renders the component children in a row 1`] = `
+<div
+  className="FieldGroup extraClassNames FieldGroup--row"
+>
+  <div
+    className="FieldGroup__item"
+    key=".0"
+  >
+    <CheckboxField
+      helpText="Click if you agree"
+      id="agree"
+      labelText="Do you agree?"
+      light={false}
+      testId="cf-ui-checkbox-field"
+    />
+  </div>
+  <div
+    className="FieldGroup__item"
+    key=".1"
+  >
+    <CheckboxField
+      helpText="Click if you really agree"
+      id="reallyAgree"
+      labelText="Do you really agree?"
+      light={false}
+      testId="cf-ui-checkbox-field"
+    />
+  </div>
+</div>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+<div
+  className="FieldGroup extraClassNames"
+>
+  <div
+    className="FieldGroup__item"
+    key=".0"
+  >
+    <CheckboxField
+      helpText="Click if you agree"
+      id="agree"
+      labelText="Do you agree?"
+      light={false}
+      testId="cf-ui-checkbox-field"
+    />
+  </div>
+  <div
+    className="FieldGroup__item"
+    key=".1"
+  >
+    <CheckboxField
+      helpText="Click if you really agree"
+      id="reallyAgree"
+      labelText="Do you really agree?"
+      light={false}
+      testId="cf-ui-checkbox-field"
+    />
+  </div>
+</div>
+`;

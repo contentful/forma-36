@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component 1`] = `
+<ul
+  className="DropdownList"
+  data-test-id="cf-ui-dropdown-list"
+  style={
+    Object {
+      "maxHeight": "auto",
+      "overflowY": "visible",
+    }
+  }
+>
+  <DropdownListItem
+    isActive={false}
+    isDisabled={false}
+    isTitle={false}
+    onEnter={[Function]}
+    onLeave={[Function]}
+    testId="cf-ui-dropdown-list-item"
+  >
+    List Item
+  </DropdownListItem>
+</ul>
+`;
+
+exports[`renders the component with a border attribute 1`] = `
+<ul
+  className="DropdownList DropdownList--border-top"
+  data-test-id="cf-ui-dropdown-list"
+  style={
+    Object {
+      "maxHeight": "auto",
+      "overflowY": "visible",
+    }
+  }
+>
+  <DropdownListItem
+    isActive={false}
+    isDisabled={false}
+    isTitle={false}
+    onEnter={[Function]}
+    onLeave={[Function]}
+    testId="cf-ui-dropdown-list-item"
+  >
+    List Item
+  </DropdownListItem>
+</ul>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+<ul
+  className="DropdownList my-extra-class"
+  data-test-id="cf-ui-dropdown-list"
+  style={
+    Object {
+      "maxHeight": "auto",
+      "overflowY": "visible",
+    }
+  }
+>
+  <DropdownListItem
+    isActive={false}
+    isDisabled={false}
+    isTitle={false}
+    onEnter={[Function]}
+    onLeave={[Function]}
+    testId="cf-ui-dropdown-list-item"
+  >
+    List Item
+  </DropdownListItem>
+</ul>
+`;

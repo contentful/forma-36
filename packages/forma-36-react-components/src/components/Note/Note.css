@@ -1,0 +1,51 @@
+@import 'settings/colors';
+@import 'settings/typography';
+@import 'settings/dimensions';
+
+.Note {
+  padding: var(--vertical-spacing-s);
+  padding-right: var(--vertical-spacing-l);
+  margin: 0;
+
+  font-family: var(--font-stack-primary);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-default);
+  font-size: var(--font-size-paragraph);
+  color: var(--color-text-mid);
+  display: flex;
+  flex-direction: row;
+}
+
+.Note--primary {
+  background-color: var(--color-ice-mid);
+  border: 1px solid var(--color-ice-dark);
+}
+.Note--primary a {
+  color: var(--color-primary);
+}
+
+.Note--negative {
+  background-color: var(--color-coral-mid);
+  border: 1px solid var(--color-coral-dark);
+}
+.Note--negative a {
+  color: var(--color-negative);
+}
+
+.Note--positive {
+  background-color: var(--color-mint-mid);
+  border: 1px solid var(--color-mint-dark);
+}
+.Note--positive a {
+  color: var(--color-positive);
+}
+
+.Note__title {
+  font-weight: var(--font-weight-demi-bold);
+}
+
+.Note__icon {
+  margin-right: var(--vertical-spacing-s);
+  display: flex;
+  margin-top: 1px;
+}
