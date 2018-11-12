@@ -1,0 +1,60 @@
+@import 'settings/colors';
+@import 'settings/typography';
+@import 'settings/dimensions';
+@import 'settings/transitions';
+
+.Textarea {
+  display: flex;
+}
+
+.Textarea__textarea {
+  composes: focus-border--default from './../../styles/settings/a11y.css';
+  resize: vertical;
+  outline: none;
+  border: 1px solid var(--color-element-mid);
+  min-height: calc(1rem * (40 / var(--rem-base)));
+  color: var(--color-text-mid);
+  font-family: var(--font-stack-primary);
+  font-size: var(--font-size-paragraph);
+  padding: calc(1rem * (11 / var(--rem-base)));
+  flex-basis: 100%;
+
+  &::-webkit-input-placeholder {
+    color: var(--color-ice-dark);
+  }
+
+  &:active {
+    border-color: var(--color-primary);
+  }
+}
+
+.Textarea--small {
+  width: var(--input-width-small);
+}
+
+.Textarea--medium {
+  width: var(--input-width-medium);
+}
+
+.Textarea--large {
+  width: var(--input-width-large);
+}
+
+.Textarea--full {
+  width: 100%;
+}
+
+.Textarea--disabled {
+  & .Textarea__textarea {
+    background: var(--color-element-lightest);
+  }
+}
+
+.Textarea--negative {
+  & .Textarea__textarea {
+    border-color: var(--color-negative);
+    &:focus {
+      box-shadow: 0px 0px 5px var(--color-negative);
+    }
+  }
+}

@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component with all required props 1`] = `
+<label
+  className="FormLabel"
+  data-test-id="cf-ui-form-label"
+  htmlFor="someInput"
+>
+  Label Text
+</label>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+<label
+  className="FormLabel my-extra-class"
+  data-test-id="cf-ui-form-label"
+  htmlFor="someInput"
+>
+  Label Text
+</label>
+`;
+
+exports[`renders the component with an required flag 1`] = `
+<label
+  className="FormLabel"
+  data-test-id="cf-ui-form-label"
+  htmlFor="someInput"
+  text="Label Text"
+>
+  Label Text
+  <span
+    className="FormLabel__required-text"
+  >
+    (
+    required
+    )
+  </span>
+</label>
+`;
+
+exports[`renders the component with required text 1`] = `
+<label
+  className="FormLabel"
+  data-test-id="cf-ui-form-label"
+  htmlFor="someInput"
+>
+  Label Text
+  <span
+    className="FormLabel__required-text"
+  >
+    (
+    pflichtfeld
+    )
+  </span>
+</label>
+`;

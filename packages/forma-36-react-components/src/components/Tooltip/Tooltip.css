@@ -1,0 +1,97 @@
+@import 'settings/colors';
+@import 'settings/typography';
+@import 'settings/transitions';
+
+:root {
+  --tooltip-chevron-size: calc(1rem * (6 / var(--rem-base)));
+}
+
+.TooltipContainer {
+  display: inline-block;
+  position: relative;
+}
+
+.Tooltip {
+  position: absolute;
+  margin: calc(1rem * (10 / var(--rem-base))) 0px;
+  display: inline-block;
+  background: var(--color-contrast-mid);
+  font-family: var(--font-stack-primary);
+  font-size: calc(1rem * (12 / var(--rem-base)));
+  font-weight: var(--font-weight-medium);
+  font-style: normal;
+  text-decoration: none;
+  color: var(--color-white);
+  text-align: center;
+  line-height: var(--line-height-default);
+  padding: calc(1rem * (8 / var(--rem-base)))
+    calc(1rem * (10 / var(--rem-base)));
+  border-radius: calc(1rem * (4 / var(--rem-base)));
+  z-index: 99;
+  user-select: none;
+  width: max-content;
+}
+
+.Tooltip--hidden {
+  visibility: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.Tooltip--place-bottom,
+.Tooltip--place-top {
+  &:after {
+    content: '';
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+}
+
+.Tooltip--place-bottom {
+  &:after {
+    border-left: var(--tooltip-chevron-size) solid transparent;
+    border-right: var(--tooltip-chevron-size) solid transparent;
+    border-bottom: var(--tooltip-chevron-size) solid var(--color-contrast-mid);
+    top: calc(-1 * var(--tooltip-chevron-size));
+  }
+}
+
+.Tooltip--place-top {
+  &:after {
+    border-left: var(--tooltip-chevron-size) solid transparent;
+    border-right: var(--tooltip-chevron-size) solid transparent;
+    border-top: var(--tooltip-chevron-size) solid var(--color-contrast-mid);
+    bottom: calc(-1 * var(--tooltip-chevron-size));
+  }
+}
+
+.Tooltip--place-left {
+  &:after {
+    content: '';
+    position: absolute;
+    border-top: var(--tooltip-chevron-size) solid transparent;
+    border-left: calc(var(--tooltip-chevron-size) * 1.5) solid
+      var(--color-contrast-mid);
+    border-bottom: var(--tooltip-chevron-size) solid transparent;
+    right: calc(-1 * var(--tooltip-chevron-size) * 1.5);
+    bottom: 50%;
+    transform: translateY(50%);
+  }
+}
+
+.Tooltip--place-right {
+  &:after {
+    content: '';
+    position: absolute;
+    border-top: var(--tooltip-chevron-size) solid transparent;
+    border-right: calc(var(--tooltip-chevron-size) * 1.5) solid
+      var(--color-contrast-mid);
+    border-bottom: var(--tooltip-chevron-size) solid transparent;
+    left: calc(-1 * var(--tooltip-chevron-size) * 1.5);
+    bottom: 50%;
+    transform: translateY(50%);
+  }
+}

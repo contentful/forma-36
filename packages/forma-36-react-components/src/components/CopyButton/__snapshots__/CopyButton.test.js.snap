@@ -1,0 +1,162 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component 1`] = `
+<div
+  className="CopyButton"
+  data-test-id="cf-ui-copy-button"
+  id="copyButton"
+  onCopy={[Function]}
+>
+  <CopyToClipboard
+    onCopy={[Function]}
+  >
+    <Tooltip
+      containerElement="span"
+      content={
+        <span>
+          Copy to 
+          <br />
+           clipboard
+        </span>
+      }
+      isVisible={false}
+      maxWidth={360}
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      place="top"
+      testId="cf-ui-tooltip"
+    >
+      <button
+        className="CopyButton__button"
+      >
+        <TabFocusTrap
+          extraClassNames="CopyButton__TabFocusTrap"
+        >
+          <span
+            className="CopyButton__text"
+          >
+            Copy 
+             to clipboard
+          </span>
+          <Icon
+            color="muted"
+            icon="Copy"
+            size="small"
+            testId="cf-ui-icon"
+          />
+        </TabFocusTrap>
+      </button>
+    </Tooltip>
+  </CopyToClipboard>
+</div>
+`;
+
+exports[`renders the component with a copy value 1`] = `
+<div
+  className="CopyButton"
+  data-test-id="cf-ui-copy-button"
+  id="copyButton"
+  onCopy={[Function]}
+>
+  <CopyToClipboard
+    onCopy={[Function]}
+    text="test"
+  >
+    <Tooltip
+      containerElement="span"
+      content={
+        <span>
+          Copy to 
+          <br />
+           clipboard
+        </span>
+      }
+      isVisible={false}
+      maxWidth={360}
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      place="top"
+      testId="cf-ui-tooltip"
+    >
+      <button
+        className="CopyButton__button"
+      >
+        <TabFocusTrap
+          extraClassNames="CopyButton__TabFocusTrap"
+        >
+          <span
+            className="CopyButton__text"
+          >
+            Copy 
+            test
+             to clipboard
+          </span>
+          <Icon
+            color="muted"
+            icon="Copy"
+            size="small"
+            testId="cf-ui-icon"
+          />
+        </TabFocusTrap>
+      </button>
+    </Tooltip>
+  </CopyToClipboard>
+</div>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+<div
+  className="CopyButton my-extra-class"
+  data-test-id="cf-ui-copy-button"
+  id="copyButton"
+  onCopy={[Function]}
+>
+  <CopyToClipboard
+    onCopy={[Function]}
+  >
+    <Tooltip
+      containerElement="span"
+      content={
+        <span>
+          Copy to 
+          <br />
+           clipboard
+        </span>
+      }
+      isVisible={false}
+      maxWidth={360}
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      place="top"
+      testId="cf-ui-tooltip"
+    >
+      <button
+        className="CopyButton__button"
+      >
+        <TabFocusTrap
+          extraClassNames="CopyButton__TabFocusTrap"
+        >
+          <span
+            className="CopyButton__text"
+          >
+            Copy 
+             to clipboard
+          </span>
+          <Icon
+            color="muted"
+            icon="Copy"
+            size="small"
+            testId="cf-ui-icon"
+          />
+        </TabFocusTrap>
+      </button>
+    </Tooltip>
+  </CopyToClipboard>
+</div>
+`;

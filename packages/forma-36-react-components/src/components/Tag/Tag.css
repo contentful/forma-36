@@ -1,0 +1,36 @@
+@import 'settings/colors';
+@import 'settings/typography';
+@import 'settings/transitions';
+
+.Tag {
+  display: inline-block;
+  font-family: var(--font-stack-primary);
+  font-weight: var(--font-weight-medium);
+  font-size: calc(1rem * (12 / var(--rem-base)));
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.Tag--primary {
+  color: var(--color-primary);
+}
+
+.Tag--positive {
+  color: var(--color-positive);
+}
+
+.Tag--negative {
+  color: var(--color-negative);
+}
+
+.Tag--warning {
+  color: var(--color-warning);
+}
+
+.Tag--secondary {
+  color: var(--color-text-mid);
+}
+
+.Tag--muted {
+  color: var(--color-text-light);
+}

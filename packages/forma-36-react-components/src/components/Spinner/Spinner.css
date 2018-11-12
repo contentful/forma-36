@@ -1,0 +1,27 @@
+@import 'settings/animations';
+@import 'settings/colors';
+
+.Spinner {
+  display: inline-block;
+  vertical-align: middle;
+  animation: rotate-cw 2s infinite linear;
+}
+
+.Spinner--default {
+  height: 20px;
+  width: 20px;
+}
+
+.Spinner--small {
+  height: 14px;
+  width: 14px;
+}
+
+.Spinner--large {
+  height: 36px;
+  width: 36px;
+}
+
+.Spinner--white {
+  fill: var(--color-element-lightest);
+}

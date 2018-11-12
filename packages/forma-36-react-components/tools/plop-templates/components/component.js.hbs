@@ -1,0 +1,33 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import styles from './{{pascalCase name}}.css';
+
+class {{pascalCase name}} extends React.Component {
+  static propTypes = {
+    extraClassNames: PropTypes.string,
+    children: PropTypes.node.isRequired,
+    testId: PropTypes.string,
+  };
+
+  static defaultProps = {
+    extraClassNames: undefined,
+    testId: 'cf-ui-{{kebabCase name}}',
+  };
+
+  render() {
+    const { extraClassNames, children, testId, ...otherProps } = this.props;
+
+    const classNames = `
+      ${styles.{{~pascalCase name~}}}
+      ${extraClassNames || ''}
+    `;
+
+    return (
+      <div className={classNames} data-test-id={testId} {...otherProps}>
+        {children}
+      </div>
+    );
+  }
+}
+
+export default {{pascalCase name}};

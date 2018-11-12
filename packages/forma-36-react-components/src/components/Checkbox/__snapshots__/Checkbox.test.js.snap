@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component with a value 1`] = `
+<input
+  aria-label="checkbox"
+  checked={false}
+  className="Checkbox my-extra-class"
+  data-test-id="cf-ui-checkbox"
+  disabled={false}
+  id="checkbox"
+  onChange={[Function]}
+  required={false}
+  type="checkbox"
+  value="someValue"
+/>
+`;
+
+exports[`renders the component with all required props 1`] = `
+<input
+  aria-label="checkbox"
+  checked={false}
+  className="Checkbox"
+  data-test-id="cf-ui-checkbox"
+  disabled={false}
+  id="checkbox"
+  onChange={[Function]}
+  required={false}
+  type="checkbox"
+/>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+<input
+  aria-label="checkbox"
+  checked={false}
+  className="Checkbox my-extra-class"
+  data-test-id="cf-ui-checkbox"
+  disabled={false}
+  id="checkbox"
+  onChange={[Function]}
+  required={false}
+  type="checkbox"
+/>
+`;
+
+exports[`renders the component with as checked 1`] = `
+<input
+  aria-label="checkbox"
+  checked={true}
+  className="Checkbox my-extra-class"
+  data-test-id="cf-ui-checkbox"
+  disabled={false}
+  id="checkbox"
+  onChange={[Function]}
+  required={false}
+  type="checkbox"
+/>
+`;
+
+exports[`renders the component with disabled prop 1`] = `
+<input
+  aria-label="checkbox"
+  checked={false}
+  className="Checkbox my-extra-class Checkbox--disabled"
+  data-test-id="cf-ui-checkbox"
+  disabled={true}
+  id="checkbox"
+  onChange={[Function]}
+  required={false}
+  type="checkbox"
+/>
+`;
+
+exports[`renders the component with required prop 1`] = `
+<input
+  aria-label="checkbox"
+  checked={false}
+  className="Checkbox my-extra-class"
+  data-test-id="cf-ui-checkbox"
+  disabled={false}
+  id="checkbox"
+  onChange={[Function]}
+  required={true}
+  type="checkbox"
+/>
+`;

@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`calls an onClick function 1`] = `
+<div
+  className="Card Card--padding-default Card--is-interactive"
+  data-test-id="cf-ui-card"
+  onClick={
+    [MockFunction] {
+      "calls": Array [
+        Array [],
+      ],
+    }
+  }
+>
+  Card
+</div>
+`;
+
+exports[`can be selected 1`] = `
+<div
+  className="Card Card--padding-default Card--is-selected"
+  data-test-id="cf-ui-card"
+>
+  Card
+</div>
+`;
+
+exports[`has an "is-interactive" class if has an onClick prop 1`] = `
+<a
+  className="Card Card--padding-default Card--is-interactive"
+  data-test-id="cf-ui-card"
+  href="/"
+>
+  Card
+</a>
+`;
+
+exports[`renders as a link if passed a href prop 1`] = `
+<a
+  className="Card Card--padding-default Card--is-interactive"
+  data-test-id="cf-ui-card"
+  href="/"
+>
+  Card
+</a>
+`;
+
+exports[`renders the component 1`] = `
+<div
+  className="Card Card--padding-default"
+  data-test-id="cf-ui-card"
+>
+  Card
+</div>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+<div
+  className="Card my-extra-class Card--padding-default"
+  data-test-id="cf-ui-card"
+>
+  Card
+</div>
+`;

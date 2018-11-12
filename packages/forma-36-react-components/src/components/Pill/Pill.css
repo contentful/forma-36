@@ -1,0 +1,50 @@
+@import 'settings/colors';
+@import 'settings/typography';
+@import 'settings/transitions';
+
+.Pill {
+  display: inline-flex;
+  background: var(--color-element-light);
+  font-family: var(--font-stack-primary);
+  border-radius: 0.125rem;
+  border: none;
+  padding: 0;
+  composes: focus-outline--default from './../../styles/settings/a11y.css';
+}
+
+.Pill__label {
+  line-height: 1.5rem;
+  padding: 0.375rem 0.625rem;
+  font-size: 0.875rem;
+  color: var(--color-text-mid);
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-text-mid);
+}
+
+.Pill__close-button {
+  border: none;
+  border-left: 1px solid var(--color-element-dark);
+  display: flex;
+  align-items: center;
+  padding: 0.375rem;
+  background: transparent;
+  transition: background var(--transition-duration-short)
+    var(--transition-easing-default);
+  composes: focus-outline--default from './../../styles/settings/a11y.css';
+
+  &:hover,
+  &:focus {
+    background: var(--color-element-mid);
+    cursor: pointer;
+  }
+}
+
+.Pill__drag-icon {
+  line-height: 0;
+  margin-right: 0.25rem;
+}
+
+.Pill__icon {
+  fill: var(--color-text-lightest);
+}

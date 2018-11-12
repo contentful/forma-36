@@ -1,0 +1,10 @@
+@import 'settings/colors';
+@import 'settings/dimensions';
+
+.EditorToolbarDivider {
+  display: inline-block;
+  height: calc(1rem * (21 / var(--rem-base)));
+  width: calc(1rem * (1 / var(--rem-base)));
+  background: var(--color-element-mid);
+  margin: 0 var(--vertical-spacing-2xs);
+}

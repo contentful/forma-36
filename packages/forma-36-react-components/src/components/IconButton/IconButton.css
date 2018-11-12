@@ -1,0 +1,111 @@
+@import 'settings/colors';
+@import 'settings/typography';
+@import 'settings/transitions';
+
+.IconButton {
+  composes: focus-outline--default from './../../styles/settings/a11y.css';
+  display: inline-block;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  margin: 0 1px;
+  background: transparent;
+}
+
+.IconButton__inner {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.IconButton--disabled {
+  opacity: 0.5;
+
+  &:hover {
+    cursor: not-allowed;
+  }
+
+  &.IconButton--primary:hover {
+    & .IconButton__icon {
+      fill: var(--color-blue-base);
+    }
+
+    color: var(--color-blue-base);
+  }
+
+  &.IconButton--positive:hover {
+    & .IconButton__icon {
+      fill: var(--color-green-base);
+    }
+
+    color: var(--color-green-base);
+  }
+
+  &.IconButton--negative:hover {
+    & .IconButton__icon {
+      fill: var(--color-red-base);
+    }
+
+    color: var(--color-red-base);
+  }
+
+  &.IconButton--secondary:hover {
+    & .IconButton__icon {
+      fill: var(--color-text-mid);
+    }
+
+    color: var(--color-text-mid);
+  }
+
+  &.IconButton--muted:hover {
+    & .IconButton__icon {
+      fill: var(--color-text-light);
+    }
+
+    color: var(--color-text-light);
+  }
+}
+
+.IconButton__icon {
+  transition: fill var(--transition-duration-short)
+    var(--transition-easing-default);
+}
+
+.IconButton:hover .IconButton__icon,
+.IconButton:focus .IconButton__icon {
+  fill: var(--color-text-dark);
+}
+
+.IconButton--primary .IconButton__icon {
+  fill: var(--color-blue-base);
+}
+
+.IconButton--positive .IconButton__icon {
+  fill: var(--color-green-base);
+}
+
+.IconButton--negative .IconButton__icon {
+  fill: var(--color-red-base);
+}
+
+.IconButton--secondary .IconButton__icon {
+  fill: var(--color-text-mid);
+}
+
+.IconButton--muted .IconButton__icon {
+  fill: var(--color-text-light);
+}
+
+.IconButton__label {
+  composes: sr-only from './../../styles/settings/helpers.css';
+}
+
+.IconButton__dropdown {
+  height: calc(1rem * (10 / var(--rem-base)));
+  width: calc(1rem * (10 / var(--rem-base)));
+  margin-left: calc(
+    -1rem * (5 / var(--rem-base))
+  ); /* Optical adjustment, to be revised */
+}

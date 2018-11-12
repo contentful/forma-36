@@ -1,0 +1,73 @@
+@import 'settings/colors';
+@import 'settings/typography';
+@import 'settings/transitions';
+
+.AssetCard {
+  display: inline-block;
+  padding: 0px;
+  min-width: calc(1rem * (240 / var(--rem-base)));
+  min-height: calc(1rem * (80 / var(--rem-base)));
+}
+
+.AssetCard__header {
+  padding: calc(1rem * (14 / var(--rem-base)))
+    calc(1rem * (19 / var(--rem-base)));
+  display: flex;
+  align-items: center;
+  border-bottom: calc(1rem * (1 / var(--rem-base))) solid
+    var(--color-element-mid);
+}
+
+.AssetCard__asset {
+  width: 100%;
+  height: 100%;
+}
+
+.AssetCard__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: calc(1rem * (240 / var(--rem-base)));
+  min-width: calc(1rem * (240 / var(--rem-base)));
+}
+
+.AssetCard__header__dropdown-button {
+  border: none;
+  background: transparent;
+  display: flex;
+  padding: 0px;
+  cursor: pointer;
+  margin-left: calc(1rem * (10 / var(--rem-base)));
+}
+
+.AssetCard__header__dropdown-button svg {
+  /* This needs to be set for IE11 to show the icon */
+  width: 18px;
+}
+
+.AssetCard__header__status-tag {
+  margin-left: auto;
+}
+
+.AssetCard__header__status-tag {
+  font-size: calc(1rem * (12 / var(--rem-base)));
+  text-transform: uppercase;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.1rem;
+}
+
+.AssetCard__status--archived {
+  color: var(--color-red-light);
+}
+
+.AssetCard__status--changed {
+  color: var(--color-blue-light);
+}
+
+.AssetCard__status--draft {
+  color: var(--color-orange-light);
+}
+
+.AssetCard__status--published {
+  color: var(--color-green-light);
+}

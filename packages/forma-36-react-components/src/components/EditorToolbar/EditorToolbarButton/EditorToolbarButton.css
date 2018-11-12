@@ -1,0 +1,23 @@
+@import 'settings/colors';
+@import 'settings/typography';
+@import 'settings/transitions';
+@import 'settings/dimensions';
+
+.EditorToolbarButton {
+  display: inline-block;
+  height: calc(1rem * (30 / var(--rem-base)));
+  width: calc(1rem * (30 / var(--rem-base)));
+  justify-content: center;
+  border-radius: 2px;
+  transition: background var(--transition-duration-short)
+    var(--transition-easing-default);
+
+  &:hover,
+  &:focus {
+    background: var(--color-element-light);
+  }
+}
+
+.EditorToolbarButton--is-active {
+  background: var(--color-element-mid);
+}

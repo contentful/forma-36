@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component 1`] = `
+<span
+  className="TabFocusTrap"
+  tabIndex={-1}
+>
+  TabFocusTrap
+</span>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+<span
+  className="TabFocusTrap my-extra-class"
+  tabIndex={-1}
+>
+  TabFocusTrap
+</span>
+`;

@@ -1,0 +1,76 @@
+@import 'settings/colors';
+@import 'settings/typography';
+@import 'settings/transitions';
+
+.Toggle {
+  display: inline-block;
+  position: relative;
+  box-shadow: 0px 0px 0px 1px inset transparent, 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: all var(--transition-duration-default)
+    var(--transition-easing-default);
+}
+
+.Toggle--active {
+  box-shadow: 0px 0px 0px 1px inset var(--color-blue-dark),
+    0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.Toggle--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.Toggle--disabled .Toggle__button {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.Toggle.Toggle--disabled:hover {
+  border: 1px solid var(--color-element-mid);
+  cursor: not-allowed;
+}
+
+.Toggle:hover {
+  border: 1px solid var(--color-blue-dark);
+}
+
+.Toggle__button {
+  composes: focus-outline--default from './../../styles/settings/a11y.css';
+  font-family: var(--font-stack-primary);
+  cursor: pointer;
+  line-height: 1.5;
+  font-size: var(--font-size-paragraph);
+  outline: none;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.Toggle__button__icon {
+  margin: 0 calc(1rem * (3 / var(--rem-base)));
+}
+
+.Toggle__content-wrapper {
+  color: var(--color-text-mid);
+  margin: 0 calc(1rem * (3 / var(--rem-base)));
+}
+
+.Toggle__button__inner-wrapper {
+  align-items: center;
+  padding: calc(1rem * (5 / var(--rem-base))) calc(1rem * (7 / var(--rem-base)));
+  display: flex;
+}
+
+.Toggle--square {
+  width: calc(1rem * (31 / var(--rem-base)));
+  height: calc(1rem * (31 / var(--rem-base)));
+}
+
+.Toggle--square .Toggle__button__inner-wrapper,
+.Toggle--square .Toggle__button {
+  display: flex;
+  justify-content: center;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+}

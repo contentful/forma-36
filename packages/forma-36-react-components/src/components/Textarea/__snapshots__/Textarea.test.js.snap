@@ -1,0 +1,214 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component 1`] = `
+<div
+  className="Textarea Textarea--full"
+>
+  <textarea
+    aria-label="userEmail"
+    className="Textarea__textarea"
+    data-test-id="cf-ui-textarea"
+    disabled={false}
+    id="someInput"
+    name="userEmail"
+    onChange={[Function]}
+  />
+</div>
+`;
+
+exports[`renders the component as required 1`] = `
+<div
+  className="Textarea my-extra-class Textarea--full"
+>
+  <textarea
+    aria-label="userEmail"
+    className="Textarea__textarea"
+    data-test-id="cf-ui-textarea"
+    disabled={false}
+    id="someInput"
+    name="userEmail"
+    onChange={[Function]}
+  />
+</div>
+`;
+
+exports[`renders the component with a max length 1`] = `
+<div
+  className="Textarea my-extra-class Textarea--full"
+>
+  <textarea
+    aria-label="userEmail"
+    className="Textarea__textarea"
+    data-test-id="cf-ui-textarea"
+    disabled={false}
+    id="someInput"
+    maxLength={10}
+    name="userEmail"
+    onChange={[Function]}
+  />
+</div>
+`;
+
+exports[`renders the component with a max length 2`] = `
+<div
+  className="Textarea my-extra-class Textarea--full"
+>
+  <textarea
+    aria-label="userEmail"
+    className="Textarea__textarea"
+    data-test-id="cf-ui-textarea"
+    disabled={false}
+    id="someInput"
+    name="userEmail"
+    onChange={[Function]}
+    placeholder="placeholder text"
+  />
+</div>
+`;
+
+exports[`renders the component with a test id 1`] = `
+<div
+  className="Textarea my-extra-class Textarea--full"
+>
+  <textarea
+    aria-label="userEmail"
+    className="Textarea__textarea"
+    data-test-id="someTestId"
+    disabled={false}
+    id="someInput"
+    name="userEmail"
+    onChange={[Function]}
+  />
+</div>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+<div
+  className="Textarea my-extra-class Textarea--full"
+>
+  <textarea
+    aria-label="userEmail"
+    className="Textarea__textarea"
+    data-test-id="cf-ui-textarea"
+    disabled={false}
+    id="someInput"
+    name="userEmail"
+    onChange={[Function]}
+  />
+</div>
+`;
+
+exports[`renders the component with an onBlur prop 1`] = `
+<div
+  className="Textarea my-extra-class Textarea--full"
+>
+  <textarea
+    aria-label="userEmail"
+    className="Textarea__textarea"
+    data-test-id="cf-ui-textarea"
+    disabled={false}
+    id="someInput"
+    name="userEmail"
+    onBlur={[Function]}
+    onChange={[Function]}
+  />
+</div>
+`;
+
+exports[`renders the component with an onChange prop 1`] = `
+<div
+  className="Textarea my-extra-class Textarea--full"
+>
+  <textarea
+    aria-label="userEmail"
+    className="Textarea__textarea"
+    data-test-id="cf-ui-textarea"
+    disabled={false}
+    id="someInput"
+    name="userEmail"
+    onChange={[Function]}
+  />
+</div>
+`;
+
+exports[`renders the component with disabled prop 1`] = `
+<div
+  className="Textarea my-extra-class Textarea--full Textarea--disabled"
+>
+  <textarea
+    aria-label="userEmail"
+    className="Textarea__textarea"
+    data-test-id="cf-ui-textarea"
+    disabled={true}
+    id="someInput"
+    name="userEmail"
+    onChange={[Function]}
+  />
+</div>
+`;
+
+exports[`renders the component with error prop 1`] = `
+<div
+  className="Textarea my-extra-class Textarea--full Textarea--negative"
+>
+  <textarea
+    aria-label="userEmail"
+    className="Textarea__textarea"
+    data-test-id="cf-ui-textarea"
+    disabled={false}
+    id="someInput"
+    name="userEmail"
+    onChange={[Function]}
+  />
+</div>
+`;
+
+exports[`renders the component with rows defined 1`] = `
+<div
+  className="Textarea my-extra-class Textarea--full"
+>
+  <textarea
+    aria-label="userEmail"
+    className="Textarea__textarea"
+    data-test-id="cf-ui-textarea"
+    disabled={false}
+    id="someInput"
+    name="userEmail"
+    onChange={[Function]}
+    rows={2}
+  />
+</div>
+`;
+
+exports[`renders the component with small width 1`] = `
+<div
+  className="Textarea my-extra-class Textarea--small"
+>
+  <textarea
+    aria-label="userEmail"
+    className="Textarea__textarea"
+    data-test-id="cf-ui-textarea"
+    disabled={false}
+    id="someInput"
+    name="userEmail"
+    onChange={[Function]}
+  />
+</div>
+`;
+
+exports[`renders the component with value prop 1`] = `
+<div
+  className="Textarea my-extra-class Textarea--full"
+>
+  <textarea
+    aria-label="userEmail"
+    className="Textarea__textarea"
+    data-test-id="cf-ui-textarea"
+    disabled={false}
+    id="someInput"
+    name="userEmail"
+    onChange={[Function]}
+    value="1234"
+  />
+</div>
+`;

@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component 1`] = `
+<div
+  className="Note Note--primary"
+  data-test-id="cf-ui-note"
+>
+  <div
+    className="Note__icon"
+  >
+    <Icon
+      color="primary"
+      icon="InfoCircle"
+      size="small"
+      testId="cf-ui-icon"
+    />
+  </div>
+  <div
+    className="Note__info"
+  >
+    <div>
+      A piece of information that is relevant to the context the user is currently in.
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+<div
+  className="Note my-extra-class Note--primary"
+  data-test-id="cf-ui-note"
+>
+  <div
+    className="Note__icon"
+  >
+    <Icon
+      color="primary"
+      icon="InfoCircle"
+      size="small"
+      testId="cf-ui-icon"
+    />
+  </div>
+  <div
+    className="Note__info"
+  >
+    <div>
+      A piece of information that is relevant to the context the user is currently in.
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders the component with title 1`] = `
+<div
+  className="Note Note--positive"
+  data-test-id="cf-ui-note"
+>
+  <div
+    className="Note__icon"
+  >
+    <Icon
+      color="positive"
+      icon="CheckCircle"
+      size="small"
+      testId="cf-ui-icon"
+    />
+  </div>
+  <div
+    className="Note__info"
+  >
+    <div
+      className="Note__title"
+    >
+      Positive title
+    </div>
+    <div>
+      A piece of information that is relevant to the context the user is currently in.
+    </div>
+  </div>
+</div>
+`;

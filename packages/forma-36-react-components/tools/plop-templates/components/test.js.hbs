@@ -1,0 +1,23 @@
+import React from 'react';
+import { shallow, mount } from 'enzyme';
+import { axe } from 'jest-axe';
+import {{pascalCase name}} from './{{pascalCase name}}';
+
+it('renders the component', () => {
+  const output = shallow(<{{pascalCase name}}>{{pascalCase name}}</{{pascalCase name}}>);
+
+  expect(output).toMatchSnapshot();
+});
+
+it('renders the component with an additional class name', () => {
+  const output = shallow(<{{pascalCase name}} extraClassNames="my-extra-class">{{pascalCase name}}</{{pascalCase name}}>);
+
+  expect(output).toMatchSnapshot();
+});
+
+it('has no a11y issues', async () => {
+  const output = mount(<{{pascalCase name}}>{{pascalCase name}}</{{pascalCase name}}>).html();
+  const results = await axe(output);
+
+  expect(results).toHaveNoViolations();
+});

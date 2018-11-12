@@ -1,0 +1,3 @@
+[build]
+  command = "yarn lerna run storybook"
+  publish = "packages/forma-36-react-components/dist-storybook"

@@ -1,0 +1,17 @@
+{
+  "presets": ["env", "react", "stage-2"],
+  "plugins": ["inline-react-svg"],
+  "env": {
+    "build": {
+      "plugins": [
+        "transform-runtime",
+        [
+          "css-modules-transform",
+          {
+            "generateScopedName": "[name]__[local]___[hash:base64:5]"
+          }
+        ]
+      ]
+    }
+  }
+}

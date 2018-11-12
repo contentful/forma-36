@@ -1,0 +1,55 @@
+@import 'settings/colors';
+@import 'settings/typography';
+@import 'settings/transitions';
+@import 'settings/dimensions';
+
+.NotificationItem {
+  display: flex;
+  padding: var(--vertical-spacing-s);
+  padding-left: var(--vertical-spacing-m);
+  transition: transform var(--transition-duration-default)
+      var(--transition-easing-default),
+    opacity var(--transition-duration-default) var(--transition-easing-default);
+  transform: translateY(0);
+  color: var(--color-white);
+  cursor: default;
+  font-family: var(--font-stack-primary);
+  font-size: var(--font-size-paragraph);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-default);
+}
+
+.NotificationItem--success {
+  background: var(--color-green-dark);
+}
+
+.NotificationItem--error {
+  background: var(--color-red-dark);
+}
+
+.NotificationItem__intent {
+  composes: sr-only from './../../styles/settings/helpers.css';
+}
+
+.NotificationItem__icon {
+  margin-right: var(--vertical-spacing-s);
+  display: flex;
+  margin-top: 1px;
+}
+
+.NotificationItem__text {
+  flex-grow: 1;
+  margin-right: var(--vertical-spacing-s);
+}
+
+.NotificationItem__dismiss {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  pointer-events: all;
+}
+
+.NotificationItem__dismiss svg {
+  fill: var(--color-white);
+}

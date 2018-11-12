@@ -1,0 +1,23 @@
+@import 'settings/typography';
+
+.FieldGroup {
+  display: block;
+}
+
+.FieldGroup__item {
+  display: block;
+  margin-bottom: calc(1rem * (8 / var(--rem-base)));
+}
+
+.FieldGroup--row {
+  display: flex;
+}
+
+.FieldGroup--row .FieldGroup__item {
+  flex-basis: 100%;
+}
+
+.FieldGroup--row .FieldGroup__item:not(:last-child) {
+  margin: 0 calc(1rem * (8 / var(--rem-base)))
+    calc(1rem * (8 / var(--rem-base))) 0;
+}

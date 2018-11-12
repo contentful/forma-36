@@ -1,0 +1,462 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`does not render a loading spinner when not passed a "loading" prop 1`] = `
+<ReferenceCard
+  testId="cf-ui-embedded-card"
+  title="Untitled"
+>
+  <AnimateHeight
+    animateOpacity={false}
+    animationStateClasses={
+      Object {
+        "animating": "rah-animating",
+        "animatingDown": "rah-animating--down",
+        "animatingToHeightAuto": "rah-animating--to-height-auto",
+        "animatingToHeightSpecific": "rah-animating--to-height-specific",
+        "animatingToHeightZero": "rah-animating--to-height-zero",
+        "animatingUp": "rah-animating--up",
+        "static": "rah-static",
+        "staticHeightAuto": "rah-static--height-auto",
+        "staticHeightSpecific": "rah-static--height-specific",
+        "staticHeightZero": "rah-static--height-zero",
+      }
+    }
+    applyInlineTransitions={true}
+    delay={0}
+    duration={100}
+    easing="ease-in-out"
+    height="auto"
+    style={Object {}}
+  >
+    <div
+      aria-hidden={false}
+      className="rah-static rah-static--height-auto"
+      style={
+        Object {
+          "height": "auto",
+          "overflow": "visible",
+        }
+      }
+    >
+      <div
+        style={Object {}}
+      >
+        <Card
+          extraClassNames="
+      CardLoading
+
+
+    "
+          padding="default"
+          selected={false}
+          testId="cf-ui-embedded-card"
+          title="Untitled"
+        >
+          <div
+            className="
+      Card
+      Card--padding-default
+
+
+
+      CardLoading
+
+
+
+    "
+            data-test-id="cf-ui-embedded-card"
+            title="Untitled"
+          >
+            <CSSTransition
+              classNames={
+                Object {
+                  "enter": "CardLoading--enter",
+                  "enterActive": "CardLoading__spinner--enter-active",
+                  "exit": "CardLoading__spinner--exit",
+                  "exitActive": "CardLoading__spinner--exit-active",
+                }
+              }
+              mountOnEnter={true}
+              timeout={100}
+              unmountOnExit={true}
+            >
+              <Transition
+                appear={false}
+                enter={true}
+                exit={true}
+                in={false}
+                mountOnEnter={true}
+                onEnter={[Function]}
+                onEntered={[Function]}
+                onEntering={[Function]}
+                onExit={[Function]}
+                onExited={[Function]}
+                onExiting={[Function]}
+                timeout={100}
+                unmountOnExit={true}
+              />
+            </CSSTransition>
+            <CSSTransition
+              classNames={
+                Object {
+                  "enter": "CardLoading__wrapper--enter",
+                  "enterActive": "CardLoading__wrapper--enter-active",
+                  "exit": "CardLoading__wrapper--exit",
+                  "exitActive": "CardLoading__wrapper--exit-active",
+                }
+              }
+              in={true}
+              mountOnEnter={true}
+              timeout={100}
+              unmountOnExit={true}
+            >
+              <Transition
+                appear={false}
+                enter={true}
+                exit={true}
+                in={true}
+                mountOnEnter={true}
+                onEnter={[Function]}
+                onEntered={[Function]}
+                onEntering={[Function]}
+                onExit={[Function]}
+                onExited={[Function]}
+                onExiting={[Function]}
+                timeout={100}
+                unmountOnExit={true}
+              >
+                Asset Card
+              </Transition>
+            </CSSTransition>
+          </div>
+        </Card>
+      </div>
+    </div>
+  </AnimateHeight>
+</ReferenceCard>
+`;
+
+exports[`renders a loading spinner when passed a "loading" prop 1`] = `
+<ReferenceCard
+  isLoading={true}
+  testId="cf-ui-embedded-card"
+  title="Untitled"
+>
+  <AnimateHeight
+    animateOpacity={false}
+    animationStateClasses={
+      Object {
+        "animating": "rah-animating",
+        "animatingDown": "rah-animating--down",
+        "animatingToHeightAuto": "rah-animating--to-height-auto",
+        "animatingToHeightSpecific": "rah-animating--to-height-specific",
+        "animatingToHeightZero": "rah-animating--to-height-zero",
+        "animatingUp": "rah-animating--up",
+        "static": "rah-static",
+        "staticHeightAuto": "rah-static--height-auto",
+        "staticHeightSpecific": "rah-static--height-specific",
+        "staticHeightZero": "rah-static--height-zero",
+      }
+    }
+    applyInlineTransitions={true}
+    delay={0}
+    duration={100}
+    easing="ease-in-out"
+    height={120}
+    style={Object {}}
+  >
+    <div
+      aria-hidden={false}
+      className="rah-static rah-static--height-specific"
+      style={
+        Object {
+          "height": 120,
+          "overflow": "hidden",
+        }
+      }
+    >
+      <div
+        style={Object {}}
+      >
+        <Card
+          extraClassNames="
+      CardLoading
+      CardLoading--is-loading
+
+    "
+          padding="default"
+          selected={false}
+          testId="cf-ui-embedded-card"
+          title="Untitled"
+        >
+          <div
+            className="
+      Card
+      Card--padding-default
+
+
+
+      CardLoading
+      CardLoading--is-loading
+
+
+    "
+            data-test-id="cf-ui-embedded-card"
+            title="Untitled"
+          >
+            <CSSTransition
+              classNames={
+                Object {
+                  "enter": "CardLoading--enter",
+                  "enterActive": "CardLoading__spinner--enter-active",
+                  "exit": "CardLoading__spinner--exit",
+                  "exitActive": "CardLoading__spinner--exit-active",
+                }
+              }
+              in={true}
+              mountOnEnter={true}
+              timeout={100}
+              unmountOnExit={true}
+            >
+              <Transition
+                appear={false}
+                enter={true}
+                exit={true}
+                in={true}
+                mountOnEnter={true}
+                onEnter={[Function]}
+                onEntered={[Function]}
+                onEntering={[Function]}
+                onExit={[Function]}
+                onExited={[Function]}
+                onExiting={[Function]}
+                timeout={100}
+                unmountOnExit={true}
+              >
+                <Spinner
+                  color="default"
+                  extraClassNames="CardLoading__spinner"
+                  size="default"
+                  testId="cf-ui-spinner"
+                >
+                  <svg
+                    className="
+      Spinner
+      Spinner--default
+      Spinner--default
+      CardLoading__spinner
+    "
+                    data-test-id="cf-ui-spinner"
+                    style={null}
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <title>
+                      Loading…
+                    </title>
+                    <path
+                      d="M2,10a8,8,0,0,1,8-8V0a10,10,0,0,0,0,20V18A8,8,0,0,1,2,10Z"
+                    />
+                    <path
+                      d="M10,0V2a8,8,0,0,1,0,16v2A10,10,0,0,0,10,0Z"
+                      style={
+                        Object {
+                          "opacity": 0.4,
+                        }
+                      }
+                    />
+                  </svg>
+                </Spinner>
+              </Transition>
+            </CSSTransition>
+            <CSSTransition
+              classNames={
+                Object {
+                  "enter": "CardLoading__wrapper--enter",
+                  "enterActive": "CardLoading__wrapper--enter-active",
+                  "exit": "CardLoading__wrapper--exit",
+                  "exitActive": "CardLoading__wrapper--exit-active",
+                }
+              }
+              in={false}
+              mountOnEnter={true}
+              timeout={100}
+              unmountOnExit={true}
+            >
+              <Transition
+                appear={false}
+                enter={true}
+                exit={true}
+                in={false}
+                mountOnEnter={true}
+                onEnter={[Function]}
+                onEntered={[Function]}
+                onEntering={[Function]}
+                onExit={[Function]}
+                onExited={[Function]}
+                onExiting={[Function]}
+                timeout={100}
+                unmountOnExit={true}
+              />
+            </CSSTransition>
+          </div>
+        </Card>
+      </div>
+    </div>
+  </AnimateHeight>
+</ReferenceCard>
+`;
+
+exports[`renders the component 1`] = `
+<AnimateHeight
+  animateOpacity={false}
+  animationStateClasses={
+    Object {
+      "animating": "rah-animating",
+      "animatingDown": "rah-animating--down",
+      "animatingToHeightAuto": "rah-animating--to-height-auto",
+      "animatingToHeightSpecific": "rah-animating--to-height-specific",
+      "animatingToHeightZero": "rah-animating--to-height-zero",
+      "animatingUp": "rah-animating--up",
+      "static": "rah-static",
+      "staticHeightAuto": "rah-static--height-auto",
+      "staticHeightSpecific": "rah-static--height-specific",
+      "staticHeightZero": "rah-static--height-zero",
+    }
+  }
+  applyInlineTransitions={true}
+  delay={0}
+  duration={100}
+  easing="ease-in-out"
+  height="auto"
+  style={Object {}}
+>
+  <Card
+    extraClassNames="
+      CardLoading
+
+
+    "
+    padding="default"
+    selected={false}
+    testId="cf-ui-embedded-card"
+    title="Untitled"
+  >
+    <CSSTransition
+      classNames={
+        Object {
+          "enter": "CardLoading--enter",
+          "enterActive": "CardLoading__spinner--enter-active",
+          "exit": "CardLoading__spinner--exit",
+          "exitActive": "CardLoading__spinner--exit-active",
+        }
+      }
+      mountOnEnter={true}
+      timeout={100}
+      unmountOnExit={true}
+    >
+      <Spinner
+        color="default"
+        extraClassNames="CardLoading__spinner"
+        size="default"
+        testId="cf-ui-spinner"
+      />
+    </CSSTransition>
+    <CSSTransition
+      classNames={
+        Object {
+          "enter": "CardLoading__wrapper--enter",
+          "enterActive": "CardLoading__wrapper--enter-active",
+          "exit": "CardLoading__wrapper--exit",
+          "exitActive": "CardLoading__wrapper--exit-active",
+        }
+      }
+      in={true}
+      mountOnEnter={true}
+      timeout={100}
+      unmountOnExit={true}
+    >
+      <React.Fragment>
+        CardLoading
+      </React.Fragment>
+    </CSSTransition>
+  </Card>
+</AnimateHeight>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+<AnimateHeight
+  animateOpacity={false}
+  animationStateClasses={
+    Object {
+      "animating": "rah-animating",
+      "animatingDown": "rah-animating--down",
+      "animatingToHeightAuto": "rah-animating--to-height-auto",
+      "animatingToHeightSpecific": "rah-animating--to-height-specific",
+      "animatingToHeightZero": "rah-animating--to-height-zero",
+      "animatingUp": "rah-animating--up",
+      "static": "rah-static",
+      "staticHeightAuto": "rah-static--height-auto",
+      "staticHeightSpecific": "rah-static--height-specific",
+      "staticHeightZero": "rah-static--height-zero",
+    }
+  }
+  applyInlineTransitions={true}
+  delay={0}
+  duration={100}
+  easing="ease-in-out"
+  height="auto"
+  style={Object {}}
+>
+  <Card
+    extraClassNames="
+      CardLoading
+
+      my-extra-class
+    "
+    padding="default"
+    selected={false}
+    testId="cf-ui-embedded-card"
+    title="Untitled"
+  >
+    <CSSTransition
+      classNames={
+        Object {
+          "enter": "CardLoading--enter",
+          "enterActive": "CardLoading__spinner--enter-active",
+          "exit": "CardLoading__spinner--exit",
+          "exitActive": "CardLoading__spinner--exit-active",
+        }
+      }
+      mountOnEnter={true}
+      timeout={100}
+      unmountOnExit={true}
+    >
+      <Spinner
+        color="default"
+        extraClassNames="CardLoading__spinner"
+        size="default"
+        testId="cf-ui-spinner"
+      />
+    </CSSTransition>
+    <CSSTransition
+      classNames={
+        Object {
+          "enter": "CardLoading__wrapper--enter",
+          "enterActive": "CardLoading__wrapper--enter-active",
+          "exit": "CardLoading__wrapper--exit",
+          "exitActive": "CardLoading__wrapper--exit-active",
+        }
+      }
+      in={true}
+      mountOnEnter={true}
+      timeout={100}
+      unmountOnExit={true}
+    >
+      <React.Fragment>
+        CardLoading
+      </React.Fragment>
+    </CSSTransition>
+  </Card>
+</AnimateHeight>
+`;

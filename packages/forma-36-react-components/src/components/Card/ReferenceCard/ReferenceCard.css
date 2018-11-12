@@ -1,0 +1,67 @@
+@import 'settings/colors';
+@import 'settings/typography';
+@import 'settings/transitions';
+
+.ReferenceCard {
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  font-family: var(--font-stack-primary);
+  font-size: var(--font-size-paragraph);
+  line-height: var(--line-height-default);
+  color: var(--color-text-dark);
+}
+
+.ReferenceCard--is-loading {
+  height: 80px; /* Provides a default height as card only contains a Spinner */
+  overflow: hidden;
+}
+
+.ReferenceCard__meta {
+  display: flex;
+}
+
+.ReferenceCard__content-type {
+  flex: 1 1 0;
+  padding-right: calc(1rem * (20 / var(--rem-base)));
+  margin-bottom: calc(1rem * (4 / var(--rem-base)));
+  color: var(--color-text-light);
+  word-break: break-word;
+}
+
+.ReferenceCard__actions {
+  margin-left: calc(1rem * (8 / var(--rem-base)));
+}
+
+.ReferenceCard__content {
+  display: flex;
+}
+
+.ReferenceCard__body {
+  flex: 1 1 0;
+}
+
+.ReferenceCard__title {
+  margin: 0;
+  font-size: var(--font-size-paragraph);
+  line-height: var(--line-height-default);
+  word-break: break-word;
+}
+
+.ReferenceCard__description {
+  margin: calc(1rem * (4 / var(--rem-base))) 0 0;
+  line-height: var(--line-height-default);
+  word-break: break-word;
+}
+
+.ReferenceCard__thumbnail {
+  height: 70px;
+  width: 70px;
+  background-color: var(--color-element-lightest);
+  margin: 0 0 0 calc(1rem * (20 / var(--rem-base)));
+  padding: 0;
+}
+
+.ReferenceCard__thumbnail img {
+  display: block;
+}

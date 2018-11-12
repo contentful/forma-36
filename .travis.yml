@@ -1,0 +1,17 @@
+language: node_js
+cache:
+  directories:
+    - ~/.npm
+notifications:
+  email: false
+install:
+  - yarn install
+script:
+  - yarn lerna run lint
+  - yarn lerna run test
+  - yarn lerna run build
+after_success:
+  # - yarn lerna run travis-deploy-once "yarn lerna run semantic-release"
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/

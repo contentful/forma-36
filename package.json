@@ -1,0 +1,36 @@
+{
+  "name": "root",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "babel-eslint": "^8.2.2",
+    "commitizen": "^3.0.4",
+    "cz-lerna-changelog": "^2.0.0",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb": "16.1.0",
+    "eslint-config-dev": "^2.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.4.0",
+    "lerna": "^3.4.3",
+    "prettier": "^1.15.2",
+    "pretty-quick": "^1.8.0",
+    "semantic-release": "^15.11.0",
+    "semantic-release-monorepo": "^6.1.1",
+    "travis-deploy-once": "^5.0.9"
+  },
+  "dependencies": {},
+  "scripts": {
+    "commit": "git-cz",
+    "travis-deploy-once": "travis-deploy-once --pro",
+    "semantic-release": "lerna exec --concurrency 1 -- npx --no-install semantic-release -e semantic-release-monorepo",
+    "postinstall": "lerna bootstrap",
+    "precommit": "yarn lint && yarn pretty-quick --staged",
+    "commitmsg": "validate-commit-msg",
+    "prepush": "yarn lint && yarn test",
+    "test": "yarn lerna run test",
+    "lint": "eslint packages"
+  }
+}

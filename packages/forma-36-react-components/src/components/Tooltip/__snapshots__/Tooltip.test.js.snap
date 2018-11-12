@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component 1`] = `
+<TooltipContainer
+  containerElement="span"
+  onBlur={[Function]}
+  onFocus={[Function]}
+  onMouseLeave={[Function]}
+  onMouseOver={[Function]}
+  setRef={[Function]}
+>
+  <span>
+    hi
+  </span>
+</TooltipContainer>
+`;
+
+exports[`renders the component with a id attribute 1`] = `
+<TooltipContainer
+  aria-describedby="Tooltip"
+  containerElement="span"
+  id="Tooltip"
+  onBlur={[Function]}
+  onFocus={[Function]}
+  onMouseLeave={[Function]}
+  onMouseOver={[Function]}
+  setRef={[Function]}
+>
+  <span>
+    hi
+  </span>
+</TooltipContainer>
+`;
+
+exports[`renders the component with a id attribute 2`] = `
+<TooltipContainer
+  containerElement="span"
+  onBlur={[Function]}
+  onFocus={[Function]}
+  onMouseLeave={[Function]}
+  onMouseOver={[Function]}
+  setRef={[Function]}
+>
+  <span>
+    hi
+  </span>
+</TooltipContainer>
+`;
+
+exports[`renders the component with a place attribute 1`] = `
+<TooltipContainer
+  containerElement="span"
+  onBlur={[Function]}
+  onFocus={[Function]}
+  onMouseLeave={[Function]}
+  onMouseOver={[Function]}
+  setRef={[Function]}
+>
+  <span>
+    hi
+  </span>
+</TooltipContainer>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+<TooltipContainer
+  containerElement="span"
+  onBlur={[Function]}
+  onFocus={[Function]}
+  onMouseLeave={[Function]}
+  onMouseOver={[Function]}
+  setRef={[Function]}
+>
+  <span>
+    hi
+  </span>
+</TooltipContainer>
+`;

@@ -1,0 +1,37 @@
+@import 'settings/colors';
+@import 'settings/typography';
+
+:root {
+  --table-cell-padding-vertical: calc(1rem * (15 / var(--rem-base)));
+  --table-cell-padding-vertical-compact: calc(1rem * (10 / var(--rem-base)));
+  --table-cell-padding-horizontal: calc(1rem * (20 / var(--rem-base)));
+}
+
+.TableCell {
+  border-bottom: 1px solid var(--color-element-light);
+  color: var(--color-text-mid);
+  font-size: var(--font-size-paragraph);
+  font-family: var(--font-stack-primary);
+  font-weight: var(--font-weight-normal);
+  line-height: 1.5;
+  padding: var(--table-cell-padding-vertical)
+    var(--table-cell-padding-horizontal);
+  vertical-align: top;
+}
+
+tbody tr:last-child .TableCell {
+  border-bottom: none;
+}
+
+.TableCell--head {
+  color: var(--color-text-light);
+  background-color: var(--color-element-lightest);
+  padding: var(--table-cell-padding-vertical-compact)
+    var(--table-cell-padding-horizontal);
+}
+
+.TableCell--head__sorting {
+  padding: 0;
+  font-weight: var(--font-weight-demi-bold);
+  color: var(--color-text-light);
+}

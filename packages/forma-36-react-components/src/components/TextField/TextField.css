@@ -1,0 +1,33 @@
+@import 'settings/colors';
+@import 'settings/typography';
+@import 'settings/transitions';
+
+.TextField {
+  display: block;
+}
+
+.TextField__label-wrapper {
+  display: flex;
+  font-size: var(--font-size-paragraph);
+  align-items: center;
+}
+
+.TextField__label-link {
+  margin-left: auto;
+  margin-bottom: calc(1rem * (8 / var(--rem-base)));
+}
+
+.TextField__validation-message,
+.TextField__help-text {
+  margin-top: calc(1rem * (8 / var(--rem-base)));
+}
+
+.TextField__hints {
+  display: flex;
+  justify-content: space-between;
+}
+.TextField__count {
+  margin-left: calc(1rem * (10 / var(--rem-base)));
+  flex-grow: 1;
+  text-align: right;
+}

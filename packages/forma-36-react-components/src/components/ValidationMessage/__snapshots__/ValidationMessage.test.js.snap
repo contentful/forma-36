@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component with all required props 1`] = `
+<div
+  className="ValidationMessage"
+  data-test-id="cf-ui-validation-message"
+>
+  <Icon
+    color="negative"
+    extraClassNames="ValidationMessage__icon"
+    icon="ErrorCircle"
+    size="small"
+    testId="cf-ui-icon"
+  />
+  <p
+    className="ValidationMessage__text"
+  >
+    This field is required
+  </p>
+</div>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+<div
+  className="ValidationMessage my-extra-class"
+  data-test-id="cf-ui-validation-message"
+>
+  <Icon
+    color="negative"
+    extraClassNames="ValidationMessage__icon"
+    icon="ErrorCircle"
+    size="small"
+    testId="cf-ui-icon"
+  />
+  <p
+    className="ValidationMessage__text"
+  >
+    This field is required
+  </p>
+</div>
+`;

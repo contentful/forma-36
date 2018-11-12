@@ -1,0 +1,11 @@
+@import 'settings/colors';
+@import 'settings/dimensions';
+
+.EditorToolbar {
+  display: flex;
+  border: 1px solid var(--color-element-dark);
+  background-color: var(--color-element-lightest);
+  padding: var(--vertical-spacing-xs);
+  border-radius: 3px 3px 0 0;
+  align-items: center;
+}

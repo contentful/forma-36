@@ -1,0 +1,40 @@
+@import 'settings/colors';
+@import 'settings/typography';
+@import 'settings/transitions';
+@import 'settings/borders';
+
+.Card {
+  display: block;
+  padding: calc(1rem * (14 / var(--rem-base)));
+  border: 1px solid var(--color-element-mid);
+  border-radius: var(--border-radius-small);
+  color: var(--color-text-dark);
+  text-decoration: none;
+  background: var(--color-white);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: border-color var(--transition-duration-default)
+    var(--transition-easing-default);
+}
+
+.Card--padding-default {
+  padding: calc(1rem * (14 / var(--rem-base)));
+}
+
+.Card--padding-large {
+  padding: calc(1rem * (24 / var(--rem-base)));
+}
+
+.Card--padding-none {
+  padding: 0;
+}
+
+.Card--is-interactive:hover,
+.Card--is-interactive:focus {
+  border-color: var(--color-blue-light);
+  cursor: pointer;
+}
+
+.Card--is-selected {
+  border: 1px solid var(--color-primary);
+  box-shadow: 0px 0px 5px var(--color-primary);
+}
