@@ -27,11 +27,15 @@
     "travis-deploy-once": "travis-deploy-once --pro",
     "semantic-release": "lerna exec --concurrency 1 -- npx --no-install semantic-release -e semantic-release-monorepo",
     "postinstall": "lerna bootstrap",
-    "prepublishOnly": "yarn lint && yarn test && yarn build",
     "precommit": "yarn lint && yarn pretty-quick --staged",
     "commitmsg": "validate-commit-msg",
     "prepush": "yarn lint && yarn test",
     "test": "yarn lerna run test",
     "lint": "yarn lerna run lint"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   }
 }
