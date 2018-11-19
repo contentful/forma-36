@@ -102,6 +102,7 @@
     "build": "yarn build:clean && yarn build:scripts && yarn build:styles && yarn build:umd && yarn size",
     "size": "size-limit",
     "generate": "yarn plop --plopfile ./tools/plopfile.js",
+    "lint": "yarn eslint src test tools",
     "add-component": "yarn generate component",
     "add-documentation": "yarn generate documentation",
     "prepublishOnly": "yarn lint && yarn test && yarn build",
@@ -136,5 +137,6 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
-  }
+  },
+  "gitHead": "abbb6526a649580225c322a2013580dd72aa2085"
 }
