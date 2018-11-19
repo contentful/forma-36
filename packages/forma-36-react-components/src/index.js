@@ -38,7 +38,7 @@ import ToggleButton from './components/ToggleButton/ToggleButton';
 import AssetCard from './components/Card/AssetCard';
 import Asset from './components/Asset';
 import Tag from './components/Tag';
-import Heading from './components/Heading';
+import Heading from './components/Typography/Heading';
 import InViewport from './components/InViewport';
 import Modal from './components/Modal/Modal';
 import ModalConfirm from './components/Modal/ModalConfirm';
@@ -49,6 +49,10 @@ import Notification from './components/Notification';
 import ControlledInput from './components/ControlledInput';
 import ControlledInputField from './components/ControlledInputField';
 import RadioButtonField from './components/RadioButtonField';
+import SubHeading from './components/Typography/SubHeading';
+import SectionHeading from './components/Typography/SectionHeading';
+import Paragraph from './components/Typography/Paragraph';
+import DisplayText from './components/Typography/DisplayText';
 // -- Add imports above this line (required by plopfile.js) --
 // The above line is used as a insert marker when autogenerating components with `yarn add-component`
 
@@ -104,6 +108,10 @@ module.exports = {
   ControlledInput,
   ControlledInputField,
   RadioButtonField,
+  SubHeading,
+  SectionHeading,
+  Paragraph,
+  DisplayText,
   // -- Add exports above this line (required by plopfile.js) --
   // The above line is used as a insert marker when autogenerating components with `yarn add-component`
 };

@@ -6,7 +6,7 @@ import { withInfo } from '@storybook/addon-info';
 
 import Heading from './Heading';
 
-storiesOf('Components|Heading', module)
+storiesOf('Components|Typography/Heading', module)
   .addDecorator(
     host({
       align: 'center middle',

@@ -2,11 +2,15 @@
 @import 'settings/typography';
 @import 'settings/transitions';
 
-.Heading {
+.SectionHeading {
   display: block;
   font-family: var(--font-stack-primary);
   font-weight: var(--font-weight-demi-bold);
   color: var(--color-text-dark);
-  font-size: var(--font-size-heading);
+  font-size: var(--font-size-s);
+  line-height: var(--line-height-default);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  text-rendering: optimizeLegibility;
   margin: 0;
 }
