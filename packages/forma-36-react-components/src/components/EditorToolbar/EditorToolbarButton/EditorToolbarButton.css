@@ -18,6 +18,8 @@
   }
 }
 
-.EditorToolbarButton--is-active {
+.EditorToolbarButton--is-active,
+.EditorToolbarButton--is-active:hover,
+.EditorToolbarButton--is-active:focus {
   background: var(--color-element-mid);
 }
