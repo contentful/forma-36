@@ -3,10 +3,10 @@
 exports[`renders the component 1`] = `
 <ControlledInput
   disabled={false}
-  labelText="checkbox"
+  labelText="radio-button"
   required={false}
-  testId="ctf-ui-checkbox"
-  type="checkbox"
+  testId="cf-ui-radio-button"
+  type="radio"
 />
 `;
 
@@ -14,9 +14,9 @@ exports[`renders the component with an additional class name 1`] = `
 <ControlledInput
   disabled={false}
   extraClassNames="my-extra-class"
-  labelText="checkbox"
+  labelText="radio-button"
   required={false}
-  testId="ctf-ui-checkbox"
-  type="checkbox"
+  testId="cf-ui-radio-button"
+  type="radio"
 />
 `;

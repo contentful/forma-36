@@ -4,25 +4,21 @@ import ControlledInputField, {
   ControlledInputFieldPropTypes,
 } from '../ControlledInputField/ControlledInputField';
 
-class CheckboxField extends React.Component {
+class RadioButtonField extends React.Component {
   static propTypes = ControlledInputFieldPropTypes;
 
   static defaultProps = {
     ...ControlledInputFieldDefaultProps,
-    testId: 'cf-ui-checkbox-field',
+    testId: 'cf-ui-radio-button-field',
   };
 
   render() {
     const { testId, type, ...otherProps } = this.props;
 
     return (
-      <ControlledInputField
-        testId={testId}
-        inputType="checkbox"
-        {...otherProps}
-      />
+      <ControlledInputField testId={testId} {...otherProps} inputType="radio" />
     );
   }
 }
 
-export default CheckboxField;
+export default RadioButtonField;

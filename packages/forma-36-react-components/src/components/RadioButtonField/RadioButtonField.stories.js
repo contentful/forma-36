@@ -5,10 +5,10 @@ import { withState } from '@dump247/storybook-state';
 import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
+import RadioButtonField from './RadioButtonField';
 import FieldGroup from '../Form/FieldGroup';
-import CheckboxField from './CheckboxField';
 
-storiesOf('Components|CheckboxField', module)
+storiesOf('Components|RadioButtonField', module)
   .addDecorator(
     host({
       align: 'center middle',
@@ -17,18 +17,18 @@ storiesOf('Components|CheckboxField', module)
   )
   .add(
     'default',
-    withState({ optionOne: false, optionTwo: false }, store =>
+    withState({ activeOption: 'yes' }, store =>
       withInfo()(() => (
         <FieldGroup>
-          <CheckboxField
+          <RadioButtonField
             labelText={text('Label Text', 'Option 1')}
             helpText={text('Help Text', 'This is a helptext')}
             validationMessage={text('Validation Message', undefined)}
             disabled={boolean('Disabled', false)}
             name="someOption"
-            checked={store.state.optionOne}
+            checked={store.state.activeOption === 'yes'}
             value="yes"
-            onChange={e => store.set({ optionOne: e.target.checked })}
+            onChange={e => store.set({ activeOption: e.target.value })}
             labelIsLight={boolean('Light', false)}
             inputProps={{
               onBlur: action('onBlur'),
@@ -36,16 +36,16 @@ storiesOf('Components|CheckboxField', module)
             }}
             id="termsCheckbox"
           />
-          <CheckboxField
+          <RadioButtonField
             labelText={text('Label Text', 'Option 2')}
             helpText={text('Help Text', 'This is a helptext')}
             validationMessage={text('Validation Message', undefined)}
             disabled={boolean('Disabled', false)}
             name="someOption"
             value="no"
-            checked={store.state.optionTwo}
-            onChange={e => store.set({ optionTwo: e.target.checked })}
-            labelIsLight={boolean('Light', false)}
+            checked={store.state.activeOption === 'no'}
+            onChange={e => store.set({ activeOption: e.target.value })}
+            light={boolean('Light', false)}
             inputProps={{
               onBlur: action('onBlur'),
               onFocus: action('onFoucs'),

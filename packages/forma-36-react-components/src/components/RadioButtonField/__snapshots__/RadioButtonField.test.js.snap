@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component 1`] = `
+<ControlledInputField
+  checked={false}
+  id="radio-button"
+  inputProps={
+    Object {
+      "labelText": "radio button field",
+    }
+  }
+  inputType="radio"
+  labelIsLight={false}
+  labelText="radio button field"
+  testId="cf-ui-radio-button-field"
+/>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+<ControlledInputField
+  checked={false}
+  extraClassNames="my-extra-class"
+  id="radio-button"
+  inputType="radio"
+  labelIsLight={false}
+  labelText="radio button field"
+  testId="cf-ui-radio-button-field"
+/>
+`;

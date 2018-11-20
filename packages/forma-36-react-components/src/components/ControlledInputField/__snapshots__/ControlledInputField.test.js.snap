@@ -1,0 +1,299 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component 1`] = `
+<div
+  className="ControlledInputField"
+  data-test-id="cf-ui-controlled-input-field"
+>
+  <ControlledInput
+    checked={false}
+    disabled={false}
+    extraClassNames="ControlledInputField__input"
+    id="checkbox"
+    labelText="label text"
+    required={false}
+    testId="cf-ui-controlled-input"
+    type="checkbox"
+  />
+  <div
+    className="Checkbox__label-wrapper"
+  >
+    <FormLabel
+      extraClassNames="ControlledInputField__label"
+      htmlFor="checkbox"
+      required={false}
+      requiredText="required"
+      testId="cf-ui-form-label"
+    >
+      label text
+    </FormLabel>
+  </div>
+</div>
+`;
+
+exports[`renders the component as checked 1`] = `
+<div
+  className="ControlledInputField my-extra-class"
+  data-test-id="cf-ui-controlled-input-field"
+>
+  <ControlledInput
+    checked={true}
+    disabled={false}
+    extraClassNames="ControlledInputField__input"
+    id="checkbox"
+    labelText="Label Text"
+    required={false}
+    testId="cf-ui-controlled-input"
+    type="checkbox"
+  />
+  <div
+    className="Checkbox__label-wrapper"
+  >
+    <FormLabel
+      extraClassNames="ControlledInputField__label"
+      htmlFor="checkbox"
+      required={false}
+      requiredText="required"
+      testId="cf-ui-form-label"
+    >
+      Label Text
+    </FormLabel>
+  </div>
+</div>
+`;
+
+exports[`renders the component as required 1`] = `
+<div
+  className="ControlledInputField my-extra-class"
+  data-test-id="cf-ui-controlled-input-field"
+>
+  <ControlledInput
+    checked={false}
+    disabled={false}
+    extraClassNames="ControlledInputField__input"
+    id="checkbox"
+    labelText="Label Text"
+    required={true}
+    testId="cf-ui-controlled-input"
+    type="checkbox"
+  />
+  <div
+    className="Checkbox__label-wrapper"
+  >
+    <FormLabel
+      extraClassNames="ControlledInputField__label"
+      htmlFor="checkbox"
+      required={true}
+      requiredText="required"
+      testId="cf-ui-form-label"
+    >
+      Label Text
+    </FormLabel>
+  </div>
+</div>
+`;
+
+exports[`renders the component in a disabled state 1`] = `
+<div
+  className="ControlledInputField my-extra-class ControlledInputField--disabled"
+  data-test-id="cf-ui-controlled-input-field"
+>
+  <ControlledInput
+    checked={false}
+    disabled={true}
+    extraClassNames="ControlledInputField__input"
+    id="checkbox"
+    labelText="Label Text"
+    required={false}
+    testId="cf-ui-controlled-input"
+    type="checkbox"
+  />
+  <div
+    className="Checkbox__label-wrapper"
+  >
+    <FormLabel
+      extraClassNames="ControlledInputField__label"
+      htmlFor="checkbox"
+      required={false}
+      requiredText="required"
+      testId="cf-ui-form-label"
+    >
+      Label Text
+    </FormLabel>
+  </div>
+</div>
+`;
+
+exports[`renders the component with a help text 1`] = `
+<div
+  className="ControlledInputField my-extra-class"
+  data-test-id="cf-ui-controlled-input-field"
+>
+  <ControlledInput
+    checked={false}
+    disabled={false}
+    extraClassNames="ControlledInputField__input"
+    id="checkbox"
+    labelText="Label Text"
+    required={false}
+    testId="cf-ui-controlled-input"
+    type="checkbox"
+  />
+  <div
+    className="Checkbox__label-wrapper"
+  >
+    <FormLabel
+      extraClassNames="ControlledInputField__label"
+      htmlFor="checkbox"
+      required={false}
+      requiredText="required"
+      testId="cf-ui-form-label"
+    >
+      Label Text
+    </FormLabel>
+    <HelpText
+      extraClassNames="ControlledInputField__help-text"
+      testId="cf-ui-help-text"
+    >
+      Help Text
+    </HelpText>
+  </div>
+</div>
+`;
+
+exports[`renders the component with a light label variation 1`] = `
+<div
+  className="ControlledInputField my-extra-class"
+  data-test-id="cf-ui-controlled-input-field"
+>
+  <ControlledInput
+    checked={false}
+    disabled={false}
+    extraClassNames="ControlledInputField__input"
+    id="checkbox"
+    labelText="Label Text"
+    required={false}
+    testId="cf-ui-controlled-input"
+    type="checkbox"
+  />
+  <div
+    className="Checkbox__label-wrapper"
+  >
+    <FormLabel
+      extraClassNames="ControlledInputField__label ControlledInputField__label--light"
+      htmlFor="checkbox"
+      required={false}
+      requiredText="required"
+      testId="cf-ui-form-label"
+    >
+      Label Text
+    </FormLabel>
+    <ValidationMessage
+      extraClassNames="ControlledInputField__validation-message"
+      testId="cf-ui-validation-message"
+    >
+      Not valid!
+    </ValidationMessage>
+  </div>
+</div>
+`;
+
+exports[`renders the component with a validation message 1`] = `
+<div
+  className="ControlledInputField my-extra-class"
+  data-test-id="cf-ui-controlled-input-field"
+>
+  <ControlledInput
+    checked={false}
+    disabled={false}
+    extraClassNames="ControlledInputField__input"
+    id="checkbox"
+    labelText="Label Text"
+    required={false}
+    testId="cf-ui-controlled-input"
+    type="checkbox"
+  />
+  <div
+    className="Checkbox__label-wrapper"
+  >
+    <FormLabel
+      extraClassNames="ControlledInputField__label"
+      htmlFor="checkbox"
+      required={false}
+      requiredText="required"
+      testId="cf-ui-form-label"
+    >
+      Label Text
+    </FormLabel>
+    <ValidationMessage
+      extraClassNames="ControlledInputField__validation-message"
+      testId="cf-ui-validation-message"
+    >
+      Not valid!
+    </ValidationMessage>
+  </div>
+</div>
+`;
+
+exports[`renders the component with a value 1`] = `
+<div
+  className="ControlledInputField my-extra-class"
+  data-test-id="cf-ui-controlled-input-field"
+>
+  <ControlledInput
+    checked={false}
+    disabled={false}
+    extraClassNames="ControlledInputField__input"
+    id="checkbox"
+    labelText="Label Text"
+    required={false}
+    testId="cf-ui-controlled-input"
+    type="checkbox"
+    value="someValue"
+  />
+  <div
+    className="Checkbox__label-wrapper"
+  >
+    <FormLabel
+      extraClassNames="ControlledInputField__label"
+      htmlFor="checkbox"
+      required={false}
+      requiredText="required"
+      testId="cf-ui-form-label"
+    >
+      Label Text
+    </FormLabel>
+  </div>
+</div>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+<div
+  className="ControlledInputField my-extra-class"
+  data-test-id="cf-ui-controlled-input-field"
+>
+  <ControlledInput
+    checked={false}
+    disabled={false}
+    extraClassNames="ControlledInputField__input"
+    id="checkbox"
+    labelText="Label Text"
+    required={false}
+    testId="cf-ui-controlled-input"
+    type="checkbox"
+  />
+  <div
+    className="Checkbox__label-wrapper"
+  >
+    <FormLabel
+      extraClassNames="ControlledInputField__label"
+      htmlFor="checkbox"
+      required={false}
+      requiredText="required"
+      testId="cf-ui-form-label"
+    >
+      Label Text
+    </FormLabel>
+  </div>
+</div>
+`;
