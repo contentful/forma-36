@@ -46,6 +46,9 @@ import FieldGroup from './components/Form/FieldGroup';
 import Form from './components/Form/Form';
 import Note from './components/Note';
 import Notification from './components/Notification';
+import ControlledInput from './components/ControlledInput';
+import ControlledInputField from './components/ControlledInputField';
+import RadioButtonField from './components/RadioButtonField';
 // -- Add imports above this line (required by plopfile.js) --
 // The above line is used as a insert marker when autogenerating components with `yarn add-component`
 
@@ -98,6 +101,9 @@ module.exports = {
   Form,
   Note,
   Notification,
+  ControlledInput,
+  ControlledInputField,
+  RadioButtonField,
   // -- Add exports above this line (required by plopfile.js) --
   // The above line is used as a insert marker when autogenerating components with `yarn add-component`
 };

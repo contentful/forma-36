@@ -18,10 +18,12 @@ storiesOf('Components|Checkbox', module)
     withInfo()(() => (
       <Checkbox
         extraClassNames={text('Extra Class Names', '')}
-        id="checkbox"
-        labelText="checkbox"
+        id="Checkbox"
+        checked={boolean('Checked', false)}
+        labelText={(text('Aria label text'), 'some label text')}
         disabled={boolean('Disabled', false)}
         required={boolean('Required', false)}
+        name={text('Name', 'some-name')}
       />
     )),
   );
