@@ -301,3 +301,73 @@ export const verticalSpacingUnits = [
     px: '80px',
   },
 ];
+
+export const fontSizes = [
+  {
+    name: '3XL',
+    cssVar: '--font-size-3xl',
+    px: '35px',
+    rem: '2.1875rem',
+  },
+  {
+    name: '2XL',
+    cssVar: '--font-size-2xl',
+    px: '28px',
+    rem: '1.75rem',
+  },
+  {
+    name: 'XL',
+    cssVar: '--font-size-xl',
+    px: '21px',
+    rem: '1.3125rem',
+  },
+  {
+    name: 'L',
+    cssVar: '--font-size-l',
+    px: '16px',
+    rem: '1rem',
+  },
+  {
+    name: 'M',
+    cssVar: '--font-size-m',
+    px: '14px',
+    rem: '0.875rem',
+  },
+  {
+    name: 'S',
+    cssVar: '--font-size-s',
+    px: '12px',
+    rem: '0.75rem',
+  },
+];
+
+export const fontWeights = [
+  {
+    name: 'Normal (500)',
+    cssVar: '--font-weight-normal',
+    value: '500',
+  },
+  {
+    name: 'Medium (600)',
+    cssVar: '--font-weight-medium',
+    value: '600',
+  },
+  {
+    name: 'Demi Bold (700)',
+    cssVar: '--font-weight-demi-bold',
+    value: '700',
+  },
+];
+
+export const lineHeights = [
+  {
+    name: 'Default',
+    cssVar: '--line-height-default',
+    value: '1.5',
+  },
+  {
+    name: 'Condensed',
+    cssVar: '--line-height-condensed',
+    value: '1.25',
+  },
+];
