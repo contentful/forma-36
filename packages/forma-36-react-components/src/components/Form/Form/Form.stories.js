@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
+import { withState } from '@dump247/storybook-state';
 import { action } from '@storybook/addon-actions';
 import { boolean, selectV2 } from '@storybook/addon-knobs/react';
 
@@ -21,47 +22,55 @@ storiesOf('Components|Form', module)
   )
   .add(
     'default',
-    withInfo()(() => (
-      <Form
-        onSubmit={action('onSubmit')}
-        spacing={selectV2(
-          'Spacing',
-          {
-            Default: 'default',
-            Condensed: 'condensed',
-          },
-          'default',
-        )}
-      >
-        <TextField
-          required
-          name="nameInput"
-          id="nameInput"
-          labelText="Name"
-          value="Johannes Bugiel"
-          helpText="Please enter your name"
-        />
-        <TextField
-          required
-          name="emailInput"
-          id="emailInput"
-          labelText="E-Mail"
-          value="johannes.bugiel@contentful.com"
-          helpText="Please enter your mail"
-        />
-        <FieldGroup row={boolean('Field Group Row', false)}>
-          <CheckboxField
-            labelText="Do you agree?"
-            helpText="Click if you agree"
-            id="termsCheckbox"
+    withState({ agreeTerms: 'yes' }, store =>
+      withInfo()(() => (
+        <Form
+          onSubmit={action('onSubmit')}
+          spacing={selectV2(
+            'Spacing',
+            {
+              Default: 'default',
+              Condensed: 'condensed',
+            },
+            'default',
+          )}
+        >
+          <TextField
+            required
+            name="nameInput"
+            id="nameInput"
+            labelText="Name"
+            value="Johannes Bugiel"
+            helpText="Please enter your name"
           />
-          <CheckboxField
-            labelText="Do you really agree?"
-            helpText="Click if you really agree"
-            id="termsCheckbox"
+          <TextField
+            required
+            name="emailInput"
+            id="emailInput"
+            labelText="E-Mail"
+            value="johannes.bugiel@contentful.com"
+            helpText="Please enter your mail"
           />
-        </FieldGroup>
-        <Button>Submit</Button>
-      </Form>
-    )),
+          <FieldGroup row={boolean('Field Group Row', false)}>
+            <CheckboxField
+              labelText="I agree"
+              value="yes"
+              helpText="Click if you agree"
+              onChange={e => store.set({ agreeTerms: e.target.value })}
+              checked={store.state.agreeTerms === 'yes'}
+              id="termsCheckboxYes"
+            />
+            <CheckboxField
+              labelText="I don't agree"
+              value="no"
+              onChange={e => store.set({ agreeTerms: e.target.value })}
+              checked={store.state.agreeTerms === 'no'}
+              helpText="Click if you don't agree"
+              id="termsCheckboxNo"
+            />
+          </FieldGroup>
+          <Button>Submit</Button>
+        </Form>
+      )),
+    ),
   );

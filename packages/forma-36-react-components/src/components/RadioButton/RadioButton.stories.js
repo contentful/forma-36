@@ -1,24 +1,28 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { text, boolean } from '@storybook/addon-knobs/react';
 import { host } from 'storybook-host';
-import { withNotes } from '@storybook/addon-notes';
-import RadioButtonNotes from './RadioButton.md';
+import { withInfo } from '@storybook/addon-info';
+import RadioButton from './RadioButton';
 
-storiesOf('Blueprints|[TBA] RadioButton', module)
+storiesOf('Components|RadioButton', module)
   .addDecorator(
     host({
-      align: 'center top',
+      align: 'center middle',
       cropMarks: false,
     }),
   )
   .add(
     'default',
-    withNotes(RadioButtonNotes)(() => (
-      <div>
-        <img
-          src="https://projects.invisionapp.com/static-signed/live-embed/118156364/217188055/1/latest/mcZDLinwhLAsHkic1FwxWQRwsPclEW1hbVp8dBr44OJ1wzXOoJPHjH9SilESFSl7NdFLltuKatfDa3gs4zXEbWrAlE/Radio-button.png"
-          alt="RadioButton"
-        />
-      </div>
+    withInfo()(() => (
+      <RadioButton
+        extraClassNames={text('Extra Class Names', '')}
+        id="Checkbox"
+        checked={boolean('Checked', false)}
+        labelText={(text('Aria label text'), 'some label text')}
+        disabled={boolean('Disabled', false)}
+        required={boolean('Required', false)}
+        name={text('Name', 'some-name')}
+      />
     )),
   );
