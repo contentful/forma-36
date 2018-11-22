@@ -18,7 +18,8 @@
   font-size: calc(1rem * (14 / var(--rem-base)));
   overflow: hidden;
   transition: all var(--transition-duration-default)
-    var(--transition-easing-default);
+      var(--transition-easing-default),
+    background-image 0ms, background-color 0ms;
   vertical-align: middle;
   text-decoration: none;
 
@@ -36,31 +37,46 @@
 }
 
 .Button--muted {
-  background: var(--color-element-light);
+  transition: all var(--transition-duration-default)
+    var(--transition-easing-default);
+  background-color: var(--color-element-light);
 
   &:hover:not(.Button--disabled),
   &:focus:not(.Button--disabled) {
-    background: var(--color-element-mid);
+    background-color: var(--color-element-mid);
+  }
+
+  &:active:not(.Button--disabled) {
+    transition: none;
+    background-color: var(--color-element-dark);
   }
 }
 
 .Button--naked {
-  background: transparent;
+  background-color: transparent;
   border: none;
+  transition: all var(--transition-duration-default)
+    var(--transition-easing-default);
 
   &:hover:not(.Button--disabled),
   &:focus:not(.Button--disabled) {
-    background: var(--color-element-light);
+    background-color: var(--color-element-light);
+  }
+
+  &:active:not(.Button--disabled) {
+    transition: none;
+    background-color: var(--color-element-mid);
   }
 }
 
 .Button--primary {
   border-color: var(--color-blue-dark);
-  background: linear-gradient(
+  background-image: linear-gradient(
     to top,
     var(--color-blue-base),
     var(--color-blue-light)
   );
+  background-color: var(---color-blue-base);
   background-size: 100% 200%;
 
   &:hover:not(.Button--disabled),
@@ -73,6 +89,11 @@
     box-shadow: 0px 0px 5px var(--color-blue-dark);
   }
 
+  &:active:not(.Button--disabled) {
+    background-image: none;
+    background-color: var(--color-blue-dark);
+  }
+
   & .Button__label {
     color: var(--color-element-lightest);
   }
@@ -80,7 +101,7 @@
 
 .Button--positive {
   border-color: var(--color-green-dark);
-  background: linear-gradient(
+  background-image: linear-gradient(
     to top,
     var(--color-green-base),
     var(--color-green-light)
@@ -97,6 +118,11 @@
     box-shadow: 0px 0px 5px var(--color-green-dark);
   }
 
+  &:active:not(.Button--disabled) {
+    background-image: none;
+    background-color: var(--color-green-dark);
+  }
+
   & .Button__label {
     color: var(--color-element-lightest);
   }
@@ -104,7 +130,7 @@
 
 .Button--negative {
   border-color: var(--color-red-dark);
-  background: linear-gradient(
+  background-image: linear-gradient(
     to top,
     var(--color-red-base),
     var(--color-red-light)
@@ -119,6 +145,11 @@
   &:focus:not(.Button--disabled) {
     border-color: var(--color-red-dark);
     box-shadow: 0px 0px 5px var(--color-red-dark);
+  }
+
+  &:active:not(.Button--disabled) {
+    background-image: none;
+    background-color: var(--color-red-dark);
   }
 
   & .Button__label {
