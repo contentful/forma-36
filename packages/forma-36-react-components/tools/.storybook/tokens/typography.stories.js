@@ -95,8 +95,8 @@ storiesOf('Tokens|Typography', module)
           <TableHead>
             <TableRow>
               <TableCell>Name</TableCell>
-              <TableCell>Token</TableCell>
               <TableCell>Example</TableCell>
+              <TableCell>Token</TableCell>
               <TableCell>Value</TableCell>
             </TableRow>
           </TableHead>
