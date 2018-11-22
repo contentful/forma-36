@@ -1,0 +1,12 @@
+@import 'settings/colors';
+@import 'settings/typography';
+@import 'settings/transitions';
+
+.ControlledInput {
+  display: inline-block;
+  font-size: var(--font-size-paragraph);
+}
+
+.ControlledInput--disabled {
+  cursor: not-allowed;
+}

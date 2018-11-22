@@ -9,10 +9,12 @@ exports[`renders the component 1`] = `
     key=".0"
   >
     <CheckboxField
+      checked={false}
       helpText="Click if you agree"
       id="agree"
+      inputType="checkbox"
+      labelIsLight={false}
       labelText="Do you agree?"
-      light={false}
       testId="cf-ui-checkbox-field"
     />
   </div>
@@ -21,10 +23,12 @@ exports[`renders the component 1`] = `
     key=".1"
   >
     <CheckboxField
+      checked={false}
       helpText="Click if you really agree"
       id="reallyAgree"
+      inputType="checkbox"
+      labelIsLight={false}
       labelText="Do you really agree?"
-      light={false}
       testId="cf-ui-checkbox-field"
     />
   </div>
@@ -40,10 +44,12 @@ exports[`renders the component children in a row 1`] = `
     key=".0"
   >
     <CheckboxField
+      checked={false}
       helpText="Click if you agree"
       id="agree"
+      inputType="checkbox"
+      labelIsLight={false}
       labelText="Do you agree?"
-      light={false}
       testId="cf-ui-checkbox-field"
     />
   </div>
@@ -52,10 +58,12 @@ exports[`renders the component children in a row 1`] = `
     key=".1"
   >
     <CheckboxField
+      checked={false}
       helpText="Click if you really agree"
       id="reallyAgree"
+      inputType="checkbox"
+      labelIsLight={false}
       labelText="Do you really agree?"
-      light={false}
       testId="cf-ui-checkbox-field"
     />
   </div>
@@ -71,10 +79,12 @@ exports[`renders the component with an additional class name 1`] = `
     key=".0"
   >
     <CheckboxField
+      checked={false}
       helpText="Click if you agree"
       id="agree"
+      inputType="checkbox"
+      labelIsLight={false}
       labelText="Do you agree?"
-      light={false}
       testId="cf-ui-checkbox-field"
     />
   </div>
@@ -83,10 +93,12 @@ exports[`renders the component with an additional class name 1`] = `
     key=".1"
   >
     <CheckboxField
+      checked={false}
       helpText="Click if you really agree"
       id="reallyAgree"
+      inputType="checkbox"
+      labelIsLight={false}
       labelText="Do you really agree?"
-      light={false}
       testId="cf-ui-checkbox-field"
     />
   </div>

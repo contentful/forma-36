@@ -11,7 +11,7 @@
     {
       "path": "dist/index.umd.js",
       "name": "gzipped UMD js",
-      "limit": "82 KB"
+      "limit": "83 KB"
     },
     {
       "path": "dist/styles.css",

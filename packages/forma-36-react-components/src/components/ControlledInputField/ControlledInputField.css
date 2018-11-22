@@ -1,0 +1,25 @@
+@import 'settings/typography';
+
+.ControlledInputField {
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.ControlledInputField--disabled,
+.ControlledInputField--disabled label {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.ControlledInputField__input {
+  margin-right: calc(1rem * (8 / var(--rem-base)));
+  transform: translateY(1px);
+}
+
+.ControlledInputField__label {
+  margin-bottom: 0;
+}
+
+.ControlledInputField__label--light {
+  font-weight: 300;
+}
