@@ -28,25 +28,25 @@ A React component library for Contentful, powered by [Storybook](https://storybo
 ### Install package from NPM
 
 ```bash
-yarn add @contentful/ui-component-library
+yarn add @contentful/forma-36-react-components
 ```
 
 Or for NPM
 
 ```bash
-npm i @contentful/ui-component-library
+npm i @contentful/forma-36-react-components
 ```
 
 ### Import desired component into your project
 
 ```js
-import { Input } from '@contentful/ui-component-library';
+import { Input } from '@contentful/forma-36-react-components';
 ```
 
 ### Import styles
 
 ```js
-import '@contentful/ui-component-library/dist/styles.css';
+import '@contentful/forma-36-react-components/dist/styles.css';
 ```
 
 ## Development
