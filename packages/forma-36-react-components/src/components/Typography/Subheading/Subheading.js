@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import styles from './SubHeading.css';
+import styles from './Subheading.css';
 
-class SubHeading extends React.Component {
+class Subheading extends React.Component {
   static propTypes = {
     extraClassNames: PropTypes.string,
     children: PropTypes.node.isRequired,
@@ -26,7 +26,7 @@ class SubHeading extends React.Component {
       ...otherProps
     } = this.props;
 
-    const classNames = cn(styles.SubHeading, extraClassNames);
+    const classNames = cn(styles.Subheading, extraClassNames);
 
     const Element = element;
 
@@ -38,4 +38,4 @@ class SubHeading extends React.Component {
   }
 }
 
-export default SubHeading;
+export default Subheading;

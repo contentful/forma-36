@@ -6,7 +6,7 @@ import { fontSizes, fontWeights, lineHeights } from './tokens';
 
 import DocPage from './../components/DocPage/DocPage';
 import Heading from './../../../src/components/Typography/Heading';
-import SubHeading from './../../../src/components/Typography/SubHeading';
+import Subheading from './../../../src/components/Typography/Subheading';
 import Table from './../../../src/components/Table/Table';
 import TableHead from './../../../src/components/Table/TableHead';
 import TableBody from './../../../src/components/Table/TableBody';
@@ -26,7 +26,7 @@ storiesOf('Tokens|Typography', module)
     withInfo()(() => (
       <DocPage>
         <Heading style={{ marginBottom: '1rem' }}>Typography</Heading>
-        <SubHeading style={{ margin: '1rem 0' }}>Font sizes</SubHeading>
+        <Subheading style={{ margin: '1rem 0' }}>Font sizes</Subheading>
         <Table style={{ width: '100%' }}>
           <TableHead>
             <TableRow>
@@ -60,7 +60,7 @@ storiesOf('Tokens|Typography', module)
           </TableBody>
         </Table>
 
-        <SubHeading style={{ margin: '1rem 0' }}>Font weights</SubHeading>
+        <Subheading style={{ margin: '1rem 0' }}>Font weights</Subheading>
         <Table style={{ width: '100%' }}>
           <TableHead>
             <TableRow>
@@ -90,7 +90,7 @@ storiesOf('Tokens|Typography', module)
           </TableBody>
         </Table>
 
-        <SubHeading style={{ margin: '1rem 0' }}>Line heights</SubHeading>
+        <Subheading style={{ margin: '1rem 0' }}>Line heights</Subheading>
         <Table style={{ width: '100%' }}>
           <TableHead>
             <TableRow>

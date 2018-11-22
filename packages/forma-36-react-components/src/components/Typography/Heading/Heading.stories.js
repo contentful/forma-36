@@ -24,7 +24,7 @@ storiesOf('Components|Typography/Heading', module)
           'h1',
         )}
       >
-        Heading
+        {text('Content', 'Heading')}
       </Heading>
     )),
   );

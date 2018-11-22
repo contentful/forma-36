@@ -24,7 +24,7 @@ storiesOf('Components|Typography/Paragraph', module)
           'h1',
         )}
       >
-        Paragraph
+        {text('Content', 'Paragraph')}
       </Paragraph>
     )),
   );

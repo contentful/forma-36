@@ -49,7 +49,7 @@ import Notification from './components/Notification';
 import ControlledInput from './components/ControlledInput';
 import ControlledInputField from './components/ControlledInputField';
 import RadioButtonField from './components/RadioButtonField';
-import SubHeading from './components/Typography/SubHeading';
+import Subheading from './components/Typography/Subheading';
 import SectionHeading from './components/Typography/SectionHeading';
 import Paragraph from './components/Typography/Paragraph';
 import DisplayText from './components/Typography/DisplayText';
@@ -108,7 +108,7 @@ module.exports = {
   ControlledInput,
   ControlledInputField,
   RadioButtonField,
-  SubHeading,
+  Subheading,
   SectionHeading,
   Paragraph,
   DisplayText,

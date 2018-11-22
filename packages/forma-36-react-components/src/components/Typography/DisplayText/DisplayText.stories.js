@@ -25,7 +25,7 @@ storiesOf('Components|Typography/DisplayText', module)
         )}
         size={selectV2('Size', ['default', 'large'], 'default')}
       >
-        DisplayText
+        {text('Content', 'Display text')}
       </DisplayText>
     )),
   );

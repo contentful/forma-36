@@ -2,27 +2,27 @@
 
 exports[`renders the component 1`] = `
 <h2
-  className="SubHeading"
+  className="Subheading"
   data-test-id="cf-ui-subheading"
 >
-  SubHeading
+  Subheading
 </h2>
 `;
 
 exports[`renders the component h3 1`] = `
 <h3
-  className="SubHeading"
+  className="Subheading"
   data-test-id="cf-ui-subheading"
 >
-  SubHeading
+  Subheading
 </h3>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
 <h2
-  className="SubHeading my-extra-class"
+  className="Subheading my-extra-class"
   data-test-id="cf-ui-subheading"
 >
-  SubHeading
+  Subheading
 </h2>
 `;

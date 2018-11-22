@@ -24,7 +24,7 @@ storiesOf('Components|Typography/SectionHeading', module)
           'h1',
         )}
       >
-        SectionHeading
+        {text('Content', 'Section heading')}
       </SectionHeading>
     )),
   );

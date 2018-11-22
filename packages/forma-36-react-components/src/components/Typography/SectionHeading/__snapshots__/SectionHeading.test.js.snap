@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
-<h1
+<h3
   className="SectionHeading"
   data-test-id="cf-ui-section-heading"
 >
   SectionHeading
-</h1>
+</h3>
 `;
 
 exports[`renders the component h3 1`] = `
@@ -19,10 +19,10 @@ exports[`renders the component h3 1`] = `
 `;
 
 exports[`renders the component with an additional class name 1`] = `
-<h1
+<h3
   className="SectionHeading my-extra-class"
   data-test-id="cf-ui-section-heading"
 >
   SectionHeading
-</h1>
+</h3>
 `;
