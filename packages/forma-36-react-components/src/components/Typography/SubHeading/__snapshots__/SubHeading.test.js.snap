@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component 1`] = `
+<h2
+  className="SubHeading"
+  data-test-id="cf-ui-subheading"
+>
+  SubHeading
+</h2>
+`;
+
+exports[`renders the component h3 1`] = `
+<h3
+  className="SubHeading"
+  data-test-id="cf-ui-subheading"
+>
+  SubHeading
+</h3>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+<h2
+  className="SubHeading my-extra-class"
+  data-test-id="cf-ui-subheading"
+>
+  SubHeading
+</h2>
+`;
