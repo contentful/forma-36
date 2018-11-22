@@ -44,8 +44,12 @@
   --font-stack-monospace: 'Menlo', 'Andale mono', monospace;
 
   /* Font sizes */
-  --font-size-paragraph: 0.875rem; /* 14px */
-  --font-size-heading: 1.3125rem; /* 21px */
+  --font-size-3xl: 2.1875rem; /* 35px */
+  --font-size-2xl: 1.75rem; /* 28px */
+  --font-size-xl: 1.3125rem; /* 21px */
+  --font-size-l: 1rem; /* 16px */
+  --font-size-m: 0.875rem; /* 14px */
+  --font-size-s: 0.75rem; /* 12px */
 
   /* Font weights */
   --font-weight-normal: 500;
@@ -54,6 +58,7 @@
 
   /* Line heights */
   --line-height-default: 1.5;
+  --line-height-condensed: 1.25;
 
   /* Letter spacing */
   --letter-spacing-wide: 0.1rem;

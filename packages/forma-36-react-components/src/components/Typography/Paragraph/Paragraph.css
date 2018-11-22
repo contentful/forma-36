@@ -1,0 +1,13 @@
+@import 'settings/colors';
+@import 'settings/typography';
+@import 'settings/transitions';
+
+.Paragraph {
+  display: block;
+  font-family: var(--font-stack-primary);
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-mid);
+  font-size: var(--font-size-m);
+  line-height: var(--line-height-default);
+  margin: 0;
+}

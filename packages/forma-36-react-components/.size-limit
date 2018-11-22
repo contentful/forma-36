@@ -2,7 +2,7 @@
     {
       "path": "dist/index.js",
       "name": "gzipped js",
-      "limit": "84 KB",
+      "limit": "100 KB",
       "ignore": [
         "react",
         "react-dom"
@@ -11,7 +11,7 @@
     {
       "path": "dist/index.umd.js",
       "name": "gzipped UMD js",
-      "limit": "83 KB"
+      "limit": "100 KB"
     },
     {
       "path": "dist/styles.css",

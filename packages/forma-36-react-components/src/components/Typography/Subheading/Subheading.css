@@ -2,11 +2,12 @@
 @import 'settings/typography';
 @import 'settings/transitions';
 
-.Heading {
+.Subheading {
   display: block;
   font-family: var(--font-stack-primary);
   font-weight: var(--font-weight-demi-bold);
   color: var(--color-text-dark);
-  font-size: var(--font-size-heading);
+  font-size: var(--font-size-l);
+  line-height: var(--line-height-default);
   margin: 0;
 }

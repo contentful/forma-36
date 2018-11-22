@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component 1`] = `
+<p
+  className="Paragraph"
+  data-test-id="cf-ui-paragraph"
+>
+  Paragraph
+</p>
+`;
+
+exports[`renders the component h3 1`] = `
+<h3
+  className="Paragraph"
+  data-test-id="cf-ui-paragraph"
+>
+  Paragraph
+</h3>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+<p
+  className="Paragraph my-extra-class"
+  data-test-id="cf-ui-paragraph"
+>
+  Paragraph
+</p>
+`;
