@@ -4,9 +4,9 @@ import { text, selectV2 } from '@storybook/addon-knobs/react';
 import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
 
-import Heading from './Heading';
+import SectionHeading from './SectionHeading';
 
-storiesOf('Components|Heading', module)
+storiesOf('Components|Typography/SectionHeading', module)
   .addDecorator(
     host({
       align: 'center middle',
@@ -16,7 +16,7 @@ storiesOf('Components|Heading', module)
   .add(
     'default',
     withInfo()(() => (
-      <Heading
+      <SectionHeading
         extraClassNames={text('Extra Class Names', '')}
         element={selectV2(
           'Element',
@@ -24,7 +24,7 @@ storiesOf('Components|Heading', module)
           'h1',
         )}
       >
-        Heading
-      </Heading>
+        {text('Content', 'Section heading')}
+      </SectionHeading>
     )),
   );

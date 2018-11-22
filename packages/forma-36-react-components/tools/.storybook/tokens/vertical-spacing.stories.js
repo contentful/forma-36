@@ -5,6 +5,11 @@ import { withInfo } from '@storybook/addon-info';
 import { verticalSpacingUnits } from './tokens';
 
 import DocPage from './../components/DocPage/DocPage';
+import Table from './../../../src/components/Table/Table';
+import TableHead from './../../../src/components/Table/TableHead';
+import TableBody from './../../../src/components/Table/TableBody';
+import TableCell from './../../../src/components/Table/TableCell';
+import TableRow from './../../../src/components/Table/TableRow';
 
 storiesOf('Tokens|Vertical Spacing', module)
   .addDecorator(
@@ -19,35 +24,35 @@ storiesOf('Tokens|Vertical Spacing', module)
     withInfo()(() => (
       <DocPage>
         <h1>Vertical Spacing</h1>
-        <table style={{ width: '100%' }}>
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Token</th>
-              <th>px</th>
-              <th>rem</th>
-              <th>Example</th>
-            </tr>
-          </thead>
-          <tbody>
+        <Table style={{ width: '100%' }}>
+          <TableHead>
+            <TableRow>
+              <TableCell>Name</TableCell>
+              <TableCell>Token</TableCell>
+              <TableCell>px</TableCell>
+              <TableCell>rem</TableCell>
+              <TableCell>Example</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
             {verticalSpacingUnits.map(unit => {
               const sizeInRem = (1 * parseInt(unit.px, 10)) / 16;
 
               return (
-                <tr key={unit.cssVar}>
-                  <td>
+                <TableRow key={unit.cssVar}>
+                  <TableCell style={{ verticalAlign: 'middle' }}>
                     <strong>{unit.name}</strong>
-                  </td>
-                  <td>
+                  </TableCell>
+                  <TableCell style={{ verticalAlign: 'middle' }}>
                     <code>{unit.cssVar}</code>
-                  </td>
-                  <td>
+                  </TableCell>
+                  <TableCell style={{ verticalAlign: 'middle' }}>
                     <code>{unit.px}</code>
-                  </td>
-                  <td>
+                  </TableCell>
+                  <TableCell style={{ verticalAlign: 'middle' }}>
                     <code>{`${sizeInRem}rem`}</code>
-                  </td>
-                  <td>
+                  </TableCell>
+                  <TableCell style={{ verticalAlign: 'middle' }}>
                     <div
                       style={{
                         width: `${sizeInRem}rem`,
@@ -55,12 +60,12 @@ storiesOf('Tokens|Vertical Spacing', module)
                         background: '#3c80cf',
                       }}
                     />
-                  </td>
-                </tr>
+                  </TableCell>
+                </TableRow>
               );
             })}
-          </tbody>
-        </table>
+          </TableBody>
+        </Table>
       </DocPage>
     )),
   );
