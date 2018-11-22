@@ -12,7 +12,7 @@ class Paragraph extends React.Component {
   };
 
   static defaultProps = {
-    element: 'h1',
+    element: 'p',
     extraClassNames: undefined,
     testId: 'cf-ui-paragraph',
   };

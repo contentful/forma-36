@@ -12,7 +12,7 @@ class SectionHeading extends React.Component {
   };
 
   static defaultProps = {
-    element: 'h1',
+    element: 'h3',
     extraClassNames: undefined,
     testId: 'cf-ui-section-heading',
   };
