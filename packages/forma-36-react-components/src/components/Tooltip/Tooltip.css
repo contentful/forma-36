@@ -29,7 +29,7 @@
   border-radius: calc(1rem * (4 / var(--rem-base)));
   z-index: 99;
   user-select: none;
-  width: max-content;
+  width: auto;
 }
 
 .Tooltip--hidden {
