@@ -38,9 +38,23 @@ The monorepo is currently structured into the following packages:
 
 To add another package create a new directory in the packages folder. Make sure that the package name is prefixed with forma-36 (e.g. forma-36-css-utilities). Since we are using Lerna all package scripts are available from the root by running lerna run {script_name}
 
-## Commiting changes & releasing a new Forma 36 version
+## Commiting & Releasing
 
-Commit your changes using yarn commit (semantic commit message). Lerna will keep track of which packages have changed. It is set up in independent mode so you're able to release independent versions of the packages. We use semantic release which will generate the next version number and release notes. Dispatch a new version by running yarn semantic-release
+**_About alpha versions_**: Forma 36 is currently in alpha. Please use the keyword `alpha` in the version number when using `lerna publish`.
+
+```
+? Select a new version for @contentful/forma-36-react-components (currently 1.0.2-alpha.0)
+  Patch (1.0.2)
+  Minor (1.1.0)
+  Major (2.0.0)
+❯ Prepatch (1.0.3-alpha.0)
+  Preminor (1.1.0-alpha.0)
+  Premajor (2.0.0-alpha.0)
+  Custom Prerelease
+  Custom Version
+```
+
+**_About non alpha releases_**: Use `yarn commit`. This uses the [Commitzen](https://github.com/commitizen/cz-cli) CLI to create a semantic commit message based on your changes. CI will publish to NPM using `yarn semantic-release`.
 
 _NOTE: It is important that every new package includes semantic-release and semantic-release-monorepo in the dev-dependency list so that semantic release will work from the root of the monorepo._
 
