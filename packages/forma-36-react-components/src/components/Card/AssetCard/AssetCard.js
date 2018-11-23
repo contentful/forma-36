@@ -7,6 +7,7 @@ import Dropdown from '../../Dropdown/Dropdown';
 import Asset from '../../Asset';
 import Icon from '../../Icon/Icon';
 import TabFocusTrap from '../../TabFocusTrap';
+import Tag from '../../Tag';
 
 class AssetCard extends React.Component {
   static propTypes = {
@@ -55,6 +56,38 @@ class AssetCard extends React.Component {
     </Dropdown>
   );
 
+  renderStatus = status => {
+    let label;
+    let type;
+
+    switch (status) {
+      case 'archived':
+        label = 'archived';
+        type = 'negative';
+        break;
+
+      case 'changed':
+        label = 'changed';
+        type = 'primary';
+        break;
+
+      case 'published':
+        label = 'published';
+        type = 'positive';
+        break;
+
+      default:
+        label = 'draft';
+        type = 'warning';
+    }
+
+    return (
+      <Tag tagType={type} style={{ marginLeft: 'auto' }}>
+        {label}
+      </Tag>
+    );
+  };
+
   render() {
     const {
       extraClassNames,
@@ -70,10 +103,6 @@ class AssetCard extends React.Component {
 
     const classNames = cn(styles.AssetCard, extraClassNames);
 
-    const statusTagClassNames = cn(styles['AssetCard__header__status-tag'], {
-      [styles[`AssetCard__status--${status}`]]: status,
-    });
-
     return (
       <CardLoading
         isLoading={isLoading}
@@ -84,7 +113,7 @@ class AssetCard extends React.Component {
       >
         <div>
           <div className={styles.AssetCard__header}>
-            {status && <span className={statusTagClassNames}>{status}</span>}
+            {status && this.renderStatus(status)}
             {dropdownListElements &&
               this.renderDropdownListElements(dropdownListElements)}
           </div>
