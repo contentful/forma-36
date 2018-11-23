@@ -1,4 +1,4 @@
-# UI Component Library
+# Forma 36 React Components
 
 A React component library for Contentful, powered by [Storybook](https://storybook.js.org/).
 
