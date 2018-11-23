@@ -44,30 +44,3 @@
   /* This needs to be set for IE11 to show the icon */
   width: 18px;
 }
-
-.AssetCard__header__status-tag {
-  margin-left: auto;
-}
-
-.AssetCard__header__status-tag {
-  font-size: calc(1rem * (12 / var(--rem-base)));
-  text-transform: uppercase;
-  font-weight: var(--font-weight-medium);
-  letter-spacing: 0.1rem;
-}
-
-.AssetCard__status--archived {
-  color: var(--color-red-light);
-}
-
-.AssetCard__status--changed {
-  color: var(--color-blue-light);
-}
-
-.AssetCard__status--draft {
-  color: var(--color-orange-light);
-}
-
-.AssetCard__status--published {
-  color: var(--color-green-light);
-}

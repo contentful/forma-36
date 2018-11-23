@@ -117,11 +117,17 @@ exports[`renders the component with status 1`] = `
     <div
       className="AssetCard__header"
     >
-      <span
-        className="AssetCard__header__status-tag AssetCard__status--archived"
+      <Tag
+        style={
+          Object {
+            "marginLeft": "auto",
+          }
+        }
+        tagType="negative"
+        testId="cf-ui-tag"
       >
         archived
-      </span>
+      </Tag>
     </div>
     <div
       className="AssetCard__content"
