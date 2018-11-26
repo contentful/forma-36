@@ -131,7 +131,7 @@
     "url": "https://github.com/contentful/forma-36.git"
   },
   "publishConfig": {
-    "access": "restricted"
+    "access": "public"
   },
   "config": {
     "commitizen": {
