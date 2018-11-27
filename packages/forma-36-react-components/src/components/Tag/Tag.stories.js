@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, selectV2 } from '@storybook/addon-knobs/react';
+import { text, select } from '@storybook/addon-knobs';
 import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
 
@@ -17,7 +17,7 @@ storiesOf('Components|Tag', module)
     'default',
     withInfo()(() => (
       <Tag
-        tagType={selectV2(
+        tagType={select(
           'Tag Type',
           {
             'Primary (default)': 'primary',

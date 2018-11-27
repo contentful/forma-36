@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, boolean, selectV2, number } from '@storybook/addon-knobs/react';
+import { text, boolean, select, number } from '@storybook/addon-knobs';
 import { host } from 'storybook-host';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
@@ -33,7 +33,7 @@ storiesOf('Components|TextField', module)
           disabled: boolean('Disabled', false),
           placeholder: text('Placeholder', 'Placeholder text'),
           maxLength: number('Max Length Characters', 50),
-          type: selectV2(
+          type: select(
             'Type',
             {
               'Text (default)': 'text',
@@ -45,7 +45,7 @@ storiesOf('Components|TextField', module)
             },
             'text',
           ),
-          width: selectV2(
+          width: select(
             'Width',
             {
               'Full (default)': 'full',
@@ -82,7 +82,7 @@ storiesOf('Components|TextField', module)
           placeholder: text('Placeholder', 'Placeholder text'),
           maxLength: number('Max Length Characters', 50),
           rows: number('Rows', 2),
-          type: selectV2(
+          type: select(
             'Type',
             {
               'Text (default)': 'text',
@@ -94,7 +94,7 @@ storiesOf('Components|TextField', module)
             },
             'text',
           ),
-          width: selectV2(
+          width: select(
             'Width',
             {
               'Full (default)': 'full',
@@ -136,7 +136,7 @@ storiesOf('Components|TextField', module)
           placeholder: text('Placeholder', 'Placeholder text'),
           maxLength: number('Max Length Characters', 50),
           rows: number('Rows', 2),
-          type: selectV2(
+          type: select(
             'Type',
             {
               'Text (default)': 'text',
@@ -148,7 +148,7 @@ storiesOf('Components|TextField', module)
             },
             'text',
           ),
-          width: selectV2(
+          width: select(
             'Width',
             {
               'Full (default)': 'full',
@@ -185,7 +185,7 @@ storiesOf('Components|TextField', module)
           placeholder: text('Placeholder', 'Placeholder text'),
           maxLength: number('Max Length Characters', 20),
           rows: number('Rows', 2),
-          type: selectV2(
+          type: select(
             'Type',
             {
               'Text (default)': 'text',
@@ -197,7 +197,7 @@ storiesOf('Components|TextField', module)
             },
             'text',
           ),
-          width: selectV2(
+          width: select(
             'Width',
             {
               'Full (default)': 'full',

@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, boolean, selectV2 } from '@storybook/addon-knobs/react';
+import { text, boolean, select } from '@storybook/addon-knobs';
 import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
@@ -20,7 +20,7 @@ storiesOf('Components|Card', module)
       <Card
         extraClassNames={text('Extra Class Names', '')}
         href={text('Href', '') || undefined}
-        padding={selectV2(
+        padding={select(
           'Padding',
           {
             Default: 'default',
@@ -42,7 +42,7 @@ storiesOf('Components|Card', module)
         extraClassNames={text('Extra Class Names', '')}
         href={text('Href', '') || undefined}
         onClick={action('onClick')}
-        padding={selectV2(
+        padding={select(
           'Padding',
           {
             Default: 'default',
