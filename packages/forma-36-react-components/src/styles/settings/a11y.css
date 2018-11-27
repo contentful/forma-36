@@ -1,13 +1,14 @@
 @import 'settings/colors';
+@import 'settings/shadows';
 
 .focus-outline--default:focus {
   outline: 1px solid var(--color-primary);
   border-radius: 2px;
-  box-shadow: 0px 0px 7px var(--color-primary);
+  box-shadow: var(--glow-primary);
 }
 
 .focus-border--default:focus {
   outline: none;
   border: 1px solid var(--color-primary);
-  box-shadow: 0px 0px 5px var(--color-primary);
+  box-shadow: var(--glow-primary);
 }
