@@ -1,6 +1,7 @@
 @import 'settings/colors';
 @import 'settings/typography';
 @import 'settings/transitions';
+@import 'settings/shadows';
 
 .Button {
   composes: focus-border--default from './../../styles/settings/a11y.css';
@@ -86,7 +87,7 @@
 
   &:focus:not(.Button--disabled) {
     border-color: var(--color-blue-dark);
-    box-shadow: 0px 0px 5px var(--color-blue-dark);
+    box-shadow: var(--glow-primary);
   }
 
   &:active:not(.Button--disabled) {
@@ -115,7 +116,7 @@
 
   &:focus:not(.Button--disabled) {
     border-color: var(--color-green-dark);
-    box-shadow: 0px 0px 5px var(--color-green-dark);
+    box-shadow: var(--glow-positive);
   }
 
   &:active:not(.Button--disabled) {
@@ -144,7 +145,7 @@
 
   &:focus:not(.Button--disabled) {
     border-color: var(--color-red-dark);
-    box-shadow: 0px 0px 5px var(--color-red-dark);
+    box-shadow: var(--glow-negative);
   }
 
   &:active:not(.Button--disabled) {

@@ -2,6 +2,7 @@
 @import 'settings/typography';
 @import 'settings/dimensions';
 @import 'settings/transitions';
+@import 'settings/shadows';
 
 .Textarea {
   display: flex;
@@ -54,7 +55,7 @@
   & .Textarea__textarea {
     border-color: var(--color-negative);
     &:focus {
-      box-shadow: 0px 0px 5px var(--color-negative);
+      box-shadow: var(--glow-negative);
     }
   }
 }

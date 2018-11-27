@@ -1,18 +1,19 @@
 @import 'settings/colors';
 @import 'settings/typography';
 @import 'settings/transitions';
+@import 'settings/shadows';
 
 .Toggle {
   display: inline-block;
   position: relative;
-  box-shadow: 0px 0px 0px 1px inset transparent, 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 0px 0px 1px inset transparent, var(--box-shadow-default);
   transition: all var(--transition-duration-default)
     var(--transition-easing-default);
 }
 
 .Toggle--active {
   box-shadow: 0px 0px 0px 1px inset var(--color-blue-dark),
-    0 1px 3px rgba(0, 0, 0, 0.08);
+    var(--box-shadow-default);
 }
 
 .Toggle--disabled {
