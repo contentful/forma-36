@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cn from 'classnames';
 import styles from './ColorSwatch.css';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { Icon } from './../../../../src';
+import Icon from './../../../../src/components/Icon';
 
 class ColorSwatch extends React.Component {
   static propTypes = {
