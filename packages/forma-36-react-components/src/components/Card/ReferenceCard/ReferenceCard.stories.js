@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, selectV2, boolean } from '@storybook/addon-knobs/react';
+import { text, select, boolean } from '@storybook/addon-knobs';
 import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
@@ -26,7 +26,7 @@ storiesOf('Components|Card/ReferenceCard', module)
             'Description',
             'Closer is the second and final studio album by English rock band Joy Division. It was released on 18 July 1980 on Factory Records, following the May 1980 suicide of lead singer Ian Curtis. The album was produced by Martin Hannett.',
           )}
-          status={selectV2(
+          status={select(
             'Status',
             {
               Draft: 'draft',
@@ -70,7 +70,7 @@ storiesOf('Components|Card/ReferenceCard', module)
             'Description',
             'Closer is the second and final studio album by English rock band Joy Division. It was released on 18 July 1980 on Factory Records, following the May 1980 suicide of lead singer Ian Curtis. The album was produced by Martin Hannett.',
           )}
-          status={selectV2(
+          status={select(
             'Status',
             {
               Draft: 'draft',

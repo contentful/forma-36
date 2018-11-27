@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { text, boolean, selectV2 } from '@storybook/addon-knobs/react';
+import { text, boolean, select } from '@storybook/addon-knobs';
 import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
 import { iconName } from './../Icon/constants';
@@ -21,12 +21,12 @@ storiesOf('Components|Button', module)
       <div style={{ width: 200, display: 'flex', justifyContent: 'center' }}>
         <Button
           extraClassNames={text('Extra Class Names', '')}
-          icon={selectV2(
+          icon={select(
             'Icon',
             [undefined, ...Object.keys(iconName)],
             undefined,
           )}
-          buttonType={selectV2(
+          buttonType={select(
             'Type',
             {
               muted: 'muted',
@@ -37,7 +37,7 @@ storiesOf('Components|Button', module)
             },
             'muted',
           )}
-          size={selectV2('Size', [undefined, 'small', 'large'], undefined)}
+          size={select('Size', [undefined, 'small', 'large'], undefined)}
           loading={boolean('Loading', false)}
           indicateDropdown={boolean('Show dropdown chevron', false)}
           disabled={boolean('Disabled', false)}

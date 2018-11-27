@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, selectV2 } from '@storybook/addon-knobs/react';
+import { text, select } from '@storybook/addon-knobs';
 import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
 
@@ -20,7 +20,7 @@ storiesOf('Components|Asset', module)
         extraClassNames={text('Extra Class Names', '')}
         src={text('Source', 'https://placekitten.com/200/300')}
         title={text('Title', 'Image of a cat')}
-        type={selectV2('Asset Type', types, 'archive')}
+        type={select('Asset Type', types, 'archive')}
       />
     )),
   );

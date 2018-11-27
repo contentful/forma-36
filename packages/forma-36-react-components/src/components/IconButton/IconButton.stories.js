@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, selectV2, boolean } from '@storybook/addon-knobs/react';
+import { text, select, boolean } from '@storybook/addon-knobs';
 import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
 
@@ -19,13 +19,9 @@ storiesOf('Components|IconButton', module)
     withInfo()(() => (
       <IconButton
         iconProps={{
-          icon: selectV2(
-            'Icon',
-            Object.keys(iconName),
-            Object.keys(iconName)[0],
-          ),
+          icon: select('Icon', Object.keys(iconName), Object.keys(iconName)[0]),
         }}
-        buttonType={selectV2('Button Type', [
+        buttonType={select('Button Type', [
           'primary',
           'positive',
           'negative',

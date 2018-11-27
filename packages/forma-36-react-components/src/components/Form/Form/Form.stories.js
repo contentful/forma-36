@@ -4,7 +4,7 @@ import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
 import { withState } from '@dump247/storybook-state';
 import { action } from '@storybook/addon-actions';
-import { boolean, selectV2 } from '@storybook/addon-knobs/react';
+import { boolean, select } from '@storybook/addon-knobs';
 
 import Form from '.';
 import FieldGroup from '../FieldGroup';
@@ -26,7 +26,7 @@ storiesOf('Components|Form', module)
       withInfo()(() => (
         <Form
           onSubmit={action('onSubmit')}
-          spacing={selectV2(
+          spacing={select(
             'Spacing',
             {
               Default: 'default',

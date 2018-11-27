@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { text, boolean, selectV2 } from '@storybook/addon-knobs/react';
+import { text, boolean, select } from '@storybook/addon-knobs';
 import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
 import { withState } from '@dump247/storybook-state';
@@ -32,12 +32,12 @@ storiesOf('Components|Modal/ModalConfirm', module)
           <ModalConfirm
             isShown={store.state.isShown}
             title={text('title', ModalConfirm.defaultProps.title)}
-            intent={selectV2(
+            intent={select(
               'intent',
               ['negative', 'positive', 'primary'],
               ModalConfirm.defaultProps.intent,
             )}
-            size={selectV2(
+            size={select(
               'size',
               [
                 Modal.Sizes.SMALL,

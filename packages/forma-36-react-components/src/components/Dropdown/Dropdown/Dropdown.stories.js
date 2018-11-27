@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, selectV2 } from '@storybook/addon-knobs/react';
+import { text, select } from '@storybook/addon-knobs';
 import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
 import { action } from '@storybook/addon-actions';
@@ -26,7 +26,7 @@ storiesOf('Components|Dropdown', module)
         <Dropdown
           isOpen={store.state.isOpen}
           onClose={() => store.set({ isOpen: false })}
-          position={selectV2(
+          position={select(
             'Menu Position',
             {
               'bottom-left': 'bottom-left',
@@ -54,7 +54,7 @@ storiesOf('Components|Dropdown', module)
               Embed existing entry
             </DropdownListItem>
             <Dropdown
-              position={selectV2(
+              position={select(
                 'Submenu Position',
                 {
                   left: 'left',
@@ -91,7 +91,7 @@ storiesOf('Components|Dropdown', module)
         <Dropdown
           isOpen={store.state.isOpen}
           onClose={() => store.set({ isOpen: false })}
-          position={selectV2(
+          position={select(
             'Menu Position',
             {
               'bottom-left': 'bottom-left',

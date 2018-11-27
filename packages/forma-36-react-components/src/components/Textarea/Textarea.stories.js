@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, boolean, selectV2, number } from '@storybook/addon-knobs/react';
+import { text, boolean, select, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
@@ -24,7 +24,7 @@ storiesOf('Components|TextArea', module)
         error={boolean('Error', false)}
         maxLength={number('Max Length Characters', 50)}
         required={boolean('Required', false)}
-        width={selectV2(
+        width={select(
           'Width',
           {
             'Full (default)': 'full',

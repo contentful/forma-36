@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { host } from 'storybook-host';
-import { button, text, boolean, selectV2 } from '@storybook/addon-knobs/react';
+import { button, text, boolean, select } from '@storybook/addon-knobs';
 import { withNotes } from '@storybook/addon-notes';
 import Button from '../Button';
 import Notification from './index';
@@ -65,7 +65,7 @@ storiesOf('Components|Notification', module)
     <div>
       <NotificationItem
         hasCloseButton={boolean('hasCloseButton', true)}
-        intent={selectV2('intent', ['success', 'error'], 'success')}
+        intent={select('intent', ['success', 'error'], 'success')}
       >
         {text('text', 'Text for the notification')}
       </NotificationItem>

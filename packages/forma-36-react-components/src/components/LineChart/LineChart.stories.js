@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { boolean, object, text, number } from '@storybook/addon-knobs/react';
+import { boolean, object, text, number } from '@storybook/addon-knobs';
 import { host } from 'storybook-host';
 import { withNotes } from '@storybook/addon-notes';
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { host } from 'storybook-host';
 import { withNotes } from '@storybook/addon-notes';
-import { text, selectV2 } from '@storybook/addon-knobs/react';
+import { text, select } from '@storybook/addon-knobs';
 import NoteNotes from './Note.md';
 import Note from './Note';
 
@@ -17,7 +17,7 @@ storiesOf('Components|Note', module)
     'default',
     withNotes(NoteNotes)(() => (
       <Note
-        noteType={selectV2(
+        noteType={select(
           'noteType',
           [Note.Type.POSITIVE, Note.Type.NEGATIVE, Note.Type.PRIMARY],
           Note.defaultProps.noteType,

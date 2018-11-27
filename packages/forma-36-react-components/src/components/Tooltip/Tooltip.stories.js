@@ -1,11 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text } from '@storybook/addon-knobs/react';
+import { text, select } from '@storybook/addon-knobs';
 import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
 import Tooltip from './Tooltip';
 import TextLink from '../TextLink';
-import { selectV2 } from '../../../node_modules/@storybook/addon-knobs/dist/react';
 
 storiesOf('Components|Tooltip', module)
   .addDecorator(
@@ -19,7 +18,7 @@ storiesOf('Components|Tooltip', module)
     withInfo()(() => (
       <div>
         <Tooltip
-          place={selectV2(
+          place={select(
             'Initial place',
             {
               Top: 'top',
@@ -43,7 +42,7 @@ storiesOf('Components|Tooltip', module)
       <div style={{ fontSize: 14 }}>
         Lorem Ipsum dolor sit amet &nbsp;
         <Tooltip
-          place={selectV2(
+          place={select(
             'Initial place',
             {
               Top: 'top',

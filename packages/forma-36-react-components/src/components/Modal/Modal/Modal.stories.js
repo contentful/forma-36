@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, boolean, selectV2 } from '@storybook/addon-knobs/react';
+import { text, boolean, select } from '@storybook/addon-knobs';
 import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
 import { withState } from '@dump247/storybook-state';
@@ -45,7 +45,7 @@ storiesOf('Components|Modal', module)
               'shouldCloseOnOverlayClick',
               Modal.defaultProps.shouldCloseOnOverlayClick,
             )}
-            size={selectV2(
+            size={select(
               'size',
               [
                 Modal.Sizes.SMALL,
@@ -56,7 +56,7 @@ storiesOf('Components|Modal', module)
               ],
               Modal.defaultProps.size,
             )}
-            position={selectV2(
+            position={select(
               'position',
               [Modal.Positions.CENTER, Modal.Positions.TOP],
               Modal.defaultProps.position,
