@@ -5,9 +5,9 @@ import ValidationMessage from '../ValidationMessage';
 import FormLabel from '../FormLabel';
 import HelpText from '../HelpText';
 import TextInput from '../TextInput';
-import styles from './TextField.css';
 import TextLink from '../TextLink';
 import Textarea from '../Textarea';
+import styles from './TextField.css';
 
 class TextField extends React.Component {
   static propTypes = {
@@ -123,20 +123,17 @@ class TextField extends React.Component {
                 {helpText}
               </HelpText>
             )}
-            {countCharacters &&
-              textInputProps &&
-              textInputProps.maxLength && (
-                <HelpText
-                  extraClassNames={cn(
-                    styles['TextField__help-text'],
-                    styles.TextField__count,
-                  )}
-                >
-                  {this.state.value ? this.state.value.length : 0}
-                  /
-                  {textInputProps.maxLength}
-                </HelpText>
-              )}
+            {countCharacters && textInputProps && textInputProps.maxLength && (
+              <HelpText
+                extraClassNames={cn(
+                  styles['TextField__help-text'],
+                  styles.TextField__count,
+                )}
+              >
+                {this.state.value ? this.state.value.length : 0}/
+                {textInputProps.maxLength}
+              </HelpText>
+            )}
           </div>
         )}
       </div>

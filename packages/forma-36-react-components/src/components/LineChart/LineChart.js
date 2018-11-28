@@ -5,8 +5,8 @@ import { merge, update, flow, isArray } from 'lodash/fp';
 
 import Spinner from '../Spinner';
 
-import styles from './LineChart.css';
 import baseStyle, { seriesBaseStyle } from './baseStyle';
+import styles from './LineChart.css';
 
 export default class LineChart extends React.Component {
   static propTypes = {
@@ -77,12 +77,10 @@ export default class LineChart extends React.Component {
       this.chartInstance.setOption(
         flow(
           merge(baseStyle),
-          update(
-            'series',
-            series =>
-              isArray(series)
-                ? series.map(merge(seriesBaseStyle))
-                : merge(seriesBaseStyle, series),
+          update('series', series =>
+            isArray(series)
+              ? series.map(merge(seriesBaseStyle))
+              : merge(seriesBaseStyle, series),
           ),
         )(options),
       );

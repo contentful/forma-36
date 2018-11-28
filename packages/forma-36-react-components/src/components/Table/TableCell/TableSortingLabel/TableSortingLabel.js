@@ -5,8 +5,8 @@ import cn from 'classnames';
 import { iconName } from '../../../Icon/constants';
 import Icon from '../../../Icon/Icon';
 import { sortingDirections } from '../TableCell/TableCell';
-import styles from './TableSortingLabel.css';
 import TabFocusTrap from '../../../TabFocusTrap';
+import styles from './TableSortingLabel.css';
 
 export default class TableSortingLabel extends React.Component {
   static propTypes = {

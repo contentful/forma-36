@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import styles from './ToggleButton.css';
 import Card from '../Card/Card';
 import Icon from '../Icon/Icon';
 import TabFocusTrap from '../TabFocusTrap/TabFocusTrap';
+import styles from './ToggleButton.css';
 
 class ToggleButton extends React.Component {
   static propTypes = {

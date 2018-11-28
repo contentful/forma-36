@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import cn from 'classnames';
 import { CSSTransition } from 'react-transition-group';
 import AnimateHeight from 'react-animate-height';
-import styles from './CardLoading.css';
 import Card from '../Card';
 import Spinner from '../../Spinner';
+import styles from './CardLoading.css';
 
 class CardLoading extends React.Component {
   static propTypes = {

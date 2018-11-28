@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import styles from './ControlledInputField.css';
 import FormLabel from '../FormLabel';
 import HelpText from '../HelpText';
 import ValidationMessage from '../ValidationMessage';
 import ControlledInput from '../ControlledInput/ControlledInput';
+import styles from './ControlledInputField.css';
 
 export const ControlledInputFieldPropTypes = {
   extraClassNames: PropTypes.string,

@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import styles from './Icon.css';
 import { iconName } from './constants';
 
 import ArrowDown from './svg/ArrowDown.svg';
@@ -116,6 +115,8 @@ import Users from './svg/Users.svg';
 import UsersTrimmed from './svg/UsersTrimmed.svg';
 import Warning from './svg/Warning.svg';
 import WarningTrimmed from './svg/WarningTrimmed.svg';
+
+import styles from './Icon.css';
 
 class Icon extends React.Component {
   static propTypes = {
