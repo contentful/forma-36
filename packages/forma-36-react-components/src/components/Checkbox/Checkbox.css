@@ -1,9 +1,0 @@
-@import 'settings/a11y';
-
-.Checkbox {
-  display: inline-block;
-}
-
-.Checkbox--disabled {
-  cursor: not-allowed;
-}
