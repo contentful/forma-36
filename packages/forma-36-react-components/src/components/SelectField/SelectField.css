@@ -8,7 +8,7 @@
 
 .SelectField__label-wrapper {
   display: flex;
-  font-size: var(--font-size-paragraph);
+  font-size: var(--font-size-m);
   align-items: center;
 }
 

@@ -15,7 +15,7 @@
   border: 0;
   padding: 0;
   font-family: var(--font-stack-primary);
-  font-size: var(--font-size-paragraph);
+  font-size: var(--font-size-m);
   text-decoration: underline;
   background: none;
   transition: color var(--transition-duration-short)

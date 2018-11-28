@@ -40,7 +40,7 @@
   font-family: var(--font-stack-primary);
   cursor: pointer;
   line-height: 1.5;
-  font-size: var(--font-size-paragraph);
+  font-size: var(--font-size-m);
   outline: none;
   background: transparent;
   border: none;
