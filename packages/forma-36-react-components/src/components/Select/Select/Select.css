@@ -16,7 +16,7 @@
   padding-right: calc(1rem * (39 / var(--rem-base)));
   background: transparent;
   color: var(--color-text-mid);
-  font-size: var(--font-size-paragraph);
+  font-size: var(--font-size-m);
   font-family: var(--font-stack-primary);
   border: 1px solid var(--color-element-mid);
   border-radius: 0;

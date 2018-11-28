@@ -14,7 +14,7 @@
   color: var(--color-white);
   cursor: default;
   font-family: var(--font-stack-primary);
-  font-size: var(--font-size-paragraph);
+  font-size: var(--font-size-m);
   font-weight: var(--font-weight-medium);
   line-height: var(--line-height-default);
 }

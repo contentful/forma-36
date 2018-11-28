@@ -5,7 +5,7 @@
 .FormLabel {
   display: inline-block;
   font-family: var(--font-stack-primary);
-  font-size: var(--font-size-paragraph);
+  font-size: var(--font-size-m);
   color: var(--color-text-dark);
   font-weight: var(--font-weight-medium);
   line-height: var(--line-height-default);
