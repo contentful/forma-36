@@ -1,10 +1,10 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import styles from './NotificationItem.css';
 import IconButton from '../IconButton';
 import Icon from '../Icon';
 import { iconName } from '../Icon/constants';
+import styles from './NotificationItem.css';
 
 const Icons = {
   success: iconName.CheckCircle,

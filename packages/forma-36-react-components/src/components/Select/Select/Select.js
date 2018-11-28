@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import styles from './Select.css';
 import Icon from '../../Icon/Icon';
+import styles from './Select.css';
 
 class Select extends React.Component {
   static propTypes = {
