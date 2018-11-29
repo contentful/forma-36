@@ -13,7 +13,7 @@ setDefaults({
 });
 
 setOptions({
-  name: 'UI Component Library',
+  name: 'Forma 36 Components',
   url: '#',
   hierarchyRootSeparator: /\|/,
   sidebarAnimations: false,
