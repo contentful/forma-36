@@ -2,6 +2,7 @@
 @import 'settings/borders';
 @import 'settings/typography';
 @import 'settings/transitions';
+@import 'settings/shadows';
 
 .Modal__portal {
   display: block;
@@ -84,7 +85,7 @@
   transform: scale(0.85);
   background-color: var(--color-white);
   border-radius: var(--border-radius-small);
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.35);
+  box-shadow: var(--box-shadow-heavy);
   max-height: calc(100vh - 1rem * (100 / var(--rem-base)));
   max-width: calc(100vw - 1rem * (100 / var(--rem-base)));
   overflow: hidden;

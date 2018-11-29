@@ -1,5 +1,6 @@
 @import 'settings/colors';
 @import 'settings/typography';
+@import 'settings/shadows';
 
 .Dropdown {
   display: inline-block;
@@ -8,7 +9,7 @@
 
 .Dropdown__container {
   background: var(--color-white);
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.075);
+  box-shadow: var(--box-shadow-default);
   border: calc(1rem * (1 / var(--rem-base))) solid var(--color-element-mid);
   list-style: none;
   padding: 0;
