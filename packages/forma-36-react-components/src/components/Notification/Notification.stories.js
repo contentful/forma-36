@@ -23,7 +23,7 @@ storiesOf('Components|Notification', module)
   )
   .add(
     'default',
-    withNotes(NotificationNotes)(() => {
+    withNotes({ markdown: NotificationNotes })(() => {
       button('set position: top', () => {
         Notification.setPosition('top');
       });

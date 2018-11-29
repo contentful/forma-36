@@ -15,7 +15,7 @@ storiesOf('Components|Note', module)
   )
   .add(
     'default',
-    withNotes(NoteNotes)(() => (
+    withNotes({ markdown: NoteNotes })(() => (
       <Note
         noteType={select(
           'noteType',
@@ -33,7 +33,7 @@ storiesOf('Components|Note', module)
   )
   .add(
     'all notes',
-    withNotes(NoteNotes)(() => (
+    withNotes({ markdown: NoteNotes })(() => (
       <div>
         <Note>
           A piece of information that is relevant to the context the user is

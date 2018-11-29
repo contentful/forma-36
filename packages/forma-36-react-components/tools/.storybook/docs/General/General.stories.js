@@ -2,9 +2,12 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
+import MarkdownIt from 'markdown-it';
 
 import DocPage from './../../components/DocPage/DocPage';
 import Notes from './General.md';
+
+const md = new MarkdownIt();
 
 storiesOf('Documentation|General', module)
   .addDecorator(
@@ -18,7 +21,7 @@ storiesOf('Documentation|General', module)
     'General',
     withInfo()(() => (
       <DocPage>
-        <div dangerouslySetInnerHTML={{ __html: Notes }} />
+        <div dangerouslySetInnerHTML={{ __html: md.render(Notes) }} />
       </DocPage>
     )),
   );

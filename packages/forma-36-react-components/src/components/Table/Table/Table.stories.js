@@ -13,7 +13,9 @@ import TableRow from '../TableRow';
 
 storiesOf('Components|Table', module)
   .addDecorator((story, context) => withInfo()(story)(context))
-  .addDecorator((story, context) => withNotes(TableNotes)(story)(context))
+  .addDecorator((story, context) =>
+    withNotes({ markdown: TableNotes })(story)(context),
+  )
   .addDecorator(
     host({
       align: 'center top',
