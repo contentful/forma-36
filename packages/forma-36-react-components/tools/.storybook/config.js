@@ -8,10 +8,6 @@ import { withOptions } from '@storybook/addon-options';
 // Setup Addons
 addDecorator(withKnobs);
 
-withInfo({
-  header: false,
-});
-
 addDecorator(
   withOptions({
     name: 'Forma 36 React Components',
