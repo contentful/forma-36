@@ -371,3 +371,34 @@ export const lineHeights = [
     value: '1.25',
   },
 ];
+
+export const boxShadows = [
+  {
+    name: 'Box Shadow',
+    cssVar: '--box-shadow-default',
+    value: '0px 1px 3px rgba(0, 0, 0, 0.08)',
+  },
+  {
+    name: 'Modal Box Shadow',
+    cssVar: '--box-shadow-heavy',
+    value: '0px 2px 3px rgba(0, 0, 0, 0.35)',
+  },
+];
+
+export const focusBoxShadows = [
+  {
+    name: 'Primary',
+    cssVar: '--glow-primary',
+    value: '0px 0px 7px #3c80cf',
+  },
+  {
+    name: 'Negative',
+    cssVar: '--glow-negative',
+    value: '0px 0px 7px #d9453f',
+  },
+  {
+    name: 'Positive',
+    cssVar: '--glow-positive',
+    value: '0px 0px 7px #0eb87f',
+  },
+];
