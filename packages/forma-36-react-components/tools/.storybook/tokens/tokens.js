@@ -402,3 +402,41 @@ export const focusBoxShadows = [
     value: '0px 0px 7px #0eb87f',
   },
 ];
+
+export const transitions = [
+  {
+    name: 'Short',
+    cssVar: '--transition-duration-short',
+    value: '0.1.s',
+  },
+  {
+    name: 'Default',
+    cssVar: '--transition-duration-default',
+    value: '0.2s',
+  },
+  {
+    name: 'Long',
+    cssVar: '--transition-duration-long',
+    value: '0.3s',
+  },
+];
+
+export const easings = [
+  {
+    name: 'Easing Default',
+    cssVar: '--transition-easing-default',
+    value: 'ease-in-out',
+  },
+  {
+    name: 'Cubic Bezier',
+    cssVar: '--transition-cubic-bezier',
+    value: 'cubic-bezier(0.13, 0.62, 0.11, 0.99)',
+  },
+];
+
+export const animations = [
+  {
+    name: 'Rotate',
+    animationName: 'rotate-cw',
+  },
+];
