@@ -2,9 +2,12 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
+import MarkdownIt from 'markdown-it';
 
 import DocPage from './../../components/DocPage/DocPage';
 import Notes from './{{pascalCase name}}.md';
+
+const md = new MarkdownIt();
 
 storiesOf('Documentation|{{pascalCase name}}', module)
   .addDecorator(
@@ -18,7 +21,7 @@ storiesOf('Documentation|{{pascalCase name}}', module)
     '{{pascalCase name}}',
     withInfo()(() => (
       <DocPage>
-        <div dangerouslySetInnerHTML=\{{ __html: Notes }} />
+        <div dangerouslySetInnerHTML=\{{ __html: md.render(Notes) }} />
       </DocPage>
     )),
   );

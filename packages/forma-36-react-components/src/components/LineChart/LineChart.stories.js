@@ -16,7 +16,7 @@ storiesOf('Components|LineChart', module)
   )
   .add(
     'default',
-    withNotes(Notes)(() => (
+    withNotes({ markdown: Notes })(() => (
       <LineChart
         options={object('Configuration object', {
           xAxis: {

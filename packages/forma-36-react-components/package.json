@@ -52,6 +52,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^22.1.4",
     "jest-axe": "^2.1.4",
+    "markdown-it": "^8.4.2",
     "mini-css-extract-plugin": "^0.4.5",
     "optimize-css-assets-webpack-plugin": "5.0.1",
     "plop": "^2.0.0",

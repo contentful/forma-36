@@ -16,7 +16,7 @@ storiesOf('Blueprints|[TBA] WidgetsReference', module)
   )
   .add(
     'Reference - Entry link',
-    withNotes(ReferenceEntryLinkNotes)(() => (
+    withNotes({ markdown: ReferenceEntryLinkNotes })(() => (
       <div>
         <img
           src="https://contentful.atlassian.net/wiki/download/attachments/412385434/Screen%20Shot%202018-04-04%20at%2016.39.43.png?version=1&modificationDate=1522852835654&cacheVersion=1&api=v2"
@@ -27,7 +27,7 @@ storiesOf('Blueprints|[TBA] WidgetsReference', module)
   )
   .add(
     'Reference - Entry Card',
-    withNotes(ReferenceEntryCardNotes)(() => (
+    withNotes({ markdown: ReferenceEntryCardNotes })(() => (
       <div>
         <img
           src="https://contentful.atlassian.net/wiki/download/attachments/412385434/Screen%20Shot%202018-04-04%20at%2016.41.03.png?version=1&modificationDate=1522852893639&cacheVersion=1&api=v2"
@@ -38,7 +38,7 @@ storiesOf('Blueprints|[TBA] WidgetsReference', module)
   )
   .add(
     'Reference, many - Entry links lists',
-    withNotes(ReferenceManyEntryLinksListNotes)(() => (
+    withNotes({ markdown: ReferenceManyEntryLinksListNotes })(() => (
       <div>
         <img
           src="https://contentful.atlassian.net/wiki/download/attachments/412385434/Screen%20Shot%202018-04-04%20at%2016.42.33.png?version=1&modificationDate=1522852983434&cacheVersion=1&api=v2"
@@ -49,7 +49,7 @@ storiesOf('Blueprints|[TBA] WidgetsReference', module)
   )
   .add(
     'Reference, many - Entry cards',
-    withNotes(ReferenceManyEntryCardsNotes)(() => (
+    withNotes({ markdown: ReferenceManyEntryCardsNotes })(() => (
       <div>
         <img
           src="https://contentful.atlassian.net/wiki/download/attachments/412385434/Screen%20Shot%202018-04-04%20at%2016.43.42.png?version=1&modificationDate=1522853037975&cacheVersion=1&api=v2"
