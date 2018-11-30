@@ -53,6 +53,8 @@ import Subheading from './components/Typography/Subheading';
 import SectionHeading from './components/Typography/SectionHeading';
 import Paragraph from './components/Typography/Paragraph';
 import DisplayText from './components/Typography/DisplayText';
+import List from './components/List/List';
+import ListItem from './components/List/ListItem';
 // -- Add imports above this line (required by plopfile.js) --
 // The above line is used as a insert marker when autogenerating components with `yarn add-component`
 
@@ -112,6 +114,8 @@ module.exports = {
   SectionHeading,
   Paragraph,
   DisplayText,
+  List,
+  ListItem,
   // -- Add exports above this line (required by plopfile.js) --
   // The above line is used as a insert marker when autogenerating components with `yarn add-component`
 };

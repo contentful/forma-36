@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component 1`] = `
+<ul
+  className="List"
+  data-test-id="cf-ui-list"
+>
+  <ListItem
+    testId="cf-ui-list-item"
+  >
+    Item
+  </ListItem>
+</ul>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+<ul
+  className="List my-extra-class"
+  data-test-id="cf-ui-list"
+>
+  <ListItem
+    testId="cf-ui-list-item"
+  >
+    Item
+  </ListItem>
+</ul>
+`;

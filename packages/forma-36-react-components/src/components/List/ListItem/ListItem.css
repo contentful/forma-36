@@ -1,0 +1,13 @@
+@import 'settings/colors';
+@import 'settings/typography';
+@import 'settings/transitions';
+
+.ListItem {
+  font-size: var(--font-size-paragraph);
+  font-family: var(--font-stack-primary);
+  line-height: var(--line-height-default);
+}
+
+.ListItem--nested-list {
+  list-style: none;
+}
