@@ -1,14 +1,26 @@
 const path = require('path');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
-  entry: path.join(__dirname, '../src/index.js'),
-  output: {
-    path: path.join(__dirname, '../dist'),
-    filename: 'styles.css',
-    chunkFilename: 'chunk_[name]_[hash].js',
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        styles: {
+          name: 'styles',
+          test: /\.css$/,
+          chunks: 'all',
+          enforce: true,
+        },
+      },
+    },
   },
+
+  plugins: [
+    new MiniCssExtractPlugin({ filename: '[name].css' }),
+    new OptimizeCssAssetsPlugin(),
+  ],
+
   module: {
     rules: [
       {
@@ -20,29 +32,29 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                importLoaders: 1,
-                modules: true,
-                localIdentName: '[name]__[local]___[hash:base64:5]',
-                sourceMap: true,
-                minimize: true,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: true,
+              localIdentName: '[name]__[local]___[hash:base64:5]',
+              sourceMap: true,
+              minimize: true,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              config: {
+                path: path.resolve(__dirname, './postcss.config.js'),
               },
             },
-            {
-              loader: 'postcss-loader',
-              options: {
-                config: {
-                  path: path.resolve(__dirname, './postcss.config.js'),
-                },
-              },
-            },
-          ],
-        }),
+          },
+        ],
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
@@ -50,5 +62,4 @@ module.exports = {
       },
     ],
   },
-  plugins: [new ExtractTextPlugin('styles.css'), new OptimizeCssAssetsPlugin()],
 };

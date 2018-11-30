@@ -10,7 +10,7 @@
   font-family: var(--font-stack-primary);
   font-weight: var(--font-weight-normal);
   line-height: var(--line-height-default);
-  font-size: var(--font-size-paragraph);
+  font-size: var(--font-size-m);
   color: var(--color-text-mid);
   display: flex;
   flex-direction: row;

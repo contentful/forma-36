@@ -7,7 +7,6 @@
   font-family: var(--font-stack-primary);
   font-weight: var(--font-weight-demi-bold);
   color: var(--color-text-dark);
-  font-size: var(--font-size-heading);
   line-height: var(--line-height-condensed);
   text-rendering: optimizeLegibility;
   margin: 0;

@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import styles from './AssetCard.css';
 import CardLoading from '../CardLoading';
 import Dropdown from '../../Dropdown/Dropdown';
 import Asset from '../../Asset';
 import Icon from '../../Icon/Icon';
 import TabFocusTrap from '../../TabFocusTrap';
 import Tag from '../../Tag';
+import styles from './AssetCard.css';
 
 class AssetCard extends React.Component {
   static propTypes = {

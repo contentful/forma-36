@@ -14,7 +14,7 @@ storiesOf('Blueprints|[TBA] WidgetsNumber', module)
   )
   .add(
     'Integer - Number editor',
-    withNotes(IntegerNumberEditorNotes)(() => (
+    withNotes({ markdown: IntegerNumberEditorNotes })(() => (
       <div>
         <img
           src="https://contentful.atlassian.net/wiki/download/attachments/412385434/Screen%20Shot%202018-04-04%20at%2016.26.22.png?version=1&modificationDate=1522851996462&cacheVersion=1&api=v2"
@@ -25,7 +25,7 @@ storiesOf('Blueprints|[TBA] WidgetsNumber', module)
   )
   .add(
     'Integer - Rating',
-    withNotes(IntegerRatingNotes)(() => (
+    withNotes({ markdown: IntegerRatingNotes })(() => (
       <div>
         <img
           src="https://contentful.atlassian.net/wiki/download/attachments/412385434/Screen%20Shot%202018-04-04%20at%2016.27.07.png?version=1&modificationDate=1522852042372&cacheVersion=1&api=v2"

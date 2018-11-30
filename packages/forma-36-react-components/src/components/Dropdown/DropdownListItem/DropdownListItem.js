@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import styles from './DropdownListItem.css';
 import TabFocusTrap from '../../TabFocusTrap/TabFocusTrap';
+import styles from './DropdownListItem.css';
 
 class DropdownListItem extends React.Component {
   static propTypes = {

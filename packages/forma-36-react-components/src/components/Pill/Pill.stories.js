@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { text, selectV2 } from '@storybook/addon-knobs/react';
+import { text, select } from '@storybook/addon-knobs';
 import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
 
@@ -18,7 +18,7 @@ storiesOf('Components|Pill', module)
     'default',
     withInfo()(() => (
       <Pill
-        status={selectV2(
+        status={select(
           'Status',
           {
             'Primary (default)': 'primary',
@@ -36,7 +36,7 @@ storiesOf('Components|Pill', module)
     'onDrag',
     withInfo()(() => (
       <Pill
-        status={selectV2(
+        status={select(
           'Status',
           {
             'Primary (default)': 'primary',
@@ -55,7 +55,7 @@ storiesOf('Components|Pill', module)
     'onClose',
     withInfo()(() => (
       <Pill
-        status={selectV2(
+        status={select(
           'Status',
           {
             'Primary (default)': 'primary',

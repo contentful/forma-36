@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import styles from './InViewport.css';
 import isBrowser from '../../utils/isBrowser';
 import throttle from '../../utils/throttle';
+import styles from './InViewport.css';
 
 class InViewport extends React.Component {
   static propTypes = {

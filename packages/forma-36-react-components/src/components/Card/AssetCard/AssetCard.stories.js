@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, selectV2, boolean } from '@storybook/addon-knobs/react';
+import { text, select, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
@@ -22,7 +22,7 @@ storiesOf('Components|Card/AssetCard', module)
     withInfo()(() => (
       <AssetCard
         extraClassNames={text('Extra Class Names', '')}
-        status={selectV2(
+        status={select(
           'Status',
           {
             Draft: 'draft',
@@ -32,7 +32,7 @@ storiesOf('Components|Card/AssetCard', module)
           },
           'published',
         )}
-        type={selectV2('Asset Type', types, 'archive')}
+        type={select('Asset Type', types, 'archive')}
         isLoading={boolean('Is Loading', false)}
         src={text('Source', 'https://placekitten.com/200/300')}
         title={text('Title', 'Image of a cat')}
@@ -44,7 +44,7 @@ storiesOf('Components|Card/AssetCard', module)
     withInfo()(() => (
       <AssetCard
         extraClassNames={text('Extra Class Names', '')}
-        status={selectV2(
+        status={select(
           'Status',
           {
             Draft: 'draft',
@@ -54,7 +54,7 @@ storiesOf('Components|Card/AssetCard', module)
           },
           'published',
         )}
-        type={selectV2('Asset Type', types, 'image')}
+        type={select('Asset Type', types, 'image')}
         isLoading={boolean('Is Loading', false)}
         src={text('Source', 'https://placekitten.com/200/300')}
         title={text('Title', 'Image of a cat')}

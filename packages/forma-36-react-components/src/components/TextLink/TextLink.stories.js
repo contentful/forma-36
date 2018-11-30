@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, selectV2, boolean } from '@storybook/addon-knobs/react';
+import { text, select, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
@@ -21,7 +21,7 @@ storiesOf('Components|TextLink', module)
       <TextLink
         href={text('Href', '')}
         onClick={action('onClick')}
-        linkType={selectV2(
+        linkType={select(
           'Link Type',
           {
             'Primary (default)': 'primary',
@@ -34,7 +34,7 @@ storiesOf('Components|TextLink', module)
         )}
         disabled={boolean('Disabled', false)}
         extraClassNames={text('Extra Class Names', '')}
-        icon={selectV2('Icon', ['', ...Object.keys(iconName)], undefined)}
+        icon={select('Icon', ['', ...Object.keys(iconName)], undefined)}
       >
         {text('Label (children)', 'Text Link Label')}
       </TextLink>

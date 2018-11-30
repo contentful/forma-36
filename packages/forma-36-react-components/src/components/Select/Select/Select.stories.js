@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf, action } from '@storybook/react';
-import { text, boolean, selectV2 } from '@storybook/addon-knobs/react';
+import { text, boolean, select } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 import { host } from 'storybook-host';
 import Select from './Select';
@@ -25,7 +25,7 @@ storiesOf('Components|Select', module)
         onChange={action('onChange')}
         onBlur={action('onBlur')}
         onFocus={action('onFocus')}
-        width={selectV2(
+        width={select(
           'Width',
           {
             'Full (default)': 'full',

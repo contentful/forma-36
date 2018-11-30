@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, selectV2, boolean } from '@storybook/addon-knobs/react';
+import { text, select, boolean } from '@storybook/addon-knobs';
 import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
 
@@ -32,7 +32,7 @@ storiesOf('Components|Card/InlineReferenceCard', module)
           extraClassNames={text('Extra Class Names', '')}
           isLoading={boolean('is Loading', false)}
           isSelected={boolean('is selected', false)}
-          status={selectV2(
+          status={select(
             'Type',
             {
               published: 'published',
@@ -62,7 +62,7 @@ storiesOf('Components|Card/InlineReferenceCard', module)
           extraClassNames={text('Extra Class Names', '')}
           isLoading={boolean('is Loading', false)}
           isSelected={boolean('is selected', false)}
-          status={selectV2(
+          status={select(
             'Type',
             {
               published: 'published',

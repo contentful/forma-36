@@ -5,8 +5,8 @@ import ValidationMessage from '../ValidationMessage';
 import FormLabel from '../FormLabel';
 import HelpText from '../HelpText';
 import Select from '../Select/Select';
-import styles from './SelectField.css';
 import TextLink from '../TextLink';
+import styles from './SelectField.css';
 
 class SelectField extends React.Component {
   static propTypes = {

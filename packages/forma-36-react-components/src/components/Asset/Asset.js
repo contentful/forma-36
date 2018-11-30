@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import styles from './Asset.css';
 import Illustration from '../Illustration';
+import styles from './Asset.css';
 
 export const types = {
   Archive: 'archive',

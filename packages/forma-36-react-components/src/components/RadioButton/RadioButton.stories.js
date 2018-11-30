@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, boolean } from '@storybook/addon-knobs/react';
+import { text, boolean } from '@storybook/addon-knobs';
 import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
 import RadioButton from './RadioButton';

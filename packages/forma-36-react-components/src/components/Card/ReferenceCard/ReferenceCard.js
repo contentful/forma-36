@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import truncate from 'truncate';
-import styles from './ReferenceCard.css';
 import CardLoading from '../CardLoading';
 import Tag from '../../Tag';
+import styles from './ReferenceCard.css';
 
 class ReferenceCard extends React.Component {
   static propTypes = {

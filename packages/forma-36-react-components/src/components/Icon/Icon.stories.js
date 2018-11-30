@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, selectV2 } from '@storybook/addon-knobs/react';
+import { text, select } from '@storybook/addon-knobs';
 import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
 
@@ -18,8 +18,8 @@ storiesOf('Components|Icon', module)
     'default',
     withInfo()(() => (
       <Icon
-        icon={selectV2('Icon', Object.keys(iconName), Object.keys(iconName)[0])}
-        size={selectV2(
+        icon={select('Icon', Object.keys(iconName), Object.keys(iconName)[0])}
+        size={select(
           'Size',
           {
             'Small (default)': 'small',
@@ -27,7 +27,7 @@ storiesOf('Components|Icon', module)
           },
           'small',
         )}
-        color={selectV2(
+        color={select(
           'Color',
           {
             'Primary (default)': 'primary',

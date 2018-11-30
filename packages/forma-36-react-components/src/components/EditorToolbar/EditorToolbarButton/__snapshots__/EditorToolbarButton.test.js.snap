@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
-<React.Fragment>
+<Fragment>
   <Tooltip
     containerElement="span"
     isVisible={false}
@@ -27,11 +27,11 @@ exports[`renders the component 1`] = `
       withDropdown={false}
     />
   </Tooltip>
-</React.Fragment>
+</Fragment>
 `;
 
 exports[`renders the component as active 1`] = `
-<React.Fragment>
+<Fragment>
   <Tooltip
     containerElement="span"
     content="H1"
@@ -58,11 +58,11 @@ exports[`renders the component as active 1`] = `
       withDropdown={false}
     />
   </Tooltip>
-</React.Fragment>
+</Fragment>
 `;
 
 exports[`renders the component as disabled 1`] = `
-<React.Fragment>
+<Fragment>
   <Tooltip
     containerElement="span"
     isVisible={false}
@@ -89,11 +89,11 @@ exports[`renders the component as disabled 1`] = `
       withDropdown={false}
     />
   </Tooltip>
-</React.Fragment>
+</Fragment>
 `;
 
 exports[`renders the component with a tooltip 1`] = `
-<React.Fragment>
+<Fragment>
   <Tooltip
     containerElement="span"
     content="H1"
@@ -120,11 +120,11 @@ exports[`renders the component with a tooltip 1`] = `
       withDropdown={false}
     />
   </Tooltip>
-</React.Fragment>
+</Fragment>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
-<React.Fragment>
+<Fragment>
   <Tooltip
     containerElement="span"
     isVisible={false}
@@ -150,11 +150,11 @@ exports[`renders the component with an additional class name 1`] = `
       withDropdown={false}
     />
   </Tooltip>
-</React.Fragment>
+</Fragment>
 `;
 
 exports[`renders with a dropdown indicator 1`] = `
-<React.Fragment>
+<Fragment>
   <Tooltip
     containerElement="span"
     content="H1"
@@ -181,5 +181,5 @@ exports[`renders with a dropdown indicator 1`] = `
       withDropdown={true}
     />
   </Tooltip>
-</React.Fragment>
+</Fragment>
 `;

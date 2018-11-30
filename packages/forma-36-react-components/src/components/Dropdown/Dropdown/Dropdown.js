@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import styles from './Dropdown.css';
 import DropdownListItem from '../DropdownListItem/DropdownListItem';
 import isBrowser from '../../../utils/isBrowser';
 import InViewport from '../../InViewport';
+import styles from './Dropdown.css';
 
 class Dropdown extends React.Component {
   static propTypes = {
