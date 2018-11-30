@@ -1,0 +1,25 @@
+{
+    "name": "@contentful/forma-36-css-utilities",
+    "description": "Forma 36 CSS Utilities",
+    "version": "0.0.1",
+    "main": "dist/index.js",
+    "style": "dist/styles.css",
+    "license": "MIT",
+    "files": [
+      "dist"
+    ],
+    "devDependencies": {
+    },
+    "dependencies": {
+    },
+    "scripts": {
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/contentful/forma-36.git"
+    },
+    "publishConfig": {
+      "access": "public"
+    }
+  }
+  
