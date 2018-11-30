@@ -16,7 +16,7 @@ storiesOf('Blueprints|[TBA] WidgetsDateTime', module)
   )
   .add(
     'DateTime - Date only',
-    withNotes(DateOnlyNotes)(() => (
+    withNotes({ markdown: DateOnlyNotes })(() => (
       <div>
         <img
           src="https://contentful.atlassian.net/wiki/download/attachments/412385434/Screen%20Shot%202018-04-04%20at%2016.27.45.png?version=1&modificationDate=1522852124689&cacheVersion=1&api=v2"
@@ -27,7 +27,7 @@ storiesOf('Blueprints|[TBA] WidgetsDateTime', module)
   )
   .add(
     'DateTime - Date and time without timezone (AM/PM)',
-    withNotes(DateTimeWithoutTimezoneAMPMNotes)(() => (
+    withNotes({ markdown: DateTimeWithoutTimezoneAMPMNotes })(() => (
       <div>
         <img
           src="https://contentful.atlassian.net/wiki/download/attachments/412385434/Screen%20Shot%202018-04-04%20at%2016.27.54.png?version=1&modificationDate=1522852172921&cacheVersion=1&api=v2"
@@ -38,7 +38,7 @@ storiesOf('Blueprints|[TBA] WidgetsDateTime', module)
   )
   .add(
     'DateTime - Date and time without timezone (24H)',
-    withNotes(DateTimeWithoutTimezone24HNotes)(() => (
+    withNotes({ markdown: DateTimeWithoutTimezone24HNotes })(() => (
       <div>
         <img
           src="https://contentful.atlassian.net/wiki/download/attachments/412385434/Screen%20Shot%202018-04-04%20at%2016.27.58.png?version=1&modificationDate=1522852223093&cacheVersion=1&api=v2"
@@ -49,7 +49,7 @@ storiesOf('Blueprints|[TBA] WidgetsDateTime', module)
   )
   .add(
     'DateTime - Date and time with timezone (AM/PM)',
-    withNotes(DateTimeWithTimezoneAMPMNotes)(() => (
+    withNotes({ markdown: DateTimeWithTimezoneAMPMNotes })(() => (
       <div>
         <img
           src="https://contentful.atlassian.net/wiki/download/attachments/412385434/Screen%20Shot%202018-04-04%20at%2016.28.02.png?version=1&modificationDate=1522852250909&cacheVersion=1&api=v2"

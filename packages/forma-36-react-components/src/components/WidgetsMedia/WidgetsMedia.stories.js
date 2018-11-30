@@ -15,7 +15,7 @@ storiesOf('Blueprints|[TBA] WidgetsMedia', module)
   )
   .add(
     'Media - Default',
-    withNotes(MediaDefaultNotes)(() => (
+    withNotes({ markdown: MediaDefaultNotes })(() => (
       <div>
         <img
           src="https://contentful.atlassian.net/wiki/download/attachments/412385434/Screen%20Shot%202018-04-04%20at%2016.33.12.png?version=1&modificationDate=1522852430682&cacheVersion=1&api=v2"
@@ -26,7 +26,7 @@ storiesOf('Blueprints|[TBA] WidgetsMedia', module)
   )
   .add(
     'Media, many - Asset link list',
-    withNotes(MediaManyAssetLinkListNotes)(() => (
+    withNotes({ markdown: MediaManyAssetLinkListNotes })(() => (
       <div>
         <img
           src="https://contentful.atlassian.net/wiki/download/attachments/412385434/Screen%20Shot%202018-04-04%20at%2016.34.18.png?version=1&modificationDate=1522852471466&cacheVersion=1&api=v2"
@@ -37,7 +37,7 @@ storiesOf('Blueprints|[TBA] WidgetsMedia', module)
   )
   .add(
     'Media, many - Asset gallery',
-    withNotes(MediaManyAssetGalleryNotes)(() => (
+    withNotes({ markdown: MediaManyAssetGalleryNotes })(() => (
       <div>
         <img
           src="https://contentful.atlassian.net/wiki/download/attachments/412385434/Screen%20Shot%202018-04-04%20at%2016.35.02.png?version=1&modificationDate=1522852514552&cacheVersion=1&api=v2"

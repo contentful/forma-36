@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, boolean, selectV2, number } from '@storybook/addon-knobs/react';
+import { text, boolean, select, number } from '@storybook/addon-knobs';
 import { host } from 'storybook-host';
 import { action } from '@storybook/addon-actions';
 import { withInfo } from '@storybook/addon-info';
@@ -24,7 +24,7 @@ storiesOf('Components|TextInput', module)
         withCopyButton={boolean('With Copy Button', false)}
         value={text('Value', '123456')}
         maxLength={number('Max Length Characters', 50)}
-        width={selectV2(
+        width={select(
           'Width',
           {
             'Full (default)': 'full',

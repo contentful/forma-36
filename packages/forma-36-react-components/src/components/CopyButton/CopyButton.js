@@ -2,10 +2,10 @@ import React from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import styles from './CopyButton.css';
 import Icon from '../Icon';
 import Tooltip from '../Tooltip';
 import TabFocusTrap from '../TabFocusTrap';
+import styles from './CopyButton.css';
 
 class CopyButton extends React.Component {
   static propTypes = {

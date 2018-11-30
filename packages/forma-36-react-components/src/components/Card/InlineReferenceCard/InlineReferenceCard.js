@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import { CSSTransition } from 'react-transition-group';
-import styles from './InlineReferenceCard.css';
 import IconButton from '../../IconButton';
 import Dropdown from '../../Dropdown/Dropdown';
 import DropdownList from '../../Dropdown/DropdownList';
 import Card from '../Card';
 import Spinner from '../../Spinner';
+import styles from './InlineReferenceCard.css';
 
 class InlineReferenceCard extends React.Component {
   static propTypes = {

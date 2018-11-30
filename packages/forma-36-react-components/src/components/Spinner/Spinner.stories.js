@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, selectV2, number } from '@storybook/addon-knobs/react';
+import { text, select, number } from '@storybook/addon-knobs';
 import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
 
@@ -18,7 +18,7 @@ storiesOf('Components|Spinner', module)
     withInfo()(() => (
       <Spinner
         extraClassNames={text('Extra Class Names', '')}
-        size={selectV2(
+        size={select(
           'Size',
           {
             Default: 'default',
@@ -38,7 +38,7 @@ storiesOf('Components|Spinner', module)
         Loading{' '}
         <Spinner
           extraClassNames={text('Extra Class Names', '')}
-          size={selectV2(
+          size={select(
             'Size',
             {
               Default: 'default',

@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import styles from './Illustration.css';
 import { illustrationName } from './constants';
 
 import Archive from './svg/Archive.svg';
@@ -15,6 +14,8 @@ import Presentation from './svg/Presentation.svg';
 import Richtext from './svg/Richtext.svg';
 import Spreadsheet from './svg/Spreadsheet.svg';
 import Video from './svg/Video.svg';
+
+import styles from './Illustration.css';
 
 class Illustration extends React.Component {
   static propTypes = {

@@ -13,7 +13,7 @@ storiesOf('Blueprints|[TBA] WidgetsBoolean', module)
   )
   .add(
     'Boolean - Default',
-    withNotes(BooleanDefaultNotes)(() => (
+    withNotes({ markdown: BooleanDefaultNotes })(() => (
       <div>
         <img
           src="https://contentful.atlassian.net/wiki/download/attachments/412385434/Screen%20Shot%202018-04-04%20at%2016.35.44.png?version=1&modificationDate=1522852573776&cacheVersion=1&api=v2"

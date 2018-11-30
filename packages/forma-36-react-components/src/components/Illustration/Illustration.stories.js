@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, selectV2 } from '@storybook/addon-knobs/react';
+import { text, select } from '@storybook/addon-knobs';
 import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
 
@@ -18,7 +18,7 @@ storiesOf('Components|Illustration', module)
     'default',
     withInfo()(() => (
       <Illustration
-        illustration={selectV2(
+        illustration={select(
           'Illustration',
           Object.keys(illustrationName),
           Object.keys(illustrationName)[0],

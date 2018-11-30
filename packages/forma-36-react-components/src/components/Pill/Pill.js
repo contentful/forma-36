@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import Icon from '../Icon';
-import styles from './Pill.css';
 import { iconName } from './../Icon/constants';
 import TabFocusTrap from '../TabFocusTrap';
+import styles from './Pill.css';
 
 class Pill extends React.Component {
   static propTypes = {

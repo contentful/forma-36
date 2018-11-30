@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import styles from './TextInput.css';
 import CopyButton from '../CopyButton';
+import styles from './TextInput.css';
 
 class TextInput extends React.Component {
   static propTypes = {

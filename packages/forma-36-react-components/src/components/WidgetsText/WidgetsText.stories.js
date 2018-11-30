@@ -23,7 +23,7 @@ storiesOf('Blueprints|[TBA] WidgetsText', module)
   )
   .add(
     'Short text - Single line',
-    withNotes(ShortTextSingleLineNotes)(() => (
+    withNotes({ markdown: ShortTextSingleLineNotes })(() => (
       <div>
         <img
           src="https://contentful.atlassian.net/wiki/download/attachments/412385434/Screen%20Shot%202018-04-04%20at%2016.11.10.png?version=1&modificationDate=1522851085926&cacheVersion=1&api=v2"
@@ -34,7 +34,7 @@ storiesOf('Blueprints|[TBA] WidgetsText', module)
   )
   .add(
     'Short text - URL',
-    withNotes(ShortTextURLNotes)(() => (
+    withNotes({ markdown: ShortTextURLNotes })(() => (
       <div>
         <img
           src="https://contentful.atlassian.net/wiki/download/attachments/412385434/Screen%20Shot%202018-04-04%20at%2016.12.07.png?version=1&modificationDate=1522851153691&cacheVersion=1&api=v2"
@@ -45,7 +45,7 @@ storiesOf('Blueprints|[TBA] WidgetsText', module)
   )
   .add(
     'Short text - Dropdown',
-    withNotes(ShortTextDropdownNotes)(() => (
+    withNotes({ markdown: ShortTextDropdownNotes })(() => (
       <div>
         <img
           src="https://contentful.atlassian.net/wiki/download/attachments/412385434/Screen%20Shot%202018-04-04%20at%2016.13.23.png?version=1&modificationDate=1522851214783&cacheVersion=1&api=v2"
@@ -56,7 +56,7 @@ storiesOf('Blueprints|[TBA] WidgetsText', module)
   )
   .add(
     'Short text - Radio',
-    withNotes(ShortTextRadioNotes)(() => (
+    withNotes({ markdown: ShortTextRadioNotes })(() => (
       <div>
         <img
           src="https://contentful.atlassian.net/wiki/download/attachments/412385434/Screen%20Shot%202018-04-04%20at%2016.14.57.png?version=1&modificationDate=1522851328395&cacheVersion=1&api=v2"
@@ -67,7 +67,7 @@ storiesOf('Blueprints|[TBA] WidgetsText', module)
   )
   .add(
     'Short text - Slug',
-    withNotes(ShortTextSlugNotes)(() => (
+    withNotes({ markdown: ShortTextSlugNotes })(() => (
       <div>
         <img
           src="https://contentful.atlassian.net/wiki/download/attachments/412385434/Screen%20Shot%202018-04-04%20at%2016.16.20.png?version=1&modificationDate=1522851392817&cacheVersion=1&api=v2"
@@ -78,7 +78,7 @@ storiesOf('Blueprints|[TBA] WidgetsText', module)
   )
   .add(
     'Short text - Ooyala',
-    withNotes(ShortTextOoyalaNotes)(() => (
+    withNotes({ markdown: ShortTextOoyalaNotes })(() => (
       <div>
         <img
           src="https://contentful.atlassian.net/wiki/download/attachments/412385434/Screen%20Shot%202018-04-04%20at%2016.18.18.png?version=1&modificationDate=1522851517022&cacheVersion=1&api=v2"
@@ -89,7 +89,7 @@ storiesOf('Blueprints|[TBA] WidgetsText', module)
   )
   .add(
     'Short text, list - List',
-    withNotes(ShortTextListListNotes)(() => (
+    withNotes({ markdown: ShortTextListListNotes })(() => (
       <div>
         <img
           src="https://contentful.atlassian.net/wiki/download/attachments/412385434/Screen%20Shot%202018-04-04%20at%2016.18.51.png?version=1&modificationDate=1522851563175&cacheVersion=1&api=v2"
@@ -100,7 +100,7 @@ storiesOf('Blueprints|[TBA] WidgetsText', module)
   )
   .add(
     'Short text, list - Checkbox',
-    withNotes(ShortTextListCheckboxNotes)(() => (
+    withNotes({ markdown: ShortTextListCheckboxNotes })(() => (
       <div>
         <img
           src="https://contentful.atlassian.net/wiki/download/attachments/412385434/Screen%20Shot%202018-04-04%20at%2016.19.55.png?version=1&modificationDate=1522851607826&cacheVersion=1&api=v2"
@@ -111,7 +111,7 @@ storiesOf('Blueprints|[TBA] WidgetsText', module)
   )
   .add(
     'Short text, list - Tags',
-    withNotes(ShortTextListTagsNotes)(() => (
+    withNotes({ markdown: ShortTextListTagsNotes })(() => (
       <div>
         <img
           src="https://contentful.atlassian.net/wiki/download/attachments/412385434/Screen%20Shot%202018-04-04%20at%2016.21.14.png?version=1&modificationDate=1522851699157&cacheVersion=1&api=v2"
@@ -122,7 +122,7 @@ storiesOf('Blueprints|[TBA] WidgetsText', module)
   )
   .add(
     'Long text - Multiple line',
-    withNotes(LongTextMultipleLineNotes)(() => (
+    withNotes({ markdown: LongTextMultipleLineNotes })(() => (
       <div>
         <img
           src="https://contentful.atlassian.net/wiki/download/attachments/412385434/Screen%20Shot%202018-04-04%20at%2016.23.08.png?version=1&modificationDate=1522851812959&cacheVersion=1&api=v2"
@@ -133,7 +133,7 @@ storiesOf('Blueprints|[TBA] WidgetsText', module)
   )
   .add(
     'Long text - Markdown',
-    withNotes(LongTextMarkdownNotes)(() => (
+    withNotes({ markdown: LongTextMarkdownNotes })(() => (
       <div>
         <img
           src="https://contentful.atlassian.net/wiki/download/attachments/412385434/Screen%20Shot%202018-04-04%20at%2016.24.13.png?version=1&modificationDate=1522851884856&cacheVersion=1&api=v2"

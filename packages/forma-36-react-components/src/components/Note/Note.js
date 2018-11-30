@@ -1,9 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import styles from './Note.css';
 import Icon from '../Icon';
 import { iconName } from '../Icon/constants';
+import styles from './Note.css';
 
 export const NoteType = {
   PRIMARY: 'primary',

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import styles from './IconButton.css';
 import Icon from './../Icon';
 import TabFocusTrap from '../TabFocusTrap';
+import styles from './IconButton.css';
 
 class IconButton extends React.Component {
   static propTypes = {

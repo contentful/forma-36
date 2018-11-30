@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import styles from './Tooltip.css';
 import InViewport from '../InViewport';
+import styles from './Tooltip.css';
 
 const tooltipRoot = document.body;
 

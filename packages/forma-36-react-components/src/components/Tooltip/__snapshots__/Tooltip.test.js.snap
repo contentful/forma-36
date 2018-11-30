@@ -12,6 +12,37 @@ exports[`renders the component 1`] = `
   <span>
     hi
   </span>
+  <Portal
+    containerInfo={<div />}
+  >
+    <div
+      aria-hidden="true"
+      className="Tooltip Tooltip--place-top Tooltip--hidden"
+      contentEditable={false}
+      data-test-id="cf-ui-tooltip"
+      onFocus={[Function]}
+      onMouseOver={[Function]}
+      role="tooltip"
+      style={
+        Object {
+          "left": null,
+          "maxWidth": 360,
+          "top": null,
+        }
+      }
+    >
+      <InViewport
+        offset={0}
+        onOverflowBottom={[Function]}
+        onOverflowLeft={[Function]}
+        onOverflowRight={[Function]}
+        onOverflowTop={[Function]}
+        testId="cf-ui-in-viewport"
+      >
+        Tooltip content
+      </InViewport>
+    </div>
+  </Portal>
 </TooltipContainer>
 `;
 
@@ -59,6 +90,37 @@ exports[`renders the component with a place attribute 1`] = `
   <span>
     hi
   </span>
+  <Portal
+    containerInfo={<div />}
+  >
+    <div
+      aria-hidden="true"
+      className="Tooltip Tooltip--place-left Tooltip--hidden"
+      contentEditable={false}
+      data-test-id="cf-ui-tooltip"
+      onFocus={[Function]}
+      onMouseOver={[Function]}
+      role="tooltip"
+      style={
+        Object {
+          "left": null,
+          "maxWidth": 360,
+          "top": null,
+        }
+      }
+    >
+      <InViewport
+        offset={0}
+        onOverflowBottom={[Function]}
+        onOverflowLeft={[Function]}
+        onOverflowRight={[Function]}
+        onOverflowTop={[Function]}
+        testId="cf-ui-in-viewport"
+      >
+        Tooltip content
+      </InViewport>
+    </div>
+  </Portal>
 </TooltipContainer>
 `;
 
@@ -74,5 +136,36 @@ exports[`renders the component with an additional class name 1`] = `
   <span>
     hi
   </span>
+  <Portal
+    containerInfo={<div />}
+  >
+    <div
+      aria-hidden="true"
+      className="Tooltip Tooltip--place-top extra-class-name Tooltip--hidden"
+      contentEditable={false}
+      data-test-id="cf-ui-tooltip"
+      onFocus={[Function]}
+      onMouseOver={[Function]}
+      role="tooltip"
+      style={
+        Object {
+          "left": null,
+          "maxWidth": 360,
+          "top": null,
+        }
+      }
+    >
+      <InViewport
+        offset={0}
+        onOverflowBottom={[Function]}
+        onOverflowLeft={[Function]}
+        onOverflowRight={[Function]}
+        onOverflowTop={[Function]}
+        testId="cf-ui-in-viewport"
+      >
+        Tooltip content
+      </InViewport>
+    </div>
+  </Portal>
 </TooltipContainer>
 `;

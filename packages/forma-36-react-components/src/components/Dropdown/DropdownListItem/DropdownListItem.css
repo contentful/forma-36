@@ -6,7 +6,7 @@
   padding: calc(1rem * (7 / var(--rem-base)))
     calc(1rem * (20 / var(--rem-base)));
   font-family: var(--font-stack-primary);
-  font-size: var(--font-size-paragraph);
+  font-size: var(--font-size-m);
   white-space: nowrap;
   display: block;
   position: relative;
@@ -29,7 +29,7 @@
   background: transparent;
   font-family: var(--font-stack-primary);
   width: 100%;
-  font-size: var(--font-size-paragraph);
+  font-size: var(--font-size-m);
   text-align: left;
   padding: 0;
   cursor: pointer;
