@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cn from 'classnames';
 import styles from './{{pascalCase name}}.css';
 
 class {{pascalCase name}} extends React.Component {
@@ -17,10 +18,7 @@ class {{pascalCase name}} extends React.Component {
   render() {
     const { extraClassNames, children, testId, ...otherProps } = this.props;
 
-    const classNames = `
-      ${styles.{{~pascalCase name~}}}
-      ${extraClassNames || ''}
-    `;
+    const classNames = cn(styles.{{pascalCase name}}, extraClassNames);
 
     return (
       <div className={classNames} data-test-id={testId} {...otherProps}>
