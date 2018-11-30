@@ -96,7 +96,6 @@ exports[`renders the component with a dropdown 1`] = `
         buttonType="secondary"
         disabled={false}
         extraClassNames="InlineReferenceCard__icon-button"
-        href={undefined}
         iconProps={
           Object {
             "icon": "MoreHorizontal",

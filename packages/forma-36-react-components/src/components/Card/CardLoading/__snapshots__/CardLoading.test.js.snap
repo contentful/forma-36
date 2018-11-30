@@ -339,9 +339,7 @@ exports[`renders the component 1`] = `
       timeout={100}
       unmountOnExit={true}
     >
-      <React.Fragment>
-        CardLoading
-      </React.Fragment>
+      CardLoading
     </CSSTransition>
   </Card>
 </AnimateHeight>
@@ -412,9 +410,7 @@ exports[`renders the component with an additional class name 1`] = `
       timeout={100}
       unmountOnExit={true}
     >
-      <React.Fragment>
-        CardLoading
-      </React.Fragment>
+      CardLoading
     </CSSTransition>
   </Card>
 </AnimateHeight>
