@@ -43,25 +43,23 @@ exports[`can be controlled 1`] = `
       }
     }
   >
-    <React.Fragment>
-      <Header
-        onClose={[Function]}
-        testId="cf-ui-modal-header"
-        title="Hello"
-      />
-      <Content
-        testId="cf-ui-modal-content"
-      >
-        Content
-      </Content>
-      <Controls
-        testId="cf-ui-modal-controls"
-      >
-        <button>
-          Click on me
-        </button>
-      </Controls>
-    </React.Fragment>
+    <Header
+      onClose={[Function]}
+      testId="cf-ui-modal-header"
+      title="Hello"
+    />
+    <Content
+      testId="cf-ui-modal-content"
+    >
+      Content
+    </Content>
+    <Controls
+      testId="cf-ui-modal-controls"
+    >
+      <button>
+        Click on me
+      </button>
+    </Controls>
   </div>
 </ReactModalMock>
 `;
@@ -109,18 +107,16 @@ exports[`renders the component 1`] = `
       }
     }
   >
-    <React.Fragment>
-      <Header
-        onClose={[Function]}
-        testId="cf-ui-modal-header"
-        title="Title"
-      />
-      <Content
-        testId="cf-ui-modal-content"
-      >
-        Content
-      </Content>
-    </React.Fragment>
+    <Header
+      onClose={[Function]}
+      testId="cf-ui-modal-header"
+      title="Title"
+    />
+    <Content
+      testId="cf-ui-modal-content"
+    >
+      Content
+    </Content>
   </div>
 </ReactModalMock>
 `;
@@ -168,13 +164,11 @@ exports[`renders the component without title 1`] = `
       }
     }
   >
-    <React.Fragment>
-      <Content
-        testId="cf-ui-modal-content"
-      >
-        Content
-      </Content>
-    </React.Fragment>
+    <Content
+      testId="cf-ui-modal-content"
+    >
+      Content
+    </Content>
   </div>
 </ReactModalMock>
 `;
