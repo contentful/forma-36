@@ -10,11 +10,11 @@ This is the monorepo for the Forma 36 design system by Contentful.
 <!-- TOC -->
 
 - [Packages](#packages)
-  - [Forma 36 Website (WIP)](#forma-36-website)
-    - [Website Readme](./packages/forma-36-website/README.md)
-  - [Forma 36 React Components](#forma-36-react-components)
-    - [React Component Library Readme](./packages/forma-36-react-components/README.md)
-  - [Adding packages](#adding-packages)
+  - [Forma 36 React Components](./packages/forma-36-react-components/README.md)
+  - [Forma 36 FCSS](./packages/forma-36-fcss/README.md)
+  - [Forma 36 Tokens](./packages/forma-36-tokens/README.md)
+  - [Forma 36 Website (WIP)](./packages/forma-36-website/README.md)
+- [Adding packages](#adding-packages)
 - [Commiting changes & releasing a new version](#commiting-changes-&-releasing-a-new-forma-36-version)
 - [Get Involved](#get-involved)
 - [Reach out to us](#reach-out-to-us)
@@ -33,6 +33,10 @@ The monorepo is currently structured into the following packages:
     See the README [here](./packages/forma-36-website/README.md)
 - [`forma-36-react-components`](https://github.com/contentful/forma-36/tree/master/packages/form-36-react-components)
   - A React component library built with Storybook. See the README [here](./packages/forma-36-react-components/README.md)
+- [`forma-36-fcss`](https://github.com/contentful/forma-36/tree/master/packages/form-36-fcss)
+  - CSS utility classes for spacing, typography, colors and transitions. See the README [here](./packages/forma-36-fcss/README.md)
+- [`forma-36-tokens`](https://github.com/contentful/forma-36/tree/master/packages/form-36-tokens)
+  - Forma 36 design tokens. See the README [here](./packages/forma-36-tokens/README.md)
 
 ### Adding packages
 
