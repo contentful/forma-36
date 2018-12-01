@@ -1,0 +1,14 @@
+$shadows: default heavy;
+$glows: primary negative positive;
+
+@each $shadow in $shadows {
+  .f36-box-shadow--#{$shadow} {
+    box-shadow: var(--box-shadow-#{$shadow});
+  }
+}
+
+@each $glow in $glows {
+  .f36-glow--#{$glow} {
+    box-shadow: var(--glow-#{$glow});
+  }
+}

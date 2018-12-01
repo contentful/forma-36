@@ -1,0 +1,103 @@
+$semantic-colors: primary positive negative warning;
+$text-colors: text-dark text-mid text-lightest;
+$element-colors: element-darkest element-dark element-mid element-light
+  element-lightest;
+$contast-colors: contrast-dark contrast-mid contrast-light;
+$colors: blue green red orange;
+$colors-secondary: coral mint ice;
+
+@each $color in $semantic-colors {
+  .f36-color--#{$color} {
+    color: var(--color-#{$color});
+  }
+
+  .f36-background-color--#{$color} {
+    background-color: var(--color-#{$color});
+  }
+}
+
+@each $text-color in $text-colors {
+  .f36-color--#{$text-color} {
+    color: var(--color-#{$text-color});
+  }
+}
+
+@each $element-color in $element-colors {
+  .f36-color--#{$element-color} {
+    color: var(--color-#{$element-color});
+  }
+
+  .f36-background-color--#{$element-color} {
+    background-color: var(--color-#{$element-color});
+  }
+}
+
+@each $contrast-color in $contast-colors {
+  .f36-color--#{$contrast-color} {
+    color: var(--color-#{$contrast-color});
+  }
+
+  .f36-background-color--#{$contrast-color} {
+    background-color: var(--color-#{$contrast-color});
+  }
+}
+
+@each $color in $colors {
+  .f36-color--#{$color}-dark {
+    color: var(--color-#{$color}-dark);
+  }
+
+  .f36-color--#{$color}-base {
+    color: var(--color-#{$color}-base);
+  }
+
+  .f36-color--#{$color}-mid {
+    color: var(--color-#{$color}-mid);
+  }
+
+  .f36-color--#{$color}-light {
+    color: var(--color-#{$color}-light);
+  }
+
+  .f36-background-color--#{$color}-dark {
+    background-color: var(--color-#{$color}-dark);
+  }
+
+  .f36-background-color--#{$color}-base {
+    background-color: var(--color-#{$color}-base);
+  }
+
+  .f36-background-color--#{$color}-mid {
+    background-color: var(--color-#{$color}-mid);
+  }
+
+  .f36-background-color--#{$color}-light {
+    background-color: var(--color-#{$color}-light);
+  }
+}
+
+@each $color-secondary in $colors-secondary {
+  .f36-color--#{$color-secondary}-dark {
+    color: var(--color-#{$color-secondary}-dark);
+  }
+
+  .f36-color--#{$color-secondary}-mid {
+    color: var(--color-#{$color-secondary}-mid);
+  }
+
+  .f36-background-color--#{$color-secondary}-dark {
+    background-color: var(--color-#{$color-secondary}-dark);
+  }
+
+  .f36-background-color--#{$color-secondary}-mid {
+    background-color: var(--color-#{$color-secondary}-mid);
+  }
+}
+
+.f36-color--white {
+  color: var(--color-white);
+}
+
+.f36-background-color--white {
+  background-color: var(--color-white);
+}

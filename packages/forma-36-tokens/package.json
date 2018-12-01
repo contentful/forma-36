@@ -1,0 +1,20 @@
+{
+  "name": "@contentful/forma-36-tokens",
+  "description": "Forma 36 Tokens",
+  "version": "0.0.1",
+  "main": "dist/json/tokens.json",
+  "license": "MIT",
+  "files": [
+    "package.json",
+    "dist"
+  ],
+  "dependencies": {
+    "json-to-css-variables": "^1.0.0"
+  },
+  "scripts": {
+    "build": "node src/tools/buildTokens.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
