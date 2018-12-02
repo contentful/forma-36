@@ -2,14 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
-
 import '@contentful/forma-36-react-components/dist/styles.css';
-import Paragraph from '@contentful/forma-36-react-components/dist/components/Typography/Paragraph';
-
-import Header from './Header';
+import '@contentful/forma-36-fcss/dist/styles.css';
 import Container from './Container';
-import Footer from './Footer';
-import './Layout.scss';
+import './Layout.css';
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -27,18 +23,17 @@ const Layout = ({ children }) => (
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
+            {
+              name: 'description',
+              content: 'Forma 36 - The Contentful Design System',
+            },
+            { name: 'keywords', content: 'contentful, design, design-system' },
           ]}
         >
           <html lang="en" />
         </Helmet>
-        <div>
-          <Header />
+        <div className="f36-padding-horizontal--l">
           <Container>{children}</Container>
-          <Footer>
-            <Paragraph>A product of Contentful</Paragraph>
-          </Footer>
         </div>
       </>
     )}

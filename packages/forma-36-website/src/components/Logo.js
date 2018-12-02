@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
+import logo from './logo-forma.svg';
+import './Logo.css';
 
-import logo from './logo-forma.svg'
-
-const Logo = () => <img src={logo} alt="Forma 36 Logo" />
-export default Logo
+const Logo = () => <img src={logo} className="f36-logo" alt="Forma 36 Logo" />;
+export default Logo;
