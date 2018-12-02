@@ -1,39 +1,27 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
-  "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "name": "forma-36-website",
+  "description": "Forma 36 Doc App",
+  "version": "0.0.1",
   "dependencies": {
-    "@contentful/forma-36-react-components": "^1.1.1-alpha.0",
+    "@contentful/forma-36-fcss": "^0.0.6",
+    "@contentful/forma-36-react-components": "^1.0.3",
     "gatsby": "^2.0.53",
     "gatsby-image": "^2.0.22",
     "gatsby-plugin-manifest": "^2.0.9",
     "gatsby-plugin-offline": "^2.0.16",
     "gatsby-plugin-react-helmet": "^3.0.2",
-    "gatsby-plugin-sass": "^2.0.5",
     "gatsby-plugin-sharp": "^2.0.12",
     "gatsby-source-filesystem": "^2.0.8",
     "gatsby-transformer-sharp": "^2.1.8",
-    "node-sass": "^4.10.0",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0"
   },
-  "keywords": [
-    "gatsby"
-  ],
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "npm run develop"
-  },
-  "devDependencies": {
-    "prettier": "^1.15.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
   }
 }

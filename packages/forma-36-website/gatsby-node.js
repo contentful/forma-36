@@ -1,7 +1,8 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+var fs = require('fs');
 
-// You can delete this file if you're not using it
+exports.onPostBuild = () => {
+  fs.copyFileSync('./_redirects', './public/_redirects', err => {
+    if (err) throw err;
+    console.log('redirect added!');
+  });
+};

@@ -1,4 +1,22 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+body {
+  background: url('../images/bg-landing_page.png') center;
+  background-size: cover;
+}
+
 .container {
-  max-width: 950px;
-  margin: 2.5rem auto;
+  animation: fadeIn 1s forwards;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

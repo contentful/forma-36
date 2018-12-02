@@ -1,3 +1,1 @@
-# Forma 36 Website
-
-This package is WIP.
+# Forma 36 Website (WIP)
