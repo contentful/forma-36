@@ -1,0 +1,15 @@
+$durations: short default long;
+
+@each $duration in $durations {
+  .f36-transition-duration--#{$duration} {
+    transition-duration: var(--transition-duration-#{$duration});
+  }
+}
+
+.f36-transition-easing--default {
+  transition-timing-function: var(--transition-easing-default);
+}
+
+.f36-transition-easing--cubic-bezier {
+  transition-timing-function: var(--transition-cubic-bezier);
+}
