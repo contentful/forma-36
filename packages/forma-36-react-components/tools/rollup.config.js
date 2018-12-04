@@ -6,7 +6,7 @@ import { terser } from 'rollup-plugin-terser';
 import babel from 'rollup-plugin-babel';
 import path from 'path';
 
-const getConfig = environment => {
+function getConfig(environment) {
   return {
     input: path.resolve(__dirname, '../dist/index.js'),
     output: [
@@ -45,7 +45,7 @@ const getConfig = environment => {
       terser(),
     ].filter(_ => _),
   };
-};
+}
 
 const config = [getConfig('development'), getConfig('production')];
 
