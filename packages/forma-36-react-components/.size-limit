@@ -9,11 +9,6 @@
       ]
     },
     {
-      "path": "dist/index.umd.js",
-      "name": "gzipped UMD js",
-      "limit": "100 KB"
-    },
-    {
       "path": "dist/styles.css",
       "name": "gzipped css",
       "limit": "15 KB"
