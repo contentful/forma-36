@@ -1,9 +1,16 @@
 # Forma 36 FCSS
 
-Forma 36 CSS Utilities are a functional css utility toolbelt.
-This package provides classnames for colors, shadows, spacing, transitions and typography.
+Forma 36 FCSS - Utility CSS classes for applying spacing, colors, typography, shadows, and transitions to elements.
 
-## Class name naming convention
+## Getting started
+
+Import the stlyes.css file into your stylesheet.
+
+```
+@import '@contentful/forma-36-fcss/dist/styles.css`
+```
+
+## Naming convention
 
 The class names consist out of the prefix (e.g. .f36-) the attribute (e.g. margin-bottom) and the scale or modifier (--xs).
 See a list of all class names below
@@ -26,9 +33,7 @@ xs, s, m, l, xl, 2xl
 
 Class name composition example:
 
- .f36-margin-top--xs {
-   margin-top: var(--vertical-spacing-xs)
- }
+ .f36-margin-top--xs
 ```
 
 **Padding**
@@ -43,13 +48,11 @@ padding-horizontal
 padding-vertical
 
 Scale:
-xs, s, m, l, xl, 2xl
+xs, s, m, l, xl, 2xl, 3xl, 4xl
 
 Class name composition example:
 
- .f36-padding-top--xs {
-   padding-top: var(--vertical-spacing-xs)
- }
+ .f36-padding-top--xs
 ```
 
 ### Typography
@@ -71,9 +74,7 @@ s, m, l, xl, 2xl, 3xl
 
 Class name composition example:
 
- .f36-font-size--s {
-   font-size: var(--font-size-s)
- }
+ .f36-font-size--s
 ```
 
 **Weights**
@@ -86,9 +87,7 @@ normal, medium, demi-bold
 
 Class name composition example:
 
-.f36-font-weight--normal {
-  font-weight: var(--font-weight-normal)
-}
+.f36-font-weight--normal
 ```
 
 **Line Height**
@@ -101,9 +100,7 @@ default, condensed
 
 Classname composition example:
 
-.f36-line-height--default {
-  line-height: var(--line-height-default)
-}
+.f36-line-height--default
 ```
 
 ### Colors
@@ -160,10 +157,62 @@ Secondary Colors:
 | Color            | Background                  |
 | ---------------- | :-------------------------- |
 | .f36-color--mint | .f36-background-color--mint |
-| .f36-color--ice  | .f36-bg-ice                 |
+| .f36-color--ice  | .f36-background-color--ice  |
 
 White:
 
-| Color             | Background    |
-| ----------------- | :------------ |
-| .f36-color--white | .f36-bg-white |
+| Color             | Background                   |
+| ----------------- | :--------------------------- |
+| .f36-color--white | .f36-background-color--white |
+
+## Shadows
+
+```
+box-shadow
+
+Scale:
+default, heavy
+
+Class name composition example:
+
+.f36-box-shadow--default
+```
+
+### Glows
+
+```
+box-shadow
+
+Scale:
+primary, negative, positive
+
+Class name composition example:
+
+.f36-glow--primary
+```
+
+## Transitions
+
+```
+transition-duration
+
+Scale:
+short, default, long
+
+Class name composition example:
+
+.f36-transition-duration--short
+```
+
+### Easing
+
+```
+transition-easing
+
+Scale:
+default, cubic-bezier
+
+Class name composition example:
+
+.f36-transition-easing--default
+```
