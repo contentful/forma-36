@@ -1,0 +1,33 @@
+$font-sizes: s m l xl 2xl 3xl;
+$font-weights: normal medium demi-bold;
+$line-heigths: default condensed;
+
+@each $font-size in $font-sizes {
+  .f36-font-size--#{$font-size} {
+    font-size: var(--font-size-#{$font-size});
+  }
+}
+
+@each $font-weight in $font-weights {
+  .f36-font-weight--#{$font-weight} {
+    font-weight: var(--font-weight-#{$font-weight});
+  }
+}
+
+@each $line-height in $line-heigths {
+  .f36-line-height--#{$line-height} {
+    font-weight: var(--font-weight-#{$line-height});
+  }
+}
+
+.f36-letter-spacing--wide {
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+.f36-font-family--sans-serif {
+  font-family: var(--font-stack-primary);
+}
+
+.f36-font-family--monospace {
+  font-family: var(--font-stack-monospace);
+}

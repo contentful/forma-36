@@ -23,6 +23,7 @@
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/plugin-syntax-import-meta": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
+    "@contentful/forma-36-tokens": "^0.0.1",
     "@sambego/storybook-state": "^1.3.2",
     "@storybook/addon-actions": "^4.0.11",
     "@storybook/addon-info": "^4.0.11",

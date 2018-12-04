@@ -1,3 +1,5 @@
+@import '@contentful/forma-36-tokens/dist/css/typography.css';
+
 @font-face {
   font-family: 'Avenir Next W01';
   src: url('./../../fonts/avenir-regular-normal.woff2') format('woff2'),
@@ -36,33 +38,4 @@
     url('./../../fonts/avenir-demibold-italic.woff') format('woff');
   font-weight: 700;
   font-style: italic;
-}
-
-:root {
-  /* Font stacks */
-  --font-stack-primary: 'Avenir Next W01', 'Helvetica', sans-serif;
-  --font-stack-monospace: 'Menlo', 'Andale mono', monospace;
-
-  /* Font sizes */
-  --font-size-3xl: 2.1875rem; /* 35px */
-  --font-size-2xl: 1.75rem; /* 28px */
-  --font-size-xl: 1.3125rem; /* 21px */
-  --font-size-l: 1rem; /* 16px */
-  --font-size-m: 0.875rem; /* 14px */
-  --font-size-s: 0.75rem; /* 12px */
-
-  /* Font weights */
-  --font-weight-normal: 500;
-  --font-weight-medium: 600;
-  --font-weight-demi-bold: 700;
-
-  /* Line heights */
-  --line-height-default: 1.5;
-  --line-height-condensed: 1.25;
-
-  /* Letter spacing */
-  --letter-spacing-wide: 0.1rem;
-
-  /* Misc */
-  --rem-base: 16;
 }

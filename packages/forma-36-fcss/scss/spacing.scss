@@ -1,0 +1,57 @@
+$spacings: 2xs xs s m l xl 2xl 3xl 4xl;
+
+@each $spacing in $spacings {
+  .f36-margin-bottom--#{$spacing} {
+    margin-bottom: var(--vertical-spacing-#{$spacing});
+  }
+  .f36-margin-top--#{$spacing} {
+    margin-top: var(--vertical-spacing-#{$spacing});
+  }
+  .f36-margin-left--#{$spacing} {
+    margin-left: var(--vertical-spacing-#{$spacing});
+  }
+  .f36-margin-right--#{$spacing} {
+    margin-right: var(--vertical-spacing-#{$spacing});
+  }
+
+  .f36-padding-bottom--#{$spacing} {
+    padding-bottom: var(--vertical-spacing-#{$spacing});
+  }
+  .f36-padding-top--#{$spacing} {
+    padding-top: var(--vertical-spacing-#{$spacing});
+  }
+  .f36-padding-left--#{$spacing} {
+    padding-left: var(--vertical-spacing-#{$spacing});
+  }
+  .f36-padding-right--#{$spacing} {
+    padding-right: var(--vertical-spacing-#{$spacing});
+  }
+
+  .f36-padding-horizontal--#{$spacing} {
+    padding-left: var(--vertical-spacing-#{$spacing});
+    padding-right: var(--vertical-spacing-#{$spacing});
+  }
+
+  .f36-padding-vertical--#{$spacing} {
+    padding-top: var(--vertical-spacing-#{$spacing});
+    padding-bottom: var(--vertical-spacing-#{$spacing});
+  }
+
+  .f36-margin-horizontal--#{$spacing} {
+    margin-left: var(--vertical-spacing-#{$spacing});
+    margin-right: var(--vertical-spacing-#{$spacing});
+  }
+
+  .f36-margin-vertical--#{$spacing} {
+    margin-top: var(--vertical-spacing-#{$spacing});
+    margin-bottom: var(--vertical-spacing-#{$spacing});
+  }
+
+  .f36-padding--#{$spacing} {
+    padding: var(--vertical-spacing-#{$spacing});
+  }
+
+  .f36-margin--#{$spacing} {
+    margin: var(--vertical-spacing-#{$spacing});
+  }
+}

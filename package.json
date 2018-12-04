@@ -20,7 +20,6 @@
     "semantic-release-monorepo": "^6.1.1",
     "travis-deploy-once": "^5.0.9"
   },
-  "dependencies": {},
   "scripts": {
     "commit": "git-cz",
     "travis-deploy-once": "travis-deploy-once --pro",
