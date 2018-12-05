@@ -273,31 +273,36 @@ export const verticalSpacingUnits = [
   {
     name: 'S',
     cssVar: '--vertical-spacing-s',
-    px: '14px',
+    px: '12px',
   },
   {
     name: 'M',
     cssVar: '--vertical-spacing-m',
-    px: '20px',
+    px: '16px',
   },
   {
     name: 'L',
     cssVar: '--vertical-spacing-l',
-    px: '28px',
+    px: '24px',
   },
   {
     name: 'XL',
     cssVar: '--vertical-spacing-xl',
-    px: '40px',
+    px: '32px',
   },
   {
     name: '2XL',
     cssVar: '--vertical-spacing-2xl',
-    px: '60px',
+    px: '48px',
   },
   {
     name: '3XL',
     cssVar: '--vertical-spacing-3xl',
+    px: '64px',
+  },
+  {
+    name: '4XL',
+    cssVar: '--vertical-spacing-4xl',
     px: '80px',
   },
 ];
