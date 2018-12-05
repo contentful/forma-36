@@ -29,7 +29,7 @@ margin-horizontal
 margin-vertical
 
 Scale:
-xs, s, m, l, xl, 2xl
+xs, s, m, l, xl, 2xl, 3xl, 4xl
 
 Class name composition example:
 
