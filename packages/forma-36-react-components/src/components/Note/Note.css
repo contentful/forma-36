@@ -3,8 +3,8 @@
 @import 'settings/dimensions';
 
 .Note {
-  padding: var(--vertical-spacing-s);
-  padding-right: var(--vertical-spacing-l);
+  padding: var(--spacing-s);
+  padding-right: var(--spacing-l);
   margin: 0;
 
   font-family: var(--font-stack-primary);
@@ -45,7 +45,7 @@
 }
 
 .Note__icon {
-  margin-right: var(--vertical-spacing-s);
+  margin-right: var(--spacing-s);
   display: flex;
   margin-top: 1px;
 }

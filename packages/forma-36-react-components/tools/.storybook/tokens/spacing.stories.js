@@ -2,16 +2,16 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
-import { verticalSpacingUnits } from './tokens';
+import { spacingUnits } from './tokens';
 
-import DocPage from './../components/DocPage/DocPage';
-import Table from './../../../src/components/Table/Table';
-import TableHead from './../../../src/components/Table/TableHead';
-import TableBody from './../../../src/components/Table/TableBody';
-import TableCell from './../../../src/components/Table/TableCell';
-import TableRow from './../../../src/components/Table/TableRow';
+import DocPage from '../components/DocPage/DocPage';
+import Table from '../../../src/components/Table/Table';
+import TableHead from '../../../src/components/Table/TableHead';
+import TableBody from '../../../src/components/Table/TableBody';
+import TableCell from '../../../src/components/Table/TableCell';
+import TableRow from '../../../src/components/Table/TableRow';
 
-storiesOf('Tokens|Vertical Spacing', module)
+storiesOf('Tokens|Spacing', module)
   .addDecorator(
     host({
       align: 'center top',
@@ -23,7 +23,7 @@ storiesOf('Tokens|Vertical Spacing', module)
     'default',
     withInfo()(() => (
       <DocPage>
-        <h1>Vertical Spacing</h1>
+        <h1>Spacing</h1>
         <Table style={{ width: '100%' }}>
           <TableHead>
             <TableRow>
@@ -35,7 +35,7 @@ storiesOf('Tokens|Vertical Spacing', module)
             </TableRow>
           </TableHead>
           <TableBody>
-            {verticalSpacingUnits.map(unit => {
+            {spacingUnits.map(unit => {
               const sizeInRem = (1 * parseInt(unit.px, 10)) / 16;
 
               return (

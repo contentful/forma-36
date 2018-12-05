@@ -5,8 +5,8 @@
 
 .NotificationItem {
   display: flex;
-  padding: var(--vertical-spacing-s);
-  padding-left: var(--vertical-spacing-m);
+  padding: var(--spacing-s);
+  padding-left: var(--spacing-m);
   transition: transform var(--transition-duration-default)
       var(--transition-easing-default),
     opacity var(--transition-duration-default) var(--transition-easing-default);
@@ -32,14 +32,14 @@
 }
 
 .NotificationItem__icon {
-  margin-right: var(--vertical-spacing-s);
+  margin-right: var(--spacing-s);
   display: flex;
   margin-top: 1px;
 }
 
 .NotificationItem__text {
   flex-grow: 1;
-  margin-right: var(--vertical-spacing-s);
+  margin-right: var(--spacing-s);
 }
 
 .NotificationItem__dismiss {

@@ -259,50 +259,50 @@ export const colors = [
   },
 ];
 
-export const verticalSpacingUnits = [
+export const spacingUnits = [
   {
     name: '2XS',
-    cssVar: '--vertical-spacing-2xs',
+    cssVar: '--spacing-2xs',
     px: '4px',
   },
   {
     name: 'XS',
-    cssVar: '--vertical-spacing-xs',
+    cssVar: '--spacing-xs',
     px: '8px',
   },
   {
     name: 'S',
-    cssVar: '--vertical-spacing-s',
+    cssVar: '--spacing-s',
     px: '12px',
   },
   {
     name: 'M',
-    cssVar: '--vertical-spacing-m',
+    cssVar: '--spacing-m',
     px: '16px',
   },
   {
     name: 'L',
-    cssVar: '--vertical-spacing-l',
+    cssVar: '--spacing-l',
     px: '24px',
   },
   {
     name: 'XL',
-    cssVar: '--vertical-spacing-xl',
+    cssVar: '--spacing-xl',
     px: '32px',
   },
   {
     name: '2XL',
-    cssVar: '--vertical-spacing-2xl',
+    cssVar: '--spacing-2xl',
     px: '48px',
   },
   {
     name: '3XL',
-    cssVar: '--vertical-spacing-3xl',
+    cssVar: '--spacing-3xl',
     px: '64px',
   },
   {
     name: '4XL',
-    cssVar: '--vertical-spacing-4xl',
+    cssVar: '--spacing-4xl',
     px: '80px',
   },
 ];
