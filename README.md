@@ -1,6 +1,6 @@
 <img src="./forma-icon.png" width="150">
 
-# Forma 36 Design System by Contentful
+# Forma 36 - The Contentful Design System
 
 ![build status](https://travis-ci.com/contentful/forma-36.svg?token=9ZgfZHVDFAy8E7oFpbGM&branch=master)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
