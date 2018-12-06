@@ -60,8 +60,8 @@ Class name composition example:
 **Font Families**
 
 ```
-.font-family--sans-serif
-.font-family--monospace
+.f36-font-family--sans-serif
+.f36-font-family--monospace
 ```
 
 **Typography Scale**
