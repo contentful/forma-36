@@ -12,7 +12,8 @@
     "json-to-css-variables": "^1.0.0"
   },
   "scripts": {
-    "build": "node src/tools/buildTokens.js"
+    "build": "node src/tools/buildTokens.js",
+    "prepublishOnly": "yarn build"
   },
   "publishConfig": {
     "access": "public"
