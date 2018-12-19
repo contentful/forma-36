@@ -19,8 +19,8 @@
 
 .Asset__image-container__image {
   width: auto;
-  height: 100%;
   max-height: inherit;
+  max-width: 100%;
 }
 
 .Asset__image-container__title-container {
