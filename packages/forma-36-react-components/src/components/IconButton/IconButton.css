@@ -98,6 +98,10 @@
   fill: var(--color-text-light);
 }
 
+.IconButton--white .IconButton__icon {
+  fill: var(--color-white);
+}
+
 .IconButton__label {
   composes: sr-only from './../../styles/settings/helpers.css';
 }
