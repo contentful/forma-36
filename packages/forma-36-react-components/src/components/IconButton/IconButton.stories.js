@@ -27,6 +27,7 @@ storiesOf('Components|IconButton', module)
           'negative',
           'secondary',
           'muted',
+          'white',
         ])}
         label={text('Label (screenreader only)', 'Add New Element')}
         disabled={boolean('Disabled', false)}

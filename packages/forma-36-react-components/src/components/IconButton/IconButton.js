@@ -19,6 +19,7 @@ class IconButton extends React.Component {
       'negative',
       'secondary',
       'muted',
+      'white',
     ]),
     withDropdown: PropTypes.bool,
     extraClassNames: PropTypes.string,
