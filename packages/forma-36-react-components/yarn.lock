@@ -807,9 +807,9 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@contentful/forma-36-tokens@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@contentful/forma-36-tokens/-/forma-36-tokens-0.0.1.tgz#2809e39080567617cad4c702cec4bd3bab8ab0f9"
+"@contentful/forma-36-tokens@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@contentful/forma-36-tokens/-/forma-36-tokens-0.0.3.tgz#51154a714cfb9b5ed7a274c5162835554bfb9bcd"
   dependencies:
     json-to-css-variables "^1.0.0"
 
