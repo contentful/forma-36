@@ -15,6 +15,7 @@ This is the monorepo for the Forma 36 design system by Contentful.
   - [Forma 36 Tokens](./packages/forma-36-tokens/README.md)
   - [Forma 36 Website (WIP)](./packages/forma-36-website/README.md)
 - [Adding packages](#adding-packages)
+- [Font Usage](#font-usage)
 - [Commiting changes & releasing a new version](#commiting-changes-&-releasing-a-new-forma-36-version)
 - [Get Involved](#get-involved)
 - [Reach out to us](#reach-out-to-us)
@@ -41,6 +42,10 @@ The monorepo is currently structured into the following packages:
 ### Adding packages
 
 To add another package create a new directory in the packages folder. Make sure that the package name is prefixed with forma-36 (e.g. forma-36-css-utilities). Since we are using Lerna all package scripts are available from the root by running lerna run {script_name}
+
+## Font Usage
+
+Forma 36 was designed to use ‘Avenir Next’ as primary font family. If a package is used in the context of app.contentful.com (e.g UI extensions) this font will be provided. We encourage licensing ‘Avenir Next’ when a package is used outside of Contentful related use cases.
 
 ## Commiting & Releasing
 
