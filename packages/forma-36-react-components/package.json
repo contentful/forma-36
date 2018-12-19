@@ -1,7 +1,7 @@
 {
   "name": "@contentful/forma-36-react-components",
   "description": "Contentful UI Component Library",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "dist/index.js",
   "style": "dist/styles.css",
   "license": "MIT",
@@ -23,7 +23,7 @@
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/plugin-syntax-import-meta": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
-    "@contentful/forma-36-tokens": "^0.0.2",
+    "@contentful/forma-36-tokens": "^0.0.3",
     "@sambego/storybook-state": "^1.3.2",
     "@storybook/addon-actions": "^4.0.11",
     "@storybook/addon-info": "^4.0.11",
