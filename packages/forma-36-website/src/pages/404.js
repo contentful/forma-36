@@ -1,10 +1,13 @@
 import React from 'react';
+import DisplayText from '@contentful/forma-36-react-components/dist/components/Typography/DisplayText';
+import Card from '@contentful/forma-36-react-components/dist/components/Card/Card';
 import Layout from '../components/Layout';
 
 const NotFoundPage = () => (
   <Layout>
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <Card extraClassNames="f36-padding--xl">
+      <DisplayText>404 NOT FOUND</DisplayText>
+    </Card>
   </Layout>
 );
 

@@ -25,3 +25,13 @@
   font-weight: 600;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Avenir Next W01';
+  src: url('https://static.contentful.com/app/avenir-demibold-normal-d42bfc911f.woff2')
+      format('woff2'),
+    url('https://static.contentful.com/app/avenir-demibold-normal-d42bfc911f.woff')
+      format('woff');
+  font-weight: 700;
+  font-style: normal;
+}

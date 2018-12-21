@@ -26,15 +26,15 @@ const IndexPage = () => (
       </div>
       <div className="center-content f36-margin-bottom--m">
         <Button href="https://github.com/contentful/forma-36">
-          Visit the Github repository
+          View GitHub repository
         </Button>
       </div>
       <Paragraph extraClassNames="center-content">
         <TextLink
           linkType="secondary"
-          href="https://forma-36-react-components.netlify.com/"
+          href="https://f36.contentful.com/storybook"
         >
-          Visit the React components
+          View React components
         </TextLink>
       </Paragraph>
     </Card>
