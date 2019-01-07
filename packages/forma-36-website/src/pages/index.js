@@ -32,7 +32,7 @@ const IndexPage = () => (
       <Paragraph extraClassNames="center-content">
         <TextLink
           linkType="secondary"
-          href="https://f36.contentful.com/storybook"
+          href="https://f36-storybook.contentful.com/"
         >
           View React components
         </TextLink>
