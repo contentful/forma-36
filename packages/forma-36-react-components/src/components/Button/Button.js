@@ -26,6 +26,7 @@ class Button extends React.Component {
       'muted',
       'naked',
     ]),
+    type: PropTypes.oneOf(['button', 'submit', 'reset']),
     size: PropTypes.oneOf(['small', 'large']),
     href: PropTypes.string,
   };
@@ -42,6 +43,7 @@ class Button extends React.Component {
     disabled: false,
     testId: 'cf-ui-button',
     buttonType: 'primary',
+    type: 'button',
     size: undefined,
     href: undefined,
   };
@@ -61,6 +63,7 @@ class Button extends React.Component {
       disabled,
       indicateDropdown,
       href,
+      type,
       ...otherProps
     } = this.props;
 
@@ -96,6 +99,7 @@ class Button extends React.Component {
         className={classNames}
         disabled={disabled}
         href={!disabled ? href : null}
+        type={type}
         {...otherProps}
       >
         <TabFocusTrap extraClassNames={styles['Button__inner-wrapper']}>
