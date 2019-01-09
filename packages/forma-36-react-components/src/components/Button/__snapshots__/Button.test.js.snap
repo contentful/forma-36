@@ -8,6 +8,7 @@ exports[`renders the button as link 1`] = `
   href="/"
   onBlur={[Function]}
   onClick={[Function]}
+  type="button"
 >
   <TabFocusTrap
     extraClassNames="Button__inner-wrapper"
@@ -49,6 +50,7 @@ exports[`renders the component 1`] = `
   disabled={false}
   onBlur={[Function]}
   onClick={[Function]}
+  type="button"
 >
   <TabFocusTrap
     extraClassNames="Button__inner-wrapper"
@@ -90,6 +92,7 @@ exports[`renders the component as naked 1`] = `
   disabled={false}
   onBlur={[Function]}
   onClick={[Function]}
+  type="button"
 >
   <TabFocusTrap
     extraClassNames="Button__inner-wrapper"
@@ -131,6 +134,7 @@ exports[`renders the component as primary 1`] = `
   disabled={false}
   onBlur={[Function]}
   onClick={[Function]}
+  type="button"
 >
   <TabFocusTrap
     extraClassNames="Button__inner-wrapper"
@@ -173,6 +177,7 @@ exports[`renders the component disabled 1`] = `
   href={null}
   onBlur={[Function]}
   onClick={[Function]}
+  type="button"
 >
   <TabFocusTrap
     extraClassNames="Button__inner-wrapper"
@@ -214,6 +219,7 @@ exports[`renders the component full width 1`] = `
   disabled={false}
   onBlur={[Function]}
   onClick={[Function]}
+  type="button"
 >
   <TabFocusTrap
     extraClassNames="Button__inner-wrapper"
@@ -255,6 +261,7 @@ exports[`renders the component in loading state 1`] = `
   disabled={false}
   onBlur={[Function]}
   onClick={[Function]}
+  type="button"
 >
   <TabFocusTrap
     extraClassNames="Button__inner-wrapper"
@@ -296,6 +303,7 @@ exports[`renders the component with an additional class name 1`] = `
   disabled={false}
   onBlur={[Function]}
   onClick={[Function]}
+  type="button"
 >
   <TabFocusTrap
     extraClassNames="Button__inner-wrapper"
@@ -337,6 +345,7 @@ exports[`renders the component with dropdown indicator 1`] = `
   disabled={false}
   onBlur={[Function]}
   onClick={[Function]}
+  type="button"
 >
   <TabFocusTrap
     extraClassNames="Button__inner-wrapper"
@@ -385,6 +394,7 @@ exports[`renders the component with icon 1`] = `
   disabled={false}
   onBlur={[Function]}
   onClick={[Function]}
+  type="button"
 >
   <TabFocusTrap
     extraClassNames="Button__inner-wrapper"
