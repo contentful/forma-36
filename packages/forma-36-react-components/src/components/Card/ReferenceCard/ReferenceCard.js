@@ -18,6 +18,7 @@ class ReferenceCard extends React.Component {
     loading: PropTypes.bool,
     onClick: PropTypes.func,
     actionElements: PropTypes.node,
+    height: PropTypes.number,
   };
 
   static defaultProps = {
@@ -31,6 +32,7 @@ class ReferenceCard extends React.Component {
     onClick: undefined,
     actionElements: undefined,
     extraClassNames: undefined,
+    height: undefined,
   };
 
   renderTitle = title => {
@@ -48,7 +50,7 @@ class ReferenceCard extends React.Component {
   };
 
   renderDescription = description => {
-    const truncatedDescription = truncate(description, 127, {});
+    const truncatedDescription = truncate(description, 110, {});
 
     return (
       <p className={styles.ReferenceCard__description}>
@@ -107,6 +109,7 @@ class ReferenceCard extends React.Component {
       thumbnailElement,
       loading,
       actionElements,
+      height,
       ...otherProps
     } = this.props;
 
@@ -118,6 +121,7 @@ class ReferenceCard extends React.Component {
         onClick={onClick}
         isLoading={loading}
         testId={testId}
+        height={height}
         {...otherProps}
       >
         <article className={styles.ReferenceCard__wrapper}>

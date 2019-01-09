@@ -17,6 +17,12 @@ it('renders the component with an additional class name', () => {
   expect(output).toMatchSnapshot();
 });
 
+it('renders the component with a fixed height', () => {
+  const output = shallow(<CardLoading height={300}>CardLoading</CardLoading>);
+
+  expect(output).toMatchSnapshot();
+});
+
 it('renders a loading spinner when passed a "loading" prop', () => {
   const output = mount(<CardLoading isLoading>Asset Card</CardLoading>);
 

@@ -39,6 +39,9 @@
 
 .ReferenceCard__body {
   flex: 1 1 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
 }
 
 .ReferenceCard__title {
@@ -46,12 +49,15 @@
   font-size: var(--font-size-m);
   line-height: var(--line-height-default);
   word-break: break-word;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .ReferenceCard__description {
   margin: calc(1rem * (4 / var(--rem-base))) 0 0;
   line-height: var(--line-height-default);
   word-break: break-word;
+  white-space: initial;
 }
 
 .ReferenceCard__thumbnail {

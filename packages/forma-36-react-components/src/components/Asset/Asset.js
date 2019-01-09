@@ -34,11 +34,13 @@ class Asset extends React.Component {
 
   renderImage = (src, title) => (
     <div className={styles['Asset__image-container']}>
-      <img
-        className={styles['Asset__image-container__image']}
-        src={src}
-        alt={title}
-      />
+      <div className={styles['Asset__image-container__image-wrapper']}>
+        <img
+          className={styles['Asset__image-container__image']}
+          src={src}
+          alt={title}
+        />
+      </div>
       <div className={styles['Asset__image-container__title-container']}>
         <span
           className={styles['Asset__image-container__title-container__title']}

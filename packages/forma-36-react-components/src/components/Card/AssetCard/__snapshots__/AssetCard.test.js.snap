@@ -7,7 +7,9 @@ exports[`renders the component 1`] = `
   testId="cf-ui-asset-card"
   title="Untitled"
 >
-  <div>
+  <div
+    className="AssetCard__inner-wrapper"
+  >
     <div
       className="AssetCard__header"
     />
@@ -30,7 +32,9 @@ exports[`renders the component in loading state 1`] = `
   testId="cf-ui-asset-card"
   title="picture of a cat"
 >
-  <div>
+  <div
+    className="AssetCard__inner-wrapper"
+  >
     <div
       className="AssetCard__header"
     />
@@ -63,7 +67,9 @@ exports[`renders the component with actions 1`] = `
   testId="cf-ui-asset-card"
   title="picture of a cat"
 >
-  <div>
+  <div
+    className="AssetCard__inner-wrapper"
+  >
     <div
       className="AssetCard__header"
     />
@@ -88,7 +94,9 @@ exports[`renders the component with an additional class name 1`] = `
   testId="cf-ui-asset-card"
   title="picture of a cat"
 >
-  <div>
+  <div
+    className="AssetCard__inner-wrapper"
+  >
     <div
       className="AssetCard__header"
     />
@@ -113,7 +121,9 @@ exports[`renders the component with status 1`] = `
   testId="cf-ui-asset-card"
   title="picture of a cat"
 >
-  <div>
+  <div
+    className="AssetCard__inner-wrapper"
+  >
     <div
       className="AssetCard__header"
     >
@@ -150,7 +160,9 @@ exports[`renders the component without actions 1`] = `
   testId="cf-ui-asset-card"
   title="picture of a cat"
 >
-  <div>
+  <div
+    className="AssetCard__inner-wrapper"
+  >
     <div
       className="AssetCard__header"
     />
