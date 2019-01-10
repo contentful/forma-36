@@ -17,7 +17,6 @@ const Header = ({ onClose, title, testId, extraClassNames, ...rest }) => (
         buttonType="muted"
         label="Close"
         onClick={onClose}
-        type="button"
       />
     )}
   </div>
