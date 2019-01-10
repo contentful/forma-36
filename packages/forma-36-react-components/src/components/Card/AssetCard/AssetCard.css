@@ -9,6 +9,12 @@
   min-height: calc(1rem * (80 / var(--rem-base)));
 }
 
+.AssetCard__inner-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .AssetCard__header {
   padding: calc(1rem * (14 / var(--rem-base)))
     calc(1rem * (19 / var(--rem-base)));
@@ -21,14 +27,18 @@
 .AssetCard__asset {
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .AssetCard__content {
   display: flex;
   align-items: center;
   justify-content: center;
-  max-height: calc(1rem * (240 / var(--rem-base)));
   min-width: calc(1rem * (240 / var(--rem-base)));
+  flex-basis: 100%;
 }
 
 .AssetCard__header__dropdown-button {
