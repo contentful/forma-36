@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
-<CardLoading
+<Card
   extraClassNames="ReferenceCard"
+  padding="default"
   testId="cf-ui-reference-card"
-  title="Untitled"
 >
   <article
     className="ReferenceCard__wrapper"
@@ -46,14 +46,14 @@ exports[`renders the component 1`] = `
       </div>
     </div>
   </article>
-</CardLoading>
+</Card>
 `;
 
 exports[`renders the component with a thumbnail element 1`] = `
-<CardLoading
+<Card
   extraClassNames="ReferenceCard"
+  padding="default"
   testId="cf-ui-reference-card"
-  title="Untitled"
 >
   <article
     className="ReferenceCard__wrapper"
@@ -103,14 +103,14 @@ exports[`renders the component with a thumbnail element 1`] = `
       </figure>
     </div>
   </article>
-</CardLoading>
+</Card>
 `;
 
 exports[`renders the component with action elements 1`] = `
-<CardLoading
+<Card
   extraClassNames="ReferenceCard"
+  padding="default"
   testId="cf-ui-reference-card"
-  title="Untitled"
 >
   <article
     className="ReferenceCard__wrapper"
@@ -168,14 +168,14 @@ exports[`renders the component with action elements 1`] = `
       </div>
     </div>
   </article>
-</CardLoading>
+</Card>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
-<CardLoading
+<Card
   extraClassNames="ReferenceCard my-extra-class"
+  padding="default"
   testId="cf-ui-reference-card"
-  title="Untitled"
 >
   <article
     className="ReferenceCard__wrapper"
@@ -217,5 +217,5 @@ exports[`renders the component with an additional class name 1`] = `
       </div>
     </div>
   </article>
-</CardLoading>
+</Card>
 `;

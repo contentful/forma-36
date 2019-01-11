@@ -55,6 +55,11 @@ import Paragraph from './components/Typography/Paragraph';
 import DisplayText from './components/Typography/DisplayText';
 import List from './components/List/List';
 import ListItem from './components/List/ListItem';
+import SkeletonBodyText from './components/Skeleton/SkeletonBodyText';
+import SkeletonContainer from './components/Skeleton/SkeletonContainer';
+import SkeletonDisplayText from './components/Skeleton/SkeletonDisplayText';
+import SkeletonText from './components/Skeleton/SkeletonText';
+import SkeletonImage from './components/Skeleton/SkeletonImage';
 // -- Add imports above this line (required by plopfile.js) --
 // The above line is used as a insert marker when autogenerating components with `yarn add-component`
 
@@ -116,6 +121,11 @@ module.exports = {
   DisplayText,
   List,
   ListItem,
+  SkeletonBodyText,
+  SkeletonContainer,
+  SkeletonDisplayText,
+  SkeletonText,
+  SkeletonImage,
   // -- Add exports above this line (required by plopfile.js) --
   // The above line is used as a insert marker when autogenerating components with `yarn add-component`
 };

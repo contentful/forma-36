@@ -1,0 +1,8 @@
+@import 'settings/colors';
+@import 'settings/typography';
+@import 'settings/transitions';
+
+.SkeletonContainer {
+  display: block;
+  width: 100%;
+}

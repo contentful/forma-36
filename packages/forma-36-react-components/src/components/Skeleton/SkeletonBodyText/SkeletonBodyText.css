@@ -1,0 +1,8 @@
+@import 'settings/colors';
+@import 'settings/typography';
+@import 'settings/transitions';
+
+.SkeletonBodyText {
+  display: inline-block;
+  fill: var(--color-element-light);
+}

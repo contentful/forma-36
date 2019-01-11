@@ -11,7 +11,6 @@ class Card extends React.Component {
     onClick: PropTypes.func,
     testId: PropTypes.string,
     padding: PropTypes.oneOf(['default', 'large', 'none']),
-    selected: PropTypes.bool,
   };
 
   static defaultProps = {
@@ -20,7 +19,17 @@ class Card extends React.Component {
     onClick: undefined,
     padding: 'default',
     testId: 'cf-ui-card',
+  };
+
+  state = {
     selected: false,
+  };
+
+  handleClick = event => {
+    if (!this.props.onClick) return;
+
+    this.setState({ selected: !this.state.selected });
+    this.props.onClick(event);
   };
 
   render() {
@@ -31,14 +40,13 @@ class Card extends React.Component {
       href,
       onClick,
       padding,
-      selected,
       ...otherProps
     } = this.props;
 
     const classNames = cn(styles.Card, extraClassNames, {
       [styles[`Card--padding-${padding}`]]: padding,
       [styles['Card--is-interactive']]: onClick || href,
-      [styles['Card--is-selected']]: selected,
+      [styles['Card--is-selected']]: this.state.selected,
     });
 
     const Element = href ? 'a' : 'div';
@@ -46,7 +54,10 @@ class Card extends React.Component {
     return (
       <Element
         className={classNames}
-        onClick={onClick}
+        onClick={this.handleClick}
+        onBlur={() => {
+          this.setState({ selected: false });
+        }}
         data-test-id={testId}
         href={href}
         {...otherProps}
