@@ -6,7 +6,7 @@
   --tooltip-chevron-size: calc(1rem * (6 / var(--rem-base)));
 }
 
-.TooltipContainer {
+.Tooltip__target-wrapper {
   display: inline-block;
   position: relative;
 }

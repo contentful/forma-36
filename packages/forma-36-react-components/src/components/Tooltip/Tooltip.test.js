@@ -23,6 +23,19 @@ it('renders the component with an additional class name', () => {
   expect(output).toMatchSnapshot();
 });
 
+it('renders the component with a target wrapper classname', () => {
+  const output = shallow(
+    <Tooltip
+      content="Tooltip content"
+      targetWrapperClassName="target-wrapper-class-name"
+    >
+      <span>hi</span>
+    </Tooltip>,
+  );
+
+  expect(output).toMatchSnapshot();
+});
+
 it('renders the component with a place attribute', () => {
   const output = shallow(
     <Tooltip content="Tooltip content" place="left">
