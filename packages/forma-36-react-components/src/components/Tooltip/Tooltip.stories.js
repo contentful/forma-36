@@ -29,6 +29,7 @@ storiesOf('Components|Tooltip', module)
             'top',
           )}
           id="tip1"
+          targetWrapperClassName={text('Wrapper class name', 'target-wrapper')}
           content={text('Tooltip Text', "Hi I'm a Tooltip")}
         >
           <TextLink>Hover me</TextLink>

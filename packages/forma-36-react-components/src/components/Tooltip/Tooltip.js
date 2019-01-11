@@ -11,13 +11,14 @@ const TooltipContainer = ({
   children,
   setRef,
   containerElement,
+  targetWrapperClassName,
   ...otherProps
 }) => {
   const ContainerElement = containerElement;
   return (
     <ContainerElement
       ref={ref => setRef(ref)}
-      className={styles.TooltipContainer}
+      className={cn(styles['Tooltip__target-wrapper'], targetWrapperClassName)}
       {...otherProps}
     >
       {children}
@@ -29,11 +30,17 @@ TooltipContainer.propTypes = {
   children: PropTypes.array.isRequired, // Portal is an array
   setRef: PropTypes.func.isRequired,
   containerElement: PropTypes.string.isRequired,
+  targetWrapperClassName: PropTypes.string,
+};
+
+TooltipContainer.defaultProps = {
+  targetWrapperClassName: undefined,
 };
 
 class Tooltip extends React.Component {
   static propTypes = {
     extraClassNames: PropTypes.string,
+    targetWrapperClassName: PropTypes.string,
     onFocus: PropTypes.func,
     onBlur: PropTypes.func,
     id: PropTypes.string,
@@ -50,6 +57,7 @@ class Tooltip extends React.Component {
 
   static defaultProps = {
     extraClassNames: undefined,
+    targetWrapperClassName: undefined,
     onFocus: () => {},
     onBlur: () => {},
     onMouseLeave: () => {},
@@ -188,6 +196,7 @@ class Tooltip extends React.Component {
   render() {
     const {
       extraClassNames,
+      targetWrapperClassName,
       content,
       onMouseLeave,
       onMouseOver,
@@ -224,6 +233,7 @@ class Tooltip extends React.Component {
         setRef={ref => {
           this.containerDomNode = ref;
         }}
+        targetWrapperClassName={targetWrapperClassName}
         aria-describedby={this.props.id}
         {...otherProps}
       >
