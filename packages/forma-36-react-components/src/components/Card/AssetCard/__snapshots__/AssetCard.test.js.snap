@@ -13,14 +13,10 @@ exports[`renders the component 1`] = `
     <div
       className="AssetCard__header"
     />
-    <div
-      className="AssetCard__content"
-    >
-      <Asset
-        extraClassNames="AssetCard__asset"
-        type="image"
-      />
-    </div>
+    <Asset
+      extraClassNames="AssetCard__asset"
+      type="image"
+    />
   </div>
 </CardLoading>
 `;
@@ -38,16 +34,12 @@ exports[`renders the component in loading state 1`] = `
     <div
       className="AssetCard__header"
     />
-    <div
-      className="AssetCard__content"
-    >
-      <Asset
-        extraClassNames="AssetCard__asset"
-        src="http://placekitten.com/200/300"
-        title="picture of a cat"
-        type="image"
-      />
-    </div>
+    <Asset
+      extraClassNames="AssetCard__asset"
+      src="http://placekitten.com/200/300"
+      title="picture of a cat"
+      type="image"
+    />
   </div>
 </CardLoading>
 `;
@@ -73,16 +65,12 @@ exports[`renders the component with actions 1`] = `
     <div
       className="AssetCard__header"
     />
-    <div
-      className="AssetCard__content"
-    >
-      <Asset
-        extraClassNames="AssetCard__asset"
-        src="http://placekitten.com/200/300"
-        title="picture of a cat"
-        type="image"
-      />
-    </div>
+    <Asset
+      extraClassNames="AssetCard__asset"
+      src="http://placekitten.com/200/300"
+      title="picture of a cat"
+      type="image"
+    />
   </div>
 </CardLoading>
 `;
@@ -100,16 +88,12 @@ exports[`renders the component with an additional class name 1`] = `
     <div
       className="AssetCard__header"
     />
-    <div
-      className="AssetCard__content"
-    >
-      <Asset
-        extraClassNames="AssetCard__asset"
-        src="http://placekitten.com/200/300"
-        title="picture of a cat"
-        type="image"
-      />
-    </div>
+    <Asset
+      extraClassNames="AssetCard__asset"
+      src="http://placekitten.com/200/300"
+      title="picture of a cat"
+      type="image"
+    />
   </div>
 </CardLoading>
 `;
@@ -139,16 +123,12 @@ exports[`renders the component with status 1`] = `
         archived
       </Tag>
     </div>
-    <div
-      className="AssetCard__content"
-    >
-      <Asset
-        extraClassNames="AssetCard__asset"
-        src="http://placekitten.com/200/300"
-        title="picture of a cat"
-        type="image"
-      />
-    </div>
+    <Asset
+      extraClassNames="AssetCard__asset"
+      src="http://placekitten.com/200/300"
+      title="picture of a cat"
+      type="image"
+    />
   </div>
 </CardLoading>
 `;
@@ -166,16 +146,12 @@ exports[`renders the component without actions 1`] = `
     <div
       className="AssetCard__header"
     />
-    <div
-      className="AssetCard__content"
-    >
-      <Asset
-        extraClassNames="AssetCard__asset"
-        src="http://placekitten.com/200/300"
-        title="picture of a cat"
-        type="image"
-      />
-    </div>
+    <Asset
+      extraClassNames="AssetCard__asset"
+      src="http://placekitten.com/200/300"
+      title="picture of a cat"
+      type="image"
+    />
   </div>
 </CardLoading>
 `;
