@@ -1,10 +1,6 @@
-@import 'settings/colors';
 @import 'settings/typography';
-@import 'settings/transitions';
 
 .ModalControls {
-  display: flex;
-  align-items: center;
   padding: calc(1rem * (30 / var(--rem-base)));
   padding-top: 0;
 }
