@@ -120,14 +120,12 @@ class AssetCard extends React.Component {
             {dropdownListElements &&
               this.renderDropdownListElements(dropdownListElements)}
           </div>
-          <div className={styles.AssetCard__content}>
-            <Asset
-              extraClassNames={styles.AssetCard__asset}
-              src={src}
-              title={title}
-              type={type}
-            />
-          </div>
+          <Asset
+            extraClassNames={styles.AssetCard__asset}
+            src={src}
+            title={title}
+            type={type}
+          />
         </div>
       </CardLoading>
     );
