@@ -33,22 +33,18 @@ class Asset extends React.Component {
   };
 
   renderImage = (src, title) => (
-    <div className={styles['Asset__image-container']}>
-      <div className={styles['Asset__image-container__image-wrapper']}>
+    <React.Fragment>
+      <div className={styles['Asset__image-container']}>
         <img
           className={styles['Asset__image-container__image']}
           src={src}
           alt={title}
         />
       </div>
-      <div className={styles['Asset__image-container__title-container']}>
-        <span
-          className={styles['Asset__image-container__title-container__title']}
-        >
-          {title}
-        </span>
+      <div className={styles['Asset__title-container']}>
+        <span className={styles['Asset__title-container__title']}>{title}</span>
       </div>
-    </div>
+    </React.Fragment>
   );
 
   renderAsset = (type, title) => {

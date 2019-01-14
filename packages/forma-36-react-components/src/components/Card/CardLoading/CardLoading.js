@@ -14,7 +14,6 @@ class CardLoading extends React.Component {
     testId: PropTypes.string,
     isLoading: PropTypes.bool,
     onClick: PropTypes.func,
-    height: PropTypes.number,
   };
 
   static defaultProps = {
@@ -23,7 +22,6 @@ class CardLoading extends React.Component {
     isLoading: undefined,
     onClick: undefined,
     extraClassNames: undefined,
-    height: undefined,
   };
 
   state = {
@@ -43,7 +41,6 @@ class CardLoading extends React.Component {
       children,
       testId,
       isLoading,
-      height,
       ...otherProps
     } = this.props;
 
@@ -57,9 +54,6 @@ class CardLoading extends React.Component {
         testId={testId}
         onClick={!isLoading && (event => this.handleClick(event))}
         selected={this.state.selected}
-        style={{
-          height,
-        }}
         {...otherProps}
       >
         <CSSTransition

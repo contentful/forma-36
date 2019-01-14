@@ -19,7 +19,6 @@ class AssetCard extends React.Component {
     dropdownListElements: PropTypes.node,
     status: PropTypes.oneOf(['archived', 'changed', 'draft', 'published']),
     testId: PropTypes.string,
-    height: PropTypes.number,
   };
 
   static defaultProps = {
@@ -31,7 +30,6 @@ class AssetCard extends React.Component {
     status: undefined,
     type: undefined,
     testId: 'cf-ui-asset-card',
-    height: undefined,
   };
 
   state = {
@@ -100,7 +98,6 @@ class AssetCard extends React.Component {
       isLoading,
       dropdownListElements,
       testId,
-      height,
       ...otherProps
     } = this.props;
 
@@ -111,22 +108,19 @@ class AssetCard extends React.Component {
         extraClassNames={classNames}
         title={title}
         testId={testId}
-        height={height}
         {...otherProps}
       >
-        <div className={styles['AssetCard__inner-wrapper']}>
-          <div className={styles.AssetCard__header}>
-            {status && this.renderStatus(status)}
-            {dropdownListElements &&
-              this.renderDropdownListElements(dropdownListElements)}
-          </div>
-          <Asset
-            extraClassNames={styles.AssetCard__asset}
-            src={src}
-            title={title}
-            type={type}
-          />
+        <div className={styles.AssetCard__header}>
+          {status && this.renderStatus(status)}
+          {dropdownListElements &&
+            this.renderDropdownListElements(dropdownListElements)}
         </div>
+        <Asset
+          src={src}
+          title={title}
+          type={type}
+          extraClassNames={styles.AssetCard__asset}
+        />
       </CardLoading>
     );
   }
