@@ -3,19 +3,19 @@
 @import 'settings/transitions';
 
 .AssetCard {
+  height: calc(1rem * (300 / var(--rem-base)));
   display: inline-block;
   padding: 0px;
   min-width: calc(1rem * (240 / var(--rem-base)));
-  min-height: calc(1rem * (80 / var(--rem-base)));
 }
 
 .AssetCard__asset {
-  height: 247px;
+  height: calc(1rem * (253 / var(--rem-base)));
 }
 
 .AssetCard__header {
   padding: 0 calc(1rem * (19 / var(--rem-base)));
-  height: 50px;
+  height: calc(1rem * (45 / var(--rem-base)));
   display: flex;
   align-items: center;
   border-bottom: calc(1rem * (1 / var(--rem-base))) solid
