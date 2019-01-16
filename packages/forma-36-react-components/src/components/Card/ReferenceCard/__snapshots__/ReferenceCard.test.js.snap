@@ -4,6 +4,7 @@ exports[`renders the component 1`] = `
 <Card
   extraClassNames="ReferenceCard"
   padding="default"
+  selected={false}
   testId="cf-ui-reference-card"
 >
   <article
@@ -53,6 +54,7 @@ exports[`renders the component with a thumbnail element 1`] = `
 <Card
   extraClassNames="ReferenceCard"
   padding="default"
+  selected={false}
   testId="cf-ui-reference-card"
 >
   <article
@@ -110,6 +112,7 @@ exports[`renders the component with action elements 1`] = `
 <Card
   extraClassNames="ReferenceCard"
   padding="default"
+  selected={false}
   testId="cf-ui-reference-card"
 >
   <article
@@ -175,6 +178,7 @@ exports[`renders the component with an additional class name 1`] = `
 <Card
   extraClassNames="ReferenceCard my-extra-class"
   padding="default"
+  selected={false}
   testId="cf-ui-reference-card"
 >
   <article

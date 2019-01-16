@@ -23,14 +23,9 @@ exports[`renders the component 1`] = `
     unmountOnExit={true}
   >
     <div
-      className="InlineReferenceCard__spinner-wrapper"
+      className="InlineReferenceCard__skeleton-wrapper"
     >
-      <Spinner
-        color="default"
-        extraClassNames="ReferenceCard__spinner"
-        size="small"
-        testId="cf-ui-spinner"
-      />
+      <ReferenceCardSkeleton />
     </div>
   </CSSTransition>
   <div
@@ -67,14 +62,9 @@ exports[`renders the component with a dropdown 1`] = `
     unmountOnExit={true}
   >
     <div
-      className="InlineReferenceCard__spinner-wrapper"
+      className="InlineReferenceCard__skeleton-wrapper"
     >
-      <Spinner
-        color="default"
-        extraClassNames="ReferenceCard__spinner"
-        size="small"
-        testId="cf-ui-spinner"
-      />
+      <ReferenceCardSkeleton />
     </div>
   </CSSTransition>
   <div
@@ -164,14 +154,9 @@ exports[`renders the component with an additional class name 1`] = `
     unmountOnExit={true}
   >
     <div
-      className="InlineReferenceCard__spinner-wrapper"
+      className="InlineReferenceCard__skeleton-wrapper"
     >
-      <Spinner
-        color="default"
-        extraClassNames="ReferenceCard__spinner"
-        size="small"
-        testId="cf-ui-spinner"
-      />
+      <ReferenceCardSkeleton />
     </div>
   </CSSTransition>
   <div
@@ -208,14 +193,9 @@ exports[`renders the component with published status 1`] = `
     unmountOnExit={true}
   >
     <div
-      className="InlineReferenceCard__spinner-wrapper"
+      className="InlineReferenceCard__skeleton-wrapper"
     >
-      <Spinner
-        color="default"
-        extraClassNames="ReferenceCard__spinner"
-        size="small"
-        testId="cf-ui-spinner"
-      />
+      <ReferenceCardSkeleton />
     </div>
   </CSSTransition>
   <div

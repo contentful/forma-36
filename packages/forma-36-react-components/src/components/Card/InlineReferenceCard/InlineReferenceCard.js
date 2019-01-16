@@ -6,7 +6,8 @@ import IconButton from '../../IconButton';
 import Dropdown from '../../Dropdown/Dropdown';
 import DropdownList from '../../Dropdown/DropdownList';
 import Card from '../Card';
-import Spinner from '../../Spinner';
+
+import InlineReferenceCardSkeleton from './InlineReferenceCardSkeleton';
 import styles from './InlineReferenceCard.css';
 
 class InlineReferenceCard extends React.Component {
@@ -75,11 +76,8 @@ class InlineReferenceCard extends React.Component {
           mountOnEnter
           unmountOnExit
         >
-          <div className={styles['InlineReferenceCard__spinner-wrapper']}>
-            <Spinner
-              extraClassNames={styles.ReferenceCard__spinner}
-              size="small"
-            />
+          <div className={styles['InlineReferenceCard__skeleton-wrapper']}>
+            <InlineReferenceCardSkeleton />
           </div>
         </CSSTransition>
         <div className={statusIndicatorClassNames} />

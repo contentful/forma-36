@@ -14,12 +14,12 @@ class SkeletonContainer extends React.Component {
     preserveAspectRatio: PropTypes.string,
     clipId: PropTypes.string,
     gradientId: PropTypes.string,
-    primaryColor: PropTypes.string,
-    primaryOpacity: PropTypes.number,
+    backgroundColor: PropTypes.string,
+    backgroundOpacity: PropTypes.number,
     animate: PropTypes.bool,
     speed: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    secondaryColor: PropTypes.string,
-    secondaryOpacity: PropTypes.number,
+    foregroundColor: PropTypes.string,
+    foregroundOpacity: PropTypes.number,
     svgWidth: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     svgHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   };
@@ -33,12 +33,12 @@ class SkeletonContainer extends React.Component {
     preserveAspectRatio: 'xMidYMid meet',
     clipId: 'cf-ui-skeleton-clip-id',
     gradientId: 'cf-ui-skeleton-clip-gradient',
-    primaryColor: '#e5ebed',
-    primaryOpacity: 1,
+    backgroundColor: '#e5ebed',
+    backgroundOpacity: 1,
     animate: true,
     speed: 2,
-    secondaryColor: '#f7f9fa',
-    secondaryOpacity: 1,
+    foregroundColor: '#f7f9fa',
+    foregroundOpacity: 1,
     svgWidth: '100%',
     svgHeight: '100%',
   };
@@ -54,12 +54,12 @@ class SkeletonContainer extends React.Component {
       preserveAspectRatio,
       clipId,
       gradientId,
-      primaryColor,
-      primaryOpacity,
+      backgroundColor,
+      backgroundOpacity,
       animate,
       speed,
-      secondaryColor,
-      secondaryOpacity,
+      foregroundColor,
+      foregroundOpacity,
       svgWidth,
       svgHeight,
       ...otherProps
@@ -93,14 +93,14 @@ class SkeletonContainer extends React.Component {
           <linearGradient id={gradientId}>
             <stop
               offset="0%"
-              stopColor={primaryColor}
-              stopOpacity={primaryOpacity}
+              stopColor={backgroundColor}
+              stopOpacity={backgroundOpacity}
             >
               {animate && (
                 <animate
                   id="animation1"
                   attributeName="stop-color"
-                  values={`${primaryColor}; ${secondaryColor}; ${primaryColor}`}
+                  values={`${backgroundColor}; ${foregroundColor}; ${backgroundColor}`}
                   dur={`${speed}s`}
                   repeatCount="indefinite"
                 />
@@ -108,13 +108,13 @@ class SkeletonContainer extends React.Component {
             </stop>
             <stop
               offset="50%"
-              stopColor={secondaryColor}
-              stopOpacity={secondaryOpacity}
+              stopColor={foregroundColor}
+              stopOpacity={foregroundOpacity}
             >
               {animate && (
                 <animate
                   attributeName="stop-color"
-                  values={`${primaryColor}; ${secondaryColor}; ${primaryColor}`}
+                  values={`${backgroundColor}; ${foregroundColor}; ${backgroundColor}`}
                   begin="animation1.begin+0.25s"
                   dur={`${speed}s`}
                   repeatCount="indefinite"
@@ -123,14 +123,14 @@ class SkeletonContainer extends React.Component {
             </stop>
             <stop
               offset="100%"
-              stopColor={primaryColor}
-              stopOpacity={primaryOpacity}
+              stopColor={backgroundColor}
+              stopOpacity={backgroundOpacity}
             >
               {animate && (
                 <animate
                   attributeName="stop-color"
                   begin="animation1.begin+0.5s"
-                  values={`${primaryColor}; ${secondaryColor}; ${primaryColor}`}
+                  values={`${backgroundColor}; ${foregroundColor}; ${backgroundColor}`}
                   dur={`${speed}s`}
                   repeatCount="indefinite"
                 />

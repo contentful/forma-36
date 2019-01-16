@@ -23,8 +23,8 @@ storiesOf('Components|Skeleton/SkeletonContainer', module)
         animate={boolean('Animate', true)}
         width={text('Width', '100%')}
         height={text('Height', '100')}
-        primaryColor={text('Primary color', '#e5ebed')}
-        secondaryColor={text('Secondary color', '#f7f9fa')}
+        backgroundColor={text('Primary color', '#e5ebed')}
+        foregroundColor={text('Secondary color', '#f7f9fa')}
         speed={number('Speed', 2)}
       >
         <SkeletonDisplayText numberOfLines={1} />

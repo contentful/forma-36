@@ -10,7 +10,9 @@
 }
 
 .AssetCard__asset {
-  height: calc(1rem * (254 / var(--rem-base)));
+  height: calc(
+    1rem * (254 / var(--rem-base))
+  ); /* 254 Height of the container substracted by the border width of the header */
 }
 
 .AssetCard__header {

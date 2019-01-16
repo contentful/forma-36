@@ -106,7 +106,7 @@ it('renders the component with a custom gradient id', () => {
 
 it('renders the component with a custom primary color', () => {
   const output = shallow(
-    <SkeletonContainer primaryColor="#ffffff">
+    <SkeletonContainer backgroundColor="#ffffff">
       <SkeletonBodyText />
     </SkeletonContainer>,
   );
@@ -116,7 +116,7 @@ it('renders the component with a custom primary color', () => {
 
 it('renders the component with a custom primary opacity', () => {
   const output = shallow(
-    <SkeletonContainer primaryOpacity={0}>
+    <SkeletonContainer backgroundOpacity={0}>
       <SkeletonBodyText />
     </SkeletonContainer>,
   );
@@ -126,7 +126,7 @@ it('renders the component with a custom primary opacity', () => {
 
 it('renders the component with a custom secondary color', () => {
   const output = shallow(
-    <SkeletonContainer secondaryColor="#ffffff">
+    <SkeletonContainer foregroundColor="#ffffff">
       <SkeletonBodyText />
     </SkeletonContainer>,
   );
@@ -136,7 +136,7 @@ it('renders the component with a custom secondary color', () => {
 
 it('renders the component with a custom secondary opacity', () => {
   const output = shallow(
-    <SkeletonContainer secondaryOpacity={0}>
+    <SkeletonContainer foregroundOpacity={0}>
       <SkeletonBodyText />
     </SkeletonContainer>,
   );

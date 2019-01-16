@@ -4,6 +4,7 @@ exports[`renders the component 1`] = `
 <Card
   extraClassNames="AssetCard"
   padding="default"
+  selected={false}
   testId="cf-ui-asset-card"
 >
   <div
@@ -28,6 +29,7 @@ exports[`renders the component in loading state 1`] = `
 <Card
   extraClassNames="AssetCard"
   padding="default"
+  selected={false}
   testId="cf-ui-asset-card"
   title="picture of a cat"
 >
@@ -47,6 +49,7 @@ exports[`renders the component with actions 1`] = `
   }
   extraClassNames="AssetCard"
   padding="default"
+  selected={false}
   testId="cf-ui-asset-card"
   title="picture of a cat"
 >
@@ -74,6 +77,7 @@ exports[`renders the component with an additional class name 1`] = `
 <Card
   extraClassNames="AssetCard my-extra-class"
   padding="default"
+  selected={false}
   testId="cf-ui-asset-card"
   title="picture of a cat"
 >
@@ -101,6 +105,7 @@ exports[`renders the component with status 1`] = `
 <Card
   extraClassNames="AssetCard"
   padding="default"
+  selected={false}
   testId="cf-ui-asset-card"
   title="picture of a cat"
 >
@@ -140,6 +145,7 @@ exports[`renders the component without actions 1`] = `
 <Card
   extraClassNames="AssetCard"
   padding="default"
+  selected={false}
   testId="cf-ui-asset-card"
   title="picture of a cat"
 >

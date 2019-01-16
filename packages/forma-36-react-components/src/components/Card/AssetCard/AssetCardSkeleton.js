@@ -4,7 +4,7 @@ import SkeletonBodyText from '../../Skeleton/SkeletonBodyText';
 import SkeletonImage from '../../Skeleton/SkeletonImage';
 
 const AssetCardSkeleton = () => (
-  <SkeletonContainer width="100%" svgWidth={240}>
+  <SkeletonContainer svgWidth={240} clipId="f36-asset-card-skeleton">
     <SkeletonImage offsetLeft={85} offsetTop={100} />
     <SkeletonBodyText
       offsetLeft={70}
