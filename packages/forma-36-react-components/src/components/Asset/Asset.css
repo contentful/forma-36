@@ -77,7 +77,6 @@
 .Asset__illustration-container {
   width: 100%;
   display: flex;
-  width: calc(1rem * (240 / var(--rem-base)));
   justify-content: center;
   margin-bottom: calc(1rem * calc(20 / var(--rem-base)));
   margin-top: calc(1rem * calc(20 / var(--rem-base)));
