@@ -4,22 +4,10 @@
 
 .Asset {
   display: block;
-  max-height: inherit;
+  position: relative;
 }
 
 .Asset__image-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  max-height: inherit;
-  height: inherit;
-  overflow: hidden;
-  width: 100%;
-}
-
-.Asset__image-container__image-wrapper {
-  flex-basis: 100%;
   height: 100%;
   display: flex;
   align-items: center;
@@ -32,7 +20,7 @@
   max-height: 100%;
 }
 
-.Asset__image-container__title-container {
+.Asset__title-container {
   opacity: 0;
   transition: opacity var(--transition-duration-default)
     var(--transition-easing-default);
@@ -61,7 +49,7 @@
   }
 }
 
-.Asset__image-container__title-container__title {
+.Asset__title-container__title {
   bottom: 0;
   height: calc(1rem * (44 / var(--rem-base)));
   width: 100%;
@@ -71,13 +59,10 @@
 
 .Asset__asset-container {
   display: flex;
-  flex-wrap: wrap;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  max-height: inherit;
-  overflow: hidden;
-  width: calc(1rem * (220 / var(--rem-base)));
-  max-width: calc(1rem * (220 / var(--rem-base)));
-  padding: calc(1rem * calc(10 / var(--rem-base)));
 }
 
 .Asset__asset-container__title {

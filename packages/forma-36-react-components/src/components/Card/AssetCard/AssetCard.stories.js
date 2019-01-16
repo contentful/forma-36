@@ -22,7 +22,6 @@ storiesOf('Components|Card/AssetCard', module)
     withInfo()(() => (
       <AssetCard
         extraClassNames={text('Extra Class Names', '')}
-        height={number('Height', 300)}
         status={select(
           'Status',
           {
@@ -33,7 +32,7 @@ storiesOf('Components|Card/AssetCard', module)
           },
           'published',
         )}
-        type={select('Asset Type', types, 'archive')}
+        type={select('Asset Type', types, 'image')}
         isLoading={boolean('Is Loading', false)}
         src={text('Source', 'https://placekitten.com/200/300')}
         title={text('Title', 'Image of a cat')}

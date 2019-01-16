@@ -9,22 +9,12 @@ exports[`does not render a loading spinner when not passed a "loading" prop 1`] 
     extraClassNames="CardLoading"
     padding="default"
     selected={false}
-    style={
-      Object {
-        "height": undefined,
-      }
-    }
     testId="cf-ui-embedded-card"
     title="Untitled"
   >
     <div
       className="Card CardLoading Card--padding-default"
       data-test-id="cf-ui-embedded-card"
-      style={
-        Object {
-          "height": undefined,
-        }
-      }
       title="Untitled"
     >
       <CSSTransition
@@ -103,22 +93,12 @@ exports[`renders a loading spinner when passed a "loading" prop 1`] = `
     extraClassNames="CardLoading CardLoading--is-loading"
     padding="default"
     selected={false}
-    style={
-      Object {
-        "height": undefined,
-      }
-    }
     testId="cf-ui-embedded-card"
     title="Untitled"
   >
     <div
       className="Card CardLoading CardLoading--is-loading Card--padding-default"
       data-test-id="cf-ui-embedded-card"
-      style={
-        Object {
-          "height": undefined,
-        }
-      }
       title="Untitled"
     >
       <CSSTransition
@@ -221,11 +201,6 @@ exports[`renders the component 1`] = `
   extraClassNames="CardLoading"
   padding="default"
   selected={false}
-  style={
-    Object {
-      "height": undefined,
-    }
-  }
   testId="cf-ui-embedded-card"
   title="Untitled"
 >
@@ -271,13 +246,9 @@ exports[`renders the component 1`] = `
 exports[`renders the component with a fixed height 1`] = `
 <Card
   extraClassNames="CardLoading"
+  height={300}
   padding="default"
   selected={false}
-  style={
-    Object {
-      "height": 300,
-    }
-  }
   testId="cf-ui-embedded-card"
   title="Untitled"
 >
@@ -325,11 +296,6 @@ exports[`renders the component with an additional class name 1`] = `
   extraClassNames="CardLoading my-extra-class"
   padding="default"
   selected={false}
-  style={
-    Object {
-      "height": undefined,
-    }
-  }
   testId="cf-ui-embedded-card"
   title="Untitled"
 >

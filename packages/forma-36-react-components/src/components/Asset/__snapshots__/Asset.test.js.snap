@@ -7,24 +7,20 @@ exports[`renders the component 1`] = `
   <div
     className="Asset__image-container"
   >
-    <div
-      className="Asset__image-container__image-wrapper"
+    <img
+      alt="Image of a cat"
+      className="Asset__image-container__image"
+      src="https://placekitten.com/200/300"
+    />
+  </div>
+  <div
+    className="Asset__title-container"
+  >
+    <span
+      className="Asset__title-container__title"
     >
-      <img
-        alt="Image of a cat"
-        className="Asset__image-container__image"
-        src="https://placekitten.com/200/300"
-      />
-    </div>
-    <div
-      className="Asset__image-container__title-container"
-    >
-      <span
-        className="Asset__image-container__title-container__title"
-      >
-        Image of a cat
-      </span>
-    </div>
+      Image of a cat
+    </span>
   </div>
 </div>
 `;
@@ -36,24 +32,20 @@ exports[`renders the component with an additional class name 1`] = `
   <div
     className="Asset__image-container"
   >
-    <div
-      className="Asset__image-container__image-wrapper"
+    <img
+      alt="Image of a cat"
+      className="Asset__image-container__image"
+      src="https://placekitten.com/200/300"
+    />
+  </div>
+  <div
+    className="Asset__title-container"
+  >
+    <span
+      className="Asset__title-container__title"
     >
-      <img
-        alt="Image of a cat"
-        className="Asset__image-container__image"
-        src="https://placekitten.com/200/300"
-      />
-    </div>
-    <div
-      className="Asset__image-container__title-container"
-    >
-      <span
-        className="Asset__image-container__title-container__title"
-      >
-        Image of a cat
-      </span>
-    </div>
+      Image of a cat
+    </span>
   </div>
 </div>
 `;

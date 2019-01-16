@@ -9,32 +9,17 @@
   min-height: calc(1rem * (80 / var(--rem-base)));
 }
 
-.AssetCard__inner-wrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+.AssetCard__asset {
+  height: 247px;
 }
 
 .AssetCard__header {
-  padding: calc(1rem * (14 / var(--rem-base)))
-    calc(1rem * (19 / var(--rem-base)));
+  padding: 0 calc(1rem * (19 / var(--rem-base)));
+  height: 50px;
   display: flex;
   align-items: center;
   border-bottom: calc(1rem * (1 / var(--rem-base))) solid
     var(--color-element-mid);
-}
-
-.AssetCard__asset {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: inherit;
-  position: relative;
-  max-height: inherit;
-  overflow: hidden;
-  min-width: calc(1rem * (240 / var(--rem-base)));
 }
 
 .AssetCard__header__dropdown-button {

@@ -10,10 +10,10 @@
   font-size: var(--font-size-m);
   line-height: var(--line-height-default);
   color: var(--color-text-dark);
+  height: 125px;
 }
 
 .ReferenceCard--is-loading {
-  height: 80px; /* Provides a default height as card only contains a Spinner */
   overflow: hidden;
 }
 
