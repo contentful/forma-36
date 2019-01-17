@@ -54,6 +54,26 @@ it('renders the component with an offset left', () => {
   expect(output).toMatchSnapshot();
 });
 
+it('renders the component with a radius x', () => {
+  const output = shallow(
+    <SkeletonContainer>
+      <SkeletonImage radiusX={15} />
+    </SkeletonContainer>,
+  );
+
+  expect(output).toMatchSnapshot();
+});
+
+it('renders the component with a radius y', () => {
+  const output = shallow(
+    <SkeletonContainer>
+      <SkeletonImage radiusY={15} />
+    </SkeletonContainer>,
+  );
+
+  expect(output).toMatchSnapshot();
+});
+
 it('has no a11y issues', async () => {
   const output = mount(
     <SkeletonContainer>

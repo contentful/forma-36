@@ -30,6 +30,8 @@ exports[`renders the component 1`] = `
     >
       <SkeletonImage
         height={70}
+        radiusX={0}
+        radiusY={0}
         testId="cf-ui-skeleton-image"
         width={70}
       />
@@ -111,6 +113,8 @@ exports[`renders the component with a custom height 1`] = `
     >
       <SkeletonImage
         height={100}
+        radiusX={0}
+        radiusY={0}
         testId="cf-ui-skeleton-image"
         width={70}
       />
@@ -192,8 +196,176 @@ exports[`renders the component with a custom width 1`] = `
     >
       <SkeletonImage
         height={70}
+        radiusX={0}
+        radiusY={0}
         testId="cf-ui-skeleton-image"
         width={100}
+      />
+    </clipPath>
+    <linearGradient
+      id="cf-ui-skeleton-clip-gradient"
+    >
+      <stop
+        offset="0%"
+        stopColor="#e5ebed"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="stop-color"
+          dur="2s"
+          id="animation1"
+          repeatCount="indefinite"
+          values="#e5ebed; #f7f9fa; #e5ebed"
+        />
+      </stop>
+      <stop
+        offset="50%"
+        stopColor="#f7f9fa"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="stop-color"
+          begin="animation1.begin+0.25s"
+          dur="2s"
+          repeatCount="indefinite"
+          values="#e5ebed; #f7f9fa; #e5ebed"
+        />
+      </stop>
+      <stop
+        offset="100%"
+        stopColor="#e5ebed"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="stop-color"
+          begin="animation1.begin+0.5s"
+          dur="2s"
+          repeatCount="indefinite"
+          values="#e5ebed; #f7f9fa; #e5ebed"
+        />
+      </stop>
+    </linearGradient>
+  </defs>
+</svg>
+`;
+
+exports[`renders the component with a radius x 1`] = `
+<svg
+  aria-label="Loading component..."
+  className="SkeletonContainer"
+  height="100%"
+  preserveAspectRatio="xMidYMid meet"
+  role="img"
+  width="100%"
+>
+  <title>
+    Loading component...
+  </title>
+  <rect
+    clipPath="url(#cf-ui-skeleton-clip-id)"
+    height="100%"
+    style={
+      Object {
+        "fill": "url(#cf-ui-skeleton-clip-gradient)",
+      }
+    }
+    width="100%"
+    x="0"
+    y="0"
+  />
+  <defs>
+    <clipPath
+      id="cf-ui-skeleton-clip-id"
+    >
+      <SkeletonImage
+        height={70}
+        radiusX={15}
+        radiusY={0}
+        testId="cf-ui-skeleton-image"
+        width={70}
+      />
+    </clipPath>
+    <linearGradient
+      id="cf-ui-skeleton-clip-gradient"
+    >
+      <stop
+        offset="0%"
+        stopColor="#e5ebed"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="stop-color"
+          dur="2s"
+          id="animation1"
+          repeatCount="indefinite"
+          values="#e5ebed; #f7f9fa; #e5ebed"
+        />
+      </stop>
+      <stop
+        offset="50%"
+        stopColor="#f7f9fa"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="stop-color"
+          begin="animation1.begin+0.25s"
+          dur="2s"
+          repeatCount="indefinite"
+          values="#e5ebed; #f7f9fa; #e5ebed"
+        />
+      </stop>
+      <stop
+        offset="100%"
+        stopColor="#e5ebed"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="stop-color"
+          begin="animation1.begin+0.5s"
+          dur="2s"
+          repeatCount="indefinite"
+          values="#e5ebed; #f7f9fa; #e5ebed"
+        />
+      </stop>
+    </linearGradient>
+  </defs>
+</svg>
+`;
+
+exports[`renders the component with a radius y 1`] = `
+<svg
+  aria-label="Loading component..."
+  className="SkeletonContainer"
+  height="100%"
+  preserveAspectRatio="xMidYMid meet"
+  role="img"
+  width="100%"
+>
+  <title>
+    Loading component...
+  </title>
+  <rect
+    clipPath="url(#cf-ui-skeleton-clip-id)"
+    height="100%"
+    style={
+      Object {
+        "fill": "url(#cf-ui-skeleton-clip-gradient)",
+      }
+    }
+    width="100%"
+    x="0"
+    y="0"
+  />
+  <defs>
+    <clipPath
+      id="cf-ui-skeleton-clip-id"
+    >
+      <SkeletonImage
+        height={70}
+        radiusX={0}
+        radiusY={15}
+        testId="cf-ui-skeleton-image"
+        width={70}
       />
     </clipPath>
     <linearGradient
@@ -274,6 +446,8 @@ exports[`renders the component with an offset left 1`] = `
       <SkeletonImage
         height={70}
         offsetLeft={100}
+        radiusX={0}
+        radiusY={0}
         testId="cf-ui-skeleton-image"
         width={70}
       />
@@ -356,6 +530,8 @@ exports[`renders the component with an offset top 1`] = `
       <SkeletonImage
         height={70}
         offsetTop={100}
+        radiusX={0}
+        radiusY={0}
         testId="cf-ui-skeleton-image"
         width={70}
       />
