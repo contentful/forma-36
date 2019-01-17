@@ -8,6 +8,8 @@ class SkeletonImage extends React.Component {
     offsetTop: PropTypes.number,
     width: PropTypes.number,
     height: PropTypes.number,
+    radiusX: PropTypes.number,
+    radiusY: PropTypes.number,
   };
 
   static defaultProps = {
@@ -16,6 +18,8 @@ class SkeletonImage extends React.Component {
     offsetTop: undefined,
     width: 70,
     height: 70,
+    radiusX: 0,
+    radiusY: 0,
   };
 
   render() {
@@ -25,6 +29,8 @@ class SkeletonImage extends React.Component {
       offsetTop,
       width,
       height,
+      radiusX,
+      radiusY,
       ...otherProps
     } = this.props;
 
@@ -32,8 +38,8 @@ class SkeletonImage extends React.Component {
       <rect
         x={offsetLeft}
         y={offsetTop}
-        rx="0"
-        ry="0"
+        rx={radiusX}
+        ry={radiusY}
         width={width}
         height={height}
         {...otherProps}
