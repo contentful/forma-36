@@ -10,7 +10,7 @@
   font-size: var(--font-size-m);
   line-height: var(--line-height-default);
   color: var(--color-text-dark);
-  height: 125px;
+  height: calc(1rem * (135 / var(--rem-base)));
 }
 
 .ReferenceCard--is-loading {
@@ -26,6 +26,7 @@
   padding-right: calc(1rem * (20 / var(--rem-base)));
   margin-bottom: calc(1rem * (4 / var(--rem-base)));
   color: var(--color-text-light);
+  font-size: var(--font-size-l);
   word-break: break-word;
 }
 
@@ -46,7 +47,7 @@
 
 .ReferenceCard__title {
   margin: 0;
-  font-size: var(--font-size-m);
+  font-size: var(--font-size-l);
   line-height: var(--line-height-default);
   word-break: break-word;
   text-overflow: ellipsis;
@@ -58,6 +59,7 @@
   line-height: var(--line-height-default);
   word-break: break-word;
   white-space: initial;
+  font-size: var(--font-size-l);
 }
 
 .ReferenceCard__thumbnail {

@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import truncate from 'truncate';
-import CardLoading from '../CardLoading';
+import Card from '../Card';
 import Tag from '../../Tag';
+import ReferenceCardSkeleton from './ReferenceCardSkeleton';
 import styles from './ReferenceCard.css';
 
 class ReferenceCard extends React.Component {
@@ -48,7 +49,7 @@ class ReferenceCard extends React.Component {
   };
 
   renderDescription = description => {
-    const truncatedDescription = truncate(description, 110, {});
+    const truncatedDescription = truncate(description, 95, {});
 
     return (
       <p className={styles.ReferenceCard__description}>
@@ -113,35 +114,38 @@ class ReferenceCard extends React.Component {
     const classNames = cn(styles.ReferenceCard, extraClassNames);
 
     return (
-      <CardLoading
+      <Card
         extraClassNames={classNames}
-        onClick={onClick}
-        isLoading={loading}
+        onClick={!loading ? onClick : undefined}
         testId={testId}
         {...otherProps}
       >
-        <article className={styles.ReferenceCard__wrapper}>
-          <React.Fragment>
-            <div className={styles.ReferenceCard__meta}>
-              <div
-                className={styles['ReferenceCard__content-type']}
-                data-test-id="content-type"
-              >
-                {contentType}
+        {loading ? (
+          <ReferenceCardSkeleton />
+        ) : (
+          <article className={styles.ReferenceCard__wrapper}>
+            <React.Fragment>
+              <div className={styles.ReferenceCard__meta}>
+                <div
+                  className={styles['ReferenceCard__content-type']}
+                  data-test-id="content-type"
+                >
+                  {contentType}
+                </div>
+                {status && this.renderStatus(status)}
+                {actionElements && this.renderActionElements(actionElements)}
               </div>
-              {status && this.renderStatus(status)}
-              {actionElements && this.renderActionElements(actionElements)}
-            </div>
-            <div className={styles.ReferenceCard__content}>
-              <div className={styles.ReferenceCard__body}>
-                {title && this.renderTitle(title)}
-                {description && this.renderDescription(description)}
+              <div className={styles.ReferenceCard__content}>
+                <div className={styles.ReferenceCard__body}>
+                  {title && this.renderTitle(title)}
+                  {description && this.renderDescription(description)}
+                </div>
+                {thumbnailElement && this.renderThumbnail(thumbnailElement)}
               </div>
-              {thumbnailElement && this.renderThumbnail(thumbnailElement)}
-            </div>
-          </React.Fragment>
-        </article>
-      </CardLoading>
+            </React.Fragment>
+          </article>
+        )}
+      </Card>
     );
   }
 }

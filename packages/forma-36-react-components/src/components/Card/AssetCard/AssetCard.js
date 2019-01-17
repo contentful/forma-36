@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import CardLoading from '../CardLoading';
+import Card from '../Card';
 import Dropdown from '../../Dropdown/Dropdown';
 import Asset from '../../Asset';
 import Icon from '../../Icon/Icon';
 import TabFocusTrap from '../../TabFocusTrap';
 import Tag from '../../Tag';
+import AssetCardSkeleton from './AssetCardSkeleton';
 import styles from './AssetCard.css';
 
 class AssetCard extends React.Component {
@@ -103,25 +104,32 @@ class AssetCard extends React.Component {
 
     const classNames = cn(styles.AssetCard, extraClassNames);
     return (
-      <CardLoading
-        isLoading={isLoading}
+      <Card
         extraClassNames={classNames}
         title={title}
         testId={testId}
         {...otherProps}
       >
-        <div className={styles.AssetCard__header}>
-          {status && this.renderStatus(status)}
-          {dropdownListElements &&
-            this.renderDropdownListElements(dropdownListElements)}
-        </div>
-        <Asset
-          src={src}
-          title={title}
-          type={type}
-          extraClassNames={styles.AssetCard__asset}
-        />
-      </CardLoading>
+        {isLoading ? (
+          <AssetCardSkeleton />
+        ) : (
+          <div className={styles['AssetCard__inner-wrapper']}>
+            <div className={styles.AssetCard__header}>
+              {status && this.renderStatus(status)}
+              {dropdownListElements &&
+                this.renderDropdownListElements(dropdownListElements)}
+            </div>
+            <div className={styles.AssetCard__content}>
+              <Asset
+                extraClassNames={styles.AssetCard__asset}
+                src={src}
+                title={title}
+                type={type}
+              />
+            </div>
+          </div>
+        )}
+      </Card>
     );
   }
 }

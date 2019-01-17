@@ -22,7 +22,7 @@ storiesOf('Components|Card/InlineReferenceCard', module)
           lineHeight: 1.5,
           display: 'inline-block',
           maxWidth: 600,
-          fontSize: 14,
+          fontSize: 16,
         }}
       >
         Fusce a odio pharetra, porta justo vel, maximus ex. In pellentesque a

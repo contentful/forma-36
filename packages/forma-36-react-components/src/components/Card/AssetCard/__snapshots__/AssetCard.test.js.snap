@@ -1,43 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
-<CardLoading
+<Card
   extraClassNames="AssetCard"
-  isLoading={false}
+  padding="default"
+  selected={false}
   testId="cf-ui-asset-card"
-  title="Untitled"
 >
   <div
-    className="AssetCard__header"
-  />
-  <Asset
-    extraClassNames="AssetCard__asset"
-    type="image"
-  />
-</CardLoading>
+    className="AssetCard__inner-wrapper"
+  >
+    <div
+      className="AssetCard__header"
+    />
+    <div
+      className="AssetCard__content"
+    >
+      <Asset
+        extraClassNames="AssetCard__asset"
+        type="image"
+      />
+    </div>
+  </div>
+</Card>
 `;
 
 exports[`renders the component in loading state 1`] = `
-<CardLoading
+<Card
   extraClassNames="AssetCard"
-  isLoading={true}
+  padding="default"
+  selected={false}
   testId="cf-ui-asset-card"
   title="picture of a cat"
 >
-  <div
-    className="AssetCard__header"
-  />
-  <Asset
-    extraClassNames="AssetCard__asset"
-    src="http://placekitten.com/200/300"
-    title="picture of a cat"
-    type="image"
-  />
-</CardLoading>
+  <AssetCardSkeleton />
+</Card>
 `;
 
 exports[`renders the component with actions 1`] = `
-<CardLoading
+<Card
   actions={
     Array [
       Object {
@@ -47,87 +48,123 @@ exports[`renders the component with actions 1`] = `
     ]
   }
   extraClassNames="AssetCard"
-  isLoading={false}
+  padding="default"
+  selected={false}
   testId="cf-ui-asset-card"
   title="picture of a cat"
 >
   <div
-    className="AssetCard__header"
-  />
-  <Asset
-    extraClassNames="AssetCard__asset"
-    src="http://placekitten.com/200/300"
-    title="picture of a cat"
-    type="image"
-  />
-</CardLoading>
+    className="AssetCard__inner-wrapper"
+  >
+    <div
+      className="AssetCard__header"
+    />
+    <div
+      className="AssetCard__content"
+    >
+      <Asset
+        extraClassNames="AssetCard__asset"
+        src="http://placekitten.com/200/300"
+        title="picture of a cat"
+        type="image"
+      />
+    </div>
+  </div>
+</Card>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
-<CardLoading
+<Card
   extraClassNames="AssetCard my-extra-class"
-  isLoading={false}
+  padding="default"
+  selected={false}
   testId="cf-ui-asset-card"
   title="picture of a cat"
 >
   <div
-    className="AssetCard__header"
-  />
-  <Asset
-    extraClassNames="AssetCard__asset"
-    src="http://placekitten.com/200/300"
-    title="picture of a cat"
-    type="image"
-  />
-</CardLoading>
+    className="AssetCard__inner-wrapper"
+  >
+    <div
+      className="AssetCard__header"
+    />
+    <div
+      className="AssetCard__content"
+    >
+      <Asset
+        extraClassNames="AssetCard__asset"
+        src="http://placekitten.com/200/300"
+        title="picture of a cat"
+        type="image"
+      />
+    </div>
+  </div>
+</Card>
 `;
 
 exports[`renders the component with status 1`] = `
-<CardLoading
+<Card
   extraClassNames="AssetCard"
-  isLoading={false}
+  padding="default"
+  selected={false}
   testId="cf-ui-asset-card"
   title="picture of a cat"
 >
   <div
-    className="AssetCard__header"
+    className="AssetCard__inner-wrapper"
   >
-    <Tag
-      style={
-        Object {
-          "marginLeft": "auto",
-        }
-      }
-      tagType="negative"
-      testId="cf-ui-tag"
+    <div
+      className="AssetCard__header"
     >
-      archived
-    </Tag>
+      <Tag
+        style={
+          Object {
+            "marginLeft": "auto",
+          }
+        }
+        tagType="negative"
+        testId="cf-ui-tag"
+      >
+        archived
+      </Tag>
+    </div>
+    <div
+      className="AssetCard__content"
+    >
+      <Asset
+        extraClassNames="AssetCard__asset"
+        src="http://placekitten.com/200/300"
+        title="picture of a cat"
+        type="image"
+      />
+    </div>
   </div>
-  <Asset
-    extraClassNames="AssetCard__asset"
-    src="http://placekitten.com/200/300"
-    title="picture of a cat"
-    type="image"
-  />
-</CardLoading>
+</Card>
 `;
 
 exports[`renders the component without actions 1`] = `
-<CardLoading
+<Card
   extraClassNames="AssetCard"
-  isLoading={false}
+  padding="default"
+  selected={false}
   testId="cf-ui-asset-card"
   title="picture of a cat"
 >
   <div
-    className="AssetCard__header"
-  />
-  <Asset
-    extraClassNames="AssetCard__asset"
-    src="http://placekitten.com/200/300"
-    title="picture of a cat"
-    type="image"
-  />
-</CardLoading>
+    className="AssetCard__inner-wrapper"
+  >
+    <div
+      className="AssetCard__header"
+    />
+    <div
+      className="AssetCard__content"
+    >
+      <Asset
+        extraClassNames="AssetCard__asset"
+        src="http://placekitten.com/200/300"
+        title="picture of a cat"
+        type="image"
+      />
+    </div>
+  </div>
+</Card>
 `;

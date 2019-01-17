@@ -23,6 +23,12 @@ class Card extends React.Component {
     selected: false,
   };
 
+  handleClick = event => {
+    if (!this.props.onClick) return;
+
+    this.props.onClick(event);
+  };
+
   render() {
     const {
       extraClassNames,
@@ -46,7 +52,7 @@ class Card extends React.Component {
     return (
       <Element
         className={classNames}
-        onClick={onClick}
+        onClick={this.handleClick}
         data-test-id={testId}
         href={href}
         {...otherProps}
