@@ -25,11 +25,15 @@
 }
 
 .Icon--positive {
-  fill: var(--color-green-base);
+  fill: var(--color-positive);
 }
 
 .Icon--negative {
-  fill: var(--color-red-base);
+  fill: var(--color-negative);
+}
+
+.Icon--warning {
+  fill: var(--color-warning);
 }
 
 .Icon--secondary {
