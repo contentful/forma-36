@@ -9,12 +9,14 @@ export const NoteType = {
   PRIMARY: 'primary',
   POSITIVE: 'positive',
   NEGATIVE: 'negative',
+  WARNING: 'warning',
 };
 
 const Icons = {
   [NoteType.PRIMARY]: iconName.InfoCircle,
   [NoteType.POSITIVE]: iconName.CheckCircle,
   [NoteType.NEGATIVE]: iconName.Warning,
+  [NoteType.WARNING]: iconName.Warning,
 };
 
 export default function Note(props) {
@@ -32,6 +34,7 @@ export default function Note(props) {
         [styles['Note--primary']]: props.noteType === NoteType.PRIMARY,
         [styles['Note--positive']]: props.noteType === NoteType.POSITIVE,
         [styles['Note--negative']]: props.noteType === NoteType.NEGATIVE,
+        [styles['Note--warning']]: props.noteType === NoteType.WARNING,
       })}
       data-test-id={props.testId}
     >
@@ -54,6 +57,7 @@ Note.propTypes = {
     NoteType.POSITIVE,
     NoteType.NEGATIVE,
     NoteType.PRIMARY,
+    NoteType.WARNING,
   ]),
   children: PropTypes.node.isRequired,
   testId: PropTypes.string,
