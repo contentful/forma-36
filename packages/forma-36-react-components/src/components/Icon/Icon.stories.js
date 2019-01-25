@@ -33,6 +33,7 @@ storiesOf('Components|Icon', module)
             'Primary (default)': 'primary',
             Positive: 'positive',
             Negative: 'negative',
+            Warning: 'warning',
             Secondary: 'secondary',
             Muted: 'muted',
             White: 'white',

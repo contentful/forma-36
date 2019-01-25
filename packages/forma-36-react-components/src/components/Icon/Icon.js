@@ -128,6 +128,7 @@ class Icon extends React.Component {
       'primary',
       'positive',
       'negative',
+      'warning',
       'secondary',
       'muted',
       'white',

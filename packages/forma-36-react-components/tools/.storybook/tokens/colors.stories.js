@@ -104,6 +104,12 @@ storiesOf('Tokens|Colors', module)
         </section>
 
         <section>
+          <h1>Peach</h1>
+          <p>Peach is used for muted warning messages. E.g - a warning note.</p>
+          <ColorSwatchGroup group="peach" />
+        </section>
+
+        <section>
           <h1>Mint</h1>
           <p>
             Mint is used for muted success messages. E.g - a confirmation note.

@@ -222,6 +222,20 @@ export const colors = [
     group: 'coral',
   },
 
+  // Peach Colors
+  {
+    name: 'Peach Dark',
+    cssVar: '--color-peach-dark',
+    hex: '#d2ac79',
+    group: 'peach',
+  },
+  {
+    name: 'Peach Mid',
+    cssVar: '--color-peach-mid',
+    hex: '#ffe9cc',
+    group: 'peach',
+  },
+
   // Mint Colors
   {
     name: 'Mint Dark',
