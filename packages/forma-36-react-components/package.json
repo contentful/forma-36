@@ -5,8 +5,10 @@
   "main": "dist/index.js",
   "style": "dist/styles.css",
   "license": "MIT",
+  "types": "./index.d.ts",
   "files": [
     "package.json",
+    "index.d.ts",
     "dist"
   ],
   "devDependencies": {
