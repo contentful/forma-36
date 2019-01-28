@@ -4,7 +4,7 @@ import { text, select, number } from '@storybook/addon-knobs';
 import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
 
-import Spinner from './Spinner';
+import Spinner from './Spinner.tsx';
 
 storiesOf('Components|Spinner', module)
   .addDecorator(
