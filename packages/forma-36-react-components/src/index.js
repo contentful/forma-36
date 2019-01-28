@@ -15,7 +15,7 @@ import IconButton from './components/IconButton/IconButton';
 import CheckboxField from './components/CheckboxField/CheckboxField';
 import Checkbox from './components/Checkbox/Checkbox';
 import TabFocusTrap from './components/TabFocusTrap/TabFocusTrap';
-import Spinner from './components/Spinner/Spinner.tsx';
+import Spinner from './components/Spinner/Spinner';
 import Button from './components/Button/Button';
 import EditorToolbar from './components/EditorToolbar/EditorToolbar';
 import EditorToolbarButton from './components/EditorToolbar/EditorToolbarButton';

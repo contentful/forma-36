@@ -24,7 +24,7 @@ const reqTokens = require.context('./tokens', true, /\.stories\.js$/);
 const reqComponents = require.context(
   '../../src/components',
   true,
-  /\.stories\.js$/,
+  /\.stories\.(ts|js)x?$/,
 );
 
 function loadStories() {
