@@ -4,7 +4,7 @@ exports[`renders the component 1`] = `
 <svg
   className="Spinner Spinner--default"
   data-test-id="cf-ui-spinner"
-  style={null}
+  style={Object {}}
   viewBox="0 0 20 20"
   xmlns="http://www.w3.org/2000/svg"
 >
@@ -59,7 +59,7 @@ exports[`renders the component with an additional class name 1`] = `
 <svg
   className="Spinner my-extra-class Spinner--default"
   data-test-id="cf-ui-spinner"
-  style={null}
+  style={Object {}}
   viewBox="0 0 20 20"
   xmlns="http://www.w3.org/2000/svg"
 >
@@ -84,7 +84,7 @@ exports[`renders the component with the size "large" 1`] = `
 <svg
   className="Spinner Spinner--large Spinner--default"
   data-test-id="cf-ui-spinner"
-  style={null}
+  style={Object {}}
   viewBox="0 0 20 20"
   xmlns="http://www.w3.org/2000/svg"
 >
@@ -109,7 +109,7 @@ exports[`renders the component with the size "small" 1`] = `
 <svg
   className="Spinner Spinner--small Spinner--default"
   data-test-id="cf-ui-spinner"
-  style={null}
+  style={Object {}}
   viewBox="0 0 20 20"
   xmlns="http://www.w3.org/2000/svg"
 >
