@@ -48,7 +48,7 @@ class Spinner extends React.Component<SpinnerProps> {
         style={
           customSize
             ? { height: `${customSize}px`, width: `${customSize}px` }
-            : null
+            : {}
         }
         {...otherProps}
       >

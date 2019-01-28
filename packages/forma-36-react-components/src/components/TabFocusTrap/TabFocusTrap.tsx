@@ -1,15 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import styles from './TabFocusTrap.css';
 
-class TabFocusTrap extends React.Component {
-  static propTypes = {
-    extraClassNames: PropTypes.string,
-    children: PropTypes.node.isRequired,
-  };
+const styles = require('./TabFocusTrap.css');
 
-  static defaultProps = {
+export interface TabFocusTrapProps {
+  extraClassNames?: string;
+  children: React.ReactNode;
+}
+
+class TabFocusTrap extends React.Component<TabFocusTrapProps> {
+  static defaultProps: Partial<TabFocusTrapProps> = {
     extraClassNames: undefined,
   };
 

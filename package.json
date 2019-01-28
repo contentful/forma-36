@@ -27,9 +27,10 @@
     "postinstall": "lerna bootstrap",
     "precommit": "yarn lint && yarn pretty-quick --staged",
     "commitmsg": "validate-commit-msg",
-    "prepush": "yarn lint && yarn test",
+    "prepush": "yarn lint && yarn test && yarn type-check",
     "test": "yarn lerna run test",
-    "lint": "yarn lerna run lint"
+    "lint": "yarn lerna run lint",
+    "type-check": "yarn lerna run type-check"
   },
   "config": {
     "commitizen": {

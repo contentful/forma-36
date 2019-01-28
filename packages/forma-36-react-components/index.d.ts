@@ -1,5 +1,5 @@
-declare module "@contentful/forma-36-react-components" {
-  import * as React from "react";
+declare module '@contentful/forma-36-react-components' {
+  import * as React from 'react';
 
   export interface CopyButtonProps {
     extraClassNames?: string;
@@ -8,10 +8,7 @@ declare module "@contentful/forma-36-react-components" {
     onCopy?: (...args: any[]) => any;
   }
 
-  export class CopyButton extends React.Component<
-    CopyButtonProps,
-    any
-    > {
+  export class CopyButton extends React.Component<CopyButtonProps, any> {
     render(): JSX.Element;
   }
 
@@ -27,15 +24,15 @@ declare module "@contentful/forma-36-react-components" {
   }
 
   export type ButtonButtonType =
-    | "primary"
-    | "positive"
-    | "negative"
-    | "muted"
-    | "naked";
+    | 'primary'
+    | 'positive'
+    | 'negative'
+    | 'muted'
+    | 'naked';
 
-  export type ButtonType = "button" | "submit" | "reset";
+  export type ButtonType = 'button' | 'submit' | 'reset';
 
-  export type ButtonSize = "small" | "large";
+  export type ButtonSize = 'small' | 'large';
 
   export interface ButtonProps {
     extraClassNames?: string;
@@ -58,7 +55,7 @@ declare module "@contentful/forma-36-react-components" {
     render(): JSX.Element;
   }
 
-  export type AssetCardStatus = "archived" | "changed" | "draft" | "published";
+  export type AssetCardStatus = 'archived' | 'changed' | 'draft' | 'published';
 
   export interface AssetCardProps {
     extraClassNames?: string;
@@ -75,7 +72,7 @@ declare module "@contentful/forma-36-react-components" {
     render(): JSX.Element;
   }
 
-  export type CardPadding = "default" | "large" | "none";
+  export type CardPadding = 'default' | 'large' | 'none';
 
   export interface CardProps {
     extraClassNames?: string;
@@ -92,10 +89,10 @@ declare module "@contentful/forma-36-react-components" {
   }
 
   export type InlineReferenceCardStatus =
-    | "archived"
-    | "changed"
-    | "draft"
-    | "published";
+    | 'archived'
+    | 'changed'
+    | 'draft'
+    | 'published';
 
   export interface InlineReferenceCardProps {
     extraClassNames?: string;
@@ -110,15 +107,15 @@ declare module "@contentful/forma-36-react-components" {
   export class InlineReferenceCard extends React.Component<
     InlineReferenceCardProps,
     any
-    > {
+  > {
     render(): JSX.Element;
   }
 
   export type ReferenceCardStatus =
-    | "archived"
-    | "changed"
-    | "draft"
-    | "published";
+    | 'archived'
+    | 'changed'
+    | 'draft'
+    | 'published';
 
   export interface ReferenceCardProps {
     extraClassNames?: string;
@@ -133,43 +130,44 @@ declare module "@contentful/forma-36-react-components" {
     actionElements?: React.ReactNode;
   }
 
-  export class ReferenceCard extends React.Component<
-    ReferenceCardProps,
-    any
-    > {
+  export class ReferenceCard extends React.Component<ReferenceCardProps, any> {
     render(): JSX.Element;
   }
 
-  export interface CheckboxProps { }
+  export interface CheckboxProps {}
 
   export const Checkbox: React.SFC<CheckboxProps>;
 
-  export interface CheckboxFieldProps { }
+  export interface CheckboxFieldProps {}
 
-  export class CheckboxField extends React.Component<
-    CheckboxFieldProps,
-    any
-    > {
+  export class CheckboxField extends React.Component<CheckboxFieldProps, any> {
     render(): JSX.Element;
   }
-  export interface ControlledInputProps { }
+  export interface ControlledInputProps {}
 
   export class ControlledInput extends React.Component<
     ControlledInputProps,
     any
-    > {
+  > {
     render(): JSX.Element;
   }
-  export interface ControlledInputFieldProps { }
+  export interface ControlledInputFieldProps {}
 
   export class ControlledInputField extends React.Component<
     ControlledInputFieldProps,
     any
-    > {
+  > {
     render(): JSX.Element;
   }
 
-  export type DropdownPosition = "top" | "right" | "left" | "bottom-left" | "bottom-right" | "top-right" | "top-left";
+  export type DropdownPosition =
+    | 'top'
+    | 'right'
+    | 'left'
+    | 'bottom-left'
+    | 'bottom-right'
+    | 'top-right'
+    | 'top-left';
 
   export interface DropdownProps {
     extraClassNames?: string;
@@ -184,10 +182,9 @@ declare module "@contentful/forma-36-react-components" {
 
   export class Dropdown extends React.Component<DropdownProps, any> {
     render(): JSX.Element;
-
   }
 
-  export type DropdownListBorder = "top" | "bottom";
+  export type DropdownListBorder = 'top' | 'bottom';
 
   export interface DropdownListProps {
     extraClassNames?: string;
@@ -199,7 +196,6 @@ declare module "@contentful/forma-36-react-components" {
 
   export class DropdownList extends React.Component<DropdownListProps, any> {
     render(): JSX.Element;
-
   }
 
   export interface DropdownListItemProps {
@@ -217,9 +213,11 @@ declare module "@contentful/forma-36-react-components" {
     isTitle?: boolean;
   }
 
-  export class DropdownListItem extends React.Component<DropdownListItemProps, any> {
+  export class DropdownListItem extends React.Component<
+    DropdownListItemProps,
+    any
+  > {
     render(): JSX.Element;
-
   }
   export interface EditorToolbarProps {
     extraClassNames?: string;
@@ -229,7 +227,6 @@ declare module "@contentful/forma-36-react-components" {
 
   export class EditorToolbar extends React.Component<EditorToolbarProps, any> {
     render(): JSX.Element;
-
   }
   export interface EditorToolbarButtonProps {
     extraClassNames?: string;
@@ -244,9 +241,11 @@ declare module "@contentful/forma-36-react-components" {
     withDropdown?: boolean;
   }
 
-  export class EditorToolbarButton extends React.Component<EditorToolbarButtonProps, any> {
+  export class EditorToolbarButton extends React.Component<
+    EditorToolbarButtonProps,
+    any
+  > {
     render(): JSX.Element;
-
   }
 
   export interface EditorToolbarDividerProps {
@@ -254,11 +253,13 @@ declare module "@contentful/forma-36-react-components" {
     extraClassNames?: string;
   }
 
-  export default class EditorToolbarDivider extends React.Component<EditorToolbarDividerProps, any> {
+  export default class EditorToolbarDivider extends React.Component<
+    EditorToolbarDividerProps,
+    any
+  > {
     render(): JSX.Element;
-
   }
-  export type FormSpacing = "condensed" | "default";
+  export type FormSpacing = 'condensed' | 'default';
 
   export interface FormProps {
     extraClassNames?: string;
@@ -280,7 +281,6 @@ declare module "@contentful/forma-36-react-components" {
 
   export class FieldGroup extends React.Component<FieldGroupProps, any> {
     render(): JSX.Element;
-
   }
   export interface FormLabelProps {
     htmlFor: string;
@@ -293,7 +293,6 @@ declare module "@contentful/forma-36-react-components" {
 
   export class FormLabel extends React.Component<FormLabelProps, any> {
     render(): JSX.Element;
-
   }
   export interface HelpTextProps {
     extraClassNames?: string;
@@ -303,12 +302,17 @@ declare module "@contentful/forma-36-react-components" {
 
   export class HelpText extends React.Component<HelpTextProps, any> {
     render(): JSX.Element;
-
   }
 
-  export type IconSize = "tiny" | "small" | "large";
+  export type IconSize = 'tiny' | 'small' | 'large';
 
-  export type IconColor = "primary" | "positive" | "negative" | "secondary" | "muted" | "white";
+  export type IconColor =
+    | 'primary'
+    | 'positive'
+    | 'negative'
+    | 'secondary'
+    | 'muted'
+    | 'white';
 
   export interface IconProps {
     extraClassNames?: string;
@@ -320,10 +324,15 @@ declare module "@contentful/forma-36-react-components" {
 
   export class Icon extends React.Component<IconProps, any> {
     render(): JSX.Element;
-
   }
 
-  export type IconButtonButtonType = "primary" | "positive" | "negative" | "secondary" | "muted" | "white";
+  export type IconButtonButtonType =
+    | 'primary'
+    | 'positive'
+    | 'negative'
+    | 'secondary'
+    | 'muted'
+    | 'white';
 
   export interface IconButtonProps {
     label: string;
@@ -339,7 +348,6 @@ declare module "@contentful/forma-36-react-components" {
 
   export class IconButton extends React.Component<IconButtonProps, any> {
     render(): JSX.Element;
-
   }
 
   export interface IllustrationProps {
@@ -350,7 +358,6 @@ declare module "@contentful/forma-36-react-components" {
 
   export class Illustration extends React.Component<IllustrationProps, any> {
     render(): JSX.Element;
-
   }
   export interface InViewportProps {
     extraClassNames?: string;
@@ -365,7 +372,6 @@ declare module "@contentful/forma-36-react-components" {
 
   export class InViewport extends React.Component<InViewportProps, any> {
     render(): JSX.Element;
-
   }
   export type LineChartWidth = number | string;
 
@@ -388,7 +394,6 @@ declare module "@contentful/forma-36-react-components" {
 
   export class LineChart extends React.Component<LineChartProps, any> {
     render(): JSX.Element;
-
   }
   export interface ListProps {
     extraClassNames?: string;
@@ -398,7 +403,6 @@ declare module "@contentful/forma-36-react-components" {
 
   export class List extends React.Component<ListProps, any> {
     render(): JSX.Element;
-
   }
 
   export interface ListItemProps {
@@ -466,9 +470,8 @@ declare module "@contentful/forma-36-react-components" {
 
   export class Modal extends React.Component<ModalProps, any> {
     render(): JSX.Element;
-
   }
-  export type ModalConfirmIntent = "primary" | "positive" | "negative";
+  export type ModalConfirmIntent = 'primary' | 'positive' | 'negative';
 
   export type ModalConfirmSize = any | any | any | number | string;
 
@@ -529,7 +532,6 @@ declare module "@contentful/forma-36-react-components" {
 
   export class ModalConfirm extends React.Component<ModalConfirmProps, any> {
     render(): JSX.Element;
-
   }
   export interface ContentProps {
     testId?: string;
@@ -569,30 +571,35 @@ declare module "@contentful/forma-36-react-components" {
 
   export const Note: React.SFC<NoteProps>;
 
-  export interface NotificationItemProps {
-  }
+  export interface NotificationItemProps {}
 
-  export class NotificationItem extends React.Component<NotificationItemProps, any> {
+  export class NotificationItem extends React.Component<
+    NotificationItemProps,
+    any
+  > {
     render(): JSX.Element;
-
   }
   export interface NotificationItemContainerProps {
     isShown?: boolean;
     duration: number;
   }
 
-  export class NotificationItemContainer extends React.Component<NotificationItemContainerProps, any> {
+  export class NotificationItemContainer extends React.Component<
+    NotificationItemContainerProps,
+    any
+  > {
     render(): JSX.Element;
-
   }
 
   export interface NotificationsManagerProps {
     register: (...args: any[]) => any;
   }
 
-  export class NotificationsManager extends React.PureComponent<NotificationsManagerProps, any> {
+  export class NotificationsManager extends React.PureComponent<
+    NotificationsManagerProps,
+    any
+  > {
     render(): JSX.Element;
-
   }
 
   export interface PillProps {
@@ -605,23 +612,22 @@ declare module "@contentful/forma-36-react-components" {
 
   export class Pill extends React.Component<PillProps, any> {
     render(): JSX.Element;
-
   }
 
-  export interface RadioButtonProps {
-  }
+  export interface RadioButtonProps {}
 
   export const RadioButton: React.SFC<RadioButtonProps>;
 
-  export interface RadioButtonFieldProps {
-  }
+  export interface RadioButtonFieldProps {}
 
-  export class RadioButtonField extends React.Component<RadioButtonFieldProps, any> {
+  export class RadioButtonField extends React.Component<
+    RadioButtonFieldProps,
+    any
+  > {
     render(): JSX.Element;
-
   }
 
-  export type SelectWidth = "auto" | "small" | "medium" | "large" | "full";
+  export type SelectWidth = 'auto' | 'small' | 'medium' | 'large' | 'full';
 
   export interface SelectProps {
     required?: boolean;
@@ -641,7 +647,6 @@ declare module "@contentful/forma-36-react-components" {
 
   export class Select extends React.Component<SelectProps, any> {
     render(): JSX.Element;
-
   }
 
   export interface OptionProps {
@@ -651,7 +656,6 @@ declare module "@contentful/forma-36-react-components" {
 
   export class Option extends React.Component<OptionProps, any> {
     render(): JSX.Element;
-
   }
   export type SelectFieldValue = string | number;
 
@@ -675,15 +679,15 @@ declare module "@contentful/forma-36-react-components" {
 
   export class SelectField extends React.Component<SelectFieldProps, any> {
     render(): JSX.Element;
-
   }
 
-  export interface SkeletonBodyTextProps {
-  }
+  export interface SkeletonBodyTextProps {}
 
-  export class SkeletonBodyText extends React.Component<SkeletonBodyTextProps, any> {
+  export class SkeletonBodyText extends React.Component<
+    SkeletonBodyTextProps,
+    any
+  > {
     render(): JSX.Element;
-
   }
 
   export type SkeletonContainerWidth = number | string;
@@ -716,16 +720,19 @@ declare module "@contentful/forma-36-react-components" {
     svgHeight?: SkeletonContainerSvgHeight;
   }
 
-  export class SkeletonContainer extends React.Component<SkeletonContainerProps, any> {
+  export class SkeletonContainer extends React.Component<
+    SkeletonContainerProps,
+    any
+  > {
     render(): JSX.Element;
-
   }
-  export interface SkeletonDisplayTextProps {
-  }
+  export interface SkeletonDisplayTextProps {}
 
-  export class SkeletonDisplayText extends React.Component<SkeletonDisplayTextProps, any> {
+  export class SkeletonDisplayText extends React.Component<
+    SkeletonDisplayTextProps,
+    any
+  > {
     render(): JSX.Element;
-
   }
   export interface SkeletonImageProps {
     testId?: string;
@@ -739,19 +746,16 @@ declare module "@contentful/forma-36-react-components" {
 
   export class SkeletonImage extends React.Component<SkeletonImageProps, any> {
     render(): JSX.Element;
-
   }
-  export interface SkeletonTextProps {
-  }
+  export interface SkeletonTextProps {}
 
   export class SkeletonText extends React.Component<SkeletonTextProps, any> {
     render(): JSX.Element;
-
   }
 
-  export type SpinnerSize = "default" | "small" | "large";
+  export type SpinnerSize = 'default' | 'small' | 'large';
 
-  export type SpinnerColor = "default" | "white";
+  export type SpinnerColor = 'default' | 'white';
 
   export interface SpinnerProps {
     extraClassNames?: string;
@@ -763,7 +767,6 @@ declare module "@contentful/forma-36-react-components" {
 
   export class Spinner extends React.Component<SpinnerProps, any> {
     render(): JSX.Element;
-
   }
 
   export interface TabFocusTrapProps {
@@ -773,7 +776,6 @@ declare module "@contentful/forma-36-react-components" {
 
   export class TabFocusTrap extends React.Component<TabFocusTrapProps, any> {
     render(): JSX.Element;
-
   }
   export interface TableProps {
     extraClassNames?: string;
@@ -782,7 +784,6 @@ declare module "@contentful/forma-36-react-components" {
 
   export class Table extends React.Component<TableProps, any> {
     render(): JSX.Element;
-
   }
   export interface TableBodyProps {
     extraClassNames?: string;
@@ -791,11 +792,10 @@ declare module "@contentful/forma-36-react-components" {
 
   export class TableBody extends React.Component<TableBodyProps, any> {
     render(): JSX.Element;
-
   }
   export type TableCellSorting = any | any;
 
-  export type TableCellAlign = "center" | "left" | "right";
+  export type TableCellAlign = 'center' | 'left' | 'right';
 
   export interface TableCellProps {
     extraClassNames?: string;
@@ -806,7 +806,6 @@ declare module "@contentful/forma-36-react-components" {
 
   export class TableCell extends React.Component<TableCellProps, any> {
     render(): JSX.Element;
-
   }
   export interface TableSortingLabelProps {
     extraClassNames?: string;
@@ -815,7 +814,10 @@ declare module "@contentful/forma-36-react-components" {
     active: boolean;
   }
 
-  export class TableSortingLabel extends React.Component<TableSortingLabelProps, any> {
+  export class TableSortingLabel extends React.Component<
+    TableSortingLabelProps,
+    any
+  > {
     render(): JSX.Element;
   }
   export interface TableHeadProps {
@@ -825,7 +827,6 @@ declare module "@contentful/forma-36-react-components" {
 
   export class TableHead extends React.Component<TableHeadProps, any> {
     render(): JSX.Element;
-
   }
   export interface TableRowProps {
     extraClassNames?: string;
@@ -836,7 +837,13 @@ declare module "@contentful/forma-36-react-components" {
     render(): JSX.Element;
   }
 
-  export type TagTagType = "primary" | "positive" | "negative" | "warning" | "secondary" | "muted";
+  export type TagTagType =
+    | 'primary'
+    | 'positive'
+    | 'negative'
+    | 'warning'
+    | 'secondary'
+    | 'muted';
 
   export interface TagProps {
     extraClassNames?: string;
@@ -872,9 +879,15 @@ declare module "@contentful/forma-36-react-components" {
   export class TextField extends React.Component<TextFieldProps, any> {
     render(): JSX.Element;
   }
-  export type TextInputWidth = "small" | "medium" | "large" | "full";
+  export type TextInputWidth = 'small' | 'medium' | 'large' | 'full';
 
-  export type TextInputType = "text" | "password" | "email" | "number" | "search" | "url";
+  export type TextInputType =
+    | 'text'
+    | 'password'
+    | 'email'
+    | 'number'
+    | 'search'
+    | 'url';
 
   export interface TextInputProps {
     width?: TextInputWidth;
@@ -897,9 +910,13 @@ declare module "@contentful/forma-36-react-components" {
 
   export class TextInput extends React.Component<TextInputProps, any> {
     render(): JSX.Element;
-
   }
-  export type TextLinkLinkType = "primary" | "positive" | "negative" | "secondary" | "muted";
+  export type TextLinkLinkType =
+    | 'primary'
+    | 'positive'
+    | 'negative'
+    | 'secondary'
+    | 'muted';
 
   export interface TextLinkProps {
     children: React.ReactNode;
@@ -914,9 +931,8 @@ declare module "@contentful/forma-36-react-components" {
 
   export class TextLink extends React.Component<TextLinkProps, any> {
     render(): JSX.Element;
-
   }
-  export type TextareaWidth = "small" | "medium" | "large" | "full";
+  export type TextareaWidth = 'small' | 'medium' | 'large' | 'full';
 
   export interface TextareaProps {
     name?: string;
@@ -951,9 +967,8 @@ declare module "@contentful/forma-36-react-components" {
 
   export class ToggleButton extends React.Component<ToggleButtonProps, any> {
     render(): JSX.Element;
-
   }
-  export type TooltipPlace = "top" | "bottom" | "right" | "left";
+  export type TooltipPlace = 'top' | 'bottom' | 'right' | 'left';
 
   export type TooltipMaxWidth = number | string;
 
@@ -977,9 +992,16 @@ declare module "@contentful/forma-36-react-components" {
   export class Tooltip extends React.Component<TooltipProps, any> {
     render(): JSX.Element;
   }
-  export type DisplayTextElement = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
+  export type DisplayTextElement =
+    | 'h1'
+    | 'h2'
+    | 'h3'
+    | 'h4'
+    | 'h5'
+    | 'h6'
+    | 'p';
 
-  export type DisplayTextSize = "default" | "large";
+  export type DisplayTextSize = 'default' | 'large';
 
   export interface DisplayTextProps {
     extraClassNames?: string;
@@ -991,9 +1013,8 @@ declare module "@contentful/forma-36-react-components" {
 
   export class DisplayText extends React.Component<DisplayTextProps, any> {
     render(): JSX.Element;
-
   }
-  export type HeadingElement = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
+  export type HeadingElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
 
   export interface HeadingProps {
     extraClassNames?: string;
@@ -1005,7 +1026,7 @@ declare module "@contentful/forma-36-react-components" {
   export class Heading extends React.Component<HeadingProps, any> {
     render(): JSX.Element;
   }
-  export type ParagraphElement = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
+  export type ParagraphElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
 
   export interface ParagraphProps {
     extraClassNames?: string;
@@ -1017,7 +1038,14 @@ declare module "@contentful/forma-36-react-components" {
   export class Paragraph extends React.Component<ParagraphProps, any> {
     render(): JSX.Element;
   }
-  export type SectionHeadingElement = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
+  export type SectionHeadingElement =
+    | 'h1'
+    | 'h2'
+    | 'h3'
+    | 'h4'
+    | 'h5'
+    | 'h6'
+    | 'p';
 
   export interface SectionHeadingProps {
     extraClassNames?: string;
@@ -1026,11 +1054,13 @@ declare module "@contentful/forma-36-react-components" {
     element?: SectionHeadingElement;
   }
 
-  export class SectionHeading extends React.Component<SectionHeadingProps, any> {
+  export class SectionHeading extends React.Component<
+    SectionHeadingProps,
+    any
+  > {
     render(): JSX.Element;
-
   }
-  export type SubheadingElement = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
+  export type SubheadingElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
 
   export interface SubheadingProps {
     extraClassNames?: string;
@@ -1048,9 +1078,10 @@ declare module "@contentful/forma-36-react-components" {
     testId?: string;
   }
 
-  export class ValidationMessage extends React.Component<ValidationMessageProps, any> {
+  export class ValidationMessage extends React.Component<
+    ValidationMessageProps,
+    any
+  > {
     render(): JSX.Element;
-
   }
-
 }

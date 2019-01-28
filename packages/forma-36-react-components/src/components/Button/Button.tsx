@@ -2,36 +2,46 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import { CSSTransition } from 'react-transition-group';
-import styles from './Button.css';
 import Icon from '../Icon/Icon';
 import TabFocusTrap from '../TabFocusTrap';
 import Spinner from '../Spinner';
 
-class Button extends React.Component {
-  static propTypes = {
-    extraClassNames: PropTypes.string,
-    children: PropTypes.node,
-    icon: PropTypes.string,
-    indicateDropdown: PropTypes.bool,
-    onClick: PropTypes.func,
-    isFullWidth: PropTypes.bool,
-    onBlur: PropTypes.func,
-    loading: PropTypes.bool,
-    disabled: PropTypes.bool,
-    testId: PropTypes.string,
-    buttonType: PropTypes.oneOf([
-      'primary',
-      'positive',
-      'negative',
-      'muted',
-      'naked',
-    ]),
-    type: PropTypes.oneOf(['button', 'submit', 'reset']),
-    size: PropTypes.oneOf(['small', 'large']),
-    href: PropTypes.string,
-  };
+const styles = require('./Button.css');
 
-  static defaultProps = {
+export type ButtonButtonType =
+  | 'primary'
+  | 'positive'
+  | 'negative'
+  | 'muted'
+  | 'naked';
+
+export type ButtonType = 'button' | 'submit' | 'reset';
+
+export type ButtonSize = 'small' | 'large';
+
+export interface ButtonProps {
+  extraClassNames?: string;
+  children?: React.ReactNode;
+  icon?: string;
+  indicateDropdown?: boolean;
+  onClick?: (
+    e: React.MouseEventHandler<HTMLAnchorElement | HTMLButtonElement>,
+  ) => void;
+  isFullWidth?: boolean;
+  onBlur?: (
+    e: React.MouseEventHandler<HTMLAnchorElement | HTMLButtonElement>,
+  ) => void;
+  loading?: boolean;
+  disabled?: boolean;
+  testId?: string;
+  buttonType?: ButtonButtonType;
+  type?: ButtonType;
+  size?: ButtonSize;
+  href?: string;
+}
+
+class Button extends React.Component<ButtonProps> {
+  static defaultProps: Partial<ButtonProps> = {
     extraClassNames: undefined,
     icon: undefined,
     children: undefined,
@@ -81,16 +91,20 @@ class Button extends React.Component {
     const iconColor =
       buttonType === 'muted' || buttonType === 'naked' ? 'secondary' : 'white';
 
-    const Element = href ? 'a' : 'button';
+    const Element: any = href ? 'a' : 'button';
 
     return (
       <Element
-        onBlur={e => {
+        onBlur={(
+          e: React.MouseEventHandler<HTMLAnchorElement | HTMLButtonElement>,
+        ) => {
           if (onBlur && !disabled) {
             onBlur(e);
           }
         }}
-        onClick={e => {
+        onClick={(
+          e: React.MouseEventHandler<HTMLAnchorElement | HTMLButtonElement>,
+        ) => {
           if (onClick && !disabled && !loading) {
             onClick(e);
           }
