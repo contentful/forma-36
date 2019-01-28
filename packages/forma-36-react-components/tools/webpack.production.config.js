@@ -16,6 +16,10 @@ module.exports = {
     },
   },
 
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.json'],
+  },
+
   plugins: [
     new MiniCssExtractPlugin({ filename: '[name].css' }),
     new OptimizeCssAssetsPlugin(),
@@ -24,7 +28,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',

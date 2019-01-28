@@ -1,5 +1,5 @@
 {
-  "presets": ["@babel/env", "@babel/react"],
+  "presets": ["@babel/env", "@babel/react", "@babel/typescript"],
   "plugins": [
     // Stage 2
     ["@babel/plugin-proposal-decorators", { "legacy": true }],
@@ -21,12 +21,15 @@
   "env": {
     "build": {
       "plugins": [
-        ["@babel/plugin-transform-runtime", {
-          "corejs": false,
-          "helpers": true,
-          "regenerator": false,
-          "useESModules": false
-        }],
+        [
+          "@babel/plugin-transform-runtime",
+          {
+            "corejs": false,
+            "helpers": true,
+            "regenerator": false,
+            "useESModules": false
+          }
+        ],
         "@babel/plugin-proposal-class-properties",
         [
           "css-modules-transform",
