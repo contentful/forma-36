@@ -63,7 +63,8 @@ it('renders the component with a submenu', () => {
         <DropdownListItem>entry</DropdownListItem>
         <Dropdown isOpen submenuToggleLabel="Submenu">
           <DropdownListItem>entry</DropdownListItem>
-        </Dropdown>,
+        </Dropdown>
+        ,
       </DropdownList>
     </Dropdown>,
   );

@@ -1,14 +1,18 @@
 const path = require('path');
 
 module.exports = {
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js', '.json', '.css'],
+  },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|ts)x?$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
+        use: [
+          require.resolve('babel-loader'),
+          require.resolve('react-docgen-typescript-loader'),
+        ],
       },
       {
         test: /\.css$/,

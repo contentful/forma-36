@@ -4,6 +4,7 @@ exports[`renders the component 1`] = `
 <button
   className="TableSortingLabel__button"
   direction="asc"
+  type="button"
 >
   <TabFocusTrap
     extraClassNames="TableSortingLabel__button__text"
@@ -24,6 +25,7 @@ exports[`renders the component inactive 1`] = `
 <button
   className="TableSortingLabel__button"
   direction="desc"
+  type="button"
 >
   <TabFocusTrap
     extraClassNames="TableSortingLabel__button__text"

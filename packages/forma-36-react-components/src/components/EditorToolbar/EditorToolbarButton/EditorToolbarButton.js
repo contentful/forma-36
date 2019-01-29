@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import IconButton from './../../IconButton/IconButton';
-import Tooltip from './../../Tooltip/Tooltip';
-import { iconName } from './../../Icon/constants';
+import IconButton from '../../IconButton/IconButton';
+import Tooltip from '../../Tooltip/Tooltip';
+import { iconName } from '../../Icon/constants';
 import styles from './EditorToolbarButton.css';
 
 class EditorToolbarButton extends React.Component {

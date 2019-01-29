@@ -1,18 +1,22 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import cn from 'classnames';
-import styles from './Spinner.css';
 
-class Spinner extends React.Component {
-  static propTypes = {
-    extraClassNames: PropTypes.string,
-    testId: PropTypes.string,
-    size: PropTypes.oneOf(['default', 'small', 'large']),
-    customSize: PropTypes.number,
-    color: PropTypes.oneOf(['default', 'white']),
-  };
+const styles = require('./Spinner.css');
 
-  static defaultProps = {
+type SpinnerSize = 'default' | 'small' | 'large';
+
+type SpinnerColor = 'default' | 'white';
+
+interface SpinnerProps {
+  extraClassNames?: string;
+  testId?: string;
+  size?: SpinnerSize;
+  customSize?: number;
+  color?: SpinnerColor;
+}
+
+class Spinner extends React.Component<SpinnerProps> {
+  static defaultProps: Partial<SpinnerProps> = {
     extraClassNames: undefined,
     testId: 'cf-ui-spinner',
     size: 'default',
@@ -44,7 +48,7 @@ class Spinner extends React.Component {
         style={
           customSize
             ? { height: `${customSize}px`, width: `${customSize}px` }
-            : null
+            : {}
         }
         {...otherProps}
       >

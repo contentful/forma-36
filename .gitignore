@@ -18,3 +18,7 @@
 **/yarn-error.log*
 **/package-lock.json
 **/lerna-debug.log
+
+# editors
+.vscode/
+.idea/

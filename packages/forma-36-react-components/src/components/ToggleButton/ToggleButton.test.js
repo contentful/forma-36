@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { axe } from 'jest-axe';
-import sinon from 'sinon';
 import ToggleButton from './ToggleButton';
 
 it('renders the component', () => {
@@ -39,7 +38,7 @@ it('renders the component with icon', () => {
 });
 
 it('should not dispatch onClick if disabled', () => {
-  const mockOnToggle = sinon.spy();
+  const mockOnToggle = jest.fn();
 
   const toggle = shallow(
     <ToggleButton extraClassNames="my-extra-class" icon="Entry" isDisabled>
@@ -48,7 +47,7 @@ it('should not dispatch onClick if disabled', () => {
   );
 
   toggle.simulate('click');
-  expect(mockOnToggle.called).toBe(false);
+  expect(mockOnToggle).not.toHaveBeenCalled();
 });
 
 it('has no a11y issues', async () => {

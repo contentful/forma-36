@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import sinon from 'sinon';
 import DropdownListItem from './DropdownListItem';
 
 it('renders the component', () => {
@@ -38,17 +37,17 @@ it('renders the component as disabled', () => {
 });
 
 it('calls onClick', () => {
-  const mockOnClick = sinon.spy();
+  const mockOnClick = jest.fn();
   const dropDownItem = mount(
     <DropdownListItem onClick={mockOnClick}>entry</DropdownListItem>,
   );
   const button = dropDownItem.find('button');
   button.simulate('click');
-  expect(mockOnClick.called).toBe(true);
+  expect(mockOnClick).toHaveBeenCalled();
 });
 
 it('does not call onClick on a disabled menu item', () => {
-  const mockOnClick = sinon.spy();
+  const mockOnClick = jest.fn();
   const dropDownItem = mount(
     <DropdownListItem isDisabled onClick={mockOnClick}>
       entry
@@ -56,5 +55,5 @@ it('does not call onClick on a disabled menu item', () => {
   );
   const button = dropDownItem.find('button');
   button.simulate('click');
-  expect(mockOnClick.called).toBe(false);
+  expect(mockOnClick).not.toHaveBeenCalled();
 });

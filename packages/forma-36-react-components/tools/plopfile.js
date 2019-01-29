@@ -17,15 +17,15 @@ module.exports = plop => {
     actions: [
       {
         type: 'add',
-        path: path.resolve('./src/components/{{pascalCase name}}/index.js'),
-        templateFile: 'plop-templates/components/index.js.hbs',
+        path: path.resolve('./src/components/{{pascalCase name}}/index.ts'),
+        templateFile: 'plop-templates/components/index.ts.hbs',
       },
       {
         type: 'add',
         path: path.resolve(
-          './src/components/{{pascalCase name}}/{{pascalCase name}}.js',
+          './src/components/{{pascalCase name}}/{{pascalCase name}}.tsx',
         ),
-        templateFile: 'plop-templates/components/component.js.hbs',
+        templateFile: 'plop-templates/components/component.tsx.hbs',
       },
       {
         type: 'add',
@@ -37,16 +37,16 @@ module.exports = plop => {
       {
         type: 'add',
         path: path.resolve(
-          './src/components/{{pascalCase name}}/{{pascalCase name}}.test.js',
+          './src/components/{{pascalCase name}}/{{pascalCase name}}.test.tsx',
         ),
-        templateFile: 'plop-templates/components/test.js.hbs',
+        templateFile: 'plop-templates/components/test.tsx.hbs',
       },
       {
         type: 'add',
         path: path.resolve(
-          './src/components/{{pascalCase name}}/{{pascalCase name}}.stories.js',
+          './src/components/{{pascalCase name}}/{{pascalCase name}}.stories.tsx',
         ),
-        templateFile: 'plop-templates/components/stories.js.hbs',
+        templateFile: 'plop-templates/components/stories.tsx.hbs',
       },
       {
         type: 'modify',

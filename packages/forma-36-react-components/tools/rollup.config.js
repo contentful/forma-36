@@ -6,6 +6,8 @@ import { terser } from 'rollup-plugin-terser';
 import babel from 'rollup-plugin-babel';
 import path from 'path';
 
+const extensions = ['.js', '.jsx', '.ts', '.tsx', '.css'];
+
 function getConfig(environment) {
   return {
     input: path.resolve(__dirname, '../dist/index.js'),
@@ -40,7 +42,9 @@ function getConfig(environment) {
         'process.env.NODE_ENV': JSON.stringify(environment),
       }),
       localResolve(),
-      resolve(),
+      resolve({
+        extensions,
+      }),
       commonjs(),
       terser(),
     ].filter(_ => _),

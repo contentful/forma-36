@@ -49,6 +49,7 @@ export const ControlledInputFieldDefaultProps = {
 
 class ControlledInputField extends React.Component {
   static propTypes = ControlledInputFieldPropTypes;
+
   static defaultProps = ControlledInputFieldDefaultProps;
 
   render() {

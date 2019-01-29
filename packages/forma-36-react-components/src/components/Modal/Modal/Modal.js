@@ -26,9 +26,13 @@ const ModalSizesMapper = {
 
 class Modal extends React.Component {
   static Positions = ModalPositions;
+
   static Sizes = ModalSizes;
+
   static Header = ModalHeader;
+
   static Content = ModalContent;
+
   static Controls = ModalControls;
 
   static propTypes = {

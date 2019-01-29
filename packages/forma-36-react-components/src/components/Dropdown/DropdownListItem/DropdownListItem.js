@@ -37,6 +37,7 @@ class DropdownListItem extends React.Component {
   renderSubmenuToggle = () => (
     <React.Fragment>
       <button
+        type="button"
         data-test-id="cf-ui-dropdown-submenu-toggle"
         className={styles['DropdownListItem__toggle-button']}
         onClick={this.props.onClick}
@@ -60,6 +61,7 @@ class DropdownListItem extends React.Component {
   renderListItem = () =>
     this.props.onClick || this.props.onMouseDown ? (
       <button
+        type="button"
         data-test-id="cf-ui-dropdown-list-item-button"
         className={styles['DropdownListItem__toggle-button']}
         onClick={e => {

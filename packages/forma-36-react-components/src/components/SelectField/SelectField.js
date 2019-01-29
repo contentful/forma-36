@@ -51,12 +51,15 @@ class SelectField extends React.Component {
       });
     }
   }
+
   // Store a copy of the value in state.
   // This is used by this component when the `countCharacters`
   // option is on
   handleOnChange = evt => {
     this.setState({ value: evt.target.value });
-    if (this.props.onChange) this.props.onChange(evt);
+    if (this.props.onChange) {
+      this.props.onChange(evt);
+    }
   };
 
   render() {

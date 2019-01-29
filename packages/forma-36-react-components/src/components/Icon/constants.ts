@@ -1,5 +1,4 @@
-// eslint-disable-next-line import/prefer-default-export
-export const iconName = {
+export const iconName: { [key: string]: string } = {
   ArrowDown: 'ArrowDown',
   ArrowDownTrimmed: 'ArrowDownTrimmed',
   ArrowUp: 'ArrowUp',

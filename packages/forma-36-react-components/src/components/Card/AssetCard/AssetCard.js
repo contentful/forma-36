@@ -44,8 +44,9 @@ class AssetCard extends React.Component {
       position="bottom-right"
       toggleElement={
         <button
+          type="button"
           className={styles['AssetCard__header__dropdown-button']}
-          onClick={() => this.setState({ isOpen: !this.state.isOpen })}
+          onClick={() => this.setState(state => ({ isOpen: !state.isOpen }))}
         >
           <TabFocusTrap>
             <Icon icon="MoreHorizontalTrimmed" color="secondary" />

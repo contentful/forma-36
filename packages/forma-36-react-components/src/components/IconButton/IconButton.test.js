@@ -3,7 +3,7 @@ import { shallow, mount } from 'enzyme';
 import { axe } from 'jest-axe';
 import IconButton from './IconButton';
 
-import { iconName } from './../Icon/constants';
+import { iconName } from '../Icon/constants';
 
 it('renders the component', () => {
   const output = shallow(

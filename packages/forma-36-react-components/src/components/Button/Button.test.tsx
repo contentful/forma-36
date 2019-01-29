@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { axe } from 'jest-axe';
-import sinon from 'sinon';
 import Button from './Button';
 
 it('renders the component', () => {
@@ -61,7 +60,7 @@ it('renders the component full width', () => {
 });
 
 it('should not dispatch onClick if loading', () => {
-  const mockOnClick = sinon.spy();
+  const mockOnClick = jest.fn();
   const button = shallow(
     <Button loading onClick={mockOnClick}>
       Embed entry
@@ -69,11 +68,11 @@ it('should not dispatch onClick if loading', () => {
   );
 
   button.simulate('click');
-  expect(mockOnClick.called).toBe(false);
+  expect(mockOnClick).not.toHaveBeenCalled();
 });
 
 it('should not dispatch onClick if disabled', () => {
-  const mockOnClick = sinon.spy();
+  const mockOnClick = jest.fn();
   const button = shallow(
     <Button disabled onClick={mockOnClick}>
       Embed entry
@@ -81,7 +80,7 @@ it('should not dispatch onClick if disabled', () => {
   );
 
   button.simulate('click');
-  expect(mockOnClick.called).toBe(false);
+  expect(mockOnClick).not.toHaveBeenCalled();
 });
 
 it('has no a11y issues', async () => {

@@ -130,12 +130,12 @@ class Dropdown extends React.Component {
       const oppositePosition =
         horizontalPostition === 'left' ? 'right' : 'left';
       this.setState(
-        {
-          position: this.state.position.replace(
+        state => ({
+          position: state.position.replace(
             oppositePosition,
             horizontalPostition,
           ),
-        },
+        }),
         () => {
           this.lastPosition = horizontalPostition;
         },

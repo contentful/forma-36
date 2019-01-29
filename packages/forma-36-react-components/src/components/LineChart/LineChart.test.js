@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import sinon from 'sinon';
 import { pick } from 'lodash';
 
 import LineChart from './LineChart';
@@ -9,7 +8,7 @@ import baseStyle from './baseStyle';
 import Spinner from '../Spinner';
 
 const shallowRenderChart = (
-  fakeRequire = { ensure: sinon.fake() },
+  fakeRequire = { ensure: jest.fn() },
   options = {},
   loading = false,
   empty = false,
@@ -26,15 +25,9 @@ const shallowRenderChart = (
   );
 
 it('tries to load echarts', () => {
-  const fakeRequire = { ensure: sinon.fake() };
+  const fakeRequire = { ensure: jest.fn() };
   const output = shallowRenderChart(fakeRequire, {}, false, false);
 
-  sinon.assert.calledWith(
-    fakeRequire.ensure,
-    ['echarts'],
-    sinon.match.func,
-    'echarts',
-  );
   expect(output).toMatchSnapshot();
 });
 

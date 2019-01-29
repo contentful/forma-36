@@ -41,6 +41,7 @@ export default class TableSortingLabel extends React.Component {
 
     return (
       <button
+        type="button"
         className={cn(styles.TableSortingLabel__button, extraClassNames)}
         {...otherProps}
       >

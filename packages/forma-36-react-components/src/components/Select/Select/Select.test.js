@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { axe } from 'jest-axe';
-import sinon from 'sinon';
 import Select from './Select';
 import Option from '../Option';
 
@@ -73,7 +72,7 @@ it('renders the component as required', () => {
 });
 
 it('should not dispatch onChange if disabled', () => {
-  const mockOnChange = sinon.spy();
+  const mockOnChange = jest.fn();
   const select = mount(
     <Select
       name="optionSelect"
@@ -86,11 +85,11 @@ it('should not dispatch onChange if disabled', () => {
   );
 
   select.find('select').simulate('change');
-  expect(mockOnChange.called).toBe(false);
+  expect(mockOnChange).not.toHaveBeenCalled();
 });
 
 it('should dispatch onChange', () => {
-  const mockOnChange = sinon.spy();
+  const mockOnChange = jest.fn();
   const select = mount(
     <Select name="optionSelect" id="optionSelect" onChange={mockOnChange}>
       <Option value="optionOne">Option One</Option>
@@ -98,7 +97,7 @@ it('should dispatch onChange', () => {
   );
 
   select.find('select').simulate('change', { target: { value: 'optionOne' } });
-  expect(mockOnChange.called).toBe(true);
+  expect(mockOnChange).toHaveBeenCalled();
 });
 
 it('has no a11y issues', async () => {
