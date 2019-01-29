@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
 import { withNotes } from '@storybook/addon-notes';
+import { boolean, text } from '@storybook/addon-knobs';
 import TableNotes from './Table.md';
 
 import Table from './Table';
@@ -25,7 +26,10 @@ storiesOf('Components|Table', module)
   .add('default', () => (
     <div style={{ width: '800px' }}>
       <Table>
-        <TableHead>
+        <TableHead
+          isSticky={boolean('Header is sticky', false)}
+          offsetTop={text('Header offset top', '0px')}
+        >
           <TableRow>
             <TableCell>Name</TableCell>
             <TableCell>Email</TableCell>
@@ -35,16 +39,16 @@ storiesOf('Components|Table', module)
         </TableHead>
         <TableBody>
           <TableRow>
-            <TableCell>Andrey Tigay</TableCell>
-            <TableCell>andrey@contentful.com</TableCell>
-            <TableCell>Owner</TableCell>
-            <TableCell>July 27, 2019</TableCell>
+            <TableCell>Jane Roe</TableCell>
+            <TableCell>jane@roe.com</TableCell>
+            <TableCell>CEO</TableCell>
+            <TableCell>August 29, 2018</TableCell>
           </TableRow>
           <TableRow>
-            <TableCell>Gui Barbosa</TableCell>
-            <TableCell>guilherme@contentful.com</TableCell>
-            <TableCell>Admin</TableCell>
-            <TableCell>August 29, 2018</TableCell>
+            <TableCell>John Doe</TableCell>
+            <TableCell>john@doe.com</TableCell>
+            <TableCell>CTO</TableCell>
+            <TableCell>July 27, 2019</TableCell>
           </TableRow>
         </TableBody>
       </Table>
