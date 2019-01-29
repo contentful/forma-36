@@ -1,5 +1,4 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import cn from 'classnames';
 import { CSSTransition } from 'react-transition-group';
 import Icon from '../Icon/Icon';
@@ -8,18 +7,7 @@ import Spinner from '../Spinner';
 
 const styles = require('./Button.css');
 
-export type ButtonButtonType =
-  | 'primary'
-  | 'positive'
-  | 'negative'
-  | 'muted'
-  | 'naked';
-
-export type ButtonType = 'button' | 'submit' | 'reset';
-
-export type ButtonSize = 'small' | 'large';
-
-export interface ButtonProps {
+interface ButtonProps {
   extraClassNames?: string;
   children?: React.ReactNode;
   icon?: string;
@@ -34,13 +22,13 @@ export interface ButtonProps {
   loading?: boolean;
   disabled?: boolean;
   testId?: string;
-  buttonType?: ButtonButtonType;
-  type?: ButtonType;
-  size?: ButtonSize;
+  buttonType?: 'primary' | 'positive' | 'negative' | 'muted' | 'naked';
+  type?: 'button' | 'submit' | 'reset';
+  size?: 'small' | 'large';
   href?: string;
 }
 
-class Button extends React.Component<ButtonProps> {
+export class Button extends Component<ButtonProps> {
   static defaultProps: Partial<ButtonProps> = {
     extraClassNames: undefined,
     icon: undefined,

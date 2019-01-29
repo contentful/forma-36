@@ -15,7 +15,7 @@ storiesOf('Components|Icon', module)
     }),
   )
   .add(
-    'default',
+    'Icon (default)',
     withInfo()(() => (
       <Icon
         icon={select('Icon', Object.keys(iconName), Object.keys(iconName)[0])}
@@ -45,7 +45,7 @@ storiesOf('Components|Icon', module)
     )),
   )
   .add(
-    'All Icons',
+    'Icon (all icons)',
     withInfo()(() => (
       <div
         style={{

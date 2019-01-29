@@ -7,11 +7,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(ts|js)x?$/,
+        test: /\.(js|ts)x?$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
+        use: [
+          require.resolve('babel-loader'),
+          require.resolve('react-docgen-typescript-loader'),
+        ],
       },
       {
         test: /\.css$/,

@@ -16,7 +16,7 @@ storiesOf('Components|Button', module)
     }),
   )
   .add(
-    'default',
+    'Button',
     withInfo()(() => (
       <div style={{ width: 200, display: 'flex', justifyContent: 'center' }}>
         <Button

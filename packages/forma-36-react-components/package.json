@@ -79,6 +79,7 @@
     "postcss-url": "^8.0.0",
     "pretty-quick": "^1.4.1",
     "react": "^16.6.3",
+    "react-docgen-typescript-loader": "3.0.1",
     "react-dom": "^16.6.3",
     "react-test-renderer": "^16.6.3",
     "rollup": "^0.67.0",

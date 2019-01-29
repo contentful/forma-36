@@ -1,5 +1,4 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import cn from 'classnames';
 
 const ArrowDown = require('./svg/ArrowDown.svg');
@@ -117,26 +116,16 @@ const WarningTrimmed = require('./svg/WarningTrimmed.svg');
 
 const styles = require('./Icon.css');
 
-export type IconSize = 'tiny' | 'small' | 'large';
-
-export type IconColor =
-  | 'primary'
-  | 'positive'
-  | 'negative'
-  | 'secondary'
-  | 'muted'
-  | 'white';
-
-export interface IconProps {
+interface IconProps {
   icon: string;
   extraClassNames?: string;
   testId?: string;
-  size?: IconSize;
-  color?: IconColor;
+  size?: 'tiny' | 'small' | 'large';
+  color?: 'primary' | 'positive' | 'negative' | 'secondary' | 'muted' | 'white';
   style?: Object;
 }
 
-class Icon extends React.Component<IconProps> {
+export class Icon extends Component<IconProps> {
   static defaultProps: Partial<IconProps> = {
     extraClassNames: undefined,
     testId: 'cf-ui-icon',
