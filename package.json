@@ -28,9 +28,10 @@
     "precommit": "yarn lint && yarn pretty-quick --staged",
     "commitmsg": "validate-commit-msg",
     "prepush": "yarn lint && yarn type-check && yarn test",
-    "test": "yarn lerna run test",
-    "lint": "yarn lerna run lint",
-    "type-check": "yarn lerna run type-check"
+    "build": "lerna run build",
+    "test": "lerna run test",
+    "lint": "lerna run lint",
+    "type-check": "lerna run type-check"
   },
   "config": {
     "commitizen": {
