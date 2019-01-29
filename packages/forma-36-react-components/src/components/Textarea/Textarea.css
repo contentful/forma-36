@@ -17,6 +17,7 @@
   color: var(--color-text-mid);
   font-family: var(--font-stack-primary);
   font-size: var(--font-size-m);
+  line-height: var(--line-height-default);
   padding: calc(1rem * (11 / var(--rem-base)));
   flex-basis: 100%;
 
