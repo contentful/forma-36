@@ -117,7 +117,7 @@
     "start": "start-storybook -p 9001 -c ./tools/.storybook",
     "test": "jest",
     "build:clean": "rm -rf dist",
-    "build:scripts": "BABEL_ENV=build yarn babel src --out-dir dist --ignore *.stories.js,*.test.js",
+    "build:scripts": "BABEL_ENV=build yarn babel src --out-dir dist --ignore *.stories.js,*.test.js --extensions '.ts','.tsx','.js'",
     "build:styles": "yarn webpack --config ./tools/webpack.production.config.js",
     "build:umd": "rollup -c tools/rollup.config.js",
     "build:post-clean": "rm -rf dist/styles.js dist/main.js",
@@ -135,7 +135,9 @@
     "storybook": "yarn build-storybook -c tools/.storybook -o dist-storybook"
   },
   "jest": {
-    "setupFilesAfterEnv": ["<rootDir>/test/config/tests.js"],
+    "setupFilesAfterEnv": [
+      "<rootDir>/test/config/tests.js"
+    ],
     "testPathIgnorePatterns": [
       "<rootDir>/node_modules/",
       "<rootDir>/dist/",
