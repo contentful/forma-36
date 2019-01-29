@@ -101,9 +101,9 @@ class InlineReferenceCard extends React.Component {
                 buttonType="secondary"
                 label="Inline reference actions"
                 onClick={() => {
-                  this.setState({
-                    isDropdownOpen: !this.state.isDropdownOpen,
-                  });
+                  this.setState(state => ({
+                    isDropdownOpen: !state.isDropdownOpen,
+                  }));
                 }}
               />
             }

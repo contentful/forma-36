@@ -5,8 +5,8 @@ import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
 
 import EditorToolbar from './EditorToolbar';
-import Button from './../../Button';
-import EditorToolbarButton from './../EditorToolbarButton';
+import Button from '../../Button';
+import EditorToolbarButton from '../EditorToolbarButton';
 
 storiesOf('Components|EditorToolbar', module)
   .addDecorator(

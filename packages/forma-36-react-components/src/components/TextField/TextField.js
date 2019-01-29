@@ -123,19 +123,17 @@ class TextField extends React.Component {
                 {helpText}
               </HelpText>
             )}
-            {countCharacters &&
-              textInputProps &&
-              textInputProps.maxLength && (
-                <HelpText
-                  extraClassNames={cn(
-                    styles['TextField__help-text'],
-                    styles.TextField__count,
-                  )}
-                >
-                  {this.state.value ? this.state.value.length : 0}/
-                  {textInputProps.maxLength}
-                </HelpText>
-              )}
+            {countCharacters && textInputProps && textInputProps.maxLength && (
+              <HelpText
+                extraClassNames={cn(
+                  styles['TextField__help-text'],
+                  styles.TextField__count,
+                )}
+              >
+                {this.state.value ? this.state.value.length : 0}/
+                {textInputProps.maxLength}
+              </HelpText>
+            )}
           </div>
         )}
       </div>

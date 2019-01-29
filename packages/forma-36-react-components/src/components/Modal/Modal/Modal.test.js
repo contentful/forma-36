@@ -55,7 +55,7 @@ it('can be controlled', () => {
           <Modal.Header title="Hello" onClose={onClose} />
           <Modal.Content>Content</Modal.Content>
           <Modal.Controls>
-            <button>Click on me</button>
+            <button type="button">Click on me</button>
           </Modal.Controls>
         </React.Fragment>
       )}

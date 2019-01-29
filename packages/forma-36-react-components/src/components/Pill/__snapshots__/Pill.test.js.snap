@@ -30,6 +30,7 @@ exports[`renders the component with a close button 1`] = `
       className="Pill__close-button"
       data-test-id="cf-ui-pill"
       onClick={[Function]}
+      type="button"
     >
       <TabFocusTrap>
         <Icon

@@ -13,6 +13,7 @@ exports[`renders the component 1`] = `
     data-test-id="button"
     disabled={false}
     onClick={[Function]}
+    type="button"
   >
     <TabFocusTrap
       extraClassNames="Toggle__button__inner-wrapper"
@@ -40,6 +41,7 @@ exports[`renders the component active 1`] = `
     data-test-id="button"
     disabled={false}
     onClick={[Function]}
+    type="button"
   >
     <TabFocusTrap
       extraClassNames="Toggle__button__inner-wrapper"
@@ -67,6 +69,7 @@ exports[`renders the component with an additional class name 1`] = `
     data-test-id="button"
     disabled={false}
     onClick={[Function]}
+    type="button"
   >
     <TabFocusTrap
       extraClassNames="Toggle__button__inner-wrapper"
@@ -94,6 +97,7 @@ exports[`renders the component with icon 1`] = `
     data-test-id="button"
     disabled={false}
     onClick={[Function]}
+    type="button"
   >
     <TabFocusTrap
       extraClassNames="Toggle__button__inner-wrapper"

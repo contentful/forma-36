@@ -59,6 +59,7 @@ class ToggleButton extends React.Component {
         {...otherProps}
       >
         <button
+          type="button"
           className={styles.Toggle__button}
           disabled={isDisabled}
           data-test-id="button"

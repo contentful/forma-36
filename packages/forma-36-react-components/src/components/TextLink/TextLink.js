@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import { iconName } from './../Icon/constants';
-import Icon from './../Icon';
+import { iconName } from '../Icon/constants';
+import Icon from '../Icon';
 import TabFocusTrap from '../TabFocusTrap';
 import styles from './TextLink.css';
 

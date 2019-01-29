@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { axe } from 'jest-axe';
 import TextLink from './TextLink';
-import { iconName } from './../Icon/constants';
+import { iconName } from '../Icon/constants';
 
 it('renders as a button', () => {
   const output = shallow(<TextLink>Text Link</TextLink>);

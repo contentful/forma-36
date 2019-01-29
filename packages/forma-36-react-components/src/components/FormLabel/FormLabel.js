@@ -42,12 +42,11 @@ class FormLabel extends React.Component {
         {...otherProps}
       >
         {children}
-        {required &&
-          !!requiredText.length && (
-            <span className={styles['FormLabel__required-text']}>
-              ({requiredText})
-            </span>
-          )}
+        {required && !!requiredText.length && (
+          <span className={styles['FormLabel__required-text']}>
+            ({requiredText})
+          </span>
+        )}
       </label>
     );
   }

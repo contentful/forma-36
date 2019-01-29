@@ -6,7 +6,7 @@ import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
 
 import EditorToolbarButton from './EditorToolbarButton';
-import { iconName } from './../../Icon/constants';
+import { iconName } from '../../Icon/constants';
 
 storiesOf('Components|EditorToolbar/EditorToolbarButton', module)
   .addDecorator(

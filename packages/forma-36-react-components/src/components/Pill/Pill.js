@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import Icon from '../Icon';
-import { iconName } from './../Icon/constants';
+import { iconName } from '../Icon/constants';
 import TabFocusTrap from '../TabFocusTrap';
 import styles from './Pill.css';
 
@@ -56,6 +56,7 @@ class Pill extends React.Component {
           </span>
           {onClose && (
             <button
+              type="button"
               onClick={onClose}
               className={styles['Pill__close-button']}
               data-test-id={testId}

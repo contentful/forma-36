@@ -83,7 +83,7 @@ export default class NotificationsManager extends PureComponent {
       intent,
     };
     this.setState(state => {
-      if (this.state.position === 'top') {
+      if (state.position === 'top') {
         return {
           items: [notification, ...state.items],
         };

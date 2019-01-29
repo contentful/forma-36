@@ -44,8 +44,12 @@ it('renders the component with action elements', () => {
       contentType="My Content Type"
       actionElements={
         <div>
-          <button key="0">Button 1</button>
-          <button key="1">Button 2</button>
+          <button key="0" type="button">
+            Button 1
+          </button>
+          <button key="1" type="button">
+            Button 2
+          </button>
         </div>
       }
     />,

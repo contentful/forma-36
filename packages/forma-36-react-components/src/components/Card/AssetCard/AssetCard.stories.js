@@ -6,8 +6,8 @@ import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
 
 import AssetCard from './AssetCard';
-import DropdownList from './../../Dropdown/DropdownList';
-import DropdownListItem from './../../Dropdown/DropdownListItem';
+import DropdownList from '../../Dropdown/DropdownList';
+import DropdownListItem from '../../Dropdown/DropdownListItem';
 import { types } from '../../Asset/Asset';
 
 storiesOf('Components|Card/AssetCard', module)

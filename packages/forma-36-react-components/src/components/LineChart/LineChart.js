@@ -77,12 +77,10 @@ export default class LineChart extends React.Component {
       this.chartInstance.setOption(
         flow(
           merge(baseStyle),
-          update(
-            'series',
-            series =>
-              isArray(series)
-                ? series.map(merge(seriesBaseStyle))
-                : merge(seriesBaseStyle, series),
+          update('series', series =>
+            isArray(series)
+              ? series.map(merge(seriesBaseStyle))
+              : merge(seriesBaseStyle, series),
           ),
         )(options),
       );

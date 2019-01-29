@@ -56,7 +56,9 @@ exports[`can be controlled 1`] = `
     <Controls
       testId="cf-ui-modal-controls"
     >
-      <button>
+      <button
+        type="button"
+      >
         Click on me
       </button>
     </Controls>

@@ -63,6 +63,7 @@ class CopyButton extends React.Component {
             }
           >
             <button
+              type="button"
               ref={ref => {
                 this.copyButton = ref;
               }}
