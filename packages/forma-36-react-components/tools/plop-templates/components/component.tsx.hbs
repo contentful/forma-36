@@ -1,16 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import cn from 'classnames';
-import styles from './{{pascalCase name}}.css';
 
-class {{pascalCase name}} extends React.Component {
-  static propTypes = {
-    extraClassNames: PropTypes.string,
-    children: PropTypes.node.isRequired,
-    testId: PropTypes.string,
-  };
+const styles = require('./{{pascalCase name}}.css');
 
-  static defaultProps = {
+export interface {{pascalCase name}}Props {
+  extraClassNames?: string;
+  children?: React.ReactNode;
+  testId?: string;
+}
+
+class {{pascalCase name}} extends React.Component<{{pascalCase name}}Props> {
+
+  static defaultProps: Partial<{{pascalCase name}}Props> = {
     extraClassNames: undefined,
     testId: 'cf-ui-{{kebabCase name}}',
   };
