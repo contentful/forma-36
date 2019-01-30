@@ -20,6 +20,7 @@ storiesOf('Components|CheckboxField', module)
       cropMarks: false,
     }),
   )
+  // @ts-ignore
   .addDecorator(StateDecorator(store))
   .add(
     'default',

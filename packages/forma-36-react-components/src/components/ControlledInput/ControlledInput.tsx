@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 
-const styles = './ControlledInput.css';
+const styles = require('./ControlledInput.css');
 
 export interface ControlledInputPropTypes {
   extraClassNames?: string;
