@@ -19,6 +19,7 @@ storiesOf('Components|RadioButtonField', module)
       cropMarks: false,
     }),
   )
+  // @ts-ignore
   .addDecorator(StateDecorator(store))
   .add(
     'default',
@@ -49,7 +50,7 @@ storiesOf('Components|RadioButtonField', module)
           value="no"
           checked={store.state.activeOption === 'no'}
           onChange={e => store.set({ activeOption: e.target.value })}
-          light={boolean('Light', false)}
+          labelIsLight={boolean('Light', false)}
           inputProps={{
             onBlur: action('onBlur'),
             onFocus: action('onFoucs'),
