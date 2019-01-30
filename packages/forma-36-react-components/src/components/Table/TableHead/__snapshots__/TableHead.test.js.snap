@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "element": "th",
+      "name": "head",
+      "offsetTop": undefined,
+    }
+  }
+>
+  <thead
+    className=""
+  >
+    <TableCell
+      align="left"
+      extraClassNames=""
+      sorting={false}
+    >
+      test
+    </TableCell>
+  </thead>
+</ContextProvider>
+`;
+
+exports[`renders the component as sticky 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "element": "th",
+      "name": "head",
+      "offsetTop": undefined,
+    }
+  }
+>
+  <thead
+    className="TableHead--sticky"
+  >
+    <TableCell
+      align="left"
+      extraClassNames=""
+      sorting={false}
+    >
+      test
+    </TableCell>
+  </thead>
+</ContextProvider>
+`;
+
+exports[`renders the component as sticky and with an offset Top 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "element": "th",
+      "name": "head",
+      "offsetTop": "20px",
+    }
+  }
+>
+  <thead
+    className="TableHead--sticky"
+  >
+    <TableCell
+      align="left"
+      extraClassNames=""
+      sorting={false}
+    >
+      test
+    </TableCell>
+  </thead>
+</ContextProvider>
+`;
+
+exports[`renders the component with additional className 1`] = `
+<ContextProvider
+  value={
+    Object {
+      "element": "th",
+      "name": "head",
+      "offsetTop": undefined,
+    }
+  }
+>
+  <thead
+    className="extra-class-name"
+  >
+    <TableCell
+      align="left"
+      extraClassNames=""
+      sorting={false}
+    >
+      test
+    </TableCell>
+  </thead>
+</ContextProvider>
+`;

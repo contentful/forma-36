@@ -37,12 +37,15 @@ export default class TableCell extends React.Component {
 
     return (
       <TableCellContext.Consumer>
-        {({ name: context, element: Element }) => (
+        {({ name: context, element: Element, offsetTop }) => (
           <Element
             className={cn(styles.TableCell, extraClassNames, {
               [styles['TableCell--head']]: context === 'head',
               [styles['TableCell--head__sorting']]: sorting,
             })}
+            style={{
+              top: offsetTop,
+            }}
             align={align}
             {...otherProps}
           >
