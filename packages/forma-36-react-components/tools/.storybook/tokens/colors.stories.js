@@ -6,18 +6,19 @@ import { withInfo } from '@storybook/addon-info';
 import ColorSwatchGroup from './../components/ColorSwatchGroup/ColorSwatchGroup';
 import DocPage from './../components/DocPage/DocPage';
 
-import semanticColors from '@contentful/forma-36-tokens/dist/json/colors-semantic';
-import textColors from '@contentful/forma-36-tokens/dist/json/colors-text';
-import elementColors from '@contentful/forma-36-tokens/dist/json/colors-elements';
-import contrastColors from '@contentful/forma-36-tokens/dist/json/colors-contrast';
-import blueColors from '@contentful/forma-36-tokens/dist/json/colors-blue';
-import greenColors from '@contentful/forma-36-tokens/dist/json/colors-green';
-import redColors from '@contentful/forma-36-tokens/dist/json/colors-red';
-import orangeColors from '@contentful/forma-36-tokens/dist/json/colors-orange';
-import coralColors from '@contentful/forma-36-tokens/dist/json/colors-coral';
-import mintColors from '@contentful/forma-36-tokens/dist/json/colors-mint';
-import iceColors from '@contentful/forma-36-tokens/dist/json/colors-ice';
-import whiteColors from '@contentful/forma-36-tokens/dist/json/colors-white';
+import semanticColors from '@contentful/forma-36-tokens/dist/json/colors/colors-semantic';
+import textColors from '@contentful/forma-36-tokens/dist/json/colors/colors-text';
+import elementColors from '@contentful/forma-36-tokens/dist/json/colors/colors-elements';
+import contrastColors from '@contentful/forma-36-tokens/dist/json/colors/colors-contrast';
+import blueColors from '@contentful/forma-36-tokens/dist/json/colors/colors-blue';
+import greenColors from '@contentful/forma-36-tokens/dist/json/colors/colors-green';
+import redColors from '@contentful/forma-36-tokens/dist/json/colors/colors-red';
+import orangeColors from '@contentful/forma-36-tokens/dist/json/colors/colors-orange';
+import coralColors from '@contentful/forma-36-tokens/dist/json/colors/colors-coral';
+import peachColors from '@contentful/forma-36-tokens/dist/json/colors/colors-peach';
+import mintColors from '@contentful/forma-36-tokens/dist/json/colors/colors-mint';
+import iceColors from '@contentful/forma-36-tokens/dist/json/colors/colors-ice';
+import whiteColors from '@contentful/forma-36-tokens/dist/json/colors/colors-white';
 
 storiesOf('Tokens|Colors', module)
   .addDecorator(
@@ -119,7 +120,7 @@ storiesOf('Tokens|Colors', module)
         <section>
           <h1>Peach</h1>
           <p>Peach is used for muted warning messages. E.g - a warning note.</p>
-          <ColorSwatchGroup group="peach" />
+          <ColorSwatchGroup group={peachColors} />
         </section>
 
         <section>

@@ -1,1 +1,9 @@
-@import '@contentful/forma-36-tokens/dist/css/typography.css';
+@import '@contentful/forma-36-tokens/dist/css/typography/font-size.css';
+@import '@contentful/forma-36-tokens/dist/css/typography/font-stack.css';
+@import '@contentful/forma-36-tokens/dist/css/typography/font-weight.css';
+@import '@contentful/forma-36-tokens/dist/css/typography/letter-spacing.css';
+@import '@contentful/forma-36-tokens/dist/css/typography/line-height.css';
+
+:root {
+  --rem-base: 16;
+};

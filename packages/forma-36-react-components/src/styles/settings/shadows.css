@@ -1,1 +1,2 @@
-@import '@contentful/forma-36-tokens/dist/css/shadows.css';
+@import '@contentful/forma-36-tokens/dist/css/box-shadows/box-shadows.css';
+@import '@contentful/forma-36-tokens/dist/css/box-shadows/glows.css';

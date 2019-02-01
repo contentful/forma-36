@@ -3,7 +3,8 @@ import { storiesOf } from '@storybook/react';
 import cn from 'classnames';
 import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
-import { transitions, easings, animations } from './tokens';
+import durationTokens from '@contentful/forma-36-tokens/dist/json/transitions/transition-durations';
+import easingsTokens from '@contentful/forma-36-tokens/dist/json/transitions/transition-easings';
 import styles from './transitions.css';
 
 import DocPage from './../components/DocPage/DocPage';
@@ -15,14 +16,14 @@ import TableBody from './../../../src/components/Table/TableBody';
 import TableCell from './../../../src/components/Table/TableCell';
 import TableRow from './../../../src/components/Table/TableRow';
 
-const Slider = ({ transitionClassName }) => (
-  <div className={cn(styles.slider, transitionClassName)}>
-    <div className={styles.box} />
+const Slider = props => (
+  <div className={styles.slider} {...props}>
+    {props.children}
   </div>
 );
 
-const AnimatedBox = ({ animationClassName }) => (
-  <div className={cn(styles.box, animationClassName)} />
+const SliderKnob = props => (
+  <div className={styles.slider__knob} {...props}/>
 );
 
 storiesOf('Tokens|Transitions', module)
@@ -38,96 +39,72 @@ storiesOf('Tokens|Transitions', module)
     withInfo()(() => (
       <DocPage>
         <Heading style={{ marginBottom: '1rem' }}>Transitions</Heading>
+
+        <Subheading style={{ marginBottom: '1rem' }}>Transition Durations</Subheading>
         <Table style={{ width: '100%' }}>
           <TableHead>
             <TableRow>
-              <TableCell>Name</TableCell>
               <TableCell>Token</TableCell>
+              <TableCell>CSS Variable</TableCell>
               <TableCell>Value</TableCell>
               <TableCell>Example</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {transitions.map(transition => {
+            {Object.keys(durationTokens).map(token => {
+              const value = durationTokens[token];
+
               return (
-                <TableRow key={transition.cssVar}>
+                <TableRow key={token}>
                   <TableCell style={{ verticalAlign: 'middle' }}>
-                    {transition.name}
+                    {token}
                   </TableCell>
                   <TableCell style={{ verticalAlign: 'middle' }}>
-                    <code>{transition.cssVar}</code>
+                    <code>--{token}</code>
                   </TableCell>
                   <TableCell style={{ verticalAlign: 'middle' }}>
-                    <code>{transition.value}</code>
+                    <code>{value}</code>
                   </TableCell>
                   <TableCell style={{ verticalAlign: 'middle' }}>
-                    <Slider
-                      transitionClassName={styles[`slide${transition.cssVar}`]}
-                    />
+                    <Slider>
+                      <SliderKnob style={{transition: `ease ${value}`}} />
+                    </Slider>
                   </TableCell>
                 </TableRow>
               );
             })}
           </TableBody>
         </Table>
-        <Subheading style={{ margin: '1rem 0' }}>Easings</Subheading>
+
+        <Subheading style={{ margin: '1rem 0' }}>Transition Easings</Subheading>
         <Table style={{ width: '100%' }}>
           <TableHead>
             <TableRow>
-              <TableCell>Name</TableCell>
               <TableCell>Token</TableCell>
+              <TableCell>CSS Variable</TableCell>
               <TableCell>Value</TableCell>
-              <TableCell>Example</TableCell>
+              <TableCell style={{width: '100px'}}>Example</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {easings.map(easing => {
+            {Object.keys(easingsTokens).map(token => {
+              const value = easingsTokens[token];
+
               return (
-                <TableRow key={easing.cssVar}>
+                <TableRow key={token}>
                   <TableCell style={{ verticalAlign: 'middle' }}>
-                    {easing.name}
+                    {token}
                   </TableCell>
                   <TableCell style={{ verticalAlign: 'middle' }}>
-                    <code>{easing.cssVar}</code>
-                  </TableCell>
-                  <TableCell style={{ verticalAlign: 'middle', width: 260 }}>
-                    <code>{easing.value}</code>
+                    <code>--{token}</code>
                   </TableCell>
                   <TableCell style={{ verticalAlign: 'middle' }}>
-                    <Slider
-                      transitionClassName={styles[`slide${easing.cssVar}`]}
-                    />
+                    <code>{value}</code>
                   </TableCell>
-                </TableRow>
-              );
-            })}
-          </TableBody>
-        </Table>
-        <Subheading style={{ margin: '1rem 0' }}>Animations</Subheading>
-        <Table style={{ width: '100%' }}>
-          <TableHead>
-            <TableRow>
-              <TableCell>Name</TableCell>
-              <TableCell>Animation Name</TableCell>
-              <TableCell>Example</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {animations.map(animation => {
-              return (
-                <TableRow key={animation.cssVar}>
-                  <TableCell style={{ verticalAlign: 'middle' }}>
-                    {animation.name}
-                  </TableCell>
-                  <TableCell style={{ verticalAlign: 'middle' }}>
-                    <code>{animation.animationName}</code>
-                  </TableCell>
-                  <TableCell style={{ verticalAlign: 'middle' }}>
-                    <AnimatedBox
-                      animationClassName={
-                        styles[`animation-${animation.animationName}`]
-                      }
-                    />
+                  <TableCell style={{ verticalAlign: 'middle', width: '100px' }}>
+                    <Slider>
+                      <SliderKnob style={{transition: `${value} 0.5s`}} />
+                    </Slider>
                   </TableCell>
                 </TableRow>
               );

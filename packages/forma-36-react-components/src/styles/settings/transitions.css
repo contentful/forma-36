@@ -1,1 +1,2 @@
-@import '@contentful/forma-36-tokens/dist/css/transitions.css';
+@import '@contentful/forma-36-tokens/dist/css/transitions/transition-durations.css';
+@import '@contentful/forma-36-tokens/dist/css/transitions/transition-easings.css';

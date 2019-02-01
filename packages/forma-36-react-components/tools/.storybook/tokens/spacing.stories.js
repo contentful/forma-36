@@ -37,7 +37,7 @@ storiesOf('Tokens|Spacing', module)
           <TableBody>
             {Object.keys(tokens).map(token => {
               const value = tokens[token];
-              const valuePx = 1 * parseFloat(value) * 16;
+              const valuePx = 1 * parseFloat(value) * 16; // 16 = REM Base
 
               return (
                 <TableRow key={token}>
