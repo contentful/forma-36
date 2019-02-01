@@ -1,56 +1,52 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import FormLabel from '../FormLabel';
 import HelpText from '../HelpText';
 import ValidationMessage from '../ValidationMessage';
 import ControlledInput from '../ControlledInput/ControlledInput';
-import styles from './ControlledInputField.css';
+const styles = require('./ControlledInputField.css');
 
-export const ControlledInputFieldPropTypes = {
-  extraClassNames: PropTypes.string,
-  id: PropTypes.string.isRequired,
-  labelIsLight: PropTypes.bool,
-  labelText: PropTypes.string.isRequired,
-  required: PropTypes.bool,
-  testId: PropTypes.string,
-  helpText: PropTypes.string,
-  formLabelProps: PropTypes.object,
-  disabled: PropTypes.bool,
-  helpTextProps: PropTypes.object,
-  validationMessage: PropTypes.string,
-  value: PropTypes.string,
-  name: PropTypes.string,
-  checked: PropTypes.bool,
-  inputProps: PropTypes.object,
-  inputType: PropTypes.oneOf(['radio', 'checkbox']),
-  onChange: PropTypes.func,
-  children: PropTypes.node,
-};
+export interface ControlledInputFieldPropTypes {
+  extraClassNames?: string;
+  id: string;
+  labelIsLight?: boolean;
+  labelText: string;
+  required?: boolean;
+  testId?: string;
+  helpText?: string;
+  formLabelProps?: object;
+  disabled?: boolean;
+  helpTextProps?: object;
+  validationMessage?: string;
+  value?: string;
+  name?: string;
+  checked?: boolean;
+  inputProps?: object;
+  inputType?: 'radio' | 'checkbox';
+  onChange?: (...args: any[]) => any;
+  children?: React.ReactNode;
+}
 
-export const ControlledInputFieldDefaultProps = {
-  extraClassNames: undefined,
-  required: undefined,
-  testId: 'cf-ui-controlled-input-field',
-  labelIsLight: false,
-  helpText: undefined,
-  disabled: undefined,
-  formLabelProps: undefined,
-  helpTextProps: undefined,
-  validationMessage: undefined,
-  value: undefined,
-  name: undefined,
-  checked: false,
-  onChange: undefined,
-  inputProps: undefined,
-  inputType: 'checkbox',
-  children: undefined,
-};
-
-class ControlledInputField extends React.Component {
-  static propTypes = ControlledInputFieldPropTypes;
-
-  static defaultProps = ControlledInputFieldDefaultProps;
+class ControlledInputField extends Component<ControlledInputFieldPropTypes> {
+  static defaultProps: Partial<ControlledInputFieldPropTypes> = {
+    extraClassNames: undefined,
+    required: undefined,
+    testId: 'cf-ui-controlled-input-field',
+    labelIsLight: false,
+    helpText: undefined,
+    disabled: undefined,
+    formLabelProps: undefined,
+    helpTextProps: undefined,
+    validationMessage: undefined,
+    value: undefined,
+    name: undefined,
+    checked: false,
+    onChange: undefined,
+    inputProps: undefined,
+    inputType: 'checkbox',
+    children: undefined,
+  };
 
   render() {
     const {
@@ -75,7 +71,7 @@ class ControlledInputField extends React.Component {
       ...otherProps
     } = this.props;
 
-    const classNames = cn(styles.ControlledInputField, extraClassNames, {
+    const classNames = cn(styles['ControlledInputField'], extraClassNames, {
       [styles['ControlledInputField--disabled']]: disabled,
     });
 
