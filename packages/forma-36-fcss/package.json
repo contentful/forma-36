@@ -19,7 +19,7 @@
   },
   "scripts": {
     "develop": "node-sass --watch scss/styles.scss -o dist --output-style",
-    "build": "node-sass scss/styles.scss -o dist --output-style compressed --import-css true && node postcss.js",
+    "build": "node-sass scss/styles.scss -o dist --output-style compressed && node postcss.js",
     "prepublishOnly": "yarn build"
   },
   "publishConfig": {
