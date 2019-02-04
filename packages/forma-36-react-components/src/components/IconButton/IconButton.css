@@ -107,9 +107,9 @@
 }
 
 .IconButton__dropdown {
-  height: calc(1rem * (10 / var(--rem-base)));
-  width: calc(1rem * (10 / var(--rem-base)));
+  height: calc(1rem * (10 / var(--font-base-default)));
+  width: calc(1rem * (10 / var(--font-base-default)));
   margin-left: calc(
-    -1rem * (5 / var(--rem-base))
+    -1rem * (5 / var(--font-base-default))
   ); /* Optical adjustment, to be revised */
 }

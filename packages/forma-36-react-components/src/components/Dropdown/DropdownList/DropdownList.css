@@ -4,29 +4,30 @@
 .DropdownList {
   padding: 0;
   margin: 0;
-  padding: calc(1rem * (14 / var(--rem-base))) 0;
+  padding: calc(1rem * (14 / var(--font-base-default))) 0;
 }
 
 /* For multiple DropdownLists */
 .DropdownList + .DropdownList {
-  padding: calc(1rem * (7 / var(--rem-base))) 0;
+  padding: calc(1rem * (7 / var(--font-base-default))) 0;
 }
 
 /* First DropdownList if multiple */
 .DropdownList:first-child:not(:only-child) {
-  padding-bottom: calc(1rem * (7 / var(--rem-base)));
+  padding-bottom: calc(1rem * (7 / var(--font-base-default)));
 }
 
 /* Last DropdownList if multiple */
 .DropdownList:last-child:not(:only-child) {
-  padding-bottom: calc(1rem * (14 / var(--rem-base)));
+  padding-bottom: calc(1rem * (14 / var(--font-base-default)));
 }
 
 .DropdownList--border-top {
-  border-top: calc(1rem * (1 / var(--rem-base))) solid var(--color-element-mid);
+  border-top: calc(1rem * (1 / var(--font-base-default))) solid
+    var(--color-element-mid);
 }
 
 .DropdownList--border-bottom {
-  border-bottom: calc(1rem * (1 / var(--rem-base))) solid
+  border-bottom: calc(1rem * (1 / var(--font-base-default))) solid
     var(--color-element-mid);
 }

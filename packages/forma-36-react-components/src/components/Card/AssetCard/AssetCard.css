@@ -3,24 +3,24 @@
 @import 'settings/transitions';
 
 .AssetCard {
-  height: calc(1rem * (300 / var(--rem-base)));
+  height: calc(1rem * (300 / var(--font-base-default)));
   display: inline-block;
   padding: 0px;
-  min-width: calc(1rem * (240 / var(--rem-base)));
+  min-width: calc(1rem * (240 / var(--font-base-default)));
 }
 
 .AssetCard__asset {
   height: calc(
-    1rem * (254 / var(--rem-base))
+    1rem * (254 / var(--font-base-default))
   ); /* 254 Height of the container substracted by the border width of the header */
 }
 
 .AssetCard__header {
-  padding: 0 calc(1rem * (19 / var(--rem-base)));
-  height: calc(1rem * (45 / var(--rem-base)));
+  padding: 0 calc(1rem * (19 / var(--font-base-default)));
+  height: calc(1rem * (45 / var(--font-base-default)));
   display: flex;
   align-items: center;
-  border-bottom: calc(1rem * (1 / var(--rem-base))) solid
+  border-bottom: calc(1rem * (1 / var(--font-base-default))) solid
     var(--color-element-mid);
 }
 
@@ -30,7 +30,7 @@
   display: flex;
   padding: 0px;
   cursor: pointer;
-  margin-left: calc(1rem * (10 / var(--rem-base)));
+  margin-left: calc(1rem * (10 / var(--font-base-default)));
 }
 
 .AssetCard__header__dropdown-button svg {

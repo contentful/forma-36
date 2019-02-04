@@ -6,6 +6,20 @@ import { withInfo } from '@storybook/addon-info';
 import ColorSwatchGroup from './../components/ColorSwatchGroup/ColorSwatchGroup';
 import DocPage from './../components/DocPage/DocPage';
 
+import semanticColors from '@contentful/forma-36-tokens/dist/json/colors/colors-semantic';
+import textColors from '@contentful/forma-36-tokens/dist/json/colors/colors-text';
+import elementColors from '@contentful/forma-36-tokens/dist/json/colors/colors-elements';
+import contrastColors from '@contentful/forma-36-tokens/dist/json/colors/colors-contrast';
+import blueColors from '@contentful/forma-36-tokens/dist/json/colors/colors-blue';
+import greenColors from '@contentful/forma-36-tokens/dist/json/colors/colors-green';
+import redColors from '@contentful/forma-36-tokens/dist/json/colors/colors-red';
+import orangeColors from '@contentful/forma-36-tokens/dist/json/colors/colors-orange';
+import coralColors from '@contentful/forma-36-tokens/dist/json/colors/colors-coral';
+import peachColors from '@contentful/forma-36-tokens/dist/json/colors/colors-peach';
+import mintColors from '@contentful/forma-36-tokens/dist/json/colors/colors-mint';
+import iceColors from '@contentful/forma-36-tokens/dist/json/colors/colors-ice';
+import whiteColors from '@contentful/forma-36-tokens/dist/json/colors/colors-white';
+
 storiesOf('Tokens|Colors', module)
   .addDecorator(
     host({
@@ -22,7 +36,7 @@ storiesOf('Tokens|Colors', module)
         <p>These are the colors we use at Contentful.</p>
         <section>
           <h1>Semantic</h1>
-          <ColorSwatchGroup group="semantic" />
+          <ColorSwatchGroup group={semanticColors} />
         </section>
 
         <section>
@@ -31,7 +45,7 @@ storiesOf('Tokens|Colors', module)
             For use with text on light backgrounds. Use a lighter shade to
             de-emphasize text.
           </p>
-          <ColorSwatchGroup group="text" />
+          <ColorSwatchGroup group={textColors} />
         </section>
 
         <section>
@@ -40,7 +54,7 @@ storiesOf('Tokens|Colors', module)
             Element colors are used for the larger blocks of our UI - e.g.
             sidepanels, table headers, navigational elements.
           </p>
-          <ColorSwatchGroup group="element" />
+          <ColorSwatchGroup group={elementColors} />
         </section>
 
         <section>
@@ -50,7 +64,7 @@ storiesOf('Tokens|Colors', module)
             help establish hierarchy. Example usage are app headers or modal
             backgrounds (when used with transparency).
           </p>
-          <ColorSwatchGroup group="contrast" />
+          <ColorSwatchGroup group={contrastColors} />
         </section>
 
         <section>
@@ -59,7 +73,7 @@ storiesOf('Tokens|Colors', module)
             Blue is our primary color and should be used when you want to
             highlight a primary action.
           </p>
-          <ColorSwatchGroup group="blue" />
+          <ColorSwatchGroup group={blueColors} />
         </section>
 
         <section>
@@ -69,7 +83,7 @@ storiesOf('Tokens|Colors', module)
             showing a success message, a save action, or a marking a step as
             complete.
           </p>
-          <ColorSwatchGroup group="green" />
+          <ColorSwatchGroup group={greenColors} />
         </section>
 
         <section>
@@ -80,7 +94,7 @@ storiesOf('Tokens|Colors', module)
             highlighting validation or application error messages, or for
             showing statuses with a negative context.
           </p>
-          <ColorSwatchGroup group="red" />
+          <ColorSwatchGroup group={redColors} />
         </section>
 
         <section>
@@ -91,7 +105,7 @@ storiesOf('Tokens|Colors', module)
             showing a draft/unpublished state, or showing a gentle warning
             message rather than an error message.
           </p>
-          <ColorSwatchGroup group="orange" />
+          <ColorSwatchGroup group={orangeColors} />
         </section>
 
         <section>
@@ -100,13 +114,13 @@ storiesOf('Tokens|Colors', module)
             Coral is used for muted warnings and errors. E.g - a note warning
             the user of reaching a limit.
           </p>
-          <ColorSwatchGroup group="coral" />
+          <ColorSwatchGroup group={coralColors} />
         </section>
 
         <section>
           <h1>Peach</h1>
           <p>Peach is used for muted warning messages. E.g - a warning note.</p>
-          <ColorSwatchGroup group="peach" />
+          <ColorSwatchGroup group={peachColors} />
         </section>
 
         <section>
@@ -114,7 +128,7 @@ storiesOf('Tokens|Colors', module)
           <p>
             Mint is used for muted success messages. E.g - a confirmation note.
           </p>
-          <ColorSwatchGroup group="mint" />
+          <ColorSwatchGroup group={mintColors} />
         </section>
 
         <section>
@@ -123,13 +137,12 @@ storiesOf('Tokens|Colors', module)
             Ice is used for muted neutral or information messages. E.g - a
             general note.
           </p>
-          <ColorSwatchGroup group="ice" />
+          <ColorSwatchGroup group={iceColors} />
         </section>
 
         <section>
-          <h1>Misc</h1>
-          <p>Miscellaneous colors which don't carry any semantic meaning.</p>
-          <ColorSwatchGroup group="misc" />
+          <h1>White</h1>
+          <ColorSwatchGroup group={whiteColors} />
         </section>
       </DocPage>
     )),

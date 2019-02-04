@@ -10,7 +10,7 @@
 }
 
 .CheckboxField__checkbox {
-  margin-right: calc(1rem * (8 / var(--rem-base)));
+  margin-right: calc(1rem * (8 / var(--font-base-default)));
   transform: translateY(1px);
 }
 

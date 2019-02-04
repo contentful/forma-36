@@ -8,41 +8,16 @@
   cursor: pointer;
 }
 
-.box {
+.slider__knob {
   position: relative;
   left: 0;
   background: var(--color-primary);
   width: 20px;
   height: 20px;
   cursor: pointer;
+  transform: translate3d(0, 0, 0);
 }
 
-.slide--transition-duration-short:hover .box {
-  transition: var(--transition-duration-short) var(--transition-easing-default);
-  left: calc(100% - 20px);
-}
-
-.slide--transition-duration-default:hover .box {
-  transition: var(--transition-duration-default)
-    var(--transition-easing-default);
-  left: calc(100% - 20px);
-}
-
-.slide--transition-duration-long:hover .box {
-  transition: var(--transition-duration-long) var(--transition-easing-default);
-  left: calc(100% - 20px);
-}
-
-.slide--transition-easing-default:hover .box {
-  transition: var(--transition-duration-long) var(--transition-easing-default);
-  left: calc(100% - 20px);
-}
-
-.slide--transition-cubic-bezier:hover .box {
-  transition: var(--transition-duration-long) var(--transition-cubic-bezier);
-  left: calc(100% - 20px);
-}
-
-.animation-rotate-cw:hover {
-  animation: rotate-cw 2s infinite linear;
+.slider:hover .slider__knob {
+  transform: translate3d(80px, 0, 0);
 }

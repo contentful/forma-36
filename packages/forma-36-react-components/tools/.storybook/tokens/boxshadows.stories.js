@@ -2,7 +2,8 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
-import { boxShadows, focusBoxShadows } from './tokens';
+import boxShadowTokens from '@contentful/forma-36-tokens/dist/json/box-shadows/box-shadows';
+import glowTokens from '@contentful/forma-36-tokens/dist/json/box-shadows/glows';
 
 import DocPage from './../components/DocPage/DocPage';
 import Heading from './../../../src/components/Typography/Heading';
@@ -27,71 +28,63 @@ storiesOf('Tokens|Box Shadows', module)
     withInfo()(() => (
       <DocPage>
         <Heading style={{ marginBottom: '1rem' }}>Box Shadows</Heading>
+        <p>We use two different styles of box shadows at Contentful. Box shadows to communicate depth, and glows to communicate semantics.</p>
+
+        <Subheading style={{ marginBottom: '1rem' }}>Box Shadows</Subheading>
+        <p>Box shadows are used to give depth to the user interface.</p>
         <Table style={{ width: '100%' }}>
           <TableHead>
             <TableRow>
-              <TableCell>Name</TableCell>
               <TableCell>Token</TableCell>
               <TableCell>Value</TableCell>
               <TableCell>Example</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {boxShadows.map(boxShadows => {
+            {Object.keys(boxShadowTokens).map(token => {
+              const value = boxShadowTokens[token];
+
               return (
-                <TableRow key={boxShadows.cssVar}>
+                <TableRow key={token}>
                   <TableCell style={{ verticalAlign: 'middle' }}>
-                    {boxShadows.name}
+                    {token}
                   </TableCell>
                   <TableCell style={{ verticalAlign: 'middle' }}>
-                    <code>{boxShadows.cssVar}</code>
+                    <code>{value}</code>
                   </TableCell>
                   <TableCell style={{ verticalAlign: 'middle' }}>
-                    <code>{boxShadows.value}</code>
-                  </TableCell>
-                  <TableCell style={{ verticalAlign: 'middle' }}>
-                    <Card style={{ boxShadow: boxShadows.value }}>
-                      Box Shadow
-                    </Card>
+                    <Card style={{ boxShadow: value }}>Box Shadow</Card>
                   </TableCell>
                 </TableRow>
               );
             })}
           </TableBody>
         </Table>
+
         <Subheading style={{ margin: '1rem 0' }}>Glows</Subheading>
+        <p>Glows are used to indicate semantic focus states, for example in the Button component.</p>
         <Table style={{ width: '100%' }}>
           <TableHead>
             <TableRow>
-              <TableCell>Name</TableCell>
               <TableCell>Token</TableCell>
               <TableCell>Value</TableCell>
               <TableCell>Example</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {focusBoxShadows.map(focusBoxShadows => {
+            {Object.keys(glowTokens).map(token => {
+              const value = glowTokens[token];
+
               return (
-                <TableRow key={focusBoxShadows.cssVar}>
+                <TableRow key={token}>
                   <TableCell style={{ verticalAlign: 'middle' }}>
-                    {focusBoxShadows.name}
+                    {token}
                   </TableCell>
                   <TableCell style={{ verticalAlign: 'middle' }}>
-                    <code>{focusBoxShadows.cssVar}</code>
+                    <code>{value}</code>
                   </TableCell>
                   <TableCell style={{ verticalAlign: 'middle' }}>
-                    <code>{focusBoxShadows.value}</code>
-                  </TableCell>
-                  <TableCell style={{ verticalAlign: 'middle' }}>
-                    <Card
-                      style={{
-                        boxShadow: focusBoxShadows.value,
-                        maxWidth: 120,
-                        float: 'right',
-                      }}
-                    >
-                      Focus Box Shadow
-                    </Card>
+                    <Card style={{ boxShadow: value }}>Box Shadow</Card>
                   </TableCell>
                 </TableRow>
               );

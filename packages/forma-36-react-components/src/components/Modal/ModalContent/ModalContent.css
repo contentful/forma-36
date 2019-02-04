@@ -3,7 +3,7 @@
 @import 'settings/transitions';
 
 .ModalContent {
-  padding: calc(1rem * (30 / var(--rem-base)));
+  padding: calc(1rem * (30 / var(--font-base-default)));
   color: var(--color-text-mid);
   font-size: var(--font-size-m);
   font-family: var(--font-stack-primary);

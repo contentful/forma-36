@@ -9,10 +9,13 @@
     "dist"
   ],
   "dependencies": {
-    "json-to-css-variables": "^1.0.0"
+    "fs-extra": "^7.0.1",
+    "globby": "^9.0.0"
   },
   "scripts": {
-    "build": "node src/tools/buildTokens.js",
+    "build:clean": "rm -rf dist",
+    "build:tokens": "node tools/build.js",
+    "build": "yarn build:clean && yarn build:tokens",
     "prepublishOnly": "yarn build"
   },
   "publishConfig": {

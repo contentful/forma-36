@@ -3,8 +3,8 @@
 
 .DropdownListItem {
   display: inline-block;
-  padding: calc(1rem * (7 / var(--rem-base)))
-    calc(1rem * (20 / var(--rem-base)));
+  padding: calc(1rem * (7 / var(--font-base-default)))
+    calc(1rem * (20 / var(--font-base-default)));
   font-family: var(--font-stack-primary);
   font-size: var(--font-size-m);
   white-space: nowrap;
@@ -38,8 +38,8 @@
 
 .DropdownListItem__toggle-button__inner-wrapper {
   display: block;
-  padding: calc(1rem * (7 / var(--rem-base)))
-    calc(1rem * (20 / var(--rem-base)));
+  padding: calc(1rem * (7 / var(--font-base-default)))
+    calc(1rem * (20 / var(--font-base-default)));
   line-height: 1.5;
 }
 
@@ -66,14 +66,14 @@
 
 .DropdownListItem--title {
   line-height: 1.8;
-  padding-bottom: calc(1rem * (5 / var(--rem-base)));
+  padding-bottom: calc(1rem * (5 / var(--font-base-default)));
 }
 
 .DropdownListItem--title,
 .DropdownListItem--title:hover {
   color: var(--color-text-dark);
   background: var(--color-white);
-  font-size: calc(1rem * (12 / var(--rem-base)));
+  font-size: calc(1rem * (12 / var(--font-base-default)));
   font-weight: var(--font-weight-demi-bold);
   text-transform: uppercase;
   letter-spacing: 0.1rem;

@@ -8,8 +8,8 @@
   align-items: center;
   line-height: 1.5;
   position: relative;
-  padding: 0px calc(1rem * (4 / var(--rem-base))) 0px
-    calc(1rem * (12 / var(--rem-base)));
+  padding: 0px calc(1rem * (4 / var(--font-base-default))) 0px
+    calc(1rem * (12 / var(--font-base-default)));
   color: inherit;
   font-size: inherit;
   font-weight: inherit;
@@ -29,7 +29,7 @@
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  padding: 0 calc(1rem * (3 / var(--rem-base)));
+  padding: 0 calc(1rem * (3 / var(--font-base-default)));
 }
 
 .InlineReferenceCard__text-wrapper {
@@ -40,7 +40,7 @@
 }
 
 .InlineReferenceCard__status-indicator {
-  width: calc(1rem * (4 / var(--rem-base)));
+  width: calc(1rem * (4 / var(--font-base-default)));
   position: absolute;
   top: 0;
   left: 0;
@@ -48,34 +48,38 @@
 }
 
 .InlineReferenceCard__status-indicator--published {
-  outline: calc(1rem * (1 / var(--rem-base))) solid var(--color-green-dark);
+  outline: calc(1rem * (1 / var(--font-base-default))) solid
+    var(--color-green-dark);
   background: var(--color-green-mid);
 }
 
 .InlineReferenceCard__status-indicator--draft {
-  outline: calc(1rem * (1 / var(--rem-base))) solid var(--color-orange-dark);
+  outline: calc(1rem * (1 / var(--font-base-default))) solid
+    var(--color-orange-dark);
   background: var(--color-orange-mid);
 }
 
 .InlineReferenceCard__status-indicator--archived {
-  outline: calc(1rem * (1 / var(--rem-base))) solid var(--color-red-dark);
+  outline: calc(1rem * (1 / var(--font-base-default))) solid
+    var(--color-red-dark);
   background: var(--color-red-mid);
 }
 
 .InlineReferenceCard__status-indicator--changed {
-  outline: calc(1rem * (1 / var(--rem-base))) solid var(--color-blue-dark);
+  outline: calc(1rem * (1 / var(--font-base-default))) solid
+    var(--color-blue-dark);
   background: var(--color-blue-mid);
 }
 
 .InlineReferenceCard__status-indicator {
   height: 100%;
-  width: calc(1rem * (4 / var(--rem-base)));
+  width: calc(1rem * (4 / var(--font-base-default)));
 }
 
 .InlineReferenceCard__dropdown {
   display: inline-flex;
   position: static;
-  margin-left: calc(1rem * (6 / var(--rem-base)));
+  margin-left: calc(1rem * (6 / var(--font-base-default)));
 }
 
 .InlineReferenceCard__spinner--enter {

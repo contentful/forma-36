@@ -14,12 +14,12 @@
 
 .TextField__label-link {
   margin-left: auto;
-  margin-bottom: calc(1rem * (8 / var(--rem-base)));
+  margin-bottom: calc(1rem * (8 / var(--font-base-default)));
 }
 
 .TextField__validation-message,
 .TextField__help-text {
-  margin-top: calc(1rem * (8 / var(--rem-base)));
+  margin-top: calc(1rem * (8 / var(--font-base-default)));
 }
 
 .TextField__hints {
@@ -27,7 +27,7 @@
   justify-content: space-between;
 }
 .TextField__count {
-  margin-left: calc(1rem * (10 / var(--rem-base)));
+  margin-left: calc(1rem * (10 / var(--font-base-default)));
   flex-grow: 1;
   text-align: right;
 }

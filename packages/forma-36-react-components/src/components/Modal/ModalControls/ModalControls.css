@@ -1,7 +1,7 @@
 @import 'settings/typography';
 
 .ModalControls {
-  padding: calc(1rem * (30 / var(--rem-base)));
+  padding: calc(1rem * (30 / var(--font-base-default)));
   padding-top: 0;
 }
 

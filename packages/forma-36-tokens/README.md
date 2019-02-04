@@ -1,33 +1,86 @@
 # Forma 36 Tokens
 
-This package includes design tokens for Forma 36. The tokens are organized as Javscript files and compiled into JSON, CSS & SCSS files.
-This package provides tools for generating the JSON files and CSS variables out of the tokens.
+The design tokens for Forma 36, available as JSON, CSS, and SCSS.
 
-## Getting started
+These tokens are a key part of our design system and power both [`forma-36-react-components`](https://github.com/contentful/forma-36/tree/master/packages/form-36-react-components) and [`forma-36-fcss`](https://github.com/contentful/forma-36/tree/master/packages/form-36-fcss).
 
-Create all tokens by running `yarn build`
+## Library usage
 
-This script populates the dist folder with all tokens as JSON, CSS and SCSS files. All tokens are bundled in a token.json and index.css/scss file.
-Additionally a color.css/scss file is generated which bundles all color tokens.
+### Install the package to your project
 
-## Tokens
+```bash
+yarn add @contentful/forma-36-tokens
+```
+
+Or for NPM
+
+```bash
+npm i @contentful/forma-36-tokens
+```
+
+### Import into your project
+
+#### CSS
+
+```css
+@import '@contentful/forma-36-tokens/dist/css/index.css';
+```
+
+#### SCSS
+
+```scss
+@import '@contentful/forma-36-tokens/dist/css/index.scss';
+```
+
+#### JSON
+
+```js
+import tokens from '@contentful/forma-36-tokens/dist/json/transitions/transition-easings';
+```
+
+## Development
+
+All tokens are kept in the `src/tokens` directory and organised as so:
 
 ```
-src/tokens
-├── colors-blue.js
-├── colors-contrast.js
-├── colors-coral.js
-├── colors-elements.js
-├── colors-green.js
-├── colors-ice.js
-├── colors-mint.js
-├── colors-orange.js
-├── colors-red.js
-├── colors-semantic.js
-├── colors-text.js
-├── colors-white.js
-├── shadows.js
+.
+├── box-shadows
+│   ├── box-shadows.js
+│   └── glows.js
+├── colors
+│   ├── colors-blue.js
+│   ├── colors-contrast.js
+│   ├── colors-coral.js
+│   ├── colors-elements.js
+│   ├── colors-green.js
+│   ├── colors-ice.js
+│   ├── colors-mint.js
+│   ├── colors-orange.js
+│   ├── colors-peach.js
+│   ├── colors-red.js
+│   ├── colors-semantic.js
+│   ├── colors-text.js
+│   └── colors-white.js
 ├── spacing.js
-├── transitions.js
+├── transitions
+│   ├── transition-durations.js
+│   └── transition-easings.js
+├── typography
+│   ├── font-base.js
+│   ├── font-size.js
+│   ├── font-stack.js
+│   ├── font-weight.js
+│   ├── letter-spacing.js
+│   └── line-height.js
 └── typography.js
 ```
+
+### Creating a build
+
+```bash
+yarn build
+```
+
+Running the build script will populate the `dist` directory with separately built JSON, CSS, and SCSS.
+
+This script populates the dist folder with all tokens as JSON, CSS and SCSS. For CSS and SCSS builds, an index file is included for ease of importing.

@@ -32,7 +32,7 @@
   color: var(--color-white);
   font-size: var(--font-size-m);
   font-family: var(--font-stack-primary);
-  padding: calc(1rem * (14 / var(--rem-base)));
+  padding: calc(1rem * (14 / var(--font-base-default)));
   display: flex;
   overflow: hidden;
   align-items: flex-end;
@@ -40,7 +40,7 @@
   background: linear-gradient(
     0deg,
     var(--color-text-dark) 0%,
-    transparent calc(1rem * (100 / var(--rem-base))),
+    transparent calc(1rem * (100 / var(--font-base-default))),
     transparent 100%
   );
 
@@ -51,7 +51,7 @@
 
 .Asset__title-container__title {
   bottom: 0;
-  height: calc(1rem * (44 / var(--rem-base)));
+  height: calc(1rem * (44 / var(--font-base-default)));
   width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -69,15 +69,15 @@
   color: var(--color-text-light);
   font-size: var(--font-size-m);
   font-family: var(--font-stack-primary);
-  max-height: calc(1rem * (40 / var(--rem-base)));
+  max-height: calc(1rem * (40 / var(--font-base-default)));
   overflow: hidden;
-  margin-bottom: calc(1rem * calc(20 / var(--rem-base)));
+  margin-bottom: calc(1rem * calc(20 / var(--font-base-default)));
 }
 
 .Asset__illustration-container {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-bottom: calc(1rem * calc(20 / var(--rem-base)));
-  margin-top: calc(1rem * calc(20 / var(--rem-base)));
+  margin-bottom: calc(1rem * calc(20 / var(--font-base-default)));
+  margin-top: calc(1rem * calc(20 / var(--font-base-default)));
 }

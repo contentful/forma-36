@@ -12,15 +12,15 @@
   width: 100%;
   display: block;
   appearance: none;
-  padding: calc(1rem * (10 / var(--rem-base)));
-  padding-right: calc(1rem * (39 / var(--rem-base)));
+  padding: calc(1rem * (10 / var(--font-base-default)));
+  padding-right: calc(1rem * (39 / var(--font-base-default)));
   background: transparent;
   color: var(--color-text-mid);
   font-size: var(--font-size-m);
   font-family: var(--font-stack-primary);
   border: 1px solid var(--color-element-mid);
   border-radius: 0;
-  height: calc(1rem * (40 / var(--rem-base)));
+  height: calc(1rem * (40 / var(--font-base-default)));
   &:focus {
     outline: 0;
   }
@@ -78,7 +78,7 @@
 
 .Select__icon {
   position: absolute;
-  right: calc(1rem * (12 / var(--rem-base)));
+  right: calc(1rem * (12 / var(--font-base-default)));
   top: 50%;
   margin-top: -10px;
   pointer-events: none;

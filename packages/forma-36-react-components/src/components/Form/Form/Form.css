@@ -9,9 +9,9 @@
 }
 
 .Form__item--default {
-  margin-bottom: calc(1rem * (40 / var(--rem-base)));
+  margin-bottom: calc(1rem * (40 / var(--font-base-default)));
 }
 
 .Form__item--condensed {
-  margin-bottom: calc(1rem * (28 / var(--rem-base)));
+  margin-bottom: calc(1rem * (28 / var(--font-base-default)));
 }
