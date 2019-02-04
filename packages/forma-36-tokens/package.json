@@ -1,7 +1,7 @@
 {
   "name": "@contentful/forma-36-tokens",
   "description": "Forma 36 Tokens",
-  "version": "0.0.6",
+  "version": "0.1.0",
   "main": "dist/json/tokens.json",
   "license": "MIT",
   "files": [
