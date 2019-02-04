@@ -30,6 +30,7 @@ storiesOf('Components|Dropdown', module)
       <Dropdown
         isOpen={store.state.isOpen}
         onClose={() => store.set({ isOpen: false })}
+        key={Date.now()} // Force Reinit
         position={select(
           'Menu Position',
           {
