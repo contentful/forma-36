@@ -11,7 +11,4 @@ script:
   - yarn lerna run test
   - yarn lerna run build
 after_success:
-  # - yarn lerna run travis-deploy-once "yarn lerna run semantic-release"
-branches:
-  except:
-    - /^v\d+\.\d+\.\d+$/
+  - test $TRAVIS_BRANCH = "master" && test $TRAVIS_PULL_REQUEST = "false" && yarn lerna publish --conventional-commits --yes
