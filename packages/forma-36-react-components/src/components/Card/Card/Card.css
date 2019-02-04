@@ -6,7 +6,7 @@
 
 .Card {
   display: block;
-  padding: calc(1rem * (14 / var(--rem-base)));
+  padding: calc(1rem * (14 / var(--font-base-default)));
   border: 1px solid var(--color-element-mid);
   border-radius: var(--border-radius-small);
   color: var(--color-text-dark);
@@ -18,11 +18,11 @@
 }
 
 .Card--padding-default {
-  padding: calc(1rem * (14 / var(--rem-base)));
+  padding: calc(1rem * (14 / var(--font-base-default)));
 }
 
 .Card--padding-large {
-  padding: calc(1rem * (24 / var(--rem-base)));
+  padding: calc(1rem * (24 / var(--font-base-default)));
 }
 
 .Card--padding-none {

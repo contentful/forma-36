@@ -48,23 +48,24 @@
 }
 
 .Toggle__button__icon {
-  margin: 0 calc(1rem * (3 / var(--rem-base)));
+  margin: 0 calc(1rem * (3 / var(--font-base-default)));
 }
 
 .Toggle__content-wrapper {
   color: var(--color-text-mid);
-  margin: 0 calc(1rem * (3 / var(--rem-base)));
+  margin: 0 calc(1rem * (3 / var(--font-base-default)));
 }
 
 .Toggle__button__inner-wrapper {
   align-items: center;
-  padding: calc(1rem * (5 / var(--rem-base))) calc(1rem * (7 / var(--rem-base)));
+  padding: calc(1rem * (5 / var(--font-base-default)))
+    calc(1rem * (7 / var(--font-base-default)));
   display: flex;
 }
 
 .Toggle--square {
-  width: calc(1rem * (31 / var(--rem-base)));
-  height: calc(1rem * (31 / var(--rem-base)));
+  width: calc(1rem * (31 / var(--font-base-default)));
+  height: calc(1rem * (31 / var(--font-base-default)));
 }
 
 .Toggle--square .Toggle__button__inner-wrapper,

@@ -10,7 +10,8 @@
 .Dropdown__container {
   background: var(--color-white);
   box-shadow: var(--box-shadow-default);
-  border: calc(1rem * (1 / var(--rem-base))) solid var(--color-element-mid);
+  border: calc(1rem * (1 / var(--font-base-default))) solid
+    var(--color-element-mid);
   list-style: none;
   padding: 0;
   margin: 0;
@@ -58,20 +59,21 @@
 
 .Dropdown__container-position--bottom-center-with-chevron {
   composes: Dropdown__container-position--bottom-center;
-  margin-top: calc(1rem * (20 / var(--rem-base)));
+  margin-top: calc(1rem * (20 / var(--font-base-default)));
   &:after {
     content: '';
     left: 50%;
-    width: calc(1rem * (20 / var(--rem-base)));
-    height: calc(1rem * (20 / var(--rem-base)));
+    width: calc(1rem * (20 / var(--font-base-default)));
+    height: calc(1rem * (20 / var(--font-base-default)));
     position: absolute;
     top: 0;
     background: var(--color-white);
-    transform: rotate(45deg) translate(calc(1rem * (-10 / var(--rem-base))));
-    margin-top: calc(1rem * (-4 / var(--rem-base)));
-    border-left: calc(1rem * (1 / var(--rem-base))) solid
+    transform: rotate(45deg)
+      translate(calc(1rem * (-10 / var(--font-base-default))));
+    margin-top: calc(1rem * (-4 / var(--font-base-default)));
+    border-left: calc(1rem * (1 / var(--font-base-default))) solid
       var(--color-element-mid);
-    border-top: calc(1rem * (1 / var(--rem-base))) solid
+    border-top: calc(1rem * (1 / var(--font-base-default))) solid
       var(--color-element-mid);
   }
 }

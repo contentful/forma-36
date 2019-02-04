@@ -5,8 +5,8 @@
 
 .EditorToolbarButton {
   display: inline-block;
-  height: calc(1rem * (30 / var(--rem-base)));
-  width: calc(1rem * (30 / var(--rem-base)));
+  height: calc(1rem * (30 / var(--font-base-default)));
+  width: calc(1rem * (30 / var(--font-base-default)));
   justify-content: center;
   border-radius: 2px;
   transition: background var(--transition-duration-short)

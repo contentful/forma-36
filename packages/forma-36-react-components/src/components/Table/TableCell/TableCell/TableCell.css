@@ -2,9 +2,11 @@
 @import 'settings/typography';
 
 :root {
-  --table-cell-padding-vertical: calc(1rem * (15 / var(--rem-base)));
-  --table-cell-padding-vertical-compact: calc(1rem * (10 / var(--rem-base)));
-  --table-cell-padding-horizontal: calc(1rem * (20 / var(--rem-base)));
+  --table-cell-padding-vertical: calc(1rem * (15 / var(--font-base-default)));
+  --table-cell-padding-vertical-compact: calc(
+    1rem * (10 / var(--font-base-default))
+  );
+  --table-cell-padding-horizontal: calc(1rem * (20 / var(--font-base-default)));
 }
 
 .TableCell {

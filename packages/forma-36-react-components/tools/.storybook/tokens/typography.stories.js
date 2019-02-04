@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
 
+import fontBaseTokens from '@contentful/forma-36-tokens/dist/json/typography/font-base';
 import fontSizeTokens from '@contentful/forma-36-tokens/dist/json/typography/font-size';
 import fontWeightTokens from '@contentful/forma-36-tokens/dist/json/typography/font-weight';
 import lineHeightTokens from '@contentful/forma-36-tokens/dist/json/typography/line-height';
@@ -31,6 +32,40 @@ storiesOf('Tokens|Typography', module)
     withInfo()(() => (
       <DocPage>
         <Heading style={{ marginBottom: '1rem' }}>Typography</Heading>
+
+        <Subheading style={{ margin: '1rem 0' }}>Font base</Subheading>
+        <p>
+          Our font base is used in combination with the REM font sizes below
+        </p>
+        <Table style={{ width: '100%' }}>
+          <TableHead>
+            <TableRow>
+              <TableCell>Token</TableCell>
+              <TableCell>CSS Variable</TableCell>
+              <TableCell>Value</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {Object.keys(fontBaseTokens).map(token => {
+              const value = fontBaseTokens[token];
+
+              return (
+                <TableRow key={token}>
+                  <TableCell style={{ verticalAlign: 'middle' }}>
+                    <span style={{ fontSize: value }}>{token}</span>
+                  </TableCell>
+                  <TableCell style={{ verticalAlign: 'middle' }}>
+                    <code>--{token}</code>
+                  </TableCell>
+                  <TableCell style={{ verticalAlign: 'middle' }}>
+                    <code>{value}</code>
+                  </TableCell>
+                </TableRow>
+              );
+            })}
+          </TableBody>
+        </Table>
+
         <Subheading style={{ margin: '1rem 0' }}>Font sizes</Subheading>
         <Table style={{ width: '100%' }}>
           <TableHead>
@@ -49,9 +84,7 @@ storiesOf('Tokens|Typography', module)
               return (
                 <TableRow key={token}>
                   <TableCell style={{ verticalAlign: 'middle' }}>
-                    <span style={{ fontSize: value }}>
-                      {token}
-                    </span>
+                    <span style={{ fontSize: value }}>{token}</span>
                   </TableCell>
                   <TableCell style={{ verticalAlign: 'middle' }}>
                     <code>--{token}</code>
@@ -84,9 +117,7 @@ storiesOf('Tokens|Typography', module)
               return (
                 <TableRow key={token}>
                   <TableCell>
-                    <span style={{ fontWeight: value }}>
-                      {token}
-                    </span>
+                    <span style={{ fontWeight: value }}>{token}</span>
                   </TableCell>
                   <TableCell>
                     <code>--{token}</code>
@@ -112,28 +143,28 @@ storiesOf('Tokens|Typography', module)
           </TableHead>
           <TableBody>
             {Object.keys(lineHeightTokens).map(token => {
-            const value = lineHeightTokens[token];
+              const value = lineHeightTokens[token];
 
-            return (
-            <TableRow key={token}>
-              <TableCell style={{ verticalAlign: 'middle' }}>
-                {token}
-              </TableCell>
-              <TableCell style={{ verticalAlign: 'middle' }}>
-                <div style={{ lineHeight: value }}>
-                Manage content better with infrastructure. It’s the cure
-                for the common CMS. Update once and publish everywhere, so
-                teams build digital products faster.
-                </div>
-              </TableCell>
-              <TableCell style={{ verticalAlign: 'middle' }}>
-                <code>--{token}</code>
-              </TableCell>
-              <TableCell style={{ verticalAlign: 'middle' }}>
-                <code>{value}</code>
-              </TableCell>
-            </TableRow>
-            );
+              return (
+                <TableRow key={token}>
+                  <TableCell style={{ verticalAlign: 'middle' }}>
+                    {token}
+                  </TableCell>
+                  <TableCell style={{ verticalAlign: 'middle' }}>
+                    <div style={{ lineHeight: value }}>
+                      Manage content better with infrastructure. It’s the cure
+                      for the common CMS. Update once and publish everywhere, so
+                      teams build digital products faster.
+                    </div>
+                  </TableCell>
+                  <TableCell style={{ verticalAlign: 'middle' }}>
+                    <code>--{token}</code>
+                  </TableCell>
+                  <TableCell style={{ verticalAlign: 'middle' }}>
+                    <code>{value}</code>
+                  </TableCell>
+                </TableRow>
+              );
             })}
           </TableBody>
         </Table>
@@ -150,12 +181,12 @@ storiesOf('Tokens|Typography', module)
           </TableHead>
           <TableBody>
             {Object.keys(fontStackTokens).map(token => {
-             const value = fontStackTokens[token];
+              const value = fontStackTokens[token];
 
               return (
                 <TableRow key={token}>
                   <TableCell style={{ verticalAlign: 'middle' }}>
-                      {token}
+                    {token}
                   </TableCell>
                   <TableCell style={{ verticalAlign: 'middle' }}>
                     <div style={{ fontFamily: value }}>
@@ -188,17 +219,15 @@ storiesOf('Tokens|Typography', module)
           </TableHead>
           <TableBody>
             {Object.keys(letterSpacingTokens).map(token => {
-             const value = letterSpacingTokens[token];
+              const value = letterSpacingTokens[token];
 
               return (
                 <TableRow key={token}>
                   <TableCell style={{ verticalAlign: 'middle' }}>
-                      {token}
+                    {token}
                   </TableCell>
                   <TableCell style={{ verticalAlign: 'middle' }}>
-                    <div style={{ letterSpacing: value }}>
-                      Contentful
-                    </div>
+                    <div style={{ letterSpacing: value }}>Contentful</div>
                   </TableCell>
                   <TableCell style={{ verticalAlign: 'middle' }}>
                     <code>--{token}</code>

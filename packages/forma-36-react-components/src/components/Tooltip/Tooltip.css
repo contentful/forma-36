@@ -3,7 +3,7 @@
 @import 'settings/transitions';
 
 :root {
-  --tooltip-chevron-size: calc(1rem * (6 / var(--rem-base)));
+  --tooltip-chevron-size: calc(1rem * (6 / var(--font-base-default)));
 }
 
 .Tooltip__target-wrapper {
@@ -13,20 +13,20 @@
 
 .Tooltip {
   position: absolute;
-  margin: calc(1rem * (10 / var(--rem-base))) 0px;
+  margin: calc(1rem * (10 / var(--font-base-default))) 0px;
   display: inline-block;
   background: var(--color-contrast-mid);
   font-family: var(--font-stack-primary);
-  font-size: calc(1rem * (12 / var(--rem-base)));
+  font-size: calc(1rem * (12 / var(--font-base-default)));
   font-weight: var(--font-weight-medium);
   font-style: normal;
   text-decoration: none;
   color: var(--color-white);
   text-align: center;
   line-height: var(--line-height-default);
-  padding: calc(1rem * (8 / var(--rem-base)))
-    calc(1rem * (10 / var(--rem-base)));
-  border-radius: calc(1rem * (4 / var(--rem-base)));
+  padding: calc(1rem * (8 / var(--font-base-default)))
+    calc(1rem * (10 / var(--font-base-default)));
+  border-radius: calc(1rem * (4 / var(--font-base-default)));
   z-index: 99;
   user-select: none;
   width: auto;

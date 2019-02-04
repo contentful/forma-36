@@ -12,11 +12,11 @@
   composes: focus-border--default from './../../styles/settings/a11y.css';
   outline: none;
   border: 1px solid var(--color-element-mid);
-  max-height: calc(1rem * (40 / var(--rem-base)));
+  max-height: calc(1rem * (40 / var(--font-base-default)));
   color: var(--color-text-mid);
   font-family: var(--font-stack-primary);
   font-size: var(--font-size-m);
-  padding: calc(1rem * (10.5 / var(--rem-base)));
+  padding: calc(1rem * (10.5 / var(--font-base-default)));
   margin: 0;
   width: 100%;
 

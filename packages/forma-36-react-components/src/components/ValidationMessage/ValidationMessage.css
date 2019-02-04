@@ -8,8 +8,8 @@
 }
 
 .ValidationMessage__icon {
-  margin-right: calc(1rem * (7 / var(--rem-base)));
-  margin-bottom: calc(1rem * (1 / var(--rem-base)));
+  margin-right: calc(1rem * (7 / var(--font-base-default)));
+  margin-bottom: calc(1rem * (1 / var(--font-base-default)));
 }
 
 .ValidationMessage__text {

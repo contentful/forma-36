@@ -13,12 +13,12 @@
   resize: vertical;
   outline: none;
   border: 1px solid var(--color-element-mid);
-  min-height: calc(1rem * (40 / var(--rem-base)));
+  min-height: calc(1rem * (40 / var(--font-base-default)));
   color: var(--color-text-mid);
   font-family: var(--font-stack-primary);
   font-size: var(--font-size-m);
   line-height: var(--line-height-default);
-  padding: calc(1rem * (11 / var(--rem-base)));
+  padding: calc(1rem * (11 / var(--font-base-default)));
   flex-basis: 100%;
 
   &::-webkit-input-placeholder {

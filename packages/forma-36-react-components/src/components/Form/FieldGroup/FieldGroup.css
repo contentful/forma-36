@@ -6,7 +6,7 @@
 
 .FieldGroup__item {
   display: block;
-  margin-bottom: calc(1rem * (8 / var(--rem-base)));
+  margin-bottom: calc(1rem * (8 / var(--font-base-default)));
 }
 
 .FieldGroup--row {
@@ -18,6 +18,6 @@
 }
 
 .FieldGroup--row .FieldGroup__item:not(:last-child) {
-  margin: 0 calc(1rem * (8 / var(--rem-base)))
-    calc(1rem * (8 / var(--rem-base))) 0;
+  margin: 0 calc(1rem * (8 / var(--font-base-default)))
+    calc(1rem * (8 / var(--font-base-default))) 0;
 }
