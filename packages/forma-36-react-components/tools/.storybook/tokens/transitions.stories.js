@@ -22,9 +22,7 @@ const Slider = props => (
   </div>
 );
 
-const SliderKnob = props => (
-  <div className={styles.slider__knob} {...props}/>
-);
+const SliderKnob = props => <div className={styles.slider__knob} {...props} />;
 
 storiesOf('Tokens|Transitions', module)
   .addDecorator(
@@ -40,7 +38,9 @@ storiesOf('Tokens|Transitions', module)
       <DocPage>
         <Heading style={{ marginBottom: '1rem' }}>Transitions</Heading>
 
-        <Subheading style={{ marginBottom: '1rem' }}>Transition Durations</Subheading>
+        <Subheading style={{ marginBottom: '1rem' }}>
+          Transition Durations
+        </Subheading>
         <Table style={{ width: '100%' }}>
           <TableHead>
             <TableRow>
@@ -67,7 +67,7 @@ storiesOf('Tokens|Transitions', module)
                   </TableCell>
                   <TableCell style={{ verticalAlign: 'middle' }}>
                     <Slider>
-                      <SliderKnob style={{transition: `ease ${value}`}} />
+                      <SliderKnob style={{ transition: `ease ${value}` }} />
                     </Slider>
                   </TableCell>
                 </TableRow>
@@ -83,7 +83,7 @@ storiesOf('Tokens|Transitions', module)
               <TableCell>Token</TableCell>
               <TableCell>CSS Variable</TableCell>
               <TableCell>Value</TableCell>
-              <TableCell style={{width: '100px'}}>Example</TableCell>
+              <TableCell style={{ width: '100px' }}>Example</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -101,9 +101,11 @@ storiesOf('Tokens|Transitions', module)
                   <TableCell style={{ verticalAlign: 'middle' }}>
                     <code>{value}</code>
                   </TableCell>
-                  <TableCell style={{ verticalAlign: 'middle', width: '100px' }}>
+                  <TableCell
+                    style={{ verticalAlign: 'middle', width: '100px' }}
+                  >
                     <Slider>
-                      <SliderKnob style={{transition: `${value} 0.5s`}} />
+                      <SliderKnob style={{ transition: `${value} 0.5s` }} />
                     </Slider>
                   </TableCell>
                 </TableRow>
