@@ -26,9 +26,7 @@
     "travis-deploy-once": "travis-deploy-once --pro",
     "semantic-release": "lerna exec --concurrency 1 -- npx --no-install semantic-release -e semantic-release-monorepo",
     "postinstall": "lerna bootstrap",
-    "precommit": "yarn lint && yarn pretty-quick --staged",
     "commitmsg": "validate-commit-msg",
-    "prepush": "yarn lint && yarn type-check && yarn test",
     "build": "lerna run build",
     "test": "lerna run test",
     "lint": "lerna run lint",
@@ -41,7 +39,9 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "pre-commit": "yarn lint && yarn pretty-quick --staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-push": "yarn lint && yarn type-check && yarn test"
     }
   }
 }
