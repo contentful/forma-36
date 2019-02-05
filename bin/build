@@ -1,0 +1,4 @@
+#!/bin/bash
+#
+# lint, test and build
+yarn lint && yarn test && yarn build
