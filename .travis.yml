@@ -7,6 +7,7 @@ notifications:
 install:
   - yarn install
 script:
+<<<<<<< HEAD
   - yarn lerna run lint
   - yarn lerna run test
   - yarn lerna run build
@@ -19,5 +20,14 @@ deploy:
   skip_cleanup: true
   provider: script
   script: 'yarn lerna publish --conventional-commits --yes'
+=======
+  - bin/build
+before_deploy:
+  - bin/before-deploy
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: bin/deploy
+>>>>>>> chore(ci): add commitlint step to ci
   on:
     branch: master

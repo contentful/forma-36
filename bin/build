@@ -1,4 +1,8 @@
 #!/bin/bash
 #
 # lint, test and build
-yarn lint && yarn test && yarn build
+
+yarn commitlint-travis
+yarn lint
+yarn test
+yarn build
