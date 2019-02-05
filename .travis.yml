@@ -7,7 +7,6 @@ notifications:
 install:
   - yarn install
 script:
-<<<<<<< HEAD
   - yarn lerna run lint
   - yarn lerna run test
   - yarn lerna run build
@@ -22,8 +21,3 @@ deploy:
   script: 'yarn lerna publish --conventional-commits --yes'
   on:
     branch: master
-=======
-  - bin/build
-after_success:
-  - test $TRAVIS_BRANCH = "master" && test $TRAVIS_PULL_REQUEST = "false" && yarn lerna publish --conventional-commits --yes
->>>>>>> chore(Travis Config): move build script out
