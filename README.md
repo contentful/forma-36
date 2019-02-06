@@ -32,11 +32,11 @@ The monorepo is currently structured into the following packages:
 - [`forma-36-website`](https://github.com/contentful/forma-36/tree/master/packages/forma-36-website)
   - This package includes the design system documentation which offers guidelines, best practices and examples.
     See the README [here](./packages/forma-36-website/README.md)
-- [`forma-36-react-components`](https://github.com/contentful/forma-36/tree/master/packages/form-36-react-components)
+- [`forma-36-react-components`](https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components)
   - A React component library built with Storybook. See the README [here](./packages/forma-36-react-components/README.md)
-- [`forma-36-fcss`](https://github.com/contentful/forma-36/tree/master/packages/form-36-fcss)
+- [`forma-36-fcss`](https://github.com/contentful/forma-36/tree/master/packages/forma-36-fcss)
   - CSS utility classes for spacing, typography, colors and transitions. See the README [here](./packages/forma-36-fcss/README.md)
-- [`forma-36-tokens`](https://github.com/contentful/forma-36/tree/master/packages/form-36-tokens)
+- [`forma-36-tokens`](https://github.com/contentful/forma-36/tree/master/packages/forma-36-tokens)
   - Forma 36 design tokens. See the README [here](./packages/forma-36-tokens/README.md)
 
 ### Adding packages
