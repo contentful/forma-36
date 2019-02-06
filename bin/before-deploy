@@ -1,0 +1,8 @@
+#!/bin/bash
+#
+# setup credentials 
+
+git config --global user.email ${GITHUB_EMAIL}
+git config --global user.name ${GITHUB_USER}
+git checkout master
+echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null

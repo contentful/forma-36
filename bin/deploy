@@ -1,0 +1,5 @@
+#!/bin/bash
+#
+# publish a new version depending on conventional commits
+
+yarn lerna publish --conventional-commits --yes

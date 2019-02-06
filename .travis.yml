@@ -7,17 +7,12 @@ notifications:
 install:
   - yarn install
 script:
-  - yarn lerna run lint
-  - yarn lerna run test
-  - yarn lerna run build
+  - bin/build
 before_deploy:
-  - git config --global user.email ${GITHUB_EMAIL}
-  - git config --global user.name ${GITHUB_USER}
-  - git checkout master
-  - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null
+  - bin/before-deploy
 deploy:
   skip_cleanup: true
   provider: script
-  script: 'yarn lerna publish --conventional-commits --yes'
+  script: bin/deploy
   on:
     branch: master
