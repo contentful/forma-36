@@ -15,7 +15,3 @@ Design tokens are the granular values we use when designing and implementing UI.
 ## Components
 
 React components available for immediate use.
-
-## Blueprints
-
-Components we have identified but are not yet available within the component library. These serve as design notes to those wanting to add components to the component library.
