@@ -1,7 +1,7 @@
 {
   "name": "@contentful/forma-36-fcss",
   "description": "Forma 36 FCSS",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "main": "dist/styles.css",
   "license": "MIT",
   "files": [
