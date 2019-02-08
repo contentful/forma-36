@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@2.3.1...@contentful/forma-36-react-components@2.3.2) (2019-02-08)
+
+
+### Bug Fixes
+
+* **Dependencies:** Generate new yarn.lock file ([3b9557d](https://github.com/contentful/forma-36/commit/3b9557d))
+* **Note:** Fix note story to show withInfo button ([cf6f4ca](https://github.com/contentful/forma-36/commit/cf6f4ca))
+* **Tokens:** Remove console.log ([a2b16de](https://github.com/contentful/forma-36/commit/a2b16de))
+* **Yarn:** Fix yarn lockfile ([cfb3171](https://github.com/contentful/forma-36/commit/cfb3171))
+
+
+
+
+
 ## [2.3.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@2.3.0...@contentful/forma-36-react-components@2.3.1) (2019-02-06)
 
 
