@@ -118,11 +118,12 @@ Semantic Colors:
 
 Text Colors:
 
-| Color                 |
-| --------------------- |
-| .f36-color--text-dark |
-| .f36-color--text-mid  |
-| .f36-color--text-mid  |
+| Color                     |
+| ------------------------- |
+| .f36-color--text-dark     |
+| .f36-color--text-mid      |
+| .f36-color--text-light    |
+| .f36-color--text-lightest |
 
 Element Colors
 
