@@ -10,8 +10,6 @@ import TableBody from '../../../src/components/Table/TableBody';
 import TableCell from '../../../src/components/Table/TableCell';
 import TableRow from '../../../src/components/Table/TableRow';
 
-console.log(tokens);
-
 storiesOf('Tokens|Spacing', module)
   .addDecorator(
     host({
