@@ -2,15 +2,17 @@
   "name": "@contentful/forma-36-tokens",
   "description": "Forma 36 Tokens",
   "version": "0.1.0",
-  "main": "dist/json/tokens.json",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "license": "MIT",
   "files": [
     "package.json",
     "dist"
   ],
-  "dependencies": {
+  "devDependencies": {
     "fs-extra": "^7.0.1",
-    "globby": "^9.0.0"
+    "globby": "^9.0.0",
+    "lodash": "4.17.11"
   },
   "scripts": {
     "build:clean": "rm -rf dist",
