@@ -14,7 +14,7 @@
   appearance: none;
   padding: calc(1rem * (10 / var(--font-base-default)));
   padding-right: calc(1rem * (39 / var(--font-base-default)));
-  background: transparent;
+  background-color: var(--color-white);
   color: var(--color-text-mid);
   font-size: var(--font-size-m);
   font-family: var(--font-stack-primary);
@@ -38,7 +38,7 @@
 }
 
 .Select--disabled {
-  background: var(--color-element-lightest);
+  background-color: var(--color-element-lightest);
   cursor: not-allowed;
   color: var(--color-text-light);
 

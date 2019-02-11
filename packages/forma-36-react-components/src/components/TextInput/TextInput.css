@@ -11,6 +11,7 @@
 .TextInput__input {
   composes: focus-border--default from './../../styles/settings/a11y.css';
   outline: none;
+  background-color: var(--color-white);
   border: 1px solid var(--color-element-mid);
   max-height: calc(1rem * (40 / var(--font-base-default)));
   color: var(--color-text-mid);
