@@ -1,6 +1,7 @@
 const globby = require('globby');
 const path = require('path');
 const fse = require('fs-extra');
+const _ = require('lodash');
 
 // Build JSON Tokens
 const buildJson = async (srcPath, tokens) => {
@@ -41,6 +42,27 @@ const buildScssTokens = (srcPath, tokens) => {
   fse.outputFile(pathName, `:root { ${renderTokenTemplate()} }`);
 };
 
+const buildIndexJS = (srcPath, tokens) => {
+  return fse.outputFile(
+    srcPath,
+    `module.exports = ${JSON.stringify(tokens, null, 2)}`,
+  );
+};
+
+const buildIndexDTS = (srcPath, tokens) => {
+  const defs = _.mapValues(tokens, () => {
+    return 'string';
+  });
+  return fse.outputFile(
+    srcPath,
+    `declare module '@contentful/forma-36-tokens' {
+      interface F36Tokens ${JSON.stringify(defs, null, 2)}
+      const tokens: F36Tokens;
+      export default tokens;
+    }`,
+  );
+};
+
 // Generate Index
 const generateIndex = (paths, extension) => {
   const fileContents = paths
@@ -49,13 +71,14 @@ const generateIndex = (paths, extension) => {
 
       if (extension === 'css') {
         fileName = srcPath.replace('js', 'css').replace('src/tokens', '.');
+        return `@import '${fileName}';`;
       }
 
       if (extension === 'scss') {
         fileName = srcPath.replace('js', 'scss').replace('src/tokens', '.');
+        return `@import '${fileName}';`;
       }
-
-      return `@import '${fileName}';`;
+      return '';
     })
     .join('\n');
 
@@ -67,11 +90,22 @@ const generateIndex = (paths, extension) => {
   generateIndex(paths, 'css');
   generateIndex(paths, 'scss');
 
+  let allTokens = {};
+
   paths.forEach(srcPath => {
     const tokens = require(path.resolve(srcPath)); // eslint-disable-line
 
     buildJson(srcPath, tokens);
     buildCssTokens(srcPath, tokens);
     buildScssTokens(srcPath, tokens);
+
+    _.assign(allTokens, tokens);
   });
+
+  allTokens = _.mapKeys(allTokens, (value, key) => {
+    return _.camelCase(key);
+  });
+
+  await buildIndexJS('dist/index.js', allTokens);
+  await buildIndexDTS('dist/index.d.ts', allTokens);
 })();

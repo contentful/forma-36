@@ -20,6 +20,12 @@ npm i @contentful/forma-36-tokens
 
 ### Import into your project
 
+#### JS
+
+```js
+import F36Tokens from '@contentful/forma-36-tokens';
+```
+
 #### CSS
 
 ```css
@@ -81,6 +87,6 @@ All tokens are kept in the `src/tokens` directory and organised as so:
 yarn build
 ```
 
-Running the build script will populate the `dist` directory with separately built JSON, CSS, and SCSS.
+Running the build script will populate the `dist` directory with separately built JSON, CSS, SCSS and JS file with TS typings.
 
-This script populates the dist folder with all tokens as JSON, CSS and SCSS. For CSS and SCSS builds, an index file is included for ease of importing.
+This script populates the dist folder with all tokens as JSON, CSS, SCSS and JS. For CSS and SCSS builds, an index file is included for ease of importing.
