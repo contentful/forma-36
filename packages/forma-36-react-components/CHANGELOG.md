@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@2.3.3...@contentful/forma-36-react-components@2.3.4) (2019-02-11)
+
+
+### Bug Fixes
+
+* **Select,Input:** Fixes a lack of background-color for Input and Select component ([#79](https://github.com/contentful/forma-36/issues/79)) ([6dc71e1](https://github.com/contentful/forma-36/commit/6dc71e1))
+
+
+
+
+
 ## [2.3.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@2.3.2...@contentful/forma-36-react-components@2.3.3) (2019-02-11)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
