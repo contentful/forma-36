@@ -2,7 +2,6 @@
 #
 # lint, test and build
 
-yarn commitlint-travis
 yarn lint
 yarn test
 yarn build
