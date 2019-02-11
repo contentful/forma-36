@@ -5,7 +5,6 @@
   "devDependencies": {
     "@commitlint/cli": "^7.5.0",
     "@commitlint/config-conventional": "^7.5.0",
-    "@commitlint/travis-cli": "^7.5.0",
     "babel-eslint": "^10.0.1",
     "commitizen": "^3.0.4",
     "eslint": "^4.9.0",
