@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import { CSSTransition } from 'react-transition-group';
@@ -8,29 +8,26 @@ import DropdownList from '../../Dropdown/DropdownList';
 import Card from '../Card';
 
 import InlineReferenceCardSkeleton from './InlineReferenceCardSkeleton';
-import styles from './InlineReferenceCard.css';
+const styles = require('./InlineReferenceCard.css');
 
-class InlineReferenceCard extends React.Component {
-  static propTypes = {
-    extraClassNames: PropTypes.string,
-    children: PropTypes.node,
-    isSelected: PropTypes.bool,
-    dropdownListItemNodes: PropTypes.node,
-    isLoading: PropTypes.bool,
-    testId: PropTypes.string,
-    status: PropTypes.oneOf(['archived', 'changed', 'draft', 'published']),
-  };
+interface InlineReferenceCardPropTypes {
+  extraClassNames?: string;
+  children: React.ReactNode;
+  isSelected?: boolean;
+  dropdownListItemNodes?: React.ReactNode;
+  isLoading?: boolean;
+  testId?: string;
+  status?: 'archived' | 'changed' | 'draft' | 'published';
+}
 
-  static defaultProps = {
-    extraClassNames: undefined,
-    children: undefined,
-    dropdownListItemNodes: undefined,
-    isSelected: false,
-    isLoading: false,
-    testId: 'cf-ui-inline-reference-card',
-    status: undefined,
-  };
+interface InlineReferenceCardState {
+  isDropdownOpen: boolean;
+}
 
+export class InlineReferenceCard extends Component<
+  InlineReferenceCardPropTypes,
+  InlineReferenceCardState
+> {
   state = {
     isDropdownOpen: false,
   };

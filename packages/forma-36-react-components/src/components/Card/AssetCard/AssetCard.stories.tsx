@@ -44,7 +44,6 @@ storiesOf('Components|Card/AssetCard', module)
     withInfo()(() => (
       <AssetCard
         extraClassNames={text('Extra Class Names', '')}
-        height={number('Height', 300)}
         status={select(
           'Status',
           {
