@@ -5,22 +5,24 @@ import truncate from 'truncate';
 import Card from '../Card';
 import Tag from '../../Tag';
 import ReferenceCardSkeleton from './ReferenceCardSkeleton';
-import styles from './ReferenceCard.css';
+const styles = require('./ReferenceCard.css');
 
-class ReferenceCard extends React.Component {
-  static propTypes = {
-    extraClassNames: PropTypes.string,
-    title: PropTypes.string,
-    testId: PropTypes.string,
-    description: PropTypes.string,
-    contentType: PropTypes.string,
-    status: PropTypes.oneOf(['archived', 'changed', 'draft', 'published']),
-    thumbnailElement: PropTypes.node,
-    loading: PropTypes.bool,
-    onClick: PropTypes.func,
-    actionElements: PropTypes.node,
-  };
+interface ReferenceCardPropTypes {
+  extraClassNames?: string;
+  title?: string;
+  testId?: string;
+  description?: string;
+  contentType?: string;
+  status: 'archived' | 'changed' | 'draft' | 'published';
+  thumbnailElement: React.ReactNode;
+  loading: boolean;
+  onClick?: (
+    e: React.MouseEventHandler<HTMLAnchorElement | HTMLButtonElement>,
+  ) => void;
+  actionElements: React.ReactNode;
+}
 
+export class ReferenceCard extends React.Component<ReferenceCardPropTypes> {
   static defaultProps = {
     title: 'Untitled',
     description: undefined,

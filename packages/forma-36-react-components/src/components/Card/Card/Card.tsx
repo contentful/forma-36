@@ -1,19 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import styles from './Card.css';
+const styles = require('./Card.css');
 
-class Card extends React.Component {
-  static propTypes = {
-    extraClassNames: PropTypes.string,
-    children: PropTypes.node.isRequired,
-    href: PropTypes.string,
-    onClick: PropTypes.func,
-    testId: PropTypes.string,
-    padding: PropTypes.oneOf(['default', 'large', 'none']),
-    selected: PropTypes.bool,
-  };
+interface CardPropTypes {
+  extraClassNames?: string;
+  children: React.ReactNode;
+  href?: string;
+  onClick?: (
+    e: React.MouseEventHandler<HTMLAnchorElement | HTMLButtonElement>,
+  ) => void;
+  testId?: string;
+  padding?: 'default' | 'large' | 'none';
+  selected?: boolean;
+  title?: string;
+}
 
+class Card extends Component<CardPropTypes> {
   static defaultProps = {
     extraClassNames: undefined,
     href: undefined,
@@ -47,19 +50,15 @@ class Card extends React.Component {
       [styles['Card--is-selected']]: selected,
     });
 
-    const Element = href ? 'a' : 'div';
-
-    return (
-      <Element
-        className={classNames}
-        onClick={this.handleClick}
-        data-test-id={testId}
-        href={href}
-        {...otherProps}
-      >
-        {children}
-      </Element>
-    );
+    const Element: React.ReactType = href ? 'a' : 'div';
+    return React.createElement(Element, {
+      href,
+      className: classNames,
+      onClick: this.handleClick,
+      'data-test-id': testId,
+      ...otherProps,
+      children,
+    });
   }
 }
 

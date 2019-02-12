@@ -1,27 +1,32 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import Card from '../Card';
 import Dropdown from '../../Dropdown/Dropdown';
 import Asset from '../../Asset';
+import { AssetType } from '../../Asset/Asset';
 import Icon from '../../Icon/Icon';
 import TabFocusTrap from '../../TabFocusTrap';
 import Tag from '../../Tag';
 import AssetCardSkeleton from './AssetCardSkeleton';
-import styles from './AssetCard.css';
+const styles = require('./AssetCard.css');
 
-class AssetCard extends React.Component {
-  static propTypes = {
-    extraClassNames: PropTypes.string,
-    src: PropTypes.string,
-    isLoading: PropTypes.bool,
-    type: PropTypes.string,
-    title: PropTypes.string,
-    dropdownListElements: PropTypes.node,
-    status: PropTypes.oneOf(['archived', 'changed', 'draft', 'published']),
-    testId: PropTypes.string,
-  };
+interface AssetCardPropTypes {
+  extraClassNames?: string;
+  src: string;
+  isLoading?: boolean;
+  title?: string;
+  dropdownListElements?: React.ReactNode;
+  status?: 'archived' | 'changed' | 'draft' | 'published';
+  testId?: string;
+  type?: AssetType;
+}
 
+interface AssetCardState {
+  isOpen: boolean;
+}
+
+class AssetCard extends Component<AssetCardPropTypes, AssetCardState> {
   static defaultProps = {
     extraClassNames: undefined,
     dropdownListElements: undefined,
@@ -103,7 +108,7 @@ class AssetCard extends React.Component {
       ...otherProps
     } = this.props;
 
-    const classNames = cn(styles.AssetCard, extraClassNames);
+    const classNames = cn(styles['AssetCard'], extraClassNames);
     return (
       <Card
         extraClassNames={classNames}
@@ -115,14 +120,14 @@ class AssetCard extends React.Component {
           <AssetCardSkeleton />
         ) : (
           <div className={styles['AssetCard__inner-wrapper']}>
-            <div className={styles.AssetCard__header}>
+            <div className={styles['AssetCard__header']}>
               {status && this.renderStatus(status)}
               {dropdownListElements &&
                 this.renderDropdownListElements(dropdownListElements)}
             </div>
-            <div className={styles.AssetCard__content}>
+            <div className={styles['AssetCard__content']}>
               <Asset
-                extraClassNames={styles.AssetCard__asset}
+                extraClassNames={styles['AssetCard__asset']}
                 src={src}
                 title={title}
                 type={type}

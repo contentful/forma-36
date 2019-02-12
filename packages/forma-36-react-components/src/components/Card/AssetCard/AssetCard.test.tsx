@@ -2,6 +2,8 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { axe } from 'jest-axe';
 import AssetCard from './AssetCard';
+import DropdownList from '../../Dropdown/DropdownList';
+import DropdownListItem from '../../Dropdown/DropdownListItem';
 
 it('renders the component', () => {
   const output = shallow(<AssetCard>AssetCard</AssetCard>);
@@ -48,12 +50,14 @@ it('renders the component with status', () => {
 it('renders the component with actions', () => {
   const output = shallow(
     <AssetCard
-      actions={[
-        {
-          title: 'delete',
-          onClick: () => {},
-        },
-      ]}
+      dropdownListElements={
+        <span>
+          <DropdownList>
+            <DropdownListItem isTitle>Actions</DropdownListItem>
+            <DropdownListItem onClick={() => {}}>Edit</DropdownListItem>
+          </DropdownList>
+        </span>
+      }
       src="http://placekitten.com/200/300"
       title="picture of a cat"
     />,
