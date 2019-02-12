@@ -49,6 +49,13 @@ module.exports = plop => {
         templateFile: 'plop-templates/components/stories.tsx.hbs',
       },
       {
+        type: 'add',
+        path: path.resolve(
+          './src/components/{{pascalCase name}}/{{pascalCase name}}.md',
+        ),
+        templateFile: 'plop-templates/components/notes.md.hbs',
+      },
+      {
         type: 'modify',
         path: path.resolve('./src/index.js'),
         pattern: /(\/\/ -- Add imports above this line \(required by plopfile\.js\) --)/gi,
