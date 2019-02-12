@@ -1,7 +1,7 @@
 {
   "name": "@contentful/forma-36-react-components",
   "description": "Contentful UI Component Library",
-  "version": "2.3.5",
+  "version": "2.3.6",
   "main": "dist/index.js",
   "style": "dist/styles.css",
   "license": "MIT",
