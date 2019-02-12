@@ -1,5 +1,24 @@
+import * as React from 'react';
+import Button from './dist/components/Button/Button';
+import Asset from './dist/components/Asset/Asset';
+import AssetCard from './dist/components/Card/AssetCard/AssetCard';
+import Card from './dist/components/Card/Card/Card';
+import InlineReferenceCard from './dist/components/Card/InlineReferenceCard/InlineReferenceCard';
+import ReferenceCard from './dist/components/Card/ReferenceCard/ReferenceCard';
+import TabFocusTrap from './dist/components/TabFocusTrap/TabFocusTrap';
+import Spinner from './dist/components/Spinner/Spinner';
+import Icon from './dist/components/Icon/Icon';
+
 declare module '@contentful/forma-36-react-components' {
-  import * as React from 'react';
+  export const Asset: Asset;
+  export const Button: Button;
+  export const AssetCard: AssetCard;
+  export const Card: Card;
+  export const InlineReferenceCard: InlineReferenceCard;
+  export const ReferenceCard: ReferenceCard;
+  export const TabFocusTrap: TabFocusTrap;
+  export const Spinner: Spinner;
+  export const Icon: Icon;
 
   export interface CopyButtonProps {
     extraClassNames?: string;
@@ -9,128 +28,6 @@ declare module '@contentful/forma-36-react-components' {
   }
 
   export class CopyButton extends React.Component<CopyButtonProps, any> {
-    render(): JSX.Element;
-  }
-
-  export interface AssetProps {
-    extraClassNames?: string;
-    type?: any;
-    src?: string;
-    title?: string;
-  }
-
-  export class Asset extends React.Component<AssetProps, any> {
-    render(): JSX.Element;
-  }
-
-  export type ButtonButtonType =
-    | 'primary'
-    | 'positive'
-    | 'negative'
-    | 'muted'
-    | 'naked';
-
-  export type ButtonType = 'button' | 'submit' | 'reset';
-
-  export type ButtonSize = 'small' | 'large';
-
-  export interface ButtonProps {
-    extraClassNames?: string;
-    children?: React.ReactNode;
-    icon?: string;
-    indicateDropdown?: boolean;
-    onClick?: (...args: any[]) => any;
-    isFullWidth?: boolean;
-    onBlur?: (...args: any[]) => any;
-    loading?: boolean;
-    disabled?: boolean;
-    testId?: string;
-    buttonType?: ButtonButtonType;
-    type?: ButtonType;
-    size?: ButtonSize;
-    href?: string;
-  }
-
-  export class Button extends React.Component<ButtonProps, any> {
-    render(): JSX.Element;
-  }
-
-  export type AssetCardStatus = 'archived' | 'changed' | 'draft' | 'published';
-
-  export interface AssetCardProps {
-    extraClassNames?: string;
-    src?: string;
-    isLoading?: boolean;
-    type?: string;
-    title?: string;
-    dropdownListElements?: React.ReactNode;
-    status?: AssetCardStatus;
-    testId?: string;
-  }
-
-  export class AssetCard extends React.Component<AssetCardProps, any> {
-    render(): JSX.Element;
-  }
-
-  export type CardPadding = 'default' | 'large' | 'none';
-
-  export interface CardProps {
-    extraClassNames?: string;
-    children: React.ReactNode;
-    href?: string;
-    onClick?: (...args: any[]) => any;
-    testId?: string;
-    padding?: CardPadding;
-    selected?: boolean;
-  }
-
-  export class Card extends React.Component<CardProps, any> {
-    render(): JSX.Element;
-  }
-
-  export type InlineReferenceCardStatus =
-    | 'archived'
-    | 'changed'
-    | 'draft'
-    | 'published';
-
-  export interface InlineReferenceCardProps {
-    extraClassNames?: string;
-    children?: React.ReactNode;
-    isSelected?: boolean;
-    dropdownListItemNodes?: React.ReactNode;
-    isLoading?: boolean;
-    testId?: string;
-    status?: InlineReferenceCardStatus;
-  }
-
-  export class InlineReferenceCard extends React.Component<
-    InlineReferenceCardProps,
-    any
-  > {
-    render(): JSX.Element;
-  }
-
-  export type ReferenceCardStatus =
-    | 'archived'
-    | 'changed'
-    | 'draft'
-    | 'published';
-
-  export interface ReferenceCardProps {
-    extraClassNames?: string;
-    title?: string;
-    testId?: string;
-    description?: string;
-    contentType?: string;
-    status?: ReferenceCardStatus;
-    thumbnailElement?: React.ReactNode;
-    loading?: boolean;
-    onClick?: (...args: any[]) => any;
-    actionElements?: React.ReactNode;
-  }
-
-  export class ReferenceCard extends React.Component<ReferenceCardProps, any> {
     render(): JSX.Element;
   }
 
@@ -301,28 +198,6 @@ declare module '@contentful/forma-36-react-components' {
   }
 
   export class HelpText extends React.Component<HelpTextProps, any> {
-    render(): JSX.Element;
-  }
-
-  export type IconSize = 'tiny' | 'small' | 'large';
-
-  export type IconColor =
-    | 'primary'
-    | 'positive'
-    | 'negative'
-    | 'secondary'
-    | 'muted'
-    | 'white';
-
-  export interface IconProps {
-    extraClassNames?: string;
-    icon?: any;
-    testId?: string;
-    size?: IconSize;
-    color?: IconColor;
-  }
-
-  export class Icon extends React.Component<IconProps, any> {
     render(): JSX.Element;
   }
 
@@ -753,30 +628,6 @@ declare module '@contentful/forma-36-react-components' {
     render(): JSX.Element;
   }
 
-  export type SpinnerSize = 'default' | 'small' | 'large';
-
-  export type SpinnerColor = 'default' | 'white';
-
-  export interface SpinnerProps {
-    extraClassNames?: string;
-    testId?: string;
-    size?: SpinnerSize;
-    customSize?: number;
-    color?: SpinnerColor;
-  }
-
-  export class Spinner extends React.Component<SpinnerProps, any> {
-    render(): JSX.Element;
-  }
-
-  export interface TabFocusTrapProps {
-    extraClassNames?: string;
-    children: React.ReactNode;
-  }
-
-  export class TabFocusTrap extends React.Component<TabFocusTrapProps, any> {
-    render(): JSX.Element;
-  }
   export interface TableProps {
     extraClassNames?: string;
     children: React.ReactNode;

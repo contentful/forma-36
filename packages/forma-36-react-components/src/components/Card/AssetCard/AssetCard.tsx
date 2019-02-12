@@ -26,7 +26,7 @@ interface AssetCardState {
   isOpen: boolean;
 }
 
-class AssetCard extends Component<AssetCardPropTypes, AssetCardState> {
+export class AssetCard extends Component<AssetCardPropTypes, AssetCardState> {
   static defaultProps = {
     extraClassNames: undefined,
     dropdownListElements: undefined,

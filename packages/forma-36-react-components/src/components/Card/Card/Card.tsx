@@ -16,7 +16,7 @@ interface CardPropTypes {
   title?: string;
 }
 
-class Card extends Component<CardPropTypes> {
+export class Card extends Component<CardPropTypes> {
   static defaultProps = {
     extraClassNames: undefined,
     href: undefined,
