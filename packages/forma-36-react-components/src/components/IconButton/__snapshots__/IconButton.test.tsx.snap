@@ -68,7 +68,6 @@ exports[`prevents an onClick function from being called when disabled 1`] = `
   className="IconButton IconButton--disabled IconButton--primary"
   data-test-id="cf-ui-icon-button"
   disabled={true}
-  href={null}
   onClick={null}
 >
   <TabFocusTrap
@@ -219,7 +218,6 @@ exports[`renders as a link 1`] = `
 <a
   className="IconButton IconButton--primary"
   data-test-id="cf-ui-icon-button"
-  disabled={false}
   href="#"
 >
   <TabFocusTrap

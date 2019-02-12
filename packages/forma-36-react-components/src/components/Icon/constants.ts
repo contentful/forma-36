@@ -1,4 +1,4 @@
-export const iconName: { [key: string]: string } = {
+export const iconName = {
   ArrowDown: 'ArrowDown',
   ArrowDownTrimmed: 'ArrowDownTrimmed',
   ArrowUp: 'ArrowUp',

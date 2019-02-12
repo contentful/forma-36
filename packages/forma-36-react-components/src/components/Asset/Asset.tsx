@@ -1,36 +1,24 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import cn from 'classnames';
 import Illustration from '../Illustration';
 
 const styles = require('./Asset.css');
 
 export const types = {
-  Archive: 'archive',
-  Audio: 'audio',
-  Code: 'code',
-  Image: 'image',
-  Markup: 'markup',
-  Pdf: 'pdf',
-  PlainText: 'plaintext',
-  Presentation: 'presentation',
-  Richtext: 'richtext',
-  Spreadsheet: 'spreadsheet',
-  Video: 'video',
+  archive: 'archive',
+  audio: 'audio',
+  code: 'code',
+  image: 'image',
+  markup: 'markup',
+  pdf: 'pdf',
+  plaintext: 'plaintext',
+  presentation: 'presentation',
+  richtext: 'richtext',
+  spreadsheet: 'spreadsheet',
+  video: 'video',
 };
 
-export type AssetType =
-  | 'archive'
-  | 'audio'
-  | 'code'
-  | 'image'
-  | 'markup'
-  | 'pdf'
-  | 'plaintext'
-  | 'presentation'
-  | 'richtext'
-  | 'spreadsheet'
-  | 'video';
+export type AssetType = keyof typeof types;
 
 export interface AssetProps {
   extraClassNames?: string;

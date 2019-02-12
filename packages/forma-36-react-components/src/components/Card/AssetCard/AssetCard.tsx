@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import cn from 'classnames';
 import Card from '../Card';
 import Dropdown from '../../Dropdown/Dropdown';
@@ -26,7 +25,7 @@ interface AssetCardState {
   isOpen: boolean;
 }
 
-class AssetCard extends Component<AssetCardPropTypes, AssetCardState> {
+export class AssetCard extends Component<AssetCardPropTypes, AssetCardState> {
   static defaultProps = {
     extraClassNames: undefined,
     dropdownListElements: undefined,

@@ -61,7 +61,7 @@ storiesOf('Components|Icon', module)
               style={{ padding: '4px', fontSize: '14px', lineHeight: '21px' }}
             >
               <Icon
-                icon={icon}
+                icon={icon as any}
                 style={{ marginRight: '4px', verticalAlign: 'middle' }}
               />
               <span
