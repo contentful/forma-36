@@ -103,7 +103,7 @@ it('renders as a "white" icon', () => {
 
 Object.keys(iconName).forEach(icon => {
   it(`${icon} has no a11y issues`, async () => {
-    const output = mount(<Icon icon={icon} />).html();
+    const output = mount(<Icon icon={icon as any} />).html();
 
     const results = await axe(output);
 

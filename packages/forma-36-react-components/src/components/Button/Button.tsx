@@ -1,7 +1,7 @@
 import React, { Component, SyntheticEvent } from 'react';
 import cn from 'classnames';
 import { CSSTransition } from 'react-transition-group';
-import Icon from '../Icon/Icon';
+import Icon, { IconType } from '../Icon/Icon';
 import TabFocusTrap from '../TabFocusTrap';
 import Spinner from '../Spinner';
 
@@ -10,7 +10,7 @@ const styles = require('./Button.css');
 interface ButtonProps {
   extraClassNames?: string;
   children?: React.ReactNode;
-  icon?: string;
+  icon?: IconType;
   indicateDropdown?: boolean;
   onClick?: (e: SyntheticEvent) => void;
   isFullWidth?: boolean;
