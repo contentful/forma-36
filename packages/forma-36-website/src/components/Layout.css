@@ -39,29 +39,6 @@
 
 body {
   font-size: 16px;
+  font-family: 'Avenir Next W01';
   margin: 0;
-  background-color: rgb(21, 34, 51);
-}
-
-.center-content {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}
-
-.no-wrap {
-  white-space: nowrap;
-}
-
-.card {
-  padding-left: 4rem;
-  padding-right: 4rem;
-}
-
-@media (min-width: 410px) {
-  .card {
-    padding-left: 5rem;
-    padding-right: 5rem;
-  }
 }
