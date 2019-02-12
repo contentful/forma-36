@@ -2,18 +2,34 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
+import { css } from 'emotion';
 import '@contentful/forma-36-react-components/dist/styles.css';
 import '@contentful/forma-36-fcss/dist/styles.css';
 import Container from './Container';
+import Navigation from './Navigation';
 import './Layout.css';
 
-const Layout = ({ children }) => (
+const styles = {
+  main: css`
+    display: flex;
+  `,
+};
+
+const Layout = props => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
         site {
           siteMetadata {
             title
+            menuLinks {
+              name
+              link
+              menuLinks {
+                name
+                link
+              }
+            }
           }
         }
       }
@@ -32,8 +48,14 @@ const Layout = ({ children }) => (
         >
           <html lang="en" />
         </Helmet>
-        <div className="f36-padding-horizontal--l">
-          <Container>{children}</Container>
+        <div className={styles.main}>
+          <Navigation
+            menuItems={
+              data.site.siteMetadata && data.site.siteMetadata.menuLinks
+            }
+            currentPath={props && props.location.pathname}
+          />
+          <Container>{props.children}</Container>
         </div>
       </>
     )}
@@ -42,6 +64,7 @@ const Layout = ({ children }) => (
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  location: PropTypes.object.isRequired,
 };
 
 export default Layout;

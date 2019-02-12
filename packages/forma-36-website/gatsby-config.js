@@ -1,6 +1,26 @@
 module.exports = {
   siteMetadata: {
     title: 'Forma 36 - The Contentful Design System',
+    menuLinks: [
+      {
+        name: 'Overview',
+        link: '/overview',
+      },
+      {
+        name: 'Foundation',
+        link: '/foundation',
+      },
+      {
+        name: 'Guidelines',
+        link: '/guidelines',
+        menuLinks: [
+          {
+            name: 'Copy',
+            link: '/copy',
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -12,6 +32,14 @@ module.exports = {
       },
     },
     'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-mdx',
+      options: {
+        defaultLayouts: {
+          default: require.resolve('./src/components/Layout'),
+        },
+      },
+    },
     'gatsby-plugin-sharp',
     {
       resolve: `gatsby-plugin-manifest`,
