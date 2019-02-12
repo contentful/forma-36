@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, SyntheticEvent } from 'react';
 import cn from 'classnames';
 import { CSSTransition } from 'react-transition-group';
 import Icon from '../Icon/Icon';
@@ -12,13 +12,9 @@ interface ButtonProps {
   children?: React.ReactNode;
   icon?: string;
   indicateDropdown?: boolean;
-  onClick?: (
-    e: React.MouseEventHandler<HTMLAnchorElement | HTMLButtonElement>,
-  ) => void;
+  onClick?: (e: SyntheticEvent) => void;
   isFullWidth?: boolean;
-  onBlur?: (
-    e: React.MouseEventHandler<HTMLAnchorElement | HTMLButtonElement>,
-  ) => void;
+  onBlur?: (e: SyntheticEvent) => void;
   loading?: boolean;
   disabled?: boolean;
   testId?: string;
@@ -83,16 +79,12 @@ export class Button extends Component<ButtonProps> {
 
     return (
       <Element
-        onBlur={(
-          e: React.MouseEventHandler<HTMLAnchorElement | HTMLButtonElement>,
-        ) => {
+        onBlur={(e: SyntheticEvent) => {
           if (onBlur && !disabled) {
             onBlur(e);
           }
         }}
-        onClick={(
-          e: React.MouseEventHandler<HTMLAnchorElement | HTMLButtonElement>,
-        ) => {
+        onClick={(e: SyntheticEvent) => {
           if (onClick && !disabled && !loading) {
             onClick(e);
           }

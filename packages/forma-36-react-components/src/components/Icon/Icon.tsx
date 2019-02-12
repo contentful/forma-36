@@ -116,7 +116,7 @@ const WarningTrimmed = require('./svg/WarningTrimmed.svg');
 
 const styles = require('./Icon.css');
 
-interface IconProps {
+export interface IconProps {
   icon: string;
   extraClassNames?: string;
   testId?: string;

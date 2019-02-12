@@ -1,5 +1,4 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { SyntheticEvent, Component } from 'react';
 import cn from 'classnames';
 import truncate from 'truncate';
 import Card from '../Card';
@@ -16,13 +15,11 @@ interface ReferenceCardPropTypes {
   status: 'archived' | 'changed' | 'draft' | 'published';
   thumbnailElement: React.ReactNode;
   loading: boolean;
-  onClick?: (
-    e: React.MouseEventHandler<HTMLAnchorElement | HTMLButtonElement>,
-  ) => void;
+  onClick?: (e: SyntheticEvent) => void;
   actionElements: React.ReactNode;
 }
 
-export class ReferenceCard extends React.Component<ReferenceCardPropTypes> {
+export class ReferenceCard extends Component<ReferenceCardPropTypes> {
   static defaultProps = {
     title: 'Untitled',
     description: undefined,

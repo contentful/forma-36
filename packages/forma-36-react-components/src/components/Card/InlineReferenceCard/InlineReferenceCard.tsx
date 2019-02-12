@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import cn from 'classnames';
 import { CSSTransition } from 'react-transition-group';
 import IconButton from '../../IconButton';

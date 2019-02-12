@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component, SyntheticEvent } from 'react';
 import cn from 'classnames';
 const styles = require('./Card.css');
 
@@ -7,9 +6,7 @@ interface CardPropTypes {
   extraClassNames?: string;
   children: React.ReactNode;
   href?: string;
-  onClick?: (
-    e: React.MouseEventHandler<HTMLAnchorElement | HTMLButtonElement>,
-  ) => void;
+  onClick?: (e: SyntheticEvent) => void;
   testId?: string;
   padding?: 'default' | 'large' | 'none';
   selected?: boolean;
