@@ -2,7 +2,6 @@
 
 exports[`renders the component 1`] = `
 <Card
-  data-test-id="cf-ui-inline-reference-card"
   extraClassNames="InlineReferenceCard"
   padding="default"
   selected={false}
@@ -17,7 +16,6 @@ exports[`renders the component 1`] = `
         "exitActive": "InlineReferenceCard__spinner--exit-active",
       }
     }
-    in={false}
     mountOnEnter={true}
     timeout={100}
     unmountOnExit={true}
@@ -41,7 +39,6 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component with a dropdown 1`] = `
 <Card
-  data-test-id="cf-ui-inline-reference-card"
   extraClassNames="InlineReferenceCard my-extra-class"
   padding="default"
   selected={false}
@@ -56,7 +53,6 @@ exports[`renders the component with a dropdown 1`] = `
         "exitActive": "InlineReferenceCard__spinner--exit-active",
       }
     }
-    in={false}
     mountOnEnter={true}
     timeout={100}
     unmountOnExit={true}
@@ -133,7 +129,6 @@ exports[`renders the component with a dropdown 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <Card
-  data-test-id="cf-ui-inline-reference-card"
   extraClassNames="InlineReferenceCard my-extra-class"
   padding="default"
   selected={false}
@@ -148,7 +143,6 @@ exports[`renders the component with an additional class name 1`] = `
         "exitActive": "InlineReferenceCard__spinner--exit-active",
       }
     }
-    in={false}
     mountOnEnter={true}
     timeout={100}
     unmountOnExit={true}
@@ -172,7 +166,6 @@ exports[`renders the component with an additional class name 1`] = `
 
 exports[`renders the component with published status 1`] = `
 <Card
-  data-test-id="cf-ui-inline-reference-card"
   extraClassNames="InlineReferenceCard my-extra-class"
   padding="default"
   selected={false}
@@ -187,7 +180,6 @@ exports[`renders the component with published status 1`] = `
         "exitActive": "InlineReferenceCard__spinner--exit-active",
       }
     }
-    in={false}
     mountOnEnter={true}
     timeout={100}
     unmountOnExit={true}

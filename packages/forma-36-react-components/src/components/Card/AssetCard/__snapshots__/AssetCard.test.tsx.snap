@@ -39,14 +39,6 @@ exports[`renders the component in loading state 1`] = `
 
 exports[`renders the component with actions 1`] = `
 <Card
-  actions={
-    Array [
-      Object {
-        "onClick": [Function],
-        "title": "delete",
-      },
-    ]
-  }
   extraClassNames="AssetCard"
   padding="default"
   selected={false}
@@ -58,7 +50,58 @@ exports[`renders the component with actions 1`] = `
   >
     <div
       className="AssetCard__header"
-    />
+    >
+      <Dropdown
+        isOpen={false}
+        onClose={[Function]}
+        position="bottom-right"
+        testId="cf-ui-dropdown"
+        toggleElement={
+          <button
+            className="AssetCard__header__dropdown-button"
+            onClick={[Function]}
+            type="button"
+          >
+            <TabFocusTrap>
+              <Icon
+                color="secondary"
+                icon="MoreHorizontalTrimmed"
+                size="small"
+                testId="cf-ui-icon"
+              />
+            </TabFocusTrap>
+          </button>
+        }
+      >
+        <span>
+          <DropdownList
+            testId="cf-ui-dropdown-list"
+          >
+            <DropdownListItem
+              isActive={false}
+              isDisabled={false}
+              isTitle={true}
+              onEnter={[Function]}
+              onLeave={[Function]}
+              testId="cf-ui-dropdown-list-item"
+            >
+              Actions
+            </DropdownListItem>
+            <DropdownListItem
+              isActive={false}
+              isDisabled={false}
+              isTitle={false}
+              onClick={[Function]}
+              onEnter={[Function]}
+              onLeave={[Function]}
+              testId="cf-ui-dropdown-list-item"
+            >
+              Edit
+            </DropdownListItem>
+          </DropdownList>
+        </span>
+      </Dropdown>
+    </div>
     <div
       className="AssetCard__content"
     >

@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import Illustration from '../Illustration';
-import styles from './Asset.css';
+
+const styles = require('./Asset.css');
 
 export const types = {
   Archive: 'archive',
@@ -17,22 +18,34 @@ export const types = {
   Spreadsheet: 'spreadsheet',
   Video: 'video',
 };
-class Asset extends React.Component {
-  static propTypes = {
-    extraClassNames: PropTypes.string,
-    type: PropTypes.oneOf(Object.keys(types).map(key => types[key])),
-    src: PropTypes.string,
-    title: PropTypes.string,
-  };
 
+export type AssetType =
+  | 'archive'
+  | 'audio'
+  | 'code'
+  | 'image'
+  | 'markup'
+  | 'pdf'
+  | 'plaintext'
+  | 'presentation'
+  | 'richtext'
+  | 'spreadsheet'
+  | 'video';
+
+export interface AssetProps {
+  extraClassNames?: string;
+  src: string;
+  title: string;
+  type?: AssetType;
+}
+
+export class Asset extends Component<AssetProps> {
   static defaultProps = {
     extraClassNames: undefined,
     type: 'image',
-    src: undefined,
-    title: undefined,
   };
 
-  renderImage = (src, title) => (
+  renderImage = (src: string, title: string) => (
     <React.Fragment>
       <div className={styles['Asset__image-container']}>
         <img
@@ -47,8 +60,8 @@ class Asset extends React.Component {
     </React.Fragment>
   );
 
-  renderAsset = (type, title) => {
-    const illustraionName = type.charAt(0).toUpperCase(0) + type.slice(1);
+  renderAsset = (type: string, title: string) => {
+    const illustraionName = type.charAt(0).toUpperCase() + type.slice(1);
     return (
       <div className={styles['Asset__asset-container']}>
         <div className={styles['Asset__illustration-container']}>

@@ -66,7 +66,6 @@ storiesOf('Components|Card/ReferenceCard', module)
       <div>
         <ReferenceCard
           title={text('Title', 'Closer')}
-          height={number('Height', 125)}
           description={text(
             'Description',
             'Closer is the second and final studio album by English rock band Joy Division. It was released on 18 July 1980 on Factory Records, following the May 1980 suicide of lead singer Ian Curtis. The album was produced by Martin Hannett.',
