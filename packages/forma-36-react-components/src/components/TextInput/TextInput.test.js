@@ -77,7 +77,7 @@ it('renders the component with small width', () => {
   expect(output).toMatchSnapshot();
 });
 
-it('renders the component with small width', () => {
+it('renders the component with maxLength', () => {
   const output = shallow(
     <TextInput id="someInput" name="userEmail" maxLength={10} />,
   );

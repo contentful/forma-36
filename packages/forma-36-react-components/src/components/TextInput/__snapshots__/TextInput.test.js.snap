@@ -128,6 +128,25 @@ exports[`renders the component with error prop 1`] = `
 </div>
 `;
 
+exports[`renders the component with maxLength 1`] = `
+<div
+  className="TextInput TextInput--full"
+>
+  <input
+    aria-label="userEmail"
+    className="TextInput__input"
+    data-test-id="cf-ui-text-input"
+    disabled={false}
+    id="someInput"
+    maxLength={10}
+    name="userEmail"
+    onChange={[Function]}
+    onFocus={[Function]}
+    required={false}
+  />
+</div>
+`;
+
 exports[`renders the component with onBlur prop 1`] = `
 <div
   className="TextInput TextInput--full"
@@ -175,25 +194,6 @@ exports[`renders the component with small width 1`] = `
     data-test-id="cf-ui-text-input"
     disabled={false}
     id="someInput"
-    name="userEmail"
-    onChange={[Function]}
-    onFocus={[Function]}
-    required={false}
-  />
-</div>
-`;
-
-exports[`renders the component with small width 2`] = `
-<div
-  className="TextInput TextInput--full"
->
-  <input
-    aria-label="userEmail"
-    className="TextInput__input"
-    data-test-id="cf-ui-text-input"
-    disabled={false}
-    id="someInput"
-    maxLength={10}
     name="userEmail"
     onChange={[Function]}
     onFocus={[Function]}

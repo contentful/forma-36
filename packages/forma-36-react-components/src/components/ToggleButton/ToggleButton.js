@@ -14,7 +14,6 @@ class ToggleButton extends React.Component {
     icon: PropTypes.string,
     isActive: PropTypes.bool,
     onToggle: PropTypes.func,
-    buttonProps: PropTypes.object,
     isDisabled: PropTypes.bool,
   };
 
@@ -24,7 +23,6 @@ class ToggleButton extends React.Component {
     onToggle: () => {},
     icon: undefined,
     isActive: false,
-    buttonProps: undefined,
     isDisabled: false,
   };
 
@@ -39,7 +37,6 @@ class ToggleButton extends React.Component {
       extraClassNames,
       icon,
       children,
-      buttonProps,
       isActive,
       isDisabled,
       ...otherProps

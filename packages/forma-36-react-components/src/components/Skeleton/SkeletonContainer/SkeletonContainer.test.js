@@ -74,16 +74,6 @@ it('renders the component with a custom aspect ratio', () => {
   expect(output).toMatchSnapshot();
 });
 
-it('renders the component with a custom aspect ratio', () => {
-  const output = shallow(
-    <SkeletonContainer preserveAspectRatio="xMidYMin slice">
-      <SkeletonBodyText />
-    </SkeletonContainer>,
-  );
-
-  expect(output).toMatchSnapshot();
-});
-
 it('renders the component with a custom clip id', () => {
   const output = shallow(
     <SkeletonContainer clipId="some-clip-id">

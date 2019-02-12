@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { axe } from 'jest-axe';
-import Asset from './Asset';
+import { Asset } from './Asset';
 
 it('renders the component', () => {
   const output = shallow(

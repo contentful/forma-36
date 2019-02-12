@@ -34,9 +34,7 @@ class TextLink extends React.Component {
     icon: undefined,
   };
 
-  renderIcon() {
-    const { icon, linkType } = this.props;
-
+  renderIcon(icon, linkType) {
     if (!icon) return undefined;
 
     return (
@@ -80,7 +78,7 @@ class TextLink extends React.Component {
         {...otherProps}
       >
         <TabFocusTrap>
-          {this.renderIcon()}
+          {this.renderIcon(icon, linkType)}
           {children}
         </TabFocusTrap>
       </Element>

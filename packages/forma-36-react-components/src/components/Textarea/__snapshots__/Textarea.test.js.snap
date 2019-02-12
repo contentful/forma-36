@@ -49,23 +49,6 @@ exports[`renders the component with a max length 1`] = `
 </div>
 `;
 
-exports[`renders the component with a max length 2`] = `
-<div
-  className="Textarea my-extra-class Textarea--full"
->
-  <textarea
-    aria-label="userEmail"
-    className="Textarea__textarea"
-    data-test-id="cf-ui-textarea"
-    disabled={false}
-    id="someInput"
-    name="userEmail"
-    onChange={[Function]}
-    placeholder="placeholder text"
-  />
-</div>
-`;
-
 exports[`renders the component with a test id 1`] = `
 <div
   className="Textarea my-extra-class Textarea--full"

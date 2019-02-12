@@ -56,7 +56,7 @@ it('renders the component with a id attribute', () => {
   expect(output).toMatchSnapshot();
 });
 
-it('renders the component with a id attribute', () => {
+it('renders the component as span with a id attribute', () => {
   const output = shallow(
     <Tooltip containerElement="span">
       <span>hi</span>

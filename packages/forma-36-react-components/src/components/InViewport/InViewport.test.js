@@ -49,7 +49,7 @@ it('dispatches onOverflowTop', () => {
   expect(onOverflowTopMock).toHaveBeenCalled();
 });
 
-it('dispatches onOverflowTop', () => {
+it('dispatches onOverflowLeft', () => {
   const onOverflowLeftMock = jest.fn();
   const output = mount(
     <InViewport

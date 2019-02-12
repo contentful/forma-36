@@ -53,7 +53,7 @@ it('calls an onClick function', () => {
   output.simulate('click');
 
   expect(output).toMatchSnapshot();
-  expect(onClickFunc).toBeCalled();
+  expect(onClickFunc).toHaveBeenCalled();
 });
 
 it('prevents onClick function from being called when disabled', () => {
@@ -67,7 +67,7 @@ it('prevents onClick function from being called when disabled', () => {
   output.simulate('click');
 
   expect(output).toMatchSnapshot();
-  expect(onClickFunc).not.toBeCalled();
+  expect(onClickFunc).not.toHaveBeenCalled();
 });
 
 it('allows passing additional props not consumed by component', () => {

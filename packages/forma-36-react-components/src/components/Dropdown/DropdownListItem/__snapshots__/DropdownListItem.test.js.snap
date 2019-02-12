@@ -27,15 +27,6 @@ exports[`renders the component as disabled 1`] = `
 </li>
 `;
 
-exports[`renders the component as disabled 2`] = `
-<li
-  className="DropdownListItem DropdownListItem--disabled"
-  data-test-id="cf-ui-dropdown-list-item"
->
-  entry
-</li>
-`;
-
 exports[`renders the component with an additional class name 1`] = `
 <li
   className="DropdownListItem my-extra-class"
