@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, boolean } from '@storybook/addon-knobs';
+import { text, boolean, action } from '@storybook/addon-knobs';
 import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
 
@@ -24,6 +24,7 @@ storiesOf('Components|Checkbox', module)
         disabled={boolean('Disabled', false)}
         required={boolean('Required', false)}
         name={text('Name', 'some-name')}
+        onChange={action('onChange')}
       />
     )),
   );
