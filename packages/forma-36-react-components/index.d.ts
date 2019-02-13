@@ -8,6 +8,9 @@
 /// <reference path="./dist/components/Card/Card/Card.d.ts" />
 /// <reference path="./dist/components/Card/InlineReferenceCard/InlineReferenceCard.d.ts" />
 /// <reference path="./dist/components/Card/ReferenceCard/ReferenceCard.d.ts" />
+/// <reference path="./dist/components/Checkbox/Checkbox.d.ts" />
+/// <reference path="./dist/components/RadioButton/RadioButton.d.ts" />
+/// <reference path="./dist/components/ToggleButton/ToggleButton.d.ts" />
 
 import * as React from 'react';
 
@@ -21,6 +24,9 @@ import AssetCardComponent from './dist/components/Card/AssetCard/AssetCard';
 import CardComponent from './dist/components/Card/Card/Card';
 import InlineReferenceCardComponent from './dist/components/Card/InlineReferenceCard/InlineReferenceCard';
 import ReferenceCardComponent from './dist/components/Card/ReferenceCard/ReferenceCard';
+import CheckboxComponent from './dist/components/Checkbox/Checkbox';
+import RadioButtonComponent from './dist/components/RadioButton/RadioButton';
+import ToggleButtonComponent from './dist/components/ToggleButton/ToggleButton';
 
 export const Button: typeof ButtonComponent;
 export const Spinner: typeof SpinnerComponent;
@@ -32,6 +38,9 @@ export const AssetCard: typeof AssetCardComponent;
 export const Card: typeof CardComponent;
 export const InlineReferenceCard: typeof InlineReferenceCardComponent;
 export const ReferenceCard: typeof ReferenceCardComponent;
+export const Checkbox: typeof CheckboxComponent;
+export const RadioButton: typeof RadioButtonComponent;
+export const ToggleButton: typeof ToggleButtonComponent;
 
 export interface CopyButtonProps {
   extraClassNames?: string;
@@ -43,10 +52,6 @@ export interface CopyButtonProps {
 export class CopyButton extends React.Component<CopyButtonProps, any> {
   render(): JSX.Element;
 }
-
-export interface CheckboxProps {}
-
-export const Checkbox: React.SFC<CheckboxProps>;
 
 export interface CheckboxFieldProps {}
 
@@ -478,10 +483,6 @@ export class Pill extends React.Component<PillProps, any> {
   render(): JSX.Element;
 }
 
-export interface RadioButtonProps {}
-
-export const RadioButton: React.SFC<RadioButtonProps>;
-
 export interface RadioButtonFieldProps {}
 
 export class RadioButtonField extends React.Component<
@@ -794,20 +795,7 @@ export interface TextareaProps {
 export class Textarea extends React.Component<TextareaProps, any> {
   render(): JSX.Element;
 }
-export interface ToggleButtonProps {
-  testId?: string;
-  extraClassNames?: string;
-  children: React.ReactNode;
-  icon?: string;
-  isActive?: boolean;
-  onToggle?: (...args: any[]) => any;
-  buttonProps?: Object;
-  isDisabled?: boolean;
-}
 
-export class ToggleButton extends React.Component<ToggleButtonProps, any> {
-  render(): JSX.Element;
-}
 export type TooltipPlace = 'top' | 'bottom' | 'right' | 'left';
 
 export type TooltipMaxWidth = number | string;

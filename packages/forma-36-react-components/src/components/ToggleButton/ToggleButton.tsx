@@ -1,22 +1,22 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import cn from 'classnames';
 import Card from '../Card/Card';
-import Icon from '../Icon/Icon';
+import Icon, { IconType } from '../Icon/Icon';
 import TabFocusTrap from '../TabFocusTrap/TabFocusTrap';
-import styles from './ToggleButton.css';
 
-class ToggleButton extends React.Component {
-  static propTypes = {
-    testId: PropTypes.string,
-    extraClassNames: PropTypes.string,
-    children: PropTypes.node.isRequired,
-    icon: PropTypes.string,
-    isActive: PropTypes.bool,
-    onToggle: PropTypes.func,
-    isDisabled: PropTypes.bool,
-  };
+const styles = require('./ToggleButton.css');
 
+export interface ToggleButtonProps {
+  testId?: string;
+  extraClassNames?: string;
+  children: React.ReactNode;
+  icon?: IconType;
+  isActive?: boolean;
+  onToggle: () => {};
+  isDisabled?: boolean;
+}
+
+export class ToggleButton extends Component<ToggleButtonProps> {
   static defaultProps = {
     testId: 'cf-ui-toggle-button',
     extraClassNames: undefined,
