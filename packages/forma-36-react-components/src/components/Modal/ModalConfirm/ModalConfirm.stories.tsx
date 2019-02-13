@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+import { storiesOf, StoryDecorator } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { text, boolean, select } from '@storybook/addon-knobs';
 import { host } from 'storybook-host';
@@ -25,7 +25,7 @@ storiesOf('Components|Modal/ModalConfirm', module)
       cropMarks: false,
     }),
   )
-  .addDecorator(StateDecorator(store))
+  .addDecorator(StateDecorator(store) as StoryDecorator)
   .add(
     'default',
     withInfo()(() => (
@@ -84,7 +84,7 @@ storiesOf('Components|Modal/ModalConfirm', module)
             'confirmTestId',
             ModalConfirm.defaultProps.confirmTestId,
           )}
-          cancelTextId={text(
+          cancelTestId={text(
             'cancelTextId',
             ModalConfirm.defaultProps.cancelTestId,
           )}
@@ -97,7 +97,7 @@ storiesOf('Components|Modal/ModalConfirm', module)
             action('onConfirm')();
           }}
         >
-          You are about to delete SOMETHING. Think twice!
+          <p>You are about to delete SOMETHING. Think twice!</p>
         </ModalConfirm>
       </div>
     )),

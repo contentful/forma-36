@@ -24,6 +24,7 @@
 /// <reference path="./dist/components/Form/FieldGroup/FieldGroup.d.ts" />
 /// <reference path="./dist/components/Form/Form/Form.d.ts" />
 /// <reference path="./dist/components/Modal/Modal/Modal.d.ts" />
+/// <reference path="./dist/components/Modal/ModalConfirm/ModalConfirm.d.ts" />
 
 import * as React from 'react';
 
@@ -53,6 +54,7 @@ import FormLabelComponent from './dist/components/FormLabel/FormLabel';
 import FieldGroupComponent from './dist/components/Form/FieldGroup/FieldGroup';
 import FormComponent from './dist/components/Form/Form/Form';
 import ModalComponent from './dist/components/Modal/Modal/Modal';
+import ModalConfirmComponent from './dist/components/Modal/ModalConfirm/ModalConfirm';
 
 export const Button: typeof ButtonComponent;
 export const Spinner: typeof SpinnerComponent;
@@ -80,6 +82,7 @@ export const FormLabel: typeof FormLabelComponent;
 export const FieldGroup: typeof FieldGroupComponent;
 export const Form: typeof FormComponent;
 export const Modal: typeof ModalComponent;
+export const ModalConfirm: typeof ModalConfirmComponent;
 
 export interface CopyButtonProps {
   extraClassNames?: string;
@@ -257,68 +260,6 @@ export class ListItem extends React.Component<ListItemProps, any> {
   render(): JSX.Element;
 }
 
-export type ModalConfirmIntent = 'primary' | 'positive' | 'negative';
-
-export type ModalConfirmSize = any | any | any | number | string;
-
-export interface ModalConfirmProps {
-  /**
-   * When true, the dialog is shown.
-   */
-  isShown: boolean;
-  /**
-   * Function that will be called when the confirm button is clicked. This does not close the ModalConfirm.
-   */
-  onConfirm: (...args: any[]) => any;
-  /**
-   * Function that will be called when the cancel button is clicked. This does not close the ModalConfirm.
-   */
-  onCancel: (...args: any[]) => any;
-  /**
-   * Modal title that is used in header
-   */
-  title?: string;
-  /**
-   * Label of the confirm button
-   */
-  confirmLabel?: string;
-  /**
-   * Label of the cancel button
-   */
-  cancelLabel?: string;
-  /**
-   * The intent of the ModalConfirm. Used for the Button.
-   */
-  intent?: ModalConfirmIntent;
-  /**
-   * Size of the modal window
-   */
-  size?: ModalConfirmSize;
-  /**
-   * Boolean indicating if clicking the overlay should close the overlay.
-   */
-  shouldCloseOnOverlayClick?: boolean;
-  /**
-   * Boolean indicating if pressing the esc key should close the overlay.
-   */
-  shouldCloseOnEscapePress?: boolean;
-  /**
-   * When true, the confirm button is set to disabled.
-   */
-  isConfirmDisabled?: boolean;
-  /**
-   * When true, the confirm button is set to loading.
-   */
-  isConfirmLoading?: boolean;
-  testId?: string;
-  confirmTestId?: string;
-  cancelTestId?: string;
-  children: React.ReactNode;
-}
-
-export class ModalConfirm extends React.Component<ModalConfirmProps, any> {
-  render(): JSX.Element;
-}
 export interface ContentProps {
   testId?: string;
   extraClassNames?: string;

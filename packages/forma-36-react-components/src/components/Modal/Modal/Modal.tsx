@@ -8,14 +8,14 @@ import ModalControls from '../ModalControls';
 const styles = require('./Modal.css');
 
 const ModalPositions = {
-  CENTER: 'center',
-  TOP: 'top',
+  CENTER: 'center' as 'center',
+  TOP: 'top' as 'top',
 };
 
 export const ModalSizes = {
-  MEDIUM: 'medium',
-  SMALL: 'small',
-  LARGE: 'large',
+  MEDIUM: 'medium' as 'medium',
+  SMALL: 'small' as 'small',
+  LARGE: 'large' as 'large',
 };
 
 const ModalSizesMapper = {
@@ -24,7 +24,7 @@ const ModalSizesMapper = {
   [ModalSizes.LARGE]: '700px',
 };
 
-type ModalSizeType = 'small' | 'medium' | 'large';
+export type ModalSizeType = 'small' | 'medium' | 'large' | string | number;
 
 interface ModalProps {
   /**
@@ -64,7 +64,7 @@ interface ModalProps {
   /**
       Size of the modal window
     */
-  size?: ModalSizeType | number | string;
+  size?: ModalSizeType;
   /**
    * Are modals highter that viewerport allowed
    */
