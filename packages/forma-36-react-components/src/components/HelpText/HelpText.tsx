@@ -1,19 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import cn from 'classnames';
-import styles from './HelpText.css';
 
-class HelpText extends React.Component {
-  static propTypes = {
-    extraClassNames: PropTypes.string,
-    testId: PropTypes.string,
-    children: PropTypes.node,
-  };
+const styles = require('./HelpText.css');
 
+interface HelpTextProps
+  extends React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLParagraphElement>,
+    HTMLParagraphElement
+  > {
+  extraClassNames?: string;
+  testId?: string;
+  children: React.ReactNode;
+}
+
+export class HelpText extends Component<HelpTextProps> {
   static defaultProps = {
-    extraClassNames: undefined,
     testId: 'cf-ui-help-text',
-    children: undefined,
   };
 
   render() {

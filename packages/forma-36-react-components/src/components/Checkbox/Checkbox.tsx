@@ -8,14 +8,6 @@ export const Checkbox: FunctionComponent<ControlledInputPropTypes> = props => (
 );
 
 Checkbox.defaultProps = {
-  id: undefined,
-  extraClassNames: undefined,
-  onChange: undefined,
-  onBlur: undefined,
-  onFocus: undefined,
-  checked: undefined,
-  value: undefined,
-  name: undefined,
   required: false,
   disabled: false,
   type: 'checkbox',

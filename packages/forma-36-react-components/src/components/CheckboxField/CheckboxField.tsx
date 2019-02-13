@@ -4,22 +4,10 @@ import ControlledInputField, {
 } from '../ControlledInputField/ControlledInputField';
 
 export class CheckboxField extends Component<ControlledInputFieldPropTypes> {
-  static defaultProps: Partial<ControlledInputFieldPropTypes> = {
-    extraClassNames: undefined,
-    required: undefined,
+  static defaultProps = {
     labelIsLight: false,
-    helpText: undefined,
-    disabled: undefined,
-    formLabelProps: undefined,
-    helpTextProps: undefined,
-    validationMessage: undefined,
-    value: undefined,
-    name: undefined,
     checked: false,
-    onChange: undefined,
-    inputProps: undefined,
     inputType: 'checkbox',
-    children: undefined,
     testId: 'cf-ui-checkbox-field',
   };
 

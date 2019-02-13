@@ -28,23 +28,11 @@ export interface ControlledInputFieldPropTypes {
 }
 
 class ControlledInputField extends Component<ControlledInputFieldPropTypes> {
-  static defaultProps: Partial<ControlledInputFieldPropTypes> = {
-    extraClassNames: undefined,
-    required: undefined,
+  static defaultProps = {
     testId: 'cf-ui-controlled-input-field',
     labelIsLight: false,
-    helpText: undefined,
-    disabled: undefined,
-    formLabelProps: undefined,
-    helpTextProps: undefined,
-    validationMessage: undefined,
-    value: undefined,
-    name: undefined,
     checked: false,
-    onChange: undefined,
-    inputProps: undefined,
     inputType: 'checkbox',
-    children: undefined,
   };
 
   render() {

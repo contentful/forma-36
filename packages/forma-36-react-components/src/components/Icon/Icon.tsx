@@ -233,19 +233,25 @@ const iconComponents = {
 };
 
 export type IconType = keyof typeof iconName;
+export type IconColorType =
+  | 'primary'
+  | 'positive'
+  | 'negative'
+  | 'secondary'
+  | 'muted'
+  | 'white';
 
 export interface IconProps {
   extraClassNames?: string;
   testId?: string;
   size?: 'tiny' | 'small' | 'large';
-  color?: 'primary' | 'positive' | 'negative' | 'secondary' | 'muted' | 'white';
+  color?: IconColorType;
   style?: CSSProperties;
   icon: IconType;
 }
 
 export class Icon extends Component<IconProps> {
-  static defaultProps: Partial<IconProps> = {
-    extraClassNames: undefined,
+  static defaultProps = {
     testId: 'cf-ui-icon',
     size: 'small',
     color: 'primary',

@@ -1,20 +1,23 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import cn from 'classnames';
-import styles from './FormLabel.css';
 
-class FormLabel extends React.Component {
-  static propTypes = {
-    htmlFor: PropTypes.string.isRequired,
-    children: PropTypes.string.isRequired,
-    testId: PropTypes.string,
-    extraClassNames: PropTypes.string,
-    requiredText: PropTypes.string,
-    required: PropTypes.bool,
-  };
+const styles = require('./FormLabel.css');
 
+interface FormLabelProps
+  extends React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLLabelElement>,
+    HTMLLabelElement
+  > {
+  htmlFor: string;
+  children: React.ReactNode;
+  testId?: string;
+  extraClassNames?: string;
+  requiredText?: string;
+  required?: boolean;
+}
+
+export class FormLabel extends Component<FormLabelProps> {
   static defaultProps = {
-    extraClassNames: undefined,
     testId: 'cf-ui-form-label',
     requiredText: 'required',
     required: false,
@@ -34,7 +37,6 @@ class FormLabel extends React.Component {
     const classNames = cn(styles.FormLabel, extraClassNames);
 
     return (
-      // eslint-disable-next-line jsx-a11y/label-has-for
       <label
         className={classNames}
         data-test-id={testId}

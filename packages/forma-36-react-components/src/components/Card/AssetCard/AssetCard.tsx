@@ -26,12 +26,8 @@ interface AssetCardState {
 }
 
 export class AssetCard extends Component<AssetCardPropTypes, AssetCardState> {
-  static defaultProps: Partial<AssetCardPropTypes> = {
-    extraClassNames: undefined,
-    dropdownListElements: undefined,
+  static defaultProps = {
     isLoading: false,
-    status: undefined,
-    type: undefined,
     testId: 'cf-ui-asset-card',
   };
 

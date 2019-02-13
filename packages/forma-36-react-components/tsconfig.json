@@ -11,7 +11,9 @@
     /* Strict Type-Checking Options */
     "strict": false /* Enable all strict type-checking options. */,
     "allowSyntheticDefaultImports": true /* Allow default imports from modules with no default export. This does not affect code emit, just typechecking. */,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "typeRoots": ["node_modules/@types", "./typings.d.ts"]
   },
+  "include": ["./"],
   "exclude": ["dist", "node_modules", "index.d.ts"]
 }
