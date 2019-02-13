@@ -25,7 +25,6 @@ exports[`renders the component with an required flag 1`] = `
   className="FormLabel"
   data-test-id="cf-ui-form-label"
   htmlFor="someInput"
-  text="Label Text"
 >
   Label Text
   <span

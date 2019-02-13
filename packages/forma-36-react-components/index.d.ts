@@ -9,13 +9,18 @@
 /// <reference path="./dist/components/Card/InlineReferenceCard/InlineReferenceCard.d.ts" />
 /// <reference path="./dist/components/Card/ReferenceCard/ReferenceCard.d.ts" />
 /// <reference path="./dist/components/Checkbox/Checkbox.d.ts" />
+/// <reference path="./dist/components/CheckboxField/CheckboxField.d.ts" />
 /// <reference path="./dist/components/RadioButton/RadioButton.d.ts" />
+/// <reference path="./dist/components/RadioButtonField/RadioButtonField.d.ts" />
 /// <reference path="./dist/components/ToggleButton/ToggleButton.d.ts" />
 /// <reference path="./dist/components/HelpText/HelpText.d.ts" />
 /// <reference path="./dist/components/TextLink/TextLink.d.ts" />
 /// <reference path="./dist/components/Note/Note.d.ts" />
 /// <reference path="./dist/components/Pill/Pill.d.ts" />
 /// <reference path="./dist/components/Tag/Tag.d.ts" />
+/// <reference path="./dist/components/ControlledInput/ControlledInput.d.ts" />
+/// <reference path="./dist/components/ControlledInputField/ControlledInputField.d.ts" />
+/// <reference path="./dist/components/FormLabel/FormLabel.d.ts" />
 
 import * as React from 'react';
 
@@ -30,13 +35,18 @@ import CardComponent from './dist/components/Card/Card/Card';
 import InlineReferenceCardComponent from './dist/components/Card/InlineReferenceCard/InlineReferenceCard';
 import ReferenceCardComponent from './dist/components/Card/ReferenceCard/ReferenceCard';
 import CheckboxComponent from './dist/components/Checkbox/Checkbox';
+import CheckboxFieldComponent from './dist/components/CheckboxField/CheckboxField';
 import RadioButtonComponent from './dist/components/RadioButton/RadioButton';
+import RadioButtonFieldComponent from './dist/components/RadioButtonField/RadioButtonField';
 import ToggleButtonComponent from './dist/components/ToggleButton/ToggleButton';
 import HelpTextComponent from './dist/components/HelpText/HelpText';
 import TextLinkComponent from './dist/components/TextLink/TextLink';
 import NoteComponent from './dist/components/Note/Note';
 import PillComponent from './dist/components/Pill/Pill';
 import TagComponent from './dist/components/Tag/Tag';
+import ControlledInputComponent from './dist/components/ControlledInput/ControlledInput';
+import ControlledInputFieldComponent from './dist/components/ControlledInputField/ControlledInputField';
+import FormLabelComponent from './dist/components/FormLabel/FormLabel';
 
 export const Button: typeof ButtonComponent;
 export const Spinner: typeof SpinnerComponent;
@@ -49,13 +59,18 @@ export const Card: typeof CardComponent;
 export const InlineReferenceCard: typeof InlineReferenceCardComponent;
 export const ReferenceCard: typeof ReferenceCardComponent;
 export const Checkbox: typeof CheckboxComponent;
+export const CheckboxField: typeof CheckboxFieldComponent;
 export const RadioButton: typeof RadioButtonComponent;
+export const RadioButtonField: typeof RadioButtonFieldComponent;
 export const ToggleButton: typeof ToggleButtonComponent;
 export const HelpText: typeof HelpTextComponent;
 export const TextLink: typeof TextLinkComponent;
 export const Note: typeof NoteComponent;
 export const Pill: typeof PillComponent;
 export const Tag: typeof TagComponent;
+export const ControlledInput: typeof ControlledInputComponent;
+export const ControlledInputField: typeof ControlledInputFieldComponent;
+export const FormLabel: typeof FormLabelComponent;
 
 export interface CopyButtonProps {
   extraClassNames?: string;
@@ -65,28 +80,6 @@ export interface CopyButtonProps {
 }
 
 export class CopyButton extends React.Component<CopyButtonProps, any> {
-  render(): JSX.Element;
-}
-
-export interface CheckboxFieldProps {}
-
-export class CheckboxField extends React.Component<CheckboxFieldProps, any> {
-  render(): JSX.Element;
-}
-export interface ControlledInputProps {}
-
-export class ControlledInput extends React.Component<
-  ControlledInputProps,
-  any
-> {
-  render(): JSX.Element;
-}
-export interface ControlledInputFieldProps {}
-
-export class ControlledInputField extends React.Component<
-  ControlledInputFieldProps,
-  any
-> {
   render(): JSX.Element;
 }
 
@@ -210,18 +203,6 @@ export interface FieldGroupProps {
 }
 
 export class FieldGroup extends React.Component<FieldGroupProps, any> {
-  render(): JSX.Element;
-}
-export interface FormLabelProps {
-  htmlFor: string;
-  children: string;
-  testId?: string;
-  extraClassNames?: string;
-  requiredText?: string;
-  required?: boolean;
-}
-
-export class FormLabel extends React.Component<FormLabelProps, any> {
   render(): JSX.Element;
 }
 
@@ -459,15 +440,6 @@ export interface NotificationsManagerProps {
 
 export class NotificationsManager extends React.PureComponent<
   NotificationsManagerProps,
-  any
-> {
-  render(): JSX.Element;
-}
-
-export interface RadioButtonFieldProps {}
-
-export class RadioButtonField extends React.Component<
-  RadioButtonFieldProps,
   any
 > {
   render(): JSX.Element;

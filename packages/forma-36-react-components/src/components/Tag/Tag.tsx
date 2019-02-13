@@ -5,8 +5,8 @@ const styles = require('./Tag.css');
 
 interface TagProps
   extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLParagraphElement>,
-    HTMLParagraphElement
+    React.HTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
   > {
   extraClassNames?: string;
   children: React.ReactNode;
