@@ -7,7 +7,9 @@ import DropdownListItem from '../../Dropdown/DropdownListItem';
 
 it('renders the component', () => {
   const output = shallow(
-    <AssetCard src="http://placekitten.com/200/300">AssetCard</AssetCard>,
+    <AssetCard title="picture of a cat" src="http://placekitten.com/200/300">
+      AssetCard
+    </AssetCard>,
   );
   expect(output).toMatchSnapshot();
 });

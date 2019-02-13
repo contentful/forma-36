@@ -12,9 +12,9 @@ const styles = require('./AssetCard.css');
 
 interface AssetCardPropTypes {
   src: string;
+  title: string;
   extraClassNames?: string;
   isLoading?: boolean;
-  title?: string;
   dropdownListElements?: React.ReactNode;
   status?: 'archived' | 'changed' | 'draft' | 'published';
   testId?: string;
@@ -30,7 +30,6 @@ export class AssetCard extends Component<AssetCardPropTypes, AssetCardState> {
     extraClassNames: undefined,
     dropdownListElements: undefined,
     isLoading: false,
-    title: undefined,
     status: undefined,
     type: undefined,
     testId: 'cf-ui-asset-card',
