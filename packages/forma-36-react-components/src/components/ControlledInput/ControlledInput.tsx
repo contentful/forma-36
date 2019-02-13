@@ -20,7 +20,7 @@ export interface ControlledInputPropTypes {
 }
 
 export class ControlledInput extends Component<ControlledInputPropTypes> {
-  static defaultProps: Partial<ControlledInputPropTypes> = {
+  static defaultProps = {
     id: undefined,
     extraClassNames: undefined,
     onChange: undefined,

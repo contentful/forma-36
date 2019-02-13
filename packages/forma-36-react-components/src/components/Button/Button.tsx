@@ -25,7 +25,7 @@ interface ButtonProps {
 }
 
 export class Button extends Component<ButtonProps> {
-  static defaultProps: Partial<ButtonProps> = {
+  static defaultProps = {
     extraClassNames: undefined,
     icon: undefined,
     children: undefined,

@@ -244,8 +244,7 @@ export interface IconProps {
 }
 
 export class Icon extends Component<IconProps> {
-  static defaultProps: Partial<IconProps> = {
-    extraClassNames: undefined,
+  static defaultProps = {
     testId: 'cf-ui-icon',
     size: 'small',
     color: 'primary',

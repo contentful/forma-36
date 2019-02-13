@@ -4,7 +4,7 @@ import ControlledInputField, {
 } from '../ControlledInputField/ControlledInputField';
 
 export class RadioButtonField extends Component<ControlledInputFieldPropTypes> {
-  static defaultProps: Partial<ControlledInputFieldPropTypes> = {
+  static defaultProps = {
     extraClassNames: undefined,
     required: undefined,
     labelIsLight: false,

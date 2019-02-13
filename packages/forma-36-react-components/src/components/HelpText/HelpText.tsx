@@ -14,8 +14,7 @@ interface HelpTextProps
 }
 
 export class HelpText extends Component<HelpTextProps> {
-  static defaultProps: Partial<HelpTextProps> = {
-    extraClassNames: undefined,
+  static defaultProps = {
     testId: 'cf-ui-help-text',
   };
 

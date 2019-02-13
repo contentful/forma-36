@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { text, select } from '@storybook/addon-knobs';
+import { text } from '@storybook/addon-knobs';
 import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
 
@@ -18,15 +18,6 @@ storiesOf('Components|Pill', module)
     'default',
     withInfo()(() => (
       <Pill
-        status={select(
-          'Status',
-          {
-            'Primary (default)': 'primary',
-            Positive: 'positive',
-            Negative: 'negative',
-          },
-          'primary',
-        )}
         extraClassNames={text('Extra Class Names', '')}
         label={text('label', 'johannes.bugiel@contentful.com')}
       />
@@ -36,15 +27,6 @@ storiesOf('Components|Pill', module)
     'onDrag',
     withInfo()(() => (
       <Pill
-        status={select(
-          'Status',
-          {
-            'Primary (default)': 'primary',
-            Positive: 'positive',
-            Negative: 'negative',
-          },
-          'primary',
-        )}
         extraClassNames={text('Extra Class Names', '')}
         label={text('label', 'johannes.bugiel@contentful.com')}
         onDrag={action('onDrag')}
@@ -55,15 +37,6 @@ storiesOf('Components|Pill', module)
     'onClose',
     withInfo()(() => (
       <Pill
-        status={select(
-          'Status',
-          {
-            'Primary (default)': 'primary',
-            Positive: 'positive',
-            Negative: 'negative',
-          },
-          'primary',
-        )}
         extraClassNames={text('Extra Class Names', '')}
         label={text('label', 'johannes.bugiel@contentful.com')}
         onClose={action('onClick')}

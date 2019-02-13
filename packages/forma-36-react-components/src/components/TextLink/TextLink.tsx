@@ -17,7 +17,7 @@ interface TextLinkProps {
 }
 
 export class TextLink extends Component<TextLinkProps> {
-  static defaultProps: Partial<TextLinkProps> = {
+  static defaultProps = {
     linkType: 'primary',
     href: undefined,
     testId: 'cf-ui-text-link',

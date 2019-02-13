@@ -1,25 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import cn from 'classnames';
-import Icon from '../Icon';
-import { iconName } from '../Icon/constants';
+import Icon from '../Icon/Icon';
 import TabFocusTrap from '../TabFocusTrap';
-import styles from './Pill.css';
 
-class Pill extends React.Component {
-  static propTypes = {
-    extraClassNames: PropTypes.string,
-    testId: PropTypes.string,
-    label: PropTypes.string.isRequired,
-    onClose: PropTypes.func,
-    onDrag: PropTypes.func,
-  };
+const styles = require('./Pill.css');
 
+interface PillProps {
+  extraClassNames?: string;
+  testId?: string;
+  label: string;
+  onClose?: () => void;
+  onDrag?: () => void;
+}
+
+export class Pill extends Component<PillProps> {
   static defaultProps = {
-    extraClassNames: undefined,
-    onDrag: undefined,
     testId: 'cf-ui-pill',
-    onClose: undefined,
   };
 
   render() {
@@ -46,7 +42,7 @@ class Pill extends React.Component {
             {onDrag && (
               <span className={styles['Pill__drag-icon']}>
                 <Icon
-                  icon={iconName.Drag}
+                  icon="Drag"
                   color="muted"
                   extraClassNames={styles.Pill__icon}
                 />
@@ -63,7 +59,7 @@ class Pill extends React.Component {
             >
               <TabFocusTrap>
                 <Icon
-                  icon={iconName.Close}
+                  icon="Close"
                   color="muted"
                   extraClassNames={styles.Pill__icon}
                 />

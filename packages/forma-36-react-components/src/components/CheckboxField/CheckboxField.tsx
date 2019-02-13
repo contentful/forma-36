@@ -4,7 +4,7 @@ import ControlledInputField, {
 } from '../ControlledInputField/ControlledInputField';
 
 export class CheckboxField extends Component<ControlledInputFieldPropTypes> {
-  static defaultProps: Partial<ControlledInputFieldPropTypes> = {
+  static defaultProps = {
     extraClassNames: undefined,
     required: undefined,
     labelIsLight: false,

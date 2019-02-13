@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component with a close button 1`] = `
+<div
+  className="Pill my-extra-class"
+  draggable={false}
+>
+  <TabFocusTrap>
+    <span
+      className="Pill__label"
+    >
+      test
+    </span>
+    <button
+      className="Pill__close-button"
+      data-test-id="cf-ui-pill"
+      onClick={[Function]}
+      type="button"
+    >
+      <TabFocusTrap>
+        <Icon
+          color="muted"
+          extraClassNames="Pill__icon"
+          icon="Close"
+          size="small"
+          testId="cf-ui-icon"
+        />
+      </TabFocusTrap>
+    </button>
+  </TabFocusTrap>
+</div>
+`;
+
+exports[`renders the component with a dragging handle 1`] = `
+<div
+  className="Pill my-extra-class"
+  draggable={true}
+  onDrag={[Function]}
+>
+  <TabFocusTrap>
+    <span
+      className="Pill__label"
+    >
+      <span
+        className="Pill__drag-icon"
+      >
+        <Icon
+          color="muted"
+          extraClassNames="Pill__icon"
+          icon="Drag"
+          size="small"
+          testId="cf-ui-icon"
+        />
+      </span>
+      test
+    </span>
+  </TabFocusTrap>
+</div>
+`;
+
+exports[`renders the component with a test id 1`] = `
+<div
+  className="Pill my-extra-class"
+  draggable={false}
+>
+  <TabFocusTrap>
+    <span
+      className="Pill__label"
+    >
+      test
+    </span>
+  </TabFocusTrap>
+</div>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+<div
+  className="Pill my-extra-class"
+  draggable={false}
+>
+  <TabFocusTrap>
+    <span
+      className="Pill__label"
+    >
+      test
+    </span>
+  </TabFocusTrap>
+</div>
+`;

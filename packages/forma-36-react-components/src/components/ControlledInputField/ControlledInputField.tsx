@@ -28,7 +28,7 @@ export interface ControlledInputFieldPropTypes {
 }
 
 class ControlledInputField extends Component<ControlledInputFieldPropTypes> {
-  static defaultProps: Partial<ControlledInputFieldPropTypes> = {
+  static defaultProps = {
     extraClassNames: undefined,
     required: undefined,
     testId: 'cf-ui-controlled-input-field',

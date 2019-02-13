@@ -26,7 +26,7 @@ interface AssetCardState {
 }
 
 export class AssetCard extends Component<AssetCardPropTypes, AssetCardState> {
-  static defaultProps: Partial<AssetCardPropTypes> = {
+  static defaultProps = {
     extraClassNames: undefined,
     dropdownListElements: undefined,
     isLoading: false,

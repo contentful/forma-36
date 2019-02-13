@@ -9,7 +9,7 @@ interface TabFocusTrapProps {
 }
 
 export class TabFocusTrap extends Component<TabFocusTrapProps> {
-  static defaultProps: Partial<TabFocusTrapProps> = {
+  static defaultProps = {
     extraClassNames: undefined,
   };
 
