@@ -11,6 +11,8 @@
 /// <reference path="./dist/components/Checkbox/Checkbox.d.ts" />
 /// <reference path="./dist/components/RadioButton/RadioButton.d.ts" />
 /// <reference path="./dist/components/ToggleButton/ToggleButton.d.ts" />
+/// <reference path="./dist/components/HelpText/HelpText.d.ts" />
+/// <reference path="./dist/components/TextLink/TextLink.d.ts" />
 
 import * as React from 'react';
 
@@ -27,6 +29,8 @@ import ReferenceCardComponent from './dist/components/Card/ReferenceCard/Referen
 import CheckboxComponent from './dist/components/Checkbox/Checkbox';
 import RadioButtonComponent from './dist/components/RadioButton/RadioButton';
 import ToggleButtonComponent from './dist/components/ToggleButton/ToggleButton';
+import HelpTextComponent from './dist/components/HelpText/HelpText';
+import TextLinkComponent from './dist/components/TextLink/TextLink';
 
 export const Button: typeof ButtonComponent;
 export const Spinner: typeof SpinnerComponent;
@@ -41,6 +45,8 @@ export const ReferenceCard: typeof ReferenceCardComponent;
 export const Checkbox: typeof CheckboxComponent;
 export const RadioButton: typeof RadioButtonComponent;
 export const ToggleButton: typeof ToggleButtonComponent;
+export const HelpText: typeof HelpTextComponent;
+export const TextLink: typeof TextLinkComponent;
 
 export interface CopyButtonProps {
   extraClassNames?: string;
@@ -207,15 +213,6 @@ export interface FormLabelProps {
 }
 
 export class FormLabel extends React.Component<FormLabelProps, any> {
-  render(): JSX.Element;
-}
-export interface HelpTextProps {
-  extraClassNames?: string;
-  testId?: string;
-  children?: React.ReactNode;
-}
-
-export class HelpText extends React.Component<HelpTextProps, any> {
   render(): JSX.Element;
 }
 
@@ -752,27 +749,7 @@ export interface TextInputProps {
 export class TextInput extends React.Component<TextInputProps, any> {
   render(): JSX.Element;
 }
-export type TextLinkLinkType =
-  | 'primary'
-  | 'positive'
-  | 'negative'
-  | 'secondary'
-  | 'muted';
 
-export interface TextLinkProps {
-  children: React.ReactNode;
-  href?: string;
-  disabled?: boolean;
-  testId?: string;
-  linkType?: TextLinkLinkType;
-  onClick?: (...args: any[]) => any;
-  extraClassNames?: string;
-  icon?: any;
-}
-
-export class TextLink extends React.Component<TextLinkProps, any> {
-  render(): JSX.Element;
-}
 export type TextareaWidth = 'small' | 'medium' | 'large' | 'full';
 
 export interface TextareaProps {

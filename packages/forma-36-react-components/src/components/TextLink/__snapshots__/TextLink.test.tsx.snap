@@ -5,6 +5,7 @@ exports[`allows passing a test id 1`] = `
   className="TextLink TextLink--primary"
   data-test-id="test-id"
   disabled={false}
+  type="button"
 >
   <TabFocusTrap>
     Text Link
@@ -17,6 +18,7 @@ exports[`allows passing additional class names to component 1`] = `
   className="TextLink testing TextLink--primary"
   data-test-id="cf-ui-text-link"
   disabled={false}
+  type="button"
 >
   <TabFocusTrap>
     Text Link
@@ -29,6 +31,7 @@ exports[`allows passing additional props not consumed by component 1`] = `
   className="TextLink TextLink--primary"
   data-test-id="Testing Id"
   disabled={false}
+  type="button"
 >
   <TabFocusTrap>
     Text Link
@@ -54,6 +57,7 @@ exports[`calls an onClick function 1`] = `
       ],
     }
   }
+  type="button"
 >
   <TabFocusTrap>
     Text Link
@@ -66,8 +70,8 @@ exports[`prevents onClick function from being called when disabled 1`] = `
   className="TextLink TextLink--primary TextLink--disabled"
   data-test-id="cf-ui-text-link"
   disabled={true}
-  href={null}
   onClick={null}
+  type="button"
 >
   <TabFocusTrap>
     Text Link
@@ -80,6 +84,7 @@ exports[`renders as a "muted" link type 1`] = `
   className="TextLink TextLink--muted"
   data-test-id="cf-ui-text-link"
   disabled={false}
+  type="button"
 >
   <TabFocusTrap>
     Text Link
@@ -92,6 +97,7 @@ exports[`renders as a "negative" link type 1`] = `
   className="TextLink TextLink--negative"
   data-test-id="cf-ui-text-link"
   disabled={false}
+  type="button"
 >
   <TabFocusTrap>
     Text Link
@@ -104,6 +110,7 @@ exports[`renders as a "positive" link type 1`] = `
   className="TextLink TextLink--positive"
   data-test-id="cf-ui-text-link"
   disabled={false}
+  type="button"
 >
   <TabFocusTrap>
     Text Link
@@ -116,6 +123,7 @@ exports[`renders as a "primary" link type 1`] = `
   className="TextLink TextLink--primary"
   data-test-id="cf-ui-text-link"
   disabled={false}
+  type="button"
 >
   <TabFocusTrap>
     Text Link
@@ -128,6 +136,7 @@ exports[`renders as a "secondary" link type 1`] = `
   className="TextLink TextLink--secondary"
   data-test-id="cf-ui-text-link"
   disabled={false}
+  type="button"
 >
   <TabFocusTrap>
     Text Link
@@ -140,6 +149,7 @@ exports[`renders as a button 1`] = `
   className="TextLink TextLink--primary"
   data-test-id="cf-ui-text-link"
   disabled={false}
+  type="button"
 >
   <TabFocusTrap>
     Text Link
@@ -151,7 +161,6 @@ exports[`renders as a link 1`] = `
 <a
   className="TextLink TextLink--primary"
   data-test-id="cf-ui-text-link"
-  disabled={false}
   href="#"
 >
   <TabFocusTrap>
@@ -165,6 +174,7 @@ exports[`renders with an icon 1`] = `
   className="TextLink TextLink--primary"
   data-test-id="cf-ui-text-link"
   disabled={false}
+  type="button"
 >
   <TabFocusTrap>
     <div
