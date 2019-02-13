@@ -81,15 +81,18 @@ export class IconButton extends Component<IconButtonProps> {
     );
 
     if (href) {
+      if (disabled) {
+        return <a {...elementProps}>{content}</a>;
+      }
       return (
-        <a {...elementProps} href={disabled ? '' : href}>
-          {content}
+        <a {...elementProps} href={href}>
+          content
         </a>
       );
     }
 
     return (
-      <button {...elementProps} disabled={disabled}>
+      <button {...elementProps} type="button" disabled={disabled}>
         {content}
       </button>
     );

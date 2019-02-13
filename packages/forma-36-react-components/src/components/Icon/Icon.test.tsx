@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { axe } from 'jest-axe';

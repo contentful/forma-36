@@ -6,6 +6,7 @@ exports[`renders the component 1`] = `
   padding="default"
   selected={false}
   testId="cf-ui-asset-card"
+  title="picture of a cat"
 >
   <div
     className="AssetCard__inner-wrapper"
@@ -18,6 +19,8 @@ exports[`renders the component 1`] = `
     >
       <Asset
         extraClassNames="AssetCard__asset"
+        src="http://placekitten.com/200/300"
+        title="picture of a cat"
         type="image"
       />
     </div>

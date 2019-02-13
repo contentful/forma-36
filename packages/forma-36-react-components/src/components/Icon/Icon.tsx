@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, CSSProperties } from 'react';
 import cn from 'classnames';
 import { iconName } from './constants';
 
@@ -239,7 +239,7 @@ export interface IconProps {
   testId?: string;
   size?: 'tiny' | 'small' | 'large';
   color?: 'primary' | 'positive' | 'negative' | 'secondary' | 'muted' | 'white';
-  style?: Object;
+  style?: CSSProperties;
   icon: IconType;
 }
 

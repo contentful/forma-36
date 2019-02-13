@@ -48,14 +48,17 @@ export class Card extends Component<CardPropTypes> {
     });
 
     const Element: React.ReactType = href ? 'a' : 'div';
-    return React.createElement(Element, {
-      href,
-      className: classNames,
-      onClick: this.handleClick,
-      'data-test-id': testId,
-      ...otherProps,
+    return React.createElement(
+      Element,
+      {
+        href,
+        className: classNames,
+        onClick: this.handleClick,
+        'data-test-id': testId,
+        ...otherProps,
+      },
       children,
-    });
+    );
   }
 }
 

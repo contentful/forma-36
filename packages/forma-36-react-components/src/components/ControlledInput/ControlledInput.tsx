@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component, EventHandler, ChangeEvent, FocusEvent } from 'react';
 import cn from 'classnames';
 
 const styles = require('./ControlledInput.css');
@@ -11,10 +10,10 @@ export interface ControlledInputPropTypes {
   labelText: string;
   testId?: string;
   checked?: boolean;
-  onChange?: (...args: any[]) => any;
+  onChange?: EventHandler<ChangeEvent<HTMLInputElement>>;
   name?: string;
-  onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
-  onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void;
+  onBlur?: EventHandler<FocusEvent<HTMLInputElement>>;
+  onFocus?: EventHandler<FocusEvent<HTMLInputElement>>;
   value?: string;
   disabled?: boolean;
   type?: 'checkbox' | 'radio';
@@ -71,12 +70,12 @@ export class ControlledInput extends Component<ControlledInputPropTypes> {
             onChange(e);
           }
         }}
-        onBlur={(e: React.FocusEvent<HTMLInputElement>) => {
+        onBlur={e => {
           if (onBlur) {
             onBlur(e);
           }
         }}
-        onFocus={(e: React.FocusEvent<HTMLInputElement>) => {
+        onFocus={e => {
           if (onFocus) {
             onFocus(e);
           }

@@ -6,8 +6,11 @@ import DropdownList from '../../Dropdown/DropdownList';
 import DropdownListItem from '../../Dropdown/DropdownListItem';
 
 it('renders the component', () => {
-  const output = shallow(<AssetCard>AssetCard</AssetCard>);
-
+  const output = shallow(
+    <AssetCard title="picture of a cat" src="http://placekitten.com/200/300">
+      AssetCard
+    </AssetCard>,
+  );
   expect(output).toMatchSnapshot();
 });
 
@@ -71,7 +74,7 @@ it('renders the component without actions', () => {
     <AssetCard src="http://placekitten.com/200/300" title="picture of a cat" />,
   );
 
-  expect(output.find('Dropdown').length).toEqual(0);
+  expect(output.find('Dropdown')).toHaveLength(0);
   expect(output).toMatchSnapshot();
 });
 

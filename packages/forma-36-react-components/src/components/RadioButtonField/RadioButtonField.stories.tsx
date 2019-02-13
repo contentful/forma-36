@@ -33,7 +33,9 @@ storiesOf('Components|RadioButtonField', module)
           name="someOption"
           checked={store.state.activeOption === 'yes'}
           value="yes"
-          onChange={e => store.set({ activeOption: e.target.value })}
+          onChange={e =>
+            store.set({ activeOption: (e.target as HTMLInputElement).value })
+          }
           labelIsLight={boolean('Light', false)}
           inputProps={{
             onBlur: action('onBlur'),
@@ -49,7 +51,9 @@ storiesOf('Components|RadioButtonField', module)
           name="someOption"
           value="no"
           checked={store.state.activeOption === 'no'}
-          onChange={e => store.set({ activeOption: e.target.value })}
+          onChange={e =>
+            store.set({ activeOption: (e.target as HTMLInputElement).value })
+          }
           labelIsLight={boolean('Light', false)}
           inputProps={{
             onBlur: action('onBlur'),

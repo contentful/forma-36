@@ -34,7 +34,9 @@ storiesOf('Components|CheckboxField', module)
           name="someOption"
           checked={store.state.optionOne}
           value="yes"
-          onChange={e => store.set({ optionOne: e.target.checked })}
+          onChange={e =>
+            store.set({ optionOne: (e.target as HTMLInputElement).checked })
+          }
           labelIsLight={boolean('Light', false)}
           inputProps={{
             onBlur: action('onBlur'),
@@ -50,7 +52,9 @@ storiesOf('Components|CheckboxField', module)
           name="someOption"
           value="no"
           checked={store.state.optionTwo}
-          onChange={e => store.set({ optionTwo: e.target.checked })}
+          onChange={e =>
+            store.set({ optionTwo: (e.target as HTMLInputElement).checked })
+          }
           labelIsLight={boolean('Light', false)}
           inputProps={{
             onBlur: action('onBlur'),

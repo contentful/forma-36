@@ -41,7 +41,7 @@ it('calls an onClick function', () => {
   output.simulate('click');
 
   expect(output).toMatchSnapshot();
-  expect(onClickFunc).toBeCalled();
+  expect(onClickFunc).toHaveBeenCalled();
 });
 
 it('can be selected', () => {
