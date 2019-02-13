@@ -53,7 +53,7 @@ it('toggleElement dispactions onClick event', () => {
   );
 
   output.find('Button').simulate('click');
-  expect(onClickFunc).toBeCalled();
+  expect(onClickFunc).toHaveBeenCalled();
 });
 
 it('renders the component with a submenu', () => {

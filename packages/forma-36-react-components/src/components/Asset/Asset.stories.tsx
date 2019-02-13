@@ -4,7 +4,7 @@ import { text, select } from '@storybook/addon-knobs';
 import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
 
-import Asset, { types } from './Asset';
+import { Asset, types } from './Asset';
 
 storiesOf('Components|Asset', module)
   .addDecorator(

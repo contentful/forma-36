@@ -46,11 +46,9 @@ exports[`renders the component 1`] = `
 </TooltipContainer>
 `;
 
-exports[`renders the component with a id attribute 1`] = `
+exports[`renders the component as span with a id attribute 1`] = `
 <TooltipContainer
-  aria-describedby="Tooltip"
   containerElement="span"
-  id="Tooltip"
   onBlur={[Function]}
   onFocus={[Function]}
   onMouseLeave={[Function]}
@@ -63,9 +61,11 @@ exports[`renders the component with a id attribute 1`] = `
 </TooltipContainer>
 `;
 
-exports[`renders the component with a id attribute 2`] = `
+exports[`renders the component with a id attribute 1`] = `
 <TooltipContainer
+  aria-describedby="Tooltip"
   containerElement="span"
+  id="Tooltip"
   onBlur={[Function]}
   onFocus={[Function]}
   onMouseLeave={[Function]}

@@ -30,12 +30,6 @@ it('renders the component as disabled', () => {
   expect(output).toMatchSnapshot();
 });
 
-it('renders the component as disabled', () => {
-  const output = shallow(<DropdownListItem isDisabled>entry</DropdownListItem>);
-
-  expect(output).toMatchSnapshot();
-});
-
 it('calls onClick', () => {
   const mockOnClick = jest.fn();
   const dropDownItem = mount(

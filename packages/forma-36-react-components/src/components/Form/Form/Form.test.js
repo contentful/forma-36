@@ -55,7 +55,7 @@ it('renders the component with condensed spacing', () => {
   expect(output).toMatchSnapshot();
 });
 
-it('renders the component with condensed spacing', () => {
+it('renders the component with condensed spacing (prevent default)', () => {
   const mockOnSubmit = jest.fn();
   const output = shallow(
     <Form extraClassNames="my-extra-class" onSubmit={mockOnSubmit}>

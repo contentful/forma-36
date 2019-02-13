@@ -112,19 +112,6 @@ it('renders the component with a max length', () => {
   expect(output).toMatchSnapshot();
 });
 
-it('renders the component with a max length', () => {
-  const output = shallow(
-    <Textarea
-      id="someInput"
-      name="userEmail"
-      extraClassNames="my-extra-class"
-      placeholder="placeholder text"
-    />,
-  );
-
-  expect(output).toMatchSnapshot();
-});
-
 it('renders the component with rows defined', () => {
   const output = shallow(
     <Textarea
