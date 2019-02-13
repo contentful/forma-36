@@ -1,5 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`renders the component 1`] = `
+<div
+  className="Pill"
+  draggable={false}
+>
+  <TabFocusTrap>
+    <span
+      className="Pill__label"
+    >
+      test
+    </span>
+  </TabFocusTrap>
+</div>
+`;
+
 exports[`renders the component with a close button 1`] = `
 <div
   className="Pill my-extra-class"

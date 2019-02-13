@@ -13,6 +13,8 @@
 /// <reference path="./dist/components/ToggleButton/ToggleButton.d.ts" />
 /// <reference path="./dist/components/HelpText/HelpText.d.ts" />
 /// <reference path="./dist/components/TextLink/TextLink.d.ts" />
+/// <reference path="./dist/components/Note/Note.d.ts" />
+/// <reference path="./dist/components/Pill/Pill.d.ts" />
 
 import * as React from 'react';
 
@@ -31,6 +33,8 @@ import RadioButtonComponent from './dist/components/RadioButton/RadioButton';
 import ToggleButtonComponent from './dist/components/ToggleButton/ToggleButton';
 import HelpTextComponent from './dist/components/HelpText/HelpText';
 import TextLinkComponent from './dist/components/TextLink/TextLink';
+import NoteComponent from './dist/components/Note/Note';
+import PillComponent from './dist/components/Pill/Pill';
 
 export const Button: typeof ButtonComponent;
 export const Spinner: typeof SpinnerComponent;
@@ -47,6 +51,8 @@ export const RadioButton: typeof RadioButtonComponent;
 export const ToggleButton: typeof ToggleButtonComponent;
 export const HelpText: typeof HelpTextComponent;
 export const TextLink: typeof TextLinkComponent;
+export const Note: typeof NoteComponent;
+export const Pill: typeof PillComponent;
 
 export interface CopyButtonProps {
   extraClassNames?: string;
@@ -424,19 +430,6 @@ export interface HeaderProps {
 
 export const Header: React.SFC<HeaderProps>;
 
-export type NoteNoteType = any | any | any;
-
-export interface NoteProps {
-  title?: string;
-  noteType?: NoteNoteType;
-  children: React.ReactNode;
-  testId?: string;
-  extraClassNames?: string;
-  style?: Object;
-}
-
-export const Note: React.SFC<NoteProps>;
-
 export interface NotificationItemProps {}
 
 export class NotificationItem extends React.Component<
@@ -465,18 +458,6 @@ export class NotificationsManager extends React.PureComponent<
   NotificationsManagerProps,
   any
 > {
-  render(): JSX.Element;
-}
-
-export interface PillProps {
-  extraClassNames?: string;
-  testId?: string;
-  label: string;
-  onClose?: (...args: any[]) => any;
-  onDrag?: (...args: any[]) => any;
-}
-
-export class Pill extends React.Component<PillProps, any> {
   render(): JSX.Element;
 }
 
