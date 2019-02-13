@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component, SyntheticEvent } from 'react';
 import cn from 'classnames';
 
 const styles = require('./ControlledInput.css');
@@ -11,7 +10,7 @@ export interface ControlledInputPropTypes {
   labelText: string;
   testId?: string;
   checked?: boolean;
-  onChange?: (...args: any[]) => any;
+  onChange?: (e: SyntheticEvent) => void;
   name?: string;
   onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
   onFocus?: (e: React.FocusEvent<HTMLInputElement>) => void;

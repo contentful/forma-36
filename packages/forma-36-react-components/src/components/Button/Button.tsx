@@ -75,6 +75,7 @@ export class Button extends Component<ButtonProps> {
     const iconColor =
       buttonType === 'muted' || buttonType === 'naked' ? 'secondary' : 'white';
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const Element: any = href ? 'a' : 'button';
 
     return (

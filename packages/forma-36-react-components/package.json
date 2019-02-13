@@ -128,7 +128,7 @@
     "build": "yarn build:clean && yarn build:scripts && yarn build:styles && yarn build:types && yarn build:umd && yarn size && yarn build:post-clean",
     "size": "size-limit",
     "generate": "yarn plop --plopfile ./tools/plopfile.js",
-    "eslint": "eslint ./",
+    "eslint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint": "yarn eslint",
     "add-component": "yarn generate component",
     "add-documentation": "yarn generate documentation",

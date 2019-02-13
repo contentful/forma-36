@@ -1,5 +1,4 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component, SyntheticEvent } from 'react';
 import cn from 'classnames';
 import FormLabel from '../FormLabel';
 import HelpText from '../HelpText';
@@ -24,7 +23,7 @@ export interface ControlledInputFieldPropTypes {
   checked?: boolean;
   inputProps?: object;
   inputType?: 'radio' | 'checkbox';
-  onChange?: (...args: any[]) => any;
+  onChange?: (e: SyntheticEvent) => void;
   children?: React.ReactNode;
 }
 

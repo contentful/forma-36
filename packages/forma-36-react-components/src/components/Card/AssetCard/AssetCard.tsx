@@ -11,8 +11,8 @@ import AssetCardSkeleton from './AssetCardSkeleton';
 const styles = require('./AssetCard.css');
 
 interface AssetCardPropTypes {
-  extraClassNames?: string;
   src: string;
+  extraClassNames?: string;
   isLoading?: boolean;
   title?: string;
   dropdownListElements?: React.ReactNode;
@@ -26,11 +26,10 @@ interface AssetCardState {
 }
 
 export class AssetCard extends Component<AssetCardPropTypes, AssetCardState> {
-  static defaultProps = {
+  static defaultProps: Partial<AssetCardPropTypes> = {
     extraClassNames: undefined,
     dropdownListElements: undefined,
     isLoading: false,
-    src: undefined,
     title: undefined,
     status: undefined,
     type: undefined,
