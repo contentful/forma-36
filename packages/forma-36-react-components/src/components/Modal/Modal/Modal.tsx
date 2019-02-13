@@ -1,11 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import cn from 'classnames';
 import ReactModal from 'react-modal';
 import ModalHeader from '../ModalHeader';
 import ModalContent from '../ModalContent';
 import ModalControls from '../ModalControls';
-import styles from './Modal.css';
+
+const styles = require('./Modal.css');
 
 const ModalPositions = {
   CENTER: 'center',
@@ -24,7 +24,59 @@ const ModalSizesMapper = {
   [ModalSizes.LARGE]: '700px',
 };
 
-class Modal extends React.Component {
+type ModalSizeType = 'small' | 'medium' | 'large';
+
+interface ModalProps {
+  /**
+   * When true, the dialog is shown.
+   */
+  isShown: boolean;
+
+  /**
+   * Function that will be called when the exit is complete.
+   */
+  onClose: Function;
+
+  /**
+   * Function that will be called when the enter is complete.
+   */
+  onAfterOpen?: Function;
+  /**
+   * Boolean indicating if clicking the overlay should close the overlay.
+   */
+  shouldCloseOnOverlayClick?: boolean;
+  /**
+   * Boolean indicating if pressing the esc key should close the overlay.
+   */
+  shouldCloseOnEscapePress?: boolean;
+  /**
+   * Boolean indicating if modal is centered
+   */
+  position?: 'center' | 'top';
+  /**
+      Top offset if position is 'top'
+    */
+  topOffset?: number | string;
+  /**
+      Modal title that is used in header
+    */
+  title?: string;
+  /**
+      Size of the modal window
+    */
+  size?: ModalSizeType | number | string;
+  /**
+   * Are modals highter that viewerport allowed
+   */
+  allowHeightOverflow?: boolean;
+  extraClassNames?: string;
+  testId?: string;
+
+  // eslint-disable-next-line
+  children: any;
+}
+
+export class Modal extends Component<ModalProps> {
   static Positions = ModalPositions;
 
   static Sizes = ModalSizes;
@@ -35,69 +87,13 @@ class Modal extends React.Component {
 
   static Controls = ModalControls;
 
-  static propTypes = {
-    /**
-     * When true, the dialog is shown.
-     */
-    isShown: PropTypes.bool.isRequired,
-
-    /**
-     * Function that will be called when the exit is complete.
-     */
-    onClose: PropTypes.func.isRequired,
-
-    /**
-     * Function that will be called when the enter is complete.
-     */
-    onAfterOpen: PropTypes.func,
-    /**
-     * Boolean indicating if clicking the overlay should close the overlay.
-     */
-    shouldCloseOnOverlayClick: PropTypes.bool,
-    /**
-     * Boolean indicating if pressing the esc key should close the overlay.
-     */
-    shouldCloseOnEscapePress: PropTypes.bool,
-    /**
-     * Boolean indicating if modal is centered
-     */
-    position: PropTypes.oneOf([ModalPositions.CENTER, ModalPositions.TOP]),
-    /**
-      Top offset if position is ModalPositions.TOP
-    */
-    topOffset: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    /**
-      Modal title that is used in header
-    */
-    title: PropTypes.string,
-    /**
-      Size of the modal window
-    */
-    size: PropTypes.oneOfType([
-      PropTypes.oneOf([ModalSizes.MEDIUM, ModalSizes.LARGE, ModalSizes.SMALL])
-        .isRequired,
-      PropTypes.number.isRequired,
-      PropTypes.string.isRequired,
-    ]),
-    /**
-     * Are modals highter that viewerport allowed
-     */
-    allowHeightOverflow: PropTypes.bool,
-
-    extraClassNames: PropTypes.string,
-    testId: PropTypes.string,
-    children: PropTypes.oneOfType([PropTypes.node, PropTypes.func]).isRequired,
-  };
-
   static defaultProps = {
     shouldCloseOnEscapePress: true,
     shouldCloseOnOverlayClick: true,
-    position: ModalPositions.CENTER,
+    position: 'center',
     testId: 'cf-ui-modal',
-    title: undefined,
-    extraClassNames: undefined,
     topOffset: '50px',
-    size: ModalSizes.MEDIUM,
+    size: 'medium',
     allowHeightOverflow: false,
     onAfterOpen: () => {},
   };
