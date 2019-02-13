@@ -21,15 +21,7 @@ export interface ControlledInputPropTypes {
 
 export class ControlledInput extends Component<ControlledInputPropTypes> {
   static defaultProps = {
-    id: undefined,
-    extraClassNames: undefined,
-    onChange: undefined,
-    onBlur: undefined,
     testId: 'cf-ui-controlled-input',
-    onFocus: undefined,
-    checked: undefined,
-    value: undefined,
-    name: undefined,
     required: false,
     disabled: false,
     type: 'checkbox',

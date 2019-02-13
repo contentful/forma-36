@@ -26,20 +26,13 @@ interface ButtonProps {
 
 export class Button extends Component<ButtonProps> {
   static defaultProps = {
-    extraClassNames: undefined,
-    icon: undefined,
-    children: undefined,
     loading: false,
     isFullWidth: false,
     indicateDropdown: false,
-    onClick: undefined,
-    onBlur: undefined,
     disabled: false,
     testId: 'cf-ui-button',
     buttonType: 'primary',
     type: 'button',
-    size: undefined,
-    href: undefined,
   };
 
   render() {

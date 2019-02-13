@@ -17,10 +17,8 @@ interface SpinnerProps {
 
 class Spinner extends React.Component<SpinnerProps> {
   static defaultProps = {
-    extraClassNames: undefined,
     testId: 'cf-ui-spinner',
     size: 'default',
-    customSize: undefined,
     color: 'default',
   };
 

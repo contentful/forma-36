@@ -9,10 +9,6 @@ interface TabFocusTrapProps {
 }
 
 export class TabFocusTrap extends Component<TabFocusTrapProps> {
-  static defaultProps = {
-    extraClassNames: undefined,
-  };
-
   render() {
     const { extraClassNames, children, ...otherProps } = this.props;
 

@@ -15,6 +15,7 @@
 /// <reference path="./dist/components/TextLink/TextLink.d.ts" />
 /// <reference path="./dist/components/Note/Note.d.ts" />
 /// <reference path="./dist/components/Pill/Pill.d.ts" />
+/// <reference path="./dist/components/Tag/Tag.d.ts" />
 
 import * as React from 'react';
 
@@ -35,6 +36,7 @@ import HelpTextComponent from './dist/components/HelpText/HelpText';
 import TextLinkComponent from './dist/components/TextLink/TextLink';
 import NoteComponent from './dist/components/Note/Note';
 import PillComponent from './dist/components/Pill/Pill';
+import TagComponent from './dist/components/Tag/Tag';
 
 export const Button: typeof ButtonComponent;
 export const Spinner: typeof SpinnerComponent;
@@ -53,6 +55,7 @@ export const HelpText: typeof HelpTextComponent;
 export const TextLink: typeof TextLinkComponent;
 export const Note: typeof NoteComponent;
 export const Pill: typeof PillComponent;
+export const Tag: typeof TagComponent;
 
 export interface CopyButtonProps {
   extraClassNames?: string;
@@ -656,24 +659,6 @@ export class TableRow extends React.Component<TableRowProps, any> {
   render(): JSX.Element;
 }
 
-export type TagTagType =
-  | 'primary'
-  | 'positive'
-  | 'negative'
-  | 'warning'
-  | 'secondary'
-  | 'muted';
-
-export interface TagProps {
-  extraClassNames?: string;
-  children: React.ReactNode;
-  tagType?: TagTagType;
-  testId?: string;
-}
-
-export class Tag extends React.Component<TagProps, any> {
-  render(): JSX.Element;
-}
 export type TextFieldValue = string | number;
 
 export interface TextFieldProps {

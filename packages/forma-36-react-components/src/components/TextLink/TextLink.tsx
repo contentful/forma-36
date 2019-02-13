@@ -19,12 +19,8 @@ interface TextLinkProps {
 export class TextLink extends Component<TextLinkProps> {
   static defaultProps = {
     linkType: 'primary',
-    href: undefined,
     testId: 'cf-ui-text-link',
     disabled: false,
-    onClick: undefined,
-    extraClassNames: undefined,
-    icon: undefined,
   };
 
   renderIcon(icon, linkType) {

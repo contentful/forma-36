@@ -1,25 +1,27 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import cn from 'classnames';
-import styles from './Tag.css';
 
-class Tag extends React.Component {
-  static propTypes = {
-    extraClassNames: PropTypes.string,
-    children: PropTypes.node.isRequired,
-    tagType: PropTypes.oneOf([
-      'primary',
-      'positive',
-      'negative',
-      'warning',
-      'secondary',
-      'muted',
-    ]),
-    testId: PropTypes.string,
-  };
+const styles = require('./Tag.css');
 
+interface TagProps
+  extends React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLParagraphElement>,
+    HTMLParagraphElement
+  > {
+  extraClassNames?: string;
+  children: React.ReactNode;
+  tagType?:
+    | 'primary'
+    | 'positive'
+    | 'negative'
+    | 'warning'
+    | 'secondary'
+    | 'muted';
+  testId?: string;
+}
+
+export class Tag extends Component<TagProps> {
   static defaultProps = {
-    extraClassNames: undefined,
     tagType: 'primary',
     testId: 'cf-ui-tag',
   };
