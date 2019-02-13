@@ -21,6 +21,8 @@
 /// <reference path="./dist/components/ControlledInput/ControlledInput.d.ts" />
 /// <reference path="./dist/components/ControlledInputField/ControlledInputField.d.ts" />
 /// <reference path="./dist/components/FormLabel/FormLabel.d.ts" />
+/// <reference path="./dist/components/Form/FieldGroup/FieldGroup.d.ts" />
+/// <reference path="./dist/components/Form/Form/Form.d.ts" />
 
 import * as React from 'react';
 
@@ -47,6 +49,8 @@ import TagComponent from './dist/components/Tag/Tag';
 import ControlledInputComponent from './dist/components/ControlledInput/ControlledInput';
 import ControlledInputFieldComponent from './dist/components/ControlledInputField/ControlledInputField';
 import FormLabelComponent from './dist/components/FormLabel/FormLabel';
+import FieldGroupComponent from './dist/components/Form/FieldGroup/FieldGroup';
+import FormComponent from './dist/components/Form/Form/Form';
 
 export const Button: typeof ButtonComponent;
 export const Spinner: typeof SpinnerComponent;
@@ -71,6 +75,8 @@ export const Tag: typeof TagComponent;
 export const ControlledInput: typeof ControlledInputComponent;
 export const ControlledInputField: typeof ControlledInputFieldComponent;
 export const FormLabel: typeof FormLabelComponent;
+export const FieldGroup: typeof FieldGroupComponent;
+export const Form: typeof FormComponent;
 
 export interface CopyButtonProps {
   extraClassNames?: string;
@@ -180,29 +186,6 @@ export default class EditorToolbarDivider extends React.Component<
   EditorToolbarDividerProps,
   any
 > {
-  render(): JSX.Element;
-}
-export type FormSpacing = 'condensed' | 'default';
-
-export interface FormProps {
-  extraClassNames?: string;
-  children: React.ReactNode;
-  onSubmit?: (...args: any[]) => any;
-  spacing?: FormSpacing;
-  testId?: string;
-}
-
-export class Form extends React.Component<FormProps, any> {
-  render(): JSX.Element;
-}
-
-export interface FieldGroupProps {
-  extraClassNames?: string;
-  children: React.ReactNode;
-  row?: boolean;
-}
-
-export class FieldGroup extends React.Component<FieldGroupProps, any> {
   render(): JSX.Element;
 }
 

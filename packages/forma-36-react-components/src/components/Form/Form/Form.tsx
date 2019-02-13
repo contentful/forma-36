@@ -1,19 +1,22 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import cn from 'classnames';
-import styles from './Form.css';
 
-class Form extends React.Component {
-  static propTypes = {
-    extraClassNames: PropTypes.string,
-    children: PropTypes.node.isRequired,
-    onSubmit: PropTypes.func,
-    spacing: PropTypes.oneOf(['condensed', 'default']),
-    testId: PropTypes.string,
-  };
+const styles = require('./Form.css');
 
+interface FormProps
+  extends React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLFormElement>,
+    HTMLFormElement
+  > {
+  extraClassNames?: string;
+  children: React.ReactNode;
+  onSubmit?: () => void;
+  spacing?: 'condensed' | 'default';
+  testId?: string;
+}
+
+export class Form extends Component<FormProps> {
   static defaultProps = {
-    extraClassNames: undefined,
     spacing: 'default',
     testId: 'cf-ui-form',
     onSubmit: () => {},

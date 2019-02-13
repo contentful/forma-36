@@ -1,17 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import cn from 'classnames';
-import styles from './FieldGroup.css';
 
-class FieldGroup extends React.Component {
-  static propTypes = {
-    extraClassNames: PropTypes.string,
-    children: PropTypes.node.isRequired,
-    row: PropTypes.bool,
-  };
+const styles = require('./FieldGroup.css');
 
+interface FieldGroupProps
+  extends React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+  > {
+  extraClassNames?: string;
+  children: React.ReactNode;
+  row?: boolean;
+}
+
+export class FieldGroup extends Component<FieldGroupProps> {
   static defaultProps = {
-    extraClassNames: undefined,
     row: false,
   };
 
