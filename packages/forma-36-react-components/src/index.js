@@ -60,6 +60,9 @@ import SkeletonContainer from './components/Skeleton/SkeletonContainer';
 import SkeletonDisplayText from './components/Skeleton/SkeletonDisplayText';
 import SkeletonText from './components/Skeleton/SkeletonText';
 import SkeletonImage from './components/Skeleton/SkeletonImage';
+import Tabs from './components/Tabs';
+import Tab from './components/Tabs/Tab';
+import TabPanel from './components/Tabs/TabPanel';
 // -- Add imports above this line (required by plopfile.js) --
 // The above line is used as a insert marker when autogenerating components with `yarn add-component`
 
@@ -126,6 +129,9 @@ module.exports = {
   SkeletonDisplayText,
   SkeletonText,
   SkeletonImage,
+  Tabs,
+  Tab,
+  TabPanel,
   // -- Add exports above this line (required by plopfile.js) --
   // The above line is used as a insert marker when autogenerating components with `yarn add-component`
 };
