@@ -1,0 +1,33 @@
+@import 'settings/colors';
+@import 'settings/typography';
+@import 'settings/transitions';
+@import 'settings/dimensions';
+
+.CommandPanel {
+  display: block;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1), 0 5px 10px -5px rgba(0, 0, 0, 0.3);
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-stack-primary);
+  font-size: calc(1rem * (14 / var(--font-base-default)));
+  width: 320px;
+  max-height: 185px; /* height of 4 and a half items */
+  overflow-y: auto;
+}
+
+.CommandPanel__item {
+  padding: var(--spacing-s) var(--spacing-xs);
+  border-bottom: 1px solid #ddd;
+}
+
+.CommandPanel__item--is-selected {
+  background: #f7f9fa;
+}
+
+.CommandPanel__item:last-child {
+  border-bottom: 0;
+}
