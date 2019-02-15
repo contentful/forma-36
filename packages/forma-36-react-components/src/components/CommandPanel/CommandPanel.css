@@ -33,7 +33,7 @@
   letter-spacing: var(--letter-spacing-wide);
   font-size: calc(1rem * (12 / var(--font-base-default)));
   text-transform: uppercase;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid 1px solid var(--color-element-dark);
   margin: 0;
   line-height: var(--line-height-default);
   color: var(--color-text-dark);
