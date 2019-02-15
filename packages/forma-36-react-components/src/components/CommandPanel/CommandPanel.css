@@ -13,18 +13,21 @@
   margin: 0;
   padding: 0;
   font-family: var(--font-stack-primary);
-  font-size: calc(1rem * (14 / var(--font-base-default)));
   width: 320px;
-  max-height: 185px; /* height of 4 and a half items */
+  max-height: 207px; /* height of 4 and a half items */
   overflow-y: auto;
 }
 
 .CommandPanel__item {
+  font-size: calc(1rem * (14 / var(--font-base-default)));
+  line-height: var(--line-height-default);
   padding: var(--spacing-s) var(--spacing-xs);
   border-bottom: 1px solid #ddd;
+  margin: 0;
 }
 
-.CommandPanel__item--is-selected {
+.CommandPanel__item--is-selected,
+.CommandPanel__item:hover {
   background: #f7f9fa;
 }
 
