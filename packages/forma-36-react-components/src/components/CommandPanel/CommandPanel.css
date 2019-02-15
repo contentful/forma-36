@@ -22,7 +22,7 @@
   font-size: calc(1rem * (14 / var(--font-base-default)));
   line-height: var(--line-height-default);
   padding: var(--spacing-s) var(--spacing-xs);
-  border-bottom: 1px solid var(--color-element-dark);
+  border-bottom: 1px solid var(--color-element-mid);
   margin: 0;
   color: var(--color-text-dark);
 }
@@ -33,7 +33,7 @@
   letter-spacing: var(--letter-spacing-wide);
   font-size: calc(1rem * (12 / var(--font-base-default)));
   text-transform: uppercase;
-  border-bottom: 1px solid 1px solid var(--color-element-dark);
+  border-bottom: 1px solid var(--color-element-mid);
   margin: 0;
   line-height: var(--line-height-default);
   color: var(--color-text-dark);
