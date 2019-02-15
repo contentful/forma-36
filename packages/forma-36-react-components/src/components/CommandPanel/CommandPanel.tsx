@@ -78,6 +78,10 @@ class CommandPanel extends React.Component<CommandPanelProps> {
   renderGroups() {
     const groups = [...new Set(this.state.items.map(item => item.group))];
 
+    if (!groups.length) {
+      return <li className={styles['CommandPanel__item']}>No results</li>;
+    }
+
     return groups.map((groupName, index) => {
       return (
         <React.Fragment>
@@ -91,30 +95,26 @@ class CommandPanel extends React.Component<CommandPanelProps> {
   }
 
   renderItems(groupName) {
-    if (this.state.items.length) {
-      return this.state.items
-        .filter(item => item.group === groupName)
-        .map(item => {
-          const index = this.state.items.indexOf(item);
-          const isSelected = index === this.state.selectedKey;
+    return this.state.items
+      .filter(item => item.group === groupName)
+      .map(item => {
+        const index = this.state.items.indexOf(item);
+        const isSelected = index === this.state.selectedKey;
 
-          const classNames = cn(styles['CommandPanel__item'], {
-            [styles['CommandPanel__item--is-selected']]: isSelected,
-          });
-
-          return (
-            <li
-              key={index}
-              className={classNames}
-              onClick={item.callback && item.callback}
-            >
-              {item.label}
-            </li>
-          );
+        const classNames = cn(styles['CommandPanel__item'], {
+          [styles['CommandPanel__item--is-selected']]: isSelected,
         });
-    } else {
-      return <li className={styles['CommandPanel__item']}>No results</li>;
-    }
+
+        return (
+          <li
+            key={index}
+            className={classNames}
+            onClick={item.callback && item.callback}
+          >
+            {item.label}
+          </li>
+        );
+      });
   }
 
   render() {
