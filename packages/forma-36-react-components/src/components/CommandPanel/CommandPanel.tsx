@@ -11,6 +11,40 @@ export interface CommandPanelProps {
   items?: any;
 }
 
+export interface CommandPanelItemProps {
+  index?: any;
+  classNames?: any;
+  isSelected?: any;
+  item?: any;
+}
+
+class CommandPanelItem extends React.Component<CommandPanelItemProps> {
+  listItemRef: any;
+
+  componentDidUpdate() {
+    if (this.props.isSelected) {
+      this.listItemRef.scrollIntoView();
+    }
+  }
+
+  render() {
+    const { index, classNames, item } = this.props;
+
+    return (
+      <li
+        key={index}
+        className={classNames}
+        onClick={item.callback && item.callback}
+        ref={ref => {
+          this.listItemRef = ref;
+        }}
+      >
+        {item.label}
+      </li>
+    );
+  }
+}
+
 class CommandPanel extends React.Component<CommandPanelProps> {
   static defaultProps = {
     extraClassNames: undefined,
@@ -106,13 +140,12 @@ class CommandPanel extends React.Component<CommandPanelProps> {
         });
 
         return (
-          <li
+          <CommandPanelItem
+            item={item}
+            classNames={classNames}
             key={index}
-            className={classNames}
-            onClick={item.callback && item.callback}
-          >
-            {item.label}
-          </li>
+            isSelected={isSelected}
+          />
         );
       });
   }
