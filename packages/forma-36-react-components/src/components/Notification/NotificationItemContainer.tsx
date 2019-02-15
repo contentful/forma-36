@@ -1,22 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
+import React, { Component } from 'react';
 import AnimateHeight from 'react-animate-height';
+import NotificationItem, { NotificationItemProps } from './NotificationItem';
 
-import NotificationItem, {
-  NotificationItemPropTypes,
-} from './NotificationItem';
+export interface NotificationItemContainerProps extends NotificationItemProps {
+  duration: number;
+  isShown?: boolean;
+}
 
-class NotificationItemContainer extends React.Component {
-  static propTypes = {
-    isShown: PropTypes.bool,
-    duration: PropTypes.number.isRequired,
-    ...NotificationItemPropTypes,
-  };
-
+export class NotificationItemContainer extends Component<
+  NotificationItemContainerProps
+> {
   static defaultProps = {
     isShown: false,
   };
+
+  timer = null;
 
   state = {
     isShown: false,

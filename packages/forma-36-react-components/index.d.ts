@@ -25,6 +25,7 @@
 /// <reference path="./dist/components/Form/Form/Form.d.ts" />
 /// <reference path="./dist/components/Modal/Modal/Modal.d.ts" />
 /// <reference path="./dist/components/Modal/ModalConfirm/ModalConfirm.d.ts" />
+/// <reference path="./dist/components/Notification/index.d.ts" />
 
 import * as React from 'react';
 
@@ -55,6 +56,7 @@ import FieldGroupComponent from './dist/components/Form/FieldGroup/FieldGroup';
 import FormComponent from './dist/components/Form/Form/Form';
 import ModalComponent from './dist/components/Modal/Modal/Modal';
 import ModalConfirmComponent from './dist/components/Modal/ModalConfirm/ModalConfirm';
+import NotificationAPI from './dist/components/Notification/index';
 
 export const Button: typeof ButtonComponent;
 export const Spinner: typeof SpinnerComponent;
@@ -83,6 +85,7 @@ export const FieldGroup: typeof FieldGroupComponent;
 export const Form: typeof FormComponent;
 export const Modal: typeof ModalComponent;
 export const ModalConfirm: typeof ModalConfirmComponent;
+export const Notification: typeof NotificationAPI;
 
 export interface CopyButtonProps {
   extraClassNames?: string;
@@ -284,37 +287,6 @@ export interface HeaderProps {
 }
 
 export const Header: React.SFC<HeaderProps>;
-
-export interface NotificationItemProps {}
-
-export class NotificationItem extends React.Component<
-  NotificationItemProps,
-  any
-> {
-  render(): JSX.Element;
-}
-export interface NotificationItemContainerProps {
-  isShown?: boolean;
-  duration: number;
-}
-
-export class NotificationItemContainer extends React.Component<
-  NotificationItemContainerProps,
-  any
-> {
-  render(): JSX.Element;
-}
-
-export interface NotificationsManagerProps {
-  register: (...args: any[]) => any;
-}
-
-export class NotificationsManager extends React.PureComponent<
-  NotificationsManagerProps,
-  any
-> {
-  render(): JSX.Element;
-}
 
 export type SelectWidth = 'auto' | 'small' | 'medium' | 'large' | 'full';
 

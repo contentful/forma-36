@@ -49,7 +49,3 @@
   outline: none;
   pointer-events: all;
 }
-
-.NotificationItem__dismiss svg {
-  fill: var(--color-white);
-}
