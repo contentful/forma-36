@@ -82,9 +82,7 @@ class CommandPanel extends React.Component<CommandPanelProps> {
       return (
         <React.Fragment>
           {groupName && (
-            <li className={styles['CommandPanel__item']}>
-              <strong>{groupName}</strong>
-            </li>
+            <li className={styles['CommandPanel__divider']}>{groupName}</li>
           )}
           {this.renderItems(groupName)}
         </React.Fragment>
