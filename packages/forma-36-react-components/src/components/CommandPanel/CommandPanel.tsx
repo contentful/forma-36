@@ -23,7 +23,11 @@ class CommandPanelItem extends React.Component<CommandPanelItemProps> {
 
   componentDidUpdate() {
     if (this.props.isSelected) {
-      this.listItemRef.scrollIntoView();
+      this.listItemRef.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'start',
+      });
     }
   }
 
