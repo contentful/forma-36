@@ -39,8 +39,7 @@
   color: var(--color-text-dark);
 }
 
-.CommandPanel__item--is-selected,
-.CommandPanel__item:hover {
+.CommandPanel__item--is-selected {
   background: var(--color-element-light);
 }
 
