@@ -30,9 +30,9 @@ exports[`renders the component 1`] = `
     Notification text
   </div>
   <IconButton
-    buttonType="primary"
-    className="NotificationItem__dismiss"
+    buttonType="white"
     disabled={false}
+    extraClassNames="NotificationItem__dismiss"
     iconProps={
       Object {
         "icon": "Close",

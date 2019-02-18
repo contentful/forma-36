@@ -1,27 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
 import IconButton from '../IconButton';
 import Icon from '../Icon';
-import { iconName } from '../Icon/constants';
-import styles from './NotificationItem.css';
 
-const Icons = {
-  success: iconName.CheckCircle,
-  error: iconName.Warning,
-};
+const styles = require('./NotificationItem.css');
 
-export const NotificationItemPropTypes = {
-  intent: PropTypes.oneOf(['error', 'success']),
-  onClose: PropTypes.func.isRequired,
-  hasCloseButton: PropTypes.bool,
-  children: PropTypes.node.isRequired,
-  testId: PropTypes.string,
-};
+export interface NotificationItemProps {
+  intent: 'success' | 'error';
+  hasCloseButton?: boolean;
+  onClose?: Function;
+  testId?: string;
+  children: React.ReactNode;
+}
 
-class NotificationItem extends React.Component {
-  static propTypes = NotificationItemPropTypes;
-
+export class NotificationItem extends Component<NotificationItemProps> {
   static defaultProps = {
     testId: 'cf-ui-notification',
     intent: 'success',
@@ -31,10 +23,6 @@ class NotificationItem extends React.Component {
   render() {
     const { children, testId, intent, onClose, hasCloseButton } = this.props;
 
-    const icon = Icons[intent];
-    if (!icon) {
-      throw new Error(`Intent ${intent} is not supported in Note component.`);
-    }
     const classes = classNames(styles.NotificationItem, {
       [styles[`NotificationItem--${intent}`]]: true,
     });
@@ -48,16 +36,22 @@ class NotificationItem extends React.Component {
       >
         <div className={styles.NotificationItem__intent}>{intent}</div>
         <div className={styles.NotificationItem__icon} aria-hidden="true">
-          <Icon icon={icon} color="white" />
+          <Icon
+            icon={intent === 'success' ? 'CheckCircle' : 'Warning'}
+            color="white"
+          />
         </div>
         <div className={styles.NotificationItem__text}>{children}</div>
         {hasCloseButton && (
           <IconButton
+            buttonType="white"
             iconProps={{ icon: 'Close' }}
-            onClick={onClose}
+            onClick={() => {
+              onClose();
+            }}
             testId="cf-ui-notification-close"
             label="Dismiss"
-            className={styles.NotificationItem__dismiss}
+            extraClassNames={styles.NotificationItem__dismiss}
           />
         )}
       </div>

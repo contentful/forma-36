@@ -1894,12 +1894,6 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-"@types/react@>=16":
-  version "16.4.7"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.4.7.tgz#f33f6d759a7e1833befa15224d68942d178a5a3f"
-  dependencies:
-    csstype "^2.2.0"
-
 "@types/storybook__addon-info@3.4.2":
   version "3.4.2"
   resolved "https://registry.yarnpkg.com/@types/storybook__addon-info/-/storybook__addon-info-3.4.2.tgz#31a27e66867f02e593579cc58f54d22e726b0925"
@@ -10419,14 +10413,13 @@ react-addons-create-fragment@^15.5.3:
     loose-envify "^1.3.1"
     object-assign "^4.1.0"
 
-react-animate-height@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/react-animate-height/-/react-animate-height-2.0.3.tgz#7ee31ab2b357e25d68f9c6f53fcba8834abc17a1"
+react-animate-height@^2.0.7:
+  version "2.0.7"
+  resolved "https://registry.yarnpkg.com/react-animate-height/-/react-animate-height-2.0.7.tgz#e73608a3b31224ef2c3f75b5b3f1351211d30140"
+  integrity sha512-NbdKlopeFDUY7oDlLV5T3XvpV/yi8sqO7b78mzObpgWr+prPJ/tipKYNGTDHetjElnmrC5dyC5vHUu86ua3G1A==
   dependencies:
     classnames "^2.2.5"
     prop-types "^15.6.1"
-  optionalDependencies:
-    "@types/react" ">=16"
 
 react-color@^2.14.1:
   version "2.14.1"

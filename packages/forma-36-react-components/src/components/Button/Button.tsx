@@ -1,4 +1,4 @@
-import React, { Component, SyntheticEvent } from 'react';
+import React, { Component, SyntheticEvent, CSSProperties } from 'react';
 import cn from 'classnames';
 import { CSSTransition } from 'react-transition-group';
 import Icon, { IconType } from '../Icon/Icon';
@@ -22,6 +22,7 @@ interface ButtonProps {
   type?: 'button' | 'submit' | 'reset';
   size?: 'small' | 'large';
   href?: string;
+  style?: CSSProperties;
 }
 
 export class Button extends Component<ButtonProps> {

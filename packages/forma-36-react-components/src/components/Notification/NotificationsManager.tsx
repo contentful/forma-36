@@ -2,7 +2,8 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import NotificationItemContainer from './NotificationItemContainer';
-import styles from './NotificationsManager.css';
+
+const styles = require('./NotificationsManager.css');
 
 let uniqueId = 0;
 
@@ -11,7 +12,50 @@ const getUniqueId = () => {
   return uniqueId;
 };
 
-export default class NotificationsManager extends PureComponent {
+export type Intent = 'success' | 'error';
+export type Position = 'top' | 'bottom';
+
+export interface Notification {
+  id: number;
+  text: string;
+  close: Function;
+  duration: number;
+  canClose: boolean;
+  isShown: boolean;
+  intent: Intent;
+}
+
+export type ShowAction = (
+  text: string,
+  setting?: { duration?: number; intent: Intent; canClose?: boolean },
+) => Notification;
+
+export type CloseAction = (id: number) => void;
+
+export type CloseAllAction = () => void;
+
+export type SetDurationAction = (duration: number) => void;
+
+export type SetPositionAction = (
+  position: Position,
+  params?: { offset: number },
+) => void;
+
+interface NotificationsManagerProps {
+  register: (name: string, callback: Function) => void;
+}
+
+interface NotificationsManagerState {
+  position: Position;
+  positionOffset: number;
+  duration: number;
+  items: Notification[];
+}
+
+export class NotificationsManager extends PureComponent<
+  NotificationsManagerProps,
+  NotificationsManagerState
+> {
   static propTypes = {
     register: PropTypes.func.isRequired,
   };
@@ -31,18 +75,18 @@ export default class NotificationsManager extends PureComponent {
     this.props.register('setDuration', this.setDuration);
   }
 
-  setPosition = (position, params = {}) => {
+  setPosition: SetPositionAction = (position, params?: { offset: number }) => {
     if (position === 'bottom' || position === 'top') {
-      const positionOffset = params.offset || 20;
+      const positionOffset = params && params.offset ? params.offset : 20;
       this.setState({ position, positionOffset });
     }
   };
 
-  setDuration = duration => {
+  setDuration: SetDurationAction = duration => {
     this.setState({ duration });
   };
 
-  close = id => {
+  close: CloseAction = id => {
     this.setState(state => ({
       items: state.items.map(item => {
         if (item.id !== id) {
@@ -62,7 +106,7 @@ export default class NotificationsManager extends PureComponent {
     }));
   };
 
-  closeAll = () => {
+  closeAll: CloseAllAction = () => {
     this.setState(state => ({
       items: state.items.map(item => ({
         ...item,
@@ -71,7 +115,7 @@ export default class NotificationsManager extends PureComponent {
     }));
   };
 
-  show = (text, { duration, intent, canClose }) => {
+  show: ShowAction = (text, { duration, intent, canClose }) => {
     const notificationId = getUniqueId();
     const notification = {
       id: notificationId,
@@ -85,10 +129,12 @@ export default class NotificationsManager extends PureComponent {
     this.setState(state => {
       if (state.position === 'top') {
         return {
+          ...state,
           items: [notification, ...state.items],
         };
       }
       return {
+        ...state,
         items: [...state.items, notification],
       };
     });
@@ -122,3 +168,5 @@ export default class NotificationsManager extends PureComponent {
     );
   }
 }
+
+export default NotificationsManager;
