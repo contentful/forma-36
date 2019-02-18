@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+import { storiesOf, StoryDecorator } from '@storybook/react';
 import { text, boolean } from '@storybook/addon-knobs';
 import { StateDecorator, Store } from '@sambego/storybook-state';
 import { host } from 'storybook-host';
@@ -20,8 +20,7 @@ storiesOf('Components|CheckboxField', module)
       cropMarks: false,
     }),
   )
-  // @ts-ignore
-  .addDecorator(StateDecorator(store))
+  .addDecorator(StateDecorator(store) as StoryDecorator)
   .add(
     'default',
     withInfo()(() => (

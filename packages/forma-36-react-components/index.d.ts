@@ -26,6 +26,9 @@
 /// <reference path="./dist/components/Modal/Modal/Modal.d.ts" />
 /// <reference path="./dist/components/Modal/ModalConfirm/ModalConfirm.d.ts" />
 /// <reference path="./dist/components/Notification/index.d.ts" />
+/// <reference path="./dist/components/Tabs/Tabs.d.ts" />
+/// <reference path="./dist/components/Tabs/Tab.d.ts" />
+/// <reference path="./dist/components/Tabs/TabPanel.d.ts" />
 
 import * as React from 'react';
 
@@ -57,6 +60,9 @@ import FormComponent from './dist/components/Form/Form/Form';
 import ModalComponent from './dist/components/Modal/Modal/Modal';
 import ModalConfirmComponent from './dist/components/Modal/ModalConfirm/ModalConfirm';
 import NotificationAPI from './dist/components/Notification/index';
+import TabsComponent from './dist/components/Tabs/Tabs';
+import TabComponent from './dist/components/Tabs/Tab';
+import TabPanelComponent from './dist/components/Tabs/TabPanel';
 
 export const Button: typeof ButtonComponent;
 export const Spinner: typeof SpinnerComponent;
@@ -85,7 +91,13 @@ export const FieldGroup: typeof FieldGroupComponent;
 export const Form: typeof FormComponent;
 export const Modal: typeof ModalComponent;
 export const ModalConfirm: typeof ModalConfirmComponent;
+<<<<<<< HEAD
 export const Notification: typeof NotificationAPI;
+=======
+export const Tabs: typeof TabsComponent;
+export const Tab: typeof TabComponent;
+export const TabPanel: typeof TabPanelComponent;
+>>>>>>> feat(Tabs): Created Tabs component
 
 export interface CopyButtonProps {
   extraClassNames?: string;

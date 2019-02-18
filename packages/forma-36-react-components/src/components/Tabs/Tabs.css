@@ -1,0 +1,57 @@
+@import 'settings/colors';
+@import 'settings/typography';
+@import 'settings/transitions';
+@import 'settings/dimensions';
+
+.Tabs {
+  display: flex;
+}
+
+.Tabs .Tab {
+  margin-right: var(--spacing-l);
+}
+
+.Tab {
+  white-space: nowrap;
+  color: var(--color-text-dark);
+  position: relative;
+  cursor: pointer;
+  padding: 0 var(--spacing-s);
+  height: 56px;
+  line-height: 56px;
+  font-size: var(--font-size-m);
+  font-family: var(--font-stack-primary);
+  font-weight: var(--font-weight-normal);
+  outline: none;
+  text-decoration: none;
+}
+
+.Tabs .Tab:last-child {
+  margin-right: 0;
+}
+
+.Tab__selected {
+  font-weight: var(--font-weight-demi-bold);
+}
+
+.Tab:before {
+  content: '';
+  position: absolute;
+  background: var(--color-primary);
+  opacity: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+
+.Tab:hover:before,
+.Tab:focus:before {
+  opacity: 0.5;
+}
+
+.Tab__selected:hover:before,
+.Tab__selected:focus:before,
+.Tab__selected:before {
+  opacity: 1;
+}
