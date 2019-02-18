@@ -1,16 +1,16 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 import { axe } from 'jest-axe';
 import DisplayText from './DisplayText';
 
 it('renders the component', () => {
-  const output = shallow(<DisplayText>DisplayText</DisplayText>);
+  const output = mount(<DisplayText>DisplayText</DisplayText>);
 
   expect(output).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(
+  const output = mount(
     <DisplayText extraClassNames="my-extra-class">DisplayText</DisplayText>,
   );
 
@@ -18,13 +18,13 @@ it('renders the component with an additional class name', () => {
 });
 
 it('renders the component h3', () => {
-  const output = shallow(<DisplayText element="h3">DisplayText</DisplayText>);
+  const output = mount(<DisplayText element="h3">DisplayText</DisplayText>);
 
   expect(output).toMatchSnapshot();
 });
 
 it('renders a large varient', () => {
-  const output = shallow(<DisplayText size="large">DisplayText</DisplayText>);
+  const output = mount(<DisplayText size="large">DisplayText</DisplayText>);
 
   expect(output).toMatchSnapshot();
 });

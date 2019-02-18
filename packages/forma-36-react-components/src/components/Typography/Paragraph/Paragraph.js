@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import cn from 'classnames';
 import styles from './Paragraph.css';
 
+import { TypographyContext } from '../Typography/Typography';
+
 class Paragraph extends React.Component {
   static propTypes = {
     extraClassNames: PropTypes.string,
@@ -31,9 +33,21 @@ class Paragraph extends React.Component {
     const Element = element;
 
     return (
-      <Element className={classNames} data-test-id={testId} {...otherProps}>
-        {children}
-      </Element>
+      <TypographyContext.Consumer>
+        {({ paragraph }) => {
+          return (
+            <Element
+              className={cn(classNames, [
+                paragraph && `f36-margin-bottom--${paragraph.spacing}`,
+              ])}
+              data-test-id={testId}
+              {...otherProps}
+            >
+              {children}
+            </Element>
+          );
+        }}
+      </TypographyContext.Consumer>
     );
   }
 }

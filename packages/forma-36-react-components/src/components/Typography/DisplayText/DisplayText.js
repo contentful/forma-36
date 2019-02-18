@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import cn from 'classnames';
 import styles from './DisplayText.css';
 
+import { TypographyContext } from '../Typography/Typography';
+
 class DisplayText extends React.Component {
   static propTypes = {
     extraClassNames: PropTypes.string,
@@ -36,9 +38,24 @@ class DisplayText extends React.Component {
     const Element = element;
 
     return (
-      <Element className={classNames} data-test-id={testId} {...otherProps}>
-        {children}
-      </Element>
+      <TypographyContext.Consumer>
+        {value => {
+          const contextSize =
+            size === 'large' ? value['displayTextLarge'] : value['displayText'];
+
+          return (
+            <Element
+              className={cn(classNames, [
+                contextSize && `f36-margin-bottom--${contextSize.spacing}`,
+              ])}
+              data-test-id={testId}
+              {...otherProps}
+            >
+              {children}
+            </Element>
+          );
+        }}
+      </TypographyContext.Consumer>
     );
   }
 }

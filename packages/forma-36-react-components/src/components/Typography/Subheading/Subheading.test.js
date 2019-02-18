@@ -1,16 +1,16 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 import { axe } from 'jest-axe';
 import Subheading from './Subheading';
 
 it('renders the component', () => {
-  const output = shallow(<Subheading>Subheading</Subheading>);
+  const output = mount(<Subheading>Subheading</Subheading>);
 
   expect(output).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(
+  const output = mount(
     <Subheading extraClassNames="my-extra-class">Subheading</Subheading>,
   );
 
@@ -18,7 +18,7 @@ it('renders the component with an additional class name', () => {
 });
 
 it('renders the component h3', () => {
-  const output = shallow(<Subheading element="h3">Subheading</Subheading>);
+  const output = mount(<Subheading element="h3">Subheading</Subheading>);
 
   expect(output).toMatchSnapshot();
 });

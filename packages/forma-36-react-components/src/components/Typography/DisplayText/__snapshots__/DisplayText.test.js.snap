@@ -1,37 +1,62 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders a large varient 1`] = `
-<h1
-  className="DisplayText DisplayText--large"
-  data-test-id="cf-ui-display-text"
+<DisplayText
+  element="h1"
+  size="large"
+  testId="cf-ui-display-text"
 >
-  DisplayText
-</h1>
+  <h1
+    className="DisplayText DisplayText--large"
+    data-test-id="cf-ui-display-text"
+  >
+    DisplayText
+  </h1>
+</DisplayText>
 `;
 
 exports[`renders the component 1`] = `
-<h1
-  className="DisplayText DisplayText--default"
-  data-test-id="cf-ui-display-text"
+<DisplayText
+  element="h1"
+  size="default"
+  testId="cf-ui-display-text"
 >
-  DisplayText
-</h1>
+  <h1
+    className="DisplayText DisplayText--default"
+    data-test-id="cf-ui-display-text"
+  >
+    DisplayText
+  </h1>
+</DisplayText>
 `;
 
 exports[`renders the component h3 1`] = `
-<h3
-  className="DisplayText DisplayText--default"
-  data-test-id="cf-ui-display-text"
+<DisplayText
+  element="h3"
+  size="default"
+  testId="cf-ui-display-text"
 >
-  DisplayText
-</h3>
+  <h3
+    className="DisplayText DisplayText--default"
+    data-test-id="cf-ui-display-text"
+  >
+    DisplayText
+  </h3>
+</DisplayText>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
-<h1
-  className="DisplayText my-extra-class DisplayText--default"
-  data-test-id="cf-ui-display-text"
+<DisplayText
+  element="h1"
+  extraClassNames="my-extra-class"
+  size="default"
+  testId="cf-ui-display-text"
 >
-  DisplayText
-</h1>
+  <h1
+    className="DisplayText my-extra-class DisplayText--default"
+    data-test-id="cf-ui-display-text"
+  >
+    DisplayText
+  </h1>
+</DisplayText>
 `;
