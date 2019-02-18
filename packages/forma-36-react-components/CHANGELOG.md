@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.4.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@2.3.14...@contentful/forma-36-react-components@2.4.0) (2019-02-18)
+
+
+### Features
+
+* **Tabs:** Created Tabs component ([53789e6](https://github.com/contentful/forma-36/commit/53789e6))
+
+
+
+
+
 ## [2.3.14](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@2.3.13...@contentful/forma-36-react-components@2.3.14) (2019-02-18)
 
 
