@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
 import CopyButton from '../CopyButton';
-import * as styles from './TextInput.css';
+import styles from './TextInput.css';
 
 export interface TextInputPropTypes {
   width?: 'small' | 'medium' | 'large' | 'full';

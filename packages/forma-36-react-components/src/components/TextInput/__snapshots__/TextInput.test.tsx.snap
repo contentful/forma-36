@@ -2,10 +2,11 @@
 
 exports[`renders the component as required 1`] = `
 <div
-  className=""
+  className="TextInput TextInput--full"
 >
   <input
     aria-label="userEmail"
+    className="TextInput__input"
     data-test-id="someTestId"
     disabled={false}
     id="someInput"
@@ -19,10 +20,11 @@ exports[`renders the component as required 1`] = `
 
 exports[`renders the component with a placeholder text 1`] = `
 <div
-  className=""
+  className="TextInput TextInput--full"
 >
   <input
     aria-label="userEmail"
+    className="TextInput__input"
     data-test-id="cf-ui-text-input"
     disabled={false}
     id="someInput"
@@ -37,10 +39,11 @@ exports[`renders the component with a placeholder text 1`] = `
 
 exports[`renders the component with a test id 1`] = `
 <div
-  className=""
+  className="TextInput TextInput--full"
 >
   <input
     aria-label="userEmail"
+    className="TextInput__input"
     data-test-id="someTestId"
     disabled={false}
     id="someInput"
@@ -54,10 +57,11 @@ exports[`renders the component with a test id 1`] = `
 
 exports[`renders the component with all required props 1`] = `
 <div
-  className=""
+  className="TextInput TextInput--full"
 >
   <input
     aria-label="userEmail"
+    className="TextInput__input"
     data-test-id="cf-ui-text-input"
     disabled={false}
     id="someInput"
@@ -71,10 +75,11 @@ exports[`renders the component with all required props 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <div
-  className="my-extra-class"
+  className="TextInput my-extra-class TextInput--full"
 >
   <input
     aria-label="userEmail"
+    className="TextInput__input"
     data-test-id="cf-ui-text-input"
     disabled={false}
     id="someInput"
@@ -88,10 +93,11 @@ exports[`renders the component with an additional class name 1`] = `
 
 exports[`renders the component with disabled prop 1`] = `
 <div
-  className=""
+  className="TextInput TextInput--full TextInput--disabled"
 >
   <input
     aria-label="userEmail"
+    className="TextInput__input"
     data-test-id="cf-ui-text-input"
     disabled={true}
     id="someInput"
@@ -105,10 +111,11 @@ exports[`renders the component with disabled prop 1`] = `
 
 exports[`renders the component with error prop 1`] = `
 <div
-  className="undefined"
+  className="TextInput TextInput--full TextInput--negative"
 >
   <input
     aria-label="userEmail"
+    className="TextInput__input"
     data-test-id="cf-ui-text-input"
     disabled={false}
     id="someInput"
@@ -122,10 +129,11 @@ exports[`renders the component with error prop 1`] = `
 
 exports[`renders the component with maxLength 1`] = `
 <div
-  className=""
+  className="TextInput TextInput--full"
 >
   <input
     aria-label="userEmail"
+    className="TextInput__input"
     data-test-id="cf-ui-text-input"
     disabled={false}
     id="someInput"
@@ -140,10 +148,11 @@ exports[`renders the component with maxLength 1`] = `
 
 exports[`renders the component with onBlur prop 1`] = `
 <div
-  className=""
+  className="TextInput TextInput--full"
 >
   <input
     aria-label="userEmail"
+    className="TextInput__input"
     data-test-id="cf-ui-text-input"
     disabled={false}
     id="someInput"
@@ -158,10 +167,11 @@ exports[`renders the component with onBlur prop 1`] = `
 
 exports[`renders the component with onChange prop 1`] = `
 <div
-  className=""
+  className="TextInput TextInput--full"
 >
   <input
     aria-label="userEmail"
+    className="TextInput__input"
     data-test-id="cf-ui-text-input"
     disabled={false}
     id="someInput"
@@ -175,10 +185,11 @@ exports[`renders the component with onChange prop 1`] = `
 
 exports[`renders the component with small width 1`] = `
 <div
-  className=""
+  className="TextInput TextInput--small"
 >
   <input
     aria-label="userEmail"
+    className="TextInput__input"
     data-test-id="cf-ui-text-input"
     disabled={false}
     id="someInput"
@@ -192,10 +203,11 @@ exports[`renders the component with small width 1`] = `
 
 exports[`renders the component with the copy button 1`] = `
 <div
-  className=""
+  className="TextInput TextInput--full"
 >
   <input
     aria-label="userEmail"
+    className="TextInput__input"
     data-test-id="cf-ui-text-input"
     disabled={false}
     id="someInput"
@@ -205,6 +217,7 @@ exports[`renders the component with the copy button 1`] = `
     required={false}
   />
   <CopyButton
+    extraClassNames="TextInput__copy-button"
     onCopy={[Function]}
     testId="cf-ui-copy-button"
   />
@@ -213,10 +226,11 @@ exports[`renders the component with the copy button 1`] = `
 
 exports[`renders the component with value prop 1`] = `
 <div
-  className=""
+  className="TextInput TextInput--full"
 >
   <input
     aria-label="userEmail"
+    className="TextInput__input"
     data-test-id="cf-ui-text-input"
     disabled={false}
     id="someInput"
