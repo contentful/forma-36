@@ -20,6 +20,7 @@ export interface TextInputPropTypes {
   onBlur?: (...args: any[]) => any;
   onCopy?: (...args: any[]) => any;
   value?: string;
+  inputRef?: any;
   error?: boolean;
   required?: boolean;
 }
@@ -42,6 +43,7 @@ class TextInput extends Component<TextInputPropTypes> {
     disabled: false,
     required: false,
     width: 'full',
+    inputRef: undefined,
   };
 
   state = {
@@ -80,6 +82,7 @@ class TextInput extends Component<TextInputPropTypes> {
       type,
       name,
       id,
+      inputRef,
       ...otherProps
     } = this.props;
 
@@ -118,6 +121,7 @@ class TextInput extends Component<TextInputPropTypes> {
           }}
           value={this.state.value}
           type={type}
+          ref={inputRef}
           {...otherProps}
         />
         {withCopyButton && (
