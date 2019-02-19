@@ -91,13 +91,10 @@ export const FieldGroup: typeof FieldGroupComponent;
 export const Form: typeof FormComponent;
 export const Modal: typeof ModalComponent;
 export const ModalConfirm: typeof ModalConfirmComponent;
-<<<<<<< HEAD
 export const Notification: typeof NotificationAPI;
-=======
 export const Tabs: typeof TabsComponent;
 export const Tab: typeof TabComponent;
 export const TabPanel: typeof TabPanelComponent;
->>>>>>> feat(Tabs): Created Tabs component
 
 export interface CopyButtonProps {
   extraClassNames?: string;
