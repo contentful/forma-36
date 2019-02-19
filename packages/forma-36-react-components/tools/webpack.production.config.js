@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
@@ -21,6 +22,7 @@ module.exports = {
   },
 
   plugins: [
+    new webpack.WatchIgnorePlugin([/css\.d\.ts$/]),
     new MiniCssExtractPlugin({ filename: '[name].css' }),
     new OptimizeCssAssetsPlugin(),
   ],
@@ -41,7 +43,7 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader,
           },
           {
-            loader: 'css-loader',
+            loader: require.resolve('typings-for-css-modules-loader'),
             options: {
               importLoaders: 1,
               modules: true,

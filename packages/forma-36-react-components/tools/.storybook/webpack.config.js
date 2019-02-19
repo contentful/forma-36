@@ -1,9 +1,11 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json', '.css'],
   },
+  plugins: [new webpack.WatchIgnorePlugin([/css\.d\.ts$/])],
   module: {
     rules: [
       {
@@ -19,7 +21,7 @@ module.exports = {
         use: [
           'style-loader',
           {
-            loader: 'css-loader',
+            loader: require.resolve('typings-for-css-modules-loader'),
             options: {
               importLoaders: 1,
               modules: true,
