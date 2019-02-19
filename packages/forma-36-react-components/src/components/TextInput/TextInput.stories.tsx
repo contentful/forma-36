@@ -46,7 +46,7 @@ storiesOf('Components|TextInput', module)
   .add(
     'Controlling focus via ref',
     withInfo()(() => {
-      const textInputRef = React.createRef();
+      const textInputRef = React.createRef<HTMLInputElement>();
 
       return (
         <React.Fragment>

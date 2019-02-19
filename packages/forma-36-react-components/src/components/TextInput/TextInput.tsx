@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import React, { Component } from 'react';
+import React, { Component, RefObject } from 'react';
 import cn from 'classnames';
 import CopyButton from '../CopyButton';
 import styles from './TextInput.css';
@@ -20,7 +20,7 @@ export interface TextInputPropTypes {
   onBlur?: (...args: any[]) => any;
   onCopy?: (...args: any[]) => any;
   value?: string;
-  inputRef?: any;
+  inputRef?: RefObject<HTMLInputElement>;
   error?: boolean;
   required?: boolean;
 }
@@ -43,7 +43,6 @@ class TextInput extends Component<TextInputPropTypes> {
     disabled: false,
     required: false,
     width: 'full',
-    inputRef: undefined,
   };
 
   state = {
