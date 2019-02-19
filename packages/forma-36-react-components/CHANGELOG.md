@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.4.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@2.4.0...@contentful/forma-36-react-components@2.4.1) (2019-02-19)
+
+
+### Bug Fixes
+
+* **Typings:** Fix index.d.ts exports ([38cc51b](https://github.com/contentful/forma-36/commit/38cc51b))
+
+
+
+
+
 # [2.4.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@2.3.14...@contentful/forma-36-react-components@2.4.0) (2019-02-18)
 
 
