@@ -4,9 +4,7 @@ import { axe } from 'jest-axe';
 import TextInput from './TextInput';
 
 it('renders the component with all required props', () => {
-  const output = shallow(
-    <TextInput id="someInput" labelText="E-Mail" name="userEmail" />,
-  );
+  const output = shallow(<TextInput id="someInput" name="userEmail" />);
 
   expect(output).toMatchSnapshot();
 });
@@ -87,7 +85,11 @@ it('renders the component with maxLength', () => {
 
 it('renders the component with a placeholder text', () => {
   const output = shallow(
-    <TextInput id="someInput" name="userEmail" placehoder="placeholder text" />,
+    <TextInput
+      id="someInput"
+      name="userEmail"
+      placeholder="placeholder text"
+    />,
   );
 
   expect(output).toMatchSnapshot();
