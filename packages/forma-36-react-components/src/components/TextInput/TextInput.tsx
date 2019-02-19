@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import React from 'react';
+import React, { Component } from 'react';
 import cn from 'classnames';
 import CopyButton from '../CopyButton';
 import * as styles from './TextInput.css';
@@ -24,7 +24,7 @@ export interface TextInputPropTypes {
   required?: boolean;
 }
 
-class TextInput extends React.Component<TextInputPropTypes> {
+class TextInput extends Component<TextInputPropTypes> {
   static defaultProps = {
     name: undefined,
     id: undefined,
