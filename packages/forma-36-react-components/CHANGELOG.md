@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.5.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@2.4.1...@contentful/forma-36-react-components@2.5.0) (2019-02-20)
+
+
+### Bug Fixes
+
+* **eslint:** Ignore generated css.d.ts files ([923b040](https://github.com/contentful/forma-36/commit/923b040))
+* **Prettier:** ignore css.d.ts files ([44200a2](https://github.com/contentful/forma-36/commit/44200a2))
+* **Test:** Rename test ([f0b17f6](https://github.com/contentful/forma-36/commit/f0b17f6))
+* **TextInput:** Fix broken tests ([e4fec29](https://github.com/contentful/forma-36/commit/e4fec29))
+* **TextInput:** Show props in Storybook ([28d42a8](https://github.com/contentful/forma-36/commit/28d42a8))
+* **TypeScript:** use actual TextInput types ([d0271e9](https://github.com/contentful/forma-36/commit/d0271e9))
+
+
+### Features
+
+* **TextInput:** Add inputRef property ([a85bd0b](https://github.com/contentful/forma-36/commit/a85bd0b))
+* **TextInput:** Add inputRef property ([3145fc9](https://github.com/contentful/forma-36/commit/3145fc9))
+
+
+
+
+
 ## [2.4.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@2.4.0...@contentful/forma-36-react-components@2.4.1) (2019-02-19)
 
 
