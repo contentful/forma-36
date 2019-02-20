@@ -31,7 +31,7 @@ exports[`renders the component with a placeholder text 1`] = `
     name="userEmail"
     onChange={[Function]}
     onFocus={[Function]}
-    placehoder="placeholder text"
+    placeholder="placeholder text"
     required={false}
   />
 </div>
@@ -65,7 +65,6 @@ exports[`renders the component with all required props 1`] = `
     data-test-id="cf-ui-text-input"
     disabled={false}
     id="someInput"
-    labelText="E-Mail"
     name="userEmail"
     onChange={[Function]}
     onFocus={[Function]}

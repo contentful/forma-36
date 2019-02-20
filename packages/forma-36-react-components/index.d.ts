@@ -29,6 +29,7 @@
 /// <reference path="./dist/components/Tabs/Tabs.d.ts" />
 /// <reference path="./dist/components/Tabs/Tab.d.ts" />
 /// <reference path="./dist/components/Tabs/TabPanel.d.ts" />
+/// <reference path="./dist/components/TextInput/TextInput.d.ts" />
 
 import * as React from 'react';
 
@@ -63,6 +64,7 @@ import NotificationAPI from './dist/components/Notification/index';
 import TabsComponent from './dist/components/Tabs/Tabs';
 import TabComponent from './dist/components/Tabs/Tab';
 import TabPanelComponent from './dist/components/Tabs/TabPanel';
+import TextInputComponent from './dist/components/TextInput/TextInput';
 
 export const Button: typeof ButtonComponent;
 export const Spinner: typeof SpinnerComponent;
@@ -95,6 +97,7 @@ export const Notification: typeof NotificationAPI;
 export const Tabs: typeof TabsComponent;
 export const Tab: typeof TabComponent;
 export const TabPanel: typeof TabPanelComponent;
+export const TextInput: typeof TextInputComponent;
 
 export interface CopyButtonProps {
   extraClassNames?: string;
@@ -505,38 +508,6 @@ export interface TextFieldProps {
 }
 
 export class TextField extends React.Component<TextFieldProps, any> {
-  render(): JSX.Element;
-}
-export type TextInputWidth = 'small' | 'medium' | 'large' | 'full';
-
-export type TextInputType =
-  | 'text'
-  | 'password'
-  | 'email'
-  | 'number'
-  | 'search'
-  | 'url';
-
-export interface TextInputProps {
-  width?: TextInputWidth;
-  type?: TextInputType;
-  name?: string;
-  id?: string;
-  extraClassNames?: string;
-  withCopyButton?: boolean;
-  placeholder?: string;
-  onChange?: (...args: any[]) => any;
-  disabled?: boolean;
-  testId?: string;
-  maxLength?: number;
-  onBlur?: (...args: any[]) => any;
-  onCopy?: (...args: any[]) => any;
-  value?: string;
-  error?: boolean;
-  required?: boolean;
-}
-
-export class TextInput extends React.Component<TextInputProps, any> {
   render(): JSX.Element;
 }
 

@@ -15,5 +15,5 @@
     "typeRoots": ["node_modules/@types", "./typings.d.ts"]
   },
   "include": ["./"],
-  "exclude": ["dist", "node_modules", "index.d.ts"]
+  "exclude": ["dist", "dist-storybook", "node_modules", "index.d.ts"]
 }

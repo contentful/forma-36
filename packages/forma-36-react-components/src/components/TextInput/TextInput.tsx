@@ -1,36 +1,31 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
+import React, { Component, RefObject } from 'react';
 import cn from 'classnames';
 import CopyButton from '../CopyButton';
 import styles from './TextInput.css';
 
-class TextInput extends React.Component {
-  static propTypes = {
-    width: PropTypes.oneOf(['small', 'medium', 'large', 'full']),
-    type: PropTypes.oneOf([
-      'text',
-      'password',
-      'email',
-      'number',
-      'search',
-      'url',
-    ]),
-    name: PropTypes.string,
-    id: PropTypes.string,
-    extraClassNames: PropTypes.string,
-    withCopyButton: PropTypes.bool,
-    placeholder: PropTypes.string,
-    onChange: PropTypes.func,
-    disabled: PropTypes.bool,
-    testId: PropTypes.string,
-    maxLength: PropTypes.number,
-    onBlur: PropTypes.func,
-    onCopy: PropTypes.func,
-    value: PropTypes.string,
-    error: PropTypes.bool,
-    required: PropTypes.bool,
-  };
+export interface TextInputPropTypes {
+  width?: 'small' | 'medium' | 'large' | 'full';
+  type?: 'text' | 'password' | 'email' | 'number' | 'search' | 'url';
+  name?: string;
+  id?: string;
+  extraClassNames?: string;
+  withCopyButton?: boolean;
+  placeholder?: string;
+  onChange?: (...args: any[]) => any;
+  disabled?: boolean;
+  testId?: string;
+  maxLength?: number;
+  onBlur?: (...args: any[]) => any;
+  onCopy?: (...args: any[]) => any;
+  value?: string;
+  inputRef?: RefObject<HTMLInputElement>;
+  error?: boolean;
+  required?: boolean;
+}
 
+class TextInput extends Component<TextInputPropTypes> {
   static defaultProps = {
     name: undefined,
     id: undefined,
@@ -86,12 +81,13 @@ class TextInput extends React.Component {
       type,
       name,
       id,
+      inputRef,
       ...otherProps
     } = this.props;
 
     const widthClass = `TextInput--${width}`;
     const classNames = cn(
-      styles.TextInput,
+      styles['TextInput'],
       extraClassNames,
       styles[widthClass],
       {
@@ -104,7 +100,7 @@ class TextInput extends React.Component {
       <div className={classNames}>
         <input
           aria-label={name}
-          className={styles.TextInput__input}
+          className={styles['TextInput__input']}
           id={id}
           name={name}
           required={required}
@@ -124,6 +120,7 @@ class TextInput extends React.Component {
           }}
           value={this.state.value}
           type={type}
+          ref={inputRef}
           {...otherProps}
         />
         {withCopyButton && (

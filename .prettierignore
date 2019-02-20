@@ -1,2 +1,3 @@
 package.json
 *.hbs
+*.css.d.ts
