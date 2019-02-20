@@ -9,13 +9,13 @@
     "dist"
   ],
   "devDependencies": {
-    "node-sass": "^4.10.0"
-  },
-  "dependencies": {
-    "@contentful/forma-36-tokens": "^0.2.0",
+    "node-sass": "^4.10.0",
     "postcss": "^7.0.6",
     "postcss-calc": "^7.0.1",
     "postcss-css-variables": "^0.11.0"
+  },
+  "dependencies": {
+    "@contentful/forma-36-tokens": "^0.2.0"
   },
   "scripts": {
     "develop": "node-sass --watch scss/styles.scss -o dist --output-style",
