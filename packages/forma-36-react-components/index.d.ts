@@ -233,28 +233,7 @@ export interface InViewportProps {
 export class InViewport extends React.Component<InViewportProps, any> {
   render(): JSX.Element;
 }
-export type LineChartWidth = number | string;
 
-export type LineChartHeight = number | string;
-
-export interface LineChartRequire {
-  ensure?: (...args: any[]) => any;
-}
-
-export interface LineChartProps {
-  options: Object;
-  empty?: boolean;
-  EmptyPlaceholder?: (...args: any[]) => any;
-  loading: boolean;
-  extraClassNames?: string;
-  width?: LineChartWidth;
-  height?: LineChartHeight;
-  require?: LineChartRequire;
-}
-
-export class LineChart extends React.Component<LineChartProps, any> {
-  render(): JSX.Element;
-}
 export interface ListProps {
   extraClassNames?: string;
   children: React.ReactNode;

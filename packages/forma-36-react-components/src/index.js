@@ -33,7 +33,6 @@ import TableBody from './components/Table/TableBody';
 import TableCell from './components/Table/TableCell';
 import TableHead from './components/Table/TableHead';
 import TableRow from './components/Table/TableRow';
-import LineChart from './components/LineChart/LineChart';
 import ToggleButton from './components/ToggleButton/ToggleButton';
 import AssetCard from './components/Card/AssetCard';
 import Asset from './components/Asset';
@@ -102,7 +101,6 @@ module.exports = {
   TableCell,
   TableHead,
   TableRow,
-  LineChart,
   ToggleButton,
   AssetCard,
   Asset,
