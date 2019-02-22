@@ -1,10 +1,14 @@
-:tada: :heart: _Thank you for taking time to contribute to Forma 36! We would love it if you could follow this template for your contribution. If you have any questions please feel free to get in touch on the #forma36 channel on our [Contentful Community Slack](https://www.contentful.com/slack/)._ :heart: :tada:
-
----
+<!--
+🎉❤️ Thank you for taking time to contribute to Forma 36! ❤️🎉
+For ease of review, please follow this template for your contribution.
+If you have any questions feel free to get in touch on the #forma36 channel on our Contentful Community Slack (sign up here: https://www.contentful.com/slack/.
+-->
 
 # Purpose of PR
 
-_Please describe the purpose of your pull request here. What do you want to add? Why do you want to add it? What are the use cases?_
+<!--
+Please describe the purpose of your pull request here. What do you want to add? Why do you want to add it? What are the use cases?
+-->
 
 ## PR Checklist
 
