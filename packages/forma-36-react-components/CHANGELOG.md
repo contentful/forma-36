@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.6.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@2.5.0...@contentful/forma-36-react-components@2.6.0) (2019-02-22)
+
+
+### Features
+
+* **LineChart:** LineChart removed from Forma36 ([8e9b74c](https://github.com/contentful/forma-36/commit/8e9b74c))
+
+
+
+
+
 # [2.5.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@2.4.1...@contentful/forma-36-react-components@2.5.0) (2019-02-20)
 
 
