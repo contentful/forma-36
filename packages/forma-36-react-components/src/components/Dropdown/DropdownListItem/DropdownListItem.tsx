@@ -1,25 +1,24 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { SyntheticEvent, Component } from 'react';
 import cn from 'classnames';
 import TabFocusTrap from '../../TabFocusTrap/TabFocusTrap';
 import styles from './DropdownListItem.css';
 
-class DropdownListItem extends React.Component {
-  static propTypes = {
-    extraClassNames: PropTypes.string,
-    children: PropTypes.node.isRequired,
-    onClick: PropTypes.func,
-    testId: PropTypes.string,
-    onMouseDown: PropTypes.func,
-    submenuToggleLabel: PropTypes.string,
-    onFocus: PropTypes.func,
-    onLeave: PropTypes.func,
-    onEnter: PropTypes.func,
-    isDisabled: PropTypes.bool,
-    isActive: PropTypes.bool,
-    isTitle: PropTypes.bool,
-  };
+interface DropdownListItemProps {
+  extraClassNames: string;
+  children: React.ReactNode;
+  onClick: (e: SyntheticEvent) => void;
+  testId: string;
+  onMouseDown: (e: SyntheticEvent) => void;
+  submenuToggleLabel: string;
+  onFocus: (e: SyntheticEvent) => void;
+  onLeave: (e: SyntheticEvent) => void;
+  onEnter: (e: SyntheticEvent) => void;
+  isDisabled: boolean;
+  isActive: boolean;
+  isTitle: boolean;
+}
 
+class DropdownListItem extends Component<DropdownListItemProps> {
   static defaultProps = {
     extraClassNames: undefined,
     submenuToggleLabel: undefined,
@@ -44,7 +43,6 @@ class DropdownListItem extends React.Component {
         onMouseEnter={this.props.onEnter}
         onFocus={this.props.onEnter}
         onMouseLeave={this.props.onLeave}
-        {...this.otherProps}
       >
         <TabFocusTrap
           extraClassNames={
@@ -99,7 +97,7 @@ class DropdownListItem extends React.Component {
       isTitle,
     } = this.props;
 
-    const classNames = cn(styles.DropdownListItem, extraClassNames, {
+    const classNames = cn(styles['DropdownListItem'], extraClassNames, {
       [styles['DropdownListItem__submenu-toggle']]:
         submenuToggleLabel || onClick || onMouseDown,
       [styles['DropdownListItem--disabled']]: isDisabled,

@@ -23,6 +23,7 @@ storiesOf('Components|Dropdown', module)
       cropMarks: false,
     }),
   )
+  // @ts-ignore
   .addDecorator(StateDecorator(store))
   .add(
     'default',
@@ -116,7 +117,7 @@ storiesOf('Components|Dropdown', module)
         }
         extraClassNames={text('Extra Class Names', '')}
       >
-        <DropdownList maxHeight={200} title="List Title">
+        <DropdownList maxHeight={200}>
           {[...new Array(25)].map((entry, index) => (
             // eslint-disable-next-line
             <DropdownListItem key={`key-${index}`} onClick={action('click')}>
