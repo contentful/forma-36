@@ -160,6 +160,10 @@
     "type": "git",
     "url": "https://github.com/contentful/forma-36.git"
   },
+  "resolutions": {
+    "url-parse": "1.4.4",
+    "merge": "1.2.1"
+  },
   "publishConfig": {
     "access": "public"
   },
