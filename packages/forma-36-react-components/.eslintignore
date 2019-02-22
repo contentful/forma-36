@@ -1,4 +1,5 @@
 /node_modules/
+/dist-storybook/
 /dist/
 index.d.ts
 *.css.d.ts
