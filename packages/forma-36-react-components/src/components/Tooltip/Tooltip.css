@@ -12,7 +12,7 @@
 }
 
 .Tooltip {
-  position: absolute;
+  position: fixed;
   margin: calc(1rem * (10 / var(--font-base-default))) 0px;
   display: inline-block;
   background: var(--color-contrast-mid);
