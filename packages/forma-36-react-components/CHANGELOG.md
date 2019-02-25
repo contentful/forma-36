@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.6.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@2.6.1...@contentful/forma-36-react-components@2.6.2) (2019-02-25)
+
+
+### Bug Fixes
+
+* **Tooltip:** Use position fixed for positioning of Tooltip ([a51523e](https://github.com/contentful/forma-36/commit/a51523e))
+
+
+
+
+
 ## [2.6.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@2.6.0...@contentful/forma-36-react-components@2.6.1) (2019-02-22)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
