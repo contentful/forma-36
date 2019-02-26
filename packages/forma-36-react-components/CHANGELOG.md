@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.7.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@2.6.2...@contentful/forma-36-react-components@2.7.0) (2019-02-26)
+
+
+### Bug Fixes
+
+* **Notification:** Fixed exception when showing notifications ([fb91b06](https://github.com/contentful/forma-36/commit/fb91b06))
+
+
+### Features
+
+* **Storybook:** Include FCSS styles in Storybook ([576fb02](https://github.com/contentful/forma-36/commit/576fb02))
+* **TypographyContainer:** Add TypographyContainer ([e791e48](https://github.com/contentful/forma-36/commit/e791e48))
+
+
+
+
+
 ## [2.6.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@2.6.1...@contentful/forma-36-react-components@2.6.2) (2019-02-25)
 
 
