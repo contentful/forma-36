@@ -1,5 +1,5 @@
 #!/bin/bash
 #
 # publish a new version depending on conventional commits
-
+git status
 yarn lerna publish --conventional-commits --github-release --yes 
