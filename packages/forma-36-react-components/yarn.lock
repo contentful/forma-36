@@ -1258,6 +1258,21 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
+"@contentful/forma-36-fcss@^0.0.11":
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/@contentful/forma-36-fcss/-/forma-36-fcss-0.0.11.tgz#08a3b0451d6920da892b3cae63fa6328141822db"
+  integrity sha512-9Rp5+XxCp1HP5F2r2V0Zco8raz+uQGAk200mExkIZYCeCWwIDP6Fy8pzz4jwiGPW0tAfDdWIZiWO028viLvn8A==
+  dependencies:
+    "@contentful/forma-36-tokens" "^0.2.0"
+    postcss "^7.0.6"
+    postcss-calc "^7.0.1"
+    postcss-css-variables "^0.11.0"
+
+"@contentful/forma-36-tokens@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@contentful/forma-36-tokens/-/forma-36-tokens-0.2.0.tgz#c4a1062e7acc2ae0ae5699e7c8606d5b5047a1c5"
+  integrity sha512-6vshI8mlnEuVx6lJ0Yw7Jzeh5YEhlCfxWZiLXg5pbiDmi9JtPAwllWii9ocrKLelIAPwB/gvNQAAzm6uSy/Vug==
+
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
@@ -5254,7 +5269,7 @@ escape-html@^1.0.3, escape-html@~1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/escape-html/-/escape-html-1.0.3.tgz#0258eae4d3d0c0974de1c169188ef0051d1d1988"
 
-escape-string-regexp@1.0.5, escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.5:
+escape-string-regexp@1.0.5, escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.3, escape-string-regexp@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
 
@@ -5620,6 +5635,11 @@ extend-shallow@^3.0.0, extend-shallow@^3.0.2:
 extend@^3.0.0, extend@~3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/extend/-/extend-3.0.1.tgz#a755ea7bc1adfcc5a31ce7e762dbaadc5e636444"
+
+extend@^3.0.1:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/extend/-/extend-3.0.2.tgz#f8b1136b4071fbd8eb140aff858b1019ec2915fa"
+  integrity sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==
 
 external-editor@^2.1.0:
   version "2.2.0"
@@ -9441,9 +9461,10 @@ postcss-attribute-case-insensitive@^4.0.0:
     postcss "^7.0.2"
     postcss-selector-parser "^5.0.0-rc.3"
 
-postcss-calc@^7.0.0:
+postcss-calc@^7.0.0, postcss-calc@^7.0.1:
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/postcss-calc/-/postcss-calc-7.0.1.tgz#36d77bab023b0ecbb9789d84dcb23c4941145436"
+  integrity sha512-oXqx0m6tb4N3JGdmeMSc/i91KppbYsFZKdH0xMOqK8V1rJlzrKlTdokz8ozUXLVejydRN6u2IddxpcijRj2FqQ==
   dependencies:
     css-unit-converter "^1.1.1"
     postcss "^7.0.5"
@@ -9510,6 +9531,15 @@ postcss-copy-assets@^0.3.1:
   dependencies:
     mkdirp "^0.5.1"
     postcss "^5.0.2"
+
+postcss-css-variables@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/postcss-css-variables/-/postcss-css-variables-0.11.0.tgz#09562082fdf0b8e9d19417e32467453f7df34a7c"
+  integrity sha512-pjqWnJSy8zoentAhRIph/DiOX0EZmT/dpmVbpdSrCSdkdqstl2ViBlAfIIuHvHI+baTV8Gd+WzsVFjDZqVn4dg==
+  dependencies:
+    escape-string-regexp "^1.0.3"
+    extend "^3.0.1"
+    postcss "^6.0.8"
 
 postcss-custom-media@^7.0.7:
   version "7.0.7"
@@ -10042,9 +10072,10 @@ postcss@^5.0.2:
     source-map "^0.5.6"
     supports-color "^3.2.3"
 
-postcss@^6.0.1, postcss@^6.0.2, postcss@^6.0.23:
+postcss@^6.0.1, postcss@^6.0.2, postcss@^6.0.23, postcss@^6.0.8:
   version "6.0.23"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-6.0.23.tgz#61c82cc328ac60e677645f979054eb98bc0e3324"
+  integrity sha512-soOk1h6J3VMTZtVeVpv15/Hpdl2cBLX3CAw4TAbkpTJiNPk9YP/zWcD1ND+xEtvyuuvKzbxliTOIyvkSeSJ6ag==
   dependencies:
     chalk "^2.4.1"
     source-map "^0.6.1"

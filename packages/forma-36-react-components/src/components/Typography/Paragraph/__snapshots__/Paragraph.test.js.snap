@@ -1,28 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
-<p
-  className="Paragraph"
-  data-test-id="cf-ui-paragraph"
+<Paragraph
+  element="p"
+  testId="cf-ui-paragraph"
 >
-  Paragraph
-</p>
+  <p
+    className="Paragraph"
+    data-test-id="cf-ui-paragraph"
+  >
+    Paragraph
+  </p>
+</Paragraph>
 `;
 
 exports[`renders the component h3 1`] = `
-<h3
-  className="Paragraph"
-  data-test-id="cf-ui-paragraph"
+<Paragraph
+  element="h3"
+  testId="cf-ui-paragraph"
 >
-  Paragraph
-</h3>
+  <h3
+    className="Paragraph"
+    data-test-id="cf-ui-paragraph"
+  >
+    Paragraph
+  </h3>
+</Paragraph>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
-<p
-  className="Paragraph my-extra-class"
-  data-test-id="cf-ui-paragraph"
+<Paragraph
+  element="p"
+  extraClassNames="my-extra-class"
+  testId="cf-ui-paragraph"
 >
-  Paragraph
-</p>
+  <p
+    className="Paragraph my-extra-class"
+    data-test-id="cf-ui-paragraph"
+  >
+    Paragraph
+  </p>
+</Paragraph>
 `;

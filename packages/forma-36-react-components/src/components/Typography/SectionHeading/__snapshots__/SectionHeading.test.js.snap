@@ -1,28 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
-<h3
-  className="SectionHeading"
-  data-test-id="cf-ui-section-heading"
+<SectionHeading
+  element="h3"
+  testId="cf-ui-section-heading"
 >
-  SectionHeading
-</h3>
+  <h3
+    className="SectionHeading"
+    data-test-id="cf-ui-section-heading"
+  >
+    SectionHeading
+  </h3>
+</SectionHeading>
 `;
 
 exports[`renders the component h3 1`] = `
-<h3
-  className="SectionHeading"
-  data-test-id="cf-ui-section-heading"
+<SectionHeading
+  element="h3"
+  testId="cf-ui-section-heading"
 >
-  SectionHeading
-</h3>
+  <h3
+    className="SectionHeading"
+    data-test-id="cf-ui-section-heading"
+  >
+    SectionHeading
+  </h3>
+</SectionHeading>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
-<h3
-  className="SectionHeading my-extra-class"
-  data-test-id="cf-ui-section-heading"
+<SectionHeading
+  element="h3"
+  extraClassNames="my-extra-class"
+  testId="cf-ui-section-heading"
 >
-  SectionHeading
-</h3>
+  <h3
+    className="SectionHeading my-extra-class"
+    data-test-id="cf-ui-section-heading"
+  >
+    SectionHeading
+  </h3>
+</SectionHeading>
 `;

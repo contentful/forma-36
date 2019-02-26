@@ -37,7 +37,33 @@ module.exports = {
         },
       },
       {
+        test: /\.global.css$/,
+        exclude: [/node_modules/],
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              sourceMap: true,
+              minimize: true,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              config: {
+                path: path.resolve(__dirname, './postcss.config.js'),
+              },
+            },
+          },
+        ],
+      },
+      {
         test: /\.css$/,
+        exclude: [/node_modules/, /\.global\.css$/],
         use: [
           {
             loader: MiniCssExtractPlugin.loader,

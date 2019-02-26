@@ -14,6 +14,7 @@ A React component library for Contentful, powered by [Storybook](https://storybo
   - [Run Storybook](#run-storybook)
   - [Example component directory structure](#example-component-directory-structure)
   - [Styling](#styling)
+  - [Component principles](#component-principles)
   - [Adding a new component](#adding-a-new-component)
   - [Adding new Storybook documentation](#adding-new-storybook-documentation)
 - [Testing](#testing)
@@ -21,7 +22,6 @@ A React component library for Contentful, powered by [Storybook](https://storybo
 - [Building](#building)
   - [Create a build of the library](#create-a-build-of-the-library)
 - [Commits](#commits)
-- [PropTypes](#proptypes)
 
 ## Library Usage
 
@@ -98,6 +98,26 @@ YourComponent
 
 We are using [postcss-preset-env](https://preset-env.cssdb.org/) for styling our components. Using postcss-preset-env allows us to use the latest CSS syntax without having to wait for browser support. `tools/postcss.config.js` is used for adding plugins and configuration.
 
+### Component principles
+
+We follow a number of principles when creating our components:
+
+1.  **A component is responsible for only its internal spacing**
+
+We follow the principle that a component should only be responsible for its own internal spacing - never external spacing. This means that we're flexible in where our components can be used without having to override margins.
+
+2.  **Use descriptive PropTypes**
+
+We recommend the following naming convention for PropTypes to make them as clear as possible:
+
+- Array - use plural nouns. e.g. `items`
+- Number - use a prefix or suffix to imply that the prop accepts a number. e.g. `numItems`, `itemCount`, `itemIndex`
+- Boolean - use the prefix 'is'/'can'/'has'. e.g. `isVisible`, `canExpand`, `hasImage`
+- Object - use a noun. e.g. `item`
+- Node - use the prefix 'node'. e.g. `containerNode`
+- Element - use the prefix 'element'. e.g. `triggerElement`
+- Event handler functions - use the prefix 'on'. e.g. `onOpen`, `onClick`
+
 ### Adding a new component
 
 You can use [Plop](https://plopjs.com/) to scaffold new components. Run `yarn add-component` and follow the steps in the CLI to create a component. Using your input here, Plop will generate the relevant files and add the relevant imports/exports to the main `src/index.js` file required to make the component available when publishing the library.
@@ -163,15 +183,3 @@ You can commit the changes by running
 ```bash
 yarn commit
 ```
-
-## PropTypes
-
-We recommend the following naming convention for PropTypes:
-
-- Array - use plural nouns. e.g. `items`
-- Number - use a prefix or suffix to imply that the prop accepts a number. e.g. `numItems`, `itemCount`, `itemIndex`
-- Boolean - use the prefix 'is'/'can'/'has'. e.g. `isVisible`, `canExpand`, `hasImage`
-- Object - use a noun. e.g. `item`
-- Node - use the prefix 'node'. e.g. `containerNode`
-- Element - use the prefix 'element'. e.g. `triggerElement`
-- Event handler functions - use the prefix 'on'. e.g. `onOpen`, `onClick`

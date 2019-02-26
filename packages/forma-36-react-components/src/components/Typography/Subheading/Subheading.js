@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import cn from 'classnames';
 import styles from './Subheading.css';
 
+import { TypographyContext } from '../Typography/Typography';
+
 class Subheading extends React.Component {
   static propTypes = {
     extraClassNames: PropTypes.string,
@@ -31,9 +33,21 @@ class Subheading extends React.Component {
     const Element = element;
 
     return (
-      <Element className={classNames} data-test-id={testId} {...otherProps}>
-        {children}
-      </Element>
+      <TypographyContext.Consumer>
+        {({ subheading }) => {
+          return (
+            <Element
+              className={cn(classNames, [
+                subheading && `f36-margin-bottom--${subheading.spacing}`,
+              ])}
+              data-test-id={testId}
+              {...otherProps}
+            >
+              {children}
+            </Element>
+          );
+        }}
+      </TypographyContext.Consumer>
     );
   }
 }

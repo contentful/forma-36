@@ -31,6 +31,7 @@ function loadStories() {
   reqGeneral.keys().forEach(filename => reqGeneral(filename));
   reqTokens.keys().forEach(filename => reqTokens(filename));
   reqComponents.keys().forEach(filename => reqComponents(filename));
+  require('./../../src/styles/index.global.css'); // Require global styles as last item so that they trump component styles
 }
 
 configure(loadStories, module);

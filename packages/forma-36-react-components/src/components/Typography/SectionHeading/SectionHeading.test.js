@@ -1,16 +1,16 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 import { axe } from 'jest-axe';
 import SectionHeading from './SectionHeading';
 
 it('renders the component', () => {
-  const output = shallow(<SectionHeading>SectionHeading</SectionHeading>);
+  const output = mount(<SectionHeading>SectionHeading</SectionHeading>);
 
   expect(output).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(
+  const output = mount(
     <SectionHeading extraClassNames="my-extra-class">
       SectionHeading
     </SectionHeading>,
@@ -20,7 +20,7 @@ it('renders the component with an additional class name', () => {
 });
 
 it('renders the component h3', () => {
-  const output = shallow(
+  const output = mount(
     <SectionHeading element="h3">SectionHeading</SectionHeading>,
   );
 

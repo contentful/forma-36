@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import cn from 'classnames';
 import styles from './SectionHeading.css';
 
+import { TypographyContext } from '../Typography/Typography';
+
 class SectionHeading extends React.Component {
   static propTypes = {
     extraClassNames: PropTypes.string,
@@ -31,9 +33,22 @@ class SectionHeading extends React.Component {
     const Element = element;
 
     return (
-      <Element className={classNames} data-test-id={testId} {...otherProps}>
-        {children}
-      </Element>
+      <TypographyContext.Consumer>
+        {({ sectionHeading }) => {
+          return (
+            <Element
+              className={cn(classNames, [
+                sectionHeading &&
+                  `f36-margin-bottom--${sectionHeading.spacing}`,
+              ])}
+              data-test-id={testId}
+              {...otherProps}
+            >
+              {children}
+            </Element>
+          );
+        }}
+      </TypographyContext.Consumer>
     );
   }
 }
