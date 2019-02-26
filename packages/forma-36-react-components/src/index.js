@@ -62,9 +62,10 @@ import SkeletonImage from './components/Skeleton/SkeletonImage';
 import Tabs from './components/Tabs';
 import Tab from './components/Tabs/Tab';
 import TabPanel from './components/Tabs/TabPanel';
+import Typography from './components/Typography/Typography';
 // -- Add imports above this line (required by plopfile.js) --
 // The above line is used as a insert marker when autogenerating components with `yarn add-component`
-
+import './styles/index.global.css'; // Global styles must be imported last to trump component styles
 module.exports = {
   TextLink,
   Icon,
@@ -130,6 +131,7 @@ module.exports = {
   Tabs,
   Tab,
   TabPanel,
+  Typography,
   // -- Add exports above this line (required by plopfile.js) --
   // The above line is used as a insert marker when autogenerating components with `yarn add-component`
 };

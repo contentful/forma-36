@@ -1,16 +1,16 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 import { axe } from 'jest-axe';
 import Paragraph from './Paragraph';
 
 it('renders the component', () => {
-  const output = shallow(<Paragraph>Paragraph</Paragraph>);
+  const output = mount(<Paragraph>Paragraph</Paragraph>);
 
   expect(output).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(
+  const output = mount(
     <Paragraph extraClassNames="my-extra-class">Paragraph</Paragraph>,
   );
 
@@ -18,7 +18,7 @@ it('renders the component with an additional class name', () => {
 });
 
 it('renders the component h3', () => {
-  const output = shallow(<Paragraph element="h3">Paragraph</Paragraph>);
+  const output = mount(<Paragraph element="h3">Paragraph</Paragraph>);
 
   expect(output).toMatchSnapshot();
 });

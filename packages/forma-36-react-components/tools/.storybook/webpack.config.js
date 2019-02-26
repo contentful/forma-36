@@ -17,7 +17,30 @@ module.exports = {
         ],
       },
       {
+        test: /\.global.css$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              sourceMap: true,
+              minimize: true,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              config: {
+                path: path.resolve(__dirname, '../postcss.config.js'),
+              },
+            },
+          },
+        ],
+      },
+      {
         test: /\.css$/,
+        exclude: [/node_modules/, /\.global\.css$/],
         use: [
           'style-loader',
           {
