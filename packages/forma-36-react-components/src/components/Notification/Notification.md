@@ -9,7 +9,7 @@ Notification.success('text of notification');
 Notification.error('text of notification');
 
 // closing one notification
-const notification = Notification.success('hello');
+const notification = await Notification.success('hello');
 Notification.close(notification.id);
 
 // closing all

@@ -25,21 +25,21 @@ export interface Notification {
   intent: Intent;
 }
 
-export type ShowAction = (
+export type ShowAction<T> = (
   text: string,
   setting?: { duration?: number; intent: Intent; canClose?: boolean },
-) => Notification;
+) => T;
 
-export type CloseAction = (id: number) => void;
+export type CloseAction<T> = (id: number) => T;
 
-export type CloseAllAction = () => void;
+export type CloseAllAction<T> = () => T;
 
-export type SetDurationAction = (duration: number) => void;
+export type SetDurationAction<T> = (duration: number) => T;
 
-export type SetPositionAction = (
+export type SetPositionAction<T> = (
   position: Position,
   params?: { offset: number },
-) => void;
+) => T;
 
 interface NotificationsManagerProps {
   register: (name: string, callback: Function) => void;
@@ -75,18 +75,21 @@ export class NotificationsManager extends PureComponent<
     this.props.register('setDuration', this.setDuration);
   }
 
-  setPosition: SetPositionAction = (position, params?: { offset: number }) => {
+  setPosition: SetPositionAction<void> = (
+    position,
+    params?: { offset: number },
+  ) => {
     if (position === 'bottom' || position === 'top') {
       const positionOffset = params && params.offset ? params.offset : 20;
       this.setState({ position, positionOffset });
     }
   };
 
-  setDuration: SetDurationAction = duration => {
+  setDuration: SetDurationAction<void> = duration => {
     this.setState({ duration });
   };
 
-  close: CloseAction = id => {
+  close: CloseAction<void> = id => {
     this.setState(state => ({
       items: state.items.map(item => {
         if (item.id !== id) {
@@ -106,7 +109,7 @@ export class NotificationsManager extends PureComponent<
     }));
   };
 
-  closeAll: CloseAllAction = () => {
+  closeAll: CloseAllAction<void> = () => {
     this.setState(state => ({
       items: state.items.map(item => ({
         ...item,
@@ -115,7 +118,7 @@ export class NotificationsManager extends PureComponent<
     }));
   };
 
-  show: ShowAction = (text, { duration, intent, canClose }) => {
+  show: ShowAction<Notification> = (text, { duration, intent, canClose }) => {
     const notificationId = getUniqueId();
     const notification = {
       id: notificationId,
