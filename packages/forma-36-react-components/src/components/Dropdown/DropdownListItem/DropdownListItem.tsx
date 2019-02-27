@@ -33,28 +33,32 @@ class DropdownListItem extends Component<DropdownListItemProps> {
     isTitle: false,
   };
 
-  renderSubmenuToggle = () => (
-    <React.Fragment>
-      <button
-        type="button"
-        data-test-id="cf-ui-dropdown-submenu-toggle"
-        className={styles['DropdownListItem__toggle-button']}
-        onClick={this.props.onClick}
-        onMouseEnter={this.props.onEnter}
-        onFocus={this.props.onEnter}
-        onMouseLeave={this.props.onLeave}
-      >
-        <TabFocusTrap
-          extraClassNames={
-            styles['DropdownListItem__toggle-button__inner-wrapper']
-          }
+  renderSubmenuToggle = () => {
+    const { onClick, onEnter, onLeave, ...otherProps } = this.props;
+    return (
+      <React.Fragment>
+        <button
+          type="button"
+          data-test-id="cf-ui-dropdown-submenu-toggle"
+          className={styles['DropdownListItem__toggle-button']}
+          onClick={this.props.onClick}
+          onMouseEnter={this.props.onEnter}
+          onFocus={this.props.onEnter}
+          onMouseLeave={this.props.onLeave}
+          {...otherProps}
         >
-          {this.props.submenuToggleLabel}
-        </TabFocusTrap>
-      </button>
-      {this.props.children}
-    </React.Fragment>
-  );
+          <TabFocusTrap
+            extraClassNames={
+              styles['DropdownListItem__toggle-button__inner-wrapper']
+            }
+          >
+            {this.props.submenuToggleLabel}
+          </TabFocusTrap>
+        </button>
+        {this.props.children}
+      </React.Fragment>
+    );
+  };
 
   renderListItem = () =>
     this.props.onClick || this.props.onMouseDown ? (

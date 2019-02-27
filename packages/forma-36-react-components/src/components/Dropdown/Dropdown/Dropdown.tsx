@@ -89,9 +89,13 @@ class Dropdown extends Component<DropdownProps, DropdownState> {
     });
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
     if (!isBrowser) {
       return;
+    }
+
+    if (prevProps.isOpen !== this.props.isOpen) {
+      this.setAnchorDimensions();
     }
 
     this.bindEventListeners();
