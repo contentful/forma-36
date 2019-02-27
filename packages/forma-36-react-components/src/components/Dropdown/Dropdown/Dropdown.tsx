@@ -14,11 +14,11 @@ export type positionType =
   | 'top-right'
   | 'top-left';
 interface DropdownProps {
-  extraClassNames: string;
+  extraClassNames?: string;
   children: React.ReactNode;
-  toggleElement: React.ReactNode;
-  testId: string;
-  submenuToggleLabel: string;
+  toggleElement?: React.ReactNode;
+  testId?: string;
+  submenuToggleLabel?: string;
   position: positionType;
   isOpen: boolean;
   onClose: () => void;
@@ -39,13 +39,10 @@ interface DropdownState {
 
 class Dropdown extends Component<DropdownProps, DropdownState> {
   static defaultProps = {
-    extraClassNames: undefined,
-    submenuToggleLabel: undefined,
     testId: 'cf-ui-dropdown',
-    toggleElement: undefined,
     position: 'bottom-left',
     isOpen: false,
-    onClose: undefined,
+    onClose: () => {},
   };
 
   state = {

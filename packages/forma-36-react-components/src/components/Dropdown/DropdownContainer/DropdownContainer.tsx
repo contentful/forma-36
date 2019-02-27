@@ -34,13 +34,11 @@ class DropdownContainer extends React.Component<
   DropdownState
 > {
   static defaultProps = {
-    extraClassNames: undefined,
     testId: 'cf-ui-dropdown-portal',
     position: 'bottom-left',
     onClose: () => {},
     openSubmenu: () => {},
     submenu: false,
-    dropdownAnchor: undefined,
   };
 
   portalTarget = document.createElement('div');

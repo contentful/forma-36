@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+import { storiesOf, StoryDecorator } from '@storybook/react';
 import { text, select } from '@storybook/addon-knobs';
 import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
@@ -23,8 +23,7 @@ storiesOf('Components|Dropdown', module)
       cropMarks: false,
     }),
   )
-  // @ts-ignore
-  .addDecorator(StateDecorator(store))
+  .addDecorator(StateDecorator(store) as StoryDecorator)
   .add(
     'default',
     withInfo()(() => (
