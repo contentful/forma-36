@@ -64,6 +64,7 @@ const show = (intent: Intent) => (
 const API: {
   success: ShowAction<Promise<Notification>>;
   error: ShowAction<Promise<Notification>>;
+  warning: ShowAction<Promise<Notification>>;
   close: CloseAction<Promise<void>>;
   closeAll: CloseAllAction<Promise<void>>;
   setPosition: SetPositionAction<Promise<void>>;
@@ -71,6 +72,7 @@ const API: {
 } = {
   success: afterInit(show('success')),
   error: afterInit(show('error')),
+  warning: afterInit(show('warning')),
   close: afterInit(id => internalAPI.close(id)),
   closeAll: afterInit(() => internalAPI.closeAll()),
   setPosition: afterInit((position, params) =>

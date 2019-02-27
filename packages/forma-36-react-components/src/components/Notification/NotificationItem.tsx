@@ -6,7 +6,7 @@ import Icon from '../Icon';
 const styles = require('./NotificationItem.css');
 
 export interface NotificationItemProps {
-  intent: 'success' | 'error';
+  intent: 'success' | 'error' | 'warning';
   hasCloseButton?: boolean;
   onClose?: Function;
   testId?: string;
@@ -22,7 +22,7 @@ export class NotificationItem extends Component<NotificationItemProps> {
 
   render() {
     const { children, testId, intent, onClose, hasCloseButton } = this.props;
-
+    
     const classes = classNames(styles.NotificationItem, {
       [styles[`NotificationItem--${intent}`]]: true,
     });

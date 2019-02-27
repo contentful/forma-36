@@ -13,6 +13,27 @@ it('renders the component', () => {
   expect(output).toMatchSnapshot();
 });
 
+it('renders the component with "error" intent', () => {
+  const output = shallow(
+    <NotificationItem onClose={() => {}} intent="error">
+      Notification text
+    </NotificationItem>,
+  );
+
+  expect(output).toMatchSnapshot();
+})
+
+it('renders the component with "warning" intent', () => {
+  const output = shallow(
+    <NotificationItem onClose={() => {}} intent="warning">
+      Notification text
+    </NotificationItem>,
+  );
+
+  expect(output).toMatchSnapshot();
+})
+
+
 it(`has no a11y issues`, async () => {
   const output = mount(
     <NotificationItem onClose={() => {}} intent="success">

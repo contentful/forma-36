@@ -7,6 +7,7 @@ When you want to give feedback to your users about a action they take.
 ```js
 Notification.success('text of notification');
 Notification.error('text of notification');
+Notification.warning('text of notification');
 
 // closing one notification
 const notification = await Notification.success('hello');

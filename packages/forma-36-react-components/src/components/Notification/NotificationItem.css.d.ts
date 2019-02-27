@@ -4,6 +4,7 @@ export interface INotificationItemCss {
   'NotificationItem': string;
   'NotificationItem--success': string;
   'NotificationItem--error': string;
+  'NotificationItem--warning': string;
   'NotificationItem__intent': string;
   'NotificationItem__icon': string;
   'NotificationItem__text': string;
