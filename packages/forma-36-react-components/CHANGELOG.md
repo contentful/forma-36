@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.8.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@2.7.0...@contentful/forma-36-react-components@2.8.0) (2019-02-28)
+
+
+### Features
+
+* **Notification:** Added "warning" intent to Notifications system ([5c9b355](https://github.com/contentful/forma-36/commit/5c9b355))
+
+
+
+
+
 # [2.7.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@2.6.2...@contentful/forma-36-react-components@2.7.0) (2019-02-26)
 
 
