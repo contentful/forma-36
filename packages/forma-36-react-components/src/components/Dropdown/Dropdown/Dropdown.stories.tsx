@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+import { storiesOf, StoryDecorator } from '@storybook/react';
 import { text, select } from '@storybook/addon-knobs';
 import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
@@ -23,7 +23,7 @@ storiesOf('Components|Dropdown', module)
       cropMarks: false,
     }),
   )
-  .addDecorator(StateDecorator(store))
+  .addDecorator(StateDecorator(store) as StoryDecorator)
   .add(
     'default',
     withInfo()(() => (
@@ -116,7 +116,7 @@ storiesOf('Components|Dropdown', module)
         }
         extraClassNames={text('Extra Class Names', '')}
       >
-        <DropdownList maxHeight={200} title="List Title">
+        <DropdownList maxHeight={200}>
           {[...new Array(25)].map((entry, index) => (
             // eslint-disable-next-line
             <DropdownListItem key={`key-${index}`} onClick={action('click')}>

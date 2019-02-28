@@ -4,6 +4,7 @@ exports[`renders the component 1`] = `
 <div
   className="Dropdown"
   data-test-id="cf-ui-dropdown"
+  onClose={[Function]}
   position="bottom-left"
 >
   <Button
@@ -25,6 +26,7 @@ exports[`renders the component as open 1`] = `
 <div
   className="Dropdown"
   data-test-id="cf-ui-dropdown"
+  onClose={[Function]}
   position="bottom-left"
 >
   <Button
@@ -39,36 +41,36 @@ exports[`renders the component as open 1`] = `
   >
     Toggle
   </Button>
-  <div
-    className="Dropdown__container Dropdown__container-position--bottom-left"
-    onFocus={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
+  <DropdownContainer
+    anchorDimensionsAndPositon={
+      Object {
+        "height": 0,
+        "left": 0,
+        "top": 0,
+        "width": 0,
+      }
+    }
+    onClose={[Function]}
+    openSubmenu={[Function]}
+    position="bottom-left"
+    submenu={false}
+    testId="cf-ui-dropdown-portal"
   >
-    <InViewport
-      offset={0}
-      onOverflowBottom={[Function]}
-      onOverflowLeft={[Function]}
-      onOverflowRight={[Function]}
-      onOverflowTop={[Function]}
-      testId="cf-ui-in-viewport"
+    <DropdownList
+      testId="cf-ui-dropdown-list"
     >
-      <DropdownList
-        testId="cf-ui-dropdown-list"
+      <DropdownListItem
+        isActive={false}
+        isDisabled={false}
+        isTitle={false}
+        onEnter={[Function]}
+        onLeave={[Function]}
+        testId="cf-ui-dropdown-list-item"
       >
-        <DropdownListItem
-          isActive={false}
-          isDisabled={false}
-          isTitle={false}
-          onEnter={[Function]}
-          onLeave={[Function]}
-          testId="cf-ui-dropdown-list-item"
-        >
-          entry
-        </DropdownListItem>
-      </DropdownList>
-    </InViewport>
-  </div>
+        entry
+      </DropdownListItem>
+    </DropdownList>
+  </DropdownContainer>
 </div>
 `;
 
@@ -76,6 +78,7 @@ exports[`renders the component with a submenu 1`] = `
 <div
   className="Dropdown"
   data-test-id="cf-ui-dropdown"
+  onClose={[Function]}
   position="bottom-left"
 >
   <Button
@@ -90,22 +93,40 @@ exports[`renders the component with a submenu 1`] = `
   >
     Toggle
   </Button>
-  <div
-    className="Dropdown__container Dropdown__container-position--bottom-left"
-    onFocus={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
+  <DropdownContainer
+    anchorDimensionsAndPositon={
+      Object {
+        "height": 0,
+        "left": 0,
+        "top": 0,
+        "width": 0,
+      }
+    }
+    onClose={[Function]}
+    openSubmenu={[Function]}
+    position="bottom-left"
+    submenu={false}
+    testId="cf-ui-dropdown-portal"
   >
-    <InViewport
-      offset={0}
-      onOverflowBottom={[Function]}
-      onOverflowLeft={[Function]}
-      onOverflowRight={[Function]}
-      onOverflowTop={[Function]}
-      testId="cf-ui-in-viewport"
+    <DropdownList
+      testId="cf-ui-dropdown-list"
     >
-      <DropdownList
-        testId="cf-ui-dropdown-list"
+      <DropdownListItem
+        isActive={false}
+        isDisabled={false}
+        isTitle={false}
+        onEnter={[Function]}
+        onLeave={[Function]}
+        testId="cf-ui-dropdown-list-item"
+      >
+        entry
+      </DropdownListItem>
+      <Dropdown
+        isOpen={true}
+        onClose={[Function]}
+        position="bottom-left"
+        submenuToggleLabel="Submenu"
+        testId="cf-ui-dropdown"
       >
         <DropdownListItem
           isActive={false}
@@ -117,27 +138,10 @@ exports[`renders the component with a submenu 1`] = `
         >
           entry
         </DropdownListItem>
-        <Dropdown
-          isOpen={true}
-          position="bottom-left"
-          submenuToggleLabel="Submenu"
-          testId="cf-ui-dropdown"
-        >
-          <DropdownListItem
-            isActive={false}
-            isDisabled={false}
-            isTitle={false}
-            onEnter={[Function]}
-            onLeave={[Function]}
-            testId="cf-ui-dropdown-list-item"
-          >
-            entry
-          </DropdownListItem>
-        </Dropdown>
-        ,
-      </DropdownList>
-    </InViewport>
-  </div>
+      </Dropdown>
+      ,
+    </DropdownList>
+  </DropdownContainer>
 </div>
 `;
 
@@ -145,6 +149,7 @@ exports[`renders the component with an additional class name 1`] = `
 <div
   className="Dropdown"
   data-test-id="cf-ui-dropdown"
+  onClose={[Function]}
   position="bottom-left"
 >
   <Button

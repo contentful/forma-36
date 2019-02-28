@@ -1,25 +1,24 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { SyntheticEvent, Component } from 'react';
 import cn from 'classnames';
 import TabFocusTrap from '../../TabFocusTrap/TabFocusTrap';
 import styles from './DropdownListItem.css';
 
-class DropdownListItem extends React.Component {
-  static propTypes = {
-    extraClassNames: PropTypes.string,
-    children: PropTypes.node.isRequired,
-    onClick: PropTypes.func,
-    testId: PropTypes.string,
-    onMouseDown: PropTypes.func,
-    submenuToggleLabel: PropTypes.string,
-    onFocus: PropTypes.func,
-    onLeave: PropTypes.func,
-    onEnter: PropTypes.func,
-    isDisabled: PropTypes.bool,
-    isActive: PropTypes.bool,
-    isTitle: PropTypes.bool,
-  };
+interface DropdownListItemProps {
+  extraClassNames: string;
+  children: React.ReactNode;
+  onClick: (e: SyntheticEvent) => void;
+  testId: string;
+  onMouseDown: (e: SyntheticEvent) => void;
+  submenuToggleLabel: string;
+  onFocus: (e: SyntheticEvent) => void;
+  onLeave: (e: SyntheticEvent) => void;
+  onEnter: (e: SyntheticEvent) => void;
+  isDisabled: boolean;
+  isActive: boolean;
+  isTitle: boolean;
+}
 
+class DropdownListItem extends Component<DropdownListItemProps> {
   static defaultProps = {
     extraClassNames: undefined,
     submenuToggleLabel: undefined,
@@ -34,29 +33,32 @@ class DropdownListItem extends React.Component {
     isTitle: false,
   };
 
-  renderSubmenuToggle = () => (
-    <React.Fragment>
-      <button
-        type="button"
-        data-test-id="cf-ui-dropdown-submenu-toggle"
-        className={styles['DropdownListItem__toggle-button']}
-        onClick={this.props.onClick}
-        onMouseEnter={this.props.onEnter}
-        onFocus={this.props.onEnter}
-        onMouseLeave={this.props.onLeave}
-        {...this.otherProps}
-      >
-        <TabFocusTrap
-          extraClassNames={
-            styles['DropdownListItem__toggle-button__inner-wrapper']
-          }
+  renderSubmenuToggle = () => {
+    const { onClick, onEnter, onLeave, ...otherProps } = this.props;
+    return (
+      <React.Fragment>
+        <button
+          type="button"
+          data-test-id="cf-ui-dropdown-submenu-toggle"
+          className={styles['DropdownListItem__toggle-button']}
+          onClick={this.props.onClick}
+          onMouseEnter={this.props.onEnter}
+          onFocus={this.props.onEnter}
+          onMouseLeave={this.props.onLeave}
+          {...otherProps}
         >
-          {this.props.submenuToggleLabel}
-        </TabFocusTrap>
-      </button>
-      {this.props.children}
-    </React.Fragment>
-  );
+          <TabFocusTrap
+            extraClassNames={
+              styles['DropdownListItem__toggle-button__inner-wrapper']
+            }
+          >
+            {this.props.submenuToggleLabel}
+          </TabFocusTrap>
+        </button>
+        {this.props.children}
+      </React.Fragment>
+    );
+  };
 
   renderListItem = () =>
     this.props.onClick || this.props.onMouseDown ? (
@@ -99,7 +101,7 @@ class DropdownListItem extends React.Component {
       isTitle,
     } = this.props;
 
-    const classNames = cn(styles.DropdownListItem, extraClassNames, {
+    const classNames = cn(styles['DropdownListItem'], extraClassNames, {
       [styles['DropdownListItem__submenu-toggle']]:
         submenuToggleLabel || onClick || onMouseDown,
       [styles['DropdownListItem--disabled']]: isDisabled,
