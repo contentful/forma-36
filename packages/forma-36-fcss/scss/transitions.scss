@@ -11,5 +11,5 @@ $durations: short default long;
 }
 
 .f36-transition-easing--cubic-bezier {
-  transition-timing-function: var(--transition-cubic-bezier);
+  transition-timing-function: var(--transition-easing-cubic-bezier);
 }

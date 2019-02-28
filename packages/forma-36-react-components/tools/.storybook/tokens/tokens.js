@@ -448,7 +448,7 @@ export const easings = [
   },
   {
     name: 'Cubic Bezier',
-    cssVar: '--transition-cubic-bezier',
+    cssVar: '--transition-easing-cubic-bezier',
     value: 'cubic-bezier(0.13, 0.62, 0.11, 0.99)',
   },
 ];

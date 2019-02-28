@@ -16,7 +16,7 @@ $line-heigths: default condensed;
 
 @each $line-height in $line-heigths {
   .f36-line-height--#{$line-height} {
-    font-weight: var(--font-weight-#{$line-height});
+    line-height: var(--line-height-#{$line-height});
   }
 }
 
