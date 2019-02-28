@@ -3,6 +3,7 @@
 
 # built files
 /dist
+/esm
 /dist-storybook
 
 # misc
