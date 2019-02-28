@@ -27,6 +27,10 @@
   background: var(--color-red-dark);
 }
 
+.NotificationItem--warning {
+  background: var(--color-orange-dark);
+}
+
 .NotificationItem__intent {
   composes: sr-only from './../../styles/settings/helpers.css';
 }

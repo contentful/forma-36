@@ -45,3 +45,95 @@ exports[`renders the component 1`] = `
   />
 </div>
 `;
+
+exports[`renders the component with "error" intent 1`] = `
+<div
+  aria-live="assertive"
+  className="NotificationItem NotificationItem--error"
+  data-intent="error"
+  data-test-id="cf-ui-notification"
+  role="alert"
+>
+  <div
+    className="NotificationItem__intent"
+  >
+    error
+  </div>
+  <div
+    aria-hidden="true"
+    className="NotificationItem__icon"
+  >
+    <Icon
+      color="white"
+      icon="Warning"
+      size="small"
+      testId="cf-ui-icon"
+    />
+  </div>
+  <div
+    className="NotificationItem__text"
+  >
+    Notification text
+  </div>
+  <IconButton
+    buttonType="white"
+    disabled={false}
+    extraClassNames="NotificationItem__dismiss"
+    iconProps={
+      Object {
+        "icon": "Close",
+      }
+    }
+    label="Dismiss"
+    onClick={[Function]}
+    testId="cf-ui-notification-close"
+    withDropdown={false}
+  />
+</div>
+`;
+
+exports[`renders the component with "warning" intent 1`] = `
+<div
+  aria-live="assertive"
+  className="NotificationItem NotificationItem--warning"
+  data-intent="warning"
+  data-test-id="cf-ui-notification"
+  role="alert"
+>
+  <div
+    className="NotificationItem__intent"
+  >
+    warning
+  </div>
+  <div
+    aria-hidden="true"
+    className="NotificationItem__icon"
+  >
+    <Icon
+      color="white"
+      icon="Warning"
+      size="small"
+      testId="cf-ui-icon"
+    />
+  </div>
+  <div
+    className="NotificationItem__text"
+  >
+    Notification text
+  </div>
+  <IconButton
+    buttonType="white"
+    disabled={false}
+    extraClassNames="NotificationItem__dismiss"
+    iconProps={
+      Object {
+        "icon": "Close",
+      }
+    }
+    label="Dismiss"
+    onClick={[Function]}
+    testId="cf-ui-notification-close"
+    withDropdown={false}
+  />
+</div>
+`;

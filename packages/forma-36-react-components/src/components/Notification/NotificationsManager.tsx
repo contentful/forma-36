@@ -12,7 +12,7 @@ const getUniqueId = () => {
   return uniqueId;
 };
 
-export type Intent = 'success' | 'error';
+export type Intent = 'success' | 'error' | 'warning';
 export type Position = 'top' | 'bottom';
 
 export interface Notification {

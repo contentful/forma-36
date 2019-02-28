@@ -57,6 +57,17 @@ storiesOf('Components|Notification', module)
           >
             show error
           </Button>
+          <Button
+            style={{ marginLeft: 20 }}
+            buttonType="muted"
+            onClick={() =>
+              Notification.warning(
+                `${text('text', 'Hello world')} ${getUniqueNumber()}`,
+              )
+            }
+          >
+            show warning
+          </Button>
         </div>
       );
     }),
@@ -65,7 +76,7 @@ storiesOf('Components|Notification', module)
     <div>
       <NotificationItem
         hasCloseButton={boolean('hasCloseButton', true)}
-        intent={select('intent', ['success', 'error'], 'success')}
+        intent={select('intent', ['success', 'error', 'warning'], 'success')}
       >
         {text('text', 'Text for the notification')}
       </NotificationItem>
