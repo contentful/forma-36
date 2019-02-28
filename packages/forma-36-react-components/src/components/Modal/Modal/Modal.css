@@ -79,7 +79,8 @@
 .Modal {
   transition: opacity var(--transition-duration-long)
       var(--transition-easing-default),
-    transform var(--transition-duration-long) var(--transition-cubic-bezier);
+    transform var(--transition-duration-long)
+      var(--transition-easing-cubic-bezier);
   opacity: 0.5;
   margin: calc(1rem * (50 / var(--font-base-default)));
   transform: scale(0.85);
