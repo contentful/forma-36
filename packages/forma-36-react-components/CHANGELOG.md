@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.8.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@2.8.1...@contentful/forma-36-react-components@2.8.2) (2019-02-28)
+
+
+### Bug Fixes
+
+* **tokens:** Fixed missing transition token ([95002e7](https://github.com/contentful/forma-36/commit/95002e7))
+
+
+
+
+
 ## [2.8.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@2.8.0...@contentful/forma-36-react-components@2.8.1) (2019-02-28)
 
 

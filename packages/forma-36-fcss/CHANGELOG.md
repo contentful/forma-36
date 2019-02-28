@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.13](https://github.com/contentful/forma-36/compare/@contentful/forma-36-fcss@0.0.12...@contentful/forma-36-fcss@0.0.13) (2019-02-28)
+
+
+### Bug Fixes
+
+* **forma-36-fcss:** Fixed incorrect line-height styles ([5e26ade](https://github.com/contentful/forma-36/commit/5e26ade))
+* **tokens:** Fixed missing transition token ([95002e7](https://github.com/contentful/forma-36/commit/95002e7))
+
+
+
+
+
 ## [0.0.12](https://github.com/contentful/forma-36/compare/@contentful/forma-36-fcss@0.0.11...@contentful/forma-36-fcss@0.0.12) (2019-02-20)
 
 **Note:** Version bump only for package @contentful/forma-36-fcss
