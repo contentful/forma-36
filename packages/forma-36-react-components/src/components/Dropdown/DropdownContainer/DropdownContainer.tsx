@@ -162,7 +162,7 @@ class DropdownContainer extends React.Component<
     );
 
   render() {
-    const { submenu } = this.props;
+    const { submenu, testId } = this.props;
 
     const classNames = cn(
       styles['DropdownContainer'],
@@ -171,6 +171,7 @@ class DropdownContainer extends React.Component<
 
     const dropdown = (
       <div
+        data-test-id={testId}
         ref={ref => {
           this.dropdown = ref;
         }}

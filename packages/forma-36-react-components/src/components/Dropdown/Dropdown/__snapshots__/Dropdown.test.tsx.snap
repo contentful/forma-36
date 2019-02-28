@@ -3,7 +3,6 @@
 exports[`renders the component 1`] = `
 <div
   className="Dropdown"
-  data-test-id="cf-ui-dropdown"
   onClose={[Function]}
   position="bottom-left"
 >
@@ -25,7 +24,6 @@ exports[`renders the component 1`] = `
 exports[`renders the component as open 1`] = `
 <div
   className="Dropdown"
-  data-test-id="cf-ui-dropdown"
   onClose={[Function]}
   position="bottom-left"
 >
@@ -54,7 +52,7 @@ exports[`renders the component as open 1`] = `
     openSubmenu={[Function]}
     position="bottom-left"
     submenu={false}
-    testId="cf-ui-dropdown-portal"
+    testId="cf-ui-dropdown"
   >
     <DropdownList
       testId="cf-ui-dropdown-list"
@@ -77,7 +75,6 @@ exports[`renders the component as open 1`] = `
 exports[`renders the component with a submenu 1`] = `
 <div
   className="Dropdown"
-  data-test-id="cf-ui-dropdown"
   onClose={[Function]}
   position="bottom-left"
 >
@@ -106,7 +103,7 @@ exports[`renders the component with a submenu 1`] = `
     openSubmenu={[Function]}
     position="bottom-left"
     submenu={false}
-    testId="cf-ui-dropdown-portal"
+    testId="cf-ui-dropdown"
   >
     <DropdownList
       testId="cf-ui-dropdown-list"
@@ -148,7 +145,6 @@ exports[`renders the component with a submenu 1`] = `
 exports[`renders the component with an additional class name 1`] = `
 <div
   className="Dropdown"
-  data-test-id="cf-ui-dropdown"
   onClose={[Function]}
   position="bottom-left"
 >

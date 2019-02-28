@@ -183,7 +183,6 @@ class Dropdown extends Component<DropdownProps, DropdownState> {
       </DropdownListItem>
     ) : (
       <div
-        data-test-id={testId}
         className={classNames}
         ref={ref => {
           if (!submenuToggleLabel) {
@@ -195,6 +194,7 @@ class Dropdown extends Component<DropdownProps, DropdownState> {
         {toggleElement}
         {this.state.isOpen && (
           <DropdownContainer
+            testId={testId}
             submenu={false}
             dropdownAnchor={this.dropdownAnchor}
             anchorDimensionsAndPositon={this.state.anchorDimensionsAndPositon}
