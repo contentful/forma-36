@@ -163,7 +163,8 @@
   },
   "resolutions": {
     "url-parse": "1.4.4",
-    "merge": "1.2.1"
+    "merge": "1.2.1",
+    "extend": "3.0.2"
   },
   "publishConfig": {
     "access": "public"
