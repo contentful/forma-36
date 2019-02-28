@@ -45,12 +45,13 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        include: [/node-modules/],
+        include: [/node_modules/],
         use: [
           'style-loader',
           {
             loader: 'css-loader',
             options: {
+              importLoaders: 1,
               sourceMap: true,
               minimize: true,
             },
