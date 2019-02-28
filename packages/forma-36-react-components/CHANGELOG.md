@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.8.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@2.8.0...@contentful/forma-36-react-components@2.8.1) (2019-02-28)
+
+
+### Bug Fixes
+
+* **Dropdown:** Marking optional props ([6cb139c](https://github.com/contentful/forma-36/commit/6cb139c))
+* **Dropdown:** Optimize event listener binding ([63c05c7](https://github.com/contentful/forma-36/commit/63c05c7))
+
+
+
+
+
 # [2.8.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@2.7.0...@contentful/forma-36-react-components@2.8.0) (2019-02-28)
 
 
