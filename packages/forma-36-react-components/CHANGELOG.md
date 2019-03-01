@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.9.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@2.8.3...@contentful/forma-36-react-components@2.9.0) (2019-03-01)
+
+
+### Features
+
+* Added esm build for tree-shaking imports ([a20572b](https://github.com/contentful/forma-36/commit/a20572b))
+
+
+
+
+
 ## [2.8.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@2.8.2...@contentful/forma-36-react-components@2.8.3) (2019-02-28)
 
 
