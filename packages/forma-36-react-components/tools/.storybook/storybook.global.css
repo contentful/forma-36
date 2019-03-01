@@ -1,3 +1,5 @@
+@import '@contentful/forma-36-fcss/dist/styles.css';
+
 @font-face {
   font-family: 'Avenir Next W01';
   src: url('https://static.contentful.com/app/2cd55546-ec00-4af9-aeca-4a3cd186da53.woff2')
