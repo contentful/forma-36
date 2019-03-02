@@ -9,6 +9,7 @@ exports[`renders the component 1`] = `
   testId="cf-ui-toggle-button"
 >
   <button
+    aria-pressed={false}
     className="Toggle__button"
     data-test-id="button"
     disabled={false}
@@ -37,6 +38,7 @@ exports[`renders the component active 1`] = `
   testId="cf-ui-toggle-button"
 >
   <button
+    aria-pressed={true}
     className="Toggle__button"
     data-test-id="button"
     disabled={false}
@@ -65,6 +67,7 @@ exports[`renders the component with an additional class name 1`] = `
   testId="cf-ui-toggle-button"
 >
   <button
+    aria-pressed={false}
     className="Toggle__button"
     data-test-id="button"
     disabled={false}
@@ -93,6 +96,7 @@ exports[`renders the component with icon 1`] = `
   testId="cf-ui-toggle-button"
 >
   <button
+    aria-pressed={false}
     className="Toggle__button"
     data-test-id="button"
     disabled={false}
