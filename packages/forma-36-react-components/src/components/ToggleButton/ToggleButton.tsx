@@ -52,7 +52,7 @@ export class ToggleButton extends Component<ToggleButtonProps> {
       <Card
         extraClassNames={classNames}
         padding="none"
-        selected={this.props.isActive}
+        selected={isActive}
         {...otherProps}
       >
         <button
@@ -61,6 +61,7 @@ export class ToggleButton extends Component<ToggleButtonProps> {
           disabled={isDisabled}
           data-test-id="button"
           onClick={this.handleToggle}
+          aria-pressed={isActive}
         >
           <TabFocusTrap
             extraClassNames={styles['Toggle__button__inner-wrapper']}
