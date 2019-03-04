@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-class Option extends React.Component {
+export class Option extends React.Component {
   static propTypes = {
     value: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired,

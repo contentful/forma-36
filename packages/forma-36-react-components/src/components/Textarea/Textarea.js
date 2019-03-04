@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cn from 'classnames';
 import styles from './Textarea.css';
 
-class Textarea extends React.Component {
+export class Textarea extends React.Component {
   static propTypes = {
     name: PropTypes.string,
     id: PropTypes.string,

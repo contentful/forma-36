@@ -2,7 +2,7 @@ import React from 'react';
 import SkeletonText from '../SkeletonText';
 import { SkeletonTextPropTypes } from '../SkeletonText/SkeletonText';
 
-class SkeletonDisplayText extends React.Component {
+export class SkeletonDisplayText extends React.Component {
   static propTypes = SkeletonTextPropTypes;
 
   static defaultProps = {

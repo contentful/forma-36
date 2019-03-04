@@ -8,7 +8,7 @@ import Select from '../Select/Select';
 import TextLink from '../TextLink';
 import styles from './SelectField.css';
 
-class SelectField extends React.Component {
+export class SelectField extends React.Component {
   static propTypes = {
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     validationMessage: PropTypes.string,

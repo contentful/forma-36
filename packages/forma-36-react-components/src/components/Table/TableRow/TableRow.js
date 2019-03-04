@@ -4,7 +4,7 @@ import cn from 'classnames';
 
 import styles from './TableRow.css';
 
-export default class TableRow extends React.Component {
+export class TableRow extends React.Component {
   static propTypes = {
     extraClassNames: PropTypes.string,
     children: PropTypes.node.isRequired,
@@ -24,3 +24,5 @@ export default class TableRow extends React.Component {
     );
   }
 }
+
+export default TableRow;

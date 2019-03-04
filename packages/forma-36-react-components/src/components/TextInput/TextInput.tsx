@@ -25,7 +25,7 @@ export interface TextInputPropTypes {
   required?: boolean;
 }
 
-class TextInput extends Component<TextInputPropTypes> {
+export class TextInput extends Component<TextInputPropTypes> {
   static defaultProps = {
     name: undefined,
     id: undefined,

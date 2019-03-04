@@ -4,7 +4,7 @@ import cn from 'classnames';
 import Icon from '../../Icon/Icon';
 import styles from './Select.css';
 
-class Select extends React.Component {
+export class Select extends React.Component {
   static propTypes = {
     required: PropTypes.bool,
     children: PropTypes.node.isRequired,

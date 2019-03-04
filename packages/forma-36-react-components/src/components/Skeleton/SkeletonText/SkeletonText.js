@@ -10,7 +10,7 @@ export const SkeletonTextPropTypes = {
   marginBottom: PropTypes.number,
 };
 
-class SkeletonText extends React.Component {
+export class SkeletonText extends React.Component {
   static propTypes = SkeletonTextPropTypes;
 
   static defaultProps = {

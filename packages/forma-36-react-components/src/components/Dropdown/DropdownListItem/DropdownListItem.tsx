@@ -18,7 +18,7 @@ interface DropdownListItemProps {
   isTitle: boolean;
 }
 
-class DropdownListItem extends Component<DropdownListItemProps> {
+export class DropdownListItem extends Component<DropdownListItemProps> {
   static defaultProps = {
     extraClassNames: undefined,
     submenuToggleLabel: undefined,

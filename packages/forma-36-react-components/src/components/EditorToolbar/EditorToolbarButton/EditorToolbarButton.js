@@ -6,7 +6,7 @@ import Tooltip from '../../Tooltip/Tooltip';
 import { iconName } from '../../Icon/constants';
 import styles from './EditorToolbarButton.css';
 
-class EditorToolbarButton extends React.Component {
+export class EditorToolbarButton extends React.Component {
   static propTypes = {
     extraClassNames: PropTypes.string,
     label: PropTypes.string.isRequired,

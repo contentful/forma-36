@@ -5,7 +5,7 @@ import styles from './Paragraph.css';
 
 import { TypographyContext } from '../Typography/Typography';
 
-class Paragraph extends React.Component {
+export class Paragraph extends React.Component {
   static propTypes = {
     extraClassNames: PropTypes.string,
     children: PropTypes.node.isRequired,

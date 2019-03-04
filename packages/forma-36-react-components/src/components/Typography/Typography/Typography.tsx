@@ -11,7 +11,7 @@ export interface TypographyProps {
 
 export const TypographyContext = React.createContext({});
 
-class Typography extends React.Component<TypographyProps> {
+export class Typography extends React.Component<TypographyProps> {
   static defaultProps: Partial<TypographyProps> = {
     extraClassNames: undefined,
     testId: 'cf-ui-text-container',

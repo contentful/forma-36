@@ -11,7 +11,7 @@ export const sortingDirections = {
   desc: 'desc',
 };
 
-export default class TableCell extends React.Component {
+export class TableCell extends React.Component {
   static propTypes = {
     extraClassNames: PropTypes.string,
     children: PropTypes.node,
@@ -56,3 +56,5 @@ export default class TableCell extends React.Component {
     );
   }
 }
+
+export default TableCell;

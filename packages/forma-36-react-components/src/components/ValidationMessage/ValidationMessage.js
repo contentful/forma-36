@@ -4,7 +4,7 @@ import cn from 'classnames';
 import Icon from '../Icon/Icon';
 import styles from './ValidationMessage.css';
 
-class ValidationMessage extends React.Component {
+export class ValidationMessage extends React.Component {
   static propTypes = {
     children: PropTypes.string.isRequired,
     extraClassNames: PropTypes.string,

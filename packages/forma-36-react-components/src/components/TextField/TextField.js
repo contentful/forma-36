@@ -9,7 +9,7 @@ import TextLink from '../TextLink';
 import Textarea from '../Textarea';
 import styles from './TextField.css';
 
-class TextField extends React.Component {
+export class TextField extends React.Component {
   static propTypes = {
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     validationMessage: PropTypes.string,

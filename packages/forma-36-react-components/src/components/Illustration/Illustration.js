@@ -17,7 +17,7 @@ import Video from './svg/Video.svg';
 
 import styles from './Illustration.css';
 
-class Illustration extends React.Component {
+export class Illustration extends React.Component {
   static propTypes = {
     extraClassNames: PropTypes.string,
     illustration: PropTypes.oneOf(Object.keys(illustrationName)).isRequired,

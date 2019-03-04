@@ -5,7 +5,7 @@ import isBrowser from '../../utils/isBrowser';
 import throttle from '../../utils/throttle';
 import styles from './InViewport.css';
 
-class InViewport extends React.Component {
+export class InViewport extends React.Component {
   static propTypes = {
     extraClassNames: PropTypes.string,
     children: PropTypes.node,

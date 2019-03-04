@@ -59,13 +59,7 @@ module.exports = plop => {
         type: 'modify',
         path: path.resolve('./src/index.js'),
         pattern: /(\/\/ -- Add imports above this line \(required by plopfile\.js\) --)/gi,
-        template: `import {{pascalCase name}} from './components/{{pascalCase name}}';\r\n$1`,
-      },
-      {
-        type: 'modify',
-        path: path.resolve('./src/index.js'),
-        pattern: /(\/\/ -- Add exports above this line \(required by plopfile\.js\) --)/gi,
-        template: '{{pascalCase name}},\r\n  $1',
+        template: `export {{{pascalCase name}}} from './components/{{pascalCase name}}/{{pascalCase name}}';\r\n$1`,
       },
     ],
   });

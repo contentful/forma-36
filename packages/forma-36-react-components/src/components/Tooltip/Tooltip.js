@@ -37,7 +37,7 @@ TooltipContainer.defaultProps = {
   targetWrapperClassName: undefined,
 };
 
-class Tooltip extends React.Component {
+export class Tooltip extends React.Component {
   static propTypes = {
     extraClassNames: PropTypes.string,
     targetWrapperClassName: PropTypes.string,

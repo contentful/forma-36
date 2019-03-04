@@ -5,7 +5,7 @@ import styles from './Subheading.css';
 
 import { TypographyContext } from '../Typography/Typography';
 
-class Subheading extends React.Component {
+export class Subheading extends React.Component {
   static propTypes = {
     extraClassNames: PropTypes.string,
     children: PropTypes.node.isRequired,

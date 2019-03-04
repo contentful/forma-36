@@ -2,9 +2,9 @@ import React from 'react';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 import styles from './ListItem.css';
-import List from '../List';
+import List from '../List/List';
 
-class ListItem extends React.Component {
+export class ListItem extends React.Component {
   static propTypes = {
     extraClassNames: PropTypes.string,
     children: PropTypes.node.isRequired,
