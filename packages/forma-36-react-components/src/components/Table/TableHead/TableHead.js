@@ -5,7 +5,7 @@ import styles from './TableHead.css';
 
 import { TableCellContext, contextOptions } from '../TableCell';
 
-export default class TableHead extends React.Component {
+export class TableHead extends React.Component {
   static propTypes = {
     extraClassNames: PropTypes.string,
     children: PropTypes.node.isRequired,
@@ -32,3 +32,5 @@ export default class TableHead extends React.Component {
     );
   }
 }
+
+export default TableHead;

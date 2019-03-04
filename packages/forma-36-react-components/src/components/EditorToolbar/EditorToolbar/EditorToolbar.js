@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cn from 'classnames';
 import styles from './EditorToolbar.css';
 
-class EditorToolbar extends React.Component {
+export class EditorToolbar extends React.Component {
   static propTypes = {
     extraClassNames: PropTypes.string,
     children: PropTypes.node.isRequired,

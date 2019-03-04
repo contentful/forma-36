@@ -5,7 +5,7 @@ import styles from './DisplayText.css';
 
 import { TypographyContext } from '../Typography/Typography';
 
-class DisplayText extends React.Component {
+export class DisplayText extends React.Component {
   static propTypes = {
     extraClassNames: PropTypes.string,
     children: PropTypes.node.isRequired,

@@ -37,7 +37,7 @@ interface DropdownState {
   anchorDimensionsAndPositon?: AnchorDimensionsAndPositonType;
 }
 
-class Dropdown extends Component<DropdownProps, DropdownState> {
+export class Dropdown extends Component<DropdownProps, DropdownState> {
   static defaultProps = {
     testId: 'cf-ui-dropdown',
     position: 'bottom-left',

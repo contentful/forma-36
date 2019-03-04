@@ -15,7 +15,7 @@ interface SpinnerProps {
   color?: SpinnerColor;
 }
 
-class Spinner extends React.Component<SpinnerProps> {
+export class Spinner extends React.Component<SpinnerProps> {
   static defaultProps = {
     testId: 'cf-ui-spinner',
     size: 'default',

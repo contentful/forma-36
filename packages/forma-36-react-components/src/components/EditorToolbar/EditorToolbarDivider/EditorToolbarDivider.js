@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cn from 'classnames';
 import styles from './EditorToolbarDivider.css';
 
-class EditorToolbarDivider extends React.Component {
+export class EditorToolbarDivider extends React.Component {
   static propTypes = {
     testId: PropTypes.string,
     extraClassNames: PropTypes.string,

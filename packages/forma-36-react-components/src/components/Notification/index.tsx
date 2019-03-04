@@ -9,7 +9,7 @@ import NotificationManager, {
   SetPositionAction,
   SetDurationAction,
   Intent,
-  Notification,
+  Notification as NotificationType,
 } from './NotificationsManager';
 
 interface NotificationsAPI {
@@ -61,10 +61,10 @@ const show = (intent: Intent) => (
     intent,
   });
 
-const API: {
-  success: ShowAction<Promise<Notification>>;
-  error: ShowAction<Promise<Notification>>;
-  warning: ShowAction<Promise<Notification>>;
+export const Notification: {
+  success: ShowAction<Promise<NotificationType>>;
+  error: ShowAction<Promise<NotificationType>>;
+  warning: ShowAction<Promise<NotificationType>>;
   close: CloseAction<Promise<void>>;
   closeAll: CloseAllAction<Promise<void>>;
   setPosition: SetPositionAction<Promise<void>>;
@@ -81,4 +81,4 @@ const API: {
   setDuration: afterInit(duration => internalAPI.setDuration(duration)),
 };
 
-export default API;
+export default Notification;

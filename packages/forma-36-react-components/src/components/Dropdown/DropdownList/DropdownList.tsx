@@ -10,7 +10,7 @@ interface DropdownListProps {
   maxHeight: number;
 }
 
-class DropdownList extends Component<DropdownListProps> {
+export class DropdownList extends Component<DropdownListProps> {
   static defaultProps = {
     extraClassNames: undefined,
     testId: 'cf-ui-dropdown-list',

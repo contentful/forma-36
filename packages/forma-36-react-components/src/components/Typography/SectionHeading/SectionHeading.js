@@ -5,7 +5,7 @@ import styles from './SectionHeading.css';
 
 import { TypographyContext } from '../Typography/Typography';
 
-class SectionHeading extends React.Component {
+export class SectionHeading extends React.Component {
   static propTypes = {
     extraClassNames: PropTypes.string,
     children: PropTypes.node.isRequired,

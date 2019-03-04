@@ -27,7 +27,9 @@ export interface ControlledInputFieldPropTypes {
   children?: React.ReactNode;
 }
 
-class ControlledInputField extends Component<ControlledInputFieldPropTypes> {
+export class ControlledInputField extends Component<
+  ControlledInputFieldPropTypes
+> {
   static defaultProps = {
     testId: 'cf-ui-controlled-input-field',
     labelIsLight: false,

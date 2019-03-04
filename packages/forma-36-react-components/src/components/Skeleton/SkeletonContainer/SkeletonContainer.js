@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import cn from 'classnames';
 import styles from './SkeletonContainer.css';
 
-class SkeletonContainer extends React.Component {
+export class SkeletonContainer extends React.Component {
   static propTypes = {
     extraClassNames: PropTypes.string,
     children: PropTypes.node.isRequired,

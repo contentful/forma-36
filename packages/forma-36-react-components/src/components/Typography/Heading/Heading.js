@@ -5,7 +5,7 @@ import styles from './Heading.css';
 
 import { TypographyContext } from '../Typography/Typography';
 
-class Heading extends React.Component {
+export class Heading extends React.Component {
   static propTypes = {
     extraClassNames: PropTypes.string,
     children: PropTypes.node.isRequired,

@@ -7,7 +7,7 @@ import Tooltip from '../Tooltip';
 import TabFocusTrap from '../TabFocusTrap';
 import styles from './CopyButton.css';
 
-class CopyButton extends React.Component {
+export class CopyButton extends React.Component {
   static propTypes = {
     extraClassNames: PropTypes.string,
     testId: PropTypes.string,
