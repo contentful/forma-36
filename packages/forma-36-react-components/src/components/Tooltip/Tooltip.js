@@ -90,7 +90,7 @@ export class Tooltip extends React.Component {
   }
 
   componentWillUnmount() {
-    document.body.tooltipRoot.removeChild(this.portalTarget);
+    document.body.removeChild(this.portalTarget);
   }
 
   setPlace = place => {
