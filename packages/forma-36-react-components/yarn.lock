@@ -1183,6 +1183,18 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
+"@contentful/forma-36-fcss@^0.0.13":
+  version "0.0.13"
+  resolved "https://registry.yarnpkg.com/@contentful/forma-36-fcss/-/forma-36-fcss-0.0.13.tgz#6b881a5e4829773e823c9ec5ff778d7ed82ffd7e"
+  integrity sha512-9qgNo8/3V5ffyoOLIFHYvMou0CpS+YnZJB77hpDeCELaLIbeFlkbC8JH6eLQkVOB6UiU5jyr5tNhCkHsoKeFbA==
+  dependencies:
+    "@contentful/forma-36-tokens" "^0.2.0"
+
+"@contentful/forma-36-tokens@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@contentful/forma-36-tokens/-/forma-36-tokens-0.2.0.tgz#c4a1062e7acc2ae0ae5699e7c8606d5b5047a1c5"
+  integrity sha512-6vshI8mlnEuVx6lJ0Yw7Jzeh5YEhlCfxWZiLXg5pbiDmi9JtPAwllWii9ocrKLelIAPwB/gvNQAAzm6uSy/Vug==
+
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
