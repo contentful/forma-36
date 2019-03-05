@@ -1,10 +1,12 @@
 import React from 'react';
-import DisplayText from '@contentful/forma-36-react-components/dist/components/Typography/DisplayText';
-import Subheading from '@contentful/forma-36-react-components/dist/components/Typography/Subheading';
-import Paragraph from '@contentful/forma-36-react-components/dist/components/Typography/Paragraph';
-import Button from '@contentful/forma-36-react-components/dist/components/Button/Button';
-import TextLink from '@contentful/forma-36-react-components/dist/components/TextLink/TextLink';
-import Card from '@contentful/forma-36-react-components/dist/components/Card/Card';
+import {
+  DisplayText,
+  Subheading,
+  Paragraph,
+  Button,
+  TextLink,
+  Card,
+} from '@contentful/forma-36-react-components';
 import Logo from '../components/Logo';
 import Imprint from '../components/Imprint';
 
