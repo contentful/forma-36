@@ -5,8 +5,6 @@ import cn from 'classnames';
 import InViewport from '../InViewport';
 import styles from './Tooltip.css';
 
-const tooltipRoot = document.body;
-
 const TooltipContainer = ({
   children,
   setRef,
@@ -82,7 +80,7 @@ export class Tooltip extends React.Component {
   };
 
   componentDidMount() {
-    tooltipRoot.appendChild(this.portalTarget);
+    document.body.appendChild(this.portalTarget);
   }
 
   componentDidUpdate(prevProps) {
@@ -92,7 +90,7 @@ export class Tooltip extends React.Component {
   }
 
   componentWillUnmount() {
-    tooltipRoot.removeChild(this.portalTarget);
+    document.body.tooltipRoot.removeChild(this.portalTarget);
   }
 
   setPlace = place => {
