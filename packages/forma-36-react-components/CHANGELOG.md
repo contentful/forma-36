@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.9.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@2.9.3...@contentful/forma-36-react-components@2.9.4) (2019-03-05)
+
+
+### Bug Fixes
+
+* **Tooltip:** fixed problem with SSR and Tooltip component ([170fdb7](https://github.com/contentful/forma-36/commit/170fdb7))
+* Fixed styles tree-shaking problem in Webpack 4 ([97b54ff](https://github.com/contentful/forma-36/commit/97b54ff))
+
+
+
+
+
 ## [2.9.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@2.9.2...@contentful/forma-36-react-components@2.9.3) (2019-03-04)
 
 
