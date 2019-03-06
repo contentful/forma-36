@@ -52,11 +52,11 @@ const TableComponent = ({ propDefinitions, name }) => {
       <Table>
         <thead>
           <tr>
-            <th width="20%">name</th>
-            <th width="10%">required</th>
-            <th width="25%">type</th>
-            <th width="10%">default</th>
-            <th>description</th>
+            <th width="20%">Name</th>
+            <th width="10%">Required</th>
+            <th width="25%">Type</th>
+            <th width="10%">Default</th>
+            <th>Description</th>
           </tr>
         </thead>
         <tbody>{children}</tbody>
