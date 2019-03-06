@@ -7,6 +7,9 @@ import ReferenceCard from './ReferenceCard';
 import IconButton from '../../IconButton';
 
 storiesOf('Components|Card/ReferenceCard', module)
+  .addParameters({
+    propTypes: ReferenceCard['__docgenInfo'],
+  })
   .add('default', () => (
     <div>
       <ReferenceCard

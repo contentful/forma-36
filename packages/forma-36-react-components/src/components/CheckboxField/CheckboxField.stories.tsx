@@ -48,6 +48,8 @@ function DefaultStory() {
   );
 }
 
-storiesOf('Components|CheckboxField', module).add('default', () => (
-  <DefaultStory />
-));
+storiesOf('Components|CheckboxField', module)
+  .addParameters({
+    propTypes: CheckboxField['__docgenInfo'],
+  })
+  .add('default', () => <DefaultStory />);

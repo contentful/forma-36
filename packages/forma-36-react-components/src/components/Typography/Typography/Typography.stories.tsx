@@ -10,6 +10,9 @@ import SectionHeading from './../SectionHeading';
 import Paragraph from './../Paragraph';
 
 storiesOf('Components|Typography/Typography', module)
+  .addParameters({
+    propTypes: Typography['__docgenInfo'],
+  })
   .add(
     'DisplayText - Large',
     () => (

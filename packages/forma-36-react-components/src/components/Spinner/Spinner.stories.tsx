@@ -5,6 +5,9 @@ import { text, select, number } from '@storybook/addon-knobs';
 import Spinner from './Spinner';
 
 storiesOf('Components|Spinner', module)
+  .addParameters({
+    propTypes: Spinner['__docgenInfo'],
+  })
   .add('default', () => (
     <Spinner
       extraClassNames={text('Extra Class Names', '')}

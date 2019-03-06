@@ -7,6 +7,9 @@ import TextInput from './TextInput';
 import Button from './../Button';
 
 storiesOf('Components|TextInput', module)
+  .addParameters({
+    propTypes: TextInput['__docgenInfo'],
+  })
   .add('default', () => (
     <TextInput
       error={boolean('Error', false)}
