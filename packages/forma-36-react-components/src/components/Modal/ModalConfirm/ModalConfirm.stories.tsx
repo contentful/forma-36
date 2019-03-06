@@ -118,5 +118,8 @@ function ComplexStory() {
 }
 
 storiesOf('Components|Modal/ModalConfirm', module)
+  .addParameters({
+    propTypes: ModalConfirm['__docgenInfo'],
+  })
   .add('default', () => <DefaultStory />)
   .add('complex example', () => <ComplexStory />);

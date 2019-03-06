@@ -116,5 +116,12 @@ function ScrollableStory() {
 }
 
 storiesOf('Components|Dropdown', module)
+  .addParameters({
+    propTypes: [
+      Dropdown['__docgenInfo'],
+      DropdownList['__docgenInfo'],
+      DropdownListItem['__docgenInfo'],
+    ],
+  })
   .add('default', () => <DefaultStory />)
   .add('scrollable', () => <ScrollableStory />);
