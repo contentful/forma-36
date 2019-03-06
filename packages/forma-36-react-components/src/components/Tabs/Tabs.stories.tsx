@@ -99,5 +99,12 @@ function AsNavigationStory() {
 }
 
 storiesOf('Components|Tabs', module)
+  .addParameters({
+    propTypes: [
+      Tab['__docgenInfo'],
+      Tabs['__docgenInfo'],
+      TabPanel['__docgenInfo'],
+    ],
+  })
   .add('default', () => <DefaultStory />)
   .add('as navigation', () => <AsNavigationStory />);

@@ -6,6 +6,9 @@ import { text } from '@storybook/addon-knobs';
 import Pill from './Pill';
 
 storiesOf('Components|Pill', module)
+  .addParameters({
+    propTypes: Pill['__docgenInfo'],
+  })
   .add('default', () => (
     <Pill
       extraClassNames={text('Extra Class Names', '')}

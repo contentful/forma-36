@@ -6,6 +6,9 @@ import { action } from '@storybook/addon-actions';
 import Card from './Card';
 
 storiesOf('Components|Card', module)
+  .addParameters({
+    propTypes: Card['__docgenInfo'],
+  })
   .add('default', () => (
     <Card
       extraClassNames={text('Extra Class Names', '')}

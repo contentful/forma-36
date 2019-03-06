@@ -50,6 +50,8 @@ function DefaultStory() {
   );
 }
 
-storiesOf('Components|RadioButtonField', module).add('default', () => (
-  <DefaultStory />
-));
+storiesOf('Components|RadioButtonField', module)
+  .addParameters({
+    propTypes: RadioButtonField['__docgenInfo'],
+  })
+  .add('default', () => <DefaultStory />);

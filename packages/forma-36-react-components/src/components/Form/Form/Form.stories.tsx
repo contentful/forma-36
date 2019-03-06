@@ -62,4 +62,8 @@ function DefaultStory() {
   );
 }
 
-storiesOf('Components|Form', module).add('default', () => <DefaultStory />);
+storiesOf('Components|Form', module)
+  .addParameters({
+    propTypes: Form['__docgenInfo'],
+  })
+  .add('default', () => <DefaultStory />);

@@ -6,6 +6,9 @@ import HelpText from './HelpText';
 import TextLink from '../TextLink';
 
 storiesOf('Components|HelpText', module)
+  .addParameters({
+    propTypes: HelpText['__docgenInfo'],
+  })
   .add('default', () => (
     <HelpText extraClassNames={text('Extra Class Names', '')}>
       {text('Child Text', 'Lorem Ipsum dolor sit amet')}

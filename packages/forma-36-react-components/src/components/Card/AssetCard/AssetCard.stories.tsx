@@ -9,6 +9,9 @@ import DropdownListItem from '../../Dropdown/DropdownListItem';
 import { types } from '../../Asset/Asset';
 
 storiesOf('Components|Card/AssetCard', module)
+  .addParameters({
+    propTypes: AssetCard['__docgenInfo'],
+  })
   .add('default', () => (
     <AssetCard
       extraClassNames={text('Extra Class Names', '')}
