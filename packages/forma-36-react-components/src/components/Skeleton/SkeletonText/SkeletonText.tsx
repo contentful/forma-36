@@ -1,18 +1,15 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 
-export const SkeletonTextPropTypes = {
-  numberOfLines: PropTypes.number,
-  width: PropTypes.number,
-  offsetTop: PropTypes.number,
-  offsetLeft: PropTypes.number,
-  lineHeight: PropTypes.number,
-  marginBottom: PropTypes.number,
-};
+export interface SkeletonTextProps {
+  numberOfLines?: number;
+  width?: number;
+  offsetTop?: number;
+  offsetLeft?: number;
+  lineHeight?: number;
+  marginBottom?: number;
+}
 
-export class SkeletonText extends React.Component {
-  static propTypes = SkeletonTextPropTypes;
-
+export class SkeletonText extends Component<SkeletonTextProps> {
   static defaultProps = {
     numberOfLines: 1,
     width: undefined,

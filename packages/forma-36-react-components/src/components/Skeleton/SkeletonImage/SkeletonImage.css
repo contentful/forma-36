@@ -1,7 +1,0 @@
-@import 'settings/colors';
-@import 'settings/typography';
-@import 'settings/transitions';
-
-.SkeletonImage {
-  display: inline-block;
-}

@@ -1,31 +1,30 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import cn from 'classnames';
 import styles from './SkeletonContainer.css';
 
-export class SkeletonContainer extends React.Component {
-  static propTypes = {
-    extraClassNames: PropTypes.string,
-    children: PropTypes.node.isRequired,
-    testId: PropTypes.string,
-    ariaLabel: PropTypes.string,
-    width: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    preserveAspectRatio: PropTypes.string,
-    clipId: PropTypes.string,
-    gradientId: PropTypes.string,
-    backgroundColor: PropTypes.string,
-    backgroundOpacity: PropTypes.number,
-    animate: PropTypes.bool,
-    speed: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    foregroundColor: PropTypes.string,
-    foregroundOpacity: PropTypes.number,
-    svgWidth: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    svgHeight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  };
+interface SkeletonContainerProps {
+  width?: number | string;
+  height?: number | string;
+  preserveAspectRatio?: string;
+  clipId?: string;
+  gradientId?: string;
+  backgroundColor?: string;
+  backgroundOpacity?: number;
+  animate?: boolean;
+  speed?: number | string;
+  foregroundColor?: string;
+  foregroundOpacity?: number;
+  svgWidth?: string | number;
+  svgHeight?: string | number;
 
+  ariaLabel?: string;
+  extraClassNames?: string;
+  testId?: string;
+  children: React.ReactNode;
+}
+
+export class SkeletonContainer extends Component<SkeletonContainerProps> {
   static defaultProps = {
-    extraClassNames: undefined,
     testId: 'cf-ui-skeleton-form',
     ariaLabel: 'Loading component...',
     width: '100%',
@@ -65,7 +64,7 @@ export class SkeletonContainer extends React.Component {
       ...otherProps
     } = this.props;
 
-    const classNames = cn(styles.SkeletonContainer, extraClassNames);
+    const classNames = cn(styles['SkeletonContainer'], extraClassNames);
 
     return (
       <svg

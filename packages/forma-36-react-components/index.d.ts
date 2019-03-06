@@ -34,6 +34,11 @@
 /// <reference path="./dist/components/Dropdown/Dropdown/Dropdown.d.ts" />
 /// <reference path="./dist/components/Dropdown/DropdownList/DropdownList.d.ts" />
 /// <reference path="./dist/components/Dropdown/DropdownListItem/DropdownListItem.d.ts" />
+/// <reference path="./dist/components/Skeleton/SkeletonImage/SkeletonImage.d.ts" />
+/// <reference path="./dist/components/Skeleton/SkeletonBodyText/SkeletonBodyText.d.ts" />
+/// <reference path="./dist/components/Skeleton/SkeletonContainer/SkeletonContainer.d.ts" />
+/// <reference path="./dist/components/Skeleton/SkeletonDisplayText/SkeletonDisplayText.d.ts" />
+/// <reference path="./dist/components/Skeleton/SkeletonText/SkeletonText.d.ts" />
 
 import * as React from 'react';
 
@@ -73,6 +78,11 @@ import TextareaComponent from './dist/components/Textarea/Textarea';
 import DropdownComponent from './dist/components/Dropdown/Dropdown/Dropdown';
 import DropdownListComponent from './dist/components/Dropdown/DropdownList/DropdownList';
 import DropdownListItemComponent from './dist/components/Dropdown/DropdownListItem/DropdownListItem';
+import SkeletonImageComponent from './dist/components/Skeleton/SkeletonImage/SkeletonImage';
+import SkeletonBodyTextComponent from './dist/components/Skeleton/SkeletonBodyText/SkeletonBodyText';
+import SkeletonContainerComponent from './dist/components/Skeleton/SkeletonContainer/SkeletonContainer';
+import SkeletonDisplayTextComponent from './dist/components/Skeleton/SkeletonDisplayText/SkeletonDisplayText';
+import SkeletonTextComponent from './dist/components/Skeleton/SkeletonText/SkeletonText';
 
 export const Button: typeof ButtonComponent;
 export const Spinner: typeof SpinnerComponent;
@@ -110,6 +120,11 @@ export const Textarea: typeof TextareaComponent;
 export const Dropdown: typeof DropdownComponent;
 export const DropdownList: typeof DropdownListComponent;
 export const DropdownListItem: typeof DropdownListItemComponent;
+export const SkeletonImage: typeof SkeletonImageComponent;
+export const SkeletonBodyText: typeof SkeletonBodyTextComponent;
+export const SkeletonContainer: typeof SkeletonContainerComponent;
+export const SkeletonDisplayText: typeof SkeletonDisplayTextComponent;
+export const SkeletonText: typeof SkeletonTextComponent;
 
 export interface CopyButtonProps {
   extraClassNames?: string;
@@ -283,78 +298,6 @@ export interface SelectFieldProps {
 }
 
 export class SelectField extends React.Component<SelectFieldProps, any> {
-  render(): JSX.Element;
-}
-
-export interface SkeletonBodyTextProps {}
-
-export class SkeletonBodyText extends React.Component<
-  SkeletonBodyTextProps,
-  any
-> {
-  render(): JSX.Element;
-}
-
-export type SkeletonContainerWidth = number | string;
-
-export type SkeletonContainerHeight = number | string;
-
-export type SkeletonContainerSpeed = number | string;
-
-export type SkeletonContainerSvgWidth = number | string;
-
-export type SkeletonContainerSvgHeight = number | string;
-
-export interface SkeletonContainerProps {
-  extraClassNames?: string;
-  children: React.ReactNode;
-  testId?: string;
-  ariaLabel?: string;
-  width?: SkeletonContainerWidth;
-  height?: SkeletonContainerHeight;
-  preserveAspectRatio?: string;
-  clipId?: string;
-  gradientId?: string;
-  backgroundColor?: string;
-  backgroundOpacity?: number;
-  animate?: boolean;
-  speed?: SkeletonContainerSpeed;
-  foregroundColor?: string;
-  foregroundOpacity?: number;
-  svgWidth?: SkeletonContainerSvgWidth;
-  svgHeight?: SkeletonContainerSvgHeight;
-}
-
-export class SkeletonContainer extends React.Component<
-  SkeletonContainerProps,
-  any
-> {
-  render(): JSX.Element;
-}
-export interface SkeletonDisplayTextProps {}
-
-export class SkeletonDisplayText extends React.Component<
-  SkeletonDisplayTextProps,
-  any
-> {
-  render(): JSX.Element;
-}
-export interface SkeletonImageProps {
-  testId?: string;
-  offsetLeft?: number;
-  offsetTop?: number;
-  width?: number;
-  height?: number;
-  radiusX?: number;
-  radiusY?: number;
-}
-
-export class SkeletonImage extends React.Component<SkeletonImageProps, any> {
-  render(): JSX.Element;
-}
-export interface SkeletonTextProps {}
-
-export class SkeletonText extends React.Component<SkeletonTextProps, any> {
   render(): JSX.Element;
 }
 
