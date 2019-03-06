@@ -2,9 +2,7 @@ import React from 'react';
 import { storiesOf, StoryDecorator } from '@storybook/react';
 import { StateDecorator, Store } from '@sambego/storybook-state';
 import { action } from '@storybook/addon-actions';
-import { host } from 'storybook-host';
 import { text } from '@storybook/addon-knobs';
-import { withInfo } from '@storybook/addon-info';
 
 import Tabs from './Tabs';
 import Tab from './Tab';
@@ -15,13 +13,6 @@ const store = new Store({
 });
 
 storiesOf('Components|Tabs', module)
-  .addDecorator((story, context) => withInfo()(story)(context))
-  .addDecorator(
-    host({
-      align: 'center middle',
-      cropMarks: false,
-    }),
-  )
   .addDecorator(StateDecorator(store) as StoryDecorator)
   .add('default', () => (
     <div>
