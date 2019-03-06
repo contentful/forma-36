@@ -8,6 +8,9 @@ import Icon from './Icon';
 import { iconName } from './constants';
 
 storiesOf('Components|Icon', module)
+  .addParameters({
+    propTypes: Icon['__docgenInfo'],
+  })
   .add('Icon (default)', () => (
     <Icon
       icon={select('Icon', Object.keys(iconName), Object.keys(iconName)[0])}

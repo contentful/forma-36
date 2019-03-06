@@ -1,0 +1,68 @@
+import React from 'react';
+import { styled } from '@storybook/theming';
+import tokens from '@contentful/forma-36-tokens';
+
+const Container = styled.div`
+  padding: 20px;
+`;
+
+const ComponentName = styled.h2`
+  margin-bottom: 20px;
+  margin-top: 0px;
+`;
+
+const Table = styled.table`
+  border: solid 1px ${tokens.colorElementLight};
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+
+  thead th {
+    background-color: ${tokens.colorElementLight};
+    border: solid 1px ${tokens.colorElementLight};
+    color: ${tokens.colorTextMid};
+    padding: 10px;
+    text-align: left;
+  }
+  tbody td {
+    border: solid 1px ${tokens.colorElementLight};
+    color: ${tokens.colorTextMid};
+    padding: 10px;
+  }
+`;
+
+const TableComponent = ({ propDefinitions, name }) => {
+  const children = propDefinitions.map(
+    ({ name, type, required, description, defaultValue }) => {
+      return (
+        <tr key={name}>
+          <td>{name}</td>
+          <td>{required ? 'yes' : ''}</td>
+          <td>{type.name}</td>
+          <td>{defaultValue ? defaultValue.value : ''}</td>
+          <td>{description}</td>
+        </tr>
+      );
+    },
+  );
+
+  return (
+    <Container>
+      <ComponentName>{name}</ComponentName>
+      <Table>
+        <thead>
+          <tr>
+            <th width="20%">name</th>
+            <th width="10%">required</th>
+            <th width="25%">type</th>
+            <th width="10%">default</th>
+            <th>description</th>
+          </tr>
+        </thead>
+        <tbody>{children}</tbody>
+      </Table>
+    </Container>
+  );
+};
+
+export default TableComponent;

@@ -1,17 +1,17 @@
 import { configure, addParameters, addDecorator } from '@storybook/react';
-import { create } from '@storybook/theming';
 import contentfulTheme from './contentful-theme';
 
 // Storybook Addon Dependencies
 import { withKnobs } from '@storybook/addon-knobs';
-import { withInfo } from '@storybook/addon-info';
+import { withPropTypes } from './with-props-types/index';
 
 // Setup Addons
 addDecorator(withKnobs);
-addDecorator(withInfo({ header: false, source: false }));
+addDecorator(withPropTypes);
 
 // Setup Storybook options
 addParameters({ options: { theme: contentfulTheme } });
+addParameters({ info: { header: false, source: false } });
 
 // Load Stories
 const reqGeneral = require.context('./docs', true, /\.stories\.js$/);

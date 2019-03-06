@@ -6,6 +6,9 @@ import notes from './Note.md';
 import Note from './Note';
 
 storiesOf('Components|Note', module)
+  .addParameters({
+    propTypes: Note['__docgenInfo'],
+  })
   .add(
     'default',
     () => (
