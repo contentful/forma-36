@@ -1,14 +1,15 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, boolean, number } from '@storybook/addon-knobs';
+import { withInfo } from '@storybook/addon-info';
 
 import SkeletonBodyText from '../SkeletonBodyText';
 import SkeletonDisplayText from '../SkeletonDisplayText';
 import SkeletonContainer from './SkeletonContainer';
 
-storiesOf('Components|Skeleton/SkeletonContainer', module).add(
-  'default',
-  () => (
+storiesOf('Components|Skeleton/SkeletonContainer', module)
+  .addDecorator(withInfo)
+  .add('default', () => (
     <SkeletonContainer
       extraClassNames={text('Extra Class Names', '')}
       animate={boolean('Animate', true)}
@@ -21,5 +22,4 @@ storiesOf('Components|Skeleton/SkeletonContainer', module).add(
       <SkeletonDisplayText numberOfLines={1} />
       <SkeletonBodyText numberOfLines={3} offsetTop={35} />
     </SkeletonContainer>
-  ),
-);
+  ));

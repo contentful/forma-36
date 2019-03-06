@@ -2,10 +2,12 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, boolean, select, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
+import { withInfo } from '@storybook/addon-info';
 
 import TextField from './TextField';
 
 storiesOf('Components|TextField', module)
+  .addDecorator(withInfo)
   .add('default', () => (
     <TextField
       extraClassNames={text('Extra Class Names', '')}

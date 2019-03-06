@@ -1,11 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, select } from '@storybook/addon-knobs';
+import { withInfo } from '@storybook/addon-info';
 
 import Illustration from './Illustration';
 import { illustrationName } from './constants';
 
 storiesOf('Components|Illustration', module)
+  .addDecorator(withInfo)
   .add('default', () => (
     <Illustration
       illustration={select(
