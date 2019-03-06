@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import cn from 'classnames';
 
 const styles = require('./Typography.css');
@@ -11,7 +11,7 @@ export interface TypographyProps {
 
 export const TypographyContext = React.createContext({});
 
-export class Typography extends React.Component<TypographyProps> {
+export class Typography extends Component<TypographyProps> {
   static defaultProps: Partial<TypographyProps> = {
     extraClassNames: undefined,
     testId: 'cf-ui-text-container',
