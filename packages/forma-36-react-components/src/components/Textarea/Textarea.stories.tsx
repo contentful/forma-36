@@ -2,12 +2,13 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, boolean, select, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 
 import Textarea from './Textarea';
 
 storiesOf('Components|TextArea', module)
-  .addParameters(withInfo)
+  .addParameters({
+    propTypes: Textarea['__docgenInfo'],
+  })
   .add('default', () => (
     <Textarea
       extraClassNames={text('Extra Class Names', '')}

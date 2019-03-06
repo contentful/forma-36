@@ -30,6 +30,10 @@
 /// <reference path="./dist/components/Tabs/Tab.d.ts" />
 /// <reference path="./dist/components/Tabs/TabPanel.d.ts" />
 /// <reference path="./dist/components/TextInput/TextInput.d.ts" />
+/// <reference path="./dist/components/Textarea/Textarea.d.ts" />
+/// <reference path="./dist/components/Dropdown/Dropdown/Dropdown.d.ts" />
+/// <reference path="./dist/components/Dropdown/DropdownList/DropdownList.d.ts" />
+/// <reference path="./dist/components/Dropdown/DropdownListItem/DropdownListItem.d.ts" />
 
 import * as React from 'react';
 
@@ -65,6 +69,10 @@ import TabsComponent from './dist/components/Tabs/Tabs';
 import TabComponent from './dist/components/Tabs/Tab';
 import TabPanelComponent from './dist/components/Tabs/TabPanel';
 import TextInputComponent from './dist/components/TextInput/TextInput';
+import TextareaComponent from './dist/components/Textarea/Textarea';
+import DropdownComponent from './dist/components/Dropdown/Dropdown/Dropdown';
+import DropdownListComponent from './dist/components/Dropdown/DropdownList/DropdownList';
+import DropdownListItemComponent from './dist/components/Dropdown/DropdownListItem/DropdownListItem';
 
 export const Button: typeof ButtonComponent;
 export const Spinner: typeof SpinnerComponent;
@@ -98,6 +106,10 @@ export const Tabs: typeof TabsComponent;
 export const Tab: typeof TabComponent;
 export const TabPanel: typeof TabPanelComponent;
 export const TextInput: typeof TextInputComponent;
+export const Textarea: typeof TextareaComponent;
+export const Dropdown: typeof DropdownComponent;
+export const DropdownList: typeof DropdownListComponent;
+export const DropdownListItem: typeof DropdownListItemComponent;
 
 export interface CopyButtonProps {
   extraClassNames?: string;
@@ -110,65 +122,6 @@ export class CopyButton extends React.Component<CopyButtonProps, any> {
   render(): JSX.Element;
 }
 
-export type DropdownPosition =
-  | 'top'
-  | 'right'
-  | 'left'
-  | 'bottom-left'
-  | 'bottom-right'
-  | 'top-right'
-  | 'top-left';
-
-export interface DropdownProps {
-  extraClassNames?: string;
-  children: React.ReactNode;
-  toggleElement?: React.ReactNode;
-  testId?: string;
-  submenuToggleLabel?: string;
-  position?: DropdownPosition;
-  isOpen?: boolean;
-  onClose?: (...args: any[]) => any;
-}
-
-export class Dropdown extends React.Component<DropdownProps, any> {
-  render(): JSX.Element;
-}
-
-export type DropdownListBorder = 'top' | 'bottom';
-
-export interface DropdownListProps {
-  extraClassNames?: string;
-  children: React.ReactNode;
-  testId?: string;
-  border?: DropdownListBorder;
-  maxHeight?: number;
-}
-
-export class DropdownList extends React.Component<DropdownListProps, any> {
-  render(): JSX.Element;
-}
-
-export interface DropdownListItemProps {
-  extraClassNames?: string;
-  children: React.ReactNode;
-  onClick?: (...args: any[]) => any;
-  testId?: string;
-  onMouseDown?: (...args: any[]) => any;
-  submenuToggleLabel?: string;
-  onFocus?: (...args: any[]) => any;
-  onLeave?: (...args: any[]) => any;
-  onEnter?: (...args: any[]) => any;
-  isDisabled?: boolean;
-  isActive?: boolean;
-  isTitle?: boolean;
-}
-
-export class DropdownListItem extends React.Component<
-  DropdownListItemProps,
-  any
-> {
-  render(): JSX.Element;
-}
 export interface EditorToolbarProps {
   extraClassNames?: string;
   children: React.ReactNode;
@@ -487,29 +440,6 @@ export interface TextFieldProps {
 }
 
 export class TextField extends React.Component<TextFieldProps, any> {
-  render(): JSX.Element;
-}
-
-export type TextareaWidth = 'small' | 'medium' | 'large' | 'full';
-
-export interface TextareaProps {
-  name?: string;
-  id?: string;
-  testId?: string;
-  placeholder?: string;
-  extraClassNames?: string;
-  width?: TextareaWidth;
-  maxLength?: number;
-  required?: boolean;
-  onChange?: (...args: any[]) => any;
-  disabled?: boolean;
-  value?: string;
-  rows?: number;
-  onBlur?: (...args: any[]) => any;
-  error?: boolean;
-}
-
-export class Textarea extends React.Component<TextareaProps, any> {
   render(): JSX.Element;
 }
 

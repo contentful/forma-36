@@ -1,38 +1,29 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
+import React, { Component } from 'react';
 import cn from 'classnames';
 import styles from './Textarea.css';
 
-export class Textarea extends React.Component {
-  static propTypes = {
-    name: PropTypes.string,
-    id: PropTypes.string,
-    testId: PropTypes.string,
-    placeholder: PropTypes.string,
-    extraClassNames: PropTypes.string,
-    width: PropTypes.oneOf(['small', 'medium', 'large', 'full']),
-    maxLength: PropTypes.number,
-    required: PropTypes.bool,
-    onChange: PropTypes.func,
-    disabled: PropTypes.bool,
-    value: PropTypes.string,
-    rows: PropTypes.number,
-    onBlur: PropTypes.func,
-    error: PropTypes.bool,
-  };
+interface TextareaProps {
+  name?: string;
+  id?: string;
+  testId?: string;
+  placeholder?: string;
+  extraClassNames?: string;
+  width?: 'small' | 'medium' | 'large' | 'full';
+  maxLength?: number;
+  required?: boolean;
+  onChange?: (...args: any[]) => any;
+  disabled?: boolean;
+  value?: string;
+  rows?: number;
+  onBlur?: (...args: any[]) => any;
+  error?: boolean;
+}
 
+export class Textarea extends Component<TextareaProps> {
   static defaultProps = {
-    name: undefined,
-    id: undefined,
-    extraClassNames: undefined,
-    placeholder: undefined,
     testId: 'cf-ui-textarea',
-    maxLength: undefined,
-    onChange: undefined,
-    onBlur: undefined,
-    value: undefined,
-    error: undefined,
-    rows: undefined,
     disabled: false,
     required: false,
     width: 'full',
@@ -71,7 +62,7 @@ export class Textarea extends React.Component {
 
     const widthClass = `Textarea--${width}`;
     const classNames = cn(
-      styles.Textarea,
+      styles['Textarea'],
       extraClassNames,
       styles[widthClass],
       {
@@ -85,7 +76,7 @@ export class Textarea extends React.Component {
         <textarea
           data-test-id={testId}
           aria-label={name}
-          className={styles.Textarea__textarea}
+          className={styles['Textarea__textarea']}
           id={id}
           rows={rows}
           onBlur={onBlur}
