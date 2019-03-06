@@ -16,6 +16,7 @@ const Table = styled.table`
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
+  max-width: 1200px;
 
   thead th {
     background-color: ${tokens.colorElementLight};
