@@ -2,6 +2,7 @@ import React from 'react';
 import { STORY_RENDERED } from '@storybook/core-events';
 import _ from 'lodash';
 import PropTypesTable from './PropTypesTable';
+import EmptyState from './EmptyState';
 
 const propsFromDocgen = type => {
   const props = {};
@@ -50,11 +51,12 @@ export default class PropTypesPanel extends React.Component {
   render() {
     const { types } = this.state;
     const { active } = this.props;
-    if (types.length === 0) {
-      return null;
-    }
     if (!active) {
       return null;
+    }
+
+    if (types.length === 0) {
+      return <EmptyState />;
     }
 
     return types.map((type, i) => (
