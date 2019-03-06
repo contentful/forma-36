@@ -4,6 +4,8 @@
   "private": true,
   "version": "0.0.50",
   "dependencies": {
+    "@contentful/forma-36-fcss": "^0.0.13",
+    "@contentful/forma-36-react-components": "^2.9.5",
     "@contentful/forma-36-tokens": "^0.2.0",
     "@mdx-js/mdx": "^0.17.0",
     "@mdx-js/tag": "^0.17.0",
