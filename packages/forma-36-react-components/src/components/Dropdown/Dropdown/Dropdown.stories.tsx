@@ -1,8 +1,7 @@
-import React from 'react';
-import { storiesOf, StoryDecorator } from '@storybook/react';
+import React, { useState } from 'react';
+import { storiesOf } from '@storybook/react';
 import { text, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { StateDecorator, Store } from '@sambego/storybook-state';
 
 import Dropdown from './Dropdown';
 import DropdownListItem from '../DropdownListItem';
@@ -10,16 +9,13 @@ import Button from '../../Button';
 import TextLink from '../../TextLink';
 import DropdownList from '../DropdownList';
 
-const store = new Store({
-  isOpen: false,
-});
+function DefaultStory() {
+  const [isOpen, setOpen] = useState(false);
 
-storiesOf('Components|Dropdown', module)
-  .addDecorator(StateDecorator(store) as StoryDecorator)
-  .add('default', () => (
+  return (
     <Dropdown
-      isOpen={store.state.isOpen}
-      onClose={() => store.set({ isOpen: false })}
+      isOpen={isOpen}
+      onClose={() => setOpen(false)}
       key={Date.now()} // Force Reinit
       position={select(
         'Menu Position',
@@ -36,7 +32,7 @@ storiesOf('Components|Dropdown', module)
           size="small"
           buttonType="muted"
           indicateDropdown
-          onClick={() => store.set({ isOpen: !store.state.isOpen })}
+          onClick={() => setOpen(!isOpen)}
         >
           toggle
         </Button>
@@ -76,11 +72,15 @@ storiesOf('Components|Dropdown', module)
         </DropdownListItem>
       </DropdownList>
     </Dropdown>
-  ))
-  .add('scrollable', () => (
+  );
+}
+
+function ScrollableStory() {
+  const [isOpen, setOpen] = useState(false);
+  return (
     <Dropdown
-      isOpen={store.state.isOpen}
-      onClose={() => store.set({ isOpen: false })}
+      isOpen={isOpen}
+      onClose={() => setOpen(false)}
       position={select(
         'Menu Position',
         {
@@ -96,7 +96,7 @@ storiesOf('Components|Dropdown', module)
           size="small"
           buttonType="muted"
           indicateDropdown
-          onClick={() => store.set({ isOpen: !store.state.isOpen })}
+          onClick={() => setOpen(!isOpen)}
         >
           toggle
         </Button>
@@ -112,4 +112,9 @@ storiesOf('Components|Dropdown', module)
         ))}
       </DropdownList>
     </Dropdown>
-  ));
+  );
+}
+
+storiesOf('Components|Dropdown', module)
+  .add('default', () => <DefaultStory />)
+  .add('scrollable', () => <ScrollableStory />);

@@ -1,6 +1,5 @@
-import React from 'react';
-import { storiesOf, StoryDecorator } from '@storybook/react';
-import { StateDecorator, Store } from '@sambego/storybook-state';
+import React, { useState } from 'react';
+import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { boolean, select } from '@storybook/addon-knobs';
 
@@ -10,13 +9,9 @@ import Button from '../../Button';
 import TextField from '../../TextField';
 import CheckboxField from '../../CheckboxField';
 
-const store = new Store({
-  agreeTerms: 'yes',
-});
-
-storiesOf('Components|Form', module)
-  .addDecorator(StateDecorator(store) as StoryDecorator)
-  .add('default', () => (
+function DefaultStory() {
+  const [agreeTerms, setTerms] = useState('yes');
+  return (
     <Form
       onSubmit={action('onSubmit')}
       spacing={select(
@@ -49,23 +44,22 @@ storiesOf('Components|Form', module)
           labelText="I agree"
           value="yes"
           helpText="Click if you agree"
-          onChange={e =>
-            store.set({ agreeTerms: (e.target as HTMLInputElement).value })
-          }
-          checked={store.state.agreeTerms === 'yes'}
+          onChange={e => setTerms((e.target as HTMLInputElement).value)}
+          checked={agreeTerms === 'yes'}
           id="termsCheckboxYes"
         />
         <CheckboxField
           labelText="I don't agree"
           value="no"
-          onChange={e =>
-            store.set({ agreeTerms: (e.target as HTMLInputElement).value })
-          }
-          checked={store.state.agreeTerms === 'no'}
+          onChange={e => setTerms((e.target as HTMLInputElement).value)}
+          checked={agreeTerms === 'no'}
           helpText="Click if you don't agree"
           id="termsCheckboxNo"
         />
       </FieldGroup>
       <Button>Submit</Button>
     </Form>
-  ));
+  );
+}
+
+storiesOf('Components|Form', module).add('default', () => <DefaultStory />);

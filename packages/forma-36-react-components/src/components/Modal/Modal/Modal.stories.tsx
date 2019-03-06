@@ -1,7 +1,6 @@
-import React from 'react';
-import { storiesOf, StoryDecorator } from '@storybook/react';
+import React, { useState } from 'react';
+import { storiesOf } from '@storybook/react';
 import { text, boolean, select } from '@storybook/addon-knobs';
-import { StateDecorator, Store } from '@sambego/storybook-state';
 
 import Modal from './Modal';
 import Button from '../../Button/Button';
@@ -14,17 +13,13 @@ function fillArray(value, len) {
   return a;
 }
 
-const store = new Store({
-  isShown: false,
-});
-
-storiesOf('Components|Modal', module)
-  .addDecorator(StateDecorator(store) as StoryDecorator)
-  .add('default', () => (
+function DefaultStory() {
+  const [isShown, setShown] = useState(false);
+  return (
     <div>
       <Button
         onClick={() => {
-          store.set({ isShown: true });
+          setShown(true);
         }}
       >
         Open modal
@@ -65,25 +60,29 @@ storiesOf('Components|Modal', module)
         )}
         testId={text('testId', Modal.defaultProps.testId)}
         extraClassNames={text('extraClassNames', '')}
-        isShown={store.state.isShown}
+        isShown={isShown}
         onClose={() => {
-          store.set({ isShown: false });
+          setShown(false);
         }}
       >
         Modal content. It is centered by default.
       </Modal>
     </div>
-  ))
-  .add('long', () => (
+  );
+}
+
+function LongModalStory() {
+  const [isShown, setShown] = useState(false);
+  return (
     <div>
-      <Button onClick={() => store.set({ isShown: true })}>
+      <Button onClick={() => setShown(true)}>
         Different behaviors for modal
       </Button>
       <Modal
         title="A really long modal"
         allowHeightOverflow={boolean('allowHeightOverflow', false)}
-        isShown={store.state.isShown}
-        onClose={() => store.set({ isShown: false })}
+        isShown={isShown}
+        onClose={() => setShown(false)}
       >
         <div style={{ marginBottom: 10 }}>
           Toggle <code>allowHeightOverflow</code> to see different behaviours
@@ -94,16 +93,18 @@ storiesOf('Components|Modal', module)
         ))}
       </Modal>
     </div>
-  ))
-  .add('controlled', () => (
+  );
+}
+
+function ControllerModalStory() {
+  const [isShown, setShown] = useState(false);
+  return (
     <div>
-      <Button onClick={() => store.set({ isShown: true })}>
-        Show centered modal
-      </Button>
+      <Button onClick={() => setShown(true)}>Show centered modal</Button>
       <Modal
         title="Centered modal"
-        isShown={store.state.isShown}
-        onClose={() => store.set({ isShown: false })}
+        isShown={isShown}
+        onClose={() => setShown(false)}
       >
         {({ title, onClose }) => (
           <React.Fragment>
@@ -121,4 +122,10 @@ storiesOf('Components|Modal', module)
         )}
       </Modal>
     </div>
-  ));
+  );
+}
+
+storiesOf('Components|Modal', module)
+  .add('default', () => <DefaultStory />)
+  .add('long', () => <LongModalStory />)
+  .add('controlled', () => <ControllerModalStory />);

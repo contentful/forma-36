@@ -1,33 +1,22 @@
-import React from 'react';
-import { storiesOf, StoryDecorator } from '@storybook/react';
+import React, { useState } from 'react';
+import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { text, boolean, select } from '@storybook/addon-knobs';
-import { StateDecorator, Store } from '@sambego/storybook-state';
 
 import ModalConfirm from './ModalConfirm';
 import Modal from '../Modal';
 import Button from '../../Button';
 import TextInput from '../../TextInput';
 
-const store = new Store({
-  isShown: false,
-  isLoading: false,
-  isDisabled: true,
-  repeat: '',
-});
-
-storiesOf('Components|Modal/ModalConfirm', module)
-  .addDecorator(StateDecorator(store) as StoryDecorator)
-  .add('default', () => (
+function DefaultStory() {
+  const [isShown, setShown] = useState(false);
+  return (
     <div>
-      <Button
-        buttonType="negative"
-        onClick={() => store.set({ isShown: true })}
-      >
+      <Button buttonType="negative" onClick={() => setShown(true)}>
         Delete something
       </Button>
       <ModalConfirm
-        isShown={store.state.isShown}
+        isShown={isShown}
         title={text('title', ModalConfirm.defaultProps.title)}
         intent={select(
           'intent',
@@ -76,39 +65,45 @@ storiesOf('Components|Modal/ModalConfirm', module)
           ModalConfirm.defaultProps.cancelTestId,
         )}
         onCancel={() => {
-          store.set({ isShown: false });
+          setShown(false);
           action('onCancel')();
         }}
         onConfirm={() => {
-          store.set({ isShown: false });
+          setShown(false);
           action('onConfirm')();
         }}
       >
         <p>You are about to delete SOMETHING. Think twice!</p>
       </ModalConfirm>
     </div>
-  ))
-  .add('complex example', () => (
+  );
+}
+
+function ComplexStory() {
+  const [isShown, setShown] = useState(false);
+  const [isLoading, setLoading] = useState(false);
+  const [repeat, setRepeat] = useState('');
+
+  return (
     <div>
-      <Button
-        buttonType="negative"
-        onClick={() => store.set({ isShown: true })}
-      >
+      <Button buttonType="negative" onClick={() => setShown(true)}>
         Delete something
       </Button>
       <ModalConfirm
-        isShown={store.state.isShown}
+        isShown={isShown}
         intent="negative"
-        isConfirmDisabled={store.state.repeat !== 'unlock'}
-        isConfirmLoading={store.state.isLoading}
+        isConfirmDisabled={repeat !== 'unlock'}
+        isConfirmLoading={isLoading}
         onCancel={() => {
-          store.set({ isShown: false });
+          setShown(false);
           action('onCancel')();
         }}
         onConfirm={() => {
-          store.set({ isLoading: true });
+          setLoading(true);
           setTimeout(() => {
-            store.set({ isLoading: false, isShown: false, repeat: '' });
+            setLoading(false);
+            setShown(false);
+            setRepeat('');
           }, 1500);
           action('onConfirm')();
         }}
@@ -116,10 +111,12 @@ storiesOf('Components|Modal/ModalConfirm', module)
         <p>
           Type <strong>unlock</strong> to allow confirming this modal
         </p>
-        <TextInput
-          value={store.state.repeat}
-          onChange={e => store.set({ repeat: e.target.value })}
-        />
+        <TextInput value={repeat} onChange={e => setRepeat(e.target.value)} />
       </ModalConfirm>
     </div>
-  ));
+  );
+}
+
+storiesOf('Components|Modal/ModalConfirm', module)
+  .add('default', () => <DefaultStory />)
+  .add('complex example', () => <ComplexStory />);
