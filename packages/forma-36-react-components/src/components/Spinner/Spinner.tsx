@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import cn from 'classnames';
 
 const styles = require('./Spinner.css');
@@ -15,7 +15,7 @@ interface SpinnerProps {
   color?: SpinnerColor;
 }
 
-export class Spinner extends React.Component<SpinnerProps> {
+export class Spinner extends Component<SpinnerProps> {
   static defaultProps = {
     testId: 'cf-ui-spinner',
     size: 'default',
