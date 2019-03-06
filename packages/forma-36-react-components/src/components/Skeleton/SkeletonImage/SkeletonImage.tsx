@@ -1,17 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 
-export class SkeletonImage extends React.Component {
-  static propTypes = {
-    testId: PropTypes.string,
-    offsetLeft: PropTypes.number,
-    offsetTop: PropTypes.number,
-    width: PropTypes.number,
-    height: PropTypes.number,
-    radiusX: PropTypes.number,
-    radiusY: PropTypes.number,
-  };
+interface SkeletonImageProps {
+  testId: string;
+  offsetLeft: number;
+  offsetTop: number;
+  width: number;
+  height: number;
+  radiusX: number;
+  radiusY: number;
+}
 
+export class SkeletonImage extends Component<SkeletonImageProps> {
   static defaultProps = {
     testId: 'cf-ui-skeleton-image',
     offsetLeft: undefined,

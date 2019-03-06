@@ -1,13 +1,14 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { number } from '@storybook/addon-knobs';
-import { withInfo } from '@storybook/addon-info';
 
 import SkeletonImage from './SkeletonImage';
 import SkeletonContainer from '../SkeletonContainer';
 
 storiesOf('Components|Skeleton/SkeletonImage', module)
-  .addDecorator(withInfo)
+  .addParameters({
+    propTypes: SkeletonImage['__docgenInfo'],
+  })
   .add('default', () => (
     <SkeletonContainer>
       <SkeletonImage

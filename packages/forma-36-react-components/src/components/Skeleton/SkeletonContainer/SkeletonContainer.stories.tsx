@@ -1,14 +1,16 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, boolean, number } from '@storybook/addon-knobs';
-import { withInfo } from '@storybook/addon-info';
 
 import SkeletonBodyText from '../SkeletonBodyText';
 import SkeletonDisplayText from '../SkeletonDisplayText';
 import SkeletonContainer from './SkeletonContainer';
 
 storiesOf('Components|Skeleton/SkeletonContainer', module)
-  .addDecorator(withInfo)
+  .addParameters({
+    propTypes: SkeletonContainer['__docgenInfo'],
+  })
+
   .add('default', () => (
     <SkeletonContainer
       extraClassNames={text('Extra Class Names', '')}

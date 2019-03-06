@@ -1,10 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import SkeletonText from '../SkeletonText';
-import { SkeletonTextPropTypes } from '../SkeletonText/SkeletonText';
+import { SkeletonTextProps } from '../SkeletonText/SkeletonText';
 
-export class SkeletonDisplayText extends React.Component {
-  static propTypes = SkeletonTextPropTypes;
-
+export class SkeletonDisplayText extends Component<SkeletonTextProps> {
   static defaultProps = {
     numberOfLines: 1,
     width: 100,
