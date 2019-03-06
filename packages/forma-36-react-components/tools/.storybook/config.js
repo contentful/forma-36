@@ -2,19 +2,16 @@ import { configure, addParameters, addDecorator } from '@storybook/react';
 import { create } from '@storybook/theming';
 import contentfulTheme from './contentful-theme';
 
-// Storybook Addon Depedencies
+// Storybook Addon Dependencies
 import { withKnobs } from '@storybook/addon-knobs';
-import { withOptions } from '@storybook/addon-options';
+import { withInfo } from '@storybook/addon-info';
 
 // Setup Addons
 addDecorator(withKnobs);
+addDecorator(withInfo({ header: false }));
 
-addParameters({
-  options: {
-    name: 'Forma 36 React Components',
-    theme: contentfulTheme,
-  },
-});
+// Setup Storybook options
+addParameters({ options: { theme: contentfulTheme } });
 
 // Load Stories
 const reqGeneral = require.context('./docs', true, /\.stories\.js$/);

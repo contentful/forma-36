@@ -2,8 +2,12 @@ import { create } from '@storybook/theming';
 import tokens from '@contentful/forma-36-tokens';
 
 export default create({
-  // Is this a 'light' or 'dark' theme?
   base: 'light',
+
+  // Branding information
+  brandTitle: 'Forma 36 React Components',
+  brandUrl: '/',
+  brandImage: null,
 
   // Color palette
   colorPrimary: tokens.colorPrimary,
