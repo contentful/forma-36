@@ -1,20 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, boolean } from '@storybook/addon-knobs';
-import { StateDecorator, Store } from '@sambego/storybook-state';
 import { action } from '@storybook/addon-actions';
 
 import RadioButtonField from './RadioButtonField';
 import FieldGroup from '../Form/FieldGroup';
 
-const store = new Store({
-  activeOption: 'yes',
-});
-
-storiesOf('Components|RadioButtonField', module)
-  // @ts-ignore
-  .addDecorator(StateDecorator(store))
-  .add('default', () => (
+function DefaultStory() {
+  const [activeOption, setActiveOption] = useState('yes');
+  return (
     <FieldGroup>
       <RadioButtonField
         labelText={text('Label Text', 'Option 1')}
@@ -22,11 +16,11 @@ storiesOf('Components|RadioButtonField', module)
         validationMessage={text('Validation Message', undefined)}
         disabled={boolean('Disabled', false)}
         name="someOption"
-        checked={store.state.activeOption === 'yes'}
+        checked={activeOption === 'yes'}
         value="yes"
-        onChange={e =>
-          store.set({ activeOption: (e.target as HTMLInputElement).value })
-        }
+        onChange={e => {
+          setActiveOption((e.target as HTMLInputElement).value);
+        }}
         labelIsLight={boolean('Light', false)}
         inputProps={{
           onBlur: action('onBlur'),
@@ -41,10 +35,10 @@ storiesOf('Components|RadioButtonField', module)
         disabled={boolean('Disabled', false)}
         name="someOption"
         value="no"
-        checked={store.state.activeOption === 'no'}
-        onChange={e =>
-          store.set({ activeOption: (e.target as HTMLInputElement).value })
-        }
+        checked={activeOption === 'no'}
+        onChange={e => {
+          setActiveOption((e.target as HTMLInputElement).value);
+        }}
         labelIsLight={boolean('Light', false)}
         inputProps={{
           onBlur: action('onBlur'),
@@ -53,4 +47,9 @@ storiesOf('Components|RadioButtonField', module)
         id="termsCheckboxOption2"
       />
     </FieldGroup>
-  ));
+  );
+}
+
+storiesOf('Components|RadioButtonField', module).add('default', () => (
+  <DefaultStory />
+));

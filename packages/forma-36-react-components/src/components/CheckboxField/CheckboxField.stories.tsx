@@ -1,20 +1,16 @@
-import React from 'react';
-import { storiesOf, StoryDecorator } from '@storybook/react';
+import React, { useState } from 'react';
+import { storiesOf } from '@storybook/react';
 import { text, boolean } from '@storybook/addon-knobs';
-import { StateDecorator, Store } from '@sambego/storybook-state';
 import { action } from '@storybook/addon-actions';
 
 import FieldGroup from '../Form/FieldGroup';
 import CheckboxField from './CheckboxField';
 
-const store = new Store({
-  optionOne: false,
-  optionTwo: false,
-});
+function DefaultStory() {
+  const [optionOne, setOptionOne] = useState(false);
+  const [optionTwo, setOptionTwo] = useState(false);
 
-storiesOf('Components|CheckboxField', module)
-  .addDecorator(StateDecorator(store) as StoryDecorator)
-  .add('default', () => (
+  return (
     <FieldGroup>
       <CheckboxField
         labelText={text('Label Text', 'Option 1')}
@@ -22,11 +18,9 @@ storiesOf('Components|CheckboxField', module)
         validationMessage={text('Validation Message', undefined)}
         disabled={boolean('Disabled', false)}
         name="someOption"
-        checked={store.state.optionOne}
+        checked={optionOne}
         value="yes"
-        onChange={e =>
-          store.set({ optionOne: (e.target as HTMLInputElement).checked })
-        }
+        onChange={e => setOptionOne((e.target as HTMLInputElement).checked)}
         labelIsLight={boolean('Light', false)}
         inputProps={{
           onBlur: action('onBlur'),
@@ -41,10 +35,8 @@ storiesOf('Components|CheckboxField', module)
         disabled={boolean('Disabled', false)}
         name="someOption"
         value="no"
-        checked={store.state.optionTwo}
-        onChange={e =>
-          store.set({ optionTwo: (e.target as HTMLInputElement).checked })
-        }
+        checked={optionTwo}
+        onChange={e => setOptionTwo((e.target as HTMLInputElement).checked)}
         labelIsLight={boolean('Light', false)}
         inputProps={{
           onBlur: action('onBlur'),
@@ -53,4 +45,9 @@ storiesOf('Components|CheckboxField', module)
         id="termsCheckboxOption2"
       />
     </FieldGroup>
-  ));
+  );
+}
+
+storiesOf('Components|CheckboxField', module).add('default', () => (
+  <DefaultStory />
+));

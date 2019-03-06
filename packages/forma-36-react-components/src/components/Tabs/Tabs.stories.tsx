@@ -1,6 +1,5 @@
-import React from 'react';
-import { storiesOf, StoryDecorator } from '@storybook/react';
-import { StateDecorator, Store } from '@sambego/storybook-state';
+import React, { useState } from 'react';
+import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { text } from '@storybook/addon-knobs';
 
@@ -8,66 +7,67 @@ import Tabs from './Tabs';
 import Tab from './Tab';
 import TabPanel from './TabPanel';
 
-const store = new Store({
-  selected: 'first',
-});
+function DefaultStory() {
+  const [selected, setSelected] = useState('first');
 
-storiesOf('Components|Tabs', module)
-  .addDecorator(StateDecorator(store) as StoryDecorator)
-  .add('default', () => (
+  return (
     <div>
       <Tabs extraClassNames={text('extraClassNames', '')}>
         <Tab
           id="first"
-          selected={store.state.selected === 'first'}
+          selected={selected === 'first'}
           onSelect={id => {
             action('onSelect')(id);
-            store.set({ selected: id });
+            setSelected(id);
           }}
         >
           First
         </Tab>
         <Tab
           id="second"
-          selected={store.state.selected === 'second'}
+          selected={selected === 'second'}
           onSelect={id => {
             action('onSelect')(id);
-            store.set({ selected: id });
+            setSelected(id);
           }}
         >
           Second
         </Tab>
         <Tab
           id="third"
-          selected={store.state.selected === 'third'}
+          selected={selected === 'third'}
           onSelect={id => {
             action('onSelect')(id);
-            store.set({ selected: id });
+            setSelected(id);
           }}
         >
           Third
         </Tab>
       </Tabs>
-      {store.state.selected === 'first' && (
+      {selected === 'first' && (
         <TabPanel id="first">content first tab</TabPanel>
       )}
-      {store.state.selected === 'second' && (
+      {selected === 'second' && (
         <TabPanel id="second">content second tab</TabPanel>
       )}
-      {store.state.selected === 'third' && (
+      {selected === 'third' && (
         <TabPanel id="third">content third tab</TabPanel>
       )}
     </div>
-  ))
-  .add('as navigation', () => (
+  );
+}
+
+function AsNavigationStory() {
+  const [selected, setSelected] = useState('first');
+  return (
     <Tabs role="navigation" extraClassNames={text('extraClassNames', '')}>
       <Tab
         id="first"
         href="https://contentful.com"
-        selected={store.state.selected === 'first'}
+        selected={selected === 'first'}
         onSelect={id => {
           action('onSelect')(id);
-          store.set({ selected: id });
+          setSelected(id);
         }}
       >
         First
@@ -75,10 +75,10 @@ storiesOf('Components|Tabs', module)
       <Tab
         id="second"
         href="https://contentful.com"
-        selected={store.state.selected === 'second'}
+        selected={selected === 'second'}
         onSelect={id => {
           action('onSelect')(id);
-          store.set({ selected: id });
+          setSelected(id);
         }}
       >
         Second
@@ -86,13 +86,18 @@ storiesOf('Components|Tabs', module)
       <Tab
         id="third"
         href="https://contentful.com"
-        selected={store.state.selected === 'third'}
+        selected={selected === 'third'}
         onSelect={id => {
           action('onSelect')(id);
-          store.set({ selected: id });
+          setSelected(id);
         }}
       >
         Third
       </Tab>
     </Tabs>
-  ));
+  );
+}
+
+storiesOf('Components|Tabs', module)
+  .add('default', () => <DefaultStory />)
+  .add('as navigation', () => <AsNavigationStory />);
