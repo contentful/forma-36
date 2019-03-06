@@ -69,5 +69,16 @@ module.exports = ({ config, mode }) => {
     ],
   });
 
+  config.module.rules.push({
+    test: /\.stories\.(js|ts)x?$/,
+    loaders: [
+      {
+        loader: require.resolve('@storybook/addon-storysource/loader'),
+        options: { parser: 'typescript' },
+      },
+    ],
+    enforce: 'pre',
+  });
+
   return config;
 };

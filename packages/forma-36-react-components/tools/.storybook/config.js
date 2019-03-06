@@ -8,7 +8,7 @@ import { withInfo } from '@storybook/addon-info';
 
 // Setup Addons
 addDecorator(withKnobs);
-addDecorator(withInfo({ header: false }));
+addDecorator(withInfo({ header: false, source: false }));
 
 // Setup Storybook options
 addParameters({ options: { theme: contentfulTheme } });
