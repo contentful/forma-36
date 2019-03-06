@@ -913,18 +913,6 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@contentful/forma-36-fcss@^0.0.13":
-  version "0.0.13"
-  resolved "https://registry.yarnpkg.com/@contentful/forma-36-fcss/-/forma-36-fcss-0.0.13.tgz#6b881a5e4829773e823c9ec5ff778d7ed82ffd7e"
-  integrity sha512-9qgNo8/3V5ffyoOLIFHYvMou0CpS+YnZJB77hpDeCELaLIbeFlkbC8JH6eLQkVOB6UiU5jyr5tNhCkHsoKeFbA==
-  dependencies:
-    "@contentful/forma-36-tokens" "^0.2.0"
-
-"@contentful/forma-36-tokens@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@contentful/forma-36-tokens/-/forma-36-tokens-0.2.0.tgz#c4a1062e7acc2ae0ae5699e7c8606d5b5047a1c5"
-  integrity sha512-6vshI8mlnEuVx6lJ0Yw7Jzeh5YEhlCfxWZiLXg5pbiDmi9JtPAwllWii9ocrKLelIAPwB/gvNQAAzm6uSy/Vug==
-
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
@@ -1301,6 +1289,23 @@
     markdown-to-jsx "^6.9.1"
     prop-types "^15.6.2"
     util-deprecate "^1.0.2"
+
+"@storybook/addon-storysource@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@storybook/addon-storysource/-/addon-storysource-5.0.0.tgz#96906f8019609e224250927aa2a09ca0cc2f7366"
+  integrity sha512-TDXM2LYigAP1ZDOuNjYBqpO7ZaKvejJkvLao3u8s1cBo6xCyAz4dPoLWH6ZdJofRz/zwnATb2pCFXBBgHpI4NQ==
+  dependencies:
+    "@storybook/addons" "5.0.0"
+    "@storybook/components" "5.0.0"
+    "@storybook/router" "5.0.0"
+    "@storybook/theming" "5.0.0"
+    core-js "^2.6.2"
+    estraverse "^4.2.0"
+    loader-utils "^1.2.1"
+    prettier "^1.16.4"
+    prop-types "^15.6.2"
+    react-syntax-highlighter "^8.0.1"
+    regenerator-runtime "^0.12.1"
 
 "@storybook/addons@5.0.0":
   version "5.0.0"
@@ -11873,6 +11878,11 @@ prettier-linter-helpers@^1.0.0:
   integrity sha512-GbK2cP9nraSSUF9N2XwUwqfzlAFlMNYYl+ShE/V+H8a9uNl/oUqB1w2EL54Jh0OlyRSd8RfWYJ3coVS4TROP2w==
   dependencies:
     fast-diff "^1.1.2"
+
+prettier@^1.16.4:
+  version "1.16.4"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.16.4.tgz#73e37e73e018ad2db9c76742e2647e21790c9717"
+  integrity sha512-ZzWuos7TI5CKUeQAtFd6Zhm2s6EpAD/ZLApIhsF9pRvRtM1RFo61dM/4MSRUA0SuLugA/zgrZD8m0BaY46Og7g==
 
 pretty-error@^2.1.1:
   version "2.1.1"
