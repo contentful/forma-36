@@ -880,6 +880,11 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
+"@babel/standalone@^7.0.0":
+  version "7.3.4"
+  resolved "https://registry.yarnpkg.com/@babel/standalone/-/standalone-7.3.4.tgz#b622c1e522acef91b2a14f22bdcdd4f935a1a474"
+  integrity sha512-4L9c5i4WlGqbrjOVX0Yp8TIR5cEiw1/tPYYZENW/iuO2uI6viY38U7zALidzNfGdZIwNc+A/AWqMEWKeScWkBg==
+
 "@babel/template@^7.0.0", "@babel/template@^7.1.0", "@babel/template@^7.1.2", "@babel/template@^7.2.2":
   version "7.2.2"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.2.2.tgz#005b3fdf0ed96e88041330379e0da9a708eb2907"
@@ -912,6 +917,11 @@
     esutils "^2.0.2"
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
+
+"@contentful/forma-36-tokens@0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@contentful/forma-36-tokens/-/forma-36-tokens-0.2.0.tgz#c4a1062e7acc2ae0ae5699e7c8606d5b5047a1c5"
+  integrity sha512-6vshI8mlnEuVx6lJ0Yw7Jzeh5YEhlCfxWZiLXg5pbiDmi9JtPAwllWii9ocrKLelIAPwB/gvNQAAzm6uSy/Vug==
 
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
@@ -13948,6 +13958,14 @@ stealthy-require@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/stealthy-require/-/stealthy-require-1.1.1.tgz#35b09875b4ff49f26a777e509b3090a3226bf24b"
   integrity sha1-NbCYdbT/SfJqd35QmzCQoyJr8ks=
+
+storybook-prop-types-addon@1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/storybook-prop-types-addon/-/storybook-prop-types-addon-1.0.0.tgz#f8a71881b98f97f62c967fef1baa6c876f27b73e"
+  integrity sha512-dhNtXKsDLMp2XjZjVAiL2rlOwVonqx7Bp9AP83MrJeYkG41rKaey70he1LK9I6MPZSiPggKw9wwQp3YRD0ZHLw==
+  dependencies:
+    "@babel/standalone" "^7.0.0"
+    "@contentful/forma-36-tokens" "0.2.0"
 
 stream-browserify@^2.0.1:
   version "2.0.2"
