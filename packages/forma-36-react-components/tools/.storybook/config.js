@@ -3,7 +3,7 @@ import contentfulTheme from './contentful-theme';
 
 // Storybook Addon Dependencies
 import { withKnobs } from '@storybook/addon-knobs';
-import { withPropTypes } from './addons/with-prop-types/index';
+import { withPropTypes } from 'storybook-prop-types-addon';
 
 // Setup Addons
 addDecorator(withKnobs);
