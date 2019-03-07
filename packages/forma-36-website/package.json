@@ -2,10 +2,10 @@
   "name": "forma-36-website",
   "description": "Forma 36 Doc App",
   "private": true,
-  "version": "0.0.51",
+  "version": "0.0.52",
   "dependencies": {
     "@contentful/forma-36-fcss": "^0.0.13",
-    "@contentful/forma-36-react-components": "^2.9.6",
+    "@contentful/forma-36-react-components": "^2.9.7",
     "gatsby": "^2.0.53",
     "gatsby-image": "^2.0.22",
     "gatsby-plugin-manifest": "^2.0.9",
