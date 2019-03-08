@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { withInfo } from '@storybook/addon-info';
 import { text } from '@storybook/addon-knobs/react';
 
 import List from './List';
@@ -8,7 +7,9 @@ import ListItem from '../ListItem';
 import TextLink from '../../TextLink';
 
 storiesOf('Components|List', module)
-  .addDecorator(withInfo)
+  .addParameters({
+    propTypes: [List['__docgenInfo'], ListItem['__docgenInfo']],
+  })
   .add('default', () => (
     <List extraClassNames={text('Extra Class Names', '')}>
       <ListItem>List Item 1</ListItem>
