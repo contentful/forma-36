@@ -5,8 +5,8 @@ import TabFocusTrap from '../TabFocusTrap';
 
 const styles = require('./TextLink.css');
 
-interface TextLinkProps {
-  children: React.ReactNode;
+export interface TextLinkProps {
+  children?: React.ReactNode;
   linkType?: 'primary' | 'positive' | 'negative' | 'secondary' | 'muted';
   href?: string;
   disabled?: boolean;
@@ -14,6 +14,7 @@ interface TextLinkProps {
   onClick?: MouseEventHandler<HTMLAnchorElement | HTMLButtonElement>;
   extraClassNames?: string;
   icon?: IconType;
+  text?: string;
 }
 
 export class TextLink extends Component<TextLinkProps> {
@@ -47,6 +48,7 @@ export class TextLink extends Component<TextLinkProps> {
       disabled,
       extraClassNames,
       icon,
+      text,
       ...otherProps
     } = this.props;
 
@@ -58,7 +60,7 @@ export class TextLink extends Component<TextLinkProps> {
     const content = (
       <TabFocusTrap>
         {this.renderIcon(icon, linkType)}
-        {children}
+        {text || children}
       </TabFocusTrap>
     );
 

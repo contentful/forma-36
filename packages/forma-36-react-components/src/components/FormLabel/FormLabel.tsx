@@ -3,11 +3,7 @@ import cn from 'classnames';
 
 const styles = require('./FormLabel.css');
 
-interface FormLabelProps
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLLabelElement>,
-    HTMLLabelElement
-  > {
+export interface FormLabelProps {
   htmlFor: string;
   children: React.ReactNode;
   testId?: string;

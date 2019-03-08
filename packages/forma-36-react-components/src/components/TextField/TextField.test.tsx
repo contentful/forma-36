@@ -233,7 +233,7 @@ it('renders the component with additional prop', () => {
       name="someComponent"
       id="someComponent"
       textInputProps={{
-        'data-test-id': 'test',
+        testId: 'test',
       }}
     />,
   );

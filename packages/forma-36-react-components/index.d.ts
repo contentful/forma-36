@@ -47,6 +47,7 @@
 /// <reference path="./dist/components/ValidationMessage/ValidationMessage.d.ts" />
 /// <reference path="./dist/components/List/List/List.d.ts" />
 /// <reference path="./dist/components/List/ListItem/ListItem.d.ts" />
+/// <reference path="./dist/components/TextField/TextField.d.ts" />
 
 import * as React from 'react';
 
@@ -99,6 +100,7 @@ import TableRowComponent from './dist/components/Table/TableRow/TableRow';
 import ValidationMessageComponent from './dist/components/ValidationMessage/ValidationMessage';
 import ListComponent from './dist/components/List/List/List';
 import ListItemComponent from './dist/components/List/ListItem/ListItem';
+import TextFieldComponent from './dist/components/TextField/TextField';
 
 export const Button: typeof ButtonComponent;
 export const Spinner: typeof SpinnerComponent;
@@ -149,6 +151,7 @@ export const TableRow: typeof TableRowComponent;
 export const ValidationMessage: typeof ValidationMessageComponent;
 export const List: typeof ListComponent;
 export const ListItem: typeof ListItemComponent;
+export const TextField: typeof TextFieldComponent;
 
 export interface CopyButtonProps {
   extraClassNames?: string;
@@ -302,31 +305,6 @@ export interface SelectFieldProps {
 }
 
 export class SelectField extends React.Component<SelectFieldProps, any> {
-  render(): JSX.Element;
-}
-
-export type TextFieldValue = string | number;
-
-export interface TextFieldProps {
-  value?: TextFieldValue;
-  validationMessage?: string;
-  testId?: string;
-  extraClassNames?: string;
-  formLabelProps?: Object;
-  textLinkProps?: Object;
-  textInputProps?: Object;
-  name: string;
-  id: string;
-  labelText?: string;
-  helpText?: string;
-  required?: boolean;
-  textarea?: boolean;
-  countCharacters?: boolean;
-  onChange?: (...args: any[]) => any;
-  onBlur?: (...args: any[]) => any;
-}
-
-export class TextField extends React.Component<TextFieldProps, any> {
   render(): JSX.Element;
 }
 

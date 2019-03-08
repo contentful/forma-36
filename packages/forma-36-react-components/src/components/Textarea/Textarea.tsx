@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import cn from 'classnames';
 import styles from './Textarea.css';
 
-interface TextareaProps {
+export interface TextareaProps {
   name?: string;
   id?: string;
   testId?: string;

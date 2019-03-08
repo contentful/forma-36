@@ -1,52 +1,45 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import cn from 'classnames';
 import ValidationMessage from '../ValidationMessage';
-import FormLabel from '../FormLabel';
+import FormLabel, { FormLabelProps } from '../FormLabel/FormLabel';
 import HelpText from '../HelpText';
-import TextInput from '../TextInput';
-import TextLink from '../TextLink';
-import Textarea from '../Textarea';
+import TextInput, { TextInputPropTypes } from '../TextInput/TextInput';
+import TextLink, { TextLinkProps } from '../TextLink/TextLink';
+import Textarea, { TextareaProps } from '../Textarea/Textarea';
 import styles from './TextField.css';
 
-export class TextField extends React.Component {
-  static propTypes = {
-    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    validationMessage: PropTypes.string,
-    testId: PropTypes.string,
-    extraClassNames: PropTypes.string,
-    formLabelProps: PropTypes.object,
-    textLinkProps: PropTypes.object,
-    textInputProps: PropTypes.object,
-    name: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
-    labelText: PropTypes.string,
-    helpText: PropTypes.string,
-    required: PropTypes.bool,
-    textarea: PropTypes.bool,
-    countCharacters: PropTypes.bool,
-    onChange: PropTypes.func,
-    onBlur: PropTypes.func,
-  };
+export interface TextFieldProps {
+  name: string;
+  id: string;
+  value?: string;
+  validationMessage?: string;
+  testId?: string;
+  extraClassNames?: string;
+  formLabelProps?: Partial<FormLabelProps>;
+  textLinkProps?: Partial<TextLinkProps>;
+  textInputProps?: Partial<TextInputPropTypes> | Partial<TextareaProps>;
+  labelText?: string;
+  helpText?: string;
+  required?: boolean;
+  textarea?: boolean;
+  countCharacters?: boolean;
+  onChange?: (...args: any[]) => any;
+  onBlur?: (...args: any[]) => any;
+}
 
+export interface TextFieldState {
+  value?: string;
+}
+
+export class TextField extends Component<TextFieldProps> {
   static defaultProps = {
-    validationMessage: undefined,
-    extraClassNames: undefined,
     testId: 'cf-ui-text-field',
-    formLabelProps: undefined,
-    textLinkProps: undefined,
-    textInputProps: undefined,
-    labelText: undefined,
-    onChange: undefined,
-    helpText: undefined,
-    onBlur: undefined,
-    value: undefined,
     textarea: false,
     required: false,
     countCharacters: false,
   };
 
-  state = { value: this.props.value };
+  state = { value: this.props.value || '' };
 
   // Store a copy of the value in state.
   // This is used by this component when the `countCharacters`
@@ -77,13 +70,13 @@ export class TextField extends React.Component {
       ...otherProps
     } = this.props;
 
-    const classNames = cn(styles.TextField, extraClassNames);
+    const classNames = cn(styles['TextField'], extraClassNames);
 
-    const Element = textarea ? Textarea : TextInput;
+    const Element: any = textarea ? Textarea : TextInput;
     return (
       <div className={classNames} {...otherProps} data-test-id={testId}>
         <div className={styles['TextField__label-wrapper']}>
-          <FormLabel {...{ ...formLabelProps, htmlFor: id, required }}>
+          <FormLabel {...formLabelProps} htmlFor={id} required={required}>
             {labelText}
           </FormLabel>
           {textLinkProps && (
@@ -117,7 +110,7 @@ export class TextField extends React.Component {
           </ValidationMessage>
         )}
         {(helpText || countCharacters) && (
-          <div className={styles.TextField__hints}>
+          <div className={styles['TextField__hints']}>
             {helpText && (
               <HelpText extraClassNames={styles['TextField__help-text']}>
                 {helpText}
@@ -127,7 +120,7 @@ export class TextField extends React.Component {
               <HelpText
                 extraClassNames={cn(
                   styles['TextField__help-text'],
-                  styles.TextField__count,
+                  styles['TextField__count'],
                 )}
               >
                 {this.state.value ? this.state.value.length : 0}/
