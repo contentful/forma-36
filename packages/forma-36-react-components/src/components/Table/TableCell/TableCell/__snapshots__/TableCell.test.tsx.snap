@@ -5,9 +5,3 @@ exports[`renders the component 1`] = `
   <Component />
 </ContextConsumer>
 `;
-
-exports[`renders the component inactive 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
-`;

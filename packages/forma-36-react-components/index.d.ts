@@ -39,6 +39,11 @@
 /// <reference path="./dist/components/Skeleton/SkeletonContainer/SkeletonContainer.d.ts" />
 /// <reference path="./dist/components/Skeleton/SkeletonDisplayText/SkeletonDisplayText.d.ts" />
 /// <reference path="./dist/components/Skeleton/SkeletonText/SkeletonText.d.ts" />
+/// <reference path="./dist/components/Table/Table/Table.d.ts" />
+/// <reference path="./dist/components/Table/TableBody/TableBody.d.ts" />
+/// <reference path="./dist/components/Table/TableHead/TableHead.d.ts" />
+/// <reference path="./dist/components/Table/TableCell/TableCell/TableCell.d.ts" />
+/// <reference path="./dist/components/Table/TableRow/TableRow.d.ts" />
 
 import * as React from 'react';
 
@@ -83,6 +88,11 @@ import SkeletonBodyTextComponent from './dist/components/Skeleton/SkeletonBodyTe
 import SkeletonContainerComponent from './dist/components/Skeleton/SkeletonContainer/SkeletonContainer';
 import SkeletonDisplayTextComponent from './dist/components/Skeleton/SkeletonDisplayText/SkeletonDisplayText';
 import SkeletonTextComponent from './dist/components/Skeleton/SkeletonText/SkeletonText';
+import TableComponent from './dist/components/Table/Table/Table';
+import TableBodyComponent from './dist/components/Table/TableBody/TableBody';
+import TableHeadComponent from './dist/components/Table/TableHead/TableHead';
+import TableCellComponent from './dist/components/Table/TableCell/TableCell/TableCell';
+import TableRowComponent from './dist/components/Table/TableRow/TableRow';
 
 export const Button: typeof ButtonComponent;
 export const Spinner: typeof SpinnerComponent;
@@ -125,6 +135,11 @@ export const SkeletonBodyText: typeof SkeletonBodyTextComponent;
 export const SkeletonContainer: typeof SkeletonContainerComponent;
 export const SkeletonDisplayText: typeof SkeletonDisplayTextComponent;
 export const SkeletonText: typeof SkeletonTextComponent;
+export const Table: typeof TableComponent;
+export const TableBody: typeof TableBodyComponent;
+export const TableHead: typeof TableHeadComponent;
+export const TableCell: typeof TableCellComponent;
+export const TableRow: typeof TableRowComponent;
 
 export interface CopyButtonProps {
   extraClassNames?: string;
@@ -298,66 +313,6 @@ export interface SelectFieldProps {
 }
 
 export class SelectField extends React.Component<SelectFieldProps, any> {
-  render(): JSX.Element;
-}
-
-export interface TableProps {
-  extraClassNames?: string;
-  children: React.ReactNode;
-}
-
-export class Table extends React.Component<TableProps, any> {
-  render(): JSX.Element;
-}
-export interface TableBodyProps {
-  extraClassNames?: string;
-  children: React.ReactNode;
-}
-
-export class TableBody extends React.Component<TableBodyProps, any> {
-  render(): JSX.Element;
-}
-export type TableCellSorting = any | any;
-
-export type TableCellAlign = 'center' | 'left' | 'right';
-
-export interface TableCellProps {
-  extraClassNames?: string;
-  children?: React.ReactNode;
-  sorting?: TableCellSorting;
-  align?: TableCellAlign;
-}
-
-export class TableCell extends React.Component<TableCellProps, any> {
-  render(): JSX.Element;
-}
-export interface TableSortingLabelProps {
-  extraClassNames?: string;
-  children: React.ReactNode;
-  direction?: any;
-  active: boolean;
-}
-
-export class TableSortingLabel extends React.Component<
-  TableSortingLabelProps,
-  any
-> {
-  render(): JSX.Element;
-}
-export interface TableHeadProps {
-  extraClassNames?: string;
-  children: React.ReactNode;
-}
-
-export class TableHead extends React.Component<TableHeadProps, any> {
-  render(): JSX.Element;
-}
-export interface TableRowProps {
-  extraClassNames?: string;
-  children: React.ReactNode;
-}
-
-export class TableRow extends React.Component<TableRowProps, any> {
   render(): JSX.Element;
 }
 
