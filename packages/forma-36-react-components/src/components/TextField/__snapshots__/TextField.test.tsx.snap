@@ -218,14 +218,13 @@ exports[`renders the component with additional prop 1`] = `
     </FormLabel>
   </div>
   <TextInput
-    data-test-id="test"
     disabled={false}
     error={false}
     id="someComponent"
     name="someComponent"
     onChange={[Function]}
     required={false}
-    testId="cf-ui-text-input"
+    testId="test"
     width="full"
     withCopyButton={false}
   />
