@@ -35,6 +35,7 @@ export class TableCell extends Component<TableCellProps> {
     return (
       <TableCellContext.Consumer>
         {({ name: context, element, offsetTop }) => {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           const Element = element as any;
           return (
             <Element

@@ -48,6 +48,7 @@
 /// <reference path="./dist/components/List/List/List.d.ts" />
 /// <reference path="./dist/components/List/ListItem/ListItem.d.ts" />
 /// <reference path="./dist/components/TextField/TextField.d.ts" />
+/// <reference path="./dist/components/Illustration/Illustration.d.ts" />
 
 import * as React from 'react';
 
@@ -101,6 +102,7 @@ import ValidationMessageComponent from './dist/components/ValidationMessage/Vali
 import ListComponent from './dist/components/List/List/List';
 import ListItemComponent from './dist/components/List/ListItem/ListItem';
 import TextFieldComponent from './dist/components/TextField/TextField';
+import IllustrationComponent from './dist/components/Illustration/Illustration';
 
 export const Button: typeof ButtonComponent;
 export const Spinner: typeof SpinnerComponent;
@@ -152,6 +154,7 @@ export const ValidationMessage: typeof ValidationMessageComponent;
 export const List: typeof ListComponent;
 export const ListItem: typeof ListItemComponent;
 export const TextField: typeof TextFieldComponent;
+export const Illustration: typeof IllustrationComponent;
 
 export interface CopyButtonProps {
   extraClassNames?: string;
@@ -205,15 +208,6 @@ export default class EditorToolbarDivider extends React.Component<
   render(): JSX.Element;
 }
 
-export interface IllustrationProps {
-  extraClassNames?: string;
-  illustration?: any;
-  testId?: string;
-}
-
-export class Illustration extends React.Component<IllustrationProps, any> {
-  render(): JSX.Element;
-}
 export interface InViewportProps {
   extraClassNames?: string;
   children?: React.ReactNode;

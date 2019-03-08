@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { axe } from 'jest-axe';
-import Illustration from './Illustration';
+import Illustration, { IllustrationType } from './Illustration';
 import { illustrationName } from './constants';
 
 it('renders the component', () => {
@@ -27,7 +27,9 @@ it('renders the component with an additional class name', () => {
 
 Object.keys(illustrationName).forEach(illustration => {
   it(`${illustration} has no a11y issues`, async () => {
-    const output = mount(<Illustration illustration={illustration} />).html();
+    const output = mount(
+      <Illustration illustration={illustration as IllustrationType} />,
+    ).html();
 
     const results = await axe(output);
 

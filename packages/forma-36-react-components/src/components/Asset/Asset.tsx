@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
-import Illustration from '../Illustration';
+import Illustration, { IllustrationType } from '../Illustration/Illustration';
 
 const styles = require('./Asset.css');
 
@@ -53,7 +53,7 @@ export class Asset extends Component<AssetProps> {
     return (
       <div className={styles['Asset__asset-container']}>
         <div className={styles['Asset__illustration-container']}>
-          <Illustration illustration={illustraionName} />
+          <Illustration illustration={illustraionName as IllustrationType} />
         </div>
         <span className={styles['Asset__asset-container__title']}>{title}</span>
       </div>

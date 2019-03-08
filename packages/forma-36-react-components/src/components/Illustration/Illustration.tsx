@@ -1,23 +1,31 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import { illustrationName } from './constants';
 
-import Archive from './svg/Archive.svg';
-import Audio from './svg/Audio.svg';
-import Code from './svg/Code.svg';
-import Image from './svg/Image.svg';
-import Markup from './svg/Markup.svg';
-import Pdf from './svg/Pdf.svg';
-import Plaintext from './svg/Plaintext.svg';
-import Presentation from './svg/Presentation.svg';
-import Richtext from './svg/Richtext.svg';
-import Spreadsheet from './svg/Spreadsheet.svg';
-import Video from './svg/Video.svg';
+const Archive = require('./svg/Archive.svg');
+const Audio = require('./svg/Audio.svg');
+const Code = require('./svg/Code.svg');
+const Image = require('./svg/Image.svg');
+const Markup = require('./svg/Markup.svg');
+const Pdf = require('./svg/Pdf.svg');
+const Plaintext = require('./svg/Plaintext.svg');
+const Presentation = require('./svg/Presentation.svg');
+const Richtext = require('./svg/Richtext.svg');
+const Spreadsheet = require('./svg/Spreadsheet.svg');
+const Video = require('./svg/Video.svg');
 
 import styles from './Illustration.css';
 
-export class Illustration extends React.Component {
+export type IllustrationType = keyof typeof illustrationName;
+
+export interface IllustrationProps {
+  extraClassNames?: string;
+  testId?: string;
+  illustration: IllustrationType;
+}
+
+export class Illustration extends Component<IllustrationProps> {
   static propTypes = {
     extraClassNames: PropTypes.string,
     illustration: PropTypes.oneOf(Object.keys(illustrationName)).isRequired,
@@ -45,7 +53,7 @@ export class Illustration extends React.Component {
       Video,
     };
 
-    const classNames = cn(styles.Illustration, extraClassNames);
+    const classNames = cn(styles['Illustration'], extraClassNames);
 
     const Element = illustrationComponents[illustration];
 

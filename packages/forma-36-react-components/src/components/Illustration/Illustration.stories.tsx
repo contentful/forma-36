@@ -1,13 +1,14 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, select } from '@storybook/addon-knobs';
-import { withInfo } from '@storybook/addon-info';
 
-import Illustration from './Illustration';
+import Illustration, { IllustrationType } from './Illustration';
 import { illustrationName } from './constants';
 
 storiesOf('Components|Illustration', module)
-  .addDecorator(withInfo)
+  .addParameters({
+    propTypes: Illustration['__docgenInfo'],
+  })
   .add('default', () => (
     <Illustration
       illustration={select(
@@ -32,7 +33,7 @@ storiesOf('Components|Illustration', module)
             key={illustration}
             style={{ padding: '4px', fontSize: '14px', lineHeight: '21px' }}
           >
-            <Illustration illustration={illustration} />
+            <Illustration illustration={illustration as IllustrationType} />
             <span style={{ display: 'inline-block', verticalAlign: 'middle' }}>
               {illustration}
             </span>
