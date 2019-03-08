@@ -44,6 +44,7 @@
 /// <reference path="./dist/components/Table/TableHead/TableHead.d.ts" />
 /// <reference path="./dist/components/Table/TableCell/TableCell/TableCell.d.ts" />
 /// <reference path="./dist/components/Table/TableRow/TableRow.d.ts" />
+/// <reference path="./dist/components/ValidationMessage/ValidationMessage.d.ts" />
 
 import * as React from 'react';
 
@@ -93,6 +94,7 @@ import TableBodyComponent from './dist/components/Table/TableBody/TableBody';
 import TableHeadComponent from './dist/components/Table/TableHead/TableHead';
 import TableCellComponent from './dist/components/Table/TableCell/TableCell/TableCell';
 import TableRowComponent from './dist/components/Table/TableRow/TableRow';
+import ValidationMessageComponent from './dist/components/ValidationMessage/ValidationMessage';
 
 export const Button: typeof ButtonComponent;
 export const Spinner: typeof SpinnerComponent;
@@ -140,6 +142,7 @@ export const TableBody: typeof TableBodyComponent;
 export const TableHead: typeof TableHeadComponent;
 export const TableCell: typeof TableCellComponent;
 export const TableRow: typeof TableRowComponent;
+export const ValidationMessage: typeof ValidationMessageComponent;
 
 export interface CopyButtonProps {
   extraClassNames?: string;
@@ -433,17 +436,5 @@ export interface SubheadingProps {
 }
 
 export class Subheading extends React.Component<SubheadingProps, any> {
-  render(): JSX.Element;
-}
-export interface ValidationMessageProps {
-  children: string;
-  extraClassNames?: string;
-  testId?: string;
-}
-
-export class ValidationMessage extends React.Component<
-  ValidationMessageProps,
-  any
-> {
   render(): JSX.Element;
 }
