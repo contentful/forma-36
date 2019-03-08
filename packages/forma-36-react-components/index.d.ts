@@ -45,6 +45,8 @@
 /// <reference path="./dist/components/Table/TableCell/TableCell/TableCell.d.ts" />
 /// <reference path="./dist/components/Table/TableRow/TableRow.d.ts" />
 /// <reference path="./dist/components/ValidationMessage/ValidationMessage.d.ts" />
+/// <reference path="./dist/components/List/List/List.d.ts" />
+/// <reference path="./dist/components/List/ListItem/ListItem.d.ts" />
 
 import * as React from 'react';
 
@@ -95,6 +97,8 @@ import TableHeadComponent from './dist/components/Table/TableHead/TableHead';
 import TableCellComponent from './dist/components/Table/TableCell/TableCell/TableCell';
 import TableRowComponent from './dist/components/Table/TableRow/TableRow';
 import ValidationMessageComponent from './dist/components/ValidationMessage/ValidationMessage';
+import ListComponent from './dist/components/List/List/List';
+import ListItemComponent from './dist/components/List/ListItem/ListItem';
 
 export const Button: typeof ButtonComponent;
 export const Spinner: typeof SpinnerComponent;
@@ -143,6 +147,8 @@ export const TableHead: typeof TableHeadComponent;
 export const TableCell: typeof TableCellComponent;
 export const TableRow: typeof TableRowComponent;
 export const ValidationMessage: typeof ValidationMessageComponent;
+export const List: typeof ListComponent;
+export const ListItem: typeof ListItemComponent;
 
 export interface CopyButtonProps {
   extraClassNames?: string;
@@ -217,26 +223,6 @@ export interface InViewportProps {
 }
 
 export class InViewport extends React.Component<InViewportProps, any> {
-  render(): JSX.Element;
-}
-
-export interface ListProps {
-  extraClassNames?: string;
-  children: React.ReactNode;
-  testId?: string;
-}
-
-export class List extends React.Component<ListProps, any> {
-  render(): JSX.Element;
-}
-
-export interface ListItemProps {
-  extraClassNames?: string;
-  children: React.ReactNode;
-  testId?: string;
-}
-
-export class ListItem extends React.Component<ListItemProps, any> {
   render(): JSX.Element;
 }
 

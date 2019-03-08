@@ -1,26 +1,26 @@
-import React from 'react';
+import React, { Component } from 'react';
 import cn from 'classnames';
-import PropTypes from 'prop-types';
+
 import styles from './ListItem.css';
 import List from '../List/List';
 
-export class ListItem extends React.Component {
-  static propTypes = {
-    extraClassNames: PropTypes.string,
-    children: PropTypes.node.isRequired,
-    testId: PropTypes.string,
-  };
+export interface ListItemProps {
+  extraClassNames?: string;
+  children: React.ReactNode;
+  testId?: string;
+}
 
+export class ListItem extends Component<ListItemProps> {
   static defaultProps = {
-    extraClassNames: undefined,
     testId: 'cf-ui-list-item',
   };
 
   render() {
     const { extraClassNames, children, testId, ...otherProps } = this.props;
 
-    const classNames = cn(styles.ListItem, extraClassNames, {
-      [styles['ListItem--nested-list']]: this.props.children.type === List,
+    const classNames = cn(styles['ListItem'], extraClassNames, {
+      [styles['ListItem--nested-list']]:
+        (this.props.children as any).type === List,
     });
 
     return (
