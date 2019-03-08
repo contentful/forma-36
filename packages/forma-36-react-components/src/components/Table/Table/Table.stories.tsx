@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { boolean, text } from '@storybook/addon-knobs';
-import { withInfo } from '@storybook/addon-info';
 
 import notes from './Table.md';
 import Table from './Table';
@@ -11,7 +10,15 @@ import TableCell from '../TableCell';
 import TableRow from '../TableRow';
 
 storiesOf('Components|Table', module)
-  .addDecorator(withInfo)
+  .addParameters({
+    propTypes: [
+      Table['__docgenInfo'],
+      TableHead['__docgenInfo'],
+      TableBody['__docgenInfo'],
+      TableCell['__docgenInfo'],
+      TableRow['__docgenInfo'],
+    ],
+  })
   .add(
     'default',
     () => (

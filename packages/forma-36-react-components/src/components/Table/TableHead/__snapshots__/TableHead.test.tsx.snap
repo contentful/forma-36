@@ -15,7 +15,6 @@ exports[`renders the component 1`] = `
   >
     <TableCell
       align="left"
-      extraClassNames=""
       sorting={false}
     >
       test
@@ -39,7 +38,6 @@ exports[`renders the component as sticky 1`] = `
   >
     <TableCell
       align="left"
-      extraClassNames=""
       sorting={false}
     >
       test
@@ -63,7 +61,6 @@ exports[`renders the component as sticky and with an offset Top 1`] = `
   >
     <TableCell
       align="left"
-      extraClassNames=""
       sorting={false}
     >
       test
@@ -87,7 +84,6 @@ exports[`renders the component with additional className 1`] = `
   >
     <TableCell
       align="left"
-      extraClassNames=""
       sorting={false}
     >
       test

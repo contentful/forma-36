@@ -1,22 +1,19 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import cn from 'classnames';
 import styles from './TableHead.css';
 
 import { TableCellContext, contextOptions } from '../TableCell';
 
-export class TableHead extends React.Component {
-  static propTypes = {
-    extraClassNames: PropTypes.string,
-    children: PropTypes.node.isRequired,
-    isSticky: PropTypes.bool,
-    offsetTop: PropTypes.string,
-  };
+export interface TableHeadProps {
+  extraClassNames?: string;
+  isSticky?: boolean;
+  offsetTop?: string | number;
+  children: React.ReactNode;
+}
 
+export class TableHead extends Component<TableHeadProps> {
   static defaultProps = {
-    extraClassNames: '',
     isSticky: false,
-    offsetTop: undefined,
   };
 
   render() {
