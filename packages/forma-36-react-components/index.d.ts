@@ -103,6 +103,12 @@ import ListComponent from './dist/components/List/List/List';
 import ListItemComponent from './dist/components/List/ListItem/ListItem';
 import TextFieldComponent from './dist/components/TextField/TextField';
 import IllustrationComponent from './dist/components/Illustration/Illustration';
+import TypographyComponent from './dist/components/Typography/Typography/Typography';
+import DisplayTextComponent from './dist/components/Typography/DisplayText/DisplayText';
+import HeadingComponent from './dist/components/Typography/Heading/Heading';
+import ParagraphComponent from './dist/components/Typography/Paragraph/Paragraph';
+import SectionHeadingComponent from './dist/components/Typography/SectionHeading/SectionHeading';
+import SubheadingComponent from './dist/components/Typography/Subheading/Subheading';
 
 export const Button: typeof ButtonComponent;
 export const Spinner: typeof SpinnerComponent;
@@ -155,6 +161,12 @@ export const List: typeof ListComponent;
 export const ListItem: typeof ListItemComponent;
 export const TextField: typeof TextFieldComponent;
 export const Illustration: typeof IllustrationComponent;
+export const Typography: typeof TypographyComponent;
+export const DisplayText: typeof DisplayTextComponent;
+export const Heading: typeof HeadingComponent;
+export const Paragraph: typeof ParagraphComponent;
+export const SectionHeading: typeof SectionHeadingComponent;
+export const Subheading: typeof SubheadingComponent;
 
 export interface CopyButtonProps {
   extraClassNames?: string;
@@ -324,75 +336,5 @@ export interface TooltipProps {
 }
 
 export class Tooltip extends React.Component<TooltipProps, any> {
-  render(): JSX.Element;
-}
-export type DisplayTextElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
-
-export type DisplayTextSize = 'default' | 'large';
-
-export interface DisplayTextProps {
-  extraClassNames?: string;
-  children: React.ReactNode;
-  testId?: string;
-  element?: DisplayTextElement;
-  size?: DisplayTextSize;
-}
-
-export class DisplayText extends React.Component<DisplayTextProps, any> {
-  render(): JSX.Element;
-}
-export type HeadingElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
-
-export interface HeadingProps {
-  extraClassNames?: string;
-  children: React.ReactNode;
-  testId?: string;
-  element?: HeadingElement;
-}
-
-export class Heading extends React.Component<HeadingProps, any> {
-  render(): JSX.Element;
-}
-export type ParagraphElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
-
-export interface ParagraphProps {
-  extraClassNames?: string;
-  children: React.ReactNode;
-  testId?: string;
-  element?: ParagraphElement;
-}
-
-export class Paragraph extends React.Component<ParagraphProps, any> {
-  render(): JSX.Element;
-}
-export type SectionHeadingElement =
-  | 'h1'
-  | 'h2'
-  | 'h3'
-  | 'h4'
-  | 'h5'
-  | 'h6'
-  | 'p';
-
-export interface SectionHeadingProps {
-  extraClassNames?: string;
-  children: React.ReactNode;
-  testId?: string;
-  element?: SectionHeadingElement;
-}
-
-export class SectionHeading extends React.Component<SectionHeadingProps, any> {
-  render(): JSX.Element;
-}
-export type SubheadingElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
-
-export interface SubheadingProps {
-  extraClassNames?: string;
-  children: React.ReactNode;
-  testId?: string;
-  element?: SubheadingElement;
-}
-
-export class Subheading extends React.Component<SubheadingProps, any> {
   render(): JSX.Element;
 }

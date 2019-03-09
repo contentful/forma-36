@@ -1,22 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import cn from 'classnames';
-import styles from './Paragraph.css';
+import styles from './Heading.css';
 
 import { TypographyContext } from '../Typography/Typography';
 
-export class Paragraph extends React.Component {
-  static propTypes = {
-    extraClassNames: PropTypes.string,
-    children: PropTypes.node.isRequired,
-    testId: PropTypes.string,
-    element: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p']),
-  };
+export interface HeadingProps {
+  extraClassNames?: string;
+  children?: React.ReactNode;
+  testId?: string;
+  element: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
+}
 
+export class Heading extends Component<HeadingProps> {
   static defaultProps = {
-    element: 'p',
-    extraClassNames: undefined,
-    testId: 'cf-ui-paragraph',
+    element: 'h1',
+    testId: 'cf-ui-heading',
   };
 
   render() {
@@ -28,17 +26,18 @@ export class Paragraph extends React.Component {
       ...otherProps
     } = this.props;
 
-    const classNames = cn(styles.Paragraph, extraClassNames);
+    const classNames = cn(styles['Heading'], extraClassNames);
 
     const Element = element;
 
     return (
       <TypographyContext.Consumer>
-        {({ paragraph }) => {
+        {value => {
           return (
             <Element
               className={cn(classNames, [
-                paragraph && `f36-margin-bottom--${paragraph.spacing}`,
+                value['heading'] &&
+                  `f36-margin-bottom--${value['heading']['spacing']}`,
               ])}
               data-test-id={testId}
               {...otherProps}
@@ -52,4 +51,4 @@ export class Paragraph extends React.Component {
   }
 }
 
-export default Paragraph;
+export default Heading;

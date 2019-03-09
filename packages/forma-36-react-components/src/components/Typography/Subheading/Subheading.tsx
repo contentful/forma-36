@@ -1,21 +1,19 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import cn from 'classnames';
 import styles from './Subheading.css';
 
 import { TypographyContext } from '../Typography/Typography';
 
-export class Subheading extends React.Component {
-  static propTypes = {
-    extraClassNames: PropTypes.string,
-    children: PropTypes.node.isRequired,
-    testId: PropTypes.string,
-    element: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p']),
-  };
+export interface SubheadingProps {
+  extraClassNames?: string;
+  children?: React.ReactNode;
+  testId?: string;
+  element: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
+}
 
+export class Subheading extends Component<SubheadingProps> {
   static defaultProps = {
     element: 'h2',
-    extraClassNames: undefined,
     testId: 'cf-ui-subheading',
   };
 
@@ -28,17 +26,18 @@ export class Subheading extends React.Component {
       ...otherProps
     } = this.props;
 
-    const classNames = cn(styles.Subheading, extraClassNames);
+    const classNames = cn(styles['Subheading'], extraClassNames);
 
     const Element = element;
 
     return (
       <TypographyContext.Consumer>
-        {({ subheading }) => {
+        {value => {
           return (
             <Element
               className={cn(classNames, [
-                subheading && `f36-margin-bottom--${subheading.spacing}`,
+                value['subheading'] &&
+                  `f36-margin-bottom--${value['subheading']['spacing']}`,
               ])}
               data-test-id={testId}
               {...otherProps}

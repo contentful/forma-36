@@ -1,12 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, select } from '@storybook/addon-knobs';
-import { withInfo } from '@storybook/addon-info';
 
 import DisplayText from './DisplayText';
 
 storiesOf('Components|Typography/DisplayText', module)
-  .addDecorator(withInfo)
+  .addParameters({
+    propTypes: DisplayText['__docgenInfo'],
+  })
   .add('default', () => (
     <DisplayText
       extraClassNames={text('Extra Class Names', '')}

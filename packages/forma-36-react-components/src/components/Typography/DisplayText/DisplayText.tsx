@@ -1,22 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import cn from 'classnames';
 import styles from './DisplayText.css';
 
 import { TypographyContext } from '../Typography/Typography';
 
-export class DisplayText extends React.Component {
-  static propTypes = {
-    extraClassNames: PropTypes.string,
-    children: PropTypes.node.isRequired,
-    testId: PropTypes.string,
-    element: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p']),
-    size: PropTypes.oneOf(['default', 'large']),
-  };
+export interface DisplayTextProps {
+  extraClassNames?: string;
+  children?: React.ReactNode;
+  testId?: string;
+  element: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
+  size: 'default' | 'large';
+}
 
+export class DisplayText extends Component<DisplayTextProps> {
   static defaultProps = {
     element: 'h1',
-    extraClassNames: undefined,
     testId: 'cf-ui-display-text',
     size: 'default',
   };
@@ -31,7 +29,7 @@ export class DisplayText extends React.Component {
       ...otherProps
     } = this.props;
 
-    const classNames = cn(styles.DisplayText, extraClassNames, {
+    const classNames = cn(styles['DisplayText'], extraClassNames, {
       [styles[`DisplayText--${size}`]]: size,
     });
 
