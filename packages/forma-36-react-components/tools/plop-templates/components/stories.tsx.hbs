@@ -5,8 +5,12 @@ import { text } from '@storybook/addon-knobs';
 import {{pascalCase name}} from './{{pascalCase name}}';
 import notes from './{{pascalCase name}}.md';
 
-storiesOf('Components|{{pascalCase name}}', module).add('default', () => (
-  <{{pascalCase name}} extraClassNames={text('Extra Class Names', '')}>
-    {{{pascalCase name}}}
-  </{{pascalCase name}}>
-));
+storiesOf('Components|{{pascalCase name}}', module)
+  .addParameters({
+    propTypes: {{pascalCase name}}['__docgenInfo'],
+  })
+  .add('default', () => (
+    <{{pascalCase name}} extraClassNames={text('Extra Class Names', '')}>
+      {{{pascalCase name}}}
+    </{{pascalCase name}}>
+  ));
