@@ -1,12 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, select } from '@storybook/addon-knobs';
-import { withInfo } from '@storybook/addon-info';
 
 import Subheading from './Subheading';
 
 storiesOf('Components|Typography/Subheading', module)
-  .addDecorator(withInfo)
+  .addParameters({
+    propTypes: Subheading['__docgenInfo'],
+  })
   .add('default', () => (
     <Subheading
       extraClassNames={text('Extra Class Names', '')}

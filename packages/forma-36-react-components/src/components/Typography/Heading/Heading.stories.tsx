@@ -1,12 +1,13 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, select } from '@storybook/addon-knobs';
-import { withInfo } from '@storybook/addon-info';
 
 import Heading from './Heading';
 
 storiesOf('Components|Typography/Heading', module)
-  .addDecorator(withInfo)
+  .addParameters({
+    propTypes: Heading['__docgenInfo'],
+  })
   .add('default', () => (
     <Heading
       extraClassNames={text('Extra Class Names', '')}
