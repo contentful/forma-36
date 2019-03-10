@@ -1,23 +1,26 @@
-import React from 'react';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
+import React, { Component } from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
-import PropTypes from 'prop-types';
 import cn from 'classnames';
 import Icon from '../Icon';
 import Tooltip from '../Tooltip';
 import TabFocusTrap from '../TabFocusTrap';
 import styles from './CopyButton.css';
 
-export class CopyButton extends React.Component {
-  static propTypes = {
-    extraClassNames: PropTypes.string,
-    testId: PropTypes.string,
-    copyValue: PropTypes.string,
-    onCopy: PropTypes.func,
-  };
+export interface CopyButtonProps {
+  extraClassNames?: string;
+  testId?: string;
+  copyValue?: string;
+  onCopy: (...args: any[]) => any;
+}
 
+export interface CopyButtonState {
+  copied: boolean;
+}
+
+export class CopyButton extends Component<CopyButtonProps, CopyButtonState> {
   static defaultProps = {
-    extraClassNames: undefined,
-    copyValue: undefined,
     testId: 'cf-ui-copy-button',
     onCopy: () => {},
   };
@@ -25,6 +28,9 @@ export class CopyButton extends React.Component {
   state = {
     copied: false,
   };
+
+  copyButton = null;
+  tooltipAnchor = null;
 
   onCopy = e => {
     this.props.onCopy(e);
@@ -38,7 +44,7 @@ export class CopyButton extends React.Component {
   render() {
     const { copyValue, extraClassNames, testId, ...otherProps } = this.props;
 
-    const classNames = cn(styles.CopyButton, extraClassNames);
+    const classNames = cn(styles['CopyButton'], extraClassNames);
 
     return (
       <div
@@ -67,10 +73,12 @@ export class CopyButton extends React.Component {
               ref={ref => {
                 this.copyButton = ref;
               }}
-              className={styles.CopyButton__button}
+              className={styles['CopyButton__button']}
             >
-              <TabFocusTrap extraClassNames={styles.CopyButton__TabFocusTrap}>
-                <span className={styles.CopyButton__text}>
+              <TabFocusTrap
+                extraClassNames={styles['CopyButton__TabFocusTrap']}
+              >
+                <span className={styles['CopyButton__text']}>
                   Copy {copyValue} to clipboard
                 </span>
                 <Icon icon="Copy" color="muted" />

@@ -49,6 +49,7 @@
 /// <reference path="./dist/components/List/ListItem/ListItem.d.ts" />
 /// <reference path="./dist/components/TextField/TextField.d.ts" />
 /// <reference path="./dist/components/Illustration/Illustration.d.ts" />
+/// <reference path="./dist/components/CopyButton/CopyButton.d.ts" />
 
 import * as React from 'react';
 
@@ -109,6 +110,7 @@ import HeadingComponent from './dist/components/Typography/Heading/Heading';
 import ParagraphComponent from './dist/components/Typography/Paragraph/Paragraph';
 import SectionHeadingComponent from './dist/components/Typography/SectionHeading/SectionHeading';
 import SubheadingComponent from './dist/components/Typography/Subheading/Subheading';
+import CopyButtonComponent from './dist/components/CopyButton/CopyButton';
 
 export const Button: typeof ButtonComponent;
 export const Spinner: typeof SpinnerComponent;
@@ -167,17 +169,7 @@ export const Heading: typeof HeadingComponent;
 export const Paragraph: typeof ParagraphComponent;
 export const SectionHeading: typeof SectionHeadingComponent;
 export const Subheading: typeof SubheadingComponent;
-
-export interface CopyButtonProps {
-  extraClassNames?: string;
-  testId?: string;
-  copyValue?: string;
-  onCopy?: (...args: any[]) => any;
-}
-
-export class CopyButton extends React.Component<CopyButtonProps, any> {
-  render(): JSX.Element;
-}
+export const CopyButton: typeof CopyButtonComponent;
 
 export interface EditorToolbarProps {
   extraClassNames?: string;
