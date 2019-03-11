@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import React, { Component, RefObject } from 'react';
 import cn from 'classnames';
 import CopyButton from '../CopyButton';

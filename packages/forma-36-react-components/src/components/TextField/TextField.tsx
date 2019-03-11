@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import React, { Component } from 'react';
 import cn from 'classnames';
 import ValidationMessage from '../ValidationMessage';

@@ -50,6 +50,9 @@
 /// <reference path="./dist/components/TextField/TextField.d.ts" />
 /// <reference path="./dist/components/Illustration/Illustration.d.ts" />
 /// <reference path="./dist/components/CopyButton/CopyButton.d.ts" />
+/// <reference path="./dist/components/Select/Select/Select.d.ts" />
+/// <reference path="./dist/components/Select/Option/Option.d.ts" />
+/// <reference path="./dist/components/SelectField/SelectField.d.ts" />
 
 import * as React from 'react';
 
@@ -111,6 +114,9 @@ import ParagraphComponent from './dist/components/Typography/Paragraph/Paragraph
 import SectionHeadingComponent from './dist/components/Typography/SectionHeading/SectionHeading';
 import SubheadingComponent from './dist/components/Typography/Subheading/Subheading';
 import CopyButtonComponent from './dist/components/CopyButton/CopyButton';
+import SelectComponent from './dist/components/Select/Select/Select';
+import OptionComponent from './dist/components/Select/Option/Option';
+import SelectFieldComponent from './dist/components/SelectField/SelectField';
 
 export const Button: typeof ButtonComponent;
 export const Spinner: typeof SpinnerComponent;
@@ -170,6 +176,9 @@ export const Paragraph: typeof ParagraphComponent;
 export const SectionHeading: typeof SectionHeadingComponent;
 export const Subheading: typeof SubheadingComponent;
 export const CopyButton: typeof CopyButtonComponent;
+export const Select: typeof SelectComponent;
+export const Option: typeof OptionComponent;
+export const SelectField: typeof SelectFieldComponent;
 
 export interface EditorToolbarProps {
   extraClassNames?: string;
@@ -251,60 +260,6 @@ export interface HeaderProps {
 }
 
 export const Header: React.SFC<HeaderProps>;
-
-export type SelectWidth = 'auto' | 'small' | 'medium' | 'large' | 'full';
-
-export interface SelectProps {
-  required?: boolean;
-  children: React.ReactNode;
-  name?: string;
-  id?: string;
-  hasError?: boolean;
-  value?: string;
-  isDisabled?: boolean;
-  onChange?: (...args: any[]) => any;
-  onBlur?: (...args: any[]) => any;
-  testId?: string;
-  onFocus?: (...args: any[]) => any;
-  extraClassNames?: string;
-  width?: SelectWidth;
-}
-
-export class Select extends React.Component<SelectProps, any> {
-  render(): JSX.Element;
-}
-
-export interface OptionProps {
-  value: string;
-  children: React.ReactNode;
-}
-
-export class Option extends React.Component<OptionProps, any> {
-  render(): JSX.Element;
-}
-export type SelectFieldValue = string | number;
-
-export interface SelectFieldProps {
-  value?: SelectFieldValue;
-  validationMessage?: string;
-  testId?: string;
-  children: React.ReactNode;
-  extraClassNames?: string;
-  formLabelProps?: Object;
-  textLinkProps?: Object;
-  selectProps?: Object;
-  name: string;
-  id: string;
-  labelText?: string;
-  helpText?: string;
-  required?: boolean;
-  onChange?: (...args: any[]) => any;
-  onBlur?: (...args: any[]) => any;
-}
-
-export class SelectField extends React.Component<SelectFieldProps, any> {
-  render(): JSX.Element;
-}
 
 export type TooltipPlace = 'top' | 'bottom' | 'right' | 'left';
 

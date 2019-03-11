@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import React, { Component } from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import cn from 'classnames';

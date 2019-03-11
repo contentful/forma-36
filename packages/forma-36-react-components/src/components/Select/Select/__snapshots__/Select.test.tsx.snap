@@ -9,7 +9,6 @@ exports[`renders the component 1`] = `
     className="Select"
     data-test-id="cf-ui-select"
     disabled={false}
-    htmlFor="optionSelect"
     id="optionSelect"
     name="optionSelect"
     onBlur={[Function]}
@@ -42,7 +41,6 @@ exports[`renders the component as required 1`] = `
     className="Select"
     data-test-id="cf-ui-select"
     disabled={false}
-    htmlFor="optionSelect"
     id="optionSelect"
     name="optionSelect"
     onBlur={[Function]}
@@ -75,7 +73,6 @@ exports[`renders the component in disabled state 1`] = `
     className="Select Select--disabled"
     data-test-id="cf-ui-select"
     disabled={true}
-    htmlFor="optionSelect"
     id="optionSelect"
     name="optionSelect"
     onBlur={[Function]}
@@ -108,7 +105,6 @@ exports[`renders the component with a value 1`] = `
     className="Select"
     data-test-id="cf-ui-select"
     disabled={false}
-    htmlFor="optionSelect"
     id="optionSelect"
     name="optionSelect"
     onBlur={[Function]}
@@ -142,45 +138,10 @@ exports[`renders the component with an extra class name 1`] = `
     className="Select"
     data-test-id="cf-ui-select"
     disabled={false}
-    htmlFor="optionSelect"
     id="optionSelect"
     name="optionSelect"
     onBlur={[Function]}
     onChange={[Function]}
-    onFocus={[Function]}
-    required={false}
-  >
-    <Option
-      value="optionOne"
-    >
-      Option One
-    </Option>
-  </select>
-  <Icon
-    color="muted"
-    extraClassNames="Select__icon"
-    icon="ArrowDown"
-    size="small"
-    testId="cf-ui-icon"
-  />
-</div>
-`;
-
-exports[`renders the component with an onClick 1`] = `
-<div
-  className="Select__wrapper Select--full"
->
-  <select
-    aria-label="optionSelect"
-    className="Select"
-    data-test-id="cf-ui-select"
-    disabled={false}
-    htmlFor="optionSelect"
-    id="optionSelect"
-    name="optionSelect"
-    onBlur={[Function]}
-    onChange={[Function]}
-    onClick={[Function]}
     onFocus={[Function]}
     required={false}
   >
@@ -209,7 +170,6 @@ exports[`renders the component with error 1`] = `
     className="Select Select--negative"
     data-test-id="cf-ui-select"
     disabled={false}
-    htmlFor="optionSelect"
     id="optionSelect"
     name="optionSelect"
     onBlur={[Function]}
