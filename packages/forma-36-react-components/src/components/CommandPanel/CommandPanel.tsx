@@ -48,7 +48,7 @@ class CommandPanelItem extends React.Component<CommandPanelItemProps> {
   }
 }
 
-class CommandPanel extends React.Component<CommandPanelProps> {
+export class CommandPanel extends React.Component<CommandPanelProps> {
   static defaultProps = {
     extraClassNames: undefined,
     searchString: '',

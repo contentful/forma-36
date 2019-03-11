@@ -89,5 +89,5 @@ export { Tabs } from './components/Tabs/Tabs';
 export { Tab } from './components/Tabs/Tab';
 export { TabPanel } from './components/Tabs/TabPanel';
 export { Typography } from './components/Typography/Typography/Typography';
-export { CommandPanel } from './components/CommandPanel';
+export { CommandPanel } from './components/CommandPanel/CommandPanel';
 // -- Add imports above this line (required by plopfile.js) --

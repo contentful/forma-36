@@ -1,7 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, array, object } from '@storybook/addon-knobs';
-import { host } from 'storybook-host';
 import { withInfo } from '@storybook/addon-info';
 import { withNotes } from '@storybook/addon-notes';
 
@@ -37,12 +36,6 @@ storiesOf('Components|CommandPanel', module)
   .addDecorator((story, context) => withInfo()(story)(context))
   .addDecorator((story, context) =>
     withNotes({ markdown: notes })(story)(context),
-  )
-  .addDecorator(
-    host({
-      align: 'center middle',
-      cropMarks: false,
-    }),
   )
   .add('default', () => (
     <div>
