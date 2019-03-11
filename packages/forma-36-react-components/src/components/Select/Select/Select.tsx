@@ -1,36 +1,35 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import cn from 'classnames';
 import Icon from '../../Icon/Icon';
 import styles from './Select.css';
 
-export class Select extends React.Component {
-  static propTypes = {
-    required: PropTypes.bool,
-    children: PropTypes.node.isRequired,
-    name: PropTypes.string,
-    id: PropTypes.string,
-    hasError: PropTypes.bool,
-    value: PropTypes.string,
-    isDisabled: PropTypes.bool,
-    onChange: PropTypes.func,
-    onBlur: PropTypes.func,
-    testId: PropTypes.string,
-    onFocus: PropTypes.func,
-    extraClassNames: PropTypes.string,
-    width: PropTypes.oneOf(['auto', 'small', 'medium', 'large', 'full']),
-  };
+export interface SelectProps {
+  required?: boolean;
+  children: React.ReactNode;
+  name?: string;
+  id?: string;
+  hasError?: boolean;
+  value?: string;
+  isDisabled?: boolean;
+  onChange?: (...args: any[]) => any;
+  onBlur?: (...args: any[]) => any;
+  testId?: string;
+  onFocus?: (...args: any[]) => any;
+  extraClassNames?: string;
+  width?: 'auto' | 'small' | 'medium' | 'large' | 'full';
+}
 
+export interface SelectState {
+  value?: string;
+}
+
+export class Select extends Component<SelectProps, SelectState> {
   static defaultProps = {
-    name: undefined,
-    id: undefined,
-    extraClassNames: undefined,
     testId: 'cf-ui-select',
     required: false,
     hasError: false,
     isDisabled: false,
     width: 'full',
-    value: undefined,
     onBlur: () => {},
     onFocus: () => {},
     onChange: () => {},
@@ -66,13 +65,13 @@ export class Select extends React.Component {
     } = this.props;
 
     const widthClass = `Select--${width}`;
-    const classNames = cn(styles.Select, {
+    const classNames = cn(styles['Select'], {
       [styles['Select--disabled']]: isDisabled,
       [styles['Select--negative']]: hasError,
     });
 
     const wrapperClassNames = cn(
-      styles.Select__wrapper,
+      styles['Select__wrapper'],
       styles[widthClass],
       extraClassNames,
     );
@@ -84,8 +83,6 @@ export class Select extends React.Component {
           required={required}
           name={name}
           aria-label={name}
-          // but select doesn't support for attribute :(
-          htmlFor={name}
           data-test-id={testId}
           className={classNames}
           value={this.state.value}
@@ -105,7 +102,7 @@ export class Select extends React.Component {
           {children}
         </select>
         <Icon
-          extraClassNames={styles.Select__icon}
+          extraClassNames={styles['Select__icon']}
           icon="ArrowDown"
           color="muted"
         />

@@ -53,15 +53,6 @@ it('renders the component with a value', () => {
   expect(output).toMatchSnapshot();
 });
 
-it('renders the component with an onClick', () => {
-  const output = shallow(
-    <Select name="optionSelect" id="optionSelect" onClick={() => {}}>
-      <Option value="optionOne">Option One</Option>
-    </Select>,
-  );
-  expect(output).toMatchSnapshot();
-});
-
 it('renders the component as required', () => {
   const output = shallow(
     <Select name="optionSelect" id="optionSelect" required>

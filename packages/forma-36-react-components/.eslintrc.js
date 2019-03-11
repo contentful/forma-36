@@ -51,5 +51,7 @@ module.exports = {
     ],
     '@typescript-eslint/no-for-in-array': 'error',
     '@typescript-eslint/no-var-requires': 'off',
+    // enable again once all components are Typescript
+    '@typescript-eslint/no-explicit-any': 'off',
   },
 };

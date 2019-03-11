@@ -20,7 +20,9 @@ it('renders the component as disabled', () => {
       id="optionSelect"
       name="optionSelect"
       labelText="Label"
-      isDisabled
+      selectProps={{
+        isDisabled: true,
+      }}
     >
       <Option value="optionOne">Option 1</Option>
     </SelectField>,

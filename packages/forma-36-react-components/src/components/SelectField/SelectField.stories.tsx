@@ -2,13 +2,14 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, boolean, select } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
-import { withInfo } from '@storybook/addon-info';
 
 import SelectField from './SelectField';
 import Option from '../Select/Option';
 
 storiesOf('Components|SelectField', module)
-  .addDecorator(withInfo)
+  .addParameters({
+    propTypes: [SelectField['__docgenInfo'], Option['__docgenInfo']],
+  })
   .add('default', () => (
     <SelectField
       extraClassNames={text('Extra Class Names', '')}

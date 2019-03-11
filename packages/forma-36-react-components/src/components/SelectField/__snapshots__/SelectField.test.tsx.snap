@@ -42,7 +42,6 @@ exports[`renders the component as disabled 1`] = `
 <div
   className="SelectField"
   data-test-id="cf-ui-select-field"
-  isDisabled={true}
 >
   <div
     className="SelectField__label-wrapper"
@@ -59,7 +58,7 @@ exports[`renders the component as disabled 1`] = `
   <Select
     hasError={false}
     id="optionSelect"
-    isDisabled={false}
+    isDisabled={true}
     name="optionSelect"
     onBlur={[Function]}
     onChange={[Function]}
