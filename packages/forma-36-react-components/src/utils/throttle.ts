@@ -1,4 +1,4 @@
-const throttle = (delay = 200, fn) => {
+const throttle = (delay: number = 200, fn: Function) => {
   let lastCall = 0;
   const throttleExec = (...args) => {
     const now = new Date().getTime();

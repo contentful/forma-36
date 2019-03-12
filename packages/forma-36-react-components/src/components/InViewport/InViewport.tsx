@@ -1,25 +1,22 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import cn from 'classnames';
 import isBrowser from '../../utils/isBrowser';
 import throttle from '../../utils/throttle';
 import styles from './InViewport.css';
 
-export class InViewport extends React.Component {
-  static propTypes = {
-    extraClassNames: PropTypes.string,
-    children: PropTypes.node,
-    testId: PropTypes.string,
-    offset: PropTypes.number,
-    onOverflowTop: PropTypes.func,
-    onOverflowRight: PropTypes.func,
-    onOverflowBottom: PropTypes.func,
-    onOverflowLeft: PropTypes.func,
-  };
+export interface InViewportProps {
+  extraClassNames?: string;
+  children?: React.ReactNode;
+  testId?: string;
+  offset?: number;
+  onOverflowTop?: Function;
+  onOverflowRight?: Function;
+  onOverflowBottom?: Function;
+  onOverflowLeft?: Function;
+}
 
+export class InViewport extends Component<InViewportProps> {
   static defaultProps = {
-    children: undefined,
-    extraClassNames: undefined,
     testId: 'cf-ui-in-viewport',
     offset: 0,
     onOverflowTop: () => {},
@@ -27,6 +24,9 @@ export class InViewport extends React.Component {
     onOverflowBottom: () => {},
     onOverflowLeft: () => {},
   };
+
+  tGetDomPosition = null;
+  nodeRef = null;
 
   componentDidMount() {
     this.getDomPosition();
@@ -39,8 +39,8 @@ export class InViewport extends React.Component {
 
   componentWillUnmount() {
     if (isBrowser) {
-      global.removeEventListener('scroll', this.tGetDomPosition, true);
-      global.removeEventListener('resize', this.tGetDomPosition);
+      window.removeEventListener('scroll', this.tGetDomPosition, true);
+      window.removeEventListener('resize', this.tGetDomPosition);
     }
   }
 
@@ -48,8 +48,8 @@ export class InViewport extends React.Component {
     if (isBrowser) {
       const html = document.documentElement;
       const boundingClientRect = this.nodeRef.getBoundingClientRect();
-      const windowWidth = global.innerWidth || html.clientWidth;
-      const windowHeight = global.innerHeight || html.clientHeight;
+      const windowWidth = window.innerWidth || html.clientWidth;
+      const windowHeight = window.innerHeight || html.clientHeight;
       this.handleOverflow(boundingClientRect, windowWidth, windowHeight);
     }
   };
@@ -57,8 +57,8 @@ export class InViewport extends React.Component {
   bindEventListeners = () => {
     this.tGetDomPosition = throttle(600, this.getDomPosition);
     if (isBrowser) {
-      global.addEventListener('scroll', this.tGetDomPosition, true);
-      global.addEventListener('resize', this.tGetDomPosition);
+      window.addEventListener('scroll', this.tGetDomPosition, true);
+      window.addEventListener('resize', this.tGetDomPosition);
     }
   };
 
@@ -104,7 +104,7 @@ export class InViewport extends React.Component {
       ...otherProps
     } = this.props;
 
-    const classNames = cn(styles.InViewport, extraClassNames);
+    const classNames = cn(styles['InViewport'], extraClassNames);
 
     return (
       <div

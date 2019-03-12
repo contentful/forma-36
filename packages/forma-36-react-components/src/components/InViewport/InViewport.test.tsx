@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { axe } from 'jest-axe';
-import InViewport from './InViewport';
+import { InViewport } from './InViewport';
 import TextLink from '../TextLink';
 
 it('renders the component', () => {
@@ -35,7 +35,7 @@ it('dispatches onOverflowTop', () => {
     </InViewport>,
   );
 
-  output.instance().nodeRef = {
+  (output.instance() as InViewport).nodeRef = {
     getBoundingClientRect: () => ({
       width: 10,
       height: 10,
@@ -45,7 +45,7 @@ it('dispatches onOverflowTop', () => {
       bottom: 10,
     }),
   };
-  output.instance().getDomPosition();
+  (output.instance() as InViewport).getDomPosition();
   expect(onOverflowTopMock).toHaveBeenCalled();
 });
 
@@ -60,7 +60,7 @@ it('dispatches onOverflowLeft', () => {
     </InViewport>,
   );
 
-  output.instance().nodeRef = {
+  (output.instance() as InViewport).nodeRef = {
     getBoundingClientRect: () => ({
       width: 10,
       height: 10,
@@ -70,13 +70,13 @@ it('dispatches onOverflowLeft', () => {
       bottom: 10,
     }),
   };
-  output.instance().getDomPosition();
+  (output.instance() as InViewport).getDomPosition();
   expect(onOverflowLeftMock).toHaveBeenCalled();
 });
 
 it('dispatches onOverflowRight', () => {
   const onOverflowRightMock = jest.fn();
-  global.innerWidth = 80;
+  (window as any).innerWidth = 80;
   const output = mount(
     <InViewport
       extraClassNames="my-extra-class"
@@ -86,7 +86,7 @@ it('dispatches onOverflowRight', () => {
     </InViewport>,
   );
 
-  output.instance().nodeRef = {
+  (output.instance() as InViewport).nodeRef = {
     getBoundingClientRect: () => ({
       width: 10,
       height: 10,
@@ -96,14 +96,14 @@ it('dispatches onOverflowRight', () => {
       bottom: 10,
     }),
   };
-  output.instance().getDomPosition();
+  (output.instance() as InViewport).getDomPosition();
   expect(onOverflowRightMock).toHaveBeenCalled();
 });
 
 it('dispatches onOverflowBottom', () => {
   const onOverflowBottomMock = jest.fn();
-  global.innerWidth = 110;
-  global.innerHeight = 100;
+  (window as any).innerWidth = 110;
+  (window as any).innerHeight = 100;
   const output = mount(
     <InViewport
       extraClassNames="my-extra-class"
@@ -113,7 +113,7 @@ it('dispatches onOverflowBottom', () => {
     </InViewport>,
   );
 
-  output.instance().nodeRef = {
+  (output.instance() as InViewport).nodeRef = {
     getBoundingClientRect: () => ({
       width: 10,
       height: 10,
@@ -123,14 +123,14 @@ it('dispatches onOverflowBottom', () => {
       bottom: 120,
     }),
   };
-  output.instance().getDomPosition();
+  (output.instance() as InViewport).getDomPosition();
   expect(onOverflowBottomMock).toHaveBeenCalled();
 });
 
 it('does not dispatch onOverflowBottom', () => {
   const onOverflowBottomMock = jest.fn();
-  global.innerWidth = 110;
-  global.innerHeight = 100;
+  (window as any).innerWidth = 110;
+  (window as any).innerHeight = 100;
   const output = mount(
     <InViewport
       extraClassNames="my-extra-class"
@@ -140,7 +140,7 @@ it('does not dispatch onOverflowBottom', () => {
     </InViewport>,
   );
 
-  output.instance().nodeRef = {
+  (output.instance() as InViewport).nodeRef = {
     getBoundingClientRect: () => ({
       width: 10,
       height: 10,
@@ -150,7 +150,7 @@ it('does not dispatch onOverflowBottom', () => {
       bottom: 80,
     }),
   };
-  output.instance().getDomPosition();
+  (output.instance() as InViewport).getDomPosition();
   expect(onOverflowBottomMock).not.toHaveBeenCalled();
 });
 
