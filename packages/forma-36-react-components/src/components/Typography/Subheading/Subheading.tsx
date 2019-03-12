@@ -9,6 +9,7 @@ export interface SubheadingProps {
   children?: React.ReactNode;
   testId?: string;
   element: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
+  style?: React.CSSProperties;
 }
 
 export class Subheading extends Component<SubheadingProps> {

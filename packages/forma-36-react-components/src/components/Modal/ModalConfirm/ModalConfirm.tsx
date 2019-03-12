@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Modal, { ModalSizeType } from '../Modal/Modal';
 import Button from '../../Button';
 
-interface ModalConfirmProps {
+export interface ModalConfirmProps {
   /**
    * When true, the dialog is shown.
    */

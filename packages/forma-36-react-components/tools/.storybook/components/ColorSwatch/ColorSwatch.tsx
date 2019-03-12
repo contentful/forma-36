@@ -1,17 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import cn from 'classnames';
 import styles from './ColorSwatch.css';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import Icon from './../../../../src/components/Icon';
 
-class ColorSwatch extends React.Component {
-  static propTypes = {
-    name: PropTypes.string.isRequired,
-    hex: PropTypes.string.isRequired,
-    cssVar: PropTypes.string.isRequired,
-  };
+interface ColorSwatchProps {
+  name: string;
+  hex: string;
+  cssVar: string;
+}
 
+class ColorSwatch extends Component<ColorSwatchProps> {
   state = {
     value: '',
     copiedHex: false,
@@ -21,7 +20,7 @@ class ColorSwatch extends React.Component {
   render() {
     const { name, hex, cssVar, ...otherProps } = this.props;
 
-    const classNames = cn(styles.ColorSwatch);
+    const classNames = cn(styles['ColorSwatch']);
 
     return (
       <div className={classNames} {...otherProps}>

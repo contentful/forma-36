@@ -7,7 +7,7 @@ import Spinner from '../Spinner';
 
 const styles = require('./Button.css');
 
-interface ButtonProps {
+export interface ButtonProps {
   extraClassNames?: string;
   children?: React.ReactNode;
   icon?: IconType;

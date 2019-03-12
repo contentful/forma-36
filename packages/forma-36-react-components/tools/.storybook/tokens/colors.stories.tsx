@@ -1,22 +1,22 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import ColorSwatchGroup from './../components/ColorSwatchGroup/ColorSwatchGroup';
-import DocPage from './../components/DocPage/DocPage';
+import ColorSwatchGroup from '../components/ColorSwatchGroup/ColorSwatchGroup';
+import DocPage from '../components/DocPage/DocPage';
 
-import semanticColors from '@contentful/forma-36-tokens/dist/json/colors/colors-semantic';
-import textColors from '@contentful/forma-36-tokens/dist/json/colors/colors-text';
-import elementColors from '@contentful/forma-36-tokens/dist/json/colors/colors-elements';
-import contrastColors from '@contentful/forma-36-tokens/dist/json/colors/colors-contrast';
-import blueColors from '@contentful/forma-36-tokens/dist/json/colors/colors-blue';
-import greenColors from '@contentful/forma-36-tokens/dist/json/colors/colors-green';
-import redColors from '@contentful/forma-36-tokens/dist/json/colors/colors-red';
-import orangeColors from '@contentful/forma-36-tokens/dist/json/colors/colors-orange';
-import coralColors from '@contentful/forma-36-tokens/dist/json/colors/colors-coral';
-import peachColors from '@contentful/forma-36-tokens/dist/json/colors/colors-peach';
-import mintColors from '@contentful/forma-36-tokens/dist/json/colors/colors-mint';
-import iceColors from '@contentful/forma-36-tokens/dist/json/colors/colors-ice';
-import whiteColors from '@contentful/forma-36-tokens/dist/json/colors/colors-white';
+import semanticColors from '../../../../forma-36-tokens/src/tokens/colors/colors-semantic';
+import textColors from '../../../../forma-36-tokens/src/tokens/colors/colors-text';
+import elementColors from '../../../../forma-36-tokens/src/tokens/colors/colors-elements';
+import contrastColors from '../../../../forma-36-tokens/src/tokens/colors/colors-contrast';
+import blueColors from '../../../../forma-36-tokens/src/tokens/colors/colors-blue';
+import greenColors from '../../../../forma-36-tokens/src/tokens/colors/colors-green';
+import redColors from '../../../../forma-36-tokens/src/tokens/colors/colors-red';
+import orangeColors from '../../../../forma-36-tokens/src/tokens/colors/colors-orange';
+import coralColors from '../../../../forma-36-tokens/src/tokens/colors/colors-coral';
+import peachColors from '../../../../forma-36-tokens/src/tokens/colors/colors-peach';
+import mintColors from '../../../../forma-36-tokens/src/tokens/colors/colors-mint';
+import iceColors from '../../../../forma-36-tokens/src/tokens/colors/colors-ice';
+import whiteColors from '../../../../forma-36-tokens/src/tokens/colors/colors-white';
 
 storiesOf('Tokens|Colors', module).add('default', () => (
   <DocPage>

@@ -4,6 +4,7 @@ import styles from './Table.css';
 
 export interface TableProps {
   extraClassNames?: string;
+  style?: React.CSSProperties;
   children: React.ReactNode;
 }
 

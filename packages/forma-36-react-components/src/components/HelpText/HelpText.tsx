@@ -3,7 +3,7 @@ import cn from 'classnames';
 
 const styles = require('./HelpText.css');
 
-interface HelpTextProps
+export interface HelpTextProps
   extends React.DetailedHTMLProps<
     React.HTMLAttributes<HTMLParagraphElement>,
     HTMLParagraphElement

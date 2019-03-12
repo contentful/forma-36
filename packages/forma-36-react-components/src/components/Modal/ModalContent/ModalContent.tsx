@@ -3,7 +3,7 @@ import cn from 'classnames';
 
 const styles = require('./ModalContent.css');
 
-interface ModalContentProps
+export interface ModalContentProps
   extends React.DetailedHTMLProps<
     React.HTMLAttributes<HTMLDivElement>,
     HTMLDivElement

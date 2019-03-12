@@ -5,7 +5,7 @@ import TabFocusTrap from '../TabFocusTrap';
 
 const styles = require('./Pill.css');
 
-interface PillProps {
+export interface PillProps {
   extraClassNames?: string;
   testId?: string;
   label: string;

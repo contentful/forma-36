@@ -1,27 +1,28 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import cn from 'classnames';
 
-import durationTokens from '@contentful/forma-36-tokens/dist/json/transitions/transition-durations';
-import easingsTokens from '@contentful/forma-36-tokens/dist/json/transitions/transition-easings';
+import durationTokens from '../../../../forma-36-tokens/src/tokens/transitions/transition-durations';
+import easingsTokens from '../../../../forma-36-tokens/src/tokens/transitions/transition-easings';
 import styles from './transitions.css';
 
-import DocPage from './../components/DocPage/DocPage';
-import Heading from './../../../src/components/Typography/Heading';
-import Subheading from './../../../src/components/Typography/Subheading';
-import Table from './../../../src/components/Table/Table';
-import TableHead from './../../../src/components/Table/TableHead';
-import TableBody from './../../../src/components/Table/TableBody';
-import TableCell from './../../../src/components/Table/TableCell';
-import TableRow from './../../../src/components/Table/TableRow';
+import DocPage from '../components/DocPage/DocPage';
+import Heading from '../../../src/components/Typography/Heading';
+import Subheading from '../../../src/components/Typography/Subheading';
+import Table from '../../../src/components/Table/Table';
+import TableHead from '../../../src/components/Table/TableHead';
+import TableBody from '../../../src/components/Table/TableBody';
+import TableCell from '../../../src/components/Table/TableCell';
+import TableRow from '../../../src/components/Table/TableRow';
 
 const Slider = props => (
-  <div className={styles.slider} {...props}>
+  <div className={styles['slider']} {...props}>
     {props.children}
   </div>
 );
 
-const SliderKnob = props => <div className={styles.slider__knob} {...props} />;
+const SliderKnob = props => (
+  <div className={styles['slider__knob']} {...props} />
+);
 
 storiesOf('Tokens|Transitions', module).add('default', () => (
   <DocPage>

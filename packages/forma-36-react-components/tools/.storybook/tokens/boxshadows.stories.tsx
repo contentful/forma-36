@@ -1,17 +1,17 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import boxShadowTokens from '@contentful/forma-36-tokens/dist/json/box-shadows/box-shadows';
-import glowTokens from '@contentful/forma-36-tokens/dist/json/box-shadows/glows';
+import boxShadowTokens from '../../../../forma-36-tokens/src/tokens/box-shadows/box-shadows';
+import glowTokens from '../../../../forma-36-tokens/src/tokens/box-shadows/glows';
 
-import DocPage from './../components/DocPage/DocPage';
-import Heading from './../../../src/components/Typography/Heading';
-import Subheading from './../../../src/components/Typography/Subheading';
-import Table from './../../../src/components/Table/Table';
-import TableHead from './../../../src/components/Table/TableHead';
-import TableBody from './../../../src/components/Table/TableBody';
-import TableCell from './../../../src/components/Table/TableCell';
-import TableRow from './../../../src/components/Table/TableRow';
-import Card from './../../../src/components/Card/Card';
+import DocPage from '../components/DocPage/DocPage';
+import Heading from '../../../src/components/Typography/Heading';
+import Subheading from '../../../src/components/Typography/Subheading';
+import Table from '../../../src/components/Table/Table';
+import TableHead from '../../../src/components/Table/TableHead';
+import TableBody from '../../../src/components/Table/TableBody';
+import TableCell from '../../../src/components/Table/TableCell';
+import TableRow from '../../../src/components/Table/TableRow';
+import Card from '../../../src/components/Card/Card';
 
 storiesOf('Tokens|Box Shadows', module).add('default', () => (
   <DocPage>

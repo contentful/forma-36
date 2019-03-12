@@ -6,7 +6,7 @@ import Tag from '../../Tag';
 import ReferenceCardSkeleton from './ReferenceCardSkeleton';
 const styles = require('./ReferenceCard.css');
 
-interface ReferenceCardPropTypes {
+export interface ReferenceCardPropTypes {
   extraClassNames?: string;
   title?: string;
   testId?: string;

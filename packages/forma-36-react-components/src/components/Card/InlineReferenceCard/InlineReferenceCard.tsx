@@ -9,7 +9,7 @@ import Card from '../Card';
 import InlineReferenceCardSkeleton from './InlineReferenceCardSkeleton';
 const styles = require('./InlineReferenceCard.css');
 
-interface InlineReferenceCardPropTypes {
+export interface InlineReferenceCardPropTypes {
   extraClassNames?: string;
   children: React.ReactNode;
   isSelected?: boolean;
@@ -19,7 +19,7 @@ interface InlineReferenceCardPropTypes {
   status?: 'archived' | 'changed' | 'draft' | 'published';
 }
 
-interface InlineReferenceCardState {
+export interface InlineReferenceCardState {
   isDropdownOpen: boolean;
 }
 

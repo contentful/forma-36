@@ -26,7 +26,7 @@ const ModalSizesMapper = {
 
 export type ModalSizeType = 'small' | 'medium' | 'large' | string | number;
 
-interface ModalProps {
+export interface ModalProps {
   /**
    * When true, the dialog is shown.
    */
