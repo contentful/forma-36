@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import cn from 'classnames';
 import styles from './DropdownList.css';
 
-interface DropdownListProps {
+export interface DropdownListProps {
   extraClassNames: string;
   children: React.ReactNode;
   testId: string;

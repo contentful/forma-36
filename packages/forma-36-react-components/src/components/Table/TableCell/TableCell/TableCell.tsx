@@ -15,6 +15,7 @@ export interface TableCellProps {
   children?: React.ReactNode;
   align?: 'center' | 'left' | 'right';
   sorting?: keyof typeof sortingDirections | boolean;
+  style?: React.CSSProperties;
 }
 
 export class TableCell extends Component<TableCellProps> {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import tokens from '@contentful/forma-36-tokens/dist/json/spacing';
+import tokens from '../../../../forma-36-tokens/src/tokens/spacing';
 import DocPage from '../components/DocPage/DocPage';
 import Table from '../../../src/components/Table/Table';
 import TableHead from '../../../src/components/Table/TableHead';

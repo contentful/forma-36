@@ -3,7 +3,7 @@ import cn from 'classnames';
 
 const styles = require('./FieldGroup.css');
 
-interface FieldGroupProps
+export interface FieldGroupProps
   extends React.DetailedHTMLProps<
     React.HTMLAttributes<HTMLDivElement>,
     HTMLDivElement

@@ -12,7 +12,7 @@ import NotificationManager, {
   Notification as NotificationType,
 } from './NotificationsManager';
 
-interface NotificationsAPI {
+export interface NotificationsAPI {
   success: ShowAction<Notification>;
   error: ShowAction<Notification>;
   show: ShowAction<Notification>;

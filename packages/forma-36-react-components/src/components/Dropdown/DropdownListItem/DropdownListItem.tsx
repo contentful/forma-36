@@ -3,7 +3,7 @@ import cn from 'classnames';
 import TabFocusTrap from '../../TabFocusTrap/TabFocusTrap';
 import styles from './DropdownListItem.css';
 
-interface DropdownListItemProps {
+export interface DropdownListItemProps {
   extraClassNames: string;
   children: React.ReactNode;
   onClick: (e: SyntheticEvent) => void;

@@ -7,7 +7,7 @@ type SpinnerSize = 'default' | 'small' | 'large';
 
 type SpinnerColor = 'default' | 'white';
 
-interface SpinnerProps {
+export interface SpinnerProps {
   extraClassNames?: string;
   testId?: string;
   size?: SpinnerSize;

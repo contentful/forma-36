@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-interface TabPanelProps
+export interface TabPanelProps
   extends React.DetailedHTMLProps<
     React.HTMLAttributes<HTMLDivElement>,
     HTMLDivElement

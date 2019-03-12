@@ -41,11 +41,11 @@ export type SetPositionAction<T> = (
   params?: { offset: number },
 ) => T;
 
-interface NotificationsManagerProps {
+export interface NotificationsManagerProps {
   register: (name: string, callback: Function) => void;
 }
 
-interface NotificationsManagerState {
+export interface NotificationsManagerState {
   position: Position;
   positionOffset: number;
   duration: number;

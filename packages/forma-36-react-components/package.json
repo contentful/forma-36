@@ -6,10 +6,9 @@
   "module": "dist/esm/index.js",
   "style": "dist/styles.css",
   "license": "MIT",
-  "types": "./index.d.ts",
+  "types": "dist/index.d.ts",
   "files": [
     "package.json",
-    "index.d.ts",
     "dist"
   ],
   "sideEffects": [

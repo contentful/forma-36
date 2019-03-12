@@ -10,7 +10,7 @@ import Tag from '../../Tag';
 import AssetCardSkeleton from './AssetCardSkeleton';
 const styles = require('./AssetCard.css');
 
-interface AssetCardPropTypes {
+export interface AssetCardPropTypes {
   src: string;
   title: string;
   extraClassNames?: string;
@@ -21,7 +21,7 @@ interface AssetCardPropTypes {
   type?: AssetType;
 }
 
-interface AssetCardState {
+export interface AssetCardState {
   isOpen: boolean;
 }
 

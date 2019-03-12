@@ -2,7 +2,7 @@ import React, { Component, SyntheticEvent } from 'react';
 import cn from 'classnames';
 const styles = require('./Card.css');
 
-interface CardPropTypes {
+export interface CardPropTypes {
   extraClassNames?: string;
   children: React.ReactNode;
   href?: string;
@@ -11,6 +11,7 @@ interface CardPropTypes {
   padding?: 'default' | 'large' | 'none';
   selected?: boolean;
   title?: string;
+  style?: React.CSSProperties;
 }
 
 export class Card extends Component<CardPropTypes> {

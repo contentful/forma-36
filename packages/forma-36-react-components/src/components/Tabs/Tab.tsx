@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 const styles = require('./Tabs.css');
 
-interface TabProps {
+export interface TabProps {
   id: string;
   onSelect?: Function;
   selected?: boolean;

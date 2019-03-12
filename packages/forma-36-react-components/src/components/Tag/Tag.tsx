@@ -3,7 +3,7 @@ import cn from 'classnames';
 
 const styles = require('./Tag.css');
 
-interface TagProps
+export interface TagProps
   extends React.DetailedHTMLProps<
     React.HTMLAttributes<HTMLDivElement>,
     HTMLDivElement
