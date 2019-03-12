@@ -1,17 +1,30 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
 import cn from 'classnames';
 import InViewport from '../InViewport';
 import styles from './Tooltip.css';
 
-const TooltipContainer = ({
-  children,
-  setRef,
-  containerElement,
-  targetWrapperClassName,
-  ...otherProps
-}) => {
+export interface TooltipContainerProps {
+  children: React.ReactNode;
+  setRef: Function;
+  containerElement: any;
+  targetWrapperClassName?: string;
+  onMouseLeave: Function;
+  onMouseOver: Function;
+  onFocus: Function;
+  onBlur: Function;
+}
+
+const TooltipContainer: React.StatelessComponent<TooltipContainerProps> = (
+  props: TooltipContainerProps,
+) => {
+  const {
+    children,
+    setRef,
+    containerElement,
+    targetWrapperClassName,
+    ...otherProps
+  } = props;
   const ContainerElement = containerElement;
   return (
     <ContainerElement
@@ -24,50 +37,40 @@ const TooltipContainer = ({
   );
 };
 
-TooltipContainer.propTypes = {
-  children: PropTypes.array.isRequired, // Portal is an array
-  setRef: PropTypes.func.isRequired,
-  containerElement: PropTypes.string.isRequired,
-  targetWrapperClassName: PropTypes.string,
-};
+export interface TooltipProps {
+  targetWrapperClassName?: string;
+  onFocus?: Function;
+  onBlur?: Function;
+  id?: string;
+  onMouseLeave?: Function;
+  containerElement?: React.ReactNode;
+  onMouseOver?: Function;
+  content?: React.ReactNode;
+  children: React.ReactNode;
+  place?: 'top' | 'bottom' | 'right' | 'left';
+  isVisible?: boolean;
+  maxWidth?: number | string;
+  extraClassNames?: string;
+  testId?: string;
+}
 
-TooltipContainer.defaultProps = {
-  targetWrapperClassName: undefined,
-};
-
-export class Tooltip extends React.Component {
-  static propTypes = {
-    extraClassNames: PropTypes.string,
-    targetWrapperClassName: PropTypes.string,
-    onFocus: PropTypes.func,
-    onBlur: PropTypes.func,
-    id: PropTypes.string,
-    onMouseLeave: PropTypes.func,
-    containerElement: PropTypes.node,
-    onMouseOver: PropTypes.func,
-    content: PropTypes.node,
-    children: PropTypes.node.isRequired,
-    testId: PropTypes.string,
-    place: PropTypes.oneOf(['top', 'bottom', 'right', 'left']),
-    isVisible: PropTypes.bool,
-    maxWidth: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  };
-
+export class Tooltip extends Component<TooltipProps> {
   static defaultProps = {
-    extraClassNames: undefined,
-    targetWrapperClassName: undefined,
     onFocus: () => {},
     onBlur: () => {},
     onMouseLeave: () => {},
     onMouseOver: () => {},
-    id: undefined,
     containerElement: 'span',
     isVisible: false,
     testId: 'cf-ui-tooltip',
     place: 'top',
     maxWidth: 360,
-    content: undefined,
   };
+
+  portalTarget = null;
+  place = null;
+  containerDomNode = null;
+  tooltipDomNode = null;
 
   constructor(props) {
     super(props);
@@ -148,7 +151,7 @@ export class Tooltip extends React.Component {
   renderTooltip = content => {
     const placeClass = `Tooltip--place-${this.place}`;
     const classNames = cn(
-      styles.Tooltip,
+      styles['Tooltip'],
       styles[placeClass],
       this.props.extraClassNames,
       {
@@ -235,8 +238,10 @@ export class Tooltip extends React.Component {
         aria-describedby={this.props.id}
         {...otherProps}
       >
-        {children}
-        {content && this.renderTooltip(content)}
+        <React.Fragment>
+          {children}
+          {content && this.renderTooltip(content)}
+        </React.Fragment>
       </TooltipContainer>
     );
   }

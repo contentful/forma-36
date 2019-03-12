@@ -53,6 +53,8 @@
 /// <reference path="./dist/components/Select/Select/Select.d.ts" />
 /// <reference path="./dist/components/Select/Option/Option.d.ts" />
 /// <reference path="./dist/components/SelectField/SelectField.d.ts" />
+/// <reference path="./dist/components/Tooltip/Tooltip.d.ts" />
+/// <reference path="./dist/components/InViewport/InViewport.d.ts" />
 
 import * as React from 'react';
 
@@ -117,6 +119,8 @@ import CopyButtonComponent from './dist/components/CopyButton/CopyButton';
 import SelectComponent from './dist/components/Select/Select/Select';
 import OptionComponent from './dist/components/Select/Option/Option';
 import SelectFieldComponent from './dist/components/SelectField/SelectField';
+import TooltipComponent from './dist/components/Tooltip/Tooltip';
+import InViewportComponent from './dist/components/InViewport/InViewport';
 
 export const Button: typeof ButtonComponent;
 export const Spinner: typeof SpinnerComponent;
@@ -179,6 +183,8 @@ export const CopyButton: typeof CopyButtonComponent;
 export const Select: typeof SelectComponent;
 export const Option: typeof OptionComponent;
 export const SelectField: typeof SelectFieldComponent;
+export const Tooltip: typeof TooltipComponent;
+export const InViewport: typeof InViewportComponent;
 
 export interface EditorToolbarProps {
   extraClassNames?: string;
@@ -221,21 +227,6 @@ export default class EditorToolbarDivider extends React.Component<
   render(): JSX.Element;
 }
 
-export interface InViewportProps {
-  extraClassNames?: string;
-  children?: React.ReactNode;
-  testId?: string;
-  offset?: number;
-  onOverflowTop?: (...args: any[]) => any;
-  onOverflowRight?: (...args: any[]) => any;
-  onOverflowBottom?: (...args: any[]) => any;
-  onOverflowLeft?: (...args: any[]) => any;
-}
-
-export class InViewport extends React.Component<InViewportProps, any> {
-  render(): JSX.Element;
-}
-
 export interface ContentProps {
   testId?: string;
   extraClassNames?: string;
@@ -260,28 +251,3 @@ export interface HeaderProps {
 }
 
 export const Header: React.SFC<HeaderProps>;
-
-export type TooltipPlace = 'top' | 'bottom' | 'right' | 'left';
-
-export type TooltipMaxWidth = number | string;
-
-export interface TooltipProps {
-  extraClassNames?: string;
-  targetWrapperClassName?: string;
-  onFocus?: (...args: any[]) => any;
-  onBlur?: (...args: any[]) => any;
-  id?: string;
-  onMouseLeave?: (...args: any[]) => any;
-  containerElement?: React.ReactNode;
-  onMouseOver?: (...args: any[]) => any;
-  content?: React.ReactNode;
-  children: React.ReactNode;
-  testId?: string;
-  place?: TooltipPlace;
-  isVisible?: boolean;
-  maxWidth?: TooltipMaxWidth;
-}
-
-export class Tooltip extends React.Component<TooltipProps, any> {
-  render(): JSX.Element;
-}
