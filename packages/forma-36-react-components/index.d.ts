@@ -55,6 +55,9 @@
 /// <reference path="./dist/components/SelectField/SelectField.d.ts" />
 /// <reference path="./dist/components/Tooltip/Tooltip.d.ts" />
 /// <reference path="./dist/components/InViewport/InViewport.d.ts" />
+/// <reference path="./dist/components/EditorToolbar/EditorToolbar/EditorToolbar.d.ts" />
+/// <reference path="./dist/components/EditorToolbar/EditorToolbarButton/EditorToolbarButton.d.ts" />
+/// <reference path="./dist/components/EditorToolbar/EditorToolbarDivider/EditorToolbarDivider.d.ts" />
 
 import * as React from 'react';
 
@@ -121,6 +124,9 @@ import OptionComponent from './dist/components/Select/Option/Option';
 import SelectFieldComponent from './dist/components/SelectField/SelectField';
 import TooltipComponent from './dist/components/Tooltip/Tooltip';
 import InViewportComponent from './dist/components/InViewport/InViewport';
+import EditorToolbarComponent from './dist/components/EditorToolbar/EditorToolbar/EditorToolbar';
+import EditorToolbarDividerComponent from './dist/components/EditorToolbar/EditorToolbarDivider/EditorToolbarDivider';
+import EditorToolbarButtonComponent from './dist/components/EditorToolbar/EditorToolbarButton/EditorToolbarButton';
 
 export const Button: typeof ButtonComponent;
 export const Spinner: typeof SpinnerComponent;
@@ -185,69 +191,6 @@ export const Option: typeof OptionComponent;
 export const SelectField: typeof SelectFieldComponent;
 export const Tooltip: typeof TooltipComponent;
 export const InViewport: typeof InViewportComponent;
-
-export interface EditorToolbarProps {
-  extraClassNames?: string;
-  children: React.ReactNode;
-  testId?: string;
-}
-
-export class EditorToolbar extends React.Component<EditorToolbarProps, any> {
-  render(): JSX.Element;
-}
-export interface EditorToolbarButtonProps {
-  extraClassNames?: string;
-  label: string;
-  testId?: string;
-  icon?: any;
-  tooltip?: string;
-  iconButtonProps?: Object;
-  isActive?: boolean;
-  disabled?: boolean;
-  onClick?: (...args: any[]) => any;
-  withDropdown?: boolean;
-}
-
-export class EditorToolbarButton extends React.Component<
-  EditorToolbarButtonProps,
-  any
-> {
-  render(): JSX.Element;
-}
-
-export interface EditorToolbarDividerProps {
-  testId?: string;
-  extraClassNames?: string;
-}
-
-export default class EditorToolbarDivider extends React.Component<
-  EditorToolbarDividerProps,
-  any
-> {
-  render(): JSX.Element;
-}
-
-export interface ContentProps {
-  testId?: string;
-  extraClassNames?: string;
-  children: React.ReactNode;
-}
-
-export const Content: React.SFC<ContentProps>;
-
-export interface ControlsProps {
-  testId?: string;
-  extraClassNames?: string;
-  children: React.ReactNode;
-}
-
-export const Controls: React.SFC<ControlsProps>;
-
-export interface HeaderProps {
-  onClose?: (...args: any[]) => any;
-  title: string;
-  testId?: string;
-  extraClassNames?: string;
-}
-
-export const Header: React.SFC<HeaderProps>;
+export const EditorToolbar: typeof EditorToolbarComponent;
+export const EditorToolbarDivider: typeof EditorToolbarDividerComponent;
+export const EditorToolbarButton: typeof EditorToolbarButtonComponent;

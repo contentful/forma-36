@@ -1,14 +1,18 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, boolean } from '@storybook/addon-knobs';
-import { withInfo } from '@storybook/addon-info';
 
 import EditorToolbar from './EditorToolbar';
 import Button from '../../Button';
 import EditorToolbarButton from '../EditorToolbarButton';
 
 storiesOf('Components|EditorToolbar', module)
-  .addDecorator(withInfo)
+  .addParameters({
+    propTypes: [
+      EditorToolbar['__docgenInfo'],
+      EditorToolbarButton['__docgenInfo'],
+    ],
+  })
   .add('default', () => (
     <EditorToolbar
       extraClassNames={text('Extra Class Names', '')}

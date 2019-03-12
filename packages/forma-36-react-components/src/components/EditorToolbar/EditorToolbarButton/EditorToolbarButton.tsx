@@ -1,33 +1,28 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component, SyntheticEvent } from 'react';
 import cn from 'classnames';
-import IconButton from '../../IconButton/IconButton';
+import IconButton, { IconButtonProps } from '../../IconButton/IconButton';
 import Tooltip from '../../Tooltip/Tooltip';
-import { iconName } from '../../Icon/constants';
+import { IconType } from '../../Icon/Icon';
 import styles from './EditorToolbarButton.css';
 
-export class EditorToolbarButton extends React.Component {
-  static propTypes = {
-    extraClassNames: PropTypes.string,
-    label: PropTypes.string.isRequired,
-    testId: PropTypes.string,
-    icon: PropTypes.oneOf(Object.keys(iconName)).isRequired,
-    tooltip: PropTypes.string,
-    iconButtonProps: PropTypes.object,
-    isActive: PropTypes.bool,
-    disabled: PropTypes.bool,
-    onClick: PropTypes.func,
-    withDropdown: PropTypes.bool,
-  };
+export interface EditorToolbarButtonProps {
+  extraClassNames?: string;
+  label: string;
+  testId?: string;
+  icon: IconType;
+  tooltip?: string;
+  iconButtonProps?: Partial<IconButtonProps>;
+  isActive?: boolean;
+  disabled?: boolean;
+  onClick?: (e: SyntheticEvent) => void;
+  withDropdown?: boolean;
+}
 
+export class EditorToolbarButton extends Component<EditorToolbarButtonProps> {
   static defaultProps = {
-    extraClassNames: undefined,
-    tooltip: undefined,
     testId: 'cf-ui-editor-toolbar-button',
-    iconButtonProps: undefined,
     isActive: false,
     disabled: false,
-    onClick: undefined,
     withDropdown: false,
   };
 
@@ -46,7 +41,7 @@ export class EditorToolbarButton extends React.Component {
       ...otherProps
     } = this.props;
 
-    const classNames = cn(styles.EditorToolbarButton, extraClassNames, {
+    const classNames = cn(styles['EditorToolbarButton'], extraClassNames, {
       [styles['EditorToolbarButton--is-active']]: isActive,
     });
 
