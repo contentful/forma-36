@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.2.1 (2019-03-13)
+
+
+### Bug Fixes
+
+* 🐛 Fallback font collection of the sans ([5cbe971](https://github.com/contentful/forma-36/commit/5cbe971))
+
+
+
+
+
 # [0.2.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.1.0...@contentful/forma-36-tokens@0.2.0) (2019-02-11)
 
 
