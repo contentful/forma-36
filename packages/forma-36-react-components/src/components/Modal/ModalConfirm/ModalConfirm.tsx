@@ -52,6 +52,10 @@ export interface ModalConfirmProps {
    * When true, the confirm button is set to loading.
    */
   isConfirmLoading?: boolean;
+  /**
+      To disable word-wrapping of the modal title
+    */
+  isNotWrapped?: boolean;
   testId?: string;
   confirmTestId?: string;
   cancelTestId?: string;
@@ -92,6 +96,7 @@ export class ModalConfirm extends Component<ModalConfirmProps> {
       isConfirmLoading,
       confirmTestId,
       cancelTestId,
+      isNotWrapped,
     } = this.props;
 
     return (
@@ -105,7 +110,7 @@ export class ModalConfirm extends Component<ModalConfirmProps> {
       >
         {() => (
           <div>
-            <Modal.Header title={title} />
+            <Modal.Header title={title} isNotWrapped={isNotWrapped} />
             <Modal.Content>{children}</Modal.Content>
             <Modal.Controls>
               <Button

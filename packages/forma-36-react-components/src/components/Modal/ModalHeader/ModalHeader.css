@@ -21,4 +21,10 @@
   font-family: var(--font-stack-primary);
   font-size: 1rem;
   line-height: var(--line-height-default);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ModalHeader__title--is-not-wrapped {
+  white-space: nowrap;
 }
