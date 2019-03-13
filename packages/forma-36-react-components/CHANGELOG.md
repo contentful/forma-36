@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.9.12](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@2.9.11...@contentful/forma-36-react-components@2.9.12) (2019-03-13)
+
+
+### Bug Fixes
+
+* **Modal:** Add option for modal title wrapping ([9e52cdc](https://github.com/contentful/forma-36/commit/9e52cdc))
+* **ModalHeader:** Create TS definition for CSS ([f6f0731](https://github.com/contentful/forma-36/commit/f6f0731))
+
+
+
+
+
 ## [2.9.11](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@2.9.10...@contentful/forma-36-react-components@2.9.11) (2019-03-13)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
