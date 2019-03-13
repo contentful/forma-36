@@ -3,7 +3,7 @@ import cn from 'classnames';
 
 const styles = require('./Form.css');
 
-interface FormProps
+export interface FormProps
   extends React.DetailedHTMLProps<
     React.HTMLAttributes<HTMLFormElement>,
     HTMLFormElement

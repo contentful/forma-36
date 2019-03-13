@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import cn from 'classnames';
 import styles from './SkeletonContainer.css';
 
-interface SkeletonContainerProps {
+export interface SkeletonContainerProps {
   width?: number | string;
   height?: number | string;
   preserveAspectRatio?: string;

@@ -14,8 +14,8 @@ addParameters({ options: { theme: contentfulTheme } });
 addParameters({ info: { header: false, source: false } });
 
 // Load Stories
-const reqGeneral = require.context('./docs', true, /\.stories\.js$/);
-const reqTokens = require.context('./tokens', true, /\.stories\.js$/);
+const reqGeneral = require.context('./docs', true, /\.stories\.(ts|js)x$/);
+const reqTokens = require.context('./tokens', true, /\.stories\.(ts|js)x$/);
 const reqComponents = require.context(
   '../../src/components',
   true,

@@ -1,21 +1,21 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import fontBaseTokens from '@contentful/forma-36-tokens/dist/json/typography/font-base';
-import fontSizeTokens from '@contentful/forma-36-tokens/dist/json/typography/font-size';
-import fontWeightTokens from '@contentful/forma-36-tokens/dist/json/typography/font-weight';
-import lineHeightTokens from '@contentful/forma-36-tokens/dist/json/typography/line-height';
-import fontStackTokens from '@contentful/forma-36-tokens/dist/json/typography/font-stack';
-import letterSpacingTokens from '@contentful/forma-36-tokens/dist/json/typography/letter-spacing';
+import fontBaseTokens from '../../../../forma-36-tokens/src/tokens/typography/font-base';
+import fontSizeTokens from '../../../../forma-36-tokens/src/tokens/typography/font-size';
+import fontWeightTokens from '../../../../forma-36-tokens/src/tokens/typography/font-weight';
+import lineHeightTokens from '../../../../forma-36-tokens/src/tokens/typography/line-height';
+import fontStackTokens from '../../../../forma-36-tokens/src/tokens/typography/font-stack';
+import letterSpacingTokens from '../../../../forma-36-tokens/src/tokens/typography/letter-spacing';
 
-import DocPage from './../components/DocPage/DocPage';
-import Heading from './../../../src/components/Typography/Heading';
-import Subheading from './../../../src/components/Typography/Subheading';
-import Table from './../../../src/components/Table/Table';
-import TableHead from './../../../src/components/Table/TableHead';
-import TableBody from './../../../src/components/Table/TableBody';
-import TableCell from './../../../src/components/Table/TableCell';
-import TableRow from './../../../src/components/Table/TableRow';
+import DocPage from '../components/DocPage/DocPage';
+import Heading from '../../../src/components/Typography/Heading';
+import Subheading from '../../../src/components/Typography/Subheading';
+import Table from '../../../src/components/Table/Table';
+import TableHead from '../../../src/components/Table/TableHead';
+import TableBody from '../../../src/components/Table/TableBody';
+import TableCell from '../../../src/components/Table/TableCell';
+import TableRow from '../../../src/components/Table/TableRow';
 
 storiesOf('Tokens|Typography', module).add('default', () => (
   <DocPage>

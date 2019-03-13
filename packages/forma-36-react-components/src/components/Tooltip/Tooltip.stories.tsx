@@ -1,13 +1,14 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, select } from '@storybook/addon-knobs';
-import { withInfo } from '@storybook/addon-info';
 
 import Tooltip from './Tooltip';
 import TextLink from '../TextLink';
 
 storiesOf('Components|Tooltip', module)
-  .addDecorator(withInfo)
+  .addParameters({
+    propTypes: Tooltip['__docgenInfo'],
+  })
   .add('default', () => (
     <div>
       <Tooltip

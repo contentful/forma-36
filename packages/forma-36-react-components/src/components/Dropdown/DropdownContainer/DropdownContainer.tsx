@@ -21,7 +21,7 @@ export interface DropdownContainerProps {
   dropdownAnchor?: HTMLElement;
 }
 
-interface DropdownState {
+export interface DropdownState {
   dropdownDimensions: {
     width: number;
     height: number;

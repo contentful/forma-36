@@ -21,7 +21,7 @@ const Icons = {
   [NoteType.WARNING]: iconName.Warning,
 };
 
-interface NoteProps {
+export interface NoteProps {
   noteType?: 'primary' | 'positive' | 'negative' | 'warning';
   extraClassNames?: string;
   title?: string;

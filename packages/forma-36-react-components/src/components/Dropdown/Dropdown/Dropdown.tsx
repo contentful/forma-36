@@ -13,7 +13,8 @@ export type positionType =
   | 'bottom-right'
   | 'top-right'
   | 'top-left';
-interface DropdownProps {
+
+export interface DropdownProps {
   extraClassNames?: string;
   children: React.ReactNode;
   toggleElement?: React.ReactNode;
@@ -31,7 +32,7 @@ export interface AnchorDimensionsAndPositonType {
   height: number;
 }
 
-interface DropdownState {
+export interface DropdownState {
   isOpen: boolean;
   position: positionType;
   anchorDimensionsAndPositon?: AnchorDimensionsAndPositonType;

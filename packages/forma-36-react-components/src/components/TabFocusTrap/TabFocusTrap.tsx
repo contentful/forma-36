@@ -3,7 +3,7 @@ import cn from 'classnames';
 
 const styles = require('./TabFocusTrap.css');
 
-interface TabFocusTrapProps {
+export interface TabFocusTrapProps {
   extraClassNames?: string;
   children: React.ReactNode;
 }

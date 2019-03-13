@@ -1,12 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import ColorSwatch from './../ColorSwatch/ColorSwatch';
+import React, { Component } from 'react';
+import ColorSwatch from '../ColorSwatch/ColorSwatch';
 
-class ColorSwatchGroup extends React.Component {
-  static propTypes = {
-    group: PropTypes.object.isRequired,
-  };
-
+class ColorSwatchGroup extends Component<{ group: { [key: string]: string } }> {
   render() {
     const { group } = this.props;
 

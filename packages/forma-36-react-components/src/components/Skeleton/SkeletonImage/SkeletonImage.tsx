@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-interface SkeletonImageProps {
+export interface SkeletonImageProps {
   testId: string;
   offsetLeft: number;
   offsetTop: number;

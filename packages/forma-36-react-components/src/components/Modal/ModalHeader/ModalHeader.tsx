@@ -4,7 +4,7 @@ import IconButton from '../../IconButton/IconButton';
 
 const styles = require('./ModalHeader.css');
 
-interface ModalHeaderProps
+export interface ModalHeaderProps
   extends React.DetailedHTMLProps<
     React.HTMLAttributes<HTMLDivElement>,
     HTMLDivElement
