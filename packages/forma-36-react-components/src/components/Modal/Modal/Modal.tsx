@@ -69,6 +69,11 @@ export interface ModalProps {
    * Are modals highter that viewerport allowed
    */
   allowHeightOverflow?: boolean;
+
+  /**
+      To disable word-wrapping of the modal title
+    */
+  isNotWrapped?: boolean;
   extraClassNames?: string;
   testId?: string;
 
@@ -102,7 +107,11 @@ export class Modal extends Component<ModalProps> {
     return (
       <React.Fragment>
         {this.props.title && (
-          <ModalHeader title={this.props.title} onClose={this.props.onClose} />
+          <ModalHeader
+            title={this.props.title}
+            onClose={this.props.onClose}
+            isNotWrapped={this.props.isNotWrapped}
+          />
         )}
         <ModalContent>{this.props.children}</ModalContent>
       </React.Fragment>
