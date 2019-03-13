@@ -3,6 +3,7 @@
 export interface IModalHeaderCss {
   'ModalHeader': string;
   'ModalHeader__title': string;
+  'ModalHeader__title--is-not-wrapped': string;
 }
 
 export const locals: IModalHeaderCss;
