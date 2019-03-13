@@ -19,7 +19,7 @@ export interface ModalConfirmProps {
   /**
       Modal title that is used in header
     */
-  title?: string;
+  title?: React.ReactNode;
   /**
    * Label of the confirm button
    */

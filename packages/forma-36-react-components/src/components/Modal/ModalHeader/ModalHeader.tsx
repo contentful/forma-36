@@ -10,7 +10,7 @@ export interface ModalHeaderProps
     HTMLDivElement
   > {
   onClose?: Function;
-  title: string;
+  title: any;
   testId?: string;
   extraClassNames?: string;
 }

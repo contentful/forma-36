@@ -60,7 +60,7 @@ export interface ModalProps {
   /**
       Modal title that is used in header
     */
-  title?: string;
+  title?: React.ReactNode;
   /**
       Size of the modal window
     */
