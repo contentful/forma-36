@@ -4,8 +4,17 @@ import cn from 'classnames';
 const styles = require('./{{pascalCase name}}.css');
 
 export type {{pascalCase name}}Props = {
+  /**
+   * Class names to be appended to the className prop of the component
+   */
   className?: string;
+  /**
+   * Child nodes to be rendered in the component
+   */
   children?: React.ReactNode;
+  /**
+   * An ID used for testing purposes applied as a data attribute (data-test-id)
+   */
   testId?: string;
 } & typeof defaultProps;
 
