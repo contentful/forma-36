@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.2.1...@contentful/forma-36-tokens@0.2.2) (2019-03-14)
+
+
+### Bug Fixes
+
+* More concise fonts fallback list ([b4e9560](https://github.com/contentful/forma-36/commit/b4e9560))
+
+
+
+
+
 ## 0.2.1 (2019-03-13)
 
 
