@@ -11,9 +11,7 @@ exports[`renders the component 1`] = `
     disabled={false}
     id="optionSelect"
     name="optionSelect"
-    onBlur={[Function]}
     onChange={[Function]}
-    onFocus={[Function]}
     required={false}
   >
     <Option
@@ -43,9 +41,7 @@ exports[`renders the component as required 1`] = `
     disabled={false}
     id="optionSelect"
     name="optionSelect"
-    onBlur={[Function]}
     onChange={[Function]}
-    onFocus={[Function]}
     required={true}
   >
     <Option
@@ -75,9 +71,7 @@ exports[`renders the component in disabled state 1`] = `
     disabled={true}
     id="optionSelect"
     name="optionSelect"
-    onBlur={[Function]}
     onChange={[Function]}
-    onFocus={[Function]}
     required={false}
   >
     <Option
@@ -107,9 +101,7 @@ exports[`renders the component with a value 1`] = `
     disabled={false}
     id="optionSelect"
     name="optionSelect"
-    onBlur={[Function]}
     onChange={[Function]}
-    onFocus={[Function]}
     required={false}
     value="value1"
   >
@@ -140,9 +132,7 @@ exports[`renders the component with an extra class name 1`] = `
     disabled={false}
     id="optionSelect"
     name="optionSelect"
-    onBlur={[Function]}
     onChange={[Function]}
-    onFocus={[Function]}
     required={false}
   >
     <Option
@@ -172,9 +162,7 @@ exports[`renders the component with error 1`] = `
     disabled={false}
     id="optionSelect"
     name="optionSelect"
-    onBlur={[Function]}
     onChange={[Function]}
-    onFocus={[Function]}
     required={false}
   >
     <Option

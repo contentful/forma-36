@@ -11,9 +11,9 @@ storiesOf('Components|Icon', module)
   })
   .add('Icon (default)', () => (
     <Icon
-      icon={select('Icon', Object.keys(iconName), Object.keys(iconName)[0])}
+      icon={select('icon', Object.keys(iconName), Object.keys(iconName)[0])}
       size={select(
-        'Size',
+        'size',
         {
           'Small (default)': 'small',
           Large: 'large',
@@ -21,7 +21,7 @@ storiesOf('Components|Icon', module)
         'small',
       )}
       color={select(
-        'Color',
+        'color',
         {
           'Primary (default)': 'primary',
           Positive: 'positive',
@@ -33,7 +33,7 @@ storiesOf('Components|Icon', module)
         },
         'primary',
       )}
-      extraClassNames={text('Extra Class Names', '')}
+      extraClassNames={text('extraClassNames', '')}
     />
   ))
   .add('Icon (all icons)', () => (
@@ -51,6 +51,7 @@ storiesOf('Components|Icon', module)
             style={{ padding: '4px', fontSize: '14px', lineHeight: '21px' }}
           >
             <Icon
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
               icon={icon as any}
               style={{ marginRight: '4px', verticalAlign: 'middle' }}
             />

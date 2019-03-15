@@ -6,41 +6,52 @@ import Tooltip from '../Tooltip';
 import TabFocusTrap from '../TabFocusTrap';
 import styles from './CopyButton.css';
 
-export interface CopyButtonProps {
+export type CopyButtonProps = {
+  copyValue?: string;
   extraClassNames?: string;
   testId?: string;
-  copyValue?: string;
-  onCopy: (...args: any[]) => any;
-}
+  onCopy?: (value: string) => void;
+} & typeof defaultProps;
 
 export interface CopyButtonState {
   copied: boolean;
 }
 
+const defaultProps = {
+  testId: 'cf-ui-copy-button',
+};
+
 export class CopyButton extends Component<CopyButtonProps, CopyButtonState> {
-  static defaultProps = {
-    testId: 'cf-ui-copy-button',
-    onCopy: () => {},
-  };
+  static defaultProps = defaultProps;
 
   state = {
     copied: false,
   };
 
-  copyButton = null;
-  tooltipAnchor = null;
+  copyButton: HTMLButtonElement | null = null;
+  tooltipAnchor: HTMLDivElement | null = null;
 
-  onCopy = e => {
-    this.props.onCopy(e);
+  onCopy = (e: string) => {
+    if (this.props.onCopy) {
+      this.props.onCopy(e);
+    }
     this.setState({ copied: true });
     setTimeout(() => {
       this.setState({ copied: false });
-      this.copyButton.blur();
+      if (this.copyButton) {
+        this.copyButton.blur();
+      }
     }, 1000);
   };
 
   render() {
-    const { copyValue, extraClassNames, testId, ...otherProps } = this.props;
+    const {
+      copyValue,
+      extraClassNames,
+      testId,
+      onCopy,
+      ...otherProps
+    } = this.props;
 
     const classNames = cn(styles['CopyButton'], extraClassNames);
 
@@ -54,7 +65,7 @@ export class CopyButton extends Component<CopyButtonProps, CopyButtonState> {
         data-test-id={testId}
         {...otherProps}
       >
-        <CopyToClipboard text={copyValue} onCopy={this.onCopy}>
+        <CopyToClipboard text={copyValue || ''} onCopy={this.onCopy}>
           <Tooltip
             content={
               this.state.copied ? (

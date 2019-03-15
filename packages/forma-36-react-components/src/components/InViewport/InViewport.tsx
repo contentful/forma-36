@@ -4,29 +4,27 @@ import isBrowser from '../../utils/isBrowser';
 import throttle from '../../utils/throttle';
 import styles from './InViewport.css';
 
-export interface InViewportProps {
-  extraClassNames?: string;
-  children?: React.ReactNode;
-  testId?: string;
-  offset?: number;
+export type InViewportProps = {
+  offset: number;
   onOverflowTop?: Function;
   onOverflowRight?: Function;
   onOverflowBottom?: Function;
   onOverflowLeft?: Function;
-}
+  extraClassNames?: string;
+  children?: React.ReactNode;
+  testId?: string;
+} & typeof defaultProps;
+
+const defaultProps = {
+  testId: 'cf-ui-in-viewport',
+  offset: 0,
+};
 
 export class InViewport extends Component<InViewportProps> {
-  static defaultProps = {
-    testId: 'cf-ui-in-viewport',
-    offset: 0,
-    onOverflowTop: () => {},
-    onOverflowRight: () => {},
-    onOverflowBottom: () => {},
-    onOverflowLeft: () => {},
-  };
+  static defaultProps = defaultProps;
 
-  tGetDomPosition = null;
-  nodeRef = null;
+  tGetDomPosition: EventListenerOrEventListenerObject | null = null;
+  nodeRef: HTMLDivElement | null = null;
 
   componentDidMount() {
     this.getDomPosition();
@@ -38,14 +36,14 @@ export class InViewport extends Component<InViewportProps> {
   }
 
   componentWillUnmount() {
-    if (isBrowser) {
+    if (isBrowser && this.tGetDomPosition) {
       window.removeEventListener('scroll', this.tGetDomPosition, true);
       window.removeEventListener('resize', this.tGetDomPosition);
     }
   }
 
   getDomPosition = () => {
-    if (isBrowser) {
+    if (isBrowser && this.nodeRef) {
       const html = document.documentElement;
       const boundingClientRect = this.nodeRef.getBoundingClientRect();
       const windowWidth = window.innerWidth || html.clientWidth;
@@ -63,9 +61,9 @@ export class InViewport extends Component<InViewportProps> {
   };
 
   handleOverflow = (
-    { top, left, bottom, right },
-    windowWidth,
-    windowHeight,
+    { top, left, bottom, right }: ClientRect | DOMRect,
+    windowWidth: number,
+    windowHeight: number,
   ) => {
     const {
       offset,
@@ -81,13 +79,13 @@ export class InViewport extends Component<InViewportProps> {
 
     if (top + right + bottom + left !== 0) {
       if (top < topThreshold) {
-        onOverflowTop();
+        onOverflowTop && onOverflowTop();
       } else if (left < leftThreshold) {
-        onOverflowLeft();
+        onOverflowLeft && onOverflowLeft();
       } else if (bottom > bottomThreshold) {
-        onOverflowBottom();
+        onOverflowBottom && onOverflowBottom();
       } else if (right > rightThreshold) {
-        onOverflowRight();
+        onOverflowRight && onOverflowRight();
       }
     }
   };

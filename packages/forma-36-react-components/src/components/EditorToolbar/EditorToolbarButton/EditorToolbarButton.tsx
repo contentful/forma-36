@@ -1,30 +1,32 @@
-import React, { Component, SyntheticEvent } from 'react';
+import React, { Component, MouseEventHandler } from 'react';
 import cn from 'classnames';
 import IconButton, { IconButtonProps } from '../../IconButton/IconButton';
 import Tooltip from '../../Tooltip/Tooltip';
 import { IconType } from '../../Icon/Icon';
 import styles from './EditorToolbarButton.css';
 
-export interface EditorToolbarButtonProps {
-  extraClassNames?: string;
+export type EditorToolbarButtonProps = {
   label: string;
-  testId?: string;
   icon: IconType;
   tooltip?: string;
   iconButtonProps?: Partial<IconButtonProps>;
   isActive?: boolean;
   disabled?: boolean;
-  onClick?: (e: SyntheticEvent) => void;
+  onClick?: MouseEventHandler;
   withDropdown?: boolean;
-}
+  extraClassNames?: string;
+  testId?: string;
+} & typeof defaultProps;
+
+const defaultProps = {
+  testId: 'cf-ui-editor-toolbar-button',
+  isActive: false,
+  disabled: false,
+  withDropdown: false,
+};
 
 export class EditorToolbarButton extends Component<EditorToolbarButtonProps> {
-  static defaultProps = {
-    testId: 'cf-ui-editor-toolbar-button',
-    isActive: false,
-    disabled: false,
-    withDropdown: false,
-  };
+  static defaultProps = defaultProps;
 
   render() {
     const {
@@ -54,7 +56,7 @@ export class EditorToolbarButton extends Component<EditorToolbarButtonProps> {
             buttonType="secondary"
             label={label}
             extraClassNames={classNames}
-            onClick={!disabled ? onClick : null}
+            onClick={!disabled ? onClick : () => {}}
             disabled={disabled}
             withDropdown={withDropdown}
             {...iconButtonProps}

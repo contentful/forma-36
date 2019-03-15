@@ -4,17 +4,19 @@ import styles from './TableHead.css';
 
 import { TableCellContext, contextOptions } from '../TableCell';
 
-export interface TableHeadProps {
-  extraClassNames?: string;
+export type TableHeadProps = {
   isSticky?: boolean;
-  offsetTop?: string | number;
+  offsetTop?: number | string;
+  extraClassNames?: string;
   children: React.ReactNode;
-}
+} & typeof defaultProps;
+
+const defaultProps = {
+  isSticky: false,
+};
 
 export class TableHead extends Component<TableHeadProps> {
-  static defaultProps = {
-    isSticky: false,
-  };
+  static defaultProps = defaultProps;
 
   render() {
     const { extraClassNames, offsetTop, isSticky, children } = this.props;
@@ -23,7 +25,9 @@ export class TableHead extends Component<TableHeadProps> {
       [styles[`TableHead--sticky`]]: isSticky,
     });
     return (
-      <TableCellContext.Provider value={{ ...contextOptions.head, offsetTop }}>
+      <TableCellContext.Provider
+        value={{ ...contextOptions.head, offsetTop: offsetTop || 0 }}
+      >
         <thead className={classNames}>{children}</thead>
       </TableCellContext.Provider>
     );

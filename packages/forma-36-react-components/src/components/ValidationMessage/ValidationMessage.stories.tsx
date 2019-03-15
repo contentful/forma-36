@@ -9,7 +9,7 @@ storiesOf('Components|ValidationMessage', module)
     propTypes: ValidationMessage['__docgenInfo'],
   })
   .add('default', () => (
-    <ValidationMessage extraClassNames={text('Extra Class Names', '')}>
-      {text('Message', 'This field is required')}
+    <ValidationMessage extraClassNames={text('extraClassNames', '')}>
+      {text('children', 'This field is required')}
     </ValidationMessage>
   ));

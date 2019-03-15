@@ -5,9 +5,16 @@ import TabFocusTrap from '../TabFocusTrap';
 
 const styles = require('./TextLink.css');
 
-export interface TextLinkProps {
+export type TextLinkType =
+  | 'primary'
+  | 'positive'
+  | 'negative'
+  | 'secondary'
+  | 'muted';
+
+export type TextLinkProps = {
   children?: React.ReactNode;
-  linkType?: 'primary' | 'positive' | 'negative' | 'secondary' | 'muted';
+  linkType?: TextLinkType;
   href?: string;
   disabled?: boolean;
   testId?: string;
@@ -15,16 +22,18 @@ export interface TextLinkProps {
   extraClassNames?: string;
   icon?: IconType;
   text?: string;
-}
+} & typeof defaultProps;
+
+const defaultProps = {
+  linkType: 'primary',
+  testId: 'cf-ui-text-link',
+  disabled: false,
+};
 
 export class TextLink extends Component<TextLinkProps> {
-  static defaultProps = {
-    linkType: 'primary',
-    testId: 'cf-ui-text-link',
-    disabled: false,
-  };
+  static defaultProps = defaultProps;
 
-  renderIcon(icon, linkType) {
+  renderIcon(icon: IconType, linkType: TextLinkType) {
     if (!icon) return undefined;
 
     return (
@@ -59,7 +68,7 @@ export class TextLink extends Component<TextLinkProps> {
 
     const content = (
       <TabFocusTrap>
-        {this.renderIcon(icon, linkType)}
+        {icon && this.renderIcon(icon, linkType)}
         {text || children}
       </TabFocusTrap>
     );
@@ -89,7 +98,7 @@ export class TextLink extends Component<TextLinkProps> {
         type="button"
         className={classNames}
         data-test-id={testId}
-        onClick={!disabled ? onClick : null}
+        onClick={!disabled ? onClick : () => {}}
         disabled={disabled}
         {...otherProps}
       >

@@ -3,36 +3,38 @@ import cn from 'classnames';
 
 const styles = require('./Typography.css');
 
-export interface TypographyProps {
+export type TypographyProps = {
   extraClassNames?: string;
   children?: React.ReactNode;
+  style?: React.CSSProperties;
   testId?: string;
-}
+} & typeof defaultProps;
+
+const defaultConfiguration = {
+  displayText: { spacing: 'l' },
+  displayTextLarge: { spacing: 'xl' },
+  heading: { spacing: 'm' },
+  paragraph: { spacing: 'm' },
+  sectionHeading: { spacing: 'l' },
+  subheading: { spacing: 'm' },
+};
+
+const defaultProps = {
+  testId: 'cf-ui-text-container',
+};
 
 export const TypographyContext = React.createContext({});
 
 export class Typography extends Component<TypographyProps> {
-  static defaultProps: Partial<TypographyProps> = {
-    extraClassNames: undefined,
-    testId: 'cf-ui-text-container',
-  };
+  static defaultProps = defaultProps;
 
   render() {
     const { extraClassNames, children, testId, ...otherProps } = this.props;
     const classNames = cn(styles.Typography, extraClassNames);
 
     return (
-      <TypographyContext.Provider
-        value={{
-          displayText: { spacing: 'l' },
-          displayTextLarge: { spacing: 'xl' },
-          heading: { spacing: 'm' },
-          paragraph: { spacing: 'm' },
-          sectionHeading: { spacing: 'l' },
-          subheading: { spacing: 'm' },
-        }}
-      >
-        <div className={classNames} data-test-id={testId} {...otherProps}>
+      <TypographyContext.Provider value={defaultConfiguration}>
+        <div {...otherProps} className={classNames} data-test-id={testId}>
           {children}
         </div>
       </TypographyContext.Provider>

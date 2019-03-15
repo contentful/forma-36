@@ -9,7 +9,7 @@ storiesOf('Components|EditorToolbar/EditorToolbarDivider', module)
     propTypes: EditorToolbarDivider['__docgenInfo'],
   })
   .add('default', () => (
-    <EditorToolbarDivider extraClassNames={text('Extra Class Names', '')}>
+    <EditorToolbarDivider extraClassNames={text('extraClassNames', '')}>
       EditorToolbarDivider
     </EditorToolbarDivider>
   ));

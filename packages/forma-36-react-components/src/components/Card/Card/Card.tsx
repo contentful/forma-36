@@ -1,30 +1,33 @@
-import React, { Component, SyntheticEvent } from 'react';
+import React, {
+  Component,
+  MouseEventHandler,
+  MouseEvent as ReactMouseEvent,
+} from 'react';
 import cn from 'classnames';
 const styles = require('./Card.css');
 
-export interface CardPropTypes {
-  extraClassNames?: string;
-  children: React.ReactNode;
+export type CardPropTypes = {
   href?: string;
-  onClick?: (e: SyntheticEvent) => void;
-  testId?: string;
+  onClick?: MouseEventHandler<HTMLElement>;
   padding?: 'default' | 'large' | 'none';
   selected?: boolean;
   title?: string;
   style?: React.CSSProperties;
-}
+  extraClassNames?: string;
+  testId?: string;
+  children: React.ReactNode;
+} & typeof defaultProps;
+
+const defaultProps = {
+  padding: 'default',
+  testId: 'cf-ui-card',
+  selected: false,
+};
 
 export class Card extends Component<CardPropTypes> {
-  static defaultProps = {
-    extraClassNames: undefined,
-    href: undefined,
-    onClick: undefined,
-    padding: 'default',
-    testId: 'cf-ui-card',
-    selected: false,
-  };
+  static defaultProps = defaultProps;
 
-  handleClick = event => {
+  handleClick = (event: ReactMouseEvent<HTMLElement>) => {
     if (!this.props.onClick) return;
 
     this.props.onClick(event);

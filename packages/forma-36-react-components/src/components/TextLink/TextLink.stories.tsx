@@ -15,10 +15,10 @@ storiesOf('Components|TextLink', module)
     'default',
     () => (
       <TextLink
-        href={text('Href', '')}
+        href={text('href', '')}
         onClick={action('onClick')}
         linkType={select(
-          'Link Type',
+          'linkType',
           {
             'Primary (default)': 'primary',
             Positive: 'positive',
@@ -28,11 +28,11 @@ storiesOf('Components|TextLink', module)
           },
           'primary',
         )}
-        disabled={boolean('Disabled', false)}
-        extraClassNames={text('Extra Class Names', '')}
-        icon={select('Icon', ['', ...Object.keys(iconName)], undefined)}
+        disabled={boolean('disabled', false)}
+        extraClassNames={text('extraClassNames', '')}
+        icon={select('icon', ['', ...Object.keys(iconName)], undefined)}
       >
-        {text('Label (children)', 'Text Link Label')}
+        {text('children', 'Text Link Label')}
       </TextLink>
     ),
     { notes },

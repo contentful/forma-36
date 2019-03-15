@@ -13,13 +13,13 @@ storiesOf('Components|Skeleton/SkeletonContainer', module)
 
   .add('default', () => (
     <SkeletonContainer
-      extraClassNames={text('Extra Class Names', '')}
-      animate={boolean('Animate', true)}
-      width={text('Width', '100%')}
-      height={text('Height', '100')}
-      backgroundColor={text('Primary color', '#e5ebed')}
-      foregroundColor={text('Secondary color', '#f7f9fa')}
-      speed={number('Speed', 2)}
+      extraClassNames={text('extraClassNames', '')}
+      animate={boolean('animate', true)}
+      width={text('width', '100%')}
+      height={text('height', '100')}
+      backgroundColor={text('backgroundColor', '#e5ebed')}
+      foregroundColor={text('foregroundColor', '#f7f9fa')}
+      speed={number('speed', 2)}
     >
       <SkeletonDisplayText numberOfLines={1} />
       <SkeletonBodyText numberOfLines={3} offsetTop={35} />

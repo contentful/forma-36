@@ -3,28 +3,29 @@ import cn from 'classnames';
 
 const styles = require('./Tag.css');
 
-export interface TagProps
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
-  > {
+export type TagType =
+  | 'primary'
+  | 'positive'
+  | 'negative'
+  | 'warning'
+  | 'secondary'
+  | 'muted';
+
+export type TagProps = {
+  tagType?: TagType;
+  testId?: string;
+  style?: React.CSSProperties;
   extraClassNames?: string;
   children: React.ReactNode;
-  tagType?:
-    | 'primary'
-    | 'positive'
-    | 'negative'
-    | 'warning'
-    | 'secondary'
-    | 'muted';
-  testId?: string;
-}
+} & typeof defaultProps;
+
+const defaultProps = {
+  tagType: 'primary' as TagType,
+  testId: 'cf-ui-tag',
+};
 
 export class Tag extends Component<TagProps> {
-  static defaultProps = {
-    tagType: 'primary',
-    testId: 'cf-ui-tag',
-  };
+  static defaultProps = defaultProps;
 
   render() {
     const {

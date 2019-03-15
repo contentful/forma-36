@@ -5,18 +5,20 @@ import TabFocusTrap from '../TabFocusTrap';
 
 const styles = require('./Pill.css');
 
-export interface PillProps {
-  extraClassNames?: string;
-  testId?: string;
+export type PillProps = {
   label: string;
   onClose?: () => void;
   onDrag?: () => void;
-}
+  extraClassNames?: string;
+  testId?: string;
+} & typeof defaultProps;
+
+const defaultProps = {
+  testId: 'cf-ui-pill',
+};
 
 export class Pill extends Component<PillProps> {
-  static defaultProps = {
-    testId: 'cf-ui-pill',
-  };
+  static defaultProps = defaultProps;
 
   render() {
     const {

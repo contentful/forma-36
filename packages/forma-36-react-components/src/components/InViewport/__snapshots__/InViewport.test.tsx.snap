@@ -3,10 +3,6 @@
 exports[`renders the component 1`] = `
 <InViewport
   offset={0}
-  onOverflowBottom={[Function]}
-  onOverflowLeft={[Function]}
-  onOverflowRight={[Function]}
-  onOverflowTop={[Function]}
   testId="cf-ui-in-viewport"
 >
   <div
@@ -43,10 +39,6 @@ exports[`renders the component with an additional class name 1`] = `
 <InViewport
   extraClassNames="my-extra-class"
   offset={0}
-  onOverflowBottom={[Function]}
-  onOverflowLeft={[Function]}
-  onOverflowRight={[Function]}
-  onOverflowTop={[Function]}
   testId="cf-ui-in-viewport"
 >
   <div

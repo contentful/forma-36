@@ -4,19 +4,21 @@ import styles from './Heading.css';
 
 import { TypographyContext } from '../Typography/Typography';
 
-export interface HeadingProps {
+export type HeadingProps = {
+  element: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
+  style?: React.CSSProperties;
   extraClassNames?: string;
   children?: React.ReactNode;
   testId?: string;
-  element: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
-  style?: React.CSSProperties;
-}
+} & typeof defaultProps;
+
+const defaultProps = {
+  element: 'h1',
+  testId: 'cf-ui-heading',
+};
 
 export class Heading extends Component<HeadingProps> {
-  static defaultProps = {
-    element: 'h1',
-    testId: 'cf-ui-heading',
-  };
+  static defaultProps = defaultProps;
 
   render() {
     const {

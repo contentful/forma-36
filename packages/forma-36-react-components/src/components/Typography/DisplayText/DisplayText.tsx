@@ -4,20 +4,22 @@ import styles from './DisplayText.css';
 
 import { TypographyContext } from '../Typography/Typography';
 
-export interface DisplayTextProps {
+export type DisplayTextProps = {
+  element: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
+  size: 'default' | 'large';
   extraClassNames?: string;
   children?: React.ReactNode;
   testId?: string;
-  element: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
-  size: 'default' | 'large';
-}
+} & typeof defaultProps;
+
+const defaultProps = {
+  element: 'h1',
+  testId: 'cf-ui-display-text',
+  size: 'default',
+};
 
 export class DisplayText extends Component<DisplayTextProps> {
-  static defaultProps = {
-    element: 'h1',
-    testId: 'cf-ui-display-text',
-    size: 'default',
-  };
+  static defaultProps = defaultProps;
 
   render() {
     const {

@@ -10,13 +10,13 @@ storiesOf('Components|Typography/Paragraph', module)
   })
   .add('default', () => (
     <Paragraph
-      extraClassNames={text('Extra Class Names', '')}
+      extraClassNames={text('extraClassNames', '')}
       element={select(
-        'Element',
+        'element',
         ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p'],
         'p',
       )}
     >
-      {text('Content', 'Paragraph')}
+      {text('children', 'Paragraph')}
     </Paragraph>
   ));

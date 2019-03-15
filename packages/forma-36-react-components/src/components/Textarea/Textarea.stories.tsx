@@ -11,14 +11,14 @@ storiesOf('Components|TextArea', module)
   })
   .add('default', () => (
     <Textarea
-      extraClassNames={text('Extra Class Names', '')}
+      extraClassNames={text('extraClassNames', '')}
       name="someInput"
       id="someInput"
-      error={boolean('Error', false)}
-      maxLength={number('Max Length Characters', 50)}
-      required={boolean('Required', false)}
+      error={boolean('error', false)}
+      maxLength={number('maxLength', 50)}
+      required={boolean('required', false)}
       width={select(
-        'Width',
+        'width',
         {
           'Full (default)': 'full',
           large: 'large',
@@ -29,8 +29,8 @@ storiesOf('Components|TextArea', module)
       )}
       onChange={action('onChange')}
       onBlur={action('onBlur')}
-      disabled={boolean('Disabled', false)}
-      value={text('Value', '123456')}
-      rows={number('Rows', 2)}
+      disabled={boolean('disabled', false)}
+      value={text('value', '123456')}
+      rows={number('rows', 2)}
     />
   ));

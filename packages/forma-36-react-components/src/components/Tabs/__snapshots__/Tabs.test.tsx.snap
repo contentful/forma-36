@@ -14,8 +14,6 @@ Array [
       <Tab
         disabled={false}
         id="first"
-        onKeyPress={[Function]}
-        onSelect={[Function]}
         selected={false}
         tabIndex={0}
         testId="cf-ui-tab"
@@ -36,8 +34,6 @@ Array [
       <Tab
         disabled={false}
         id="second"
-        onKeyPress={[Function]}
-        onSelect={[Function]}
         selected={false}
         tabIndex={0}
         testId="cf-ui-tab"
@@ -58,8 +54,6 @@ Array [
       <Tab
         disabled={false}
         id="third"
-        onKeyPress={[Function]}
-        onSelect={[Function]}
         selected={false}
         tabIndex={0}
         testId="cf-ui-tab"
@@ -133,8 +127,6 @@ exports[`renders the component with role=navigation and an additional class name
       disabled={false}
       href="/first-link"
       id="first"
-      onKeyPress={[Function]}
-      onSelect={[Function]}
       selected={false}
       tabIndex={0}
       testId="cf-ui-tab"
@@ -155,8 +147,6 @@ exports[`renders the component with role=navigation and an additional class name
       extraClassNames="super-tab"
       href="/second-link"
       id="second"
-      onKeyPress={[Function]}
-      onSelect={[Function]}
       selected={false}
       tabIndex={0}
       testId="cf-ui-tab"
@@ -176,8 +166,6 @@ exports[`renders the component with role=navigation and an additional class name
       disabled={false}
       href="/third-link"
       id="third"
-      onKeyPress={[Function]}
-      onSelect={[Function]}
       selected={false}
       tabIndex={0}
       testId="cf-ui-tab"

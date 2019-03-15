@@ -14,16 +14,16 @@ export type positionType =
   | 'top-right'
   | 'top-left';
 
-export interface DropdownProps {
-  extraClassNames?: string;
-  children: React.ReactNode;
+export type DropdownProps = {
   toggleElement?: React.ReactNode;
-  testId?: string;
   submenuToggleLabel?: string;
   position: positionType;
   isOpen: boolean;
-  onClose: () => void;
-}
+  onClose?: Function;
+  testId?: string;
+  extraClassNames?: string;
+  children: React.ReactNode;
+} & typeof defaultProps;
 
 export interface AnchorDimensionsAndPositonType {
   top: number;
@@ -38,13 +38,14 @@ export interface DropdownState {
   anchorDimensionsAndPositon?: AnchorDimensionsAndPositonType;
 }
 
+const defaultProps = {
+  testId: 'cf-ui-dropdown',
+  position: 'bottom-left',
+  isOpen: false,
+};
+
 export class Dropdown extends Component<DropdownProps, DropdownState> {
-  static defaultProps = {
-    testId: 'cf-ui-dropdown',
-    position: 'bottom-left',
-    isOpen: false,
-    onClose: () => {},
-  };
+  static defaultProps = defaultProps;
 
   state = {
     isOpen: this.props.isOpen,
@@ -57,7 +58,7 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
     },
   };
 
-  dropdownAnchor: HTMLElement = undefined;
+  dropdownAnchor: HTMLDivElement | null = null;
 
   componentDidMount() {
     if (!isBrowser) {
@@ -81,13 +82,13 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
     }
   };
 
-  componentWillReceiveProps(newProps) {
+  componentWillReceiveProps(newProps: DropdownProps) {
     this.setState({
       isOpen: newProps.isOpen,
     });
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps: DropdownProps) {
     if (!isBrowser) {
       return;
     }
@@ -121,11 +122,11 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
     document.removeEventListener('scroll', this.setAnchorDimensions, true);
   }
 
-  openMenu = isOpen => {
+  openMenu = (isOpen: boolean) => {
     this.setState({ isOpen });
   };
 
-  handleEscapeKey = event => {
+  handleEscapeKey = (event: KeyboardEvent) => {
     const ESCAPE_KEYCODE = 27;
 
     if (event.keyCode === ESCAPE_KEYCODE) {
@@ -141,7 +142,7 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
     }
   };
 
-  openSubmenu = isOpen => {
+  openSubmenu = (isOpen: boolean) => {
     if (this.props.submenuToggleLabel) {
       this.openMenu(isOpen);
     }

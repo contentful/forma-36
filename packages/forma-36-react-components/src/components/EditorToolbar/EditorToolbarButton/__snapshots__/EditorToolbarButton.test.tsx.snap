@@ -6,10 +6,6 @@ exports[`renders the component 1`] = `
     containerElement="span"
     isVisible={false}
     maxWidth={360}
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseLeave={[Function]}
-    onMouseOver={[Function]}
     place="top"
     testId="cf-ui-tooltip"
   >
@@ -37,10 +33,6 @@ exports[`renders the component as active 1`] = `
     content="H1"
     isVisible={false}
     maxWidth={360}
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseLeave={[Function]}
-    onMouseOver={[Function]}
     place="top"
     testId="cf-ui-tooltip"
   >
@@ -67,10 +59,6 @@ exports[`renders the component as disabled 1`] = `
     containerElement="span"
     isVisible={false}
     maxWidth={360}
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseLeave={[Function]}
-    onMouseOver={[Function]}
     place="top"
     testId="cf-ui-tooltip"
   >
@@ -84,7 +72,7 @@ exports[`renders the component as disabled 1`] = `
         }
       }
       label="H1"
-      onClick={null}
+      onClick={[Function]}
       testId="cf-ui-editor-toolbar-button"
       withDropdown={false}
     />
@@ -99,10 +87,6 @@ exports[`renders the component with a tooltip 1`] = `
     content="H1"
     isVisible={false}
     maxWidth={360}
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseLeave={[Function]}
-    onMouseOver={[Function]}
     place="top"
     testId="cf-ui-tooltip"
   >
@@ -129,10 +113,6 @@ exports[`renders the component with an additional class name 1`] = `
     containerElement="span"
     isVisible={false}
     maxWidth={360}
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseLeave={[Function]}
-    onMouseOver={[Function]}
     place="top"
     testId="cf-ui-tooltip"
   >
@@ -160,10 +140,6 @@ exports[`renders with a dropdown indicator 1`] = `
     content="H1"
     isVisible={false}
     maxWidth={360}
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseLeave={[Function]}
-    onMouseOver={[Function]}
     place="top"
     testId="cf-ui-tooltip"
   >

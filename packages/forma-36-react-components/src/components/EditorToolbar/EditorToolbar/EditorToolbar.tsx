@@ -2,18 +2,19 @@ import React, { Component } from 'react';
 import cn from 'classnames';
 import styles from './EditorToolbar.css';
 
-export interface EditorToolbarProps {
+export type EditorToolbarProps = {
   extraClassNames?: string;
   children: React.ReactNode;
   testId?: string;
   style?: React.CSSProperties;
-}
+} & typeof defaultProps;
+
+const defaultProps = {
+  testId: 'cf-ui-editor-toolbar',
+};
 
 export class EditorToolbar extends Component<EditorToolbarProps> {
-  static defaultProps = {
-    testId: 'cf-ui-editor-toolbar',
-  };
-
+  static defaultProps = defaultProps;
   render() {
     const { extraClassNames, children, testId, ...otherProps } = this.props;
 

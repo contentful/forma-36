@@ -12,16 +12,16 @@ storiesOf('Components|SelectField', module)
   })
   .add('default', () => (
     <SelectField
-      extraClassNames={text('Extra Class Names', '')}
-      required={boolean('Required', false)}
+      extraClassNames={text('extraClassNames', '')}
+      required={boolean('required', false)}
       formLabelProps={{
         requiredText: text('Required Text', undefined),
       }}
       name="optionSelect"
       id="optionSelect"
-      labelText={text('Label', 'Label')}
+      labelText={text('labelText', 'Label')}
       value={select(
-        'Value',
+        'value',
         {
           'Option 1': 'optionOne',
           'Option 2': 'optionTwo',
@@ -31,9 +31,9 @@ storiesOf('Components|SelectField', module)
       onBlur={action('onBlur')}
       onChange={action('onChange')}
       selectProps={{
-        isDisabled: boolean('Disabled', false),
+        isDisabled: boolean('isDisabled', false),
         width: select(
-          'Width',
+          'width',
           {
             'Full (default)': 'full',
             large: 'large',
@@ -43,8 +43,8 @@ storiesOf('Components|SelectField', module)
           'full',
         ),
       }}
-      helpText={text('Help Text', '')}
-      validationMessage={text('Validation Message', '')}
+      helpText={text('helpText', '')}
+      validationMessage={text('validationMessage', '')}
     >
       <Option value="optionOne">Option 1</Option>
       <Option value="optionTwo">Long Option 2</Option>

@@ -1,4 +1,4 @@
-import React, { SyntheticEvent, Component } from 'react';
+import React, { Component, MouseEventHandler } from 'react';
 import cn from 'classnames';
 import Icon from '../Icon';
 import { IconProps } from '../Icon/Icon';
@@ -9,10 +9,10 @@ const styles = require('./IconButton.css');
 export interface IconButtonProps {
   label: string;
   href?: string;
-  iconProps?: IconProps;
+  iconProps: IconProps;
   testId?: string;
   disabled?: boolean;
-  onClick?: (e: SyntheticEvent) => void;
+  onClick?: MouseEventHandler;
   buttonType?:
     | 'primary'
     | 'positive'
@@ -24,16 +24,17 @@ export interface IconButtonProps {
   extraClassNames?: string;
 }
 
-export class IconButton extends Component<IconButtonProps> {
-  static defaultProps = {
-    href: undefined,
-    disabled: false,
-    testId: 'cf-ui-icon-button',
-    onClick: undefined,
-    buttonType: 'primary',
-    withDropdown: false,
-    extraClassNames: undefined,
-  };
+const defaultProps = {
+  disabled: false,
+  testId: 'cf-ui-icon-button',
+  buttonType: 'primary',
+  withDropdown: false,
+};
+
+export class IconButton extends Component<
+  IconButtonProps & typeof defaultProps
+> {
+  static defaultProps = defaultProps;
 
   render() {
     const {
@@ -56,19 +57,15 @@ export class IconButton extends Component<IconButtonProps> {
 
     const elementProps = {
       className: classNames,
-      onClick: !disabled ? onClick : null,
+      onClick: !disabled ? onClick : undefined,
       'data-test-id': testId,
       ...otherProps,
     };
 
     const content = (
       <TabFocusTrap extraClassNames={styles.IconButton__inner}>
-        <Icon
-          {...{
-            ...iconProps,
-            extraClassNames: styles.IconButton__icon,
-          }}
-        />
+        <Icon icon={iconProps.icon} extraClassNames={styles.IconButton__icon} />
+
         <span className={styles.IconButton__label}>{label}</span>
         {withDropdown && (
           <Icon

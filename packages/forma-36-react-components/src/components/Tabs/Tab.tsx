@@ -1,11 +1,16 @@
-import React, { Component, CSSProperties } from 'react';
+import React, {
+  Component,
+  CSSProperties,
+  MouseEventHandler,
+  KeyboardEvent,
+} from 'react';
 import classNames from 'classnames';
 
 const styles = require('./Tabs.css');
 
-export interface TabProps {
+export type TabProps = {
   id: string;
-  onSelect?: Function;
+  onSelect?: (id: string) => void;
   selected?: boolean;
   href?: string;
   target?: string;
@@ -15,24 +20,26 @@ export interface TabProps {
   extraClassNames?: string;
   testId?: string;
   children: React.ReactNode;
-}
+} & typeof defaultProps;
+
+const defaultProps = {
+  selected: false,
+  disabled: false,
+  testId: 'cf-ui-tab',
+  tabIndex: 0,
+};
 
 export class Tab extends Component<TabProps> {
-  static defaultProps = {
-    onSelect: () => {},
-    onKeyPress: () => {},
-    selected: false,
-    disabled: false,
-    testId: 'cf-ui-tab',
-    tabIndex: 0,
+  static defaultProps = defaultProps;
+
+  onClick: MouseEventHandler = () => {
+    if (this.props.onSelect) {
+      this.props.onSelect(this.props.id);
+    }
   };
 
-  onClick = () => {
-    this.props.onSelect(this.props.id);
-  };
-
-  onKeyPress = e => {
-    if (e.key === 'Enter') {
+  onKeyPress = (e: KeyboardEvent<HTMLElement>) => {
+    if (this.props.onSelect && e.key === 'Enter') {
       this.props.onSelect(this.props.id);
       e.preventDefault();
     }

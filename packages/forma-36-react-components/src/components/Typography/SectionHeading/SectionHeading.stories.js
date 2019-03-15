@@ -10,13 +10,13 @@ storiesOf('Components|Typography/SectionHeading', module)
   })
   .add('default', () => (
     <SectionHeading
-      extraClassNames={text('Extra Class Names', '')}
+      extraClassNames={text('extraClassNames', '')}
       element={select(
-        'Element',
+        'element',
         ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p'],
         'h1',
       )}
     >
-      {text('Content', 'Section heading')}
+      {text('children', 'Section heading')}
     </SectionHeading>
   ));

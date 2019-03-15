@@ -3,16 +3,18 @@ import cn from 'classnames';
 import Icon from '../Icon/Icon';
 import styles from './ValidationMessage.css';
 
-export interface ValidationMessageProps {
+export type ValidationMessageProps = {
   extraClassNames?: string;
   testId?: string;
   children: React.ReactNode;
-}
+} & typeof defaultProps;
+
+const defaultProps = {
+  testId: 'cf-ui-validation-message',
+};
 
 export class ValidationMessage extends Component<ValidationMessageProps> {
-  static defaultProps = {
-    testId: 'cf-ui-validation-message',
-  };
+  static defaultProps = defaultProps;
 
   render() {
     const { extraClassNames, children, testId, ...otherProps } = this.props;
@@ -20,7 +22,7 @@ export class ValidationMessage extends Component<ValidationMessageProps> {
     const classNames = cn(styles['ValidationMessage'], extraClassNames);
 
     return (
-      <div className={classNames} {...otherProps} data-test-id={testId}>
+      <div {...otherProps} className={classNames} data-test-id={testId}>
         <Icon
           icon="ErrorCircle"
           extraClassNames={styles['ValidationMessage__icon']}

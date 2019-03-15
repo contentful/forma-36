@@ -3,19 +3,21 @@ import cn from 'classnames';
 
 const styles = require('./Tabs.css');
 
-export interface TabsProps {
+export type TabsProps = {
+  role?: 'navigation' | 'tablist';
+  style?: CSSProperties;
   extraClassNames?: string;
   children?: React.ReactNode;
   testId?: string;
-  role?: 'navigation' | 'tablist';
-  style?: CSSProperties;
-}
+} & typeof defaultProps;
+
+const defaultProps = {
+  testId: 'cf-ui-tabs',
+  role: 'tablist',
+};
 
 export class Tabs extends Component<TabsProps> {
-  static defaultProps = {
-    testId: 'cf-ui-tabs',
-    role: 'tablist',
-  };
+  static defaultProps = defaultProps;
 
   render() {
     const { extraClassNames, children, testId, role, style } = this.props;

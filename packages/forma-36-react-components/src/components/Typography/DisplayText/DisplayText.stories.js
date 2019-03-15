@@ -10,14 +10,14 @@ storiesOf('Components|Typography/DisplayText', module)
   })
   .add('default', () => (
     <DisplayText
-      extraClassNames={text('Extra Class Names', '')}
+      extraClassNames={text('extraClassNames', '')}
       element={select(
-        'Element',
+        'element',
         ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p'],
         'h1',
       )}
-      size={select('Size', ['default', 'large'], 'default')}
+      size={select('size', ['default', 'large'], 'default')}
     >
-      {text('Content', 'Display text')}
+      {text('children', 'Display text')}
     </DisplayText>
   ));

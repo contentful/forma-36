@@ -12,11 +12,11 @@ storiesOf('Components|Illustration', module)
   .add('default', () => (
     <Illustration
       illustration={select(
-        'Illustration',
+        'illustration',
         Object.keys(illustrationName),
         Object.keys(illustrationName)[0],
       )}
-      extraClassNames={text('Extra Class Names', '')}
+      extraClassNames={text('extraClassNames', '')}
     />
   ))
   .add('All Illustrations', () => (

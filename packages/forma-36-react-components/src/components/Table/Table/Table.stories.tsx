@@ -25,8 +25,8 @@ storiesOf('Components|Table', module)
       <div style={{ width: '800px' }}>
         <Table>
           <TableHead
-            isSticky={boolean('Header is sticky', false)}
-            offsetTop={text('Header offset top', '0px')}
+            isSticky={boolean('isSticky', false)}
+            offsetTop={text('offsetTop', '0px')}
           >
             <TableRow>
               <TableCell>Name</TableCell>

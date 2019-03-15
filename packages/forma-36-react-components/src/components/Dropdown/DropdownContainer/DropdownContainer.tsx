@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import cn from 'classnames';
 import ReactDOM from 'react-dom';
 import InViewport from '../../InViewport';
@@ -9,41 +9,42 @@ import {
 
 const styles = require('./DropdownContainer.css');
 
-export interface DropdownContainerProps {
+export type DropdownContainerProps = {
+  onClose?: Function;
+  dropdownAnchor?: HTMLElement | null;
   extraClassNames?: string;
   children?: React.ReactNode;
   testId?: string;
-  onClose?: () => void;
-  openSubmenu?: (boolean) => void;
-  anchorDimensionsAndPositon: AnchorDimensionsAndPositonType;
-  position?: positionType;
+  openSubmenu?: (value: boolean) => void;
+  anchorDimensionsAndPositon?: AnchorDimensionsAndPositonType;
+  position: positionType;
   submenu?: boolean;
-  dropdownAnchor?: HTMLElement;
-}
+} & typeof defaultProps;
 
 export interface DropdownState {
   dropdownDimensions: {
     width: number;
     height: number;
   };
-  position: string;
+  position: positionType;
 }
 
-class DropdownContainer extends React.Component<
+const defaultProps = {
+  testId: 'cf-ui-dropdown-portal',
+  position: 'bottom-left',
+  submenu: false,
+};
+
+class DropdownContainer extends Component<
   DropdownContainerProps,
   DropdownState
 > {
-  static defaultProps = {
-    testId: 'cf-ui-dropdown-portal',
-    position: 'bottom-left',
-    onClose: () => {},
-    openSubmenu: () => {},
-    submenu: false,
-  };
+  static defaultProps = defaultProps;
 
   portalTarget = document.createElement('div');
-  dropdown: HTMLElement = undefined;
-  lastOverflowAt: string = undefined;
+  dropdown: HTMLElement | null = null;
+  lastOverflowAt: string | null = null;
+
   state = {
     position: this.props.position,
     dropdownDimensions: {
@@ -71,17 +72,20 @@ class DropdownContainer extends React.Component<
     document.removeEventListener('mousedown', this.trackOutsideClick, true);
   }
 
-  trackOutsideClick = e => {
+  trackOutsideClick = (e: MouseEvent) => {
     if (
       this.dropdown &&
-      !this.dropdown.contains(e.target) &&
-      !this.props.dropdownAnchor.contains(e.target)
+      !this.dropdown.contains(e.target as Node) &&
+      (this.props.dropdownAnchor &&
+        !this.props.dropdownAnchor.contains(e.target as Node))
     ) {
-      this.props.onClose();
+      if (this.props.onClose) {
+        this.props.onClose();
+      }
     }
   };
 
-  handleOverflow = overflowAt => {
+  handleOverflow = (overflowAt: string) => {
     if (overflowAt === this.lastOverflowAt) {
       return;
     }
@@ -178,9 +182,21 @@ class DropdownContainer extends React.Component<
           ...(!submenu && this.calculatePosition()),
         }}
         className={classNames}
-        onMouseEnter={() => this.props.openSubmenu(true)}
-        onFocus={() => this.props.openSubmenu(true)}
-        onMouseLeave={() => this.props.openSubmenu(false)}
+        onMouseEnter={() => {
+          if (this.props.openSubmenu) {
+            this.props.openSubmenu(true);
+          }
+        }}
+        onFocus={() => {
+          if (this.props.openSubmenu) {
+            this.props.openSubmenu(true);
+          }
+        }}
+        onMouseLeave={() => {
+          if (this.props.openSubmenu) {
+            this.props.openSubmenu(false);
+          }
+        }}
       >
         <InViewport
           onOverflowLeft={() => this.handleOverflow('left')}

@@ -10,9 +10,9 @@ storiesOf('Components|Asset', module)
   })
   .add('default', () => (
     <Asset
-      extraClassNames={text('Extra Class Names', '')}
-      src={text('Source', 'https://placekitten.com/200/300')}
-      title={text('Title', 'Image of a cat')}
-      type={select('Asset Type', types, 'archive')}
+      extraClassNames={text('extraClassNames', '')}
+      src={text('src', 'https://placekitten.com/200/300')}
+      title={text('title', 'Image of a cat')}
+      type={select('type', types, 'archive')}
     />
   ));

@@ -4,18 +4,20 @@ import styles from './SectionHeading.css';
 
 import { TypographyContext } from '../Typography/Typography';
 
-export interface SectionHeading {
-  extraClassNames?: string;
-  children?: React.ReactNode;
-  testId?: string;
+export type SectionHeadingProps = {
   element: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
-}
+  extraClassNames?: string;
+  children?: React.ReactNode | string;
+  testId?: string;
+} & typeof defaultProps;
 
-export class SectionHeading extends Component<SectionHeading> {
-  static defaultProps = {
-    element: 'h3',
-    testId: 'cf-ui-section-heading',
-  };
+const defaultProps = {
+  element: 'h3',
+  testId: 'cf-ui-section-heading',
+};
+
+export class SectionHeading extends Component<SectionHeadingProps> {
+  static defaultProps = defaultProps;
 
   render() {
     const {

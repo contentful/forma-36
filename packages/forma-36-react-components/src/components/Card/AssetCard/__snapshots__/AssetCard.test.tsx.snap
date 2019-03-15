@@ -84,8 +84,6 @@ exports[`renders the component with actions 1`] = `
             isActive={false}
             isDisabled={false}
             isTitle={true}
-            onEnter={[Function]}
-            onLeave={[Function]}
             testId="cf-ui-dropdown-list-item"
           >
             Actions
@@ -95,8 +93,6 @@ exports[`renders the component with actions 1`] = `
             isDisabled={false}
             isTitle={false}
             onClick={[Function]}
-            onEnter={[Function]}
-            onLeave={[Function]}
             testId="cf-ui-dropdown-list-item"
           >
             Edit

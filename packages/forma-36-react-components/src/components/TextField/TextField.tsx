@@ -1,14 +1,19 @@
-import React, { Component } from 'react';
+import React, {
+  Component,
+  ChangeEvent,
+  ChangeEventHandler,
+  FocusEventHandler,
+} from 'react';
 import cn from 'classnames';
 import ValidationMessage from '../ValidationMessage';
 import FormLabel, { FormLabelProps } from '../FormLabel/FormLabel';
 import HelpText from '../HelpText';
-import TextInput, { TextInputPropTypes } from '../TextInput/TextInput';
+import TextInput, { TextInputProps } from '../TextInput/TextInput';
 import TextLink, { TextLinkProps } from '../TextLink/TextLink';
 import Textarea, { TextareaProps } from '../Textarea/Textarea';
 import styles from './TextField.css';
 
-export interface TextFieldProps {
+export type TextFieldProps = {
   name: string;
   id: string;
   value?: string;
@@ -17,35 +22,37 @@ export interface TextFieldProps {
   extraClassNames?: string;
   formLabelProps?: Partial<FormLabelProps>;
   textLinkProps?: Partial<TextLinkProps>;
-  textInputProps?: Partial<TextInputPropTypes> | Partial<TextareaProps>;
+  textInputProps?: Partial<TextInputProps> | Partial<TextareaProps>;
   labelText?: string;
   helpText?: string;
   required?: boolean;
   textarea?: boolean;
   countCharacters?: boolean;
-  onChange?: (...args: any[]) => any;
-  onBlur?: (...args: any[]) => any;
-}
+  onChange?: ChangeEventHandler;
+  onBlur?: FocusEventHandler;
+} & typeof defaultProps;
 
 export interface TextFieldState {
   value?: string;
 }
 
-export class TextField extends Component<TextFieldProps> {
-  static defaultProps = {
-    testId: 'cf-ui-text-field',
-    textarea: false,
-    required: false,
-    countCharacters: false,
-  };
+const defaultProps = {
+  testId: 'cf-ui-text-field',
+  textarea: false,
+  required: false,
+  countCharacters: false,
+};
+
+export class TextField extends Component<TextFieldProps, TextFieldState> {
+  static defaultProps = defaultProps;
 
   state = { value: this.props.value || '' };
 
   // Store a copy of the value in state.
   // This is used by this component when the `countCharacters`
   // option is on
-  handleOnChange = evt => {
-    this.setState({ value: evt.target.value });
+  handleOnChange = (evt: ChangeEvent) => {
+    this.setState({ value: (evt.target as HTMLInputElement).value });
     if (this.props.onChange) this.props.onChange(evt);
   };
 
@@ -72,6 +79,7 @@ export class TextField extends Component<TextFieldProps> {
 
     const classNames = cn(styles['TextField'], extraClassNames);
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const Element: any = textarea ? Textarea : TextInput;
     return (
       <div className={classNames} {...otherProps} data-test-id={testId}>

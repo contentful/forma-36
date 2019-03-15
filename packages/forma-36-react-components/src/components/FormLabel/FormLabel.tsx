@@ -3,21 +3,23 @@ import cn from 'classnames';
 
 const styles = require('./FormLabel.css');
 
-export interface FormLabelProps {
+export type FormLabelProps = {
   htmlFor: string;
   children: React.ReactNode;
   testId?: string;
   extraClassNames?: string;
   requiredText?: string;
   required?: boolean;
-}
+} & typeof defaultProps;
+
+const defaultProps = {
+  testId: 'cf-ui-form-label',
+  requiredText: 'required',
+  required: false,
+};
 
 export class FormLabel extends Component<FormLabelProps> {
-  static defaultProps = {
-    testId: 'cf-ui-form-label',
-    requiredText: 'required',
-    required: false,
-  };
+  static defaultProps = defaultProps;
 
   render() {
     const {

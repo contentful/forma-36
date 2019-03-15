@@ -7,20 +7,22 @@ type SpinnerSize = 'default' | 'small' | 'large';
 
 type SpinnerColor = 'default' | 'white';
 
-export interface SpinnerProps {
-  extraClassNames?: string;
-  testId?: string;
+export type SpinnerProps = {
   size?: SpinnerSize;
   customSize?: number;
   color?: SpinnerColor;
-}
+  extraClassNames?: string;
+  testId?: string;
+} & typeof defaultProps;
+
+const defaultProps = {
+  testId: 'cf-ui-spinner',
+  size: 'default',
+  color: 'default',
+};
 
 export class Spinner extends Component<SpinnerProps> {
-  static defaultProps = {
-    testId: 'cf-ui-spinner',
-    size: 'default',
-    color: 'default',
-  };
+  static defaultProps = defaultProps;
 
   render() {
     const {

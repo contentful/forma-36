@@ -1,39 +1,39 @@
-import React, { SyntheticEvent, Component } from 'react';
+import React, { Component, MouseEventHandler } from 'react';
 import cn from 'classnames';
 import truncate from 'truncate';
 import Card from '../Card';
-import Tag from '../../Tag';
+import Tag, { TagType } from '../../Tag/Tag';
 import ReferenceCardSkeleton from './ReferenceCardSkeleton';
 const styles = require('./ReferenceCard.css');
 
-export interface ReferenceCardPropTypes {
-  extraClassNames?: string;
+export type ReferenceCardStatus =
+  | 'archived'
+  | 'changed'
+  | 'draft'
+  | 'published';
+
+export type ReferenceCardPropTypes = {
   title?: string;
   testId?: string;
   description?: string;
   contentType?: string;
-  status: 'archived' | 'changed' | 'draft' | 'published';
-  thumbnailElement: React.ReactNode;
-  loading: boolean;
-  onClick?: (e: SyntheticEvent) => void;
-  actionElements: React.ReactNode;
-}
+  status: ReferenceCardStatus;
+  thumbnailElement?: React.ReactNode;
+  loading?: boolean;
+  onClick?: MouseEventHandler;
+  extraClassNames?: string;
+  actionElements?: React.ReactNode;
+} & typeof defaultProps;
+
+const defaultProps = {
+  title: 'Untitled',
+  testId: 'cf-ui-reference-card',
+};
 
 export class ReferenceCard extends Component<ReferenceCardPropTypes> {
-  static defaultProps = {
-    title: 'Untitled',
-    description: undefined,
-    testId: 'cf-ui-reference-card',
-    contentType: undefined,
-    status: undefined,
-    thumbnailElement: undefined,
-    loading: undefined,
-    onClick: undefined,
-    actionElements: undefined,
-    extraClassNames: undefined,
-  };
+  static defaultProps = defaultProps;
 
-  renderTitle = title => {
+  renderTitle = (title: string) => {
     const truncatedTitle = truncate(title, 255, {});
 
     return (
@@ -47,7 +47,7 @@ export class ReferenceCard extends Component<ReferenceCardPropTypes> {
     );
   };
 
-  renderDescription = description => {
+  renderDescription = (description: string) => {
     const truncatedDescription = truncate(description, 95, {});
 
     return (
@@ -57,19 +57,19 @@ export class ReferenceCard extends Component<ReferenceCardPropTypes> {
     );
   };
 
-  renderThumbnail = thumbnailElement => (
+  renderThumbnail = (thumbnailElement: React.ReactNode) => (
     <figure className={styles.ReferenceCard__thumbnail}>
       {thumbnailElement}
     </figure>
   );
 
-  renderActionElements = actionElements => (
+  renderActionElements = (actionElements: React.ReactNode) => (
     <div className={styles.ReferenceCard__actions}>{actionElements}</div>
   );
 
-  renderStatus = status => {
-    let label;
-    let type;
+  renderStatus = (status: ReferenceCardStatus) => {
+    let label: string;
+    let type: TagType;
 
     switch (status) {
       case 'archived':

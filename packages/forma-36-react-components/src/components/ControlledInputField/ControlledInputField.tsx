@@ -1,4 +1,4 @@
-import React, { Component, SyntheticEvent } from 'react';
+import React, { Component, ChangeEventHandler } from 'react';
 import cn from 'classnames';
 import FormLabel from '../FormLabel';
 import HelpText from '../HelpText';
@@ -6,13 +6,11 @@ import ValidationMessage from '../ValidationMessage';
 import ControlledInput from '../ControlledInput/ControlledInput';
 const styles = require('./ControlledInputField.css');
 
-export interface ControlledInputFieldPropTypes {
-  extraClassNames?: string;
+export type ControlledInputFieldPropTypes = {
   id: string;
   labelIsLight?: boolean;
   labelText: string;
   required?: boolean;
-  testId?: string;
   helpText?: string;
   formLabelProps?: object;
   disabled?: boolean;
@@ -23,19 +21,23 @@ export interface ControlledInputFieldPropTypes {
   checked?: boolean;
   inputProps?: object;
   inputType?: 'radio' | 'checkbox';
-  onChange?: (e: SyntheticEvent) => void;
+  onChange?: ChangeEventHandler;
+  extraClassNames?: string;
+  testId?: string;
   children?: React.ReactNode;
-}
+} & typeof defaultProps;
+
+const defaultProps = {
+  testId: 'cf-ui-controlled-input-field',
+  labelIsLight: false,
+  checked: false,
+  inputType: 'checkbox',
+};
 
 export class ControlledInputField extends Component<
   ControlledInputFieldPropTypes
 > {
-  static defaultProps = {
-    testId: 'cf-ui-controlled-input-field',
-    labelIsLight: false,
-    checked: false,
-    inputType: 'checkbox',
-  };
+  static defaultProps = defaultProps;
 
   render() {
     const {

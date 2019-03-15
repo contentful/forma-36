@@ -3,20 +3,19 @@ import cn from 'classnames';
 
 const styles = require('./FieldGroup.css');
 
-export interface FieldGroupProps
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
-  > {
+export type FieldGroupProps = {
   extraClassNames?: string;
   children: React.ReactNode;
+  style?: React.CSSProperties;
   row?: boolean;
-}
+} & typeof defaultProps;
+
+const defaultProps = {
+  row: false,
+};
 
 export class FieldGroup extends Component<FieldGroupProps> {
-  static defaultProps = {
-    row: false,
-  };
+  static defaultProps = defaultProps;
 
   render() {
     const { extraClassNames, children, row, ...otherProps } = this.props;
@@ -26,7 +25,7 @@ export class FieldGroup extends Component<FieldGroupProps> {
     });
 
     return (
-      <div className={classNames} {...otherProps}>
+      <div {...otherProps} className={classNames}>
         {React.Children.map(children, child => (
           <div className={styles.FieldGroup__item}>{child}</div>
         ))}

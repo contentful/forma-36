@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
 
-export interface TabPanelProps
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
-  > {
+export type TabPanelProps = {
   id: string;
   extraClassNames?: string;
   testId?: string;
+  style?: React.CSSProperties;
   children: React.ReactNode;
-}
+} & typeof defaultProps;
+
+const defaultProps = {
+  testId: 'cf-ui-tab-panel',
+};
 
 export class TabPanel extends Component<TabPanelProps> {
-  static defaultProps = {
-    testId: 'cf-ui-tab-panel',
-  };
+  static defaultProps = defaultProps;
 
   render() {
     const { testId, extraClassNames, children, id, ...rest } = this.props;

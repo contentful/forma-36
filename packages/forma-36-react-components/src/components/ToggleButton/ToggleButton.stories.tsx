@@ -12,12 +12,12 @@ storiesOf('Components|ToggleButton', module)
   .add('default', () => (
     <div>
       <ToggleButton
-        extraClassNames={text('Extra Class Names', '')}
-        isDisabled={boolean('is Disabled', false)}
-        isActive={boolean('is Active', false)}
-        icon={select('Icon', [undefined, ...Object.keys(iconName)], undefined)}
+        extraClassNames={text('extraClassNames', '')}
+        isDisabled={boolean('isDisabled', false)}
+        isActive={boolean('isActive', false)}
+        icon={select('icon', [undefined, ...Object.keys(iconName)], undefined)}
       >
-        {text('Toggle Text', 'Embed Entry')}
+        {text('children', 'Embed Entry')}
       </ToggleButton>
     </div>
   ));

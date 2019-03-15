@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, MouseEventHandler } from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, boolean, select } from '@storybook/addon-knobs';
 
 import Modal from './Modal';
 import Button from '../../Button/Button';
 
-function fillArray(value, len) {
+function fillArray(value: string, len: number) {
   if (len === 0) return [];
   let a = [value];
   while (a.length * 2 <= len) a = a.concat(a);
@@ -106,7 +106,13 @@ function ControllerModalStory() {
         isShown={isShown}
         onClose={() => setShown(false)}
       >
-        {({ title, onClose }) => (
+        {({
+          title,
+          onClose,
+        }: {
+          title: string;
+          onClose: MouseEventHandler;
+        }) => (
           <React.Fragment>
             <Modal.Header title={title} onClose={onClose} />
             <Modal.Content>Hello from controlled modal window</Modal.Content>

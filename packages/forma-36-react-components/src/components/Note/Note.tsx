@@ -21,22 +21,24 @@ const Icons = {
   [NoteType.WARNING]: iconName.Warning,
 };
 
-export interface NoteProps {
-  noteType?: 'primary' | 'positive' | 'negative' | 'warning';
+export type NoteProps = {
+  noteType: 'primary' | 'positive' | 'negative' | 'warning';
+  testId: string;
   extraClassNames?: string;
   title?: string;
   style?: CSSProperties;
-  testId?: string;
   children: React.ReactNode;
-}
+} & typeof defaultProps;
+
+const defaultProps = {
+  noteType: 'primary',
+  testId: 'cf-ui-note',
+};
 
 export class Note extends Component<NoteProps> {
   static Type = NoteType;
 
-  static defaultProps = {
-    noteType: NoteType.PRIMARY,
-    testId: 'cf-ui-note',
-  };
+  static defaultProps = defaultProps;
 
   render() {
     const icon = Icons[this.props.noteType] as IconType;

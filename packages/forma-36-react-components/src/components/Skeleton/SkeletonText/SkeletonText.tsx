@@ -1,25 +1,26 @@
 import React, { Component } from 'react';
 
-export interface SkeletonTextProps {
-  numberOfLines?: number;
+export type SkeletonTextProps = {
+  numberOfLines: number;
+  offsetTop: number;
+  offsetLeft: number;
+  lineHeight: number;
+  marginBottom: number;
   width?: number;
-  offsetTop?: number;
-  offsetLeft?: number;
-  lineHeight?: number;
-  marginBottom?: number;
-}
+} & typeof defaultProps;
+
+const defaultProps = {
+  numberOfLines: 1,
+  offsetTop: 0,
+  offsetLeft: 0,
+  lineHeight: 21,
+  marginBottom: 20,
+};
 
 export class SkeletonText extends Component<SkeletonTextProps> {
-  static defaultProps = {
-    numberOfLines: 1,
-    width: undefined,
-    offsetTop: 0,
-    offsetLeft: 0,
-    lineHeight: 21,
-    marginBottom: 20,
-  };
+  static defaultProps = defaultProps;
 
-  getLineWidth = lastLine => {
+  getLineWidth = (lastLine: boolean) => {
     if (this.props.width) {
       return this.props.width;
     }

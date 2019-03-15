@@ -44,7 +44,7 @@ module.exports = {
             loader: MiniCssExtractPlugin.loader,
           },
           {
-            loader: require.resolve('typings-for-css-modules-loader'),
+            loader: 'css-loader',
             options: {
               importLoaders: 1,
               modules: true,

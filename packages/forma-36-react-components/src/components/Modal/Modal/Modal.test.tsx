@@ -7,7 +7,7 @@ jest.mock(
   'react-modal',
   () =>
     // eslint-disable-next-line
-    function ReactModalMock({ children }) {
+    function ReactModalMock({ children }: { children: React.ReactNode }) {
       return <div className="react-modal">{children}</div>;
     },
 );
@@ -50,7 +50,7 @@ it('renders the component without title', () => {
 it('can be controlled', () => {
   const output = shallow(
     <Modal isShown onClose={() => {}}>
-      {({ onClose }) => (
+      {({ onClose }: { onClose: Function }) => (
         <React.Fragment>
           <Modal.Header title="Hello" onClose={onClose} />
           <Modal.Content>Content</Modal.Content>

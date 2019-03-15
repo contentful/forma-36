@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, MouseEvent, FocusEvent } from 'react';
 import ReactDOM from 'react-dom';
 import cn from 'classnames';
 import InViewport from '../InViewport';
@@ -7,6 +7,7 @@ import styles from './Tooltip.css';
 export interface TooltipContainerProps {
   children: React.ReactNode;
   setRef: Function;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   containerElement: any;
   targetWrapperClassName?: string;
   onMouseLeave: Function;
@@ -28,7 +29,7 @@ const TooltipContainer: React.StatelessComponent<TooltipContainerProps> = (
   const ContainerElement = containerElement;
   return (
     <ContainerElement
-      ref={ref => setRef(ref)}
+      ref={(ref: HTMLSpanElement) => setRef(ref)}
       className={cn(styles['Tooltip__target-wrapper'], targetWrapperClassName)}
       {...otherProps}
     >
@@ -37,42 +38,44 @@ const TooltipContainer: React.StatelessComponent<TooltipContainerProps> = (
   );
 };
 
-export interface TooltipProps {
-  targetWrapperClassName?: string;
-  onFocus?: Function;
-  onBlur?: Function;
-  id?: string;
-  onMouseLeave?: Function;
-  containerElement?: React.ReactNode;
-  onMouseOver?: Function;
-  content?: React.ReactNode;
+export type TooltipPlace = 'top' | 'bottom' | 'right' | 'left';
+
+export type TooltipProps = {
   children: React.ReactNode;
-  place?: 'top' | 'bottom' | 'right' | 'left';
+
+  containerElement?: React.ReactNode;
+  place?: TooltipPlace;
   isVisible?: boolean;
   maxWidth?: number | string;
-  extraClassNames?: string;
   testId?: string;
-}
+
+  id?: string;
+  extraClassNames?: string;
+  content?: React.ReactNode;
+  targetWrapperClassName?: string;
+  onMouseOver?: Function;
+  onMouseLeave?: Function;
+  onFocus?: Function;
+  onBlur?: Function;
+} & typeof defaultProps;
+
+const defaultProps = {
+  containerElement: 'span',
+  isVisible: false,
+  testId: 'cf-ui-tooltip',
+  place: 'top',
+  maxWidth: 360,
+};
 
 export class Tooltip extends Component<TooltipProps> {
-  static defaultProps = {
-    onFocus: () => {},
-    onBlur: () => {},
-    onMouseLeave: () => {},
-    onMouseOver: () => {},
-    containerElement: 'span',
-    isVisible: false,
-    testId: 'cf-ui-tooltip',
-    place: 'top',
-    maxWidth: 360,
-  };
+  static defaultProps = defaultProps;
 
-  portalTarget = null;
-  place = null;
-  containerDomNode = null;
-  tooltipDomNode = null;
+  portalTarget: HTMLDivElement | null = null;
+  place: TooltipPlace = 'top';
+  containerDomNode: HTMLSpanElement | null = null;
+  tooltipDomNode: HTMLDivElement | null = null;
 
-  constructor(props) {
+  constructor(props: TooltipProps) {
     super(props);
     this.portalTarget = document.createElement('div');
     this.place = props.place;
@@ -83,20 +86,24 @@ export class Tooltip extends Component<TooltipProps> {
   };
 
   componentDidMount() {
-    document.body.appendChild(this.portalTarget);
+    if (this.portalTarget) {
+      document.body.appendChild(this.portalTarget);
+    }
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps: TooltipProps) {
     if (prevProps.content !== this.props.content) {
       this.forceUpdate();
     }
   }
 
   componentWillUnmount() {
-    document.body.removeChild(this.portalTarget);
+    if (this.portalTarget) {
+      document.body.removeChild(this.portalTarget);
+    }
   }
 
-  setPlace = place => {
+  setPlace = (place: TooltipPlace) => {
     this.place = place;
   };
 
@@ -148,7 +155,7 @@ export class Tooltip extends Component<TooltipProps> {
     return calculatedPosition;
   };
 
-  renderTooltip = content => {
+  renderTooltip = (content: React.ReactNode) => {
     const placeClass = `Tooltip--place-${this.place}`;
     const classNames = cn(
       styles['Tooltip'],
@@ -167,7 +174,7 @@ export class Tooltip extends Component<TooltipProps> {
           ...this.calculatePosition(),
           maxWidth: this.props.maxWidth,
         }}
-        ref={ref => {
+        ref={(ref: HTMLDivElement) => {
           this.tooltipDomNode = ref;
         }}
         contentEditable={false}
@@ -191,7 +198,7 @@ export class Tooltip extends Component<TooltipProps> {
       </div>
     );
 
-    return ReactDOM.createPortal(tooltip, this.portalTarget);
+    return ReactDOM.createPortal(tooltip, this.portalTarget as Element);
   };
 
   render() {
@@ -215,23 +222,31 @@ export class Tooltip extends Component<TooltipProps> {
     return (
       <TooltipContainer
         containerElement={containerElement}
-        onMouseOver={e => {
+        onMouseOver={(e: MouseEvent) => {
           this.setState({ isVisible: true });
-          onMouseOver(e);
+          if (onMouseOver) {
+            onMouseOver(e);
+          }
         }}
-        onMouseLeave={e => {
+        onMouseLeave={(e: MouseEvent) => {
           this.setState({ isVisible: false });
-          onMouseLeave(e);
+          if (onMouseLeave) {
+            onMouseLeave(e);
+          }
         }}
-        onFocus={e => {
+        onFocus={(e: FocusEvent) => {
           this.setState({ isVisible: true });
-          onFocus(e);
+          if (onFocus) {
+            onFocus(e);
+          }
         }}
-        onBlur={e => {
+        onBlur={(e: FocusEvent) => {
           this.setState({ isVisible: false });
-          onBlur(e);
+          if (onBlur) {
+            onBlur(e);
+          }
         }}
-        setRef={ref => {
+        setRef={(ref: HTMLElement) => {
           this.containerDomNode = ref;
         }}
         targetWrapperClassName={targetWrapperClassName}

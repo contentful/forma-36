@@ -15,7 +15,7 @@ function DefaultStory() {
     <Form
       onSubmit={action('onSubmit')}
       spacing={select(
-        'Spacing',
+        'spacing',
         {
           Default: 'default',
           Condensed: 'condensed',
@@ -39,7 +39,7 @@ function DefaultStory() {
         value="johannes.bugiel@contentful.com"
         helpText="Please enter your mail"
       />
-      <FieldGroup row={boolean('Field Group Row', false)}>
+      <FieldGroup row={boolean('row', false)}>
         <CheckboxField
           labelText="I agree"
           value="yes"

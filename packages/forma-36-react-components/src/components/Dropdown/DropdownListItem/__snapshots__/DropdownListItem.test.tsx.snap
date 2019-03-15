@@ -36,8 +36,6 @@ exports[`renders the component with an additional class name 1`] = `
     isActive={false}
     isDisabled={false}
     isTitle={false}
-    onEnter={[Function]}
-    onLeave={[Function]}
     testId="cf-ui-dropdown-list-item"
   >
     Entry

@@ -11,7 +11,7 @@ storiesOf('Components|List', module)
     propTypes: [List['__docgenInfo'], ListItem['__docgenInfo']],
   })
   .add('default', () => (
-    <List extraClassNames={text('Extra Class Names', '')}>
+    <List extraClassNames={text('extraClassNames', '')}>
       <ListItem>List Item 1</ListItem>
       <ListItem>List Item 2</ListItem>
       <ListItem>

@@ -70,7 +70,6 @@ exports[`prevents an onClick function from being called when disabled 1`] = `
   className="IconButton IconButton--disabled IconButton--primary"
   data-test-id="cf-ui-icon-button"
   disabled={true}
-  onClick={null}
   type="button"
 >
   <TabFocusTrap

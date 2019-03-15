@@ -11,7 +11,7 @@ storiesOf('Components|Tag', module)
   .add('default', () => (
     <Tag
       tagType={select(
-        'Tag Type',
+        'tagType',
         {
           'Primary (default)': 'primary',
           Positive: 'positive',
@@ -22,7 +22,7 @@ storiesOf('Components|Tag', module)
         },
         'primary',
       )}
-      extraClassNames={text('Extra Class Names', '')}
+      extraClassNames={text('extraClassNames', '')}
     >
       {text('Children', 'Published')}
     </Tag>

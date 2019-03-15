@@ -14,7 +14,6 @@ exports[`can be controlled 1`] = `
   closeTimeoutMS={300}
   htmlOpenClassName="Modal__html--open"
   isOpen={true}
-  onAfterOpen={[Function]}
   onRequestClose={[Function]}
   overlayClassName={
     Object {
@@ -80,7 +79,6 @@ exports[`renders the component 1`] = `
   closeTimeoutMS={300}
   htmlOpenClassName="Modal__html--open"
   isOpen={true}
-  onAfterOpen={[Function]}
   onRequestClose={[Function]}
   overlayClassName={
     Object {
@@ -137,7 +135,6 @@ exports[`renders the component without title 1`] = `
   closeTimeoutMS={300}
   htmlOpenClassName="Modal__html--open"
   isOpen={true}
-  onAfterOpen={[Function]}
   onRequestClose={[Function]}
   overlayClassName={
     Object {

@@ -2,16 +2,19 @@ import React, { Component } from 'react';
 import cn from 'classnames';
 import styles from './List.css';
 
-export interface ListProps {
+export type ListProps = {
   extraClassNames?: string;
   children: React.ReactNode;
+  style?: React.CSSProperties;
   testId?: string;
-}
+} & typeof defaultProps;
+
+const defaultProps = {
+  testId: 'cf-ui-list',
+};
 
 export class List extends Component<ListProps> {
-  static defaultProps = {
-    testId: 'cf-ui-list',
-  };
+  static defaultProps = defaultProps;
 
   render() {
     const { extraClassNames, children, testId, ...otherProps } = this.props;
@@ -19,7 +22,7 @@ export class List extends Component<ListProps> {
     const classNames = cn(styles['List'], extraClassNames);
 
     return (
-      <ul className={classNames} data-test-id={testId} {...otherProps}>
+      <ul {...otherProps} className={classNames} data-test-id={testId}>
         {children}
       </ul>
     );

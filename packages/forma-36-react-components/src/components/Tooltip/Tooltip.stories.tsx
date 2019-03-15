@@ -13,7 +13,7 @@ storiesOf('Components|Tooltip', module)
     <div>
       <Tooltip
         place={select(
-          'Initial place',
+          'place',
           {
             Top: 'top',
             Bottom: 'bottom',
@@ -23,8 +23,11 @@ storiesOf('Components|Tooltip', module)
           'top',
         )}
         id="tip1"
-        targetWrapperClassName={text('Wrapper class name', 'target-wrapper')}
-        content={text('Tooltip Text', 'Hi I am a Tooltip')}
+        targetWrapperClassName={text(
+          'targetWrapperClassName',
+          'target-wrapper',
+        )}
+        content={text('content', 'Hi I am a Tooltip')}
       >
         <TextLink>Hover me</TextLink>
       </Tooltip>
@@ -35,7 +38,7 @@ storiesOf('Components|Tooltip', module)
       Lorem Ipsum dolor sit amet &nbsp;
       <Tooltip
         place={select(
-          'Initial place',
+          'place',
           {
             Top: 'top',
             Bottom: 'bottom',

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import React from 'react';
 import { mount } from 'enzyme';
 import { axe } from 'jest-axe';
@@ -35,7 +37,7 @@ it('dispatches onOverflowTop', () => {
     </InViewport>,
   );
 
-  (output.instance() as InViewport).nodeRef = {
+  (output.instance() as any).nodeRef = {
     getBoundingClientRect: () => ({
       width: 10,
       height: 10,
@@ -60,7 +62,7 @@ it('dispatches onOverflowLeft', () => {
     </InViewport>,
   );
 
-  (output.instance() as InViewport).nodeRef = {
+  (output.instance() as any).nodeRef = {
     getBoundingClientRect: () => ({
       width: 10,
       height: 10,
@@ -86,7 +88,7 @@ it('dispatches onOverflowRight', () => {
     </InViewport>,
   );
 
-  (output.instance() as InViewport).nodeRef = {
+  (output.instance() as any).nodeRef = {
     getBoundingClientRect: () => ({
       width: 10,
       height: 10,
@@ -113,7 +115,7 @@ it('dispatches onOverflowBottom', () => {
     </InViewport>,
   );
 
-  (output.instance() as InViewport).nodeRef = {
+  (output.instance() as any).nodeRef = {
     getBoundingClientRect: () => ({
       width: 10,
       height: 10,
@@ -140,7 +142,7 @@ it('does not dispatch onOverflowBottom', () => {
     </InViewport>,
   );
 
-  (output.instance() as InViewport).nodeRef = {
+  (output.instance() as any).nodeRef = {
     getBoundingClientRect: () => ({
       width: 10,
       height: 10,

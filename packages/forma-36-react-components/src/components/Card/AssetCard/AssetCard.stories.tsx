@@ -14,7 +14,7 @@ storiesOf('Components|Card/AssetCard', module)
   })
   .add('default', () => (
     <AssetCard
-      extraClassNames={text('Extra Class Names', '')}
+      extraClassNames={text('extraClassNames', '')}
       status={select(
         'Status',
         {
@@ -33,9 +33,9 @@ storiesOf('Components|Card/AssetCard', module)
   ))
   .add('with dropdownListElements', () => (
     <AssetCard
-      extraClassNames={text('Extra Class Names', '')}
+      extraClassNames={text('extraClassNames', '')}
       status={select(
-        'Status',
+        'status',
         {
           Draft: 'draft',
           Changed: 'changed',
@@ -44,10 +44,10 @@ storiesOf('Components|Card/AssetCard', module)
         },
         'published',
       )}
-      type={select('Asset Type', types, 'image')}
-      isLoading={boolean('Is Loading', false)}
-      src={text('Source', 'https://placekitten.com/200/300')}
-      title={text('Title', 'Image of a cat')}
+      type={select('type', types, 'image')}
+      isLoading={boolean('isLoading', false)}
+      src={text('src', 'https://placekitten.com/200/300')}
+      title={text('title', 'Image of a cat')}
       dropdownListElements={
         <span>
           <DropdownList>

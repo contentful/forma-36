@@ -5,10 +5,10 @@ exports[`renders the component 1`] = `
   className="CopyButton"
   data-test-id="cf-ui-copy-button"
   id="copyButton"
-  onCopy={[Function]}
 >
   <CopyToClipboard
     onCopy={[Function]}
+    text=""
   >
     <Tooltip
       containerElement="span"
@@ -21,10 +21,6 @@ exports[`renders the component 1`] = `
       }
       isVisible={false}
       maxWidth={360}
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onMouseLeave={[Function]}
-      onMouseOver={[Function]}
       place="top"
       testId="cf-ui-tooltip"
     >
@@ -59,7 +55,6 @@ exports[`renders the component with a copy value 1`] = `
   className="CopyButton"
   data-test-id="cf-ui-copy-button"
   id="copyButton"
-  onCopy={[Function]}
 >
   <CopyToClipboard
     onCopy={[Function]}
@@ -76,10 +71,6 @@ exports[`renders the component with a copy value 1`] = `
       }
       isVisible={false}
       maxWidth={360}
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onMouseLeave={[Function]}
-      onMouseOver={[Function]}
       place="top"
       testId="cf-ui-tooltip"
     >
@@ -115,10 +106,10 @@ exports[`renders the component with an additional class name 1`] = `
   className="CopyButton my-extra-class"
   data-test-id="cf-ui-copy-button"
   id="copyButton"
-  onCopy={[Function]}
 >
   <CopyToClipboard
     onCopy={[Function]}
+    text=""
   >
     <Tooltip
       containerElement="span"
@@ -131,10 +122,6 @@ exports[`renders the component with an additional class name 1`] = `
       }
       isVisible={false}
       maxWidth={360}
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onMouseLeave={[Function]}
-      onMouseOver={[Function]}
       place="top"
       testId="cf-ui-tooltip"
     >

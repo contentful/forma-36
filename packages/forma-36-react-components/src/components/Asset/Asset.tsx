@@ -20,18 +20,19 @@ export const types = {
 
 export type AssetType = keyof typeof types;
 
-export interface AssetProps {
-  extraClassNames?: string;
+export type AssetProps = {
   src: string;
   title: string;
   type?: AssetType;
-}
+  extraClassNames?: string;
+} & typeof defaultProps;
+
+const defaultProps = {
+  type: 'image',
+};
 
 export class Asset extends Component<AssetProps> {
-  static defaultProps = {
-    extraClassNames: undefined,
-    type: 'image',
-  };
+  static defaultProps = defaultProps;
 
   renderImage = (src: string, title: string) => (
     <React.Fragment>
@@ -48,7 +49,7 @@ export class Asset extends Component<AssetProps> {
     </React.Fragment>
   );
 
-  renderAsset = (type: string, title: string) => {
+  renderAsset = (type: AssetType, title: string) => {
     const illustraionName = type.charAt(0).toUpperCase() + type.slice(1);
     return (
       <div className={styles['Asset__asset-container']}>
@@ -67,7 +68,7 @@ export class Asset extends Component<AssetProps> {
 
     return (
       <div className={classNames} {...otherProps}>
-        {type === 'image'
+        {type && type === 'image'
           ? this.renderImage(src, title)
           : this.renderAsset(type, title)}
       </div>

@@ -1,25 +1,24 @@
-import React, { FunctionComponent } from 'react';
+import React, { Component } from 'react';
 import ControlledInput, {
   ControlledInputPropTypes,
 } from '../ControlledInput/ControlledInput';
 
-export const RadioButton: FunctionComponent<
-  ControlledInputPropTypes
-> = props => <ControlledInput {...props} type="radio" />;
+export type RadioButtonProps = ControlledInputPropTypes & typeof defaultProps;
 
-RadioButton.defaultProps = {
-  id: undefined,
-  extraClassNames: undefined,
-  onChange: undefined,
-  onBlur: undefined,
-  onFocus: undefined,
-  checked: undefined,
-  value: undefined,
-  name: undefined,
+const defaultProps = {
   required: false,
   disabled: false,
-  type: 'checkbox',
   testId: 'cf-ui-radio-button',
 };
+
+export class RadioButton extends Component<RadioButtonProps> {
+  static defaultProps = defaultProps;
+
+  render() {
+    return <ControlledInput {...this.props} type="radio" />;
+  }
+}
+
+RadioButton.defaultProps = defaultProps;
 
 export default RadioButton;

@@ -4,22 +4,21 @@ import IconButton from '../../IconButton/IconButton';
 
 const styles = require('./ModalHeader.css');
 
-export interface ModalHeaderProps
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
-  > {
-  onClose?: Function;
+export type ModalHeaderProps = {
   title: string;
+  onClose?: Function;
   testId?: string;
   extraClassNames?: string;
   isNotWrapped?: boolean;
-}
+  style?: React.CSSProperties;
+} & typeof defaultProps;
+
+const defaultProps = {
+  testId: 'cf-ui-modal-header',
+};
 
 export class ModalHeader extends Component<ModalHeaderProps> {
-  static defaultProps = {
-    testId: 'cf-ui-modal-header',
-  };
+  static defaultProps = defaultProps;
 
   render() {
     const {

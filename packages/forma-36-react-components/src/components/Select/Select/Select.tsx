@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, ChangeEventHandler, FocusEventHandler } from 'react';
 import cn from 'classnames';
 import Icon from '../../Icon/Icon';
 import styles from './Select.css';
 
-export interface SelectProps {
+export type SelectProps = {
   required?: boolean;
   children: React.ReactNode;
   name?: string;
@@ -11,35 +11,34 @@ export interface SelectProps {
   hasError?: boolean;
   value?: string;
   isDisabled?: boolean;
-  onChange?: (...args: any[]) => any;
-  onBlur?: (...args: any[]) => any;
+  onChange?: ChangeEventHandler;
+  onBlur?: FocusEventHandler;
   testId?: string;
-  onFocus?: (...args: any[]) => any;
+  onFocus?: FocusEventHandler;
   extraClassNames?: string;
   width?: 'auto' | 'small' | 'medium' | 'large' | 'full';
-}
+} & typeof defaultProps;
 
 export interface SelectState {
   value?: string;
 }
 
+const defaultProps = {
+  testId: 'cf-ui-select',
+  required: false,
+  hasError: false,
+  isDisabled: false,
+  width: 'full',
+};
+
 export class Select extends Component<SelectProps, SelectState> {
-  static defaultProps = {
-    testId: 'cf-ui-select',
-    required: false,
-    hasError: false,
-    isDisabled: false,
-    width: 'full',
-    onBlur: () => {},
-    onFocus: () => {},
-    onChange: () => {},
-  };
+  static defaultProps = defaultProps;
 
   state = {
     value: this.props.value,
   };
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps: SelectProps) {
     if (this.props.value !== nextProps.value) {
       this.setState({
         value: nextProps.value,
@@ -93,7 +92,9 @@ export class Select extends Component<SelectProps, SelectState> {
               this.setState({
                 value: e.target.value,
               });
-              onChange(e);
+              if (onChange) {
+                onChange(e);
+              }
             }
           }}
           onBlur={onBlur}

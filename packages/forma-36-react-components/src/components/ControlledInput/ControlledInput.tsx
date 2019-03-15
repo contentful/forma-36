@@ -4,11 +4,9 @@ import cn from 'classnames';
 const styles = require('./ControlledInput.css');
 
 export interface ControlledInputPropTypes {
-  extraClassNames?: string;
   id?: string;
   required?: boolean;
   labelText: string;
-  testId?: string;
   checked?: boolean;
   onChange?: EventHandler<ChangeEvent<HTMLInputElement>>;
   name?: string;
@@ -17,15 +15,21 @@ export interface ControlledInputPropTypes {
   value?: string;
   disabled?: boolean;
   type?: 'checkbox' | 'radio';
+  extraClassNames?: string;
+  testId?: string;
 }
 
-export class ControlledInput extends Component<ControlledInputPropTypes> {
-  static defaultProps = {
-    testId: 'cf-ui-controlled-input',
-    required: false,
-    disabled: false,
-    type: 'checkbox',
-  };
+const defaultProps = {
+  testId: 'cf-ui-controlled-input',
+  required: false,
+  disabled: false,
+  type: 'checkbox',
+};
+
+export class ControlledInput extends Component<
+  ControlledInputPropTypes & typeof defaultProps
+> {
+  static defaultProps = defaultProps;
 
   render() {
     const {

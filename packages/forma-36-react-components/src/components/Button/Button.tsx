@@ -1,4 +1,11 @@
-import React, { Component, SyntheticEvent, CSSProperties } from 'react';
+import React, {
+  Component,
+  CSSProperties,
+  FocusEvent,
+  MouseEvent as ReactMouseEvent,
+  FocusEventHandler,
+  MouseEventHandler,
+} from 'react';
 import cn from 'classnames';
 import { CSSTransition } from 'react-transition-group';
 import Icon, { IconType } from '../Icon/Icon';
@@ -7,14 +14,12 @@ import Spinner from '../Spinner';
 
 const styles = require('./Button.css');
 
-export interface ButtonProps {
-  extraClassNames?: string;
-  children?: React.ReactNode;
+export type ButtonProps = {
   icon?: IconType;
   indicateDropdown?: boolean;
-  onClick?: (e: SyntheticEvent) => void;
+  onClick?: MouseEventHandler;
   isFullWidth?: boolean;
-  onBlur?: (e: SyntheticEvent) => void;
+  onBlur?: FocusEventHandler;
   loading?: boolean;
   disabled?: boolean;
   testId?: string;
@@ -23,18 +28,22 @@ export interface ButtonProps {
   size?: 'small' | 'large';
   href?: string;
   style?: CSSProperties;
-}
+  extraClassNames?: string;
+  children?: React.ReactNode;
+} & typeof defaultProps;
+
+const defaultProps = {
+  loading: false,
+  isFullWidth: false,
+  indicateDropdown: false,
+  disabled: false,
+  testId: 'cf-ui-button',
+  buttonType: 'primary',
+  type: 'button',
+};
 
 export class Button extends Component<ButtonProps> {
-  static defaultProps = {
-    loading: false,
-    isFullWidth: false,
-    indicateDropdown: false,
-    disabled: false,
-    testId: 'cf-ui-button',
-    buttonType: 'primary',
-    type: 'button',
-  };
+  static defaultProps = defaultProps;
 
   render() {
     const {
@@ -69,16 +78,17 @@ export class Button extends Component<ButtonProps> {
     const iconColor =
       buttonType === 'muted' || buttonType === 'naked' ? 'secondary' : 'white';
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const Element: any = href ? 'a' : 'button';
 
     return (
       <Element
-        onBlur={(e: SyntheticEvent) => {
+        onBlur={(e: FocusEvent) => {
           if (onBlur && !disabled) {
             onBlur(e);
           }
         }}
-        onClick={(e: SyntheticEvent) => {
+        onClick={(e: ReactMouseEvent) => {
           if (onClick && !disabled && !loading) {
             onClick(e);
           }
