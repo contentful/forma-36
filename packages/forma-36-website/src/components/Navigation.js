@@ -9,7 +9,7 @@ import Logo from './Logo';
 const styles = {
   navigation: css`
     padding: ${tokens.spacing2Xl} 0;
-    min-width: 250px;
+    min-width: 320px;
     background-color: ${tokens.colorElementLight};
   `,
   list: css`
@@ -54,11 +54,14 @@ const MenuListProps = {
 };
 
 class MenuList extends React.Component {
-  checkOpen = (item, currentPath) =>
-    currentPath === item.link ||
-    (item.menuLinks &&
-      item.menuLinks.filter(submenuItem => submenuItem.link === currentPath)
-        .length !== 0);
+  checkOpen = (item, currentPath) => {
+    if (item.link === currentPath) {
+      return true;
+    } else if (item.menuLinks) {
+      return item.menuLinks.some(item => this.checkOpen(item, currentPath));
+    }
+    return false;
+  };
 
   render() {
     const { menuItems, currentPath } = this.props;
