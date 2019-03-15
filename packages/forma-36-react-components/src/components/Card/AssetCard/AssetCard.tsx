@@ -52,7 +52,25 @@ export class AssetCard extends Component<AssetCardPropTypes, AssetCardState> {
         </button>
       }
     >
-      {dropdownListElements}
+      {dropdownListElements.props.children &&
+        React.Children.map(dropdownListElements.props.children, listItem => {
+          return React.cloneElement(listItem, {
+            children: listItem.props.children.map(item => {
+              if (!item || !item.props.onClick) {
+                return item;
+              }
+              return React.cloneElement(item, {
+                onClick: e => {
+                  if (item.props.onClick) {
+                    item.props.onClick(e);
+                  }
+
+                  this.setState({ isOpen: false });
+                },
+              });
+            }),
+          });
+        })}
     </Dropdown>
   );
 

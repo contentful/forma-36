@@ -76,33 +76,32 @@ exports[`renders the component with actions 1`] = `
           </button>
         }
       >
-        <span>
-          <DropdownList
-            testId="cf-ui-dropdown-list"
+        <DropdownList
+          key=".0"
+          testId="cf-ui-dropdown-list"
+        >
+          <DropdownListItem
+            isActive={false}
+            isDisabled={false}
+            isTitle={true}
+            onEnter={[Function]}
+            onLeave={[Function]}
+            testId="cf-ui-dropdown-list-item"
           >
-            <DropdownListItem
-              isActive={false}
-              isDisabled={false}
-              isTitle={true}
-              onEnter={[Function]}
-              onLeave={[Function]}
-              testId="cf-ui-dropdown-list-item"
-            >
-              Actions
-            </DropdownListItem>
-            <DropdownListItem
-              isActive={false}
-              isDisabled={false}
-              isTitle={false}
-              onClick={[Function]}
-              onEnter={[Function]}
-              onLeave={[Function]}
-              testId="cf-ui-dropdown-list-item"
-            >
-              Edit
-            </DropdownListItem>
-          </DropdownList>
-        </span>
+            Actions
+          </DropdownListItem>
+          <DropdownListItem
+            isActive={false}
+            isDisabled={false}
+            isTitle={false}
+            onClick={[Function]}
+            onEnter={[Function]}
+            onLeave={[Function]}
+            testId="cf-ui-dropdown-list-item"
+          >
+            Edit
+          </DropdownListItem>
+        </DropdownList>
       </Dropdown>
     </div>
     <div
