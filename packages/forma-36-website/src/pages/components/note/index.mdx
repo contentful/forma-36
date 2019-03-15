@@ -1,0 +1,53 @@
+---
+title: 'Note'
+type: 'component'
+github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/Note'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-note--default'
+---
+
+Notes draw the users attention to a circumstance relevant to an action they're performing or a screen they're accessing.
+
+## Best practices
+
+- Use clear and concise messaging to users.
+- Don't confuse Notes with notifications, which appear as feedback after a user has performed an action.
+- Make sure you use the correct Note type to suit the context the Note is displayed in.
+
+## Note variations
+
+The Note component can be configured in a number of different ways. Here is a guide to when to use certain variations.
+
+### Note types (`noteType`)
+
+```jsx
+<React.Fragment>
+  <Note>Primary (default)</Note>
+  <Note noteType="positive">Positive</Note>
+  <Note noteType="warning">Warning</Note>
+  <Note noteType="negative">Negative</Note>
+</React.Fragment>
+```
+
+| Note Type    | Notes                                                                                                                   |
+| :----------- | :---------------------------------------------------------------------------------------------------------------------- |
+| **Primary**  | Used to display messages which are purely informational - they have neither positive, negative, or warning connotations |
+| **Positive** | Used to display positive messages                                                                                       |
+| **Negative** | For negative/highly critical messages - for informing of errors                                                         |
+| **Warning**  | Used for a warning messages                                                                                             |
+
+### Note with title (`title`)
+
+```jsx
+<React.Fragment>
+  <Note title="Primary title">Primary (default)</Note>
+  <Note title="Positive title" noteType="positive">
+    Positive
+  </Note>
+  <Note title="Warning title" noteType="warning">
+    Warning
+  </Note>
+  <Note title="Negative title" noteType="negative">
+    Negative
+  </Note>
+</React.Fragment>
+```

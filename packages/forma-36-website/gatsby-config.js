@@ -3,12 +3,18 @@ module.exports = {
     title: 'Forma 36 - The Contentful Design System',
     menuLinks: [
       {
-        name: 'Overview',
-        link: '/overview',
-      },
-      {
         name: 'Foundation',
         link: '/foundation',
+        menuLinks: [
+          {
+            name: 'Color',
+            link: '/foundation/color',
+          },
+          {
+            name: 'Typography',
+            link: '/foundation/typography',
+          },
+        ],
       },
       {
         name: 'Guidelines',
@@ -16,21 +22,62 @@ module.exports = {
         menuLinks: [
           {
             name: 'Copy',
-            link: '/copy',
+            link: '/guidelines/copy',
+            menuLinks: [
+              {
+                name: 'Testing',
+                link: '/guidelines/copy/testing',
+              },
+            ],
+          },
+          {
+            name: 'Spacing',
+            link: '/guidelines/spacing',
           },
         ],
+      },
+      {
+        name: 'Components',
+        link: '/components',
+        menuLinks: [
+          {
+            name: 'Button',
+            link: '/components/button',
+          },
+          {
+            name: 'Note',
+            link: '/components/note',
+          },
+          {
+            name: 'Table',
+            link: '/components/table',
+          },
+          {
+            name: 'TextLink',
+            link: '/components/text-link',
+          },
+          {
+            name: 'Typography',
+            link: '/components/typography',
+          },
+        ],
+      },
+      {
+        name: 'Resources',
+        link: '/resources',
       },
     ],
   },
   plugins: [
     'gatsby-plugin-react-helmet',
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: 'pages',
+        path: `${__dirname}/src/pages/`,
       },
     },
+    'gatsby-transformer-javascript-frontmatter',
     'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-mdx',
