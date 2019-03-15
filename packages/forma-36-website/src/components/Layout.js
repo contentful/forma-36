@@ -28,37 +28,49 @@ const Layout = props => (
               menuLinks {
                 name
                 link
+                menuLinks {
+                  name
+                  link
+                }
               }
             }
           }
         }
       }
     `}
-    render={data => (
-      <>
-        <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-            {
-              name: 'description',
-              content: 'Forma 36 - The Contentful Design System',
-            },
-            { name: 'keywords', content: 'contentful, design, design-system' },
-          ]}
-        >
-          <html lang="en" />
-        </Helmet>
-        <div className={styles.main}>
-          <Navigation
-            menuItems={
-              data.site.siteMetadata && data.site.siteMetadata.menuLinks
-            }
-            currentPath={props && props.location.pathname}
-          />
-          <Container>{props.children}</Container>
-        </div>
-      </>
-    )}
+    render={data => {
+      return (
+        <React.Fragment>
+          <Helmet
+            title={data.site.siteMetadata.title}
+            meta={[
+              {
+                name: 'description',
+                content: 'Forma 36 - The Contentful Design System',
+              },
+              {
+                name: 'keywords',
+                content: 'contentful, design, design-system',
+              },
+            ]}
+          >
+            <html lang="en" />
+          </Helmet>
+          <div className={styles.main}>
+            <Navigation
+              menuItems={
+                data.site.siteMetadata && data.site.siteMetadata.menuLinks
+              }
+              currentPath={props && props.location.pathname}
+            />
+
+            <Container frontmatter={props.pageContext.frontmatter}>
+              {props.children}
+            </Container>
+          </div>
+        </React.Fragment>
+      );
+    }}
   />
 );
 
