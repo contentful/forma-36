@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.10.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@2.10.0...@contentful/forma-36-react-components@2.10.1) (2019-03-18)
+
+
+### Bug Fixes
+
+* **Notification:** Fixes non-closable notifications ([a5a1b4e](https://github.com/contentful/forma-36/commit/a5a1b4e))
+
+
+
+
+
 # [2.10.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@2.9.14...@contentful/forma-36-react-components@2.10.0) (2019-03-18)
 
 
