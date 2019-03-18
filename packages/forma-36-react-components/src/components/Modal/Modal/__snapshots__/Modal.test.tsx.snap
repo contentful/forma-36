@@ -65,6 +65,65 @@ exports[`can be controlled 1`] = `
 </ReactModalMock>
 `;
 
+exports[`can override header and content properties 1`] = `
+<ReactModalMock
+  ariaHideApp={false}
+  bodyOpenClassName="Modal__body--open"
+  className={
+    Object {
+      "afterOpen": "Modal__wrap--after-open",
+      "base": "Modal__wrap",
+      "beforeClose": "Modal__wrap--before-close",
+    }
+  }
+  closeTimeoutMS={300}
+  htmlOpenClassName="Modal__html--open"
+  isOpen={true}
+  onRequestClose={[Function]}
+  overlayClassName={
+    Object {
+      "afterOpen": "Modal__overlay--after-open",
+      "base": "Modal__overlay Modal__overlay--centered",
+      "beforeClose": "Modal__overlay--before-close",
+    }
+  }
+  portalClassName="Modal__portal"
+  shouldCloseOnEsc={true}
+  shouldCloseOnOverlayClick={true}
+  style={
+    Object {
+      "content": Object {
+        "top": 0,
+      },
+    }
+  }
+>
+  <div
+    className="Modal"
+    data-test-id="cf-ui-modal"
+    style={
+      Object {
+        "width": "520px",
+      }
+    }
+  >
+    <ModalHeader
+      className="additional-header-class"
+      isNotWrapped={true}
+      onClose={[Function]}
+      testId="cf-ui-modal-header"
+      title="Hello!"
+    />
+    <ModalContent
+      className="additional-content-class"
+      testId="cf-ui-modal-content"
+    >
+      Content
+    </ModalContent>
+  </div>
+</ReactModalMock>
+`;
+
 exports[`renders the component 1`] = `
 <ReactModalMock
   ariaHideApp={false}

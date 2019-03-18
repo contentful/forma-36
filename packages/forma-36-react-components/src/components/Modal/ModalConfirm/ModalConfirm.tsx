@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
 import Modal, { ModalSizeType } from '../Modal/Modal';
+import { ModalHeaderProps } from '../ModalHeader/ModalHeader';
+import { ModalContentProps } from '../ModalContent/ModalContent';
+import { ModalControlsProps } from '../ModalControls/ModalControls';
 import Button from '../../Button';
 
 export type ModalConfirmProps = {
@@ -52,10 +55,22 @@ export type ModalConfirmProps = {
    * When true, the confirm button is set to loading.
    */
   isConfirmLoading?: boolean;
+
   /**
-      To disable word-wrapping of the modal title
-    */
-  isNotWrapped?: boolean;
+   * Optional props to override ModalHeader behaviour
+   */
+  modalHeaderProps?: Partial<ModalHeaderProps>;
+
+  /**
+   * Optional props to override ModalContent behaviour
+   */
+  modalContentProps?: Partial<ModalContentProps>;
+
+  /**
+   * Optional props to override ModalControl behaviour
+   */
+  modalControlsProps?: Partial<ModalControlsProps>;
+
   testId?: string;
   confirmTestId?: string;
   cancelTestId?: string;
@@ -98,7 +113,6 @@ export class ModalConfirm extends Component<ModalConfirmProps> {
       isConfirmLoading,
       confirmTestId,
       cancelTestId,
-      isNotWrapped,
     } = this.props;
 
     return (
@@ -112,9 +126,11 @@ export class ModalConfirm extends Component<ModalConfirmProps> {
       >
         {() => (
           <div>
-            <Modal.Header title={title} isNotWrapped={isNotWrapped} />
-            <Modal.Content>{children}</Modal.Content>
-            <Modal.Controls>
+            <Modal.Header title={title} {...this.props.modalHeaderProps} />
+            <Modal.Content {...this.props.modalContentProps}>
+              {children}
+            </Modal.Content>
+            <Modal.Controls {...this.props.modalControlsProps}>
               <Button
                 testId={confirmTestId}
                 disabled={isConfirmDisabled}
