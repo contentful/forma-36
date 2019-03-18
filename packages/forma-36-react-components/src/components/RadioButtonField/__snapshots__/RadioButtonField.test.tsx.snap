@@ -19,7 +19,7 @@ exports[`renders the component 1`] = `
 exports[`renders the component with an additional class name 1`] = `
 <ControlledInputField
   checked={false}
-  extraClassNames="my-extra-class"
+  className="my-extra-class"
   id="radio-button"
   inputType="radio"
   labelIsLight={false}

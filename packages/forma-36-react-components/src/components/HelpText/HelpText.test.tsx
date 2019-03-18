@@ -11,9 +11,7 @@ it('renders the component', () => {
 
 it('renders the component with an additional class name', () => {
   const output = shallow(
-    <HelpText extraClassNames="my-extra-class">
-      Lorem Ipsum dolor sit amet
-    </HelpText>,
+    <HelpText className="my-extra-class">Lorem Ipsum dolor sit amet</HelpText>,
   );
 
   expect(output).toMatchSnapshot();

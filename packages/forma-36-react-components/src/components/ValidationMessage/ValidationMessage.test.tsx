@@ -13,7 +13,7 @@ it('renders the component with all required props', () => {
 
 it('renders the component with an additional class name', () => {
   const output = shallow(
-    <ValidationMessage extraClassNames="my-extra-class">
+    <ValidationMessage className="my-extra-class">
       This field is required
     </ValidationMessage>,
   );

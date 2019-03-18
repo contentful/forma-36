@@ -4,7 +4,7 @@ import cn from 'classnames';
 const styles = require('./{{pascalCase name}}.css');
 
 export type {{pascalCase name}}Props = {
-  extraClassNames?: string;
+  className?: string;
   children?: React.ReactNode;
   testId?: string;
 } & typeof defaultProps;
@@ -17,8 +17,8 @@ export class {{pascalCase name}} extends Component<{{pascalCase name}}Props> {
   static defaultProps = defaultProps;
 
   render() {
-    const { extraClassNames, children, testId, ...otherProps } = this.props;
-    const classNames = cn(styles.{{pascalCase name}}, extraClassNames);
+    const { className, children, testId, ...otherProps } = this.props;
+    const classNames = cn(styles.{{pascalCase name}}, className);
 
     return (
       <div {...otherProps} className={classNames} data-test-id={testId}>

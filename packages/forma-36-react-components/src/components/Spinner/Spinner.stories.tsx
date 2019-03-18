@@ -10,7 +10,7 @@ storiesOf('Components|Spinner', module)
   })
   .add('default', () => (
     <Spinner
-      extraClassNames={text('extraClassNames', '')}
+      className={text('className', '')}
       size={select(
         'Size',
         {
@@ -27,7 +27,7 @@ storiesOf('Components|Spinner', module)
     <div>
       Loading{' '}
       <Spinner
-        extraClassNames={text('extraClassNames', '')}
+        className={text('className', '')}
         size={select(
           'Size',
           {

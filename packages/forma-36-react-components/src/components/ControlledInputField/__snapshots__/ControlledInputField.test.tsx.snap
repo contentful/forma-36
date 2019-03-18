@@ -7,8 +7,8 @@ exports[`renders the component 1`] = `
 >
   <ControlledInput
     checked={false}
+    className="ControlledInputField__input"
     disabled={false}
-    extraClassNames="ControlledInputField__input"
     id="checkbox"
     labelText="label text"
     required={false}
@@ -19,7 +19,7 @@ exports[`renders the component 1`] = `
     className="Checkbox__label-wrapper"
   >
     <FormLabel
-      extraClassNames="ControlledInputField__label"
+      className="ControlledInputField__label"
       htmlFor="checkbox"
       required={false}
       requiredText="required"
@@ -38,8 +38,8 @@ exports[`renders the component as checked 1`] = `
 >
   <ControlledInput
     checked={true}
+    className="ControlledInputField__input"
     disabled={false}
-    extraClassNames="ControlledInputField__input"
     id="checkbox"
     labelText="Label Text"
     required={false}
@@ -50,7 +50,7 @@ exports[`renders the component as checked 1`] = `
     className="Checkbox__label-wrapper"
   >
     <FormLabel
-      extraClassNames="ControlledInputField__label"
+      className="ControlledInputField__label"
       htmlFor="checkbox"
       required={false}
       requiredText="required"
@@ -69,8 +69,8 @@ exports[`renders the component as required 1`] = `
 >
   <ControlledInput
     checked={false}
+    className="ControlledInputField__input"
     disabled={false}
-    extraClassNames="ControlledInputField__input"
     id="checkbox"
     labelText="Label Text"
     required={true}
@@ -81,7 +81,7 @@ exports[`renders the component as required 1`] = `
     className="Checkbox__label-wrapper"
   >
     <FormLabel
-      extraClassNames="ControlledInputField__label"
+      className="ControlledInputField__label"
       htmlFor="checkbox"
       required={true}
       requiredText="required"
@@ -100,8 +100,8 @@ exports[`renders the component in a disabled state 1`] = `
 >
   <ControlledInput
     checked={false}
+    className="ControlledInputField__input"
     disabled={true}
-    extraClassNames="ControlledInputField__input"
     id="checkbox"
     labelText="Label Text"
     required={false}
@@ -112,7 +112,7 @@ exports[`renders the component in a disabled state 1`] = `
     className="Checkbox__label-wrapper"
   >
     <FormLabel
-      extraClassNames="ControlledInputField__label"
+      className="ControlledInputField__label"
       htmlFor="checkbox"
       required={false}
       requiredText="required"
@@ -131,8 +131,8 @@ exports[`renders the component with a help text 1`] = `
 >
   <ControlledInput
     checked={false}
+    className="ControlledInputField__input"
     disabled={false}
-    extraClassNames="ControlledInputField__input"
     id="checkbox"
     labelText="Label Text"
     required={false}
@@ -143,7 +143,7 @@ exports[`renders the component with a help text 1`] = `
     className="Checkbox__label-wrapper"
   >
     <FormLabel
-      extraClassNames="ControlledInputField__label"
+      className="ControlledInputField__label"
       htmlFor="checkbox"
       required={false}
       requiredText="required"
@@ -152,7 +152,7 @@ exports[`renders the component with a help text 1`] = `
       Label Text
     </FormLabel>
     <HelpText
-      extraClassNames="ControlledInputField__help-text"
+      className="ControlledInputField__help-text"
       testId="cf-ui-help-text"
     >
       Help Text
@@ -168,8 +168,8 @@ exports[`renders the component with a light label variation 1`] = `
 >
   <ControlledInput
     checked={false}
+    className="ControlledInputField__input"
     disabled={false}
-    extraClassNames="ControlledInputField__input"
     id="checkbox"
     labelText="Label Text"
     required={false}
@@ -180,7 +180,7 @@ exports[`renders the component with a light label variation 1`] = `
     className="Checkbox__label-wrapper"
   >
     <FormLabel
-      extraClassNames="ControlledInputField__label ControlledInputField__label--light"
+      className="ControlledInputField__label ControlledInputField__label--light"
       htmlFor="checkbox"
       required={false}
       requiredText="required"
@@ -189,7 +189,7 @@ exports[`renders the component with a light label variation 1`] = `
       Label Text
     </FormLabel>
     <ValidationMessage
-      extraClassNames="ControlledInputField__validation-message"
+      className="ControlledInputField__validation-message"
       testId="cf-ui-validation-message"
     >
       Not valid!
@@ -205,8 +205,8 @@ exports[`renders the component with a validation message 1`] = `
 >
   <ControlledInput
     checked={false}
+    className="ControlledInputField__input"
     disabled={false}
-    extraClassNames="ControlledInputField__input"
     id="checkbox"
     labelText="Label Text"
     required={false}
@@ -217,7 +217,7 @@ exports[`renders the component with a validation message 1`] = `
     className="Checkbox__label-wrapper"
   >
     <FormLabel
-      extraClassNames="ControlledInputField__label"
+      className="ControlledInputField__label"
       htmlFor="checkbox"
       required={false}
       requiredText="required"
@@ -226,7 +226,7 @@ exports[`renders the component with a validation message 1`] = `
       Label Text
     </FormLabel>
     <ValidationMessage
-      extraClassNames="ControlledInputField__validation-message"
+      className="ControlledInputField__validation-message"
       testId="cf-ui-validation-message"
     >
       Not valid!
@@ -242,8 +242,8 @@ exports[`renders the component with a value 1`] = `
 >
   <ControlledInput
     checked={false}
+    className="ControlledInputField__input"
     disabled={false}
-    extraClassNames="ControlledInputField__input"
     id="checkbox"
     labelText="Label Text"
     required={false}
@@ -255,7 +255,7 @@ exports[`renders the component with a value 1`] = `
     className="Checkbox__label-wrapper"
   >
     <FormLabel
-      extraClassNames="ControlledInputField__label"
+      className="ControlledInputField__label"
       htmlFor="checkbox"
       required={false}
       requiredText="required"
@@ -274,8 +274,8 @@ exports[`renders the component with an additional class name 1`] = `
 >
   <ControlledInput
     checked={false}
+    className="ControlledInputField__input"
     disabled={false}
-    extraClassNames="ControlledInputField__input"
     id="checkbox"
     labelText="Label Text"
     required={false}
@@ -286,7 +286,7 @@ exports[`renders the component with an additional class name 1`] = `
     className="Checkbox__label-wrapper"
   >
     <FormLabel
-      extraClassNames="ControlledInputField__label"
+      className="ControlledInputField__label"
       htmlFor="checkbox"
       required={false}
       requiredText="required"

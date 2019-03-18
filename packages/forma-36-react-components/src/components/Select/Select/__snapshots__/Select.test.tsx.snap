@@ -21,8 +21,8 @@ exports[`renders the component 1`] = `
     </Option>
   </select>
   <Icon
+    className="Select__icon"
     color="muted"
-    extraClassNames="Select__icon"
     icon="ArrowDown"
     size="small"
     testId="cf-ui-icon"
@@ -51,8 +51,8 @@ exports[`renders the component as required 1`] = `
     </Option>
   </select>
   <Icon
+    className="Select__icon"
     color="muted"
-    extraClassNames="Select__icon"
     icon="ArrowDown"
     size="small"
     testId="cf-ui-icon"
@@ -81,8 +81,8 @@ exports[`renders the component in disabled state 1`] = `
     </Option>
   </select>
   <Icon
+    className="Select__icon"
     color="muted"
-    extraClassNames="Select__icon"
     icon="ArrowDown"
     size="small"
     testId="cf-ui-icon"
@@ -112,8 +112,8 @@ exports[`renders the component with a value 1`] = `
     </Option>
   </select>
   <Icon
+    className="Select__icon"
     color="muted"
-    extraClassNames="Select__icon"
     icon="ArrowDown"
     size="small"
     testId="cf-ui-icon"
@@ -142,8 +142,8 @@ exports[`renders the component with an extra class name 1`] = `
     </Option>
   </select>
   <Icon
+    className="Select__icon"
     color="muted"
-    extraClassNames="Select__icon"
     icon="ArrowDown"
     size="small"
     testId="cf-ui-icon"
@@ -172,8 +172,8 @@ exports[`renders the component with error 1`] = `
     </Option>
   </select>
   <Icon
+    className="Select__icon"
     color="muted"
-    extraClassNames="Select__icon"
     icon="ArrowDown"
     size="small"
     testId="cf-ui-icon"

@@ -217,7 +217,7 @@ exports[`renders the component with the copy button 1`] = `
     required={false}
   />
   <CopyButton
-    extraClassNames="TextInput__copy-button"
+    className="TextInput__copy-button"
     testId="cf-ui-copy-button"
   />
 </div>

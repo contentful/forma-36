@@ -2,7 +2,7 @@
 
 exports[`renders the component 1`] = `
 <div
-  className="FieldGroup extraClassNames"
+  className="FieldGroup className"
 >
   <div
     className="FieldGroup__item"
@@ -37,7 +37,7 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component children in a row 1`] = `
 <div
-  className="FieldGroup extraClassNames FieldGroup--row"
+  className="FieldGroup className FieldGroup--row"
 >
   <div
     className="FieldGroup__item"
@@ -72,7 +72,7 @@ exports[`renders the component children in a row 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <div
-  className="FieldGroup extraClassNames"
+  className="FieldGroup className"
 >
   <div
     className="FieldGroup__item"

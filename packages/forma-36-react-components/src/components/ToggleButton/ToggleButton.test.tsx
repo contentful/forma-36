@@ -11,7 +11,7 @@ it('renders the component', () => {
 
 it('renders the component with an additional class name', () => {
   const output = shallow(
-    <ToggleButton extraClassNames="my-extra-class">Toggle</ToggleButton>,
+    <ToggleButton className="my-extra-class">Toggle</ToggleButton>,
   );
 
   expect(output).toMatchSnapshot();
@@ -19,7 +19,7 @@ it('renders the component with an additional class name', () => {
 
 it('renders the component active', () => {
   const output = shallow(
-    <ToggleButton extraClassNames="my-extra-class" isActive>
+    <ToggleButton className="my-extra-class" isActive>
       Toggle
     </ToggleButton>,
   );
@@ -29,7 +29,7 @@ it('renders the component active', () => {
 
 it('renders the component with icon', () => {
   const output = shallow(
-    <ToggleButton extraClassNames="my-extra-class" icon="Entry">
+    <ToggleButton className="my-extra-class" icon="Entry">
       Toggle
     </ToggleButton>,
   );
@@ -41,7 +41,7 @@ it('should not dispatch onClick if disabled', () => {
   const mockOnToggle = jest.fn();
 
   const toggle = shallow(
-    <ToggleButton extraClassNames="my-extra-class" icon="Entry" isDisabled>
+    <ToggleButton className="my-extra-class" icon="Entry" isDisabled>
       Toggle
     </ToggleButton>,
   );

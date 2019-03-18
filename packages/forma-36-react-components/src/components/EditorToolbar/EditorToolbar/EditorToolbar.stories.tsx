@@ -15,7 +15,7 @@ storiesOf('Components|EditorToolbar', module)
   })
   .add('default', () => (
     <EditorToolbar
-      extraClassNames={text('extraClassNames', '')}
+      className={text('className', '')}
       style={{ justifyContent: 'space-between' }}
     >
       <div>

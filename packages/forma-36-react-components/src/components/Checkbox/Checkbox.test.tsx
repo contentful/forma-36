@@ -11,7 +11,7 @@ it('renders the component', () => {
 
 it('renders the component with an additional class name', () => {
   const output = shallow(
-    <Checkbox labelText="checkbox" extraClassNames="my-extra-class" />,
+    <Checkbox labelText="checkbox" className="my-extra-class" />,
   );
 
   expect(output).toMatchSnapshot();

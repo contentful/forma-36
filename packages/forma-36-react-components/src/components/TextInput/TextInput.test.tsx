@@ -11,11 +11,7 @@ it('renders the component with all required props', () => {
 
 it('renders the component with an additional class name', () => {
   const output = shallow(
-    <TextInput
-      id="someInput"
-      name="userEmail"
-      extraClassNames="my-extra-class"
-    />,
+    <TextInput id="someInput" name="userEmail" className="my-extra-class" />,
   );
 
   expect(output).toMatchSnapshot();

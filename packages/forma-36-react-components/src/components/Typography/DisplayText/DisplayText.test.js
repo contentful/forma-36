@@ -11,7 +11,7 @@ it('renders the component', () => {
 
 it('renders the component with an additional class name', () => {
   const output = mount(
-    <DisplayText extraClassNames="my-extra-class">DisplayText</DisplayText>,
+    <DisplayText className="my-extra-class">DisplayText</DisplayText>,
   );
 
   expect(output).toMatchSnapshot();

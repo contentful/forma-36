@@ -17,7 +17,7 @@ it('renders the component', () => {
 it('renders the component with an additional class name', () => {
   const output = shallow(
     <AssetCard
-      extraClassNames="my-extra-class"
+      className="my-extra-class"
       src="http://placekitten.com/200/300"
       title="picture of a cat"
     />,

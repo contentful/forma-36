@@ -21,7 +21,7 @@ export interface IconButtonProps {
     | 'muted'
     | 'white';
   withDropdown?: boolean;
-  extraClassNames?: string;
+  className?: string;
 }
 
 const defaultProps = {
@@ -46,11 +46,11 @@ export class IconButton extends Component<
       onClick,
       buttonType,
       withDropdown,
-      extraClassNames,
+      className,
       ...otherProps
     } = this.props;
 
-    const classNames = cn(styles.IconButton, extraClassNames, {
+    const classNames = cn(styles.IconButton, className, {
       [styles['IconButton--disabled']]: disabled,
       [styles[`IconButton--${buttonType}`]]: buttonType,
     });
@@ -63,15 +63,15 @@ export class IconButton extends Component<
     };
 
     const content = (
-      <TabFocusTrap extraClassNames={styles.IconButton__inner}>
-        <Icon icon={iconProps.icon} extraClassNames={styles.IconButton__icon} />
+      <TabFocusTrap className={styles.IconButton__inner}>
+        <Icon icon={iconProps.icon} className={styles.IconButton__icon} />
 
         <span className={styles.IconButton__label}>{label}</span>
         {withDropdown && (
           <Icon
             icon="ChevronDown"
             color="secondary"
-            extraClassNames={styles.IconButton__dropdown}
+            className={styles.IconButton__dropdown}
           />
         )}
       </TabFocusTrap>

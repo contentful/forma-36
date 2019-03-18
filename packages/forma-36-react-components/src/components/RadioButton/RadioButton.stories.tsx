@@ -10,7 +10,7 @@ storiesOf('Components|RadioButton', module)
   })
   .add('default', () => (
     <RadioButton
-      extraClassNames={text('extraClassNames', '')}
+      className={text('className', '')}
       id="Checkbox"
       checked={boolean('Checked', false)}
       labelText={(text('Aria label text'), 'some label text')}

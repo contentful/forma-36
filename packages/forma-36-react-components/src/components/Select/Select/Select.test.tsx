@@ -15,11 +15,7 @@ it('renders the component', () => {
 
 it('renders the component with an extra class name', () => {
   const output = shallow(
-    <Select
-      name="optionSelect"
-      id="optionSelect"
-      extraClassNames="extraClassName"
-    >
+    <Select name="optionSelect" id="optionSelect" className="extraClassName">
       <Option value="optionOne">Option One</Option>
     </Select>,
   );

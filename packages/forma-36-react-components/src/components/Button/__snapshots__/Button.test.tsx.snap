@@ -11,7 +11,7 @@ exports[`renders the button as link 1`] = `
   type="button"
 >
   <TabFocusTrap
-    extraClassNames="Button__inner-wrapper"
+    className="Button__inner-wrapper"
   >
     <span
       className="Button__label"
@@ -33,8 +33,8 @@ exports[`renders the button as link 1`] = `
       unmountOnExit={true}
     >
       <Spinner
+        className="Button__spinner"
         color="white"
-        extraClassNames="Button__spinner"
         size="small"
         testId="cf-ui-spinner"
       />
@@ -53,7 +53,7 @@ exports[`renders the component 1`] = `
   type="button"
 >
   <TabFocusTrap
-    extraClassNames="Button__inner-wrapper"
+    className="Button__inner-wrapper"
   >
     <span
       className="Button__label"
@@ -75,8 +75,8 @@ exports[`renders the component 1`] = `
       unmountOnExit={true}
     >
       <Spinner
+        className="Button__spinner"
         color="white"
-        extraClassNames="Button__spinner"
         size="small"
         testId="cf-ui-spinner"
       />
@@ -95,7 +95,7 @@ exports[`renders the component as naked 1`] = `
   type="button"
 >
   <TabFocusTrap
-    extraClassNames="Button__inner-wrapper"
+    className="Button__inner-wrapper"
   >
     <span
       className="Button__label"
@@ -117,8 +117,8 @@ exports[`renders the component as naked 1`] = `
       unmountOnExit={true}
     >
       <Spinner
+        className="Button__spinner"
         color="default"
-        extraClassNames="Button__spinner"
         size="small"
         testId="cf-ui-spinner"
       />
@@ -137,7 +137,7 @@ exports[`renders the component as primary 1`] = `
   type="button"
 >
   <TabFocusTrap
-    extraClassNames="Button__inner-wrapper"
+    className="Button__inner-wrapper"
   >
     <span
       className="Button__label"
@@ -159,8 +159,8 @@ exports[`renders the component as primary 1`] = `
       unmountOnExit={true}
     >
       <Spinner
+        className="Button__spinner"
         color="white"
-        extraClassNames="Button__spinner"
         size="small"
         testId="cf-ui-spinner"
       />
@@ -180,7 +180,7 @@ exports[`renders the component disabled 1`] = `
   type="button"
 >
   <TabFocusTrap
-    extraClassNames="Button__inner-wrapper"
+    className="Button__inner-wrapper"
   >
     <span
       className="Button__label"
@@ -202,8 +202,8 @@ exports[`renders the component disabled 1`] = `
       unmountOnExit={true}
     >
       <Spinner
+        className="Button__spinner"
         color="white"
-        extraClassNames="Button__spinner"
         size="small"
         testId="cf-ui-spinner"
       />
@@ -222,7 +222,7 @@ exports[`renders the component full width 1`] = `
   type="button"
 >
   <TabFocusTrap
-    extraClassNames="Button__inner-wrapper"
+    className="Button__inner-wrapper"
   >
     <span
       className="Button__label"
@@ -244,8 +244,8 @@ exports[`renders the component full width 1`] = `
       unmountOnExit={true}
     >
       <Spinner
+        className="Button__spinner"
         color="white"
-        extraClassNames="Button__spinner"
         size="small"
         testId="cf-ui-spinner"
       />
@@ -264,7 +264,7 @@ exports[`renders the component in loading state 1`] = `
   type="button"
 >
   <TabFocusTrap
-    extraClassNames="Button__inner-wrapper"
+    className="Button__inner-wrapper"
   >
     <span
       className="Button__label"
@@ -286,8 +286,8 @@ exports[`renders the component in loading state 1`] = `
       unmountOnExit={true}
     >
       <Spinner
+        className="Button__spinner"
         color="white"
-        extraClassNames="Button__spinner"
         size="small"
         testId="cf-ui-spinner"
       />
@@ -306,7 +306,7 @@ exports[`renders the component with an additional class name 1`] = `
   type="button"
 >
   <TabFocusTrap
-    extraClassNames="Button__inner-wrapper"
+    className="Button__inner-wrapper"
   >
     <span
       className="Button__label"
@@ -328,8 +328,8 @@ exports[`renders the component with an additional class name 1`] = `
       unmountOnExit={true}
     >
       <Spinner
+        className="Button__spinner"
         color="white"
-        extraClassNames="Button__spinner"
         size="small"
         testId="cf-ui-spinner"
       />
@@ -348,7 +348,7 @@ exports[`renders the component with dropdown indicator 1`] = `
   type="button"
 >
   <TabFocusTrap
-    extraClassNames="Button__inner-wrapper"
+    className="Button__inner-wrapper"
   >
     <span
       className="Button__label"
@@ -356,8 +356,8 @@ exports[`renders the component with dropdown indicator 1`] = `
       Embed Entry
     </span>
     <Icon
+      className="Button__dropdown-icon"
       color="white"
-      extraClassNames="Button__dropdown-icon"
       icon="ArrowDown"
       size="small"
       testId="cf-ui-icon"
@@ -377,8 +377,8 @@ exports[`renders the component with dropdown indicator 1`] = `
       unmountOnExit={true}
     >
       <Spinner
+        className="Button__spinner"
         color="white"
-        extraClassNames="Button__spinner"
         size="small"
         testId="cf-ui-spinner"
       />
@@ -397,11 +397,11 @@ exports[`renders the component with icon 1`] = `
   type="button"
 >
   <TabFocusTrap
-    extraClassNames="Button__inner-wrapper"
+    className="Button__inner-wrapper"
   >
     <Icon
+      className="Button__icon"
       color="white"
-      extraClassNames="Button__icon"
       icon="ChevronUp"
       size="small"
       testId="cf-ui-icon"
@@ -426,8 +426,8 @@ exports[`renders the component with icon 1`] = `
       unmountOnExit={true}
     >
       <Spinner
+        className="Button__spinner"
         color="white"
-        extraClassNames="Button__spinner"
         size="small"
         testId="cf-ui-spinner"
       />

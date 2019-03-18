@@ -10,7 +10,7 @@ it('renders the component', () => {
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(<Tag extraClassNames="my-extra-class">Tag</Tag>);
+  const output = shallow(<Tag className="my-extra-class">Tag</Tag>);
 
   expect(output).toMatchSnapshot();
 });

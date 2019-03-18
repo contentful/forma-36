@@ -181,8 +181,8 @@ exports[`renders with an icon 1`] = `
       className="TextLink__icon-wrapper"
     >
       <Icon
+        className="TextLink__icon"
         color="primary"
-        extraClassNames="TextLink__icon"
         icon="ArrowDown"
         size="small"
         testId="cf-ui-icon"

@@ -22,7 +22,7 @@ storiesOf('Components|Card/InlineReferenceCard', module)
       et pretium. Praesent libero lorem, gravida eu pulvinar id, eleifend a
       sapien. &nbsp;
       <InlineReferenceCard
-        extraClassNames={text('extraClassNames', '')}
+        className={text('className', '')}
         isLoading={boolean('isLoading', false)}
         isSelected={boolean('isSelected', false)}
         status={select(
@@ -52,7 +52,7 @@ storiesOf('Components|Card/InlineReferenceCard', module)
       ex. In pellentesque a orci et pretium. Praesent libero lorem, gravida eu
       pulvinar id, eleifend a sapien. &nbsp;
       <InlineReferenceCard
-        extraClassNames={text('extraClassNames', '')}
+        className={text('className', '')}
         isLoading={boolean('isLoading', false)}
         isSelected={boolean('isSelected', false)}
         status={select(

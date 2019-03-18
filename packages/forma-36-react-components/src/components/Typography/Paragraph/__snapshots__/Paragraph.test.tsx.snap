@@ -30,8 +30,8 @@ exports[`renders the component h3 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <Paragraph
+  className="my-extra-class"
   element="p"
-  extraClassNames="my-extra-class"
   testId="cf-ui-paragraph"
 >
   <p

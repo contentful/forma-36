@@ -27,7 +27,7 @@ it('renders the component with title', () => {
 
 it('renders the component with an additional class name', () => {
   const output = shallow(
-    <Note extraClassNames="my-extra-class">
+    <Note className="my-extra-class">
       A piece of information that is relevant to the context the user is
       currently in.
     </Note>,

@@ -249,7 +249,7 @@ export interface IconProps {
   color?: IconColorType;
   style?: CSSProperties;
   icon: IconType;
-  extraClassNames?: string;
+  className?: string;
   testId?: string;
 }
 
@@ -263,16 +263,9 @@ export class Icon extends Component<IconProps & typeof defaultProps> {
   static defaultProps = defaultProps;
 
   render() {
-    const {
-      extraClassNames,
-      icon,
-      size,
-      color,
-      testId,
-      ...otherProps
-    } = this.props;
+    const { className, icon, size, color, testId, ...otherProps } = this.props;
 
-    const classNames = cn(styles.Icon, extraClassNames, {
+    const classNames = cn(styles.Icon, className, {
       [styles[`Icon--${size}`]]: size,
       [styles[`Icon--${color}`]]: color,
       [styles['Icon--trimmed']]: icon.toLowerCase().includes('trimmed'),

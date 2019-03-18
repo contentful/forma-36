@@ -21,7 +21,7 @@ export type ReferenceCardPropTypes = {
   thumbnailElement?: React.ReactNode;
   loading?: boolean;
   onClick?: MouseEventHandler;
-  extraClassNames?: string;
+  className?: string;
   actionElements?: React.ReactNode;
 } & typeof defaultProps;
 
@@ -97,7 +97,7 @@ export class ReferenceCard extends Component<ReferenceCardPropTypes> {
 
   render() {
     const {
-      extraClassNames,
+      className,
       title,
       onClick,
       testId,
@@ -110,11 +110,11 @@ export class ReferenceCard extends Component<ReferenceCardPropTypes> {
       ...otherProps
     } = this.props;
 
-    const classNames = cn(styles.ReferenceCard, extraClassNames);
+    const classNames = cn(styles.ReferenceCard, className);
 
     return (
       <Card
-        extraClassNames={classNames}
+        className={classNames}
         onClick={!loading ? onClick : undefined}
         testId={testId}
         {...otherProps}

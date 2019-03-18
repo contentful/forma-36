@@ -11,7 +11,7 @@ it('renders the component', () => {
 
 it('renders the component with an additional class name', () => {
   const output = mount(
-    <Subheading extraClassNames="my-extra-class">Subheading</Subheading>,
+    <Subheading className="my-extra-class">Subheading</Subheading>,
   );
 
   expect(output).toMatchSnapshot();

@@ -14,7 +14,7 @@ export interface InlineReferenceCardPropTypes {
   dropdownListItemNodes?: React.ReactNode;
   isLoading?: boolean;
   status?: 'archived' | 'changed' | 'draft' | 'published';
-  extraClassNames?: string;
+  className?: string;
   testId?: string;
   children: React.ReactNode;
 }
@@ -33,7 +33,7 @@ export class InlineReferenceCard extends Component<
 
   render() {
     const {
-      extraClassNames,
+      className,
       dropdownListItemNodes,
       isSelected,
       children,
@@ -43,7 +43,7 @@ export class InlineReferenceCard extends Component<
       ...otherProps
     } = this.props;
 
-    const classNames = cn(styles.InlineReferenceCard, extraClassNames);
+    const classNames = cn(styles.InlineReferenceCard, className);
 
     const statusIndicatorClassNames = cn(
       styles['InlineReferenceCard__status-indicator'],
@@ -56,7 +56,7 @@ export class InlineReferenceCard extends Component<
     return (
       <Card
         selected={isSelected}
-        extraClassNames={classNames}
+        className={classNames}
         {...otherProps}
         data-test-id={testId}
       >
@@ -88,11 +88,11 @@ export class InlineReferenceCard extends Component<
               });
             }}
             position="bottom-right"
-            extraClassNames={styles.InlineReferenceCard__dropdown}
+            className={styles.InlineReferenceCard__dropdown}
             isOpen={this.state.isDropdownOpen}
             toggleElement={
               <IconButton
-                extraClassNames={styles['InlineReferenceCard__icon-button']}
+                className={styles['InlineReferenceCard__icon-button']}
                 iconProps={{ icon: 'MoreHorizontal' }}
                 buttonType="secondary"
                 label="Inline reference actions"
@@ -105,7 +105,7 @@ export class InlineReferenceCard extends Component<
             }
           >
             <DropdownList
-              extraClassNames={styles['InlineReferenceCard__dropdown-list']}
+              className={styles['InlineReferenceCard__dropdown-list']}
             >
               {dropdownListItemNodes}
             </DropdownList>

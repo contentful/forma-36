@@ -34,8 +34,8 @@ exports[`renders the component with a close button 1`] = `
     >
       <TabFocusTrap>
         <Icon
+          className="Pill__icon"
           color="muted"
-          extraClassNames="Pill__icon"
           icon="Close"
           size="small"
           testId="cf-ui-icon"
@@ -60,8 +60,8 @@ exports[`renders the component with a dragging handle 1`] = `
         className="Pill__drag-icon"
       >
         <Icon
+          className="Pill__icon"
           color="muted"
-          extraClassNames="Pill__icon"
           icon="Drag"
           size="small"
           testId="cf-ui-icon"

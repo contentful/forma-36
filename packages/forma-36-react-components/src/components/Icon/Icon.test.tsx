@@ -12,7 +12,7 @@ it('renders the component', () => {
 
 it('renders the component with an additional class name', () => {
   const output = shallow(
-    <Icon icon={'ArrowDown'} extraClassNames="my-extra-class" />,
+    <Icon icon={'ArrowDown'} className="my-extra-class" />,
   );
 
   expect(output).toMatchSnapshot();

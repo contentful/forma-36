@@ -32,7 +32,7 @@ it('renders the component with a custom size', () => {
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(<Spinner extraClassNames="my-extra-class" />);
+  const output = shallow(<Spinner className="my-extra-class" />);
 
   expect(output).toMatchSnapshot();
 });

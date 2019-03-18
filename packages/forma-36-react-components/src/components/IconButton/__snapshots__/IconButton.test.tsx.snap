@@ -8,11 +8,11 @@ exports[`allows passing additional props not consumed by the component 1`] = `
   type="button"
 >
   <TabFocusTrap
-    extraClassNames="IconButton__inner"
+    className="IconButton__inner"
   >
     <Icon
+      className="IconButton__icon"
       color="primary"
-      extraClassNames="IconButton__icon"
       icon="ArrowDown"
       size="small"
       testId="cf-ui-icon"
@@ -47,11 +47,11 @@ exports[`calls an onClick function 1`] = `
   type="button"
 >
   <TabFocusTrap
-    extraClassNames="IconButton__inner"
+    className="IconButton__inner"
   >
     <Icon
+      className="IconButton__icon"
       color="primary"
-      extraClassNames="IconButton__icon"
       icon="ArrowDown"
       size="small"
       testId="cf-ui-icon"
@@ -73,11 +73,11 @@ exports[`prevents an onClick function from being called when disabled 1`] = `
   type="button"
 >
   <TabFocusTrap
-    extraClassNames="IconButton__inner"
+    className="IconButton__inner"
   >
     <Icon
+      className="IconButton__icon"
       color="primary"
-      extraClassNames="IconButton__icon"
       icon="ArrowDown"
       size="small"
       testId="cf-ui-icon"
@@ -99,11 +99,11 @@ exports[`renders as a "muted" link type 1`] = `
   type="button"
 >
   <TabFocusTrap
-    extraClassNames="IconButton__inner"
+    className="IconButton__inner"
   >
     <Icon
+      className="IconButton__icon"
       color="primary"
-      extraClassNames="IconButton__icon"
       icon="ArrowDown"
       size="small"
       testId="cf-ui-icon"
@@ -125,11 +125,11 @@ exports[`renders as a "negative" link type 1`] = `
   type="button"
 >
   <TabFocusTrap
-    extraClassNames="IconButton__inner"
+    className="IconButton__inner"
   >
     <Icon
+      className="IconButton__icon"
       color="primary"
-      extraClassNames="IconButton__icon"
       icon="ArrowDown"
       size="small"
       testId="cf-ui-icon"
@@ -151,11 +151,11 @@ exports[`renders as a "positive" link type 1`] = `
   type="button"
 >
   <TabFocusTrap
-    extraClassNames="IconButton__inner"
+    className="IconButton__inner"
   >
     <Icon
+      className="IconButton__icon"
       color="primary"
-      extraClassNames="IconButton__icon"
       icon="ArrowDown"
       size="small"
       testId="cf-ui-icon"
@@ -177,11 +177,11 @@ exports[`renders as a "primary" link type 1`] = `
   type="button"
 >
   <TabFocusTrap
-    extraClassNames="IconButton__inner"
+    className="IconButton__inner"
   >
     <Icon
+      className="IconButton__icon"
       color="primary"
-      extraClassNames="IconButton__icon"
       icon="ArrowDown"
       size="small"
       testId="cf-ui-icon"
@@ -203,11 +203,11 @@ exports[`renders as a "secondary" link type 1`] = `
   type="button"
 >
   <TabFocusTrap
-    extraClassNames="IconButton__inner"
+    className="IconButton__inner"
   >
     <Icon
+      className="IconButton__icon"
       color="primary"
-      extraClassNames="IconButton__icon"
       icon="ArrowDown"
       size="small"
       testId="cf-ui-icon"
@@ -239,11 +239,11 @@ exports[`renders the component 1`] = `
   type="button"
 >
   <TabFocusTrap
-    extraClassNames="IconButton__inner"
+    className="IconButton__inner"
   >
     <Icon
+      className="IconButton__icon"
       color="primary"
-      extraClassNames="IconButton__icon"
       icon="ArrowDown"
       size="small"
       testId="cf-ui-icon"
@@ -265,11 +265,11 @@ exports[`renders the component with an additional class name 1`] = `
   type="button"
 >
   <TabFocusTrap
-    extraClassNames="IconButton__inner"
+    className="IconButton__inner"
   >
     <Icon
+      className="IconButton__icon"
       color="primary"
-      extraClassNames="IconButton__icon"
       icon="ArrowDown"
       size="small"
       testId="cf-ui-icon"
@@ -291,11 +291,11 @@ exports[`renders with a dropdown indicator 1`] = `
   type="button"
 >
   <TabFocusTrap
-    extraClassNames="IconButton__inner"
+    className="IconButton__inner"
   >
     <Icon
+      className="IconButton__icon"
       color="primary"
-      extraClassNames="IconButton__icon"
       icon="ArrowDown"
       size="small"
       testId="cf-ui-icon"
@@ -306,8 +306,8 @@ exports[`renders with a dropdown indicator 1`] = `
       My Icon
     </span>
     <Icon
+      className="IconButton__dropdown"
       color="secondary"
-      extraClassNames="IconButton__dropdown"
       icon="ChevronDown"
       size="small"
       testId="cf-ui-icon"

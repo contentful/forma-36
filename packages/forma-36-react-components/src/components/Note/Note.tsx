@@ -24,7 +24,7 @@ const Icons = {
 export type NoteProps = {
   noteType: 'primary' | 'positive' | 'negative' | 'warning';
   testId: string;
-  extraClassNames?: string;
+  className?: string;
   title?: string;
   style?: CSSProperties;
   children: React.ReactNode;
@@ -51,7 +51,7 @@ export class Note extends Component<NoteProps> {
     return (
       <div
         style={this.props.style}
-        className={classNames(styles.Note, this.props.extraClassNames, {
+        className={classNames(styles.Note, this.props.className, {
           [styles['Note--primary']]: this.props.noteType === NoteType.PRIMARY,
           [styles['Note--positive']]: this.props.noteType === NoteType.POSITIVE,
           [styles['Note--negative']]: this.props.noteType === NoteType.NEGATIVE,

@@ -11,7 +11,7 @@ storiesOf('Components|Checkbox', module)
   })
   .add('default', () => (
     <Checkbox
-      extraClassNames={text('extraClassNames', '')}
+      className={text('className', '')}
       id="Checkbox"
       checked={boolean('checked', false)}
       labelText={(text('labelText'), 'some label text')}

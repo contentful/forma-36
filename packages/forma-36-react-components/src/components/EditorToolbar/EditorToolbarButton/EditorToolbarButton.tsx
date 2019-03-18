@@ -14,7 +14,7 @@ export type EditorToolbarButtonProps = {
   disabled?: boolean;
   onClick?: MouseEventHandler;
   withDropdown?: boolean;
-  extraClassNames?: string;
+  className?: string;
   testId?: string;
 } & typeof defaultProps;
 
@@ -30,7 +30,7 @@ export class EditorToolbarButton extends Component<EditorToolbarButtonProps> {
 
   render() {
     const {
-      extraClassNames,
+      className,
       label,
       testId,
       icon,
@@ -43,7 +43,7 @@ export class EditorToolbarButton extends Component<EditorToolbarButtonProps> {
       ...otherProps
     } = this.props;
 
-    const classNames = cn(styles['EditorToolbarButton'], extraClassNames, {
+    const classNames = cn(styles['EditorToolbarButton'], className, {
       [styles['EditorToolbarButton--is-active']]: isActive,
     });
 
@@ -55,7 +55,7 @@ export class EditorToolbarButton extends Component<EditorToolbarButtonProps> {
             testId={testId}
             buttonType="secondary"
             label={label}
-            extraClassNames={classNames}
+            className={classNames}
             onClick={!disabled ? onClick : () => {}}
             disabled={disabled}
             withDropdown={withDropdown}

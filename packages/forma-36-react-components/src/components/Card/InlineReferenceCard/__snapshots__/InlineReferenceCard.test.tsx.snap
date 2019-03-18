@@ -2,7 +2,7 @@
 
 exports[`renders the component 1`] = `
 <Card
-  extraClassNames="InlineReferenceCard"
+  className="InlineReferenceCard"
   padding="default"
   selected={false}
   testId="cf-ui-card"
@@ -39,7 +39,7 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component with a dropdown 1`] = `
 <Card
-  extraClassNames="InlineReferenceCard my-extra-class"
+  className="InlineReferenceCard my-extra-class"
   padding="default"
   selected={false}
   testId="cf-ui-card"
@@ -72,7 +72,7 @@ exports[`renders the component with a dropdown 1`] = `
     Title of inline reference
   </span>
   <Dropdown
-    extraClassNames="InlineReferenceCard__dropdown"
+    className="InlineReferenceCard__dropdown"
     isOpen={false}
     onClose={[Function]}
     position="bottom-right"
@@ -80,8 +80,8 @@ exports[`renders the component with a dropdown 1`] = `
     toggleElement={
       <IconButton
         buttonType="secondary"
+        className="InlineReferenceCard__icon-button"
         disabled={false}
-        extraClassNames="InlineReferenceCard__icon-button"
         iconProps={
           Object {
             "icon": "MoreHorizontal",
@@ -95,7 +95,7 @@ exports[`renders the component with a dropdown 1`] = `
     }
   >
     <DropdownList
-      extraClassNames="InlineReferenceCard__dropdown-list"
+      className="InlineReferenceCard__dropdown-list"
       testId="cf-ui-dropdown-list"
     >
       <DropdownListItem
@@ -125,7 +125,7 @@ exports[`renders the component with a dropdown 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <Card
-  extraClassNames="InlineReferenceCard my-extra-class"
+  className="InlineReferenceCard my-extra-class"
   padding="default"
   selected={false}
   testId="cf-ui-card"
@@ -162,7 +162,7 @@ exports[`renders the component with an additional class name 1`] = `
 
 exports[`renders the component with published status 1`] = `
 <Card
-  extraClassNames="InlineReferenceCard my-extra-class"
+  className="InlineReferenceCard my-extra-class"
   padding="default"
   selected={false}
   testId="cf-ui-card"

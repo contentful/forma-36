@@ -8,7 +8,7 @@ const styles = require('./ToggleButton.css');
 
 export type ToggleButtonProps = {
   testId?: string;
-  extraClassNames?: string;
+  className?: string;
   children: React.ReactNode;
   icon?: IconType;
   isActive?: boolean;
@@ -35,7 +35,7 @@ export class ToggleButton extends Component<ToggleButtonProps> {
 
   render() {
     const {
-      extraClassNames,
+      className,
       icon,
       children,
       isActive,
@@ -43,7 +43,7 @@ export class ToggleButton extends Component<ToggleButtonProps> {
       ...otherProps
     } = this.props;
 
-    const classNames = cn(styles.Toggle, extraClassNames, {
+    const classNames = cn(styles.Toggle, className, {
       [styles['Toggle--active']]: isActive,
       [styles['Toggle--disabled']]: isDisabled,
       [styles['Toggle--square']]: !children,
@@ -51,7 +51,7 @@ export class ToggleButton extends Component<ToggleButtonProps> {
 
     return (
       <Card
-        extraClassNames={classNames}
+        className={classNames}
         padding="none"
         selected={isActive}
         {...otherProps}
@@ -64,14 +64,12 @@ export class ToggleButton extends Component<ToggleButtonProps> {
           onClick={this.handleToggle}
           aria-pressed={isActive}
         >
-          <TabFocusTrap
-            extraClassNames={styles['Toggle__button__inner-wrapper']}
-          >
+          <TabFocusTrap className={styles['Toggle__button__inner-wrapper']}>
             {icon && (
               <Icon
                 icon={icon}
                 color="secondary"
-                extraClassNames={styles.Toggle__button__icon}
+                className={styles.Toggle__button__icon}
               />
             )}
             {children && (
