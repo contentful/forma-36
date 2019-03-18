@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.10.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@2.9.14...@contentful/forma-36-react-components@2.10.0) (2019-03-18)
+
+
+### Bug Fixes
+
+* **Icon:** Add ‘warning’ type to props ([befef0b](https://github.com/contentful/forma-36/commit/befef0b))
+
+
+### Features
+
+* Convert all components to strict Typescript ([6a20853](https://github.com/contentful/forma-36/commit/6a20853))
+
+
+
+
+
 ## [2.9.14](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@2.9.13...@contentful/forma-36-react-components@2.9.14) (2019-03-15)
 
 
