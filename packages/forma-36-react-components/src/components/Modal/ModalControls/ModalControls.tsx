@@ -7,6 +7,7 @@ export type ModalControlsProps = {
   testId?: string;
   className?: string;
   children: React.ReactNode;
+  style?: React.CSSProperties;
 } & typeof defaultProps;
 
 const defaultProps = {

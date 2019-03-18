@@ -16,7 +16,7 @@ it('renders the component', () => {
 
 it('renders the component with title', () => {
   const output = shallow(
-    <Note noteType={Note.Type.POSITIVE} title="Positive title">
+    <Note noteType="positive" title="Positive title">
       A piece of information that is relevant to the context the user is
       currently in.
     </Note>,
