@@ -121,3 +121,68 @@ exports[`renders the component 1`] = `
   </div>
 </div>
 `;
+
+exports[`renders the component with override header, content and controls 1`] = `
+<div
+  className="Modal"
+  data-test-id="cf-ui-modal-confirm"
+  style={
+    Object {
+      "width": "520px",
+    }
+  }
+>
+  <div>
+    <ModalHeader
+      className="additional header class"
+      isNotWrapped={true}
+      testId="cf-ui-modal-header"
+      title="Are you sure?"
+    >
+      <div
+        className="ModalHeader additional header class"
+        data-test-id="cf-ui-modal-header"
+      >
+        <h1
+          className="ModalHeader__title ModalHeader__title--is-not-wrapped"
+        >
+          Are you sure?
+        </h1>
+      </div>
+    </ModalHeader>
+    <ModalContent
+      className="additional content class"
+      testId="cf-ui-modal-content"
+    >
+      <div
+        className="ModalContent additional content class"
+        data-test-id="cf-ui-modal-content"
+      >
+        ModalConfirm
+      </div>
+    </ModalContent>
+    <ModalControls
+      className="additional controls class"
+      testId="cf-ui-modal-controls"
+    >
+      <div
+        className="ModalControls additional controls class"
+        data-test-id="cf-ui-modal-controls"
+      >
+        <Button
+          buttonType="positive"
+          disabled={false}
+          loading={false}
+          onClick={[Function]}
+          testId="cf-ui-modal-confirm-confirm-button"
+        />
+        <Button
+          buttonType="muted"
+          onClick={[Function]}
+          testId="cf-ui-modal-confirm-cancel-button"
+        />
+      </div>
+    </ModalControls>
+  </div>
+</div>
+`;
