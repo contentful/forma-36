@@ -16,6 +16,7 @@ import styles from './TextField.css';
 export type TextFieldProps = {
   name: string;
   id: string;
+  labelText: string;
   value?: string;
   validationMessage?: string;
   testId?: string;
@@ -23,7 +24,6 @@ export type TextFieldProps = {
   formLabelProps?: Partial<FormLabelProps>;
   textLinkProps?: Partial<TextLinkProps>;
   textInputProps?: Partial<TextInputProps> | Partial<TextareaProps>;
-  labelText?: string;
   helpText?: string;
   required?: boolean;
   textarea?: boolean;
