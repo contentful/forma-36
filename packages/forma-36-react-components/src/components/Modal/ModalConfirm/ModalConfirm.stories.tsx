@@ -4,7 +4,6 @@ import { action } from '@storybook/addon-actions';
 import { text, boolean, select } from '@storybook/addon-knobs';
 
 import ModalConfirm from './ModalConfirm';
-import Modal from '../Modal';
 import Button from '../../Button';
 import TextInput from '../../TextInput';
 
@@ -25,13 +24,7 @@ function DefaultStory() {
         )}
         size={select(
           'size',
-          [
-            Modal.Sizes.SMALL,
-            Modal.Sizes.MEDIUM,
-            Modal.Sizes.LARGE,
-            '300px',
-            '1500px',
-          ],
+          ['small', 'medium', 'large', '300px', '1500px'],
           ModalConfirm.defaultProps.size,
         )}
         shouldCloseOnEscapePress={boolean(
