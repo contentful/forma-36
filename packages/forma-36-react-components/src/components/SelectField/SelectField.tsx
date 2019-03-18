@@ -19,8 +19,6 @@ export type SelectFieldProps = {
   children: React.ReactNode;
   value?: string;
   validationMessage?: string;
-  testId?: string;
-  className?: string;
   formLabelProps?: Partial<FormLabelProps>;
   textLinkProps?: Partial<TextLinkProps>;
   selectProps?: Partial<SelectProps>;
@@ -28,6 +26,8 @@ export type SelectFieldProps = {
   required?: boolean;
   onChange?: ChangeEventHandler;
   onBlur?: FocusEventHandler;
+  testId?: string;
+  className?: string;
 } & typeof defaultProps;
 
 export interface SelectFieldState {

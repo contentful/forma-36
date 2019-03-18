@@ -3,17 +3,29 @@ import cn from 'classnames';
 
 import styles from './TableRow.css';
 
-export interface TableRowProps {
+export type TableRowProps = {
   className?: string;
+  style?: React.CSSProperties;
+  testId?: string;
   children: React.ReactNode;
-}
+} & typeof defaultProps;
+
+const defaultProps = {
+  testId: 'cf-ui-table-row',
+};
 
 export class TableRow extends Component<TableRowProps> {
+  static defaultProps = defaultProps;
+
   render() {
-    const { className, children, ...otherProps } = this.props;
+    const { className, children, testId, ...otherProps } = this.props;
 
     return (
-      <tr className={cn(styles['TableRow'], className)} {...otherProps}>
+      <tr
+        className={cn(styles['TableRow'], className)}
+        data-test-id={testId}
+        {...otherProps}
+      >
         {children}
       </tr>
     );

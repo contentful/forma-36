@@ -5,7 +5,6 @@ import styles from './Select.css';
 
 export type SelectProps = {
   required?: boolean;
-  children: React.ReactNode;
   name?: string;
   id?: string;
   hasError?: boolean;
@@ -13,10 +12,11 @@ export type SelectProps = {
   isDisabled?: boolean;
   onChange?: ChangeEventHandler;
   onBlur?: FocusEventHandler;
-  testId?: string;
   onFocus?: FocusEventHandler;
-  className?: string;
   width?: 'auto' | 'small' | 'medium' | 'large' | 'full';
+  testId?: string;
+  className?: string;
+  children: React.ReactNode;
 } & typeof defaultProps;
 
 export interface SelectState {

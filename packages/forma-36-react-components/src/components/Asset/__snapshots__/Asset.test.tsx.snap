@@ -3,6 +3,7 @@
 exports[`renders the component 1`] = `
 <div
   className="Asset"
+  data-test-id="cf-ui-asset"
 >
   <div
     className="Asset__image-container"
@@ -28,6 +29,7 @@ exports[`renders the component 1`] = `
 exports[`renders the component with an additional class name 1`] = `
 <div
   className="Asset extra-class-name"
+  data-test-id="cf-ui-asset"
 >
   <div
     className="Asset__image-container"
@@ -53,6 +55,7 @@ exports[`renders the component with an additional class name 1`] = `
 exports[`renders the component with type pdf 1`] = `
 <div
   className="Asset extra-class-name"
+  data-test-id="cf-ui-asset"
 >
   <div
     className="Asset__asset-container"
@@ -62,7 +65,7 @@ exports[`renders the component with type pdf 1`] = `
     >
       <Illustration
         illustration="Pdf"
-        testId="cf-ui-icon"
+        testId="cf-ui-illustration"
       />
     </div>
     <span

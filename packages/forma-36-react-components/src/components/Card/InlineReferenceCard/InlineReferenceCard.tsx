@@ -9,7 +9,7 @@ import Card from '../Card';
 import InlineReferenceCardSkeleton from './InlineReferenceCardSkeleton';
 const styles = require('./InlineReferenceCard.css');
 
-export interface InlineReferenceCardPropTypes {
+export type InlineReferenceCardPropTypes = {
   isSelected?: boolean;
   dropdownListItemNodes?: React.ReactNode;
   isLoading?: boolean;
@@ -17,16 +17,22 @@ export interface InlineReferenceCardPropTypes {
   className?: string;
   testId?: string;
   children: React.ReactNode;
-}
+} & typeof defaultProps;
 
 export interface InlineReferenceCardState {
   isDropdownOpen: boolean;
 }
 
+const defaultProps = {
+  testId: 'cf-ui-inline-reference-card',
+};
+
 export class InlineReferenceCard extends Component<
   InlineReferenceCardPropTypes,
   InlineReferenceCardState
 > {
+  static defaultProps = defaultProps;
+
   state = {
     isDropdownOpen: false,
   };

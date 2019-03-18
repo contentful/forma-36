@@ -12,11 +12,9 @@
     "pretty-quick": "^1.10.0"
   },
   "scripts": {
-    "commit": "git-cz",
     "travis-deploy-once": "travis-deploy-once --pro",
     "semantic-release": "lerna exec --concurrency 1 -- npx --no-install semantic-release -e semantic-release-monorepo",
     "postinstall": "lerna bootstrap && lerna run --scope @contentful/forma-36-tokens build",
-    "commitmsg": "validate-commit-msg",
     "build": "lerna run build",
     "test": "lerna run test",
     "lint": "lerna run lint",
@@ -30,7 +28,6 @@
   "husky": {
     "hooks": {
       "pre-commit": "yarn pretty-quick --staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "pre-push": "yarn lint && yarn type-check && yarn test"
     }
   }

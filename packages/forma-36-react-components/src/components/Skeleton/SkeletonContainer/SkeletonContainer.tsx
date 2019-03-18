@@ -76,6 +76,7 @@ export class SkeletonContainer extends Component<SkeletonContainerProps> {
         preserveAspectRatio={preserveAspectRatio}
         width={svgWidth}
         height={svgHeight}
+        data-test-id={testId}
         {...otherProps}
       >
         {ariaLabel ? <title>{ariaLabel}</title> : null}

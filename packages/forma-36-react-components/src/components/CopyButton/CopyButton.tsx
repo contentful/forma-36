@@ -8,9 +8,9 @@ import styles from './CopyButton.css';
 
 export type CopyButtonProps = {
   copyValue?: string;
+  onCopy?: (value: string) => void;
   className?: string;
   testId?: string;
-  onCopy?: (value: string) => void;
 } & typeof defaultProps;
 
 export interface CopyButtonState {

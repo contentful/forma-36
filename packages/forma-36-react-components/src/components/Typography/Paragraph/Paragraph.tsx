@@ -9,6 +9,7 @@ export type ParagraphProps = {
   className?: string;
   children?: React.ReactNode;
   testId?: string;
+  style?: React.CSSProperties;
 } & typeof defaultProps;
 
 const defaultProps = {

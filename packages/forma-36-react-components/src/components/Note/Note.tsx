@@ -14,10 +14,10 @@ const Icons = {
 
 export type NoteProps = {
   noteType: 'primary' | 'positive' | 'negative' | 'warning';
-  testId: string;
   className?: string;
   title?: string;
   style?: CSSProperties;
+  testId?: string;
   children: React.ReactNode;
 } & typeof defaultProps;
 

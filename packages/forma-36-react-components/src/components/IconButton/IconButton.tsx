@@ -10,7 +10,6 @@ export interface IconButtonProps {
   label: string;
   href?: string;
   iconProps: IconProps;
-  testId?: string;
   disabled?: boolean;
   onClick?: MouseEventHandler;
   buttonType?:
@@ -22,6 +21,7 @@ export interface IconButtonProps {
     | 'white';
   withDropdown?: boolean;
   className?: string;
+  testId?: string;
 }
 
 const defaultProps = {

@@ -3,6 +3,7 @@
 exports[`renders the component 1`] = `
 <button
   className="TableSortingLabel__button"
+  data-test-id="cf-ui-table-sorting-label"
   direction="asc"
   type="button"
 >
@@ -24,6 +25,7 @@ exports[`renders the component 1`] = `
 exports[`renders the component inactive 1`] = `
 <button
   className="TableSortingLabel__button"
+  data-test-id="cf-ui-table-sorting-label"
   direction="desc"
   type="button"
 >

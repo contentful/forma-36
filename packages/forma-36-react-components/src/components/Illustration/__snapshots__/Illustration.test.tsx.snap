@@ -3,7 +3,7 @@
 exports[`renders the component 1`] = `
 <Archive
   className="Illustration"
-  data-test-id="cf-ui-icon"
+  data-test-id="cf-ui-illustration"
   height="24"
   viewBox="0 0 24 24"
   width="24"
@@ -14,7 +14,7 @@ exports[`renders the component 1`] = `
 exports[`renders the component with an additional class name 1`] = `
 <Archive
   className="Illustration my-extra-class"
-  data-test-id="cf-ui-icon"
+  data-test-id="cf-ui-illustration"
   height="24"
   viewBox="0 0 24 24"
   width="24"

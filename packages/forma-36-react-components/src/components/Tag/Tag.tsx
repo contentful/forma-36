@@ -13,9 +13,9 @@ export type TagType =
 
 export type TagProps = {
   tagType?: TagType;
-  testId?: string;
   style?: React.CSSProperties;
   className?: string;
+  testId?: string;
   children: React.ReactNode;
 } & typeof defaultProps;
 

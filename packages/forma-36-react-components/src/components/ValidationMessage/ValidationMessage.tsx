@@ -6,6 +6,7 @@ import styles from './ValidationMessage.css';
 export type ValidationMessageProps = {
   className?: string;
   testId?: string;
+  style?: React.CSSProperties;
   children: React.ReactNode;
 } & typeof defaultProps;
 
