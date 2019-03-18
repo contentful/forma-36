@@ -7,21 +7,10 @@ import ModalControls from '../ModalControls';
 
 const styles = require('./Modal.css');
 
-const ModalPositions = {
-  CENTER: 'center' as 'center',
-  TOP: 'top' as 'top',
-};
-
-export const ModalSizes = {
-  MEDIUM: 'medium' as 'medium',
-  SMALL: 'small' as 'small',
-  LARGE: 'large' as 'large',
-};
-
 const ModalSizesMapper = {
-  [ModalSizes.MEDIUM]: '520px',
-  [ModalSizes.SMALL]: '400px',
-  [ModalSizes.LARGE]: '700px',
+  medium: '520px',
+  small: '400px',
+  large: '700px',
 };
 
 export type ModalSizeType = 'small' | 'medium' | 'large' | string | number;
@@ -93,10 +82,6 @@ const defaultProps = {
 };
 
 export class Modal extends Component<ModalProps> {
-  static Positions = ModalPositions;
-
-  static Sizes = ModalSizes;
-
   static Header = ModalHeader;
 
   static Content = ModalContent;
@@ -137,17 +122,14 @@ export class Modal extends Component<ModalProps> {
         }}
         style={{
           content: {
-            top:
-              this.props.position === ModalPositions.CENTER
-                ? 0
-                : this.props.topOffset,
+            top: this.props.position === 'center' ? 0 : this.props.topOffset,
           },
         }}
         overlayClassName={{
           base: cn({
             [styles.Modal__overlay]: true,
             [styles['Modal__overlay--centered']]:
-              this.props.position === ModalPositions.CENTER,
+              this.props.position === 'center',
           }),
           afterOpen: styles['Modal__overlay--after-open'],
           beforeClose: styles['Modal__overlay--before-close'],

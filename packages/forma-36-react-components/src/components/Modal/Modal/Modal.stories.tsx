@@ -36,18 +36,12 @@ function DefaultStory() {
         )}
         size={select(
           'size',
-          [
-            Modal.Sizes.SMALL,
-            Modal.Sizes.MEDIUM,
-            Modal.Sizes.LARGE,
-            '200px',
-            '1500px',
-          ],
+          ['small', 'medium', 'large', '200px', '1500px'],
           Modal.defaultProps.size,
         )}
         position={select(
           'position',
-          [Modal.Positions.CENTER, Modal.Positions.TOP],
+          ['center', 'top'],
           Modal.defaultProps.position,
         )}
         topOffset={text(
