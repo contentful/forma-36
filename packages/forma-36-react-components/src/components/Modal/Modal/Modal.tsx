@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
 import ReactModal from 'react-modal';
-import ModalHeader from '../ModalHeader';
-import ModalContent from '../ModalContent';
-import ModalControls from '../ModalControls';
+import ModalHeader, { ModalHeaderProps } from '../ModalHeader/ModalHeader';
+import ModalContent, { ModalContentProps } from '../ModalContent/ModalContent';
+import ModalControls from '../ModalControls/ModalControls';
 
 const styles = require('./Modal.css');
 
@@ -60,9 +60,14 @@ export type ModalProps = {
   allowHeightOverflow?: boolean;
 
   /**
-   * To disable word-wrapping of the modal title
+   * Optional props to override ModalHeader behaviour
    */
-  isNotWrapped?: boolean;
+  modalHeaderProps?: Partial<ModalHeaderProps>;
+
+  /**
+   * Optional props to override ModalContent behaviour
+   */
+  modalContentProps?: Partial<ModalContentProps>;
 
   className?: string;
   testId?: string;
@@ -97,10 +102,12 @@ export class Modal extends Component<ModalProps> {
           <ModalHeader
             title={this.props.title}
             onClose={this.props.onClose}
-            isNotWrapped={this.props.isNotWrapped}
+            {...this.props.modalHeaderProps}
           />
         )}
-        <ModalContent>{this.props.children}</ModalContent>
+        <ModalContent {...this.props.modalContentProps}>
+          {this.props.children}
+        </ModalContent>
       </React.Fragment>
     );
   }

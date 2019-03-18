@@ -54,6 +54,12 @@ function DefaultStory() {
         )}
         testId={text('testId', Modal.defaultProps.testId)}
         className={text('className', '')}
+        modalHeaderProps={{
+          className: 'additional-modal-header-class',
+        }}
+        modalContentProps={{
+          className: 'additional-modal-content-class',
+        }}
         isShown={isShown}
         onClose={() => {
           setShown(false);
