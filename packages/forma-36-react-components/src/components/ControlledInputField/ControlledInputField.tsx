@@ -8,8 +8,8 @@ const styles = require('./ControlledInputField.css');
 
 export type ControlledInputFieldPropTypes = {
   id: string;
-  labelIsLight?: boolean;
   labelText: string;
+  labelIsLight?: boolean;
   required?: boolean;
   helpText?: string;
   formLabelProps?: object;

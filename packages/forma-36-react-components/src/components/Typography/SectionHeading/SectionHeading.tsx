@@ -9,6 +9,7 @@ export type SectionHeadingProps = {
   className?: string;
   children?: React.ReactNode | string;
   testId?: string;
+  style?: React.CSSProperties;
 } & typeof defaultProps;
 
 const defaultProps = {

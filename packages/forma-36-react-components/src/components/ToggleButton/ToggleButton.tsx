@@ -7,13 +7,13 @@ import TabFocusTrap from '../TabFocusTrap/TabFocusTrap';
 const styles = require('./ToggleButton.css');
 
 export type ToggleButtonProps = {
-  testId?: string;
-  className?: string;
   children: React.ReactNode;
   icon?: IconType;
   isActive?: boolean;
   onToggle?: Function;
   isDisabled?: boolean;
+  testId?: string;
+  className?: string;
 } & typeof defaultProps;
 
 const defaultProps = {

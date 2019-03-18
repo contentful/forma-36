@@ -9,13 +9,13 @@ export type DropdownListItemProps = {
   isTitle: boolean;
   children: React.ReactNode;
   onClick?: MouseEventHandler;
-  testId?: string;
   onMouseDown?: MouseEventHandler;
   submenuToggleLabel?: string;
   onFocus?: FocusEventHandler;
   onLeave?: MouseEventHandler;
   onEnter?: MouseEventHandler;
   className?: string;
+  testId?: string;
 } & typeof defaultProps;
 
 const defaultProps = {

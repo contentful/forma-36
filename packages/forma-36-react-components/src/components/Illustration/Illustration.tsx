@@ -26,7 +26,7 @@ export type IllustrationProps = {
 } & typeof defaultProps;
 
 const defaultProps = {
-  testId: 'cf-ui-icon',
+  testId: 'cf-ui-illustration',
 };
 
 export class Illustration extends Component<IllustrationProps> {

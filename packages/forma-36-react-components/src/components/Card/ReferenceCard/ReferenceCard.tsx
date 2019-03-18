@@ -14,7 +14,6 @@ export type ReferenceCardStatus =
 
 export type ReferenceCardPropTypes = {
   title?: string;
-  testId?: string;
   description?: string;
   contentType?: string;
   status: ReferenceCardStatus;
@@ -23,6 +22,7 @@ export type ReferenceCardPropTypes = {
   onClick?: MouseEventHandler;
   className?: string;
   actionElements?: React.ReactNode;
+  testId?: string;
 } & typeof defaultProps;
 
 const defaultProps = {

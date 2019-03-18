@@ -25,10 +25,12 @@ export type AssetProps = {
   title: string;
   type?: AssetType;
   className?: string;
+  testId?: string;
 } & typeof defaultProps;
 
 const defaultProps = {
   type: 'image',
+  testId: 'cf-ui-asset',
 };
 
 export class Asset extends Component<AssetProps> {
@@ -62,12 +64,12 @@ export class Asset extends Component<AssetProps> {
   };
 
   render() {
-    const { className, src, title, type, ...otherProps } = this.props;
+    const { className, src, title, type, testId, ...otherProps } = this.props;
 
     const classNames = cn(styles.Asset, className);
 
     return (
-      <div className={classNames} {...otherProps}>
+      <div className={classNames} data-test-id={testId} {...otherProps}>
         {type && type === 'image'
           ? this.renderImage(src, title)
           : this.renderAsset(type, title)}

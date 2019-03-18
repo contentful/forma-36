@@ -9,6 +9,7 @@ export type DisplayTextProps = {
   size: 'default' | 'large';
   className?: string;
   children?: React.ReactNode;
+  style?: React.CSSProperties;
   testId?: string;
 } & typeof defaultProps;
 
