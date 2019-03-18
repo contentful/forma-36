@@ -127,7 +127,10 @@ export class NotificationsManager extends PureComponent<
       settings && settings.duration ? settings.duration : this.state.duration;
     const intent = settings && settings.intent ? settings.intent : 'success';
 
-    const canClose = settings ? settings.canClose || false : true;
+    const canClose =
+      settings && typeof settings.canClose !== 'undefined'
+        ? settings.canClose
+        : true;
 
     const notificationId = getUniqueId();
     const notification = {

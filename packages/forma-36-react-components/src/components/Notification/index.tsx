@@ -66,10 +66,18 @@ const show = (intent: NotificationIntent) => (
   }
 };
 
+type ExternalShowAction<T> = (
+  text: string,
+  settings?: {
+    duration?: number;
+    canClose?: boolean;
+  },
+) => T;
+
 export const Notification: {
-  success: ShowAction<Promise<NotificationType>>;
-  error: ShowAction<Promise<NotificationType>>;
-  warning: ShowAction<Promise<NotificationType>>;
+  success: ExternalShowAction<Promise<NotificationType>>;
+  error: ExternalShowAction<Promise<NotificationType>>;
+  warning: ExternalShowAction<Promise<NotificationType>>;
   close: CloseAction<Promise<void>>;
   closeAll: CloseAllAction<Promise<void>>;
   setPosition: SetPositionAction<Promise<void>>;
