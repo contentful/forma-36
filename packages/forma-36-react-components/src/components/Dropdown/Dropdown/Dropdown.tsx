@@ -21,7 +21,7 @@ export type DropdownProps = {
   isOpen: boolean;
   onClose?: Function;
   testId?: string;
-  extraClassNames?: string;
+  className?: string;
   children: React.ReactNode;
 } & typeof defaultProps;
 
@@ -150,7 +150,7 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
 
   render() {
     const {
-      extraClassNames,
+      className,
       toggleElement,
       testId,
       submenuToggleLabel,
@@ -159,7 +159,7 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
       ...otherProps
     } = this.props;
 
-    const classNames = cn(styles['Dropdown'], extraClassNames);
+    const classNames = cn(styles['Dropdown'], className);
 
     return submenuToggleLabel ? (
       <DropdownListItem

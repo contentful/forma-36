@@ -59,7 +59,7 @@ export class NotificationItem extends Component<
             }}
             testId="cf-ui-notification-close"
             label="Dismiss"
-            extraClassNames={styles.NotificationItem__dismiss}
+            className={styles.NotificationItem__dismiss}
           />
         )}
       </div>

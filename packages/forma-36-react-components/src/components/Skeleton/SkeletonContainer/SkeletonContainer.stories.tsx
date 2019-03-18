@@ -13,7 +13,7 @@ storiesOf('Components|Skeleton/SkeletonContainer', module)
 
   .add('default', () => (
     <SkeletonContainer
-      extraClassNames={text('extraClassNames', '')}
+      className={text('className', '')}
       animate={boolean('animate', true)}
       width={text('width', '100%')}
       height={text('height', '100')}

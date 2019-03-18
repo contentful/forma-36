@@ -6,8 +6,8 @@ exports[`renders the component with all required props 1`] = `
   data-test-id="cf-ui-validation-message"
 >
   <Icon
+    className="ValidationMessage__icon"
     color="negative"
-    extraClassNames="ValidationMessage__icon"
     icon="ErrorCircle"
     size="small"
     testId="cf-ui-icon"
@@ -26,8 +26,8 @@ exports[`renders the component with an additional class name 1`] = `
   data-test-id="cf-ui-validation-message"
 >
   <Icon
+    className="ValidationMessage__icon"
     color="negative"
-    extraClassNames="ValidationMessage__icon"
     icon="ErrorCircle"
     size="small"
     testId="cf-ui-icon"

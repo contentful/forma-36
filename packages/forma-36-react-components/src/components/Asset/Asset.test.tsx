@@ -16,7 +16,7 @@ it('renders the component with an additional class name', () => {
     <Asset
       src="https://placekitten.com/200/300"
       title="Image of a cat"
-      extraClassNames="extra-class-name"
+      className="extra-class-name"
     />,
   );
 
@@ -28,7 +28,7 @@ it('renders the component with type pdf', () => {
     <Asset
       src="https://placekitten.com/200/300"
       title="Image of a cat"
-      extraClassNames="extra-class-name"
+      className="extra-class-name"
       type="pdf"
     />,
   );

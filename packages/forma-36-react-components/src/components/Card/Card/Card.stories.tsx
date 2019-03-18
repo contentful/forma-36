@@ -11,7 +11,7 @@ storiesOf('Components|Card', module)
   })
   .add('default', () => (
     <Card
-      extraClassNames={text('extraClassNames', '')}
+      className={text('className', '')}
       href={text('href', '') || undefined}
       padding={select(
         'padding',
@@ -29,7 +29,7 @@ storiesOf('Components|Card', module)
   ))
   .add('with onClick handler', () => (
     <Card
-      extraClassNames={text('extraClassNames', '')}
+      className={text('className', '')}
       href={text('href', '') || undefined}
       onClick={action('onClick')}
       padding={select(

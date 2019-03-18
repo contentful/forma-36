@@ -11,7 +11,7 @@ it('renders the component with all required props', () => {
 
 it('renders the component with an additional class name', () => {
   const output = shallow(
-    <FormLabel htmlFor="someInput" extraClassNames="my-extra-class">
+    <FormLabel htmlFor="someInput" className="my-extra-class">
       Label Text
     </FormLabel>,
   );

@@ -18,7 +18,7 @@ it('renders the component', () => {
 
 it('renders the component with an additional class name', () => {
   const output = mount(
-    <InViewport extraClassNames="my-extra-class">
+    <InViewport className="my-extra-class">
       <TextLink>Some Link</TextLink>
     </InViewport>,
   );
@@ -29,10 +29,7 @@ it('renders the component with an additional class name', () => {
 it('dispatches onOverflowTop', () => {
   const onOverflowTopMock = jest.fn();
   const output = mount(
-    <InViewport
-      extraClassNames="my-extra-class"
-      onOverflowTop={onOverflowTopMock}
-    >
+    <InViewport className="my-extra-class" onOverflowTop={onOverflowTopMock}>
       <TextLink>Some Link</TextLink>
     </InViewport>,
   );
@@ -54,10 +51,7 @@ it('dispatches onOverflowTop', () => {
 it('dispatches onOverflowLeft', () => {
   const onOverflowLeftMock = jest.fn();
   const output = mount(
-    <InViewport
-      extraClassNames="my-extra-class"
-      onOverflowLeft={onOverflowLeftMock}
-    >
+    <InViewport className="my-extra-class" onOverflowLeft={onOverflowLeftMock}>
       <TextLink>Some Link</TextLink>
     </InViewport>,
   );
@@ -81,7 +75,7 @@ it('dispatches onOverflowRight', () => {
   (window as any).innerWidth = 80;
   const output = mount(
     <InViewport
-      extraClassNames="my-extra-class"
+      className="my-extra-class"
       onOverflowRight={onOverflowRightMock}
     >
       <TextLink>Some Link</TextLink>
@@ -108,7 +102,7 @@ it('dispatches onOverflowBottom', () => {
   (window as any).innerHeight = 100;
   const output = mount(
     <InViewport
-      extraClassNames="my-extra-class"
+      className="my-extra-class"
       onOverflowBottom={onOverflowBottomMock}
     >
       <TextLink>Some Link</TextLink>
@@ -135,7 +129,7 @@ it('does not dispatch onOverflowBottom', () => {
   (window as any).innerHeight = 100;
   const output = mount(
     <InViewport
-      extraClassNames="my-extra-class"
+      className="my-extra-class"
       onOverflowBottom={onOverflowBottomMock}
     >
       <TextLink>Some Link</TextLink>

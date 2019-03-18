@@ -16,7 +16,7 @@ it('renders the component', () => {
 
 it('renders the component with an additional class name', () => {
   const output = shallow(
-    <List extraClassNames="my-extra-class">
+    <List className="my-extra-class">
       <ListItem>Item</ListItem>
     </List>,
   );

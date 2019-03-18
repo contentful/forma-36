@@ -14,7 +14,7 @@ export type TextInputProps = {
   type?: 'text' | 'password' | 'email' | 'number' | 'search' | 'url';
   name?: string;
   id?: string;
-  extraClassNames?: string;
+  className?: string;
   withCopyButton?: boolean;
   placeholder?: string;
   onChange?: ChangeEventHandler;
@@ -64,7 +64,7 @@ export class TextInput extends Component<TextInputProps, TextInputState> {
 
   render() {
     const {
-      extraClassNames,
+      className,
       withCopyButton,
       placeholder,
       maxLength,
@@ -85,15 +85,10 @@ export class TextInput extends Component<TextInputProps, TextInputState> {
     } = this.props;
 
     const widthClass = `TextInput--${width}`;
-    const classNames = cn(
-      styles['TextInput'],
-      extraClassNames,
-      styles[widthClass],
-      {
-        [styles['TextInput--disabled']]: disabled,
-        [styles['TextInput--negative']]: error,
-      },
-    );
+    const classNames = cn(styles['TextInput'], className, styles[widthClass], {
+      [styles['TextInput--disabled']]: disabled,
+      [styles['TextInput--negative']]: error,
+    });
 
     return (
       <div className={classNames}>
@@ -126,7 +121,7 @@ export class TextInput extends Component<TextInputProps, TextInputState> {
           <CopyButton
             onCopy={onCopy}
             copyValue={this.state.value}
-            extraClassNames={styles['TextInput__copy-button']}
+            className={styles['TextInput__copy-button']}
           />
         )}
       </div>

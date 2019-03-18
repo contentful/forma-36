@@ -4,7 +4,7 @@ import styles from './EditorToolbarDivider.css';
 
 export type EditorToolbarDividerProps = {
   testId?: string;
-  extraClassNames?: string;
+  className?: string;
 } & typeof defaultProps;
 
 const defaultProps = {
@@ -14,9 +14,9 @@ const defaultProps = {
 export class EditorToolbarDivider extends Component<EditorToolbarDividerProps> {
   static defaultProps = defaultProps;
   render() {
-    const { extraClassNames, testId, ...otherProps } = this.props;
+    const { className, testId, ...otherProps } = this.props;
 
-    const classNames = cn(styles['EditorToolbarDivider'], extraClassNames);
+    const classNames = cn(styles['EditorToolbarDivider'], className);
 
     return (
       <span data-test-id={testId} className={classNames} {...otherProps} />

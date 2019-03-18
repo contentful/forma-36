@@ -28,7 +28,7 @@ export type ButtonProps = {
   size?: 'small' | 'large';
   href?: string;
   style?: CSSProperties;
-  extraClassNames?: string;
+  className?: string;
   children?: React.ReactNode;
 } & typeof defaultProps;
 
@@ -47,7 +47,7 @@ export class Button extends Component<ButtonProps> {
 
   render() {
     const {
-      extraClassNames,
+      className,
       children,
       icon,
       buttonType,
@@ -66,7 +66,7 @@ export class Button extends Component<ButtonProps> {
 
     const classNames = cn(
       styles.Button,
-      extraClassNames,
+      className,
       styles[`Button--${buttonType}`],
       {
         [styles['Button--disabled']]: disabled,
@@ -100,10 +100,10 @@ export class Button extends Component<ButtonProps> {
         type={type}
         {...otherProps}
       >
-        <TabFocusTrap extraClassNames={styles['Button__inner-wrapper']}>
+        <TabFocusTrap className={styles['Button__inner-wrapper']}>
           {icon && (
             <Icon
-              extraClassNames={styles.Button__icon}
+              className={styles.Button__icon}
               size={size === 'small' ? 'tiny' : 'small'}
               icon={icon}
               color={iconColor}
@@ -112,7 +112,7 @@ export class Button extends Component<ButtonProps> {
           {children && <span className={styles.Button__label}>{children}</span>}
           {indicateDropdown && (
             <Icon
-              extraClassNames={styles['Button__dropdown-icon']}
+              className={styles['Button__dropdown-icon']}
               icon="ArrowDown"
               color={iconColor}
             />
@@ -130,7 +130,7 @@ export class Button extends Component<ButtonProps> {
             unmountOnExit
           >
             <Spinner
-              extraClassNames={styles.Button__spinner}
+              className={styles.Button__spinner}
               size="small"
               color={
                 buttonType === 'muted' || buttonType === 'naked'

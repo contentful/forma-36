@@ -14,7 +14,7 @@ it('renders the component', () => {
 
 it('renders the component with an additional class name', () => {
   const output = shallow(
-    <InlineReferenceCard extraClassNames="my-extra-class">
+    <InlineReferenceCard className="my-extra-class">
       Title of inline reference
     </InlineReferenceCard>,
   );
@@ -24,7 +24,7 @@ it('renders the component with an additional class name', () => {
 
 it('renders the component with published status', () => {
   const output = shallow(
-    <InlineReferenceCard extraClassNames="my-extra-class" status="published">
+    <InlineReferenceCard className="my-extra-class" status="published">
       Title of inline reference
     </InlineReferenceCard>,
   );
@@ -35,7 +35,7 @@ it('renders the component with published status', () => {
 it('renders the component with a dropdown', () => {
   const output = shallow(
     <InlineReferenceCard
-      extraClassNames="my-extra-class"
+      className="my-extra-class"
       dropdownListItemNodes={[
         <DropdownListItem key="edit" onClick={() => {}}>
           Edit

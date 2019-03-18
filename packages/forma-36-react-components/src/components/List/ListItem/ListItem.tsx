@@ -5,7 +5,7 @@ import styles from './ListItem.css';
 import List from '../List/List';
 
 export type ListItemProps = {
-  extraClassNames?: string;
+  className?: string;
   children: React.ReactNode;
   testId?: string;
 } & typeof defaultProps;
@@ -18,9 +18,9 @@ export class ListItem extends Component<ListItemProps> {
   static defaultProps = defaultProps;
 
   render() {
-    const { extraClassNames, children, testId, ...otherProps } = this.props;
+    const { className, children, testId, ...otherProps } = this.props;
 
-    const classNames = cn(styles['ListItem'], extraClassNames, {
+    const classNames = cn(styles['ListItem'], className, {
       [styles['ListItem--nested-list']]:
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (this.props.children as any).type === List,

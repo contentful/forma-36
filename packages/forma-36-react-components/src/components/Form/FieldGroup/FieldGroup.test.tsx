@@ -25,7 +25,7 @@ it('renders the component', () => {
 
 it('renders the component with an additional class name', () => {
   const output = shallow(
-    <FieldGroup extraClassNames="my-extra-class">
+    <FieldGroup className="my-extra-class">
       <CheckboxField
         labelText="Do you agree?"
         helpText="Click if you agree"
@@ -44,7 +44,7 @@ it('renders the component with an additional class name', () => {
 
 it('renders the component children in a row', () => {
   const output = shallow(
-    <FieldGroup extraClassNames="my-extra-class" row>
+    <FieldGroup className="my-extra-class" row>
       <CheckboxField
         labelText="Do you agree?"
         helpText="Click if you agree"

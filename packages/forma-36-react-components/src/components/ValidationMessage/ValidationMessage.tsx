@@ -4,7 +4,7 @@ import Icon from '../Icon/Icon';
 import styles from './ValidationMessage.css';
 
 export type ValidationMessageProps = {
-  extraClassNames?: string;
+  className?: string;
   testId?: string;
   children: React.ReactNode;
 } & typeof defaultProps;
@@ -17,15 +17,15 @@ export class ValidationMessage extends Component<ValidationMessageProps> {
   static defaultProps = defaultProps;
 
   render() {
-    const { extraClassNames, children, testId, ...otherProps } = this.props;
+    const { className, children, testId, ...otherProps } = this.props;
 
-    const classNames = cn(styles['ValidationMessage'], extraClassNames);
+    const classNames = cn(styles['ValidationMessage'], className);
 
     return (
       <div {...otherProps} className={classNames} data-test-id={testId}>
         <Icon
           icon="ErrorCircle"
-          extraClassNames={styles['ValidationMessage__icon']}
+          className={styles['ValidationMessage__icon']}
           color="negative"
         />
         <p className={styles['ValidationMessage__text']}>{children}</p>

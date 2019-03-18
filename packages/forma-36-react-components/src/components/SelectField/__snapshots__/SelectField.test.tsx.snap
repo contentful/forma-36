@@ -145,7 +145,7 @@ exports[`renders the component with a help text 1`] = `
     className="SelectField__hints"
   >
     <HelpText
-      extraClassNames="SelectField__help-text"
+      className="SelectField__help-text"
       testId="cf-ui-help-text"
     >
       please select an option
@@ -188,7 +188,7 @@ exports[`renders the component with a validation message 1`] = `
     </Option>
   </Select>
   <ValidationMessage
-    extraClassNames="SelectField__validation-message"
+    className="SelectField__validation-message"
     testId="cf-ui-validation-message"
   >
     not valid

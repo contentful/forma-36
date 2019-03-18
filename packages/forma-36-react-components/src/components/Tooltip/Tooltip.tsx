@@ -50,7 +50,7 @@ export type TooltipProps = {
   testId?: string;
 
   id?: string;
-  extraClassNames?: string;
+  className?: string;
   content?: React.ReactNode;
   targetWrapperClassName?: string;
   onMouseOver?: Function;
@@ -160,7 +160,7 @@ export class Tooltip extends Component<TooltipProps> {
     const classNames = cn(
       styles['Tooltip'],
       styles[placeClass],
-      this.props.extraClassNames,
+      this.props.className,
       {
         [styles['Tooltip--hidden']]: !this.state.isVisible,
       },
@@ -203,7 +203,7 @@ export class Tooltip extends Component<TooltipProps> {
 
   render() {
     const {
-      extraClassNames,
+      className,
       targetWrapperClassName,
       content,
       onMouseLeave,

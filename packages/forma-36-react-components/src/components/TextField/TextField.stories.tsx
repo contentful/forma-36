@@ -11,7 +11,7 @@ storiesOf('Components|TextField', module)
   })
   .add('default', () => (
     <TextField
-      extraClassNames={text('extraClassNames', '')}
+      className={text('className', '')}
       required={boolean('required', false)}
       formLabelProps={{
         requiredText: text('requiredText', undefined),
@@ -56,7 +56,7 @@ storiesOf('Components|TextField', module)
   ))
   .add('with Textarea', () => (
     <TextField
-      extraClassNames={text('extraClassNames', '')}
+      className={text('className', '')}
       textarea
       required={boolean('required', false)}
       formLabelProps={{
@@ -102,7 +102,7 @@ storiesOf('Components|TextField', module)
   ))
   .add('with TextLink', () => (
     <TextField
-      extraClassNames={text('extraClassNames', '')}
+      className={text('className', '')}
       textarea
       required={boolean('required', false)}
       formLabelProps={{
@@ -154,7 +154,7 @@ storiesOf('Components|TextField', module)
   .add('with Character count', () => (
     <TextField
       countCharacters={boolean('countCharacters', true)}
-      extraClassNames={text('extraClassNames', '')}
+      className={text('className', '')}
       required={boolean('required', false)}
       formLabelProps={{
         requiredText: text('requiredText', undefined),

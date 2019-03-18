@@ -11,7 +11,7 @@ it('renders the component', () => {
 
 it('renders the component with an additional class name', () => {
   const output = shallow(
-    <TabFocusTrap extraClassNames="my-extra-class">TabFocusTrap</TabFocusTrap>,
+    <TabFocusTrap className="my-extra-class">TabFocusTrap</TabFocusTrap>,
   );
 
   expect(output).toMatchSnapshot();

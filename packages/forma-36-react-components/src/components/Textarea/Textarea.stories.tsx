@@ -11,7 +11,7 @@ storiesOf('Components|TextArea', module)
   })
   .add('default', () => (
     <Textarea
-      extraClassNames={text('extraClassNames', '')}
+      className={text('className', '')}
       name="someInput"
       id="someInput"
       error={boolean('error', false)}

@@ -15,7 +15,7 @@ export type DropdownListItemProps = {
   onFocus?: FocusEventHandler;
   onLeave?: MouseEventHandler;
   onEnter?: MouseEventHandler;
-  extraClassNames?: string;
+  className?: string;
 } & typeof defaultProps;
 
 const defaultProps = {
@@ -43,9 +43,7 @@ export class DropdownListItem extends Component<DropdownListItemProps> {
           {...otherProps}
         >
           <TabFocusTrap
-            extraClassNames={
-              styles['DropdownListItem__toggle-button__inner-wrapper']
-            }
+            className={styles['DropdownListItem__toggle-button__inner-wrapper']}
           >
             {this.props.submenuToggleLabel}
           </TabFocusTrap>
@@ -73,9 +71,7 @@ export class DropdownListItem extends Component<DropdownListItemProps> {
         }}
       >
         <TabFocusTrap
-          extraClassNames={
-            styles['DropdownListItem__toggle-button__inner-wrapper']
-          }
+          className={styles['DropdownListItem__toggle-button__inner-wrapper']}
         >
           {this.props.children}
         </TabFocusTrap>
@@ -86,7 +82,7 @@ export class DropdownListItem extends Component<DropdownListItemProps> {
 
   render() {
     const {
-      extraClassNames,
+      className,
       isDisabled,
       testId,
       isActive,
@@ -96,7 +92,7 @@ export class DropdownListItem extends Component<DropdownListItemProps> {
       isTitle,
     } = this.props;
 
-    const classNames = cn(styles['DropdownListItem'], extraClassNames, {
+    const classNames = cn(styles['DropdownListItem'], className, {
       [styles['DropdownListItem__submenu-toggle']]:
         submenuToggleLabel || onClick || onMouseDown,
       [styles['DropdownListItem--disabled']]: isDisabled,

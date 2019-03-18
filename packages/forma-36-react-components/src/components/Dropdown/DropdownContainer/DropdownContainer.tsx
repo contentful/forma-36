@@ -12,7 +12,7 @@ const styles = require('./DropdownContainer.css');
 export type DropdownContainerProps = {
   onClose?: Function;
   dropdownAnchor?: HTMLElement | null;
-  extraClassNames?: string;
+  className?: string;
   children?: React.ReactNode;
   testId?: string;
   openSubmenu?: (value: boolean) => void;

@@ -12,7 +12,7 @@ storiesOf('Components|SelectField', module)
   })
   .add('default', () => (
     <SelectField
-      extraClassNames={text('extraClassNames', '')}
+      className={text('className', '')}
       required={boolean('required', false)}
       formLabelProps={{
         requiredText: text('Required Text', undefined),

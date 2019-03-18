@@ -16,7 +16,7 @@ it('renders the component', () => {
 
 it('renders the component with an additional class name', () => {
   const output = shallow(
-    <SkeletonContainer extraClassNames="extraClassNames">
+    <SkeletonContainer className="className">
       <SkeletonBodyText />
     </SkeletonContainer>,
   );

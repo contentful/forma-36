@@ -13,7 +13,7 @@ export type CardPropTypes = {
   selected?: boolean;
   title?: string;
   style?: React.CSSProperties;
-  extraClassNames?: string;
+  className?: string;
   testId?: string;
   children: React.ReactNode;
 } & typeof defaultProps;
@@ -35,7 +35,7 @@ export class Card extends Component<CardPropTypes> {
 
   render() {
     const {
-      extraClassNames,
+      className,
       testId,
       children,
       href,
@@ -45,7 +45,7 @@ export class Card extends Component<CardPropTypes> {
       ...otherProps
     } = this.props;
 
-    const classNames = cn(styles.Card, extraClassNames, {
+    const classNames = cn(styles.Card, className, {
       [styles[`Card--padding-${padding}`]]: padding,
       [styles['Card--is-interactive']]: onClick || href,
       [styles['Card--is-selected']]: selected,

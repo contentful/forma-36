@@ -1082,7 +1082,7 @@ exports[`renders the component with a custom width 1`] = `
 exports[`renders the component with an additional class name 1`] = `
 <svg
   aria-label="Loading component..."
-  className="SkeletonContainer extraClassNames"
+  className="SkeletonContainer className"
   height="100%"
   preserveAspectRatio="xMidYMid meet"
   role="img"

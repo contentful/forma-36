@@ -10,7 +10,7 @@ export interface TableSortingLabelProps {
   children: React.ReactNode;
   direction: keyof typeof sortingDirections;
   active: boolean;
-  extraClassNames?: string;
+  className?: string;
 }
 
 export class TableSortingLabel extends Component<TableSortingLabelProps> {
@@ -21,21 +21,19 @@ export class TableSortingLabel extends Component<TableSortingLabelProps> {
       styles[`TableSortingLabel__icon--${direction as string}`],
     );
 
-    return <Icon extraClassNames={classNames} icon="ArrowUp" color="muted" />;
+    return <Icon className={classNames} icon="ArrowUp" color="muted" />;
   }
 
   render() {
-    const { extraClassNames, children, active, ...otherProps } = this.props;
+    const { className, children, active, ...otherProps } = this.props;
 
     return (
       <button
         type="button"
-        className={cn(styles['TableSortingLabel__button'], extraClassNames)}
+        className={cn(styles['TableSortingLabel__button'], className)}
         {...otherProps}
       >
-        <TabFocusTrap
-          extraClassNames={styles['TableSortingLabel__button__text']}
-        >
+        <TabFocusTrap className={styles['TableSortingLabel__button__text']}>
           {children}
           {active && this.renderIcon()}
         </TabFocusTrap>

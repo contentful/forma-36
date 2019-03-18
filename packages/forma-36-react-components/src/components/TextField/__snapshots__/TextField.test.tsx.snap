@@ -143,8 +143,8 @@ exports[`renders the component with a textlink 1`] = `
       test
     </FormLabel>
     <TextLink
+      className="TextField__label-link"
       disabled={false}
-      extraClassNames="TextField__label-link"
       icon="Lock"
       linkType="primary"
       onClick={[Function]}
@@ -325,7 +325,7 @@ exports[`renders the component with characters count 1`] = `
     className="TextField__hints"
   >
     <HelpText
-      extraClassNames="TextField__help-text TextField__count"
+      className="TextField__help-text TextField__count"
       testId="cf-ui-help-text"
     >
       0
@@ -368,7 +368,7 @@ exports[`renders the component with help text 1`] = `
     className="TextField__hints"
   >
     <HelpText
-      extraClassNames="TextField__help-text"
+      className="TextField__help-text"
       testId="cf-ui-help-text"
     >
       You need to fill out this field
@@ -500,7 +500,7 @@ exports[`renders the component with validation message 1`] = `
     withCopyButton={false}
   />
   <ValidationMessage
-    extraClassNames="TextField__validation-message"
+    className="TextField__validation-message"
     testId="cf-ui-validation-message"
   >
     Field is required

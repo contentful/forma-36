@@ -16,7 +16,7 @@ storiesOf('Components|Illustration', module)
         Object.keys(illustrationName),
         Object.keys(illustrationName)[0],
       )}
-      extraClassNames={text('extraClassNames', '')}
+      className={text('className', '')}
     />
   ))
   .add('All Illustrations', () => (

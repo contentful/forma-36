@@ -16,7 +16,7 @@ export type AssetState = 'archived' | 'changed' | 'draft' | 'published';
 export type AssetCardProps = {
   src: string;
   title: string;
-  extraClassNames?: string;
+  className?: string;
   isLoading?: boolean;
   dropdownListElements?: React.ReactElement;
   status?: AssetState;
@@ -115,7 +115,7 @@ export class AssetCard extends Component<AssetCardProps, AssetCardState> {
 
   render() {
     const {
-      extraClassNames,
+      className,
       src,
       type,
       title,
@@ -126,10 +126,10 @@ export class AssetCard extends Component<AssetCardProps, AssetCardState> {
       ...otherProps
     } = this.props;
 
-    const classNames = cn(styles['AssetCard'], extraClassNames);
+    const classNames = cn(styles['AssetCard'], className);
     return (
       <Card
-        extraClassNames={classNames}
+        className={classNames}
         title={title}
         testId={testId}
         {...otherProps}
@@ -145,7 +145,7 @@ export class AssetCard extends Component<AssetCardProps, AssetCardState> {
             </div>
             <div className={styles['AssetCard__content']}>
               <Asset
-                extraClassNames={styles['AssetCard__asset']}
+                className={styles['AssetCard__asset']}
                 src={src}
                 title={title}
                 type={type}

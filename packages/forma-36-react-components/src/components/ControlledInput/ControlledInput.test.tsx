@@ -14,7 +14,7 @@ it('renders the component with all required props', () => {
 it('renders the component with an additional class name', () => {
   const output = shallow(
     <ControlledInput
-      extraClassNames="my-extra-class"
+      className="my-extra-class"
       id="ControlledInput"
       labelText="ControlledInput"
     />,
@@ -26,7 +26,7 @@ it('renders the component with an additional class name', () => {
 it('renders the component with required prop', () => {
   const output = shallow(
     <ControlledInput
-      extraClassNames="my-extra-class"
+      className="my-extra-class"
       id="ControlledInput"
       labelText="ControlledInput"
       required
@@ -39,7 +39,7 @@ it('renders the component with required prop', () => {
 it('renders the component with disabled prop', () => {
   const output = shallow(
     <ControlledInput
-      extraClassNames="my-extra-class"
+      className="my-extra-class"
       id="ControlledInput"
       labelText="ControlledInput"
       disabled
@@ -52,7 +52,7 @@ it('renders the component with disabled prop', () => {
 it('renders the component with as checked', () => {
   const output = shallow(
     <ControlledInput
-      extraClassNames="my-extra-class"
+      className="my-extra-class"
       id="ControlledInput"
       labelText="ControlledInput"
       checked
@@ -65,7 +65,7 @@ it('renders the component with as checked', () => {
 it('renders the component with a value', () => {
   const output = shallow(
     <ControlledInput
-      extraClassNames="my-extra-class"
+      className="my-extra-class"
       id="ControlledInput"
       labelText="ControlledInput"
       value="someValue"

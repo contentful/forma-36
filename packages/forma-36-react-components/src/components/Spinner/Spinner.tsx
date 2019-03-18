@@ -11,7 +11,7 @@ export type SpinnerProps = {
   size?: SpinnerSize;
   customSize?: number;
   color?: SpinnerColor;
-  extraClassNames?: string;
+  className?: string;
   testId?: string;
 } & typeof defaultProps;
 
@@ -26,7 +26,7 @@ export class Spinner extends Component<SpinnerProps> {
 
   render() {
     const {
-      extraClassNames,
+      className,
       size,
       testId,
       color,
@@ -34,7 +34,7 @@ export class Spinner extends Component<SpinnerProps> {
       ...otherProps
     } = this.props;
 
-    const classNames = cn(styles.Spinner, extraClassNames, {
+    const classNames = cn(styles.Spinner, className, {
       [styles[`Spinner--${size}`]]: size,
       [styles[`Spinner--${color}`]]: color,
     });

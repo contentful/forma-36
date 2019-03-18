@@ -6,7 +6,7 @@ import { TypographyContext } from '../Typography/Typography';
 
 export type ParagraphProps = {
   element: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
-  extraClassNames?: string;
+  className?: string;
   children?: React.ReactNode;
   testId?: string;
 } & typeof defaultProps;
@@ -20,15 +20,9 @@ export class Paragraph extends Component<ParagraphProps> {
   static defaultProps = defaultProps;
 
   render() {
-    const {
-      extraClassNames,
-      children,
-      testId,
-      element,
-      ...otherProps
-    } = this.props;
+    const { className, children, testId, element, ...otherProps } = this.props;
 
-    const classNames = cn(styles['Paragraph'], extraClassNames);
+    const classNames = cn(styles['Paragraph'], className);
 
     const Element = element;
 

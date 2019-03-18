@@ -10,16 +10,14 @@ it('renders the component', () => {
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(
-    <Pill extraClassNames="my-extra-class" label="test" />,
-  );
+  const output = shallow(<Pill className="my-extra-class" label="test" />);
 
   expect(output).toMatchSnapshot();
 });
 
 it('renders the component with a dragging handle', () => {
   const output = shallow(
-    <Pill extraClassNames="my-extra-class" label="test" onDrag={() => {}} />,
+    <Pill className="my-extra-class" label="test" onDrag={() => {}} />,
   );
 
   expect(output).toMatchSnapshot();
@@ -27,7 +25,7 @@ it('renders the component with a dragging handle', () => {
 
 it('renders the component with a close button', () => {
   const output = shallow(
-    <Pill extraClassNames="my-extra-class" label="test" onClose={() => {}} />,
+    <Pill className="my-extra-class" label="test" onClose={() => {}} />,
   );
 
   expect(output).toMatchSnapshot();
@@ -35,7 +33,7 @@ it('renders the component with a close button', () => {
 
 it('renders the component with a test id', () => {
   const output = shallow(
-    <Pill extraClassNames="my-extra-class" label="test" testId="test-id" />,
+    <Pill className="my-extra-class" label="test" testId="test-id" />,
   );
 
   expect(output).toMatchSnapshot();

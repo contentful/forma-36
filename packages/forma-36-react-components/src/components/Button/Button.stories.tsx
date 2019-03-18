@@ -15,7 +15,7 @@ storiesOf('Components|Button', module)
     'Button',
     () => (
       <Button
-        extraClassNames={text('extraClassNames', '')}
+        className={text('className', '')}
         icon={select('icon', [undefined, ...Object.keys(iconName)], undefined)}
         buttonType={select(
           'buttonType',

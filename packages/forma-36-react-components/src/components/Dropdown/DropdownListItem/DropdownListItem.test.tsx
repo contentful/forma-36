@@ -10,7 +10,7 @@ it('renders the component', () => {
 
 it('renders the component with an additional class name', () => {
   const output = shallow(
-    <DropdownListItem extraClassNames="my-extra-class">
+    <DropdownListItem className="my-extra-class">
       <DropdownListItem>Entry</DropdownListItem>
     </DropdownListItem>,
   );

@@ -18,7 +18,7 @@ it('renders the component with an additional class name', () => {
   const output = shallow(
     <Illustration
       illustration={illustrationName[Object.keys(illustrationName)[0]]}
-      extraClassNames="my-extra-class"
+      className="my-extra-class"
     />,
   );
 

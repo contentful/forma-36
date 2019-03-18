@@ -10,7 +10,7 @@ it('renders the component', () => {
 
 it('renders the component with an additional class name', () => {
   const output = shallow(
-    <ListItem extraClassNames="my-extra-class">ListItem</ListItem>,
+    <ListItem className="my-extra-class">ListItem</ListItem>,
   );
 
   expect(output).toMatchSnapshot();

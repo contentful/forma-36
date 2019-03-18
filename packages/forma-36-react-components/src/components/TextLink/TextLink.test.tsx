@@ -79,9 +79,7 @@ it('allows passing additional props not consumed by component', () => {
 });
 
 it('allows passing additional class names to component', () => {
-  const output = shallow(
-    <TextLink extraClassNames="testing">Text Link</TextLink>,
-  );
+  const output = shallow(<TextLink className="testing">Text Link</TextLink>);
 
   expect(output).toMatchSnapshot();
 });

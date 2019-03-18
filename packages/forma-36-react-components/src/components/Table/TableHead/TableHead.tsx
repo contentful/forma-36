@@ -7,7 +7,7 @@ import { TableCellContext, contextOptions } from '../TableCell';
 export type TableHeadProps = {
   isSticky?: boolean;
   offsetTop?: number | string;
-  extraClassNames?: string;
+  className?: string;
   children: React.ReactNode;
 } & typeof defaultProps;
 
@@ -19,9 +19,9 @@ export class TableHead extends Component<TableHeadProps> {
   static defaultProps = defaultProps;
 
   render() {
-    const { extraClassNames, offsetTop, isSticky, children } = this.props;
+    const { className, offsetTop, isSticky, children } = this.props;
 
-    const classNames = cn(extraClassNames, {
+    const classNames = cn(className, {
       [styles[`TableHead--sticky`]]: isSticky,
     });
     return (

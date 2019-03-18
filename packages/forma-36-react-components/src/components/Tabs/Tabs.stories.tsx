@@ -12,7 +12,7 @@ function DefaultStory() {
 
   return (
     <div>
-      <Tabs extraClassNames={text('extraClassNames', '')}>
+      <Tabs className={text('className', '')}>
         <Tab
           id="first"
           selected={selected === 'first'}
@@ -60,7 +60,7 @@ function DefaultStory() {
 function AsNavigationStory() {
   const [selected, setSelected] = useState('first');
   return (
-    <Tabs role="navigation" extraClassNames={text('extraClassNames', '')}>
+    <Tabs role="navigation" className={text('className', '')}>
       <Tab
         id="first"
         href="https://contentful.com"

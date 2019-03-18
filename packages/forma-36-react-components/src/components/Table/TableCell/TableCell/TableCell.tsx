@@ -16,7 +16,7 @@ export type TableCellProps = {
   align?: 'center' | 'left' | 'right';
   sorting?: TableCellSorting;
   style?: React.CSSProperties;
-  extraClassNames?: string;
+  className?: string;
   children?: React.ReactNode;
 } & typeof defaultProps;
 
@@ -29,13 +29,7 @@ export class TableCell extends Component<TableCellProps> {
   static defaultProps = defaultProps;
 
   render() {
-    const {
-      extraClassNames,
-      children,
-      sorting,
-      align,
-      ...otherProps
-    } = this.props;
+    const { className, children, sorting, align, ...otherProps } = this.props;
 
     return (
       <TableCellContext.Consumer>
@@ -44,7 +38,7 @@ export class TableCell extends Component<TableCellProps> {
           const Element = element as any;
           return (
             <Element
-              className={cn(styles['TableCell'], extraClassNames, {
+              className={cn(styles['TableCell'], className, {
                 [styles['TableCell--head']]: context === 'head',
                 [styles['TableCell--head__sorting']]: sorting,
               })}

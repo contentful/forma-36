@@ -46,7 +46,7 @@ storiesOf('Components|Card/ReferenceCard', module)
             />
           </div>
         }
-        extraClassNames={text('extraClassNames', '')}
+        className={text('className', '')}
         loading={boolean('loading', false)}
       />
     </div>
@@ -94,7 +94,7 @@ storiesOf('Components|Card/ReferenceCard', module)
           </div>
         }
         loading={boolean('loading', false)}
-        extraClassNames={text('extraClassNames', '')}
+        className={text('className', '')}
       />
     </div>
   ));

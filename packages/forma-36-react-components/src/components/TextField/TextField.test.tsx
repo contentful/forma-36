@@ -17,7 +17,7 @@ it('renders the component with an additional class name', () => {
       labelText="test"
       name="someComponent"
       id="someComponent"
-      extraClassNames="my-extra-class"
+      className="my-extra-class"
     />,
   );
 
@@ -154,7 +154,7 @@ it('updates the characters counter', () => {
   );
 
   const input = output.find('input');
-  const counter = output.find('.TextField__count');
+  const counter = output.find('p.TextField__count');
 
   expect(counter.text()).toBe('3/20');
 
@@ -247,7 +247,7 @@ it('has no a11y issues', async () => {
       labelText="test"
       name="someComponent"
       id="someComponent"
-      extraClassNames="my-extra-class"
+      className="my-extra-class"
     />,
   ).html();
   const results = await axe(output);

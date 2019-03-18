@@ -15,7 +15,7 @@ export type SelectProps = {
   onBlur?: FocusEventHandler;
   testId?: string;
   onFocus?: FocusEventHandler;
-  extraClassNames?: string;
+  className?: string;
   width?: 'auto' | 'small' | 'medium' | 'large' | 'full';
 } & typeof defaultProps;
 
@@ -53,7 +53,7 @@ export class Select extends Component<SelectProps, SelectState> {
       required,
       children,
       width,
-      extraClassNames,
+      className,
       testId,
       onChange,
       onBlur,
@@ -72,7 +72,7 @@ export class Select extends Component<SelectProps, SelectState> {
     const wrapperClassNames = cn(
       styles['Select__wrapper'],
       styles[widthClass],
-      extraClassNames,
+      className,
     );
 
     return (
@@ -103,7 +103,7 @@ export class Select extends Component<SelectProps, SelectState> {
           {children}
         </select>
         <Icon
-          extraClassNames={styles['Select__icon']}
+          className={styles['Select__icon']}
           icon="ArrowDown"
           color="muted"
         />
