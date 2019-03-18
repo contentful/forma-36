@@ -48,6 +48,18 @@ it('renders as a "negative" icon', () => {
   expect(output).toMatchSnapshot();
 });
 
+it('renders as a "warning" icon', () => {
+  const output = shallow(
+    <Icon
+      icon={iconName[Object.keys(iconName)[0]]}
+      size="large"
+      color="warning"
+    />,
+  );
+
+  expect(output).toMatchSnapshot();
+});
+
 it('renders as a "secondary" icon', () => {
   const output = shallow(
     <Icon icon={'ArrowDown'} size="large" color="secondary" />,
