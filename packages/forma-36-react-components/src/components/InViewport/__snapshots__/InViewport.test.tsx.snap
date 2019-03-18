@@ -37,7 +37,7 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <InViewport
-  extraClassNames="my-extra-class"
+  className="my-extra-class"
   offset={0}
   testId="cf-ui-in-viewport"
 >

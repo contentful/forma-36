@@ -31,8 +31,8 @@ exports[`renders the component 1`] = `
   </div>
   <IconButton
     buttonType="white"
+    className="NotificationItem__dismiss"
     disabled={false}
-    extraClassNames="NotificationItem__dismiss"
     iconProps={
       Object {
         "icon": "Close",
@@ -77,8 +77,8 @@ exports[`renders the component with "error" intent 1`] = `
   </div>
   <IconButton
     buttonType="white"
+    className="NotificationItem__dismiss"
     disabled={false}
-    extraClassNames="NotificationItem__dismiss"
     iconProps={
       Object {
         "icon": "Close",
@@ -123,8 +123,8 @@ exports[`renders the component with "warning" intent 1`] = `
   </div>
   <IconButton
     buttonType="white"
+    className="NotificationItem__dismiss"
     disabled={false}
-    extraClassNames="NotificationItem__dismiss"
     iconProps={
       Object {
         "icon": "Close",

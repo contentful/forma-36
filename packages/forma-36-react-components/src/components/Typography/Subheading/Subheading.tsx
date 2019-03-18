@@ -6,7 +6,7 @@ import { TypographyContext } from '../Typography/Typography';
 
 export type SubheadingProps = {
   element: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
-  extraClassNames?: string;
+  className?: string;
   children?: React.ReactNode;
   testId?: string;
   style?: React.CSSProperties;
@@ -21,15 +21,9 @@ export class Subheading extends Component<SubheadingProps> {
   static defaultProps = defaultProps;
 
   render() {
-    const {
-      extraClassNames,
-      children,
-      testId,
-      element,
-      ...otherProps
-    } = this.props;
+    const { className, children, testId, element, ...otherProps } = this.props;
 
-    const classNames = cn(styles['Subheading'], extraClassNames);
+    const classNames = cn(styles['Subheading'], className);
 
     const Element = element;
 

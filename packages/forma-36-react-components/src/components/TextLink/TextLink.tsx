@@ -19,7 +19,7 @@ export type TextLinkProps = {
   disabled?: boolean;
   testId?: string;
   onClick?: MouseEventHandler<HTMLAnchorElement | HTMLButtonElement>;
-  extraClassNames?: string;
+  className?: string;
   icon?: IconType;
   text?: string;
 } & typeof defaultProps;
@@ -38,11 +38,7 @@ export class TextLink extends Component<TextLinkProps> {
 
     return (
       <div className={styles['TextLink__icon-wrapper']}>
-        <Icon
-          icon={icon}
-          color={linkType}
-          extraClassNames={styles.TextLink__icon}
-        />
+        <Icon icon={icon} color={linkType} className={styles.TextLink__icon} />
       </div>
     );
   }
@@ -55,13 +51,13 @@ export class TextLink extends Component<TextLinkProps> {
       testId,
       onClick,
       disabled,
-      extraClassNames,
+      className,
       icon,
       text,
       ...otherProps
     } = this.props;
 
-    const classNames = cn(styles.TextLink, extraClassNames, {
+    const classNames = cn(styles.TextLink, className, {
       [styles[`TextLink--${linkType}`]]: linkType,
       [styles['TextLink--disabled']]: disabled,
     });

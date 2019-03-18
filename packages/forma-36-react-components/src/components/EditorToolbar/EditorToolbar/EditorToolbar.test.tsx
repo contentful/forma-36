@@ -11,9 +11,7 @@ it('renders the component', () => {
 
 it('renders the component with an additional class name', () => {
   const output = shallow(
-    <EditorToolbar extraClassNames="my-extra-class">
-      EditorToolbar
-    </EditorToolbar>,
+    <EditorToolbar className="my-extra-class">EditorToolbar</EditorToolbar>,
   );
 
   expect(output).toMatchSnapshot();

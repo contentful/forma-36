@@ -59,7 +59,7 @@ function DefaultStory() {
           Modal.defaultProps.allowHeightOverflow,
         )}
         testId={text('testId', Modal.defaultProps.testId)}
-        extraClassNames={text('extraClassNames', '')}
+        className={text('className', '')}
         isShown={isShown}
         onClose={() => {
           setShown(false);

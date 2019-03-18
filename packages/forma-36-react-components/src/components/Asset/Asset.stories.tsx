@@ -10,7 +10,7 @@ storiesOf('Components|Asset', module)
   })
   .add('default', () => (
     <Asset
-      extraClassNames={text('extraClassNames', '')}
+      className={text('className', '')}
       src={text('src', 'https://placekitten.com/200/300')}
       title={text('title', 'Image of a cat')}
       type={select('type', types, 'archive')}

@@ -75,7 +75,7 @@ export type ModalProps = {
    */
   isNotWrapped?: boolean;
 
-  extraClassNames?: string;
+  className?: string;
   testId?: string;
 
   // eslint-disable-next-line
@@ -161,7 +161,7 @@ export class Modal extends Component<ModalProps> {
           style={{
             width: ModalSizesMapper[this.props.size] || this.props.size,
           }}
-          className={cn(styles.Modal, this.props.extraClassNames, {
+          className={cn(styles.Modal, this.props.className, {
             [styles['Modal--overflow']]: this.props.allowHeightOverflow,
           })}
         >

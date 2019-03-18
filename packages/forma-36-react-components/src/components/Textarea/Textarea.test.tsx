@@ -11,11 +11,7 @@ it('renders the component', () => {
 
 it('renders the component with an additional class name', () => {
   const output = shallow(
-    <Textarea
-      id="someInput"
-      name="userEmail"
-      extraClassNames="my-extra-class"
-    />,
+    <Textarea id="someInput" name="userEmail" className="my-extra-class" />,
   );
 
   expect(output).toMatchSnapshot();
@@ -26,7 +22,7 @@ it('renders the component with disabled prop', () => {
     <Textarea
       id="someInput"
       name="userEmail"
-      extraClassNames="my-extra-class"
+      className="my-extra-class"
       disabled
     />,
   );
@@ -39,7 +35,7 @@ it('renders the component with value prop', () => {
     <Textarea
       id="someInput"
       name="userEmail"
-      extraClassNames="my-extra-class"
+      className="my-extra-class"
       value="1234"
     />,
   );
@@ -52,7 +48,7 @@ it('renders the component with error prop', () => {
     <Textarea
       id="someInput"
       name="userEmail"
-      extraClassNames="my-extra-class"
+      className="my-extra-class"
       error
     />,
   );
@@ -65,7 +61,7 @@ it('renders the component with an onChange prop', () => {
     <Textarea
       id="someInput"
       name="userEmail"
-      extraClassNames="my-extra-class"
+      className="my-extra-class"
       onChange={() => {}}
     />,
   );
@@ -78,7 +74,7 @@ it('renders the component with an onBlur prop', () => {
     <Textarea
       id="someInput"
       name="userEmail"
-      extraClassNames="my-extra-class"
+      className="my-extra-class"
       onBlur={() => {}}
     />,
   );
@@ -91,7 +87,7 @@ it('renders the component with small width', () => {
     <Textarea
       id="someInput"
       name="userEmail"
-      extraClassNames="my-extra-class"
+      className="my-extra-class"
       width="small"
     />,
   );
@@ -104,7 +100,7 @@ it('renders the component with a max length', () => {
     <Textarea
       id="someInput"
       name="userEmail"
-      extraClassNames="my-extra-class"
+      className="my-extra-class"
       maxLength={10}
     />,
   );
@@ -117,7 +113,7 @@ it('renders the component with rows defined', () => {
     <Textarea
       id="someInput"
       name="userEmail"
-      extraClassNames="my-extra-class"
+      className="my-extra-class"
       rows={2}
     />,
   );
@@ -130,7 +126,7 @@ it('renders the component as required', () => {
     <Textarea
       id="someInput"
       name="userEmail"
-      extraClassNames="my-extra-class"
+      className="my-extra-class"
       required
     />,
   );
@@ -143,7 +139,7 @@ it('renders the component with a test id', () => {
     <Textarea
       id="someInput"
       name="userEmail"
-      extraClassNames="my-extra-class"
+      className="my-extra-class"
       testId="someTestId"
     />,
   );

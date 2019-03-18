@@ -4,7 +4,7 @@ import cn from 'classnames';
 const styles = require('./FieldGroup.css');
 
 export type FieldGroupProps = {
-  extraClassNames?: string;
+  className?: string;
   children: React.ReactNode;
   style?: React.CSSProperties;
   row?: boolean;
@@ -18,9 +18,9 @@ export class FieldGroup extends Component<FieldGroupProps> {
   static defaultProps = defaultProps;
 
   render() {
-    const { extraClassNames, children, row, ...otherProps } = this.props;
+    const { className, children, row, ...otherProps } = this.props;
 
-    const classNames = cn(styles.FieldGroup, styles.extraClassNames, {
+    const classNames = cn(styles.FieldGroup, styles.className, {
       [styles['FieldGroup--row']]: row,
     });
 

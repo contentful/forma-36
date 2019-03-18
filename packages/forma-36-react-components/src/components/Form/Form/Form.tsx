@@ -8,7 +8,7 @@ export type FormProps = {
   spacing?: 'condensed' | 'default';
   testId?: string;
   style?: React.CSSProperties;
-  extraClassNames?: string;
+  className?: string;
   children: React.ReactNode;
 } & typeof defaultProps;
 
@@ -29,7 +29,7 @@ export class Form extends Component<FormProps> {
 
   render() {
     const {
-      extraClassNames,
+      className,
       children,
       testId,
       onSubmit,
@@ -37,7 +37,7 @@ export class Form extends Component<FormProps> {
       ...otherProps
     } = this.props;
 
-    const classNames = cn(styles.Form, extraClassNames);
+    const classNames = cn(styles.Form, className);
 
     const formItemClassNames = cn(
       styles.Form__item,

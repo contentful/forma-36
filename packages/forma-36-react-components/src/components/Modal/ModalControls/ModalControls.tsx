@@ -5,7 +5,7 @@ const styles = require('./ModalControls.css');
 
 export type ModalControlsProps = {
   testId?: string;
-  extraClassNames?: string;
+  className?: string;
   children: React.ReactNode;
 } & typeof defaultProps;
 
@@ -17,11 +17,11 @@ export class ModalControls extends Component<ModalControlsProps> {
   static defaultProps = defaultProps;
 
   render() {
-    const { testId, extraClassNames, children, ...rest } = this.props;
+    const { testId, className, children, ...rest } = this.props;
     return (
       <div
         {...rest}
-        className={cn(styles.ModalControls, extraClassNames)}
+        className={cn(styles.ModalControls, className)}
         data-test-id={testId}
       >
         {children}

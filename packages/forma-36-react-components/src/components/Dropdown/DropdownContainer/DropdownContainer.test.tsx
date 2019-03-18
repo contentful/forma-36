@@ -17,7 +17,7 @@ it('renders the component with an additional class name', () => {
   const output = shallow(
     <DropdownContainer
       anchorDimensionsAndPositon={{ left: 0, top: 0, width: 100, height: 0 }}
-      extraClassNames="extraClassName"
+      className="extraClassName"
     >
       DropdownContainer
     </DropdownContainer>,
@@ -29,7 +29,7 @@ it('renders the component as a submenu', () => {
   const output = shallow(
     <DropdownContainer
       anchorDimensionsAndPositon={{ left: 0, top: 0, width: 100, height: 0 }}
-      extraClassNames="extraClassName"
+      className="extraClassName"
       submenu
     >
       DropdownContainer

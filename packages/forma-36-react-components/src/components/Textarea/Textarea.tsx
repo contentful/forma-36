@@ -7,7 +7,7 @@ export type TextareaProps = {
   id?: string;
   testId?: string;
   placeholder?: string;
-  extraClassNames?: string;
+  className?: string;
   width?: 'small' | 'medium' | 'large' | 'full';
   maxLength?: number;
   required?: boolean;
@@ -47,7 +47,7 @@ export class Textarea extends Component<TextareaProps, TextareaState> {
 
   render() {
     const {
-      extraClassNames,
+      className,
       testId,
       placeholder,
       maxLength,
@@ -65,15 +65,10 @@ export class Textarea extends Component<TextareaProps, TextareaState> {
     } = this.props;
 
     const widthClass = `Textarea--${width}`;
-    const classNames = cn(
-      styles['Textarea'],
-      extraClassNames,
-      styles[widthClass],
-      {
-        [styles['Textarea--disabled']]: disabled,
-        [styles['Textarea--negative']]: error,
-      },
-    );
+    const classNames = cn(styles['Textarea'], className, styles[widthClass], {
+      [styles['Textarea--disabled']]: disabled,
+      [styles['Textarea--negative']]: error,
+    });
 
     return (
       <div className={classNames}>

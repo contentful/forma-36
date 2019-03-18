@@ -15,7 +15,7 @@ export interface ControlledInputPropTypes {
   value?: string;
   disabled?: boolean;
   type?: 'checkbox' | 'radio';
-  extraClassNames?: string;
+  className?: string;
   testId?: string;
 }
 
@@ -33,7 +33,7 @@ export class ControlledInput extends Component<
 
   render() {
     const {
-      extraClassNames,
+      className,
       id,
       testId,
       required,
@@ -49,7 +49,7 @@ export class ControlledInput extends Component<
       ...otherProps
     } = this.props;
 
-    const classNames = cn(styles['ControlledInput'], extraClassNames, {
+    const classNames = cn(styles['ControlledInput'], className, {
       [styles['ControlledInput--disabled']]: disabled,
     });
 

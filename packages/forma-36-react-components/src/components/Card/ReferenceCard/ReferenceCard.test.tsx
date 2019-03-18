@@ -65,7 +65,7 @@ it('renders the component with an additional class name', () => {
       description="This is my reference card"
       status="published"
       contentType="My Content Type"
-      extraClassNames="my-extra-class"
+      className="my-extra-class"
     />,
   );
 

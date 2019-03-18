@@ -4,15 +4,15 @@ import cn from 'classnames';
 const styles = require('./TabFocusTrap.css');
 
 export interface TabFocusTrapProps {
-  extraClassNames?: string;
+  className?: string;
   children: React.ReactNode;
 }
 
 export class TabFocusTrap extends Component<TabFocusTrapProps> {
   render() {
-    const { extraClassNames, children, ...otherProps } = this.props;
+    const { className, children, ...otherProps } = this.props;
 
-    const classNames = cn(styles.TabFocusTrap, extraClassNames);
+    const classNames = cn(styles.TabFocusTrap, className);
 
     return (
       <span tabIndex={-1} className={classNames} {...otherProps}>

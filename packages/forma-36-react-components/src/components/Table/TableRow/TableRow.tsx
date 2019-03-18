@@ -4,16 +4,16 @@ import cn from 'classnames';
 import styles from './TableRow.css';
 
 export interface TableRowProps {
-  extraClassNames?: string;
+  className?: string;
   children: React.ReactNode;
 }
 
 export class TableRow extends Component<TableRowProps> {
   render() {
-    const { extraClassNames, children, ...otherProps } = this.props;
+    const { className, children, ...otherProps } = this.props;
 
     return (
-      <tr className={cn(styles['TableRow'], extraClassNames)} {...otherProps}>
+      <tr className={cn(styles['TableRow'], className)} {...otherProps}>
         {children}
       </tr>
     );

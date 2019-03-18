@@ -141,7 +141,7 @@ it('renders the component with an additional class name', () => {
     <IconButton
       iconProps={{ icon: 'ArrowDown' }}
       label="My Icon"
-      extraClassNames="my-extra-class"
+      className="my-extra-class"
     >
       IconButton
     </IconButton>,

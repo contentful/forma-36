@@ -2,7 +2,7 @@
 
 exports[`renders the component 1`] = `
 <Card
-  extraClassNames="AssetCard"
+  className="AssetCard"
   padding="default"
   selected={false}
   testId="cf-ui-asset-card"
@@ -18,7 +18,7 @@ exports[`renders the component 1`] = `
       className="AssetCard__content"
     >
       <Asset
-        extraClassNames="AssetCard__asset"
+        className="AssetCard__asset"
         src="http://placekitten.com/200/300"
         title="picture of a cat"
         type="image"
@@ -30,7 +30,7 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component in loading state 1`] = `
 <Card
-  extraClassNames="AssetCard"
+  className="AssetCard"
   padding="default"
   selected={false}
   testId="cf-ui-asset-card"
@@ -42,7 +42,7 @@ exports[`renders the component in loading state 1`] = `
 
 exports[`renders the component with actions 1`] = `
 <Card
-  extraClassNames="AssetCard"
+  className="AssetCard"
   padding="default"
   selected={false}
   testId="cf-ui-asset-card"
@@ -104,7 +104,7 @@ exports[`renders the component with actions 1`] = `
       className="AssetCard__content"
     >
       <Asset
-        extraClassNames="AssetCard__asset"
+        className="AssetCard__asset"
         src="http://placekitten.com/200/300"
         title="picture of a cat"
         type="image"
@@ -116,7 +116,7 @@ exports[`renders the component with actions 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <Card
-  extraClassNames="AssetCard my-extra-class"
+  className="AssetCard my-extra-class"
   padding="default"
   selected={false}
   testId="cf-ui-asset-card"
@@ -132,7 +132,7 @@ exports[`renders the component with an additional class name 1`] = `
       className="AssetCard__content"
     >
       <Asset
-        extraClassNames="AssetCard__asset"
+        className="AssetCard__asset"
         src="http://placekitten.com/200/300"
         title="picture of a cat"
         type="image"
@@ -144,7 +144,7 @@ exports[`renders the component with an additional class name 1`] = `
 
 exports[`renders the component with status 1`] = `
 <Card
-  extraClassNames="AssetCard"
+  className="AssetCard"
   padding="default"
   selected={false}
   testId="cf-ui-asset-card"
@@ -172,7 +172,7 @@ exports[`renders the component with status 1`] = `
       className="AssetCard__content"
     >
       <Asset
-        extraClassNames="AssetCard__asset"
+        className="AssetCard__asset"
         src="http://placekitten.com/200/300"
         title="picture of a cat"
         type="image"
@@ -184,7 +184,7 @@ exports[`renders the component with status 1`] = `
 
 exports[`renders the component without actions 1`] = `
 <Card
-  extraClassNames="AssetCard"
+  className="AssetCard"
   padding="default"
   selected={false}
   testId="cf-ui-asset-card"
@@ -200,7 +200,7 @@ exports[`renders the component without actions 1`] = `
       className="AssetCard__content"
     >
       <Asset
-        extraClassNames="AssetCard__asset"
+        className="AssetCard__asset"
         src="http://placekitten.com/200/300"
         title="picture of a cat"
         type="image"

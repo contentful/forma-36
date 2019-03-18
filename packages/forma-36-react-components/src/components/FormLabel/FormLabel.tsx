@@ -7,7 +7,7 @@ export type FormLabelProps = {
   htmlFor: string;
   children: React.ReactNode;
   testId?: string;
-  extraClassNames?: string;
+  className?: string;
   requiredText?: string;
   required?: boolean;
 } & typeof defaultProps;
@@ -23,7 +23,7 @@ export class FormLabel extends Component<FormLabelProps> {
 
   render() {
     const {
-      extraClassNames,
+      className,
       children,
       testId,
       htmlFor,
@@ -32,7 +32,7 @@ export class FormLabel extends Component<FormLabelProps> {
       ...otherProps
     } = this.props;
 
-    const classNames = cn(styles.FormLabel, extraClassNames);
+    const classNames = cn(styles.FormLabel, className);
 
     return (
       <label

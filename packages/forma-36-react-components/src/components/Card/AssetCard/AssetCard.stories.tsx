@@ -14,7 +14,7 @@ storiesOf('Components|Card/AssetCard', module)
   })
   .add('default', () => (
     <AssetCard
-      extraClassNames={text('extraClassNames', '')}
+      className={text('className', '')}
       status={select(
         'Status',
         {
@@ -33,7 +33,7 @@ storiesOf('Components|Card/AssetCard', module)
   ))
   .add('with dropdownListElements', () => (
     <AssetCard
-      extraClassNames={text('extraClassNames', '')}
+      className={text('className', '')}
       status={select(
         'status',
         {

@@ -11,7 +11,7 @@ it('renders the component', () => {
 
 it('renders the component with an additional class name', () => {
   const output = shallow(
-    <RadioButton labelText="radio-button" extraClassNames="my-extra-class" />,
+    <RadioButton labelText="radio-button" className="my-extra-class" />,
   );
 
   expect(output).toMatchSnapshot();

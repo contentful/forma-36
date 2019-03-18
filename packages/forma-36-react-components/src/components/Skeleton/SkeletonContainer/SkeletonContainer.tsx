@@ -18,7 +18,7 @@ export type SkeletonContainerProps = {
   svgHeight?: string | number;
 
   ariaLabel?: string;
-  extraClassNames?: string;
+  className?: string;
   testId?: string;
   children: React.ReactNode;
 } & typeof defaultProps;
@@ -46,7 +46,7 @@ export class SkeletonContainer extends Component<SkeletonContainerProps> {
 
   render() {
     const {
-      extraClassNames,
+      className,
       children,
       testId,
       ariaLabel,
@@ -66,7 +66,7 @@ export class SkeletonContainer extends Component<SkeletonContainerProps> {
       ...otherProps
     } = this.props;
 
-    const classNames = cn(styles['SkeletonContainer'], extraClassNames);
+    const classNames = cn(styles['SkeletonContainer'], className);
 
     return (
       <svg

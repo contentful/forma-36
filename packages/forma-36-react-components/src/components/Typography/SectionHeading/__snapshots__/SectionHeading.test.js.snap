@@ -30,8 +30,8 @@ exports[`renders the component h3 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <SectionHeading
+  className="my-extra-class"
   element="h3"
-  extraClassNames="my-extra-class"
   testId="cf-ui-section-heading"
 >
   <h3

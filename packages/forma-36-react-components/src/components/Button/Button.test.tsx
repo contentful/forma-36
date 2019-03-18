@@ -11,7 +11,7 @@ it('renders the component', () => {
 
 it('renders the component with an additional class name', () => {
   const output = shallow(
-    <Button extraClassNames="my-extra-class">Embed entry</Button>,
+    <Button className="my-extra-class">Embed entry</Button>,
   );
 
   expect(output).toMatchSnapshot();

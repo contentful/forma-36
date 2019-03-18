@@ -13,7 +13,7 @@ storiesOf('Components|TextInput', module)
   .add('default', () => (
     <TextInput
       error={boolean('error', false)}
-      extraClassNames={text('extraClassNames', '')}
+      className={text('className', '')}
       disabled={boolean('disabled', false)}
       withCopyButton={boolean('withCopyButton', false)}
       value={text('valiue', '123456')}
@@ -42,7 +42,7 @@ storiesOf('Components|TextInput', module)
       <React.Fragment>
         <TextInput
           error={boolean('error', false)}
-          extraClassNames={text('extraClassNames', '')}
+          className={text('className', '')}
           disabled={boolean('disabled', false)}
           withCopyButton={boolean('withCopyButton', false)}
           value={text('value', '123456')}

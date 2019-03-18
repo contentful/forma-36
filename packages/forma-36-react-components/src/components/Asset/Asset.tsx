@@ -24,7 +24,7 @@ export type AssetProps = {
   src: string;
   title: string;
   type?: AssetType;
-  extraClassNames?: string;
+  className?: string;
 } & typeof defaultProps;
 
 const defaultProps = {
@@ -62,9 +62,9 @@ export class Asset extends Component<AssetProps> {
   };
 
   render() {
-    const { extraClassNames, src, title, type, ...otherProps } = this.props;
+    const { className, src, title, type, ...otherProps } = this.props;
 
-    const classNames = cn(styles.Asset, extraClassNames);
+    const classNames = cn(styles.Asset, className);
 
     return (
       <div className={classNames} {...otherProps}>

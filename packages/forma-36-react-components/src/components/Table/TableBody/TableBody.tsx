@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 
 export interface TableBodyProps {
-  extraClassNames?: string;
+  className?: string;
   children: React.ReactNode;
 }
 
 export class TableBody extends Component<TableBodyProps> {
   render() {
-    const { extraClassNames, children } = this.props;
+    const { className, children } = this.props;
 
-    return <tbody className={extraClassNames}>{children}</tbody>;
+    return <tbody className={className}>{children}</tbody>;
   }
 }
 

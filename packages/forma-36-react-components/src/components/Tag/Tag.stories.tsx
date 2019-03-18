@@ -22,7 +22,7 @@ storiesOf('Components|Tag', module)
         },
         'primary',
       )}
-      extraClassNames={text('extraClassNames', '')}
+      className={text('className', '')}
     >
       {text('Children', 'Published')}
     </Tag>

@@ -15,7 +15,7 @@ it('renders the component', () => {
 
 it('renders the component with additional className', () => {
   const output = shallow(
-    <TableHead extraClassNames="extra-class-name">
+    <TableHead className="extra-class-name">
       <TableCell>test</TableCell>
     </TableHead>,
   );

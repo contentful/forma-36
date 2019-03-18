@@ -10,7 +10,7 @@ export type InViewportProps = {
   onOverflowRight?: Function;
   onOverflowBottom?: Function;
   onOverflowLeft?: Function;
-  extraClassNames?: string;
+  className?: string;
   children?: React.ReactNode;
   testId?: string;
 } & typeof defaultProps;
@@ -92,7 +92,7 @@ export class InViewport extends Component<InViewportProps> {
 
   render() {
     const {
-      extraClassNames,
+      className,
       children,
       testId,
       onOverflowBottom,
@@ -102,7 +102,7 @@ export class InViewport extends Component<InViewportProps> {
       ...otherProps
     } = this.props;
 
-    const classNames = cn(styles['InViewport'], extraClassNames);
+    const classNames = cn(styles['InViewport'], className);
 
     return (
       <div

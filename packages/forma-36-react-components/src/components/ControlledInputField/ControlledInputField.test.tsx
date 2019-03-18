@@ -14,7 +14,7 @@ it('renders the component', () => {
 it('renders the component with an additional class name', () => {
   const output = shallow(
     <ControlledInputField
-      extraClassNames="my-extra-class"
+      className="my-extra-class"
       id="checkbox"
       labelText="Label Text"
     />,
@@ -26,7 +26,7 @@ it('renders the component with an additional class name', () => {
 it('renders the component as required', () => {
   const output = shallow(
     <ControlledInputField
-      extraClassNames="my-extra-class"
+      className="my-extra-class"
       id="checkbox"
       labelText="Label Text"
       required
@@ -39,7 +39,7 @@ it('renders the component as required', () => {
 it('renders the component with a help text', () => {
   const output = shallow(
     <ControlledInputField
-      extraClassNames="my-extra-class"
+      className="my-extra-class"
       id="checkbox"
       labelText="Label Text"
       helpText="Help Text"
@@ -52,7 +52,7 @@ it('renders the component with a help text', () => {
 it('renders the component with a validation message', () => {
   const output = shallow(
     <ControlledInputField
-      extraClassNames="my-extra-class"
+      className="my-extra-class"
       id="checkbox"
       labelText="Label Text"
       validationMessage="Not valid!"
@@ -65,7 +65,7 @@ it('renders the component with a validation message', () => {
 it('renders the component in a disabled state', () => {
   const output = shallow(
     <ControlledInputField
-      extraClassNames="my-extra-class"
+      className="my-extra-class"
       id="checkbox"
       labelText="Label Text"
       disabled
@@ -78,7 +78,7 @@ it('renders the component in a disabled state', () => {
 it('renders the component with a light label variation', () => {
   const output = shallow(
     <ControlledInputField
-      extraClassNames="my-extra-class"
+      className="my-extra-class"
       id="checkbox"
       labelText="Label Text"
       validationMessage="Not valid!"
@@ -92,7 +92,7 @@ it('renders the component with a light label variation', () => {
 it('renders the component as checked', () => {
   const output = shallow(
     <ControlledInputField
-      extraClassNames="my-extra-class"
+      className="my-extra-class"
       id="checkbox"
       labelText="Label Text"
       checked
@@ -105,7 +105,7 @@ it('renders the component as checked', () => {
 it('renders the component with a value', () => {
   const output = shallow(
     <ControlledInputField
-      extraClassNames="my-extra-class"
+      className="my-extra-class"
       id="checkbox"
       labelText="Label Text"
       value="someValue"

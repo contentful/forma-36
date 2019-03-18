@@ -35,7 +35,7 @@ it('renders all typography components with the expected spacing classes', () => 
 
 it('renders the component with an additional class name', () => {
   const output = shallow(
-    <Typography extraClassNames="my-extra-class">
+    <Typography className="my-extra-class">
       <Heading>My Heading</Heading>
       <Paragraph>My Paragraph</Paragraph>
     </Typography>,

@@ -3,7 +3,7 @@ import cn from 'classnames';
 import styles from './List.css';
 
 export type ListProps = {
-  extraClassNames?: string;
+  className?: string;
   children: React.ReactNode;
   style?: React.CSSProperties;
   testId?: string;
@@ -17,9 +17,9 @@ export class List extends Component<ListProps> {
   static defaultProps = defaultProps;
 
   render() {
-    const { extraClassNames, children, testId, ...otherProps } = this.props;
+    const { className, children, testId, ...otherProps } = this.props;
 
-    const classNames = cn(styles['List'], extraClassNames);
+    const classNames = cn(styles['List'], className);
 
     return (
       <ul {...otherProps} className={classNames} data-test-id={testId}>

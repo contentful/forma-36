@@ -8,7 +8,7 @@ export type ModalHeaderProps = {
   title: string;
   onClose?: Function;
   testId?: string;
-  extraClassNames?: string;
+  className?: string;
   isNotWrapped?: boolean;
   style?: React.CSSProperties;
 } & typeof defaultProps;
@@ -26,7 +26,7 @@ export class ModalHeader extends Component<ModalHeaderProps> {
       title,
       testId,
       isNotWrapped,
-      extraClassNames,
+      className,
       ...rest
     } = this.props;
 
@@ -37,7 +37,7 @@ export class ModalHeader extends Component<ModalHeaderProps> {
     return (
       <div
         {...rest}
-        className={cn(styles.ModalHeader, extraClassNames)}
+        className={cn(styles.ModalHeader, className)}
         data-test-id={testId}
       >
         <h1 className={titleClassNames}>{title}</h1>

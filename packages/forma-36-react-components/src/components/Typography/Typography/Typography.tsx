@@ -4,7 +4,7 @@ import cn from 'classnames';
 const styles = require('./Typography.css');
 
 export type TypographyProps = {
-  extraClassNames?: string;
+  className?: string;
   children?: React.ReactNode;
   style?: React.CSSProperties;
   testId?: string;
@@ -29,8 +29,8 @@ export class Typography extends Component<TypographyProps> {
   static defaultProps = defaultProps;
 
   render() {
-    const { extraClassNames, children, testId, ...otherProps } = this.props;
-    const classNames = cn(styles.Typography, extraClassNames);
+    const { className, children, testId, ...otherProps } = this.props;
+    const classNames = cn(styles.Typography, className);
 
     return (
       <TypographyContext.Provider value={defaultConfiguration}>

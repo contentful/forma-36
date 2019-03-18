@@ -4,7 +4,7 @@ import cn from 'classnames';
 const styles = require('./HelpText.css');
 
 export type HelpTextProps = {
-  extraClassNames?: string;
+  className?: string;
   testId?: string;
   style?: React.CSSProperties;
   children: React.ReactNode;
@@ -18,9 +18,9 @@ export class HelpText extends Component<HelpTextProps> {
   static defaultProps = defaultProps;
 
   render() {
-    const { extraClassNames, children, testId, ...otherProps } = this.props;
+    const { className, children, testId, ...otherProps } = this.props;
 
-    const classNames = cn(styles.HelpText, extraClassNames);
+    const classNames = cn(styles.HelpText, className);
 
     return (
       <p {...otherProps} className={classNames} data-test-id={testId}>

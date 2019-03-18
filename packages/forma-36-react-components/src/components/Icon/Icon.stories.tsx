@@ -33,7 +33,7 @@ storiesOf('Components|Icon', module)
         },
         'primary',
       )}
-      extraClassNames={text('extraClassNames', '')}
+      className={text('className', '')}
     />
   ))
   .add('Icon (all icons)', () => (

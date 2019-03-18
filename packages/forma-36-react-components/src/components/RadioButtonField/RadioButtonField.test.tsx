@@ -19,7 +19,7 @@ it('renders the component with an additional class name', () => {
   const output = shallow(
     <RadioButtonField
       id="radio-button"
-      extraClassNames="my-extra-class"
+      className="my-extra-class"
       labelText="radio button field"
     />,
   );

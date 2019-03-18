@@ -8,7 +8,7 @@ import styles from './CopyButton.css';
 
 export type CopyButtonProps = {
   copyValue?: string;
-  extraClassNames?: string;
+  className?: string;
   testId?: string;
   onCopy?: (value: string) => void;
 } & typeof defaultProps;
@@ -45,15 +45,9 @@ export class CopyButton extends Component<CopyButtonProps, CopyButtonState> {
   };
 
   render() {
-    const {
-      copyValue,
-      extraClassNames,
-      testId,
-      onCopy,
-      ...otherProps
-    } = this.props;
+    const { copyValue, className, testId, onCopy, ...otherProps } = this.props;
 
-    const classNames = cn(styles['CopyButton'], extraClassNames);
+    const classNames = cn(styles['CopyButton'], className);
 
     return (
       <div
@@ -84,9 +78,7 @@ export class CopyButton extends Component<CopyButtonProps, CopyButtonState> {
               }}
               className={styles['CopyButton__button']}
             >
-              <TabFocusTrap
-                extraClassNames={styles['CopyButton__TabFocusTrap']}
-              >
+              <TabFocusTrap className={styles['CopyButton__TabFocusTrap']}>
                 <span className={styles['CopyButton__text']}>
                   Copy {copyValue} to clipboard
                 </span>
