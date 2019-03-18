@@ -66,6 +66,17 @@ exports[`renders as a "secondary" icon 1`] = `
 />
 `;
 
+exports[`renders as a "warning" icon 1`] = `
+<ArrowDown
+  className="Icon Icon--large Icon--warning"
+  data-test-id="cf-ui-icon"
+  height="24"
+  viewBox="0 0 24 24"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+/>
+`;
+
 exports[`renders as a "white" icon 1`] = `
 <ArrowDown
   className="Icon Icon--large Icon--white"

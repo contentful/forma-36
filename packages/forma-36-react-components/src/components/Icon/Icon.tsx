@@ -237,6 +237,7 @@ export type IconColorType =
   | 'primary'
   | 'positive'
   | 'negative'
+  | 'warning'
   | 'secondary'
   | 'muted'
   | 'white';
