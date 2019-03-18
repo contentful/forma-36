@@ -15,6 +15,7 @@ import styles from './SelectField.css';
 export type SelectFieldProps = {
   name: string;
   id: string;
+  labelText: string;
   children: React.ReactNode;
   value?: string;
   validationMessage?: string;
@@ -23,7 +24,6 @@ export type SelectFieldProps = {
   formLabelProps?: Partial<FormLabelProps>;
   textLinkProps?: Partial<TextLinkProps>;
   selectProps?: Partial<SelectProps>;
-  labelText?: string;
   helpText?: string;
   required?: boolean;
   onChange?: ChangeEventHandler;
