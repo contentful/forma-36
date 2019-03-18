@@ -16,7 +16,7 @@ function DefaultStory() {
         <Tab
           id="first"
           selected={selected === 'first'}
-          onSelect={id => {
+          onSelect={(id: string) => {
             action('onSelect')(id);
             setSelected(id);
           }}
@@ -26,7 +26,7 @@ function DefaultStory() {
         <Tab
           id="second"
           selected={selected === 'second'}
-          onSelect={id => {
+          onSelect={(id: string) => {
             action('onSelect')(id);
             setSelected(id);
           }}
@@ -36,7 +36,7 @@ function DefaultStory() {
         <Tab
           id="third"
           selected={selected === 'third'}
-          onSelect={id => {
+          onSelect={(id: string) => {
             action('onSelect')(id);
             setSelected(id);
           }}
@@ -65,7 +65,7 @@ function AsNavigationStory() {
         id="first"
         href="https://contentful.com"
         selected={selected === 'first'}
-        onSelect={id => {
+        onSelect={(id: string) => {
           action('onSelect')(id);
           setSelected(id);
         }}
@@ -76,7 +76,7 @@ function AsNavigationStory() {
         id="second"
         href="https://contentful.com"
         selected={selected === 'second'}
-        onSelect={id => {
+        onSelect={(id: string) => {
           action('onSelect')(id);
           setSelected(id);
         }}
@@ -87,7 +87,7 @@ function AsNavigationStory() {
         id="third"
         href="https://contentful.com"
         selected={selected === 'third'}
-        onSelect={id => {
+        onSelect={(id: string) => {
           action('onSelect')(id);
           setSelected(id);
         }}

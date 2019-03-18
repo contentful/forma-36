@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import cn from 'classnames';
 import styles from './SkeletonContainer.css';
 
-export interface SkeletonContainerProps {
+export type SkeletonContainerProps = {
   width?: number | string;
   height?: number | string;
   preserveAspectRatio?: string;
@@ -21,26 +21,28 @@ export interface SkeletonContainerProps {
   extraClassNames?: string;
   testId?: string;
   children: React.ReactNode;
-}
+} & typeof defaultProps;
+
+const defaultProps = {
+  testId: 'cf-ui-skeleton-form',
+  ariaLabel: 'Loading component...',
+  width: '100%',
+  height: '100%',
+  preserveAspectRatio: 'xMidYMid meet',
+  clipId: 'cf-ui-skeleton-clip-id',
+  gradientId: 'cf-ui-skeleton-clip-gradient',
+  backgroundColor: '#e5ebed',
+  backgroundOpacity: 1,
+  animate: true,
+  speed: 2,
+  foregroundColor: '#f7f9fa',
+  foregroundOpacity: 1,
+  svgWidth: '100%' as string | number,
+  svgHeight: '100%' as string | number,
+};
 
 export class SkeletonContainer extends Component<SkeletonContainerProps> {
-  static defaultProps = {
-    testId: 'cf-ui-skeleton-form',
-    ariaLabel: 'Loading component...',
-    width: '100%',
-    height: '100%',
-    preserveAspectRatio: 'xMidYMid meet',
-    clipId: 'cf-ui-skeleton-clip-id',
-    gradientId: 'cf-ui-skeleton-clip-gradient',
-    backgroundColor: '#e5ebed',
-    backgroundOpacity: 1,
-    animate: true,
-    speed: 2,
-    foregroundColor: '#f7f9fa',
-    foregroundOpacity: 1,
-    svgWidth: '100%',
-    svgHeight: '100%',
-  };
+  static defaultProps = defaultProps;
 
   render() {
     const {

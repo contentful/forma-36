@@ -3,20 +3,19 @@ import cn from 'classnames';
 
 const styles = require('./HelpText.css');
 
-export interface HelpTextProps
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLParagraphElement>,
-    HTMLParagraphElement
-  > {
+export type HelpTextProps = {
   extraClassNames?: string;
   testId?: string;
+  style?: React.CSSProperties;
   children: React.ReactNode;
-}
+} & typeof defaultProps;
+
+const defaultProps = {
+  testId: 'cf-ui-help-text',
+};
 
 export class HelpText extends Component<HelpTextProps> {
-  static defaultProps = {
-    testId: 'cf-ui-help-text',
-  };
+  static defaultProps = defaultProps;
 
   render() {
     const { extraClassNames, children, testId, ...otherProps } = this.props;
@@ -24,7 +23,7 @@ export class HelpText extends Component<HelpTextProps> {
     const classNames = cn(styles.HelpText, extraClassNames);
 
     return (
-      <p className={classNames} data-test-id={testId} {...otherProps}>
+      <p {...otherProps} className={classNames} data-test-id={testId}>
         {children}
       </p>
     );

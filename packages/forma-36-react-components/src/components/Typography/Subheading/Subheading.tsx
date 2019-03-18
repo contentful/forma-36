@@ -4,19 +4,21 @@ import styles from './Subheading.css';
 
 import { TypographyContext } from '../Typography/Typography';
 
-export interface SubheadingProps {
+export type SubheadingProps = {
+  element: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
   extraClassNames?: string;
   children?: React.ReactNode;
   testId?: string;
-  element: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
   style?: React.CSSProperties;
-}
+} & typeof defaultProps;
+
+const defaultProps = {
+  element: 'h2',
+  testId: 'cf-ui-subheading',
+};
 
 export class Subheading extends Component<SubheadingProps> {
-  static defaultProps = {
-    element: 'h2',
-    testId: 'cf-ui-subheading',
-  };
+  static defaultProps = defaultProps;
 
   render() {
     const {

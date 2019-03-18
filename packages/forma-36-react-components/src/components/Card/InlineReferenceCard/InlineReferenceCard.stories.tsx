@@ -22,11 +22,11 @@ storiesOf('Components|Card/InlineReferenceCard', module)
       et pretium. Praesent libero lorem, gravida eu pulvinar id, eleifend a
       sapien. &nbsp;
       <InlineReferenceCard
-        extraClassNames={text('Extra Class Names', '')}
-        isLoading={boolean('is Loading', false)}
-        isSelected={boolean('is selected', false)}
+        extraClassNames={text('extraClassNames', '')}
+        isLoading={boolean('isLoading', false)}
+        isSelected={boolean('isSelected', false)}
         status={select(
-          'Type',
+          'status',
           {
             published: 'published',
             draft: 'draft',
@@ -44,7 +44,7 @@ storiesOf('Components|Card/InlineReferenceCard', module)
           </DropdownListItem>,
         ]}
       >
-        {text('Title', 'Title of inline reference')}
+        {text('children', 'Title of inline reference')}
       </InlineReferenceCard>
       &nbsp; Nulla a ultrices nulla, vel blandit sapien. Etiam eget massa dui.
       Fusce id nisl quam. Integer nec mi arcu. Nullam lacinia est lectus, a
@@ -52,11 +52,11 @@ storiesOf('Components|Card/InlineReferenceCard', module)
       ex. In pellentesque a orci et pretium. Praesent libero lorem, gravida eu
       pulvinar id, eleifend a sapien. &nbsp;
       <InlineReferenceCard
-        extraClassNames={text('Extra Class Names', '')}
-        isLoading={boolean('is Loading', false)}
-        isSelected={boolean('is selected', false)}
+        extraClassNames={text('extraClassNames', '')}
+        isLoading={boolean('isLoading', false)}
+        isSelected={boolean('isSelected', false)}
         status={select(
-          'Type',
+          'status',
           {
             published: 'published',
             draft: 'draft',
@@ -74,7 +74,7 @@ storiesOf('Components|Card/InlineReferenceCard', module)
           </DropdownListItem>,
         ]}
       >
-        {text('Title', 'Title of inline reference')}
+        {text('children', 'Title of inline reference')}
       </InlineReferenceCard>
       &nbsp; Nulla a ultrices nulla, vel blandit sapien. Etiam eget massa dui.
       Fusce id nisl quam. Integer nec mi arcu. Nullam lacinia est lectus, a

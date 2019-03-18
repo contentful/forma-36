@@ -10,13 +10,13 @@ import InlineReferenceCardSkeleton from './InlineReferenceCardSkeleton';
 const styles = require('./InlineReferenceCard.css');
 
 export interface InlineReferenceCardPropTypes {
-  extraClassNames?: string;
-  children: React.ReactNode;
   isSelected?: boolean;
   dropdownListItemNodes?: React.ReactNode;
   isLoading?: boolean;
-  testId?: string;
   status?: 'archived' | 'changed' | 'draft' | 'published';
+  extraClassNames?: string;
+  testId?: string;
+  children: React.ReactNode;
 }
 
 export interface InlineReferenceCardState {

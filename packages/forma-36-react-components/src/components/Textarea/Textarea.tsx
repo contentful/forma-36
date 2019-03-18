@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, FocusEventHandler, ChangeEventHandler } from 'react';
 import cn from 'classnames';
 import styles from './Textarea.css';
 
-export interface TextareaProps {
+export type TextareaProps = {
   name?: string;
   id?: string;
   testId?: string;
@@ -11,27 +11,33 @@ export interface TextareaProps {
   width?: 'small' | 'medium' | 'large' | 'full';
   maxLength?: number;
   required?: boolean;
-  onChange?: (...args: any[]) => any;
+  onChange?: ChangeEventHandler;
   disabled?: boolean;
   value?: string;
   rows?: number;
-  onBlur?: (...args: any[]) => any;
+  onBlur?: FocusEventHandler;
   error?: boolean;
+} & typeof defaultProps;
+
+export interface TextareaState {
+  value?: string;
 }
 
-export class Textarea extends Component<TextareaProps> {
-  static defaultProps = {
-    testId: 'cf-ui-textarea',
-    disabled: false,
-    required: false,
-    width: 'full',
-  };
+const defaultProps = {
+  testId: 'cf-ui-textarea',
+  disabled: false,
+  required: false,
+  width: 'full',
+};
+
+export class Textarea extends Component<TextareaProps, TextareaState> {
+  static defaultProps = defaultProps;
 
   state = {
     value: this.props.value,
   };
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps: TextareaProps) {
     if (this.props.value !== nextProps.value) {
       this.setState({
         value: nextProps.value,

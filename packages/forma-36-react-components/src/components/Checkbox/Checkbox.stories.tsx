@@ -11,13 +11,13 @@ storiesOf('Components|Checkbox', module)
   })
   .add('default', () => (
     <Checkbox
-      extraClassNames={text('Extra Class Names', '')}
+      extraClassNames={text('extraClassNames', '')}
       id="Checkbox"
-      checked={boolean('Checked', false)}
-      labelText={(text('Aria label text'), 'some label text')}
-      disabled={boolean('Disabled', false)}
-      required={boolean('Required', false)}
-      name={text('Name', 'some-name')}
+      checked={boolean('checked', false)}
+      labelText={(text('labelText'), 'some label text')}
+      disabled={boolean('disabled', false)}
+      required={boolean('required', false)}
+      name={text('name', 'some-name')}
       onChange={action('onChange')}
     />
   ));

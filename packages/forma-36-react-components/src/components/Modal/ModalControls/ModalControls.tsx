@@ -3,20 +3,18 @@ import cn from 'classnames';
 
 const styles = require('./ModalControls.css');
 
-interface ModalControlsProps
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
-  > {
+export type ModalControlsProps = {
   testId?: string;
   extraClassNames?: string;
   children: React.ReactNode;
-}
+} & typeof defaultProps;
+
+const defaultProps = {
+  testId: 'cf-ui-modal-controls',
+};
 
 export class ModalControls extends Component<ModalControlsProps> {
-  static defaultProps = {
-    testId: 'cf-ui-modal-controls',
-  };
+  static defaultProps = defaultProps;
 
   render() {
     const { testId, extraClassNames, children, ...rest } = this.props;

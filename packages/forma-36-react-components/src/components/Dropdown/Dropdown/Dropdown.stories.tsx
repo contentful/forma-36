@@ -18,7 +18,7 @@ function DefaultStory() {
       onClose={() => setOpen(false)}
       key={Date.now()} // Force Reinit
       position={select(
-        'Menu Position',
+        'position',
         {
           'bottom-left': 'bottom-left',
           'bottom-right': 'bottom-right',
@@ -37,7 +37,7 @@ function DefaultStory() {
           toggle
         </Button>
       }
-      extraClassNames={text('Extra Class Names', '')}
+      extraClassNames={text('extraClassNames', '')}
     >
       <DropdownList>
         <DropdownListItem isTitle>Entry Title</DropdownListItem>
@@ -46,7 +46,7 @@ function DefaultStory() {
         </DropdownListItem>
         <Dropdown
           position={select(
-            'Submenu Position',
+            'Submenu position',
             {
               left: 'left',
               right: 'right',
@@ -54,7 +54,7 @@ function DefaultStory() {
             'right',
           )}
           submenuToggleLabel="Create and embed existing entry"
-          extraClassNames={text('Extra Class Names', '')}
+          extraClassNames={text('extraClassNames', '')}
         >
           <DropdownList>
             <DropdownListItem onClick={action('submenu click')}>
@@ -82,7 +82,7 @@ function ScrollableStory() {
       isOpen={isOpen}
       onClose={() => setOpen(false)}
       position={select(
-        'Menu Position',
+        'position',
         {
           'bottom-left': 'bottom-left',
           'bottom-right': 'bottom-right',
@@ -101,7 +101,7 @@ function ScrollableStory() {
           toggle
         </Button>
       }
-      extraClassNames={text('Extra Class Names', '')}
+      extraClassNames={text('extraClassNames', '')}
     >
       <DropdownList maxHeight={200}>
         {[...new Array(25)].map((entry, index) => (

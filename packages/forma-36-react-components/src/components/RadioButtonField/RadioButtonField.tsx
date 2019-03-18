@@ -3,13 +3,18 @@ import ControlledInputField, {
   ControlledInputFieldPropTypes,
 } from '../ControlledInputField/ControlledInputField';
 
-export class RadioButtonField extends Component<ControlledInputFieldPropTypes> {
-  static defaultProps = {
-    labelIsLight: false,
-    checked: false,
-    inputType: 'checkbox',
-    testId: 'cf-ui-radio-button-field',
-  };
+export type RadioButtonFieldProps = ControlledInputFieldPropTypes &
+  typeof defaultProps;
+
+const defaultProps = {
+  labelIsLight: false,
+  checked: false,
+  inputType: 'checkbox',
+  testId: 'cf-ui-radio-button-field',
+};
+
+export class RadioButtonField extends Component<RadioButtonFieldProps> {
+  static defaultProps = defaultProps;
 
   render() {
     const { testId, ...otherProps } = this.props;

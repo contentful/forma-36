@@ -7,14 +7,21 @@ export interface NotificationItemContainerProps extends NotificationItemProps {
   isShown?: boolean;
 }
 
-export class NotificationItemContainer extends Component<
-  NotificationItemContainerProps
-> {
-  static defaultProps = {
-    isShown: false,
-  };
+export interface NotificationItemContainerState {
+  isShown: boolean;
+}
 
-  timer = null;
+const defaultProps = {
+  isShown: false,
+};
+
+export class NotificationItemContainer extends Component<
+  NotificationItemContainerProps & typeof defaultProps,
+  NotificationItemContainerState
+> {
+  static defaultProps = defaultProps;
+
+  timer: NodeJS.Timeout | null = null;
 
   state = {
     isShown: false,
@@ -26,7 +33,7 @@ export class NotificationItemContainer extends Component<
     this.setState({ isShown: true });
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps: NotificationItemContainerProps) {
     if (prevProps.isShown !== this.props.isShown) {
       // eslint-disable-next-line
       this.setState({
@@ -77,7 +84,9 @@ export class NotificationItemContainer extends Component<
         animateOpacity
         onAnimationEnd={() => {
           if (this.state.isShown === false) {
-            this.props.onClose();
+            if (this.props.onClose) {
+              this.props.onClose();
+            }
           }
         }}
       >

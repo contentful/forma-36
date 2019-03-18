@@ -104,8 +104,6 @@ exports[`renders the component with a dropdown 1`] = `
         isTitle={false}
         key="edit"
         onClick={[Function]}
-        onEnter={[Function]}
-        onLeave={[Function]}
         testId="cf-ui-dropdown-list-item"
       >
         Edit
@@ -116,8 +114,6 @@ exports[`renders the component with a dropdown 1`] = `
         isTitle={false}
         key="remove"
         onClick={[Function]}
-        onEnter={[Function]}
-        onLeave={[Function]}
         testId="cf-ui-dropdown-list-item"
       >
         Remove

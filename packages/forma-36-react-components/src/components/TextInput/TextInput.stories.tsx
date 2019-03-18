@@ -12,14 +12,14 @@ storiesOf('Components|TextInput', module)
   })
   .add('default', () => (
     <TextInput
-      error={boolean('Error', false)}
-      extraClassNames={text('Extra Class Names', '')}
-      disabled={boolean('Disabled', false)}
-      withCopyButton={boolean('With Copy Button', false)}
-      value={text('Value', '123456')}
-      maxLength={number('Max Length Characters', 50)}
+      error={boolean('error', false)}
+      extraClassNames={text('extraClassNames', '')}
+      disabled={boolean('disabled', false)}
+      withCopyButton={boolean('withCopyButton', false)}
+      value={text('valiue', '123456')}
+      maxLength={number('maxLength', 50)}
       width={select(
-        'Width',
+        'width',
         {
           'Full (default)': 'full',
           large: 'large',
@@ -41,14 +41,14 @@ storiesOf('Components|TextInput', module)
     return (
       <React.Fragment>
         <TextInput
-          error={boolean('Error', false)}
-          extraClassNames={text('Extra Class Names', '')}
-          disabled={boolean('Disabled', false)}
-          withCopyButton={boolean('With Copy Button', false)}
-          value={text('Value', '123456')}
-          maxLength={number('Max Length Characters', 50)}
+          error={boolean('error', false)}
+          extraClassNames={text('extraClassNames', '')}
+          disabled={boolean('disabled', false)}
+          withCopyButton={boolean('withCopyButton', false)}
+          value={text('value', '123456')}
+          maxLength={number('maxLength', 50)}
           width={select(
-            'Width',
+            'width',
             {
               'Full (default)': 'full',
               large: 'large',
@@ -64,7 +64,9 @@ storiesOf('Components|TextInput', module)
           id="emailInput"
           inputRef={textInputRef}
         />
-        <Button onClick={() => textInputRef.current.focus()}>
+        <Button
+          onClick={() => (textInputRef.current as HTMLInputElement).focus()}
+        >
           Focus TextInput with ref
         </Button>
       </React.Fragment>

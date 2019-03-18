@@ -237,25 +237,30 @@ export type IconColorType =
   | 'primary'
   | 'positive'
   | 'negative'
+  | 'warning'
   | 'secondary'
   | 'muted'
   | 'white';
 
+export type IconSize = 'tiny' | 'small' | 'large';
+
 export interface IconProps {
-  extraClassNames?: string;
-  testId?: string;
-  size?: 'tiny' | 'small' | 'large';
+  size?: IconSize;
   color?: IconColorType;
   style?: CSSProperties;
   icon: IconType;
+  extraClassNames?: string;
+  testId?: string;
 }
 
-export class Icon extends Component<IconProps> {
-  static defaultProps = {
-    testId: 'cf-ui-icon',
-    size: 'small',
-    color: 'primary',
-  };
+const defaultProps = {
+  testId: 'cf-ui-icon',
+  size: 'small',
+  color: 'primary',
+};
+
+export class Icon extends Component<IconProps & typeof defaultProps> {
+  static defaultProps = defaultProps;
 
   render() {
     const {

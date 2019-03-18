@@ -10,12 +10,12 @@ storiesOf('Components|HelpText', module)
     propTypes: HelpText['__docgenInfo'],
   })
   .add('default', () => (
-    <HelpText extraClassNames={text('Extra Class Names', '')}>
+    <HelpText extraClassNames={text('extraClassNames', '')}>
       {text('Child Text', 'Lorem Ipsum dolor sit amet')}
     </HelpText>
   ))
   .add('with link', () => (
-    <HelpText extraClassNames={text('Extra Class Names', '')}>
+    <HelpText extraClassNames={text('extraClassNames', '')}>
       Some Text and then <TextLink> a link.</TextLink>
     </HelpText>
   ));

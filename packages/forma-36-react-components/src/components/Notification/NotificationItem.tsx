@@ -5,24 +5,30 @@ import Icon from '../Icon';
 
 const styles = require('./NotificationItem.css');
 
+export type NotificationIntent = 'success' | 'error' | 'warning';
+
 export interface NotificationItemProps {
-  intent: 'success' | 'error' | 'warning';
+  intent: NotificationIntent;
   hasCloseButton?: boolean;
   onClose?: Function;
   testId?: string;
   children: React.ReactNode;
 }
 
-export class NotificationItem extends Component<NotificationItemProps> {
-  static defaultProps = {
-    testId: 'cf-ui-notification',
-    intent: 'success',
-    hasCloseButton: true,
-  };
+const defaultProps = {
+  testId: 'cf-ui-notification',
+  intent: 'success' as NotificationIntent,
+  hasCloseButton: true,
+};
+
+export class NotificationItem extends Component<
+  NotificationItemProps & typeof defaultProps
+> {
+  static defaultProps = defaultProps;
 
   render() {
     const { children, testId, intent, onClose, hasCloseButton } = this.props;
-    
+
     const classes = classNames(styles.NotificationItem, {
       [styles[`NotificationItem--${intent}`]]: true,
     });
@@ -47,7 +53,9 @@ export class NotificationItem extends Component<NotificationItemProps> {
             buttonType="white"
             iconProps={{ icon: 'Close' }}
             onClick={() => {
-              onClose();
+              if (onClose) {
+                onClose();
+              }
             }}
             testId="cf-ui-notification-close"
             label="Dismiss"

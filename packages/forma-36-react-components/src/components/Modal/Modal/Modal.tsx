@@ -26,7 +26,7 @@ const ModalSizesMapper = {
 
 export type ModalSizeType = 'small' | 'medium' | 'large' | string | number;
 
-export interface ModalProps {
+export type ModalProps = {
   /**
    * When true, the dialog is shown.
    */
@@ -71,15 +71,26 @@ export interface ModalProps {
   allowHeightOverflow?: boolean;
 
   /**
-      To disable word-wrapping of the modal title
-    */
+   * To disable word-wrapping of the modal title
+   */
   isNotWrapped?: boolean;
+
   extraClassNames?: string;
   testId?: string;
 
   // eslint-disable-next-line
   children: any;
-}
+} & typeof defaultProps;
+
+const defaultProps = {
+  shouldCloseOnEscapePress: true,
+  shouldCloseOnOverlayClick: true,
+  position: 'center',
+  testId: 'cf-ui-modal',
+  topOffset: '50px',
+  size: 'medium',
+  allowHeightOverflow: false,
+};
 
 export class Modal extends Component<ModalProps> {
   static Positions = ModalPositions;
@@ -92,16 +103,7 @@ export class Modal extends Component<ModalProps> {
 
   static Controls = ModalControls;
 
-  static defaultProps = {
-    shouldCloseOnEscapePress: true,
-    shouldCloseOnOverlayClick: true,
-    position: 'center',
-    testId: 'cf-ui-modal',
-    topOffset: '50px',
-    size: 'medium',
-    allowHeightOverflow: false,
-    onAfterOpen: () => {},
-  };
+  static defaultProps = defaultProps;
 
   renderDefault() {
     return (

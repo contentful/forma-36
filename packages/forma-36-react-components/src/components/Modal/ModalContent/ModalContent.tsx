@@ -3,21 +3,18 @@ import cn from 'classnames';
 
 const styles = require('./ModalContent.css');
 
-export interface ModalContentProps
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
-  > {
+export type ModalContentProps = {
   testId?: string;
   extraClassNames?: string;
   children: React.ReactNode;
-}
+} & typeof defaultProps;
+
+const defaultProps = {
+  testId: 'cf-ui-modal-content',
+};
 
 export class ModalContent extends Component<ModalContentProps> {
-  static defaultProps = {
-    testId: 'cf-ui-modal-content',
-  };
-
+  static defaultProps = defaultProps;
   render() {
     const { testId, extraClassNames, children, ...rest } = this.props;
     return (

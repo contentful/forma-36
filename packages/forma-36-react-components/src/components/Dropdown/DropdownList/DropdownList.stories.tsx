@@ -11,7 +11,7 @@ storiesOf('Components|Dropdown/DropdownList', module)
   })
   .add('default', () => (
     <DropdownList
-      border={select('Border', [undefined, 'top', 'bottom'], undefined)}
+      border={select('border', [undefined, 'top', 'bottom'], undefined)}
     >
       <DropdownListItem isTitle>Title Text</DropdownListItem>
       <DropdownListItem isDisabled>Block entry disabled</DropdownListItem>

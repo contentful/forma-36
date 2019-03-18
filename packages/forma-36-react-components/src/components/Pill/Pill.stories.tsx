@@ -11,20 +11,20 @@ storiesOf('Components|Pill', module)
   })
   .add('default', () => (
     <Pill
-      extraClassNames={text('Extra Class Names', '')}
+      extraClassNames={text('extraClassNames', '')}
       label={text('label', 'johannes.bugiel@contentful.com')}
     />
   ))
   .add('onDrag', () => (
     <Pill
-      extraClassNames={text('Extra Class Names', '')}
+      extraClassNames={text('extraClassNames', '')}
       label={text('label', 'johannes.bugiel@contentful.com')}
       onDrag={action('onDrag')}
     />
   ))
   .add('onClose', () => (
     <Pill
-      extraClassNames={text('Extra Class Names', '')}
+      extraClassNames={text('extraClassNames', '')}
       label={text('label', 'johannes.bugiel@contentful.com')}
       onClose={action('onClick')}
     />

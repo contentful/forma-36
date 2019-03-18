@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { NotificationIntent } from './NotificationItem';
 import NotificationItemContainer from './NotificationItemContainer';
 
 const styles = require('./NotificationsManager.css');
@@ -12,7 +13,6 @@ const getUniqueId = () => {
   return uniqueId;
 };
 
-export type Intent = 'success' | 'error' | 'warning';
 export type Position = 'top' | 'bottom';
 
 export interface Notification {
@@ -22,12 +22,16 @@ export interface Notification {
   duration: number;
   canClose: boolean;
   isShown: boolean;
-  intent: Intent;
+  intent: NotificationIntent;
 }
 
 export type ShowAction<T> = (
   text: string,
-  setting?: { duration?: number; intent: Intent; canClose?: boolean },
+  setting?: {
+    intent: NotificationIntent;
+    duration?: number;
+    canClose?: boolean;
+  },
 ) => T;
 
 export type CloseAction<T> = (id: number) => T;
@@ -60,7 +64,7 @@ export class NotificationsManager extends PureComponent<
     register: PropTypes.func.isRequired,
   };
 
-  constructor(props) {
+  constructor(props: NotificationsManagerProps) {
     super(props);
     this.state = {
       items: [],
@@ -103,7 +107,7 @@ export class NotificationsManager extends PureComponent<
     }));
   };
 
-  closeAndDelete = id => {
+  closeAndDelete = (id: number) => {
     this.setState(state => ({
       items: state.items.filter(item => item.id !== id),
     }));
@@ -118,14 +122,20 @@ export class NotificationsManager extends PureComponent<
     }));
   };
 
-  show: ShowAction<Notification> = (text, { duration, intent, canClose }) => {
+  show: ShowAction<Notification> = (text, settings) => {
+    const duration =
+      settings && settings.duration ? settings.duration : this.state.duration;
+    const intent = settings && settings.intent ? settings.intent : 'success';
+
+    const canClose = settings ? settings.canClose || false : true;
+
     const notificationId = getUniqueId();
     const notification = {
       id: notificationId,
       text,
       close: () => this.closeAndDelete(notificationId),
-      duration: duration || this.state.duration,
-      canClose: canClose && true,
+      duration,
+      canClose,
       isShown: true,
       intent,
     };

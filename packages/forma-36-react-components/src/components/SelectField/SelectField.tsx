@@ -1,4 +1,9 @@
-import React, { Component } from 'react';
+import React, {
+  Component,
+  ChangeEvent,
+  FocusEventHandler,
+  ChangeEventHandler,
+} from 'react';
 import cn from 'classnames';
 import ValidationMessage from '../ValidationMessage';
 import FormLabel, { FormLabelProps } from '../FormLabel/FormLabel';
@@ -7,7 +12,7 @@ import Select, { SelectProps } from '../Select/Select/Select';
 import TextLink, { TextLinkProps } from '../TextLink/TextLink';
 import styles from './SelectField.css';
 
-export interface SelectFieldProps {
+export type SelectFieldProps = {
   name: string;
   id: string;
   children: React.ReactNode;
@@ -21,23 +26,25 @@ export interface SelectFieldProps {
   labelText?: string;
   helpText?: string;
   required?: boolean;
-  onChange?: (...args: any[]) => any;
-  onBlur?: (...args: any[]) => any;
-}
+  onChange?: ChangeEventHandler;
+  onBlur?: FocusEventHandler;
+} & typeof defaultProps;
 
 export interface SelectFieldState {
   value?: string;
 }
 
+const defaultProps = {
+  testId: 'cf-ui-select-field',
+  required: false,
+};
+
 export class SelectField extends Component<SelectFieldProps, SelectFieldState> {
-  static defaultProps = {
-    testId: 'cf-ui-select-field',
-    required: false,
-  };
+  static defaultProps = defaultProps;
 
   state = { value: this.props.value };
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps: SelectFieldProps) {
     if (this.props.value !== nextProps.value) {
       this.setState({
         value: nextProps.value,
@@ -48,8 +55,8 @@ export class SelectField extends Component<SelectFieldProps, SelectFieldState> {
   // Store a copy of the value in state.
   // This is used by this component when the `countCharacters`
   // option is on
-  handleOnChange = evt => {
-    this.setState({ value: evt.target.value });
+  handleOnChange = (evt: ChangeEvent) => {
+    this.setState({ value: (evt.target as HTMLSelectElement).value });
     if (this.props.onChange) {
       this.props.onChange(evt);
     }

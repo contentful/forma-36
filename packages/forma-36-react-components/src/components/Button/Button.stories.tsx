@@ -15,10 +15,10 @@ storiesOf('Components|Button', module)
     'Button',
     () => (
       <Button
-        extraClassNames={text('Extra Class Names', '')}
-        icon={select('Icon', [undefined, ...Object.keys(iconName)], undefined)}
+        extraClassNames={text('extraClassNames', '')}
+        icon={select('icon', [undefined, ...Object.keys(iconName)], undefined)}
         buttonType={select(
-          'Type',
+          'buttonType',
           {
             muted: 'muted',
             primary: 'primary',
@@ -28,14 +28,14 @@ storiesOf('Components|Button', module)
           },
           'muted',
         )}
-        size={select('Size', [undefined, 'small', 'large'], undefined)}
-        loading={boolean('Loading', false)}
-        indicateDropdown={boolean('Show dropdown chevron', false)}
-        disabled={boolean('Disabled', false)}
-        isFullWidth={boolean('Is full width', false)}
-        onClick={action('OnClick')}
-        onBlur={action('OnBlur')}
-        href={text('Href', '')}
+        size={select('size', [undefined, 'small', 'large'], undefined)}
+        loading={boolean('loading', false)}
+        indicateDropdown={boolean('indicateDropdown', false)}
+        disabled={boolean('disabled', false)}
+        isFullWidth={boolean('isFullWidth', false)}
+        onClick={action('onClick')}
+        onBlur={action('onBlur')}
+        href={text('href', '')}
       >
         {text('Text', 'Embed entry')}
       </Button>

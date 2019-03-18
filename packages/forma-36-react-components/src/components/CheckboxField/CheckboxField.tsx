@@ -3,13 +3,18 @@ import ControlledInputField, {
   ControlledInputFieldPropTypes,
 } from '../ControlledInputField/ControlledInputField';
 
-export class CheckboxField extends Component<ControlledInputFieldPropTypes> {
-  static defaultProps = {
-    labelIsLight: false,
-    checked: false,
-    inputType: 'checkbox',
-    testId: 'cf-ui-checkbox-field',
-  };
+export type CheckboxFieldProps = ControlledInputFieldPropTypes &
+  typeof defaultProps;
+
+const defaultProps = {
+  labelIsLight: false,
+  checked: false,
+  inputType: 'checkbox',
+  testId: 'cf-ui-checkbox-field',
+};
+
+export class CheckboxField extends Component<CheckboxFieldProps> {
+  static defaultProps = defaultProps;
 
   render() {
     const { testId, ...otherProps } = this.props;

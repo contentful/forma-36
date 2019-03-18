@@ -1,50 +1,45 @@
-import React, { SyntheticEvent, Component } from 'react';
+import React, { Component, MouseEventHandler, FocusEventHandler } from 'react';
 import cn from 'classnames';
 import TabFocusTrap from '../../TabFocusTrap/TabFocusTrap';
 import styles from './DropdownListItem.css';
 
-export interface DropdownListItemProps {
-  extraClassNames: string;
-  children: React.ReactNode;
-  onClick: (e: SyntheticEvent) => void;
-  testId: string;
-  onMouseDown: (e: SyntheticEvent) => void;
-  submenuToggleLabel: string;
-  onFocus: (e: SyntheticEvent) => void;
-  onLeave: (e: SyntheticEvent) => void;
-  onEnter: (e: SyntheticEvent) => void;
+export type DropdownListItemProps = {
   isDisabled: boolean;
   isActive: boolean;
   isTitle: boolean;
-}
+  children: React.ReactNode;
+  onClick?: MouseEventHandler;
+  testId?: string;
+  onMouseDown?: MouseEventHandler;
+  submenuToggleLabel?: string;
+  onFocus?: FocusEventHandler;
+  onLeave?: MouseEventHandler;
+  onEnter?: MouseEventHandler;
+  extraClassNames?: string;
+} & typeof defaultProps;
+
+const defaultProps = {
+  testId: 'cf-ui-dropdown-list-item',
+  isDisabled: false,
+  isActive: false,
+  isTitle: false,
+};
 
 export class DropdownListItem extends Component<DropdownListItemProps> {
-  static defaultProps = {
-    extraClassNames: undefined,
-    submenuToggleLabel: undefined,
-    onClick: undefined,
-    testId: 'cf-ui-dropdown-list-item',
-    onMouseDown: undefined,
-    onFocus: undefined,
-    onLeave: () => {},
-    onEnter: () => {},
-    isDisabled: false,
-    isActive: false,
-    isTitle: false,
-  };
+  static defaultProps = defaultProps;
 
   renderSubmenuToggle = () => {
-    const { onClick, onEnter, onLeave, ...otherProps } = this.props;
+    const { onClick, onEnter, onLeave, onFocus, ...otherProps } = this.props;
     return (
       <React.Fragment>
         <button
           type="button"
           data-test-id="cf-ui-dropdown-submenu-toggle"
           className={styles['DropdownListItem__toggle-button']}
-          onClick={this.props.onClick}
-          onMouseEnter={this.props.onEnter}
-          onFocus={this.props.onEnter}
-          onMouseLeave={this.props.onLeave}
+          onClick={onClick}
+          onMouseEnter={onEnter}
+          onFocus={onFocus}
+          onMouseLeave={onLeave}
           {...otherProps}
         >
           <TabFocusTrap

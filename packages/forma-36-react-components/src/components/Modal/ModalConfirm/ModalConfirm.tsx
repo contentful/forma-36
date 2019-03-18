@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Modal, { ModalSizeType } from '../Modal/Modal';
 import Button from '../../Button';
 
-export interface ModalConfirmProps {
+export type ModalConfirmProps = {
   /**
    * When true, the dialog is shown.
    */
@@ -60,23 +60,25 @@ export interface ModalConfirmProps {
   confirmTestId?: string;
   cancelTestId?: string;
   children: React.ReactNode;
-}
+} & typeof defaultProps;
+
+const defaultProps = {
+  testId: 'cf-ui-modal-confirm',
+  confirmTestId: 'cf-ui-modal-confirm-confirm-button',
+  cancelTestId: 'cf-ui-modal-confirm-cancel-button',
+  title: 'Are you sure?',
+  confirmLabel: 'Confirm',
+  cancelLabel: 'Cancel',
+  intent: 'positive',
+  shouldCloseOnOverlayClick: true,
+  shouldCloseOnEscapePress: true,
+  isConfirmDisabled: false,
+  isConfirmLoading: false,
+  size: 'medium',
+};
 
 export class ModalConfirm extends Component<ModalConfirmProps> {
-  static defaultProps = {
-    testId: 'cf-ui-modal-confirm',
-    confirmTestId: 'cf-ui-modal-confirm-confirm-button',
-    cancelTestId: 'cf-ui-modal-confirm-cancel-button',
-    title: 'Are you sure?',
-    confirmLabel: 'Confirm',
-    cancelLabel: 'Cancel',
-    intent: 'positive',
-    shouldCloseOnOverlayClick: true,
-    shouldCloseOnEscapePress: true,
-    isConfirmDisabled: false,
-    isConfirmLoading: false,
-    size: 'medium',
-  };
+  static defaultProps = defaultProps;
 
   render() {
     const {

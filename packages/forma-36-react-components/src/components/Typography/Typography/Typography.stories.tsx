@@ -3,10 +3,10 @@ import { storiesOf } from '@storybook/react';
 
 import notes from './Typography.md';
 import Typography from './Typography';
-import DisplayText from './../DisplayText';
+import DisplayText from '../DisplayText';
 import Heading from './../Heading';
 import Subheading from './../Subheading';
-import SectionHeading from './../SectionHeading';
+import SectionHeading from '../SectionHeading';
 import Paragraph from './../Paragraph';
 
 storiesOf('Components|Typography/Typography', module)

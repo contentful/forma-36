@@ -218,7 +218,6 @@ exports[`renders the component with the copy button 1`] = `
   />
   <CopyButton
     extraClassNames="TextInput__copy-button"
-    onCopy={[Function]}
     testId="cf-ui-copy-button"
   />
 </div>

@@ -11,24 +11,24 @@ storiesOf('Components|TextField', module)
   })
   .add('default', () => (
     <TextField
-      extraClassNames={text('Extra Class Names', '')}
-      required={boolean('Required', false)}
+      extraClassNames={text('extraClassNames', '')}
+      required={boolean('required', false)}
       formLabelProps={{
-        requiredText: text('Required Text', undefined),
+        requiredText: text('requiredText', undefined),
       }}
       name="emailInput"
       id="emailInput"
-      labelText={text('Label', 'Label')}
-      value={text('Value', '123456')}
+      labelText={text('labelText', 'Label')}
+      value={text('value', '123456')}
       onBlur={action('onBlur')}
       onChange={action('onChange')}
       textInputProps={{
-        withCopyButton: boolean('With Copy Button', false),
-        disabled: boolean('Disabled', false),
-        placeholder: text('Placeholder', 'Placeholder text'),
-        maxLength: number('Max Length Characters', 50),
+        withCopyButton: boolean('withCopyButton', false),
+        disabled: boolean('disabled', false),
+        placeholder: text('placeholder', 'Placeholder text'),
+        maxLength: number('maxLength', 50),
         type: select(
-          'Type',
+          'type',
           {
             'Text (default)': 'text',
             password: 'password',
@@ -40,7 +40,7 @@ storiesOf('Components|TextField', module)
           'text',
         ),
         width: select(
-          'Width',
+          'width',
           {
             'Full (default)': 'full',
             large: 'large',
@@ -50,31 +50,31 @@ storiesOf('Components|TextField', module)
           'full',
         ),
       }}
-      helpText={text('Help Text', '')}
-      validationMessage={text('Validation Message', '')}
+      helpText={text('helpText', '')}
+      validationMessage={text('validationMessage', '')}
     />
   ))
   .add('with Textarea', () => (
     <TextField
-      extraClassNames={text('Extra Class Names', '')}
+      extraClassNames={text('extraClassNames', '')}
       textarea
-      required={boolean('Required', false)}
+      required={boolean('required', false)}
       formLabelProps={{
-        requiredText: text('Required Text', undefined),
+        requiredText: text('requiredText', undefined),
       }}
       name="emailInput"
       id="emailInput"
-      labelText={text('Label', 'Label')}
-      value={text('Value', '123456')}
+      labelText={text('labelText', 'Label')}
+      value={text('value', '123456')}
       onBlur={action('onBlur')}
       onChange={action('onChange')}
       textInputProps={{
-        disabled: boolean('Disabled', false),
-        placeholder: text('Placeholder', 'Placeholder text'),
-        maxLength: number('Max Length Characters', 50),
-        rows: number('Rows', 2),
+        disabled: boolean('disabled', false),
+        placeholder: text('placeholder', 'Placeholder text'),
+        maxLength: number('maxLength', 50),
+        rows: number('rows', 2),
         type: select(
-          'Type',
+          'type',
           {
             'Text (default)': 'text',
             password: 'password',
@@ -86,7 +86,7 @@ storiesOf('Components|TextField', module)
           'text',
         ),
         width: select(
-          'Width',
+          'width',
           {
             'Full (default)': 'full',
             large: 'large',
@@ -96,22 +96,22 @@ storiesOf('Components|TextField', module)
           'full',
         ),
       }}
-      helpText={text('Help Text', '')}
-      validationMessage={text('Validation Message', '')}
+      helpText={text('helpText', '')}
+      validationMessage={text('validationMessage', '')}
     />
   ))
   .add('with TextLink', () => (
     <TextField
-      extraClassNames={text('Extra Class Names', '')}
+      extraClassNames={text('extraClassNames', '')}
       textarea
-      required={boolean('Required', false)}
+      required={boolean('required', false)}
       formLabelProps={{
-        requiredText: text('Required Text', undefined),
+        requiredText: text('requiredText', undefined),
       }}
-      labelText={text('Label', 'Label')}
+      labelText={text('labelText', 'Label')}
       textLinkProps={{
-        icon: text('Icon', 'Lock'),
-        text: text('Text', 'Unlock to edit'),
+        icon: text('icon', 'Lock'),
+        text: text('text', 'Unlock to edit'),
         onClick: action('onClick'),
       }}
       name="emailInput"
@@ -120,12 +120,12 @@ storiesOf('Components|TextField', module)
       onBlur={action('onBlur')}
       onChange={action('onChange')}
       textInputProps={{
-        disabled: boolean('Disabled', false),
-        placeholder: text('Placeholder', 'Placeholder text'),
-        maxLength: number('Max Length Characters', 50),
-        rows: number('Rows', 2),
+        disabled: boolean('disabled', false),
+        placeholder: text('placeholder', 'Placeholder text'),
+        maxLength: number('maxLength', 50),
+        rows: number('rows', 2),
         type: select(
-          'Type',
+          'type',
           {
             'Text (default)': 'text',
             password: 'password',
@@ -137,7 +137,7 @@ storiesOf('Components|TextField', module)
           'text',
         ),
         width: select(
-          'Width',
+          'width',
           {
             'Full (default)': 'full',
             large: 'large',
@@ -147,31 +147,31 @@ storiesOf('Components|TextField', module)
           'full',
         ),
       }}
-      helpText={text('Help Text', '')}
-      validationMessage={text('Validation Message', '')}
+      helpText={text('helpText', '')}
+      validationMessage={text('validationMessage', '')}
     />
   ))
   .add('with Character count', () => (
     <TextField
-      countCharacters={boolean('Count characters', true)}
-      extraClassNames={text('Extra Class Names', '')}
-      required={boolean('Required', false)}
+      countCharacters={boolean('countCharacters', true)}
+      extraClassNames={text('extraClassNames', '')}
+      required={boolean('required', false)}
       formLabelProps={{
-        requiredText: text('Required Text', undefined),
+        requiredText: text('requiredText', undefined),
       }}
-      labelText={text('Label', 'Label')}
+      labelText={text('labelText', 'Label')}
       name="emailInput"
       id="emailInput"
-      value={text('Value', '123456')}
+      value={text('value', '123456')}
       onBlur={action('onBlur')}
       onChange={action('onChange')}
       textInputProps={{
-        disabled: boolean('Disabled', false),
-        placeholder: text('Placeholder', 'Placeholder text'),
-        maxLength: number('Max Length Characters', 20),
-        rows: number('Rows', 2),
+        disabled: boolean('disabled', false),
+        placeholder: text('placeholder', 'Placeholder text'),
+        maxLength: number('maxLength', 20),
+        rows: number('rows', 2),
         type: select(
-          'Type',
+          'type',
           {
             'Text (default)': 'text',
             password: 'password',
@@ -183,7 +183,7 @@ storiesOf('Components|TextField', module)
           'text',
         ),
         width: select(
-          'Width',
+          'width',
           {
             'Full (default)': 'full',
             large: 'large',
@@ -193,7 +193,7 @@ storiesOf('Components|TextField', module)
           'full',
         ),
       }}
-      helpText={text('Help Text', '')}
-      validationMessage={text('Validation Message', '')}
+      helpText={text('helpText', '')}
+      validationMessage={text('validationMessage', '')}
     />
   ));

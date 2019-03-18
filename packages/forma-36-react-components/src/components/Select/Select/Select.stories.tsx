@@ -12,16 +12,16 @@ storiesOf('Components|Select', module)
   })
   .add('default', () => (
     <Select
-      extraClassNames={text('Extra Class Names', '')}
+      extraClassNames={text('extraClassNames', '')}
       id="optionSelect"
       name="optionSelect"
-      isDisabled={boolean('is disabled', false)}
+      isDisabled={boolean('isDisabled', false)}
       hasError={boolean('hasError', false)}
       onChange={action('onChange')}
       onBlur={action('onBlur')}
       onFocus={action('onFocus')}
       width={select(
-        'Width',
+        'width',
         {
           'Full (default)': 'full',
           large: 'large',

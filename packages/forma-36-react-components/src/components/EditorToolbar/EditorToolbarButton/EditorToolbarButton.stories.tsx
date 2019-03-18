@@ -12,12 +12,12 @@ storiesOf('Components|EditorToolbar/EditorToolbarButton', module)
   })
   .add('default', () => (
     <EditorToolbarButton
-      icon={select('Icon', Object.keys(iconName), Object.keys(iconName)[0])}
-      tooltip={text('Tooltip', 'Insert a H1 tag')}
-      label={text('Label (screenreader only)', 'H1')}
-      isActive={boolean('Active', false)}
-      disabled={boolean('Disabled', false)}
-      withDropdown={boolean('With dropdown', false)}
+      icon={select('icon', Object.keys(iconName), Object.keys(iconName)[0])}
+      tooltip={text('tooltip', 'Insert a H1 tag')}
+      label={text('label (screenreader only)', 'H1')}
+      isActive={boolean('isActive', false)}
+      disabled={boolean('disabled', false)}
+      withDropdown={boolean('withDropdown', false)}
       onClick={action('onClick')}
     />
   ));

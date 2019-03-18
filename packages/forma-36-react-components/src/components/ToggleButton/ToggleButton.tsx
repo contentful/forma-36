@@ -6,29 +6,30 @@ import TabFocusTrap from '../TabFocusTrap/TabFocusTrap';
 
 const styles = require('./ToggleButton.css');
 
-export interface ToggleButtonProps {
+export type ToggleButtonProps = {
   testId?: string;
   extraClassNames?: string;
   children: React.ReactNode;
   icon?: IconType;
   isActive?: boolean;
-  onToggle: () => {};
+  onToggle?: Function;
   isDisabled?: boolean;
-}
+} & typeof defaultProps;
+
+const defaultProps = {
+  testId: 'cf-ui-toggle-button',
+  isActive: false,
+  isDisabled: false,
+};
 
 export class ToggleButton extends Component<ToggleButtonProps> {
-  static defaultProps = {
-    testId: 'cf-ui-toggle-button',
-    extraClassNames: undefined,
-    onToggle: () => {},
-    icon: undefined,
-    isActive: false,
-    isDisabled: false,
-  };
+  static defaultProps = defaultProps;
 
   handleToggle = () => {
     if (!this.props.isDisabled) {
-      this.props.onToggle();
+      if (this.props.onToggle) {
+        this.props.onToggle();
+      }
     }
   };
 

@@ -111,7 +111,10 @@ function ComplexStory() {
         <p>
           Type <strong>unlock</strong> to allow confirming this modal
         </p>
-        <TextInput value={repeat} onChange={e => setRepeat(e.target.value)} />
+        <TextInput
+          value={repeat}
+          onChange={e => setRepeat((e.target as HTMLInputElement).value)}
+        />
       </ModalConfirm>
     </div>
   );

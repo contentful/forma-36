@@ -11,17 +11,17 @@ function DefaultStory() {
   return (
     <FieldGroup>
       <RadioButtonField
-        labelText={text('Label Text', 'Option 1')}
-        helpText={text('Help Text', 'This is a helptext')}
-        validationMessage={text('Validation Message', undefined)}
-        disabled={boolean('Disabled', false)}
+        labelText={text('labelText', 'Option 1')}
+        helpText={text('helpText', 'This is a helptext')}
+        validationMessage={text('validationMessage', undefined)}
+        disabled={boolean('disabled', false)}
         name="someOption"
         checked={activeOption === 'yes'}
         value="yes"
         onChange={e => {
           setActiveOption((e.target as HTMLInputElement).value);
         }}
-        labelIsLight={boolean('Light', false)}
+        labelIsLight={boolean('labelIsLight', false)}
         inputProps={{
           onBlur: action('onBlur'),
           onFocus: action('onFoucs'),
@@ -29,17 +29,17 @@ function DefaultStory() {
         id="termsCheckbox"
       />
       <RadioButtonField
-        labelText={text('Label Text', 'Option 2')}
-        helpText={text('Help Text', 'This is a helptext')}
-        validationMessage={text('Validation Message', undefined)}
-        disabled={boolean('Disabled', false)}
+        labelText={text('labelText', 'Option 2')}
+        helpText={text('helpText', 'This is a helptext')}
+        validationMessage={text('validationMessage', undefined)}
+        disabled={boolean('disabled', false)}
         name="someOption"
         value="no"
         checked={activeOption === 'no'}
         onChange={e => {
           setActiveOption((e.target as HTMLInputElement).value);
         }}
-        labelIsLight={boolean('Light', false)}
+        labelIsLight={boolean('labelIsLight', false)}
         inputProps={{
           onBlur: action('onBlur'),
           onFocus: action('onFoucs'),

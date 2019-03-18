@@ -11,6 +11,6 @@ storiesOf('Components|Skeleton/SkeletonDisplayText', module)
   })
   .add('default', () => (
     <SkeletonContainer>
-      <SkeletonDisplayText numberOfLines={number('Number of lines', 1)} />
+      <SkeletonDisplayText numberOfLines={number('numberOfLines', 1)} />
     </SkeletonContainer>
   ));

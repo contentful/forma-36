@@ -8,9 +8,10 @@ import NotificationManager, {
   CloseAllAction,
   SetPositionAction,
   SetDurationAction,
-  Intent,
   Notification as NotificationType,
+  Position,
 } from './NotificationsManager';
+import { NotificationIntent } from './NotificationItem';
 
 export interface NotificationsAPI {
   success: ShowAction<Notification>;
@@ -23,20 +24,21 @@ export interface NotificationsAPI {
 }
 
 let initiated = false;
-const internalAPI: Partial<NotificationsAPI> = {};
+let internalAPI: Partial<NotificationsAPI> = {};
 
-function registerAPI(fnName, fn) {
+function registerAPI(fnName: string, fn: Function) {
   internalAPI[fnName] = fn;
 }
 
-function createRoot(callback) {
+function createRoot(callback: () => void) {
   const container = document.createElement('div');
   document.body.appendChild(container);
 
   render(<NotificationManager register={registerAPI} />, container, callback);
 }
 
-const afterInit = fn => (...args) => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const afterInit = (fn: Function) => (...args: any[]) => {
   if (!initiated) {
     initiated = true;
     return new Promise(resolve => {
@@ -49,17 +51,20 @@ const afterInit = fn => (...args) => {
   }
 };
 
-const show = (intent: Intent) => (
+const show = (intent: NotificationIntent) => (
   text: string,
   settings?: {
     duration?: number;
     canClose?: boolean;
   },
-) =>
-  internalAPI.show(text, {
-    ...(settings || {}),
-    intent,
-  });
+) => {
+  if (internalAPI.show) {
+    return internalAPI.show(text, {
+      ...(settings || {}),
+      intent,
+    });
+  }
+};
 
 export const Notification: {
   success: ShowAction<Promise<NotificationType>>;
@@ -73,12 +78,26 @@ export const Notification: {
   success: afterInit(show('success')),
   error: afterInit(show('error')),
   warning: afterInit(show('warning')),
-  close: afterInit(id => internalAPI.close(id)),
-  closeAll: afterInit(() => internalAPI.closeAll()),
-  setPosition: afterInit((position, params) =>
-    internalAPI.setPosition(position, params),
-  ),
-  setDuration: afterInit(duration => internalAPI.setDuration(duration)),
+  close: afterInit((id: number) => {
+    if (internalAPI.close) {
+      return internalAPI.close(id);
+    }
+  }),
+  closeAll: afterInit(() => {
+    if (internalAPI.closeAll) {
+      return internalAPI.closeAll();
+    }
+  }),
+  setPosition: afterInit((position: Position, params?: { offset: number }) => {
+    if (internalAPI.setPosition) {
+      return internalAPI.setPosition(position, params);
+    }
+  }),
+  setDuration: afterInit((duration: number) => {
+    if (internalAPI.setDuration) {
+      return internalAPI.setDuration(duration);
+    }
+  }),
 };
 
 export default Notification;

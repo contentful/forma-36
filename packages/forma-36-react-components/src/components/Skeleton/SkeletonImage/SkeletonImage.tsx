@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
 
-export interface SkeletonImageProps {
-  testId: string;
-  offsetLeft: number;
-  offsetTop: number;
+export type SkeletonImageProps = {
   width: number;
   height: number;
   radiusX: number;
   radiusY: number;
-}
+  offsetLeft?: number;
+  offsetTop?: number;
+  testId?: string;
+} & typeof defaultProps;
+
+const defaultProps = {
+  testId: 'cf-ui-skeleton-image',
+  width: 70,
+  height: 70,
+  radiusX: 0,
+  radiusY: 0,
+};
 
 export class SkeletonImage extends Component<SkeletonImageProps> {
-  static defaultProps = {
-    testId: 'cf-ui-skeleton-image',
-    offsetLeft: undefined,
-    offsetTop: undefined,
-    width: 70,
-    height: 70,
-    radiusX: 0,
-    radiusY: 0,
-  };
+  static defaultProps = defaultProps;
 
   render() {
     const {

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import cn from 'classnames';
 import { illustrationName } from './constants';
 
@@ -19,23 +18,19 @@ import styles from './Illustration.css';
 
 export type IllustrationType = keyof typeof illustrationName;
 
-export interface IllustrationProps {
+export type IllustrationProps = {
+  illustration: IllustrationType;
   extraClassNames?: string;
   testId?: string;
-  illustration: IllustrationType;
-}
+  style?: React.CSSProperties;
+} & typeof defaultProps;
+
+const defaultProps = {
+  testId: 'cf-ui-icon',
+};
 
 export class Illustration extends Component<IllustrationProps> {
-  static propTypes = {
-    extraClassNames: PropTypes.string,
-    illustration: PropTypes.oneOf(Object.keys(illustrationName)).isRequired,
-    testId: PropTypes.string,
-  };
-
-  static defaultProps = {
-    extraClassNames: undefined,
-    testId: 'cf-ui-icon',
-  };
+  static defaultProps = defaultProps;
 
   render() {
     const { extraClassNames, testId, illustration, ...otherProps } = this.props;
@@ -58,7 +53,7 @@ export class Illustration extends Component<IllustrationProps> {
     const Element = illustrationComponents[illustration];
 
     return (
-      <Element data-test-id={testId} className={classNames} {...otherProps} />
+      <Element {...otherProps} data-test-id={testId} className={classNames} />
     );
   }
 }

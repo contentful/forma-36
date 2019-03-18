@@ -12,9 +12,9 @@ storiesOf('Components|IconButton', module)
   .add('default', () => (
     <IconButton
       iconProps={{
-        icon: select('Icon', Object.keys(iconName), Object.keys(iconName)[0]),
+        icon: select('icon', Object.keys(iconName), Object.keys(iconName)[0]),
       }}
-      buttonType={select('Button Type', [
+      buttonType={select('buttonType', [
         'primary',
         'positive',
         'negative',
@@ -22,9 +22,9 @@ storiesOf('Components|IconButton', module)
         'muted',
         'white',
       ])}
-      label={text('Label (screenreader only)', 'Add New Element')}
-      disabled={boolean('Disabled', false)}
-      withDropdown={boolean('With dropdown', false)}
-      extraClassNames={text('Extra Class Names', '')}
+      label={text('label (screenreader only)', 'Add New Element')}
+      disabled={boolean('disabled', false)}
+      withDropdown={boolean('withDropdown', false)}
+      extraClassNames={text('extraClassNames', '')}
     />
   ));

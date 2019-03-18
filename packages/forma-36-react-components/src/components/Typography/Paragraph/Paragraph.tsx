@@ -4,18 +4,20 @@ import styles from './Paragraph.css';
 
 import { TypographyContext } from '../Typography/Typography';
 
-export interface ParagraphProps {
+export type ParagraphProps = {
+  element: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
   extraClassNames?: string;
   children?: React.ReactNode;
   testId?: string;
-  element: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
-}
+} & typeof defaultProps;
+
+const defaultProps = {
+  element: 'p',
+  testId: 'cf-ui-paragraph',
+};
 
 export class Paragraph extends Component<ParagraphProps> {
-  static defaultProps = {
-    element: 'p',
-    testId: 'cf-ui-paragraph',
-  };
+  static defaultProps = defaultProps;
 
   render() {
     const {

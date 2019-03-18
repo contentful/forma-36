@@ -1,6 +1,7 @@
 const throttle = (delay: number = 200, fn: Function) => {
   let lastCall = 0;
-  const throttleExec = (...args) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const throttleExec = (...args: any[]) => {
     const now = new Date().getTime();
     if (now - lastCall < delay) {
       return;

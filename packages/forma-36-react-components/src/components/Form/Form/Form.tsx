@@ -1,30 +1,30 @@
-import React, { Component } from 'react';
+import React, { Component, FormEventHandler, FormEvent } from 'react';
 import cn from 'classnames';
 
 const styles = require('./Form.css');
 
-export interface FormProps
-  extends React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLFormElement>,
-    HTMLFormElement
-  > {
-  extraClassNames?: string;
-  children: React.ReactNode;
-  onSubmit?: () => void;
+export type FormProps = {
+  onSubmit?: FormEventHandler;
   spacing?: 'condensed' | 'default';
   testId?: string;
-}
+  style?: React.CSSProperties;
+  extraClassNames?: string;
+  children: React.ReactNode;
+} & typeof defaultProps;
+
+const defaultProps = {
+  spacing: 'default',
+  testId: 'cf-ui-form',
+};
 
 export class Form extends Component<FormProps> {
-  static defaultProps = {
-    spacing: 'default',
-    testId: 'cf-ui-form',
-    onSubmit: () => {},
-  };
+  static defaultProps = defaultProps;
 
-  handleSubmit = event => {
+  handleSubmit = (event: FormEvent) => {
     event.preventDefault();
-    this.props.onSubmit();
+    if (this.props.onSubmit) {
+      this.props.onSubmit(event);
+    }
   };
 
   render() {

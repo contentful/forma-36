@@ -11,10 +11,10 @@ storiesOf('Components|Card', module)
   })
   .add('default', () => (
     <Card
-      extraClassNames={text('Extra Class Names', '')}
-      href={text('Href', '') || undefined}
+      extraClassNames={text('extraClassNames', '')}
+      href={text('href', '') || undefined}
       padding={select(
-        'Padding',
+        'padding',
         {
           Default: 'default',
           Large: 'large',
@@ -22,18 +22,18 @@ storiesOf('Components|Card', module)
         },
         'default',
       )}
-      selected={boolean('Selected', false)}
+      selected={boolean('selected', false)}
     >
-      {text('Children', 'Card')}
+      {text('children', 'Card')}
     </Card>
   ))
   .add('with onClick handler', () => (
     <Card
-      extraClassNames={text('Extra Class Names', '')}
-      href={text('Href', '') || undefined}
+      extraClassNames={text('extraClassNames', '')}
+      href={text('href', '') || undefined}
       onClick={action('onClick')}
       padding={select(
-        'Padding',
+        'padding',
         {
           Default: 'default',
           Large: 'large',
@@ -41,8 +41,8 @@ storiesOf('Components|Card', module)
         },
         'default',
       )}
-      selected={boolean('Selected', false)}
+      selected={boolean('selected', false)}
     >
-      {text('Children', 'Card')}
+      {text('children', 'Card')}
     </Card>
   ));

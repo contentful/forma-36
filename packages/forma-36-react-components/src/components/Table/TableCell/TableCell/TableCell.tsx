@@ -10,19 +10,23 @@ export const sortingDirections = {
   desc: 'desc',
 };
 
-export interface TableCellProps {
+export type TableCellSorting = keyof typeof sortingDirections | boolean;
+
+export type TableCellProps = {
+  align?: 'center' | 'left' | 'right';
+  sorting?: TableCellSorting;
+  style?: React.CSSProperties;
   extraClassNames?: string;
   children?: React.ReactNode;
-  align?: 'center' | 'left' | 'right';
-  sorting?: keyof typeof sortingDirections | boolean;
-  style?: React.CSSProperties;
-}
+} & typeof defaultProps;
+
+const defaultProps = {
+  align: 'left',
+  sorting: false as TableCellSorting,
+};
 
 export class TableCell extends Component<TableCellProps> {
-  static defaultProps: Partial<TableCellProps> = {
-    align: 'left',
-    sorting: false,
-  };
+  static defaultProps = defaultProps;
 
   render() {
     const {
@@ -36,6 +40,7 @@ export class TableCell extends Component<TableCellProps> {
     return (
       <TableCellContext.Consumer>
         {({ name: context, element, offsetTop }) => {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           const Element = element as any;
           return (
             <Element

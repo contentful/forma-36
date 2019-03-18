@@ -1,28 +1,27 @@
-import React from 'react';
+import React, { Component } from 'react';
 import cn from 'classnames';
 
 const styles = require('./{{pascalCase name}}.css');
 
-export interface {{pascalCase name}}Props {
+export type {{pascalCase name}}Props = {
   extraClassNames?: string;
   children?: React.ReactNode;
   testId?: string;
-}
+} & typeof defaultProps;
 
-class {{pascalCase name}} extends React.Component<{{pascalCase name}}Props> {
+const defaultProps = {
+  testId: 'cf-ui-{{kebabCase name}}',
+};
 
-  static defaultProps = {
-    extraClassNames: undefined,
-    testId: 'cf-ui-{{kebabCase name}}',
-  };
+export class {{pascalCase name}} extends Component<{{pascalCase name}}Props> {
+  static defaultProps = defaultProps;
 
   render() {
     const { extraClassNames, children, testId, ...otherProps } = this.props;
-
     const classNames = cn(styles.{{pascalCase name}}, extraClassNames);
 
     return (
-      <div className={classNames} data-test-id={testId} {...otherProps}>
+      <div {...otherProps} className={classNames} data-test-id={testId}>
         {children}
       </div>
     );

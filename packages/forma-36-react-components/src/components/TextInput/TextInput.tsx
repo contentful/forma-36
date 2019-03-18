@@ -1,9 +1,15 @@
-import React, { Component, RefObject } from 'react';
+import React, {
+  Component,
+  RefObject,
+  FocusEvent,
+  ChangeEventHandler,
+  FocusEventHandler,
+} from 'react';
 import cn from 'classnames';
 import CopyButton from '../CopyButton';
 import styles from './TextInput.css';
 
-export interface TextInputPropTypes {
+export type TextInputProps = {
   width?: 'small' | 'medium' | 'large' | 'full';
   type?: 'text' | 'password' | 'email' | 'number' | 'search' | 'url';
   name?: string;
@@ -11,43 +17,38 @@ export interface TextInputPropTypes {
   extraClassNames?: string;
   withCopyButton?: boolean;
   placeholder?: string;
-  onChange?: (...args: any[]) => any;
+  onChange?: ChangeEventHandler;
   disabled?: boolean;
   testId?: string;
   maxLength?: number;
-  onBlur?: (...args: any[]) => any;
-  onCopy?: (...args: any[]) => any;
+  onBlur?: FocusEventHandler;
+  onCopy?: (value: string) => void;
   value?: string;
   inputRef?: RefObject<HTMLInputElement>;
   error?: boolean;
   required?: boolean;
+} & typeof defaultProps;
+
+export interface TextInputState {
+  value?: string;
 }
 
-export class TextInput extends Component<TextInputPropTypes> {
-  static defaultProps = {
-    name: undefined,
-    id: undefined,
-    extraClassNames: undefined,
-    placeholder: undefined,
-    withCopyButton: false,
-    maxLength: undefined,
-    onChange: undefined,
-    onBlur: undefined,
-    onCopy: undefined,
-    testId: 'cf-ui-text-input',
-    value: undefined,
-    error: undefined,
-    type: undefined,
-    disabled: false,
-    required: false,
-    width: 'full',
-  };
+const defaultProps = {
+  withCopyButton: false,
+  testId: 'cf-ui-text-input',
+  disabled: false,
+  required: false,
+  width: 'full',
+};
+
+export class TextInput extends Component<TextInputProps, TextInputState> {
+  static defaultProps = defaultProps;
 
   state = {
     value: this.props.value,
   };
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps: TextInputProps) {
     if (this.props.value !== nextProps.value) {
       this.setState({
         value: nextProps.value,
@@ -55,9 +56,9 @@ export class TextInput extends Component<TextInputPropTypes> {
     }
   }
 
-  handleFocus = e => {
+  handleFocus = (e: FocusEvent) => {
     if (this.props.disabled) {
-      e.target.select();
+      (e.target as HTMLInputElement).select();
     }
   };
 

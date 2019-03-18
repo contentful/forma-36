@@ -15,7 +15,7 @@ storiesOf('Components|EditorToolbar', module)
   })
   .add('default', () => (
     <EditorToolbar
-      extraClassNames={text('Extra Class Names', '')}
+      extraClassNames={text('extraClassNames', '')}
       style={{ justifyContent: 'space-between' }}
     >
       <div>
@@ -23,19 +23,19 @@ storiesOf('Components|EditorToolbar', module)
           icon="FormatBold"
           tooltip="Bold"
           label="Bold"
-          isActive={boolean('Bold isActive', false)}
+          isActive={boolean('isActive (bold)', false)}
         />
         <EditorToolbarButton
           icon="FormatItalic"
           tooltip="Italic"
           label="Italic"
-          isActive={boolean('Italic isActive', false)}
+          isActive={boolean('isActive (italic)', false)}
         />
         <EditorToolbarButton
           icon="FormatUnderlined"
           tooltip="Underlined"
           label="Underlined"
-          isActive={boolean('Underline isActive', false)}
+          isActive={boolean('isActive (underline)', false)}
         />
       </div>
       <div>
