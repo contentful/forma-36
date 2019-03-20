@@ -2,6 +2,8 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { axe } from 'jest-axe';
 import ReferenceCard from './ReferenceCard';
+import DropdownList from '../../Dropdown/DropdownList';
+import DropdownListItem from '../../Dropdown/DropdownListItem';
 
 it('renders the component', () => {
   const output = shallow(
@@ -35,22 +37,20 @@ it('renders the component with a thumbnail element', () => {
   expect(output).toMatchSnapshot();
 });
 
-it('renders the component with action elements', () => {
+it('renders the component with dropdownListElements', () => {
   const output = shallow(
     <ReferenceCard
       title="My Reference Card"
       description="This is my reference card"
       status="published"
       contentType="My Content Type"
-      actionElements={
-        <div>
-          <button key="0" type="button">
-            Button 1
-          </button>
-          <button key="1" type="button">
-            Button 2
-          </button>
-        </div>
+      dropdownListElements={
+        <DropdownList>
+          <DropdownListItem isTitle>Actions</DropdownListItem>
+          <DropdownListItem onClick={() => {}}>Edit</DropdownListItem>
+          <DropdownListItem onClick={() => {}}>Download</DropdownListItem>
+          <DropdownListItem onClick={() => {}}>Remove</DropdownListItem>
+        </DropdownList>
       }
     />,
   );

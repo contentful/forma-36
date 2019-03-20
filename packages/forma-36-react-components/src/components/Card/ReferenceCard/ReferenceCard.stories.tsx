@@ -5,6 +5,8 @@ import { action } from '@storybook/addon-actions';
 
 import ReferenceCard from './ReferenceCard';
 import IconButton from '../../IconButton';
+import DropdownList from '../../Dropdown/DropdownList';
+import DropdownListItem from '../../Dropdown/DropdownListItem';
 
 storiesOf('Components|Card/ReferenceCard', module)
   .addParameters({
@@ -30,21 +32,33 @@ storiesOf('Components|Card/ReferenceCard', module)
         )}
         contentType={text('contentType', 'Album')}
         onClick={!boolean('loading', false) ? action('onClick') : undefined}
-        actionElements={
-          <div>
-            <IconButton
-              buttonType="muted"
-              iconProps={{ icon: 'Edit' }}
-              label="Edit entry"
-              key="0"
-            />
-            <IconButton
-              buttonType="muted"
-              iconProps={{ icon: 'Close' }}
-              label="Remove reference"
-              key="1"
-            />
-          </div>
+        dropdownListElements={
+          <React.Fragment>
+            <DropdownList>
+              <DropdownListItem isTitle>Actions</DropdownListItem>
+              <DropdownListItem onClick={action('Edit onClick')}>
+                Edit
+              </DropdownListItem>
+              <DropdownListItem onClick={action('Download onClick')}>
+                Download
+              </DropdownListItem>
+              <DropdownListItem onClick={action('Remove onClick')}>
+                Remove
+              </DropdownListItem>
+            </DropdownList>
+            <DropdownList>
+              <DropdownListItem isTitle>Actions</DropdownListItem>
+              <DropdownListItem onClick={action('Edit onClick')}>
+                Edit
+              </DropdownListItem>
+              <DropdownListItem onClick={action('Download onClick')}>
+                Download
+              </DropdownListItem>
+              <DropdownListItem onClick={action('Remove onClick')}>
+                Remove
+              </DropdownListItem>
+            </DropdownList>
+          </React.Fragment>
         }
         className={text('className', '')}
         loading={boolean('loading', false)}
@@ -77,21 +91,18 @@ storiesOf('Components|Card/ReferenceCard', module)
           />
         }
         onClick={!boolean('loading', false) ? action('onClick') : undefined}
-        actionElements={
-          <div>
-            <IconButton
-              buttonType="muted"
-              iconProps={{ icon: 'Edit' }}
-              label="Edit entry"
-              key="0"
-            />
-            <IconButton
-              buttonType="muted"
-              iconProps={{ icon: 'Close' }}
-              label="Remove reference"
-              key="1"
-            />
-          </div>
+        dropdownListElements={
+          <DropdownList>
+            <DropdownListItem onClick={action('Edit onClick')}>
+              Edit
+            </DropdownListItem>
+            <DropdownListItem onClick={action('Download onClick')}>
+              Download
+            </DropdownListItem>
+            <DropdownListItem onClick={action('Remove onClick')}>
+              Remove
+            </DropdownListItem>
+          </DropdownList>
         }
         loading={boolean('loading', false)}
         className={text('className', '')}
