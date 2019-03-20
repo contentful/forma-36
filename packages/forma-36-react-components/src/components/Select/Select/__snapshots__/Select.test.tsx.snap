@@ -15,6 +15,7 @@ exports[`renders the component 1`] = `
     required={false}
   >
     <Option
+      testId="cf-ui-select-option"
       value="optionOne"
     >
       Option One
@@ -45,6 +46,7 @@ exports[`renders the component as required 1`] = `
     required={true}
   >
     <Option
+      testId="cf-ui-select-option"
       value="optionOne"
     >
       Option One
@@ -75,6 +77,7 @@ exports[`renders the component in disabled state 1`] = `
     required={false}
   >
     <Option
+      testId="cf-ui-select-option"
       value="optionOne"
     >
       Option One
@@ -106,6 +109,7 @@ exports[`renders the component with a value 1`] = `
     value="value1"
   >
     <Option
+      testId="cf-ui-select-option"
       value="optionOne"
     >
       Option One
@@ -136,6 +140,7 @@ exports[`renders the component with an extra class name 1`] = `
     required={false}
   >
     <Option
+      testId="cf-ui-select-option"
       value="optionOne"
     >
       Option One
@@ -166,6 +171,7 @@ exports[`renders the component with error 1`] = `
     required={false}
   >
     <Option
+      testId="cf-ui-select-option"
       value="optionOne"
     >
       Option One
