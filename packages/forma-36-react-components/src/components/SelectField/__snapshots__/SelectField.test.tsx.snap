@@ -28,6 +28,7 @@ exports[`renders the component 1`] = `
     width="full"
   >
     <Option
+      testId="cf-ui-select-option"
       value="optionOne"
     >
       Option 1
@@ -64,6 +65,7 @@ exports[`renders the component as disabled 1`] = `
     width="full"
   >
     <Option
+      testId="cf-ui-select-option"
       value="optionOne"
     >
       Option 1
@@ -100,6 +102,7 @@ exports[`renders the component as required 1`] = `
     width="full"
   >
     <Option
+      testId="cf-ui-select-option"
       value="optionOne"
     >
       Option 1
@@ -136,6 +139,7 @@ exports[`renders the component with a help text 1`] = `
     width="full"
   >
     <Option
+      testId="cf-ui-select-option"
       value="optionOne"
     >
       Option 1
@@ -182,6 +186,7 @@ exports[`renders the component with a validation message 1`] = `
     width="full"
   >
     <Option
+      testId="cf-ui-select-option"
       value="optionOne"
     >
       Option 1
@@ -225,6 +230,7 @@ exports[`renders the component with a value 1`] = `
     width="full"
   >
     <Option
+      testId="cf-ui-select-option"
       value="optionOne"
     >
       Option 1
