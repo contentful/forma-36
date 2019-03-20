@@ -54,12 +54,10 @@ it('renders the component with actions', () => {
   const output = shallow(
     <AssetCard
       dropdownListElements={
-        <span>
-          <DropdownList>
-            <DropdownListItem isTitle>Actions</DropdownListItem>
-            <DropdownListItem onClick={() => {}}>Edit</DropdownListItem>
-          </DropdownList>
-        </span>
+        <DropdownList>
+          <DropdownListItem isTitle>Actions</DropdownListItem>
+          <DropdownListItem onClick={() => {}}>Edit</DropdownListItem>
+        </DropdownList>
       }
       src="http://placekitten.com/200/300"
       title="picture of a cat"

@@ -1,9 +1,11 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, select, boolean } from '@storybook/addon-knobs';
+import { action } from '@storybook/addon-actions';
 
 import InlineReferenceCard from './InlineReferenceCard';
 import DropdownListItem from '../../Dropdown/DropdownListItem';
+import DropdownList from '../../Dropdown/DropdownList';
 
 storiesOf('Components|Card/InlineReferenceCard', module)
   .addParameters({
@@ -35,14 +37,19 @@ storiesOf('Components|Card/InlineReferenceCard', module)
           },
           'published',
         )}
-        dropdownListItemNodes={[
-          <DropdownListItem key="edit" onClick={() => {}}>
-            Edit
-          </DropdownListItem>,
-          <DropdownListItem key="remove" onClick={() => {}}>
-            Remove
-          </DropdownListItem>,
-        ]}
+        dropdownListElements={
+          <DropdownList>
+            <DropdownListItem onClick={action('Edit onClick')}>
+              Edit
+            </DropdownListItem>
+            <DropdownListItem onClick={action('Download onClick')}>
+              Download
+            </DropdownListItem>
+            <DropdownListItem onClick={action('Remove onClick')}>
+              Remove
+            </DropdownListItem>
+          </DropdownList>
+        }
       >
         {text('children', 'Title of inline reference')}
       </InlineReferenceCard>
@@ -65,14 +72,34 @@ storiesOf('Components|Card/InlineReferenceCard', module)
           },
           'published',
         )}
-        dropdownListItemNodes={[
-          <DropdownListItem key="edit" onClick={() => {}}>
-            Edit
-          </DropdownListItem>,
-          <DropdownListItem key="remove" onClick={() => {}}>
-            Remove
-          </DropdownListItem>,
-        ]}
+        dropdownListElements={
+          <React.Fragment>
+            <DropdownList>
+              <DropdownListItem isTitle>Actions</DropdownListItem>
+              <DropdownListItem onClick={action('Edit onClick')}>
+                Edit
+              </DropdownListItem>
+              <DropdownListItem onClick={action('Download onClick')}>
+                Download
+              </DropdownListItem>
+              <DropdownListItem onClick={action('Remove onClick')}>
+                Remove
+              </DropdownListItem>
+            </DropdownList>
+            <DropdownList>
+              <DropdownListItem isTitle>Actions</DropdownListItem>
+              <DropdownListItem onClick={action('Edit onClick')}>
+                Edit
+              </DropdownListItem>
+              <DropdownListItem onClick={action('Download onClick')}>
+                Download
+              </DropdownListItem>
+              <DropdownListItem onClick={action('Remove onClick')}>
+                Remove
+              </DropdownListItem>
+            </DropdownList>
+          </React.Fragment>
+        }
       >
         {text('children', 'Title of inline reference')}
       </InlineReferenceCard>

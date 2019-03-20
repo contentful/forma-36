@@ -1,9 +1,20 @@
-import React, { Component, MouseEventHandler } from 'react';
+import React, {
+  Component,
+  MouseEventHandler,
+  MouseEvent as ReactMouseEvent,
+} from 'react';
 import cn from 'classnames';
 import truncate from 'truncate';
 import Card from '../Card';
+import Dropdown from '../../Dropdown/Dropdown';
+import DropdownList from '../../Dropdown/DropdownList';
+import DropdownListItem, {
+  DropdownListItemProps,
+} from '../../Dropdown/DropdownListItem/DropdownListItem';
 import Tag, { TagType } from '../../Tag/Tag';
 import ReferenceCardSkeleton from './ReferenceCardSkeleton';
+import TabFocusTrap from '../../TabFocusTrap';
+import Icon from '../../Icon/Icon';
 const styles = require('./ReferenceCard.css');
 
 export type ReferenceCardStatus =
@@ -13,25 +24,118 @@ export type ReferenceCardStatus =
   | 'published';
 
 export type ReferenceCardPropTypes = {
+  /**
+   * The title of the referenced entity
+   */
   title?: string;
-  description?: string;
-  contentType?: string;
-  status: ReferenceCardStatus;
-  thumbnailElement?: React.ReactNode;
-  loading?: boolean;
-  onClick?: MouseEventHandler;
-  className?: string;
-  actionElements?: React.ReactNode;
+  /**
+   * An ID used for testing purposes applied as a data attribute (data-test-id)
+   */
   testId?: string;
+  /**
+   * The description of the referenced entity
+   */
+  description?: string;
+  /**
+   * The content type of the referenced entity
+   */
+  contentType?: string;
+  /**
+   * The publish status of the referenced entity
+   */
+  status: ReferenceCardStatus;
+  /**
+   * The thumbnail of the referenced entity
+   */
+  thumbnailElement?: React.ReactNode;
+  /**
+   * Loading state for the ReferenceCard - when true will display loading feedback to the user
+   */
+  loading?: boolean;
+  /**
+   * The action to be performed on click of the ReferenceCard
+   */
+  onClick?: MouseEventHandler;
+  /**
+   * Class names to be appended to the className prop of the component
+   */
+  className?: string;
+  /**
+   * The DropdownList elements used to render an actions dropdown for the ReferenceCard
+   */
+  dropdownListElements?: React.ReactElement;
 } & typeof defaultProps;
+
+export interface ReferenceCardState {
+  isDropdownOpen: boolean;
+}
 
 const defaultProps = {
   title: 'Untitled',
   testId: 'cf-ui-reference-card',
 };
 
-export class ReferenceCard extends Component<ReferenceCardPropTypes> {
+export class ReferenceCard extends Component<
+  ReferenceCardPropTypes,
+  ReferenceCardState
+> {
   static defaultProps = defaultProps;
+
+  state = {
+    isDropdownOpen: false,
+  };
+
+  renderDropdownListElements = (dropdownListElements: React.ReactElement) => {
+    return (
+      <Dropdown
+        onClose={() => {
+          this.setState({
+            isDropdownOpen: false,
+          });
+        }}
+        position="bottom-right"
+        isOpen={this.state.isDropdownOpen}
+        toggleElement={
+          <button
+            type="button"
+            className={styles['ReferenceCard__dropdown-button']}
+            onClick={() =>
+              this.setState(state => ({
+                isDropdownOpen: !state.isDropdownOpen,
+              }))
+            }
+          >
+            <TabFocusTrap>
+              <Icon icon="MoreHorizontalTrimmed" color="secondary" />
+            </TabFocusTrap>
+          </button>
+        }
+      >
+        {React.Children.map(dropdownListElements, listItems => {
+          return React.Children.map(listItems, item => {
+            // React.Children behaves differently if the object is a Fragment.
+            const resolvedChildren =
+              item.type === React.Fragment ? item.props.children : item;
+
+            const enhancedChildren = React.Children.map(
+              resolvedChildren,
+              child =>
+                React.cloneElement(child, {
+                  onClick: (e: ReactMouseEvent) => {
+                    if (child.props.onClick) {
+                      child.props.onClick(e);
+                    }
+                    this.setState({ isDropdownOpen: false });
+                  },
+                }),
+            );
+
+            return enhancedChildren;
+          });
+        })}
+      </Dropdown>
+    );
+  };
 
   renderTitle = (title: string) => {
     const truncatedTitle = truncate(title, 255, {});
@@ -106,7 +210,7 @@ export class ReferenceCard extends Component<ReferenceCardPropTypes> {
       status,
       thumbnailElement,
       loading,
-      actionElements,
+      dropdownListElements,
       ...otherProps
     } = this.props;
 
@@ -132,7 +236,8 @@ export class ReferenceCard extends Component<ReferenceCardPropTypes> {
                   {contentType}
                 </div>
                 {status && this.renderStatus(status)}
-                {actionElements && this.renderActionElements(actionElements)}
+                {dropdownListElements &&
+                  this.renderDropdownListElements(dropdownListElements)}
               </div>
               <div className={styles.ReferenceCard__content}>
                 <div className={styles.ReferenceCard__body}>

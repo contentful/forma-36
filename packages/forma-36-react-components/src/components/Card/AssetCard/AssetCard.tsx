@@ -2,6 +2,8 @@ import React, { Component, MouseEvent as ReactMouseEvent } from 'react';
 import cn from 'classnames';
 import Card from '../Card';
 import Dropdown from '../../Dropdown/Dropdown';
+import DropdownList from '../../Dropdown/DropdownList';
+import DropdownListItem from '../../Dropdown/DropdownListItem';
 import Asset from '../../Asset';
 import { AssetType } from '../../Asset/Asset';
 import Icon from '../../Icon/Icon';
@@ -25,7 +27,7 @@ export type AssetCardProps = {
 } & typeof defaultProps;
 
 export interface AssetCardState {
-  isOpen: boolean;
+  isDropdownOpen: boolean;
 }
 
 const defaultProps = {
@@ -37,49 +39,60 @@ export class AssetCard extends Component<AssetCardProps, AssetCardState> {
   static defaultProps = defaultProps;
 
   state = {
-    isOpen: false,
+    isDropdownOpen: false,
   };
 
-  renderDropdownListElements = (dropdownListElements: React.ReactElement) => (
-    <Dropdown
-      isOpen={this.state.isOpen}
-      onClose={() => this.setState({ isOpen: false })}
-      position="bottom-right"
-      toggleElement={
-        <button
-          type="button"
-          className={styles['AssetCard__header__dropdown-button']}
-          onClick={() => this.setState(state => ({ isOpen: !state.isOpen }))}
-        >
-          <TabFocusTrap>
-            <Icon icon="MoreHorizontalTrimmed" color="secondary" />
-          </TabFocusTrap>
-        </button>
-      }
-    >
-      {dropdownListElements.props &&
-        dropdownListElements.props.children &&
-        React.Children.map(dropdownListElements.props.children, listItem => {
-          return React.cloneElement(listItem, {
-            children: listItem.props.children.map(
-              (item: React.ReactElement<DropdownListItemProps>) => {
-                if (!item || !item.props.onClick) {
-                  return item;
-                }
-                return React.cloneElement(item, {
+  renderDropdownListElements = (dropdownListElements: React.ReactElement) => {
+    return (
+      <Dropdown
+        onClose={() => {
+          this.setState({
+            isDropdownOpen: false,
+          });
+        }}
+        position="bottom-right"
+        isOpen={this.state.isDropdownOpen}
+        toggleElement={
+          <button
+            type="button"
+            className={styles['AssetCard__header__dropdown-button']}
+            onClick={() =>
+              this.setState(state => ({
+                isDropdownOpen: !state.isDropdownOpen,
+              }))
+            }
+          >
+            <TabFocusTrap>
+              <Icon icon="MoreHorizontalTrimmed" color="secondary" />
+            </TabFocusTrap>
+          </button>
+        }
+      >
+        {React.Children.map(dropdownListElements, listItems => {
+          return React.Children.map(listItems, item => {
+            // React.Children behaves differently if the object is a Fragment.
+            const resolvedChildren =
+              item.type === React.Fragment ? item.props.children : item;
+
+            const enhancedChildren = React.Children.map(
+              resolvedChildren,
+              child =>
+                React.cloneElement(child, {
                   onClick: (e: ReactMouseEvent) => {
-                    if (item.props.onClick) {
-                      item.props.onClick(e);
+                    if (child.props.onClick) {
+                      child.props.onClick(e);
                     }
-                    this.setState({ isOpen: false });
+                    this.setState({ isDropdownOpen: false });
                   },
-                });
-              },
-            ),
+                }),
+            );
+
+            return enhancedChildren;
           });
         })}
-    </Dropdown>
-  );
+      </Dropdown>
+    );
+  };
 
   renderStatus = (status: AssetState) => {
     let label;

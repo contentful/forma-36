@@ -97,7 +97,8 @@ exports[`renders the component with a dropdown 1`] = `
     }
   >
     <DropdownList
-      className="InlineReferenceCard__dropdown-list"
+      key=".0/.$.0/.$.0"
+      onClick={[Function]}
       testId="cf-ui-dropdown-list"
     >
       <DropdownListItem
