@@ -14,7 +14,7 @@
   "scripts": {
     "travis-deploy-once": "travis-deploy-once --pro",
     "semantic-release": "lerna exec --concurrency 1 -- npx --no-install semantic-release -e semantic-release-monorepo",
-    "postinstall": "lerna bootstrap && lerna run --scope @contentful/forma-36-tokens build",
+    "postinstall": "lerna bootstrap && lerna run --scope @contentful/forma-36-tokens build && lerna run --scope @contentful/forma-36-fcss build",
     "build": "lerna run build",
     "test": "lerna run test",
     "lint": "lerna run lint",
