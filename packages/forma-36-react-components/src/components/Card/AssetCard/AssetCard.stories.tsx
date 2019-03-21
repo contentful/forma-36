@@ -49,7 +49,7 @@ storiesOf('Components|Card/AssetCard', module)
       src={text('src', 'https://placekitten.com/200/300')}
       title={text('title', 'Image of a cat')}
       dropdownListElements={
-        <span>
+        <React.Fragment>
           <DropdownList>
             <DropdownListItem isTitle>Actions</DropdownListItem>
             <DropdownListItem onClick={action('Edit onClick')}>
@@ -69,7 +69,7 @@ storiesOf('Components|Card/AssetCard', module)
             <DropdownListItem>Asset size</DropdownListItem>
             <DropdownListItem>Asset resolution</DropdownListItem>
           </DropdownList>
-        </span>
+        </React.Fragment>
       }
     />
   ));

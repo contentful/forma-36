@@ -78,7 +78,8 @@ exports[`renders the component with actions 1`] = `
         }
       >
         <DropdownList
-          key=".0"
+          key=".0/.$.0/.$.0"
+          onClick={[Function]}
           testId="cf-ui-dropdown-list"
         >
           <DropdownListItem
