@@ -74,16 +74,6 @@
   display: block;
 }
 
-.ReferenceCard__dropdown-button {
-  border: none;
-  background: transparent;
-  display: flex;
-  padding: 0px;
-  cursor: pointer;
+.ReferenceCard__actions {
   margin-left: calc(1rem * (10 / var(--font-base-default)));
-}
-
-.ReferenceCard__dropdown-button svg {
-  /* This needs to be set for IE11 to show the icon */
-  width: 18px;
 }

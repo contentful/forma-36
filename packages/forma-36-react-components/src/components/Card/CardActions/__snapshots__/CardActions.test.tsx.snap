@@ -1,0 +1,267 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component using a multiple dropdown lists 1`] = `
+<Dropdown
+  isOpen={false}
+  onClose={[Function]}
+  position="bottom-right"
+  testId="cf-ui-dropdown"
+  toggleElement={
+    <IconButton
+      buttonType="secondary"
+      disabled={false}
+      iconProps={
+        Object {
+          "icon": "MoreHorizontal",
+        }
+      }
+      label="Actions"
+      onClick={[Function]}
+      testId="cf-ui-icon-button"
+      withDropdown={false}
+    />
+  }
+>
+  <DropdownList
+    key=".0/.$.0/.$.0"
+    onClick={[Function]}
+    testId="cf-ui-dropdown-list"
+  >
+    <DropdownListItem
+      isActive={false}
+      isDisabled={false}
+      isTitle={false}
+      onClick={[Function]}
+      testId="cf-ui-dropdown-list-item"
+    >
+      Edit
+    </DropdownListItem>
+    <DropdownListItem
+      isActive={false}
+      isDisabled={false}
+      isTitle={false}
+      onClick={[Function]}
+      testId="cf-ui-dropdown-list-item"
+    >
+      Download
+    </DropdownListItem>
+    <DropdownListItem
+      isActive={false}
+      isDisabled={false}
+      isTitle={false}
+      onClick={[Function]}
+      testId="cf-ui-dropdown-list-item"
+    >
+      Remove
+    </DropdownListItem>
+  </DropdownList>
+  <DropdownList
+    key=".1/.$.0/.$.0"
+    onClick={[Function]}
+    testId="cf-ui-dropdown-list"
+  >
+    <DropdownListItem
+      isActive={false}
+      isDisabled={false}
+      isTitle={false}
+      onClick={[Function]}
+      testId="cf-ui-dropdown-list-item"
+    >
+      Edit
+    </DropdownListItem>
+    <DropdownListItem
+      isActive={false}
+      isDisabled={false}
+      isTitle={false}
+      onClick={[Function]}
+      testId="cf-ui-dropdown-list-item"
+    >
+      Download
+    </DropdownListItem>
+    <DropdownListItem
+      isActive={false}
+      isDisabled={false}
+      isTitle={false}
+      onClick={[Function]}
+      testId="cf-ui-dropdown-list-item"
+    >
+      Remove
+    </DropdownListItem>
+  </DropdownList>
+</Dropdown>
+`;
+
+exports[`renders the component using a single dropdown list 1`] = `
+<Dropdown
+  isOpen={false}
+  onClose={[Function]}
+  position="bottom-right"
+  testId="cf-ui-dropdown"
+  toggleElement={
+    <IconButton
+      buttonType="secondary"
+      disabled={false}
+      iconProps={
+        Object {
+          "icon": "MoreHorizontal",
+        }
+      }
+      label="Actions"
+      onClick={[Function]}
+      testId="cf-ui-icon-button"
+      withDropdown={false}
+    />
+  }
+>
+  <DropdownList
+    key=".0/.$.0/.$.0"
+    onClick={[Function]}
+    testId="cf-ui-dropdown-list"
+  >
+    <DropdownListItem
+      isActive={false}
+      isDisabled={false}
+      isTitle={false}
+      onClick={[Function]}
+      testId="cf-ui-dropdown-list-item"
+    >
+      Edit
+    </DropdownListItem>
+    <DropdownListItem
+      isActive={false}
+      isDisabled={false}
+      isTitle={false}
+      onClick={[Function]}
+      testId="cf-ui-dropdown-list-item"
+    >
+      Download
+    </DropdownListItem>
+    <DropdownListItem
+      isActive={false}
+      isDisabled={false}
+      isTitle={false}
+      onClick={[Function]}
+      testId="cf-ui-dropdown-list-item"
+    >
+      Remove
+    </DropdownListItem>
+  </DropdownList>
+</Dropdown>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+<Dropdown
+  className="my-extra-class"
+  isOpen={false}
+  onClose={[Function]}
+  position="bottom-right"
+  testId="cf-ui-dropdown"
+  toggleElement={
+    <IconButton
+      buttonType="secondary"
+      disabled={false}
+      iconProps={
+        Object {
+          "icon": "MoreHorizontal",
+        }
+      }
+      label="Actions"
+      onClick={[Function]}
+      testId="cf-ui-icon-button"
+      withDropdown={false}
+    />
+  }
+>
+  <DropdownList
+    key=".0/.$.0/.$.0"
+    onClick={[Function]}
+    testId="cf-ui-dropdown-list"
+  >
+    <DropdownListItem
+      isActive={false}
+      isDisabled={false}
+      isTitle={false}
+      onClick={[Function]}
+      testId="cf-ui-dropdown-list-item"
+    >
+      Edit
+    </DropdownListItem>
+    <DropdownListItem
+      isActive={false}
+      isDisabled={false}
+      isTitle={false}
+      onClick={[Function]}
+      testId="cf-ui-dropdown-list-item"
+    >
+      Download
+    </DropdownListItem>
+    <DropdownListItem
+      isActive={false}
+      isDisabled={false}
+      isTitle={false}
+      onClick={[Function]}
+      testId="cf-ui-dropdown-list-item"
+    >
+      Remove
+    </DropdownListItem>
+  </DropdownList>
+</Dropdown>
+`;
+
+exports[`renders the component with published status 1`] = `
+<Dropdown
+  isOpen={false}
+  onClose={[Function]}
+  position="bottom-right"
+  testId="cf-ui-dropdown"
+  toggleElement={
+    <IconButton
+      buttonType="secondary"
+      disabled={false}
+      iconProps={
+        Object {
+          "icon": "MoreHorizontal",
+        }
+      }
+      label="Actions"
+      onClick={[Function]}
+      testId="cf-ui-icon-button"
+      withDropdown={false}
+    />
+  }
+>
+  <DropdownList
+    key=".0/.$.0/.$.0"
+    onClick={[Function]}
+    testId="cf-ui-dropdown-list"
+  >
+    <DropdownListItem
+      isActive={false}
+      isDisabled={false}
+      isTitle={false}
+      onClick={[Function]}
+      testId="cf-ui-dropdown-list-item"
+    >
+      Edit
+    </DropdownListItem>
+    <DropdownListItem
+      isActive={false}
+      isDisabled={false}
+      isTitle={false}
+      onClick={[Function]}
+      testId="cf-ui-dropdown-list-item"
+    >
+      Download
+    </DropdownListItem>
+    <DropdownListItem
+      isActive={false}
+      isDisabled={false}
+      isTitle={false}
+      onClick={[Function]}
+      testId="cf-ui-dropdown-list-item"
+    >
+      Remove
+    </DropdownListItem>
+  </DropdownList>
+</Dropdown>
+`;

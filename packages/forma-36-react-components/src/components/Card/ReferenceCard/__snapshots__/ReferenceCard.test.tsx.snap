@@ -183,31 +183,11 @@ exports[`renders the component with dropdownListElements 1`] = `
       >
         published
       </Tag>
-      <Dropdown
-        isOpen={false}
-        onClose={[Function]}
-        position="bottom-right"
-        testId="cf-ui-dropdown"
-        toggleElement={
-          <button
-            className="ReferenceCard__dropdown-button"
-            onClick={[Function]}
-            type="button"
-          >
-            <TabFocusTrap>
-              <Icon
-                color="secondary"
-                icon="MoreHorizontalTrimmed"
-                size="small"
-                testId="cf-ui-icon"
-              />
-            </TabFocusTrap>
-          </button>
-        }
+      <CardActions
+        className="ReferenceCard__actions"
+        testId="cf-ui-card-actions"
       >
         <DropdownList
-          key=".0/.$.0/.$.0"
-          onClick={[Function]}
           testId="cf-ui-dropdown-list"
         >
           <DropdownListItem
@@ -246,7 +226,7 @@ exports[`renders the component with dropdownListElements 1`] = `
             Remove
           </DropdownListItem>
         </DropdownList>
-      </Dropdown>
+      </CardActions>
     </div>
     <div
       className="ReferenceCard__content"
