@@ -1,20 +1,11 @@
-import React, {
-  Component,
-  MouseEventHandler,
-  MouseEvent as ReactMouseEvent,
-} from 'react';
+import React, { Component, MouseEventHandler } from 'react';
 import cn from 'classnames';
 import truncate from 'truncate';
 import Card from '../Card';
-import Dropdown from '../../Dropdown/Dropdown';
-import DropdownList from '../../Dropdown/DropdownList';
-import DropdownListItem, {
-  DropdownListItemProps,
-} from '../../Dropdown/DropdownListItem/DropdownListItem';
+import CardActions from '../CardActions';
 import Tag, { TagType } from '../../Tag/Tag';
 import ReferenceCardSkeleton from './ReferenceCardSkeleton';
-import TabFocusTrap from '../../TabFocusTrap';
-import Icon from '../../Icon/Icon';
+
 const styles = require('./ReferenceCard.css');
 
 export type ReferenceCardStatus =
@@ -66,75 +57,16 @@ export type ReferenceCardPropTypes = {
   dropdownListElements?: React.ReactElement;
 } & typeof defaultProps;
 
-export interface ReferenceCardState {
-  isDropdownOpen: boolean;
-}
-
 const defaultProps = {
   title: 'Untitled',
   testId: 'cf-ui-reference-card',
 };
 
-export class ReferenceCard extends Component<
-  ReferenceCardPropTypes,
-  ReferenceCardState
-> {
+export class ReferenceCard extends Component<ReferenceCardPropTypes> {
   static defaultProps = defaultProps;
 
   state = {
     isDropdownOpen: false,
-  };
-
-  renderDropdownListElements = (dropdownListElements: React.ReactElement) => {
-    return (
-      <Dropdown
-        onClose={() => {
-          this.setState({
-            isDropdownOpen: false,
-          });
-        }}
-        position="bottom-right"
-        isOpen={this.state.isDropdownOpen}
-        toggleElement={
-          <button
-            type="button"
-            className={styles['ReferenceCard__dropdown-button']}
-            onClick={() =>
-              this.setState(state => ({
-                isDropdownOpen: !state.isDropdownOpen,
-              }))
-            }
-          >
-            <TabFocusTrap>
-              <Icon icon="MoreHorizontalTrimmed" color="secondary" />
-            </TabFocusTrap>
-          </button>
-        }
-      >
-        {React.Children.map(dropdownListElements, listItems => {
-          return React.Children.map(listItems, item => {
-            // React.Children behaves differently if the object is a Fragment.
-            const resolvedChildren =
-              item.type === React.Fragment ? item.props.children : item;
-
-            const enhancedChildren = React.Children.map(
-              resolvedChildren,
-              child =>
-                React.cloneElement(child, {
-                  onClick: (e: ReactMouseEvent) => {
-                    if (child.props.onClick) {
-                      child.props.onClick(e);
-                    }
-                    this.setState({ isDropdownOpen: false });
-                  },
-                }),
-            );
-
-            return enhancedChildren;
-          });
-        })}
-      </Dropdown>
-    );
   };
 
   renderTitle = (title: string) => {
@@ -165,10 +97,6 @@ export class ReferenceCard extends Component<
     <figure className={styles.ReferenceCard__thumbnail}>
       {thumbnailElement}
     </figure>
-  );
-
-  renderActionElements = (actionElements: React.ReactNode) => (
-    <div className={styles.ReferenceCard__actions}>{actionElements}</div>
   );
 
   renderStatus = (status: ReferenceCardStatus) => {
@@ -236,8 +164,11 @@ export class ReferenceCard extends Component<
                   {contentType}
                 </div>
                 {status && this.renderStatus(status)}
-                {dropdownListElements &&
-                  this.renderDropdownListElements(dropdownListElements)}
+                {dropdownListElements && (
+                  <CardActions className={styles['ReferenceCard__actions']}>
+                    {dropdownListElements}
+                  </CardActions>
+                )}
               </div>
               <div className={styles.ReferenceCard__content}>
                 <div className={styles.ReferenceCard__body}>

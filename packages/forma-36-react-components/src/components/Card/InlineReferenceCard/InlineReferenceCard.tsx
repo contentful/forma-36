@@ -1,18 +1,8 @@
-import React, {
-  Component,
-  MouseEventHandler,
-  MouseEvent as ReactMouseEvent,
-} from 'react';
+import React, { Component } from 'react';
 import cn from 'classnames';
 import { CSSTransition } from 'react-transition-group';
-import IconButton from '../../IconButton';
-import Dropdown from '../../Dropdown/Dropdown';
-import DropdownList from '../../Dropdown/DropdownList';
-import DropdownListItem, {
-  DropdownListItemProps,
-} from '../../Dropdown/DropdownListItem/DropdownListItem';
-import TabFocusTrap from '../../TabFocusTrap';
 import Card from '../Card';
+import CardActions from './../CardActions';
 
 import InlineReferenceCardSkeleton from './InlineReferenceCardSkeleton';
 const styles = require('./InlineReferenceCard.css');
@@ -48,74 +38,14 @@ export type InlineReferenceCardPropTypes = {
   children: React.ReactNode;
 } & typeof defaultProps;
 
-export interface InlineReferenceCardState {
-  isDropdownOpen: boolean;
-}
-
 const defaultProps = {
   testId: 'cf-ui-inline-reference-card',
 };
 
 export class InlineReferenceCard extends Component<
-  InlineReferenceCardPropTypes,
-  InlineReferenceCardState
+  InlineReferenceCardPropTypes
 > {
   static defaultProps = defaultProps;
-
-  state = {
-    isDropdownOpen: false,
-  };
-
-  renderDropdownListElements = (dropdownListElements: React.ReactElement) => {
-    return (
-      <Dropdown
-        onClose={() => {
-          this.setState({
-            isDropdownOpen: false,
-          });
-        }}
-        position="bottom-right"
-        className={styles.InlineReferenceCard__dropdown}
-        isOpen={this.state.isDropdownOpen}
-        toggleElement={
-          <IconButton
-            className={styles['InlineReferenceCard__icon-button']}
-            iconProps={{ icon: 'MoreHorizontal' }}
-            buttonType="secondary"
-            label="Inline reference actions"
-            onClick={() => {
-              this.setState(state => ({
-                isDropdownOpen: !state.isDropdownOpen,
-              }));
-            }}
-          />
-        }
-      >
-        {React.Children.map(dropdownListElements, listItems => {
-          return React.Children.map(listItems, item => {
-            // React.Children behaves differently if the object is a Fragment.
-            const resolvedChildren =
-              item.type === React.Fragment ? item.props.children : item;
-
-            const enhancedChildren = React.Children.map(
-              resolvedChildren,
-              child =>
-                React.cloneElement(child, {
-                  onClick: (e: ReactMouseEvent) => {
-                    if (child.props.onClick) {
-                      child.props.onClick(e);
-                    }
-                    this.setState({ isDropdownOpen: false });
-                  },
-                }),
-            );
-
-            return enhancedChildren;
-          });
-        })}
-      </Dropdown>
-    );
-  };
 
   render() {
     const {
@@ -166,8 +96,11 @@ export class InlineReferenceCard extends Component<
         <span className={styles['InlineReferenceCard__text-wrapper']}>
           {isLoading ? 'Loading' : children}
         </span>
-        {dropdownListElements &&
-          this.renderDropdownListElements(dropdownListElements)}
+        {dropdownListElements && (
+          <CardActions className={styles['InlineReferenceCard__actions']}>
+            {dropdownListElements}
+          </CardActions>
+        )}
       </Card>
     );
   }

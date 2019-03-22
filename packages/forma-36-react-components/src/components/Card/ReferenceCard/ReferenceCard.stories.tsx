@@ -4,7 +4,6 @@ import { text, select, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import ReferenceCard from './ReferenceCard';
-import IconButton from '../../IconButton';
 import DropdownList from '../../Dropdown/DropdownList';
 import DropdownListItem from '../../Dropdown/DropdownListItem';
 
