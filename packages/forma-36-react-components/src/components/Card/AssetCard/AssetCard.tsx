@@ -1,13 +1,10 @@
-import React, { Component, MouseEvent as ReactMouseEvent } from 'react';
+import React, { Component } from 'react';
 import cn from 'classnames';
 import Card from '../Card';
-import Dropdown from '../../Dropdown/Dropdown';
+import CardActions from './../CardActions';
 import Asset from '../../Asset';
 import { AssetType } from '../../Asset/Asset';
-import Icon from '../../Icon/Icon';
-import TabFocusTrap from '../../TabFocusTrap';
 import Tag, { TagType } from '../../Tag/Tag';
-import { DropdownListItemProps } from '../../Dropdown/DropdownListItem/DropdownListItem';
 import AssetCardSkeleton from './AssetCardSkeleton';
 const styles = require('./AssetCard.css');
 
@@ -24,62 +21,13 @@ export type AssetCardProps = {
   type?: AssetType;
 } & typeof defaultProps;
 
-export interface AssetCardState {
-  isOpen: boolean;
-}
-
 const defaultProps = {
   isLoading: false,
   testId: 'cf-ui-asset-card',
 };
 
-export class AssetCard extends Component<AssetCardProps, AssetCardState> {
+export class AssetCard extends Component<AssetCardProps> {
   static defaultProps = defaultProps;
-
-  state = {
-    isOpen: false,
-  };
-
-  renderDropdownListElements = (dropdownListElements: React.ReactElement) => (
-    <Dropdown
-      isOpen={this.state.isOpen}
-      onClose={() => this.setState({ isOpen: false })}
-      position="bottom-right"
-      toggleElement={
-        <button
-          type="button"
-          className={styles['AssetCard__header__dropdown-button']}
-          onClick={() => this.setState(state => ({ isOpen: !state.isOpen }))}
-        >
-          <TabFocusTrap>
-            <Icon icon="MoreHorizontalTrimmed" color="secondary" />
-          </TabFocusTrap>
-        </button>
-      }
-    >
-      {dropdownListElements.props &&
-        dropdownListElements.props.children &&
-        React.Children.map(dropdownListElements.props.children, listItem => {
-          return React.cloneElement(listItem, {
-            children: listItem.props.children.map(
-              (item: React.ReactElement<DropdownListItemProps>) => {
-                if (!item || !item.props.onClick) {
-                  return item;
-                }
-                return React.cloneElement(item, {
-                  onClick: (e: ReactMouseEvent) => {
-                    if (item.props.onClick) {
-                      item.props.onClick(e);
-                    }
-                    this.setState({ isOpen: false });
-                  },
-                });
-              },
-            ),
-          });
-        })}
-    </Dropdown>
-  );
 
   renderStatus = (status: AssetState) => {
     let label;
@@ -140,8 +88,11 @@ export class AssetCard extends Component<AssetCardProps, AssetCardState> {
           <div className={styles['AssetCard__inner-wrapper']}>
             <div className={styles['AssetCard__header']}>
               {status && this.renderStatus(status)}
-              {dropdownListElements &&
-                this.renderDropdownListElements(dropdownListElements)}
+              {dropdownListElements && (
+                <CardActions className={styles['AssetCard__actions']}>
+                  {dropdownListElements}
+                </CardActions>
+              )}
             </div>
             <div className={styles['AssetCard__content']}>
               <Asset

@@ -73,3 +73,7 @@
 .ReferenceCard__thumbnail img {
   display: block;
 }
+
+.ReferenceCard__actions {
+  margin-left: calc(1rem * (10 / var(--font-base-default)));
+}

@@ -108,74 +108,6 @@ exports[`renders the component with a thumbnail element 1`] = `
 </Card>
 `;
 
-exports[`renders the component with action elements 1`] = `
-<Card
-  className="ReferenceCard"
-  padding="default"
-  selected={false}
-  testId="cf-ui-reference-card"
->
-  <article
-    className="ReferenceCard__wrapper"
-  >
-    <div
-      className="ReferenceCard__meta"
-    >
-      <div
-        className="ReferenceCard__content-type"
-        data-test-id="content-type"
-      >
-        My Content Type
-      </div>
-      <Tag
-        tagType="positive"
-        testId="cf-ui-tag"
-      >
-        published
-      </Tag>
-      <div
-        className="ReferenceCard__actions"
-      >
-        <div>
-          <button
-            key="0"
-            type="button"
-          >
-            Button 1
-          </button>
-          <button
-            key="1"
-            type="button"
-          >
-            Button 2
-          </button>
-        </div>
-      </div>
-    </div>
-    <div
-      className="ReferenceCard__content"
-    >
-      <div
-        className="ReferenceCard__body"
-      >
-        <h1
-          className="ReferenceCard__title"
-          data-test-id="title"
-          title=""
-        >
-          My Reference Card
-        </h1>
-        <p
-          className="ReferenceCard__description"
-        >
-          This is my reference card
-        </p>
-      </div>
-    </div>
-  </article>
-</Card>
-`;
-
 exports[`renders the component with an additional class name 1`] = `
 <Card
   className="ReferenceCard my-extra-class"
@@ -201,6 +133,100 @@ exports[`renders the component with an additional class name 1`] = `
       >
         published
       </Tag>
+    </div>
+    <div
+      className="ReferenceCard__content"
+    >
+      <div
+        className="ReferenceCard__body"
+      >
+        <h1
+          className="ReferenceCard__title"
+          data-test-id="title"
+          title=""
+        >
+          My Reference Card
+        </h1>
+        <p
+          className="ReferenceCard__description"
+        >
+          This is my reference card
+        </p>
+      </div>
+    </div>
+  </article>
+</Card>
+`;
+
+exports[`renders the component with dropdownListElements 1`] = `
+<Card
+  className="ReferenceCard"
+  padding="default"
+  selected={false}
+  testId="cf-ui-reference-card"
+>
+  <article
+    className="ReferenceCard__wrapper"
+  >
+    <div
+      className="ReferenceCard__meta"
+    >
+      <div
+        className="ReferenceCard__content-type"
+        data-test-id="content-type"
+      >
+        My Content Type
+      </div>
+      <Tag
+        tagType="positive"
+        testId="cf-ui-tag"
+      >
+        published
+      </Tag>
+      <CardActions
+        className="ReferenceCard__actions"
+        testId="cf-ui-card-actions"
+      >
+        <DropdownList
+          testId="cf-ui-dropdown-list"
+        >
+          <DropdownListItem
+            isActive={false}
+            isDisabled={false}
+            isTitle={true}
+            testId="cf-ui-dropdown-list-item"
+          >
+            Actions
+          </DropdownListItem>
+          <DropdownListItem
+            isActive={false}
+            isDisabled={false}
+            isTitle={false}
+            onClick={[Function]}
+            testId="cf-ui-dropdown-list-item"
+          >
+            Edit
+          </DropdownListItem>
+          <DropdownListItem
+            isActive={false}
+            isDisabled={false}
+            isTitle={false}
+            onClick={[Function]}
+            testId="cf-ui-dropdown-list-item"
+          >
+            Download
+          </DropdownListItem>
+          <DropdownListItem
+            isActive={false}
+            isDisabled={false}
+            isTitle={false}
+            onClick={[Function]}
+            testId="cf-ui-dropdown-list-item"
+          >
+            Remove
+          </DropdownListItem>
+        </DropdownList>
+      </CardActions>
     </div>
     <div
       className="ReferenceCard__content"
