@@ -3,13 +3,13 @@ import { storiesOf } from '@storybook/react';
 import { text, select, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
-import InlineReferenceCard from './InlineReferenceCard';
+import InlineEntryCard from './InlineEntryCard';
 import DropdownListItem from '../../Dropdown/DropdownListItem';
 import DropdownList from '../../Dropdown/DropdownList';
 
-storiesOf('Components|Card/InlineReferenceCard', module)
+storiesOf('Components|Card/InlineEntryCard', module)
   .addParameters({
-    propTypes: InlineReferenceCard['__docgenInfo'],
+    propTypes: InlineEntryCard['__docgenInfo'],
   })
   .add('default', () => (
     <div
@@ -23,7 +23,7 @@ storiesOf('Components|Card/InlineReferenceCard', module)
       Fusce a odio pharetra, porta justo vel, maximus ex. In pellentesque a orci
       et pretium. Praesent libero lorem, gravida eu pulvinar id, eleifend a
       sapien. &nbsp;
-      <InlineReferenceCard
+      <InlineEntryCard
         className={text('className', '')}
         isLoading={boolean('isLoading', false)}
         isSelected={boolean('isSelected', false)}
@@ -51,14 +51,14 @@ storiesOf('Components|Card/InlineReferenceCard', module)
           </DropdownList>
         }
       >
-        {text('children', 'Title of inline reference')}
-      </InlineReferenceCard>
+        {text('children', 'Title of inline entry')}
+      </InlineEntryCard>
       &nbsp; Nulla a ultrices nulla, vel blandit sapien. Etiam eget massa dui.
       Fusce id nisl quam. Integer nec mi arcu. Nullam lacinia est lectus, a
       euismod purus eleifend id. Fusce a odio pharetra, porta justo vel, maximus
       ex. In pellentesque a orci et pretium. Praesent libero lorem, gravida eu
       pulvinar id, eleifend a sapien. &nbsp;
-      <InlineReferenceCard
+      <InlineEntryCard
         className={text('className', '')}
         isLoading={boolean('isLoading', false)}
         isSelected={boolean('isSelected', false)}
@@ -101,8 +101,8 @@ storiesOf('Components|Card/InlineReferenceCard', module)
           </React.Fragment>
         }
       >
-        {text('children', 'Title of inline reference')}
-      </InlineReferenceCard>
+        {text('children', 'Title of inline entry')}
+      </InlineEntryCard>
       &nbsp; Nulla a ultrices nulla, vel blandit sapien. Etiam eget massa dui.
       Fusce id nisl quam. Integer nec mi arcu. Nullam lacinia est lectus, a
       euismod purus eleifend id.

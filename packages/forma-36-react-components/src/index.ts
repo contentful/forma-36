@@ -38,8 +38,8 @@ export { SelectField } from './components/SelectField/SelectField';
 export { Select } from './components/Select/Select/Select';
 export { Option } from './components/Select/Option/Option';
 export {
-  InlineReferenceCard,
-} from './components/Card/InlineReferenceCard/InlineReferenceCard';
+  InlineEntryCard,
+} from './components/Card/InlineEntryCard/InlineEntryCard';
 export { Illustration } from './components/Illustration/Illustration';
 export { Table } from './components/Table/Table/Table';
 export { TableBody } from './components/Table/TableBody/TableBody';
