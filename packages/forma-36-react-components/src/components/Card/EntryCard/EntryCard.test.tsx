@@ -1,15 +1,15 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { axe } from 'jest-axe';
-import ReferenceCard from './ReferenceCard';
+import EntryCard from './EntryCard';
 import DropdownList from '../../Dropdown/DropdownList';
 import DropdownListItem from '../../Dropdown/DropdownListItem';
 
 it('renders the component', () => {
   const output = shallow(
-    <ReferenceCard
-      title="My Reference Card"
-      description="This is my reference card"
+    <EntryCard
+      title="My Entry Card"
+      description="This is my Entry Card"
       status="published"
       contentType="My Content Type"
     />,
@@ -20,9 +20,9 @@ it('renders the component', () => {
 
 it('renders the component with a thumbnail element', () => {
   const output = shallow(
-    <ReferenceCard
-      title="My Reference Card"
-      description="This is my reference card"
+    <EntryCard
+      title="My Entry Card"
+      description="This is my Entry Card"
       status="published"
       contentType="My Content Type"
       thumbnailElement={
@@ -39,9 +39,9 @@ it('renders the component with a thumbnail element', () => {
 
 it('renders the component with dropdownListElements', () => {
   const output = shallow(
-    <ReferenceCard
-      title="My Reference Card"
-      description="This is my reference card"
+    <EntryCard
+      title="My Entry Card"
+      description="This is my Entry Card"
       status="published"
       contentType="My Content Type"
       dropdownListElements={
@@ -60,9 +60,9 @@ it('renders the component with dropdownListElements', () => {
 
 it('renders the component with an additional class name', () => {
   const output = shallow(
-    <ReferenceCard
-      title="My Reference Card"
-      description="This is my reference card"
+    <EntryCard
+      title="My Entry Card"
+      description="This is my Entry Card"
       status="published"
       contentType="My Content Type"
       className="my-extra-class"
@@ -74,9 +74,9 @@ it('renders the component with an additional class name', () => {
 
 it('has no a11y issues', async () => {
   const output = mount(
-    <ReferenceCard
-      title="My Reference Card"
-      description="This is my reference card"
+    <EntryCard
+      title="My Entry Card"
+      description="This is my Entry Card"
       status="published"
       contentType="My Content Type"
     />,

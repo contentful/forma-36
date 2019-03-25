@@ -2,19 +2,19 @@
 
 exports[`renders the component 1`] = `
 <Card
-  className="ReferenceCard"
+  className="EntryCard"
   padding="default"
   selected={false}
-  testId="cf-ui-reference-card"
+  testId="cf-ui-entry-card"
 >
   <article
-    className="ReferenceCard__wrapper"
+    className="EntryCard__wrapper"
   >
     <div
-      className="ReferenceCard__meta"
+      className="EntryCard__meta"
     >
       <div
-        className="ReferenceCard__content-type"
+        className="EntryCard__content-type"
         data-test-id="content-type"
       >
         My Content Type
@@ -27,22 +27,22 @@ exports[`renders the component 1`] = `
       </Tag>
     </div>
     <div
-      className="ReferenceCard__content"
+      className="EntryCard__content"
     >
       <div
-        className="ReferenceCard__body"
+        className="EntryCard__body"
       >
         <h1
-          className="ReferenceCard__title"
+          className="EntryCard__title"
           data-test-id="title"
           title=""
         >
-          My Reference Card
+          My Entry Card
         </h1>
         <p
-          className="ReferenceCard__description"
+          className="EntryCard__description"
         >
-          This is my reference card
+          This is my Entry Card
         </p>
       </div>
     </div>
@@ -52,19 +52,19 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component with a thumbnail element 1`] = `
 <Card
-  className="ReferenceCard"
+  className="EntryCard"
   padding="default"
   selected={false}
-  testId="cf-ui-reference-card"
+  testId="cf-ui-entry-card"
 >
   <article
-    className="ReferenceCard__wrapper"
+    className="EntryCard__wrapper"
   >
     <div
-      className="ReferenceCard__meta"
+      className="EntryCard__meta"
     >
       <div
-        className="ReferenceCard__content-type"
+        className="EntryCard__content-type"
         data-test-id="content-type"
       >
         My Content Type
@@ -77,26 +77,26 @@ exports[`renders the component with a thumbnail element 1`] = `
       </Tag>
     </div>
     <div
-      className="ReferenceCard__content"
+      className="EntryCard__content"
     >
       <div
-        className="ReferenceCard__body"
+        className="EntryCard__body"
       >
         <h1
-          className="ReferenceCard__title"
+          className="EntryCard__title"
           data-test-id="title"
           title=""
         >
-          My Reference Card
+          My Entry Card
         </h1>
         <p
-          className="ReferenceCard__description"
+          className="EntryCard__description"
         >
-          This is my reference card
+          This is my Entry Card
         </p>
       </div>
       <figure
-        className="ReferenceCard__thumbnail"
+        className="EntryCard__thumbnail"
       >
         <img
           alt="Joy Division - Closer album cover"
@@ -110,19 +110,19 @@ exports[`renders the component with a thumbnail element 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <Card
-  className="ReferenceCard my-extra-class"
+  className="EntryCard my-extra-class"
   padding="default"
   selected={false}
-  testId="cf-ui-reference-card"
+  testId="cf-ui-entry-card"
 >
   <article
-    className="ReferenceCard__wrapper"
+    className="EntryCard__wrapper"
   >
     <div
-      className="ReferenceCard__meta"
+      className="EntryCard__meta"
     >
       <div
-        className="ReferenceCard__content-type"
+        className="EntryCard__content-type"
         data-test-id="content-type"
       >
         My Content Type
@@ -135,22 +135,22 @@ exports[`renders the component with an additional class name 1`] = `
       </Tag>
     </div>
     <div
-      className="ReferenceCard__content"
+      className="EntryCard__content"
     >
       <div
-        className="ReferenceCard__body"
+        className="EntryCard__body"
       >
         <h1
-          className="ReferenceCard__title"
+          className="EntryCard__title"
           data-test-id="title"
           title=""
         >
-          My Reference Card
+          My Entry Card
         </h1>
         <p
-          className="ReferenceCard__description"
+          className="EntryCard__description"
         >
-          This is my reference card
+          This is my Entry Card
         </p>
       </div>
     </div>
@@ -160,19 +160,19 @@ exports[`renders the component with an additional class name 1`] = `
 
 exports[`renders the component with dropdownListElements 1`] = `
 <Card
-  className="ReferenceCard"
+  className="EntryCard"
   padding="default"
   selected={false}
-  testId="cf-ui-reference-card"
+  testId="cf-ui-entry-card"
 >
   <article
-    className="ReferenceCard__wrapper"
+    className="EntryCard__wrapper"
   >
     <div
-      className="ReferenceCard__meta"
+      className="EntryCard__meta"
     >
       <div
-        className="ReferenceCard__content-type"
+        className="EntryCard__content-type"
         data-test-id="content-type"
       >
         My Content Type
@@ -184,7 +184,7 @@ exports[`renders the component with dropdownListElements 1`] = `
         published
       </Tag>
       <CardActions
-        className="ReferenceCard__actions"
+        className="EntryCard__actions"
         testId="cf-ui-card-actions"
       >
         <DropdownList
@@ -229,22 +229,22 @@ exports[`renders the component with dropdownListElements 1`] = `
       </CardActions>
     </div>
     <div
-      className="ReferenceCard__content"
+      className="EntryCard__content"
     >
       <div
-        className="ReferenceCard__body"
+        className="EntryCard__body"
       >
         <h1
-          className="ReferenceCard__title"
+          className="EntryCard__title"
           data-test-id="title"
           title=""
         >
-          My Reference Card
+          My Entry Card
         </h1>
         <p
-          className="ReferenceCard__description"
+          className="EntryCard__description"
         >
-          This is my reference card
+          This is my Entry Card
         </p>
       </div>
     </div>
