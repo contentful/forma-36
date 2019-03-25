@@ -10,9 +10,7 @@ it('renders the component', () => {
 
 it('renders the component with an additional class name', () => {
   const output = shallow(
-    <DropdownListItem className="my-extra-class">
-      <DropdownListItem>Entry</DropdownListItem>
-    </DropdownListItem>,
+    <DropdownListItem className="my-extra-class">Entry</DropdownListItem>,
   );
 
   expect(output).toMatchSnapshot();
@@ -50,4 +48,12 @@ it('does not call onClick on a disabled menu item', () => {
   const button = dropDownItem.find('button');
   button.simulate('click');
   expect(mockOnClick).not.toHaveBeenCalled();
+});
+
+it('renders the component with a href', () => {
+  const output = shallow(
+    <DropdownListItem href="#">DropdownListItem with a href</DropdownListItem>,
+  );
+
+  expect(output).toMatchSnapshot();
 });
