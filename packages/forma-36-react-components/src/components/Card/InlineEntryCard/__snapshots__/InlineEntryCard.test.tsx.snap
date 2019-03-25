@@ -1,0 +1,182 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component 1`] = `
+<Card
+  className="InlineEntryCard"
+  data-test-id="cf-ui-inline-entry-card"
+  padding="default"
+  selected={false}
+  testId="cf-ui-card"
+>
+  <CSSTransition
+    classNames={
+      Object {
+        "enter": "InlineEntryCard__spinner--enter",
+        "enterActive": "InlineEntryCard__spinner--enter-active",
+        "exit": "InlineEntryCard__spinner--exit",
+        "exitActive": "InlineEntryCard__spinner--exit-active",
+      }
+    }
+    mountOnEnter={true}
+    timeout={100}
+    unmountOnExit={true}
+  >
+    <div
+      className="InlineEntryCard__skeleton-wrapper"
+    >
+      <EntryCardSkeleton />
+    </div>
+  </CSSTransition>
+  <div
+    className="InlineEntryCard__status-indicator"
+  />
+  <span
+    className="InlineEntryCard__text-wrapper"
+  >
+    Title of inline entry
+  </span>
+</Card>
+`;
+
+exports[`renders the component with a dropdown 1`] = `
+<Card
+  className="InlineEntryCard my-extra-class"
+  data-test-id="cf-ui-inline-entry-card"
+  padding="default"
+  selected={false}
+  testId="cf-ui-card"
+>
+  <CSSTransition
+    classNames={
+      Object {
+        "enter": "InlineEntryCard__spinner--enter",
+        "enterActive": "InlineEntryCard__spinner--enter-active",
+        "exit": "InlineEntryCard__spinner--exit",
+        "exitActive": "InlineEntryCard__spinner--exit-active",
+      }
+    }
+    mountOnEnter={true}
+    timeout={100}
+    unmountOnExit={true}
+  >
+    <div
+      className="InlineEntryCard__skeleton-wrapper"
+    >
+      <EntryCardSkeleton />
+    </div>
+  </CSSTransition>
+  <div
+    className="InlineEntryCard__status-indicator"
+  />
+  <span
+    className="InlineEntryCard__text-wrapper"
+  >
+    Title of inline entry
+  </span>
+  <CardActions
+    className="InlineEntryCard__actions"
+    testId="cf-ui-card-actions"
+  >
+    <DropdownList
+      testId="cf-ui-dropdown-list"
+    >
+      <DropdownListItem
+        isActive={false}
+        isDisabled={false}
+        isTitle={false}
+        key="edit"
+        onClick={[Function]}
+        testId="cf-ui-dropdown-list-item"
+      >
+        Edit
+      </DropdownListItem>
+      <DropdownListItem
+        isActive={false}
+        isDisabled={false}
+        isTitle={false}
+        key="remove"
+        onClick={[Function]}
+        testId="cf-ui-dropdown-list-item"
+      >
+        Remove
+      </DropdownListItem>
+    </DropdownList>
+  </CardActions>
+</Card>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+<Card
+  className="InlineEntryCard my-extra-class"
+  data-test-id="cf-ui-inline-entry-card"
+  padding="default"
+  selected={false}
+  testId="cf-ui-card"
+>
+  <CSSTransition
+    classNames={
+      Object {
+        "enter": "InlineEntryCard__spinner--enter",
+        "enterActive": "InlineEntryCard__spinner--enter-active",
+        "exit": "InlineEntryCard__spinner--exit",
+        "exitActive": "InlineEntryCard__spinner--exit-active",
+      }
+    }
+    mountOnEnter={true}
+    timeout={100}
+    unmountOnExit={true}
+  >
+    <div
+      className="InlineEntryCard__skeleton-wrapper"
+    >
+      <EntryCardSkeleton />
+    </div>
+  </CSSTransition>
+  <div
+    className="InlineEntryCard__status-indicator"
+  />
+  <span
+    className="InlineEntryCard__text-wrapper"
+  >
+    Title of inline entry
+  </span>
+</Card>
+`;
+
+exports[`renders the component with published status 1`] = `
+<Card
+  className="InlineEntryCard my-extra-class"
+  data-test-id="cf-ui-inline-entry-card"
+  padding="default"
+  selected={false}
+  testId="cf-ui-card"
+>
+  <CSSTransition
+    classNames={
+      Object {
+        "enter": "InlineEntryCard__spinner--enter",
+        "enterActive": "InlineEntryCard__spinner--enter-active",
+        "exit": "InlineEntryCard__spinner--exit",
+        "exitActive": "InlineEntryCard__spinner--exit-active",
+      }
+    }
+    mountOnEnter={true}
+    timeout={100}
+    unmountOnExit={true}
+  >
+    <div
+      className="InlineEntryCard__skeleton-wrapper"
+    >
+      <EntryCardSkeleton />
+    </div>
+  </CSSTransition>
+  <div
+    className="InlineEntryCard__status-indicator InlineEntryCard__status-indicator--published"
+  />
+  <span
+    className="InlineEntryCard__text-wrapper"
+  >
+    Title of inline entry
+  </span>
+</Card>
+`;
