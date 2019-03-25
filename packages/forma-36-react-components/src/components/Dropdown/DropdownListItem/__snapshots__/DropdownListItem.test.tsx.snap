@@ -27,18 +27,33 @@ exports[`renders the component as disabled 1`] = `
 </li>
 `;
 
+exports[`renders the component with a href 1`] = `
+<li
+  className="DropdownListItem DropdownListItem__submenu-toggle"
+  data-test-id="cf-ui-dropdown-list-item"
+>
+  <a
+    className="DropdownListItem__button"
+    data-test-id="cf-ui-dropdown-list-item-button"
+    href="#"
+    onClick={[Function]}
+    onMouseDown={[Function]}
+    type="button"
+  >
+    <TabFocusTrap
+      className="DropdownListItem__button__inner-wrapper"
+    >
+      DropdownListItem with a href
+    </TabFocusTrap>
+  </a>
+</li>
+`;
+
 exports[`renders the component with an additional class name 1`] = `
 <li
   className="DropdownListItem my-extra-class"
   data-test-id="cf-ui-dropdown-list-item"
 >
-  <DropdownListItem
-    isActive={false}
-    isDisabled={false}
-    isTitle={false}
-    testId="cf-ui-dropdown-list-item"
-  >
-    Entry
-  </DropdownListItem>
+  Entry
 </li>
 `;

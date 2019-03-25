@@ -35,9 +35,7 @@ storiesOf('Components|Card/EntryCard', module)
           <React.Fragment>
             <DropdownList>
               <DropdownListItem isTitle>Actions</DropdownListItem>
-              <DropdownListItem onClick={action('Edit onClick')}>
-                Edit
-              </DropdownListItem>
+              <DropdownListItem href="#">Edit (with href)</DropdownListItem>
               <DropdownListItem onClick={action('Download onClick')}>
                 Download
               </DropdownListItem>
