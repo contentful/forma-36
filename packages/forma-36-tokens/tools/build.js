@@ -45,7 +45,13 @@ const buildScssTokens = (srcPath, tokens) => {
 const buildIndexJS = (srcPath, tokens) => {
   return fse.outputFile(
     srcPath,
-    `module.exports = ${JSON.stringify(tokens, null, 2)}`,
+    `
+    Object.defineProperty(exports, "__esModule", {
+      value: true
+    }); 
+    
+    module.exports = ${JSON.stringify(tokens, null, 2)}
+    `,
   );
 };
 
