@@ -4,10 +4,10 @@ import { CSSTransition } from 'react-transition-group';
 import Card from '../Card';
 import CardActions from './../CardActions';
 
-import InlineReferenceCardSkeleton from './InlineReferenceCardSkeleton';
-const styles = require('./InlineReferenceCard.css');
+import InlineEntryCardSkeleton from './InlineEntryCardSkeleton';
+const styles = require('./InlineEntryCard.css');
 
-export type InlineReferenceCardPropTypes = {
+export type InlineEntryCardPropTypes = {
   /**
    * Gives the component a selected state
    */
@@ -21,7 +21,7 @@ export type InlineReferenceCardPropTypes = {
    */
   isLoading?: boolean;
   /**
-   * The publish status of the referenced entity
+   * The publish status of the entry
    */
   status?: 'archived' | 'changed' | 'draft' | 'published';
   /**
@@ -39,12 +39,10 @@ export type InlineReferenceCardPropTypes = {
 } & typeof defaultProps;
 
 const defaultProps = {
-  testId: 'cf-ui-inline-reference-card',
+  testId: 'cf-ui-inline-entry-card',
 };
 
-export class InlineReferenceCard extends Component<
-  InlineReferenceCardPropTypes
-> {
+export class InlineEntryCard extends Component<InlineEntryCardPropTypes> {
   static defaultProps = defaultProps;
 
   render() {
@@ -59,12 +57,12 @@ export class InlineReferenceCard extends Component<
       ...otherProps
     } = this.props;
 
-    const classNames = cn(styles.InlineReferenceCard, className);
+    const classNames = cn(styles.InlineEntryCard, className);
 
     const statusIndicatorClassNames = cn(
-      styles['InlineReferenceCard__status-indicator'],
+      styles['InlineEntryCard__status-indicator'],
       {
-        [styles[`InlineReferenceCard__status-indicator--${status}`]]:
+        [styles[`InlineEntryCard__status-indicator--${status}`]]:
           status && !isLoading,
       },
     );
@@ -80,24 +78,24 @@ export class InlineReferenceCard extends Component<
           timeout={100}
           in={isLoading}
           classNames={{
-            enter: styles['InlineReferenceCard__spinner--enter'],
-            enterActive: styles['InlineReferenceCard__spinner--enter-active'],
-            exit: styles['InlineReferenceCard__spinner--exit'],
-            exitActive: styles['InlineReferenceCard__spinner--exit-active'],
+            enter: styles['InlineEntryCard__spinner--enter'],
+            enterActive: styles['InlineEntryCard__spinner--enter-active'],
+            exit: styles['InlineEntryCard__spinner--exit'],
+            exitActive: styles['InlineEntryCard__spinner--exit-active'],
           }}
           mountOnEnter
           unmountOnExit
         >
-          <div className={styles['InlineReferenceCard__skeleton-wrapper']}>
-            <InlineReferenceCardSkeleton />
+          <div className={styles['InlineEntryCard__skeleton-wrapper']}>
+            <InlineEntryCardSkeleton />
           </div>
         </CSSTransition>
         <div className={statusIndicatorClassNames} />
-        <span className={styles['InlineReferenceCard__text-wrapper']}>
+        <span className={styles['InlineEntryCard__text-wrapper']}>
           {isLoading ? 'Loading' : children}
         </span>
         {dropdownListElements && (
-          <CardActions className={styles['InlineReferenceCard__actions']}>
+          <CardActions className={styles['InlineEntryCard__actions']}>
             {dropdownListElements}
           </CardActions>
         )}
@@ -106,4 +104,4 @@ export class InlineReferenceCard extends Component<
   }
 }
 
-export default InlineReferenceCard;
+export default InlineEntryCard;
