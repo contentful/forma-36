@@ -3,17 +3,17 @@ import { storiesOf } from '@storybook/react';
 import { text, select, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
-import ReferenceCard from './ReferenceCard';
+import EntryCard from './EntryCard';
 import DropdownList from '../../Dropdown/DropdownList';
 import DropdownListItem from '../../Dropdown/DropdownListItem';
 
-storiesOf('Components|Card/ReferenceCard', module)
+storiesOf('Components|Card/EntryCard', module)
   .addParameters({
-    propTypes: ReferenceCard['__docgenInfo'],
+    propTypes: EntryCard['__docgenInfo'],
   })
   .add('default', () => (
     <div>
-      <ReferenceCard
+      <EntryCard
         title={text('title', 'Closer')}
         description={text(
           'description',
@@ -66,7 +66,7 @@ storiesOf('Components|Card/ReferenceCard', module)
   ))
   .add('with thumbnailElement', () => (
     <div>
-      <ReferenceCard
+      <EntryCard
         title={text('title', 'Closer')}
         description={text(
           'description',
