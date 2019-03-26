@@ -16,7 +16,7 @@ function DefaultStory() {
         validationMessage={text('validationMessage', undefined)}
         isDisabled={boolean('isDisabled', false)}
         name="someOption"
-        checked={activeOption === 'yes'}
+        isChecked={activeOption === 'yes'}
         value="yes"
         onChange={e => {
           setActiveOption((e.target as HTMLInputElement).value);
@@ -35,7 +35,7 @@ function DefaultStory() {
         isDisabled={boolean('isDisabled', false)}
         name="someOption"
         value="no"
-        checked={activeOption === 'no'}
+        isChecked={activeOption === 'no'}
         onChange={e => {
           setActiveOption((e.target as HTMLInputElement).value);
         }}

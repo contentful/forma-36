@@ -8,7 +8,7 @@ export type RadioButtonFieldProps = ControlledInputFieldPropTypes &
 
 const defaultProps = {
   labelIsLight: false,
-  checked: false,
+  isChecked: false,
   inputType: 'checkbox',
   testId: 'cf-ui-radio-button-field',
 };

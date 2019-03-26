@@ -6,9 +6,9 @@ exports[`renders the component 1`] = `
   data-test-id="cf-ui-controlled-input-field"
 >
   <ControlledInput
-    checked={false}
     className="ControlledInputField__input"
     id="checkbox"
+    isChecked={false}
     isDisabled={false}
     isRequired={false}
     labelText="label text"
@@ -37,9 +37,9 @@ exports[`renders the component as checked 1`] = `
   data-test-id="cf-ui-controlled-input-field"
 >
   <ControlledInput
-    checked={true}
     className="ControlledInputField__input"
     id="checkbox"
+    isChecked={true}
     isDisabled={false}
     isRequired={false}
     labelText="Label Text"
@@ -68,9 +68,9 @@ exports[`renders the component as required 1`] = `
   data-test-id="cf-ui-controlled-input-field"
 >
   <ControlledInput
-    checked={false}
     className="ControlledInputField__input"
     id="checkbox"
+    isChecked={false}
     isDisabled={false}
     isRequired={true}
     labelText="Label Text"
@@ -99,9 +99,9 @@ exports[`renders the component in a disabled state 1`] = `
   data-test-id="cf-ui-controlled-input-field"
 >
   <ControlledInput
-    checked={false}
     className="ControlledInputField__input"
     id="checkbox"
+    isChecked={false}
     isDisabled={true}
     isRequired={false}
     labelText="Label Text"
@@ -130,9 +130,9 @@ exports[`renders the component with a help text 1`] = `
   data-test-id="cf-ui-controlled-input-field"
 >
   <ControlledInput
-    checked={false}
     className="ControlledInputField__input"
     id="checkbox"
+    isChecked={false}
     isDisabled={false}
     isRequired={false}
     labelText="Label Text"
@@ -167,9 +167,9 @@ exports[`renders the component with a light label variation 1`] = `
   data-test-id="cf-ui-controlled-input-field"
 >
   <ControlledInput
-    checked={false}
     className="ControlledInputField__input"
     id="checkbox"
+    isChecked={false}
     isDisabled={false}
     isRequired={false}
     labelText="Label Text"
@@ -204,9 +204,9 @@ exports[`renders the component with a validation message 1`] = `
   data-test-id="cf-ui-controlled-input-field"
 >
   <ControlledInput
-    checked={false}
     className="ControlledInputField__input"
     id="checkbox"
+    isChecked={false}
     isDisabled={false}
     isRequired={false}
     labelText="Label Text"
@@ -241,9 +241,9 @@ exports[`renders the component with a value 1`] = `
   data-test-id="cf-ui-controlled-input-field"
 >
   <ControlledInput
-    checked={false}
     className="ControlledInputField__input"
     id="checkbox"
+    isChecked={false}
     isDisabled={false}
     isRequired={false}
     labelText="Label Text"
@@ -273,9 +273,9 @@ exports[`renders the component with an additional class name 1`] = `
   data-test-id="cf-ui-controlled-input-field"
 >
   <ControlledInput
-    checked={false}
     className="ControlledInputField__input"
     id="checkbox"
+    isChecked={false}
     isDisabled={false}
     isRequired={false}
     labelText="Label Text"

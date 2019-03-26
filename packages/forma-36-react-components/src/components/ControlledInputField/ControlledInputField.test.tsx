@@ -95,7 +95,7 @@ it('renders the component as checked', () => {
       className="my-extra-class"
       id="checkbox"
       labelText="Label Text"
-      checked
+      isChecked
     />,
   );
 

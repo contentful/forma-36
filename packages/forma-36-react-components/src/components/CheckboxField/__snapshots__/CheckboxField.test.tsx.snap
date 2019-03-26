@@ -2,9 +2,9 @@
 
 exports[`renders the component 1`] = `
 <ControlledInputField
-  checked={false}
   id="checkbox"
   inputType="checkbox"
+  isChecked={false}
   labelIsLight={false}
   labelText="label text"
   testId="cf-ui-checkbox-field"

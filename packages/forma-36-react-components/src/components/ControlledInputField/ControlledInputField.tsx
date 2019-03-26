@@ -18,7 +18,7 @@ export type ControlledInputFieldPropTypes = {
   validationMessage?: string;
   value?: string;
   name?: string;
-  checked?: boolean;
+  isChecked?: boolean;
   inputProps?: object;
   inputType?: 'radio' | 'checkbox';
   onChange?: ChangeEventHandler;
@@ -30,7 +30,7 @@ export type ControlledInputFieldPropTypes = {
 const defaultProps = {
   testId: 'cf-ui-controlled-input-field',
   labelIsLight: false,
-  checked: false,
+  isChecked: false,
   inputType: 'checkbox',
 };
 
@@ -51,7 +51,7 @@ export class ControlledInputField extends Component<
       helpTextProps,
       formLabelProps,
       className,
-      checked,
+      isChecked,
       value,
       validationMessage,
       onChange,
@@ -74,7 +74,7 @@ export class ControlledInputField extends Component<
           type={inputType}
           name={name}
           isRequired={isRequired}
-          checked={checked}
+          isChecked={isChecked}
           isDisabled={isDisabled}
           value={value}
           onChange={onChange}

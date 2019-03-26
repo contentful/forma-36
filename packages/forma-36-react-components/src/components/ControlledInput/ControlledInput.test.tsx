@@ -55,7 +55,7 @@ it('renders the component with as checked', () => {
       className="my-extra-class"
       id="ControlledInput"
       labelText="ControlledInput"
-      checked
+      isChecked
     />,
   );
 

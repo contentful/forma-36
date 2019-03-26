@@ -10,10 +10,10 @@ exports[`renders the component 1`] = `
     key=".0"
   >
     <CheckboxField
-      checked={false}
       helpText="Click if you agree"
       id="agree"
       inputType="checkbox"
+      isChecked={false}
       labelIsLight={false}
       labelText="Do you agree?"
       testId="cf-ui-checkbox-field"
@@ -24,10 +24,10 @@ exports[`renders the component 1`] = `
     key=".1"
   >
     <CheckboxField
-      checked={false}
       helpText="Click if you really agree"
       id="reallyAgree"
       inputType="checkbox"
+      isChecked={false}
       labelIsLight={false}
       labelText="Do you really agree?"
       testId="cf-ui-checkbox-field"
@@ -46,10 +46,10 @@ exports[`renders the component children in a row 1`] = `
     key=".0"
   >
     <CheckboxField
-      checked={false}
       helpText="Click if you agree"
       id="agree"
       inputType="checkbox"
+      isChecked={false}
       labelIsLight={false}
       labelText="Do you agree?"
       testId="cf-ui-checkbox-field"
@@ -60,10 +60,10 @@ exports[`renders the component children in a row 1`] = `
     key=".1"
   >
     <CheckboxField
-      checked={false}
       helpText="Click if you really agree"
       id="reallyAgree"
       inputType="checkbox"
+      isChecked={false}
       labelIsLight={false}
       labelText="Do you really agree?"
       testId="cf-ui-checkbox-field"
@@ -82,10 +82,10 @@ exports[`renders the component with an additional class name 1`] = `
     key=".0"
   >
     <CheckboxField
-      checked={false}
       helpText="Click if you agree"
       id="agree"
       inputType="checkbox"
+      isChecked={false}
       labelIsLight={false}
       labelText="Do you agree?"
       testId="cf-ui-checkbox-field"
@@ -96,10 +96,10 @@ exports[`renders the component with an additional class name 1`] = `
     key=".1"
   >
     <CheckboxField
-      checked={false}
       helpText="Click if you really agree"
       id="reallyAgree"
       inputType="checkbox"
+      isChecked={false}
       labelIsLight={false}
       labelText="Do you really agree?"
       testId="cf-ui-checkbox-field"

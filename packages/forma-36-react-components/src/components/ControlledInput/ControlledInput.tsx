@@ -7,7 +7,7 @@ export interface ControlledInputPropTypes {
   id?: string;
   isRequired?: boolean;
   labelText: string;
-  checked?: boolean;
+  isChecked?: boolean;
   onChange?: EventHandler<ChangeEvent<HTMLInputElement>>;
   name?: string;
   onBlur?: EventHandler<FocusEvent<HTMLInputElement>>;
@@ -42,7 +42,7 @@ export class ControlledInput extends Component<
       onBlur,
       name,
       onChange,
-      checked,
+      isChecked,
       value,
       type,
       labelText,
@@ -58,7 +58,7 @@ export class ControlledInput extends Component<
         className={classNames}
         value={value}
         name={name}
-        checked={this.props.checked}
+        checked={this.props.isChecked}
         type={type}
         data-test-id={testId}
         onChange={e => {
