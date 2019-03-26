@@ -20,7 +20,7 @@ export type ButtonProps = {
   onClick?: MouseEventHandler;
   isFullWidth?: boolean;
   onBlur?: FocusEventHandler;
-  loading?: boolean;
+  isLoading?: boolean;
   isDisabled?: boolean;
   testId?: string;
   buttonType?: 'primary' | 'positive' | 'negative' | 'muted' | 'naked';
@@ -33,7 +33,7 @@ export type ButtonProps = {
 } & typeof defaultProps;
 
 const defaultProps = {
-  loading: false,
+  isLoading: false,
   isFullWidth: false,
   indicateDropdown: false,
   isDisabled: false,
@@ -56,7 +56,7 @@ export class Button extends Component<ButtonProps> {
       onBlur,
       testId,
       onClick,
-      loading,
+      isLoading,
       indicateDropdown,
       isDisabled,
       href,
@@ -89,7 +89,7 @@ export class Button extends Component<ButtonProps> {
           }
         }}
         onClick={(e: ReactMouseEvent) => {
-          if (onClick && !isDisabled && !loading) {
+          if (onClick && !isDisabled && !isLoading) {
             onClick(e);
           }
         }}
@@ -118,7 +118,7 @@ export class Button extends Component<ButtonProps> {
             />
           )}
           <CSSTransition
-            in={loading}
+            in={isLoading}
             timeout={1000}
             classNames={{
               enter: styles['Button--spinner--enter'],

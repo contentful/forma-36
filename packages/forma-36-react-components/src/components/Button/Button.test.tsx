@@ -24,7 +24,7 @@ it('renders the component as disabled', () => {
 });
 
 it('renders the component in loading state', () => {
-  const output = shallow(<Button loading>Embed entry</Button>);
+  const output = shallow(<Button isLoading>Embed entry</Button>);
 
   expect(output).toMatchSnapshot();
 });
@@ -59,10 +59,10 @@ it('renders the component full width', () => {
   expect(output).toMatchSnapshot();
 });
 
-it('should not dispatch onClick if loading', () => {
+it('should not dispatch onClick if is loading', () => {
   const mockOnClick = jest.fn();
   const button = shallow(
-    <Button loading onClick={mockOnClick}>
+    <Button isLoading onClick={mockOnClick}>
       Embed entry
     </Button>,
   );

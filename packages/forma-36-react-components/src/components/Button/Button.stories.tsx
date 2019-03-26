@@ -29,7 +29,7 @@ storiesOf('Components|Button', module)
           'muted',
         )}
         size={select('size', [undefined, 'small', 'large'], undefined)}
-        loading={boolean('loading', false)}
+        isLoading={boolean('isLoading', false)}
         indicateDropdown={boolean('indicateDropdown', false)}
         isDisabled={boolean('isDisabled', false)}
         isFullWidth={boolean('isFullWidth', false)}

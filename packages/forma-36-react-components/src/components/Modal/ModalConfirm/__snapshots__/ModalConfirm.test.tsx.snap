@@ -46,7 +46,7 @@ exports[`can accept custom labels 1`] = `
         <Button
           buttonType="negative"
           isDisabled={false}
-          loading={false}
+          isLoading={false}
           onClick={[Function]}
           testId="cf-ui-modal-confirm-confirm-button"
         />
@@ -107,7 +107,7 @@ exports[`renders the component 1`] = `
         <Button
           buttonType="positive"
           isDisabled={false}
-          loading={false}
+          isLoading={false}
           onClick={[Function]}
           testId="cf-ui-modal-confirm-confirm-button"
         />
@@ -172,7 +172,7 @@ exports[`renders the component with override header, content and controls 1`] = 
         <Button
           buttonType="positive"
           isDisabled={false}
-          loading={false}
+          isLoading={false}
           onClick={[Function]}
           testId="cf-ui-modal-confirm-confirm-button"
         />
