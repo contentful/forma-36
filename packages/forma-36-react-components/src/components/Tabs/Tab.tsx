@@ -14,7 +14,7 @@ export type TabProps = {
   selected?: boolean;
   href?: string;
   target?: string;
-  disabled?: boolean;
+  isDisabled?: boolean;
   tabIndex?: number;
   style?: CSSProperties;
   className?: string;
@@ -24,7 +24,7 @@ export type TabProps = {
 
 const defaultProps = {
   selected: false,
-  disabled: false,
+  isDisabled: false,
   testId: 'cf-ui-tab',
   tabIndex: 0,
 };
@@ -48,7 +48,7 @@ export class Tab extends Component<TabProps> {
   render() {
     const {
       id,
-      disabled,
+      isDisabled,
       className,
       href,
       style,
@@ -72,7 +72,7 @@ export class Tab extends Component<TabProps> {
       tabIndex,
     };
 
-    if (disabled) {
+    if (isDisabled) {
       elementProps['aria-disabled'] = true;
     }
     if (href) {

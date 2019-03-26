@@ -40,7 +40,7 @@ it('calls onClick', () => {
   expect(mockOnClick).toHaveBeenCalled();
 });
 
-it('does not call onClick on a disabled menu item', () => {
+it('does not call onClick on a isDisabled menu item', () => {
   const mockOnClick = jest.fn();
   const dropDownItem = mount(
     <DropdownListItem isDisabled onClick={mockOnClick}>

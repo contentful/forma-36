@@ -21,7 +21,7 @@ export type ButtonProps = {
   isFullWidth?: boolean;
   onBlur?: FocusEventHandler;
   loading?: boolean;
-  disabled?: boolean;
+  isDisabled?: boolean;
   testId?: string;
   buttonType?: 'primary' | 'positive' | 'negative' | 'muted' | 'naked';
   type?: 'button' | 'submit' | 'reset';
@@ -36,7 +36,7 @@ const defaultProps = {
   loading: false,
   isFullWidth: false,
   indicateDropdown: false,
-  disabled: false,
+  isDisabled: false,
   testId: 'cf-ui-button',
   buttonType: 'primary',
   type: 'button',
@@ -57,8 +57,8 @@ export class Button extends Component<ButtonProps> {
       testId,
       onClick,
       loading,
-      disabled,
       indicateDropdown,
+      isDisabled,
       href,
       type,
       ...otherProps
@@ -69,7 +69,7 @@ export class Button extends Component<ButtonProps> {
       className,
       styles[`Button--${buttonType}`],
       {
-        [styles['Button--disabled']]: disabled,
+        [styles['Button--is-disabled']]: isDisabled,
         [styles[`Button--${size}`]]: size,
         [styles['Button--full-width']]: isFullWidth,
       },
@@ -84,19 +84,19 @@ export class Button extends Component<ButtonProps> {
     return (
       <Element
         onBlur={(e: FocusEvent) => {
-          if (onBlur && !disabled) {
+          if (onBlur && !isDisabled) {
             onBlur(e);
           }
         }}
         onClick={(e: ReactMouseEvent) => {
-          if (onClick && !disabled && !loading) {
+          if (onClick && !isDisabled && !loading) {
             onClick(e);
           }
         }}
         data-test-id={testId}
         className={classNames}
-        disabled={disabled}
-        href={!disabled ? href : null}
+        disabled={isDisabled}
+        href={!isDisabled ? href : null}
         type={type}
         {...otherProps}
       >

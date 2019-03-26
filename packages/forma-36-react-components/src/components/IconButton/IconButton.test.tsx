@@ -102,7 +102,7 @@ it('prevents an onClick function from being called when disabled', () => {
       iconProps={{ icon: 'ArrowDown' }}
       label="My Icon"
       onClick={onClickFunc}
-      disabled
+      isDisabled
     />,
   );
 

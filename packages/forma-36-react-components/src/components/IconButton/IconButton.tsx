@@ -10,7 +10,7 @@ export interface IconButtonProps {
   label: string;
   href?: string;
   iconProps: IconProps;
-  disabled?: boolean;
+  isDisabled?: boolean;
   onClick?: MouseEventHandler;
   buttonType?:
     | 'primary'
@@ -25,7 +25,7 @@ export interface IconButtonProps {
 }
 
 const defaultProps = {
-  disabled: false,
+  isDisabled: false,
   testId: 'cf-ui-icon-button',
   buttonType: 'primary',
   withDropdown: false,
@@ -42,7 +42,7 @@ export class IconButton extends Component<
       iconProps,
       href,
       testId,
-      disabled,
+      isDisabled,
       onClick,
       buttonType,
       withDropdown,
@@ -51,13 +51,13 @@ export class IconButton extends Component<
     } = this.props;
 
     const classNames = cn(styles.IconButton, className, {
-      [styles['IconButton--disabled']]: disabled,
+      [styles['IconButton--is-disabled']]: isDisabled,
       [styles[`IconButton--${buttonType}`]]: buttonType,
     });
 
     const elementProps = {
       className: classNames,
-      onClick: !disabled ? onClick : undefined,
+      onClick: !isDisabled ? onClick : undefined,
       'data-test-id': testId,
       ...otherProps,
     };
@@ -78,7 +78,7 @@ export class IconButton extends Component<
     );
 
     if (href) {
-      if (disabled) {
+      if (isDisabled) {
         return <a {...elementProps}>{content}</a>;
       }
       return (
@@ -89,7 +89,7 @@ export class IconButton extends Component<
     }
 
     return (
-      <button {...elementProps} type="button" disabled={disabled}>
+      <button {...elementProps} type="button" disabled={isDisabled}>
         {content}
       </button>
     );

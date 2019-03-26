@@ -17,8 +17,8 @@ it('renders the component with an additional class name', () => {
   expect(output).toMatchSnapshot();
 });
 
-it('renders the component disabled', () => {
-  const output = shallow(<Button disabled>Embed entry</Button>);
+it('renders the component as disabled', () => {
+  const output = shallow(<Button isDisabled>Embed entry</Button>);
 
   expect(output).toMatchSnapshot();
 });
@@ -74,7 +74,7 @@ it('should not dispatch onClick if loading', () => {
 it('should not dispatch onClick if disabled', () => {
   const mockOnClick = jest.fn();
   const button = shallow(
-    <Button disabled onClick={mockOnClick}>
+    <Button isDisabled onClick={mockOnClick}>
       Embed entry
     </Button>,
   );

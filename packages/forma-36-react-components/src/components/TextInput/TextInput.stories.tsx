@@ -14,7 +14,7 @@ storiesOf('Components|TextInput', module)
     <TextInput
       error={boolean('error', false)}
       className={text('className', '')}
-      disabled={boolean('disabled', false)}
+      isDisabled={boolean('isDisabled', false)}
       withCopyButton={boolean('withCopyButton', false)}
       value={text('valiue', '123456')}
       maxLength={number('maxLength', 50)}
@@ -43,7 +43,7 @@ storiesOf('Components|TextInput', module)
         <TextInput
           error={boolean('error', false)}
           className={text('className', '')}
-          disabled={boolean('disabled', false)}
+          isDisabled={boolean('isDisabled', false)}
           withCopyButton={boolean('withCopyButton', false)}
           value={text('value', '123456')}
           maxLength={number('maxLength', 50)}

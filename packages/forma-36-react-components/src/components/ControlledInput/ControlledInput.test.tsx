@@ -36,13 +36,13 @@ it('renders the component with required prop', () => {
   expect(output).toMatchSnapshot();
 });
 
-it('renders the component with disabled prop', () => {
+it('renders the component with isDisabled prop', () => {
   const output = shallow(
     <ControlledInput
       className="my-extra-class"
       id="ControlledInput"
       labelText="ControlledInput"
-      disabled
+      isDisabled
     />,
   );
 

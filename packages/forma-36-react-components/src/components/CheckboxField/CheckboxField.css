@@ -5,7 +5,7 @@
   align-items: baseline;
 }
 
-.CheckboxField--disabled {
+.CheckboxField--is-disabled {
   opacity: 0.7;
 }
 

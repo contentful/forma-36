@@ -43,8 +43,8 @@
   line-height: 1.5;
 }
 
-.DropdownListItem--disabled,
-.DropdownListItem--disabled button {
+.DropdownListItem--is-disabled,
+.DropdownListItem--is-disabled button {
   background: var(--color-white);
   opacity: 0.5;
   cursor: not-allowed;

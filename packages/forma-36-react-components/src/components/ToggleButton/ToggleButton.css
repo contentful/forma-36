@@ -16,17 +16,17 @@
     var(--box-shadow-default);
 }
 
-.Toggle--disabled {
+.Toggle--is-disabled {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.Toggle--disabled .Toggle__button {
+.Toggle--is-disabled .Toggle__button {
   opacity: 0.5;
   cursor: not-allowed;
 }
 
-.Toggle.Toggle--disabled:hover {
+.Toggle.Toggle--is-disabled:hover {
   border: 1px solid var(--color-element-mid);
   cursor: not-allowed;
 }

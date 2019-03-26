@@ -45,7 +45,7 @@ export class ToggleButton extends Component<ToggleButtonProps> {
 
     const classNames = cn(styles.Toggle, className, {
       [styles['Toggle--active']]: isActive,
-      [styles['Toggle--disabled']]: isDisabled,
+      [styles['Toggle--is-disabled']]: isDisabled,
       [styles['Toggle--square']]: !children,
     });
 

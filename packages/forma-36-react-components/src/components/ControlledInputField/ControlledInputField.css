@@ -5,8 +5,8 @@
   align-items: baseline;
 }
 
-.ControlledInputField--disabled,
-.ControlledInputField--disabled label {
+.ControlledInputField--is-disabled,
+.ControlledInputField--is-disabled label {
   opacity: 0.7;
   cursor: not-allowed;
 }

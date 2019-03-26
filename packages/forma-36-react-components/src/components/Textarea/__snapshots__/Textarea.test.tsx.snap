@@ -114,22 +114,6 @@ exports[`renders the component with an onChange prop 1`] = `
 </div>
 `;
 
-exports[`renders the component with disabled prop 1`] = `
-<div
-  className="Textarea my-extra-class Textarea--full Textarea--disabled"
->
-  <textarea
-    aria-label="userEmail"
-    className="Textarea__textarea"
-    data-test-id="cf-ui-textarea"
-    disabled={true}
-    id="someInput"
-    name="userEmail"
-    onChange={[Function]}
-  />
-</div>
-`;
-
 exports[`renders the component with error prop 1`] = `
 <div
   className="Textarea my-extra-class Textarea--full Textarea--negative"
@@ -139,6 +123,22 @@ exports[`renders the component with error prop 1`] = `
     className="Textarea__textarea"
     data-test-id="cf-ui-textarea"
     disabled={false}
+    id="someInput"
+    name="userEmail"
+    onChange={[Function]}
+  />
+</div>
+`;
+
+exports[`renders the component with isDisabled prop 1`] = `
+<div
+  className="Textarea my-extra-class Textarea--full Textarea--is-disabled"
+>
+  <textarea
+    aria-label="userEmail"
+    className="Textarea__textarea"
+    data-test-id="cf-ui-textarea"
+    disabled={true}
     id="someInput"
     name="userEmail"
     onChange={[Function]}

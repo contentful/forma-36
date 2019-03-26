@@ -29,7 +29,7 @@ storiesOf('Components|TextArea', module)
       )}
       onChange={action('onChange')}
       onBlur={action('onBlur')}
-      disabled={boolean('disabled', false)}
+      isDisabled={boolean('isDisabled', false)}
       value={text('value', '123456')}
       rows={number('rows', 2)}
     />

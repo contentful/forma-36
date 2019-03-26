@@ -65,7 +65,7 @@ export class Select extends Component<SelectProps, SelectState> {
 
     const widthClass = `Select--${width}`;
     const classNames = cn(styles['Select'], {
-      [styles['Select--disabled']]: isDisabled,
+      [styles['Select--is-disabled']]: isDisabled,
       [styles['Select--negative']]: hasError,
     });
 

@@ -91,24 +91,6 @@ exports[`renders the component with an additional class name 1`] = `
 </div>
 `;
 
-exports[`renders the component with disabled prop 1`] = `
-<div
-  className="TextInput TextInput--full TextInput--disabled"
->
-  <input
-    aria-label="userEmail"
-    className="TextInput__input"
-    data-test-id="cf-ui-text-input"
-    disabled={true}
-    id="someInput"
-    name="userEmail"
-    onChange={[Function]}
-    onFocus={[Function]}
-    required={false}
-  />
-</div>
-`;
-
 exports[`renders the component with error prop 1`] = `
 <div
   className="TextInput TextInput--full TextInput--negative"
@@ -118,6 +100,24 @@ exports[`renders the component with error prop 1`] = `
     className="TextInput__input"
     data-test-id="cf-ui-text-input"
     disabled={false}
+    id="someInput"
+    name="userEmail"
+    onChange={[Function]}
+    onFocus={[Function]}
+    required={false}
+  />
+</div>
+`;
+
+exports[`renders the component with isDisabled prop 1`] = `
+<div
+  className="TextInput TextInput--full TextInput--is-disabled"
+>
+  <input
+    aria-label="userEmail"
+    className="TextInput__input"
+    data-test-id="cf-ui-text-input"
+    disabled={true}
     id="someInput"
     name="userEmail"
     onChange={[Function]}

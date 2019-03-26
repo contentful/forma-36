@@ -13,7 +13,7 @@ export interface ControlledInputPropTypes {
   onBlur?: EventHandler<FocusEvent<HTMLInputElement>>;
   onFocus?: EventHandler<FocusEvent<HTMLInputElement>>;
   value?: string;
-  disabled?: boolean;
+  isDisabled?: boolean;
   type?: 'checkbox' | 'radio';
   className?: string;
   testId?: string;
@@ -22,7 +22,7 @@ export interface ControlledInputPropTypes {
 const defaultProps = {
   testId: 'cf-ui-controlled-input',
   required: false,
-  disabled: false,
+  isDisabled: false,
   type: 'checkbox',
 };
 
@@ -37,7 +37,7 @@ export class ControlledInput extends Component<
       id,
       testId,
       required,
-      disabled,
+      isDisabled,
       onFocus,
       onBlur,
       name,
@@ -50,7 +50,7 @@ export class ControlledInput extends Component<
     } = this.props;
 
     const classNames = cn(styles['ControlledInput'], className, {
-      [styles['ControlledInput--disabled']]: disabled,
+      [styles['ControlledInput--is-disabled']]: isDisabled,
     });
 
     return (
@@ -79,7 +79,7 @@ export class ControlledInput extends Component<
         aria-label={labelText}
         id={id}
         required={required}
-        disabled={disabled}
+        disabled={isDisabled}
         {...otherProps}
       />
     );

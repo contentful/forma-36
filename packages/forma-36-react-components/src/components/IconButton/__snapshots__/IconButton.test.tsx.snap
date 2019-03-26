@@ -67,7 +67,7 @@ exports[`calls an onClick function 1`] = `
 
 exports[`prevents an onClick function from being called when disabled 1`] = `
 <button
-  className="IconButton IconButton--disabled IconButton--primary"
+  className="IconButton IconButton--is-disabled IconButton--primary"
   data-test-id="cf-ui-icon-button"
   disabled={true}
   type="button"

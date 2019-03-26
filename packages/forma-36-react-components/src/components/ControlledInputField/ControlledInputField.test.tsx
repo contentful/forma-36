@@ -68,7 +68,7 @@ it('renders the component in a disabled state', () => {
       className="my-extra-class"
       id="checkbox"
       labelText="Label Text"
-      disabled
+      isDisabled
     />,
   );
 

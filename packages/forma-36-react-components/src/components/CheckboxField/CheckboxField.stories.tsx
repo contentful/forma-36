@@ -16,7 +16,7 @@ function DefaultStory() {
         labelText={text('labelText', 'Option 1')}
         helpText={text('helpText', 'This is a helptext')}
         validationMessage={text('validationMessage', undefined)}
-        disabled={boolean('disabled', false)}
+        isDisabled={boolean('isDisabled', false)}
         name="someOption"
         checked={optionOne}
         value="yes"
@@ -32,7 +32,7 @@ function DefaultStory() {
         labelText={text('labelText', 'Option 2')}
         helpText={text('helpText', 'This is a helptext')}
         validationMessage={text('validationMessage', undefined)}
-        disabled={boolean('disabled', false)}
+        isDisabled={boolean('isDisabled', false)}
         name="someOption"
         value="no"
         checked={optionTwo}

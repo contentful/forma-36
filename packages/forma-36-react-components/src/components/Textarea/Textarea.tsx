@@ -12,7 +12,7 @@ export type TextareaProps = {
   maxLength?: number;
   required?: boolean;
   onChange?: ChangeEventHandler;
-  disabled?: boolean;
+  isDisabled?: boolean;
   value?: string;
   rows?: number;
   onBlur?: FocusEventHandler;
@@ -25,7 +25,7 @@ export interface TextareaState {
 
 const defaultProps = {
   testId: 'cf-ui-textarea',
-  disabled: false,
+  isDisabled: false,
   required: false,
   width: 'full',
 };
@@ -52,7 +52,7 @@ export class Textarea extends Component<TextareaProps, TextareaState> {
       placeholder,
       maxLength,
       onChange,
-      disabled,
+      isDisabled,
       required,
       onBlur,
       error,
@@ -66,7 +66,7 @@ export class Textarea extends Component<TextareaProps, TextareaState> {
 
     const widthClass = `Textarea--${width}`;
     const classNames = cn(styles['Textarea'], className, styles[widthClass], {
-      [styles['Textarea--disabled']]: disabled,
+      [styles['Textarea--is-disabled']]: isDisabled,
       [styles['Textarea--negative']]: error,
     });
 
@@ -79,7 +79,7 @@ export class Textarea extends Component<TextareaProps, TextareaState> {
           id={id}
           rows={rows}
           onBlur={onBlur}
-          disabled={disabled}
+          disabled={isDisabled}
           placeholder={placeholder}
           name={name}
           onChange={e => {
@@ -89,7 +89,7 @@ export class Textarea extends Component<TextareaProps, TextareaState> {
             this.setState({ value: e.target.value });
           }}
           maxLength={maxLength}
-          value={disabled ? value : this.state && this.state.value}
+          value={isDisabled ? value : this.state && this.state.value}
           {...otherProps}
         />
       </div>

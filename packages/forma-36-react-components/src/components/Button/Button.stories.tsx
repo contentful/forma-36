@@ -31,7 +31,7 @@ storiesOf('Components|Button', module)
         size={select('size', [undefined, 'small', 'large'], undefined)}
         loading={boolean('loading', false)}
         indicateDropdown={boolean('indicateDropdown', false)}
-        disabled={boolean('disabled', false)}
+        isDisabled={boolean('isDisabled', false)}
         isFullWidth={boolean('isFullWidth', false)}
         onClick={action('onClick')}
         onBlur={action('onBlur')}

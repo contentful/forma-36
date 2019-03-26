@@ -9,12 +9,12 @@ exports[`renders the component using a multiple dropdown lists 1`] = `
   toggleElement={
     <IconButton
       buttonType="secondary"
-      disabled={false}
       iconProps={
         Object {
           "icon": "MoreHorizontal",
         }
       }
+      isDisabled={false}
       label="Actions"
       onClick={[Function]}
       testId="cf-ui-icon-button"
@@ -100,12 +100,12 @@ exports[`renders the component using a single dropdown list 1`] = `
   toggleElement={
     <IconButton
       buttonType="secondary"
-      disabled={false}
       iconProps={
         Object {
           "icon": "MoreHorizontal",
         }
       }
+      isDisabled={false}
       label="Actions"
       onClick={[Function]}
       testId="cf-ui-icon-button"
@@ -159,12 +159,12 @@ exports[`renders the component with an additional class name 1`] = `
   toggleElement={
     <IconButton
       buttonType="secondary"
-      disabled={false}
       iconProps={
         Object {
           "icon": "MoreHorizontal",
         }
       }
+      isDisabled={false}
       label="Actions"
       onClick={[Function]}
       testId="cf-ui-icon-button"
@@ -217,12 +217,12 @@ exports[`renders the component with published status 1`] = `
   toggleElement={
     <IconButton
       buttonType="secondary"
-      disabled={false}
       iconProps={
         Object {
           "icon": "MoreHorizontal",
         }
       }
+      isDisabled={false}
       label="Actions"
       onClick={[Function]}
       testId="cf-ui-icon-button"

@@ -17,9 +17,9 @@ it('renders the component with an additional class name', () => {
   expect(output).toMatchSnapshot();
 });
 
-it('renders the component with disabled prop', () => {
+it('renders the component with isDisabled prop', () => {
   const output = shallow(
-    <TextInput id="someInput" name="userEmail" disabled />,
+    <TextInput id="someInput" name="userEmail" isDisabled />,
   );
 
   expect(output).toMatchSnapshot();

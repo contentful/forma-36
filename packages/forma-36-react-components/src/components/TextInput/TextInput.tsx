@@ -18,7 +18,7 @@ export type TextInputProps = {
   withCopyButton?: boolean;
   placeholder?: string;
   onChange?: ChangeEventHandler;
-  disabled?: boolean;
+  isDisabled?: boolean;
   testId?: string;
   maxLength?: number;
   onBlur?: FocusEventHandler;
@@ -36,7 +36,7 @@ export interface TextInputState {
 const defaultProps = {
   withCopyButton: false,
   testId: 'cf-ui-text-input',
-  disabled: false,
+  isDisabled: false,
   required: false,
   width: 'full',
 };
@@ -57,7 +57,7 @@ export class TextInput extends Component<TextInputProps, TextInputState> {
   }
 
   handleFocus = (e: FocusEvent) => {
-    if (this.props.disabled) {
+    if (this.props.isDisabled) {
       (e.target as HTMLInputElement).select();
     }
   };
@@ -68,7 +68,7 @@ export class TextInput extends Component<TextInputProps, TextInputState> {
       withCopyButton,
       placeholder,
       maxLength,
-      disabled,
+      isDisabled,
       required,
       onChange,
       testId,
@@ -86,7 +86,7 @@ export class TextInput extends Component<TextInputProps, TextInputState> {
 
     const widthClass = `TextInput--${width}`;
     const classNames = cn(styles['TextInput'], className, styles[widthClass], {
-      [styles['TextInput--disabled']]: disabled,
+      [styles['TextInput--is-disabled']]: isDisabled,
       [styles['TextInput--negative']]: error,
     });
 
@@ -101,11 +101,11 @@ export class TextInput extends Component<TextInputProps, TextInputState> {
           placeholder={placeholder}
           maxLength={maxLength}
           data-test-id={testId}
-          disabled={disabled}
+          disabled={isDisabled}
           onBlur={onBlur}
           onFocus={this.handleFocus}
           onChange={e => {
-            if (disabled) return;
+            if (isDisabled) return;
 
             if (onChange) {
               onChange(e);

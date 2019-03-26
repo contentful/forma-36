@@ -2,7 +2,7 @@
 
 exports[`renders the component 1`] = `
 <ControlledInput
-  disabled={false}
+  isDisabled={false}
   labelText="radio-button"
   required={false}
   testId="cf-ui-radio-button"
@@ -13,7 +13,7 @@ exports[`renders the component 1`] = `
 exports[`renders the component with an additional class name 1`] = `
 <ControlledInput
   className="my-extra-class"
-  disabled={false}
+  isDisabled={false}
   labelText="radio-button"
   required={false}
   testId="cf-ui-radio-button"

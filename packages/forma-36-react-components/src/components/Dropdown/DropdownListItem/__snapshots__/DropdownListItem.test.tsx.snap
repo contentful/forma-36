@@ -20,7 +20,7 @@ exports[`renders the component as active 1`] = `
 
 exports[`renders the component as disabled 1`] = `
 <li
-  className="DropdownListItem DropdownListItem--disabled"
+  className="DropdownListItem DropdownListItem--is-disabled"
   data-test-id="cf-ui-dropdown-list-item"
 >
   entry

@@ -23,7 +23,7 @@ storiesOf('Components|IconButton', module)
         'white',
       ])}
       label={text('label (screenreader only)', 'Add New Element')}
-      disabled={boolean('disabled', false)}
+      isDisabled={boolean('isDisabled', false)}
       withDropdown={boolean('withDropdown', false)}
       className={text('className', '')}
     />

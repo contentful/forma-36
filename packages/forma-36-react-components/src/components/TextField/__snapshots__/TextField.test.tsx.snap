@@ -18,9 +18,9 @@ exports[`renders the component 1`] = `
     </FormLabel>
   </div>
   <TextInput
-    disabled={false}
     error={false}
     id="someComponent"
+    isDisabled={false}
     name="someComponent"
     onChange={[Function]}
     required={false}
@@ -49,9 +49,9 @@ exports[`renders the component with a copybutton 1`] = `
     </FormLabel>
   </div>
   <TextInput
-    disabled={false}
     error={false}
     id="someComponent"
+    isDisabled={false}
     name="someComponent"
     onChange={[Function]}
     required={false}
@@ -80,9 +80,9 @@ exports[`renders the component with a placeholder text 1`] = `
     </FormLabel>
   </div>
   <TextInput
-    disabled={false}
     error={false}
     id="someComponent"
+    isDisabled={false}
     name="someComponent"
     onChange={[Function]}
     placeholder="placeholder"
@@ -112,9 +112,9 @@ exports[`renders the component with a rows defined 1`] = `
     </FormLabel>
   </div>
   <TextInput
-    disabled={false}
     error={false}
     id="someComponent"
+    isDisabled={false}
     name="someComponent"
     onChange={[Function]}
     required={false}
@@ -144,8 +144,8 @@ exports[`renders the component with a textlink 1`] = `
     </FormLabel>
     <TextLink
       className="TextField__label-link"
-      disabled={false}
       icon="Lock"
+      isDisabled={false}
       linkType="primary"
       onClick={[Function]}
       testId="cf-ui-text-link"
@@ -155,9 +155,9 @@ exports[`renders the component with a textlink 1`] = `
     </TextLink>
   </div>
   <TextInput
-    disabled={false}
     error={false}
     id="someComponent"
+    isDisabled={false}
     name="someComponent"
     onChange={[Function]}
     required={false}
@@ -186,9 +186,9 @@ exports[`renders the component with a value 1`] = `
     </FormLabel>
   </div>
   <TextInput
-    disabled={false}
     error={false}
     id="someComponent"
+    isDisabled={false}
     name="someComponent"
     onChange={[Function]}
     required={false}
@@ -218,9 +218,9 @@ exports[`renders the component with additional prop 1`] = `
     </FormLabel>
   </div>
   <TextInput
-    disabled={false}
     error={false}
     id="someComponent"
+    isDisabled={false}
     name="someComponent"
     onChange={[Function]}
     required={false}
@@ -249,9 +249,9 @@ exports[`renders the component with an additional class name 1`] = `
     </FormLabel>
   </div>
   <TextInput
-    disabled={false}
     error={false}
     id="someComponent"
+    isDisabled={false}
     name="someComponent"
     onChange={[Function]}
     required={false}
@@ -280,9 +280,9 @@ exports[`renders the component with as textarea 1`] = `
     </FormLabel>
   </div>
   <Textarea
-    disabled={false}
     error={false}
     id="someComponent"
+    isDisabled={false}
     name="someComponent"
     onChange={[Function]}
     required={false}
@@ -310,9 +310,9 @@ exports[`renders the component with characters count 1`] = `
     </FormLabel>
   </div>
   <TextInput
-    disabled={false}
     error={false}
     id="someComponent"
+    isDisabled={false}
     maxLength={20}
     name="someComponent"
     onChange={[Function]}
@@ -354,9 +354,9 @@ exports[`renders the component with help text 1`] = `
     </FormLabel>
   </div>
   <TextInput
-    disabled={false}
     error={false}
     id="someComponent"
+    isDisabled={false}
     name="someComponent"
     onChange={[Function]}
     required={false}
@@ -395,9 +395,9 @@ exports[`renders the component with max length of characters 1`] = `
     </FormLabel>
   </div>
   <TextInput
-    disabled={false}
     error={false}
     id="someComponent"
+    isDisabled={false}
     maxLength={10}
     name="someComponent"
     onChange={[Function]}
@@ -427,9 +427,9 @@ exports[`renders the component with required text 1`] = `
     </FormLabel>
   </div>
   <TextInput
-    disabled={false}
     error={false}
     id="someComponent"
+    isDisabled={false}
     name="someComponent"
     onChange={[Function]}
     required={false}
@@ -458,9 +458,9 @@ exports[`renders the component with small width 1`] = `
     </FormLabel>
   </div>
   <TextInput
-    disabled={false}
     error={false}
     id="someComponent"
+    isDisabled={false}
     name="someComponent"
     onChange={[Function]}
     required={false}
@@ -489,9 +489,9 @@ exports[`renders the component with validation message 1`] = `
     </FormLabel>
   </div>
   <TextInput
-    disabled={false}
     error={true}
     id="someComponent"
+    isDisabled={false}
     name="someComponent"
     onChange={[Function]}
     required={false}

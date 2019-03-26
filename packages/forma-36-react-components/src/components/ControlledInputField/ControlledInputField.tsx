@@ -13,7 +13,7 @@ export type ControlledInputFieldPropTypes = {
   required?: boolean;
   helpText?: string;
   formLabelProps?: object;
-  disabled?: boolean;
+  isDisabled?: boolean;
   helpTextProps?: object;
   validationMessage?: string;
   value?: string;
@@ -46,7 +46,7 @@ export class ControlledInputField extends Component<
       testId,
       required,
       helpText,
-      disabled,
+      isDisabled,
       labelText,
       helpTextProps,
       formLabelProps,
@@ -63,7 +63,7 @@ export class ControlledInputField extends Component<
     } = this.props;
 
     const classNames = cn(styles['ControlledInputField'], className, {
-      [styles['ControlledInputField--disabled']]: disabled,
+      [styles['ControlledInputField--is-disabled']]: isDisabled,
     });
 
     return (
@@ -75,7 +75,7 @@ export class ControlledInputField extends Component<
           name={name}
           required={required}
           checked={checked}
-          disabled={disabled}
+          isDisabled={isDisabled}
           value={value}
           onChange={onChange}
           className={styles.ControlledInputField__input}

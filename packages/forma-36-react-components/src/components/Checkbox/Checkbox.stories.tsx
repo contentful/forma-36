@@ -15,7 +15,7 @@ storiesOf('Components|Checkbox', module)
       id="Checkbox"
       checked={boolean('checked', false)}
       labelText={(text('labelText'), 'some label text')}
-      disabled={boolean('disabled', false)}
+      isDisabled={boolean('isDisabled', false)}
       required={boolean('required', false)}
       name={text('name', 'some-name')}
       onChange={action('onChange')}
