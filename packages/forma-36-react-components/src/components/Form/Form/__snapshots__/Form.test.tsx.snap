@@ -15,10 +15,10 @@ exports[`renders the component 1`] = `
       helpText="Please enter your name"
       id="nameInput"
       isRequired={true}
+      isTextarea={false}
       labelText="Name"
       name="nameInput"
       testId="cf-ui-text-field"
-      textarea={false}
       value="Johannes Bugiel"
     />
   </div>
@@ -40,10 +40,10 @@ exports[`renders the component with an additional class name 1`] = `
       helpText="Please enter your name"
       id="nameInput"
       isRequired={true}
+      isTextarea={false}
       labelText="Name"
       name="nameInput"
       testId="cf-ui-text-field"
-      textarea={false}
       value="Johannes Bugiel"
     />
   </div>
@@ -65,10 +65,10 @@ exports[`renders the component with condensed spacing 1`] = `
       helpText="Please enter your name"
       id="nameInput"
       isRequired={true}
+      isTextarea={false}
       labelText="Name"
       name="nameInput"
       testId="cf-ui-text-field"
-      textarea={false}
       value="Johannes Bugiel"
     />
   </div>

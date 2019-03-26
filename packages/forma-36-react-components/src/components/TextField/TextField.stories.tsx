@@ -57,7 +57,7 @@ storiesOf('Components|TextField', module)
   .add('with Textarea', () => (
     <TextField
       className={text('className', '')}
-      textarea
+      isTextarea
       isRequired={boolean('isRequired', false)}
       formLabelProps={{
         requiredText: text('requiredText', undefined),
@@ -103,7 +103,7 @@ storiesOf('Components|TextField', module)
   .add('with TextLink', () => (
     <TextField
       className={text('className', '')}
-      textarea
+      isTextarea
       isRequired={boolean('isRequired', false)}
       formLabelProps={{
         requiredText: text('requiredText', undefined),

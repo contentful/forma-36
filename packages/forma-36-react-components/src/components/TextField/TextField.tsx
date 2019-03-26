@@ -26,7 +26,7 @@ export type TextFieldProps = {
   textInputProps?: Partial<TextInputProps> | Partial<TextareaProps>;
   helpText?: string;
   isRequired?: boolean;
-  textarea?: boolean;
+  isTextarea?: boolean;
   countCharacters?: boolean;
   onChange?: ChangeEventHandler;
   onBlur?: FocusEventHandler;
@@ -38,7 +38,7 @@ export interface TextFieldState {
 
 const defaultProps = {
   testId: 'cf-ui-text-field',
-  textarea: false,
+  isTextarea: false,
   isRequired: false,
   countCharacters: false,
 };
@@ -66,7 +66,7 @@ export class TextField extends Component<TextFieldProps, TextFieldState> {
       textLinkProps,
       labelText,
       helpText,
-      textarea,
+      isTextarea,
       countCharacters,
       isRequired,
       onChange,
@@ -80,7 +80,7 @@ export class TextField extends Component<TextFieldProps, TextFieldState> {
     const classNames = cn(styles['TextField'], className);
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const Element: any = textarea ? Textarea : TextInput;
+    const Element: any = isTextarea ? Textarea : TextInput;
     return (
       <div className={classNames} {...otherProps} data-test-id={testId}>
         <div className={styles['TextField__label-wrapper']}>

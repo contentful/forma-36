@@ -101,7 +101,7 @@ it('renders the component with as textarea', () => {
       labelText="test"
       name="someComponent"
       id="someComponent"
-      textarea
+      isTextarea
     />,
   );
 
