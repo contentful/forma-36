@@ -14,7 +14,7 @@ Array [
       <Tab
         id="first"
         isDisabled={false}
-        selected={false}
+        isSelected={false}
         tabIndex={0}
         testId="cf-ui-tab"
       >
@@ -34,7 +34,7 @@ Array [
       <Tab
         id="second"
         isDisabled={false}
-        selected={false}
+        isSelected={false}
         tabIndex={0}
         testId="cf-ui-tab"
       >
@@ -54,7 +54,7 @@ Array [
       <Tab
         id="third"
         isDisabled={false}
-        selected={false}
+        isSelected={false}
         tabIndex={0}
         testId="cf-ui-tab"
       >
@@ -127,7 +127,7 @@ exports[`renders the component with role=navigation and an additional class name
       href="/first-link"
       id="first"
       isDisabled={false}
-      selected={false}
+      isSelected={false}
       tabIndex={0}
       testId="cf-ui-tab"
     >
@@ -147,7 +147,7 @@ exports[`renders the component with role=navigation and an additional class name
       href="/second-link"
       id="second"
       isDisabled={false}
-      selected={false}
+      isSelected={false}
       tabIndex={0}
       testId="cf-ui-tab"
     >
@@ -166,7 +166,7 @@ exports[`renders the component with role=navigation and an additional class name
       href="/third-link"
       id="third"
       isDisabled={false}
-      selected={false}
+      isSelected={false}
       tabIndex={0}
       testId="cf-ui-tab"
     >

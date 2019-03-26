@@ -53,7 +53,7 @@ export class ToggleButton extends Component<ToggleButtonProps> {
       <Card
         className={classNames}
         padding="none"
-        selected={isActive}
+        isSelected={isActive}
         {...otherProps}
       >
         <button

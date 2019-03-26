@@ -15,7 +15,7 @@ function DefaultStory() {
       <Tabs className={text('className', '')}>
         <Tab
           id="first"
-          selected={selected === 'first'}
+          isSelected={selected === 'first'}
           onSelect={(id: string) => {
             action('onSelect')(id);
             setSelected(id);
@@ -25,7 +25,7 @@ function DefaultStory() {
         </Tab>
         <Tab
           id="second"
-          selected={selected === 'second'}
+          isSelected={selected === 'second'}
           onSelect={(id: string) => {
             action('onSelect')(id);
             setSelected(id);
@@ -35,7 +35,7 @@ function DefaultStory() {
         </Tab>
         <Tab
           id="third"
-          selected={selected === 'third'}
+          isSelected={selected === 'third'}
           onSelect={(id: string) => {
             action('onSelect')(id);
             setSelected(id);
@@ -64,7 +64,7 @@ function AsNavigationStory() {
       <Tab
         id="first"
         href="https://contentful.com"
-        selected={selected === 'first'}
+        isSelected={selected === 'first'}
         onSelect={(id: string) => {
           action('onSelect')(id);
           setSelected(id);
@@ -75,7 +75,7 @@ function AsNavigationStory() {
       <Tab
         id="second"
         href="https://contentful.com"
-        selected={selected === 'second'}
+        isSelected={selected === 'second'}
         onSelect={(id: string) => {
           action('onSelect')(id);
           setSelected(id);
@@ -86,7 +86,7 @@ function AsNavigationStory() {
       <Tab
         id="third"
         href="https://contentful.com"
-        selected={selected === 'third'}
+        isSelected={selected === 'third'}
         onSelect={(id: string) => {
           action('onSelect')(id);
           setSelected(id);

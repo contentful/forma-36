@@ -11,7 +11,7 @@ const styles = require('./Tabs.css');
 export type TabProps = {
   id: string;
   onSelect?: (id: string) => void;
-  selected?: boolean;
+  isSelected?: boolean;
   href?: string;
   target?: string;
   isDisabled?: boolean;
@@ -23,7 +23,7 @@ export type TabProps = {
 } & typeof defaultProps;
 
 const defaultProps = {
-  selected: false,
+  isSelected: false,
   isDisabled: false,
   testId: 'cf-ui-tab',
   tabIndex: 0,
@@ -53,7 +53,7 @@ export class Tab extends Component<TabProps> {
       href,
       style,
       testId,
-      selected,
+      isSelected,
       children,
       tabIndex,
     } = this.props;
@@ -61,7 +61,7 @@ export class Tab extends Component<TabProps> {
       className: classNames(
         styles.Tab,
         {
-          [styles['Tab__selected']]: selected,
+          [styles['Tab--is-Selected']]: isSelected,
         },
         className,
       ),
@@ -77,12 +77,12 @@ export class Tab extends Component<TabProps> {
     }
     if (href) {
       elementProps['href'] = href;
-      if (selected) {
+      if (isSelected) {
         elementProps['aria-current'] = 'page';
       }
       return <a {...elementProps}>{children}</a>;
     } else {
-      elementProps['aria-selected'] = selected;
+      elementProps['aria-selected'] = isSelected;
       elementProps['role'] = 'tab';
       elementProps['aria-controls'] = id;
       return <div {...elementProps}>{children}</div>;

@@ -45,7 +45,7 @@ it('calls an onClick function', () => {
 });
 
 it('can be selected', () => {
-  const output = shallow(<Card selected>Card</Card>);
+  const output = shallow(<Card isSelected>Card</Card>);
 
   expect(output).toMatchSnapshot();
 });
