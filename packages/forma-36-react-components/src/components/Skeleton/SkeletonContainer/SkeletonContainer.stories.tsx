@@ -14,7 +14,7 @@ storiesOf('Components|Skeleton/SkeletonContainer', module)
   .add('default', () => (
     <SkeletonContainer
       className={text('className', '')}
-      animate={boolean('animate', true)}
+      isAnimated={boolean('isAnimated', true)}
       width={text('width', '100%')}
       height={text('height', '100')}
       backgroundColor={text('backgroundColor', '#e5ebed')}

@@ -136,7 +136,7 @@ it('renders the component with a custom secondary opacity', () => {
 
 it('renders the component without animation', () => {
   const output = shallow(
-    <SkeletonContainer animate={false}>
+    <SkeletonContainer isAnimated={false}>
       <SkeletonBodyText />
     </SkeletonContainer>,
   );
