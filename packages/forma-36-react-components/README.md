@@ -110,13 +110,13 @@ We follow the principle that a component should only be responsible for its own 
 
 We recommend the following naming convention for PropTypes to make them as clear as possible:
 
-- Array - use plural nouns. e.g. `items`
-- Number - use a prefix or suffix to imply that the prop accepts a number. e.g. `numItems`, `itemCount`, `itemIndex`
-- Boolean - use the prefix 'is'/'can'/'has'. e.g. `isVisible`, `canExpand`, `hasImage`
-- Object - use a noun. e.g. `item`
-- Node - use the prefix 'node'. e.g. `containerNode`
-- Element - use the prefix 'element'. e.g. `triggerElement`
-- Event handler functions - use the prefix 'on'. e.g. `onOpen`, `onClick`
+- Number - use a prefix or suffix to imply that the prop accepts a number. E.g. `numItems`, `itemCount`, `itemIndex`
+- Boolean - use the prefix 'is'/'can'/'has'. E.g. `isVisible`, `canExpand`, `hasImage`
+- Array - use a plural noun. E.g. `items`
+- Object - use a noun. E.g. `item`
+- Node - use the suffix 'Node'. E.g. `containerNode`
+- Element - use the suffix 'Element'. E.g. `triggerElement`
+- Event handler functions - use the prefix 'on'. E.g. `onOpen`, `onClick`
 
 ### Adding a new component
 
