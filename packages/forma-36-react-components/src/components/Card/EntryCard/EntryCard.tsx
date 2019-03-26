@@ -3,8 +3,12 @@ import cn from 'classnames';
 import truncate from 'truncate';
 import Card from '../Card';
 import CardActions from '../CardActions';
+import CardDragHandle, {
+  CardDragHandlePropTypes,
+} from '../CardDragHandle/CardDragHandle';
 import Tag, { TagType } from '../../Tag/Tag';
 import EntryCardSkeleton from './EntryCardSkeleton';
+import Icon from './../../Icon';
 
 const styles = require('./EntryCard.css');
 
@@ -51,6 +55,18 @@ export type EntryCardPropTypes = {
    * The DropdownList elements used to render an actions dropdown for the EntryCard
    */
   dropdownListElements?: React.ReactElement;
+  /**
+   * Renders a drag handle for the component for use in drag and drop contexts
+   */
+  withDragHandle?: boolean;
+  /**
+   * Applies styling for when the component is actively being dragged by the user
+   */
+  isDragActive?: boolean;
+  /**
+   * Props to pass down to the CardDragHandle component
+   */
+  cardDragHandleProps?: Partial<CardDragHandlePropTypes>;
 } & typeof defaultProps;
 
 const defaultProps = {
@@ -131,46 +147,66 @@ export class EntryCard extends Component<EntryCardPropTypes> {
       thumbnailElement,
       loading,
       dropdownListElements,
+      withDragHandle,
+      isDragActive,
+      cardDragHandleProps,
       ...otherProps
     } = this.props;
 
-    const classNames = cn(styles.EntryCard, className);
+    const classNames = cn(
+      styles.EntryCard,
+      { [styles['EntryCard--drag-active']]: isDragActive },
+      className,
+    );
 
     return (
       <Card
         className={classNames}
         onClick={!loading ? onClick : undefined}
         testId={testId}
+        padding="none"
         {...otherProps}
       >
         {loading ? (
-          <EntryCardSkeleton />
+          <div className={styles.EntryCard__wrapper}>
+            <EntryCardSkeleton />
+          </div>
         ) : (
-          <article className={styles.EntryCard__wrapper}>
-            <React.Fragment>
-              <div className={styles.EntryCard__meta}>
-                <div
-                  className={styles['EntryCard__content-type']}
-                  data-test-id="content-type"
-                >
-                  {contentType}
+          <React.Fragment>
+            {withDragHandle && (
+              <CardDragHandle
+                isDragActive={isDragActive}
+                {...cardDragHandleProps}
+              >
+                Reorder entry
+              </CardDragHandle>
+            )}
+            <article className={styles.EntryCard__wrapper}>
+              <React.Fragment>
+                <div className={styles.EntryCard__meta}>
+                  <div
+                    className={styles['EntryCard__content-type']}
+                    data-test-id="content-type"
+                  >
+                    {contentType}
+                  </div>
+                  {status && this.renderStatus(status)}
+                  {dropdownListElements && (
+                    <CardActions className={styles['EntryCard__actions']}>
+                      {dropdownListElements}
+                    </CardActions>
+                  )}
                 </div>
-                {status && this.renderStatus(status)}
-                {dropdownListElements && (
-                  <CardActions className={styles['EntryCard__actions']}>
-                    {dropdownListElements}
-                  </CardActions>
-                )}
-              </div>
-              <div className={styles.EntryCard__content}>
-                <div className={styles.EntryCard__body}>
-                  {title && this.renderTitle(title)}
-                  {description && this.renderDescription(description)}
+                <div className={styles.EntryCard__content}>
+                  <div className={styles.EntryCard__body}>
+                    {title && this.renderTitle(title)}
+                    {description && this.renderDescription(description)}
+                  </div>
+                  {thumbnailElement && this.renderThumbnail(thumbnailElement)}
                 </div>
-                {thumbnailElement && this.renderThumbnail(thumbnailElement)}
-              </div>
-            </React.Fragment>
-          </article>
+              </React.Fragment>
+            </article>
+          </React.Fragment>
         )}
       </Card>
     );
