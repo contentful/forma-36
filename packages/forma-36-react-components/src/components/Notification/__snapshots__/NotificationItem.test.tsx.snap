@@ -32,6 +32,7 @@ exports[`renders the component 1`] = `
   <IconButton
     buttonType="white"
     className="NotificationItem__dismiss"
+    hasDropdown={false}
     iconProps={
       Object {
         "icon": "Close",
@@ -41,7 +42,6 @@ exports[`renders the component 1`] = `
     label="Dismiss"
     onClick={[Function]}
     testId="cf-ui-notification-close"
-    withDropdown={false}
   />
 </div>
 `;
@@ -78,6 +78,7 @@ exports[`renders the component with "error" intent 1`] = `
   <IconButton
     buttonType="white"
     className="NotificationItem__dismiss"
+    hasDropdown={false}
     iconProps={
       Object {
         "icon": "Close",
@@ -87,7 +88,6 @@ exports[`renders the component with "error" intent 1`] = `
     label="Dismiss"
     onClick={[Function]}
     testId="cf-ui-notification-close"
-    withDropdown={false}
   />
 </div>
 `;
@@ -124,6 +124,7 @@ exports[`renders the component with "warning" intent 1`] = `
   <IconButton
     buttonType="white"
     className="NotificationItem__dismiss"
+    hasDropdown={false}
     iconProps={
       Object {
         "icon": "Close",
@@ -133,7 +134,6 @@ exports[`renders the component with "warning" intent 1`] = `
     label="Dismiss"
     onClick={[Function]}
     testId="cf-ui-notification-close"
-    withDropdown={false}
   />
 </div>
 `;

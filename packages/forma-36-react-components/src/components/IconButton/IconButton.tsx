@@ -19,7 +19,7 @@ export interface IconButtonProps {
     | 'secondary'
     | 'muted'
     | 'white';
-  withDropdown?: boolean;
+  hasDropdown?: boolean;
   className?: string;
   testId?: string;
 }
@@ -28,7 +28,7 @@ const defaultProps = {
   isDisabled: false,
   testId: 'cf-ui-icon-button',
   buttonType: 'primary',
-  withDropdown: false,
+  hasDropdown: false,
 };
 
 export class IconButton extends Component<
@@ -45,7 +45,7 @@ export class IconButton extends Component<
       isDisabled,
       onClick,
       buttonType,
-      withDropdown,
+      hasDropdown,
       className,
       ...otherProps
     } = this.props;
@@ -67,7 +67,7 @@ export class IconButton extends Component<
         <Icon icon={iconProps.icon} className={styles.IconButton__icon} />
 
         <span className={styles.IconButton__label}>{label}</span>
-        {withDropdown && (
+        {hasDropdown && (
           <Icon
             icon="ChevronDown"
             color="secondary"

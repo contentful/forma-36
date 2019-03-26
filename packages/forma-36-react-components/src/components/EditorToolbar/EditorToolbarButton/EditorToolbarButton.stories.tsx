@@ -17,7 +17,7 @@ storiesOf('Components|EditorToolbar/EditorToolbarButton', module)
       label={text('label (screenreader only)', 'H1')}
       isActive={boolean('isActive', false)}
       isDisabled={boolean('isDisabled', false)}
-      withDropdown={boolean('withDropdown', false)}
+      hasDropdown={boolean('hasDropdown', false)}
       onClick={action('onClick')}
     />
   ));

@@ -13,7 +13,7 @@ export type EditorToolbarButtonProps = {
   isActive?: boolean;
   isDisabled?: boolean;
   onClick?: MouseEventHandler;
-  withDropdown?: boolean;
+  hasDropdown?: boolean;
   className?: string;
   testId?: string;
 } & typeof defaultProps;
@@ -22,7 +22,7 @@ const defaultProps = {
   testId: 'cf-ui-editor-toolbar-button',
   isActive: false,
   isDisabled: false,
-  withDropdown: false,
+  hasDropdown: false,
 };
 
 export class EditorToolbarButton extends Component<EditorToolbarButtonProps> {
@@ -39,7 +39,7 @@ export class EditorToolbarButton extends Component<EditorToolbarButtonProps> {
       isActive,
       isDisabled,
       onClick,
-      withDropdown,
+      hasDropdown,
       ...otherProps
     } = this.props;
 
@@ -58,7 +58,7 @@ export class EditorToolbarButton extends Component<EditorToolbarButtonProps> {
             className={classNames}
             onClick={!isDisabled ? onClick : () => {}}
             isDisabled={isDisabled}
-            withDropdown={withDropdown}
+            hasDropdown={hasDropdown}
             {...iconButtonProps}
             {...otherProps}
           />

@@ -12,6 +12,7 @@ exports[`renders the component 1`] = `
     <IconButton
       buttonType="secondary"
       className="EditorToolbarButton"
+      hasDropdown={false}
       iconProps={
         Object {
           "icon": "HeadingOne",
@@ -20,7 +21,6 @@ exports[`renders the component 1`] = `
       isDisabled={false}
       label="H1"
       testId="cf-ui-editor-toolbar-button"
-      withDropdown={false}
     />
   </Tooltip>
 </Fragment>
@@ -39,6 +39,7 @@ exports[`renders the component as active 1`] = `
     <IconButton
       buttonType="secondary"
       className="EditorToolbarButton EditorToolbarButton--is-active"
+      hasDropdown={false}
       iconProps={
         Object {
           "icon": "HeadingOne",
@@ -47,7 +48,6 @@ exports[`renders the component as active 1`] = `
       isDisabled={false}
       label="H1"
       testId="cf-ui-editor-toolbar-button"
-      withDropdown={false}
     />
   </Tooltip>
 </Fragment>
@@ -65,6 +65,7 @@ exports[`renders the component as disabled 1`] = `
     <IconButton
       buttonType="secondary"
       className="EditorToolbarButton"
+      hasDropdown={false}
       iconProps={
         Object {
           "icon": "HeadingOne",
@@ -74,7 +75,6 @@ exports[`renders the component as disabled 1`] = `
       label="H1"
       onClick={[Function]}
       testId="cf-ui-editor-toolbar-button"
-      withDropdown={false}
     />
   </Tooltip>
 </Fragment>
@@ -93,6 +93,7 @@ exports[`renders the component with a tooltip 1`] = `
     <IconButton
       buttonType="secondary"
       className="EditorToolbarButton"
+      hasDropdown={false}
       iconProps={
         Object {
           "icon": "HeadingOne",
@@ -101,7 +102,6 @@ exports[`renders the component with a tooltip 1`] = `
       isDisabled={false}
       label="H1"
       testId="cf-ui-editor-toolbar-button"
-      withDropdown={false}
     />
   </Tooltip>
 </Fragment>
@@ -119,6 +119,7 @@ exports[`renders the component with an additional class name 1`] = `
     <IconButton
       buttonType="secondary"
       className="EditorToolbarButton my-extra-class"
+      hasDropdown={false}
       iconProps={
         Object {
           "icon": "HeadingOne",
@@ -127,7 +128,6 @@ exports[`renders the component with an additional class name 1`] = `
       isDisabled={false}
       label="H1"
       testId="cf-ui-editor-toolbar-button"
-      withDropdown={false}
     />
   </Tooltip>
 </Fragment>
@@ -146,6 +146,7 @@ exports[`renders with a dropdown indicator 1`] = `
     <IconButton
       buttonType="secondary"
       className="EditorToolbarButton"
+      hasDropdown={true}
       iconProps={
         Object {
           "icon": "HeadingOne",
@@ -154,7 +155,6 @@ exports[`renders with a dropdown indicator 1`] = `
       isDisabled={false}
       label="H1"
       testId="cf-ui-editor-toolbar-button"
-      withDropdown={true}
     />
   </Tooltip>
 </Fragment>
