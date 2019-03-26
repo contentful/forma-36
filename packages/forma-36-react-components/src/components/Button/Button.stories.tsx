@@ -30,7 +30,7 @@ storiesOf('Components|Button', module)
         )}
         size={select('size', [undefined, 'small', 'large'], undefined)}
         isLoading={boolean('isLoading', false)}
-        indicateDropdown={boolean('indicateDropdown', false)}
+        hasDropdown={boolean('hasDropdown', false)}
         isDisabled={boolean('isDisabled', false)}
         isFullWidth={boolean('isFullWidth', false)}
         onClick={action('onClick')}

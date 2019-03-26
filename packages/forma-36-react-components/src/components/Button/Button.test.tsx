@@ -42,7 +42,7 @@ it('renders the component as naked', () => {
 });
 
 it('renders the component with dropdown indicator', () => {
-  const output = shallow(<Button indicateDropdown>Embed Entry</Button>);
+  const output = shallow(<Button hasDropdown>Embed Entry</Button>);
 
   expect(output).toMatchSnapshot();
 });
