@@ -38,7 +38,7 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component children in a row 1`] = `
 <div
-  className="FieldGroup className FieldGroup--row"
+  className="FieldGroup className FieldGroup--is-row"
   data-test-id="cf-ui-field-group"
 >
   <div

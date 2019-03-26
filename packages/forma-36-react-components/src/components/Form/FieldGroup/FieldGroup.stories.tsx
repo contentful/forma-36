@@ -9,7 +9,7 @@ function DefaultStory() {
   const [agreeTerms, setTerms] = useState('yes');
 
   return (
-    <FieldGroup row={boolean('row', false)}>
+    <FieldGroup isRow={boolean('isRow', false)}>
       <CheckboxField
         labelText="I agree"
         value="yes"

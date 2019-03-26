@@ -8,11 +8,11 @@ export type FieldGroupProps = {
   children: React.ReactNode;
   style?: React.CSSProperties;
   testId?: string;
-  row?: boolean;
+  isRow?: boolean;
 } & typeof defaultProps;
 
 const defaultProps = {
-  row: false,
+  isRow: false,
   testId: 'cf-ui-field-group',
 };
 
@@ -20,10 +20,10 @@ export class FieldGroup extends Component<FieldGroupProps> {
   static defaultProps = defaultProps;
 
   render() {
-    const { className, children, row, testId, ...otherProps } = this.props;
+    const { className, children, isRow, testId, ...otherProps } = this.props;
 
     const classNames = cn(styles.FieldGroup, styles.className, {
-      [styles['FieldGroup--row']]: row,
+      [styles['FieldGroup--is-row']]: isRow,
     });
 
     return (

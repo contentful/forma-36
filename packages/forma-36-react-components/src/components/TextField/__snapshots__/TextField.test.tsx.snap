@@ -266,7 +266,6 @@ exports[`renders the component with as textarea 1`] = `
 <div
   className="TextField"
   data-test-id="cf-ui-text-field"
-  textarea={true}
 >
   <div
     className="TextField__label-wrapper"
@@ -280,16 +279,15 @@ exports[`renders the component with as textarea 1`] = `
       test
     </FormLabel>
   </div>
-  <TextInput
+  <Textarea
     hasError={false}
     id="someComponent"
     isDisabled={false}
     isRequired={false}
     name="someComponent"
     onChange={[Function]}
-    testId="cf-ui-text-input"
+    testId="cf-ui-textarea"
     width="full"
-    withCopyButton={false}
   />
 </div>
 `;

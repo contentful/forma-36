@@ -39,7 +39,7 @@ function DefaultStory() {
         value="johannes.bugiel@contentful.com"
         helpText="Please enter your mail"
       />
-      <FieldGroup row={boolean('row', false)}>
+      <FieldGroup isRow={boolean('isRow', false)}>
         <CheckboxField
           labelText="I agree"
           value="yes"
