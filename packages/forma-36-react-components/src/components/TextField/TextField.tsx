@@ -25,7 +25,7 @@ export type TextFieldProps = {
   textLinkProps?: Partial<TextLinkProps>;
   textInputProps?: Partial<TextInputProps> | Partial<TextareaProps>;
   helpText?: string;
-  required?: boolean;
+  isRequired?: boolean;
   textarea?: boolean;
   countCharacters?: boolean;
   onChange?: ChangeEventHandler;
@@ -39,7 +39,7 @@ export interface TextFieldState {
 const defaultProps = {
   testId: 'cf-ui-text-field',
   textarea: false,
-  required: false,
+  isRequired: false,
   countCharacters: false,
 };
 
@@ -68,7 +68,7 @@ export class TextField extends Component<TextFieldProps, TextFieldState> {
       helpText,
       textarea,
       countCharacters,
-      required,
+      isRequired,
       onChange,
       onBlur,
       value,
@@ -84,7 +84,7 @@ export class TextField extends Component<TextFieldProps, TextFieldState> {
     return (
       <div className={classNames} {...otherProps} data-test-id={testId}>
         <div className={styles['TextField__label-wrapper']}>
-          <FormLabel {...formLabelProps} htmlFor={id} required={required}>
+          <FormLabel {...formLabelProps} htmlFor={id} isRequired={isRequired}>
             {labelText}
           </FormLabel>
           {textLinkProps && (
@@ -106,7 +106,7 @@ export class TextField extends Component<TextFieldProps, TextFieldState> {
             onBlur,
             onChange: this.handleOnChange,
             value,
-            required,
+            isRequired,
             ...textInputProps,
           }}
         />

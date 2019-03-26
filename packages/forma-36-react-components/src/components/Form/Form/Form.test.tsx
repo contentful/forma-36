@@ -8,7 +8,7 @@ it('renders the component', () => {
   const output = shallow(
     <Form>
       <TextField
-        required
+        isRequired
         name="nameInput"
         id="nameInput"
         labelText="Name"
@@ -25,7 +25,7 @@ it('renders the component with an additional class name', () => {
   const output = shallow(
     <Form className="my-extra-class">
       <TextField
-        required
+        isRequired
         name="nameInput"
         id="nameInput"
         labelText="Name"
@@ -42,7 +42,7 @@ it('renders the component with condensed spacing', () => {
   const output = shallow(
     <Form className="my-extra-class" spacing="condensed">
       <TextField
-        required
+        isRequired
         name="nameInput"
         id="nameInput"
         labelText="Name"
@@ -60,7 +60,7 @@ it('renders the component with condensed spacing (prevent default)', () => {
   const output = shallow(
     <Form className="my-extra-class" onSubmit={mockOnSubmit}>
       <TextField
-        required
+        isRequired
         name="nameInput"
         id="nameInput"
         labelText="Name"
@@ -80,7 +80,7 @@ it('has no a11y issues', async () => {
   const output = mount(
     <Form>
       <TextField
-        required
+        isRequired
         name="nameInput"
         id="nameInput"
         labelText="Name"

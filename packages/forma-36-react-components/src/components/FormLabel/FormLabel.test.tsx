@@ -21,7 +21,7 @@ it('renders the component with an additional class name', () => {
 
 it('renders the component with an required flag', () => {
   const output = shallow(
-    <FormLabel htmlFor="someInput" required>
+    <FormLabel htmlFor="someInput" isRequired>
       Label Text
     </FormLabel>,
   );
@@ -31,7 +31,7 @@ it('renders the component with an required flag', () => {
 
 it('renders the component with required text', () => {
   const output = shallow(
-    <FormLabel htmlFor="someInput" requiredText="pflichtfeld" required>
+    <FormLabel htmlFor="someInput" requiredText="pflichtfeld" isRequired>
       Label Text
     </FormLabel>,
   );

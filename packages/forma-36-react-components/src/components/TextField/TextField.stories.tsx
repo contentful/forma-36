@@ -12,7 +12,7 @@ storiesOf('Components|TextField', module)
   .add('default', () => (
     <TextField
       className={text('className', '')}
-      required={boolean('required', false)}
+      isRequired={boolean('isRequired', false)}
       formLabelProps={{
         requiredText: text('requiredText', undefined),
       }}
@@ -58,7 +58,7 @@ storiesOf('Components|TextField', module)
     <TextField
       className={text('className', '')}
       textarea
-      required={boolean('required', false)}
+      isRequired={boolean('isRequired', false)}
       formLabelProps={{
         requiredText: text('requiredText', undefined),
       }}
@@ -104,7 +104,7 @@ storiesOf('Components|TextField', module)
     <TextField
       className={text('className', '')}
       textarea
-      required={boolean('required', false)}
+      isRequired={boolean('isRequired', false)}
       formLabelProps={{
         requiredText: text('requiredText', undefined),
       }}
@@ -155,7 +155,7 @@ storiesOf('Components|TextField', module)
     <TextField
       countCharacters={boolean('countCharacters', true)}
       className={text('className', '')}
-      required={boolean('required', false)}
+      isRequired={boolean('isRequired', false)}
       formLabelProps={{
         requiredText: text('requiredText', undefined),
       }}

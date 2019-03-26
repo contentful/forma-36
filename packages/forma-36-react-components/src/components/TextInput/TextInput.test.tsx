@@ -99,9 +99,14 @@ it('renders the component with a test id', () => {
   expect(output).toMatchSnapshot();
 });
 
-it('renders the component as required', () => {
+it('renders the component as isRequired', () => {
   const output = shallow(
-    <TextInput id="someInput" name="userEmail" testId="someTestId" required />,
+    <TextInput
+      id="someInput"
+      name="userEmail"
+      testId="someTestId"
+      isRequired
+    />,
   );
 
   expect(output).toMatchSnapshot();

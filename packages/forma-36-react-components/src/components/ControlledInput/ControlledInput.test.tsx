@@ -23,13 +23,13 @@ it('renders the component with an additional class name', () => {
   expect(output).toMatchSnapshot();
 });
 
-it('renders the component with required prop', () => {
+it('renders the component with isRequired prop', () => {
   const output = shallow(
     <ControlledInput
       className="my-extra-class"
       id="ControlledInput"
       labelText="ControlledInput"
-      required
+      isRequired
     />,
   );
 

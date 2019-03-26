@@ -29,7 +29,7 @@ it('renders the component as required', () => {
       className="my-extra-class"
       id="checkbox"
       labelText="Label Text"
-      required
+      isRequired
     />,
   );
 

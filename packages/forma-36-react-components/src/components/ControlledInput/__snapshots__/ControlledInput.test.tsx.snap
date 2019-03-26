@@ -77,7 +77,7 @@ exports[`renders the component with isDisabled prop 1`] = `
 />
 `;
 
-exports[`renders the component with required prop 1`] = `
+exports[`renders the component with isRequired prop 1`] = `
 <input
   aria-label="ControlledInput"
   className="ControlledInput my-extra-class"

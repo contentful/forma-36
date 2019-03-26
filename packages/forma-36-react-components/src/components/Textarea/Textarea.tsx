@@ -10,7 +10,7 @@ export type TextareaProps = {
   className?: string;
   width?: 'small' | 'medium' | 'large' | 'full';
   maxLength?: number;
-  required?: boolean;
+  isRequired?: boolean;
   onChange?: ChangeEventHandler;
   isDisabled?: boolean;
   value?: string;
@@ -26,7 +26,7 @@ export interface TextareaState {
 const defaultProps = {
   testId: 'cf-ui-textarea',
   isDisabled: false,
-  required: false,
+  isRequired: false,
   width: 'full',
 };
 
@@ -53,7 +53,7 @@ export class Textarea extends Component<TextareaProps, TextareaState> {
       maxLength,
       onChange,
       isDisabled,
-      required,
+      isRequired,
       onBlur,
       error,
       width,
@@ -90,6 +90,7 @@ export class Textarea extends Component<TextareaProps, TextareaState> {
           }}
           maxLength={maxLength}
           value={isDisabled ? value : this.state && this.state.value}
+          required={isRequired}
           {...otherProps}
         />
       </div>

@@ -10,7 +10,7 @@ export type ControlledInputFieldPropTypes = {
   id: string;
   labelText: string;
   labelIsLight?: boolean;
-  required?: boolean;
+  isRequired?: boolean;
   helpText?: string;
   formLabelProps?: object;
   isDisabled?: boolean;
@@ -44,7 +44,7 @@ export class ControlledInputField extends Component<
       id,
       labelIsLight,
       testId,
-      required,
+      isRequired,
       helpText,
       isDisabled,
       labelText,
@@ -73,7 +73,7 @@ export class ControlledInputField extends Component<
           labelText={labelText}
           type={inputType}
           name={name}
-          required={required}
+          isRequired={isRequired}
           checked={checked}
           isDisabled={isDisabled}
           value={value}
@@ -86,7 +86,7 @@ export class ControlledInputField extends Component<
             className={cn(styles.ControlledInputField__label, {
               [styles['ControlledInputField__label--light']]: labelIsLight,
             })}
-            required={required}
+            isRequired={isRequired}
             htmlFor={id}
             {...formLabelProps}
           >

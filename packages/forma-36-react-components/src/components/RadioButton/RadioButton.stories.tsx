@@ -15,7 +15,7 @@ storiesOf('Components|RadioButton', module)
       checked={boolean('Checked', false)}
       labelText={(text('Aria label text'), 'some label text')}
       isDisabled={boolean('isDisabled', false)}
-      required={boolean('Required', false)}
+      isRequired={boolean('isRequired', false)}
       name={text('Name', 'some-name')}
     />
   ));

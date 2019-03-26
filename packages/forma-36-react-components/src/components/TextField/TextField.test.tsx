@@ -37,7 +37,7 @@ it('renders the component with validation message', () => {
   expect(output).toMatchSnapshot();
 });
 
-it('renders the component with required text', () => {
+it('renders the component with isRequired text', () => {
   const output = shallow(
     <TextField
       labelText="test"

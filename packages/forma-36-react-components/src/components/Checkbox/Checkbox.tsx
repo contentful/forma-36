@@ -8,7 +8,7 @@ export const Checkbox: FunctionComponent<ControlledInputPropTypes> = props => (
 );
 
 Checkbox.defaultProps = {
-  required: false,
+  isRequired: false,
   isDisabled: false,
   type: 'checkbox',
   testId: 'ctf-ui-checkbox',

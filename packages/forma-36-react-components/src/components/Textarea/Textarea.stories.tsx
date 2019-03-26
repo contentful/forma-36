@@ -16,7 +16,7 @@ storiesOf('Components|TextArea', module)
       id="someInput"
       error={boolean('error', false)}
       maxLength={number('maxLength', 50)}
-      required={boolean('required', false)}
+      isRequired={boolean('isRequired', false)}
       width={select(
         'width',
         {

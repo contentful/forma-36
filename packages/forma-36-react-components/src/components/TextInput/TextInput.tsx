@@ -26,7 +26,7 @@ export type TextInputProps = {
   value?: string;
   inputRef?: RefObject<HTMLInputElement>;
   error?: boolean;
-  required?: boolean;
+  isRequired?: boolean;
 } & typeof defaultProps;
 
 export interface TextInputState {
@@ -37,7 +37,7 @@ const defaultProps = {
   withCopyButton: false,
   testId: 'cf-ui-text-input',
   isDisabled: false,
-  required: false,
+  isRequired: false,
   width: 'full',
 };
 
@@ -69,7 +69,7 @@ export class TextInput extends Component<TextInputProps, TextInputState> {
       placeholder,
       maxLength,
       isDisabled,
-      required,
+      isRequired,
       onChange,
       testId,
       onBlur,
@@ -97,7 +97,7 @@ export class TextInput extends Component<TextInputProps, TextInputState> {
           className={styles['TextInput__input']}
           id={id}
           name={name}
-          required={required}
+          required={isRequired}
           placeholder={placeholder}
           maxLength={maxLength}
           data-test-id={testId}

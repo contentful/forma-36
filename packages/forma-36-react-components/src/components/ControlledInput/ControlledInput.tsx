@@ -5,7 +5,7 @@ const styles = require('./ControlledInput.css');
 
 export interface ControlledInputPropTypes {
   id?: string;
-  required?: boolean;
+  isRequired?: boolean;
   labelText: string;
   checked?: boolean;
   onChange?: EventHandler<ChangeEvent<HTMLInputElement>>;
@@ -21,7 +21,7 @@ export interface ControlledInputPropTypes {
 
 const defaultProps = {
   testId: 'cf-ui-controlled-input',
-  required: false,
+  isRequired: false,
   isDisabled: false,
   type: 'checkbox',
 };
@@ -36,7 +36,7 @@ export class ControlledInput extends Component<
       className,
       id,
       testId,
-      required,
+      isRequired,
       isDisabled,
       onFocus,
       onBlur,
@@ -78,7 +78,7 @@ export class ControlledInput extends Component<
         }}
         aria-label={labelText}
         id={id}
-        required={required}
+        required={isRequired}
         disabled={isDisabled}
         {...otherProps}
       />

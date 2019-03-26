@@ -127,7 +127,7 @@ it('renders the component as required', () => {
       id="someInput"
       name="userEmail"
       className="my-extra-class"
-      required
+      isRequired
     />,
   );
 

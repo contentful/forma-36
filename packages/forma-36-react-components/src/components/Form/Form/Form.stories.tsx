@@ -24,7 +24,7 @@ function DefaultStory() {
       )}
     >
       <TextField
-        required
+        isRequired
         name="nameInput"
         id="nameInput"
         labelText="Name"
@@ -32,7 +32,7 @@ function DefaultStory() {
         helpText="Please enter your name"
       />
       <TextField
-        required
+        isRequired
         name="emailInput"
         id="emailInput"
         labelText="E-Mail"
