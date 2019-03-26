@@ -2,6 +2,7 @@
 
 exports[`renders the component 1`] = `
 <ControlledInputField
+  hasLightLabel={false}
   id="radio-button"
   inputProps={
     Object {
@@ -10,7 +11,6 @@ exports[`renders the component 1`] = `
   }
   inputType="radio"
   isChecked={false}
-  labelIsLight={false}
   labelText="radio button field"
   testId="cf-ui-radio-button-field"
 />
@@ -19,10 +19,10 @@ exports[`renders the component 1`] = `
 exports[`renders the component with an additional class name 1`] = `
 <ControlledInputField
   className="my-extra-class"
+  hasLightLabel={false}
   id="radio-button"
   inputType="radio"
   isChecked={false}
-  labelIsLight={false}
   labelText="radio button field"
   testId="cf-ui-radio-button-field"
 />

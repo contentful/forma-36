@@ -21,7 +21,7 @@ function DefaultStory() {
         isChecked={optionOne}
         value="yes"
         onChange={e => setOptionOne((e.target as HTMLInputElement).checked)}
-        labelIsLight={boolean('labelIsLight', false)}
+        hasLightLabel={boolean('hasLightLabel', false)}
         inputProps={{
           onBlur: action('onBlur'),
           onFocus: action('onFoucs'),
@@ -37,7 +37,7 @@ function DefaultStory() {
         value="no"
         isChecked={optionTwo}
         onChange={e => setOptionTwo((e.target as HTMLInputElement).checked)}
-        labelIsLight={boolean('labelIsLight', false)}
+        hasLightLabel={boolean('hasLightLabel', false)}
         inputProps={{
           onBlur: action('onBlur'),
           onFocus: action('onFoucs'),

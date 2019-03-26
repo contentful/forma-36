@@ -21,7 +21,7 @@ function DefaultStory() {
         onChange={e => {
           setActiveOption((e.target as HTMLInputElement).value);
         }}
-        labelIsLight={boolean('labelIsLight', false)}
+        hasLightLabel={boolean('hasLightLabel', false)}
         inputProps={{
           onBlur: action('onBlur'),
           onFocus: action('onFoucs'),
@@ -39,7 +39,7 @@ function DefaultStory() {
         onChange={e => {
           setActiveOption((e.target as HTMLInputElement).value);
         }}
-        labelIsLight={boolean('labelIsLight', false)}
+        hasLightLabel={boolean('hasLightLabel', false)}
         inputProps={{
           onBlur: action('onBlur'),
           onFocus: action('onFoucs'),

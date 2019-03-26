@@ -82,7 +82,7 @@ it('renders the component with a light label variation', () => {
       id="checkbox"
       labelText="Label Text"
       validationMessage="Not valid!"
-      labelIsLight
+      hasLightLabel
     />,
   );
 
