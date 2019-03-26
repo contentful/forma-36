@@ -27,7 +27,7 @@ export type TextFieldProps = {
   helpText?: string;
   isRequired?: boolean;
   isTextarea?: boolean;
-  countCharacters?: boolean;
+  hasCharacterCount?: boolean;
   onChange?: ChangeEventHandler;
   onBlur?: FocusEventHandler;
 } & typeof defaultProps;
@@ -40,7 +40,7 @@ const defaultProps = {
   testId: 'cf-ui-text-field',
   isTextarea: false,
   isRequired: false,
-  countCharacters: false,
+  hasCharacterCount: false,
 };
 
 export class TextField extends Component<TextFieldProps, TextFieldState> {
@@ -49,7 +49,7 @@ export class TextField extends Component<TextFieldProps, TextFieldState> {
   state = { value: this.props.value || '' };
 
   // Store a copy of the value in state.
-  // This is used by this component when the `countCharacters`
+  // This is used by this component when the `hasCharacterCount`
   // option is on
   handleOnChange = (evt: ChangeEvent) => {
     this.setState({ value: (evt.target as HTMLInputElement).value });
@@ -67,7 +67,7 @@ export class TextField extends Component<TextFieldProps, TextFieldState> {
       labelText,
       helpText,
       isTextarea,
-      countCharacters,
+      hasCharacterCount,
       isRequired,
       onChange,
       onBlur,
@@ -117,14 +117,14 @@ export class TextField extends Component<TextFieldProps, TextFieldState> {
             {validationMessage}
           </ValidationMessage>
         )}
-        {(helpText || countCharacters) && (
+        {(helpText || hasCharacterCount) && (
           <div className={styles['TextField__hints']}>
             {helpText && (
               <HelpText className={styles['TextField__help-text']}>
                 {helpText}
               </HelpText>
             )}
-            {countCharacters && textInputProps && textInputProps.maxLength && (
+            {hasCharacterCount && textInputProps && textInputProps.maxLength && (
               <HelpText
                 className={cn(
                   styles['TextField__help-text'],

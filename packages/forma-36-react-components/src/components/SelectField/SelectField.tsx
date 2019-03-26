@@ -53,8 +53,6 @@ export class SelectField extends Component<SelectFieldProps, SelectFieldState> {
   }
 
   // Store a copy of the value in state.
-  // This is used by this component when the `countCharacters`
-  // option is on
   handleOnChange = (evt: ChangeEvent) => {
     this.setState({ value: (evt.target as HTMLSelectElement).value });
     if (this.props.onChange) {

@@ -11,7 +11,7 @@ exports[`renders the component 1`] = `
     key=".0"
   >
     <TextField
-      countCharacters={false}
+      hasCharacterCount={false}
       helpText="Please enter your name"
       id="nameInput"
       isRequired={true}
@@ -36,7 +36,7 @@ exports[`renders the component with an additional class name 1`] = `
     key=".0"
   >
     <TextField
-      countCharacters={false}
+      hasCharacterCount={false}
       helpText="Please enter your name"
       id="nameInput"
       isRequired={true}
@@ -61,7 +61,7 @@ exports[`renders the component with condensed spacing 1`] = `
     key=".0"
   >
     <TextField
-      countCharacters={false}
+      hasCharacterCount={false}
       helpText="Please enter your name"
       id="nameInput"
       isRequired={true}

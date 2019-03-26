@@ -153,7 +153,7 @@ storiesOf('Components|TextField', module)
   ))
   .add('with Character count', () => (
     <TextField
-      countCharacters={boolean('countCharacters', true)}
+      hasCharacterCount={boolean('hasCharacterCount', true)}
       className={text('className', '')}
       isRequired={boolean('isRequired', false)}
       formLabelProps={{
