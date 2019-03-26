@@ -96,7 +96,7 @@ export class DropdownListItem extends Component<DropdownListItemProps> {
       [styles['DropdownListItem__submenu-toggle']]:
         submenuToggleLabel || onClick || onMouseDown,
       [styles['DropdownListItem--is-disabled']]: isDisabled,
-      [styles['DropdownListItem--active']]: isActive,
+      [styles['DropdownListItem--is-active']]: isActive,
       [styles['DropdownListItem--title']]: isTitle,
     });
 

@@ -30,7 +30,7 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component active 1`] = `
 <Card
-  className="Toggle my-extra-class Toggle--active"
+  className="Toggle my-extra-class Toggle--is-active"
   isSelected={true}
   padding="none"
   testId="cf-ui-toggle-button"

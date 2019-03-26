@@ -11,7 +11,7 @@
     var(--transition-easing-default);
 }
 
-.Toggle--active {
+.Toggle--is-active {
   box-shadow: 0px 0px 0px 1px inset var(--color-blue-dark),
     var(--box-shadow-default);
 }

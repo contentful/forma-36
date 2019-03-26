@@ -9,18 +9,18 @@ exports[`renders the component 1`] = `
 </li>
 `;
 
-exports[`renders the component as active 1`] = `
+exports[`renders the component as disabled 1`] = `
 <li
-  className="DropdownListItem DropdownListItem--active"
+  className="DropdownListItem DropdownListItem--is-disabled"
   data-test-id="cf-ui-dropdown-list-item"
 >
   entry
 </li>
 `;
 
-exports[`renders the component as disabled 1`] = `
+exports[`renders the component as isActive 1`] = `
 <li
-  className="DropdownListItem DropdownListItem--is-disabled"
+  className="DropdownListItem DropdownListItem--is-active"
   data-test-id="cf-ui-dropdown-list-item"
 >
   entry

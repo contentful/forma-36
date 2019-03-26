@@ -18,7 +18,7 @@ it('renders the component with an additional class name', () => {
   expect(output).toMatchSnapshot();
 });
 
-it('renders the component as active', () => {
+it('renders the component as isActive', () => {
   const output = shallow(<DropdownListItem isActive>entry</DropdownListItem>);
 
   expect(output).toMatchSnapshot();

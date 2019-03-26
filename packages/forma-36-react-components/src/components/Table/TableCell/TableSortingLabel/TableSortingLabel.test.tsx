@@ -4,7 +4,7 @@ import TableSortingLabel from './TableSortingLabel';
 
 it('renders the component', () => {
   const output = shallow(
-    <TableSortingLabel active direction="asc">
+    <TableSortingLabel isActive direction="asc">
       Foo
     </TableSortingLabel>,
   );
@@ -14,7 +14,7 @@ it('renders the component', () => {
 
 it('renders the component inactive', () => {
   const output = shallow(
-    <TableSortingLabel active={false} direction="desc">
+    <TableSortingLabel isActive={false} direction="desc">
       Foo
     </TableSortingLabel>,
   );
