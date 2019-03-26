@@ -12,7 +12,7 @@ storiesOf('Components|TextInput', module)
   })
   .add('default', () => (
     <TextInput
-      error={boolean('error', false)}
+      hasError={boolean('hasError', false)}
       className={text('className', '')}
       isDisabled={boolean('isDisabled', false)}
       withCopyButton={boolean('withCopyButton', false)}
@@ -41,7 +41,7 @@ storiesOf('Components|TextInput', module)
     return (
       <React.Fragment>
         <TextInput
-          error={boolean('error', false)}
+          hasError={boolean('hasError', false)}
           className={text('className', '')}
           isDisabled={boolean('isDisabled', false)}
           withCopyButton={boolean('withCopyButton', false)}

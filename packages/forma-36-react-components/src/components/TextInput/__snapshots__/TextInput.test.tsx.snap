@@ -91,7 +91,7 @@ exports[`renders the component with an additional class name 1`] = `
 </div>
 `;
 
-exports[`renders the component with error prop 1`] = `
+exports[`renders the component with hasError prop 1`] = `
 <div
   className="TextInput TextInput--full TextInput--negative"
 >

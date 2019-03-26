@@ -121,7 +121,7 @@ exports[`renders the component with an onChange prop 1`] = `
 </div>
 `;
 
-exports[`renders the component with error prop 1`] = `
+exports[`renders the component with hasError prop 1`] = `
 <div
   className="Textarea my-extra-class Textarea--full Textarea--negative"
 >

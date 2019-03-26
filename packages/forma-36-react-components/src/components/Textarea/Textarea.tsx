@@ -16,7 +16,7 @@ export type TextareaProps = {
   value?: string;
   rows?: number;
   onBlur?: FocusEventHandler;
-  error?: boolean;
+  hasError?: boolean;
 } & typeof defaultProps;
 
 export interface TextareaState {
@@ -55,7 +55,7 @@ export class Textarea extends Component<TextareaProps, TextareaState> {
       isDisabled,
       isRequired,
       onBlur,
-      error,
+      hasError,
       width,
       value,
       name,
@@ -67,7 +67,7 @@ export class Textarea extends Component<TextareaProps, TextareaState> {
     const widthClass = `Textarea--${width}`;
     const classNames = cn(styles['Textarea'], className, styles[widthClass], {
       [styles['Textarea--is-disabled']]: isDisabled,
-      [styles['Textarea--negative']]: error,
+      [styles['Textarea--negative']]: hasError,
     });
 
     return (

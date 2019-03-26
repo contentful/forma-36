@@ -25,7 +25,7 @@ export type TextInputProps = {
   onCopy?: (value: string) => void;
   value?: string;
   inputRef?: RefObject<HTMLInputElement>;
-  error?: boolean;
+  hasError?: boolean;
   isRequired?: boolean;
 } & typeof defaultProps;
 
@@ -74,7 +74,7 @@ export class TextInput extends Component<TextInputProps, TextInputState> {
       testId,
       onBlur,
       onCopy,
-      error,
+      hasError,
       width,
       value,
       type,
@@ -87,7 +87,7 @@ export class TextInput extends Component<TextInputProps, TextInputState> {
     const widthClass = `TextInput--${width}`;
     const classNames = cn(styles['TextInput'], className, styles[widthClass], {
       [styles['TextInput--is-disabled']]: isDisabled,
-      [styles['TextInput--negative']]: error,
+      [styles['TextInput--negative']]: hasError,
     });
 
     return (

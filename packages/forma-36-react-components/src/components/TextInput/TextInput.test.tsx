@@ -25,8 +25,10 @@ it('renders the component with isDisabled prop', () => {
   expect(output).toMatchSnapshot();
 });
 
-it('renders the component with error prop', () => {
-  const output = shallow(<TextInput id="someInput" name="userEmail" error />);
+it('renders the component with hasError prop', () => {
+  const output = shallow(
+    <TextInput id="someInput" name="userEmail" hasError />,
+  );
 
   expect(output).toMatchSnapshot();
 });

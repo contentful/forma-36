@@ -18,7 +18,7 @@ exports[`renders the component 1`] = `
     </FormLabel>
   </div>
   <TextInput
-    error={false}
+    hasError={false}
     id="someComponent"
     isDisabled={false}
     isRequired={false}
@@ -49,7 +49,7 @@ exports[`renders the component with a copybutton 1`] = `
     </FormLabel>
   </div>
   <TextInput
-    error={false}
+    hasError={false}
     id="someComponent"
     isDisabled={false}
     isRequired={false}
@@ -80,7 +80,7 @@ exports[`renders the component with a placeholder text 1`] = `
     </FormLabel>
   </div>
   <TextInput
-    error={false}
+    hasError={false}
     id="someComponent"
     isDisabled={false}
     isRequired={false}
@@ -112,7 +112,7 @@ exports[`renders the component with a rows defined 1`] = `
     </FormLabel>
   </div>
   <TextInput
-    error={false}
+    hasError={false}
     id="someComponent"
     isDisabled={false}
     isRequired={false}
@@ -155,7 +155,7 @@ exports[`renders the component with a textlink 1`] = `
     </TextLink>
   </div>
   <TextInput
-    error={false}
+    hasError={false}
     id="someComponent"
     isDisabled={false}
     isRequired={false}
@@ -186,7 +186,7 @@ exports[`renders the component with a value 1`] = `
     </FormLabel>
   </div>
   <TextInput
-    error={false}
+    hasError={false}
     id="someComponent"
     isDisabled={false}
     isRequired={false}
@@ -218,7 +218,7 @@ exports[`renders the component with additional prop 1`] = `
     </FormLabel>
   </div>
   <TextInput
-    error={false}
+    hasError={false}
     id="someComponent"
     isDisabled={false}
     isRequired={false}
@@ -249,7 +249,7 @@ exports[`renders the component with an additional class name 1`] = `
     </FormLabel>
   </div>
   <TextInput
-    error={false}
+    hasError={false}
     id="someComponent"
     isDisabled={false}
     isRequired={false}
@@ -280,7 +280,7 @@ exports[`renders the component with as textarea 1`] = `
     </FormLabel>
   </div>
   <Textarea
-    error={false}
+    hasError={false}
     id="someComponent"
     isDisabled={false}
     isRequired={false}
@@ -310,7 +310,7 @@ exports[`renders the component with characters count 1`] = `
     </FormLabel>
   </div>
   <TextInput
-    error={false}
+    hasError={false}
     id="someComponent"
     isDisabled={false}
     isRequired={false}
@@ -354,7 +354,7 @@ exports[`renders the component with help text 1`] = `
     </FormLabel>
   </div>
   <TextInput
-    error={false}
+    hasError={false}
     id="someComponent"
     isDisabled={false}
     isRequired={false}
@@ -395,7 +395,7 @@ exports[`renders the component with isRequired text 1`] = `
     </FormLabel>
   </div>
   <TextInput
-    error={false}
+    hasError={false}
     id="someComponent"
     isDisabled={false}
     isRequired={false}
@@ -426,7 +426,7 @@ exports[`renders the component with max length of characters 1`] = `
     </FormLabel>
   </div>
   <TextInput
-    error={false}
+    hasError={false}
     id="someComponent"
     isDisabled={false}
     isRequired={false}
@@ -458,7 +458,7 @@ exports[`renders the component with small width 1`] = `
     </FormLabel>
   </div>
   <TextInput
-    error={false}
+    hasError={false}
     id="someComponent"
     isDisabled={false}
     isRequired={false}
@@ -489,7 +489,7 @@ exports[`renders the component with validation message 1`] = `
     </FormLabel>
   </div>
   <TextInput
-    error={true}
+    hasError={true}
     id="someComponent"
     isDisabled={false}
     isRequired={false}

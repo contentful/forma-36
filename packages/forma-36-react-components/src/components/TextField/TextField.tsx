@@ -100,7 +100,7 @@ export class TextField extends Component<TextFieldProps, TextFieldState> {
         </div>
         <Element
           {...{
-            error: !!validationMessage,
+            hasError: !!validationMessage,
             name,
             id,
             onBlur,

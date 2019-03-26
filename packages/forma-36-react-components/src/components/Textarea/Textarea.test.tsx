@@ -43,13 +43,13 @@ it('renders the component with value prop', () => {
   expect(output).toMatchSnapshot();
 });
 
-it('renders the component with error prop', () => {
+it('renders the component with hasError prop', () => {
   const output = shallow(
     <Textarea
       id="someInput"
       name="userEmail"
       className="my-extra-class"
-      error
+      hasError
     />,
   );
 

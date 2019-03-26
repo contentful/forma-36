@@ -14,7 +14,7 @@ storiesOf('Components|TextArea', module)
       className={text('className', '')}
       name="someInput"
       id="someInput"
-      error={boolean('error', false)}
+      hasError={boolean('hasError', false)}
       maxLength={number('maxLength', 50)}
       isRequired={boolean('isRequired', false)}
       width={select(
