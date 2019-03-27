@@ -26,11 +26,11 @@ export type ModalConfirmProps = {
   /**
    * Label of the confirm button
    */
-  confirmLabel?: string;
+  confirmLabel?: string | false;
   /**
    * Label of the cancel button
    */
-  cancelLabel?: string;
+  cancelLabel?: string | false;
   /**
    * The intent of the ModalConfirm. Used for the Button.
    */
@@ -55,6 +55,11 @@ export type ModalConfirmProps = {
    * When true, the confirm button is set to loading.
    */
   isConfirmLoading?: boolean;
+
+  /**
+   * Are modals higher than viewport allowed
+   */
+  allowHeightOverflow?: boolean;
 
   /**
    * Optional props to override ModalHeader behaviour
@@ -90,6 +95,7 @@ const defaultProps = {
   isConfirmDisabled: false,
   isConfirmLoading: false,
   size: 'medium',
+  allowHeightOverflow: false,
 };
 
 export class ModalConfirm extends Component<ModalConfirmProps> {
@@ -109,6 +115,7 @@ export class ModalConfirm extends Component<ModalConfirmProps> {
       intent,
       shouldCloseOnOverlayClick,
       shouldCloseOnEscapePress,
+      allowHeightOverflow,
       isConfirmDisabled,
       isConfirmLoading,
       confirmTestId,
@@ -123,6 +130,7 @@ export class ModalConfirm extends Component<ModalConfirmProps> {
         size={size}
         shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
         shouldCloseOnEscapePress={shouldCloseOnEscapePress}
+        allowHeightOverflow={allowHeightOverflow}
       >
         {() => (
           <div>
@@ -131,22 +139,26 @@ export class ModalConfirm extends Component<ModalConfirmProps> {
               {children}
             </Modal.Content>
             <Modal.Controls {...this.props.modalControlsProps}>
-              <Button
-                testId={confirmTestId}
-                disabled={isConfirmDisabled}
-                loading={isConfirmLoading}
-                buttonType={intent}
-                onClick={() => onConfirm()}
-              >
-                {confirmLabel}
-              </Button>
-              <Button
-                testId={cancelTestId}
-                buttonType="muted"
-                onClick={() => onCancel()}
-              >
-                {cancelLabel}
-              </Button>
+              {confirmLabel && (
+                <Button
+                  testId={confirmTestId}
+                  disabled={isConfirmDisabled}
+                  loading={isConfirmLoading}
+                  buttonType={intent}
+                  onClick={() => onConfirm()}
+                >
+                  {confirmLabel}
+                </Button>
+              )}
+              {cancelLabel && (
+                <Button
+                  testId={cancelTestId}
+                  buttonType="muted"
+                  onClick={() => onCancel()}
+                >
+                  {cancelLabel}
+                </Button>
+              )}
             </Modal.Controls>
           </div>
         )}

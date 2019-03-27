@@ -55,7 +55,7 @@ export type ModalProps = {
     */
   size?: ModalSizeType;
   /**
-   * Are modals highter that viewerport allowed
+   * Are modals higher than viewport allowed
    */
   allowHeightOverflow?: boolean;
 
