@@ -10,13 +10,13 @@ export type TextareaProps = {
   className?: string;
   width?: 'small' | 'medium' | 'large' | 'full';
   maxLength?: number;
-  required?: boolean;
+  isRequired?: boolean;
   onChange?: ChangeEventHandler;
-  disabled?: boolean;
+  isDisabled?: boolean;
   value?: string;
   rows?: number;
   onBlur?: FocusEventHandler;
-  error?: boolean;
+  hasError?: boolean;
 } & typeof defaultProps;
 
 export interface TextareaState {
@@ -25,8 +25,8 @@ export interface TextareaState {
 
 const defaultProps = {
   testId: 'cf-ui-textarea',
-  disabled: false,
-  required: false,
+  isDisabled: false,
+  isRequired: false,
   width: 'full',
 };
 
@@ -52,10 +52,10 @@ export class Textarea extends Component<TextareaProps, TextareaState> {
       placeholder,
       maxLength,
       onChange,
-      disabled,
-      required,
+      isDisabled,
+      isRequired,
       onBlur,
-      error,
+      hasError,
       width,
       value,
       name,
@@ -66,8 +66,8 @@ export class Textarea extends Component<TextareaProps, TextareaState> {
 
     const widthClass = `Textarea--${width}`;
     const classNames = cn(styles['Textarea'], className, styles[widthClass], {
-      [styles['Textarea--disabled']]: disabled,
-      [styles['Textarea--negative']]: error,
+      [styles['Textarea--is-disabled']]: isDisabled,
+      [styles['Textarea--negative']]: hasError,
     });
 
     return (
@@ -79,7 +79,7 @@ export class Textarea extends Component<TextareaProps, TextareaState> {
           id={id}
           rows={rows}
           onBlur={onBlur}
-          disabled={disabled}
+          disabled={isDisabled}
           placeholder={placeholder}
           name={name}
           onChange={e => {
@@ -89,7 +89,8 @@ export class Textarea extends Component<TextareaProps, TextareaState> {
             this.setState({ value: e.target.value });
           }}
           maxLength={maxLength}
-          value={disabled ? value : this.state && this.state.value}
+          value={isDisabled ? value : this.state && this.state.value}
+          required={isRequired}
           {...otherProps}
         />
       </div>

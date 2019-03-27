@@ -5,15 +5,15 @@ const styles = require('./ControlledInput.css');
 
 export interface ControlledInputPropTypes {
   id?: string;
-  required?: boolean;
+  isRequired?: boolean;
   labelText: string;
-  checked?: boolean;
+  isChecked?: boolean;
   onChange?: EventHandler<ChangeEvent<HTMLInputElement>>;
   name?: string;
   onBlur?: EventHandler<FocusEvent<HTMLInputElement>>;
   onFocus?: EventHandler<FocusEvent<HTMLInputElement>>;
   value?: string;
-  disabled?: boolean;
+  isDisabled?: boolean;
   type?: 'checkbox' | 'radio';
   className?: string;
   testId?: string;
@@ -21,8 +21,8 @@ export interface ControlledInputPropTypes {
 
 const defaultProps = {
   testId: 'cf-ui-controlled-input',
-  required: false,
-  disabled: false,
+  isRequired: false,
+  isDisabled: false,
   type: 'checkbox',
 };
 
@@ -36,13 +36,13 @@ export class ControlledInput extends Component<
       className,
       id,
       testId,
-      required,
-      disabled,
+      isRequired,
+      isDisabled,
       onFocus,
       onBlur,
       name,
       onChange,
-      checked,
+      isChecked,
       value,
       type,
       labelText,
@@ -50,7 +50,7 @@ export class ControlledInput extends Component<
     } = this.props;
 
     const classNames = cn(styles['ControlledInput'], className, {
-      [styles['ControlledInput--disabled']]: disabled,
+      [styles['ControlledInput--is-disabled']]: isDisabled,
     });
 
     return (
@@ -58,7 +58,7 @@ export class ControlledInput extends Component<
         className={classNames}
         value={value}
         name={name}
-        checked={this.props.checked}
+        checked={this.props.isChecked}
         type={type}
         data-test-id={testId}
         onChange={e => {
@@ -78,8 +78,8 @@ export class ControlledInput extends Component<
         }}
         aria-label={labelText}
         id={id}
-        required={required}
-        disabled={disabled}
+        required={isRequired}
+        disabled={isDisabled}
         {...otherProps}
       />
     );

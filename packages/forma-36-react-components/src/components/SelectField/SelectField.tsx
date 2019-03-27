@@ -23,7 +23,7 @@ export type SelectFieldProps = {
   textLinkProps?: Partial<TextLinkProps>;
   selectProps?: Partial<SelectProps>;
   helpText?: string;
-  required?: boolean;
+  isRequired?: boolean;
   onChange?: ChangeEventHandler;
   onBlur?: FocusEventHandler;
   testId?: string;
@@ -36,7 +36,7 @@ export interface SelectFieldState {
 
 const defaultProps = {
   testId: 'cf-ui-select-field',
-  required: false,
+  isRequired: false,
 };
 
 export class SelectField extends Component<SelectFieldProps, SelectFieldState> {
@@ -53,8 +53,6 @@ export class SelectField extends Component<SelectFieldProps, SelectFieldState> {
   }
 
   // Store a copy of the value in state.
-  // This is used by this component when the `countCharacters`
-  // option is on
   handleOnChange = (evt: ChangeEvent) => {
     this.setState({ value: (evt.target as HTMLSelectElement).value });
     if (this.props.onChange) {
@@ -73,7 +71,7 @@ export class SelectField extends Component<SelectFieldProps, SelectFieldState> {
       textLinkProps,
       labelText,
       helpText,
-      required,
+      isRequired,
       onChange,
       onBlur,
       value,
@@ -87,7 +85,7 @@ export class SelectField extends Component<SelectFieldProps, SelectFieldState> {
     return (
       <div className={classNames} {...otherProps} data-test-id={testId}>
         <div className={styles['SelectField__label-wrapper']}>
-          <FormLabel {...{ ...formLabelProps, htmlFor: id, required }}>
+          <FormLabel {...{ ...formLabelProps, htmlFor: id, isRequired }}>
             {labelText}
           </FormLabel>
           {textLinkProps && (
@@ -109,7 +107,7 @@ export class SelectField extends Component<SelectFieldProps, SelectFieldState> {
             onBlur,
             onChange: this.handleOnChange,
             value: this.state.value,
-            required,
+            isRequired,
             ...selectProps,
           }}
         >

@@ -17,13 +17,13 @@ it('renders the component with an additional class name', () => {
   expect(output).toMatchSnapshot();
 });
 
-it('renders the component with disabled prop', () => {
+it('renders the component with isDisabled prop', () => {
   const output = shallow(
     <Textarea
       id="someInput"
       name="userEmail"
       className="my-extra-class"
-      disabled
+      isDisabled
     />,
   );
 
@@ -43,13 +43,13 @@ it('renders the component with value prop', () => {
   expect(output).toMatchSnapshot();
 });
 
-it('renders the component with error prop', () => {
+it('renders the component with hasError prop', () => {
   const output = shallow(
     <Textarea
       id="someInput"
       name="userEmail"
       className="my-extra-class"
-      error
+      hasError
     />,
   );
 
@@ -127,7 +127,7 @@ it('renders the component as required', () => {
       id="someInput"
       name="userEmail"
       className="my-extra-class"
-      required
+      isRequired
     />,
   );
 

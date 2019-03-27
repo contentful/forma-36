@@ -69,7 +69,7 @@ export class InlineEntryCard extends Component<InlineEntryCardPropTypes> {
 
     return (
       <Card
-        selected={isSelected}
+        isSelected={isSelected}
         className={classNames}
         {...otherProps}
         data-test-id={testId}

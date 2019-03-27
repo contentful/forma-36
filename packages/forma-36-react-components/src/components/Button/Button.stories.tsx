@@ -29,9 +29,9 @@ storiesOf('Components|Button', module)
           'muted',
         )}
         size={select('size', [undefined, 'small', 'large'], undefined)}
-        loading={boolean('loading', false)}
-        indicateDropdown={boolean('indicateDropdown', false)}
-        disabled={boolean('disabled', false)}
+        isLoading={boolean('isLoading', false)}
+        hasDropdownCaret={boolean('hasDropdown', false)}
+        isDisabled={boolean('isDisabled', false)}
         isFullWidth={boolean('isFullWidth', false)}
         onClick={action('onClick')}
         onBlur={action('onBlur')}

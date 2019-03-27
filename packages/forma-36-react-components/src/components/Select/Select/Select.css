@@ -37,7 +37,7 @@
   }
 }
 
-.Select--disabled {
+.Select--is-disabled {
   background-color: var(--color-element-lightest);
   cursor: not-allowed;
   color: var(--color-text-light);

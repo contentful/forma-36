@@ -9,16 +9,16 @@ const styles = require('./ControlledInputField.css');
 export type ControlledInputFieldPropTypes = {
   id: string;
   labelText: string;
-  labelIsLight?: boolean;
-  required?: boolean;
+  hasLightLabel?: boolean;
+  isRequired?: boolean;
   helpText?: string;
   formLabelProps?: object;
-  disabled?: boolean;
+  isDisabled?: boolean;
   helpTextProps?: object;
   validationMessage?: string;
   value?: string;
   name?: string;
-  checked?: boolean;
+  isChecked?: boolean;
   inputProps?: object;
   inputType?: 'radio' | 'checkbox';
   onChange?: ChangeEventHandler;
@@ -29,8 +29,8 @@ export type ControlledInputFieldPropTypes = {
 
 const defaultProps = {
   testId: 'cf-ui-controlled-input-field',
-  labelIsLight: false,
-  checked: false,
+  hasLightLabel: false,
+  isChecked: false,
   inputType: 'checkbox',
 };
 
@@ -42,16 +42,16 @@ export class ControlledInputField extends Component<
   render() {
     const {
       id,
-      labelIsLight,
+      hasLightLabel,
       testId,
-      required,
+      isRequired,
       helpText,
-      disabled,
+      isDisabled,
       labelText,
       helpTextProps,
       formLabelProps,
       className,
-      checked,
+      isChecked,
       value,
       validationMessage,
       onChange,
@@ -63,7 +63,7 @@ export class ControlledInputField extends Component<
     } = this.props;
 
     const classNames = cn(styles['ControlledInputField'], className, {
-      [styles['ControlledInputField--disabled']]: disabled,
+      [styles['ControlledInputField--is-disabled']]: isDisabled,
     });
 
     return (
@@ -73,9 +73,9 @@ export class ControlledInputField extends Component<
           labelText={labelText}
           type={inputType}
           name={name}
-          required={required}
-          checked={checked}
-          disabled={disabled}
+          isRequired={isRequired}
+          isChecked={isChecked}
+          isDisabled={isDisabled}
           value={value}
           onChange={onChange}
           className={styles.ControlledInputField__input}
@@ -84,9 +84,9 @@ export class ControlledInputField extends Component<
         <div className={styles['Checkbox__label-wrapper']}>
           <FormLabel
             className={cn(styles.ControlledInputField__label, {
-              [styles['ControlledInputField__label--light']]: labelIsLight,
+              [styles['ControlledInputField__label--light']]: hasLightLabel,
             })}
-            required={required}
+            isRequired={isRequired}
             htmlFor={id}
             {...formLabelProps}
           >

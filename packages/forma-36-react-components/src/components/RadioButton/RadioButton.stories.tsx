@@ -12,10 +12,10 @@ storiesOf('Components|RadioButton', module)
     <RadioButton
       className={text('className', '')}
       id="Checkbox"
-      checked={boolean('Checked', false)}
+      isChecked={boolean('isChecked', false)}
       labelText={(text('Aria label text'), 'some label text')}
-      disabled={boolean('Disabled', false)}
-      required={boolean('Required', false)}
+      isDisabled={boolean('isDisabled', false)}
+      isRequired={boolean('isRequired', false)}
       name={text('Name', 'some-name')}
     />
   ));

@@ -36,9 +36,9 @@ export type EntryCardPropTypes = {
    */
   thumbnailElement?: React.ReactNode;
   /**
-   * Loading state for the EntryCard - when true will display loading feedback to the user
+   * isLoading state for the EntryCard - when true will display isLoading feedback to the user
    */
-  loading?: boolean;
+  isLoading?: boolean;
   /**
    * The action to be performed on click of the EntryCard
    */
@@ -129,7 +129,7 @@ export class EntryCard extends Component<EntryCardPropTypes> {
       contentType,
       status,
       thumbnailElement,
-      loading,
+      isLoading,
       dropdownListElements,
       ...otherProps
     } = this.props;
@@ -139,11 +139,11 @@ export class EntryCard extends Component<EntryCardPropTypes> {
     return (
       <Card
         className={classNames}
-        onClick={!loading ? onClick : undefined}
+        onClick={!isLoading ? onClick : undefined}
         testId={testId}
         {...otherProps}
       >
-        {loading ? (
+        {isLoading ? (
           <EntryCardSkeleton />
         ) : (
           <article className={styles.EntryCard__wrapper}>

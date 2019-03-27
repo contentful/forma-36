@@ -37,7 +37,7 @@ it('renders the component with validation message', () => {
   expect(output).toMatchSnapshot();
 });
 
-it('renders the component with required text', () => {
+it('renders the component with isRequired text', () => {
   const output = shallow(
     <TextField
       labelText="test"
@@ -101,7 +101,7 @@ it('renders the component with as textarea', () => {
       labelText="test"
       name="someComponent"
       id="someComponent"
-      textarea
+      isTextarea
     />,
   );
 
@@ -126,7 +126,7 @@ it('renders the component with a copybutton', () => {
 it('renders the component with characters count', () => {
   const output = shallow(
     <TextField
-      countCharacters
+      hasCharacterCount
       labelText="test"
       name="someComponent"
       id="someComponent"
@@ -142,7 +142,7 @@ it('renders the component with characters count', () => {
 it('updates the characters counter', () => {
   const output = mount(
     <TextField
-      countCharacters
+      hasCharacterCount
       value="foo"
       labelText="test"
       name="someComponent"

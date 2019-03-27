@@ -13,10 +13,10 @@ storiesOf('Components|Checkbox', module)
     <Checkbox
       className={text('className', '')}
       id="Checkbox"
-      checked={boolean('checked', false)}
+      isChecked={boolean('isChecked', false)}
       labelText={(text('labelText'), 'some label text')}
-      disabled={boolean('disabled', false)}
-      required={boolean('required', false)}
+      isDisabled={boolean('isDisabled', false)}
+      isRequired={boolean('isRequired', false)}
       name={text('name', 'some-name')}
       onChange={action('onChange')}
     />

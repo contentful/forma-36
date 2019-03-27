@@ -28,7 +28,7 @@ storiesOf('Components|TextLink', module)
           },
           'primary',
         )}
-        disabled={boolean('disabled', false)}
+        isDisabled={boolean('isDisabled', false)}
         className={text('className', '')}
         icon={select('icon', ['', ...Object.keys(iconName)], undefined)}
       >

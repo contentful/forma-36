@@ -65,9 +65,9 @@ exports[`calls an onClick function 1`] = `
 </button>
 `;
 
-exports[`prevents onClick function from being called when disabled 1`] = `
+exports[`prevents onClick function from being called when isDisabled 1`] = `
 <button
-  className="TextLink TextLink--primary TextLink--disabled"
+  className="TextLink TextLink--primary TextLink--is-disabled"
   data-test-id="cf-ui-text-link"
   disabled={true}
   onClick={[Function]}

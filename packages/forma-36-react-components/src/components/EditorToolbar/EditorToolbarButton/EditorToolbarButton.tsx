@@ -11,9 +11,9 @@ export type EditorToolbarButtonProps = {
   tooltip?: string;
   iconButtonProps?: Partial<IconButtonProps>;
   isActive?: boolean;
-  disabled?: boolean;
+  isDisabled?: boolean;
   onClick?: MouseEventHandler;
-  withDropdown?: boolean;
+  hasDropdownCaret?: boolean;
   className?: string;
   testId?: string;
 } & typeof defaultProps;
@@ -21,8 +21,8 @@ export type EditorToolbarButtonProps = {
 const defaultProps = {
   testId: 'cf-ui-editor-toolbar-button',
   isActive: false,
-  disabled: false,
-  withDropdown: false,
+  isDisabled: false,
+  hasDropdownCaret: false,
 };
 
 export class EditorToolbarButton extends Component<EditorToolbarButtonProps> {
@@ -37,9 +37,9 @@ export class EditorToolbarButton extends Component<EditorToolbarButtonProps> {
       tooltip,
       iconButtonProps,
       isActive,
-      disabled,
+      isDisabled,
       onClick,
-      withDropdown,
+      hasDropdownCaret,
       ...otherProps
     } = this.props;
 
@@ -49,16 +49,16 @@ export class EditorToolbarButton extends Component<EditorToolbarButtonProps> {
 
     return (
       <React.Fragment>
-        <Tooltip content={!disabled ? tooltip : undefined}>
+        <Tooltip content={!isDisabled ? tooltip : undefined}>
           <IconButton
             {...{ iconProps: { icon } }}
             testId={testId}
             buttonType="secondary"
             label={label}
             className={classNames}
-            onClick={!disabled ? onClick : () => {}}
-            disabled={disabled}
-            withDropdown={withDropdown}
+            onClick={!isDisabled ? onClick : () => {}}
+            isDisabled={isDisabled}
+            hasDropdownCaret={hasDropdownCaret}
             {...iconButtonProps}
             {...otherProps}
           />

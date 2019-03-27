@@ -43,8 +43,8 @@
   line-height: 1.5;
 }
 
-.DropdownListItem--disabled,
-.DropdownListItem--disabled button {
+.DropdownListItem--is-disabled,
+.DropdownListItem--is-disabled button {
   background: var(--color-white);
   opacity: 0.5;
   cursor: not-allowed;
@@ -54,12 +54,12 @@
   }
 }
 
-.DropdownListItem--active,
-.DropdownListItem--active:hover {
+.DropdownListItem--is-active,
+.DropdownListItem--is-active:hover {
   background: var(--color-element-light);
 }
 
-.DropdownListItem--active .DropdownListItem__toggle-button:hover {
+.DropdownListItem--is-active .DropdownListItem__toggle-button:hover {
   background: var(--color-element-light);
   cursor: default;
 }

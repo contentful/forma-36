@@ -9,13 +9,13 @@ export type FormLabelProps = {
   testId?: string;
   className?: string;
   requiredText?: string;
-  required?: boolean;
+  isRequired?: boolean;
 } & typeof defaultProps;
 
 const defaultProps = {
   testId: 'cf-ui-form-label',
   requiredText: 'required',
-  required: false,
+  isRequired: false,
 };
 
 export class FormLabel extends Component<FormLabelProps> {
@@ -28,7 +28,7 @@ export class FormLabel extends Component<FormLabelProps> {
       testId,
       htmlFor,
       requiredText,
-      required,
+      isRequired,
       ...otherProps
     } = this.props;
 
@@ -42,7 +42,7 @@ export class FormLabel extends Component<FormLabelProps> {
         {...otherProps}
       >
         {children}
-        {required && !!requiredText.length && (
+        {isRequired && !!requiredText.length && (
           <span className={styles['FormLabel__required-text']}>
             ({requiredText})
           </span>

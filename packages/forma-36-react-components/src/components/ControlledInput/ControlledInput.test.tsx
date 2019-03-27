@@ -23,26 +23,26 @@ it('renders the component with an additional class name', () => {
   expect(output).toMatchSnapshot();
 });
 
-it('renders the component with required prop', () => {
+it('renders the component with isRequired prop', () => {
   const output = shallow(
     <ControlledInput
       className="my-extra-class"
       id="ControlledInput"
       labelText="ControlledInput"
-      required
+      isRequired
     />,
   );
 
   expect(output).toMatchSnapshot();
 });
 
-it('renders the component with disabled prop', () => {
+it('renders the component with isDisabled prop', () => {
   const output = shallow(
     <ControlledInput
       className="my-extra-class"
       id="ControlledInput"
       labelText="ControlledInput"
-      disabled
+      isDisabled
     />,
   );
 
@@ -55,7 +55,7 @@ it('renders the component with as checked', () => {
       className="my-extra-class"
       id="ControlledInput"
       labelText="ControlledInput"
-      checked
+      isChecked
     />,
   );
 

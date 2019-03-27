@@ -18,7 +18,7 @@ it('renders the component with an additional class name', () => {
   expect(output).toMatchSnapshot();
 });
 
-it('renders the component as active', () => {
+it('renders the component as isActive', () => {
   const output = shallow(<DropdownListItem isActive>entry</DropdownListItem>);
 
   expect(output).toMatchSnapshot();
@@ -40,7 +40,7 @@ it('calls onClick', () => {
   expect(mockOnClick).toHaveBeenCalled();
 });
 
-it('does not call onClick on a disabled menu item', () => {
+it('does not call onClick on a isDisabled menu item', () => {
   const mockOnClick = jest.fn();
   const dropDownItem = mount(
     <DropdownListItem isDisabled onClick={mockOnClick}>

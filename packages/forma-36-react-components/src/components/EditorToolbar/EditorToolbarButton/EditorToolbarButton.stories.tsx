@@ -16,8 +16,8 @@ storiesOf('Components|EditorToolbar/EditorToolbarButton', module)
       tooltip={text('tooltip', 'Insert a H1 tag')}
       label={text('label (screenreader only)', 'H1')}
       isActive={boolean('isActive', false)}
-      disabled={boolean('disabled', false)}
-      withDropdown={boolean('withDropdown', false)}
+      isDisabled={boolean('isDisabled', false)}
+      hasDropdownCaret={boolean('hasDropdownCaret', false)}
       onClick={action('onClick')}
     />
   ));

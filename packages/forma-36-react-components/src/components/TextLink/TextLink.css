@@ -61,8 +61,8 @@
   color: var(--color-text-light);
 }
 
-.TextLink--disabled,
-.TextLink--disabled:link {
+.TextLink--is-disabled,
+.TextLink--is-disabled:link {
   opacity: 0.5;
 
   &:hover {

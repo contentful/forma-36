@@ -39,7 +39,12 @@ it('renders the component as active', () => {
 
 it('renders the component as disabled', () => {
   const output = shallow(
-    <EditorToolbarButton icon="HeadingOne" label="H1" tooltip="H1" disabled />,
+    <EditorToolbarButton
+      icon="HeadingOne"
+      label="H1"
+      tooltip="H1"
+      isDisabled
+    />,
   );
 
   expect(output).toMatchSnapshot();
@@ -51,7 +56,7 @@ it('renders with a dropdown indicator', () => {
       icon="HeadingOne"
       label="H1"
       tooltip="H1"
-      withDropdown
+      hasDropdownCaret
     />,
   );
 

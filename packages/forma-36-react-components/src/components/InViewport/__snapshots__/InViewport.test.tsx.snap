@@ -11,7 +11,7 @@ exports[`renders the component 1`] = `
     offset={0}
   >
     <TextLink
-      disabled={false}
+      isDisabled={false}
       linkType="primary"
       testId="cf-ui-text-link"
     >
@@ -47,7 +47,7 @@ exports[`renders the component with an additional class name 1`] = `
     offset={0}
   >
     <TextLink
-      disabled={false}
+      isDisabled={false}
       linkType="primary"
       testId="cf-ui-text-link"
     >

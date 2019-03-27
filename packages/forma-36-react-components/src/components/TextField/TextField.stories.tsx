@@ -12,7 +12,7 @@ storiesOf('Components|TextField', module)
   .add('default', () => (
     <TextField
       className={text('className', '')}
-      required={boolean('required', false)}
+      isRequired={boolean('isRequired', false)}
       formLabelProps={{
         requiredText: text('requiredText', undefined),
       }}
@@ -24,7 +24,7 @@ storiesOf('Components|TextField', module)
       onChange={action('onChange')}
       textInputProps={{
         withCopyButton: boolean('withCopyButton', false),
-        disabled: boolean('disabled', false),
+        isDisabled: boolean('isDisabled', false),
         placeholder: text('placeholder', 'Placeholder text'),
         maxLength: number('maxLength', 50),
         type: select(
@@ -57,8 +57,8 @@ storiesOf('Components|TextField', module)
   .add('with Textarea', () => (
     <TextField
       className={text('className', '')}
-      textarea
-      required={boolean('required', false)}
+      isTextarea
+      isRequired={boolean('isRequired', false)}
       formLabelProps={{
         requiredText: text('requiredText', undefined),
       }}
@@ -69,7 +69,7 @@ storiesOf('Components|TextField', module)
       onBlur={action('onBlur')}
       onChange={action('onChange')}
       textInputProps={{
-        disabled: boolean('disabled', false),
+        isDisabled: boolean('isDisabled', false),
         placeholder: text('placeholder', 'Placeholder text'),
         maxLength: number('maxLength', 50),
         rows: number('rows', 2),
@@ -103,8 +103,8 @@ storiesOf('Components|TextField', module)
   .add('with TextLink', () => (
     <TextField
       className={text('className', '')}
-      textarea
-      required={boolean('required', false)}
+      isTextarea
+      isRequired={boolean('isRequired', false)}
       formLabelProps={{
         requiredText: text('requiredText', undefined),
       }}
@@ -120,7 +120,7 @@ storiesOf('Components|TextField', module)
       onBlur={action('onBlur')}
       onChange={action('onChange')}
       textInputProps={{
-        disabled: boolean('disabled', false),
+        isDisabled: boolean('isDisabled', false),
         placeholder: text('placeholder', 'Placeholder text'),
         maxLength: number('maxLength', 50),
         rows: number('rows', 2),
@@ -153,9 +153,9 @@ storiesOf('Components|TextField', module)
   ))
   .add('with Character count', () => (
     <TextField
-      countCharacters={boolean('countCharacters', true)}
+      hasCharacterCount={boolean('hasCharacterCount', true)}
       className={text('className', '')}
-      required={boolean('required', false)}
+      isRequired={boolean('isRequired', false)}
       formLabelProps={{
         requiredText: text('requiredText', undefined),
       }}
@@ -166,7 +166,7 @@ storiesOf('Components|TextField', module)
       onBlur={action('onBlur')}
       onChange={action('onChange')}
       textInputProps={{
-        disabled: boolean('disabled', false),
+        isDisabled: boolean('isDisabled', false),
         placeholder: text('placeholder', 'Placeholder text'),
         maxLength: number('maxLength', 20),
         rows: number('rows', 2),

@@ -31,7 +31,7 @@ function DefaultStory() {
         <Button
           size="small"
           buttonType="muted"
-          indicateDropdown
+          hasDropdownCaret
           onClick={() => setOpen(!isOpen)}
         >
           toggle
@@ -95,7 +95,7 @@ function ScrollableStory() {
         <Button
           size="small"
           buttonType="muted"
-          indicateDropdown
+          hasDropdownCaret
           onClick={() => setOpen(!isOpen)}
         >
           toggle

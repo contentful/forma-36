@@ -142,8 +142,8 @@ export class ModalConfirm extends Component<ModalConfirmProps> {
               {confirmLabel && (
                 <Button
                   testId={confirmTestId}
-                  disabled={isConfirmDisabled}
-                  loading={isConfirmLoading}
+                  isDisabled={isConfirmDisabled}
+                  isLoading={isConfirmLoading}
                   buttonType={intent}
                   onClick={() => onConfirm()}
                 >

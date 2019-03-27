@@ -30,7 +30,7 @@ storiesOf('Components|Card/EntryCard', module)
           'published',
         )}
         contentType={text('contentType', 'Album')}
-        onClick={!boolean('loading', false) ? action('onClick') : undefined}
+        onClick={!boolean('isLoading', false) ? action('onClick') : undefined}
         dropdownListElements={
           <React.Fragment>
             <DropdownList>
@@ -60,7 +60,7 @@ storiesOf('Components|Card/EntryCard', module)
           </React.Fragment>
         }
         className={text('className', '')}
-        loading={boolean('loading', false)}
+        isLoading={boolean('isLoading', false)}
       />
     </div>
   ))
@@ -89,7 +89,7 @@ storiesOf('Components|Card/EntryCard', module)
             alt="Joy Division - Closer album cover"
           />
         }
-        onClick={!boolean('loading', false) ? action('onClick') : undefined}
+        onClick={!boolean('isLoading', false) ? action('onClick') : undefined}
         dropdownListElements={
           <DropdownList>
             <DropdownListItem onClick={action('Edit onClick')}>
@@ -103,7 +103,7 @@ storiesOf('Components|Card/EntryCard', module)
             </DropdownListItem>
           </DropdownList>
         }
-        loading={boolean('loading', false)}
+        isLoading={boolean('isLoading', false)}
         className={text('className', '')}
       />
     </div>

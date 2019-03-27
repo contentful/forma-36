@@ -10,7 +10,7 @@ storiesOf('Components|FormLabel', module)
   })
   .add('default', () => (
     <FormLabel
-      required={boolean('required', false)}
+      isRequired={boolean('isRequired', false)}
       requiredText={text('requiredText', 'required')}
       htmlFor="someInput"
     >

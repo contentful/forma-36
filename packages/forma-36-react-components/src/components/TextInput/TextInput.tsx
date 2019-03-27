@@ -18,15 +18,15 @@ export type TextInputProps = {
   withCopyButton?: boolean;
   placeholder?: string;
   onChange?: ChangeEventHandler;
-  disabled?: boolean;
+  isDisabled?: boolean;
   testId?: string;
   maxLength?: number;
   onBlur?: FocusEventHandler;
   onCopy?: (value: string) => void;
   value?: string;
   inputRef?: RefObject<HTMLInputElement>;
-  error?: boolean;
-  required?: boolean;
+  hasError?: boolean;
+  isRequired?: boolean;
 } & typeof defaultProps;
 
 export interface TextInputState {
@@ -36,8 +36,8 @@ export interface TextInputState {
 const defaultProps = {
   withCopyButton: false,
   testId: 'cf-ui-text-input',
-  disabled: false,
-  required: false,
+  isDisabled: false,
+  isRequired: false,
   width: 'full',
 };
 
@@ -57,7 +57,7 @@ export class TextInput extends Component<TextInputProps, TextInputState> {
   }
 
   handleFocus = (e: FocusEvent) => {
-    if (this.props.disabled) {
+    if (this.props.isDisabled) {
       (e.target as HTMLInputElement).select();
     }
   };
@@ -68,13 +68,13 @@ export class TextInput extends Component<TextInputProps, TextInputState> {
       withCopyButton,
       placeholder,
       maxLength,
-      disabled,
-      required,
+      isDisabled,
+      isRequired,
       onChange,
       testId,
       onBlur,
       onCopy,
-      error,
+      hasError,
       width,
       value,
       type,
@@ -86,8 +86,8 @@ export class TextInput extends Component<TextInputProps, TextInputState> {
 
     const widthClass = `TextInput--${width}`;
     const classNames = cn(styles['TextInput'], className, styles[widthClass], {
-      [styles['TextInput--disabled']]: disabled,
-      [styles['TextInput--negative']]: error,
+      [styles['TextInput--is-disabled']]: isDisabled,
+      [styles['TextInput--negative']]: hasError,
     });
 
     return (
@@ -97,15 +97,15 @@ export class TextInput extends Component<TextInputProps, TextInputState> {
           className={styles['TextInput__input']}
           id={id}
           name={name}
-          required={required}
+          required={isRequired}
           placeholder={placeholder}
           maxLength={maxLength}
           data-test-id={testId}
-          disabled={disabled}
+          disabled={isDisabled}
           onBlur={onBlur}
           onFocus={this.handleFocus}
           onChange={e => {
-            if (disabled) return;
+            if (isDisabled) return;
 
             if (onChange) {
               onChange(e);

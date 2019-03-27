@@ -68,7 +68,7 @@ exports[`renders the component in disabled state 1`] = `
 >
   <select
     aria-label="optionSelect"
-    className="Select Select--disabled"
+    className="Select Select--is-disabled"
     data-test-id="cf-ui-select"
     disabled={true}
     id="optionSelect"
