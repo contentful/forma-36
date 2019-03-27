@@ -32,7 +32,7 @@ exports[`renders the component 1`] = `
   <IconButton
     buttonType="white"
     className="NotificationItem__dismiss"
-    hasDropdown={false}
+    hasDropdownCaret={false}
     iconProps={
       Object {
         "icon": "Close",
@@ -78,7 +78,7 @@ exports[`renders the component with "error" intent 1`] = `
   <IconButton
     buttonType="white"
     className="NotificationItem__dismiss"
-    hasDropdown={false}
+    hasDropdownCaret={false}
     iconProps={
       Object {
         "icon": "Close",
@@ -124,7 +124,7 @@ exports[`renders the component with "warning" intent 1`] = `
   <IconButton
     buttonType="white"
     className="NotificationItem__dismiss"
-    hasDropdown={false}
+    hasDropdownCaret={false}
     iconProps={
       Object {
         "icon": "Close",

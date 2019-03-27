@@ -16,7 +16,7 @@ const styles = require('./Button.css');
 
 export type ButtonProps = {
   icon?: IconType;
-  hasDropdown?: boolean;
+  hasDropdownCaret?: boolean;
   onClick?: MouseEventHandler;
   isFullWidth?: boolean;
   onBlur?: FocusEventHandler;
@@ -35,7 +35,7 @@ export type ButtonProps = {
 const defaultProps = {
   isLoading: false,
   isFullWidth: false,
-  hasDropdown: false,
+  hasDropdownCaret: false,
   isDisabled: false,
   testId: 'cf-ui-button',
   buttonType: 'primary',
@@ -57,7 +57,7 @@ export class Button extends Component<ButtonProps> {
       testId,
       onClick,
       isLoading,
-      hasDropdown,
+      hasDropdownCaret,
       isDisabled,
       href,
       type,
@@ -110,7 +110,7 @@ export class Button extends Component<ButtonProps> {
             />
           )}
           {children && <span className={styles.Button__label}>{children}</span>}
-          {hasDropdown && (
+          {hasDropdownCaret && (
             <Icon
               className={styles['Button__dropdown-icon']}
               icon="ArrowDown"

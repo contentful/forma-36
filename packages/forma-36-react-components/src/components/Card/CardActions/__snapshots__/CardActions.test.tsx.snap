@@ -9,7 +9,7 @@ exports[`renders the component using a multiple dropdown lists 1`] = `
   toggleElement={
     <IconButton
       buttonType="secondary"
-      hasDropdown={false}
+      hasDropdownCaret={false}
       iconProps={
         Object {
           "icon": "MoreHorizontal",
@@ -100,7 +100,7 @@ exports[`renders the component using a single dropdown list 1`] = `
   toggleElement={
     <IconButton
       buttonType="secondary"
-      hasDropdown={false}
+      hasDropdownCaret={false}
       iconProps={
         Object {
           "icon": "MoreHorizontal",
@@ -159,7 +159,7 @@ exports[`renders the component with an additional class name 1`] = `
   toggleElement={
     <IconButton
       buttonType="secondary"
-      hasDropdown={false}
+      hasDropdownCaret={false}
       iconProps={
         Object {
           "icon": "MoreHorizontal",
@@ -217,7 +217,7 @@ exports[`renders the component with published status 1`] = `
   toggleElement={
     <IconButton
       buttonType="secondary"
-      hasDropdown={false}
+      hasDropdownCaret={false}
       iconProps={
         Object {
           "icon": "MoreHorizontal",

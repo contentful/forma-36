@@ -56,7 +56,7 @@ it('renders with a dropdown indicator', () => {
       icon="HeadingOne"
       label="H1"
       tooltip="H1"
-      hasDropdown
+      hasDropdownCaret
     />,
   );
 

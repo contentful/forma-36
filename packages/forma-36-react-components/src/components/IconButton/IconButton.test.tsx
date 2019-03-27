@@ -129,7 +129,7 @@ it('renders with a dropdown indicator', () => {
     <IconButton
       iconProps={{ icon: 'ArrowDown' }}
       label="My Icon"
-      hasDropdown
+      hasDropdownCaret
     />,
   );
 
