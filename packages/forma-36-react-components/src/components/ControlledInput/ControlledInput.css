@@ -7,6 +7,6 @@
   font-size: var(--font-size-m);
 }
 
-.ControlledInput--is-disabled {
+.ControlledInput--disabled {
   cursor: not-allowed;
 }

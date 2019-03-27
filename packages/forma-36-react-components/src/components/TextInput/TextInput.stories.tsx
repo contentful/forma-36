@@ -12,9 +12,9 @@ storiesOf('Components|TextInput', module)
   })
   .add('default', () => (
     <TextInput
-      hasError={boolean('hasError', false)}
+      error={boolean('error', false)}
       className={text('className', '')}
-      isDisabled={boolean('isDisabled', false)}
+      disabled={boolean('disabled', false)}
       withCopyButton={boolean('withCopyButton', false)}
       value={text('valiue', '123456')}
       maxLength={number('maxLength', 50)}
@@ -41,9 +41,9 @@ storiesOf('Components|TextInput', module)
     return (
       <React.Fragment>
         <TextInput
-          hasError={boolean('hasError', false)}
+          error={boolean('error', false)}
           className={text('className', '')}
-          isDisabled={boolean('isDisabled', false)}
+          disabled={boolean('disabled', false)}
           withCopyButton={boolean('withCopyButton', false)}
           value={text('value', '123456')}
           maxLength={number('maxLength', 50)}

@@ -30,7 +30,7 @@
   margin-right: 0;
 }
 
-.Tab--is-selected {
+.Tab__selected {
   font-weight: var(--font-weight-demi-bold);
 }
 
@@ -50,8 +50,8 @@
   opacity: 0.5;
 }
 
-.Tab--is-selected:hover:before,
-.Tab--is-selected:focus:before,
-.Tab--is-selected:before {
+.Tab__selected:hover:before,
+.Tab__selected:focus:before,
+.Tab__selected:before {
   opacity: 1;
 }

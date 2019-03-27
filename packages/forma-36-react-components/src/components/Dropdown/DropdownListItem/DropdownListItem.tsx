@@ -95,8 +95,8 @@ export class DropdownListItem extends Component<DropdownListItemProps> {
     const classNames = cn(styles['DropdownListItem'], className, {
       [styles['DropdownListItem__submenu-toggle']]:
         submenuToggleLabel || onClick || onMouseDown,
-      [styles['DropdownListItem--is-disabled']]: isDisabled,
-      [styles['DropdownListItem--is-active']]: isActive,
+      [styles['DropdownListItem--disabled']]: isDisabled,
+      [styles['DropdownListItem--active']]: isActive,
       [styles['DropdownListItem--title']]: isTitle,
     });
 

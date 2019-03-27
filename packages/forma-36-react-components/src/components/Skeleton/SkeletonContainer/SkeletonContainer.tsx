@@ -10,7 +10,7 @@ export type SkeletonContainerProps = {
   gradientId?: string;
   backgroundColor?: string;
   backgroundOpacity?: number;
-  isAnimated?: boolean;
+  animate?: boolean;
   speed?: number | string;
   foregroundColor?: string;
   foregroundOpacity?: number;
@@ -33,7 +33,7 @@ const defaultProps = {
   gradientId: 'cf-ui-skeleton-clip-gradient',
   backgroundColor: '#e5ebed',
   backgroundOpacity: 1,
-  isAnimated: true,
+  animate: true,
   speed: 2,
   foregroundColor: '#f7f9fa',
   foregroundOpacity: 1,
@@ -57,7 +57,7 @@ export class SkeletonContainer extends Component<SkeletonContainerProps> {
       gradientId,
       backgroundColor,
       backgroundOpacity,
-      isAnimated,
+      animate,
       speed,
       foregroundColor,
       foregroundOpacity,
@@ -98,7 +98,7 @@ export class SkeletonContainer extends Component<SkeletonContainerProps> {
               stopColor={backgroundColor}
               stopOpacity={backgroundOpacity}
             >
-              {isAnimated && (
+              {animate && (
                 <animate
                   id="animation1"
                   attributeName="stop-color"
@@ -113,7 +113,7 @@ export class SkeletonContainer extends Component<SkeletonContainerProps> {
               stopColor={foregroundColor}
               stopOpacity={foregroundOpacity}
             >
-              {isAnimated && (
+              {animate && (
                 <animate
                   attributeName="stop-color"
                   values={`${backgroundColor}; ${foregroundColor}; ${backgroundColor}`}
@@ -128,7 +128,7 @@ export class SkeletonContainer extends Component<SkeletonContainerProps> {
               stopColor={backgroundColor}
               stopOpacity={backgroundOpacity}
             >
-              {isAnimated && (
+              {animate && (
                 <animate
                   attributeName="stop-color"
                   begin="animation1.begin+0.5s"

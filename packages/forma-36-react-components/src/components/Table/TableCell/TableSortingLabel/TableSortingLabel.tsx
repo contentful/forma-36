@@ -9,7 +9,7 @@ import styles from './TableSortingLabel.css';
 export type TableSortingLabelProps = {
   children: React.ReactNode;
   direction: keyof typeof sortingDirections;
-  isActive: boolean;
+  active: boolean;
   className?: string;
   testId?: string;
 } & typeof defaultProps;
@@ -32,7 +32,7 @@ export class TableSortingLabel extends Component<TableSortingLabelProps> {
   }
 
   render() {
-    const { className, children, isActive, testId, ...otherProps } = this.props;
+    const { className, children, active, testId, ...otherProps } = this.props;
 
     return (
       <button
@@ -43,7 +43,7 @@ export class TableSortingLabel extends Component<TableSortingLabelProps> {
       >
         <TabFocusTrap className={styles['TableSortingLabel__button__text']}>
           {children}
-          {isActive && this.renderIcon()}
+          {active && this.renderIcon()}
         </TabFocusTrap>
       </button>
     );

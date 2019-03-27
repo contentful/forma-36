@@ -7,8 +7,8 @@ export type CheckboxFieldProps = ControlledInputFieldPropTypes &
   typeof defaultProps;
 
 const defaultProps = {
-  hasLightLabel: false,
-  isChecked: false,
+  labelIsLight: false,
+  checked: false,
   inputType: 'checkbox',
   testId: 'cf-ui-checkbox-field',
 };

@@ -16,7 +16,7 @@ export type TextLinkProps = {
   children?: React.ReactNode;
   linkType?: TextLinkType;
   href?: string;
-  isDisabled?: boolean;
+  disabled?: boolean;
   testId?: string;
   onClick?: MouseEventHandler<HTMLAnchorElement | HTMLButtonElement>;
   className?: string;
@@ -27,7 +27,7 @@ export type TextLinkProps = {
 const defaultProps = {
   linkType: 'primary',
   testId: 'cf-ui-text-link',
-  isDisabled: false,
+  disabled: false,
 };
 
 export class TextLink extends Component<TextLinkProps> {
@@ -50,7 +50,7 @@ export class TextLink extends Component<TextLinkProps> {
       linkType,
       testId,
       onClick,
-      isDisabled,
+      disabled,
       className,
       icon,
       text,
@@ -59,7 +59,7 @@ export class TextLink extends Component<TextLinkProps> {
 
     const classNames = cn(styles.TextLink, className, {
       [styles[`TextLink--${linkType}`]]: linkType,
-      [styles['TextLink--is-disabled']]: isDisabled,
+      [styles['TextLink--disabled']]: disabled,
     });
 
     const content = (
@@ -75,7 +75,7 @@ export class TextLink extends Component<TextLinkProps> {
           className={classNames}
           data-test-id={testId}
           onClick={
-            isDisabled
+            disabled
               ? e => {
                   e.preventDefault();
                 }
@@ -94,8 +94,8 @@ export class TextLink extends Component<TextLinkProps> {
         type="button"
         className={classNames}
         data-test-id={testId}
-        onClick={!isDisabled ? onClick : () => {}}
-        disabled={isDisabled}
+        onClick={!disabled ? onClick : () => {}}
+        disabled={disabled}
         {...otherProps}
       >
         {content}

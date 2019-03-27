@@ -14,14 +14,14 @@ function DefaultStory() {
         labelText={text('labelText', 'Option 1')}
         helpText={text('helpText', 'This is a helptext')}
         validationMessage={text('validationMessage', undefined)}
-        isDisabled={boolean('isDisabled', false)}
+        disabled={boolean('disabled', false)}
         name="someOption"
-        isChecked={activeOption === 'yes'}
+        checked={activeOption === 'yes'}
         value="yes"
         onChange={e => {
           setActiveOption((e.target as HTMLInputElement).value);
         }}
-        hasLightLabel={boolean('hasLightLabel', false)}
+        labelIsLight={boolean('labelIsLight', false)}
         inputProps={{
           onBlur: action('onBlur'),
           onFocus: action('onFoucs'),
@@ -32,14 +32,14 @@ function DefaultStory() {
         labelText={text('labelText', 'Option 2')}
         helpText={text('helpText', 'This is a helptext')}
         validationMessage={text('validationMessage', undefined)}
-        isDisabled={boolean('isDisabled', false)}
+        disabled={boolean('disabled', false)}
         name="someOption"
         value="no"
-        isChecked={activeOption === 'no'}
+        checked={activeOption === 'no'}
         onChange={e => {
           setActiveOption((e.target as HTMLInputElement).value);
         }}
-        hasLightLabel={boolean('hasLightLabel', false)}
+        labelIsLight={boolean('labelIsLight', false)}
         inputProps={{
           onBlur: action('onBlur'),
           onFocus: action('onFoucs'),

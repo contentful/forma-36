@@ -44,8 +44,8 @@ export class ToggleButton extends Component<ToggleButtonProps> {
     } = this.props;
 
     const classNames = cn(styles.Toggle, className, {
-      [styles['Toggle--is-active']]: isActive,
-      [styles['Toggle--is-disabled']]: isDisabled,
+      [styles['Toggle--active']]: isActive,
+      [styles['Toggle--disabled']]: isDisabled,
       [styles['Toggle--square']]: !children,
     });
 
@@ -53,7 +53,7 @@ export class ToggleButton extends Component<ToggleButtonProps> {
       <Card
         className={classNames}
         padding="none"
-        isSelected={isActive}
+        selected={isActive}
         {...otherProps}
       >
         <button

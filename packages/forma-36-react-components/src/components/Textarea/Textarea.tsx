@@ -10,13 +10,13 @@ export type TextareaProps = {
   className?: string;
   width?: 'small' | 'medium' | 'large' | 'full';
   maxLength?: number;
-  isRequired?: boolean;
+  required?: boolean;
   onChange?: ChangeEventHandler;
-  isDisabled?: boolean;
+  disabled?: boolean;
   value?: string;
   rows?: number;
   onBlur?: FocusEventHandler;
-  hasError?: boolean;
+  error?: boolean;
 } & typeof defaultProps;
 
 export interface TextareaState {
@@ -25,8 +25,8 @@ export interface TextareaState {
 
 const defaultProps = {
   testId: 'cf-ui-textarea',
-  isDisabled: false,
-  isRequired: false,
+  disabled: false,
+  required: false,
   width: 'full',
 };
 
@@ -52,10 +52,10 @@ export class Textarea extends Component<TextareaProps, TextareaState> {
       placeholder,
       maxLength,
       onChange,
-      isDisabled,
-      isRequired,
+      disabled,
+      required,
       onBlur,
-      hasError,
+      error,
       width,
       value,
       name,
@@ -66,8 +66,8 @@ export class Textarea extends Component<TextareaProps, TextareaState> {
 
     const widthClass = `Textarea--${width}`;
     const classNames = cn(styles['Textarea'], className, styles[widthClass], {
-      [styles['Textarea--is-disabled']]: isDisabled,
-      [styles['Textarea--negative']]: hasError,
+      [styles['Textarea--disabled']]: disabled,
+      [styles['Textarea--negative']]: error,
     });
 
     return (
@@ -79,7 +79,7 @@ export class Textarea extends Component<TextareaProps, TextareaState> {
           id={id}
           rows={rows}
           onBlur={onBlur}
-          disabled={isDisabled}
+          disabled={disabled}
           placeholder={placeholder}
           name={name}
           onChange={e => {
@@ -89,8 +89,7 @@ export class Textarea extends Component<TextareaProps, TextareaState> {
             this.setState({ value: e.target.value });
           }}
           maxLength={maxLength}
-          value={isDisabled ? value : this.state && this.state.value}
-          required={isRequired}
+          value={disabled ? value : this.state && this.state.value}
           {...otherProps}
         />
       </div>
