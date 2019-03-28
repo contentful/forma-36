@@ -30,7 +30,7 @@ export type EntryCardPropTypes = {
   /**
    * The publish status of the entry
    */
-  status: EntryCardStatus;
+  status?: EntryCardStatus;
   /**
    * The thumbnail of the entry
    */
