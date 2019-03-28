@@ -6,6 +6,10 @@ const ArrowDown = require('./svg/ArrowDown.svg');
 const ArrowDownTrimmed = require('./svg/ArrowDownTrimmed.svg');
 const ArrowUp = require('./svg/ArrowUp.svg');
 const ArrowUpTrimmed = require('./svg/ArrowUpTrimmed.svg');
+const ArrowDownward = require('./svg/ArrowDownward.svg');
+const ArrowDownwardTrimmed = require('./svg/ArrowDownwardTrimmed.svg');
+const ArrowUpward = require('./svg/ArrowUpward.svg');
+const ArrowUpwardTrimmed = require('./svg/ArrowUpwardTrimmed.svg');
 const Asset = require('./svg/Asset.svg');
 const AssetTrimmed = require('./svg/AssetTrimmed.svg');
 const ChatBubble = require('./svg/ChatBubble.svg');
@@ -70,6 +74,8 @@ const HorizontalRule = require('./svg/HorizontalRule.svg');
 const HorizontalRuleTrimmed = require('./svg/HorizontalRuleTrimmed.svg');
 const InfoCircle = require('./svg/InfoCircle.svg');
 const InfoCircleTrimmed = require('./svg/InfoCircleTrimmed.svg');
+const KeyboardReturn = require('./svg/KeyboardReturn.svg');
+const KeyboardReturnTrimmed = require('./svg/KeyboardReturnTrimmed.svg');
 const Link = require('./svg/Link.svg');
 const LinkTrimmed = require('./svg/LinkTrimmed.svg');
 const ListBulleted = require('./svg/ListBulleted.svg');
@@ -122,6 +128,10 @@ const iconComponents = {
   ArrowDownTrimmed,
   ArrowUp,
   ArrowUpTrimmed,
+  ArrowDownward,
+  ArrowDownwardTrimmed,
+  ArrowUpward,
+  ArrowUpwardTrimmed,
   Asset,
   AssetTrimmed,
   ChatBubble,
@@ -186,6 +196,8 @@ const iconComponents = {
   HorizontalRuleTrimmed,
   InfoCircle,
   InfoCircleTrimmed,
+  KeyboardReturn,
+  KeyboardReturnTrimmed,
   Link,
   LinkTrimmed,
   ListBulleted,
