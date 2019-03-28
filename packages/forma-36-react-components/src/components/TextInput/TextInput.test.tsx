@@ -17,18 +17,16 @@ it('renders the component with an additional class name', () => {
   expect(output).toMatchSnapshot();
 });
 
-it('renders the component with isDisabled prop', () => {
+it('renders the component with disabled prop', () => {
   const output = shallow(
-    <TextInput id="someInput" name="userEmail" isDisabled />,
+    <TextInput id="someInput" name="userEmail" disabled />,
   );
 
   expect(output).toMatchSnapshot();
 });
 
-it('renders the component with hasError prop', () => {
-  const output = shallow(
-    <TextInput id="someInput" name="userEmail" hasError />,
-  );
+it('renders the component with error prop', () => {
+  const output = shallow(<TextInput id="someInput" name="userEmail" error />);
 
   expect(output).toMatchSnapshot();
 });
@@ -101,14 +99,9 @@ it('renders the component with a test id', () => {
   expect(output).toMatchSnapshot();
 });
 
-it('renders the component as isRequired', () => {
+it('renders the component as required', () => {
   const output = shallow(
-    <TextInput
-      id="someInput"
-      name="userEmail"
-      testId="someTestId"
-      isRequired
-    />,
+    <TextInput id="someInput" name="userEmail" testId="someTestId" required />,
   );
 
   expect(output).toMatchSnapshot();

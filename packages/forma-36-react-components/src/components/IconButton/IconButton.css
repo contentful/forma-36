@@ -20,7 +20,7 @@
   justify-content: center;
 }
 
-.IconButton--is-disabled {
+.IconButton--disabled {
   opacity: 0.5;
 
   &:hover {

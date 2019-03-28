@@ -25,9 +25,9 @@ export type TextFieldProps = {
   textLinkProps?: Partial<TextLinkProps>;
   textInputProps?: Partial<TextInputProps> | Partial<TextareaProps>;
   helpText?: string;
-  isRequired?: boolean;
-  isTextarea?: boolean;
-  hasCharacterCount?: boolean;
+  required?: boolean;
+  textarea?: boolean;
+  countCharacters?: boolean;
   onChange?: ChangeEventHandler;
   onBlur?: FocusEventHandler;
 } & typeof defaultProps;
@@ -38,9 +38,9 @@ export interface TextFieldState {
 
 const defaultProps = {
   testId: 'cf-ui-text-field',
-  isTextarea: false,
-  isRequired: false,
-  hasCharacterCount: false,
+  textarea: false,
+  required: false,
+  countCharacters: false,
 };
 
 export class TextField extends Component<TextFieldProps, TextFieldState> {
@@ -49,7 +49,7 @@ export class TextField extends Component<TextFieldProps, TextFieldState> {
   state = { value: this.props.value || '' };
 
   // Store a copy of the value in state.
-  // This is used by this component when the `hasCharacterCount`
+  // This is used by this component when the `countCharacters`
   // option is on
   handleOnChange = (evt: ChangeEvent) => {
     this.setState({ value: (evt.target as HTMLInputElement).value });
@@ -66,9 +66,9 @@ export class TextField extends Component<TextFieldProps, TextFieldState> {
       textLinkProps,
       labelText,
       helpText,
-      isTextarea,
-      hasCharacterCount,
-      isRequired,
+      textarea,
+      countCharacters,
+      required,
       onChange,
       onBlur,
       value,
@@ -80,11 +80,11 @@ export class TextField extends Component<TextFieldProps, TextFieldState> {
     const classNames = cn(styles['TextField'], className);
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const Element: any = isTextarea ? Textarea : TextInput;
+    const Element: any = textarea ? Textarea : TextInput;
     return (
       <div className={classNames} {...otherProps} data-test-id={testId}>
         <div className={styles['TextField__label-wrapper']}>
-          <FormLabel {...formLabelProps} htmlFor={id} isRequired={isRequired}>
+          <FormLabel {...formLabelProps} htmlFor={id} required={required}>
             {labelText}
           </FormLabel>
           {textLinkProps && (
@@ -100,13 +100,13 @@ export class TextField extends Component<TextFieldProps, TextFieldState> {
         </div>
         <Element
           {...{
-            hasError: !!validationMessage,
+            error: !!validationMessage,
             name,
             id,
             onBlur,
             onChange: this.handleOnChange,
             value,
-            isRequired,
+            required,
             ...textInputProps,
           }}
         />
@@ -117,14 +117,14 @@ export class TextField extends Component<TextFieldProps, TextFieldState> {
             {validationMessage}
           </ValidationMessage>
         )}
-        {(helpText || hasCharacterCount) && (
+        {(helpText || countCharacters) && (
           <div className={styles['TextField__hints']}>
             {helpText && (
               <HelpText className={styles['TextField__help-text']}>
                 {helpText}
               </HelpText>
             )}
-            {hasCharacterCount && textInputProps && textInputProps.maxLength && (
+            {countCharacters && textInputProps && textInputProps.maxLength && (
               <HelpText
                 className={cn(
                   styles['TextField__help-text'],

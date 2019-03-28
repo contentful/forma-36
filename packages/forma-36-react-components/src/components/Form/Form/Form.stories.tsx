@@ -24,7 +24,7 @@ function DefaultStory() {
       )}
     >
       <TextField
-        isRequired
+        required
         name="nameInput"
         id="nameInput"
         labelText="Name"
@@ -32,27 +32,27 @@ function DefaultStory() {
         helpText="Please enter your name"
       />
       <TextField
-        isRequired
+        required
         name="emailInput"
         id="emailInput"
         labelText="E-Mail"
         value="johannes.bugiel@contentful.com"
         helpText="Please enter your mail"
       />
-      <FieldGroup isRow={boolean('isRow', false)}>
+      <FieldGroup row={boolean('row', false)}>
         <CheckboxField
           labelText="I agree"
           value="yes"
           helpText="Click if you agree"
           onChange={e => setTerms((e.target as HTMLInputElement).value)}
-          isChecked={agreeTerms === 'yes'}
+          checked={agreeTerms === 'yes'}
           id="termsCheckboxYes"
         />
         <CheckboxField
           labelText="I don't agree"
           value="no"
           onChange={e => setTerms((e.target as HTMLInputElement).value)}
-          isChecked={agreeTerms === 'no'}
+          checked={agreeTerms === 'no'}
           helpText="Click if you don't agree"
           id="termsCheckboxNo"
         />

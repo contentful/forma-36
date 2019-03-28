@@ -62,10 +62,10 @@ exports[`renders the component with as checked 1`] = `
 />
 `;
 
-exports[`renders the component with isDisabled prop 1`] = `
+exports[`renders the component with disabled prop 1`] = `
 <input
   aria-label="ControlledInput"
-  className="ControlledInput my-extra-class ControlledInput--is-disabled"
+  className="ControlledInput my-extra-class ControlledInput--disabled"
   data-test-id="cf-ui-controlled-input"
   disabled={true}
   id="ControlledInput"
@@ -77,7 +77,7 @@ exports[`renders the component with isDisabled prop 1`] = `
 />
 `;
 
-exports[`renders the component with isRequired prop 1`] = `
+exports[`renders the component with required prop 1`] = `
 <input
   aria-label="ControlledInput"
   className="ControlledInput my-extra-class"

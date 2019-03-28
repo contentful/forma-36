@@ -4,7 +4,7 @@ import Icon from '../../Icon/Icon';
 import styles from './Select.css';
 
 export type SelectProps = {
-  isRequired?: boolean;
+  required?: boolean;
   name?: string;
   id?: string;
   hasError?: boolean;
@@ -25,7 +25,7 @@ export interface SelectState {
 
 const defaultProps = {
   testId: 'cf-ui-select',
-  isRequired: false,
+  required: false,
   hasError: false,
   isDisabled: false,
   width: 'full',
@@ -50,7 +50,7 @@ export class Select extends Component<SelectProps, SelectState> {
     const {
       id,
       name,
-      isRequired,
+      required,
       children,
       width,
       className,
@@ -65,7 +65,7 @@ export class Select extends Component<SelectProps, SelectState> {
 
     const widthClass = `Select--${width}`;
     const classNames = cn(styles['Select'], {
-      [styles['Select--is-disabled']]: isDisabled,
+      [styles['Select--disabled']]: isDisabled,
       [styles['Select--negative']]: hasError,
     });
 
@@ -79,7 +79,7 @@ export class Select extends Component<SelectProps, SelectState> {
       <div className={wrapperClassNames}>
         <select
           id={id}
-          required={isRequired}
+          required={required}
           name={name}
           aria-label={name}
           data-test-id={testId}

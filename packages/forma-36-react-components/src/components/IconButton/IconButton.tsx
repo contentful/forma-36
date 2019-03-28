@@ -10,7 +10,7 @@ export interface IconButtonProps {
   label: string;
   href?: string;
   iconProps: IconProps;
-  isDisabled?: boolean;
+  disabled?: boolean;
   onClick?: MouseEventHandler;
   buttonType?:
     | 'primary'
@@ -19,16 +19,16 @@ export interface IconButtonProps {
     | 'secondary'
     | 'muted'
     | 'white';
-  hasDropdownCaret?: boolean;
+  withDropdown?: boolean;
   className?: string;
   testId?: string;
 }
 
 const defaultProps = {
-  isDisabled: false,
+  disabled: false,
   testId: 'cf-ui-icon-button',
   buttonType: 'primary',
-  hasDropdownCaret: false,
+  withDropdown: false,
 };
 
 export class IconButton extends Component<
@@ -42,22 +42,22 @@ export class IconButton extends Component<
       iconProps,
       href,
       testId,
-      isDisabled,
+      disabled,
       onClick,
       buttonType,
-      hasDropdownCaret,
+      withDropdown,
       className,
       ...otherProps
     } = this.props;
 
     const classNames = cn(styles.IconButton, className, {
-      [styles['IconButton--is-disabled']]: isDisabled,
+      [styles['IconButton--disabled']]: disabled,
       [styles[`IconButton--${buttonType}`]]: buttonType,
     });
 
     const elementProps = {
       className: classNames,
-      onClick: !isDisabled ? onClick : undefined,
+      onClick: !disabled ? onClick : undefined,
       'data-test-id': testId,
       ...otherProps,
     };
@@ -67,7 +67,7 @@ export class IconButton extends Component<
         <Icon icon={iconProps.icon} className={styles.IconButton__icon} />
 
         <span className={styles.IconButton__label}>{label}</span>
-        {hasDropdownCaret && (
+        {withDropdown && (
           <Icon
             icon="ChevronDown"
             color="secondary"
@@ -78,7 +78,7 @@ export class IconButton extends Component<
     );
 
     if (href) {
-      if (isDisabled) {
+      if (disabled) {
         return <a {...elementProps}>{content}</a>;
       }
       return (
@@ -89,7 +89,7 @@ export class IconButton extends Component<
     }
 
     return (
-      <button {...elementProps} type="button" disabled={isDisabled}>
+      <button {...elementProps} type="button" disabled={disabled}>
         {content}
       </button>
     );

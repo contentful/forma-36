@@ -29,7 +29,7 @@ it('renders the component as required', () => {
       className="my-extra-class"
       id="checkbox"
       labelText="Label Text"
-      isRequired
+      required
     />,
   );
 
@@ -68,7 +68,7 @@ it('renders the component in a disabled state', () => {
       className="my-extra-class"
       id="checkbox"
       labelText="Label Text"
-      isDisabled
+      disabled
     />,
   );
 
@@ -82,7 +82,7 @@ it('renders the component with a light label variation', () => {
       id="checkbox"
       labelText="Label Text"
       validationMessage="Not valid!"
-      hasLightLabel
+      labelIsLight
     />,
   );
 
@@ -95,7 +95,7 @@ it('renders the component as checked', () => {
       className="my-extra-class"
       id="checkbox"
       labelText="Label Text"
-      isChecked
+      checked
     />,
   );
 

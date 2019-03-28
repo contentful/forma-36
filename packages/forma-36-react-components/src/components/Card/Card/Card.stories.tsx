@@ -22,7 +22,7 @@ storiesOf('Components|Card', module)
         },
         'default',
       )}
-      isSelected={boolean('isSelected', false)}
+      selected={boolean('selected', false)}
     >
       {text('children', 'Card')}
     </Card>
@@ -41,7 +41,7 @@ storiesOf('Components|Card', module)
         },
         'default',
       )}
-      isSelected={boolean('isSelected', false)}
+      selected={boolean('selected', false)}
     >
       {text('children', 'Card')}
     </Card>

@@ -3,8 +3,8 @@
 exports[`renders the component 1`] = `
 <Card
   className="AssetCard"
-  isSelected={false}
   padding="default"
+  selected={false}
   testId="cf-ui-asset-card"
   title="picture of a cat"
 >
@@ -32,8 +32,8 @@ exports[`renders the component 1`] = `
 exports[`renders the component in loading state 1`] = `
 <Card
   className="AssetCard"
-  isSelected={false}
   padding="default"
+  selected={false}
   testId="cf-ui-asset-card"
   title="picture of a cat"
 >
@@ -44,8 +44,8 @@ exports[`renders the component in loading state 1`] = `
 exports[`renders the component with actions 1`] = `
 <Card
   className="AssetCard"
-  isSelected={false}
   padding="default"
+  selected={false}
   testId="cf-ui-asset-card"
   title="picture of a cat"
 >
@@ -100,8 +100,8 @@ exports[`renders the component with actions 1`] = `
 exports[`renders the component with an additional class name 1`] = `
 <Card
   className="AssetCard my-extra-class"
-  isSelected={false}
   padding="default"
+  selected={false}
   testId="cf-ui-asset-card"
   title="picture of a cat"
 >
@@ -129,8 +129,8 @@ exports[`renders the component with an additional class name 1`] = `
 exports[`renders the component with status 1`] = `
 <Card
   className="AssetCard"
-  isSelected={false}
   padding="default"
+  selected={false}
   testId="cf-ui-asset-card"
   title="picture of a cat"
 >
@@ -170,8 +170,8 @@ exports[`renders the component with status 1`] = `
 exports[`renders the component without actions 1`] = `
 <Card
   className="AssetCard"
-  isSelected={false}
   padding="default"
+  selected={false}
   testId="cf-ui-asset-card"
   title="picture of a cat"
 >

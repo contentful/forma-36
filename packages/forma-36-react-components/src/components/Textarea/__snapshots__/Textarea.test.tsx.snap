@@ -12,7 +12,6 @@ exports[`renders the component 1`] = `
     id="someInput"
     name="userEmail"
     onChange={[Function]}
-    required={false}
   />
 </div>
 `;
@@ -29,7 +28,6 @@ exports[`renders the component as required 1`] = `
     id="someInput"
     name="userEmail"
     onChange={[Function]}
-    required={true}
   />
 </div>
 `;
@@ -47,7 +45,6 @@ exports[`renders the component with a max length 1`] = `
     maxLength={10}
     name="userEmail"
     onChange={[Function]}
-    required={false}
   />
 </div>
 `;
@@ -64,7 +61,6 @@ exports[`renders the component with a test id 1`] = `
     id="someInput"
     name="userEmail"
     onChange={[Function]}
-    required={false}
   />
 </div>
 `;
@@ -81,7 +77,6 @@ exports[`renders the component with an additional class name 1`] = `
     id="someInput"
     name="userEmail"
     onChange={[Function]}
-    required={false}
   />
 </div>
 `;
@@ -99,7 +94,6 @@ exports[`renders the component with an onBlur prop 1`] = `
     name="userEmail"
     onBlur={[Function]}
     onChange={[Function]}
-    required={false}
   />
 </div>
 `;
@@ -116,12 +110,27 @@ exports[`renders the component with an onChange prop 1`] = `
     id="someInput"
     name="userEmail"
     onChange={[Function]}
-    required={false}
   />
 </div>
 `;
 
-exports[`renders the component with hasError prop 1`] = `
+exports[`renders the component with disabled prop 1`] = `
+<div
+  className="Textarea my-extra-class Textarea--full Textarea--disabled"
+>
+  <textarea
+    aria-label="userEmail"
+    className="Textarea__textarea"
+    data-test-id="cf-ui-textarea"
+    disabled={true}
+    id="someInput"
+    name="userEmail"
+    onChange={[Function]}
+  />
+</div>
+`;
+
+exports[`renders the component with error prop 1`] = `
 <div
   className="Textarea my-extra-class Textarea--full Textarea--negative"
 >
@@ -133,24 +142,6 @@ exports[`renders the component with hasError prop 1`] = `
     id="someInput"
     name="userEmail"
     onChange={[Function]}
-    required={false}
-  />
-</div>
-`;
-
-exports[`renders the component with isDisabled prop 1`] = `
-<div
-  className="Textarea my-extra-class Textarea--full Textarea--is-disabled"
->
-  <textarea
-    aria-label="userEmail"
-    className="Textarea__textarea"
-    data-test-id="cf-ui-textarea"
-    disabled={true}
-    id="someInput"
-    name="userEmail"
-    onChange={[Function]}
-    required={false}
   />
 </div>
 `;
@@ -167,7 +158,6 @@ exports[`renders the component with rows defined 1`] = `
     id="someInput"
     name="userEmail"
     onChange={[Function]}
-    required={false}
     rows={2}
   />
 </div>
@@ -185,7 +175,6 @@ exports[`renders the component with small width 1`] = `
     id="someInput"
     name="userEmail"
     onChange={[Function]}
-    required={false}
   />
 </div>
 `;
@@ -202,7 +191,6 @@ exports[`renders the component with value prop 1`] = `
     id="someInput"
     name="userEmail"
     onChange={[Function]}
-    required={false}
     value="1234"
   />
 </div>

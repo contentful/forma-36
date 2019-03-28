@@ -3,8 +3,8 @@
 exports[`renders the component 1`] = `
 <Card
   className="EntryCard"
-  isSelected={false}
   padding="default"
+  selected={false}
   testId="cf-ui-entry-card"
 >
   <article
@@ -53,8 +53,8 @@ exports[`renders the component 1`] = `
 exports[`renders the component with a thumbnail element 1`] = `
 <Card
   className="EntryCard"
-  isSelected={false}
   padding="default"
+  selected={false}
   testId="cf-ui-entry-card"
 >
   <article
@@ -111,8 +111,8 @@ exports[`renders the component with a thumbnail element 1`] = `
 exports[`renders the component with an additional class name 1`] = `
 <Card
   className="EntryCard my-extra-class"
-  isSelected={false}
   padding="default"
+  selected={false}
   testId="cf-ui-entry-card"
 >
   <article
@@ -161,8 +161,8 @@ exports[`renders the component with an additional class name 1`] = `
 exports[`renders the component with dropdownListElements 1`] = `
 <Card
   className="EntryCard"
-  isSelected={false}
   padding="default"
+  selected={false}
   testId="cf-ui-entry-card"
 >
   <article

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders the component as isRequired 1`] = `
+exports[`renders the component as required 1`] = `
 <div
   className="TextInput TextInput--full"
 >
@@ -91,15 +91,15 @@ exports[`renders the component with an additional class name 1`] = `
 </div>
 `;
 
-exports[`renders the component with hasError prop 1`] = `
+exports[`renders the component with disabled prop 1`] = `
 <div
-  className="TextInput TextInput--full TextInput--negative"
+  className="TextInput TextInput--full TextInput--disabled"
 >
   <input
     aria-label="userEmail"
     className="TextInput__input"
     data-test-id="cf-ui-text-input"
-    disabled={false}
+    disabled={true}
     id="someInput"
     name="userEmail"
     onChange={[Function]}
@@ -109,15 +109,15 @@ exports[`renders the component with hasError prop 1`] = `
 </div>
 `;
 
-exports[`renders the component with isDisabled prop 1`] = `
+exports[`renders the component with error prop 1`] = `
 <div
-  className="TextInput TextInput--full TextInput--is-disabled"
+  className="TextInput TextInput--full TextInput--negative"
 >
   <input
     aria-label="userEmail"
     className="TextInput__input"
     data-test-id="cf-ui-text-input"
-    disabled={true}
+    disabled={false}
     id="someInput"
     name="userEmail"
     onChange={[Function]}

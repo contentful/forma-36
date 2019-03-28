@@ -10,7 +10,7 @@ exports[`renders the component 1`] = `
   >
     <FormLabel
       htmlFor="optionSelect"
-      isRequired={false}
+      required={false}
       requiredText="required"
       testId="cf-ui-form-label"
     >
@@ -21,9 +21,9 @@ exports[`renders the component 1`] = `
     hasError={false}
     id="optionSelect"
     isDisabled={false}
-    isRequired={false}
     name="optionSelect"
     onChange={[Function]}
+    required={false}
     testId="cf-ui-select"
     width="full"
   >
@@ -47,7 +47,7 @@ exports[`renders the component as disabled 1`] = `
   >
     <FormLabel
       htmlFor="optionSelect"
-      isRequired={false}
+      required={false}
       requiredText="required"
       testId="cf-ui-form-label"
     >
@@ -58,9 +58,9 @@ exports[`renders the component as disabled 1`] = `
     hasError={false}
     id="optionSelect"
     isDisabled={true}
-    isRequired={false}
     name="optionSelect"
     onChange={[Function]}
+    required={false}
     testId="cf-ui-select"
     width="full"
   >
@@ -84,7 +84,7 @@ exports[`renders the component as required 1`] = `
   >
     <FormLabel
       htmlFor="optionSelect"
-      isRequired={true}
+      required={false}
       requiredText="required"
       testId="cf-ui-form-label"
     >
@@ -95,9 +95,9 @@ exports[`renders the component as required 1`] = `
     hasError={false}
     id="optionSelect"
     isDisabled={false}
-    isRequired={true}
     name="optionSelect"
     onChange={[Function]}
+    required={false}
     testId="cf-ui-select"
     width="full"
   >
@@ -121,7 +121,7 @@ exports[`renders the component with a help text 1`] = `
   >
     <FormLabel
       htmlFor="optionSelect"
-      isRequired={false}
+      required={false}
       requiredText="required"
       testId="cf-ui-form-label"
     >
@@ -132,9 +132,9 @@ exports[`renders the component with a help text 1`] = `
     hasError={false}
     id="optionSelect"
     isDisabled={false}
-    isRequired={false}
     name="optionSelect"
     onChange={[Function]}
+    required={false}
     testId="cf-ui-select"
     width="full"
   >
@@ -168,7 +168,7 @@ exports[`renders the component with a validation message 1`] = `
   >
     <FormLabel
       htmlFor="optionSelect"
-      isRequired={false}
+      required={false}
       requiredText="required"
       testId="cf-ui-form-label"
     >
@@ -179,9 +179,9 @@ exports[`renders the component with a validation message 1`] = `
     hasError={true}
     id="optionSelect"
     isDisabled={false}
-    isRequired={false}
     name="optionSelect"
     onChange={[Function]}
+    required={false}
     testId="cf-ui-select"
     width="full"
   >
@@ -211,7 +211,7 @@ exports[`renders the component with a value 1`] = `
   >
     <FormLabel
       htmlFor="optionSelect"
-      isRequired={false}
+      required={false}
       requiredText="required"
       testId="cf-ui-form-label"
     >
@@ -222,9 +222,9 @@ exports[`renders the component with a value 1`] = `
     hasError={false}
     id="optionSelect"
     isDisabled={false}
-    isRequired={false}
     name="optionSelect"
     onChange={[Function]}
+    required={false}
     testId="cf-ui-select"
     value="optionOne"
     width="full"

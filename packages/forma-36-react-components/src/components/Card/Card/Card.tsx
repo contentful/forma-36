@@ -10,7 +10,7 @@ export type CardPropTypes = {
   href?: string;
   onClick?: MouseEventHandler<HTMLElement>;
   padding?: 'default' | 'large' | 'none';
-  isSelected?: boolean;
+  selected?: boolean;
   title?: string;
   style?: React.CSSProperties;
   className?: string;
@@ -21,7 +21,7 @@ export type CardPropTypes = {
 const defaultProps = {
   padding: 'default',
   testId: 'cf-ui-card',
-  isSelected: false,
+  selected: false,
 };
 
 export class Card extends Component<CardPropTypes> {
@@ -41,14 +41,14 @@ export class Card extends Component<CardPropTypes> {
       href,
       onClick,
       padding,
-      isSelected,
+      selected,
       ...otherProps
     } = this.props;
 
     const classNames = cn(styles.Card, className, {
       [styles[`Card--padding-${padding}`]]: padding,
       [styles['Card--is-interactive']]: onClick || href,
-      [styles['Card--is-selected']]: isSelected,
+      [styles['Card--is-selected']]: selected,
     });
 
     const Element: React.ReactType = href ? 'a' : 'div';

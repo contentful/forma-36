@@ -33,12 +33,7 @@ it('renders the component as disabled', () => {
 
 it('renders the component as required', () => {
   const output = shallow(
-    <SelectField
-      id="optionSelect"
-      name="optionSelect"
-      labelText="Label"
-      isRequired
-    >
+    <SelectField id="optionSelect" name="optionSelect" labelText="Label">
       <Option value="optionOne">Option 1</Option>
     </SelectField>,
   );

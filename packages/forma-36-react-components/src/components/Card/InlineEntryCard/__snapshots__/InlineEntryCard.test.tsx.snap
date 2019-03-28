@@ -4,8 +4,8 @@ exports[`renders the component 1`] = `
 <Card
   className="InlineEntryCard"
   data-test-id="cf-ui-inline-entry-card"
-  isSelected={false}
   padding="default"
+  selected={false}
   testId="cf-ui-card"
 >
   <CSSTransition
@@ -42,8 +42,8 @@ exports[`renders the component with a dropdown 1`] = `
 <Card
   className="InlineEntryCard my-extra-class"
   data-test-id="cf-ui-inline-entry-card"
-  isSelected={false}
   padding="default"
+  selected={false}
   testId="cf-ui-card"
 >
   <CSSTransition
@@ -109,8 +109,8 @@ exports[`renders the component with an additional class name 1`] = `
 <Card
   className="InlineEntryCard my-extra-class"
   data-test-id="cf-ui-inline-entry-card"
-  isSelected={false}
   padding="default"
+  selected={false}
   testId="cf-ui-card"
 >
   <CSSTransition
@@ -147,8 +147,8 @@ exports[`renders the component with published status 1`] = `
 <Card
   className="InlineEntryCard my-extra-class"
   data-test-id="cf-ui-inline-entry-card"
-  isSelected={false}
   padding="default"
+  selected={false}
   testId="cf-ui-card"
 >
   <CSSTransition

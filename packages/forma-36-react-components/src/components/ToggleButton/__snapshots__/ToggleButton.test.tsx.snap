@@ -3,8 +3,8 @@
 exports[`renders the component 1`] = `
 <Card
   className="Toggle"
-  isSelected={false}
   padding="none"
+  selected={false}
   testId="cf-ui-toggle-button"
 >
   <button
@@ -30,9 +30,9 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component active 1`] = `
 <Card
-  className="Toggle my-extra-class Toggle--is-active"
-  isSelected={true}
+  className="Toggle my-extra-class Toggle--active"
   padding="none"
+  selected={true}
   testId="cf-ui-toggle-button"
 >
   <button
@@ -59,8 +59,8 @@ exports[`renders the component active 1`] = `
 exports[`renders the component with an additional class name 1`] = `
 <Card
   className="Toggle my-extra-class"
-  isSelected={false}
   padding="none"
+  selected={false}
   testId="cf-ui-toggle-button"
 >
   <button
@@ -87,8 +87,8 @@ exports[`renders the component with an additional class name 1`] = `
 exports[`renders the component with icon 1`] = `
 <Card
   className="Toggle my-extra-class"
-  isSelected={false}
   padding="none"
+  selected={false}
   testId="cf-ui-toggle-button"
 >
   <button

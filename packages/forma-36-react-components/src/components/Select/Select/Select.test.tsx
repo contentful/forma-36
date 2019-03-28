@@ -51,7 +51,7 @@ it('renders the component with a value', () => {
 
 it('renders the component as required', () => {
   const output = shallow(
-    <Select name="optionSelect" id="optionSelect" isRequired>
+    <Select name="optionSelect" id="optionSelect" required>
       <Option value="optionOne">Option One</Option>
     </Select>,
   );

@@ -85,49 +85,6 @@ exports[`renders the component 1`] = `
 </button>
 `;
 
-exports[`renders the component as disabled 1`] = `
-<button
-  className="Button Button--primary Button--is-disabled"
-  data-test-id="cf-ui-button"
-  disabled={true}
-  href={null}
-  onBlur={[Function]}
-  onClick={[Function]}
-  type="button"
->
-  <TabFocusTrap
-    className="Button__inner-wrapper"
-  >
-    <span
-      className="Button__label"
-    >
-      Embed entry
-    </span>
-    <CSSTransition
-      classNames={
-        Object {
-          "enter": "Button--spinner--enter",
-          "enterActive": "Button--spinner-active",
-          "exit": "Button--spinner--exit",
-          "exitActive": "Button--spinner-exit-active",
-        }
-      }
-      in={false}
-      mountOnEnter={true}
-      timeout={1000}
-      unmountOnExit={true}
-    >
-      <Spinner
-        className="Button__spinner"
-        color="white"
-        size="small"
-        testId="cf-ui-spinner"
-      />
-    </CSSTransition>
-  </TabFocusTrap>
-</button>
-`;
-
 exports[`renders the component as naked 1`] = `
 <button
   className="Button Button--naked"
@@ -175,6 +132,49 @@ exports[`renders the component as primary 1`] = `
   className="Button Button--primary"
   data-test-id="cf-ui-button"
   disabled={false}
+  onBlur={[Function]}
+  onClick={[Function]}
+  type="button"
+>
+  <TabFocusTrap
+    className="Button__inner-wrapper"
+  >
+    <span
+      className="Button__label"
+    >
+      Embed entry
+    </span>
+    <CSSTransition
+      classNames={
+        Object {
+          "enter": "Button--spinner--enter",
+          "enterActive": "Button--spinner-active",
+          "exit": "Button--spinner--exit",
+          "exitActive": "Button--spinner-exit-active",
+        }
+      }
+      in={false}
+      mountOnEnter={true}
+      timeout={1000}
+      unmountOnExit={true}
+    >
+      <Spinner
+        className="Button__spinner"
+        color="white"
+        size="small"
+        testId="cf-ui-spinner"
+      />
+    </CSSTransition>
+  </TabFocusTrap>
+</button>
+`;
+
+exports[`renders the component disabled 1`] = `
+<button
+  className="Button Button--primary Button--disabled"
+  data-test-id="cf-ui-button"
+  disabled={true}
+  href={null}
   onBlur={[Function]}
   onClick={[Function]}
   type="button"

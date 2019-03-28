@@ -14,9 +14,9 @@ storiesOf('Components|TextArea', module)
       className={text('className', '')}
       name="someInput"
       id="someInput"
-      hasError={boolean('hasError', false)}
+      error={boolean('error', false)}
       maxLength={number('maxLength', 50)}
-      isRequired={boolean('isRequired', false)}
+      required={boolean('required', false)}
       width={select(
         'width',
         {
@@ -29,7 +29,7 @@ storiesOf('Components|TextArea', module)
       )}
       onChange={action('onChange')}
       onBlur={action('onBlur')}
-      isDisabled={boolean('isDisabled', false)}
+      disabled={boolean('disabled', false)}
       value={text('value', '123456')}
       rows={number('rows', 2)}
     />

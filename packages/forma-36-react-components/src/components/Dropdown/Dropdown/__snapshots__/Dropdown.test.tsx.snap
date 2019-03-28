@@ -8,10 +8,10 @@ exports[`renders the component 1`] = `
 >
   <Button
     buttonType="primary"
-    hasDropdownCaret={false}
-    isDisabled={false}
+    disabled={false}
+    indicateDropdown={false}
     isFullWidth={false}
-    isLoading={false}
+    loading={false}
     onClick={[Function]}
     testId="cf-ui-button"
     type="button"
@@ -29,10 +29,10 @@ exports[`renders the component as open 1`] = `
 >
   <Button
     buttonType="primary"
-    hasDropdownCaret={false}
-    isDisabled={false}
+    disabled={false}
+    indicateDropdown={false}
     isFullWidth={false}
-    isLoading={false}
+    loading={false}
     onClick={[Function]}
     testId="cf-ui-button"
     type="button"
@@ -78,10 +78,10 @@ exports[`renders the component with a submenu 1`] = `
 >
   <Button
     buttonType="primary"
-    hasDropdownCaret={false}
-    isDisabled={false}
+    disabled={false}
+    indicateDropdown={false}
     isFullWidth={false}
-    isLoading={false}
+    loading={false}
     onClick={[Function]}
     testId="cf-ui-button"
     type="button"
@@ -143,10 +143,10 @@ exports[`renders the component with an additional class name 1`] = `
 >
   <Button
     buttonType="primary"
-    hasDropdownCaret={false}
-    isDisabled={false}
+    disabled={false}
+    indicateDropdown={false}
     isFullWidth={false}
-    isLoading={false}
+    loading={false}
     onClick={[Function]}
     testId="cf-ui-button"
     type="button"

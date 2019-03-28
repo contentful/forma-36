@@ -6,8 +6,8 @@ import ControlledInput, {
 export type RadioButtonProps = ControlledInputPropTypes & typeof defaultProps;
 
 const defaultProps = {
-  isRequired: false,
-  isDisabled: false,
+  required: false,
+  disabled: false,
   testId: 'cf-ui-radio-button',
 };
 

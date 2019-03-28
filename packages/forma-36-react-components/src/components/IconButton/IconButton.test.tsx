@@ -102,7 +102,7 @@ it('prevents an onClick function from being called when disabled', () => {
       iconProps={{ icon: 'ArrowDown' }}
       label="My Icon"
       onClick={onClickFunc}
-      isDisabled
+      disabled
     />,
   );
 
@@ -129,7 +129,7 @@ it('renders with a dropdown indicator', () => {
     <IconButton
       iconProps={{ icon: 'ArrowDown' }}
       label="My Icon"
-      hasDropdownCaret
+      withDropdown
     />,
   );
 

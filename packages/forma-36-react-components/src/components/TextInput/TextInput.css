@@ -50,7 +50,7 @@
   width: 100%;
 }
 
-.TextInput--is-disabled {
+.TextInput--disabled {
   & .TextInput__input {
     background: var(--color-element-lightest);
 

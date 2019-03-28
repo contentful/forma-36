@@ -56,10 +56,10 @@ it('calls an onClick function', () => {
   expect(onClickFunc).toHaveBeenCalled();
 });
 
-it('prevents onClick function from being called when isDisabled', () => {
+it('prevents onClick function from being called when disabled', () => {
   const onClickFunc = jest.fn();
   const output = shallow(
-    <TextLink isDisabled onClick={onClickFunc}>
+    <TextLink disabled onClick={onClickFunc}>
       Text Link
     </TextLink>,
   );

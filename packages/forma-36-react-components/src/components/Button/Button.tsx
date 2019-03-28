@@ -16,12 +16,12 @@ const styles = require('./Button.css');
 
 export type ButtonProps = {
   icon?: IconType;
-  hasDropdownCaret?: boolean;
+  indicateDropdown?: boolean;
   onClick?: MouseEventHandler;
   isFullWidth?: boolean;
   onBlur?: FocusEventHandler;
-  isLoading?: boolean;
-  isDisabled?: boolean;
+  loading?: boolean;
+  disabled?: boolean;
   testId?: string;
   buttonType?: 'primary' | 'positive' | 'negative' | 'muted' | 'naked';
   type?: 'button' | 'submit' | 'reset';
@@ -33,10 +33,10 @@ export type ButtonProps = {
 } & typeof defaultProps;
 
 const defaultProps = {
-  isLoading: false,
+  loading: false,
   isFullWidth: false,
-  hasDropdownCaret: false,
-  isDisabled: false,
+  indicateDropdown: false,
+  disabled: false,
   testId: 'cf-ui-button',
   buttonType: 'primary',
   type: 'button',
@@ -56,9 +56,9 @@ export class Button extends Component<ButtonProps> {
       onBlur,
       testId,
       onClick,
-      isLoading,
-      hasDropdownCaret,
-      isDisabled,
+      loading,
+      disabled,
+      indicateDropdown,
       href,
       type,
       ...otherProps
@@ -69,7 +69,7 @@ export class Button extends Component<ButtonProps> {
       className,
       styles[`Button--${buttonType}`],
       {
-        [styles['Button--is-disabled']]: isDisabled,
+        [styles['Button--disabled']]: disabled,
         [styles[`Button--${size}`]]: size,
         [styles['Button--full-width']]: isFullWidth,
       },
@@ -84,19 +84,19 @@ export class Button extends Component<ButtonProps> {
     return (
       <Element
         onBlur={(e: FocusEvent) => {
-          if (onBlur && !isDisabled) {
+          if (onBlur && !disabled) {
             onBlur(e);
           }
         }}
         onClick={(e: ReactMouseEvent) => {
-          if (onClick && !isDisabled && !isLoading) {
+          if (onClick && !disabled && !loading) {
             onClick(e);
           }
         }}
         data-test-id={testId}
         className={classNames}
-        disabled={isDisabled}
-        href={!isDisabled ? href : null}
+        disabled={disabled}
+        href={!disabled ? href : null}
         type={type}
         {...otherProps}
       >
@@ -110,7 +110,7 @@ export class Button extends Component<ButtonProps> {
             />
           )}
           {children && <span className={styles.Button__label}>{children}</span>}
-          {hasDropdownCaret && (
+          {indicateDropdown && (
             <Icon
               className={styles['Button__dropdown-icon']}
               icon="ArrowDown"
@@ -118,7 +118,7 @@ export class Button extends Component<ButtonProps> {
             />
           )}
           <CSSTransition
-            in={isLoading}
+            in={loading}
             timeout={1000}
             classNames={{
               enter: styles['Button--spinner--enter'],
