@@ -47,25 +47,9 @@ To add another package create a new directory in the packages folder. Make sure 
 
 Forma 36 was designed to use ‘Avenir Next’ as primary font family. If a package is used in the context of app.contentful.com (e.g UI extensions) this font will be provided. We encourage licensing ‘Avenir Next’ when a package is used outside of Contentful related use cases.
 
-## Commiting & Releasing
+## Commits & Releases
 
-**_About alpha versions_**: Forma 36 is currently in alpha. Please use the keyword `alpha` in the version number when using `lerna publish`.
-
-```
-? Select a new version for @contentful/forma-36-react-components (currently 1.0.2-alpha.0)
-  Patch (1.0.2)
-  Minor (1.1.0)
-  Major (2.0.0)
-❯ Prepatch (1.0.3-alpha.0)
-  Preminor (1.1.0-alpha.0)
-  Premajor (2.0.0-alpha.0)
-  Custom Prerelease
-  Custom Version
-```
-
-**_About non alpha releases_**: Use `yarn commit`. This uses the [Commitzen](https://github.com/commitizen/cz-cli) CLI to create a semantic commit message based on your changes. CI will publish to NPM using `yarn semantic-release`.
-
-_NOTE: It is important that every new package includes semantic-release and semantic-release-monorepo in the dev-dependency list so that semantic release will work from the root of the monorepo._
+Use `yarn commit`. This uses the [Commitzen](https://github.com/commitizen/cz-cli) CLI to create a conventional commit message based on your changes. CI is setup to release all new commits on the master branch.
 
 ## Get involved
 
@@ -80,6 +64,8 @@ contribute to a package, see the README of the corresponding package.
 
 - [Johannes Bugiel](https://github.com/wichniowski)
 - [Mike Mitchell](https://github.com/m10l)
+
+You can also reach out using the Contentful community Slack. We've setup a channel [#forma36](https://contentful-community.slack.com/messages/CFXGTMB98) in which we announce latest changes and updates.
 
 ### You found a bug or want to propose a feature?
 
