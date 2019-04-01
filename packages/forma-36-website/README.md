@@ -108,3 +108,21 @@ storybook: 'https://f36-storybook.contentful.com/?path=/info/components-typograp
 ```
 
 This example generates the header section for the page which contains a page title, and links to Storybook/GitHub.
+
+## Adding images to pages
+
+Page-specific images should live in the same directory as the page file and referenced using a relative path. Here is an example:
+
+**Directory structure**
+
+```
+my-page
+├── index.mdx // The contents for `my-page`
+└── image.jpg // The image referenced in `my-page`
+```
+
+**index.mdx**
+
+```
+![alt text for the image](image.jpg)
+```
