@@ -18,6 +18,7 @@
     "gatsby-plugin-offline": "^2.0.16",
     "gatsby-plugin-react-helmet": "^3.0.2",
     "gatsby-plugin-sharp": "^2.0.12",
+    "gatsby-remark-images": "^3.0.10",
     "gatsby-source-filesystem": "^2.0.23",
     "gatsby-transformer-javascript-frontmatter": "^2.0.8",
     "gatsby-transformer-sharp": "^2.1.8",
