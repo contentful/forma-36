@@ -3,6 +3,47 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@2.10.5...@contentful/forma-36-react-components@3.0.0) (2019-04-02)
+
+
+### Bug Fixes
+
+* Add missing testId props ([ec08098](https://github.com/contentful/forma-36/commit/ec08098))
+* Fixed labelText being optional property ([a5f6489](https://github.com/contentful/forma-36/commit/a5f6489))
+* **EntryCard:** status prop is optional ([a1624f3](https://github.com/contentful/forma-36/commit/a1624f3))
+* **ModalConfirm:** Hide confirm/cancel buttons ([9340659](https://github.com/contentful/forma-36/commit/9340659))
+* **Option:** add testId property ([f66fb5c](https://github.com/contentful/forma-36/commit/f66fb5c))
+
+
+### Code Refactoring
+
+* **InlineReferenceCard:** Rename component to InlineEntryCard ([faa3ad8](https://github.com/contentful/forma-36/commit/faa3ad8))
+* **ReferenceCard:** Rename ReferenceCard to EntryCard ([42497e1](https://github.com/contentful/forma-36/commit/42497e1))
+
+
+### Features
+
+* Add possibility to override Modal.Header and Modal.Content props ([be7edcd](https://github.com/contentful/forma-36/commit/be7edcd))
+* Removed statically exported constants in Note and Modal components ([b0790e0](https://github.com/contentful/forma-36/commit/b0790e0))
+* Rename extraClassNames to className for all components ([c91a1b1](https://github.com/contentful/forma-36/commit/c91a1b1))
+* **CardActions:** Add CardActions component ([1ac4f97](https://github.com/contentful/forma-36/commit/1ac4f97))
+* **DropdownListItem:** Add href prop ([ea698f9](https://github.com/contentful/forma-36/commit/ea698f9))
+* **ReferenceCard:** Use dropdown for card actions ([6b6717b](https://github.com/contentful/forma-36/commit/6b6717b))
+
+
+### BREAKING CHANGES
+
+* **InlineReferenceCard:** InlineReferenceCard has now been renamed to InlineEntryCard
+* **ReferenceCard:** ReferenceCard has now been renamed to EntryCard
+* **ReferenceCard:** actions are now passed to the ReferenceCard component by passing a DropdownList
+with DropdownListItems to the component via the dropdownListElements prop. The dropdownListItemNodes prop has been renamed to dropdownListElements - this accepts lists, not list items, allowing consumers to build dropdown with multiple lists
+* Removed isNotWrapped property. Use modalHeaderProps instead.
+* Modal.Sizes, Modal.Positions and Note.Type are not longer exported
+
+
+
+
+
 ## [2.10.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@2.10.4...@contentful/forma-36-react-components@2.10.5) (2019-04-02)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components

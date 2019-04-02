@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.1.0](https://github.com/contentful/forma-36/compare/forma-36-website@0.0.65...forma-36-website@0.1.0) (2019-04-02)
+
+
+### Features
+
+* Rename extraClassNames to className for all components ([c91a1b1](https://github.com/contentful/forma-36/commit/c91a1b1))
+
+
+
+
+
 ## [0.0.65](https://github.com/contentful/forma-36/compare/forma-36-website@0.0.64...forma-36-website@0.0.65) (2019-04-02)
 
 **Note:** Version bump only for package forma-36-website
