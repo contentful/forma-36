@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.2.3...@contentful/forma-36-tokens@0.3.0) (2019-04-02)
+
+
+### Features
+
+* **Tokens:** Improve token definitions ([c3faab6](https://github.com/contentful/forma-36/commit/c3faab6))
+
+
+
+
+
 ## [0.2.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.2.2...@contentful/forma-36-tokens@0.2.3) (2019-03-25)
 
 
