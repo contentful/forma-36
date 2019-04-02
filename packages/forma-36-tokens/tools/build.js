@@ -55,14 +55,33 @@ const buildIndexJS = (srcPath, tokens) => {
   );
 };
 
-const buildIndexDTS = (srcPath, tokens) => {
-  const defs = _.mapValues(tokens, () => {
-    return 'string';
+function createInterfaceDefinition(tokens) {
+  const defs = _.mapValues(tokens, value => {
+    return {
+      value: value,
+      type: 'string',
+    };
   });
+
+  const fields = _.map(
+    defs,
+    (def, tokenName) => `
+    /**
+     * ${def.value}
+     */
+    "${tokenName}": "${def.type}"`,
+  ).join(',');
+
+  return `interface F36Tokens {
+    ${fields}
+  }`;
+}
+
+const buildIndexDTS = (srcPath, tokens) => {
   return fse.outputFile(
     srcPath,
     `declare module '@contentful/forma-36-tokens' {
-      interface F36Tokens ${JSON.stringify(defs, null, 2)}
+      ${createInterfaceDefinition(tokens)}
       const tokens: F36Tokens;
       export default tokens;
     }`,
