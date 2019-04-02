@@ -11,8 +11,9 @@ export { TextField } from './components/TextField/TextField';
 export { Textarea } from './components/Textarea/Textarea';
 export { CopyButton } from './components/CopyButton/CopyButton';
 export { Card } from './components/Card/Card/Card';
+export { CardActions } from './components/Card/CardActions/CardActions';
 export { Tooltip } from './components/Tooltip/Tooltip';
-export { ReferenceCard } from './components/Card/ReferenceCard/ReferenceCard';
+export { EntryCard } from './components/Card/EntryCard/EntryCard';
 export { IconButton } from './components/IconButton/IconButton';
 export { CheckboxField } from './components/CheckboxField/CheckboxField';
 export { Checkbox } from './components/Checkbox/Checkbox';
@@ -37,8 +38,8 @@ export { SelectField } from './components/SelectField/SelectField';
 export { Select } from './components/Select/Select/Select';
 export { Option } from './components/Select/Option/Option';
 export {
-  InlineReferenceCard,
-} from './components/Card/InlineReferenceCard/InlineReferenceCard';
+  InlineEntryCard,
+} from './components/Card/InlineEntryCard/InlineEntryCard';
 export { Illustration } from './components/Illustration/Illustration';
 export { Table } from './components/Table/Table/Table';
 export { TableBody } from './components/Table/TableBody/TableBody';

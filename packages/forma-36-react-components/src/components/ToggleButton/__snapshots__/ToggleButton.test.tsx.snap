@@ -2,7 +2,7 @@
 
 exports[`renders the component 1`] = `
 <Card
-  extraClassNames="Toggle"
+  className="Toggle"
   padding="none"
   selected={false}
   testId="cf-ui-toggle-button"
@@ -16,7 +16,7 @@ exports[`renders the component 1`] = `
     type="button"
   >
     <TabFocusTrap
-      extraClassNames="Toggle__button__inner-wrapper"
+      className="Toggle__button__inner-wrapper"
     >
       <span
         className="Toggle__content-wrapper"
@@ -30,7 +30,7 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component active 1`] = `
 <Card
-  extraClassNames="Toggle my-extra-class Toggle--active"
+  className="Toggle my-extra-class Toggle--active"
   padding="none"
   selected={true}
   testId="cf-ui-toggle-button"
@@ -44,7 +44,7 @@ exports[`renders the component active 1`] = `
     type="button"
   >
     <TabFocusTrap
-      extraClassNames="Toggle__button__inner-wrapper"
+      className="Toggle__button__inner-wrapper"
     >
       <span
         className="Toggle__content-wrapper"
@@ -58,7 +58,7 @@ exports[`renders the component active 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <Card
-  extraClassNames="Toggle my-extra-class"
+  className="Toggle my-extra-class"
   padding="none"
   selected={false}
   testId="cf-ui-toggle-button"
@@ -72,7 +72,7 @@ exports[`renders the component with an additional class name 1`] = `
     type="button"
   >
     <TabFocusTrap
-      extraClassNames="Toggle__button__inner-wrapper"
+      className="Toggle__button__inner-wrapper"
     >
       <span
         className="Toggle__content-wrapper"
@@ -86,7 +86,7 @@ exports[`renders the component with an additional class name 1`] = `
 
 exports[`renders the component with icon 1`] = `
 <Card
-  extraClassNames="Toggle my-extra-class"
+  className="Toggle my-extra-class"
   padding="none"
   selected={false}
   testId="cf-ui-toggle-button"
@@ -100,11 +100,11 @@ exports[`renders the component with icon 1`] = `
     type="button"
   >
     <TabFocusTrap
-      extraClassNames="Toggle__button__inner-wrapper"
+      className="Toggle__button__inner-wrapper"
     >
       <Icon
+        className="Toggle__button__icon"
         color="secondary"
-        extraClassNames="Toggle__button__icon"
         icon="Entry"
         size="small"
         testId="cf-ui-icon"

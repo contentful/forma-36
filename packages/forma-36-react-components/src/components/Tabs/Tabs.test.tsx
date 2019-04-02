@@ -24,11 +24,11 @@ it('renders the component', () => {
 
 it('renders the component with role=navigation and an additional class name', () => {
   const output = mount(
-    <Tabs role="navigation" extraClassNames="my-extra-class">
+    <Tabs role="navigation" className="my-extra-class">
       <Tab href="/first-link" id="first">
         First
       </Tab>
-      <Tab href="/second-link" extraClassNames="super-tab" id="second">
+      <Tab href="/second-link" className="super-tab" id="second">
         Second
       </Tab>
       <Tab href="/third-link" id="third">

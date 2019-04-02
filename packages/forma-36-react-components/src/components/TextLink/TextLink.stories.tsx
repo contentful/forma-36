@@ -29,7 +29,7 @@ storiesOf('Components|TextLink', module)
           'primary',
         )}
         disabled={boolean('disabled', false)}
-        extraClassNames={text('extraClassNames', '')}
+        className={text('className', '')}
         icon={select('icon', ['', ...Object.keys(iconName)], undefined)}
       >
         {text('children', 'Text Link Label')}

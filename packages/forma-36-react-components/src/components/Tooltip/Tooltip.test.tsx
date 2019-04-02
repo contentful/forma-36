@@ -15,7 +15,7 @@ it('renders the component', () => {
 
 it('renders the component with an additional class name', () => {
   const output = shallow(
-    <Tooltip content="Tooltip content" extraClassNames="extra-class-name">
+    <Tooltip content="Tooltip content" className="extra-class-name">
       <span>hi</span>
     </Tooltip>,
   );

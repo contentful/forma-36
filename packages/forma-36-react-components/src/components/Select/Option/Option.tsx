@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
 
-export interface OptionProps {
+export type OptionProps = {
   value: string;
   children: React.ReactNode;
-}
+  testId?: string;
+} & typeof defaultProps;
+
+const defaultProps = {
+  testId: 'cf-ui-select-option',
+};
 
 export class Option extends Component<OptionProps> {
+  static defaultProps = defaultProps;
+
   render() {
-    const { value, children, ...otherProps } = this.props;
+    const { value, children, testId, ...otherProps } = this.props;
 
     return (
-      <option value={value} {...otherProps}>
+      <option value={value} data-test-id={testId} {...otherProps}>
         {children}
       </option>
     );

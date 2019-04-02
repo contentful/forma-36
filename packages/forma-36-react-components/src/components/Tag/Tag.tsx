@@ -13,9 +13,9 @@ export type TagType =
 
 export type TagProps = {
   tagType?: TagType;
-  testId?: string;
   style?: React.CSSProperties;
-  extraClassNames?: string;
+  className?: string;
+  testId?: string;
   children: React.ReactNode;
 } & typeof defaultProps;
 
@@ -28,15 +28,9 @@ export class Tag extends Component<TagProps> {
   static defaultProps = defaultProps;
 
   render() {
-    const {
-      extraClassNames,
-      children,
-      tagType,
-      testId,
-      ...otherProps
-    } = this.props;
+    const { className, children, tagType, testId, ...otherProps } = this.props;
 
-    const classNames = cn(styles.Tag, extraClassNames, {
+    const classNames = cn(styles.Tag, className, {
       [styles[`Tag--${tagType}`]]: tagType,
     });
 

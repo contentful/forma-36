@@ -1,15 +1,27 @@
 import React, { Component } from 'react';
 
-export interface TableBodyProps {
-  extraClassNames?: string;
+export type TableBodyProps = {
+  className?: string;
+  style?: React.CSSProperties;
+  testId?: string;
   children: React.ReactNode;
-}
+} & typeof defaultProps;
+
+const defaultProps = {
+  testId: 'cf-ui-table-body',
+};
 
 export class TableBody extends Component<TableBodyProps> {
-  render() {
-    const { extraClassNames, children } = this.props;
+  static defaultProps = defaultProps;
 
-    return <tbody className={extraClassNames}>{children}</tbody>;
+  render() {
+    const { className, children, testId, ...otherProps } = this.props;
+
+    return (
+      <tbody data-test-id={testId} className={className} {...otherProps}>
+        {children}
+      </tbody>
+    );
   }
 }
 

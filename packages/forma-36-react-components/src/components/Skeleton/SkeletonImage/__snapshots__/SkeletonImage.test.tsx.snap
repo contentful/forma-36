@@ -4,6 +4,7 @@ exports[`renders the component 1`] = `
 <svg
   aria-label="Loading component..."
   className="SkeletonContainer"
+  data-test-id="cf-ui-skeleton-form"
   height="100%"
   preserveAspectRatio="xMidYMid meet"
   role="img"
@@ -87,6 +88,7 @@ exports[`renders the component with a custom height 1`] = `
 <svg
   aria-label="Loading component..."
   className="SkeletonContainer"
+  data-test-id="cf-ui-skeleton-form"
   height="100%"
   preserveAspectRatio="xMidYMid meet"
   role="img"
@@ -170,6 +172,7 @@ exports[`renders the component with a custom width 1`] = `
 <svg
   aria-label="Loading component..."
   className="SkeletonContainer"
+  data-test-id="cf-ui-skeleton-form"
   height="100%"
   preserveAspectRatio="xMidYMid meet"
   role="img"
@@ -253,6 +256,7 @@ exports[`renders the component with a radius x 1`] = `
 <svg
   aria-label="Loading component..."
   className="SkeletonContainer"
+  data-test-id="cf-ui-skeleton-form"
   height="100%"
   preserveAspectRatio="xMidYMid meet"
   role="img"
@@ -336,6 +340,7 @@ exports[`renders the component with a radius y 1`] = `
 <svg
   aria-label="Loading component..."
   className="SkeletonContainer"
+  data-test-id="cf-ui-skeleton-form"
   height="100%"
   preserveAspectRatio="xMidYMid meet"
   role="img"
@@ -419,6 +424,7 @@ exports[`renders the component with an offset left 1`] = `
 <svg
   aria-label="Loading component..."
   className="SkeletonContainer"
+  data-test-id="cf-ui-skeleton-form"
   height="100%"
   preserveAspectRatio="xMidYMid meet"
   role="img"
@@ -503,6 +509,7 @@ exports[`renders the component with an offset top 1`] = `
 <svg
   aria-label="Loading component..."
   className="SkeletonContainer"
+  data-test-id="cf-ui-skeleton-form"
   height="100%"
   preserveAspectRatio="xMidYMid meet"
   role="img"

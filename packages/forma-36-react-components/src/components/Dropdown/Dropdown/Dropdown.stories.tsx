@@ -37,7 +37,7 @@ function DefaultStory() {
           toggle
         </Button>
       }
-      extraClassNames={text('extraClassNames', '')}
+      className={text('className', '')}
     >
       <DropdownList>
         <DropdownListItem isTitle>Entry Title</DropdownListItem>
@@ -54,7 +54,7 @@ function DefaultStory() {
             'right',
           )}
           submenuToggleLabel="Create and embed existing entry"
-          extraClassNames={text('extraClassNames', '')}
+          className={text('className', '')}
         >
           <DropdownList>
             <DropdownListItem onClick={action('submenu click')}>
@@ -101,7 +101,7 @@ function ScrollableStory() {
           toggle
         </Button>
       }
-      extraClassNames={text('extraClassNames', '')}
+      className={text('className', '')}
     >
       <DropdownList maxHeight={200}>
         {[...new Array(25)].map((entry, index) => (

@@ -10,7 +10,7 @@ it('renders the component', () => {
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(<{{pascalCase name}} extraClassNames="my-extra-class">{{pascalCase name}}</{{pascalCase name}}>);
+  const output = shallow(<{{pascalCase name}} className="my-extra-class">{{pascalCase name}}</{{pascalCase name}}>);
 
   expect(output).toMatchSnapshot();
 });

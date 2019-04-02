@@ -11,7 +11,7 @@ it('renders the component', () => {
 
 it('renders the component with an additional class name', () => {
   const output = mount(
-    <Paragraph extraClassNames="my-extra-class">Paragraph</Paragraph>,
+    <Paragraph className="my-extra-class">Paragraph</Paragraph>,
   );
 
   expect(output).toMatchSnapshot();

@@ -13,7 +13,7 @@ it('renders the component', () => {
 
 it('renders the component with an additional class name', () => {
   const output = shallow(
-    <EditorToolbarDivider extraClassNames="my-extra-class">
+    <EditorToolbarDivider className="my-extra-class">
       EditorToolbarDivider
     </EditorToolbarDivider>,
   );

@@ -17,7 +17,7 @@ export type TabProps = {
   disabled?: boolean;
   tabIndex?: number;
   style?: CSSProperties;
-  extraClassNames?: string;
+  className?: string;
   testId?: string;
   children: React.ReactNode;
 } & typeof defaultProps;
@@ -49,7 +49,7 @@ export class Tab extends Component<TabProps> {
     const {
       id,
       disabled,
-      extraClassNames,
+      className,
       href,
       style,
       testId,
@@ -63,7 +63,7 @@ export class Tab extends Component<TabProps> {
         {
           [styles['Tab__selected']]: selected,
         },
-        extraClassNames,
+        className,
       ),
       onClick: this.onClick,
       onKeyPress: this.onKeyPress,

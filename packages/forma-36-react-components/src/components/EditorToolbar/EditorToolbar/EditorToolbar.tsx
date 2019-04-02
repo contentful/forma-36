@@ -3,7 +3,7 @@ import cn from 'classnames';
 import styles from './EditorToolbar.css';
 
 export type EditorToolbarProps = {
-  extraClassNames?: string;
+  className?: string;
   children: React.ReactNode;
   testId?: string;
   style?: React.CSSProperties;
@@ -16,9 +16,9 @@ const defaultProps = {
 export class EditorToolbar extends Component<EditorToolbarProps> {
   static defaultProps = defaultProps;
   render() {
-    const { extraClassNames, children, testId, ...otherProps } = this.props;
+    const { className, children, testId, ...otherProps } = this.props;
 
-    const classNames = cn(styles['EditorToolbar'], extraClassNames);
+    const classNames = cn(styles['EditorToolbar'], className);
 
     return (
       <div className={classNames} {...otherProps} data-test-id={testId}>

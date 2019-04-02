@@ -2,7 +2,7 @@
 @import 'settings/typography';
 @import 'settings/transitions';
 
-.ReferenceCard {
+.EntryCard {
   display: block;
   position: relative;
   box-sizing: border-box;
@@ -13,15 +13,15 @@
   height: calc(1rem * (135 / var(--font-base-default)));
 }
 
-.ReferenceCard--is-loading {
+.EntryCard--is-loading {
   overflow: hidden;
 }
 
-.ReferenceCard__meta {
+.EntryCard__meta {
   display: flex;
 }
 
-.ReferenceCard__content-type {
+.EntryCard__content-type {
   flex: 1 1 0;
   padding-right: calc(1rem * (20 / var(--font-base-default)));
   margin-bottom: calc(1rem * (4 / var(--font-base-default)));
@@ -30,22 +30,22 @@
   word-break: break-word;
 }
 
-.ReferenceCard__actions {
+.EntryCard__actions {
   margin-left: calc(1rem * (8 / var(--font-base-default)));
 }
 
-.ReferenceCard__content {
+.EntryCard__content {
   display: flex;
 }
 
-.ReferenceCard__body {
+.EntryCard__body {
   flex: 1 1 0;
   white-space: nowrap;
   overflow: hidden;
   width: 100%;
 }
 
-.ReferenceCard__title {
+.EntryCard__title {
   margin: 0;
   font-size: var(--font-size-l);
   line-height: var(--line-height-default);
@@ -54,7 +54,7 @@
   overflow: hidden;
 }
 
-.ReferenceCard__description {
+.EntryCard__description {
   margin: calc(1rem * (4 / var(--font-base-default))) 0 0;
   line-height: var(--line-height-default);
   word-break: break-word;
@@ -62,7 +62,7 @@
   font-size: var(--font-size-l);
 }
 
-.ReferenceCard__thumbnail {
+.EntryCard__thumbnail {
   height: 70px;
   width: 70px;
   background-color: var(--color-element-lightest);
@@ -70,6 +70,10 @@
   padding: 0;
 }
 
-.ReferenceCard__thumbnail img {
+.EntryCard__thumbnail img {
   display: block;
+}
+
+.EntryCard__actions {
+  margin-left: calc(1rem * (10 / var(--font-base-default)));
 }

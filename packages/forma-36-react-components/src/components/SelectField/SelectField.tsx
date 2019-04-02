@@ -15,19 +15,19 @@ import styles from './SelectField.css';
 export type SelectFieldProps = {
   name: string;
   id: string;
+  labelText: string;
   children: React.ReactNode;
   value?: string;
   validationMessage?: string;
-  testId?: string;
-  extraClassNames?: string;
   formLabelProps?: Partial<FormLabelProps>;
   textLinkProps?: Partial<TextLinkProps>;
   selectProps?: Partial<SelectProps>;
-  labelText?: string;
   helpText?: string;
   required?: boolean;
   onChange?: ChangeEventHandler;
   onBlur?: FocusEventHandler;
+  testId?: string;
+  className?: string;
 } & typeof defaultProps;
 
 export interface SelectFieldState {
@@ -65,7 +65,7 @@ export class SelectField extends Component<SelectFieldProps, SelectFieldState> {
   render() {
     const {
       validationMessage,
-      extraClassNames,
+      className,
       children,
       selectProps,
       testId,
@@ -82,7 +82,7 @@ export class SelectField extends Component<SelectFieldProps, SelectFieldState> {
       ...otherProps
     } = this.props;
 
-    const classNames = cn(styles['SelectField'], extraClassNames);
+    const classNames = cn(styles['SelectField'], className);
 
     return (
       <div className={classNames} {...otherProps} data-test-id={testId}>
@@ -94,7 +94,7 @@ export class SelectField extends Component<SelectFieldProps, SelectFieldState> {
             <TextLink
               {...{
                 ...textLinkProps,
-                extraClassNames: styles['SelectField__label-link'],
+                className: styles['SelectField__label-link'],
               }}
             >
               {textLinkProps.text}
@@ -117,7 +117,7 @@ export class SelectField extends Component<SelectFieldProps, SelectFieldState> {
         </Select>
         {validationMessage && (
           <ValidationMessage
-            extraClassNames={styles['SelectField__validation-message']}
+            className={styles['SelectField__validation-message']}
           >
             {validationMessage}
           </ValidationMessage>
@@ -125,7 +125,7 @@ export class SelectField extends Component<SelectFieldProps, SelectFieldState> {
         {helpText && (
           <div className={styles['SelectField__hints']}>
             {helpText && (
-              <HelpText extraClassNames={styles['SelectField__help-text']}>
+              <HelpText className={styles['SelectField__help-text']}>
                 {helpText}
               </HelpText>
             )}

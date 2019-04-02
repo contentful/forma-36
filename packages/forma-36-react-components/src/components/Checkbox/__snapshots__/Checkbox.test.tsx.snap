@@ -12,8 +12,8 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <ControlledInput
+  className="my-extra-class"
   disabled={false}
-  extraClassNames="my-extra-class"
   labelText="checkbox"
   required={false}
   testId="ctf-ui-checkbox"

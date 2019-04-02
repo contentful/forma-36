@@ -4,6 +4,7 @@ exports[`renders 3 lines of skeleton text 1`] = `
 <svg
   aria-label="Loading component..."
   className="SkeletonContainer"
+  data-test-id="cf-ui-skeleton-form"
   height="100%"
   preserveAspectRatio="xMidYMid meet"
   role="img"
@@ -87,6 +88,7 @@ exports[`renders the component 1`] = `
 <svg
   aria-label="Loading component..."
   className="SkeletonContainer"
+  data-test-id="cf-ui-skeleton-form"
   height="100%"
   preserveAspectRatio="xMidYMid meet"
   role="img"

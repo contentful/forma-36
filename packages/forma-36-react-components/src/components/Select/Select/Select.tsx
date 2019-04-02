@@ -5,7 +5,6 @@ import styles from './Select.css';
 
 export type SelectProps = {
   required?: boolean;
-  children: React.ReactNode;
   name?: string;
   id?: string;
   hasError?: boolean;
@@ -13,10 +12,11 @@ export type SelectProps = {
   isDisabled?: boolean;
   onChange?: ChangeEventHandler;
   onBlur?: FocusEventHandler;
-  testId?: string;
   onFocus?: FocusEventHandler;
-  extraClassNames?: string;
   width?: 'auto' | 'small' | 'medium' | 'large' | 'full';
+  testId?: string;
+  className?: string;
+  children: React.ReactNode;
 } & typeof defaultProps;
 
 export interface SelectState {
@@ -53,7 +53,7 @@ export class Select extends Component<SelectProps, SelectState> {
       required,
       children,
       width,
-      extraClassNames,
+      className,
       testId,
       onChange,
       onBlur,
@@ -72,7 +72,7 @@ export class Select extends Component<SelectProps, SelectState> {
     const wrapperClassNames = cn(
       styles['Select__wrapper'],
       styles[widthClass],
-      extraClassNames,
+      className,
     );
 
     return (
@@ -103,7 +103,7 @@ export class Select extends Component<SelectProps, SelectState> {
           {children}
         </select>
         <Icon
-          extraClassNames={styles['Select__icon']}
+          className={styles['Select__icon']}
           icon="ArrowDown"
           color="muted"
         />

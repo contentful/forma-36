@@ -3,16 +3,17 @@ import { storiesOf } from '@storybook/react';
 import { text, select, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
-import ReferenceCard from './ReferenceCard';
-import IconButton from '../../IconButton';
+import EntryCard from './EntryCard';
+import DropdownList from '../../Dropdown/DropdownList';
+import DropdownListItem from '../../Dropdown/DropdownListItem';
 
-storiesOf('Components|Card/ReferenceCard', module)
+storiesOf('Components|Card/EntryCard', module)
   .addParameters({
-    propTypes: ReferenceCard['__docgenInfo'],
+    propTypes: EntryCard['__docgenInfo'],
   })
   .add('default', () => (
     <div>
-      <ReferenceCard
+      <EntryCard
         title={text('title', 'Closer')}
         description={text(
           'description',
@@ -30,30 +31,40 @@ storiesOf('Components|Card/ReferenceCard', module)
         )}
         contentType={text('contentType', 'Album')}
         onClick={!boolean('loading', false) ? action('onClick') : undefined}
-        actionElements={
-          <div>
-            <IconButton
-              buttonType="muted"
-              iconProps={{ icon: 'Edit' }}
-              label="Edit entry"
-              key="0"
-            />
-            <IconButton
-              buttonType="muted"
-              iconProps={{ icon: 'Close' }}
-              label="Remove reference"
-              key="1"
-            />
-          </div>
+        dropdownListElements={
+          <React.Fragment>
+            <DropdownList>
+              <DropdownListItem isTitle>Actions</DropdownListItem>
+              <DropdownListItem href="#">Edit (with href)</DropdownListItem>
+              <DropdownListItem onClick={action('Download onClick')}>
+                Download
+              </DropdownListItem>
+              <DropdownListItem onClick={action('Remove onClick')}>
+                Remove
+              </DropdownListItem>
+            </DropdownList>
+            <DropdownList>
+              <DropdownListItem isTitle>Actions</DropdownListItem>
+              <DropdownListItem onClick={action('Edit onClick')}>
+                Edit
+              </DropdownListItem>
+              <DropdownListItem onClick={action('Download onClick')}>
+                Download
+              </DropdownListItem>
+              <DropdownListItem onClick={action('Remove onClick')}>
+                Remove
+              </DropdownListItem>
+            </DropdownList>
+          </React.Fragment>
         }
-        extraClassNames={text('extraClassNames', '')}
+        className={text('className', '')}
         loading={boolean('loading', false)}
       />
     </div>
   ))
   .add('with thumbnailElement', () => (
     <div>
-      <ReferenceCard
+      <EntryCard
         title={text('title', 'Closer')}
         description={text(
           'description',
@@ -77,24 +88,21 @@ storiesOf('Components|Card/ReferenceCard', module)
           />
         }
         onClick={!boolean('loading', false) ? action('onClick') : undefined}
-        actionElements={
-          <div>
-            <IconButton
-              buttonType="muted"
-              iconProps={{ icon: 'Edit' }}
-              label="Edit entry"
-              key="0"
-            />
-            <IconButton
-              buttonType="muted"
-              iconProps={{ icon: 'Close' }}
-              label="Remove reference"
-              key="1"
-            />
-          </div>
+        dropdownListElements={
+          <DropdownList>
+            <DropdownListItem onClick={action('Edit onClick')}>
+              Edit
+            </DropdownListItem>
+            <DropdownListItem onClick={action('Download onClick')}>
+              Download
+            </DropdownListItem>
+            <DropdownListItem onClick={action('Remove onClick')}>
+              Remove
+            </DropdownListItem>
+          </DropdownList>
         }
         loading={boolean('loading', false)}
-        extraClassNames={text('extraClassNames', '')}
+        className={text('className', '')}
       />
     </div>
   ));

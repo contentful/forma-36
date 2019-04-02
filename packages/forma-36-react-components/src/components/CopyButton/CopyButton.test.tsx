@@ -10,7 +10,7 @@ it('renders the component', () => {
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(<CopyButton extraClassNames="my-extra-class" />);
+  const output = shallow(<CopyButton className="my-extra-class" />);
 
   expect(output).toMatchSnapshot();
 });

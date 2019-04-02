@@ -47,6 +47,27 @@ it('renders the component without title', () => {
   expect(output).toMatchSnapshot();
 });
 
+it('can override header and content properties', () => {
+  const output = shallow(
+    <Modal
+      title="Hello!"
+      isShown
+      onClose={() => {}}
+      modalHeaderProps={{
+        isNotWrapped: true,
+        className: 'additional-header-class',
+      }}
+      modalContentProps={{
+        className: 'additional-content-class',
+      }}
+    >
+      Content
+    </Modal>,
+  );
+
+  expect(output).toMatchSnapshot();
+});
+
 it('can be controlled', () => {
   const output = shallow(
     <Modal isShown onClose={() => {}}>

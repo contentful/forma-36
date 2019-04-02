@@ -7,7 +7,7 @@ import { TypographyContext } from '../Typography/Typography';
 export type HeadingProps = {
   element: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
   style?: React.CSSProperties;
-  extraClassNames?: string;
+  className?: string;
   children?: React.ReactNode;
   testId?: string;
 } & typeof defaultProps;
@@ -21,15 +21,9 @@ export class Heading extends Component<HeadingProps> {
   static defaultProps = defaultProps;
 
   render() {
-    const {
-      extraClassNames,
-      children,
-      testId,
-      element,
-      ...otherProps
-    } = this.props;
+    const { className, children, testId, element, ...otherProps } = this.props;
 
-    const classNames = cn(styles['Heading'], extraClassNames);
+    const classNames = cn(styles['Heading'], className);
 
     const Element = element;
 

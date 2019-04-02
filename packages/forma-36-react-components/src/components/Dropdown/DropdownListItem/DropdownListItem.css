@@ -15,7 +15,7 @@
   margin: 0;
 }
 
-.DropdownListItem__toggle-button:hover {
+.DropdownListItem__button:hover {
   background: var(--color-element-lightest);
 }
 
@@ -23,7 +23,7 @@
   padding: 0px;
 }
 
-.DropdownListItem__toggle-button {
+.DropdownListItem__button {
   composes: focus-outline--default from './../../../styles/settings/a11y.css';
   border: none;
   background: transparent;
@@ -34,9 +34,11 @@
   padding: 0;
   cursor: pointer;
   color: var(--color-text-mid);
+  display: block;
+  text-decoration: none;
 }
 
-.DropdownListItem__toggle-button__inner-wrapper {
+.DropdownListItem__button__inner-wrapper {
   display: block;
   padding: calc(1rem * (7 / var(--font-base-default)))
     calc(1rem * (20 / var(--font-base-default)));
@@ -59,7 +61,7 @@
   background: var(--color-element-light);
 }
 
-.DropdownListItem--active .DropdownListItem__toggle-button:hover {
+.DropdownListItem--active .DropdownListItem__button:hover {
   background: var(--color-element-light);
   cursor: default;
 }

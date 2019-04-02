@@ -16,13 +16,15 @@ export type TableCellProps = {
   align?: 'center' | 'left' | 'right';
   sorting?: TableCellSorting;
   style?: React.CSSProperties;
-  extraClassNames?: string;
+  className?: string;
+  testId?: string;
   children?: React.ReactNode;
 } & typeof defaultProps;
 
 const defaultProps = {
   align: 'left',
   sorting: false as TableCellSorting,
+  testId: 'cf-ui-table-cell',
 };
 
 export class TableCell extends Component<TableCellProps> {
@@ -30,10 +32,11 @@ export class TableCell extends Component<TableCellProps> {
 
   render() {
     const {
-      extraClassNames,
+      className,
       children,
       sorting,
       align,
+      testId,
       ...otherProps
     } = this.props;
 
@@ -44,7 +47,7 @@ export class TableCell extends Component<TableCellProps> {
           const Element = element as any;
           return (
             <Element
-              className={cn(styles['TableCell'], extraClassNames, {
+              className={cn(styles['TableCell'], className, {
                 [styles['TableCell--head']]: context === 'head',
                 [styles['TableCell--head__sorting']]: sorting,
               })}
@@ -52,6 +55,7 @@ export class TableCell extends Component<TableCellProps> {
                 top: offsetTop,
               }}
               align={align}
+              data-test-id={testId}
               {...otherProps}
             >
               {children}

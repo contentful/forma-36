@@ -20,20 +20,20 @@ export type IllustrationType = keyof typeof illustrationName;
 
 export type IllustrationProps = {
   illustration: IllustrationType;
-  extraClassNames?: string;
+  className?: string;
   testId?: string;
   style?: React.CSSProperties;
 } & typeof defaultProps;
 
 const defaultProps = {
-  testId: 'cf-ui-icon',
+  testId: 'cf-ui-illustration',
 };
 
 export class Illustration extends Component<IllustrationProps> {
   static defaultProps = defaultProps;
 
   render() {
-    const { extraClassNames, testId, illustration, ...otherProps } = this.props;
+    const { className, testId, illustration, ...otherProps } = this.props;
     const illustrationComponents = {
       Archive,
       Audio,
@@ -48,7 +48,7 @@ export class Illustration extends Component<IllustrationProps> {
       Video,
     };
 
-    const classNames = cn(styles['Illustration'], extraClassNames);
+    const classNames = cn(styles['Illustration'], className);
 
     const Element = illustrationComponents[illustration];
 

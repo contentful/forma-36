@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
 import Modal, { ModalSizeType } from '../Modal/Modal';
+import { ModalHeaderProps } from '../ModalHeader/ModalHeader';
+import { ModalContentProps } from '../ModalContent/ModalContent';
+import { ModalControlsProps } from '../ModalControls/ModalControls';
 import Button from '../../Button';
 
 export type ModalConfirmProps = {
@@ -23,11 +26,11 @@ export type ModalConfirmProps = {
   /**
    * Label of the confirm button
    */
-  confirmLabel?: string;
+  confirmLabel?: string | false;
   /**
    * Label of the cancel button
    */
-  cancelLabel?: string;
+  cancelLabel?: string | false;
   /**
    * The intent of the ModalConfirm. Used for the Button.
    */
@@ -52,10 +55,27 @@ export type ModalConfirmProps = {
    * When true, the confirm button is set to loading.
    */
   isConfirmLoading?: boolean;
+
   /**
-      To disable word-wrapping of the modal title
-    */
-  isNotWrapped?: boolean;
+   * Are modals higher than viewport allowed
+   */
+  allowHeightOverflow?: boolean;
+
+  /**
+   * Optional props to override ModalHeader behaviour
+   */
+  modalHeaderProps?: Partial<ModalHeaderProps>;
+
+  /**
+   * Optional props to override ModalContent behaviour
+   */
+  modalContentProps?: Partial<ModalContentProps>;
+
+  /**
+   * Optional props to override ModalControl behaviour
+   */
+  modalControlsProps?: Partial<ModalControlsProps>;
+
   testId?: string;
   confirmTestId?: string;
   cancelTestId?: string;
@@ -75,6 +95,7 @@ const defaultProps = {
   isConfirmDisabled: false,
   isConfirmLoading: false,
   size: 'medium',
+  allowHeightOverflow: false,
 };
 
 export class ModalConfirm extends Component<ModalConfirmProps> {
@@ -94,11 +115,11 @@ export class ModalConfirm extends Component<ModalConfirmProps> {
       intent,
       shouldCloseOnOverlayClick,
       shouldCloseOnEscapePress,
+      allowHeightOverflow,
       isConfirmDisabled,
       isConfirmLoading,
       confirmTestId,
       cancelTestId,
-      isNotWrapped,
     } = this.props;
 
     return (
@@ -109,28 +130,35 @@ export class ModalConfirm extends Component<ModalConfirmProps> {
         size={size}
         shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
         shouldCloseOnEscapePress={shouldCloseOnEscapePress}
+        allowHeightOverflow={allowHeightOverflow}
       >
         {() => (
           <div>
-            <Modal.Header title={title} isNotWrapped={isNotWrapped} />
-            <Modal.Content>{children}</Modal.Content>
-            <Modal.Controls>
-              <Button
-                testId={confirmTestId}
-                disabled={isConfirmDisabled}
-                loading={isConfirmLoading}
-                buttonType={intent}
-                onClick={() => onConfirm()}
-              >
-                {confirmLabel}
-              </Button>
-              <Button
-                testId={cancelTestId}
-                buttonType="muted"
-                onClick={() => onCancel()}
-              >
-                {cancelLabel}
-              </Button>
+            <Modal.Header title={title} {...this.props.modalHeaderProps} />
+            <Modal.Content {...this.props.modalContentProps}>
+              {children}
+            </Modal.Content>
+            <Modal.Controls {...this.props.modalControlsProps}>
+              {confirmLabel && (
+                <Button
+                  testId={confirmTestId}
+                  disabled={isConfirmDisabled}
+                  loading={isConfirmLoading}
+                  buttonType={intent}
+                  onClick={() => onConfirm()}
+                >
+                  {confirmLabel}
+                </Button>
+              )}
+              {cancelLabel && (
+                <Button
+                  testId={cancelTestId}
+                  buttonType="muted"
+                  onClick={() => onCancel()}
+                >
+                  {cancelLabel}
+                </Button>
+              )}
             </Modal.Controls>
           </div>
         )}

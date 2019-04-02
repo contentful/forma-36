@@ -11,8 +11,8 @@ exports[`renders the component 1`] = `
   >
     <IconButton
       buttonType="secondary"
+      className="EditorToolbarButton"
       disabled={false}
-      extraClassNames="EditorToolbarButton"
       iconProps={
         Object {
           "icon": "HeadingOne",
@@ -38,8 +38,8 @@ exports[`renders the component as active 1`] = `
   >
     <IconButton
       buttonType="secondary"
+      className="EditorToolbarButton EditorToolbarButton--is-active"
       disabled={false}
-      extraClassNames="EditorToolbarButton EditorToolbarButton--is-active"
       iconProps={
         Object {
           "icon": "HeadingOne",
@@ -64,8 +64,8 @@ exports[`renders the component as disabled 1`] = `
   >
     <IconButton
       buttonType="secondary"
+      className="EditorToolbarButton"
       disabled={true}
-      extraClassNames="EditorToolbarButton"
       iconProps={
         Object {
           "icon": "HeadingOne",
@@ -92,8 +92,8 @@ exports[`renders the component with a tooltip 1`] = `
   >
     <IconButton
       buttonType="secondary"
+      className="EditorToolbarButton"
       disabled={false}
-      extraClassNames="EditorToolbarButton"
       iconProps={
         Object {
           "icon": "HeadingOne",
@@ -118,8 +118,8 @@ exports[`renders the component with an additional class name 1`] = `
   >
     <IconButton
       buttonType="secondary"
+      className="EditorToolbarButton my-extra-class"
       disabled={false}
-      extraClassNames="EditorToolbarButton my-extra-class"
       iconProps={
         Object {
           "icon": "HeadingOne",
@@ -145,8 +145,8 @@ exports[`renders with a dropdown indicator 1`] = `
   >
     <IconButton
       buttonType="secondary"
+      className="EditorToolbarButton"
       disabled={false}
-      extraClassNames="EditorToolbarButton"
       iconProps={
         Object {
           "icon": "HeadingOne",

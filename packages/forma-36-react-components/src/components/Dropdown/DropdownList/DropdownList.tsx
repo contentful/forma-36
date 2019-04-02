@@ -4,7 +4,7 @@ import styles from './DropdownList.css';
 
 export type DropdownListProps = {
   children: React.ReactNode;
-  extraClassNames?: string;
+  className?: string;
   testId?: string;
   border?: 'top' | 'bottom';
   maxHeight?: number;
@@ -19,7 +19,7 @@ export class DropdownList extends Component<DropdownListProps> {
 
   render() {
     const {
-      extraClassNames,
+      className,
       border,
       maxHeight,
       testId,
@@ -27,7 +27,7 @@ export class DropdownList extends Component<DropdownListProps> {
       ...otherProps
     } = this.props;
 
-    const classNames = cn(styles['DropdownList'], extraClassNames, {
+    const classNames = cn(styles['DropdownList'], className, {
       [styles[`DropdownList--border-${border}`]]: border,
     });
 

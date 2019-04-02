@@ -10,9 +10,7 @@ it('renders the component', () => {
 });
 
 it('renders the component with an additional class name', () => {
-  const output = mount(
-    <Heading extraClassNames="my-extra-class">Heading</Heading>,
-  );
+  const output = mount(<Heading className="my-extra-class">Heading</Heading>);
 
   expect(output).toMatchSnapshot();
 });

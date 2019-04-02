@@ -24,16 +24,6 @@
     var(--color-element-mid);
 }
 
-.AssetCard__header__dropdown-button {
-  border: none;
-  background: transparent;
-  display: flex;
-  padding: 0px;
-  cursor: pointer;
+.AssetCard__actions {
   margin-left: calc(1rem * (10 / var(--font-base-default)));
-}
-
-.AssetCard__header__dropdown-button svg {
-  /* This needs to be set for IE11 to show the icon */
-  width: 18px;
 }

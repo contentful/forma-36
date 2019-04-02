@@ -1,27 +1,16 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
 import ReactModal from 'react-modal';
-import ModalHeader from '../ModalHeader';
-import ModalContent from '../ModalContent';
-import ModalControls from '../ModalControls';
+import ModalHeader, { ModalHeaderProps } from '../ModalHeader/ModalHeader';
+import ModalContent, { ModalContentProps } from '../ModalContent/ModalContent';
+import ModalControls from '../ModalControls/ModalControls';
 
 const styles = require('./Modal.css');
 
-const ModalPositions = {
-  CENTER: 'center' as 'center',
-  TOP: 'top' as 'top',
-};
-
-export const ModalSizes = {
-  MEDIUM: 'medium' as 'medium',
-  SMALL: 'small' as 'small',
-  LARGE: 'large' as 'large',
-};
-
 const ModalSizesMapper = {
-  [ModalSizes.MEDIUM]: '520px',
-  [ModalSizes.SMALL]: '400px',
-  [ModalSizes.LARGE]: '700px',
+  medium: '520px',
+  small: '400px',
+  large: '700px',
 };
 
 export type ModalSizeType = 'small' | 'medium' | 'large' | string | number;
@@ -66,16 +55,21 @@ export type ModalProps = {
     */
   size?: ModalSizeType;
   /**
-   * Are modals highter that viewerport allowed
+   * Are modals higher than viewport allowed
    */
   allowHeightOverflow?: boolean;
 
   /**
-   * To disable word-wrapping of the modal title
+   * Optional props to override ModalHeader behaviour
    */
-  isNotWrapped?: boolean;
+  modalHeaderProps?: Partial<ModalHeaderProps>;
 
-  extraClassNames?: string;
+  /**
+   * Optional props to override ModalContent behaviour
+   */
+  modalContentProps?: Partial<ModalContentProps>;
+
+  className?: string;
   testId?: string;
 
   // eslint-disable-next-line
@@ -93,10 +87,6 @@ const defaultProps = {
 };
 
 export class Modal extends Component<ModalProps> {
-  static Positions = ModalPositions;
-
-  static Sizes = ModalSizes;
-
   static Header = ModalHeader;
 
   static Content = ModalContent;
@@ -112,10 +102,12 @@ export class Modal extends Component<ModalProps> {
           <ModalHeader
             title={this.props.title}
             onClose={this.props.onClose}
-            isNotWrapped={this.props.isNotWrapped}
+            {...this.props.modalHeaderProps}
           />
         )}
-        <ModalContent>{this.props.children}</ModalContent>
+        <ModalContent {...this.props.modalContentProps}>
+          {this.props.children}
+        </ModalContent>
       </React.Fragment>
     );
   }
@@ -137,17 +129,14 @@ export class Modal extends Component<ModalProps> {
         }}
         style={{
           content: {
-            top:
-              this.props.position === ModalPositions.CENTER
-                ? 0
-                : this.props.topOffset,
+            top: this.props.position === 'center' ? 0 : this.props.topOffset,
           },
         }}
         overlayClassName={{
           base: cn({
             [styles.Modal__overlay]: true,
             [styles['Modal__overlay--centered']]:
-              this.props.position === ModalPositions.CENTER,
+              this.props.position === 'center',
           }),
           afterOpen: styles['Modal__overlay--after-open'],
           beforeClose: styles['Modal__overlay--before-close'],
@@ -161,7 +150,7 @@ export class Modal extends Component<ModalProps> {
           style={{
             width: ModalSizesMapper[this.props.size] || this.props.size,
           }}
-          className={cn(styles.Modal, this.props.extraClassNames, {
+          className={cn(styles.Modal, this.props.className, {
             [styles['Modal--overflow']]: this.props.allowHeightOverflow,
           })}
         >

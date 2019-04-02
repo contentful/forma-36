@@ -14,7 +14,7 @@ it('renders the component with an additional class name', () => {
     <EditorToolbarButton
       icon="HeadingOne"
       label="H1"
-      extraClassNames="my-extra-class"
+      className="my-extra-class"
     />,
   );
 

@@ -16,14 +16,14 @@ import styles from './TextField.css';
 export type TextFieldProps = {
   name: string;
   id: string;
+  labelText: string;
   value?: string;
   validationMessage?: string;
   testId?: string;
-  extraClassNames?: string;
+  className?: string;
   formLabelProps?: Partial<FormLabelProps>;
   textLinkProps?: Partial<TextLinkProps>;
   textInputProps?: Partial<TextInputProps> | Partial<TextareaProps>;
-  labelText?: string;
   helpText?: string;
   required?: boolean;
   textarea?: boolean;
@@ -59,7 +59,7 @@ export class TextField extends Component<TextFieldProps, TextFieldState> {
   render() {
     const {
       validationMessage,
-      extraClassNames,
+      className,
       textInputProps,
       testId,
       formLabelProps,
@@ -77,7 +77,7 @@ export class TextField extends Component<TextFieldProps, TextFieldState> {
       ...otherProps
     } = this.props;
 
-    const classNames = cn(styles['TextField'], extraClassNames);
+    const classNames = cn(styles['TextField'], className);
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const Element: any = textarea ? Textarea : TextInput;
@@ -91,7 +91,7 @@ export class TextField extends Component<TextFieldProps, TextFieldState> {
             <TextLink
               {...{
                 ...textLinkProps,
-                extraClassNames: styles['TextField__label-link'],
+                className: styles['TextField__label-link'],
               }}
             >
               {textLinkProps.text}
@@ -112,7 +112,7 @@ export class TextField extends Component<TextFieldProps, TextFieldState> {
         />
         {validationMessage && (
           <ValidationMessage
-            extraClassNames={styles['TextField__validation-message']}
+            className={styles['TextField__validation-message']}
           >
             {validationMessage}
           </ValidationMessage>
@@ -120,13 +120,13 @@ export class TextField extends Component<TextFieldProps, TextFieldState> {
         {(helpText || countCharacters) && (
           <div className={styles['TextField__hints']}>
             {helpText && (
-              <HelpText extraClassNames={styles['TextField__help-text']}>
+              <HelpText className={styles['TextField__help-text']}>
                 {helpText}
               </HelpText>
             )}
             {countCharacters && textInputProps && textInputProps.maxLength && (
               <HelpText
-                extraClassNames={cn(
+                className={cn(
                   styles['TextField__help-text'],
                   styles['TextField__count'],
                 )}

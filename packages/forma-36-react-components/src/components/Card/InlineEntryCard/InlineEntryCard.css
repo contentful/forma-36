@@ -2,7 +2,7 @@
 @import 'settings/typography';
 @import 'settings/transitions';
 
-.InlineReferenceCard {
+.InlineEntryCard {
   max-width: 100%;
   display: inline-flex;
   align-items: center;
@@ -18,7 +18,7 @@
     var(--transition-easing-default);
 }
 
-.InlineReferenceCard__skeleton-wrapper {
+.InlineEntryCard__skeleton-wrapper {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -32,14 +32,14 @@
   padding: 0 calc(1rem * (3 / var(--font-base-default)));
 }
 
-.InlineReferenceCard__text-wrapper {
+.InlineEntryCard__text-wrapper {
   max-height: 1.5em;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.InlineReferenceCard__status-indicator {
+.InlineEntryCard__status-indicator {
   width: calc(1rem * (4 / var(--font-base-default)));
   position: absolute;
   top: 0;
@@ -47,56 +47,56 @@
   bottom: 0;
 }
 
-.InlineReferenceCard__status-indicator--published {
+.InlineEntryCard__status-indicator--published {
   outline: calc(1rem * (1 / var(--font-base-default))) solid
     var(--color-green-dark);
   background: var(--color-green-mid);
 }
 
-.InlineReferenceCard__status-indicator--draft {
+.InlineEntryCard__status-indicator--draft {
   outline: calc(1rem * (1 / var(--font-base-default))) solid
     var(--color-orange-dark);
   background: var(--color-orange-mid);
 }
 
-.InlineReferenceCard__status-indicator--archived {
+.InlineEntryCard__status-indicator--archived {
   outline: calc(1rem * (1 / var(--font-base-default))) solid
     var(--color-red-dark);
   background: var(--color-red-mid);
 }
 
-.InlineReferenceCard__status-indicator--changed {
+.InlineEntryCard__status-indicator--changed {
   outline: calc(1rem * (1 / var(--font-base-default))) solid
     var(--color-blue-dark);
   background: var(--color-blue-mid);
 }
 
-.InlineReferenceCard__status-indicator {
+.InlineEntryCard__status-indicator {
   height: 100%;
   width: calc(1rem * (4 / var(--font-base-default)));
 }
 
-.InlineReferenceCard__dropdown {
+.InlineEntryCard__actions {
   display: inline-flex;
   position: static;
   margin-left: calc(1rem * (6 / var(--font-base-default)));
 }
 
-.InlineReferenceCard__spinner--enter {
+.InlineEntryCard__spinner--enter {
   opacity: 0;
 }
 
-.InlineReferenceCard__spinner--enter-active {
+.InlineEntryCard__spinner--enter-active {
   opacity: 1;
   transition: opacity var(--transition-duration-short)
     var(--transition-easing-default);
 }
 
-.InlineReferenceCard__spinner--exit {
+.InlineEntryCard__spinner--exit {
   opacity: 1;
 }
 
-.InlineReferenceCard__spinner--exit-active {
+.InlineEntryCard__spinner--exit-active {
   opacity: 0;
   transition: opacity var(--transition-duration-short)
     var(--transition-easing-default);

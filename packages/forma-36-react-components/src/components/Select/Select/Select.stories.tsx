@@ -12,7 +12,7 @@ storiesOf('Components|Select', module)
   })
   .add('default', () => (
     <Select
-      extraClassNames={text('extraClassNames', '')}
+      className={text('className', '')}
       id="optionSelect"
       name="optionSelect"
       isDisabled={boolean('isDisabled', false)}

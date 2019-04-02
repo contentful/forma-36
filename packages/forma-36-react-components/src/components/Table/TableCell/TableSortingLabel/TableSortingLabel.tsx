@@ -6,14 +6,21 @@ import { sortingDirections } from '../TableCell/TableCell';
 import TabFocusTrap from '../../../TabFocusTrap/TabFocusTrap';
 import styles from './TableSortingLabel.css';
 
-export interface TableSortingLabelProps {
+export type TableSortingLabelProps = {
   children: React.ReactNode;
   direction: keyof typeof sortingDirections;
   active: boolean;
-  extraClassNames?: string;
-}
+  className?: string;
+  testId?: string;
+} & typeof defaultProps;
+
+const defaultProps = {
+  testId: 'cf-ui-table-sorting-label',
+};
 
 export class TableSortingLabel extends Component<TableSortingLabelProps> {
+  static defaultProps = defaultProps;
+
   renderIcon() {
     const { direction } = this.props;
     const classNames = cn(
@@ -21,21 +28,20 @@ export class TableSortingLabel extends Component<TableSortingLabelProps> {
       styles[`TableSortingLabel__icon--${direction as string}`],
     );
 
-    return <Icon extraClassNames={classNames} icon="ArrowUp" color="muted" />;
+    return <Icon className={classNames} icon="ArrowUp" color="muted" />;
   }
 
   render() {
-    const { extraClassNames, children, active, ...otherProps } = this.props;
+    const { className, children, active, testId, ...otherProps } = this.props;
 
     return (
       <button
         type="button"
-        className={cn(styles['TableSortingLabel__button'], extraClassNames)}
+        className={cn(styles['TableSortingLabel__button'], className)}
+        data-test-id={testId}
         {...otherProps}
       >
-        <TabFocusTrap
-          extraClassNames={styles['TableSortingLabel__button__text']}
-        >
+        <TabFocusTrap className={styles['TableSortingLabel__button__text']}>
           {children}
           {active && this.renderIcon()}
         </TabFocusTrap>

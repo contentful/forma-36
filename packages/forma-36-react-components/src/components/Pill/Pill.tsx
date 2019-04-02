@@ -9,7 +9,7 @@ export type PillProps = {
   label: string;
   onClose?: () => void;
   onDrag?: () => void;
-  extraClassNames?: string;
+  className?: string;
   testId?: string;
 } & typeof defaultProps;
 
@@ -26,11 +26,11 @@ export class Pill extends Component<PillProps> {
       onClose,
       testId,
       onDrag,
-      extraClassNames,
+      className,
       ...otherProps
     } = this.props;
 
-    const classNames = cn(styles.Pill, extraClassNames);
+    const classNames = cn(styles.Pill, className);
 
     return (
       <div
@@ -43,11 +43,7 @@ export class Pill extends Component<PillProps> {
           <span className={styles.Pill__label}>
             {onDrag && (
               <span className={styles['Pill__drag-icon']}>
-                <Icon
-                  icon="Drag"
-                  color="muted"
-                  extraClassNames={styles.Pill__icon}
-                />
+                <Icon icon="Drag" color="muted" className={styles.Pill__icon} />
               </span>
             )}
             {label}
@@ -63,7 +59,7 @@ export class Pill extends Component<PillProps> {
                 <Icon
                   icon="Close"
                   color="muted"
-                  extraClassNames={styles.Pill__icon}
+                  className={styles.Pill__icon}
                 />
               </TabFocusTrap>
             </button>

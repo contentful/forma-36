@@ -10,7 +10,7 @@ storiesOf('Components|Typography/DisplayText', module)
   })
   .add('default', () => (
     <DisplayText
-      extraClassNames={text('extraClassNames', '')}
+      className={text('className', '')}
       element={select(
         'element',
         ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p'],

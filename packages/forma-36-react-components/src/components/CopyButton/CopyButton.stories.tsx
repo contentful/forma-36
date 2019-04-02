@@ -11,7 +11,7 @@ storiesOf('Components|CopyButton', module)
   .add('default', () => (
     <div>
       <CopyButton
-        extraClassNames={text('extraClassNames', '')}
+        className={text('className', '')}
         copyValue={text('copyValue', 'Lorem Ipsum')}
       />
     </div>

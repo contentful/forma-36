@@ -2,36 +2,68 @@ import React, { Component, MouseEventHandler } from 'react';
 import cn from 'classnames';
 import truncate from 'truncate';
 import Card from '../Card';
+import CardActions from '../CardActions';
 import Tag, { TagType } from '../../Tag/Tag';
-import ReferenceCardSkeleton from './ReferenceCardSkeleton';
-const styles = require('./ReferenceCard.css');
+import EntryCardSkeleton from './EntryCardSkeleton';
 
-export type ReferenceCardStatus =
-  | 'archived'
-  | 'changed'
-  | 'draft'
-  | 'published';
+const styles = require('./EntryCard.css');
 
-export type ReferenceCardPropTypes = {
+export type EntryCardStatus = 'archived' | 'changed' | 'draft' | 'published';
+
+export type EntryCardPropTypes = {
+  /**
+   * The title of the entry
+   */
   title?: string;
+  /**
+   * An ID used for testing purposes applied as a data attribute (data-test-id)
+   */
   testId?: string;
+  /**
+   * The description of the entry
+   */
   description?: string;
+  /**
+   * The content type of the entry
+   */
   contentType?: string;
-  status: ReferenceCardStatus;
+  /**
+   * The publish status of the entry
+   */
+  status?: EntryCardStatus;
+  /**
+   * The thumbnail of the entry
+   */
   thumbnailElement?: React.ReactNode;
+  /**
+   * Loading state for the EntryCard - when true will display loading feedback to the user
+   */
   loading?: boolean;
+  /**
+   * The action to be performed on click of the EntryCard
+   */
   onClick?: MouseEventHandler;
-  extraClassNames?: string;
-  actionElements?: React.ReactNode;
+  /**
+   * Class names to be appended to the className prop of the component
+   */
+  className?: string;
+  /**
+   * The DropdownList elements used to render an actions dropdown for the EntryCard
+   */
+  dropdownListElements?: React.ReactElement;
 } & typeof defaultProps;
 
 const defaultProps = {
   title: 'Untitled',
-  testId: 'cf-ui-reference-card',
+  testId: 'cf-ui-entry-card',
 };
 
-export class ReferenceCard extends Component<ReferenceCardPropTypes> {
+export class EntryCard extends Component<EntryCardPropTypes> {
   static defaultProps = defaultProps;
+
+  state = {
+    isDropdownOpen: false,
+  };
 
   renderTitle = (title: string) => {
     const truncatedTitle = truncate(title, 255, {});
@@ -39,7 +71,7 @@ export class ReferenceCard extends Component<ReferenceCardPropTypes> {
     return (
       <h1
         title={title.length > 255 ? title : ''}
-        className={styles.ReferenceCard__title}
+        className={styles.EntryCard__title}
         data-test-id="title"
       >
         {truncatedTitle}
@@ -51,23 +83,15 @@ export class ReferenceCard extends Component<ReferenceCardPropTypes> {
     const truncatedDescription = truncate(description, 95, {});
 
     return (
-      <p className={styles.ReferenceCard__description}>
-        {truncatedDescription}
-      </p>
+      <p className={styles.EntryCard__description}>{truncatedDescription}</p>
     );
   };
 
   renderThumbnail = (thumbnailElement: React.ReactNode) => (
-    <figure className={styles.ReferenceCard__thumbnail}>
-      {thumbnailElement}
-    </figure>
+    <figure className={styles.EntryCard__thumbnail}>{thumbnailElement}</figure>
   );
 
-  renderActionElements = (actionElements: React.ReactNode) => (
-    <div className={styles.ReferenceCard__actions}>{actionElements}</div>
-  );
-
-  renderStatus = (status: ReferenceCardStatus) => {
+  renderStatus = (status: EntryCardStatus) => {
     let label: string;
     let type: TagType;
 
@@ -97,7 +121,7 @@ export class ReferenceCard extends Component<ReferenceCardPropTypes> {
 
   render() {
     const {
-      extraClassNames,
+      className,
       title,
       onClick,
       testId,
@@ -106,36 +130,40 @@ export class ReferenceCard extends Component<ReferenceCardPropTypes> {
       status,
       thumbnailElement,
       loading,
-      actionElements,
+      dropdownListElements,
       ...otherProps
     } = this.props;
 
-    const classNames = cn(styles.ReferenceCard, extraClassNames);
+    const classNames = cn(styles.EntryCard, className);
 
     return (
       <Card
-        extraClassNames={classNames}
+        className={classNames}
         onClick={!loading ? onClick : undefined}
         testId={testId}
         {...otherProps}
       >
         {loading ? (
-          <ReferenceCardSkeleton />
+          <EntryCardSkeleton />
         ) : (
-          <article className={styles.ReferenceCard__wrapper}>
+          <article className={styles.EntryCard__wrapper}>
             <React.Fragment>
-              <div className={styles.ReferenceCard__meta}>
+              <div className={styles.EntryCard__meta}>
                 <div
-                  className={styles['ReferenceCard__content-type']}
+                  className={styles['EntryCard__content-type']}
                   data-test-id="content-type"
                 >
                   {contentType}
                 </div>
                 {status && this.renderStatus(status)}
-                {actionElements && this.renderActionElements(actionElements)}
+                {dropdownListElements && (
+                  <CardActions className={styles['EntryCard__actions']}>
+                    {dropdownListElements}
+                  </CardActions>
+                )}
               </div>
-              <div className={styles.ReferenceCard__content}>
-                <div className={styles.ReferenceCard__body}>
+              <div className={styles.EntryCard__content}>
+                <div className={styles.EntryCard__body}>
                   {title && this.renderTitle(title)}
                   {description && this.renderDescription(description)}
                 </div>
@@ -149,4 +177,4 @@ export class ReferenceCard extends Component<ReferenceCardPropTypes> {
   }
 }
 
-export default ReferenceCard;
+export default EntryCard;

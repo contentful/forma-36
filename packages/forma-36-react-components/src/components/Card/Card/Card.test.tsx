@@ -10,7 +10,7 @@ it('renders the component', () => {
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(<Card extraClassNames="my-extra-class">Card</Card>);
+  const output = shallow(<Card className="my-extra-class">Card</Card>);
 
   expect(output).toMatchSnapshot();
 });

@@ -23,7 +23,7 @@ it('renders the component', () => {
 
 it('renders the component with an additional class name', () => {
   const output = shallow(
-    <Form extraClassNames="my-extra-class">
+    <Form className="my-extra-class">
       <TextField
         required
         name="nameInput"
@@ -40,7 +40,7 @@ it('renders the component with an additional class name', () => {
 
 it('renders the component with condensed spacing', () => {
   const output = shallow(
-    <Form extraClassNames="my-extra-class" spacing="condensed">
+    <Form className="my-extra-class" spacing="condensed">
       <TextField
         required
         name="nameInput"
@@ -58,7 +58,7 @@ it('renders the component with condensed spacing', () => {
 it('renders the component with condensed spacing (prevent default)', () => {
   const mockOnSubmit = jest.fn();
   const output = shallow(
-    <Form extraClassNames="my-extra-class" onSubmit={mockOnSubmit}>
+    <Form className="my-extra-class" onSubmit={mockOnSubmit}>
       <TextField
         required
         name="nameInput"

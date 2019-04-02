@@ -14,7 +14,7 @@ import Layout from '../components/Layout';
 
 const IndexPage = () => (
   <Layout>
-    <Card extraClassNames="f36-padding-vertical--2xl card">
+    <Card className="f36-padding-vertical--2xl card">
       <div className="center-content f36-margin-bottom--xl">
         <Logo />
       </div>
@@ -22,7 +22,7 @@ const IndexPage = () => (
         <DisplayText>Forma 36</DisplayText>
       </div>
       <div className="center-content f36-margin-bottom--xl">
-        <Subheading extraClassNames="f36-font-weight--normal no-wrap">
+        <Subheading className="f36-font-weight--normal no-wrap">
           The Contentful Design System
         </Subheading>
       </div>
@@ -31,7 +31,7 @@ const IndexPage = () => (
           View GitHub repository
         </Button>
       </div>
-      <Paragraph extraClassNames="center-content">
+      <Paragraph className="center-content">
         <TextLink
           linkType="secondary"
           href="https://f36-storybook.contentful.com/"

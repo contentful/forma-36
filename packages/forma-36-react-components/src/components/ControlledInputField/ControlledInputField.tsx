@@ -8,8 +8,8 @@ const styles = require('./ControlledInputField.css');
 
 export type ControlledInputFieldPropTypes = {
   id: string;
-  labelIsLight?: boolean;
   labelText: string;
+  labelIsLight?: boolean;
   required?: boolean;
   helpText?: string;
   formLabelProps?: object;
@@ -22,7 +22,7 @@ export type ControlledInputFieldPropTypes = {
   inputProps?: object;
   inputType?: 'radio' | 'checkbox';
   onChange?: ChangeEventHandler;
-  extraClassNames?: string;
+  className?: string;
   testId?: string;
   children?: React.ReactNode;
 } & typeof defaultProps;
@@ -50,7 +50,7 @@ export class ControlledInputField extends Component<
       labelText,
       helpTextProps,
       formLabelProps,
-      extraClassNames,
+      className,
       checked,
       value,
       validationMessage,
@@ -62,7 +62,7 @@ export class ControlledInputField extends Component<
       ...otherProps
     } = this.props;
 
-    const classNames = cn(styles['ControlledInputField'], extraClassNames, {
+    const classNames = cn(styles['ControlledInputField'], className, {
       [styles['ControlledInputField--disabled']]: disabled,
     });
 
@@ -78,12 +78,12 @@ export class ControlledInputField extends Component<
           disabled={disabled}
           value={value}
           onChange={onChange}
-          extraClassNames={styles.ControlledInputField__input}
+          className={styles.ControlledInputField__input}
           {...inputProps}
         />
         <div className={styles['Checkbox__label-wrapper']}>
           <FormLabel
-            extraClassNames={cn(styles.ControlledInputField__label, {
+            className={cn(styles.ControlledInputField__label, {
               [styles['ControlledInputField__label--light']]: labelIsLight,
             })}
             required={required}
@@ -94,7 +94,7 @@ export class ControlledInputField extends Component<
           </FormLabel>
           {helpText && (
             <HelpText
-              extraClassNames={styles['ControlledInputField__help-text']}
+              className={styles['ControlledInputField__help-text']}
               {...helpTextProps}
             >
               {helpText}
@@ -102,9 +102,7 @@ export class ControlledInputField extends Component<
           )}
           {validationMessage && (
             <ValidationMessage
-              extraClassNames={
-                styles['ControlledInputField__validation-message']
-              }
+              className={styles['ControlledInputField__validation-message']}
             >
               {validationMessage}
             </ValidationMessage>

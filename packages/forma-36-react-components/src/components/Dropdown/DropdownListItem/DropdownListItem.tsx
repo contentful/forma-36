@@ -1,4 +1,9 @@
-import React, { Component, MouseEventHandler, FocusEventHandler } from 'react';
+import React, {
+  Component,
+  MouseEventHandler,
+  FocusEventHandler,
+  MouseEvent as ReactMouseEvent,
+} from 'react';
 import cn from 'classnames';
 import TabFocusTrap from '../../TabFocusTrap/TabFocusTrap';
 import styles from './DropdownListItem.css';
@@ -9,13 +14,14 @@ export type DropdownListItemProps = {
   isTitle: boolean;
   children: React.ReactNode;
   onClick?: MouseEventHandler;
-  testId?: string;
   onMouseDown?: MouseEventHandler;
   submenuToggleLabel?: string;
+  href?: string;
   onFocus?: FocusEventHandler;
   onLeave?: MouseEventHandler;
   onEnter?: MouseEventHandler;
-  extraClassNames?: string;
+  className?: string;
+  testId?: string;
 } & typeof defaultProps;
 
 const defaultProps = {
@@ -35,7 +41,7 @@ export class DropdownListItem extends Component<DropdownListItemProps> {
         <button
           type="button"
           data-test-id="cf-ui-dropdown-submenu-toggle"
-          className={styles['DropdownListItem__toggle-button']}
+          className={styles['DropdownListItem__button']}
           onClick={onClick}
           onMouseEnter={onEnter}
           onFocus={onFocus}
@@ -43,9 +49,7 @@ export class DropdownListItem extends Component<DropdownListItemProps> {
           {...otherProps}
         >
           <TabFocusTrap
-            extraClassNames={
-              styles['DropdownListItem__toggle-button__inner-wrapper']
-            }
+            className={styles['DropdownListItem__button__inner-wrapper']}
           >
             {this.props.submenuToggleLabel}
           </TabFocusTrap>
@@ -55,50 +59,58 @@ export class DropdownListItem extends Component<DropdownListItemProps> {
     );
   };
 
-  renderListItem = () =>
-    this.props.onClick || this.props.onMouseDown ? (
-      <button
-        type="button"
-        data-test-id="cf-ui-dropdown-list-item-button"
-        className={styles['DropdownListItem__toggle-button']}
-        onClick={e => {
-          if (!this.props.isDisabled && this.props.onClick) {
-            this.props.onClick(e);
-          }
-        }}
-        onMouseDown={e => {
-          if (!this.props.isDisabled && this.props.onMouseDown) {
-            this.props.onMouseDown(e);
-          }
-        }}
-      >
-        <TabFocusTrap
-          extraClassNames={
-            styles['DropdownListItem__toggle-button__inner-wrapper']
-          }
+  renderListItem = () => {
+    const isClickable =
+      this.props.onClick || this.props.onMouseDown || this.props.href;
+
+    if (isClickable) {
+      const Element = this.props.href ? 'a' : 'button';
+
+      return (
+        <Element
+          type="button"
+          href={this.props.href}
+          data-test-id="cf-ui-dropdown-list-item-button"
+          className={styles['DropdownListItem__button']}
+          onClick={(e: ReactMouseEvent) => {
+            if (!this.props.isDisabled && this.props.onClick) {
+              this.props.onClick(e);
+            }
+          }}
+          onMouseDown={(e: ReactMouseEvent) => {
+            if (!this.props.isDisabled && this.props.onMouseDown) {
+              this.props.onMouseDown(e);
+            }
+          }}
         >
-          {this.props.children}
-        </TabFocusTrap>
-      </button>
-    ) : (
-      this.props.children
-    );
+          <TabFocusTrap
+            className={styles['DropdownListItem__button__inner-wrapper']}
+          >
+            {this.props.children}
+          </TabFocusTrap>
+        </Element>
+      );
+    }
+
+    return this.props.children;
+  };
 
   render() {
     const {
-      extraClassNames,
+      className,
       isDisabled,
       testId,
       isActive,
       onClick,
       onMouseDown,
+      href,
       submenuToggleLabel,
       isTitle,
     } = this.props;
 
-    const classNames = cn(styles['DropdownListItem'], extraClassNames, {
+    const classNames = cn(styles['DropdownListItem'], className, {
       [styles['DropdownListItem__submenu-toggle']]:
-        submenuToggleLabel || onClick || onMouseDown,
+        submenuToggleLabel || onClick || onMouseDown || href,
       [styles['DropdownListItem--disabled']]: isDisabled,
       [styles['DropdownListItem--active']]: isActive,
       [styles['DropdownListItem--title']]: isTitle,

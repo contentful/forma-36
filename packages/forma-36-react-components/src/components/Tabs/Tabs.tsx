@@ -6,7 +6,7 @@ const styles = require('./Tabs.css');
 export type TabsProps = {
   role?: 'navigation' | 'tablist';
   style?: CSSProperties;
-  extraClassNames?: string;
+  className?: string;
   children?: React.ReactNode;
   testId?: string;
 } & typeof defaultProps;
@@ -20,9 +20,9 @@ export class Tabs extends Component<TabsProps> {
   static defaultProps = defaultProps;
 
   render() {
-    const { extraClassNames, children, testId, role, style } = this.props;
+    const { className, children, testId, role, style } = this.props;
 
-    const classNames = cn(styles.Tabs, extraClassNames);
+    const classNames = cn(styles.Tabs, className);
 
     const elementProps = {
       'data-test-id': testId,

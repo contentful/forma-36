@@ -7,8 +7,9 @@ import { TypographyContext } from '../Typography/Typography';
 export type DisplayTextProps = {
   element: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
   size: 'default' | 'large';
-  extraClassNames?: string;
+  className?: string;
   children?: React.ReactNode;
+  style?: React.CSSProperties;
   testId?: string;
 } & typeof defaultProps;
 
@@ -23,7 +24,7 @@ export class DisplayText extends Component<DisplayTextProps> {
 
   render() {
     const {
-      extraClassNames,
+      className,
       children,
       testId,
       element,
@@ -31,7 +32,7 @@ export class DisplayText extends Component<DisplayTextProps> {
       ...otherProps
     } = this.props;
 
-    const classNames = cn(styles['DisplayText'], extraClassNames, {
+    const classNames = cn(styles['DisplayText'], className, {
       [styles[`DisplayText--${size}`]]: size,
     });
 
