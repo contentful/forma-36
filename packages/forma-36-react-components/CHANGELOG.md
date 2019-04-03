@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.0.1...@contentful/forma-36-react-components@3.1.0) (2019-04-03)
+
+
+### Features
+
+* **Icon:** Added Clock Icon ([ae77a54](https://github.com/contentful/forma-36/commit/ae77a54))
+
+
+
+
+
 ## [3.0.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.0.0...@contentful/forma-36-react-components@3.0.1) (2019-04-03)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
