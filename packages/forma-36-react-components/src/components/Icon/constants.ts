@@ -17,6 +17,8 @@ export const iconName = {
   ChevronRightTrimmed: 'ChevronRightTrimmed',
   ChevronUp: 'ChevronUp',
   ChevronUpTrimmed: 'ChevronUpTrimmed',
+  Clock: 'Clock',
+  ClockTrimmed: 'ClockTrimmed',
   Close: 'Close',
   CloseTrimmed: 'CloseTrimmed',
   Code: 'Code',

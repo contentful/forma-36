@@ -112,6 +112,8 @@ const ThumbUp = require('./svg/ThumbUp.svg');
 const ThumbUpTrimmed = require('./svg/ThumbUpTrimmed.svg');
 const Users = require('./svg/Users.svg');
 const UsersTrimmed = require('./svg/UsersTrimmed.svg');
+const Clock = require('./svg/Clock.svg');
+const ClockTrimmed = require('./svg/ClockTrimmed.svg');
 const Warning = require('./svg/Warning.svg');
 const WarningTrimmed = require('./svg/WarningTrimmed.svg');
 
@@ -136,6 +138,8 @@ const iconComponents = {
   ChevronRightTrimmed,
   ChevronUp,
   ChevronUpTrimmed,
+  Clock,
+  ClockTrimmed,
   Close,
   CloseTrimmed,
   Code,
