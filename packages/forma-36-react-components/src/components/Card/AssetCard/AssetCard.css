@@ -1,18 +1,31 @@
 @import 'settings/colors';
 @import 'settings/typography';
 @import 'settings/transitions';
+@import 'settings/shadows';
 
 .AssetCard {
   height: calc(1rem * (300 / var(--font-base-default)));
-  display: inline-block;
+  display: inline-flex;
   padding: 0px;
   min-width: calc(1rem * (240 / var(--font-base-default)));
+  transition: box-shadow var(--transition-duration-short)
+      var(--transition-easing-default),
+    border-color var(--transition-duration-default)
+      var(--transition-easing-default);
+}
+
+.AssetCard--drag-active {
+  box-shadow: var(--box-shadow-heavy);
 }
 
 .AssetCard__asset {
   height: calc(
     1rem * (254 / var(--font-base-default))
   ); /* 254 Height of the container substracted by the border width of the header */
+}
+
+.AssetCard__wrapper {
+  flex: 1 1 0;
 }
 
 .AssetCard__header {
