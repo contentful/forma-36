@@ -5,7 +5,6 @@ import CardActions from './../CardActions';
 import Asset from '../../Asset';
 import { AssetType } from '../../Asset/Asset';
 import Tag, { TagType } from '../../Tag/Tag';
-import Icon from '../../Icon/';
 import AssetCardSkeleton from './AssetCardSkeleton';
 import CardDragHandle, {
   CardDragHandlePropTypes,

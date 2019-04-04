@@ -8,7 +8,6 @@ import CardDragHandle, {
 } from '../CardDragHandle/CardDragHandle';
 import Tag, { TagType } from '../../Tag/Tag';
 import EntryCardSkeleton from './EntryCardSkeleton';
-import Icon from './../../Icon';
 
 const styles = require('./EntryCard.css');
 

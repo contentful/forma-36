@@ -49,7 +49,12 @@ export class CardDragHandle extends Component<CardDragHandlePropTypes> {
     );
 
     return (
-      <button className={classNames} data-test-id={testId} {...otherProps}>
+      <button
+        type="button"
+        className={classNames}
+        data-test-id={testId}
+        {...otherProps}
+      >
         <TabFocusTrap className={styles['CardDragHandle__focus-trap']}>
           <Icon icon="Drag" color="muted" />
           <span className={styles['CardDragHandle__sr-label']}>{children}</span>
