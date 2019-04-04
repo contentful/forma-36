@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.2.0...@contentful/forma-36-react-components@3.2.1) (2019-04-04)
+
+
+### Bug Fixes
+
+* **CardDragHandle:** fixed lint issues ([d8d776d](https://github.com/contentful/forma-36/commit/d8d776d))
+
+
+
+
+
 # [3.2.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.1.0...@contentful/forma-36-react-components@3.2.0) (2019-04-04)
 
 
