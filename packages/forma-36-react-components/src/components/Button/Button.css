@@ -19,9 +19,12 @@
   font-family: var(--font-stack-primary);
   font-size: calc(1rem * (14 / var(--font-base-default)));
   overflow: hidden;
-  transition: all var(--transition-duration-default)
+  background-size: 100% 200%;
+  transition: background var(--transition-duration-default)
       var(--transition-easing-default),
-    background-image 0ms, background-color 0ms;
+    opacity var(--transition-duration-default) var(--transition-easing-default),
+    border-color var(--transition-duration-default)
+      var(--transition-easing-default);
   vertical-align: middle;
   text-decoration: none;
 
@@ -39,8 +42,6 @@
 }
 
 .Button--muted {
-  transition: all var(--transition-duration-default)
-    var(--transition-easing-default);
   background-color: var(--color-element-light);
 
   &:hover:not(.Button--disabled),
@@ -57,8 +58,6 @@
 .Button--naked {
   background-color: transparent;
   border: none;
-  transition: all var(--transition-duration-default)
-    var(--transition-easing-default);
 
   &:hover:not(.Button--disabled),
   &:focus:not(.Button--disabled) {
