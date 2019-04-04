@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.2.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.1.0...@contentful/forma-36-react-components@3.2.0) (2019-04-04)
+
+
+### Features
+
+* **AssetCard:** Add withDragHandle prop ([b07bb6d](https://github.com/contentful/forma-36/commit/b07bb6d))
+* **EntryCard:** Add withDragHandle component prop ([ef9c9cf](https://github.com/contentful/forma-36/commit/ef9c9cf))
+
+
+
+
+
 # [3.1.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.0.1...@contentful/forma-36-react-components@3.1.0) (2019-04-03)
 
 
