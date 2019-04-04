@@ -3,13 +3,13 @@
 exports[`renders the component 1`] = `
 <Card
   className="AssetCard"
-  padding="default"
+  padding="none"
   selected={false}
   testId="cf-ui-asset-card"
   title="picture of a cat"
 >
   <div
-    className="AssetCard__inner-wrapper"
+    className="AssetCard__wrapper"
   >
     <div
       className="AssetCard__header"
@@ -32,7 +32,7 @@ exports[`renders the component 1`] = `
 exports[`renders the component in loading state 1`] = `
 <Card
   className="AssetCard"
-  padding="default"
+  padding="none"
   selected={false}
   testId="cf-ui-asset-card"
   title="picture of a cat"
@@ -41,16 +41,51 @@ exports[`renders the component in loading state 1`] = `
 </Card>
 `;
 
+exports[`renders the component with a drag handle 1`] = `
+<Card
+  className="AssetCard my-extra-class"
+  padding="none"
+  selected={false}
+  testId="cf-ui-asset-card"
+  title="picture of a cat"
+>
+  <CardDragHandle
+    isDragActive={false}
+    testId="cf-ui-card-drag-handle"
+  >
+    Reorder entry
+  </CardDragHandle>
+  <div
+    className="AssetCard__wrapper"
+  >
+    <div
+      className="AssetCard__header"
+    />
+    <div
+      className="AssetCard__content"
+    >
+      <Asset
+        className="AssetCard__asset"
+        src="http://placekitten.com/200/300"
+        testId="cf-ui-asset"
+        title="picture of a cat"
+        type="image"
+      />
+    </div>
+  </div>
+</Card>
+`;
+
 exports[`renders the component with actions 1`] = `
 <Card
   className="AssetCard"
-  padding="default"
+  padding="none"
   selected={false}
   testId="cf-ui-asset-card"
   title="picture of a cat"
 >
   <div
-    className="AssetCard__inner-wrapper"
+    className="AssetCard__wrapper"
   >
     <div
       className="AssetCard__header"
@@ -100,13 +135,13 @@ exports[`renders the component with actions 1`] = `
 exports[`renders the component with an additional class name 1`] = `
 <Card
   className="AssetCard my-extra-class"
-  padding="default"
+  padding="none"
   selected={false}
   testId="cf-ui-asset-card"
   title="picture of a cat"
 >
   <div
-    className="AssetCard__inner-wrapper"
+    className="AssetCard__wrapper"
   >
     <div
       className="AssetCard__header"
@@ -129,13 +164,13 @@ exports[`renders the component with an additional class name 1`] = `
 exports[`renders the component with status 1`] = `
 <Card
   className="AssetCard"
-  padding="default"
+  padding="none"
   selected={false}
   testId="cf-ui-asset-card"
   title="picture of a cat"
 >
   <div
-    className="AssetCard__inner-wrapper"
+    className="AssetCard__wrapper"
   >
     <div
       className="AssetCard__header"
@@ -170,13 +205,13 @@ exports[`renders the component with status 1`] = `
 exports[`renders the component without actions 1`] = `
 <Card
   className="AssetCard"
-  padding="default"
+  padding="none"
   selected={false}
   testId="cf-ui-asset-card"
   title="picture of a cat"
 >
   <div
-    className="AssetCard__inner-wrapper"
+    className="AssetCard__wrapper"
   >
     <div
       className="AssetCard__header"

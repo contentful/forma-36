@@ -57,6 +57,8 @@ storiesOf('Components|Card/EntryCard', module)
             </DropdownList>
           </React.Fragment>
         }
+        withDragHandle={boolean('withDragHandle', false)}
+        isDragActive={boolean('isDragActive', false)}
         className={text('className', '')}
         loading={boolean('loading', false)}
       />
@@ -101,6 +103,7 @@ storiesOf('Components|Card/EntryCard', module)
             </DropdownListItem>
           </DropdownList>
         }
+        withDragHandle={boolean('withDragHandle', false)}
         loading={boolean('loading', false)}
         className={text('className', '')}
       />

@@ -29,6 +29,8 @@ storiesOf('Components|Card/AssetCard', module)
       isLoading={boolean('isLoading', false)}
       src={text('src', 'https://placekitten.com/200/300')}
       title={text('title', 'Image of a cat')}
+      withDragHandle={boolean('withDragHandle', false)}
+      isDragActive={boolean('isDragActive', false)}
     />
   ))
   .add('with dropdownListElements', () => (
@@ -48,6 +50,8 @@ storiesOf('Components|Card/AssetCard', module)
       isLoading={boolean('isLoading', false)}
       src={text('src', 'https://placekitten.com/200/300')}
       title={text('title', 'Image of a cat')}
+      withDragHandle={boolean('withDragHandle', false)}
+      isDragActive={boolean('isDragActive', false)}
       dropdownListElements={
         <React.Fragment>
           <DropdownList>

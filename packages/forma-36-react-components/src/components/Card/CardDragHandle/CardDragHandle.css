@@ -1,0 +1,42 @@
+@import 'settings/colors';
+@import 'settings/transitions';
+@import 'settings/typography';
+
+.CardDragHandle {
+  composes: focus-outline--default from './../../../styles/settings/a11y.css';
+  display: flex;
+  position: relative;
+  width: calc(1rem * (20 / var(--font-base-default)));
+  height: 100%;
+  align-items: center;
+  background-color: var(--color-element-lightest);
+  border: 0;
+  padding: 0;
+  border-right: 1px solid var(--color-element-mid);
+  cursor: grab;
+  transition: background-color var(--transition-duration-default)
+    var(--transition-easing-default);
+}
+
+.CardDragHandle:hover,
+.CardDragHandle:focus {
+  background-color: var(--color-element-light);
+}
+
+.CardDragHandle--drag-active {
+  background-color: var(--color-element-light);
+  cursor: grabbing;
+}
+
+.CardDragHandle__sr-label {
+  composes: sr-only from './../../../styles/settings/helpers.css';
+}
+
+.CardDragHandle__focus-trap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+}

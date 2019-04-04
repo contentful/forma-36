@@ -3,7 +3,7 @@
 exports[`renders the component 1`] = `
 <Card
   className="EntryCard"
-  padding="default"
+  padding="none"
   selected={false}
   testId="cf-ui-entry-card"
 >
@@ -50,10 +50,66 @@ exports[`renders the component 1`] = `
 </Card>
 `;
 
+exports[`renders the component with a drag handle 1`] = `
+<Card
+  className="EntryCard"
+  padding="none"
+  selected={false}
+  testId="cf-ui-entry-card"
+>
+  <CardDragHandle
+    isDragActive={false}
+    testId="cf-ui-card-drag-handle"
+  >
+    Reorder entry
+  </CardDragHandle>
+  <article
+    className="EntryCard__wrapper"
+  >
+    <div
+      className="EntryCard__meta"
+    >
+      <div
+        className="EntryCard__content-type"
+        data-test-id="content-type"
+      >
+        My Content Type
+      </div>
+      <Tag
+        tagType="positive"
+        testId="cf-ui-tag"
+      >
+        published
+      </Tag>
+    </div>
+    <div
+      className="EntryCard__content"
+    >
+      <div
+        className="EntryCard__body"
+      >
+        <h1
+          className="EntryCard__title"
+          data-test-id="title"
+          title=""
+        >
+          My Entry Card
+        </h1>
+        <p
+          className="EntryCard__description"
+        >
+          This is my Entry Card
+        </p>
+      </div>
+    </div>
+  </article>
+</Card>
+`;
+
 exports[`renders the component with a thumbnail element 1`] = `
 <Card
   className="EntryCard"
-  padding="default"
+  padding="none"
   selected={false}
   testId="cf-ui-entry-card"
 >
@@ -111,7 +167,7 @@ exports[`renders the component with a thumbnail element 1`] = `
 exports[`renders the component with an additional class name 1`] = `
 <Card
   className="EntryCard my-extra-class"
-  padding="default"
+  padding="none"
   selected={false}
   testId="cf-ui-entry-card"
 >
@@ -161,7 +217,7 @@ exports[`renders the component with an additional class name 1`] = `
 exports[`renders the component with dropdownListElements 1`] = `
 <Card
   className="EntryCard"
-  padding="default"
+  padding="none"
   selected={false}
   testId="cf-ui-entry-card"
 >

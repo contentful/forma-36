@@ -72,6 +72,20 @@ it('renders the component with an additional class name', () => {
   expect(output).toMatchSnapshot();
 });
 
+it('renders the component with a drag handle', () => {
+  const output = shallow(
+    <EntryCard
+      title="My Entry Card"
+      description="This is my Entry Card"
+      status="published"
+      contentType="My Content Type"
+      withDragHandle
+    />,
+  );
+
+  expect(output).toMatchSnapshot();
+});
+
 it('has no a11y issues', async () => {
   const output = mount(
     <EntryCard

@@ -1,9 +1,10 @@
 @import 'settings/colors';
 @import 'settings/typography';
 @import 'settings/transitions';
+@import 'settings/shadows';
 
 .EntryCard {
-  display: block;
+  display: flex;
   position: relative;
   box-sizing: border-box;
   font-family: var(--font-stack-primary);
@@ -11,6 +12,19 @@
   line-height: var(--line-height-default);
   color: var(--color-text-dark);
   height: calc(1rem * (135 / var(--font-base-default)));
+  transition: box-shadow var(--transition-duration-short)
+      var(--transition-easing-default),
+    border-color var(--transition-duration-default)
+      var(--transition-easing-default);
+}
+
+.EntryCard__wrapper {
+  padding: calc(1rem * (14 / var(--font-base-default)));
+  flex: 1 1 0;
+}
+
+.EntryCard--drag-active {
+  box-shadow: var(--box-shadow-heavy);
 }
 
 .EntryCard--is-loading {

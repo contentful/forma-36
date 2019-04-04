@@ -76,6 +76,19 @@ it('renders the component without actions', () => {
   expect(output).toMatchSnapshot();
 });
 
+it('renders the component with a drag handle', () => {
+  const output = shallow(
+    <AssetCard
+      className="my-extra-class"
+      src="http://placekitten.com/200/300"
+      title="picture of a cat"
+      withDragHandle
+    />,
+  );
+
+  expect(output).toMatchSnapshot();
+});
+
 it('has no a11y issues', async () => {
   const output = mount(
     <AssetCard src="http://placekitten.com/200/300" title="picture of a cat" />,
