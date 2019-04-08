@@ -29,10 +29,6 @@ module.exports = {
                 link: '/guidelines/copy/grammar',
                 menuLinks: [
                   {
-                    name: 'Basics',
-                    link: '/guidelines/copy/grammar/basics',
-                  },
-                  {
                     name: 'Capitalization',
                     link: '/guidelines/copy/grammar/capitalization',
                   },
@@ -51,12 +47,16 @@ module.exports = {
                   {
                     name: 'Word choice',
                     link: '/guidelines/copy/grammar/word-choice',
-                  }
-                ]
+                  },
+                ],
               },
               {
                 name: 'Tone of voice',
                 link: '/guidelines/copy/tone-of-voice',
+              },
+              {
+                name: 'Frequently used verbs',
+                link: '/guidelines/copy/frequently-used-verbs',
               },
               {
                 name: 'Component examples',
