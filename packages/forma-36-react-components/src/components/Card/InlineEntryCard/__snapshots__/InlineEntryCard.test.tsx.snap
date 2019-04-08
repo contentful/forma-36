@@ -75,6 +75,11 @@ exports[`renders the component with a dropdown 1`] = `
   </span>
   <CardActions
     className="InlineEntryCard__actions"
+    iconButtonProps={
+      Object {
+        "onClick": [Function],
+      }
+    }
     testId="cf-ui-card-actions"
   >
     <DropdownList

@@ -95,7 +95,12 @@ export class InlineEntryCard extends Component<InlineEntryCardPropTypes> {
           {isLoading ? 'Loading' : children}
         </span>
         {dropdownListElements && (
-          <CardActions className={styles['InlineEntryCard__actions']}>
+          <CardActions
+            className={styles['InlineEntryCard__actions']}
+            iconButtonProps={{
+              onClick: e => e.stopPropagation,
+            }}
+          >
             {dropdownListElements}
           </CardActions>
         )}
