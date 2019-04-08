@@ -111,14 +111,17 @@ class DropdownContainer extends Component<
       },
     };
     const currentPosition = this.state.position;
-    this.setState(
-      {
-        position: resolutions[overflowAt][currentPosition],
-      },
-      () => {
-        this.lastOverflowAt = overflowAt;
-      },
-    );
+    const resolution = resolutions[overflowAt][currentPosition];
+    if (resolution) {
+      this.setState(
+        {
+          position: resolution,
+        },
+        () => {
+          this.lastOverflowAt = overflowAt;
+        },
+      );
+    }
   };
 
   calculatePosition = () => {
