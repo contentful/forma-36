@@ -14,8 +14,7 @@
     "esModuleInterop": true,
     "typeRoots": ["node_modules/@types", "./typings.d.ts"],
     "resolveJsonModule": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "incremental": true
+    "suppressImplicitAnyIndexErrors": true
   },
   "include": ["./"],
   "exclude": ["dist", "dist-storybook", "node_modules"]
