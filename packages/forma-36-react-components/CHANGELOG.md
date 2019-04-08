@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.2.2...@contentful/forma-36-react-components@3.2.3) (2019-04-08)
+
+
+### Bug Fixes
+
+* **Dropdown:** Dont reposition if no resoulution available ([9c28524](https://github.com/contentful/forma-36/commit/9c28524))
+
+
+
+
+
 ## [3.2.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.2.1...@contentful/forma-36-react-components@3.2.2) (2019-04-05)
 
 
