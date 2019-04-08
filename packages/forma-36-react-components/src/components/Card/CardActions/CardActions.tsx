@@ -1,13 +1,17 @@
 import React, { Component, MouseEvent as ReactMouseEvent } from 'react';
 import Dropdown from '../../Dropdown/Dropdown';
 import DropdownList from '../../Dropdown/DropdownList';
-import IconButton from '../../IconButton';
+import IconButton, { IconButtonProps } from '../../IconButton/IconButton';
 
 export type CardActionsPropTypes = {
   /**
    * Class names to be appended to the className prop of the component
    */
   className?: string;
+  /**
+   * Props to pass down to the IconButton component
+   */
+  iconButtonProps?: Partial<IconButtonProps>;
   /**
    * The DropdownList elements used to render an actions dropdown for the component
    */
@@ -32,8 +36,24 @@ export class CardActions extends Component<
 
   state = { isDropdownOpen: false };
 
+  handleClick = (event: ReactMouseEvent) => {
+    this.setState(prevState => ({
+      isDropdownOpen: !prevState.isDropdownOpen,
+    }));
+
+    if (this.props.iconButtonProps && this.props.iconButtonProps.onClick) {
+      event.stopPropagation();
+    }
+  };
+
   render() {
-    const { className, children, testId, ...otherProps } = this.props;
+    const {
+      className,
+      children,
+      testId,
+      iconButtonProps,
+      ...otherProps
+    } = this.props;
 
     return (
       <Dropdown
@@ -50,10 +70,9 @@ export class CardActions extends Component<
             iconProps={{ icon: 'MoreHorizontal' }}
             buttonType="secondary"
             label="Actions"
-            onClick={() => {
-              this.setState(prevState => ({
-                isDropdownOpen: !prevState.isDropdownOpen,
-              }));
+            {...iconButtonProps}
+            onClick={event => {
+              this.handleClick(event);
             }}
           />
         }
@@ -74,6 +93,7 @@ export class CardActions extends Component<
                       child.props.onClick(e);
                     }
                     this.setState({ isDropdownOpen: false });
+                    e.stopPropagation();
                   },
                 }),
             );
