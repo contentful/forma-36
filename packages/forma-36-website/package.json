@@ -1,6 +1,6 @@
 {
   "name": "forma-36-website",
-  "description": "Forma 36 Doc App",
+  "description": "Forma 36 Documentation App",
   "private": true,
   "version": "0.0.50",
   "dependencies": {
