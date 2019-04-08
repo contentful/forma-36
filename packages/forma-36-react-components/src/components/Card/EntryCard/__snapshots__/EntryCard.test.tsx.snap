@@ -241,6 +241,11 @@ exports[`renders the component with dropdownListElements 1`] = `
       </Tag>
       <CardActions
         className="EntryCard__actions"
+        iconButtonProps={
+          Object {
+            "onClick": [Function],
+          }
+        }
         testId="cf-ui-card-actions"
       >
         <DropdownList

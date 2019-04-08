@@ -191,7 +191,12 @@ export class EntryCard extends Component<EntryCardPropTypes> {
                   </div>
                   {status && this.renderStatus(status)}
                   {dropdownListElements && (
-                    <CardActions className={styles['EntryCard__actions']}>
+                    <CardActions
+                      className={styles['EntryCard__actions']}
+                      iconButtonProps={{
+                        onClick: e => e.stopPropagation,
+                      }}
+                    >
                       {dropdownListElements}
                     </CardActions>
                   )}
