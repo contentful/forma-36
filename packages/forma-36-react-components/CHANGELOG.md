@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.2.3...@contentful/forma-36-react-components@3.2.4) (2019-04-08)
+
+
+### Bug Fixes
+
+* **EntryCard:** Stop EntryCard click events firing on CardActions click ([191ae63](https://github.com/contentful/forma-36/commit/191ae63))
+
+
+
+
+
 ## [3.2.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.2.2...@contentful/forma-36-react-components@3.2.3) (2019-04-08)
 
 
