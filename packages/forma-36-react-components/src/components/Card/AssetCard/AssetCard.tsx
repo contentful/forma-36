@@ -146,7 +146,12 @@ export class AssetCard extends Component<AssetCardProps> {
               <div className={styles['AssetCard__header']}>
                 {status && this.renderStatus(status)}
                 {dropdownListElements && (
-                  <CardActions className={styles['AssetCard__actions']}>
+                  <CardActions
+                    className={styles['AssetCard__actions']}
+                    iconButtonProps={{
+                      onClick: e => e.stopPropagation,
+                    }}
+                  >
                     {dropdownListElements}
                   </CardActions>
                 )}
