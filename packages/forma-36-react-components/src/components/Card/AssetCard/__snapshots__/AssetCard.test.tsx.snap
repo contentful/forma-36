@@ -92,6 +92,11 @@ exports[`renders the component with actions 1`] = `
     >
       <CardActions
         className="AssetCard__actions"
+        iconButtonProps={
+          Object {
+            "onClick": [Function],
+          }
+        }
         testId="cf-ui-card-actions"
       >
         <DropdownList
