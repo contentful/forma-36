@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.3.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.2.7...@contentful/forma-36-react-components@3.3.0) (2019-04-09)
+
+
+### Features
+
+* **EntryCard:** Add size prop to component ([7c3eb10](https://github.com/contentful/forma-36/commit/7c3eb10))
+
+
+
+
+
 ## [3.2.7](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.2.6...@contentful/forma-36-react-components@3.2.7) (2019-04-09)
 
 
