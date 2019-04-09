@@ -61,6 +61,14 @@ storiesOf('Components|Card/EntryCard', module)
         isDragActive={boolean('isDragActive', false)}
         className={text('className', '')}
         loading={boolean('loading', false)}
+        size={select(
+          'size',
+          {
+            default: 'default',
+            small: 'small',
+          },
+          'default',
+        )}
       />
     </div>
   ))

@@ -11,11 +11,18 @@
   font-size: var(--font-size-m);
   line-height: var(--line-height-default);
   color: var(--color-text-dark);
-  height: calc(1rem * (135 / var(--font-base-default)));
   transition: box-shadow var(--transition-duration-short)
       var(--transition-easing-default),
     border-color var(--transition-duration-default)
       var(--transition-easing-default);
+}
+
+.EntryCard--size-default {
+  height: calc(1rem * (135 / var(--font-base-default)));
+}
+
+.EntryCard--size-small {
+  height: calc(1rem * (84 / var(--font-base-default)));
 }
 
 .EntryCard__wrapper {
