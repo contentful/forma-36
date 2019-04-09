@@ -91,6 +91,7 @@
   }
 
   &:active:not(.Button--disabled) {
+    transition: none;
     background-image: none;
     background-color: var(--color-blue-dark);
   }
@@ -120,6 +121,7 @@
   }
 
   &:active:not(.Button--disabled) {
+    transition: none;
     background-image: none;
     background-color: var(--color-green-dark);
   }
@@ -149,6 +151,7 @@
   }
 
   &:active:not(.Button--disabled) {
+    transition: none;
     background-image: none;
     background-color: var(--color-red-dark);
   }
