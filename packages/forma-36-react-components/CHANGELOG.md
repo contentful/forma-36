@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.7](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.2.6...@contentful/forma-36-react-components@3.2.7) (2019-04-09)
+
+
+### Bug Fixes
+
+* **Form:** Use forma tokens for spacing configuration ([fb3f3c6](https://github.com/contentful/forma-36/commit/fb3f3c6))
+
+
+
+
+
 ## [3.2.6](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.2.5...@contentful/forma-36-react-components@3.2.6) (2019-04-08)
 
 
