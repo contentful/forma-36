@@ -66,11 +66,16 @@ export type EntryCardPropTypes = {
    * Props to pass down to the CardDragHandle component
    */
   cardDragHandleProps?: Partial<CardDragHandlePropTypes>;
+  /**
+   * Changes the height of the component. When small will also ensure thumbnail and description aren't rendered
+   */
+  size: 'default' | 'small';
 } & typeof defaultProps;
 
 const defaultProps = {
   title: 'Untitled',
   testId: 'cf-ui-entry-card',
+  size: 'default',
 };
 
 export class EntryCard extends Component<EntryCardPropTypes> {
@@ -149,12 +154,16 @@ export class EntryCard extends Component<EntryCardPropTypes> {
       withDragHandle,
       isDragActive,
       cardDragHandleProps,
+      size,
       ...otherProps
     } = this.props;
 
     const classNames = cn(
       styles.EntryCard,
-      { [styles['EntryCard--drag-active']]: isDragActive },
+      {
+        [styles['EntryCard--drag-active']]: isDragActive,
+        [styles[`EntryCard--size-${size}`]]: size,
+      },
       className,
     );
 
@@ -204,9 +213,13 @@ export class EntryCard extends Component<EntryCardPropTypes> {
                 <div className={styles.EntryCard__content}>
                   <div className={styles.EntryCard__body}>
                     {title && this.renderTitle(title)}
-                    {description && this.renderDescription(description)}
+                    {description &&
+                      size === 'default' &&
+                      this.renderDescription(description)}
                   </div>
-                  {thumbnailElement && this.renderThumbnail(thumbnailElement)}
+                  {thumbnailElement &&
+                    size === 'default' &&
+                    this.renderThumbnail(thumbnailElement)}
                 </div>
               </React.Fragment>
             </article>
