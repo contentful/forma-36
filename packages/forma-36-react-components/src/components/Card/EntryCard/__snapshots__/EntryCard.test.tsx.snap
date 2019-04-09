@@ -1,8 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`renders a small sized variant of the component 1`] = `
+<Card
+  className="EntryCard EntryCard--size-small"
+  padding="none"
+  selected={false}
+  testId="cf-ui-entry-card"
+>
+  <article
+    className="EntryCard__wrapper"
+  >
+    <div
+      className="EntryCard__meta"
+    >
+      <div
+        className="EntryCard__content-type"
+        data-test-id="content-type"
+      >
+        My Content Type
+      </div>
+      <Tag
+        tagType="positive"
+        testId="cf-ui-tag"
+      >
+        published
+      </Tag>
+    </div>
+    <div
+      className="EntryCard__content"
+    >
+      <div
+        className="EntryCard__body"
+      >
+        <h1
+          className="EntryCard__title"
+          data-test-id="title"
+          title=""
+        >
+          My Entry Card
+        </h1>
+      </div>
+    </div>
+  </article>
+</Card>
+`;
+
 exports[`renders the component 1`] = `
 <Card
-  className="EntryCard"
+  className="EntryCard EntryCard--size-default"
   padding="none"
   selected={false}
   testId="cf-ui-entry-card"
@@ -52,7 +97,7 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component with a drag handle 1`] = `
 <Card
-  className="EntryCard"
+  className="EntryCard EntryCard--size-default"
   padding="none"
   selected={false}
   testId="cf-ui-entry-card"
@@ -108,7 +153,7 @@ exports[`renders the component with a drag handle 1`] = `
 
 exports[`renders the component with a thumbnail element 1`] = `
 <Card
-  className="EntryCard"
+  className="EntryCard EntryCard--size-default"
   padding="none"
   selected={false}
   testId="cf-ui-entry-card"
@@ -166,7 +211,7 @@ exports[`renders the component with a thumbnail element 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <Card
-  className="EntryCard my-extra-class"
+  className="EntryCard EntryCard--size-default my-extra-class"
   padding="none"
   selected={false}
   testId="cf-ui-entry-card"
@@ -216,7 +261,7 @@ exports[`renders the component with an additional class name 1`] = `
 
 exports[`renders the component with dropdownListElements 1`] = `
 <Card
-  className="EntryCard"
+  className="EntryCard EntryCard--size-default"
   padding="none"
   selected={false}
   testId="cf-ui-entry-card"
