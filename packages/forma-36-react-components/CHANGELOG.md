@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.3.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.3.1...@contentful/forma-36-react-components@3.3.2) (2019-04-10)
+
+
+### Bug Fixes
+
+* **TextField:** Update character count on value set through props ([af2a2cd](https://github.com/contentful/forma-36/commit/af2a2cd))
+
+
+
+
+
 ## [3.3.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.3.0...@contentful/forma-36-react-components@3.3.1) (2019-04-09)
 
 
