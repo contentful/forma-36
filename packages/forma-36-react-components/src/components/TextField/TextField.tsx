@@ -64,6 +64,7 @@ export class TextField extends Component<TextFieldProps, TextFieldState> {
     if (props.value !== state.initialValue) {
       return { ...state, value: props.value, initialValue: props.value };
     }
+    return null;
   }
 
   render() {
