@@ -58,14 +58,6 @@ module.exports = {
                 name: 'Frequently used verbs',
                 link: '/guidelines/copy/frequently-used-verbs',
               },
-              {
-                name: 'Component examples',
-                link: '/guidelines/copy/component-examples',
-              },
-              {
-                name: 'Suggested reading',
-                link: '/guidelines/copy/suggested-reading',
-              },
             ],
           },
           {
