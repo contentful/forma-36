@@ -9,7 +9,7 @@ export type FormProps = {
   testId?: string;
   style?: React.CSSProperties;
   className?: string;
-  children: React.ReactNode;
+  children: React.ReactChild | React.ReactNodeArray;
 } & typeof defaultProps;
 
 const defaultProps = {
@@ -51,9 +51,12 @@ export class Form extends Component<FormProps> {
         onSubmit={this.handleSubmit}
         {...otherProps}
       >
-        {React.Children.map(children, child => (
-          <div className={formItemClassNames}>{child}</div>
-        ))}
+        {React.Children.map(children, child => {
+          if (child) {
+            return <div className={formItemClassNames}>{child}</div>;
+          }
+          return null;
+        })}
       </form>
     );
   }
