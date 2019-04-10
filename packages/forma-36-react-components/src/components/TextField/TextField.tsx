@@ -34,6 +34,7 @@ export type TextFieldProps = {
 
 export interface TextFieldState {
   value?: string;
+  initialValue?: string;
 }
 
 const defaultProps = {
@@ -46,7 +47,7 @@ const defaultProps = {
 export class TextField extends Component<TextFieldProps, TextFieldState> {
   static defaultProps = defaultProps;
 
-  state = { value: this.props.value || '' };
+  state = { value: this.props.value || '', initialValue: this.props.value };
 
   // Store a copy of the value in state.
   // This is used by this component when the `countCharacters`
@@ -55,6 +56,15 @@ export class TextField extends Component<TextFieldProps, TextFieldState> {
     this.setState({ value: (evt.target as HTMLInputElement).value });
     if (this.props.onChange) this.props.onChange(evt);
   };
+
+  static getDerivedStateFromProps(
+    props: TextFieldProps,
+    state: TextFieldState,
+  ) {
+    if (props.value !== state.initialValue) {
+      return { ...state, value: props.value, initialValue: props.value };
+    }
+  }
 
   render() {
     const {
