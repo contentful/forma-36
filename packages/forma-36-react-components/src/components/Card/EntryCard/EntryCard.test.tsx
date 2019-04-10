@@ -86,6 +86,20 @@ it('renders the component with a drag handle', () => {
   expect(output).toMatchSnapshot();
 });
 
+it('renders a small sized variant of the component', () => {
+  const output = shallow(
+    <EntryCard
+      title="My Entry Card"
+      description="This is my Entry Card"
+      status="published"
+      contentType="My Content Type"
+      size="small"
+    />,
+  );
+
+  expect(output).toMatchSnapshot();
+});
+
 it('has no a11y issues', async () => {
   const output = mount(
     <EntryCard

@@ -1,4 +1,5 @@
 @import 'settings/typography';
+@import 'settings/dimensions';
 
 .Form {
   display: block;
@@ -9,9 +10,9 @@
 }
 
 .Form__item--default {
-  margin-bottom: calc(1rem * (40 / var(--font-base-default)));
+  margin-bottom: var(--spacing-l);
 }
 
 .Form__item--condensed {
-  margin-bottom: calc(1rem * (28 / var(--font-base-default)));
+  margin-bottom: var(--spacing-m);
 }
