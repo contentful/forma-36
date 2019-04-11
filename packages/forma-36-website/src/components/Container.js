@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import tokens from '@contentful/forma-36-tokens';
-import { css } from 'emotion';
+import { css } from '@emotion/core';
 import { MDXProvider } from '@mdx-js/tag';
 import {
   Typography,
@@ -60,7 +60,7 @@ const Container = data => {
   const { frontmatter, children } = data;
 
   return (
-    <div className={styles.container}>
+    <div css={styles.container}>
       {frontmatter.type === 'component' && (
         <ComponentHeader
           title={frontmatter.title}
@@ -69,7 +69,7 @@ const Container = data => {
         />
       )}
 
-      <Typography extraClassNames={styles.inner}>
+      <Typography css={styles.inner}>
         <MDXProvider components={markToComponentMap}>{children}</MDXProvider>
       </Typography>
 
