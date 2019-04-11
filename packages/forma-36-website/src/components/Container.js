@@ -21,7 +21,6 @@ import {
 import ComponentSource from './ComponentSource';
 import ComponentHeader from './ComponentHeader';
 import ChildSections from './ChildSections';
-import { graphql } from 'gatsby';
 
 const styles = {
   container: css`
@@ -44,10 +43,10 @@ const markToComponentMap = {
   h6: props => <Subheading {...props} />,
   p: props => <Paragraph {...props} />,
   a: props => <TextLink {...props} />,
-  ul: props => <List extraClassNames="f36-margin-bottom--m" {...props} />,
-  li: props => <ListItem extraClassNames="f36-color--text-mid" {...props} />,
+  ul: props => <List className="f36-margin-bottom--m" {...props} />,
+  li: props => <ListItem className="f36-color--text-mid" {...props} />,
   code: props => <ComponentSource>{props.children}</ComponentSource>,
-  table: props => <Table extraClassNames="f36-margin-bottom--m" {...props} />,
+  table: props => <Table className="f36-margin-bottom--m" {...props} />,
   thead: props => <TableHead {...props} />,
   tbody: props => <TableBody {...props} />,
   tr: props => <TableRow {...props} />,
@@ -56,12 +55,11 @@ const markToComponentMap = {
 };
 
 const Container = data => {
-  console.log({ data });
   const { frontmatter, children } = data;
 
   return (
     <div css={styles.container}>
-      {frontmatter.type === 'component' && (
+      {frontmatter && frontmatter.type === 'component' && (
         <ComponentHeader
           title={frontmatter.title}
           githubUrl={frontmatter.github}
@@ -73,7 +71,9 @@ const Container = data => {
         <MDXProvider components={markToComponentMap}>{children}</MDXProvider>
       </Typography>
 
-      {frontmatter.subpages && <ChildSections items={frontmatter.subpages} />}
+      {frontmatter && frontmatter.subpages && (
+        <ChildSections items={frontmatter.subpages} />
+      )}
     </div>
   );
 };

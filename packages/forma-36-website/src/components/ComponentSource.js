@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { css } from '@emotion/core';
 import tokens from '@contentful/forma-36-tokens';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
@@ -18,6 +17,11 @@ const styles = {
     color: ${tokens.colorWhite};
     padding: ${tokens.spacingXs};
   `,
+
+  editor: css`
+    background-color: #222031;
+    color: #ffffff;
+  `,
 };
 
 class ComponentSource extends React.Component {
@@ -31,26 +35,24 @@ class ComponentSource extends React.Component {
 
   render() {
     return (
-      <LiveProvider
-        className="f36-margin-bottom--m"
-        code={this.props.children}
-        scope={{ ...f36Components }}
-      >
-        <Card padding="none">
-          <div css={styles.preview}>
-            <LivePreview />
-          </div>
-          {this.state.isOpen && (
-            <div>
-              <LiveError css={styles.error} />
-              <LiveEditor />
+      <div className="f36-margin-bottom--m">
+        <LiveProvider code={this.props.children} scope={{ ...f36Components }}>
+          <Card padding="none">
+            <div css={styles.preview}>
+              <LivePreview />
             </div>
-          )}
-          <Button isFullWidth buttonType="muted" onClick={this.handleToggle}>
-            {this.state.isOpen ? 'Hide source' : 'Show source'}
-          </Button>
-        </Card>
-      </LiveProvider>
+            {this.state.isOpen && (
+              <React.Fragment>
+                <LiveError css={styles.error} />
+                <LiveEditor css={styles.editor} />
+              </React.Fragment>
+            )}
+            <Button isFullWidth buttonType="muted" onClick={this.handleToggle}>
+              {this.state.isOpen ? 'Hide source' : 'Show source'}
+            </Button>
+          </Card>
+        </LiveProvider>
+      </div>
     );
   }
 }

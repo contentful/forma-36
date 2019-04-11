@@ -65,10 +65,12 @@ const Layout = props => (
               menuItems={
                 data.site.siteMetadata && data.site.siteMetadata.menuLinks
               }
-              currentPath={props && props.location.pathname}
+              currentPath={props && props.location && props.location.pathname}
             />
 
-            <Container frontmatter={props.pageContext.frontmatter}>
+            <Container
+              frontmatter={props.pageContext && props.pageContext.frontmatter}
+            >
               {props.children}
             </Container>
           </div>
