@@ -4,97 +4,97 @@ module.exports = {
     menuLinks: [
       {
         name: 'Foundation',
-        link: '/foundation',
+        link: '/foundation/',
         menuLinks: [
           {
             name: 'Color',
-            link: '/foundation/color',
+            link: '/foundation/color/',
           },
           {
             name: 'Typography',
-            link: '/foundation/typography',
+            link: '/foundation/typography/',
           },
         ],
       },
       {
         name: 'Guidelines',
-        link: '/guidelines',
+        link: '/guidelines/',
         menuLinks: [
           {
             name: 'Copy',
-            link: '/guidelines/copy',
+            link: '/guidelines/copy/',
             menuLinks: [
               {
                 name: 'Grammar',
-                link: '/guidelines/copy/grammar',
+                link: '/guidelines/copy/grammar/',
                 menuLinks: [
                   {
                     name: 'Capitalization',
-                    link: '/guidelines/copy/grammar/capitalization',
+                    link: '/guidelines/copy/grammar/capitalization/',
                   },
                   {
                     name: 'Punctuation',
-                    link: '/guidelines/copy/grammar/punctuation',
+                    link: '/guidelines/copy/grammar/punctuation/',
                   },
                   {
                     name: 'Sentence structure',
-                    link: '/guidelines/copy/grammar/sentence-structure',
+                    link: '/guidelines/copy/grammar/sentence-structure/',
                   },
                   {
                     name: 'Tense',
-                    link: '/guidelines/copy/grammar/tense',
+                    link: '/guidelines/copy/grammar/tense/',
                   },
                   {
                     name: 'Word choice',
-                    link: '/guidelines/copy/grammar/word-choice',
+                    link: '/guidelines/copy/grammar/word-choice/',
                   },
                 ],
               },
               {
                 name: 'Tone of voice',
-                link: '/guidelines/copy/tone-of-voice',
+                link: '/guidelines/copy/tone-of-voice/',
               },
               {
                 name: 'Frequently used verbs',
-                link: '/guidelines/copy/frequently-used-verbs',
+                link: '/guidelines/copy/frequently-used-verbs/',
               },
             ],
           },
           {
             name: 'Spacing',
-            link: '/guidelines/spacing',
+            link: '/guidelines/spacing/',
           },
         ],
       },
       {
         name: 'Components',
-        link: '/components',
+        link: '/components/',
         menuLinks: [
           {
             name: 'Button',
-            link: '/components/button',
+            link: '/components/button/',
           },
           {
             name: 'Note',
-            link: '/components/note',
+            link: '/components/note/',
           },
           {
             name: 'Table',
-            link: '/components/table',
+            link: '/components/table/',
           },
           {
             name: 'TextLink',
-            link: '/components/text-link',
+            link: '/components/text-link/',
           },
           {
             name: 'Typography',
-            link: '/components/typography',
+            link: '/components/typography/',
           },
         ],
       },
       {
         name: 'Resources',
-        link: '/resources',
+        link: '/resources/',
       },
     ],
   },
