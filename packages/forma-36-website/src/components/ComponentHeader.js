@@ -1,15 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import tokens from '@contentful/forma-36-tokens';
 
 import { css } from '@emotion/core';
-import {
-  DisplayText,
-  Heading,
-  Paragraph,
-  TextLink,
-  Card,
-} from '@contentful/forma-36-react-components';
+import { DisplayText, TextLink } from '@contentful/forma-36-react-components';
 
 const styles = {
   header: css`
