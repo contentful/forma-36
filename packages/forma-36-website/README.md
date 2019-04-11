@@ -65,17 +65,19 @@ siteMetadata: {
   menuLinks: [
     {
       name: 'My page',
-      link: '/my-page',
+      link: '/my-page/',
       menuLinks: [
         {
           name: 'My sub-page',
-          link: '/my-page/my-sub-page',
+          link: '/my-page/my-sub-page/',
         }
       ],
     },
   ]
 }
 ```
+
+The value for the link property **must** end in a forward slash.
 
 ### Adding/updating page section navigation items
 
@@ -88,9 +90,11 @@ To update the page section navigation for a page you just need to update the fro
 title: 'My page'
 subpages:
   - title: 'My sub-page'
-    path: '/my-page/my-sub-page'
+    path: '/my-page/my-sub-page/'
 ---
 ```
+
+The value for the path property **must** end in a forward slash.
 
 ## Adding component documentation
 
