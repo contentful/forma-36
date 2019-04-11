@@ -25,8 +25,38 @@ module.exports = {
             link: '/guidelines/copy',
             menuLinks: [
               {
-                name: 'Testing',
-                link: '/guidelines/copy/testing',
+                name: 'Grammar',
+                link: '/guidelines/copy/grammar',
+                menuLinks: [
+                  {
+                    name: 'Capitalization',
+                    link: '/guidelines/copy/grammar/capitalization',
+                  },
+                  {
+                    name: 'Punctuation',
+                    link: '/guidelines/copy/grammar/punctuation',
+                  },
+                  {
+                    name: 'Sentence structure',
+                    link: '/guidelines/copy/grammar/sentence-structure',
+                  },
+                  {
+                    name: 'Tense',
+                    link: '/guidelines/copy/grammar/tense',
+                  },
+                  {
+                    name: 'Word choice',
+                    link: '/guidelines/copy/grammar/word-choice',
+                  },
+                ],
+              },
+              {
+                name: 'Tone of voice',
+                link: '/guidelines/copy/tone-of-voice',
+              },
+              {
+                name: 'Frequently used verbs',
+                link: '/guidelines/copy/frequently-used-verbs',
               },
             ],
           },
@@ -97,6 +127,7 @@ module.exports = {
       },
     },
     'gatsby-plugin-sharp',
+    'gatsby-plugin-emotion',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

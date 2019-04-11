@@ -1,5 +1,5 @@
 import React from 'react';
-import { css } from 'emotion';
+import { css } from '@emotion/core';
 import tokens from '@contentful/forma-36-tokens';
 import logo from './logo-forma.svg';
 
@@ -11,7 +11,5 @@ const styles = {
   `,
 };
 
-const Logo = () => (
-  <img src={logo} className={styles.logo} alt="Forma 36 Logo" />
-);
+const Logo = () => <img src={logo} css={styles.logo} alt="Forma 36 Logo" />;
 export default Logo;

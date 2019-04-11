@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { css } from 'emotion';
+import { css } from '@emotion/core';
 import tokens from '@contentful/forma-36-tokens';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import * as f36Components from '@contentful/forma-36-react-components';
@@ -37,12 +37,12 @@ class ComponentSource extends React.Component {
         scope={{ ...f36Components }}
       >
         <Card padding="none">
-          <div className={styles.preview}>
+          <div css={styles.preview}>
             <LivePreview />
           </div>
           {this.state.isOpen && (
             <div>
-              <LiveError className={styles.error} />
+              <LiveError css={styles.error} />
               <LiveEditor />
             </div>
           )}
