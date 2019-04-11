@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import tokens from '@contentful/forma-36-tokens';
 import { navigate } from 'gatsby';
-
-import { css } from 'emotion';
+import { css } from '@emotion/core';
 import {
   DisplayText,
   Subheading,
@@ -21,8 +20,6 @@ const styles = {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   `,
 
-  card: css``,
-
   icon: css`
     height: 100px;
     margin-bottom: ${tokens.spacingM};
@@ -36,15 +33,15 @@ const handleClick = path => {
 };
 
 const ChildSections = ({ items }) => (
-  <div className={styles.wrapper}>
+  <div css={styles.wrapper}>
     {items.map((item, index) => {
       return (
         <Card
-          extraClassNames={styles.card}
+          extraClassName={styles.card}
           onClick={() => handleClick(item.path)}
           key={index}
         >
-          <div className={styles.icon} />
+          <div css={styles.icon} />
           <Subheading>{item.title}</Subheading>
           {item.desc && <Paragraph>{item.desc}</Paragraph>}
         </Card>

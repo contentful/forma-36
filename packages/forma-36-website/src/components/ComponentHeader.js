@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import tokens from '@contentful/forma-36-tokens';
 
-import { css } from 'emotion';
+import { css } from '@emotion/core';
 import {
   DisplayText,
   Heading,
@@ -20,7 +20,7 @@ const styles = {
 };
 
 const ComponentHeader = ({ title, storybookUrl, githubUrl }) => (
-  <header className={styles.header}>
+  <header css={styles.header}>
     <DisplayText>{title}</DisplayText>
     <TextLink href={githubUrl}>View {title} on GitHub</TextLink> |{' '}
     <TextLink href={storybookUrl}>View {title} in Storybook</TextLink>

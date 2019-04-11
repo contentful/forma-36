@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-import { css, cx } from 'emotion';
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core';
 import tokens from '@contentful/forma-36-tokens';
 
 import Logo from './Logo';
@@ -66,18 +67,18 @@ class MenuList extends React.Component {
   render() {
     const { menuItems, currentPath } = this.props;
     return (
-      <ul className={styles.list}>
+      <ul css={styles.list}>
         {menuItems &&
           menuItems.map((item, index) => (
             <li
               key={index} // eslint-disable-line
-              className={cx(styles.listItem)}
+              css={styles.listItem}
             >
               <Link
-                className={cx(
+                css={[
                   styles.link,
                   currentPath === item.link && styles.linkActive,
-                )}
+                ]}
                 to={item.link}
                 href={item.link}
               >
@@ -102,7 +103,7 @@ MenuList.defaultProps = {
   menuItems: [],
 };
 const Navigation = ({ menuItems, currentPath }) => (
-  <div className={styles.navigation}>
+  <div css={styles.navigation}>
     <Link to="./" href="./">
       <Logo />
     </Link>
