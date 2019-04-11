@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 import '@contentful/forma-36-react-components/dist/styles.css';
 import '@contentful/forma-36-fcss/dist/styles.css';
-import { css } from 'emotion';
+import { css } from '@emotion/core';
 import Container from './Container';
 import Navigation from './Navigation';
 import './Layout.css';
@@ -60,7 +60,7 @@ const Layout = props => (
           >
             <html lang="en" />
           </Helmet>
-          <div className={styles.main}>
+          <div css={styles.main}>
             <Navigation
               menuItems={
                 data.site.siteMetadata && data.site.siteMetadata.menuLinks

@@ -127,6 +127,7 @@ module.exports = {
       },
     },
     'gatsby-plugin-sharp',
+    'gatsby-plugin-emotion',
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
