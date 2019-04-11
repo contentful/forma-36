@@ -1,13 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import tokens from '@contentful/forma-36-tokens';
 import { navigate } from 'gatsby';
 import { css } from '@emotion/core';
 import {
-  DisplayText,
   Subheading,
   Paragraph,
-  TextLink,
   Card,
 } from '@contentful/forma-36-react-components';
 
@@ -36,11 +33,7 @@ const ChildSections = ({ items }) => (
   <div css={styles.wrapper}>
     {items.map((item, index) => {
       return (
-        <Card
-          extraClassName={styles.card}
-          onClick={() => handleClick(item.path)}
-          key={index}
-        >
+        <Card onClick={() => handleClick(item.path)} key={index}>
           <div css={styles.icon} />
           <Subheading>{item.title}</Subheading>
           {item.desc && <Paragraph>{item.desc}</Paragraph>}
