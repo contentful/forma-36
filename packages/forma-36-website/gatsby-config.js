@@ -83,6 +83,10 @@ module.exports = {
             link: '/components/table/',
           },
           {
+            name: 'TextInput',
+            link: '/components/text-input/',
+          },
+          {
             name: 'TextLink',
             link: '/components/text-link/',
           },
