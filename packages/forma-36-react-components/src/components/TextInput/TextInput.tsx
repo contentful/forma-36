@@ -11,7 +11,15 @@ import styles from './TextInput.css';
 
 export type TextInputProps = {
   width?: 'small' | 'medium' | 'large' | 'full';
-  type?: 'text' | 'password' | 'email' | 'number' | 'search' | 'url';
+  type?:
+    | 'text'
+    | 'password'
+    | 'email'
+    | 'number'
+    | 'search'
+    | 'url'
+    | 'date'
+    | 'time';
   name?: string;
   id?: string;
   className?: string;
