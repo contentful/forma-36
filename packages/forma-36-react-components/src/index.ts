@@ -90,4 +90,8 @@ export { Tabs } from './components/Tabs/Tabs';
 export { Tab } from './components/Tabs/Tab';
 export { TabPanel } from './components/Tabs/TabPanel';
 export { Typography } from './components/Typography/Typography/Typography';
+export { EntityList } from './components/EntityList/EntityList/EntityList';
+export {
+  EntityListItem,
+} from './components/EntityList/EntityListItem/EntityListItem';
 // -- Add imports above this line (required by plopfile.js) --
