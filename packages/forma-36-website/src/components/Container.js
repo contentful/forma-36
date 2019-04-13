@@ -41,17 +41,19 @@ const markToComponentMap = {
   h4: props => <Subheading {...props} />,
   h5: props => <Subheading {...props} />,
   h6: props => <Subheading {...props} />,
-  p: props => <Paragraph {...props} />,
+  p: props => <Paragraph className="f36-font-size--l" {...props} />,
   a: props => <TextLink {...props} />,
   ul: props => <List className="f36-margin-bottom--m" {...props} />,
-  li: props => <ListItem className="f36-color--text-mid" {...props} />,
+  li: props => (
+    <ListItem className="f36-font-size--l f36-color--text-mid" {...props} />
+  ),
   code: props => <ComponentSource>{props.children}</ComponentSource>,
   table: props => <Table className="f36-margin-bottom--m" {...props} />,
   thead: props => <TableHead {...props} />,
   tbody: props => <TableBody {...props} />,
   tr: props => <TableRow {...props} />,
-  th: props => <TableCell {...props} />,
-  td: props => <TableCell {...props} />,
+  th: props => <TableCell className="f36-font-size--l" {...props} />,
+  td: props => <TableCell className="f36-font-size--l" {...props} />,
 };
 
 const Container = data => {
