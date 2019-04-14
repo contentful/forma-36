@@ -10,7 +10,9 @@ import {
 
 const styles = {
   wrapper: css`
-    width: 1000px;
+    width: 960px;
+    margin: 0 auto;
+    padding: 0 ${tokens.spacingL} ${tokens.spacingL};
     display: grid;
     grid-column-gap: ${tokens.spacingM};
     grid-row-gap: ${tokens.spacingM};
