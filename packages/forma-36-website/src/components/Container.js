@@ -21,16 +21,25 @@ import {
 import ComponentSource from './ComponentSource';
 import ComponentHeader from './ComponentHeader';
 import ChildSections from './ChildSections';
+import Footer from './Footer';
+import HomeSplash from './HomeSplash';
 
 const styles = {
   container: css`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
-    flex: 1;
-    padding: ${tokens.spacing4Xl};
+  `,
+
+  main: css`
+    flex: 1 1 0;
   `,
 
   inner: css`
-    max-width: 800px;
+    width: 960px;
+    margin: 0 auto;
+    padding: ${tokens.spacing2Xl} ${tokens.spacingL} ${tokens.spacingL};
   `,
 };
 
@@ -61,21 +70,26 @@ const Container = data => {
 
   return (
     <div css={styles.container}>
-      {frontmatter && frontmatter.type === 'component' && (
-        <ComponentHeader
-          title={frontmatter.title}
-          githubUrl={frontmatter.github}
-          storybookUrl={frontmatter.storybook}
-        />
-      )}
+      <div css={styles.main}>
+        {frontmatter && frontmatter.type === 'component' && (
+          <ComponentHeader
+            title={frontmatter.title}
+            githubUrl={frontmatter.github}
+            storybookUrl={frontmatter.storybook}
+          />
+        )}
 
-      <Typography css={styles.inner}>
-        <MDXProvider components={markToComponentMap}>{children}</MDXProvider>
-      </Typography>
+        {frontmatter && frontmatter.type === 'home' && <HomeSplash />}
 
-      {frontmatter && frontmatter.subpages && (
-        <ChildSections items={frontmatter.subpages} />
-      )}
+        <Typography css={styles.inner}>
+          <MDXProvider components={markToComponentMap}>{children}</MDXProvider>
+        </Typography>
+
+        {frontmatter && frontmatter.subpages && (
+          <ChildSections items={frontmatter.subpages} />
+        )}
+      </div>
+      <Footer />
     </div>
   );
 };

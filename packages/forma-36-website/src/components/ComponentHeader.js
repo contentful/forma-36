@@ -6,9 +6,10 @@ import { DisplayText, TextLink } from '@contentful/forma-36-react-components';
 
 const styles = {
   header: css`
+    width: 960px;
+    margin: 0 auto;
+    padding: ${tokens.spacing2Xl} ${tokens.spacingXl};
     border-bottom: 1px solid ${tokens.colorElementMid};
-    padding-bottom: ${tokens.spacing2Xl};
-    margin-bottom: ${tokens.spacing2Xl};
   `,
 };
 
