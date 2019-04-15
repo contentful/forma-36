@@ -1,0 +1,32 @@
+---
+title: 'HelpText'
+type: 'component'
+github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/HelpText'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-helptext--default'
+---
+
+The HelpText component provides a consisdent styled paragraph for guiding texts next to form components.
+
+## Best practices
+
+- Only use this component in the context of a form and as corresponding guidance to an input field.
+
+## Copy considerations
+
+Todo: Provide copy considerations
+
+## Example
+
+```jsx
+<React.Fragment>
+  <FormLabel htmlFor="name" required>
+    Full Name
+  </FormLabel>
+  <TextInput
+    name="name"
+    value="Lorem Ipsum"
+    className="f36-margin-bottom--xs"
+  />
+  <HelpText>Please enter your first and last name</HelpText>
+</React.Fragment>
+```
