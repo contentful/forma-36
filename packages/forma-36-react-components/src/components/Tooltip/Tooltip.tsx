@@ -59,6 +59,11 @@ export type TooltipProps = {
   onBlur?: Function;
 } & typeof defaultProps;
 
+interface TooltipState {
+  isVisible?: boolean;
+  portalTarget?: Node;
+}
+
 const defaultProps = {
   containerElement: 'span',
   isVisible: false,
@@ -67,7 +72,7 @@ const defaultProps = {
   maxWidth: 360,
 };
 
-export class Tooltip extends Component<TooltipProps> {
+export class Tooltip extends Component<TooltipProps, TooltipState> {
   static defaultProps = defaultProps;
 
   portalTarget: HTMLDivElement | null = null;
@@ -75,20 +80,26 @@ export class Tooltip extends Component<TooltipProps> {
   containerDomNode: HTMLSpanElement | null = null;
   tooltipDomNode: HTMLDivElement | null = null;
 
-  constructor(props: TooltipProps) {
-    super(props);
-    this.portalTarget = document.createElement('div');
-    this.place = props.place;
-  }
-
-  state = {
+  state: Partial<TooltipState> = {
     isVisible: this.props.isVisible,
   };
 
+  constructor(props: TooltipProps) {
+    super(props);
+    this.place = props.place;
+  }
+
   componentDidMount() {
-    if (this.portalTarget) {
-      document.body.appendChild(this.portalTarget);
-    }
+    this.setState(
+      {
+        portalTarget: window.document.createElement('div'),
+      },
+      () => {
+        if (this.state.portalTarget) {
+          window.document.body.appendChild(this.state.portalTarget);
+        }
+      },
+    );
   }
 
   componentDidUpdate(prevProps: TooltipProps) {
@@ -98,13 +109,16 @@ export class Tooltip extends Component<TooltipProps> {
   }
 
   componentWillUnmount() {
-    if (this.portalTarget) {
-      document.body.removeChild(this.portalTarget);
+    if (this.state.portalTarget) {
+      window.document.body.removeChild(this.state.portalTarget);
     }
   }
 
   setPlace = (place: TooltipPlace) => {
-    this.place = place;
+    if (this.state.isVisible) {
+      this.place = place;
+      this.forceUpdate();
+    }
   };
 
   calculatePosition = () => {
@@ -156,6 +170,9 @@ export class Tooltip extends Component<TooltipProps> {
   };
 
   renderTooltip = (content: React.ReactNode) => {
+    if (!this.state.portalTarget) {
+      return null;
+    }
     const placeClass = `Tooltip--place-${this.place}`;
     const classNames = cn(
       styles['Tooltip'],
@@ -198,7 +215,7 @@ export class Tooltip extends Component<TooltipProps> {
       </div>
     );
 
-    return ReactDOM.createPortal(tooltip, this.portalTarget as Element);
+    return ReactDOM.createPortal(tooltip, this.state.portalTarget as Element);
   };
 
   render() {
