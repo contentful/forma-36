@@ -115,7 +115,10 @@ export class Tooltip extends Component<TooltipProps, TooltipState> {
   }
 
   setPlace = (place: TooltipPlace) => {
-    this.place = place;
+    if (this.state.isVisible) {
+      this.place = place;
+      this.forceUpdate();
+    }
   };
 
   calculatePosition = () => {
