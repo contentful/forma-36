@@ -15,6 +15,7 @@ storiesOf('Components|TextInput', module)
       error={boolean('error', false)}
       className={text('className', '')}
       disabled={boolean('disabled', false)}
+      isReadOnly={boolean('isReadOnly', false)}
       withCopyButton={boolean('withCopyButton', false)}
       value={text('valiue', '123456')}
       maxLength={number('maxLength', 50)}
@@ -44,6 +45,7 @@ storiesOf('Components|TextInput', module)
           error={boolean('error', false)}
           className={text('className', '')}
           disabled={boolean('disabled', false)}
+          isReadOnly={boolean('isReadOnly', false)}
           withCopyButton={boolean('withCopyButton', false)}
           value={text('value', '123456')}
           maxLength={number('maxLength', 50)}

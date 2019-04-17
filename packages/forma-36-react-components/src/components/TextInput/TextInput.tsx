@@ -11,6 +11,7 @@ import styles from './TextInput.css';
 
 export type TextInputProps = {
   width?: 'small' | 'medium' | 'large' | 'full';
+  isReadOnly?: boolean;
   type?:
     | 'text'
     | 'password'
@@ -45,6 +46,7 @@ const defaultProps = {
   withCopyButton: false,
   testId: 'cf-ui-text-input',
   disabled: false,
+  isReadOnly: false,
   required: false,
   width: 'full',
 };
@@ -78,6 +80,7 @@ export class TextInput extends Component<TextInputProps, TextInputState> {
       maxLength,
       disabled,
       required,
+      isReadOnly,
       onChange,
       testId,
       onBlur,
@@ -113,7 +116,7 @@ export class TextInput extends Component<TextInputProps, TextInputState> {
           onBlur={onBlur}
           onFocus={this.handleFocus}
           onChange={e => {
-            if (disabled) return;
+            if (disabled || isReadOnly) return;
 
             if (onChange) {
               onChange(e);
