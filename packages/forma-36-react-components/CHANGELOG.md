@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.4.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.3.6...@contentful/forma-36-react-components@3.4.0) (2019-04-17)
+
+
+### Features
+
+* **EntityList:** Add EntityList components ([dfee178](https://github.com/contentful/forma-36/commit/dfee178))
+
+
+
+
+
 ## [3.3.6](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.3.5...@contentful/forma-36-react-components@3.3.6) (2019-04-16)
 
 
