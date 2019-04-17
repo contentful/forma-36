@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.5.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.4.0...@contentful/forma-36-react-components@3.5.0) (2019-04-17)
+
+
+### Features
+
+* **TextInput:** Added readonly property ([a3e2198](https://github.com/contentful/forma-36/commit/a3e2198))
+
+
+
+
+
 # [3.4.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.3.6...@contentful/forma-36-react-components@3.4.0) (2019-04-17)
 
 
