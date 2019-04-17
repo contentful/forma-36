@@ -16,6 +16,10 @@ module.exports = {
       },
     },
   },
+  entry: {
+    main: './src/index.ts',
+    datePicker: './src/components/DatePicker/index.ts',
+  },
 
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json', '.css'],

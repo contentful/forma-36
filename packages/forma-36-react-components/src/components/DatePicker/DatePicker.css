@@ -1,0 +1,22 @@
+@import 'settings/colors';
+@import 'settings/typography';
+@import 'settings/transitions';
+
+.DatePicker {
+  display: inline-block;
+  font-family: var(--font-stack-primary);
+  font-size: calc(1rem * (14 / var(--font-base-default)));
+}
+
+.DatePickerCalendar {
+  font-family: var(--font-stack-primary);
+  font-size: 1rem;
+}
+
+.DatePickerCalendar button,
+.DatePicker button {
+  border: none;
+  background: none;
+  font-size: 1rem;
+  appearance: none;
+}
