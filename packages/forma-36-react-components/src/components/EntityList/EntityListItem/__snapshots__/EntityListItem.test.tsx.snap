@@ -1,0 +1,697 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`can call an onClick callback 1`] = `
+<li
+  className="EntityListItem EntityListItem--is-interactive"
+  data-test-id="cf-ui-entity-list-item"
+>
+  <a
+    className="EntityListItem__inner"
+    onClick={
+      [MockFunction] {
+        "calls": Array [
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      }
+    }
+    tabIndex={0}
+  >
+    <TabFocusTrap
+      className="EntityListItem__focus-trap"
+    >
+      <figure
+        className="EntityListItem__media"
+      >
+        <Icon
+          color="muted"
+          icon="Entry"
+          size="small"
+          testId="cf-ui-icon"
+        />
+      </figure>
+      <div
+        className="EntityListItem__content"
+      >
+        <div
+          className="EntityListItem__heading"
+        >
+          <h1
+            className="EntityListItem__title"
+          >
+            Title
+          </h1>
+        </div>
+        <p
+          className="EntityListItem__description"
+        >
+          Description
+        </p>
+      </div>
+      <div
+        className="EntityListItem__meta"
+      />
+    </TabFocusTrap>
+  </a>
+</li>
+`;
+
+exports[`renders the component 1`] = `
+<li
+  className="EntityListItem"
+  data-test-id="cf-ui-entity-list-item"
+>
+  <article
+    className="EntityListItem__inner"
+  >
+    <TabFocusTrap
+      className="EntityListItem__focus-trap"
+    >
+      <figure
+        className="EntityListItem__media"
+      >
+        <Icon
+          color="muted"
+          icon="Entry"
+          size="small"
+          testId="cf-ui-icon"
+        />
+      </figure>
+      <div
+        className="EntityListItem__content"
+      >
+        <div
+          className="EntityListItem__heading"
+        >
+          <h1
+            className="EntityListItem__title"
+          >
+            Title
+          </h1>
+          <div
+            className="EntityListItem__content-type"
+          >
+            (
+            Content type
+            )
+          </div>
+        </div>
+      </div>
+      <div
+        className="EntityListItem__meta"
+      />
+    </TabFocusTrap>
+  </article>
+</li>
+`;
+
+exports[`renders the component as an \`a\` element if passed a href prop 1`] = `
+<li
+  className="EntityListItem EntityListItem--is-interactive"
+  data-test-id="cf-ui-entity-list-item"
+>
+  <article
+    className="EntityListItem__inner"
+    href="#"
+  >
+    <TabFocusTrap
+      className="EntityListItem__focus-trap"
+    >
+      <figure
+        className="EntityListItem__media"
+      >
+        <Icon
+          color="muted"
+          icon="Entry"
+          size="small"
+          testId="cf-ui-icon"
+        />
+      </figure>
+      <div
+        className="EntityListItem__content"
+      >
+        <div
+          className="EntityListItem__heading"
+        >
+          <h1
+            className="EntityListItem__title"
+          >
+            Title
+          </h1>
+        </div>
+        <p
+          className="EntityListItem__description"
+        >
+          Description
+        </p>
+      </div>
+      <div
+        className="EntityListItem__meta"
+      />
+    </TabFocusTrap>
+  </article>
+</li>
+`;
+
+exports[`renders the component as an asset entityType variant 1`] = `
+<li
+  className="EntityListItem"
+  data-test-id="cf-ui-entity-list-item"
+>
+  <article
+    className="EntityListItem__inner"
+  >
+    <TabFocusTrap
+      className="EntityListItem__focus-trap"
+    >
+      <figure
+        className="EntityListItem__media"
+      >
+        <Icon
+          color="muted"
+          icon="Asset"
+          size="small"
+          testId="cf-ui-icon"
+        />
+      </figure>
+      <div
+        className="EntityListItem__content"
+      >
+        <div
+          className="EntityListItem__heading"
+        >
+          <h1
+            className="EntityListItem__title"
+          >
+            Title
+          </h1>
+          <div
+            className="EntityListItem__content-type"
+          >
+            (
+            Content type
+            )
+          </div>
+        </div>
+        <p
+          className="EntityListItem__description"
+        >
+          Description
+        </p>
+      </div>
+      <div
+        className="EntityListItem__meta"
+      >
+        <div
+          className="EntityListItem__status"
+        >
+          <Tag
+            tagType="positive"
+            testId="cf-ui-tag"
+          >
+            published
+          </Tag>
+        </div>
+      </div>
+    </TabFocusTrap>
+  </article>
+</li>
+`;
+
+exports[`renders the component as isLoading 1`] = `
+<li
+  className="EntityListItem"
+  data-test-id="cf-ui-entity-list-item"
+>
+  <article
+    className="EntityListItem__inner"
+  >
+    <SkeletonContainer
+      animate={true}
+      ariaLabel="Loading component..."
+      backgroundColor="#e5ebed"
+      backgroundOpacity={1}
+      clipId="f36-entity-list-item-skeleton"
+      foregroundColor="#f7f9fa"
+      foregroundOpacity={1}
+      gradientId="cf-ui-skeleton-clip-gradient"
+      height="100%"
+      preserveAspectRatio="xMidYMid meet"
+      speed={2}
+      svgHeight="100%"
+      svgWidth="100%"
+      testId="cf-ui-skeleton-form"
+      width="100%"
+    >
+      <SkeletonImage
+        height={46}
+        radiusX={0}
+        radiusY={0}
+        testId="cf-ui-skeleton-image"
+        width={46}
+      />
+      <SkeletonBodyText
+        lineHeight={18}
+        marginBottom={8}
+        numberOfLines={2}
+        offsetLeft={54}
+        offsetTop={0}
+      />
+    </SkeletonContainer>
+  </article>
+</li>
+`;
+
+exports[`renders the component with a description 1`] = `
+<li
+  className="EntityListItem"
+  data-test-id="cf-ui-entity-list-item"
+>
+  <article
+    className="EntityListItem__inner"
+  >
+    <TabFocusTrap
+      className="EntityListItem__focus-trap"
+    >
+      <figure
+        className="EntityListItem__media"
+      >
+        <Icon
+          color="muted"
+          icon="Entry"
+          size="small"
+          testId="cf-ui-icon"
+        />
+      </figure>
+      <div
+        className="EntityListItem__content"
+      >
+        <div
+          className="EntityListItem__heading"
+        >
+          <h1
+            className="EntityListItem__title"
+          >
+            Title
+          </h1>
+          <div
+            className="EntityListItem__content-type"
+          >
+            (
+            Content type
+            )
+          </div>
+        </div>
+        <p
+          className="EntityListItem__description"
+        >
+          Description
+        </p>
+      </div>
+      <div
+        className="EntityListItem__meta"
+      />
+    </TabFocusTrap>
+  </article>
+</li>
+`;
+
+exports[`renders the component with a status 1`] = `
+<li
+  className="EntityListItem"
+  data-test-id="cf-ui-entity-list-item"
+>
+  <article
+    className="EntityListItem__inner"
+  >
+    <TabFocusTrap
+      className="EntityListItem__focus-trap"
+    >
+      <figure
+        className="EntityListItem__media"
+      >
+        <Icon
+          color="muted"
+          icon="Entry"
+          size="small"
+          testId="cf-ui-icon"
+        />
+      </figure>
+      <div
+        className="EntityListItem__content"
+      >
+        <div
+          className="EntityListItem__heading"
+        >
+          <h1
+            className="EntityListItem__title"
+          >
+            Title
+          </h1>
+          <div
+            className="EntityListItem__content-type"
+          >
+            (
+            Content type
+            )
+          </div>
+        </div>
+        <p
+          className="EntityListItem__description"
+        >
+          Description
+        </p>
+      </div>
+      <div
+        className="EntityListItem__meta"
+      >
+        <div
+          className="EntityListItem__status"
+        >
+          <Tag
+            tagType="positive"
+            testId="cf-ui-tag"
+          >
+            published
+          </Tag>
+        </div>
+      </div>
+    </TabFocusTrap>
+  </article>
+</li>
+`;
+
+exports[`renders the component with an active drag handle 1`] = `
+<li
+  className="EntityListItem EntityListItem--drag-active"
+  data-test-id="cf-ui-entity-list-item"
+>
+  <CardDragHandle
+    isDragActive={true}
+    testId="cf-ui-card-drag-handle"
+  >
+    Reorder entry
+  </CardDragHandle>
+  <article
+    className="EntityListItem__inner"
+  >
+    <TabFocusTrap
+      className="EntityListItem__focus-trap"
+    >
+      <figure
+        className="EntityListItem__media"
+      >
+        <Icon
+          color="muted"
+          icon="Entry"
+          size="small"
+          testId="cf-ui-icon"
+        />
+      </figure>
+      <div
+        className="EntityListItem__content"
+      >
+        <div
+          className="EntityListItem__heading"
+        >
+          <h1
+            className="EntityListItem__title"
+          >
+            Title
+          </h1>
+          <div
+            className="EntityListItem__content-type"
+          >
+            (
+            Content type
+            )
+          </div>
+        </div>
+        <p
+          className="EntityListItem__description"
+        >
+          Description
+        </p>
+      </div>
+      <div
+        className="EntityListItem__meta"
+      >
+        <div
+          className="EntityListItem__status"
+        >
+          <Tag
+            tagType="positive"
+            testId="cf-ui-tag"
+          >
+            published
+          </Tag>
+        </div>
+      </div>
+    </TabFocusTrap>
+  </article>
+</li>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+<li
+  className="EntityListItem my-extra-class"
+  data-test-id="cf-ui-entity-list-item"
+>
+  <article
+    className="EntityListItem__inner"
+  >
+    <TabFocusTrap
+      className="EntityListItem__focus-trap"
+    >
+      <figure
+        className="EntityListItem__media"
+      >
+        <Icon
+          color="muted"
+          icon="Entry"
+          size="small"
+          testId="cf-ui-icon"
+        />
+      </figure>
+      <div
+        className="EntityListItem__content"
+      >
+        <div
+          className="EntityListItem__heading"
+        >
+          <h1
+            className="EntityListItem__title"
+          >
+            Title
+          </h1>
+          <div
+            className="EntityListItem__content-type"
+          >
+            (
+            Content type
+            )
+          </div>
+        </div>
+        <p
+          className="EntityListItem__description"
+        >
+          Description
+        </p>
+      </div>
+      <div
+        className="EntityListItem__meta"
+      />
+    </TabFocusTrap>
+  </article>
+</li>
+`;
+
+exports[`renders the component with drag handle 1`] = `
+<li
+  className="EntityListItem"
+  data-test-id="cf-ui-entity-list-item"
+>
+  <CardDragHandle
+    isDragActive={false}
+    testId="cf-ui-card-drag-handle"
+  >
+    Reorder entry
+  </CardDragHandle>
+  <article
+    className="EntityListItem__inner"
+  >
+    <TabFocusTrap
+      className="EntityListItem__focus-trap"
+    >
+      <figure
+        className="EntityListItem__media"
+      >
+        <Icon
+          color="muted"
+          icon="Entry"
+          size="small"
+          testId="cf-ui-icon"
+        />
+      </figure>
+      <div
+        className="EntityListItem__content"
+      >
+        <div
+          className="EntityListItem__heading"
+        >
+          <h1
+            className="EntityListItem__title"
+          >
+            Title
+          </h1>
+          <div
+            className="EntityListItem__content-type"
+          >
+            (
+            Content type
+            )
+          </div>
+        </div>
+        <p
+          className="EntityListItem__description"
+        >
+          Description
+        </p>
+      </div>
+      <div
+        className="EntityListItem__meta"
+      >
+        <div
+          className="EntityListItem__status"
+        >
+          <Tag
+            tagType="positive"
+            testId="cf-ui-tag"
+          >
+            published
+          </Tag>
+        </div>
+      </div>
+    </TabFocusTrap>
+  </article>
+</li>
+`;
+
+exports[`renders the component with dropdownListElements 1`] = `
+<li
+  className="EntityListItem"
+  data-test-id="cf-ui-entity-list-item"
+>
+  <article
+    className="EntityListItem__inner"
+  >
+    <TabFocusTrap
+      className="EntityListItem__focus-trap"
+    >
+      <figure
+        className="EntityListItem__media"
+      >
+        <Icon
+          color="muted"
+          icon="Entry"
+          size="small"
+          testId="cf-ui-icon"
+        />
+      </figure>
+      <div
+        className="EntityListItem__content"
+      >
+        <div
+          className="EntityListItem__heading"
+        >
+          <h1
+            className="EntityListItem__title"
+          >
+            Title
+          </h1>
+          <div
+            className="EntityListItem__content-type"
+          >
+            (
+            Content type
+            )
+          </div>
+        </div>
+        <p
+          className="EntityListItem__description"
+        >
+          Description
+        </p>
+      </div>
+      <div
+        className="EntityListItem__meta"
+      >
+        <div
+          className="EntityListItem__status"
+        >
+          <Tag
+            tagType="positive"
+            testId="cf-ui-tag"
+          >
+            published
+          </Tag>
+        </div>
+        <CardActions
+          className="EntityListItem__actions"
+          iconButtonProps={
+            Object {
+              "onClick": [Function],
+            }
+          }
+          testId="cf-ui-card-actions"
+        >
+          <DropdownList
+            testId="cf-ui-dropdown-list"
+          >
+            <DropdownListItem
+              isActive={false}
+              isDisabled={false}
+              isTitle={true}
+              testId="cf-ui-dropdown-list-item"
+            >
+              Actions
+            </DropdownListItem>
+            <DropdownListItem
+              isActive={false}
+              isDisabled={false}
+              isTitle={false}
+              onClick={[Function]}
+              testId="cf-ui-dropdown-list-item"
+            >
+              Edit
+            </DropdownListItem>
+            <DropdownListItem
+              isActive={false}
+              isDisabled={false}
+              isTitle={false}
+              onClick={[Function]}
+              testId="cf-ui-dropdown-list-item"
+            >
+              Download
+            </DropdownListItem>
+            <DropdownListItem
+              isActive={false}
+              isDisabled={false}
+              isTitle={false}
+              onClick={[Function]}
+              testId="cf-ui-dropdown-list-item"
+            >
+              Remove
+            </DropdownListItem>
+          </DropdownList>
+        </CardActions>
+      </div>
+    </TabFocusTrap>
+  </article>
+</li>
+`;
