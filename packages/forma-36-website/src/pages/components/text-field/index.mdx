@@ -6,11 +6,11 @@ storybook: 'https://f36-storybook.contentful.com/?path=/story/components-textfie
 ---
 
 The `TextField` component is a composition of the `FormLabel`, `TextInput`, `HelpText` and `ValidationMessage` components.
-It allows the user to input text or numbers and should be used in a Form context.
+It allows users to input text or numbers and should be used in a form context.
 
 ## Best practices
 
-- Provide a labelText, name and id to ensure accessibility
+- To ensure the TextField component meets accessibility standards, provide labelText, name and id.
 
 ## Copy considerations
 
@@ -18,11 +18,12 @@ Todo: Provide copy considerations
 
 ## TextField variations
 
-The TextField component can be configured in a number of different ways. Here is a guide to when to use certain variations.
+The TextField component can be configured in a number of different ways. Use this guidance to determine the correct variation based on the context. 
 
 ### Compositional properties
 
-Since the TextField is a composition of multiple components it is possible to pass child component specific properties. For this purpose the TextField exposes the follwing properties:
+Since the TextField is a composition of multiple components, it is possible to pass child component specific properties. 
+For this purpose, the TextField exposes the following properties:
 
 ```jsx
 <React.Fragment>
@@ -75,7 +76,7 @@ Since the TextField is a composition of multiple components it is possible to pa
 
 ### Render textarea (`textfield`)
 
-Instead of an input the TextField component can render a textarea for long text requirements
+Instead of an input, the TextField component can render a text area for long text requirements.
 
 ```jsx
 <React.Fragment>
@@ -93,7 +94,7 @@ Instead of an input the TextField component can render a textarea for long text 
 
 ### TextField with additional TextLink (`textLinkProps`)
 
-The TextField can be configured to show and additional TextLink in the label.
+The TextField can be configured to display an additional TextLink in the label.
 
 ```jsx
 <React.Fragment>
@@ -123,7 +124,7 @@ The TextField can be configured to show and additional TextLink in the label.
 
 ### TextField with additional TextLink (`textLinkProps`)
 
-The TextField can be configured to show and additional TextLink in the label.
+The TextField can be configured to display an additional TextLink in the label.
 
 ```jsx
 <React.Fragment>
@@ -153,8 +154,8 @@ The TextField can be configured to show and additional TextLink in the label.
 
 ### Character count (`countCharacters`)
 
-The TextField can be configured to show a character count which is useful when limiting the length of character of the user input.<br/>
-**Note**: The `maxLength` property must be provided to the TextInput component using `textInputProps`.
+The TextField can be configured to display a character count. This is useful when an input field has a character limit.<br/>
+**Note**: The `maxLength` property must be provided in the TextInput component using `textInputProps`.
 
 ```jsx
 <React.Fragment>
