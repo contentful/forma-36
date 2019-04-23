@@ -60,10 +60,6 @@ module.exports = {
               },
             ],
           },
-          {
-            name: 'Spacing',
-            link: '/guidelines/spacing/',
-          },
         ],
       },
       {
