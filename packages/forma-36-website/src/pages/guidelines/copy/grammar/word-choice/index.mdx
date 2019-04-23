@@ -1,10 +1,30 @@
+import ExampleCards from '../../../../../components/ExampleCards';
+import { TextLink, Paragraph } from '@contentful/forma-36-react-components';
+
 # Word choice
 
 ## Use contractions when possible
 
 To make a sentence more scannable, use contractions when possible. Note that in some cases the words can have more emphasis when they are not contracted (**Can not** has greater emphasis than **Can't**).
 
-![Use contractions when possible](/contractions.jpg)
+<ExampleCards
+  goodExample={{
+    example: (
+      <Paragraph style={{ marginBottom: 0 }}>
+        You're removing space <b>Micro Example</b>
+      </Paragraph>
+    ),
+    info: "You're, you've, it's, cant's, wouldn't, haven't, don't, etc",
+  }}
+  badExample={{
+    example: (
+      <Paragraph style={{ marginBottom: 0 }}>
+        You are removing space <b>Micro Example</b>
+      </Paragraph>
+    ),
+    info: 'You are, it is, cannot, would not, etc',
+  }}
+/>
 
 ## Address users based on context (Your, My, We)
 
@@ -14,33 +34,119 @@ Determine the appropriate pronoun based on the context. Focus on the user and th
 
 Use this style for most situations that require a pronoun (when speaking directly to the user).
 
-![Second person (you or your)](/2nd-person-pronoun.jpg)
+<ExampleCards
+  goodExample={{
+    example: (
+      <Paragraph style={{ marginBottom: 0 }}>Upgrade your space</Paragraph>
+    ),
+  }}
+  badExample={{
+    example: (
+      <Paragraph style={{ marginBottom: 0 }}>
+        Add an entry. They are your actual pieces of content.
+      </Paragraph>
+    ),
+    info: 'This example can be rewritten to remove the unnecessary pronoun.',
+  }}
+/>
 
 ### First person (“my” or “I”)
 
 This may be used in a context that communicates the user's actions or ownership.
 
-![First person (I or my)](/first-person.jpg)
+<ExampleCards
+  goodExample={{
+    example: (
+      <Paragraph style={{ marginBottom: 0 }}>
+        Create an example space. <i>I'd like to see how things work first</i>.
+      </Paragraph>
+    ),
+  }}
+/>
 
 ### The pronouns “we” and “our”
 
 Overall, focus on the user rather than what you or your app is doing for the user. “We” should only be used in situations where an action is being performed for or on behalf of the user.
 
-![The pronouns we and our](/pronouns-we-our.jpg)
+<ExampleCards
+  goodExample={{
+    example: (
+      <Paragraph style={{ marginBottom: 0 }}>
+        We made it easier to update and manage content models with our new space
+        environments feature.
+      </Paragraph>
+    ),
+    info:
+      'In this case Contentful is communicating a new feature created by the company and it is appropriate to use the pronoun "we".',
+  }}
+  badExample={{
+    example: (
+      <Paragraph style={{ marginBottom: 0 }}>
+        Fetch your content. Use the API to see your content wherever you like.
+        We'll show you different ways of delivering your content.
+      </Paragraph>
+    ),
+    info:
+      'Concentrate on the user and their actions. This can be reframed and simplified with a user focus: "Use the content delivery API to fetch your content. Learn about different options for content delivery".',
+  }}
+/>
 
 ## Avoid “never,” “always” and other absolutes
 
-![Avoid never, always and other absolutes](/avoid-absolutes.jpg)
+<ExampleCards
+  goodExample={{
+    example: (
+      <Paragraph style={{ marginBottom: 0 }}>
+        Most projects launch faster with guidance from our experts.{' '}
+        <TextLink href="#">Contact an expert</TextLink>
+      </Paragraph>
+    ),
+  }}
+  badExample={{
+    example: (
+      <Paragraph style={{ marginBottom: 0 }}>
+        Projects always launch faster with guidance from our experts.{' '}
+        <TextLink href="#">Contact an expert</TextLink>
+      </Paragraph>
+    ),
+  }}
+/>
 
 ## Avoid abbreviations
 
 In most cases, spell out each word in full rather than using an abbreviation.
 
-![Avoid abbreviations](/abbreviations.jpg)
+<ExampleCards
+  goodExample={{
+    example: (
+      <Paragraph style={{ marginBottom: 0 }}>View your website live</Paragraph>
+    ),
+  }}
+  badExample={{
+    example: (
+      <Paragraph style={{ marginBottom: 0 }}>View your site live</Paragraph>
+    ),
+  }}
+/>
 
 ## Use terms consistently
 
 Use verbs consistently across the description of an action/ feature.
 Example: Remove and Delete.
 
-![Use terms consistently](/consistent-terms.jpg)
+<ExampleCards
+  goodExample={{
+    example: (
+      <Paragraph style={{ marginBottom: 0 }}>
+        You're removing the space <b>The Example Project</b>
+      </Paragraph>
+    ),
+  }}
+  badExample={{
+    example: (
+      <Paragraph style={{ marginBottom: 0 }}>
+        Delete this space and all its contents
+      </Paragraph>
+    ),
+  }}
+/>
