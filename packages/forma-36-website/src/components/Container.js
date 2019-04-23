@@ -68,6 +68,8 @@ const markToComponentMap = {
 const Container = data => {
   const { frontmatter, children } = data;
 
+  const isHomePage = frontmatter && frontmatter.type === 'home';
+
   return (
     <div css={styles.container}>
       <div css={styles.main}>
@@ -79,14 +81,14 @@ const Container = data => {
           />
         )}
 
-        {frontmatter && frontmatter.type === 'home' && <HomeSplash />}
+        {isHomePage && <HomeSplash />}
 
         <Typography css={styles.inner}>
           <MDXProvider components={markToComponentMap}>{children}</MDXProvider>
         </Typography>
 
         {frontmatter && frontmatter.subpages && (
-          <ChildSections items={frontmatter.subpages} />
+          <ChildSections items={frontmatter.subpages} isHomePage={isHomePage} />
         )}
       </div>
       <Footer />

@@ -9,35 +9,49 @@ import Logo from './Logo';
 
 const styles = {
   navigation: css`
+    display: flex;
+    flex-direction: column;
     padding: ${tokens.spacing2Xl} 0;
-    min-width: 320px;
-    background-color: ${tokens.colorElementLight};
+    flex: 0 0 320px;
+    background-color: ${tokens.colorElementLightest};
   `,
+
+  navList: css`
+    padding: 0 ${tokens.spacingXl};
+    flex: 1 1 0;
+  `,
+
   list: css`
+    flex: 1 1 0;
     list-style: none;
     padding: 0;
     margin-top: ${tokens.spacingXs};
   `,
+
   listItem: css`
     position: relative;
-    padding-left: ${tokens.spacingL};
+    padding-left: 0;
     margin-bottom: ${tokens.spacingXs};
-  `,
-  linkActive: css`
-    :before {
-      content: '';
-      position: absolute;
-      width: 5px;
-      height: 100%;
-      background-color: ${tokens.colorBlueBase};
-      left: -${tokens.spacingL};
+
+    ul {
+      position: relative;
+    }
+
+    li {
+      padding-left: ${tokens.spacingL};
     }
   `,
+
+  linkActive: css`
+    font-weight: bold;
+  `,
+
   link: css`
     text-decoration: none;
-    color: ${tokens.colorTextDark};
+    color: ${tokens.colorTextMid};
     position: relative;
   `,
+
   item: css`
     display: flex;
     flex-direction: row;
@@ -107,7 +121,9 @@ const Navigation = ({ menuItems, currentPath }) => (
     <Link to="./" href="./">
       <Logo />
     </Link>
-    <MenuList menuItems={menuItems} currentPath={currentPath} />
+    <nav css={styles.navList}>
+      <MenuList menuItems={menuItems} currentPath={currentPath} />
+    </nav>
   </div>
 );
 

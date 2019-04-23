@@ -7,7 +7,7 @@ const styles = {
   logo: css`
     width: 45px;
     display: block;
-    margin: 0 auto ${tokens.spacing2Xl};
+    margin: ${tokens.spacingXl} auto ${tokens.spacing4Xl};
   `,
 };
 
