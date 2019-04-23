@@ -29,6 +29,7 @@ const Footer = () => (
       <TextLink
         href="https://github.com/contentful/forma-36"
         target="_blank"
+        rel="noopener noreferrer"
         className="f36-margin-right--xs"
       >
         GitHub
@@ -36,6 +37,7 @@ const Footer = () => (
       <TextLink
         href="https://www.contentful.com/legal/de"
         target="_blank"
+        rel="noopener noreferrer"
         className="f36-margin-right--xs"
       >
         Imprint / Legal
@@ -43,6 +45,7 @@ const Footer = () => (
       <TextLink
         href="https://www.contentful.com/legal/de/privacy/"
         target="_blank"
+        rel="noopener noreferrer"
         className="f36-margin-right--xs"
       >
         Privacy
@@ -50,6 +53,7 @@ const Footer = () => (
       <TextLink
         href="https://www.contentful.com/security/"
         target="_blank"
+        rel="noopener noreferrer"
         className="f36-margin-right--xs"
       >
         Security
@@ -57,7 +61,11 @@ const Footer = () => (
     </div>
 
     <div css={styles.logo}>
-      <a href="https://www.contentful.com" target="_blank">
+      <a
+        href="https://www.contentful.com"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="320"
