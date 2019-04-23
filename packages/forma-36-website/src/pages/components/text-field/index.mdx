@@ -1,0 +1,173 @@
+---
+title: 'TextField'
+type: 'component'
+github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/TextField'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-textfield--default'
+---
+
+The `TextField` component is a composition of the `FormLabel`, `TextInput`, `HelpText` and `ValidationMessage` components.
+It allows users to input text or numbers and should be used in a form context.
+
+## Best practices
+
+- To ensure the TextField component meets accessibility standards, provide labelText, name and id.
+
+## Copy considerations
+
+Todo: Provide copy considerations
+
+## TextField variations
+
+The TextField component can be configured in a number of different ways. Use this guidance to determine the correct variation based on the context. 
+
+### Compositional properties
+
+Since the TextField is a composition of multiple components, it is possible to pass child component specific properties. 
+For this purpose, the TextField exposes the following properties:
+
+```jsx
+<React.Fragment>
+  <TextField
+    labelText="E-Mail"
+    helpText="Please enter your E-Mail"
+    textInputProps={{ withCopyButton: true }}
+    textLinkProps={{ text: 'privacy' }}
+    formLabelProps={{ requiredText: 'This field is required' }}
+    required
+  />
+</React.Fragment>
+```
+
+| Property           | Description                                               |
+| :----------------- | :-------------------------------------------------------- |
+| **textInputProps** | Used to pass a property object to the TextInput component |
+| **formLabelProps** | Used to pass a property object to the FormLabel component |
+| **textLinkProps**  | Used to pass a property object to the TextLink component  |
+
+### Label and text properties (`labelText, helpText, validationMessage`)
+
+```jsx
+<React.Fragment>
+  <TextField
+    labelText="E-Mail"
+    helpText="Please enter your E-Mail"
+    validationMessage="This address is not valid"
+  />
+</React.Fragment>
+```
+
+| Property              | Description                                                   |
+| :-------------------- | :------------------------------------------------------------ |
+| **labelText**         | Used to provide the text                                      |
+| **helpText**          | Used for entering passwords or sensitive information          |
+| **validationMessage** | Used for e-mail addresses (will dispatch native autocomplete) |
+
+### Required Field (`required`)
+
+```jsx
+<React.Fragment>
+  <TextField labelText="E-Mail" helpText="Please enter your E-Mail" required />
+</React.Fragment>
+```
+
+| Property     | Description                                                                    |
+| :----------- | :----------------------------------------------------------------------------- |
+| **required** | Used to set the input as required and show the required text next to the label |
+
+### Render textarea (`textfield`)
+
+Instead of an input, the TextField component can render a text area for long text requirements.
+
+```jsx
+<React.Fragment>
+  <TextField
+    labelText="Description"
+    helpText="Please enter a description"
+    textarea
+  />
+</React.Fragment>
+```
+
+| Property     | Description                                      |
+| :----------- | :----------------------------------------------- |
+| **textarea** | Used to render a textarea instead of a textinput |
+
+### TextField with additional TextLink (`textLinkProps`)
+
+The TextField can be configured to display an additional TextLink in the label.
+
+```jsx
+<React.Fragment>
+  <TextField
+    labelText="User Name"
+    textLinkProps={{
+      icon: 'Lock',
+      text: 'Unlock to edit',
+      onClick: e => {
+        console.log('textLinkClick', e);
+      },
+    }}
+    value="Lorem Ipsum"
+    textInputProps={{
+      disabled: true,
+    }}
+  />
+</React.Fragment>
+```
+
+| Property                  | Description                                           |
+| :------------------------ | :---------------------------------------------------- |
+| **textLinkProps**         | Property object used to define the rendered text link |
+| **textLinkProps.icon**    | Used to specify the rendered icon                     |
+| **textLinkProps.text**    | Used to specify the link text                         |
+| **textLinkProps.onClick** | Used to specify an onClick handler                    |
+
+### TextField with additional TextLink (`textLinkProps`)
+
+The TextField can be configured to display an additional TextLink in the label.
+
+```jsx
+<React.Fragment>
+  <TextField
+    labelText="User Name"
+    textLinkProps={{
+      icon: 'Lock',
+      text: 'Unlock to edit',
+      onClick: e => {
+        console.log('textLinkClick', e);
+      },
+    }}
+    value="Lorem Ipsum"
+    textInputProps={{
+      disabled: true,
+    }}
+  />
+</React.Fragment>
+```
+
+| Property                  | Description                                           |
+| :------------------------ | :---------------------------------------------------- |
+| **textLinkProps**         | Property object used to define the rendered text link |
+| **textLinkProps.icon**    | Used to specify the rendered icon                     |
+| **textLinkProps.text**    | Used to specify the link text                         |
+| **textLinkProps.onClick** | Used to specify an onClick handler                    |
+
+### Character count (`countCharacters`)
+
+The TextField can be configured to display a character count. This is useful when an input field has a character limit.<br/>
+**Note**: The `maxLength` property must be provided in the TextInput component using `textInputProps`.
+
+```jsx
+<React.Fragment>
+  <TextField
+    labelText="User Name"
+    countCharacters
+    value="Lorem Ipsum"
+    textInputProps={{ maxLength: 20 }}
+  />
+</React.Fragment>
+```
+
+| Property            | Description                        |
+| :------------------ | :--------------------------------- |
+| **countCharacters** | Used to enable the character count |

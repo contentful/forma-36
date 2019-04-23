@@ -1,0 +1,43 @@
+---
+title: 'FormLabel'
+type: 'component'
+github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/FormLabel'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-formlabel--default'
+---
+
+FormLabels make it possible to define input label components.
+
+## Best practices
+
+- Provide html for all properties of the input label.
+
+## Copy considerations
+
+Todo: Provide copy considerations
+
+## FormLabel required properties (`required, requiredText`)
+
+To communicate that the corresponding input of the Formlabel is required, use the props `required` and `requiredText`. 
+Use this guidance to determine the correct required properties to use based on the context. 
+
+```jsx
+<React.Fragment>
+  <FormLabel htmlFor="example1" required>
+    Name
+  </FormLabel>
+  <TextInput
+    name="example1"
+    value="Lorem Ipsum"
+    className="f36-margin-bottom--m"
+  />
+  <FormLabel htmlFor="example2" required requiredText="E-Mail is required">
+    E-Mail
+  </FormLabel>
+  <TextInput value="info@forma36.design" name="example2" />
+</React.Fragment>
+```
+
+| Property         | Description                                       |
+| :--------------- | :------------------------------------------------ |
+| **required**     | Used to add the text 'required' next to the label |
+| **requiredText** | Used to customize the 'required' text             |

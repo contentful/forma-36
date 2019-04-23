@@ -75,6 +75,14 @@ module.exports = {
             link: '/components/button/',
           },
           {
+            name: 'FormLabel',
+            link: '/components/form-label/',
+          },
+          {
+            name: 'HelpText',
+            link: '/components/help-text',
+          },
+          {
             name: 'Note',
             link: '/components/note/',
           },
@@ -83,12 +91,24 @@ module.exports = {
             link: '/components/table/',
           },
           {
+            name: 'TextField',
+            link: '/components/text-field',
+          },
+          {
+            name: 'TextInput',
+            link: '/components/text-input/',
+          },
+          {
             name: 'TextLink',
             link: '/components/text-link/',
           },
           {
             name: 'Typography',
             link: '/components/typography/',
+          },
+          {
+            name: 'ValidationMessage',
+            link: '/components/validation-message/',
           },
         ],
       },
