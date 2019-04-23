@@ -1,3 +1,6 @@
+import ExampleCards from '../../../../../components/ExampleCards';
+import { TextLink, Paragraph } from '@contentful/forma-36-react-components';
+
 # Capitalization
 
 ## Use sentence style caps
@@ -8,7 +11,18 @@ This makes sentences a bit more scannable and our UX copy more approachable.
 
 Places where you should use sentence style caps include labels, headings, titles, buttons, and menu items.
 
-![Example of correct usage of sentence style caps - use 'View your website live' rather than 'View Your Website Live'](/sentence-style-caps.jpg)
+<ExampleCards
+  goodExample={{
+    example: (
+      <Paragraph style={{ marginBottom: 0 }}>View your website live</Paragraph>
+    ),
+  }}
+  badExample={{
+    example: (
+      <Paragraph style={{ marginBottom: 0 }}>View Your Website Live</Paragraph>
+    ),
+  }}
+/>
 
 ## Contentful UI elements are written in lowercase
 
