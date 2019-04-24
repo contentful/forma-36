@@ -4,6 +4,7 @@ import { text, select, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import EntryCard from './EntryCard';
+import CardDragHandle from './../CardDragHandle';
 import DropdownList from '../../Dropdown/DropdownList';
 import DropdownListItem from '../../Dropdown/DropdownListItem';
 
@@ -72,6 +73,67 @@ storiesOf('Components|Card/EntryCard', module)
       />
     </div>
   ))
+  .add('with custom CardDragHandle', () => (
+    <div>
+      <EntryCard
+        title={text('title', 'Closer')}
+        description={text(
+          'description',
+          'Closer is the second and final studio album by English rock band Joy Division. It was released on 18 July 1980 on Factory Records, following the May 1980 suicide of lead singer Ian Curtis. The album was produced by Martin Hannett.',
+        )}
+        status={select(
+          'status',
+          {
+            Draft: 'draft',
+            Changed: 'changed',
+            Published: 'published',
+            Archived: 'archived',
+          },
+          'published',
+        )}
+        contentType={text('contentType', 'Album')}
+        onClick={!boolean('loading', false) ? action('onClick') : undefined}
+        cardDragHandleComponent={<CardDragHandle>Reorder card</CardDragHandle>}
+        dropdownListElements={
+          <React.Fragment>
+            <DropdownList>
+              <DropdownListItem isTitle>Actions</DropdownListItem>
+              <DropdownListItem href="#">Edit (with href)</DropdownListItem>
+              <DropdownListItem onClick={action('Download onClick')}>
+                Download
+              </DropdownListItem>
+              <DropdownListItem onClick={action('Remove onClick')}>
+                Remove
+              </DropdownListItem>
+            </DropdownList>
+            <DropdownList>
+              <DropdownListItem isTitle>Actions</DropdownListItem>
+              <DropdownListItem onClick={action('Edit onClick')}>
+                Edit
+              </DropdownListItem>
+              <DropdownListItem onClick={action('Download onClick')}>
+                Download
+              </DropdownListItem>
+              <DropdownListItem onClick={action('Remove onClick')}>
+                Remove
+              </DropdownListItem>
+            </DropdownList>
+          </React.Fragment>
+        }
+        isDragActive={boolean('isDragActive', false)}
+        className={text('className', '')}
+        loading={boolean('loading', false)}
+        size={select(
+          'size',
+          {
+            default: 'default',
+            small: 'small',
+          },
+          'default',
+        )}
+      />
+    </div>
+  ))
   .add('with thumbnailElement', () => (
     <div>
       <EntryCard
@@ -98,6 +160,8 @@ storiesOf('Components|Card/EntryCard', module)
           />
         }
         onClick={!boolean('loading', false) ? action('onClick') : undefined}
+        withDragHandle={boolean('withDragHandle', false)}
+        isDragActive={boolean('isDragActive', false)}
         dropdownListElements={
           <DropdownList>
             <DropdownListItem onClick={action('Edit onClick')}>
@@ -111,7 +175,6 @@ storiesOf('Components|Card/EntryCard', module)
             </DropdownListItem>
           </DropdownList>
         }
-        withDragHandle={boolean('withDragHandle', false)}
         loading={boolean('loading', false)}
         className={text('className', '')}
       />

@@ -95,12 +95,77 @@ exports[`renders the component 1`] = `
 </Card>
 `;
 
+exports[`renders the component with a custom drag handle 1`] = `
+<Card
+  cardDragHandleComponent={
+    <CardDragHandle
+      isDragActive={false}
+      testId="cf-ui-card-drag-handle"
+    >
+      Reorder card
+    </CardDragHandle>
+  }
+  className="EntryCard EntryCard--size-default"
+  padding="none"
+  selected={false}
+  testId="cf-ui-entry-card"
+>
+  <CardDragHandle
+    isDragActive={false}
+    testId="cf-ui-card-drag-handle"
+  >
+    Reorder card
+  </CardDragHandle>
+  <article
+    className="EntryCard__wrapper"
+  >
+    <div
+      className="EntryCard__meta"
+    >
+      <div
+        className="EntryCard__content-type"
+        data-test-id="content-type"
+      >
+        My Content Type
+      </div>
+      <Tag
+        tagType="positive"
+        testId="cf-ui-tag"
+      >
+        published
+      </Tag>
+    </div>
+    <div
+      className="EntryCard__content"
+    >
+      <div
+        className="EntryCard__body"
+      >
+        <h1
+          className="EntryCard__title"
+          data-test-id="title"
+          title=""
+        >
+          My Entry Card
+        </h1>
+        <p
+          className="EntryCard__description"
+        >
+          This is my Entry Card
+        </p>
+      </div>
+    </div>
+  </article>
+</Card>
+`;
+
 exports[`renders the component with a drag handle 1`] = `
 <Card
   className="EntryCard EntryCard--size-default"
   padding="none"
   selected={false}
   testId="cf-ui-entry-card"
+  withDragHandle={true}
 >
   <CardDragHandle
     isDragActive={false}
