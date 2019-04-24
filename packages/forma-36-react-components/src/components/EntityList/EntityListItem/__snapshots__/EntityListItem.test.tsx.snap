@@ -321,6 +321,77 @@ exports[`renders the component with a description 1`] = `
 </li>
 `;
 
+exports[`renders the component with a drag handle 1`] = `
+<li
+  className="EntityListItem"
+  data-test-id="cf-ui-entity-list-item"
+>
+  <CardDragHandle
+    isDragActive={false}
+    testId="cf-ui-card-drag-handle"
+  >
+    Reorder entry
+  </CardDragHandle>
+  <article
+    className="EntityListItem__inner"
+  >
+    <TabFocusTrap
+      className="EntityListItem__focus-trap"
+    >
+      <figure
+        className="EntityListItem__media"
+      >
+        <Icon
+          color="muted"
+          icon="Entry"
+          size="small"
+          testId="cf-ui-icon"
+        />
+      </figure>
+      <div
+        className="EntityListItem__content"
+      >
+        <div
+          className="EntityListItem__heading"
+        >
+          <h1
+            className="EntityListItem__title"
+          >
+            Title
+          </h1>
+          <div
+            className="EntityListItem__content-type"
+          >
+            (
+            Content type
+            )
+          </div>
+        </div>
+        <p
+          className="EntityListItem__description"
+        >
+          Description
+        </p>
+      </div>
+      <div
+        className="EntityListItem__meta"
+      >
+        <div
+          className="EntityListItem__status"
+        >
+          <Tag
+            tagType="positive"
+            testId="cf-ui-tag"
+          >
+            published
+          </Tag>
+        </div>
+      </div>
+    </TabFocusTrap>
+  </article>
+</li>
+`;
+
 exports[`renders the component with a status 1`] = `
 <li
   className="EntityListItem"
@@ -386,17 +457,11 @@ exports[`renders the component with a status 1`] = `
 </li>
 `;
 
-exports[`renders the component with an active drag handle 1`] = `
+exports[`renders the component with active drag state 1`] = `
 <li
   className="EntityListItem EntityListItem--drag-active"
   data-test-id="cf-ui-entity-list-item"
 >
-  <CardDragHandle
-    isDragActive={true}
-    testId="cf-ui-card-drag-handle"
-  >
-    Reorder entry
-  </CardDragHandle>
   <article
     className="EntityListItem__inner"
   >
@@ -511,8 +576,16 @@ exports[`renders the component with an additional class name 1`] = `
 </li>
 `;
 
-exports[`renders the component with drag handle 1`] = `
+exports[`renders the component with custom drag handle 1`] = `
 <li
+  cardDragHandleComponent={
+    <CardDragHandle
+      isDragActive={false}
+      testId="cf-ui-card-drag-handle"
+    >
+      Reorder card
+    </CardDragHandle>
+  }
   className="EntityListItem"
   data-test-id="cf-ui-entity-list-item"
 >
@@ -520,7 +593,7 @@ exports[`renders the component with drag handle 1`] = `
     isDragActive={false}
     testId="cf-ui-card-drag-handle"
   >
-    Reorder entry
+    Reorder card
   </CardDragHandle>
   <article
     className="EntityListItem__inner"

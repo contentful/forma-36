@@ -4,6 +4,7 @@ import { axe } from 'jest-axe';
 import EntityListItem from './EntityListItem';
 import DropdownList from '../../Dropdown/DropdownList';
 import DropdownListItem from '../../Dropdown/DropdownListItem';
+import CardDragHandle from './../../Card/CardDragHandle';
 
 it('renders the component', () => {
   const output = shallow(
@@ -59,7 +60,21 @@ it('renders the component with dropdownListElements', () => {
   expect(output).toMatchSnapshot();
 });
 
-it('renders the component with drag handle', () => {
+it('renders the component with custom drag handle', () => {
+  const output = shallow(
+    <EntityListItem
+      title="Title"
+      description="Description"
+      contentType="Content type"
+      status="published"
+      cardDragHandleComponent={<CardDragHandle>Reorder card</CardDragHandle>}
+    />,
+  );
+
+  expect(output).toMatchSnapshot();
+});
+
+it('renders the component with a drag handle', () => {
   const output = shallow(
     <EntityListItem
       title="Title"
@@ -73,14 +88,13 @@ it('renders the component with drag handle', () => {
   expect(output).toMatchSnapshot();
 });
 
-it('renders the component with an active drag handle', () => {
+it('renders the component with active drag state', () => {
   const output = shallow(
     <EntityListItem
       title="Title"
       description="Description"
       contentType="Content type"
       status="published"
-      withDragHandle
       isDragActive
     />,
   );
