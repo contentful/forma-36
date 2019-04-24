@@ -47,17 +47,21 @@ export type AssetCardProps = {
    */
   type?: AssetType;
   /**
-   * Renders a drag handle for the component for use in drag and drop contexts
+   * Prop to pass a custom CardDragHandle component to for use in drag and drop contexts
+   */
+  cardDragHandleComponent?: React.ReactNode;
+  /**
+   * Renders a default drag handle for the component for use in drag and drop contexts
    */
   withDragHandle?: boolean;
+  /**
+   * Props to pass down to the default CardDragHandle component (does not work with cardDragHandleComponent prop)
+   */
+  cardDragHandleProps?: Partial<CardDragHandlePropTypes>;
   /**
    * Applies styling for when the component is actively being dragged by the user
    */
   isDragActive?: boolean;
-  /**
-   * Props to pass down to the CardDragHandle component
-   */
-  cardDragHandleProps?: Partial<CardDragHandlePropTypes>;
 } & typeof defaultProps;
 
 const defaultProps = {
@@ -100,6 +104,25 @@ export class AssetCard extends Component<AssetCardProps> {
     );
   };
 
+  renderCardDragHandle() {
+    const {
+      cardDragHandleComponent,
+      isDragActive,
+      cardDragHandleProps,
+      withDragHandle,
+    } = this.props;
+
+    if (cardDragHandleComponent) {
+      return cardDragHandleComponent;
+    } else if (withDragHandle) {
+      return (
+        <CardDragHandle isDragActive={isDragActive} {...cardDragHandleProps}>
+          Reorder entry
+        </CardDragHandle>
+      );
+    }
+  }
+
   render() {
     const {
       className,
@@ -109,8 +132,6 @@ export class AssetCard extends Component<AssetCardProps> {
       status,
       isLoading,
       dropdownListElements,
-      withDragHandle,
-      cardDragHandleProps,
       isDragActive,
       testId,
       ...otherProps
@@ -134,14 +155,7 @@ export class AssetCard extends Component<AssetCardProps> {
           <AssetCardSkeleton />
         ) : (
           <React.Fragment>
-            {withDragHandle && (
-              <CardDragHandle
-                isDragActive={isDragActive}
-                {...cardDragHandleProps}
-              >
-                Reorder entry
-              </CardDragHandle>
-            )}
+            {this.renderCardDragHandle()}
             <div className={styles['AssetCard__wrapper']}>
               <div className={styles['AssetCard__header']}>
                 {status && this.renderStatus(status)}
