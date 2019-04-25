@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.6.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.6.0...@contentful/forma-36-react-components@3.6.1) (2019-04-25)
+
+
+### Bug Fixes
+
+* **EntryCard:** Prevent text from overflowing card ([3c93e10](https://github.com/contentful/forma-36/commit/3c93e10))
+
+
+
+
+
 # [3.6.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.5.1...@contentful/forma-36-react-components@3.6.0) (2019-04-25)
 
 
