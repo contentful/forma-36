@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.6.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.5.1...@contentful/forma-36-react-components@3.6.0) (2019-04-25)
+
+
+### Features
+
+* **EmptyState:** EmptyState component ([4265ff4](https://github.com/contentful/forma-36/commit/4265ff4))
+
+
+
+
+
 ## [3.5.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.5.0...@contentful/forma-36-react-components@3.5.1) (2019-04-24)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
