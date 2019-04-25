@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders component with image 1`] = `
+<EmptyState
+  descriptionProps={
+    Object {
+      "text": "This is a description for the empty state. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate, sem a porttitor porttitor, velit nulla lacinia dolor, sit amet interdum ligula lectus hendrerit sem. Aliquam ultricies viverra tincidunt.",
+    }
+  }
+  headingProps={
+    Object {
+      "text": "Heading",
+    }
+  }
+  imageProps={
+    Object {
+      "description": "Image description",
+      "height": "250px",
+      "url": "url",
+      "width": "340px",
+    }
+  }
+  testId="cf-ui-empty-state"
+>
+  <div
+    className="EmptyState"
+    data-test-id="cf-ui-empty-state"
+  >
+    <div
+      className="EmptyState_container"
+    >
+      <div
+        aria-label="Image description"
+        className="EmptyState_element EmptyState_illustration"
+        role="img"
+        style={
+          Object {
+            "backgroundImage": "url(url)",
+            "height": "250px",
+            "width": "340px",
+          }
+        }
+      />
+      <Heading
+        className="EmptyState_element"
+        element="h1"
+        testId="cf-ui-heading"
+      >
+        <h1
+          className="Heading EmptyState_element"
+          data-test-id="cf-ui-heading"
+        >
+          Heading
+        </h1>
+      </Heading>
+      <Paragraph
+        className="EmptyState_paragraph EmptyState_element"
+        element="p"
+        testId="cf-ui-paragraph"
+      >
+        <p
+          className="Paragraph EmptyState_paragraph EmptyState_element"
+          data-test-id="cf-ui-paragraph"
+        >
+          This is a description for the empty state. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate, sem a porttitor porttitor, velit nulla lacinia dolor, sit amet interdum ligula lectus hendrerit sem. Aliquam ultricies viverra tincidunt.
+        </p>
+      </Paragraph>
+    </div>
+  </div>
+</EmptyState>
+`;
+
+exports[`renders the component 1`] = `
+<div
+  className="EmptyState"
+  data-test-id="cf-ui-empty-state"
+>
+  <div
+    className="EmptyState_container"
+  >
+    <Heading
+      className="EmptyState_element"
+      element="h1"
+      testId="cf-ui-heading"
+    >
+      Heading
+    </Heading>
+    <Paragraph
+      className="EmptyState_paragraph EmptyState_element"
+      element="p"
+      testId="cf-ui-paragraph"
+    >
+      This is a description for the empty state.
+    </Paragraph>
+  </div>
+</div>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+<div
+  className="EmptyState my-extra-class"
+  data-test-id="cf-ui-empty-state"
+>
+  <div
+    className="EmptyState_container"
+  >
+    <Heading
+      className="EmptyState_element"
+      element="h1"
+      testId="cf-ui-heading"
+    >
+      Heading
+    </Heading>
+    <Paragraph
+      className="EmptyState_paragraph EmptyState_element"
+      element="p"
+      testId="cf-ui-paragraph"
+    >
+      This is a description for the empty state.
+    </Paragraph>
+  </div>
+</div>
+`;
