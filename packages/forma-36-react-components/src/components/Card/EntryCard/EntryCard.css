@@ -28,6 +28,7 @@
 .EntryCard__wrapper {
   padding: calc(1rem * (14 / var(--font-base-default)));
   flex: 1 1 0;
+  overflow: auto;
 }
 
 .EntryCard--drag-active {
