@@ -4,6 +4,7 @@ import { axe } from 'jest-axe';
 import AssetCard from './AssetCard';
 import DropdownList from '../../Dropdown/DropdownList';
 import DropdownListItem from '../../Dropdown/DropdownListItem';
+import CardDragHandle from './../CardDragHandle';
 
 it('renders the component', () => {
   const output = shallow(
@@ -83,6 +84,19 @@ it('renders the component with a drag handle', () => {
       src="http://placekitten.com/200/300"
       title="picture of a cat"
       withDragHandle
+    />,
+  );
+
+  expect(output).toMatchSnapshot();
+});
+
+it('renders the component with a custom drag handle', () => {
+  const output = shallow(
+    <AssetCard
+      className="my-extra-class"
+      src="http://placekitten.com/200/300"
+      title="picture of a cat"
+      cardDragHandleComponent={<CardDragHandle>Reorder card</CardDragHandle>}
     />,
   );
 

@@ -4,13 +4,13 @@ import cn from 'classnames';
 import Tag, { TagType } from '../../Tag/Tag';
 import Icon from '../../Icon/Icon';
 import CardActions from '../../Card/CardActions/CardActions';
-import CardDragHandle, {
-  CardDragHandlePropTypes,
-} from '../../Card/CardDragHandle/CardDragHandle';
 import SkeletonBodyText from '../../Skeleton/SkeletonBodyText';
 import SkeletonImage from '../../Skeleton/SkeletonImage';
 import SkeletonContainer from '../../Skeleton/SkeletonContainer';
 import TabFocusTrap from '../../TabFocusTrap';
+import CardDragHandle, {
+  CardDragHandlePropTypes,
+} from '../../Card/CardDragHandle/CardDragHandle';
 
 const styles = require('./EntityListItem.css');
 
@@ -58,7 +58,11 @@ export type EntityListItemProps = {
    */
   isDragActive?: boolean;
   /**
-   * Props to pass down to the CardDragHandle component
+   * Prop to pass a custom CardDragHandle component to for use in drag and drop contexts
+   */
+  cardDragHandleComponent?: React.ReactNode;
+  /**
+   * Props to pass down to the default CardDragHandle component (does not work with cardDragHandleComponent prop)
    */
   cardDragHandleProps?: Partial<CardDragHandlePropTypes>;
   /**
@@ -154,6 +158,25 @@ export class EntityListItem extends Component<EntityListItemProps> {
     );
   }
 
+  renderCardDragHandle() {
+    const {
+      cardDragHandleComponent,
+      isDragActive,
+      cardDragHandleProps,
+      withDragHandle,
+    } = this.props;
+
+    if (cardDragHandleComponent) {
+      return cardDragHandleComponent;
+    } else if (withDragHandle) {
+      return (
+        <CardDragHandle isDragActive={isDragActive} {...cardDragHandleProps}>
+          Reorder entry
+        </CardDragHandle>
+      );
+    }
+  }
+
   render() {
     const {
       className,
@@ -168,7 +191,6 @@ export class EntityListItem extends Component<EntityListItemProps> {
       dropdownListElements,
       withDragHandle,
       isDragActive,
-      cardDragHandleProps,
       isLoading,
       onClick,
       href,
@@ -184,11 +206,7 @@ export class EntityListItem extends Component<EntityListItemProps> {
 
     return (
       <li {...otherProps} className={classNames} data-test-id={testId}>
-        {withDragHandle && (
-          <CardDragHandle isDragActive={isDragActive} {...cardDragHandleProps}>
-            Reorder entry
-          </CardDragHandle>
-        )}
+        {this.renderCardDragHandle()}
         {isLoading ? (
           this.renderLoadingCard()
         ) : (

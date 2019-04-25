@@ -3,11 +3,11 @@ import cn from 'classnames';
 import truncate from 'truncate';
 import Card from '../Card';
 import CardActions from '../CardActions';
+import Tag, { TagType } from '../../Tag/Tag';
+import EntryCardSkeleton from './EntryCardSkeleton';
 import CardDragHandle, {
   CardDragHandlePropTypes,
 } from '../CardDragHandle/CardDragHandle';
-import Tag, { TagType } from '../../Tag/Tag';
-import EntryCardSkeleton from './EntryCardSkeleton';
 
 const styles = require('./EntryCard.css');
 
@@ -55,17 +55,21 @@ export type EntryCardPropTypes = {
    */
   dropdownListElements?: React.ReactElement;
   /**
-   * Renders a drag handle for the component for use in drag and drop contexts
+   * Prop to pass a custom CardDragHandle component to for use in drag and drop contexts
+   */
+  cardDragHandleComponent?: React.ReactNode;
+  /**
+   * Renders a default drag handle for the component for use in drag and drop contexts
    */
   withDragHandle?: boolean;
+  /**
+   * Props to pass down to the default CardDragHandle component (does not work with cardDragHandleComponent prop)
+   */
+  cardDragHandleProps?: Partial<CardDragHandlePropTypes>;
   /**
    * Applies styling for when the component is actively being dragged by the user
    */
   isDragActive?: boolean;
-  /**
-   * Props to pass down to the CardDragHandle component
-   */
-  cardDragHandleProps?: Partial<CardDragHandlePropTypes>;
   /**
    * Changes the height of the component. When small will also ensure thumbnail and description aren't rendered
    */
@@ -139,6 +143,25 @@ export class EntryCard extends Component<EntryCardPropTypes> {
     return <Tag tagType={type}>{label}</Tag>;
   };
 
+  renderCardDragHandle() {
+    const {
+      cardDragHandleComponent,
+      isDragActive,
+      cardDragHandleProps,
+      withDragHandle,
+    } = this.props;
+
+    if (cardDragHandleComponent) {
+      return cardDragHandleComponent;
+    } else if (withDragHandle) {
+      return (
+        <CardDragHandle isDragActive={isDragActive} {...cardDragHandleProps}>
+          Reorder entry
+        </CardDragHandle>
+      );
+    }
+  }
+
   render() {
     const {
       className,
@@ -151,9 +174,7 @@ export class EntryCard extends Component<EntryCardPropTypes> {
       thumbnailElement,
       loading,
       dropdownListElements,
-      withDragHandle,
       isDragActive,
-      cardDragHandleProps,
       size,
       ...otherProps
     } = this.props;
@@ -181,14 +202,7 @@ export class EntryCard extends Component<EntryCardPropTypes> {
           </div>
         ) : (
           <React.Fragment>
-            {withDragHandle && (
-              <CardDragHandle
-                isDragActive={isDragActive}
-                {...cardDragHandleProps}
-              >
-                Reorder entry
-              </CardDragHandle>
-            )}
+            {this.renderCardDragHandle()}
             <article className={styles.EntryCard__wrapper}>
               <React.Fragment>
                 <div className={styles.EntryCard__meta}>
