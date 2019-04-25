@@ -14,6 +14,9 @@ export { Card } from './components/Card/Card/Card';
 export { CardActions } from './components/Card/CardActions/CardActions';
 export { Tooltip } from './components/Tooltip/Tooltip';
 export { EntryCard } from './components/Card/EntryCard/EntryCard';
+export {
+  CardDragHandle,
+} from './components/Card/CardDragHandle/CardDragHandle';
 export { IconButton } from './components/IconButton/IconButton';
 export { CheckboxField } from './components/CheckboxField/CheckboxField';
 export { Checkbox } from './components/Checkbox/Checkbox';
