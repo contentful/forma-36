@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.6.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.6.2...@contentful/forma-36-react-components@3.6.3) (2019-04-25)
+
+
+### Bug Fixes
+
+* **CardDragHandle:** Add CardDragHandle to export ([971300e](https://github.com/contentful/forma-36/commit/971300e))
+
+
+
+
+
 ## [3.6.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.6.1...@contentful/forma-36-react-components@3.6.2) (2019-04-25)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
