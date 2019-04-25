@@ -1,6 +1,4 @@
-@import 'settings/colors';
-@import 'settings/typography';
-@import 'settings/transitions';
+@import 'settings/dimensions';
 
 .EmptyState {
   display: flex;
@@ -21,8 +19,8 @@
 }
 
 .EmptyState_element {
-  max-width: 500px;
-  margin-bottom: 16px;
+  max-width: calc(1rem * (500 / var(--font-base-default)));
+  margin-bottom: var(--spacing-m);
 }
 .EmptyState_paragraph {
   text-align: center;

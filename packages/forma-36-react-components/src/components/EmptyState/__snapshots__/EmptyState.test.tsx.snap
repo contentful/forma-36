@@ -2,9 +2,17 @@
 
 exports[`renders component with image 1`] = `
 <EmptyState
-  description="This is a description for the empty state. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate, sem a porttitor porttitor, velit nulla lacinia dolor, sit amet interdum ligula lectus hendrerit sem. Aliquam ultricies viverra tincidunt."
-  heading="Heading"
-  image={
+  descriptionProps={
+    Object {
+      "text": "This is a description for the empty state. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate, sem a porttitor porttitor, velit nulla lacinia dolor, sit amet interdum ligula lectus hendrerit sem. Aliquam ultricies viverra tincidunt.",
+    }
+  }
+  headingProps={
+    Object {
+      "text": "Heading",
+    }
+  }
+  imageProps={
     Object {
       "description": "Image description",
       "height": "250px",

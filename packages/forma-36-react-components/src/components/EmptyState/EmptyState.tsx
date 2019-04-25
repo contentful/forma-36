@@ -19,18 +19,23 @@ export type EmptyStateProps = {
    */
   testId?: string;
   /**
-   * Props for image block
+   * Props for imageProps block
    */
-  image?: ImageProps;
+  imageProps?: ImageProps;
   /**
-   * Heading text
+   * Heading text and semantic element type
    */
-  heading: string;
+  headingProps: TextElementProps;
   /**
-   * Description text
+   * Description text and semantic element type
    */
-  description: string;
+  descriptionProps: TextElementProps;
 } & typeof defaultProps;
+
+interface TextElementProps {
+  text: string;
+  elementType?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
+}
 
 interface ImageProps {
   /**
@@ -38,11 +43,13 @@ interface ImageProps {
    */
   url: string;
   /**
-   * Width of the illustration for empty state
+   * Width of the illustration for empty state, incl. unit
+   * for example '200px'
    */
   width: string;
   /**
-   * Height of the illustration for empty state
+   * Height of the illustration for empty state, incl. unit
+   * for example '200px'
    */
   height: string;
   /**
@@ -67,9 +74,9 @@ export class EmptyState extends Component<EmptyStateProps> {
       className,
       children,
       testId,
-      image,
-      heading,
-      description,
+      imageProps,
+      headingProps,
+      descriptionProps,
       ...otherProps
     } = this.props;
     const classNames = cn(styles.EmptyState, className);
@@ -77,33 +84,38 @@ export class EmptyState extends Component<EmptyStateProps> {
     return (
       <div {...otherProps} className={classNames} data-test-id={testId}>
         <div className={styles['EmptyState_container']}>
-          {image && (
+          {imageProps && (
             <div
               style={{
-                backgroundImage: `url(${image.url})`,
-                width: image.width,
-                height: image.height,
+                backgroundImage: `url(${imageProps.url})`,
+                width: imageProps.width,
+                height: imageProps.height,
               }}
               className={cn(
-                image.className,
+                imageProps.className,
                 styles['EmptyState_element'],
                 styles['EmptyState_illustration'],
               )}
-              aria-label={image.description}
+              aria-label={imageProps.description}
               role="img"
             />
           )}
-          <Heading element={'h1'} className={styles['EmptyState_element']}>
-            {heading}
+          <Heading
+            element={headingProps.elementType ? headingProps.elementType : 'h1'}
+            className={styles['EmptyState_element']}
+          >
+            {headingProps.text}
           </Heading>
           <Paragraph
-            element={'p'}
+            element={
+              descriptionProps.elementType ? descriptionProps.elementType : 'p'
+            }
             className={cn(
               styles['EmptyState_paragraph'],
               styles['EmptyState_element'],
             )}
           >
-            {description}
+            {descriptionProps.text}
           </Paragraph>
           {children}
         </div>

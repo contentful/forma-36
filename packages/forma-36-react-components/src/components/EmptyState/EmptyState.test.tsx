@@ -6,8 +6,8 @@ import EmptyState from './EmptyState';
 it('renders the component', () => {
   const output = shallow(
     <EmptyState
-      heading={'Heading'}
-      description="This is a description for the empty state."
+      headingProps={{ text: 'Heading' }}
+      descriptionProps={{ text: 'This is a description for the empty state.' }}
     />,
   );
 
@@ -18,8 +18,8 @@ it('renders the component with an additional class name', () => {
   const output = shallow(
     <EmptyState
       className="my-extra-class"
-      heading={'Heading'}
-      description="This is a description for the empty state."
+      headingProps={{ text: 'Heading' }}
+      descriptionProps={{ text: 'This is a description for the empty state.' }}
     />,
   );
 
@@ -29,8 +29,8 @@ it('renders the component with an additional class name', () => {
 it('has no a11y issues', async () => {
   const output = mount(
     <EmptyState
-      heading={'Heading'}
-      description="This is a description for the empty state."
+      headingProps={{ text: 'Heading' }}
+      descriptionProps={{ text: 'This is a description for the empty state.' }}
     />,
   ).html();
   const results = await axe(output);
@@ -41,16 +41,17 @@ it('has no a11y issues', async () => {
 it('renders component with image', () => {
   const output = mount(
     <EmptyState
-      heading={'Heading'}
-      image={{
+      headingProps={{ text: 'Heading' }}
+      imageProps={{
         url: 'url',
         width: '340px',
         height: '250px',
         description: 'Image description',
       }}
-      description={
-        'This is a description for the empty state. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate, sem a porttitor porttitor, velit nulla lacinia dolor, sit amet interdum ligula lectus hendrerit sem. Aliquam ultricies viverra tincidunt.'
-      }
+      descriptionProps={{
+        text:
+          'This is a description for the empty state. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate, sem a porttitor porttitor, velit nulla lacinia dolor, sit amet interdum ligula lectus hendrerit sem. Aliquam ultricies viverra tincidunt.',
+      }}
     />,
   );
 
