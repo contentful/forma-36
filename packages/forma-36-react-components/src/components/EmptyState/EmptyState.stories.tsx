@@ -38,6 +38,17 @@ storiesOf('Components|EmptyState', module)
       }}
     />
   ))
+  .add('with custom image element', () => (
+    <EmptyState
+      className={text('className', '')}
+      headingProps={{ text: 'Heading' }}
+      customImageElement={<img src={imageUrl} alt="" />}
+      descriptionProps={{
+        text:
+          'This is a descriptionProps for the empty state. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate, sem a porttitor porttitor, velit nulla lacinia dolor, sit amet interdum ligula lectus hendrerit sem. Aliquam ultricies viverra tincidunt.',
+      }}
+    />
+  ))
   .add('with children', () => (
     <EmptyState
       className={text('className', '')}

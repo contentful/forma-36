@@ -57,3 +57,18 @@ it('renders component with image', () => {
 
   expect(output).toMatchSnapshot();
 });
+
+it('renders component with custom image element', () => {
+  const output = mount(
+    <EmptyState
+      headingProps={{ text: 'Heading' }}
+      customImageElement={<img src={'/url'} alt="" />}
+      descriptionProps={{
+        text:
+          'This is a description for the empty state. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate, sem a porttitor porttitor, velit nulla lacinia dolor, sit amet interdum ligula lectus hendrerit sem. Aliquam ultricies viverra tincidunt.',
+      }}
+    />,
+  );
+
+  expect(output).toMatchSnapshot();
+});
