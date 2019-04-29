@@ -23,6 +23,10 @@ export type EmptyStateProps = {
    */
   imageProps?: ImageProps;
   /**
+   * As alternative,
+   */
+  customImageElement?: JSX.Element;
+  /**
    * Heading text and semantic element type
    */
   headingProps: TextElementProps;
@@ -74,6 +78,7 @@ export class EmptyState extends Component<EmptyStateProps> {
       className,
       children,
       testId,
+      customImageElement,
       imageProps,
       headingProps,
       descriptionProps,
@@ -84,22 +89,24 @@ export class EmptyState extends Component<EmptyStateProps> {
     return (
       <div {...otherProps} className={classNames} data-test-id={testId}>
         <div className={styles['EmptyState_container']}>
-          {imageProps && (
-            <div
-              style={{
-                backgroundImage: `url(${imageProps.url})`,
-                width: imageProps.width,
-                height: imageProps.height,
-              }}
-              className={cn(
-                imageProps.className,
-                styles['EmptyState_element'],
-                styles['EmptyState_illustration'],
-              )}
-              aria-label={imageProps.description}
-              role="img"
-            />
-          )}
+          <div className={styles['EmptyState_element']}>
+            {customImageElement
+              ? customImageElement
+              : imageProps && (
+                  <img
+                    src={imageProps.url}
+                    alt={imageProps.description}
+                    className={cn(
+                      imageProps.className,
+                      styles['EmptyState_illustration'],
+                    )}
+                    style={{
+                      height: imageProps.height,
+                      width: imageProps.width,
+                    }}
+                  />
+                )}
+          </div>
           <Heading
             element={headingProps.elementType ? headingProps.elementType : 'h1'}
             className={styles['EmptyState_element']}

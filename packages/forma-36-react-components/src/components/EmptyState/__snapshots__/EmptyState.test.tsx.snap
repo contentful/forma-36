@@ -1,5 +1,69 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`renders component with custom image element 1`] = `
+<EmptyState
+  customImageElement={
+    <img
+      alt=""
+      src="/url"
+    />
+  }
+  descriptionProps={
+    Object {
+      "text": "This is a description for the empty state. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate, sem a porttitor porttitor, velit nulla lacinia dolor, sit amet interdum ligula lectus hendrerit sem. Aliquam ultricies viverra tincidunt.",
+    }
+  }
+  headingProps={
+    Object {
+      "text": "Heading",
+    }
+  }
+  testId="cf-ui-empty-state"
+>
+  <div
+    className="EmptyState"
+    data-test-id="cf-ui-empty-state"
+  >
+    <div
+      className="EmptyState_container"
+    >
+      <div
+        className="EmptyState_element"
+      >
+        <img
+          alt=""
+          src="/url"
+        />
+      </div>
+      <Heading
+        className="EmptyState_element"
+        element="h1"
+        testId="cf-ui-heading"
+      >
+        <h1
+          className="Heading EmptyState_element"
+          data-test-id="cf-ui-heading"
+        >
+          Heading
+        </h1>
+      </Heading>
+      <Paragraph
+        className="EmptyState_paragraph EmptyState_element"
+        element="p"
+        testId="cf-ui-paragraph"
+      >
+        <p
+          className="Paragraph EmptyState_paragraph EmptyState_element"
+          data-test-id="cf-ui-paragraph"
+        >
+          This is a description for the empty state. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate, sem a porttitor porttitor, velit nulla lacinia dolor, sit amet interdum ligula lectus hendrerit sem. Aliquam ultricies viverra tincidunt.
+        </p>
+      </Paragraph>
+    </div>
+  </div>
+</EmptyState>
+`;
+
 exports[`renders component with image 1`] = `
 <EmptyState
   descriptionProps={
@@ -30,17 +94,20 @@ exports[`renders component with image 1`] = `
       className="EmptyState_container"
     >
       <div
-        aria-label="Image description"
-        className="EmptyState_element EmptyState_illustration"
-        role="img"
-        style={
-          Object {
-            "backgroundImage": "url(url)",
-            "height": "250px",
-            "width": "340px",
+        className="EmptyState_element"
+      >
+        <img
+          alt="Image description"
+          className="EmptyState_illustration"
+          src="url"
+          style={
+            Object {
+              "height": "250px",
+              "width": "340px",
+            }
           }
-        }
-      />
+        />
+      </div>
       <Heading
         className="EmptyState_element"
         element="h1"
@@ -78,6 +145,9 @@ exports[`renders the component 1`] = `
   <div
     className="EmptyState_container"
   >
+    <div
+      className="EmptyState_element"
+    />
     <Heading
       className="EmptyState_element"
       element="h1"
@@ -104,6 +174,9 @@ exports[`renders the component with an additional class name 1`] = `
   <div
     className="EmptyState_container"
   >
+    <div
+      className="EmptyState_element"
+    />
     <Heading
       className="EmptyState_element"
       element="h1"
