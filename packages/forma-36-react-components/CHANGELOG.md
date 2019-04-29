@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.6.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.6.3...@contentful/forma-36-react-components@3.6.4) (2019-04-29)
+
+
+### Bug Fixes
+
+* **EmptyState:** Added customImageElement prop ([b6375de](https://github.com/contentful/forma-36/commit/b6375de))
+
+
+
+
+
 ## [3.6.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.6.2...@contentful/forma-36-react-components@3.6.3) (2019-04-25)
 
 
