@@ -21,6 +21,10 @@ module.exports = {
         link: '/guidelines/',
         menuLinks: [
           {
+            name: 'Accessibility',
+            link: '/guidelines/accessibility/',
+          },
+          {
             name: 'Copy',
             link: '/guidelines/copy/',
             menuLinks: [
