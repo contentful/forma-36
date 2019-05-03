@@ -27,6 +27,9 @@
       "path": "cz-conventional-changelog"	
     }	
   },
+  "resolutions": {
+    "tar": "4.4.8"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "yarn pretty-quick --staged",

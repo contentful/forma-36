@@ -17,6 +17,9 @@
   "dependencies": {
     "@contentful/forma-36-tokens": "^0.3.0"
   },
+  "resolutions": {
+    "tar": "4.4.2"
+  },
   "scripts": {
     "develop": "node-sass --watch scss/styles.scss -o dist --output-style",
     "build": "node-sass scss/styles.scss -o dist --output-style compressed && node postcss.js",
