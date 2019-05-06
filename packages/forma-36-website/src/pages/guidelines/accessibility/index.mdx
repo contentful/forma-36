@@ -4,34 +4,61 @@ title: 'Accessibility'
 
 # Accessibility
 
-## Our aim is to design and build an inclusive application which is usable for users of all abilities.
+Our aim is to design and build inclusive features and applications which are usable for users of all abilities.
 
-### Intro and categories of disabilities.
+## Introduction
 
-- Permanent, Temporary, Situational
-- Our goal is to be compliant to WCAG Level A and Level AA
-- Building empathy
+When we solve problems and create new features we don't want to be biased by our individual abilities but be emphatic to users who are limited in interacting with the provided user interface. Impairments are not always permanent but can be temporary or situational too, so we want to provide a variety of ways how to interact with our application. The WCAG provides guidance on how to include users of all abilities and qualifies a level of accessibility by providing success criteria. Contentful aims to meet the WCAG 2.1 Level AA success criteria.
 
-### Assistive Technologies
+## Assistive Technologies
 
-- Provide alternative text
-- Build for keyboard use only, provide focus indicators etc.
-- Provide shortcuts and skip links
+There are several forms of limitations a user can face when interacting with a user interface, they can be roughly categorised as follows:
 
-### Low vision
+- Auditory
+- Cognitive
+- Neurological
+- Physical
+- Visual
 
-- Use contrasts ratio 4.5:1 for normal text and 3:1 for large text
-- https://webaim.org/resources/contrastchecker/
+All major operating systems provide a certain amount of assistive technologies which enable alternative ways of communicating content and functionality especially for users with auditory and visual impairments. This includes tools like contrast switchers, screen readers or braille display support. It is important to create content which is accessible and to provide technical implementations to enable those technologies. The following lists should provide simple guides on what to look out for and prevent common accessibility failures:
 
-### Automated Testing
+### Text Alternatives
 
-- Describe what to take care of when adding new components
+- All non-text content should provide alternative text (e.g. `alt` attribute for images, `label` or `describedby` aria attribute)
 
-### WCAG 2.1 Level A and Level AA
+### Adaptable
 
-- Create a Level AA Checklist
+- Information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text. E.g. Provide labels for form components or use the aria `describedby` attribute to create relationship between content.
+- Order content in a meaningful sequence. Use headings to structure content sections.
 
-### Resources
+### Keyboard Accessibility
 
-- https://www.w3.org/WAI/standards-guidelines/wcag/
-- https://github.com/UKHomeOffice/posters/blob/master/accessibility/dos-donts/posters_en-UK/accessibility-posters-set.pdf
+- Build for keyboard use only, all interactive elements should be focusable and show focus indicators like outlines or other stylings to guide the interaction.
+- Prevent keyboard traps. Every element that can be focused on using the keyboard can be unfocused using the keyboard.
+- If character key shortcuts are implemented (e.g. shortcuts just using a letter, number or symbol) it must be possible to either disable or reassign them.
+
+### Distinguishable
+
+- Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element. E.g. A status like published, archived or deleted should not only be indicated by its color coding but show an additional status text.
+- Respect the contrast minimum. Paragraph text has a contrast of at least 4:5:1, the visual presentation of user interface or graphical components has a minimum contrast of 3:1 ([https://webaim.org/resources/contrastchecker/](https://webaim.org/resources/contrastchecker/))
+- Text can be resized up to 200 percent without loss of content or functionality (Except for captions and images of text)
+
+### Navigable
+
+- Provide a mechanism like skip links to bypass blocks of repeated content
+- All Pages have titles that describe the purpose of the page
+- Elements of the page can be focused in the sequence of appearance
+- The purpose of each link can be determined by the link text alone
+
+The WCAG provides a quick reference to all Level AA success criteria which can be found here:
+
+[https://www.w3.org/WAI/WCAG21/quickref](https://www.w3.org/WAI/WCAG21/quickref/?currentsidebar=%23col_customize&levels=aaa&techniques=advisory%2Cfailures&technologies=flash%2Csl&showtechniques=133#top)
+
+### Automated Accessibility Testing
+
+- When implementing Forma 36 react components it is important to provide a basic level of automated testing for new components. This is why we use AXE and Jest to test component snapshots on WCAG criteria. Every component bootstrapped using the CLI (e.g. `yarn add-component`) will provide a basic Jest test for accessibility of the component snapshot. More information about testing can be found here: [https://github.com/contentful/forma-36/blob/master/packages/forma-36-react-components/README.md#testing](https://github.com/contentful/forma-36/blob/master/packages/forma-36-react-components/README.md#testing)
+
+## Resources
+
+- [https://www.w3.org/WAI/standards-guidelines/wcag/](https://www.w3.org/WAI/standards-guidelines/wcag/)
+- [https://github.com/UKHomeOffice/posters/blob/master/accessibility/dos-donts/posters_en-UK/accessibility-posters-set.pdf](https://github.com/UKHomeOffice/posters/blob/master/accessibility/dos-donts/posters_en-UK/accessibility-posters-set.pdf)
