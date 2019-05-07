@@ -72,6 +72,7 @@ export class CardActions extends Component<
             label="Actions"
             {...iconButtonProps}
             onClick={event => {
+              event.preventDefault();
               this.handleClick(event);
             }}
           />
