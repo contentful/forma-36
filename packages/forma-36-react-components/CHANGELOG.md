@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.6.6](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.6.5...@contentful/forma-36-react-components@3.6.6) (2019-05-07)
+
+
+### Bug Fixes
+
+* **CarActions:** Prevent default for toggle click ([54c332c](https://github.com/contentful/forma-36/commit/54c332c))
+
+
+
+
+
 ## [3.6.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.6.4...@contentful/forma-36-react-components@3.6.5) (2019-05-03)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
