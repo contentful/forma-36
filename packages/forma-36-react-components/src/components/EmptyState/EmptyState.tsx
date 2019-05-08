@@ -37,7 +37,7 @@ export type EmptyStateProps = {
 } & typeof defaultProps;
 
 interface TextElementProps {
-  text: string;
+  text: React.ReactNode;
   elementType?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
 }
 
