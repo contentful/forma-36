@@ -3,62 +3,6 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [0.1.27](https://github.com/contentful/forma-36/compare/forma-36-website@0.1.26...forma-36-website@0.1.27) (2019-05-07)
-
-**Note:** Version bump only for package forma-36-website
-
-
-
-
-
-## [0.1.26](https://github.com/contentful/forma-36/compare/forma-36-website@0.1.25...forma-36-website@0.1.26) (2019-05-03)
-
-**Note:** Version bump only for package forma-36-website
-
-
-
-
-
-## [0.1.25](https://github.com/contentful/forma-36/compare/forma-36-website@0.1.24...forma-36-website@0.1.25) (2019-04-29)
-
-**Note:** Version bump only for package forma-36-website
-
-
-
-
-
-## [0.1.24](https://github.com/contentful/forma-36/compare/forma-36-website@0.1.23...forma-36-website@0.1.24) (2019-04-25)
-
-**Note:** Version bump only for package forma-36-website
-
-
-
-
-
-## [0.1.23](https://github.com/contentful/forma-36/compare/forma-36-website@0.1.22...forma-36-website@0.1.23) (2019-04-25)
-
-**Note:** Version bump only for package forma-36-website
-
-
-
-
-
-## [0.1.22](https://github.com/contentful/forma-36/compare/forma-36-website@0.1.21...forma-36-website@0.1.22) (2019-04-25)
-
-**Note:** Version bump only for package forma-36-website
-
-
-
-
-
-## [0.1.21](https://github.com/contentful/forma-36/compare/forma-36-website@0.1.20...forma-36-website@0.1.21) (2019-04-25)
-
-**Note:** Version bump only for package forma-36-website
-
-
-
-
-
 ## [0.1.20](https://github.com/contentful/forma-36/compare/forma-36-website@0.1.19...forma-36-website@0.1.20) (2019-04-24)
 
 **Note:** Version bump only for package forma-36-website
