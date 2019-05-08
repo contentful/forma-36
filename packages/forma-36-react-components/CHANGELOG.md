@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.7.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.6.6...@contentful/forma-36-react-components@3.7.0) (2019-05-08)
+
+
+### Features
+
+* **EmptyState:** Update prop type ([55678d2](https://github.com/contentful/forma-36/commit/55678d2))
+
+
+
+
+
 ## [3.6.6](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.6.5...@contentful/forma-36-react-components@3.6.6) (2019-05-07)
 
 
