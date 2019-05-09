@@ -21,16 +21,25 @@ import {
 import ComponentSource from './ComponentSource';
 import ComponentHeader from './ComponentHeader';
 import ChildSections from './ChildSections';
+import Footer from './Footer';
+import HomeSplash from './HomeSplash';
 
 const styles = {
   container: css`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
-    flex: 1;
-    padding: ${tokens.spacing4Xl};
+  `,
+
+  main: css`
+    flex: 1 1 0;
   `,
 
   inner: css`
-    max-width: 800px;
+    width: 960px;
+    margin: 0 auto;
+    padding: ${tokens.spacing2Xl} ${tokens.spacingL} ${tokens.spacingL};
   `,
 };
 
@@ -41,39 +50,48 @@ const markToComponentMap = {
   h4: props => <Subheading {...props} />,
   h5: props => <Subheading {...props} />,
   h6: props => <Subheading {...props} />,
-  p: props => <Paragraph {...props} />,
+  p: props => <Paragraph className="f36-font-size--l" {...props} />,
   a: props => <TextLink {...props} />,
   ul: props => <List className="f36-margin-bottom--m" {...props} />,
-  li: props => <ListItem className="f36-color--text-mid" {...props} />,
+  li: props => (
+    <ListItem className="f36-font-size--l f36-color--text-mid" {...props} />
+  ),
   code: props => <ComponentSource>{props.children}</ComponentSource>,
   table: props => <Table className="f36-margin-bottom--m" {...props} />,
   thead: props => <TableHead {...props} />,
   tbody: props => <TableBody {...props} />,
   tr: props => <TableRow {...props} />,
-  th: props => <TableCell {...props} />,
-  td: props => <TableCell {...props} />,
+  th: props => <TableCell className="f36-font-size--l" {...props} />,
+  td: props => <TableCell className="f36-font-size--l" {...props} />,
 };
 
 const Container = data => {
   const { frontmatter, children } = data;
 
+  const isHomePage = frontmatter && frontmatter.type === 'home';
+
   return (
     <div css={styles.container}>
-      {frontmatter && frontmatter.type === 'component' && (
-        <ComponentHeader
-          title={frontmatter.title}
-          githubUrl={frontmatter.github}
-          storybookUrl={frontmatter.storybook}
-        />
-      )}
+      <div css={styles.main}>
+        {frontmatter && frontmatter.type === 'component' && (
+          <ComponentHeader
+            title={frontmatter.title}
+            githubUrl={frontmatter.github}
+            storybookUrl={frontmatter.storybook}
+          />
+        )}
 
-      <Typography css={styles.inner}>
-        <MDXProvider components={markToComponentMap}>{children}</MDXProvider>
-      </Typography>
+        {isHomePage && <HomeSplash />}
 
-      {frontmatter && frontmatter.subpages && (
-        <ChildSections items={frontmatter.subpages} />
-      )}
+        <Typography css={styles.inner}>
+          <MDXProvider components={markToComponentMap}>{children}</MDXProvider>
+        </Typography>
+
+        {frontmatter && frontmatter.subpages && (
+          <ChildSections items={frontmatter.subpages} isHomePage={isHomePage} />
+        )}
+      </div>
+      <Footer />
     </div>
   );
 };
