@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.7.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.7.0...@contentful/forma-36-react-components@3.7.1) (2019-05-10)
+
+
+### Bug Fixes
+
+* **EntryCard:** Give explicit text colour to description ([3f7fb13](https://github.com/contentful/forma-36/commit/3f7fb13))
+
+
+
+
+
 # [3.7.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.6.6...@contentful/forma-36-react-components@3.7.0) (2019-05-08)
 
 
