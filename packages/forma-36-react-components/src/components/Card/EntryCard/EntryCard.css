@@ -74,6 +74,7 @@
   word-break: break-word;
   text-overflow: ellipsis;
   overflow: hidden;
+  color: var(--color-text-dark);
 }
 
 .EntryCard__description {
@@ -82,6 +83,7 @@
   word-break: break-word;
   white-space: initial;
   font-size: var(--font-size-l);
+  color: var(--color-text-dark);
 }
 
 .EntryCard__thumbnail {
