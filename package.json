@@ -3,12 +3,12 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
-    "@commitlint/cli": "^7.5.0",
-    "@commitlint/config-conventional": "^7.5.0",
-    "commitizen": "^3.0.4",
-    "husky": "^1.3.1",
-    "lerna": "^3.11.0",
-    "prettier": "^1.16.4",
+    "@commitlint/cli": "^7.6.1",
+    "@commitlint/config-conventional": "^7.6.0",
+    "commitizen": "^3.1.1",
+    "husky": "^2.3.0",
+    "lerna": "^3.14.0",
+    "prettier": "^1.17.1",
     "pretty-quick": "^1.10.0"
   },
   "scripts": {
@@ -22,10 +22,10 @@
     "lint": "lerna run lint",
     "type-check": "lerna run type-check"
   },
-  "config": {	
-    "commitizen": {	
-      "path": "cz-conventional-changelog"	
-    }	
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   },
   "resolutions": {
     "tar": "4.4.8"
