@@ -65,6 +65,17 @@ storiesOf('Components|Notification', module)
           >
             show warning
           </Button>
+          <Button
+            style={{ marginLeft: 20 }}
+            buttonType="muted"
+            onClick={() =>
+              Notification.warning('Notification that should not be repeated', {
+                id: 'some-concrete-notification',
+              })
+            }
+          >
+            show notification with the same id
+          </Button>
         </div>
       );
     },

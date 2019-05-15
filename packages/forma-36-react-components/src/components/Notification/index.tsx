@@ -56,6 +56,7 @@ const show = (intent: NotificationIntent) => (
   settings?: {
     duration?: number;
     canClose?: boolean;
+    id?: string;
   },
 ) => {
   if (internalAPI.show) {
@@ -71,6 +72,7 @@ type ExternalShowAction<T> = (
   settings?: {
     duration?: number;
     canClose?: boolean;
+    id?: string;
   },
 ) => T;
 
@@ -86,7 +88,7 @@ export const Notification: {
   success: afterInit(show('success')),
   error: afterInit(show('error')),
   warning: afterInit(show('warning')),
-  close: afterInit((id: number) => {
+  close: afterInit((id: string | number) => {
     if (internalAPI.close) {
       return internalAPI.close(id);
     }

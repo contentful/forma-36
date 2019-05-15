@@ -8,7 +8,7 @@ const styles = require('./NotificationsManager.css');
 
 let uniqueId = 0;
 
-const getUniqueId = () => {
+const getUniqueId = (): number => {
   uniqueId += 1;
   return uniqueId;
 };
@@ -16,7 +16,7 @@ const getUniqueId = () => {
 export type Position = 'top' | 'bottom';
 
 export interface Notification {
-  id: number;
+  id: string | number;
   text: string;
   close: Function;
   duration: number;
@@ -29,12 +29,13 @@ export type ShowAction<T> = (
   text: string,
   setting?: {
     intent: NotificationIntent;
+    id?: string;
     duration?: number;
     canClose?: boolean;
   },
 ) => T;
 
-export type CloseAction<T> = (id: number) => T;
+export type CloseAction<T> = (id: string | number) => T;
 
 export type CloseAllAction<T> = () => T;
 
@@ -107,7 +108,7 @@ export class NotificationsManager extends PureComponent<
     }));
   };
 
-  closeAndDelete = (id: number) => {
+  closeAndDelete = (id: string | number) => {
     this.setState(state => ({
       items: state.items.filter(item => item.id !== id),
     }));
@@ -132,8 +133,10 @@ export class NotificationsManager extends PureComponent<
         ? settings.canClose
         : true;
 
-    const notificationId = getUniqueId();
-    const notification = {
+    const notificationId =
+      settings && settings.id ? settings.id : getUniqueId();
+
+    let notification = {
       id: notificationId,
       text,
       close: () => this.closeAndDelete(notificationId),
@@ -142,6 +145,15 @@ export class NotificationsManager extends PureComponent<
       isShown: true,
       intent,
     };
+
+    const alreadyThere = this.state.items.find(
+      item => item.id === notification.id,
+    );
+
+    if (alreadyThere) {
+      return alreadyThere;
+    }
+
     this.setState(state => {
       if (state.position === 'top') {
         return {
@@ -154,6 +166,7 @@ export class NotificationsManager extends PureComponent<
         items: [...state.items, notification],
       };
     });
+
     return notification;
   };
 
