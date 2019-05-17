@@ -22,6 +22,28 @@ module.exports = {
                 name: 'Spacing',
                 link: '/foundation/layout/spacing',
               },
+              {
+                name: 'Workbench',
+                link: '/foundation/layout/workbench/',
+                menuLinks: [
+                  {
+                    name: 'Title Bar',
+                    link: '/foundation/layout/workbench/title-bar',
+                  },
+                  {
+                    name: 'Left Sidebar',
+                    link: '/foundation/layout/workbench/left-sidebar',
+                  },
+                  {
+                    name: 'Main Content',
+                    link: '/foundation/layout/workbench/main-content',
+                  },
+                  {
+                    name: 'Right Sidebar',
+                    link: '/foundation/layout/workbench/right-sidebar',
+                  },
+                ],
+              },
             ],
           },
         ],
