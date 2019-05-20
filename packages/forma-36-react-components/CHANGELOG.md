@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.8.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.8.0...@contentful/forma-36-react-components@3.8.1) (2019-05-20)
+
+
+### Bug Fixes
+
+* **InViewport:** Prevent Infinite handle overflow ([a743f81](https://github.com/contentful/forma-36/commit/a743f81))
+
+
+
+
+
 # [3.8.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.7.1...@contentful/forma-36-react-components@3.8.0) (2019-05-15)
 
 
