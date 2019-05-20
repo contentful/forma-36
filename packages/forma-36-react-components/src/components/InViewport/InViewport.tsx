@@ -25,6 +25,7 @@ export class InViewport extends Component<InViewportProps> {
 
   tGetDomPosition: EventListenerOrEventListenerObject | null = null;
   nodeRef: HTMLDivElement | null = null;
+  lastOverflowAt: string | null = null;
 
   componentDidMount() {
     this.getDomPosition();
@@ -78,13 +79,17 @@ export class InViewport extends Component<InViewportProps> {
     const bottomThreshold = windowHeight + offset;
 
     if (top + right + bottom + left !== 0) {
-      if (top < topThreshold) {
+      if (top < topThreshold && this.lastOverflowAt !== 'bottom') {
+        this.lastOverflowAt = 'top';
         onOverflowTop && onOverflowTop();
-      } else if (left < leftThreshold) {
+      } else if (left < leftThreshold && this.lastOverflowAt !== 'right') {
+        this.lastOverflowAt = 'left';
         onOverflowLeft && onOverflowLeft();
-      } else if (bottom > bottomThreshold) {
+      } else if (bottom > bottomThreshold && this.lastOverflowAt !== 'top') {
+        this.lastOverflowAt = 'bottom';
         onOverflowBottom && onOverflowBottom();
-      } else if (right > rightThreshold) {
+      } else if (right > rightThreshold && this.lastOverflowAt !== 'left') {
+        this.lastOverflowAt = 'right';
         onOverflowRight && onOverflowRight();
       }
     }
