@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component 1`] = `
+<div
+  className="Switch__wrapper"
+>
+  <input
+    className="Switch"
+    onClick={[Function]}
+    onKeyUp={[Function]}
+    type="checkbox"
+  />
+  <Paragraph
+    className="Switch__label"
+    element="p"
+    testId="cf-ui-paragraph"
+  >
+    foobar
+  </Paragraph>
+</div>
+`;
+
+exports[`renders the component as checked 1`] = `
+<div
+  className="Switch__wrapper"
+>
+  <input
+    checked={true}
+    className="Switch Switch--checked"
+    onClick={[Function]}
+    onKeyUp={[Function]}
+    type="checkbox"
+  />
+  <Paragraph
+    className="Switch__label"
+    element="p"
+    testId="cf-ui-paragraph"
+  >
+    foobar
+  </Paragraph>
+</div>
+`;
+
+exports[`renders the component as disabled 1`] = `
+<div
+  className="Switch__wrapper"
+>
+  <input
+    className="Switch Switch--disabled"
+    onClick={[Function]}
+    onKeyUp={[Function]}
+    type="checkbox"
+  />
+  <Paragraph
+    className="Switch__label Switch__label--disabled"
+    element="p"
+    testId="cf-ui-paragraph"
+  >
+    foobar
+  </Paragraph>
+</div>
+`;
+
+exports[`renders the component as disabled and checked 1`] = `
+<div
+  className="Switch__wrapper"
+>
+  <input
+    checked={true}
+    className="Switch Switch--checked Switch--disabled"
+    onClick={[Function]}
+    onKeyUp={[Function]}
+    type="checkbox"
+  />
+  <Paragraph
+    className="Switch__label Switch__label--disabled"
+    element="p"
+    testId="cf-ui-paragraph"
+  >
+    foobar
+  </Paragraph>
+</div>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+<div
+  className="Switch__wrapper my-extra-class"
+>
+  <input
+    className="Switch"
+    onClick={[Function]}
+    onKeyUp={[Function]}
+    type="checkbox"
+  />
+  <Paragraph
+    className="Switch__label"
+    element="p"
+    testId="cf-ui-paragraph"
+  >
+    foobar
+  </Paragraph>
+</div>
+`;

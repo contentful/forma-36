@@ -1,0 +1,64 @@
+@import 'settings/colors';
+@import 'settings/dimensions';
+@import 'settings/transitions';
+
+.Switch__wrapper {
+  display: flex;
+}
+
+.Switch {
+  box-sizing: content-box;
+  width: calc(1rem * (34 / var(--font-base-default)));
+  height: calc(1rem * (17 / var(--font-base-default)));
+  background-color: var(--color-element-mid);
+  border-radius: calc(1rem * (17 / var(--font-base-default)));
+  cursor: pointer;
+  outline: none;
+  margin: 0 var(--spacing-xs) 0 0;
+  border: 2px solid var(--color-element-mid);
+  appearance: none;
+  transition: background-color var(--transition-easing-default)
+      var(--transition-duration-default),
+    border-color var(--transition-easing-default)
+      var(--transition-duration-default);
+}
+
+.Switch:before {
+  content: '';
+  display: block;
+  width: 17px;
+  height: 17px;
+  background-color: var(--color-white);
+  transition: transform var(--transition-easing-default)
+    var(--transition-duration-default);
+  border-radius: 50%;
+  transform: translate3d(0, 0, 0);
+}
+
+.Switch--checked {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.Switch--disabled {
+  background-color: var(--color-element-light);
+  border-color: var(--color-element-light);
+  cursor: not-allowed;
+}
+
+.Switch--checked.Switch--disabled {
+  background-color: var(--color-element-mid);
+  border-color: var(--color-element-mid);
+}
+
+.Switch--checked:before {
+  transform: translate3d(100%, 0, 0);
+}
+
+.Switch__label {
+  color: var(--color-text-dark);
+}
+
+.Switch__label--disabled {
+  color: var(--color-text-light);
+}
