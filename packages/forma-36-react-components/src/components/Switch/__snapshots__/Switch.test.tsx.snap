@@ -47,6 +47,7 @@ exports[`renders the component as disabled 1`] = `
 >
   <input
     className="Switch Switch--disabled"
+    disabled={true}
     onClick={[Function]}
     onKeyUp={[Function]}
     type="checkbox"
@@ -68,6 +69,7 @@ exports[`renders the component as disabled and checked 1`] = `
   <input
     checked={true}
     className="Switch Switch--checked Switch--disabled"
+    disabled={true}
     onClick={[Function]}
     onKeyUp={[Function]}
     type="checkbox"
