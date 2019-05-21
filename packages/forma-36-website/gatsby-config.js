@@ -14,6 +14,16 @@ module.exports = {
             name: 'Typography',
             link: '/foundation/typography/',
           },
+          {
+            name: 'Layout',
+            link: '/foundation/layout/',
+            menuLinks: [
+              {
+                name: 'Spacing',
+                link: '/foundation/layout/spacing',
+              },
+            ],
+          },
         ],
       },
       {
