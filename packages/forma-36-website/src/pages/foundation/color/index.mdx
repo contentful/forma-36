@@ -2,4 +2,108 @@
 title: 'Color'
 ---
 
+import ColorSwatchGroup from '../../../components/ColorSwatchGroup';
+import semanticColors from '@contentful/forma-36-tokens/src/tokens/colors/colors-semantic';
+import textColors from '@contentful/forma-36-tokens/src/tokens/colors/colors-text';
+import elementColors from '@contentful/forma-36-tokens/src/tokens/colors/colors-elements';
+import contrastColors from '@contentful/forma-36-tokens/src/tokens/colors/colors-contrast';
+import blueColors from '@contentful/forma-36-tokens/src/tokens/colors/colors-blue';
+import greenColors from '@contentful/forma-36-tokens/src/tokens/colors/colors-green';
+import redColors from '@contentful/forma-36-tokens/src/tokens/colors/colors-red';
+import orangeColors from '@contentful/forma-36-tokens/src/tokens/colors/colors-orange';
+import coralColors from '@contentful/forma-36-tokens/src/tokens/colors/colors-coral';
+import peachColors from '@contentful/forma-36-tokens/src/tokens/colors/colors-peach';
+import mintColors from '@contentful/forma-36-tokens/src/tokens/colors/colors-mint';
+import iceColors from '@contentful/forma-36-tokens/src/tokens/colors/colors-ice';
+import whiteColors from '@contentful/forma-36-tokens/src/tokens/colors/colors-white';
+
 # Color
+
+These are the colors we use at Contentful.
+
+## Semantic
+
+<ColorSwatchGroup group={semanticColors} />
+
+## Text
+
+For use with text on light backgrounds. Use a lighter shade to
+de-emphasize text.
+
+<ColorSwatchGroup group={textColors} />
+
+## Element
+
+Element colors are used for the larger blocks of our UI - e.g.
+sidepanels, table headers, navigational elements.
+
+<ColorSwatchGroup group={elementColors} />
+
+## Contrast
+
+Contrast colors are used to contrast against our element colors and help
+establish hierarchy. Example usage are app headers or modal backgrounds
+(when used with transparency).
+
+<ColorSwatchGroup group={contrastColors} />
+
+## Blue
+
+Blue is our primary color and should be used when you want to highlight
+a primary action.
+
+<ColorSwatchGroup group={blueColors} />
+
+## Green
+
+Green is used to highlight positive actions or messages. E.g. when
+showing a success message, a save action, or a marking a step as
+complete.
+
+<ColorSwatchGroup group={greenColors} />
+
+## Red
+
+Red is used to highlight negative actions or messages. E.g. when performing
+a distructive action such as deleting content, for highlighting validation
+or application error messages, or for showing statuses with a negative
+context.
+
+<ColorSwatchGroup group={redColors} />
+
+## Orange
+
+Orange is used to highlight actions or messages which require attention but
+don't necessarily have a negative context. E.g. showing a draft/unpublished
+state, or showing a gentle warning message rather than an error message.
+
+<ColorSwatchGroup group={orangeColors} />
+
+## Coral
+
+Coral is used for muted warnings and errors. E.g - a note warning the user
+of reaching a limit.
+
+<ColorSwatchGroup group={coralColors} />
+
+## Peach
+
+Peach is used for muted warning messages. E.g - a warning note.
+
+<ColorSwatchGroup group={peachColors} />
+
+# Mint
+
+Mint is used for muted success messages. E.g - a confirmation note.
+
+<ColorSwatchGroup group={mintColors} />
+
+## Ice
+
+Ice is used for muted neutral or information messages. E.g - a general note.
+
+<ColorSwatchGroup group={iceColors} />
+
+## White
+
+<ColorSwatchGroup group={whiteColors} />
