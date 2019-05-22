@@ -9,7 +9,11 @@ import {
 } from '@contentful/forma-36-react-components';
 
 const handleClick = path => {
-  navigate(path);
+  if (path.includes('http')) {
+    window.location = path;
+  } else {
+    navigate(path);
+  }
 };
 
 const ChildSections = ({ items, isHomePage }) => {
@@ -49,7 +53,7 @@ const ChildSections = ({ items, isHomePage }) => {
             {item.icon && (
               <div css={styles.icon}>
                 <img
-                  src={`icons/${item.icon}.svg`}
+                  src={`/icons/${item.icon}.svg`}
                   alt={`Icon for ${item.title} section`}
                 />
               </div>
