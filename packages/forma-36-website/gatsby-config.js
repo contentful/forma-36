@@ -15,14 +15,16 @@ module.exports = {
             link: '/foundation/typography/',
           },
           {
-            name: 'Layout',
-            link: '/foundation/layout/',
-            menuLinks: [
-              {
-                name: 'Spacing',
-                link: '/foundation/layout/spacing',
-              },
-            ],
+            name: 'Spacing',
+            link: '/foundation/spacing',
+          },
+          {
+            name: 'Box Shadows',
+            link: '/foundation/boxshadows',
+          },
+          {
+            name: 'Transitions',
+            link: '/foundation/transitions',
           },
         ],
       },
