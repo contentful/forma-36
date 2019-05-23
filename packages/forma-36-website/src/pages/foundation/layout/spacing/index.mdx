@@ -1,0 +1,50 @@
+import tokens from '@contentful/forma-36-tokens/src/tokens/spacing';
+
+import {
+  Table,
+  TableHead,
+  TableBody,
+  TableCell,
+  TableRow,
+} from '@contentful/forma-36-react-components';
+
+# Spacing
+
+<Table style={{ width: '100%' }}>
+  <TableHead>
+    <TableRow>
+      <TableCell>Token</TableCell>
+      <TableCell>Value (px)</TableCell>
+      <TableCell>Value (rem)</TableCell>
+      <TableCell>Example</TableCell>
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    {Object.keys(tokens).map(token => {
+      const value = tokens[token];
+      const valuePx = 1 * parseFloat(value) * 16; // 16 = REM Base
+      return (
+        <TableRow key={token}>
+          <TableCell style={{ verticalAlign: 'middle' }}>
+            <strong>{token}</strong>
+          </TableCell>
+          <TableCell style={{ verticalAlign: 'middle' }}>
+            <code>{valuePx}px</code>
+          </TableCell>
+          <TableCell style={{ verticalAlign: 'middle' }}>
+            <code>{value}</code>
+          </TableCell>
+          <TableCell style={{ verticalAlign: 'middle' }}>
+            <div
+              style={{
+                width: value,
+                height: value,
+                background: '#3c80cf',
+              }}
+            />
+          </TableCell>
+        </TableRow>
+      );
+    })}
+  </TableBody>
+</Table>
