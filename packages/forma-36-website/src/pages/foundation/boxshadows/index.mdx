@@ -1,0 +1,79 @@
+---
+title: 'Box Shadows'
+---
+
+import boxShadowTokens from '@contentful/forma-36-tokens/src/tokens/box-shadows/box-shadows';
+import glowTokens from '@contentful/forma-36-tokens/src/tokens/box-shadows/glows';
+
+import {
+  Table,
+  TableHead,
+  TableBody,
+  TableCell,
+  TableRow,
+  Card,
+} from '@contentful/forma-36-react-components';
+
+# Box Shadows
+
+We use two different styles of box shadows at Contentful. Box shadows to
+communicate depth, and glows to communicate semantics.
+
+Box shadows are used to give depth to the user interface.
+
+<Table className="f36-margin-bottom--l">
+  <TableHead>
+    <TableRow>
+      <TableCell>Token</TableCell>
+      <TableCell>Value</TableCell>
+      <TableCell>Example</TableCell>
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    {Object.keys(boxShadowTokens).map(token => {
+      const value = boxShadowTokens[token];
+      return (
+        <TableRow key={token}>
+          <TableCell>{token}</TableCell>
+          <TableCell>
+            <code>{value}</code>
+          </TableCell>
+          <TableCell>
+            <Card>Box Shadow</Card>
+          </TableCell>
+        </TableRow>
+      );
+    })}
+  </TableBody>
+</Table>
+
+## Glows
+
+Glows are used to indicate semantic focus states, for example in the
+Button component.
+
+<Table>
+  <TableHead>
+    <TableRow>
+      <TableCell>Token</TableCell>
+      <TableCell>Value</TableCell>
+      <TableCell>Example</TableCell>
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    {Object.keys(glowTokens).map(token => {
+      const value = glowTokens[token];
+      return (
+        <TableRow key={token}>
+          <TableCell>{token}</TableCell>
+          <TableCell>
+            <code>{value}</code>
+          </TableCell>
+          <TableCell>
+            <Card style={{ boxShadow: value }}>Box Shadow</Card>
+          </TableCell>
+        </TableRow>
+      );
+    })}
+  </TableBody>
+</Table>
