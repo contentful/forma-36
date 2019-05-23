@@ -130,6 +130,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-svgr',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
