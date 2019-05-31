@@ -18,7 +18,8 @@
     "@contentful/forma-36-tokens": "^0.3.0"
   },
   "resolutions": {
-    "tar": "4.4.2"
+    "tar": "4.4.2",
+    "fstream": "1.0.12"
   },
   "scripts": {
     "develop": "node-sass --watch scss/styles.scss -o dist --output-style",
