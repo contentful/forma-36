@@ -103,6 +103,18 @@ it('renders the component with a custom drag handle', () => {
   expect(output).toMatchSnapshot();
 });
 
+it('renders a small variant of the component', () => {
+  const output = shallow(
+    <AssetCard
+      size="small"
+      src="http://placekitten.com/200/300"
+      title="picture of a cat"
+    />,
+  );
+
+  expect(output).toMatchSnapshot();
+});
+
 it('has no a11y issues', async () => {
   const output = mount(
     <AssetCard src="http://placekitten.com/200/300" title="picture of a cat" />,

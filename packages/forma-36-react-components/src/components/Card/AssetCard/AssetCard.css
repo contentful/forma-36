@@ -14,6 +14,18 @@
       var(--transition-easing-default);
 }
 
+.AssetCard--size-small {
+  height: calc(
+    1rem * (196 / var(--font-base-default))
+  ); /* 196 is equal to our 150px small variant plus the height of the card header */
+  min-width: calc(1rem * (150 / var(--font-base-default)));
+}
+
+.AssetCard--size-small .AssetCard__asset {
+  height: calc(1rem * (150 / var(--font-base-default)));
+  width: calc(1rem * (150 / var(--font-base-default)));
+}
+
 .AssetCard--drag-active {
   box-shadow: var(--box-shadow-heavy);
 }
@@ -29,7 +41,7 @@
 }
 
 .AssetCard__header {
-  padding: 0 calc(1rem * (19 / var(--font-base-default)));
+  padding: 0 calc(1rem * (14 / var(--font-base-default)));
   height: calc(1rem * (45 / var(--font-base-default)));
   display: flex;
   align-items: center;
