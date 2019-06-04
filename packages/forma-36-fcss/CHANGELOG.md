@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.19](https://github.com/contentful/forma-36/compare/@contentful/forma-36-fcss@0.0.18...@contentful/forma-36-fcss@0.0.19) (2019-06-04)
+
+
+### Bug Fixes
+
+* **Fstream:** Add Fstream resolution ([b33e622](https://github.com/contentful/forma-36/commit/b33e622))
+
+
+
+
+
 ## 0.0.18 (2019-05-03)
 
 

@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.9.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.8.1...@contentful/forma-36-react-components@3.9.0) (2019-06-04)
+
+
+### Bug Fixes
+
+* **Fstream:** Add Fstream resolution ([b33e622](https://github.com/contentful/forma-36/commit/b33e622))
+* **Switch:** Disabled state ([f4d8a5a](https://github.com/contentful/forma-36/commit/f4d8a5a))
+* **Switch:** Make component work with user interactions in the story ([7091404](https://github.com/contentful/forma-36/commit/7091404))
+* **Switch:** snapshot tests ([62c74e5](https://github.com/contentful/forma-36/commit/62c74e5))
+
+
+### Features
+
+* Switch Component ([9fce9f5](https://github.com/contentful/forma-36/commit/9fce9f5))
+* **AssetCard:** Add small variant ([67d479f](https://github.com/contentful/forma-36/commit/67d479f))
+
+
+
+
+
 ## [3.8.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.8.0...@contentful/forma-36-react-components@3.8.1) (2019-05-20)
 
 
