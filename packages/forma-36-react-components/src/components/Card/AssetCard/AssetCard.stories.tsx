@@ -32,6 +32,14 @@ storiesOf('Components|Card/AssetCard', module)
       title={text('title', 'Image of a cat')}
       withDragHandle={boolean('withDragHandle', false)}
       isDragActive={boolean('isDragActive', false)}
+      size={select(
+        'size',
+        {
+          small: 'small',
+          default: 'default',
+        },
+        'default',
+      )}
     />
   ))
   .add('with custom CardDragHandle', () => (
@@ -53,6 +61,14 @@ storiesOf('Components|Card/AssetCard', module)
       title={text('title', 'Image of a cat')}
       cardDragHandleComponent={<CardDragHandle>Reorder card</CardDragHandle>}
       isDragActive={boolean('isDragActive', false)}
+      size={select(
+        'size',
+        {
+          small: 'small',
+          default: 'default',
+        },
+        'small',
+      )}
     />
   ))
   .add('with dropdownListElements', () => (
@@ -97,5 +113,13 @@ storiesOf('Components|Card/AssetCard', module)
           </DropdownList>
         </React.Fragment>
       }
+      size={select(
+        'size',
+        {
+          small: 'small',
+          default: 'default',
+        },
+        'small',
+      )}
     />
   ));

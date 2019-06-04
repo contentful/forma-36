@@ -62,11 +62,16 @@ export type AssetCardProps = {
    * Applies styling for when the component is actively being dragged by the user
    */
   isDragActive?: boolean;
+  /**
+   * Renders a small variant of the card which accommodates a 150x150px image
+   */
+  size?: 'small' | 'default';
 } & typeof defaultProps;
 
 const defaultProps = {
   isLoading: false,
   testId: 'cf-ui-asset-card',
+  size: 'default',
 };
 
 export class AssetCard extends Component<AssetCardProps> {
@@ -134,12 +139,16 @@ export class AssetCard extends Component<AssetCardProps> {
       dropdownListElements,
       isDragActive,
       testId,
+      size,
       ...otherProps
     } = this.props;
 
     const classNames = cn(
       styles.AssetCard,
-      { [styles['AssetCard--drag-active']]: isDragActive },
+      {
+        [styles['AssetCard--drag-active']]: isDragActive,
+        [styles[`AssetCard--size-${size}`]]: size,
+      },
       className,
     );
 
@@ -152,7 +161,7 @@ export class AssetCard extends Component<AssetCardProps> {
         {...otherProps}
       >
         {isLoading ? (
-          <AssetCardSkeleton />
+          <AssetCardSkeleton size={size} />
         ) : (
           <React.Fragment>
             {this.renderCardDragHandle()}
