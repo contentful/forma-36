@@ -194,6 +194,8 @@ export class EntityListItem extends Component<EntityListItemProps> {
       isLoading,
       onClick,
       href,
+      cardDragHandleProps,
+      cardDragHandleComponent,
       ...otherProps
     } = this.props;
 
