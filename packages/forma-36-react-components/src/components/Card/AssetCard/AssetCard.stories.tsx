@@ -67,7 +67,7 @@ storiesOf('Components|Card/AssetCard', module)
           small: 'small',
           default: 'default',
         },
-        'small',
+        'default',
       )}
     />
   ))
@@ -119,7 +119,7 @@ storiesOf('Components|Card/AssetCard', module)
           small: 'small',
           default: 'default',
         },
-        'small',
+        'default',
       )}
     />
   ));
