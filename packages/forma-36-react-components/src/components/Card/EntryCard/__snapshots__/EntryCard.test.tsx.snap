@@ -97,14 +97,6 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component with a custom drag handle 1`] = `
 <Card
-  cardDragHandleComponent={
-    <CardDragHandle
-      isDragActive={false}
-      testId="cf-ui-card-drag-handle"
-    >
-      Reorder card
-    </CardDragHandle>
-  }
   className="EntryCard EntryCard--size-default"
   padding="none"
   selected={false}
@@ -165,7 +157,6 @@ exports[`renders the component with a drag handle 1`] = `
   padding="none"
   selected={false}
   testId="cf-ui-entry-card"
-  withDragHandle={true}
 >
   <CardDragHandle
     isDragActive={false}

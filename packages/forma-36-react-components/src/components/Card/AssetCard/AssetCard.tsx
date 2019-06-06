@@ -140,6 +140,9 @@ export class AssetCard extends Component<AssetCardProps> {
       isDragActive,
       testId,
       size,
+      cardDragHandleProps,
+      cardDragHandleComponent,
+      withDragHandle,
       ...otherProps
     } = this.props;
 

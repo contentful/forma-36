@@ -578,14 +578,6 @@ exports[`renders the component with an additional class name 1`] = `
 
 exports[`renders the component with custom drag handle 1`] = `
 <li
-  cardDragHandleComponent={
-    <CardDragHandle
-      isDragActive={false}
-      testId="cf-ui-card-drag-handle"
-    >
-      Reorder card
-    </CardDragHandle>
-  }
   className="EntityListItem"
   data-test-id="cf-ui-entity-list-item"
 >

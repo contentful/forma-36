@@ -176,6 +176,9 @@ export class EntryCard extends Component<EntryCardPropTypes> {
       dropdownListElements,
       isDragActive,
       size,
+      cardDragHandleComponent,
+      cardDragHandleProps,
+      withDragHandle,
       ...otherProps
     } = this.props;
 
