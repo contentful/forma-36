@@ -45,7 +45,7 @@ To add another package create a new directory in the packages folder. Make sure 
 
 ## Font Usage
 
-Forma 36 was designed to use ‘Avenir Next’ as primary font family. If a package is used in the context of app.contentful.com (e.g UI extensions) this font will be provided. We encourage licensing ‘Avenir Next’ when a package is used outside of Contentful related use cases.
+Forma 36 was designed to use ‘Avenir Next’ as primary font family. If a package is used in the context of app.contentful.com (e.g UI extensions) this font will be provided. We encourage licensing ‘Avenir Next’ when a package is used outside of Contentful related contexts.
 
 ## Commits & Releases
 
