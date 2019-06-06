@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.9.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.9.0...@contentful/forma-36-react-components@3.9.1) (2019-06-06)
+
+
+### Bug Fixes
+
+* **AssetCard:** Fix appearance of AssetCard in IE11 ([809f4a1](https://github.com/contentful/forma-36/commit/809f4a1))
+* **AssetCard:** Prevent drag handle props from passing to element ([8f40bb4](https://github.com/contentful/forma-36/commit/8f40bb4))
+* **EntityListItem:** Prevent drag handle props from passing to element ([a48ca65](https://github.com/contentful/forma-36/commit/a48ca65))
+* **EntryCard:** Prevent drag handle props from passing to element ([1c4d894](https://github.com/contentful/forma-36/commit/1c4d894))
+
+
+
+
+
 # [3.9.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.8.1...@contentful/forma-36-react-components@3.9.0) (2019-06-04)
 
 
