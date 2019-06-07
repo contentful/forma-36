@@ -48,7 +48,7 @@ const ExampleCards = ({ goodExample, badExample }) => (
       <Card css={styles.card}>
         <Subheading css={styles.title}>
           <Icon icon="CheckCircle" color="positive" css={styles.icon} />
-          Good example
+          Do
         </Subheading>
         <div css={styles.example}>{goodExample.example}</div>
         {goodExample.info && (
@@ -60,7 +60,7 @@ const ExampleCards = ({ goodExample, badExample }) => (
       <Card css={styles.card}>
         <Subheading css={styles.title}>
           <Icon icon="Warning" color="negative" css={styles.icon} />
-          Bad example
+          Don't
         </Subheading>
         <div css={styles.example}>{badExample.example}</div>
         {badExample.info && (
