@@ -29,5 +29,12 @@
   },
   "resolutions": {
     "tar": "4.4.8"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn pretty-quick --staged",
+      "pre-push": "yarn lint && yarn type-check && yarn test",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   }
 }
