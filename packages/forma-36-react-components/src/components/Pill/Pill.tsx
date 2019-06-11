@@ -11,6 +11,8 @@ export type PillProps = {
   onDrag?: () => void;
   className?: string;
   testId?: string;
+  style?: React.CSSProperties;
+  dragHandleComponent?: React.ReactNode;
 } & typeof defaultProps;
 
 const defaultProps = {
@@ -27,6 +29,7 @@ export class Pill extends Component<PillProps> {
       testId,
       onDrag,
       className,
+      dragHandleComponent,
       ...otherProps
     } = this.props;
 
@@ -35,36 +38,33 @@ export class Pill extends Component<PillProps> {
     return (
       <div
         className={classNames}
+        data-test-id={testId}
         {...otherProps}
         draggable={!!onDrag}
         onDrag={onDrag}
       >
-        <TabFocusTrap>
-          <span className={styles.Pill__label}>
-            {onDrag && (
-              <span className={styles['Pill__drag-icon']}>
-                <Icon icon="Drag" color="muted" className={styles.Pill__icon} />
-              </span>
-            )}
-            {label}
-          </span>
-          {onClose && (
-            <button
-              type="button"
-              onClick={onClose}
-              className={styles['Pill__close-button']}
-              data-test-id={testId}
-            >
-              <TabFocusTrap>
-                <Icon
-                  icon="Close"
-                  color="muted"
-                  className={styles.Pill__icon}
-                />
-              </TabFocusTrap>
-            </button>
-          )}
-        </TabFocusTrap>
+        {onDrag &&
+          (dragHandleComponent ? (
+            dragHandleComponent
+          ) : (
+            <span className={styles['Pill__drag-icon']}>
+              <Icon icon="Drag" color="muted" className={styles.Pill__icon} />
+            </span>
+          ))}
+        <span aria-label={label} className={styles.Pill__label}>
+          {label}
+        </span>
+        {onClose && (
+          <button
+            type="button"
+            onClick={onClose}
+            className={styles['Pill__close-button']}
+          >
+            <TabFocusTrap>
+              <Icon icon="Close" color="muted" className={styles.Pill__icon} />
+            </TabFocusTrap>
+          </button>
+        )}
       </div>
     );
   }

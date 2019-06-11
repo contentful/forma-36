@@ -3,102 +3,101 @@
 exports[`renders the component 1`] = `
 <div
   className="Pill"
+  data-test-id="cf-ui-pill"
   draggable={false}
 >
-  <TabFocusTrap>
-    <span
-      className="Pill__label"
-    >
-      test
-    </span>
-  </TabFocusTrap>
+  <span
+    aria-label="test"
+    className="Pill__label"
+  >
+    test
+  </span>
 </div>
 `;
 
 exports[`renders the component with a close button 1`] = `
 <div
   className="Pill my-extra-class"
+  data-test-id="cf-ui-pill"
   draggable={false}
 >
-  <TabFocusTrap>
-    <span
-      className="Pill__label"
-    >
-      test
-    </span>
-    <button
-      className="Pill__close-button"
-      data-test-id="cf-ui-pill"
-      onClick={[Function]}
-      type="button"
-    >
-      <TabFocusTrap>
-        <Icon
-          className="Pill__icon"
-          color="muted"
-          icon="Close"
-          size="small"
-          testId="cf-ui-icon"
-        />
-      </TabFocusTrap>
-    </button>
-  </TabFocusTrap>
+  <span
+    aria-label="test"
+    className="Pill__label"
+  >
+    test
+  </span>
+  <button
+    className="Pill__close-button"
+    onClick={[Function]}
+    type="button"
+  >
+    <TabFocusTrap>
+      <Icon
+        className="Pill__icon"
+        color="muted"
+        icon="Close"
+        size="small"
+        testId="cf-ui-icon"
+      />
+    </TabFocusTrap>
+  </button>
 </div>
 `;
 
 exports[`renders the component with a dragging handle 1`] = `
 <div
   className="Pill my-extra-class"
+  data-test-id="cf-ui-pill"
   draggable={true}
   onDrag={[Function]}
 >
-  <TabFocusTrap>
-    <span
-      className="Pill__label"
-    >
-      <span
-        className="Pill__drag-icon"
-      >
-        <Icon
-          className="Pill__icon"
-          color="muted"
-          icon="Drag"
-          size="small"
-          testId="cf-ui-icon"
-        />
-      </span>
-      test
-    </span>
-  </TabFocusTrap>
+  <span
+    className="Pill__drag-icon"
+  >
+    <Icon
+      className="Pill__icon"
+      color="muted"
+      icon="Drag"
+      size="small"
+      testId="cf-ui-icon"
+    />
+  </span>
+  <span
+    aria-label="test"
+    className="Pill__label"
+  >
+    test
+  </span>
 </div>
 `;
 
 exports[`renders the component with a test id 1`] = `
 <div
   className="Pill my-extra-class"
+  data-test-id="test-id"
   draggable={false}
 >
-  <TabFocusTrap>
-    <span
-      className="Pill__label"
-    >
-      test
-    </span>
-  </TabFocusTrap>
+  <span
+    aria-label="test"
+    className="Pill__label"
+  >
+    test
+  </span>
 </div>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
 <div
   className="Pill my-extra-class"
+  data-test-id="cf-ui-pill"
   draggable={false}
 >
-  <TabFocusTrap>
-    <span
-      className="Pill__label"
-    >
-      test
-    </span>
-  </TabFocusTrap>
+  <span
+    aria-label="test"
+    className="Pill__label"
+  >
+    test
+  </span>
 </div>
 `;
