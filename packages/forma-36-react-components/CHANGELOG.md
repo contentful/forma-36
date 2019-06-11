@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.10.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.9.1...@contentful/forma-36-react-components@3.10.0) (2019-06-11)
+
+
+### Features
+
+* **docs:** Documentation website alpha ([b6fad53](https://github.com/contentful/forma-36/commit/b6fad53))
+
+
+
+
+
 ## [3.9.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.9.0...@contentful/forma-36-react-components@3.9.1) (2019-06-06)
 
 ### Bug Fixes
