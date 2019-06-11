@@ -1,0 +1,65 @@
+---
+title: 'TextLink'
+type: 'component'
+github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/TextLink'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-textlink--default'
+---
+
+TextLinks communicate actions and highlight linked resources to users.
+
+## Best practices
+
+- Reduce complexity by using a small number of actions. Too many actions can create confusion.
+
+## Copy considerations
+
+- To make TextLink action-oriented, use a verb. For example, "Add field", not "New field"
+- If a TextLink is used to navigate to a new page, clearly communicate what the user will see when they click on the link. For example, “View teams documentation” vs “Learn about teams”
+- Use clear and succinct copy
+- If a TextLink is at the end of a sentence, don’t add period after the TextLink
+
+## TextLink variations
+
+The TextLink component can be configured in a number of different ways. Here is a guide to when to use certain variations.
+
+### TextLink types (`linkType`)
+
+```jsx
+<React.Fragment>
+  <TextLink linkType="primary">Primary</TextLink>
+  <TextLink linkType="positive">Positive</TextLink>
+  <TextLink linkType="negative">Negative</TextLink>
+  <TextLink linkType="muted">Muted</TextLink>
+  <TextLink linkType="secondary">Secondary</TextLink>
+</React.Fragment>
+```
+
+| Button Type   | Notes                                                            |
+| :------------ | :--------------------------------------------------------------- |
+| **Primary**   | The default styling for TextLinks.                               |
+| **Positive**  | For actions with positive results, such as creating a new entity |
+| **Negative**  | For actions has a negative results, such as deleting an entity   |
+| **Secondary** | Used for actions with less emphasis                              |
+| **Muted**     | Used for actions with least amount of emphasis                   |
+
+### With icon (`icon`)
+
+```jsx
+<React.Fragment>
+  <TextLink linkType="primary" icon="ExternalLink">
+    Primary
+  </TextLink>
+  <TextLink linkType="positive" icon="ExternalLink">
+    Positive
+  </TextLink>
+  <TextLink linkType="negative" icon="ExternalLink">
+    Negative
+  </TextLink>
+  <TextLink linkType="muted" icon="ExternalLink">
+    Muted
+  </TextLink>
+  <TextLink linkType="secondary" icon="ExternalLink">
+    Secondary
+  </TextLink>
+</React.Fragment>
+```

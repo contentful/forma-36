@@ -1,0 +1,37 @@
+---
+title: 'ValidationMessage'
+type: 'component'
+github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/ValidationMessage'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-validationmessage--default'
+---
+
+The ValidationMessage component provides a consisdent styled paragraph for messages in case of validation errors.
+
+## Best practices
+
+- Only use this component in the context of a form and as corresponding guidance to an input field which has validations.
+
+## Copy considerations
+
+- Avoid negative words and tone
+- Give direction on how to fix the error
+- Use direct, succinct copy. Do not preface the instructions with introductory text, such as "please"
+- To add additional context, link out to documentation
+- Do not use punctuation
+- Use sentence style caps (in which only the first word of a sentence or term is capitalized)
+
+## Example
+
+```jsx
+<React.Fragment>
+  <FormLabel htmlFor="name" required>
+    Full Name
+  </FormLabel>
+  <TextInput
+    name="name"
+    value="Lorem Ipsum"
+    className="f36-margin-bottom--xs"
+  />
+  <ValidationMessage>Name is a required field</ValidationMessage>
+</React.Fragment>
+```

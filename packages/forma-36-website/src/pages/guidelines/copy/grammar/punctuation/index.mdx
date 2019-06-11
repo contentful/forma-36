@@ -1,0 +1,91 @@
+import ExampleCards from '../../../../../components/ExampleCards';
+import { TextLink, Paragraph } from '@contentful/forma-36-react-components';
+
+# Punctuation
+
+## Use periods consistently
+
+Keep UX copy scannable by eliminating unnecessary periods.
+
+Do not use periods on buttons, labels, tooltips, or bulleted lists.
+
+Use periods on multiple sentences, any sentence followed by a link, and modal body text.
+
+<ExampleCards
+  goodExample={{
+    example: (
+      <Paragraph style={{ marginBottom: 0 }}>
+        To deploy this site, set up a webhook.{' '}
+        <TextLink href="#">View webhook guide</TextLink>
+      </Paragraph>
+    ),
+    info: 'Use periods on sentences followed by a link',
+  }}
+  badExample={{
+    example: (
+      <Paragraph style={{ marginBottom: 0 }}>
+        To deploy this site, set up a webhook{' '}
+        <TextLink href="#">View webhook guide</TextLink>
+      </Paragraph>
+    ),
+    info: 'Do not place a period after a link',
+  }}
+/>
+
+<ExampleCards
+  goodExample={{
+    example: (
+      <Paragraph style={{ marginBottom: 0 }}>
+        Choose where to move users
+      </Paragraph>
+    ),
+  }}
+  badExample={{
+    example: (
+      <Paragraph style={{ marginBottom: 0 }}>
+        Choose where to move users.
+      </Paragraph>
+    ),
+  }}
+/>
+
+## Avoid exclamation marks
+
+Exclamation marks may come across as shouting and do not match the brand tone established for Contentful products. There are some exceptions when it is appropriate to use exclamation marks, such as a greeting or congratulatory message.
+
+<ExampleCards
+  goodExample={{
+    example: (
+      <Paragraph style={{ marginBottom: 0 }}>
+        Congratulations on completing the Gatsby starter for Contentful!
+      </Paragraph>
+    ),
+    info:
+      'An appropriate use of an exclamation point is for a congratulatory message',
+  }}
+  badExample={{
+    example: (
+      <Paragraph style={{ marginBottom: 0 }}>
+        This will cause you to remove the Micro Example space!
+      </Paragraph>
+    ),
+    info: 'Using exclamation marks can come across as shouting',
+  }}
+/>
+
+## Use colons consistently
+
+Colons are useful when introducing text or giving emphasis, but should be avoided in stand-alone copy.
+
+Do not use colons on labels.
+
+Use colons when introducing lists or text.
+
+<ExampleCards
+  goodExample={{
+    example: <Paragraph style={{ marginBottom: 0 }}>View name</Paragraph>,
+  }}
+  badExample={{
+    example: <Paragraph style={{ marginBottom: 0 }}>View name:</Paragraph>,
+  }}
+/>

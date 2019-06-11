@@ -1,0 +1,85 @@
+---
+title: 'Button'
+type: 'component'
+github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/Button'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-button--button'
+---
+
+Buttons communicate the action that will occur when the user clicks them. They contain a text label to describe the action, and an icon if appropriate.
+
+## Best practices
+
+- Position buttons consistently in the interface
+- Reduce complexity by using a small number of actions. Too many actions can create confusion.
+
+## Copy considerations
+
+- To make button action-oriented, use a verb. EX: "Add field", not "New field"
+- Consider what happens after a user clicks on the button and communicate that clearly in the copy. For example, “Get a UI Extension” vs “Explore all UI Extensions”
+- Use clear and succinct copy
+
+## Button variations
+
+The Button component can be configured in a number of different ways. Here is a guide to when to use certain variations.
+
+### Button types (`buttonType`)
+
+```jsx
+<React.Fragment>
+  <Button buttonType="primary">Primary</Button>
+  <Button buttonType="negative">Negative</Button>
+  <Button buttonType="positive">Positive</Button>
+  <Button buttonType="muted">Muted</Button>
+  <Button buttonType="naked">Naked</Button>
+</React.Fragment>
+```
+
+| Button Type  | Notes                                                                                                                                          |
+| :----------- | :--------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Primary**  | Used for the most important actions in any scenario. Don’t use more than one primary button in a section or screen to avoid overwhelming users |
+| **Negative** | For destructive actions - when something can't be undone, for example, deleting entities                                                       |
+| **Positive** | For use when the action has a positive connotation such as creating or publishing a new entity                                                 |
+| **Muted**    | Used for a secondary actions, the most commonly used button type                                                                               |
+| **Naked**    | Used in minimal contexts                                                                                                                       |
+
+### With icon (`icon`)
+
+```jsx
+<React.Fragment>
+  <Button buttonType="primary" icon="Settings">
+    Primary
+  </Button>
+  <Button buttonType="negative" icon="Settings">
+    Negative
+  </Button>
+  <Button buttonType="positive" icon="Settings">
+    Positive
+  </Button>
+  <Button buttonType="muted" icon="Settings">
+    Muted
+  </Button>
+  <Button buttonType="naked" icon="Settings">
+    Naked
+  </Button>
+</React.Fragment>
+```
+
+### Sizes (`size`)
+
+```jsx
+<React.Fragment>
+  <Button buttonType="muted" size="large">
+    Large
+  </Button>
+  <Button buttonType="muted">Default</Button>
+  <Button buttonType="muted" size="small">
+    Small
+  </Button>
+</React.Fragment>
+```
+
+| Size        | Notes                               |
+| :---------- | :---------------------------------- |
+| **Large**   | Used for actions on empty states    |
+| **Default** |                                     |
+| **Small**   | Used for when space is at a premium |

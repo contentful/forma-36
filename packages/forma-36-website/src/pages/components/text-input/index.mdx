@@ -1,0 +1,133 @@
+---
+title: 'TextInput'
+type: 'component'
+github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/TextInput'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-textinput--default'
+---
+
+The TextInput component allows a user to input text or numbers.
+
+## Best practices
+
+- To ensure accessability, provide a name 
+
+## TextInput variations
+
+The TextInput component can be configured in a number of different ways. Use this guidance to determine the best configuration based on the context.
+
+### TextInput type (`type`)
+
+```jsx
+<React.Fragment>
+  <TextInput
+    name="example"
+    type="text"
+    value="Forma 36"
+    className="f36-margin-bottom--m"
+  />
+  <TextInput
+    name="example"
+    type="password"
+    value="Forma 36"
+    className="f36-margin-bottom--m"
+  />
+  <TextInput
+    name="example"
+    type="email"
+    value="hello@forma36.design"
+    className="f36-margin-bottom--m"
+  />
+  <TextInput
+    name="example"
+    type="number"
+    value="12345"
+    className="f36-margin-bottom--m"
+  />
+  <TextInput name="example" type="url" value="https://f36.contentful.com" />
+</React.Fragment>
+```
+
+| TextField Type | Notes                                                         |
+| :------------- | :------------------------------------------------------------ |
+| **text**       | Used for plain text                                           |
+| **password**   | Used for entering passwords or sensitive information          |
+| **email**      | Used for e-mail addresses (will dispatch native autocomplete) |
+| **number**     | Used for numbers                                              |
+| **url**        | Used for urls                                                 |
+| **date**       | Used for dates (will display native date picker component)    |
+
+### TextInput width (`width`)
+
+```jsx
+<React.Fragment>
+  <TextInput
+    name="example"
+    width="full"
+    className="f36-margin-bottom--m"
+    value="Lorem Ipsum "
+  />
+  <TextInput
+    name="example"
+    width="large"
+    className="f36-margin-bottom--m"
+    value="Lorem Ipsum "
+  />
+  <TextInput
+    name="example"
+    width="medium"
+    className="f36-margin-bottom--m"
+    value="Lorem Ipsum "
+  />
+  <TextInput name="example" width="small" />
+</React.Fragment>
+```
+
+| TextField Width | Value |
+| :-------------- | :---- |
+| **full**        | 100%  |
+| **large**       | 420px |
+| **medium**      | 240px |
+| **small**       | 120px |
+
+### TextInput states (`error, disabled`)
+
+```jsx
+<React.Fragment>
+  <TextInput
+    name="example"
+    disabled
+    className="f36-margin-bottom--m"
+    value="Lorem Ipsum"
+  />
+  <TextInput name="example" error value="Lorem Ipsum" />
+</React.Fragment>
+```
+
+| Property     | Description                        |
+| :----------- | :--------------------------------- |
+| **disabled** | Used to disable the input field    |
+| **error**    | Used to visually indicate an error |
+
+### TextInput with copy button (`withCopyButton`)
+
+```jsx
+<React.Fragment>
+  <TextInput name="example" withCopyButton value="Lorem Ipsum" />
+</React.Fragment>
+```
+
+| Property           | Description                                                                                     |
+| :----------------- | :---------------------------------------------------------------------------------------------- |
+| **withCopyButton** | Used to add a button to the TextInput which will copy the input value to the clipboard on click |
+
+### TextInput maximal length (`maxLength`)
+
+```jsx
+<React.Fragment>
+  <TextInput name="example" maxLength={30} value="Lorem Ipsum" />
+</React.Fragment>
+```
+
+| Property      | Description                                                              |
+| :------------ | :----------------------------------------------------------------------- |
+| **maxLength** | Used to limit the length of the input value characters to a given number |
