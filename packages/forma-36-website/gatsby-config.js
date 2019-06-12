@@ -19,6 +19,10 @@ module.exports = {
             link: '/foundation/spacing',
           },
           {
+            name: 'Layout',
+            link: '/foundation/layout',
+          },
+          {
             name: 'Box Shadows',
             link: '/foundation/boxshadows',
           },
