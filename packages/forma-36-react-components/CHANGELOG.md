@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.11.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.11.0...@contentful/forma-36-react-components@3.11.1) (2019-06-12)
+
+
+### Bug Fixes
+
+* **Pill:** Removed draggable attribute from Pill component ([354ad4a](https://github.com/contentful/forma-36/commit/354ad4a))
+
+
+
+
+
 # [3.11.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.10.0...@contentful/forma-36-react-components@3.11.0) (2019-06-12)
 
 
