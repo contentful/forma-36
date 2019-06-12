@@ -40,7 +40,6 @@ export class Pill extends Component<PillProps> {
         className={classNames}
         data-test-id={testId}
         {...otherProps}
-        draggable={!!onDrag}
         onDrag={onDrag}
       >
         {onDrag &&
