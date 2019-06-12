@@ -1,9 +1,17 @@
 import React from 'react';
-import { DisplayText, Paragraph } from '@contentful/forma-36-react-components';
+import {
+  DisplayText,
+  Paragraph,
+  Note,
+  TextLink,
+} from '@contentful/forma-36-react-components';
 import tokens from '@contentful/forma-36-tokens';
 import { css } from '@emotion/core';
 
 const styles = {
+  alphaNote: css`
+    margin-bottom: ${tokens.spacingL};
+  `,
   homeSplash: css`
     background: ${tokens.colorContrastLight};
     padding: 8rem 0;
@@ -31,6 +39,13 @@ const HomeSplash = () => (
   <header css={styles.homeSplash}>
     <div css={styles.inner}>
       <div>
+        <Note css={styles.alphaNote} noteType="primary">
+          This documentation is work in progress. Its contents are subject to
+          change. Leave your feedback or get involved{' '}
+          <TextLink href="https://github.com/contentful/forma-36">
+            here.
+          </TextLink>
+        </Note>
         <DisplayText size="large" css={styles.title}>
           Forma 36
         </DisplayText>
