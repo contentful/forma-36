@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.11.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.10.0...@contentful/forma-36-react-components@3.11.0) (2019-06-12)
+
+
+### Features
+
+* **Pill:** Added dragHandleComponent property to Pill component ([0dcd31c](https://github.com/contentful/forma-36/commit/0dcd31c))
+
+
+
+
+
 # [3.10.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.9.1...@contentful/forma-36-react-components@3.10.0) (2019-06-11)
 
 
