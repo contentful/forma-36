@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.11.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.11.1...@contentful/forma-36-react-components@3.11.2) (2019-06-13)
+
+
+### Bug Fixes
+
+* **CardDragHandle:** Fix bug where element is not draggable in IE11 ([e318432](https://github.com/contentful/forma-36/commit/e318432))
+
+
+
+
+
 ## [3.11.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.11.0...@contentful/forma-36-react-components@3.11.1) (2019-06-12)
 
 
