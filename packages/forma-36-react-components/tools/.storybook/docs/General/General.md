@@ -10,7 +10,9 @@ A place for general documentation about the component library.
 
 ## Tokens
 
-Design tokens are the granular values we use when designing and implementing UI. Tokens include things such as font-sizes and colours. In this section we share values for designers and engineers, and a visual reference of each value.
+Design tokens are the granular values we use when designing and implementing UI. Tokens include things such as font-sizes and colours.
+
+Design tokens can now be found on the [Forma 36 documentation website](https://f36.contentful.com/foundation/)
 
 ## Components
 

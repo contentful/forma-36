@@ -15,7 +15,6 @@ addParameters({ info: { header: false, source: false } });
 
 // Load Stories
 const reqGeneral = require.context('./docs', true, /\.stories\.(ts|js)x$/);
-const reqTokens = require.context('./tokens', true, /\.stories\.(ts|js)x$/);
 const reqComponents = require.context(
   '../../src/components',
   true,
@@ -24,7 +23,6 @@ const reqComponents = require.context(
 
 function loadStories() {
   reqGeneral.keys().forEach(filename => reqGeneral(filename));
-  reqTokens.keys().forEach(filename => reqTokens(filename));
   reqComponents.keys().forEach(filename => reqComponents(filename));
   require('./storybook.global.css'); // Require global styles as last item so that they trump component styles
 }

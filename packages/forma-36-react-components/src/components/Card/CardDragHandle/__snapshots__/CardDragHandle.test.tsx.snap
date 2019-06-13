@@ -1,73 +1,58 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
-<button
+<div
   className="CardDragHandle"
   data-test-id="cf-ui-card-drag-handle"
-  type="button"
 >
-  <TabFocusTrap
-    className="CardDragHandle__focus-trap"
+  <Icon
+    color="muted"
+    icon="Drag"
+    size="small"
+    testId="cf-ui-icon"
+  />
+  <span
+    className="CardDragHandle__sr-label"
   >
-    <Icon
-      color="muted"
-      icon="Drag"
-      size="small"
-      testId="cf-ui-icon"
-    />
-    <span
-      className="CardDragHandle__sr-label"
-    >
-      CardDragHandle
-    </span>
-  </TabFocusTrap>
-</button>
+    CardDragHandle
+  </span>
+</div>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
-<button
+<div
   className="CardDragHandle my-extra-class"
   data-test-id="cf-ui-card-drag-handle"
-  type="button"
 >
-  <TabFocusTrap
-    className="CardDragHandle__focus-trap"
+  <Icon
+    color="muted"
+    icon="Drag"
+    size="small"
+    testId="cf-ui-icon"
+  />
+  <span
+    className="CardDragHandle__sr-label"
   >
-    <Icon
-      color="muted"
-      icon="Drag"
-      size="small"
-      testId="cf-ui-icon"
-    />
-    <span
-      className="CardDragHandle__sr-label"
-    >
-      CardDragHandle
-    </span>
-  </TabFocusTrap>
-</button>
+    CardDragHandle
+  </span>
+</div>
 `;
 
 exports[`renders the component with isDragActive prop set to true 1`] = `
-<button
+<div
   className="CardDragHandle CardDragHandle--drag-active"
   data-test-id="cf-ui-card-drag-handle"
-  type="button"
 >
-  <TabFocusTrap
-    className="CardDragHandle__focus-trap"
+  <Icon
+    color="muted"
+    icon="Drag"
+    size="small"
+    testId="cf-ui-icon"
+  />
+  <span
+    className="CardDragHandle__sr-label"
   >
-    <Icon
-      color="muted"
-      icon="Drag"
-      size="small"
-      testId="cf-ui-icon"
-    />
-    <span
-      className="CardDragHandle__sr-label"
-    >
-      CardDragHandle
-    </span>
-  </TabFocusTrap>
-</button>
+    CardDragHandle
+  </span>
+</div>
 `;
