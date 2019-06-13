@@ -19,10 +19,6 @@ module.exports = {
             link: '/foundation/spacing',
           },
           {
-            name: 'Layout',
-            link: '/foundation/layout',
-          },
-          {
             name: 'Box Shadows',
             link: '/foundation/boxshadows',
           },
@@ -39,6 +35,10 @@ module.exports = {
           {
             name: 'Accessibility',
             link: '/guidelines/accessibility/',
+          },
+          {
+            name: 'Layout',
+            link: '/guidelines/layout',
           },
           {
             name: 'Copy',

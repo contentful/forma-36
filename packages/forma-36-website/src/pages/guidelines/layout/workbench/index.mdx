@@ -1,0 +1,109 @@
+---
+title: 'Workbench'
+---
+
+import workbenchSkeleton from './workbench-skeleton.jpg';
+import titleBarSkeleton from './titlebar-skeleton.jpg';
+import rightSidebarSkeleton from './rightsidebar-skeleton.jpg';
+import leftSidebarSkeleton from './leftsidebar-skeleton.jpg';
+import mainContentSkeleton from './maincontent-skeleton.jpg';
+
+# Workbench
+
+## An app shell that structures regions of content and interaction
+
+The workbench assembles the outer app shell which defines regions to structure content and interactions. <br />
+It consists of 4 screen regions which have specific requirements for content and interactions.
+
+## Title bar
+
+The title bar provides navigational guidance and primary actions on the current view.
+
+<img src={titleBarSkeleton} width="100%" />
+
+### Content and interaction guidelines
+
+- The Title Bar should only provide actions which are global to the current view (e.g. Button to create a user on a users list view)
+- When multiple global actions are needed a dropdown menu should be used
+- Buttons that submit a form on the current view should not be placed in the title bar but be part of that specific form.
+
+### Dimensions and specs
+
+| Property          | Value     |
+| :---------------- | :-------- |
+| Width             | 100%      |
+| Height            | 70px      |
+| Content Alignment | left      |
+| Inner Padding     | spacing-l |
+
+import skeleton from './maincontent-skeleton.jpg';
+
+## Main content
+
+The main content area provides the main functionality of the current view.
+
+<img src={mainContentSkeleton} width="100%" />
+
+### Content and interaction guidelines
+
+Depending on the displayed information one of the 3 width configurations should be applied:
+
+- Views that just consist of forms or text should have a maximum width of 768px for enhanced readability.
+- Static table views which contents are not configurable should default to a maximum width of 1280px.
+- Rich data views like dashboards or configurable tables should use the entire available width.
+
+### Width utility classes
+
+| Classname                   | CSS               |
+| :-------------------------- | :---------------- |
+| .f36-content-width--default | max-width: 1280px |
+| .f36-content-width--text    | max-width: 768px  |
+| .f36-content-width--full    | max-width: 100%   |
+
+### Dimensions and specs
+
+| Property               | Value               |
+| :--------------------- | :------------------ |
+| Maximum Width: Default | 1280px, 768px, 100% |
+| Container Alignment    | center              |
+| Content Alignment      | left                |
+| Padding                | spacing-l           |
+
+## Left sidebar
+
+The left sidebar provides quick access to saved views and filters.
+
+<img src={leftSidebarSkeleton} width="100%" />
+
+### Content and interaction guidelines
+
+- The left sidebar serves as secondary navigation and provides predefined and user-defined filters
+- It should not include any view actions like adding or removing content
+
+### Dimensions and specs
+
+| Property          | Value     |
+| :---------------- | :-------- |
+| Width             | 280px     |
+| Content Alignment | left      |
+| Padding           | spacing-l |
+
+## Right sidebar
+
+The right sidebar provides secondary interactions depending on the current view as well as documentation spaces and entry points for extensibility.
+
+<img src={rightSidebarSkeleton} width="100%" />
+
+### Content and interaction guidelines
+
+- TODO: Define the hierarchy of actions, documentation, and extensions
+- TODO: Define vertical rhythm and spacing
+- TODO: Extensibility guidelines
+
+### Dimensions and specs
+
+| Property          | Value     |
+| :---------------- | :-------- |
+| Width             | 360px     |
+| Content Alignment | left      |
+| Padding           | spacing-l |
