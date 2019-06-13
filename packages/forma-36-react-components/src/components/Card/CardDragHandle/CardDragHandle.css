@@ -3,7 +3,6 @@
 @import 'settings/typography';
 
 .CardDragHandle {
-  composes: focus-outline--default from './../../../styles/settings/a11y.css';
   display: flex;
   position: relative;
   width: calc(1rem * (20 / var(--font-base-default)));
@@ -30,13 +29,4 @@
 
 .CardDragHandle__sr-label {
   composes: sr-only from './../../../styles/settings/helpers.css';
-}
-
-.CardDragHandle__focus-trap {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  align-items: center;
 }

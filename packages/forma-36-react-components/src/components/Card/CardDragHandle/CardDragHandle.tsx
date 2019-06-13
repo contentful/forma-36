@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
 import Icon from '../../Icon';
-import TabFocusTrap from '../../TabFocusTrap';
 
 const styles = require('./CardDragHandle.css');
 
@@ -49,17 +48,10 @@ export class CardDragHandle extends Component<CardDragHandlePropTypes> {
     );
 
     return (
-      <button
-        type="button"
-        className={classNames}
-        data-test-id={testId}
-        {...otherProps}
-      >
-        <TabFocusTrap className={styles['CardDragHandle__focus-trap']}>
-          <Icon icon="Drag" color="muted" />
-          <span className={styles['CardDragHandle__sr-label']}>{children}</span>
-        </TabFocusTrap>
-      </button>
+      <div className={classNames} data-test-id={testId} {...otherProps}>
+        <Icon icon="Drag" color="muted" />
+        <span className={styles['CardDragHandle__sr-label']}>{children}</span>
+      </div>
     );
   }
 }
