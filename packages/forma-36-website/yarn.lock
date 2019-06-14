@@ -985,6 +985,13 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
+"@babel/runtime@^7.3.4":
+  version "7.4.5"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.4.5.tgz#582bb531f5f9dc67d2fcb682979894f75e253f12"
+  integrity sha512-TuI4qpWZP6lGOGIuGWtp9sPluqYICmbk8T/1vpSysqJxRPkudh/ofFWyqdcMsDf2s7KvDL4/YHgKyvcS3g9CJQ==
+  dependencies:
+    regenerator-runtime "^0.13.2"
+
 "@babel/runtime@^7.4.2":
   version "7.4.3"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.4.3.tgz#79888e452034223ad9609187a0ad1fe0d2ad4bdc"
@@ -1095,6 +1102,32 @@
     esutils "^2.0.2"
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
+
+"@contentful/forma-36-fcss@^0.0.20":
+  version "0.0.20"
+  resolved "https://registry.yarnpkg.com/@contentful/forma-36-fcss/-/forma-36-fcss-0.0.20.tgz#346e9229ce9c39519d1b47a540db2a6fcfd471e8"
+  integrity sha512-czXsm4lLTnsFXseMoNeZsFfRccTKNXF0PNP34Ij3BhH6BDR9iPbSoyLUnYGO1qezfyK9hkpy3+L8AqYOjjgUGA==
+  dependencies:
+    "@contentful/forma-36-tokens" "^0.3.0"
+
+"@contentful/forma-36-react-components@^3.11.2":
+  version "3.11.2"
+  resolved "https://registry.yarnpkg.com/@contentful/forma-36-react-components/-/forma-36-react-components-3.11.2.tgz#1ae7df047b366ff2705f02f767dd87f953fca468"
+  integrity sha512-0MCsqEAnXRpuk+eIjPdrvAjSZvYk0RahqgnbM5v2xalxsvMdcZNNi1X8T4hLaARdP5aA/A4TSD0dZ4QJmLncHQ==
+  dependencies:
+    "@babel/runtime" "^7.3.4"
+    classnames "^2.2.6"
+    prop-types "^15.7.2"
+    react-animate-height "^2.0.7"
+    react-copy-to-clipboard "^5.0.1"
+    react-modal "3.6.1"
+    react-transition-group "^2.4.0"
+    truncate "^2.0.1"
+
+"@contentful/forma-36-tokens@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@contentful/forma-36-tokens/-/forma-36-tokens-0.3.0.tgz#164b7c50d94a79e3b880f3b4daffe0ae473e234d"
+  integrity sha512-C5HEHPRaFPha1KDxq9XSyK5FUUTTuq3w9FP9x7mm6lD1CEKj/+xg71wNxcbTZDOmLZFruZs9V69hPfOVbn/0dA==
 
 "@emotion/babel-plugin-jsx-pragmatic@^0.1.2":
   version "0.1.2"
@@ -3256,6 +3289,11 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
+classnames@^2.2.5, classnames@^2.2.6:
+  version "2.2.6"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
+  integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
+
 cli-boxes@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/cli-boxes/-/cli-boxes-1.0.0.tgz#4fa917c3e59c94a004cd61f8ee509da651687143"
@@ -4339,7 +4377,7 @@ dom-converter@~0.2:
   dependencies:
     utila "~0.4"
 
-dom-helpers@^3.2.1:
+dom-helpers@^3.2.1, dom-helpers@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/dom-helpers/-/dom-helpers-3.4.0.tgz#e9b369700f959f62ecde5a6babde4bccd9169af8"
   integrity sha512-LnuPJ+dwqKDIyotW1VzmOZ5TONUN7CwkCR5hrgawTUbkBGYdeoNLZo6nNfGkCrjtE1nXXaj7iMMpDa8/d9WoIA==
@@ -5004,7 +5042,7 @@ executable@^4.1.0:
   dependencies:
     pify "^2.2.0"
 
-exenv@^1.2.1:
+exenv@^1.2.0, exenv@^1.2.1:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/exenv/-/exenv-1.2.2.tgz#2ae78e85d9894158670b03d47bec1f03bd91bb9d"
   integrity sha1-KueOhdmJQVhnCwPUe+wfA72Ru50=
@@ -5660,6 +5698,13 @@ gatsby-plugin-emotion@^4.0.6:
   dependencies:
     "@babel/runtime" "^7.0.0"
     "@emotion/babel-preset-css-prop" "^10.0.5"
+
+gatsby-plugin-google-analytics@^2.0.21:
+  version "2.0.21"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-2.0.21.tgz#df50703bf0ce72ec5d28bd35303eb17909972187"
+  integrity sha512-44D2uFQ6Zf+Ta5tqt+c0USnKAS2DQZIHA4u/5xVd0xYf7rQMpZZ1JcKbIRFpWsTjb+0lxcRAKDA/2cU5rhCERA==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
 
 gatsby-plugin-manifest@^2.0.9:
   version "2.0.11"
@@ -9728,14 +9773,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.4, prop-types@^15.6.1, prop-types@^15.6.2:
-  version "15.6.2"
-  resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
-  dependencies:
-    loose-envify "^1.3.1"
-    object-assign "^4.1.1"
-
-prop-types@^15.5.8:
+prop-types@^15.5.10, prop-types@^15.5.8, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -9743,6 +9781,13 @@ prop-types@^15.5.8:
     loose-envify "^1.4.0"
     object-assign "^4.1.1"
     react-is "^16.8.1"
+
+prop-types@^15.5.4, prop-types@^15.6.1, prop-types@^15.6.2:
+  version "15.6.2"
+  resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.2.tgz#05d5ca77b4453e985d60fc7ff8c859094a497102"
+  dependencies:
+    loose-envify "^1.3.1"
+    object-assign "^4.1.1"
 
 property-information@^5.0.0, property-information@^5.0.1:
   version "5.0.1"
@@ -9910,6 +9955,14 @@ rc@^1.0.1, rc@^1.1.2, rc@^1.1.6, rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-animate-height@^2.0.7:
+  version "2.0.9"
+  resolved "https://registry.yarnpkg.com/react-animate-height/-/react-animate-height-2.0.9.tgz#25a0608a4cb40eb3e52eac3ba01c091cb69acf31"
+  integrity sha512-zIM8+TNw17ZgKo2Q5J342epAmZTjeUOZULoqOSIWz2xFn6UbSSTlLahFJS8RPndTjY2/BdBCGzDbi2aWIELtJw==
+  dependencies:
+    classnames "^2.2.5"
+    prop-types "^15.6.1"
+
 react-copy-to-clipboard@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/react-copy-to-clipboard/-/react-copy-to-clipboard-5.0.1.tgz#8eae107bb400be73132ed3b6a7b4fb156090208e"
@@ -9979,7 +10032,7 @@ react-is@^16.8.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
   integrity sha512-aUk3bHfZ2bRSVFFbbeVS4i+lNPZr3/WM5jT2J5omUVV1zzcs1nAaf3l51ctA5FFvCRbhrH0bdAsRRQddFJZPtA==
 
-react-lifecycles-compat@^3.0.4:
+react-lifecycles-compat@^3.0.0, react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
 
@@ -9997,6 +10050,16 @@ react-live@^2.0.1:
     react-simple-code-editor "^0.9.0"
     unescape "^0.2.0"
 
+react-modal@3.6.1:
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/react-modal/-/react-modal-3.6.1.tgz#54d27a1ec2b493bbc451c7efaa3557b6af82332d"
+  integrity sha512-vAhnawahH1fz8A5x/X/1X20KHMe6Q0mkfU5BKPgKSVPYhMhsxtRbNHSitsoJ7/oP27xZo3naZZlwYuuzuSO1xw==
+  dependencies:
+    exenv "^1.2.0"
+    prop-types "^15.5.10"
+    react-lifecycles-compat "^3.0.0"
+    warning "^3.0.0"
+
 react-side-effect@^1.1.0:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/react-side-effect/-/react-side-effect-1.1.5.tgz#f26059e50ed9c626d91d661b9f3c8bb38cd0ff2d"
@@ -10008,6 +10071,16 @@ react-simple-code-editor@^0.9.0:
   version "0.9.10"
   resolved "https://registry.yarnpkg.com/react-simple-code-editor/-/react-simple-code-editor-0.9.10.tgz#1ab5ea7215687ed918c6d0dae90736cf01890905"
   integrity sha512-80LJwRQS7Wi9Ugh/e6FRHWdcg4oQOpMBDFxyDpORILffrHdV3EIQ1IeX5x7488r05iFgLbVDV4nQ1LRKjgCm0g==
+
+react-transition-group@^2.4.0:
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-2.9.0.tgz#df9cdb025796211151a436c69a8f3b97b5b07c8d"
+  integrity sha512-+HzNTCHpeQyl4MJ/bdE0u6XRMe9+XG/+aL4mCxVN4DnPBQ0/5bfHWPDuOZUzYdMj94daZaZdCCc1Dzt9R/xSSg==
+  dependencies:
+    dom-helpers "^3.4.0"
+    loose-envify "^1.4.0"
+    prop-types "^15.6.2"
+    react-lifecycles-compat "^3.0.4"
 
 react@^16.6.3:
   version "16.6.3"
@@ -11813,6 +11886,11 @@ trough@^1.0.0:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/trough/-/trough-1.0.3.tgz#e29bd1614c6458d44869fc28b255ab7857ef7c24"
   integrity sha512-fwkLWH+DimvA4YCy+/nvJd61nWQQ2liO/nF/RjkTpiOGi+zxZzVkhb1mvbHIIW4b/8nDsYI8uTmAlc0nNkRMOw==
+
+truncate@^2.0.1:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/truncate/-/truncate-2.1.0.tgz#391183563a25cffbd4d613a1d00ae5844c9e55d3"
+  integrity sha512-em3E3SUDONOjTBcZ36DTm3RvDded3IRU9rX32oHwwXNt3rJD5MVaFlJTQvs8tJoHRoeYP36OuQ1eL/Q7bNEWIQ==
 
 tslib@^1.6.0, tslib@^1.9.0:
   version "1.9.3"
