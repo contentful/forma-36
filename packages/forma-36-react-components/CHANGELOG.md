@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.11.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.11.2...@contentful/forma-36-react-components@3.11.3) (2019-06-20)
+
+
+### Bug Fixes
+
+* **DropdownListItem:** fix otherProps ([2497920](https://github.com/contentful/forma-36/commit/2497920))
+
+
+
+
+
 ## [3.11.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.11.1...@contentful/forma-36-react-components@3.11.2) (2019-06-13)
 
 
