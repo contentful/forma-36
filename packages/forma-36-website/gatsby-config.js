@@ -16,15 +16,15 @@ module.exports = {
           },
           {
             name: 'Spacing',
-            link: '/foundation/spacing',
+            link: '/foundation/spacing/',
           },
           {
             name: 'Box Shadows',
-            link: '/foundation/boxshadows',
+            link: '/foundation/box-shadows/',
           },
           {
             name: 'Transitions',
-            link: '/foundation/transitions',
+            link: '/foundation/transitions/',
           },
         ],
       },
@@ -76,6 +76,16 @@ module.exports = {
               },
             ],
           },
+          {
+            name: 'Layout',
+            link: '/guidelines/layout/',
+            menuLinks: [
+              {
+                name: 'Workbench',
+                link: '/guidelines/layout/workbench/',
+              },
+            ],
+          },
         ],
       },
       {
@@ -92,7 +102,7 @@ module.exports = {
           },
           {
             name: 'HelpText',
-            link: '/components/help-text',
+            link: '/components/help-text/',
           },
           {
             name: 'Note',
@@ -104,7 +114,7 @@ module.exports = {
           },
           {
             name: 'TextField',
-            link: '/components/text-field',
+            link: '/components/text-field/',
           },
           {
             name: 'TextInput',
