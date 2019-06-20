@@ -60,39 +60,51 @@ export class DropdownListItem extends Component<DropdownListItemProps> {
   };
 
   renderListItem = () => {
-    const isClickable =
-      this.props.onClick || this.props.onMouseDown || this.props.href;
+    const {
+      onClick,
+      onMouseDown,
+      href,
+      isDisabled,
+      children,
+      isTitle,
+      isActive,
+      testId,
+      ...otherProps
+    } = this.props;
+
+    const isClickable = onClick || onMouseDown || href;
 
     if (isClickable) {
-      const Element = this.props.href ? 'a' : 'button';
+      const Element = href ? 'a' : 'button';
 
       return (
         <Element
           type="button"
-          href={this.props.href}
+          href={href}
           data-test-id="cf-ui-dropdown-list-item-button"
           className={styles['DropdownListItem__button']}
           onClick={(e: ReactMouseEvent) => {
-            if (!this.props.isDisabled && this.props.onClick) {
-              this.props.onClick(e);
+            if (!isDisabled && onClick) {
+              onClick(e);
             }
           }}
           onMouseDown={(e: ReactMouseEvent) => {
-            if (!this.props.isDisabled && this.props.onMouseDown) {
-              this.props.onMouseDown(e);
+            if (!isDisabled && onMouseDown) {
+              onMouseDown(e);
             }
           }}
+          {...otherProps}
         >
           <TabFocusTrap
             className={styles['DropdownListItem__button__inner-wrapper']}
           >
-            {this.props.children}
+            {children}
           </TabFocusTrap>
         </Element>
       );
     }
 
-    return this.props.children;
+    return <span {...otherProps}>{children}</span>;
   };
 
   render() {
