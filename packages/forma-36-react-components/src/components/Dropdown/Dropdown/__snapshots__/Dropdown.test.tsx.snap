@@ -48,6 +48,7 @@ exports[`renders the component as open 1`] = `
         "width": 0,
       }
     }
+    className="undefined__container"
     dropdownAnchor={null}
     getRef={[Function]}
     openSubmenu={[Function]}
@@ -98,6 +99,7 @@ exports[`renders the component with a submenu 1`] = `
         "width": 0,
       }
     }
+    className="undefined__container"
     dropdownAnchor={null}
     getRef={[Function]}
     openSubmenu={[Function]}
