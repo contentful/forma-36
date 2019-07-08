@@ -21,6 +21,7 @@ export type DropdownProps = {
   isOpen: boolean;
   onClose?: Function;
   testId?: string;
+  getContainerRef?: (ref: HTMLElement | null) => void;
   dropdownContainerClassName?: string;
   className?: string;
   children: React.ReactNode;
@@ -43,6 +44,7 @@ const defaultProps = {
   testId: 'cf-ui-dropdown',
   position: 'bottom-left',
   isOpen: false,
+  getContainerRef: () => {},
 };
 
 export class Dropdown extends Component<DropdownProps, DropdownState> {
@@ -155,6 +157,7 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
       toggleElement,
       testId,
       submenuToggleLabel,
+      getContainerRef,
       children,
       isOpen,
       dropdownContainerClassName,
@@ -176,6 +179,8 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
           <DropdownContainer
             anchorDimensionsAndPositon={this.state.anchorDimensionsAndPositon}
             position={this.props.position}
+            className={dropdownContainerClassName}
+            getRef={getContainerRef}
             dropdownAnchor={this.dropdownAnchor}
             onClose={this.props.onClose}
             openSubmenu={this.openSubmenu}
@@ -200,6 +205,7 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
         {this.state.isOpen && (
           <DropdownContainer
             className={dropdownContainerClassName}
+            getRef={getContainerRef}
             submenu={false}
             dropdownAnchor={this.dropdownAnchor}
             anchorDimensionsAndPositon={this.state.anchorDimensionsAndPositon}
