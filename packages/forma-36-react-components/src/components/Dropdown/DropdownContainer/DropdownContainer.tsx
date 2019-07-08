@@ -169,9 +169,10 @@ class DropdownContainer extends Component<
     );
 
   render() {
-    const { submenu } = this.props;
+    const { submenu, className } = this.props;
 
     const classNames = cn(
+      className,
       styles['DropdownContainer'],
       submenu ? this.getSubmenuClassNames() : '',
     );
