@@ -21,6 +21,7 @@ export type DropdownProps = {
   isOpen: boolean;
   onClose?: Function;
   testId?: string;
+  dropdownContainerClassName?: string;
   getContainerRef?: (ref: HTMLElement | null) => void;
   className?: string;
   children: React.ReactNode;
@@ -157,6 +158,7 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
       testId,
       submenuToggleLabel,
       getContainerRef,
+      dropdownContainerClassName,
       children,
       isOpen,
       ...otherProps
@@ -177,7 +179,7 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
           <DropdownContainer
             anchorDimensionsAndPositon={this.state.anchorDimensionsAndPositon}
             position={this.props.position}
-            className={`${className}__container`}
+            className={dropdownContainerClassName}
             getRef={getContainerRef}
             dropdownAnchor={this.dropdownAnchor}
             onClose={this.props.onClose}
@@ -202,7 +204,7 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
         {toggleElement}
         {this.state.isOpen && (
           <DropdownContainer
-            className={`${className}__container`}
+            className={dropdownContainerClassName}
             getRef={getContainerRef}
             submenu={false}
             dropdownAnchor={this.dropdownAnchor}
