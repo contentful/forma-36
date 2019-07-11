@@ -1,7 +1,7 @@
 {
   "name": "@contentful/forma-36-react-components",
   "description": "Contentful UI Component Library",
-  "version": "3.11.3",
+  "version": "3.11.5",
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
   "style": "dist/styles.css",
@@ -160,7 +160,8 @@
     "url-parse": "1.4.4",
     "merge": "1.2.1",
     "extend": "3.0.2",
-    "@types/react": "16.8.6"
+    "@types/react": "16.8.6",
+    "handlebars": "4.1.0"
   },
   "publishConfig": {
     "access": "public"

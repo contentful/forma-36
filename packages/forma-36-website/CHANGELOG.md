@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.10](https://github.com/contentful/forma-36/compare/forma-36-website@0.2.9...forma-36-website@0.2.10) (2019-07-11)
+
+**Note:** Version bump only for package forma-36-website
+
+
+
+
+
+## [0.2.9](https://github.com/contentful/forma-36/compare/forma-36-website@0.2.8...forma-36-website@0.2.9) (2019-07-11)
+
+**Note:** Version bump only for package forma-36-website
+
+
+
+
+
+## [0.2.8](https://github.com/contentful/forma-36/compare/forma-36-website@0.2.7...forma-36-website@0.2.8) (2019-07-08)
+
+
+### Bug Fixes
+
+* **Dependencies:** bump webpack dev server and js-yaml ([#235](https://github.com/contentful/forma-36/issues/235)) ([5e10624](https://github.com/contentful/forma-36/commit/5e10624))
+
+
+
+
+
+## [0.2.7](https://github.com/contentful/forma-36/compare/forma-36-website@0.2.6...forma-36-website@0.2.7) (2019-07-08)
+
+**Note:** Version bump only for package forma-36-website
+
+
+
+
+
 ## [0.2.6](https://github.com/contentful/forma-36/compare/forma-36-website@0.2.5...forma-36-website@0.2.6) (2019-06-20)
 
 **Note:** Version bump only for package forma-36-website

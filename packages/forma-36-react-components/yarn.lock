@@ -1420,10 +1420,10 @@
     puppeteer "^1.2.0"
     yargs "^11.1.0"
 
-"@contentful/forma-36-fcss@^0.0.19":
-  version "0.0.19"
-  resolved "https://registry.yarnpkg.com/@contentful/forma-36-fcss/-/forma-36-fcss-0.0.19.tgz#800393c4389f350481ab38a217257a8b821f4653"
-  integrity sha512-kASbCGWVXN+i0NtmeS6p8R0NVA9VE+y38ESoK+RmLgrJ2YmqRgeaIPV3hWIscXNQ3vXteY19eq9MzcZCmePY1g==
+"@contentful/forma-36-fcss@^0.0.20":
+  version "0.0.20"
+  resolved "https://registry.yarnpkg.com/@contentful/forma-36-fcss/-/forma-36-fcss-0.0.20.tgz#346e9229ce9c39519d1b47a540db2a6fcfd471e8"
+  integrity sha512-czXsm4lLTnsFXseMoNeZsFfRccTKNXF0PNP34Ij3BhH6BDR9iPbSoyLUnYGO1qezfyK9hkpy3+L8AqYOjjgUGA==
   dependencies:
     "@contentful/forma-36-tokens" "^0.3.0"
 
@@ -3066,9 +3066,10 @@ async-limiter@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/async-limiter/-/async-limiter-1.0.0.tgz#78faed8c3d074ab81f22b4e985d79e8738f720f8"
 
-async@^2.1.4, async@^2.6.1:
+async@^2.1.4, async@^2.5.0, async@^2.6.1:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/async/-/async-2.6.2.tgz#18330ea7e6e313887f5d2f2a904bac6fe4dd5381"
+  integrity sha512-H1qVYh1MYhEEFLsP97cVKqCGo7KfCyTt6uEWqsTBr9SO84oK9Uwbyd/yCW+6rKJLHksBNUVWZDAjfS+Ccx0Bbg==
   dependencies:
     lodash "^4.17.11"
 
@@ -7337,12 +7338,12 @@ gzip-size@^5.0.0, gzip-size@^5.1.0:
     duplexer "^0.1.1"
     pify "^4.0.1"
 
-handlebars@^4.1.0:
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.1.2.tgz#b6b37c1ced0306b221e094fc7aca3ec23b131b67"
-  integrity sha512-nvfrjqvt9xQ8Z/w0ijewdD/vvWDTOweBUm96NTr66Wfvo1mJenBLwcYmPs3TIBP5ruzYGD7Hx/DaM9RmhroGPw==
+handlebars@4.1.0, handlebars@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.1.0.tgz#0d6a6f34ff1f63cecec8423aa4169827bf787c3a"
+  integrity sha512-l2jRuU1NAWK6AW5qqcTATWQJvNPEwkM7NEKSiv/gqOsoSQbVoWyqVEY5GS+XPQ88zLNmqASRpzfdm8d79hJS+w==
   dependencies:
-    neo-async "^2.6.0"
+    async "^2.5.0"
     optimist "^0.6.1"
     source-map "^0.6.1"
   optionalDependencies:
@@ -9236,9 +9237,10 @@ lodash._createset@~4.0.0:
   resolved "https://registry.yarnpkg.com/lodash._createset/-/lodash._createset-4.0.3.tgz#0f4659fbb09d75194fa9e2b88a6644d363c9fe26"
   integrity sha1-D0ZZ+7CddRlPqeK4imZE02PJ/iY=
 
-lodash._reinterpolate@~3.0.0:
+lodash._reinterpolate@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/lodash._reinterpolate/-/lodash._reinterpolate-3.0.0.tgz#0ccf2d89166af03b3663c796538b75ac6e114d9d"
+  integrity sha1-DM8tiRZq8Ds2Y8eWU4t1rG4RTZ0=
 
 lodash._root@~3.0.0:
   version "3.0.1"
@@ -9315,17 +9317,19 @@ lodash.sortby@^4.7.0:
   resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
 
 lodash.template@^4.2.4:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/lodash.template/-/lodash.template-4.4.0.tgz#e73a0385c8355591746e020b99679c690e68fba0"
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/lodash.template/-/lodash.template-4.5.0.tgz#f976195cf3f347d0d5f52483569fe8031ccce8ab"
+  integrity sha512-84vYFxIkmidUiFxidA/KjjH9pAycqW+h980j7Fuz5qxRtO9pgB7MDFTdys1N7A5mcucRiDyEq4fusljItR1T/A==
   dependencies:
-    lodash._reinterpolate "~3.0.0"
+    lodash._reinterpolate "^3.0.0"
     lodash.templatesettings "^4.0.0"
 
 lodash.templatesettings@^4.0.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/lodash.templatesettings/-/lodash.templatesettings-4.1.0.tgz#2b4d4e95ba440d915ff08bc899e4553666713316"
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/lodash.templatesettings/-/lodash.templatesettings-4.2.0.tgz#e481310f049d3cf6d47e912ad09313b154f0fb33"
+  integrity sha512-stgLz+i3Aa9mZgnjr/O+v9ruKZsPsndy7qPZOchbqk2cnTU1ZaldKK+v7m54WoKIyxiuMZTKT2H81F8BeAc3ZQ==
   dependencies:
-    lodash._reinterpolate "~3.0.0"
+    lodash._reinterpolate "^3.0.0"
 
 lodash.throttle@^4.1.1:
   version "4.1.1"
@@ -9964,7 +9968,7 @@ negotiator@0.6.2:
   version "0.6.2"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.2.tgz#feacf7ccf525a77ae9634436a64883ffeca346fb"
 
-neo-async@^2.5.0, neo-async@^2.6.0:
+neo-async@^2.5.0:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
 
