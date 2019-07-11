@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component 1`] = `
+<Workbench
+  testId="cf-ui-workbench"
+>
+  <WorkbenchHeader
+    actions={
+      <Button
+        buttonType="muted"
+        disabled={false}
+        indicateDropdown={false}
+        isFullWidth={false}
+        loading={false}
+        testId="cf-ui-button"
+        type="button"
+      >
+        Click
+      </Button>
+    }
+    icon={
+      <Icon
+        color="primary"
+        icon="ArrowDown"
+        size="small"
+        testId="cf-ui-icon"
+      />
+    }
+    title="Page title"
+  />
+  <WorkbenchContent
+    testId="cf-ui-workbench-content"
+    type="default"
+  >
+    Workbench
+  </WorkbenchContent>
+</Workbench>
+`;
