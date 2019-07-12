@@ -18,6 +18,7 @@ export type DropdownContainerProps = {
   openSubmenu?: (value: boolean) => void;
   anchorDimensionsAndPositon?: AnchorDimensionsAndPositonType;
   position: positionType;
+  getRef?: (ref: HTMLElement | null) => void;
   submenu?: boolean;
 } & typeof defaultProps;
 
@@ -33,6 +34,7 @@ const defaultProps = {
   testId: 'cf-ui-dropdown-portal',
   position: 'bottom-left',
   submenu: false,
+  getRef: () => {},
 };
 
 class DropdownContainer extends Component<
@@ -65,6 +67,7 @@ class DropdownContainer extends Component<
       });
     }
     document.addEventListener('mousedown', this.trackOutsideClick, true);
+    this.props.getRef(this.dropdown);
   }
 
   componentWillUnmount() {
@@ -169,9 +172,10 @@ class DropdownContainer extends Component<
     );
 
   render() {
-    const { submenu } = this.props;
+    const { submenu, className } = this.props;
 
     const classNames = cn(
+      className,
       styles['DropdownContainer'],
       submenu ? this.getSubmenuClassNames() : '',
     );
