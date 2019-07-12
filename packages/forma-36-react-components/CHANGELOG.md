@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.12.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.11.6...@contentful/forma-36-react-components@3.12.0) (2019-07-12)
+
+
+### Features
+
+* **DropDown:** Add dropdownContainerClassName ([#234](https://github.com/contentful/forma-36/issues/234)) ([72eec7a](https://github.com/contentful/forma-36/commit/72eec7a))
+
+
+
+
+
 ## [3.11.6](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.11.5...@contentful/forma-36-react-components@3.11.6) (2019-07-11)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
