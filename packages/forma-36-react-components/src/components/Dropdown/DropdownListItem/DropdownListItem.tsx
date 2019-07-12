@@ -72,8 +72,6 @@ export class DropdownListItem extends Component<DropdownListItemProps> {
       ...otherProps
     } = this.props;
 
-    const { className, ...otherPropsWithoutClassName } = otherProps;
-
     const isClickable = onClick || onMouseDown || href;
 
     if (isClickable) {
@@ -83,19 +81,19 @@ export class DropdownListItem extends Component<DropdownListItemProps> {
         <Element
           type="button"
           href={href}
-          data-test-id="cf-ui-dropdown-list-item-button"
           onClick={(e: ReactMouseEvent) => {
             if (!isDisabled && onClick) {
               onClick(e);
             }
           }}
-          className={styles['DropdownListItem__button']}
           onMouseDown={(e: ReactMouseEvent) => {
             if (!isDisabled && onMouseDown) {
               onMouseDown(e);
             }
           }}
-          {...otherPropsWithoutClassName}
+          {...otherProps}
+          data-test-id="cf-ui-dropdown-list-item-button"
+          className={styles['DropdownListItem__button']}
         >
           <TabFocusTrap
             className={styles['DropdownListItem__button__inner-wrapper']}
