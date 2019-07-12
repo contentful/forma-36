@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.12.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.12.2...@contentful/forma-36-react-components@3.12.3) (2019-07-12)
+
+
+### Bug Fixes
+
+* **DropdownListItem:** Prevent overriding props of interactive element ([#246](https://github.com/contentful/forma-36/issues/246)) ([529f337](https://github.com/contentful/forma-36/commit/529f337))
+
+
+
+
+
+## [3.12.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.12.1...@contentful/forma-36-react-components@3.12.2) (2019-07-12)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
 ## [3.12.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.12.0...@contentful/forma-36-react-components@3.12.1) (2019-07-12)
 
 
