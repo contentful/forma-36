@@ -49,6 +49,7 @@ exports[`renders the component as open 1`] = `
       }
     }
     dropdownAnchor={null}
+    getRef={[Function]}
     openSubmenu={[Function]}
     position="bottom-left"
     submenu={false}
@@ -98,6 +99,7 @@ exports[`renders the component with a submenu 1`] = `
       }
     }
     dropdownAnchor={null}
+    getRef={[Function]}
     openSubmenu={[Function]}
     position="bottom-left"
     submenu={false}
@@ -115,6 +117,7 @@ exports[`renders the component with a submenu 1`] = `
         entry
       </DropdownListItem>
       <Dropdown
+        getContainerRef={[Function]}
         isOpen={true}
         position="bottom-left"
         submenuToggleLabel="Submenu"

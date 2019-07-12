@@ -62,7 +62,7 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component as a submenu 1`] = `
 <div
-  className="DropdownContainer DropdownContainer__submenu DropdownContainer__container-position--bottom-left"
+  className="extraClassName DropdownContainer DropdownContainer__submenu DropdownContainer__container-position--bottom-left"
   onFocus={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
@@ -86,7 +86,7 @@ exports[`renders the component with an additional class name 1`] = `
   containerInfo={<div />}
 >
   <div
-    className="DropdownContainer"
+    className="extraClassName DropdownContainer"
     onFocus={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}

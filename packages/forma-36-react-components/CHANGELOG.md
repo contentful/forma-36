@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.12.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.12.0...@contentful/forma-36-react-components@3.12.1) (2019-07-12)
+
+
+### Bug Fixes
+
+* **DropdownListItem:** fix overriding classNames of interactive element ([#244](https://github.com/contentful/forma-36/issues/244)) ([c2ef9b3](https://github.com/contentful/forma-36/commit/c2ef9b3))
+
+
+
+
+
+# [3.12.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.11.6...@contentful/forma-36-react-components@3.12.0) (2019-07-12)
+
+
+### Features
+
+* **DropDown:** Add dropdownContainerClassName ([#234](https://github.com/contentful/forma-36/issues/234)) ([72eec7a](https://github.com/contentful/forma-36/commit/72eec7a))
+
+
+
+
+
+## [3.11.6](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.11.5...@contentful/forma-36-react-components@3.11.6) (2019-07-11)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
 ## [3.11.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.11.4...@contentful/forma-36-react-components@3.11.5) (2019-07-11)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components

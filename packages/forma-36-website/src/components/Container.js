@@ -61,7 +61,13 @@ const markToComponentMap = {
   thead: props => <TableHead {...props} />,
   tbody: props => <TableBody {...props} />,
   tr: props => <TableRow {...props} />,
-  th: props => <TableCell className="f36-font-size--l" {...props} />,
+  th: props => (
+    <TableCell
+      className="f36-font-size--l"
+      style={{ textAlign: 'left' }}
+      {...props}
+    />
+  ),
   td: props => <TableCell className="f36-font-size--l" {...props} />,
 };
 

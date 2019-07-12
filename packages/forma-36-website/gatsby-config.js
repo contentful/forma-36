@@ -86,6 +86,10 @@ module.exports = {
               },
             ],
           },
+          {
+            name: 'Keyboard shortcuts',
+            link: '/guidelines/keyboard-shortcuts/',
+          },
         ],
       },
       {
