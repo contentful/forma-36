@@ -11,9 +11,16 @@ const ModalSizesMapper = {
   medium: '520px',
   small: '400px',
   large: '700px',
+  fullWidth: '100vw',
 };
 
-export type ModalSizeType = 'small' | 'medium' | 'large' | string | number;
+export type ModalSizeType =
+  | 'small'
+  | 'medium'
+  | 'large'
+  | 'fullWidth'
+  | string
+  | number;
 
 export type ModalProps = {
   /**
