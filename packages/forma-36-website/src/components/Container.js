@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import tokens from '@contentful/forma-36-tokens';
 import { css } from '@emotion/core';
-import { MDXProvider } from '@mdx-js/tag';
+import { MDXProvider } from '@mdx-js/react';
 import {
   Typography,
   DisplayText,
