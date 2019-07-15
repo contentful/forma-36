@@ -157,7 +157,7 @@ module.exports = {
     'gatsby-transformer-javascript-frontmatter',
     'gatsby-transformer-sharp',
     {
-      resolve: 'gatsby-mdx',
+      resolve: 'gatsby-plugin-mdx',
       options: {
         defaultLayouts: {
           default: require.resolve('./src/components/Layout'),
