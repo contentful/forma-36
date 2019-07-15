@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.13.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.12.6...@contentful/forma-36-react-components@3.13.0) (2019-07-15)
+
+
+### Features
+
+* **Modal:** Add full-width option ([117f865](https://github.com/contentful/forma-36/commit/117f865))
+
+
+
+
+
 ## [3.12.6](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.12.5...@contentful/forma-36-react-components@3.12.6) (2019-07-14)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
