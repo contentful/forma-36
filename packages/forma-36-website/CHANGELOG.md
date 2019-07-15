@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.24](https://github.com/contentful/forma-36/compare/forma-36-website@0.2.23...forma-36-website@0.2.24) (2019-07-15)
+
+
+### Bug Fixes
+
+* **Docs:** Fix broken rendering of token values ([a882153](https://github.com/contentful/forma-36/commit/a882153))
+
+
+
+
+
 ## [0.2.23](https://github.com/contentful/forma-36/compare/forma-36-website@0.2.22...forma-36-website@0.2.23) (2019-07-15)
 
 **Note:** Version bump only for package forma-36-website
