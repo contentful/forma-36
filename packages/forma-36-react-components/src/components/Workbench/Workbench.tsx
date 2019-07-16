@@ -8,11 +8,16 @@ interface WorkbenchHeaderProps {
   title?: string;
   icon?: React.ReactElement;
   actions?: React.ReactElement;
+  className?: string;
+  testId?: string;
 }
 
 export function WorkbenchHeader(props: WorkbenchHeaderProps) {
   return (
-    <div className={styles['Workbench__header']}>
+    <div
+      className={cn(styles['Workbench__header'], props.className)}
+      data-test-id={props.testId}
+    >
       {props.icon ? (
         <div className={styles['Workbench__header-icon']}>{props.icon}</div>
       ) : null}
@@ -33,58 +38,66 @@ export function WorkbenchHeader(props: WorkbenchHeaderProps) {
   );
 }
 
+WorkbenchHeader.defaultProps = {
+  testId: 'cf-ui-workbench-header',
+};
+
+WorkbenchHeader.displayName = 'WorkbenchHeader';
+
 interface WorkbenchSidebarProps {
   children: React.ReactNode;
-  position: 'left' | 'right';
+  className?: string;
+  position?: 'left' | 'right';
+  testId?: string;
 }
 
 export function WorkbenchSidebar(props: WorkbenchSidebarProps) {
   return (
     <div
-      className={cn(styles['Workbench__sidebar'], {
-        [styles['Workbench__sidebar--right']]: props.position === 'right',
-        [styles['Workbench__sidebar--left']]: props.position === 'left',
-      })}
+      data-test-id={`${props.testId}${
+        props.position ? `-${props.position}` : ''
+      }`}
+      className={cn(
+        styles['Workbench__sidebar'],
+        {
+          [styles['Workbench__sidebar--right']]: props.position === 'right',
+          [styles['Workbench__sidebar--left']]: props.position === 'left',
+        },
+        props.className,
+      )}
     >
       {props.children}
     </div>
   );
 }
 
+WorkbenchSidebar.defaultProps = {
+  testId: 'cf-ui-workbench-sidebar',
+};
+
 interface WorkbenchContentProps {
   children: React.ReactNode;
-  type: 'default' | 'text' | 'full';
-  testId: string;
-  leftSidebar?: React.ReactNode;
-  rightSidebar?: React.ReactNode;
+  type?: 'default' | 'text' | 'full';
+  className?: string;
+  testId?: string;
 }
 
 export function WorkbenchContent(props: WorkbenchContentProps) {
   return (
     <div
-      className={styles['Workbench__content-wrapper']}
+      className={cn(styles['Workbench__content'], props.className)}
       data-test-id={props.testId}
     >
-      {props.leftSidebar && (
-        <WorkbenchSidebar position="left">{props.leftSidebar}</WorkbenchSidebar>
-      )}
-      <div className={styles['Workbench__content']}>
-        <div
-          className={cn(styles['Workbench__content-inner'], {
-            [styles['Workbench__content-inner--default']]:
-              props.type === 'default',
-            [styles['Workbench__content-inner--text']]: props.type === 'text',
-            [styles['Workbench__content-inner--full']]: props.type === 'full',
-          })}
-        >
-          {props.children}
-        </div>
+      <div
+        className={cn(styles['Workbench__content-inner'], {
+          [styles['Workbench__content-inner--default']]:
+            props.type === 'default',
+          [styles['Workbench__content-inner--text']]: props.type === 'text',
+          [styles['Workbench__content-inner--full']]: props.type === 'full',
+        })}
+      >
+        {props.children}
       </div>
-      {props.rightSidebar && (
-        <WorkbenchSidebar position="right">
-          {props.rightSidebar}
-        </WorkbenchSidebar>
-      )}
     </div>
   );
 }
@@ -94,7 +107,7 @@ WorkbenchContent.defaultProps = {
   testId: 'cf-ui-workbench-content',
 };
 
-export type WorkbenchProps = {
+export interface WorkbenchProps {
   /**
    * Class names to be appended to the className prop of the component
    */
@@ -107,9 +120,9 @@ export type WorkbenchProps = {
    * An ID used for testing purposes applied as a data attribute (data-test-id)
    */
   testId?: string;
-} & typeof defaultProps;
+}
 
-const defaultProps = {
+const defaultProps: Partial<WorkbenchProps> = {
   testId: 'cf-ui-workbench',
 };
 
@@ -118,15 +131,31 @@ export class Workbench extends Component<WorkbenchProps> {
 
   static Header = WorkbenchHeader;
   static Content = WorkbenchContent;
+  static Sidebar = WorkbenchSidebar;
 
   render() {
     const { className, children, testId, ...otherProps } = this.props;
+
+    const childrenArray = React.Children.toArray(children);
+    const header: React.ReactNode[] = [];
+    const other: React.ReactNode[] = [];
+    childrenArray.forEach(
+      // eslint-disable-next-line
+      (item: any) => {
+        if (item && item.type && item.type.displayName === 'WorkbenchHeader') {
+          header.push(item);
+        } else {
+          other.push(item);
+        }
+      },
+    );
 
     const classNames = cn(styles.Workbench, className);
 
     return (
       <div {...otherProps} className={classNames} data-test-id={testId}>
-        {children}
+        {header}
+        <div className={styles['Workbench__content-wrapper']}>{other}</div>
       </div>
     );
   }

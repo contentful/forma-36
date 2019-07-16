@@ -17,15 +17,38 @@ function TestWorkbench() {
     </Workbench>
   );
 }
-it('renders the component', () => {
-  const output = shallow(<TestWorkbench />);
 
-  expect(output).toMatchSnapshot();
-});
+function TestComplextWorkbench() {
+  return (
+    <Workbench>
+      <Workbench.Header
+        title={'Page title'}
+        icon={<Icon icon="ArrowDown" />}
+        actions={<Button buttonType="muted">Click</Button>}
+      />
+      <Workbench.Sidebar position="left">Left sidebar</Workbench.Sidebar>
+      <Workbench.Content>Workbench</Workbench.Content>
+      <Workbench.Sidebar position="right">Right sidebar</Workbench.Sidebar>
+    </Workbench>
+  );
+}
 
-it('has no a11y issues', async () => {
-  const output = mount(<TestWorkbench />).html();
-  const results = await axe(output);
+const components = [
+  { type: 'simple', Component: TestWorkbench },
+  { type: 'complex', Component: TestComplextWorkbench },
+];
 
-  expect(results).toHaveNoViolations();
+components.forEach(({ type, Component }) => {
+  it(`renders the component (${type})`, () => {
+    const output = shallow(<Component />);
+
+    expect(output).toMatchSnapshot();
+  });
+
+  it(`has no a11y issues (${type})`, async () => {
+    const output = mount(<Component />).html();
+    const results = await axe(output);
+
+    expect(results).toHaveNoViolations();
+  });
 });

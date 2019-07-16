@@ -1,6 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, select } from '@storybook/addon-knobs';
+import tokens from '@contentful/forma-36-tokens';
 
 import Workbench from './Workbench';
 import Icon from '../Icon';
@@ -24,7 +25,9 @@ storiesOf('(alpha)|Workbench', module)
           'default',
         )}
       >
-        <div style={{ height: '2000px', backgroundColor: 'blue' }}>
+        <div
+          style={{ height: '2000px', backgroundColor: tokens.colorBlueBase }}
+        >
           Workbench
         </div>
       </Workbench.Content>
@@ -37,19 +40,21 @@ storiesOf('(alpha)|Workbench', module)
         icon={<Icon icon="ArrowDown" />}
         actions={<Button buttonType="muted">Click</Button>}
       />
+      <Workbench.Sidebar position="left">
+        <div style={{ height: '2000px', backgroundColor: tokens.colorRedBase }}>
+          left sidebar
+        </div>
+      </Workbench.Sidebar>
       <Workbench.Content
-        leftSidebar={
-          <div style={{ height: '2000px', backgroundColor: 'red' }}>
-            left sidebar
-          </div>
-        }
         type={select(
           'Workbench.Content -> type',
           ['default', 'text', 'full'],
           'default',
         )}
       >
-        <div style={{ height: '2000px', backgroundColor: 'blue' }}>
+        <div
+          style={{ height: '2000px', backgroundColor: tokens.colorBlueBase }}
+        >
           Workbench
         </div>
       </Workbench.Content>
@@ -63,21 +68,23 @@ storiesOf('(alpha)|Workbench', module)
         actions={<Button buttonType="muted">Click</Button>}
       />
       <Workbench.Content
-        rightSidebar={
-          <div style={{ height: '2000px', backgroundColor: 'red' }}>
-            right sidebar
-          </div>
-        }
         type={select(
           'Workbench.Content -> type',
           ['default', 'text', 'full'],
           'default',
         )}
       >
-        <div style={{ height: '2000px', backgroundColor: 'blue' }}>
+        <div
+          style={{ height: '2000px', backgroundColor: tokens.colorBlueBase }}
+        >
           Workbench
         </div>
       </Workbench.Content>
+      <Workbench.Sidebar position="right">
+        <div style={{ height: '2000px', backgroundColor: tokens.colorRedBase }}>
+          right sidebar
+        </div>
+      </Workbench.Sidebar>
     </Workbench>
   ))
   .add('with left and right sidebar', () => (
@@ -87,26 +94,28 @@ storiesOf('(alpha)|Workbench', module)
         icon={<Icon icon="ArrowDown" />}
         actions={<Button buttonType="muted">Click</Button>}
       />
+      <Workbench.Sidebar position="left">
+        <div style={{ height: '2000px', backgroundColor: tokens.colorRedBase }}>
+          left sidebar
+        </div>
+      </Workbench.Sidebar>
       <Workbench.Content
-        leftSidebar={
-          <div style={{ height: '2000px', backgroundColor: 'red' }}>
-            left sidebar
-          </div>
-        }
-        rightSidebar={
-          <div style={{ height: '2000px', backgroundColor: 'red' }}>
-            right sidebar
-          </div>
-        }
         type={select(
           'Workbench.Content -> type',
           ['default', 'text', 'full'],
           'default',
         )}
       >
-        <div style={{ height: '2000px', backgroundColor: 'blue' }}>
+        <div
+          style={{ height: '2000px', backgroundColor: tokens.colorBlueBase }}
+        >
           Workbench
         </div>
       </Workbench.Content>
+      <Workbench.Sidebar position="right">
+        <div style={{ height: '2000px', backgroundColor: tokens.colorRedBase }}>
+          right sidebar
+        </div>
+      </Workbench.Sidebar>
     </Workbench>
   ));
