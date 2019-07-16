@@ -27,6 +27,15 @@ export class InViewport extends Component<InViewportProps> {
   nodeRef: HTMLDivElement | null = null;
   lastOverflowAt: string | null = null;
 
+  tOnOverflowTop =
+    this.props.onOverflowTop && throttle(100, this.props.onOverflowTop);
+  tOnOverflowBottom =
+    this.props.onOverflowBottom && throttle(100, this.props.onOverflowBottom);
+  tOnOverflowRight =
+    this.props.onOverflowRight && throttle(100, this.props.onOverflowRight);
+  tOnOverflowLeft =
+    this.props.onOverflowLeft && throttle(100, this.props.onOverflowLeft);
+
   componentDidMount() {
     this.getDomPosition();
     this.bindEventListeners();
@@ -66,13 +75,7 @@ export class InViewport extends Component<InViewportProps> {
     windowWidth: number,
     windowHeight: number,
   ) => {
-    const {
-      offset,
-      onOverflowTop,
-      onOverflowLeft,
-      onOverflowBottom,
-      onOverflowRight,
-    } = this.props;
+    const { offset } = this.props;
     const topThreshold = 0 - offset;
     const leftThreshold = 0 - offset;
     const rightThreshold = windowWidth + offset;
@@ -81,16 +84,16 @@ export class InViewport extends Component<InViewportProps> {
     if (top + right + bottom + left !== 0) {
       if (top < topThreshold && this.lastOverflowAt !== 'bottom') {
         this.lastOverflowAt = 'top';
-        onOverflowTop && onOverflowTop();
+        this.tOnOverflowTop && this.tOnOverflowTop();
       } else if (left < leftThreshold && this.lastOverflowAt !== 'right') {
         this.lastOverflowAt = 'left';
-        onOverflowLeft && onOverflowLeft();
+        this.tOnOverflowLeft && this.tOnOverflowLeft();
       } else if (bottom > bottomThreshold && this.lastOverflowAt !== 'top') {
         this.lastOverflowAt = 'bottom';
-        onOverflowBottom && onOverflowBottom();
+        this.tOnOverflowBottom && this.tOnOverflowBottom();
       } else if (right > rightThreshold && this.lastOverflowAt !== 'left') {
         this.lastOverflowAt = 'right';
-        onOverflowRight && onOverflowRight();
+        this.tOnOverflowRight && this.tOnOverflowRight();
       }
     }
   };
