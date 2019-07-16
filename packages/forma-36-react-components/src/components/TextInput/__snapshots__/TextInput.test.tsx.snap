@@ -219,6 +219,14 @@ exports[`renders the component with the copy button 1`] = `
   <CopyButton
     className="TextInput__copy-button"
     testId="cf-ui-copy-button"
+    tooltipCopiedText="Copied!"
+    tooltipText={
+      <React.Fragment>
+        Copy to 
+        <br />
+         clipboard
+      </React.Fragment>
+    }
   />
 </div>
 `;

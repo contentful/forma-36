@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import cn from 'classnames';
 import Icon from '../Icon';
-import Tooltip from '../Tooltip';
+import { TooltipPlace, Tooltip } from '../Tooltip/Tooltip';
 import TabFocusTrap from '../TabFocusTrap';
 import styles from './CopyButton.css';
 
@@ -11,6 +11,9 @@ export type CopyButtonProps = {
   onCopy?: (value: string) => void;
   className?: string;
   testId?: string;
+  tooltipPlace?: TooltipPlace;
+  tooltipText?: string | React.ReactNode | HTMLElement;
+  tooltipCopiedText?: string | React.ReactNode | HTMLElement;
 } & typeof defaultProps;
 
 export interface CopyButtonState {
@@ -19,6 +22,12 @@ export interface CopyButtonState {
 
 const defaultProps = {
   testId: 'cf-ui-copy-button',
+  tooltipText: (
+    <React.Fragment>
+      Copy to <br /> clipboard
+    </React.Fragment>
+  ),
+  tooltipCopiedText: 'Copied!',
 };
 
 export class CopyButton extends Component<CopyButtonProps, CopyButtonState> {
@@ -45,10 +54,18 @@ export class CopyButton extends Component<CopyButtonProps, CopyButtonState> {
   };
 
   render() {
-    const { copyValue, className, testId, onCopy, ...otherProps } = this.props;
+    const {
+      copyValue,
+      className,
+      testId,
+      onCopy,
+      tooltipPlace,
+      tooltipText,
+      tooltipCopiedText,
+      ...otherProps
+    } = this.props;
 
     const classNames = cn(styles['CopyButton'], className);
-
     return (
       <div
         ref={ref => {
@@ -61,14 +78,9 @@ export class CopyButton extends Component<CopyButtonProps, CopyButtonState> {
       >
         <CopyToClipboard text={copyValue || ''} onCopy={this.onCopy}>
           <Tooltip
+            place={tooltipPlace}
             content={
-              this.state.copied ? (
-                'Copied!'
-              ) : (
-                <span>
-                  Copy to <br /> clipboard
-                </span>
-              )
+              this.state.copied ? tooltipCopiedText : <span>{tooltipText}</span>
             }
           >
             <button
