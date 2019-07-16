@@ -1,0 +1,7 @@
+$content-widths: default text full;
+
+@each $type in $content-widths {
+  .f36-content-width--#{$type} {
+    max-width: var(--content-width-#{$type});
+  }
+}

@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component (complex) 1`] = `
+<Workbench
+  testId="cf-ui-workbench"
+>
+  <WorkbenchHeader
+    actions={
+      <Button
+        buttonType="muted"
+        disabled={false}
+        indicateDropdown={false}
+        isFullWidth={false}
+        loading={false}
+        testId="cf-ui-button"
+        type="button"
+      >
+        Click
+      </Button>
+    }
+    icon={
+      <Icon
+        color="primary"
+        icon="ArrowDown"
+        size="small"
+        testId="cf-ui-icon"
+      />
+    }
+    testId="cf-ui-workbench-header"
+    title="Page title"
+  />
+  <WorkbenchSidebar
+    position="left"
+    testId="cf-ui-workbench-sidebar"
+  >
+    Left sidebar
+  </WorkbenchSidebar>
+  <WorkbenchContent
+    testId="cf-ui-workbench-content"
+    type="default"
+  >
+    Workbench
+  </WorkbenchContent>
+  <WorkbenchSidebar
+    position="right"
+    testId="cf-ui-workbench-sidebar"
+  >
+    Right sidebar
+  </WorkbenchSidebar>
+</Workbench>
+`;
+
+exports[`renders the component (simple) 1`] = `
+<Workbench
+  testId="cf-ui-workbench"
+>
+  <WorkbenchHeader
+    actions={
+      <Button
+        buttonType="muted"
+        disabled={false}
+        indicateDropdown={false}
+        isFullWidth={false}
+        loading={false}
+        testId="cf-ui-button"
+        type="button"
+      >
+        Click
+      </Button>
+    }
+    icon={
+      <Icon
+        color="primary"
+        icon="ArrowDown"
+        size="small"
+        testId="cf-ui-icon"
+      />
+    }
+    testId="cf-ui-workbench-header"
+    title="Page title"
+  />
+  <WorkbenchContent
+    testId="cf-ui-workbench-content"
+    type="default"
+  >
+    Workbench
+  </WorkbenchContent>
+</Workbench>
+`;
