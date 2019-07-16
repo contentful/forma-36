@@ -153,14 +153,22 @@ export class Tooltip extends Component<TooltipProps, TooltipState> {
         calculatedPosition = {
           left:
             containerRect.left - (tooltipRect.width + carretHorizontalOffset),
-          top: containerRect.top - tooltipRect.height / 2,
+          top:
+            containerRect.top +
+            containerRect.height / 2 -
+            tooltipRect.height / 2 -
+            10, // Tooltip margin
         };
         break;
       case 'right':
         calculatedPosition = {
           left:
             containerRect.left + (containerRect.width + carretHorizontalOffset),
-          top: containerRect.top - tooltipRect.height / 2,
+          top:
+            containerRect.top +
+            containerRect.height / 2 -
+            tooltipRect.height / 2 -
+            10, // Tooltip margin
         };
         break;
       default:
