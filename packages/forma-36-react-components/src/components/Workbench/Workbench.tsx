@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
 import Heading from '../Typography/Heading';
+import IconButton from '../IconButton';
 
 const styles = require('./Workbench.css');
 
 interface WorkbenchHeaderProps {
-  title?: string;
+  title?: React.ReactElement | string;
   icon?: React.ReactElement;
   actions?: React.ReactElement;
+  onBack?: Function;
   className?: string;
   testId?: string;
 }
@@ -18,17 +20,40 @@ export function WorkbenchHeader(props: WorkbenchHeaderProps) {
       className={cn(styles['Workbench__header'], props.className)}
       data-test-id={props.testId}
     >
+      {props.onBack ? (
+        <div className={styles['Workbench__header-back']}>
+          <IconButton
+            onClick={() => {
+              if (typeof props.onBack === 'function') {
+                props.onBack();
+              }
+            }}
+            testId="workbench-back-btn"
+            className={styles['Workbench__header-back-button']}
+            label="Back"
+            buttonType="muted"
+            iconProps={{
+              size: 'large',
+              icon: 'ChevronLeft',
+            }}
+          />
+        </div>
+      ) : null}
       {props.icon ? (
         <div className={styles['Workbench__header-icon']}>{props.icon}</div>
       ) : null}
-      {props.title ? (
-        <Heading
+      {props.title && (
+        <div
+          data-test-id="workbench-title"
           className={styles['Workbench__header-title']}
-          testId="workbench-title"
         >
-          {props.title}
-        </Heading>
-      ) : null}
+          {typeof props.title === 'string' ? (
+            <Heading>{props.title}</Heading>
+          ) : (
+            props.title
+          )}
+        </div>
+      )}
       {props.actions ? (
         <div className={styles['Workbench__header-actions']}>
           {props.actions}

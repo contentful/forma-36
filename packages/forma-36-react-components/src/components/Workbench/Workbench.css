@@ -33,12 +33,36 @@
   box-shadow: var(--box-shadow-default);
 }
 
+.Workbench__header-back {
+  margin: calc(-1 * var(--spacing-l));
+  margin-right: var(--spacing-m);
+  border-right: 1px solid var(--color-element-light);
+}
+
+.Workbench__header-back-button {
+  margin: 0;
+  width: 50px;
+  height: 69px;
+}
+
+.Workbench .Workbench__header-back-button svg {
+  fill: var(--color-element-dark);
+}
+
+.Workbench .Workbench__header-back-button:hover svg,
+.Workbench .Workbench__header-back-button:focus svg {
+  fill: var(--color-element-darkest);
+}
+
 .Workbench__header-icon {
   margin-right: var(--spacing-m);
 }
 
 .Workbench__header-title {
   flex-grow: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
 }
 
 .Workbench__header-actions {

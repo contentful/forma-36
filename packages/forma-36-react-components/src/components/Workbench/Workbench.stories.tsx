@@ -118,4 +118,27 @@ storiesOf('(alpha)|Workbench', module)
         </div>
       </Workbench.Sidebar>
     </Workbench>
+  ))
+  .add('with back button', () => (
+    <Workbench className={text('className', '')} testId={text('testId')}>
+      <Workbench.Header
+        onBack={() => {}}
+        title={'Page title'}
+        icon={<Icon icon="ArrowDown" />}
+        actions={<Button buttonType="muted">Click</Button>}
+      />
+      <Workbench.Content
+        type={select(
+          'Workbench.Content -> type',
+          ['default', 'text', 'full'],
+          'default',
+        )}
+      >
+        <div
+          style={{ height: '2000px', backgroundColor: tokens.colorBlueBase }}
+        >
+          Workbench
+        </div>
+      </Workbench.Content>
+    </Workbench>
   ));
