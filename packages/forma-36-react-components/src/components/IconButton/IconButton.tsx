@@ -64,8 +64,7 @@ export class IconButton extends Component<
 
     const content = (
       <TabFocusTrap className={styles.IconButton__inner}>
-        <Icon icon={iconProps.icon} className={styles.IconButton__icon} />
-
+        <Icon {...iconProps} className={styles.IconButton__icon} />
         <span className={styles.IconButton__label}>{label}</span>
         {withDropdown && (
           <Icon
