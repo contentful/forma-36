@@ -30,6 +30,7 @@
   z-index: 99;
   user-select: none;
   width: auto;
+  word-break: break-word;
 }
 
 .Tooltip--hidden {
