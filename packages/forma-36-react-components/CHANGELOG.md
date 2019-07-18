@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.14.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.14.1...@contentful/forma-36-react-components@3.14.2) (2019-07-18)
+
+
+### Bug Fixes
+
+* **Tooltip:** Prevent content being truncated ([8d09201](https://github.com/contentful/forma-36/commit/8d09201))
+
+
+
+
+
 ## [3.14.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.14.0...@contentful/forma-36-react-components@3.14.1) (2019-07-17)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
