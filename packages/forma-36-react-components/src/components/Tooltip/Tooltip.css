@@ -14,7 +14,8 @@
 .Tooltip {
   position: fixed;
   margin: calc(1rem * (10 / var(--font-base-default))) 0px;
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: column;
   background: var(--color-contrast-mid);
   font-family: var(--font-stack-primary);
   font-size: calc(1rem * (12 / var(--font-base-default)));
@@ -30,7 +31,7 @@
   z-index: 99;
   user-select: none;
   width: auto;
-  word-break: break-word;
+  word-wrap: break-word;
 }
 
 .Tooltip--hidden {
