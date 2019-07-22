@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.15.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.15.0...@contentful/forma-36-react-components@3.15.1) (2019-07-22)
+
+
+### Bug Fixes
+
+* **Workbench:** Fix width and alignment of workbench actions ([#261](https://github.com/contentful/forma-36/issues/261)) ([ce1d379](https://github.com/contentful/forma-36/commit/ce1d379))
+
+
+
+
+
 # [3.15.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.14.4...@contentful/forma-36-react-components@3.15.0) (2019-07-22)
 
 
