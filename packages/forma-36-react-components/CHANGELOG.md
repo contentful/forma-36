@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.15.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.14.4...@contentful/forma-36-react-components@3.15.0) (2019-07-22)
+
+
+### Features
+
+* **Storybook:** Add accessibility addon panel ([6918ebf](https://github.com/contentful/forma-36/commit/6918ebf))
+
+
+
+
+
 ## [3.14.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.14.3...@contentful/forma-36-react-components@3.14.4) (2019-07-19)
 
 
