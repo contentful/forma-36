@@ -144,7 +144,7 @@ class DropdownContainer extends Component<
         };
       case 'top-left':
         return {
-          top: anchorDimensionsAndPositon.top - dropdownDimensions.height,
+          bottom: window.innerHeight - anchorDimensionsAndPositon.top,
           left: anchorDimensionsAndPositon.left,
         };
       case 'bottom-right':
@@ -157,7 +157,7 @@ class DropdownContainer extends Component<
         };
       case 'top-right':
         return {
-          top: anchorDimensionsAndPositon.top - dropdownDimensions.height,
+          bottom: window.innerHeight - anchorDimensionsAndPositon.top,
           left:
             anchorDimensionsAndPositon.left -
             (dropdownDimensions.width - anchorDimensionsAndPositon.width),
