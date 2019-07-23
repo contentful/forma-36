@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.15.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.15.2...@contentful/forma-36-react-components@3.15.3) (2019-07-23)
+
+
+### Bug Fixes
+
+* **Dropdown:** Position DropdownContainer when list of options reduces ([d715d01](https://github.com/contentful/forma-36/commit/d715d01))
+
+
+
+
+
 ## [3.15.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.15.1...@contentful/forma-36-react-components@3.15.2) (2019-07-23)
 
 
