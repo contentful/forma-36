@@ -56,6 +56,7 @@
 
 .Workbench__header-icon {
   margin-right: var(--spacing-m);
+  display: flex;
 }
 
 .Workbench__header-title {
