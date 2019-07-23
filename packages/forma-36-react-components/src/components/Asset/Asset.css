@@ -61,6 +61,7 @@
   max-height: calc(
     1rem * (35 / var(--font-base-default))
   ); /* 35 value comes from font-size multipled by line height multipled by 2 (for limiting text to 2 lines) */
+  word-wrap: break-word;
 }
 
 .Asset__asset-container {
