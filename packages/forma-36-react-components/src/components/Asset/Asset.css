@@ -51,10 +51,16 @@
 
 .Asset__title-container__title {
   bottom: 0;
-  height: calc(1rem * (44 / var(--font-base-default)));
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
+  line-height: var(--line-height-condensed);
+  max-height: calc(
+    1rem * (35 / var(--font-base-default))
+  ); /* 35 value comes from font-size multipled by line height multipled by 2 (for limiting text to 2 lines) */
 }
 
 .Asset__asset-container {
