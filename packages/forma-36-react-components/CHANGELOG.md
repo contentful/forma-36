@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.15.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.15.3...@contentful/forma-36-react-components@3.15.4) (2019-07-23)
+
+
+### Bug Fixes
+
+* **Asset:** Split non-breaking strings ([b9a3115](https://github.com/contentful/forma-36/commit/b9a3115))
+
+
+
+
+
 ## [3.15.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.15.2...@contentful/forma-36-react-components@3.15.3) (2019-07-23)
 
 
