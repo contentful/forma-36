@@ -129,7 +129,7 @@ export class DropdownListItem extends Component<DropdownListItemProps> {
     });
 
     return (
-      <li className={classNames} data-test-id={testId}>
+      <li className={classNames} data-test-id={testId} aria-selected={isActive} role="option">
         {submenuToggleLabel
           ? this.renderSubmenuToggle()
           : this.renderListItem()}

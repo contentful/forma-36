@@ -2,8 +2,10 @@
 
 exports[`renders the component 1`] = `
 <li
+  aria-selected={false}
   className="DropdownListItem"
   data-test-id="cf-ui-dropdown-list-item"
+  role="option"
 >
   <span>
     DropdownMenuItem
@@ -13,8 +15,10 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component as active 1`] = `
 <li
+  aria-selected={true}
   className="DropdownListItem DropdownListItem--active"
   data-test-id="cf-ui-dropdown-list-item"
+  role="option"
 >
   <span>
     entry
@@ -24,8 +28,10 @@ exports[`renders the component as active 1`] = `
 
 exports[`renders the component as disabled 1`] = `
 <li
+  aria-selected={false}
   className="DropdownListItem DropdownListItem--disabled"
   data-test-id="cf-ui-dropdown-list-item"
+  role="option"
 >
   <span>
     entry
@@ -35,8 +41,10 @@ exports[`renders the component as disabled 1`] = `
 
 exports[`renders the component with a href 1`] = `
 <li
+  aria-selected={false}
   className="DropdownListItem DropdownListItem__submenu-toggle"
   data-test-id="cf-ui-dropdown-list-item"
+  role="option"
 >
   <a
     className="DropdownListItem__button"
@@ -57,8 +65,10 @@ exports[`renders the component with a href 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <li
+  aria-selected={false}
   className="DropdownListItem my-extra-class"
   data-test-id="cf-ui-dropdown-list-item"
+  role="option"
 >
   <span
     className="my-extra-class"

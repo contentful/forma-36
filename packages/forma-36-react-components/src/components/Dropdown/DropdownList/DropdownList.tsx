@@ -34,6 +34,7 @@ export class DropdownList extends Component<DropdownListProps> {
     return (
       <ul
         data-test-id={testId}
+        role="listbox"
         style={{
           maxHeight: maxHeight || 'auto',
           overflowY: maxHeight ? 'auto' : 'visible',
