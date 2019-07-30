@@ -228,7 +228,6 @@ export class Tooltip extends Component<TooltipProps, TooltipState> {
 
   render() {
     const {
-      className,
       targetWrapperClassName,
       content,
       onMouseLeave,
