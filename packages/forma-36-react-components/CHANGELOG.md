@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.15.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.15.4...@contentful/forma-36-react-components@3.15.5) (2019-07-31)
+
+
+### Bug Fixes
+
+* **Tooltip:** fix initial positioning on isVisible ([#269](https://github.com/contentful/forma-36/issues/269)) ([11f3e71](https://github.com/contentful/forma-36/commit/11f3e71))
+
+
+
+
+
 ## [3.15.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.15.3...@contentful/forma-36-react-components@3.15.4) (2019-07-23)
 
 
