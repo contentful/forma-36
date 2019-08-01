@@ -20,7 +20,7 @@ storiesOf('Components|Tooltip', module)
             Left: 'left',
             Right: 'right',
           },
-          'top',
+          'right',
         )}
         id="tip1"
         targetWrapperClassName={text(

@@ -61,7 +61,6 @@ export type TooltipProps = {
 
 interface TooltipState {
   isVisible?: boolean;
-  portalTarget?: Node;
 }
 
 const defaultProps = {
@@ -89,17 +88,17 @@ export class Tooltip extends Component<TooltipProps, TooltipState> {
     this.place = props.place;
   }
 
+  componentWillMount() {
+    if (typeof window !== `undefined`) {
+      this.portalTarget = window.document.createElement('div');
+      window.document.body.appendChild(this.portalTarget);
+    }
+  }
+
   componentDidMount() {
-    this.setState(
-      {
-        portalTarget: window.document.createElement('div'),
-      },
-      () => {
-        if (this.state.portalTarget) {
-          window.document.body.appendChild(this.state.portalTarget);
-        }
-      },
-    );
+    if (this.props.isVisible) {
+      this.setState({ isVisible: true });
+    }
   }
 
   componentDidUpdate(prevProps: TooltipProps) {
@@ -109,8 +108,8 @@ export class Tooltip extends Component<TooltipProps, TooltipState> {
   }
 
   componentWillUnmount() {
-    if (this.state.portalTarget) {
-      window.document.body.removeChild(this.state.portalTarget);
+    if (this.portalTarget) {
+      window.document.body.removeChild(this.portalTarget);
     }
   }
 
@@ -178,7 +177,7 @@ export class Tooltip extends Component<TooltipProps, TooltipState> {
   };
 
   renderTooltip = (content: React.ReactNode) => {
-    if (!this.state.portalTarget) {
+    if (!this.portalTarget) {
       return null;
     }
     const placeClass = `Tooltip--place-${this.place}`;
@@ -223,7 +222,7 @@ export class Tooltip extends Component<TooltipProps, TooltipState> {
       </div>
     );
 
-    return ReactDOM.createPortal(tooltip, this.state.portalTarget as Element);
+    return ReactDOM.createPortal(tooltip, this.portalTarget as Element);
   };
 
   render() {
