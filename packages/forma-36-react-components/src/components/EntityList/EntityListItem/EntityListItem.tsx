@@ -217,6 +217,7 @@ export class EntityListItem extends Component<EntityListItemProps> {
             onClick={onClick}
             href={href}
             tabIndex={onClick && 0}
+            target={onClick && href ? '_blank' : undefined}
           >
             <TabFocusTrap className={styles['EntityListItem__focus-trap']}>
               <figure className={styles['EntityListItem__media']}>
