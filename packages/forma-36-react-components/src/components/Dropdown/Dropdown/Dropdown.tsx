@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
+import ReactDOM from 'react-dom';
 import DropdownListItem from '../DropdownListItem/DropdownListItem';
 import DropdownContainer from '../DropdownContainer';
 import isBrowser from '../../../utils/isBrowser';
