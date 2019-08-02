@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
-import ReactDOM from 'react-dom';
 import DropdownListItem from '../DropdownListItem/DropdownListItem';
 import DropdownContainer from '../DropdownContainer';
 import isBrowser from '../../../utils/isBrowser';
@@ -26,7 +25,7 @@ export type DropdownProps = {
   getContainerRef?: (ref: HTMLElement | null) => void;
   className?: string;
   children: React.ReactNode;
-  adjustWidthToToggleElement?: boolean;
+  isFullWidth?: boolean;
 } & typeof defaultProps;
 
 export interface AnchorDimensionsAndPositonType {
@@ -75,7 +74,7 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
     this.setAnchorDimensions();
     this.bindEventListeners();
 
-    if (this.props.adjustWidthToToggleElement && this.toggleElementWrapper) {
+    if (this.props.isFullWidth && this.toggleElementWrapper) {
       this.setState({
         containerWidth:
           this.toggleElementWrapper.getBoundingClientRect().width - 2, // subtract the border

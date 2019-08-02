@@ -16,7 +16,7 @@ function DefaultStory() {
     <Dropdown
       isOpen={isOpen}
       onClose={() => setOpen(false)}
-      adjustWidthToToggleElement={boolean('adjustWidthToToggleElement', false)}
+      isFullWidth={boolean('adjustWidthToToggleElement', false)}
       key={Date.now()} // Force Reinit
       position={select(
         'position',
