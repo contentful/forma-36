@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
+import ReactDOM from 'react-dom';
 import DropdownListItem from '../DropdownListItem/DropdownListItem';
 import DropdownContainer from '../DropdownContainer';
 import isBrowser from '../../../utils/isBrowser';
@@ -25,6 +26,7 @@ export type DropdownProps = {
   getContainerRef?: (ref: HTMLElement | null) => void;
   className?: string;
   children: React.ReactNode;
+  adjustWidthToToggleElement?: boolean;
 } & typeof defaultProps;
 
 export interface AnchorDimensionsAndPositonType {
@@ -36,6 +38,7 @@ export interface AnchorDimensionsAndPositonType {
 
 export interface DropdownState {
   isOpen: boolean;
+  containerWidth?: number;
   position: positionType;
   anchorDimensionsAndPositon?: AnchorDimensionsAndPositonType;
 }
@@ -49,9 +52,11 @@ const defaultProps = {
 
 export class Dropdown extends Component<DropdownProps, DropdownState> {
   static defaultProps = defaultProps;
+  toggleElementWrapper: HTMLSpanElement | null = null;
 
   state = {
     isOpen: this.props.isOpen,
+    containerWidth: undefined,
     position: this.props.position,
     anchorDimensionsAndPositon: {
       top: 0,
@@ -69,6 +74,13 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
     }
     this.setAnchorDimensions();
     this.bindEventListeners();
+
+    if (this.props.adjustWidthToToggleElement && this.toggleElementWrapper) {
+      this.setState({
+        containerWidth:
+          this.toggleElementWrapper.getBoundingClientRect().width - 2, // subtract the border
+      });
+    }
   }
 
   setAnchorDimensions = () => {
@@ -174,11 +186,20 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
         onLeave={() => this.openMenu(false)}
         {...otherProps}
       >
-        {toggleElement}
+        <span
+          ref={ref => {
+            this.toggleElementWrapper = ref;
+          }}
+        >
+          {toggleElement}
+        </span>
         {this.state.isOpen && (
           <DropdownContainer
             anchorDimensionsAndPositon={this.state.anchorDimensionsAndPositon}
             position={this.props.position}
+            style={{
+              width: `${this.state.containerWidth}px`,
+            }}
             className={dropdownContainerClassName}
             getRef={getContainerRef}
             dropdownAnchor={this.dropdownAnchor}
@@ -201,12 +222,21 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
         }}
         {...otherProps}
       >
-        {toggleElement}
+        <span
+          ref={ref => {
+            this.toggleElementWrapper = ref;
+          }}
+        >
+          {toggleElement}
+        </span>
         {this.state.isOpen && (
           <DropdownContainer
             className={dropdownContainerClassName}
             getRef={getContainerRef}
             submenu={false}
+            style={{
+              width: `${this.state.containerWidth}px`,
+            }}
             dropdownAnchor={this.dropdownAnchor}
             anchorDimensionsAndPositon={this.state.anchorDimensionsAndPositon}
             onClose={this.props.onClose}
