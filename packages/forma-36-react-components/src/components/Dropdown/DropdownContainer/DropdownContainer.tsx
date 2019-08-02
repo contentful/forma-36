@@ -20,7 +20,7 @@ export type DropdownContainerProps = {
   position: positionType;
   getRef?: (ref: HTMLElement | null) => void;
   submenu?: boolean;
-  style?: object;
+  width?: number;
 } & typeof defaultProps;
 
 export interface DropdownState {
@@ -173,7 +173,7 @@ class DropdownContainer extends Component<
     );
 
   render() {
-    const { submenu, className, ...otherProps } = this.props;
+    const { submenu, className, width } = this.props;
 
     const classNames = cn(
       className,
@@ -187,6 +187,7 @@ class DropdownContainer extends Component<
           this.dropdown = ref;
         }}
         style={{
+          ...(width ? { width: `${width}px` } : {}),
           ...(!submenu && this.calculatePosition()),
         }}
         className={classNames}
@@ -205,7 +206,6 @@ class DropdownContainer extends Component<
             this.props.openSubmenu(false);
           }
         }}
-        {...otherProps}
       >
         <InViewport
           onOverflowLeft={() => this.handleOverflow('left')}
