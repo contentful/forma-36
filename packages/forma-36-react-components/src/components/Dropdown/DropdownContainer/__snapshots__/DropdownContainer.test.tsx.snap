@@ -5,16 +5,27 @@ exports[`has no a11y issues 1`] = `
   containerInfo={<div />}
 >
   <div
+    anchorDimensionsAndPositon={
+      Object {
+        "height": 0,
+        "left": 0,
+        "top": 0,
+        "width": 100,
+      }
+    }
     className="DropdownContainer"
+    getRef={[Function]}
     onFocus={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
+    position="bottom-left"
     style={
       Object {
         "left": 0,
         "top": 0,
       }
     }
+    testId="cf-ui-dropdown-portal"
   >
     <InViewport
       offset={0}
@@ -35,16 +46,27 @@ exports[`renders the component 1`] = `
   containerInfo={<div />}
 >
   <div
+    anchorDimensionsAndPositon={
+      Object {
+        "height": 0,
+        "left": 0,
+        "top": 0,
+        "width": 100,
+      }
+    }
     className="DropdownContainer"
+    getRef={[Function]}
     onFocus={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
+    position="bottom-left"
     style={
       Object {
         "left": 0,
         "top": 0,
       }
     }
+    testId="cf-ui-dropdown-portal"
   >
     <InViewport
       offset={0}
@@ -62,11 +84,22 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component as a submenu 1`] = `
 <div
+  anchorDimensionsAndPositon={
+    Object {
+      "height": 0,
+      "left": 0,
+      "top": 0,
+      "width": 100,
+    }
+  }
   className="extraClassName DropdownContainer DropdownContainer__submenu DropdownContainer__container-position--bottom-left"
+  getRef={[Function]}
   onFocus={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
+  position="bottom-left"
   style={Object {}}
+  testId="cf-ui-dropdown-portal"
 >
   <InViewport
     offset={0}
@@ -86,16 +119,27 @@ exports[`renders the component with an additional class name 1`] = `
   containerInfo={<div />}
 >
   <div
+    anchorDimensionsAndPositon={
+      Object {
+        "height": 0,
+        "left": 0,
+        "top": 0,
+        "width": 100,
+      }
+    }
     className="extraClassName DropdownContainer"
+    getRef={[Function]}
     onFocus={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
+    position="bottom-left"
     style={
       Object {
         "left": 0,
         "top": 0,
       }
     }
+    testId="cf-ui-dropdown-portal"
   >
     <InViewport
       offset={0}
