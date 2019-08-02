@@ -6,20 +6,18 @@ exports[`renders the component 1`] = `
   data-test-id="cf-ui-dropdown"
   position="bottom-left"
 >
-  <span>
-    <Button
-      buttonType="primary"
-      disabled={false}
-      indicateDropdown={false}
-      isFullWidth={false}
-      loading={false}
-      onClick={[Function]}
-      testId="cf-ui-button"
-      type="button"
-    >
-      Toggle
-    </Button>
-  </span>
+  <Button
+    buttonType="primary"
+    disabled={false}
+    indicateDropdown={false}
+    isFullWidth={false}
+    loading={false}
+    onClick={[Function]}
+    testId="cf-ui-button"
+    type="button"
+  >
+    Toggle
+  </Button>
 </div>
 `;
 
@@ -29,20 +27,18 @@ exports[`renders the component as open 1`] = `
   data-test-id="cf-ui-dropdown"
   position="bottom-left"
 >
-  <span>
-    <Button
-      buttonType="primary"
-      disabled={false}
-      indicateDropdown={false}
-      isFullWidth={false}
-      loading={false}
-      onClick={[Function]}
-      testId="cf-ui-button"
-      type="button"
-    >
-      Toggle
-    </Button>
-  </span>
+  <Button
+    buttonType="primary"
+    disabled={false}
+    indicateDropdown={false}
+    isFullWidth={false}
+    loading={false}
+    onClick={[Function]}
+    testId="cf-ui-button"
+    type="button"
+  >
+    Toggle
+  </Button>
   <DropdownContainer
     anchorDimensionsAndPositon={
       Object {
@@ -56,11 +52,6 @@ exports[`renders the component as open 1`] = `
     getRef={[Function]}
     openSubmenu={[Function]}
     position="bottom-left"
-    style={
-      Object {
-        "width": "undefinedpx",
-      }
-    }
     submenu={false}
     testId="cf-ui-dropdown-portal"
   >
@@ -86,20 +77,18 @@ exports[`renders the component with a submenu 1`] = `
   data-test-id="cf-ui-dropdown"
   position="bottom-left"
 >
-  <span>
-    <Button
-      buttonType="primary"
-      disabled={false}
-      indicateDropdown={false}
-      isFullWidth={false}
-      loading={false}
-      onClick={[Function]}
-      testId="cf-ui-button"
-      type="button"
-    >
-      Toggle
-    </Button>
-  </span>
+  <Button
+    buttonType="primary"
+    disabled={false}
+    indicateDropdown={false}
+    isFullWidth={false}
+    loading={false}
+    onClick={[Function]}
+    testId="cf-ui-button"
+    type="button"
+  >
+    Toggle
+  </Button>
   <DropdownContainer
     anchorDimensionsAndPositon={
       Object {
@@ -113,11 +102,6 @@ exports[`renders the component with a submenu 1`] = `
     getRef={[Function]}
     openSubmenu={[Function]}
     position="bottom-left"
-    style={
-      Object {
-        "width": "undefinedpx",
-      }
-    }
     submenu={false}
     testId="cf-ui-dropdown-portal"
   >
@@ -160,19 +144,17 @@ exports[`renders the component with an additional class name 1`] = `
   data-test-id="cf-ui-dropdown"
   position="bottom-left"
 >
-  <span>
-    <Button
-      buttonType="primary"
-      disabled={false}
-      indicateDropdown={false}
-      isFullWidth={false}
-      loading={false}
-      onClick={[Function]}
-      testId="cf-ui-button"
-      type="button"
-    >
-      Toggle
-    </Button>
-  </span>
+  <Button
+    buttonType="primary"
+    disabled={false}
+    indicateDropdown={false}
+    isFullWidth={false}
+    loading={false}
+    onClick={[Function]}
+    testId="cf-ui-button"
+    type="button"
+  >
+    Toggle
+  </Button>
 </div>
 `;

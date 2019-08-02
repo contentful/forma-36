@@ -74,10 +74,9 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
     this.setAnchorDimensions();
     this.bindEventListeners();
 
-    if (this.props.isFullWidth && this.toggleElementWrapper) {
+    if (this.props.isFullWidth && this.dropdownAnchor) {
       this.setState({
-        containerWidth:
-          this.toggleElementWrapper.getBoundingClientRect().width - 2, // subtract the border
+        containerWidth: this.dropdownAnchor.getBoundingClientRect().width - 2, // subtract the border
       });
     }
   }
@@ -185,20 +184,12 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
         onLeave={() => this.openMenu(false)}
         {...otherProps}
       >
-        <span
-          ref={ref => {
-            this.toggleElementWrapper = ref;
-          }}
-        >
-          {toggleElement}
-        </span>
+        {toggleElement}
         {this.state.isOpen && (
           <DropdownContainer
             anchorDimensionsAndPositon={this.state.anchorDimensionsAndPositon}
             position={this.props.position}
-            style={{
-              width: `${this.state.containerWidth}px`,
-            }}
+            width={this.state.containerWidth}
             className={dropdownContainerClassName}
             getRef={getContainerRef}
             dropdownAnchor={this.dropdownAnchor}
@@ -221,21 +212,13 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
         }}
         {...otherProps}
       >
-        <span
-          ref={ref => {
-            this.toggleElementWrapper = ref;
-          }}
-        >
-          {toggleElement}
-        </span>
+        {toggleElement}
         {this.state.isOpen && (
           <DropdownContainer
             className={dropdownContainerClassName}
             getRef={getContainerRef}
             submenu={false}
-            style={{
-              width: `${this.state.containerWidth}px`,
-            }}
+            width={this.state.containerWidth}
             dropdownAnchor={this.dropdownAnchor}
             anchorDimensionsAndPositon={this.state.anchorDimensionsAndPositon}
             onClose={this.props.onClose}
