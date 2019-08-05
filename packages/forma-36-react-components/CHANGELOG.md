@@ -3,6 +3,44 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.15.9](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.15.8...@contentful/forma-36-react-components@3.15.9) (2019-08-02)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+## [3.15.8](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.15.7...@contentful/forma-36-react-components@3.15.8) (2019-08-02)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+## [3.15.7](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.15.6...@contentful/forma-36-react-components@3.15.7) (2019-08-01)
+
+
+### Bug Fixes
+
+* **EntryListItem:** Add target blank if onClick and href is defined ([#271](https://github.com/contentful/forma-36/issues/271)) ([cab6b5b](https://github.com/contentful/forma-36/commit/cab6b5b))
+
+
+
+
+
+## [3.15.6](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.15.5...@contentful/forma-36-react-components@3.15.6) (2019-08-01)
+
+
+### Bug Fixes
+
+* **Workbench:** Align header icon with title ([2d467e9](https://github.com/contentful/forma-36/commit/2d467e9))
+
+
+
+
+
 ## [3.15.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.15.4...@contentful/forma-36-react-components@3.15.5) (2019-07-31)
 
 

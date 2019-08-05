@@ -25,6 +25,7 @@ export type DropdownProps = {
   getContainerRef?: (ref: HTMLElement | null) => void;
   className?: string;
   children: React.ReactNode;
+  isFullWidth?: boolean;
 } & typeof defaultProps;
 
 export interface AnchorDimensionsAndPositonType {
@@ -36,6 +37,7 @@ export interface AnchorDimensionsAndPositonType {
 
 export interface DropdownState {
   isOpen: boolean;
+  containerWidth?: number;
   position: positionType;
   anchorDimensionsAndPositon?: AnchorDimensionsAndPositonType;
 }
@@ -49,9 +51,11 @@ const defaultProps = {
 
 export class Dropdown extends Component<DropdownProps, DropdownState> {
   static defaultProps = defaultProps;
+  toggleElementWrapper: HTMLSpanElement | null = null;
 
   state = {
     isOpen: this.props.isOpen,
+    containerWidth: undefined,
     position: this.props.position,
     anchorDimensionsAndPositon: {
       top: 0,
@@ -69,6 +73,12 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
     }
     this.setAnchorDimensions();
     this.bindEventListeners();
+
+    if (this.props.isFullWidth && this.dropdownAnchor) {
+      this.setState({
+        containerWidth: this.dropdownAnchor.getBoundingClientRect().width - 2, // subtract the border
+      });
+    }
   }
 
   setAnchorDimensions = () => {
@@ -179,6 +189,7 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
           <DropdownContainer
             anchorDimensionsAndPositon={this.state.anchorDimensionsAndPositon}
             position={this.props.position}
+            width={this.state.containerWidth}
             className={dropdownContainerClassName}
             getRef={getContainerRef}
             dropdownAnchor={this.dropdownAnchor}
@@ -207,6 +218,7 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
             className={dropdownContainerClassName}
             getRef={getContainerRef}
             submenu={false}
+            width={this.state.containerWidth}
             dropdownAnchor={this.dropdownAnchor}
             anchorDimensionsAndPositon={this.state.anchorDimensionsAndPositon}
             onClose={this.props.onClose}
