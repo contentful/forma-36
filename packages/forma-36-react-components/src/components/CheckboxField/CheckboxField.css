@@ -19,5 +19,5 @@
 }
 
 .CheckboxField__label--light {
-  font-weight: 300;
+  font-weight: var(--font-weight-normal);
 }
