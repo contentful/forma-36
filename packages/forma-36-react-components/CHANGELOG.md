@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.15.10](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.15.9...@contentful/forma-36-react-components@3.15.10) (2019-08-05)
+
+
+### Bug Fixes
+
+* **DropdownContainer:** expand inviewport to full width of the container ([#274](https://github.com/contentful/forma-36/issues/274)) ([6931f69](https://github.com/contentful/forma-36/commit/6931f69))
+
+
+
+
+
 ## [3.15.9](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.15.8...@contentful/forma-36-react-components@3.15.9) (2019-08-02)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
