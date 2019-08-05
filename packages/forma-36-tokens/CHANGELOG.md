@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.3.3...@contentful/forma-36-tokens@0.4.0) (2019-08-05)
+
+
+### Bug Fixes
+
+* **Tokens:** Change normal fontweight token to 400 ([4c2bc35](https://github.com/contentful/forma-36/commit/4c2bc35))
+
+
+### Features
+
+* **Tokens:** Use system ui fontstack + avenir ([d1458d8](https://github.com/contentful/forma-36/commit/d1458d8))
+
+
+
+
+
 ## [0.3.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.3.2...@contentful/forma-36-tokens@0.3.3) (2019-07-16)
 
 **Note:** Version bump only for package @contentful/forma-36-tokens
