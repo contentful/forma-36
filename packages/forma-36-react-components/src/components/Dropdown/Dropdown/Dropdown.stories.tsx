@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, select } from '@storybook/addon-knobs';
+import { text, select, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import Dropdown from './Dropdown';
@@ -16,6 +16,7 @@ function DefaultStory() {
     <Dropdown
       isOpen={isOpen}
       onClose={() => setOpen(false)}
+      isFullWidth={boolean('isFullWidth', false)}
       key={Date.now()} // Force Reinit
       position={select(
         'position',
@@ -34,7 +35,7 @@ function DefaultStory() {
           indicateDropdown
           onClick={() => setOpen(!isOpen)}
         >
-          toggle
+          Choose more options and settings
         </Button>
       }
       className={text('className', '')}
