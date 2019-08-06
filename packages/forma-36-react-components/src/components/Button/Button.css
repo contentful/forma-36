@@ -180,7 +180,7 @@
 .Button__label {
   margin: 0 calc(1rem * (4 / var(--font-base-default)));
   color: var(--color-text-mid);
-  line-height: 1.5;
+  line-height: 2;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
