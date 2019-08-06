@@ -77,10 +77,18 @@ export class DropdownListItem extends Component<DropdownListItemProps> {
     if (isClickable) {
       const Element = href ? 'a' : 'button';
 
+      const buttonProps = {
+        disabled: isDisabled,
+        'aria-disabled': isDisabled,
+      };
+
+      const linkProps = {
+        href,
+      };
+
       return (
         <Element
           type="button"
-          href={href}
           onClick={(e: ReactMouseEvent) => {
             if (!isDisabled && onClick) {
               onClick(e);
@@ -91,6 +99,7 @@ export class DropdownListItem extends Component<DropdownListItemProps> {
               onMouseDown(e);
             }
           }}
+          {...(href ? linkProps : buttonProps)}
           {...otherProps}
           data-test-id="cf-ui-dropdown-list-item-button"
           className={styles['DropdownListItem__button']}
