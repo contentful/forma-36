@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.15.12](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.15.11...@contentful/forma-36-react-components@3.15.12) (2019-08-06)
+
+
+### Bug Fixes
+
+* **DropdownListItem:** Propagate isDisabled to interactive element ([#276](https://github.com/contentful/forma-36/issues/276)) ([a3e6b45](https://github.com/contentful/forma-36/commit/a3e6b45))
+
+
+
+
+
 ## [3.15.11](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.15.10...@contentful/forma-36-react-components@3.15.11) (2019-08-05)
 
 
