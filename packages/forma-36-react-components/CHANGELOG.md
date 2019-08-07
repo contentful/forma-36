@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.15.13](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.15.12...@contentful/forma-36-react-components@3.15.13) (2019-08-07)
+
+
+### Bug Fixes
+
+* **Tabs:** Reduce font-weight ([1501380](https://github.com/contentful/forma-36/commit/1501380))
+
+
+
+
+
 ## [3.15.12](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.15.11...@contentful/forma-36-react-components@3.15.12) (2019-08-06)
 
 
