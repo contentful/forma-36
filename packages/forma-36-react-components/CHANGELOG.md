@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.15.14](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.15.13...@contentful/forma-36-react-components@3.15.14) (2019-08-08)
+
+
+### Bug Fixes
+
+* **Fonts:** Remove all references to Avenir ([7a0faea](https://github.com/contentful/forma-36/commit/7a0faea))
+
+
+
+
+
 ## [3.15.13](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.15.12...@contentful/forma-36-react-components@3.15.13) (2019-08-07)
 
 

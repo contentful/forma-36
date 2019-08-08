@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.4.0...@contentful/forma-36-tokens@0.4.1) (2019-08-08)
+
+
+### Bug Fixes
+
+* **Fonts:** Remove all references to Avenir ([7a0faea](https://github.com/contentful/forma-36/commit/7a0faea))
+
+
+
+
+
 # [0.4.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.3.3...@contentful/forma-36-tokens@0.4.0) (2019-08-05)
 
 

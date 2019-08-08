@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.46](https://github.com/contentful/forma-36/compare/forma-36-website@0.2.45...forma-36-website@0.2.46) (2019-08-08)
+
+
+### Bug Fixes
+
+* **Fonts:** Remove all references to Avenir ([7a0faea](https://github.com/contentful/forma-36/commit/7a0faea))
+
+
+
+
+
 ## [0.2.45](https://github.com/contentful/forma-36/compare/forma-36-website@0.2.44...forma-36-website@0.2.45) (2019-08-07)
 
 **Note:** Version bump only for package forma-36-website
