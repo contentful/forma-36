@@ -41,10 +41,6 @@ The monorepo is currently structured into the following packages:
 
 To add another package create a new directory in the packages folder. Make sure that the package name is prefixed with forma-36 (e.g. forma-36-css-utilities). Since we are using Lerna all package scripts are available from the root by running lerna run {script_name}
 
-## Font Usage
-
-Forma 36 was designed to use ‘Avenir Next’ as primary font family. If a package is used in the context of app.contentful.com (e.g UI extensions) this font will be provided. We encourage licensing ‘Avenir Next’ when a package is used outside of Contentful related contexts.
-
 ## Commits & Releases
 
 Use `yarn commit`. This uses the [Commitzen](https://github.com/commitizen/cz-cli) CLI to create a conventional commit message based on your changes. CI is setup to release all new commits on the master branch.
