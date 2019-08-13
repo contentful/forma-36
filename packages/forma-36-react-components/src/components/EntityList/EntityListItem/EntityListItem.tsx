@@ -226,16 +226,27 @@ export class EntityListItem extends Component<EntityListItemProps> {
 
               <div className={styles['EntityListItem__content']}>
                 <div className={styles['EntityListItem__heading']}>
-                  <h1 className={styles['EntityListItem__title']}>{title}</h1>
+                  <h1
+                    className={styles['EntityListItem__title']}
+                    data-test-id={`${testId}_title`}
+                  >
+                    {title}
+                  </h1>
 
                   {contentType && (
-                    <div className={styles['EntityListItem__content-type']}>
+                    <div
+                      className={styles['EntityListItem__content-type']}
+                      data-test-id={`${testId}_content-type`}
+                    >
                       ({contentType})
                     </div>
                   )}
                 </div>
                 {description && (
-                  <p className={styles['EntityListItem__description']}>
+                  <p
+                    className={styles['EntityListItem__description']}
+                    data-test-id={`${testId}_content-type`}
+                  >
                     {description}
                   </p>
                 )}

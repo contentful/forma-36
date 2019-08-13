@@ -43,12 +43,14 @@ exports[`can call an onClick callback 1`] = `
         >
           <h1
             className="EntityListItem__title"
+            data-test-id="cf-ui-entity-list-item_title"
           >
             Title
           </h1>
         </div>
         <p
           className="EntityListItem__description"
+          data-test-id="cf-ui-entity-list-item_content-type"
         >
           Description
         </p>
@@ -90,11 +92,13 @@ exports[`renders the component 1`] = `
         >
           <h1
             className="EntityListItem__title"
+            data-test-id="cf-ui-entity-list-item_title"
           >
             Title
           </h1>
           <div
             className="EntityListItem__content-type"
+            data-test-id="cf-ui-entity-list-item_content-type"
           >
             (
             Content type
@@ -140,12 +144,14 @@ exports[`renders the component as an \`a\` element if passed a href prop 1`] = `
         >
           <h1
             className="EntityListItem__title"
+            data-test-id="cf-ui-entity-list-item_title"
           >
             Title
           </h1>
         </div>
         <p
           className="EntityListItem__description"
+          data-test-id="cf-ui-entity-list-item_content-type"
         >
           Description
         </p>
@@ -187,11 +193,13 @@ exports[`renders the component as an asset entityType variant 1`] = `
         >
           <h1
             className="EntityListItem__title"
+            data-test-id="cf-ui-entity-list-item_title"
           >
             Title
           </h1>
           <div
             className="EntityListItem__content-type"
+            data-test-id="cf-ui-entity-list-item_content-type"
           >
             (
             Content type
@@ -200,6 +208,7 @@ exports[`renders the component as an asset entityType variant 1`] = `
         </div>
         <p
           className="EntityListItem__description"
+          data-test-id="cf-ui-entity-list-item_content-type"
         >
           Description
         </p>
@@ -296,11 +305,13 @@ exports[`renders the component with a description 1`] = `
         >
           <h1
             className="EntityListItem__title"
+            data-test-id="cf-ui-entity-list-item_title"
           >
             Title
           </h1>
           <div
             className="EntityListItem__content-type"
+            data-test-id="cf-ui-entity-list-item_content-type"
           >
             (
             Content type
@@ -309,6 +320,7 @@ exports[`renders the component with a description 1`] = `
         </div>
         <p
           className="EntityListItem__description"
+          data-test-id="cf-ui-entity-list-item_content-type"
         >
           Description
         </p>
@@ -356,11 +368,13 @@ exports[`renders the component with a drag handle 1`] = `
         >
           <h1
             className="EntityListItem__title"
+            data-test-id="cf-ui-entity-list-item_title"
           >
             Title
           </h1>
           <div
             className="EntityListItem__content-type"
+            data-test-id="cf-ui-entity-list-item_content-type"
           >
             (
             Content type
@@ -369,6 +383,7 @@ exports[`renders the component with a drag handle 1`] = `
         </div>
         <p
           className="EntityListItem__description"
+          data-test-id="cf-ui-entity-list-item_content-type"
         >
           Description
         </p>
@@ -421,11 +436,13 @@ exports[`renders the component with a status 1`] = `
         >
           <h1
             className="EntityListItem__title"
+            data-test-id="cf-ui-entity-list-item_title"
           >
             Title
           </h1>
           <div
             className="EntityListItem__content-type"
+            data-test-id="cf-ui-entity-list-item_content-type"
           >
             (
             Content type
@@ -434,6 +451,7 @@ exports[`renders the component with a status 1`] = `
         </div>
         <p
           className="EntityListItem__description"
+          data-test-id="cf-ui-entity-list-item_content-type"
         >
           Description
         </p>
@@ -486,11 +504,13 @@ exports[`renders the component with active drag state 1`] = `
         >
           <h1
             className="EntityListItem__title"
+            data-test-id="cf-ui-entity-list-item_title"
           >
             Title
           </h1>
           <div
             className="EntityListItem__content-type"
+            data-test-id="cf-ui-entity-list-item_content-type"
           >
             (
             Content type
@@ -499,6 +519,7 @@ exports[`renders the component with active drag state 1`] = `
         </div>
         <p
           className="EntityListItem__description"
+          data-test-id="cf-ui-entity-list-item_content-type"
         >
           Description
         </p>
@@ -551,11 +572,13 @@ exports[`renders the component with an additional class name 1`] = `
         >
           <h1
             className="EntityListItem__title"
+            data-test-id="cf-ui-entity-list-item_title"
           >
             Title
           </h1>
           <div
             className="EntityListItem__content-type"
+            data-test-id="cf-ui-entity-list-item_content-type"
           >
             (
             Content type
@@ -564,6 +587,7 @@ exports[`renders the component with an additional class name 1`] = `
         </div>
         <p
           className="EntityListItem__description"
+          data-test-id="cf-ui-entity-list-item_content-type"
         >
           Description
         </p>
@@ -611,11 +635,13 @@ exports[`renders the component with custom drag handle 1`] = `
         >
           <h1
             className="EntityListItem__title"
+            data-test-id="cf-ui-entity-list-item_title"
           >
             Title
           </h1>
           <div
             className="EntityListItem__content-type"
+            data-test-id="cf-ui-entity-list-item_content-type"
           >
             (
             Content type
@@ -624,6 +650,7 @@ exports[`renders the component with custom drag handle 1`] = `
         </div>
         <p
           className="EntityListItem__description"
+          data-test-id="cf-ui-entity-list-item_content-type"
         >
           Description
         </p>
@@ -676,11 +703,13 @@ exports[`renders the component with dropdownListElements 1`] = `
         >
           <h1
             className="EntityListItem__title"
+            data-test-id="cf-ui-entity-list-item_title"
           >
             Title
           </h1>
           <div
             className="EntityListItem__content-type"
+            data-test-id="cf-ui-entity-list-item_content-type"
           >
             (
             Content type
@@ -689,6 +718,7 @@ exports[`renders the component with dropdownListElements 1`] = `
         </div>
         <p
           className="EntityListItem__description"
+          data-test-id="cf-ui-entity-list-item_content-type"
         >
           Description
         </p>
