@@ -1,0 +1,239 @@
+---
+title: 'Date and time'
+---
+
+import {
+  Table,
+  TableHead,
+  TableBody,
+  TableCell,
+  TableRow,
+  Tooltip,
+} from '@contentful/forma-36-react-components';
+
+# Date and time
+
+## Absolute vs relative
+
+Consider the context when having to choose between absolute and relative date and time.
+
+<Table className="f36-margin-bottom--xl" style={{ width: '100%' }}>
+  <TableHead>
+    <TableRow>
+      <TableCell style={{ width: '25%' }}>Type</TableCell>
+      <TableCell style={{ width: '25%' }}>Example</TableCell>
+      <TableCell style={{ width: '50%' }}></TableCell>
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    <TableRow>
+      <TableCell>Absolute</TableCell>
+      <TableCell style={{ fontWeight: 700 }}>13 Aug 2019 at 10:00 am</TableCell>
+      <TableCell>
+        When is an entry scheduled to be published?
+        <br />
+        Relative time wouldn't be specific enough.
+      </TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Relative</TableCell>
+      <TableCell style={{ fontWeight: 700 }}>
+        <Tooltip content="13 Aug 2019 at 10:00 am">3 days ago</Tooltip>
+      </TableCell>
+      <TableCell>
+        When was my collaborator last active?
+        <br />
+        An absolute date would be unnecessarily specific, but do your best to
+        provide the absolute format if the user interacts with it.
+      </TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+## Formats
+
+<Table className="f36-margin-bottom--xl" style={{ width: '100%' }}>
+  <TableHead>
+    <TableRow>
+      <TableCell style={{ width: '25%' }}>Type</TableCell>
+      <TableCell style={{ width: '25%' }}>Example</TableCell>
+      <TableCell style={{ width: '50%' }}></TableCell>
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    <TableRow>
+      <TableCell>Relative date and time</TableCell>
+      <TableCell style={{ fontWeight: 700 }}>
+        Never
+        <br />
+        Less than an hour ago
+        <br />
+        13 days ago
+        <br />
+        3 months ago
+        <br />a year ago
+      </TableCell>
+      <TableCell></TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Absolute time</TableCell>
+      <TableCell style={{ fontWeight: 700 }}>8:00 am</TableCell>
+      <TableCell>
+        Time should be displayed in 12-hour format, with lowercase am or pm and
+        without periods, to increase scannability.
+      </TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Absolute dates</TableCell>
+      <TableCell style={{ fontWeight: 700 }}>13 Jan 2019</TableCell>
+      <TableCell>
+        Dates should be displayed in order of day-month-year, with month
+        abbreviated and without punctuation, to increase scannability and to
+        strike a compromise between different localized date formats.
+      </TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Absolute date and time</TableCell>
+      <TableCell style={{ fontWeight: 700 }}>8 Aug 2019 at 8:00 am</TableCell>
+      <TableCell>
+        Absolute date and time should be displayed without commas and as
+        human-readable as possible.
+      </TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Weekday</TableCell>
+      <TableCell style={{ fontWeight: 700 }}>
+        Mon, 12 Aug
+        <br />
+        Wed, 14 Aug at 11:00 pm
+      </TableCell>
+      <TableCell>
+        Weekdays should be used when users need to compare events that happen in
+        a daily context, always next to absolute date and time and separated
+        with a comma.
+      </TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+## Ranges
+
+To show a date or time range, use an **en dash** (Unicode: U+2013, html: `&ndash;`) with spaces around it.
+
+<Table className="f36-margin-bottom--xl" style={{ width: '100%' }}>
+  <TableHead>
+    <TableRow>
+      <TableCell style={{ width: '25%' }}>Type</TableCell>
+      <TableCell style={{ width: '25%' }}>Examples</TableCell>
+      <TableCell style={{ width: '50%' }}></TableCell>
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    <TableRow>
+      <TableCell>Time</TableCell>
+      <TableCell style={{ fontWeight: 700 }}>8:00 am – 2:00 pm</TableCell>
+      <TableCell></TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Date</TableCell>
+      <TableCell style={{ fontWeight: 700 }}>
+        30 Mar – 30 Apr
+        <br />
+        8 Jul – 13 Aug 2019
+        <br />
+        13 Dec 2018 – 8 Aug 2019
+      </TableCell>
+      <TableCell>Omit the year if the range is in the same year.</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+## Don't use
+
+<Table className="f36-margin-bottom--xl" style={{ width: '100%' }}>
+  <TableHead>
+    <TableRow>
+      <TableCell style={{ width: '25%' }}>Type</TableCell>
+      <TableCell style={{ width: '25%' }}>Example</TableCell>
+      <TableCell style={{ width: '50%' }}></TableCell>
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    <TableRow>
+      <TableCell>Relative day</TableCell>
+      <TableCell style={{ fontWeight: 700 }}>
+        Last Tuesday
+        <br />
+        Today
+      </TableCell>
+      <TableCell>
+        Not expressed as relative to <i>now</i>.
+      </TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Absolute date</TableCell>
+      <TableCell style={{ fontWeight: 700 }}>
+        10/4/2019
+        <br />
+        10.4.2019.
+      </TableCell>
+      <TableCell>Not clear which number is day which is month.</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Absolute time or date</TableCell>
+      <TableCell style={{ fontWeight: 700 }}>
+        08:00
+        <br />
+        02 Jan 2019
+      </TableCell>
+      <TableCell>
+        Don't use the leading zero in single-digit hours or days.
+      </TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Absolute date</TableCell>
+      <TableCell style={{ fontWeight: 700 }}>4th Jan 2019</TableCell>
+      <TableCell>
+        Don't add ordinal number suffixes such as -st, -nd, -rd or -th.
+      </TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+
+## Moment.js formats
+
+[https://momentjs.com/docs/#/displaying/format/](https://momentjs.com/docs/#/displaying/format/)
+
+[https://momentjs.com/docs/#/displaying/fromnow/](https://momentjs.com/docs/#/displaying/fromnow/)
+
+<Table className="f36-margin-bottom--xl" style={{ width: '100%' }}>
+  <TableHead>
+    <TableRow>
+      <TableCell style={{ width: '25%' }}>Format</TableCell>
+      <TableCell style={{ width: '45%' }}>Example</TableCell>
+      <TableCell style={{ width: '30%' }}></TableCell>
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    <TableRow>
+      <TableCell>h:mm a</TableCell>
+      <TableCell style={{ fontWeight: 700 }}>8:08 am</TableCell>
+      <TableCell></TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>D MMM YYYY</TableCell>
+      <TableCell style={{ fontWeight: 700 }}>8 Aug 2019</TableCell>
+      <TableCell></TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>D MMM YYYY at h:mm a</TableCell>
+      <TableCell style={{ fontWeight: 700 }}>8 Aug 2019 at 8:08 am</TableCell>
+      <TableCell></TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>ddd, D MMM YYYY</TableCell>
+      <TableCell style={{ fontWeight: 700 }}>Thu, 8 Aug</TableCell>
+      <TableCell></TableCell>
+    </TableRow>
+  </TableBody>
+</Table>

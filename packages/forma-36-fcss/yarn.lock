@@ -2,11 +2,6 @@
 # yarn lockfile v1
 
 
-"@contentful/forma-36-tokens@^0.3.0":
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/@contentful/forma-36-tokens/-/forma-36-tokens-0.3.0.tgz#164b7c50d94a79e3b880f3b4daffe0ae473e234d"
-  integrity sha512-C5HEHPRaFPha1KDxq9XSyK5FUUTTuq3w9FP9x7mm6lD1CEKj/+xg71wNxcbTZDOmLZFruZs9V69hPfOVbn/0dA==
-
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"

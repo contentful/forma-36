@@ -74,6 +74,10 @@ module.exports = {
                 name: 'Frequently used verbs',
                 link: '/guidelines/copy/frequently-used-verbs/',
               },
+              {
+                name: 'Date and time',
+                link: '/guidelines/copy/date-and-time/',
+              },
             ],
           },
           {
