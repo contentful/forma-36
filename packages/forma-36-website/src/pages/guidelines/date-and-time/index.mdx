@@ -22,7 +22,7 @@ Consider the context when having to choose between absolute and relative date an
     <TableRow>
       <TableCell style={{ width: '25%' }}>Type</TableCell>
       <TableCell style={{ width: '25%' }}>Example</TableCell>
-      <TableCell style={{ width: '50%' }}></TableCell>
+      <TableCell style={{ width: '50%' }}>Notes</TableCell>
     </TableRow>
   </TableHead>
   <TableBody>
@@ -43,8 +43,9 @@ Consider the context when having to choose between absolute and relative date an
       <TableCell>
         When was my collaborator last active?
         <br />
-        An absolute date would be unnecessarily specific, but do your best to
-        provide the absolute format if the user interacts with it.
+        Absolute date and time would be unnecessarily specific. Provide the
+        absolute date and time on user interaction, e.g. when the user hovers
+        over relative time with their cursor.
       </TableCell>
     </TableRow>
   </TableBody>
@@ -57,7 +58,7 @@ Consider the context when having to choose between absolute and relative date an
     <TableRow>
       <TableCell style={{ width: '25%' }}>Type</TableCell>
       <TableCell style={{ width: '25%' }}>Example</TableCell>
-      <TableCell style={{ width: '50%' }}></TableCell>
+      <TableCell style={{ width: '50%' }}>Notes</TableCell>
     </TableRow>
   </TableHead>
   <TableBody>
@@ -125,7 +126,7 @@ To show a date or time range, use an **en dash** (Unicode: U+2013, html: `&ndash
     <TableRow>
       <TableCell style={{ width: '25%' }}>Type</TableCell>
       <TableCell style={{ width: '25%' }}>Examples</TableCell>
-      <TableCell style={{ width: '50%' }}></TableCell>
+      <TableCell style={{ width: '50%' }}>Notes</TableCell>
     </TableRow>
   </TableHead>
   <TableBody>
@@ -143,7 +144,11 @@ To show a date or time range, use an **en dash** (Unicode: U+2013, html: `&ndash
         <br />
         13 Dec 2018 – 8 Aug 2019
       </TableCell>
-      <TableCell>Omit the year if the range is in the same year.</TableCell>
+      <TableCell>
+        Omit the year on the left side of the range if it's in the same year.
+        Omit it completely if the year is clear from the context, e.g. when
+        looking at Usage insights from the current year.
+      </TableCell>
     </TableRow>
   </TableBody>
 </Table>
@@ -155,7 +160,7 @@ To show a date or time range, use an **en dash** (Unicode: U+2013, html: `&ndash
     <TableRow>
       <TableCell style={{ width: '25%' }}>Type</TableCell>
       <TableCell style={{ width: '25%' }}>Example</TableCell>
-      <TableCell style={{ width: '50%' }}></TableCell>
+      <TableCell style={{ width: '50%' }}>Notes</TableCell>
     </TableRow>
   </TableHead>
   <TableBody>
@@ -175,7 +180,7 @@ To show a date or time range, use an **en dash** (Unicode: U+2013, html: `&ndash
       <TableCell style={{ fontWeight: 700 }}>
         10/4/2019
         <br />
-        10.4.2019.
+        10.4.2019
       </TableCell>
       <TableCell>Not clear which number is day which is month.</TableCell>
     </TableRow>
@@ -196,44 +201,6 @@ To show a date or time range, use an **en dash** (Unicode: U+2013, html: `&ndash
       <TableCell>
         Don't add ordinal number suffixes such as -st, -nd, -rd or -th.
       </TableCell>
-    </TableRow>
-  </TableBody>
-</Table>
-
-## Moment.js formats
-
-[https://momentjs.com/docs/#/displaying/format/](https://momentjs.com/docs/#/displaying/format/)
-
-[https://momentjs.com/docs/#/displaying/fromnow/](https://momentjs.com/docs/#/displaying/fromnow/)
-
-<Table className="f36-margin-bottom--xl" style={{ width: '100%' }}>
-  <TableHead>
-    <TableRow>
-      <TableCell style={{ width: '25%' }}>Format</TableCell>
-      <TableCell style={{ width: '45%' }}>Example</TableCell>
-      <TableCell style={{ width: '30%' }}></TableCell>
-    </TableRow>
-  </TableHead>
-  <TableBody>
-    <TableRow>
-      <TableCell>h:mm a</TableCell>
-      <TableCell style={{ fontWeight: 700 }}>8:08 am</TableCell>
-      <TableCell></TableCell>
-    </TableRow>
-    <TableRow>
-      <TableCell>D MMM YYYY</TableCell>
-      <TableCell style={{ fontWeight: 700 }}>8 Aug 2019</TableCell>
-      <TableCell></TableCell>
-    </TableRow>
-    <TableRow>
-      <TableCell>D MMM YYYY at h:mm a</TableCell>
-      <TableCell style={{ fontWeight: 700 }}>8 Aug 2019 at 8:08 am</TableCell>
-      <TableCell></TableCell>
-    </TableRow>
-    <TableRow>
-      <TableCell>ddd, D MMM YYYY</TableCell>
-      <TableCell style={{ fontWeight: 700 }}>Thu, 8 Aug</TableCell>
-      <TableCell></TableCell>
     </TableRow>
   </TableBody>
 </Table>
