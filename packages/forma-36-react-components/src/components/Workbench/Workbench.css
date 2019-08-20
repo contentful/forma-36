@@ -63,6 +63,27 @@
   display: flex;
   align-items: center;
   flex-direction: row;
+  overflow: hidden;
+  flex: 0 1 auto;
+}
+
+.Workbench__header-title__heading {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.Workbench__header-description {
+  margin-left: var(--spacing-m);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  flex: 0 2 auto;
+}
+
+.Workbench__header-description__text {
+  font-family: var(--font-stack-primary);
+  color: var(--content-width-text);
+  white-space: nowrap;
 }
 
 .Workbench__header-actions {
