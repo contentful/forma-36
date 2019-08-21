@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.15.15](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.15.14...@contentful/forma-36-react-components@3.15.15) (2019-08-21)
+
+
+### Bug Fixes
+
+* **Workbench:** Add description to Workbench.Header ([#283](https://github.com/contentful/forma-36/issues/283)) ([b3c77d2](https://github.com/contentful/forma-36/commit/b3c77d2))
+
+
+
+
+
 ## [3.15.14](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.15.13...@contentful/forma-36-react-components@3.15.14) (2019-08-08)
 
 
