@@ -30,6 +30,10 @@
   margin-right: 0;
 }
 
+.Tabs__with-divider {
+  box-shadow: inset 0 -3px 0px 0px var(--color-element-mid);
+}
+
 .Tab__selected {
   font-weight: var(--font-weight-medium);
 }
