@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.15.16](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.15.15...@contentful/forma-36-react-components@3.15.16) (2019-08-21)
+
+
+### Bug Fixes
+
+* **Tabs:** Add withDivider property ([#284](https://github.com/contentful/forma-36/issues/284)) ([da237fb](https://github.com/contentful/forma-36/commit/da237fb))
+
+
+
+
+
 ## [3.15.15](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.15.14...@contentful/forma-36-react-components@3.15.15) (2019-08-21)
 
 
