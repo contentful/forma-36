@@ -7,6 +7,7 @@ export type TabsProps = {
   role?: 'navigation' | 'tablist';
   style?: CSSProperties;
   className?: string;
+  withDivider?: boolean;
   children?: React.ReactNode;
   testId?: string;
 } & typeof defaultProps;
@@ -14,15 +15,27 @@ export type TabsProps = {
 const defaultProps = {
   testId: 'cf-ui-tabs',
   role: 'tablist',
+  withDivider: false,
 };
 
 export class Tabs extends Component<TabsProps> {
   static defaultProps = defaultProps;
 
   render() {
-    const { className, children, testId, role, style } = this.props;
+    const {
+      className,
+      children,
+      testId,
+      role,
+      withDivider,
+      style,
+    } = this.props;
 
-    const classNames = cn(styles.Tabs, className);
+    const classNames = cn(
+      styles.Tabs,
+      { [styles['Tabs__with-divider']]: withDivider },
+      className,
+    );
 
     const elementProps = {
       'data-test-id': testId,

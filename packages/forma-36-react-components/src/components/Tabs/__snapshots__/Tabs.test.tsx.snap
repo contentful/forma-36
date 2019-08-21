@@ -5,6 +5,7 @@ Array [
   <Tabs
     role="tablist"
     testId="cf-ui-tabs"
+    withDivider={false}
   >
     <div
       className="Tabs"
@@ -117,6 +118,7 @@ exports[`renders the component with role=navigation and an additional class name
   className="my-extra-class"
   role="navigation"
   testId="cf-ui-tabs"
+  withDivider={false}
 >
   <nav
     className="Tabs my-extra-class"
