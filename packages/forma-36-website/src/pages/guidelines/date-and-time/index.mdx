@@ -13,9 +13,9 @@ import {
 
 # Date and time
 
-## Absolute vs relative
+## Absolute vs. relative
 
-Consider the context when having to choose between absolute and relative date and time.
+Consider the context when choosing between absolute and relative data and time.
 
 <Table className="f36-margin-bottom--xl" style={{ width: '100%' }}>
   <TableHead>
@@ -32,7 +32,7 @@ Consider the context when having to choose between absolute and relative date an
       <TableCell>
         When is an entry scheduled to be published?
         <br />
-        Relative time wouldn't be specific enough.
+        The use of relative time is not appropriate because it is not specific.
       </TableCell>
     </TableRow>
     <TableRow>
@@ -43,7 +43,7 @@ Consider the context when having to choose between absolute and relative date an
       <TableCell>
         When was my collaborator last active?
         <br />
-        Absolute date and time would be unnecessarily specific. Provide the
+        The use of absolute date and time is unnecessarily specific. Provide the
         absolute date and time on user interaction, e.g. when the user hovers
         over relative time with their cursor.
       </TableCell>
@@ -80,8 +80,8 @@ Consider the context when having to choose between absolute and relative date an
       <TableCell>Absolute time</TableCell>
       <TableCell style={{ fontWeight: 700 }}>8:00 am</TableCell>
       <TableCell>
-        Time should be displayed in 12-hour format, with lowercase am or pm and
-        without periods, to increase scannability.
+        Time should be displayed in a 12-hour format. Use lowercase am or pm
+        without periods.
       </TableCell>
     </TableRow>
     <TableRow>
@@ -109,9 +109,8 @@ Consider the context when having to choose between absolute and relative date an
         Wed, 14 Aug at 11:00 pm
       </TableCell>
       <TableCell>
-        Weekdays should be used when users need to compare events that happen in
-        a daily context, always next to absolute date and time and separated
-        with a comma.
+        Weekdays should be used when it's helpful for users to see weekdays.
+        Display them next to absolute date and time, separated with a comma.
       </TableCell>
     </TableRow>
   </TableBody>
@@ -145,9 +144,8 @@ To show a date or time range, use an **en dash** (Unicode: U+2013, html: `&ndash
         13 Dec 2018 – 8 Aug 2019
       </TableCell>
       <TableCell>
-        Omit the year on the left side of the range if it's in the same year.
-        Omit it completely if the year is clear from the context, e.g. when
-        looking at Usage insights from the current year.
+        Omit the year on the left side if the range is in the same year. Omit it
+        completely if the year can be understood from the context.
       </TableCell>
     </TableRow>
   </TableBody>
@@ -182,7 +180,9 @@ To show a date or time range, use an **en dash** (Unicode: U+2013, html: `&ndash
         <br />
         10.4.2019
       </TableCell>
-      <TableCell>Not clear which number is day which is month.</TableCell>
+      <TableCell>
+        It's not clear which number is the day, and which is the month.
+      </TableCell>
     </TableRow>
     <TableRow>
       <TableCell>Absolute time or date</TableCell>
