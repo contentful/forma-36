@@ -32,6 +32,7 @@ storiesOf('Components|TextInput', module)
       onChange={action('onChange')}
       onBlur={action('onBlur')}
       onCopy={action('onCopy')}
+      onKeyPress={action('onKeyPress')}
       name="emailInput"
       id="emailInput"
     />
@@ -62,6 +63,7 @@ storiesOf('Components|TextInput', module)
           onChange={action('onChange')}
           onBlur={action('onBlur')}
           onCopy={action('onCopy')}
+          onKeyPress={action('onKeyPress')}
           name="emailInput"
           id="emailInput"
           inputRef={textInputRef}
