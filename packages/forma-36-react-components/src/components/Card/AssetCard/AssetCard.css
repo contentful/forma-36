@@ -16,14 +16,14 @@
 
 .AssetCard--size-small {
   height: calc(
-    1rem * (196 / var(--font-base-default))
-  ); /* 196 is equal to our 150px small variant plus the height of the card header */
-  min-width: calc(1rem * (150 / var(--font-base-default)));
+    1rem * (188 / var(--font-base-default))
+  ); /* 188 is equal to our 142px small variant plus the height of the card header */
+  min-width: calc(1rem * (142 / var(--font-base-default)));
 }
 
 .AssetCard--size-small .AssetCard__asset {
-  height: calc(1rem * (150 / var(--font-base-default)));
-  width: calc(1rem * (150 / var(--font-base-default)));
+  height: calc(1rem * (142 / var(--font-base-default)));
+  width: calc(1rem * (142 / var(--font-base-default)));
 }
 
 .AssetCard--drag-active {
