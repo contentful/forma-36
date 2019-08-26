@@ -13,8 +13,8 @@ This is the monorepo for the Forma 36 design system by [Contentful](https://www.
   - [Forma 36 Tokens](./packages/forma-36-tokens/README.md)
   - [Forma 36 Website (WIP)](./packages/forma-36-website/README.md)
 - [Adding packages](#adding-packages)
-- [Font Usage](#font-usage)
-- [Commiting changes & releasing a new version](#commiting-changes-&-releasing-a-new-forma-36-version)
+- [Commits & releases](#commits--releases)
+- [Testing changes locally](#testing-changes-locally)
 - [Get Involved](#get-involved)
 - [Reach out to us](#reach-out-to-us)
 - [License](#license)
@@ -41,7 +41,7 @@ The monorepo is currently structured into the following packages:
 
 To add another package create a new directory in the packages folder. Make sure that the package name is prefixed with forma-36 (e.g. forma-36-css-utilities). Since we are using Lerna all package scripts are available from the root by running lerna run {script_name}
 
-## Commits & Releases
+## Commits & releases
 
 Use `yarn commit`. This uses the [Commitzen](https://github.com/commitizen/cz-cli) CLI to create a conventional commit message based on your changes. CI is setup to release all new commits on the master branch.
 
