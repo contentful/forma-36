@@ -192,3 +192,27 @@ exports[`renders with an icon 1`] = `
   </TabFocusTrap>
 </button>
 `;
+
+exports[`renders with an icon aligned right to the text 1`] = `
+<button
+  className="TextLink TextLink--primary"
+  data-test-id="cf-ui-text-link"
+  disabled={false}
+  type="button"
+>
+  <TabFocusTrap>
+    <div
+      className="TextLink__icon-wrapper--right"
+    >
+      <Icon
+        className="TextLink__icon"
+        color="primary"
+        icon="ArrowDown"
+        size="small"
+        testId="cf-ui-icon"
+      />
+    </div>
+    Text Link
+  </TabFocusTrap>
+</button>
+`;

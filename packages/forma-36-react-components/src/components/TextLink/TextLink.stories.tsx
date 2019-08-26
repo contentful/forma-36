@@ -30,6 +30,14 @@ storiesOf('Components|TextLink', module)
         )}
         disabled={boolean('disabled', false)}
         className={text('className', '')}
+        iconPosition={select(
+          'iconPosition',
+          {
+            'left (default)': 'left',
+            right: 'right',
+          },
+          'left',
+        )}
         icon={select('icon', ['', ...Object.keys(iconName)], undefined)}
       >
         {text('children', 'Text Link Label')}
