@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.15.17](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.15.16...@contentful/forma-36-react-components@3.15.17) (2019-08-26)
+
+
+### Bug Fixes
+
+* **AssetCard:** Adjust width to fit 4 into workbench.content ([#286](https://github.com/contentful/forma-36/issues/286)) ([c52e0c0](https://github.com/contentful/forma-36/commit/c52e0c0))
+
+
+
+
+
 ## [3.15.16](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.15.15...@contentful/forma-36-react-components@3.15.16) (2019-08-21)
 
 
