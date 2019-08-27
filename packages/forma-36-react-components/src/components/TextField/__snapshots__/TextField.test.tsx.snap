@@ -150,6 +150,7 @@ exports[`renders the component with a textlink 1`] = `
       className="TextField__label-link"
       disabled={false}
       icon="Lock"
+      iconPosition="left"
       linkType="primary"
       onClick={[Function]}
       testId="cf-ui-text-link"

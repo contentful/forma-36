@@ -111,3 +111,13 @@ it('renders with an icon', () => {
 
   expect(output).toMatchSnapshot();
 });
+
+it('renders with an icon aligned right to the text', () => {
+  const output = shallow(
+    <TextLink iconPosition="right" icon={iconName[Object.keys(iconName)[0]]}>
+      Text Link
+    </TextLink>,
+  );
+
+  expect(output).toMatchSnapshot();
+});

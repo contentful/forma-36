@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.16.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.15.18...@contentful/forma-36-react-components@3.16.0) (2019-08-27)
+
+
+### Features
+
+* **TextLink:** Add proprety to align the Icon left or right ([#290](https://github.com/contentful/forma-36/issues/290)) ([6d8f589](https://github.com/contentful/forma-36/commit/6d8f589))
+
+
+
+
+
 ## [3.15.18](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.15.17...@contentful/forma-36-react-components@3.15.18) (2019-08-26)
 
 
