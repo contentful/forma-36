@@ -77,6 +77,10 @@ module.exports = {
             ],
           },
           {
+            name: 'Date and time',
+            link: '/guidelines/date-and-time/',
+          },
+          {
             name: 'Layout',
             link: '/guidelines/layout/',
             menuLinks: [
