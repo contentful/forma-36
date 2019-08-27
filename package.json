@@ -3,11 +3,11 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
-    "@commitlint/cli": "8.0.0",
-    "@commitlint/config-conventional": "8.0.0",
-    "commitizen": "^3.1.1",
-    "husky": "^3.0.0",
-    "lerna": "^3.15.0",
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "commitizen": "^4.0.3",
+    "husky": "^3.0.4",
+    "lerna": "^3.16.4",
     "prettier": "^1.18.2",
     "pretty-quick": "^1.11.1"
   },
@@ -26,9 +26,6 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
-  },
-  "resolutions": {
-    "tar": "4.4.8"
   },
   "husky": {
     "hooks": {

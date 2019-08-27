@@ -13,6 +13,7 @@ This is the monorepo for the Forma 36 design system by [Contentful](https://www.
   - [Forma 36 Tokens](./packages/forma-36-tokens/README.md)
   - [Forma 36 Website (WIP)](./packages/forma-36-website/README.md)
 - [Adding packages](#adding-packages)
+- [Development](#development)
 - [Commits & releases](#commits--releases)
 - [Testing changes locally](#testing-changes-locally)
 - [Get Involved](#get-involved)
@@ -40,6 +41,10 @@ The monorepo is currently structured into the following packages:
 ### Adding packages
 
 To add another package create a new directory in the packages folder. Make sure that the package name is prefixed with forma-36 (e.g. forma-36-css-utilities). Since we are using Lerna all package scripts are available from the root by running lerna run {script_name}
+
+## Development
+
+For local development run `yarn` from the root of this repo to install all dependencies and build all packages.
 
 ## Commits & releases
 

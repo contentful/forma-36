@@ -59,15 +59,7 @@ nvm use
 
 ### Install dependencies
 
-```bash
-yarn
-```
-
-or
-
-```bash
-npm i
-```
+For local development run `yarn` from the root of this repo to install all dependencies and build all packages.
 
 ### Run Storybook
 
