@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.28](https://github.com/contentful/forma-36/compare/@contentful/forma-36-fcss@0.0.27...@contentful/forma-36-fcss@0.0.28) (2019-08-27)
+
+**Note:** Version bump only for package @contentful/forma-36-fcss
+
+
+
+
+
 ## [0.0.27](https://github.com/contentful/forma-36/compare/@contentful/forma-36-fcss@0.0.26...@contentful/forma-36-fcss@0.0.27) (2019-08-08)
 
 **Note:** Version bump only for package @contentful/forma-36-fcss
