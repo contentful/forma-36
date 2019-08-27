@@ -12,6 +12,8 @@ export type TextLinkType =
   | 'secondary'
   | 'muted';
 
+type IconPositionType = 'right' | 'left';
+
 export type TextLinkProps = {
   children?: React.ReactNode;
   linkType?: TextLinkType;
@@ -22,12 +24,14 @@ export type TextLinkProps = {
   className?: string;
   icon?: IconType;
   text?: string;
+  iconPosition?: IconPositionType;
 } & typeof defaultProps;
 
 const defaultProps = {
   linkType: 'primary',
   testId: 'cf-ui-text-link',
   disabled: false,
+  iconPosition: 'left',
 };
 
 export class TextLink extends Component<TextLinkProps> {
@@ -37,7 +41,13 @@ export class TextLink extends Component<TextLinkProps> {
     if (!icon) return undefined;
 
     return (
-      <div className={styles['TextLink__icon-wrapper']}>
+      <div
+        className={
+          this.props.iconPosition === 'right'
+            ? styles['TextLink__icon-wrapper--right']
+            : styles['TextLink__icon-wrapper']
+        }
+      >
         <Icon icon={icon} color={linkType} className={styles.TextLink__icon} />
       </div>
     );
@@ -54,6 +64,7 @@ export class TextLink extends Component<TextLinkProps> {
       className,
       icon,
       text,
+      iconPosition,
       ...otherProps
     } = this.props;
 

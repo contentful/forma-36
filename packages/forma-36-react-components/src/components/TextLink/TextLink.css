@@ -128,3 +128,8 @@
 .TextLink__icon-wrapper {
   margin-right: 4px;
 }
+
+.TextLink__icon-wrapper--right {
+  margin-left: 4px;
+  order: 2;
+}
