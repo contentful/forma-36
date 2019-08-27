@@ -46,6 +46,8 @@ import tokens from '@contentful/forma-36-tokens/dist/json/transitions/transition
 
 ## Development
 
+For local development run `yarn` from the root of this repo to install all dependencies and build all packages.
+
 All tokens are kept in the `src/tokens` directory and organised as so:
 
 ```
