@@ -75,8 +75,9 @@ export class TextLink extends Component<TextLinkProps> {
 
     const content = (
       <TabFocusTrap>
-        {icon && this.renderIcon(icon, linkType)}
+        {icon && iconPosition === 'left' && this.renderIcon(icon, linkType)}
         {text || children}
+        {icon && iconPosition === 'right' && this.renderIcon(icon, linkType)}
       </TabFocusTrap>
     );
 
