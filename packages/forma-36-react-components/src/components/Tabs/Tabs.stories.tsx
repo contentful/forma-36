@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { text } from '@storybook/addon-knobs';
+import { text, boolean } from '@storybook/addon-knobs';
 
 import Tabs from './Tabs';
 import Tab from './Tab';
@@ -12,7 +12,10 @@ function DefaultStory() {
 
   return (
     <div>
-      <Tabs className={text('className', '')}>
+      <Tabs
+        className={text('className', '')}
+        withDivider={boolean('withDivider', false)}
+      >
         <Tab
           id="first"
           selected={selected === 'first'}
@@ -60,7 +63,11 @@ function DefaultStory() {
 function AsNavigationStory() {
   const [selected, setSelected] = useState('first');
   return (
-    <Tabs role="navigation" className={text('className', '')}>
+    <Tabs
+      role="navigation"
+      className={text('className', '')}
+      withDivider={boolean('withDivider', false)}
+    >
       <Tab
         id="first"
         href="https://contentful.com"

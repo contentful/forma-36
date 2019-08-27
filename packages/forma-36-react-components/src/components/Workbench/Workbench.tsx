@@ -7,6 +7,7 @@ const styles = require('./Workbench.css');
 
 interface WorkbenchHeaderProps {
   title?: React.ReactElement | string;
+  description?: React.ReactElement | string;
   icon?: React.ReactElement;
   actions?: React.ReactElement;
   onBack?: Function;
@@ -48,9 +49,25 @@ export function WorkbenchHeader(props: WorkbenchHeaderProps) {
           className={styles['Workbench__header-title']}
         >
           {typeof props.title === 'string' ? (
-            <Heading>{props.title}</Heading>
+            <Heading className={styles['Workbench__header-title__heading']}>
+              {props.title}
+            </Heading>
           ) : (
             props.title
+          )}
+        </div>
+      )}
+      {props.description && (
+        <div
+          data-test-id="workbench-description"
+          className={styles['Workbench__header-description']}
+        >
+          {typeof props.description === 'string' ? (
+            <span className={styles['Workbench__header-description__text']}>
+              {props.description}
+            </span>
+          ) : (
+            props.description
           )}
         </div>
       )}

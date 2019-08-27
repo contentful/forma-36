@@ -3,6 +3,80 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.16.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.16.1...@contentful/forma-36-react-components@3.16.2) (2019-08-27)
+
+
+### Bug Fixes
+
+* **TextLink:** Allow wrapping of right aligned Icon ([#292](https://github.com/contentful/forma-36/issues/292)) ([2203724](https://github.com/contentful/forma-36/commit/2203724))
+
+
+
+
+
+## [3.16.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.16.0...@contentful/forma-36-react-components@3.16.1) (2019-08-27)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+# [3.16.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.15.18...@contentful/forma-36-react-components@3.16.0) (2019-08-27)
+
+
+### Features
+
+* **TextLink:** Add proprety to align the Icon left or right ([#290](https://github.com/contentful/forma-36/issues/290)) ([6d8f589](https://github.com/contentful/forma-36/commit/6d8f589))
+
+
+
+
+
+## [3.15.18](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.15.17...@contentful/forma-36-react-components@3.15.18) (2019-08-26)
+
+
+### Bug Fixes
+
+* **TextInput:** Ajusted text input to have the event on key press ([#288](https://github.com/contentful/forma-36/issues/288)) ([e7ad24f](https://github.com/contentful/forma-36/commit/e7ad24f))
+
+
+
+
+
+## [3.15.17](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.15.16...@contentful/forma-36-react-components@3.15.17) (2019-08-26)
+
+
+### Bug Fixes
+
+* **AssetCard:** Adjust width to fit 4 into workbench.content ([#286](https://github.com/contentful/forma-36/issues/286)) ([c52e0c0](https://github.com/contentful/forma-36/commit/c52e0c0))
+
+
+
+
+
+## [3.15.16](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.15.15...@contentful/forma-36-react-components@3.15.16) (2019-08-21)
+
+
+### Bug Fixes
+
+* **Tabs:** Add withDivider property ([#284](https://github.com/contentful/forma-36/issues/284)) ([da237fb](https://github.com/contentful/forma-36/commit/da237fb))
+
+
+
+
+
+## [3.15.15](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.15.14...@contentful/forma-36-react-components@3.15.15) (2019-08-21)
+
+
+### Bug Fixes
+
+* **Workbench:** Add description to Workbench.Header ([#283](https://github.com/contentful/forma-36/issues/283)) ([b3c77d2](https://github.com/contentful/forma-36/commit/b3c77d2))
+
+
+
+
+
 ## [3.15.14](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.15.13...@contentful/forma-36-react-components@3.15.14) (2019-08-08)
 
 

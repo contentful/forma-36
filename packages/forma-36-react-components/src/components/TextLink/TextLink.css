@@ -9,7 +9,7 @@
 
 .TextLink,
 .TextLink:link {
-  display: inline-flex;
+  display: inline;
   align-items: center;
   box-sizing: border-box;
   border: 0;
@@ -126,5 +126,11 @@
 }
 
 .TextLink__icon-wrapper {
+  display: inline;
   margin-right: 4px;
+}
+
+.TextLink__icon-wrapper--right {
+  display: inline;
+  margin-left: 4px;
 }

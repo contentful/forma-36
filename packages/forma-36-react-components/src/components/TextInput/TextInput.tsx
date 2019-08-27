@@ -4,6 +4,7 @@ import React, {
   FocusEvent,
   ChangeEventHandler,
   FocusEventHandler,
+  KeyboardEvent,
 } from 'react';
 import cn from 'classnames';
 import CopyButton from '../CopyButton';
@@ -36,6 +37,7 @@ export type TextInputProps = {
   inputRef?: RefObject<HTMLInputElement>;
   error?: boolean;
   required?: boolean;
+  onKeyPress?: (e: KeyboardEvent) => void;
 } & typeof defaultProps;
 
 export interface TextInputState {
@@ -92,6 +94,7 @@ export class TextInput extends Component<TextInputProps, TextInputState> {
       name,
       id,
       inputRef,
+      onKeyPress,
       ...otherProps
     } = this.props;
 
@@ -126,6 +129,7 @@ export class TextInput extends Component<TextInputProps, TextInputState> {
           value={this.state.value}
           type={type}
           ref={inputRef}
+          onKeyPress={onKeyPress}
           {...otherProps}
         />
         {withCopyButton && (

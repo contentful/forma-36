@@ -15,6 +15,7 @@ storiesOf('(alpha)|Workbench', module)
     <Workbench className={text('className', '')} testId={text('testId')}>
       <Workbench.Header
         title={'Page title'}
+        description="Lorem Ipsum dolor sit amet."
         icon={<Icon icon="ArrowDown" />}
         actions={<Button buttonType="muted">Click</Button>}
       />
