@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.30](https://github.com/contentful/forma-36/compare/@contentful/forma-36-fcss@0.0.29...@contentful/forma-36-fcss@0.0.30) (2019-08-29)
+
+
+### Bug Fixes
+
+* **Dependencies:** Upgrade globby and gatsby ([35a774f](https://github.com/contentful/forma-36/commit/35a774f))
+
+
+
+
+
 ## [0.0.29](https://github.com/contentful/forma-36/compare/@contentful/forma-36-fcss@0.0.28...@contentful/forma-36-fcss@0.0.29) (2019-08-29)
 
 **Note:** Version bump only for package @contentful/forma-36-fcss

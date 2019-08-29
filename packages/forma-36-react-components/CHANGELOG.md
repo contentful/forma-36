@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.16.6](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.16.5...@contentful/forma-36-react-components@3.16.6) (2019-08-29)
+
+
+### Bug Fixes
+
+* **Dependencies:** Upgrade globby and gatsby ([35a774f](https://github.com/contentful/forma-36/commit/35a774f))
+
+
+
+
+
 ## [3.16.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.16.4...@contentful/forma-36-react-components@3.16.5) (2019-08-29)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.60](https://github.com/contentful/forma-36/compare/forma-36-website@0.2.59...forma-36-website@0.2.60) (2019-08-29)
+
+
+### Bug Fixes
+
+* **Dependencies:** Upgrade globby and gatsby ([35a774f](https://github.com/contentful/forma-36/commit/35a774f))
+
+
+
+
+
 ## [0.2.59](https://github.com/contentful/forma-36/compare/forma-36-website@0.2.58...forma-36-website@0.2.59) (2019-08-29)
 
 **Note:** Version bump only for package forma-36-website
