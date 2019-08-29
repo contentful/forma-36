@@ -11,7 +11,7 @@
   ],
   "devDependencies": {
     "fs-extra": "^7.0.1",
-    "globby": "^9.0.0",
+    "globby": "^10.0.1",
     "lodash": "4.17.14"
   },
   "scripts": {
