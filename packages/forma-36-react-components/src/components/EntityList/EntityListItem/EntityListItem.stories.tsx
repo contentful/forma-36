@@ -20,6 +20,7 @@ storiesOf('Components|EntityList/EntityListItem', module)
       contentType={text('contentType', 'My content type')}
       thumbnailUrl={text('thumbnailUrl', 'https://placekitten.com/400/400')}
       thumbnailAltText={text('thumbnailAltText', 'My thumbnail text')}
+      isActionsDisabled={boolean('isActionsDisabled', false)}
       entityType={select(
         'entityType',
         {
@@ -68,6 +69,7 @@ storiesOf('Components|EntityList/EntityListItem', module)
       contentType={text('contentType', 'My content type')}
       thumbnailUrl={text('thumbnailUrl', 'https://placekitten.com/400/400')}
       thumbnailAltText={text('thumbnailAltText', 'My thumbnail text')}
+      isActionsDisabled={boolean('isActionsDisabled', false)}
       entityType={select(
         'entityType',
         {

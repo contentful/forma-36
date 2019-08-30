@@ -89,11 +89,16 @@ export type EntityListItemProps = {
    * An ID used for testing purposes applied as a data attribute (data-test-id)
    */
   testId?: string;
+  /**
+   * A boolean used to disable the CardActions
+   */
+  isActionsDisabled?: boolean;
 } & typeof defaultProps;
 
 const defaultProps = {
   testId: 'cf-ui-entity-list-item',
   entityType: 'entry',
+  isActionsDisabled: false,
 };
 
 export class EntityListItem extends Component<EntityListItemProps> {
@@ -196,6 +201,7 @@ export class EntityListItem extends Component<EntityListItemProps> {
       href,
       cardDragHandleProps,
       cardDragHandleComponent,
+      isActionsDisabled,
       ...otherProps
     } = this.props;
 
@@ -247,6 +253,7 @@ export class EntityListItem extends Component<EntityListItemProps> {
                 {dropdownListElements && (
                   <CardActions
                     className={styles['EntityListItem__actions']}
+                    isDisabled={isActionsDisabled}
                     iconButtonProps={{
                       onClick: e => e.stopPropagation,
                     }}

@@ -13,9 +13,12 @@ export type CardActionsPropTypes = {
    */
   iconButtonProps?: Partial<IconButtonProps>;
   /**
-   * The DropdownList elements used to render an actions dropdown for the component
+   * A boolean used to disable the actions
    */
   isDisabled?: boolean;
+  /**
+   * The DropdownList elements used to render an actions dropdown for the component
+   */
   children:
     | React.ReactElement<DropdownList>
     | React.ReactElement<DropdownList>[];
