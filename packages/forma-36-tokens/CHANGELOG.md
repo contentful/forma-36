@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.4.4...@contentful/forma-36-tokens@0.4.5) (2019-08-30)
+
+
+### Bug Fixes
+
+* **forma-36-tokens:** generate types without quotas ([#300](https://github.com/contentful/forma-36/issues/300)) ([23f4f45](https://github.com/contentful/forma-36/commit/23f4f45))
+
+
+
+
+
 ## [0.4.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.4.3...@contentful/forma-36-tokens@0.4.4) (2019-08-29)
 
 
