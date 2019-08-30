@@ -48,8 +48,8 @@ const buildIndexJS = (srcPath, tokens) => {
     `
     Object.defineProperty(exports, "__esModule", {
       value: true
-    }); 
-    
+    });
+
     module.exports = ${JSON.stringify(tokens, null, 2)}
     `,
   );
@@ -69,7 +69,7 @@ function createInterfaceDefinition(tokens) {
     /**
      * ${def.value}
      */
-    "${tokenName}": "${def.type}"`,
+    "${tokenName}": ${def.type}`,
   ).join(',');
 
   return `interface F36Tokens {
