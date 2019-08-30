@@ -15,6 +15,7 @@ export type CardActionsPropTypes = {
   /**
    * The DropdownList elements used to render an actions dropdown for the component
    */
+  isDisabled?: boolean;
   children:
     | React.ReactElement<DropdownList>
     | React.ReactElement<DropdownList>[];
@@ -26,6 +27,7 @@ export interface CardActionsState {
 
 const defaultProps = {
   testId: 'cf-ui-card-actions',
+  isDisabled: false,
 };
 
 export class CardActions extends Component<
@@ -52,6 +54,7 @@ export class CardActions extends Component<
       children,
       testId,
       iconButtonProps,
+      isDisabled,
       ...otherProps
     } = this.props;
 
@@ -69,6 +72,7 @@ export class CardActions extends Component<
           <IconButton
             iconProps={{ icon: 'MoreHorizontal' }}
             buttonType="secondary"
+            disabled={isDisabled}
             label="Actions"
             {...iconButtonProps}
             onClick={event => {

@@ -19,6 +19,18 @@ it('renders the component using a single dropdown list', () => {
   expect(output).toMatchSnapshot();
 });
 
+it('renders the component as disabled', () => {
+  const output = shallow(
+    <CardActions isDisabled>
+      <DropdownList>
+        <DropdownListItem onClick={() => {}}>Edit</DropdownListItem>
+      </DropdownList>
+    </CardActions>,
+  );
+
+  expect(output).toMatchSnapshot();
+});
+
 it('renders the component using a multiple dropdown lists', () => {
   const output = shallow(
     <CardActions>

@@ -80,6 +80,7 @@ exports[`renders the component with a dropdown 1`] = `
         "onClick": [Function],
       }
     }
+    isDisabled={false}
     testId="cf-ui-card-actions"
   >
     <DropdownList

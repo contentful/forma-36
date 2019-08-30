@@ -1,5 +1,46 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`renders the component as disabled 1`] = `
+<Dropdown
+  getContainerRef={[Function]}
+  isOpen={false}
+  onClose={[Function]}
+  position="bottom-right"
+  testId="cf-ui-dropdown"
+  toggleElement={
+    <IconButton
+      buttonType="secondary"
+      disabled={true}
+      iconProps={
+        Object {
+          "icon": "MoreHorizontal",
+        }
+      }
+      label="Actions"
+      onClick={[Function]}
+      testId="cf-ui-icon-button"
+      withDropdown={false}
+    />
+  }
+>
+  <DropdownList
+    key=".0/.$.0/.$.0"
+    onClick={[Function]}
+    testId="cf-ui-dropdown-list"
+  >
+    <DropdownListItem
+      isActive={false}
+      isDisabled={false}
+      isTitle={false}
+      onClick={[Function]}
+      testId="cf-ui-dropdown-list-item"
+    >
+      Edit
+    </DropdownListItem>
+  </DropdownList>
+</Dropdown>
+`;
+
 exports[`renders the component using a multiple dropdown lists 1`] = `
 <Dropdown
   getContainerRef={[Function]}
