@@ -51,6 +51,11 @@
   color: var(--color-red-base);
 }
 
+.TextLink--warning,
+.TextLink--warning:link {
+  color: var(--color-warning);
+}
+
 .TextLink--secondary,
 .TextLink--secondary:link {
   color: var(--color-text-mid);
@@ -91,6 +96,14 @@
     }
 
     color: var(--color-red-base);
+  }
+
+  &.TextLink--warning:hover {
+    & .TextLink__icon {
+      fill: var(--color-warning);
+    }
+
+    color: var(--color-warning);
   }
 
   &.TextLink--secondary:hover {

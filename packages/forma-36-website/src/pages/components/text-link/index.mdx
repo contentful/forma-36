@@ -28,6 +28,7 @@ The TextLink component can be configured in a number of different ways. Here is 
 <React.Fragment>
   <TextLink linkType="primary">Primary</TextLink>
   <TextLink linkType="positive">Positive</TextLink>
+  <TextLink linkType="warning">Warning</TextLink>
   <TextLink linkType="negative">Negative</TextLink>
   <TextLink linkType="muted">Muted</TextLink>
   <TextLink linkType="secondary">Secondary</TextLink>
@@ -38,7 +39,8 @@ The TextLink component can be configured in a number of different ways. Here is 
 | :------------ | :--------------------------------------------------------------- |
 | **Primary**   | The default styling for TextLinks.                               |
 | **Positive**  | For actions with positive results, such as creating a new entity |
-| **Negative**  | For actions has a negative results, such as deleting an entity   |
+| **Warning**   | For actions that users should take some caution over making      |
+| **Negative**  | For actions with negative results, such as deleting an entity    |
 | **Secondary** | Used for actions with less emphasis                              |
 | **Muted**     | Used for actions with least amount of emphasis                   |
 
@@ -51,6 +53,9 @@ The TextLink component can be configured in a number of different ways. Here is 
   </TextLink>
   <TextLink linkType="positive" icon="ExternalLink">
     Positive
+  </TextLink>
+  <TextLink linkType="warning" icon="ExternalLink">
+    Warning
   </TextLink>
   <TextLink linkType="negative" icon="ExternalLink">
     Negative

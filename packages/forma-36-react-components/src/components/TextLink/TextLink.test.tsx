@@ -28,6 +28,12 @@ it('renders as a "positive" link type', () => {
   expect(output).toMatchSnapshot();
 });
 
+it('renders as a "warning" link type', () => {
+  const output = shallow(<TextLink linkType="warning">Text Link</TextLink>);
+
+  expect(output).toMatchSnapshot();
+});
+
 it('renders as a "negative" link type', () => {
   const output = shallow(<TextLink linkType="negative">Text Link</TextLink>);
 

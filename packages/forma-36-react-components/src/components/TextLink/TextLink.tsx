@@ -9,6 +9,7 @@ export type TextLinkType =
   | 'primary'
   | 'positive'
   | 'negative'
+  | 'warning'
   | 'secondary'
   | 'muted';
 
