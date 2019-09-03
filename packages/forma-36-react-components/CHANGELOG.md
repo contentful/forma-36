@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.17.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.16.7...@contentful/forma-36-react-components@3.17.0) (2019-09-03)
+
+
+### Features
+
+* **CardActions:** Add isDisabled property ([#301](https://github.com/contentful/forma-36/issues/301)) ([b8c12a3](https://github.com/contentful/forma-36/commit/b8c12a3))
+
+
+
+
+
 ## [3.16.7](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.16.6...@contentful/forma-36-react-components@3.16.7) (2019-08-30)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
