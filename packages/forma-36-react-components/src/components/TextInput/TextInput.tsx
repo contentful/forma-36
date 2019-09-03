@@ -60,7 +60,7 @@ export class TextInput extends Component<TextInputProps, TextInputState> {
     value: this.props.value,
   };
 
-  componentWillReceiveProps(nextProps: TextInputProps) {
+  UNSAFE_componentWillReceiveProps(nextProps: TextInputProps) {
     if (this.props.value !== nextProps.value) {
       this.setState({
         value: nextProps.value,
