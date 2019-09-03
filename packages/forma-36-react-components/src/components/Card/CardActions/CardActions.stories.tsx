@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text } from '@storybook/addon-knobs';
+import { text, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import CardActions from './CardActions';
@@ -12,7 +12,10 @@ storiesOf('Components|Card/CardActions', module)
     propTypes: CardActions['__docgenInfo'],
   })
   .add('default', () => (
-    <CardActions className={text('className', '')}>
+    <CardActions
+      className={text('className', '')}
+      isDisabled={boolean('isDisabled', false)}
+    >
       <DropdownList>
         <DropdownListItem onClick={action('Edit onClick')}>
           Edit
@@ -27,7 +30,10 @@ storiesOf('Components|Card/CardActions', module)
     </CardActions>
   ))
   .add('with multiple lists', () => (
-    <CardActions className={text('className', '')}>
+    <CardActions
+      className={text('className', '')}
+      isDisabled={boolean('isDisabled', false)}
+    >
       <DropdownList>
         <DropdownListItem onClick={action('Edit onClick')}>
           Edit

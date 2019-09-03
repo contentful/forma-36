@@ -647,6 +647,60 @@ exports[`renders the component with custom drag handle 1`] = `
 </li>
 `;
 
+exports[`renders the component with disabled actions 1`] = `
+<li
+  className="EntityListItem my-extra-class"
+  data-test-id="cf-ui-entity-list-item"
+>
+  <article
+    className="EntityListItem__inner"
+  >
+    <TabFocusTrap
+      className="EntityListItem__focus-trap"
+    >
+      <figure
+        className="EntityListItem__media"
+      >
+        <Icon
+          color="muted"
+          icon="Entry"
+          size="small"
+          testId="cf-ui-icon"
+        />
+      </figure>
+      <div
+        className="EntityListItem__content"
+      >
+        <div
+          className="EntityListItem__heading"
+        >
+          <h1
+            className="EntityListItem__title"
+          >
+            Title
+          </h1>
+          <div
+            className="EntityListItem__content-type"
+          >
+            (
+            Content type
+            )
+          </div>
+        </div>
+        <p
+          className="EntityListItem__description"
+        >
+          Description
+        </p>
+      </div>
+      <div
+        className="EntityListItem__meta"
+      />
+    </TabFocusTrap>
+  </article>
+</li>
+`;
+
 exports[`renders the component with dropdownListElements 1`] = `
 <li
   className="EntityListItem"
@@ -713,6 +767,7 @@ exports[`renders the component with dropdownListElements 1`] = `
               "onClick": [Function],
             }
           }
+          isDisabled={false}
           testId="cf-ui-card-actions"
         >
           <DropdownList

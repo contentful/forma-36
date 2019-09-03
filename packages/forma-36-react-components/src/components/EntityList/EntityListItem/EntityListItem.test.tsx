@@ -161,6 +161,20 @@ it('renders the component with an additional class name', () => {
   expect(output).toMatchSnapshot();
 });
 
+it('renders the component with disabled actions', () => {
+  const output = shallow(
+    <EntityListItem
+      title="Title"
+      description="Description"
+      contentType="Content type"
+      className="my-extra-class"
+      isActionsDisabled
+    />,
+  );
+
+  expect(output).toMatchSnapshot();
+});
+
 it('has no a11y issues', async () => {
   const output = mount(
     <ul>
