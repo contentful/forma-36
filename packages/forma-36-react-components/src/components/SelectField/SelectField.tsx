@@ -44,7 +44,7 @@ export class SelectField extends Component<SelectFieldProps, SelectFieldState> {
 
   state = { value: this.props.value };
 
-  componentWillReceiveProps(nextProps: SelectFieldProps) {
+  UNSAFE_componentWillReceiveProps(nextProps: SelectFieldProps) {
     if (this.props.value !== nextProps.value) {
       this.setState({
         value: nextProps.value,

@@ -38,7 +38,7 @@ export class Select extends Component<SelectProps, SelectState> {
     value: this.props.value,
   };
 
-  componentWillReceiveProps(nextProps: SelectProps) {
+  UNSAFE_componentWillReceiveProps(nextProps: SelectProps) {
     if (this.props.value !== nextProps.value) {
       this.setState({
         value: nextProps.value,

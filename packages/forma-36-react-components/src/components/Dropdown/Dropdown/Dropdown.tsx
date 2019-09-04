@@ -95,7 +95,7 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
     }
   };
 
-  componentWillReceiveProps(newProps: DropdownProps) {
+  UNSAFE_componentWillReceiveProps(newProps: DropdownProps) {
     this.setState({
       isOpen: newProps.isOpen,
     });

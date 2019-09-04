@@ -37,7 +37,7 @@ export class Textarea extends Component<TextareaProps, TextareaState> {
     value: this.props.value,
   };
 
-  componentWillReceiveProps(nextProps: TextareaProps) {
+  UNSAFE_componentWillReceiveProps(nextProps: TextareaProps) {
     if (this.props.value !== nextProps.value) {
       this.setState({
         value: nextProps.value,
