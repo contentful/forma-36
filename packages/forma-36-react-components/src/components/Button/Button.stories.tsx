@@ -36,6 +36,7 @@ storiesOf('Components|Button', module)
         onClick={action('onClick')}
         onBlur={action('onBlur')}
         href={text('href', '')}
+        isActive={boolean('isActive', false)}
       >
         {text('Text', 'Embed entry')}
       </Button>

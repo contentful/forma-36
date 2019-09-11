@@ -95,3 +95,9 @@ it('renders the button as link', () => {
 
   expect(output).toMatchSnapshot();
 });
+
+it('renders the button as active', () => {
+  const output = shallow(<Button isActive>Active button</Button>);
+
+  expect(output).toMatchSnapshot();
+});

@@ -30,6 +30,7 @@ export type ButtonProps = {
   style?: CSSProperties;
   className?: string;
   children?: React.ReactNode;
+  isActive?: boolean;
 } & typeof defaultProps;
 
 const defaultProps = {
@@ -61,6 +62,7 @@ export class Button extends Component<ButtonProps> {
       indicateDropdown,
       href,
       type,
+      isActive,
       ...otherProps
     } = this.props;
 
@@ -72,6 +74,7 @@ export class Button extends Component<ButtonProps> {
         [styles['Button--disabled']]: disabled,
         [styles[`Button--${size}`]]: size,
         [styles['Button--full-width']]: isFullWidth,
+        [styles['Button--is-active']]: isActive,
       },
     );
 
