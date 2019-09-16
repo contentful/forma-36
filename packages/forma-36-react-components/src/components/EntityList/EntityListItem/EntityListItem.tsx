@@ -107,7 +107,7 @@ export class EntityListItem extends Component<EntityListItemProps> {
   renderIcon() {
     const icon = this.props.entityType === 'asset' ? 'Asset' : 'Entry';
 
-    return <Icon icon={icon} color="muted" />;
+    return <Icon icon={icon} color="positive" />;
   }
 
   renderThumbnail() {

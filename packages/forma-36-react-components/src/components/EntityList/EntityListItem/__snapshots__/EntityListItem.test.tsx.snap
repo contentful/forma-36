@@ -29,7 +29,7 @@ exports[`can call an onClick callback 1`] = `
         className="EntityListItem__media"
       >
         <Icon
-          color="muted"
+          color="positive"
           icon="Entry"
           size="small"
           testId="cf-ui-icon"
@@ -76,7 +76,7 @@ exports[`renders the component 1`] = `
         className="EntityListItem__media"
       >
         <Icon
-          color="muted"
+          color="positive"
           icon="Entry"
           size="small"
           testId="cf-ui-icon"
@@ -126,7 +126,7 @@ exports[`renders the component as an \`a\` element if passed a href prop 1`] = `
         className="EntityListItem__media"
       >
         <Icon
-          color="muted"
+          color="positive"
           icon="Entry"
           size="small"
           testId="cf-ui-icon"
@@ -173,7 +173,7 @@ exports[`renders the component as an asset entityType variant 1`] = `
         className="EntityListItem__media"
       >
         <Icon
-          color="muted"
+          color="positive"
           icon="Asset"
           size="small"
           testId="cf-ui-icon"
@@ -282,7 +282,7 @@ exports[`renders the component with a description 1`] = `
         className="EntityListItem__media"
       >
         <Icon
-          color="muted"
+          color="positive"
           icon="Entry"
           size="small"
           testId="cf-ui-icon"
@@ -342,7 +342,7 @@ exports[`renders the component with a drag handle 1`] = `
         className="EntityListItem__media"
       >
         <Icon
-          color="muted"
+          color="positive"
           icon="Entry"
           size="small"
           testId="cf-ui-icon"
@@ -407,7 +407,7 @@ exports[`renders the component with a status 1`] = `
         className="EntityListItem__media"
       >
         <Icon
-          color="muted"
+          color="positive"
           icon="Entry"
           size="small"
           testId="cf-ui-icon"
@@ -472,7 +472,7 @@ exports[`renders the component with active drag state 1`] = `
         className="EntityListItem__media"
       >
         <Icon
-          color="muted"
+          color="positive"
           icon="Entry"
           size="small"
           testId="cf-ui-icon"
@@ -537,7 +537,7 @@ exports[`renders the component with an additional class name 1`] = `
         className="EntityListItem__media"
       >
         <Icon
-          color="muted"
+          color="positive"
           icon="Entry"
           size="small"
           testId="cf-ui-icon"
@@ -597,7 +597,7 @@ exports[`renders the component with custom drag handle 1`] = `
         className="EntityListItem__media"
       >
         <Icon
-          color="muted"
+          color="positive"
           icon="Entry"
           size="small"
           testId="cf-ui-icon"
@@ -662,7 +662,7 @@ exports[`renders the component with disabled actions 1`] = `
         className="EntityListItem__media"
       >
         <Icon
-          color="muted"
+          color="positive"
           icon="Entry"
           size="small"
           testId="cf-ui-icon"
@@ -716,7 +716,7 @@ exports[`renders the component with dropdownListElements 1`] = `
         className="EntityListItem__media"
       >
         <Icon
-          color="muted"
+          color="positive"
           icon="Entry"
           size="small"
           testId="cf-ui-icon"

@@ -45,7 +45,8 @@
   justify-content: center;
   height: calc(1rem * (46 / var(--font-base-default)));
   width: calc(1rem * (46 / var(--font-base-default)));
-  background-color: var(--color-element-light);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-element-light);
   padding: 0;
   margin: 0;
   margin-right: var(--spacing-xs);
