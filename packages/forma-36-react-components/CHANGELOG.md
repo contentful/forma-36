@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.18.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.18.2...@contentful/forma-36-react-components@3.18.3) (2019-09-16)
+
+
+### Bug Fixes
+
+* **EntityListItem:** Fix ct overflow ([#309](https://github.com/contentful/forma-36/issues/309)) ([9b23844](https://github.com/contentful/forma-36/commit/9b23844))
+
+
+
+
+
 ## [3.18.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.18.1...@contentful/forma-36-react-components@3.18.2) (2019-09-12)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
