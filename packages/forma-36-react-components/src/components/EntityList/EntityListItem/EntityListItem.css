@@ -80,6 +80,7 @@
 }
 
 .EntityListItem__content-type {
+  min-width: var(--spacing-3xl);
   composes: truncate from './../../../styles/settings/helpers.css';
   font-size: var(--font-size-m);
   color: var(--color-text-light);
