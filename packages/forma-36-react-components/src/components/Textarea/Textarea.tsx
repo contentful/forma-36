@@ -1,4 +1,10 @@
-import React, { Component, FocusEventHandler, ChangeEventHandler } from 'react';
+import React, {
+  Component,
+  KeyboardEvent,
+  FocusEventHandler,
+  ChangeEventHandler,
+  KeyboardEventHandler,
+} from 'react';
 import cn from 'classnames';
 import styles from './Textarea.css';
 
@@ -11,12 +17,16 @@ export type TextareaProps = {
   width?: 'small' | 'medium' | 'large' | 'full';
   maxLength?: number;
   required?: boolean;
-  onChange?: ChangeEventHandler;
   disabled?: boolean;
   value?: string;
   rows?: number;
-  onBlur?: FocusEventHandler;
   error?: boolean;
+  onChange?: ChangeEventHandler<HTMLTextAreaElement>;
+  onBlur?: FocusEventHandler<HTMLTextAreaElement>;
+  onFocus?: FocusEventHandler<HTMLTextAreaElement>;
+  onKeyPress?: KeyboardEventHandler<HTMLTextAreaElement>;
+  onKeyDown?: KeyboardEventHandler<HTMLTextAreaElement>;
+  onKeyUp?: KeyboardEventHandler<HTMLTextAreaElement>;
 } & typeof defaultProps;
 
 export interface TextareaState {
@@ -44,6 +54,18 @@ export class Textarea extends Component<TextareaProps, TextareaState> {
       });
     }
   }
+
+  handleKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {
+    const ESC = 27;
+
+    if (this.props.onKeyDown) {
+      this.props.onKeyDown(e);
+    }
+
+    if (e.keyCode === ESC) {
+      e.currentTarget.blur();
+    }
+  };
 
   render() {
     const {
@@ -90,6 +112,7 @@ export class Textarea extends Component<TextareaProps, TextareaState> {
           }}
           maxLength={maxLength}
           value={disabled ? value : this.state && this.state.value}
+          onKeyDown={this.handleKeyDown}
           {...otherProps}
         />
       </div>
