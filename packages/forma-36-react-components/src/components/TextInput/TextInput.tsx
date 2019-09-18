@@ -4,7 +4,7 @@ import React, {
   FocusEvent,
   ChangeEventHandler,
   FocusEventHandler,
-  KeyboardEvent,
+  KeyboardEventHandler,
 } from 'react';
 import cn from 'classnames';
 import CopyButton from '../CopyButton';
@@ -27,17 +27,20 @@ export type TextInputProps = {
   className?: string;
   withCopyButton?: boolean;
   placeholder?: string;
-  onChange?: ChangeEventHandler;
   disabled?: boolean;
   testId?: string;
   maxLength?: number;
-  onBlur?: FocusEventHandler;
   onCopy?: (value: string) => void;
   value?: string;
   inputRef?: RefObject<HTMLInputElement>;
   error?: boolean;
   required?: boolean;
-  onKeyPress?: (e: KeyboardEvent) => void;
+  onChange?: ChangeEventHandler<HTMLInputElement>;
+  onBlur?: FocusEventHandler<HTMLInputElement>;
+  onFocus?: FocusEventHandler<HTMLInputElement>;
+  onKeyPress?: KeyboardEventHandler<HTMLInputElement>;
+  onKeyDown?: KeyboardEventHandler<HTMLInputElement>;
+  onKeyUp?: KeyboardEventHandler<HTMLInputElement>;
 } & typeof defaultProps;
 
 export interface TextInputState {
@@ -94,7 +97,6 @@ export class TextInput extends Component<TextInputProps, TextInputState> {
       name,
       id,
       inputRef,
-      onKeyPress,
       ...otherProps
     } = this.props;
 
@@ -129,7 +131,6 @@ export class TextInput extends Component<TextInputProps, TextInputState> {
           value={this.state.value}
           type={type}
           ref={inputRef}
-          onKeyPress={onKeyPress}
           {...otherProps}
         />
         {withCopyButton && (
