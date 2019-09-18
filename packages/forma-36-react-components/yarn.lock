@@ -14126,9 +14126,10 @@ store2@^2.7.1:
   resolved "https://registry.yarnpkg.com/store2/-/store2-2.7.1.tgz#22070b7dc04748a792fc6912a58ab99d3a21d788"
   integrity sha512-zzzP5ZY6QWumnAFV6kBRbS44pUMcpZBNER5DWUe1HETlaKXqLcCQxbNu6IHaKr1pUsjuhUGBdOy8sWKmMkL6pQ==
 
-storybook-prop-types-addon@1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/storybook-prop-types-addon/-/storybook-prop-types-addon-1.0.1.tgz#9cd2c05a8131bc844a2a6b7ecbe57ee315c2a801"
+storybook-prop-types-addon@1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/storybook-prop-types-addon/-/storybook-prop-types-addon-1.0.2.tgz#d35bc81c83cd45e52b5c18519b1a33fb0e3be523"
+  integrity sha512-sISGFJ11ue5WC7UnNcxkDNz6kh2mHf2cZA+R7PY7j9zZPPJ94TZYa9sFUrA0x54M4+09KUUSbBJ+QsEHXSyNSw==
   dependencies:
     "@babel/standalone" "^7.0.0"
     "@contentful/forma-36-tokens" "0.2.0"
