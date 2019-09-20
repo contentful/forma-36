@@ -42,6 +42,7 @@ export type TextInputProps = {
   onKeyPress?: KeyboardEventHandler<HTMLInputElement>;
   onKeyDown?: KeyboardEventHandler<HTMLInputElement>;
   onKeyUp?: KeyboardEventHandler<HTMLInputElement>;
+  willBlurOnEsc: boolean;
 } & typeof defaultProps;
 
 export interface TextInputState {
@@ -55,6 +56,7 @@ const defaultProps = {
   isReadOnly: false,
   required: false,
   width: 'full',
+  willBlurOnEsc: true,
 };
 
 export class TextInput extends Component<TextInputProps, TextInputState> {
@@ -85,7 +87,7 @@ export class TextInput extends Component<TextInputProps, TextInputState> {
       this.props.onKeyDown(e);
     }
 
-    if (e.keyCode === ESC) {
+    if (e.keyCode === ESC && this.props.willBlurOnEsc) {
       e.currentTarget.blur();
     }
   };
@@ -110,6 +112,7 @@ export class TextInput extends Component<TextInputProps, TextInputState> {
       name,
       id,
       inputRef,
+      willBlurOnEsc,
       ...otherProps
     } = this.props;
 

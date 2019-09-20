@@ -35,6 +35,7 @@ storiesOf('Components|TextInput', module)
       onKeyPress={action('onKeyPress')}
       name="emailInput"
       id="emailInput"
+      willBlurOnEsc={boolean('willBlurOnEsc', true)}
     />
   ))
   .add('Controlling focus via ref', () => {
@@ -67,6 +68,7 @@ storiesOf('Components|TextInput', module)
           name="emailInput"
           id="emailInput"
           inputRef={textInputRef}
+          willBlurOnEsc={boolean('willBlurOnEsc', true)}
         />
         <Button
           onClick={() => (textInputRef.current as HTMLInputElement).focus()}
