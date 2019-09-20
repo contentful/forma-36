@@ -27,6 +27,7 @@ export type TextareaProps = {
   onKeyPress?: KeyboardEventHandler<HTMLTextAreaElement>;
   onKeyDown?: KeyboardEventHandler<HTMLTextAreaElement>;
   onKeyUp?: KeyboardEventHandler<HTMLTextAreaElement>;
+  willBlurOnEsc: boolean;
 } & typeof defaultProps;
 
 export interface TextareaState {
@@ -38,6 +39,7 @@ const defaultProps = {
   disabled: false,
   required: false,
   width: 'full',
+  willBlurOnEsc: true,
 };
 
 export class Textarea extends Component<TextareaProps, TextareaState> {
@@ -62,7 +64,7 @@ export class Textarea extends Component<TextareaProps, TextareaState> {
       this.props.onKeyDown(e);
     }
 
-    if (e.keyCode === ESC) {
+    if (e.keyCode === ESC && this.props.willBlurOnEsc) {
       e.currentTarget.blur();
     }
   };
@@ -83,6 +85,7 @@ export class Textarea extends Component<TextareaProps, TextareaState> {
       name,
       rows,
       id,
+      willBlurOnEsc,
       ...otherProps
     } = this.props;
 

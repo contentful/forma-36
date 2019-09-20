@@ -305,6 +305,7 @@ exports[`renders the component with as textarea 1`] = `
     required={false}
     testId="cf-ui-textarea"
     width="full"
+    willBlurOnEsc={true}
   />
 </div>
 `;

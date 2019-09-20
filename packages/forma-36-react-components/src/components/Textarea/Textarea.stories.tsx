@@ -32,5 +32,6 @@ storiesOf('Components|TextArea', module)
       disabled={boolean('disabled', false)}
       value={text('value', '123456')}
       rows={number('rows', 2)}
+      willBlurOnEsc={boolean('willBlurOnEsc', true)}
     />
   ));
