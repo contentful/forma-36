@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.19.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.18.5...@contentful/forma-36-react-components@3.19.0) (2019-09-23)
+
+
+### Features
+
+* **Textarea:** Add willBlurOnEsc prop ([5864355](https://github.com/contentful/forma-36/commit/5864355))
+* **Textarea:** Allow blur with esc key ([fd13102](https://github.com/contentful/forma-36/commit/fd13102))
+* **TextInput:** Add willBlurOnEsc prop ([32936db](https://github.com/contentful/forma-36/commit/32936db))
+* **TextInput:** Allow blur with esc key ([94bae1f](https://github.com/contentful/forma-36/commit/94bae1f))
+
+
+
+
+
 ## [3.18.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.18.4...@contentful/forma-36-react-components@3.18.5) (2019-09-18)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
