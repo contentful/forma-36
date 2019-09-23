@@ -12,6 +12,7 @@ exports[`renders the component 1`] = `
     id="someInput"
     name="userEmail"
     onChange={[Function]}
+    onKeyDown={[Function]}
   />
 </div>
 `;
@@ -28,6 +29,7 @@ exports[`renders the component as required 1`] = `
     id="someInput"
     name="userEmail"
     onChange={[Function]}
+    onKeyDown={[Function]}
   />
 </div>
 `;
@@ -45,6 +47,7 @@ exports[`renders the component with a max length 1`] = `
     maxLength={10}
     name="userEmail"
     onChange={[Function]}
+    onKeyDown={[Function]}
   />
 </div>
 `;
@@ -61,6 +64,7 @@ exports[`renders the component with a test id 1`] = `
     id="someInput"
     name="userEmail"
     onChange={[Function]}
+    onKeyDown={[Function]}
   />
 </div>
 `;
@@ -77,6 +81,7 @@ exports[`renders the component with an additional class name 1`] = `
     id="someInput"
     name="userEmail"
     onChange={[Function]}
+    onKeyDown={[Function]}
   />
 </div>
 `;
@@ -94,6 +99,7 @@ exports[`renders the component with an onBlur prop 1`] = `
     name="userEmail"
     onBlur={[Function]}
     onChange={[Function]}
+    onKeyDown={[Function]}
   />
 </div>
 `;
@@ -110,6 +116,7 @@ exports[`renders the component with an onChange prop 1`] = `
     id="someInput"
     name="userEmail"
     onChange={[Function]}
+    onKeyDown={[Function]}
   />
 </div>
 `;
@@ -126,6 +133,7 @@ exports[`renders the component with disabled prop 1`] = `
     id="someInput"
     name="userEmail"
     onChange={[Function]}
+    onKeyDown={[Function]}
   />
 </div>
 `;
@@ -142,6 +150,7 @@ exports[`renders the component with error prop 1`] = `
     id="someInput"
     name="userEmail"
     onChange={[Function]}
+    onKeyDown={[Function]}
   />
 </div>
 `;
@@ -158,6 +167,7 @@ exports[`renders the component with rows defined 1`] = `
     id="someInput"
     name="userEmail"
     onChange={[Function]}
+    onKeyDown={[Function]}
     rows={2}
   />
 </div>
@@ -175,6 +185,7 @@ exports[`renders the component with small width 1`] = `
     id="someInput"
     name="userEmail"
     onChange={[Function]}
+    onKeyDown={[Function]}
   />
 </div>
 `;
@@ -191,6 +202,7 @@ exports[`renders the component with value prop 1`] = `
     id="someInput"
     name="userEmail"
     onChange={[Function]}
+    onKeyDown={[Function]}
     value="1234"
   />
 </div>

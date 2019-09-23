@@ -2,6 +2,7 @@ import React, {
   Component,
   RefObject,
   FocusEvent,
+  KeyboardEvent,
   ChangeEventHandler,
   FocusEventHandler,
   KeyboardEventHandler,
@@ -41,6 +42,7 @@ export type TextInputProps = {
   onKeyPress?: KeyboardEventHandler<HTMLInputElement>;
   onKeyDown?: KeyboardEventHandler<HTMLInputElement>;
   onKeyUp?: KeyboardEventHandler<HTMLInputElement>;
+  willBlurOnEsc: boolean;
 } & typeof defaultProps;
 
 export interface TextInputState {
@@ -54,6 +56,7 @@ const defaultProps = {
   isReadOnly: false,
   required: false,
   width: 'full',
+  willBlurOnEsc: true,
 };
 
 export class TextInput extends Component<TextInputProps, TextInputState> {
@@ -77,6 +80,18 @@ export class TextInput extends Component<TextInputProps, TextInputState> {
     }
   };
 
+  handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
+    const ESC = 27;
+
+    if (this.props.onKeyDown) {
+      this.props.onKeyDown(e);
+    }
+
+    if (e.keyCode === ESC && this.props.willBlurOnEsc) {
+      e.currentTarget.blur();
+    }
+  };
+
   render() {
     const {
       className,
@@ -97,6 +112,7 @@ export class TextInput extends Component<TextInputProps, TextInputState> {
       name,
       id,
       inputRef,
+      willBlurOnEsc,
       ...otherProps
     } = this.props;
 
@@ -109,6 +125,7 @@ export class TextInput extends Component<TextInputProps, TextInputState> {
     return (
       <div className={classNames}>
         <input
+          onKeyDown={this.handleKeyDown}
           aria-label={name}
           className={styles['TextInput__input']}
           id={id}

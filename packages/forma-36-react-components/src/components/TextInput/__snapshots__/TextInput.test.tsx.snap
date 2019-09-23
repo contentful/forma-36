@@ -13,6 +13,7 @@ exports[`renders the component as required 1`] = `
     name="userEmail"
     onChange={[Function]}
     onFocus={[Function]}
+    onKeyDown={[Function]}
     required={true}
   />
 </div>
@@ -31,6 +32,7 @@ exports[`renders the component with a placeholder text 1`] = `
     name="userEmail"
     onChange={[Function]}
     onFocus={[Function]}
+    onKeyDown={[Function]}
     placeholder="placeholder text"
     required={false}
   />
@@ -50,6 +52,7 @@ exports[`renders the component with a test id 1`] = `
     name="userEmail"
     onChange={[Function]}
     onFocus={[Function]}
+    onKeyDown={[Function]}
     required={false}
   />
 </div>
@@ -68,6 +71,7 @@ exports[`renders the component with all required props 1`] = `
     name="userEmail"
     onChange={[Function]}
     onFocus={[Function]}
+    onKeyDown={[Function]}
     required={false}
   />
 </div>
@@ -86,6 +90,7 @@ exports[`renders the component with an additional class name 1`] = `
     name="userEmail"
     onChange={[Function]}
     onFocus={[Function]}
+    onKeyDown={[Function]}
     required={false}
   />
 </div>
@@ -104,6 +109,7 @@ exports[`renders the component with disabled prop 1`] = `
     name="userEmail"
     onChange={[Function]}
     onFocus={[Function]}
+    onKeyDown={[Function]}
     required={false}
   />
 </div>
@@ -122,6 +128,7 @@ exports[`renders the component with error prop 1`] = `
     name="userEmail"
     onChange={[Function]}
     onFocus={[Function]}
+    onKeyDown={[Function]}
     required={false}
   />
 </div>
@@ -141,6 +148,7 @@ exports[`renders the component with maxLength 1`] = `
     name="userEmail"
     onChange={[Function]}
     onFocus={[Function]}
+    onKeyDown={[Function]}
     required={false}
   />
 </div>
@@ -160,6 +168,7 @@ exports[`renders the component with onBlur prop 1`] = `
     onBlur={[Function]}
     onChange={[Function]}
     onFocus={[Function]}
+    onKeyDown={[Function]}
     required={false}
   />
 </div>
@@ -178,6 +187,7 @@ exports[`renders the component with onChange prop 1`] = `
     name="userEmail"
     onChange={[Function]}
     onFocus={[Function]}
+    onKeyDown={[Function]}
     required={false}
   />
 </div>
@@ -196,6 +206,7 @@ exports[`renders the component with small width 1`] = `
     name="userEmail"
     onChange={[Function]}
     onFocus={[Function]}
+    onKeyDown={[Function]}
     required={false}
   />
 </div>
@@ -214,6 +225,7 @@ exports[`renders the component with the copy button 1`] = `
     name="userEmail"
     onChange={[Function]}
     onFocus={[Function]}
+    onKeyDown={[Function]}
     required={false}
   />
   <CopyButton
@@ -244,6 +256,7 @@ exports[`renders the component with value prop 1`] = `
     name="userEmail"
     onChange={[Function]}
     onFocus={[Function]}
+    onKeyDown={[Function]}
     required={false}
     value="123"
   />
