@@ -1,17 +1,26 @@
-import React, { FunctionComponent } from 'react';
+import React, { Component } from 'react';
 import ControlledInput, {
   ControlledInputPropTypes,
 } from '../ControlledInput/ControlledInput';
 
-export const Checkbox: FunctionComponent<ControlledInputPropTypes> = props => (
-  <ControlledInput type="checkbox" {...props} />
-);
+export type CheckboxProps = ControlledInputPropTypes & typeof defaultProps;
 
-Checkbox.defaultProps = {
+const defaultProps = {
   required: false,
   disabled: false,
   type: 'checkbox',
   testId: 'ctf-ui-checkbox',
+  willBlurOnEsc: true,
 };
+
+export class Checkbox extends Component<CheckboxProps> {
+  static defaultProps = defaultProps;
+
+  render() {
+    return <ControlledInput {...this.props} />;
+  }
+}
+
+Checkbox.defaultProps = defaultProps;
 
 export default Checkbox;

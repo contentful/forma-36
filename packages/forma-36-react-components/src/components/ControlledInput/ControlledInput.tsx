@@ -1,4 +1,10 @@
-import React, { Component, EventHandler, ChangeEvent, FocusEvent } from 'react';
+import React, {
+  Component,
+  EventHandler,
+  ChangeEvent,
+  FocusEvent,
+  KeyboardEvent,
+} from 'react';
 import cn from 'classnames';
 
 const styles = require('./ControlledInput.css');
@@ -17,6 +23,7 @@ export interface ControlledInputPropTypes {
   type?: 'checkbox' | 'radio';
   className?: string;
   testId?: string;
+  willBlurOnEsc: boolean;
 }
 
 const defaultProps = {
@@ -24,12 +31,21 @@ const defaultProps = {
   required: false,
   disabled: false,
   type: 'checkbox',
+  willBlurOnEsc: true,
 };
 
 export class ControlledInput extends Component<
   ControlledInputPropTypes & typeof defaultProps
 > {
   static defaultProps = defaultProps;
+
+  handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
+    const ESC = 27;
+
+    if (e.keyCode === ESC && this.props.willBlurOnEsc) {
+      e.currentTarget.blur();
+    }
+  };
 
   render() {
     const {
@@ -46,6 +62,7 @@ export class ControlledInput extends Component<
       value,
       type,
       labelText,
+      willBlurOnEsc,
       ...otherProps
     } = this.props;
 
@@ -80,6 +97,7 @@ export class ControlledInput extends Component<
         id={id}
         required={required}
         disabled={disabled}
+        onKeyDown={this.handleKeyDown}
         {...otherProps}
       />
     );

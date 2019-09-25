@@ -14,6 +14,7 @@ exports[`renders the component 1`] = `
     required={false}
     testId="cf-ui-controlled-input"
     type="checkbox"
+    willBlurOnEsc={true}
   />
   <div
     className="Checkbox__label-wrapper"
@@ -45,6 +46,7 @@ exports[`renders the component as checked 1`] = `
     required={false}
     testId="cf-ui-controlled-input"
     type="checkbox"
+    willBlurOnEsc={true}
   />
   <div
     className="Checkbox__label-wrapper"
@@ -76,6 +78,7 @@ exports[`renders the component as required 1`] = `
     required={true}
     testId="cf-ui-controlled-input"
     type="checkbox"
+    willBlurOnEsc={true}
   />
   <div
     className="Checkbox__label-wrapper"
@@ -107,6 +110,7 @@ exports[`renders the component in a disabled state 1`] = `
     required={false}
     testId="cf-ui-controlled-input"
     type="checkbox"
+    willBlurOnEsc={true}
   />
   <div
     className="Checkbox__label-wrapper"
@@ -138,6 +142,7 @@ exports[`renders the component with a help text 1`] = `
     required={false}
     testId="cf-ui-controlled-input"
     type="checkbox"
+    willBlurOnEsc={true}
   />
   <div
     className="Checkbox__label-wrapper"
@@ -175,6 +180,7 @@ exports[`renders the component with a light label variation 1`] = `
     required={false}
     testId="cf-ui-controlled-input"
     type="checkbox"
+    willBlurOnEsc={true}
   />
   <div
     className="Checkbox__label-wrapper"
@@ -212,6 +218,7 @@ exports[`renders the component with a validation message 1`] = `
     required={false}
     testId="cf-ui-controlled-input"
     type="checkbox"
+    willBlurOnEsc={true}
   />
   <div
     className="Checkbox__label-wrapper"
@@ -250,6 +257,7 @@ exports[`renders the component with a value 1`] = `
     testId="cf-ui-controlled-input"
     type="checkbox"
     value="someValue"
+    willBlurOnEsc={true}
   />
   <div
     className="Checkbox__label-wrapper"
@@ -281,6 +289,7 @@ exports[`renders the component with an additional class name 1`] = `
     required={false}
     testId="cf-ui-controlled-input"
     type="checkbox"
+    willBlurOnEsc={true}
   />
   <div
     className="Checkbox__label-wrapper"
