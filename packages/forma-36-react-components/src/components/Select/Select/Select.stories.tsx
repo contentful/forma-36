@@ -31,6 +31,7 @@ storiesOf('Components|Select', module)
         },
         'full',
       )}
+      willBlurOnEsc={boolean('willBlurOnEsc', true)}
     >
       <Option value="optionOne">Option 1</Option>
       <Option value="optionTwo">Long Option 2</Option>

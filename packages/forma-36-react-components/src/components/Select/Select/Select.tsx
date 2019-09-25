@@ -1,4 +1,9 @@
-import React, { Component, ChangeEventHandler, FocusEventHandler } from 'react';
+import React, {
+  Component,
+  ChangeEventHandler,
+  FocusEventHandler,
+  KeyboardEvent,
+} from 'react';
 import cn from 'classnames';
 import Icon from '../../Icon/Icon';
 import styles from './Select.css';
@@ -17,6 +22,7 @@ export type SelectProps = {
   testId?: string;
   className?: string;
   children: React.ReactNode;
+  willBlurOnEsc: boolean;
 } & typeof defaultProps;
 
 export interface SelectState {
@@ -29,6 +35,7 @@ const defaultProps = {
   hasError: false,
   isDisabled: false,
   width: 'full',
+  willBlurOnEsc: true,
 };
 
 export class Select extends Component<SelectProps, SelectState> {
@@ -46,6 +53,14 @@ export class Select extends Component<SelectProps, SelectState> {
     }
   }
 
+  handleKeyDown = (e: KeyboardEvent<HTMLSelectElement>) => {
+    const ESC = 27;
+
+    if (e.keyCode === ESC && this.props.willBlurOnEsc) {
+      e.currentTarget.blur();
+    }
+  };
+
   render() {
     const {
       id,
@@ -60,6 +75,7 @@ export class Select extends Component<SelectProps, SelectState> {
       onFocus,
       isDisabled,
       hasError,
+      willBlurOnEsc,
       ...otherProps
     } = this.props;
 
@@ -98,6 +114,7 @@ export class Select extends Component<SelectProps, SelectState> {
             }
           }}
           onBlur={onBlur}
+          onKeyDown={this.handleKeyDown}
           {...otherProps}
         >
           {children}
