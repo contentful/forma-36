@@ -19,5 +19,6 @@ storiesOf('Components|Checkbox', module)
       required={boolean('required', false)}
       name={text('name', 'some-name')}
       onChange={action('onChange')}
+      willBlurOnEsc={boolean('willBlurOnEsc', true)}
     />
   ));

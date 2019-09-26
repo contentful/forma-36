@@ -10,6 +10,7 @@ exports[`renders the component with a value 1`] = `
   onBlur={[Function]}
   onChange={[Function]}
   onFocus={[Function]}
+  onKeyDown={[Function]}
   required={false}
   type="checkbox"
   value="someValue"
@@ -26,6 +27,7 @@ exports[`renders the component with all required props 1`] = `
   onBlur={[Function]}
   onChange={[Function]}
   onFocus={[Function]}
+  onKeyDown={[Function]}
   required={false}
   type="checkbox"
 />
@@ -41,6 +43,7 @@ exports[`renders the component with an additional class name 1`] = `
   onBlur={[Function]}
   onChange={[Function]}
   onFocus={[Function]}
+  onKeyDown={[Function]}
   required={false}
   type="checkbox"
 />
@@ -57,6 +60,7 @@ exports[`renders the component with as checked 1`] = `
   onBlur={[Function]}
   onChange={[Function]}
   onFocus={[Function]}
+  onKeyDown={[Function]}
   required={false}
   type="checkbox"
 />
@@ -72,6 +76,7 @@ exports[`renders the component with disabled prop 1`] = `
   onBlur={[Function]}
   onChange={[Function]}
   onFocus={[Function]}
+  onKeyDown={[Function]}
   required={false}
   type="checkbox"
 />
@@ -87,6 +92,7 @@ exports[`renders the component with required prop 1`] = `
   onBlur={[Function]}
   onChange={[Function]}
   onFocus={[Function]}
+  onKeyDown={[Function]}
   required={true}
   type="checkbox"
 />

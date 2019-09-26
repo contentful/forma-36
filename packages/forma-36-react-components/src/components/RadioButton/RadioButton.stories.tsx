@@ -17,5 +17,6 @@ storiesOf('Components|RadioButton', module)
       disabled={boolean('Disabled', false)}
       required={boolean('Required', false)}
       name={text('Name', 'some-name')}
+      willBlurOnEsc={boolean('willBlurOnEsc', true)}
     />
   ));
