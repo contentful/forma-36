@@ -90,7 +90,7 @@ const defaultProps = {
   testId: 'cf-ui-modal',
   topOffset: '50px',
   size: 'medium',
-  allowHeightOverflow: false,
+  allowHeightOverflow: true,
 };
 
 export class Modal extends Component<ModalProps> {

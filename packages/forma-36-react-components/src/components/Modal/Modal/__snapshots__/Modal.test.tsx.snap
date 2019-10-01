@@ -34,7 +34,7 @@ exports[`can be controlled 1`] = `
   }
 >
   <div
-    className="Modal"
+    className="Modal Modal--overflow"
     data-test-id="cf-ui-modal"
     style={
       Object {
@@ -99,7 +99,7 @@ exports[`can override header and content properties 1`] = `
   }
 >
   <div
-    className="Modal"
+    className="Modal Modal--overflow"
     data-test-id="cf-ui-modal"
     style={
       Object {
@@ -158,7 +158,7 @@ exports[`renders the component 1`] = `
   }
 >
   <div
-    className="Modal"
+    className="Modal Modal--overflow"
     data-test-id="cf-ui-modal"
     style={
       Object {
@@ -214,7 +214,7 @@ exports[`renders the component without title 1`] = `
   }
 >
   <div
-    className="Modal"
+    className="Modal Modal--overflow"
     data-test-id="cf-ui-modal"
     style={
       Object {
