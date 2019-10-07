@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.20.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.20.0...@contentful/forma-36-react-components@3.20.1) (2019-10-07)
+
+
+### Bug Fixes
+
+* **Workbench:** set minWidth for sidebars ([#319](https://github.com/contentful/forma-36/issues/319)) ([5b9b5f6](https://github.com/contentful/forma-36/commit/5b9b5f6))
+
+
+
+
+
 # [3.20.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.19.0...@contentful/forma-36-react-components@3.20.0) (2019-09-26)
 
 
