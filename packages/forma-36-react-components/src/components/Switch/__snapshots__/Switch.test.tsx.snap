@@ -6,17 +6,20 @@ exports[`renders the component 1`] = `
 >
   <input
     className="Switch"
+    id="testCheckbox"
     onClick={[Function]}
     onKeyUp={[Function]}
     type="checkbox"
   />
-  <Paragraph
+  <FormLabel
     className="Switch__label"
-    element="p"
-    testId="cf-ui-paragraph"
+    htmlFor="testCheckbox"
+    required={false}
+    requiredText="required"
+    testId="cf-ui-form-label"
   >
     foobar
-  </Paragraph>
+  </FormLabel>
 </div>
 `;
 
@@ -27,17 +30,20 @@ exports[`renders the component as checked 1`] = `
   <input
     checked={true}
     className="Switch Switch--checked"
+    id="testCheckbox"
     onClick={[Function]}
     onKeyUp={[Function]}
     type="checkbox"
   />
-  <Paragraph
+  <FormLabel
     className="Switch__label"
-    element="p"
-    testId="cf-ui-paragraph"
+    htmlFor="testCheckbox"
+    required={false}
+    requiredText="required"
+    testId="cf-ui-form-label"
   >
     foobar
-  </Paragraph>
+  </FormLabel>
 </div>
 `;
 
@@ -48,17 +54,20 @@ exports[`renders the component as disabled 1`] = `
   <input
     className="Switch Switch--disabled"
     disabled={true}
+    id="testCheckbox"
     onClick={[Function]}
     onKeyUp={[Function]}
     type="checkbox"
   />
-  <Paragraph
+  <FormLabel
     className="Switch__label Switch__label--disabled"
-    element="p"
-    testId="cf-ui-paragraph"
+    htmlFor="testCheckbox"
+    required={false}
+    requiredText="required"
+    testId="cf-ui-form-label"
   >
     foobar
-  </Paragraph>
+  </FormLabel>
 </div>
 `;
 
@@ -70,17 +79,20 @@ exports[`renders the component as disabled and checked 1`] = `
     checked={true}
     className="Switch Switch--checked Switch--disabled"
     disabled={true}
+    id="testCheckbox"
     onClick={[Function]}
     onKeyUp={[Function]}
     type="checkbox"
   />
-  <Paragraph
+  <FormLabel
     className="Switch__label Switch__label--disabled"
-    element="p"
-    testId="cf-ui-paragraph"
+    htmlFor="testCheckbox"
+    required={false}
+    requiredText="required"
+    testId="cf-ui-form-label"
   >
     foobar
-  </Paragraph>
+  </FormLabel>
 </div>
 `;
 
@@ -90,16 +102,19 @@ exports[`renders the component with an additional class name 1`] = `
 >
   <input
     className="Switch"
+    id="testCheckbox"
     onClick={[Function]}
     onKeyUp={[Function]}
     type="checkbox"
   />
-  <Paragraph
+  <FormLabel
     className="Switch__label"
-    element="p"
-    testId="cf-ui-paragraph"
+    htmlFor="testCheckbox"
+    required={false}
+    requiredText="required"
+    testId="cf-ui-form-label"
   >
     foobar
-  </Paragraph>
+  </FormLabel>
 </div>
 `;
