@@ -101,7 +101,7 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <ArrowDown
-  className="Icon my-extra-class Icon--small Icon--primary"
+  className="Icon Icon--small Icon--primary my-extra-class"
   data-test-id="cf-ui-icon"
   height="24"
   viewBox="0 0 24 24"
