@@ -1,31 +1,83 @@
 ---
 title: 'Home'
 type: 'home'
-subpages:
-  [
-    {
-      title: 'Foundation',
-      desc: 'The basic building blocks of creating Contentful products',
-      path: '/foundation/',
-      icon: 'foundation',
-    },
-    {
-      title: 'Guidelines',
-      desc: 'In-depth guides to design topics',
-      path: '/guidelines/',
-      icon: 'guidelines',
-    },
-    {
-      title: 'Components',
-      desc: 'Documentation about our components, available as React components',
-      path: '/components/',
-      icon: 'components',
-    },
-    {
-      title: 'Resources',
-      desc: 'Resources to help you design and develop Contentful products',
-      path: '/resources/',
-      icon: 'resources',
-    },
-  ]
 ---
+
+import tokens from '@contentful/forma-36-tokens';
+import {
+  DisplayText,
+  Paragraph,
+  Button,
+} from '@contentful/forma-36-react-components';
+
+import componentsImg from './components.png';
+import fcssImg from './fcss.png';
+import tokensImg from './tokens.png';
+import uiKitImg from './ui-kit.png';
+
+import Masthead from './../components/Masthead';
+import Section from './../components/Home/Section';
+import Resources from './../components/Home/Resources';
+import Resource from './../components/Home/Resource';
+
+<Masthead
+  title="Tools and guidance for digital teams"
+  description="Forma 36 is an open-source design system by Contentful  created with the intent to reduce the overhead of creating UI  by providing tools and guidance for digital teams."
+  hasLogo
+/>
+
+<Section>
+  <DisplayText>Resources for designers  and developers</DisplayText>
+  <Paragraph
+    style={{ fontSize: tokens.fontSizeL, marginBottom: tokens.spacing3Xl }}
+  >
+    Resources for designers  and developers
+  </Paragraph>
+  <Resources>
+    <Resource
+      title="Create prototypes faster"
+      description="Get started creating UI design using the Forma 36 UI kit"
+      linkText="Get UI kit"
+      linkHref="#"
+      imageNode={<img src={uiKitImg} />}
+    />
+    <Resource
+      title="Start with React components"
+      description="The component library includes documentation and design tokens"
+      linkText="Get React component library"
+      linkHref="#"
+      imageNode={<img src={componentsImg} />}
+    />
+    <Resource
+      title="Get the tokens"
+      description="Design tokens for Forma 36 available as JSON, CSS, and SCSS"
+      linkText="Get the tokens"
+      linkHref="#"
+      imageNode={<img src={tokensImg} />}
+    />
+    <Resource
+      title="Forma 36 FCSS"
+      description="Utility CSS classes of spacing, colors, typography, shadows, and transitions"
+      linkText="Get FCSS"
+      linkHref="#"
+      imageNode={<img src={fcssImg} />}
+    />
+  </Resources>
+</Section>
+
+<Section isSecondary>
+  <DisplayText>Forma 36 is open-source</DisplayText>
+  <Paragraph
+    style={{
+      fontSize: tokens.fontSizeL,
+      maxWidth: '28rem',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+    }}
+  >
+    Get involved. We appreciate any help on our repositories. For more details
+    about how to contribute to a package, see the README of the corresponding
+    package on Github
+  </Paragraph>
+  <Button href="https://github.com/contentful/forma-36">View on GitHub</Button>
+</Section>

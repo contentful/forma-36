@@ -29,7 +29,6 @@ const styles = {
     width: 100%;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
   `,
 
   main: css`
@@ -40,6 +39,11 @@ const styles = {
     width: 960px;
     margin: 0 auto;
     padding: ${tokens.spacing2Xl} ${tokens.spacingL} ${tokens.spacingL};
+  `,
+
+  innerHomePage: css`
+    width: auto;
+    text-align: center;
   `,
 };
 
@@ -87,14 +91,12 @@ const Container = data => {
           />
         )}
 
-        {isHomePage && <HomeSplash />}
-
-        <Typography css={styles.inner}>
+        <Typography css={isHomePage ? styles.innerHomePage : styles.inner}>
           <MDXProvider components={markToComponentMap}>{children}</MDXProvider>
         </Typography>
 
         {frontmatter && frontmatter.subpages && (
-          <ChildSections items={frontmatter.subpages} isHomePage={isHomePage} />
+          <ChildSections items={frontmatter.subpages} />
         )}
       </div>
       <Footer />

@@ -8,17 +8,12 @@ import tokens from '@contentful/forma-36-tokens';
 import Logo from './Logo';
 
 const styles = {
-  navigation: css`
+  navList: css`
     display: flex;
     flex-direction: column;
-    padding: ${tokens.spacing2Xl} 0;
     flex: 0 0 320px;
-    background-color: ${tokens.colorElementLightest};
-  `,
-
-  navList: css`
-    padding: 0 ${tokens.spacingXl};
-    flex: 1 1 0;
+    background-color: ${tokens.colorElementLight};
+    padding: ${tokens.spacing2Xl} ${tokens.spacingXl};
   `,
 
   list: css`
@@ -117,14 +112,9 @@ MenuList.defaultProps = {
   menuItems: [],
 };
 const Navigation = ({ menuItems, currentPath }) => (
-  <div css={styles.navigation}>
-    <Link to="./" href="./">
-      <Logo />
-    </Link>
-    <nav css={styles.navList}>
-      <MenuList menuItems={menuItems} currentPath={currentPath} />
-    </nav>
-  </div>
+  <nav css={styles.navList}>
+    <MenuList menuItems={menuItems} currentPath={currentPath} />
+  </nav>
 );
 
 Navigation.propTypes = MenuListProps;

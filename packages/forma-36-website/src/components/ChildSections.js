@@ -16,12 +16,11 @@ const handleClick = path => {
   }
 };
 
-const ChildSections = ({ items, isHomePage }) => {
+const ChildSections = ({ items }) => {
   const styles = {
     wrapper: css`
       width: 960px;
       margin: 0 auto;
-      margin-top: ${isHomePage && '-9rem'};
       padding: 0 ${tokens.spacingL} ${tokens.spacingL};
       display: grid;
       grid-column-gap: ${tokens.spacingM};
