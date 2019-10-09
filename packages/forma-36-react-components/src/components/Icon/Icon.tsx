@@ -269,11 +269,15 @@ export class Icon extends Component<IconProps & typeof defaultProps> {
   render() {
     const { className, icon, size, color, testId, ...otherProps } = this.props;
 
-    const classNames = cn(styles.Icon, className, {
-      [styles[`Icon--${size}`]]: size,
-      [styles[`Icon--${color}`]]: color,
-      [styles['Icon--trimmed']]: icon.toLowerCase().includes('trimmed'),
-    });
+    const classNames = cn(
+      styles.Icon,
+      {
+        [styles[`Icon--${size}`]]: size,
+        [styles[`Icon--${color}`]]: color,
+        [styles['Icon--trimmed']]: icon.toLowerCase().includes('trimmed'),
+      },
+      className,
+    );
 
     const Element = iconComponents[icon];
 
