@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.20.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.20.2...@contentful/forma-36-react-components@3.20.3) (2019-10-09)
+
+
+### Bug Fixes
+
+* **IconButton:** Added ability to change size. Fixed TS props ([#321](https://github.com/contentful/forma-36/issues/321)) ([5c6035e](https://github.com/contentful/forma-36/commit/5c6035e))
+
+
+
+
+
 ## [3.20.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.20.1...@contentful/forma-36-react-components@3.20.2) (2019-10-09)
 
 
