@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.20.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.20.1...@contentful/forma-36-react-components@3.20.2) (2019-10-09)
+
+
+### Bug Fixes
+
+* **Switch:** FormLabel import path, and add id to Switch props ([ed2913f](https://github.com/contentful/forma-36/commit/ed2913f))
+* **Switch:** update Switch tests, and snapshot ([810dca6](https://github.com/contentful/forma-36/commit/810dca6))
+
+
+
+
+
 ## [3.20.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.20.0...@contentful/forma-36-react-components@3.20.1) (2019-10-07)
 
 
