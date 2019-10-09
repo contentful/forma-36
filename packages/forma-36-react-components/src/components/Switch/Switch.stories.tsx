@@ -9,6 +9,7 @@ function DefaultStory() {
 
   return (
     <Switch
+      id="testSwitch"
       className={text('className', '')}
       isChecked={boolean('isChecked', isActive)}
       isDisabled={boolean('isDisabled', false)}

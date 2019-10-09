@@ -1,5 +1,5 @@
 import React, { FunctionComponent, KeyboardEvent } from 'react';
-import FormLabel from '../Typography/Paragraph';
+import FormLabel from '../FormLabel';
 import classNames from 'classnames';
 import styles from './Switch.css';
 
@@ -9,6 +9,7 @@ export interface SwitchProps {
   isDisabled?: boolean;
   labelText: string;
   className?: string;
+  id: string;
 }
 
 export const Switch: FunctionComponent<SwitchProps> = (props: SwitchProps) => {
@@ -24,11 +25,13 @@ export const Switch: FunctionComponent<SwitchProps> = (props: SwitchProps) => {
           [styles['Switch--checked']]: props.isChecked,
           [styles['Switch--disabled']]: props.isDisabled,
         })}
+        id={props.id}
       />
       <FormLabel
         className={classNames(styles['Switch__label'], {
           [styles['Switch__label--disabled']]: props.isDisabled,
         })}
+        htmlFor={props.id}
       >
         {props.labelText}
       </FormLabel>
