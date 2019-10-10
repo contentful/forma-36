@@ -1,12 +1,4 @@
-import React, {
-  Component,
-  RefObject,
-  FocusEvent,
-  KeyboardEvent,
-  ChangeEventHandler,
-  FocusEventHandler,
-  KeyboardEventHandler,
-} from 'react';
+import React, { Component, RefObject, FocusEvent, KeyboardEvent } from 'react';
 import cn from 'classnames';
 import CopyButton from '../CopyButton';
 import styles from './TextInput.css';
@@ -27,23 +19,14 @@ export type TextInputProps = {
   id?: string;
   className?: string;
   withCopyButton?: boolean;
-  placeholder?: string;
-  disabled?: boolean;
   testId?: string;
-  maxLength?: number;
   onCopy?: (value: string) => void;
   value?: string;
   inputRef?: RefObject<HTMLInputElement>;
   error?: boolean;
-  required?: boolean;
-  onChange?: ChangeEventHandler<HTMLInputElement>;
-  onBlur?: FocusEventHandler<HTMLInputElement>;
-  onFocus?: FocusEventHandler<HTMLInputElement>;
-  onKeyPress?: KeyboardEventHandler<HTMLInputElement>;
-  onKeyDown?: KeyboardEventHandler<HTMLInputElement>;
-  onKeyUp?: KeyboardEventHandler<HTMLInputElement>;
   willBlurOnEsc: boolean;
-} & typeof defaultProps;
+} & JSX.IntrinsicElements['input'] &
+  typeof defaultProps;
 
 export interface TextInputState {
   value?: string;
