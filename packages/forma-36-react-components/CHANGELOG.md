@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.20.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.20.3...@contentful/forma-36-react-components@3.20.4) (2019-10-10)
+
+
+### Bug Fixes
+
+* **TextInput:** fix typings for TextInput ([#322](https://github.com/contentful/forma-36/issues/322)) ([a6aa6f1](https://github.com/contentful/forma-36/commit/a6aa6f1))
+
+
+
+
+
 ## [3.20.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.20.2...@contentful/forma-36-react-components@3.20.3) (2019-10-09)
 
 
