@@ -30,6 +30,7 @@ storiesOf('Components|Card/EntryCard', module)
           },
           'published',
         )}
+        statusIcon={text('statusIcon', 'Clock')}
         contentType={text('contentType', 'Album')}
         onClick={!boolean('loading', false) ? action('onClick') : undefined}
         dropdownListElements={
