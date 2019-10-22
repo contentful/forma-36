@@ -21,6 +21,8 @@
   margin: 0;
   width: 100%;
 
+  -webkit-appearance: textfield;
+
   &::-webkit-input-placeholder {
     color: var(--color-ice-dark);
   }
