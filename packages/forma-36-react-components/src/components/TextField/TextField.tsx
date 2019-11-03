@@ -30,6 +30,7 @@ export type TextFieldProps = {
   countCharacters?: boolean;
   onChange?: ChangeEventHandler;
   onBlur?: FocusEventHandler;
+  onFocus?: FocusEventHandler;
 } & typeof defaultProps;
 
 export interface TextFieldState {
@@ -82,6 +83,7 @@ export class TextField extends Component<TextFieldProps, TextFieldState> {
       required,
       onChange,
       onBlur,
+      onFocus,
       value,
       name,
       id,
@@ -115,6 +117,7 @@ export class TextField extends Component<TextFieldProps, TextFieldState> {
             name,
             id,
             onBlur,
+            onFocus,
             onChange: this.handleOnChange,
             value,
             required,

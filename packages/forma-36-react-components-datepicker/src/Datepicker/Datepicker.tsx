@@ -1,13 +1,8 @@
-import React, {
-  Component,
-  FocusEventHandler,
-  FocusEvent,
-  RefObject,
-} from 'react';
+import React, { Component, FocusEventHandler, FocusEvent } from 'react';
 import Pikaday from 'pikaday';
-import moment from 'moment';
+import dateFns from 'date-fns';
 import { TextField } from '@contentful/forma-36-react-components';
-import { css, cx as cn } from 'emotion';
+import { css, cx } from 'emotion';
 
 const styles = {
   datePickerWrapper: css({
@@ -51,15 +46,15 @@ export class Datepicker extends Component<DatePickerProps, DatePickerState> {
     validationError: undefined,
   };
   pikaday?: Pikaday;
-  datePickerNode?: RefObject<HTMLInputElement>;
+  datePickerNode?: HTMLElement;
 
   componentDidMount() {
     this.pikaday = new Pikaday({
-      field: this.datePickerNode, //@ts-ignore
+      field: this.datePickerNode,
       minDate: this.props.minDate,
       maxDate: this.props.maxDate,
       yearRange: 5,
-      theme: cn(styles.datePicker, 'hide-carret'),
+      theme: cx(styles.datePicker, 'hide-carret'),
       onSelect: value => {
         this.props.onChange(value);
       },
@@ -100,9 +95,11 @@ export class Datepicker extends Component<DatePickerProps, DatePickerState> {
           textInputProps={{
             testId: 'date-input',
             readOnly: true,
-            inputRef: this.datePickerNode,
           }}
-          value={moment(this.props.value).format('ddd, MMM Do, YYYY')}
+          value={
+            this.props.value &&
+            dateFns.format(this.props.value, 'ddd, MMM Do, YYYY')
+          }
           validationMessage={this.state.validationError}
           id={id}
           onFocus={this.handleOpen}

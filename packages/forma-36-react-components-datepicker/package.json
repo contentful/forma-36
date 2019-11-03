@@ -17,7 +17,8 @@
   },
   "peerDependencies": {
     "react": ">=16",
-    "@contentful/forma-36-react-components": "^3.21.1"
+    "@contentful/forma-36-react-components": "^3.21.1",
+    "date-fns": "^2.6.0"
   },
   "husky": {
     "hooks": {
@@ -36,9 +37,9 @@
     "@types/pikaday": "^1.7.4",
     "@types/react": "^16.9.11",
     "@types/react-dom": "^16.9.3",
+    "date-fns": "^2.6.0",
     "emotion": "^10.0.23",
     "husky": "^3.0.9",
-    "moment": "^2.24.0",
     "pikaday": "^1.8.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
