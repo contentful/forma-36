@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import Datepicker from './Datepicker';
+import Datepicker from '../src/Datepicker';
 
 describe('Datepicker', () => {
   it('renders without crashing', () => {

@@ -1,5 +1,5 @@
 {
-  "packages": ["packages/*"],
+  "packages": ["packages/*", "packages/forma-36-react-date-components/*"],
   "version": "independent",
   "npmClient": "yarn"
 }
