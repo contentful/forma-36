@@ -1,10 +1,10 @@
 {
-  "name": "f36-react-datepicker",
+  "name": "forma-36-react-datepicker",
   "version": "0.1.0",
   "license": "MIT",
   "author": "Johannes Bugiel",
   "main": "dist/index.js",
-  "module": "dist/f36-react-datepicker.esm.js",
+  "module": "dist/forma-36-react-datepicker.esm.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist"
