@@ -1,6 +1,6 @@
 import React, { Component, FocusEventHandler, FocusEvent } from 'react';
 import Pikaday from 'pikaday';
-import dateFns from 'date-fns';
+import * as dateFns from 'date-fns';
 import { TextField } from '@contentful/forma-36-react-components';
 import { css, cx } from 'emotion';
 
@@ -46,11 +46,12 @@ export class Datepicker extends Component<DatePickerProps, DatePickerState> {
     validationError: undefined,
   };
   pikaday?: Pikaday;
-  datePickerNode?: HTMLElement;
+  datePickerNode = React.createRef<HTMLInputElement>();
 
   componentDidMount() {
+    console.log(this.datePickerNode);
     this.pikaday = new Pikaday({
-      field: this.datePickerNode,
+      field: this.datePickerNode && this.datePickerNode.current,
       minDate: this.props.minDate,
       maxDate: this.props.maxDate,
       yearRange: 5,
@@ -95,10 +96,10 @@ export class Datepicker extends Component<DatePickerProps, DatePickerState> {
           textInputProps={{
             testId: 'date-input',
             readOnly: true,
+            inputRef: this.datePickerNode,
           }}
           value={
-            this.props.value &&
-            dateFns.format(this.props.value, 'ddd, MMM Do, YYYY')
+            this.props.value && dateFns.format(this.props.value, 'do MMM yyyy')
           }
           validationMessage={this.state.validationError}
           id={id}
