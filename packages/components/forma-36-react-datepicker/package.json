@@ -40,14 +40,16 @@
     "@types/react": "^16.9.11",
     "@types/react-dom": "^16.9.3",
     "date-fns": "^2.6.0",
-    "emotion": "^10.0.23",
     "husky": "^3.0.9",
     "jest-extended": "^0.11.2",
-    "pikaday": "^1.8.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "tsdx": "^0.11.0",
     "tslib": "^1.10.0",
     "typescript": "^3.6.4"
+  },
+  "dependencies": {
+    "emotion": "^10.0.23",
+    "pikaday": "^1.8.0"
   }
 }

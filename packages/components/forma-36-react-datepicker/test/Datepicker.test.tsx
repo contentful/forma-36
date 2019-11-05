@@ -19,7 +19,6 @@ describe('Datepicker', () => {
 
   it('renders datepicker on focus', () => {
     const [renderResult] = build();
-    console.log(renderResult);
     // @ts-ignore
     const dateInput = renderResult.container.querySelector(
       '[data-test-id="date-input"]'

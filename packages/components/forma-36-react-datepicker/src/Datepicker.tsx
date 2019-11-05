@@ -27,6 +27,7 @@ export type DatePickerProps = {
   helpText?: string;
   labelText: string;
   id?: string;
+  dateFormat?: string;
 } & typeof defaultProps;
 
 export interface DatePickerState {
@@ -38,6 +39,7 @@ const defaultProps = {
   onBlur: () => {},
   name: 'cf-ui-datepicker',
   id: 'cf-ui-datepicker',
+  dateFormat: 'do MMM yyyy',
 };
 
 export class Datepicker extends Component<DatePickerProps, DatePickerState> {
@@ -49,7 +51,6 @@ export class Datepicker extends Component<DatePickerProps, DatePickerState> {
   datePickerNode = React.createRef<HTMLInputElement>();
 
   componentDidMount() {
-    console.log(this.datePickerNode);
     this.pikaday = new Pikaday({
       field: this.datePickerNode && this.datePickerNode.current,
       minDate: this.props.minDate,
@@ -85,7 +86,7 @@ export class Datepicker extends Component<DatePickerProps, DatePickerState> {
   };
 
   render() {
-    const { labelText, required, name, helpText, id } = this.props;
+    const { labelText, required, name, helpText, id, dateFormat } = this.props;
     return (
       <div className={styles.datePickerWrapper}>
         <TextField
@@ -99,7 +100,7 @@ export class Datepicker extends Component<DatePickerProps, DatePickerState> {
             inputRef: this.datePickerNode,
           }}
           value={
-            this.props.value && dateFns.format(this.props.value, 'do MMM yyyy')
+            this.props.value && dateFns.format(this.props.value, dateFormat)
           }
           validationMessage={this.state.validationError}
           id={id}
