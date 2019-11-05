@@ -1,3 +1,3 @@
 # Forma 36 React Datepicker (Alpha)
 
-A simple calendar component utilizing a pikaday calendar and Forma 36 Textfield component.
+A datepicker component utilizing pikaday calendar and the Forma 36 Textfield component.
