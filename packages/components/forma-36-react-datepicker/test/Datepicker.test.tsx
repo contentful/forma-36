@@ -2,7 +2,6 @@ import * as React from 'react';
 import { render, cleanup, fireEvent } from '@testing-library/react';
 
 import '@testing-library/jest-dom/extend-expect';
-import 'jest-extended';
 import Datepicker from '../src/Datepicker';
 
 describe('Datepicker', () => {
