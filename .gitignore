@@ -19,6 +19,13 @@
 **/package-lock.json
 **/lerna-debug.log
 
+**/.cache
+**/.rts2_cache_cjs
+**/.rts2_cache_esm
+**/.rts2_cache_umd
+**/.rts2_cache_system
+
 # editors
 .vscode/
 .idea/
+*.log
