@@ -7,10 +7,6 @@
   padding: calc(1rem * (14 / var(--font-base-default))) 0;
 }
 
-.DropdownList a {
-  color: var(--color-text-dark);
-}
-
 /* For multiple DropdownLists */
 .DropdownList + .DropdownList {
   padding: calc(1rem * (7 / var(--font-base-default))) 0;
