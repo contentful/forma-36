@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.21.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.21.3...@contentful/forma-36-react-components@3.21.4) (2019-11-07)
+
+
+### Bug Fixes
+
+* **DropdownListItem:** Unify list item color ([#333](https://github.com/contentful/forma-36/issues/333)) ([fc5a242](https://github.com/contentful/forma-36/commit/fc5a242))
+
+
+
+
+
 ## [3.21.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.21.2...@contentful/forma-36-react-components@3.21.3) (2019-11-07)
 
 
