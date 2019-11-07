@@ -344,6 +344,6 @@ const TimePicker: React.FC<DatePickerProps> = ({
   );
 };
 
-TimePicker.defaultProps = {};
+TimePicker.defaultProps = defaultProps;
 
 export default TimePicker;
