@@ -222,7 +222,7 @@ const TimePicker: React.FC<DatePickerProps> = ({
         }
       }
     },
-    [dropdownContainer]
+    [dropdownContainer, inputRef]
   );
 
   const handleChange = useCallback(
