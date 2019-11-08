@@ -1433,9 +1433,21 @@
     puppeteer "^1.2.0"
     yargs "^11.1.0"
 
+"@contentful/forma-36-fcss@^0.0.31":
+  version "0.0.31"
+  resolved "https://registry.yarnpkg.com/@contentful/forma-36-fcss/-/forma-36-fcss-0.0.31.tgz#37d5a0b99fee3719173111e8ee1b2e797732bf18"
+  integrity sha512-SZSrrjk68L1EoJThWaR6O0LbKcOzCv+TwS/RUDPHNcrzphILLvSLwe666DGYHyyUSyvomIfMniVAnLpGQTt3nQ==
+  dependencies:
+    "@contentful/forma-36-tokens" "^0.4.5"
+
 "@contentful/forma-36-tokens@0.2.0":
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@contentful/forma-36-tokens/-/forma-36-tokens-0.2.0.tgz#c4a1062e7acc2ae0ae5699e7c8606d5b5047a1c5"
+
+"@contentful/forma-36-tokens@^0.4.5":
+  version "0.4.5"
+  resolved "https://registry.yarnpkg.com/@contentful/forma-36-tokens/-/forma-36-tokens-0.4.5.tgz#86880a06178de9ebfb542db983550b7c5ae531d3"
+  integrity sha512-wygRxC9r+Wr4FR4wEp1MVjt+Hx5n1lCux4EOXfva3Au1CXzjcl821ukR8mMaurYM7/3TMrv/olQorySNwGpllg==
 
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"

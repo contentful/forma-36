@@ -1,12 +1,13 @@
 import React, {
   useState,
   useCallback,
+  useRef,
   FocusEventHandler,
+  useEffect,
   FocusEvent,
 } from 'react';
 import isHotkey from 'is-hotkey';
 import orderBy from 'lodash.orderBy';
-import moment, { Moment, Duration } from 'moment';
 import * as dateFns from 'date-fns';
 import {
   HelpText,
@@ -81,8 +82,11 @@ const styles = {
   }),
 };
 
+const DATE_NOW_FORMAT = 'dd/MM/yyyy';
+const DATE_NOW = dateFns.format(new Date(), DATE_NOW_FORMAT);
+
 const DATEFNS_12H_FORMAT = 'h:mm a';
-const DATEFNS_24H_FORMAT = 'kk:mm';
+const DATEFNS_24H_FORMAT = 'HH:mm';
 
 function createHours() {
   const hours = [];
@@ -95,7 +99,6 @@ function createHours() {
       )
     );
   }
-  console.log(hours);
   return orderBy(hours, (time: Date) => time, 'asc').map((m: Date) =>
     dateFns.format(m, DATEFNS_12H_FORMAT)
   );
@@ -104,70 +107,64 @@ function createHours() {
 const allHourSuggestions = createHours();
 
 function parseRawInput(raw: string) {
-  const meridiem = moment().format('A');
-  // In case an input value has no meridiem we'll add current meridiem
-  const normalisedValue = /[ap]m/gi.test(raw) ? raw : `${raw} ${meridiem}`;
-  return moment(normalisedValue, ['HH:mm', 'h:mm A', 'hh:mm', 'k:mm', 'kk:mm']);
+  const normalisedValue = `${DATE_NOW} ${raw}`;
+  const times = [
+    'hh:mm a',
+    'h:mm a',
+    'hh:mm',
+    'k:mm',
+    'kk:mm',
+    'h a',
+    'h',
+    'hh',
+    'HH',
+  ]
+    .map(timeFormat =>
+      dateFns.parse(
+        normalisedValue,
+        `${DATE_NOW_FORMAT} ${timeFormat}`,
+        new Date()
+      )
+    )
+    .filter(date => dateFns.isValid(date));
+
+  if (times.length === 0) {
+    return null;
+  }
+
+  return times.reduce((_, b) => b, new Date());
 }
 
-type MathFunction = 'ceil' | 'floor';
-
-function roundDate(date: Moment, duration: Duration, method: MathFunction) {
-  return moment(Math[method](+date / +duration) * +duration);
-}
-
-function roundToHalfHour(value: string, method: MathFunction = 'ceil') {
-  const roundedTime =
-    moment(value, DATEFNS_24H_FORMAT).minutes() % 30 !== 0
-      ? moment(
-          roundDate(
-            moment(value, DATEFNS_24H_FORMAT),
-            moment.duration(30, 'minutes'),
-            method
-          )
-        )
-      : moment(value, DATEFNS_24H_FORMAT)[
-          method === 'ceil' ? 'add' : 'subtract'
-        ](0.5, 'hours');
-
-  return roundedTime.isAfter(moment.now())
-    ? roundedTime.format(DATEFNS_12H_FORMAT)
-    : moment(value, DATEFNS_24H_FORMAT).format(DATEFNS_12H_FORMAT);
-}
+type hour = {
+  format12H: string;
+  isActive?: boolean;
+};
 
 function getSuggestionList(value: string, date: string) {
-  const before: string[] = [];
-  const after: string[] = [];
-  allHourSuggestions.forEach((m: string) => {
+  let isActive = true;
+  const allSuggestions = allHourSuggestions.map(timeSuggestion => {
     if (
       dateFns.isBefore(
-        dateFns.parse(m, DATEFNS_12H_FORMAT, new Date()),
-        dateFns.subHours(
-          dateFns.parse(value, DATEFNS_12H_FORMAT, new Date()),
-          1
+        dateFns.parse(
+          `${date} ${timeSuggestion}`,
+          `yyyy-MM-dd ${DATEFNS_12H_FORMAT}`,
+          new Date()
+        ),
+        dateFns.parse(
+          `${date} ${value}`,
+          `yyyy-MM-dd ${DATEFNS_24H_FORMAT}`,
+          new Date()
         )
       )
     ) {
-      before.push(m);
+      return { format12H: timeSuggestion, isActive: false };
     } else {
-      after.push(m);
+      const afterInput = { format12H: timeSuggestion, isActive };
+      isActive = false;
+      return afterInput;
     }
   });
-
-  console.log(before);
-
-  return after
-    .concat(before)
-    .filter(time =>
-      dateFns.isAfter(
-        dateFns.parse(
-          `${date} ${time}`,
-          `yyyy-mm-dd${DATEFNS_12H_FORMAT}`,
-          new Date()
-        ),
-        new Date()
-      )
-    );
+  return allSuggestions;
 }
 
 export type TimepickerProps = {
@@ -195,16 +192,30 @@ const TimePicker: React.FC<TimepickerProps> = ({
   onBlur,
 }) => {
   const [isTimeSuggestionOpen, setTimeSuggestionOpen] = useState(false);
-  const [selectedTime, setSelectedTime] = useState(
-    moment(value, DATEFNS_24H_FORMAT).format(DATEFNS_12H_FORMAT)
+  const [filteredHours, setFilteredHours] = useState(
+    getSuggestionList(value, date)
   );
-  let dropdownContainer: HTMLElement | null = null;
+  const listRef = useRef() as React.MutableRefObject<HTMLUListElement>;
+  const activeListItem = useRef() as React.MutableRefObject<HTMLLIElement>;
+  const [selectedTime, setSelectedTime] = useState(
+    dateFns.format(
+      dateFns.parse(value, DATEFNS_24H_FORMAT, new Date()),
+      DATEFNS_12H_FORMAT
+    )
+  );
+  const [dropdownContainer, setDropdownContainer] = useState(null);
   const inputRef = React.createRef<HTMLInputElement>();
+
+  useEffect(() => {
+    if (activeListItem.current && activeListItem.current.scrollIntoView) {
+      activeListItem.current.scrollIntoView({ block: 'nearest' });
+    }
+  });
 
   const getTimeFromUserInputOrDefaultToValue = useCallback(() => {
     const parsedTime = parseRawInput(selectedTime);
-    if (parsedTime.isValid()) {
-      return parsedTime.format(DATEFNS_12H_FORMAT);
+    if (parsedTime && dateFns.isValid(parsedTime)) {
+      return dateFns.format(parsedTime, DATEFNS_12H_FORMAT);
     } else {
       return dateFns.format(
         dateFns.parse(value, DATEFNS_24H_FORMAT, new Date()),
@@ -223,6 +234,7 @@ const TimePicker: React.FC<TimepickerProps> = ({
           inputRef.current.focus();
         } else if (parent) {
           const isDropdownListFocused =
+            //@ts-ignore
             activeElement === parent || parent.contains(activeElement);
 
           if (!isDropdownListFocused) {
@@ -237,30 +249,38 @@ const TimePicker: React.FC<TimepickerProps> = ({
   const handleChange = useCallback(
     val => {
       setSelectedTime(val);
-
       const parsedTime = parseRawInput(val);
-      if (parsedTime.isValid()) {
-        const time24H = parsedTime.format(DATEFNS_24H_FORMAT);
-
+      if (parsedTime && dateFns.isValid(parsedTime)) {
+        const time24H = dateFns.format(parsedTime, DATEFNS_24H_FORMAT);
+        setFilteredHours(getSuggestionList(time24H, date));
         onChange(time24H);
       }
     },
-    [onChange]
+    [onChange, date]
   );
 
   const handleKeyUp = useCallback(
     event => {
-      if (isHotkey('arrowUp', event)) {
-        handleChange(roundToHalfHour(value, 'floor'));
-      }
-      if (isHotkey('arrowDown', event)) {
-        handleChange(roundToHalfHour(value, 'ceil'));
-      }
       if (isHotkey('enter', event)) {
         setTimeSuggestionOpen(false);
       }
+
+      const activeIndex = filteredHours.findIndex(elem => elem.isActive);
+      let nextIndex = 0;
+
+      if (isHotkey('arrowUp', event) && filteredHours[activeIndex + 1]) {
+        nextIndex =
+          activeIndex - 1 > 0 ? activeIndex - 1 : filteredHours.length - 1;
+        handleChange(filteredHours[nextIndex].format12H);
+      }
+
+      if (isHotkey('arrowDown', event)) {
+        nextIndex =
+          activeIndex + 1 < filteredHours.length ? activeIndex + 1 : 0;
+        handleChange(filteredHours[nextIndex].format12H);
+      }
     },
-    [value, handleChange]
+    [handleChange, filteredHours]
   );
 
   const handleKeyDown = useCallback(event => {
@@ -290,7 +310,6 @@ const TimePicker: React.FC<TimepickerProps> = ({
     ]
   );
 
-  const filteredHours = getSuggestionList(value, date);
   return (
     <div className={styles.timePicker}>
       <FormLabel required={true} htmlFor="scheduleTimeForm">
@@ -301,9 +320,7 @@ const TimePicker: React.FC<TimepickerProps> = ({
           className={styles.dropdown}
           dropdownContainerClassName={styles.dropdownContainer}
           // @ts-ignore
-          getContainerRef={(ref: HTMLElement | null) => {
-            dropdownContainer = ref;
-          }}
+          getContainerRef={setDropdownContainer}
           toggleElement={
             <input
               ref={inputRef}
@@ -320,27 +337,20 @@ const TimePicker: React.FC<TimepickerProps> = ({
           }
           isOpen={isTimeSuggestionOpen}
         >
-          <DropdownList maxHeight={200}>
-            {filteredHours.map((hour: string) => {
-              console.log(hour);
+          <DropdownList maxHeight={200} listRef={listRef}>
+            {filteredHours.map((hour: hour) => {
               return (
                 <DropdownListItem
                   testId="time-suggestion"
-                  className={
-                    dateFns.format(
-                      dateFns.parse(value, DATEFNS_24H_FORMAT, new Date()),
-                      DATEFNS_24H_FORMAT
-                    ) === hour
-                      ? styles.selectedTime
-                      : undefined
-                  }
+                  className={hour.isActive ? styles.selectedTime : undefined}
                   onClick={() => {
-                    handleChange(hour);
+                    handleChange(hour.format12H);
                     setTimeSuggestionOpen(false);
                   }}
-                  key={hour}
+                  key={hour.format12H}
+                  listItemRef={hour.isActive ? activeListItem : undefined}
                 >
-                  {hour}
+                  {hour.format12H}
                 </DropdownListItem>
               );
             })}

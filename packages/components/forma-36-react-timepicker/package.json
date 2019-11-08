@@ -1,5 +1,5 @@
 {
-  "name": "forma-36-react-timepicker",
+  "name": "@contentful/forma-36-react-timepicker",
   "version": "0.1.0",
   "license": "MIT",
   "author": "Johannes Bugiel",
@@ -50,7 +50,6 @@
     "date-fns": "^2.7.0",
     "emotion": "^10.0.23",
     "is-hotkey": "^0.1.6",
-    "lodash.orderby": "^4.6.0",
-    "moment": "^2.24.0"
+    "lodash.orderby": "^4.6.0"
   }
 }
