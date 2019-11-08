@@ -32,9 +32,10 @@
   "devDependencies": {
     "@contentful/forma-36-react-components": "^3.21.1",
     "@contentful/forma-36-tokens": "^0.4.5",
+    "@testing-library/jest-dom": "^4.2.3",
     "@testing-library/react": "^9.3.2",
     "@types/is-hotkey": "^0.1.1",
-    "@types/jest": "^24.0.21",
+    "@types/jest": "^24.0.22",
     "@types/lodash.orderby": "^4.6.6",
     "@types/react": "^16.9.11",
     "@types/react-dom": "^16.9.3",
@@ -46,6 +47,7 @@
     "typescript": "^3.6.4"
   },
   "dependencies": {
+    "date-fns": "^2.7.0",
     "emotion": "^10.0.23",
     "is-hotkey": "^0.1.6",
     "lodash.orderby": "^4.6.0",

@@ -7,6 +7,7 @@ import React, {
 import isHotkey from 'is-hotkey';
 import orderBy from 'lodash.orderBy';
 import moment, { Moment, Duration } from 'moment';
+import * as dateFns from 'date-fns';
 import {
   HelpText,
   FormLabel,
@@ -80,29 +81,23 @@ const styles = {
   }),
 };
 
-const MOMENT_12H_FORMAT = 'h:mm A';
-const MOMENT_24H_FORMAT = 'HH:mm';
+const DATEFNS_12H_FORMAT = 'h:mm a';
+const DATEFNS_24H_FORMAT = 'kk:mm';
 
 function createHours() {
   const hours = [];
   for (let hour = 0; hour < 24; hour++) {
+    hours.push(dateFns.addHours(dateFns.startOfDay(new Date()), hour));
     hours.push(
-      moment()
-        .startOf('day')
-        .add({ hour })
-    );
-    hours.push(
-      moment()
-        .startOf('day')
-        .add({
-          hour,
-          minute: 30,
-        })
+      dateFns.addMinutes(
+        dateFns.addHours(dateFns.startOfDay(new Date()), hour),
+        30
+      )
     );
   }
-
-  return orderBy(hours, (time: Moment) => time.toDate(), 'asc').map(
-    (m: Moment) => m.format(MOMENT_12H_FORMAT)
+  console.log(hours);
+  return orderBy(hours, (time: Date) => time, 'asc').map((m: Date) =>
+    dateFns.format(m, DATEFNS_12H_FORMAT)
   );
 }
 
@@ -123,30 +118,34 @@ function roundDate(date: Moment, duration: Duration, method: MathFunction) {
 
 function roundToHalfHour(value: string, method: MathFunction = 'ceil') {
   const roundedTime =
-    moment(value, MOMENT_24H_FORMAT).minutes() % 30 !== 0
+    moment(value, DATEFNS_24H_FORMAT).minutes() % 30 !== 0
       ? moment(
           roundDate(
-            moment(value, MOMENT_24H_FORMAT),
+            moment(value, DATEFNS_24H_FORMAT),
             moment.duration(30, 'minutes'),
             method
           )
         )
-      : moment(value, MOMENT_24H_FORMAT)[
+      : moment(value, DATEFNS_24H_FORMAT)[
           method === 'ceil' ? 'add' : 'subtract'
         ](0.5, 'hours');
 
   return roundedTime.isAfter(moment.now())
-    ? roundedTime.format(MOMENT_12H_FORMAT)
-    : moment(value, MOMENT_24H_FORMAT).format(MOMENT_12H_FORMAT);
+    ? roundedTime.format(DATEFNS_12H_FORMAT)
+    : moment(value, DATEFNS_24H_FORMAT).format(DATEFNS_12H_FORMAT);
 }
 
-function getSuggestionList(value: string, date: Date) {
+function getSuggestionList(value: string, date: string) {
   const before: string[] = [];
   const after: string[] = [];
   allHourSuggestions.forEach((m: string) => {
     if (
-      moment(m, MOMENT_12H_FORMAT).isBefore(
-        moment(value, MOMENT_24H_FORMAT).subtract(1, 'hours')
+      dateFns.isBefore(
+        dateFns.parse(m, DATEFNS_12H_FORMAT, new Date()),
+        dateFns.subHours(
+          dateFns.parse(value, DATEFNS_12H_FORMAT, new Date()),
+          1
+        )
       )
     ) {
       before.push(m);
@@ -155,18 +154,25 @@ function getSuggestionList(value: string, date: Date) {
     }
   });
 
+  console.log(before);
+
   return after
     .concat(before)
     .filter(time =>
-      moment(`${date} ${time}`, `YYYY-MM-DD ${MOMENT_12H_FORMAT}`).isAfter(
-        moment()
+      dateFns.isAfter(
+        dateFns.parse(
+          `${date} ${time}`,
+          `yyyy-mm-dd${DATEFNS_12H_FORMAT}`,
+          new Date()
+        ),
+        new Date()
       )
     );
 }
 
-export type DatePickerProps = {
+export type TimepickerProps = {
   value: string;
-  date: Date;
+  date: string;
   onChange: (val: string) => void;
   onBlur?: FocusEventHandler;
   required?: boolean;
@@ -180,7 +186,7 @@ const defaultProps = {
   onBlur: () => {},
 };
 
-const TimePicker: React.FC<DatePickerProps> = ({
+const TimePicker: React.FC<TimepickerProps> = ({
   value,
   date,
   helpText,
@@ -190,7 +196,7 @@ const TimePicker: React.FC<DatePickerProps> = ({
 }) => {
   const [isTimeSuggestionOpen, setTimeSuggestionOpen] = useState(false);
   const [selectedTime, setSelectedTime] = useState(
-    moment(value, MOMENT_24H_FORMAT).format(MOMENT_12H_FORMAT)
+    moment(value, DATEFNS_24H_FORMAT).format(DATEFNS_12H_FORMAT)
   );
   let dropdownContainer: HTMLElement | null = null;
   const inputRef = React.createRef<HTMLInputElement>();
@@ -198,9 +204,12 @@ const TimePicker: React.FC<DatePickerProps> = ({
   const getTimeFromUserInputOrDefaultToValue = useCallback(() => {
     const parsedTime = parseRawInput(selectedTime);
     if (parsedTime.isValid()) {
-      return parsedTime.format(MOMENT_12H_FORMAT);
+      return parsedTime.format(DATEFNS_12H_FORMAT);
     } else {
-      return moment(value, MOMENT_24H_FORMAT).format(MOMENT_12H_FORMAT);
+      return dateFns.format(
+        dateFns.parse(value, DATEFNS_24H_FORMAT, new Date()),
+        DATEFNS_12H_FORMAT
+      );
     }
   }, [selectedTime, value]);
 
@@ -231,7 +240,7 @@ const TimePicker: React.FC<DatePickerProps> = ({
 
       const parsedTime = parseRawInput(val);
       if (parsedTime.isValid()) {
-        const time24H = parsedTime.format(MOMENT_24H_FORMAT);
+        const time24H = parsedTime.format(DATEFNS_24H_FORMAT);
 
         onChange(time24H);
       }
@@ -313,12 +322,14 @@ const TimePicker: React.FC<DatePickerProps> = ({
         >
           <DropdownList maxHeight={200}>
             {filteredHours.map((hour: string) => {
+              console.log(hour);
               return (
                 <DropdownListItem
                   testId="time-suggestion"
                   className={
-                    moment(value, MOMENT_24H_FORMAT).format(
-                      MOMENT_12H_FORMAT
+                    dateFns.format(
+                      dateFns.parse(value, DATEFNS_24H_FORMAT, new Date()),
+                      DATEFNS_24H_FORMAT
                     ) === hour
                       ? styles.selectedTime
                       : undefined
