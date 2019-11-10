@@ -38,6 +38,10 @@
   text-decoration: none;
 }
 
+a.DropdownListItem__button:link {
+  color: var(--color-text-mid);
+}
+
 .DropdownListItem__button__inner-wrapper {
   display: block;
   padding: calc(1rem * (7 / var(--font-base-default)))
