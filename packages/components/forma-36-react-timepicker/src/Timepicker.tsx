@@ -7,7 +7,7 @@ import React, {
   FocusEvent,
 } from 'react';
 import isHotkey from 'is-hotkey';
-import orderBy from 'lodash.orderBy';
+import orderBy from 'lodash.orderby';
 import * as dateFns from 'date-fns';
 import {
   HelpText,
@@ -142,7 +142,7 @@ type hour = {
 
 function getSuggestionList(value: string, date: string) {
   let isActive = true;
-  const allSuggestions = allHourSuggestions.map(timeSuggestion => {
+  return allHourSuggestions.map(timeSuggestion => {
     if (
       dateFns.isBefore(
         dateFns.parse(
@@ -164,7 +164,6 @@ function getSuggestionList(value: string, date: string) {
       return afterInput;
     }
   });
-  return allSuggestions;
 }
 
 export type TimepickerProps = {
@@ -319,6 +318,7 @@ const TimePicker: React.FC<TimepickerProps> = ({
         <Dropdown
           className={styles.dropdown}
           dropdownContainerClassName={styles.dropdownContainer}
+          // TODO: Fix getContainerRef on Dropdown to accept ref object. F36 4.0 Breaking Change
           // @ts-ignore
           getContainerRef={setDropdownContainer}
           toggleElement={
