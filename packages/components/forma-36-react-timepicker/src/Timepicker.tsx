@@ -52,7 +52,7 @@ const styles = {
   daytimeSelect: css({
     flexBasis: '100%',
     '> select': {
-      paddingRight: '2rem',
+      paddingRight: tokens.spacingXl,
     },
   }),
   timeInput: css({
