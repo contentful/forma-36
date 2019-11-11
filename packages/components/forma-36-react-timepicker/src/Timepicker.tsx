@@ -174,6 +174,7 @@ export type TimepickerProps = {
   required?: boolean;
   helpText?: string;
   validationMessage?: string;
+  labelText?: string;
   id?: string;
   name?: string;
 } & typeof defaultProps;
@@ -189,6 +190,7 @@ const TimePicker: React.FC<TimepickerProps> = ({
   validationMessage,
   onChange,
   onBlur,
+  labelText,
 }) => {
   const [isTimeSuggestionOpen, setTimeSuggestionOpen] = useState(false);
   const [filteredHours, setFilteredHours] = useState(
@@ -311,9 +313,11 @@ const TimePicker: React.FC<TimepickerProps> = ({
 
   return (
     <div className={styles.timePicker}>
-      <FormLabel required={true} htmlFor="scheduleTimeForm">
-        Time
-      </FormLabel>
+      {labelText && (
+        <FormLabel required={true} htmlFor="scheduleTimeForm">
+          {labelText}
+        </FormLabel>
+      )}
       <div className={styles.inputWrapper} id="scheduleTimeForm">
         <Dropdown
           className={styles.dropdown}
