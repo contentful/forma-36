@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.22.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.21.4...@contentful/forma-36-react-components@3.22.0) (2019-11-11)
+
+
+### Features
+
+* **Timepicker:** Add Timepicker component ([#331](https://github.com/contentful/forma-36/issues/331)) ([3935e6e](https://github.com/contentful/forma-36/commit/3935e6e))
+
+
+
+
+
 ## [3.21.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.21.3...@contentful/forma-36-react-components@3.21.4) (2019-11-07)
 
 
