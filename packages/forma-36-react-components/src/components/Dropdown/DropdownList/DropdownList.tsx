@@ -4,6 +4,7 @@ import styles from './DropdownList.css';
 
 export type DropdownListProps = {
   children: React.ReactNode;
+  listRef?: React.RefObject<HTMLUListElement>;
   className?: string;
   testId?: string;
   border?: 'top' | 'bottom';
@@ -24,6 +25,7 @@ export class DropdownList extends Component<DropdownListProps> {
       maxHeight,
       testId,
       children,
+      listRef,
       ...otherProps
     } = this.props;
 
@@ -33,6 +35,7 @@ export class DropdownList extends Component<DropdownListProps> {
 
     return (
       <ul
+        ref={listRef}
         data-test-id={testId}
         style={{
           maxHeight: maxHeight || 'auto',

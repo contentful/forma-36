@@ -10,6 +10,7 @@ import styles from './DropdownListItem.css';
 
 export type DropdownListItemProps = {
   isDisabled: boolean;
+  listItemRef?: React.RefObject<HTMLLIElement>;
   isActive: boolean;
   isTitle: boolean;
   children: React.ReactNode;
@@ -69,6 +70,7 @@ export class DropdownListItem extends Component<DropdownListItemProps> {
       isTitle,
       isActive,
       testId,
+      listItemRef,
       ...otherProps
     } = this.props;
 
@@ -121,6 +123,7 @@ export class DropdownListItem extends Component<DropdownListItemProps> {
       className,
       isDisabled,
       testId,
+      listItemRef,
       isActive,
       onClick,
       onMouseDown,
@@ -138,7 +141,7 @@ export class DropdownListItem extends Component<DropdownListItemProps> {
     });
 
     return (
-      <li className={classNames} data-test-id={testId}>
+      <li className={classNames} data-test-id={testId} ref={listItemRef}>
         {submenuToggleLabel
           ? this.renderSubmenuToggle()
           : this.renderListItem()}

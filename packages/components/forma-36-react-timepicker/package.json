@@ -1,0 +1,55 @@
+{
+  "name": "@contentful/forma-36-react-timepicker",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": "Johannes Bugiel",
+  "main": "dist/index.js",
+  "module": "dist/forma-36-react-timepicker.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --env=jsdom",
+    "lint": "tsdx lint"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "devDependencies": {
+    "@contentful/forma-36-react-components": "^3.21.1",
+    "@contentful/forma-36-tokens": "^0.4.5",
+    "@testing-library/jest-dom": "^4.2.3",
+    "@testing-library/react": "^9.3.2",
+    "@types/is-hotkey": "^0.1.1",
+    "@types/jest": "^24.0.22",
+    "@types/lodash.orderby": "^4.6.6",
+    "@types/react": "^16.9.11",
+    "@types/react-dom": "^16.9.3",
+    "husky": "^3.0.9",
+    "react": "16.10.2",
+    "react-dom": "16.10.2",
+    "tsdx": "^0.11.0",
+    "tslib": "^1.10.0",
+    "typescript": "^3.6.4"
+  },
+  "dependencies": {
+    "date-fns": "^2.7.0",
+    "emotion": "^10.0.23",
+    "is-hotkey": "^0.1.6",
+    "lodash.orderby": "^4.6.0"
+  }
+}
