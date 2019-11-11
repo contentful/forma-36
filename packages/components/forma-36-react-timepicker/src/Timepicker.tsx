@@ -354,7 +354,7 @@ const TimePicker: React.FC<TimepickerProps> = ({
                     handleChange(hour.format12H);
                     setTimeSuggestionOpen(false);
                   }}
-                  key={hour.format12H}
+                  key={hour}
                   listItemRef={hour.isActive ? activeListItem : undefined}
                 >
                   {hour.format12H}
