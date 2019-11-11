@@ -177,10 +177,12 @@ export type TimepickerProps = {
   labelText?: string;
   id?: string;
   name?: string;
+  isRequired?: boolean;
 } & typeof defaultProps;
 
 const defaultProps = {
   onBlur: () => {},
+  isRequired: false,
 };
 
 const TimePicker: React.FC<TimepickerProps> = ({
@@ -190,6 +192,7 @@ const TimePicker: React.FC<TimepickerProps> = ({
   validationMessage,
   onChange,
   onBlur,
+  isRequired,
   labelText,
 }) => {
   const [isTimeSuggestionOpen, setTimeSuggestionOpen] = useState(false);
@@ -314,7 +317,7 @@ const TimePicker: React.FC<TimepickerProps> = ({
   return (
     <div className={styles.timePicker}>
       {labelText && (
-        <FormLabel required={true} htmlFor="scheduleTimeForm">
+        <FormLabel required={isRequired} htmlFor="scheduleTimeForm">
           {labelText}
         </FormLabel>
       )}
