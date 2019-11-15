@@ -1,0 +1,116 @@
+---
+title: 'Form'
+type: 'component'
+github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/Form'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-form--default'
+---
+
+Form is a wrapper component that handles form submissions.
+
+```jsx
+<React.Fragment>
+  <Form
+      onSubmit={()=> console.log('onSubmit')}
+      spacing="default"
+    >
+      <TextField
+        required
+        name="nameInput"
+        id="nameInput"
+        labelText="Name"
+        value="Johannes Bugiel"
+        helpText="Please enter your name"
+      />
+      <TextField
+        required
+        name="emailInput"
+        id="emailInput"
+        labelText="E-Mail"
+        value="johannes.bugiel@contentful.com"
+        helpText="Please enter your mail"
+      />
+      <Button>Submit</Button>
+    </Form>
+</React.Fragment>
+```
+
+## Table of contents
+
+1. [Best practices](#best-practices)
+2. [Variations](#variations)
+   1. [Button types](#button-types)
+3. [Copy considerations](#copy-considerations)
+4. [Accessibility](#accessibility)
+
+## Best practices <a name="best-practices" />
+
+- This `Form` component wraps it's contents with HTML `<form>` component
+- Should be used to wrap all form input components
+- To imitate navive HTML behaviuor, add handler for `oncSubmit` action
+
+## Variations <a name="variations" />
+
+### Default spacing (`spacing="default"`) <a name="spacing-default" />
+
+```jsx
+<React.Fragment>
+  <Form
+      onSubmit={()=> console.log('onSubmit')}
+      spacing="default"
+    >
+      <TextField
+        required
+        name="nameInput"
+        id="nameInput"
+        labelText="Name"
+        value="Johannes Bugiel"
+        helpText="Please enter your name"
+      />
+      <TextField
+        required
+        name="emailInput"
+        id="emailInput"
+        labelText="E-Mail"
+        value="johannes.bugiel@contentful.com"
+        helpText="Please enter your mail"
+      />
+      <Button>Submit</Button>
+    </Form>
+</React.Fragment>
+```
+
+### Condensed spacing (`spacing="condensed"`) <a name="spacing-condensed" />
+
+```jsx
+<React.Fragment>
+  <Form
+      onSubmit={()=> console.log('onSubmit')}
+      spacing="condensed"
+    >
+      <TextField
+        required
+        name="nameInput"
+        id="nameInput"
+        labelText="Name"
+        value="Johannes Bugiel"
+        helpText="Please enter your name"
+      />
+      <TextField
+        required
+        name="emailInput"
+        id="emailInput"
+        labelText="E-Mail"
+        value="johannes.bugiel@contentful.com"
+        helpText="Please enter your mail"
+      />
+      <Button>Submit</Button>
+    </Form>
+</React.Fragment>
+```
+
+## Copy considerations <a name="copy-considerations" />
+
+
+## Accessibility <a name="accessibility" />
+
+
