@@ -143,6 +143,10 @@ module.exports = {
             name: 'ValidationMessage',
             link: '/components/validation-message/',
           },
+          {
+            name: 'Modal',
+            link: '/components/modal/',
+          },
         ],
       },
     ],
