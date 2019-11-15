@@ -117,6 +117,10 @@ module.exports = {
             link: '/components/note/',
           },
           {
+            name: 'Notification',
+            link: '/components/notification/',
+          },
+          {
             name: 'Table',
             link: '/components/table/',
           },

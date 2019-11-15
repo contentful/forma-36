@@ -7,8 +7,13 @@ storybook: 'https://f36-storybook.contentful.com/?path=/story/components-notific
 
 Not component by interface
 
-```js
-Notification.success('Hello world');
+```jsx
+<Button
+  buttonType="primary"
+  onClick={() => Notification.success('I love toasts')}
+>
+  Show success toast!
+</Button>
 ```
 
 ## Table of contents
@@ -34,9 +39,7 @@ E.g (Button Component):
 ### With icon (`icon`) <a name="customized" />
 
 ```jsx
-<NotificationItem hasCloseButton={true} intent="success">
-  Text for the notification
-</NotificationItem>
+<React.Fragment></React.Fragment>
 ```
 
 ### Sizes (`size`)
