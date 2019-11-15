@@ -8,7 +8,7 @@ module.exports = {
     menuLinks: [
       {
         name: 'Foundation',
-        link: '/foundation/',
+        link: '',
         menuLinks: [
           {
             name: 'Color',
@@ -34,7 +34,7 @@ module.exports = {
       },
       {
         name: 'Guidelines',
-        link: '/guidelines/',
+        link: '',
         menuLinks: [
           {
             name: 'Accessibility',
@@ -102,7 +102,7 @@ module.exports = {
       },
       {
         name: 'Components',
-        link: '/components/',
+        link: '',
         menuLinks: [
           {
             name: 'Button',
@@ -145,10 +145,6 @@ module.exports = {
             link: '/components/validation-message/',
           },
         ],
-      },
-      {
-        name: 'Resources',
-        link: '/resources/',
       },
     ],
   },
