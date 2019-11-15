@@ -36,25 +36,58 @@ E.g (Button Component):
 
 ## Variations <a name="variations" />
 
-### With icon (`icon`) <a name="customized" />
 
-```jsx
-<React.Fragment></React.Fragment>
-```
-
-### Sizes (`size`)
+### Customized notifications <a name="customized" />
 
 ```jsx
 <React.Fragment>
-  <Button buttonType="muted" size="large">
-    Large
+  <Button
+    buttonType="primary"
+    onClick={() => Notification.success('This is a success message!')}
+  >
+    Show success toast!
   </Button>
-  <Button buttonType="muted">Default</Button>
-  <Button buttonType="muted" size="small">
-    Small
+  <Button
+    buttonType="negative"
+    onClick={() => Notification.error('This is a error message!')}
+  >
+    Show error toast!
+  </Button>
+  <Button
+    buttonType="secondary"
+    onClick={() => Notification.warning('This is a warning message!')}
+  >
+    Show warning toast!
   </Button>
 </React.Fragment>
 ```
+
+### Positioned notifications <a name="positioned" />
+
+```jsx
+<React.Fragment>
+  <Button
+    buttonType="primary"
+    onClick={() => {
+      Notification.setPosition('top');
+      Notification.success('I love dogs!');
+    }}
+  >
+    TOP
+  </Button>
+  <Button
+    buttonType="primary"
+    onClick={() => {
+      Notification.setPosition('bottom');
+      Notification.success('I love dogs!');
+    }}
+  >
+    BOTTOM
+  </Button>
+  
+</React.Fragment>
+```
+
 
 ## Copy considerations <a name="copy-considerations" />
 
