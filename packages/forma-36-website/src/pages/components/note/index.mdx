@@ -5,13 +5,12 @@ github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-re
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-note--default'
 ---
 
-Notes draw the users attention to a circumstance relevant to an action they're performing or a screen they're accessing.
+Notes provide context and information about a situation or action.
 
 ```jsx
 <React.Fragment>
   <Note>
-    A piece of information that is relevant to the context the user is currently
-    in.
+    Information that is relevant to the context the user is currently in.
   </Note>
 </React.Fragment>
 ```
@@ -22,12 +21,13 @@ Notes draw the users attention to a circumstance relevant to an action they're p
 2. [Variations](#variations)
    1. [Note types](#note-types)
    1. [Note with title](#note-with-title)
-3. [Copy considerations](#copy-considerations)
+3. [Writing guidelines](#writing-guidelines)
 
 ## Best practices
 
-- Consider the context of where the note is displayed when selecting the type of note to use
-- Don't confuse notes with notifications, which appear as feedback after a user has performed an action
+- Use an adequate [note type](#note-types) to communicate the right kind of information
+- Place the note visually closer to the action or real estate it relates to
+- Unlike notifications, notes don't show up as feedback only after a user has performed an action
 
 ## Variations
 
@@ -44,12 +44,12 @@ The Note component can be configured in a number of different ways. Learn when t
 </React.Fragment>
 ```
 
-| Note Type    | Notes                                                                                                                   |
-| :----------- | :---------------------------------------------------------------------------------------------------------------------- |
-| **Primary**  | Used to display messages which are purely informational - they have neither positive, negative, or warning connotations |
-| **Positive** | Used to display positive messages                                                                                       |
-| **Negative** | For negative/highly critical messages - for informing of errors                                                         |
-| **Warning**  | Used for a warning messages                                                                                             |
+| Note Type    | Notes                                                                                 |
+| :----------- | :------------------------------------------------------------------------------------ |
+| **Primary**  | Used to show information that has neither positive, negative, or warning connotations |
+| **Positive** | Used to display messages with a successful outcome                                    |
+| **Negative** | Used for critical information, such as errors or failure                              |
+| **Warning**  | Used for warning messages, useful to know before an action is taken                   |
 
 ### Note with title (`title`)
 
@@ -68,11 +68,11 @@ The Note component can be configured in a number of different ways. Learn when t
 </React.Fragment>
 ```
 
-## Copy considerations
+## Writing guidelines
 
-- Use clear and succinct copy
-- Ensure note is scannable. Focus on the objective and limit the number of concepts in each sentence
-- Use progressive disclosure. Eliminate extra details that can be revealed as the user interacts and requires more information.
-- Use active voice, present tense, and consider tone of voice depending on the circumstance
-- To add additional context, link out to documentation
-- Do not preface the instructions with introductory text, such as "please"
+- Use clear and succinct copy.
+- Ensure the copy is easily scannable. Focus on the objective and limit the number of concepts in each sentence.
+- Use progressive disclosure. Eliminate details that can be revealed as the user interacts and requires more information.
+- Use active voice, present tense, and consider tone of voice depending on the circumstance.
+- To add additional context, link out to documentation.
+- Do not preface the instructions with introductory text, such as "please".
