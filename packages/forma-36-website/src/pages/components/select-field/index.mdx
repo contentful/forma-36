@@ -1,0 +1,161 @@
+---
+title: 'Select Field'
+type: 'component'
+github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/FormLabel'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-formlabel--default'
+---
+
+Select Field is used for choosing a single option from a list of options.
+
+```jsx
+<React.Fragment>
+  <SelectField labelText={'Label'}>
+    <Option value="optionOne">Option 1</Option>
+    <Option value="optionTwo">Option 2</Option>
+    <Option value="optionThree">Option 3</Option>
+    <Option value="optionFour">Option 4</Option>
+  </SelectField>
+</React.Fragment>
+```
+
+## Table of contents
+
+1. [Best practices](#best-practices)
+2. [Variations](#variations)
+   1. [SelectField types](#select-field)
+3. [Copy considerations](#copy-considerations)
+4. [Accessibility](#accessibility)
+
+## Best practices <a name="best-practices" />
+
+- Add a label that is clear what the user is selecting.
+- Use when there is 4 or more options presented. Use RadioButtonField for 3 options or less.
+- Whereever possible choose one of the options as a default selection.
+
+## Variations <a name="variations" />
+
+The select field follows standard field variations, as follows:
+
+### Select Field (`selectFieldTypes`) <a name="selectFieldTypes-types" />
+
+```jsx
+<React.Fragment>
+  <SelectField labelText={'Label'}>
+    <Option value="optionOne">Option 1</Option>
+    <Option value="optionTwo">Option 2</Option>
+    <Option value="optionThree">Option 3</Option>
+    <Option value="optionFour">Option 4</Option>
+  </SelectField>
+</React.Fragment>
+```
+
+### Required <a name="selectFieldTypes-required"/>
+
+```jsx
+<React.Fragment>
+  <SelectField labelText="Required" required>
+    <Option value="optionOne">Option 1</Option>
+    <Option value="optionTwo">Option 2</Option>
+    <Option value="optionThree">Option 3</Option>
+    <Option value="optionFour">Option 4</Option>
+  </SelectField>
+</React.Fragment>
+```
+
+### Disabled <a name="selectFieldTypes-disabled"/>
+
+```jsx
+<React.Fragment>
+  <SelectField labelText="isDisabled" selectProps={{ isDisabled: true }}>
+    <Option value="optionOne">Option 1</Option>
+    <Option value="optionTwo">Option 2</Option>
+    <Option value="optionThree">Option 3</Option>
+    <Option value="optionFour">Option 4</Option>
+  </SelectField>
+</React.Fragment>
+```
+
+### Help text <a name="selectFieldTypes-helpText"/>
+
+```jsx
+<React.Fragment>
+  <SelectField labelText="With Help Text" helpText="This is some Help Text">
+    <Option value="optionOne">Option 1</Option>
+    <Option value="optionTwo">Option 2</Option>
+    <Option value="optionThree">Option 3</Option>
+    <Option value="optionFour">Option 4</Option>
+  </SelectField>
+</React.Fragment>
+```
+
+### Validation Message <a name="selectFieldTypes-validationMessage"/>
+
+```jsx
+<React.Fragment>
+  <SelectField
+    labelText="Validation Message"
+    validationMessage="This is a validation message"
+  >
+    <Option value="optionOne">Option 1</Option>
+    <Option value="optionTwo">Option 2</Option>
+    <Option value="optionThree">Option 3</Option>
+    <Option value="optionFour">Option 4</Option>
+  </SelectField>
+</React.Fragment>
+```
+
+### Sizes (`size`)
+
+```jsx
+<React.Fragment>
+  <SelectField labelText="Full-width">
+    <Option value="optionOne">Full-width</Option>
+    <Option value="optionTwo">Large</Option>
+    <Option value="optionThree">Medium</Option>
+    <Option value="optionFour">Small</Option>
+  </SelectField>
+
+  <SelectField
+    labelText="Large"
+    selectProps={{
+      width: 'large',
+    }}
+    value="optionTwo"
+  >
+    <Option value="optionOne">Full-width</Option>
+    <Option value="optionTwo">Large</Option>
+    <Option value="optionThree">Medium</Option>
+    <Option value="optionFour">Small</Option>
+  </SelectField>
+
+  <SelectField
+    labelText="Medium"
+    selectProps={{
+      width: 'medium',
+    }}
+    value="optionThree"
+  >
+    <Option value="optionOne">Full-width</Option>
+    <Option value="optionTwo">Large</Option>
+    <Option value="optionThree">Medium</Option>
+    <Option value="optionFour">Small</Option>
+  </SelectField>
+  <SelectField
+    labelText="Small"
+    selectProps={{
+      width: 'small',
+    }}
+    value="optionFour"
+  >
+    <Option value="optionOne">Full-width</Option>
+    <Option value="optionTwo">Large</Option>
+    <Option value="optionThree">Medium</Option>
+    <Option value="optionFour">Small</Option>
+  </SelectField>
+</React.Fragment>
+```
+
+## Copy considerations <a name="copy-considerations" />
+
+- If there is no clear default option the default text should be Select.
+- Try to make the copy for the options as direct as possible. ie "Publish"

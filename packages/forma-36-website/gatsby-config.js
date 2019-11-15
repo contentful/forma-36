@@ -120,6 +120,10 @@ module.exports = {
             link: '/components/note/',
           },
           {
+            name: 'SelectField',
+            link: '/components/select-field/',
+          },
+          {
             name: 'Table',
             link: '/components/table/',
           },
