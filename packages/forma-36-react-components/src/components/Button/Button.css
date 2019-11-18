@@ -166,6 +166,37 @@
   }
 }
 
+.Button--warning {
+  border-color: var(--color-orange-dark);
+  background-image: linear-gradient(
+    to top,
+    var(--color-orange-base),
+    var(--color-orange-light)
+  );
+  background-size: 100% 200%;
+
+  &:hover:not(.Button--disabled),
+  &:focus:not(.Button--disabled) {
+    background-position: 0 100%;
+  }
+
+  &:focus:not(.Button--disabled) {
+    border-color: var(--color-orange-dark);
+    box-shadow: var(--glow-warning);
+  }
+
+  &:active:not(.Button--disabled),
+  &.Button--is-active:not(.Button--disabled) {
+    transition: none;
+    background-image: none;
+    background-color: var(--color-orange-dark);
+  }
+
+  & .Button__label {
+    color: var(--color-element-lightest);
+  }
+}
+
 .Button--disabled {
   opacity: 0.5;
   &:hover {

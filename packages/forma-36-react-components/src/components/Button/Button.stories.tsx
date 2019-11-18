@@ -25,6 +25,7 @@ storiesOf('Components|Button', module)
             positive: 'positive',
             negative: 'negative',
             naked: 'naked',
+            warning: 'warning',
           },
           'muted',
         )}
