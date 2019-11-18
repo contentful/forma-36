@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.23.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.22.1...@contentful/forma-36-react-components@3.23.0) (2019-11-18)
+
+
+### Features
+
+* **Button:** Add warning button type ([#341](https://github.com/contentful/forma-36/issues/341)) ([f8233c1](https://github.com/contentful/forma-36/commit/f8233c1))
+
+
+
+
+
 ## [3.22.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.22.0...@contentful/forma-36-react-components@3.22.1) (2019-11-15)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
