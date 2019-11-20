@@ -13,7 +13,7 @@
   right: 0;
   left: 0;
   bottom: 0;
-  z-index: 0;
+  z-index: var(--z-index-workbench);
   overflow-x: hidden;
 }
 
@@ -22,7 +22,7 @@
   position: relative;
   width: 100%;
   background-color: var(--color-element-lightest);
-  z-index: 6;
+  z-index: var(--z-index-workbench-header);
   height: 70px;
   display: flex;
   flex-direction: row;

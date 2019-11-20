@@ -28,7 +28,7 @@
   padding: calc(1rem * (8 / var(--font-base-default)))
     calc(1rem * (10 / var(--font-base-default)));
   border-radius: calc(1rem * (4 / var(--font-base-default)));
-  z-index: 99;
+  z-index: var(--z-index-tooltip);
   user-select: none;
   width: auto;
   word-wrap: break-word;
@@ -37,7 +37,7 @@
 .Tooltip--hidden {
   visibility: hidden;
   pointer-events: none;
-  z-index: -1;
+  z-index: var(--z-index-negative);
 }
 
 .Tooltip--place-bottom,

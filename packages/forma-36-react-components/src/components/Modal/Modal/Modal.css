@@ -3,6 +3,7 @@
 @import 'settings/typography';
 @import 'settings/transitions';
 @import 'settings/shadows';
+@import 'settings/z-index';
 
 .Modal__portal {
   display: block;
@@ -17,7 +18,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 1000;
+  z-index: var(--z-index-modal);
   opacity: 0;
   transition: opacity var(--transition-duration-default)
     var(--transition-easing-default);
@@ -57,7 +58,7 @@
 */
 
 .Modal__wrap {
-  z-index: 1001;
+  z-index: var(--z-index-modal-content);
   position: relative;
   padding: 0;
   display: inline-block;
