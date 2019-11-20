@@ -26,6 +26,7 @@ export type DropdownProps = {
   className?: string;
   children: React.ReactNode;
   isFullWidth?: boolean;
+  isAutoalignmentEnabled?: boolean;
 } & typeof defaultProps;
 
 export interface AnchorDimensionsAndPositonType {
@@ -46,6 +47,7 @@ const defaultProps = {
   testId: 'cf-ui-dropdown',
   position: 'bottom-left',
   isOpen: false,
+  isAutoalignmentEnabled: true,
   getContainerRef: () => {},
 };
 
@@ -171,6 +173,7 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
       dropdownContainerClassName,
       children,
       isOpen,
+      isAutoalignmentEnabled,
       ...otherProps
     } = this.props;
 
@@ -220,6 +223,7 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
             submenu={false}
             width={this.state.containerWidth}
             dropdownAnchor={this.dropdownAnchor}
+            isAutoalignmentEnabled={isAutoalignmentEnabled}
             anchorDimensionsAndPositon={this.state.anchorDimensionsAndPositon}
             onClose={this.props.onClose}
             openSubmenu={this.openSubmenu}
