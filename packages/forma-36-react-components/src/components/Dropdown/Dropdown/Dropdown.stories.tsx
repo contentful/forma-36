@@ -18,6 +18,7 @@ function DefaultStory() {
       onClose={() => setOpen(false)}
       isFullWidth={boolean('isFullWidth', false)}
       key={Date.now()} // Force Reinit
+      isAutoalignmentEnabled={boolean('isAutoalignmentEnabled', true)}
       position={select(
         'position',
         {

@@ -50,6 +50,7 @@ exports[`renders the component as open 1`] = `
     }
     dropdownAnchor={null}
     getRef={[Function]}
+    isAutoalignmentEnabled={true}
     openSubmenu={[Function]}
     position="bottom-left"
     submenu={false}
@@ -100,6 +101,7 @@ exports[`renders the component with a submenu 1`] = `
     }
     dropdownAnchor={null}
     getRef={[Function]}
+    isAutoalignmentEnabled={true}
     openSubmenu={[Function]}
     position="bottom-left"
     submenu={false}
@@ -118,6 +120,7 @@ exports[`renders the component with a submenu 1`] = `
       </DropdownListItem>
       <Dropdown
         getContainerRef={[Function]}
+        isAutoalignmentEnabled={true}
         isOpen={true}
         position="bottom-left"
         submenuToggleLabel="Submenu"
