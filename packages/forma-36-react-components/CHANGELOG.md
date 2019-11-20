@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.24.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.23.0...@contentful/forma-36-react-components@3.24.0) (2019-11-20)
+
+
+### Features
+
+* **Dropdown:** Add isAutoalignmentEnabled prop ([#344](https://github.com/contentful/forma-36/issues/344)) ([52721ba](https://github.com/contentful/forma-36/commit/52721ba))
+
+
+
+
+
 # [3.23.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.22.1...@contentful/forma-36-react-components@3.23.0) (2019-11-18)
 
 

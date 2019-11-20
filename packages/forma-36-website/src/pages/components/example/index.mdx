@@ -1,0 +1,100 @@
+---
+title: 'Example Component'
+type: 'component'
+github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/FormLabel'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-formlabel--default'
+---
+
+Add a description about the component and its function in the user interface here
+E.g: TextLinks communicate actions and highlight linked resources to users.
+
+Add an example of the component like this:
+
+```jsx
+<React.Fragment>
+  <Button buttonType="primary">Primary</Button>
+</React.Fragment>
+```
+
+## Table of contents
+
+1. [Best practices](#best-practices)
+2. [Variations](#variations)
+   1. [Button types](#button-types)
+3. [Copy considerations](#copy-considerations)
+4. [Accessibility](#accessibility)
+
+## Best practices <a name="best-practices" />
+
+Add best practices for usage in the UI, think about copy and accessibility or general UX guidelines
+E.g (Button Component):
+
+- Position buttons consistently in the interface
+- Reduce complexity by using a small number of actions. Too many actions can create confusion.
+
+## Variations <a name="variations" />
+
+Describe important properties on the component and give examples. Important properties configure a component to serve its main purposes
+
+**_E.g: Button Component_**
+
+The Button component can be configured in a number of different ways. Here is a guide to when to use certain variations.
+
+### Button types (`buttonType`) <a name="button-types" />
+
+```jsx
+<React.Fragment>
+  <Button buttonType="primary">Primary</Button>
+  <Button buttonType="negative">Negative</Button>
+  <Button buttonType="positive">Positive</Button>
+  <Button buttonType="muted">Muted</Button>
+  <Button buttonType="naked">Naked</Button>
+</React.Fragment>
+```
+
+### With icon (`icon`)
+
+```jsx
+<React.Fragment>
+  <Button buttonType="primary" icon="Settings">
+    Primary
+  </Button>
+  <Button buttonType="negative" icon="Settings">
+    Negative
+  </Button>
+  <Button buttonType="positive" icon="Settings">
+    Positive
+  </Button>
+  <Button buttonType="muted" icon="Settings">
+    Muted
+  </Button>
+  <Button buttonType="naked" icon="Settings">
+    Naked
+  </Button>
+</React.Fragment>
+```
+
+### Sizes (`size`)
+
+```jsx
+<React.Fragment>
+  <Button buttonType="muted" size="large">
+    Large
+  </Button>
+  <Button buttonType="muted">Default</Button>
+  <Button buttonType="muted" size="small">
+    Small
+  </Button>
+</React.Fragment>
+```
+
+## Copy considerations <a name="copy-considerations" />
+
+(optional) If the component has specific copy considerations mention them in this section
+
+- Do not use punctuation following a label
+- Use sentence-style caps (in which only the first word of a sentence or term is capitalized) on labels
+
+## Accessibility <a name="accessibility" />
+
+(optional) If the component has specific a11y requirements mention them here
