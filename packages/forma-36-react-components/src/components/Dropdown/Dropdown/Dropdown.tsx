@@ -15,7 +15,7 @@ export type positionType =
   | 'top-left';
 
 export type DropdownProps = {
-  toggleElement?: React.ReactNode;
+  toggleElement?: React.ReactElement;
   submenuToggleLabel?: string;
   position: positionType;
   isOpen: boolean;
@@ -187,7 +187,11 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
         onLeave={() => this.openMenu(false)}
         {...otherProps}
       >
-        {toggleElement}
+        {toggleElement &&
+          React.cloneElement(toggleElement, {
+            'aria-haspopup': 'listbox',
+            'aria-expanded': this.state.isOpen,
+          })}
         {this.state.isOpen && (
           <DropdownContainer
             anchorDimensionsAndPositon={this.state.anchorDimensionsAndPositon}
@@ -215,7 +219,11 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
         }}
         {...otherProps}
       >
-        {toggleElement}
+        {toggleElement &&
+          React.cloneElement(toggleElement, {
+            'aria-haspopup': 'listbox',
+            'aria-expanded': this.state.isOpen,
+          })}
         {this.state.isOpen && (
           <DropdownContainer
             className={dropdownContainerClassName}
