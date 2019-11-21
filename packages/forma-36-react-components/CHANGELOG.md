@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.24.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.24.0...@contentful/forma-36-react-components@3.24.1) (2019-11-21)
+
+
+### Bug Fixes
+
+* **Dropdown:** Fix A11Y issues ([#345](https://github.com/contentful/forma-36/issues/345)) ([bcc7c84](https://github.com/contentful/forma-36/commit/bcc7c84))
+
+
+
+
+
 # [3.24.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.23.0...@contentful/forma-36-react-components@3.24.0) (2019-11-20)
 
 
