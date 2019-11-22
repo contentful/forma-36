@@ -21,6 +21,7 @@ export type DropdownContainerProps = {
   getRef?: (ref: HTMLElement | null) => void;
   submenu?: boolean;
   width?: number;
+  isAutoalignmentEnabled?: boolean;
 } & typeof defaultProps;
 
 export interface DropdownState {
@@ -35,6 +36,7 @@ const defaultProps = {
   testId: 'cf-ui-dropdown-portal',
   position: 'bottom-left',
   submenu: false,
+  isAutoalignmentEnabled: true,
   getRef: () => {},
 };
 
@@ -90,6 +92,9 @@ class DropdownContainer extends Component<
   };
 
   handleOverflow = (overflowAt: string) => {
+    if (!this.props.isAutoalignmentEnabled) {
+      return;
+    }
     if (overflowAt === this.lastOverflowAt) {
       return;
     }

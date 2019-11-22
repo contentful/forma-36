@@ -141,7 +141,12 @@ export class DropdownListItem extends Component<DropdownListItemProps> {
     });
 
     return (
-      <li className={classNames} data-test-id={testId} ref={listItemRef}>
+      <li
+        className={classNames}
+        data-test-id={testId}
+        ref={listItemRef}
+        role="option"
+      >
         {submenuToggleLabel
           ? this.renderSubmenuToggle()
           : this.renderListItem()}
