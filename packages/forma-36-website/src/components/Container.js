@@ -22,7 +22,6 @@ import ComponentSource from './ComponentSource';
 import ComponentHeader from './ComponentHeader';
 import ChildSections from './ChildSections';
 import Footer from './Footer';
-import HomeSplash from './HomeSplash';
 
 const styles = {
   container: css`

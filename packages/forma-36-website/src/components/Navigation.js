@@ -5,8 +5,6 @@ import { Link } from 'gatsby';
 import { css, jsx } from '@emotion/core';
 import tokens from '@contentful/forma-36-tokens';
 
-import Logo from './Logo';
-
 const styles = {
   navList: css`
     display: flex;
@@ -87,7 +85,7 @@ class MenuListItem extends React.Component {
   };
 
   render() {
-    const { item, menuItems, currentPath } = this.props;
+    const { item, currentPath } = this.props;
 
     return (
       <li css={styles.listItem}>

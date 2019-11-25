@@ -1,5 +1,4 @@
 import React from 'react';
-import { DisplayText, Paragraph } from '@contentful/forma-36-react-components';
 import tokens from '@contentful/forma-36-tokens';
 import { css } from '@emotion/core';
 
