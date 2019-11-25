@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.25.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.24.1...@contentful/forma-36-react-components@3.25.0) (2019-11-25)
+
+
+### Features
+
+* **Tokens:** Add ZIndex tokens ([#343](https://github.com/contentful/forma-36/issues/343)) ([3adfc24](https://github.com/contentful/forma-36/commit/3adfc24))
+
+
+
+
+
 ## [3.24.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.24.0...@contentful/forma-36-react-components@3.24.1) (2019-11-21)
 
 

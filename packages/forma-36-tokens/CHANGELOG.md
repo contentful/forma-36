@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.5.0 (2019-11-25)
+
+
+### Features
+
+* **Tokens:** Add ZIndex tokens ([#343](https://github.com/contentful/forma-36/issues/343)) ([3adfc24](https://github.com/contentful/forma-36/commit/3adfc24))
+
+
+
+
+
 ## [0.4.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.4.4...@contentful/forma-36-tokens@0.4.5) (2019-08-30)
 
 
