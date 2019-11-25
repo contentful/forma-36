@@ -38,6 +38,11 @@ const styles = {
     margin-left: ${tokens.spacingM};
     font-size: ${tokens.fontSizeL};
   `,
+
+  navListLink: css`
+    color: #fff;
+    text-decoration: none;
+  `,
 };
 
 const Logo = () => (
@@ -68,9 +73,36 @@ const Header = () => (
     </div>
     <nav css={styles.nav}>
       <ul css={styles.navList}>
-        <li css={styles.navListItem}>GitHub</li>
-        <li css={styles.navListItem}>Blog</li>
-        <li css={styles.navListItem}>Join Community</li>
+        <li css={styles.navListItem}>
+          <a
+            css={styles.navListLink}
+            href="https://github.com/contentful/forma-36"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+        </li>
+        <li css={styles.navListItem}>
+          <a
+            css={styles.navListLink}
+            href="https://contentful.design/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Blog
+          </a>
+        </li>
+        <li css={styles.navListItem}>
+          <a
+            css={styles.navListLink}
+            href="https://www.contentful.com/developers/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Join the community
+          </a>
+        </li>
       </ul>
     </nav>
   </header>

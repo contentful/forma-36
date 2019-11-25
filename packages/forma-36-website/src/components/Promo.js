@@ -35,7 +35,12 @@ const Promo = ({ text, linkText, linkHref }) => (
   <div css={styles.promo}>
     <span css={styles.new}>New</span> {text}
     {linkHref && (
-      <a href={linkHref} css={styles.link}>
+      <a
+        href={linkHref}
+        css={styles.link}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         {linkText}
       </a>
     )}

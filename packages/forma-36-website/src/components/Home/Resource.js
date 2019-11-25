@@ -40,7 +40,12 @@ const Resource = ({ title, description, imageNode, linkHref, linkText }) => (
       <Subheading>{title}</Subheading>
       <Paragraph css={styles.paragraph}>{description}</Paragraph>
       <Paragraph css={styles.paragraph}>
-        <TextLink css={styles.link} href={linkHref}>
+        <TextLink
+          css={styles.link}
+          href={linkHref}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {linkText}
         </TextLink>
       </Paragraph>

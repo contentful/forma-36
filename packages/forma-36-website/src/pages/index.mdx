@@ -31,35 +31,35 @@ import Resource from './../components/Home/Resource';
   <Paragraph
     style={{ fontSize: tokens.fontSizeL, marginBottom: tokens.spacing3Xl }}
   >
-    Resources for designers  and developers
+    Everything you need to get started building for Contentful
   </Paragraph>
   <Resources>
     <Resource
       title="Create prototypes faster"
       description="Get started creating UI design using the Forma 36 UI kit"
       linkText="Get UI kit"
-      linkHref="#"
+      linkHref="https://sketch.cloud/s/dDdL3"
       imageNode={<img src={uiKitImg} />}
     />
     <Resource
       title="Start with React components"
-      description="The component library includes documentation and design tokens"
+      description="A React component library for Forma 36"
       linkText="Get React component library"
-      linkHref="#"
+      linkHref="https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components"
       imageNode={<img src={componentsImg} />}
     />
     <Resource
       title="Get the tokens"
       description="Design tokens for Forma 36 available as JSON, CSS, and SCSS"
       linkText="Get the tokens"
-      linkHref="#"
+      linkHref="https://github.com/contentful/forma-36/tree/master/packages/forma-36-tokens"
       imageNode={<img src={tokensImg} />}
     />
     <Resource
       title="Forma 36 FCSS"
-      description="Utility CSS classes of spacing, colors, typography, shadows, and transitions"
+      description="CSS utlity classes for spacing, colors, and more"
       linkText="Get FCSS"
-      linkHref="#"
+      linkHref="https://github.com/contentful/forma-36/tree/master/packages/forma-36-fcss"
       imageNode={<img src={fcssImg} />}
     />
   </Resources>
@@ -75,9 +75,14 @@ import Resource from './../components/Home/Resource';
       marginRight: 'auto',
     }}
   >
-    Get involved. We appreciate any help on our repositories. For more details
-    about how to contribute to a package, see the README of the corresponding
-    package on Github
+    We appreciate your contributions. For more details about how to contribute
+    to a package, see the README of the corresponding package on Github
   </Paragraph>
-  <Button href="https://github.com/contentful/forma-36">View on GitHub</Button>
+  <Button
+    href="https://github.com/contentful/forma-36"
+    target="_blank"
+    rel="noopener"
+  >
+    View on GitHub
+  </Button>
 </Section>
