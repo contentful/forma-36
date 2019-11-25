@@ -33,7 +33,7 @@
 }
 
 .TextInput__input:focus {
-  z-index: 1;
+  z-index: var(--z-index-default);
 }
 
 .TextInput--small {
@@ -79,6 +79,6 @@
   }
 
   &:focus-within {
-    z-index: 1;
+    z-index: var(--z-index-default);
   }
 }
