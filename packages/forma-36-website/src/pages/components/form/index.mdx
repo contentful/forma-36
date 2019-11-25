@@ -5,21 +5,19 @@ github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-re
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-form--default'
 ---
 
-Form is a wrapper component that handles form submissions.
+The Form component is a wrapper component to apply a consistent layout and handle form submissions.
 
 ```jsx
 <React.Fragment>
-  <Form
-      onSubmit={()=> console.log('onSubmit')}
-      spacing="default"
-    >
+  <Form onSubmit={() => console.log('onSubmit')} spacing="default">
+    <FieldGroup>
       <TextField
         required
         name="nameInput"
         id="nameInput"
         labelText="Name"
         value="Johannes Bugiel"
-        helpText="Please enter your name"
+        helpText="Enter name"
       />
       <TextField
         required
@@ -27,10 +25,13 @@ Form is a wrapper component that handles form submissions.
         id="emailInput"
         labelText="E-Mail"
         value="johannes.bugiel@contentful.com"
-        helpText="Please enter your mail"
+        helpText="Enter email address"
       />
+    </FieldGroup>
+    <FieldGroup>
       <Button>Submit</Button>
-    </Form>
+    </FieldGroup>
+  </Form>
 </React.Fragment>
 ```
 
@@ -38,15 +39,14 @@ Form is a wrapper component that handles form submissions.
 
 1. [Best practices](#best-practices)
 2. [Variations](#variations)
-   1. [Button types](#button-types)
-3. [Copy considerations](#copy-considerations)
-4. [Accessibility](#accessibility)
+   1. [Default spacing](#spacing-default)
+   2. [Condensed spacing](#spacing-condensed)
+3. [Writing guidelines](#copy-considerations)
 
 ## Best practices <a name="best-practices" />
 
-- This `Form` component wraps it's contents with HTML `<form>` component
-- Should be used to wrap all form input components
-- To imitate navive HTML behaviuor, add handler for `oncSubmit` action
+- The `Form` component should wrap FieldGroup components to apply consistent layouts
+- Provide an `onSubmit` handler for form validation and submission
 
 ## Variations <a name="variations" />
 
@@ -54,28 +54,29 @@ Form is a wrapper component that handles form submissions.
 
 ```jsx
 <React.Fragment>
-  <Form
-      onSubmit={()=> console.log('onSubmit')}
-      spacing="default"
-    >
+  <Form onSubmit={() => console.log('onSubmit')} spacing="default">
+    <FieldGroup>
       <TextField
         required
         name="nameInput"
         id="nameInput"
         labelText="Name"
         value="Johannes Bugiel"
-        helpText="Please enter your name"
+        helpText="Enter name"
       />
       <TextField
         required
         name="emailInput"
         id="emailInput"
         labelText="E-Mail"
-        value="johannes.bugiel@contentful.com"
-        helpText="Please enter your mail"
+        value="forma36@contentful.com"
+        helpText="Enter email address"
       />
+    </FieldGroup>
+    <FieldGroup>
       <Button>Submit</Button>
-    </Form>
+    </FieldGroup>
+  </Form>
 </React.Fragment>
 ```
 
@@ -83,34 +84,28 @@ Form is a wrapper component that handles form submissions.
 
 ```jsx
 <React.Fragment>
-  <Form
-      onSubmit={()=> console.log('onSubmit')}
-      spacing="condensed"
-    >
+  <Form onSubmit={() => console.log('onSubmit')} spacing="condensed">
+    <FieldGroup>
       <TextField
         required
         name="nameInput"
         id="nameInput"
         labelText="Name"
         value="Johannes Bugiel"
-        helpText="Please enter your name"
+        helpText="Enter name"
       />
       <TextField
         required
         name="emailInput"
         id="emailInput"
         labelText="E-Mail"
-        value="johannes.bugiel@contentful.com"
-        helpText="Please enter your mail"
+        value="forma36@contentful.com"
+        helpText="Enter email address"
       />
+    </FieldGroup>
+    <FieldGroup>
       <Button>Submit</Button>
-    </Form>
+    </FieldGroup>
+  </Form>
 </React.Fragment>
 ```
-
-## Copy considerations <a name="copy-considerations" />
-
-
-## Accessibility <a name="accessibility" />
-
-

@@ -108,6 +108,10 @@ module.exports = {
             link: '/components/button/',
           },
           {
+            name: 'Form',
+            link: '/components/form/',
+          },
+          {
             name: 'FormLabel',
             link: '/components/form-label/',
           },
