@@ -58,6 +58,8 @@ const FormatItalic = require('./svg/FormatItalic.svg');
 const FormatItalicTrimmed = require('./svg/FormatItalicTrimmed.svg');
 const FormatUnderlined = require('./svg/FormatUnderlined.svg');
 const FormatUnderlinedTrimmed = require('./svg/FormatUnderlinedTrimmed.svg');
+const GuillemetLeft = require('./svg/GuillemetLeft.svg');
+const GuillemetRight = require('./svg/GuillemetRight.svg');
 const Heading = require('./svg/Heading.svg');
 const HeadingOne = require('./svg/HeadingOne.svg');
 const HeadingOneTrimmed = require('./svg/HeadingOneTrimmed.svg');
@@ -178,6 +180,8 @@ const iconComponents = {
   FormatItalicTrimmed,
   FormatUnderlined,
   FormatUnderlinedTrimmed,
+  GuillemetLeft,
+  GuillemetRight,
   Heading,
   HeadingOne,
   HeadingOneTrimmed,
