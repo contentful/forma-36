@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.89](https://github.com/contentful/forma-36/compare/forma-36-website@0.2.88...forma-36-website@0.2.89) (2019-11-26)
+
+
+### Bug Fixes
+
+* **Doc site:** Set min width for site and fix text ([43a96ba](https://github.com/contentful/forma-36/commit/43a96ba))
+
+
+
+
+
 ## [0.2.88](https://github.com/contentful/forma-36/compare/forma-36-website@0.2.87...forma-36-website@0.2.88) (2019-11-26)
 
 
