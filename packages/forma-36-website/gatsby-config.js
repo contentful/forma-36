@@ -85,7 +85,7 @@ module.exports = {
           },
           {
             name: 'Layout',
-            link: '/guidelines/layout/',
+            link: '',
             menuLinks: [
               {
                 name: 'Workbench',

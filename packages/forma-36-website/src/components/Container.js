@@ -20,7 +20,6 @@ import {
 } from '@contentful/forma-36-react-components';
 import ComponentSource from './ComponentSource';
 import ComponentHeader from './ComponentHeader';
-import ChildSections from './ChildSections';
 import Footer from './Footer';
 
 const styles = {
@@ -93,10 +92,6 @@ const Container = data => {
         <Typography css={isHomePage ? styles.innerHomePage : styles.inner}>
           <MDXProvider components={markToComponentMap}>{children}</MDXProvider>
         </Typography>
-
-        {frontmatter && frontmatter.subpages && (
-          <ChildSections items={frontmatter.subpages} />
-        )}
       </div>
       <Footer />
     </div>

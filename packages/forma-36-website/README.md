@@ -4,12 +4,11 @@
 
 This is the home for documentation relating to Forma 36, the Contentful design system.
 
-The website is broken down into four main sections:
+The website is broken down into three main sections:
 
 - Foundation - Information relating to the basic building blocks of creating Contentful products - design tokens, typography, colour, etc.
 - Guidelines - In-depth guidelines to design topics - how we write content, how we space our components, etc.
 - Components - In-depth documentation on how to use our components.
-- Resources - Links to resources such as our Sketch UI kit, GitHub repos or other tools.
 
 ## Development
 
@@ -27,7 +26,6 @@ The documentation website is powered using [Gatsby v2](https://www.gatsbyjs.org)
     ├── components // Documentation about our pages
     ├── foundation // Foundation documentation pages
     ├── guidelines // Guidelines documentation pages
-    ├── resources  // Resource page
     └── index.mdx  // The homepage content for the documentation site
 ```
 
@@ -44,16 +42,7 @@ my-page
 
 ## Overview of navigation
 
-There are two places for navigation within the website. The sidebar navigation (generated via `gatsby-config.js`), and page section navigation (generated via front matter).
-
-Here is a guide to creating navigation in both places based on the following structure:
-
-```
-my-page
-├── index.mdx     // The contents for `my-page`
-└── my-sub-page
-    └── index.mdx // The contents for `my-sub-page`
-```
+The sidebar navigation is generated via the `menuLinks` property in `gatsby-config.js`.
 
 ### Adding/updating sidebar navigation items
 
@@ -67,7 +56,7 @@ siteMetadata: {
   menuLinks: [
     {
       name: 'My page',
-      link: '/my-page/',
+      link: '/my-page/', // This MUST end in a forward slash
       menuLinks: [
         {
           name: 'My sub-page',
@@ -81,22 +70,25 @@ siteMetadata: {
 
 The value for the link property **must** end in a forward slash.
 
-### Adding/updating page section navigation items
+If you wish to create a placeholder in the navigation but don't want a link to the page, you can set the `link` property to be an empty string as follows:
 
-To update the page section navigation for a page you just need to update the front matter for the desired page.
-
-**`my-page.mdx` example**
-
-```mdx
----
-title: 'My page'
-subpages:
-  - title: 'My sub-page'
-    path: '/my-page/my-sub-page/'
----
+```js
+siteMetadata: {
+  title: 'Forma 36 - The Contentful Design System',
+  menuLinks: [
+    {
+      name: 'My navigation placeholder',
+      link: '',
+      menuLinks: [
+        {
+          name: 'My sub-page',
+          link: '/my-page/my-sub-page/',
+        }
+      ],
+    },
+  ]
+}
 ```
-
-The value for the path property **must** end in a forward slash.
 
 ## Adding component documentation
 
