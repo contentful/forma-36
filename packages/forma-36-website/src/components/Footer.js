@@ -9,7 +9,6 @@ const styles = {
     width: 960px;
     margin: 0 auto;
     padding: ${tokens.spacingL};
-    border-top: 1px solid ${tokens.colorElementMid};
     align-items: center;
   `,
 
