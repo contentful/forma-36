@@ -14,6 +14,7 @@ const styles = {
   `,
   text: css`
     text-align: left;
+    flex: 1;
   `,
   paragraph: css`
     font-size: ${tokens.fontSizeL};
