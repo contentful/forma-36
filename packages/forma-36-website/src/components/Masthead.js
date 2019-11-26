@@ -2,6 +2,7 @@ import React from 'react';
 import { DisplayText, Paragraph } from '@contentful/forma-36-react-components';
 import tokens from '@contentful/forma-36-tokens';
 import { css } from '@emotion/core';
+import bg from './dot-bg.png';
 
 const styles = {
   masthead: css`
@@ -10,6 +11,8 @@ const styles = {
     background-color: ${tokens.colorPrimary};
     text-align: center;
     padding: ${tokens.spacing3Xl} 0;
+    background-image: url(${bg});
+    background-size: 30px;
   `,
   content: css`
     width: 28rem;
