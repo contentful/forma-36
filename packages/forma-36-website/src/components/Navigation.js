@@ -5,20 +5,13 @@ import { Link } from 'gatsby';
 import { css, jsx } from '@emotion/core';
 import tokens from '@contentful/forma-36-tokens';
 
-import Logo from './Logo';
-
 const styles = {
-  navigation: css`
+  navList: css`
     display: flex;
     flex-direction: column;
-    padding: ${tokens.spacing2Xl} 0;
     flex: 0 0 320px;
-    background-color: ${tokens.colorElementLightest};
-  `,
-
-  navList: css`
-    padding: 0 ${tokens.spacingXl};
-    flex: 1 1 0;
+    background-color: ${tokens.colorElementLight};
+    padding: ${tokens.spacing2Xl} ${tokens.spacingXl};
   `,
 
   list: css`
@@ -68,43 +61,68 @@ const MenuListProps = {
   currentPath: PropTypes.string.isRequired,
 };
 
-class MenuList extends React.Component {
+class MenuListItem extends React.Component {
+  state = {
+    isExpanded: false,
+  };
+
   checkOpen = (item, currentPath) => {
     if (item.link === currentPath) {
       return true;
     } else if (item.menuLinks) {
       return item.menuLinks.some(item => this.checkOpen(item, currentPath));
     }
+
     return false;
   };
 
+  handleToggle = event => {
+    event.preventDefault();
+
+    this.setState(prevState => {
+      return { isExpanded: !prevState.isExpanded };
+    });
+  };
+
+  render() {
+    const { item, currentPath } = this.props;
+
+    return (
+      <li css={styles.listItem}>
+        <Link
+          css={[
+            styles.link,
+            this.state.isExpanded ||
+              (this.checkOpen(item, currentPath) && styles.linkActive),
+          ]}
+          to={item.link}
+          href={item.link}
+          onClick={!item.link && (event => this.handleToggle(event))}
+        >
+          {item.name}
+        </Link>
+        {item.menuLinks &&
+          (this.state.isExpanded || this.checkOpen(item, currentPath)) && (
+            <MenuList menuItems={item.menuLinks} currentPath={currentPath} />
+          )}
+      </li>
+    );
+  }
+}
+
+class MenuList extends React.Component {
   render() {
     const { menuItems, currentPath } = this.props;
     return (
       <ul css={styles.list}>
         {menuItems &&
           menuItems.map((item, index) => (
-            <li
-              key={index} // eslint-disable-line
-              css={styles.listItem}
-            >
-              <Link
-                css={[
-                  styles.link,
-                  currentPath === item.link && styles.linkActive,
-                ]}
-                to={item.link}
-                href={item.link}
-              >
-                {item.name}
-              </Link>
-              {this.checkOpen(item, currentPath) && (
-                <MenuList
-                  menuItems={item.menuLinks}
-                  currentPath={currentPath}
-                />
-              )}
-            </li>
+            <MenuListItem
+              key={index}
+              item={item}
+              menuItems={menuItems}
+              currentPath={currentPath}
+            />
           ))}
       </ul>
     );
@@ -116,15 +134,11 @@ MenuList.propTypes = MenuListProps;
 MenuList.defaultProps = {
   menuItems: [],
 };
+
 const Navigation = ({ menuItems, currentPath }) => (
-  <div css={styles.navigation}>
-    <Link to="./" href="./">
-      <Logo />
-    </Link>
-    <nav css={styles.navList}>
-      <MenuList menuItems={menuItems} currentPath={currentPath} />
-    </nav>
-  </div>
+  <nav css={styles.navList}>
+    <MenuList menuItems={menuItems} currentPath={currentPath} />
+  </nav>
 );
 
 Navigation.propTypes = MenuListProps;

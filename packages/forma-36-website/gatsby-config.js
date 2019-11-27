@@ -1,10 +1,13 @@
 module.exports = {
   siteMetadata: {
     title: 'Forma 36 - The Contentful Design System',
+    promoText: 'Join the Berlin Design Systems Community Q&A on November 28th',
+    promoLink: 'https://www.meetup.com/berlin-design-systems/events/266289217/',
+    promoLinkText: 'Sign up on Meetup',
     menuLinks: [
       {
         name: 'Foundation',
-        link: '/foundation/',
+        link: '',
         menuLinks: [
           {
             name: 'Color',
@@ -30,7 +33,7 @@ module.exports = {
       },
       {
         name: 'Guidelines',
-        link: '/guidelines/',
+        link: '',
         menuLinks: [
           {
             name: 'Accessibility',
@@ -82,7 +85,7 @@ module.exports = {
           },
           {
             name: 'Layout',
-            link: '/guidelines/layout/',
+            link: '',
             menuLinks: [
               {
                 name: 'Workbench',
@@ -98,7 +101,7 @@ module.exports = {
       },
       {
         name: 'Components',
-        link: '/components/',
+        link: '',
         menuLinks: [
           {
             name: 'Button',
@@ -141,10 +144,6 @@ module.exports = {
             link: '/components/validation-message/',
           },
         ],
-      },
-      {
-        name: 'Resources',
-        link: '/resources/',
       },
     ],
   },
