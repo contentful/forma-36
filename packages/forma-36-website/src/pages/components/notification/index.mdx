@@ -22,7 +22,7 @@ Not component by interface
 2. [Variations](#variations)
    1. [Customized notifications](#customized)
    1. [Positioned notifications](#positioned)
-   1. [Message](#positioned)
+   1. [Message](#message)
 3. [Copy considerations](#copy-considerations)
 4. [Accessibility](#accessibility)
 
@@ -88,6 +88,22 @@ E.g (Button Component):
 </React.Fragment>
 ```
 
+
+### Notifications with a long message <a name="message" />
+
+```jsx
+<React.Fragment>
+  <Button
+    buttonType="primary"
+    onClick={() => {
+      Notification.success('Only use this component in the context of a form, and as corresponding guidance to an input field');
+    }}
+  >
+    Show long message
+  </Button>
+  
+</React.Fragment>
+```
 
 ## Copy considerations <a name="copy-considerations" />
 
