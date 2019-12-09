@@ -35,7 +35,7 @@ import F36Tokens from '@contentful/forma-36-tokens';
 #### SCSS
 
 ```scss
-@import '@contentful/forma-36-tokens/dist/css/index.scss';
+@import '@contentful/forma-36-tokens/dist/scss/index.scss';
 ```
 
 #### JSON
