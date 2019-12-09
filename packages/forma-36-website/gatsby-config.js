@@ -1,9 +1,10 @@
 module.exports = {
   siteMetadata: {
     title: 'Forma 36 - The Contentful Design System',
-    promoText: 'Join the Berlin Design Systems Community Q&A on November 28th',
-    promoLink: 'https://www.meetup.com/berlin-design-systems/events/266289217/',
-    promoLinkText: 'Sign up on Meetup',
+    // Uncomment the lines below to display a promotional bar at the very top of the website
+    // promoText: 'Join the Berlin Design Systems Community Q&A on November 28th',
+    // promoLink: 'https://www.meetup.com/berlin-design-systems/events/266289217/',
+    // promoLinkText: 'Sign up on Meetup',
     menuLinks: [
       {
         name: 'Foundation',
