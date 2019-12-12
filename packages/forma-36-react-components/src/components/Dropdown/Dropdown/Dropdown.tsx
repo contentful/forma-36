@@ -189,7 +189,7 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
       >
         {toggleElement &&
           React.cloneElement(toggleElement, {
-            'aria-haspopup': 'listbox',
+            'aria-haspopup': 'menu',
             'aria-expanded': this.state.isOpen,
           })}
         {this.state.isOpen && (
@@ -221,7 +221,7 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
       >
         {toggleElement &&
           React.cloneElement(toggleElement, {
-            'aria-haspopup': 'listbox',
+            'aria-haspopup': 'menu',
             'aria-expanded': this.state.isOpen,
           })}
         {this.state.isOpen && (

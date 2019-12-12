@@ -7,6 +7,8 @@ exports[`renders the component 1`] = `
   position="bottom-left"
 >
   <Button
+    aria-expanded={false}
+    aria-haspopup="menu"
     buttonType="primary"
     disabled={false}
     indicateDropdown={false}
@@ -28,6 +30,8 @@ exports[`renders the component as open 1`] = `
   position="bottom-left"
 >
   <Button
+    aria-expanded={true}
+    aria-haspopup="menu"
     buttonType="primary"
     disabled={false}
     indicateDropdown={false}
@@ -79,6 +83,8 @@ exports[`renders the component with a submenu 1`] = `
   position="bottom-left"
 >
   <Button
+    aria-expanded={true}
+    aria-haspopup="menu"
     buttonType="primary"
     disabled={false}
     indicateDropdown={false}
@@ -148,6 +154,8 @@ exports[`renders the component with an additional class name 1`] = `
   position="bottom-left"
 >
   <Button
+    aria-expanded={false}
+    aria-haspopup="menu"
     buttonType="primary"
     disabled={false}
     indicateDropdown={false}
