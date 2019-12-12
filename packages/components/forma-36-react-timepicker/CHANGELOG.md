@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0-alpha.8](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-timepicker@0.2.0-alpha.7...@contentful/forma-36-react-timepicker@0.2.0-alpha.8) (2019-12-12)
+
+
+### Bug Fixes
+
+* **Datepicker:** Update dependencies ([#353](https://github.com/contentful/forma-36/issues/353)) ([549150b](https://github.com/contentful/forma-36/commit/549150b))
+
+
+
+
+
 # [0.2.0-alpha.7](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-timepicker@0.2.0-alpha.6...@contentful/forma-36-react-timepicker@0.2.0-alpha.7) (2019-12-12)
 
 **Note:** Version bump only for package @contentful/forma-36-react-timepicker
