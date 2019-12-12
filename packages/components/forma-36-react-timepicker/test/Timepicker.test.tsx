@@ -24,6 +24,7 @@ describe('TimePicker', () => {
       onBlur: () => {},
       date: dateFns.format(dateFns.addYears(new Date(), 1), 'yyyy/MM/dd'),
       value,
+      isRequired: true,
     };
     return [render(<Timepicker {...props} />), props];
   };
