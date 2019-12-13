@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.25.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.25.2...@contentful/forma-36-react-components@3.25.3) (2019-12-13)
+
+
+### Bug Fixes
+
+* **text-link:** allow target and rel attributes for text link ([#354](https://github.com/contentful/forma-36/issues/354)) ([fd3c4e3](https://github.com/contentful/forma-36/commit/fd3c4e3))
+
+
+
+
+
 ## [3.25.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.25.1...@contentful/forma-36-react-components@3.25.2) (2019-12-12)
 
 
