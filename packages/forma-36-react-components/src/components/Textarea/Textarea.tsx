@@ -4,6 +4,7 @@ import React, {
   FocusEventHandler,
   ChangeEventHandler,
   KeyboardEventHandler,
+  RefObject,
 } from 'react';
 import cn from 'classnames';
 import styles from './Textarea.css';
@@ -28,6 +29,7 @@ export type TextareaProps = {
   onKeyDown?: KeyboardEventHandler<HTMLTextAreaElement>;
   onKeyUp?: KeyboardEventHandler<HTMLTextAreaElement>;
   willBlurOnEsc: boolean;
+  textareaRef?: RefObject<HTMLTextAreaElement>;
 } & typeof defaultProps;
 
 export interface TextareaState {
@@ -86,6 +88,7 @@ export class Textarea extends Component<TextareaProps, TextareaState> {
       rows,
       id,
       willBlurOnEsc,
+      textareaRef,
       ...otherProps
     } = this.props;
 
@@ -116,6 +119,7 @@ export class Textarea extends Component<TextareaProps, TextareaState> {
           maxLength={maxLength}
           value={disabled ? value : this.state && this.state.value}
           onKeyDown={this.handleKeyDown}
+          ref={textareaRef}
           {...otherProps}
         />
       </div>

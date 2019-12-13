@@ -25,6 +25,8 @@ export const iconName = {
   CodeTrimmed: 'CodeTrimmed',
   Copy: 'Copy',
   CopyTrimmed: 'CopyTrimmed',
+  Delete: 'Delete',
+  DeleteTrimmed: 'DeleteTrimmed',
   Download: 'Download',
   DownloadTrimmed: 'DownloadTrimmed',
   Drag: 'Drag',

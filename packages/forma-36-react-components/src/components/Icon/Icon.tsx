@@ -26,6 +26,8 @@ const Code = require('./svg/Code.svg');
 const CodeTrimmed = require('./svg/CodeTrimmed.svg');
 const Copy = require('./svg/Copy.svg');
 const CopyTrimmed = require('./svg/CopyTrimmed.svg');
+const Delete = require('./svg/Delete.svg');
+const DeleteTrimmed = require('./svg/DeleteTrimmed.svg');
 const Download = require('./svg/Download.svg');
 const DownloadTrimmed = require('./svg/DownloadTrimmed.svg');
 const Drag = require('./svg/Drag.svg');
@@ -146,6 +148,8 @@ const iconComponents = {
   CodeTrimmed,
   Copy,
   CopyTrimmed,
+  Delete,
+  DeleteTrimmed,
   Download,
   DownloadTrimmed,
   Drag,
