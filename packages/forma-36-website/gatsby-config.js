@@ -116,6 +116,10 @@ module.exports = {
             link: '/components/help-text/',
           },
           {
+            name: 'Modal',
+            link: '/components/modal/',
+          },
+          {
             name: 'Note',
             link: '/components/note/',
           },
@@ -142,10 +146,6 @@ module.exports = {
           {
             name: 'ValidationMessage',
             link: '/components/validation-message/',
-          },
-          {
-            name: 'Modal',
-            link: '/components/modal/',
           },
         ],
       },
