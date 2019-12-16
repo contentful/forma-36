@@ -103,3 +103,10 @@
   max-height: none;
   max-width: none;
 }
+
+.Modal.Modal--zen {
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  height: 100vh;
+}
