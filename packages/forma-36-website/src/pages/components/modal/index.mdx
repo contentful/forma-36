@@ -5,7 +5,7 @@ github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-re
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-modal--default'
 ---
 
-Modal dialogs interrupt users and demand an action. They are appropriate when user’s attention needs to be directed toward important information.
+Modal dialogs interrupt a user by isolating information that needs to be acted upon. They are often triggered by an action a user took, and should be used to inform, confirm or complete a task.
 
 ```jsx
 function ModalExample() {
@@ -39,19 +39,20 @@ function ModalExample() {
 1. [Best practices](#best-practices)
 2. [Variations](#variations)
    1. [Position](#position)
-3. [Copy considerations](#copy-considerations)
-4. [Accessibility](#accessibility)
+3. [Writing guidelines](#writing-guidelines)
+4. [Accessibility guidelines](#accessibility)
 
 ## Best practices <a name="best-practices" />
 
-- Use modal dialogs to request the user to enter information critical to continuing the current process.
-- Use modal dialogs for important warnings, as a way to prevent or correct critical errors.
-- Do not use modal dialogs for nonessential information that is not related to the current user flow.
+- Use modal dialogs to request information critical for a user to continue their current process
+- Use modal dialogs to warn users about a potentially destructive action they are taking
+- Use modal dialogs consistently across use cases
+- Do not use modal dialogs for nonessential information that is not related to the current user flow
 - Avoid modal dialogs that interrupt high-stake processes such as checkout flows.
 
 ## Variations <a name="variations" />
 
-The Modal component can be configured in a number of different ways. Here is a guide to when to use certain variations.
+The Modal component can be configured in a number of different ways. Use this guidance to determine when to use certain variations:
 
 ### Position (`position`) <a name="position" />
 
@@ -153,6 +154,13 @@ function ModalExample() {
 }
 ```
 
-## Copy considerations <a name="copy-considerations" />
+## Writing Guidelines <a name="copy-considerations" />
 
-TODO
+- Practice progressive disclosure. Eliminate extra details to keep copy concise and actionable
+- Focus on the objective of the modal dialog. Start each sentence with the objective when possible
+- To enable users to navigate quickly, write concise sentences that are easy to understand at a glance
+- Limit the number of concepts in each sentence. Write simple sentences for all audiences
+- To keep UX copy actionable use present tense for user interactions
+- Avoid “never,” “always” and other absolutes
+- Use contractions when possible
+- Avoid exclamation marks
