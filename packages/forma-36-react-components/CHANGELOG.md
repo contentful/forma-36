@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.26.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.25.5...@contentful/forma-36-react-components@3.26.0) (2019-12-16)
+
+
+### Features
+
+* **modal:** added zen size ([#356](https://github.com/contentful/forma-36/issues/356)) ([55b9096](https://github.com/contentful/forma-36/commit/55b9096))
+
+
+
+
+
 ## [3.25.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.25.3...@contentful/forma-36-react-components@3.25.5) (2019-12-13)
 
 
