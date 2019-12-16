@@ -12,6 +12,7 @@ const ModalSizesMapper = {
   small: '400px',
   large: '700px',
   fullWidth: '100vw',
+  zen: '100vw',
 };
 
 export type ModalSizeType =
@@ -19,6 +20,7 @@ export type ModalSizeType =
   | 'medium'
   | 'large'
   | 'fullWidth'
+  | 'zen'
   | string
   | number;
 
@@ -159,6 +161,7 @@ export class Modal extends Component<ModalProps> {
           }}
           className={cn(styles.Modal, this.props.className, {
             [styles['Modal--overflow']]: this.props.allowHeightOverflow,
+            [styles['Modal--zen']]: this.props.size === 'zen',
           })}
         >
           {typeof this.props.children === 'function'

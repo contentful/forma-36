@@ -36,7 +36,7 @@ function DefaultStory() {
         )}
         size={select(
           'size',
-          ['small', 'medium', 'large', 'fullWidth', '200px', '1500px'],
+          ['small', 'medium', 'large', 'fullWidth', 'zen', '200px', '1500px'],
           Modal.defaultProps.size,
         )}
         position={select(
