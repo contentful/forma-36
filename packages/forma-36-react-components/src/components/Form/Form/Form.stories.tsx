@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { boolean, select } from '@storybook/addon-knobs';
+import { boolean } from '@storybook/addon-knobs';
 
 import Form from './Form';
 import FieldGroup from '../FieldGroup';
@@ -12,17 +12,7 @@ import CheckboxField from '../../CheckboxField';
 function DefaultStory() {
   const [agreeTerms, setTerms] = useState('yes');
   return (
-    <Form
-      onSubmit={action('onSubmit')}
-      spacing={select(
-        'spacing',
-        {
-          Default: 'default',
-          Condensed: 'condensed',
-        },
-        'default',
-      )}
-    >
+    <Form onSubmit={action('onSubmit')}>
       <TextField
         required
         name="nameInput"

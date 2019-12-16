@@ -5,7 +5,6 @@ const styles = require('./Form.css');
 
 export type FormProps = {
   onSubmit?: FormEventHandler;
-  spacing?: 'condensed' | 'default';
   testId?: string;
   style?: React.CSSProperties;
   className?: string;
@@ -13,7 +12,6 @@ export type FormProps = {
 } & typeof defaultProps;
 
 const defaultProps = {
-  spacing: 'default',
   testId: 'cf-ui-form',
 };
 
@@ -28,21 +26,9 @@ export class Form extends Component<FormProps> {
   };
 
   render() {
-    const {
-      className,
-      children,
-      testId,
-      onSubmit,
-      spacing,
-      ...otherProps
-    } = this.props;
+    const { className, children, testId, onSubmit, ...otherProps } = this.props;
 
     const classNames = cn(styles.Form, className);
-
-    const formItemClassNames = cn(
-      styles.Form__item,
-      styles[`Form__item--${spacing}`],
-    );
 
     return (
       <form
@@ -53,7 +39,7 @@ export class Form extends Component<FormProps> {
       >
         {React.Children.map(children, child => {
           if (child) {
-            return <div className={formItemClassNames}>{child}</div>;
+            return <div className={styles.Form__item}>{child}</div>;
           }
           return null;
         })}

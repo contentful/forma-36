@@ -7,7 +7,7 @@ exports[`renders the component 1`] = `
   onSubmit={[Function]}
 >
   <div
-    className="Form__item Form__item--default"
+    className="Form__item"
     key=".0"
   >
     <TextField
@@ -32,7 +32,7 @@ exports[`renders the component with an additional class name 1`] = `
   onSubmit={[Function]}
 >
   <div
-    className="Form__item Form__item--default"
+    className="Form__item"
     key=".0"
   >
     <TextField
@@ -57,7 +57,7 @@ exports[`renders the component with condensed spacing 1`] = `
   onSubmit={[Function]}
 >
   <div
-    className="Form__item Form__item--condensed"
+    className="Form__item"
     key=".0"
   >
     <TextField

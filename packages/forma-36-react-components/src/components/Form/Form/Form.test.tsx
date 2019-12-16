@@ -40,7 +40,7 @@ it('renders the component with an additional class name', () => {
 
 it('renders the component with condensed spacing', () => {
   const output = shallow(
-    <Form className="my-extra-class" spacing="condensed">
+    <Form className="my-extra-class">
       <TextField
         required
         name="nameInput"

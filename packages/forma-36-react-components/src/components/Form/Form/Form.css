@@ -7,12 +7,5 @@
 
 .Form__item {
   display: block;
-}
-
-.Form__item--default {
   margin-bottom: var(--spacing-l);
-}
-
-.Form__item--condensed {
-  margin-bottom: var(--spacing-m);
 }
