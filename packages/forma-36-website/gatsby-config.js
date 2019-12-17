@@ -116,6 +116,10 @@ module.exports = {
             link: '/components/help-text/',
           },
           {
+            name: 'Icon',
+            link: '/components/icon/',
+          },
+          {
             name: 'Note',
             link: '/components/note/',
           },
