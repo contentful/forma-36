@@ -29,6 +29,10 @@ module.exports = {
             name: 'Transitions',
             link: '/foundation/transitions/',
           },
+          {
+            name: 'Z-Index',
+            link: '/foundation/z-index/',
+          },
         ],
       },
       {
