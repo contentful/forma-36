@@ -8,6 +8,7 @@
     "commitizen": "^4.0.3",
     "husky": "^3.0.4",
     "lerna": "^3.16.4",
+    "plop": "^2.5.3",
     "prettier": "^1.18.2",
     "pretty-quick": "^1.11.1"
   },
@@ -17,6 +18,7 @@
     "semantic-release": "lerna exec --concurrency 1 -- npx --no-install semantic-release -e semantic-release-monorepo",
     "postinstall": "lerna bootstrap && lerna run --scope @contentful/forma-36-tokens build && lerna run --scope @contentful/forma-36-fcss build && lerna run --scope @contentful/forma-36-react-components build",
     "commitmsg": "validate-commit-msg",
+    "add-react-component": "yarn plop --plopfile ./tools/plopfile.js",
     "build": "lerna run build",
     "test": "lerna run test",
     "lint": "lerna run lint",

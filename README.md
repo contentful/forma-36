@@ -37,10 +37,16 @@ The monorepo is currently structured into the following packages:
   - CSS utility classes for spacing, typography, colors and transitions. See the README [here](./packages/forma-36-fcss/README.md)
 - [`forma-36-tokens`](https://github.com/contentful/forma-36/tree/master/packages/forma-36-tokens)
   - Forma 36 design tokens. See the README [here](./packages/forma-36-tokens/README.md)
+- [`components/*`](https://github.com/contentful/forma-36/tree/master/packages/components)
+  - To allow for more flexibility around component management and usage we want to create a single package per component. All react components should be part of the components folder. Refer to the `Adding packages` section for more information.
 
 ### Adding packages
 
 To add another package create a new directory in the packages folder. Make sure that the package name is prefixed with forma-36 (e.g. forma-36-css-utilities). Since we are using Lerna all package scripts are available from the root by running lerna run {script_name}
+
+### Adding React components
+
+To add a new React component package run `yarn add-react-component`.
 
 ## Development
 

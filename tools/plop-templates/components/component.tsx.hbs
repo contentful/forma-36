@@ -1,0 +1,40 @@
+import React, { Component } from 'react';
+import cn from 'classnames';
+
+const styles = require('./{{pascalCase name}}.css');
+
+export type {{pascalCase name}}Props = {
+  /**
+   * Class names to be appended to the className prop of the component
+   */
+  className?: string;
+  /**
+   * Child nodes to be rendered in the component
+   */
+  children?: React.ReactNode;
+  /**
+   * An ID used for testing purposes applied as a data attribute (data-test-id)
+   */
+  testId?: string;
+} & typeof defaultProps;
+
+const defaultProps = {
+  testId: 'cf-ui-{{kebabCase name}}',
+};
+
+export class {{pascalCase name}} extends Component<{{pascalCase name}}Props> {
+  static defaultProps = defaultProps;
+
+  render() {
+    const { className, children, testId, ...otherProps } = this.props;
+    const classNames = cn(styles.{{pascalCase name}}, className);
+
+    return (
+      <div {...otherProps} className={classNames} data-test-id={testId}>
+        {children}
+      </div>
+    );
+  }
+}
+
+export default {{pascalCase name}};
