@@ -9,6 +9,7 @@ import CardDragHandle, {
   CardDragHandlePropTypes,
 } from '../CardDragHandle/CardDragHandle';
 import Icon, { IconType } from '../../Icon/Icon';
+import Tooltip from '../../Tooltip';
 
 const styles = require('./EntryCard.css');
 
@@ -38,7 +39,7 @@ export type EntryCardPropTypes = {
   /**
    * An icon for the status of the entry
    */
-  statusIcon?: string;
+  statusIcon?: string | React.ReactNode;
   /**
    * The thumbnail of the entry
    */
@@ -221,12 +222,14 @@ export class EntryCard extends Component<EntryCardPropTypes> {
                   >
                     {contentType}
                   </div>
-                  {statusIcon && (
+                  {statusIcon && typeof statusIcon === 'string' ? (
                     <Icon
                       icon={statusIcon as IconType}
                       color="muted"
                       className="f36-margin-right--xs"
                     />
+                  ) : (
+                    statusIcon
                   )}
                   {status && this.renderStatus(status)}
                   {dropdownListElements && (
