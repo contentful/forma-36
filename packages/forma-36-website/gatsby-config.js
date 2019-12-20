@@ -124,6 +124,10 @@ module.exports = {
             link: '/components/icon/',
           },
           {
+            name: 'Modal',
+            link: '/components/modal/',
+          },
+          {
             name: 'Note',
             link: '/components/note/',
           },
