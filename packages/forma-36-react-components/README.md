@@ -2,6 +2,9 @@
 
 A React component library for [Contentful](https://www.contentful.com), powered by [Storybook](https://storybook.js.org/).
 
+[Forma 36 Homepage](https://f36.contentful.com/)
+[Forma 36 Storybook](https://f36-storybook.contentful.com/)
+
 ## Table of contents
 
 - [Library Usage](#library-usage)
