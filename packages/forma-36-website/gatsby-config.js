@@ -29,6 +29,10 @@ module.exports = {
             name: 'Transitions',
             link: '/foundation/transitions/',
           },
+          {
+            name: 'Z-Index',
+            link: '/foundation/z-index/',
+          },
         ],
       },
       {
@@ -118,6 +122,14 @@ module.exports = {
           {
             name: 'HelpText',
             link: '/components/help-text/',
+          },
+          {
+            name: 'Icon',
+            link: '/components/icon/',
+          },
+          {
+            name: 'Modal',
+            link: '/components/modal/',
           },
           {
             name: 'Note',
