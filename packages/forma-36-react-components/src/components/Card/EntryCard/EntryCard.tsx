@@ -9,7 +9,6 @@ import CardDragHandle, {
   CardDragHandlePropTypes,
 } from '../CardDragHandle/CardDragHandle';
 import Icon, { IconType } from '../../Icon/Icon';
-import Tooltip from '../../Tooltip';
 
 const styles = require('./EntryCard.css');
 
