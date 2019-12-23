@@ -36,7 +36,20 @@ export class DropdownListItem extends Component<DropdownListItemProps> {
   static defaultProps = defaultProps;
 
   renderSubmenuToggle = () => {
-    const { onClick, onEnter, onLeave, onFocus, ...otherProps } = this.props;
+    const {
+      onClick,
+      onEnter,
+      onLeave,
+      onFocus,
+      children,
+      submenuToggleLabel,
+      testId,
+      isDisabled,
+      isActive,
+      isTitle,
+      ...otherProps
+    } = this.props;
+
     return (
       <React.Fragment>
         <button
@@ -52,10 +65,10 @@ export class DropdownListItem extends Component<DropdownListItemProps> {
           <TabFocusTrap
             className={styles['DropdownListItem__button__inner-wrapper']}
           >
-            {this.props.submenuToggleLabel}
+            {submenuToggleLabel}
           </TabFocusTrap>
         </button>
-        {this.props.children}
+        {children}
       </React.Fragment>
     );
   };
