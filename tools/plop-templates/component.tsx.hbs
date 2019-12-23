@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import cn from 'classnames';
+import { css, cx } from 'emotion';
 
-const styles = require('./{{pascalCase name}}.css');
+const styles = {
+  wrapper: css({}),
+};
 
 export type {{pascalCase name}}Props = {
   /**
@@ -27,7 +29,7 @@ export class {{pascalCase name}} extends Component<{{pascalCase name}}Props> {
 
   render() {
     const { className, children, testId, ...otherProps } = this.props;
-    const classNames = cn(styles.{{pascalCase name}}, className);
+    const classNames = cx(styles.wrapper, className);
 
     return (
       <div {...otherProps} className={classNames} data-test-id={testId}>

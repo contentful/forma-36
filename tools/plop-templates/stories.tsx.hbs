@@ -1,0 +1,15 @@
+import React from 'react';
+import { storiesOf } from '@storybook/react';
+import { text } from '@storybook/addon-knobs';
+
+import {{pascalCase name}} from './index.ts';
+
+storiesOf('Components|{{pascalCase name}}', module)
+.addParameters({
+propTypes: {{pascalCase name}}['__docgenInfo'],
+})
+.add('default', () => (
+<{{pascalCase name}} className={text('className', '' )}>
+  {{{pascalCase name}}}
+</{{pascalCase name}}>
+));

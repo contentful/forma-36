@@ -46,7 +46,7 @@ To add another package create a new directory in the packages folder. Make sure 
 
 ### Adding React components
 
-To add a new React component package run `yarn add-react-component`.
+To add a new React component package run `yarn add-react-component`. This will create a new package with the provided name and add it as a dependency to the forma-36-react-components package. Every components in the `packages/components` directory should be part of the `forma-36-react-components` so it will be part of the main `react-components` bundle.
 
 ## Development
 
