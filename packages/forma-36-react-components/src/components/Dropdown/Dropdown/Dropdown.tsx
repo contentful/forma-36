@@ -38,7 +38,6 @@ export interface AnchorDimensionsAndPositonType {
 
 export interface DropdownState {
   isOpen: boolean;
-  containerWidth?: number;
   position: positionType;
   anchorDimensionsAndPositon?: AnchorDimensionsAndPositonType;
 }
@@ -57,7 +56,6 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
 
   state = {
     isOpen: this.props.isOpen,
-    containerWidth: undefined,
     position: this.props.position,
     anchorDimensionsAndPositon: {
       top: 0,
@@ -75,12 +73,6 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
     }
     this.setAnchorDimensions();
     this.bindEventListeners();
-
-    if (this.props.isFullWidth && this.dropdownAnchor) {
-      this.setState({
-        containerWidth: this.dropdownAnchor.getBoundingClientRect().width - 2, // subtract the border
-      });
-    }
   }
 
   setAnchorDimensions = () => {
@@ -179,6 +171,8 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
     } = this.props;
 
     const classNames = cn(styles['Dropdown'], className);
+    const width =
+      isFullWidth && this.state.anchorDimensionsAndPositon.width - 2; // subtract the border
 
     return submenuToggleLabel ? (
       <DropdownListItem
@@ -197,7 +191,7 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
           <DropdownContainer
             anchorDimensionsAndPositon={this.state.anchorDimensionsAndPositon}
             position={this.props.position}
-            width={this.state.containerWidth}
+            width={width}
             className={dropdownContainerClassName}
             getRef={getContainerRef}
             dropdownAnchor={this.dropdownAnchor}
@@ -230,7 +224,7 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
             className={dropdownContainerClassName}
             getRef={getContainerRef}
             submenu={false}
-            width={this.state.containerWidth}
+            width={width}
             dropdownAnchor={this.dropdownAnchor}
             isAutoalignmentEnabled={isAutoalignmentEnabled}
             anchorDimensionsAndPositon={this.state.anchorDimensionsAndPositon}
