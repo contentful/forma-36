@@ -22,6 +22,16 @@ storiesOf('Components|TextField', module)
       value={text('value', '123456')}
       onBlur={action('onBlur')}
       onChange={action('onChange')}
+      width={select(
+        'width',
+        {
+          'Full (default)': 'full',
+          large: 'large',
+          medium: 'medium',
+          small: 'small',
+        },
+        'full',
+      )}
       textInputProps={{
         withCopyButton: boolean('withCopyButton', false),
         disabled: boolean('disabled', false),
@@ -38,16 +48,6 @@ storiesOf('Components|TextField', module)
             search: 'search',
           },
           'text',
-        ),
-        width: select(
-          'width',
-          {
-            'Full (default)': 'full',
-            large: 'large',
-            medium: 'medium',
-            small: 'small',
-          },
-          'full',
         ),
       }}
       helpText={text('helpText', '')}

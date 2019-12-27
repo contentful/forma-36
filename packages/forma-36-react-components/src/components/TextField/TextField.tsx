@@ -16,6 +16,7 @@ import styles from './TextField.css';
 export type TextFieldProps = {
   name: string;
   id: string;
+  width?: string;
   labelText: string;
   value?: string;
   validationMessage?: string;
@@ -43,6 +44,7 @@ const defaultProps = {
   textarea: false,
   required: false,
   countCharacters: false,
+  width: 'full',
 };
 
 export class TextField extends Component<TextFieldProps, TextFieldState> {
@@ -74,6 +76,7 @@ export class TextField extends Component<TextFieldProps, TextFieldState> {
       className,
       textInputProps,
       testId,
+      width,
       formLabelProps,
       textLinkProps,
       labelText,
@@ -90,7 +93,8 @@ export class TextField extends Component<TextFieldProps, TextFieldState> {
       ...otherProps
     } = this.props;
 
-    const classNames = cn(styles['TextField'], className);
+    const widthClass = `TextField--${width}`;
+    const classNames = cn(styles['TextField'], styles[widthClass], className);
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const Element: any = textarea ? Textarea : TextInput;
@@ -122,6 +126,7 @@ export class TextField extends Component<TextFieldProps, TextFieldState> {
             value,
             required,
             ...textInputProps,
+            width: 'full',
           }}
         />
         {validationMessage && (

@@ -172,9 +172,7 @@ it('renders the component with small width', () => {
       labelText="test"
       name="someComponent"
       id="someComponent"
-      textInputProps={{
-        width: 'small',
-      }}
+      width="full"
     />,
   );
 

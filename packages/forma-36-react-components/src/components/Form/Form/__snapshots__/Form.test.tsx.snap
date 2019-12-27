@@ -20,6 +20,7 @@ exports[`renders the component 1`] = `
       testId="cf-ui-text-field"
       textarea={false}
       value="Johannes Bugiel"
+      width="full"
     />
   </div>
 </form>
@@ -45,6 +46,7 @@ exports[`renders the component with an additional class name 1`] = `
       testId="cf-ui-text-field"
       textarea={false}
       value="Johannes Bugiel"
+      width="full"
     />
   </div>
 </form>
@@ -70,6 +72,7 @@ exports[`renders the component with condensed spacing 1`] = `
       testId="cf-ui-text-field"
       textarea={false}
       value="Johannes Bugiel"
+      width="full"
     />
   </div>
 </form>

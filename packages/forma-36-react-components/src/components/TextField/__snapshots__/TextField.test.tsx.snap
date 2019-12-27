@@ -2,7 +2,7 @@
 
 exports[`renders the component 1`] = `
 <div
-  className="TextField"
+  className="TextField TextField--full"
   data-test-id="cf-ui-text-field"
 >
   <div
@@ -35,7 +35,7 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component with a copybutton 1`] = `
 <div
-  className="TextField"
+  className="TextField TextField--full"
   data-test-id="cf-ui-text-field"
 >
   <div
@@ -68,7 +68,7 @@ exports[`renders the component with a copybutton 1`] = `
 
 exports[`renders the component with a placeholder text 1`] = `
 <div
-  className="TextField"
+  className="TextField TextField--full"
   data-test-id="cf-ui-text-field"
 >
   <div
@@ -102,7 +102,7 @@ exports[`renders the component with a placeholder text 1`] = `
 
 exports[`renders the component with a rows defined 1`] = `
 <div
-  className="TextField"
+  className="TextField TextField--full"
   data-test-id="cf-ui-text-field"
 >
   <div
@@ -136,7 +136,7 @@ exports[`renders the component with a rows defined 1`] = `
 
 exports[`renders the component with a textlink 1`] = `
 <div
-  className="TextField"
+  className="TextField TextField--full"
   data-test-id="cf-ui-text-field"
 >
   <div
@@ -181,7 +181,7 @@ exports[`renders the component with a textlink 1`] = `
 
 exports[`renders the component with a value 1`] = `
 <div
-  className="TextField"
+  className="TextField TextField--full"
   data-test-id="cf-ui-text-field"
 >
   <div
@@ -215,7 +215,7 @@ exports[`renders the component with a value 1`] = `
 
 exports[`renders the component with additional prop 1`] = `
 <div
-  className="TextField"
+  className="TextField TextField--full"
   data-test-id="cf-ui-text-field"
 >
   <div
@@ -248,7 +248,7 @@ exports[`renders the component with additional prop 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <div
-  className="TextField my-extra-class"
+  className="TextField TextField--full my-extra-class"
   data-test-id="cf-ui-text-field"
 >
   <div
@@ -281,7 +281,7 @@ exports[`renders the component with an additional class name 1`] = `
 
 exports[`renders the component with as textarea 1`] = `
 <div
-  className="TextField"
+  className="TextField TextField--full"
   data-test-id="cf-ui-text-field"
 >
   <div
@@ -312,7 +312,7 @@ exports[`renders the component with as textarea 1`] = `
 
 exports[`renders the component with characters count 1`] = `
 <div
-  className="TextField"
+  className="TextField TextField--full"
   data-test-id="cf-ui-text-field"
 >
   <div
@@ -358,7 +358,7 @@ exports[`renders the component with characters count 1`] = `
 
 exports[`renders the component with help text 1`] = `
 <div
-  className="TextField"
+  className="TextField TextField--full"
   data-test-id="cf-ui-text-field"
 >
   <div
@@ -401,7 +401,7 @@ exports[`renders the component with help text 1`] = `
 
 exports[`renders the component with max length of characters 1`] = `
 <div
-  className="TextField"
+  className="TextField TextField--full"
   data-test-id="cf-ui-text-field"
 >
   <div
@@ -435,7 +435,7 @@ exports[`renders the component with max length of characters 1`] = `
 
 exports[`renders the component with required text 1`] = `
 <div
-  className="TextField"
+  className="TextField TextField--full"
   data-test-id="cf-ui-text-field"
 >
   <div
@@ -468,7 +468,7 @@ exports[`renders the component with required text 1`] = `
 
 exports[`renders the component with small width 1`] = `
 <div
-  className="TextField"
+  className="TextField TextField--full"
   data-test-id="cf-ui-text-field"
 >
   <div
@@ -492,7 +492,7 @@ exports[`renders the component with small width 1`] = `
     onChange={[Function]}
     required={false}
     testId="cf-ui-text-input"
-    width="small"
+    width="full"
     willBlurOnEsc={true}
     withCopyButton={false}
   />
@@ -501,7 +501,7 @@ exports[`renders the component with small width 1`] = `
 
 exports[`renders the component with validation message 1`] = `
 <div
-  className="TextField"
+  className="TextField TextField--full"
   data-test-id="cf-ui-text-field"
 >
   <div

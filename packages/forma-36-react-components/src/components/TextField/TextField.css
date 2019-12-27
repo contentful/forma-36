@@ -1,9 +1,26 @@
 @import 'settings/colors';
 @import 'settings/typography';
 @import 'settings/transitions';
+@import 'settings/dimensions';
 
 .TextField {
   display: block;
+}
+
+.TextField--small {
+  width: var(--input-width-small);
+}
+
+.TextField--medium {
+  width: var(--input-width-medium);
+}
+
+.TextField--large {
+  width: var(--input-width-large);
+}
+
+.TextField--full {
+  width: 100%;
 }
 
 .TextField__label-wrapper {
