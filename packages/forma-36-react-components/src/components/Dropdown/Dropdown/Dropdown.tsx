@@ -174,6 +174,7 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
       children,
       isOpen,
       isAutoalignmentEnabled,
+      isFullWidth,
       ...otherProps
     } = this.props;
 

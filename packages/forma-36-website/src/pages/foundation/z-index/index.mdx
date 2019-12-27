@@ -1,0 +1,45 @@
+---
+title: 'Z-Index'
+---
+
+import zIndexTokens from '@contentful/forma-36-tokens/src/tokens/z-index';
+
+import {
+  Table,
+  TableHead,
+  TableBody,
+  TableCell,
+  TableRow,
+} from '@contentful/forma-36-react-components';
+
+# Z Index
+
+Z-index tokens are used to set the z order layering of elements.
+
+<Table className="f36-margin-bottom--l">
+  <TableHead>
+    <TableRow>
+      <TableCell>Token</TableCell>
+      <TableCell>CSS Variable</TableCell>
+      <TableCell>Value</TableCell>
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    {Object.keys(zIndexTokens).map(token => {
+      const value = zIndexTokens[token];
+      return (
+        <TableRow key={token}>
+          <TableCell>
+            <span>{token}</span>
+          </TableCell>
+          <TableCell>
+            <pre>--{token}</pre>
+          </TableCell>
+          <TableCell>
+            <pre>{value}</pre>
+          </TableCell>
+        </TableRow>
+      );
+    })}
+  </TableBody>
+</Table>
