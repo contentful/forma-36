@@ -20,7 +20,7 @@ export type DropdownContainerProps = {
   position: positionType;
   getRef?: (ref: HTMLElement | null) => void;
   submenu?: boolean;
-  width?: number;
+  width?: number | false;
   isAutoalignmentEnabled?: boolean;
 } & typeof defaultProps;
 
