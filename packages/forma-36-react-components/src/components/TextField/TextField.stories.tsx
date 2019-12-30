@@ -20,8 +20,6 @@ storiesOf('Components|TextField', module)
       id="emailInput"
       labelText={text('labelText', 'Label')}
       value={text('value', '123456')}
-      onBlur={action('onBlur')}
-      onChange={action('onChange')}
       width={select(
         'width',
         {
@@ -32,6 +30,8 @@ storiesOf('Components|TextField', module)
         },
         'full',
       )}
+      onBlur={action('onBlur')}
+      onChange={action('onChange')}
       textInputProps={{
         withCopyButton: boolean('withCopyButton', false),
         disabled: boolean('disabled', false),
@@ -66,6 +66,16 @@ storiesOf('Components|TextField', module)
       id="emailInput"
       labelText={text('labelText', 'Label')}
       value={text('value', '123456')}
+      width={select(
+        'width',
+        {
+          'Full (default)': 'full',
+          large: 'large',
+          medium: 'medium',
+          small: 'small',
+        },
+        'full',
+      )}
       onBlur={action('onBlur')}
       onChange={action('onChange')}
       textInputProps={{
@@ -84,16 +94,6 @@ storiesOf('Components|TextField', module)
             search: 'search',
           },
           'text',
-        ),
-        width: select(
-          'width',
-          {
-            'Full (default)': 'full',
-            large: 'large',
-            medium: 'medium',
-            small: 'small',
-          },
-          'full',
         ),
       }}
       helpText={text('helpText', '')}
@@ -117,6 +117,16 @@ storiesOf('Components|TextField', module)
       name="emailInput"
       id="emailInput"
       value={text('Value', '123456')}
+      width={select(
+        'width',
+        {
+          'Full (default)': 'full',
+          large: 'large',
+          medium: 'medium',
+          small: 'small',
+        },
+        'full',
+      )}
       onBlur={action('onBlur')}
       onChange={action('onChange')}
       textInputProps={{
@@ -136,16 +146,6 @@ storiesOf('Components|TextField', module)
           },
           'text',
         ),
-        width: select(
-          'width',
-          {
-            'Full (default)': 'full',
-            large: 'large',
-            medium: 'medium',
-            small: 'small',
-          },
-          'full',
-        ),
       }}
       helpText={text('helpText', '')}
       validationMessage={text('validationMessage', '')}
@@ -163,6 +163,16 @@ storiesOf('Components|TextField', module)
       name="emailInput"
       id="emailInput"
       value={text('value', '123456')}
+      width={select(
+        'width',
+        {
+          'Full (default)': 'full',
+          large: 'large',
+          medium: 'medium',
+          small: 'small',
+        },
+        'full',
+      )}
       onBlur={action('onBlur')}
       onChange={action('onChange')}
       textInputProps={{
@@ -181,16 +191,6 @@ storiesOf('Components|TextField', module)
             search: 'search',
           },
           'text',
-        ),
-        width: select(
-          'width',
-          {
-            'Full (default)': 'full',
-            large: 'large',
-            medium: 'medium',
-            small: 'small',
-          },
-          'full',
         ),
       }}
       helpText={text('helpText', '')}

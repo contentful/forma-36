@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.27.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.27.4...@contentful/forma-36-react-components@3.27.5) (2019-12-30)
+
+
+### Bug Fixes
+
+* **Deps:** Update dependencies with handlebars ([#369](https://github.com/contentful/forma-36/issues/369)) ([ef3e660](https://github.com/contentful/forma-36/commit/ef3e660))
+
+
+
+
+
 ## [3.27.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.27.3...@contentful/forma-36-react-components@3.27.4) (2019-12-27)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
