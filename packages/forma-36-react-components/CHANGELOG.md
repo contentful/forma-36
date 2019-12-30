@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.27.6](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.27.5...@contentful/forma-36-react-components@3.27.6) (2019-12-30)
+
+
+### Bug Fixes
+
+* **TextField:** Apply width to container not just input ([#367](https://github.com/contentful/forma-36/issues/367)) ([0250299](https://github.com/contentful/forma-36/commit/0250299e5b56c4791aeccd56493888e3679265e5))
+
+
+
+
+
 ## [3.27.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.27.4...@contentful/forma-36-react-components@3.27.5) (2019-12-30)
 
 
