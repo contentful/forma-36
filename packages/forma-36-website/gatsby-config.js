@@ -105,6 +105,10 @@ module.exports = {
             link: '/components/button/',
           },
           {
+            name: 'Dropdown',
+            link: '/components/dropdown/',
+          },
+          {
             name: 'FormLabel',
             link: '/components/form-label/',
           },
