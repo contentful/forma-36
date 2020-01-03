@@ -5,59 +5,51 @@ github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-re
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-notification--default'
 ---
 
-Not component by interface
+Notifications give immediate feedback about an action triggered or experienced by an user. They will dismiss after 6 seconds, or after being clicked.
 
 ```jsx
 <Button
-  buttonType="primary"
-  onClick={() => Notification.success('I love toasts')}
+  buttonType="muted"
+  onClick={() => Notification.success('Your preferences have been updated')}
 >
-  Show success toast!
+  Show notification
 </Button>
 ```
 
-## Table of contents
-
-1. [Best practices](#best-practices)
-2. [Variations](#variations)
-   1. [Customized notifications](#customized)
-   1. [Positioned notifications](#positioned)
-   1. [Message](#message)
-3. [Copy considerations](#copy-considerations)
-4. [Accessibility](#accessibility)
-
 ## Best practices <a name="best-practices" />
 
-Add best practices for usage in the UI, think about copy and accessibility or general UX guidelines
-E.g (Button Component):
+- Consider where the notification will be placed and which variation is most appropriate 
+- Don't confuse notifications with notes, which persist in the UI and do not dismiss
 
-- Position buttons consistently in the interface
-- Reduce complexity by using a small number of actions. Too many actions can create confusion.
+## Copy considerations <a name="copy-considerations" />
+
+- Use clear and succinct copy, since the notification will only be available for 6 seconds
+- Use active voice, present tense, and consider tone of voice depending on the circumstance
+- Use sentence style caps (in which only the first word of a sentence or term is capitalized)
 
 ## Variations <a name="variations" />
-
 
 ### Customized notifications <a name="customized" />
 
 ```jsx
 <React.Fragment>
   <Button
-    buttonType="primary"
-    onClick={() => Notification.success('This is a success message!')}
+    buttonType="muted"
+    onClick={() => Notification.success('This is a success message')}
   >
-    Show success toast!
+    Show success message 
   </Button>
   <Button
-    buttonType="negative"
-    onClick={() => Notification.error('This is a error message!')}
+    buttonType="muted"
+    onClick={() => Notification.error('This is an error message')}
   >
-    Show error toast!
+    Show error message
   </Button>
   <Button
-    buttonType="secondary"
-    onClick={() => Notification.warning('This is a warning message!')}
+    buttonType="muted"
+    onClick={() => Notification.warning('This is a warning message')}
   >
-    Show warning toast!
+    Show warning message
   </Button>
 </React.Fragment>
 ```
@@ -67,36 +59,35 @@ E.g (Button Component):
 ```jsx
 <React.Fragment>
   <Button
-    buttonType="primary"
+    buttonType="muted"
     onClick={() => {
       Notification.setPosition('top');
-      Notification.success('I love dogs!');
+      Notification.success('Notification message on top');
     }}
   >
-    TOP
+    Show on top
   </Button>
   <Button
-    buttonType="primary"
+    buttonType="muted"
     onClick={() => {
       Notification.setPosition('bottom');
-      Notification.success('I love dogs!');
+      Notification.success('Notification message on the bottom');
     }}
   >
-    BOTTOM
+    Show on the bottom
   </Button>
   
 </React.Fragment>
 ```
 
-
-### Notifications with a long message <a name="message" />
+### Long notifications <a name="message" />
 
 ```jsx
 <React.Fragment>
   <Button
-    buttonType="primary"
+    buttonType="muted"
     onClick={() => {
-      Notification.success('Only use this component in the context of a form, and as corresponding guidance to an input field');
+      Notification.success('Long notifications will likely span into multiple lines, which will improve readibility');
     }}
   >
     Show long message
@@ -104,14 +95,3 @@ E.g (Button Component):
   
 </React.Fragment>
 ```
-
-## Copy considerations <a name="copy-considerations" />
-
-(optional) If the component has specific copy considerations mention them in this section
-
-- Do not use punctuation following a label
-- Use sentence-style caps (in which only the first word of a sentence or term is capitalized) on labels
-
-## Accessibility <a name="accessibility" />
-
-(optional) If the component has specific a11y requirements mention them here
