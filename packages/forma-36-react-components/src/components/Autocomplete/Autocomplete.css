@@ -1,0 +1,21 @@
+@import 'settings/colors';
+@import 'settings/typography';
+@import 'settings/transitions';
+
+.autocompleteInput {
+  display: flex;
+}
+
+.autocompleteInput input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+.autocompleteInput input::-ms-clear {
+  display: none;
+}
+
+.inputIconButton {
+  position: absolute;
+  top: calc(50% - 9px);
+  right: 5px;
+}
