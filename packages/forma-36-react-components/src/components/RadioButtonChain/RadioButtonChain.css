@@ -1,0 +1,34 @@
+@import 'settings/colors';
+
+.RadioButtonChain {
+  display: flex;
+  justify-content: space-between;
+}
+
+.RadioButtonChain__item:before {
+  content: '';
+  z-index: -1;
+  height: 3px;
+  position: absolute;
+  top: 9px;
+  background-color: var(--color-element-light);
+  width: 100%;
+}
+
+.RadioButtonChain__item {
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.RadioButtonChain__item:first-child:before {
+  content: '';
+  width: 200%;
+  transform: translateX(50%);
+}
+
+.RadioButtonChain__item:last-child:before {
+  content: '';
+  width: 200%;
+  transform: translateX(-50%);
+}
