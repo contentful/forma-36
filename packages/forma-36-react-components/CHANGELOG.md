@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.28.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.27.6...@contentful/forma-36-react-components@3.28.0) (2020-01-06)
+
+
+### Features
+
+* **autocomplete:** port Autocomplete component from user_interface ([e30cc92](https://github.com/contentful/forma-36/commit/e30cc921c134bf34ca3e9e472a462317e58692fb))
+
+
+
+
+
 ## [3.27.6](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.27.5...@contentful/forma-36-react-components@3.27.6) (2019-12-30)
 
 
