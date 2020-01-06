@@ -5,7 +5,28 @@
   justify-content: space-between;
 }
 
-.RadioButtonChain__item:before {
+.RadioButtonChain__relative {
+  position: relative;
+
+  &.RadioButtonChain__item {
+    flex-grow: 0;
+  }
+}
+
+.RadioButtonChain__item {
+  flex-direction: column;
+  align-items: center;
+}
+
+.RadioButtonChain__item__relative {
+  position: relative;
+}
+
+.RadioButtonChain__item__link {
+  flex-grow: 1;
+}
+
+.RadioButtonChain__item__link:before {
   content: '';
   z-index: -1;
   height: 3px;
@@ -15,20 +36,19 @@
   width: 100%;
 }
 
-.RadioButtonChain__item {
-  flex-direction: column;
-  align-items: center;
-  position: relative;
+.RadioButtonChain__item__link:first-child,
+.RadioButtonChain__item__link:last-child {
+  flex-grow: 0;
 }
 
-.RadioButtonChain__item:first-child:before {
-  content: '';
-  width: 200%;
-  transform: translateX(50%);
+.RadioButtonChain__item__link:first-child:before {
+  width: 50%;
+  /* .25rem = left margin of a radiobuttonfield */
+  transform: translateX(calc(50% + 0.25rem));
 }
 
-.RadioButtonChain__item:last-child:before {
-  content: '';
-  width: 200%;
-  transform: translateX(-50%);
+.RadioButtonChain__item__link:last-child:before {
+  width: 50%;
+  /* .5rem = right margin of a radiobuttonfield */
+  transform: translateX(calc(-50% - 0.5rem));
 }
