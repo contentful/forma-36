@@ -1,0 +1,51 @@
+---
+title: 'Dropdown'
+type: 'component'
+github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/Dropdown'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-dropdown--default'
+---
+
+Dropdowns are used to display multiple links and actions without overwhelming the user with multiple calls to action.
+
+```jsx
+function DropdownExample() {
+  const [isOpen, setOpen] = React.useState(false);
+  return (
+    <Dropdown
+      isOpen={isOpen}
+      onClose={() => setOpen(false)}
+      key={Date.now()} // Force Reinit
+      toggleElement={
+        <Button
+          size="small"
+          buttonType="muted"
+          indicateDropdown
+          onClick={() => setOpen(!isOpen)}
+        >
+          Trigger Dropdown
+        </Button>
+      }
+    >
+      <DropdownList>
+        <DropdownListItem isTitle>Dropdown title</DropdownListItem>
+        <DropdownListItem onClick="() => ()">
+          Dropdown list item
+        </DropdownListItem>
+        <DropdownListItem onClick="() => ()">
+          Dropdown list item
+        </DropdownListItem>
+      </DropdownList>
+      <DropdownList border="top">
+        <DropdownListItem>
+          <TextLink href="#">Dropdown list item</TextLink>
+        </DropdownListItem>
+      </DropdownList>
+    </Dropdown>
+  );
+}
+```
+
+## Best practices <a name="best-practices" />
+
+- Use a dropdown to group related actions on an entity
+- Avoid using a dropdown containing only one item - instead use a link, button, or an icon button.

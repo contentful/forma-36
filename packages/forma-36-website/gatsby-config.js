@@ -112,6 +112,10 @@ module.exports = {
             link: '/components/button/',
           },
           {
+            name: 'Dropdown',
+            link: '/components/dropdown/',
+          },
+          {
             name: 'Form',
             link: '/components/form/',
           },
