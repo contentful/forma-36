@@ -5,6 +5,7 @@
 .DropdownContainer {
   background: var(--color-white);
   box-shadow: var(--box-shadow-default);
+  box-sizing: border-box;
   border: calc(1rem * (1 / var(--font-base-default))) solid
     var(--color-element-mid);
   list-style: none;
