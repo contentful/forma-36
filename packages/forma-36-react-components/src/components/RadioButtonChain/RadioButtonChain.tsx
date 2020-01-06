@@ -6,7 +6,9 @@ const styles = require('./RadioButtonChain.css');
 
 export type RadioButtonChainProps = {
   className?: string;
-  children: React.ReactElement<RadioButtonFieldProps>[];
+  children:
+    | React.ReactElement<RadioButtonFieldProps>
+    | React.ReactElement<RadioButtonFieldProps>[];
   testId?: string;
 } & typeof defaultProps;
 
@@ -19,10 +21,14 @@ export class RadioButtonChain extends Component<RadioButtonChainProps> {
 
   render() {
     const { className, children, testId, ...otherProps } = this.props;
+    let childrenCount = 0;
+    if (children) {
+      childrenCount = Array.isArray(children) ? children.length : 1;
+    }
 
     const chainClassName = cn(
       styles.RadioButtonChain,
-      children.length <= 2 ? styles.RadioButtonChain__relative : null,
+      childrenCount <= 2 ? styles.RadioButtonChain__relative : null,
       className,
     );
 
@@ -38,14 +44,12 @@ export class RadioButtonChain extends Component<RadioButtonChainProps> {
                 styles.RadioButtonChain__item,
                 // if more than 2 items, we set flex-grow on 1st and last item to 0, while all in the middle are flex-grow: 1
                 // to ensure that the chain is fluid and it starts and ends on the opposite edges of the container block
-                children.length > 2
+                childrenCount > 2
                   ? styles.RadioButtonChain__item__relative
                   : null,
                 // if 1 child, it will be just rendered as a standard radiobutton field
                 // otherwise - it will spread it's wings to it's neighbour to the right
-                children.length > 1
-                  ? styles.RadioButtonChain__item__link
-                  : null,
+                childrenCount > 1 ? styles.RadioButtonChain__item__link : null,
               ),
             }),
         )}

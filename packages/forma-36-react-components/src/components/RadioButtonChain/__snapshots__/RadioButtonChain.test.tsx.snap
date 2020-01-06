@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component with a custom class name 1`] = `
+<div
+  className="RadioButtonChain RadioButtonChain__relative my-extra-class"
+  data-test-id="cf-ui-radio-chain"
+>
+  <RadioButtonField
+    checked={true}
+    className="RadioButtonChain__item"
+    id="option1"
+    inputType="checkbox"
+    key=".0"
+    labelIsLight={false}
+    labelText="option1"
+    testId="cf-ui-radio-button-field"
+  />
+</div>
+`;
+
+exports[`renders the component with multiple radio buttons 1`] = `
+<div
+  className="RadioButtonChain"
+  data-test-id="cf-ui-radio-chain"
+>
+  <RadioButtonField
+    checked={true}
+    className="RadioButtonChain__item RadioButtonChain__item__relative RadioButtonChain__item__link"
+    id="option1"
+    inputType="checkbox"
+    key=".0"
+    labelIsLight={false}
+    labelText="option1"
+    testId="cf-ui-radio-button-field"
+  />
+  <RadioButtonField
+    checked={false}
+    className="RadioButtonChain__item RadioButtonChain__item__relative RadioButtonChain__item__link"
+    id="option2"
+    inputType="checkbox"
+    key=".1"
+    labelIsLight={false}
+    labelText="option2"
+    testId="cf-ui-radio-button-field"
+  />
+  <RadioButtonField
+    checked={false}
+    className="RadioButtonChain__item RadioButtonChain__item__relative RadioButtonChain__item__link"
+    id="option3"
+    inputType="checkbox"
+    key=".2"
+    labelIsLight={false}
+    labelText="option3"
+    testId="cf-ui-radio-button-field"
+  />
+  <RadioButtonField
+    checked={false}
+    className="RadioButtonChain__item RadioButtonChain__item__relative RadioButtonChain__item__link"
+    id="option3"
+    inputType="checkbox"
+    key=".3"
+    labelIsLight={false}
+    labelText="option3"
+    testId="cf-ui-radio-button-field"
+  />
+</div>
+`;
+
+exports[`renders the component with one radio button 1`] = `
+<div
+  className="RadioButtonChain RadioButtonChain__relative"
+  data-test-id="cf-ui-radio-chain"
+>
+  <RadioButtonField
+    checked={true}
+    className="RadioButtonChain__item"
+    id="option1"
+    inputType="checkbox"
+    key=".0"
+    labelIsLight={false}
+    labelText="option1"
+    testId="cf-ui-radio-button-field"
+  />
+</div>
+`;
+
+exports[`renders the component with two radio buttons 1`] = `
+<div
+  className="RadioButtonChain RadioButtonChain__relative"
+  data-test-id="cf-ui-radio-chain"
+>
+  <RadioButtonField
+    checked={true}
+    className="RadioButtonChain__item RadioButtonChain__item__link"
+    id="option1"
+    inputType="checkbox"
+    key=".0"
+    labelIsLight={false}
+    labelText="option1"
+    testId="cf-ui-radio-button-field"
+  />
+  <RadioButtonField
+    checked={false}
+    className="RadioButtonChain__item RadioButtonChain__item__link"
+    id="option2"
+    inputType="checkbox"
+    key=".1"
+    labelIsLight={false}
+    labelText="option2"
+    testId="cf-ui-radio-button-field"
+  />
+</div>
+`;
