@@ -5,27 +5,36 @@ github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-re
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-textfield--default'
 ---
 
-The `TextField` component is a composition of the `FormLabel`, `TextInput`, `HelpText` and `ValidationMessage` components.
+`TextField` is a composition of the `FormLabel`, `TextInput`, `HelpText` and `ValidationMessage` components.
 It allows users to input text or numbers and should be used in a form context.
 
-## Best practices
+```jsx
+<React.Fragment>
+  <TextField labelText="Email address" helpText="Please enter your email address" required />
+</React.Fragment>
+```
 
-- To ensure the TextField component meets accessibility standards, provide labelText, name and id
+## Table of contents
 
-## Copy considerations
+1. [Best practices](#best-practices)
+2. [Variations](#variations)
+   1. [Compositional properties](#compositional-properties)
+   2. [Label and text](#label-and-text)
+   3. [Required field](#required-field)
+   4. [Render textarea](#render-textarea)
+   5. [Additional textlink](#additional-textlink)
+   6. [Character count](#character-count)
+3. [Writing guidelines](#writing-guidelines)
 
-- Use direct, succinct copy that helps the user to successfully complete the form
-- Do not preface the instructions with introductory text, such as "please"
-- To add additional context, link out to documentation
-- In cases where additional context is unnecessary, help text can be substituted for text in the label 
-- Do not use punctuation for labels, help text and links
-- Use sentence style caps (in which only the first word of a sentence or term is capitalized)
+## Best practices <a name="best-practices" />
 
-## TextField variations
+- To ensure `TextField` meets accessibility standards, provide `labelText`, `name` and `id`
+
+## TextField variations <a name="variations" />
 
 The TextField component can be configured in a number of different ways. Use this guidance to determine the correct variation based on the context. 
 
-### Compositional properties
+### Compositional properties <a name="compositional-properties" />
 
 Since the TextField is a composition of multiple components, it is possible to pass child component specific properties. 
 For this purpose, the TextField exposes the following properties:
@@ -33,11 +42,11 @@ For this purpose, the TextField exposes the following properties:
 ```jsx
 <React.Fragment>
   <TextField
-    labelText="E-Mail"
-    helpText="Please enter your E-Mail"
+    labelText="E-mail address"
+    helpText="Please enter your email address"
     textInputProps={{ withCopyButton: true }}
     textLinkProps={{ text: 'privacy' }}
-    formLabelProps={{ requiredText: 'This field is required' }}
+    formLabelProps={{ requiredText: 'required' }}
     required
   />
 </React.Fragment>
@@ -49,13 +58,13 @@ For this purpose, the TextField exposes the following properties:
 | **formLabelProps** | Used to pass a property object to the FormLabel component |
 | **textLinkProps**  | Used to pass a property object to the TextLink component  |
 
-### Label and text properties (`labelText, helpText, validationMessage`)
+### Label and text properties (`labelText, helpText, validationMessage`) <a name="label-and-text" />
 
 ```jsx
 <React.Fragment>
   <TextField
-    labelText="E-Mail"
-    helpText="Please enter your E-Mail"
+    labelText="E-mail address"
+    helpText="Please enter your email address"
     validationMessage="This address is not valid"
   />
 </React.Fragment>
@@ -65,13 +74,13 @@ For this purpose, the TextField exposes the following properties:
 | :-------------------- | :------------------------------------------------------------ |
 | **labelText**         | Used to provide the text                                      |
 | **helpText**          | Used for entering passwords or sensitive information          |
-| **validationMessage** | Used for e-mail addresses (will dispatch native autocomplete) |
+| **validationMessage** | Used for E-mail address addresses (will dispatch native autocomplete) |
 
-### Required Field (`required`)
+### Required field (`required`) <a name="required-field" />
 
 ```jsx
 <React.Fragment>
-  <TextField labelText="E-Mail" helpText="Please enter your E-Mail" required />
+  <TextField labelText="E-mail address" helpText="Please enter your email address" required />
 </React.Fragment>
 ```
 
@@ -79,7 +88,7 @@ For this purpose, the TextField exposes the following properties:
 | :----------- | :----------------------------------------------------------------------------- |
 | **required** | Used to set the input as required and show the required text next to the label |
 
-### Render textarea (`textfield`)
+### Render textarea (`textfield`) <a name="render-textarea" />
 
 Instead of an input, the TextField component can render a text area for long text requirements.
 
@@ -97,7 +106,7 @@ Instead of an input, the TextField component can render a text area for long tex
 | :----------- | :----------------------------------------------- |
 | **textarea** | Used to render a textarea instead of a textinput |
 
-### TextField with additional TextLink (`textLinkProps`)
+### Additional TextLink (`textLinkProps`) <a name="additional-textlink" />
 
 The TextField can be configured to display an additional TextLink in the label.
 
@@ -127,37 +136,7 @@ The TextField can be configured to display an additional TextLink in the label.
 | **textLinkProps.text**    | Used to specify the link text                         |
 | **textLinkProps.onClick** | Used to specify an onClick handler                    |
 
-### TextField with additional TextLink (`textLinkProps`)
-
-The TextField can be configured to display an additional TextLink in the label.
-
-```jsx
-<React.Fragment>
-  <TextField
-    labelText="User Name"
-    textLinkProps={{
-      icon: 'Lock',
-      text: 'Unlock to edit',
-      onClick: e => {
-        console.log('textLinkClick', e);
-      },
-    }}
-    value="Lorem Ipsum"
-    textInputProps={{
-      disabled: true,
-    }}
-  />
-</React.Fragment>
-```
-
-| Property                  | Description                                           |
-| :------------------------ | :---------------------------------------------------- |
-| **textLinkProps**         | Property object used to define the rendered text link |
-| **textLinkProps.icon**    | Used to specify the rendered icon                     |
-| **textLinkProps.text**    | Used to specify the link text                         |
-| **textLinkProps.onClick** | Used to specify an onClick handler                    |
-
-### Character count (`countCharacters`)
+### Character count (`countCharacters`) <a name="character-count" />
 
 The TextField can be configured to display a character count. This is useful when an input field has a character limit.<br/>
 **Note**: The `maxLength` property must be provided in the TextInput component using `textInputProps`.
@@ -176,3 +155,12 @@ The TextField can be configured to display a character count. This is useful whe
 | Property            | Description                        |
 | :------------------ | :--------------------------------- |
 | **countCharacters** | Used to enable the character count |
+
+## Writing guidelines <a name="writing-guidelines" />
+
+- Use direct, succinct copy that helps the user to successfully complete the form
+- Do not preface the instructions with introductory text, such as "please"
+- To add additional context, link out to documentation
+- In cases where additional context is unnecessary, help text can be substituted for text in the label 
+- Do not use punctuation for labels, help text and links
+- Use sentence style caps (in which only the first word of a sentence or term is capitalized)
