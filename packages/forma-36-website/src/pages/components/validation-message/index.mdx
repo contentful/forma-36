@@ -7,6 +7,20 @@ storybook: 'https://f36-storybook.contentful.com/?path=/story/components-validat
 
 The ValidationMessage component provides a consisdent styled paragraph for messages in case of validation errors.
 
+```jsx
+<React.Fragment>
+  <FormLabel htmlFor="name" required>
+    Full name
+  </FormLabel>
+  <TextInput
+    name="name"
+    value="Claus Mitchell"
+    className="f36-margin-bottom--xs"
+  />
+  <ValidationMessage>Name is a required field</ValidationMessage>
+</React.Fragment>
+```
+
 ## Best practices
 
 - Only use this component in the context of a form and as corresponding guidance to an input field which has validations.
@@ -19,19 +33,3 @@ The ValidationMessage component provides a consisdent styled paragraph for messa
 - To add additional context, link out to documentation
 - Do not use punctuation
 - Use sentence style caps (in which only the first word of a sentence or term is capitalized)
-
-## Example
-
-```jsx
-<React.Fragment>
-  <FormLabel htmlFor="name" required>
-    Full Name
-  </FormLabel>
-  <TextInput
-    name="name"
-    value="Lorem Ipsum"
-    className="f36-margin-bottom--xs"
-  />
-  <ValidationMessage>Name is a required field</ValidationMessage>
-</React.Fragment>
-```

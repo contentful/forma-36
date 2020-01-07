@@ -7,6 +7,17 @@ storybook: 'https://f36-storybook.contentful.com/?path=/story/components-textinp
 
 The TextInput component allows a user to input text or numbers.
 
+```jsx
+<React.Fragment>
+  <TextInput
+    name="example"
+    type="text"
+    value="Example text"
+    className="f36-margin-bottom--m"
+  />
+</React.Fragment>
+```
+
 ## Best practices
 
 - To ensure accessability, provide a name 
@@ -22,7 +33,7 @@ The TextInput component can be configured in a number of different ways. Use thi
   <TextInput
     name="example"
     type="text"
-    value="Forma 36"
+    value="Example text"
     className="f36-margin-bottom--m"
   />
   <TextInput
@@ -34,13 +45,13 @@ The TextInput component can be configured in a number of different ways. Use thi
   <TextInput
     name="example"
     type="email"
-    value="hello@forma36.design"
+    value="f36@contentful.com"
     className="f36-margin-bottom--m"
   />
   <TextInput
     name="example"
     type="number"
-    value="12345"
+    value="36"
     className="f36-margin-bottom--m"
   />
   <TextInput name="example" type="url" value="https://f36.contentful.com" />
@@ -64,19 +75,19 @@ The TextInput component can be configured in a number of different ways. Use thi
     name="example"
     width="full"
     className="f36-margin-bottom--m"
-    value="Lorem Ipsum "
+    value="Example text "
   />
   <TextInput
     name="example"
     width="large"
     className="f36-margin-bottom--m"
-    value="Lorem Ipsum "
+    value="Example text "
   />
   <TextInput
     name="example"
     width="medium"
     className="f36-margin-bottom--m"
-    value="Lorem Ipsum "
+    value="Example text "
   />
   <TextInput name="example" width="small" />
 </React.Fragment>
@@ -97,9 +108,9 @@ The TextInput component can be configured in a number of different ways. Use thi
     name="example"
     disabled
     className="f36-margin-bottom--m"
-    value="Lorem Ipsum"
+    value="Example text"
   />
-  <TextInput name="example" error value="Lorem Ipsum" />
+  <TextInput name="example" error value="Example text" />
 </React.Fragment>
 ```
 
@@ -112,7 +123,7 @@ The TextInput component can be configured in a number of different ways. Use thi
 
 ```jsx
 <React.Fragment>
-  <TextInput name="example" withCopyButton value="Lorem Ipsum" />
+  <TextInput name="example" withCopyButton value="Example text" />
 </React.Fragment>
 ```
 
@@ -124,7 +135,7 @@ The TextInput component can be configured in a number of different ways. Use thi
 
 ```jsx
 <React.Fragment>
-  <TextInput name="example" maxLength={30} value="Lorem Ipsum" />
+  <TextInput name="example" maxLength={30} value="Example text" />
 </React.Fragment>
 ```
 

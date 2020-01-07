@@ -8,6 +8,12 @@ storybook: 'https://f36-storybook.contentful.com/?path=/story/components-textfie
 The `TextField` component is a composition of the `FormLabel`, `TextInput`, `HelpText` and `ValidationMessage` components.
 It allows users to input text or numbers and should be used in a form context.
 
+```jsx
+<React.Fragment>
+  <TextField labelText="Email address" helpText="Please enter your email address" required />
+</React.Fragment>
+```
+
 ## Best practices
 
 - To ensure the TextField component meets accessibility standards, provide labelText, name and id
@@ -33,11 +39,11 @@ For this purpose, the TextField exposes the following properties:
 ```jsx
 <React.Fragment>
   <TextField
-    labelText="E-Mail"
-    helpText="Please enter your E-Mail"
+    labelText="E-mail address"
+    helpText="Please enter your email address"
     textInputProps={{ withCopyButton: true }}
     textLinkProps={{ text: 'privacy' }}
-    formLabelProps={{ requiredText: 'This field is required' }}
+    formLabelProps={{ requiredText: 'required' }}
     required
   />
 </React.Fragment>
@@ -54,8 +60,8 @@ For this purpose, the TextField exposes the following properties:
 ```jsx
 <React.Fragment>
   <TextField
-    labelText="E-Mail"
-    helpText="Please enter your E-Mail"
+    labelText="E-mail address"
+    helpText="Please enter your email address"
     validationMessage="This address is not valid"
   />
 </React.Fragment>
@@ -65,13 +71,13 @@ For this purpose, the TextField exposes the following properties:
 | :-------------------- | :------------------------------------------------------------ |
 | **labelText**         | Used to provide the text                                      |
 | **helpText**          | Used for entering passwords or sensitive information          |
-| **validationMessage** | Used for e-mail addresses (will dispatch native autocomplete) |
+| **validationMessage** | Used for E-mail address addresses (will dispatch native autocomplete) |
 
 ### Required Field (`required`)
 
 ```jsx
 <React.Fragment>
-  <TextField labelText="E-Mail" helpText="Please enter your E-Mail" required />
+  <TextField labelText="E-mail address" helpText="Please enter your email address" required />
 </React.Fragment>
 ```
 

@@ -7,6 +7,19 @@ storybook: 'https://f36-storybook.contentful.com/?path=/story/components-formlab
 
 FormLabels make it possible to define input label components.
 
+```jsx
+<React.Fragment>
+  <FormLabel htmlFor="name">
+    Full name
+  </FormLabel>
+  <TextInput
+    name="name"
+    value="Claus Mitchell"
+    className="f36-margin-bottom--xs"
+  />
+</React.Fragment>
+```
+
 ## Best practices
 
 - Provide html for all properties of the input label
@@ -28,13 +41,13 @@ Use this guidance to determine the correct required properties to use based on t
   </FormLabel>
   <TextInput
     name="example1"
-    value="Lorem Ipsum"
+    value="Claus Mitchell"
     className="f36-margin-bottom--m"
   />
-  <FormLabel htmlFor="example2" required requiredText="E-Mail is required">
-    E-Mail
+  <FormLabel htmlFor="example2" required requiredText="required">
+    Email address
   </FormLabel>
-  <TextInput value="info@forma36.design" name="example2" />
+  <TextInput value="claus.mitchell@contentful.com" name="example2" />
 </React.Fragment>
 ```
 
