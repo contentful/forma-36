@@ -5,7 +5,7 @@ github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-re
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-dropdown--default'
 ---
 
-Dropdowns are used to display multiple links and actions without overwhelming the user with multiple calls to action.
+Dropdowns allow users to select an action from a list of multiple actions.
 
 ```jsx
 function DropdownExample() {
@@ -47,5 +47,11 @@ function DropdownExample() {
 
 ## Best practices <a name="best-practices" />
 
-- Use a dropdown to group related actions on an entity
-- Avoid using a dropdown containing only one item - instead use a link, button, or an icon button.
+- If there is a single action to display, use TextLink or Button instead
+- Use lists and titles to group similar actions
+- Use a single TextLink at the bottom of the list for an action that is considerably different than the rest
+
+## Copy considerations <a name="best-practices" />
+
+- To make Dropdown action-oriented, use a verb. For example, "Add field", not "New field"
+- Use clear and succinct copy
