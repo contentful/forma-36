@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import isHotKey from 'is-hotkey';
 
 import TextInput from '../TextInput';
-import Dropdown from '../Dropdown/Dropdown';
+import Dropdown, { DropdownProps } from '../Dropdown/Dropdown/Dropdown';
 import DropdownList from '../Dropdown/DropdownList';
 import DropdownListItem from '../Dropdown/DropdownListItem';
 import SkeletonBodyText from '../Skeleton/SkeletonBodyText';
@@ -32,7 +32,7 @@ export interface AutocompleteProps {
   emptyListMessage?: string;
   noMatchesMessage?: string;
   willClearQueryOnClose?: boolean;
-  isFullWidth?: boolean;
+  dropdownProps?: DropdownProps;
 }
 
 interface State {
@@ -100,8 +100,8 @@ export const Autocomplete: FunctionComponent<AutocompleteProps> = ({
   isLoading,
   emptyListMessage = 'No options',
   noMatchesMessage = 'No matches',
-  isFullWidth,
   willClearQueryOnClose,
+  dropdownProps,
 }) => {
   const listRef: any = useRef();
   const inputRef: any = useRef();
@@ -170,7 +170,6 @@ export const Autocomplete: FunctionComponent<AutocompleteProps> = ({
     <Dropdown
       className={className}
       isOpen={isOpen}
-      isFullWidth={isFullWidth}
       onClose={() => {
         willClearQueryOnClose && updateQuery('');
         dispatch({ type: TOGGLED_LIST });
@@ -201,6 +200,7 @@ export const Autocomplete: FunctionComponent<AutocompleteProps> = ({
           />
         </div>
       }
+      {...dropdownProps}
     >
       <DropdownList testId="autocomplete.dropdown-list" maxHeight={maxHeight}>
         <div ref={listRef}>
@@ -251,7 +251,7 @@ Autocomplete.propTypes = {
   emptyListMessage: PropTypes.string,
   noMatchesMessage: PropTypes.string,
   willClearQueryOnClose: PropTypes.bool,
-  isFullWidth: PropTypes.bool,
+  dropdownProps: PropTypes.any,
 };
 
 function OptionSkeleton() {
