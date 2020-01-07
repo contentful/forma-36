@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.28.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.28.1...@contentful/forma-36-react-components@3.28.2) (2020-01-07)
+
+
+### Bug Fixes
+
+* **Autocomplete:** Allow underlying dropdown configuration ([68c845a](https://github.com/contentful/forma-36/commit/68c845a77283c82dc7d5c449584850b56b40b6b9))
+
+
+
+
+
 ## [3.28.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.28.0...@contentful/forma-36-react-components@3.28.1) (2020-01-06)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
