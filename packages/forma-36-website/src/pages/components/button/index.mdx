@@ -13,22 +13,25 @@ Buttons communicate the action that will occur when the user clicks them. They c
 </React.Fragment>
 ```
 
-## Best practices
+## Table of contents
+
+1. [Best practices](#best-practices)
+2. [Variations](#variations)
+   1. [Button type](#button-type)
+   2. [Button with icon](#button-with-icon)
+   3. [Button sizes](#button-sizes)
+3. [Writing guidelines](#writing-guidelines)
+
+## Best practices <a name="best-practices" />
 
 - Position buttons consistently in the interface
 - Reduce complexity by using a small number of actions. Too many actions can create confusion
 
-## Copy considerations
-
-- To make `Button` action-oriented, use a verb. EX: "Add field", not "New field"
-- Consider what happens after a user clicks on the button and communicate that clearly in the copy. For example, “Get a UI Extension” vs “Explore all UI Extensions”
-- Use clear and succinct copy
-
-## Variations
+## Button variations <a name="variations" />
 
 The `Button` component can be configured in a number of different ways. Here is a guide to when to use certain variations.
 
-### Button types (`buttonType`)
+### Button type (`buttonType`) <a name="button-type" />
 
 ```jsx
 <React.Fragment>
@@ -48,7 +51,7 @@ The `Button` component can be configured in a number of different ways. Here is 
 | **Muted**    | Used for a secondary actions, the most commonly used button type                                                                               |
 | **Naked**    | Used in minimal contexts                                                                                                                       |
 
-### With icon (`icon`)
+### Button with icon (`icon`) <a name="button-with-icon" />
 
 ```jsx
 <React.Fragment>
@@ -70,7 +73,7 @@ The `Button` component can be configured in a number of different ways. Here is 
 </React.Fragment>
 ```
 
-### Sizes (`size`)
+### Button sizes (`size`) <a name="button-sizes" />
 
 ```jsx
 <React.Fragment>
@@ -89,3 +92,9 @@ The `Button` component can be configured in a number of different ways. Here is 
 | **Large**   | Used for actions on empty states    |
 | **Default** |                                     |
 | **Small**   | Used for when space is at a premium |
+
+## Writing guidelines <a name="writing-guidelines" />
+
+- To make `Button` action-oriented, use a verb. EX: "Add field", not "New field"
+- Consider what happens after a user clicks on the button and communicate that clearly in the copy. For example, “Get a UI Extension” vs “Explore all UI Extensions”
+- Use clear and succinct copy

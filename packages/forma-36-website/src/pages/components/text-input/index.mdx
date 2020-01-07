@@ -18,15 +18,25 @@ storybook: 'https://f36-storybook.contentful.com/?path=/story/components-textinp
 </React.Fragment>
 ```
 
-## Best practices
+## Table of contents
+
+1. [Best practices](#best-practices)
+2. [Variations](#variations)
+   1. [TextInput type](#textinput-type)
+   2. [TextInput width](#textinput-width)
+   3. [TextInput states](#textinput-states)
+   4. [TextInput with copy button](#textinput-width)
+   5. [TextInput max. length](#textinput-maxlength)
+
+## Best practices <a name="best-practices" />
 
 - To ensure accessability, provide a `name`
 
-## Variations
+## TextInput variations <a name="variations" />
 
 The TextInput component can be configured in a number of different ways. Use this guidance to determine the best configuration based on the context.
 
-### TextInput type (`type`)
+### TextInput type (`type`) <a name="textinput-type" />
 
 ```jsx
 <React.Fragment>
@@ -67,7 +77,7 @@ The TextInput component can be configured in a number of different ways. Use thi
 | **url**        | Used for urls                                                 |
 | **date**       | Used for dates (will display native date picker component)    |
 
-### TextInput width (`width`)
+### TextInput width (`width`) <a name="textinput-width" />
 
 ```jsx
 <React.Fragment>
@@ -100,7 +110,7 @@ The TextInput component can be configured in a number of different ways. Use thi
 | **medium**      | 240px |
 | **small**       | 120px |
 
-### TextInput states (`error, disabled`)
+### TextInput states (`error, disabled`) <a name="textinput-states" />
 
 ```jsx
 <React.Fragment>
@@ -119,7 +129,7 @@ The TextInput component can be configured in a number of different ways. Use thi
 | **disabled** | Used to disable the input field    |
 | **error**    | Used to visually indicate an error |
 
-### TextInput with copy button (`withCopyButton`)
+### TextInput with copy button (`withCopyButton`) <a name="textinput-copy" />
 
 ```jsx
 <React.Fragment>
@@ -131,7 +141,7 @@ The TextInput component can be configured in a number of different ways. Use thi
 | :----------------- | :---------------------------------------------------------------------------------------------- |
 | **withCopyButton** | Used to add a button to the TextInput which will copy the input value to the clipboard on click |
 
-### TextInput maximal length (`maxLength`)
+### TextInput maximal length (`maxLength`) <a name="textinput-maxlength" />
 
 ```jsx
 <React.Fragment>

@@ -15,26 +15,25 @@ Notes provide context and information about a situation or action.
 </React.Fragment>
 ```
 
-## Best practices
+## Table of contents
+
+1. [Best practices](#best-practices)
+2. [Variations](#variations)
+   1. [Note type](#note-type)
+   2. [Note with title](#note-with-title)
+3. [Writing guidelines](#writing-guidelines)
+
+## Best practices <a name="best-practices" />
 
 - Use an adequate note type to communicate the right kind of information
 - Place the note visually closer to the action or real estate it relates to
 - Unlike notifications, notes don't show up as feedback only after a user has performed an action
 
-## Copy considerations
-
-- Use clear and succinct copy
-- Ensure the copy is easily scannable. Focus on the objective and limit the number of concepts in each sentence
-- Use progressive disclosure. Eliminate details that can be revealed as the user interacts and requires more information
-- Use active voice, present tense, and consider tone of voice depending on the circumstance
-- To add additional context, link out to documentation
-- Do not preface the instructions with introductory text, such as "please"
-
-## Variations
+## Note variations <a name="variations" />
 
 The Note component can be configured in a number of different ways. Learn when to use certain variations with this guide.
 
-### Note types (`noteType`)
+### Note type (`noteType`) <a name="note-type" />
 
 ```jsx
 <React.Fragment>
@@ -52,7 +51,7 @@ The Note component can be configured in a number of different ways. Learn when t
 | **Negative** | Used for critical information, such as errors or failure                              |
 | **Warning**  | Used for warning messages, useful to know before an action is taken                   |
 
-### Note with title (`title`)
+### Note with title (`title`) <a name="note-with-title" />
 
 ```jsx
 <React.Fragment>
@@ -68,3 +67,12 @@ The Note component can be configured in a number of different ways. Learn when t
   </Note>
 </React.Fragment>
 ```
+
+## Writing guidelines <a name="writing-guidelines" />
+
+- Use clear and succinct copy
+- Ensure the copy is easily scannable. Focus on the objective and limit the number of concepts in each sentence
+- Use progressive disclosure. Eliminate details that can be revealed as the user interacts and requires more information
+- Use active voice, present tense, and consider tone of voice depending on the circumstance
+- To add additional context, link out to documentation
+- Do not preface the instructions with introductory text, such as "please"
