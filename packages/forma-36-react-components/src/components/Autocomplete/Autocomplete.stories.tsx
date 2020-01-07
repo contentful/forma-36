@@ -45,7 +45,7 @@ const AutocompleteDefaultStory = ({ items }: { items: Item[] }) => {
         'There are no items to choose from',
       )}
       noMatchesMessage={text('noMatchesMessage', 'No matches')}
-      isFullWidth={boolean('isFullWidth', true)}
+      dropdownProps={object('dropdownProps', { isFullWidth: true })}
     >
       {(options: Item[]) =>
         options.map((option: Item) => (

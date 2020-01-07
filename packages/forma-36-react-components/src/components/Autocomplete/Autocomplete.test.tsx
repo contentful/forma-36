@@ -10,13 +10,16 @@ import {
 
 import Autocomplete from '../Autocomplete';
 
-type Item = { label: string; id: string };
+interface Item {
+  value: number;
+  label: string;
+}
 
 const items: Item[] = [
-  { label: 'Jalapeño', id: 'jalapeno' },
-  { label: 'Lime', id: 'lime' },
-  { label: 'Avocado', id: 'avocado' },
-  { label: 'Coriander', id: 'coriander' },
+  { value: 1, label: 'Jalapeno' },
+  { value: 2, label: 'Lime' },
+  { value: 3, label: 'Avocado' },
+  { value: 4, label: 'Coriander' },
 ];
 
 configure({ testIdAttribute: 'data-test-id' });
@@ -41,7 +44,7 @@ describe('Autocomplete', () => {
       >
         {(options: Item[]) =>
           options.map(option => (
-            <span key={option.id} data-testid="option-content">
+            <span key={option.value} data-testid="option-content">
               {option.label}
             </span>
           ))
