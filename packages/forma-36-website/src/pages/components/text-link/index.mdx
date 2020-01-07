@@ -5,24 +5,31 @@ github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-re
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-textlink--default'
 ---
 
-TextLinks communicate actions and highlight linked resources to users.
+Text links communicate actions and highlight linked resources to users.
 
-## Best practices
+```jsx
+<React.Fragment>
+  <TextLink linkType="primary">Text link</TextLink>
+</React.Fragment>
+```
 
-- Reduce complexity by using a small number of actions. Too many actions can create confusion.
+## Table of contents
 
-## Copy considerations
+1. [Best practices](#best-practices)
+2. [Variations](#variations)
+   1. [TextLink type](#textlink-type)
+   2. [TextLink with icon](#textlink-with-icon)
+3. [Writing guidelines](#writing-guidelines)
 
-- To make TextLink action-oriented, use a verb. For example, "Add field", not "New field"
-- If a TextLink is used to navigate to a new page, clearly communicate what the user will see when they click on the link. For example, “View teams documentation” vs “Learn about teams”
-- Use clear and succinct copy
-- If a TextLink is at the end of a sentence, don’t add period after the TextLink
+## Best practices <a name="best-practices" />
 
-## TextLink variations
+- Reduce complexity by using a small number of actions. Too many actions can create confusion
 
-The TextLink component can be configured in a number of different ways. Here is a guide to when to use certain variations.
+## TextLink variations <a name="variations" />
 
-### TextLink types (`linkType`)
+The `TextLink` component can be configured in a number of different ways. Here is a guide to when to use certain variations.
+
+### TextLink type (`linkType`) <a name="textlink-type" />
 
 ```jsx
 <React.Fragment>
@@ -42,7 +49,7 @@ The TextLink component can be configured in a number of different ways. Here is 
 | **Secondary** | Used for actions with less emphasis                              |
 | **Muted**     | Used for actions with least amount of emphasis                   |
 
-### With icon (`icon`)
+### TextLink with icon (`icon`) <a name="textlink-with-icon" />
 
 ```jsx
 <React.Fragment>
@@ -63,3 +70,10 @@ The TextLink component can be configured in a number of different ways. Here is 
   </TextLink>
 </React.Fragment>
 ```
+
+## Writing guidelines <a name="writing-guidelines" />
+
+- To make `TextLink` action-oriented, use a verb. For example, "Add field", not "New field"
+- If a `TextLink` is used to navigate to a new page, clearly communicate what the user will see when they click on the link. For example, “View teams documentation” vs “Learn about teams”
+- Use clear and succinct copy
+- If a `TextLink` is at the end of a sentence, don’t add period after the TextLink

@@ -7,12 +7,6 @@ storybook: 'https://f36-storybook.contentful.com/?path=/info/components-table--d
 
 Use tables to present large amounts of data, and data which has multiple properties attached to it.
 
-## Best practices
-
-- Make sure Tables span the full width of the container they're in
-- Make sure a table has a header describing the content of its respective columns
-- Ordered columns by relevance from left to right. Images, if present, have a higher priority, and should be placed in the first column. Checkboxes naturally have the highest priority.
-
 ```jsx
 <Table>
   <TableHead>
@@ -25,17 +19,33 @@ Use tables to present large amounts of data, and data which has multiple propert
   </TableHead>
   <TableBody>
     <TableRow>
-      <TableCell>Jane Roe</TableCell>
-      <TableCell>jane@roe.com</TableCell>
+      <TableCell>Claus Mitchell</TableCell>
+      <TableCell>claus.mitchell@contentful.com</TableCell>
       <TableCell>CEO</TableCell>
       <TableCell>August 29, 2018</TableCell>
     </TableRow>
     <TableRow>
-      <TableCell>John Doe</TableCell>
-      <TableCell>john@doe.com</TableCell>
+      <TableCell>Johannes Ramos</TableCell>
+      <TableCell>johannes.ramos@contentful.com</TableCell>
       <TableCell>CTO</TableCell>
       <TableCell>July 27, 2019</TableCell>
+    </TableRow>
+    <TableRow>
+      <TableCell>Alex Kalinoski</TableCell>
+      <TableCell>alex.kalinoski@contentful.com</TableCell>
+      <TableCell>CDO</TableCell>
+      <TableCell>June 13, 2019</TableCell>
     </TableRow>
   </TableBody>
 </Table>
 ```
+
+## Table of contents
+
+1. [Best practices](#best-practices)
+
+## Best practices <a name="best-practices" />
+
+- Make sure Tables span the full width of the container they're in
+- Make sure a table has a header describing the content of its respective columns
+- Ordered columns by relevance from left to right. Images, if present, have a higher priority, and should be placed in the first column. Checkboxes naturally have the highest priority.
