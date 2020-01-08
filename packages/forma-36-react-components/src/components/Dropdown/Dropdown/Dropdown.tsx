@@ -171,8 +171,7 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
     } = this.props;
 
     const classNames = cn(styles['Dropdown'], className);
-    const width =
-      isFullWidth && this.state.anchorDimensionsAndPositon.width - 2; // subtract the border
+    const width = isFullWidth && this.state.anchorDimensionsAndPositon.width;
 
     return submenuToggleLabel ? (
       <DropdownListItem

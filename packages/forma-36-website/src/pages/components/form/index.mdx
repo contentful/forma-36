@@ -5,7 +5,7 @@ github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-re
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-form--default'
 ---
 
-The Form component is a wrapper component to apply a consistent layout and handle form submissions.
+`Form` is a wrapper component to apply a consistent layout and handle form submissions.
 
 ```jsx
 <React.Fragment>
@@ -16,16 +16,16 @@ The Form component is a wrapper component to apply a consistent layout and handl
         name="nameInput"
         id="nameInput"
         labelText="Name"
-        value="Johannes Bugiel"
-        helpText="Enter name"
+        value="Claus Mitchell"
+        helpText="Provide a full name"
       />
       <TextField
         required
         name="emailInput"
         id="emailInput"
-        labelText="E-Mail"
-        value="johannes.bugiel@contentful.com"
-        helpText="Enter email address"
+        labelText="Email address"
+        value="claus.mitchell@contentful.com"
+        helpText="Provide an email address"
       />
     </FieldGroup>
     <FieldGroup>
@@ -39,18 +39,17 @@ The Form component is a wrapper component to apply a consistent layout and handl
 
 1. [Best practices](#best-practices)
 2. [Variations](#variations)
-   1. [Default spacing](#spacing-default)
-   2. [Condensed spacing](#spacing-condensed)
-3. [Writing guidelines](#copy-considerations)
+   1. [Default spacing](#default-spacing)
+   2. [Condensed spacing](#condensed-spacing)
 
 ## Best practices <a name="best-practices" />
 
 - The `Form` component should wrap FieldGroup components to apply consistent layouts
 - Provide an `onSubmit` handler for form validation and submission
 
-## Variations <a name="variations" />
+## Form variations <a name="variations" />
 
-### Default spacing (`spacing="default"`) <a name="spacing-default" />
+### Default spacing (`spacing="default"`) <a name="default-spacing" />
 
 ```jsx
 <React.Fragment>
@@ -61,15 +60,15 @@ The Form component is a wrapper component to apply a consistent layout and handl
         name="nameInput"
         id="nameInput"
         labelText="Name"
-        value="Johannes Bugiel"
-        helpText="Enter name"
+        value="Claus Mitchell"
+        helpText="Provide a full name"
       />
       <TextField
         required
         name="emailInput"
         id="emailInput"
-        labelText="E-Mail"
-        value="forma36@contentful.com"
+        labelText="Email address"
+        value="claus.mitchell@contentful.com"
         helpText="Enter email address"
       />
     </FieldGroup>
@@ -80,7 +79,7 @@ The Form component is a wrapper component to apply a consistent layout and handl
 </React.Fragment>
 ```
 
-### Condensed spacing (`spacing="condensed"`) <a name="spacing-condensed" />
+### Condensed spacing (`spacing="condensed"`) <a name="condensed-spacing" />
 
 ```jsx
 <React.Fragment>
@@ -91,15 +90,15 @@ The Form component is a wrapper component to apply a consistent layout and handl
         name="nameInput"
         id="nameInput"
         labelText="Name"
-        value="Johannes Bugiel"
-        helpText="Enter name"
+        value="Claus Mitchell"
+        helpText="Provide a full name"
       />
       <TextField
         required
         name="emailInput"
         id="emailInput"
-        labelText="E-Mail"
-        value="forma36@contentful.com"
+        labelText="Email address"
+        value="claus.mitchell@contentful.com"
         helpText="Enter email address"
       />
     </FieldGroup>
