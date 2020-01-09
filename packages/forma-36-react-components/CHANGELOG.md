@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.28.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.28.4...@contentful/forma-36-react-components@3.28.5) (2020-01-09)
+
+
+### Bug Fixes
+
+* **autocomplete:** prevent chrome autocomplete ([2c470a5](https://github.com/contentful/forma-36/commit/2c470a5516e89938d9114516d55d8750253b5501))
+
+
+
+
+
 ## [3.28.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.28.3...@contentful/forma-36-react-components@3.28.4) (2020-01-07)
 
 
