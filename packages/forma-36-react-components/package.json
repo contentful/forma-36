@@ -23,7 +23,7 @@
     "@babel/polyfill": "7.2.5",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "7.3.3",
-    "@contentful/forma-36-fcss": "^0.0.34",
+    "@contentful/forma-36-fcss": "^0.0.32",
     "@contentful/forma-36-tokens": "^0.5.1",
     "@storybook/addon-a11y": "^5.2.1",
     "@storybook/addon-actions": "^5.2.1",

@@ -1548,7 +1548,7 @@
     puppeteer "^1.2.0"
     yargs "^11.1.0"
 
-"@contentful/forma-36-fcss@^0.0.34":
+"@contentful/forma-36-fcss@^0.0.32":
   version "0.0.32"
   resolved "https://registry.yarnpkg.com/@contentful/forma-36-fcss/-/forma-36-fcss-0.0.32.tgz#daba10dc78315741bbdff00c7e35ffb109761be2"
   integrity sha512-r4xXIue1gZ6qPgeZuNm/FSO9i8HSyycJ42HyOmdR64jipv50lPmH/reejKtmVxYZcGarAhDavCniz/RJAIXWoQ==
