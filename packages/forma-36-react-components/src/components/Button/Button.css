@@ -2,6 +2,7 @@
 @import 'settings/typography';
 @import 'settings/transitions';
 @import 'settings/shadows';
+@import 'settings/z-index';
 
 .Button {
   composes: focus-border--default from './../../styles/settings/a11y.css';
