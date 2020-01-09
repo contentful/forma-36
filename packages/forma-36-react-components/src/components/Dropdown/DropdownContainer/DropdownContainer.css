@@ -1,6 +1,8 @@
 @import 'settings/colors';
 @import 'settings/typography';
 @import 'settings/transitions';
+@import 'settings/shadows';
+@import 'settings/z-index';
 
 .DropdownContainer {
   background: var(--color-white);

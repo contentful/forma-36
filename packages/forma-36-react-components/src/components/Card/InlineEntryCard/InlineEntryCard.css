@@ -1,6 +1,7 @@
 @import 'settings/colors';
 @import 'settings/typography';
 @import 'settings/transitions';
+@import 'settings/z-index';
 
 .InlineEntryCard {
   max-width: 100%;
