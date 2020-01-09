@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.28.6](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.28.5...@contentful/forma-36-react-components@3.28.6) (2020-01-09)
+
+
+### Bug Fixes
+
+* **z-index:** fixed unresolved z-index values ([#382](https://github.com/contentful/forma-36/issues/382)) ([24b17f3](https://github.com/contentful/forma-36/commit/24b17f3d3486fee0008a0ac39521fb61b40ad7c0))
+
+
+
+
+
 ## [3.28.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.28.4...@contentful/forma-36-react-components@3.28.5) (2020-01-09)
 
 
