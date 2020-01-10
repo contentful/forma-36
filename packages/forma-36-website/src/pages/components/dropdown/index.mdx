@@ -1,0 +1,338 @@
+---
+title: 'Dropdown'
+type: 'component'
+github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/Dropdown'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-dropdown--default'
+---
+
+Dropdowns allow users to access a list of multiple actions. A common use-case for Dropdowns is to build context menus.
+
+A Dropdown should contain at least one DropdownList, and multiple DropdownListItem components to represent each action.
+
+```jsx
+function DropdownExample() {
+  const [isOpen, setOpen] = React.useState(false);
+  return (
+    <Dropdown
+      isOpen={isOpen}
+      onClose={() => setOpen(false)}
+      key={Date.now()} // Force Reinit
+      toggleElement={
+        <Button
+          size="small"
+          buttonType="muted"
+          indicateDropdown
+          onClick={() => setOpen(!isOpen)}
+        >
+          Trigger Dropdown
+        </Button>
+      }
+    >
+      <DropdownList>
+        <DropdownListItem onClick="() => ()">
+          Dropdown list item 1
+        </DropdownListItem>
+        <DropdownListItem onClick="() => ()">
+          Dropdown list item 2
+        </DropdownListItem>
+      </DropdownList>
+    </Dropdown>
+  );
+}
+```
+
+## Table of contents
+
+1. [Best practices](#best-practices)
+2. [Variations](#variations)
+   1. [With title](#with-title)
+   2. [With multiple DropdownLists](#with-multiple-dropdown-lists)
+   3. [With links](#with-links)
+   4. [With max height](#with-max-height)
+   5. [With positioning](#with-positioning)
+3. [Writing guidelines](#writing-guidelines)
+
+## Best practices <a name="best-practices" />
+
+- If there is a single action to display, use TextLink or Button instead
+- Use lists and titles to group similar actions
+- Use a single TextLink at the bottom of the list for an action that is considerably different than the rest
+
+## Variations <a name="variations" />
+
+### Dropdown with title <a name="with-title" />
+
+Use a title to clarify the purpose of a dropdown
+
+```jsx
+function DropdownExample() {
+  const [isOpen, setOpen] = React.useState(false);
+  return (
+    <Dropdown
+      isOpen={isOpen}
+      onClose={() => setOpen(false)}
+      key={Date.now()} // Force Reinit
+      toggleElement={
+        <Button
+          size="small"
+          buttonType="muted"
+          indicateDropdown
+          onClick={() => setOpen(!isOpen)}
+        >
+          Trigger Dropdown with a title
+        </Button>
+      }
+    >
+      <DropdownList>
+        <DropdownListItem isTitle>Dropdown title</DropdownListItem>
+        <DropdownListItem onClick="() => ()">
+          Dropdown list item 1
+        </DropdownListItem>
+        <DropdownListItem onClick="() => ()">
+          Dropdown list item 2
+        </DropdownListItem>
+      </DropdownList>
+    </Dropdown>
+  );
+}
+```
+
+### Dropdown with multiple DropdownLists <a name="with-multiple-dropdown-lists" />
+
+Use multiple DropdownLists to group actions together. A DropdownList can contain a border to visually separating these lists.
+
+```jsx
+function DropdownExample() {
+  const [isOpen, setOpen] = React.useState(false);
+  return (
+    <Dropdown
+      isOpen={isOpen}
+      onClose={() => setOpen(false)}
+      key={Date.now()} // Force Reinit
+      toggleElement={
+        <Button
+          size="small"
+          buttonType="muted"
+          indicateDropdown
+          onClick={() => setOpen(!isOpen)}
+        >
+          Trigger Dropdown with multiple DropdownLists
+        </Button>
+      }
+    >
+      <DropdownList>
+        <DropdownListItem onClick="() => ()">
+          Dropdown list item 1
+        </DropdownListItem>
+        <DropdownListItem onClick="() => ()">
+          Dropdown list item 2
+        </DropdownListItem>
+      </DropdownList>
+      <DropdownList border="top">
+        <DropdownListItem onClick="() => ()">
+          Dropdown list item 1
+        </DropdownListItem>
+        <DropdownListItem onClick="() => ()">
+          Dropdown list item 2
+        </DropdownListItem>
+      </DropdownList>
+    </Dropdown>
+  );
+}
+```
+
+### Dropdown with links <a name="with-links" />
+
+DropdownListItems can also contain TextLinks. These are often used to highlight related actions to the content of the DropdownList.
+
+```jsx
+function DropdownExample() {
+  const [isOpen, setOpen] = React.useState(false);
+  return (
+    <Dropdown
+      isOpen={isOpen}
+      onClose={() => setOpen(false)}
+      key={Date.now()} // Force Reinit
+      toggleElement={
+        <Button
+          size="small"
+          buttonType="muted"
+          indicateDropdown
+          onClick={() => setOpen(!isOpen)}
+        >
+          Trigger Dropdown with links
+        </Button>
+      }
+    >
+      <DropdownList>
+        <DropdownListItem onClick="() => ()">Kitten</DropdownListItem>
+        <DropdownListItem onClick="() => ()">Puppy</DropdownListItem>
+        <DropdownListItem onClick="() => ()">Piglet</DropdownListItem>
+      </DropdownList>
+      <DropdownList border="top">
+        <DropdownListItem>
+          <TextLink icon="Plus">Add a cute animal</TextLink>
+        </DropdownListItem>
+      </DropdownList>
+    </Dropdown>
+  );
+}
+```
+
+### Dropdown with max height <a name="with-max-height" />
+
+DropdownLists can have a max height to limit the height of the dropdown and introduce scrolling. This should be used when dropdowns need to contain a lot of data.
+
+```jsx
+function DropdownExample() {
+  const [isOpen, setOpen] = React.useState(false);
+  return (
+    <Dropdown
+      isOpen={isOpen}
+      onClose={() => setOpen(false)}
+      key={Date.now()} // Force Reinit
+      toggleElement={
+        <Button
+          size="small"
+          buttonType="muted"
+          indicateDropdown
+          onClick={() => setOpen(!isOpen)}
+        >
+          Trigger Dropdown with max height
+        </Button>
+      }
+    >
+      <DropdownList maxHeight={175}>
+        <DropdownListItem onClick="() => ()">Item 1</DropdownListItem>
+        <DropdownListItem onClick="() => ()">Item 2</DropdownListItem>
+        <DropdownListItem onClick="() => ()">Item 3</DropdownListItem>
+        <DropdownListItem onClick="() => ()">Item 4</DropdownListItem>
+        <DropdownListItem onClick="() => ()">Item 5</DropdownListItem>
+        <DropdownListItem onClick="() => ()">Item 6</DropdownListItem>
+        <DropdownListItem onClick="() => ()">Item 7</DropdownListItem>
+        <DropdownListItem onClick="() => ()">Item 8</DropdownListItem>
+        <DropdownListItem onClick="() => ()">Item 9</DropdownListItem>
+        <DropdownListItem onClick="() => ()">Item 10</DropdownListItem>
+        <DropdownListItem onClick="() => ()">Item 11</DropdownListItem>
+        <DropdownListItem onClick="() => ()">Item 12</DropdownListItem>
+        <DropdownListItem onClick="() => ()">Item 13</DropdownListItem>
+        <DropdownListItem onClick="() => ()">Item 14</DropdownListItem>
+        <DropdownListItem onClick="() => ()">Item 15</DropdownListItem>
+        <DropdownListItem onClick="() => ()">Item 16</DropdownListItem>
+        <DropdownListItem onClick="() => ()">Item 17</DropdownListItem>
+        <DropdownListItem onClick="() => ()">Item 18</DropdownListItem>
+      </DropdownList>
+    </Dropdown>
+  );
+}
+```
+
+### Dropdown positioning <a name="with-positioning" />
+
+Dropdowns are positioned automatically however they can be specifically positioned also. This should be used when a Dropdown's auto-positioning is conflicting with another visual element.
+
+```jsx
+function DropdownExample() {
+  const [isOpen1, setOpen1] = React.useState(false);
+  const [isOpen2, setOpen2] = React.useState(false);
+  const [isOpen3, setOpen3] = React.useState(false);
+  const [isOpen4, setOpen4] = React.useState(false);
+
+  return (
+    <React.Fragment>
+      <Dropdown
+        isOpen={isOpen1}
+        onClose={() => setOpen1(false)}
+        key={1} // Force Reinit
+        position="top-left"
+        toggleElement={
+          <Button
+            size="small"
+            buttonType="muted"
+            indicateDropdown
+            onClick={() => setOpen1(!isOpen1)}
+          >
+            Trigger top left
+          </Button>
+        }
+      >
+        <DropdownList>
+          <DropdownListItem onClick="() => ()">Item 1</DropdownListItem>
+          <DropdownListItem onClick="() => ()">Item 2</DropdownListItem>
+        </DropdownList>
+      </Dropdown>
+
+      <Dropdown
+        isOpen={isOpen2}
+        onClose={() => setOpen2(false)}
+        key={2} // Force Reinit
+        position="top-right"
+        toggleElement={
+          <Button
+            size="small"
+            buttonType="muted"
+            indicateDropdown
+            onClick={() => setOpen2(!isOpen2)}
+          >
+            Trigger top right
+          </Button>
+        }
+      >
+        <DropdownList>
+          <DropdownListItem onClick="() => ()">Item 1</DropdownListItem>
+          <DropdownListItem onClick="() => ()">Item 2</DropdownListItem>
+        </DropdownList>
+      </Dropdown>
+
+      <Dropdown
+        isOpen={isOpen3}
+        onClose={() => setOpen3(false)}
+        key={3} // Force Reinit
+        position="bottom-right"
+        toggleElement={
+          <Button
+            size="small"
+            buttonType="muted"
+            indicateDropdown
+            onClick={() => setOpen3(!isOpen3)}
+          >
+            Trigger bottom right
+          </Button>
+        }
+      >
+        <DropdownList>
+          <DropdownListItem onClick="() => ()">Item 1</DropdownListItem>
+          <DropdownListItem onClick="() => ()">Item 2</DropdownListItem>
+        </DropdownList>
+      </Dropdown>
+
+      <Dropdown
+        isOpen={isOpen4}
+        onClose={() => setOpen4(false)}
+        key={4} // Force Reinit
+        position="bottom-left"
+        toggleElement={
+          <Button
+            size="small"
+            buttonType="muted"
+            indicateDropdown
+            onClick={() => setOpen4(!isOpen4)}
+          >
+            Trigger bottom left
+          </Button>
+        }
+      >
+        <DropdownList>
+          <DropdownListItem onClick="() => ()">Item 1</DropdownListItem>
+          <DropdownListItem onClick="() => ()">Item 2</DropdownListItem>
+        </DropdownList>
+      </Dropdown>
+    </React.Fragment>
+  );
+}
+```
+
+## Writing guidelines <a name="writing-guidelines" />
+
+- To make Dropdown action-oriented, use a verb. For example, "Add field", not "New field"
+- Use clear and succinct copy

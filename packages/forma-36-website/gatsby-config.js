@@ -112,6 +112,10 @@ module.exports = {
             link: '/components/button/',
           },
           {
+            name: 'Dropdown',
+            link: '/components/dropdown/',
+          },
+          {
             name: 'Form',
             link: '/components/form/',
           },
@@ -134,6 +138,10 @@ module.exports = {
           {
             name: 'Note',
             link: '/components/note/',
+          },
+          {
+            name: 'Notification',
+            link: '/components/notification/',
           },
           {
             name: 'Table',
