@@ -4,6 +4,7 @@
 @import 'settings/dimensions';
 @import 'settings/shadows';
 @import 'settings/content-width';
+@import 'settings/z-index';
 
 .Workbench {
   display: flex;

@@ -1,6 +1,7 @@
 @import 'settings/colors';
 @import 'settings/typography';
 @import 'settings/transitions';
+@import 'settings/z-index';
 
 :root {
   --tooltip-chevron-size: calc(1rem * (6 / var(--font-base-default)));

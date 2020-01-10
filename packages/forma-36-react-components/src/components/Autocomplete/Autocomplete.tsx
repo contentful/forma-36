@@ -187,8 +187,8 @@ export const Autocomplete: FunctionComponent<AutocompleteProps> = ({
             inputRef={inputRef}
             testId="autocomplete.input"
             type="search"
-            name={name}
             autoComplete="off"
+            aria-label={name}
           />
           <IconButton
             className={styles.inputIconButton}

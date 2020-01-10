@@ -3,6 +3,7 @@
 @import 'settings/dimensions';
 @import 'settings/transitions';
 @import 'settings/shadows';
+@import 'settings/z-index';
 
 .TextInput {
   display: flex;
