@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.28.7](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.28.6...@contentful/forma-36-react-components@3.28.7) (2020-01-14)
+
+
+### Bug Fixes
+
+* **cardactions:** fix testId propagation ([30307f6](https://github.com/contentful/forma-36/commit/30307f6b2ebab5a617fed813892c489c8eacffbe))
+
+
+
+
+
 ## [3.28.6](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.28.5...@contentful/forma-36-react-components@3.28.6) (2020-01-09)
 
 
