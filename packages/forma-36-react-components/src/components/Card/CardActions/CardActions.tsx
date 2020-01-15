@@ -79,9 +79,14 @@ export class CardActions extends Component<
             disabled={isDisabled}
             label="Actions"
             {...iconButtonProps}
-            onClick={event => {
+            onMouseDown={event => {
               event.preventDefault();
+            }}
+            onClick={event => {
               this.handleClick(event);
+            }}
+            onBlur={() => {
+              this.setState({ isDropdownOpen: false });
             }}
           />
         }
