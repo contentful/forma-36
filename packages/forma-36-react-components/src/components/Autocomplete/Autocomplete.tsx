@@ -11,6 +11,7 @@ import SkeletonContainer from '../Skeleton/SkeletonContainer';
 import IconButton from '../IconButton';
 
 import styles from './Autocomplete.css';
+import cn from 'classnames';
 
 const TOGGLED_LIST = 'TOGGLED_LIST';
 const NAVIGATED_ITEMS = 'NAVIGATED_ITEMS';
@@ -166,9 +167,11 @@ export const Autocomplete: FunctionComponent<AutocompleteProps> = ({
     [children, items],
   );
 
+  const dropdownClassNames = cn(styles.autocompleteDropdown, className);
+
   return (
     <Dropdown
-      className={className}
+      className={dropdownClassNames}
       isOpen={isOpen}
       onClose={() => {
         willClearQueryOnClose && updateQuery('');
