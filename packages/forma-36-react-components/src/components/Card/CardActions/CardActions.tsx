@@ -80,8 +80,10 @@ export class CardActions extends Component<
             label="Actions"
             {...iconButtonProps}
             onClick={event => {
-              event.preventDefault();
               this.handleClick(event);
+            }}
+            onBlur={() => {
+              this.setState({ isDropdownOpen: false });
             }}
           />
         }
@@ -103,6 +105,12 @@ export class CardActions extends Component<
                     }
                     this.setState({ isDropdownOpen: false });
                     e.stopPropagation();
+                  },
+                  onMouseDown: (e: ReactMouseEvent) => {
+                    e.preventDefault();
+                    if (child.props.onClick) {
+                      child.props.onClick(e);
+                    }
                   },
                 }),
             );
