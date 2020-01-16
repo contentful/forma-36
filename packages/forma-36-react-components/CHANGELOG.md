@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.28.9](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.28.8...@contentful/forma-36-react-components@3.28.9) (2020-01-16)
+
+
+### Bug Fixes
+
+* **Autocomplete:** Support for full width ([09d8667](https://github.com/contentful/forma-36/commit/09d866754d3823fb13fef339fe325e2e7dd9fb70))
+
+
+
+
+
 ## [3.28.8](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.28.7...@contentful/forma-36-react-components@3.28.8) (2020-01-16)
 
 
