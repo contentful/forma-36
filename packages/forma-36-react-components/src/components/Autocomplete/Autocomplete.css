@@ -1,5 +1,9 @@
 @import 'settings/dimensions';
 
+.autocompleteDropdown {
+  display: block;
+}
+
 .autocompleteInput {
   display: flex;
 }
@@ -13,7 +17,6 @@
 }
 
 .inputIconButton {
-  position: absolute;
-  top: calc(50% - var(--spacing-xs));
-  right: var(--spacing-xs);
+  position: relative;
+  margin-left: calc(-1 * var(--spacing-xl));
 }
