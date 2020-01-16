@@ -30,7 +30,7 @@ export type EntryCardPropTypes = {
   /**
    * The content type of the entry
    */
-  contentType?: string;
+  contentType?: string | React.ReactNode;
   /**
    * The publish status of the entry
    */

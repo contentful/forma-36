@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useReducer, useMemo, useRef, FunctionComponent } from 'react';
 import PropTypes from 'prop-types';
 import isHotKey from 'is-hotkey';

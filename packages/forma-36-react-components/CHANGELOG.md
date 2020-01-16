@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.28.8](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.28.7...@contentful/forma-36-react-components@3.28.8) (2020-01-16)
+
+
+### Bug Fixes
+
+* **EntryCard:** Allow react node for entry card content type ([#388](https://github.com/contentful/forma-36/issues/388)) ([ae54e5d](https://github.com/contentful/forma-36/commit/ae54e5dfdcbfb3365b5f27de89169c73520c1fa0))
+
+
+
+
+
 ## [3.28.7](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.28.6...@contentful/forma-36-react-components@3.28.7) (2020-01-14)
 
 
