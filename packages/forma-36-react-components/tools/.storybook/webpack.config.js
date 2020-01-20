@@ -3,7 +3,7 @@ const webpack = require('webpack');
 
 module.exports = ({ config, mode }) => {
   // Need to remove Storybook's CSS loader before adding our own
-  config.module.rules.splice(2, 1);
+  config.module.rules.splice(3, 1);
 
   // TypeScript
   config.resolve.extensions.push('.ts', '.tsx', '.js', '.json', '.css');
@@ -65,17 +65,6 @@ module.exports = ({ config, mode }) => {
         },
       },
     ],
-  });
-
-  config.module.rules.push({
-    test: /\.stories\.(js|ts)x?$/,
-    loaders: [
-      {
-        loader: require.resolve('@storybook/addon-storysource/loader'),
-        options: { parser: 'typescript' },
-      },
-    ],
-    enforce: 'pre',
   });
 
   return config;
