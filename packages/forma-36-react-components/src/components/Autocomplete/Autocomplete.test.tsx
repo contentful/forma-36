@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import {
@@ -10,7 +9,7 @@ import {
 } from '@testing-library/react';
 
 import { KEY_CODE } from './utils';
-import Autocomplete from '../Autocomplete';
+import Autocomplete, { AutocompleteProps } from '../Autocomplete';
 
 interface Item {
   value: number;
@@ -27,17 +26,20 @@ const items: Item[] = [
 configure({ testIdAttribute: 'data-test-id' });
 
 describe('Autocomplete', () => {
-  let onChangeFn: any;
-  let onQueryChangeFn: any;
+  let onChangeFn: (value: Item) => void;
+  let onQueryChangeFn: (query: string) => void;
 
   afterEach(cleanup);
 
-  const build = ({ placeholder = '', width = 'large' }: any) => {
+  const build = ({
+    placeholder = '',
+    width = 'large',
+  }: Partial<AutocompleteProps<Item>>) => {
     onChangeFn = jest.fn();
     onQueryChangeFn = jest.fn();
 
     return render(
-      <Autocomplete
+      <Autocomplete<Item>
         items={items}
         onChange={onChangeFn}
         onQueryChange={onQueryChangeFn}
@@ -85,7 +87,9 @@ describe('Autocomplete', () => {
   });
 
   describe('dropdown', () => {
-    let input: any, dropdown, options: any;
+    let input: HTMLElement;
+    let dropdown: HTMLElement;
+    let options: HTMLElement[];
 
     beforeEach(() => {
       const { getByTestId } = build({});
@@ -118,9 +122,9 @@ describe('Autocomplete', () => {
 
     it('dismisses the dropdown when selecting with the enter key', () => {
       fireEvent.keyDown(input, { keyCode: KEY_CODE.ENTER });
-      const dropdown = within(document as any).queryByTestId(
-        'autocomplete.dropdown-list',
-      );
+      const dropdown = within(
+        (document as unknown) as HTMLElement,
+      ).queryByTestId('autocomplete.dropdown-list');
       expect(dropdown).toBeNull();
     });
   });
