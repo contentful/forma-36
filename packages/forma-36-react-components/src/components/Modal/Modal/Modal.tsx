@@ -132,7 +132,7 @@ export class Modal extends Component<ModalProps> {
         shouldCloseOnOverlayClick={this.props.shouldCloseOnOverlayClick}
         portalClassName={styles.Modal__portal}
         className={{
-          base: styles.Modal__wrap,
+          base: cn(styles.Modal__wrap, { [styles['Modal__wrap--zen']]: this.props.size === 'zen' }),
           afterOpen: styles['Modal__wrap--after-open'],
           beforeClose: styles['Modal__wrap--before-close'],
         }}

@@ -67,6 +67,11 @@
   outline: none;
 }
 
+.Modal__wrap--zen {
+  width: 100%;
+  height: 100%;
+}
+
 .Modal__wrap--after-open .Modal {
   transform: scale(1);
   opacity: 1;
@@ -108,5 +113,6 @@
   max-width: none;
   max-height: none;
   margin: 0;
-  height: 100vh;
+  height: 100%;
+  width: 100%;
 }
