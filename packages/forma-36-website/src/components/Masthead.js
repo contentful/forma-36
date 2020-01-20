@@ -13,6 +13,7 @@ const styles = {
     padding: ${tokens.spacing3Xl} 0;
     background-image: url(${bg});
     background-size: 30px;
+    background-position: center top;
   `,
   content: css`
     width: 28rem;
@@ -33,8 +34,8 @@ const Logo = () => (
   <svg
     x="0px"
     y="0px"
-    width="64px"
-    height="64px"
+    width="80px"
+    height="80px"
     viewBox="0 0 90 90"
     enable-background="new 0 0 90 90"
     css={styles.logo}
