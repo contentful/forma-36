@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useReducer, useMemo, useRef, FunctionComponent } from 'react';
+import React, { useReducer, useMemo, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 import TextInput from '../TextInput';
@@ -19,10 +18,10 @@ const NAVIGATED_ITEMS = 'NAVIGATED_ITEMS';
 const QUERY_CHANGED = 'QUERY_CHANGED';
 const ITEM_SELECTED = 'ITEM_SELECTED';
 
-export interface AutocompleteProps {
-  children: (items: any[]) => any[];
-  items: any[];
-  onChange: (item: {}) => void;
+export interface AutocompleteProps<T extends {}> {
+  children: (items: T[]) => React.ReactNode[];
+  items: T[];
+  onChange: (item: T) => void;
   onQueryChange: (query: string) => void;
   disabled?: boolean;
   placeholder?: string;
@@ -88,7 +87,7 @@ const reducer = (state: State, action: Action): State => {
   }
 };
 
-export const Autocomplete: FunctionComponent<AutocompleteProps> = ({
+export const Autocomplete = <T extends {}>({
   children,
   items = [],
   disabled,
@@ -104,9 +103,11 @@ export const Autocomplete: FunctionComponent<AutocompleteProps> = ({
   noMatchesMessage = 'No matches',
   willClearQueryOnClose,
   dropdownProps,
-}) => {
-  const listRef: any = useRef();
-  const inputRef: any = useRef();
+}: AutocompleteProps<T>) => {
+  const listRef: React.MutableRefObject<HTMLDivElement | undefined> = useRef();
+  const inputRef: React.MutableRefObject<
+    HTMLInputElement | undefined
+  > = useRef();
 
   const [{ isOpen, query, highlightedItemIndex }, dispatch] = useReducer(
     reducer,
@@ -117,7 +118,7 @@ export const Autocomplete: FunctionComponent<AutocompleteProps> = ({
     dispatch({ type: TOGGLED_LIST, payload: isOpen });
   };
 
-  const selectItem = (item: {}) => {
+  const selectItem = (item: T) => {
     dispatch({ type: ITEM_SELECTED });
     onQueryChange('');
     onChange(item);
@@ -128,7 +129,7 @@ export const Autocomplete: FunctionComponent<AutocompleteProps> = ({
     onQueryChange(value);
   };
 
-  const handleKeyDown = (event: any) => {
+  const handleKeyDown = (event: React.KeyboardEvent) => {
     const isEnter = event.keyCode === KEY_CODE.ENTER;
     const isTab =
       event.keyCode === KEY_CODE.TAB ||
@@ -144,7 +145,9 @@ export const Autocomplete: FunctionComponent<AutocompleteProps> = ({
         direction,
         lastIndex,
       );
-      scrollToItem(listRef.current, newIndex);
+      if (listRef.current) {
+        scrollToItem(listRef.current, newIndex);
+      }
       dispatch({ type: NAVIGATED_ITEMS, payload: newIndex });
     } else if (isEnter && hasUserSelection) {
       const selected = items[highlightedItemIndex as number];
@@ -156,7 +159,9 @@ export const Autocomplete: FunctionComponent<AutocompleteProps> = ({
 
   const handleInputButtonClick = () => {
     query ? updateQuery('') : toggleList();
-    inputRef.current.focus();
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
   };
 
   const options = useMemo(
@@ -188,7 +193,7 @@ export const Autocomplete: FunctionComponent<AutocompleteProps> = ({
             disabled={disabled}
             placeholder={placeholder}
             width={width}
-            inputRef={inputRef}
+            inputRef={inputRef as React.RefObject<HTMLInputElement>}
             testId="autocomplete.input"
             type="search"
             autoComplete="off"
@@ -207,7 +212,7 @@ export const Autocomplete: FunctionComponent<AutocompleteProps> = ({
       {...dropdownProps}
     >
       <DropdownList testId="autocomplete.dropdown-list" maxHeight={maxHeight}>
-        <div ref={listRef}>
+        <div ref={listRef as React.RefObject<HTMLDivElement>}>
           {!options.length && !isLoading && (
             <DropdownListItem
               isDisabled
@@ -280,7 +285,7 @@ function OptionSkeleton() {
   );
 }
 
-function getNavigationDirection(event: KeyboardEvent): Direction | null {
+function getNavigationDirection(event: React.KeyboardEvent): Direction | null {
   if (event.keyCode === KEY_CODE.ARROW_DOWN) {
     return Direction.DOWN;
   }
