@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { boolean, number, object, text } from '@storybook/addon-knobs';
+import { boolean, number, object, text, select } from '@storybook/addon-knobs';
 
 import Autocomplete from './Autocomplete';
 
@@ -38,7 +38,16 @@ const AutocompleteDefaultStory = ({ items }: { items: Item[] }) => {
         'Choose from spaces in your organization',
       )}
       isLoading={boolean('isLoading', false)}
-      width="large"
+      width={select(
+        'width',
+        {
+          'Full (default)': 'full',
+          large: 'large',
+          medium: 'medium',
+          small: 'small',
+        },
+        'full',
+      )}
       disabled={boolean('disabled', false)}
       emptyListMessage={text(
         'emptyListMessage',

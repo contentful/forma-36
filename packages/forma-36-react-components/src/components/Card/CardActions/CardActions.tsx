@@ -71,6 +71,7 @@ export class CardActions extends Component<
         position="bottom-right"
         className={className}
         isOpen={this.state.isDropdownOpen}
+        testId={testId}
         toggleElement={
           <IconButton
             iconProps={{ icon: 'MoreHorizontal' }}

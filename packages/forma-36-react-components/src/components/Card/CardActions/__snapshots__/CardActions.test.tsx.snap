@@ -7,7 +7,7 @@ exports[`renders the component as disabled 1`] = `
   isOpen={false}
   onClose={[Function]}
   position="bottom-right"
-  testId="cf-ui-dropdown"
+  testId="cf-ui-card-actions"
   toggleElement={
     <IconButton
       buttonType="secondary"
@@ -49,7 +49,7 @@ exports[`renders the component using a multiple dropdown lists 1`] = `
   isOpen={false}
   onClose={[Function]}
   position="bottom-right"
-  testId="cf-ui-dropdown"
+  testId="cf-ui-card-actions"
   toggleElement={
     <IconButton
       buttonType="secondary"
@@ -142,7 +142,7 @@ exports[`renders the component using a single dropdown list 1`] = `
   isOpen={false}
   onClose={[Function]}
   position="bottom-right"
-  testId="cf-ui-dropdown"
+  testId="cf-ui-card-actions"
   toggleElement={
     <IconButton
       buttonType="secondary"
@@ -203,7 +203,7 @@ exports[`renders the component with an additional class name 1`] = `
   isOpen={false}
   onClose={[Function]}
   position="bottom-right"
-  testId="cf-ui-dropdown"
+  testId="cf-ui-card-actions"
   toggleElement={
     <IconButton
       buttonType="secondary"
@@ -263,7 +263,7 @@ exports[`renders the component with published status 1`] = `
   isOpen={false}
   onClose={[Function]}
   position="bottom-right"
-  testId="cf-ui-dropdown"
+  testId="cf-ui-card-actions"
   toggleElement={
     <IconButton
       buttonType="secondary"

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import {
@@ -8,6 +9,7 @@ import {
   configure,
 } from '@testing-library/react';
 
+import { KEY_CODE } from './utils';
 import Autocomplete from '../Autocomplete';
 
 interface Item {
@@ -76,7 +78,7 @@ describe('Autocomplete', () => {
     it('shows the dropdown', () => {
       const { getByTestId } = build({});
       const input = getByTestId('autocomplete.input');
-      fireEvent.keyDown(input, { keyCode: 40 });
+      fireEvent.keyDown(input, { keyCode: KEY_CODE.ARROW_DOWN });
       const dropdown = getByTestId('autocomplete.dropdown-list');
       expect(dropdown).toBeVisible();
     });
@@ -88,7 +90,7 @@ describe('Autocomplete', () => {
     beforeEach(() => {
       const { getByTestId } = build({});
       input = getByTestId('autocomplete.input');
-      fireEvent.keyDown(input, { keyCode: 40 });
+      fireEvent.keyDown(input, { keyCode: KEY_CODE.ARROW_DOWN });
       dropdown = getByTestId('autocomplete.dropdown-list');
       options = within(dropdown).getAllByTestId(
         'autocomplete.dropdown-list-item',
@@ -100,7 +102,7 @@ describe('Autocomplete', () => {
     });
 
     it('calls the onChange and onQueryChange callbacks when the selecting an item with the enter key', () => {
-      fireEvent.keyDown(input, { keyCode: 13 }); // select the first item
+      fireEvent.keyDown(input, { keyCode: KEY_CODE.ENTER });
       expect(onChangeFn).toHaveBeenCalledWith(items[0]);
       expect(onQueryChangeFn).toHaveBeenCalledWith('');
     });
@@ -115,7 +117,7 @@ describe('Autocomplete', () => {
     });
 
     it('dismisses the dropdown when selecting with the enter key', () => {
-      fireEvent.keyDown(input, { keyCode: 13 });
+      fireEvent.keyDown(input, { keyCode: KEY_CODE.ENTER });
       const dropdown = within(document as any).queryByTestId(
         'autocomplete.dropdown-list',
       );

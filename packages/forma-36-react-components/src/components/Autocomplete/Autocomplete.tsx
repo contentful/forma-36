@@ -1,6 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useReducer, useMemo, useRef, FunctionComponent } from 'react';
 import PropTypes from 'prop-types';
-import isHotKey from 'is-hotkey';
 
 import TextInput from '../TextInput';
 import Dropdown, { DropdownProps } from '../Dropdown/Dropdown/Dropdown';
@@ -10,7 +10,9 @@ import SkeletonBodyText from '../Skeleton/SkeletonBodyText';
 import SkeletonContainer from '../Skeleton/SkeletonContainer';
 import IconButton from '../IconButton';
 
+import { KEY_CODE } from './utils';
 import styles from './Autocomplete.css';
+import cn from 'classnames';
 
 const TOGGLED_LIST = 'TOGGLED_LIST';
 const NAVIGATED_ITEMS = 'NAVIGATED_ITEMS';
@@ -127,10 +129,10 @@ export const Autocomplete: FunctionComponent<AutocompleteProps> = ({
   };
 
   const handleKeyDown = (event: any) => {
-    const isEnter = isHotKey('enter', event);
+    const isEnter = event.keyCode === KEY_CODE.ENTER;
     const isTab =
-      isHotKey('tab', event as KeyboardEvent) ||
-      isHotKey('shift+tab', event as KeyboardEvent);
+      event.keyCode === KEY_CODE.TAB ||
+      (event.keyCode === KEY_CODE.TAB && event.shiftKey);
 
     const hasUserSelection = highlightedItemIndex !== null;
     const lastIndex = items.length ? items.length - 1 : 0;
@@ -166,9 +168,11 @@ export const Autocomplete: FunctionComponent<AutocompleteProps> = ({
     [children, items],
   );
 
+  const dropdownClassNames = cn(styles.autocompleteDropdown, className);
+
   return (
     <Dropdown
-      className={className}
+      className={dropdownClassNames}
       isOpen={isOpen}
       onClose={() => {
         willClearQueryOnClose && updateQuery('');
@@ -277,19 +281,18 @@ function OptionSkeleton() {
 }
 
 function getNavigationDirection(event: KeyboardEvent): Direction | null {
-  if (isHotKey('down', event)) {
+  if (event.keyCode === KEY_CODE.ARROW_DOWN) {
     return Direction.DOWN;
   }
 
-  if (isHotKey('up', event)) {
+  if (event.keyCode === KEY_CODE.ARROW_UP) {
     return Direction.UP;
   }
 
   return null;
 }
 
-// Get next navigation index based on current index and
-// navigation direction
+// Get next navigation index based on current index and navigation direction
 function getNewIndex(
   currentIndex: number,
   direction: Direction,

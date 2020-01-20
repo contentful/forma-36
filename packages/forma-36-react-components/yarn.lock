@@ -1549,20 +1549,15 @@
     yargs "^11.1.0"
 
 "@contentful/forma-36-fcss@^0.0.34":
-  version "0.0.32"
-  resolved "https://registry.yarnpkg.com/@contentful/forma-36-fcss/-/forma-36-fcss-0.0.32.tgz#daba10dc78315741bbdff00c7e35ffb109761be2"
-  integrity sha512-r4xXIue1gZ6qPgeZuNm/FSO9i8HSyycJ42HyOmdR64jipv50lPmH/reejKtmVxYZcGarAhDavCniz/RJAIXWoQ==
+  version "0.0.34"
+  resolved "https://registry.yarnpkg.com/@contentful/forma-36-fcss/-/forma-36-fcss-0.0.34.tgz#afc4514e9b946c67339202ac61df94dc702b3bbe"
+  integrity sha512-AhK2QJn2pQ/MWR8d10H4B6g625MU1rz4lkakkw8/0E0KFpeow53XW2lbN0vTdOXDaNM1TeMOP0F700qFIoeMkA==
   dependencies:
-    "@contentful/forma-36-tokens" "^0.4.5"
+    "@contentful/forma-36-tokens" "^0.5.1"
 
 "@contentful/forma-36-tokens@0.2.0":
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@contentful/forma-36-tokens/-/forma-36-tokens-0.2.0.tgz#c4a1062e7acc2ae0ae5699e7c8606d5b5047a1c5"
-
-"@contentful/forma-36-tokens@^0.4.5":
-  version "0.4.5"
-  resolved "https://registry.yarnpkg.com/@contentful/forma-36-tokens/-/forma-36-tokens-0.4.5.tgz#86880a06178de9ebfb542db983550b7c5ae531d3"
-  integrity sha512-wygRxC9r+Wr4FR4wEp1MVjt+Hx5n1lCux4EOXfva3Au1CXzjcl821ukR8mMaurYM7/3TMrv/olQorySNwGpllg==
 
 "@contentful/forma-36-tokens@^0.5.1":
   version "0.5.1"
@@ -2730,11 +2725,6 @@
   dependencies:
     "@types/through" "*"
     rxjs ">=6.4.0"
-
-"@types/is-hotkey@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@types/is-hotkey/-/is-hotkey-0.1.1.tgz#802e294c2a02f26fbcbe8639c77ef05e38cfdc8c"
-  integrity sha512-QzVKww91fJv/KzARJBS/Im5GS2A8iE64E1HxOed72EmYOvPLG4PBw77QCIUjFl7VwWB3G/SVrxsHedJD/wtn1A==
 
 "@types/istanbul-lib-coverage@*":
   version "2.0.1"
@@ -8973,11 +8963,6 @@ is-glob@^4.0.0, is-glob@^4.0.1:
 is-hexadecimal@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/is-hexadecimal/-/is-hexadecimal-1.0.2.tgz#b6e710d7d07bb66b98cb8cece5c9b4921deeb835"
-
-is-hotkey@^0.1.6:
-  version "0.1.6"
-  resolved "https://registry.yarnpkg.com/is-hotkey/-/is-hotkey-0.1.6.tgz#c214b1ccdcbda46fba4ba93d2de64915db737471"
-  integrity sha512-1+hMr0GLPM0M49UDRt9RgE8i+SM29UY4AGRP6sGz6fThOVXqSrEvTMakolhHMcVizJnPNAoMpEmE+Oi1k2NrZQ==
 
 is-installed-globally@^0.1.0:
   version "0.1.0"

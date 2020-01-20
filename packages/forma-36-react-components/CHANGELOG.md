@@ -3,6 +3,47 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.28.10](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.28.9...@contentful/forma-36-react-components@3.28.10) (2020-01-20)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+## [3.28.9](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.28.8...@contentful/forma-36-react-components@3.28.9) (2020-01-16)
+
+
+### Bug Fixes
+
+* **Autocomplete:** Support for full width ([09d8667](https://github.com/contentful/forma-36/commit/09d866754d3823fb13fef339fe325e2e7dd9fb70))
+
+
+
+
+
+## [3.28.8](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.28.7...@contentful/forma-36-react-components@3.28.8) (2020-01-16)
+
+
+### Bug Fixes
+
+* **EntryCard:** Allow react node for entry card content type ([#388](https://github.com/contentful/forma-36/issues/388)) ([ae54e5d](https://github.com/contentful/forma-36/commit/ae54e5dfdcbfb3365b5f27de89169c73520c1fa0))
+
+
+
+
+
+## [3.28.7](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.28.6...@contentful/forma-36-react-components@3.28.7) (2020-01-14)
+
+
+### Bug Fixes
+
+* **cardactions:** fix testId propagation ([30307f6](https://github.com/contentful/forma-36/commit/30307f6b2ebab5a617fed813892c489c8eacffbe))
+
+
+
+
+
 ## [3.28.6](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.28.5...@contentful/forma-36-react-components@3.28.6) (2020-01-09)
 
 
