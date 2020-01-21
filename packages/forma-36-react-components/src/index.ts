@@ -57,6 +57,8 @@ export { Heading } from './components/Typography/Heading/Heading';
 export { InViewport } from './components/InViewport/InViewport';
 export { Modal } from './components/Modal/Modal/Modal';
 export { ModalConfirm } from './components/Modal/ModalConfirm/ModalConfirm';
+export { ModalLauncher } from './components/Modal/ModalLauncher/ModalLauncher';
+
 export { FieldGroup } from './components/Form/FieldGroup/FieldGroup';
 export { Form } from './components/Form/Form/Form';
 export { Note } from './components/Note/Note';
@@ -99,4 +101,5 @@ export {
 } from './components/EntityList/EntityListItem/EntityListItem';
 export { EmptyState } from './components/EmptyState/EmptyState';
 export { Switch } from './components/Switch/Switch';
+
 // -- Add imports above this line (required by plopfile.js) --
