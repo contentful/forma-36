@@ -93,6 +93,7 @@
     "rollup-plugin-terser": "^4.0.4",
     "semantic-release": "^15.14.0",
     "size-limit": "^1.3.2",
+    "storybook-addon-jsx": "^7.1.13",
     "storybook-prop-types-addon": "1.0.2",
     "style-loader": "^0.23.1",
     "travis-deploy-once": "^4.4.1",
