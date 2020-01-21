@@ -28,7 +28,7 @@ const AutocompleteDefaultStory = ({ items }: { items: Item[] }) => {
   }, []);
 
   return (
-    <Autocomplete
+    <Autocomplete<Item>
       maxHeight={number('maxHeight', 100)}
       items={filteredItems}
       onQueryChange={handleQueryChange}
