@@ -265,6 +265,7 @@ exports[`renders the component with status 1`] = `
       <Asset
         className="AssetCard__asset"
         src="http://placekitten.com/200/300"
+        status="archived"
         testId="cf-ui-asset"
         title="picture of a cat"
         type="image"
