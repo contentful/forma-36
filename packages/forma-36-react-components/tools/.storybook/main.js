@@ -11,11 +11,12 @@ module.exports = {
       options: {
         rule: {
           test: /\.stories\.(js|ts)x?$/,
-          include: [path.resolve(__dirname, '../../src/components')], // You can specify directories
+          include: [path.resolve(__dirname, '../../src/components')],
         },
       },
     },
     '@storybook/addon-actions',
     '@storybook/addon-notes',
+    'storybook-addon-jsx',
   ],
 };
