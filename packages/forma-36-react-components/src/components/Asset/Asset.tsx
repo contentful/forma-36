@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
 import Illustration, { IllustrationType } from '../Illustration/Illustration';
+import { AssetState } from '../Card/AssetCard/AssetCard';
 
 const styles = require('./Asset.css');
 
@@ -25,6 +26,7 @@ export type AssetProps = {
   title: string;
   type?: AssetType;
   className?: string;
+  status?: AssetState;
   testId?: string;
 } & typeof defaultProps;
 
@@ -64,13 +66,16 @@ export class Asset extends Component<AssetProps> {
   };
 
   render() {
-    const { className, src, title, type, testId, ...otherProps } = this.props;
+    const { className, src, status, title, type, testId, ...otherProps } = this.props;
 
     const classNames = cn(styles.Asset, className);
 
+    // Archived images will not have a preview available
+    const asImage = type && type === 'image' && (!status || status !== 'archived')
+
     return (
       <div className={classNames} data-test-id={testId} {...otherProps}>
-        {type && type === 'image'
+        {asImage
           ? this.renderImage(src, title)
           : this.renderAsset(type, title)}
       </div>

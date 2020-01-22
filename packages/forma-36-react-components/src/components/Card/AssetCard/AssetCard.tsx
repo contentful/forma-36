@@ -188,6 +188,7 @@ export class AssetCard extends Component<AssetCardProps> {
                   src={src}
                   title={title}
                   type={type}
+                  status={status}
                 />
               </div>
             </div>

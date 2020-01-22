@@ -15,4 +15,21 @@ storiesOf('Components|Asset', module)
       title={text('title', 'Image of a cat')}
       type={select('type', types, 'archive')}
     />
+  ))
+  .add('with an image', () => (
+    <Asset
+      className={text('className', '')}
+      src={text('src', 'https://placekitten.com/200/300')}
+      title={text('title', 'Image of a cat')}
+      type={select('type', types, 'image')}
+    />
+  ))
+  .add('with an archived image', () => (
+    <Asset
+      className={text('className', '')}
+      src={text('src', 'https://placekitten.com/200/300')}
+      title={text('title', 'Image of a cat')}
+      type={select('type', types, 'image')}
+      status='archived'
+    />
   ));
