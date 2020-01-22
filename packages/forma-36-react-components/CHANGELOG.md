@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.28.15](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.28.14...@contentful/forma-36-react-components@3.28.15) (2020-01-22)
+
+
+### Bug Fixes
+
+* **Asset:** Do not attempt to render archived images ([#398](https://github.com/contentful/forma-36/issues/398)) ([30c0d22](https://github.com/contentful/forma-36/commit/30c0d22ac7f1b0a6cfece0e8302170b1da6028d0))
+
+
+
+
+
 ## [3.28.14](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.28.13...@contentful/forma-36-react-components@3.28.14) (2020-01-21)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
