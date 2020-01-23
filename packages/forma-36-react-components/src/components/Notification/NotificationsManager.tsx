@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { NotificationIntent } from './NotificationItem';
 import NotificationItemContainer from './NotificationItemContainer';
@@ -61,10 +60,6 @@ export class NotificationsManager extends PureComponent<
   NotificationsManagerProps,
   NotificationsManagerState
 > {
-  static propTypes = {
-    register: PropTypes.func.isRequired,
-  };
-
   constructor(props: NotificationsManagerProps) {
     super(props);
     this.state = {
