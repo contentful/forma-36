@@ -3,7 +3,7 @@ import cn from 'classnames';
 import Illustration, { IllustrationType } from '../Illustration/Illustration';
 import { AssetState } from '../Card/AssetCard/AssetCard';
 
-const styles = require('./Asset.css');
+import styles from './Asset.css';
 
 export const types = {
   archive: 'archive',

@@ -3,7 +3,7 @@ import cn from 'classnames';
 import Heading from '../Typography/Heading';
 import Paragraph from '../Typography/Paragraph';
 
-const styles = require('./EmptyState.css');
+import styles from './EmptyState.css';
 
 export type EmptyStateProps = {
   /**

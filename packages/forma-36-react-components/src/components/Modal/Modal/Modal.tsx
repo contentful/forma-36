@@ -5,7 +5,7 @@ import ModalHeader, { ModalHeaderProps } from '../ModalHeader/ModalHeader';
 import ModalContent, { ModalContentProps } from '../ModalContent/ModalContent';
 import ModalControls from '../ModalControls/ModalControls';
 
-const styles = require('./Modal.css');
+import styles from './Modal.css';
 
 const ModalSizesMapper = {
   medium: '520px',

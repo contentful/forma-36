@@ -5,7 +5,7 @@ import Card from '../Card';
 import CardActions from './../CardActions';
 
 import InlineEntryCardSkeleton from './InlineEntryCardSkeleton';
-const styles = require('./InlineEntryCard.css');
+import styles from './InlineEntryCard.css';
 
 export type InlineEntryCardPropTypes = {
   /**

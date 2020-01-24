@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import cn from 'classnames';
 import Icon from '../../Icon';
 
-const styles = require('./CardDragHandle.css');
+import styles from './CardDragHandle.css';
 
 export type CardDragHandlePropTypes = {
   /**

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
 
-const styles = require('./ModalControls.css');
+import styles from './ModalControls.css';
 
 export type ModalControlsProps = {
   testId?: string;

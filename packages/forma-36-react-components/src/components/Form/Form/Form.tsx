@@ -1,7 +1,7 @@
 import React, { Component, FormEventHandler, FormEvent } from 'react';
 import cn from 'classnames';
 
-const styles = require('./Form.css');
+import styles from './Form.css';
 
 export type FormProps = {
   onSubmit?: FormEventHandler;

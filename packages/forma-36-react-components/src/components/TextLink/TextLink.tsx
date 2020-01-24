@@ -3,7 +3,7 @@ import cn from 'classnames';
 import Icon, { IconType } from '../Icon/Icon';
 import TabFocusTrap from '../TabFocusTrap';
 
-const styles = require('./TextLink.css');
+import styles from './TextLink.css';
 
 export type TextLinkType =
   | 'primary'

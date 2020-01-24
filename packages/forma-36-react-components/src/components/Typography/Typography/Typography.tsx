@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
 
-const styles = require('./Typography.css');
+import styles from './Typography.css';
 
 export type TypographyProps = {
   className?: string;

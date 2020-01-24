@@ -9,7 +9,7 @@ import AssetCardSkeleton from './AssetCardSkeleton';
 import CardDragHandle, {
   CardDragHandlePropTypes,
 } from '../CardDragHandle/CardDragHandle';
-const styles = require('./AssetCard.css');
+import styles from './AssetCard.css';
 
 export type AssetState = 'archived' | 'changed' | 'draft' | 'published';
 

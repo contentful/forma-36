@@ -119,7 +119,7 @@ const ClockTrimmed = require('./svg/ClockTrimmed.svg');
 const Warning = require('./svg/Warning.svg');
 const WarningTrimmed = require('./svg/WarningTrimmed.svg');
 
-const styles = require('./Icon.css');
+import styles from './Icon.css';
 
 const iconComponents = {
   ArrowDown,
