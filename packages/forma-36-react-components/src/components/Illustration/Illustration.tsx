@@ -18,6 +18,11 @@ import styles from './Illustration.css';
 
 export type IllustrationType = keyof typeof illustrationName;
 
+const ILLUSTRATION_NAMES = Object.keys(illustrationName)
+export function isIllustrationType(name: string): name is IllustrationType {
+  return ILLUSTRATION_NAMES.includes(name)
+}
+
 export type IllustrationProps = {
   illustration: IllustrationType;
   className?: string;

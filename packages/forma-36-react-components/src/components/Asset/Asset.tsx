@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
-import Illustration, { IllustrationType } from '../Illustration/Illustration';
 import { AssetState } from '../Card/AssetCard/AssetCard';
+import { AssetIcon } from './AssetIcon/AssetIcon';
 
 const styles = require('./Asset.css');
 
@@ -18,6 +18,10 @@ export const types = {
   spreadsheet: 'spreadsheet',
   video: 'video',
 };
+
+export function isAssetType(type: string): type is AssetType {
+  return Object.keys(types).includes(type)
+}
 
 export type AssetType = keyof typeof types;
 
@@ -54,11 +58,10 @@ export class Asset extends Component<AssetProps> {
   );
 
   renderAsset = (type: AssetType, title: string) => {
-    const illustraionName = type.charAt(0).toUpperCase() + type.slice(1);
     return (
       <div className={styles['Asset__asset-container']}>
         <div className={styles['Asset__illustration-container']}>
-          <Illustration illustration={illustraionName as IllustrationType} />
+          <AssetIcon type={type} />
         </div>
         <span className={styles['Asset__asset-container__title']}>{title}</span>
       </div>
