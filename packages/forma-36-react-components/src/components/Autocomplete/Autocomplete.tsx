@@ -1,5 +1,4 @@
 import React, { useReducer, useMemo, useRef } from 'react';
-import PropTypes from 'prop-types';
 
 import TextInput from '../TextInput';
 import Dropdown, { DropdownProps } from '../Dropdown/Dropdown/Dropdown';
@@ -243,24 +242,6 @@ export const Autocomplete = <T extends {}>({
       </DropdownList>
     </Dropdown>
   );
-};
-
-Autocomplete.propTypes = {
-  items: PropTypes.array.isRequired,
-  children: PropTypes.func.isRequired,
-  onChange: PropTypes.func.isRequired,
-  onQueryChange: PropTypes.func.isRequired,
-  placeholder: PropTypes.string,
-  name: PropTypes.string,
-  width: PropTypes.oneOf(['medium', 'large', 'small', 'full', undefined]),
-  className: PropTypes.string,
-  maxHeight: PropTypes.number,
-  isLoading: PropTypes.bool,
-  disabled: PropTypes.bool,
-  emptyListMessage: PropTypes.string,
-  noMatchesMessage: PropTypes.string,
-  willClearQueryOnClose: PropTypes.bool,
-  dropdownProps: PropTypes.any,
 };
 
 function OptionSkeleton() {
