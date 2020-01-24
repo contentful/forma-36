@@ -116,6 +116,38 @@ it('renders the component as an asset entityType variant', () => {
   expect(output).toMatchSnapshot();
 });
 
+it('renders the component as an asset thumbnail preview', () => {
+  const output = shallow(
+    <EntityListItem
+      title="Title"
+      description="Description"
+      contentType="Content type"
+      status="published"
+      thumbnailUrl="https://path/to/thumbnail.jpg"
+      thumbnailAltText="Something clever"
+      entityType="asset"
+    />,
+  );
+
+  expect(output).toMatchSnapshot();
+});
+
+it('renders the component as an asset entityType icon with an archived status', () => {
+  const output = shallow(
+    <EntityListItem
+      title="Title"
+      description="Description"
+      contentType="Content type"
+      status="archived"
+      thumbnailUrl="https://path/to/thumbnail.jpg"
+      thumbnailAltText="Something clever"
+      entityType="asset"
+    />,
+  );
+
+  expect(output).toMatchSnapshot();
+});
+
 it('renders the component as isLoading', () => {
   const output = shallow(
     <EntityListItem title="Title" description="Description" isLoading />,
