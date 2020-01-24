@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.28.16](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.28.15...@contentful/forma-36-react-components@3.28.16) (2020-01-24)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
 ## [3.28.15](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.28.14...@contentful/forma-36-react-components@3.28.15) (2020-01-22)
 
 
