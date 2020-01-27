@@ -158,6 +158,71 @@ exports[`renders the component as an \`a\` element if passed a href prop 1`] = `
 </li>
 `;
 
+exports[`renders the component as an asset entityType icon with an archived status 1`] = `
+<li
+  className="EntityListItem"
+  data-test-id="cf-ui-entity-list-item"
+>
+  <article
+    className="EntityListItem__inner"
+  >
+    <TabFocusTrap
+      className="EntityListItem__focus-trap"
+    >
+      <figure
+        className="EntityListItem__media"
+      >
+        <Icon
+          color="muted"
+          icon="Asset"
+          size="small"
+          testId="cf-ui-icon"
+        />
+      </figure>
+      <div
+        className="EntityListItem__content"
+      >
+        <div
+          className="EntityListItem__heading"
+        >
+          <h1
+            className="EntityListItem__title"
+          >
+            Title
+          </h1>
+          <div
+            className="EntityListItem__content-type"
+          >
+            (
+            Content type
+            )
+          </div>
+        </div>
+        <p
+          className="EntityListItem__description"
+        >
+          Description
+        </p>
+      </div>
+      <div
+        className="EntityListItem__meta"
+      >
+        <div
+          className="EntityListItem__status"
+        >
+          <Tag
+            tagType="negative"
+            testId="cf-ui-tag"
+          >
+            archived
+          </Tag>
+        </div>
+      </div>
+    </TabFocusTrap>
+  </article>
+</li>
+`;
+
 exports[`renders the component as an asset entityType variant 1`] = `
 <li
   className="EntityListItem"
@@ -177,6 +242,70 @@ exports[`renders the component as an asset entityType variant 1`] = `
           icon="Asset"
           size="small"
           testId="cf-ui-icon"
+        />
+      </figure>
+      <div
+        className="EntityListItem__content"
+      >
+        <div
+          className="EntityListItem__heading"
+        >
+          <h1
+            className="EntityListItem__title"
+          >
+            Title
+          </h1>
+          <div
+            className="EntityListItem__content-type"
+          >
+            (
+            Content type
+            )
+          </div>
+        </div>
+        <p
+          className="EntityListItem__description"
+        >
+          Description
+        </p>
+      </div>
+      <div
+        className="EntityListItem__meta"
+      >
+        <div
+          className="EntityListItem__status"
+        >
+          <Tag
+            tagType="positive"
+            testId="cf-ui-tag"
+          >
+            published
+          </Tag>
+        </div>
+      </div>
+    </TabFocusTrap>
+  </article>
+</li>
+`;
+
+exports[`renders the component as an asset thumbnail preview 1`] = `
+<li
+  className="EntityListItem"
+  data-test-id="cf-ui-entity-list-item"
+>
+  <article
+    className="EntityListItem__inner"
+  >
+    <TabFocusTrap
+      className="EntityListItem__focus-trap"
+    >
+      <figure
+        className="EntityListItem__media"
+      >
+        <img
+          alt="Something clever"
+          className="EntityListItem__thumbnail"
+          src="https://path/to/thumbnail.jpg"
         />
       </figure>
       <div

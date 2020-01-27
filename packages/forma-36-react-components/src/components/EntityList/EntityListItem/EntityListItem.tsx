@@ -212,6 +212,10 @@ export class EntityListItem extends Component<EntityListItemProps> {
 
     const Element = onClick ? 'a' : 'article';
 
+    // archived assets will not be available on the CDN, resulting in a broken image src
+    const isArchived = status === 'archived';
+    const asIcon = isArchived || !thumbnailUrl;
+
     return (
       <li {...otherProps} className={classNames} data-test-id={testId}>
         {this.renderCardDragHandle()}
@@ -227,7 +231,7 @@ export class EntityListItem extends Component<EntityListItemProps> {
           >
             <TabFocusTrap className={styles['EntityListItem__focus-trap']}>
               <figure className={styles['EntityListItem__media']}>
-                {thumbnailUrl ? this.renderThumbnail() : this.renderIcon()}
+                {asIcon ? this.renderIcon() : this.renderThumbnail()}
               </figure>
 
               <div className={styles['EntityListItem__content']}>
