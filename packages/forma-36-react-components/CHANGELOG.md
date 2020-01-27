@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.28.18](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.28.17...@contentful/forma-36-react-components@3.28.18) (2020-01-27)
+
+
+### Bug Fixes
+
+* declare svg types ([4df7c56](https://github.com/contentful/forma-36/commit/4df7c567301cc4e10774f4bc0e0f033503f23a63))
+* use import instead of require for svg ([c7f50e6](https://github.com/contentful/forma-36/commit/c7f50e6af083a98b7cbb7651017d51e536b8464d))
+* use mport styles instead of require ([026adb5](https://github.com/contentful/forma-36/commit/026adb5c0bfb2bec821f81f15c441821264b6acf))
+
+
+
+
+
 ## [3.28.17](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.28.16...@contentful/forma-36-react-components@3.28.17) (2020-01-27)
 
 
