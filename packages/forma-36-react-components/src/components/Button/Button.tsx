@@ -12,7 +12,7 @@ import Icon, { IconType } from '../Icon/Icon';
 import TabFocusTrap from '../TabFocusTrap';
 import Spinner from '../Spinner';
 
-const styles = require('./Button.css');
+import styles from './Button.css';
 
 export type ButtonProps = {
   icon?: IconType;

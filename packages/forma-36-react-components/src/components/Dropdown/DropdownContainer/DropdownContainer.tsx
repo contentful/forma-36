@@ -7,7 +7,7 @@ import {
   AnchorDimensionsAndPositonType,
 } from '../Dropdown/Dropdown';
 
-const styles = require('./DropdownContainer.css');
+import styles from './DropdownContainer.css';
 
 export type DropdownContainerProps = {
   onClose?: Function;

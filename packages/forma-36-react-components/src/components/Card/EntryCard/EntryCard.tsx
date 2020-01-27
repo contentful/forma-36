@@ -10,7 +10,7 @@ import CardDragHandle, {
 } from '../CardDragHandle/CardDragHandle';
 import Icon, { IconType } from '../../Icon/Icon';
 
-const styles = require('./EntryCard.css');
+import styles from './EntryCard.css';
 
 export type EntryCardStatus = 'archived' | 'changed' | 'draft' | 'published';
 
