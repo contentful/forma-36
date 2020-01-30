@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1-alpha.42](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-datepicker@0.1.1-alpha.41...@contentful/forma-36-react-datepicker@0.1.1-alpha.42) (2020-01-30)
+
+**Note:** Version bump only for package @contentful/forma-36-react-datepicker
+
+
+
+
+
 ## [0.1.1-alpha.41](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-datepicker@0.1.1-alpha.40...@contentful/forma-36-react-datepicker@0.1.1-alpha.41) (2020-01-27)
 
 **Note:** Version bump only for package @contentful/forma-36-react-datepicker
