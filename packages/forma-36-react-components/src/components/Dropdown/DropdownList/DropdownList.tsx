@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
-import styles from './DropdownList.css';
+import cssStyles from './DropdownList.css';
 
 export type DropdownListProps = {
   children: React.ReactNode;
@@ -9,6 +9,7 @@ export type DropdownListProps = {
   testId?: string;
   border?: 'top' | 'bottom';
   maxHeight?: number;
+  styles?: object;
 } & typeof defaultProps;
 
 const defaultProps = {
@@ -26,11 +27,12 @@ export class DropdownList extends Component<DropdownListProps> {
       testId,
       children,
       listRef,
+      styles,
       ...otherProps
     } = this.props;
 
-    const classNames = cn(styles['DropdownList'], className, {
-      [styles[`DropdownList--border-${border}`]]: border,
+    const classNames = cn(cssStyles['DropdownList'], className, {
+      [cssStyles[`DropdownList--border-${border}`]]: border,
     });
 
     return (
@@ -41,6 +43,7 @@ export class DropdownList extends Component<DropdownListProps> {
         style={{
           maxHeight: maxHeight || 'auto',
           overflowY: maxHeight ? 'auto' : 'visible',
+          ...styles,
         }}
         className={classNames}
         {...otherProps}
