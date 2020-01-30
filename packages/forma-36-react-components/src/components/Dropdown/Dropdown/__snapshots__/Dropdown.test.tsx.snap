@@ -58,7 +58,7 @@ exports[`renders the component as open 1`] = `
     openSubmenu={[Function]}
     position="bottom-left"
     submenu={false}
-    testId="cf-ui-dropdown-portal"
+    testId="cf-ui-dropdown-container"
   >
     <DropdownList
       testId="cf-ui-dropdown-list"
@@ -111,7 +111,7 @@ exports[`renders the component with a submenu 1`] = `
     openSubmenu={[Function]}
     position="bottom-left"
     submenu={false}
-    testId="cf-ui-dropdown-portal"
+    testId="cf-ui-dropdown-container"
   >
     <DropdownList
       testId="cf-ui-dropdown-list"
