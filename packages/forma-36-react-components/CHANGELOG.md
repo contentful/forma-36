@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.28.20](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.28.19...@contentful/forma-36-react-components@3.28.20) (2020-01-30)
+
+
+### Bug Fixes
+
+* **Icon:** Remove unused ReactElement to fix lint errors ([#406](https://github.com/contentful/forma-36/issues/406)) ([566f1c0](https://github.com/contentful/forma-36/commit/566f1c02849ad412e5a3cc083de23f355f2a17ae))
+
+
+
+
+
 ## [3.28.19](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.28.18...@contentful/forma-36-react-components@3.28.19) (2020-01-30)
 
 
