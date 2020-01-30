@@ -1,4 +1,4 @@
-import React, { Component, CSSProperties, ReactElement } from 'react';
+import React, { Component, CSSProperties } from 'react';
 import cn from 'classnames';
 import { iconName } from './constants';
 
