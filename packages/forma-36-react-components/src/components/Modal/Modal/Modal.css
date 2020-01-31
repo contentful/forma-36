@@ -27,6 +27,7 @@
   /* prettier-ignore */
   background-color: var(--color-contrast-dark)bf;
   text-align: center;
+  overflow: hidden;
 }
 
 .Modal__overlay--after-open {
