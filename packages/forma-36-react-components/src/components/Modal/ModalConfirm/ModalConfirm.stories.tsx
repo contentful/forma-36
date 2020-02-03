@@ -22,6 +22,11 @@ function DefaultStory() {
           ['negative', 'positive', 'primary'],
           ModalConfirm.defaultProps.intent,
         )}
+        secondaryIntent={select('secondaryIntent', [
+          'negative',
+          'positive',
+          'primary',
+        ])}
         size={select(
           'size',
           ['small', 'medium', 'large', '300px', '1500px'],
@@ -39,19 +44,26 @@ function DefaultStory() {
           'confirmLabel',
           ModalConfirm.defaultProps.confirmLabel,
         )}
+        secondaryLabel={text('secondaryLabel')}
         cancelLabel={text('cancelLabel', ModalConfirm.defaultProps.cancelLabel)}
         isConfirmDisabled={boolean(
           'isConfirmDisabled',
           ModalConfirm.defaultProps.isConfirmDisabled,
         )}
+        isSecondaryDisabled={boolean('secondaryDisabled')}
         isConfirmLoading={boolean(
           'isConfirmLoading',
           ModalConfirm.defaultProps.isConfirmLoading,
         )}
+        isSecondaryLoading={boolean('isSecondaryLoading')}
         testId={text('testId', ModalConfirm.defaultProps.testId)}
         confirmTestId={text(
           'confirmTestId',
           ModalConfirm.defaultProps.confirmTestId,
+        )}
+        secondaryTestId={text(
+          'secondaryTestId',
+          ModalConfirm.defaultProps.secondaryTestId,
         )}
         cancelTestId={text(
           'cancelTextId',
@@ -64,6 +76,10 @@ function DefaultStory() {
         onConfirm={() => {
           setShown(false);
           action('onConfirm')();
+        }}
+        onSecondary={() => {
+          setShown(false);
+          action('onSecondary')();
         }}
       >
         <p>You are about to delete SOMETHING. Think twice!</p>
