@@ -4,8 +4,7 @@ import { Link } from 'gatsby';
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core';
 import tokens from '@contentful/forma-36-tokens';
-import { Icon } from '@contentful/forma-36-react-components'
-import { Autocomplete } from '@contentful/forma-36-react-components/dist/alpha';
+import { Icon } from '@contentful/forma-36-react-components';
 
 const styles = {
   navList: css`
@@ -106,6 +105,7 @@ class MenuListItem extends React.Component {
     const { item, currentPath } = this.props;
     const { isExpanded } = this.state;
     const isOpen = this.checkOpen(item, currentPath);
+    const iconName = item.menuLinks && (isExpanded || isOpen) ? 'ChevronDown' : 'ChevronRight';
 
     return (
       <li css={styles.listItem}>
@@ -119,11 +119,8 @@ class MenuListItem extends React.Component {
           onClick={!item.link && (event => this.handleToggle(event))}
         >
           <span>{item.name}</span>
-          {item.menuLinks && (!isExpanded && !isOpen) && (
-            <Icon css={styles.linkIcon} color='secondary' icon='ChevronRight' />
-          )}
-          {item.menuLinks && (isExpanded || isOpen) && (
-            <Icon css={styles.linkIcon} color='secondary' icon='ChevronDown' />
+          {item.menuLinks && (
+            <Icon css={styles.linkIcon} color='secondary' icon={iconName} />
           )}
         </Link>
         {item.menuLinks &&
