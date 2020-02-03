@@ -4,14 +4,16 @@ import { Link } from 'gatsby';
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core';
 import tokens from '@contentful/forma-36-tokens';
+import { Icon } from '@contentful/forma-36-react-components'
+import { Autocomplete } from '@contentful/forma-36-react-components/dist/alpha';
 
 const styles = {
   navList: css`
     display: flex;
     flex-direction: column;
     flex: 0 0 320px;
-    background-color: ${tokens.colorElementLight};
-    padding: ${tokens.spacing2Xl} ${tokens.spacingXl};
+    background-color: ${tokens.colorElementLightest};
+    padding: ${tokens.spacing2Xl} ${tokens.spacingM};
   `,
 
   list: css`
@@ -36,13 +38,29 @@ const styles = {
   `,
 
   linkActive: css`
-    font-weight: bold;
+    font-weight: ${tokens.fontWeightDemiBold};
   `,
 
   link: css`
     text-decoration: none;
+    display: flex;
     color: ${tokens.colorTextMid};
     position: relative;
+  `,
+
+  linkParent: css`
+    text-decoration: none;
+    background-color: ${tokens.colorElementLight};
+    display: flex;
+    justify-content: space-between;
+    color: ${tokens.colorTextMid};
+    position: relative;
+    border-radius: 4px;
+    padding: ${tokens.spacingXs};
+  `,
+
+  linkIcon: css`
+    align-self: center;
   `,
 
   item: css`
@@ -86,23 +104,30 @@ class MenuListItem extends React.Component {
 
   render() {
     const { item, currentPath } = this.props;
+    const { isExpanded } = this.state;
+    const isOpen = this.checkOpen(item, currentPath);
 
     return (
       <li css={styles.listItem}>
         <Link
           css={[
-            styles.link,
-            this.state.isExpanded ||
-              (this.checkOpen(item, currentPath) && styles.linkActive),
+            item.menuLinks ? styles.linkParent : styles.link,
+            (isOpen && styles.linkActive),
           ]}
           to={item.link}
           href={item.link}
           onClick={!item.link && (event => this.handleToggle(event))}
         >
-          {item.name}
+          <span>{item.name}</span>
+          {item.menuLinks && (!isExpanded && !isOpen) && (
+            <Icon css={styles.linkIcon} color='secondary' icon='ChevronRight' />
+          )}
+          {item.menuLinks && (isExpanded || isOpen) && (
+            <Icon css={styles.linkIcon} color='secondary' icon='ChevronDown' />
+          )}
         </Link>
         {item.menuLinks &&
-          (this.state.isExpanded || this.checkOpen(item, currentPath)) && (
+          (isExpanded || isOpen) && (
             <MenuList menuItems={item.menuLinks} currentPath={currentPath} />
           )}
       </li>
@@ -136,7 +161,7 @@ MenuList.defaultProps = {
 };
 
 const Navigation = ({ menuItems, currentPath }) => (
-  <nav css={styles.navList}>
+  <nav css={styles.navList} aria-label="Main Navigation">
     <MenuList menuItems={menuItems} currentPath={currentPath} />
   </nav>
 );
