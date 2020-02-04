@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from '@emotion/core';
 import tokens from '@contentful/forma-36-tokens';
-import logo from './logo-forma.svg';
+import logo from '../images/logo-forma.svg';
 
 const styles = {
   logo: css`
