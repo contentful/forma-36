@@ -3,6 +3,74 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.29.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.28.21...@contentful/forma-36-react-components@3.29.0) (2020-02-04)
+
+
+### Features
+
+* **ModalConfirm:** Secondary action button for ModalConfirm ([#410](https://github.com/contentful/forma-36/issues/410)) ([2840c44](https://github.com/contentful/forma-36/commit/2840c4452f003a427eaea28a9b7ddd61571e49fd))
+
+
+
+
+
+## [3.28.21](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.28.20...@contentful/forma-36-react-components@3.28.21) (2020-01-30)
+
+
+### Bug Fixes
+
+* **DropdownList:** Merge styles ([#407](https://github.com/contentful/forma-36/issues/407)) ([5e6c031](https://github.com/contentful/forma-36/commit/5e6c031e83cc2ac4ae3b6feafbba91570a4aaba9))
+
+
+
+
+
+## [3.28.20](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.28.19...@contentful/forma-36-react-components@3.28.20) (2020-01-30)
+
+
+### Bug Fixes
+
+* **Icon:** Remove unused ReactElement to fix lint errors ([#406](https://github.com/contentful/forma-36/issues/406)) ([566f1c0](https://github.com/contentful/forma-36/commit/566f1c02849ad412e5a3cc083de23f355f2a17ae))
+
+
+
+
+
+## [3.28.19](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.28.18...@contentful/forma-36-react-components@3.28.19) (2020-01-30)
+
+
+### Bug Fixes
+
+* **DropdownContainer:** Pass dropdown test id down to dropdownContainer ([#405](https://github.com/contentful/forma-36/issues/405)) ([9835811](https://github.com/contentful/forma-36/commit/9835811dcf46838ffebae0fa70ab2ac86c69f8c8))
+
+
+
+
+
+## [3.28.18](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.28.17...@contentful/forma-36-react-components@3.28.18) (2020-01-27)
+
+
+### Bug Fixes
+
+* declare svg types ([4df7c56](https://github.com/contentful/forma-36/commit/4df7c567301cc4e10774f4bc0e0f033503f23a63))
+* use import instead of require for svg ([c7f50e6](https://github.com/contentful/forma-36/commit/c7f50e6af083a98b7cbb7651017d51e536b8464d))
+* use mport styles instead of require ([026adb5](https://github.com/contentful/forma-36/commit/026adb5c0bfb2bec821f81f15c441821264b6acf))
+
+
+
+
+
+## [3.28.17](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.28.16...@contentful/forma-36-react-components@3.28.17) (2020-01-27)
+
+
+### Bug Fixes
+
+* **EntityListItem:** Do not render a thumbnail for archived assets ([#401](https://github.com/contentful/forma-36/issues/401)) ([7292371](https://github.com/contentful/forma-36/commit/7292371b4ccb57fb16544a8ee1b1a7c68b362285))
+
+
+
+
+
 ## [3.28.16](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.28.15...@contentful/forma-36-react-components@3.28.16) (2020-01-24)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components

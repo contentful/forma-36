@@ -4,7 +4,7 @@ import Card from '../Card/Card';
 import Icon, { IconType } from '../Icon/Icon';
 import TabFocusTrap from '../TabFocusTrap/TabFocusTrap';
 
-const styles = require('./ToggleButton.css');
+import styles from './ToggleButton.css';
 
 export type ToggleButtonProps = {
   children: React.ReactNode;

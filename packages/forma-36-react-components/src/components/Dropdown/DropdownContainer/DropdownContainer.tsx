@@ -7,7 +7,7 @@ import {
   AnchorDimensionsAndPositonType,
 } from '../Dropdown/Dropdown';
 
-const styles = require('./DropdownContainer.css');
+import styles from './DropdownContainer.css';
 
 export type DropdownContainerProps = {
   onClose?: Function;
@@ -82,8 +82,8 @@ class DropdownContainer extends Component<
     if (
       this.dropdown &&
       !this.dropdown.contains(e.target as Node) &&
-      (this.props.dropdownAnchor &&
-        !this.props.dropdownAnchor.contains(e.target as Node))
+      this.props.dropdownAnchor &&
+      !this.props.dropdownAnchor.contains(e.target as Node)
     ) {
       if (this.props.onClose) {
         this.props.onClose();
@@ -178,7 +178,7 @@ class DropdownContainer extends Component<
     );
 
   render() {
-    const { submenu, className, width } = this.props;
+    const { submenu, className, width, testId } = this.props;
 
     const classNames = cn(
       className,
@@ -191,6 +191,7 @@ class DropdownContainer extends Component<
         ref={ref => {
           this.dropdown = ref;
         }}
+        data-test-id={testId}
         style={{
           ...(width ? { width: `${width}px` } : {}),
           ...(!submenu && this.calculatePosition()),

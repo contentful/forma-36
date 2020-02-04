@@ -3,7 +3,7 @@ import cn from 'classnames';
 import Icon from '../Icon/Icon';
 import TabFocusTrap from '../TabFocusTrap';
 
-const styles = require('./Pill.css');
+import styles from './Pill.css';
 
 export type PillProps = {
   label: string;

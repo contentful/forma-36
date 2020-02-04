@@ -12,7 +12,7 @@ import CardDragHandle, {
   CardDragHandlePropTypes,
 } from '../../Card/CardDragHandle/CardDragHandle';
 
-const styles = require('./EntityListItem.css');
+import styles from './EntityListItem.css';
 
 export type EntityListItemStatus =
   | 'archived'

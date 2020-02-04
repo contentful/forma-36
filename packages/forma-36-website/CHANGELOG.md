@@ -3,6 +3,66 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/contentful/forma-36/compare/forma-36-website@0.3.0...forma-36-website@0.3.1) (2020-02-04)
+
+**Note:** Version bump only for package forma-36-website
+
+
+
+
+
+# [0.3.0](https://github.com/contentful/forma-36/compare/forma-36-website@0.2.132...forma-36-website@0.3.0) (2020-02-03)
+
+
+### Features
+
+* cleanup menu iconName ([39f5d85](https://github.com/contentful/forma-36/commit/39f5d85702616bbbb56283a9dc49b87622b4942a))
+* Navigation menu; add arrow to indicate childrens and make inaccessible docs accessible. ([8ccb125](https://github.com/contentful/forma-36/commit/8ccb1259cf9283b62bcde18c46498f6c3b5f9778))
+
+
+
+
+
+## [0.2.132](https://github.com/contentful/forma-36/compare/forma-36-website@0.2.131...forma-36-website@0.2.132) (2020-01-30)
+
+**Note:** Version bump only for package forma-36-website
+
+
+
+
+
+## [0.2.131](https://github.com/contentful/forma-36/compare/forma-36-website@0.2.130...forma-36-website@0.2.131) (2020-01-30)
+
+**Note:** Version bump only for package forma-36-website
+
+
+
+
+
+## [0.2.130](https://github.com/contentful/forma-36/compare/forma-36-website@0.2.129...forma-36-website@0.2.130) (2020-01-30)
+
+**Note:** Version bump only for package forma-36-website
+
+
+
+
+
+## [0.2.129](https://github.com/contentful/forma-36/compare/forma-36-website@0.2.128...forma-36-website@0.2.129) (2020-01-27)
+
+**Note:** Version bump only for package forma-36-website
+
+
+
+
+
+## [0.2.128](https://github.com/contentful/forma-36/compare/forma-36-website@0.2.127...forma-36-website@0.2.128) (2020-01-27)
+
+**Note:** Version bump only for package forma-36-website
+
+
+
+
+
 ## [0.2.127](https://github.com/contentful/forma-36/compare/forma-36-website@0.2.126...forma-36-website@0.2.127) (2020-01-24)
 
 **Note:** Version bump only for package forma-36-website

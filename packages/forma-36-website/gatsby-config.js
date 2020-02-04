@@ -45,12 +45,20 @@ module.exports = {
           },
           {
             name: 'Copy',
-            link: '/guidelines/copy/',
+            link: '',
             menuLinks: [
               {
+                name: 'Introdution',
+                link: '/guidelines/copy/introduction/',
+              },
+              {
                 name: 'Grammar',
-                link: '/guidelines/copy/grammar/',
+                link: '',
                 menuLinks: [
+                  {
+                    name: 'Introdution',
+                    link: '/guidelines/copy/grammar/introduction/',
+                  },
                   {
                     name: 'Capitalization',
                     link: '/guidelines/copy/grammar/capitalization/',

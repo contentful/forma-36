@@ -4,7 +4,7 @@ import Icon from '../Icon';
 import { IconProps } from '../Icon/Icon';
 import TabFocusTrap from '../TabFocusTrap';
 
-const styles = require('./IconButton.css');
+import styles from './IconButton.css';
 
 export type IconButtonProps = {
   label: string;

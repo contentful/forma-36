@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
 
-const styles = require('./FormLabel.css');
+import styles from './FormLabel.css';
 
 export type FormLabelProps = {
   htmlFor: string;

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import cn from 'classnames';
 import IconButton from '../../IconButton/IconButton';
 
-const styles = require('./ModalHeader.css');
+import styles from './ModalHeader.css';
 
 export type ModalHeaderProps = {
   title: string;

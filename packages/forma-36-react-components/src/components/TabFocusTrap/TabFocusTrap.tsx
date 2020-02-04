@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
 
-const styles = require('./TabFocusTrap.css');
+import styles from './TabFocusTrap.css';
 
 export interface TabFocusTrapProps {
   className?: string;

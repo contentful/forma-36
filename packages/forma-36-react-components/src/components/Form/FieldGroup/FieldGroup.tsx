@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
 
-const styles = require('./FieldGroup.css');
+import styles from './FieldGroup.css';
 
 export type FieldGroupProps = {
   className?: string;

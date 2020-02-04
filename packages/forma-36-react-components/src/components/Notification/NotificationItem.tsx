@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import IconButton from '../IconButton';
 import Icon from '../Icon';
 
-const styles = require('./NotificationItem.css');
+import styles from './NotificationItem.css';
 
 export type NotificationIntent = 'success' | 'error' | 'warning';
 

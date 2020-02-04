@@ -5,6 +5,11 @@ declare module '*.md' {
   export default value;
 }
 
+declare module "*.svg" {
+  const content: React.FunctionComponent<React.SVGAttributes<SVGElement>>;
+  export default content;
+}
+
 declare module 'react-animate-height' {
   // eslint-disable-next-line
   const value: any;

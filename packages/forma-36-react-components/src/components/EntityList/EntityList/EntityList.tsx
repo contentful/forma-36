@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
 
-const styles = require('./EntityList.css');
+import styles from './EntityList.css';
 
 export type EntityListProps = {
   /**
