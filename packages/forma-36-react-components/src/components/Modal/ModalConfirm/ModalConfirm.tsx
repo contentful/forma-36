@@ -16,6 +16,10 @@ export type ModalConfirmProps = {
    */
   onConfirm: Function;
   /**
+   * Function that will be called when the secondary button is clicked. This does not close the ModalConfirm.
+   */
+  onSecondary?: Function;
+  /**
    * Function that will be called when the cancel button is clicked. This does not close the ModalConfirm.
    */
   onCancel: Function;
@@ -28,6 +32,10 @@ export type ModalConfirmProps = {
    */
   confirmLabel?: string | false;
   /**
+   * Label of the secondary button
+   */
+  secondaryLabel?: string | false;
+  /**
    * Label of the cancel button
    */
   cancelLabel?: string | false;
@@ -35,6 +43,10 @@ export type ModalConfirmProps = {
    * The intent of the ModalConfirm. Used for the Button.
    */
   intent?: 'primary' | 'positive' | 'negative';
+  /**
+   * The intent of the ModalConfirm. Used for the secondary Button.
+   */
+  secondaryIntent?: 'primary' | 'positive' | 'negative';
   /**
       Size of the modal window
     */
@@ -52,10 +64,17 @@ export type ModalConfirmProps = {
    */
   isConfirmDisabled?: boolean;
   /**
+   * When true, the secondary button is set to disabled.
+   */
+  isSecondaryDisabled?: boolean;
+  /**
    * When true, the confirm button is set to loading.
    */
   isConfirmLoading?: boolean;
-
+  /**
+   * When true, the secondary button is set to loading.
+   */
+  isSecondaryLoading?: boolean;
   /**
    * Are modals higher than viewport allowed
    */
@@ -78,6 +97,7 @@ export type ModalConfirmProps = {
 
   testId?: string;
   confirmTestId?: string;
+  secondaryTestId?: string;
   cancelTestId?: string;
   children: React.ReactNode;
 } & typeof defaultProps;
@@ -85,6 +105,7 @@ export type ModalConfirmProps = {
 const defaultProps = {
   testId: 'cf-ui-modal-confirm',
   confirmTestId: 'cf-ui-modal-confirm-confirm-button',
+  secondaryTestId: 'cf-ui-modal-confirm-secondary-button',
   cancelTestId: 'cf-ui-modal-confirm-cancel-button',
   title: 'Are you sure?',
   confirmLabel: 'Confirm',
@@ -108,17 +129,23 @@ export class ModalConfirm extends Component<ModalConfirmProps> {
       isShown,
       title,
       onConfirm,
+      onSecondary,
       onCancel,
       size,
       confirmLabel,
+      secondaryLabel,
       cancelLabel,
       intent,
+      secondaryIntent,
       shouldCloseOnOverlayClick,
       shouldCloseOnEscapePress,
       allowHeightOverflow,
       isConfirmDisabled,
+      isSecondaryDisabled,
       isConfirmLoading,
+      isSecondaryLoading,
       confirmTestId,
+      secondaryTestId,
       cancelTestId,
     } = this.props;
 
@@ -148,6 +175,17 @@ export class ModalConfirm extends Component<ModalConfirmProps> {
                   onClick={() => onConfirm()}
                 >
                   {confirmLabel}
+                </Button>
+              )}
+              {secondaryLabel && (
+                <Button
+                  testId={secondaryTestId}
+                  disabled={isSecondaryDisabled}
+                  loading={isSecondaryLoading}
+                  buttonType={secondaryIntent}
+                  onClick={() => onSecondary && onSecondary()}
+                >
+                  {secondaryLabel}
                 </Button>
               )}
               {cancelLabel && (

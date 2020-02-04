@@ -172,6 +172,7 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
 
     const classNames = cn(styles['Dropdown'], className);
     const width = isFullWidth && this.state.anchorDimensionsAndPositon.width;
+    const containerTestId = testId ? `${testId}-container` : testId;
 
     return submenuToggleLabel ? (
       <DropdownListItem
@@ -224,6 +225,7 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
             getRef={getContainerRef}
             submenu={false}
             width={width}
+            testId={containerTestId}
             dropdownAnchor={this.dropdownAnchor}
             isAutoalignmentEnabled={isAutoalignmentEnabled}
             anchorDimensionsAndPositon={this.state.anchorDimensionsAndPositon}

@@ -4,7 +4,7 @@ import FormLabel from '../FormLabel';
 import HelpText from '../HelpText';
 import ValidationMessage from '../ValidationMessage';
 import ControlledInput from '../ControlledInput/ControlledInput';
-const styles = require('./ControlledInputField.css');
+import styles from './ControlledInputField.css';
 
 export type ControlledInputFieldPropTypes = {
   id: string;

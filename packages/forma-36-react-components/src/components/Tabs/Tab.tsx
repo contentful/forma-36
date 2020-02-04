@@ -6,7 +6,7 @@ import React, {
 } from 'react';
 import classNames from 'classnames';
 
-const styles = require('./Tabs.css');
+import styles from './Tabs.css';
 
 export type TabProps = {
   id: string;

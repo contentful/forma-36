@@ -3,6 +3,54 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0-alpha.42](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-timepicker@0.2.0-alpha.41...@contentful/forma-36-react-timepicker@0.2.0-alpha.42) (2020-02-04)
+
+**Note:** Version bump only for package @contentful/forma-36-react-timepicker
+
+
+
+
+
+# [0.2.0-alpha.41](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-timepicker@0.2.0-alpha.40...@contentful/forma-36-react-timepicker@0.2.0-alpha.41) (2020-01-30)
+
+**Note:** Version bump only for package @contentful/forma-36-react-timepicker
+
+
+
+
+
+# [0.2.0-alpha.40](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-timepicker@0.2.0-alpha.39...@contentful/forma-36-react-timepicker@0.2.0-alpha.40) (2020-01-30)
+
+**Note:** Version bump only for package @contentful/forma-36-react-timepicker
+
+
+
+
+
+# [0.2.0-alpha.39](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-timepicker@0.2.0-alpha.38...@contentful/forma-36-react-timepicker@0.2.0-alpha.39) (2020-01-30)
+
+**Note:** Version bump only for package @contentful/forma-36-react-timepicker
+
+
+
+
+
+# [0.2.0-alpha.38](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-timepicker@0.2.0-alpha.37...@contentful/forma-36-react-timepicker@0.2.0-alpha.38) (2020-01-27)
+
+**Note:** Version bump only for package @contentful/forma-36-react-timepicker
+
+
+
+
+
+# [0.2.0-alpha.37](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-timepicker@0.2.0-alpha.36...@contentful/forma-36-react-timepicker@0.2.0-alpha.37) (2020-01-27)
+
+**Note:** Version bump only for package @contentful/forma-36-react-timepicker
+
+
+
+
+
 # [0.2.0-alpha.36](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-timepicker@0.2.0-alpha.35...@contentful/forma-36-react-timepicker@0.2.0-alpha.36) (2020-01-24)
 
 **Note:** Version bump only for package @contentful/forma-36-react-timepicker

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
 
-const styles = require('./Spinner.css');
+import styles from './Spinner.css';
 
 type SpinnerSize = 'default' | 'small' | 'large';
 

@@ -1,7 +1,7 @@
 import React, { Component, CSSProperties } from 'react';
 import cn from 'classnames';
 
-const styles = require('./Tabs.css');
+import styles from './Tabs.css';
 
 export type TabsProps = {
   role?: 'navigation' | 'tablist';

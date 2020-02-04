@@ -4,7 +4,7 @@ import React, {
   MouseEvent as ReactMouseEvent,
 } from 'react';
 import cn from 'classnames';
-const styles = require('./Card.css');
+import styles from './Card.css';
 
 export type CardPropTypes = {
   href?: string;

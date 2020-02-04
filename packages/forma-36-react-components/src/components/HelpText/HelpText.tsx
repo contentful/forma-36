@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
 
-const styles = require('./HelpText.css');
+import styles from './HelpText.css';
 
 export type HelpTextProps = {
   className?: string;

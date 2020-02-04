@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import Icon, { IconType } from '../Icon/Icon';
 import { iconName } from '../Icon/constants';
 
-const styles = require('./Note.css');
+import styles from './Note.css';
 
 const Icons = {
   primary: iconName.InfoCircle,

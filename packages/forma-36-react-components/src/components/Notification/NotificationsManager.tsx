@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { NotificationIntent } from './NotificationItem';
 import NotificationItemContainer from './NotificationItemContainer';
 
-const styles = require('./NotificationsManager.css');
+import styles from './NotificationsManager.css';
 
 let uniqueId = 0;
 

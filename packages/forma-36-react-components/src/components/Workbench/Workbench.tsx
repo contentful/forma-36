@@ -3,7 +3,7 @@ import cn from 'classnames';
 import Heading from '../Typography/Heading';
 import IconButton from '../IconButton';
 
-const styles = require('./Workbench.css');
+import styles from './Workbench.css';
 
 interface WorkbenchHeaderProps {
   title?: React.ReactElement | string;

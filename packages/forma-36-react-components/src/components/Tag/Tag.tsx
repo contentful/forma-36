@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
 
-const styles = require('./Tag.css');
+import styles from './Tag.css';
 
 export type TagType =
   | 'primary'
