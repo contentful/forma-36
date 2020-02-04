@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.29.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.28.21...@contentful/forma-36-react-components@3.29.0) (2020-02-04)
+
+
+### Features
+
+* **ModalConfirm:** Secondary action button for ModalConfirm ([#410](https://github.com/contentful/forma-36/issues/410)) ([2840c44](https://github.com/contentful/forma-36/commit/2840c4452f003a427eaea28a9b7ddd61571e49fd))
+
+
+
+
+
 ## [3.28.21](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.28.20...@contentful/forma-36-react-components@3.28.21) (2020-01-30)
 
 
