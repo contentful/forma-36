@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.30.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.29.0...@contentful/forma-36-react-components@3.30.0) (2020-02-04)
+
+
+### Features
+
+* **EntityListItem:** Allow entityType to be PascalCased ([#403](https://github.com/contentful/forma-36/issues/403)) ([3cb87a2](https://github.com/contentful/forma-36/commit/3cb87a2e354c69fc112a2f76d0c99783371f852b))
+
+
+
+
+
 # [3.29.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.28.21...@contentful/forma-36-react-components@3.29.0) (2020-02-04)
 
 
