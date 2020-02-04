@@ -66,9 +66,11 @@ export type EntityListItemProps = {
    */
   cardDragHandleProps?: Partial<CardDragHandlePropTypes>;
   /**
-   * An entity can either be an entry or an asset. This prop will apply styling based on if the entity is an asset or an entry
+   * An entity can either be an Entry or an Asset. This prop will apply styling based on if the entity is an asset or an entry
+   *
+   * Note: 'entry' and 'asset' are @deprecated but supported in v1.x for backwards compatibility
    */
-  entityType?: 'entry' | 'asset';
+  entityType?: 'Entry' | 'Asset' | 'entry' | 'asset';
   /**
    * Loading state for the component - when true will display loading feedback to the user
    */
@@ -105,7 +107,10 @@ export class EntityListItem extends Component<EntityListItemProps> {
   static defaultProps = defaultProps;
 
   renderIcon() {
-    const icon = this.props.entityType === 'asset' ? 'Asset' : 'Entry';
+    const { entityType } = this.props
+
+    const isAsset = (entityType && entityType.toLowerCase() === 'asset')
+    const icon = isAsset ? 'Asset' : 'Entry';
 
     return <Icon icon={icon} color="muted" />;
   }

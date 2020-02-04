@@ -39,6 +39,34 @@ it('renders the component with a status', () => {
   expect(output).toMatchSnapshot();
 });
 
+it('renders the component as an Asset with a title-cased entityType', () => {
+  const output = shallow(
+    <EntityListItem
+      title="Title"
+      description="Description"
+      contentType="Content type"
+      entityType="Asset"
+      status="published"
+    />,
+  );
+
+  expect(output).toMatchSnapshot();
+});
+
+it('renders the component as an Asset with a lower-cased entityType', () => {
+  const output = shallow(
+    <EntityListItem
+      title="Title"
+      description="Description"
+      contentType="Content type"
+      entityType="asset"
+      status="published"
+    />,
+  );
+
+  expect(output).toMatchSnapshot();
+});
+
 it('renders the component with dropdownListElements', () => {
   const output = shallow(
     <EntityListItem
