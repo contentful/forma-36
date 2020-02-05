@@ -51,6 +51,10 @@ exports[`can accept custom labels 1`] = `
           testId="cf-ui-modal-confirm-confirm-button"
         />
         <Button
+          onClick={[Function]}
+          testId="cf-ui-modal-confirm-secondary-button"
+        />
+        <Button
           buttonType="muted"
           onClick={[Function]}
           testId="cf-ui-modal-confirm-cancel-button"

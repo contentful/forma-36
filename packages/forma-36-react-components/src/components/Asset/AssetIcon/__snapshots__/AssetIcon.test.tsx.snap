@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component 1`] = `
+<Illustration
+  illustration="Archive"
+  testId="cf-ui-asset-icon"
+/>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+<Illustration
+  className="extra-class-name"
+  illustration="Presentation"
+  testId="cf-ui-asset-icon"
+/>
+`;
+
+exports[`renders the component with type pdf 1`] = `
+<Illustration
+  className="extra-class-name"
+  illustration="Pdf"
+  testId="cf-ui-asset-icon"
+/>
+`;

@@ -63,9 +63,9 @@ exports[`renders the component with type pdf 1`] = `
     <div
       className="Asset__illustration-container"
     >
-      <Illustration
-        illustration="Pdf"
-        testId="cf-ui-illustration"
+      <AssetIcon
+        testId="cf-ui-asset-icon"
+        type="pdf"
       />
     </div>
     <span

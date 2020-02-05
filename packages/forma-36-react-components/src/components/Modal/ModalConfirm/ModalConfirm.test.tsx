@@ -60,8 +60,10 @@ it('can accept custom labels', () => {
       isShown
       intent="negative"
       confirmLabel="Yes, delete"
+      secondaryLabel="Disable, instead"
       cancelLabel="No, I changed my mind"
       onConfirm={() => {}}
+      onSecondary={() => {}}
       onCancel={() => {}}
     >
       ModalConfirm
