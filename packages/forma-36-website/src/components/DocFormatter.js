@@ -49,8 +49,8 @@ const styles = {
 
 const DocFormatter = ({ frontmatter, children }) => {
   const [ activeSection, setActiveSection ] = useState('design');
-  const designDocs = children.filter(child => child.props.mdxType === 'DesignDocs');
-  const developDocs = children.filter(child => child.props.mdxType === 'DevelopDocs');
+  const designDocs = Array.isArray(children) && children.filter(child => child.props.mdxType === 'DesignDocs');
+  const developDocs = Array.isArray(children) && children.filter(child => child.props.mdxType === 'DevelopDocs');
   const hasDevelopDocs = developDocs.length > 0;
   const hasDesignDocs = designDocs.length > 0;
 
@@ -62,7 +62,8 @@ const DocFormatter = ({ frontmatter, children }) => {
 
   return (
     <React.Fragment>
-      <header css={styles.header}>
+      {/* Remove styles condition once all docs follow the same structure */}
+      <header css={data.title ? styles.header : ''}>
         {data.title && <DisplayText>{data.title}</DisplayText>}
         <div css={styles.buttonList}>
           {hasDevelopDocs && hasDesignDocs && (
