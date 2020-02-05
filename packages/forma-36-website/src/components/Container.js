@@ -19,7 +19,7 @@ import {
   TableCell,
 } from '@contentful/forma-36-react-components';
 import ComponentSource from './ComponentSource';
-import ComponentHeader from './ComponentHeader';
+import DocFormatter from './DocFormatter';
 import Footer from './Footer';
 
 const styles = {
@@ -47,11 +47,11 @@ const styles = {
 
 const markToComponentMap = {
   h1: props => <DisplayText {...props} />,
-  h2: props => <Heading {...props} />,
-  h3: props => <Subheading {...props} />,
-  h4: props => <Subheading {...props} />,
-  h5: props => <Subheading {...props} />,
-  h6: props => <Subheading {...props} />,
+  h2: props => <Heading element="h2" {...props} />,
+  h3: props => <Subheading element="h3" {...props} />,
+  h4: props => <Subheading element="h4" {...props} />,
+  h5: props => <Subheading element="h5" {...props} />,
+  h6: props => <Subheading element="h6" {...props} />,
   p: props => <Paragraph className="f36-font-size--l" {...props} />,
   a: props => <TextLink {...props} />,
   ul: props => <List className="f36-margin-bottom--m" {...props} />,
@@ -81,16 +81,10 @@ const Container = data => {
   return (
     <div css={styles.container}>
       <div css={styles.main}>
-        {frontmatter && frontmatter.type === 'component' && (
-          <ComponentHeader
-            title={frontmatter.title}
-            githubUrl={frontmatter.github}
-            storybookUrl={frontmatter.storybook}
-          />
-        )}
-
         <Typography css={isHomePage ? styles.innerHomePage : styles.inner}>
-          <MDXProvider components={markToComponentMap}>{children}</MDXProvider>
+          <MDXProvider components={markToComponentMap}>
+            <DocFormatter frontmatter={frontmatter}>{children}</DocFormatter>
+          </MDXProvider>
         </Typography>
       </div>
       <Footer />
