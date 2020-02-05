@@ -41,14 +41,6 @@
   Overlay if modal is centered
 */
 
-.Modal__overlay--centered:before {
-  content: '';
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle;
-  width: 0;
-}
-
 .Modal__overlay--centered .Modal__wrap {
   vertical-align: middle;
 }
