@@ -85,14 +85,14 @@ const DocFormatter = ({ frontmatter, children }) => {
           )}
           
           {data.githubUrl && (
-            <a css={styles.imageLink} href={data.storybookUrl} title={`View ${data.title} in Storybook`}>
+            <a css={styles.imageLink} href={data.githubUrl} title={`View ${data.title} in Storybook`}>
               <img src={storybookIcon} alt="" />
               <span>Storybook</span>
             </a>
           )}
 
           {data.storybookUrl && (
-            <a css={styles.imageLink} href={data.githubUrl} title={`View ${data.title} on GitHub`}>
+            <a css={styles.imageLink} href={data.storybookUrl} title={`View ${data.title} on GitHub`}>
               <img src={githubIcon} alt="" />
               <span>Github</span>
             </a>

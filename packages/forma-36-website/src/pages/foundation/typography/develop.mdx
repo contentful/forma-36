@@ -215,9 +215,5 @@ Our font base is used in combination with the REM font sizes below
 </Table>
 
 
-<!-- Export is required for components by mdx -->
-export default ({ children }) => (
-  <>
-    {children}
-  </>
-)
+<!-- Must have otherwise mdx will treat this as a full page -->
+export default ({ children }) => <>{children}</>

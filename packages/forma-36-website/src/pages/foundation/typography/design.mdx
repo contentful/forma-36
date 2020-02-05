@@ -1,6 +1,17 @@
-import typfaceImg from './assets/typeface.png';
+import {
+  Card,
+  Typography,
+  Paragraph,
+  Heading,
+  Subheading,
+  SectionHeading,
+  DisplayText
+} from '@contentful/forma-36-react-components';
 
-Typography is much more than choosing pretty fonts, it’s a very important components in UI design, Good typography establishes a strong, cohesive visual hierarchy that helps to present content clearly and efficiently.
+
+Typography is much more than choosing pretty fonts, it’s a very important components in UI design, Good typography establishes a strong, cohesive visual hierarchy that helps to present content clearly and efficiently to users.
+
+<br />
 
 ## Typeface
 Forma strives for a performant, clean experience to our users, hence, we chose our font stack to match the system fonts that already comes preloaded with the OS on your device.
@@ -8,23 +19,99 @@ These are the font stack we use in our systems...
 
 ![Typefaces demonstration, San Francisco, Lucida Grande, Neue Helvetica, Arial, and Segoe UI](./assets/typeface.png)
 
-Our font stack comes in multiple values, each value correspond to a font type based on the running operating system, below describes the values, and the fonts it corresponds to: 
+Our font family consists of different font types, it is known as *system fonts* each operating system comes with a default font.
 
--apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol
+**San Francisco** appears on Safari (Mac OS X and iOS); **Neue Helvetica** and **Lucida Grande** appears on older versions of Mac OS X; **Segoe UI** targets Windows and Windows phone; **Arial** is available on almost all operating systems.
 
-| Value | Font & Device |
-| ---- | - |
-| **--apple-system** | San Francisco on Safari (Mac & iOS) `Neue Helvetica` and `Lucida Grande` on older versions of Mac OS X |
-| **Segoe UI** | Targets Windows and Windows Phone. |
-| **BlinkMacSystemFont** | Represents the default UI for Chrome on Mac OS X |
+<br />
 
-* **system-ui** Represents the default UI font on any given platform. `BlinkMacSystemFont` is the equivalent for Chrome on Mac OS X.
-* **Segoe UI** Targets Windows and Windows Phone.
-* **Arial** Available on a wide range of devices
+### Consistency
+![Line-height demonstration against 4px grid](./assets/line-height.png)
 
-<!-- Export is required for components by mdx -->
-export default ({ children }) => (
-  <>
-    {children}
-  </>
-)
+To ensure each font type is represented properly, and the customer experience stays the same across different devices, all font family members are tested against the 4px grid.
+
+When fonts are stacked on top of each other, line height acts as a wrapper around different font sizes and weights. 
+This garantees the experience doesn't change when different fonts are presented.
+
+<br />
+
+## Font sizes
+Instead of using fixed sizes with **px** units, our type system uses **rem** units. **REMs** are an approach to set font sizes based on a *single* font size of the root element **(html)**
+
+This gives us flexibility to scale up/down elements for different screen sizes from one single source of truth.
+
+### REMs and Accessibility
+REMs plays an important role in accessibility, when users change the default font size *(16px)* of the browser, REMs kicks in, and simply your project will scale up based on user's font size choice.
+
+<br />
+
+### Available Sizes
+<hr />
+<br />
+
+<DisplayText size='large'>Display Large</DisplayText>
+
+*Display Large* is used to display text in special scenarios - use Display Text Large on empty states, promotional/featured items, etc.
+
+*Display Large* should not be used as a replacement for headings/page titles (use the Heading styles instead).
+
+Font size: **35px** - Line Height: **44px** - Weight: **700**
+
+<br />
+
+<DisplayText>Display</DisplayText>
+
+Use *Display* on similar cases as Display Text Large.
+
+Font size: **28px** - Line Height: **35px** - Weight: **700**
+
+<br />
+
+<Heading>Heading</Heading>
+
+*Heading* is used to define sections in your solution, this is **cruical** for accessibility; Headings are used to define sections/blocks in your page, it guides users through your page/view.
+
+Similarly visually impaired people use screen readers, and screen readers find sections in your page/view based on your heading hierarchy.
+
+Font size: **21px** - Line Height: **31px** - Weight: **700**
+
+<br />
+
+<Subheading>Subheading</Subheading>
+
+*Subheadings* are headings for nested blocks within your sections; Assuming you have a section with heading "Contact us", you want to group "Address" related elements in a block, that when *Subheading* comes in handy.
+
+ Font size: **16px** - Line Height: **24px** - Weight: **700**
+
+<br />
+
+<Paragraph>Body</Paragraph>
+
+*Body* is the base font size for content. Used usually for paragraphs.
+
+Font size: **14px** - Line Height: **21px** - Weight: **500**
+
+<br />
+
+<SectionHeading>Section Heading</SectionHeading>
+
+*Section Heading* addresses the small blocks that requires extra context, to make it easier for audience to understand.
+
+Font size: **12px** - Line Height: **18px** - Weight: **600**
+
+<br />
+
+## Guidelines
+
+### Use Forma36 Sizes
+
+Don't define your own text sizes, use the available text styles from the sketch UI Kit. This ensures consistency across our solutions.
+
+### Color Contrast
+
+[WCAG 2.1 Contrast Guideline](https://www.w3.org/TR/WCAG21/#contrast-minimum) recommends to have at least 4.5:1 contrast between your text color, and the background. 
+Low color contrast may result indistinguishable elements on your screen, especially for people with color blindness.
+
+
+<!-- Must have otherwise mdx will treat this as a full page -->
+export default ({ children }) => <>{children}</>
