@@ -48,7 +48,7 @@ module.exports = {
             link: '',
             menuLinks: [
               {
-                name: 'Introdution',
+                name: 'Introduction',
                 link: '/guidelines/copy/introduction/',
               },
               {
@@ -56,7 +56,7 @@ module.exports = {
                 link: '',
                 menuLinks: [
                   {
-                    name: 'Introdution',
+                    name: 'Introduction',
                     link: '/guidelines/copy/grammar/introduction/',
                   },
                   {

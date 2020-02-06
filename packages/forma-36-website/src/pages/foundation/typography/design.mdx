@@ -14,56 +14,56 @@ Typography is much more than choosing pretty fonts, it’s a very important comp
 <br />
 
 ## Typeface
-Forma strives for a performant, clean experience to our users, hence, we chose our font stack to match the system fonts that already comes preloaded with the OS on your device.
-These are the font stack we use in our systems...
+Forma strives for a performant, clean experience to our users, hence, 
+we chose our font stack to match the system fonts that comes preloaded with the OS on your device.
+
+These are the font family we use in our systems...
 
 ![Typefaces demonstration, San Francisco, Lucida Grande, Neue Helvetica, Arial, and Segoe UI](./assets/typeface.png)
 
-Our font family consists of different font types, it is known as *system fonts* each operating system comes with a default font.
+Our font family consists of different font types, they are known as *system fonts*, 
+every operating system comes with at least one default font...
 
-**San Francisco** appears on Safari (Mac OS X and iOS); **Neue Helvetica** and **Lucida Grande** appears on older versions of Mac OS X; **Segoe UI** targets Windows and Windows phone; **Arial** is available on almost all operating systems.
-
-<br />
-
-### Consistency
-![Line-height demonstration against 4px grid](./assets/line-height.png)
-
-To ensure each font type is represented properly, and the customer experience stays the same across different devices, all font family members are tested against the 4px grid.
-
-When fonts are stacked on top of each other, line height acts as a wrapper around different font sizes and weights. 
-This garantees the experience doesn't change when different fonts are presented.
+**San Francisco** appears on Safari (Mac OS X and iOS); **Neue Helvetica** and **Lucida Grande** appears on older versions of Mac OS X; 
+**Segoe UI** targets Windows and Windows phone; **Arial** is available on almost all operating systems.
 
 <br />
 
 ## Font sizes
-Instead of using fixed sizes with **px** units, our type system uses **rem** units. **REMs** are an approach to set font sizes based on a *single* font size of the root element **(html)**
+Pixels units maintainence is rigid. Hence, we use *REM* units to define our font sizes.
 
-This gives us flexibility to scale up/down elements for different screen sizes from one single source of truth.
+### What are REMs?
+REMs (root em) are simply a ratio of the root element font size. The root element here is the browser default font size 16px. (1rem = 16px) (2rem = 32px)
 
-### REMs and Accessibility
-REMs plays an important role in accessibility, when users change the default font size *(16px)* of the browser, REMs kicks in, and simply your project will scale up based on user's font size choice.
+Using rem units enables our system to scale up/down based on user's prefrence.
+
 
 <br />
 
 ### Available Sizes
-<hr />
+
 <br />
+<SectionHeading>Section Heading</SectionHeading>
 
-<DisplayText size='large'>Display Large</DisplayText>
+*Section Heading* addresses the small blocks that requires extra context, to make it easier for audience to understand.
 
-*Display Large* is used to display text in special scenarios - use Display Text Large on empty states, promotional/featured items, etc.
-
-*Display Large* should not be used as a replacement for headings/page titles (use the Heading styles instead).
-
-Font size: **35px** - Line Height: **44px** - Weight: **700**
+Font size: **12px** - Line Height: **18px** - Weight: **600**
 
 <br />
 
-<DisplayText>Display</DisplayText>
+<Paragraph>Body</Paragraph>
 
-Use *Display* on similar cases as Display Text Large.
+*Body* is the base font size for content. Used usually for paragraphs.
 
-Font size: **28px** - Line Height: **35px** - Weight: **700**
+Font size: **14px** - Line Height: **21px** - Weight: **500**
+
+<br />
+
+<Subheading>Subheading</Subheading>
+
+*Subheadings* are headings for nested blocks within your sections; Assuming you have a section with heading "Contact us", you want to group "Address" related elements in a block, that when *Subheading* comes in handy.
+
+ Font size: **16px** - Line Height: **24px** - Weight: **700**
 
 <br />
 
@@ -77,27 +77,38 @@ Font size: **21px** - Line Height: **31px** - Weight: **700**
 
 <br />
 
-<Subheading>Subheading</Subheading>
+<DisplayText>Display</DisplayText>
 
-*Subheadings* are headings for nested blocks within your sections; Assuming you have a section with heading "Contact us", you want to group "Address" related elements in a block, that when *Subheading* comes in handy.
+Use *Display* on similar cases as Display Text Large.
 
- Font size: **16px** - Line Height: **24px** - Weight: **700**
-
-<br />
-
-<Paragraph>Body</Paragraph>
-
-*Body* is the base font size for content. Used usually for paragraphs.
-
-Font size: **14px** - Line Height: **21px** - Weight: **500**
+Font size: **28px** - Line Height: **35px** - Weight: **700**
 
 <br />
 
-<SectionHeading>Section Heading</SectionHeading>
+<DisplayText size='large'>Display Large</DisplayText>
 
-*Section Heading* addresses the small blocks that requires extra context, to make it easier for audience to understand.
+*Display Large* is used to display text in special scenarios - use Display Text Large on empty states, promotional/featured items, etc.
 
-Font size: **12px** - Line Height: **18px** - Weight: **600**
+*Display Large* should not be used as a replacement for headings/page titles (use the Heading styles instead).
+
+Font size: **35px** - Line Height: **44px** - Weight: **700**
+
+<br />
+
+### Line height
+
+Line height are basically verticle wrappers around letters on each line. 
+
+Our line height is also defined based on **rem**, this forces the line height to correspond to the root font size as well.
+
+
+### Consistency
+![Line-height demonstration against 4px grid](./assets/line-height.png)
+
+To ensure each font type is represented properly, and the customer experience stays the same across different devices, 
+each font family members falls under the 4px base line grid.
+
+Now when different font types, sizes, and weights are stacked together, our typography system adapts flawlessly.
 
 <br />
 
