@@ -46,7 +46,7 @@ export type ModalConfirmProps = {
   /**
    * The intent of the ModalConfirm. Used for the secondary Button.
    */
-  secondaryIntent?: 'primary' | 'positive' | 'negative';
+  secondaryIntent?: 'primary' | 'positive' | 'negative' | 'muted';
   /**
       Size of the modal window
     */

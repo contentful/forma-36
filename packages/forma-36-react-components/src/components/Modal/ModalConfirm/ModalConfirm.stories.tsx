@@ -26,6 +26,7 @@ function DefaultStory() {
           'negative',
           'positive',
           'primary',
+          'muted',
         ])}
         size={select(
           'size',
