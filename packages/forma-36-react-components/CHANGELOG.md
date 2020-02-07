@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.30.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.30.2...@contentful/forma-36-react-components@3.30.3) (2020-02-07)
+
+
+### Bug Fixes
+
+* **modal component:** fix Modal window centering ([#414](https://github.com/contentful/forma-36/issues/414)) ([b4cfc75](https://github.com/contentful/forma-36/commit/b4cfc75383e5889570a0d94c856ef78952d704a8))
+* **ModalConfirm:** allow "muted" as a value for the secondaryIntent prop ([#413](https://github.com/contentful/forma-36/issues/413)) ([75e43c5](https://github.com/contentful/forma-36/commit/75e43c5a01f2a80a59b8d35b1ded267b4314af62))
+
+
+
+
+
 ## [3.30.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.30.1...@contentful/forma-36-react-components@3.30.2) (2020-02-05)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
