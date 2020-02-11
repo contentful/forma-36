@@ -99,4 +99,5 @@ export {
 } from './components/EntityList/EntityListItem/EntityListItem';
 export { EmptyState } from './components/EmptyState/EmptyState';
 export { Switch } from './components/Switch/Switch';
+export { Workbench } from './components/Workbench/Workbench';
 // -- Add imports above this line (required by plopfile.js) --
