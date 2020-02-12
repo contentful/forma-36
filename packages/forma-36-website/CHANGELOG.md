@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/contentful/forma-36/compare/forma-36-website@0.3.6...forma-36-website@0.4.0) (2020-02-12)
+
+
+### Bug Fixes
+
+* update gatsby image processor, and use full width images ([76b723e](https://github.com/contentful/forma-36/commit/76b723ef7d3a11b118f21d6702fc46fb35052364))
+* **forma website:** remove header styles when no title is present ([b8638a4](https://github.com/contentful/forma-36/commit/b8638a4a141924c1915e1ff95f14c5451311cf99))
+
+
+### Features
+
+* typos, and language ([00f0423](https://github.com/contentful/forma-36/commit/00f0423ecf006e1db6395ffbcc3c1262d6ea3860))
+* **f36 website:** add switcher as a comment to button docs ([99c58d3](https://github.com/contentful/forma-36/commit/99c58d37fcb446246545081bd37db3ae326d6a55))
+* **forma-36-website:** add toggelable design/develop section to docs ([74e7bb6](https://github.com/contentful/forma-36/commit/74e7bb6c2f55dd3bcfa5609bf0eff453cc6773ed))
+
+
+### Reverts
+
+* **typography:** merge typography docs ([5680716](https://github.com/contentful/forma-36/commit/5680716cb8250dbceb059d2eaa7014d1e64e7ead))
+
+
+
+
+
 ## [0.3.6](https://github.com/contentful/forma-36/compare/forma-36-website@0.3.5...forma-36-website@0.3.6) (2020-02-11)
 
 **Note:** Version bump only for package forma-36-website
