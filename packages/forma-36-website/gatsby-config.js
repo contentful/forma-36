@@ -48,7 +48,7 @@ module.exports = {
             link: '',
             menuLinks: [
               {
-                name: 'Introdution',
+                name: 'Introduction',
                 link: '/guidelines/copy/introduction/',
               },
               {
@@ -56,7 +56,7 @@ module.exports = {
                 link: '',
                 menuLinks: [
                   {
-                    name: 'Introdution',
+                    name: 'Introduction',
                     link: '/guidelines/copy/grammar/introduction/',
                   },
                   {
@@ -201,8 +201,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 800,
-              sizeByPixelDensity: true,
+              maxWidth: 912
             },
           },
         ],
