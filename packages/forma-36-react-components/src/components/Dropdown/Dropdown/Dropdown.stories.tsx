@@ -117,6 +117,58 @@ function ScrollableStory() {
   );
 }
 
+function DynamicContentStory() {
+  const messages = ['Loading...', 'This is my other piece of text'];
+  const [isOpen, setOpen] = useState(false);
+  const [text, setText] = useState(messages[0]);
+
+  const onClose = () => {
+    setOpen(false);
+    setText(messages[0]);
+  };
+
+  const onClick = () => {
+    if (isOpen) {
+      return onClose();
+    }
+
+    setTimeout(() => setText(messages[1]), 500);
+    setOpen(true);
+  };
+
+  return (
+    <Dropdown
+      isOpen={isOpen}
+      onClose={onClose}
+      isAutoalignmentEnabled={boolean('isAutoalignmentEnabled', true)}
+      position={select(
+        'position',
+        {
+          'bottom-left': 'bottom-left',
+          'bottom-right': 'bottom-right',
+          'top-left': 'top-left',
+          'top-right': 'top-right',
+        },
+        'bottom-right',
+      )}
+      toggleElement={
+        <Button
+          size="small"
+          buttonType="muted"
+          onClick={onClick}
+          indicateDropdown
+        >
+          Choose more options and settings
+        </Button>
+      }
+    >
+      <DropdownList>
+        <DropdownListItem>{text}</DropdownListItem>
+      </DropdownList>
+    </Dropdown>
+  );
+}
+
 storiesOf('Components|Dropdown', module)
   .addParameters({
     propTypes: [
@@ -126,4 +178,5 @@ storiesOf('Components|Dropdown', module)
     ],
   })
   .add('default', () => <DefaultStory />)
-  .add('scrollable', () => <ScrollableStory />);
+  .add('scrollable', () => <ScrollableStory />)
+  .add('dynamic', () => <DynamicContentStory />);
