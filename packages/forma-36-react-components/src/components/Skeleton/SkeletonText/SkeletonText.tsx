@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 
+type stringOrNumber = string | number;
+
 export type SkeletonTextProps = {
   numberOfLines: number;
-  offsetTop: number;
-  offsetLeft: number;
-  lineHeight: number;
-  marginBottom: number;
-  width?: number;
+  offsetTop: stringOrNumber;
+  offsetLeft: stringOrNumber;
+  lineHeight: stringOrNumber;
+  marginBottom: stringOrNumber;
+  width?: stringOrNumber;
 } & typeof defaultProps;
 
 const defaultProps = {
