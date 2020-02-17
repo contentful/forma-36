@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 
+type stringOrNumber = string | number;
+
 export type SkeletonImageProps = {
-  width: number;
-  height: number;
-  radiusX: number;
-  radiusY: number;
-  offsetLeft?: number;
-  offsetTop?: number;
+  width: stringOrNumber;
+  height: stringOrNumber;
+  radiusX: stringOrNumber;
+  radiusY: stringOrNumber;
+  offsetLeft?: stringOrNumber;
+  offsetTop?: stringOrNumber;
   testId?: string;
 } & typeof defaultProps;
 
