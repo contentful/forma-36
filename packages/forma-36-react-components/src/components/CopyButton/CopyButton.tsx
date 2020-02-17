@@ -12,8 +12,8 @@ export type CopyButtonProps = {
   className?: string;
   testId?: string;
   tooltipPlace?: TooltipPlace;
-  tooltipText?: string | React.ReactNode | HTMLElement;
-  tooltipCopiedText?: string | React.ReactNode | HTMLElement;
+  tooltipText?: React.ReactNode;
+  tooltipCopiedText?: React.ReactNode;
 } & typeof defaultProps;
 
 export interface CopyButtonState {
