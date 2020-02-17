@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.31.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.31.0...@contentful/forma-36-react-components@3.31.1) (2020-02-17)
+
+
+### Bug Fixes
+
+* **DropdownContainer:** Recalculate dropdown position ([#417](https://github.com/contentful/forma-36/issues/417)) ([8caa798](https://github.com/contentful/forma-36/commit/8caa798afc299e8e72f6384f1fda05acc03a2a3d))
+
+
+
+
+
 # [3.31.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.30.3...@contentful/forma-36-react-components@3.31.0) (2020-02-11)
 
 
