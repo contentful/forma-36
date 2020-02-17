@@ -1,0 +1,113 @@
+@import 'settings/colors';
+@import 'settings/borders';
+@import 'settings/typography';
+@import 'settings/transitions';
+@import 'settings/shadows';
+@import 'settings/z-index';
+
+.Modal__portal {
+  display: block;
+}
+
+/*
+  Overlay
+*/
+
+.Modal__overlay {
+  display: flex;
+  flex-wrap: wrap;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: var(--z-index-modal);
+  opacity: 0;
+  transition: opacity var(--transition-duration-default)
+    var(--transition-easing-default);
+  position: fixed;
+  overflow-y: auto;
+  /* prettier-ignore */
+  background-color: var(--color-contrast-dark)bf;
+  text-align: center;
+}
+
+.Modal__overlay--after-open {
+  opacity: 1;
+}
+
+.Modal__overlay--before-close {
+  opacity: 0;
+}
+
+/*
+  Overlay if modal is centered
+*/
+
+.Modal__overlay--centered {
+  align-items: center;
+  justify-content: center;
+}
+
+/*
+  Modal wrap
+*/
+
+.Modal__wrap {
+  z-index: var(--z-index-modal-content);
+  position: relative;
+  padding: 0;
+  display: inline-block;
+  margin: 0 auto;
+  text-align: left;
+  outline: none;
+}
+
+.Modal__wrap--zen {
+  width: 100%;
+  height: 100%;
+}
+
+.Modal__wrap--after-open .Modal {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.Modal__wrap--before-close .Modal {
+  opacity: 0.5;
+  transform: scale(0.85);
+}
+
+.Modal {
+  transition: opacity var(--transition-duration-long)
+      var(--transition-easing-default),
+    transform var(--transition-duration-long)
+      var(--transition-easing-cubic-bezier);
+  opacity: 0.5;
+  margin: calc(1rem * (50 / var(--font-base-default)));
+  transform: scale(0.85);
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-small);
+  box-shadow: var(--box-shadow-heavy);
+  max-height: calc(100vh - 1rem * (100 / var(--font-base-default)));
+  max-width: calc(100vw - 1rem * (100 / var(--font-base-default)));
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  /* fix for non-scrollable IE11 */
+  -ms-overflow-y: scroll;
+}
+
+.Modal.Modal--overflow {
+  overflow: auto;
+  max-height: none;
+  max-width: none;
+}
+
+.Modal.Modal--zen {
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}

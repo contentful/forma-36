@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
-import DropdownListItem from '../DropdownListItem/DropdownListItem';
-import DropdownContainer from '../DropdownContainer';
-import isBrowser from '../../../utils/isBrowser';
+import DropdownListItem from './DropdownListItem/DropdownListItem';
+import DropdownContainer from './DropdownContainer';
+import isBrowser from '../../utils/isBrowser';
 import styles from './Dropdown.css';
 
 export type positionType =

@@ -1,7 +1,7 @@
 import React, { useReducer, useMemo, useRef } from 'react';
 
 import TextInput from '../TextInput';
-import Dropdown, { DropdownProps } from '../Dropdown/Dropdown/Dropdown';
+import Dropdown, { DropdownProps } from '../Dropdown/Dropdown';
 import DropdownList from '../Dropdown/DropdownList';
 import DropdownListItem from '../Dropdown/DropdownListItem';
 import SkeletonBodyText from '../Skeleton/SkeletonBodyText';

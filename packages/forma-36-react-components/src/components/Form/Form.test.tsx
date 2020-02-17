@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { axe } from 'jest-axe';
 import Form from './Form';
-import TextField from '../../TextField';
+import TextField from '../TextField';
 
 it('renders the component', () => {
   const output = shallow(

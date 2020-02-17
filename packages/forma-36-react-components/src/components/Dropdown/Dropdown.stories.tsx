@@ -4,10 +4,10 @@ import { text, select, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import Dropdown from './Dropdown';
-import DropdownListItem from '../DropdownListItem';
-import Button from '../../Button';
-import TextLink from '../../TextLink';
-import DropdownList from '../DropdownList';
+import DropdownListItem from './DropdownListItem';
+import Button from '../Button';
+import TextLink from '../TextLink';
+import DropdownList from './DropdownList';
 
 function DefaultStory() {
   const [isOpen, setOpen] = useState(false);

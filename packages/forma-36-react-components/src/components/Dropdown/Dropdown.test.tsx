@@ -2,9 +2,9 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { axe } from 'jest-axe';
 import Dropdown from './Dropdown';
-import Button from '../../Button/Button';
-import DropdownListItem from '../DropdownListItem/DropdownListItem';
-import DropdownList from '../DropdownList/DropdownList';
+import Button from '../Button';
+import DropdownListItem from './DropdownListItem/DropdownListItem';
+import DropdownList from './DropdownList/DropdownList';
 
 it('renders the component', () => {
   const output = shallow(

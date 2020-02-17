@@ -1,0 +1,194 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component 1`] = `
+<div
+  className="Select__wrapper Select--full"
+>
+  <select
+    aria-label="optionSelect"
+    className="Select"
+    data-test-id="cf-ui-select"
+    disabled={false}
+    id="optionSelect"
+    name="optionSelect"
+    onChange={[Function]}
+    onKeyDown={[Function]}
+    required={false}
+  >
+    <Option
+      testId="cf-ui-select-option"
+      value="optionOne"
+    >
+      Option One
+    </Option>
+  </select>
+  <Icon
+    className="Select__icon"
+    color="muted"
+    icon="ArrowDown"
+    size="small"
+    testId="cf-ui-icon"
+  />
+</div>
+`;
+
+exports[`renders the component as required 1`] = `
+<div
+  className="Select__wrapper Select--full"
+>
+  <select
+    aria-label="optionSelect"
+    className="Select"
+    data-test-id="cf-ui-select"
+    disabled={false}
+    id="optionSelect"
+    name="optionSelect"
+    onChange={[Function]}
+    onKeyDown={[Function]}
+    required={true}
+  >
+    <Option
+      testId="cf-ui-select-option"
+      value="optionOne"
+    >
+      Option One
+    </Option>
+  </select>
+  <Icon
+    className="Select__icon"
+    color="muted"
+    icon="ArrowDown"
+    size="small"
+    testId="cf-ui-icon"
+  />
+</div>
+`;
+
+exports[`renders the component in disabled state 1`] = `
+<div
+  className="Select__wrapper Select--full"
+>
+  <select
+    aria-label="optionSelect"
+    className="Select Select--disabled"
+    data-test-id="cf-ui-select"
+    disabled={true}
+    id="optionSelect"
+    name="optionSelect"
+    onChange={[Function]}
+    onKeyDown={[Function]}
+    required={false}
+  >
+    <Option
+      testId="cf-ui-select-option"
+      value="optionOne"
+    >
+      Option One
+    </Option>
+  </select>
+  <Icon
+    className="Select__icon"
+    color="muted"
+    icon="ArrowDown"
+    size="small"
+    testId="cf-ui-icon"
+  />
+</div>
+`;
+
+exports[`renders the component with a value 1`] = `
+<div
+  className="Select__wrapper Select--full"
+>
+  <select
+    aria-label="optionSelect"
+    className="Select"
+    data-test-id="cf-ui-select"
+    disabled={false}
+    id="optionSelect"
+    name="optionSelect"
+    onChange={[Function]}
+    onKeyDown={[Function]}
+    required={false}
+    value="value1"
+  >
+    <Option
+      testId="cf-ui-select-option"
+      value="optionOne"
+    >
+      Option One
+    </Option>
+  </select>
+  <Icon
+    className="Select__icon"
+    color="muted"
+    icon="ArrowDown"
+    size="small"
+    testId="cf-ui-icon"
+  />
+</div>
+`;
+
+exports[`renders the component with an extra class name 1`] = `
+<div
+  className="Select__wrapper Select--full extraClassName"
+>
+  <select
+    aria-label="optionSelect"
+    className="Select"
+    data-test-id="cf-ui-select"
+    disabled={false}
+    id="optionSelect"
+    name="optionSelect"
+    onChange={[Function]}
+    onKeyDown={[Function]}
+    required={false}
+  >
+    <Option
+      testId="cf-ui-select-option"
+      value="optionOne"
+    >
+      Option One
+    </Option>
+  </select>
+  <Icon
+    className="Select__icon"
+    color="muted"
+    icon="ArrowDown"
+    size="small"
+    testId="cf-ui-icon"
+  />
+</div>
+`;
+
+exports[`renders the component with error 1`] = `
+<div
+  className="Select__wrapper Select--full"
+>
+  <select
+    aria-label="optionSelect"
+    className="Select Select--negative"
+    data-test-id="cf-ui-select"
+    disabled={false}
+    id="optionSelect"
+    name="optionSelect"
+    onChange={[Function]}
+    onKeyDown={[Function]}
+    required={false}
+  >
+    <Option
+      testId="cf-ui-select-option"
+      value="optionOne"
+    >
+      Option One
+    </Option>
+  </select>
+  <Icon
+    className="Select__icon"
+    color="muted"
+    icon="ArrowDown"
+    size="small"
+    testId="cf-ui-icon"
+  />
+</div>
+`;

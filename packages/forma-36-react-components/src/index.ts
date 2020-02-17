@@ -3,9 +3,7 @@ export { Icon } from './components/Icon/Icon';
 export { Pill } from './components/Pill/Pill';
 export { HelpText } from './components/HelpText/HelpText';
 export { FormLabel } from './components/FormLabel/FormLabel';
-export {
-  ValidationMessage,
-} from './components/ValidationMessage/ValidationMessage';
+export { ValidationMessage } from './components/ValidationMessage/ValidationMessage';
 export { TextInput } from './components/TextInput/TextInput';
 export { TextField } from './components/TextField/TextField';
 export { Textarea } from './components/Textarea/Textarea';
@@ -14,37 +12,25 @@ export { Card } from './components/Card/Card/Card';
 export { CardActions } from './components/Card/CardActions/CardActions';
 export { Tooltip } from './components/Tooltip/Tooltip';
 export { EntryCard } from './components/Card/EntryCard/EntryCard';
-export {
-  CardDragHandle,
-} from './components/Card/CardDragHandle/CardDragHandle';
+export { CardDragHandle } from './components/Card/CardDragHandle/CardDragHandle';
 export { IconButton } from './components/IconButton/IconButton';
 export { CheckboxField } from './components/CheckboxField/CheckboxField';
 export { Checkbox } from './components/Checkbox/Checkbox';
 export { TabFocusTrap } from './components/TabFocusTrap/TabFocusTrap';
 export { Spinner } from './components/Spinner/Spinner';
 export { Button } from './components/Button/Button';
-export {
-  EditorToolbar,
-} from './components/EditorToolbar/EditorToolbar/EditorToolbar';
-export {
-  EditorToolbarButton,
-} from './components/EditorToolbar/EditorToolbarButton/EditorToolbarButton';
-export { Dropdown } from './components/Dropdown/Dropdown/Dropdown';
-export {
-  DropdownListItem,
-} from './components/Dropdown/DropdownListItem/DropdownListItem';
+export { EditorToolbar } from './components/EditorToolbar/EditorToolbar/EditorToolbar';
+export { EditorToolbarButton } from './components/EditorToolbar/EditorToolbarButton/EditorToolbarButton';
+export { Dropdown } from './components/Dropdown/Dropdown';
+export { DropdownListItem } from './components/Dropdown/DropdownListItem/DropdownListItem';
 export { DropdownList } from './components/Dropdown/DropdownList/DropdownList';
-export {
-  EditorToolbarDivider,
-} from './components/EditorToolbar/EditorToolbarDivider/EditorToolbarDivider';
+export { EditorToolbarDivider } from './components/EditorToolbar/EditorToolbarDivider/EditorToolbarDivider';
 export { SelectField } from './components/SelectField/SelectField';
 export { Select } from './components/Select/Select/Select';
 export { Option } from './components/Select/Option/Option';
-export {
-  InlineEntryCard,
-} from './components/Card/InlineEntryCard/InlineEntryCard';
+export { InlineEntryCard } from './components/Card/InlineEntryCard/InlineEntryCard';
 export { Illustration } from './components/Illustration/Illustration';
-export { Table } from './components/Table/Table/Table';
+export { Table } from './components/Table/Table';
 export { TableBody } from './components/Table/TableBody/TableBody';
 export { TableCell } from './components/Table/TableCell/TableCell/TableCell';
 export { TableHead } from './components/Table/TableHead/TableHead';
@@ -58,7 +44,7 @@ export { InViewport } from './components/InViewport/InViewport';
 export { Modal } from './components/Modal/Modal/Modal';
 export { ModalConfirm } from './components/Modal/ModalConfirm/ModalConfirm';
 export { FieldGroup } from './components/Form/FieldGroup/FieldGroup';
-export { Form } from './components/Form/Form/Form';
+export { Form } from './components/Form/Form';
 export { Note } from './components/Note/Note';
 export { Notification } from './components/Notification';
 export { ControlledInput } from './components/ControlledInput/ControlledInput';
@@ -70,34 +56,22 @@ export {
   RadioButtonField,
 } from './components/RadioButtonField/RadioButtonField';
 export { Subheading } from './components/Typography/Subheading/Subheading';
-export {
-  SectionHeading,
-} from './components/Typography/SectionHeading/SectionHeading';
+export { SectionHeading } from './components/Typography/SectionHeading/SectionHeading';
 export { Paragraph } from './components/Typography/Paragraph/Paragraph';
 export { DisplayText } from './components/Typography/DisplayText/DisplayText';
-export { List } from './components/List/List/List';
+export { List } from './components/List/List';
 export { ListItem } from './components/List/ListItem/ListItem';
-export {
-  SkeletonBodyText,
-} from './components/Skeleton/SkeletonBodyText/SkeletonBodyText';
-export {
-  SkeletonContainer,
-} from './components/Skeleton/SkeletonContainer/SkeletonContainer';
-export {
-  SkeletonDisplayText,
-} from './components/Skeleton/SkeletonDisplayText/SkeletonDisplayText';
+export { SkeletonBodyText } from './components/Skeleton/SkeletonBodyText/SkeletonBodyText';
+export { SkeletonContainer } from './components/Skeleton/SkeletonContainer/SkeletonContainer';
+export { SkeletonDisplayText } from './components/Skeleton/SkeletonDisplayText/SkeletonDisplayText';
 export { SkeletonText } from './components/Skeleton/SkeletonText/SkeletonText';
-export {
-  SkeletonImage,
-} from './components/Skeleton/SkeletonImage/SkeletonImage';
+export { SkeletonImage } from './components/Skeleton/SkeletonImage/SkeletonImage';
 export { Tabs } from './components/Tabs/Tabs';
 export { Tab } from './components/Tabs/Tab';
 export { TabPanel } from './components/Tabs/TabPanel';
 export { Typography } from './components/Typography/Typography/Typography';
-export { EntityList } from './components/EntityList/EntityList/EntityList';
-export {
-  EntityListItem,
-} from './components/EntityList/EntityListItem/EntityListItem';
+export { EntityList } from './components/EntityList/EntityList';
+export { EntityListItem } from './components/EntityList/EntityListItem/EntityListItem';
 export { EmptyState } from './components/EmptyState/EmptyState';
 export { Switch } from './components/Switch/Switch';
 export { Workbench } from './components/Workbench/Workbench';

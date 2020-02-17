@@ -3,8 +3,8 @@ import { storiesOf } from '@storybook/react';
 import { text } from '@storybook/addon-knobs/react';
 
 import List from './List';
-import ListItem from '../ListItem';
-import TextLink from '../../TextLink';
+import ListItem from './ListItem';
+import TextLink from '../TextLink';
 
 storiesOf('Components|List', module)
   .addParameters({
