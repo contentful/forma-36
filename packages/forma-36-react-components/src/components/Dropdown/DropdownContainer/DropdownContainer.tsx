@@ -73,6 +73,29 @@ class DropdownContainer extends Component<
     this.props.getRef(this.dropdown);
   }
 
+  componentDidUpdate(
+    prevProps: DropdownContainerProps,
+    prevState: DropdownState,
+  ) {
+    if (!this.dropdown) {
+      return;
+    }
+
+    const dropdownRect = this.dropdown.getBoundingClientRect();
+
+    if (
+      dropdownRect.width !== prevState.dropdownDimensions.width ||
+      dropdownRect.height !== prevState.dropdownDimensions.height
+    ) {
+      this.setState({
+        dropdownDimensions: {
+          width: dropdownRect.width,
+          height: dropdownRect.height,
+        },
+      });
+    }
+  }
+
   componentWillUnmount() {
     document.body.removeChild(this.portalTarget);
     document.removeEventListener('mousedown', this.trackOutsideClick, true);
