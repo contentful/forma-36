@@ -65,6 +65,7 @@ export { ControlledInput } from './components/ControlledInput/ControlledInput';
 export {
   ControlledInputField,
 } from './components/ControlledInputField/ControlledInputField';
+export { RadioButton } from './components/RadioButton/RadioButton';
 export {
   RadioButtonField,
 } from './components/RadioButtonField/RadioButtonField';
