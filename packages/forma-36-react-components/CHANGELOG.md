@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.31.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.31.3...@contentful/forma-36-react-components@3.31.4) (2020-02-20)
+
+
+### Bug Fixes
+
+* **RadioButton:** Export RadioButton component ([5da536c](https://github.com/contentful/forma-36/commit/5da536c5cb2474c3a84e034bd063d3e35e624326))
+
+
+
+
+
 ## [3.31.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.31.2...@contentful/forma-36-react-components@3.31.3) (2020-02-17)
 
 
