@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { axe } from 'jest-axe';
 import EntityList from './EntityList';
-import EntityListItem from './../EntityListItem';
+import EntityListItem from './EntityListItem';
 
 it('renders the component', () => {
   const output = shallow(<EntityList />);

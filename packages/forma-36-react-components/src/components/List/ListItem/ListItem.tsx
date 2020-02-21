@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import cn from 'classnames';
 
 import styles from './ListItem.css';
-import List from '../List/List';
+import List from '../List';
 
 export type ListItemProps = {
   className?: string;

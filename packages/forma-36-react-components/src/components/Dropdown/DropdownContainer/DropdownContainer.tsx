@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import cn from 'classnames';
 import ReactDOM from 'react-dom';
 import InViewport from '../../InViewport';
-import {
-  positionType,
-  AnchorDimensionsAndPositonType,
-} from '../Dropdown/Dropdown';
+import { positionType, AnchorDimensionsAndPositonType } from '../Dropdown';
 
 import styles from './DropdownContainer.css';
 

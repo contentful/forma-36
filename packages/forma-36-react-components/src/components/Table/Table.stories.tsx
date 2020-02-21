@@ -4,10 +4,10 @@ import { boolean, text } from '@storybook/addon-knobs';
 
 import notes from './Table.md';
 import Table from './Table';
-import TableHead from '../TableHead';
-import TableBody from '../TableBody';
-import TableCell from '../TableCell';
-import TableRow from '../TableRow';
+import TableHead from './TableHead';
+import TableBody from './TableBody';
+import TableCell from './TableCell';
+import TableRow from './TableRow';
 
 storiesOf('Components|Table', module)
   .addParameters({
