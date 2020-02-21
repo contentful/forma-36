@@ -4,7 +4,7 @@ import cn from 'classnames';
 import InViewport from '../InViewport';
 import styles from './Tooltip.css';
 
-export interface TooltipContainerProps {
+interface TooltipContainerProps {
   children: React.ReactNode;
   setRef: Function;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -29,7 +29,7 @@ const TooltipContainer: React.StatelessComponent<TooltipContainerProps> = (
   const ContainerElement = containerElement;
   return (
     <ContainerElement
-      ref={(ref: HTMLSpanElement) => setRef(ref)}
+      ref={setRef}
       className={cn(styles['Tooltip__target-wrapper'], targetWrapperClassName)}
       {...otherProps}
     >
@@ -42,13 +42,11 @@ export type TooltipPlace = 'top' | 'bottom' | 'right' | 'left';
 
 export type TooltipProps = {
   children: React.ReactNode;
-
   containerElement?: React.ReactNode;
   place?: TooltipPlace;
   isVisible?: boolean;
   maxWidth?: number | string;
   testId?: string;
-
   id?: string;
   className?: string;
   content?: React.ReactNode;
@@ -71,67 +69,43 @@ const defaultProps = {
   maxWidth: 360,
 };
 
-export class Tooltip extends Component<TooltipProps, TooltipState> {
-  static defaultProps = defaultProps;
+interface TooltipWrapperProps {
+  children: React.ReactNode;
+  containerDomNode?: HTMLElement;
+  place?: TooltipPlace;
+  isVisible?: boolean;
+  id?: string;
+  maxWidth?: number | string;
+  className?: string;
+  testId?: string;
+  setPlace: Function;
+}
 
-  portalTarget: HTMLDivElement | null = null;
-  place: TooltipPlace = 'top';
-  containerDomNode: HTMLSpanElement | null = null;
-  tooltipDomNode: HTMLDivElement | null = null;
+class TooltipWrapper extends Component<TooltipWrapperProps> {
+  tooltipDomNode?: HTMLDivElement;
+  containerDomNode?: HTMLSpanElement;
 
-  state: Partial<TooltipState> = {
-    isVisible: this.props.isVisible,
+  state = {
+    calculatedPosition: { top: undefined, left: undefined },
   };
-
-  constructor(props: TooltipProps) {
-    super(props);
-    this.place = props.place;
-  }
-
-  componentWillMount() {
-    if (typeof window !== `undefined`) {
-      this.portalTarget = window.document.createElement('div');
-      window.document.body.appendChild(this.portalTarget);
-    }
-  }
 
   componentDidMount() {
-    if (this.props.isVisible) {
-      this.setState({ isVisible: true });
-    }
+    this.setState({
+      calculatedPosition: this.calculatePosition(),
+    });
   }
-
-  componentDidUpdate(prevProps: TooltipProps) {
-    if (prevProps.content !== this.props.content) {
-      this.forceUpdate();
-    }
-  }
-
-  componentWillUnmount() {
-    if (this.portalTarget) {
-      window.document.body.removeChild(this.portalTarget);
-    }
-  }
-
-  setPlace = (place: TooltipPlace) => {
-    if (this.state.isVisible) {
-      this.place = place;
-      this.forceUpdate();
-    }
-  };
 
   calculatePosition = () => {
-    if (!this.containerDomNode || !this.tooltipDomNode) {
-      return { top: null, left: null };
+    const { containerDomNode, place } = this.props;
+    if (!containerDomNode || !this.tooltipDomNode) {
+      return { top: undefined, left: undefined };
     }
-
     let calculatedPosition = {};
-    const containerRect = this.containerDomNode.getBoundingClientRect();
+    const containerRect = containerDomNode.getBoundingClientRect();
     const tooltipRect = this.tooltipDomNode.getBoundingClientRect();
     const carretVerticalOffset = 20;
     const carretHorizontalOffset = 12;
-
-    switch (this.place) {
+    switch (place) {
       case 'top':
         calculatedPosition = {
           left:
@@ -176,6 +150,98 @@ export class Tooltip extends Component<TooltipProps, TooltipState> {
     return calculatedPosition;
   };
 
+  render() {
+    const {
+      isVisible,
+      id,
+      maxWidth,
+      className,
+      testId,
+      setPlace,
+      children,
+    } = this.props;
+    return (
+      <div
+        role="tooltip"
+        id={id}
+        aria-hidden={isVisible ? 'false' : 'true'}
+        style={{
+          ...this.state.calculatedPosition,
+          maxWidth: maxWidth,
+        }}
+        ref={(ref: HTMLDivElement) => {
+          this.tooltipDomNode = ref;
+        }}
+        contentEditable={false}
+        onFocus={() => {
+          this.setState({ isVisible: false });
+        }}
+        onMouseOver={() => {
+          this.setState({ isVisible: false });
+        }}
+        className={className}
+        data-test-id={testId}
+      >
+        <InViewport
+          onOverflowTop={() => setPlace('bottom')}
+          onOverflowLeft={() => setPlace('right')}
+          onOverflowBottom={() => setPlace('top')}
+          onOverflowRight={() => setPlace('left')}
+        >
+          {children}
+        </InViewport>
+      </div>
+    );
+  }
+}
+
+export class Tooltip extends Component<TooltipProps, TooltipState> {
+  static defaultProps = defaultProps;
+  portalTarget: HTMLDivElement | null = null;
+  place: TooltipPlace = 'top';
+  containerDomNode?: HTMLSpanElement;
+  tooltipDomNode?: HTMLDivElement;
+  state: Partial<TooltipState> = {
+    isVisible: this.props.isVisible,
+  };
+
+  constructor(props: TooltipProps) {
+    super(props);
+    this.place = props.place;
+  }
+
+  componentWillMount() {
+    if (typeof window !== `undefined`) {
+      this.portalTarget = window.document.createElement('div');
+      window.document.body.appendChild(this.portalTarget);
+    }
+  }
+
+  componentDidMount() {
+    if (this.props.isVisible) {
+      this.setState({ isVisible: true });
+    }
+  }
+
+  componentDidUpdate(prevProps: TooltipProps) {
+    if (prevProps.content !== this.props.content) {
+      this.forceUpdate();
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.portalTarget) {
+      window.document.body.removeChild(this.portalTarget);
+    }
+  }
+
+  setPlace = (place: TooltipPlace) => {
+    if (this.state.isVisible) {
+      this.place = place;
+      this.forceUpdate();
+    }
+  };
+
   renderTooltip = (content: React.ReactNode) => {
     if (!this.portalTarget) {
       return null;
@@ -189,40 +255,21 @@ export class Tooltip extends Component<TooltipProps, TooltipState> {
         [styles['Tooltip--hidden']]: !this.state.isVisible,
       },
     );
-    const tooltip = (
-      <div
-        role="tooltip"
+    return ReactDOM.createPortal(
+      <TooltipWrapper
+        containerDomNode={this.containerDomNode}
+        place={this.place}
+        isVisible={this.state.isVisible}
         id={this.props.id}
-        aria-hidden={this.state.isVisible ? 'false' : 'true'}
-        style={{
-          ...this.calculatePosition(),
-          maxWidth: this.props.maxWidth,
-        }}
-        ref={(ref: HTMLDivElement) => {
-          this.tooltipDomNode = ref;
-        }}
-        contentEditable={false}
-        onFocus={() => {
-          this.setState({ isVisible: false });
-        }}
-        onMouseOver={() => {
-          this.setState({ isVisible: false });
-        }}
+        maxWidth={this.props.maxWidth}
         className={classNames}
-        data-test-id={this.props.testId}
+        testId={this.props.testId}
+        setPlace={this.setPlace}
       >
-        <InViewport
-          onOverflowTop={() => this.setPlace('bottom')}
-          onOverflowLeft={() => this.setPlace('right')}
-          onOverflowBottom={() => this.setPlace('top')}
-          onOverflowRight={() => this.setPlace('left')}
-        >
-          {content}
-        </InViewport>
-      </div>
+        {content}
+      </TooltipWrapper>,
+      this.portalTarget as Element,
     );
-
-    return ReactDOM.createPortal(tooltip, this.portalTarget as Element);
   };
 
   render() {
@@ -242,7 +289,6 @@ export class Tooltip extends Component<TooltipProps, TooltipState> {
       maxWidth,
       ...otherProps
     } = this.props;
-
     return (
       <TooltipContainer
         containerElement={containerElement}
@@ -279,7 +325,7 @@ export class Tooltip extends Component<TooltipProps, TooltipState> {
       >
         <React.Fragment>
           {children}
-          {content && this.renderTooltip(content)}
+          {content && this.state.isVisible && this.renderTooltip(content)}
         </React.Fragment>
       </TooltipContainer>
     );

@@ -1,77 +1,94 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { mount } from 'enzyme';
 import { axe } from 'jest-axe';
 import Tooltip from './Tooltip';
 
-it('renders the component', () => {
-  const output = shallow(
+it('does not render the component if no mouseover event on child', () => {
+  const output = mount(
     <Tooltip content="Tooltip content">
-      <span>hi</span>
+      <span>Hover me</span>
     </Tooltip>,
   );
 
+  expect(output).toMatchSnapshot();
+});
+
+it('renders the component', () => {
+  const output = mount(
+    <Tooltip content="Tooltip content">
+      <span id="test">Hover me</span>
+    </Tooltip>,
+  );
+
+  output.find('#test').simulate('mouseover');
   expect(output).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(
+  const output = mount(
     <Tooltip content="Tooltip content" className="extra-class-name">
-      <span>hi</span>
+      <span id="test">Hover me</span>
     </Tooltip>,
   );
 
+  output.find('#test').simulate('mouseover');
   expect(output).toMatchSnapshot();
 });
 
 it('renders the component with a target wrapper classname', () => {
-  const output = shallow(
+  const output = mount(
     <Tooltip
       content="Tooltip content"
       targetWrapperClassName="target-wrapper-class-name"
     >
-      <span>hi</span>
+      <span id="test">Hover me</span>
     </Tooltip>,
   );
 
+  output.find('#test').simulate('mouseover');
   expect(output).toMatchSnapshot();
 });
 
 it('renders the component with a place attribute', () => {
-  const output = shallow(
+  const output = mount(
     <Tooltip content="Tooltip content" place="left">
-      <span>hi</span>
+      <span id="test">Hover me</span>
     </Tooltip>,
   );
 
+  output.find('#test').simulate('mouseover');
   expect(output).toMatchSnapshot();
 });
 
 it('renders the component with a id attribute', () => {
-  const output = shallow(
+  const output = mount(
     <Tooltip id="Tooltip">
-      <span>hi</span>
+      <span id="test">Hover me</span>
     </Tooltip>,
   );
 
+  output.find('#test').simulate('mouseover');
   expect(output).toMatchSnapshot();
 });
 
 it('renders the component as span with a id attribute', () => {
-  const output = shallow(
+  const output = mount(
     <Tooltip containerElement="span">
-      <span>hi</span>
+      <span id="test">Hover me</span>
     </Tooltip>,
   );
 
+  output.find('#test').simulate('mouseover');
   expect(output).toMatchSnapshot();
 });
 
 it('has no a11y issues', async () => {
   const output = mount(
     <Tooltip id="Tooltip">
-      <span>hi</span>
+      <span>Hover me</span>
     </Tooltip>,
   ).html();
+
   const results = await axe(output);
 
   expect(results).toHaveNoViolations();
