@@ -4,10 +4,10 @@ import { action } from '@storybook/addon-actions';
 import { boolean, select } from '@storybook/addon-knobs';
 
 import Form from './Form';
-import FieldGroup from '../FieldGroup';
-import Button from '../../Button';
-import TextField from '../../TextField';
-import CheckboxField from '../../CheckboxField';
+import FieldGroup from './FieldGroup';
+import Button from '../Button';
+import TextField from '../TextField';
+import CheckboxField from '../CheckboxField';
 
 function DefaultStory() {
   const [agreeTerms, setTerms] = useState('yes');

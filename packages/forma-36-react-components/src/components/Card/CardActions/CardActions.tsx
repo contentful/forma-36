@@ -1,5 +1,5 @@
 import React, { Component, MouseEvent as ReactMouseEvent } from 'react';
-import Dropdown from '../../Dropdown/Dropdown';
+import Dropdown from '../../Dropdown';
 import DropdownList from '../../Dropdown/DropdownList';
 import IconButton, { IconButtonProps } from '../../IconButton/IconButton';
 
