@@ -8,7 +8,7 @@ import React, {
 } from 'react';
 import cn from 'classnames';
 import { CSSTransition } from 'react-transition-group';
-import Icon, { IconType } from '../Icon/Icon';
+import Icon, { IconType } from '../Icon';
 import TabFocusTrap from '../TabFocusTrap';
 import Spinner from '../Spinner';
 

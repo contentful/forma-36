@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import cn from 'classnames';
 import Icon from '../Icon';
-import { TooltipPlace, Tooltip } from '../Tooltip/Tooltip';
+import { TooltipPlace, Tooltip } from '../Tooltip';
 import TabFocusTrap from '../TabFocusTrap';
 import styles from './CopyButton.css';
 

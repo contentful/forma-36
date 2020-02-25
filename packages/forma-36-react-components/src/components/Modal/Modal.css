@@ -101,7 +101,6 @@
 .Modal.Modal--overflow {
   overflow: auto;
   max-height: none;
-  max-width: none;
 }
 
 .Modal.Modal--zen {

@@ -26,7 +26,7 @@ export { DropdownListItem } from './components/Dropdown/DropdownListItem/Dropdow
 export { DropdownList } from './components/Dropdown/DropdownList/DropdownList';
 export { EditorToolbarDivider } from './components/EditorToolbar/EditorToolbarDivider/EditorToolbarDivider';
 export { SelectField } from './components/SelectField/SelectField';
-export { Select } from './components/Select/Select/Select';
+export { Select } from './components/Select/Select';
 export { Option } from './components/Select/Option/Option';
 export { InlineEntryCard } from './components/Card/InlineEntryCard/InlineEntryCard';
 export { Illustration } from './components/Illustration/Illustration';
@@ -41,25 +41,21 @@ export { Asset } from './components/Asset/Asset';
 export { Tag } from './components/Tag/Tag';
 export { Heading } from './components/Typography/Heading/Heading';
 export { InViewport } from './components/InViewport/InViewport';
-export { Modal } from './components/Modal/Modal/Modal';
+export { Modal } from './components/Modal/Modal';
 export { ModalConfirm } from './components/Modal/ModalConfirm/ModalConfirm';
 export { FieldGroup } from './components/Form/FieldGroup/FieldGroup';
 export { Form } from './components/Form/Form';
 export { Note } from './components/Note/Note';
 export { Notification } from './components/Notification';
 export { ControlledInput } from './components/ControlledInput/ControlledInput';
-export {
-  ControlledInputField,
-} from './components/ControlledInputField/ControlledInputField';
+export { ControlledInputField } from './components/ControlledInputField/ControlledInputField';
 export { RadioButton } from './components/RadioButton/RadioButton';
-export {
-  RadioButtonField,
-} from './components/RadioButtonField/RadioButtonField';
+export { RadioButtonField } from './components/RadioButtonField/RadioButtonField';
 export { Subheading } from './components/Typography/Subheading/Subheading';
 export { SectionHeading } from './components/Typography/SectionHeading/SectionHeading';
 export { Paragraph } from './components/Typography/Paragraph/Paragraph';
 export { DisplayText } from './components/Typography/DisplayText/DisplayText';
-export { List } from './components/List/List';
+export { List } from './components/List';
 export { ListItem } from './components/List/ListItem/ListItem';
 export { SkeletonBodyText } from './components/Skeleton/SkeletonBodyText/SkeletonBodyText';
 export { SkeletonContainer } from './components/Skeleton/SkeletonContainer/SkeletonContainer';
