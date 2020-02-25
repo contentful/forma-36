@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.31.6](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.31.5...@contentful/forma-36-react-components@3.31.6) (2020-02-25)
+
+
+### Bug Fixes
+
+* **ModalWindow:** Remove unsetting of max width when allowHeightOverflow is set ([e691e4c](https://github.com/contentful/forma-36/commit/e691e4c475253d7bd8da8a4fcfa5a90566ced02d))
+
+
+
+
+
 ## [3.31.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.31.4...@contentful/forma-36-react-components@3.31.5) (2020-02-21)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
