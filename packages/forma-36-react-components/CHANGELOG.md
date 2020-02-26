@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.31.7](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.31.6...@contentful/forma-36-react-components@3.31.7) (2020-02-26)
+
+
+### Bug Fixes
+
+* **Tooltip:** Render tooltip content when visible ([213a1e5](https://github.com/contentful/forma-36/commit/213a1e56fdae91b9cfbeef83392964423f08a6b7))
+
+
+
+
+
 ## [3.31.6](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.31.5...@contentful/forma-36-react-components@3.31.6) (2020-02-25)
 
 
