@@ -79,6 +79,8 @@ export type EntryCardPropTypes = {
    * Changes the height of the component. When small will also ensure thumbnail and description aren't rendered
    */
   size: 'default' | 'small';
+
+  href?: string;
 } & typeof defaultProps;
 
 const defaultProps = {
@@ -185,6 +187,7 @@ export class EntryCard extends Component<EntryCardPropTypes> {
       cardDragHandleComponent,
       cardDragHandleProps,
       withDragHandle,
+      href,
       ...otherProps
     } = this.props;
 
@@ -202,6 +205,7 @@ export class EntryCard extends Component<EntryCardPropTypes> {
         className={classNames}
         onClick={!loading ? onClick : undefined}
         testId={testId}
+        href={href}
         padding="none"
         {...otherProps}
       >

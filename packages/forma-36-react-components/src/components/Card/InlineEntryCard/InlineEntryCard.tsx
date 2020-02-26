@@ -32,6 +32,7 @@ export type InlineEntryCardPropTypes = {
    * An ID used for testing purposes applied as a data attribute (data-test-id)
    */
   testId?: string;
+  href?: string;
   /**
    * Child nodes to be rendered in the component
    */
@@ -54,6 +55,7 @@ export class InlineEntryCard extends Component<InlineEntryCardPropTypes> {
       testId,
       isLoading,
       status,
+      href,
       ...otherProps
     } = this.props;
 
@@ -71,6 +73,7 @@ export class InlineEntryCard extends Component<InlineEntryCardPropTypes> {
       <Card
         selected={isSelected}
         className={classNames}
+        href={href}
         {...otherProps}
         data-test-id={testId}
       >
