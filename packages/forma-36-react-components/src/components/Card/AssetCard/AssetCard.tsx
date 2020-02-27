@@ -66,6 +66,8 @@ export type AssetCardProps = {
    * Renders a small variant of the card which accommodates a 150x150px image
    */
   size?: 'small' | 'default';
+
+  href?: string;
 } & typeof defaultProps;
 
 const defaultProps = {
@@ -143,6 +145,7 @@ export class AssetCard extends Component<AssetCardProps> {
       cardDragHandleProps,
       cardDragHandleComponent,
       withDragHandle,
+      href,
       ...otherProps
     } = this.props;
 
@@ -161,6 +164,7 @@ export class AssetCard extends Component<AssetCardProps> {
         padding="none"
         title={title}
         testId={testId}
+        href={href}
         {...otherProps}
       >
         {isLoading ? (
