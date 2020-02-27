@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.31.8](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.31.7...@contentful/forma-36-react-components@3.31.8) (2020-02-27)
+
+
+### Bug Fixes
+
+* **cards:** fix missing href ts definition ([#429](https://github.com/contentful/forma-36/issues/429)) ([9100555](https://github.com/contentful/forma-36/commit/9100555c54036d7e7215a717b991d5e93abe62b7))
+
+
+
+
+
 ## [3.31.7](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.31.6...@contentful/forma-36-react-components@3.31.7) (2020-02-26)
 
 
