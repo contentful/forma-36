@@ -8,10 +8,19 @@ import React, {
 } from 'react';
 import isHotkey from 'is-hotkey';
 import orderBy from 'lodash.orderby';
-import * as dateFns from 'date-fns';
+import {
+  format,
+  addHours,
+  addMinutes,
+  startOfDay,
+  parse,
+  isBefore,
+  isValid,
+} from 'date-fns';
 import {
   HelpText,
   FormLabel,
+  TextInput,
   ValidationMessage,
   Dropdown,
   DropdownListItem,
@@ -22,9 +31,6 @@ import { css } from 'emotion';
 import tokens from '@contentful/forma-36-tokens';
 
 const styles = {
-  timePicker: css({
-    display: 'block',
-  }),
   selectedTime: css({
     background: tokens.colorElementLightest,
   }),
@@ -55,35 +61,13 @@ const styles = {
       paddingRight: tokens.spacingXl,
     },
   }),
-  timeInput: css({
-    width: '100%',
-    flexBasis: '100%',
-    justifyContent: 'center',
-    display: 'flex',
-    alignItems: 'center',
-    border: `1px solid ${tokens.colorElementMid}`,
-    paddingLeft: tokens.spacingXs,
-    paddingRight: tokens.spacingXs,
-    height: '40px',
-    color: tokens.colorTextMid,
-    textAlign: 'center',
-    fontSize: tokens.fontSizeM,
-    margin: 0,
-    MozAppearance: 'textfield',
-    '&::-webkit-inner-spin-button, &::-webkit-outer-spin-button': {
-      WebkitAppearance: 'none',
-      margin: 0,
-    },
-    '&:focus': {
-      outline: 'none',
-      border: `1px solid ${tokens.colorPrimary}`,
-      boxShadow: tokens.glowPrimary,
-    },
+  timeZonePicker: css({
+    marginLeft: tokens.spacingS,
   }),
 };
 
 const DATE_NOW_FORMAT = 'dd/MM/yyyy';
-const DATE_NOW = dateFns.format(new Date(), DATE_NOW_FORMAT);
+const DATE_NOW = format(new Date(), DATE_NOW_FORMAT);
 
 const DATEFNS_12H_FORMAT = 'h:mm a';
 const DATEFNS_24H_FORMAT = 'HH:mm';
@@ -91,22 +75,20 @@ const DATEFNS_24H_FORMAT = 'HH:mm';
 function createHours() {
   const hours = [];
   for (let hour = 0; hour < 24; hour++) {
-    hours.push(dateFns.addHours(dateFns.startOfDay(new Date()), hour));
-    hours.push(
-      dateFns.addMinutes(
-        dateFns.addHours(dateFns.startOfDay(new Date()), hour),
-        30
-      )
-    );
+    hours.push(addHours(startOfDay(new Date()), hour));
+    hours.push(addMinutes(addHours(startOfDay(new Date()), hour), 30));
   }
   return orderBy(hours, (time: Date) => time, 'asc').map((m: Date) =>
-    dateFns.format(m, DATEFNS_12H_FORMAT)
+    format(m, DATEFNS_12H_FORMAT)
   );
 }
 
 const allHourSuggestions = createHours();
 
 function parseRawInput(raw: string) {
+  if (!raw) {
+    return null;
+  }
   const normalisedValue = `${DATE_NOW} ${raw}`;
   const times = [
     'hh:mm a',
@@ -120,13 +102,9 @@ function parseRawInput(raw: string) {
     'HH',
   ]
     .map(timeFormat =>
-      dateFns.parse(
-        normalisedValue,
-        `${DATE_NOW_FORMAT} ${timeFormat}`,
-        new Date()
-      )
+      parse(normalisedValue, `${DATE_NOW_FORMAT} ${timeFormat}`, new Date())
     )
-    .filter(date => dateFns.isValid(date));
+    .filter(date => isValid(date));
 
   if (times.length === 0) {
     return null;
@@ -144,13 +122,13 @@ function getSuggestionList(value: string, date: string) {
   let isActive = true;
   return allHourSuggestions.map(timeSuggestion => {
     if (
-      dateFns.isBefore(
-        dateFns.parse(
+      isBefore(
+        parse(
           `${date} ${timeSuggestion}`,
           `yyyy-MM-dd ${DATEFNS_12H_FORMAT}`,
           new Date()
         ),
-        dateFns.parse(
+        parse(
           `${date} ${value}`,
           `yyyy-MM-dd ${DATEFNS_24H_FORMAT}`,
           new Date()
@@ -178,6 +156,7 @@ export type TimepickerProps = {
   id?: string;
   name?: string;
   isRequired?: boolean;
+  disabled: boolean;
 } & typeof defaultProps;
 
 const defaultProps = {
@@ -194,6 +173,7 @@ const TimePicker: React.FC<TimepickerProps> = ({
   onBlur,
   isRequired,
   labelText,
+  disabled,
 }) => {
   const [isTimeSuggestionOpen, setTimeSuggestionOpen] = useState(false);
   const [filteredHours, setFilteredHours] = useState(
@@ -201,11 +181,10 @@ const TimePicker: React.FC<TimepickerProps> = ({
   );
   const listRef = useRef() as React.MutableRefObject<HTMLUListElement>;
   const activeListItem = useRef() as React.MutableRefObject<HTMLLIElement>;
-  const [selectedTime, setSelectedTime] = useState(
-    dateFns.format(
-      dateFns.parse(value, DATEFNS_24H_FORMAT, new Date()),
-      DATEFNS_12H_FORMAT
-    )
+  const [selectedTime, setSelectedTime] = useState(() =>
+    value
+      ? format(parse(value, DATEFNS_24H_FORMAT, new Date()), DATEFNS_12H_FORMAT)
+      : value
   );
   const [dropdownContainer, setDropdownContainer] = useState(null);
   const inputRef = React.createRef<HTMLInputElement>();
@@ -218,13 +197,16 @@ const TimePicker: React.FC<TimepickerProps> = ({
 
   const getTimeFromUserInputOrDefaultToValue = useCallback(() => {
     const parsedTime = parseRawInput(selectedTime);
-    if (parsedTime && dateFns.isValid(parsedTime)) {
-      return dateFns.format(parsedTime, DATEFNS_12H_FORMAT);
-    } else {
-      return dateFns.format(
-        dateFns.parse(value, DATEFNS_24H_FORMAT, new Date()),
+    if (parsedTime && isValid(parsedTime)) {
+      return format(parsedTime, DATEFNS_12H_FORMAT);
+    } else if (value) {
+      console.log('parsedTime not valid: value', value);
+      return format(
+        parse(value, DATEFNS_24H_FORMAT, new Date()),
         DATEFNS_12H_FORMAT
       );
+    } else {
+      return '';
     }
   }, [selectedTime, value]);
 
@@ -254,8 +236,8 @@ const TimePicker: React.FC<TimepickerProps> = ({
     val => {
       setSelectedTime(val);
       const parsedTime = parseRawInput(val);
-      if (parsedTime && dateFns.isValid(parsedTime)) {
-        const time24H = dateFns.format(parsedTime, DATEFNS_24H_FORMAT);
+      if (parsedTime && isValid(parsedTime)) {
+        const time24H = format(parsedTime, DATEFNS_24H_FORMAT);
         setFilteredHours(getSuggestionList(time24H, date));
         onChange(time24H);
       }
@@ -315,7 +297,7 @@ const TimePicker: React.FC<TimepickerProps> = ({
   );
 
   return (
-    <div className={styles.timePicker}>
+    <div>
       {labelText && (
         <FormLabel required={isRequired} htmlFor="scheduleTimeForm">
           {labelText}
@@ -329,9 +311,8 @@ const TimePicker: React.FC<TimepickerProps> = ({
           // @ts-ignore
           getContainerRef={setDropdownContainer}
           toggleElement={
-            <input
-              ref={inputRef}
-              className={styles.timeInput}
+            <TextInput
+              inputRef={inputRef}
               name="time input"
               data-test-id="time"
               value={selectedTime}
@@ -340,8 +321,14 @@ const TimePicker: React.FC<TimepickerProps> = ({
               onFocus={handleFocus}
               onBlur={handleBlur}
               onChange={e => handleChange(e.target.value)}
+              disabled={disabled}
+              autoComplete="off"
             />
           }
+          onClose={() => {
+            console.log('onCLose');
+            setTimeSuggestionOpen(false);
+          }}
           isOpen={isTimeSuggestionOpen}
         >
           <DropdownList maxHeight={200} listRef={listRef}>
