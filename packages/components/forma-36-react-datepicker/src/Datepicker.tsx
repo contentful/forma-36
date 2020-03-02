@@ -1,7 +1,11 @@
 import React, { Component, FocusEventHandler, FocusEvent } from 'react';
 import Pikaday from 'pikaday';
-import * as dateFns from 'date-fns';
-import { TextField } from '@contentful/forma-36-react-components';
+import format from 'date-fns/format';
+import {
+  TextInput,
+  FormLabel,
+  ValidationMessage,
+} from '@contentful/forma-36-react-components';
 import { css, cx } from 'emotion';
 
 const styles = {
@@ -18,15 +22,17 @@ const styles = {
 };
 
 export type DatePickerProps = {
-  required?: boolean;
+  disabled: boolean;
+  required: boolean;
   value?: Date;
   minDate?: Date;
   maxDate?: Date;
   onChange?: (val: Date) => void;
   onBlur?: FocusEventHandler;
   helpText?: string;
-  labelText: string;
+  labelText?: string;
   id?: string;
+  testId?: string;
   dateFormat?: string;
 } & typeof defaultProps;
 
@@ -39,6 +45,7 @@ const defaultProps = {
   onBlur: () => {},
   name: 'cf-ui-datepicker',
   id: 'cf-ui-datepicker',
+  testId: 'cf-ui-datepicker',
   dateFormat: 'do MMM yyyy',
 };
 
@@ -86,27 +93,38 @@ export class Datepicker extends Component<DatePickerProps, DatePickerState> {
   };
 
   render() {
-    const { labelText, required, name, helpText, id, dateFormat } = this.props;
+    const {
+      labelText,
+      required,
+      name,
+      id,
+      testId,
+      dateFormat,
+      disabled,
+    } = this.props;
     return (
       <div className={styles.datePickerWrapper}>
-        <TextField
-          labelText={labelText}
-          helpText={helpText}
+        {labelText && (
+          <FormLabel required={required} htmlFor={id}>
+            {labelText}
+          </FormLabel>
+        )}
+        <TextInput
+          disabled={disabled}
           required={required}
           name={name}
-          textInputProps={{
-            testId: 'date-input',
-            readOnly: true,
-            inputRef: this.datePickerNode,
-          }}
-          value={
-            this.props.value && dateFns.format(this.props.value, dateFormat)
-          }
-          validationMessage={this.state.validationError}
+          testId={testId}
+          readOnly={true}
+          inputRef={this.datePickerNode}
+          value={this.props.value && format(this.props.value, dateFormat)}
           id={id}
           onFocus={this.handleOpen}
           onBlur={this.handleBlur}
+          autoComplete="off"
         />
+        {this.state.validationError && (
+          <ValidationMessage>{this.state.validationError}</ValidationMessage>
+        )}
       </div>
     );
   }

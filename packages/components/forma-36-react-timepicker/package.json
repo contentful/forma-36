@@ -47,7 +47,7 @@
     "typescript": "^3.6.4"
   },
   "dependencies": {
-    "date-fns": "^2.7.0",
+    "date-fns": "^2.9.0",
     "emotion": "^10.0.23",
     "is-hotkey": "^0.1.6",
     "lodash.orderby": "^4.6.0"
