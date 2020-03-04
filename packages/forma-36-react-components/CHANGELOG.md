@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.32.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.31.8...@contentful/forma-36-react-components@3.32.0) (2020-03-04)
+
+
+### Features
+
+* **Icon:** Add cycle icon ([#430](https://github.com/contentful/forma-36/issues/430)) ([f78bcce](https://github.com/contentful/forma-36/commit/f78bcce00f115f5459ce15abe2862c2e99a24e0a))
+
+
+
+
+
 ## [3.31.8](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.31.7...@contentful/forma-36-react-components@3.31.8) (2020-02-27)
 
 
