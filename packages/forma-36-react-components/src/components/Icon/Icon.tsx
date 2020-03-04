@@ -26,6 +26,8 @@ import Code from './svg/Code.svg';
 import CodeTrimmed from './svg/CodeTrimmed.svg';
 import Copy from './svg/Copy.svg';
 import CopyTrimmed from './svg/CopyTrimmed.svg';
+import Cycle from './svg/Cycle.svg';
+import CycleTrimmed from './svg/CycleTrimmed.svg';
 import Delete from './svg/Delete.svg';
 import DeleteTrimmed from './svg/DeleteTrimmed.svg';
 import Download from './svg/Download.svg';
@@ -148,6 +150,8 @@ const iconComponents = {
   CodeTrimmed,
   Copy,
   CopyTrimmed,
+  Cycle,
+  CycleTrimmed,
   Delete,
   DeleteTrimmed,
   Download,
