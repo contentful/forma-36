@@ -71,6 +71,10 @@
     transition: none;
     background-color: var(--color-element-mid);
   }
+
+  &.Button:link {
+    border: none;
+  }
 }
 
 .Button--primary {
@@ -103,6 +107,10 @@
   & .Button__label {
     color: var(--color-element-lightest);
   }
+
+  &.Button:link {
+    border-color: var(--color-blue-dark);
+  }
 }
 
 .Button--positive {
@@ -133,6 +141,10 @@
 
   & .Button__label {
     color: var(--color-element-lightest);
+  }
+
+  &.Button:link {
+    border-color: var(--color-green-dark);
   }
 }
 
@@ -165,6 +177,10 @@
   & .Button__label {
     color: var(--color-element-lightest);
   }
+
+  &.Button:link {
+    border-color: var(--color-red-dark);
+  }
 }
 
 .Button--warning {
@@ -195,6 +211,10 @@
 
   & .Button__label {
     color: var(--color-element-lightest);
+  }
+
+  &.Button:link {
+    border-color: var(--color-orange-dark);
   }
 }
 
