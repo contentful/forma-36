@@ -1,6 +1,6 @@
 import React, { CSSProperties, Component } from 'react';
 import classNames from 'classnames';
-import Icon, { IconType } from '../Icon/Icon';
+import Icon, { IconType } from '../Icon';
 import { iconName } from '../Icon/constants';
 
 import styles from './Note.css';

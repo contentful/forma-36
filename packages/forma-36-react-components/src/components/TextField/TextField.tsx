@@ -6,11 +6,11 @@ import React, {
 } from 'react';
 import cn from 'classnames';
 import ValidationMessage from '../ValidationMessage';
-import FormLabel, { FormLabelProps } from '../FormLabel/FormLabel';
+import FormLabel, { FormLabelProps } from '../FormLabel';
 import HelpText from '../HelpText';
-import TextInput, { TextInputProps } from '../TextInput/TextInput';
-import TextLink, { TextLinkProps } from '../TextLink/TextLink';
-import Textarea, { TextareaProps } from '../Textarea/Textarea';
+import TextInput, { TextInputProps } from '../TextInput';
+import TextLink, { TextLinkProps } from '../TextLink';
+import Textarea, { TextareaProps } from '../Textarea';
 import styles from './TextField.css';
 
 export type TextFieldProps = {

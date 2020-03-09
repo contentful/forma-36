@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import SkeletonText from '../SkeletonText';
-import { SkeletonTextProps } from '../SkeletonText/SkeletonText';
+import { SkeletonTextProps } from '../SkeletonText';
 
 export type SkeletonBodyTextProps = SkeletonTextProps & typeof defaultProps;
 

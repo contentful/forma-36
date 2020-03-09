@@ -1,8 +1,8 @@
 import React, { Component, MouseEventHandler } from 'react';
 import cn from 'classnames';
-import IconButton, { IconButtonProps } from '../../IconButton/IconButton';
-import Tooltip from '../../Tooltip/Tooltip';
-import { IconType } from '../../Icon/Icon';
+import IconButton, { IconButtonProps } from '../../IconButton';
+import Tooltip from '../../Tooltip';
+import { IconType } from '../../Icon';
 import styles from './EditorToolbarButton.css';
 
 export type EditorToolbarButtonProps = {

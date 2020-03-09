@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import ControlledInput, {
-  ControlledInputPropTypes,
-} from '../ControlledInput/ControlledInput';
+import ControlledInput, { ControlledInputPropTypes } from '../ControlledInput';
 
 export type RadioButtonProps = ControlledInputPropTypes & typeof defaultProps;
 

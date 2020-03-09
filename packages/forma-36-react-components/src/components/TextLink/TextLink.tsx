@@ -1,6 +1,6 @@
 import React, { Component, MouseEventHandler } from 'react';
 import cn from 'classnames';
-import Icon, { IconType } from '../Icon/Icon';
+import Icon, { IconType } from '../Icon';
 import TabFocusTrap from '../TabFocusTrap';
 
 import styles from './TextLink.css';

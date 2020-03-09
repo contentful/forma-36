@@ -6,10 +6,10 @@ import React, {
 } from 'react';
 import cn from 'classnames';
 import ValidationMessage from '../ValidationMessage';
-import FormLabel, { FormLabelProps } from '../FormLabel/FormLabel';
+import FormLabel, { FormLabelProps } from '../FormLabel';
 import HelpText from '../HelpText';
-import Select, { SelectProps } from '../Select/Select/Select';
-import TextLink, { TextLinkProps } from '../TextLink/TextLink';
+import Select, { SelectProps } from '../Select';
+import TextLink, { TextLinkProps } from '../TextLink';
 import styles from './SelectField.css';
 
 export type SelectFieldProps = {
