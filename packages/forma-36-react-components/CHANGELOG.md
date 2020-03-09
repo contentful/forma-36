@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.32.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.32.1...@contentful/forma-36-react-components@3.32.2) (2020-03-09)
+
+
+### Bug Fixes
+
+* fix gray border issue for buttons with href ([#427](https://github.com/contentful/forma-36/issues/427)) ([b2089d5](https://github.com/contentful/forma-36/commit/b2089d5898d25a4e571b9209e1cb813155923509))
+
+
+
+
+
 ## [3.32.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.32.0...@contentful/forma-36-react-components@3.32.1) (2020-03-09)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
