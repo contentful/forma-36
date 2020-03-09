@@ -1,10 +1,11 @@
 #!/bin/bash
 #
-# setup credentials 
-
+# setup credentials
+set -e
 git config --global user.email ${GITHUB_EMAIL}
 git config --global user.name ${GITHUB_USER}
 git remote set-url origin "https://${GH_TOKEN}@github.com/contentful/forma-36.git" > /dev/null 2>&1
 git checkout master
 git reset --hard origin/master
 echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null
+set +e
