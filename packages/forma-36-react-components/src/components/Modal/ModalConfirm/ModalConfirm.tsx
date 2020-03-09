@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
-import Modal, { ModalSizeType } from '../Modal/Modal';
-import { ModalHeaderProps } from '../ModalHeader/ModalHeader';
-import { ModalContentProps } from '../ModalContent/ModalContent';
-import { ModalControlsProps } from '../ModalControls/ModalControls';
+import Modal, { ModalSizeType } from '../Modal';
+import { ModalHeaderProps } from '../ModalHeader';
+import { ModalContentProps } from '../ModalContent';
+import { ModalControlsProps } from '../ModalControls';
 import Button from '../../Button';
 
 export type ModalConfirmProps = {

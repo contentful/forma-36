@@ -1,16 +1,16 @@
 import React, { Component, MouseEventHandler } from 'react';
 import cn from 'classnames';
 
-import Tag, { TagType } from '../../Tag/Tag';
-import Icon from '../../Icon/Icon';
-import CardActions from '../../Card/CardActions/CardActions';
+import Tag, { TagType } from '../../Tag';
+import Icon from '../../Icon';
+import CardActions from '../../Card/CardActions';
 import SkeletonBodyText from '../../Skeleton/SkeletonBodyText';
 import SkeletonImage from '../../Skeleton/SkeletonImage';
 import SkeletonContainer from '../../Skeleton/SkeletonContainer';
 import TabFocusTrap from '../../TabFocusTrap';
 import CardDragHandle, {
   CardDragHandlePropTypes,
-} from '../../Card/CardDragHandle/CardDragHandle';
+} from '../../Card/CardDragHandle';
 
 import styles from './EntityListItem.css';
 
@@ -107,9 +107,9 @@ export class EntityListItem extends Component<EntityListItemProps> {
   static defaultProps = defaultProps;
 
   renderIcon() {
-    const { entityType } = this.props
+    const { entityType } = this.props;
 
-    const isAsset = (entityType && entityType.toLowerCase() === 'asset')
+    const isAsset = entityType && entityType.toLowerCase() === 'asset';
     const icon = isAsset ? 'Asset' : 'Entry';
 
     return <Icon icon={icon} color="muted" />;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ControlledInputField, {
   ControlledInputFieldPropTypes,
-} from '../ControlledInputField/ControlledInputField';
+} from '../ControlledInputField';
 
 export type CheckboxFieldProps = ControlledInputFieldPropTypes &
   typeof defaultProps;
