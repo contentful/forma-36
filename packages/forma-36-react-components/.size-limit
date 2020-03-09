@@ -12,7 +12,7 @@
     {
       "path": "dist/styles.css",
       "name": "gzipped css",
-      "limit": "66 KB",
+      "limit": "67 KB",
       "gzip": false
     }
   ]
