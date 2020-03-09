@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
-import Icon from '../Icon';
-import { IconProps } from '../Icon/Icon';
+import Icon, { IconProps } from '../Icon';
 import TabFocusTrap from '../TabFocusTrap';
 
 import styles from './IconButton.css';

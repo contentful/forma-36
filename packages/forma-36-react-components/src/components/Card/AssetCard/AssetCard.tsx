@@ -3,12 +3,10 @@ import cn from 'classnames';
 import Card from '../Card';
 import CardActions from './../CardActions';
 import Asset from '../../Asset';
-import { AssetType } from '../../Asset/Asset';
-import Tag, { TagType } from '../../Tag/Tag';
+import { AssetType } from '../../Asset';
+import Tag, { TagType } from '../../Tag';
 import AssetCardSkeleton from './AssetCardSkeleton';
-import CardDragHandle, {
-  CardDragHandlePropTypes,
-} from '../CardDragHandle/CardDragHandle';
+import CardDragHandle, { CardDragHandlePropTypes } from '../CardDragHandle';
 import styles from './AssetCard.css';
 
 export type AssetState = 'archived' | 'changed' | 'draft' | 'published';

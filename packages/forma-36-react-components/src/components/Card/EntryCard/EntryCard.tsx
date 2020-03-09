@@ -3,12 +3,10 @@ import cn from 'classnames';
 import truncate from 'truncate';
 import Card from '../Card';
 import CardActions from '../CardActions';
-import Tag, { TagType } from '../../Tag/Tag';
+import Tag, { TagType } from '../../Tag';
 import EntryCardSkeleton from './EntryCardSkeleton';
-import CardDragHandle, {
-  CardDragHandlePropTypes,
-} from '../CardDragHandle/CardDragHandle';
-import Icon, { IconType } from '../../Icon/Icon';
+import CardDragHandle, { CardDragHandlePropTypes } from '../CardDragHandle';
+import Icon, { IconType } from '../../Icon';
 
 import styles from './EntryCard.css';
 

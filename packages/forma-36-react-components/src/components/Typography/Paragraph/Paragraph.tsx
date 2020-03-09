@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import cn from 'classnames';
 import styles from './Paragraph.css';
 
-import { TypographyContext } from '../Typography/Typography';
+import { TypographyContext } from '../Typography';
 
 export type ParagraphProps = {
   element: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
