@@ -25,6 +25,7 @@ describe('TimePicker', () => {
       date: dateFns.format(dateFns.addYears(new Date(), 1), 'yyyy/MM/dd'),
       value,
       isRequired: true,
+      disabled: false,
     };
     return [render(<Timepicker {...props} />), props];
   };
