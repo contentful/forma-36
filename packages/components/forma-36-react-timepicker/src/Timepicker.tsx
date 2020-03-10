@@ -165,6 +165,7 @@ const defaultProps = {
 };
 
 const TimePicker: React.FC<TimepickerProps> = ({
+  id,
   value,
   date,
   helpText,
@@ -296,10 +297,12 @@ const TimePicker: React.FC<TimepickerProps> = ({
     ]
   );
 
+  const inputId = id ? id : 'scheduleTimeInput';
+
   return (
     <div>
       {labelText && (
-        <FormLabel required={isRequired} htmlFor="scheduleTimeForm">
+        <FormLabel required={isRequired} htmlFor={inputId}>
           {labelText}
         </FormLabel>
       )}
@@ -312,6 +315,7 @@ const TimePicker: React.FC<TimepickerProps> = ({
           getContainerRef={setDropdownContainer}
           toggleElement={
             <TextInput
+              id={inputId}
               inputRef={inputRef}
               name="time input"
               data-test-id="time"
@@ -325,10 +329,7 @@ const TimePicker: React.FC<TimepickerProps> = ({
               autoComplete="off"
             />
           }
-          onClose={() => {
-            console.log('onCLose');
-            setTimeSuggestionOpen(false);
-          }}
+          onClose={() => setTimeSuggestionOpen(false)}
           isOpen={isTimeSuggestionOpen}
         >
           <DropdownList maxHeight={200} listRef={listRef}>
