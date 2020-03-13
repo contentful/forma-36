@@ -9,6 +9,7 @@
   border-radius: 0.125rem;
   border: none;
   padding: 0;
+  max-width: 100%;
   composes: focus-outline--default from './../../styles/settings/a11y.css';
 }
 

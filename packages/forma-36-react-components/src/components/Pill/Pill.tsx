@@ -50,7 +50,7 @@ export class Pill extends Component<PillProps> {
               <Icon icon="Drag" color="muted" className={styles.Pill__icon} />
             </span>
           ))}
-        <span aria-label={label} className={styles.Pill__label}>
+        <span aria-label={label} title={label} className={styles.Pill__label}>
           {label}
         </span>
         {onClose && (
