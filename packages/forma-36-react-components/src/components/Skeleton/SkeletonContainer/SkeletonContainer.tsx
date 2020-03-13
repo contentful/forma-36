@@ -106,7 +106,7 @@ export class SkeletonContainer extends Component<SkeletonContainerProps> {
             >
               {animate && (
                 <animate
-                  id="animation1"
+                  id={`${gradientId}.animation1`}
                   attributeName="stop-color"
                   values={`${backgroundColor}; ${foregroundColor}; ${backgroundColor}`}
                   dur={`${speed}s`}
@@ -123,7 +123,7 @@ export class SkeletonContainer extends Component<SkeletonContainerProps> {
                 <animate
                   attributeName="stop-color"
                   values={`${backgroundColor}; ${foregroundColor}; ${backgroundColor}`}
-                  begin="animation1.begin+0.25s"
+                  begin={`${gradientId}.animation1.begin+0.25s`}
                   dur={`${speed}s`}
                   repeatCount="indefinite"
                 />
@@ -137,7 +137,7 @@ export class SkeletonContainer extends Component<SkeletonContainerProps> {
               {animate && (
                 <animate
                   attributeName="stop-color"
-                  begin="animation1.begin+0.5s"
+                  begin={`${gradientId}.animation1.begin+0.5s`}
                   values={`${backgroundColor}; ${foregroundColor}; ${backgroundColor}`}
                   dur={`${speed}s`}
                   repeatCount="indefinite"

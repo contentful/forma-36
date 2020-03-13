@@ -20,7 +20,11 @@ export class SkeletonTableCell extends Component<SkeletonTableCellProps> {
 
     return (
       <TableCell>
-        <SkeletonContainer svgHeight={42} clipId={clipId}>
+        <SkeletonContainer
+          svgHeight={42}
+          clipId={clipId}
+          gradientId={`${clipId}-gradient`}
+        >
           <SkeletonBodyText numberOfLines={2} />
         </SkeletonContainer>
       </TableCell>
