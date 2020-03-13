@@ -1,22 +1,55 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { axe } from 'jest-axe';
+
 import SkeletonTable from './SkeletonTable';
+import Table from '../../Table';
+import TableBody from '../../Table/TableBody';
 
 it('renders the component', () => {
-  const output = shallow(<SkeletonTable>SkeletonTable</SkeletonTable>);
+  const output = shallow(
+    <Table>
+      <TableBody>
+        <SkeletonTable />
+      </TableBody>
+    </Table>,
+  );
 
   expect(output).toMatchSnapshot();
 });
 
-it('renders the component with an additional class name', () => {
-  const output = shallow(<SkeletonTable>SkeletonTable</SkeletonTable>);
+it('renders the component with 10 rows', () => {
+  const output = shallow(
+    <Table>
+      <TableBody>
+        <SkeletonTable numberOfRows={10} />
+      </TableBody>
+    </Table>,
+  );
+
+  expect(output).toMatchSnapshot();
+});
+
+it('renders the component with 10 cells', () => {
+  const output = shallow(
+    <Table>
+      <TableBody>
+        <SkeletonTable numberOfCells={10} />
+      </TableBody>
+    </Table>,
+  );
 
   expect(output).toMatchSnapshot();
 });
 
 it('has no a11y issues', async () => {
-  const output = mount(<SkeletonTable>SkeletonTable</SkeletonTable>).html();
+  const output = mount(
+    <Table>
+      <TableBody>
+        <SkeletonTable />
+      </TableBody>
+    </Table>,
+  ).html();
   const results = await axe(output);
 
   expect(results).toHaveNoViolations();
