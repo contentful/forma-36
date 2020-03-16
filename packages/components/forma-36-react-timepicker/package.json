@@ -1,6 +1,6 @@
 {
   "name": "@contentful/forma-36-react-timepicker",
-  "version": "0.2.0-alpha.62",
+  "version": "0.2.0-alpha.63",
   "license": "MIT",
   "author": "Johannes Bugiel",
   "main": "dist/index.js",
