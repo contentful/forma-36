@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.32.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.32.3...@contentful/forma-36-react-components@3.32.4) (2020-03-16)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+## [3.32.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.32.2...@contentful/forma-36-react-components@3.32.3) (2020-03-13)
+
+
+### Bug Fixes
+
+* (pill) fix overflow ([#436](https://github.com/contentful/forma-36/issues/436)) ([9536ad8](https://github.com/contentful/forma-36/commit/9536ad8c4cf5f17849dea3926d5964e5c03f55dd))
+
+
+
+
+
 ## [3.32.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.32.1...@contentful/forma-36-react-components@3.32.2) (2020-03-09)
 
 

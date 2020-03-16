@@ -8,6 +8,7 @@ exports[`renders the component 1`] = `
   <span
     aria-label="test"
     className="Pill__label"
+    title="test"
   >
     test
   </span>
@@ -22,6 +23,7 @@ exports[`renders the component with a close button 1`] = `
   <span
     aria-label="test"
     className="Pill__label"
+    title="test"
   >
     test
   </span>
@@ -63,6 +65,7 @@ exports[`renders the component with a dragging handle 1`] = `
   <span
     aria-label="test"
     className="Pill__label"
+    title="test"
   >
     test
   </span>
@@ -77,6 +80,7 @@ exports[`renders the component with a test id 1`] = `
   <span
     aria-label="test"
     className="Pill__label"
+    title="test"
   >
     test
   </span>
@@ -91,6 +95,7 @@ exports[`renders the component with an additional class name 1`] = `
   <span
     aria-label="test"
     className="Pill__label"
+    title="test"
   >
     test
   </span>
