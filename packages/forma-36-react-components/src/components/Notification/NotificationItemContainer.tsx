@@ -3,7 +3,7 @@ import AnimateHeight from 'react-animate-height';
 import NotificationItem, { NotificationItemProps } from './NotificationItem';
 
 export interface NotificationItemContainerProps extends NotificationItemProps {
-  duration: number;
+  duration?: number;
   isShown?: boolean;
 }
 
@@ -48,6 +48,8 @@ export class NotificationItemContainer extends Component<
 
   startTimer = () => {
     if (this.props.duration) {
+      if (this.props.duration === 0) return;
+
       this.timer = setTimeout(() => {
         this.close();
       }, this.props.duration);
@@ -55,6 +57,8 @@ export class NotificationItemContainer extends Component<
   };
 
   stopTimer = () => {
+    if (this.props.duration === 0) return;
+
     if (this.timer) {
       clearTimeout(this.timer);
       this.timer = null;

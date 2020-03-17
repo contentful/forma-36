@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { button, text, boolean, select } from '@storybook/addon-knobs';
+import { button, text, number, boolean, select } from '@storybook/addon-knobs';
 
 import Button from '../Button';
 import Notification from './index';
@@ -38,6 +38,9 @@ storiesOf('Components|Notification', module)
             onClick={() =>
               Notification.success(
                 `${text('text', 'Hello world')} ${getUniqueNumber()}`,
+                {
+                  duration: number('duration', 6000),
+                },
               )
             }
           >
@@ -49,6 +52,9 @@ storiesOf('Components|Notification', module)
             onClick={() =>
               Notification.error(
                 `${text('text', 'Hello world')} ${getUniqueNumber()}`,
+                {
+                  duration: number('duration', 6000),
+                },
               )
             }
           >
@@ -60,6 +66,9 @@ storiesOf('Components|Notification', module)
             onClick={() =>
               Notification.warning(
                 `${text('text', 'Hello world')} ${getUniqueNumber()}`,
+                {
+                  duration: number('duration', 6000),
+                },
               )
             }
           >
@@ -70,6 +79,7 @@ storiesOf('Components|Notification', module)
             buttonType="muted"
             onClick={() =>
               Notification.warning('Notification that should not be repeated', {
+                duration: number('duration', 6000),
                 id: 'some-concrete-notification',
               })
             }

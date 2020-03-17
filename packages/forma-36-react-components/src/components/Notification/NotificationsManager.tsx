@@ -18,7 +18,7 @@ export interface Notification {
   id: string | number;
   text: string;
   close: Function;
-  duration: number;
+  duration?: number;
   canClose: boolean;
   isShown: boolean;
   intent: NotificationIntent;
@@ -120,7 +120,9 @@ export class NotificationsManager extends PureComponent<
 
   show: ShowAction<Notification> = (text, settings) => {
     const duration =
-      settings && settings.duration ? settings.duration : this.state.duration;
+      settings && typeof settings.duration !== 'undefined' // Needed as 0 is falsy but 0 is valid to disable auto-closing a notification
+        ? settings.duration
+        : this.state.duration;
     const intent = settings && settings.intent ? settings.intent : 'success';
 
     const canClose =
