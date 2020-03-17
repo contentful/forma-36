@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.33.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.32.4...@contentful/forma-36-react-components@3.33.0) (2020-03-17)
+
+
+### Features
+
+* **notification:** allow notifications without auto-dismiss ([64260f2](https://github.com/contentful/forma-36/commit/64260f2e80a786d4243930323f2a273215e9493d))
+
+
+
+
+
 ## [3.32.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.32.3...@contentful/forma-36-react-components@3.32.4) (2020-03-16)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
