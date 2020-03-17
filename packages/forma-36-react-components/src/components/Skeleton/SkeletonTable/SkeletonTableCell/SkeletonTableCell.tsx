@@ -25,7 +25,7 @@ export class SkeletonTableCell extends Component<SkeletonTableCellProps> {
           clipId={clipId}
           gradientId={`${clipId}-gradient`}
         >
-          <SkeletonBodyText numberOfLines={2} />
+          <SkeletonBodyText numberOfLines={1} />
         </SkeletonContainer>
       </TableCell>
     );

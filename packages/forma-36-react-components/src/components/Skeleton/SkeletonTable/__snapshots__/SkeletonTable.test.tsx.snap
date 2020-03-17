@@ -11,8 +11,7 @@ exports[`renders the component 1`] = `
     testId="cf-ui-table-body"
   >
     <SkeletonTable
-      numberOfCells={5}
-      numberOfRows={5}
+      columnCount={5}
     />
   </TableBody>
 </table>
@@ -29,26 +28,7 @@ exports[`renders the component with 10 cells 1`] = `
     testId="cf-ui-table-body"
   >
     <SkeletonTable
-      numberOfCells={10}
-      numberOfRows={5}
-    />
-  </TableBody>
-</table>
-`;
-
-exports[`renders the component with 10 rows 1`] = `
-<table
-  cellPadding="0"
-  cellSpacing="0"
-  className="Table"
-  data-test-id="cf-ui-table"
->
-  <TableBody
-    testId="cf-ui-table-body"
-  >
-    <SkeletonTable
-      numberOfCells={5}
-      numberOfRows={10}
+      columnCount={10}
     />
   </TableBody>
 </table>

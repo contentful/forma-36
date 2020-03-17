@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { boolean, text } from '@storybook/addon-knobs';
+import { boolean, text, number } from '@storybook/addon-knobs';
 
 import notes from './Table.md';
 import Table from './Table';
@@ -43,16 +43,7 @@ function DefaultStory() {
   );
 }
 
-function AsyncDataStory() {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-    return () => clearTimeout(timer);
-  }, []);
-
+function WithLoadingStateStory() {
   return (
     <div style={{ width: '800px' }}>
       <Table>
@@ -64,7 +55,10 @@ function AsyncDataStory() {
             <TableCell>Last activity</TableCell>
           </TableRow>
         </TableHead>
-        <TableBody loading={loading} numberOfRows={3} numberOfCells={4}>
+        <TableBody
+          isLoading={boolean('isLoading', true)}
+          loadingColumnCount={number('loadingColumnCount', 4)}
+        >
           <TableRow>
             <TableCell>Jane Roe</TableCell>
             <TableCell>jane@roe.com</TableCell>
@@ -94,4 +88,4 @@ storiesOf('Components|Table', module)
     ],
   })
   .add('default', () => <DefaultStory />, { notes })
-  .add('Asynchronous Data', () => <AsyncDataStory />, { notes });
+  .add('with loading state', () => <WithLoadingStateStory />, { notes });
