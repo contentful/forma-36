@@ -13,6 +13,7 @@ There are a number of variations of TextLink styles, here is a guide for when to
 - **Negative** - Used for destructive actions - when something can't be undone. For example, deleting entities.
 - **Secondary** - For actions that should be emphasized less than the default primary style.
 - **Muted** - For actions that should be emphasized less than the secondary style.
+- **White** - For actions appearing on a dark background.
 
 ## Best practices
 

@@ -61,6 +61,17 @@
   color: var(--color-text-light);
 }
 
+.TextLink--white,
+.TextLink--white:link {
+  color: var(--color-white);
+
+  &:hover,
+  &:focus {
+    color: var(--color-white);
+    opacity: 0.75;
+  }
+}
+
 .TextLink--disabled,
 .TextLink--disabled:link {
   opacity: 0.5;
@@ -107,6 +118,14 @@
     }
 
     color: var(--color-text-light);
+  }
+
+  &.TextLink--white:hover {
+    & .TextLink__icon {
+      fill: var(--color-white);
+    }
+
+    color: var(--color-white);
   }
 }
 

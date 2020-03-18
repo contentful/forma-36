@@ -25,6 +25,7 @@ storiesOf('Components|TextLink', module)
             Negative: 'negative',
             Secondary: 'secondary',
             Muted: 'muted',
+            White: 'white',
           },
           'primary',
         )}
