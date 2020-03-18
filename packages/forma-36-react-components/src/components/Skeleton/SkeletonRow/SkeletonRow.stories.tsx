@@ -1,17 +1,17 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 
-import notes from './SkeletonTable.md';
-import SkeletonTable from './SkeletonTable';
+import notes from './SkeletonRow.md';
+import SkeletonRow from './SkeletonRow';
 import Table from '../../Table';
 import TableHead from '../../Table/TableHead';
 import TableBody from '../../Table/TableBody';
 import TableCell from '../../Table/TableCell';
 import TableRow from '../../Table/TableRow';
 
-storiesOf('Components|Skeleton/SkeletonTable', module)
+storiesOf('Components|Skeleton/SkeletonRow', module)
   .addParameters({
-    propTypes: SkeletonTable['__docgenInfo'],
+    propTypes: SkeletonRow['__docgenInfo'],
   })
   .add(
     'default',
@@ -27,7 +27,7 @@ storiesOf('Components|Skeleton/SkeletonTable', module)
           </TableRow>
         </TableHead>
         <TableBody>
-          <SkeletonTable />
+          <SkeletonRow />
         </TableBody>
       </Table>
     ),

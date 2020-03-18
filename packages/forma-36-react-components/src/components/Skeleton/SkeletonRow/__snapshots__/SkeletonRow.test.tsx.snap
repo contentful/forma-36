@@ -10,7 +10,7 @@ exports[`renders the component 1`] = `
   <TableBody
     testId="cf-ui-table-body"
   >
-    <SkeletonTable
+    <SkeletonRow
       columnCount={5}
     />
   </TableBody>
@@ -27,7 +27,7 @@ exports[`renders the component with 10 cells 1`] = `
   <TableBody
     testId="cf-ui-table-body"
   >
-    <SkeletonTable
+    <SkeletonRow
       columnCount={10}
     />
   </TableBody>

@@ -1,4 +1,4 @@
-# SkeletonTable
+# SkeletonRow
 
 A component that creates table rows filled with skeletons
 to be used as a good loading feedback for users.

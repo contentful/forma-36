@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import TableRow from '../../Table/TableRow';
 import SkeletonTableCell from './SkeletonTableCell/SkeletonTableCell';
 
-export type SkeletonTableProps = {
+export type SkeletonRowProps = {
   columnCount?: number;
 } & typeof defaultProps;
 
@@ -11,7 +11,7 @@ const defaultProps = {
   columnCount: 5,
 };
 
-export class SkeletonTable extends Component<SkeletonTableProps> {
+export class SkeletonRow extends Component<SkeletonRowProps> {
   static defaultProps = defaultProps;
 
   render() {
@@ -32,4 +32,4 @@ export class SkeletonTable extends Component<SkeletonTableProps> {
   }
 }
 
-export default SkeletonTable;
+export default SkeletonRow;

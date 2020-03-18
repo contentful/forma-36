@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import SkeletonTable from '../../Skeleton/SkeletonTable';
+import SkeletonRow from '../../Skeleton/SkeletonRow';
 
 export type TableBodyProps = {
   className?: string;
@@ -31,7 +31,7 @@ export class TableBody extends Component<TableBodyProps> {
     return (
       <tbody data-test-id={testId} className={className} {...otherProps}>
         {isLoading ? (
-          <SkeletonTable columnCount={loadingColumnCount} />
+          <SkeletonRow columnCount={loadingColumnCount} />
         ) : (
           children
         )}
