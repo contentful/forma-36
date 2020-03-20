@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import classNames from 'classnames';
-import { NotificationIntent } from './NotificationItem';
+import { NotificationIntent, NotificationCtaProps } from './NotificationItem';
 import NotificationItemContainer from './NotificationItemContainer';
 
 import styles from './NotificationsManager.css';
@@ -22,6 +22,8 @@ export interface Notification {
   canClose: boolean;
   isShown: boolean;
   intent: NotificationIntent;
+  title?: string;
+  cta?: Partial<NotificationCtaProps>;
 }
 
 export type ShowAction<T> = (
@@ -31,6 +33,8 @@ export type ShowAction<T> = (
     id?: string;
     duration?: number;
     canClose?: boolean;
+    title?: string;
+    cta?: Partial<NotificationCtaProps>;
   },
 ) => T;
 
@@ -141,6 +145,8 @@ export class NotificationsManager extends PureComponent<
       canClose,
       isShown: true,
       intent,
+      title: settings && settings.title,
+      cta: settings && settings.cta,
     };
 
     const alreadyThere = this.state.items.find(
@@ -185,6 +191,8 @@ export class NotificationsManager extends PureComponent<
               hasCloseButton={item.canClose}
               onClose={item.close}
               isShown={item.isShown}
+              title={item.title}
+              cta={item.cta}
             >
               {item.text}
             </NotificationItemContainer>

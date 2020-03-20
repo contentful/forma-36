@@ -13,6 +13,27 @@ it('renders the component', () => {
   expect(output).toMatchSnapshot();
 });
 
+it('renders the component with a title and a body', () => {
+  const output = shallow(
+    <NotificationItem title="Notification title" intent="success">
+      This is the body text.
+    </NotificationItem>,
+  );
+  expect(output).toMatchSnapshot();
+});
+
+it('renders the component with a cta', () => {
+  const output = shallow(
+    <NotificationItem
+      cta={{ label: 'This is some label text' }}
+      intent="warning"
+    >
+      This is the body text.
+    </NotificationItem>,
+  );
+  expect(output).toMatchSnapshot();
+});
+
 it('renders the component with "error" intent', () => {
   const output = shallow(
     <NotificationItem onClose={() => {}} intent="error">
@@ -21,7 +42,7 @@ it('renders the component with "error" intent', () => {
   );
 
   expect(output).toMatchSnapshot();
-})
+});
 
 it('renders the component with "warning" intent', () => {
   const output = shallow(
@@ -31,8 +52,7 @@ it('renders the component with "warning" intent', () => {
   );
 
   expect(output).toMatchSnapshot();
-})
-
+});
 
 it(`has no a11y issues`, async () => {
   const output = mount(
