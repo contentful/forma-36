@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.34.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.33.0...@contentful/forma-36-react-components@3.34.0) (2020-03-24)
+
+
+### Features
+
+* **notification:** add options to pass a title & cta ([8c53d9d](https://github.com/contentful/forma-36/commit/8c53d9dcb53eee082d8713cbdb402636040acfff))
+* **textlink:** add white linktype ([ed8e327](https://github.com/contentful/forma-36/commit/ed8e32773020f96a25811e5d8b1057505bcbc7f6))
+
+
+
+
+
 # [3.33.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.32.4...@contentful/forma-36-react-components@3.33.0) (2020-03-17)
 
 
