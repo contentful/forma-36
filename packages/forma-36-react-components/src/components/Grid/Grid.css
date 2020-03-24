@@ -1,0 +1,11 @@
+@import 'settings/colors';
+@import 'settings/typography';
+@import 'settings/transitions';
+
+.Grid {
+  display: grid;
+}
+
+.Grid__inline {
+  display: inline-grid;
+}
