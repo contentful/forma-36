@@ -46,6 +46,12 @@ it('renders as a "muted" link type', () => {
   expect(output).toMatchSnapshot();
 });
 
+it('renders as a "white" link type', () => {
+  const output = shallow(<TextLink linkType="white">Text Link</TextLink>);
+
+  expect(output).toMatchSnapshot();
+});
+
 it('calls an onClick function', () => {
   const onClickFunc = jest.fn();
   const output = shallow(<TextLink onClick={onClickFunc}>Text Link</TextLink>);

@@ -2,10 +2,16 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import IconButton from '../IconButton';
 import Icon from '../Icon';
+import TextLink, { TextLinkProps } from '../TextLink';
 
 import styles from './NotificationItem.css';
 
 export type NotificationIntent = 'success' | 'error' | 'warning';
+
+export interface NotificationCtaProps {
+  label: string;
+  textLinkProps: Partial<TextLinkProps>;
+}
 
 export interface NotificationItemProps {
   intent: NotificationIntent;
@@ -13,6 +19,8 @@ export interface NotificationItemProps {
   onClose?: Function;
   testId?: string;
   children: React.ReactNode;
+  title?: string;
+  cta?: Partial<NotificationCtaProps>;
 }
 
 const defaultProps = {
@@ -26,8 +34,37 @@ export class NotificationItem extends Component<
 > {
   static defaultProps = defaultProps;
 
+  renderTitle() {
+    const { title, children } = this.props;
+
+    return (
+      <div className={styles.NotificationItem__title}>
+        {title ? title : children}
+      </div>
+    );
+  }
+
+  renderBody() {
+    const { title, children } = this.props;
+
+    return <div>{title && children}</div>;
+  }
+
+  renderCta() {
+    const { cta } = this.props;
+
+    if (cta && cta.label)
+      return (
+        <div>
+          <TextLink {...cta.textLinkProps} linkType="white">
+            {cta.label}
+          </TextLink>
+        </div>
+      );
+  }
+
   render() {
-    const { children, testId, intent, onClose, hasCloseButton } = this.props;
+    const { testId, intent, onClose, hasCloseButton } = this.props;
 
     const classes = classNames(styles.NotificationItem, {
       [styles[`NotificationItem--${intent}`]]: true,
@@ -47,7 +84,11 @@ export class NotificationItem extends Component<
             color="white"
           />
         </div>
-        <div className={styles.NotificationItem__text}>{children}</div>
+        <div className={styles.NotificationItem__text}>
+          {this.renderTitle()}
+          {this.renderBody()}
+          {this.renderCta()}
+        </div>
         {hasCloseButton && (
           <IconButton
             buttonType="white"

@@ -1,5 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import { button, text, number, boolean, select } from '@storybook/addon-knobs';
 
 import Button from '../Button';
@@ -86,6 +87,25 @@ storiesOf('Components|Notification', module)
           >
             show notification with the same id
           </Button>
+          <Button
+            style={{ marginLeft: 20 }}
+            buttonType="positive"
+            onClick={() =>
+              Notification.success(
+                `${text('text', 'Hello world')} ${getUniqueNumber()}`,
+                {
+                  duration: number('duration', 6000),
+                  title: text('title', 'Example title'),
+                  cta: {
+                    label: text('cta.label', 'Example label'),
+                    textLinkProps: { onClick: action('onClick') },
+                  },
+                },
+              )
+            }
+          >
+            show notification with title and CTA
+          </Button>
         </div>
       );
     },
@@ -97,9 +117,11 @@ storiesOf('Components|Notification', module)
       <div>
         <NotificationItem
           hasCloseButton={boolean('hasCloseButton', true)}
+          title={text('title', 'Notification title')}
           intent={select('intent', ['success', 'error', 'warning'], 'success')}
+          cta={{ label: text('cta.label', 'Notification CTA') }}
         >
-          {text('text', 'Text for the notification')}
+          {text('body', 'Body for the notification')}
         </NotificationItem>
       </div>
     ),

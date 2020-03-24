@@ -10,7 +10,8 @@ export type TextLinkType =
   | 'positive'
   | 'negative'
   | 'secondary'
-  | 'muted';
+  | 'muted'
+  | 'white';
 
 type IconPositionType = 'right' | 'left';
 

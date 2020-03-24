@@ -11,7 +11,7 @@ import NotificationManager, {
   Notification as NotificationType,
   Position,
 } from './NotificationsManager';
-import { NotificationIntent } from './NotificationItem';
+import { NotificationIntent, NotificationCtaProps } from './NotificationItem';
 
 export interface NotificationsAPI {
   success: ShowAction<Notification>;
@@ -57,6 +57,8 @@ const show = (intent: NotificationIntent) => (
     duration?: number;
     canClose?: boolean;
     id?: string;
+    title?: string;
+    cta?: Partial<NotificationCtaProps>;
   },
 ) => {
   if (internalAPI.show) {
@@ -73,6 +75,8 @@ type ExternalShowAction<T> = (
     duration?: number;
     canClose?: boolean;
     id?: string;
+    title?: string;
+    cta?: Partial<NotificationCtaProps>;
   },
 ) => T;
 

@@ -144,6 +144,19 @@ exports[`renders as a "secondary" link type 1`] = `
 </button>
 `;
 
+exports[`renders as a "white" link type 1`] = `
+<button
+  className="TextLink TextLink--white"
+  data-test-id="cf-ui-text-link"
+  disabled={false}
+  type="button"
+>
+  <TabFocusTrap>
+    Text Link
+  </TabFocusTrap>
+</button>
+`;
+
 exports[`renders as a button 1`] = `
 <button
   className="TextLink TextLink--primary"
