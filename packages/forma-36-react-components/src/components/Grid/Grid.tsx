@@ -7,7 +7,7 @@ import styles from './Grid.css';
 
 export type SpacingProps = 'spacing2xs' | 'spacingXs' | 'spacingXs' | 'spacingS' | 'spacingM' | 'spacingL' | 'spacingXl' | 'spacing2Xl' | 'spacing3Xl' | 'spacing4Xl';
 
-export type GridProps = {
+export interface GridProps {
   /**
    * Class names to be appended to the className prop of the component */
   className?: string;
@@ -18,31 +18,31 @@ export type GridProps = {
    * An ID used for testing purposes applied as a data attribute (data-test-id) */
   testId?: string;
   /**
-   * Define how many columns, default to `auto` */
-  columns?: number | CSS.GridAutoColumnsProperty<string>;
+   * Defines how many columns, default is `auto` */
+  columns?: number | CSS.GridTemplateColumnsProperty<string>;
   /**
-   * Define how many rows, default to `auto` */
-  rows?: number | CSS.GridTemplateRowsProperty<string>;
+   * Defines how many rows, default is `auto` */
+  rows?: number | CSS.GridTemplateColumnsProperty<string>;
   /**
-   * One of Spacing tokens values, default is 0 */
+   * Spaces between rows, corresponds to of spacing tokens values, default is 0 */
   rowGap?: SpacingProps;
   /**
    * One of Spacing tokens values, default is 0 */
   columnGap?: SpacingProps;
   /**
    * One of Spacing tokens values, default is 0 */
-  flow: CSS.GridAutoFlowProperty
+  flow?: CSS.GridAutoFlowProperty
   /**
    * Sets display:inline-grid */
-  inline: boolean;
+  inline?: boolean;
   /**
    * One of justify-content css values */
-  justifyContent: CSS.JustifyContentProperty;
+  justifyContent?: CSS.JustifyContentProperty;
   /**
    * One of justify-content css values */
-  alignContent: CSS.AlignContentProperty
+  alignContent?: CSS.AlignContentProperty;
 
-} & typeof defaultProps;
+}
 
 const defaultProps = {
   columns: 'auto',
@@ -67,9 +67,9 @@ export const Grid = (props: GridProps) => {
     ...otherProps
   } = props;
 
-  const handleGridTemplate = (value: number | CSS.GridTemplateColumnsProperty<string>) => {
+  const handleGridTemplate = (value?: string | number) => {
     if(typeof value === 'number') {
-      return `repeat(${columns}, minmax(0, 1fr)`
+      return `repeat(${value}, minmax(0, 1fr)`
     }
     return value;
   }

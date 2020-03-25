@@ -13,22 +13,25 @@ export type GridItemProps = {
   testId?: string;
   /**
    * one of grid-column-start css values */
-  columnStart: CSS.GridColumnStartProperty;
+  columnStart?: CSS.GridColumnStartProperty;
   /**
    * one of grid-column-end css values */
-  columnEnd: CSS.GridColumnEndProperty;
+  columnEnd?: CSS.GridColumnEndProperty;
   /**
    * one of grid-column-start css values */
-  rowStart: CSS.GridRowStartProperty;
+  rowStart?: CSS.GridRowStartProperty;
   /**
    * one of grid-row-end css values */
-  rowEnd: CSS.GridRowEndProperty;
+  rowEnd?: CSS.GridRowEndProperty;
   /**
    * one of grid-row-end css values */
-  area: CSS.GridAreaProperty;
+  area?: CSS.GridAreaProperty;
   /**
    * order css property */
-  order: number
+  order?: number
+  /**
+   * order css property */
+  style?: React.CSSProperties
 } & typeof defaultProps;
 
 const defaultProps = {
@@ -39,7 +42,7 @@ const defaultProps = {
   testId: 'cf-ui-grid',
 };
 
-export const GridItem = (props: GridItemProps) => {
+const GridItem = (props: GridItemProps) => {
   const {
     children,
     columnStart,
@@ -47,20 +50,24 @@ export const GridItem = (props: GridItemProps) => {
     rowStart,
     rowEnd,
     area,
-    order
+    order,
+    style
   } = props;
-  const styles = {
+  const inlineStyles = {
     gridColumnStart: columnStart,
     gridColumnEnd: columnEnd,
     gridRowStart: rowStart,
     gridRowEnd: rowEnd,
     gridArea: area,
-    order
+    order,
+    ...style
   };
 
   return (
-    <div style={styles} {...props}>
+    <div style={inlineStyles} {...props}>
       {children}
     </div>
   );
 };
+
+export default GridItem;

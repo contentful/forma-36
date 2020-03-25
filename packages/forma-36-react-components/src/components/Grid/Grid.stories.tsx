@@ -4,6 +4,7 @@ import { text } from '@storybook/addon-knobs';
 import tokens from '@contentful/forma-36-tokens';
 
 import Grid from './Grid';
+import GridItem from './GridItem';
 
 const DemoBox = () => {
   const styles = {
@@ -11,7 +12,7 @@ const DemoBox = () => {
     backgroundColor: tokens.colorIceDark
   }
   return (
-    <div style={styles}></div>
+    <GridItem style={styles}></GridItem>
   )
   
 }
@@ -21,7 +22,10 @@ storiesOf('Components|Grid', module)
     propTypes: Grid['__docgenInfo'],
   })
   .add('default', () => (
-    <Grid columns={6} className={text('className', '')}>
+    <Grid 
+      columns={2}
+      rowGap={'spacingS'} 
+      className={text('className', '')}>
       <DemoBox />
       <DemoBox />
       <DemoBox />
