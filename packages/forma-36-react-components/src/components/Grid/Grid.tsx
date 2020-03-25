@@ -41,14 +41,16 @@ export interface GridProps {
   /**
    * One of justify-content css values */
   alignContent?: CSS.AlignContentProperty;
-
+  /**
+   * style prop, for inline styles */
+  style?: React.CSSProperties;
 }
 
 const defaultProps = {
   columns: 'auto',
   rows: 'auto',
   columnGap: 'spacingM',
-  rowGap: '',
+  rowGap: 'none',
   testId: 'cf-ui-grid',
 };
 
@@ -64,6 +66,7 @@ export const Grid = (props: GridProps) => {
     columnGap,
     justifyContent,
     alignContent,
+    style,
     ...otherProps
   } = props;
 
@@ -79,8 +82,9 @@ export const Grid = (props: GridProps) => {
     gridTemplateRows: handleGridTemplate(rows),
     justifyContent,
     alignContent,
-    gridColumnGap: tokens[columnGap],
-    gridRowGap: tokens[rowGap]
+    gridColumnGap: columnGap && tokens[columnGap],
+    gridRowGap: rowGap && tokens[rowGap],
+    ...style
   }
 
   const classNames = cn(styles.Grid, className, {

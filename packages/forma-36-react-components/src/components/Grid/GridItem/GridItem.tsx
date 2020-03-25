@@ -1,7 +1,7 @@
 import React from 'react';
 import * as CSS from 'csstype';
 
-export type GridItemProps = {
+export interface GridItemProps {
   /**
    * Class names to be appended to the className prop of the component */
   className?: string;
@@ -32,7 +32,7 @@ export type GridItemProps = {
   /**
    * order css property */
   style?: React.CSSProperties
-} & typeof defaultProps;
+}
 
 const defaultProps = {
   columns: 'auto',
@@ -51,7 +51,8 @@ const GridItem = (props: GridItemProps) => {
     rowEnd,
     area,
     order,
-    style
+    style,
+    ...otherProps
   } = props;
   const inlineStyles = {
     gridColumnStart: columnStart,
@@ -64,10 +65,12 @@ const GridItem = (props: GridItemProps) => {
   };
 
   return (
-    <div style={inlineStyles} {...props}>
+    <div style={inlineStyles} {...otherProps}>
       {children}
     </div>
   );
 };
+
+GridItem.defaultProps = defaultProps;
 
 export default GridItem;
