@@ -1,10 +1,18 @@
 # Grid
 
-A short summary of the component.
+[CSS Grid](https://developer.mozilla.org/en-US/docs/Glossary/Grid) based, react layout component, comes with predefined values to ensure design consistency, and ease of use.
 
-## When to use
+## API Usage
 
-Some notes on when to use the component and when to use specific configurations.
+```js
+import { Grid } from '@contenful/forma-36-react-components';
+```
+
+### columns
+defines the columns `number` and `size` of the grid, and corresponds to [grid-template-columns](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns) css property.
+
+### rows
+Rows examples goes here
 
 ## Best practices
 

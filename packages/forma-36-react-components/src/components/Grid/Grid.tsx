@@ -30,7 +30,7 @@ export interface GridProps {
    * One of Spacing tokens values, default is 0 */
   columnGap?: SpacingProps;
   /**
-   * One of Spacing tokens values, default is 0 */
+   * One of grid-auto-flow css values */
   flow?: CSS.GridAutoFlowProperty
   /**
    * Sets display:inline-grid */
@@ -50,7 +50,7 @@ const defaultProps = {
   columns: 'auto',
   rows: 'auto',
   columnGap: 'spacingM',
-  rowGap: 'none',
+  rowGap: 0,
   testId: 'cf-ui-grid',
 };
 

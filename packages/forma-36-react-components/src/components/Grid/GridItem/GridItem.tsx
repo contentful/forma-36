@@ -35,11 +35,6 @@ export interface GridItemProps {
 }
 
 const defaultProps = {
-  columns: 'auto',
-  rows: 'auto',
-  columnGap: 'spacingM',
-  rowGap: '',
-  testId: 'cf-ui-grid',
 };
 
 const GridItem = (props: GridItemProps) => {
