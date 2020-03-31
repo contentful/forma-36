@@ -1,19 +1,40 @@
 # Grid
 
-[CSS Grid](https://developer.mozilla.org/en-US/docs/Glossary/Grid) based, react layout component, comes with predefined values to ensure design consistency, and ease of use.
-
-## API Usage
+[CSS Grid](https://developer.mozilla.org/en-US/docs/Glossary/Grid) based react component, comes with predefined values to ensure design consistency, and ease of use.
 
 ```js
-import { Grid } from '@contenful/forma-36-react-components';
+import { Grid, GridItem } from '@contenful/forma-36-react-components';
 ```
 
+## API
 ### columns
-defines the columns `number` and `size` of the grid, and corresponds to [grid-template-columns](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns) css property.
+Accepts a number When defined as a number, it will split the space into equally sized columns, otherwise it accepts any of the [grid-template-columns](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns) css properties. e.g.
+
+```jsx
+<Grid columns={6}></Grid>
+// Or 
+<Grid columns={'auto 1fr'}></Grid>
+```
+
 
 ### rows
-Rows examples goes here
+Accepts a number or any of [grid-template-rows](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows) css properties.
 
-## Best practices
+```jsx
+<Grid rows={6}></Grid>
+// Or 
+<Grid rows={'auto 1fr'}></Grid>
+```
 
-Some do's and dont's for using the component.
+### columnGap & rowGap
+`columnGap` represents space between columns, `rowGap` represents the space between rows, both accepts one of [spacing](https://f36.contentful.com/foundation/spacing/) token names.
+
+`spacing2xs` | `spacingXs` | `spacingXs` | `spacingS` | `spacingM` | `spacingL` | `spacingXl` | `spacing2Xl` | `spacing3Xl` | `spacing4Xl`
+
+**e.g.**
+
+```jsx
+  <Grid columnGap='spacingXs' rowGap='spacingXl'></Grid>
+```
+
+

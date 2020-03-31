@@ -46,7 +46,7 @@ storiesOf('Components|Grid', module)
       rowGap: select('rowGap', spacingValues, 'spacingXs', gridKnobsId),
       className: text('className', '', gridKnobsId),
       exampleBoxes: number('Example Items', 23)
-    }
+    };
 
     return (
       <Grid 
