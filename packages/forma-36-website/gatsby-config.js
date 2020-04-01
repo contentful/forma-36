@@ -1,3 +1,10 @@
+const activeEnv =
+  process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development';
+
+require('dotenv').config({
+  path: `.env.${activeEnv}`,
+});
+
 module.exports = {
   siteMetadata: {
     title: 'Forma 36 - The Contentful Design System',
@@ -201,7 +208,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 912
+              maxWidth: 912,
             },
           },
         ],
@@ -227,6 +234,14 @@ module.exports = {
         trackingId: 'UA-40725207-15',
         anonymize: true,
         respectDNT: true,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-algolia-docsearch`,
+      options: {
+        apiKey: process.env.DOCSEARCH_API_KEY,
+        indexName: 'contentful_forma-36',
+        inputSelector: '#search',
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
