@@ -7,10 +7,11 @@ Grid consists of 2 components where `Grid` acts as a container for smaller block
 ```js
 import { Grid, GridItem } from '@contenful/forma-36-react-components';
 ```
+<br />
+## Usage
 
-## API
 ### columns
-Accepts a number When defined as a number, it will split the space into equally sized columns, otherwise it accepts any of the [grid-template-columns](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns) css properties. e.g.
+When defined as a number, it will split the space into equally sized columns; it also accepts any of the [grid-template-columns](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns) css properties. e.g.
 
 ```jsx
 <Grid columns={6}></Grid>
