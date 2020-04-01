@@ -1,2 +1,2 @@
-export * from './GridItem';
-export { default } from './GridItem';
+export * from './Grid';
+export { default } from './Grid';

@@ -34,7 +34,7 @@ export interface GridItemProps {
   style?: React.CSSProperties
 }
 
-const GridItem = (props: GridItemProps) => {
+export const GridItem = (props: GridItemProps) => {
   const {
     children,
     className,
