@@ -5,7 +5,7 @@ import cn from 'classnames';
 
 import styles from './Grid.css';
 
-export type SpacingProps = 'spacing2xs' | 'spacingXs' | 'spacingXs' | 'spacingS' | 'spacingM' | 'spacingL' | 'spacingXl' | 'spacing2Xl' | 'spacing3Xl' | 'spacing4Xl';
+export type GapTypes = 'none' | 'spacing2xs' | 'spacingXs' | 'spacingS' | 'spacingM' | 'spacingL' | 'spacingXl' | 'spacing2Xl' | 'spacing3Xl' | 'spacing4Xl';
 
 export interface GridProps {
   /**
@@ -24,11 +24,11 @@ export interface GridProps {
    * Defines how many rows, default is `auto` */
   rows?: number | CSS.GridTemplateColumnsProperty<string>;
   /**
-   * Spaces between rows, corresponds to of spacing tokens values, default is 0 */
-  rowGap?: SpacingProps;
+   * Spaces between rows, corresponds to of spacing tokens values, default is none */
+  rowGap?: GapTypes;
   /**
    * One of Spacing tokens values, default is 0 */
-  columnGap?: SpacingProps;
+  columnGap?: GapTypes;
   /**
    * One of grid-auto-flow css values */
   flow?: CSS.GridAutoFlowProperty
@@ -50,7 +50,7 @@ const defaultProps = {
   columns: 'auto',
   rows: 'auto',
   columnGap: 'spacingM',
-  rowGap: 0,
+  rowGap: 'none',
   testId: 'cf-ui-grid',
 };
 
@@ -78,14 +78,22 @@ export const Grid = (props: GridProps) => {
     return value;
   }
 
+  const handleGap = (value: GapTypes) => {
+    if(value === 'none') {
+      return 0;
+    } else {
+      return tokens[value]
+    }
+  }
+
   const inlineStyle = {
     gridTemplateColumns: handleGridTemplate(columns),
     gridTemplateRows: handleGridTemplate(rows),
     flow,
     justifyContent,
     alignContent,
-    gridColumnGap: columnGap && tokens[columnGap],
-    gridRowGap: rowGap && tokens[rowGap],
+    gridColumnGap: columnGap && handleGap(columnGap),
+    gridRowGap: rowGap && handleGap(rowGap),
     ...style
   }
 

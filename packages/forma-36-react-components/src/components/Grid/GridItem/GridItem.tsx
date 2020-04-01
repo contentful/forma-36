@@ -46,17 +46,24 @@ const GridItem = (props: GridItemProps) => {
     order,
     ...otherProps
   } = props;
-  
+
+  const handleShorthand = (property: string, start?: string|number, end?: string|number) => {
+    if(start && end) {
+      return {[`grid${property}`]: `${start} / ${end}`}
+    } else if (start && !end) {
+      return {[`grid${property}Start`]: start}
+    } else if (end && !start) {
+      return {[`grid${property}End`]: end}
+    }
+  }
+
   const style = {
-    gridColumn: `${columnStart} / ${columnEnd}`,
-    gridRowStart: rowStart,
-    gridRowEnd: rowEnd,
+    ...handleShorthand('Column', columnStart, columnEnd),
+    ...handleShorthand('Row', rowStart, rowEnd),
     gridArea: area,
     order,
     ...props.style
   };
-
-  console.log(style.gridColumn)
 
   return (
     <div {...otherProps} style={style} {...className}>
