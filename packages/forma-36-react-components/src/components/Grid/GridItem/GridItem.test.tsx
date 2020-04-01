@@ -1,0 +1,56 @@
+import React from 'react';
+import { shallow, mount } from 'enzyme';
+import { axe } from 'jest-axe';
+import GridItem from './GridItem';
+
+it('renders the component', () => {
+  const output = shallow(<GridItem>Grid Item</GridItem>);
+
+  expect(output).toMatchSnapshot();
+});
+
+it('renders the component with an additional class name', () => {
+  const output = shallow(<GridItem className="my-extra-class">Grid Item</GridItem>);
+
+  expect(output).toMatchSnapshot();
+});
+
+it('has no a11y issues', async () => {
+  const output = mount(<GridItem>Grid Item</GridItem>).html();
+  const results = await axe(output);
+
+  expect(results).toHaveNoViolations();
+});
+
+describe('should have correct styles', () => {
+    
+  it('should result to gridColumn', () => {
+    const output = shallow(<GridItem columnStart={3} columnEnd={6} />);
+    const outputStyles = output.get(0).props.style;
+    expect(outputStyles).toMatchObject({gridColumn: '3 / 6'});
+  })
+
+  it('columnStart should have the correct value', () => {
+    const output = shallow(<GridItem columnStart={3} />);
+    const outputStyles = output.get(0).props.style;
+    expect(outputStyles).toMatchObject({gridColumnStart: 3});
+  })
+
+  it('columnEnd should have the correct value', () => {
+    const output = shallow(<GridItem columnEnd={4} />);
+    const outputStyles = output.get(0).props.style;
+    expect(outputStyles).toMatchObject({gridColumnEnd: 4});
+  })
+
+  it('rowStart should have the correct value', () => {
+    const output = shallow(<GridItem rowStart={3} />);
+    const outputStyles = output.get(0).props.style;
+    expect(outputStyles).toMatchObject({gridRowStart: 3});
+  })
+
+  it('rowEnd should have the correct value', () => {
+    const output = shallow(<GridItem rowEnd={4} />);
+    const outputStyles = output.get(0).props.style;
+    expect(outputStyles).toMatchObject({gridRowEnd: 4});
+  })
+})
