@@ -8,7 +8,6 @@ import GridItem from './GridItem';
 import notes from './Grid.md';
 
 const gridKnobsId = 'Grid Props';
-const gridItemKnobsId = 'GridItem Props';
 const spacingValues = [
   'spacing2Xs',
   'spacingXs', 
@@ -69,46 +68,3 @@ storiesOf('Components|Grid', module)
       </Grid>
     )
   }, {notes})
-  // .add('GridItem', () => {
-  //   const knobs = {
-  //     exampleBoxes: number('Example Items', 22),
-  //     exampleGridHeight: text('Example Grid Height', '60vh'),
-  //     grid: {
-  //       columns: number('columns', 6, '', gridKnobsId),
-  //       rows: number('rows', 4, '', gridKnobsId),
-  //       columnGap: select('columnGap', spacingValues, 'spacingXs', gridKnobsId),
-  //       rowGap: select('rowGap', spacingValues, 'spacingXs', gridKnobsId),
-  //       className: text('className', '', gridKnobsId)
-  //     },
-  //     gridItem: {
-  //       columnStart: number('columnStart', 1, '', gridItemKnobsId),
-  //       columnEnd: number('columnEnd', 3, '', gridItemKnobsId),
-  //       rowStart: number('rowStart', 1, '', gridItemKnobsId),
-  //       rowEnd: number('rowEnd', 4, '', gridItemKnobsId),
-  //       area: text('className', '', gridItemKnobsId),
-  //       order: number('order', 0, '', gridItemKnobsId)
-  //     }
-  //   }
-
-  //   return (
-  //     <Grid
-  //       columns={knobs.grid.columns}
-  //       rows={knobs.grid.rows}
-  //       columnGap={knobs.grid.columnGap}
-  //       rowGap={knobs.grid.rowGap}
-  //       flow='row'
-  //       className={knobs.grid.className}
-  //       style={{height: knobs.exampleGridHeight}}>
-  //       <GridItem
-  //         style={styles.demoBoxDark}
-  //         columnStart={1}
-  //         columnEnd={4}
-  //         rowStart={knobs.gridItem.rowStart}
-  //         rowEnd={knobs.gridItem.rowEnd}
-  //         area={knobs.gridItem.area}
-  //         order={knobs.gridItem.order}
-  //        />
-  //       <DemoBox id="gi" times={knobs.exampleBoxes} />
-  //     </Grid>
-  //   )
-  // });

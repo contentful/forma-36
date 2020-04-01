@@ -5,7 +5,7 @@ import tokens from '@contentful/forma-36-tokens';
 
 import Grid from '../Grid';
 import GridItem from './GridItem';
-import notes from '../Grid.md';
+import notes from './GridItem.md';
 
 const gridKnobsId = 'Grid Props';
 const gridItemKnobsId = 'GridItem Props';
@@ -83,7 +83,7 @@ storiesOf('Components|Grid/GridItem', module)
           area={knobs.gridItem.area}
           order={knobs.gridItem.order}
          />
-        {/* <DemoBox id="gi" times={knobs.exampleBoxes} /> */}
+        <DemoBox id="gi" times={knobs.exampleBoxes} />
       </Grid>
     )
   }, {notes})
