@@ -8,6 +8,7 @@ import GridItem from './GridItem';
 import notes from './Grid.md';
 
 const gridKnobsId = 'Grid Props';
+const gridItemKnobsId = 'GridItem Props';
 const spacingValues = [
   'spacing2Xs',
   'spacingXs', 
@@ -20,18 +21,24 @@ const spacingValues = [
   'spacing4Xl'
 ];
 
-const DemoBoxes = ({times}: {times: number}) => {
-  const styles = {
-    height: '100px',
-    backgroundColor: tokens.colorIceDark
+const styles = {
+  demoBox: {
+    backgroundColor: tokens.colorContrastLight
+  },
+  demoBoxDark: {
+    backgroundColor: tokens.colorContrastDark
+  },
+}
+
+const DemoBox = ({times, id}: {times?: number; id?: string}) => {
+  if(times) {
+    let result = [];
+    for (let i=0; i<=times; i++) {
+      result.push(<GridItem key={`${id}-${i}`} style={styles.demoBox} />)
+    }
+    return <>{result}</>
   }
-  let result = [];
-  for (let i=0; i<=times; i++) {
-    result.push(
-      <GridItem style={styles}></GridItem>
-    )
-  }
-  return <>{result}</>
+  return <GridItem style={styles.demoBox}></GridItem>
 }
 
 storiesOf('Components|Grid', module)
@@ -45,7 +52,8 @@ storiesOf('Components|Grid', module)
       columnGap: select('columnGap', spacingValues, 'spacingXs', gridKnobsId),
       rowGap: select('rowGap', spacingValues, 'spacingXs', gridKnobsId),
       className: text('className', '', gridKnobsId),
-      exampleBoxes: number('Example Items', 23)
+      exampleBoxes: number('Example Items', 23),
+      exampleGridHeight: text('Example Grid Height', '90vh')
     };
 
     return (
@@ -55,8 +63,52 @@ storiesOf('Components|Grid', module)
         columnGap={knobs.columnGap}
         rowGap={knobs.rowGap}
         flow='row'
-        className={knobs.className}>
-          <DemoBoxes times={knobs.exampleBoxes} />
+        className={knobs.className}
+        style={{height: knobs.exampleGridHeight}}>
+          <DemoBox id="g" times={knobs.exampleBoxes} />
       </Grid>
     )
-  }, {notes});
+  }, {notes})
+  // .add('GridItem', () => {
+  //   const knobs = {
+  //     exampleBoxes: number('Example Items', 22),
+  //     exampleGridHeight: text('Example Grid Height', '60vh'),
+  //     grid: {
+  //       columns: number('columns', 6, '', gridKnobsId),
+  //       rows: number('rows', 4, '', gridKnobsId),
+  //       columnGap: select('columnGap', spacingValues, 'spacingXs', gridKnobsId),
+  //       rowGap: select('rowGap', spacingValues, 'spacingXs', gridKnobsId),
+  //       className: text('className', '', gridKnobsId)
+  //     },
+  //     gridItem: {
+  //       columnStart: number('columnStart', 1, '', gridItemKnobsId),
+  //       columnEnd: number('columnEnd', 3, '', gridItemKnobsId),
+  //       rowStart: number('rowStart', 1, '', gridItemKnobsId),
+  //       rowEnd: number('rowEnd', 4, '', gridItemKnobsId),
+  //       area: text('className', '', gridItemKnobsId),
+  //       order: number('order', 0, '', gridItemKnobsId)
+  //     }
+  //   }
+
+  //   return (
+  //     <Grid
+  //       columns={knobs.grid.columns}
+  //       rows={knobs.grid.rows}
+  //       columnGap={knobs.grid.columnGap}
+  //       rowGap={knobs.grid.rowGap}
+  //       flow='row'
+  //       className={knobs.grid.className}
+  //       style={{height: knobs.exampleGridHeight}}>
+  //       <GridItem
+  //         style={styles.demoBoxDark}
+  //         columnStart={1}
+  //         columnEnd={4}
+  //         rowStart={knobs.gridItem.rowStart}
+  //         rowEnd={knobs.gridItem.rowEnd}
+  //         area={knobs.gridItem.area}
+  //         order={knobs.gridItem.order}
+  //        />
+  //       <DemoBox id="gi" times={knobs.exampleBoxes} />
+  //     </Grid>
+  //   )
+  // });

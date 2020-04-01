@@ -24,7 +24,7 @@ export interface GridItemProps {
    * one of grid-row-end css values */
   rowEnd?: CSS.GridRowEndProperty;
   /**
-   * one of grid-row-end css values */
+   * one of grid-area css values */
   area?: CSS.GridAreaProperty;
   /**
    * order css property */
@@ -34,38 +34,35 @@ export interface GridItemProps {
   style?: React.CSSProperties
 }
 
-const defaultProps = {
-};
-
 const GridItem = (props: GridItemProps) => {
   const {
     children,
+    className,
     columnStart,
     columnEnd,
     rowStart,
     rowEnd,
     area,
     order,
-    style,
     ...otherProps
   } = props;
-  const inlineStyles = {
-    gridColumnStart: columnStart,
-    gridColumnEnd: columnEnd,
+  
+  const style = {
+    gridColumn: `${columnStart} / ${columnEnd}`,
     gridRowStart: rowStart,
     gridRowEnd: rowEnd,
     gridArea: area,
     order,
-    ...style
+    ...props.style
   };
 
+  console.log(style.gridColumn)
+
   return (
-    <div style={inlineStyles} {...otherProps}>
+    <div {...otherProps} style={style} {...className}>
       {children}
     </div>
   );
 };
-
-GridItem.defaultProps = defaultProps;
 
 export default GridItem;

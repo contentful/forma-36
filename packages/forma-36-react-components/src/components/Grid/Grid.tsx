@@ -66,6 +66,7 @@ export const Grid = (props: GridProps) => {
     columnGap,
     justifyContent,
     alignContent,
+    flow,
     style,
     ...otherProps
   } = props;
@@ -80,6 +81,7 @@ export const Grid = (props: GridProps) => {
   const inlineStyle = {
     gridTemplateColumns: handleGridTemplate(columns),
     gridTemplateRows: handleGridTemplate(rows),
+    flow,
     justifyContent,
     alignContent,
     gridColumnGap: columnGap && tokens[columnGap],

@@ -2,6 +2,8 @@
 
 [CSS Grid](https://developer.mozilla.org/en-US/docs/Glossary/Grid) based react component, comes with predefined values to ensure design consistency, and ease of use.
 
+Grid consists of 2 components where `Grid` acts as a container for smaller blocks (`GridItem`)
+
 ```js
 import { Grid, GridItem } from '@contenful/forma-36-react-components';
 ```
@@ -36,5 +38,3 @@ Accepts a number or any of [grid-template-rows](https://developer.mozilla.org/en
 ```jsx
   <Grid columnGap='spacingXs' rowGap='spacingXl'></Grid>
 ```
-
-
