@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import IconButton from '../IconButton';
-import Icon from '../Icon';
+import Icon, { IconType } from '../Icon';
 import TextLink, { TextLinkProps } from '../TextLink';
 
 import styles from './NotificationItem.css';
@@ -47,7 +47,9 @@ export class NotificationItem extends Component<
   renderBody() {
     const { title, children } = this.props;
 
-    return <div>{title && children}</div>;
+    return (
+      <div className={styles.NotificationItem__body}>{title && children}</div>
+    );
   }
 
   renderCta() {
@@ -56,53 +58,78 @@ export class NotificationItem extends Component<
     if (cta && cta.label)
       return (
         <div>
-          <TextLink {...cta.textLinkProps} linkType="white">
-            {cta.label}
-          </TextLink>
+          <TextLink {...cta.textLinkProps}>{cta.label}</TextLink>
         </div>
       );
+  }
+
+  renderIcon() {
+    const { intent } = this.props;
+
+    const iconClasses = classNames(styles.NotificationItem__icon, {
+      [styles[`NotificationItem__icon--${intent}`]]: true,
+    });
+
+    let icon: IconType;
+
+    switch (intent) {
+      case 'success':
+        icon = 'CheckCircle';
+        break;
+
+      case 'warning':
+        icon = 'Warning';
+        break;
+
+      case 'error':
+        icon = 'ErrorCircle';
+        break;
+
+      default:
+        icon = 'ErrorCircle';
+    }
+
+    return (
+      <div className={iconClasses} aria-hidden="true">
+        <Icon icon={icon} color="white" />
+      </div>
+    );
   }
 
   render() {
     const { testId, intent, onClose, hasCloseButton } = this.props;
 
-    const classes = classNames(styles.NotificationItem, {
-      [styles[`NotificationItem--${intent}`]]: true,
-    });
     return (
       <div
-        className={classes}
+        className={styles.NotificationItem}
         data-test-id={testId}
         data-intent={intent}
         role="alert"
         aria-live={intent === 'success' ? 'polite' : 'assertive'}
       >
         <div className={styles.NotificationItem__intent}>{intent}</div>
-        <div className={styles.NotificationItem__icon} aria-hidden="true">
-          <Icon
-            icon={intent === 'success' ? 'CheckCircle' : 'Warning'}
-            color="white"
-          />
+        {this.renderIcon()}
+        <div className={styles.NotificationItem__content}>
+          <div className={styles.NotificationItem__text}>
+            {this.renderTitle()}
+            {this.renderBody()}
+            {this.renderCta()}
+          </div>
+          {hasCloseButton && (
+            <IconButton
+              buttonType="secondary"
+              iconProps={{ icon: 'Close' }}
+              onClick={() => {
+                if (onClose) {
+                  onClose();
+                }
+              }}
+              testId="cf-ui-notification-close"
+              label="Dismiss"
+              className={styles.NotificationItem__dismiss}
+            />
+          )}
         </div>
-        <div className={styles.NotificationItem__text}>
-          {this.renderTitle()}
-          {this.renderBody()}
-          {this.renderCta()}
-        </div>
-        {hasCloseButton && (
-          <IconButton
-            buttonType="white"
-            iconProps={{ icon: 'Close' }}
-            onClick={() => {
-              if (onClose) {
-                onClose();
-              }
-            }}
-            testId="cf-ui-notification-close"
-            label="Dismiss"
-            className={styles.NotificationItem__dismiss}
-          />
-        )}
       </div>
     );
   }
