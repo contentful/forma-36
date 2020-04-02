@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { axe } from 'jest-axe';
+import axe from '../../utils/axeHelper';
 import Tooltip from './Tooltip';
 
 it('does not render the component if no mouseover event on child', () => {

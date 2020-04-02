@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import { axe } from 'jest-axe';
+import axe from '../../utils/axeHelper';
 import { Asset } from './Asset';
 
 it('renders the component', () => {
@@ -46,9 +46,9 @@ describe('with type=image', () => {
         type="image"
       />,
     );
-  
-    expect(output.find('img')).toHaveLength(1)
-  })
+
+    expect(output.find('img')).toHaveLength(1);
+  });
 
   it('renders the component as a standard asset with status=archived', () => {
     const output = shallow(
@@ -60,10 +60,10 @@ describe('with type=image', () => {
         status="archived"
       />,
     );
-  
-    expect(output.find('img')).toHaveLength(0)
-  })
-})
+
+    expect(output.find('img')).toHaveLength(0);
+  });
+});
 
 it('has no a11y issues', async () => {
   const output = mount(

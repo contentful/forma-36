@@ -6,4 +6,4 @@ const axe = configureAxe({
   },
 });
 
-module.exports = axe;
+export default axe;
