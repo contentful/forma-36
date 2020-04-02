@@ -6,13 +6,15 @@ import { css, jsx } from '@emotion/core';
 import tokens from '@contentful/forma-36-tokens';
 import { Icon } from '@contentful/forma-36-react-components';
 
+import Docsearch from './Docsearch';
+
 const styles = {
   navList: css`
     display: flex;
     flex-direction: column;
     flex: 0 0 320px;
     background-color: ${tokens.colorElementLightest};
-    padding: ${tokens.spacing2Xl} ${tokens.spacingM};
+    padding: ${tokens.spacingM} ${tokens.spacingM} ${tokens.spacing4Xl};
   `,
 
   list: css`
@@ -105,14 +107,15 @@ class MenuListItem extends React.Component {
     const { item, currentPath } = this.props;
     const { isExpanded } = this.state;
     const isOpen = this.checkOpen(item, currentPath);
-    const iconName = item.menuLinks && (isExpanded || isOpen) ? 'ChevronDown' : 'ChevronRight';
+    const iconName =
+      item.menuLinks && (isExpanded || isOpen) ? 'ChevronDown' : 'ChevronRight';
 
     return (
       <li css={styles.listItem}>
         <Link
           css={[
             item.menuLinks ? styles.linkParent : styles.link,
-            (isOpen && styles.linkActive),
+            isOpen && styles.linkActive,
           ]}
           to={item.link}
           href={item.link}
@@ -120,13 +123,12 @@ class MenuListItem extends React.Component {
         >
           <span>{item.name}</span>
           {item.menuLinks && (
-            <Icon css={styles.linkIcon} color='secondary' icon={iconName} />
+            <Icon css={styles.linkIcon} color="secondary" icon={iconName} />
           )}
         </Link>
-        {item.menuLinks &&
-          (isExpanded || isOpen) && (
-            <MenuList menuItems={item.menuLinks} currentPath={currentPath} />
-          )}
+        {item.menuLinks && (isExpanded || isOpen) && (
+          <MenuList menuItems={item.menuLinks} currentPath={currentPath} />
+        )}
       </li>
     );
   }
@@ -159,6 +161,7 @@ MenuList.defaultProps = {
 
 const Navigation = ({ menuItems, currentPath }) => (
   <nav css={styles.navList} aria-label="Main Navigation">
+    <Docsearch />
     <MenuList menuItems={menuItems} currentPath={currentPath} />
   </nav>
 );

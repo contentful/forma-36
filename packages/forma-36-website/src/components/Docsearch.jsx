@@ -5,19 +5,22 @@ import { TextInput, Icon } from '@contentful/forma-36-react-components';
 
 const styles = {
   container: css`
+    position: relative;
     display: flex;
     align-items: center;
-    max-width: 500px;
     width: 100%;
+    margin-bottom: 0.5rem;
 
     & .algolia-autocomplete {
       width: 100%;
     }
   `,
   icon: css`
+    position: absolute;
+    right: 0px;
     display: flex;
-    align-items: center;
     margin-right: ${tokens.spacingXs};
+    z-index: 1000;
   `,
 };
 
@@ -36,13 +39,14 @@ const Docsearch = () => {
   return (
     <div css={styles.container}>
       <div css={styles.icon}>
-        <Icon icon="Search" size="large" color="white" />
+        <Icon icon="Search" color="muted" />
       </div>
       <TextInput
         id="search"
         name="search"
-        type="search"
+        type="text"
         placeholder='Search the docs (Press "/" to focus)'
+        value=""
       />
     </div>
   );

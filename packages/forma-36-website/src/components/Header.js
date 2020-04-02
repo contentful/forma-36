@@ -3,8 +3,6 @@ import tokens from '@contentful/forma-36-tokens';
 import { css } from '@emotion/core';
 import { Link } from 'gatsby';
 
-import Docsearch from './Docsearch';
-
 const styles = {
   header: css`
     display: flex;
@@ -74,7 +72,6 @@ const Header = () => (
     </div>
 
     <div css={styles.searchNavContainer}>
-      <Docsearch />
       <nav css={styles.nav}>
         <ul css={styles.navList}>
           <li css={styles.navListItem}>
