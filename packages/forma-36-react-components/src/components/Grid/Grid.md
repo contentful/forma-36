@@ -2,7 +2,9 @@
 
 [CSS Grid](https://developer.mozilla.org/en-US/docs/Glossary/Grid) based react component, comes with predefined values to ensure design consistency, and ease of use.
 
-Grid consists of 2 components where `Grid` acts as a container for smaller blocks (`GridItem`)
+The Grid consists of two components:
+- Grid: Used as a container for GridItems
+- GridItem: Elements within the Grid
 
 ```js
 import { Grid, GridItem } from '@contenful/forma-36-react-components';
