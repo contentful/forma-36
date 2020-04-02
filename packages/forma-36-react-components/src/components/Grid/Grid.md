@@ -1,6 +1,6 @@
 # Grid
 
-[CSS Grid](https://developer.mozilla.org/en-US/docs/Glossary/Grid) based react component, comes with predefined values to ensure design consistency, and ease of use.
+[CSS Grid](https://developer.mozilla.org/en-US/docs/Glossary/Grid) based React component, comes with predefined values to ensure design consistency, and ease of use.
 
 The Grid consists of two components:
 - Grid: Used as a container for GridItems
