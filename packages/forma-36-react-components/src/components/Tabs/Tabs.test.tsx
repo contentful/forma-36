@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { axe } from 'jest-axe';
+import axe from '../../utils/axeHelper';
 import Tabs from './Tabs';
 import Tab from './Tab';
 import TabPanel from './TabPanel';

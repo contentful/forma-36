@@ -38,7 +38,8 @@
   "license": "MIT",
   "resolutions": {
     "js-yaml": "3.13.1",
-    "webpack-dev-server": "3.1.11"
+    "webpack-dev-server": "3.1.11",
+    "sharp": "0.24.0"
   },
   "scripts": {
     "build": "gatsby build",

@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import { axe } from 'jest-axe';
+import axe from '../../utils/axeHelper';
 import Workbench from './Workbench';
 import Icon from '../Icon';
 import Button from '../Button';

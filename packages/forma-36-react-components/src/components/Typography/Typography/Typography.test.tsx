@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
-import { axe } from 'jest-axe';
+import axe from '../../../utils/axeHelper';
 import Typography from './Typography';
 import DisplayText from './../DisplayText';
 import Heading from './../Heading';

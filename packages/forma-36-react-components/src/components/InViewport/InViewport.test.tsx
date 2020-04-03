@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { mount } from 'enzyme';
-import { axe } from 'jest-axe';
+import axe from '../../utils/axeHelper';
 import { InViewport } from './InViewport';
 import TextLink from '../TextLink';
 

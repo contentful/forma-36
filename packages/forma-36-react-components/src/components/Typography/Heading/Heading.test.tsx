@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { axe } from 'jest-axe';
+import axe from '../../../utils/axeHelper';
 import Heading from './Heading';
 
 it('renders the component', () => {

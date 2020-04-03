@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import { axe } from 'jest-axe';
+import axe from '../../../utils/axeHelper';
 import AssetCard from './AssetCard';
 import DropdownList from '../../Dropdown/DropdownList';
 import DropdownListItem from '../../Dropdown/DropdownListItem';
