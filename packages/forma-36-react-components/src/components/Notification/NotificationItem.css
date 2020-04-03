@@ -2,32 +2,25 @@
 @import 'settings/typography';
 @import 'settings/transitions';
 @import 'settings/dimensions';
+@import 'settings/borders';
+@import 'settings/shadows';
 
 .NotificationItem {
   display: flex;
-  padding: var(--spacing-s);
-  padding-left: var(--spacing-m);
+  padding: 0;
   transition: transform var(--transition-duration-default)
       var(--transition-easing-default),
     opacity var(--transition-duration-default) var(--transition-easing-default);
   transform: translateY(0);
-  color: var(--color-white);
+  color: var(--color-text-dark);
   cursor: default;
   font-family: var(--font-stack-primary);
   font-size: var(--font-size-m);
   line-height: var(--line-height-default);
-}
-
-.NotificationItem--success {
-  background: var(--color-green-dark);
-}
-
-.NotificationItem--error {
-  background: var(--color-red-dark);
-}
-
-.NotificationItem--warning {
-  background: var(--color-orange-dark);
+  border: none;
+  border-radius: var(--border-radius-small);
+  background: var(--color-white);
+  box-shadow: var(--box-shadow-default);
 }
 
 .NotificationItem__intent {
@@ -35,9 +28,31 @@
 }
 
 .NotificationItem__icon {
-  margin-right: var(--spacing-s);
   display: flex;
-  margin-top: 1px;
+  padding: var(--spacing-m);
+  align-items: center;
+  border-radius: var(--border-radius-small) 0 0 var(--border-radius-small);
+}
+
+.NotificationItem__icon--success {
+  background: var(--color-green-dark);
+}
+
+.NotificationItem__icon--error {
+  background: var(--color-red-dark);
+}
+
+.NotificationItem__icon--warning {
+  background: var(--color-orange-dark);
+}
+
+.NotificationItem__content {
+  display: flex;
+  flex: 1 1 auto;
+  padding: var(--spacing-m);
+  border: 1px solid var(--color-element-mid);
+  border-left: 0;
+  border-radius: 0 var(--border-radius-small) var(--border-radius-small) 0;
 }
 
 .NotificationItem__text {
@@ -47,6 +62,11 @@
 
 .NotificationItem__title {
   font-weight: var(--font-weight-medium);
+  margin-bottom: var(--spacing-2xs);
+}
+
+.NotificationItem__body {
+  margin-bottom: var(--spacing-2xs);
 }
 
 .NotificationItem__dismiss {
