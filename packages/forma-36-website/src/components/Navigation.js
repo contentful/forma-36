@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-/** @jsx jsx */
-import { css, jsx } from '@emotion/core';
+
+import { css } from '@emotion/core';
 import tokens from '@contentful/forma-36-tokens';
 import { Icon } from '@contentful/forma-36-react-components';
+
+import DocSearch from './DocSearch';
 
 const styles = {
   navList: css`
@@ -12,7 +14,7 @@ const styles = {
     flex-direction: column;
     flex: 0 0 320px;
     background-color: ${tokens.colorElementLightest};
-    padding: ${tokens.spacing2Xl} ${tokens.spacingM};
+    padding: ${tokens.spacingM} ${tokens.spacingM} ${tokens.spacing4Xl};
   `,
 
   list: css`
@@ -56,6 +58,7 @@ const styles = {
     position: relative;
     border-radius: 4px;
     padding: ${tokens.spacingXs};
+    cursor: pointer;
   `,
 
   linkIcon: css`
@@ -78,78 +81,75 @@ const MenuListProps = {
   currentPath: PropTypes.string.isRequired,
 };
 
-class MenuListItem extends React.Component {
-  state = {
-    isExpanded: false,
-  };
+const MenuListItem = ({ item, currentPath }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
 
-  checkOpen = (item, currentPath) => {
+  const checkOpen = (item, currentPath) => {
     if (item.link === currentPath) {
       return true;
     } else if (item.menuLinks) {
-      return item.menuLinks.some(item => this.checkOpen(item, currentPath));
+      return item.menuLinks.some(item => checkOpen(item, currentPath));
     }
 
     return false;
   };
 
-  handleToggle = event => {
+  const handleToggle = event => {
     event.preventDefault();
-
-    this.setState(prevState => {
-      return { isExpanded: !prevState.isExpanded };
-    });
+    setIsExpanded(!isExpanded);
   };
 
-  render() {
-    const { item, currentPath } = this.props;
-    const { isExpanded } = this.state;
-    const isOpen = this.checkOpen(item, currentPath);
-    const iconName = item.menuLinks && (isExpanded || isOpen) ? 'ChevronDown' : 'ChevronRight';
+  const isOpen = checkOpen(item, currentPath);
+  const iconName =
+    item.menuLinks && (isExpanded || isOpen) ? 'ChevronDown' : 'ChevronRight';
 
-    return (
-      <li css={styles.listItem}>
-        <Link
-          css={[
-            item.menuLinks ? styles.linkParent : styles.link,
-            (isOpen && styles.linkActive),
-          ]}
-          to={item.link}
-          href={item.link}
-          onClick={!item.link && (event => this.handleToggle(event))}
+  return (
+    <li css={styles.listItem}>
+      {!item.link ? (
+        <div
+          css={[styles.linkParent, isOpen && styles.linkActive]}
+          onClick={handleToggle}
         >
           <span>{item.name}</span>
-          {item.menuLinks && (
-            <Icon css={styles.linkIcon} color='secondary' icon={iconName} />
-          )}
+          <Icon css={styles.linkIcon} color="secondary" icon={iconName} />
+        </div>
+      ) : (
+        <Link
+          css={[styles.link, isOpen && styles.linkActive]}
+          to={item.link}
+          href={item.link}
+        >
+          <span>{item.name}</span>
         </Link>
-        {item.menuLinks &&
-          (isExpanded || isOpen) && (
-            <MenuList menuItems={item.menuLinks} currentPath={currentPath} />
-          )}
-      </li>
-    );
-  }
-}
+      )}
+      {item.menuLinks && (isExpanded || isOpen) && (
+        <MenuList menuItems={item.menuLinks} currentPath={currentPath} />
+      )}
+    </li>
+  );
+};
 
-class MenuList extends React.Component {
-  render() {
-    const { menuItems, currentPath } = this.props;
-    return (
-      <ul css={styles.list}>
-        {menuItems &&
-          menuItems.map((item, index) => (
-            <MenuListItem
-              key={index}
-              item={item}
-              menuItems={menuItems}
-              currentPath={currentPath}
-            />
-          ))}
-      </ul>
-    );
-  }
-}
+MenuListItem.propTypes = {
+  item: PropTypes.shape({ link: PropTypes.string, name: PropTypes.string })
+    .isRequired,
+  currentPath: PropTypes.string.isRequired,
+};
+
+const MenuList = ({ menuItems, currentPath }) => {
+  return (
+    <ul css={styles.list}>
+      {menuItems &&
+        menuItems.map((item, index) => (
+          <MenuListItem
+            key={index}
+            item={item}
+            menuItems={menuItems}
+            currentPath={currentPath}
+          />
+        ))}
+    </ul>
+  );
+};
 
 MenuList.propTypes = MenuListProps;
 
@@ -159,6 +159,7 @@ MenuList.defaultProps = {
 
 const Navigation = ({ menuItems, currentPath }) => (
   <nav css={styles.navList} aria-label="Main Navigation">
+    <DocSearch />
     <MenuList menuItems={menuItems} currentPath={currentPath} />
   </nav>
 );

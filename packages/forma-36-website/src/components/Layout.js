@@ -89,7 +89,6 @@ const Layout = props => (
               }
               currentPath={props && props.location && props.location.pathname}
             />
-
             <Container
               frontmatter={props.pageContext && props.pageContext.frontmatter}
             >
