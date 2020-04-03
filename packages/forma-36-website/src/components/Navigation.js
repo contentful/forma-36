@@ -58,6 +58,7 @@ const styles = {
     position: relative;
     border-radius: 4px;
     padding: ${tokens.spacingXs};
+    cursor: pointer;
   `,
 
   linkIcon: css`
@@ -112,20 +113,23 @@ class MenuListItem extends React.Component {
 
     return (
       <li css={styles.listItem}>
-        <Link
-          css={[
-            item.menuLinks ? styles.linkParent : styles.link,
-            isOpen && styles.linkActive,
-          ]}
-          to={item.link}
-          href={item.link}
-          onClick={!item.link && (event => this.handleToggle(event))}
-        >
-          <span>{item.name}</span>
-          {item.menuLinks && (
+        {!item.link ? (
+          <div
+            css={[styles.linkParent, isOpen && styles.linkActive]}
+            onClick={event => this.handleToggle(event)}
+          >
+            <span>{item.name}</span>
             <Icon css={styles.linkIcon} color="secondary" icon={iconName} />
-          )}
-        </Link>
+          </div>
+        ) : (
+          <Link
+            css={[styles.link, isOpen && styles.linkActive]}
+            to={item.link}
+            href={item.link}
+          >
+            <span>{item.name}</span>
+          </Link>
+        )}
         {item.menuLinks && (isExpanded || isOpen) && (
           <MenuList menuItems={item.menuLinks} currentPath={currentPath} />
         )}
@@ -137,6 +141,7 @@ class MenuListItem extends React.Component {
 class MenuList extends React.Component {
   render() {
     const { menuItems, currentPath } = this.props;
+
     return (
       <ul css={styles.list}>
         {menuItems &&
