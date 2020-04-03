@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/contentful/forma-36/compare/forma-36-website@0.4.20...forma-36-website@0.5.0) (2020-04-03)
+
+
+### Features
+
+* **forma-website:** implement DocSearch in the docs ([#448](https://github.com/contentful/forma-36/issues/448)) ([a7ed155](https://github.com/contentful/forma-36/commit/a7ed15593af5ed70ee77f4228768629ba0b4144e))
+
+
+
+
+
 ## [0.4.20](https://github.com/contentful/forma-36/compare/forma-36-website@0.4.19...forma-36-website@0.4.20) (2020-04-03)
 
 **Note:** Version bump only for package forma-36-website
