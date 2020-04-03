@@ -33,7 +33,9 @@ const DocSearch = () => {
     }
 
     window.docsearch({
-      apiKey: process.env.GATSBY_DOCSEARCH_API_KEY,
+      // The key is added here only give access to searching the public content of the website https://docsearch.algolia.com/docs/what-is-docsearch
+      // You can even check Forma36's configuration in DocSearch's repo https://github.com/algolia/docsearch-configs/blob/master/configs/contentful_forma-36.json
+      apiKey: 'b7d2cac8e38b0903385db259b042c66c',
       indexName: 'contentful_forma-36',
       inputSelector: '#search',
       debug: false, // optional attr to be used for dropdown debugging ( if 'true' it never closes the dropdown)
