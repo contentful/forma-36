@@ -23,14 +23,20 @@ export type SkeletonContainerProps = {
   children: React.ReactNode;
 } & typeof defaultProps;
 
+let idCounter = 0;
+
 const defaultProps = {
   testId: 'cf-ui-skeleton-form',
   ariaLabel: 'Loading component...',
   width: '100%',
   height: '100%',
   preserveAspectRatio: 'xMidYMid meet',
-  clipId: 'cf-ui-skeleton-clip-id',
-  gradientId: 'cf-ui-skeleton-clip-gradient',
+  get clipId() {
+    return `cf-ui-skeleton-clip-${idCounter++}`;
+  },
+  get gradientId() {
+    return `cf-ui-skeleton-clip-gradient-${idCounter++}`;
+  },
   backgroundColor: '#e5ebed',
   backgroundOpacity: 1,
   animate: true,

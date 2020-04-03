@@ -14,11 +14,11 @@ exports[`renders the component 1`] = `
     Loading component...
   </title>
   <rect
-    clipPath="url(#cf-ui-skeleton-clip-id)"
+    clipPath="url(#cf-ui-skeleton-clip-0)"
     height="100%"
     style={
       Object {
-        "fill": "url(#cf-ui-skeleton-clip-gradient)",
+        "fill": "url(#cf-ui-skeleton-clip-gradient-1)",
       }
     }
     width="100%"
@@ -27,7 +27,7 @@ exports[`renders the component 1`] = `
   />
   <defs>
     <clipPath
-      id="cf-ui-skeleton-clip-id"
+      id="cf-ui-skeleton-clip-0"
     >
       <SkeletonBodyText
         lineHeight={16}
@@ -38,7 +38,7 @@ exports[`renders the component 1`] = `
       />
     </clipPath>
     <linearGradient
-      id="cf-ui-skeleton-clip-gradient"
+      id="cf-ui-skeleton-clip-gradient-1"
     >
       <stop
         offset="0%"
