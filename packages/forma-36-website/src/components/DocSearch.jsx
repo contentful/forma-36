@@ -51,7 +51,7 @@ const DocSearch = () => {
         id="search"
         name="search"
         type="text"
-        placeholder='Search the docs (Press "/" to focus)'
+        placeholder="Search the docs"
         value=""
       />
     </div>
