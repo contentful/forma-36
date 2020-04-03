@@ -14,11 +14,11 @@ exports[`renders the component 1`] = `
     Loading component...
   </title>
   <rect
-    clipPath="url(#cf-ui-skeleton-clip-id)"
+    clipPath="url(#cf-ui-skeleton-clip-0)"
     height="100%"
     style={
       Object {
-        "fill": "url(#cf-ui-skeleton-clip-gradient)",
+        "fill": "url(#cf-ui-skeleton-clip-gradient-1)",
       }
     }
     width="100%"
@@ -27,7 +27,7 @@ exports[`renders the component 1`] = `
   />
   <defs>
     <clipPath
-      id="cf-ui-skeleton-clip-id"
+      id="cf-ui-skeleton-clip-0"
     >
       <SkeletonBodyText
         lineHeight={16}
@@ -38,7 +38,7 @@ exports[`renders the component 1`] = `
       />
     </clipPath>
     <linearGradient
-      id="cf-ui-skeleton-clip-gradient"
+      id="cf-ui-skeleton-clip-gradient-1"
     >
       <stop
         offset="0%"
@@ -98,11 +98,11 @@ exports[`renders the component with a custom animation speed 1`] = `
     Loading component...
   </title>
   <rect
-    clipPath="url(#cf-ui-skeleton-clip-id)"
+    clipPath="url(#cf-ui-skeleton-clip-30)"
     height="100%"
     style={
       Object {
-        "fill": "url(#cf-ui-skeleton-clip-gradient)",
+        "fill": "url(#cf-ui-skeleton-clip-gradient-31)",
       }
     }
     width="100%"
@@ -111,7 +111,7 @@ exports[`renders the component with a custom animation speed 1`] = `
   />
   <defs>
     <clipPath
-      id="cf-ui-skeleton-clip-id"
+      id="cf-ui-skeleton-clip-30"
     >
       <SkeletonBodyText
         lineHeight={16}
@@ -122,7 +122,7 @@ exports[`renders the component with a custom animation speed 1`] = `
       />
     </clipPath>
     <linearGradient
-      id="cf-ui-skeleton-clip-gradient"
+      id="cf-ui-skeleton-clip-gradient-31"
     >
       <stop
         offset="0%"
@@ -182,11 +182,11 @@ exports[`renders the component with a custom aria label 1`] = `
     Custom Aria Label
   </title>
   <rect
-    clipPath="url(#cf-ui-skeleton-clip-id)"
+    clipPath="url(#cf-ui-skeleton-clip-10)"
     height="100%"
     style={
       Object {
-        "fill": "url(#cf-ui-skeleton-clip-gradient)",
+        "fill": "url(#cf-ui-skeleton-clip-gradient-11)",
       }
     }
     width="100%"
@@ -195,7 +195,7 @@ exports[`renders the component with a custom aria label 1`] = `
   />
   <defs>
     <clipPath
-      id="cf-ui-skeleton-clip-id"
+      id="cf-ui-skeleton-clip-10"
     >
       <SkeletonBodyText
         lineHeight={16}
@@ -206,7 +206,7 @@ exports[`renders the component with a custom aria label 1`] = `
       />
     </clipPath>
     <linearGradient
-      id="cf-ui-skeleton-clip-gradient"
+      id="cf-ui-skeleton-clip-gradient-11"
     >
       <stop
         offset="0%"
@@ -266,11 +266,11 @@ exports[`renders the component with a custom aspect ratio 1`] = `
     Loading component...
   </title>
   <rect
-    clipPath="url(#cf-ui-skeleton-clip-id)"
+    clipPath="url(#cf-ui-skeleton-clip-16)"
     height="100%"
     style={
       Object {
-        "fill": "url(#cf-ui-skeleton-clip-gradient)",
+        "fill": "url(#cf-ui-skeleton-clip-gradient-17)",
       }
     }
     width="100%"
@@ -279,7 +279,7 @@ exports[`renders the component with a custom aspect ratio 1`] = `
   />
   <defs>
     <clipPath
-      id="cf-ui-skeleton-clip-id"
+      id="cf-ui-skeleton-clip-16"
     >
       <SkeletonBodyText
         lineHeight={16}
@@ -290,7 +290,7 @@ exports[`renders the component with a custom aspect ratio 1`] = `
       />
     </clipPath>
     <linearGradient
-      id="cf-ui-skeleton-clip-gradient"
+      id="cf-ui-skeleton-clip-gradient-17"
     >
       <stop
         offset="0%"
@@ -354,7 +354,7 @@ exports[`renders the component with a custom clip id 1`] = `
     height="100%"
     style={
       Object {
-        "fill": "url(#cf-ui-skeleton-clip-gradient)",
+        "fill": "url(#cf-ui-skeleton-clip-gradient-18)",
       }
     }
     width="100%"
@@ -374,7 +374,7 @@ exports[`renders the component with a custom clip id 1`] = `
       />
     </clipPath>
     <linearGradient
-      id="cf-ui-skeleton-clip-gradient"
+      id="cf-ui-skeleton-clip-gradient-18"
     >
       <stop
         offset="0%"
@@ -434,7 +434,7 @@ exports[`renders the component with a custom gradient id 1`] = `
     Loading component...
   </title>
   <rect
-    clipPath="url(#cf-ui-skeleton-clip-id)"
+    clipPath="url(#cf-ui-skeleton-clip-19)"
     height="100%"
     style={
       Object {
@@ -447,7 +447,7 @@ exports[`renders the component with a custom gradient id 1`] = `
   />
   <defs>
     <clipPath
-      id="cf-ui-skeleton-clip-id"
+      id="cf-ui-skeleton-clip-19"
     >
       <SkeletonBodyText
         lineHeight={16}
@@ -518,11 +518,11 @@ exports[`renders the component with a custom height 1`] = `
     Loading component...
   </title>
   <rect
-    clipPath="url(#cf-ui-skeleton-clip-id)"
+    clipPath="url(#cf-ui-skeleton-clip-14)"
     height="50%"
     style={
       Object {
-        "fill": "url(#cf-ui-skeleton-clip-gradient)",
+        "fill": "url(#cf-ui-skeleton-clip-gradient-15)",
       }
     }
     width="100%"
@@ -531,7 +531,7 @@ exports[`renders the component with a custom height 1`] = `
   />
   <defs>
     <clipPath
-      id="cf-ui-skeleton-clip-id"
+      id="cf-ui-skeleton-clip-14"
     >
       <SkeletonBodyText
         lineHeight={16}
@@ -542,7 +542,7 @@ exports[`renders the component with a custom height 1`] = `
       />
     </clipPath>
     <linearGradient
-      id="cf-ui-skeleton-clip-gradient"
+      id="cf-ui-skeleton-clip-gradient-15"
     >
       <stop
         offset="0%"
@@ -602,11 +602,11 @@ exports[`renders the component with a custom primary color 1`] = `
     Loading component...
   </title>
   <rect
-    clipPath="url(#cf-ui-skeleton-clip-id)"
+    clipPath="url(#cf-ui-skeleton-clip-20)"
     height="100%"
     style={
       Object {
-        "fill": "url(#cf-ui-skeleton-clip-gradient)",
+        "fill": "url(#cf-ui-skeleton-clip-gradient-21)",
       }
     }
     width="100%"
@@ -615,7 +615,7 @@ exports[`renders the component with a custom primary color 1`] = `
   />
   <defs>
     <clipPath
-      id="cf-ui-skeleton-clip-id"
+      id="cf-ui-skeleton-clip-20"
     >
       <SkeletonBodyText
         lineHeight={16}
@@ -626,7 +626,7 @@ exports[`renders the component with a custom primary color 1`] = `
       />
     </clipPath>
     <linearGradient
-      id="cf-ui-skeleton-clip-gradient"
+      id="cf-ui-skeleton-clip-gradient-21"
     >
       <stop
         offset="0%"
@@ -686,11 +686,11 @@ exports[`renders the component with a custom primary opacity 1`] = `
     Loading component...
   </title>
   <rect
-    clipPath="url(#cf-ui-skeleton-clip-id)"
+    clipPath="url(#cf-ui-skeleton-clip-22)"
     height="100%"
     style={
       Object {
-        "fill": "url(#cf-ui-skeleton-clip-gradient)",
+        "fill": "url(#cf-ui-skeleton-clip-gradient-23)",
       }
     }
     width="100%"
@@ -699,7 +699,7 @@ exports[`renders the component with a custom primary opacity 1`] = `
   />
   <defs>
     <clipPath
-      id="cf-ui-skeleton-clip-id"
+      id="cf-ui-skeleton-clip-22"
     >
       <SkeletonBodyText
         lineHeight={16}
@@ -710,7 +710,7 @@ exports[`renders the component with a custom primary opacity 1`] = `
       />
     </clipPath>
     <linearGradient
-      id="cf-ui-skeleton-clip-gradient"
+      id="cf-ui-skeleton-clip-gradient-23"
     >
       <stop
         offset="0%"
@@ -770,11 +770,11 @@ exports[`renders the component with a custom secondary color 1`] = `
     Loading component...
   </title>
   <rect
-    clipPath="url(#cf-ui-skeleton-clip-id)"
+    clipPath="url(#cf-ui-skeleton-clip-24)"
     height="100%"
     style={
       Object {
-        "fill": "url(#cf-ui-skeleton-clip-gradient)",
+        "fill": "url(#cf-ui-skeleton-clip-gradient-25)",
       }
     }
     width="100%"
@@ -783,7 +783,7 @@ exports[`renders the component with a custom secondary color 1`] = `
   />
   <defs>
     <clipPath
-      id="cf-ui-skeleton-clip-id"
+      id="cf-ui-skeleton-clip-24"
     >
       <SkeletonBodyText
         lineHeight={16}
@@ -794,7 +794,7 @@ exports[`renders the component with a custom secondary color 1`] = `
       />
     </clipPath>
     <linearGradient
-      id="cf-ui-skeleton-clip-gradient"
+      id="cf-ui-skeleton-clip-gradient-25"
     >
       <stop
         offset="0%"
@@ -854,11 +854,11 @@ exports[`renders the component with a custom secondary opacity 1`] = `
     Loading component...
   </title>
   <rect
-    clipPath="url(#cf-ui-skeleton-clip-id)"
+    clipPath="url(#cf-ui-skeleton-clip-26)"
     height="100%"
     style={
       Object {
-        "fill": "url(#cf-ui-skeleton-clip-gradient)",
+        "fill": "url(#cf-ui-skeleton-clip-gradient-27)",
       }
     }
     width="100%"
@@ -867,7 +867,7 @@ exports[`renders the component with a custom secondary opacity 1`] = `
   />
   <defs>
     <clipPath
-      id="cf-ui-skeleton-clip-id"
+      id="cf-ui-skeleton-clip-26"
     >
       <SkeletonBodyText
         lineHeight={16}
@@ -878,7 +878,7 @@ exports[`renders the component with a custom secondary opacity 1`] = `
       />
     </clipPath>
     <linearGradient
-      id="cf-ui-skeleton-clip-gradient"
+      id="cf-ui-skeleton-clip-gradient-27"
     >
       <stop
         offset="0%"
@@ -938,11 +938,11 @@ exports[`renders the component with a custom testId 1`] = `
     Loading component...
   </title>
   <rect
-    clipPath="url(#cf-ui-skeleton-clip-id)"
+    clipPath="url(#cf-ui-skeleton-clip-8)"
     height="100%"
     style={
       Object {
-        "fill": "url(#cf-ui-skeleton-clip-gradient)",
+        "fill": "url(#cf-ui-skeleton-clip-gradient-9)",
       }
     }
     width="100%"
@@ -951,7 +951,7 @@ exports[`renders the component with a custom testId 1`] = `
   />
   <defs>
     <clipPath
-      id="cf-ui-skeleton-clip-id"
+      id="cf-ui-skeleton-clip-8"
     >
       <SkeletonBodyText
         lineHeight={16}
@@ -962,7 +962,7 @@ exports[`renders the component with a custom testId 1`] = `
       />
     </clipPath>
     <linearGradient
-      id="cf-ui-skeleton-clip-gradient"
+      id="cf-ui-skeleton-clip-gradient-9"
     >
       <stop
         offset="0%"
@@ -1022,11 +1022,11 @@ exports[`renders the component with a custom width 1`] = `
     Loading component...
   </title>
   <rect
-    clipPath="url(#cf-ui-skeleton-clip-id)"
+    clipPath="url(#cf-ui-skeleton-clip-12)"
     height="100%"
     style={
       Object {
-        "fill": "url(#cf-ui-skeleton-clip-gradient)",
+        "fill": "url(#cf-ui-skeleton-clip-gradient-13)",
       }
     }
     width="50%"
@@ -1035,7 +1035,7 @@ exports[`renders the component with a custom width 1`] = `
   />
   <defs>
     <clipPath
-      id="cf-ui-skeleton-clip-id"
+      id="cf-ui-skeleton-clip-12"
     >
       <SkeletonBodyText
         lineHeight={16}
@@ -1046,7 +1046,7 @@ exports[`renders the component with a custom width 1`] = `
       />
     </clipPath>
     <linearGradient
-      id="cf-ui-skeleton-clip-gradient"
+      id="cf-ui-skeleton-clip-gradient-13"
     >
       <stop
         offset="0%"
@@ -1106,11 +1106,11 @@ exports[`renders the component with an additional class name 1`] = `
     Loading component...
   </title>
   <rect
-    clipPath="url(#cf-ui-skeleton-clip-id)"
+    clipPath="url(#cf-ui-skeleton-clip-2)"
     height="100%"
     style={
       Object {
-        "fill": "url(#cf-ui-skeleton-clip-gradient)",
+        "fill": "url(#cf-ui-skeleton-clip-gradient-3)",
       }
     }
     width="100%"
@@ -1119,7 +1119,7 @@ exports[`renders the component with an additional class name 1`] = `
   />
   <defs>
     <clipPath
-      id="cf-ui-skeleton-clip-id"
+      id="cf-ui-skeleton-clip-2"
     >
       <SkeletonBodyText
         lineHeight={16}
@@ -1130,7 +1130,7 @@ exports[`renders the component with an additional class name 1`] = `
       />
     </clipPath>
     <linearGradient
-      id="cf-ui-skeleton-clip-gradient"
+      id="cf-ui-skeleton-clip-gradient-3"
     >
       <stop
         offset="0%"
@@ -1190,11 +1190,11 @@ exports[`renders the component without animation 1`] = `
     Loading component...
   </title>
   <rect
-    clipPath="url(#cf-ui-skeleton-clip-id)"
+    clipPath="url(#cf-ui-skeleton-clip-28)"
     height="100%"
     style={
       Object {
-        "fill": "url(#cf-ui-skeleton-clip-gradient)",
+        "fill": "url(#cf-ui-skeleton-clip-gradient-29)",
       }
     }
     width="100%"
@@ -1203,7 +1203,7 @@ exports[`renders the component without animation 1`] = `
   />
   <defs>
     <clipPath
-      id="cf-ui-skeleton-clip-id"
+      id="cf-ui-skeleton-clip-28"
     >
       <SkeletonBodyText
         lineHeight={16}
@@ -1214,7 +1214,7 @@ exports[`renders the component without animation 1`] = `
       />
     </clipPath>
     <linearGradient
-      id="cf-ui-skeleton-clip-gradient"
+      id="cf-ui-skeleton-clip-gradient-29"
     >
       <stop
         offset="0%"
@@ -1250,11 +1250,11 @@ exports[`renders the svg with a custom height 1`] = `
     Loading component...
   </title>
   <rect
-    clipPath="url(#cf-ui-skeleton-clip-id)"
+    clipPath="url(#cf-ui-skeleton-clip-32)"
     height="100%"
     style={
       Object {
-        "fill": "url(#cf-ui-skeleton-clip-gradient)",
+        "fill": "url(#cf-ui-skeleton-clip-gradient-33)",
       }
     }
     width="100%"
@@ -1263,7 +1263,7 @@ exports[`renders the svg with a custom height 1`] = `
   />
   <defs>
     <clipPath
-      id="cf-ui-skeleton-clip-id"
+      id="cf-ui-skeleton-clip-32"
     >
       <SkeletonBodyText
         lineHeight={16}
@@ -1274,7 +1274,7 @@ exports[`renders the svg with a custom height 1`] = `
       />
     </clipPath>
     <linearGradient
-      id="cf-ui-skeleton-clip-gradient"
+      id="cf-ui-skeleton-clip-gradient-33"
     >
       <stop
         offset="0%"
@@ -1334,11 +1334,11 @@ exports[`renders the svg with a custom width 1`] = `
     Loading component...
   </title>
   <rect
-    clipPath="url(#cf-ui-skeleton-clip-id)"
+    clipPath="url(#cf-ui-skeleton-clip-34)"
     height="100%"
     style={
       Object {
-        "fill": "url(#cf-ui-skeleton-clip-gradient)",
+        "fill": "url(#cf-ui-skeleton-clip-gradient-35)",
       }
     }
     width="100%"
@@ -1347,7 +1347,7 @@ exports[`renders the svg with a custom width 1`] = `
   />
   <defs>
     <clipPath
-      id="cf-ui-skeleton-clip-id"
+      id="cf-ui-skeleton-clip-34"
     >
       <SkeletonBodyText
         lineHeight={16}
@@ -1358,7 +1358,7 @@ exports[`renders the svg with a custom width 1`] = `
       />
     </clipPath>
     <linearGradient
-      id="cf-ui-skeleton-clip-gradient"
+      id="cf-ui-skeleton-clip-gradient-35"
     >
       <stop
         offset="0%"
@@ -1402,4 +1402,59 @@ exports[`renders the svg with a custom width 1`] = `
     </linearGradient>
   </defs>
 </svg>
+`;
+
+exports[`renders with unique default ids 1`] = `
+<div>
+  <SkeletonContainer
+    animate={true}
+    ariaLabel="Loading component..."
+    backgroundColor="#e5ebed"
+    backgroundOpacity={1}
+    clipId="cf-ui-skeleton-clip-4"
+    foregroundColor="#f7f9fa"
+    foregroundOpacity={1}
+    gradientId="cf-ui-skeleton-clip-gradient-5"
+    height="100%"
+    preserveAspectRatio="xMidYMid meet"
+    speed={2}
+    svgHeight="100%"
+    svgWidth="100%"
+    testId="first"
+    width="100%"
+  >
+    <SkeletonBodyText
+      lineHeight={16}
+      marginBottom={8}
+      numberOfLines={2}
+      offsetLeft={0}
+      offsetTop={0}
+    />
+  </SkeletonContainer>
+  <SkeletonContainer
+    animate={true}
+    ariaLabel="Loading component..."
+    backgroundColor="#e5ebed"
+    backgroundOpacity={1}
+    clipId="cf-ui-skeleton-clip-6"
+    foregroundColor="#f7f9fa"
+    foregroundOpacity={1}
+    gradientId="cf-ui-skeleton-clip-gradient-7"
+    height="100%"
+    preserveAspectRatio="xMidYMid meet"
+    speed={2}
+    svgHeight="100%"
+    svgWidth="100%"
+    testId="first"
+    width="100%"
+  >
+    <SkeletonBodyText
+      lineHeight={16}
+      marginBottom={8}
+      numberOfLines={2}
+      offsetLeft={0}
+      offsetTop={0}
+    />
+  </SkeletonContainer>
+</div>
 `;

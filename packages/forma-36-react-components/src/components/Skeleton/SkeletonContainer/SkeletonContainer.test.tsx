@@ -24,6 +24,21 @@ it('renders the component with an additional class name', () => {
   expect(output).toMatchSnapshot();
 });
 
+it('renders with unique default ids', () => {
+  const output = shallow(
+    <div>
+      <SkeletonContainer testId="first">
+        <SkeletonBodyText />
+      </SkeletonContainer>
+      <SkeletonContainer testId="first">
+        <SkeletonBodyText />
+      </SkeletonContainer>
+    </div>,
+  );
+
+  expect(output).toMatchSnapshot();
+});
+
 it('renders the component with a custom testId', () => {
   const output = shallow(
     <SkeletonContainer testId="someId">

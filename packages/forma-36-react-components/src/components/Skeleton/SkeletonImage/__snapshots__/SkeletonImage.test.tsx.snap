@@ -14,11 +14,11 @@ exports[`renders the component 1`] = `
     Loading component...
   </title>
   <rect
-    clipPath="url(#cf-ui-skeleton-clip-id)"
+    clipPath="url(#cf-ui-skeleton-clip-0)"
     height="100%"
     style={
       Object {
-        "fill": "url(#cf-ui-skeleton-clip-gradient)",
+        "fill": "url(#cf-ui-skeleton-clip-gradient-1)",
       }
     }
     width="100%"
@@ -27,7 +27,7 @@ exports[`renders the component 1`] = `
   />
   <defs>
     <clipPath
-      id="cf-ui-skeleton-clip-id"
+      id="cf-ui-skeleton-clip-0"
     >
       <SkeletonImage
         height={70}
@@ -38,7 +38,7 @@ exports[`renders the component 1`] = `
       />
     </clipPath>
     <linearGradient
-      id="cf-ui-skeleton-clip-gradient"
+      id="cf-ui-skeleton-clip-gradient-1"
     >
       <stop
         offset="0%"
@@ -98,11 +98,11 @@ exports[`renders the component with a custom height 1`] = `
     Loading component...
   </title>
   <rect
-    clipPath="url(#cf-ui-skeleton-clip-id)"
+    clipPath="url(#cf-ui-skeleton-clip-2)"
     height="100%"
     style={
       Object {
-        "fill": "url(#cf-ui-skeleton-clip-gradient)",
+        "fill": "url(#cf-ui-skeleton-clip-gradient-3)",
       }
     }
     width="100%"
@@ -111,7 +111,7 @@ exports[`renders the component with a custom height 1`] = `
   />
   <defs>
     <clipPath
-      id="cf-ui-skeleton-clip-id"
+      id="cf-ui-skeleton-clip-2"
     >
       <SkeletonImage
         height={100}
@@ -122,7 +122,7 @@ exports[`renders the component with a custom height 1`] = `
       />
     </clipPath>
     <linearGradient
-      id="cf-ui-skeleton-clip-gradient"
+      id="cf-ui-skeleton-clip-gradient-3"
     >
       <stop
         offset="0%"
@@ -182,11 +182,11 @@ exports[`renders the component with a custom width 1`] = `
     Loading component...
   </title>
   <rect
-    clipPath="url(#cf-ui-skeleton-clip-id)"
+    clipPath="url(#cf-ui-skeleton-clip-4)"
     height="100%"
     style={
       Object {
-        "fill": "url(#cf-ui-skeleton-clip-gradient)",
+        "fill": "url(#cf-ui-skeleton-clip-gradient-5)",
       }
     }
     width="100%"
@@ -195,7 +195,7 @@ exports[`renders the component with a custom width 1`] = `
   />
   <defs>
     <clipPath
-      id="cf-ui-skeleton-clip-id"
+      id="cf-ui-skeleton-clip-4"
     >
       <SkeletonImage
         height={70}
@@ -206,7 +206,7 @@ exports[`renders the component with a custom width 1`] = `
       />
     </clipPath>
     <linearGradient
-      id="cf-ui-skeleton-clip-gradient"
+      id="cf-ui-skeleton-clip-gradient-5"
     >
       <stop
         offset="0%"
@@ -266,11 +266,11 @@ exports[`renders the component with a radius x 1`] = `
     Loading component...
   </title>
   <rect
-    clipPath="url(#cf-ui-skeleton-clip-id)"
+    clipPath="url(#cf-ui-skeleton-clip-10)"
     height="100%"
     style={
       Object {
-        "fill": "url(#cf-ui-skeleton-clip-gradient)",
+        "fill": "url(#cf-ui-skeleton-clip-gradient-11)",
       }
     }
     width="100%"
@@ -279,7 +279,7 @@ exports[`renders the component with a radius x 1`] = `
   />
   <defs>
     <clipPath
-      id="cf-ui-skeleton-clip-id"
+      id="cf-ui-skeleton-clip-10"
     >
       <SkeletonImage
         height={70}
@@ -290,7 +290,7 @@ exports[`renders the component with a radius x 1`] = `
       />
     </clipPath>
     <linearGradient
-      id="cf-ui-skeleton-clip-gradient"
+      id="cf-ui-skeleton-clip-gradient-11"
     >
       <stop
         offset="0%"
@@ -350,11 +350,11 @@ exports[`renders the component with a radius y 1`] = `
     Loading component...
   </title>
   <rect
-    clipPath="url(#cf-ui-skeleton-clip-id)"
+    clipPath="url(#cf-ui-skeleton-clip-12)"
     height="100%"
     style={
       Object {
-        "fill": "url(#cf-ui-skeleton-clip-gradient)",
+        "fill": "url(#cf-ui-skeleton-clip-gradient-13)",
       }
     }
     width="100%"
@@ -363,7 +363,7 @@ exports[`renders the component with a radius y 1`] = `
   />
   <defs>
     <clipPath
-      id="cf-ui-skeleton-clip-id"
+      id="cf-ui-skeleton-clip-12"
     >
       <SkeletonImage
         height={70}
@@ -374,7 +374,7 @@ exports[`renders the component with a radius y 1`] = `
       />
     </clipPath>
     <linearGradient
-      id="cf-ui-skeleton-clip-gradient"
+      id="cf-ui-skeleton-clip-gradient-13"
     >
       <stop
         offset="0%"
@@ -434,11 +434,11 @@ exports[`renders the component with an offset left 1`] = `
     Loading component...
   </title>
   <rect
-    clipPath="url(#cf-ui-skeleton-clip-id)"
+    clipPath="url(#cf-ui-skeleton-clip-8)"
     height="100%"
     style={
       Object {
-        "fill": "url(#cf-ui-skeleton-clip-gradient)",
+        "fill": "url(#cf-ui-skeleton-clip-gradient-9)",
       }
     }
     width="100%"
@@ -447,7 +447,7 @@ exports[`renders the component with an offset left 1`] = `
   />
   <defs>
     <clipPath
-      id="cf-ui-skeleton-clip-id"
+      id="cf-ui-skeleton-clip-8"
     >
       <SkeletonImage
         height={70}
@@ -459,7 +459,7 @@ exports[`renders the component with an offset left 1`] = `
       />
     </clipPath>
     <linearGradient
-      id="cf-ui-skeleton-clip-gradient"
+      id="cf-ui-skeleton-clip-gradient-9"
     >
       <stop
         offset="0%"
@@ -519,11 +519,11 @@ exports[`renders the component with an offset top 1`] = `
     Loading component...
   </title>
   <rect
-    clipPath="url(#cf-ui-skeleton-clip-id)"
+    clipPath="url(#cf-ui-skeleton-clip-6)"
     height="100%"
     style={
       Object {
-        "fill": "url(#cf-ui-skeleton-clip-gradient)",
+        "fill": "url(#cf-ui-skeleton-clip-gradient-7)",
       }
     }
     width="100%"
@@ -532,7 +532,7 @@ exports[`renders the component with an offset top 1`] = `
   />
   <defs>
     <clipPath
-      id="cf-ui-skeleton-clip-id"
+      id="cf-ui-skeleton-clip-6"
     >
       <SkeletonImage
         height={70}
@@ -544,7 +544,7 @@ exports[`renders the component with an offset top 1`] = `
       />
     </clipPath>
     <linearGradient
-      id="cf-ui-skeleton-clip-gradient"
+      id="cf-ui-skeleton-clip-gradient-7"
     >
       <stop
         offset="0%"
