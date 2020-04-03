@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.34.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.34.3...@contentful/forma-36-react-components@3.34.4) (2020-04-03)
+
+
+### Bug Fixes
+
+* **skeletoncontainer:** use unique ids for clipPath and gradient ([2e4556a](https://github.com/contentful/forma-36/commit/2e4556aba22a3cc579fb2378b439e6ec7fd29dba))
+
+
+
+
+
 ## [3.34.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.34.2...@contentful/forma-36-react-components@3.34.3) (2020-04-03)
 
 
