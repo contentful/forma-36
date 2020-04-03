@@ -33,7 +33,7 @@ const DocSearch = () => {
     }
 
     window.docsearch({
-      apiKey: process.env.DOCSEARCH_API_KEY,
+      apiKey: process.env.GATSBY_DOCSEARCH_API_KEY,
       indexName: 'contentful_forma-36',
       inputSelector: '#search',
       debug: false, // optional attr to be used for dropdown debugging ( if 'true' it never closes the dropdown)

@@ -239,7 +239,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-algolia-docsearch`,
       options: {
-        apiKey: process.env.DOCSEARCH_API_KEY,
+        apiKey: process.env.GATSBY_DOCSEARCH_API_KEY,
         indexName: 'contentful_forma-36',
         inputSelector: '#search',
       },
