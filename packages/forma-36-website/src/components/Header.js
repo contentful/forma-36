@@ -14,13 +14,13 @@ const styles = {
   `,
   logoLink: css`
     display: flex;
+    align-items: center;
     text-decoration: none;
     color: #fff;
   `,
   logoText: css`
     font-weight: ${tokens.fontWeightDemiBold};
     font-size: ${tokens.fontSizeXl};
-    line-height: 32px;
     margin-left: ${tokens.spacingL};
   `,
   searchNavContainer: css`
@@ -64,12 +64,10 @@ const Logo = () => (
 
 const Header = () => (
   <header css={styles.header}>
-    <div css={styles.logo}>
-      <Link to="/" css={styles.logoLink}>
-        <Logo />
-        <div css={styles.logoText}>Forma 36</div>
-      </Link>
-    </div>
+    <Link to="/" css={styles.logoLink}>
+      <Logo />
+      <div css={styles.logoText}>Forma 36</div>
+    </Link>
 
     <div css={styles.searchNavContainer}>
       <nav css={styles.nav}>

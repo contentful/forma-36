@@ -9,7 +9,7 @@ const styles = {
     display: flex;
     align-items: center;
     width: 100%;
-    margin-bottom: 0.5rem;
+    margin-bottom: ${tokens.spacingXs};
 
     & .algolia-autocomplete {
       width: 100%;
@@ -17,16 +17,20 @@ const styles = {
   `,
   icon: css`
     position: absolute;
-    right: 0px;
+    right: 0;
     display: flex;
     margin-right: ${tokens.spacingXs};
     z-index: 1000;
   `,
 };
 
-const Docsearch = () => {
+const DocSearch = () => {
   useEffect(() => {
     if (typeof window === 'undefined') return;
+
+    if (typeof window.docsearch === 'undefined') {
+      console.error('DocSearch unavailable');
+    }
 
     window.docsearch({
       apiKey: process.env.DOCSEARCH_API_KEY,
@@ -52,4 +56,4 @@ const Docsearch = () => {
   );
 };
 
-export default Docsearch;
+export default DocSearch;

@@ -6,7 +6,7 @@ import { css, jsx } from '@emotion/core';
 import tokens from '@contentful/forma-36-tokens';
 import { Icon } from '@contentful/forma-36-react-components';
 
-import Docsearch from './Docsearch';
+import DocSearch from './DocSearch';
 
 const styles = {
   navList: css`
@@ -161,7 +161,7 @@ MenuList.defaultProps = {
 
 const Navigation = ({ menuItems, currentPath }) => (
   <nav css={styles.navList} aria-label="Main Navigation">
-    <Docsearch />
+    <DocSearch />
     <MenuList menuItems={menuItems} currentPath={currentPath} />
   </nav>
 );
