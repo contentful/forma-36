@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.35.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.34.6...@contentful/forma-36-react-components@3.35.0) (2020-04-06)
+
+
+### Bug Fixes
+
+* add Grid, and GridItem to alpha ([1755b33](https://github.com/contentful/forma-36/commit/1755b336443ebcecf3abbae54bf120858e37689f))
+* delete GridItem.css ([c122984](https://github.com/contentful/forma-36/commit/c122984b0cac9ee9367b73df277017b262106d67))
+* edge cases ([c88f875](https://github.com/contentful/forma-36/commit/c88f875b41282b43479d9c9f32782c4ea5283968))
+* **grid stories:** fix the examples counter bug ([c307082](https://github.com/contentful/forma-36/commit/c307082bb3933980962288adf07fa632da883213))
+* **grid tests:** use axe helper ([93d5f1e](https://github.com/contentful/forma-36/commit/93d5f1e561937b8f804981be24c226161305736b))
+
+
+### Features
+
+* **grid:** init Grid, and GridItem Components ([fbe7d74](https://github.com/contentful/forma-36/commit/fbe7d7451b7f10d231b454ff129c486962d0259d)), closes [#424](https://github.com/contentful/forma-36/issues/424)
+* docs, and stories ([26a147d](https://github.com/contentful/forma-36/commit/26a147d26f4136904b630c254922bbade315e434))
+* Grid, and GridItem tests ([98b66fd](https://github.com/contentful/forma-36/commit/98b66fddc8d73bc77c38f4c2807ab372e3f04a15))
+
+
+
+
+
 ## [3.34.6](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.34.5...@contentful/forma-36-react-components@3.34.6) (2020-04-06)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
