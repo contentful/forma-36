@@ -37,7 +37,7 @@ const Logo = () => (
     width="80px"
     height="80px"
     viewBox="0 0 90 90"
-    enable-background="new 0 0 90 90"
+    enableBackground="new 0 0 90 90"
     css={styles.logo}
   >
     <circle fill="#ffffff" cx="45" cy="10" r="10" />

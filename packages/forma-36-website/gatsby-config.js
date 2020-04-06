@@ -201,7 +201,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 912
+              maxWidth: 912,
             },
           },
         ],
@@ -227,6 +227,16 @@ module.exports = {
         trackingId: 'UA-40725207-15',
         anonymize: true,
         respectDNT: true,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-algolia-docsearch`,
+      options: {
+        // The key is added here only give access to searching the public content of the website https://docsearch.algolia.com/docs/what-is-docsearch
+        // You can even check Forma36's configuration in DocSearch's repo https://github.com/algolia/docsearch-configs/blob/master/configs/contentful_forma-36.json
+        apiKey: 'b7d2cac8e38b0903385db259b042c66c',
+        indexName: 'contentful_forma-36',
+        inputSelector: '#search',
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
