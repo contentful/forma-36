@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component 1`] = `
+<div
+  className="Grid"
+  data-test-id="cf-ui-grid"
+  style={
+    Object {
+      "alignContent": undefined,
+      "flow": undefined,
+      "gridColumnGap": "1rem",
+      "gridRowGap": 0,
+      "gridTemplateColumns": "auto",
+      "gridTemplateRows": "auto",
+      "justifyContent": undefined,
+    }
+  }
+>
+  Grid
+</div>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+<div
+  className="Grid my-extra-class"
+  data-test-id="cf-ui-grid"
+  style={
+    Object {
+      "alignContent": undefined,
+      "flow": undefined,
+      "gridColumnGap": "1rem",
+      "gridRowGap": 0,
+      "gridTemplateColumns": "auto",
+      "gridTemplateRows": "auto",
+      "justifyContent": undefined,
+    }
+  }
+>
+  Grid
+</div>
+`;
