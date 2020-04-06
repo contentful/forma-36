@@ -27,6 +27,8 @@ const styles = {
     width: 100%;
     display: flex;
     flex-direction: column;
+    height: 100vh;
+    overflow-y: auto;
   `,
 
   main: css`

@@ -9,7 +9,8 @@ const styles = {
     display: flex;
     align-items: center;
     width: 100%;
-    margin-bottom: ${tokens.spacingXs};
+    padding: 0 1rem 0 2rem;
+    margin-bottom: 2rem;
 
     & .algolia-autocomplete {
       width: 100%;
@@ -19,7 +20,7 @@ const styles = {
     position: absolute;
     right: 0;
     display: flex;
-    margin-right: ${tokens.spacingXs};
+    margin-right: 1.5rem;
     z-index: 1000;
   `,
 };

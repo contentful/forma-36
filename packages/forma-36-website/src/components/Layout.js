@@ -19,7 +19,8 @@ const styles = {
   test: css`
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    height: 100vh;
+    overflow-y: hidden;
   `,
 };
 
@@ -80,7 +81,7 @@ const Layout = props => (
             />
           )}
 
-          <Header />
+          {/* <Header /> */}
 
           <div css={styles.main}>
             <Navigation
