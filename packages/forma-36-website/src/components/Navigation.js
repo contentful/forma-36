@@ -15,43 +15,12 @@ const styles = {
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
     z-index: 1;
   `,
-  logoLink: css`
-    display: flex;
-    align-items: center;
-    margin-left: 2rem;
-    margin-bottom: 2rem;
-    text-decoration: none;
-    color: ${tokens.colorBlueBase};
-  `,
-  logoText: css`
-    font-weight: ${tokens.fontWeightDemiBold};
-    font-size: ${tokens.fontSizeXl};
-    margin-left: 1rem;
-  `,
-  socialList: css`
-    display: flex;
-    list-style: none;
-    padding: 0 1rem 0 2rem;
-    margin: 0 0 1rem;
-  `,
-  socialListItem: css`
-    margin-right: 0.5rem;
-  `,
-  socialListLink: css`
-    text-decoration: none;
-    color: #3c80ce;
-    font-size: 0.75rem;
-
-    &:hover {
-      color: red;
-    }
-  `,
   navList: css`
     display: flex;
     flex-direction: column;
     border-top: 1px solid #d3dcdf;
     padding: 2rem 1rem 2rem 2rem;
-    height: calc(100vh - 208px);
+    height: calc(100vh - 160px);
     overflow-y: auto;
   `,
 
@@ -111,24 +80,6 @@ const styles = {
     border-bottom: 1px solid ${tokens.colorElementLight};
   `,
 };
-
-const Logo = () => (
-  <svg
-    x="0px"
-    y="0px"
-    width="32px"
-    height="32px"
-    viewBox="0 0 90 90"
-    enableBackground="new 0 0 90 90"
-  >
-    <circle fill={tokens.colorBlueBase} cx="45" cy="10" r="10" />
-    <circle fill={tokens.colorBlueBase} cx="10" cy="10" r="10" />
-    <circle fill={tokens.colorBlueBase} cx="80" cy="10" r="10" />
-    <circle fill={tokens.colorBlueBase} cx="10" cy="45" r="10" />
-    <circle fill={tokens.colorBlueBase} cx="45" cy="45" r="10" />
-    <circle fill={tokens.colorBlueBase} cx="10" cy="80" r="10" />
-  </svg>
-);
 
 const MenuListProps = {
   menuItems: PropTypes.arrayOf(
@@ -215,47 +166,8 @@ MenuList.defaultProps = {
 
 const Navigation = ({ menuItems, currentPath }) => (
   <div css={styles.sidemenu}>
-    <Link to="/" css={styles.logoLink}>
-      <Logo />
-      <div css={styles.logoText}>Forma 36</div>
-    </Link>
-
-    <nav css={styles.social}>
-      <ul css={styles.socialList}>
-        <li css={styles.socialListItem}>
-          <a
-            css={styles.socialListLink}
-            href="https://github.com/contentful/forma-36"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub
-          </a>
-        </li>
-        <li css={styles.socialListItem}>
-          <a
-            css={styles.socialListLink}
-            href="https://contentful.design/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Blog
-          </a>
-        </li>
-        <li css={styles.socialListItem}>
-          <a
-            css={styles.socialListLink}
-            href="https://www.contentful.com/developers/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Join the community
-          </a>
-        </li>
-      </ul>
-    </nav>
-
     <DocSearch />
+
     <nav css={styles.navList} aria-label="Main Navigation">
       <MenuList menuItems={menuItems} currentPath={currentPath} />
     </nav>

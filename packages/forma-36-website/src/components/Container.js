@@ -27,7 +27,7 @@ const styles = {
     width: 100%;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: calc(100vh - 56px);
     overflow-y: auto;
   `,
 

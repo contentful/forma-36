@@ -81,7 +81,7 @@ const Layout = props => (
             />
           )}
 
-          {/* <Header /> */}
+          <Header />
 
           <div css={styles.main}>
             <Navigation

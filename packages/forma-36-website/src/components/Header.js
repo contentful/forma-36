@@ -11,6 +11,7 @@ const styles = {
     padding: 0 ${tokens.spacingXl};
     height: 70px;
     align-items: center;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
   `,
   logoLink: css`
     display: flex;
@@ -41,6 +42,11 @@ const styles = {
   navListLink: css`
     color: #fff;
     text-decoration: none;
+    font-size: ${tokens.fontSizeM};
+
+    &:hover {
+      color: ${tokens.colorElementLight};
+    }
   `,
 };
 
