@@ -8,19 +8,22 @@ import { Icon } from '@contentful/forma-36-react-components';
 
 import DocSearch from './DocSearch';
 
+const heightOfHeader = 56;
+const heightOfDocSearch = 104;
+
 const styles = {
   sidemenu: css`
     flex-basis: 380px;
-    padding-top: 2rem;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-    z-index: 1;
+    padding-top: ${tokens.spacingXl};
+    border-right: 1px solid ${tokens.colorElementMid};
   `,
   navList: css`
     display: flex;
     flex-direction: column;
-    border-top: 1px solid #d3dcdf;
-    padding: 2rem 1rem 2rem 2rem;
-    height: calc(100vh - 160px);
+    border-top: 1px solid ${tokens.colorElementMid};
+    padding: ${tokens.spacingXl} ${tokens.spacingM} ${tokens.spacingXl}
+      ${tokens.spacingXl};
+    height: calc(100vh - ${heightOfHeader + heightOfDocSearch}px);
     overflow-y: auto;
   `,
 
@@ -89,7 +92,7 @@ const MenuListProps = {
 };
 
 const MenuListItem = ({ item, currentPath }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(item.isExpanded);
 
   const checkOpen = (item, currentPath) => {
     if (item.link === currentPath) {
