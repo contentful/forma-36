@@ -9,8 +9,8 @@ const styles = {
     display: flex;
     align-items: center;
     width: 100%;
-    padding: 0 ${tokens.spacingM} 0 ${tokens.spacingXl};
-    margin-bottom: ${tokens.spacingXl};
+    padding: 0 ${tokens.spacingM} 0;
+    margin-bottom: ${tokens.spacingM};
 
     & .algolia-autocomplete {
       width: 100%;

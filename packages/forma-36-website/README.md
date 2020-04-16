@@ -57,7 +57,6 @@ siteMetadata: {
     {
       name: 'My page',
       link: '/my-page/', // This MUST end in a forward slash
-      isExpandded: false, // This tells if the link in the sidemenu should start expanded
       menuLinks: [
         {
           name: 'My sub-page',

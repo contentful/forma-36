@@ -42,7 +42,6 @@ const styles = {
   navListLink: css`
     color: #fff;
     text-decoration: none;
-    font-size: ${tokens.fontSizeM};
 
     &:hover {
       color: ${tokens.colorElementLight};
