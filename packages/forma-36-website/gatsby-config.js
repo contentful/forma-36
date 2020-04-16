@@ -8,6 +8,7 @@ module.exports = {
       {
         name: 'Foundation',
         link: '',
+        isExpanded: true,
         menuLinks: [
           {
             name: 'Color',
@@ -38,6 +39,7 @@ module.exports = {
       {
         name: 'Guidelines',
         link: '',
+        isExpanded: true,
         menuLinks: [
           {
             name: 'Accessibility',
@@ -46,6 +48,7 @@ module.exports = {
           {
             name: 'Copy',
             link: '',
+            isExpanded: false,
             menuLinks: [
               {
                 name: 'Introduction',
@@ -54,6 +57,7 @@ module.exports = {
               {
                 name: 'Grammar',
                 link: '',
+                isExpanded: false,
                 menuLinks: [
                   {
                     name: 'Introduction',
@@ -98,6 +102,7 @@ module.exports = {
           {
             name: 'Layout',
             link: '',
+            isExpanded: false,
             menuLinks: [
               {
                 name: 'Workbench',
@@ -114,6 +119,7 @@ module.exports = {
       {
         name: 'Components',
         link: '',
+        isExpanded: true,
         menuLinks: [
           {
             name: 'Button',

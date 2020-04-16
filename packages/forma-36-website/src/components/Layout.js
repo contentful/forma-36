@@ -37,12 +37,15 @@ const Layout = props => (
             menuLinks {
               name
               link
+              isExpanded
               menuLinks {
                 name
                 link
+                isExpanded
                 menuLinks {
                   name
                   link
+                  isExpanded
                   menuLinks {
                     name
                     link
