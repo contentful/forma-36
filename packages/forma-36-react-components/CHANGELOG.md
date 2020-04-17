@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.36.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.35.0...@contentful/forma-36-react-components@3.36.0) (2020-04-17)
+
+
+### Features
+
+* **EntityStatusTag:** Added Entity Status Tag component ([#458](https://github.com/contentful/forma-36/issues/458)) ([bb9255c](https://github.com/contentful/forma-36/commit/bb9255c23d2493ff756c54aea298fe95fa4371e4))
+
+
+
+
+
 # [3.35.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.34.6...@contentful/forma-36-react-components@3.35.0) (2020-04-06)
 
 
