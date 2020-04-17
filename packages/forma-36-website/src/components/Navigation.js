@@ -8,13 +8,22 @@ import { Icon } from '@contentful/forma-36-react-components';
 
 import DocSearch from './DocSearch';
 
+export const heightOfHeader = 56;
+const heightOfDocSearch = 72;
+
 const styles = {
+  sidemenu: css`
+    flex-basis: 380px;
+    padding-top: ${tokens.spacingM};
+    border-right: 1px solid ${tokens.colorElementMid};
+  `,
   navList: css`
     display: flex;
     flex-direction: column;
-    flex: 0 0 320px;
-    background-color: ${tokens.colorElementLightest};
-    padding: ${tokens.spacingM} ${tokens.spacingM} ${tokens.spacing4Xl};
+    border-top: 1px solid ${tokens.colorElementMid};
+    padding: ${tokens.spacingM} ${tokens.spacingM};
+    height: calc(100vh - ${heightOfHeader + heightOfDocSearch}px);
+    overflow-y: auto;
   `,
 
   list: css`
@@ -158,10 +167,13 @@ MenuList.defaultProps = {
 };
 
 const Navigation = ({ menuItems, currentPath }) => (
-  <nav css={styles.navList} aria-label="Main Navigation">
+  <div css={styles.sidemenu}>
     <DocSearch />
-    <MenuList menuItems={menuItems} currentPath={currentPath} />
-  </nav>
+
+    <nav css={styles.navList} aria-label="Main Navigation">
+      <MenuList menuItems={menuItems} currentPath={currentPath} />
+    </nav>
+  </div>
 );
 
 Navigation.propTypes = MenuListProps;

@@ -21,12 +21,15 @@ import {
 import ComponentSource from './ComponentSource';
 import DocFormatter from './DocFormatter';
 import Footer from './Footer';
+import { heightOfHeader } from './Navigation';
 
 const styles = {
   container: css`
     width: 100%;
     display: flex;
     flex-direction: column;
+    height: calc(100vh - ${heightOfHeader}px);
+    overflow-y: auto;
   `,
 
   main: css`
