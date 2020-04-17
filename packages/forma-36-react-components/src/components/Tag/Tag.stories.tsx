@@ -22,6 +22,17 @@ storiesOf('Components|Tag', module)
         },
         'primary',
       )}
+      entityStatusType={select(
+        'Entity Status Type',
+        {
+          Published: 'published',
+          Archived: 'archived',
+          draft: 'draft',
+          changed: 'changed',
+          'None (default)': undefined,
+        },
+        undefined,
+      )}
       className={text('className', '')}
     >
       {text('Children', 'Published')}

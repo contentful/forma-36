@@ -1,5 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`renders a "archived" Tag 1`] = `
+<div
+  className="Tag Tag--negative"
+  data-test-id="cf-ui-tag"
+>
+  Archived
+</div>
+`;
+
+exports[`renders a "changed" Tag 1`] = `
+<div
+  className="Tag Tag--primary"
+  data-test-id="cf-ui-tag"
+>
+  Changed
+</div>
+`;
+
+exports[`renders a "draft" Tag 1`] = `
+<div
+  className="Tag Tag--warning"
+  data-test-id="cf-ui-tag"
+>
+  Draft
+</div>
+`;
+
 exports[`renders a "muted" Tag 1`] = `
 <div
   className="Tag Tag--muted"
@@ -33,6 +60,15 @@ exports[`renders a "primary" Tag 1`] = `
   data-test-id="cf-ui-tag"
 >
   Tag
+</div>
+`;
+
+exports[`renders a "published" Tag 1`] = `
+<div
+  className="Tag Tag--positive"
+  data-test-id="cf-ui-tag"
+>
+  Published
 </div>
 `;
 
