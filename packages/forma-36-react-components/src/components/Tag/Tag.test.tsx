@@ -51,6 +51,30 @@ it('renders a "muted" Tag', () => {
   expect(output).toMatchSnapshot();
 });
 
+it('renders a "published" Tag', () => {
+  const output = shallow(<Tag entityStatusType="published">Published</Tag>);
+
+  expect(output).toMatchSnapshot();
+});
+
+it('renders a "draft" Tag', () => {
+  const output = shallow(<Tag entityStatusType="draft">Draft</Tag>);
+
+  expect(output).toMatchSnapshot();
+});
+
+it('renders a "archived" Tag', () => {
+  const output = shallow(<Tag entityStatusType="archived">Archived</Tag>);
+
+  expect(output).toMatchSnapshot();
+});
+
+it('renders a "changed" Tag', () => {
+  const output = shallow(<Tag entityStatusType="changed">Changed</Tag>);
+
+  expect(output).toMatchSnapshot();
+});
+
 it('has no a11y issues', async () => {
   const output = mount(<Tag>Tag</Tag>).html();
   const results = await axe(output);
