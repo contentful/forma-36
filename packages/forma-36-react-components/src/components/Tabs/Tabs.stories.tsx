@@ -38,13 +38,14 @@ function DefaultStory() {
         </Tab>
         <Tab
           id="third"
+          disabled
           selected={selected === 'third'}
           onSelect={(id: string) => {
             action('onSelect')(id);
             setSelected(id);
           }}
         >
-          Third
+          Third (disabled)
         </Tab>
       </Tabs>
       {selected === 'first' && (

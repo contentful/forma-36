@@ -37,6 +37,9 @@
 .Tab__selected {
   font-weight: var(--font-weight-medium);
 }
+.Tab__disabled {
+  opacity: 0.5;
+}
 
 .Tab:before {
   content: '';
@@ -49,13 +52,13 @@
   height: 3px;
 }
 
-.Tab:hover:before,
-.Tab:focus:before {
+.Tab:not(.Tab__disabled):hover:before,
+.Tab:not(.Tab__disabled):focus:before {
   opacity: 0.5;
 }
 
-.Tab__selected:hover:before,
-.Tab__selected:focus:before,
-.Tab__selected:before {
+.Tab__selected:not(.Tab__disabled):hover:before,
+.Tab__selected:not(.Tab__disabled):focus:before,
+.Tab__selected:not(.Tab__disabled):before {
   opacity: 1;
 }
