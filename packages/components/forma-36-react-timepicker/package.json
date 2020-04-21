@@ -1,6 +1,6 @@
 {
   "name": "@contentful/forma-36-react-timepicker",
-  "version": "0.2.0-alpha.73",
+  "version": "0.2.0-alpha.74",
   "license": "MIT",
   "author": "Johannes Bugiel",
   "main": "dist/index.js",
@@ -30,7 +30,7 @@
     "trailingComma": "es5"
   },
   "devDependencies": {
-    "@contentful/forma-36-react-components": "^3.36.0",
+    "@contentful/forma-36-react-components": "^3.36.1",
     "@contentful/forma-36-tokens": "^0.5.2",
     "@testing-library/jest-dom": "^4.2.3",
     "@testing-library/react": "^9.3.2",

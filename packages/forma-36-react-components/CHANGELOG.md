@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.36.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.36.0...@contentful/forma-36-react-components@3.36.1) (2020-04-21)
+
+
+### Bug Fixes
+
+* **Tab:** Add disabled state for tab ([#459](https://github.com/contentful/forma-36/issues/459)) ([3068d5a](https://github.com/contentful/forma-36/commit/3068d5a1733e36b5a857117ff188ac9bdc5e38c3))
+
+
+
+
+
 # [3.36.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.35.0...@contentful/forma-36-react-components@3.36.0) (2020-04-17)
 
 
