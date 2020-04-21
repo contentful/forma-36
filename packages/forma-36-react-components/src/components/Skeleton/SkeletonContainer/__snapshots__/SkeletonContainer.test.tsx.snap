@@ -48,7 +48,7 @@ exports[`renders the component 1`] = `
         <animate
           attributeName="stop-color"
           dur="2s"
-          id="cf-ui-skeleton-clip-gradient.animation1"
+          id="cf-ui-skeleton-clip-gradient-1.animation1"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
         />
@@ -60,7 +60,7 @@ exports[`renders the component 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="cf-ui-skeleton-clip-gradient.animation1.begin+0.25s"
+          begin="cf-ui-skeleton-clip-gradient-1.animation1.begin+0.25s"
           dur="2s"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
@@ -73,7 +73,7 @@ exports[`renders the component 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="cf-ui-skeleton-clip-gradient.animation1.begin+0.5s"
+          begin="cf-ui-skeleton-clip-gradient-1.animation1.begin+0.5s"
           dur="2s"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
@@ -132,7 +132,7 @@ exports[`renders the component with a custom animation speed 1`] = `
         <animate
           attributeName="stop-color"
           dur="5s"
-          id="cf-ui-skeleton-clip-gradient.animation1"
+          id="cf-ui-skeleton-clip-gradient-31.animation1"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
         />
@@ -144,7 +144,7 @@ exports[`renders the component with a custom animation speed 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="cf-ui-skeleton-clip-gradient.animation1.begin+0.25s"
+          begin="cf-ui-skeleton-clip-gradient-31.animation1.begin+0.25s"
           dur="5s"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
@@ -157,7 +157,7 @@ exports[`renders the component with a custom animation speed 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="cf-ui-skeleton-clip-gradient.animation1.begin+0.5s"
+          begin="cf-ui-skeleton-clip-gradient-31.animation1.begin+0.5s"
           dur="5s"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
@@ -216,7 +216,7 @@ exports[`renders the component with a custom aria label 1`] = `
         <animate
           attributeName="stop-color"
           dur="2s"
-          id="cf-ui-skeleton-clip-gradient.animation1"
+          id="cf-ui-skeleton-clip-gradient-11.animation1"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
         />
@@ -228,7 +228,7 @@ exports[`renders the component with a custom aria label 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="cf-ui-skeleton-clip-gradient.animation1.begin+0.25s"
+          begin="cf-ui-skeleton-clip-gradient-11.animation1.begin+0.25s"
           dur="2s"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
@@ -241,7 +241,7 @@ exports[`renders the component with a custom aria label 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="cf-ui-skeleton-clip-gradient.animation1.begin+0.5s"
+          begin="cf-ui-skeleton-clip-gradient-11.animation1.begin+0.5s"
           dur="2s"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
@@ -300,7 +300,7 @@ exports[`renders the component with a custom aspect ratio 1`] = `
         <animate
           attributeName="stop-color"
           dur="2s"
-          id="cf-ui-skeleton-clip-gradient.animation1"
+          id="cf-ui-skeleton-clip-gradient-17.animation1"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
         />
@@ -312,7 +312,7 @@ exports[`renders the component with a custom aspect ratio 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="cf-ui-skeleton-clip-gradient.animation1.begin+0.25s"
+          begin="cf-ui-skeleton-clip-gradient-17.animation1.begin+0.25s"
           dur="2s"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
@@ -325,7 +325,7 @@ exports[`renders the component with a custom aspect ratio 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="cf-ui-skeleton-clip-gradient.animation1.begin+0.5s"
+          begin="cf-ui-skeleton-clip-gradient-17.animation1.begin+0.5s"
           dur="2s"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
@@ -384,7 +384,7 @@ exports[`renders the component with a custom clip id 1`] = `
         <animate
           attributeName="stop-color"
           dur="2s"
-          id="cf-ui-skeleton-clip-gradient.animation1"
+          id="cf-ui-skeleton-clip-gradient-18.animation1"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
         />
@@ -396,7 +396,7 @@ exports[`renders the component with a custom clip id 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="cf-ui-skeleton-clip-gradient.animation1.begin+0.25s"
+          begin="cf-ui-skeleton-clip-gradient-18.animation1.begin+0.25s"
           dur="2s"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
@@ -409,7 +409,7 @@ exports[`renders the component with a custom clip id 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="cf-ui-skeleton-clip-gradient.animation1.begin+0.5s"
+          begin="cf-ui-skeleton-clip-gradient-18.animation1.begin+0.5s"
           dur="2s"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
@@ -552,7 +552,7 @@ exports[`renders the component with a custom height 1`] = `
         <animate
           attributeName="stop-color"
           dur="2s"
-          id="cf-ui-skeleton-clip-gradient.animation1"
+          id="cf-ui-skeleton-clip-gradient-15.animation1"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
         />
@@ -564,7 +564,7 @@ exports[`renders the component with a custom height 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="cf-ui-skeleton-clip-gradient.animation1.begin+0.25s"
+          begin="cf-ui-skeleton-clip-gradient-15.animation1.begin+0.25s"
           dur="2s"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
@@ -577,7 +577,7 @@ exports[`renders the component with a custom height 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="cf-ui-skeleton-clip-gradient.animation1.begin+0.5s"
+          begin="cf-ui-skeleton-clip-gradient-15.animation1.begin+0.5s"
           dur="2s"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
@@ -636,7 +636,7 @@ exports[`renders the component with a custom primary color 1`] = `
         <animate
           attributeName="stop-color"
           dur="2s"
-          id="cf-ui-skeleton-clip-gradient.animation1"
+          id="cf-ui-skeleton-clip-gradient-21.animation1"
           repeatCount="indefinite"
           values="#ffffff; #f7f9fa; #ffffff"
         />
@@ -648,7 +648,7 @@ exports[`renders the component with a custom primary color 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="cf-ui-skeleton-clip-gradient.animation1.begin+0.25s"
+          begin="cf-ui-skeleton-clip-gradient-21.animation1.begin+0.25s"
           dur="2s"
           repeatCount="indefinite"
           values="#ffffff; #f7f9fa; #ffffff"
@@ -661,7 +661,7 @@ exports[`renders the component with a custom primary color 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="cf-ui-skeleton-clip-gradient.animation1.begin+0.5s"
+          begin="cf-ui-skeleton-clip-gradient-21.animation1.begin+0.5s"
           dur="2s"
           repeatCount="indefinite"
           values="#ffffff; #f7f9fa; #ffffff"
@@ -720,7 +720,7 @@ exports[`renders the component with a custom primary opacity 1`] = `
         <animate
           attributeName="stop-color"
           dur="2s"
-          id="cf-ui-skeleton-clip-gradient.animation1"
+          id="cf-ui-skeleton-clip-gradient-23.animation1"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
         />
@@ -732,7 +732,7 @@ exports[`renders the component with a custom primary opacity 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="cf-ui-skeleton-clip-gradient.animation1.begin+0.25s"
+          begin="cf-ui-skeleton-clip-gradient-23.animation1.begin+0.25s"
           dur="2s"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
@@ -745,7 +745,7 @@ exports[`renders the component with a custom primary opacity 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="cf-ui-skeleton-clip-gradient.animation1.begin+0.5s"
+          begin="cf-ui-skeleton-clip-gradient-23.animation1.begin+0.5s"
           dur="2s"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
@@ -804,7 +804,7 @@ exports[`renders the component with a custom secondary color 1`] = `
         <animate
           attributeName="stop-color"
           dur="2s"
-          id="cf-ui-skeleton-clip-gradient.animation1"
+          id="cf-ui-skeleton-clip-gradient-25.animation1"
           repeatCount="indefinite"
           values="#e5ebed; #ffffff; #e5ebed"
         />
@@ -816,7 +816,7 @@ exports[`renders the component with a custom secondary color 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="cf-ui-skeleton-clip-gradient.animation1.begin+0.25s"
+          begin="cf-ui-skeleton-clip-gradient-25.animation1.begin+0.25s"
           dur="2s"
           repeatCount="indefinite"
           values="#e5ebed; #ffffff; #e5ebed"
@@ -829,7 +829,7 @@ exports[`renders the component with a custom secondary color 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="cf-ui-skeleton-clip-gradient.animation1.begin+0.5s"
+          begin="cf-ui-skeleton-clip-gradient-25.animation1.begin+0.5s"
           dur="2s"
           repeatCount="indefinite"
           values="#e5ebed; #ffffff; #e5ebed"
@@ -888,7 +888,7 @@ exports[`renders the component with a custom secondary opacity 1`] = `
         <animate
           attributeName="stop-color"
           dur="2s"
-          id="cf-ui-skeleton-clip-gradient.animation1"
+          id="cf-ui-skeleton-clip-gradient-27.animation1"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
         />
@@ -900,7 +900,7 @@ exports[`renders the component with a custom secondary opacity 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="cf-ui-skeleton-clip-gradient.animation1.begin+0.25s"
+          begin="cf-ui-skeleton-clip-gradient-27.animation1.begin+0.25s"
           dur="2s"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
@@ -913,7 +913,7 @@ exports[`renders the component with a custom secondary opacity 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="cf-ui-skeleton-clip-gradient.animation1.begin+0.5s"
+          begin="cf-ui-skeleton-clip-gradient-27.animation1.begin+0.5s"
           dur="2s"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
@@ -972,7 +972,7 @@ exports[`renders the component with a custom testId 1`] = `
         <animate
           attributeName="stop-color"
           dur="2s"
-          id="cf-ui-skeleton-clip-gradient.animation1"
+          id="cf-ui-skeleton-clip-gradient-9.animation1"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
         />
@@ -984,7 +984,7 @@ exports[`renders the component with a custom testId 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="cf-ui-skeleton-clip-gradient.animation1.begin+0.25s"
+          begin="cf-ui-skeleton-clip-gradient-9.animation1.begin+0.25s"
           dur="2s"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
@@ -997,7 +997,7 @@ exports[`renders the component with a custom testId 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="cf-ui-skeleton-clip-gradient.animation1.begin+0.5s"
+          begin="cf-ui-skeleton-clip-gradient-9.animation1.begin+0.5s"
           dur="2s"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
@@ -1056,7 +1056,7 @@ exports[`renders the component with a custom width 1`] = `
         <animate
           attributeName="stop-color"
           dur="2s"
-          id="cf-ui-skeleton-clip-gradient.animation1"
+          id="cf-ui-skeleton-clip-gradient-13.animation1"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
         />
@@ -1068,7 +1068,7 @@ exports[`renders the component with a custom width 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="cf-ui-skeleton-clip-gradient.animation1.begin+0.25s"
+          begin="cf-ui-skeleton-clip-gradient-13.animation1.begin+0.25s"
           dur="2s"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
@@ -1081,7 +1081,7 @@ exports[`renders the component with a custom width 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="cf-ui-skeleton-clip-gradient.animation1.begin+0.5s"
+          begin="cf-ui-skeleton-clip-gradient-13.animation1.begin+0.5s"
           dur="2s"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
@@ -1140,7 +1140,7 @@ exports[`renders the component with an additional class name 1`] = `
         <animate
           attributeName="stop-color"
           dur="2s"
-          id="cf-ui-skeleton-clip-gradient.animation1"
+          id="cf-ui-skeleton-clip-gradient-3.animation1"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
         />
@@ -1152,7 +1152,7 @@ exports[`renders the component with an additional class name 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="cf-ui-skeleton-clip-gradient.animation1.begin+0.25s"
+          begin="cf-ui-skeleton-clip-gradient-3.animation1.begin+0.25s"
           dur="2s"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
@@ -1165,7 +1165,7 @@ exports[`renders the component with an additional class name 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="cf-ui-skeleton-clip-gradient.animation1.begin+0.5s"
+          begin="cf-ui-skeleton-clip-gradient-3.animation1.begin+0.5s"
           dur="2s"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
@@ -1284,7 +1284,7 @@ exports[`renders the svg with a custom height 1`] = `
         <animate
           attributeName="stop-color"
           dur="2s"
-          id="cf-ui-skeleton-clip-gradient.animation1"
+          id="cf-ui-skeleton-clip-gradient-33.animation1"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
         />
@@ -1296,7 +1296,7 @@ exports[`renders the svg with a custom height 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="cf-ui-skeleton-clip-gradient.animation1.begin+0.25s"
+          begin="cf-ui-skeleton-clip-gradient-33.animation1.begin+0.25s"
           dur="2s"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
@@ -1309,7 +1309,7 @@ exports[`renders the svg with a custom height 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="cf-ui-skeleton-clip-gradient.animation1.begin+0.5s"
+          begin="cf-ui-skeleton-clip-gradient-33.animation1.begin+0.5s"
           dur="2s"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
@@ -1368,7 +1368,7 @@ exports[`renders the svg with a custom width 1`] = `
         <animate
           attributeName="stop-color"
           dur="2s"
-          id="cf-ui-skeleton-clip-gradient.animation1"
+          id="cf-ui-skeleton-clip-gradient-35.animation1"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
         />
@@ -1380,7 +1380,7 @@ exports[`renders the svg with a custom width 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="cf-ui-skeleton-clip-gradient.animation1.begin+0.25s"
+          begin="cf-ui-skeleton-clip-gradient-35.animation1.begin+0.25s"
           dur="2s"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
@@ -1393,7 +1393,7 @@ exports[`renders the svg with a custom width 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="cf-ui-skeleton-clip-gradient.animation1.begin+0.5s"
+          begin="cf-ui-skeleton-clip-gradient-35.animation1.begin+0.5s"
           dur="2s"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
