@@ -1,35 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import TableCell from '../../../Table/TableCell';
 import SkeletonContainer from '../../SkeletonContainer';
 import SkeletonBodyText from '../../SkeletonBodyText';
 
-export type SkeletonTableCellProps = {
-  clipId?: string;
-} & typeof defaultProps;
-
-const defaultProps = {
-  clipId: 'skeleton-table-cell',
+export const SkeletonTableCell = () => {
+  return (
+    <TableCell>
+      <SkeletonContainer
+        svgHeight={16} // This is equal to the default height of a SkeletonText line, if no value is passed the svg will be bigger than the line
+      >
+        <SkeletonBodyText numberOfLines={1} />
+      </SkeletonContainer>
+    </TableCell>
+  );
 };
-
-export class SkeletonTableCell extends Component<SkeletonTableCellProps> {
-  static defaultProps = defaultProps;
-
-  render() {
-    const { clipId } = this.props;
-
-    return (
-      <TableCell>
-        <SkeletonContainer
-          svgHeight={42}
-          clipId={clipId}
-          gradientId={`${clipId}-gradient`}
-        >
-          <SkeletonBodyText numberOfLines={1} />
-        </SkeletonContainer>
-      </TableCell>
-    );
-  }
-}
 
 export default SkeletonTableCell;

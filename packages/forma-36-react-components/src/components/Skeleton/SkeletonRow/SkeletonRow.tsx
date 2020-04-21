@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import TableRow from '../../Table/TableRow';
 import SkeletonTableCell from './SkeletonTableCell/SkeletonTableCell';
@@ -11,25 +11,17 @@ const defaultProps = {
   columnCount: 5,
 };
 
-export class SkeletonRow extends Component<SkeletonRowProps> {
-  static defaultProps = defaultProps;
-
-  render() {
-    const { columnCount } = this.props;
-
-    return (
-      <React.Fragment>
-        <TableRow>
-          {Array.from(Array(columnCount)).map((_, cellIndex) => (
-            <SkeletonTableCell
-              key={cellIndex}
-              clipId={`skeleton-cell-${cellIndex}`}
-            />
-          ))}
-        </TableRow>
-      </React.Fragment>
-    );
-  }
-}
+export const SkeletonRow = ({ columnCount }: SkeletonRowProps) => {
+  return (
+    <React.Fragment>
+      <TableRow>
+        {Array.from(Array(columnCount)).map((_, cellIndex) => (
+          <SkeletonTableCell key={cellIndex} />
+        ))}
+      </TableRow>
+    </React.Fragment>
+  );
+};
+SkeletonRow.defaultProps = defaultProps;
 
 export default SkeletonRow;
