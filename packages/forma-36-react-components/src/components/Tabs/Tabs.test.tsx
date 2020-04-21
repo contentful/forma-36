@@ -40,6 +40,24 @@ it('renders the component with role=navigation and an additional class name', ()
   expect(output).toMatchSnapshot();
 });
 
+it('renders the component the first tab disbaled', () => {
+  const output = mount(
+    <Tabs role="navigation" className="my-extra-class">
+      <Tab href="/first-link" id="first" disabled>
+        First
+      </Tab>
+      <Tab href="/second-link" className="super-tab" id="second">
+        Second
+      </Tab>
+      <Tab href="/third-link" id="third">
+        Third
+      </Tab>
+    </Tabs>,
+  );
+
+  expect(output).toMatchSnapshot();
+});
+
 it('has no a11y issues', async () => {
   const output = mount(
     <div>

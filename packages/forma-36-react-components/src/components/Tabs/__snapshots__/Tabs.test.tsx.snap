@@ -113,6 +113,81 @@ Array [
 ]
 `;
 
+exports[`renders the component the first tab disbaled 1`] = `
+<Tabs
+  className="my-extra-class"
+  role="navigation"
+  testId="cf-ui-tabs"
+  withDivider={false}
+>
+  <nav
+    className="Tabs my-extra-class"
+    data-test-id="cf-ui-tabs"
+    role="navigation"
+  >
+    <Tab
+      disabled={true}
+      href="/first-link"
+      id="first"
+      selected={false}
+      tabIndex={0}
+      testId="cf-ui-tab"
+    >
+      <a
+        aria-disabled={true}
+        className="Tab Tab__disabled"
+        data-test-id="cf-ui-tab"
+        href="/first-link"
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+      >
+        First
+      </a>
+    </Tab>
+    <Tab
+      className="super-tab"
+      disabled={false}
+      href="/second-link"
+      id="second"
+      selected={false}
+      tabIndex={0}
+      testId="cf-ui-tab"
+    >
+      <a
+        className="Tab super-tab"
+        data-test-id="cf-ui-tab"
+        href="/second-link"
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+      >
+        Second
+      </a>
+    </Tab>
+    <Tab
+      disabled={false}
+      href="/third-link"
+      id="third"
+      selected={false}
+      tabIndex={0}
+      testId="cf-ui-tab"
+    >
+      <a
+        className="Tab"
+        data-test-id="cf-ui-tab"
+        href="/third-link"
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        tabIndex={0}
+      >
+        Third
+      </a>
+    </Tab>
+  </nav>
+</Tabs>
+`;
+
 exports[`renders the component with role=navigation and an additional class name 1`] = `
 <Tabs
   className="my-extra-class"

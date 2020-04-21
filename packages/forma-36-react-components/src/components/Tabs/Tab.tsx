@@ -33,7 +33,7 @@ export class Tab extends Component<TabProps> {
   static defaultProps = defaultProps;
 
   onClick: MouseEventHandler = () => {
-    if (this.props.onSelect) {
+    if (this.props.onSelect && !this.props.disabled) {
       this.props.onSelect(this.props.id);
     }
   };
@@ -62,6 +62,7 @@ export class Tab extends Component<TabProps> {
         styles.Tab,
         {
           [styles['Tab__selected']]: selected,
+          [styles['Tab__disabled']]: disabled,
         },
         className,
       ),
