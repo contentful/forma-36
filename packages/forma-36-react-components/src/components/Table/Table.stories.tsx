@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import { boolean, text, number } from '@storybook/addon-knobs';
+import { boolean, text, number, button } from '@storybook/addon-knobs';
 
 import notes from './Table.md';
 import Table from './Table';
@@ -8,6 +8,7 @@ import TableHead from './TableHead';
 import TableBody from './TableBody';
 import TableCell from './TableCell';
 import TableRow from './TableRow';
+import SkeletonRow from '../Skeleton/SkeletonRow';
 
 function DefaultStory() {
   return (
@@ -44,6 +45,10 @@ function DefaultStory() {
 }
 
 function WithLoadingStateStory() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  button('toggle isLoading', () => setIsLoading(!isLoading));
+
   return (
     <div style={{ width: '800px' }}>
       <Table>
@@ -55,22 +60,28 @@ function WithLoadingStateStory() {
             <TableCell>Last activity</TableCell>
           </TableRow>
         </TableHead>
-        <TableBody
-          isLoading={boolean('isLoading', true)}
-          loadingColumnCount={number('loadingColumnCount', 4)}
-        >
-          <TableRow>
-            <TableCell>Jane Roe</TableCell>
-            <TableCell>jane@roe.com</TableCell>
-            <TableCell>CEO</TableCell>
-            <TableCell>August 29, 2018</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>John Doe</TableCell>
-            <TableCell>john@doe.com</TableCell>
-            <TableCell>CTO</TableCell>
-            <TableCell>July 27, 2019</TableCell>
-          </TableRow>
+        <TableBody>
+          {isLoading ? (
+            <SkeletonRow
+              rowCount={number('loadingRowCount', 4)}
+              columnCount={number('loadingColumnCount', 4)}
+            />
+          ) : (
+            <>
+              <TableRow>
+                <TableCell>Jane Roe</TableCell>
+                <TableCell>jane@roe.com</TableCell>
+                <TableCell>CEO</TableCell>
+                <TableCell>August 29, 2018</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>John Doe</TableCell>
+                <TableCell>john@doe.com</TableCell>
+                <TableCell>CTO</TableCell>
+                <TableCell>July 27, 2019</TableCell>
+              </TableRow>
+            </>
+          )}
         </TableBody>
       </Table>
     </div>
