@@ -18,6 +18,18 @@ it('renders the component', () => {
   expect(output).toMatchSnapshot();
 });
 
+it('renders the component with 10 rows', () => {
+  const output = shallow(
+    <Table>
+      <TableBody>
+        <SkeletonRow rowCount={10} />
+      </TableBody>
+    </Table>,
+  );
+
+  expect(output).toMatchSnapshot();
+});
+
 it('renders the component with 10 cells', () => {
   const output = shallow(
     <Table>

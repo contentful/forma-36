@@ -12,6 +12,7 @@ exports[`renders the component 1`] = `
   >
     <SkeletonRow
       columnCount={5}
+      rowCount={1}
     />
   </TableBody>
 </table>
@@ -29,6 +30,25 @@ exports[`renders the component with 10 cells 1`] = `
   >
     <SkeletonRow
       columnCount={10}
+      rowCount={1}
+    />
+  </TableBody>
+</table>
+`;
+
+exports[`renders the component with 10 rows 1`] = `
+<table
+  cellPadding="0"
+  cellSpacing="0"
+  className="Table"
+  data-test-id="cf-ui-table"
+>
+  <TableBody
+    testId="cf-ui-table-body"
+  >
+    <SkeletonRow
+      columnCount={5}
+      rowCount={10}
     />
   </TableBody>
 </table>

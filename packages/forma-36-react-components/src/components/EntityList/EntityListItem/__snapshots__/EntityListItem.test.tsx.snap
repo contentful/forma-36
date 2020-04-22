@@ -492,6 +492,7 @@ exports[`renders the component as isLoading 1`] = `
   >
     <SkeletonContainer
       animate={true}
+      animateId="animation-1"
       ariaLabel="Loading component..."
       backgroundColor="#e5ebed"
       backgroundOpacity={1}

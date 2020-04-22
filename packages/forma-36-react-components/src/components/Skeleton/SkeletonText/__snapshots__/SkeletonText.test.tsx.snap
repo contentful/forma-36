@@ -14,11 +14,11 @@ exports[`renders 3 lines of skeleton text 1`] = `
     Loading component...
   </title>
   <rect
-    clipPath="url(#cf-ui-skeleton-clip-2)"
+    clipPath="url(#cf-ui-skeleton-clip-3)"
     height="100%"
     style={
       Object {
-        "fill": "url(#cf-ui-skeleton-clip-gradient-3)",
+        "fill": "url(#cf-ui-skeleton-clip-gradient-4)",
       }
     }
     width="100%"
@@ -27,7 +27,7 @@ exports[`renders 3 lines of skeleton text 1`] = `
   />
   <defs>
     <clipPath
-      id="cf-ui-skeleton-clip-2"
+      id="cf-ui-skeleton-clip-3"
     >
       <SkeletonText
         lineHeight={21}
@@ -38,7 +38,7 @@ exports[`renders 3 lines of skeleton text 1`] = `
       />
     </clipPath>
     <linearGradient
-      id="cf-ui-skeleton-clip-gradient-3"
+      id="cf-ui-skeleton-clip-gradient-4"
     >
       <stop
         offset="0%"
@@ -48,7 +48,7 @@ exports[`renders 3 lines of skeleton text 1`] = `
         <animate
           attributeName="stop-color"
           dur="2s"
-          id="cf-ui-skeleton-clip-gradient-3.animation1"
+          id="animation-5"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
         />
@@ -60,7 +60,7 @@ exports[`renders 3 lines of skeleton text 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="cf-ui-skeleton-clip-gradient-3.animation1.begin+0.25s"
+          begin="animation-5.begin+0.25s"
           dur="2s"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
@@ -73,7 +73,7 @@ exports[`renders 3 lines of skeleton text 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="cf-ui-skeleton-clip-gradient-3.animation1.begin+0.5s"
+          begin="animation-5.begin+0.5s"
           dur="2s"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
@@ -132,7 +132,7 @@ exports[`renders the component 1`] = `
         <animate
           attributeName="stop-color"
           dur="2s"
-          id="cf-ui-skeleton-clip-gradient-1.animation1"
+          id="animation-2"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
         />
@@ -144,7 +144,7 @@ exports[`renders the component 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="cf-ui-skeleton-clip-gradient-1.animation1.begin+0.25s"
+          begin="animation-2.begin+0.25s"
           dur="2s"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
@@ -157,7 +157,7 @@ exports[`renders the component 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="cf-ui-skeleton-clip-gradient-1.animation1.begin+0.5s"
+          begin="animation-2.begin+0.5s"
           dur="2s"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
