@@ -8,6 +8,7 @@ export type SkeletonContainerProps = {
   preserveAspectRatio?: string;
   clipId?: string;
   gradientId?: string;
+  animateId?: string;
   backgroundColor?: string;
   backgroundOpacity?: number;
   animate?: boolean;
@@ -37,6 +38,9 @@ const defaultProps = {
   get gradientId() {
     return `cf-ui-skeleton-clip-gradient-${idCounter++}`;
   },
+  get animateId() {
+    return `animation-${idCounter++}`;
+  },
   backgroundColor: '#e5ebed',
   backgroundOpacity: 1,
   animate: true,
@@ -61,6 +65,7 @@ export class SkeletonContainer extends Component<SkeletonContainerProps> {
       preserveAspectRatio,
       clipId,
       gradientId,
+      animateId,
       backgroundColor,
       backgroundOpacity,
       animate,
@@ -106,7 +111,7 @@ export class SkeletonContainer extends Component<SkeletonContainerProps> {
             >
               {animate && (
                 <animate
-                  id="animation1"
+                  id={animateId}
                   attributeName="stop-color"
                   values={`${backgroundColor}; ${foregroundColor}; ${backgroundColor}`}
                   dur={`${speed}s`}
@@ -123,7 +128,7 @@ export class SkeletonContainer extends Component<SkeletonContainerProps> {
                 <animate
                   attributeName="stop-color"
                   values={`${backgroundColor}; ${foregroundColor}; ${backgroundColor}`}
-                  begin="animation1.begin+0.25s"
+                  begin={`${animateId}.begin+0.25s`}
                   dur={`${speed}s`}
                   repeatCount="indefinite"
                 />
@@ -137,7 +142,7 @@ export class SkeletonContainer extends Component<SkeletonContainerProps> {
               {animate && (
                 <animate
                   attributeName="stop-color"
-                  begin="animation1.begin+0.5s"
+                  begin={`${animateId}.begin+0.5s`}
                   values={`${backgroundColor}; ${foregroundColor}; ${backgroundColor}`}
                   dur={`${speed}s`}
                   repeatCount="indefinite"

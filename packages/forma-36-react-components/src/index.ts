@@ -62,6 +62,8 @@ export { SkeletonContainer } from './components/Skeleton/SkeletonContainer/Skele
 export { SkeletonDisplayText } from './components/Skeleton/SkeletonDisplayText/SkeletonDisplayText';
 export { SkeletonText } from './components/Skeleton/SkeletonText/SkeletonText';
 export { SkeletonImage } from './components/Skeleton/SkeletonImage/SkeletonImage';
+export { SkeletonRow } from './components/Skeleton/SkeletonRow/SkeletonRow';
+export { SkeletonTableCell } from './components/Skeleton/SkeletonRow/SkeletonTableCell/SkeletonTableCell';
 export { Tabs } from './components/Tabs/Tabs';
 export { Tab } from './components/Tabs/Tab';
 export { TabPanel } from './components/Tabs/TabPanel';

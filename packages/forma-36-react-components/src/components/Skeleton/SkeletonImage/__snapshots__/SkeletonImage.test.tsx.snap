@@ -48,7 +48,7 @@ exports[`renders the component 1`] = `
         <animate
           attributeName="stop-color"
           dur="2s"
-          id="animation1"
+          id="animation-2"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
         />
@@ -60,7 +60,7 @@ exports[`renders the component 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="animation1.begin+0.25s"
+          begin="animation-2.begin+0.25s"
           dur="2s"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
@@ -73,7 +73,7 @@ exports[`renders the component 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="animation1.begin+0.5s"
+          begin="animation-2.begin+0.5s"
           dur="2s"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
@@ -98,11 +98,11 @@ exports[`renders the component with a custom height 1`] = `
     Loading component...
   </title>
   <rect
-    clipPath="url(#cf-ui-skeleton-clip-2)"
+    clipPath="url(#cf-ui-skeleton-clip-3)"
     height="100%"
     style={
       Object {
-        "fill": "url(#cf-ui-skeleton-clip-gradient-3)",
+        "fill": "url(#cf-ui-skeleton-clip-gradient-4)",
       }
     }
     width="100%"
@@ -111,7 +111,7 @@ exports[`renders the component with a custom height 1`] = `
   />
   <defs>
     <clipPath
-      id="cf-ui-skeleton-clip-2"
+      id="cf-ui-skeleton-clip-3"
     >
       <SkeletonImage
         height={100}
@@ -122,7 +122,7 @@ exports[`renders the component with a custom height 1`] = `
       />
     </clipPath>
     <linearGradient
-      id="cf-ui-skeleton-clip-gradient-3"
+      id="cf-ui-skeleton-clip-gradient-4"
     >
       <stop
         offset="0%"
@@ -132,7 +132,7 @@ exports[`renders the component with a custom height 1`] = `
         <animate
           attributeName="stop-color"
           dur="2s"
-          id="animation1"
+          id="animation-5"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
         />
@@ -144,7 +144,7 @@ exports[`renders the component with a custom height 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="animation1.begin+0.25s"
+          begin="animation-5.begin+0.25s"
           dur="2s"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
@@ -157,7 +157,7 @@ exports[`renders the component with a custom height 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="animation1.begin+0.5s"
+          begin="animation-5.begin+0.5s"
           dur="2s"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
@@ -169,343 +169,6 @@ exports[`renders the component with a custom height 1`] = `
 `;
 
 exports[`renders the component with a custom width 1`] = `
-<svg
-  aria-label="Loading component..."
-  className="SkeletonContainer"
-  data-test-id="cf-ui-skeleton-form"
-  height="100%"
-  preserveAspectRatio="xMidYMid meet"
-  role="img"
-  width="100%"
->
-  <title>
-    Loading component...
-  </title>
-  <rect
-    clipPath="url(#cf-ui-skeleton-clip-4)"
-    height="100%"
-    style={
-      Object {
-        "fill": "url(#cf-ui-skeleton-clip-gradient-5)",
-      }
-    }
-    width="100%"
-    x="0"
-    y="0"
-  />
-  <defs>
-    <clipPath
-      id="cf-ui-skeleton-clip-4"
-    >
-      <SkeletonImage
-        height={70}
-        radiusX={0}
-        radiusY={0}
-        testId="cf-ui-skeleton-image"
-        width={100}
-      />
-    </clipPath>
-    <linearGradient
-      id="cf-ui-skeleton-clip-gradient-5"
-    >
-      <stop
-        offset="0%"
-        stopColor="#e5ebed"
-        stopOpacity={1}
-      >
-        <animate
-          attributeName="stop-color"
-          dur="2s"
-          id="animation1"
-          repeatCount="indefinite"
-          values="#e5ebed; #f7f9fa; #e5ebed"
-        />
-      </stop>
-      <stop
-        offset="50%"
-        stopColor="#f7f9fa"
-        stopOpacity={1}
-      >
-        <animate
-          attributeName="stop-color"
-          begin="animation1.begin+0.25s"
-          dur="2s"
-          repeatCount="indefinite"
-          values="#e5ebed; #f7f9fa; #e5ebed"
-        />
-      </stop>
-      <stop
-        offset="100%"
-        stopColor="#e5ebed"
-        stopOpacity={1}
-      >
-        <animate
-          attributeName="stop-color"
-          begin="animation1.begin+0.5s"
-          dur="2s"
-          repeatCount="indefinite"
-          values="#e5ebed; #f7f9fa; #e5ebed"
-        />
-      </stop>
-    </linearGradient>
-  </defs>
-</svg>
-`;
-
-exports[`renders the component with a radius x 1`] = `
-<svg
-  aria-label="Loading component..."
-  className="SkeletonContainer"
-  data-test-id="cf-ui-skeleton-form"
-  height="100%"
-  preserveAspectRatio="xMidYMid meet"
-  role="img"
-  width="100%"
->
-  <title>
-    Loading component...
-  </title>
-  <rect
-    clipPath="url(#cf-ui-skeleton-clip-10)"
-    height="100%"
-    style={
-      Object {
-        "fill": "url(#cf-ui-skeleton-clip-gradient-11)",
-      }
-    }
-    width="100%"
-    x="0"
-    y="0"
-  />
-  <defs>
-    <clipPath
-      id="cf-ui-skeleton-clip-10"
-    >
-      <SkeletonImage
-        height={70}
-        radiusX={15}
-        radiusY={0}
-        testId="cf-ui-skeleton-image"
-        width={70}
-      />
-    </clipPath>
-    <linearGradient
-      id="cf-ui-skeleton-clip-gradient-11"
-    >
-      <stop
-        offset="0%"
-        stopColor="#e5ebed"
-        stopOpacity={1}
-      >
-        <animate
-          attributeName="stop-color"
-          dur="2s"
-          id="animation1"
-          repeatCount="indefinite"
-          values="#e5ebed; #f7f9fa; #e5ebed"
-        />
-      </stop>
-      <stop
-        offset="50%"
-        stopColor="#f7f9fa"
-        stopOpacity={1}
-      >
-        <animate
-          attributeName="stop-color"
-          begin="animation1.begin+0.25s"
-          dur="2s"
-          repeatCount="indefinite"
-          values="#e5ebed; #f7f9fa; #e5ebed"
-        />
-      </stop>
-      <stop
-        offset="100%"
-        stopColor="#e5ebed"
-        stopOpacity={1}
-      >
-        <animate
-          attributeName="stop-color"
-          begin="animation1.begin+0.5s"
-          dur="2s"
-          repeatCount="indefinite"
-          values="#e5ebed; #f7f9fa; #e5ebed"
-        />
-      </stop>
-    </linearGradient>
-  </defs>
-</svg>
-`;
-
-exports[`renders the component with a radius y 1`] = `
-<svg
-  aria-label="Loading component..."
-  className="SkeletonContainer"
-  data-test-id="cf-ui-skeleton-form"
-  height="100%"
-  preserveAspectRatio="xMidYMid meet"
-  role="img"
-  width="100%"
->
-  <title>
-    Loading component...
-  </title>
-  <rect
-    clipPath="url(#cf-ui-skeleton-clip-12)"
-    height="100%"
-    style={
-      Object {
-        "fill": "url(#cf-ui-skeleton-clip-gradient-13)",
-      }
-    }
-    width="100%"
-    x="0"
-    y="0"
-  />
-  <defs>
-    <clipPath
-      id="cf-ui-skeleton-clip-12"
-    >
-      <SkeletonImage
-        height={70}
-        radiusX={0}
-        radiusY={15}
-        testId="cf-ui-skeleton-image"
-        width={70}
-      />
-    </clipPath>
-    <linearGradient
-      id="cf-ui-skeleton-clip-gradient-13"
-    >
-      <stop
-        offset="0%"
-        stopColor="#e5ebed"
-        stopOpacity={1}
-      >
-        <animate
-          attributeName="stop-color"
-          dur="2s"
-          id="animation1"
-          repeatCount="indefinite"
-          values="#e5ebed; #f7f9fa; #e5ebed"
-        />
-      </stop>
-      <stop
-        offset="50%"
-        stopColor="#f7f9fa"
-        stopOpacity={1}
-      >
-        <animate
-          attributeName="stop-color"
-          begin="animation1.begin+0.25s"
-          dur="2s"
-          repeatCount="indefinite"
-          values="#e5ebed; #f7f9fa; #e5ebed"
-        />
-      </stop>
-      <stop
-        offset="100%"
-        stopColor="#e5ebed"
-        stopOpacity={1}
-      >
-        <animate
-          attributeName="stop-color"
-          begin="animation1.begin+0.5s"
-          dur="2s"
-          repeatCount="indefinite"
-          values="#e5ebed; #f7f9fa; #e5ebed"
-        />
-      </stop>
-    </linearGradient>
-  </defs>
-</svg>
-`;
-
-exports[`renders the component with an offset left 1`] = `
-<svg
-  aria-label="Loading component..."
-  className="SkeletonContainer"
-  data-test-id="cf-ui-skeleton-form"
-  height="100%"
-  preserveAspectRatio="xMidYMid meet"
-  role="img"
-  width="100%"
->
-  <title>
-    Loading component...
-  </title>
-  <rect
-    clipPath="url(#cf-ui-skeleton-clip-8)"
-    height="100%"
-    style={
-      Object {
-        "fill": "url(#cf-ui-skeleton-clip-gradient-9)",
-      }
-    }
-    width="100%"
-    x="0"
-    y="0"
-  />
-  <defs>
-    <clipPath
-      id="cf-ui-skeleton-clip-8"
-    >
-      <SkeletonImage
-        height={70}
-        offsetLeft={100}
-        radiusX={0}
-        radiusY={0}
-        testId="cf-ui-skeleton-image"
-        width={70}
-      />
-    </clipPath>
-    <linearGradient
-      id="cf-ui-skeleton-clip-gradient-9"
-    >
-      <stop
-        offset="0%"
-        stopColor="#e5ebed"
-        stopOpacity={1}
-      >
-        <animate
-          attributeName="stop-color"
-          dur="2s"
-          id="animation1"
-          repeatCount="indefinite"
-          values="#e5ebed; #f7f9fa; #e5ebed"
-        />
-      </stop>
-      <stop
-        offset="50%"
-        stopColor="#f7f9fa"
-        stopOpacity={1}
-      >
-        <animate
-          attributeName="stop-color"
-          begin="animation1.begin+0.25s"
-          dur="2s"
-          repeatCount="indefinite"
-          values="#e5ebed; #f7f9fa; #e5ebed"
-        />
-      </stop>
-      <stop
-        offset="100%"
-        stopColor="#e5ebed"
-        stopOpacity={1}
-      >
-        <animate
-          attributeName="stop-color"
-          begin="animation1.begin+0.5s"
-          dur="2s"
-          repeatCount="indefinite"
-          values="#e5ebed; #f7f9fa; #e5ebed"
-        />
-      </stop>
-    </linearGradient>
-  </defs>
-</svg>
-`;
-
-exports[`renders the component with an offset top 1`] = `
 <svg
   aria-label="Loading component..."
   className="SkeletonContainer"
@@ -536,11 +199,10 @@ exports[`renders the component with an offset top 1`] = `
     >
       <SkeletonImage
         height={70}
-        offsetTop={100}
         radiusX={0}
         radiusY={0}
         testId="cf-ui-skeleton-image"
-        width={70}
+        width={100}
       />
     </clipPath>
     <linearGradient
@@ -554,7 +216,7 @@ exports[`renders the component with an offset top 1`] = `
         <animate
           attributeName="stop-color"
           dur="2s"
-          id="animation1"
+          id="animation-8"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
         />
@@ -566,7 +228,7 @@ exports[`renders the component with an offset top 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="animation1.begin+0.25s"
+          begin="animation-8.begin+0.25s"
           dur="2s"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
@@ -579,7 +241,345 @@ exports[`renders the component with an offset top 1`] = `
       >
         <animate
           attributeName="stop-color"
-          begin="animation1.begin+0.5s"
+          begin="animation-8.begin+0.5s"
+          dur="2s"
+          repeatCount="indefinite"
+          values="#e5ebed; #f7f9fa; #e5ebed"
+        />
+      </stop>
+    </linearGradient>
+  </defs>
+</svg>
+`;
+
+exports[`renders the component with a radius x 1`] = `
+<svg
+  aria-label="Loading component..."
+  className="SkeletonContainer"
+  data-test-id="cf-ui-skeleton-form"
+  height="100%"
+  preserveAspectRatio="xMidYMid meet"
+  role="img"
+  width="100%"
+>
+  <title>
+    Loading component...
+  </title>
+  <rect
+    clipPath="url(#cf-ui-skeleton-clip-15)"
+    height="100%"
+    style={
+      Object {
+        "fill": "url(#cf-ui-skeleton-clip-gradient-16)",
+      }
+    }
+    width="100%"
+    x="0"
+    y="0"
+  />
+  <defs>
+    <clipPath
+      id="cf-ui-skeleton-clip-15"
+    >
+      <SkeletonImage
+        height={70}
+        radiusX={15}
+        radiusY={0}
+        testId="cf-ui-skeleton-image"
+        width={70}
+      />
+    </clipPath>
+    <linearGradient
+      id="cf-ui-skeleton-clip-gradient-16"
+    >
+      <stop
+        offset="0%"
+        stopColor="#e5ebed"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="stop-color"
+          dur="2s"
+          id="animation-17"
+          repeatCount="indefinite"
+          values="#e5ebed; #f7f9fa; #e5ebed"
+        />
+      </stop>
+      <stop
+        offset="50%"
+        stopColor="#f7f9fa"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="stop-color"
+          begin="animation-17.begin+0.25s"
+          dur="2s"
+          repeatCount="indefinite"
+          values="#e5ebed; #f7f9fa; #e5ebed"
+        />
+      </stop>
+      <stop
+        offset="100%"
+        stopColor="#e5ebed"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="stop-color"
+          begin="animation-17.begin+0.5s"
+          dur="2s"
+          repeatCount="indefinite"
+          values="#e5ebed; #f7f9fa; #e5ebed"
+        />
+      </stop>
+    </linearGradient>
+  </defs>
+</svg>
+`;
+
+exports[`renders the component with a radius y 1`] = `
+<svg
+  aria-label="Loading component..."
+  className="SkeletonContainer"
+  data-test-id="cf-ui-skeleton-form"
+  height="100%"
+  preserveAspectRatio="xMidYMid meet"
+  role="img"
+  width="100%"
+>
+  <title>
+    Loading component...
+  </title>
+  <rect
+    clipPath="url(#cf-ui-skeleton-clip-18)"
+    height="100%"
+    style={
+      Object {
+        "fill": "url(#cf-ui-skeleton-clip-gradient-19)",
+      }
+    }
+    width="100%"
+    x="0"
+    y="0"
+  />
+  <defs>
+    <clipPath
+      id="cf-ui-skeleton-clip-18"
+    >
+      <SkeletonImage
+        height={70}
+        radiusX={0}
+        radiusY={15}
+        testId="cf-ui-skeleton-image"
+        width={70}
+      />
+    </clipPath>
+    <linearGradient
+      id="cf-ui-skeleton-clip-gradient-19"
+    >
+      <stop
+        offset="0%"
+        stopColor="#e5ebed"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="stop-color"
+          dur="2s"
+          id="animation-20"
+          repeatCount="indefinite"
+          values="#e5ebed; #f7f9fa; #e5ebed"
+        />
+      </stop>
+      <stop
+        offset="50%"
+        stopColor="#f7f9fa"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="stop-color"
+          begin="animation-20.begin+0.25s"
+          dur="2s"
+          repeatCount="indefinite"
+          values="#e5ebed; #f7f9fa; #e5ebed"
+        />
+      </stop>
+      <stop
+        offset="100%"
+        stopColor="#e5ebed"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="stop-color"
+          begin="animation-20.begin+0.5s"
+          dur="2s"
+          repeatCount="indefinite"
+          values="#e5ebed; #f7f9fa; #e5ebed"
+        />
+      </stop>
+    </linearGradient>
+  </defs>
+</svg>
+`;
+
+exports[`renders the component with an offset left 1`] = `
+<svg
+  aria-label="Loading component..."
+  className="SkeletonContainer"
+  data-test-id="cf-ui-skeleton-form"
+  height="100%"
+  preserveAspectRatio="xMidYMid meet"
+  role="img"
+  width="100%"
+>
+  <title>
+    Loading component...
+  </title>
+  <rect
+    clipPath="url(#cf-ui-skeleton-clip-12)"
+    height="100%"
+    style={
+      Object {
+        "fill": "url(#cf-ui-skeleton-clip-gradient-13)",
+      }
+    }
+    width="100%"
+    x="0"
+    y="0"
+  />
+  <defs>
+    <clipPath
+      id="cf-ui-skeleton-clip-12"
+    >
+      <SkeletonImage
+        height={70}
+        offsetLeft={100}
+        radiusX={0}
+        radiusY={0}
+        testId="cf-ui-skeleton-image"
+        width={70}
+      />
+    </clipPath>
+    <linearGradient
+      id="cf-ui-skeleton-clip-gradient-13"
+    >
+      <stop
+        offset="0%"
+        stopColor="#e5ebed"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="stop-color"
+          dur="2s"
+          id="animation-14"
+          repeatCount="indefinite"
+          values="#e5ebed; #f7f9fa; #e5ebed"
+        />
+      </stop>
+      <stop
+        offset="50%"
+        stopColor="#f7f9fa"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="stop-color"
+          begin="animation-14.begin+0.25s"
+          dur="2s"
+          repeatCount="indefinite"
+          values="#e5ebed; #f7f9fa; #e5ebed"
+        />
+      </stop>
+      <stop
+        offset="100%"
+        stopColor="#e5ebed"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="stop-color"
+          begin="animation-14.begin+0.5s"
+          dur="2s"
+          repeatCount="indefinite"
+          values="#e5ebed; #f7f9fa; #e5ebed"
+        />
+      </stop>
+    </linearGradient>
+  </defs>
+</svg>
+`;
+
+exports[`renders the component with an offset top 1`] = `
+<svg
+  aria-label="Loading component..."
+  className="SkeletonContainer"
+  data-test-id="cf-ui-skeleton-form"
+  height="100%"
+  preserveAspectRatio="xMidYMid meet"
+  role="img"
+  width="100%"
+>
+  <title>
+    Loading component...
+  </title>
+  <rect
+    clipPath="url(#cf-ui-skeleton-clip-9)"
+    height="100%"
+    style={
+      Object {
+        "fill": "url(#cf-ui-skeleton-clip-gradient-10)",
+      }
+    }
+    width="100%"
+    x="0"
+    y="0"
+  />
+  <defs>
+    <clipPath
+      id="cf-ui-skeleton-clip-9"
+    >
+      <SkeletonImage
+        height={70}
+        offsetTop={100}
+        radiusX={0}
+        radiusY={0}
+        testId="cf-ui-skeleton-image"
+        width={70}
+      />
+    </clipPath>
+    <linearGradient
+      id="cf-ui-skeleton-clip-gradient-10"
+    >
+      <stop
+        offset="0%"
+        stopColor="#e5ebed"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="stop-color"
+          dur="2s"
+          id="animation-11"
+          repeatCount="indefinite"
+          values="#e5ebed; #f7f9fa; #e5ebed"
+        />
+      </stop>
+      <stop
+        offset="50%"
+        stopColor="#f7f9fa"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="stop-color"
+          begin="animation-11.begin+0.25s"
+          dur="2s"
+          repeatCount="indefinite"
+          values="#e5ebed; #f7f9fa; #e5ebed"
+        />
+      </stop>
+      <stop
+        offset="100%"
+        stopColor="#e5ebed"
+        stopOpacity={1}
+      >
+        <animate
+          attributeName="stop-color"
+          begin="animation-11.begin+0.5s"
           dur="2s"
           repeatCount="indefinite"
           values="#e5ebed; #f7f9fa; #e5ebed"
