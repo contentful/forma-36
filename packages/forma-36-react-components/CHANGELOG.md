@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.37.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.36.1...@contentful/forma-36-react-components@3.37.0) (2020-04-24)
+
+
+### Features
+
+* **skeleton-row:** add component for table loading state ([#435](https://github.com/contentful/forma-36/issues/435)) ([d3f80ef](https://github.com/contentful/forma-36/commit/d3f80ef61336b688b65df2ef5ad9322cfe4eb916)), closes [#433](https://github.com/contentful/forma-36/issues/433)
+
+
+
+
+
 ## [3.36.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.36.0...@contentful/forma-36-react-components@3.36.1) (2020-04-21)
 
 
