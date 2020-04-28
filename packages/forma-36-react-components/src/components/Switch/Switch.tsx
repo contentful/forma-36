@@ -19,7 +19,7 @@ export const Switch: FunctionComponent<SwitchProps> = (props: SwitchProps) => {
         type="checkbox"
         onClick={onToggle}
         onKeyUp={onKeyUp}
-        checked={props.isChecked}
+        defaultChecked={props.isChecked}
         disabled={props.isDisabled}
         className={classNames(styles['Switch'], {
           [styles['Switch--checked']]: props.isChecked,
