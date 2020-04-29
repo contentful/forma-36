@@ -8,7 +8,7 @@ export type DropdownListProps = {
   className?: string;
   testId?: string;
   border?: 'top' | 'bottom';
-  maxHeight?: number;
+  maxHeight?: 'initial' | 'inherit' | string | number;
   styles?: object;
 } & typeof defaultProps;
 
