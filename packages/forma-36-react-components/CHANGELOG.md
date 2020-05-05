@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.37.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.37.0...@contentful/forma-36-react-components@3.37.1) (2020-05-05)
+
+
+### Bug Fixes
+
+* **Switch:** Replace checked prop with defaultChecked ([cda289d](https://github.com/contentful/forma-36/commit/cda289df905f65999fe60cabd9c838245b2e4748))
+
+
+
+
+
 # [3.37.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.36.1...@contentful/forma-36-react-components@3.37.0) (2020-04-24)
 
 
