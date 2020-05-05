@@ -67,12 +67,12 @@ contribute to a package, see the README of the corresponding package.
 
 ## Reach out to us
 
+You can reach out to us using the [Contentful community Slack](https://www.contentful.com/slack/). We've setup a channel [#forma36](https://contentful-community.slack.com/messages/CFXGTMB98) in which we announce latest changes and updates.
+
 ### Maintainers
 
 - [Johannes Bugiel](https://github.com/wichniowski)
 - [Mike Mitchell](https://github.com/m10l)
-
-You can also reach out using the Contentful community Slack. We've setup a channel [#forma36](https://contentful-community.slack.com/messages/CFXGTMB98) in which we announce latest changes and updates.
 
 ### You found a bug or want to propose a feature?
 
