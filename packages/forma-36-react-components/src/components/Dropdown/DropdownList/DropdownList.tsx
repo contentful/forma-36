@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
 import cssStyles from './DropdownList.css';
+import * as CSS from 'csstype';
 
 export type DropdownListProps = {
   children: React.ReactNode;
@@ -8,7 +9,7 @@ export type DropdownListProps = {
   className?: string;
   testId?: string;
   border?: 'top' | 'bottom';
-  maxHeight?: 'initial' | 'inherit' | string | number;
+  maxHeight?: number | CSS.MaxHeightProperty<string>;
   styles?: object;
 } & typeof defaultProps;
 
