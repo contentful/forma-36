@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.37.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.37.1...@contentful/forma-36-react-components@3.37.2) (2020-05-11)
+
+
+### Bug Fixes
+
+* maxHeight type as suggested by [@mshaaban0](https://github.com/mshaaban0) ([a2380fd](https://github.com/contentful/forma-36/commit/a2380fd57bee76d8c312258f2181e662ad5ab9d9))
+* type type maxHeight ([cf08470](https://github.com/contentful/forma-36/commit/cf084707158c9ba36b31b04d035650758131754a))
+
+
+
+
+
 ## [3.37.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.37.0...@contentful/forma-36-react-components@3.37.1) (2020-05-05)
 
 
