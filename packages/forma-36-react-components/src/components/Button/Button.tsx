@@ -23,7 +23,7 @@ export type ButtonProps = {
   loading?: boolean;
   disabled?: boolean;
   testId?: string;
-  buttonType?: 'primary' | 'positive' | 'negative' | 'muted' | 'naked';
+  buttonType?: 'primary' | 'positive' | 'negative' | 'warning' | 'muted' | 'naked';
   type?: 'button' | 'submit' | 'reset';
   size?: 'small' | 'large';
   href?: string;
