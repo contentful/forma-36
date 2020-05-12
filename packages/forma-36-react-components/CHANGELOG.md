@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.37.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.37.2...@contentful/forma-36-react-components@3.37.3) (2020-05-12)
+
+
+### Bug Fixes
+
+* **button:** add missing warning prop type ([1a28c76](https://github.com/contentful/forma-36/commit/1a28c768460e596e9b7f0ecd7bb1f7a2491b66df))
+
+
+
+
+
 ## [3.37.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.37.1...@contentful/forma-36-react-components@3.37.2) (2020-05-11)
 
 
