@@ -25,7 +25,7 @@ export interface AutocompleteProps<T extends {}> {
   disabled?: boolean;
   placeholder?: string;
   toggleElement?: HTMLElement;
-  query?: string;
+  queryInput?: string;
   name?: string;
   width?: 'small' | 'medium' | 'large' | 'full';
   className?: string;
@@ -118,7 +118,7 @@ export const Autocomplete = <T extends {}>({
   );
 
   useEffect(() => {
-    if (queryInput !== query) {
+    if (queryInput && queryInput !== query) {
       updateQuery(queryInput);
     }
   });
