@@ -1,4 +1,4 @@
-import React, { useReducer, useMemo, useRef } from 'react';
+import React, { useReducer, useMemo, useRef, useEffect } from 'react';
 
 import TextInput from '../TextInput';
 import Dropdown, { DropdownProps } from '../Dropdown';
@@ -24,6 +24,8 @@ export interface AutocompleteProps<T extends {}> {
   onQueryChange: (query: string) => void;
   disabled?: boolean;
   placeholder?: string;
+  toggleElement?: HTMLElement;
+  query?: string;
   name?: string;
   width?: 'small' | 'medium' | 'large' | 'full';
   className?: string;
@@ -94,6 +96,8 @@ export const Autocomplete = <T extends {}>({
   onQueryChange,
   placeholder = 'Search',
   name = 'Search',
+  toggleElement,
+  queryInput,
   width,
   className,
   maxHeight,
@@ -112,6 +116,12 @@ export const Autocomplete = <T extends {}>({
     reducer,
     initialState,
   );
+
+  useEffect(() => {
+    if (queryInput !== query) {
+      updateQuery(queryInput);
+    }
+  });
 
   const toggleList = (isOpen?: boolean): void => {
     dispatch({ type: TOGGLED_LIST, payload: isOpen });
@@ -183,30 +193,34 @@ export const Autocomplete = <T extends {}>({
         dispatch({ type: TOGGLED_LIST });
       }}
       toggleElement={
-        <div className={styles.autocompleteInput}>
-          <TextInput
-            value={query}
-            onChange={e => updateQuery(e.target.value)}
-            onFocus={() => toggleList(true)}
-            onKeyDown={handleKeyDown}
-            disabled={disabled}
-            placeholder={placeholder}
-            width={width}
-            inputRef={inputRef as React.RefObject<HTMLInputElement>}
-            testId="autocomplete.input"
-            type="search"
-            autoComplete="off"
-            aria-label={name}
-          />
-          <IconButton
-            className={styles.inputIconButton}
-            tabIndex={-1}
-            buttonType="muted"
-            iconProps={{ icon: query ? 'Close' : 'ChevronDown' }}
-            onClick={handleInputButtonClick}
-            label={query ? 'Clear' : 'Show list'}
-          />
-        </div>
+        <React.Fragment>
+          {toggleElement || (
+            <div className={styles.autocompleteInput}>
+              <TextInput
+                value={query}
+                onChange={e => updateQuery(e.target.value)}
+                onFocus={() => toggleList(true)}
+                onKeyDown={handleKeyDown}
+                disabled={disabled}
+                placeholder={placeholder}
+                width={width}
+                inputRef={inputRef as React.RefObject<HTMLInputElement>}
+                testId="autocomplete.input"
+                type="search"
+                autoComplete="off"
+                aria-label={name}
+              />
+              <IconButton
+                className={styles.inputIconButton}
+                tabIndex={-1}
+                buttonType="muted"
+                iconProps={{ icon: query ? 'Close' : 'ChevronDown' }}
+                onClick={handleInputButtonClick}
+                label={query ? 'Clear' : 'Show list'}
+              />
+            </div>
+          )}
+        </React.Fragment>
       }
       {...dropdownProps}
     >
