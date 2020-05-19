@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.39.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.38.0...@contentful/forma-36-react-components@3.39.0) (2020-05-19)
+
+
+### Features
+
+* **autocomplete:** add render prop for toggle element ([dc0b9f0](https://github.com/contentful/forma-36/commit/dc0b9f0e13d163e2ea23266b4d78dde160f3db15))
+
+
+
+
+
 # [3.38.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.37.3...@contentful/forma-36-react-components@3.38.0) (2020-05-19)
 
 
