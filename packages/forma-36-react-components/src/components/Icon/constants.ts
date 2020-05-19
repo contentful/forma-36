@@ -97,6 +97,8 @@ export const iconName = {
   PlusTrimmed: 'PlusTrimmed',
   Quote: 'Quote',
   QuoteTrimmed: 'QuoteTrimmed',
+  Release: 'Release',
+  ReleaseTrimmed: 'ReleaseTrimmed',
   Receipt: 'Receipt',
   ReceiptTrimmed: 'ReceiptTrimmed',
   Search: 'Search',

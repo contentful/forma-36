@@ -100,6 +100,8 @@ import Quote from './svg/Quote.svg';
 import QuoteTrimmed from './svg/QuoteTrimmed.svg';
 import Receipt from './svg/Receipt.svg';
 import ReceiptTrimmed from './svg/ReceiptTrimmed.svg';
+import Release from './svg/Release.svg';
+import ReleaseTrimmed from './svg/ReleaseTrimmed.svg';
 import Search from './svg/Search.svg';
 import SearchTrimmed from './svg/SearchTrimmed.svg';
 import Settings from './svg/Settings.svg';
@@ -222,6 +224,8 @@ const iconComponents = {
   PlusTrimmed,
   Quote,
   QuoteTrimmed,
+  Release,
+  ReleaseTrimmed,
   Receipt,
   ReceiptTrimmed,
   Search,
