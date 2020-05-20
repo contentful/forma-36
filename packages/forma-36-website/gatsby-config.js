@@ -116,12 +116,36 @@ module.exports = {
         link: '',
         menuLinks: [
           {
+            name: 'Asset',
+            link: '/components/asset/',
+          },
+          {
             name: 'Button',
             link: '/components/button/',
           },
           {
+            name: 'Card',
+            link: '/components/card/',
+          },
+          {
+            name: 'Checkbox',
+            link: '/components/checkbox/',
+          },
+          {
             name: 'Dropdown',
             link: '/components/dropdown/',
+          },
+          {
+            name: 'Editor toolbar',
+            link: '/components/editor-toolbar/',
+          },
+          {
+            name: 'Empty state',
+            link: '/components/empty-state/',
+          },
+          {
+            name: 'Entry list',
+            link: '/components/entry-list/',
           },
           {
             name: 'Form',
@@ -130,6 +154,10 @@ module.exports = {
           {
             name: 'FormLabel',
             link: '/components/form-label/',
+          },
+          {
+            name: 'Grid',
+            link: '/components/grid/',
           },
           {
             name: 'HelpText',
