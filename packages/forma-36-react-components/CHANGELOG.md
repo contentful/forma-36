@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.39.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.39.0...@contentful/forma-36-react-components@3.39.1) (2020-05-20)
+
+
+### Bug Fixes
+
+* **button:** CSS variable references in Button.css ([0674d24](https://github.com/contentful/forma-36/commit/0674d244ebb7492ddcb670fe602792acfbb23505))
+
+
+
+
+
 # [3.39.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.38.0...@contentful/forma-36-react-components@3.39.0) (2020-05-19)
 
 
