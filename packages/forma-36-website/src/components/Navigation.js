@@ -91,7 +91,12 @@ const MenuListProps = {
 };
 
 const MenuListItem = ({ item, currentPath }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const isMenuCategory =
+    item.name === 'Foundation' ||
+    item.name === 'Guidelines' ||
+    item.name === 'Components';
+
+  const [isExpanded, setIsExpanded] = useState(isMenuCategory);
 
   const checkOpen = (item, currentPath) => {
     if (item.link === currentPath) {
