@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { css } from '@emotion/core';
 import tokens from '@contentful/forma-36-tokens';
-import { DisplayText, Button } from '@contentful/forma-36-react-components';
+import { DisplayText, Button, Tag } from '@contentful/forma-36-react-components';
 import storybookIcon from '../images/storybook.svg';
 import githubIcon from '../images/github.svg';
 
@@ -23,6 +23,12 @@ const styles = {
     margin-left: 0;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+    margin-right: ${tokens.spacingM};
+  `,
+  tag: css`
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-right: ${tokens.spacingM};
   `,
   imageLink: css`
@@ -57,15 +63,26 @@ const DocFormatter = ({ frontmatter, children }) => {
   const data = {
     title: frontmatter && frontmatter.title,
     githubUrl: frontmatter && frontmatter.storybook,
-    storybookUrl: frontmatter && frontmatter.github
+    storybookUrl: frontmatter && frontmatter.github,
+    status: frontmatter && frontmatter.status
   }
-
+  console.log(data.status)
   return (
     <React.Fragment>
       {/* Remove styles condition once all docs follow the same structure */}
       <header css={data.title ? styles.header : ''}>
-        {data.title && <DisplayText>{data.title}</DisplayText>}
+        {data.title &&
+          <DisplayText>
+            {data.title}
+          </DisplayText>
+        }
+        
         <div css={styles.buttonList}>
+          {data.status && (
+            <div css={styles.tag}>
+              <Tag tagType={data.status === 'Alpha'? 'warning' : 'positive'}>{data.status}</Tag>
+            </div>
+          )}
           {hasDevelopDocs && hasDesignDocs && (
             <>
               <Button 
@@ -84,14 +101,12 @@ const DocFormatter = ({ frontmatter, children }) => {
                 onClick={() => setActiveSection('develop')}>Develop</Button>
             </>
           )}
-          
           {data.githubUrl && (
             <a css={styles.imageLink} href={data.githubUrl} title={`View ${data.title} in Storybook`}>
               <img src={storybookIcon} alt="" />
               <span>Storybook</span>
             </a>
           )}
-
           {data.storybookUrl && (
             <a css={styles.imageLink} href={data.storybookUrl} title={`View ${data.title} on GitHub`}>
               <img src={githubIcon} alt="" />
