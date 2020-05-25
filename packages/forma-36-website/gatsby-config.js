@@ -168,6 +168,14 @@ module.exports = {
             link: '/components/icon/',
           },
           {
+            name: 'IconButton',
+            link: '/components/icon-button/',
+          },
+          {
+            name: 'List',
+            link: '/components/list/',
+          },
+          {
             name: 'Modal',
             link: '/components/modal/',
           },
@@ -178,6 +186,34 @@ module.exports = {
           {
             name: 'Notification',
             link: '/components/notification/',
+          },
+          {
+            name: 'Pill',
+            link: '/components/pill/',
+          },
+          {
+            name: 'RadioButton',
+            link: '/components/radio-button/',
+          },
+          {
+            name: 'Select',
+            link: '/components/select/',
+          },
+          {
+            name: 'SelectField',
+            link: '/components/select-filed/',
+          },
+          {
+            name: 'Skeleton',
+            link: '/components/skeleton/',
+          },
+          {
+            name: 'Spinner',
+            link: '/components/spinner/',
+          },
+          {
+            name: 'Switch',
+            link: '/components/switch/',
           },
           {
             name: 'Table',
