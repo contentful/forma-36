@@ -5,3 +5,41 @@ status: 'stable'
 github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/Checkbox'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-checkbox--default'
 ---
+Detailed documentation will be provided soon. For now, please have a look into the storybook for implementation details.
+
+```jsx
+<React.Fragment>
+    <div>
+      <CheckboxField
+        labelText="Example checkbox label"
+        helpText="Example help text"
+        name="someOption"
+        checked={false}
+        value="yes"
+        id="termsCheckbox"
+      />
+    </div>
+    <br />
+    <div>
+      <CheckboxField
+        labelText="Example checkbox label checked"
+        helpText="Example help text"
+        name="someOption"
+        checked={true}
+        value="yes"
+        id="termsCheckbox"
+      />
+    </div>
+    <br />
+    <div>
+      <CheckboxField
+        labelText="Example label text"
+        validationMessage="validation message"
+        name="someOption"
+        checked={false}
+        value="yes"
+        id="termsCheckbox"
+      />
+    </div>
+</React.Fragment>
+```
