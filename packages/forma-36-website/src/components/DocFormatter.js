@@ -14,6 +14,10 @@ const styles = {
     margin-bottom: ${tokens.spacingXl};
     border-bottom: 1px solid ${tokens.colorElementMid};
   `,
+  subheaderRow: css`
+    display: flex;
+    justify-content: space-between;
+  `,
   buttonLeft: css`
     margin-right: 0;
     border-top-right-radius: 0;
@@ -26,10 +30,10 @@ const styles = {
     margin-right: ${tokens.spacingM};
   `,
   tag: css`
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
-    margin-right: ${tokens.spacingM};
+    margin-left: ${tokens.spacingM};
   `,
   imageLink: css`
     font-size: ${tokens.fontSizeM};
@@ -66,7 +70,6 @@ const DocFormatter = ({ frontmatter, children }) => {
     storybookUrl: frontmatter && frontmatter.github,
     status: frontmatter && frontmatter.status
   }
-  console.log(data.status)
   return (
     <React.Fragment>
       {/* Remove styles condition once all docs follow the same structure */}
@@ -76,42 +79,44 @@ const DocFormatter = ({ frontmatter, children }) => {
             {data.title}
           </DisplayText>
         }
-        
-        <div css={styles.buttonList}>
+        <div css={styles.subheaderRow}>
+          <div css={styles.buttonList}>
+            {hasDevelopDocs && hasDesignDocs && (
+              <>
+                <Button 
+                  size='small'
+                  buttonType={activeSection === 'design' ? 'primary' : 'muted'}
+                  css={styles.buttonLeft} 
+                  icon={activeSection === 'design' && 'CheckCircleTrimmed'} 
+                  isActive={activeSection === 'design'} 
+                  onClick={() => setActiveSection('design')}>Design</Button>
+                <Button 
+                  size='small' 
+                  css={styles.buttonRight} 
+                  buttonType={activeSection === 'develop' ? 'primary' : 'muted'}
+                  icon={activeSection === 'develop' && 'CheckCircleTrimmed'} 
+                  isActive={activeSection === 'develop'} 
+                  onClick={() => setActiveSection('develop')}>Develop</Button>
+              </>
+            )}
+            {data.githubUrl && (
+              <a css={styles.imageLink} href={data.githubUrl} title={`View ${data.title} in Storybook`}>
+                <img src={storybookIcon} alt="" />
+                <span>Storybook</span>
+              </a>
+            )}
+            {data.storybookUrl && (
+              <a css={styles.imageLink} href={data.storybookUrl} title={`View ${data.title} on GitHub`}>
+                <img src={githubIcon} alt="" />
+                <span>Github</span>
+              </a>
+            )}
+          </div>
+          
           {data.status && (
-            <div css={styles.tag}>
+            <span css={styles.tag}>
               <Tag tagType={data.status === 'Alpha'? 'warning' : 'positive'}>{data.status}</Tag>
-            </div>
-          )}
-          {hasDevelopDocs && hasDesignDocs && (
-            <>
-              <Button 
-                size='small'
-                buttonType={activeSection === 'design' ? 'primary' : 'muted'}
-                css={styles.buttonLeft} 
-                icon={activeSection === 'design' && 'CheckCircleTrimmed'} 
-                isActive={activeSection === 'design'} 
-                onClick={() => setActiveSection('design')}>Design</Button>
-              <Button 
-                size='small' 
-                css={styles.buttonRight} 
-                buttonType={activeSection === 'develop' ? 'primary' : 'muted'}
-                icon={activeSection === 'develop' && 'CheckCircleTrimmed'} 
-                isActive={activeSection === 'develop'} 
-                onClick={() => setActiveSection('develop')}>Develop</Button>
-            </>
-          )}
-          {data.githubUrl && (
-            <a css={styles.imageLink} href={data.githubUrl} title={`View ${data.title} in Storybook`}>
-              <img src={storybookIcon} alt="" />
-              <span>Storybook</span>
-            </a>
-          )}
-          {data.storybookUrl && (
-            <a css={styles.imageLink} href={data.storybookUrl} title={`View ${data.title} on GitHub`}>
-              <img src={githubIcon} alt="" />
-              <span>Github</span>
-            </a>
+            </span>
           )}
         </div>
       </header>
