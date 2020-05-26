@@ -140,8 +140,8 @@ module.exports = {
             link: '/components/empty-state/',
           },
           {
-            name: 'Entry list',
-            link: '/components/entry-list/',
+            name: 'Entity list',
+            link: '/components/entity-list/',
           },
           {
             name: 'Form',
