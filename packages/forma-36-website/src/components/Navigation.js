@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 
 import { css } from '@emotion/core';
 import tokens from '@contentful/forma-36-tokens';
-import { Icon } from '@contentful/forma-36-react-components';
+import { Icon, SectionHeading } from '@contentful/forma-36-react-components';
 
 import DocSearch from './DocSearch';
 
@@ -17,122 +17,125 @@ const styles = {
     padding-top: ${tokens.spacingM};
     border-right: 1px solid ${tokens.colorElementMid};
   `,
+
   navList: css`
     display: flex;
     flex-direction: column;
     border-top: 1px solid ${tokens.colorElementMid};
-    padding: ${tokens.spacingM} ${tokens.spacingM};
+    padding: ${tokens.spacingM} 0;
     height: calc(100vh - ${heightOfHeader + heightOfDocSearch}px);
     overflow-y: auto;
+    color: ${tokens.colorTextMid};
   `,
 
   list: css`
     flex: 1 1 0;
     list-style: none;
     padding: 0;
-    margin-top: ${tokens.spacingXs};
+    margin-top: 0;
   `,
 
-  listItem: css`
-    position: relative;
-    padding-left: 0;
-    margin-bottom: ${tokens.spacingXs};
+  link: css`
+    display: flex;
+    justify-content: space-between;
+    padding: ${tokens.spacingXs} ${tokens.spacingM};
+    color: ${tokens.colorTextMid};
+    text-decoration: none;
+    transition: background-color ${tokens.transitionDurationDefault}
+      ${tokens.transitionEasingDefault};
 
-    ul {
-      position: relative;
-    }
-
-    li {
-      padding-left: ${tokens.spacingL};
+    &:hover {
+      background-color: ${tokens.colorElementLight};
     }
   `,
 
   linkActive: css`
-    font-weight: ${tokens.fontWeightDemiBold};
-  `,
+    background-color: ${tokens.colorBlueLight};
+    color: ${tokens.colorWhite};
 
-  link: css`
-    text-decoration: none;
-    display: flex;
-    color: ${tokens.colorTextMid};
-    position: relative;
-  `,
-
-  linkParent: css`
-    text-decoration: none;
-    background-color: ${tokens.colorElementLight};
-    display: flex;
-    justify-content: space-between;
-    color: ${tokens.colorTextMid};
-    position: relative;
-    border-radius: 4px;
-    padding: ${tokens.spacingXs};
-    cursor: pointer;
+    &:hover {
+      background-color: ${tokens.colorBlueMid};
+    }
   `,
 
   linkIcon: css`
     align-self: center;
   `,
 
-  item: css`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: ${tokens.spacingM} 0;
-    border-bottom: 1px solid ${tokens.colorElementLight};
+  linkGroup: css`
+    cursor: pointer;
+  `,
+
+  category: css`
+    margin-top: ${tokens.spacingL};
+
+    &:first-of-type {
+      margin-top: 0;
+    }
   `,
 };
 
-const MenuListProps = {
-  menuItems: PropTypes.arrayOf(
-    PropTypes.shape({ link: PropTypes.string, name: PropTypes.string }),
-  ),
-  currentPath: PropTypes.string.isRequired,
+const checkActive = (item, currentPath) => {
+  if (item.link === currentPath) {
+    return true;
+  }
+
+  return (
+    item.menuLinks &&
+    item.menuLinks.some(item => checkActive(item, currentPath))
+  );
 };
 
-const MenuListItem = ({ item, currentPath }) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+const checkCategory = name =>
+  name === 'Foundation' || name === 'Guidelines' || name === 'Components';
 
-  const checkOpen = (item, currentPath) => {
-    if (item.link === currentPath) {
-      return true;
-    } else if (item.menuLinks) {
-      return item.menuLinks.some(item => checkOpen(item, currentPath));
-    }
-
-    return false;
-  };
+const MenuListItem = ({ item, currentPath, isActive, hierarchyLevel }) => {
+  const isCategory = checkCategory(item.name);
+  const [isExpanded, setIsExpanded] = useState(isActive || isCategory);
 
   const handleToggle = event => {
     event.preventDefault();
     setIsExpanded(!isExpanded);
   };
 
-  const isOpen = checkOpen(item, currentPath);
-  const iconName =
-    item.menuLinks && (isExpanded || isOpen) ? 'ChevronDown' : 'ChevronRight';
+  const itemOffset = { paddingLeft: `${1 + hierarchyLevel}rem` };
 
   return (
-    <li css={styles.listItem}>
-      {!item.link ? (
-        <div
-          css={[styles.linkParent, isOpen && styles.linkActive]}
-          onClick={handleToggle}
-        >
-          <span>{item.name}</span>
-          <Icon css={styles.linkIcon} color="secondary" icon={iconName} />
-        </div>
+    <li css={[isCategory && styles.category]}>
+      {item.menuLinks ? (
+        <>
+          <div
+            css={[styles.link, styles.linkGroup, itemOffset]}
+            onClick={handleToggle}
+          >
+            {isCategory ? (
+              <SectionHeading>{item.name}</SectionHeading>
+            ) : (
+              <span>{item.name}</span>
+            )}
+
+            <Icon
+              css={styles.linkIcon}
+              color="secondary"
+              icon={isExpanded ? 'ChevronDown' : 'ChevronRight'}
+            />
+          </div>
+          {isExpanded && (
+            <MenuList
+              menuItems={item.menuLinks}
+              currentPath={currentPath}
+              hierarchyLevel={hierarchyLevel + 1}
+            />
+          )}
+        </>
       ) : (
         <Link
-          css={[styles.link, isOpen && styles.linkActive]}
+          css={[styles.link, isActive && styles.linkActive, itemOffset]}
           to={item.link}
           href={item.link}
         >
-          <span>{item.name}</span>
+          {item.name}
         </Link>
-      )}
-      {item.menuLinks && (isExpanded || isOpen) && (
-        <MenuList menuItems={item.menuLinks} currentPath={currentPath} />
       )}
     </li>
   );
@@ -142,39 +145,62 @@ MenuListItem.propTypes = {
   item: PropTypes.shape({ link: PropTypes.string, name: PropTypes.string })
     .isRequired,
   currentPath: PropTypes.string.isRequired,
+  isActive: PropTypes.bool,
+  hierarchyLevel: PropTypes.number,
 };
 
-const MenuList = ({ menuItems, currentPath }) => {
+MenuListItem.defaultProps = {
+  isActive: false,
+  hierarchyLevel: 0,
+};
+
+const MenuList = ({ menuItems, currentPath, hierarchyLevel }) => {
   return (
     <ul css={styles.list}>
-      {menuItems &&
-        menuItems.map((item, index) => (
+      {menuItems.map((item, index) => {
+        return (
           <MenuListItem
             key={index}
             item={item}
-            menuItems={menuItems}
             currentPath={currentPath}
+            isActive={checkActive(item, currentPath)}
+            hierarchyLevel={hierarchyLevel}
           />
-        ))}
+        );
+      })}
     </ul>
   );
 };
 
-MenuList.propTypes = MenuListProps;
+const MenuListProps = {
+  currentPath: PropTypes.string.isRequired,
+  menuItems: PropTypes.arrayOf(
+    PropTypes.shape({ link: PropTypes.string, name: PropTypes.string }),
+  ),
+};
+
+MenuList.propTypes = { ...MenuListProps, hierarchyLevel: PropTypes.number };
 
 MenuList.defaultProps = {
   menuItems: [],
+  hierarchyLevel: 0,
 };
 
-const Navigation = ({ menuItems, currentPath }) => (
-  <div css={styles.sidemenu}>
-    <DocSearch />
+const Navigation = ({ menuItems, currentPath }) => {
+  return (
+    <div css={styles.sidemenu}>
+      <DocSearch />
 
-    <nav css={styles.navList} aria-label="Main Navigation">
-      <MenuList menuItems={menuItems} currentPath={currentPath} />
-    </nav>
-  </div>
-);
+      <nav css={styles.navList} aria-label="Main Navigation">
+        <MenuList
+          menuItems={menuItems}
+          currentPath={currentPath}
+          hierarchyLevel={0}
+        />
+      </nav>
+    </div>
+  );
+};
 
 Navigation.propTypes = MenuListProps;
 
