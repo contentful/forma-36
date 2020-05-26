@@ -45,7 +45,7 @@ const styles = {
       ${tokens.transitionEasingDefault};
 
     &:hover {
-      background-color: ${tokens.colorElementLightest};
+      background-color: ${tokens.colorElementLight};
     }
   `,
 
