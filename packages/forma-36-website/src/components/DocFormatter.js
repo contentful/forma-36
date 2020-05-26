@@ -115,7 +115,7 @@ const DocFormatter = ({ frontmatter, children }) => {
           
           {data.status && (
             <span css={styles.tag}>
-              <Tag tagType={data.status === 'Alpha'? 'warning' : 'positive'}>{data.status}</Tag>
+              <Tag tagType={data.status === 'alpha'? 'warning' : 'positive'}>{data.status}</Tag>
             </span>
           )}
         </div>
