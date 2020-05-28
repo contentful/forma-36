@@ -1,7 +1,7 @@
 @import 'settings/colors';
 @import 'settings/typography';
 @import 'settings/transitions';
-@import '@contentful/forma-36-tokens/dist/css/spacing.css';
+@import 'settings/dimensions';
 
 .ValidationMessage {
   display: flex;
