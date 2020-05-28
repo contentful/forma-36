@@ -47,6 +47,7 @@ export interface AutocompleteProps<T extends {}> {
   willClearQueryOnClose?: boolean;
   dropdownProps?: DropdownProps;
   renderToggleElement?: (props: RenderToggleElementProps) => React.ReactElement;
+  multiselect?: boolean;
 }
 
 interface State {
@@ -56,10 +57,14 @@ interface State {
 }
 
 type Action =
-  | { type: typeof TOGGLED_LIST; payload?: boolean }
-  | { type: typeof NAVIGATED_ITEMS; payload: number | null }
-  | { type: typeof QUERY_CHANGED; payload: string }
-  | { type: typeof ITEM_SELECTED };
+  | { type: typeof TOGGLED_LIST; payload?: boolean; multiselect?: boolean }
+  | {
+      type: typeof NAVIGATED_ITEMS;
+      payload: number | null;
+      multiselect?: boolean;
+    }
+  | { type: typeof QUERY_CHANGED; payload: string; multiselect?: boolean }
+  | { type: typeof ITEM_SELECTED; payload: number; multiselect?: boolean };
 
 enum Direction {
   DOWN = 1,
@@ -73,6 +78,9 @@ const initialState: State = {
 };
 
 const reducer = (state: State, action: Action): State => {
+  // eslint-disable-next-line no-console
+  console.debug('EVENT', action.type);
+
   switch (action.type) {
     case TOGGLED_LIST:
       return {
@@ -89,12 +97,18 @@ const reducer = (state: State, action: Action): State => {
     case QUERY_CHANGED:
       return {
         ...state,
-        highlightedItemIndex: null,
+        highlightedItemIndex: action.multiselect
+          ? state.highlightedItemIndex
+          : null,
         isOpen: true,
         query: action.payload,
       };
     case ITEM_SELECTED:
-      return { ...initialState };
+      return {
+        ...initialState,
+        highlightedItemIndex: action.multiselect ? action.payload : null,
+        isOpen: !!action.multiselect,
+      };
     default:
       return state;
   }
@@ -117,8 +131,11 @@ export const Autocomplete = <T extends {}>({
   willClearQueryOnClose,
   dropdownProps,
   renderToggleElement,
+  multiselect,
 }: AutocompleteProps<T>) => {
-  const listRef: React.MutableRefObject<HTMLDivElement | undefined> = useRef();
+  const listRef: React.MutableRefObject<
+    HTMLUListElement | undefined
+  > = useRef();
   const inputRef: React.MutableRefObject<
     HTMLInputElement | undefined
   > = useRef();
@@ -129,17 +146,31 @@ export const Autocomplete = <T extends {}>({
   );
 
   const toggleList = (isOpen?: boolean): void => {
-    dispatch({ type: TOGGLED_LIST, payload: isOpen });
+    dispatch({
+      type: TOGGLED_LIST,
+      payload: isOpen,
+      multiselect: !!multiselect,
+    });
   };
 
-  const selectItem = (item: T) => {
-    dispatch({ type: ITEM_SELECTED });
-    onQueryChange('');
+  const selectItem = (item: T, index: number = 0) => {
+    dispatch({
+      type: ITEM_SELECTED,
+      payload: index,
+      multiselect: !!multiselect,
+    });
+    if (!multiselect) {
+      onQueryChange('');
+    }
     onChange(item);
   };
 
   const updateQuery = (value: string) => {
-    dispatch({ type: QUERY_CHANGED, payload: value });
+    dispatch({
+      type: QUERY_CHANGED,
+      payload: value,
+      multiselect: !!multiselect,
+    });
     onQueryChange(value);
   };
 
@@ -148,6 +179,8 @@ export const Autocomplete = <T extends {}>({
     const isTab =
       event.keyCode === KEY_CODE.TAB ||
       (event.keyCode === KEY_CODE.TAB && event.shiftKey);
+
+    const isSpace = event.keyCode === KEY_CODE.SPACE;
 
     const hasUserSelection = highlightedItemIndex !== null;
     const lastIndex = items.length ? items.length - 1 : 0;
@@ -162,10 +195,17 @@ export const Autocomplete = <T extends {}>({
       if (listRef.current) {
         scrollToItem(listRef.current, newIndex);
       }
-      dispatch({ type: NAVIGATED_ITEMS, payload: newIndex });
-    } else if (isEnter && hasUserSelection) {
+      dispatch({
+        type: NAVIGATED_ITEMS,
+        payload: newIndex,
+        multiselect: !!multiselect,
+      });
+    } else if (
+      (isEnter && hasUserSelection) ||
+      (isSpace && multiselect && hasUserSelection)
+    ) {
       const selected = items[highlightedItemIndex as number];
-      selectItem(selected);
+      selectItem(selected, highlightedItemIndex || 0);
     } else if (isTab) {
       toggleList(false);
     }
@@ -240,40 +280,39 @@ export const Autocomplete = <T extends {}>({
       isOpen={isOpen}
       onClose={() => {
         willClearQueryOnClose && updateQuery('');
-        dispatch({ type: TOGGLED_LIST });
+        dispatch({ type: TOGGLED_LIST, multiselect: !!multiselect });
       }}
       toggleElement={renderToggleElementFunction(toggleProps)}
       {...dropdownProps}
     >
-      <DropdownList testId="autocomplete.dropdown-list" maxHeight={maxHeight}>
-        <div ref={listRef as React.RefObject<HTMLDivElement>}>
-          {!options.length && !isLoading && (
-            <DropdownListItem
-              isDisabled
-              testId="autocomplete.empty-list-message"
-            >
-              {query ? noMatchesMessage : emptyListMessage}
-            </DropdownListItem>
-          )}
-          {isLoading ? (
-            <OptionSkeleton />
-          ) : (
-            options.map(({ child, option }, index) => {
-              const isActive = index === highlightedItemIndex;
-              return (
-                <DropdownListItem
-                  key={index}
-                  isActive={isActive}
-                  data-selected={isActive} // this should be coming from the component library
-                  onClick={() => selectItem(option)}
-                  testId="autocomplete.dropdown-list-item"
-                >
-                  {child}
-                </DropdownListItem>
-              );
-            })
-          )}
-        </div>
+      <DropdownList
+        listRef={listRef as React.RefObject<HTMLUListElement>}
+        testId="autocomplete.dropdown-list"
+        maxHeight={maxHeight}
+      >
+        {!options.length && !isLoading && (
+          <DropdownListItem isDisabled testId="autocomplete.empty-list-message">
+            {query ? noMatchesMessage : emptyListMessage}
+          </DropdownListItem>
+        )}
+        {isLoading ? (
+          <OptionSkeleton />
+        ) : (
+          options.map(({ child, option }, index) => {
+            const isActive = index === highlightedItemIndex;
+            return (
+              <DropdownListItem
+                key={index}
+                isActive={isActive}
+                data-selected={isActive} // this should be coming from the component library
+                onClick={() => selectItem(option, index)}
+                testId="autocomplete.dropdown-list-item"
+              >
+                {child}
+              </DropdownListItem>
+            );
+          })
+        )}
       </DropdownList>
     </Dropdown>
   );
@@ -341,7 +380,6 @@ function scrollToItem(list: HTMLElement, index: number): void {
   if (!list || !list.children.length) {
     return;
   }
-
   const item = list.children[index as number];
   item.scrollIntoView({ block: 'nearest' });
 }

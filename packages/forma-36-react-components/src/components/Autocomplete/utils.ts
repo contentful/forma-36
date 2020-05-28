@@ -3,4 +3,5 @@ export const KEY_CODE = {
   ARROW_DOWN: 40,
   ARROW_UP: 38,
   TAB: 9,
+  SPACE: 32,
 };
