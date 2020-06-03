@@ -100,6 +100,7 @@ import Quote from './svg/Quote.svg';
 import QuoteTrimmed from './svg/QuoteTrimmed.svg';
 import Receipt from './svg/Receipt.svg';
 import ReceiptTrimmed from './svg/ReceiptTrimmed.svg';
+import References from './svg/References.svg';
 import Release from './svg/Release.svg';
 import ReleaseTrimmed from './svg/ReleaseTrimmed.svg';
 import Search from './svg/Search.svg';
@@ -110,6 +111,7 @@ import ShoppingCart from './svg/ShoppingCart.svg';
 import ShoppingCartTrimmed from './svg/ShoppingCartTrimmed.svg';
 import Star from './svg/Star.svg';
 import StarTrimmed from './svg/StarTrimmed.svg';
+import Tags from './svg/Tags.svg';
 import Text from './svg/Text.svg';
 import TextTrimmed from './svg/TextTrimmed.svg';
 import ThumbDown from './svg/ThumbDown.svg';
@@ -224,6 +226,7 @@ const iconComponents = {
   PlusTrimmed,
   Quote,
   QuoteTrimmed,
+  References,
   Release,
   ReleaseTrimmed,
   Receipt,
@@ -236,6 +239,7 @@ const iconComponents = {
   ShoppingCartTrimmed,
   Star,
   StarTrimmed,
+  Tags,
   Text,
   TextTrimmed,
   ThumbDown,

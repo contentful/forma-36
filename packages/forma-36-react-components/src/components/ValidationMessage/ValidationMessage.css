@@ -1,15 +1,17 @@
 @import 'settings/colors';
 @import 'settings/typography';
 @import 'settings/transitions';
+@import 'settings/dimensions';
 
 .ValidationMessage {
   display: flex;
-  align-items: center;
 }
 
 .ValidationMessage__icon {
-  margin-right: calc(1rem * (7 / var(--font-base-default)));
-  margin-bottom: calc(1rem * (1 / var(--font-base-default)));
+  margin-right: var(--spacing-xs);
+  margin-top: calc(var(--spacing-2xs) / 2);
+  min-height: 18px;
+  min-width: 18px;
 }
 
 .ValidationMessage__text {

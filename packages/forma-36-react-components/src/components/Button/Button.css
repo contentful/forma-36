@@ -84,7 +84,7 @@
     var(--color-blue-base),
     var(--color-blue-light)
   );
-  background-color: var(---color-blue-base);
+  background-color: var(--color-blue-base);
   background-size: 100% 200%;
 
   &:hover:not(.Button--disabled),

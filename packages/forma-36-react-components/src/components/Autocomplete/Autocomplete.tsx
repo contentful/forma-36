@@ -1,4 +1,4 @@
-import React, { useReducer, useMemo, useRef } from 'react';
+import React, { useMemo, useReducer, useRef } from 'react';
 
 import TextInput from '../TextInput';
 import Dropdown, { DropdownProps } from '../Dropdown';
@@ -17,6 +17,19 @@ const NAVIGATED_ITEMS = 'NAVIGATED_ITEMS';
 const QUERY_CHANGED = 'QUERY_CHANGED';
 const ITEM_SELECTED = 'ITEM_SELECTED';
 
+interface RenderToggleElementProps {
+  query?: string;
+  onChange: (value: string) => void;
+  onFocus: () => void;
+  onKeyDown: (event: React.KeyboardEvent) => void;
+  onToggle: () => void;
+  disabled?: boolean;
+  placeholder?: string;
+  width?: 'small' | 'medium' | 'large' | 'full';
+  inputRef: React.RefObject<HTMLInputElement>;
+  name?: string;
+}
+
 export interface AutocompleteProps<T extends {}> {
   children: (items: T[]) => React.ReactNode[];
   items: T[];
@@ -33,6 +46,7 @@ export interface AutocompleteProps<T extends {}> {
   noMatchesMessage?: string;
   willClearQueryOnClose?: boolean;
   dropdownProps?: DropdownProps;
+  renderToggleElement?: (props: RenderToggleElementProps) => React.ReactElement;
 }
 
 interface State {
@@ -102,6 +116,7 @@ export const Autocomplete = <T extends {}>({
   noMatchesMessage = 'No matches',
   willClearQueryOnClose,
   dropdownProps,
+  renderToggleElement,
 }: AutocompleteProps<T>) => {
   const listRef: React.MutableRefObject<HTMLDivElement | undefined> = useRef();
   const inputRef: React.MutableRefObject<
@@ -174,6 +189,51 @@ export const Autocomplete = <T extends {}>({
 
   const dropdownClassNames = cn(styles.autocompleteDropdown, className);
 
+  function renderDefaultToggleElement(toggleProps: RenderToggleElementProps) {
+    return (
+      <div className={styles.autocompleteInput}>
+        <TextInput
+          value={toggleProps.query}
+          onChange={e => toggleProps.onChange(e.target.value)}
+          onFocus={toggleProps.onFocus}
+          onKeyDown={toggleProps.onKeyDown}
+          disabled={toggleProps.disabled}
+          placeholder={toggleProps.placeholder}
+          width={toggleProps.width}
+          inputRef={toggleProps.inputRef}
+          testId="autocomplete.input"
+          type="search"
+          autoComplete="off"
+          aria-label={toggleProps.name}
+        />
+        <IconButton
+          className={styles.inputIconButton}
+          tabIndex={-1}
+          buttonType="muted"
+          iconProps={{ icon: toggleProps.query ? 'Close' : 'ChevronDown' }}
+          onClick={toggleProps.onToggle}
+          label={toggleProps.query ? 'Clear' : 'Show list'}
+        />
+      </div>
+    );
+  }
+
+  const toggleProps = {
+    name,
+    query,
+    disabled,
+    placeholder,
+    width,
+    onChange: updateQuery,
+    onFocus: () => toggleList(true),
+    onKeyDown: handleKeyDown,
+    onToggle: handleInputButtonClick,
+    inputRef: inputRef as React.RefObject<HTMLInputElement>,
+  };
+
+  const renderToggleElementFunction =
+    renderToggleElement || renderDefaultToggleElement;
+
   return (
     <Dropdown
       className={dropdownClassNames}
@@ -182,32 +242,7 @@ export const Autocomplete = <T extends {}>({
         willClearQueryOnClose && updateQuery('');
         dispatch({ type: TOGGLED_LIST });
       }}
-      toggleElement={
-        <div className={styles.autocompleteInput}>
-          <TextInput
-            value={query}
-            onChange={e => updateQuery(e.target.value)}
-            onFocus={() => toggleList(true)}
-            onKeyDown={handleKeyDown}
-            disabled={disabled}
-            placeholder={placeholder}
-            width={width}
-            inputRef={inputRef as React.RefObject<HTMLInputElement>}
-            testId="autocomplete.input"
-            type="search"
-            autoComplete="off"
-            aria-label={name}
-          />
-          <IconButton
-            className={styles.inputIconButton}
-            tabIndex={-1}
-            buttonType="muted"
-            iconProps={{ icon: query ? 'Close' : 'ChevronDown' }}
-            onClick={handleInputButtonClick}
-            label={query ? 'Clear' : 'Show list'}
-          />
-        </div>
-      }
+      toggleElement={renderToggleElementFunction(toggleProps)}
       {...dropdownProps}
     >
       <DropdownList testId="autocomplete.dropdown-list" maxHeight={maxHeight}>
