@@ -69,6 +69,7 @@ export class CardActions extends Component<
           });
         }}
         position="bottom-right"
+        isAutoalignmentEnabled={false}
         className={className}
         isOpen={this.state.isDropdownOpen}
         testId={testId}
