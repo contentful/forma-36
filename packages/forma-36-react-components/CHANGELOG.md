@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.39.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.39.2...@contentful/forma-36-react-components@3.39.3) (2020-05-29)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+## [3.39.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.39.1...@contentful/forma-36-react-components@3.39.2) (2020-05-29)
+
+
+### Bug Fixes
+
+* **ValidationMessage:** adjust size and position of icon in validation ([#481](https://github.com/contentful/forma-36/issues/481)) ([7986af1](https://github.com/contentful/forma-36/commit/7986af1b989437648aeeabe8220ae63edc744910))
+
+
+
+
+
 ## [3.39.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.39.0...@contentful/forma-36-react-components@3.39.1) (2020-05-20)
 
 
