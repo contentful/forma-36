@@ -3,7 +3,7 @@
 exports[`renders the component as disabled 1`] = `
 <Dropdown
   getContainerRef={[Function]}
-  isAutoalignmentEnabled={true}
+  isAutoalignmentEnabled={false}
   isOpen={false}
   onClose={[Function]}
   position="bottom-right"
@@ -45,7 +45,7 @@ exports[`renders the component as disabled 1`] = `
 exports[`renders the component using a multiple dropdown lists 1`] = `
 <Dropdown
   getContainerRef={[Function]}
-  isAutoalignmentEnabled={true}
+  isAutoalignmentEnabled={false}
   isOpen={false}
   onClose={[Function]}
   position="bottom-right"
@@ -138,7 +138,7 @@ exports[`renders the component using a multiple dropdown lists 1`] = `
 exports[`renders the component using a single dropdown list 1`] = `
 <Dropdown
   getContainerRef={[Function]}
-  isAutoalignmentEnabled={true}
+  isAutoalignmentEnabled={false}
   isOpen={false}
   onClose={[Function]}
   position="bottom-right"
@@ -199,7 +199,7 @@ exports[`renders the component with an additional class name 1`] = `
 <Dropdown
   className="my-extra-class"
   getContainerRef={[Function]}
-  isAutoalignmentEnabled={true}
+  isAutoalignmentEnabled={false}
   isOpen={false}
   onClose={[Function]}
   position="bottom-right"
@@ -259,7 +259,7 @@ exports[`renders the component with an additional class name 1`] = `
 exports[`renders the component with published status 1`] = `
 <Dropdown
   getContainerRef={[Function]}
-  isAutoalignmentEnabled={true}
+  isAutoalignmentEnabled={false}
   isOpen={false}
   onClose={[Function]}
   position="bottom-right"
