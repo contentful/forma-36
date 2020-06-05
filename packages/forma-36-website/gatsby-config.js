@@ -120,8 +120,28 @@ module.exports = {
             link: '/components/button/',
           },
           {
+            name: 'Card',
+            link: '/components/card/',
+          },
+          {
+            name: 'Checkbox',
+            link: '/components/checkbox/',
+          },
+          {
             name: 'Dropdown',
             link: '/components/dropdown/',
+          },
+          {
+            name: 'EditorToolbar',
+            link: '/components/editor-toolbar/',
+          },
+          {
+            name: 'EmptyState',
+            link: '/components/empty-state/',
+          },
+          {
+            name: 'EntityList',
+            link: '/components/entity-list/',
           },
           {
             name: 'Form',
@@ -132,12 +152,24 @@ module.exports = {
             link: '/components/form-label/',
           },
           {
+            name: 'Grid',
+            link: '/components/grid/',
+          },
+          {
             name: 'HelpText',
             link: '/components/help-text/',
           },
           {
             name: 'Icon',
             link: '/components/icon/',
+          },
+          {
+            name: 'IconButton',
+            link: '/components/icon-button/',
+          },
+          {
+            name: 'List',
+            link: '/components/list/',
           },
           {
             name: 'Modal',
@@ -150,6 +182,34 @@ module.exports = {
           {
             name: 'Notification',
             link: '/components/notification/',
+          },
+          {
+            name: 'Pill',
+            link: '/components/pill/',
+          },
+          {
+            name: 'RadioButton',
+            link: '/components/radio-button/',
+          },
+          {
+            name: 'Select',
+            link: '/components/select/',
+          },
+          {
+            name: 'SelectField',
+            link: '/components/select-field/',
+          },
+          {
+            name: 'Skeleton',
+            link: '/components/skeleton/',
+          },
+          {
+            name: 'Spinner',
+            link: '/components/spinner/',
+          },
+          {
+            name: 'Switch',
+            link: '/components/switch/',
           },
           {
             name: 'Table',
@@ -174,6 +234,10 @@ module.exports = {
           {
             name: 'ValidationMessage',
             link: '/components/validation-message/',
+          },
+          {
+            name: 'Workbench',
+            link: '/components/workbench/',
           },
         ],
       },

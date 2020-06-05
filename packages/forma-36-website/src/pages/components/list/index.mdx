@@ -1,0 +1,27 @@
+---
+title: 'List'
+type: 'component'
+status: 'stable'
+github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/List'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-list--default'
+---
+Detailed documentation will be provided soon. For now, please have a look into the storybook for implementation details.
+
+```jsx
+<>
+  <List>
+    <ListItem>List Item 1</ListItem>
+    <ListItem>List Item 2</ListItem>
+    <ListItem>
+      List Item with a
+      <TextLink>text link</TextLink>
+    </ListItem>
+    <ListItem>
+      <List>
+        <ListItem>Sublist Item 1</ListItem>
+        <ListItem>Sublist Item 2</ListItem>
+      </List>
+    </ListItem>
+  </List>
+</>
+```

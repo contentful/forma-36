@@ -1,0 +1,43 @@
+---
+title: 'Editor toolbar'
+type: 'component'
+status: 'stable'
+github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/EditorToolbar'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-editortoolbar--default'
+---
+
+Detailed documentation will be provided soon. For now, please have a look into the storybook for implementation details.
+
+```jsx
+<React.Fragment>
+  <EditorToolbar
+      style={{ justifyContent: 'space-between' }}
+    >
+      <div>
+        <EditorToolbarButton
+          icon="FormatBold"
+          tooltip="Bold"
+          label="Bold"
+          isActive={false}
+        />
+        <EditorToolbarButton
+          icon="FormatItalic"
+          tooltip="Italic"
+          label="Italic"
+          isActive={false}
+        />
+        <EditorToolbarButton
+          icon="FormatUnderlined"
+          tooltip="Underlined"
+          label="Underlined"
+          isActive={false}
+        />
+      </div>
+      <div>
+        <Button size="small" buttonType="muted">
+          Example button
+        </Button>
+      </div>
+    </EditorToolbar>
+</React.Fragment>
+```
