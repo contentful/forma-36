@@ -201,7 +201,7 @@ module.exports = {
           },
           {
             name: 'SelectField',
-            link: '/components/select-filed/',
+            link: '/components/select-field/',
           },
           {
             name: 'Skeleton',

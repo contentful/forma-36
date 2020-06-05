@@ -3,47 +3,13 @@ title: 'Card'
 type: 'component'
 status: 'stable'
 github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/Card'
-storybook: https://f36-storybook.contentful.com/?path=/story/components-card-entrycard--default'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-card--default'
 ---
+
 Detailed documentation will be provided soon. For now, please have a look into the storybook for implementation details.
 
 ```jsx
 <React.Fragment>
-  <div>
-    <EntryCard
-      title="Example card"
-      description='Closer is the second and final studio album by English rock band Joy Division. It was released on 18 July 1980 on Factory Records, following the May 1980 suicide of lead singer Ian Curtis. The album was produced by Martin Hannett.'
-      status='published'
-      statusIcon="Clock"
-      contentType="Album"
-      dropdownListElements={
-        <React.Fragment>
-          <DropdownList>
-            <DropdownListItem isTitle>Actions</DropdownListItem>
-            <DropdownListItem href="#">Edit (with href)</DropdownListItem>
-            <DropdownListItem onClick="Download onClick">
-              Download
-            </DropdownListItem>
-            <DropdownListItem onClick="Download onClick">
-              Remove
-            </DropdownListItem>
-          </DropdownList>
-          <DropdownList>
-            <DropdownListItem isTitle>Actions</DropdownListItem>
-            <DropdownListItem onClick="Download onClick">
-              Edit
-            </DropdownListItem>
-            <DropdownListItem onClick="Download onClick">
-              Download
-            </DropdownListItem>
-            <DropdownListItem onClick="Download onClick">
-              Remove
-            </DropdownListItem>
-          </DropdownList>
-        </React.Fragment>
-        }
-        size='default'
-      />
-    </div>
+  <Card>Card</Card>
 </React.Fragment>
 ```
