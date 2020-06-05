@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.39.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.39.4...@contentful/forma-36-react-components@3.39.5) (2020-06-04)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+## [3.39.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.39.3...@contentful/forma-36-react-components@3.39.4) (2020-06-04)
+
+
+### Bug Fixes
+
+* **AssetCard:** Disable dropdown auto alignment to always aligh bottom right ([#485](https://github.com/contentful/forma-36/issues/485)) ([b29e329](https://github.com/contentful/forma-36/commit/b29e3294b5e44a04b9169f3f926fd06bbf061b9d))
+
+
+
+
+
 ## [3.39.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.39.2...@contentful/forma-36-react-components@3.39.3) (2020-05-29)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
