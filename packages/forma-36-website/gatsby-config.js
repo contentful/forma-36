@@ -132,15 +132,15 @@ module.exports = {
             link: '/components/dropdown/',
           },
           {
-            name: 'EditorToolbar',
+            name: 'Editor toolbar',
             link: '/components/editor-toolbar/',
           },
           {
-            name: 'EmptyState',
+            name: 'Empty state',
             link: '/components/empty-state/',
           },
           {
-            name: 'EntityList',
+            name: 'Entity list',
             link: '/components/entity-list/',
           },
           {
@@ -148,7 +148,7 @@ module.exports = {
             link: '/components/form/',
           },
           {
-            name: 'FormLabel',
+            name: 'Form label',
             link: '/components/form-label/',
           },
           {
@@ -156,7 +156,7 @@ module.exports = {
             link: '/components/grid/',
           },
           {
-            name: 'HelpText',
+            name: 'Help text',
             link: '/components/help-text/',
           },
           {
@@ -164,7 +164,7 @@ module.exports = {
             link: '/components/icon/',
           },
           {
-            name: 'IconButton',
+            name: 'Icon button',
             link: '/components/icon-button/',
           },
           {
@@ -188,7 +188,7 @@ module.exports = {
             link: '/components/pill/',
           },
           {
-            name: 'RadioButton',
+            name: 'Radio button',
             link: '/components/radio-button/',
           },
           {
@@ -196,7 +196,7 @@ module.exports = {
             link: '/components/select/',
           },
           {
-            name: 'SelectField',
+            name: 'Select field',
             link: '/components/select-field/',
           },
           {
@@ -216,15 +216,15 @@ module.exports = {
             link: '/components/table/',
           },
           {
-            name: 'TextField',
+            name: 'Text field',
             link: '/components/text-field/',
           },
           {
-            name: 'TextInput',
+            name: 'Text input',
             link: '/components/text-input/',
           },
           {
-            name: 'TextLink',
+            name: 'Text link',
             link: '/components/text-link/',
           },
           {
@@ -232,7 +232,7 @@ module.exports = {
             link: '/components/typography/',
           },
           {
-            name: 'ValidationMessage',
+            name: 'Validation message',
             link: '/components/validation-message/',
           },
           {
