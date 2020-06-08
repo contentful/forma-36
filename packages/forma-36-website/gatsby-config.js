@@ -116,6 +116,10 @@ module.exports = {
         link: '',
         menuLinks: [
           {
+            name: 'Asset',
+            link: '/components/asset/',
+          },
+          {
             name: 'Button',
             link: '/components/button/',
           },
