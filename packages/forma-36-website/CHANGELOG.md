@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.24](https://github.com/contentful/forma-36/compare/forma-36-website@0.5.23...forma-36-website@0.5.24) (2020-06-09)
+
+
+### Bug Fixes
+
+* **sidebar:** Replace PascalCase ([#488](https://github.com/contentful/forma-36/issues/488)) ([b56ed89](https://github.com/contentful/forma-36/commit/b56ed899a093a3c8f1537bea6efe98e56b50a2b3))
+
+
+
+
+
 ## [0.5.23](https://github.com/contentful/forma-36/compare/forma-36-website@0.5.22...forma-36-website@0.5.23) (2020-06-08)
 
 **Note:** Version bump only for package forma-36-website
