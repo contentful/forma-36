@@ -10,7 +10,7 @@ import styles from './Tabs.css';
 
 export type TabProps = {
   id: string;
-  onSelect?: (id: string) => void;
+  onSelect?: (id: string, e: React.SyntheticEvent) => void;
   selected?: boolean;
   href?: string;
   target?: string;
@@ -32,15 +32,15 @@ const defaultProps = {
 export class Tab extends Component<TabProps> {
   static defaultProps = defaultProps;
 
-  onClick: MouseEventHandler = () => {
+  onClick: MouseEventHandler = e => {
     if (this.props.onSelect && !this.props.disabled) {
-      this.props.onSelect(this.props.id);
+      this.props.onSelect(this.props.id, e);
     }
   };
 
   onKeyPress = (e: KeyboardEvent<HTMLElement>) => {
     if (this.props.onSelect && e.key === 'Enter') {
-      this.props.onSelect(this.props.id);
+      this.props.onSelect(this.props.id, e);
       e.preventDefault();
     }
   };
