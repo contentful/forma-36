@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.39.7](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.39.6...@contentful/forma-36-react-components@3.39.7) (2020-06-09)
+
+
+### Bug Fixes
+
+* **Tab:** expose event in onSelect callback ([#492](https://github.com/contentful/forma-36/issues/492)) ([ce66c19](https://github.com/contentful/forma-36/commit/ce66c199cdf745fc37d4993fe835107d32bf67c3))
+
+
+
+
+
 ## [3.39.6](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.39.5...@contentful/forma-36-react-components@3.39.6) (2020-06-08)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
