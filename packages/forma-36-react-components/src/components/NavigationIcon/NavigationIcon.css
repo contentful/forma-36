@@ -1,0 +1,58 @@
+@import 'settings/colors';
+
+.NavigationIcon {
+  display: inline-block;
+  fill: var(--color-blue-base);
+}
+
+.NavigationIcon--tiny {
+  height: 16px;
+  width: 16px;
+}
+
+.NavigationIcon--small {
+  height: 18px;
+  width: 18px;
+}
+
+.NavigationIcon--medium {
+  height: 24px;
+  width: 24px;
+}
+
+.NavigationIcon--large {
+  height: 32px;
+  width: 32px;
+}
+.NavigationIcon--xlarge {
+  height: 48px;
+  width: 48px;
+}
+
+.NavigationIcon--trimmed {
+  width: auto;
+}
+
+.NavigationIcon--positive {
+  fill: var(--color-positive);
+}
+
+.NavigationIcon--negative {
+  fill: var(--color-negative);
+}
+
+.NavigationIcon--warning {
+  fill: var(--color-warning);
+}
+
+.NavigationIcon--secondary {
+  fill: var(--color-text-mid);
+}
+
+.NavigationIcon--muted {
+  fill: var(--color-text-light);
+}
+
+.NavigationIcon--white {
+  fill: var(--color-white);
+}
