@@ -120,6 +120,10 @@ module.exports = {
             link: '/components/asset/',
           },
           {
+            name: 'Autocomplete',
+            link: '/components/autocomplete/',
+          },
+          {
             name: 'Button',
             link: '/components/button/',
           },
@@ -220,6 +224,14 @@ module.exports = {
             link: '/components/table/',
           },
           {
+            name: 'Tabs',
+            link: '/components/tabs/',
+          },
+          {
+            name: 'Tag',
+            link: '/components/tag/',
+          },
+          {
             name: 'Text field',
             link: '/components/text-field/',
           },
@@ -230,6 +242,18 @@ module.exports = {
           {
             name: 'Text link',
             link: '/components/text-link/',
+          },
+          {
+            name: 'Textarea',
+            link: '/components/textarea/',
+          },
+          {
+            name: 'Toggle button',
+            link: '/components/toggle-button/',
+          },
+          {
+            name: 'Tooltip',
+            link: '/components/tooltip/',
           },
           {
             name: 'Typography',
