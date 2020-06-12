@@ -1,5 +1,5 @@
 const colorsContrast = {
-  'color-contrast-dark': '#0c141c',
+  'color-contrast-dark': '#0C141C',
   'color-contrast-mid': '#192532',
   'color-contrast-light': '#263545',
 };

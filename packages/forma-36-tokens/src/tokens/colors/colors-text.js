@@ -1,8 +1,9 @@
 const colorsText = {
-  'color-text-dark': '#2a3039',
+  'color-text-dark': '#192532',
+  'color-text-base': '#283848',
   'color-text-mid': '#536171',
-  'color-text-light': '#8091a5',
-  'color-text-lightest': '#a9b9c0',
+  'color-text-light': '#606C7C',
+  'color-text-lightest': '#6A7889',
 };
 
 module.exports = colorsText;
