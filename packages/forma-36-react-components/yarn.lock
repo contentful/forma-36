@@ -961,22 +961,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@contentful/forma-36-fcss@^0.0.35":
-  version "0.0.35"
-  resolved "https://registry.yarnpkg.com/@contentful/forma-36-fcss/-/forma-36-fcss-0.0.35.tgz#a6803307b029161a0bffc17ef787e20af04a1c8a"
-  integrity sha512-ER81LumiXEZF0y0XgpGTLTj1119wjgs3xIYyphYz0qvzQghzNH28XE/8qBMG5WeqdtThtZFVK6E7nDa1e/MSYw==
-  dependencies:
-    "@contentful/forma-36-tokens" "^0.5.2"
-
 "@contentful/forma-36-tokens@0.2.0":
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@contentful/forma-36-tokens/-/forma-36-tokens-0.2.0.tgz#c4a1062e7acc2ae0ae5699e7c8606d5b5047a1c5"
   integrity sha512-6vshI8mlnEuVx6lJ0Yw7Jzeh5YEhlCfxWZiLXg5pbiDmi9JtPAwllWii9ocrKLelIAPwB/gvNQAAzm6uSy/Vug==
-
-"@contentful/forma-36-tokens@^0.5.2":
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/@contentful/forma-36-tokens/-/forma-36-tokens-0.5.2.tgz#736dde76b1830f78cfec3bed0fba8d9652705c32"
-  integrity sha512-YAhp7bJzlIvThO6ybZHCGCeVXf5ojRrVBVx7dCkoWK6SYtZJkr5trWymG6gAnNpO9pDiWvgIMKmFHx/hWDjiRA==
 
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
