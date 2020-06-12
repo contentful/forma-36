@@ -204,7 +204,7 @@
   }
 
   & .Button__label {
-    color: var(--color-text-dark);
+    color: var(--color-element-lightest);
   }
 
   &.Button:link {
