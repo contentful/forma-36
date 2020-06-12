@@ -1,8 +1,9 @@
 const colorsOrange = {
-  'color-orange-dark': '#db8500',
-  'color-orange-base': '#ea9005',
-  'color-orange-mid': '#fba012',
-  'color-orange-light': '#ffb239',
+  'color-orange-dark': '#915B08',
+  'color-orange-base': '#D28004',
+  'color-orange-mid': '#FA9A05',
+  'color-orange-light': '#FCC169',
+  'color-orange-lightest': '#FEE6C3',
 };
 
 module.exports = colorsOrange;

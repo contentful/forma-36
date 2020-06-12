@@ -1,8 +1,9 @@
 const colorsRed = {
-  'color-red-dark': '#cd3f39',
-  'color-red-base': '#d9453f',
-  'color-red-mid': '#e34e48',
-  'color-red-light': '#f05751',
+  'color-red-dark': '#772935',
+  'color-red-base': '#A03343',
+  'color-red-mid': '#CC3C52',
+  'color-red-light': '#EB8D9B',
+  'color-red-lightest': '#FBD9DE',
 };
 
 module.exports = colorsRed;
