@@ -35,15 +35,15 @@
 }
 
 .NotificationItem__icon--success {
-  background: var(--color-green-dark);
+  background: var(--color-green-mid);
 }
 
 .NotificationItem__icon--error {
-  background: var(--color-red-dark);
+  background: var(--color-red-mid);
 }
 
 .NotificationItem__icon--warning {
-  background: var(--color-orange-dark);
+  background: var(--color-orange-base);
 }
 
 .NotificationItem__content {
