@@ -78,29 +78,26 @@
 }
 
 .Button--primary {
-  border-color: var(--color-blue-dark);
-  background-image: linear-gradient(
-    to top,
-    var(--color-blue-base),
-    var(--color-blue-light)
-  );
-  background-color: var(--color-blue-base);
-  background-size: 100% 200%;
+  border-color: var(--color-blue-mid);
+  background-color: var(--color-blue-mid);
 
   &:hover:not(.Button--disabled),
   &:focus:not(.Button--disabled) {
     background-position: 0 100%;
+    border-color: var(--color-blue-base);
+    background-color: var(--color-blue-base);
   }
 
   &:focus:not(.Button--disabled) {
     border-color: var(--color-blue-dark);
-    box-shadow: var(--glow-primary);
+    background-color: var(--color-blue-dark);
   }
 
   &:active:not(.Button--disabled),
   &.Button--is-active:not(.Button--disabled) {
     transition: none;
     background-image: none;
+    border-color: var(--color-blue-dark);
     background-color: var(--color-blue-dark);
   }
 
@@ -114,29 +111,28 @@
 }
 
 .Button--positive {
-  border-color: var(--color-green-dark);
-  background-image: linear-gradient(
-    to top,
-    var(--color-green-base),
-    var(--color-green-light)
-  );
+  border-color: var(--color-green-mid);
+  background-color: var(--color-green-mid);
   background-size: 100% 200%;
 
   &:hover:not(.Button--disabled),
   &:focus:not(.Button--disabled) {
     background-position: 0 100%;
+    border-color: var(--color-green-base);
+    background-color: var(--color-green-base);
   }
 
   &:focus:not(.Button--disabled) {
-    border-color: var(--color-green-dark);
-    box-shadow: var(--glow-positive);
+    border-color: var(--color-green-base);
+    background-color: var(--color-green-base);
   }
 
   &:active:not(.Button--disabled),
   &.Button--is-active:not(.Button--disabled) {
     transition: none;
     background-image: none;
-    background-color: var(--color-green-dark);
+    border-color: var(--color-green-base);
+    background-color: var(--color-green-base);
   }
 
   & .Button__label {
@@ -149,28 +145,27 @@
 }
 
 .Button--negative {
-  border-color: var(--color-red-dark);
-  background-image: linear-gradient(
-    to top,
-    var(--color-red-base),
-    var(--color-red-light)
-  );
+  border-color: var(--color-red-mid);
+  background-color: var(--color-red-mid);
   background-size: 100% 200%;
 
   &:hover:not(.Button--disabled),
   &:focus:not(.Button--disabled) {
     background-position: 0 100%;
+    border-color: var(--color-red-base);
+    background-color: var(--color-red-base);
   }
 
   &:focus:not(.Button--disabled) {
     border-color: var(--color-red-dark);
-    box-shadow: var(--glow-negative);
+    background-color: var(--color-red-dark);
   }
 
   &:active:not(.Button--disabled),
   &.Button--is-active:not(.Button--disabled) {
     transition: none;
     background-image: none;
+    border-color: var(--color-red-dark);
     background-color: var(--color-red-dark);
   }
 
@@ -184,33 +179,32 @@
 }
 
 .Button--warning {
-  border-color: var(--color-orange-dark);
-  background-image: linear-gradient(
-    to top,
-    var(--color-orange-base),
-    var(--color-orange-light)
-  );
+  border-color: var(--color-orange-mid);
+  background-color: var(--color-orange-mid);
   background-size: 100% 200%;
 
   &:hover:not(.Button--disabled),
   &:focus:not(.Button--disabled) {
     background-position: 0 100%;
+    border-color: var(--color-orange-base);
+    background-color: var(--color-orange-base);
   }
 
   &:focus:not(.Button--disabled) {
-    border-color: var(--color-orange-dark);
-    box-shadow: var(--glow-warning);
+    border-color: var(--color-orange-base);
+    background-color: var(--color-orange-base);
   }
 
   &:active:not(.Button--disabled),
   &.Button--is-active:not(.Button--disabled) {
     transition: none;
     background-image: none;
-    background-color: var(--color-orange-dark);
+    border-color: var(--color-orange-base);
+    background-color: var(--color-orange-base);
   }
 
   & .Button__label {
-    color: var(--color-element-lightest);
+    color: var(--color-text-dark);
   }
 
   &.Button:link {
