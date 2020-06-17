@@ -1,9 +1,9 @@
 const colorsBlue = {
-  'color-blue-dark': '#174E8C',
-  'color-blue-base': '#1D61AF',
-  'color-blue-mid': '#2C75C9',
-  'color-blue-light': '#84B9F5',
-  'color-blue-lightest': '#EDF4FC',
+  'color-blue-dark': '#17489C',
+  'color-blue-base': '#2561BA',
+  'color-blue-mid': '#2E75D4',
+  'color-blue-light': '#9FC2EF',
+  'color-blue-lightest': '#E8F2FF',
 };
 
 module.exports = colorsBlue;
