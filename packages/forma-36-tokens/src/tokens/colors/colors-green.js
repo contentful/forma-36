@@ -1,8 +1,9 @@
 const colorsGreen = {
-  'color-green-dark': '#0baa75',
-  'color-green-base': '#0eb87f',
-  'color-green-mid': '#19cd91',
-  'color-green-light': '#14d997',
+  'color-green-dark': '#1A593E',
+  'color-green-base': '#1A6848',
+  'color-green-mid': '#16875D',
+  'color-green-light': '#8AD6B1',
+  'color-green-lightest': '#D9F2E4',
 };
 
 module.exports = colorsGreen;

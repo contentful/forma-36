@@ -17,36 +17,36 @@
 }
 
 .Note--primary {
-  background-color: var(--color-ice-mid);
-  border: 1px solid var(--color-ice-dark);
+  background-color: var(--color-blue-lightest);
+  border: 1px solid var(--color-blue-light);
 }
 .Note--primary a {
-  color: var(--color-primary);
+  color: var(--color-blue-dark);
 }
 
 .Note--negative {
-  background-color: var(--color-coral-mid);
-  border: 1px solid var(--color-coral-dark);
+  background-color: var(--color-red-lightest);
+  border: 1px solid var(--color-red-light);
 }
 .Note--negative a {
-  color: var(--color-negative);
+  color: var(--color-red-dark);
 }
 
 .Note--positive {
-  background-color: var(--color-mint-mid);
-  border: 1px solid var(--color-mint-dark);
+  background-color: var(--color-green-lightest);
+  border: 1px solid var(--color-green-light);
 }
 .Note--positive a {
-  color: var(--color-positive);
+  color: var(--color-green-dark);
 }
 
 .Note--warning {
-  background: var(--color-peach-mid);
-  border: 1px solid var(--color-peach-dark);
+  background: var(--color-orange-lightest);
+  border: 1px solid var(--color-orange-light);
 }
 
 .Note--warning a {
-  color: var(--color-warning);
+  color: var(--color-orange-dark);
 }
 
 .Note__title {
