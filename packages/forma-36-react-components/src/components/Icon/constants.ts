@@ -91,6 +91,7 @@ export const iconName = {
   MoreHorizontalTrimmed: 'MoreHorizontalTrimmed',
   MoreVertical: 'MoreVertical',
   MoreVerticalTrimmed: 'MoreVerticalTrimmed',
+  Person: 'Person',
   Plus: 'Plus',
   PlusCircle: 'PlusCircle',
   PlusCircleTrimmed: 'PlusCircleTrimmed',

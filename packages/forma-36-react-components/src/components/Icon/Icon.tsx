@@ -92,6 +92,7 @@ import MoreHorizontal from './svg/MoreHorizontal.svg';
 import MoreHorizontalTrimmed from './svg/MoreHorizontalTrimmed.svg';
 import MoreVertical from './svg/MoreVertical.svg';
 import MoreVerticalTrimmed from './svg/MoreVerticalTrimmed.svg';
+import Person from './svg/Person.svg';
 import Plus from './svg/Plus.svg';
 import PlusCircle from './svg/PlusCircle.svg';
 import PlusCircleTrimmed from './svg/PlusCircleTrimmed.svg';
@@ -220,6 +221,7 @@ const iconComponents = {
   MoreHorizontalTrimmed,
   MoreVertical,
   MoreVerticalTrimmed,
+  Person,
   Plus,
   PlusCircle,
   PlusCircleTrimmed,
@@ -262,7 +264,7 @@ export type IconColorType =
   | 'muted'
   | 'white';
 
-export type IconSize = 'tiny' | 'small' | 'large';
+export type IconSize = 'tiny' | 'small' | 'medium' | 'large';
 
 export interface IconProps {
   size?: IconSize;

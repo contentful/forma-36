@@ -15,7 +15,9 @@ storiesOf('Components|Icon', module)
       size={select(
         'size',
         {
+          Tiny: 'tiny',
           'Small (default)': 'small',
+          Medium: 'medium',
           Large: 'large',
         },
         'small',
