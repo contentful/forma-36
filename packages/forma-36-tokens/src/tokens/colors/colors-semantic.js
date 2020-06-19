@@ -1,8 +1,8 @@
 const colorsSemantic = {
-  'color-primary': '#1D61AF',
-  'color-positive': '#1D7D58',
-  'color-negative': '#A03343',
-  'color-warning': '#D28004',
+  'color-primary': '#2E75D4',
+  'color-positive': '#16875D',
+  'color-negative': '#BF3045',
+  'color-warning': '#F79B0C',
 };
 
 module.exports = colorsSemantic;
