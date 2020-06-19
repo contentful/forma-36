@@ -264,7 +264,7 @@ export type IconColorType =
   | 'muted'
   | 'white';
 
-export type IconSize = 'tiny' | 'small' | 'large';
+export type IconSize = 'tiny' | 'small' | 'medium' | 'large';
 
 export interface IconProps {
   size?: IconSize;
