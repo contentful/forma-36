@@ -3,6 +3,41 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.40.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.40.0...@contentful/forma-36-react-components@3.40.1) (2020-06-19)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+# [3.39.0-alpha.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.38.3-alpha.2...@contentful/forma-36-react-components@3.39.0-alpha.0) (2020-06-19)
+
+
+### Features
+
+* **Icon:** add person icon ([#499](https://github.com/contentful/forma-36/issues/499)) ([6b1543f](https://github.com/contentful/forma-36/commit/6b1543f95e515f3b3dfbdfa167e609b6a43379dd))
+
+
+
+
+
+## [3.38.3-alpha.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.38.3-alpha.1...@contentful/forma-36-react-components@3.38.3-alpha.2) (2020-06-19)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+## [3.38.3-alpha.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.38.3-alpha.0...@contentful/forma-36-react-components@3.38.3-alpha.1) (2020-06-18)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
 ## [3.39.7](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.39.6...@contentful/forma-36-react-components@3.39.7) (2020-06-09)
 
 

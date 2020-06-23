@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.7.0...@contentful/forma-36-tokens@0.7.1) (2020-06-19)
+
+**Note:** Version bump only for package @contentful/forma-36-tokens
+
+
+
+
+
+## [0.6.2-alpha.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.6.2-alpha.1...@contentful/forma-36-tokens@0.6.2-alpha.2) (2020-06-19)
+
+
+### Bug Fixes
+
+* update semantic color mapping ([f7868ba](https://github.com/contentful/forma-36/commit/f7868ba62aa86dd5868c359d2fe0221bbdf5b671))
+
+
+
+
+
+## [0.6.2-alpha.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.6.2-alpha.0...@contentful/forma-36-tokens@0.6.2-alpha.1) (2020-06-18)
+
+**Note:** Version bump only for package @contentful/forma-36-tokens
+
+
+
+
+
 ## [0.5.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.5.2...@contentful/forma-36-tokens@0.5.3) (2020-05-20)
 
 
