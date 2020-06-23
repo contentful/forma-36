@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/contentful/forma-36/compare/forma-36-website@0.7.1...forma-36-website@0.8.0) (2020-06-23)
+
+
+### Features
+
+* Add missing empty states ([#493](https://github.com/contentful/forma-36/issues/493)) ([d4f9ed5](https://github.com/contentful/forma-36/commit/d4f9ed53393244ceab2ffb53fa47fcf6294c9747))
+
+
+
+
+
 ## [0.7.1](https://github.com/contentful/forma-36/compare/forma-36-website@0.7.0...forma-36-website@0.7.1) (2020-06-19)
 
 **Note:** Version bump only for package forma-36-website
