@@ -208,8 +208,26 @@ module.exports = {
             link: '/components/select-field/',
           },
           {
-            name: 'Skeleton',
-            link: '/components/skeleton/',
+            name: 'Skeletons',
+            link: '',
+            menuLinks: [
+              {
+                name: 'Skeleton body text',
+                link: '/components/skeleton/skeleton-body-text/',
+              },
+              {
+                name: 'Skeleton display text',
+                link: '/components/skeleton/skeleton-display-text/',
+              },
+              {
+                name: 'Skeleton image',
+                link: '/components/skeleton/skeleton-image/',
+              },
+              {
+                name: 'Skeleton row',
+                link: '/components/skeleton/skeleton-row/',
+              },
+            ],
           },
           {
             name: 'Spinner',
