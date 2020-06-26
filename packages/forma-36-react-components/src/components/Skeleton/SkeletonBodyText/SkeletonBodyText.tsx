@@ -12,7 +12,7 @@ const defaultProps = {
   marginBottom: 8,
 };
 
-export const SkeletonBodyText: React.FC<SkeletonBodyTextProps> = ({
+export const SkeletonBodyText = ({
   numberOfLines,
   ...otherProps
 }: SkeletonBodyTextProps) => {
