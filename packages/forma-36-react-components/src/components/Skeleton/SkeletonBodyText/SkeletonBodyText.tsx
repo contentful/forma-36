@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import SkeletonText from '../SkeletonText';
 import { SkeletonTextProps } from '../SkeletonText';
 
@@ -12,12 +12,17 @@ const defaultProps = {
   marginBottom: 8,
 };
 
-export class SkeletonBodyText extends Component<SkeletonBodyTextProps> {
-  static defaultProps = defaultProps;
-
-  render() {
-    return <SkeletonText {...this.props} />;
-  }
-}
+export const SkeletonBodyText = ({
+  numberOfLines,
+  ...otherProps
+}: SkeletonBodyTextProps) => {
+  return (
+    <SkeletonText
+      numberOfLines={numberOfLines > 0 ? numberOfLines : 1}
+      {...otherProps}
+    />
+  );
+};
+SkeletonBodyText.defaultProps = defaultProps;
 
 export default SkeletonBodyText;

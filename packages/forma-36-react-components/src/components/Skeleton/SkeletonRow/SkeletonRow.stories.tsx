@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
+import { number } from '@storybook/addon-knobs';
 
-import notes from './SkeletonRow.md';
 import SkeletonRow from './SkeletonRow';
 import Table from '../../Table';
 import TableHead from '../../Table/TableHead';
@@ -13,23 +13,22 @@ storiesOf('Components|Skeleton/SkeletonRow', module)
   .addParameters({
     propTypes: SkeletonRow['__docgenInfo'],
   })
-  .add(
-    'default',
-    () => (
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell>Name</TableCell>
-            <TableCell>Email</TableCell>
-            <TableCell>Organization role</TableCell>
-            <TableCell>Last activity</TableCell>
-            <TableCell>2FA status</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          <SkeletonRow />
-        </TableBody>
-      </Table>
-    ),
-    { notes },
-  );
+  .add('default', () => (
+    <Table>
+      <TableHead>
+        <TableRow>
+          <TableCell>Name</TableCell>
+          <TableCell>Email</TableCell>
+          <TableCell>Address</TableCell>
+          <TableCell>Postal Code</TableCell>
+          <TableCell>City</TableCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        <SkeletonRow
+          rowCount={number('Number of rows', 5)}
+          columnCount={number('Number of columns', 5)}
+        />
+      </TableBody>
+    </Table>
+  ));

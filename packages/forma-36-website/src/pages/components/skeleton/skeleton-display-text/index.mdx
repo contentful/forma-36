@@ -1,0 +1,20 @@
+---
+title: 'Skeleton Display Text'
+type: 'component'
+status: 'stable'
+github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/Skeleton/SkeletonDisplayText'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-skeleton-skeletondisplaytext--default'
+---
+
+Use the SkeletonDisplayText component to simiulate headings, subheadings or titles whenever loading asynchronous data.
+
+```jsx
+<SkeletonContainer>
+  <SkeletonDisplayText />
+</SkeletonContainer>
+```
+
+## Best practices <a name="best-practices" />
+
+- Each SkeletonDisplayText needs to be wrapped by a SkeletonContainer component
+- Only use it to mimic headings and titles, for normal text we recommend using SkeletonBodyText.
