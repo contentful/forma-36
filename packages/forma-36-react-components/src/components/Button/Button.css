@@ -89,16 +89,16 @@
   }
 
   &:focus:not(.Button--disabled) {
-    border-color: var(--color-blue-dark);
-    background-color: var(--color-blue-dark);
+    border-color: var(--color-blue-base);
+    background-color: var(--color-blue-base);
   }
 
   &:active:not(.Button--disabled),
   &.Button--is-active:not(.Button--disabled) {
     transition: none;
     background-image: none;
-    border-color: var(--color-blue-dark);
-    background-color: var(--color-blue-dark);
+    border-color: var(--color-blue-base);
+    background-color: var(--color-blue-base);
   }
 
   & .Button__label {
@@ -203,7 +203,7 @@
     background-color: var(--color-orange-base);
   }
 
-  & .Button__label {
+  &.Button__label {
     color: var(--color-text-dark);
   }
 
