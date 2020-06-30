@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.40.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.40.2...@contentful/forma-36-react-components@3.40.3) (2020-06-30)
+
+
+### Bug Fixes
+
+* **newColors:** fix issue focus button ([#502](https://github.com/contentful/forma-36/issues/502)) ([9944e50](https://github.com/contentful/forma-36/commit/9944e506f07033ff1831b9270c2f9d297fd0f3a4))
+
+
+
+
+
 ## [3.40.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.40.1...@contentful/forma-36-react-components@3.40.2) (2020-06-29)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
