@@ -106,7 +106,7 @@
   }
 
   &.Button:link {
-    border-color: var(--color-blue-dark);
+    border-color: var(--color-blue-mid);
   }
 }
 
@@ -140,7 +140,7 @@
   }
 
   &.Button:link {
-    border-color: var(--color-green-dark);
+    border-color: var(--color-green-mid);
   }
 }
 
@@ -174,7 +174,7 @@
   }
 
   &.Button:link {
-    border-color: var(--color-red-dark);
+    border-color: var(--color-red-mid);
   }
 }
 
@@ -208,7 +208,7 @@
   }
 
   &.Button:link {
-    border-color: var(--color-orange-dark);
+    border-color: var(--color-orange-mid);
   }
 }
 
