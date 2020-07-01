@@ -38,18 +38,16 @@ export class NotificationItem extends Component<
     const { title, children } = this.props;
 
     return (
-      <div className={styles.NotificationItem__title}>
+      <h2 className={styles.NotificationItem__title}>
         {title ? title : children}
-      </div>
+      </h2>
     );
   }
 
   renderBody() {
     const { title, children } = this.props;
 
-    return (
-      <div className={styles.NotificationItem__body}>{title && children}</div>
-    );
+    return <p className={styles.NotificationItem__body}>{title && children}</p>;
   }
 
   renderCta() {

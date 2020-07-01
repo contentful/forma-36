@@ -62,10 +62,13 @@
 
 .NotificationItem__title {
   font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-m);
   margin-bottom: var(--spacing-2xs);
+  margin-top: 0;
 }
 
 .NotificationItem__body {
+  margin-top: 0;
   margin-bottom: var(--spacing-2xs);
 }
 
