@@ -1,5 +1,21 @@
 export const navigationIconName = {
-  Spaces: 'Spaces',
   Apis: 'Apis',
+  Apps: 'Apps',
   Billing: 'Billing',
+  ContentModel: 'ContentModel',
+  Content: 'Content',
+  Home: 'Home',
+  Media: 'Media',
+  Oauth: 'Oauth',
+  OrgInfo: 'OrgInfo',
+  Oraganizations: 'Oraganizations',
+  Settings: 'Settings',
+  Spaces: 'Spaces',
+  Sso: 'Sso',
+  Subscription: 'Subscription',
+  Teams: 'Teams',
+  Token: 'Token',
+  Usage: 'Usage',
+  Users: 'Users',
+  UserProfile: 'UserProfile'
 };

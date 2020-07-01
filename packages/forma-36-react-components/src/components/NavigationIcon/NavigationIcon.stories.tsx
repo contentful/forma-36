@@ -15,23 +15,28 @@ storiesOf('Components|NavigationIcon', module)
       size={select(
         'size',
         {
+          Small: 'small',
           'Medium (default)': 'medium',
           Large: 'large',
+          Xlarge: 'xlarge'
         },
         'medium',
       )}
       color={select(
         'color',
         {
-          'Primary (default)': 'primary',
-          Positive: 'positive',
-          Negative: 'negative',
-          Warning: 'warning',
-          Secondary: 'secondary',
-          Muted: 'muted',
+          'Positive(default)': 'positive',
           White: 'white',
         },
         'primary',
+      )}
+      tagType={select(
+        'tagType',
+        {
+          'div(default)': 'div',
+          span: 'span',
+        },
+        'div',
       )}
       className={text('className', '')}
     />

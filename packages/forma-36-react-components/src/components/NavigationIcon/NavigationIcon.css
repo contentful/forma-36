@@ -1,56 +1,50 @@
 @import 'settings/colors';
 
-.NavigationIcon {
-  display: inline-block;
-  fill: var(--color-blue-base);
+.NavigationIconContainer {
+  display: block;
+  flex-shrink: 0;
 }
 
-.NavigationIcon--tiny {
-  height: 16px;
-  width: 16px;
-}
-
-.NavigationIcon--small {
+.NavigationIconContainer--small {
   height: 18px;
   width: 18px;
+  max-width: 18px;
+  max-height: 18px;
 }
 
-.NavigationIcon--medium {
+.NavigationIconContainer--medium {
   height: 24px;
   width: 24px;
+  max-width: 24px;
+  max-height: 24px;
 }
 
-.NavigationIcon--large {
+.NavigationIconContainer--large {
   height: 32px;
   width: 32px;
+  max-width: 32px;
+  max-height: 32px;
 }
-.NavigationIcon--xlarge {
+.NavigationIconContainer--xlarge {
   height: 48px;
   width: 48px;
+  max-width: 48px;
+  max-height: 48px;
 }
 
-.NavigationIcon--trimmed {
+.NavigationIconContainer--trimmed {
   width: auto;
+}
+
+.NavigationIcon {
+  width: 100%;
+  height: 100%;
+  display: block;
+  fill: var(--color-positive);
 }
 
 .NavigationIcon--positive {
   fill: var(--color-positive);
-}
-
-.NavigationIcon--negative {
-  fill: var(--color-negative);
-}
-
-.NavigationIcon--warning {
-  fill: var(--color-warning);
-}
-
-.NavigationIcon--secondary {
-  fill: var(--color-text-mid);
-}
-
-.NavigationIcon--muted {
-  fill: var(--color-text-light);
 }
 
 .NavigationIcon--white {
