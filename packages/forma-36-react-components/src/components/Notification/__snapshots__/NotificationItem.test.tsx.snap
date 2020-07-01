@@ -30,12 +30,12 @@ exports[`renders the component 1`] = `
     <div
       className="NotificationItem__text"
     >
-      <div
+      <h2
         className="NotificationItem__title"
       >
         Notification text
-      </div>
-      <div
+      </h2>
+      <p
         className="NotificationItem__body"
       />
     </div>
@@ -87,12 +87,12 @@ exports[`renders the component with "error" intent 1`] = `
     <div
       className="NotificationItem__text"
     >
-      <div
+      <h2
         className="NotificationItem__title"
       >
         Notification text
-      </div>
-      <div
+      </h2>
+      <p
         className="NotificationItem__body"
       />
     </div>
@@ -144,12 +144,12 @@ exports[`renders the component with "warning" intent 1`] = `
     <div
       className="NotificationItem__text"
     >
-      <div
+      <h2
         className="NotificationItem__title"
       >
         Notification text
-      </div>
-      <div
+      </h2>
+      <p
         className="NotificationItem__body"
       />
     </div>
@@ -201,12 +201,12 @@ exports[`renders the component with a cta 1`] = `
     <div
       className="NotificationItem__text"
     >
-      <div
+      <h2
         className="NotificationItem__title"
       >
         This is the body text.
-      </div>
-      <div
+      </h2>
+      <p
         className="NotificationItem__body"
       />
       <div>
@@ -268,16 +268,16 @@ exports[`renders the component with a title and a body 1`] = `
     <div
       className="NotificationItem__text"
     >
-      <div
+      <h2
         className="NotificationItem__title"
       >
         Notification title
-      </div>
-      <div
+      </h2>
+      <p
         className="NotificationItem__body"
       >
         This is the body text.
-      </div>
+      </p>
     </div>
     <IconButton
       buttonType="secondary"

@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.40.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.40.4...@contentful/forma-36-react-components@3.40.5) (2020-07-01)
+
+
+### Bug Fixes
+
+* notification html semantic markup ([75aa8c9](https://github.com/contentful/forma-36/commit/75aa8c9752638758b860782d3ec03433893c186a))
+
+
+
+
+
+## [3.40.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.40.3...@contentful/forma-36-react-components@3.40.4) (2020-06-30)
+
+
+### Bug Fixes
+
+* **button:** make border color the same blue when button is a link ([#503](https://github.com/contentful/forma-36/issues/503)) ([2864c64](https://github.com/contentful/forma-36/commit/2864c640d3a6b653c8f4e3055e589dd20f8f2a8e))
+
+
+
+
+
+## [3.40.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.40.2...@contentful/forma-36-react-components@3.40.3) (2020-06-30)
+
+
+### Bug Fixes
+
+* **newColors:** fix issue focus button ([#502](https://github.com/contentful/forma-36/issues/502)) ([9944e50](https://github.com/contentful/forma-36/commit/9944e506f07033ff1831b9270c2f9d297fd0f3a4))
+
+
+
+
+
 ## [3.40.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.40.1...@contentful/forma-36-react-components@3.40.2) (2020-06-29)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
