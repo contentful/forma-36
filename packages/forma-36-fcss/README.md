@@ -7,7 +7,7 @@ Forma 36 FCSS - Utility CSS classes for applying spacing, colors, typography, sh
 Import the styles.css file into your stylesheet.
 
 ```
-@import '@contentful/forma-36-fcss/dist/styles.css`
+@import '@contentful/forma-36-fcss/dist/styles.css'
 ```
 
 ## Naming convention
