@@ -66,7 +66,7 @@ export interface NavigationIconProps {
   icon: NavigationIconType;
   className?: string;
   testId?: string;
-  tag: 'div' | 'span';
+  tag: NavigationIconTagType;
 }
 
 const defaultProps = {
