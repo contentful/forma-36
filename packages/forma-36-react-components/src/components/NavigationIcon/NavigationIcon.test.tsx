@@ -5,28 +5,28 @@ import NavigationIcon from './NavigationIcon';
 import { navigationIconName } from './constants';
 
 it('renders the component', () => {
-  const output = shallow(<NavigationIcon icon={'Apis'} />);
+  const output = shallow(<NavigationIcon icon={'Home'} />);
 
   expect(output).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
   const output = shallow(
-    <NavigationIcon icon={'Apis'} className="my-extra-class" />,
+    <NavigationIcon icon={'Home'} className="my-extra-class" />,
   );
 
   expect(output).toMatchSnapshot();
 });
 
 it('renders a large icon', () => {
-  const output = shallow(<NavigationIcon icon={'Apis'} size="large" />);
+  const output = shallow(<NavigationIcon icon={'Home'} size="large" />);
 
   expect(output).toMatchSnapshot();
 });
 
 it('renders as a "positive" icon', () => {
   const output = shallow(
-    <NavigationIcon icon={'Apis'} size="large" color="positive" />,
+    <NavigationIcon icon={'Home'} size="large" color="positive" />,
   );
 
   expect(output).toMatchSnapshot();
@@ -34,7 +34,7 @@ it('renders as a "positive" icon', () => {
 
 it('renders as a "white" icon', () => {
   const output = shallow(
-    <NavigationIcon icon={'Apis'} size="large" color="white" />,
+    <NavigationIcon icon={'Home'} size="large" color="white" />,
   );
 
   expect(output).toMatchSnapshot();

@@ -5,7 +5,7 @@ exports[`renders a large icon 1`] = `
   className="NavigationIconContainer NavigationIconContainer--large"
   data-test-id="cf-ui-navigation-icon"
 >
-  <Apis
+  <Home
     className="NavigationIcon NavigationIcon--positive"
     fill="none"
     viewBox="0 0 24 24"
@@ -19,7 +19,7 @@ exports[`renders as a "positive" icon 1`] = `
   className="NavigationIconContainer NavigationIconContainer--large"
   data-test-id="cf-ui-navigation-icon"
 >
-  <Apis
+  <Home
     className="NavigationIcon NavigationIcon--positive"
     fill="none"
     viewBox="0 0 24 24"
@@ -33,7 +33,7 @@ exports[`renders as a "white" icon 1`] = `
   className="NavigationIconContainer NavigationIconContainer--large"
   data-test-id="cf-ui-navigation-icon"
 >
-  <Apis
+  <Home
     className="NavigationIcon NavigationIcon--white"
     fill="none"
     viewBox="0 0 24 24"
@@ -47,7 +47,7 @@ exports[`renders the component 1`] = `
   className="NavigationIconContainer NavigationIconContainer--medium"
   data-test-id="cf-ui-navigation-icon"
 >
-  <Apis
+  <Home
     className="NavigationIcon NavigationIcon--positive"
     fill="none"
     viewBox="0 0 24 24"
@@ -61,7 +61,7 @@ exports[`renders the component with an additional class name 1`] = `
   className="NavigationIconContainer NavigationIconContainer--medium my-extra-class"
   data-test-id="cf-ui-navigation-icon"
 >
-  <Apis
+  <Home
     className="NavigationIcon NavigationIcon--positive my-extra-class"
     fill="none"
     viewBox="0 0 24 24"
