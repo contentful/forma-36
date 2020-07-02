@@ -8,7 +8,7 @@ export const navigationIconName = {
   Media: 'Media',
   Oauth: 'Oauth',
   OrgInfo: 'OrgInfo',
-  Oraganizations: 'Oraganizations',
+  Organizations: 'Organizations',
   Settings: 'Settings',
   Spaces: 'Spaces',
   Sso: 'Sso',

@@ -12,7 +12,7 @@ import Content from './svg/Content.svg';
 import Apps from './svg/Apps.svg';
 import Oauth from './svg/Oauth.svg';
 import OrgInfo from './svg/OrgInfo.svg';
-import Oraganizations from './svg/Oraganizations.svg';
+import Organizations from './svg/Organizations.svg';
 import Settings from './svg/Settings.svg';
 import Sso from './svg/Sso.svg';
 import Subscription from './svg/Subscription.svg';
@@ -35,7 +35,7 @@ const iconComponents = {
   Media,
   Oauth,
   OrgInfo,
-  Oraganizations,
+  Organizations,
   Settings,
   Sso,
   Subscription,
@@ -66,30 +66,33 @@ export interface NavigationIconProps {
   icon: NavigationIconType;
   className?: string;
   testId?: string;
-  tagType?: NavigationIconTagType
+  tag: 'div' | 'span';
 }
 
 const defaultProps = {
   testId: 'cf-ui-navigation-icon',
   size: 'medium',
   color: 'positive',
-  tagType: 'div'
+  tag: 'div'
 };
 
-export class NavigationIcon extends Component<NavigationIconProps & typeof defaultProps> {
-  static defaultProps = defaultProps;
-  
-  render() {
-    const { className, icon, size, color, testId, tagType, ...otherProps } = this.props;
-    
-    const classNames = cn(
-      styles.NavigationIconContainer,
-      {
-        [styles[`NavigationIconContainer--${size}`]]: size,
-        [styles['NavigationIconContainer--trimmed']]: icon.toLowerCase().includes('trimmed'),
-      },
-      className,
-    );
+export const NavigationIcon = ({
+  className,
+  icon,
+  size,
+  color,
+  testId,
+  tag,
+  ...otherProps
+}: NavigationIconProps) => {
+  const classNames = cn(
+    styles.NavigationIconContainer,
+    {
+      [styles[`NavigationIconContainer--${size}`]]: size,
+      [styles['NavigationIconContainer--trimmed']]: icon.toLowerCase().includes('trimmed'),
+    },
+    className,
+  );
 
     const svgFillClass = cn(
       styles.NavigationIcon,
@@ -99,17 +102,18 @@ export class NavigationIcon extends Component<NavigationIconProps & typeof defau
       className,
     )
     const Element = iconComponents[icon];
-    const Tag = tagType;
+    const Tag = tag;
 
     return (
       <Tag
         className={classNames}
         data-test-id={testId}
       >
-        <Element  className={svgFillClass} {...otherProps} />
+        <Element className={svgFillClass} {...otherProps} />
       </Tag>
     );
-  }
 }
+
+NavigationIcon.defaultProps = defaultProps;
 
 export default NavigationIcon;
