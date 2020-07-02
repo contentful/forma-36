@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.40.7](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.40.6...@contentful/forma-36-react-components@3.40.7) (2020-07-02)
+
+
+### Bug Fixes
+
+* move Grid into Alpha section in storybook ([#508](https://github.com/contentful/forma-36/issues/508)) ([73fe7e5](https://github.com/contentful/forma-36/commit/73fe7e5da6fe635fbf8a4c12efd909271bad2eb6))
+
+
+
+
+
 ## [3.40.6](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.40.5...@contentful/forma-36-react-components@3.40.6) (2020-07-02)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
