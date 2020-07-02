@@ -5,7 +5,7 @@ import { text, select } from '@storybook/addon-knobs';
 import NavigationIcon from './NavigationIcon';
 import { navigationIconName } from './constants';
 
-storiesOf('Components|NavigationIcon', module)
+storiesOf('(alpha)|NavigationIcon', module)
   .addParameters({
     propTypes: NavigationIcon['__docgenInfo'],
   })
