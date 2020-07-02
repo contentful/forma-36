@@ -30,7 +30,7 @@ storiesOf('Components|NavigationIcon', module)
         },
         'primary',
       )}
-      tagType={select(
+      tag={select(
         'tagType',
         {
           'div(default)': 'div',
