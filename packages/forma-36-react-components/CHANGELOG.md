@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.41.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.40.7...@contentful/forma-36-react-components@3.41.0) (2020-07-03)
+
+
+### Features
+
+* new NavigationIcon component ([#505](https://github.com/contentful/forma-36/issues/505)) ([9856a2e](https://github.com/contentful/forma-36/commit/9856a2e6cd0eb2d8058dc468a0a76f146e364c95))
+
+
+
+
+
 ## [3.40.7](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.40.6...@contentful/forma-36-react-components@3.40.7) (2020-07-02)
 
 
