@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a large icon 1`] = `
+<div
+  className="NavigationIconContainer NavigationIconContainer--large"
+  data-test-id="cf-ui-navigation-icon"
+>
+  <Home
+    className="NavigationIcon NavigationIcon--positive"
+    fill="none"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  />
+</div>
+`;
+
+exports[`renders as a "positive" icon 1`] = `
+<div
+  className="NavigationIconContainer NavigationIconContainer--large"
+  data-test-id="cf-ui-navigation-icon"
+>
+  <Home
+    className="NavigationIcon NavigationIcon--positive"
+    fill="none"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  />
+</div>
+`;
+
+exports[`renders as a "white" icon 1`] = `
+<div
+  className="NavigationIconContainer NavigationIconContainer--large"
+  data-test-id="cf-ui-navigation-icon"
+>
+  <Home
+    className="NavigationIcon NavigationIcon--white"
+    fill="none"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  />
+</div>
+`;
+
+exports[`renders the component 1`] = `
+<div
+  className="NavigationIconContainer NavigationIconContainer--medium"
+  data-test-id="cf-ui-navigation-icon"
+>
+  <Home
+    className="NavigationIcon NavigationIcon--positive"
+    fill="none"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  />
+</div>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+<div
+  className="NavigationIconContainer NavigationIconContainer--medium my-extra-class"
+  data-test-id="cf-ui-navigation-icon"
+>
+  <Home
+    className="NavigationIcon NavigationIcon--positive my-extra-class"
+    fill="none"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  />
+</div>
+`;
