@@ -8,6 +8,7 @@ import ArrowUp from './svg/ArrowUp.svg';
 import ArrowUpTrimmed from './svg/ArrowUpTrimmed.svg';
 import Asset from './svg/Asset.svg';
 import AssetTrimmed from './svg/AssetTrimmed.svg';
+import Calendar from './svg/Calendar.svg';
 import ChatBubble from './svg/ChatBubble.svg';
 import ChatBubbleTrimmed from './svg/ChatBubbleTrimmed.svg';
 import CheckCircle from './svg/CheckCircle.svg';
@@ -135,6 +136,7 @@ const iconComponents = {
   ArrowUpTrimmed,
   Asset,
   AssetTrimmed,
+  Calendar,
   ChatBubble,
   ChatBubbleTrimmed,
   CheckCircle,

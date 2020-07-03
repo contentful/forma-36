@@ -5,6 +5,7 @@ export const iconName = {
   ArrowUpTrimmed: 'ArrowUpTrimmed',
   Asset: 'Asset',
   AssetTrimmed: 'AssetTrimmed',
+  Calendar: 'Calendar',
   ChatBubble: 'ChatBubble',
   ChatBubbleTrimmed: 'ChatBubbleTrimmed',
   CheckCircle: 'CheckCircle',
