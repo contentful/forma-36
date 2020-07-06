@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.42.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.41.1...@contentful/forma-36-react-components@3.42.0) (2020-07-06)
+
+
+### Features
+
+* **calendarIcon:** Add Calendar icon ([#509](https://github.com/contentful/forma-36/issues/509)) ([a41f19d](https://github.com/contentful/forma-36/commit/a41f19d95ec35814445525a63945b826a81fcd03))
+
+
+
+
+
 ## [3.41.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.41.0...@contentful/forma-36-react-components@3.41.1) (2020-07-06)
 
 
