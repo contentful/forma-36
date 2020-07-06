@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.41.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.41.0...@contentful/forma-36-react-components@3.41.1) (2020-07-06)
+
+
+### Bug Fixes
+
+* **NavigationIcon:** provide 2 SVG's for 2 broken icons ([#510](https://github.com/contentful/forma-36/issues/510)) ([073e174](https://github.com/contentful/forma-36/commit/073e17409f3486dbf1b729a9858d5434044e2bda))
+
+
+
+
+
 # [3.41.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.40.7...@contentful/forma-36-react-components@3.41.0) (2020-07-03)
 
 
