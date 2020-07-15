@@ -73,4 +73,5 @@ export { EntityListItem } from './components/EntityList/EntityListItem/EntityLis
 export { EmptyState } from './components/EmptyState/EmptyState';
 export { Switch } from './components/Switch/Switch';
 export { Workbench } from './components/Workbench/Workbench';
+export { Accordion } from './components/Accordion/Accordion';
 // -- Add imports above this line (required by plopfile.js) --

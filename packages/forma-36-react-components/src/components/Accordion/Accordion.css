@@ -1,0 +1,8 @@
+@import 'settings/colors';
+@import 'settings/typography';
+@import 'settings/transitions';
+
+.Accordion {
+  display: inline-block;
+  box-sizing: border-box;
+}
