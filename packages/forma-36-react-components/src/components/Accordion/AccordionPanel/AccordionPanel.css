@@ -1,0 +1,16 @@
+@import 'settings/colors';
+@import 'settings/typography';
+@import 'settings/transitions';
+
+.AccordionPanel {
+  box-sizing: border-box;
+  overflow: hidden;
+  height: 0;
+  /* max-height: 0; */
+  /* transition: all 1s ease-in-out; */
+}
+
+.AccordionPanel--expanded {
+  height: auto;
+  /* max-height: 600px; */
+}
