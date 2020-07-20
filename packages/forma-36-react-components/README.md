@@ -25,6 +25,7 @@ A React component library for [Contentful](https://www.contentful.com), powered 
 - [Building](#building)
   - [Create a build of the library](#create-a-build-of-the-library)
 - [Commits](#commits)
+- [Alpha components](#alpha-components)
 
 ## Library Usage
 
@@ -177,4 +178,14 @@ You can commit the changes by running
 
 ```bash
 yarn commit
+```
+
+## Alpha components
+
+We provide a number of alpha components which are unsupported and subject to breaking changes without warning. In short - use alpha components at your own risk.
+
+Alpha components are provided outside of the main component library bundle and can be used as follows:
+
+```js
+import { MyAlphaComponent } from '@contentful/forma-36-react-components/dist/alpha';
 ```
