@@ -1,0 +1,21 @@
+@import 'settings/dimensions';
+
+.Flex {
+  display: flex;
+}
+
+.Flex__inline {
+  display: inline-flex;
+}
+
+.Flex__fullWidth {
+  width: 100%;
+}
+
+.Flex__fullHeight {
+  height: 100%;
+}
+
+.Flex__noShrink {
+  flex-shrink: 0;
+}
