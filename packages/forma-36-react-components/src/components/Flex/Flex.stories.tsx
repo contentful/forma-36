@@ -121,7 +121,7 @@ storiesOf('(alpha)|Flex', module)
     { notes },
   )
   .add(
-    'Flex marings',
+    'Flex margins',
     () => {
       const knobs = {
         exampleBoxes: number('Example Items', 4),
@@ -166,11 +166,11 @@ storiesOf('(alpha)|Flex', module)
     () => {
       const knobs = {
         exampleBoxes: number('Example Items', 4),
-        padding: select('padding', spacingValues, 'spacingXs', flexKnobsId),
-        paddingTop: select('padding top', spacingValues, 'none', flexKnobsId),
-        paddingRight: select('padding right', spacingValues, 'none', flexKnobsId),
-        paddingBottom: select('padding bottom', spacingValues, 'none', flexKnobsId),
-        paddingLeft: select('padding left', spacingValues, 'none', flexKnobsId),
+        padding: select('Padding', spacingValues, 'spacingXs', flexKnobsId),
+        paddingTop: select('Padding top', spacingValues, 'none', flexKnobsId),
+        paddingRight: select('Padding right', spacingValues, 'none', flexKnobsId),
+        paddingBottom: select('Padding bottom', spacingValues, 'none', flexKnobsId),
+        paddingLeft: select('Padding left', spacingValues, 'none', flexKnobsId),
       };
 
       return (
