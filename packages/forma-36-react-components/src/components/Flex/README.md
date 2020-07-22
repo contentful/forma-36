@@ -1,7 +1,7 @@
 # Flex
 
 
-[Flex](https://developer.mozilla.org/en-US/docs/Glossary/Flex) is a great tool when you wan't to lines things up in one direction. For example boxes in the limited amout of space, that would wrap or not wrap. When it comes to Flex, browser calculate things only in one direction, each row at the time. When for example CSS Grid calculates always rows and columns at the same time. If you think CSS Grid component is what you are looking for go ahead and have a look on our [Grid component](../Grid/Grid.md)
+[Flex](https://developer.mozilla.org/en-US/docs/Glossary/Flex) is a great tool when you wan't to line things up in one direction. For example boxes in the limited amout of space, that would wrap or not wrap. When it comes to Flex, browser calculate things only in one direction, each row at the time. When for example CSS Grid calculates always rows and columns at the same time. If you think CSS Grid component is what you are looking for go ahead and have a look on our [Grid component](../Grid/Grid.md)
 
 ## Usage
 
