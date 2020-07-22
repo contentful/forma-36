@@ -174,7 +174,6 @@ export const Flex = (props: FlexProps) => {
     ...otherProps
   } = props;
 
-  console.log(margin, marginTop)
   const fullMargins = {margin: margin && handleSpacing(margin)}
   const sidesMargins = {
     marginTop: marginTop && handleSpacing(marginTop),
@@ -193,7 +192,6 @@ export const Flex = (props: FlexProps) => {
   const marginResult = margin ? fullMargins : sidesMargins;
   const paddingsResult = padding ? fullPaddings : sidesPaddings;
 
-  console.log('marginResult', marginResult)
   const inlineStyle = {
     flexDirection,
     justifyContent,
