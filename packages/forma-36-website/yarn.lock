@@ -909,17 +909,17 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@contentful/forma-36-fcss@^0.0.36":
-  version "0.0.36"
-  resolved "https://registry.yarnpkg.com/@contentful/forma-36-fcss/-/forma-36-fcss-0.0.36.tgz#af33398b3fad86a8acf8f9020f9279160045fb02"
-  integrity sha512-ufhgGOo1iBC/gBhabHwBRxqQJSmEbIncZohpzfTfLouqF2Y/F0yjBDdi+H+h9Wh8aakyvWzzA18nYDkIUrXeIA==
+"@contentful/forma-36-fcss@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@contentful/forma-36-fcss/-/forma-36-fcss-0.2.2.tgz#b64c352d95c253e0881d6d48c0fa51b244abe9e0"
+  integrity sha512-qUR9tFVrx73ClviQI1Y4MBlbVKS/A9SJSUx7BkY6L8i/NgejE5GKZCe6Q9ijlVNAXMA+koF2gMmZav+VNo8tWQ==
   dependencies:
-    "@contentful/forma-36-tokens" "^0.5.3"
+    "@contentful/forma-36-tokens" "^0.7.1"
 
-"@contentful/forma-36-react-components@^3.39.5":
-  version "3.39.5"
-  resolved "https://registry.yarnpkg.com/@contentful/forma-36-react-components/-/forma-36-react-components-3.39.5.tgz#79d525b6a3f9a75cb9feacdc5c71a6038073e069"
-  integrity sha512-Bw1sNALhLXDROMGpBWk58ARCTPMKWDfvX5AWxI/pftfH1SJF1ZKrAtsp+HpPQNTpNmi/tqxgNL9To2QqVwwnxA==
+"@contentful/forma-36-react-components@^3.42.2":
+  version "3.42.2"
+  resolved "https://registry.yarnpkg.com/@contentful/forma-36-react-components/-/forma-36-react-components-3.42.2.tgz#d3021e3bcb83954d42bdddc1f1c168472344c277"
+  integrity sha512-9h9SVIEJXjac0RoMCMQiovysRpyp1yTZbUtTAcKHgGAtEDwjwJEt3vXrDnMREemrdKbITcEV0PTWzx/A/fC3yw==
   dependencies:
     "@babel/runtime" "^7.3.4"
     classnames "^2.2.6"
@@ -929,10 +929,10 @@
     react-transition-group "^2.4.0"
     truncate "^2.0.1"
 
-"@contentful/forma-36-tokens@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@contentful/forma-36-tokens/-/forma-36-tokens-0.5.3.tgz#127bc3d5c3bc14935e364d869888c95844b83940"
-  integrity sha512-cFNVjX/a4Sk2rTTryupgCb7u0IcNQlH7r6ztaxLEUHg56XD4KIUAFqgf+nd9ndeSilYGosm7NjXCTE4Sep0fVw==
+"@contentful/forma-36-tokens@^0.7.1":
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/@contentful/forma-36-tokens/-/forma-36-tokens-0.7.1.tgz#38a524eb4591891297d4b765c6d5d3de1bb1b389"
+  integrity sha512-RAoHI3yYmBxlYs7qFpHaQ1BzbRxEmcwyVZ0S5xP+SRHDO3R2ggnjLJKSli5FvifFxaKFKzhTVTnneiPGtNIJiw==
 
 "@emotion/babel-plugin-jsx-pragmatic@^0.1.5":
   version "0.1.5"
@@ -8855,9 +8855,9 @@ lodash.uniq@4.5.0, lodash.uniq@^4.5.0:
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
 lodash@^4.11.1, lodash@^4.15.0, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.3.0:
-  version "4.17.15"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
-  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
+  version "4.17.19"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
+  integrity sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==
 
 log-update@^3.0.0:
   version "3.4.0"
