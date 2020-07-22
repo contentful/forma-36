@@ -1,43 +1,92 @@
-# Grid
+# Flex
 
-[CSS Grid](https://developer.mozilla.org/en-US/docs/Glossary/Grid) based React component, comes with predefined values to ensure design consistency, and ease of use.
 
-The Grid consists of two components:
-- Grid: Used as a container for GridItems
-- GridItem: Elements within the Grid
+[Flex](https://developer.mozilla.org/en-US/docs/Glossary/Flex) is a great tool when you wan't to lines things up in one direction. For example boxes in the limited amout of space, that would wrap or not wrap. When it comes to Flex, browser calculate things only in one direction, each row at the time. When for example CSS Grid calculates always rows and columns at the same time. If you think CSS Grid component is what you are looking for go ahead and have a look on our [Grid component](../Grid/Grid.md)
 
-```js
-import { Grid, GridItem } from '@contenful/forma-36-react-components';
-```
-<br />
 ## Usage
 
-### columns
-When defined as a number, it will split the space into equally sized columns; it also accepts any of the [grid-template-columns](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns) css properties. e.g.
+```js
+import { Flex } from '@contenful/forma-36-react-components';
+// if component is still in alpha stage
+// import { Flex } from '@contenful/forma-36-react-components/dist/alpha';
+
+<Flex justifyContent="space-between" alignItems="center" marginBottom="spacingM">
+  <Flex>Example item</Flex>
+  <Flex>Example item</Flex>
+  <Flex>Example item</Flex>
+</Flex>
+
+```
+<br />
 
 ```jsx
-<Grid columns={6}></Grid>
-// Or 
-<Grid columns={'auto 1fr'}></Grid>
+import { Flex, Button, TextLink, Paragraph } from '@contenful/forma-36-react-components';
+// if component is still in alpha stage
+// import { Flex } from '@contenful/forma-36-react-components/dist/alpha';
+
+<Flex justifyContent="space-between" alignItems="center" marginBottom="spacingM">
+  <Flex><Paragraph>User name</Paragraph></Flex>
+  <Flex>
+    <Flex marginRight="spacingM">
+      <TextLink href="http://google.com">User profile</TextLink>
+    </Flex>
+    <Flex><Button>Add user to the team</Button></Flex>
+  </Flex>
+</Flex>
 ```
+<br />
 
+### Margins & paddings
 
-### rows
-Accepts a number or any of [grid-template-rows](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows) css properties.
-
-```jsx
-<Grid rows={6}></Grid>
-// Or 
-<Grid rows={'auto 1fr'}></Grid>
-```
-
-### columnGap & rowGap
-`columnGap` represents space between columns, `rowGap` represents the space between rows, both accepts one of [spacing](https://f36.contentful.com/foundation/spacing/) token names.
+Margins and padding for Flex component are based on our [spacing system](https://f36.contentful.com/foundation/spacing/).
+Here is an overview of spacings that are availeble:
 
 `spacing2xs` | `spacingXs` | `spacingXs` | `spacingS` | `spacingM` | `spacingL` | `spacingXl` | `spacing2Xl` | `spacing3Xl` | `spacing4Xl`
 
-**e.g.**
+Flex, as any other element, can get margin value, which will be added evenly to all of it's sides or more specific instructions like margin-top or margin-right. those 2 can not be added at the same time - they will overwrite itself. That's why, please remember to not use them together:
+
+**e.g. WRONG**
 
 ```jsx
-  <Grid columnGap='spacingXs' rowGap='spacingXl'></Grid>
+import { Flex } from '@contenful/forma-36-react-components';
+// if component is still in alpha stage
+// import { Flex } from '@contenful/forma-36-react-components/dist/alpha';
+
+  <Flex marginTop='spacingXs' margin="spacingXs">Element</Flex>
 ```
+**e.g. GOOD**
+
+```jsx
+import { Flex } from '@contenful/forma-36-react-components';
+// if component is still in alpha stage
+// import { Flex } from '@contenful/forma-36-react-components/dist/alpha';
+
+  <Flex marginTop='spacingXs' marginLeft="spacingXs">Element</Flex>
+```
+
+Component props overview:
+
+|Prop|Description|
+|-|-|
+|`htmlTag`| string, one of `a` `article`  `aside`  `div`  `footer`  `form`  `h1`  `h2`  `h3`  `h4`  `h5`  `h6`  `header`  `input`  `li`  `main`  `nav`  `ol`  `p`  `pre`  `section`  `span`  `textarea`  `ul` |
+|`fullWidth`| boolean, sets width to 100% |
+|`fullHeight`| boolean, sets height to 100% |
+|`inlineFlex`| boolean, sets display to `inline-flex` |
+|`noShrink`| boolean, sets flex-shrink to 0  - default is 1|
+|`flexWrap`| string, one of `flex-wrap` css values |
+|`flexDirection`| string, one of `flex-direction` css values |
+|`justifyItems`| string, one of `justify-items` css values |
+|`justifyContent`| string, one of `justify-content` css values |
+|`justifySelf`| string, one of `justify-self` css values |
+|`alignItems`| string, one of `align-items` css values |
+|`alignSelf`| string, one of `align-self` css values |
+|`margin`| string, sets `margin` to one of the spacing values |
+|`marginTop`| string, sets `margin-top` to one of the spacing values |
+|`marginRight`| string, sets `margin-right` to one of the spacing values |
+|`marginBottom`| string, sets `margin-bottom` to one of the spacing values |
+|`marginLeft`| string, sets `margin-left` to one of the spacing values |
+|`padding`| string, sets `padding` to one of the spacing values |
+|`paddingTop`| string, sets `padding-top` to one of the spacing values |
+|`paddingRight`| string, sets `padding-right` to one of the spacing values |
+|`paddingBottom`| string, sets `padding-bottom` to one of the spacing values |
+|`paddingLeft`| string, sets `padding-left` to one of the spacing values |

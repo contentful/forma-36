@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { boolean, number, select } from '@storybook/addon-knobs';
 import tokens from '@contentful/forma-36-tokens';
 import Flex, {SpacingTypes} from './Flex';
+import notes from './Flex.md';
 
 const flexKnobsId = 'Flex Props';
 const spacingValues = [
@@ -117,6 +118,7 @@ storiesOf('(alpha)|Flex', module)
         </Flex>
       );
     },
+    { notes },
   )
   .add(
     'Flex marings',
@@ -157,6 +159,7 @@ storiesOf('(alpha)|Flex', module)
         </Flex>
       );
     },
+    { notes },
   )
   .add(
     'Flex paddings',
@@ -198,4 +201,5 @@ storiesOf('(alpha)|Flex', module)
         </Flex>
       );
     },
+    { notes },
   );
