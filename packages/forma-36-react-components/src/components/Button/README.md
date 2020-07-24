@@ -73,7 +73,7 @@ import {Dropdown, DropdownList, DropdownListItem, Button} from @contentful/forma
 ```
 
 
-## Content recomentations:
+## Content recommendations:
 
  - UI usage - Button labels should be no longer than 3 words
  - Webpage usage - Button labels should be no longer than 5 words
