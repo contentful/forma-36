@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@contentful/forma-36-tokens@^0.7.1":
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/@contentful/forma-36-tokens/-/forma-36-tokens-0.7.1.tgz#38a524eb4591891297d4b765c6d5d3de1bb1b389"
+  integrity sha512-RAoHI3yYmBxlYs7qFpHaQ1BzbRxEmcwyVZ0S5xP+SRHDO3R2ggnjLJKSli5FvifFxaKFKzhTVTnneiPGtNIJiw==
+
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
@@ -585,9 +590,9 @@ load-json-file@^1.0.0:
     strip-bom "^2.0.0"
 
 lodash@^4.0.0, lodash@^4.17.15, lodash@~4.17.12:
-  version "4.17.15"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
-  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
+  version "4.17.19"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
+  integrity sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==
 
 loud-rejection@^1.0.0:
   version "1.6.0"
