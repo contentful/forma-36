@@ -24,13 +24,13 @@ const defaultProps: AccordionItemProps = {
   testId: 'cf-ui-accordion-item',
 };
 
-const AccordionItem: FC<AccordionItemProps> = ({
+export const AccordionItem: FC<AccordionItemProps> = ({
   title,
   testId,
   children,
 }: AccordionItemProps) => {
-  const [isExpanded, setIsExpanded] = useState(false);
   const id = useId();
+  const [isExpanded, setIsExpanded] = useState(false);
 
   const onClick = () => setIsExpanded(!isExpanded);
 

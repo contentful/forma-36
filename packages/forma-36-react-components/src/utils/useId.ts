@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useLayoutEffect } from 'react';
 
 /**
  * This util was inspired by Reach UI package called auto-id
@@ -14,12 +14,15 @@ import { useState } from 'react';
  * But this solution can be extended to cover that, a good example of how to solve that is ReachUI solution already mentioned on the top.
  */
 
-let id = 0;
-const getId = () => ++id;
+let initialId = 0;
 
 export const useId = () => {
-  const initialId = getId();
-  const [id] = useState(initialId);
+  const [id, setId] = useState(initialId);
+
+  useLayoutEffect(() => {
+    setId(++initialId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return id;
 };
