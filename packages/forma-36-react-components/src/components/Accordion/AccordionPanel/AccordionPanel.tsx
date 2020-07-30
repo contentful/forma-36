@@ -4,10 +4,14 @@ import cn from 'classnames';
 import styles from './AccordionPanel.css';
 
 interface AccordionPanelProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
+  ariaId?: number;
   isOpen: boolean;
-  ariaId: number | null;
 }
+
+const defaultProps: AccordionPanelProps = {
+  isOpen: false,
+};
 
 export const AccordionPanel: FC<AccordionPanelProps> = ({
   children,
@@ -27,8 +31,6 @@ export const AccordionPanel: FC<AccordionPanelProps> = ({
     </div>
   );
 };
-AccordionPanel.defaultProps = {
-  isOpen: false,
-};
+AccordionPanel.defaultProps = defaultProps;
 
 export default AccordionPanel;

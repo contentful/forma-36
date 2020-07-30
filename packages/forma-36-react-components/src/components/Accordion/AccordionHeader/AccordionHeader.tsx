@@ -3,6 +3,8 @@ import React, { FC } from 'react';
 import Subheading from '../../Typography/Subheading';
 import Icon from '../../Icon';
 
+import styles from '../Accordion.css';
+
 interface AccordionHeaderProps {
   children: React.ReactNode;
   handleClick: VoidFunction;
@@ -23,9 +25,13 @@ export const AccordionHeader: FC<AccordionHeaderProps> = ({
         aria-expanded={isOpen}
         aria-controls={`accordion-panel--${ariaId}`}
         id={`accordion--${ariaId}`}
+        className={styles.AccordionHeader}
         onClick={handleClick}
       >
-        <Icon icon={isOpen ? 'ChevronDown' : 'ChevronRight'} />
+        <Icon
+          icon={isOpen ? 'ChevronDownTrimmed' : 'ChevronRightTrimmed'}
+          color="secondary"
+        />
         {children}
       </button>
     </Subheading>

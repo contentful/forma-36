@@ -14,17 +14,20 @@ export interface AccordionItemProps {
    */
   testId?: string;
   /**
-   * A boolean that controls if the content of the accordion is expanded or not
+   * The accordion title
    */
-  isOpen?: boolean;
+  title: React.ReactNode;
 }
 
 const defaultProps: AccordionItemProps = {
-  testId: 'cf-ui-accordion',
+  title: 'Accordion Title',
+  testId: 'cf-ui-accordion-item',
 };
 
 const AccordionItem: FC<AccordionItemProps> = ({
+  title,
   testId,
+  children,
 }: AccordionItemProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const id = useId();
@@ -32,13 +35,13 @@ const AccordionItem: FC<AccordionItemProps> = ({
   const onClick = () => setIsExpanded(!isExpanded);
 
   return (
-    <li data-test-id={testId}>
+    <li data-test-id={`${testId}-${id}`}>
       <AccordionHeader handleClick={onClick} isOpen={isExpanded} ariaId={id}>
-        Accordion {id}
+        {title}
       </AccordionHeader>
 
       <AccordionPanel ariaId={id} isOpen={isExpanded}>
-        Content for accordion {id}
+        {children}
       </AccordionPanel>
     </li>
   );

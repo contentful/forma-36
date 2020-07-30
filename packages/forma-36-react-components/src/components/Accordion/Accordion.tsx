@@ -1,7 +1,9 @@
-import React, { FC } from 'react';
+import React from 'react';
 import cn from 'classnames';
 
 import styles from './Accordion.css';
+
+type AlignTypes = 'start' | 'end';
 
 export interface AccordionProps {
   /**
@@ -16,19 +18,27 @@ export interface AccordionProps {
    * An ID used for testing purposes applied as a data attribute (data-test-id)
    */
   testId?: string;
+  /**
+   * Specify the alignment of the chevron inside the accordion header
+   */
+  align?: AlignTypes;
 }
 
 const defaultProps = {
+  align: 'end',
   testId: 'cf-ui-accordion',
 };
 
-export const Accordion: FC<AccordionProps> = ({
-  className,
+export const Accordion = ({
+  align,
   children,
+  className,
   testId,
   ...otherProps
 }: AccordionProps) => {
-  const classNames = cn(styles.Accordion, className);
+  const classNames = cn(styles.Accordion, className, {
+    [styles[`Accordion--${align}`]]: align,
+  });
 
   return (
     <ul className={classNames} data-test-id={testId} {...otherProps}>
