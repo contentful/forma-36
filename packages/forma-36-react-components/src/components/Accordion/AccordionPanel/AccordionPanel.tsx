@@ -6,16 +6,16 @@ import styles from './AccordionPanel.css';
 interface AccordionPanelProps {
   children?: React.ReactNode;
   ariaId?: number;
-  isOpen: boolean;
+  isExpanded: boolean;
 }
 
 const defaultProps: AccordionPanelProps = {
-  isOpen: false,
+  isExpanded: false,
 };
 
 export const AccordionPanel: FC<AccordionPanelProps> = ({
   children,
-  isOpen,
+  isExpanded,
   ariaId,
 }: AccordionPanelProps) => {
   return (
@@ -24,7 +24,7 @@ export const AccordionPanel: FC<AccordionPanelProps> = ({
       role="region"
       aria-labelledby={`accordion--${ariaId}`}
       className={cn(styles.AccordionPanel, {
-        [styles['AccordionPanel--expanded']]: isOpen,
+        [styles['AccordionPanel--expanded']]: isExpanded,
       })}
     >
       {children}

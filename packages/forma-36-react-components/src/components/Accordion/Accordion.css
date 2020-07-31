@@ -59,3 +59,15 @@
     background-color: var(--color-element-lightest);
   }
 }
+
+.AccordionHeader--expanded {
+  & .AccordionHeader__icon {
+    transform: rotate(90deg);
+  }
+}
+
+.AccordionHeader__icon {
+  transform: rotate(0deg);
+  transition: transform var(--transition-duration-default)
+    var(--transition-easing-default);
+}

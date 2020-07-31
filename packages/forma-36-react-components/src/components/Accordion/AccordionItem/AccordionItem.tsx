@@ -6,7 +6,7 @@ import AccordionPanel from '../AccordionPanel';
 
 export interface AccordionItemProps {
   /**
-   * Child nodes to be rendered in the component
+   * The child nodes of the AccordionItem are in fact the content of the accordion
    */
   children?: React.ReactNode;
   /**
@@ -36,11 +36,15 @@ export const AccordionItem: FC<AccordionItemProps> = ({
 
   return (
     <li data-test-id={`${testId}-${id}`}>
-      <AccordionHeader handleClick={onClick} isOpen={isExpanded} ariaId={id}>
+      <AccordionHeader
+        handleClick={onClick}
+        isExpanded={isExpanded}
+        ariaId={id}
+      >
         {title}
       </AccordionHeader>
 
-      <AccordionPanel ariaId={id} isOpen={isExpanded}>
+      <AccordionPanel ariaId={id} isExpanded={isExpanded}>
         {children}
       </AccordionPanel>
     </li>
