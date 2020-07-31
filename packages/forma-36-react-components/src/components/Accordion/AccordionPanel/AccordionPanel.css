@@ -5,6 +5,7 @@
   box-sizing: border-box;
   overflow: hidden;
   padding: 0 var(--spacing-m);
+  padding-bottom: 0;
   height: 0;
 }
 

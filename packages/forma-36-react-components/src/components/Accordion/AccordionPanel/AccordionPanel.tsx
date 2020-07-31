@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import cn from 'classnames';
+import tokens from '@contentful/forma-36-tokens';
 
 import styles from './AccordionPanel.css';
 
@@ -23,6 +24,49 @@ export const AccordionPanel: FC<AccordionPanelProps> = ({
   isExpanded,
   ariaId,
 }: AccordionPanelProps) => {
+  const panelEl = React.useRef<HTMLDivElement>(null);
+  const [animate, setAnimate] = React.useState(false);
+
+  React.useEffect(() => {
+    setAnimate(true);
+  }, []);
+
+  React.useLayoutEffect(() => {
+    const { current } = panelEl;
+
+    if (animate && current) {
+      if (isExpanded) {
+        current.animate(
+          [
+            { height: '0px', paddingBottom: '0px' },
+            {
+              height: `${current.scrollHeight}px`,
+              paddingBottom: tokens.spacingM,
+            },
+          ],
+          {
+            duration: 300,
+            easing: tokens.transitionEasingDefault,
+          },
+        );
+      } else {
+        current.animate(
+          [
+            {
+              height: `${current.scrollHeight}px`,
+              paddingBottom: tokens.spacingM,
+            },
+            { height: '0px', paddingBottom: '0px' },
+          ],
+          {
+            duration: 300,
+            easing: tokens.transitionEasingDefault,
+          },
+        );
+      }
+    }
+  }, [isExpanded]);
+
   return (
     <div
       id={`accordion-panel--${ariaId}`}
@@ -31,6 +75,7 @@ export const AccordionPanel: FC<AccordionPanelProps> = ({
       className={cn(styles.AccordionPanel, {
         [styles['AccordionPanel--expanded']]: isExpanded,
       })}
+      ref={panelEl}
     >
       {children}
     </div>
