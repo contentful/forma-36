@@ -7,9 +7,25 @@ import Icon from '../../Icon';
 import styles from '../Accordion.css';
 
 interface AccordionHeaderProps {
-  children: React.ReactNode;
+  /**
+   * Child nodes to be rendered in the component
+   */
+  children?: React.ReactNode;
+  /**
+   * An ID used for testing purposes applied as a data attribute (data-test-id)
+   */
+  testId?: string;
+  /**
+   * The function that will be called once the user clicks on the accordion title
+   */
   handleClick: VoidFunction;
+  /**
+   * A boolean that tells if the accordion should be expanded or collapsed
+   */
   isExpanded: boolean;
+  /**
+   * An unique id that is necessary for the aria roles and properties
+   */
   ariaId: number | null;
 }
 

@@ -6,7 +6,7 @@ import AccordionPanel from '../AccordionPanel';
 
 export interface AccordionItemProps {
   /**
-   * The child nodes of the AccordionItem are in fact the content of the accordion
+   * The children of the AccordionItem are in fact the content of the accordion
    */
   children?: React.ReactNode;
   /**

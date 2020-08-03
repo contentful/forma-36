@@ -4,14 +4,19 @@ import cn from 'classnames';
 import styles from './AccordionPanel.css';
 
 interface AccordionPanelProps {
+  /**
+   * Child nodes to be rendered in the component
+   */
   children?: React.ReactNode;
-  ariaId?: number;
+  /**
+   * A boolean that tells if the accordion should be expanded or collapsed
+   */
   isExpanded: boolean;
+  /**
+   * An unique id that is necessary for the aria roles and properties
+   */
+  ariaId: number;
 }
-
-const defaultProps: AccordionPanelProps = {
-  isExpanded: false,
-};
 
 export const AccordionPanel: FC<AccordionPanelProps> = ({
   children,
@@ -31,6 +36,8 @@ export const AccordionPanel: FC<AccordionPanelProps> = ({
     </div>
   );
 };
-AccordionPanel.defaultProps = defaultProps;
+AccordionPanel.defaultProps = {
+  isExpanded: false,
+};
 
 export default AccordionPanel;

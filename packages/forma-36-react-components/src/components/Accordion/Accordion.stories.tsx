@@ -8,9 +8,14 @@ import Typography from '../Typography/Typography';
 import Paragraph from '../Typography/Paragraph';
 import notes from './README.md';
 
+const defaultText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+enim ad minim veniam, quis nostrud exercitation ullamco laboris
+nisi ut aliquip ex ea commodo consequat.`;
+
 storiesOf('(alpha))|Accordion', module)
   .addParameters({
-    propTypes: Accordion['__docgenInfo'],
+    propTypes: [Accordion['__docgenInfo'], AccordionItem['__docgenInfo']],
   })
   .add(
     'default',
@@ -21,10 +26,7 @@ storiesOf('(alpha))|Accordion', module)
         <AccordionItem title={text('First accordion title', 'First accordion')}>
           <Typography>
             <Paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              {text('First accordion content', defaultText)}
             </Paragraph>
           </Typography>
         </AccordionItem>
@@ -33,20 +35,14 @@ storiesOf('(alpha))|Accordion', module)
         >
           <Typography>
             <Paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              {text('Second accordion content', defaultText)}
             </Paragraph>
           </Typography>
         </AccordionItem>
         <AccordionItem title={text('Third accordion title', 'Third accordion')}>
           <Typography>
             <Paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
+              {text('Third accordion content', defaultText)}
             </Paragraph>
           </Typography>
         </AccordionItem>
