@@ -1,4 +1,5 @@
 @import 'settings/dimensions';
+@import 'settings/transitions';
 
 .AccordionPanel {
   display: none;
@@ -7,6 +8,10 @@
   padding: 0 var(--spacing-m);
   padding-bottom: 0;
   height: 0;
+  transition: height var(--transition-duration-default)
+      var(--transition-easing-default),
+    padding-bottom var(--transition-duration-default)
+      var(--transition-easing-default);
 }
 
 .AccordionPanel--expanded {

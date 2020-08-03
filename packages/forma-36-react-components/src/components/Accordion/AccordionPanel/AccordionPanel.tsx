@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useLayoutEffect, useRef } from 'react';
 import cn from 'classnames';
 import tokens from '@contentful/forma-36-tokens';
 
@@ -24,45 +24,28 @@ export const AccordionPanel: FC<AccordionPanelProps> = ({
   isExpanded,
   ariaId,
 }: AccordionPanelProps) => {
-  const panelEl = React.useRef<HTMLDivElement>(null);
-  const [animate, setAnimate] = React.useState(false);
+  const panelEl = useRef<HTMLDivElement>(null);
 
-  React.useEffect(() => {
-    setAnimate(true);
-  }, []);
-
-  React.useLayoutEffect(() => {
+  useLayoutEffect(() => {
     const { current } = panelEl;
 
-    if (animate && current) {
+    if (current) {
+      const finalHeight = `calc((${current.scrollHeight / 16} * 1rem) + ${
+        tokens.spacingM
+      })`;
+
       if (isExpanded) {
-        current.animate(
-          [
-            { height: '0px', paddingBottom: '0px' },
-            {
-              height: `${current.scrollHeight}px`,
-              paddingBottom: tokens.spacingM,
-            },
-          ],
-          {
-            duration: 300,
-            easing: tokens.transitionEasingDefault,
-          },
-        );
+        requestAnimationFrame(function() {
+          current.style.height = '0px';
+
+          requestAnimationFrame(function() {
+            current.style.height = finalHeight;
+          });
+        });
       } else {
-        current.animate(
-          [
-            {
-              height: `${current.scrollHeight}px`,
-              paddingBottom: tokens.spacingM,
-            },
-            { height: '0px', paddingBottom: '0px' },
-          ],
-          {
-            duration: 300,
-            easing: tokens.transitionEasingDefault,
-          },
-        );
+        requestAnimationFrame(function() {
+          current.style.height = '0px';
+        });
       }
     }
   }, [isExpanded]);
