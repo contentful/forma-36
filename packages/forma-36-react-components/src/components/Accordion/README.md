@@ -7,7 +7,7 @@ The header gives the user a summary of the content and the user decides if they 
 
 The accordion has two variations that define the alignment of the chevron icon: left or right.
 
-![Accordion variations](images/img-1.png)
+![Accordion variations](images/img-1.jpg)
 
 ## Examples of usage
 
