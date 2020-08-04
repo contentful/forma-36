@@ -8,6 +8,6 @@
 }
 
 .AccordionPanel--expanded {
-  padding: 0 var(--spacing-m) var(--spacing-m);
+  padding: var(--spacing-xs) var(--spacing-m) var(--spacing-m);
   height: auto;
 }

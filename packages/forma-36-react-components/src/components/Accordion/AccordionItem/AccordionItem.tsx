@@ -4,6 +4,8 @@ import useId from '../../../utils/useId';
 import AccordionHeader from '../AccordionHeader';
 import AccordionPanel from '../AccordionPanel';
 
+import styles from '../Accordion.css';
+
 export interface AccordionItemProps {
   /**
    * The children of the AccordionItem are in fact the content of the accordion
@@ -35,7 +37,7 @@ export const AccordionItem: FC<AccordionItemProps> = ({
   const onClick = () => setIsExpanded(!isExpanded);
 
   return (
-    <li data-test-id={`${testId}-${id}`}>
+    <li className={styles.AccordionItem} data-test-id={`${testId}-${id}`}>
       <AccordionHeader
         handleClick={onClick}
         isExpanded={isExpanded}

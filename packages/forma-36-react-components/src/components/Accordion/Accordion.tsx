@@ -3,8 +3,6 @@ import cn from 'classnames';
 
 import styles from './Accordion.css';
 
-type AlignTypes = 'start' | 'end';
-
 export interface AccordionProps {
   /**
    * Class names to be appended to the className prop of the Accordion wrapper
@@ -21,7 +19,7 @@ export interface AccordionProps {
   /**
    * Specify the alignment of the chevron inside the accordion header
    */
-  align?: AlignTypes;
+  align?: 'start' | 'end';
 }
 
 const defaultProps = {
