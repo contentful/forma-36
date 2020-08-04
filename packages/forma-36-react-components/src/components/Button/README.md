@@ -10,20 +10,25 @@ Buttons communicate the action that will occur when the user clicks them. They c
 - **Negative** - For destructive actions - when something can't be undone. For example, deleting entities.
 - **Naked** - Link button
 
-
-![button overview](images/img.png)
-
-Buttons can be used in couple of different variations. Worth mentioning is `indicateDropdown` property in the component, which enables chevron icon on the right side of the button. Using `icon` property in the Button on the other hand, enables choosen icon on the left side of the button.
-
-![Button variations](images/img-1.png)
+```jsx
+<>
+  <Button buttonType="primary">Primary</Button>
+  <Button buttonType="negative">Negative</Button>
+  <Button buttonType="positive">Positive</Button>
+  <Button buttonType="muted">Muted</Button>
+  <Button buttonType="naked">Naked</Button>
+</>
+```
+Buttons can be used in couple of different variations, like active, disabled or loading. Worth mentioning is `indicateDropdown` property in the component, which enables chevron icon on the right side of the button. Using `icon` property in the Button on the other hand, enables choosen icon on the left side of the button.
 
 Contentful buttons are available in 3 different sizes: 
- - large - 46px height
- - default - 40px height
- - small - 30px height
-
-![Button sizes overview](images/img-2.png)
-
+```jsx
+<>
+  <Button buttonType="positive" size="large">Large</Button>
+  <Button buttonType="positive">Default</Button>
+  <Button buttonType="positive" size="small">Small</Button>
+</>
+```
 
 ## Examples of usage
 
@@ -33,16 +38,14 @@ import {Button} from '@contentful/forma-36-react-components';
 <Button buttonType="primary" data-test-id="create-content-type-empty-state">Add content type</Button>
 
 ```
-Contentful react button will be renderd as:
 
-```html
-<button data-test-id="create-content-type-empty-state" class="Button__Button___1ZfFj a11y__focus-border--default___60AXp Button__Button--primary___JImeO" type="button">
-  <span tabindex="-1" class="TabFocusTrap__TabFocusTrap___39Vty Button__Button__inner-wrapper___3qrNC">
-   <span class="Button__Button__label___3tcOj">
-    Add content type
-   </span>
-  </span>
-</button>
+Usage of the button with icon
+
+```jsx
+import {Button} from '@contentful/forma-36-react-components';
+
+<Button buttonType="primary" icon="Star">Primary star</Button>
+
 ```
 
 Buttons  can be used in different contexts in your project. You might want to use it for dropdowns or display icons inside of the button.
@@ -93,7 +96,7 @@ import {Dropdown, DropdownList, DropdownListItem, Button} from @contentful/forma
 Button component is used to trigger an action or event. By default button is implemented using the native `<button>` element with the proper type="button" provided. If the href element is provided, then the element would be rendered as `<a>` element in the document.
 When a button has focus, both the Space and Enter keys will activate the button. If the button is disabled, then the disabled attribute is provided.
 Contentful buttons are checked in terms of color contrast and pass all the requirements.
-Buttons has trap focus implemented with the tabindex="-1".
+Buttons have a focus state when using keyboard navigation.
 
 ## Properies overview:
 
