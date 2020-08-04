@@ -7,32 +7,6 @@ import styles from './Flex.css';
 
 export type SpacingTypes = 'none' | 'spacing2xs' | 'spacingXs' | 'spacingS' | 'spacingM' | 'spacingL' | 'spacingXl' | 'spacing2Xl' | 'spacing3Xl' | 'spacing4Xl';
 
-export type FlexContainerType =
-  | 'a'
-  | 'article'
-  | 'aside'
-  | 'div'
-  | 'footer'
-  | 'form'
-  | 'h1'
-  | 'h2'
-  | 'h3'
-  | 'h4'
-  | 'h5'
-  | 'h6'
-  | 'header'
-  | 'input'
-  | 'li'
-  | 'main'
-  | 'nav'
-  | 'ol'
-  | 'p'
-  | 'pre'
-  | 'section'
-  | 'span'
-  | 'textarea'
-  | 'ul';
-
 export interface FlexProps {
   /**
    * Class names to be appended to the className prop of the component */
@@ -46,7 +20,7 @@ export interface FlexProps {
   /**
    * Html tag used as container
    */
-  htmlTag?: FlexContainerType,
+  htmlTag?: string,
   /**
    * Sets width: 100% */
   fullWidth?: boolean;
