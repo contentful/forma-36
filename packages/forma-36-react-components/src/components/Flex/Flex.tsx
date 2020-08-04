@@ -33,25 +33,6 @@ export type FlexContainerType =
   | 'textarea'
   | 'ul';
 
-export type justifyContentValues =
-| 'center'    
-| 'start'     
-| 'end'       
-| 'flex-start'
-| 'flex-end'  
-| 'left'      
-| 'right'
-| 'normal'
-| 'space-between'                                
-| 'space-around'                                   
-| 'space-evenly'                                 
-| 'stretch'                                     
-| 'safe center'
-| 'unsafe center'
-| 'inherit'
-| 'initial'
-| 'unset'
-
 export interface FlexProps {
   /**
    * Class names to be appended to the className prop of the component */
@@ -86,10 +67,10 @@ export interface FlexProps {
   flexDirection?: CSS.FlexDirectionProperty;
   /**
    * One of justify-content css values */
-  justifyContent?: justifyContentValues;
+  justifyContent?: CSS.JustifyContentProperty;
    /**
    * One of justify-content css values */
-  justifyItems?: justifyContentValues;
+  justifyItems?: CSS.JustifyContentProperty;
   /**
    * One of justify-self css values */
   justifySelf?: CSS.JustifySelfProperty;
