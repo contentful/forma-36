@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.43.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.42.5...@contentful/forma-36-react-components@3.43.0) (2020-08-05)
+
+
+### Features
+
+* **flex:** introducing Flex component ([#524](https://github.com/contentful/forma-36/issues/524)) ([2529c89](https://github.com/contentful/forma-36/commit/2529c89ab6fb69cce988c0e013048c23e9d4b422))
+
+
+
+
+
 ## [3.42.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.42.4...@contentful/forma-36-react-components@3.42.5) (2020-07-30)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
