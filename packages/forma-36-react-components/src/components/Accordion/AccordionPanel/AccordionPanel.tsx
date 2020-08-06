@@ -30,9 +30,10 @@ export const AccordionPanel: FC<AccordionPanelProps> = ({
     const { current } = panelEl;
 
     if (current) {
-      const finalHeight = `calc((${current.scrollHeight / 16} * 1rem) + ${
-        tokens.spacingM
-      })`;
+      // height + padding-top + padding-bottom of the accordion’s panel final state
+      // we need this math because the height will depend on the accordion’s content
+      const panelHeight = `${current.scrollHeight / 16}rem`; // converting height pixels into rem
+      const finalHeight = `calc(${panelHeight} + ${tokens.spacingXs} + ${tokens.spacingM})`;
 
       if (isExpanded) {
         requestAnimationFrame(function() {
@@ -55,6 +56,7 @@ export const AccordionPanel: FC<AccordionPanelProps> = ({
       id={`accordion-panel--${ariaId}`}
       role="region"
       aria-labelledby={`accordion--${ariaId}`}
+      aria-hidden={!isExpanded}
       className={cn(styles.AccordionPanel, {
         [styles['AccordionPanel--expanded']]: isExpanded,
       })}
