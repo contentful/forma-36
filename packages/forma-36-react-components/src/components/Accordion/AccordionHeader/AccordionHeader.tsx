@@ -27,6 +27,10 @@ interface AccordionHeaderProps {
    * An unique id that is necessary for the aria roles and properties
    */
   ariaId: number | null;
+  /**
+   * The heading element that will be used by the Subheading component
+   */
+  element?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
 export const AccordionHeader: FC<AccordionHeaderProps> = ({
@@ -34,13 +38,14 @@ export const AccordionHeader: FC<AccordionHeaderProps> = ({
   handleClick,
   isExpanded,
   ariaId,
+  element,
 }: AccordionHeaderProps) => {
   const classNames = cn(styles.AccordionHeader, {
     [styles['AccordionHeader--expanded']]: isExpanded,
   });
 
   return (
-    <Subheading>
+    <Subheading element={element}>
       <button
         type="button"
         aria-expanded={isExpanded}
@@ -61,6 +66,7 @@ export const AccordionHeader: FC<AccordionHeaderProps> = ({
 };
 AccordionHeader.defaultProps = {
   isExpanded: false,
+  element: 'h2',
 };
 
 export default AccordionHeader;

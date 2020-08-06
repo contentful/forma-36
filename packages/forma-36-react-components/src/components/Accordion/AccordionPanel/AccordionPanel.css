@@ -1,6 +1,7 @@
 @import 'settings/dimensions';
 
 .AccordionPanel {
+  display: none;
   box-sizing: border-box;
   overflow: hidden;
   padding: 0 var(--spacing-m);
@@ -8,6 +9,7 @@
 }
 
 .AccordionPanel--expanded {
+  display: block;
   padding: var(--spacing-xs) var(--spacing-m) var(--spacing-m);
   height: auto;
 }
