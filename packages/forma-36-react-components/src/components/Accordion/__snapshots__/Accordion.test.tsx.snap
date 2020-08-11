@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component 1`] = `
+<ul
+  className="Accordion Accordion--end"
+  data-test-id="cf-ui-accordion"
+>
+  <AccordionItem
+    testId="cf-ui-accordion-item"
+    title="Accordion Title"
+    titleElement="h2"
+  >
+    Accordion content
+  </AccordionItem>
+</ul>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+<ul
+  className="Accordion my-extra-class Accordion--end"
+  data-test-id="cf-ui-accordion"
+>
+  <AccordionItem
+    testId="cf-ui-accordion-item"
+    title="Accordion Title"
+    titleElement="h2"
+  >
+    Accordion content
+  </AccordionItem>
+</ul>
+`;
+
+exports[`renders the component with chevron on the left 1`] = `
+<ul
+  className="Accordion Accordion--start"
+  data-test-id="cf-ui-accordion"
+>
+  <AccordionItem
+    testId="cf-ui-accordion-item"
+    title="Accordion Title"
+    titleElement="h2"
+  >
+    Accordion content
+  </AccordionItem>
+</ul>
+`;
