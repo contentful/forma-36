@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.45.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.44.0...@contentful/forma-36-react-components@3.45.0) (2020-08-12)
+
+
+### Features
+
+* **accordion:** hide accordion panel from aria ([4a06b15](https://github.com/contentful/forma-36/commit/4a06b15cd417d496f80dd11b83f31e11a89f8492))
+* **accordion:** replace WAAPI for requestAniationFrame ([45ac3ce](https://github.com/contentful/forma-36/commit/45ac3ce4ff28872c3c7eacfae526c41539b26880))
+* **accordion:** set basic collapse animation ([980e06b](https://github.com/contentful/forma-36/commit/980e06bfaeaacf79bb01a5d51bc653d01f308e72))
+
+
+
+
+
 # [3.44.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.43.1...@contentful/forma-36-react-components@3.44.0) (2020-08-11)
 
 
