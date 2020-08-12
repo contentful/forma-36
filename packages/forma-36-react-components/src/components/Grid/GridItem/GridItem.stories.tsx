@@ -41,7 +41,7 @@ const DemoBox = ({ times, id }: { times?: number; id?: string }) => {
   return <GridItem style={styles.demoBox}></GridItem>;
 };
 
-storiesOf('Components|Grid/GridItem', module)
+storiesOf('(alpha)|Grid/GridItem', module)
   .addParameters({
     propTypes: Grid['__docgenInfo'],
   })
