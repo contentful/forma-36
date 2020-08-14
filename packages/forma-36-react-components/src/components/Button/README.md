@@ -48,36 +48,6 @@ import {Button} from '@contentful/forma-36-react-components';
 
 ```
 
-Buttons  can be used in different contexts in your project. You might want to use it for dropdowns or display icons inside of the button.
-Example of usage of button in the Contentful dropdown:
-
-```jsx
-import {Dropdown, DropdownList, DropdownListItem, Button} from @contentful/forma-36-react-components
-
-<Dropdown
-  onClose={() => setOpenActions(false)}
-  isOpen={openActions}
-  toggleElement={
-     <Button
-      indicateDropdown
-      testId="content-type-actions"
-      onClick={() => {setOpenActions(!openActions)}}
-      buttonType="muted"
-      >
-         Actions
-      </Button>
-  }>
-    <DropdownList>
-    <DropdownListItem>
-       Duplicate
-    </DropdownListItem>
-    <DropdownListItem>
-     Delete
-    </DropdownListItem>
-  </DropdownList>
-</Dropdown>
-```
-
 ## Best practices
 
 - Position buttons in consistent places in the interface
