@@ -3,6 +3,62 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.45.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.45.0...@contentful/forma-36-react-components@3.45.1) (2020-08-12)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+# [3.45.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.44.0...@contentful/forma-36-react-components@3.45.0) (2020-08-12)
+
+
+### Features
+
+* **accordion:** hide accordion panel from aria ([4a06b15](https://github.com/contentful/forma-36/commit/4a06b15cd417d496f80dd11b83f31e11a89f8492))
+* **accordion:** replace WAAPI for requestAniationFrame ([45ac3ce](https://github.com/contentful/forma-36/commit/45ac3ce4ff28872c3c7eacfae526c41539b26880))
+* **accordion:** set basic collapse animation ([980e06b](https://github.com/contentful/forma-36/commit/980e06bfaeaacf79bb01a5d51bc653d01f308e72))
+
+
+
+
+
+# [3.44.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.43.1...@contentful/forma-36-react-components@3.44.0) (2020-08-11)
+
+
+### Features
+
+* implemented basic Accordion ([0c5fe8d](https://github.com/contentful/forma-36/commit/0c5fe8d2953d8baa37cf6f47638661da75e33256))
+* implemented basic auxiliary components ([11801c3](https://github.com/contentful/forma-36/commit/11801c37a144cd073838768570687b5f1c3a8d58))
+* **accordion:** implement chevron animation and rename isOpen prop ([cebae83](https://github.com/contentful/forma-36/commit/cebae838db4aeb41d596eb8c5a6bfd44005e699a))
+* **accordion:** implement improvements suggested in review ([5fb96d8](https://github.com/contentful/forma-36/commit/5fb96d880af4c1de007902d12b6669f1d052a3d5))
+* **accordion:** implements styles and finishes a11y features ([e777282](https://github.com/contentful/forma-36/commit/e7772821f0af9ebb9ac0dc0f2d883a65b50d4654))
+* **accordion-item:** implements titleElement prop ([340dc35](https://github.com/contentful/forma-36/commit/340dc35789651e434a92564180214c4f76c64ee6))
+
+
+
+
+
+## [3.43.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.43.0...@contentful/forma-36-react-components@3.43.1) (2020-08-10)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+# [3.43.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.42.5...@contentful/forma-36-react-components@3.43.0) (2020-08-05)
+
+
+### Features
+
+* **flex:** introducing Flex component ([#524](https://github.com/contentful/forma-36/issues/524)) ([2529c89](https://github.com/contentful/forma-36/commit/2529c89ab6fb69cce988c0e013048c23e9d4b422))
+
+
+
+
+
 ## [3.42.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.42.4...@contentful/forma-36-react-components@3.42.5) (2020-07-30)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
