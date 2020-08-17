@@ -13,6 +13,7 @@ import Apps from './svg/Apps.svg';
 import Oauth from './svg/Oauth.svg';
 import OrgInfo from './svg/OrgInfo.svg';
 import Organizations from './svg/Organizations.svg';
+import Purchase from './svg/Purchase.svg';
 import Settings from './svg/Settings.svg';
 import Sso from './svg/Sso.svg';
 import Subscription from './svg/Subscription.svg';
@@ -36,6 +37,7 @@ const iconComponents = {
   Oauth,
   OrgInfo,
   Organizations,
+  Purchase,
   Settings,
   Sso,
   Subscription,
@@ -73,7 +75,7 @@ const defaultProps = {
   testId: 'cf-ui-navigation-icon',
   size: 'medium',
   color: 'positive',
-  tag: 'div'
+  tag: 'div',
 };
 
 export const NavigationIcon = ({
@@ -89,30 +91,29 @@ export const NavigationIcon = ({
     styles.NavigationIconContainer,
     {
       [styles[`NavigationIconContainer--${size}`]]: size,
-      [styles['NavigationIconContainer--trimmed']]: icon.toLowerCase().includes('trimmed'),
+      [styles['NavigationIconContainer--trimmed']]: icon
+        .toLowerCase()
+        .includes('trimmed'),
     },
     className,
   );
 
-    const svgFillClass = cn(
-      styles.NavigationIcon,
-      {
-        [styles[`NavigationIcon--${color}`]]: color,
-      },
-      className,
-    )
-    const Element = iconComponents[icon];
-    const Tag = tag;
+  const svgFillClass = cn(
+    styles.NavigationIcon,
+    {
+      [styles[`NavigationIcon--${color}`]]: color,
+    },
+    className,
+  );
+  const Element = iconComponents[icon];
+  const Tag = tag;
 
-    return (
-      <Tag
-        className={classNames}
-        data-test-id={testId}
-      >
-        <Element className={svgFillClass} {...otherProps} />
-      </Tag>
-    );
-}
+  return (
+    <Tag className={classNames} data-test-id={testId}>
+      <Element className={svgFillClass} {...otherProps} />
+    </Tag>
+  );
+};
 
 NavigationIcon.defaultProps = defaultProps;
 
