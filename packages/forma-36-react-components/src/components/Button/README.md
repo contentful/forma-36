@@ -67,24 +67,3 @@ Button component is used to trigger an action or event. By default button is imp
 When a button has focus, both the Space and Enter keys will activate the button. If the button is disabled, then the disabled attribute is provided.
 Contentful buttons are checked in terms of color contrast and pass all the requirements.
 Buttons have a focus state when using keyboard navigation.
-
-## Properies overview:
-
-|Prop|Description|
-|-|-|
-|`icon`| string, optional, one of IconType |
-|`indicateDropdown`| boolean, optional, adds cheveron icon on the right side of the button |
-|`onClick`| optional, MouseEventHandler |
-|`isFullWidth`| boolean, optional, sets width to 100% |
-|`loading`| boolean, optional, sets loading state with spinner |
-|`disabled`| boolean, optional, sets disable state |
-|`isActive`| boolean, optional, sets active state |
-|`onBlur`| optional, FocusEventHandler |
-|`testId`| string, optional, additional attibute for testing pursposes |
-|`buttonType`| string, optional, one of `primary` `positive` `negative` `warning` `muted` `naked`, default `primary` |
-|`type`| string, optional, one of `button` `submit` `reset`, default `button` |
-|`size`| string, optional, one of `small` - 30px, default 40px, `large` - 46px |
-|`href`| string, optional, href prop, it also transforms button into <a> |
-|`style`| optional, CSSProperties |
-|`className`| string, optional, class names to be appended to the className prop of the component |
-|`children`| React.ReactNode, optional, child nodes to be rendered in the component |
