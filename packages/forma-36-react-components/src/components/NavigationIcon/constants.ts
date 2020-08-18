@@ -9,6 +9,7 @@ export const navigationIconName = {
   Oauth: 'Oauth',
   OrgInfo: 'OrgInfo',
   Organizations: 'Organizations',
+  Purchase: 'Purchase',
   Settings: 'Settings',
   Spaces: 'Spaces',
   Sso: 'Sso',
@@ -17,5 +18,5 @@ export const navigationIconName = {
   Token: 'Token',
   Usage: 'Usage',
   Users: 'Users',
-  UserProfile: 'UserProfile'
+  UserProfile: 'UserProfile',
 };
