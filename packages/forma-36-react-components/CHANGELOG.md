@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.46.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.45.1...@contentful/forma-36-react-components@3.46.0) (2020-08-18)
+
+
+### Features
+
+* **navigation-icon:** add new purchase icon to lib ([#538](https://github.com/contentful/forma-36/issues/538)) ([673af30](https://github.com/contentful/forma-36/commit/673af30e1cc90aa7fcb20ee5a0e3e168a92fe199))
+
+
+
+
+
 ## [3.45.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.45.0...@contentful/forma-36-react-components@3.45.1) (2020-08-12)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
