@@ -92,9 +92,6 @@ export interface FlexProps {
 const handleSpacing = (value: SpacingTypes) => value === 'none' ? 0 : tokens[value];
 
 const defaultProps = {
-  flexDirection: 'row',
-  justifyContent: 'center',
-  alignItems: 'center',
   testId: 'cf-ui-flex',
 };
 
