@@ -22,7 +22,7 @@ export class FieldGroup extends Component<FieldGroupProps> {
   render() {
     const { className, children, row, testId, ...otherProps } = this.props;
 
-    const classNames = cn(styles.FieldGroup, styles.className, {
+    const classNames = cn(styles.FieldGroup, className, {
       [styles['FieldGroup--row']]: row,
     });
 
