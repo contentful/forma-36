@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.7.2...@contentful/forma-36-tokens@0.7.3) (2020-08-20)
+
+
+### Bug Fixes
+
+* change font-weight to a number ([2a54c62](https://github.com/contentful/forma-36/commit/2a54c625eb837fde0b951fbefc68d8161908196a))
+
+
+
+
+
 ## [0.7.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.7.1...@contentful/forma-36-tokens@0.7.2) (2020-07-28)
 
 **Note:** Version bump only for package @contentful/forma-36-tokens
