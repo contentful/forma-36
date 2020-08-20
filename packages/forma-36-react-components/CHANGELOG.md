@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.46.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.46.1...@contentful/forma-36-react-components@3.46.2) (2020-08-20)
+
+
+### Bug Fixes
+
+* Flex default props ([#540](https://github.com/contentful/forma-36/issues/540)) ([3244ed9](https://github.com/contentful/forma-36/commit/3244ed994b98f9e80c4bb3e335b4e7438a345b3e))
+
+
+
+
+
 ## [3.46.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.46.0...@contentful/forma-36-react-components@3.46.1) (2020-08-20)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
