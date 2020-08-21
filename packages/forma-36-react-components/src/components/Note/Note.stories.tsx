@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text, select } from '@storybook/addon-knobs';
+import { boolean, select, text } from '@storybook/addon-knobs';
 
 import notes from './Note.md';
 import Note from './Note';
@@ -19,6 +19,7 @@ storiesOf('Components|Note', module)
           Note.defaultProps.noteType,
         )}
         title={text('title', '')}
+        hasCloseButton={boolean('hasCloseButton', false)}
       >
         {text(
           'children',
