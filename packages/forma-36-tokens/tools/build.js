@@ -55,18 +55,12 @@ const buildIndexJS = (srcPath, tokens) => {
   );
 };
 
-const specificTypes = {
-  fontWeightNormal: 'number',
-  fontWeightMedium: 'number',
-  fontWeightDemiBold: 'number'
-}
-
 function createInterfaceDefinition(tokens) {
   const defs = _.mapValues(tokens, (value, key) => {
 
     return {
       value: value,
-      type: specificTypes[key] || 'string',
+      type: typeof value
     };
   });
 
