@@ -38,6 +38,10 @@ export type EntityListItemProps = {
    */
   status?: 'archived' | 'changed' | 'draft' | 'published';
   /**
+   * A boolean used to render the Thumbnail or not
+   */
+  withThumbnail?: boolean;
+  /**
    * The URL of the entity's preview thumbnail. Use 46px x 46px images for best results
    */
   thumbnailUrl?: string;
@@ -100,6 +104,7 @@ export type EntityListItemProps = {
 const defaultProps = {
   testId: 'cf-ui-entity-list-item',
   entityType: 'entry',
+  withThumbnail: true,
   isActionsDisabled: false,
 };
 
@@ -195,6 +200,7 @@ export class EntityListItem extends Component<EntityListItemProps> {
       description,
       contentType,
       entityType,
+      withThumbnail,
       thumbnailUrl,
       thumbnailAltText,
       status,
@@ -235,9 +241,11 @@ export class EntityListItem extends Component<EntityListItemProps> {
             target={onClick && href ? '_blank' : undefined}
           >
             <TabFocusTrap className={styles['EntityListItem__focus-trap']}>
-              <figure className={styles['EntityListItem__media']}>
-                {asIcon ? this.renderIcon() : this.renderThumbnail()}
-              </figure>
+              {withThumbnail && (
+                <figure className={styles['EntityListItem__media']}>
+                  {asIcon ? this.renderIcon() : this.renderThumbnail()}
+                </figure>
+              )}
 
               <div className={styles['EntityListItem__content']}>
                 <div className={styles['EntityListItem__heading']}>
