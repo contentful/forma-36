@@ -6,15 +6,42 @@ import React, {
 import cn from 'classnames';
 import styles from './Card.css';
 
-export type CardPropTypes = {
+export interface BaseCardProps {
+  /**
+   * Used to make the decision of either rendering the card as a link tag or as a div tag
+   */
   href?: string;
-  onClick?: MouseEventHandler<HTMLElement>;
-  padding?: 'default' | 'large' | 'none';
+  /**
+   * Applies selected styles to the element
+   */
   selected?: boolean;
-  title?: string;
-  style?: React.CSSProperties;
-  className?: string;
+  /**
+   * An ID used for testing purposes applied as a data attribute (data-test-id)
+   */
   testId?: string;
+  /**
+   * Class names to be appended to the className prop of the component
+   */
+  className?: string;
+}
+
+type CardPropTypes = BaseCardProps & {
+  /**
+   * The action to be performed on click of the Card component
+   */
+  onClick?: MouseEventHandler<HTMLElement>;
+  /**
+   * Applies padding styles of different sizes
+   */
+  padding?: 'default' | 'large' | 'none';
+  /**
+   * The title of the entry
+   */
+  title?: string;
+  /**
+   * Any additional styles that are being applied
+   */
+  style?: React.CSSProperties;
   children: React.ReactNode;
 } & typeof defaultProps;
 
