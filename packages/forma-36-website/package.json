@@ -2,10 +2,10 @@
   "name": "forma-36-website",
   "description": "Forma 36 Doc App",
   "private": true,
-  "version": "0.8.24",
+  "version": "0.8.26",
   "dependencies": {
     "@contentful/forma-36-fcss": "^0.2.6",
-    "@contentful/forma-36-react-components": "^3.46.2",
+    "@contentful/forma-36-react-components": "^3.47.1",
     "@contentful/forma-36-tokens": "^0.7.3",
     "@emotion/core": "^10.0.16",
     "@emotion/styled": "^10.0.15",

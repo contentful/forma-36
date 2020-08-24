@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.47.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.47.0...@contentful/forma-36-react-components@3.47.1) (2020-08-24)
+
+
+### Bug Fixes
+
+* use FieldGroup classname property ([#542](https://github.com/contentful/forma-36/issues/542)) ([f622bc7](https://github.com/contentful/forma-36/commit/f622bc732f2e24e7d848dd590625f4cd4032b9e8))
+
+
+
+
+
+# [3.47.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.46.2...@contentful/forma-36-react-components@3.47.0) (2020-08-21)
+
+
+### Features
+
+* **note:** close button ([9e052c7](https://github.com/contentful/forma-36/commit/9e052c7cb55bb7d540072bf600f0b5a52f5f5b8c))
+
+
+
+
+
 ## [3.46.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.46.1...@contentful/forma-36-react-components@3.46.2) (2020-08-20)
 
 
