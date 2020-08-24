@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.49.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.48.0...@contentful/forma-36-react-components@3.49.0) (2020-08-24)
+
+
+### Features
+
+* **entityList:** add forwardRef to component ([#545](https://github.com/contentful/forma-36/issues/545)) ([dd67886](https://github.com/contentful/forma-36/commit/dd678866866cd3674990f0451d8b9199d0991031))
+
+
+
+
+
+# [3.48.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.47.1...@contentful/forma-36-react-components@3.48.0) (2020-08-24)
+
+
+### Features
+
+* **entity-list-item:** add withThumbnail prop ([#546](https://github.com/contentful/forma-36/issues/546)) ([17aa908](https://github.com/contentful/forma-36/commit/17aa908c6b57736299779d7e1e4341cc53c11183))
+
+
+
+
+
+## [3.47.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.47.0...@contentful/forma-36-react-components@3.47.1) (2020-08-24)
+
+
+### Bug Fixes
+
+* use FieldGroup classname property ([#542](https://github.com/contentful/forma-36/issues/542)) ([f622bc7](https://github.com/contentful/forma-36/commit/f622bc732f2e24e7d848dd590625f4cd4032b9e8))
+
+
+
+
+
 # [3.47.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.46.2...@contentful/forma-36-react-components@3.47.0) (2020-08-21)
 
 

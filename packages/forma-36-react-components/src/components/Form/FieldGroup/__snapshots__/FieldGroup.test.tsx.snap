@@ -2,7 +2,7 @@
 
 exports[`renders the component 1`] = `
 <div
-  className="FieldGroup className"
+  className="FieldGroup"
   data-test-id="cf-ui-field-group"
 >
   <div
@@ -38,7 +38,7 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component children in a row 1`] = `
 <div
-  className="FieldGroup className FieldGroup--row"
+  className="FieldGroup my-extra-class FieldGroup--row"
   data-test-id="cf-ui-field-group"
 >
   <div
@@ -74,7 +74,7 @@ exports[`renders the component children in a row 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <div
-  className="FieldGroup className"
+  className="FieldGroup my-extra-class"
   data-test-id="cf-ui-field-group"
 >
   <div
