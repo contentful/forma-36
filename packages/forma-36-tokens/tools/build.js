@@ -56,7 +56,7 @@ const buildIndexJS = (srcPath, tokens) => {
 };
 
 function createInterfaceDefinition(tokens) {
-  const defs = _.mapValues(tokens, (value, key) => {
+  const defs = _.mapValues(tokens, value => {
 
     return {
       value: value,
