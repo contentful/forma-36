@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.48.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.47.1...@contentful/forma-36-react-components@3.48.0) (2020-08-24)
+
+
+### Features
+
+* **entity-list-item:** add withThumbnail prop ([#546](https://github.com/contentful/forma-36/issues/546)) ([17aa908](https://github.com/contentful/forma-36/commit/17aa908c6b57736299779d7e1e4341cc53c11183))
+
+
+
+
+
 ## [3.47.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.47.0...@contentful/forma-36-react-components@3.47.1) (2020-08-24)
 
 
