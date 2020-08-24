@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { forwardRef } from 'react';
 import cn from 'classnames';
 
 import styles from './EntityList.css';
 
-export type EntityListProps = {
+export interface EntityListProps {
   /**
    * Class names to be appended to the className prop of the component
    */
@@ -16,25 +16,28 @@ export type EntityListProps = {
    * An ID used for testing purposes applied as a data attribute (data-test-id)
    */
   testId?: string;
-} & typeof defaultProps;
+}
 
-const defaultProps = {
-  testId: 'cf-ui-entity-list',
-};
-
-export class EntityList extends Component<EntityListProps> {
-  static defaultProps = defaultProps;
-
-  render() {
-    const { className, children, testId, ...otherProps } = this.props;
+export const EntityList = forwardRef<HTMLUListElement, EntityListProps>(
+  (props: EntityListProps, ref) => {
+    const { className, children, testId, ...otherProps } = props;
     const classNames = cn(styles.EntityList, className);
 
     return (
-      <ul {...otherProps} className={classNames} data-test-id={testId}>
+      <ul
+        ref={ref}
+        className={classNames}
+        data-test-id={testId}
+        {...otherProps}
+      >
         {children}
       </ul>
     );
-  }
-}
+  },
+);
+EntityList.displayName = 'EntityList';
+EntityList.defaultProps = {
+  testId: 'cf-ui-entity-list',
+};
 
 export default EntityList;
