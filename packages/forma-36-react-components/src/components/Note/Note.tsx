@@ -4,6 +4,7 @@ import Icon, { IconType } from '../Icon';
 import { iconName } from '../Icon/constants';
 
 import styles from './Note.css';
+import IconButton from '../IconButton';
 
 const Icons = {
   primary: iconName.InfoCircle,
@@ -19,6 +20,8 @@ export type NoteProps = {
   style?: CSSProperties;
   testId?: string;
   children: React.ReactNode;
+  hasCloseButton?: boolean;
+  onClose?: Function;
 } & typeof defaultProps;
 
 const defaultProps = {
@@ -45,6 +48,7 @@ export class Note extends Component<NoteProps> {
           [styles['Note--positive']]: this.props.noteType === 'positive',
           [styles['Note--negative']]: this.props.noteType === 'negative',
           [styles['Note--warning']]: this.props.noteType === 'warning',
+          [styles['Note--hasCloseButton']]: this.props.hasCloseButton,
         })}
         data-test-id={this.props.testId}
       >
@@ -57,6 +61,20 @@ export class Note extends Component<NoteProps> {
           )}
           <div>{this.props.children}</div>
         </div>
+        {this.props.hasCloseButton && (
+          <IconButton
+            buttonType="secondary"
+            iconProps={{ icon: 'Close' }}
+            onClick={() => {
+              if (this.props.onClose) {
+                this.props.onClose();
+              }
+            }}
+            testId="cf-ui-note-close"
+            label="Dismiss"
+            className={styles.Note__dismiss}
+          />
+        )}
       </div>
     );
   }
