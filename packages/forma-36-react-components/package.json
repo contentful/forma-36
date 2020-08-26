@@ -28,6 +28,7 @@
     "@size-limit/preset-big-lib": "^4.5.5",
     "@storybook/addon-a11y": "^6.0.18",
     "@storybook/addon-actions": "^6.0.18",
+    "@storybook/addon-docs": "^6.0.18",
     "@storybook/addon-knobs": "^6.0.18",
     "@storybook/addon-notes": "^5.3.19",
     "@storybook/addon-storysource": "^6.0.18",
