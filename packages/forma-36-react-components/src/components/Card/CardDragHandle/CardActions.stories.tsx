@@ -4,7 +4,7 @@ import { text, boolean } from '@storybook/addon-knobs';
 
 import CardDragHandle from './CardDragHandle';
 
-storiesOf('Components|Card/CardDragHandle', module)
+storiesOf('Components/Card/CardDragHandle', module)
   .addParameters({
     propTypes: CardDragHandle['__docgenInfo'],
   })

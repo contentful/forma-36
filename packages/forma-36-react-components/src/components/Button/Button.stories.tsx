@@ -7,7 +7,7 @@ import { iconName } from '../Icon/constants';
 import Button from './Button';
 import notes from './Button.md';
 
-storiesOf('Components|Button', module)
+storiesOf('Components/Button', module)
   .addParameters({
     propTypes: Button['__docgenInfo'],
   })

@@ -106,7 +106,7 @@ function AsNavigationStory() {
   );
 }
 
-storiesOf('Components|Tabs', module)
+storiesOf('Components/Tabs', module)
   .addParameters({
     propTypes: [
       Tab['__docgenInfo'],

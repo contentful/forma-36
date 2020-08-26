@@ -8,7 +8,7 @@ import DropdownList from '../../Dropdown/DropdownList';
 import DropdownListItem from '../../Dropdown/DropdownListItem';
 import CardDragHandle from './../../Card/CardDragHandle';
 
-storiesOf('Components|EntityList/EntityListItem', module)
+storiesOf('Components/EntityList/EntityListItem', module)
   .addParameters({
     propTypes: EntityListItem['__docgenInfo'],
   })

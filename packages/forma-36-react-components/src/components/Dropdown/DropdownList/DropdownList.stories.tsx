@@ -5,7 +5,7 @@ import { select } from '@storybook/addon-knobs';
 import DropdownListItem from '../DropdownListItem';
 import DropdownList from './DropdownList';
 
-storiesOf('Components|Dropdown/DropdownList', module)
+storiesOf('Components/Dropdown/DropdownList', module)
   .addParameters({
     propTypes: [DropdownList['__docgenInfo'], DropdownListItem['__docgenInfo']],
   })

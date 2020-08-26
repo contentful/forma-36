@@ -88,7 +88,7 @@ function WithLoadingStateStory() {
   );
 }
 
-storiesOf('Components|Table', module)
+storiesOf('Components/Table', module)
   .addParameters({
     propTypes: [
       Table['__docgenInfo'],

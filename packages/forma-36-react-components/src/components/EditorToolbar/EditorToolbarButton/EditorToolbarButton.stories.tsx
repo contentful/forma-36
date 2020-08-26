@@ -6,7 +6,7 @@ import { action } from '@storybook/addon-actions';
 import EditorToolbarButton from './EditorToolbarButton';
 import { iconName } from './../../Icon/constants';
 
-storiesOf('Components|EditorToolbar/EditorToolbarButton', module)
+storiesOf('Components/EditorToolbar/EditorToolbarButton', module)
   .addParameters({
     propTypes: EditorToolbarButton['__docgenInfo'],
   })

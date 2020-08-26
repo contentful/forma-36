@@ -4,7 +4,7 @@ import { text } from '@storybook/addon-knobs';
 
 import EditorToolbarDivider from './EditorToolbarDivider';
 
-storiesOf('Components|EditorToolbar/EditorToolbarDivider', module)
+storiesOf('Components/EditorToolbar/EditorToolbarDivider', module)
   .addParameters({
     propTypes: EditorToolbarDivider['__docgenInfo'],
   })

@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 
 import TextField from './TextField';
 
-storiesOf('Components|TextField', module)
+storiesOf('Components/TextField', module)
   .addParameters({
     propTypes: TextField['__docgenInfo'],
   })

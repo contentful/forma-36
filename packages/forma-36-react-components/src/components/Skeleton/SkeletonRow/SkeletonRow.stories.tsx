@@ -9,7 +9,7 @@ import TableBody from '../../Table/TableBody';
 import TableCell from '../../Table/TableCell';
 import TableRow from '../../Table/TableRow';
 
-storiesOf('Components|Skeleton/SkeletonRow', module)
+storiesOf('Components/Skeleton/SkeletonRow', module)
   .addParameters({
     propTypes: SkeletonRow['__docgenInfo'],
   })

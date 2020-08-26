@@ -6,7 +6,7 @@ import { text, boolean, select } from '@storybook/addon-knobs';
 import Select from './Select';
 import Option from './Option';
 
-storiesOf('Components|Select', module)
+storiesOf('Components/Select', module)
   .addParameters({
     propTypes: [Select['__docgenInfo'], Option['__docgenInfo']],
   })

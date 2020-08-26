@@ -62,7 +62,7 @@ function DefaultStory() {
   );
 }
 
-storiesOf('Components|Form', module)
+storiesOf('Components/Form', module)
   .addParameters({
     propTypes: Form['__docgenInfo'],
   })

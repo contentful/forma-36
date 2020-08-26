@@ -5,7 +5,7 @@ import { text } from '@storybook/addon-knobs';
 import HelpText from './HelpText';
 import TextLink from '../TextLink';
 
-storiesOf('Components|HelpText', module)
+storiesOf('Components/HelpText', module)
   .addParameters({
     propTypes: HelpText['__docgenInfo'],
   })

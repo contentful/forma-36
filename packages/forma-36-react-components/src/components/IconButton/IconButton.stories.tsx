@@ -5,7 +5,7 @@ import { text, select, boolean } from '@storybook/addon-knobs';
 import IconButton from './IconButton';
 import { iconName } from '../Icon/constants';
 
-storiesOf('Components|IconButton', module)
+storiesOf('Components/IconButton', module)
   .addParameters({
     propTypes: IconButton['__docgenInfo'],
   })

@@ -19,7 +19,7 @@ function DefaultStory() {
   );
 }
 
-storiesOf('Components|Switch', module)
+storiesOf('Components/Switch', module)
   .addParameters({
     propTypes: Switch['__docgenInfo'],
   })

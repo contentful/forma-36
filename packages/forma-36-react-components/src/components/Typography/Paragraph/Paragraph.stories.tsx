@@ -4,7 +4,7 @@ import { text, select } from '@storybook/addon-knobs';
 
 import Paragraph from './Paragraph';
 
-storiesOf('Components|Typography/Paragraph', module)
+storiesOf('Components/Typography/Paragraph', module)
   .addParameters({
     propTypes: Paragraph['__docgenInfo'],
   })

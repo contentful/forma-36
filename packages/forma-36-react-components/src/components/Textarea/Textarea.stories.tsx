@@ -6,7 +6,7 @@ import { action } from '@storybook/addon-actions';
 import Textarea from './Textarea';
 import Button from './../Button';
 
-storiesOf('Components|TextArea', module)
+storiesOf('Components/TextArea', module)
   .addParameters({
     propTypes: Textarea['__docgenInfo'],
   })

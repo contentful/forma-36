@@ -5,7 +5,7 @@ import { number } from '@storybook/addon-knobs';
 import SkeletonImage from './SkeletonImage';
 import SkeletonContainer from '../SkeletonContainer';
 
-storiesOf('Components|Skeleton/SkeletonImage', module)
+storiesOf('Components/Skeleton/SkeletonImage', module)
   .addParameters({
     propTypes: SkeletonImage['__docgenInfo'],
   })

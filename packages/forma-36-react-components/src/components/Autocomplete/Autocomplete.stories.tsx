@@ -65,7 +65,7 @@ const AutocompleteDefaultStory = ({ items }: { items: Item[] }) => {
   );
 };
 
-storiesOf('(alpha)|Autocomplete', module)
+storiesOf('(alpha)/Autocomplete', module)
   .addParameters({
     propTypes: Autocomplete['__docgenInfo'],
   })

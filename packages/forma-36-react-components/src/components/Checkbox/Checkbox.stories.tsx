@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 
 import Checkbox from './Checkbox';
 
-storiesOf('Components|Checkbox', module)
+storiesOf('Components/Checkbox', module)
   .addParameters({
     propTypes: Checkbox['__docgenInfo'],
   })

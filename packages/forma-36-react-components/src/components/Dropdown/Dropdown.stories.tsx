@@ -169,7 +169,7 @@ function DynamicContentStory() {
   );
 }
 
-storiesOf('Components|Dropdown', module)
+storiesOf('Components/Dropdown', module)
   .addParameters({
     propTypes: [
       Dropdown['__docgenInfo'],

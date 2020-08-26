@@ -131,7 +131,7 @@ function ControllerModalStory() {
   );
 }
 
-storiesOf('Components|Modal', module)
+storiesOf('Components/Modal', module)
   .addParameters({
     propTypes: Modal['__docgenInfo'],
   })

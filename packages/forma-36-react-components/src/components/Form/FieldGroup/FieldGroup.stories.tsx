@@ -30,7 +30,7 @@ function DefaultStory() {
   );
 }
 
-storiesOf('Components|Form/FieldGroup', module)
+storiesOf('Components/Form/FieldGroup', module)
   .addParameters({
     propTypes: CheckboxField['__docgenInfo'],
   })

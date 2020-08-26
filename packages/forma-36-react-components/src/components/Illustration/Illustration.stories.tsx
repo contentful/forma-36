@@ -5,7 +5,7 @@ import { text, select } from '@storybook/addon-knobs';
 import Illustration, { IllustrationType } from './Illustration';
 import { illustrationName } from './constants';
 
-storiesOf('Components|Illustration', module)
+storiesOf('Components/Illustration', module)
   .addParameters({
     propTypes: Illustration['__docgenInfo'],
   })

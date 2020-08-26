@@ -4,7 +4,7 @@ import { text, select } from '@storybook/addon-knobs';
 
 import SectionHeading from './SectionHeading';
 
-storiesOf('Components|Typography/SectionHeading', module)
+storiesOf('Components/Typography/SectionHeading', module)
   .addParameters({
     propTypes: SectionHeading['__docgenInfo'],
   })
