@@ -3,7 +3,7 @@
   "plugins": [
     "babel-plugin-typescript-to-proptypes",
     "@babel/plugin-transform-runtime",
-    "@babel/plugin-proposal-class-properties",
+    ["@babel/plugin-proposal-class-properties", { "loose": true }],
     "babel-plugin-add-react-displayname",
 
     // Other

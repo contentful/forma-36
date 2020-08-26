@@ -3,7 +3,9 @@ const webpack = require('webpack');
 
 module.exports = ({ config, mode }) => {
   // Need to remove Storybook's CSS loader before adding our own
-  config.module.rules.splice(3, 1);
+  config.module.rules = config.module.rules.filter(
+    rule => rule.test.toString() !== '/\\.css$/',
+  );
 
   // TypeScript
   config.resolve.extensions.push('.ts', '.tsx', '.js', '.json', '.css');
