@@ -43,6 +43,7 @@ export { Heading } from './components/Typography/Heading/Heading';
 export { InViewport } from './components/InViewport/InViewport';
 export { Modal } from './components/Modal/Modal';
 export { ModalConfirm } from './components/Modal/ModalConfirm/ModalConfirm';
+export { ModalLauncher } from './components/Modal/ModalLauncher/ModalLauncher';
 export { FieldGroup } from './components/Form/FieldGroup/FieldGroup';
 export { Form } from './components/Form/Form';
 export { Note } from './components/Note/Note';
