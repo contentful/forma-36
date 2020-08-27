@@ -42,6 +42,7 @@ function ModalExample() {
    1. [Modal position](#modal-position)
    2. [Modal sizes](#modal-sizes)
 3. [Writing guidelines](#writing-guidelines)
+4. [Using the modal launcher](#using-the-modal-launcher)
 
 ## Best practices <a name="best-practices" />
 
@@ -165,3 +166,50 @@ function ModalExample() {
 - Avoid “never,” “always” and other absolutes
 - Use contractions when possible
 - Avoid exclamation marks
+
+## Using the modal launcher <a name="using-the-modal-launcher" />
+
+The `ModalLauncher.open` utility can be used to wrap any custom result, based on a user's interaction with a Modal component, in a promise and await it.
+
+```jsx
+function() {
+  const [hiddenText, setHiddenText] = React.useState('');
+
+  return (
+    <React.Fragment>
+      <Button onClick={() => {
+        ModalLauncher.open(({ isShown, onClose }) => (
+          <Modal
+            title="Reveal hidden text"
+            isShown={isShown}
+            onClose={() => onClose(hiddenText)}>
+            {() => (
+              <React.Fragment>
+                <Modal.Header title="Reveal hidden text" />
+                <Modal.Content>
+                  Are you want to reveal the hidden text?
+                </Modal.Content>
+                <Modal.Controls>
+                  <Button buttonType="positive" onClick={() => {
+                    onClose('The text is revealed!');
+                  }}>
+                    Show text
+                  </Button>
+                  <Button buttonType="muted" onClick={() => onClose('')}>
+                    Hide text
+                  </Button>
+                </Modal.Controls>
+              </React.Fragment>
+            )}
+          </Modal>
+        )).then((text) => {
+          setHiddenText(text);
+        })
+      }}>
+        Show Modal with ModalLauncher
+      </Button>
+      {hiddenText.length > 0 && (<Paragraph>{hiddenText}</Paragraph>)}
+    </React.Fragment>
+  )
+}
+```
