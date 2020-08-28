@@ -1,15 +1,16 @@
+/* global Promise */
 import ReactDOM from 'react-dom';
 
-type ModalLauncherComponentRendererProps<T = any> = {
+interface ModalLauncherComponentRendererProps<T = any> {
   isShown: boolean;
   onClose: (result: T) => void;
-};
+}
 
-type ModalLauncherOpenOptions = {
+interface ModalLauncherOpenOptions {
   modalId?: string;
   // ms before removing the component from the tree, defaults to 25ms.
   delay?: number;
-};
+}
 
 function open<T = any>(
   componentRenderer: (
@@ -51,7 +52,7 @@ function open<T = any>(
       ReactDOM.render(componentRenderer({ onClose, isShown }), getRoot());
     }
 
-    async function onClose(...args: T[]) {
+    async function onClose(arg: T) {
       currentConfig = {
         ...currentConfig,
         isShown: false,
@@ -62,7 +63,7 @@ function open<T = any>(
       );
       ReactDOM.unmountComponentAtNode(getRoot());
       getRoot().remove();
-      resolve(...args);
+      resolve(arg);
     }
 
     render(currentConfig);
