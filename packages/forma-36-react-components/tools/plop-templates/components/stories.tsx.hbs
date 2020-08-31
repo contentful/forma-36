@@ -4,13 +4,13 @@ import { text } from '@storybook/addon-knobs';
 
 import {{pascalCase name}} from './{{pascalCase name}}';
 
-storiesOf('Components|{{pascalCase name}}', module)
-  .addParameters({
-    propTypes: {{pascalCase name}}['__docgenInfo'],
-    component: {{pascalCase name}},
-  })
-  .add('default', () => (
-    <{{pascalCase name}} className={text('className', '')}>
-      {{{pascalCase name}}}
-    </{{pascalCase name}}>
-  ));
+storiesOf('Components/{{pascalCase name}}', module)
+.addParameters({
+propTypes: {{pascalCase name}}['__docgenInfo'],
+component: {{pascalCase name}},
+})
+.add('default', () => (
+<{{pascalCase name}} className={text('className', '' )}>
+  {{{pascalCase name}}}
+</{{pascalCase name}}>
+));

@@ -53,7 +53,7 @@ function DefaultStory() {
   );
 }
 
-storiesOf('Components|Modal/ModalLauncher', module)
+storiesOf('Components/Modal/ModalLauncher', module)
   .addParameters({
     propTypes: ModalLauncher['__docgenInfo'],
     component: ModalLauncher,
