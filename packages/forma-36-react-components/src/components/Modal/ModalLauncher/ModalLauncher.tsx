@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 interface ModalLauncherComponentRendererProps<T = any> {
   isShown: boolean;
-  onClose: (result: T) => void;
+  onClose: (result?: T) => void;
 }
 
 interface ModalLauncherOpenOptions {
@@ -52,7 +52,7 @@ function open<T = any>(
       ReactDOM.render(componentRenderer({ onClose, isShown }), getRoot());
     }
 
-    async function onClose(arg: T) {
+    async function onClose(arg?: T) {
       currentConfig = {
         ...currentConfig,
         isShown: false,
