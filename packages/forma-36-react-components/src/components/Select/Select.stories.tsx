@@ -9,6 +9,7 @@ import Option from './Option';
 storiesOf('Components/Select', module)
   .addParameters({
     propTypes: [Select['__docgenInfo'], Option['__docgenInfo']],
+    component: Select,
   })
   .add('default', () => (
     <Select

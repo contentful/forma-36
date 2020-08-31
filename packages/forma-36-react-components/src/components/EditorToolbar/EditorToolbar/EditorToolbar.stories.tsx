@@ -12,6 +12,8 @@ storiesOf('Components/EditorToolbar', module)
       EditorToolbar['__docgenInfo'],
       EditorToolbarButton['__docgenInfo'],
     ],
+    component: EditorToolbar,
+    subcomponents: { EditorToolbarButton },
   })
   .add('default', () => (
     <EditorToolbar

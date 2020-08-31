@@ -7,6 +7,7 @@ import RadioButton from './RadioButton';
 storiesOf('Components/RadioButton', module)
   .addParameters({
     propTypes: RadioButton['__docgenInfo'],
+    component: RadioButton,
   })
   .add('default', () => (
     <RadioButton

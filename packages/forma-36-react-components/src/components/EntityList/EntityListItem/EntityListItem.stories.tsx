@@ -11,6 +11,7 @@ import CardDragHandle from './../../Card/CardDragHandle';
 storiesOf('Components/EntityList/EntityListItem', module)
   .addParameters({
     propTypes: EntityListItem['__docgenInfo'],
+    component: EntityListItem,
   })
   .add('default', () => (
     <EntityListItem

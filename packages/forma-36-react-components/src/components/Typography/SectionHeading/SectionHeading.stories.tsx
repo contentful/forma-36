@@ -7,6 +7,7 @@ import SectionHeading from './SectionHeading';
 storiesOf('Components/Typography/SectionHeading', module)
   .addParameters({
     propTypes: SectionHeading['__docgenInfo'],
+    component: SectionHeading,
   })
   .add('default', () => (
     <SectionHeading

@@ -43,6 +43,8 @@ const DemoBox = ({ times, id }: { times?: number; id?: string }) => {
 storiesOf('(alpha)/Grid', module)
   .addParameters({
     propTypes: Grid['__docgenInfo'],
+    component: Grid,
+    subcomponents: { GridItem },
   })
   .add(
     'default',

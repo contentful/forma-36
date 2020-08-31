@@ -56,5 +56,6 @@ function DefaultStory() {
 storiesOf('Components|Modal/ModalLauncher', module)
   .addParameters({
     propTypes: ModalLauncher['__docgenInfo'],
+    component: ModalLauncher,
   })
   .add('default', () => <DefaultStory />);

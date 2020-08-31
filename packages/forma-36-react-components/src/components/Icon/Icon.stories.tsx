@@ -8,6 +8,7 @@ import { iconName } from './constants';
 storiesOf('Components/Icon', module)
   .addParameters({
     propTypes: Icon['__docgenInfo'],
+    component: Icon,
   })
   .add('Icon (default)', () => (
     <Icon

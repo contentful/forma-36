@@ -7,6 +7,7 @@ import CopyButton from './CopyButton';
 storiesOf('Components/CopyButton', module)
   .addParameters({
     propTypes: CopyButton['__docgenInfo'],
+    component: CopyButton,
   })
   .add('default', () => (
     <div>

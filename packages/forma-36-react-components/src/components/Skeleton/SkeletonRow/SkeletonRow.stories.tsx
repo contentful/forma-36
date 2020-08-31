@@ -12,6 +12,7 @@ import TableRow from '../../Table/TableRow';
 storiesOf('Components/Skeleton/SkeletonRow', module)
   .addParameters({
     propTypes: SkeletonRow['__docgenInfo'],
+    component: SkeletonRow,
   })
   .add('default', () => (
     <Table>

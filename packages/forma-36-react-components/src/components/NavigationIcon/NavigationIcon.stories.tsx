@@ -8,6 +8,7 @@ import { navigationIconName } from './constants';
 storiesOf('(alpha)/NavigationIcon', module)
   .addParameters({
     propTypes: NavigationIcon['__docgenInfo'],
+    component: NavigationIcon,
   })
   .add('NavigationIcon (default)', () => (
     <NavigationIcon

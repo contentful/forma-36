@@ -8,6 +8,7 @@ import { AssetIcon } from './AssetIcon';
 storiesOf('Components/Asset/AssetIcon', module)
   .addParameters({
     propTypes: AssetIcon['__docgenInfo'],
+    component: AssetIcon,
   })
   .add('default', () => <AssetIcon className={text('className', '')} />)
   .add('with type image', () => (

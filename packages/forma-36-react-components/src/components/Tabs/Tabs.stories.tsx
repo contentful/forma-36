@@ -113,6 +113,8 @@ storiesOf('Components/Tabs', module)
       Tabs['__docgenInfo'],
       TabPanel['__docgenInfo'],
     ],
+    component: Tab,
+    subcomponents: { Tabs, TabPanel },
   })
   .add('default', () => <DefaultStory />)
   .add('as navigation', () => <AsNavigationStory />);

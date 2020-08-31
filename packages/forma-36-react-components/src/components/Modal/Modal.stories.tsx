@@ -134,6 +134,7 @@ function ControllerModalStory() {
 storiesOf('Components/Modal', module)
   .addParameters({
     propTypes: Modal['__docgenInfo'],
+    component: Modal,
   })
   .add('default', () => <DefaultStory />)
   .add('long', () => <LongModalStory />)

@@ -7,6 +7,7 @@ import FormLabel from './FormLabel';
 storiesOf('Components/FormLabel', module)
   .addParameters({
     propTypes: FormLabel['__docgenInfo'],
+    component: FormLabel,
   })
   .add('default', () => (
     <FormLabel

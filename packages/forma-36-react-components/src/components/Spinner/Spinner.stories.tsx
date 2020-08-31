@@ -7,6 +7,7 @@ import Spinner from './Spinner';
 storiesOf('Components/Spinner', module)
   .addParameters({
     propTypes: Spinner['__docgenInfo'],
+    component: Spinner,
   })
   .add('default', () => (
     <Spinner

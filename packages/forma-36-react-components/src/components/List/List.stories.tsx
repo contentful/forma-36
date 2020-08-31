@@ -9,6 +9,8 @@ import TextLink from '../TextLink';
 storiesOf('Components/List', module)
   .addParameters({
     propTypes: [List['__docgenInfo'], ListItem['__docgenInfo']],
+    component: List,
+    subcomponents: { ListItem },
   })
   .add('default', () => (
     <List className={text('className', '')}>

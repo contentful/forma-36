@@ -9,6 +9,7 @@ import Pill from './Pill';
 storiesOf('Components/Pill', module)
   .addParameters({
     propTypes: Pill['__docgenInfo'],
+    component: Pill,
   })
   .add('default', () => (
     <div>

@@ -10,6 +10,7 @@ import notes from './Button.md';
 storiesOf('Components/Button', module)
   .addParameters({
     propTypes: Button['__docgenInfo'],
+    component: Button,
   })
   .add(
     'Button',

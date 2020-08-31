@@ -7,6 +7,7 @@ import CardDragHandle from './CardDragHandle';
 storiesOf('Components/Card/CardDragHandle', module)
   .addParameters({
     propTypes: CardDragHandle['__docgenInfo'],
+    component: CardDragHandle,
   })
   .add('default', () => (
     <div style={{ height: 100 }}>

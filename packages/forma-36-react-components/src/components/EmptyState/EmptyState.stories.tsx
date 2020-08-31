@@ -11,6 +11,7 @@ const imageUrl =
 storiesOf('Components/EmptyState', module)
   .addParameters({
     propTypes: EmptyState['__docgenInfo'],
+    component: EmptyState,
   })
   .add('default', () => (
     <EmptyState

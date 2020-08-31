@@ -68,6 +68,7 @@ const AutocompleteDefaultStory = ({ items }: { items: Item[] }) => {
 storiesOf('(alpha)/Autocomplete', module)
   .addParameters({
     propTypes: Autocomplete['__docgenInfo'],
+    component: Autocomplete,
   })
   .add('default', () => (
     <AutocompleteDefaultStory items={object('items', items)} />

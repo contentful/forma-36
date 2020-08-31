@@ -8,6 +8,7 @@ import TextLink from '../TextLink';
 storiesOf('Components/Tooltip', module)
   .addParameters({
     propTypes: Tooltip['__docgenInfo'],
+    component: Tooltip,
   })
   .add('default', () => (
     <div>

@@ -9,6 +9,7 @@ import Button from './../Button';
 storiesOf('Components/TextArea', module)
   .addParameters({
     propTypes: Textarea['__docgenInfo'],
+    component: Textarea,
   })
   .add('default', () => (
     <Textarea

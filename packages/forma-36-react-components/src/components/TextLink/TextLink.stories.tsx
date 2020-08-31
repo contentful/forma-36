@@ -10,6 +10,7 @@ import { iconName } from '../Icon/constants';
 storiesOf('Components/TextLink', module)
   .addParameters({
     propTypes: TextLink['__docgenInfo'],
+    component: TextLink,
   })
   .add(
     'default',

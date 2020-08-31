@@ -8,6 +8,7 @@ import TextLink from '../TextLink';
 storiesOf('Components/HelpText', module)
   .addParameters({
     propTypes: HelpText['__docgenInfo'],
+    component: HelpText,
   })
   .add('default', () => (
     <HelpText className={text('className', '')}>

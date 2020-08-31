@@ -7,6 +7,7 @@ import { Asset, types } from './Asset';
 storiesOf('Components/Asset', module)
   .addParameters({
     propTypes: Asset['__docgenInfo'],
+    component: Asset,
   })
   .add('default', () => (
     <Asset

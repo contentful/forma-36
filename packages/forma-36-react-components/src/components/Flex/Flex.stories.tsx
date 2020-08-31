@@ -85,6 +85,7 @@ const DemoBox = ({ times }: { times?: number }) => {
 storiesOf('(alpha)/Flex', module)
   .addParameters({
     propTypes: Flex['__docgenInfo'],
+    component: Flex,
   })
   .add(
     'default',

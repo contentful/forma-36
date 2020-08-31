@@ -8,6 +8,7 @@ import TextField from './TextField';
 storiesOf('Components/TextField', module)
   .addParameters({
     propTypes: TextField['__docgenInfo'],
+    component: TextField,
   })
   .add('default', () => (
     <TextField

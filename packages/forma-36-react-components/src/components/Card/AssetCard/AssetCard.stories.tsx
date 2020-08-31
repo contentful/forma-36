@@ -12,6 +12,7 @@ import { types } from '../../Asset/Asset';
 storiesOf('Components/Card/AssetCard', module)
   .addParameters({
     propTypes: AssetCard['__docgenInfo'],
+    component: AssetCard,
   })
   .add('default', () => (
     <AssetCard

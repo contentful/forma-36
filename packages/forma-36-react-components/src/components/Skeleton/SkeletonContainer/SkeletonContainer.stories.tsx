@@ -9,6 +9,7 @@ import SkeletonContainer from './SkeletonContainer';
 storiesOf('Components/Skeleton/SkeletonContainer', module)
   .addParameters({
     propTypes: SkeletonContainer['__docgenInfo'],
+    component: SkeletonContainer,
   })
 
   .add('default', () => (

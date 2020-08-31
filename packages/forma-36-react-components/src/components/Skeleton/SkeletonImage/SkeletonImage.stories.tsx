@@ -8,6 +8,7 @@ import SkeletonContainer from '../SkeletonContainer';
 storiesOf('Components/Skeleton/SkeletonImage', module)
   .addParameters({
     propTypes: SkeletonImage['__docgenInfo'],
+    component: SkeletonImage,
   })
   .add('default', () => (
     <SkeletonContainer>

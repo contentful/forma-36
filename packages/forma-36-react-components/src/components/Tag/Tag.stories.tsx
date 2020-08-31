@@ -7,6 +7,7 @@ import Tag from './Tag';
 storiesOf('Components/Tag', module)
   .addParameters({
     propTypes: Tag['__docgenInfo'],
+    component: Tag,
   })
   .add('default', () => (
     <Tag

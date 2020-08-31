@@ -8,6 +8,7 @@ import { illustrationName } from './constants';
 storiesOf('Components/Illustration', module)
   .addParameters({
     propTypes: Illustration['__docgenInfo'],
+    component: Illustration,
   })
   .add('default', () => (
     <Illustration

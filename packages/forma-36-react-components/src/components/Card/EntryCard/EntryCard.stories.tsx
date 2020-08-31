@@ -11,6 +11,7 @@ import DropdownListItem from '../../Dropdown/DropdownListItem';
 storiesOf('Components/Card/EntryCard', module)
   .addParameters({
     propTypes: EntryCard['__docgenInfo'],
+    component: EntryCard,
   })
   .add('default', () => (
     <div>

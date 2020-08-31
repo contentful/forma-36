@@ -8,6 +8,7 @@ import ToggleButton from './ToggleButton';
 storiesOf('Components/ToggleButton', module)
   .addParameters({
     propTypes: ToggleButton['__docgenInfo'],
+    component: ToggleButton,
   })
   .add('default', () => (
     <div>

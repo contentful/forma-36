@@ -33,5 +33,6 @@ function DefaultStory() {
 storiesOf('Components/Form/FieldGroup', module)
   .addParameters({
     propTypes: CheckboxField['__docgenInfo'],
+    component: FieldGroup,
   })
   .add('default', () => <DefaultStory />);

@@ -8,6 +8,7 @@ import DropdownListItem from './DropdownListItem';
 storiesOf('Components/Dropdown/DropdownListItem', module)
   .addParameters({
     propTypes: DropdownListItem['__docgenInfo'],
+    component: DropdownListItem,
   })
   .add('default', () => (
     <DropdownListItem

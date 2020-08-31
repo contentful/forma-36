@@ -9,6 +9,7 @@ import Button from './../Button';
 storiesOf('Components/TextInput', module)
   .addParameters({
     propTypes: TextInput['__docgenInfo'],
+    component: TextInput,
   })
   .add('default', () => (
     <TextInput

@@ -5,10 +5,12 @@ import { action } from '@storybook/addon-actions';
 
 import EditorToolbarButton from './EditorToolbarButton';
 import { iconName } from './../../Icon/constants';
+import EditorToolbar from '../EditorToolbar/EditorToolbar';
 
 storiesOf('Components/EditorToolbar/EditorToolbarButton', module)
   .addParameters({
     propTypes: EditorToolbarButton['__docgenInfo'],
+    component: EditorToolbar,
   })
   .add('default', () => (
     <EditorToolbarButton

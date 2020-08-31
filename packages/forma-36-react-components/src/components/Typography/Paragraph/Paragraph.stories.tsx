@@ -7,6 +7,7 @@ import Paragraph from './Paragraph';
 storiesOf('Components/Typography/Paragraph', module)
   .addParameters({
     propTypes: Paragraph['__docgenInfo'],
+    component: Paragraph,
   })
   .add('default', () => (
     <Paragraph
