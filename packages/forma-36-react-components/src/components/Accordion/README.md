@@ -1,5 +1,3 @@
-# Accordion
-
 Accordions are a good way to deliver a large amount of information. An accordion is a list of headers that after being clicked reveal or hide more content related to them.
 The header gives the user a summary of the content and the user decides if they need to see the extended content or not.
 
@@ -51,7 +49,7 @@ import {
 </Accordion>;
 ```
 
-## Content recommendations:
+## Content recommendations
 
 - The title should be a short message that summarize the content of the accordion.
 - Anything can be passed as the content of the accordion, but often organizing it with Paragraphs and Tables would be enough.
@@ -61,23 +59,3 @@ import {
 
 - The title prop accepts React nodes, but we recommend that only Typography components are used.
 - Since the whole header is a button, do not use Buttons or Links in the title prop. The only click event that should exist is the header's event.
-
-## Properies overview:
-
-### Accordion
-
-| Prop        | Description                                                                         |
-| ----------- | ----------------------------------------------------------------------------------- |
-| `align`     | optional, one of `start` or default `end`                                           |
-| `testId`    | string, optional, additional attibute for testing pursposes                         |
-| `className` | string, optional, class names to be appended to the className prop of the component |
-| `children`  | React.ReactNode, optional, child nodes to be rendered in the component              |
-
-### AccordionItem
-
-| Prop           | Description                                                                    |
-| -------------- | ------------------------------------------------------------------------------ |
-| `title`        | required, a string or a ReactNode to define the header content                 |
-| `titleElement` | string, optional, The heading element that will be used by the AccordionHeader |
-| `testId`       | string, optional, additional attibute for testing pursposes                    |
-| `children`     | React.ReactNode, optional, child nodes to be rendered in the component         |
