@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/contentful/forma-36/compare/forma-36-website@0.8.29...forma-36-website@0.9.0) (2020-08-28)
+
+
+### Features
+
+* add modal launcher helper as alpha component ([#552](https://github.com/contentful/forma-36/issues/552)) ([a775798](https://github.com/contentful/forma-36/commit/a775798760ca5087e051b6093f73f1a42f1926a6))
+
+
+
+
+
 ## [0.8.29](https://github.com/contentful/forma-36/compare/forma-36-website@0.8.28...forma-36-website@0.8.29) (2020-08-24)
 
 **Note:** Version bump only for package forma-36-website

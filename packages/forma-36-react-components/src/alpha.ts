@@ -5,3 +5,4 @@ export { Flex } from './components/Flex';
 export { NavigationIcon } from './components/NavigationIcon/NavigationIcon';
 export { Accordion } from './components/Accordion/Accordion';
 export { AccordionItem } from './components/Accordion/AccordionItem';
+export { ModalLauncher } from './components/Modal/ModalLauncher/ModalLauncher';
