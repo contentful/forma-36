@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.50.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.50.1...@contentful/forma-36-react-components@3.50.2) (2020-08-31)
+
+
+### Bug Fixes
+
+* use base card props in entrycard and assetcard ([#547](https://github.com/contentful/forma-36/issues/547)) ([a56d0db](https://github.com/contentful/forma-36/commit/a56d0db140ee9ae314fd5272700142ce26d8d95b))
+
+
+
+
+
+## [3.50.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.50.0...@contentful/forma-36-react-components@3.50.1) (2020-08-31)
+
+
+### Bug Fixes
+
+* make argument of on close optional ([#553](https://github.com/contentful/forma-36/issues/553)) ([0d8c0a2](https://github.com/contentful/forma-36/commit/0d8c0a2fbf3bb9c13ae75581ba8e7c52a5284544))
+
+
+
+
+
 # [3.50.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.49.1...@contentful/forma-36-react-components@3.50.0) (2020-08-28)
 
 

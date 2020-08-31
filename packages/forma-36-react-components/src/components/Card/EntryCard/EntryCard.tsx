@@ -1,7 +1,7 @@
 import React, { Component, MouseEventHandler } from 'react';
 import cn from 'classnames';
 import truncate from 'truncate';
-import Card from '../Card';
+import Card, { BaseCardProps } from '../Card';
 import CardActions from '../CardActions';
 import Tag, { TagType } from '../../Tag';
 import EntryCardSkeleton from './EntryCardSkeleton';
@@ -12,15 +12,11 @@ import styles from './EntryCard.css';
 
 export type EntryCardStatus = 'archived' | 'changed' | 'draft' | 'published';
 
-export type EntryCardPropTypes = {
+export type EntryCardPropTypes = BaseCardProps & {
   /**
    * The title of the entry
    */
   title?: string;
-  /**
-   * An ID used for testing purposes applied as a data attribute (data-test-id)
-   */
-  testId?: string;
   /**
    * The description of the entry
    */
@@ -50,10 +46,6 @@ export type EntryCardPropTypes = {
    */
   onClick?: MouseEventHandler;
   /**
-   * Class names to be appended to the className prop of the component
-   */
-  className?: string;
-  /**
    * The DropdownList elements used to render an actions dropdown for the EntryCard
    */
   dropdownListElements?: React.ReactElement;
@@ -77,8 +69,6 @@ export type EntryCardPropTypes = {
    * Changes the height of the component. When small will also ensure thumbnail and description aren't rendered
    */
   size: 'default' | 'small';
-
-  href?: string;
 } & typeof defaultProps;
 
 const defaultProps = {
@@ -172,7 +162,6 @@ export class EntryCard extends Component<EntryCardPropTypes> {
       className,
       title,
       onClick,
-      testId,
       description,
       contentType,
       status,
@@ -185,7 +174,6 @@ export class EntryCard extends Component<EntryCardPropTypes> {
       cardDragHandleComponent,
       cardDragHandleProps,
       withDragHandle,
-      href,
       ...otherProps
     } = this.props;
 
@@ -202,8 +190,6 @@ export class EntryCard extends Component<EntryCardPropTypes> {
       <Card
         className={classNames}
         onClick={!loading ? onClick : undefined}
-        testId={testId}
-        href={href}
         padding="none"
         {...otherProps}
       >
