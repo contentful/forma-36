@@ -19,6 +19,7 @@ exports[`renders the component with EntityListItems as children 1`] = `
     isActionsDisabled={false}
     testId="cf-ui-entity-list-item"
     title="Entry 1"
+    withThumbnail={true}
   />
   <EntityListItem
     contentType="My content type"
@@ -27,6 +28,7 @@ exports[`renders the component with EntityListItems as children 1`] = `
     isActionsDisabled={false}
     testId="cf-ui-entity-list-item"
     title="Entry 2"
+    withThumbnail={true}
   />
   <EntityListItem
     contentType="My content type"
@@ -35,6 +37,7 @@ exports[`renders the component with EntityListItems as children 1`] = `
     isActionsDisabled={false}
     testId="cf-ui-entity-list-item"
     title="Entry 3"
+    withThumbnail={true}
   />
 </ul>
 `;

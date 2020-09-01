@@ -24,13 +24,13 @@ it('has no a11y issues', async () => {
 
 describe('should have correct styles', () => {
   it('justifyContent should be center by default', () => {
-    const output = shallow(<Flex>Flex</Flex>);
+    const output = shallow(<Flex justifyContent="center">Flex</Flex>);
     const outputStyles = output.get(0).props.style;
     expect(outputStyles).toMatchObject({ justifyContent: 'center' });
   });
 
   it('alignItems should be center by default', () => {
-    const output = shallow(<Flex>Flex</Flex>);
+    const output = shallow(<Flex alignItems="center">Flex</Flex>);
     const outputStyles = output.get(0).props.style;
     expect(outputStyles).toMatchObject({ alignItems: 'center' });
   });

@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.7.3...@contentful/forma-36-tokens@0.8.0) (2020-08-24)
+
+
+### Bug Fixes
+
+* output the correct type for font weights ([159938f](https://github.com/contentful/forma-36/commit/159938ff87e0f792788f7447bef49a52d49feb8a))
+* remove unused key ([2cb30fe](https://github.com/contentful/forma-36/commit/2cb30fe8b4a3f332483b64a67164a2463e044f67))
+
+
+### Features
+
+* a more general way of getting types ([dbfc15e](https://github.com/contentful/forma-36/commit/dbfc15ea4d6f7b525ef67706ffe9212b712ba9a2))
+
+
+
+
+
 ## [0.7.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.7.2...@contentful/forma-36-tokens@0.7.3) (2020-08-20)
 
 

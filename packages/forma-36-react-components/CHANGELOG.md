@@ -3,6 +3,102 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.50.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.50.1...@contentful/forma-36-react-components@3.50.2) (2020-08-31)
+
+
+### Bug Fixes
+
+* use base card props in entrycard and assetcard ([#547](https://github.com/contentful/forma-36/issues/547)) ([a56d0db](https://github.com/contentful/forma-36/commit/a56d0db140ee9ae314fd5272700142ce26d8d95b))
+
+
+
+
+
+## [3.50.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.50.0...@contentful/forma-36-react-components@3.50.1) (2020-08-31)
+
+
+### Bug Fixes
+
+* make argument of on close optional ([#553](https://github.com/contentful/forma-36/issues/553)) ([0d8c0a2](https://github.com/contentful/forma-36/commit/0d8c0a2fbf3bb9c13ae75581ba8e7c52a5284544))
+
+
+
+
+
+# [3.50.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.49.1...@contentful/forma-36-react-components@3.50.0) (2020-08-28)
+
+
+### Features
+
+* add modal launcher helper as alpha component ([#552](https://github.com/contentful/forma-36/issues/552)) ([a775798](https://github.com/contentful/forma-36/commit/a775798760ca5087e051b6093f73f1a42f1926a6))
+
+
+
+
+
+## [3.49.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.49.0...@contentful/forma-36-react-components@3.49.1) (2020-08-24)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+# [3.49.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.48.0...@contentful/forma-36-react-components@3.49.0) (2020-08-24)
+
+
+### Features
+
+* **entityList:** add forwardRef to component ([#545](https://github.com/contentful/forma-36/issues/545)) ([dd67886](https://github.com/contentful/forma-36/commit/dd678866866cd3674990f0451d8b9199d0991031))
+
+
+
+
+
+# [3.48.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.47.1...@contentful/forma-36-react-components@3.48.0) (2020-08-24)
+
+
+### Features
+
+* **entity-list-item:** add withThumbnail prop ([#546](https://github.com/contentful/forma-36/issues/546)) ([17aa908](https://github.com/contentful/forma-36/commit/17aa908c6b57736299779d7e1e4341cc53c11183))
+
+
+
+
+
+## [3.47.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.47.0...@contentful/forma-36-react-components@3.47.1) (2020-08-24)
+
+
+### Bug Fixes
+
+* use FieldGroup classname property ([#542](https://github.com/contentful/forma-36/issues/542)) ([f622bc7](https://github.com/contentful/forma-36/commit/f622bc732f2e24e7d848dd590625f4cd4032b9e8))
+
+
+
+
+
+# [3.47.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.46.2...@contentful/forma-36-react-components@3.47.0) (2020-08-21)
+
+
+### Features
+
+* **note:** close button ([9e052c7](https://github.com/contentful/forma-36/commit/9e052c7cb55bb7d540072bf600f0b5a52f5f5b8c))
+
+
+
+
+
+## [3.46.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.46.1...@contentful/forma-36-react-components@3.46.2) (2020-08-20)
+
+
+### Bug Fixes
+
+* Flex default props ([#540](https://github.com/contentful/forma-36/issues/540)) ([3244ed9](https://github.com/contentful/forma-36/commit/3244ed994b98f9e80c4bb3e335b4e7438a345b3e))
+
+
+
+
+
 ## [3.46.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.46.0...@contentful/forma-36-react-components@3.46.1) (2020-08-20)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components

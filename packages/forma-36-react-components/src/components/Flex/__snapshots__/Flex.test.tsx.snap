@@ -6,11 +6,11 @@ exports[`renders the component 1`] = `
   data-test-id="cf-ui-flex"
   style={
     Object {
-      "alignItems": "center",
+      "alignItems": undefined,
       "alignSelf": undefined,
-      "flexDirection": "row",
+      "flexDirection": undefined,
       "flexWrap": undefined,
-      "justifyContent": "center",
+      "justifyContent": undefined,
       "justifyItems": undefined,
       "justifySelf": undefined,
       "marginBottom": undefined,
@@ -34,11 +34,11 @@ exports[`renders the component with an additional class name 1`] = `
   data-test-id="cf-ui-flex"
   style={
     Object {
-      "alignItems": "center",
+      "alignItems": undefined,
       "alignSelf": undefined,
-      "flexDirection": "row",
+      "flexDirection": undefined,
       "flexWrap": undefined,
-      "justifyContent": "center",
+      "justifyContent": undefined,
       "justifyItems": undefined,
       "justifySelf": undefined,
       "marginBottom": undefined,

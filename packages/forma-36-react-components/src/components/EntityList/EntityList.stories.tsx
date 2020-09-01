@@ -30,4 +30,18 @@ storiesOf('Components|EntityList/EntityList', module)
         status="published"
       />
     </EntityList>
-  ));
+  ))
+  .add('with Ref', () => {
+    const ref = React.createRef<HTMLUListElement>();
+
+    return (
+      <EntityList className={text('className', '')} ref={ref}>
+        <EntityListItem
+          title="Entry 1"
+          description="Description"
+          contentType="My content type"
+          status="published"
+        />
+      </EntityList>
+    );
+  });

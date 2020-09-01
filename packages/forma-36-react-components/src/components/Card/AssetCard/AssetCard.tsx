@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
-import Card from '../Card';
+import Card, { BaseCardProps } from '../Card';
 import CardActions from './../CardActions';
 import Asset from '../../Asset';
 import { AssetType } from '../../Asset';
@@ -11,7 +11,7 @@ import styles from './AssetCard.css';
 
 export type AssetState = 'archived' | 'changed' | 'draft' | 'published';
 
-export type AssetCardProps = {
+export type AssetCardProps = BaseCardProps & {
   /**
    * The source of the asset (will also render a thumbnail if the AssetCard's type is set to image)
    */
@@ -20,10 +20,6 @@ export type AssetCardProps = {
    * The title of the asset
    */
   title: string;
-  /**
-   * Class names to be appended to the className prop of the component
-   */
-  className?: string;
   /**
    * Loading state for the AssetCard - when true will display loading feedback to the user
    */
@@ -36,10 +32,6 @@ export type AssetCardProps = {
    * The publish status of the asset
    */
   status?: AssetState;
-  /**
-   * An ID used for testing purposes applied as a data attribute (data-test-id)
-   */
-  testId?: string;
   /**
    * The type of asset being represented
    */
@@ -64,8 +56,6 @@ export type AssetCardProps = {
    * Renders a small variant of the card which accommodates a 150x150px image
    */
   size?: 'small' | 'default';
-
-  href?: string;
 } & typeof defaultProps;
 
 const defaultProps = {
@@ -138,12 +128,10 @@ export class AssetCard extends Component<AssetCardProps> {
       isLoading,
       dropdownListElements,
       isDragActive,
-      testId,
       size,
       cardDragHandleProps,
       cardDragHandleComponent,
       withDragHandle,
-      href,
       ...otherProps
     } = this.props;
 
@@ -157,14 +145,7 @@ export class AssetCard extends Component<AssetCardProps> {
     );
 
     return (
-      <Card
-        className={classNames}
-        padding="none"
-        title={title}
-        testId={testId}
-        href={href}
-        {...otherProps}
-      >
+      <Card className={classNames} padding="none" title={title} {...otherProps}>
         {isLoading ? (
           <AssetCardSkeleton size={size} />
         ) : (
