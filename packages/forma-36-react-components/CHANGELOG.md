@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.51.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.50.2...@contentful/forma-36-react-components@3.51.0) (2020-09-02)
+
+
+### Features
+
+* button readme proposal ([#525](https://github.com/contentful/forma-36/issues/525)) ([dd17bab](https://github.com/contentful/forma-36/commit/dd17bab9245773d618765765fb58887ba9a5650a))
+
+
+
+
+
 ## [3.50.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.50.1...@contentful/forma-36-react-components@3.50.2) (2020-08-31)
 
 
