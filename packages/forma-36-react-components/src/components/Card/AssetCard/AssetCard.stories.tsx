@@ -9,9 +9,10 @@ import DropdownListItem from '../../Dropdown/DropdownListItem';
 import CardDragHandle from './../CardDragHandle';
 import { types } from '../../Asset/Asset';
 
-storiesOf('Components|Card/AssetCard', module)
+storiesOf('Components/Card/AssetCard', module)
   .addParameters({
     propTypes: AssetCard['__docgenInfo'],
+    component: AssetCard,
   })
   .add('default', () => (
     <AssetCard

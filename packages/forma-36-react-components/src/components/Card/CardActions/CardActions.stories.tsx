@@ -7,9 +7,10 @@ import CardActions from './CardActions';
 import DropdownList from './../../Dropdown/DropdownList';
 import DropdownListItem from './../../Dropdown/DropdownListItem';
 
-storiesOf('Components|Card/CardActions', module)
+storiesOf('Components/Card/CardActions', module)
   .addParameters({
     propTypes: CardActions['__docgenInfo'],
+    component: CardActions,
   })
   .add('default', () => (
     <CardActions

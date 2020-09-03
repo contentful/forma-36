@@ -9,9 +9,10 @@ import Subheading from './../Subheading';
 import SectionHeading from '../SectionHeading';
 import Paragraph from './../Paragraph';
 
-storiesOf('Components|Typography/Typography', module)
+storiesOf('Components/Typography/Typography', module)
   .addParameters({
     propTypes: Typography['__docgenInfo'],
+    component: Typography,
   })
   .add(
     'DisplayText - Large',

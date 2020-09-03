@@ -8,14 +8,6 @@ import styles from '../Accordion.css';
 
 export interface AccordionItemProps {
   /**
-   * The children of the AccordionItem are in fact the content of the accordion
-   */
-  children?: React.ReactNode;
-  /**
-   * An ID used for testing purposes applied as a data attribute (data-test-id)
-   */
-  testId?: string;
-  /**
    * The accordion title
    */
   title: React.ReactNode;
@@ -23,6 +15,14 @@ export interface AccordionItemProps {
    * The heading element that will be used by the AccordionHeader
    */
   titleElement?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  /**
+   * The children of the AccordionItem are in fact the content of the accordion
+   */
+  children?: React.ReactNode;
+  /**
+   * An ID used for testing purposes applied as a data attribute (data-test-id)
+   */
+  testId?: string;
 }
 
 const defaultProps: AccordionItemProps = {

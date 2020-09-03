@@ -14,7 +14,7 @@ const getUniqueNumber = () => {
   return index;
 };
 
-storiesOf('Components|Notification', module)
+storiesOf('Components/Notification', module)
   .add(
     'default',
     () => {

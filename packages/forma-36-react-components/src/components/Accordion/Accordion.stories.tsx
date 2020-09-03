@@ -1,52 +1,57 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { text, select } from '@storybook/addon-knobs';
 
-import Accordion from './Accordion';
+import Accordion, { AccordionProps } from './Accordion';
 import AccordionItem from './AccordionItem';
 import Typography from '../Typography/Typography';
 import Paragraph from '../Typography/Paragraph';
 import notes from './README.md';
+
+export default {
+  title: '(alpha)/Accordion',
+  component: Accordion,
+  subcomponents: { AccordionItem },
+  parameters: {
+    propTypes: [Accordion['__docgenInfo'], AccordionItem['__docgenInfo']],
+    notes,
+  },
+  argTypes: {
+    align: { control: { type: 'select', options: ['start', 'end'] } },
+    children: { control: { disable: true } },
+    className: { control: { disable: true } },
+    testId: { control: { disable: true } },
+  },
+};
 
 const defaultText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
 enim ad minim veniam, quis nostrud exercitation ullamco laboris
 nisi ut aliquip ex ea commodo consequat.`;
 
-storiesOf('(alpha))|Accordion', module)
-  .addParameters({
-    propTypes: [Accordion['__docgenInfo'], AccordionItem['__docgenInfo']],
-  })
-  .add(
-    'default',
-    () => (
-      <Accordion
-        align={select('Align', ['start', 'end'], Accordion.defaultProps.align)}
-      >
-        <AccordionItem title={text('First accordion title', 'First accordion')}>
-          <Typography>
-            <Paragraph>
-              {text('First accordion content', defaultText)}
-            </Paragraph>
-          </Typography>
-        </AccordionItem>
-        <AccordionItem
-          title={text('Second accordion title', 'Second accordion')}
-        >
-          <Typography>
-            <Paragraph>
-              {text('Second accordion content', defaultText)}
-            </Paragraph>
-          </Typography>
-        </AccordionItem>
-        <AccordionItem title={text('Third accordion title', 'Third accordion')}>
-          <Typography>
-            <Paragraph>
-              {text('Third accordion content', defaultText)}
-            </Paragraph>
-          </Typography>
-        </AccordionItem>
-      </Accordion>
-    ),
-    { notes },
-  );
+export const basic = ({ align, ...args }: AccordionProps) => (
+  <Accordion align={align}>
+    <AccordionItem title={args['AccordionItem Title #1']}>
+      <Typography>
+        <Paragraph>{args['AccordionItem Content #1']}</Paragraph>
+      </Typography>
+    </AccordionItem>
+    <AccordionItem title={args['AccordionItem Title #2']}>
+      <Typography>
+        <Paragraph>{args['AccordionItem Content #2']}</Paragraph>
+      </Typography>
+    </AccordionItem>
+    <AccordionItem title={args['AccordionItem Title #3']}>
+      <Typography>
+        <Paragraph>{args['AccordionItem Content #3']}</Paragraph>
+      </Typography>
+    </AccordionItem>
+  </Accordion>
+);
+basic.args = {
+  align: 'end',
+  ['AccordionItem Title #1']: 'Accordion I',
+  ['AccordionItem Content #1']: defaultText,
+  ['AccordionItem Title #2']: 'Accordion II',
+  ['AccordionItem Content #2']: defaultText,
+  ['AccordionItem Title #3']: 'Accordion III',
+  ['AccordionItem Content #3']: defaultText,
+};

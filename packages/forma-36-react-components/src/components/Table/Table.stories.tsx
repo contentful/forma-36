@@ -88,7 +88,7 @@ function WithLoadingStateStory() {
   );
 }
 
-storiesOf('Components|Table', module)
+storiesOf('Components/Table', module)
   .addParameters({
     propTypes: [
       Table['__docgenInfo'],
@@ -97,6 +97,8 @@ storiesOf('Components|Table', module)
       TableCell['__docgenInfo'],
       TableRow['__docgenInfo'],
     ],
+    component: Table,
+    subcomponents: { TableHead, TableBody, TableCell, TableRow },
   })
   .add('default', () => <DefaultStory />, { notes })
   .add('with loading state', () => <WithLoadingStateStory />, { notes });

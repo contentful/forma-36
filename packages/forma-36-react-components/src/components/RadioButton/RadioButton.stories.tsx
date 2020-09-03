@@ -4,9 +4,10 @@ import { text, boolean } from '@storybook/addon-knobs';
 
 import RadioButton from './RadioButton';
 
-storiesOf('Components|RadioButton', module)
+storiesOf('Components/RadioButton', module)
   .addParameters({
     propTypes: RadioButton['__docgenInfo'],
+    component: RadioButton,
   })
   .add('default', () => (
     <RadioButton

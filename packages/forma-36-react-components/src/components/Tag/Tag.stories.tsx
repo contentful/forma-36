@@ -4,9 +4,10 @@ import { text, select } from '@storybook/addon-knobs';
 
 import Tag from './Tag';
 
-storiesOf('Components|Tag', module)
+storiesOf('Components/Tag', module)
   .addParameters({
     propTypes: Tag['__docgenInfo'],
+    component: Tag,
   })
   .add('default', () => (
     <Tag

@@ -6,12 +6,14 @@ import EditorToolbar from './EditorToolbar';
 import Button from '../../Button';
 import EditorToolbarButton from '../EditorToolbarButton';
 
-storiesOf('Components|EditorToolbar', module)
+storiesOf('Components/EditorToolbar', module)
   .addParameters({
     propTypes: [
       EditorToolbar['__docgenInfo'],
       EditorToolbarButton['__docgenInfo'],
     ],
+    component: EditorToolbar,
+    subcomponents: { EditorToolbarButton },
   })
   .add('default', () => (
     <EditorToolbar

@@ -4,9 +4,10 @@ import { text, select, number } from '@storybook/addon-knobs';
 
 import Spinner from './Spinner';
 
-storiesOf('Components|Spinner', module)
+storiesOf('Components/Spinner', module)
   .addParameters({
     propTypes: Spinner['__docgenInfo'],
+    component: Spinner,
   })
   .add('default', () => (
     <Spinner

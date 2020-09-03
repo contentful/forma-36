@@ -4,9 +4,10 @@ import { text, select } from '@storybook/addon-knobs';
 
 import DisplayText from './DisplayText';
 
-storiesOf('Components|Typography/DisplayText', module)
+storiesOf('Components/Typography/DisplayText', module)
   .addParameters({
     propTypes: DisplayText['__docgenInfo'],
+    component: DisplayText,
   })
   .add('default', () => (
     <DisplayText

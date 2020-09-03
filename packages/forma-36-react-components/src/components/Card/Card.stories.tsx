@@ -5,9 +5,10 @@ import { action } from '@storybook/addon-actions';
 
 import Card from './Card';
 
-storiesOf('Components|Card', module)
+storiesOf('Components/Card', module)
   .addParameters({
     propTypes: Card['__docgenInfo'],
+    component: Card,
   })
   .add('default', () => (
     <Card

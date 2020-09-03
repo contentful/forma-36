@@ -7,9 +7,10 @@ import TextLink from './TextLink';
 import notes from './TextLink.md';
 import { iconName } from '../Icon/constants';
 
-storiesOf('Components|TextLink', module)
+storiesOf('Components/TextLink', module)
   .addParameters({
     propTypes: TextLink['__docgenInfo'],
+    component: TextLink,
   })
   .add(
     'default',

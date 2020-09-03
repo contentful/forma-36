@@ -4,9 +4,10 @@ import { text, select } from '@storybook/addon-knobs';
 
 import Subheading from './Subheading';
 
-storiesOf('Components|Typography/Subheading', module)
+storiesOf('Components/Typography/Subheading', module)
   .addParameters({
     propTypes: Subheading['__docgenInfo'],
+    component: Subheading,
   })
   .add('default', () => (
     <Subheading

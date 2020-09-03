@@ -6,9 +6,10 @@ import { action } from '@storybook/addon-actions';
 import TextInput from './TextInput';
 import Button from './../Button';
 
-storiesOf('Components|TextInput', module)
+storiesOf('Components/TextInput', module)
   .addParameters({
     propTypes: TextInput['__docgenInfo'],
+    component: TextInput,
   })
   .add('default', () => (
     <TextInput

@@ -169,13 +169,15 @@ function DynamicContentStory() {
   );
 }
 
-storiesOf('Components|Dropdown', module)
+storiesOf('Components/Dropdown', module)
   .addParameters({
     propTypes: [
       Dropdown['__docgenInfo'],
       DropdownList['__docgenInfo'],
       DropdownListItem['__docgenInfo'],
     ],
+    component: Dropdown,
+    subcomponents: { DropdownList, DropdownListItem },
   })
   .add('default', () => <DefaultStory />)
   .add('scrollable', () => <ScrollableStory />)

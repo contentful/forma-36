@@ -1,14 +1,16 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { text } from '@storybook/addon-knobs/react';
+import { text } from '@storybook/addon-knobs';
 
 import List from './List';
 import ListItem from './ListItem';
 import TextLink from '../TextLink';
 
-storiesOf('Components|List', module)
+storiesOf('Components/List', module)
   .addParameters({
     propTypes: [List['__docgenInfo'], ListItem['__docgenInfo']],
+    component: List,
+    subcomponents: { ListItem },
   })
   .add('default', () => (
     <List className={text('className', '')}>

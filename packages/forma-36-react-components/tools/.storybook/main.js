@@ -1,11 +1,13 @@
 const path = require('path');
 
 module.exports = {
-  stories: ['./docs/**/*.stories.tsx', '../../src/components/**/*.stories.tsx'],
+  stories: ['./docs/**/*.stories.mdx', '../../src/components/**/*.stories.tsx'],
   addons: [
+    '@storybook/addon-essentials',
     '@storybook/addon-knobs',
-    'storybook-prop-types-addon',
     '@storybook/addon-a11y',
+    'storybook-prop-types-addon',
+    'storybook-addon-jsx',
     {
       name: '@storybook/addon-storysource',
       options: {
@@ -15,8 +17,5 @@ module.exports = {
         },
       },
     },
-    '@storybook/addon-actions',
-    '@storybook/addon-notes',
-    'storybook-addon-jsx',
   ],
 };

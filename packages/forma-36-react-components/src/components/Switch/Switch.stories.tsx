@@ -19,8 +19,9 @@ function DefaultStory() {
   );
 }
 
-storiesOf('Components|Switch', module)
+storiesOf('Components/Switch', module)
   .addParameters({
     propTypes: Switch['__docgenInfo'],
+    component: Switch,
   })
   .add('default', () => <DefaultStory />);

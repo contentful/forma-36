@@ -7,9 +7,10 @@ import Workbench from './Workbench';
 import Icon from '../Icon';
 import Button from '../Button';
 
-storiesOf('(alpha)|Workbench', module)
+storiesOf('(alpha)/Workbench', module)
   .addParameters({
     propTypes: Workbench['__docgenInfo'],
+    component: Workbench,
   })
   .add('default', () => (
     <Workbench className={text('className', '')} testId={text('testId')}>

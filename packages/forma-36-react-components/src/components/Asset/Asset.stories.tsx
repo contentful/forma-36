@@ -4,9 +4,10 @@ import { text, select } from '@storybook/addon-knobs';
 
 import { Asset, types } from './Asset';
 
-storiesOf('Components|Asset', module)
+storiesOf('Components/Asset', module)
   .addParameters({
     propTypes: Asset['__docgenInfo'],
+    component: Asset,
   })
   .add('default', () => (
     <Asset
@@ -30,6 +31,6 @@ storiesOf('Components|Asset', module)
       src={text('src', 'https://placekitten.com/200/300')}
       title={text('title', 'Image of a cat')}
       type={select('type', types, 'image')}
-      status='archived'
+      status="archived"
     />
   ));

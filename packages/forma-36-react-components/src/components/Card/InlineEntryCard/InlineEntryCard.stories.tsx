@@ -7,9 +7,10 @@ import InlineEntryCard from './InlineEntryCard';
 import DropdownListItem from '../../Dropdown/DropdownListItem';
 import DropdownList from '../../Dropdown/DropdownList';
 
-storiesOf('Components|Card/InlineEntryCard', module)
+storiesOf('Components/Card/InlineEntryCard', module)
   .addParameters({
     propTypes: InlineEntryCard['__docgenInfo'],
+    component: InlineEntryCard,
   })
   .add('default', () => (
     <div

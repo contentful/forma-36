@@ -26,6 +26,7 @@ module.exports = {
     },
   },
   rules: {
+    'react/prop-types': 'off',
     'react/prefer-stateless-function': [0, { ignorePureComponents: true }],
     'react/jsx-filename-extension': { extensions: ['.js', '.jsx'] },
     'react/forbid-prop-types': 0,

@@ -5,9 +5,11 @@ import { text } from '@storybook/addon-knobs';
 import EntityList from './EntityList';
 import EntityListItem from './EntityListItem';
 
-storiesOf('Components|EntityList/EntityList', module)
+storiesOf('Components/EntityList/EntityList', module)
   .addParameters({
     propTypes: EntityList['__docgenInfo'],
+    component: EntityList,
+    subcomponents: { EntityListItem },
   })
   .add('default', () => (
     <EntityList className={text('className', '')}>

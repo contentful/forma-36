@@ -5,9 +5,10 @@ import { iconName } from '../Icon/constants';
 
 import ToggleButton from './ToggleButton';
 
-storiesOf('Components|ToggleButton', module)
+storiesOf('Components/ToggleButton', module)
   .addParameters({
     propTypes: ToggleButton['__docgenInfo'],
+    component: ToggleButton,
   })
   .add('default', () => (
     <div>

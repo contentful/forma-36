@@ -5,15 +5,12 @@ import { text, select } from '@storybook/addon-knobs';
 import { types, AssetType } from '../Asset';
 import { AssetIcon } from './AssetIcon';
 
-storiesOf('Components|Asset/AssetIcon', module)
+storiesOf('Components/Asset/AssetIcon', module)
   .addParameters({
     propTypes: AssetIcon['__docgenInfo'],
+    component: AssetIcon,
   })
-  .add('default', () => (
-    <AssetIcon
-      className={text('className', '')}
-    />
-  ))
+  .add('default', () => <AssetIcon className={text('className', '')} />)
   .add('with type image', () => (
     <AssetIcon
       className={text('className', '')}

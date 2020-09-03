@@ -5,9 +5,10 @@ import { boolean, select, text } from '@storybook/addon-knobs';
 import notes from './Note.md';
 import Note from './Note';
 
-storiesOf('Components|Note', module)
+storiesOf('Components/Note', module)
   .addParameters({
     propTypes: Note['__docgenInfo'],
+    component: Note,
   })
   .add(
     'default',

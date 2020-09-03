@@ -6,9 +6,10 @@ import { action } from '@storybook/addon-actions';
 import SelectField from './SelectField';
 import Option from '../Select/Option';
 
-storiesOf('Components|SelectField', module)
+storiesOf('Components/SelectField', module)
   .addParameters({
     propTypes: [SelectField['__docgenInfo'], Option['__docgenInfo']],
+    component: SelectField,
   })
   .add('default', () => (
     <SelectField

@@ -5,9 +5,10 @@ import { text, select } from '@storybook/addon-knobs';
 import Tooltip from './Tooltip';
 import TextLink from '../TextLink';
 
-storiesOf('Components|Tooltip', module)
+storiesOf('Components/Tooltip', module)
   .addParameters({
     propTypes: Tooltip['__docgenInfo'],
+    component: Tooltip,
   })
   .add('default', () => (
     <div>
