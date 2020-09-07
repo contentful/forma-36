@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.51.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.51.1...@contentful/forma-36-react-components@3.51.2) (2020-09-07)
+
+
+### Bug Fixes
+
+* GridItem className and stories ([#555](https://github.com/contentful/forma-36/issues/555)) ([c22b8af](https://github.com/contentful/forma-36/commit/c22b8af4a620a05800ba56a32d84d74c7354fc6d))
+
+
+
+
+
 ## [3.51.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.51.0...@contentful/forma-36-react-components@3.51.1) (2020-09-03)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
