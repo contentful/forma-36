@@ -69,7 +69,8 @@ storiesOf('(alpha)/Grid/GridItem', module)
           columnEnd: number('columnEnd', 3, '', gridItemKnobsId),
           rowStart: number('rowStart', 1, '', gridItemKnobsId),
           rowEnd: number('rowEnd', 4, '', gridItemKnobsId),
-          area: text('className', '', gridItemKnobsId),
+          area: text('area', '', gridItemKnobsId),
+          className: text('className', '', gridItemKnobsId),
           order: number('order', 0, '', gridItemKnobsId),
         },
       };
@@ -89,6 +90,7 @@ storiesOf('(alpha)/Grid/GridItem', module)
             columnEnd={knobs.gridItem.columnEnd}
             rowStart={knobs.gridItem.rowStart}
             rowEnd={knobs.gridItem.rowEnd}
+            className={knobs.gridItem.className}
             area={knobs.gridItem.area}
             order={knobs.gridItem.order}
           />

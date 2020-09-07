@@ -28,10 +28,13 @@ export interface GridItemProps {
   area?: CSS.GridAreaProperty;
   /**
    * order css property */
-  order?: number
+  order?: number;
   /**
-   * order css property */
-  style?: React.CSSProperties
+   * inline css properties */
+  style?: React.CSSProperties;
+  /**
+   * html tag */
+  htmlTag?: React.ElementType;
 }
 
 export const GridItem = (props: GridItemProps) => {
@@ -44,31 +47,36 @@ export const GridItem = (props: GridItemProps) => {
     rowEnd,
     area,
     order,
+    htmlTag: Container = 'div',
     ...otherProps
   } = props;
 
-  const handleShorthand = (property: string, start?: string|number, end?: string|number) => {
-    if(start && end) {
-      return {[`grid${property}`]: `${start} / ${end}`}
+  const handleShorthand = (
+    property: string,
+    start?: string | number,
+    end?: string | number,
+  ) => {
+    if (start && end) {
+      return { [`grid${property}`]: `${start} / ${end}` };
     } else if (start && !end) {
-      return {[`grid${property}Start`]: start}
+      return { [`grid${property}Start`]: start };
     } else if (end && !start) {
-      return {[`grid${property}End`]: end}
+      return { [`grid${property}End`]: end };
     }
-  }
+  };
 
   const style = {
     ...handleShorthand('Column', columnStart, columnEnd),
     ...handleShorthand('Row', rowStart, rowEnd),
     gridArea: area,
     order,
-    ...props.style
+    ...props.style,
   };
 
   return (
-    <div {...otherProps} style={style} {...className}>
+    <Container {...otherProps} className={className} style={style}>
       {children}
-    </div>
+    </Container>
   );
 };
 
