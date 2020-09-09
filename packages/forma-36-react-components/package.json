@@ -137,7 +137,7 @@
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
     "semantic-release": "semantic-release",
-    "storybook": "yarn build-storybook -c tools/.storybook -o dist-storybook"
+    "storybook": "yarn build-storybook -c tools/.storybook -s ./tools/.storybook/public -o dist-storybook"
   },
   "jest": {
     "setupFilesAfterEnv": [
