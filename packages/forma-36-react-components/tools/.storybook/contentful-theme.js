@@ -1,13 +1,15 @@
 import { create } from '@storybook/theming';
 import tokens from '@contentful/forma-36-tokens';
 
+import logo from './docs/images/forma-logo.png';
+
 export default create({
   base: 'light',
 
   // Branding information
-  brandTitle: 'Forma 36 React Components',
+  brandTitle: 'Forma 36',
   brandUrl: '/',
-  brandImage: null,
+  brandImage: logo,
 
   // Color palette
   colorPrimary: tokens.colorPrimary,
