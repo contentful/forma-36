@@ -15,20 +15,7 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <div
-  0="m"
-  1="y"
-  10="l"
-  11="a"
-  12="s"
-  13="s"
-  2="-"
-  3="e"
-  4="x"
-  5="t"
-  6="r"
-  7="a"
-  8="-"
-  9="c"
+  className="my-extra-class"
   style={
     Object {
       "gridArea": undefined,
