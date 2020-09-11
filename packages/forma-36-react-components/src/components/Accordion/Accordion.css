@@ -62,7 +62,7 @@
 
 .AccordionHeader--expanded {
   & .AccordionHeader__icon {
-    transform: rotate(90deg);
+    transform: rotate(180deg);
   }
 }
 
