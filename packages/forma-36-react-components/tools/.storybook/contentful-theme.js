@@ -29,10 +29,9 @@ export default create({
   textInverseColor: tokens.colorWhite,
 
   // Toolbar default and active colors
-  barTextColor: tokens.colorText,
+  barTextColor: tokens.colorTextLightest,
   barSelectedColor: tokens.colorPrimary,
   barBg: tokens.colorWhite,
-
   // Form colors
   inputBg: tokens.colorWhite,
   inputBorder: tokens.colorElementMid,
