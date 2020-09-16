@@ -18,6 +18,15 @@ exports[`renders a "changed" Tag 1`] = `
 </div>
 `;
 
+exports[`renders a "deleted" Tag 1`] = `
+<div
+  className="Tag Tag--negative"
+  data-test-id="cf-ui-tag"
+>
+  Deleted
+</div>
+`;
+
 exports[`renders a "draft" Tag 1`] = `
 <div
   className="Tag Tag--warning"

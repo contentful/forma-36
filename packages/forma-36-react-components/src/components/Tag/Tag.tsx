@@ -11,13 +11,14 @@ export type TagType =
   | 'secondary'
   | 'muted';
 
-type Status = 'published' | 'draft' | 'archived' | 'changed';
+type Status = 'published' | 'draft' | 'archived' | 'changed' | 'deleted';
 
 const statusTagTypeMap = {
   published: 'positive',
   draft: 'warning',
   archived: 'negative',
   changed: 'primary',
+  deleted: 'negative',
 };
 
 export type TagProps = {
