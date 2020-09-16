@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.52.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.51.4...@contentful/forma-36-react-components@3.52.0) (2020-09-16)
+
+
+### Features
+
+* **tag:** add deleted variant to entityStatusType ([#563](https://github.com/contentful/forma-36/issues/563)) ([bd39d0d](https://github.com/contentful/forma-36/commit/bd39d0d820f3090a8c84c95764401983a0d22d73))
+
+
+
+
+
 ## [3.51.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.51.3...@contentful/forma-36-react-components@3.51.4) (2020-09-14)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
