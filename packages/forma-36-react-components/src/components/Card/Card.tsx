@@ -12,6 +12,10 @@ export interface BaseCardProps {
    */
   href?: string;
   /**
+   * Used with href to specify target attribute value
+   */
+  target?: React.AnchorHTMLAttributes<HTMLAnchorElement>['target'];
+  /**
    * Applies selected styles to the element
    */
   selected?: boolean;
@@ -66,6 +70,7 @@ export class Card extends Component<CardPropTypes> {
       testId,
       children,
       href,
+      target,
       onClick,
       padding,
       selected,
@@ -83,6 +88,7 @@ export class Card extends Component<CardPropTypes> {
       Element,
       {
         href,
+        target: href && target,
         className: classNames,
         onClick: this.handleClick,
         'data-test-id': testId,
