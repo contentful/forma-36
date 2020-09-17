@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1-alpha.39](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-datepicker@0.3.1-alpha.38...@contentful/forma-36-react-datepicker@0.3.1-alpha.39) (2020-09-17)
+
+
+### Reverts
+
+* Revert "[WIP] Chore/update dependencies (#562)" (#565) ([3c5c3ee](https://github.com/contentful/forma-36/commit/3c5c3ee42e89355578618f37a4df279047f90770)), closes [#562](https://github.com/contentful/forma-36/issues/562) [#565](https://github.com/contentful/forma-36/issues/565)
+
+
+
+
+
 ## [0.3.1-alpha.38](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-datepicker@0.3.1-alpha.37...@contentful/forma-36-react-datepicker@0.3.1-alpha.38) (2020-09-17)
 
 **Note:** Version bump only for package @contentful/forma-36-react-datepicker

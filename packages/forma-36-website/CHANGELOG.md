@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.10](https://github.com/contentful/forma-36/compare/forma-36-website@0.9.9...forma-36-website@0.9.10) (2020-09-17)
+
+
+### Reverts
+
+* Revert "[WIP] Chore/update dependencies (#562)" (#565) ([3c5c3ee](https://github.com/contentful/forma-36/commit/3c5c3ee42e89355578618f37a4df279047f90770)), closes [#562](https://github.com/contentful/forma-36/issues/562) [#565](https://github.com/contentful/forma-36/issues/565)
+
+
+
+
+
 ## [0.9.9](https://github.com/contentful/forma-36/compare/forma-36-website@0.9.8...forma-36-website@0.9.9) (2020-09-17)
 
 **Note:** Version bump only for package forma-36-website
