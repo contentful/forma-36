@@ -1,6 +1,6 @@
 {
   "name": "@contentful/forma-36-react-datepicker",
-  "version": "0.3.1-alpha.37",
+  "version": "0.3.1-alpha.38",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/forma-36-react-datepicker.esm.js",
