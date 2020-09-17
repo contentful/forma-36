@@ -30,6 +30,7 @@ storiesOf('Components/Tag', module)
           Archived: 'archived',
           draft: 'draft',
           changed: 'changed',
+          deleted: 'deleted',
           'None (default)': undefined,
         },
         undefined,

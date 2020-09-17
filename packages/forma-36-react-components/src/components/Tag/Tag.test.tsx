@@ -75,6 +75,12 @@ it('renders a "changed" Tag', () => {
   expect(output).toMatchSnapshot();
 });
 
+it('renders a "deleted" Tag', () => {
+  const output = shallow(<Tag entityStatusType="deleted">Deleted</Tag>);
+
+  expect(output).toMatchSnapshot();
+});
+
 it('has no a11y issues', async () => {
   const output = mount(<Tag>Tag</Tag>).html();
   const results = await axe(output);
