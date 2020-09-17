@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.53.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.52.0...@contentful/forma-36-react-components@3.53.0) (2020-09-17)
+
+
+### Features
+
+* **card:** add target prop ([#564](https://github.com/contentful/forma-36/issues/564)) ([b132992](https://github.com/contentful/forma-36/commit/b132992252d5c953b98cb2425b664e3bd437592c))
+
+
+
+
+
 # [3.52.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.51.4...@contentful/forma-36-react-components@3.52.0) (2020-09-16)
 
 
