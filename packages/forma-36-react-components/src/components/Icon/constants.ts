@@ -123,4 +123,5 @@ export const iconName = {
   UsersTrimmed: 'UsersTrimmed',
   Warning: 'Warning',
   WarningTrimmed: 'WarningTrimmed',
+  Workflows: 'Workflows',
 };
