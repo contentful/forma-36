@@ -23,7 +23,7 @@ export interface TooltipProps {
   /**
    * Content of the Tooltip
    */
-  content: React.ReactNode;
+  content?: React.ReactNode;
   id?: string;
   /**
    * It controls the initial visibility of the Tooltip
@@ -74,7 +74,7 @@ export const Tooltip = ({
 
   const elementRef = useRef(null);
   const popperRef = useRef(null);
-  const [arrowRef, setArrowRef] = useState<HTMLDivElement | null>(null);
+  const [arrowRef, setArrowRef] = useState<HTMLSpanElement | null>(null);
   const { styles: popperStyles, attributes, forceUpdate } = usePopper(
     elementRef.current,
     popperRef.current,
@@ -131,7 +131,7 @@ export const Tooltip = ({
       </ContainerElement>
 
       {show && (
-        <div
+        <span
           id={id}
           ref={popperRef}
           aria-hidden={show ? 'true' : 'false'}
@@ -144,12 +144,12 @@ export const Tooltip = ({
           {...attributes.popper}
         >
           {content}
-          <div
+          <span
             ref={setArrowRef}
             style={arrowStyles}
             className={styles.Tooltip__arrow}
           />
-        </div>
+        </span>
       )}
     </>
   );

@@ -6,7 +6,6 @@ exports[`renders the component 1`] = `
     containerElement="span"
     isVisible={false}
     maxWidth={360}
-    place="top"
     testId="cf-ui-tooltip"
   >
     <IconButton
@@ -33,7 +32,6 @@ exports[`renders the component as active 1`] = `
     content="H1"
     isVisible={false}
     maxWidth={360}
-    place="top"
     testId="cf-ui-tooltip"
   >
     <IconButton
@@ -59,7 +57,6 @@ exports[`renders the component as disabled 1`] = `
     containerElement="span"
     isVisible={false}
     maxWidth={360}
-    place="top"
     testId="cf-ui-tooltip"
   >
     <IconButton
@@ -87,7 +84,6 @@ exports[`renders the component with a tooltip 1`] = `
     content="H1"
     isVisible={false}
     maxWidth={360}
-    place="top"
     testId="cf-ui-tooltip"
   >
     <IconButton
@@ -113,7 +109,6 @@ exports[`renders the component with an additional class name 1`] = `
     containerElement="span"
     isVisible={false}
     maxWidth={360}
-    place="top"
     testId="cf-ui-tooltip"
   >
     <IconButton
@@ -140,7 +135,6 @@ exports[`renders with a dropdown indicator 1`] = `
     content="H1"
     isVisible={false}
     maxWidth={360}
-    place="top"
     testId="cf-ui-tooltip"
   >
     <IconButton

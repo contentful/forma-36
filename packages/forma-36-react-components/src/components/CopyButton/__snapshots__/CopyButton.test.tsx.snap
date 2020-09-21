@@ -23,7 +23,6 @@ exports[`renders the component 1`] = `
       }
       isVisible={false}
       maxWidth={360}
-      place="top"
       testId="cf-ui-tooltip"
     >
       <button
@@ -75,7 +74,6 @@ exports[`renders the component with a copy value 1`] = `
       }
       isVisible={false}
       maxWidth={360}
-      place="top"
       testId="cf-ui-tooltip"
     >
       <button
@@ -128,7 +126,6 @@ exports[`renders the component with an additional class name 1`] = `
       }
       isVisible={false}
       maxWidth={360}
-      place="top"
       testId="cf-ui-tooltip"
     >
       <button
