@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.54.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.54.0...@contentful/forma-36-react-components@3.54.1) (2020-09-21)
+
+
+### Bug Fixes
+
+* **flex:** add missing flexGrow property ([#568](https://github.com/contentful/forma-36/issues/568)) ([2d31182](https://github.com/contentful/forma-36/commit/2d311829e73a257e3d2557d17a8812c2d16a23d8))
+
+
+
+
+
 # [3.54.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.53.0...@contentful/forma-36-react-components@3.54.0) (2020-09-21)
 
 
