@@ -1,5 +1,6 @@
 @import 'settings/colors';
 @import 'settings/typography';
+@import 'settings/dimensions';
 @import 'settings/transitions';
 
 .Asset {
@@ -62,6 +63,8 @@
     1rem * (35 / var(--font-base-default))
   ); /* 35 value comes from font-size multipled by line height multipled by 2 (for limiting text to 2 lines) */
   word-wrap: break-word;
+  padding-left: var(--spacing-s);
+  padding-right: var(--spacing-s);
 }
 
 .Asset__asset-container {
