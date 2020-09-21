@@ -96,6 +96,7 @@ storiesOf('(alpha)/Flex', module)
         justifyContent: select('Justify content', flexJustifyValues, 'center'),
         alignItems: select('Align items', flexAlignValues, 'center'),
         flexWrap: select('Flex wrap', flexWrapValues, 'center'),
+        flexGrow: number('Flex grow', 0),
       };
 
       return (
