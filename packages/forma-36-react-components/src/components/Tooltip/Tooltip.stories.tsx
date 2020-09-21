@@ -11,7 +11,7 @@ export default {
     propTypes: Tooltip['__docgenInfo'],
   },
   argTypes: {
-    // align: { control: { type: 'select', options: ['start', 'end'] } },
+    content: { control: 'text' },
     children: { control: { disable: true } },
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
