@@ -3,12 +3,14 @@ import React from 'react';
 import Tooltip from './Tooltip';
 import Paragraph from '../Typography/Paragraph';
 import TextLink from '../TextLink';
+import notes from './README.md';
 
 export default {
   title: 'Components/Tooltip',
   component: Tooltip,
   parameters: {
     propTypes: Tooltip['__docgenInfo'],
+    notes,
   },
   argTypes: {
     content: { control: 'text' },
@@ -26,14 +28,17 @@ export const basic = (args: { content: string }) => {
   );
 };
 basic.args = {
-  content: (
-    <>
-      I am a<br />
-      multiline <b>Tooltip</b>
-      <br />
-      🙌
-    </>
-  ),
+  content: 'I am a Tooltip 🙌',
+};
+const basicSourceCode = `<Tooltip content="I am a Tooltip 🙌">
+  <TextLink>Hover me</TextLink>
+</Tooltip>`;
+basic.parameters = {
+  docs: {
+    source: {
+      code: basicSourceCode,
+    },
+  },
 };
 
 export const withHtml = (args: { content: string }) => {
@@ -50,11 +55,23 @@ export const withHtml = (args: { content: string }) => {
 withHtml.args = {
   content: (
     <>
-      I have some
-      <div style={{ color: 'red' }}>HTML</div>
-      in me
+      I have some <b style={{ color: 'red' }}>HTML</b> in me
     </>
   ),
+};
+const withHtmlSourceCode = `<Tooltip content={(
+  <>
+    I have some <b style={{ color: 'red' }}>HTML</b> in me
+  </>
+)}>
+  <TextLink>Hover me</TextLink>
+</Tooltip>`;
+withHtml.parameters = {
+  docs: {
+    source: {
+      code: withHtmlSourceCode,
+    },
+  },
 };
 
 export const autoPlacement = (args: { content: string }) => {
@@ -77,4 +94,14 @@ export const autoPlacement = (args: { content: string }) => {
 };
 autoPlacement.args = {
   content: 'I will reposition automatically when you scroll',
+};
+const autoPlacementSourceCode = `<Tooltip content="I will reposition automatically when you scroll">
+  <TextLink>Hover me</TextLink>
+</Tooltip>`;
+autoPlacement.parameters = {
+  docs: {
+    source: {
+      code: autoPlacementSourceCode,
+    },
+  },
 };
