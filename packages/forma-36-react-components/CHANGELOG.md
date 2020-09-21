@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.54.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.53.0...@contentful/forma-36-react-components@3.54.0) (2020-09-21)
+
+
+### Features
+
+* **Icon:** add workflows icon ([170a09a](https://github.com/contentful/forma-36/commit/170a09a6e230f835d6b47def148065e0cbfdb351))
+
+
+
+
+
 # [3.53.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.52.0...@contentful/forma-36-react-components@3.53.0) (2020-09-17)
 
 
