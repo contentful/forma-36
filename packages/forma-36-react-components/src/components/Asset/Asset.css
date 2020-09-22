@@ -63,8 +63,6 @@
     1rem * (35 / var(--font-base-default))
   ); /* 35 value comes from font-size multipled by line height multipled by 2 (for limiting text to 2 lines) */
   word-wrap: break-word;
-  padding-left: var(--spacing-s);
-  padding-right: var(--spacing-s);
 }
 
 .Asset__asset-container {
@@ -79,6 +77,8 @@
   color: var(--color-text-light);
   font-size: var(--font-size-m);
   font-family: var(--font-stack-primary);
+  padding-left: var(--spacing-s);
+  padding-right: var(--spacing-s);
   max-height: calc(1rem * (40 / var(--font-base-default)));
   overflow: hidden;
   margin-bottom: calc(1rem * calc(20 / var(--font-base-default)));
