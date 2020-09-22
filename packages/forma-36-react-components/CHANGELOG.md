@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.54.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.54.1...@contentful/forma-36-react-components@3.54.2) (2020-09-22)
+
+
+### Bug Fixes
+
+* show image only there's src ([#569](https://github.com/contentful/forma-36/issues/569)) ([000af17](https://github.com/contentful/forma-36/commit/000af170cf1a02378363d8a7d7f46b3c1c343176))
+
+
+
+
+
 ## [3.54.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.54.0...@contentful/forma-36-react-components@3.54.1) (2020-09-21)
 
 
