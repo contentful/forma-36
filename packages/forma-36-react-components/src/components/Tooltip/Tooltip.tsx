@@ -1,334 +1,239 @@
-import React, { Component, MouseEvent, FocusEvent } from 'react';
-import ReactDOM from 'react-dom';
+import React, {
+  useEffect,
+  useState,
+  useRef,
+  MouseEvent,
+  FocusEvent,
+} from 'react';
+import { usePopper } from 'react-popper';
+import { Placement } from '@popperjs/core';
 import cn from 'classnames';
-import InViewport from '../InViewport';
+
 import styles from './Tooltip.css';
 
-interface TooltipContainerProps {
+export type TooltipPlace = Placement;
+
+export interface TooltipProps {
+  /**
+   * Child nodes to be rendered in the component and that will show the tooltip when they are hovered
+   */
   children: React.ReactNode;
-  setRef: Function;
+  /**
+   * Class names to be appended to the className prop of the Tooltip wrapper
+   */
+  className?: string;
+  /**
+   * HTML element used to wrap the target of the Tooltip
+   */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  containerElement: any;
+  containerElement?: any;
+  /**
+   * Content of the Tooltip
+   */
+  content?: React.ReactNode;
+  id?: string;
+  /**
+   * It controls the initial visibility of the Tooltip
+   */
+  isVisible?: boolean;
+  /**
+   * It sets a max-width for the Tooltip
+   */
+  maxWidth?: number | string;
+  /**
+   * Function that will be called when target gets blurred
+   */
+  onBlur?: (evt: FocusEvent) => void;
+  /**
+   * Function that will be called when target gets focused
+   */
+  onFocus?: (evt: FocusEvent) => void;
+  /**
+   * Function that will be called when the user move the mouse out of the target
+   */
+  onMouseLeave?: (evt: MouseEvent) => void;
+  /**
+   * Function that will be called when the user move the mouse over of the target
+   */
+  onMouseOver?: (evt: MouseEvent) => void;
+  /**
+   * It sets the "preferred" position of the Tooltip
+   */
+  place?: TooltipPlace;
+  /**
+   * Class names to be appended to the className prop of the Tooltip’s target
+   */
   targetWrapperClassName?: string;
-  onMouseLeave: Function;
-  onMouseOver: Function;
-  onFocus: Function;
-  onBlur: Function;
+  /**
+   * An ID used for testing purposes applied as a data attribute (data-test-id)
+   */
+  testId?: string;
 }
 
-const TooltipContainer: React.StatelessComponent<TooltipContainerProps> = (
-  props: TooltipContainerProps,
-) => {
-  const {
-    children,
-    setRef,
-    containerElement,
-    targetWrapperClassName,
-    ...otherProps
-  } = props;
-  const ContainerElement = containerElement;
+interface ArrowPositionState {
+  top: string;
+  left: string;
+}
+
+export const Tooltip = ({
+  children,
+  className,
+  containerElement: ContainerElement,
+  content,
+  id,
+  isVisible,
+  maxWidth,
+  onBlur,
+  onFocus,
+  onMouseLeave,
+  onMouseOver,
+  place,
+  targetWrapperClassName,
+  testId,
+}: TooltipProps) => {
+  const [show, setShow] = useState(isVisible);
+  const [arrowPosition, setArrowPosition] = useState<ArrowPositionState>(
+    getArrowPosition('bottom'),
+  );
+
+  const elementRef = useRef(null);
+  const popperRef = useRef(null);
+  const [arrowRef, setArrowRef] = useState<HTMLSpanElement | null>(null);
+  const { styles: popperStyles, attributes, forceUpdate } = usePopper(
+    elementRef.current,
+    popperRef.current,
+    {
+      placement: place,
+      modifiers: [
+        { name: 'arrow', options: { element: arrowRef } },
+        {
+          name: 'offset',
+          options: {
+            offset: [0, 10],
+          },
+        },
+      ],
+    },
+  );
+
+  // necessary to update tooltip position in case the content is being updated
+  useEffect(() => {
+    if (forceUpdate !== null) {
+      forceUpdate();
+    }
+  }, [content, forceUpdate]);
+
+  useEffect(() => {
+    if (attributes.popper) {
+      const newPosition = getArrowPosition(
+        attributes.popper['data-popper-placement'],
+      );
+      setArrowPosition(newPosition);
+    }
+  }, [attributes.popper]);
+
+  const arrowStyles = {
+    ...popperStyles.arrow,
+    ...arrowPosition,
+    transform: 'rotate(45deg)',
+  };
+
+  const widthStyle = maxWidth
+    ? {
+        maxWidth: typeof maxWidth === 'string' ? maxWidth : `${maxWidth}px`,
+      }
+    : {};
+
   return (
-    <ContainerElement
-      ref={setRef}
-      className={cn(styles['Tooltip__target-wrapper'], targetWrapperClassName)}
-      {...otherProps}
-    >
-      {children}
-    </ContainerElement>
+    <>
+      <ContainerElement
+        ref={elementRef}
+        className={targetWrapperClassName}
+        onMouseEnter={(evt: MouseEvent) => {
+          setShow(true);
+          if (onMouseOver) onMouseOver(evt);
+        }}
+        onMouseLeave={(evt: MouseEvent) => {
+          setShow(false);
+          if (onMouseLeave) onMouseLeave(evt);
+        }}
+        onFocus={(evt: FocusEvent) => {
+          setShow(true);
+          if (onFocus) onFocus(evt);
+        }}
+        onBlur={(evt: FocusEvent) => {
+          setShow(false);
+          if (onBlur) onBlur(evt);
+        }}
+      >
+        {children}
+      </ContainerElement>
+
+      {show && (
+        <span
+          id={id}
+          ref={popperRef}
+          aria-hidden={show ? 'true' : 'false'}
+          role="tooltip"
+          style={{ ...popperStyles.popper, ...widthStyle }}
+          className={cn(styles.Tooltip, className, {
+            [styles['Tooltip--hidden']]: !show,
+          })}
+          data-test-id={testId}
+          {...attributes.popper}
+        >
+          {content}
+          <span
+            ref={setArrowRef}
+            style={arrowStyles}
+            className={styles.Tooltip__arrow}
+          />
+        </span>
+      )}
+    </>
   );
 };
-
-export type TooltipPlace = 'top' | 'bottom' | 'right' | 'left';
-
-export type TooltipProps = {
-  children: React.ReactNode;
-  containerElement?: React.ReactNode;
-  place?: TooltipPlace;
-  isVisible?: boolean;
-  maxWidth?: number | string;
-  testId?: string;
-  id?: string;
-  className?: string;
-  content?: React.ReactNode;
-  targetWrapperClassName?: string;
-  onMouseOver?: Function;
-  onMouseLeave?: Function;
-  onFocus?: Function;
-  onBlur?: Function;
-} & typeof defaultProps;
-
-interface TooltipState {
-  isVisible?: boolean;
-}
-
-const defaultProps = {
+Tooltip.defaultProps = {
   containerElement: 'span',
   isVisible: false,
-  testId: 'cf-ui-tooltip',
-  place: 'top',
   maxWidth: 360,
+  testId: 'cf-ui-tooltip',
+  place: 'bottom',
 };
 
-interface TooltipWrapperProps {
-  children: React.ReactNode;
-  containerDomNode?: HTMLElement;
-  place?: TooltipPlace;
-  isVisible?: boolean;
-  id?: string;
-  maxWidth?: number | string;
-  className?: string;
-  testId?: string;
-  setPlace: Function;
-}
+function getArrowPosition(popperPlacement: string) {
+  const centered = 'calc(50% - 5px)';
+  const oppositeToThisSide = 'calc(100% - 5px)';
+  const atThisSide = '-5px';
+  const atStart = '10px';
+  const atEnd = 'calc(100% - 20px)';
 
-class TooltipWrapper extends Component<TooltipWrapperProps> {
-  tooltipDomNode?: HTMLDivElement;
-  containerDomNode?: HTMLSpanElement;
-
-  state = {
-    calculatedPosition: { top: undefined, left: undefined },
-  };
-
-  componentDidMount() {
-    this.setState({
-      calculatedPosition: this.calculatePosition(),
-    });
-  }
-
-  calculatePosition = () => {
-    const { containerDomNode, place } = this.props;
-    if (!containerDomNode || !this.tooltipDomNode) {
-      return { top: undefined, left: undefined };
-    }
-    let calculatedPosition = {};
-    const containerRect = containerDomNode.getBoundingClientRect();
-    const tooltipRect = this.tooltipDomNode.getBoundingClientRect();
-    const carretVerticalOffset = 20;
-    const carretHorizontalOffset = 12;
-    switch (place) {
-      case 'top':
-        calculatedPosition = {
-          left:
-            containerRect.left +
-            (containerRect.width / 2 - tooltipRect.width / 2),
-          top: containerRect.top - (tooltipRect.height + carretVerticalOffset),
-        };
-        break;
-      case 'bottom':
-        calculatedPosition = {
-          left:
-            containerRect.left +
-            (containerRect.width / 2 - tooltipRect.width / 2),
-          top: containerRect.top + containerRect.height,
-        };
-        break;
-      case 'left':
-        calculatedPosition = {
-          left:
-            containerRect.left - (tooltipRect.width + carretHorizontalOffset),
-          top:
-            containerRect.top +
-            containerRect.height / 2 -
-            tooltipRect.height / 2 -
-            10, // Tooltip margin
-        };
-        break;
-      case 'right':
-        calculatedPosition = {
-          left:
-            containerRect.left + (containerRect.width + carretHorizontalOffset),
-          top:
-            containerRect.top +
-            containerRect.height / 2 -
-            tooltipRect.height / 2 -
-            10, // Tooltip margin
-        };
-        break;
-      default:
-        calculatedPosition = {};
-    }
-    return calculatedPosition;
-  };
-
-  render() {
-    const {
-      isVisible,
-      id,
-      maxWidth,
-      className,
-      testId,
-      setPlace,
-      children,
-    } = this.props;
-    return (
-      <div
-        role="tooltip"
-        id={id}
-        aria-hidden={isVisible ? 'false' : 'true'}
-        style={{
-          ...this.state.calculatedPosition,
-          maxWidth: maxWidth,
-        }}
-        ref={(ref: HTMLDivElement) => {
-          this.tooltipDomNode = ref;
-        }}
-        contentEditable={false}
-        onFocus={() => {
-          this.setState({ isVisible: false });
-        }}
-        onMouseOver={() => {
-          this.setState({ isVisible: false });
-        }}
-        className={className}
-        data-test-id={testId}
-      >
-        <InViewport
-          onOverflowTop={() => setPlace('bottom')}
-          onOverflowLeft={() => setPlace('right')}
-          onOverflowBottom={() => setPlace('top')}
-          onOverflowRight={() => setPlace('left')}
-        >
-          {children}
-        </InViewport>
-      </div>
-    );
-  }
-}
-
-export class Tooltip extends Component<TooltipProps, TooltipState> {
-  static defaultProps = defaultProps;
-  portalTarget: HTMLDivElement | null = null;
-  place: TooltipPlace = 'top';
-  containerDomNode?: HTMLSpanElement;
-  tooltipDomNode?: HTMLDivElement;
-  state: Partial<TooltipState> = {
-    isVisible: this.props.isVisible,
-  };
-
-  constructor(props: TooltipProps) {
-    super(props);
-    this.place = props.place;
-  }
-
-  componentWillMount() {
-    if (typeof window !== `undefined`) {
-      this.portalTarget = window.document.createElement('div');
-      window.document.body.appendChild(this.portalTarget);
-    }
-  }
-
-  componentDidMount() {
-    if (this.props.isVisible) {
-      this.setState({ isVisible: true });
-    }
-  }
-
-  componentDidUpdate(prevProps: TooltipProps) {
-    if (prevProps.content !== this.props.content) {
-      this.forceUpdate();
-    }
-  }
-
-  componentWillUnmount() {
-    if (this.portalTarget) {
-      window.document.body.removeChild(this.portalTarget);
-    }
-  }
-
-  setPlace = (place: TooltipPlace) => {
-    if (this.state.isVisible) {
-      this.place = place;
-      this.forceUpdate();
-    }
-  };
-
-  renderTooltip = (content: React.ReactNode) => {
-    if (!this.portalTarget) {
-      return null;
-    }
-    const placeClass = `Tooltip--place-${this.place}`;
-    const classNames = cn(
-      styles['Tooltip'],
-      styles[placeClass],
-      this.props.className,
-      {
-        [styles['Tooltip--hidden']]: !this.state.isVisible,
-      },
-    );
-    return ReactDOM.createPortal(
-      <TooltipWrapper
-        containerDomNode={this.containerDomNode}
-        place={this.place}
-        isVisible={this.state.isVisible}
-        id={this.props.id}
-        maxWidth={this.props.maxWidth}
-        className={classNames}
-        testId={this.props.testId}
-        setPlace={this.setPlace}
-      >
-        {content}
-      </TooltipWrapper>,
-      this.portalTarget as Element,
-    );
-  };
-
-  render() {
-    const {
-      className,
-      targetWrapperClassName,
-      content,
-      onMouseLeave,
-      onMouseOver,
-      onFocus,
-      containerElement,
-      onBlur,
-      children,
-      place,
-      isVisible,
-      testId,
-      maxWidth,
-      ...otherProps
-    } = this.props;
-    return (
-      <TooltipContainer
-        containerElement={containerElement}
-        onMouseOver={(e: MouseEvent) => {
-          this.setState({ isVisible: true });
-          if (onMouseOver) {
-            onMouseOver(e);
-          }
-        }}
-        onMouseLeave={(e: MouseEvent) => {
-          this.setState({ isVisible: false });
-          if (onMouseLeave) {
-            onMouseLeave(e);
-          }
-        }}
-        onFocus={(e: FocusEvent) => {
-          this.setState({ isVisible: true });
-          if (onFocus) {
-            onFocus(e);
-          }
-        }}
-        onBlur={(e: FocusEvent) => {
-          this.setState({ isVisible: false });
-          if (onBlur) {
-            onBlur(e);
-          }
-        }}
-        setRef={(ref: HTMLElement) => {
-          this.containerDomNode = ref;
-        }}
-        targetWrapperClassName={targetWrapperClassName}
-        aria-describedby={this.props.id}
-        {...otherProps}
-      >
-        <React.Fragment>
-          {children}
-          {content && this.state.isVisible && this.renderTooltip(content)}
-        </React.Fragment>
-      </TooltipContainer>
-    );
+  // the arrow is 10x10, that's why we need the -5px to correct its center
+  switch (popperPlacement) {
+    case 'top':
+      return { top: oppositeToThisSide, left: centered }; // arrow will be V
+    case 'top-start':
+      return { top: oppositeToThisSide, left: atStart };
+    case 'top-end':
+      return { top: oppositeToThisSide, left: atEnd };
+    case 'right':
+      return { top: centered, left: atThisSide }; // arrow will be <
+    case 'right-start':
+      return { top: atStart, left: atThisSide };
+    case 'right-end':
+      return { top: atEnd, left: atThisSide };
+    case 'left':
+      return { top: centered, left: oppositeToThisSide }; // arrow will be >
+    case 'left-start':
+      return { top: atStart, left: oppositeToThisSide };
+    case 'left-end':
+      return { top: atEnd, left: oppositeToThisSide };
+    case 'bottom-start':
+      return { top: atThisSide, left: atStart }; // arrow will be ^
+    case 'bottom-end':
+      return { top: atThisSide, left: atEnd };
+    default:
+      return { top: atThisSide, left: centered };
   }
 }
 

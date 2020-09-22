@@ -62,7 +62,7 @@ it('renders the component with a place attribute', () => {
 
 it('renders the component with a id attribute', () => {
   const output = mount(
-    <Tooltip id="Tooltip">
+    <Tooltip id="Tooltip" content="Tooltip content">
       <span id="test">Hover me</span>
     </Tooltip>,
   );
@@ -73,7 +73,7 @@ it('renders the component with a id attribute', () => {
 
 it('renders the component as span with a id attribute', () => {
   const output = mount(
-    <Tooltip containerElement="span">
+    <Tooltip containerElement="span" content="Tooltip content">
       <span id="test">Hover me</span>
     </Tooltip>,
   );
@@ -84,7 +84,7 @@ it('renders the component as span with a id attribute', () => {
 
 it('has no a11y issues', async () => {
   const output = mount(
-    <Tooltip id="Tooltip">
+    <Tooltip id="Tooltip" content="Tooltip content">
       <span>Hover me</span>
     </Tooltip>,
   ).html();
