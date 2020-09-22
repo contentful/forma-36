@@ -78,24 +78,39 @@ export const autoPlacement = (args: { content: string }) => {
   return (
     <div
       style={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '600px',
+        height: '300px',
         width: '100%',
+        overflowY: 'scroll',
       }}
     >
-      <Tooltip {...args}>
-        <TextLink>Hover me</TextLink>
-      </Tooltip>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          height: '600px',
+          width: '100%',
+        }}
+      >
+        <Tooltip {...args}>
+          <TextLink>Hover me</TextLink>
+        </Tooltip>
+      </div>
     </div>
   );
 };
 autoPlacement.args = {
-  content: 'I will reposition automatically when you scroll',
+  place: 'auto',
+  content: (
+    <>
+      I will reposition automatically
+      <br />
+      when you scroll
+    </>
+  ),
 };
-const autoPlacementSourceCode = `<Tooltip content="I will reposition automatically when you scroll">
+const autoPlacementSourceCode = `<Tooltip place="auto" content={<>I will reposition automatically<br/>when you scroll</>}>
   <TextLink>Hover me</TextLink>
 </Tooltip>`;
 autoPlacement.parameters = {

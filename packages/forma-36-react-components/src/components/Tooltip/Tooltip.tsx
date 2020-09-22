@@ -1,10 +1,11 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { usePopper } from 'react-popper';
+import { Placement } from '@popperjs/core';
 import cn from 'classnames';
 
 import styles from './Tooltip.css';
 
-export type TooltipPlace = 'top' | 'bottom' | 'right' | 'left';
+export type TooltipPlace = Placement;
 
 export interface TooltipProps {
   /**
@@ -38,7 +39,7 @@ export interface TooltipProps {
   onMouseLeave?: Function;
   onMouseOver?: Function;
   /**
-   * (deprecated) Old prop used to control the position of the Tooltip
+   * It sets the "preferred" position of the Tooltip
    */
   place?: TooltipPlace;
   /**
@@ -64,6 +65,7 @@ export const Tooltip = ({
   id,
   isVisible,
   maxWidth,
+  place,
   targetWrapperClassName,
   testId,
 }: TooltipProps) => {
@@ -79,6 +81,7 @@ export const Tooltip = ({
     elementRef.current,
     popperRef.current,
     {
+      placement: place,
       modifiers: [
         { name: 'arrow', options: { element: arrowRef } },
         {
@@ -159,19 +162,42 @@ Tooltip.defaultProps = {
   isVisible: false,
   maxWidth: 360,
   testId: 'cf-ui-tooltip',
+  place: 'bottom',
 };
 
 function getArrowPosition(popperPlacement: string) {
+  const centered = 'calc(50% - 5px)';
+  const oppositeToThisSide = 'calc(100% - 5px)';
+  const atThisSide = '-5px';
+  const atStart = '10px';
+  const atEnd = 'calc(100% - 20px)';
+
   // the arrow is 10x10, that's why we need the -5px to correct its center
   switch (popperPlacement) {
     case 'top':
-      return { top: 'calc(100% - 5px)', left: 'calc(50% - 5px)' }; // arrow will be V
+      return { top: oppositeToThisSide, left: centered }; // arrow will be V
+    case 'top-start':
+      return { top: oppositeToThisSide, left: atStart };
+    case 'top-end':
+      return { top: oppositeToThisSide, left: atEnd };
     case 'right':
-      return { top: 'calc(50% - 5px)', left: '-5px' }; // arrow will be <
+      return { top: centered, left: atThisSide }; // arrow will be <
+    case 'right-start':
+      return { top: atStart, left: atThisSide };
+    case 'right-end':
+      return { top: atEnd, left: atThisSide };
     case 'left':
-      return { top: 'calc(50% - 5px)', left: 'calc(100% - 5px)' }; // arrow will be >
+      return { top: centered, left: oppositeToThisSide }; // arrow will be >
+    case 'left-start':
+      return { top: atStart, left: oppositeToThisSide };
+    case 'left-end':
+      return { top: atEnd, left: oppositeToThisSide };
+    case 'bottom-start':
+      return { top: atThisSide, left: atStart }; // arrow will be ^
+    case 'bottom-end':
+      return { top: atThisSide, left: atEnd };
     default:
-      return { top: '-5px', left: 'calc(50% - 5px)' }; // arrow will be ^
+      return { top: atThisSide, left: centered };
   }
 }
 
