@@ -1,4 +1,10 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, {
+  useEffect,
+  useState,
+  useRef,
+  MouseEvent,
+  FocusEvent,
+} from 'react';
 import { usePopper } from 'react-popper';
 import { Placement } from '@popperjs/core';
 import cn from 'classnames';
@@ -34,10 +40,22 @@ export interface TooltipProps {
    * It sets a max-width for the Tooltip
    */
   maxWidth?: number | string;
-  onBlur?: Function;
-  onFocus?: Function;
-  onMouseLeave?: Function;
-  onMouseOver?: Function;
+  /**
+   * Function that will be called when target gets blurred
+   */
+  onBlur?: (evt: FocusEvent) => void;
+  /**
+   * Function that will be called when target gets focused
+   */
+  onFocus?: (evt: FocusEvent) => void;
+  /**
+   * Function that will be called when the user move the mouse out of the target
+   */
+  onMouseLeave?: (evt: MouseEvent) => void;
+  /**
+   * Function that will be called when the user move the mouse over of the target
+   */
+  onMouseOver?: (evt: MouseEvent) => void;
   /**
    * It sets the "preferred" position of the Tooltip
    */
@@ -65,6 +83,10 @@ export const Tooltip = ({
   id,
   isVisible,
   maxWidth,
+  onBlur,
+  onFocus,
+  onMouseLeave,
+  onMouseOver,
   place,
   targetWrapperClassName,
   testId,
@@ -127,8 +149,22 @@ export const Tooltip = ({
       <ContainerElement
         ref={elementRef}
         className={targetWrapperClassName}
-        onMouseEnter={() => setShow(true)}
-        onMouseLeave={() => setShow(false)}
+        onMouseEnter={(evt: MouseEvent) => {
+          setShow(true);
+          if (onMouseOver) onMouseOver(evt);
+        }}
+        onMouseLeave={(evt: MouseEvent) => {
+          setShow(false);
+          if (onMouseLeave) onMouseLeave(evt);
+        }}
+        onFocus={(evt: FocusEvent) => {
+          setShow(true);
+          if (onFocus) onFocus(evt);
+        }}
+        onBlur={(evt: FocusEvent) => {
+          setShow(false);
+          if (onBlur) onBlur(evt);
+        }}
       >
         {children}
       </ContainerElement>
