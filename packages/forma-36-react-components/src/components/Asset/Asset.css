@@ -1,5 +1,6 @@
 @import 'settings/colors';
 @import 'settings/typography';
+@import 'settings/dimensions';
 @import 'settings/transitions';
 
 .Asset {
@@ -76,6 +77,8 @@
   color: var(--color-text-light);
   font-size: var(--font-size-m);
   font-family: var(--font-stack-primary);
+  padding-left: var(--spacing-s);
+  padding-right: var(--spacing-s);
   max-height: calc(1rem * (40 / var(--font-base-default)));
   overflow: hidden;
   margin-bottom: calc(1rem * calc(20 / var(--font-base-default)));
