@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.55.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.54.3...@contentful/forma-36-react-components@3.55.0) (2020-09-23)
+
+
+### Features
+
+* **Icon:** add Language icon ([#570](https://github.com/contentful/forma-36/issues/570)) ([96ffb78](https://github.com/contentful/forma-36/commit/96ffb78ccea245361ece9675f1058d96eae63d90))
+
+
+
+
+
 ## [3.54.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.54.2...@contentful/forma-36-react-components@3.54.3) (2020-09-22)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
