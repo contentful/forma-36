@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.55.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.55.1...@contentful/forma-36-react-components@3.55.2) (2020-09-23)
+
+
+### Bug Fixes
+
+* **tooltip:** spread otherProps ([#573](https://github.com/contentful/forma-36/issues/573)) ([5c6041b](https://github.com/contentful/forma-36/commit/5c6041bea9631690a76e0666e12361c7171055cc))
+
+
+
+
+
 ## [3.55.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.55.0...@contentful/forma-36-react-components@3.55.1) (2020-09-23)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
