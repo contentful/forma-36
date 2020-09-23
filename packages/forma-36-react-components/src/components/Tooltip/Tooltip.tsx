@@ -90,6 +90,7 @@ export const Tooltip = ({
   place,
   targetWrapperClassName,
   testId,
+  ...otherProps
 }: TooltipProps) => {
   const [show, setShow] = useState(isVisible);
   const [arrowPosition, setArrowPosition] = useState<ArrowPositionState>(
@@ -165,6 +166,7 @@ export const Tooltip = ({
           setShow(false);
           if (onBlur) onBlur(evt);
         }}
+        {...otherProps}
       >
         {children}
       </ContainerElement>
