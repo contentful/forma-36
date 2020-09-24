@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.55.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.55.2...@contentful/forma-36-react-components@3.55.3) (2020-09-24)
+
+
+### Bug Fixes
+
+* Flex grow instead of fixed-height ([#572](https://github.com/contentful/forma-36/issues/572)) ([31dea3d](https://github.com/contentful/forma-36/commit/31dea3df815e8328380ec61e0c185c83dc52c91d))
+
+
+
+
+
 ## [3.55.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.55.1...@contentful/forma-36-react-components@3.55.2) (2020-09-23)
 
 
