@@ -23,7 +23,13 @@ export type ButtonProps = {
   loading?: boolean;
   disabled?: boolean;
   testId?: string;
-  buttonType?: 'primary' | 'positive' | 'negative' | 'warning' | 'muted' | 'naked';
+  buttonType?:
+    | 'primary'
+    | 'positive'
+    | 'negative'
+    | 'warning'
+    | 'muted'
+    | 'naked';
   type?: 'button' | 'submit' | 'reset';
   size?: 'small' | 'large';
   href?: string;
@@ -31,7 +37,7 @@ export type ButtonProps = {
   className?: string;
   children?: React.ReactNode;
   isActive?: boolean;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   loading: false,
