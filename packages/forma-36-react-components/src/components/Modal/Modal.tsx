@@ -83,7 +83,7 @@ export type ModalProps = {
 
   // eslint-disable-next-line
   children: any;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   shouldCloseOnEscapePress: true,

@@ -6,7 +6,7 @@ export type TabPanelProps = {
   testId?: string;
   style?: React.CSSProperties;
   children: React.ReactNode;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   testId: 'cf-ui-tab-panel',

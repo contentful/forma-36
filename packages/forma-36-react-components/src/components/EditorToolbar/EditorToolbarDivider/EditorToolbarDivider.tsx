@@ -5,7 +5,7 @@ import styles from './EditorToolbarDivider.css';
 export type EditorToolbarDividerProps = {
   testId?: string;
   className?: string;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   testId: 'cf-editor-toolbar-divider',

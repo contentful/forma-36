@@ -9,7 +9,7 @@ export type SkeletonTextProps = {
   lineHeight: stringOrNumber;
   marginBottom: stringOrNumber;
   width?: stringOrNumber;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   numberOfLines: 1,

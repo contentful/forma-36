@@ -37,7 +37,7 @@ export type InlineEntryCardPropTypes = {
    * Child nodes to be rendered in the component
    */
   children: React.ReactNode;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   testId: 'cf-ui-inline-entry-card',
@@ -101,7 +101,7 @@ export class InlineEntryCard extends Component<InlineEntryCardPropTypes> {
           <CardActions
             className={styles['InlineEntryCard__actions']}
             iconButtonProps={{
-              onClick: e => e.stopPropagation,
+              onClick: (e) => e.stopPropagation,
             }}
           >
             {dropdownListElements}

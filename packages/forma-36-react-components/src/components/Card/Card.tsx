@@ -47,7 +47,7 @@ type CardPropTypes = BaseCardProps & {
    */
   style?: React.CSSProperties;
   children: React.ReactNode;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   padding: 'default',

@@ -10,7 +10,7 @@ export type HeadingProps = {
   className?: string;
   children?: React.ReactNode;
   testId?: string;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   element: 'h1',
@@ -29,7 +29,7 @@ export class Heading extends Component<HeadingProps> {
 
     return (
       <TypographyContext.Consumer>
-        {value => {
+        {(value) => {
           return (
             <Element
               className={cn(classNames, [

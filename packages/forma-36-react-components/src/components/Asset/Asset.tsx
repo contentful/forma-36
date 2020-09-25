@@ -32,7 +32,7 @@ export type AssetProps = {
   className?: string;
   status?: AssetState;
   testId?: string;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   type: 'image',

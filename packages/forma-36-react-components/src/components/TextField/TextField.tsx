@@ -32,7 +32,7 @@ export type TextFieldProps = {
   onChange?: ChangeEventHandler;
   onBlur?: FocusEventHandler;
   onFocus?: FocusEventHandler;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 export interface TextFieldState {
   value?: string;

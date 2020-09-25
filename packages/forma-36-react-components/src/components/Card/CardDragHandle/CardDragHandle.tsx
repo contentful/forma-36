@@ -22,7 +22,7 @@ export type CardDragHandlePropTypes = {
    * Applies styling for when the component is actively being dragged by the user
    */
   isDragActive?: boolean;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   testId: 'cf-ui-card-drag-handle',

@@ -8,7 +8,7 @@ export type TypographyProps = {
   children?: React.ReactNode;
   style?: React.CSSProperties;
   testId?: string;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultConfiguration = {
   displayText: { spacing: 'l' },

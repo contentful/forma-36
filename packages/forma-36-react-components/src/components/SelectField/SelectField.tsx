@@ -28,7 +28,7 @@ export type SelectFieldProps = {
   onBlur?: FocusEventHandler;
   testId?: string;
   className?: string;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 export interface SelectFieldState {
   value?: string;

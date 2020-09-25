@@ -34,7 +34,7 @@ export type DatePickerProps = {
   id?: string;
   testId?: string;
   dateFormat?: string;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 export interface DatePickerState {
   validationError?: string;
@@ -64,7 +64,7 @@ export class Datepicker extends Component<DatePickerProps, DatePickerState> {
       maxDate: this.props.maxDate,
       yearRange: 5,
       theme: cx(styles.datePicker, 'hide-carret'),
-      onSelect: value => {
+      onSelect: (value) => {
         this.props.onChange(value);
       },
     });

@@ -8,7 +8,7 @@ export type ModalContentProps = {
   className?: string;
   children: React.ReactNode;
   style?: React.CSSProperties;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   testId: 'cf-ui-modal-content',

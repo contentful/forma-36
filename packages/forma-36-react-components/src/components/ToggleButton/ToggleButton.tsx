@@ -14,7 +14,7 @@ export type ToggleButtonProps = {
   isDisabled?: boolean;
   testId?: string;
   className?: string;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   testId: 'cf-ui-toggle-button',

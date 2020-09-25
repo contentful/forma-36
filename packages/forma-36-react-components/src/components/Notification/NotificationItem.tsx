@@ -30,7 +30,7 @@ const defaultProps = {
 };
 
 export class NotificationItem extends Component<
-  NotificationItemProps & typeof defaultProps
+  NotificationItemProps & Partial<typeof defaultProps>
 > {
   static defaultProps = defaultProps;
 

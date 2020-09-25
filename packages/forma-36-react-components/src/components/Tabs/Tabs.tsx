@@ -10,7 +10,7 @@ export type TabsProps = {
   withDivider?: boolean;
   children?: React.ReactNode;
   testId?: string;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   testId: 'cf-ui-tabs',

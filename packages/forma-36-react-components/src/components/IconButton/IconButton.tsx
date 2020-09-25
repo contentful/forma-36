@@ -30,7 +30,7 @@ const defaultProps = {
 };
 
 export class IconButton extends Component<
-  IconButtonProps & typeof defaultProps
+  IconButtonProps & Partial<typeof defaultProps>
 > {
   static defaultProps = defaultProps;
 

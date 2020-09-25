@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import SkeletonText from '../SkeletonText';
 import { SkeletonTextProps } from '../SkeletonText';
 
-export type SkeletonDisplayTextProps = SkeletonTextProps & typeof defaultProps;
+export type SkeletonDisplayTextProps = SkeletonTextProps &
+  Partial<typeof defaultProps>;
 
 const defaultProps = {
   numberOfLines: 1,

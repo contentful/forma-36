@@ -287,7 +287,7 @@ const defaultProps = {
   color: 'primary',
 };
 
-export class Icon extends Component<IconProps & typeof defaultProps> {
+export class Icon extends Component<IconProps & Partial<typeof defaultProps>> {
   static defaultProps = defaultProps;
 
   render() {

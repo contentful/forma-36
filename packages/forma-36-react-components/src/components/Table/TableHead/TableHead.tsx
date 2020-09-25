@@ -11,7 +11,7 @@ export type TableHeadProps = {
   testId?: string;
   style?: React.CSSProperties;
   children: React.ReactNode;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   isSticky: false,

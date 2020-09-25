@@ -23,7 +23,7 @@ export type SelectProps = {
   className?: string;
   children: React.ReactNode;
   willBlurOnEsc: boolean;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 export interface SelectState {
   value?: string;
@@ -103,7 +103,7 @@ export class Select extends Component<SelectProps, SelectState> {
           value={this.state.value}
           disabled={isDisabled}
           onFocus={onFocus}
-          onChange={e => {
+          onChange={(e) => {
             if (!isDisabled) {
               this.setState({
                 value: e.target.value,

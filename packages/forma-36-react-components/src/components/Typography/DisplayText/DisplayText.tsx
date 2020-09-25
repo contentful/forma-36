@@ -11,7 +11,7 @@ export type DisplayTextProps = {
   children?: React.ReactNode;
   style?: React.CSSProperties;
   testId?: string;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   element: 'h1',
@@ -40,7 +40,7 @@ export class DisplayText extends Component<DisplayTextProps> {
 
     return (
       <TypographyContext.Consumer>
-        {value => {
+        {(value) => {
           const contextSize =
             size === 'large' ? value['displayTextLarge'] : value['displayText'];
 

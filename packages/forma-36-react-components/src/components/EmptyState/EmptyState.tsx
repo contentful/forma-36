@@ -34,7 +34,7 @@ export type EmptyStateProps = {
    * Description text and semantic element type
    */
   descriptionProps: TextElementProps;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 interface TextElementProps {
   text: React.ReactNode;

@@ -28,7 +28,7 @@ export type TagProps = {
   testId?: string;
   children: React.ReactNode;
   entityStatusType?: Status;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   tagType: 'primary' as TagType,

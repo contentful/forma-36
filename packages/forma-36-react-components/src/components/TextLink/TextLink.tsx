@@ -28,7 +28,7 @@ export type TextLinkProps = {
   icon?: IconType;
   text?: string;
   iconPosition?: IconPositionType;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   linkType: 'primary',
@@ -91,7 +91,7 @@ export class TextLink extends Component<TextLinkProps> {
           data-test-id={testId}
           onClick={
             disabled
-              ? e => {
+              ? (e) => {
                   e.preventDefault();
                 }
               : onClick

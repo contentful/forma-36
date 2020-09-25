@@ -56,7 +56,7 @@ export type AssetCardProps = BaseCardProps & {
    * Renders a small variant of the card which accommodates a 150x150px image
    */
   size?: 'small' | 'default';
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   isLoading: false,
@@ -158,7 +158,7 @@ export class AssetCard extends Component<AssetCardProps> {
                   <CardActions
                     className={styles['AssetCard__actions']}
                     iconButtonProps={{
-                      onClick: e => e.stopPropagation,
+                      onClick: (e) => e.stopPropagation,
                     }}
                   >
                     {dropdownListElements}

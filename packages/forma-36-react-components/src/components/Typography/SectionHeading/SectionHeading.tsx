@@ -10,7 +10,7 @@ export type SectionHeadingProps = {
   children?: React.ReactNode | string;
   testId?: string;
   style?: React.CSSProperties;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   element: 'h3',
@@ -29,7 +29,7 @@ export class SectionHeading extends Component<SectionHeadingProps> {
 
     return (
       <TypographyContext.Consumer>
-        {value => {
+        {(value) => {
           return (
             <Element
               className={cn(classNames, [

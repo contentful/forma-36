@@ -12,7 +12,7 @@ export type TableSortingLabelProps = {
   active: boolean;
   className?: string;
   testId?: string;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   testId: 'cf-ui-table-sorting-label',

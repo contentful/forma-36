@@ -22,7 +22,7 @@ export type SkeletonContainerProps = {
   className?: string;
   testId?: string;
   children: React.ReactNode;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 let idCounter = 0;
 

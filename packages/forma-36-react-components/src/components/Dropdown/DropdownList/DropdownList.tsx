@@ -11,7 +11,7 @@ export type DropdownListProps = {
   border?: 'top' | 'bottom';
   maxHeight?: number | CSS.MaxHeightProperty<string>;
   styles?: object;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   testId: 'cf-ui-dropdown-list',

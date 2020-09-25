@@ -13,7 +13,7 @@ export type SpinnerProps = {
   color?: SpinnerColor;
   className?: string;
   testId?: string;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   testId: 'cf-ui-spinner',

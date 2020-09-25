@@ -22,7 +22,7 @@ export type CardActionsPropTypes = {
   children:
     | React.ReactElement<DropdownList>
     | React.ReactElement<DropdownList>[];
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 export interface CardActionsState {
   isDropdownOpen: boolean;
@@ -42,7 +42,7 @@ export class CardActions extends Component<
   state = { isDropdownOpen: false };
 
   handleClick = (event: ReactMouseEvent) => {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       isDropdownOpen: !prevState.isDropdownOpen,
     }));
 
@@ -80,7 +80,7 @@ export class CardActions extends Component<
             disabled={isDisabled}
             label="Actions"
             {...iconButtonProps}
-            onClick={event => {
+            onClick={(event) => {
               event.preventDefault();
               this.handleClick(event);
             }}

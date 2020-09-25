@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import ControlledInput, { ControlledInputPropTypes } from '../ControlledInput';
 
-export type CheckboxProps = ControlledInputPropTypes & typeof defaultProps;
+export type CheckboxProps = ControlledInputPropTypes &
+  Partial<typeof defaultProps>;
 
 const defaultProps = {
   required: false,

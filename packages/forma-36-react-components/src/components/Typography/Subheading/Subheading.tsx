@@ -10,7 +10,7 @@ export type SubheadingProps = {
   children?: React.ReactNode;
   testId?: string;
   style?: React.CSSProperties;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   element: 'h2',
@@ -29,7 +29,7 @@ export class Subheading extends Component<SubheadingProps> {
 
     return (
       <TypographyContext.Consumer>
-        {value => {
+        {(value) => {
           return (
             <Element
               className={cn(classNames, [

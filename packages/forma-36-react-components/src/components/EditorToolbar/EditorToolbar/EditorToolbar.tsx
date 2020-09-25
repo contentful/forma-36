@@ -7,7 +7,7 @@ export type EditorToolbarProps = {
   children: React.ReactNode;
   testId?: string;
   style?: React.CSSProperties;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   testId: 'cf-ui-editor-toolbar',

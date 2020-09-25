@@ -10,7 +10,7 @@ export type ParagraphProps = {
   children?: React.ReactNode;
   testId?: string;
   style?: React.CSSProperties;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   element: 'p',
@@ -29,7 +29,7 @@ export class Paragraph extends Component<ParagraphProps> {
 
     return (
       <TypographyContext.Consumer>
-        {value => {
+        {(value) => {
           return (
             <Element
               className={cn(classNames, [

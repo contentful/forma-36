@@ -100,7 +100,7 @@ export type ModalConfirmProps = {
   secondaryTestId?: string;
   cancelTestId?: string;
   children: React.ReactNode;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   testId: 'cf-ui-modal-confirm',

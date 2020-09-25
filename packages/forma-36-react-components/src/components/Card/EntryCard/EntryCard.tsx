@@ -69,7 +69,7 @@ export type EntryCardPropTypes = BaseCardProps & {
    * Changes the height of the component. When small will also ensure thumbnail and description aren't rendered
    */
   size: 'default' | 'small';
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   title: 'Untitled',
@@ -223,7 +223,7 @@ export class EntryCard extends Component<EntryCardPropTypes> {
                     <CardActions
                       className={styles['EntryCard__actions']}
                       iconButtonProps={{
-                        onClick: e => e.stopPropagation,
+                        onClick: (e) => e.stopPropagation,
                       }}
                     >
                       {dropdownListElements}

@@ -19,7 +19,7 @@ export type DropdownContainerProps = {
   submenu?: boolean;
   width?: number | false;
   isAutoalignmentEnabled?: boolean;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 export interface DropdownState {
   dropdownDimensions: {
@@ -208,7 +208,7 @@ class DropdownContainer extends Component<
 
     const dropdown = (
       <div
-        ref={ref => {
+        ref={(ref) => {
           this.dropdown = ref;
         }}
         data-test-id={testId}

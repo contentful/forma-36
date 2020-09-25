@@ -35,7 +35,7 @@ const defaultProps = {
 };
 
 export class ControlledInput extends Component<
-  ControlledInputPropTypes & typeof defaultProps
+  ControlledInputPropTypes & Partial<typeof defaultProps>
 > {
   static defaultProps = defaultProps;
 
@@ -78,17 +78,17 @@ export class ControlledInput extends Component<
         checked={this.props.checked}
         type={type}
         data-test-id={testId}
-        onChange={e => {
+        onChange={(e) => {
           if (onChange) {
             onChange(e);
           }
         }}
-        onBlur={e => {
+        onBlur={(e) => {
           if (onBlur) {
             onBlur(e);
           }
         }}
-        onFocus={e => {
+        onFocus={(e) => {
           if (onFocus) {
             onFocus(e);
           }

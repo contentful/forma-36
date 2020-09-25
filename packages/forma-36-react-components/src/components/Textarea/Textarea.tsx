@@ -30,7 +30,7 @@ export type TextareaProps = {
   onKeyUp?: KeyboardEventHandler<HTMLTextAreaElement>;
   willBlurOnEsc: boolean;
   textareaRef?: RefObject<HTMLTextAreaElement>;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 export interface TextareaState {
   value?: string;
@@ -110,7 +110,7 @@ export class Textarea extends Component<TextareaProps, TextareaState> {
           disabled={disabled}
           placeholder={placeholder}
           name={name}
-          onChange={e => {
+          onChange={(e) => {
             if (onChange) {
               onChange(e);
             }

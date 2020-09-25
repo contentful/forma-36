@@ -22,7 +22,7 @@ export type NoteProps = {
   children: React.ReactNode;
   hasCloseButton?: boolean;
   onClose?: Function;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   noteType: 'primary',

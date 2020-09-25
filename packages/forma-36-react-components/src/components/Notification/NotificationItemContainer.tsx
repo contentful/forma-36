@@ -16,7 +16,7 @@ const defaultProps = {
 };
 
 export class NotificationItemContainer extends Component<
-  NotificationItemContainerProps & typeof defaultProps,
+  NotificationItemContainerProps & Partial<typeof defaultProps>,
   NotificationItemContainerState
 > {
   static defaultProps = defaultProps;

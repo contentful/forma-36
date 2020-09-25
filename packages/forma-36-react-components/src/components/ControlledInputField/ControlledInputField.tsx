@@ -25,7 +25,7 @@ export type ControlledInputFieldPropTypes = {
   className?: string;
   testId?: string;
   children?: React.ReactNode;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   testId: 'cf-ui-controlled-input-field',

@@ -13,7 +13,7 @@ export type InViewportProps = {
   className?: string;
   children?: React.ReactNode;
   testId?: string;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   testId: 'cf-ui-in-viewport',
@@ -114,7 +114,7 @@ export class InViewport extends Component<InViewportProps> {
 
     return (
       <div
-        ref={ref => {
+        ref={(ref) => {
           this.nodeRef = ref;
         }}
         className={classNames}

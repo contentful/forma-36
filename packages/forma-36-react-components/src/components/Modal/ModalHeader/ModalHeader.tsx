@@ -11,7 +11,7 @@ export type ModalHeaderProps = {
   className?: string;
   isNotWrapped?: boolean;
   style?: React.CSSProperties;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   testId: 'cf-ui-modal-header',

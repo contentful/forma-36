@@ -13,7 +13,7 @@ export type PillProps = {
   testId?: string;
   style?: React.CSSProperties;
   dragHandleComponent?: React.ReactNode;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   testId: 'cf-ui-pill',

@@ -16,7 +16,7 @@ export type {{pascalCase name}}Props = {
    * An ID used for testing purposes applied as a data attribute (data-test-id)
    */
   testId?: string;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   testId: 'cf-ui-{{kebabCase name}}',

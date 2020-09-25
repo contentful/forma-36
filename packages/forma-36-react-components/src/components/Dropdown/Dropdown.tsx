@@ -27,7 +27,7 @@ export type DropdownProps = {
   children: React.ReactNode;
   isFullWidth?: boolean;
   isAutoalignmentEnabled?: boolean;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 export interface AnchorDimensionsAndPositonType {
   top: number;
@@ -207,7 +207,7 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
       <div
         data-test-id={testId}
         className={classNames}
-        ref={ref => {
+        ref={(ref) => {
           if (!submenuToggleLabel) {
             this.dropdownAnchor = ref;
           }

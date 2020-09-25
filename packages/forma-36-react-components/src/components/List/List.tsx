@@ -7,7 +7,7 @@ export type ListProps = {
   children: React.ReactNode;
   style?: React.CSSProperties;
   testId?: string;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   testId: 'cf-ui-list',

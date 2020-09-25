@@ -16,7 +16,7 @@ export type EditorToolbarButtonProps = {
   withDropdown?: boolean;
   className?: string;
   testId?: string;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   testId: 'cf-ui-editor-toolbar-button',

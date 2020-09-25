@@ -20,7 +20,7 @@ export type TabProps = {
   className?: string;
   testId?: string;
   children: React.ReactNode;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   selected: false,
@@ -32,7 +32,7 @@ const defaultProps = {
 export class Tab extends Component<TabProps> {
   static defaultProps = defaultProps;
 
-  onClick: MouseEventHandler = e => {
+  onClick: MouseEventHandler = (e) => {
     if (this.props.onSelect && !this.props.disabled) {
       this.props.onSelect(this.props.id, e);
     }

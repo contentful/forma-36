@@ -8,7 +8,7 @@ export type TableRowProps = {
   style?: React.CSSProperties;
   testId?: string;
   children: React.ReactNode;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   testId: 'cf-ui-table-row',

@@ -23,7 +23,7 @@ export type DropdownListItemProps = {
   onEnter?: MouseEventHandler;
   className?: string;
   testId?: string;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   testId: 'cf-ui-dropdown-list-item',

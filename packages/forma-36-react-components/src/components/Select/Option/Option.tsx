@@ -4,7 +4,7 @@ export type OptionProps = {
   value: string;
   children: React.ReactNode;
   testId?: string;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   testId: 'cf-ui-select-option',

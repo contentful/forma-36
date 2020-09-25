@@ -19,7 +19,7 @@ export type TableCellProps = {
   className?: string;
   testId?: string;
   children?: React.ReactNode;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   align: 'left',

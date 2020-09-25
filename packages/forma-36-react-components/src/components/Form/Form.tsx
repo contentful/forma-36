@@ -10,7 +10,7 @@ export type FormProps = {
   style?: React.CSSProperties;
   className?: string;
   children: React.ReactChild | React.ReactNodeArray;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   spacing: 'default',
@@ -51,7 +51,7 @@ export class Form extends Component<FormProps> {
         onSubmit={this.handleSubmit}
         {...otherProps}
       >
-        {React.Children.map(children, child => {
+        {React.Children.map(children, (child) => {
           if (child) {
             return <div className={formItemClassNames}>{child}</div>;
           }

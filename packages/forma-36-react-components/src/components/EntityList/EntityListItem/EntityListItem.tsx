@@ -99,7 +99,7 @@ export type EntityListItemProps = {
    * A boolean used to disable the CardActions
    */
   isActionsDisabled?: boolean;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   testId: 'cf-ui-entity-list-item',
@@ -272,7 +272,7 @@ export class EntityListItem extends Component<EntityListItemProps> {
                     className={styles['EntityListItem__actions']}
                     isDisabled={isActionsDisabled}
                     iconButtonProps={{
-                      onClick: e => e.stopPropagation,
+                      onClick: (e) => e.stopPropagation,
                     }}
                   >
                     {dropdownListElements}

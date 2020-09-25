@@ -10,7 +10,7 @@ export type FormLabelProps = {
   className?: string;
   requiredText?: string;
   required?: boolean;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   testId: 'cf-ui-form-label',

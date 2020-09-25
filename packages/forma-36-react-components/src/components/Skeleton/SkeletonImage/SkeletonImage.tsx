@@ -10,7 +10,7 @@ export type SkeletonImageProps = {
   offsetLeft?: stringOrNumber;
   offsetTop?: stringOrNumber;
   testId?: string;
-} & typeof defaultProps;
+} & Partial<typeof defaultProps>;
 
 const defaultProps = {
   testId: 'cf-ui-skeleton-image',
