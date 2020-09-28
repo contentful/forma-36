@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.56.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.55.3...@contentful/forma-36-react-components@3.56.0) (2020-09-28)
+
+
+### Features
+
+* **Icons:** update Release and Calendar icons ([#575](https://github.com/contentful/forma-36/issues/575)) ([8845c94](https://github.com/contentful/forma-36/commit/8845c94c53e2606f9fd8425ba44b6c8124c0a1c4))
+
+
+
+
+
 ## [3.55.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.55.2...@contentful/forma-36-react-components@3.55.3) (2020-09-24)
 
 
