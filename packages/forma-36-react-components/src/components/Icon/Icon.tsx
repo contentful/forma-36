@@ -281,13 +281,13 @@ export interface IconProps {
   testId?: string;
 }
 
-const defaultProps = {
+const defaultProps: Partial<IconProps> = {
   testId: 'cf-ui-icon',
   size: 'small',
   color: 'primary',
 };
 
-export class Icon extends Component<IconProps & Partial<typeof defaultProps>> {
+export class Icon extends Component<IconProps> {
   static defaultProps = defaultProps;
 
   render() {

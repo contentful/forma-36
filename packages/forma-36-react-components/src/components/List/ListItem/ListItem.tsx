@@ -4,13 +4,13 @@ import cn from 'classnames';
 import styles from './ListItem.css';
 import List from '../List';
 
-export type ListItemProps = {
+export interface ListItemProps {
   className?: string;
   children: React.ReactNode;
   testId?: string;
-} & Partial<typeof defaultProps>;
+}
 
-const defaultProps = {
+const defaultProps: Partial<ListItemProps> = {
   testId: 'cf-ui-list-item',
 };
 

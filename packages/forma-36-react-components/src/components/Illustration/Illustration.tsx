@@ -23,14 +23,14 @@ export function isIllustrationType(name: string): name is IllustrationType {
   return ILLUSTRATION_NAMES.includes(name);
 }
 
-export type IllustrationProps = {
+export interface IllustrationProps {
   illustration: IllustrationType;
   className?: string;
   testId?: string;
   style?: React.CSSProperties;
-} & Partial<typeof defaultProps>;
+}
 
-const defaultProps = {
+const defaultProps: Partial<IllustrationProps> = {
   testId: 'cf-ui-illustration',
 };
 

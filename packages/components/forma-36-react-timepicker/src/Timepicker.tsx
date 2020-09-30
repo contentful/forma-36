@@ -144,7 +144,7 @@ function getSuggestionList(value: string, date: string) {
   });
 }
 
-export type TimepickerProps = {
+export interface TimepickerProps {
   value: string;
   date: string;
   onChange: (val: string) => void;
@@ -157,9 +157,9 @@ export type TimepickerProps = {
   name?: string;
   isRequired?: boolean;
   disabled: boolean;
-} & Partial<typeof defaultProps>;
+}
 
-const defaultProps = {
+const defaultProps: Partial<TimepickerProps> = {
   onBlur: () => {},
   isRequired: false,
 };

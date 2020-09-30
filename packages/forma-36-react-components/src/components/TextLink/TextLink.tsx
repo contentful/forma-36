@@ -15,7 +15,7 @@ export type TextLinkType =
 
 type IconPositionType = 'right' | 'left';
 
-export type TextLinkProps = {
+export interface TextLinkProps {
   children?: React.ReactNode;
   linkType?: TextLinkType;
   href?: React.AnchorHTMLAttributes<HTMLAnchorElement>['href'];
@@ -28,9 +28,9 @@ export type TextLinkProps = {
   icon?: IconType;
   text?: string;
   iconPosition?: IconPositionType;
-} & Partial<typeof defaultProps>;
+}
 
-const defaultProps = {
+const defaultProps: Partial<TextLinkProps> = {
   linkType: 'primary',
   testId: 'cf-ui-text-link',
   disabled: false,

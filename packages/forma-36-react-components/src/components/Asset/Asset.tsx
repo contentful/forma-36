@@ -25,16 +25,16 @@ export function isAssetType(type: string): type is AssetType {
 
 export type AssetType = keyof typeof types;
 
-export type AssetProps = {
+export interface AssetProps {
   src: string;
   title: string;
   type?: AssetType;
   className?: string;
   status?: AssetState;
   testId?: string;
-} & Partial<typeof defaultProps>;
+}
 
-const defaultProps = {
+const defaultProps: Partial<AssetProps> = {
   type: 'image',
   testId: 'cf-ui-asset',
 };

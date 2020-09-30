@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import cn from 'classnames';
 import styles from './EditorToolbar.css';
 
-export type EditorToolbarProps = {
+export interface EditorToolbarProps {
   className?: string;
   children: React.ReactNode;
   testId?: string;
   style?: React.CSSProperties;
-} & Partial<typeof defaultProps>;
+}
 
-const defaultProps = {
+const defaultProps: Partial<EditorToolbarProps> = {
   testId: 'cf-ui-editor-toolbar',
 };
 

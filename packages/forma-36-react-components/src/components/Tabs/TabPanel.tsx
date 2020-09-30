@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
-export type TabPanelProps = {
+export interface TabPanelProps {
   id: string;
   className?: string;
   testId?: string;
   style?: React.CSSProperties;
   children: React.ReactNode;
-} & Partial<typeof defaultProps>;
+}
 
-const defaultProps = {
+const defaultProps: Partial<TabPanelProps> = {
   testId: 'cf-ui-tab-panel',
 };
 

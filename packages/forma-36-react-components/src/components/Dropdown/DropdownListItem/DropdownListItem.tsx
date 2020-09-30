@@ -8,11 +8,11 @@ import cn from 'classnames';
 import TabFocusTrap from '../../TabFocusTrap/TabFocusTrap';
 import styles from './DropdownListItem.css';
 
-export type DropdownListItemProps = {
-  isDisabled: boolean;
+export interface DropdownListItemProps {
+  isDisabled?: boolean;
   listItemRef?: React.RefObject<HTMLLIElement>;
-  isActive: boolean;
-  isTitle: boolean;
+  isActive?: boolean;
+  isTitle?: boolean;
   children: React.ReactNode;
   onClick?: MouseEventHandler;
   onMouseDown?: MouseEventHandler;
@@ -23,9 +23,9 @@ export type DropdownListItemProps = {
   onEnter?: MouseEventHandler;
   className?: string;
   testId?: string;
-} & Partial<typeof defaultProps>;
+}
 
-const defaultProps = {
+const defaultProps: Partial<DropdownListItemProps> = {
   testId: 'cf-ui-dropdown-list-item',
   isDisabled: false,
   isActive: false,

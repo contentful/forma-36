@@ -12,7 +12,7 @@ import styles from './EntryCard.css';
 
 export type EntryCardStatus = 'archived' | 'changed' | 'draft' | 'published';
 
-export type EntryCardPropTypes = BaseCardProps & {
+export interface EntryCardPropTypes extends BaseCardProps {
   /**
    * The title of the entry
    */
@@ -69,9 +69,9 @@ export type EntryCardPropTypes = BaseCardProps & {
    * Changes the height of the component. When small will also ensure thumbnail and description aren't rendered
    */
   size: 'default' | 'small';
-} & Partial<typeof defaultProps>;
+}
 
-const defaultProps = {
+const defaultProps: Partial<EntryCardPropTypes> = {
   title: 'Untitled',
   testId: 'cf-ui-entry-card',
   size: 'default',

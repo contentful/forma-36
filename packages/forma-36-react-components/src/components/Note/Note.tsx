@@ -13,8 +13,8 @@ const Icons = {
   warning: iconName.Warning,
 };
 
-export type NoteProps = {
-  noteType: 'primary' | 'positive' | 'negative' | 'warning';
+export interface NoteProps {
+  noteType?: 'primary' | 'positive' | 'negative' | 'warning';
   className?: string;
   title?: string;
   style?: CSSProperties;
@@ -22,9 +22,9 @@ export type NoteProps = {
   children: React.ReactNode;
   hasCloseButton?: boolean;
   onClose?: Function;
-} & Partial<typeof defaultProps>;
+}
 
-const defaultProps = {
+const defaultProps: Partial<NoteProps> = {
   noteType: 'primary',
   testId: 'cf-ui-note',
 };

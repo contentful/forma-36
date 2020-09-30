@@ -26,7 +26,7 @@ export interface ControlledInputPropTypes {
   willBlurOnEsc: boolean;
 }
 
-const defaultProps = {
+const defaultProps: Partial<ControlledInputPropTypes> = {
   testId: 'cf-ui-controlled-input',
   required: false,
   disabled: false,
@@ -34,9 +34,7 @@ const defaultProps = {
   willBlurOnEsc: true,
 };
 
-export class ControlledInput extends Component<
-  ControlledInputPropTypes & Partial<typeof defaultProps>
-> {
+export class ControlledInput extends Component<ControlledInputPropTypes> {
   static defaultProps = defaultProps;
 
   handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {

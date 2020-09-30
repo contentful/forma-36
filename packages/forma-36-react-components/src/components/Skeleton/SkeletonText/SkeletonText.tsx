@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 
 type stringOrNumber = string | number;
 
-export type SkeletonTextProps = {
-  numberOfLines: number;
-  offsetTop: stringOrNumber;
-  offsetLeft: stringOrNumber;
-  lineHeight: stringOrNumber;
-  marginBottom: stringOrNumber;
+export interface SkeletonTextProps {
+  numberOfLines?: number;
+  offsetTop?: stringOrNumber;
+  offsetLeft?: stringOrNumber;
+  lineHeight?: stringOrNumber;
+  marginBottom?: stringOrNumber;
   width?: stringOrNumber;
-} & Partial<typeof defaultProps>;
+}
 
-const defaultProps = {
+const defaultProps: Partial<SkeletonTextProps> = {
   numberOfLines: 1,
   offsetTop: 0,
   offsetLeft: 0,

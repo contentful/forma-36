@@ -3,16 +3,16 @@ import cn from 'classnames';
 
 import styles from './FormLabel.css';
 
-export type FormLabelProps = {
+export interface FormLabelProps {
   htmlFor: string;
   children: React.ReactNode;
   testId?: string;
   className?: string;
   requiredText?: string;
   required?: boolean;
-} & Partial<typeof defaultProps>;
+}
 
-const defaultProps = {
+const defaultProps: Partial<FormLabelProps> = {
   testId: 'cf-ui-form-label',
   requiredText: 'required',
   required: false,

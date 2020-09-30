@@ -3,15 +3,15 @@ import cn from 'classnames';
 
 import styles from './FieldGroup.css';
 
-export type FieldGroupProps = {
+export interface FieldGroupProps {
   className?: string;
   children: React.ReactNode;
   style?: React.CSSProperties;
   testId?: string;
   row?: boolean;
-} & Partial<typeof defaultProps>;
+}
 
-const defaultProps = {
+const defaultProps: Partial<FieldGroupProps> = {
   row: false,
   testId: 'cf-ui-field-group',
 };

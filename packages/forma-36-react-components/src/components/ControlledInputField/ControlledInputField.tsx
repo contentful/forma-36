@@ -6,7 +6,7 @@ import ValidationMessage from '../ValidationMessage';
 import ControlledInput from '../ControlledInput/ControlledInput';
 import styles from './ControlledInputField.css';
 
-export type ControlledInputFieldPropTypes = {
+export interface ControlledInputFieldPropTypes {
   id: string;
   labelText: string;
   labelIsLight?: boolean;
@@ -25,9 +25,9 @@ export type ControlledInputFieldPropTypes = {
   className?: string;
   testId?: string;
   children?: React.ReactNode;
-} & Partial<typeof defaultProps>;
+}
 
-const defaultProps = {
+const defaultProps: Partial<ControlledInputFieldPropTypes> = {
   testId: 'cf-ui-controlled-input-field',
   labelIsLight: false,
   checked: false,

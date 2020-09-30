@@ -3,21 +3,14 @@ import cn from 'classnames';
 
 import styles from './Typography.css';
 
-export type TypographyProps = {
+export interface TypographyProps {
   className?: string;
   children?: React.ReactNode;
   style?: React.CSSProperties;
   testId?: string;
-} & Partial<typeof defaultProps>;
+}
 
-const defaultConfiguration = {
-  displayText: { spacing: 'l' },
-  displayTextLarge: { spacing: 'xl' },
-  heading: { spacing: 'm' },
-  paragraph: { spacing: 'm' },
-  sectionHeading: { spacing: 'l' },
-  subheading: { spacing: 'm' },
-};
+const defaultConfiguration: Partial<TypographyProps> = {};
 
 const defaultProps = {
   testId: 'cf-ui-text-container',

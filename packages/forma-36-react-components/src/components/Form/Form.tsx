@@ -3,16 +3,16 @@ import cn from 'classnames';
 
 import styles from './Form.css';
 
-export type FormProps = {
+export interface FormProps {
   onSubmit?: FormEventHandler;
   spacing?: 'condensed' | 'default';
   testId?: string;
   style?: React.CSSProperties;
   className?: string;
   children: React.ReactChild | React.ReactNodeArray;
-} & Partial<typeof defaultProps>;
+}
 
-const defaultProps = {
+const defaultProps: Partial<FormProps> = {
   spacing: 'default',
   testId: 'cf-ui-form',
 };

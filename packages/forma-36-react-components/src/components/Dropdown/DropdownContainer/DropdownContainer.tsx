@@ -6,7 +6,7 @@ import { positionType, AnchorDimensionsAndPositonType } from '../Dropdown';
 
 import styles from './DropdownContainer.css';
 
-export type DropdownContainerProps = {
+export interface DropdownContainerProps {
   onClose?: Function;
   dropdownAnchor?: HTMLElement | null;
   className?: string;
@@ -19,7 +19,7 @@ export type DropdownContainerProps = {
   submenu?: boolean;
   width?: number | false;
   isAutoalignmentEnabled?: boolean;
-} & Partial<typeof defaultProps>;
+}
 
 export interface DropdownState {
   dropdownDimensions: {
@@ -29,7 +29,7 @@ export interface DropdownState {
   position: positionType;
 }
 
-const defaultProps = {
+const defaultProps: Partial<DropdownContainerProps> = {
   testId: 'cf-ui-dropdown-portal',
   position: 'bottom-left',
   submenu: false,

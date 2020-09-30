@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import cn from 'classnames';
 import styles from './SkeletonContainer.css';
 
-export type SkeletonContainerProps = {
+export interface SkeletonContainerProps {
   width?: number | string;
   height?: number | string;
   preserveAspectRatio?: string;
@@ -22,11 +22,11 @@ export type SkeletonContainerProps = {
   className?: string;
   testId?: string;
   children: React.ReactNode;
-} & Partial<typeof defaultProps>;
+}
 
 let idCounter = 0;
 
-const defaultProps = {
+const defaultProps: Partial<SkeletonContainerProps> = {
   testId: 'cf-ui-skeleton-form',
   ariaLabel: 'Loading component...',
   width: '100%',

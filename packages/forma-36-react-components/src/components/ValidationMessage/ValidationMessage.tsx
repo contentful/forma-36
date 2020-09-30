@@ -3,14 +3,14 @@ import cn from 'classnames';
 import Icon from '../Icon/Icon';
 import styles from './ValidationMessage.css';
 
-export type ValidationMessageProps = {
+export interface ValidationMessageProps {
   className?: string;
   testId?: string;
   style?: React.CSSProperties;
   children: React.ReactNode;
-} & Partial<typeof defaultProps>;
+}
 
-const defaultProps = {
+const defaultProps: Partial<ValidationMessageProps> = {
   testId: 'cf-ui-validation-message',
 };
 

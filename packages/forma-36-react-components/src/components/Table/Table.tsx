@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import cn from 'classnames';
 import styles from './Table.css';
 
-export type TableProps = {
+export interface TableProps {
   testId?: string;
   className?: string;
   style?: React.CSSProperties;
   children: React.ReactNode;
-} & Partial<typeof defaultProps>;
+}
 
-const defaultProps = {
+const defaultProps: Partial<TableProps> = {
   testId: 'cf-ui-table',
 };
 

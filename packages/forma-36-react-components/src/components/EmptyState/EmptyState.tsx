@@ -5,7 +5,7 @@ import Paragraph from '../Typography/Paragraph';
 
 import styles from './EmptyState.css';
 
-export type EmptyStateProps = {
+export interface EmptyStateProps {
   /**
    * Class names to be appended to the className prop of the component
    */
@@ -34,7 +34,7 @@ export type EmptyStateProps = {
    * Description text and semantic element type
    */
   descriptionProps: TextElementProps;
-} & Partial<typeof defaultProps>;
+}
 
 interface TextElementProps {
   text: React.ReactNode;
@@ -66,7 +66,7 @@ interface ImageProps {
   className?: string;
 }
 
-const defaultProps = {
+const defaultProps: Partial<EmptyStateProps> = {
   testId: 'cf-ui-empty-state',
 };
 

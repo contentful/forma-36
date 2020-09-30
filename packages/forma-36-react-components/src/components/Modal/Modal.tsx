@@ -24,7 +24,7 @@ export type ModalSizeType =
   | string
   | number;
 
-export type ModalProps = {
+export interface ModalProps {
   /**
    * When true, the dialog is shown.
    */
@@ -83,9 +83,9 @@ export type ModalProps = {
 
   // eslint-disable-next-line
   children: any;
-} & Partial<typeof defaultProps>;
+}
 
-const defaultProps = {
+const defaultProps: Partial<ModalProps> = {
   shouldCloseOnEscapePress: true,
   shouldCloseOnOverlayClick: true,
   position: 'center',

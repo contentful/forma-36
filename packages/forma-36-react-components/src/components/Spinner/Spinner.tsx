@@ -7,15 +7,15 @@ type SpinnerSize = 'default' | 'small' | 'large';
 
 type SpinnerColor = 'default' | 'white';
 
-export type SpinnerProps = {
+export interface SpinnerProps {
   size?: SpinnerSize;
   customSize?: number;
   color?: SpinnerColor;
   className?: string;
   testId?: string;
-} & Partial<typeof defaultProps>;
+}
 
-const defaultProps = {
+const defaultProps: Partial<SpinnerProps> = {
   testId: 'cf-ui-spinner',
   size: 'default',
   color: 'default',

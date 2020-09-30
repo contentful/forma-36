@@ -4,15 +4,15 @@ import styles from './Heading.css';
 
 import { TypographyContext } from '../Typography';
 
-export type HeadingProps = {
-  element: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
+export interface HeadingProps {
+  element?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
   style?: React.CSSProperties;
   className?: string;
   children?: React.ReactNode;
   testId?: string;
-} & Partial<typeof defaultProps>;
+}
 
-const defaultProps = {
+const defaultProps: Partial<HeadingProps> = {
   element: 'h1',
   testId: 'cf-ui-heading',
 };

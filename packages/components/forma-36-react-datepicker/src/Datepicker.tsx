@@ -21,7 +21,7 @@ const styles = {
   }),
 };
 
-export type DatePickerProps = {
+export interface DatePickerProps {
   disabled: boolean;
   required: boolean;
   value?: Date;
@@ -29,18 +29,19 @@ export type DatePickerProps = {
   maxDate?: Date;
   onChange?: (val: Date) => void;
   onBlur?: FocusEventHandler;
+  name?: string;
   helpText?: string;
   labelText?: string;
   id?: string;
   testId?: string;
   dateFormat?: string;
-} & Partial<typeof defaultProps>;
+}
 
 export interface DatePickerState {
   validationError?: string;
 }
 
-const defaultProps = {
+const defaultProps: Partial<DatePickerProps> = {
   onChange: () => {},
   onBlur: () => {},
   name: 'cf-ui-datepicker',

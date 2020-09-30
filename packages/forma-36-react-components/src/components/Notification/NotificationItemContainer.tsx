@@ -11,12 +11,12 @@ export interface NotificationItemContainerState {
   isShown: boolean;
 }
 
-const defaultProps = {
+const defaultProps: Partial<NotificationItemContainerProps> = {
   isShown: false,
 };
 
 export class NotificationItemContainer extends Component<
-  NotificationItemContainerProps & Partial<typeof defaultProps>,
+  NotificationItemContainerProps,
   NotificationItemContainerState
 > {
   static defaultProps = defaultProps;

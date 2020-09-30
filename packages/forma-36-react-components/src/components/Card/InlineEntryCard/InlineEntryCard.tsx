@@ -7,7 +7,7 @@ import CardActions from './../CardActions';
 import InlineEntryCardSkeleton from './InlineEntryCardSkeleton';
 import styles from './InlineEntryCard.css';
 
-export type InlineEntryCardPropTypes = {
+export interface InlineEntryCardPropTypes {
   /**
    * Gives the component a selected state
    */
@@ -37,9 +37,9 @@ export type InlineEntryCardPropTypes = {
    * Child nodes to be rendered in the component
    */
   children: React.ReactNode;
-} & Partial<typeof defaultProps>;
+}
 
-const defaultProps = {
+const defaultProps: Partial<InlineEntryCardPropTypes> = {
   testId: 'cf-ui-inline-entry-card',
 };
 

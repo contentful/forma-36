@@ -8,7 +8,7 @@ import classNames from 'classnames';
 
 import styles from './Tabs.css';
 
-export type TabProps = {
+export interface TabProps {
   id: string;
   onSelect?: (id: string, e: React.SyntheticEvent) => void;
   selected?: boolean;
@@ -20,9 +20,9 @@ export type TabProps = {
   className?: string;
   testId?: string;
   children: React.ReactNode;
-} & Partial<typeof defaultProps>;
+}
 
-const defaultProps = {
+const defaultProps: Partial<TabProps> = {
   selected: false,
   disabled: false,
   testId: 'cf-ui-tab',

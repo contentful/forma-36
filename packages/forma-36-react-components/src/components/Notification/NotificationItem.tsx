@@ -14,7 +14,7 @@ export interface NotificationCtaProps {
 }
 
 export interface NotificationItemProps {
-  intent: NotificationIntent;
+  intent?: NotificationIntent;
   hasCloseButton?: boolean;
   onClose?: Function;
   testId?: string;
@@ -23,15 +23,13 @@ export interface NotificationItemProps {
   cta?: Partial<NotificationCtaProps>;
 }
 
-const defaultProps = {
+const defaultProps: Partial<NotificationItemProps> = {
   testId: 'cf-ui-notification',
   intent: 'success' as NotificationIntent,
   hasCloseButton: true,
 };
 
-export class NotificationItem extends Component<
-  NotificationItemProps & Partial<typeof defaultProps>
-> {
+export class NotificationItem extends Component<NotificationItemProps> {
   static defaultProps = defaultProps;
 
   renderTitle() {

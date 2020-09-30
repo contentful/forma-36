@@ -4,15 +4,15 @@ import styles from './Paragraph.css';
 
 import { TypographyContext } from '../Typography';
 
-export type ParagraphProps = {
-  element: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
+export interface ParagraphProps {
+  element?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
   className?: string;
   children?: React.ReactNode;
   testId?: string;
   style?: React.CSSProperties;
-} & Partial<typeof defaultProps>;
+}
 
-const defaultProps = {
+const defaultProps: Partial<ParagraphProps> = {
   element: 'p',
   testId: 'cf-ui-paragraph',
 };

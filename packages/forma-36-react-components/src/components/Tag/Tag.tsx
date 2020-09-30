@@ -21,16 +21,16 @@ const statusTagTypeMap = {
   deleted: 'negative',
 };
 
-export type TagProps = {
+export interface TagProps {
   tagType?: TagType;
   style?: React.CSSProperties;
   className?: string;
   testId?: string;
   children: React.ReactNode;
   entityStatusType?: Status;
-} & Partial<typeof defaultProps>;
+}
 
-const defaultProps = {
+const defaultProps: Partial<TagProps> = {
   tagType: 'primary' as TagType,
   testId: 'cf-ui-tag',
 };

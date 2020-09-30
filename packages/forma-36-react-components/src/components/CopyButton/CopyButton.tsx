@@ -6,7 +6,7 @@ import { TooltipPlace, Tooltip } from '../Tooltip';
 import TabFocusTrap from '../TabFocusTrap';
 import styles from './CopyButton.css';
 
-export type CopyButtonProps = {
+export interface CopyButtonProps {
   copyValue?: string;
   onCopy?: (value: string) => void;
   className?: string;
@@ -14,13 +14,13 @@ export type CopyButtonProps = {
   tooltipPlace?: TooltipPlace;
   tooltipText?: React.ReactNode;
   tooltipCopiedText?: React.ReactNode;
-} & Partial<typeof defaultProps>;
+}
 
 export interface CopyButtonState {
   copied: boolean;
 }
 
-const defaultProps = {
+const defaultProps: Partial<CopyButtonProps> = {
   testId: 'cf-ui-copy-button',
   tooltipText: (
     <React.Fragment>

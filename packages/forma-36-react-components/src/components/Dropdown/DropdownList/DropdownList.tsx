@@ -3,7 +3,7 @@ import cn from 'classnames';
 import cssStyles from './DropdownList.css';
 import * as CSS from 'csstype';
 
-export type DropdownListProps = {
+export interface DropdownListProps {
   children: React.ReactNode;
   listRef?: React.RefObject<HTMLUListElement>;
   className?: string;
@@ -11,9 +11,9 @@ export type DropdownListProps = {
   border?: 'top' | 'bottom';
   maxHeight?: number | CSS.MaxHeightProperty<string>;
   styles?: object;
-} & Partial<typeof defaultProps>;
+}
 
-const defaultProps = {
+const defaultProps: Partial<DropdownListProps> = {
   testId: 'cf-ui-dropdown-list',
 };
 

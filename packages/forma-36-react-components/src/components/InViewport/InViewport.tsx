@@ -4,8 +4,8 @@ import isBrowser from '../../utils/isBrowser';
 import throttle from '../../utils/throttle';
 import styles from './InViewport.css';
 
-export type InViewportProps = {
-  offset: number;
+export interface InViewportProps {
+  offset?: number;
   onOverflowTop?: Function;
   onOverflowRight?: Function;
   onOverflowBottom?: Function;
@@ -13,9 +13,9 @@ export type InViewportProps = {
   className?: string;
   children?: React.ReactNode;
   testId?: string;
-} & Partial<typeof defaultProps>;
+}
 
-const defaultProps = {
+const defaultProps: Partial<InViewportProps> = {
   testId: 'cf-ui-in-viewport',
   offset: 0,
 };
