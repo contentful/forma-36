@@ -4,12 +4,15 @@ import React, {
   useRef,
   MouseEvent,
   FocusEvent,
+  CSSProperties,
 } from 'react';
 import { usePopper } from 'react-popper';
 import { Placement } from '@popperjs/core';
+import * as CSS from 'csstype';
 import cn from 'classnames';
 
 import styles from './Tooltip.css';
+import tokens from '@contentful/forma-36-tokens';
 
 export type TooltipPlace = Placement;
 
@@ -25,8 +28,7 @@ export interface TooltipProps {
   /**
    * HTML element used to wrap the target of the Tooltip
    */
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  containerElement?: any;
+  containerElement?: React.ElementType;
   /**
    * Content of the Tooltip
    */
@@ -39,7 +41,7 @@ export interface TooltipProps {
   /**
    * It sets a max-width for the Tooltip
    */
-  maxWidth?: number | string;
+  maxWidth?: CSS.MaxWidthProperty<string>;
   /**
    * Function that will be called when target gets blurred
    */
@@ -78,7 +80,7 @@ interface ArrowPositionState {
 export const Tooltip = ({
   children,
   className,
-  containerElement: ContainerElement,
+  containerElement: ContainerElement = 'span',
   content,
   id,
   isVisible,
@@ -92,6 +94,8 @@ export const Tooltip = ({
   testId,
   ...otherProps
 }: TooltipProps) => {
+  if (!content) return <>{children}</>;
+
   const [show, setShow] = useState(isVisible);
   const [arrowPosition, setArrowPosition] = useState<ArrowPositionState>(
     getArrowPosition('bottom'),
@@ -139,11 +143,14 @@ export const Tooltip = ({
     transform: 'rotate(45deg)',
   };
 
-  const widthStyle = maxWidth
-    ? {
-        maxWidth: typeof maxWidth === 'string' ? maxWidth : `${maxWidth}px`,
-      }
-    : {};
+  const contentMaxWidth =
+    maxWidth && Number.isNaN(maxWidth) ? `${maxWidth}px` : maxWidth;
+
+  const contentStyles: CSSProperties = {
+    zIndex: tokens.zIndexTooltip,
+    maxWidth: contentMaxWidth,
+    ...popperStyles.popper,
+  };
 
   return (
     <>
@@ -177,7 +184,7 @@ export const Tooltip = ({
           ref={popperRef}
           aria-hidden={show ? 'true' : 'false'}
           role="tooltip"
-          style={{ ...popperStyles.popper, ...widthStyle }}
+          style={contentStyles}
           className={cn(styles.Tooltip, className, {
             [styles['Tooltip--hidden']]: !show,
           })}
