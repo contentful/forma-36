@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.57.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.56.0...@contentful/forma-36-react-components@3.57.0) (2020-09-30)
+
+
+### Features
+
+* **EntryCard:** add size=auto to EntryCard ([#576](https://github.com/contentful/forma-36/issues/576)) ([a1f8557](https://github.com/contentful/forma-36/commit/a1f8557842613b016ed28f1b3af022bef253cf89))
+
+
+
+
+
 # [3.56.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.55.3...@contentful/forma-36-react-components@3.56.0) (2020-09-28)
 
 
