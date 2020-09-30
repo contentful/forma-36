@@ -41,7 +41,7 @@ export interface TooltipProps {
   /**
    * It sets a max-width for the Tooltip
    */
-  maxWidth?: CSS.MaxWidthProperty<string>;
+  maxWidth?: number | CSS.MaxWidthProperty<string>;
   /**
    * Function that will be called when target gets blurred
    */
@@ -144,7 +144,7 @@ export const Tooltip = ({
   };
 
   const contentMaxWidth =
-    maxWidth && Number.isNaN(maxWidth) ? `${maxWidth}px` : maxWidth;
+    typeof maxWidth === 'string' ? maxWidth : `${maxWidth}px`;
 
   const contentStyles: CSSProperties = {
     zIndex: tokens.zIndexTooltip,
