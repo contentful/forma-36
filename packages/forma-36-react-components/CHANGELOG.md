@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.57.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.57.0...@contentful/forma-36-react-components@3.57.1) (2020-09-30)
+
+
+### Bug Fixes
+
+* **asset:** handle overflow in asset title ([#577](https://github.com/contentful/forma-36/issues/577)) ([91cdba9](https://github.com/contentful/forma-36/commit/91cdba9196092f9c31287ae6ec6902d41a03a720))
+
+
+
+
+
 # [3.57.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.56.0...@contentful/forma-36-react-components@3.57.0) (2020-09-30)
 
 
