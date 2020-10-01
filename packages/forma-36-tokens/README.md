@@ -52,6 +52,9 @@ All tokens are kept in the `src/tokens` directory and organised as so:
 
 ```
 .
+├── border-radius
+│   ├── border-radius.js
+│   └── glows.js
 ├── box-shadows
 │   ├── box-shadows.js
 │   └── glows.js
