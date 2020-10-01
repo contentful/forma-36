@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.58.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.57.1...@contentful/forma-36-react-components@3.58.0) (2020-10-01)
+
+
+### Bug Fixes
+
+* **tooltip:** return children if no content provided and add z-index ([#579](https://github.com/contentful/forma-36/issues/579)) ([5bc8858](https://github.com/contentful/forma-36/commit/5bc8858de8b8132f8845e8e9ed0650de848088e7))
+
+
+### Features
+
+* expose AssetIcon and hide title if it's empty ([#578](https://github.com/contentful/forma-36/issues/578)) ([877f0a8](https://github.com/contentful/forma-36/commit/877f0a8098d2d6a00364fd509b7d1147877b2a6d))
+
+
+
+
+
 ## [3.57.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.57.0...@contentful/forma-36-react-components@3.57.1) (2020-09-30)
 
 
