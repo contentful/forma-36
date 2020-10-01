@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.8.0...@contentful/forma-36-tokens@0.8.1) (2020-10-01)
+
+
+### Bug Fixes
+
+* **tooltip:** return children if no content provided and add z-index ([#579](https://github.com/contentful/forma-36/issues/579)) ([5bc8858](https://github.com/contentful/forma-36/commit/5bc8858de8b8132f8845e8e9ed0650de848088e7))
+
+
+
+
+
 # [0.8.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.7.3...@contentful/forma-36-tokens@0.8.0) (2020-08-24)
 
 
