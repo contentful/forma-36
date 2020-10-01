@@ -2,13 +2,14 @@
 @import 'settings/typography';
 @import 'settings/transitions';
 @import 'settings/dimensions';
+@import 'settings/borders';
 
 .EditorToolbarButton {
   display: inline-block;
   height: calc(1rem * (30 / var(--font-base-default)));
   width: calc(1rem * (30 / var(--font-base-default)));
   justify-content: center;
-  border-radius: 2px;
+  border-radius: var(--border-radius-small);
   transition: background var(--transition-duration-short)
     var(--transition-easing-default);
 
