@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.8.1...@contentful/forma-36-tokens@0.9.0) (2020-10-01)
+
+
+### Features
+
+* create border-radius tokens ([#580](https://github.com/contentful/forma-36/issues/580)) ([c2ef023](https://github.com/contentful/forma-36/commit/c2ef02360712c7d45d2064c79e8fe7fe0a412053))
+
+
+
+
+
 ## [0.8.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.8.0...@contentful/forma-36-tokens@0.8.1) (2020-10-01)
 
 
