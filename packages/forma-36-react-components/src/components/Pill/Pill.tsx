@@ -56,6 +56,7 @@ export class Pill extends Component<PillProps> {
         {onClose && (
           <button
             type="button"
+            aria-label="button"
             onClick={onClose}
             className={styles['Pill__close-button']}
           >

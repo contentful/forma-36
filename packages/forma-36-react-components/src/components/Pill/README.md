@@ -1,0 +1,68 @@
+Pills represent a set of one or multiple objects which can be entered or changed by the user. By default, pills can be removed by the user.  When necessary, the order of pills can be changed by the user using drag and drop. They are used to represent complex entities in small blocks such as contact details. Contentful Pills are are used to render transition locales and tag elements.
+
+## Examples of usage
+
+```jsx
+import {Pill} from '@contentful/forma-36-react-components';
+
+const renderTags = (tags) => {
+  return tags.sort().map((tag) => (
+    <li key={tag.value}>
+      <Pill
+        key={tag.value}
+        label={tag.label}
+        onClose={() => onTagPillClose(tag.value)}
+      />
+    </li>
+  ));
+};
+
+```
+
+Example of usage with dragable option
+
+```jsx
+import {Pill} from '@contentful/forma-36-react-components';
+
+<Pill
+  tabIndex={0}
+  className={styles.pill}
+  testId="pill-item"
+  status="primary"
+  label={value}
+  onClose={() => {
+    onRemoveItem();
+  }}
+  onDrag={() => onDragItem()}
+/>
+
+```
+
+Example of the Pill component with dragHandle, in that case Icon.
+
+```jsx
+import {Pill} from '@contentful/forma-36-react-components';
+
+<Pill
+  label='example.user@contentful.com'
+  dragHandleComponent={
+    <Icon
+      icon="ArrowUp"
+      color="positive"
+      style={{ padding: '0.375rem 0.625rem' }}
+    />
+  }
+/>
+
+```
+## Best practices
+ - use Pill to represent data like contact details
+ - display data in the Pill like tagging
+ - it can be used for web content that needs to be labeled, categorized, or organized using keywords that describe them.
+
+## Content recommendations:
+ - Be sure the pill text is clear and concise.
+
+## Accessibility
+
+ - Label value is passed in the component as a aria-label and title in the span element, like follows `aria-label={label} title={label}`. 
