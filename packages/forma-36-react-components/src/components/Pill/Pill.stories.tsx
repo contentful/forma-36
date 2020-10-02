@@ -63,16 +63,16 @@ export const CustomHandleComponent = (args: PillProps) => (
   />
 );
 
-basic.args = { label: 'mike.mitchell@contentful.com' };
+basic.args = { label: 'example.user@contentful.com' };
 
 onDragAndOnClose.args = {
-  label: 'guilherme.santos@contentful.com ',
+  label: 'example.user@contentful.com ',
   onClose: action('clicked'),
   onDrag: action('dragged'),
 };
 
 CustomHandleComponent.args = {
-  label: 'moe.shaaban@contentful.com',
+  label: 'example.user@contentful.com',
   onClose: action('clicked'),
   onDrag: action('dragged'),
 };
