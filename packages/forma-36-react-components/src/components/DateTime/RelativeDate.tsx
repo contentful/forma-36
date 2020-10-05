@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { formatAbsoluteDateTime, formatRelativeDateTime } from './dateUtils';
 
 interface RelativeDateProps {
@@ -24,8 +24,20 @@ export const RelativeDate: React.FC<RelativeDateProps> = ({
   className,
   baseDate,
 }) => {
-  const relativeTime = formatRelativeDateTime(date, baseDate);
+  const [relativeTime, setRelativeTime] = useState(
+    formatRelativeDateTime(date, baseDate),
+  );
   const absoluteTime = formatAbsoluteDateTime(date);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setRelativeTime(formatRelativeDateTime(date, baseDate));
+    }, 1000);
+
+    return function cleanup() {
+      clearInterval(intervalId);
+    };
+  });
 
   return (
     <time
