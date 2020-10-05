@@ -1,3 +1,3 @@
 export * from './dateUtils';
-export { RelativeDate as DateTime } from './DateTime';
-export { RelativeDate } from './RelativeDate';
+export { DateTime } from './DateTime/DateTime';
+export { RelativeDate } from './RelativeDate/RelativeDate';

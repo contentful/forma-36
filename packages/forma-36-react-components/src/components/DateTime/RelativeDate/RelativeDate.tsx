@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { formatAbsoluteDateTime, formatRelativeDateTime } from './dateUtils';
+import { formatAbsoluteDateTime, formatRelativeDateTime } from '../dateUtils';
 
 interface RelativeDateProps {
   /** the JS Date object to represent */

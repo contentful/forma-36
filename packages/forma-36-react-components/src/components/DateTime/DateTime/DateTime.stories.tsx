@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { select, text, date } from '@storybook/addon-knobs';
 
 import DateTime from './DateTime';
-import { DateTimeFormat } from './dateUtils';
+import { DateTimeFormat } from '../dateUtils';
 
 const formatOptions: DateTimeFormat[] = [
   'FULL',

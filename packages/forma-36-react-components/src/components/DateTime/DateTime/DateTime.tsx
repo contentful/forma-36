@@ -1,5 +1,5 @@
 import React from 'react';
-import { DateTimeFormat, formatDateTime } from './dateUtils';
+import { DateTimeFormat, formatDateTime } from '../dateUtils';
 
 interface DateTimeProps {
   date: Date;
@@ -16,7 +16,7 @@ interface DateTimeProps {
 /**
  * Formats a JS Date object to an absolute date and time inside of a <time /> tag
  */
-export const RelativeDate: React.FC<DateTimeProps> = ({
+export const DateTime: React.FC<DateTimeProps> = ({
   date,
   format,
   className,
@@ -36,4 +36,4 @@ export const RelativeDate: React.FC<DateTimeProps> = ({
   );
 };
 
-export default RelativeDate;
+export default DateTime;
