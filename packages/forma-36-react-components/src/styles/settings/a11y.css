@@ -1,9 +1,10 @@
 @import 'settings/colors';
 @import 'settings/shadows';
+@import 'settings/borders';
 
 .focus-outline--default:focus {
   outline: 1px solid var(--color-primary);
-  border-radius: 2px;
+  border-radius: var(--border-radius-small);
   box-shadow: var(--glow-primary);
 }
 

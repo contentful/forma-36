@@ -6,7 +6,7 @@
   display: inline-flex;
   background: var(--color-element-light);
   font-family: var(--font-stack-primary);
-  border-radius: 0.125rem;
+  border-radius: var(--border-radius-small);
   border: none;
   padding: 0;
   max-width: 100%;
