@@ -8,7 +8,7 @@
   display: block;
   padding: calc(1rem * (14 / var(--font-base-default)));
   border: 1px solid var(--color-element-mid);
-  border-radius: var(--border-radius-small);
+  border-radius: var(--border-radius-medium);
   color: var(--color-text-dark);
   text-decoration: none;
   background: var(--color-white);

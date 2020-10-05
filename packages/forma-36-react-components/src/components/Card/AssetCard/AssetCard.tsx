@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import cn from 'classnames';
 import Card, { BaseCardProps } from '../Card';
 import CardActions from './../CardActions';
-import Asset from '../../Asset';
+import { Asset } from '../../Asset';
 import { AssetType } from '../../Asset';
 import Tag, { TagType } from '../../Tag';
 import AssetCardSkeleton from './AssetCardSkeleton';

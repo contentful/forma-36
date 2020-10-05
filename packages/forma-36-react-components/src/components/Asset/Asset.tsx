@@ -51,9 +51,13 @@ export class Asset extends Component<AssetProps> {
           alt={title}
         />
       </div>
-      <div className={styles['Asset__title-container']}>
-        <span className={styles['Asset__title-container__title']}>{title}</span>
-      </div>
+      {title && (
+        <div className={styles['Asset__title-container']}>
+          <span className={styles['Asset__title-container__title']}>
+            {title}
+          </span>
+        </div>
+      )}
     </React.Fragment>
   );
 
@@ -63,7 +67,11 @@ export class Asset extends Component<AssetProps> {
         <div className={styles['Asset__illustration-container']}>
           <AssetIcon type={type} />
         </div>
-        <span className={styles['Asset__asset-container__title']}>{title}</span>
+        {title && (
+          <span className={styles['Asset__asset-container__title']}>
+            {title}
+          </span>
+        )}
       </div>
     );
   };

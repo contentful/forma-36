@@ -25,6 +25,10 @@
   height: calc(1rem * (84 / var(--font-base-default)));
 }
 
+.EntryCard--size-auto {
+  min-height: calc(1rem * (84 / var(--font-base-default)));
+}
+
 .EntryCard__wrapper {
   padding: calc(1rem * (14 / var(--font-base-default)));
   flex: 1 1 0;

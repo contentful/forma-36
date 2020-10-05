@@ -2,6 +2,7 @@
 @import 'settings/typography';
 @import 'settings/transitions';
 @import 'settings/shadows';
+@import 'settings/borders';
 @import 'settings/z-index';
 
 .Button {
@@ -16,7 +17,7 @@
   padding: 0;
   border: calc(1rem * (1 / var(--font-base-default))) solid
     var(--color-element-dark);
-  border-radius: calc(1rem * (2 / var(--font-base-default)));
+  border-radius: var(--border-radius-medium);
   font-family: var(--font-stack-primary);
   font-size: calc(1rem * (14 / var(--font-base-default)));
   overflow: hidden;

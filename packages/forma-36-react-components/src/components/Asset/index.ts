@@ -1,2 +1,3 @@
 export * from './Asset';
-export { default } from './Asset';
+export { Asset } from './Asset';
+export { AssetIcon } from './AssetIcon/AssetIcon';
