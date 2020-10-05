@@ -1562,10 +1562,22 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@contentful/forma-36-fcss@^0.2.10":
+  version "0.2.10"
+  resolved "https://registry.yarnpkg.com/@contentful/forma-36-fcss/-/forma-36-fcss-0.2.10.tgz#34619c022fb107ed3b33bdc024f0fe40f89c49e0"
+  integrity sha512-2zc74ZInMVP5O4hD3AwgLH5BvIO1+Il3tjNeHxF+O2hOxmj8drAcBY1lBp8W5h/XIgr/PVfHg/SLKwOYh8y2Kg==
+  dependencies:
+    "@contentful/forma-36-tokens" "^0.9.0"
+
 "@contentful/forma-36-tokens@0.2.0":
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@contentful/forma-36-tokens/-/forma-36-tokens-0.2.0.tgz#c4a1062e7acc2ae0ae5699e7c8606d5b5047a1c5"
   integrity sha512-6vshI8mlnEuVx6lJ0Yw7Jzeh5YEhlCfxWZiLXg5pbiDmi9JtPAwllWii9ocrKLelIAPwB/gvNQAAzm6uSy/Vug==
+
+"@contentful/forma-36-tokens@^0.9.0":
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/@contentful/forma-36-tokens/-/forma-36-tokens-0.9.0.tgz#d5fc57e02d1b5ec900f52bc749155b9b6ae87fd8"
+  integrity sha512-b1By8tpD4gS5IikJyvk9sQvd7ugifeJh7bZ+17Bolsn5q1k3gU7Qo3EsuGU8z+Q9BET/haKMAwK1UuSLQPzm1w==
 
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
@@ -7571,6 +7583,11 @@ dateformat@^3.0.0:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/dateformat/-/dateformat-3.0.3.tgz#a6e37499a4d9a9cf85ef5872044d62901c9889ae"
   integrity sha512-jyCETtSl3VMZMWeRo7iY1FL19ges1t55hMo5yaam4Jrsm5EPL89UQkoQRyiI+Yf4k8r2ZpdngkV8hr1lIdjb3Q==
+
+dayjs@^1.9.1:
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.9.1.tgz#201a755f7db5103ed6de63ba93a984141c754541"
+  integrity sha512-01NCTBg8cuMJG1OQc6PR7T66+AFYiPwgDvdJmvJBn29NGzIG+DIFxPLNjHzwz3cpFIvG+NcwIjP9hSaPVoOaDg==
 
 debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0, debug@^2.6.8, debug@^2.6.9:
   version "2.6.9"
