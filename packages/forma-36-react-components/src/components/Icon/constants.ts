@@ -74,6 +74,7 @@ export const iconName = {
   HorizontalRuleTrimmed: 'HorizontalRuleTrimmed',
   InfoCircle: 'InfoCircle',
   InfoCircleTrimmed: 'InfoCircleTrimmed',
+  Language: 'Language',
   Link: 'Link',
   LinkTrimmed: 'LinkTrimmed',
   ListBulleted: 'ListBulleted',
@@ -123,4 +124,5 @@ export const iconName = {
   UsersTrimmed: 'UsersTrimmed',
   Warning: 'Warning',
   WarningTrimmed: 'WarningTrimmed',
+  Workflows: 'Workflows',
 };

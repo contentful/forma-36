@@ -20,7 +20,7 @@ export const types = {
 };
 
 export function isAssetType(type: string): type is AssetType {
-  return Object.keys(types).includes(type)
+  return Object.keys(types).includes(type);
 }
 
 export type AssetType = keyof typeof types;
@@ -51,9 +51,13 @@ export class Asset extends Component<AssetProps> {
           alt={title}
         />
       </div>
-      <div className={styles['Asset__title-container']}>
-        <span className={styles['Asset__title-container__title']}>{title}</span>
-      </div>
+      {title && (
+        <div className={styles['Asset__title-container']}>
+          <span className={styles['Asset__title-container__title']}>
+            {title}
+          </span>
+        </div>
+      )}
     </React.Fragment>
   );
 
@@ -63,24 +67,35 @@ export class Asset extends Component<AssetProps> {
         <div className={styles['Asset__illustration-container']}>
           <AssetIcon type={type} />
         </div>
-        <span className={styles['Asset__asset-container__title']}>{title}</span>
+        {title && (
+          <span className={styles['Asset__asset-container__title']}>
+            {title}
+          </span>
+        )}
       </div>
     );
   };
 
   render() {
-    const { className, src, status, title, type, testId, ...otherProps } = this.props;
+    const {
+      className,
+      src,
+      status,
+      title,
+      type,
+      testId,
+      ...otherProps
+    } = this.props;
 
     const classNames = cn(styles.Asset, className);
 
     // Archived images will not have a preview available
-    const asImage = type && type === 'image' && (!status || status !== 'archived')
+    const asImage =
+      type && type === 'image' && (!status || status !== 'archived') && src;
 
     return (
       <div className={classNames} data-test-id={testId} {...otherProps}>
-        {asImage
-          ? this.renderImage(src, title)
-          : this.renderAsset(type, title)}
+        {asImage ? this.renderImage(src, title) : this.renderAsset(type, title)}
       </div>
     );
   }

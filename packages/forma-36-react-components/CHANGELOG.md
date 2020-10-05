@@ -3,6 +3,175 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.58.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.58.0...@contentful/forma-36-react-components@3.58.1) (2020-10-01)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+# [3.58.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.57.1...@contentful/forma-36-react-components@3.58.0) (2020-10-01)
+
+
+### Bug Fixes
+
+* **tooltip:** return children if no content provided and add z-index ([#579](https://github.com/contentful/forma-36/issues/579)) ([5bc8858](https://github.com/contentful/forma-36/commit/5bc8858de8b8132f8845e8e9ed0650de848088e7))
+
+
+### Features
+
+* expose AssetIcon and hide title if it's empty ([#578](https://github.com/contentful/forma-36/issues/578)) ([877f0a8](https://github.com/contentful/forma-36/commit/877f0a8098d2d6a00364fd509b7d1147877b2a6d))
+
+
+
+
+
+## [3.57.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.57.0...@contentful/forma-36-react-components@3.57.1) (2020-09-30)
+
+
+### Bug Fixes
+
+* **asset:** handle overflow in asset title ([#577](https://github.com/contentful/forma-36/issues/577)) ([91cdba9](https://github.com/contentful/forma-36/commit/91cdba9196092f9c31287ae6ec6902d41a03a720))
+
+
+
+
+
+# [3.57.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.56.0...@contentful/forma-36-react-components@3.57.0) (2020-09-30)
+
+
+### Features
+
+* **EntryCard:** add size=auto to EntryCard ([#576](https://github.com/contentful/forma-36/issues/576)) ([a1f8557](https://github.com/contentful/forma-36/commit/a1f8557842613b016ed28f1b3af022bef253cf89))
+
+
+
+
+
+# [3.56.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.55.3...@contentful/forma-36-react-components@3.56.0) (2020-09-28)
+
+
+### Features
+
+* **Icons:** update Release and Calendar icons ([#575](https://github.com/contentful/forma-36/issues/575)) ([8845c94](https://github.com/contentful/forma-36/commit/8845c94c53e2606f9fd8425ba44b6c8124c0a1c4))
+
+
+
+
+
+## [3.55.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.55.2...@contentful/forma-36-react-components@3.55.3) (2020-09-24)
+
+
+### Bug Fixes
+
+* Flex grow instead of fixed-height ([#572](https://github.com/contentful/forma-36/issues/572)) ([31dea3d](https://github.com/contentful/forma-36/commit/31dea3df815e8328380ec61e0c185c83dc52c91d))
+
+
+
+
+
+## [3.55.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.55.1...@contentful/forma-36-react-components@3.55.2) (2020-09-23)
+
+
+### Bug Fixes
+
+* **tooltip:** spread otherProps ([#573](https://github.com/contentful/forma-36/issues/573)) ([5c6041b](https://github.com/contentful/forma-36/commit/5c6041bea9631690a76e0666e12361c7171055cc))
+
+
+
+
+
+## [3.55.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.55.0...@contentful/forma-36-react-components@3.55.1) (2020-09-23)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+# [3.55.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.54.3...@contentful/forma-36-react-components@3.55.0) (2020-09-23)
+
+
+### Features
+
+* **Icon:** add Language icon ([#570](https://github.com/contentful/forma-36/issues/570)) ([96ffb78](https://github.com/contentful/forma-36/commit/96ffb78ccea245361ece9675f1058d96eae63d90))
+
+
+
+
+
+## [3.54.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.54.2...@contentful/forma-36-react-components@3.54.3) (2020-09-22)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+## [3.54.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.54.1...@contentful/forma-36-react-components@3.54.2) (2020-09-22)
+
+
+### Bug Fixes
+
+* show image only there's src ([#569](https://github.com/contentful/forma-36/issues/569)) ([000af17](https://github.com/contentful/forma-36/commit/000af170cf1a02378363d8a7d7f46b3c1c343176))
+
+
+
+
+
+## [3.54.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.54.0...@contentful/forma-36-react-components@3.54.1) (2020-09-21)
+
+
+### Bug Fixes
+
+* **flex:** add missing flexGrow property ([#568](https://github.com/contentful/forma-36/issues/568)) ([2d31182](https://github.com/contentful/forma-36/commit/2d311829e73a257e3d2557d17a8812c2d16a23d8))
+
+
+
+
+
+# [3.54.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.53.0...@contentful/forma-36-react-components@3.54.0) (2020-09-21)
+
+
+### Features
+
+* **Icon:** add workflows icon ([170a09a](https://github.com/contentful/forma-36/commit/170a09a6e230f835d6b47def148065e0cbfdb351))
+
+
+
+
+
+# [3.53.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.52.0...@contentful/forma-36-react-components@3.53.0) (2020-09-17)
+
+
+### Features
+
+* **card:** add target prop ([#564](https://github.com/contentful/forma-36/issues/564)) ([b132992](https://github.com/contentful/forma-36/commit/b132992252d5c953b98cb2425b664e3bd437592c))
+
+
+
+
+
+# [3.52.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.51.4...@contentful/forma-36-react-components@3.52.0) (2020-09-16)
+
+
+### Features
+
+* **tag:** add deleted variant to entityStatusType ([#563](https://github.com/contentful/forma-36/issues/563)) ([bd39d0d](https://github.com/contentful/forma-36/commit/bd39d0d820f3090a8c84c95764401983a0d22d73))
+
+
+
+
+
+## [3.51.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.51.3...@contentful/forma-36-react-components@3.51.4) (2020-09-14)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
 ## [3.51.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.51.2...@contentful/forma-36-react-components@3.51.3) (2020-09-09)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components

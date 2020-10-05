@@ -6,29 +6,19 @@ exports[`does not render the component if no mouseover event on child 1`] = `
   content="Tooltip content"
   isVisible={false}
   maxWidth={360}
-  place="top"
+  place="bottom"
   testId="cf-ui-tooltip"
 >
-  <TooltipContainer
-    containerElement="span"
+  <span
     onBlur={[Function]}
     onFocus={[Function]}
+    onMouseEnter={[Function]}
     onMouseLeave={[Function]}
-    onMouseOver={[Function]}
-    setRef={[Function]}
   >
-    <span
-      className="Tooltip__target-wrapper"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onMouseLeave={[Function]}
-      onMouseOver={[Function]}
-    >
-      <span>
-        Hover me
-      </span>
+    <span>
+      Hover me
     </span>
-  </TooltipContainer>
+  </span>
 </Tooltip>
 `;
 
@@ -38,178 +28,70 @@ exports[`renders the component 1`] = `
   content="Tooltip content"
   isVisible={false}
   maxWidth={360}
-  place="top"
+  place="bottom"
   testId="cf-ui-tooltip"
 >
-  <TooltipContainer
-    containerElement="span"
+  <span
     onBlur={[Function]}
     onFocus={[Function]}
+    onMouseEnter={[Function]}
     onMouseLeave={[Function]}
-    onMouseOver={[Function]}
-    setRef={[Function]}
   >
     <span
-      className="Tooltip__target-wrapper"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onMouseLeave={[Function]}
-      onMouseOver={[Function]}
+      id="test"
     >
-      <span
-        id="test"
-      >
-        Hover me
-      </span>
-      <Portal
-        containerInfo={
-          <div>
-            <div
-              aria-hidden="false"
-              class="Tooltip Tooltip--place-top"
-              contenteditable="false"
-              data-test-id="cf-ui-tooltip"
-              role="tooltip"
-              style="max-width: 360px; left: 0px; top: -20px;"
-            >
-              <div
-                class="InViewport"
-                data-test-id="cf-ui-in-viewport"
-                offset="0"
-              >
-                Tooltip content
-              </div>
-            </div>
-          </div>
-        }
-      >
-        <TooltipWrapper
-          className="Tooltip Tooltip--place-top"
-          containerDomNode={
-            <span
-              class="Tooltip__target-wrapper"
-            >
-              <span
-                id="test"
-              >
-                Hover me
-              </span>
-            </span>
-          }
-          isVisible={true}
-          maxWidth={360}
-          place="top"
-          setPlace={[Function]}
-          testId="cf-ui-tooltip"
-        >
-          <div
-            aria-hidden="false"
-            className="Tooltip Tooltip--place-top"
-            contentEditable={false}
-            data-test-id="cf-ui-tooltip"
-            onFocus={[Function]}
-            onMouseOver={[Function]}
-            role="tooltip"
-            style={
-              Object {
-                "left": 0,
-                "maxWidth": 360,
-                "top": -20,
-              }
-            }
-          >
-            <InViewport
-              offset={0}
-              onOverflowBottom={[Function]}
-              onOverflowLeft={[Function]}
-              onOverflowRight={[Function]}
-              onOverflowTop={[Function]}
-              testId="cf-ui-in-viewport"
-            >
-              <div
-                className="InViewport"
-                data-test-id="cf-ui-in-viewport"
-                offset={0}
-              >
-                Tooltip content
-              </div>
-            </InViewport>
-          </div>
-        </TooltipWrapper>
-      </Portal>
+      Hover me
     </span>
-  </TooltipContainer>
+  </span>
 </Tooltip>
 `;
 
 exports[`renders the component as span with a id attribute 1`] = `
 <Tooltip
   containerElement="span"
+  content="Tooltip content"
   isVisible={false}
   maxWidth={360}
-  place="top"
+  place="bottom"
   testId="cf-ui-tooltip"
 >
-  <TooltipContainer
-    containerElement="span"
+  <span
     onBlur={[Function]}
     onFocus={[Function]}
+    onMouseEnter={[Function]}
     onMouseLeave={[Function]}
-    onMouseOver={[Function]}
-    setRef={[Function]}
   >
     <span
-      className="Tooltip__target-wrapper"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onMouseLeave={[Function]}
-      onMouseOver={[Function]}
+      id="test"
     >
-      <span
-        id="test"
-      >
-        Hover me
-      </span>
+      Hover me
     </span>
-  </TooltipContainer>
+  </span>
 </Tooltip>
 `;
 
 exports[`renders the component with a id attribute 1`] = `
 <Tooltip
   containerElement="span"
+  content="Tooltip content"
   id="Tooltip"
   isVisible={false}
   maxWidth={360}
-  place="top"
+  place="bottom"
   testId="cf-ui-tooltip"
 >
-  <TooltipContainer
-    aria-describedby="Tooltip"
-    containerElement="span"
-    id="Tooltip"
+  <span
     onBlur={[Function]}
     onFocus={[Function]}
+    onMouseEnter={[Function]}
     onMouseLeave={[Function]}
-    onMouseOver={[Function]}
-    setRef={[Function]}
   >
     <span
-      aria-describedby="Tooltip"
-      className="Tooltip__target-wrapper"
-      id="Tooltip"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onMouseLeave={[Function]}
-      onMouseOver={[Function]}
+      id="test"
     >
-      <span
-        id="test"
-      >
-        Hover me
-      </span>
+      Hover me
     </span>
-  </TooltipContainer>
+  </span>
 </Tooltip>
 `;
 
@@ -222,104 +104,18 @@ exports[`renders the component with a place attribute 1`] = `
   place="left"
   testId="cf-ui-tooltip"
 >
-  <TooltipContainer
-    containerElement="span"
+  <span
     onBlur={[Function]}
     onFocus={[Function]}
+    onMouseEnter={[Function]}
     onMouseLeave={[Function]}
-    onMouseOver={[Function]}
-    setRef={[Function]}
   >
     <span
-      className="Tooltip__target-wrapper"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onMouseLeave={[Function]}
-      onMouseOver={[Function]}
+      id="test"
     >
-      <span
-        id="test"
-      >
-        Hover me
-      </span>
-      <Portal
-        containerInfo={
-          <div>
-            <div
-              aria-hidden="false"
-              class="Tooltip Tooltip--place-left"
-              contenteditable="false"
-              data-test-id="cf-ui-tooltip"
-              role="tooltip"
-              style="max-width: 360px; left: -12px; top: -10px;"
-            >
-              <div
-                class="InViewport"
-                data-test-id="cf-ui-in-viewport"
-                offset="0"
-              >
-                Tooltip content
-              </div>
-            </div>
-          </div>
-        }
-      >
-        <TooltipWrapper
-          className="Tooltip Tooltip--place-left"
-          containerDomNode={
-            <span
-              class="Tooltip__target-wrapper"
-            >
-              <span
-                id="test"
-              >
-                Hover me
-              </span>
-            </span>
-          }
-          isVisible={true}
-          maxWidth={360}
-          place="left"
-          setPlace={[Function]}
-          testId="cf-ui-tooltip"
-        >
-          <div
-            aria-hidden="false"
-            className="Tooltip Tooltip--place-left"
-            contentEditable={false}
-            data-test-id="cf-ui-tooltip"
-            onFocus={[Function]}
-            onMouseOver={[Function]}
-            role="tooltip"
-            style={
-              Object {
-                "left": -12,
-                "maxWidth": 360,
-                "top": -10,
-              }
-            }
-          >
-            <InViewport
-              offset={0}
-              onOverflowBottom={[Function]}
-              onOverflowLeft={[Function]}
-              onOverflowRight={[Function]}
-              onOverflowTop={[Function]}
-              testId="cf-ui-in-viewport"
-            >
-              <div
-                className="InViewport"
-                data-test-id="cf-ui-in-viewport"
-                offset={0}
-              >
-                Tooltip content
-              </div>
-            </InViewport>
-          </div>
-        </TooltipWrapper>
-      </Portal>
+      Hover me
     </span>
-  </TooltipContainer>
+  </span>
 </Tooltip>
 `;
 
@@ -329,109 +125,23 @@ exports[`renders the component with a target wrapper classname 1`] = `
   content="Tooltip content"
   isVisible={false}
   maxWidth={360}
-  place="top"
+  place="bottom"
   targetWrapperClassName="target-wrapper-class-name"
   testId="cf-ui-tooltip"
 >
-  <TooltipContainer
-    containerElement="span"
+  <span
+    className="target-wrapper-class-name"
     onBlur={[Function]}
     onFocus={[Function]}
+    onMouseEnter={[Function]}
     onMouseLeave={[Function]}
-    onMouseOver={[Function]}
-    setRef={[Function]}
-    targetWrapperClassName="target-wrapper-class-name"
   >
     <span
-      className="Tooltip__target-wrapper target-wrapper-class-name"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onMouseLeave={[Function]}
-      onMouseOver={[Function]}
+      id="test"
     >
-      <span
-        id="test"
-      >
-        Hover me
-      </span>
-      <Portal
-        containerInfo={
-          <div>
-            <div
-              aria-hidden="false"
-              class="Tooltip Tooltip--place-top"
-              contenteditable="false"
-              data-test-id="cf-ui-tooltip"
-              role="tooltip"
-              style="max-width: 360px; left: 0px; top: -20px;"
-            >
-              <div
-                class="InViewport"
-                data-test-id="cf-ui-in-viewport"
-                offset="0"
-              >
-                Tooltip content
-              </div>
-            </div>
-          </div>
-        }
-      >
-        <TooltipWrapper
-          className="Tooltip Tooltip--place-top"
-          containerDomNode={
-            <span
-              class="Tooltip__target-wrapper target-wrapper-class-name"
-            >
-              <span
-                id="test"
-              >
-                Hover me
-              </span>
-            </span>
-          }
-          isVisible={true}
-          maxWidth={360}
-          place="top"
-          setPlace={[Function]}
-          testId="cf-ui-tooltip"
-        >
-          <div
-            aria-hidden="false"
-            className="Tooltip Tooltip--place-top"
-            contentEditable={false}
-            data-test-id="cf-ui-tooltip"
-            onFocus={[Function]}
-            onMouseOver={[Function]}
-            role="tooltip"
-            style={
-              Object {
-                "left": 0,
-                "maxWidth": 360,
-                "top": -20,
-              }
-            }
-          >
-            <InViewport
-              offset={0}
-              onOverflowBottom={[Function]}
-              onOverflowLeft={[Function]}
-              onOverflowRight={[Function]}
-              onOverflowTop={[Function]}
-              testId="cf-ui-in-viewport"
-            >
-              <div
-                className="InViewport"
-                data-test-id="cf-ui-in-viewport"
-                offset={0}
-              >
-                Tooltip content
-              </div>
-            </InViewport>
-          </div>
-        </TooltipWrapper>
-      </Portal>
+      Hover me
     </span>
-  </TooltipContainer>
+  </span>
 </Tooltip>
 `;
 
@@ -442,106 +152,20 @@ exports[`renders the component with an additional class name 1`] = `
   content="Tooltip content"
   isVisible={false}
   maxWidth={360}
-  place="top"
+  place="bottom"
   testId="cf-ui-tooltip"
 >
-  <TooltipContainer
-    containerElement="span"
+  <span
     onBlur={[Function]}
     onFocus={[Function]}
+    onMouseEnter={[Function]}
     onMouseLeave={[Function]}
-    onMouseOver={[Function]}
-    setRef={[Function]}
   >
     <span
-      className="Tooltip__target-wrapper"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onMouseLeave={[Function]}
-      onMouseOver={[Function]}
+      id="test"
     >
-      <span
-        id="test"
-      >
-        Hover me
-      </span>
-      <Portal
-        containerInfo={
-          <div>
-            <div
-              aria-hidden="false"
-              class="Tooltip Tooltip--place-top extra-class-name"
-              contenteditable="false"
-              data-test-id="cf-ui-tooltip"
-              role="tooltip"
-              style="max-width: 360px; left: 0px; top: -20px;"
-            >
-              <div
-                class="InViewport"
-                data-test-id="cf-ui-in-viewport"
-                offset="0"
-              >
-                Tooltip content
-              </div>
-            </div>
-          </div>
-        }
-      >
-        <TooltipWrapper
-          className="Tooltip Tooltip--place-top extra-class-name"
-          containerDomNode={
-            <span
-              class="Tooltip__target-wrapper"
-            >
-              <span
-                id="test"
-              >
-                Hover me
-              </span>
-            </span>
-          }
-          isVisible={true}
-          maxWidth={360}
-          place="top"
-          setPlace={[Function]}
-          testId="cf-ui-tooltip"
-        >
-          <div
-            aria-hidden="false"
-            className="Tooltip Tooltip--place-top extra-class-name"
-            contentEditable={false}
-            data-test-id="cf-ui-tooltip"
-            onFocus={[Function]}
-            onMouseOver={[Function]}
-            role="tooltip"
-            style={
-              Object {
-                "left": 0,
-                "maxWidth": 360,
-                "top": -20,
-              }
-            }
-          >
-            <InViewport
-              offset={0}
-              onOverflowBottom={[Function]}
-              onOverflowLeft={[Function]}
-              onOverflowRight={[Function]}
-              onOverflowTop={[Function]}
-              testId="cf-ui-in-viewport"
-            >
-              <div
-                className="InViewport"
-                data-test-id="cf-ui-in-viewport"
-                offset={0}
-              >
-                Tooltip content
-              </div>
-            </InViewport>
-          </div>
-        </TooltipWrapper>
-      </Portal>
+      Hover me
     </span>
-  </TooltipContainer>
+  </span>
 </Tooltip>
 `;

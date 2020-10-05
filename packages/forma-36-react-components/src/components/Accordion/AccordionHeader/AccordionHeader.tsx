@@ -55,7 +55,7 @@ export const AccordionHeader: FC<AccordionHeaderProps> = ({
         onClick={handleClick}
       >
         <Icon
-          icon="ChevronRightTrimmed"
+          icon="ChevronDownTrimmed"
           color="secondary"
           className={styles.AccordionHeader__icon}
         />

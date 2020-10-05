@@ -3,13 +3,13 @@
   "license": "MIT",
   "private": true,
   "devDependencies": {
-    "@commitlint/cli": "^9.1.1",
-    "@commitlint/config-conventional": "^9.1.1",
-    "commitizen": "^4.1.2",
-    "husky": "^3.0.4",
-    "lerna": "^3.20.1",
-    "prettier": "^1.18.2",
-    "pretty-quick": "^1.11.1"
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "commitizen": "^4.2.1",
+    "husky": "^4.3.0",
+    "lerna": "^3.22.1",
+    "prettier": "^2.1.2",
+    "pretty-quick": "^3.0.2"
   },
   "scripts": {
     "commit": "git-cz",

@@ -126,6 +126,8 @@ import Clock from './svg/Clock.svg';
 import ClockTrimmed from './svg/ClockTrimmed.svg';
 import Warning from './svg/Warning.svg';
 import WarningTrimmed from './svg/WarningTrimmed.svg';
+import Workflows from './svg/Workflows.svg';
+import Language from './svg/Language.svg';
 
 import styles from './Icon.css';
 
@@ -205,6 +207,7 @@ const iconComponents = {
   HorizontalRuleTrimmed,
   InfoCircle,
   InfoCircleTrimmed,
+  Language,
   Link,
   LinkTrimmed,
   ListBulleted,
@@ -254,6 +257,7 @@ const iconComponents = {
   UsersTrimmed,
   Warning,
   WarningTrimmed,
+  Workflows,
 };
 
 export type IconType = keyof typeof iconName;

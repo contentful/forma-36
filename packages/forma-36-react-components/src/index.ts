@@ -37,7 +37,7 @@ export { TableHead } from './components/Table/TableHead/TableHead';
 export { TableRow } from './components/Table/TableRow/TableRow';
 export { ToggleButton } from './components/ToggleButton/ToggleButton';
 export { AssetCard } from './components/Card/AssetCard/AssetCard';
-export { Asset } from './components/Asset/Asset';
+export { Asset, AssetIcon } from './components/Asset';
 export { Tag } from './components/Tag/Tag';
 export { Heading } from './components/Typography/Heading/Heading';
 export { InViewport } from './components/InViewport/InViewport';
