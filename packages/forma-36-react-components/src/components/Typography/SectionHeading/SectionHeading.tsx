@@ -25,7 +25,7 @@ export class SectionHeading extends Component<SectionHeadingProps> {
 
     const classNames = cn(styles['SectionHeading'], className);
 
-    const Element = element;
+    const Element = element!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
 
     return (
       <TypographyContext.Consumer>

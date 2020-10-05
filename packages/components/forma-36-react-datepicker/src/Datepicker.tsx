@@ -42,8 +42,6 @@ export interface DatePickerState {
 }
 
 const defaultProps: Partial<DatePickerProps> = {
-  onChange: () => {},
-  onBlur: () => {},
   name: 'cf-ui-datepicker',
   id: 'cf-ui-datepicker',
   testId: 'cf-ui-datepicker',
@@ -66,7 +64,7 @@ export class Datepicker extends Component<DatePickerProps, DatePickerState> {
       yearRange: 5,
       theme: cx(styles.datePicker, 'hide-carret'),
       onSelect: (value) => {
-        this.props.onChange(value);
+        this.props.onChange?.(value);
       },
     });
   }
@@ -84,7 +82,7 @@ export class Datepicker extends Component<DatePickerProps, DatePickerState> {
   };
 
   handleBlur = (e: FocusEvent) => {
-    this.props.onBlur();
+    this.props.onBlur?.(e);
     if (
       this.pikaday &&
       !this.pikaday.el.contains(e.relatedTarget as HTMLInputElement)
@@ -117,7 +115,9 @@ export class Datepicker extends Component<DatePickerProps, DatePickerState> {
           testId={testId}
           readOnly={true}
           inputRef={this.datePickerNode}
-          value={this.props.value && format(this.props.value, dateFormat)}
+          value={
+            this.props.value && format(this.props.value, dateFormat!) // eslint-disable-line @typescript-eslint/no-non-null-assertion
+          }
           id={id}
           onFocus={this.handleOpen}
           onBlur={this.handleBlur}

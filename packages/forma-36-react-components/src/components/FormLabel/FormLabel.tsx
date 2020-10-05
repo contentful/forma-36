@@ -42,11 +42,12 @@ export class FormLabel extends Component<FormLabelProps> {
         {...otherProps}
       >
         {children}
-        {required && !!requiredText.length && (
-          <span className={styles['FormLabel__required-text']}>
-            ({requiredText})
-          </span>
-        )}
+        {required! && // eslint-disable-line @typescript-eslint/no-non-null-assertion
+          !!requiredText!.length && ( // eslint-disable-line @typescript-eslint/no-non-null-assertion
+            <span className={styles['FormLabel__required-text']}>
+              ({requiredText})
+            </span>
+          )}
       </label>
     );
   }

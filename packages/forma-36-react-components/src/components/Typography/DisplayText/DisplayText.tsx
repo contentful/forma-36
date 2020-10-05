@@ -36,7 +36,7 @@ export class DisplayText extends Component<DisplayTextProps> {
       [styles[`DisplayText--${size}`]]: size,
     });
 
-    const Element = element;
+    const Element = element!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
 
     return (
       <TypographyContext.Consumer>

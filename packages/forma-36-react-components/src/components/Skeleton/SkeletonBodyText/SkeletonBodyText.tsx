@@ -19,7 +19,11 @@ export const SkeletonBodyText = ({
 }: SkeletonBodyTextProps) => {
   return (
     <SkeletonText
-      numberOfLines={numberOfLines > 0 ? numberOfLines : 1}
+      numberOfLines={
+        numberOfLines! > 0 // eslint-disable-line @typescript-eslint/no-non-null-assertion
+          ? numberOfLines
+          : 1
+      }
       {...otherProps}
     />
   );

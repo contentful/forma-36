@@ -159,7 +159,7 @@ export class Modal extends Component<ModalProps> {
         <div
           data-test-id={this.props.testId}
           style={{
-            width: ModalSizesMapper[this.props.size] || this.props.size,
+            width: ModalSizesMapper[this.props.size!] || this.props.size, // eslint-disable-line @typescript-eslint/no-non-null-assertion
           }}
           className={cn(styles.Modal, this.props.className, {
             [styles['Modal--overflow']]: this.props.allowHeightOverflow,

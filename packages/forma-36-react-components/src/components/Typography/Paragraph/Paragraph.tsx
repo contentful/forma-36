@@ -25,7 +25,7 @@ export class Paragraph extends Component<ParagraphProps> {
 
     const classNames = cn(styles['Paragraph'], className);
 
-    const Element = element;
+    const Element = element!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
 
     return (
       <TypographyContext.Consumer>

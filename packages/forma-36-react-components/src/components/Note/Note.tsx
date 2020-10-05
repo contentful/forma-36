@@ -33,7 +33,7 @@ export class Note extends Component<NoteProps> {
   static defaultProps = defaultProps;
 
   render() {
-    const icon = Icons[this.props.noteType] as IconType;
+    const icon = Icons[this.props.noteType!] as IconType; // eslint-disable-line @typescript-eslint/no-non-null-assertion
     if (!icon) {
       throw new Error(
         `Intent ${this.props.noteType} is not supported in Note component.`,

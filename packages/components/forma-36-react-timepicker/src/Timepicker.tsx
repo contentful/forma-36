@@ -160,7 +160,6 @@ export interface TimepickerProps {
 }
 
 const defaultProps: Partial<TimepickerProps> = {
-  onBlur: () => {},
   isRequired: false,
 };
 
@@ -287,7 +286,7 @@ const TimePicker: React.FC<TimepickerProps> = ({
       const time = getTimeFromUserInputOrDefaultToValue();
       setSelectedTime(time);
       closeDropdown(e);
-      onBlur();
+      onBlur?.(e);
     },
     [
       getTimeFromUserInputOrDefaultToValue,

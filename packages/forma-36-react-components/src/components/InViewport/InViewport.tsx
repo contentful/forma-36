@@ -76,10 +76,10 @@ export class InViewport extends Component<InViewportProps> {
     windowHeight: number,
   ) => {
     const { offset } = this.props;
-    const topThreshold = 0 - offset;
-    const leftThreshold = 0 - offset;
-    const rightThreshold = windowWidth + offset;
-    const bottomThreshold = windowHeight + offset;
+    const topThreshold = 0 - offset!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+    const leftThreshold = 0 - offset!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+    const rightThreshold = windowWidth + offset!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+    const bottomThreshold = windowHeight + offset!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
 
     if (top + right + bottom + left !== 0) {
       if (top < topThreshold && this.lastOverflowAt !== 'bottom') {

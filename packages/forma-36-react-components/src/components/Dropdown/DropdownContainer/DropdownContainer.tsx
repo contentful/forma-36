@@ -34,7 +34,6 @@ const defaultProps: Partial<DropdownContainerProps> = {
   position: 'bottom-left',
   submenu: false,
   isAutoalignmentEnabled: true,
-  getRef: () => {},
 };
 
 class DropdownContainer extends Component<
@@ -67,7 +66,7 @@ class DropdownContainer extends Component<
       });
     }
     document.addEventListener('mousedown', this.trackOutsideClick, true);
-    this.props.getRef(this.dropdown);
+    this.props.getRef?.(this.dropdown);
   }
 
   componentDidUpdate(
