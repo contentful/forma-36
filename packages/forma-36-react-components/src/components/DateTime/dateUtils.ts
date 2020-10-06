@@ -1,5 +1,6 @@
 import dayjs from 'dayjs';
 import RelativeTime from 'dayjs/plugin/relativeTime';
+import { CoercibleDate } from './types';
 dayjs.extend(RelativeTime);
 
 const formatTokens = {
@@ -11,7 +12,16 @@ const formatTokens = {
 
 export type DateTimeFormat = keyof typeof formatTokens;
 
-export const formatDateTime = (date: Date, token: DateTimeFormat): string => {
+/**
+ * @example
+ * > formatDateTime(date)
+ * 13 Aug 2019 at 10:00 am
+ *
+ * @example
+ * > formatDateTime(date, 'DATE_ONLY')
+ * 13 Aug 2019
+ */
+export const formatDateTime = (date: CoercibleDate, token: DateTimeFormat = 'FULL'): string => {
   if (!formatTokens[token]) {
     throw new TypeError(`Unknown date format '${token}'`);
   }
@@ -20,28 +30,19 @@ export const formatDateTime = (date: Date, token: DateTimeFormat): string => {
 
 /**
  * @example
- * > formatAbsoluteDateTime(date)
- * 13 Aug 2019 at 10:00 am
- */
-export const formatAbsoluteDateTime = (date: Date): string => {
-  return formatDateTime(date, 'FULL');
-};
-
-/**
- * @example
- * > formatAbsoluteDate(date)
+ * > formatDate(date)
  * 13 Aug 2019
  */
-export const formatAbsoluteDate = (date: Date): string => {
+export const formatDate = (date: CoercibleDate): string => {
   return formatDateTime(date, 'DATE_ONLY');
 };
 
 /**
  * @example
- * > formatAbsoluteTime(date)
+ * > formatTime(date)
  * 8:00 am
  */
-export const formatAbsoluteTime = (date: Date): string => {
+export const formatTime = (date: CoercibleDate): string => {
   return formatDateTime(date, 'TIME_ONLY');
 };
 
@@ -50,11 +51,11 @@ export const formatAbsoluteTime = (date: Date): string => {
  * > formatWeekdayDate(date)
  * Mon, 12 Aug
  */
-export const formatWeekdayDate = (date: Date): string => {
+export const formatWeekdayDate = (date: CoercibleDate): string => {
   return formatDateTime(date, 'WEEKDAY_DATE');
 };
 
-export const formatRelativeDateTime = (date: Date, baseDate?: Date): string => {
+export const formatRelativeDateTime = (date: CoercibleDate, baseDate?: CoercibleDate): string => {
   baseDate = baseDate ?? new Date();
   return dayjs(date).from(baseDate);
 };

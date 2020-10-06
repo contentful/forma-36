@@ -1,12 +1,20 @@
 import React from 'react';
 import { DateTimeFormat, formatDateTime } from '../dateUtils';
+import { CoercibleDate } from '../types';
 
-interface DateTimeProps {
-  date: Date;
+export interface DateTimeProps {
+  /**
+   * The date to display as a JS Date, an ISO8601 Timestamp, or Unix Epoch Milliseconds
+   *
+   * @example '2020-08-13T01:23:45.000Z'
+   * @example new Date()
+   * @example Date.now()
+   */
+  date: CoercibleDate;
   /**
    * Which display format to use
    *
-   * @default 'FULL' e.g. '13 Aug 2019 at 8:00 am'
+   * @default 'FULL'
    **/
   format?: DateTimeFormat;
   className?: string;
@@ -23,6 +31,9 @@ export const DateTime: React.FC<DateTimeProps> = ({
   testId,
 }) => {
   format = format ?? 'FULL';
+  if (typeof date === 'string' || typeof date === 'number') {
+    date = new Date(date)
+  }
   const formatted = formatDateTime(date, format);
 
   return (

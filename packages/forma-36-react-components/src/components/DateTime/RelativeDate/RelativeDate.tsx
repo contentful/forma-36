@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { formatAbsoluteDateTime, formatRelativeDateTime } from '../dateUtils';
+import { formatDateTime, formatRelativeDateTime } from '../dateUtils';
+import { CoercibleDate } from '../types';
 
-interface RelativeDateProps {
-  /** the JS Date object to represent */
-  date: Date;
+export interface RelativeDateProps {
+  /** the date to represent */
+  date: CoercibleDate;
   /**
    * (optional) other date to compare against
    * @default now
    */
-  baseDate?: Date;
+  baseDate?: CoercibleDate;
   className?: string;
   testId?: string;
 }
@@ -24,12 +25,20 @@ export const RelativeDate: React.FC<RelativeDateProps> = ({
   className,
   baseDate,
 }) => {
+  if (typeof date === 'string' || typeof date === 'number') {
+    date = new Date(date)
+  }
   const [relativeTime, setRelativeTime] = useState(
     formatRelativeDateTime(date, baseDate),
   );
-  const absoluteTime = formatAbsoluteDateTime(date);
+  const absoluteTime = formatDateTime(date);
 
   useEffect(() => {
+    if (baseDate) {
+      // No need to trigger a re-render if we are doing a static comparison
+      return
+    }
+
     const intervalId = setInterval(() => {
       setRelativeTime(formatRelativeDateTime(date, baseDate));
     }, 1000);

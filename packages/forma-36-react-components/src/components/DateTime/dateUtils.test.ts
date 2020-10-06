@@ -12,7 +12,7 @@ describe('formatAbsoluteDateTime', () => {
 
     dateToExpected.forEach(([str, expected]) => {
       const date = new Date(str);
-      expect(dateUtils.formatAbsoluteDateTime(date)).toEqual(expected);
+      expect(dateUtils.formatDateTime(date)).toEqual(expected);
     });
   });
 });

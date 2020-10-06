@@ -1,41 +1,37 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { select, text, date } from '@storybook/addon-knobs';
 
-import DateTime from './DateTime';
-import { DateTimeFormat } from '../dateUtils';
+import DateTime, { DateTimeProps } from './DateTime';
 
-const formatOptions: DateTimeFormat[] = [
-  'FULL',
-  'DATE_ONLY',
-  'TIME_ONLY',
-  'WEEKDAY_DATE',
-];
+const exampleDate = '2020-08-13T13:45:56.0123Z'
 
-const defaultDate = new Date('2019-08-12T08:00:00Z');
+import notes from '../README.md';
 
-storiesOf('Components/DateTime', module)
-  .addParameters({
+export default {
+  title: 'Components/DateTime/DateTime',
+  component: DateTime,
+  parameters: {
     propTypes: DateTime['__docgenInfo'],
-    component: DateTime,
-  })
-  .add('default', () => (
-    <DateTime
-      date={defaultDate}
-      format={select('format', formatOptions, 'FULL')}
-      className={text('className', '')}
-      testId={text('testId', '')}
-    />
-  ))
-  .add('with weekday date format', () => (
-    <DateTime
-      date={new Date(date('date', defaultDate))}
-      format="WEEKDAY_DATE"
-    />
-  ))
-  .add('with date only format', () => (
-    <DateTime date={new Date(date('date', defaultDate))} format="DATE_ONLY" />
-  ))
-  .add('with time only format', () => (
-    <DateTime date={new Date(date('date', defaultDate))} format="TIME_ONLY" />
-  ));
+    notes,
+  },
+  argTypes: {
+    date: { control: { type: 'date' } },
+    format: { control: { type: 'select', options: ['FULL', 'DATE_ONLY', 'TIME_ONLY', 'WEEKDAY_DATE'] }},
+    className: { control: { type: 'text' } },
+    testId: { control: { type: 'text' }}
+  }
+}
+
+const DateTimeStory = (args: DateTimeProps) => (
+  <DateTime {...args} />
+)
+
+export const basic: any = DateTimeStory.bind({})
+basic.args = {
+  date: exampleDate
+}
+
+export const withOtherFormats: any = DateTimeStory.bind({})
+withOtherFormats.args = {
+  date: exampleDate,
+  format: 'DATE_ONLY'
+}
