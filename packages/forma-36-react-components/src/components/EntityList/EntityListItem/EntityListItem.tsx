@@ -70,11 +70,11 @@ export type EntityListItemProps = {
    */
   cardDragHandleProps?: Partial<CardDragHandlePropTypes>;
   /**
-   * An entity can either be an Entry or an Asset. This prop will apply styling based on if the entity is an asset or an entry
+   * An entity can either be an Entry, an Asset or a Release. This prop will apply styling based on if the entity is an asset, a release or an entry
    *
    * Note: 'entry' and 'asset' are @deprecated but supported in v1.x for backwards compatibility
    */
-  entityType?: 'Entry' | 'Asset' | 'entry' | 'asset';
+  entityType?: 'Entry' | 'Asset' | 'entry' | 'asset' | 'Release';
   /**
    * Loading state for the component - when true will display loading feedback to the user
    */
@@ -114,8 +114,12 @@ export class EntityListItem extends Component<EntityListItemProps> {
   renderIcon() {
     const { entityType } = this.props;
 
-    const isAsset = entityType && entityType.toLowerCase() === 'asset';
-    const icon = isAsset ? 'Asset' : 'Entry';
+    const iconMap = {
+      asset: 'Asset',
+      entry: 'Entry',
+      release: 'Release',
+    };
+    const icon = entityType ? iconMap[entityType.toLowerCase()] : 'Entry';
 
     return <Icon icon={icon} color="muted" />;
   }
@@ -272,7 +276,7 @@ export class EntityListItem extends Component<EntityListItemProps> {
                     className={styles['EntityListItem__actions']}
                     isDisabled={isActionsDisabled}
                     iconButtonProps={{
-                      onClick: e => e.stopPropagation,
+                      onClick: (e) => e.stopPropagation,
                     }}
                   >
                     {dropdownListElements}
