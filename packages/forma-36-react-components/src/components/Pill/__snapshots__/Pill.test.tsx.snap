@@ -28,6 +28,7 @@ exports[`renders the component with a close button 1`] = `
     test
   </span>
   <button
+    aria-label="close"
     className="Pill__close-button"
     onClick={[Function]}
     type="button"
