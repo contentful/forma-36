@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.58.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.58.3...@contentful/forma-36-react-components@3.58.4) (2020-10-06)
+
+
+### Bug Fixes
+
+* improvements in the Pill docs and new storybook format ([#582](https://github.com/contentful/forma-36/issues/582)) ([defbe02](https://github.com/contentful/forma-36/commit/defbe024ba269358c908bcc2b4ba002d78070a2c))
+
+
+
+
+
 ## [3.58.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.58.2...@contentful/forma-36-react-components@3.58.3) (2020-10-05)
 
 
