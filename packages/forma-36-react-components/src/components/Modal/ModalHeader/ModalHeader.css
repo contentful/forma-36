@@ -1,6 +1,7 @@
 @import 'settings/colors';
 @import 'settings/typography';
 @import 'settings/transitions';
+@import 'settings/borders';
 
 .ModalHeader {
   display: flex;
@@ -9,7 +10,7 @@
   /* prettier-ignore */
   padding: calc(1rem * (23 / var(--font-base-default))) calc(1rem * (30 / var(--font-base-default)));
   background-color: var(--color-element-lightest);
-  border-radius: 3px 3px 0 0;
+  border-radius: var(--border-radius-medium) var(--border-radius-medium) 0 0;
   border-bottom: 1px solid var(--color-element-dark);
 }
 
