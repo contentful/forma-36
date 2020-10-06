@@ -10,9 +10,16 @@ export interface TypographyProps {
   testId?: string;
 }
 
-const defaultConfiguration: Partial<TypographyProps> = {};
+const defaultConfiguration = {
+  displayText: { spacing: 'l' },
+  displayTextLarge: { spacing: 'xl' },
+  heading: { spacing: 'm' },
+  paragraph: { spacing: 'm' },
+  sectionHeading: { spacing: 'l' },
+  subheading: { spacing: 'm' },
+};
 
-const defaultProps = {
+const defaultProps: Partial<TypographyProps> = {
   testId: 'cf-ui-text-container',
 };
 
