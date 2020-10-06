@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.58.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.58.2...@contentful/forma-36-react-components@3.58.3) (2020-10-05)
+
+
+### Bug Fixes
+
+* components using border radius tokens ([#581](https://github.com/contentful/forma-36/issues/581)) ([878efff](https://github.com/contentful/forma-36/commit/878efff07f9bae41371114355c6b4874828b0573))
+
+
+
+
+
+## [3.58.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.58.1...@contentful/forma-36-react-components@3.58.2) (2020-10-05)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
 ## [3.58.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.58.0...@contentful/forma-36-react-components@3.58.1) (2020-10-01)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components

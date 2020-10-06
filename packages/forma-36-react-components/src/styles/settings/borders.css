@@ -1,3 +1,1 @@
-:root {
-  --border-radius-small: 2px;
-}
+@import '@contentful/forma-36-tokens/dist/css/border-radius/border-radius.css';

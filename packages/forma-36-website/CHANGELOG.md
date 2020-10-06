@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.26](https://github.com/contentful/forma-36/compare/forma-36-website@0.9.25...forma-36-website@0.9.26) (2020-10-05)
+
+**Note:** Version bump only for package forma-36-website
+
+
+
+
+
+## [0.9.25](https://github.com/contentful/forma-36/compare/forma-36-website@0.9.24...forma-36-website@0.9.25) (2020-10-05)
+
+**Note:** Version bump only for package forma-36-website
+
+
+
+
+
 ## [0.9.24](https://github.com/contentful/forma-36/compare/forma-36-website@0.9.23...forma-36-website@0.9.24) (2020-10-01)
 
 **Note:** Version bump only for package forma-36-website

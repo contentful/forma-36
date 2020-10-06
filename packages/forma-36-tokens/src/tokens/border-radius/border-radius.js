@@ -1,6 +1,6 @@
 const borderRadius = {
-  'box-radius-small': '2px',
-  'box-radius-medium': '4px',
+  'border-radius-small': '2px',
+  'border-radius-medium': '4px',
 };
 
 module.exports = borderRadius;
