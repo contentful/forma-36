@@ -20,6 +20,21 @@ Displays an absolute date and/or time in a variety of formats that conforms to F
 ```ts
 import React from 'react';
 import { DateTime } from '@contentful/forma36-react-components';
+
+export const MyComponent: React.FC<{ date: Date }> = ({ date }) => {
+  return (<DateTime date={date} />)
+}
+```
+
+or with a different format
+
+```ts
+import React from 'react';
+import { DateTime } from '@contentful/forma36-react-components';
+
+export const ScheduledForWeekdate: React.FC<{ date: Date }> = ({ date }) => {
+  return (<DateTime date={date} format="WEEKDAY_DATE" />)
+}
 ```
 
 ### RelativeDate
@@ -34,7 +49,7 @@ Provides a relative date string for resolutions ranging from seconds up through 
 import React from 'react';
 import { RelativeDate } from '@contentful/forma36-react-components';
 
-export const EntryPublishedDate: React.FC<{ publishedAt: Date }> = ({ publishedAt }) => {
+export const EntryPublishedRelative: React.FC<{ publishedAt: Date }> = ({ publishedAt }) => {
   return (<RelativeDate date={publishedAt} />)
 }
 ```
