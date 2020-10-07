@@ -55,7 +55,6 @@ export const formatWeekdayDate = (date: CoercibleDate): string => {
   return formatDateTime(date, 'WEEKDAY_DATE');
 };
 
-export const formatRelativeDateTime = (date: CoercibleDate, baseDate?: CoercibleDate): string => {
-  baseDate = baseDate ?? new Date();
+export const formatRelativeDateTime = (date: CoercibleDate, baseDate: CoercibleDate = new Date()): string => {
   return dayjs(date).from(baseDate);
 };

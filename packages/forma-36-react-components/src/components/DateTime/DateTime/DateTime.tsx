@@ -26,11 +26,10 @@ export interface DateTimeProps {
  */
 export const DateTime: React.FC<DateTimeProps> = ({
   date,
-  format,
+  format = 'FULL',
   className,
   testId,
 }) => {
-  format = format ?? 'FULL';
   if (typeof date === 'string' || typeof date === 'number') {
     date = new Date(date)
   }
