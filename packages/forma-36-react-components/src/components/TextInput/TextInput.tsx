@@ -25,14 +25,13 @@ export type TextInputProps = {
   inputRef?: RefObject<HTMLInputElement>;
   error?: boolean;
   willBlurOnEsc: boolean;
-} & JSX.IntrinsicElements['input'] &
-  typeof defaultProps;
+} & JSX.IntrinsicElements['input'];
 
 export interface TextInputState {
   value?: string;
 }
 
-const defaultProps = {
+const defaultProps: Partial<TextInputProps> = {
   withCopyButton: false,
   testId: 'cf-ui-text-input',
   disabled: false,
@@ -120,7 +119,7 @@ export class TextInput extends Component<TextInputProps, TextInputState> {
           disabled={disabled}
           onBlur={onBlur}
           onFocus={this.handleFocus}
-          onChange={e => {
+          onChange={(e) => {
             if (disabled || isReadOnly) return;
 
             if (onChange) {

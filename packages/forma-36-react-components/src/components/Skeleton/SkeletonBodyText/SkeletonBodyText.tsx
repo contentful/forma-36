@@ -2,10 +2,10 @@ import React from 'react';
 import SkeletonText from '../SkeletonText';
 import { SkeletonTextProps } from '../SkeletonText';
 
-export type SkeletonBodyTextProps = SkeletonTextProps &
-  Partial<typeof defaultProps>;
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface SkeletonBodyTextProps extends SkeletonTextProps {}
 
-const defaultProps = {
+const defaultProps: Partial<SkeletonBodyTextProps> = {
   numberOfLines: 2,
   offsetTop: 0,
   offsetLeft: 0,

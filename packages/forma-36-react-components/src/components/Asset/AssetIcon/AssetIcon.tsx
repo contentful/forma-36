@@ -9,12 +9,12 @@ import { AssetType } from '../Asset';
 
 const DEFAULT_ILLUSTRATION_NAME: IllustrationType = 'Archive';
 
-export type AssetIconProps = {
+export interface AssetIconProps
+  extends Omit<IllustrationProps, 'illustration'> {
   type?: AssetType;
-} & Omit<IllustrationProps, 'illustration'> &
-  typeof defaultProps;
+}
 
-const defaultProps = {
+const defaultProps: Partial<AssetIconProps> = {
   type: 'archive',
   testId: 'cf-ui-asset-icon',
 };
@@ -28,7 +28,7 @@ export class AssetIcon extends Component<AssetIconProps> {
   render() {
     const { type, ...otherProps } = this.props;
 
-    let illustrationName = type.charAt(0).toUpperCase() + type.slice(1);
+    let illustrationName = type!.charAt(0).toUpperCase() + type!.slice(1); // eslint-disable-line @typescript-eslint/no-non-null-assertion
     if (!isIllustrationType(illustrationName)) {
       illustrationName = DEFAULT_ILLUSTRATION_NAME;
     }
