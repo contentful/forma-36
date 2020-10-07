@@ -28,6 +28,7 @@ storiesOf('Components/EntityList/EntityListItem', module)
         {
           asset: 'asset',
           entry: 'entry',
+          Release: 'Release',
         },
         'entry',
       )}
@@ -78,6 +79,7 @@ storiesOf('Components/EntityList/EntityListItem', module)
         {
           asset: 'asset',
           entry: 'entry',
+          Release: 'Release',
         },
         'entry',
       )}

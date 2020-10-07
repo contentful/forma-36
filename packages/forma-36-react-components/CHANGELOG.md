@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.59.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.58.4...@contentful/forma-36-react-components@3.59.0) (2020-10-06)
+
+
+### Features
+
+* **EntityListItem:** Add Release icon to entity type icon ([406b3bf](https://github.com/contentful/forma-36/commit/406b3bf317457f733e8d6ff0b2e0bc0a28707518))
+
+
+
+
+
+## [3.58.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.58.3...@contentful/forma-36-react-components@3.58.4) (2020-10-06)
+
+
+### Bug Fixes
+
+* improvements in the Pill docs and new storybook format ([#582](https://github.com/contentful/forma-36/issues/582)) ([defbe02](https://github.com/contentful/forma-36/commit/defbe024ba269358c908bcc2b4ba002d78070a2c))
+
+
+
+
+
 ## [3.58.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.58.2...@contentful/forma-36-react-components@3.58.3) (2020-10-05)
 
 

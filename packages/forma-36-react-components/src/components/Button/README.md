@@ -1,5 +1,3 @@
-# Button
-
 Buttons communicate the action that will occur when the user clicks them. They communicate calls to action to the user and allow users to interact with pages in a variety of ways. They contain a text label to describe the action, and an icon if appropriate.
 
 ## Button types
