@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-export type TableBodyProps = {
+export interface TableBodyProps {
   className?: string;
   style?: React.CSSProperties;
   testId?: string;
   children: React.ReactNode;
-} & typeof defaultProps;
+}
 
-const defaultProps = {
+const defaultProps: Partial<TableBodyProps> = {
   testId: 'cf-ui-table-body',
 };
 

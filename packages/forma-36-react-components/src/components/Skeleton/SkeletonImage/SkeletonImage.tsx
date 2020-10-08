@@ -2,17 +2,17 @@ import React, { Component } from 'react';
 
 type stringOrNumber = string | number;
 
-export type SkeletonImageProps = {
-  width: stringOrNumber;
-  height: stringOrNumber;
-  radiusX: stringOrNumber;
-  radiusY: stringOrNumber;
+export interface SkeletonImageProps {
+  width?: stringOrNumber;
+  height?: stringOrNumber;
+  radiusX?: stringOrNumber;
+  radiusY?: stringOrNumber;
   offsetLeft?: stringOrNumber;
   offsetTop?: stringOrNumber;
   testId?: string;
-} & typeof defaultProps;
+}
 
-const defaultProps = {
+const defaultProps: Partial<SkeletonImageProps> = {
   testId: 'cf-ui-skeleton-image',
   width: 70,
   height: 70,

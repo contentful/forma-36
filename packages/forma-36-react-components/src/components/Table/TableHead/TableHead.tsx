@@ -4,16 +4,16 @@ import styles from './TableHead.css';
 
 import { TableCellContext, contextOptions } from '../TableCell';
 
-export type TableHeadProps = {
+export interface TableHeadProps {
   isSticky?: boolean;
   offsetTop?: number | string;
   className?: string;
   testId?: string;
   style?: React.CSSProperties;
   children: React.ReactNode;
-} & typeof defaultProps;
+}
 
-const defaultProps = {
+const defaultProps: Partial<TableHeadProps> = {
   isSticky: false,
   testId: 'cf-ui-table-head',
 };

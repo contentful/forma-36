@@ -9,7 +9,7 @@ import React, {
 import cn from 'classnames';
 import styles from './Textarea.css';
 
-export type TextareaProps = {
+export interface TextareaProps {
   name?: string;
   id?: string;
   testId?: string;
@@ -28,15 +28,15 @@ export type TextareaProps = {
   onKeyPress?: KeyboardEventHandler<HTMLTextAreaElement>;
   onKeyDown?: KeyboardEventHandler<HTMLTextAreaElement>;
   onKeyUp?: KeyboardEventHandler<HTMLTextAreaElement>;
-  willBlurOnEsc: boolean;
+  willBlurOnEsc?: boolean;
   textareaRef?: RefObject<HTMLTextAreaElement>;
-} & typeof defaultProps;
+}
 
 export interface TextareaState {
   value?: string;
 }
 
-const defaultProps = {
+const defaultProps: Partial<TextareaProps> = {
   testId: 'cf-ui-textarea',
   disabled: false,
   required: false,
@@ -110,7 +110,7 @@ export class Textarea extends Component<TextareaProps, TextareaState> {
           disabled={disabled}
           placeholder={placeholder}
           name={name}
-          onChange={e => {
+          onChange={(e) => {
             if (onChange) {
               onChange(e);
             }

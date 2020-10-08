@@ -3,16 +3,16 @@ import cn from 'classnames';
 
 import styles from './Tabs.css';
 
-export type TabsProps = {
+export interface TabsProps {
   role?: 'navigation' | 'tablist';
   style?: CSSProperties;
   className?: string;
   withDivider?: boolean;
   children?: React.ReactNode;
   testId?: string;
-} & typeof defaultProps;
+}
 
-const defaultProps = {
+const defaultProps: Partial<TabsProps> = {
   testId: 'cf-ui-tabs',
   role: 'tablist',
   withDivider: false,

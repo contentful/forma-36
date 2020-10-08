@@ -11,12 +11,12 @@ export interface NotificationItemContainerState {
   isShown: boolean;
 }
 
-const defaultProps = {
+const defaultProps: Partial<NotificationItemContainerProps> = {
   isShown: false,
 };
 
 export class NotificationItemContainer extends Component<
-  NotificationItemContainerProps & typeof defaultProps,
+  NotificationItemContainerProps,
   NotificationItemContainerState
 > {
   static defaultProps = defaultProps;
@@ -37,7 +37,7 @@ export class NotificationItemContainer extends Component<
     if (prevProps.isShown !== this.props.isShown) {
       // eslint-disable-next-line
       this.setState({
-        isShown: this.props.isShown,
+        isShown: this.props.isShown!, // eslint-disable-line @typescript-eslint/no-non-null-assertion
       });
     }
   }

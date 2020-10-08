@@ -3,14 +3,14 @@ import cn from 'classnames';
 
 import styles from './ModalControls.css';
 
-export type ModalControlsProps = {
+export interface ModalControlsProps {
   testId?: string;
   className?: string;
   children: React.ReactNode;
   style?: React.CSSProperties;
-} & typeof defaultProps;
+}
 
-const defaultProps = {
+const defaultProps: Partial<ModalControlsProps> = {
   testId: 'cf-ui-modal-controls',
 };
 

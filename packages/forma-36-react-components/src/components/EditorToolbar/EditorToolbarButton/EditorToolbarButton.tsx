@@ -5,7 +5,7 @@ import Tooltip from '../../Tooltip';
 import { IconType } from '../../Icon';
 import styles from './EditorToolbarButton.css';
 
-export type EditorToolbarButtonProps = {
+export interface EditorToolbarButtonProps {
   label: string;
   icon: IconType;
   tooltip?: string;
@@ -16,9 +16,9 @@ export type EditorToolbarButtonProps = {
   withDropdown?: boolean;
   className?: string;
   testId?: string;
-} & typeof defaultProps;
+}
 
-const defaultProps = {
+const defaultProps: Partial<EditorToolbarButtonProps> = {
   testId: 'cf-ui-editor-toolbar-button',
   isActive: false,
   disabled: false,

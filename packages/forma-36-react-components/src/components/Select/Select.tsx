@@ -8,7 +8,7 @@ import cn from 'classnames';
 import Icon from '../Icon';
 import styles from './Select.css';
 
-export type SelectProps = {
+export interface SelectProps {
   required?: boolean;
   name?: string;
   id?: string;
@@ -22,14 +22,14 @@ export type SelectProps = {
   testId?: string;
   className?: string;
   children: React.ReactNode;
-  willBlurOnEsc: boolean;
-} & typeof defaultProps;
+  willBlurOnEsc?: boolean;
+}
 
 export interface SelectState {
   value?: string;
 }
 
-const defaultProps = {
+const defaultProps: Partial<SelectProps> = {
   testId: 'cf-ui-select',
   required: false,
   hasError: false,
@@ -103,7 +103,7 @@ export class Select extends Component<SelectProps, SelectState> {
           value={this.state.value}
           disabled={isDisabled}
           onFocus={onFocus}
-          onChange={e => {
+          onChange={(e) => {
             if (!isDisabled) {
               this.setState({
                 value: e.target.value,

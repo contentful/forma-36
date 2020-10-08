@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import cn from 'classnames';
 import styles from './EditorToolbarDivider.css';
 
-export type EditorToolbarDividerProps = {
+export interface EditorToolbarDividerProps {
   testId?: string;
   className?: string;
-} & typeof defaultProps;
+}
 
-const defaultProps = {
+const defaultProps: Partial<EditorToolbarDividerProps> = {
   testId: 'cf-editor-toolbar-divider',
 };
 

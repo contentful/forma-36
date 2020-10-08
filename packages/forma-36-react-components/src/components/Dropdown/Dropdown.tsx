@@ -14,7 +14,7 @@ export type positionType =
   | 'top-right'
   | 'top-left';
 
-export type DropdownProps = {
+export interface DropdownProps {
   toggleElement?: React.ReactElement;
   submenuToggleLabel?: string;
   position: positionType;
@@ -27,7 +27,7 @@ export type DropdownProps = {
   children: React.ReactNode;
   isFullWidth?: boolean;
   isAutoalignmentEnabled?: boolean;
-} & typeof defaultProps;
+}
 
 export interface AnchorDimensionsAndPositonType {
   top: number;
@@ -42,7 +42,7 @@ export interface DropdownState {
   anchorDimensionsAndPositon?: AnchorDimensionsAndPositonType;
 }
 
-const defaultProps = {
+const defaultProps: Partial<DropdownProps> = {
   testId: 'cf-ui-dropdown',
   position: 'bottom-left',
   isOpen: false,
@@ -207,7 +207,7 @@ export class Dropdown extends Component<DropdownProps, DropdownState> {
       <div
         data-test-id={testId}
         className={classNames}
-        ref={ref => {
+        ref={(ref) => {
           if (!submenuToggleLabel) {
             this.dropdownAnchor = ref;
           }

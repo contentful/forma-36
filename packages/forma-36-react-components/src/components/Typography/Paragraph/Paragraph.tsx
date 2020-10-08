@@ -4,15 +4,15 @@ import styles from './Paragraph.css';
 
 import { TypographyContext } from '../Typography';
 
-export type ParagraphProps = {
-  element: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
+export interface ParagraphProps {
+  element?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
   className?: string;
   children?: React.ReactNode;
   testId?: string;
   style?: React.CSSProperties;
-} & typeof defaultProps;
+}
 
-const defaultProps = {
+const defaultProps: Partial<ParagraphProps> = {
   element: 'p',
   testId: 'cf-ui-paragraph',
 };
@@ -25,11 +25,11 @@ export class Paragraph extends Component<ParagraphProps> {
 
     const classNames = cn(styles['Paragraph'], className);
 
-    const Element = element;
+    const Element = element!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
 
     return (
       <TypographyContext.Consumer>
-        {value => {
+        {(value) => {
           return (
             <Element
               className={cn(classNames, [

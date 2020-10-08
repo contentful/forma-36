@@ -14,7 +14,7 @@ export type EntryCardStatus = 'archived' | 'changed' | 'draft' | 'published';
 
 export type EntryCardSize = 'default' | 'small' | 'auto';
 
-export type EntryCardPropTypes = BaseCardProps & {
+export interface EntryCardPropTypes extends BaseCardProps {
   /**
    * The title of the entry
    */
@@ -71,9 +71,9 @@ export type EntryCardPropTypes = BaseCardProps & {
    * Changes the height of the component. When small will also ensure thumbnail and description aren't rendered
    */
   size: EntryCardSize;
-} & typeof defaultProps;
+}
 
-const defaultProps = {
+const defaultProps: Partial<EntryCardPropTypes> = {
   title: 'Untitled',
   testId: 'cf-ui-entry-card',
   size: 'default',
@@ -116,12 +116,19 @@ export class EntryCard extends Component<EntryCardPropTypes> {
     );
   };
 
-  renderThumbnail = (size: EntryCardSize, thumbnailElement?: React.ReactNode) => {
+  renderThumbnail = (
+    size: EntryCardSize,
+    thumbnailElement?: React.ReactNode,
+  ) => {
     if (!thumbnailElement || size === 'small') {
       return;
     }
 
-    return <figure className={styles.EntryCard__thumbnail}>{thumbnailElement}</figure>
+    return (
+      <figure className={styles.EntryCard__thumbnail}>
+        {thumbnailElement}
+      </figure>
+    );
   };
 
   renderStatus = (status: EntryCardStatus) => {
@@ -237,7 +244,7 @@ export class EntryCard extends Component<EntryCardPropTypes> {
                     <CardActions
                       className={styles['EntryCard__actions']}
                       iconButtonProps={{
-                        onClick: e => e.stopPropagation,
+                        onClick: (e) => e.stopPropagation,
                       }}
                     >
                       {dropdownListElements}
