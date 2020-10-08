@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.60.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.59.0...@contentful/forma-36-react-components@3.60.0) (2020-10-07)
+
+
+### Features
+
+* **react-components:** add DateTime and RelativeDate components ([#584](https://github.com/contentful/forma-36/issues/584)) ([3a1d88b](https://github.com/contentful/forma-36/commit/3a1d88b29b6ea085208737361601d00d30d753b8))
+
+
+
+
+
 # [3.59.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.58.4...@contentful/forma-36-react-components@3.59.0) (2020-10-06)
 
 
