@@ -4,15 +4,15 @@ import styles from './SectionHeading.css';
 
 import { TypographyContext } from '../Typography';
 
-export type SectionHeadingProps = {
-  element: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
+export interface SectionHeadingProps {
+  element?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
   className?: string;
   children?: React.ReactNode | string;
   testId?: string;
   style?: React.CSSProperties;
-} & typeof defaultProps;
+}
 
-const defaultProps = {
+const defaultProps: Partial<SectionHeadingProps> = {
   element: 'h3',
   testId: 'cf-ui-section-heading',
 };
@@ -25,11 +25,11 @@ export class SectionHeading extends Component<SectionHeadingProps> {
 
     const classNames = cn(styles['SectionHeading'], className);
 
-    const Element = element;
+    const Element = element!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
 
     return (
       <TypographyContext.Consumer>
-        {value => {
+        {(value) => {
           return (
             <Element
               className={cn(classNames, [

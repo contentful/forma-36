@@ -53,5 +53,6 @@ module.exports = {
     '@typescript-eslint/no-for-in-array': 'error',
     '@typescript-eslint/no-var-requires': 'off',
     '@typescript-eslint/no-use-before-define': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'error',
   },
 };

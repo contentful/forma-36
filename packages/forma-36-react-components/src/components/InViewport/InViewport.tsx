@@ -4,8 +4,8 @@ import isBrowser from '../../utils/isBrowser';
 import throttle from '../../utils/throttle';
 import styles from './InViewport.css';
 
-export type InViewportProps = {
-  offset: number;
+export interface InViewportProps {
+  offset?: number;
   onOverflowTop?: Function;
   onOverflowRight?: Function;
   onOverflowBottom?: Function;
@@ -13,9 +13,9 @@ export type InViewportProps = {
   className?: string;
   children?: React.ReactNode;
   testId?: string;
-} & typeof defaultProps;
+}
 
-const defaultProps = {
+const defaultProps: Partial<InViewportProps> = {
   testId: 'cf-ui-in-viewport',
   offset: 0,
 };
@@ -76,10 +76,10 @@ export class InViewport extends Component<InViewportProps> {
     windowHeight: number,
   ) => {
     const { offset } = this.props;
-    const topThreshold = 0 - offset;
-    const leftThreshold = 0 - offset;
-    const rightThreshold = windowWidth + offset;
-    const bottomThreshold = windowHeight + offset;
+    const topThreshold = 0 - offset!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+    const leftThreshold = 0 - offset!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+    const rightThreshold = windowWidth + offset!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+    const bottomThreshold = windowHeight + offset!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
 
     if (top + right + bottom + left !== 0) {
       if (top < topThreshold && this.lastOverflowAt !== 'bottom') {
@@ -114,7 +114,7 @@ export class InViewport extends Component<InViewportProps> {
 
     return (
       <div
-        ref={ref => {
+        ref={(ref) => {
           this.nodeRef = ref;
         }}
         className={classNames}

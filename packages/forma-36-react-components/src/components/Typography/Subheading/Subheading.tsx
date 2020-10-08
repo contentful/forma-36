@@ -4,15 +4,15 @@ import styles from './Subheading.css';
 
 import { TypographyContext } from '../Typography';
 
-export type SubheadingProps = {
-  element: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
+export interface SubheadingProps {
+  element?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
   className?: string;
   children?: React.ReactNode;
   testId?: string;
   style?: React.CSSProperties;
-} & typeof defaultProps;
+}
 
-const defaultProps = {
+const defaultProps: Partial<SubheadingProps> = {
   element: 'h2',
   testId: 'cf-ui-subheading',
 };
@@ -25,11 +25,11 @@ export class Subheading extends Component<SubheadingProps> {
 
     const classNames = cn(styles['Subheading'], className);
 
-    const Element = element;
+    const Element = element!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
 
     return (
       <TypographyContext.Consumer>
-        {value => {
+        {(value) => {
           return (
             <Element
               className={cn(classNames, [

@@ -144,7 +144,7 @@ function getSuggestionList(value: string, date: string) {
   });
 }
 
-export type TimepickerProps = {
+export interface TimepickerProps {
   value: string;
   date: string;
   onChange: (val: string) => void;
@@ -157,10 +157,9 @@ export type TimepickerProps = {
   name?: string;
   isRequired?: boolean;
   disabled: boolean;
-} & typeof defaultProps;
+}
 
-const defaultProps = {
-  onBlur: () => {},
+const defaultProps: Partial<TimepickerProps> = {
   isRequired: false,
 };
 
@@ -287,7 +286,7 @@ const TimePicker: React.FC<TimepickerProps> = ({
       const time = getTimeFromUserInputOrDefaultToValue();
       setSelectedTime(time);
       closeDropdown(e);
-      onBlur();
+      onBlur?.(e);
     },
     [
       getTimeFromUserInputOrDefaultToValue,

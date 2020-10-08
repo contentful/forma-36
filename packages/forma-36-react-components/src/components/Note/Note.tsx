@@ -13,8 +13,8 @@ const Icons = {
   warning: iconName.Warning,
 };
 
-export type NoteProps = {
-  noteType: 'primary' | 'positive' | 'negative' | 'warning';
+export interface NoteProps {
+  noteType?: 'primary' | 'positive' | 'negative' | 'warning';
   className?: string;
   title?: string;
   style?: CSSProperties;
@@ -22,9 +22,9 @@ export type NoteProps = {
   children: React.ReactNode;
   hasCloseButton?: boolean;
   onClose?: Function;
-} & typeof defaultProps;
+}
 
-const defaultProps = {
+const defaultProps: Partial<NoteProps> = {
   noteType: 'primary',
   testId: 'cf-ui-note',
 };
@@ -33,7 +33,7 @@ export class Note extends Component<NoteProps> {
   static defaultProps = defaultProps;
 
   render() {
-    const icon = Icons[this.props.noteType] as IconType;
+    const icon = Icons[this.props.noteType!] as IconType; // eslint-disable-line @typescript-eslint/no-non-null-assertion
     if (!icon) {
       throw new Error(
         `Intent ${this.props.noteType} is not supported in Note component.`,

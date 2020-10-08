@@ -3,7 +3,7 @@ import cn from 'classnames';
 
 import styles from './{{pascalCase name}}.css';
 
-export type {{pascalCase name}}Props = {
+export interface {{pascalCase name}}Props {
   /**
    * Class names to be appended to the className prop of the component
    */
@@ -16,9 +16,9 @@ export type {{pascalCase name}}Props = {
    * An ID used for testing purposes applied as a data attribute (data-test-id)
    */
   testId?: string;
-} & typeof defaultProps;
+};
 
-const defaultProps = {
+const defaultProps: Partial<{{pascalCase name}}Props> = {
   testId: 'cf-ui-{{kebabCase name}}',
 };
 

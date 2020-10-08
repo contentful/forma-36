@@ -20,7 +20,7 @@ export type EntityListItemStatus =
   | 'draft'
   | 'published';
 
-export type EntityListItemProps = {
+export interface EntityListItemProps {
   /**
    * The title of the entity
    */
@@ -99,9 +99,9 @@ export type EntityListItemProps = {
    * A boolean used to disable the CardActions
    */
   isActionsDisabled?: boolean;
-} & typeof defaultProps;
+}
 
-const defaultProps = {
+const defaultProps: Partial<EntityListItemProps> = {
   testId: 'cf-ui-entity-list-item',
   entityType: 'entry',
   withThumbnail: true,

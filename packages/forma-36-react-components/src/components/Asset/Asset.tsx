@@ -25,16 +25,16 @@ export function isAssetType(type: string): type is AssetType {
 
 export type AssetType = keyof typeof types;
 
-export type AssetProps = {
+export interface AssetProps {
   src: string;
   title: string;
   type?: AssetType;
   className?: string;
   status?: AssetState;
   testId?: string;
-} & typeof defaultProps;
+}
 
-const defaultProps = {
+const defaultProps: Partial<AssetProps> = {
   type: 'image',
   testId: 'cf-ui-asset',
 };
@@ -95,7 +95,11 @@ export class Asset extends Component<AssetProps> {
 
     return (
       <div className={classNames} data-test-id={testId} {...otherProps}>
-        {asImage ? this.renderImage(src, title) : this.renderAsset(type, title)}
+        {
+          asImage
+            ? this.renderImage(src, title)
+            : this.renderAsset(type!, title) // eslint-disable-line @typescript-eslint/no-non-null-assertion
+        }
       </div>
     );
   }

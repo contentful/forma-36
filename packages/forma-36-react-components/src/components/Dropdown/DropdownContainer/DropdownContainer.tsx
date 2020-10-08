@@ -6,7 +6,7 @@ import { positionType, AnchorDimensionsAndPositonType } from '../Dropdown';
 
 import styles from './DropdownContainer.css';
 
-export type DropdownContainerProps = {
+export interface DropdownContainerProps {
   onClose?: Function;
   dropdownAnchor?: HTMLElement | null;
   className?: string;
@@ -19,7 +19,7 @@ export type DropdownContainerProps = {
   submenu?: boolean;
   width?: number | false;
   isAutoalignmentEnabled?: boolean;
-} & typeof defaultProps;
+}
 
 export interface DropdownState {
   dropdownDimensions: {
@@ -29,12 +29,11 @@ export interface DropdownState {
   position: positionType;
 }
 
-const defaultProps = {
+const defaultProps: Partial<DropdownContainerProps> = {
   testId: 'cf-ui-dropdown-portal',
   position: 'bottom-left',
   submenu: false,
   isAutoalignmentEnabled: true,
-  getRef: () => {},
 };
 
 class DropdownContainer extends Component<
@@ -67,7 +66,7 @@ class DropdownContainer extends Component<
       });
     }
     document.addEventListener('mousedown', this.trackOutsideClick, true);
-    this.props.getRef(this.dropdown);
+    this.props.getRef?.(this.dropdown);
   }
 
   componentDidUpdate(
@@ -208,7 +207,7 @@ class DropdownContainer extends Component<
 
     const dropdown = (
       <div
-        ref={ref => {
+        ref={(ref) => {
           this.dropdown = ref;
         }}
         data-test-id={testId}

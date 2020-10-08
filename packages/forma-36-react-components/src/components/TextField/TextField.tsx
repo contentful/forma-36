@@ -13,7 +13,7 @@ import TextLink, { TextLinkProps } from '../TextLink';
 import Textarea, { TextareaProps } from '../Textarea';
 import styles from './TextField.css';
 
-export type TextFieldProps = {
+export interface TextFieldProps {
   name: string;
   id: string;
   width?: string;
@@ -32,14 +32,14 @@ export type TextFieldProps = {
   onChange?: ChangeEventHandler;
   onBlur?: FocusEventHandler;
   onFocus?: FocusEventHandler;
-} & typeof defaultProps;
+}
 
 export interface TextFieldState {
   value?: string;
   initialValue?: string;
 }
 
-const defaultProps = {
+const defaultProps: Partial<TextFieldProps> = {
   testId: 'cf-ui-text-field',
   textarea: false,
   required: false,

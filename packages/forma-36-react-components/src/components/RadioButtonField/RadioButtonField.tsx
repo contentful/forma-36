@@ -3,10 +3,10 @@ import ControlledInputField, {
   ControlledInputFieldPropTypes,
 } from '../ControlledInputField';
 
-export type RadioButtonFieldProps = ControlledInputFieldPropTypes &
-  typeof defaultProps;
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface RadioButtonFieldProps extends ControlledInputFieldPropTypes {}
 
-const defaultProps = {
+const defaultProps: Partial<RadioButtonFieldProps> = {
   labelIsLight: false,
   checked: false,
   inputType: 'checkbox',

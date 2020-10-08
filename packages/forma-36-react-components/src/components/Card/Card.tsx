@@ -29,7 +29,7 @@ export interface BaseCardProps {
   className?: string;
 }
 
-type CardPropTypes = BaseCardProps & {
+interface CardPropTypes extends BaseCardProps {
   /**
    * The action to be performed on click of the Card component
    */
@@ -47,9 +47,9 @@ type CardPropTypes = BaseCardProps & {
    */
   style?: React.CSSProperties;
   children: React.ReactNode;
-} & typeof defaultProps;
+}
 
-const defaultProps = {
+const defaultProps: Partial<CardPropTypes> = {
   padding: 'default',
   testId: 'cf-ui-card',
   selected: false,

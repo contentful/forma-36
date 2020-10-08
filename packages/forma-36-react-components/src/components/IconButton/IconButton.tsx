@@ -5,7 +5,7 @@ import TabFocusTrap from '../TabFocusTrap';
 
 import styles from './IconButton.css';
 
-export type IconButtonProps = {
+export interface IconButtonProps extends React.HTMLAttributes<HTMLElement> {
   label: string;
   href?: string;
   iconProps: IconProps;
@@ -20,18 +20,16 @@ export type IconButtonProps = {
   withDropdown?: boolean;
   className?: string;
   testId?: string;
-} & React.HTMLAttributes<HTMLElement>;
+}
 
-const defaultProps = {
+const defaultProps: Partial<IconButtonProps> = {
   disabled: false,
   testId: 'cf-ui-icon-button',
   buttonType: 'primary',
   withDropdown: false,
 };
 
-export class IconButton extends Component<
-  IconButtonProps & typeof defaultProps
-> {
+export class IconButton extends Component<IconButtonProps> {
   static defaultProps = defaultProps;
 
   render() {

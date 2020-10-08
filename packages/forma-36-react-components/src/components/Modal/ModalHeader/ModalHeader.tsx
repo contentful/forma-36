@@ -4,16 +4,16 @@ import IconButton from '../../IconButton/IconButton';
 
 import styles from './ModalHeader.css';
 
-export type ModalHeaderProps = {
+export interface ModalHeaderProps {
   title: string;
   onClose?: Function;
   testId?: string;
   className?: string;
   isNotWrapped?: boolean;
   style?: React.CSSProperties;
-} & typeof defaultProps;
+}
 
-const defaultProps = {
+const defaultProps: Partial<ModalHeaderProps> = {
   testId: 'cf-ui-modal-header',
 };
 

@@ -3,14 +3,14 @@ import cn from 'classnames';
 
 import styles from './TableRow.css';
 
-export type TableRowProps = {
+export interface TableRowProps {
   className?: string;
   style?: React.CSSProperties;
   testId?: string;
   children: React.ReactNode;
-} & typeof defaultProps;
+}
 
-const defaultProps = {
+const defaultProps: Partial<TableRowProps> = {
   testId: 'cf-ui-table-row',
 };
 

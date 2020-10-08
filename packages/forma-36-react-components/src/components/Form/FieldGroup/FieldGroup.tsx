@@ -3,15 +3,15 @@ import cn from 'classnames';
 
 import styles from './FieldGroup.css';
 
-export type FieldGroupProps = {
+export interface FieldGroupProps {
   className?: string;
   children: React.ReactNode;
   style?: React.CSSProperties;
   testId?: string;
   row?: boolean;
-} & typeof defaultProps;
+}
 
-const defaultProps = {
+const defaultProps: Partial<FieldGroupProps> = {
   row: false,
   testId: 'cf-ui-field-group',
 };
@@ -28,7 +28,7 @@ export class FieldGroup extends Component<FieldGroupProps> {
 
     return (
       <div {...otherProps} data-test-id={testId} className={classNames}>
-        {React.Children.map(children, child => (
+        {React.Children.map(children, (child) => (
           <div className={styles.FieldGroup__item}>{child}</div>
         ))}
       </div>
