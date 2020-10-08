@@ -94,7 +94,13 @@ export const Tooltip = ({
   testId,
   ...otherProps
 }: TooltipProps) => {
-  if (!content) return <>{children}</>;
+  if (!content) {
+    return (
+      <ContainerElement className={targetWrapperClassName}>
+        {children}
+      </ContainerElement>
+    );
+  }
 
   const [show, setShow] = useState(isVisible);
   const [arrowPosition, setArrowPosition] = useState<ArrowPositionState>(
@@ -207,7 +213,7 @@ Tooltip.defaultProps = {
   isVisible: false,
   maxWidth: 360,
   testId: 'cf-ui-tooltip',
-  place: 'bottom',
+  place: 'auto',
 };
 
 function getArrowPosition(popperPlacement: string) {
