@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.60.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.60.2...@contentful/forma-36-react-components@3.60.3) (2020-10-08)
+
+
+### Bug Fixes
+
+* return target wrapper when tooltip has no content ([#587](https://github.com/contentful/forma-36/issues/587)) ([37ea0c0](https://github.com/contentful/forma-36/commit/37ea0c095d2923bc569c6ae82a8eb98a81bc7104))
+
+
+
+
+
 ## [3.60.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.60.1...@contentful/forma-36-react-components@3.60.2) (2020-10-08)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
