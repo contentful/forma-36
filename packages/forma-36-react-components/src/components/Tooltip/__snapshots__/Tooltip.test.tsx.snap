@@ -6,7 +6,7 @@ exports[`does not render the component if no mouseover event on child 1`] = `
   content="Tooltip content"
   isVisible={false}
   maxWidth={360}
-  place="bottom"
+  place="auto"
   testId="cf-ui-tooltip"
 >
   <span
@@ -28,7 +28,7 @@ exports[`renders the component 1`] = `
   content="Tooltip content"
   isVisible={false}
   maxWidth={360}
-  place="bottom"
+  place="auto"
   testId="cf-ui-tooltip"
 >
   <span
@@ -52,7 +52,7 @@ exports[`renders the component as span with a id attribute 1`] = `
   content="Tooltip content"
   isVisible={false}
   maxWidth={360}
-  place="bottom"
+  place="auto"
   testId="cf-ui-tooltip"
 >
   <span
@@ -77,7 +77,7 @@ exports[`renders the component with a id attribute 1`] = `
   id="Tooltip"
   isVisible={false}
   maxWidth={360}
-  place="bottom"
+  place="auto"
   testId="cf-ui-tooltip"
 >
   <span
@@ -125,7 +125,7 @@ exports[`renders the component with a target wrapper classname 1`] = `
   content="Tooltip content"
   isVisible={false}
   maxWidth={360}
-  place="bottom"
+  place="auto"
   targetWrapperClassName="target-wrapper-class-name"
   testId="cf-ui-tooltip"
 >
@@ -152,7 +152,7 @@ exports[`renders the component with an additional class name 1`] = `
   content="Tooltip content"
   isVisible={false}
   maxWidth={360}
-  place="bottom"
+  place="auto"
   testId="cf-ui-tooltip"
 >
   <span
