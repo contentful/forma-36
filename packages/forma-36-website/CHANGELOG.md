@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.33](https://github.com/contentful/forma-36/compare/forma-36-website@0.9.32...forma-36-website@0.9.33) (2020-10-09)
+
+
+### Bug Fixes
+
+* **radio-button:** fix radio button example ([#588](https://github.com/contentful/forma-36/issues/588)) ([e1f9e03](https://github.com/contentful/forma-36/commit/e1f9e0398266da5f0e276e0f4297386cb969b255))
+
+
+
+
+
 ## [0.9.32](https://github.com/contentful/forma-36/compare/forma-36-website@0.9.31...forma-36-website@0.9.32) (2020-10-08)
 
 **Note:** Version bump only for package forma-36-website
