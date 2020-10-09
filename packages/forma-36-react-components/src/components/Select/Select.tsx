@@ -15,9 +15,9 @@ export interface SelectProps {
   hasError?: boolean;
   value?: string;
   isDisabled?: boolean;
-  onChange?: ChangeEventHandler;
-  onBlur?: FocusEventHandler;
-  onFocus?: FocusEventHandler;
+  onChange?: ChangeEventHandler<HTMLSelectElement>;
+  onBlur?: FocusEventHandler<HTMLSelectElement>;
+  onFocus?: FocusEventHandler<HTMLSelectElement>;
   width?: 'auto' | 'small' | 'medium' | 'large' | 'full';
   testId?: string;
   className?: string;
