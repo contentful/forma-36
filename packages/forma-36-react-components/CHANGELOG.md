@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.61.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.60.4...@contentful/forma-36-react-components@3.61.0) (2020-10-13)
+
+
+### Features
+
+* **icon:** add preview icon ([afe89ee](https://github.com/contentful/forma-36/commit/afe89ee8337aecd832e8544a0fdecf7893da7472))
+
+
+
+
+
 ## [3.60.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.60.3...@contentful/forma-36-react-components@3.60.4) (2020-10-09)
 
 
