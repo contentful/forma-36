@@ -98,6 +98,7 @@ export const iconName = {
   PlusCircle: 'PlusCircle',
   PlusCircleTrimmed: 'PlusCircleTrimmed',
   PlusTrimmed: 'PlusTrimmed',
+  Preview: 'Preview',
   Quote: 'Quote',
   QuoteTrimmed: 'QuoteTrimmed',
   References: 'References',
