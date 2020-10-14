@@ -23,6 +23,15 @@ export interface AccordionItemProps {
    * An ID used for testing purposes applied as a data attribute (data-test-id)
    */
   testId?: string;
+  /**
+   * A function to be called when the accordion item is opened
+   */
+  onExpand?: Function;
+  /**
+   * A function to be called when the accordion item is closed
+   */
+  onCollapse?: Function;
+
 }
 
 const defaultProps: AccordionItemProps = {
@@ -35,12 +44,23 @@ export const AccordionItem: FC<AccordionItemProps> = ({
   title,
   titleElement,
   testId,
+  onExpand,
+  onCollapse,
   children,
 }: AccordionItemProps) => {
   const id = useId();
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const onClick = () => setIsExpanded(!isExpanded);
+  const onClick = () => {
+    if (!isExpanded && onExpand) {
+      onExpand()
+    }
+     if (isExpanded && onCollapse) {
+      onCollapse()
+    }
+
+    setIsExpanded(!isExpanded)
+  };
 
   return (
     <li className={styles.AccordionItem} data-test-id={`${testId}-${id}`}>
