@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.61.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.61.1...@contentful/forma-36-react-components@3.61.2) (2020-10-15)
+
+
+### Bug Fixes
+
+* **accordionitem:** add handleOpen and handleClose to log when items are opened or closed ([32bdc5f](https://github.com/contentful/forma-36/commit/32bdc5f3e901aef0c5882372b701f128ee7c07ec))
+
+
+
+
+
 ## [3.61.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.61.0...@contentful/forma-36-react-components@3.61.1) (2020-10-14)
 
 
