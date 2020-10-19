@@ -4,21 +4,14 @@ import DropdownContainer from './DropdownContainer';
 
 it('renders the component', () => {
   const output = shallow(
-    <DropdownContainer
-      anchorDimensionsAndPositon={{ left: 0, top: 0, width: 100, height: 0 }}
-    >
-      DropdownContainer
-    </DropdownContainer>,
+    <DropdownContainer isOpen>DropdownContainer</DropdownContainer>,
   );
   expect(output).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
   const output = shallow(
-    <DropdownContainer
-      anchorDimensionsAndPositon={{ left: 0, top: 0, width: 100, height: 0 }}
-      className="extraClassName"
-    >
+    <DropdownContainer className="extraClassName" isOpen>
       DropdownContainer
     </DropdownContainer>,
   );
@@ -27,11 +20,7 @@ it('renders the component with an additional class name', () => {
 
 it('renders the component as a submenu', () => {
   const output = shallow(
-    <DropdownContainer
-      anchorDimensionsAndPositon={{ left: 0, top: 0, width: 100, height: 0 }}
-      className="extraClassName"
-      submenu
-    >
+    <DropdownContainer className="extraClassName" isOpen submenu>
       DropdownContainer
     </DropdownContainer>,
   );
@@ -40,11 +29,7 @@ it('renders the component as a submenu', () => {
 
 it('has no a11y issues', async () => {
   const output = shallow(
-    <DropdownContainer
-      anchorDimensionsAndPositon={{ left: 0, top: 0, width: 100, height: 0 }}
-    >
-      DropdownContainer
-    </DropdownContainer>,
+    <DropdownContainer isOpen>DropdownContainer</DropdownContainer>,
   );
   expect(output).toMatchSnapshot();
 });

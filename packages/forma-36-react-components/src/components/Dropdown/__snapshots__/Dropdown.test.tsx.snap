@@ -4,7 +4,6 @@ exports[`renders the component 1`] = `
 <div
   className="Dropdown"
   data-test-id="cf-ui-dropdown"
-  position="bottom-left"
 >
   <Button
     aria-expanded={false}
@@ -27,7 +26,6 @@ exports[`renders the component as open 1`] = `
 <div
   className="Dropdown"
   data-test-id="cf-ui-dropdown"
-  position="bottom-left"
 >
   <Button
     aria-expanded={true}
@@ -44,33 +42,31 @@ exports[`renders the component as open 1`] = `
     Toggle
   </Button>
   <DropdownContainer
-    anchorDimensionsAndPositon={
-      Object {
-        "height": 0,
-        "left": 0,
-        "top": 0,
-        "width": 0,
-      }
-    }
-    dropdownAnchor={null}
     getRef={[Function]}
-    isAutoalignmentEnabled={true}
+    isOpen={true}
     openSubmenu={[Function]}
     position="bottom-left"
+    style={
+      Object {
+        "left": "0",
+        "position": "absolute",
+        "top": "0",
+      }
+    }
     submenu={false}
     testId="cf-ui-dropdown-container"
   >
     <DropdownList
       testId="cf-ui-dropdown-list"
     >
-      <DropdownListItem
+      <ForwardRef
         isActive={false}
         isDisabled={false}
         isTitle={false}
         testId="cf-ui-dropdown-list-item"
       >
         entry
-      </DropdownListItem>
+      </ForwardRef>
     </DropdownList>
   </DropdownContainer>
 </div>
@@ -80,7 +76,6 @@ exports[`renders the component with a submenu 1`] = `
 <div
   className="Dropdown"
   data-test-id="cf-ui-dropdown"
-  position="bottom-left"
 >
   <Button
     aria-expanded={true}
@@ -97,33 +92,31 @@ exports[`renders the component with a submenu 1`] = `
     Toggle
   </Button>
   <DropdownContainer
-    anchorDimensionsAndPositon={
-      Object {
-        "height": 0,
-        "left": 0,
-        "top": 0,
-        "width": 0,
-      }
-    }
-    dropdownAnchor={null}
     getRef={[Function]}
-    isAutoalignmentEnabled={true}
+    isOpen={true}
     openSubmenu={[Function]}
     position="bottom-left"
+    style={
+      Object {
+        "left": "0",
+        "position": "absolute",
+        "top": "0",
+      }
+    }
     submenu={false}
     testId="cf-ui-dropdown-container"
   >
     <DropdownList
       testId="cf-ui-dropdown-list"
     >
-      <DropdownListItem
+      <ForwardRef
         isActive={false}
         isDisabled={false}
         isTitle={false}
         testId="cf-ui-dropdown-list-item"
       >
         entry
-      </DropdownListItem>
+      </ForwardRef>
       <Dropdown
         getContainerRef={[Function]}
         isAutoalignmentEnabled={true}
@@ -132,14 +125,14 @@ exports[`renders the component with a submenu 1`] = `
         submenuToggleLabel="Submenu"
         testId="cf-ui-dropdown"
       >
-        <DropdownListItem
+        <ForwardRef
           isActive={false}
           isDisabled={false}
           isTitle={false}
           testId="cf-ui-dropdown-list-item"
         >
           entry
-        </DropdownListItem>
+        </ForwardRef>
       </Dropdown>
       ,
     </DropdownList>
@@ -151,7 +144,6 @@ exports[`renders the component with an additional class name 1`] = `
 <div
   className="Dropdown"
   data-test-id="cf-ui-dropdown"
-  position="bottom-left"
 >
   <Button
     aria-expanded={false}

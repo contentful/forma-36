@@ -20,8 +20,8 @@ export interface CardActionsPropTypes {
    * The DropdownList elements used to render an actions dropdown for the component
    */
   children:
-    | React.ReactElement<DropdownList>
-    | React.ReactElement<DropdownList>[];
+    | React.ReactElement<typeof DropdownList>
+    | React.ReactElement<typeof DropdownList>[];
   /**
    * An ID used for testing purposes applied as a data attribute (data-test-id)
    */
@@ -73,7 +73,6 @@ export class CardActions extends Component<
           });
         }}
         position="bottom-right"
-        isAutoalignmentEnabled={false}
         className={className}
         isOpen={this.state.isDropdownOpen}
         testId={testId}

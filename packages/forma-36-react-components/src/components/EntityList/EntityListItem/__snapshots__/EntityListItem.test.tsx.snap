@@ -1033,15 +1033,15 @@ exports[`renders the component with dropdownListElements 1`] = `
           <DropdownList
             testId="cf-ui-dropdown-list"
           >
-            <DropdownListItem
+            <ForwardRef
               isActive={false}
               isDisabled={false}
               isTitle={true}
               testId="cf-ui-dropdown-list-item"
             >
               Actions
-            </DropdownListItem>
-            <DropdownListItem
+            </ForwardRef>
+            <ForwardRef
               isActive={false}
               isDisabled={false}
               isTitle={false}
@@ -1049,8 +1049,8 @@ exports[`renders the component with dropdownListElements 1`] = `
               testId="cf-ui-dropdown-list-item"
             >
               Edit
-            </DropdownListItem>
-            <DropdownListItem
+            </ForwardRef>
+            <ForwardRef
               isActive={false}
               isDisabled={false}
               isTitle={false}
@@ -1058,8 +1058,8 @@ exports[`renders the component with dropdownListElements 1`] = `
               testId="cf-ui-dropdown-list-item"
             >
               Download
-            </DropdownListItem>
-            <DropdownListItem
+            </ForwardRef>
+            <ForwardRef
               isActive={false}
               isDisabled={false}
               isTitle={false}
@@ -1067,7 +1067,7 @@ exports[`renders the component with dropdownListElements 1`] = `
               testId="cf-ui-dropdown-list-item"
             >
               Remove
-            </DropdownListItem>
+            </ForwardRef>
           </DropdownList>
         </CardActions>
       </div>
