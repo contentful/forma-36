@@ -1,6 +1,6 @@
 import React, { CSSProperties } from 'react';
 import cn from 'classnames';
-import { navigationIconName } from './constants';
+import { productIconName } from './constants';
 
 import Spaces from './svg/Spaces.svg';
 import Apis from './svg/Apis.svg';
@@ -23,7 +23,7 @@ import Usage from './svg/Usage.svg';
 import UserProfile from './svg/UserProfile.svg';
 import Users from './svg/Users.svg';
 
-import styles from './NavigationIcon.css';
+import styles from './ProductIcon.css';
 
 const iconComponents = {
   Spaces,
@@ -48,8 +48,8 @@ const iconComponents = {
   Users,
 };
 
-export type NavigationIconType = keyof typeof navigationIconName;
-export type NavigationIconColorType =
+export type ProductIconType = keyof typeof productIconName;
+export type ProductIconColorType =
   | 'primary'
   | 'positive'
   | 'negative'
@@ -58,17 +58,17 @@ export type NavigationIconColorType =
   | 'muted'
   | 'white';
 
-export type NavigationIconSize = 'small' | 'medium' | 'large' | 'xlarge';
-export type NavigationIconTagType = 'div' | 'span';
+export type ProductIconSize = 'small' | 'medium' | 'large' | 'xlarge';
+export type ProductIconTagType = 'div' | 'span';
 
-export interface NavigationIconProps {
-  size?: NavigationIconSize;
-  color?: NavigationIconColorType;
+export interface ProductIconProps {
+  size?: ProductIconSize;
+  color?: ProductIconColorType;
   style?: CSSProperties;
-  icon: NavigationIconType;
+  icon: ProductIconType;
   className?: string;
   testId?: string;
-  tag: NavigationIconTagType;
+  tag: ProductIconTagType;
 }
 
 const defaultProps = {
@@ -78,7 +78,7 @@ const defaultProps = {
   tag: 'div',
 };
 
-export const NavigationIcon = ({
+export const ProductIcon = ({
   className,
   icon,
   size,
@@ -86,12 +86,12 @@ export const NavigationIcon = ({
   testId,
   tag,
   ...otherProps
-}: NavigationIconProps) => {
+}: ProductIconProps) => {
   const classNames = cn(
-    styles.NavigationIconContainer,
+    styles.ProductIconContainer,
     {
-      [styles[`NavigationIconContainer--${size}`]]: size,
-      [styles['NavigationIconContainer--trimmed']]: icon
+      [styles[`ProductIconContainer--${size}`]]: size,
+      [styles['ProductIconContainer--trimmed']]: icon
         .toLowerCase()
         .includes('trimmed'),
     },
@@ -99,9 +99,9 @@ export const NavigationIcon = ({
   );
 
   const svgFillClass = cn(
-    styles.NavigationIcon,
+    styles.ProductIcon,
     {
-      [styles[`NavigationIcon--${color}`]]: color,
+      [styles[`ProductIcon--${color}`]]: color,
     },
     className,
   );
@@ -115,6 +115,6 @@ export const NavigationIcon = ({
   );
 };
 
-NavigationIcon.defaultProps = defaultProps;
+ProductIcon.defaultProps = defaultProps;
 
-export default NavigationIcon;
+export default ProductIcon;

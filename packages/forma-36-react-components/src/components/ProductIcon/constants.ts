@@ -1,4 +1,4 @@
-export const navigationIconName = {
+export const productIconName = {
   Apis: 'Apis',
   Apps: 'Apps',
   Billing: 'Billing',

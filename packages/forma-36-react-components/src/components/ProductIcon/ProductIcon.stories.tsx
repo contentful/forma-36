@@ -2,20 +2,20 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, select } from '@storybook/addon-knobs';
 
-import NavigationIcon from './NavigationIcon';
-import { navigationIconName } from './constants';
+import ProductIcon from './ProductIcon';
+import { productIconName } from './constants';
 
-storiesOf('(alpha)/NavigationIcon', module)
+storiesOf('(alpha)/ProductIcon', module)
   .addParameters({
-    propTypes: NavigationIcon['__docgenInfo'],
-    component: NavigationIcon,
+    propTypes: ProductIcon['__docgenInfo'],
+    component: ProductIcon,
   })
-  .add('NavigationIcon (default)', () => (
-    <NavigationIcon
+  .add('ProductIcon (default)', () => (
+    <ProductIcon
       icon={select(
         'icon',
-        Object.keys(navigationIconName),
-        Object.keys(navigationIconName)[0],
+        Object.keys(productIconName),
+        Object.keys(productIconName)[0],
       )}
       size={select(
         'size',
