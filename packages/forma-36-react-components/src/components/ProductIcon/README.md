@@ -1,23 +1,19 @@
-ProductIcon component currently is used mainly in the top navigation and headlines of contentful pages. ProductIcon uses separate set of SVG's then the standard `Icon` component. We also would like to make sure that we separate the purpose of those 2 components.
+*This component is in an alpha state. Breaking changes to the API can happen with any future updates. We don't recommend using the component in production environments*
 
-*Please keep in mind that component is still in it's alpha state. This means the API of the component still might change*
+The `ProductIcon` component is used in combination with navigation and title UI elements. The ProductIcon uses a separate set of SVG icons tailored specifically to Contentful concepts, whereas the `Icon` component contains generic UI icons.
 
 ## Examples of usage
 
 Common practice is to use ProductIcons in the top navigation in Contentful webapp. In the case of the top navigation, white icon is shown on the dark background next to the white text.
 
 ```jsx
-import { Label } from '@contentful/forma-36-react-components';
 import { NavigationIcon } from '@contentful/forma-36-react-components/dist/alpha';
 
-<Label>
-  <NavigationIcon
-    icon={item.navIcon}
-    size="medium"
-    color="white"
-  />
-  {elementTitle}
-</Label>
+<NavigationIcon
+  icon={item.navIcon}
+  size="medium"
+  color="white"
+/>
 
 ```
 
