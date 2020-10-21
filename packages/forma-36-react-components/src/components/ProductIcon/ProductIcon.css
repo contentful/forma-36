@@ -43,10 +43,30 @@
   fill: var(--color-positive);
 }
 
+.ProductIcon--primary {
+  fill: var(--color-primary);
+}
+
 .ProductIcon--positive {
   fill: var(--color-positive);
 }
 
 .ProductIcon--white {
   fill: var(--color-white);
+}
+
+.ProductIcon--negative {
+  fill: var(--color-negative);
+}
+
+.ProductIcon--warning {
+  fill: var(--color-warning);
+}
+
+.ProductIcon--secondary {
+  fill: var(--color-text-mid);
+}
+
+.ProductIcon--muted {
+  fill: var(--color-text-light);
 }

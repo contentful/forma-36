@@ -31,6 +31,6 @@ export const basic = (args: ProductIconProps) => (
 basic.args = {
   icon: 'Apis',
   size: 'large',
-  color: 'negative',
+  color: 'positive',
   tag: 'div'
 };
