@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.62.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.61.2...@contentful/forma-36-react-components@3.62.0) (2020-10-21)
+
+
+### Features
+
+* **PUL-1194:** add logout icon ([#600](https://github.com/contentful/forma-36/issues/600)) ([21ae873](https://github.com/contentful/forma-36/commit/21ae87353ab919faed4ff9d56f018f79897999e1))
+
+
+
+
+
 ## [3.61.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.61.1...@contentful/forma-36-react-components@3.61.2) (2020-10-15)
 
 
