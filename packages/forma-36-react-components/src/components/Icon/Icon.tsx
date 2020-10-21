@@ -86,6 +86,7 @@ import ListNumbered from './svg/ListNumbered.svg';
 import ListNumberedTrimmed from './svg/ListNumberedTrimmed.svg';
 import Lock from './svg/Lock.svg';
 import LockTrimmed from './svg/LockTrimmed.svg';
+import Logout from './svg/Logout.svg';
 import LooksOne from './svg/LooksOne.svg';
 import LooksOneTrimmed from './svg/LooksOneTrimmed.svg';
 import LooksTwo from './svg/LooksTwo.svg';
@@ -217,6 +218,7 @@ const iconComponents = {
   ListNumberedTrimmed,
   Lock,
   LockTrimmed,
+  Logout,
   LooksOne,
   LooksOneTrimmed,
   LooksTwo,

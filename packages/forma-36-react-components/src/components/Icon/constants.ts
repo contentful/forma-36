@@ -83,6 +83,7 @@ export const iconName = {
   ListNumberedTrimmed: 'ListNumberedTrimmed',
   Lock: 'Lock',
   LockTrimmed: 'LockTrimmed',
+  Logout: 'Logout',
   LooksOne: 'LooksOne',
   LooksOneTrimmed: 'LooksOneTrimmed',
   LooksTwo: 'LooksTwo',
