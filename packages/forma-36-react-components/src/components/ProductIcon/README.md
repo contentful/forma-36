@@ -1,4 +1,4 @@
-ProductIcon components currently are used mainly in the top navigation and headlines of contentful pages. We decided to use separate component right now, as it uses separate set of SVG's then the standard `Icon`. We also would like to make sure that we separate the purpose of those 2 components.
+ProductIcon component currently is used mainly in the top navigation and headlines of contentful pages. ProductIcon uses separate set of SVG's then the standard `Icon` component. We also would like to make sure that we separate the purpose of those 2 components.
 
 *Please keep in mind that component is still in it's alpha state. This means the API of the component still might change*
 
