@@ -1,48 +1,36 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { text, select } from '@storybook/addon-knobs';
 
-import ProductIcon from './ProductIcon';
-import { productIconName } from './constants';
+import ProductIcon, {ProductIconProps} from './ProductIcon';
+import { productIconName, productIconSize, productIconColor, productIconTag } from './constants';
+import notes from './README.md';
 
-storiesOf('(alpha)/ProductIcon', module)
-  .addParameters({
-    propTypes: ProductIcon['__docgenInfo'],
-    component: ProductIcon,
-  })
-  .add('ProductIcon (default)', () => (
-    <ProductIcon
-      icon={select(
-        'icon',
-        Object.keys(productIconName),
-        Object.keys(productIconName)[0],
-      )}
-      size={select(
-        'size',
-        {
-          Small: 'small',
-          'Medium (default)': 'medium',
-          Large: 'large',
-          Xlarge: 'xlarge',
-        },
-        'medium',
-      )}
-      color={select(
-        'color',
-        {
-          'Positive(default)': 'positive',
-          White: 'white',
-        },
-        'primary',
-      )}
-      tag={select(
-        'tagType',
-        {
-          'div(default)': 'div',
-          span: 'span',
-        },
-        'div',
-      )}
-      className={text('className', '')}
-    />
-  ));
+export default {
+  title: '(alpha)/ProductIcon',
+  component: ProductIcon,
+  parameters: {
+    propTypes: [ProductIcon['__docgenInfo']],
+    notes,
+  },
+  argTypes: {
+    icon: { control: { type: 'select', options: productIconName } },
+    size: { control: { type: 'select', options: productIconSize } },
+    color: { control: { type: 'select', options: productIconColor } },
+    tag:{ control: { type: 'select', options: productIconTag } },
+  },
+};
+
+export const basic = (args: ProductIconProps) => (
+  <ProductIcon
+    icon={args.icon}
+    size={args.size}
+    color={args.color}
+    tag={args.tag}
+  />
+);
+
+basic.args = {
+  icon: 'Apis',
+  size: 'large',
+  color: 'negative',
+  tag: 'div'
+};
