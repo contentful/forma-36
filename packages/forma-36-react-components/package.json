@@ -113,8 +113,8 @@
     "truncate": "^2.0.1"
   },
   "peerDependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   },
   "scripts": {
     "start": "start-storybook -p 9001 -c ./tools/.storybook -s ./tools/.storybook/public",
