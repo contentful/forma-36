@@ -2,11 +2,11 @@
 
 exports[`renders a large icon 1`] = `
 <div
-  className="NavigationIconContainer NavigationIconContainer--large"
+  className="ProductIconContainer ProductIconContainer--large"
   data-test-id="cf-ui-navigation-icon"
 >
   <Home
-    className="NavigationIcon NavigationIcon--positive"
+    className="ProductIcon ProductIcon--positive"
     fill="none"
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"
@@ -16,11 +16,11 @@ exports[`renders a large icon 1`] = `
 
 exports[`renders as a "positive" icon 1`] = `
 <div
-  className="NavigationIconContainer NavigationIconContainer--large"
+  className="ProductIconContainer ProductIconContainer--large"
   data-test-id="cf-ui-navigation-icon"
 >
   <Home
-    className="NavigationIcon NavigationIcon--positive"
+    className="ProductIcon ProductIcon--positive"
     fill="none"
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"
@@ -30,11 +30,11 @@ exports[`renders as a "positive" icon 1`] = `
 
 exports[`renders as a "white" icon 1`] = `
 <div
-  className="NavigationIconContainer NavigationIconContainer--large"
+  className="ProductIconContainer ProductIconContainer--large"
   data-test-id="cf-ui-navigation-icon"
 >
   <Home
-    className="NavigationIcon NavigationIcon--white"
+    className="ProductIcon ProductIcon--white"
     fill="none"
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"
@@ -44,11 +44,11 @@ exports[`renders as a "white" icon 1`] = `
 
 exports[`renders the component 1`] = `
 <div
-  className="NavigationIconContainer NavigationIconContainer--medium"
+  className="ProductIconContainer ProductIconContainer--medium"
   data-test-id="cf-ui-navigation-icon"
 >
   <Home
-    className="NavigationIcon NavigationIcon--positive"
+    className="ProductIcon ProductIcon--positive"
     fill="none"
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"
@@ -58,11 +58,11 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <div
-  className="NavigationIconContainer NavigationIconContainer--medium my-extra-class"
+  className="ProductIconContainer ProductIconContainer--medium my-extra-class"
   data-test-id="cf-ui-navigation-icon"
 >
   <Home
-    className="NavigationIcon NavigationIcon--positive my-extra-class"
+    className="ProductIcon ProductIcon--positive my-extra-class"
     fill="none"
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"

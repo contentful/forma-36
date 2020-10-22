@@ -1,4 +1,4 @@
-export const navigationIconName = {
+export const productIconName = {
   Apis: 'Apis',
   Apps: 'Apps',
   Billing: 'Billing',
@@ -20,3 +20,7 @@ export const navigationIconName = {
   Users: 'Users',
   UserProfile: 'UserProfile',
 };
+
+export const productIconSize = ['small' , 'medium' , 'large' , 'xlarge']
+export const productIconColor = ['primary', 'positive', 'negative', 'warning', 'secondary', 'muted', 'white']
+export const productIconTag = ['div' , 'span']
