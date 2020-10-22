@@ -51,7 +51,7 @@ export class Form extends Component<FormProps> {
         onSubmit={this.handleSubmit}
         {...otherProps}
       >
-        {React.Children.map(children, (child) => {
+        {React.Children.map(children, child => {
           if (child) {
             return <div className={formItemClassNames}>{child}</div>;
           }

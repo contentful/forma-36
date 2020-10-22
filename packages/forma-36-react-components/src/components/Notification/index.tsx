@@ -37,21 +37,21 @@ function createRoot(callback: () => void) {
   render(<NotificationManager register={registerAPI} />, container, callback);
 }
 
-const afterInit = (fn: Function) => {
+function afterInit<PromiseValueType>(fn: Function) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return (...args: any[]) => {
     if (!initiated) {
       initiated = true;
-      return new Promise((resolve) => {
+      return new Promise<PromiseValueType>(resolve => {
         createRoot(() => {
           resolve(fn(...args));
         });
       });
     } else {
-      return Promise.resolve(fn(...args));
+      return Promise.resolve<PromiseValueType>(fn(...args));
     }
   };
-};
+}
 
 const show = (intent: NotificationIntent) => (
   text: string,
@@ -91,25 +91,27 @@ export const Notification: {
   setPosition: SetPositionAction<Promise<void>>;
   setDuration: SetDurationAction<Promise<void>>;
 } = {
-  success: afterInit(show('success')),
-  error: afterInit(show('error')),
-  warning: afterInit(show('warning')),
-  close: afterInit((id: string | number) => {
+  success: afterInit<NotificationType>(show('success')),
+  error: afterInit<NotificationType>(show('error')),
+  warning: afterInit<NotificationType>(show('warning')),
+  close: afterInit<void>((id: string | number) => {
     if (internalAPI.close) {
       return internalAPI.close(id);
     }
   }),
-  closeAll: afterInit(() => {
+  closeAll: afterInit<void>(() => {
     if (internalAPI.closeAll) {
       return internalAPI.closeAll();
     }
   }),
-  setPosition: afterInit((position: Position, params?: { offset: number }) => {
-    if (internalAPI.setPosition) {
-      return internalAPI.setPosition(position, params);
-    }
-  }),
-  setDuration: afterInit((duration: number) => {
+  setPosition: afterInit<void>(
+    (position: Position, params?: { offset: number }) => {
+      if (internalAPI.setPosition) {
+        return internalAPI.setPosition(position, params);
+      }
+    },
+  ),
+  setDuration: afterInit<void>((duration: number) => {
     if (internalAPI.setDuration) {
       return internalAPI.setDuration(duration);
     }

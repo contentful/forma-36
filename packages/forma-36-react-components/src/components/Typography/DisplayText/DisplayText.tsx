@@ -40,7 +40,7 @@ export class DisplayText extends Component<DisplayTextProps> {
 
     return (
       <TypographyContext.Consumer>
-        {(value) => {
+        {value => {
           const contextSize =
             size === 'large' ? value['displayTextLarge'] : value['displayText'];
 

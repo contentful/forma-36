@@ -41,7 +41,7 @@ function DefaultStory() {
                 </React.Fragment>
               )}
             </Modal>
-          )).then((text) => {
+          )).then(text => {
             setHiddenText(text);
           });
         }}

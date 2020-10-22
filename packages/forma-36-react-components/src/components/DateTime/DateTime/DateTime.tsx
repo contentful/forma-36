@@ -31,7 +31,7 @@ export const DateTime: React.FC<DateTimeProps> = ({
   testId,
 }) => {
   if (typeof date === 'string' || typeof date === 'number') {
-    date = new Date(date)
+    date = new Date(date);
   }
   const formatted = formatDateTime(date, format);
 

@@ -244,7 +244,7 @@ export class EntryCard extends Component<EntryCardPropTypes> {
                     <CardActions
                       className={styles['EntryCard__actions']}
                       iconButtonProps={{
-                        onClick: (e) => e.stopPropagation,
+                        onClick: e => e.stopPropagation,
                       }}
                     >
                       {dropdownListElements}

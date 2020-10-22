@@ -29,7 +29,7 @@ export class Subheading extends Component<SubheadingProps> {
 
     return (
       <TypographyContext.Consumer>
-        {(value) => {
+        {value => {
           return (
             <Element
               className={cn(classNames, [

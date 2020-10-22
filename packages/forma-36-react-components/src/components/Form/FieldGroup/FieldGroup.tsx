@@ -28,7 +28,7 @@ export class FieldGroup extends Component<FieldGroupProps> {
 
     return (
       <div {...otherProps} data-test-id={testId} className={classNames}>
-        {React.Children.map(children, (child) => (
+        {React.Children.map(children, child => (
           <div className={styles.FieldGroup__item}>{child}</div>
         ))}
       </div>

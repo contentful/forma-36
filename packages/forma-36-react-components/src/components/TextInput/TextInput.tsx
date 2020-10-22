@@ -119,7 +119,7 @@ export class TextInput extends Component<TextInputProps, TextInputState> {
           disabled={disabled}
           onBlur={onBlur}
           onFocus={this.handleFocus}
-          onChange={(e) => {
+          onChange={e => {
             if (disabled || isReadOnly) return;
 
             if (onChange) {

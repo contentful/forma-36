@@ -19,10 +19,9 @@ exports[`can call an onClick callback 1`] = `
         <svg
           class="Icon Icon--small Icon--muted"
           data-test-id="cf-ui-icon"
-          height="24"
+          height="1em"
           viewBox="0 0 24 24"
-          width="24"
-          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
         >
           <path
             d="M0 0h24v24H0V0z"
@@ -80,10 +79,9 @@ exports[`renders the component 1`] = `
         <svg
           class="Icon Icon--small Icon--muted"
           data-test-id="cf-ui-icon"
-          height="24"
+          height="1em"
           viewBox="0 0 24 24"
-          width="24"
-          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
         >
           <path
             d="M0 0h24v24H0V0z"
@@ -144,10 +142,9 @@ exports[`renders the component as an \`a\` element if passed a href prop 1`] = `
         <svg
           class="Icon Icon--small Icon--muted"
           data-test-id="cf-ui-icon"
-          height="24"
+          height="1em"
           viewBox="0 0 24 24"
-          width="24"
-          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
         >
           <path
             d="M0 0h24v24H0V0z"
@@ -205,10 +202,9 @@ exports[`renders the component as an Asset with a lower-cased entityType 1`] = `
         <svg
           class="Icon Icon--small Icon--muted"
           data-test-id="cf-ui-icon"
-          height="24"
+          height="1em"
           viewBox="0 0 24 24"
-          width="24"
-          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
         >
           <path
             d="M0 0h24v24H0V0z"
@@ -286,10 +282,9 @@ exports[`renders the component as an Asset with a title-cased entityType 1`] = `
         <svg
           class="Icon Icon--small Icon--muted"
           data-test-id="cf-ui-icon"
-          height="24"
+          height="1em"
           viewBox="0 0 24 24"
-          width="24"
-          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
         >
           <path
             d="M0 0h24v24H0V0z"
@@ -367,10 +362,9 @@ exports[`renders the component as an asset entityType icon with an archived stat
         <svg
           class="Icon Icon--small Icon--muted"
           data-test-id="cf-ui-icon"
-          height="24"
+          height="1em"
           viewBox="0 0 24 24"
-          width="24"
-          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
         >
           <path
             d="M0 0h24v24H0V0z"
@@ -448,10 +442,9 @@ exports[`renders the component as an asset entityType variant 1`] = `
         <svg
           class="Icon Icon--small Icon--muted"
           data-test-id="cf-ui-icon"
-          height="24"
+          height="1em"
           viewBox="0 0 24 24"
-          width="24"
-          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
         >
           <path
             d="M0 0h24v24H0V0z"
@@ -698,10 +691,9 @@ exports[`renders the component with a description 1`] = `
         <svg
           class="Icon Icon--small Icon--muted"
           data-test-id="cf-ui-icon"
-          height="24"
+          height="1em"
           viewBox="0 0 24 24"
-          width="24"
-          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
         >
           <path
             d="M0 0h24v24H0V0z"
@@ -760,10 +752,9 @@ exports[`renders the component with a drag handle 1`] = `
     <svg
       class="Icon Icon--small Icon--muted"
       data-test-id="cf-ui-icon"
-      height="24"
+      height="1em"
       viewBox="0 0 24 24"
-      width="24"
-      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
     >
       <path
         d="M0 0h24v24H0V0z"
@@ -792,10 +783,9 @@ exports[`renders the component with a drag handle 1`] = `
         <svg
           class="Icon Icon--small Icon--muted"
           data-test-id="cf-ui-icon"
-          height="24"
+          height="1em"
           viewBox="0 0 24 24"
-          width="24"
-          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
         >
           <path
             d="M0 0h24v24H0V0z"
@@ -871,10 +861,9 @@ exports[`renders the component with a status 1`] = `
         <svg
           class="Icon Icon--small Icon--muted"
           data-test-id="cf-ui-icon"
-          height="24"
+          height="1em"
           viewBox="0 0 24 24"
-          width="24"
-          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
         >
           <path
             d="M0 0h24v24H0V0z"
@@ -950,10 +939,9 @@ exports[`renders the component with active drag state 1`] = `
         <svg
           class="Icon Icon--small Icon--muted"
           data-test-id="cf-ui-icon"
-          height="24"
+          height="1em"
           viewBox="0 0 24 24"
-          width="24"
-          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
         >
           <path
             d="M0 0h24v24H0V0z"
@@ -1029,10 +1017,9 @@ exports[`renders the component with an additional class name 1`] = `
         <svg
           class="Icon Icon--small Icon--muted"
           data-test-id="cf-ui-icon"
-          height="24"
+          height="1em"
           viewBox="0 0 24 24"
-          width="24"
-          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
         >
           <path
             d="M0 0h24v24H0V0z"
@@ -1091,10 +1078,9 @@ exports[`renders the component with custom drag handle 1`] = `
     <svg
       class="Icon Icon--small Icon--muted"
       data-test-id="cf-ui-icon"
-      height="24"
+      height="1em"
       viewBox="0 0 24 24"
-      width="24"
-      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
     >
       <path
         d="M0 0h24v24H0V0z"
@@ -1123,10 +1109,9 @@ exports[`renders the component with custom drag handle 1`] = `
         <svg
           class="Icon Icon--small Icon--muted"
           data-test-id="cf-ui-icon"
-          height="24"
+          height="1em"
           viewBox="0 0 24 24"
-          width="24"
-          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
         >
           <path
             d="M0 0h24v24H0V0z"
@@ -1202,10 +1187,9 @@ exports[`renders the component with disabled actions 1`] = `
         <svg
           class="Icon Icon--small Icon--muted"
           data-test-id="cf-ui-icon"
-          height="24"
+          height="1em"
           viewBox="0 0 24 24"
-          width="24"
-          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
         >
           <path
             d="M0 0h24v24H0V0z"
@@ -1270,10 +1254,9 @@ exports[`renders the component with dropdownListElements 1`] = `
         <svg
           class="Icon Icon--small Icon--muted"
           data-test-id="cf-ui-icon"
-          height="24"
+          height="1em"
           viewBox="0 0 24 24"
-          width="24"
-          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
         >
           <path
             d="M0 0h24v24H0V0z"
@@ -1343,10 +1326,9 @@ exports[`renders the component with dropdownListElements 1`] = `
               <svg
                 class="Icon Icon--small Icon--primary IconButton__icon"
                 data-test-id="cf-ui-icon"
-                height="18"
+                height="1em"
                 viewBox="0 0 24 24"
-                width="18"
-                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
               >
                 <path
                   d="M0 0h24v24H0z"
