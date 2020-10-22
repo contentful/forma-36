@@ -23,7 +23,6 @@
 
 .AssetCard--size-small .AssetCard__asset {
   height: calc(1rem * (142 / var(--font-base-default)));
-  width: calc(1rem * (142 / var(--font-base-default)));
 }
 
 .AssetCard--drag-active {
