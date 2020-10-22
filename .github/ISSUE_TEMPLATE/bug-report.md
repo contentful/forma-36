@@ -3,7 +3,7 @@ name: "\U0001F41B Bug Report"
 about: Spotted a bug? Add a report to help us improve Forma 36
 title: "\U0001F41B Bug - "
 labels: bug, needs triage
-assignees: m10l, wichniowski
+assignees: m10l, burakukula, mshaaban0, gui-santos, denkristoffer
 ---
 
 <!--
