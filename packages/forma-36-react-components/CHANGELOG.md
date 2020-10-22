@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.63.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.62.1...@contentful/forma-36-react-components@3.63.0) (2020-10-22)
+
+
+### Features
+
+* migrate NavigationIcon to ProductIcon ([#598](https://github.com/contentful/forma-36/issues/598)) ([4131469](https://github.com/contentful/forma-36/commit/413146984d25e9bb6518f5d604043e9951efef32))
+
+
+
+
+
 ## [3.62.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.62.0...@contentful/forma-36-react-components@3.62.1) (2020-10-21)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
