@@ -2,7 +2,7 @@ import React from 'react';
 import { select } from '@storybook/addon-knobs';
 import tokens from '@contentful/forma-36-tokens';
 
-import Workbench, {WorkbenchProps} from './Workbench';
+import Workbench, { WorkbenchProps } from './Workbench';
 import Icon from '../Icon';
 import Button from '../Button';
 import notes from './README.md'
