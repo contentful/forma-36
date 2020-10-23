@@ -94,14 +94,6 @@ export const Tooltip = ({
   testId,
   ...otherProps
 }: TooltipProps) => {
-  if (!content) {
-    return (
-      <ContainerElement className={targetWrapperClassName}>
-        {children}
-      </ContainerElement>
-    );
-  }
-
   const [show, setShow] = useState(isVisible);
   const [arrowPosition, setArrowPosition] = useState<ArrowPositionState>(
     getArrowPosition('bottom'),
@@ -157,6 +149,14 @@ export const Tooltip = ({
     maxWidth: contentMaxWidth,
     ...popperStyles.popper,
   };
+
+  if (!content) {
+    return (
+      <ContainerElement className={targetWrapperClassName}>
+        {children}
+      </ContainerElement>
+    );
+  }
 
   return (
     <>
