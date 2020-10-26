@@ -4,7 +4,7 @@ exports[`renders the component 1`] = `
 <div
   style={
     Object {
-      "gridArea": undefined,
+      "gridArea": "auto / auto / auto / auto",
       "order": undefined,
     }
   }
@@ -18,7 +18,7 @@ exports[`renders the component with an additional class name 1`] = `
   className="my-extra-class"
   style={
     Object {
-      "gridArea": undefined,
+      "gridArea": "auto / auto / auto / auto",
       "order": undefined,
     }
   }
