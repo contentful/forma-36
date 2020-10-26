@@ -83,6 +83,7 @@ function ScrollableStory() {
     <Dropdown
       isOpen={isOpen}
       onClose={() => setOpen(false)}
+      isAutoalignmentEnabled={boolean('isAutoalignmentEnabled', true)}
       position={select(
         'position',
         {

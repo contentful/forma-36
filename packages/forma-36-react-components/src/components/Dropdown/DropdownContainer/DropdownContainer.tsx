@@ -1,252 +1,131 @@
-import React, { Component } from 'react';
+import React, { forwardRef, useCallback, useEffect, useRef } from 'react';
 import cn from 'classnames';
 import ReactDOM from 'react-dom';
-import InViewport from '../../InViewport';
-import { positionType, AnchorDimensionsAndPositonType } from '../Dropdown';
 
+import { positionType } from '../Dropdown';
 import styles from './DropdownContainer.css';
 
-export interface DropdownContainerProps {
-  onClose?: Function;
-  dropdownAnchor?: HTMLElement | null;
-  className?: string;
+export interface DropdownContainerProps
+  extends React.HTMLAttributes<HTMLElement> {
   children?: React.ReactNode;
-  testId?: string;
-  openSubmenu?: (value: boolean) => void;
-  anchorDimensionsAndPositon?: AnchorDimensionsAndPositonType;
-  position: positionType;
+  className?: string;
   getRef?: (ref: HTMLElement | null) => void;
+  isOpen: boolean;
+  onClose?: Function;
+  openSubmenu?: (value: boolean) => void;
+  position?: positionType;
   submenu?: boolean;
-  width?: number | false;
-  isAutoalignmentEnabled?: boolean;
+  testId?: string;
 }
 
-export interface DropdownState {
-  dropdownDimensions: {
-    width: number;
-    height: number;
-  };
-  position: positionType;
-}
-
-const defaultProps: Partial<DropdownContainerProps> = {
-  testId: 'cf-ui-dropdown-portal',
-  position: 'bottom-left',
-  submenu: false,
-  isAutoalignmentEnabled: true,
-};
-
-class DropdownContainer extends Component<
-  DropdownContainerProps,
-  DropdownState
-> {
-  static defaultProps = defaultProps;
-
-  portalTarget = document.createElement('div');
-  dropdown: HTMLElement | null = null;
-  lastOverflowAt: string | null = null;
-
-  state = {
-    position: this.props.position,
-    dropdownDimensions: {
-      width: 0,
-      height: 0,
-    },
-  };
-
-  componentDidMount() {
-    document.body.appendChild(this.portalTarget);
-    if (this.dropdown) {
-      const dropdownRect = this.dropdown.getBoundingClientRect();
-      this.setState({
-        dropdownDimensions: {
-          width: dropdownRect.width,
-          height: dropdownRect.height,
-        },
-      });
-    }
-    document.addEventListener('mousedown', this.trackOutsideClick, true);
-    this.props.getRef?.(this.dropdown);
-  }
-
-  componentDidUpdate(
-    prevProps: DropdownContainerProps,
-    prevState: DropdownState,
-  ) {
-    if (!this.dropdown) {
-      return;
-    }
-
-    const dropdownRect = this.dropdown.getBoundingClientRect();
-
-    if (
-      dropdownRect.width !== prevState.dropdownDimensions.width ||
-      dropdownRect.height !== prevState.dropdownDimensions.height
-    ) {
-      this.setState({
-        dropdownDimensions: {
-          width: dropdownRect.width,
-          height: dropdownRect.height,
-        },
-      });
-    }
-  }
-
-  componentWillUnmount() {
-    document.body.removeChild(this.portalTarget);
-    document.removeEventListener('mousedown', this.trackOutsideClick, true);
-  }
-
-  trackOutsideClick = (e: MouseEvent) => {
-    if (
-      this.dropdown &&
-      !this.dropdown.contains(e.target as Node) &&
-      this.props.dropdownAnchor &&
-      !this.props.dropdownAnchor.contains(e.target as Node)
-    ) {
-      if (this.props.onClose) {
-        this.props.onClose();
-      }
-    }
-  };
-
-  handleOverflow = (overflowAt: string) => {
-    if (!this.props.isAutoalignmentEnabled) {
-      return;
-    }
-    if (overflowAt === this.lastOverflowAt) {
-      return;
-    }
-
-    const resolutions = {
-      right: {
-        'bottom-left': 'bottom-right',
-        'top-left': 'top-right',
-        right: 'left',
-      },
-      left: {
-        'bottom-right': 'bottom-left',
-        'top-right': 'top-left',
-        left: 'right',
-      },
-      top: {
-        'top-left': 'bottom-left',
-        'top-right': 'bottom-right',
-      },
-      bottom: {
-        'bottom-left': 'top-left',
-        'bottom-right': 'top-right',
-      },
-    };
-    const currentPosition = this.state.position;
-    const resolution = resolutions[overflowAt][currentPosition];
-    if (resolution) {
-      this.setState(
-        {
-          position: resolution,
-        },
-        () => {
-          this.lastOverflowAt = overflowAt;
-        },
-      );
-    }
-  };
-
-  calculatePosition = () => {
-    const { anchorDimensionsAndPositon } = this.props;
-    const { dropdownDimensions, position } = this.state;
-
-    if (!anchorDimensionsAndPositon || !dropdownDimensions) {
-      return false;
-    }
-
-    switch (position) {
-      case 'bottom-left':
-        return {
-          top:
-            anchorDimensionsAndPositon.top + anchorDimensionsAndPositon.height,
-          left: anchorDimensionsAndPositon.left,
-        };
-      case 'top-left':
-        return {
-          bottom: window.innerHeight - anchorDimensionsAndPositon.top,
-          left: anchorDimensionsAndPositon.left,
-        };
-      case 'bottom-right':
-        return {
-          top:
-            anchorDimensionsAndPositon.top + anchorDimensionsAndPositon.height,
-          left:
-            anchorDimensionsAndPositon.left -
-            (dropdownDimensions.width - anchorDimensionsAndPositon.width),
-        };
-      case 'top-right':
-        return {
-          bottom: window.innerHeight - anchorDimensionsAndPositon.top,
-          left:
-            anchorDimensionsAndPositon.left -
-            (dropdownDimensions.width - anchorDimensionsAndPositon.width),
-        };
-    }
-  };
-
-  getSubmenuClassNames = () =>
-    cn(
-      styles['DropdownContainer__submenu'],
-      styles[`DropdownContainer__container-position--${this.state.position}`],
-    );
-
-  render() {
-    const { submenu, className, width, testId } = this.props;
-
-    const classNames = cn(
+export const DropdownContainer = forwardRef<
+  HTMLElement,
+  DropdownContainerProps
+>(
+  (
+    {
+      children,
       className,
-      styles['DropdownContainer'],
-      submenu ? this.getSubmenuClassNames() : '',
+      getRef,
+      isOpen,
+      onClose,
+      openSubmenu,
+      position,
+      style,
+      submenu,
+      testId,
+      ...props
+    },
+    refCallback,
+  ) => {
+    // We're not dealing with React RefObjects but with useState (because we
+    // want to re-render on all changes)
+    const setReference = refCallback as React.Dispatch<
+      React.SetStateAction<HTMLElement | null>
+    >;
+    const dropdown = useRef<HTMLDivElement | null>(null);
+    const portalTarget = useRef<HTMLDivElement>(document.createElement('div'));
+    const classNames = cn(className, styles['DropdownContainer']);
+
+    const trackOutsideClick = useCallback(
+      (event: MouseEvent) => {
+        if (
+          isOpen &&
+          onClose &&
+          dropdown.current &&
+          !dropdown.current.contains(event.target as Node)
+        ) {
+          onClose();
+        }
+      },
+      [isOpen, onClose, dropdown.current],
     );
 
-    const dropdown = (
+    useEffect(() => {
+      if (isOpen) {
+        document.body.appendChild(portalTarget.current);
+        document.addEventListener('click', trackOutsideClick, {
+          passive: true,
+        });
+      } else {
+        document.body.removeChild(portalTarget.current);
+        document.removeEventListener('click', trackOutsideClick, {});
+      }
+
+      return () => {
+        document.body.removeChild(portalTarget.current);
+        document.removeEventListener('click', trackOutsideClick, {});
+      };
+    }, [isOpen]);
+
+    useEffect(() => {
+      if (getRef && dropdown.current) {
+        getRef(dropdown.current);
+      }
+    }, [dropdown.current]);
+
+    const dropdownComponent = (
       <div
-        ref={(ref) => {
-          this.dropdown = ref;
-        }}
-        data-test-id={testId}
-        style={{
-          ...(width ? { width: `${width}px` } : {}),
-          ...(!submenu && this.calculatePosition()),
-        }}
+        {...props}
         className={classNames}
+        data-test-id={testId}
         onMouseEnter={() => {
-          if (this.props.openSubmenu) {
-            this.props.openSubmenu(true);
+          if (openSubmenu) {
+            openSubmenu(true);
           }
         }}
         onFocus={() => {
-          if (this.props.openSubmenu) {
-            this.props.openSubmenu(true);
+          if (openSubmenu) {
+            openSubmenu(true);
           }
         }}
         onMouseLeave={() => {
-          if (this.props.openSubmenu) {
-            this.props.openSubmenu(false);
+          if (openSubmenu) {
+            openSubmenu(false);
           }
         }}
+        ref={(node) => {
+          setReference(node);
+          dropdown.current = node;
+        }}
+        style={style}
       >
-        <InViewport
-          onOverflowLeft={() => this.handleOverflow('left')}
-          onOverflowRight={() => this.handleOverflow('right')}
-          onOverflowTop={() => this.handleOverflow('top')}
-          onOverflowBottom={() => this.handleOverflow('bottom')}
-        >
-          {this.props.children}
-        </InViewport>
+        {children}
       </div>
     );
 
     return submenu
-      ? dropdown
-      : ReactDOM.createPortal(dropdown, this.portalTarget);
-  }
-}
+      ? dropdownComponent
+      : ReactDOM.createPortal(dropdownComponent, portalTarget.current);
+  },
+);
+
+DropdownContainer.displayName = 'DropdownContainer';
+
+DropdownContainer.defaultProps = {
+  testId: 'cf-ui-dropdown-portal',
+  position: 'bottom-left' as positionType,
+  submenu: false,
+};
 
 export default DropdownContainer;

@@ -12,27 +12,16 @@
     var(--color-element-mid);
   list-style: none;
   padding: 0;
-  margin: 0;
+  /*
+   * @todo: Remove this in next breaking change, it's overriden by Popper,
+   * who uses absolute positioning
+   */
   position: fixed;
+  margin: 0;
+
   z-index: var(--z-index-dropdown);
 }
 
 .DropdownContainer > div {
   width: 100%;
-}
-
-.DropdownContainer__submenu {
-  position: absolute;
-}
-
-.DropdownContainer__container-position--right {
-  margin-top: 0;
-  top: 0;
-  left: 100%;
-}
-
-.DropdownContainer__container-position--left {
-  margin-top: 0;
-  top: 0;
-  right: 100%;
 }

@@ -1,7 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import cn from 'classnames';
-import cssStyles from './DropdownList.css';
 import * as CSS from 'csstype';
+
+import cssStyles from './DropdownList.css';
 
 export interface DropdownListProps {
   children: React.ReactNode;
@@ -13,46 +14,40 @@ export interface DropdownListProps {
   styles?: object;
 }
 
-const defaultProps: Partial<DropdownListProps> = {
-  testId: 'cf-ui-dropdown-list',
+export const DropdownList = ({
+  className,
+  border,
+  maxHeight,
+  testId,
+  children,
+  listRef,
+  styles,
+  ...otherProps
+}: DropdownListProps) => {
+  const classNames = cn(cssStyles['DropdownList'], className, {
+    [cssStyles[`DropdownList--border-${border}`]]: border,
+  });
+
+  return (
+    <ul
+      ref={listRef}
+      data-test-id={testId}
+      role="menu"
+      style={{
+        maxHeight: maxHeight || 'auto',
+        overflowY: maxHeight ? 'auto' : 'visible',
+        ...styles,
+      }}
+      className={classNames}
+      {...otherProps}
+    >
+      {children}
+    </ul>
+  );
 };
 
-export class DropdownList extends Component<DropdownListProps> {
-  static defaultProps = defaultProps;
-
-  render() {
-    const {
-      className,
-      border,
-      maxHeight,
-      testId,
-      children,
-      listRef,
-      styles,
-      ...otherProps
-    } = this.props;
-
-    const classNames = cn(cssStyles['DropdownList'], className, {
-      [cssStyles[`DropdownList--border-${border}`]]: border,
-    });
-
-    return (
-      <ul
-        ref={listRef}
-        data-test-id={testId}
-        role="menu"
-        style={{
-          maxHeight: maxHeight || 'auto',
-          overflowY: maxHeight ? 'auto' : 'visible',
-          ...styles,
-        }}
-        className={classNames}
-        {...otherProps}
-      >
-        {children}
-      </ul>
-    );
-  }
-}
+DropdownList.defaultProps = {
+  testId: 'cf-ui-dropdown-list',
+};
 
 export default DropdownList;
