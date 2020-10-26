@@ -4,7 +4,7 @@ exports[`renders the component (complex) 1`] = `
 <Workbench
   testId="cf-ui-workbench"
 >
-  <WorkbenchHeader
+  <Workbench.Header
     actions={
       <Button
         buttonType="muted"
@@ -54,7 +54,7 @@ exports[`renders the component (simple) 1`] = `
 <Workbench
   testId="cf-ui-workbench"
 >
-  <WorkbenchHeader
+  <Workbench.Header
     actions={
       <Button
         buttonType="muted"
