@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.63.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.63.3...@contentful/forma-36-react-components@3.63.4) (2020-10-26)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+## [3.63.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.63.2...@contentful/forma-36-react-components@3.63.3) (2020-10-26)
+
+
+### Bug Fixes
+
+* **griditem:** resolve grid shorthand conflicts ([8c11010](https://github.com/contentful/forma-36/commit/8c11010a6fbc875a7c6af26a21db31c1106218cf))
+
+
+
+
+
 ## [3.63.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.63.1...@contentful/forma-36-react-components@3.63.2) (2020-10-23)
 
 
