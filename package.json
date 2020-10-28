@@ -2,10 +2,16 @@
   "name": "root",
   "license": "MIT",
   "private": true,
-  "workspaces": [
-    "packages/*",
-    "packages/components/*"
-  ],
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "packages/components/*"
+    ],
+    "nohoist": [
+      "**/tsdx",
+      "**/tsdx/**"
+    ]
+  },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
