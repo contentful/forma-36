@@ -54,16 +54,22 @@ it('calls onExpand && onCollapse when an accordion item is expanded and collapse
   const onCollapse = jest.fn();
   const output = mount(
     <Accordion>
-      <AccordionItem title="Accordion Title" onExpand={onExpand} onCollapse={onCollapse}>Accordion content</AccordionItem>
+      <AccordionItem
+        title="Accordion Title"
+        onExpand={onExpand}
+        onCollapse={onCollapse}
+      >
+        Accordion content
+      </AccordionItem>
     </Accordion>,
   );
 
   output.find('button').simulate('click');
-  expect(onExpand).toBeCalledTimes(1);
-  expect(onCollapse).toBeCalledTimes(0);
+  expect(onExpand).toHaveBeenCalledTimes(1);
+  expect(onCollapse).toHaveBeenCalledTimes(0);
   output.find('button').simulate('click');
-  expect(onExpand).toBeCalledTimes(1);
-  expect(onCollapse).toBeCalledTimes(1);
+  expect(onExpand).toHaveBeenCalledTimes(1);
+  expect(onCollapse).toHaveBeenCalledTimes(1);
 });
 
 it('has no a11y issues', async () => {

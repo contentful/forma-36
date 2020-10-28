@@ -97,7 +97,7 @@
     "storybook-prop-types-addon": "1.0.2",
     "style-loader": "^0.23.1",
     "travis-deploy-once": "^4.4.1",
-    "typescript": "^4.0.5",
+    "typescript": "3.9.7",
     "webpack": "^4.39.3",
     "webpack-cli": "^3.3.5"
   },
