@@ -20,8 +20,9 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "moduleResolution": "node",
+    "allowJs": true,
     "baseUrl": "./",
-    "typeRoots": ["node_modules/@types", "./typings.d.ts"],
+    "typeRoots": ["../../../node_modules/@types", "./typings.d.ts"],
     "paths": {
       "*": ["src/*", "node_modules/*"]
     },
