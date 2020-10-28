@@ -58,7 +58,7 @@ export const DropdownContainer = forwardRef<
           onClose();
         }
       },
-      [isOpen, onClose, dropdown.current],
+      [isOpen, onClose],
     );
 
     useEffect(() => {
@@ -67,22 +67,19 @@ export const DropdownContainer = forwardRef<
         document.addEventListener('click', trackOutsideClick, {
           passive: true,
         });
-      } else {
-        document.body.removeChild(portalTarget.current);
-        document.removeEventListener('click', trackOutsideClick, {});
-      }
 
-      return () => {
-        document.body.removeChild(portalTarget.current);
-        document.removeEventListener('click', trackOutsideClick, {});
-      };
-    }, [isOpen]);
+        return () => {
+          document.body.removeChild(portalTarget.current);
+          document.removeEventListener('click', trackOutsideClick, {});
+        };
+      }
+    }, [isOpen, trackOutsideClick]);
 
     useEffect(() => {
       if (getRef && dropdown.current) {
         getRef(dropdown.current);
       }
-    }, [dropdown.current]);
+    }, [getRef]);
 
     const dropdownComponent = (
       <div
