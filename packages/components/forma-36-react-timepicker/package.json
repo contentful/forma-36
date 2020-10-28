@@ -1,6 +1,6 @@
 {
   "name": "@contentful/forma-36-react-timepicker",
-  "version": "0.4.1-alpha.44",
+  "version": "0.4.1-alpha.74",
   "license": "MIT",
   "author": "Johannes Bugiel",
   "main": "dist/index.js",
@@ -30,8 +30,8 @@
     "trailingComma": "es5"
   },
   "devDependencies": {
-    "@contentful/forma-36-react-components": "^3.54.3",
-    "@contentful/forma-36-tokens": "^0.8.0",
+    "@contentful/forma-36-react-components": "^3.63.6",
+    "@contentful/forma-36-tokens": "^0.9.1",
     "@testing-library/jest-dom": "^4.2.3",
     "@testing-library/react": "^9.3.2",
     "@types/is-hotkey": "^0.1.1",
@@ -40,8 +40,8 @@
     "@types/react": "^16.9.11",
     "@types/react-dom": "^16.9.3",
     "husky": "^3.0.9",
-    "react": "16.10.2",
-    "react-dom": "16.10.2",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
     "tsdx": "^0.11.0",
     "tslib": "^1.10.0",
     "typescript": "^3.6.4"

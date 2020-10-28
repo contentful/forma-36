@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-export type OptionProps = {
+export interface OptionProps {
   value: string;
   children: React.ReactNode;
   testId?: string;
-} & typeof defaultProps;
+}
 
-const defaultProps = {
+const defaultProps: Partial<OptionProps> = {
   testId: 'cf-ui-select-option',
 };
 

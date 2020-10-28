@@ -5,7 +5,7 @@ import TabFocusTrap from '../TabFocusTrap';
 
 import styles from './Pill.css';
 
-export type PillProps = {
+export interface PillProps {
   label: string;
   onClose?: () => void;
   onDrag?: () => void;
@@ -13,9 +13,9 @@ export type PillProps = {
   testId?: string;
   style?: React.CSSProperties;
   dragHandleComponent?: React.ReactNode;
-} & typeof defaultProps;
+}
 
-const defaultProps = {
+const defaultProps: Partial<PillProps> = {
   testId: 'cf-ui-pill',
 };
 
@@ -56,6 +56,7 @@ export class Pill extends Component<PillProps> {
         {onClose && (
           <button
             type="button"
+            aria-label="close"
             onClick={onClose}
             className={styles['Pill__close-button']}
           >

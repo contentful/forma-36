@@ -6,15 +6,15 @@ import { sortingDirections } from '../TableCell/TableCell';
 import TabFocusTrap from '../../../TabFocusTrap/TabFocusTrap';
 import styles from './TableSortingLabel.css';
 
-export type TableSortingLabelProps = {
+export interface TableSortingLabelProps {
   children: React.ReactNode;
   direction: keyof typeof sortingDirections;
   active: boolean;
   className?: string;
   testId?: string;
-} & typeof defaultProps;
+}
 
-const defaultProps = {
+const defaultProps: Partial<TableSortingLabelProps> = {
   testId: 'cf-ui-table-sorting-label',
 };
 

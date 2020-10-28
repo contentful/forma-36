@@ -15,7 +15,7 @@ export type TextLinkType =
 
 type IconPositionType = 'right' | 'left';
 
-export type TextLinkProps = {
+export interface TextLinkProps {
   children?: React.ReactNode;
   linkType?: TextLinkType;
   href?: React.AnchorHTMLAttributes<HTMLAnchorElement>['href'];
@@ -28,9 +28,9 @@ export type TextLinkProps = {
   icon?: IconType;
   text?: string;
   iconPosition?: IconPositionType;
-} & typeof defaultProps;
+}
 
-const defaultProps = {
+const defaultProps: Partial<TextLinkProps> = {
   linkType: 'primary',
   testId: 'cf-ui-text-link',
   disabled: false,
@@ -78,9 +78,13 @@ export class TextLink extends Component<TextLinkProps> {
 
     const content = (
       <TabFocusTrap>
-        {icon && iconPosition === 'left' && this.renderIcon(icon, linkType)}
+        {
+          icon && iconPosition === 'left' && this.renderIcon(icon, linkType!) // eslint-disable-line @typescript-eslint/no-non-null-assertion
+        }
         {text || children}
-        {icon && iconPosition === 'right' && this.renderIcon(icon, linkType)}
+        {
+          icon && iconPosition === 'right' && this.renderIcon(icon, linkType!) // eslint-disable-line @typescript-eslint/no-non-null-assertion
+        }
       </TabFocusTrap>
     );
 
@@ -91,7 +95,7 @@ export class TextLink extends Component<TextLinkProps> {
           data-test-id={testId}
           onClick={
             disabled
-              ? e => {
+              ? (e) => {
                   e.preventDefault();
                 }
               : onClick

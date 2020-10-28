@@ -100,7 +100,7 @@
   flex-direction: row;
   overflow-y: auto;
   position: relative;
-  height: calc(100% - 71px);
+  flex-grow: 1;
 }
 
 .Workbench__content {

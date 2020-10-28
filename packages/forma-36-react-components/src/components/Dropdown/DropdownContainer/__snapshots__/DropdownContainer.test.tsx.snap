@@ -10,23 +10,8 @@ exports[`has no a11y issues 1`] = `
     onFocus={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
-    style={
-      Object {
-        "left": 0,
-        "top": 0,
-      }
-    }
   >
-    <InViewport
-      offset={0}
-      onOverflowBottom={[Function]}
-      onOverflowLeft={[Function]}
-      onOverflowRight={[Function]}
-      onOverflowTop={[Function]}
-      testId="cf-ui-in-viewport"
-    >
-      DropdownContainer
-    </InViewport>
+    DropdownContainer
   </div>
 </Portal>
 `;
@@ -41,46 +26,21 @@ exports[`renders the component 1`] = `
     onFocus={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
-    style={
-      Object {
-        "left": 0,
-        "top": 0,
-      }
-    }
   >
-    <InViewport
-      offset={0}
-      onOverflowBottom={[Function]}
-      onOverflowLeft={[Function]}
-      onOverflowRight={[Function]}
-      onOverflowTop={[Function]}
-      testId="cf-ui-in-viewport"
-    >
-      DropdownContainer
-    </InViewport>
+    DropdownContainer
   </div>
 </Portal>
 `;
 
 exports[`renders the component as a submenu 1`] = `
 <div
-  className="extraClassName DropdownContainer DropdownContainer__submenu DropdownContainer__container-position--bottom-left"
+  className="extraClassName DropdownContainer"
   data-test-id="cf-ui-dropdown-portal"
   onFocus={[Function]}
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
-  style={Object {}}
 >
-  <InViewport
-    offset={0}
-    onOverflowBottom={[Function]}
-    onOverflowLeft={[Function]}
-    onOverflowRight={[Function]}
-    onOverflowTop={[Function]}
-    testId="cf-ui-in-viewport"
-  >
-    DropdownContainer
-  </InViewport>
+  DropdownContainer
 </div>
 `;
 
@@ -94,23 +54,8 @@ exports[`renders the component with an additional class name 1`] = `
     onFocus={[Function]}
     onMouseEnter={[Function]}
     onMouseLeave={[Function]}
-    style={
-      Object {
-        "left": 0,
-        "top": 0,
-      }
-    }
   >
-    <InViewport
-      offset={0}
-      onOverflowBottom={[Function]}
-      onOverflowLeft={[Function]}
-      onOverflowRight={[Function]}
-      onOverflowTop={[Function]}
-      testId="cf-ui-in-viewport"
-    >
-      DropdownContainer
-    </InViewport>
+    DropdownContainer
   </div>
 </Portal>
 `;

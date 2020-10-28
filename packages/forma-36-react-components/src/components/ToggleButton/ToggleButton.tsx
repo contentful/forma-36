@@ -6,7 +6,7 @@ import TabFocusTrap from '../TabFocusTrap/TabFocusTrap';
 
 import styles from './ToggleButton.css';
 
-export type ToggleButtonProps = {
+export interface ToggleButtonProps {
   children: React.ReactNode;
   icon?: IconType;
   isActive?: boolean;
@@ -14,9 +14,9 @@ export type ToggleButtonProps = {
   isDisabled?: boolean;
   testId?: string;
   className?: string;
-} & typeof defaultProps;
+}
 
-const defaultProps = {
+const defaultProps: Partial<ToggleButtonProps> = {
   testId: 'cf-ui-toggle-button',
   isActive: false,
   isDisabled: false,

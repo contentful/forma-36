@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import ControlledInput, { ControlledInputPropTypes } from '../ControlledInput';
 
-export type RadioButtonProps = ControlledInputPropTypes & typeof defaultProps;
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface RadioButtonProps extends ControlledInputPropTypes {}
 
-const defaultProps = {
+const defaultProps: Partial<RadioButtonProps> = {
   required: false,
   disabled: false,
   type: 'radio',

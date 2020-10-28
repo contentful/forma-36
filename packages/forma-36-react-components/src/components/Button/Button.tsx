@@ -14,7 +14,7 @@ import Spinner from '../Spinner';
 
 import styles from './Button.css';
 
-export type ButtonProps = {
+export interface ButtonProps {
   icon?: IconType;
   indicateDropdown?: boolean;
   onClick?: MouseEventHandler;
@@ -23,7 +23,13 @@ export type ButtonProps = {
   loading?: boolean;
   disabled?: boolean;
   testId?: string;
-  buttonType?: 'primary' | 'positive' | 'negative' | 'warning' | 'muted' | 'naked';
+  buttonType?:
+    | 'primary'
+    | 'positive'
+    | 'negative'
+    | 'warning'
+    | 'muted'
+    | 'naked';
   type?: 'button' | 'submit' | 'reset';
   size?: 'small' | 'large';
   href?: string;
@@ -31,9 +37,9 @@ export type ButtonProps = {
   className?: string;
   children?: React.ReactNode;
   isActive?: boolean;
-} & typeof defaultProps;
+}
 
-const defaultProps = {
+const defaultProps: Partial<ButtonProps> = {
   loading: false,
   isFullWidth: false,
   indicateDropdown: false,

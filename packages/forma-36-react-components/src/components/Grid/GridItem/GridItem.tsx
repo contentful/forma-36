@@ -51,24 +51,17 @@ export const GridItem = (props: GridItemProps) => {
     ...otherProps
   } = props;
 
-  const handleShorthand = (
-    property: string,
-    start?: string | number,
-    end?: string | number,
-  ) => {
-    if (start && end) {
-      return { [`grid${property}`]: `${start} / ${end}` };
-    } else if (start && !end) {
-      return { [`grid${property}Start`]: start };
-    } else if (end && !start) {
-      return { [`grid${property}End`]: end };
-    }
-  };
+  const calculatedArea = area
+    ? area
+    : [
+        rowStart || 'auto',
+        columnStart || 'auto',
+        rowEnd || 'auto',
+        columnEnd || 'auto',
+      ].join(' / ');
 
   const style = {
-    ...handleShorthand('Column', columnStart, columnEnd),
-    ...handleShorthand('Row', rowStart, rowEnd),
-    gridArea: area,
+    gridArea: calculatedArea,
     order,
     ...props.style,
   };

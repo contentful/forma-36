@@ -25,6 +25,7 @@
   padding: calc(1rem * (8 / var(--font-base-default)))
     calc(1rem * (10 / var(--font-base-default)));
   border-radius: calc(1rem * (4 / var(--font-base-default)));
+  white-space: normal;
 }
 
 .Tooltip--hidden {

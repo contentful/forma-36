@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.9.0...@contentful/forma-36-tokens@0.9.1) (2020-10-05)
+
+
+### Bug Fixes
+
+* namespace for new border-radius tokens ([#583](https://github.com/contentful/forma-36/issues/583)) ([a4ba916](https://github.com/contentful/forma-36/commit/a4ba916bd976d246872fc887ff775e1c4fab158d))
+
+
+
+
+
+# [0.9.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.8.1...@contentful/forma-36-tokens@0.9.0) (2020-10-01)
+
+
+### Features
+
+* create border-radius tokens ([#580](https://github.com/contentful/forma-36/issues/580)) ([c2ef023](https://github.com/contentful/forma-36/commit/c2ef02360712c7d45d2064c79e8fe7fe0a412053))
+
+
+
+
+
+## [0.8.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.8.0...@contentful/forma-36-tokens@0.8.1) (2020-10-01)
+
+
+### Bug Fixes
+
+* **tooltip:** return children if no content provided and add z-index ([#579](https://github.com/contentful/forma-36/issues/579)) ([5bc8858](https://github.com/contentful/forma-36/commit/5bc8858de8b8132f8845e8e9ed0650de848088e7))
+
+
+
+
+
 # [0.8.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.7.3...@contentful/forma-36-tokens@0.8.0) (2020-08-24)
 
 

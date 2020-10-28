@@ -12,7 +12,9 @@ import styles from './EntryCard.css';
 
 export type EntryCardStatus = 'archived' | 'changed' | 'draft' | 'published';
 
-export type EntryCardPropTypes = BaseCardProps & {
+export type EntryCardSize = 'default' | 'small' | 'auto';
+
+export interface EntryCardPropTypes extends BaseCardProps {
   /**
    * The title of the entry
    */
@@ -68,10 +70,10 @@ export type EntryCardPropTypes = BaseCardProps & {
   /**
    * Changes the height of the component. When small will also ensure thumbnail and description aren't rendered
    */
-  size: 'default' | 'small';
-} & typeof defaultProps;
+  size: EntryCardSize;
+}
 
-const defaultProps = {
+const defaultProps: Partial<EntryCardPropTypes> = {
   title: 'Untitled',
   testId: 'cf-ui-entry-card',
   size: 'default',
@@ -84,7 +86,11 @@ export class EntryCard extends Component<EntryCardPropTypes> {
     isDropdownOpen: false,
   };
 
-  renderTitle = (title: string) => {
+  renderTitle = (size: EntryCardSize, title?: string) => {
+    if (!title) {
+      return;
+    }
+
     const truncatedTitle = truncate(title, 255, {});
 
     return (
@@ -98,7 +104,11 @@ export class EntryCard extends Component<EntryCardPropTypes> {
     );
   };
 
-  renderDescription = (description: string) => {
+  renderDescription = (size: EntryCardSize, description?: string) => {
+    if (!description || size === 'small') {
+      return;
+    }
+
     const truncatedDescription = truncate(description, 95, {});
 
     return (
@@ -106,9 +116,20 @@ export class EntryCard extends Component<EntryCardPropTypes> {
     );
   };
 
-  renderThumbnail = (thumbnailElement: React.ReactNode) => (
-    <figure className={styles.EntryCard__thumbnail}>{thumbnailElement}</figure>
-  );
+  renderThumbnail = (
+    size: EntryCardSize,
+    thumbnailElement?: React.ReactNode,
+  ) => {
+    if (!thumbnailElement || size === 'small') {
+      return;
+    }
+
+    return (
+      <figure className={styles.EntryCard__thumbnail}>
+        {thumbnailElement}
+      </figure>
+    );
+  };
 
   renderStatus = (status: EntryCardStatus) => {
     let label: string;
@@ -179,9 +200,9 @@ export class EntryCard extends Component<EntryCardPropTypes> {
 
     const classNames = cn(
       styles.EntryCard,
+      styles[`EntryCard--size-${size}`],
       {
         [styles['EntryCard--drag-active']]: isDragActive,
-        [styles[`EntryCard--size-${size}`]]: size,
       },
       className,
     );
@@ -223,7 +244,7 @@ export class EntryCard extends Component<EntryCardPropTypes> {
                     <CardActions
                       className={styles['EntryCard__actions']}
                       iconButtonProps={{
-                        onClick: e => e.stopPropagation,
+                        onClick: (e) => e.stopPropagation,
                       }}
                     >
                       {dropdownListElements}
@@ -232,14 +253,10 @@ export class EntryCard extends Component<EntryCardPropTypes> {
                 </div>
                 <div className={styles.EntryCard__content}>
                   <div className={styles.EntryCard__body}>
-                    {title && this.renderTitle(title)}
-                    {description &&
-                      size === 'default' &&
-                      this.renderDescription(description)}
+                    {this.renderTitle(size, title)}
+                    {this.renderDescription(size, description)}
                   </div>
-                  {thumbnailElement &&
-                    size === 'default' &&
-                    this.renderThumbnail(thumbnailElement)}
+                  {this.renderThumbnail(size, thumbnailElement)}
                 </div>
               </React.Fragment>
             </article>

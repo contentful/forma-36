@@ -4,7 +4,7 @@ import Icon from '../../Icon';
 
 import styles from './CardDragHandle.css';
 
-export type CardDragHandlePropTypes = {
+export interface CardDragHandlePropTypes {
   /**
    * Label rendered as child in CardDragHandle - not visible on screen as
    * purpose is for screen readers only
@@ -22,9 +22,9 @@ export type CardDragHandlePropTypes = {
    * Applies styling for when the component is actively being dragged by the user
    */
   isDragActive?: boolean;
-} & typeof defaultProps;
+}
 
-const defaultProps = {
+const defaultProps: Partial<CardDragHandlePropTypes> = {
   testId: 'cf-ui-card-drag-handle',
   isDragActive: false,
 };

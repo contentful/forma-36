@@ -3,7 +3,7 @@ import Dropdown from '../../Dropdown';
 import DropdownList from '../../Dropdown/DropdownList';
 import IconButton, { IconButtonProps } from '../../IconButton';
 
-export type CardActionsPropTypes = {
+export interface CardActionsPropTypes {
   /**
    * Class names to be appended to the className prop of the component
    */
@@ -20,15 +20,19 @@ export type CardActionsPropTypes = {
    * The DropdownList elements used to render an actions dropdown for the component
    */
   children:
-    | React.ReactElement<DropdownList>
-    | React.ReactElement<DropdownList>[];
-} & typeof defaultProps;
+    | React.ReactElement<typeof DropdownList>
+    | React.ReactElement<typeof DropdownList>[];
+  /**
+   * An ID used for testing purposes applied as a data attribute (data-test-id)
+   */
+  testId?: string;
+}
 
 export interface CardActionsState {
   isDropdownOpen: boolean;
 }
 
-const defaultProps = {
+const defaultProps: Partial<CardActionsPropTypes> = {
   testId: 'cf-ui-card-actions',
   isDisabled: false,
 };
@@ -42,7 +46,7 @@ export class CardActions extends Component<
   state = { isDropdownOpen: false };
 
   handleClick = (event: ReactMouseEvent) => {
-    this.setState(prevState => ({
+    this.setState((prevState) => ({
       isDropdownOpen: !prevState.isDropdownOpen,
     }));
 
@@ -69,7 +73,6 @@ export class CardActions extends Component<
           });
         }}
         position="bottom-right"
-        isAutoalignmentEnabled={false}
         className={className}
         isOpen={this.state.isDropdownOpen}
         testId={testId}
@@ -80,7 +83,7 @@ export class CardActions extends Component<
             disabled={isDisabled}
             label="Actions"
             {...iconButtonProps}
-            onClick={event => {
+            onClick={(event) => {
               event.preventDefault();
               this.handleClick(event);
             }}

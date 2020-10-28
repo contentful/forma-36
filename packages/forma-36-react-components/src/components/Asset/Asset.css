@@ -80,7 +80,10 @@
   padding-left: var(--spacing-s);
   padding-right: var(--spacing-s);
   max-height: calc(1rem * (40 / var(--font-base-default)));
+  max-width: 100%;
+  white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
   margin-bottom: calc(1rem * calc(20 / var(--font-base-default)));
 }
 

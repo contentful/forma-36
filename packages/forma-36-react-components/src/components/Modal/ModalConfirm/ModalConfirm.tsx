@@ -6,7 +6,7 @@ import { ModalContentProps } from '../ModalContent';
 import { ModalControlsProps } from '../ModalControls';
 import Button from '../../Button';
 
-export type ModalConfirmProps = {
+export interface ModalConfirmProps {
   /**
    * When true, the dialog is shown.
    */
@@ -100,9 +100,9 @@ export type ModalConfirmProps = {
   secondaryTestId?: string;
   cancelTestId?: string;
   children: React.ReactNode;
-} & typeof defaultProps;
+}
 
-const defaultProps = {
+const defaultProps: Partial<ModalConfirmProps> = {
   testId: 'cf-ui-modal-confirm',
   confirmTestId: 'cf-ui-modal-confirm-confirm-button',
   secondaryTestId: 'cf-ui-modal-confirm-secondary-button',

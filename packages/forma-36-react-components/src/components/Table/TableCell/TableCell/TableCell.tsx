@@ -12,16 +12,16 @@ export const sortingDirections = {
 
 export type TableCellSorting = keyof typeof sortingDirections | boolean;
 
-export type TableCellProps = {
+export interface TableCellProps {
   align?: 'center' | 'left' | 'right';
   sorting?: TableCellSorting;
   style?: React.CSSProperties;
   className?: string;
   testId?: string;
   children?: React.ReactNode;
-} & typeof defaultProps;
+}
 
-const defaultProps = {
+const defaultProps: Partial<TableCellProps> = {
   align: 'left',
   sorting: false as TableCellSorting,
   testId: 'cf-ui-table-cell',

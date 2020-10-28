@@ -5,7 +5,7 @@ import IconButton from '../IconButton';
 
 import styles from './Workbench.css';
 
-interface WorkbenchHeaderProps {
+export interface WorkbenchHeaderProps {
   title?: React.ReactElement | string;
   description?: React.ReactElement | string;
   icon?: React.ReactElement;
@@ -84,7 +84,7 @@ WorkbenchHeader.defaultProps = {
   testId: 'cf-ui-workbench-header',
 };
 
-WorkbenchHeader.displayName = 'WorkbenchHeader';
+WorkbenchHeader.displayName = 'Workbench.Header';
 
 interface WorkbenchSidebarProps {
   children: React.ReactNode;
@@ -184,7 +184,7 @@ export class Workbench extends Component<WorkbenchProps> {
     childrenArray.forEach(
       // eslint-disable-next-line
       (item: any) => {
-        if (item && item.type && item.type.displayName === 'WorkbenchHeader') {
+        if (item && item.type && item.type.displayName === 'Workbench.Header') {
           header.push(item);
         } else {
           other.push(item);

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import cn from 'classnames';
 import Card, { BaseCardProps } from '../Card';
 import CardActions from './../CardActions';
-import Asset from '../../Asset';
+import { Asset } from '../../Asset';
 import { AssetType } from '../../Asset';
 import Tag, { TagType } from '../../Tag';
 import AssetCardSkeleton from './AssetCardSkeleton';
@@ -11,7 +11,7 @@ import styles from './AssetCard.css';
 
 export type AssetState = 'archived' | 'changed' | 'draft' | 'published';
 
-export type AssetCardProps = BaseCardProps & {
+export interface AssetCardProps extends BaseCardProps {
   /**
    * The source of the asset (will also render a thumbnail if the AssetCard's type is set to image)
    */
@@ -56,9 +56,9 @@ export type AssetCardProps = BaseCardProps & {
    * Renders a small variant of the card which accommodates a 150x150px image
    */
   size?: 'small' | 'default';
-} & typeof defaultProps;
+}
 
-const defaultProps = {
+const defaultProps: Partial<AssetCardProps> = {
   isLoading: false,
   testId: 'cf-ui-asset-card',
   size: 'default',
@@ -158,7 +158,7 @@ export class AssetCard extends Component<AssetCardProps> {
                   <CardActions
                     className={styles['AssetCard__actions']}
                     iconButtonProps={{
-                      onClick: e => e.stopPropagation,
+                      onClick: (e) => e.stopPropagation,
                     }}
                   >
                     {dropdownListElements}

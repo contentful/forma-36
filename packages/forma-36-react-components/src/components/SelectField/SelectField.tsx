@@ -12,7 +12,7 @@ import Select, { SelectProps } from '../Select';
 import TextLink, { TextLinkProps } from '../TextLink';
 import styles from './SelectField.css';
 
-export type SelectFieldProps = {
+export interface SelectFieldProps {
   name: string;
   id: string;
   labelText: string;
@@ -28,13 +28,13 @@ export type SelectFieldProps = {
   onBlur?: FocusEventHandler;
   testId?: string;
   className?: string;
-} & typeof defaultProps;
+}
 
 export interface SelectFieldState {
   value?: string;
 }
 
-const defaultProps = {
+const defaultProps: Partial<SelectFieldProps> = {
   testId: 'cf-ui-select-field',
   required: false,
 };

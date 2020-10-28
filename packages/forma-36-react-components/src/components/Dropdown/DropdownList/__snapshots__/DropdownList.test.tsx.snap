@@ -12,14 +12,14 @@ exports[`renders the component 1`] = `
     }
   }
 >
-  <DropdownListItem
+  <ForwardRef
     isActive={false}
     isDisabled={false}
     isTitle={false}
     testId="cf-ui-dropdown-list-item"
   >
     List Item
-  </DropdownListItem>
+  </ForwardRef>
 </ul>
 `;
 
@@ -35,14 +35,14 @@ exports[`renders the component with a border attribute 1`] = `
     }
   }
 >
-  <DropdownListItem
+  <ForwardRef
     isActive={false}
     isDisabled={false}
     isTitle={false}
     testId="cf-ui-dropdown-list-item"
   >
     List Item
-  </DropdownListItem>
+  </ForwardRef>
 </ul>
 `;
 
@@ -58,13 +58,13 @@ exports[`renders the component with an additional class name 1`] = `
     }
   }
 >
-  <DropdownListItem
+  <ForwardRef
     isActive={false}
     isDisabled={false}
     isTitle={false}
     testId="cf-ui-dropdown-list-item"
   >
     List Item
-  </DropdownListItem>
+  </ForwardRef>
 </ul>
 `;

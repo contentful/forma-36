@@ -3,14 +3,14 @@ import cn from 'classnames';
 
 import styles from './HelpText.css';
 
-export type HelpTextProps = {
+export interface HelpTextProps {
   className?: string;
   testId?: string;
   style?: React.CSSProperties;
   children: React.ReactNode;
-} & typeof defaultProps;
+}
 
-const defaultProps = {
+const defaultProps: Partial<HelpTextProps> = {
   testId: 'cf-ui-help-text',
 };
 

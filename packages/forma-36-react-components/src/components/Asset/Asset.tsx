@@ -25,16 +25,16 @@ export function isAssetType(type: string): type is AssetType {
 
 export type AssetType = keyof typeof types;
 
-export type AssetProps = {
+export interface AssetProps {
   src: string;
   title: string;
   type?: AssetType;
   className?: string;
   status?: AssetState;
   testId?: string;
-} & typeof defaultProps;
+}
 
-const defaultProps = {
+const defaultProps: Partial<AssetProps> = {
   type: 'image',
   testId: 'cf-ui-asset',
 };
@@ -51,9 +51,13 @@ export class Asset extends Component<AssetProps> {
           alt={title}
         />
       </div>
-      <div className={styles['Asset__title-container']}>
-        <span className={styles['Asset__title-container__title']}>{title}</span>
-      </div>
+      {title && (
+        <div className={styles['Asset__title-container']}>
+          <span className={styles['Asset__title-container__title']}>
+            {title}
+          </span>
+        </div>
+      )}
     </React.Fragment>
   );
 
@@ -63,7 +67,11 @@ export class Asset extends Component<AssetProps> {
         <div className={styles['Asset__illustration-container']}>
           <AssetIcon type={type} />
         </div>
-        <span className={styles['Asset__asset-container__title']}>{title}</span>
+        {title && (
+          <span className={styles['Asset__asset-container__title']}>
+            {title}
+          </span>
+        )}
       </div>
     );
   };
@@ -87,7 +95,11 @@ export class Asset extends Component<AssetProps> {
 
     return (
       <div className={classNames} data-test-id={testId} {...otherProps}>
-        {asImage ? this.renderImage(src, title) : this.renderAsset(type, title)}
+        {
+          asImage
+            ? this.renderImage(src, title)
+            : this.renderAsset(type!, title) // eslint-disable-line @typescript-eslint/no-non-null-assertion
+        }
       </div>
     );
   }

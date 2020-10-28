@@ -21,6 +21,8 @@ import ChevronRight from './svg/ChevronRight.svg';
 import ChevronRightTrimmed from './svg/ChevronRightTrimmed.svg';
 import ChevronUp from './svg/ChevronUp.svg';
 import ChevronUpTrimmed from './svg/ChevronUpTrimmed.svg';
+import Clock from './svg/Clock.svg';
+import ClockTrimmed from './svg/ClockTrimmed.svg';
 import Close from './svg/Close.svg';
 import CloseTrimmed from './svg/CloseTrimmed.svg';
 import Code from './svg/Code.svg';
@@ -75,6 +77,7 @@ import HorizontalRule from './svg/HorizontalRule.svg';
 import HorizontalRuleTrimmed from './svg/HorizontalRuleTrimmed.svg';
 import InfoCircle from './svg/InfoCircle.svg';
 import InfoCircleTrimmed from './svg/InfoCircleTrimmed.svg';
+import Language from './svg/Language.svg';
 import Link from './svg/Link.svg';
 import LinkTrimmed from './svg/LinkTrimmed.svg';
 import ListBulleted from './svg/ListBulleted.svg';
@@ -83,6 +86,7 @@ import ListNumbered from './svg/ListNumbered.svg';
 import ListNumberedTrimmed from './svg/ListNumberedTrimmed.svg';
 import Lock from './svg/Lock.svg';
 import LockTrimmed from './svg/LockTrimmed.svg';
+import Logout from './svg/Logout.svg';
 import LooksOne from './svg/LooksOne.svg';
 import LooksOneTrimmed from './svg/LooksOneTrimmed.svg';
 import LooksTwo from './svg/LooksTwo.svg';
@@ -98,6 +102,7 @@ import Plus from './svg/Plus.svg';
 import PlusCircle from './svg/PlusCircle.svg';
 import PlusCircleTrimmed from './svg/PlusCircleTrimmed.svg';
 import PlusTrimmed from './svg/PlusTrimmed.svg';
+import Preview from './svg/Preview.svg';
 import Quote from './svg/Quote.svg';
 import QuoteTrimmed from './svg/QuoteTrimmed.svg';
 import Receipt from './svg/Receipt.svg';
@@ -122,8 +127,6 @@ import ThumbUp from './svg/ThumbUp.svg';
 import ThumbUpTrimmed from './svg/ThumbUpTrimmed.svg';
 import Users from './svg/Users.svg';
 import UsersTrimmed from './svg/UsersTrimmed.svg';
-import Clock from './svg/Clock.svg';
-import ClockTrimmed from './svg/ClockTrimmed.svg';
 import Warning from './svg/Warning.svg';
 import WarningTrimmed from './svg/WarningTrimmed.svg';
 import Workflows from './svg/Workflows.svg';
@@ -206,6 +209,7 @@ const iconComponents = {
   HorizontalRuleTrimmed,
   InfoCircle,
   InfoCircleTrimmed,
+  Language,
   Link,
   LinkTrimmed,
   ListBulleted,
@@ -214,6 +218,7 @@ const iconComponents = {
   ListNumberedTrimmed,
   Lock,
   LockTrimmed,
+  Logout,
   LooksOne,
   LooksOneTrimmed,
   LooksTwo,
@@ -229,13 +234,14 @@ const iconComponents = {
   PlusCircle,
   PlusCircleTrimmed,
   PlusTrimmed,
+  Preview,
   Quote,
   QuoteTrimmed,
+  Receipt,
+  ReceiptTrimmed,
   References,
   Release,
   ReleaseTrimmed,
-  Receipt,
-  ReceiptTrimmed,
   Search,
   SearchTrimmed,
   Settings,
@@ -279,13 +285,13 @@ export interface IconProps {
   testId?: string;
 }
 
-const defaultProps = {
+const defaultProps: Partial<IconProps> = {
   testId: 'cf-ui-icon',
   size: 'small',
   color: 'primary',
 };
 
-export class Icon extends Component<IconProps & typeof defaultProps> {
+export class Icon extends Component<IconProps> {
   static defaultProps = defaultProps;
 
   render() {
