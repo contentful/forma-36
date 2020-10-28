@@ -10,12 +10,10 @@ module.exports = {
     'plugin:jest/recommended',
     'plugin:jest/style',
   ],
-  plugins: [
-    'react-hooks'
-  ],
+  plugins: ['react-hooks'],
   parserOptions: {
     ecmaVersion: 7,
-    project: 'tsconfig.json',
+    project: './tsconfig.json',
     sourceType: 'module',
   },
   env: {
@@ -58,6 +56,6 @@ module.exports = {
     '@typescript-eslint/no-use-before-define': 'off',
     '@typescript-eslint/no-non-null-assertion': 'error',
     'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn'
+    'react-hooks/exhaustive-deps': 'warn',
   },
 };
