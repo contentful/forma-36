@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.63.6](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.63.5...@contentful/forma-36-react-components@3.63.6) (2020-10-28)
+
+
+### Bug Fixes
+
+* **dropdown:** only add keydown event handler when dropdown is open ([db4f5b6](https://github.com/contentful/forma-36/commit/db4f5b6d7d78b3fa140a5c651d27c812062acd83))
+
+
+
+
+
 ## [3.63.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.63.4...@contentful/forma-36-react-components@3.63.5) (2020-10-26)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components

@@ -176,7 +176,7 @@ export function Dropdown({
     if (forceUpdate) {
       forceUpdate();
     }
-  }, [children]);
+  }, [children, forceUpdate]);
 
   const openSubmenu = (isOpen: boolean) => {
     if (submenuToggleLabel) {
@@ -204,12 +204,13 @@ export function Dropdown({
   );
 
   useEffect(() => {
-    document.addEventListener('keydown', handleEscapeKey, true);
-
-    return () => {
-      document.removeEventListener('keydown', handleEscapeKey, true);
-    };
-  }, []);
+    if (isOpen) {
+      document.addEventListener('keydown', handleEscapeKey, true);
+      return () => {
+        document.removeEventListener('keydown', handleEscapeKey, true);
+      };
+    }
+  }, [handleEscapeKey, isOpen]);
 
   return submenuToggleLabel ? (
     <DropdownListItem
