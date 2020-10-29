@@ -63,13 +63,15 @@ export const DropdownContainer = forwardRef<
 
     useEffect(() => {
       if (isOpen) {
-        document.body.appendChild(portalTarget.current);
+        const portalContainer = portalTarget.current;
+
+        document.body.appendChild(portalContainer);
         document.addEventListener('click', trackOutsideClick, {
           passive: true,
         });
 
         return () => {
-          document.body.removeChild(portalTarget.current);
+          document.body.removeChild(portalContainer);
           document.removeEventListener('click', trackOutsideClick, {});
         };
       }

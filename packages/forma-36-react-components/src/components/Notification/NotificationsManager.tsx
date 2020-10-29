@@ -137,7 +137,7 @@ export class NotificationsManager extends PureComponent<
     const notificationId =
       settings && settings.id ? settings.id : getUniqueId();
 
-    let notification = {
+    const notification = {
       id: notificationId,
       text,
       close: () => this.closeAndDelete(notificationId),

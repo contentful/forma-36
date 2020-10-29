@@ -13,7 +13,7 @@ function DefaultStory() {
     <React.Fragment>
       <Button
         onClick={() => {
-          ModalLauncher.open(({ isShown, onClose }) => (
+          ModalLauncher.open<string>(({ isShown, onClose }) => (
             <Modal
               title="Reveal hidden text"
               isShown={isShown}
@@ -41,7 +41,7 @@ function DefaultStory() {
                 </React.Fragment>
               )}
             </Modal>
-          )).then(text => {
+          )).then((text) => {
             setHiddenText(text);
           });
         }}

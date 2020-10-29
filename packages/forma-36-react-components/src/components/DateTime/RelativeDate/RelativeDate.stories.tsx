@@ -17,22 +17,24 @@ export default {
     date: { control: { type: 'date' } },
     baseDate: { control: { type: 'date', disabled: true } },
     className: { control: { type: 'text' } },
-    testId: { control: { type: 'text' }}
-  }
-}
+    testId: { control: { type: 'text' } },
+  },
+};
 
 const RelativeDateStory = (args: RelativeDateProps) => (
   <RelativeDate {...args} />
-)
+);
 
-export const basic: any = RelativeDateStory.bind({})
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const basic: any = RelativeDateStory.bind({});
 basic.args = {
   date: Date.now() - THREE_MINUTES,
   baseDate: undefined,
-}
+};
 
-export const withBaseDate: any = RelativeDateStory.bind({})
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const withBaseDate: any = RelativeDateStory.bind({});
 withBaseDate.args = {
   date: Date.now() - THREE_MINUTES,
   baseDate: Date.now() + THREE_MINUTES,
-}
+};
