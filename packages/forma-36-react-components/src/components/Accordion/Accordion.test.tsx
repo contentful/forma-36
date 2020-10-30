@@ -59,11 +59,11 @@ it('calls onExpand && onCollapse when an accordion item is expanded and collapse
   );
 
   output.find('button').simulate('click');
-  expect(onExpand).toBeCalledTimes(1);
-  expect(onCollapse).toBeCalledTimes(0);
+  expect(onExpand).toHaveBeenCalledTimes(1);
+  expect(onCollapse).toHaveBeenCalledTimes(0);
   output.find('button').simulate('click');
-  expect(onExpand).toBeCalledTimes(1);
-  expect(onCollapse).toBeCalledTimes(1);
+  expect(onExpand).toHaveBeenCalledTimes(1);
+  expect(onCollapse).toHaveBeenCalledTimes(1);
 });
 
 it('has no a11y issues', async () => {

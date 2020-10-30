@@ -44,6 +44,7 @@ describe('DateTime', () => {
   });
 
   it('does not allow for an unknown format', () => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const format = 'NOT_REAL' as any;
     try {
       shallow(<DateTime date={exampleDate} format={format} />);

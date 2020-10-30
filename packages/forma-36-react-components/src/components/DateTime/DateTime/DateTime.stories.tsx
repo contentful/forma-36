@@ -2,7 +2,7 @@ import React from 'react';
 
 import DateTime, { DateTimeProps } from './DateTime';
 
-const exampleDate = '2020-08-13T13:45:56.0123Z'
+const exampleDate = '2020-08-13T13:45:56.0123Z';
 
 import notes from '../README.md';
 
@@ -15,23 +15,28 @@ export default {
   },
   argTypes: {
     date: { control: { type: 'date' } },
-    format: { control: { type: 'select', options: ['FULL', 'DATE_ONLY', 'TIME_ONLY', 'WEEKDAY_DATE'] }},
+    format: {
+      control: {
+        type: 'select',
+        options: ['FULL', 'DATE_ONLY', 'TIME_ONLY', 'WEEKDAY_DATE'],
+      },
+    },
     className: { control: { type: 'text' } },
-    testId: { control: { type: 'text' }}
-  }
-}
+    testId: { control: { type: 'text' } },
+  },
+};
 
-const DateTimeStory = (args: DateTimeProps) => (
-  <DateTime {...args} />
-)
+const DateTimeStory = (args: DateTimeProps) => <DateTime {...args} />;
 
-export const basic: any = DateTimeStory.bind({})
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const basic: any = DateTimeStory.bind({});
 basic.args = {
-  date: exampleDate
-}
+  date: exampleDate,
+};
 
-export const withOtherFormats: any = DateTimeStory.bind({})
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const withOtherFormats: any = DateTimeStory.bind({});
 withOtherFormats.args = {
   date: exampleDate,
-  format: 'DATE_ONLY'
-}
+  format: 'DATE_ONLY',
+};

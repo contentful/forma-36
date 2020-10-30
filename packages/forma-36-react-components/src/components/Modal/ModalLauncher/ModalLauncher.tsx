@@ -1,6 +1,8 @@
 /* global Promise */
 import ReactDOM from 'react-dom';
 
+// @todo: change any to unknown
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 interface ModalLauncherComponentRendererProps<T = any> {
   isShown: boolean;
   onClose: (result?: T) => void;
@@ -12,6 +14,7 @@ interface ModalLauncherOpenOptions {
   delay?: number;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function open<T = any>(
   componentRenderer: (
     props: ModalLauncherComponentRendererProps<T>,
@@ -42,7 +45,7 @@ function open<T = any>(
     return rootDom;
   };
 
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     let currentConfig = { onClose, isShown: true };
 
     function render({
@@ -58,7 +61,7 @@ function open<T = any>(
         isShown: false,
       };
       render(currentConfig);
-      await new Promise(resolveDelay =>
+      await new Promise((resolveDelay) =>
         setTimeout(resolveDelay, options.delay),
       );
       ReactDOM.unmountComponentAtNode(getRoot());
