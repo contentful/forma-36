@@ -105,7 +105,7 @@ export const DropdownListItem = forwardRef<HTMLElement, DropdownListItemProps>(
       }
 
       return <span {...otherProps}>{children}</span>;
-    }, [children, isActive, isDisabled, isTitle, onClick, props]);
+    }, [children, isDisabled, onClick, props]);
 
     return (
       <li

@@ -1,4 +1,4 @@
-const throttle = (delay: number = 200, fn: Function) => {
+const throttle = (delay = 200, fn: Function) => {
   let lastCall = 0;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const throttleExec = (...args: any[]) => {

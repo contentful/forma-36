@@ -63,7 +63,7 @@ const styles = {
 
 const DemoBox = ({ times }: { times?: number }) => {
   if (times) {
-    let result = [];
+    const result = [];
     for (let i = 0; i < times; i++) {
       result.push(
         <Flex
