@@ -8,7 +8,9 @@
       "packages/components/*"
     ],
     "nohoist": [
-      "@contentful/forma-36-fcss/node-sass-import"
+      "@contentful/forma-36-fcss/node-sass-import",
+      "**/tsdx",
+      "**/tsdx/**"
     ]
   },
   "devDependencies": {
