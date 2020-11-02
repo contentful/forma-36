@@ -24,7 +24,7 @@ export interface NotificationsAPI {
 }
 
 let initiated = false;
-let internalAPI: Partial<NotificationsAPI> = {};
+const internalAPI: Partial<NotificationsAPI> = {};
 
 function registerAPI(fnName: string, fn: Function) {
   internalAPI[fnName] = fn;
@@ -37,18 +37,20 @@ function createRoot(callback: () => void) {
   render(<NotificationManager register={registerAPI} />, container, callback);
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const afterInit = (fn: Function) => (...args: any[]) => {
-  if (!initiated) {
-    initiated = true;
-    return new Promise(resolve => {
-      createRoot(() => {
-        resolve(fn(...args));
+const afterInit = (fn: Function) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return (...args: any[]) => {
+    if (!initiated) {
+      initiated = true;
+      return new Promise((resolve) => {
+        createRoot(() => {
+          resolve(fn(...args));
+        });
       });
-    });
-  } else {
-    return Promise.resolve(fn(...args));
-  }
+    } else {
+      return Promise.resolve(fn(...args));
+    }
+  };
 };
 
 const show = (intent: NotificationIntent) => (

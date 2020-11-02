@@ -21,11 +21,14 @@ const items: Item[] = [
 const AutocompleteDefaultStory = ({ items }: { items: Item[] }) => {
   const [filteredItems, setFilteredItems] = useState(items);
 
-  const handleQueryChange = useCallback((query: string) => {
-    setFilteredItems(
-      query ? items.filter(item => item.label.includes(query)) : items,
-    );
-  }, []);
+  const handleQueryChange = useCallback(
+    (query: string) => {
+      setFilteredItems(
+        query ? items.filter((item) => item.label.includes(query)) : items,
+      );
+    },
+    [items, setFilteredItems],
+  );
 
   return (
     <Autocomplete<Item>

@@ -31,7 +31,7 @@ const styles = {
 
 const DemoBox = ({ times, id }: { times?: number; id?: string }) => {
   if (times) {
-    let result = [];
+    const result = [];
     for (let i = 0; i < times; i++) {
       result.push(<GridItem key={`${id}-${i}`} style={styles.demoBox} />);
     }

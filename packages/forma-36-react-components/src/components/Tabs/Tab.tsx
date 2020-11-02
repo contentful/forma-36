@@ -57,7 +57,7 @@ export class Tab extends Component<TabProps> {
       children,
       tabIndex,
     } = this.props;
-    let elementProps = {
+    const elementProps = {
       className: classNames(
         styles.Tab,
         {
