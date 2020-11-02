@@ -14,19 +14,42 @@ commands:
           paths:
             - ~/.cache/yarn
 
-jobs:
-  lint-and-test:
+executors:
+  defaults:
     docker:
-      - image: circleci/node:12
+      image: circleci/node:12
+      docker_layer_caching: true
+
+jobs:
+  lint:
+    executor: defaults
     steps:
       - checkout
       - yarn_install
-      - run: yarn lint
-      - run: yarn test
-      - run: yarn build
+      - run:
+          name: Lint
+          command: |
+            yarn lint
+  build:
+    executor: defaults
+    steps:
+      - checkout
+      - yarn_install
+      - run:
+          name: Build
+          command: |
+            yarn build
+  test:
+    executor: defaults
+    steps:
+      - checkout
+      - yarn_install
+      - run:
+          name: Test
+          command: |
+            yarn test
   release:
-    docker:
-      - image: circleci/node:12
+    executor: defaults
     steps:
       - checkout
       - yarn_install
@@ -37,12 +60,15 @@ jobs:
 workflows:
   version: 2
   # run on every commit
-  commit:
+  lint-build-test:
     jobs:
-      - lint-and-test
+      - lint
+      - test
+      - build
       - release:
           filters:
             branches:
               only: master
           requires:
-            - lint-and-test
+            - lint
+            - test
