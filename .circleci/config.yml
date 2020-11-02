@@ -20,7 +20,7 @@ orbs:
 jobs:
   prepare-dependencies:
     docker:
-      - image: node:current-alpine
+      - image: circleci/node:12.0-browsers
     steps:
       - checkout
       - run:
@@ -45,7 +45,7 @@ jobs:
             - .
   lint:
     docker:
-      - image: node:current-alpine
+      - image: circleci/node:12.0-browsers
     steps:
       - attach_workspace:
           at: .
@@ -54,7 +54,7 @@ jobs:
           command: yarn lint
   build:
     docker:
-      - image: node:current-alpine
+      - image: circleci/node:12.0-browsers
     steps:
       - attach_workspace:
           at: .
@@ -63,7 +63,7 @@ jobs:
           command: yarn build
   test:
     docker:
-      - image: node:current-alpine
+      - image: circleci/node:12.0-browsers
     parallelism: 2
     steps:
       - attach_workspace:
@@ -73,7 +73,7 @@ jobs:
           command: yarn test
   release:
     docker:
-      - image: node:current-alpine
+      - image: circleci/node:12.0-browsers
     steps:
       - checkout
       - run:
