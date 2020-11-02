@@ -1,0 +1,48 @@
+version: 2.1
+
+cache-key: &cache-key
+  key: dependency-cache-primary-{{ arch }}-yarn-packages-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}-{{ .Branch }}
+
+commands:
+  yarn_install:
+    steps:
+      - restore_cache: *cache-key
+      - run: 'echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc'
+      - run: yarn install --prefer-offline --pure-lockfile
+      - save_cache:
+          <<: *cache-key
+          paths:
+            - ~/.cache/yarn
+
+jobs:
+  lint-and-test:
+    docker:
+      - image: circleci/node:12
+    steps:
+      - checkout
+      - yarn_install
+      - run: yarn lint
+      - run: yarn test
+      - run: yarn build
+  release:
+    docker:
+      - image: circleci/node:12
+    steps:
+      - checkout
+      - yarn_install
+      - run: bin/build
+      - run: bin/before-deploy
+      - run: bin/deploy
+
+workflows:
+  version: 2
+  # run on every commit
+  commit:
+    jobs:
+      - lint-and-test
+      - release:
+          filters:
+            branches:
+              only: master
+          requires:
+            - lint-and-test
