@@ -15,58 +15,75 @@ version: 2.1
 #             - ~/.cache/yarn
 
 orbs:
-  node: circleci/node@4.1.0
+  docker: circleci/docker@1.0.1
 
 jobs:
-  lint:
-    executor:
-      name: node/default
-      tag: '12.0'
+  prepare-dependencies:
+    docker:
+      - image: node:current-alpine
     steps:
       - checkout
-      - node/install-packages:
-          pkg-manager: yarn
+      - run:
+          name: Compute version number
+          command: echo "0.0.${CIRCLE_BUILD_NUM}-${CIRCLE_SHA1:0:7}" | tee version.txt
+      - restore_cache:
+          keys:
+            - yarn-deps-{{ checksum "yarn.lock" }}
+            - yarn-deps
+      - run:
+          name: yarn
+          command: yarn
+      - save_cache:
+          paths:
+            - node_modules
+          key: yarn-deps-{{ checksum "yarn.lock" }}-{{ epoch }}
+      - store_artifacts:
+          path: yarn.lock
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+  lint:
+    docker:
+      - image: node:current-alpine
+    steps:
+      - attach_workspace:
+          at: .
       - run:
           name: Lint
           command: yarn lint
   build:
-    executor:
-      name: node/default
-      tag: '12.0'
+    docker:
+      - image: node:current-alpine
     steps:
-      - checkout
-      - node/install-packages:
-          pkg-manager: yarn
+      - attach_workspace:
+          at: .
       - run:
           name: Build
           command: yarn build
   test:
-    executor:
-      name: node/default
-      tag: '12.0'
+    docker:
+      - image: node:current-alpine
+    parallelism: 2
     steps:
-      - checkout
-      - node/install-packages:
-          pkg-manager: yarn
+      - attach_workspace:
+          at: .
       - run:
           name: Test
           command: yarn test
   release:
-    executor:
-      name: node/default
-      tag: '12.0'
+    docker:
+      - image: node:current-alpine
     steps:
       - checkout
-      - node/install-packages:
-          pkg-manager: yarn
       - run:
-          name: Build
-          command: bin/build
+          name: Prepare Dependencies
+          command: yarn
       - run:
           name: Pre deploy
           command: bin/before-deploy
       - run:
-          name: Pre deploy
+          name: Deploy
           command: bin/deploy
 
 # jobs:
@@ -111,13 +128,21 @@ workflows:
   # run on every commit
   lint-build-test:
     jobs:
-      - lint
-      - test
-      - build
+      - prepare-dependencies
+      - lint:
+          requires:
+            - prepare-dependencies
+      - build:
+          requires:
+            - lint
+      - test:
+          requires:
+            - prepare-dependencies
+            - lint
+            - build
+  build-deploy:
+    jobs:
       - release:
           filters:
             branches:
               only: master
-          requires:
-            - lint
-            - test
