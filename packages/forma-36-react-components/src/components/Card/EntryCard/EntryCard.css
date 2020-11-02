@@ -79,6 +79,7 @@
   text-overflow: ellipsis;
   overflow: hidden;
   color: var(--color-text-dark);
+  font-weight: var(--font-weight-demi-bold);
 }
 
 .EntryCard__description {
