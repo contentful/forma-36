@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.63.10](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.63.9...@contentful/forma-36-react-components@3.63.10) (2020-11-02)
+
+
+### Bug Fixes
+
+* **dropdown:** use capture event in outside click handler ([de00072](https://github.com/contentful/forma-36/commit/de000722f8f2546b0d7992dadcba469aa62cd24f))
+
+
+
+
+
 ## [3.63.9](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.63.8...@contentful/forma-36-react-components@3.63.9) (2020-11-02)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
