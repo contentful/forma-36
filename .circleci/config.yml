@@ -1,61 +1,110 @@
 version: 2.1
 
-cache-key: &cache-key
-  key: dependency-cache-primary-{{ arch }}-yarn-packages-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}-{{ .Branch }}
+# cache-key: &cache-key
+#   key: dependency-cache-primary-{{ arch }}-yarn-packages-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}-{{ .Branch }}
 
-commands:
-  yarn_install:
-    steps:
-      - restore_cache: *cache-key
-      - run: 'echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc'
-      - run: yarn install --prefer-offline --pure-lockfile
-      - save_cache:
-          <<: *cache-key
-          paths:
-            - ~/.cache/yarn
+# commands:
+#   yarn_install:
+#     steps:
+#       - restore_cache: *cache-key
+#       - run: 'echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc'
+#       - run: yarn install --prefer-offline --pure-lockfile
+#       - save_cache:
+#           <<: *cache-key
+#           paths:
+#             - ~/.cache/yarn
 
-executors:
-  defaults:
-    docker:
-      image: circleci/node:12
-      docker_layer_caching: true
+orbs:
+  node: circleci/node@4.1.0
 
 jobs:
   lint:
-    executor: defaults
+    executor:
+      name: node/default
+      tag: '12.0'
     steps:
       - checkout
-      - yarn_install
+      - node/install-packages:
+          pkg-manager: yarn
       - run:
           name: Lint
-          command: |
-            yarn lint
+          command: yarn lint
   build:
-    executor: defaults
+    executor:
+      name: node/default
+      tag: '12.0'
     steps:
       - checkout
-      - yarn_install
+      - node/install-packages:
+          pkg-manager: yarn
       - run:
           name: Build
-          command: |
-            yarn build
+          command: yarn build
   test:
-    executor: defaults
+    executor:
+      name: node/default
+      tag: '12.0'
     steps:
       - checkout
-      - yarn_install
+      - node/install-packages:
+          pkg-manager: yarn
       - run:
           name: Test
-          command: |
-            yarn test
+          command: yarn test
   release:
-    executor: defaults
+    executor:
+      name: node/default
+      tag: '12.0'
     steps:
       - checkout
-      - yarn_install
-      - run: bin/build
-      - run: bin/before-deploy
-      - run: bin/deploy
+      - node/install-packages:
+          pkg-manager: yarn
+      - run:
+          name: Build
+          command: bin/build
+      - run:
+          name: Pre deploy
+          command: bin/before-deploy
+      - run:
+          name: Pre deploy
+          command: bin/deploy
+
+# jobs:
+#   lint:
+#     executor: defaults
+#     steps:
+#       - checkout
+#       - yarn_install
+#       - run:
+#           name: Lint
+#           command: |
+#             yarn lint
+#   build:
+#     executor: defaults
+#     steps:
+#       - checkout
+#       - yarn_install
+#       - run:
+#           name: Build
+#           command: |
+#             yarn build
+#   test:
+#     executor: defaults
+#     steps:
+#       - checkout
+#       - yarn_install
+#       - run:
+#           name: Test
+#           command: |
+#             yarn test
+#   release:
+#     executor: defaults
+#     steps:
+#       - checkout
+#       - yarn_install
+#       - run: bin/build
+#       - run: bin/before-deploy
+#       - run: bin/deploy
 
 workflows:
   version: 2
