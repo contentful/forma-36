@@ -79,16 +79,10 @@ export const DropdownListItem = forwardRef<HTMLElement, DropdownListItemProps>(
 
         return (
           <Element
-            onClick={(e: ReactMouseEvent) => {
-              if (!isDisabled && onClick) {
-                onClick(e);
-              }
-            }}
-            onMouseDown={(e: ReactMouseEvent) => {
-              if (!isDisabled && onMouseDown) {
-                onMouseDown(e);
-              }
-            }}
+            onClick={!isDisabled && onClick !== undefined ? onClick : undefined}
+            onMouseDown={
+              !isDisabled && onMouseDown !== undefined ? onMouseDown : undefined
+            }
             type="button"
             {...(href ? linkProps : buttonProps)}
             {...props}
