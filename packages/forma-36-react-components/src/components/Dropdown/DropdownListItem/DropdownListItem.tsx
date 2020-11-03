@@ -79,6 +79,8 @@ export const DropdownListItem = forwardRef<HTMLElement, DropdownListItemProps>(
 
         return (
           <Element
+            className={styles['DropdownListItem__button']}
+            data-test-id="cf-ui-dropdown-list-item-button"
             onClick={!isDisabled && onClick !== undefined ? onClick : undefined}
             onMouseDown={
               !isDisabled && onMouseDown !== undefined ? onMouseDown : undefined
@@ -86,8 +88,6 @@ export const DropdownListItem = forwardRef<HTMLElement, DropdownListItemProps>(
             type="button"
             {...(href ? linkProps : buttonProps)}
             {...props}
-            className={styles['DropdownListItem__button']}
-            data-test-id="cf-ui-dropdown-list-item-button"
           >
             <TabFocusTrap
               className={styles['DropdownListItem__button__inner-wrapper']}
