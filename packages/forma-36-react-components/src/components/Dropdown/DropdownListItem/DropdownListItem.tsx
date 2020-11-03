@@ -2,7 +2,6 @@ import React, {
   forwardRef,
   MouseEventHandler,
   FocusEventHandler,
-  MouseEvent as ReactMouseEvent,
   useCallback,
 } from 'react';
 import cn from 'classnames';
@@ -29,24 +28,27 @@ export interface DropdownListItemProps
 }
 
 export const DropdownListItem = forwardRef<HTMLElement, DropdownListItemProps>(
-  (
+  function DropdownListItem(
     {
       children,
+      className,
+      href,
       isActive,
       isDisabled,
       isTitle,
+      listItemRef,
       onClick,
       onEnter,
       onFocus,
       onLeave,
+      onMouseDown,
       style,
       submenuToggleLabel,
       testId,
       ...props
     },
     refCallback,
-  ) => {
-    const { className, href, listItemRef, onMouseDown, ...otherProps } = props;
+  ) {
     // We're not dealing with React RefObjects but with useState (because we
     // want to re-render on all changes)
     const setReference = refCallback as React.Dispatch<
@@ -61,8 +63,6 @@ export const DropdownListItem = forwardRef<HTMLElement, DropdownListItemProps>(
     });
 
     const renderListItem = useCallback(() => {
-      const { onMouseDown, href, listItemRef, ...otherProps } = props;
-
       const isClickable = onClick || onMouseDown || href;
 
       if (isClickable) {
@@ -79,8 +79,6 @@ export const DropdownListItem = forwardRef<HTMLElement, DropdownListItemProps>(
 
         return (
           <Element
-            className={styles['DropdownListItem__button']}
-            data-test-id="cf-ui-dropdown-list-item-button"
             onClick={(e: ReactMouseEvent) => {
               if (!isDisabled && onClick) {
                 onClick(e);
@@ -93,7 +91,9 @@ export const DropdownListItem = forwardRef<HTMLElement, DropdownListItemProps>(
             }}
             type="button"
             {...(href ? linkProps : buttonProps)}
-            {...otherProps}
+            {...props}
+            className={styles['DropdownListItem__button']}
+            data-test-id="cf-ui-dropdown-list-item-button"
           >
             <TabFocusTrap
               className={styles['DropdownListItem__button__inner-wrapper']}

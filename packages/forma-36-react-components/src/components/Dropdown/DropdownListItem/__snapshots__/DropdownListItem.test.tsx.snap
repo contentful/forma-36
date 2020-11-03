@@ -46,8 +46,6 @@ exports[`renders the component with a href 1`] = `
     className="DropdownListItem__button"
     data-test-id="cf-ui-dropdown-list-item-button"
     href="#"
-    onClick={[Function]}
-    onMouseDown={[Function]}
     type="button"
   >
     <TabFocusTrap
@@ -65,9 +63,7 @@ exports[`renders the component with an additional class name 1`] = `
   data-test-id="cf-ui-dropdown-list-item"
   role="menuitem"
 >
-  <span
-    className="my-extra-class"
-  >
+  <span>
     Entry
   </span>
 </li>
