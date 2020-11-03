@@ -53,14 +53,10 @@ jobs:
   release:
     docker:
       - image: circleci/node:12.0-browsers
+    resource_class: xlarge
     steps:
-      - checkout
-      - run:
-          name: Prepare Dependencies
-          command: yarn
-      - run:
-          name: Build
-          command: bin/build
+      - attach_workspace:
+          at: .
       - run:
           name: Pre deploy
           command: bin/before-deploy
@@ -71,7 +67,7 @@ jobs:
 workflows:
   version: 2
   # run on every commit
-  build-test:
+  commit-check:
     jobs:
       - prepare-dependencies
       - lint:
@@ -80,9 +76,10 @@ workflows:
       - test:
           requires:
             - prepare-dependencies
-  build-deploy:
-    jobs:
       - release:
           filters:
             branches:
               only: master
+          requires:
+            - lint
+            - test
