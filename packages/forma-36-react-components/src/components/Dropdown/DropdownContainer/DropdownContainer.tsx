@@ -55,6 +55,8 @@ export const DropdownContainer = forwardRef<
           dropdown.current &&
           !dropdown.current.contains(event.target as Node)
         ) {
+          event.stopImmediatePropagation();
+
           onClose();
         }
       },
@@ -67,12 +69,14 @@ export const DropdownContainer = forwardRef<
 
         document.body.appendChild(portalContainer);
         document.addEventListener('click', trackOutsideClick, {
-          passive: true,
+          capture: true,
         });
 
         return () => {
           document.body.removeChild(portalContainer);
-          document.removeEventListener('click', trackOutsideClick, {});
+          document.removeEventListener('click', trackOutsideClick, {
+            capture: true,
+          });
         };
       }
     }, [isOpen, trackOutsideClick]);

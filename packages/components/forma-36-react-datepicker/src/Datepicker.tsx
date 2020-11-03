@@ -63,7 +63,7 @@ export class Datepicker extends Component<DatePickerProps, DatePickerState> {
       maxDate: this.props.maxDate,
       yearRange: 5,
       theme: cx(styles.datePicker, 'hide-carret'),
-      onSelect: (value) => {
+      onSelect: value => {
         this.props.onChange?.(value);
       },
     });

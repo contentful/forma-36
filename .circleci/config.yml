@@ -1,0 +1,85 @@
+version: 2.1
+
+orbs:
+  docker: circleci/docker@1.0.1
+
+jobs:
+  prepare-dependencies:
+    docker:
+      - image: circleci/node:12.0-browsers
+    resource_class: xlarge
+    steps:
+      - checkout
+      - run:
+          name: Compute version number
+          command: echo "0.0.${CIRCLE_BUILD_NUM}-${CIRCLE_SHA1:0:7}" | tee version.txt
+      - restore_cache:
+          keys:
+            - yarn-deps-{{ checksum "yarn.lock" }}
+            - yarn-deps
+      - run:
+          name: yarn
+          command: yarn
+      - save_cache:
+          paths:
+            - node_modules
+          key: yarn-deps-{{ checksum "yarn.lock" }}-{{ epoch }}
+      - store_artifacts:
+          path: yarn.lock
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+  lint:
+    docker:
+      - image: circleci/node:12.0-browsers
+    resource_class: xlarge
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: Lint
+          command: yarn lint
+  test:
+    docker:
+      - image: circleci/node:12.0-browsers
+    resource_class: xlarge
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: Test
+          command: yarn test
+  release:
+    docker:
+      - image: circleci/node:12.0-browsers
+    resource_class: xlarge
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: Pre deploy
+          command: bin/before-deploy
+      - run:
+          name: Deploy
+          command: bin/deploy
+
+workflows:
+  version: 2
+  # run on every commit
+  commit-check:
+    jobs:
+      - prepare-dependencies
+      - lint:
+          requires:
+            - prepare-dependencies
+      - test:
+          requires:
+            - prepare-dependencies
+      - release:
+          filters:
+            branches:
+              only: master
+          requires:
+            - lint
+            - test
