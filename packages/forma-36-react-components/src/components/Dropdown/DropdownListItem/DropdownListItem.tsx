@@ -104,8 +104,8 @@ export const DropdownListItem = forwardRef<HTMLElement, DropdownListItemProps>(
         );
       }
 
-      return <span {...otherProps}>{children}</span>;
-    }, [children, isDisabled, onClick, props]);
+      return <span {...props}>{children}</span>;
+    }, [children, href, isDisabled, onClick, onMouseDown, props]);
 
     return (
       <li
@@ -126,14 +126,14 @@ export const DropdownListItem = forwardRef<HTMLElement, DropdownListItemProps>(
         {submenuToggleLabel ? (
           <React.Fragment>
             <button
-              className={styles['DropdownListItem__button']}
-              data-test-id="cf-ui-dropdown-submenu-toggle"
               onClick={onClick}
               onFocus={onFocus}
               onMouseEnter={onEnter}
               onMouseLeave={onLeave}
               type="button"
-              {...otherProps}
+              {...props}
+              className={styles['DropdownListItem__button']}
+              data-test-id="cf-ui-dropdown-submenu-toggle"
             >
               <TabFocusTrap
                 className={styles['DropdownListItem__button__inner-wrapper']}
