@@ -59,14 +59,14 @@ exports[`renders the component as open 1`] = `
     <DropdownList
       testId="cf-ui-dropdown-list"
     >
-      <ForwardRef
+      <ForwardRef(DropdownListItem)
         isActive={false}
         isDisabled={false}
         isTitle={false}
         testId="cf-ui-dropdown-list-item"
       >
         entry
-      </ForwardRef>
+      </ForwardRef(DropdownListItem)>
     </DropdownList>
   </DropdownContainer>
 </div>
@@ -109,14 +109,14 @@ exports[`renders the component with a submenu 1`] = `
     <DropdownList
       testId="cf-ui-dropdown-list"
     >
-      <ForwardRef
+      <ForwardRef(DropdownListItem)
         isActive={false}
         isDisabled={false}
         isTitle={false}
         testId="cf-ui-dropdown-list-item"
       >
         entry
-      </ForwardRef>
+      </ForwardRef(DropdownListItem)>
       <Dropdown
         getContainerRef={[Function]}
         isAutoalignmentEnabled={true}
@@ -125,14 +125,14 @@ exports[`renders the component with a submenu 1`] = `
         submenuToggleLabel="Submenu"
         testId="cf-ui-dropdown"
       >
-        <ForwardRef
+        <ForwardRef(DropdownListItem)
           isActive={false}
           isDisabled={false}
           isTitle={false}
           testId="cf-ui-dropdown-list-item"
         >
           entry
-        </ForwardRef>
+        </ForwardRef(DropdownListItem)>
       </Dropdown>
       ,
     </DropdownList>
