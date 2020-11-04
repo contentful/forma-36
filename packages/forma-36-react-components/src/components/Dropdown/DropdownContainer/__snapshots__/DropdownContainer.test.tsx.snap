@@ -1,35 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`has no a11y issues 1`] = `
-<Portal
-  containerInfo={<div />}
+<div
+  className="DropdownContainer"
+  data-test-id="cf-ui-dropdown-portal"
+  onFocus={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
 >
-  <div
-    className="DropdownContainer"
-    data-test-id="cf-ui-dropdown-portal"
-    onFocus={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-  >
-    DropdownContainer
-  </div>
-</Portal>
+  DropdownContainer
+</div>
 `;
 
 exports[`renders the component 1`] = `
-<Portal
-  containerInfo={<div />}
+<div
+  className="DropdownContainer"
+  data-test-id="cf-ui-dropdown-portal"
+  onFocus={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
 >
-  <div
-    className="DropdownContainer"
-    data-test-id="cf-ui-dropdown-portal"
-    onFocus={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-  >
-    DropdownContainer
-  </div>
-</Portal>
+  DropdownContainer
+</div>
 `;
 
 exports[`renders the component as a submenu 1`] = `
@@ -45,17 +37,13 @@ exports[`renders the component as a submenu 1`] = `
 `;
 
 exports[`renders the component with an additional class name 1`] = `
-<Portal
-  containerInfo={<div />}
+<div
+  className="extraClassName DropdownContainer"
+  data-test-id="cf-ui-dropdown-portal"
+  onFocus={[Function]}
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
 >
-  <div
-    className="extraClassName DropdownContainer"
-    data-test-id="cf-ui-dropdown-portal"
-    onFocus={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-  >
-    DropdownContainer
-  </div>
-</Portal>
+  DropdownContainer
+</div>
 `;

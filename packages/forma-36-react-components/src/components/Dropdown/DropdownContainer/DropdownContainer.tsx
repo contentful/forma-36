@@ -1,9 +1,9 @@
 import React, { forwardRef, useCallback, useEffect, useRef } from 'react';
 import cn from 'classnames';
-import ReactDOM from 'react-dom';
 
 import { positionType } from '../Dropdown';
 import styles from './DropdownContainer.css';
+import Portal from '../../Portal';
 
 export interface DropdownContainerProps
   extends React.HTMLAttributes<HTMLElement> {
@@ -16,6 +16,7 @@ export interface DropdownContainerProps
   position?: positionType;
   submenu?: boolean;
   testId?: string;
+  usePortal?: boolean;
 }
 
 export const DropdownContainer = forwardRef<
@@ -34,6 +35,7 @@ export const DropdownContainer = forwardRef<
       style,
       submenu,
       testId,
+      usePortal,
       ...props
     },
     refCallback,
@@ -44,7 +46,6 @@ export const DropdownContainer = forwardRef<
       React.SetStateAction<HTMLElement | null>
     >;
     const dropdown = useRef<HTMLDivElement | null>(null);
-    const portalTarget = useRef<HTMLDivElement>(document.createElement('div'));
     const classNames = cn(className, styles['DropdownContainer']);
 
     const trackOutsideClick = useCallback(
@@ -65,15 +66,11 @@ export const DropdownContainer = forwardRef<
 
     useEffect(() => {
       if (isOpen) {
-        const portalContainer = portalTarget.current;
-
-        document.body.appendChild(portalContainer);
         document.addEventListener('click', trackOutsideClick, {
           capture: true,
         });
 
         return () => {
-          document.body.removeChild(portalContainer);
           document.removeEventListener('click', trackOutsideClick, {
             capture: true,
           });
@@ -117,9 +114,11 @@ export const DropdownContainer = forwardRef<
       </div>
     );
 
-    return submenu
-      ? dropdownComponent
-      : ReactDOM.createPortal(dropdownComponent, portalTarget.current);
+    return submenu || !usePortal ? (
+      dropdownComponent
+    ) : (
+      <Portal>{dropdownComponent}</Portal>
+    );
   },
 );
 

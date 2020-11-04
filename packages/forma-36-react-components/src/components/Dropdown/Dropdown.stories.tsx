@@ -19,6 +19,7 @@ function DefaultStory() {
       isFullWidth={boolean('isFullWidth', false)}
       key={Date.now()} // Force Reinit
       isAutoalignmentEnabled={boolean('isAutoalignmentEnabled', true)}
+      usePortal={boolean('usePortal', true)}
       position={select(
         'position',
         {
@@ -84,6 +85,7 @@ function ScrollableStory() {
       isOpen={isOpen}
       onClose={() => setOpen(false)}
       isAutoalignmentEnabled={boolean('isAutoalignmentEnabled', true)}
+      usePortal={boolean('usePortal', true)}
       position={select(
         'position',
         {
@@ -142,6 +144,7 @@ function DynamicContentStory() {
       isOpen={isOpen}
       onClose={onClose}
       isAutoalignmentEnabled={boolean('isAutoalignmentEnabled', true)}
+      usePortal={boolean('usePortal', true)}
       position={select(
         'position',
         {

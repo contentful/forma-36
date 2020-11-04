@@ -116,6 +116,15 @@ export interface DropdownProps {
    * React element to use as the toggle, opening and closing the Dropdown
    */
   toggleElement?: React.ReactElement;
+  /**
+   * Boolean to control whether or not to render the dropdown in a React Portal.
+   * Rendering content inside a Portal allows the dropdown to escape the bounds
+   * of its parent while still being positioned correctly. Using a Portal is
+   * necessary if an ancestor of the dropdown hides overflow.
+   *
+   * Defaults to `true`
+   */
+  usePortal?: boolean;
 }
 
 export function Dropdown({
@@ -131,6 +140,7 @@ export function Dropdown({
   submenuToggleLabel,
   testId,
   toggleElement,
+  usePortal,
   ...otherProps
 }: DropdownProps) {
   const [referenceElement, setReferenceElement] = useState<HTMLElement | null>(
@@ -237,6 +247,7 @@ export function Dropdown({
           ref={setPopperElement}
           style={popperStyles.popper}
           submenu
+          usePortal={usePortal}
           {...attributes.popper}
         >
           {children}
@@ -268,6 +279,7 @@ export function Dropdown({
           style={popperStyles.popper}
           submenu={false}
           testId={containerTestId}
+          usePortal={usePortal}
           {...attributes.popper}
         >
           {children}
