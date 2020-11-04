@@ -44,9 +44,14 @@
   padding: 0 calc(1rem * (14 / var(--font-base-default)));
   height: calc(1rem * (45 / var(--font-base-default)));
   display: flex;
+  justify-content: flex-end;
   align-items: center;
   border-bottom: calc(1rem * (1 / var(--font-base-default))) solid
     var(--color-element-mid);
+}
+
+.AssetCard__status {
+  margin-left: .5rem;
 }
 
 .AssetCard__actions {

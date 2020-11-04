@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
 import Card, { BaseCardProps } from '../Card';
+import Icon, { IconType } from '../../Icon';
 import CardActions from './../CardActions';
 import { Asset } from '../../Asset';
 import { AssetType } from '../../Asset';
@@ -32,6 +33,10 @@ export interface AssetCardProps extends BaseCardProps {
    * The publish status of the asset
    */
   status?: AssetState;
+  /**
+   * An icon for the status of the entry
+   */
+  statusIcon?: React.ReactNode;
   /**
    * The type of asset being represented
    */
@@ -67,7 +72,7 @@ const defaultProps: Partial<AssetCardProps> = {
 export class AssetCard extends Component<AssetCardProps> {
   static defaultProps = defaultProps;
 
-  renderStatus = (status: AssetState) => {
+  renderStatus = (status: AssetState, statusIcon: React.ReactNode) => {
     let label;
     let type: TagType | null = null;
 
@@ -93,9 +98,20 @@ export class AssetCard extends Component<AssetCardProps> {
     }
 
     return (
-      <Tag tagType={type} style={{ marginLeft: 'auto' }}>
-        {label}
-      </Tag>
+      <>
+        {statusIcon && typeof statusIcon === 'string' ? (
+          <Icon
+            icon={statusIcon as IconType}
+            color="muted"
+            className="f36-margin-right--xs"
+          />
+        ) : (
+          statusIcon
+        )}
+        <Tag className={styles['AssetCard__status']} tagType={type}>
+          {label}
+        </Tag>
+      </>
     );
   };
 
@@ -125,6 +141,7 @@ export class AssetCard extends Component<AssetCardProps> {
       type,
       title,
       status,
+      statusIcon,
       isLoading,
       dropdownListElements,
       isDragActive,
@@ -153,7 +170,7 @@ export class AssetCard extends Component<AssetCardProps> {
             {this.renderCardDragHandle()}
             <div className={styles['AssetCard__wrapper']}>
               <div className={styles['AssetCard__header']}>
-                {status && this.renderStatus(status)}
+                {status && this.renderStatus(status, statusIcon)}
                 {dropdownListElements && (
                   <CardActions
                     className={styles['AssetCard__actions']}

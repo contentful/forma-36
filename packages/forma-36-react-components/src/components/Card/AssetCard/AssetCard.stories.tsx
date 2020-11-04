@@ -4,6 +4,7 @@ import { text, select, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import AssetCard from './AssetCard';
+import Icon from '../../Icon';
 import DropdownList from '../../Dropdown/DropdownList';
 import DropdownListItem from '../../Dropdown/DropdownListItem';
 import CardDragHandle from './../CardDragHandle';
@@ -114,6 +115,66 @@ storiesOf('Components/Card/AssetCard', module)
           </DropdownList>
         </React.Fragment>
       }
+      size={select(
+        'size',
+        {
+          small: 'small',
+          default: 'default',
+        },
+        'default',
+      )}
+    />
+  ))
+  .add('with statusIcon', () => (
+    <AssetCard
+      className={text('className', '')}
+      status={select(
+        'status',
+        {
+          Draft: 'draft',
+          Changed: 'changed',
+          Published: 'published',
+          Archived: 'archived',
+        },
+        'published',
+      )}
+      statusIcon="Clock"
+      type={select('type', types, 'image')}
+      isLoading={boolean('isLoading', false)}
+      src={text('src', 'https://placekitten.com/200/300')}
+      title={text('title', 'Image of a cat')}
+      withDragHandle={boolean('withDragHandle', false)}
+      isDragActive={boolean('isDragActive', false)}
+      size={select(
+        'size',
+        {
+          small: 'small',
+          default: 'default',
+        },
+        'default',
+      )}
+    />
+  ))
+  .add('with a custom statusIcon', () => (
+    <AssetCard
+      className={text('className', '')}
+      status={select(
+        'status',
+        {
+          Draft: 'draft',
+          Changed: 'changed',
+          Published: 'published',
+          Archived: 'archived',
+        },
+        'published',
+      )}
+      statusIcon={<Icon icon="Calendar" />}
+      type={select('type', types, 'image')}
+      isLoading={boolean('isLoading', false)}
+      src={text('src', 'https://placekitten.com/200/300')}
+      title={text('title', 'Image of a cat')}
+      withDragHandle={boolean('withDragHandle', false)}
+      isDragActive={boolean('isDragActive', false)}
       size={select(
         'size',
         {
