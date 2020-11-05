@@ -30,7 +30,7 @@ jobs:
           root: .
           paths:
             - .
-  lint:
+  lint-and-test:
     docker:
       - image: circleci/node:12.0-browsers
     resource_class: xlarge
@@ -40,7 +40,10 @@ jobs:
       - run:
           name: Lint
           command: yarn lint
-  test:
+      - run:
+          name: Test
+          command: yarn test
+  build:
     docker:
       - image: circleci/node:12.0-browsers
     resource_class: xlarge
@@ -48,8 +51,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Test
-          command: yarn test
+          name: Build
+          command: yarn build
   release:
     docker:
       - image: circleci/node:12.0-browsers
@@ -70,10 +73,10 @@ workflows:
   commit-check:
     jobs:
       - prepare-dependencies
-      - lint:
+      - lint-and-test:
           requires:
             - prepare-dependencies
-      - test:
+      - build:
           requires:
             - prepare-dependencies
       - release:
@@ -81,5 +84,5 @@ workflows:
             branches:
               only: master
           requires:
-            - lint
-            - test
+            - lint-and-test
+            - build
