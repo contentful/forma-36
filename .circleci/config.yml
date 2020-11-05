@@ -38,6 +38,9 @@ jobs:
       - attach_workspace:
           at: .
       - run:
+          name: Yarn
+          command: yarn
+      - run:
           name: Lint
           command: yarn lint
       - run:
