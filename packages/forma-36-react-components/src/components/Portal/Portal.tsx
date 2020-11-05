@@ -20,11 +20,12 @@ export default function Portal({
       container.current = document.body;
     }
 
-    container.current.appendChild(portal.current);
+    const portalContainer = portal.current;
+    container.current.appendChild(portalContainer);
 
     return () => {
       if (container.current) {
-        container.current.removeChild(portal.current);
+        container.current.removeChild(portalContainer);
       }
     };
   }, []);
