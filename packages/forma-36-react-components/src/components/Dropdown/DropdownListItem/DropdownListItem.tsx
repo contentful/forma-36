@@ -30,19 +30,10 @@ export interface DropdownListItemProps
 export const DropdownListItem = forwardRef<HTMLElement, DropdownListItemProps>(
   function DropdownListItem(
     {
-      children,
-      className,
-      href,
       isActive,
       isDisabled,
       isTitle,
-      listItemRef,
       onClick,
-      onEnter,
-      onFocus,
-      onLeave,
-      onMouseDown,
-      style,
       submenuToggleLabel,
       testId,
       ...props
@@ -54,15 +45,36 @@ export const DropdownListItem = forwardRef<HTMLElement, DropdownListItemProps>(
     const setReference = refCallback as React.Dispatch<
       React.SetStateAction<HTMLLIElement | null>
     >;
-    const classNames = cn(styles['DropdownListItem'], className, {
-      [styles['DropdownListItem__submenu-toggle']]:
-        submenuToggleLabel || onClick || onMouseDown || href,
-      [styles['DropdownListItem--disabled']]: isDisabled,
-      [styles['DropdownListItem--active']]: isActive,
-      [styles['DropdownListItem--title']]: isTitle,
-    });
+
+    const renderSubmenuToggle = useCallback(() => {
+      const { onEnter, onLeave, onFocus, children, ...otherProps } = props;
+
+      return (
+        <React.Fragment>
+          <button
+            type="button"
+            data-test-id="cf-ui-dropdown-submenu-toggle"
+            className={styles['DropdownListItem__button']}
+            onClick={onClick}
+            onMouseEnter={onEnter}
+            onFocus={onFocus}
+            onMouseLeave={onLeave}
+            {...otherProps}
+          >
+            <TabFocusTrap
+              className={styles['DropdownListItem__button__inner-wrapper']}
+            >
+              {submenuToggleLabel}
+            </TabFocusTrap>
+          </button>
+          {children}
+        </React.Fragment>
+      );
+    }, [onClick, props]);
 
     const renderListItem = useCallback(() => {
+      const { onMouseDown, href, children, listItemRef, ...otherProps } = props;
+
       const isClickable = onClick || onMouseDown || href;
 
       if (isClickable) {
@@ -85,7 +97,7 @@ export const DropdownListItem = forwardRef<HTMLElement, DropdownListItemProps>(
             }
             type="button"
             {...(href ? linkProps : buttonProps)}
-            {...props}
+            {...otherProps}
             className={styles['DropdownListItem__button']}
             data-test-id="cf-ui-dropdown-list-item-button"
           >
@@ -98,8 +110,18 @@ export const DropdownListItem = forwardRef<HTMLElement, DropdownListItemProps>(
         );
       }
 
-      return <span {...props}>{children}</span>;
-    }, [children, href, isDisabled, onClick, onMouseDown, props]);
+      return <span {...otherProps}>{children}</span>;
+    }, [onClick, props]);
+
+    const { className, listItemRef, onMouseDown, href } = props;
+
+    const classNames = cn(styles['DropdownListItem'], className, {
+      [styles['DropdownListItem__submenu-toggle']]:
+        submenuToggleLabel || onClick || onMouseDown || href,
+      [styles['DropdownListItem--disabled']]: isDisabled,
+      [styles['DropdownListItem--active']]: isActive,
+      [styles['DropdownListItem--title']]: isTitle,
+    });
 
     return (
       <li
@@ -115,35 +137,14 @@ export const DropdownListItem = forwardRef<HTMLElement, DropdownListItemProps>(
             listItemRef.current = node;
           }
         }}
-        style={style}
       >
-        {submenuToggleLabel ? (
-          <React.Fragment>
-            <button
-              className={className || styles['DropdownListItem__button']}
-              data-test-id="cf-ui-dropdown-submenu-toggle"
-              onClick={onClick}
-              onFocus={onFocus}
-              onMouseEnter={onEnter}
-              onMouseLeave={onLeave}
-              type="button"
-              {...props}
-            >
-              <TabFocusTrap
-                className={styles['DropdownListItem__button__inner-wrapper']}
-              >
-                {submenuToggleLabel}
-              </TabFocusTrap>
-            </button>
-            {children}
-          </React.Fragment>
-        ) : (
-          renderListItem()
-        )}
+        {submenuToggleLabel ? renderSubmenuToggle() : renderListItem()}
       </li>
     );
   },
 );
+
+DropdownListItem.displayName = 'DropdownListItem';
 
 DropdownListItem.defaultProps = {
   testId: 'cf-ui-dropdown-list-item',

@@ -29,7 +29,7 @@ exports[`renders the component as disabled 1`] = `
     onClick={[Function]}
     testId="cf-ui-dropdown-list"
   >
-    <ForwardRef(DropdownListItem)
+    <DropdownListItem
       isActive={false}
       isDisabled={false}
       isTitle={false}
@@ -37,7 +37,7 @@ exports[`renders the component as disabled 1`] = `
       testId="cf-ui-dropdown-list-item"
     >
       Edit
-    </ForwardRef(DropdownListItem)>
+    </DropdownListItem>
   </DropdownList>
 </Dropdown>
 `;
@@ -71,7 +71,7 @@ exports[`renders the component using a multiple dropdown lists 1`] = `
     onClick={[Function]}
     testId="cf-ui-dropdown-list"
   >
-    <ForwardRef(DropdownListItem)
+    <DropdownListItem
       isActive={false}
       isDisabled={false}
       isTitle={false}
@@ -79,8 +79,8 @@ exports[`renders the component using a multiple dropdown lists 1`] = `
       testId="cf-ui-dropdown-list-item"
     >
       Edit
-    </ForwardRef(DropdownListItem)>
-    <ForwardRef(DropdownListItem)
+    </DropdownListItem>
+    <DropdownListItem
       isActive={false}
       isDisabled={false}
       isTitle={false}
@@ -88,8 +88,8 @@ exports[`renders the component using a multiple dropdown lists 1`] = `
       testId="cf-ui-dropdown-list-item"
     >
       Download
-    </ForwardRef(DropdownListItem)>
-    <ForwardRef(DropdownListItem)
+    </DropdownListItem>
+    <DropdownListItem
       isActive={false}
       isDisabled={false}
       isTitle={false}
@@ -97,14 +97,14 @@ exports[`renders the component using a multiple dropdown lists 1`] = `
       testId="cf-ui-dropdown-list-item"
     >
       Remove
-    </ForwardRef(DropdownListItem)>
+    </DropdownListItem>
   </DropdownList>
   <DropdownList
     key=".1/.$.0/.$.0"
     onClick={[Function]}
     testId="cf-ui-dropdown-list"
   >
-    <ForwardRef(DropdownListItem)
+    <DropdownListItem
       isActive={false}
       isDisabled={false}
       isTitle={false}
@@ -112,8 +112,8 @@ exports[`renders the component using a multiple dropdown lists 1`] = `
       testId="cf-ui-dropdown-list-item"
     >
       Edit
-    </ForwardRef(DropdownListItem)>
-    <ForwardRef(DropdownListItem)
+    </DropdownListItem>
+    <DropdownListItem
       isActive={false}
       isDisabled={false}
       isTitle={false}
@@ -121,8 +121,8 @@ exports[`renders the component using a multiple dropdown lists 1`] = `
       testId="cf-ui-dropdown-list-item"
     >
       Download
-    </ForwardRef(DropdownListItem)>
-    <ForwardRef(DropdownListItem)
+    </DropdownListItem>
+    <DropdownListItem
       isActive={false}
       isDisabled={false}
       isTitle={false}
@@ -130,7 +130,7 @@ exports[`renders the component using a multiple dropdown lists 1`] = `
       testId="cf-ui-dropdown-list-item"
     >
       Remove
-    </ForwardRef(DropdownListItem)>
+    </DropdownListItem>
   </DropdownList>
 </Dropdown>
 `;
@@ -164,7 +164,7 @@ exports[`renders the component using a single dropdown list 1`] = `
     onClick={[Function]}
     testId="cf-ui-dropdown-list"
   >
-    <ForwardRef(DropdownListItem)
+    <DropdownListItem
       isActive={false}
       isDisabled={false}
       isTitle={false}
@@ -172,8 +172,8 @@ exports[`renders the component using a single dropdown list 1`] = `
       testId="cf-ui-dropdown-list-item"
     >
       Edit
-    </ForwardRef(DropdownListItem)>
-    <ForwardRef(DropdownListItem)
+    </DropdownListItem>
+    <DropdownListItem
       isActive={false}
       isDisabled={false}
       isTitle={false}
@@ -181,8 +181,8 @@ exports[`renders the component using a single dropdown list 1`] = `
       testId="cf-ui-dropdown-list-item"
     >
       Download
-    </ForwardRef(DropdownListItem)>
-    <ForwardRef(DropdownListItem)
+    </DropdownListItem>
+    <DropdownListItem
       isActive={false}
       isDisabled={false}
       isTitle={false}
@@ -190,7 +190,7 @@ exports[`renders the component using a single dropdown list 1`] = `
       testId="cf-ui-dropdown-list-item"
     >
       Remove
-    </ForwardRef(DropdownListItem)>
+    </DropdownListItem>
   </DropdownList>
 </Dropdown>
 `;
@@ -225,7 +225,7 @@ exports[`renders the component with an additional class name 1`] = `
     onClick={[Function]}
     testId="cf-ui-dropdown-list"
   >
-    <ForwardRef(DropdownListItem)
+    <DropdownListItem
       isActive={false}
       isDisabled={false}
       isTitle={false}
@@ -233,8 +233,8 @@ exports[`renders the component with an additional class name 1`] = `
       testId="cf-ui-dropdown-list-item"
     >
       Edit
-    </ForwardRef(DropdownListItem)>
-    <ForwardRef(DropdownListItem)
+    </DropdownListItem>
+    <DropdownListItem
       isActive={false}
       isDisabled={false}
       isTitle={false}
@@ -242,8 +242,8 @@ exports[`renders the component with an additional class name 1`] = `
       testId="cf-ui-dropdown-list-item"
     >
       Download
-    </ForwardRef(DropdownListItem)>
-    <ForwardRef(DropdownListItem)
+    </DropdownListItem>
+    <DropdownListItem
       isActive={false}
       isDisabled={false}
       isTitle={false}
@@ -251,7 +251,7 @@ exports[`renders the component with an additional class name 1`] = `
       testId="cf-ui-dropdown-list-item"
     >
       Remove
-    </ForwardRef(DropdownListItem)>
+    </DropdownListItem>
   </DropdownList>
 </Dropdown>
 `;
@@ -285,7 +285,7 @@ exports[`renders the component with published status 1`] = `
     onClick={[Function]}
     testId="cf-ui-dropdown-list"
   >
-    <ForwardRef(DropdownListItem)
+    <DropdownListItem
       isActive={false}
       isDisabled={false}
       isTitle={false}
@@ -293,8 +293,8 @@ exports[`renders the component with published status 1`] = `
       testId="cf-ui-dropdown-list-item"
     >
       Edit
-    </ForwardRef(DropdownListItem)>
-    <ForwardRef(DropdownListItem)
+    </DropdownListItem>
+    <DropdownListItem
       isActive={false}
       isDisabled={false}
       isTitle={false}
@@ -302,8 +302,8 @@ exports[`renders the component with published status 1`] = `
       testId="cf-ui-dropdown-list-item"
     >
       Download
-    </ForwardRef(DropdownListItem)>
-    <ForwardRef(DropdownListItem)
+    </DropdownListItem>
+    <DropdownListItem
       isActive={false}
       isDisabled={false}
       isTitle={false}
@@ -311,7 +311,7 @@ exports[`renders the component with published status 1`] = `
       testId="cf-ui-dropdown-list-item"
     >
       Remove
-    </ForwardRef(DropdownListItem)>
+    </DropdownListItem>
   </DropdownList>
 </Dropdown>
 `;
