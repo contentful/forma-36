@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.63.15](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.63.14...@contentful/forma-36-react-components@3.63.15) (2020-11-05)
+
+
+### Bug Fixes
+
+* **DropdownListItem:** Change prop order again ([56498ea](https://github.com/contentful/forma-36/commit/56498eab06118ba971b0b17ab150066c814ef7c0))
+
+
+
+
+
 ## [3.63.14](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.63.13...@contentful/forma-36-react-components@3.63.14) (2020-11-05)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
