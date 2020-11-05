@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.64.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.63.15...@contentful/forma-36-react-components@3.64.0) (2020-11-05)
+
+
+### Features
+
+* **dropdown:** add usePortal boolean prop ([e218e3c](https://github.com/contentful/forma-36/commit/e218e3c31e70ac46669bc75383b5102bdcae4bae))
+
+
+
+
+
 ## [3.63.15](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.63.14...@contentful/forma-36-react-components@3.63.15) (2020-11-05)
 
 
