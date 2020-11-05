@@ -47,9 +47,9 @@ describe('TimePicker', () => {
         expect(props.onChange).toHaveBeenCalledWith(expectedValue);
         fireBlurEvent(getByTestId(renderResult, 'time'));
         expect(getByTestId(renderResult, 'time').value).toBe(
-          expectedDisplayValue
+          expectedDisplayValue,
         );
-      }
+      },
     );
 
     it.each([
@@ -62,9 +62,9 @@ describe('TimePicker', () => {
         fireChangeEvent(getByTestId(renderResult, 'time'), input);
         fireBlurEvent(getByTestId(renderResult, 'time'));
         expect(getByTestId(renderResult, 'time').value).toBe(
-          expectedDisplayValue
+          expectedDisplayValue,
         );
-      }
+      },
     );
 
     it('increases the time by half an hour on arrow down', () => {

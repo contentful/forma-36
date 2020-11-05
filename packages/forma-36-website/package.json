@@ -21,13 +21,13 @@
     "gatsby-plugin-mdx": "^1.2.46",
     "gatsby-plugin-offline": "^2.2.10",
     "gatsby-plugin-react-helmet": "^3.1.5",
-    "gatsby-plugin-sharp": "2.4.5",
+    "gatsby-plugin-sharp": "^2.6.43",
     "gatsby-plugin-svgr": "^2.0.2",
     "gatsby-remark-images": "3.1.44",
     "gatsby-source-filesystem": "^2.1.18",
     "gatsby-transformer-javascript-frontmatter": "^2.1.5",
     "gatsby-transformer-remark": "^2.6.50",
-    "gatsby-transformer-sharp": "^2.3.14",
+    "gatsby-transformer-sharp": "^2.5.20",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-copy-to-clipboard": "^5.0.1",
@@ -39,8 +39,7 @@
   "license": "MIT",
   "resolutions": {
     "js-yaml": "3.13.1",
-    "webpack-dev-server": "3.1.11",
-    "sharp": "0.24.0"
+    "webpack-dev-server": "3.1.11"
   },
   "scripts": {
     "build": "gatsby build",
