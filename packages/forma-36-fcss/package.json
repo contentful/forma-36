@@ -1,7 +1,7 @@
 {
   "name": "@contentful/forma-36-fcss",
   "description": "Forma 36 FCSS",
-  "version": "0.2.11",
+  "version": "0.2.12",
   "main": "dist/styles.css",
   "license": "MIT",
   "files": [
@@ -16,7 +16,7 @@
     "postcss-css-variables": "^0.11.0"
   },
   "dependencies": {
-    "@contentful/forma-36-tokens": "^0.9.1"
+    "@contentful/forma-36-tokens": "^0.9.2"
   },
   "resolutions": {
     "tar": "4.4.2",
