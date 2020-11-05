@@ -3,6 +3,31 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.63.13](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.63.12...@contentful/forma-36-react-components@3.63.13) (2020-11-04)
+
+
+### Bug Fixes
+
+* **ListItem:** specify list-style-type initial ([f2d88f3](https://github.com/contentful/forma-36/commit/f2d88f3502bacf83185096ea5c0960ed43be7cc6))
+
+
+
+
+
+## [3.63.12](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.63.11...@contentful/forma-36-react-components@3.63.12) (2020-11-04)
+
+
+### Bug Fixes
+
+* add display name to DropdownListItem ([aa0062e](https://github.com/contentful/forma-36/commit/aa0062e2a859d02a5417e0373e963ddae3850a88))
+* fix ([6467334](https://github.com/contentful/forma-36/commit/6467334861233f993d2216f311071532be8f1715))
+* only set handlers on DropdownListItem when passed as prop ([bb61789](https://github.com/contentful/forma-36/commit/bb6178938175c6c33096a55e22b296444604a8b8))
+* **dropdownlistitem:** always apply button classname and test-id ([d3214c0](https://github.com/contentful/forma-36/commit/d3214c0041380fc337c081e071b92041ac8a86e8))
+
+
+
+
+
 ## [3.63.11](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.63.10...@contentful/forma-36-react-components@3.63.11) (2020-11-02)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components

@@ -6,6 +6,7 @@
   font-size: var(--font-size-m);
   font-family: var(--font-stack-primary);
   line-height: var(--line-height-default);
+  list-style-type: disc;
 }
 
 .ListItem--nested-list {
