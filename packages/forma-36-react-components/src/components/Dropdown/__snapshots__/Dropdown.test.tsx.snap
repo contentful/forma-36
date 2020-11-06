@@ -55,6 +55,7 @@ exports[`renders the component as open 1`] = `
     }
     submenu={false}
     testId="cf-ui-dropdown-container"
+    usePortal={true}
   >
     <DropdownList
       testId="cf-ui-dropdown-list"
@@ -105,6 +106,7 @@ exports[`renders the component with a submenu 1`] = `
     }
     submenu={false}
     testId="cf-ui-dropdown-container"
+    usePortal={true}
   >
     <DropdownList
       testId="cf-ui-dropdown-list"
