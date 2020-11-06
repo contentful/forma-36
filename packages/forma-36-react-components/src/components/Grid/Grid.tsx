@@ -5,7 +5,17 @@ import cn from 'classnames';
 
 import styles from './Grid.css';
 
-export type GapTypes = 'none' | 'spacing2xs' | 'spacingXs' | 'spacingS' | 'spacingM' | 'spacingL' | 'spacingXl' | 'spacing2Xl' | 'spacing3Xl' | 'spacing4Xl';
+export type GapTypes =
+  | 'none'
+  | 'spacing2xs'
+  | 'spacingXs'
+  | 'spacingS'
+  | 'spacingM'
+  | 'spacingL'
+  | 'spacingXl'
+  | 'spacing2Xl'
+  | 'spacing3Xl'
+  | 'spacing4Xl';
 
 export interface GridProps {
   /**
@@ -31,7 +41,7 @@ export interface GridProps {
   columnGap?: GapTypes;
   /**
    * One of grid-auto-flow css values */
-  flow?: CSS.GridAutoFlowProperty
+  flow?: CSS.GridAutoFlowProperty;
   /**
    * Sets display:inline-grid */
   inline?: boolean;
@@ -72,19 +82,19 @@ export const Grid = (props: GridProps) => {
   } = props;
 
   const handleGridTemplate = (value?: string | number) => {
-    if(typeof value === 'number') {
-      return `repeat(${value}, minmax(0, 1fr)`
+    if (typeof value === 'number') {
+      return `repeat(${value}, minmax(0, 1fr)`;
     }
     return value;
-  }
+  };
 
   const handleGap = (value: GapTypes) => {
-    if(value === 'none') {
+    if (value === 'none') {
       return 0;
     } else {
-      return tokens[value]
+      return tokens[value];
     }
-  }
+  };
 
   const inlineStyle = {
     gridTemplateColumns: handleGridTemplate(columns),
@@ -94,19 +104,24 @@ export const Grid = (props: GridProps) => {
     alignContent,
     gridColumnGap: columnGap && handleGap(columnGap),
     gridRowGap: rowGap && handleGap(rowGap),
-    ...style
-  }
+    ...style,
+  };
 
   const classNames = cn(styles.Grid, className, {
-    [styles.Grid__inline]: inline
+    [styles.Grid__inline]: inline,
   });
 
   return (
-    <div {...otherProps} style={inlineStyle} className={classNames} data-test-id={testId}>
+    <div
+      {...otherProps}
+      style={inlineStyle}
+      className={classNames}
+      data-test-id={testId}
+    >
       {children}
     </div>
   );
-}
+};
 Grid.defaultProps = defaultProps;
 
 export default Grid;
