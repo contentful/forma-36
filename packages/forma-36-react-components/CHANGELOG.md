@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.64.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.64.1...@contentful/forma-36-react-components@3.64.2) (2020-11-06)
+
+
+### Bug Fixes
+
+* **dropdowncontainer:** explicitly check usePortal for false ([8510899](https://github.com/contentful/forma-36/commit/8510899df4963d73d98213dd62a0fb7dc2fec5c8))
+
+
+
+
+
 ## [3.64.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.64.0...@contentful/forma-36-react-components@3.64.1) (2020-11-06)
 
 
