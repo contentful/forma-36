@@ -92,7 +92,7 @@ export const DropdownContainer = forwardRef<
     </div>
   );
 
-  return submenu || !usePortal ? (
+  return submenu || usePortal === false ? (
     dropdownComponent
   ) : (
     <Portal>{dropdownComponent}</Portal>
@@ -105,6 +105,7 @@ DropdownContainer.defaultProps = {
   testId: 'cf-ui-dropdown-portal',
   position: 'bottom-left' as positionType,
   submenu: false,
+  usePortal: true,
 };
 
 export default DropdownContainer;
