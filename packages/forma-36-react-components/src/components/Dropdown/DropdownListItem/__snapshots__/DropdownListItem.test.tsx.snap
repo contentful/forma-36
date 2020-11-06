@@ -63,7 +63,9 @@ exports[`renders the component with an additional class name 1`] = `
   data-test-id="cf-ui-dropdown-list-item"
   role="menuitem"
 >
-  <span>
+  <span
+    className="my-extra-class"
+  >
     Entry
   </span>
 </li>
