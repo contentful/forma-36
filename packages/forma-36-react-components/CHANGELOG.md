@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.64.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.64.0...@contentful/forma-36-react-components@3.64.1) (2020-11-06)
+
+
+### Bug Fixes
+
+* **DropdownListItem:** extract rendering to methods like old class ([1f44b3a](https://github.com/contentful/forma-36/commit/1f44b3a95ac807f9773fc45454a72beb4fe0b1ef))
+
+
+
+
+
 # [3.64.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.63.15...@contentful/forma-36-react-components@3.64.0) (2020-11-05)
 
 
