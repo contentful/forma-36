@@ -239,8 +239,10 @@ export const Autocomplete = <T extends {}>({
       className={dropdownClassNames}
       isOpen={isOpen}
       onClose={() => {
-        willClearQueryOnClose && updateQuery('');
-        dispatch({ type: TOGGLED_LIST });
+        if (inputRef.current !== document.activeElement) {
+          willClearQueryOnClose && updateQuery('');
+          dispatch({ type: TOGGLED_LIST, payload: false });
+        }
       }}
       toggleElement={renderToggleElementFunction(toggleProps)}
       {...dropdownProps}
