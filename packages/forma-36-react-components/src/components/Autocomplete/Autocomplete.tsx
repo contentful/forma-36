@@ -239,7 +239,10 @@ export const Autocomplete = <T extends {}>({
       className={dropdownClassNames}
       isOpen={isOpen}
       onClose={() => {
-        if (inputRef.current !== document.activeElement) {
+        const inputIsFocused = inputRef.current === document.activeElement;
+
+        // we only want to close the dropdown with list of options if the input is not focused
+        if (!inputIsFocused) {
           willClearQueryOnClose && updateQuery('');
           dispatch({ type: TOGGLED_LIST, payload: false });
         }
