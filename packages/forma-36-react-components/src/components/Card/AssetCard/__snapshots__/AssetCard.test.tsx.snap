@@ -73,7 +73,7 @@ Object {
     },
     Object {
       "description": "Ensures every ARIA input field has an accessible name",
-      "help": "ARIA input fields have an accessible name",
+      "help": "ARIA input fields must have an accessible name",
       "helpUrl": "https://dequeuniversity.com/rules/axe/3.5/aria-input-field-name?application=axeAPI",
       "id": "aria-input-field-name",
       "impact": null,
@@ -913,36 +913,36 @@ Object {
       "message": "\`TypeError: document.createRange is not a function\` - feature unsupported in your environment. Skipping color-contrast rule.",
       "nodes": Array [],
       "stack": "Error: 
-    at new SupportError (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/axe-core/axe.js:53:18)
-    at Rule.Object.<anonymous>.Rule.run (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/axe-core/axe.js:9178:14)
-    at /Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/axe-core/axe.js:8593:12
-    at pop (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/axe-core/axe.js:13066:18)
-    at Object.defer (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/axe-core/axe.js:13088:11)
-    at /Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/axe-core/axe.js:8621:21
+    at new SupportError (/Users/daniel/Programming/forma-36/node_modules/axe-core/axe.js:53:18)
+    at Rule.Object.<anonymous>.Rule.run (/Users/daniel/Programming/forma-36/node_modules/axe-core/axe.js:9178:14)
+    at /Users/daniel/Programming/forma-36/node_modules/axe-core/axe.js:8593:12
+    at pop (/Users/daniel/Programming/forma-36/node_modules/axe-core/axe.js:13078:18)
+    at Object.defer (/Users/daniel/Programming/forma-36/node_modules/axe-core/axe.js:13100:11)
+    at /Users/daniel/Programming/forma-36/node_modules/axe-core/axe.js:8621:21
     at Array.forEach (<anonymous>)
-    at Audit.Object.<anonymous>.Audit.run (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/axe-core/axe.js:8620:17)
-    at /Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/axe-core/axe.js:10177:13
-    at pop (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/axe-core/axe.js:13066:18)
-    at Object.defer (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/axe-core/axe.js:13088:11)
-    at Object.runRules [as _runRules] (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/axe-core/axe.js:10173:7)
-    at Object.<anonymous>.axe.run (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/axe-core/axe.js:10354:9)
-    at /Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/jest-axe/index.js:57:15
+    at Audit.Object.<anonymous>.Audit.run (/Users/daniel/Programming/forma-36/node_modules/axe-core/axe.js:8620:17)
+    at /Users/daniel/Programming/forma-36/node_modules/axe-core/axe.js:10189:13
+    at pop (/Users/daniel/Programming/forma-36/node_modules/axe-core/axe.js:13078:18)
+    at Object.defer (/Users/daniel/Programming/forma-36/node_modules/axe-core/axe.js:13100:11)
+    at Object.runRules [as _runRules] (/Users/daniel/Programming/forma-36/node_modules/axe-core/axe.js:10185:7)
+    at Object.<anonymous>.axe.run (/Users/daniel/Programming/forma-36/node_modules/axe-core/axe.js:10366:9)
+    at /Users/daniel/Programming/forma-36/node_modules/jest-axe/index.js:68:15
     at new Promise (<anonymous>)
-    at axe (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/jest-axe/index.js:56:12)
+    at axe (/Users/daniel/Programming/forma-36/node_modules/jest-axe/index.js:67:12)
     at _callee3$ (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/src/components/Card/AssetCard/AssetCard.test.tsx:149:25)
-    at tryCatch (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/regenerator-runtime/runtime.js:45:40)
-    at Generator.invoke [as _invoke] (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/regenerator-runtime/runtime.js:274:22)
-    at Generator.prototype.<computed> [as next] (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/regenerator-runtime/runtime.js:97:21)
-    at asyncGeneratorStep (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:24)
-    at _next (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/@babel/runtime/helpers/asyncToGenerator.js:25:9)
-    at /Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/@babel/runtime/helpers/asyncToGenerator.js:32:7
+    at tryCatch (/Users/daniel/Programming/forma-36/node_modules/regenerator-runtime/runtime.js:63:40)
+    at Generator.invoke [as _invoke] (/Users/daniel/Programming/forma-36/node_modules/regenerator-runtime/runtime.js:293:22)
+    at Generator.next (/Users/daniel/Programming/forma-36/node_modules/regenerator-runtime/runtime.js:118:21)
+    at asyncGeneratorStep (/Users/daniel/Programming/forma-36/node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:24)
+    at _next (/Users/daniel/Programming/forma-36/node_modules/@babel/runtime/helpers/asyncToGenerator.js:25:9)
+    at /Users/daniel/Programming/forma-36/node_modules/@babel/runtime/helpers/asyncToGenerator.js:32:7
     at new Promise (<anonymous>)
-    at Object.<anonymous> (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/@babel/runtime/helpers/asyncToGenerator.js:21:12)
-    at Object.asyncJestTest (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:102:37)
-    at /Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/jest-jasmine2/build/queueRunner.js:43:12
+    at Object.<anonymous> (/Users/daniel/Programming/forma-36/node_modules/@babel/runtime/helpers/asyncToGenerator.js:21:12)
+    at Object.asyncJestTest (/Users/daniel/Programming/forma-36/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:102:37)
+    at /Users/daniel/Programming/forma-36/node_modules/jest-jasmine2/build/queueRunner.js:43:12
     at new Promise (<anonymous>)
-    at mapper (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/jest-jasmine2/build/queueRunner.js:26:19)
-    at /Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/jest-jasmine2/build/queueRunner.js:73:41",
+    at mapper (/Users/daniel/Programming/forma-36/node_modules/jest-jasmine2/build/queueRunner.js:26:19)
+    at /Users/daniel/Programming/forma-36/node_modules/jest-jasmine2/build/queueRunner.js:73:41",
       "tags": Array [
         "cat.color",
         "wcag2aa",
@@ -1059,7 +1059,7 @@ Object {
   ],
   "testEngine": Object {
     "name": "axe-core",
-    "version": "3.5.3",
+    "version": "3.5.5",
   },
   "testEnvironment": Object {
     "orientationAngle": undefined,
@@ -1071,7 +1071,7 @@ Object {
   "testRunner": Object {
     "name": "axe",
   },
-  "timestamp": "2020-11-04T17:17:09.326Z",
+  "timestamp": "2020-11-10T15:47:15.401Z",
   "toolOptions": Object {
     "reporter": "v1",
     "rules": Object {
@@ -1158,7 +1158,7 @@ Object {
     },
     Object {
       "description": "Ensures every ARIA input field has an accessible name",
-      "help": "ARIA input fields have an accessible name",
+      "help": "ARIA input fields must have an accessible name",
       "helpUrl": "https://dequeuniversity.com/rules/axe/3.5/aria-input-field-name?application=axeAPI",
       "id": "aria-input-field-name",
       "impact": null,
@@ -1998,36 +1998,39 @@ Object {
       "message": "\`TypeError: document.createRange is not a function\` - feature unsupported in your environment. Skipping color-contrast rule.",
       "nodes": Array [],
       "stack": "Error: 
-    at new SupportError (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/axe-core/axe.js:53:18)
-    at Rule.Object.<anonymous>.Rule.run (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/axe-core/axe.js:9178:14)
-    at /Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/axe-core/axe.js:8593:12
-    at pop (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/axe-core/axe.js:13066:18)
-    at Object.defer (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/axe-core/axe.js:13088:11)
-    at /Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/axe-core/axe.js:8621:21
+    at new SupportError (/Users/daniel/Programming/forma-36/node_modules/axe-core/axe.js:53:18)
+    at Rule.Object.<anonymous>.Rule.run (/Users/daniel/Programming/forma-36/node_modules/axe-core/axe.js:9178:14)
+    at /Users/daniel/Programming/forma-36/node_modules/axe-core/axe.js:8593:12
+    at pop (/Users/daniel/Programming/forma-36/node_modules/axe-core/axe.js:13078:18)
+    at Object.defer (/Users/daniel/Programming/forma-36/node_modules/axe-core/axe.js:13100:11)
+    at /Users/daniel/Programming/forma-36/node_modules/axe-core/axe.js:8621:21
     at Array.forEach (<anonymous>)
-    at Audit.Object.<anonymous>.Audit.run (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/axe-core/axe.js:8620:17)
-    at /Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/axe-core/axe.js:10177:13
-    at pop (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/axe-core/axe.js:13066:18)
-    at Object.defer (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/axe-core/axe.js:13088:11)
-    at Object.runRules [as _runRules] (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/axe-core/axe.js:10173:7)
-    at Object.<anonymous>.axe.run (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/axe-core/axe.js:10354:9)
-    at /Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/jest-axe/index.js:57:15
+    at Audit.Object.<anonymous>.Audit.run (/Users/daniel/Programming/forma-36/node_modules/axe-core/axe.js:8620:17)
+    at /Users/daniel/Programming/forma-36/node_modules/axe-core/axe.js:10189:13
+    at pop (/Users/daniel/Programming/forma-36/node_modules/axe-core/axe.js:13078:18)
+    at Object.defer (/Users/daniel/Programming/forma-36/node_modules/axe-core/axe.js:13100:11)
+    at Object.runRules [as _runRules] (/Users/daniel/Programming/forma-36/node_modules/axe-core/axe.js:10185:7)
+    at Object.<anonymous>.axe.run (/Users/daniel/Programming/forma-36/node_modules/axe-core/axe.js:10366:9)
+    at /Users/daniel/Programming/forma-36/node_modules/jest-axe/index.js:68:15
     at new Promise (<anonymous>)
-    at axe (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/jest-axe/index.js:56:12)
+    at axe (/Users/daniel/Programming/forma-36/node_modules/jest-axe/index.js:67:12)
     at _callee2$ (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/src/components/Card/AssetCard/AssetCard.test.tsx:136:25)
-    at tryCatch (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/regenerator-runtime/runtime.js:45:40)
-    at Generator.invoke [as _invoke] (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/regenerator-runtime/runtime.js:274:22)
-    at Generator.prototype.<computed> [as next] (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/regenerator-runtime/runtime.js:97:21)
-    at asyncGeneratorStep (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:24)
-    at _next (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/@babel/runtime/helpers/asyncToGenerator.js:25:9)
-    at /Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/@babel/runtime/helpers/asyncToGenerator.js:32:7
+    at tryCatch (/Users/daniel/Programming/forma-36/node_modules/regenerator-runtime/runtime.js:63:40)
+    at Generator.invoke [as _invoke] (/Users/daniel/Programming/forma-36/node_modules/regenerator-runtime/runtime.js:293:22)
+    at Generator.next (/Users/daniel/Programming/forma-36/node_modules/regenerator-runtime/runtime.js:118:21)
+    at asyncGeneratorStep (/Users/daniel/Programming/forma-36/node_modules/@babel/runtime/helpers/asyncToGenerator.js:3:24)
+    at _next (/Users/daniel/Programming/forma-36/node_modules/@babel/runtime/helpers/asyncToGenerator.js:25:9)
+    at /Users/daniel/Programming/forma-36/node_modules/@babel/runtime/helpers/asyncToGenerator.js:32:7
     at new Promise (<anonymous>)
-    at Object.<anonymous> (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/@babel/runtime/helpers/asyncToGenerator.js:21:12)
-    at Object.asyncJestTest (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:102:37)
-    at /Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/jest-jasmine2/build/queueRunner.js:43:12
+    at Object.<anonymous> (/Users/daniel/Programming/forma-36/node_modules/@babel/runtime/helpers/asyncToGenerator.js:21:12)
+    at Object.asyncJestTest (/Users/daniel/Programming/forma-36/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:102:37)
+    at /Users/daniel/Programming/forma-36/node_modules/jest-jasmine2/build/queueRunner.js:43:12
     at new Promise (<anonymous>)
-    at mapper (/Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/jest-jasmine2/build/queueRunner.js:26:19)
-    at /Users/daniel/Programming/forma-36/packages/forma-36-react-components/node_modules/jest-jasmine2/build/queueRunner.js:73:41",
+    at mapper (/Users/daniel/Programming/forma-36/node_modules/jest-jasmine2/build/queueRunner.js:26:19)
+    at /Users/daniel/Programming/forma-36/node_modules/jest-jasmine2/build/queueRunner.js:73:41
+    at runNextTicks (internal/process/task_queues.js:62:5)
+    at listOnTimeout (internal/timers.js:518:9)
+    at processTimers (internal/timers.js:492:7)",
       "tags": Array [
         "cat.color",
         "wcag2aa",
@@ -2144,7 +2147,7 @@ Object {
   ],
   "testEngine": Object {
     "name": "axe-core",
-    "version": "3.5.3",
+    "version": "3.5.5",
   },
   "testEnvironment": Object {
     "orientationAngle": undefined,
@@ -2156,7 +2159,7 @@ Object {
   "testRunner": Object {
     "name": "axe",
   },
-  "timestamp": "2020-11-04T17:17:09.297Z",
+  "timestamp": "2020-11-10T15:47:15.026Z",
   "toolOptions": Object {
     "reporter": "v1",
     "rules": Object {
