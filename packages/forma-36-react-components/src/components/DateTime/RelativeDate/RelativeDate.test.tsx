@@ -1,12 +1,13 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import RelativeDate from './RelativeDate';
 
 const baseDate = new Date('2020-04-10T15:00:00Z');
 const exampleDate = new Date('2020-04-09T16:17:18.912Z');
 
 it('renders the component', () => {
-  const output = shallow(
+  const { container } = render(
     <RelativeDate
       date={exampleDate}
       baseDate={baseDate}
@@ -15,5 +16,5 @@ it('renders the component', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });

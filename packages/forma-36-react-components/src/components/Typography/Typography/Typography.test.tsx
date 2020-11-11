@@ -1,5 +1,6 @@
 import React from 'react';
-import { shallow, mount, render } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import axe from '../../../utils/axeHelper';
 import Typography from './Typography';
 import DisplayText from './../DisplayText';
@@ -9,18 +10,18 @@ import SectionHeading from './../SectionHeading';
 import Subheading from './../Subheading';
 
 it('renders the component', () => {
-  const output = shallow(
+  const { container } = render(
     <Typography>
       <Heading>My Heading</Heading>
       <Paragraph>My Paragraph</Paragraph>
     </Typography>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders all typography components with the expected spacing classes', () => {
-  const output = render(
+  const { container } = render(
     <Typography>
       <DisplayText>My DisplayText</DisplayText>
       <Heading>My Heading</Heading>
@@ -30,28 +31,28 @@ it('renders all typography components with the expected spacing classes', () => 
     </Typography>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(
+  const { container } = render(
     <Typography className="my-extra-class">
       <Heading>My Heading</Heading>
       <Paragraph>My Paragraph</Paragraph>
     </Typography>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('has no a11y issues', async () => {
-  const output = mount(
+  const { container } = render(
     <Typography>
       <Heading>My Heading</Heading>
       <Paragraph>My Paragraph</Paragraph>
     </Typography>,
-  ).html();
-  const results = await axe(output);
+  );
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });

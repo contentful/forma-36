@@ -2,9 +2,9 @@
 
 exports[`renders the component with all required props 1`] = `
 <label
-  className="FormLabel"
+  class="FormLabel"
   data-test-id="cf-ui-form-label"
-  htmlFor="someInput"
+  for="someInput"
 >
   Label Text
 </label>
@@ -12,9 +12,9 @@ exports[`renders the component with all required props 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <label
-  className="FormLabel my-extra-class"
+  class="FormLabel my-extra-class"
   data-test-id="cf-ui-form-label"
-  htmlFor="someInput"
+  for="someInput"
 >
   Label Text
 </label>
@@ -22,13 +22,13 @@ exports[`renders the component with an additional class name 1`] = `
 
 exports[`renders the component with an required flag 1`] = `
 <label
-  className="FormLabel"
+  class="FormLabel"
   data-test-id="cf-ui-form-label"
-  htmlFor="someInput"
+  for="someInput"
 >
   Label Text
   <span
-    className="FormLabel__required-text"
+    class="FormLabel__required-text"
   >
     (
     required
@@ -39,13 +39,13 @@ exports[`renders the component with an required flag 1`] = `
 
 exports[`renders the component with required text 1`] = `
 <label
-  className="FormLabel"
+  class="FormLabel"
   data-test-id="cf-ui-form-label"
-  htmlFor="someInput"
+  for="someInput"
 >
   Label Text
   <span
-    className="FormLabel__required-text"
+    class="FormLabel__required-text"
   >
     (
     pflichtfeld

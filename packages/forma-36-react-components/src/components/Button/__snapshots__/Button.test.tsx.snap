@@ -2,478 +2,260 @@
 
 exports[`renders the button as active 1`] = `
 <button
-  className="Button Button--primary Button--is-active"
+  class="Button Button--primary Button--is-active"
   data-test-id="cf-ui-button"
-  disabled={false}
-  onBlur={[Function]}
-  onClick={[Function]}
   type="button"
 >
-  <TabFocusTrap
-    className="Button__inner-wrapper"
+  <span
+    class="TabFocusTrap Button__inner-wrapper"
+    tabindex="-1"
   >
     <span
-      className="Button__label"
+      class="Button__label"
     >
       Active button
     </span>
-    <CSSTransition
-      classNames={
-        Object {
-          "enter": "Button--spinner--enter",
-          "enterActive": "Button--spinner-active",
-          "exit": "Button--spinner--exit",
-          "exitActive": "Button--spinner-exit-active",
-        }
-      }
-      in={false}
-      mountOnEnter={true}
-      timeout={1000}
-      unmountOnExit={true}
-    >
-      <Spinner
-        className="Button__spinner"
-        color="white"
-        size="small"
-        testId="cf-ui-spinner"
-      />
-    </CSSTransition>
-  </TabFocusTrap>
+  </span>
 </button>
 `;
 
 exports[`renders the button as link 1`] = `
 <a
-  className="Button Button--primary"
+  class="Button Button--primary"
   data-test-id="cf-ui-button"
-  disabled={false}
   href="/"
-  onBlur={[Function]}
-  onClick={[Function]}
   type="button"
 >
-  <TabFocusTrap
-    className="Button__inner-wrapper"
+  <span
+    class="TabFocusTrap Button__inner-wrapper"
+    tabindex="-1"
   >
     <span
-      className="Button__label"
+      class="Button__label"
     >
       Button link
     </span>
-    <CSSTransition
-      classNames={
-        Object {
-          "enter": "Button--spinner--enter",
-          "enterActive": "Button--spinner-active",
-          "exit": "Button--spinner--exit",
-          "exitActive": "Button--spinner-exit-active",
-        }
-      }
-      in={false}
-      mountOnEnter={true}
-      timeout={1000}
-      unmountOnExit={true}
-    >
-      <Spinner
-        className="Button__spinner"
-        color="white"
-        size="small"
-        testId="cf-ui-spinner"
-      />
-    </CSSTransition>
-  </TabFocusTrap>
+  </span>
 </a>
 `;
 
 exports[`renders the component 1`] = `
 <button
-  className="Button Button--primary"
+  class="Button Button--primary"
   data-test-id="cf-ui-button"
-  disabled={false}
-  onBlur={[Function]}
-  onClick={[Function]}
   type="button"
 >
-  <TabFocusTrap
-    className="Button__inner-wrapper"
+  <span
+    class="TabFocusTrap Button__inner-wrapper"
+    tabindex="-1"
   >
     <span
-      className="Button__label"
+      class="Button__label"
     >
       Embed entry
     </span>
-    <CSSTransition
-      classNames={
-        Object {
-          "enter": "Button--spinner--enter",
-          "enterActive": "Button--spinner-active",
-          "exit": "Button--spinner--exit",
-          "exitActive": "Button--spinner-exit-active",
-        }
-      }
-      in={false}
-      mountOnEnter={true}
-      timeout={1000}
-      unmountOnExit={true}
-    >
-      <Spinner
-        className="Button__spinner"
-        color="white"
-        size="small"
-        testId="cf-ui-spinner"
-      />
-    </CSSTransition>
-  </TabFocusTrap>
+  </span>
 </button>
 `;
 
 exports[`renders the component as naked 1`] = `
 <button
-  className="Button Button--naked"
+  class="Button Button--naked"
   data-test-id="cf-ui-button"
-  disabled={false}
-  onBlur={[Function]}
-  onClick={[Function]}
   type="button"
 >
-  <TabFocusTrap
-    className="Button__inner-wrapper"
+  <span
+    class="TabFocusTrap Button__inner-wrapper"
+    tabindex="-1"
   >
     <span
-      className="Button__label"
+      class="Button__label"
     >
       Embed entry
     </span>
-    <CSSTransition
-      classNames={
-        Object {
-          "enter": "Button--spinner--enter",
-          "enterActive": "Button--spinner-active",
-          "exit": "Button--spinner--exit",
-          "exitActive": "Button--spinner-exit-active",
-        }
-      }
-      in={false}
-      mountOnEnter={true}
-      timeout={1000}
-      unmountOnExit={true}
-    >
-      <Spinner
-        className="Button__spinner"
-        color="default"
-        size="small"
-        testId="cf-ui-spinner"
-      />
-    </CSSTransition>
-  </TabFocusTrap>
+  </span>
 </button>
 `;
 
 exports[`renders the component as primary 1`] = `
 <button
-  className="Button Button--primary"
+  class="Button Button--primary"
   data-test-id="cf-ui-button"
-  disabled={false}
-  onBlur={[Function]}
-  onClick={[Function]}
   type="button"
 >
-  <TabFocusTrap
-    className="Button__inner-wrapper"
+  <span
+    class="TabFocusTrap Button__inner-wrapper"
+    tabindex="-1"
   >
     <span
-      className="Button__label"
+      class="Button__label"
     >
       Embed entry
     </span>
-    <CSSTransition
-      classNames={
-        Object {
-          "enter": "Button--spinner--enter",
-          "enterActive": "Button--spinner-active",
-          "exit": "Button--spinner--exit",
-          "exitActive": "Button--spinner-exit-active",
-        }
-      }
-      in={false}
-      mountOnEnter={true}
-      timeout={1000}
-      unmountOnExit={true}
-    >
-      <Spinner
-        className="Button__spinner"
-        color="white"
-        size="small"
-        testId="cf-ui-spinner"
-      />
-    </CSSTransition>
-  </TabFocusTrap>
+  </span>
 </button>
 `;
 
 exports[`renders the component disabled 1`] = `
 <button
-  className="Button Button--primary Button--disabled"
+  class="Button Button--primary Button--disabled"
   data-test-id="cf-ui-button"
-  disabled={true}
-  href={null}
-  onBlur={[Function]}
-  onClick={[Function]}
+  disabled=""
   type="button"
 >
-  <TabFocusTrap
-    className="Button__inner-wrapper"
+  <span
+    class="TabFocusTrap Button__inner-wrapper"
+    tabindex="-1"
   >
     <span
-      className="Button__label"
+      class="Button__label"
     >
       Embed entry
     </span>
-    <CSSTransition
-      classNames={
-        Object {
-          "enter": "Button--spinner--enter",
-          "enterActive": "Button--spinner-active",
-          "exit": "Button--spinner--exit",
-          "exitActive": "Button--spinner-exit-active",
-        }
-      }
-      in={false}
-      mountOnEnter={true}
-      timeout={1000}
-      unmountOnExit={true}
-    >
-      <Spinner
-        className="Button__spinner"
-        color="white"
-        size="small"
-        testId="cf-ui-spinner"
-      />
-    </CSSTransition>
-  </TabFocusTrap>
+  </span>
 </button>
 `;
 
 exports[`renders the component full width 1`] = `
 <button
-  className="Button Button--primary Button--full-width"
+  class="Button Button--primary Button--full-width"
   data-test-id="cf-ui-button"
-  disabled={false}
-  onBlur={[Function]}
-  onClick={[Function]}
   type="button"
 >
-  <TabFocusTrap
-    className="Button__inner-wrapper"
+  <span
+    class="TabFocusTrap Button__inner-wrapper"
+    tabindex="-1"
   >
     <span
-      className="Button__label"
+      class="Button__label"
     >
       Embed entry
     </span>
-    <CSSTransition
-      classNames={
-        Object {
-          "enter": "Button--spinner--enter",
-          "enterActive": "Button--spinner-active",
-          "exit": "Button--spinner--exit",
-          "exitActive": "Button--spinner-exit-active",
-        }
-      }
-      in={false}
-      mountOnEnter={true}
-      timeout={1000}
-      unmountOnExit={true}
-    >
-      <Spinner
-        className="Button__spinner"
-        color="white"
-        size="small"
-        testId="cf-ui-spinner"
-      />
-    </CSSTransition>
-  </TabFocusTrap>
+  </span>
 </button>
 `;
 
 exports[`renders the component in loading state 1`] = `
 <button
-  className="Button Button--primary"
+  class="Button Button--primary"
   data-test-id="cf-ui-button"
-  disabled={false}
-  onBlur={[Function]}
-  onClick={[Function]}
   type="button"
 >
-  <TabFocusTrap
-    className="Button__inner-wrapper"
+  <span
+    class="TabFocusTrap Button__inner-wrapper"
+    tabindex="-1"
   >
     <span
-      className="Button__label"
+      class="Button__label"
     >
       Embed entry
     </span>
-    <CSSTransition
-      classNames={
-        Object {
-          "enter": "Button--spinner--enter",
-          "enterActive": "Button--spinner-active",
-          "exit": "Button--spinner--exit",
-          "exitActive": "Button--spinner-exit-active",
-        }
-      }
-      in={true}
-      mountOnEnter={true}
-      timeout={1000}
-      unmountOnExit={true}
+    <svg
+      class="Spinner Button__spinner Spinner--small Spinner--white"
+      data-test-id="cf-ui-spinner"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <Spinner
-        className="Button__spinner"
-        color="white"
-        size="small"
-        testId="cf-ui-spinner"
+      <title>
+        Loading…
+      </title>
+      <path
+        d="M2,10a8,8,0,0,1,8-8V0a10,10,0,0,0,0,20V18A8,8,0,0,1,2,10Z"
       />
-    </CSSTransition>
-  </TabFocusTrap>
+      <path
+        d="M10,0V2a8,8,0,0,1,0,16v2A10,10,0,0,0,10,0Z"
+        style="opacity: 0.4;"
+      />
+    </svg>
+  </span>
 </button>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
 <button
-  className="Button my-extra-class Button--primary"
+  class="Button my-extra-class Button--primary"
   data-test-id="cf-ui-button"
-  disabled={false}
-  onBlur={[Function]}
-  onClick={[Function]}
   type="button"
 >
-  <TabFocusTrap
-    className="Button__inner-wrapper"
+  <span
+    class="TabFocusTrap Button__inner-wrapper"
+    tabindex="-1"
   >
     <span
-      className="Button__label"
+      class="Button__label"
     >
       Embed entry
     </span>
-    <CSSTransition
-      classNames={
-        Object {
-          "enter": "Button--spinner--enter",
-          "enterActive": "Button--spinner-active",
-          "exit": "Button--spinner--exit",
-          "exitActive": "Button--spinner-exit-active",
-        }
-      }
-      in={false}
-      mountOnEnter={true}
-      timeout={1000}
-      unmountOnExit={true}
-    >
-      <Spinner
-        className="Button__spinner"
-        color="white"
-        size="small"
-        testId="cf-ui-spinner"
-      />
-    </CSSTransition>
-  </TabFocusTrap>
+  </span>
 </button>
 `;
 
 exports[`renders the component with dropdown indicator 1`] = `
 <button
-  className="Button Button--primary"
+  class="Button Button--primary"
   data-test-id="cf-ui-button"
-  disabled={false}
-  onBlur={[Function]}
-  onClick={[Function]}
   type="button"
 >
-  <TabFocusTrap
-    className="Button__inner-wrapper"
+  <span
+    class="TabFocusTrap Button__inner-wrapper"
+    tabindex="-1"
   >
     <span
-      className="Button__label"
+      class="Button__label"
     >
       Embed Entry
     </span>
-    <Icon
-      className="Button__dropdown-icon"
-      color="white"
-      icon="ArrowDown"
-      size="small"
-      testId="cf-ui-icon"
-    />
-    <CSSTransition
-      classNames={
-        Object {
-          "enter": "Button--spinner--enter",
-          "enterActive": "Button--spinner-active",
-          "exit": "Button--spinner--exit",
-          "exitActive": "Button--spinner-exit-active",
-        }
-      }
-      in={false}
-      mountOnEnter={true}
-      timeout={1000}
-      unmountOnExit={true}
+    <svg
+      class="Icon Icon--small Icon--white Button__dropdown-icon"
+      data-test-id="cf-ui-icon"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
     >
-      <Spinner
-        className="Button__spinner"
-        color="white"
-        size="small"
-        testId="cf-ui-spinner"
+      <path
+        d="M7 10l5 5 5-5z"
       />
-    </CSSTransition>
-  </TabFocusTrap>
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+    </svg>
+  </span>
 </button>
 `;
 
 exports[`renders the component with icon 1`] = `
 <button
-  className="Button Button--primary"
+  class="Button Button--primary"
   data-test-id="cf-ui-button"
-  disabled={false}
-  onBlur={[Function]}
-  onClick={[Function]}
   type="button"
 >
-  <TabFocusTrap
-    className="Button__inner-wrapper"
+  <span
+    class="TabFocusTrap Button__inner-wrapper"
+    tabindex="-1"
   >
-    <Icon
-      className="Button__icon"
-      color="white"
-      icon="ChevronUp"
-      size="small"
-      testId="cf-ui-icon"
-    />
+    <svg
+      class="Icon Icon--small Icon--white Button__icon"
+      data-test-id="cf-ui-icon"
+      height="18"
+      viewBox="0 0 24 24"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"
+      />
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+    </svg>
     <span
-      className="Button__label"
+      class="Button__label"
     >
       Embed entry
     </span>
-    <CSSTransition
-      classNames={
-        Object {
-          "enter": "Button--spinner--enter",
-          "enterActive": "Button--spinner-active",
-          "exit": "Button--spinner--exit",
-          "exitActive": "Button--spinner-exit-active",
-        }
-      }
-      in={false}
-      mountOnEnter={true}
-      timeout={1000}
-      unmountOnExit={true}
-    >
-      <Spinner
-        className="Button__spinner"
-        color="white"
-        size="small"
-        testId="cf-ui-spinner"
-      />
-    </CSSTransition>
-  </TabFocusTrap>
+  </span>
 </button>
 `;

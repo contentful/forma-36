@@ -1,5 +1,6 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import axe from '../../../utils/axeHelper';
 
 import SkeletonRow from './SkeletonRow';
@@ -7,7 +8,7 @@ import Table from '../../Table';
 import TableBody from '../../Table/TableBody';
 
 it('renders the component', () => {
-  const output = shallow(
+  const { container } = render(
     <Table>
       <TableBody>
         <SkeletonRow />
@@ -15,11 +16,11 @@ it('renders the component', () => {
     </Table>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with 10 rows', () => {
-  const output = shallow(
+  const { container } = render(
     <Table>
       <TableBody>
         <SkeletonRow rowCount={10} />
@@ -27,11 +28,11 @@ it('renders the component with 10 rows', () => {
     </Table>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with 10 cells', () => {
-  const output = shallow(
+  const { container } = render(
     <Table>
       <TableBody>
         <SkeletonRow columnCount={10} />
@@ -39,18 +40,18 @@ it('renders the component with 10 cells', () => {
     </Table>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('has no a11y issues', async () => {
-  const output = mount(
+  const { container } = render(
     <Table>
       <TableBody>
         <SkeletonRow />
       </TableBody>
     </Table>,
-  ).html();
-  const results = await axe(output);
+  );
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });

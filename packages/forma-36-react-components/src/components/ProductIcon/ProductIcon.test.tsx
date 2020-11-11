@@ -1,51 +1,52 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import axe from '../../utils/axeHelper';
 import ProductIcon from './ProductIcon';
 import { productIconName } from './constants';
 
 it('renders the component', () => {
-  const output = shallow(<ProductIcon icon={'Home'} />);
+  const { container } = render(<ProductIcon icon={'Home'} />);
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(
+  const { container } = render(
     <ProductIcon icon={'Home'} className="my-extra-class" />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders a large icon', () => {
-  const output = shallow(<ProductIcon icon={'Home'} size="large" />);
+  const { container } = render(<ProductIcon icon={'Home'} size="large" />);
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders as a "positive" icon', () => {
-  const output = shallow(
+  const { container } = render(
     <ProductIcon icon={'Home'} size="large" color="positive" />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders as a "white" icon', () => {
-  const output = shallow(
+  const { container } = render(
     <ProductIcon icon={'Home'} size="large" color="white" />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
-Object.keys(productIconName).forEach(icon => {
+Object.keys(productIconName).forEach((icon) => {
   it(`${icon} has no a11y issues`, async () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const output = mount(<ProductIcon icon={icon as any} />).html();
+    const { container } = render(<ProductIcon icon={icon as any} />);
 
-    const results = await axe(output);
+    const results = await axe(container);
 
     expect(results).toHaveNoViolations();
   });

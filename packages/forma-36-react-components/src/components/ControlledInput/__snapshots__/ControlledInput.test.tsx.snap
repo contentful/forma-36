@@ -3,15 +3,9 @@
 exports[`renders the component with a value 1`] = `
 <input
   aria-label="ControlledInput"
-  className="ControlledInput my-extra-class"
+  class="ControlledInput my-extra-class"
   data-test-id="cf-ui-controlled-input"
-  disabled={false}
   id="ControlledInput"
-  onBlur={[Function]}
-  onChange={[Function]}
-  onFocus={[Function]}
-  onKeyDown={[Function]}
-  required={false}
   type="checkbox"
   value="someValue"
 />
@@ -20,80 +14,57 @@ exports[`renders the component with a value 1`] = `
 exports[`renders the component with all required props 1`] = `
 <input
   aria-label="ControlledInput"
-  className="ControlledInput"
+  class="ControlledInput"
   data-test-id="cf-ui-controlled-input"
-  disabled={false}
   id="ControlledInput"
-  onBlur={[Function]}
-  onChange={[Function]}
-  onFocus={[Function]}
-  onKeyDown={[Function]}
-  required={false}
   type="checkbox"
+  value=""
 />
 `;
 
 exports[`renders the component with an additional class name 1`] = `
 <input
   aria-label="ControlledInput"
-  className="ControlledInput my-extra-class"
+  class="ControlledInput my-extra-class"
   data-test-id="cf-ui-controlled-input"
-  disabled={false}
   id="ControlledInput"
-  onBlur={[Function]}
-  onChange={[Function]}
-  onFocus={[Function]}
-  onKeyDown={[Function]}
-  required={false}
   type="checkbox"
+  value=""
 />
 `;
 
 exports[`renders the component with as checked 1`] = `
 <input
   aria-label="ControlledInput"
-  checked={true}
-  className="ControlledInput my-extra-class"
+  checked=""
+  class="ControlledInput my-extra-class"
   data-test-id="cf-ui-controlled-input"
-  disabled={false}
   id="ControlledInput"
-  onBlur={[Function]}
-  onChange={[Function]}
-  onFocus={[Function]}
-  onKeyDown={[Function]}
-  required={false}
   type="checkbox"
+  value=""
 />
 `;
 
 exports[`renders the component with disabled prop 1`] = `
 <input
   aria-label="ControlledInput"
-  className="ControlledInput my-extra-class ControlledInput--disabled"
+  class="ControlledInput my-extra-class ControlledInput--disabled"
   data-test-id="cf-ui-controlled-input"
-  disabled={true}
+  disabled=""
   id="ControlledInput"
-  onBlur={[Function]}
-  onChange={[Function]}
-  onFocus={[Function]}
-  onKeyDown={[Function]}
-  required={false}
   type="checkbox"
+  value=""
 />
 `;
 
 exports[`renders the component with required prop 1`] = `
 <input
   aria-label="ControlledInput"
-  className="ControlledInput my-extra-class"
+  class="ControlledInput my-extra-class"
   data-test-id="cf-ui-controlled-input"
-  disabled={false}
   id="ControlledInput"
-  onBlur={[Function]}
-  onChange={[Function]}
-  onFocus={[Function]}
-  onKeyDown={[Function]}
-  required={true}
+  required=""
   type="checkbox"
+  value=""
 />
 `;

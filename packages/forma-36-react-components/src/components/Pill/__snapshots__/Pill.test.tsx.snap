@@ -2,12 +2,12 @@
 
 exports[`renders the component 1`] = `
 <div
-  className="Pill"
+  class="Pill"
   data-test-id="cf-ui-pill"
 >
   <span
     aria-label="test"
-    className="Pill__label"
+    class="Pill__label"
     title="test"
   >
     test
@@ -17,55 +17,74 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component with a close button 1`] = `
 <div
-  className="Pill my-extra-class"
+  class="Pill my-extra-class"
   data-test-id="cf-ui-pill"
 >
   <span
     aria-label="test"
-    className="Pill__label"
+    class="Pill__label"
     title="test"
   >
     test
   </span>
   <button
     aria-label="close"
-    className="Pill__close-button"
-    onClick={[Function]}
+    class="Pill__close-button"
     type="button"
   >
-    <TabFocusTrap>
-      <Icon
-        className="Pill__icon"
-        color="muted"
-        icon="Close"
-        size="small"
-        testId="cf-ui-icon"
-      />
-    </TabFocusTrap>
+    <span
+      class="TabFocusTrap"
+      tabindex="-1"
+    >
+      <svg
+        class="Icon Icon--small Icon--muted Pill__icon"
+        data-test-id="cf-ui-icon"
+        height="24"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+        />
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+      </svg>
+    </span>
   </button>
 </div>
 `;
 
 exports[`renders the component with a dragging handle 1`] = `
 <div
-  className="Pill my-extra-class"
+  class="Pill my-extra-class"
   data-test-id="cf-ui-pill"
-  onDrag={[Function]}
 >
   <span
-    className="Pill__drag-icon"
+    class="Pill__drag-icon"
   >
-    <Icon
-      className="Pill__icon"
-      color="muted"
-      icon="Drag"
-      size="small"
-      testId="cf-ui-icon"
-    />
+    <svg
+      class="Icon Icon--small Icon--muted Pill__icon"
+      data-test-id="cf-ui-icon"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 0h24v24H0V0z"
+        fill="none"
+      />
+      <path
+        d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+      />
+    </svg>
   </span>
   <span
     aria-label="test"
-    className="Pill__label"
+    class="Pill__label"
     title="test"
   >
     test
@@ -75,12 +94,12 @@ exports[`renders the component with a dragging handle 1`] = `
 
 exports[`renders the component with a test id 1`] = `
 <div
-  className="Pill my-extra-class"
+  class="Pill my-extra-class"
   data-test-id="test-id"
 >
   <span
     aria-label="test"
-    className="Pill__label"
+    class="Pill__label"
     title="test"
   >
     test
@@ -90,12 +109,12 @@ exports[`renders the component with a test id 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <div
-  className="Pill my-extra-class"
+  class="Pill my-extra-class"
   data-test-id="cf-ui-pill"
 >
   <span
     aria-label="test"
-    className="Pill__label"
+    class="Pill__label"
     title="test"
   >
     test

@@ -1,89 +1,169 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component (complex) 1`] = `
-<Workbench
-  testId="cf-ui-workbench"
+<div
+  class="Workbench"
+  data-test-id="cf-ui-workbench"
 >
-  <Workbench.Header
-    actions={
-      <Button
-        buttonType="muted"
-        disabled={false}
-        indicateDropdown={false}
-        isFullWidth={false}
-        loading={false}
-        testId="cf-ui-button"
+  <div
+    class="Workbench__header"
+    data-test-id="cf-ui-workbench-header"
+  >
+    <div
+      class="Workbench__header-icon"
+    >
+      <svg
+        class="Icon Icon--small Icon--primary"
+        data-test-id="cf-ui-icon"
+        height="24"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M7 10l5 5 5-5z"
+        />
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+      </svg>
+    </div>
+    <div
+      class="Workbench__header-title"
+      data-test-id="workbench-title"
+    >
+      <h1
+        class="Heading Workbench__header-title__heading"
+        data-test-id="cf-ui-heading"
+      >
+        Page title
+      </h1>
+    </div>
+    <div
+      class="Workbench__header-actions"
+    >
+      <button
+        class="Button Button--muted"
+        data-test-id="cf-ui-button"
         type="button"
       >
-        Click
-      </Button>
-    }
-    icon={
-      <Icon
-        color="primary"
-        icon="ArrowDown"
-        size="small"
-        testId="cf-ui-icon"
-      />
-    }
-    testId="cf-ui-workbench-header"
-    title="Page title"
-  />
-  <WorkbenchSidebar
-    position="left"
-    testId="cf-ui-workbench-sidebar"
+        <span
+          class="TabFocusTrap Button__inner-wrapper"
+          tabindex="-1"
+        >
+          <span
+            class="Button__label"
+          >
+            Click
+          </span>
+        </span>
+      </button>
+    </div>
+  </div>
+  <div
+    class="Workbench__content-wrapper"
   >
-    Left sidebar
-  </WorkbenchSidebar>
-  <WorkbenchContent
-    testId="cf-ui-workbench-content"
-    type="default"
-  >
-    Workbench
-  </WorkbenchContent>
-  <WorkbenchSidebar
-    position="right"
-    testId="cf-ui-workbench-sidebar"
-  >
-    Right sidebar
-  </WorkbenchSidebar>
-</Workbench>
+    <div
+      class="Workbench__sidebar Workbench__sidebar--left"
+      data-test-id="cf-ui-workbench-sidebar-left"
+    >
+      Left sidebar
+    </div>
+    <div
+      class="Workbench__content"
+      data-test-id="cf-ui-workbench-content"
+    >
+      <div
+        class="Workbench__content-inner Workbench__content-inner--default"
+      >
+        Workbench
+      </div>
+    </div>
+    <div
+      class="Workbench__sidebar Workbench__sidebar--right"
+      data-test-id="cf-ui-workbench-sidebar-right"
+    >
+      Right sidebar
+    </div>
+  </div>
+</div>
 `;
 
 exports[`renders the component (simple) 1`] = `
-<Workbench
-  testId="cf-ui-workbench"
+<div
+  class="Workbench"
+  data-test-id="cf-ui-workbench"
 >
-  <Workbench.Header
-    actions={
-      <Button
-        buttonType="muted"
-        disabled={false}
-        indicateDropdown={false}
-        isFullWidth={false}
-        loading={false}
-        testId="cf-ui-button"
+  <div
+    class="Workbench__header"
+    data-test-id="cf-ui-workbench-header"
+  >
+    <div
+      class="Workbench__header-icon"
+    >
+      <svg
+        class="Icon Icon--small Icon--primary"
+        data-test-id="cf-ui-icon"
+        height="24"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M7 10l5 5 5-5z"
+        />
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+      </svg>
+    </div>
+    <div
+      class="Workbench__header-title"
+      data-test-id="workbench-title"
+    >
+      <h1
+        class="Heading Workbench__header-title__heading"
+        data-test-id="cf-ui-heading"
+      >
+        Page title
+      </h1>
+    </div>
+    <div
+      class="Workbench__header-actions"
+    >
+      <button
+        class="Button Button--muted"
+        data-test-id="cf-ui-button"
         type="button"
       >
-        Click
-      </Button>
-    }
-    icon={
-      <Icon
-        color="primary"
-        icon="ArrowDown"
-        size="small"
-        testId="cf-ui-icon"
-      />
-    }
-    testId="cf-ui-workbench-header"
-    title="Page title"
-  />
-  <WorkbenchContent
-    testId="cf-ui-workbench-content"
-    type="default"
+        <span
+          class="TabFocusTrap Button__inner-wrapper"
+          tabindex="-1"
+        >
+          <span
+            class="Button__label"
+          >
+            Click
+          </span>
+        </span>
+      </button>
+    </div>
+  </div>
+  <div
+    class="Workbench__content-wrapper"
   >
-    Workbench
-  </WorkbenchContent>
-</Workbench>
+    <div
+      class="Workbench__content"
+      data-test-id="cf-ui-workbench-content"
+    >
+      <div
+        class="Workbench__content-inner Workbench__content-inner--default"
+      >
+        Workbench
+      </div>
+    </div>
+  </div>
+</div>
 `;

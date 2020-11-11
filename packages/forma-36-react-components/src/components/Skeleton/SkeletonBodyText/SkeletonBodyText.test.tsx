@@ -1,26 +1,27 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import axe from '../../../utils/axeHelper';
 import SkeletonContainer from '../SkeletonContainer';
 import SkeletonBodyText from './SkeletonBodyText';
 
 it('renders the component', () => {
-  const output = shallow(
+  const { container } = render(
     <SkeletonContainer>
       <SkeletonBodyText />
     </SkeletonContainer>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('has no a11y issues', async () => {
-  const output = shallow(
+  const { container } = render(
     <SkeletonContainer>
       <SkeletonBodyText />
     </SkeletonContainer>,
-  ).html();
-  const results = await axe(output);
+  );
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });

@@ -1,232 +1,213 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`can be controlled 1`] = `
-<ReactModalMock
-  ariaHideApp={false}
-  bodyOpenClassName="Modal__body--open"
-  className={
-    Object {
-      "afterOpen": "Modal__wrap--after-open",
-      "base": "Modal__wrap",
-      "beforeClose": "Modal__wrap--before-close",
-    }
-  }
-  closeTimeoutMS={300}
-  htmlOpenClassName="Modal__html--open"
-  isOpen={true}
-  onRequestClose={[Function]}
-  overlayClassName={
-    Object {
-      "afterOpen": "Modal__overlay--after-open",
-      "base": "Modal__overlay Modal__overlay--centered",
-      "beforeClose": "Modal__overlay--before-close",
-    }
-  }
-  portalClassName="Modal__portal"
-  shouldCloseOnEsc={true}
-  shouldCloseOnOverlayClick={true}
-  style={
-    Object {
-      "content": Object {
-        "top": 0,
-      },
-    }
-  }
+<div
+  class="react-modal"
 >
   <div
-    className="Modal"
+    class="Modal"
     data-test-id="cf-ui-modal"
-    style={
-      Object {
-        "width": "520px",
-      }
-    }
+    style="width: 520px;"
   >
-    <ModalHeader
-      onClose={[Function]}
-      testId="cf-ui-modal-header"
-      title="Hello"
-    />
-    <ModalContent
-      testId="cf-ui-modal-content"
+    <div
+      class="ModalHeader"
+      data-test-id="cf-ui-modal-header"
+    >
+      <h1
+        class="ModalHeader__title"
+      >
+        Hello
+      </h1>
+      <button
+        class="IconButton IconButton--muted"
+        data-test-id="cf-ui-icon-button"
+        type="button"
+      >
+        <span
+          class="TabFocusTrap IconButton__inner"
+          tabindex="-1"
+        >
+          <svg
+            class="Icon Icon--small Icon--primary IconButton__icon"
+            data-test-id="cf-ui-icon"
+            height="24"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+            />
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+          </svg>
+          <span
+            class="IconButton__label"
+          >
+            Close
+          </span>
+        </span>
+      </button>
+    </div>
+    <div
+      class="ModalContent"
+      data-test-id="cf-ui-modal-content"
     >
       Content
-    </ModalContent>
-    <ModalControls
-      testId="cf-ui-modal-controls"
+    </div>
+    <div
+      class="ModalControls"
+      data-test-id="cf-ui-modal-controls"
     >
       <button
         type="button"
       >
         Click on me
       </button>
-    </ModalControls>
+    </div>
   </div>
-</ReactModalMock>
+</div>
 `;
 
 exports[`can override header and content properties 1`] = `
-<ReactModalMock
-  ariaHideApp={false}
-  bodyOpenClassName="Modal__body--open"
-  className={
-    Object {
-      "afterOpen": "Modal__wrap--after-open",
-      "base": "Modal__wrap",
-      "beforeClose": "Modal__wrap--before-close",
-    }
-  }
-  closeTimeoutMS={300}
-  htmlOpenClassName="Modal__html--open"
-  isOpen={true}
-  onRequestClose={[Function]}
-  overlayClassName={
-    Object {
-      "afterOpen": "Modal__overlay--after-open",
-      "base": "Modal__overlay Modal__overlay--centered",
-      "beforeClose": "Modal__overlay--before-close",
-    }
-  }
-  portalClassName="Modal__portal"
-  shouldCloseOnEsc={true}
-  shouldCloseOnOverlayClick={true}
-  style={
-    Object {
-      "content": Object {
-        "top": 0,
-      },
-    }
-  }
+<div
+  class="react-modal"
 >
   <div
-    className="Modal"
+    class="Modal"
     data-test-id="cf-ui-modal"
-    style={
-      Object {
-        "width": "520px",
-      }
-    }
+    style="width: 520px;"
   >
-    <ModalHeader
-      className="additional-header-class"
-      isNotWrapped={true}
-      onClose={[Function]}
-      testId="cf-ui-modal-header"
-      title="Hello!"
-    />
-    <ModalContent
-      className="additional-content-class"
-      testId="cf-ui-modal-content"
+    <div
+      class="ModalHeader additional-header-class"
+      data-test-id="cf-ui-modal-header"
+    >
+      <h1
+        class="ModalHeader__title ModalHeader__title--is-not-wrapped"
+      >
+        Hello!
+      </h1>
+      <button
+        class="IconButton IconButton--muted"
+        data-test-id="cf-ui-icon-button"
+        type="button"
+      >
+        <span
+          class="TabFocusTrap IconButton__inner"
+          tabindex="-1"
+        >
+          <svg
+            class="Icon Icon--small Icon--primary IconButton__icon"
+            data-test-id="cf-ui-icon"
+            height="24"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+            />
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+          </svg>
+          <span
+            class="IconButton__label"
+          >
+            Close
+          </span>
+        </span>
+      </button>
+    </div>
+    <div
+      class="ModalContent additional-content-class"
+      data-test-id="cf-ui-modal-content"
     >
       Content
-    </ModalContent>
+    </div>
   </div>
-</ReactModalMock>
+</div>
 `;
 
 exports[`renders the component 1`] = `
-<ReactModalMock
-  ariaHideApp={false}
-  bodyOpenClassName="Modal__body--open"
-  className={
-    Object {
-      "afterOpen": "Modal__wrap--after-open",
-      "base": "Modal__wrap",
-      "beforeClose": "Modal__wrap--before-close",
-    }
-  }
-  closeTimeoutMS={300}
-  htmlOpenClassName="Modal__html--open"
-  isOpen={true}
-  onRequestClose={[Function]}
-  overlayClassName={
-    Object {
-      "afterOpen": "Modal__overlay--after-open",
-      "base": "Modal__overlay Modal__overlay--centered",
-      "beforeClose": "Modal__overlay--before-close",
-    }
-  }
-  portalClassName="Modal__portal"
-  shouldCloseOnEsc={true}
-  shouldCloseOnOverlayClick={true}
-  style={
-    Object {
-      "content": Object {
-        "top": 0,
-      },
-    }
-  }
+<div
+  class="react-modal"
 >
   <div
-    className="Modal"
+    class="Modal"
     data-test-id="cf-ui-modal"
-    style={
-      Object {
-        "width": "520px",
-      }
-    }
+    style="width: 520px;"
   >
-    <ModalHeader
-      onClose={[Function]}
-      testId="cf-ui-modal-header"
-      title="Title"
-    />
-    <ModalContent
-      testId="cf-ui-modal-content"
+    <div
+      class="ModalHeader"
+      data-test-id="cf-ui-modal-header"
+    >
+      <h1
+        class="ModalHeader__title"
+      >
+        Title
+      </h1>
+      <button
+        class="IconButton IconButton--muted"
+        data-test-id="cf-ui-icon-button"
+        type="button"
+      >
+        <span
+          class="TabFocusTrap IconButton__inner"
+          tabindex="-1"
+        >
+          <svg
+            class="Icon Icon--small Icon--primary IconButton__icon"
+            data-test-id="cf-ui-icon"
+            height="24"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+            />
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+          </svg>
+          <span
+            class="IconButton__label"
+          >
+            Close
+          </span>
+        </span>
+      </button>
+    </div>
+    <div
+      class="ModalContent"
+      data-test-id="cf-ui-modal-content"
     >
       Content
-    </ModalContent>
+    </div>
   </div>
-</ReactModalMock>
+</div>
 `;
 
 exports[`renders the component without title 1`] = `
-<ReactModalMock
-  ariaHideApp={false}
-  bodyOpenClassName="Modal__body--open"
-  className={
-    Object {
-      "afterOpen": "Modal__wrap--after-open",
-      "base": "Modal__wrap",
-      "beforeClose": "Modal__wrap--before-close",
-    }
-  }
-  closeTimeoutMS={300}
-  htmlOpenClassName="Modal__html--open"
-  isOpen={true}
-  onRequestClose={[Function]}
-  overlayClassName={
-    Object {
-      "afterOpen": "Modal__overlay--after-open",
-      "base": "Modal__overlay Modal__overlay--centered",
-      "beforeClose": "Modal__overlay--before-close",
-    }
-  }
-  portalClassName="Modal__portal"
-  shouldCloseOnEsc={true}
-  shouldCloseOnOverlayClick={true}
-  style={
-    Object {
-      "content": Object {
-        "top": 0,
-      },
-    }
-  }
+<div
+  class="react-modal"
 >
   <div
-    className="Modal"
+    class="Modal"
     data-test-id="cf-ui-modal"
-    style={
-      Object {
-        "width": "520px",
-      }
-    }
+    style="width: 520px;"
   >
-    <ModalContent
-      testId="cf-ui-modal-content"
+    <div
+      class="ModalContent"
+      data-test-id="cf-ui-modal-content"
     >
       Content
-    </ModalContent>
+    </div>
   </div>
-</ReactModalMock>
+</div>
 `;

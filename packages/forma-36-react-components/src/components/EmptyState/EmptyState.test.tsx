@@ -1,21 +1,22 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import axe from '../../utils/axeHelper';
 import EmptyState from './EmptyState';
 
 it('renders the component', () => {
-  const output = shallow(
+  const { container } = render(
     <EmptyState
       headingProps={{ text: 'Heading' }}
       descriptionProps={{ text: 'This is a description for the empty state.' }}
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(
+  const { container } = render(
     <EmptyState
       className="my-extra-class"
       headingProps={{ text: 'Heading' }}
@@ -23,23 +24,23 @@ it('renders the component with an additional class name', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('has no a11y issues', async () => {
-  const output = mount(
+  const { container } = render(
     <EmptyState
       headingProps={{ text: 'Heading' }}
       descriptionProps={{ text: 'This is a description for the empty state.' }}
     />,
-  ).html();
-  const results = await axe(output);
+  );
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });
 
 it('renders component with image', () => {
-  const output = mount(
+  const { container } = render(
     <EmptyState
       headingProps={{ text: 'Heading' }}
       imageProps={{
@@ -55,11 +56,11 @@ it('renders component with image', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders component with custom image element', () => {
-  const output = mount(
+  const { container } = render(
     <EmptyState
       headingProps={{ text: 'Heading' }}
       customImageElement={<img src={'/url'} alt="" />}
@@ -70,5 +71,5 @@ it('renders component with custom image element', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });

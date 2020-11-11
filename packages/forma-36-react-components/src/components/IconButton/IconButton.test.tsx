@@ -1,26 +1,28 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
 import axe from '../../utils/axeHelper';
 import IconButton from './IconButton';
 
 it('renders the component', () => {
-  const output = shallow(
+  const { container } = render(
     <IconButton iconProps={{ icon: 'ArrowDown' }} label="My Icon" />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders as a link', () => {
-  const output = shallow(
+  const { container } = render(
     <IconButton href="#" iconProps={{ icon: 'ArrowDown' }} label="My Icon" />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders as a "primary" link type', () => {
-  const output = shallow(
+  const { container } = render(
     <IconButton
       iconProps={{ icon: 'ArrowDown' }}
       label="My Icon"
@@ -28,11 +30,11 @@ it('renders as a "primary" link type', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders as a "positive" link type', () => {
-  const output = shallow(
+  const { container } = render(
     <IconButton
       iconProps={{ icon: 'ArrowDown' }}
       label="My Icon"
@@ -40,11 +42,11 @@ it('renders as a "positive" link type', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders as a "negative" link type', () => {
-  const output = shallow(
+  const { container } = render(
     <IconButton
       iconProps={{ icon: 'ArrowDown' }}
       label="My Icon"
@@ -52,11 +54,11 @@ it('renders as a "negative" link type', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders as a "secondary" link type', () => {
-  const output = shallow(
+  const { container } = render(
     <IconButton
       iconProps={{ icon: 'ArrowDown' }}
       label="My Icon"
@@ -64,11 +66,11 @@ it('renders as a "secondary" link type', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders as a "muted" link type', () => {
-  const output = shallow(
+  const { container } = render(
     <IconButton
       iconProps={{ icon: 'ArrowDown' }}
       label="My Icon"
@@ -76,12 +78,12 @@ it('renders as a "muted" link type', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('calls an onClick function', () => {
   const onClickFunc = jest.fn();
-  const output = shallow(
+  const { container } = render(
     <IconButton
       iconProps={{ icon: 'ArrowDown' }}
       label="My Icon"
@@ -89,15 +91,15 @@ it('calls an onClick function', () => {
     />,
   );
 
-  output.simulate('click');
+  expect(container.firstChild).toMatchSnapshot();
 
-  expect(output).toMatchSnapshot();
+  userEvent.click(screen.getByText('My Icon'));
   expect(onClickFunc).toHaveBeenCalled();
 });
 
 it('prevents an onClick function from being called when disabled', () => {
   const onClickFunc = jest.fn();
-  const output = shallow(
+  const { container } = render(
     <IconButton
       iconProps={{ icon: 'ArrowDown' }}
       label="My Icon"
@@ -106,14 +108,14 @@ it('prevents an onClick function from being called when disabled', () => {
     />,
   );
 
-  output.simulate('click');
+  expect(container.firstChild).toMatchSnapshot();
 
-  expect(output).toMatchSnapshot();
+  userEvent.click(screen.getByText('My Icon'));
   expect(onClickFunc).not.toHaveBeenCalled();
 });
 
 it('allows passing additional props not consumed by the component', () => {
-  const output = shallow(
+  const { container } = render(
     <IconButton
       iconProps={{ icon: 'ArrowDown' }}
       label="My Icon"
@@ -121,11 +123,11 @@ it('allows passing additional props not consumed by the component', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders with a dropdown indicator', () => {
-  const output = shallow(
+  const { container } = render(
     <IconButton
       iconProps={{ icon: 'ArrowDown' }}
       label="My Icon"
@@ -133,11 +135,11 @@ it('renders with a dropdown indicator', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(
+  const { container } = render(
     <IconButton
       iconProps={{ icon: 'ArrowDown' }}
       label="My Icon"
@@ -147,23 +149,23 @@ it('renders the component with an additional class name', () => {
     </IconButton>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('has no a11y issues', async () => {
-  const output = mount(
+  const { container } = render(
     <IconButton iconProps={{ icon: 'ArrowDown' }} label="My Icon" />,
-  ).html();
-  const results = await axe(output);
+  );
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });
 
 it('has no a11y issues when rendered as a link', async () => {
-  const output = mount(
+  const { container } = render(
     <IconButton iconProps={{ icon: 'ArrowDown' }} label="My Icon" href="#" />,
-  ).html();
-  const results = await axe(output);
+  );
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });

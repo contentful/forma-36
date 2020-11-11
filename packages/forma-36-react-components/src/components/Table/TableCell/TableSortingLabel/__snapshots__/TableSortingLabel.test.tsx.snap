@@ -2,37 +2,48 @@
 
 exports[`renders the component 1`] = `
 <button
-  className="TableSortingLabel__button"
+  class="TableSortingLabel__button"
   data-test-id="cf-ui-table-sorting-label"
   direction="asc"
   type="button"
 >
-  <TabFocusTrap
-    className="TableSortingLabel__button__text"
+  <span
+    class="TabFocusTrap TableSortingLabel__button__text"
+    tabindex="-1"
   >
     Foo
-    <Icon
-      className="TableSortingLabel__icon TableSortingLabel__icon--asc"
-      color="muted"
-      icon="ArrowUp"
-      size="small"
-      testId="cf-ui-icon"
-    />
-  </TabFocusTrap>
+    <svg
+      class="Icon Icon--small Icon--muted TableSortingLabel__icon TableSortingLabel__icon--asc"
+      data-test-id="cf-ui-icon"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7 14l5-5 5 5z"
+      />
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+    </svg>
+  </span>
 </button>
 `;
 
 exports[`renders the component inactive 1`] = `
 <button
-  className="TableSortingLabel__button"
+  class="TableSortingLabel__button"
   data-test-id="cf-ui-table-sorting-label"
   direction="desc"
   type="button"
 >
-  <TabFocusTrap
-    className="TableSortingLabel__button__text"
+  <span
+    class="TabFocusTrap TableSortingLabel__button__text"
+    tabindex="-1"
   >
     Foo
-  </TabFocusTrap>
+  </span>
 </button>
 `;

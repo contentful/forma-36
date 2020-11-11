@@ -17,5 +17,12 @@
     "suppressImplicitAnyIndexErrors": true
   },
   "include": ["./"],
-  "exclude": ["dist", "dist-storybook", "node_modules"]
+  "exclude": [
+    "dist",
+    "dist-storybook",
+    "node_modules",
+    "**/*.stories.tsx",
+    "**/*.test.tsx",
+    "test/config"
+  ]
 }

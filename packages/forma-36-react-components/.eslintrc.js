@@ -10,7 +10,7 @@ module.exports = {
     'plugin:jest/recommended',
     'plugin:jest/style',
   ],
-  plugins: ['react-hooks'],
+  plugins: ['react-hooks', 'jest-dom', 'testing-library'],
   parserOptions: {
     ecmaVersion: 7,
     project: './tsconfig.json',

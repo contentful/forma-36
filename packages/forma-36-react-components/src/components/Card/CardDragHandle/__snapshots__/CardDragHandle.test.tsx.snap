@@ -2,17 +2,27 @@
 
 exports[`renders the component 1`] = `
 <div
-  className="CardDragHandle"
+  class="CardDragHandle"
   data-test-id="cf-ui-card-drag-handle"
 >
-  <Icon
-    color="muted"
-    icon="Drag"
-    size="small"
-    testId="cf-ui-icon"
-  />
+  <svg
+    class="Icon Icon--small Icon--muted"
+    data-test-id="cf-ui-icon"
+    height="24"
+    viewBox="0 0 24 24"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M0 0h24v24H0V0z"
+      fill="none"
+    />
+    <path
+      d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+    />
+  </svg>
   <span
-    className="CardDragHandle__sr-label"
+    class="CardDragHandle__sr-label"
   >
     CardDragHandle
   </span>
@@ -21,17 +31,27 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <div
-  className="CardDragHandle my-extra-class"
+  class="CardDragHandle my-extra-class"
   data-test-id="cf-ui-card-drag-handle"
 >
-  <Icon
-    color="muted"
-    icon="Drag"
-    size="small"
-    testId="cf-ui-icon"
-  />
+  <svg
+    class="Icon Icon--small Icon--muted"
+    data-test-id="cf-ui-icon"
+    height="24"
+    viewBox="0 0 24 24"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M0 0h24v24H0V0z"
+      fill="none"
+    />
+    <path
+      d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+    />
+  </svg>
   <span
-    className="CardDragHandle__sr-label"
+    class="CardDragHandle__sr-label"
   >
     CardDragHandle
   </span>
@@ -40,17 +60,27 @@ exports[`renders the component with an additional class name 1`] = `
 
 exports[`renders the component with isDragActive prop set to true 1`] = `
 <div
-  className="CardDragHandle CardDragHandle--drag-active"
+  class="CardDragHandle CardDragHandle--drag-active"
   data-test-id="cf-ui-card-drag-handle"
 >
-  <Icon
-    color="muted"
-    icon="Drag"
-    size="small"
-    testId="cf-ui-icon"
-  />
+  <svg
+    class="Icon Icon--small Icon--muted"
+    data-test-id="cf-ui-icon"
+    height="24"
+    viewBox="0 0 24 24"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M0 0h24v24H0V0z"
+      fill="none"
+    />
+    <path
+      d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+    />
+  </svg>
   <span
-    className="CardDragHandle__sr-label"
+    class="CardDragHandle__sr-label"
   >
     CardDragHandle
   </span>

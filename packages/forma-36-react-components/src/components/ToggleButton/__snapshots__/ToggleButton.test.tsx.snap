@@ -1,120 +1,120 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
-<Card
-  className="Toggle"
-  padding="none"
-  selected={false}
-  testId="cf-ui-toggle-button"
+<div
+  class="Card Toggle Card--padding-none"
+  data-test-id="cf-ui-toggle-button"
 >
   <button
-    aria-pressed={false}
-    className="Toggle__button"
+    aria-pressed="false"
+    class="Toggle__button"
     data-test-id="button"
-    disabled={false}
-    onClick={[Function]}
     type="button"
   >
-    <TabFocusTrap
-      className="Toggle__button__inner-wrapper"
+    <span
+      class="TabFocusTrap Toggle__button__inner-wrapper"
+      tabindex="-1"
     >
       <span
-        className="Toggle__content-wrapper"
+        class="Toggle__content-wrapper"
       >
         Toggle
       </span>
-    </TabFocusTrap>
+    </span>
   </button>
-</Card>
+</div>
 `;
 
 exports[`renders the component active 1`] = `
-<Card
-  className="Toggle my-extra-class Toggle--active"
-  padding="none"
-  selected={true}
-  testId="cf-ui-toggle-button"
+<div
+  class="Card Toggle my-extra-class Toggle--active Card--padding-none Card--is-selected"
+  data-test-id="cf-ui-toggle-button"
 >
   <button
-    aria-pressed={true}
-    className="Toggle__button"
+    aria-pressed="true"
+    class="Toggle__button"
     data-test-id="button"
-    disabled={false}
-    onClick={[Function]}
     type="button"
   >
-    <TabFocusTrap
-      className="Toggle__button__inner-wrapper"
+    <span
+      class="TabFocusTrap Toggle__button__inner-wrapper"
+      tabindex="-1"
     >
       <span
-        className="Toggle__content-wrapper"
+        class="Toggle__content-wrapper"
       >
         Toggle
       </span>
-    </TabFocusTrap>
+    </span>
   </button>
-</Card>
+</div>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
-<Card
-  className="Toggle my-extra-class"
-  padding="none"
-  selected={false}
-  testId="cf-ui-toggle-button"
+<div
+  class="Card Toggle my-extra-class Card--padding-none"
+  data-test-id="cf-ui-toggle-button"
 >
   <button
-    aria-pressed={false}
-    className="Toggle__button"
+    aria-pressed="false"
+    class="Toggle__button"
     data-test-id="button"
-    disabled={false}
-    onClick={[Function]}
     type="button"
   >
-    <TabFocusTrap
-      className="Toggle__button__inner-wrapper"
+    <span
+      class="TabFocusTrap Toggle__button__inner-wrapper"
+      tabindex="-1"
     >
       <span
-        className="Toggle__content-wrapper"
+        class="Toggle__content-wrapper"
       >
         Toggle
       </span>
-    </TabFocusTrap>
+    </span>
   </button>
-</Card>
+</div>
 `;
 
 exports[`renders the component with icon 1`] = `
-<Card
-  className="Toggle my-extra-class"
-  padding="none"
-  selected={false}
-  testId="cf-ui-toggle-button"
+<div
+  class="Card Toggle my-extra-class Card--padding-none"
+  data-test-id="cf-ui-toggle-button"
 >
   <button
-    aria-pressed={false}
-    className="Toggle__button"
+    aria-pressed="false"
+    class="Toggle__button"
     data-test-id="button"
-    disabled={false}
-    onClick={[Function]}
     type="button"
   >
-    <TabFocusTrap
-      className="Toggle__button__inner-wrapper"
+    <span
+      class="TabFocusTrap Toggle__button__inner-wrapper"
+      tabindex="-1"
     >
-      <Icon
-        className="Toggle__button__icon"
-        color="secondary"
-        icon="Entry"
-        size="small"
-        testId="cf-ui-icon"
-      />
+      <svg
+        class="Icon Icon--small Icon--secondary Toggle__button__icon"
+        data-test-id="cf-ui-icon"
+        height="24"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0h24v24H0V0z"
+          fill="none"
+        />
+        <path
+          d="M8 16h8v2H8zM8 12h8v2H8z"
+        />
+        <path
+          d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"
+        />
+      </svg>
       <span
-        className="Toggle__content-wrapper"
+        class="Toggle__content-wrapper"
       >
         Toggle
       </span>
-    </TabFocusTrap>
+    </span>
   </button>
-</Card>
+</div>
 `;

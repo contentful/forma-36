@@ -1,21 +1,22 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import axe from '../../utils/axeHelper';
 import CheckboxField from './CheckboxField';
 
 it('renders the component', () => {
-  const output = shallow(
+  const { container } = render(
     <CheckboxField id="checkbox" labelText="label text" />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('has no a11y issues', async () => {
-  const output = mount(
+  const { container } = render(
     <CheckboxField id="checkbox" labelText="label text" />,
-  ).html();
-  const results = await axe(output);
+  );
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });

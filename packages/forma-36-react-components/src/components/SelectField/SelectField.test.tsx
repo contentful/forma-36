@@ -1,21 +1,22 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import axe from '../../utils/axeHelper';
 import SelectField from './SelectField';
 import Option from '../Select/Option';
 
 it('renders the component', () => {
-  const output = shallow(
+  const { container } = render(
     <SelectField id="optionSelect" name="optionSelect" labelText="Label">
       <Option value="optionOne">Option 1</Option>
     </SelectField>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component as disabled', () => {
-  const output = shallow(
+  const { container } = render(
     <SelectField
       id="optionSelect"
       name="optionSelect"
@@ -28,21 +29,21 @@ it('renders the component as disabled', () => {
     </SelectField>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component as required', () => {
-  const output = shallow(
+  const { container } = render(
     <SelectField id="optionSelect" name="optionSelect" labelText="Label">
       <Option value="optionOne">Option 1</Option>
     </SelectField>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a validation message', () => {
-  const output = shallow(
+  const { container } = render(
     <SelectField
       id="optionSelect"
       name="optionSelect"
@@ -53,11 +54,11 @@ it('renders the component with a validation message', () => {
     </SelectField>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a help text', () => {
-  const output = shallow(
+  const { container } = render(
     <SelectField
       labelText="Label"
       id="optionSelect"
@@ -68,11 +69,11 @@ it('renders the component with a help text', () => {
     </SelectField>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a value', () => {
-  const output = shallow(
+  const { container } = render(
     <SelectField
       id="optionSelect"
       name="optionSelect"
@@ -83,16 +84,16 @@ it('renders the component with a value', () => {
     </SelectField>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('has no a11y issues', async () => {
-  const output = mount(
+  const { container } = render(
     <SelectField id="optionSelect" name="optionSelect" labelText="Label">
       <Option value="optionOne">Option 1</Option>
     </SelectField>,
-  ).html();
-  const results = await axe(output);
+  );
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });

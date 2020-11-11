@@ -1,12 +1,10 @@
 import * as React from 'react';
-import { render, cleanup, fireEvent } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 
 import '@testing-library/jest-dom/extend-expect';
 import Datepicker from '../src/Datepicker';
 
 describe('Datepicker', () => {
-  afterEach(cleanup);
-
   const build = () => {
     const props = {
       labelText: 'label text',

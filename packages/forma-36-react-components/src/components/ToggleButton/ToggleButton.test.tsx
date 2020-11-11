@@ -1,58 +1,61 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
 import axe from '../../utils/axeHelper';
 import ToggleButton from './ToggleButton';
 
 it('renders the component', () => {
-  const output = shallow(<ToggleButton>Toggle</ToggleButton>);
+  const { container } = render(<ToggleButton>Toggle</ToggleButton>);
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(
+  const { container } = render(
     <ToggleButton className="my-extra-class">Toggle</ToggleButton>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component active', () => {
-  const output = shallow(
+  const { container } = render(
     <ToggleButton className="my-extra-class" isActive>
       Toggle
     </ToggleButton>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with icon', () => {
-  const output = shallow(
+  const { container } = render(
     <ToggleButton className="my-extra-class" icon="Entry">
       Toggle
     </ToggleButton>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('should not dispatch onClick if disabled', () => {
   const mockOnToggle = jest.fn();
 
-  const toggle = shallow(
+  render(
     <ToggleButton className="my-extra-class" icon="Entry" isDisabled>
       Toggle
     </ToggleButton>,
   );
 
-  toggle.simulate('click');
+  const button = screen.getByText('Toggle');
+  userEvent.click(button);
   expect(mockOnToggle).not.toHaveBeenCalled();
 });
 
 it('has no a11y issues', async () => {
-  const output = mount(<ToggleButton>Toggle</ToggleButton>).html();
-  const results = await axe(output);
+  const { container } = render(<ToggleButton>Toggle</ToggleButton>);
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });

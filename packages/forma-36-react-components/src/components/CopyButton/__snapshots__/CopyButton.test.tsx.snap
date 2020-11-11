@@ -2,157 +2,130 @@
 
 exports[`renders the component 1`] = `
 <div
-  className="CopyButton"
+  class="CopyButton"
   data-test-id="cf-ui-copy-button"
   id="copyButton"
 >
-  <CopyToClipboard
-    onCopy={[Function]}
-    text=""
-  >
-    <Tooltip
-      containerElement="span"
-      content={
-        <span>
-          <React.Fragment>
-            Copy to 
-            <br />
-             clipboard
-          </React.Fragment>
-        </span>
-      }
-      isVisible={false}
-      maxWidth={360}
-      place="auto"
-      testId="cf-ui-tooltip"
+  <span>
+    <button
+      class="CopyButton__button"
+      type="button"
     >
-      <button
-        className="CopyButton__button"
-        type="button"
+      <span
+        class="TabFocusTrap CopyButton__TabFocusTrap"
+        tabindex="-1"
       >
-        <TabFocusTrap
-          className="CopyButton__TabFocusTrap"
+        <span
+          class="CopyButton__text"
         >
-          <span
-            className="CopyButton__text"
-          >
-            Copy 
-             to clipboard
-          </span>
-          <Icon
-            color="muted"
-            icon="Copy"
-            size="small"
-            testId="cf-ui-icon"
+          Copy 
+           to clipboard
+        </span>
+        <svg
+          class="Icon Icon--small Icon--muted"
+          data-test-id="cf-ui-icon"
+          height="18"
+          viewBox="0 0 24 24"
+          width="18"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
           />
-        </TabFocusTrap>
-      </button>
-    </Tooltip>
-  </CopyToClipboard>
+          <path
+            d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"
+          />
+        </svg>
+      </span>
+    </button>
+  </span>
 </div>
 `;
 
 exports[`renders the component with a copy value 1`] = `
 <div
-  className="CopyButton"
+  class="CopyButton"
   data-test-id="cf-ui-copy-button"
   id="copyButton"
 >
-  <CopyToClipboard
-    onCopy={[Function]}
-    text="test"
-  >
-    <Tooltip
-      containerElement="span"
-      content={
-        <span>
-          <React.Fragment>
-            Copy to 
-            <br />
-             clipboard
-          </React.Fragment>
-        </span>
-      }
-      isVisible={false}
-      maxWidth={360}
-      place="auto"
-      testId="cf-ui-tooltip"
+  <span>
+    <button
+      class="CopyButton__button"
+      type="button"
     >
-      <button
-        className="CopyButton__button"
-        type="button"
+      <span
+        class="TabFocusTrap CopyButton__TabFocusTrap"
+        tabindex="-1"
       >
-        <TabFocusTrap
-          className="CopyButton__TabFocusTrap"
+        <span
+          class="CopyButton__text"
         >
-          <span
-            className="CopyButton__text"
-          >
-            Copy 
-            test
-             to clipboard
-          </span>
-          <Icon
-            color="muted"
-            icon="Copy"
-            size="small"
-            testId="cf-ui-icon"
+          Copy 
+          test
+           to clipboard
+        </span>
+        <svg
+          class="Icon Icon--small Icon--muted"
+          data-test-id="cf-ui-icon"
+          height="18"
+          viewBox="0 0 24 24"
+          width="18"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
           />
-        </TabFocusTrap>
-      </button>
-    </Tooltip>
-  </CopyToClipboard>
+          <path
+            d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"
+          />
+        </svg>
+      </span>
+    </button>
+  </span>
 </div>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
 <div
-  className="CopyButton my-extra-class"
+  class="CopyButton my-extra-class"
   data-test-id="cf-ui-copy-button"
   id="copyButton"
 >
-  <CopyToClipboard
-    onCopy={[Function]}
-    text=""
-  >
-    <Tooltip
-      containerElement="span"
-      content={
-        <span>
-          <React.Fragment>
-            Copy to 
-            <br />
-             clipboard
-          </React.Fragment>
-        </span>
-      }
-      isVisible={false}
-      maxWidth={360}
-      place="auto"
-      testId="cf-ui-tooltip"
+  <span>
+    <button
+      class="CopyButton__button"
+      type="button"
     >
-      <button
-        className="CopyButton__button"
-        type="button"
+      <span
+        class="TabFocusTrap CopyButton__TabFocusTrap"
+        tabindex="-1"
       >
-        <TabFocusTrap
-          className="CopyButton__TabFocusTrap"
+        <span
+          class="CopyButton__text"
         >
-          <span
-            className="CopyButton__text"
-          >
-            Copy 
-             to clipboard
-          </span>
-          <Icon
-            color="muted"
-            icon="Copy"
-            size="small"
-            testId="cf-ui-icon"
+          Copy 
+           to clipboard
+        </span>
+        <svg
+          class="Icon Icon--small Icon--muted"
+          data-test-id="cf-ui-icon"
+          height="18"
+          viewBox="0 0 24 24"
+          width="18"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
           />
-        </TabFocusTrap>
-      </button>
-    </Tooltip>
-  </CopyToClipboard>
+          <path
+            d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"
+          />
+        </svg>
+      </span>
+    </button>
+  </span>
 </div>
 `;

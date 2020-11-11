@@ -1,317 +1,212 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component as disabled 1`] = `
-<Dropdown
-  getContainerRef={[Function]}
-  isAutoalignmentEnabled={true}
-  isOpen={false}
-  onClose={[Function]}
-  position="bottom-right"
-  testId="cf-ui-card-actions"
-  toggleElement={
-    <IconButton
-      buttonType="secondary"
-      disabled={true}
-      iconProps={
-        Object {
-          "icon": "MoreHorizontal",
-        }
-      }
-      label="Actions"
-      onClick={[Function]}
-      testId="cf-ui-icon-button"
-      withDropdown={false}
-    />
-  }
+<div
+  class="Dropdown"
+  data-test-id="cf-ui-card-actions"
 >
-  <DropdownList
-    key=".0/.$.0/.$.0"
-    onClick={[Function]}
-    testId="cf-ui-dropdown-list"
+  <button
+    aria-expanded="false"
+    aria-haspopup="menu"
+    class="IconButton IconButton--disabled IconButton--secondary"
+    data-test-id="cf-ui-icon-button"
+    disabled=""
+    type="button"
   >
-    <DropdownListItem
-      isActive={false}
-      isDisabled={false}
-      isTitle={false}
-      onClick={[Function]}
-      testId="cf-ui-dropdown-list-item"
+    <span
+      class="TabFocusTrap IconButton__inner"
+      tabindex="-1"
     >
-      Edit
-    </DropdownListItem>
-  </DropdownList>
-</Dropdown>
+      <svg
+        class="Icon Icon--small Icon--primary IconButton__icon"
+        data-test-id="cf-ui-icon"
+        height="18"
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+        <path
+          d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+        />
+      </svg>
+      <span
+        class="IconButton__label"
+      >
+        Actions
+      </span>
+    </span>
+  </button>
+</div>
 `;
 
 exports[`renders the component using a multiple dropdown lists 1`] = `
-<Dropdown
-  getContainerRef={[Function]}
-  isAutoalignmentEnabled={true}
-  isOpen={false}
-  onClose={[Function]}
-  position="bottom-right"
-  testId="cf-ui-card-actions"
-  toggleElement={
-    <IconButton
-      buttonType="secondary"
-      disabled={false}
-      iconProps={
-        Object {
-          "icon": "MoreHorizontal",
-        }
-      }
-      label="Actions"
-      onClick={[Function]}
-      testId="cf-ui-icon-button"
-      withDropdown={false}
-    />
-  }
+<div
+  class="Dropdown"
+  data-test-id="cf-ui-card-actions"
 >
-  <DropdownList
-    key=".0/.$.0/.$.0"
-    onClick={[Function]}
-    testId="cf-ui-dropdown-list"
+  <button
+    aria-expanded="false"
+    aria-haspopup="menu"
+    class="IconButton IconButton--secondary"
+    data-test-id="cf-ui-icon-button"
+    type="button"
   >
-    <DropdownListItem
-      isActive={false}
-      isDisabled={false}
-      isTitle={false}
-      onClick={[Function]}
-      testId="cf-ui-dropdown-list-item"
+    <span
+      class="TabFocusTrap IconButton__inner"
+      tabindex="-1"
     >
-      Edit
-    </DropdownListItem>
-    <DropdownListItem
-      isActive={false}
-      isDisabled={false}
-      isTitle={false}
-      onClick={[Function]}
-      testId="cf-ui-dropdown-list-item"
-    >
-      Download
-    </DropdownListItem>
-    <DropdownListItem
-      isActive={false}
-      isDisabled={false}
-      isTitle={false}
-      onClick={[Function]}
-      testId="cf-ui-dropdown-list-item"
-    >
-      Remove
-    </DropdownListItem>
-  </DropdownList>
-  <DropdownList
-    key=".1/.$.0/.$.0"
-    onClick={[Function]}
-    testId="cf-ui-dropdown-list"
-  >
-    <DropdownListItem
-      isActive={false}
-      isDisabled={false}
-      isTitle={false}
-      onClick={[Function]}
-      testId="cf-ui-dropdown-list-item"
-    >
-      Edit
-    </DropdownListItem>
-    <DropdownListItem
-      isActive={false}
-      isDisabled={false}
-      isTitle={false}
-      onClick={[Function]}
-      testId="cf-ui-dropdown-list-item"
-    >
-      Download
-    </DropdownListItem>
-    <DropdownListItem
-      isActive={false}
-      isDisabled={false}
-      isTitle={false}
-      onClick={[Function]}
-      testId="cf-ui-dropdown-list-item"
-    >
-      Remove
-    </DropdownListItem>
-  </DropdownList>
-</Dropdown>
+      <svg
+        class="Icon Icon--small Icon--primary IconButton__icon"
+        data-test-id="cf-ui-icon"
+        height="18"
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+        <path
+          d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+        />
+      </svg>
+      <span
+        class="IconButton__label"
+      >
+        Actions
+      </span>
+    </span>
+  </button>
+</div>
 `;
 
 exports[`renders the component using a single dropdown list 1`] = `
-<Dropdown
-  getContainerRef={[Function]}
-  isAutoalignmentEnabled={true}
-  isOpen={false}
-  onClose={[Function]}
-  position="bottom-right"
-  testId="cf-ui-card-actions"
-  toggleElement={
-    <IconButton
-      buttonType="secondary"
-      disabled={false}
-      iconProps={
-        Object {
-          "icon": "MoreHorizontal",
-        }
-      }
-      label="Actions"
-      onClick={[Function]}
-      testId="cf-ui-icon-button"
-      withDropdown={false}
-    />
-  }
+<div
+  class="Dropdown"
+  data-test-id="cf-ui-card-actions"
 >
-  <DropdownList
-    key=".0/.$.0/.$.0"
-    onClick={[Function]}
-    testId="cf-ui-dropdown-list"
+  <button
+    aria-expanded="false"
+    aria-haspopup="menu"
+    class="IconButton IconButton--secondary"
+    data-test-id="cf-ui-icon-button"
+    type="button"
   >
-    <DropdownListItem
-      isActive={false}
-      isDisabled={false}
-      isTitle={false}
-      onClick={[Function]}
-      testId="cf-ui-dropdown-list-item"
+    <span
+      class="TabFocusTrap IconButton__inner"
+      tabindex="-1"
     >
-      Edit
-    </DropdownListItem>
-    <DropdownListItem
-      isActive={false}
-      isDisabled={false}
-      isTitle={false}
-      onClick={[Function]}
-      testId="cf-ui-dropdown-list-item"
-    >
-      Download
-    </DropdownListItem>
-    <DropdownListItem
-      isActive={false}
-      isDisabled={false}
-      isTitle={false}
-      onClick={[Function]}
-      testId="cf-ui-dropdown-list-item"
-    >
-      Remove
-    </DropdownListItem>
-  </DropdownList>
-</Dropdown>
+      <svg
+        class="Icon Icon--small Icon--primary IconButton__icon"
+        data-test-id="cf-ui-icon"
+        height="18"
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+        <path
+          d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+        />
+      </svg>
+      <span
+        class="IconButton__label"
+      >
+        Actions
+      </span>
+    </span>
+  </button>
+</div>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
-<Dropdown
-  className="my-extra-class"
-  getContainerRef={[Function]}
-  isAutoalignmentEnabled={true}
-  isOpen={false}
-  onClose={[Function]}
-  position="bottom-right"
-  testId="cf-ui-card-actions"
-  toggleElement={
-    <IconButton
-      buttonType="secondary"
-      disabled={false}
-      iconProps={
-        Object {
-          "icon": "MoreHorizontal",
-        }
-      }
-      label="Actions"
-      onClick={[Function]}
-      testId="cf-ui-icon-button"
-      withDropdown={false}
-    />
-  }
+<div
+  class="Dropdown my-extra-class"
+  data-test-id="cf-ui-card-actions"
 >
-  <DropdownList
-    key=".0/.$.0/.$.0"
-    onClick={[Function]}
-    testId="cf-ui-dropdown-list"
+  <button
+    aria-expanded="false"
+    aria-haspopup="menu"
+    class="IconButton IconButton--secondary"
+    data-test-id="cf-ui-icon-button"
+    type="button"
   >
-    <DropdownListItem
-      isActive={false}
-      isDisabled={false}
-      isTitle={false}
-      onClick={[Function]}
-      testId="cf-ui-dropdown-list-item"
+    <span
+      class="TabFocusTrap IconButton__inner"
+      tabindex="-1"
     >
-      Edit
-    </DropdownListItem>
-    <DropdownListItem
-      isActive={false}
-      isDisabled={false}
-      isTitle={false}
-      onClick={[Function]}
-      testId="cf-ui-dropdown-list-item"
-    >
-      Download
-    </DropdownListItem>
-    <DropdownListItem
-      isActive={false}
-      isDisabled={false}
-      isTitle={false}
-      onClick={[Function]}
-      testId="cf-ui-dropdown-list-item"
-    >
-      Remove
-    </DropdownListItem>
-  </DropdownList>
-</Dropdown>
+      <svg
+        class="Icon Icon--small Icon--primary IconButton__icon"
+        data-test-id="cf-ui-icon"
+        height="18"
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+        <path
+          d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+        />
+      </svg>
+      <span
+        class="IconButton__label"
+      >
+        Actions
+      </span>
+    </span>
+  </button>
+</div>
 `;
 
 exports[`renders the component with published status 1`] = `
-<Dropdown
-  getContainerRef={[Function]}
-  isAutoalignmentEnabled={true}
-  isOpen={false}
-  onClose={[Function]}
-  position="bottom-right"
-  testId="cf-ui-card-actions"
-  toggleElement={
-    <IconButton
-      buttonType="secondary"
-      disabled={false}
-      iconProps={
-        Object {
-          "icon": "MoreHorizontal",
-        }
-      }
-      label="Actions"
-      onClick={[Function]}
-      testId="cf-ui-icon-button"
-      withDropdown={false}
-    />
-  }
+<div
+  class="Dropdown"
+  data-test-id="cf-ui-card-actions"
 >
-  <DropdownList
-    key=".0/.$.0/.$.0"
-    onClick={[Function]}
-    testId="cf-ui-dropdown-list"
+  <button
+    aria-expanded="false"
+    aria-haspopup="menu"
+    class="IconButton IconButton--secondary"
+    data-test-id="cf-ui-icon-button"
+    type="button"
   >
-    <DropdownListItem
-      isActive={false}
-      isDisabled={false}
-      isTitle={false}
-      onClick={[Function]}
-      testId="cf-ui-dropdown-list-item"
+    <span
+      class="TabFocusTrap IconButton__inner"
+      tabindex="-1"
     >
-      Edit
-    </DropdownListItem>
-    <DropdownListItem
-      isActive={false}
-      isDisabled={false}
-      isTitle={false}
-      onClick={[Function]}
-      testId="cf-ui-dropdown-list-item"
-    >
-      Download
-    </DropdownListItem>
-    <DropdownListItem
-      isActive={false}
-      isDisabled={false}
-      isTitle={false}
-      onClick={[Function]}
-      testId="cf-ui-dropdown-list-item"
-    >
-      Remove
-    </DropdownListItem>
-  </DropdownList>
-</Dropdown>
+      <svg
+        class="Icon Icon--small Icon--primary IconButton__icon"
+        data-test-id="cf-ui-icon"
+        height="18"
+        viewBox="0 0 24 24"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+        <path
+          d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+        />
+      </svg>
+      <span
+        class="IconButton__label"
+      >
+        Actions
+      </span>
+    </span>
+  </button>
+</div>
 `;

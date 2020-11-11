@@ -2,18 +2,27 @@
 
 exports[`renders the component with all required props 1`] = `
 <div
-  className="ValidationMessage"
+  class="ValidationMessage"
   data-test-id="cf-ui-validation-message"
 >
-  <Icon
-    className="ValidationMessage__icon"
-    color="negative"
-    icon="ErrorCircle"
-    size="small"
-    testId="cf-ui-icon"
-  />
+  <svg
+    class="Icon Icon--small Icon--negative ValidationMessage__icon"
+    data-test-id="cf-ui-icon"
+    height="18"
+    viewBox="0 0 24 24"
+    width="18"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M0 0h24v24H0z"
+      fill="none"
+    />
+    <path
+      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
+    />
+  </svg>
   <p
-    className="ValidationMessage__text"
+    class="ValidationMessage__text"
   >
     This field is required
   </p>
@@ -22,18 +31,27 @@ exports[`renders the component with all required props 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <div
-  className="ValidationMessage my-extra-class"
+  class="ValidationMessage my-extra-class"
   data-test-id="cf-ui-validation-message"
 >
-  <Icon
-    className="ValidationMessage__icon"
-    color="negative"
-    icon="ErrorCircle"
-    size="small"
-    testId="cf-ui-icon"
-  />
+  <svg
+    class="Icon Icon--small Icon--negative ValidationMessage__icon"
+    data-test-id="cf-ui-icon"
+    height="18"
+    viewBox="0 0 24 24"
+    width="18"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M0 0h24v24H0z"
+      fill="none"
+    />
+    <path
+      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
+    />
+  </svg>
   <p
-    className="ValidationMessage__text"
+    class="ValidationMessage__text"
   >
     This field is required
   </p>

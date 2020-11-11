@@ -2,7 +2,7 @@
 
 exports[`renders the component 1`] = `
 <li
-  className="ListItem"
+  class="ListItem"
   data-test-id="cf-ui-list-item"
 >
   ListItem
@@ -11,7 +11,7 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <li
-  className="ListItem my-extra-class"
+  class="ListItem my-extra-class"
   data-test-id="cf-ui-list-item"
 >
   ListItem

@@ -1,5 +1,6 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import axe from '../../../utils/axeHelper';
 import AssetCard from './AssetCard';
 import DropdownList from '../../Dropdown/DropdownList';
@@ -7,16 +8,16 @@ import DropdownListItem from '../../Dropdown/DropdownListItem';
 import CardDragHandle from './../CardDragHandle';
 
 it('renders the component', () => {
-  const output = shallow(
+  const { container } = render(
     <AssetCard title="picture of a cat" src="http://placekitten.com/200/300">
       AssetCard
     </AssetCard>,
   );
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(
+  const { container } = render(
     <AssetCard
       className="my-extra-class"
       src="http://placekitten.com/200/300"
@@ -24,11 +25,11 @@ it('renders the component with an additional class name', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component in loading state', () => {
-  const output = shallow(
+  const { container } = render(
     <AssetCard
       isLoading
       src="http://placekitten.com/200/300"
@@ -36,11 +37,11 @@ it('renders the component in loading state', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with status', () => {
-  const output = shallow(
+  const { container } = render(
     <AssetCard
       status="archived"
       src="http://placekitten.com/200/300"
@@ -48,11 +49,11 @@ it('renders the component with status', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with actions', () => {
-  const output = shallow(
+  const { container } = render(
     <AssetCard
       dropdownListElements={
         <DropdownList>
@@ -65,20 +66,21 @@ it('renders the component with actions', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component without actions', () => {
-  const output = shallow(
+  const { container } = render(
     <AssetCard src="http://placekitten.com/200/300" title="picture of a cat" />,
   );
+  const dropdown = container.querySelector('[data-test-id="cf-ui-dropdown"]');
 
-  expect(output.find('Dropdown')).toHaveLength(0);
-  expect(output).toMatchSnapshot();
+  expect(dropdown).not.toBeTruthy();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a drag handle', () => {
-  const output = shallow(
+  const { container } = render(
     <AssetCard
       className="my-extra-class"
       src="http://placekitten.com/200/300"
@@ -87,11 +89,11 @@ it('renders the component with a drag handle', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container).toMatchSnapshot();
 });
 
 it('renders the component with a custom drag handle', () => {
-  const output = shallow(
+  const { container } = render(
     <AssetCard
       className="my-extra-class"
       src="http://placekitten.com/200/300"
@@ -100,11 +102,11 @@ it('renders the component with a custom drag handle', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders a small variant of the component', () => {
-  const output = shallow(
+  const { container } = render(
     <AssetCard
       size="small"
       src="http://placekitten.com/200/300"
@@ -112,14 +114,14 @@ it('renders a small variant of the component', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('has no a11y issues', async () => {
-  const output = mount(
+  const { container } = render(
     <AssetCard src="http://placekitten.com/200/300" title="picture of a cat" />,
-  ).html();
-  const results = await axe(output);
+  );
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });

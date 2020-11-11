@@ -2,19 +2,9 @@
 
 exports[`renders the component 1`] = `
 <div
-  className="Grid"
+  class="Grid"
   data-test-id="cf-ui-grid"
-  style={
-    Object {
-      "alignContent": undefined,
-      "flow": undefined,
-      "gridColumnGap": "1rem",
-      "gridRowGap": 0,
-      "gridTemplateColumns": "auto",
-      "gridTemplateRows": "auto",
-      "justifyContent": undefined,
-    }
-  }
+  style="grid-template-columns: auto; grid-template-rows: auto;"
 >
   Grid
 </div>
@@ -22,19 +12,39 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <div
-  className="Grid my-extra-class"
+  class="Grid my-extra-class"
   data-test-id="cf-ui-grid"
-  style={
-    Object {
-      "alignContent": undefined,
-      "flow": undefined,
-      "gridColumnGap": "1rem",
-      "gridRowGap": 0,
-      "gridTemplateColumns": "auto",
-      "gridTemplateRows": "auto",
-      "justifyContent": undefined,
-    }
-  }
+  style="grid-template-columns: auto; grid-template-rows: auto;"
+>
+  Grid
+</div>
+`;
+
+exports[`should have correct styles rowGap should be 0 by default 1`] = `
+<div
+  class="Grid"
+  data-test-id="cf-ui-grid"
+  style="grid-template-columns: auto; grid-template-rows: auto;"
+>
+  Grid
+</div>
+`;
+
+exports[`should have correct styles should has correct numbers of columns 1`] = `
+<div
+  class="Grid"
+  data-test-id="cf-ui-grid"
+  style="grid-template-columns: repeat(12, minmax(0, 1fr); grid-template-rows: auto;"
+>
+  Grid
+</div>
+`;
+
+exports[`should have correct styles should has correct numbers of rows 1`] = `
+<div
+  class="Grid"
+  data-test-id="cf-ui-grid"
+  style="grid-template-columns: auto; grid-template-rows: repeat(12, minmax(0, 1fr);"
 >
   Grid
 </div>

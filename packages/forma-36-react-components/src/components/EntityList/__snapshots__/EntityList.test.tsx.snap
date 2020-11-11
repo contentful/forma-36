@@ -2,49 +2,217 @@
 
 exports[`renders the component 1`] = `
 <ul
-  className="EntityList"
+  class="EntityList"
   data-test-id="cf-ui-entity-list"
 />
 `;
 
 exports[`renders the component with EntityListItems as children 1`] = `
 <ul
-  className="EntityList"
+  class="EntityList"
   data-test-id="cf-ui-entity-list"
 >
-  <EntityListItem
-    contentType="My content type"
-    description="Description 1"
-    entityType="entry"
-    isActionsDisabled={false}
-    testId="cf-ui-entity-list-item"
-    title="Entry 1"
-    withThumbnail={true}
-  />
-  <EntityListItem
-    contentType="My content type"
-    description="Description 2"
-    entityType="entry"
-    isActionsDisabled={false}
-    testId="cf-ui-entity-list-item"
-    title="Entry 2"
-    withThumbnail={true}
-  />
-  <EntityListItem
-    contentType="My content type"
-    description="Description 2"
-    entityType="entry"
-    isActionsDisabled={false}
-    testId="cf-ui-entity-list-item"
-    title="Entry 3"
-    withThumbnail={true}
-  />
+  <li
+    class="EntityListItem"
+    data-test-id="cf-ui-entity-list-item"
+  >
+    <article
+      class="EntityListItem__inner"
+    >
+      <span
+        class="TabFocusTrap EntityListItem__focus-trap"
+        tabindex="-1"
+      >
+        <figure
+          class="EntityListItem__media"
+        >
+          <svg
+            class="Icon Icon--small Icon--muted"
+            data-test-id="cf-ui-icon"
+            height="24"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0V0z"
+              fill="none"
+            />
+            <path
+              d="M8 16h8v2H8zM8 12h8v2H8z"
+            />
+            <path
+              d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"
+            />
+          </svg>
+        </figure>
+        <div
+          class="EntityListItem__content"
+        >
+          <div
+            class="EntityListItem__heading"
+          >
+            <h1
+              class="EntityListItem__title"
+            >
+              Entry 1
+            </h1>
+            <div
+              class="EntityListItem__content-type"
+            >
+              (
+              My content type
+              )
+            </div>
+          </div>
+          <p
+            class="EntityListItem__description"
+          >
+            Description 1
+          </p>
+        </div>
+        <div
+          class="EntityListItem__meta"
+        />
+      </span>
+    </article>
+  </li>
+  <li
+    class="EntityListItem"
+    data-test-id="cf-ui-entity-list-item"
+  >
+    <article
+      class="EntityListItem__inner"
+    >
+      <span
+        class="TabFocusTrap EntityListItem__focus-trap"
+        tabindex="-1"
+      >
+        <figure
+          class="EntityListItem__media"
+        >
+          <svg
+            class="Icon Icon--small Icon--muted"
+            data-test-id="cf-ui-icon"
+            height="24"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0V0z"
+              fill="none"
+            />
+            <path
+              d="M8 16h8v2H8zM8 12h8v2H8z"
+            />
+            <path
+              d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"
+            />
+          </svg>
+        </figure>
+        <div
+          class="EntityListItem__content"
+        >
+          <div
+            class="EntityListItem__heading"
+          >
+            <h1
+              class="EntityListItem__title"
+            >
+              Entry 2
+            </h1>
+            <div
+              class="EntityListItem__content-type"
+            >
+              (
+              My content type
+              )
+            </div>
+          </div>
+          <p
+            class="EntityListItem__description"
+          >
+            Description 2
+          </p>
+        </div>
+        <div
+          class="EntityListItem__meta"
+        />
+      </span>
+    </article>
+  </li>
+  <li
+    class="EntityListItem"
+    data-test-id="cf-ui-entity-list-item"
+  >
+    <article
+      class="EntityListItem__inner"
+    >
+      <span
+        class="TabFocusTrap EntityListItem__focus-trap"
+        tabindex="-1"
+      >
+        <figure
+          class="EntityListItem__media"
+        >
+          <svg
+            class="Icon Icon--small Icon--muted"
+            data-test-id="cf-ui-icon"
+            height="24"
+            viewBox="0 0 24 24"
+            width="24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0V0z"
+              fill="none"
+            />
+            <path
+              d="M8 16h8v2H8zM8 12h8v2H8z"
+            />
+            <path
+              d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"
+            />
+          </svg>
+        </figure>
+        <div
+          class="EntityListItem__content"
+        >
+          <div
+            class="EntityListItem__heading"
+          >
+            <h1
+              class="EntityListItem__title"
+            >
+              Entry 3
+            </h1>
+            <div
+              class="EntityListItem__content-type"
+            >
+              (
+              My content type
+              )
+            </div>
+          </div>
+          <p
+            class="EntityListItem__description"
+          >
+            Description 2
+          </p>
+        </div>
+        <div
+          class="EntityListItem__meta"
+        />
+      </span>
+    </article>
+  </li>
 </ul>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
 <ul
-  className="EntityList my-extra-class"
+  class="EntityList my-extra-class"
   data-test-id="cf-ui-entity-list"
 />
 `;

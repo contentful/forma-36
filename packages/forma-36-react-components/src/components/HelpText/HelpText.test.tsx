@@ -1,25 +1,26 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import axe from '../../utils/axeHelper';
 import HelpText from './HelpText';
 
 it('renders the component', () => {
-  const output = shallow(<HelpText>Lorem Ipsum dolor sit amet</HelpText>);
+  const { container } = render(<HelpText>Lorem Ipsum dolor sit amet</HelpText>);
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(
+  const { container } = render(
     <HelpText className="my-extra-class">Lorem Ipsum dolor sit amet</HelpText>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('has no a11y issues', async () => {
-  const output = mount(<HelpText>Lopem Ipsum dolor sit amet</HelpText>).html();
-  const results = await axe(output);
+  const { container } = render(<HelpText>Lopem Ipsum dolor sit amet</HelpText>);
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });

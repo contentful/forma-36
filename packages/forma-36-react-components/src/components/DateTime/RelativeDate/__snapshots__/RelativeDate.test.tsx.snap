@@ -2,9 +2,9 @@
 
 exports[`renders the component 1`] = `
 <time
-  className="custom--className"
+  class="custom--className"
   data-test-id="custom-testId"
-  dateTime="2020-04-09T16:17:18.912Z"
+  datetime="2020-04-09T16:17:18.912Z"
   title="9 Apr 2020 at 9:17 am"
 >
   a day ago

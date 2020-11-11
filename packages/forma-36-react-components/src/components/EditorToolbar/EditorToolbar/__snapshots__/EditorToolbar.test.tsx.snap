@@ -2,7 +2,7 @@
 
 exports[`renders the component 1`] = `
 <div
-  className="EditorToolbar"
+  class="EditorToolbar"
   data-test-id="cf-ui-editor-toolbar"
 >
   EditorToolbar
@@ -11,7 +11,7 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <div
-  className="EditorToolbar my-extra-class"
+  class="EditorToolbar my-extra-class"
   data-test-id="cf-ui-editor-toolbar"
 >
   EditorToolbar

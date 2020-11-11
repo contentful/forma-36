@@ -144,7 +144,7 @@ Here is the example output of running the `yarn add-documentation` command:
 
 ## Testing
 
-We are using [Jest](https://facebook.github.io/jest/) and [Enzyme](http://airbnb.io/enzyme/) to test our components.
+We are using [Jest](https://facebook.github.io/jest/) and [Testing Library](https://testing-library.com/docs/react-testing-library/intro/) to test our components.
 
 Tests are kept next to their components and use the `.test.js` file extension.
 

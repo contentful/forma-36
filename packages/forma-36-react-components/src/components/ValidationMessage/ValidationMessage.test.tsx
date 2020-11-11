@@ -1,31 +1,32 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import axe from '../../utils/axeHelper';
 import ValidationMessage from './ValidationMessage';
 
 it('renders the component with all required props', () => {
-  const output = shallow(
+  const { container } = render(
     <ValidationMessage>This field is required</ValidationMessage>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(
+  const { container } = render(
     <ValidationMessage className="my-extra-class">
       This field is required
     </ValidationMessage>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('has no a11y issues', async () => {
-  const output = mount(
+  const { container } = render(
     <ValidationMessage>This field is required</ValidationMessage>,
-  ).html();
-  const results = await axe(output);
+  );
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });

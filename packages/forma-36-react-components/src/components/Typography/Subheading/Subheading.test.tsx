@@ -1,31 +1,34 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import axe from '../../../utils/axeHelper';
 import Subheading from './Subheading';
 
 it('renders the component', () => {
-  const output = mount(<Subheading>Subheading</Subheading>);
+  const { container } = render(<Subheading>Subheading</Subheading>);
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = mount(
+  const { container } = render(
     <Subheading className="my-extra-class">Subheading</Subheading>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component h3', () => {
-  const output = mount(<Subheading element="h3">Subheading</Subheading>);
+  const { container } = render(
+    <Subheading element="h3">Subheading</Subheading>,
+  );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('has no a11y issues', async () => {
-  const output = mount(<Subheading>Subheading</Subheading>).html();
-  const results = await axe(output);
+  const { container } = render(<Subheading>Subheading</Subheading>);
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });

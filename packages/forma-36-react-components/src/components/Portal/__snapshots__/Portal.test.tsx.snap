@@ -1,17 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
-<Portal
-  containerInfo={<div />}
->
-  👋
-</Portal>
+<body>
+  <div />
+  <div>
+    👋
+  </div>
+</body>
 `;
 
 exports[`renders the component in a separate container 1`] = `
-<Portal
-  containerInfo={<div />}
->
-  👋
-</Portal>
+<body>
+  <span>
+    <div>
+      👋
+    </div>
+  </span>
+  <div />
+</body>
 `;

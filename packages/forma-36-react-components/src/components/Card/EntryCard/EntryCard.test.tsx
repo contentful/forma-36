@@ -1,5 +1,6 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import axe from '../../../utils/axeHelper';
 import EntryCard from './EntryCard';
 import DropdownList from '../../Dropdown/DropdownList';
@@ -7,7 +8,7 @@ import DropdownListItem from '../../Dropdown/DropdownListItem';
 import CardDragHandle from './../CardDragHandle';
 
 it('renders the component', () => {
-  const output = shallow(
+  const { container } = render(
     <EntryCard
       title="My Entry Card"
       description="This is my Entry Card"
@@ -16,11 +17,11 @@ it('renders the component', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a thumbnail element', () => {
-  const output = shallow(
+  const { container } = render(
     <EntryCard
       title="My Entry Card"
       description="This is my Entry Card"
@@ -35,11 +36,11 @@ it('renders the component with a thumbnail element', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with dropdownListElements', () => {
-  const output = shallow(
+  const { container } = render(
     <EntryCard
       title="My Entry Card"
       description="This is my Entry Card"
@@ -56,11 +57,11 @@ it('renders the component with dropdownListElements', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(
+  const { container } = render(
     <EntryCard
       title="My Entry Card"
       description="This is my Entry Card"
@@ -70,11 +71,11 @@ it('renders the component with an additional class name', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a drag handle', () => {
-  const output = shallow(
+  const { container } = render(
     <EntryCard
       title="My Entry Card"
       description="This is my Entry Card"
@@ -84,11 +85,11 @@ it('renders the component with a drag handle', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a custom drag handle', () => {
-  const output = shallow(
+  const { container } = render(
     <EntryCard
       title="My Entry Card"
       description="This is my Entry Card"
@@ -98,11 +99,11 @@ it('renders the component with a custom drag handle', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders a small sized variant of the component', () => {
-  const output = shallow(
+  const { container } = render(
     <EntryCard
       title="My Entry Card"
       description="This is my Entry Card"
@@ -112,19 +113,19 @@ it('renders a small sized variant of the component', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('has no a11y issues', async () => {
-  const output = mount(
+  const { container } = render(
     <EntryCard
       title="My Entry Card"
       description="This is my Entry Card"
       status="published"
       contentType="My Content Type"
     />,
-  ).html();
-  const results = await axe(output);
+  );
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });

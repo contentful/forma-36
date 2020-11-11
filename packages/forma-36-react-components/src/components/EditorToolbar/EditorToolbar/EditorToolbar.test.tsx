@@ -1,25 +1,26 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import axe from '../../../utils/axeHelper';
 import EditorToolbar from './EditorToolbar';
 
 it('renders the component', () => {
-  const output = shallow(<EditorToolbar>EditorToolbar</EditorToolbar>);
+  const { container } = render(<EditorToolbar>EditorToolbar</EditorToolbar>);
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(
+  const { container } = render(
     <EditorToolbar className="my-extra-class">EditorToolbar</EditorToolbar>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('has no a11y issues', async () => {
-  const output = mount(<EditorToolbar>EditorToolbar</EditorToolbar>).html();
-  const results = await axe(output);
+  const { container } = render(<EditorToolbar>EditorToolbar</EditorToolbar>);
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });

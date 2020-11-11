@@ -1,33 +1,34 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import axe from '../../../utils/axeHelper';
 import SectionHeading from './SectionHeading';
 
 it('renders the component', () => {
-  const output = mount(<SectionHeading>SectionHeading</SectionHeading>);
+  const { container } = render(<SectionHeading>SectionHeading</SectionHeading>);
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = mount(
+  const { container } = render(
     <SectionHeading className="my-extra-class">SectionHeading</SectionHeading>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component h3', () => {
-  const output = mount(
+  const { container } = render(
     <SectionHeading element="h3">SectionHeading</SectionHeading>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('has no a11y issues', async () => {
-  const output = mount(<SectionHeading>SectionHeading</SectionHeading>).html();
-  const results = await axe(output);
+  const { container } = render(<SectionHeading>SectionHeading</SectionHeading>);
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });

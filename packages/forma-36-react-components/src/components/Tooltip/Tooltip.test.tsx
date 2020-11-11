@@ -1,42 +1,44 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
 import axe from '../../utils/axeHelper';
 import Tooltip from './Tooltip';
 
 it('does not render the component if no mouseover event on child', () => {
-  const output = mount(
+  const { container } = render(
     <Tooltip content="Tooltip content">
       <span>Hover me</span>
     </Tooltip>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component', () => {
-  const output = mount(
+  const { container } = render(
     <Tooltip content="Tooltip content">
       <span id="test">Hover me</span>
     </Tooltip>,
   );
 
-  output.find('#test').simulate('mouseover');
-  expect(output).toMatchSnapshot();
+  userEvent.hover(screen.getByText('Hover me'));
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = mount(
+  const { container } = render(
     <Tooltip content="Tooltip content" className="extra-class-name">
       <span id="test">Hover me</span>
     </Tooltip>,
   );
 
-  output.find('#test').simulate('mouseover');
-  expect(output).toMatchSnapshot();
+  userEvent.hover(screen.getByText('Hover me'));
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a target wrapper classname', () => {
-  const output = mount(
+  const { container } = render(
     <Tooltip
       content="Tooltip content"
       targetWrapperClassName="target-wrapper-class-name"
@@ -45,51 +47,51 @@ it('renders the component with a target wrapper classname', () => {
     </Tooltip>,
   );
 
-  output.find('#test').simulate('mouseover');
-  expect(output).toMatchSnapshot();
+  userEvent.hover(screen.getByText('Hover me'));
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a place attribute', () => {
-  const output = mount(
+  const { container } = render(
     <Tooltip content="Tooltip content" place="left">
       <span id="test">Hover me</span>
     </Tooltip>,
   );
 
-  output.find('#test').simulate('mouseover');
-  expect(output).toMatchSnapshot();
+  userEvent.hover(screen.getByText('Hover me'));
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a id attribute', () => {
-  const output = mount(
+  const { container } = render(
     <Tooltip id="Tooltip" content="Tooltip content">
       <span id="test">Hover me</span>
     </Tooltip>,
   );
 
-  output.find('#test').simulate('mouseover');
-  expect(output).toMatchSnapshot();
+  userEvent.hover(screen.getByText('Hover me'));
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component as span with a id attribute', () => {
-  const output = mount(
+  const { container } = render(
     <Tooltip containerElement="span" content="Tooltip content">
       <span id="test">Hover me</span>
     </Tooltip>,
   );
 
-  output.find('#test').simulate('mouseover');
-  expect(output).toMatchSnapshot();
+  userEvent.hover(screen.getByText('Hover me'));
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('has no a11y issues', async () => {
-  const output = mount(
+  const { container } = render(
     <Tooltip id="Tooltip" content="Tooltip content">
       <span>Hover me</span>
     </Tooltip>,
-  ).html();
+  );
 
-  const results = await axe(output);
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });

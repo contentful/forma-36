@@ -1,23 +1,24 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import axe from '../../utils/axeHelper';
 import {{pascalCase name}} from './{{pascalCase name}}';
 
 it('renders the component', () => {
-const output = shallow(<{{pascalCase name}}>{{pascalCase name}}</{{pascalCase name}}>);
+const { container } = render(<{{pascalCase name}}>{{pascalCase name}}</{{pascalCase name}}>);
 
-expect(output).toMatchSnapshot();
+expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-const output = shallow(<{{pascalCase name}} className="my-extra-class">{{pascalCase name}}</{{pascalCase name}}>);
+const { container } = render(<{{pascalCase name}} className="my-extra-class">{{pascalCase name}}</{{pascalCase name}}>);
 
-expect(output).toMatchSnapshot();
+expect(container.firstChild).toMatchSnapshot();
 });
 
 it('has no a11y issues', async () => {
-const output = mount(<{{pascalCase name}}>{{pascalCase name}}</{{pascalCase name}}>).html();
-const results = await axe(output);
+const { container } = mount(<{{pascalCase name}}>{{pascalCase name}}</{{pascalCase name}}>);
+const results = await axe(container);
 
 expect(results).toHaveNoViolations();
 });

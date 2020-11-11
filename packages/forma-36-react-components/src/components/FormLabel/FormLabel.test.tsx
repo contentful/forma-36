@@ -1,49 +1,52 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import axe from '../../utils/axeHelper';
 import FormLabel from './FormLabel';
 
 it('renders the component with all required props', () => {
-  const output = shallow(<FormLabel htmlFor="someInput">Label Text</FormLabel>);
+  const { container } = render(
+    <FormLabel htmlFor="someInput">Label Text</FormLabel>,
+  );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(
+  const { container } = render(
     <FormLabel htmlFor="someInput" className="my-extra-class">
       Label Text
     </FormLabel>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an required flag', () => {
-  const output = shallow(
+  const { container } = render(
     <FormLabel htmlFor="someInput" required>
       Label Text
     </FormLabel>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with required text', () => {
-  const output = shallow(
+  const { container } = render(
     <FormLabel htmlFor="someInput" requiredText="pflichtfeld" required>
       Label Text
     </FormLabel>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('has no a11y issues', async () => {
-  const output = mount(
+  const { container } = render(
     <FormLabel htmlFor="someInput">Label Text</FormLabel>,
-  ).html();
-  const results = await axe(output);
+  );
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });

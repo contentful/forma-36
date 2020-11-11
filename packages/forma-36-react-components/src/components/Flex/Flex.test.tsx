@@ -1,52 +1,53 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+
 import axe from '../../utils/axeHelper';
 import Flex from './Flex';
 
 it('renders the component', () => {
-  const output = shallow(<Flex>Flex</Flex>);
+  const { container } = render(<Flex>Flex</Flex>);
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(<Flex className="my-extra-class">Flex</Flex>);
+  const { container } = render(<Flex className="my-extra-class">Flex</Flex>);
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('has no a11y issues', async () => {
-  const output = mount(<Flex>Flex</Flex>).html();
-  const results = await axe(output);
+  const { container } = render(<Flex>Flex</Flex>);
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });
 
 describe('should have correct styles', () => {
   it('justifyContent should be center by default', () => {
-    const output = shallow(<Flex justifyContent="center">Flex</Flex>);
-    const outputStyles = output.get(0).props.style;
-    expect(outputStyles).toMatchObject({ justifyContent: 'center' });
+    render(<Flex justifyContent="center">Flex</Flex>);
+
+    expect(screen.getByText('Flex')).toHaveStyle({ justifyContent: 'center' });
   });
 
   it('alignItems should be center by default', () => {
-    const output = shallow(<Flex alignItems="center">Flex</Flex>);
-    const outputStyles = output.get(0).props.style;
-    expect(outputStyles).toMatchObject({ alignItems: 'center' });
+    render(<Flex alignItems="center">Flex</Flex>);
+
+    expect(screen.getByText('Flex')).toHaveStyle({ alignItems: 'center' });
   });
 
   it('should render correct margin value', () => {
-    const output = shallow(<Flex marginRight="spacingXs">Flex</Flex>);
-    const outputStyles = output.get(0).props.style;
-    expect(outputStyles).toMatchObject({
+    render(<Flex marginRight="spacingXs">Flex</Flex>);
+
+    expect(screen.getByText('Flex')).toHaveStyle({
       marginRight: '0.5rem',
     });
   });
 
   it('should render correct padding value', () => {
-    const output = shallow(<Flex paddingRight="spacingXs">Flex</Flex>);
-    const outputStyles = output.get(0).props.style;
-    expect(outputStyles).toMatchObject({
+    render(<Flex paddingRight="spacingXs">Flex</Flex>);
+
+    expect(screen.getByText('Flex')).toHaveStyle({
       paddingRight: '0.5rem',
     });
   });

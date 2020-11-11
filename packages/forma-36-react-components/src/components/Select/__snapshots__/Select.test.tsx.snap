@@ -2,193 +2,224 @@
 
 exports[`renders the component 1`] = `
 <div
-  className="Select__wrapper Select--full"
+  class="Select__wrapper Select--full"
 >
   <select
     aria-label="optionSelect"
-    className="Select"
+    class="Select"
     data-test-id="cf-ui-select"
-    disabled={false}
     id="optionSelect"
     name="optionSelect"
-    onChange={[Function]}
-    onKeyDown={[Function]}
-    required={false}
   >
-    <Option
-      testId="cf-ui-select-option"
+    <option
+      data-test-id="cf-ui-select-option"
       value="optionOne"
     >
       Option One
-    </Option>
+    </option>
   </select>
-  <Icon
-    className="Select__icon"
-    color="muted"
-    icon="ArrowDown"
-    size="small"
-    testId="cf-ui-icon"
-  />
+  <svg
+    class="Icon Icon--small Icon--muted Select__icon"
+    data-test-id="cf-ui-icon"
+    height="24"
+    viewBox="0 0 24 24"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M7 10l5 5 5-5z"
+    />
+    <path
+      d="M0 0h24v24H0z"
+      fill="none"
+    />
+  </svg>
 </div>
 `;
 
 exports[`renders the component as required 1`] = `
 <div
-  className="Select__wrapper Select--full"
+  class="Select__wrapper Select--full"
 >
   <select
     aria-label="optionSelect"
-    className="Select"
+    class="Select"
     data-test-id="cf-ui-select"
-    disabled={false}
     id="optionSelect"
     name="optionSelect"
-    onChange={[Function]}
-    onKeyDown={[Function]}
-    required={true}
+    required=""
   >
-    <Option
-      testId="cf-ui-select-option"
+    <option
+      data-test-id="cf-ui-select-option"
       value="optionOne"
     >
       Option One
-    </Option>
+    </option>
   </select>
-  <Icon
-    className="Select__icon"
-    color="muted"
-    icon="ArrowDown"
-    size="small"
-    testId="cf-ui-icon"
-  />
+  <svg
+    class="Icon Icon--small Icon--muted Select__icon"
+    data-test-id="cf-ui-icon"
+    height="24"
+    viewBox="0 0 24 24"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M7 10l5 5 5-5z"
+    />
+    <path
+      d="M0 0h24v24H0z"
+      fill="none"
+    />
+  </svg>
 </div>
 `;
 
 exports[`renders the component in disabled state 1`] = `
 <div
-  className="Select__wrapper Select--full"
+  class="Select__wrapper Select--full"
 >
   <select
     aria-label="optionSelect"
-    className="Select Select--disabled"
+    class="Select Select--disabled"
     data-test-id="cf-ui-select"
-    disabled={true}
+    disabled=""
     id="optionSelect"
     name="optionSelect"
-    onChange={[Function]}
-    onKeyDown={[Function]}
-    required={false}
   >
-    <Option
-      testId="cf-ui-select-option"
+    <option
+      data-test-id="cf-ui-select-option"
       value="optionOne"
     >
       Option One
-    </Option>
+    </option>
   </select>
-  <Icon
-    className="Select__icon"
-    color="muted"
-    icon="ArrowDown"
-    size="small"
-    testId="cf-ui-icon"
-  />
+  <svg
+    class="Icon Icon--small Icon--muted Select__icon"
+    data-test-id="cf-ui-icon"
+    height="24"
+    viewBox="0 0 24 24"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M7 10l5 5 5-5z"
+    />
+    <path
+      d="M0 0h24v24H0z"
+      fill="none"
+    />
+  </svg>
 </div>
 `;
 
 exports[`renders the component with a value 1`] = `
 <div
-  className="Select__wrapper Select--full"
+  class="Select__wrapper Select--full"
 >
   <select
     aria-label="optionSelect"
-    className="Select"
+    class="Select"
     data-test-id="cf-ui-select"
-    disabled={false}
     id="optionSelect"
     name="optionSelect"
-    onChange={[Function]}
-    onKeyDown={[Function]}
-    required={false}
-    value="value1"
   >
-    <Option
-      testId="cf-ui-select-option"
+    <option
+      data-test-id="cf-ui-select-option"
       value="optionOne"
     >
       Option One
-    </Option>
+    </option>
   </select>
-  <Icon
-    className="Select__icon"
-    color="muted"
-    icon="ArrowDown"
-    size="small"
-    testId="cf-ui-icon"
-  />
+  <svg
+    class="Icon Icon--small Icon--muted Select__icon"
+    data-test-id="cf-ui-icon"
+    height="24"
+    viewBox="0 0 24 24"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M7 10l5 5 5-5z"
+    />
+    <path
+      d="M0 0h24v24H0z"
+      fill="none"
+    />
+  </svg>
 </div>
 `;
 
 exports[`renders the component with an extra class name 1`] = `
 <div
-  className="Select__wrapper Select--full extraClassName"
+  class="Select__wrapper Select--full extraClassName"
 >
   <select
     aria-label="optionSelect"
-    className="Select"
+    class="Select"
     data-test-id="cf-ui-select"
-    disabled={false}
     id="optionSelect"
     name="optionSelect"
-    onChange={[Function]}
-    onKeyDown={[Function]}
-    required={false}
   >
-    <Option
-      testId="cf-ui-select-option"
+    <option
+      data-test-id="cf-ui-select-option"
       value="optionOne"
     >
       Option One
-    </Option>
+    </option>
   </select>
-  <Icon
-    className="Select__icon"
-    color="muted"
-    icon="ArrowDown"
-    size="small"
-    testId="cf-ui-icon"
-  />
+  <svg
+    class="Icon Icon--small Icon--muted Select__icon"
+    data-test-id="cf-ui-icon"
+    height="24"
+    viewBox="0 0 24 24"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M7 10l5 5 5-5z"
+    />
+    <path
+      d="M0 0h24v24H0z"
+      fill="none"
+    />
+  </svg>
 </div>
 `;
 
 exports[`renders the component with error 1`] = `
 <div
-  className="Select__wrapper Select--full"
+  class="Select__wrapper Select--full"
 >
   <select
     aria-label="optionSelect"
-    className="Select Select--negative"
+    class="Select Select--negative"
     data-test-id="cf-ui-select"
-    disabled={false}
     id="optionSelect"
     name="optionSelect"
-    onChange={[Function]}
-    onKeyDown={[Function]}
-    required={false}
   >
-    <Option
-      testId="cf-ui-select-option"
+    <option
+      data-test-id="cf-ui-select-option"
       value="optionOne"
     >
       Option One
-    </Option>
+    </option>
   </select>
-  <Icon
-    className="Select__icon"
-    color="muted"
-    icon="ArrowDown"
-    size="small"
-    testId="cf-ui-icon"
-  />
+  <svg
+    class="Icon Icon--small Icon--muted Select__icon"
+    data-test-id="cf-ui-icon"
+    height="24"
+    viewBox="0 0 24 24"
+    width="24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M7 10l5 5 5-5z"
+    />
+    <path
+      d="M0 0h24v24H0z"
+      fill="none"
+    />
+  </svg>
 </div>
 `;

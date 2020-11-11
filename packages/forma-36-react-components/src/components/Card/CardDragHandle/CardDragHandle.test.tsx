@@ -1,33 +1,34 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import axe from '../../../utils/axeHelper';
 import CardDragHandle from './CardDragHandle';
 
 it('renders the component', () => {
-  const output = shallow(<CardDragHandle>CardDragHandle</CardDragHandle>);
+  const { container } = render(<CardDragHandle>CardDragHandle</CardDragHandle>);
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(
+  const { container } = render(
     <CardDragHandle className="my-extra-class">CardDragHandle</CardDragHandle>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with isDragActive prop set to true', () => {
-  const output = shallow(
+  const { container } = render(
     <CardDragHandle isDragActive>CardDragHandle</CardDragHandle>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('has no a11y issues', async () => {
-  const output = mount(<CardDragHandle>CardDragHandle</CardDragHandle>).html();
-  const results = await axe(output);
+  const { container } = render(<CardDragHandle>CardDragHandle</CardDragHandle>);
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });

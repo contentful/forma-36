@@ -1,29 +1,31 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import React from 'react';
+import { render } from '@testing-library/react';
 import { mount } from 'enzyme';
+
 import axe from '../../utils/axeHelper';
 import { InViewport } from './InViewport';
 import TextLink from '../TextLink';
 
 it('renders the component', () => {
-  const output = mount(
+  const { container } = render(
     <InViewport>
       <TextLink>Some Link</TextLink>
     </InViewport>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = mount(
+  const { container } = render(
     <InViewport className="my-extra-class">
       <TextLink>Some Link</TextLink>
     </InViewport>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('dispatches onOverflowTop', () => {
@@ -151,12 +153,12 @@ it('does not dispatch onOverflowBottom', () => {
 });
 
 it('has no a11y issues', async () => {
-  const output = mount(
+  const { container } = render(
     <InViewport>
       <TextLink>Some Link</TextLink>
     </InViewport>,
-  ).html();
-  const results = await axe(output);
+  );
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });

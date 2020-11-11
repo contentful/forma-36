@@ -1,39 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders a small sized variant of the component 1`] = `
-<Card
-  className="EntryCard EntryCard--size-small"
-  padding="none"
-  selected={false}
-  testId="cf-ui-entry-card"
+<div
+  class="Card EntryCard EntryCard--size-small Card--padding-none"
+  data-test-id="cf-ui-entry-card"
 >
   <article
-    className="EntryCard__wrapper"
+    class="EntryCard__wrapper"
   >
     <div
-      className="EntryCard__meta"
+      class="EntryCard__meta"
     >
       <div
-        className="EntryCard__content-type"
+        class="EntryCard__content-type"
         data-test-id="content-type"
       >
         My Content Type
       </div>
-      <Tag
-        tagType="positive"
-        testId="cf-ui-tag"
+      <div
+        class="Tag Tag--positive"
+        data-test-id="cf-ui-tag"
       >
         published
-      </Tag>
+      </div>
     </div>
     <div
-      className="EntryCard__content"
+      class="EntryCard__content"
     >
       <div
-        className="EntryCard__body"
+        class="EntryCard__body"
       >
         <h1
-          className="EntryCard__title"
+          class="EntryCard__title"
           data-test-id="title"
           title=""
         >
@@ -42,218 +40,250 @@ exports[`renders a small sized variant of the component 1`] = `
       </div>
     </div>
   </article>
-</Card>
+</div>
 `;
 
 exports[`renders the component 1`] = `
-<Card
-  className="EntryCard EntryCard--size-default"
-  padding="none"
-  selected={false}
-  testId="cf-ui-entry-card"
+<div
+  class="Card EntryCard EntryCard--size-default Card--padding-none"
+  data-test-id="cf-ui-entry-card"
 >
   <article
-    className="EntryCard__wrapper"
+    class="EntryCard__wrapper"
   >
     <div
-      className="EntryCard__meta"
+      class="EntryCard__meta"
     >
       <div
-        className="EntryCard__content-type"
+        class="EntryCard__content-type"
         data-test-id="content-type"
       >
         My Content Type
       </div>
-      <Tag
-        tagType="positive"
-        testId="cf-ui-tag"
+      <div
+        class="Tag Tag--positive"
+        data-test-id="cf-ui-tag"
       >
         published
-      </Tag>
+      </div>
     </div>
     <div
-      className="EntryCard__content"
+      class="EntryCard__content"
     >
       <div
-        className="EntryCard__body"
+        class="EntryCard__body"
       >
         <h1
-          className="EntryCard__title"
+          class="EntryCard__title"
           data-test-id="title"
           title=""
         >
           My Entry Card
         </h1>
         <p
-          className="EntryCard__description"
+          class="EntryCard__description"
         >
           This is my Entry Card
         </p>
       </div>
     </div>
   </article>
-</Card>
+</div>
 `;
 
 exports[`renders the component with a custom drag handle 1`] = `
-<Card
-  className="EntryCard EntryCard--size-default"
-  padding="none"
-  selected={false}
-  testId="cf-ui-entry-card"
+<div
+  class="Card EntryCard EntryCard--size-default Card--padding-none"
+  data-test-id="cf-ui-entry-card"
 >
-  <CardDragHandle
-    isDragActive={false}
-    testId="cf-ui-card-drag-handle"
+  <div
+    class="CardDragHandle"
+    data-test-id="cf-ui-card-drag-handle"
   >
-    Reorder card
-  </CardDragHandle>
+    <svg
+      class="Icon Icon--small Icon--muted"
+      data-test-id="cf-ui-icon"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 0h24v24H0V0z"
+        fill="none"
+      />
+      <path
+        d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+      />
+    </svg>
+    <span
+      class="CardDragHandle__sr-label"
+    >
+      Reorder card
+    </span>
+  </div>
   <article
-    className="EntryCard__wrapper"
+    class="EntryCard__wrapper"
   >
     <div
-      className="EntryCard__meta"
+      class="EntryCard__meta"
     >
       <div
-        className="EntryCard__content-type"
+        class="EntryCard__content-type"
         data-test-id="content-type"
       >
         My Content Type
       </div>
-      <Tag
-        tagType="positive"
-        testId="cf-ui-tag"
+      <div
+        class="Tag Tag--positive"
+        data-test-id="cf-ui-tag"
       >
         published
-      </Tag>
+      </div>
     </div>
     <div
-      className="EntryCard__content"
+      class="EntryCard__content"
     >
       <div
-        className="EntryCard__body"
+        class="EntryCard__body"
       >
         <h1
-          className="EntryCard__title"
+          class="EntryCard__title"
           data-test-id="title"
           title=""
         >
           My Entry Card
         </h1>
         <p
-          className="EntryCard__description"
+          class="EntryCard__description"
         >
           This is my Entry Card
         </p>
       </div>
     </div>
   </article>
-</Card>
+</div>
 `;
 
 exports[`renders the component with a drag handle 1`] = `
-<Card
-  className="EntryCard EntryCard--size-default"
-  padding="none"
-  selected={false}
-  testId="cf-ui-entry-card"
+<div
+  class="Card EntryCard EntryCard--size-default Card--padding-none"
+  data-test-id="cf-ui-entry-card"
 >
-  <CardDragHandle
-    isDragActive={false}
-    testId="cf-ui-card-drag-handle"
+  <div
+    class="CardDragHandle"
+    data-test-id="cf-ui-card-drag-handle"
   >
-    Reorder entry
-  </CardDragHandle>
+    <svg
+      class="Icon Icon--small Icon--muted"
+      data-test-id="cf-ui-icon"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 0h24v24H0V0z"
+        fill="none"
+      />
+      <path
+        d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+      />
+    </svg>
+    <span
+      class="CardDragHandle__sr-label"
+    >
+      Reorder entry
+    </span>
+  </div>
   <article
-    className="EntryCard__wrapper"
+    class="EntryCard__wrapper"
   >
     <div
-      className="EntryCard__meta"
+      class="EntryCard__meta"
     >
       <div
-        className="EntryCard__content-type"
+        class="EntryCard__content-type"
         data-test-id="content-type"
       >
         My Content Type
       </div>
-      <Tag
-        tagType="positive"
-        testId="cf-ui-tag"
+      <div
+        class="Tag Tag--positive"
+        data-test-id="cf-ui-tag"
       >
         published
-      </Tag>
+      </div>
     </div>
     <div
-      className="EntryCard__content"
+      class="EntryCard__content"
     >
       <div
-        className="EntryCard__body"
+        class="EntryCard__body"
       >
         <h1
-          className="EntryCard__title"
+          class="EntryCard__title"
           data-test-id="title"
           title=""
         >
           My Entry Card
         </h1>
         <p
-          className="EntryCard__description"
+          class="EntryCard__description"
         >
           This is my Entry Card
         </p>
       </div>
     </div>
   </article>
-</Card>
+</div>
 `;
 
 exports[`renders the component with a thumbnail element 1`] = `
-<Card
-  className="EntryCard EntryCard--size-default"
-  padding="none"
-  selected={false}
-  testId="cf-ui-entry-card"
+<div
+  class="Card EntryCard EntryCard--size-default Card--padding-none"
+  data-test-id="cf-ui-entry-card"
 >
   <article
-    className="EntryCard__wrapper"
+    class="EntryCard__wrapper"
   >
     <div
-      className="EntryCard__meta"
+      class="EntryCard__meta"
     >
       <div
-        className="EntryCard__content-type"
+        class="EntryCard__content-type"
         data-test-id="content-type"
       >
         My Content Type
       </div>
-      <Tag
-        tagType="positive"
-        testId="cf-ui-tag"
+      <div
+        class="Tag Tag--positive"
+        data-test-id="cf-ui-tag"
       >
         published
-      </Tag>
+      </div>
     </div>
     <div
-      className="EntryCard__content"
+      class="EntryCard__content"
     >
       <div
-        className="EntryCard__body"
+        class="EntryCard__body"
       >
         <h1
-          className="EntryCard__title"
+          class="EntryCard__title"
           data-test-id="title"
           title=""
         >
           My Entry Card
         </h1>
         <p
-          className="EntryCard__description"
+          class="EntryCard__description"
         >
           This is my Entry Card
         </p>
       </div>
       <figure
-        className="EntryCard__thumbnail"
+        class="EntryCard__thumbnail"
       >
         <img
           alt="Joy Division - Closer album cover"
@@ -262,155 +292,140 @@ exports[`renders the component with a thumbnail element 1`] = `
       </figure>
     </div>
   </article>
-</Card>
+</div>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
-<Card
-  className="EntryCard EntryCard--size-default my-extra-class"
-  padding="none"
-  selected={false}
-  testId="cf-ui-entry-card"
+<div
+  class="Card EntryCard EntryCard--size-default my-extra-class Card--padding-none"
+  data-test-id="cf-ui-entry-card"
 >
   <article
-    className="EntryCard__wrapper"
+    class="EntryCard__wrapper"
   >
     <div
-      className="EntryCard__meta"
+      class="EntryCard__meta"
     >
       <div
-        className="EntryCard__content-type"
+        class="EntryCard__content-type"
         data-test-id="content-type"
       >
         My Content Type
       </div>
-      <Tag
-        tagType="positive"
-        testId="cf-ui-tag"
+      <div
+        class="Tag Tag--positive"
+        data-test-id="cf-ui-tag"
       >
         published
-      </Tag>
+      </div>
     </div>
     <div
-      className="EntryCard__content"
+      class="EntryCard__content"
     >
       <div
-        className="EntryCard__body"
+        class="EntryCard__body"
       >
         <h1
-          className="EntryCard__title"
+          class="EntryCard__title"
           data-test-id="title"
           title=""
         >
           My Entry Card
         </h1>
         <p
-          className="EntryCard__description"
+          class="EntryCard__description"
         >
           This is my Entry Card
         </p>
       </div>
     </div>
   </article>
-</Card>
+</div>
 `;
 
 exports[`renders the component with dropdownListElements 1`] = `
-<Card
-  className="EntryCard EntryCard--size-default"
-  padding="none"
-  selected={false}
-  testId="cf-ui-entry-card"
+<div
+  class="Card EntryCard EntryCard--size-default Card--padding-none"
+  data-test-id="cf-ui-entry-card"
 >
   <article
-    className="EntryCard__wrapper"
+    class="EntryCard__wrapper"
   >
     <div
-      className="EntryCard__meta"
+      class="EntryCard__meta"
     >
       <div
-        className="EntryCard__content-type"
+        class="EntryCard__content-type"
         data-test-id="content-type"
       >
         My Content Type
       </div>
-      <Tag
-        tagType="positive"
-        testId="cf-ui-tag"
+      <div
+        class="Tag Tag--positive"
+        data-test-id="cf-ui-tag"
       >
         published
-      </Tag>
-      <CardActions
-        className="EntryCard__actions"
-        iconButtonProps={
-          Object {
-            "onClick": [Function],
-          }
-        }
-        isDisabled={false}
-        testId="cf-ui-card-actions"
+      </div>
+      <div
+        class="Dropdown EntryCard__actions"
+        data-test-id="cf-ui-card-actions"
       >
-        <DropdownList
-          testId="cf-ui-dropdown-list"
+        <button
+          aria-expanded="false"
+          aria-haspopup="menu"
+          class="IconButton IconButton--secondary"
+          data-test-id="cf-ui-icon-button"
+          type="button"
         >
-          <DropdownListItem
-            isActive={false}
-            isDisabled={false}
-            isTitle={true}
-            testId="cf-ui-dropdown-list-item"
+          <span
+            class="TabFocusTrap IconButton__inner"
+            tabindex="-1"
           >
-            Actions
-          </DropdownListItem>
-          <DropdownListItem
-            isActive={false}
-            isDisabled={false}
-            isTitle={false}
-            onClick={[Function]}
-            testId="cf-ui-dropdown-list-item"
-          >
-            Edit
-          </DropdownListItem>
-          <DropdownListItem
-            isActive={false}
-            isDisabled={false}
-            isTitle={false}
-            onClick={[Function]}
-            testId="cf-ui-dropdown-list-item"
-          >
-            Download
-          </DropdownListItem>
-          <DropdownListItem
-            isActive={false}
-            isDisabled={false}
-            isTitle={false}
-            onClick={[Function]}
-            testId="cf-ui-dropdown-list-item"
-          >
-            Remove
-          </DropdownListItem>
-        </DropdownList>
-      </CardActions>
+            <svg
+              class="Icon Icon--small Icon--primary IconButton__icon"
+              data-test-id="cf-ui-icon"
+              height="18"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+              />
+              <path
+                d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+              />
+            </svg>
+            <span
+              class="IconButton__label"
+            >
+              Actions
+            </span>
+          </span>
+        </button>
+      </div>
     </div>
     <div
-      className="EntryCard__content"
+      class="EntryCard__content"
     >
       <div
-        className="EntryCard__body"
+        class="EntryCard__body"
       >
         <h1
-          className="EntryCard__title"
+          class="EntryCard__title"
           data-test-id="title"
           title=""
         >
           My Entry Card
         </h1>
         <p
-          className="EntryCard__description"
+          class="EntryCard__description"
         >
           This is my Entry Card
         </p>
       </div>
     </div>
   </article>
-</Card>
+</div>
 `;

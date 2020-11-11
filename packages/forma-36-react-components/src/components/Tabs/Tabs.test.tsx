@@ -1,12 +1,13 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import axe from '../../utils/axeHelper';
 import Tabs from './Tabs';
 import Tab from './Tab';
 import TabPanel from './TabPanel';
 
 it('renders the component', () => {
-  const output = mount(
+  const { container } = render(
     <React.Fragment>
       <Tabs>
         <Tab id="first">First</Tab>
@@ -19,11 +20,11 @@ it('renders the component', () => {
     </React.Fragment>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with role=navigation and an additional class name', () => {
-  const output = mount(
+  const { container } = render(
     <Tabs role="navigation" className="my-extra-class">
       <Tab href="/first-link" id="first">
         First
@@ -37,11 +38,11 @@ it('renders the component with role=navigation and an additional class name', ()
     </Tabs>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component the first tab disbaled', () => {
-  const output = mount(
+  const { container } = render(
     <Tabs role="navigation" className="my-extra-class">
       <Tab href="/first-link" id="first" disabled>
         First
@@ -55,11 +56,11 @@ it('renders the component the first tab disbaled', () => {
     </Tabs>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('has no a11y issues', async () => {
-  const output = mount(
+  const { container } = render(
     <div>
       <Tabs>
         <Tab id="first">First</Tab>
@@ -70,9 +71,9 @@ it('has no a11y issues', async () => {
       <TabPanel id="second">content second panel</TabPanel>
       <TabPanel id="third">content third panel</TabPanel>
     </div>,
-  ).html();
+  );
 
-  const output2 = mount(
+  const { container: container2 } = render(
     <Tabs role="navigation">
       <Tab href="/first-link" id="first">
         First
@@ -84,7 +85,7 @@ it('has no a11y issues', async () => {
         Third
       </Tab>
     </Tabs>,
-  ).html();
-  expect(await axe(output)).toHaveNoViolations();
-  expect(await axe(output2)).toHaveNoViolations();
+  );
+  expect(await axe(container)).toHaveNoViolations();
+  expect(await axe(container2)).toHaveNoViolations();
 });
