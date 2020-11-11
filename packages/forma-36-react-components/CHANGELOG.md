@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.65.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.64.4...@contentful/forma-36-react-components@3.65.0) (2020-11-11)
+
+
+### Features
+
+* **autocomplete:** pass through nonClosingRefs to dropdown ([7868e62](https://github.com/contentful/forma-36/commit/7868e62a27cb94e6becf276daa7a1d0c04c77df7))
+* **dropdown:** ability to exclude elements from closing the dropdow ([55b4565](https://github.com/contentful/forma-36/commit/55b4565bd72758595ba6317cedf05e13b48c6cc4))
+
+
+
+
+
 ## [3.64.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.64.3...@contentful/forma-36-react-components@3.64.4) (2020-11-09)
 
 
