@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useRef } from 'react';
+import React, { forwardRef, useEffect, useRef, RefObject } from 'react';
 import cn from 'classnames';
 
 import { useOnClickOutside } from '../../../utils/useOnClickOutside';
@@ -11,6 +11,7 @@ export interface DropdownContainerProps
   children?: React.ReactNode;
   className?: string;
   getRef?: (ref: HTMLElement | null) => void;
+  nonClosingRefs?: RefObject<HTMLElement>[];
   isOpen: boolean;
   onClose?: Function;
   openSubmenu?: (value: boolean) => void;
@@ -36,6 +37,7 @@ export const DropdownContainer = forwardRef<
     submenu,
     testId,
     usePortal,
+    nonClosingRefs,
     ...props
   },
   refCallback,
@@ -47,8 +49,9 @@ export const DropdownContainer = forwardRef<
   >;
   const dropdown = useRef<HTMLDivElement | null>(null);
   const classNames = cn(className, styles['DropdownContainer']);
+  const clickableRefs = [dropdown, ...(nonClosingRefs || [])];
 
-  useOnClickOutside(dropdown, (event) => {
+  useOnClickOutside(clickableRefs, (event) => {
     if (isOpen && onClose) {
       event.stopImmediatePropagation();
 
