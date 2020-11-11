@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { RefObject, useCallback, useEffect, useState } from 'react';
 import cn from 'classnames';
 import { usePopper } from 'react-popper';
 import { Modifier, Placement, State as PopperState } from '@popperjs/core';
@@ -125,6 +125,13 @@ export interface DropdownProps {
    * Defaults to `true`
    */
   usePortal?: boolean;
+  /**
+   * By passing down references from upstream components as part of this array,
+   * you will be able to disable automatic closing of the dropdown if you click
+   * somewhere else in the document besides the dropdown itself. See the
+   * Autocomplete component for an actual example of this usage.
+   */
+  nonClosingRefs?: RefObject<HTMLElement>[];
 }
 
 export function Dropdown({
@@ -141,6 +148,7 @@ export function Dropdown({
   testId,
   toggleElement,
   usePortal,
+  nonClosingRefs,
   ...otherProps
 }: DropdownProps) {
   const [referenceElement, setReferenceElement] = useState<HTMLElement | null>(
@@ -238,6 +246,7 @@ export function Dropdown({
         })}
       {isOpen && (
         <DropdownContainer
+          nonClosingRefs={nonClosingRefs}
           className={dropdownContainerClassName}
           getRef={getContainerRef}
           isOpen={isOpen}
@@ -269,6 +278,7 @@ export function Dropdown({
 
       {isOpen && (
         <DropdownContainer
+          nonClosingRefs={nonClosingRefs}
           className={dropdownContainerClassName}
           getRef={getContainerRef}
           isOpen={isOpen}

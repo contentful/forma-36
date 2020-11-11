@@ -118,10 +118,8 @@ export const Autocomplete = <T extends {}>({
   dropdownProps,
   renderToggleElement,
 }: AutocompleteProps<T>) => {
-  const listRef: React.MutableRefObject<HTMLDivElement | undefined> = useRef();
-  const inputRef: React.MutableRefObject<
-    HTMLInputElement | undefined
-  > = useRef();
+  const listRef = useRef<HTMLDivElement | null>(null);
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
   const [{ isOpen, query, highlightedItemIndex }, dispatch] = useReducer(
     reducer,
@@ -236,13 +234,12 @@ export const Autocomplete = <T extends {}>({
 
   return (
     <Dropdown
+      nonClosingRefs={[inputRef]}
       className={dropdownClassNames}
       isOpen={isOpen}
       onClose={() => {
-        if (inputRef.current !== document.activeElement) {
-          willClearQueryOnClose && updateQuery('');
-          dispatch({ type: TOGGLED_LIST, payload: false });
-        }
+        willClearQueryOnClose && updateQuery('');
+        dispatch({ type: TOGGLED_LIST, payload: false });
       }}
       toggleElement={renderToggleElementFunction(toggleProps)}
       {...dropdownProps}

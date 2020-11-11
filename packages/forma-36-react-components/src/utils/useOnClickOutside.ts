@@ -1,14 +1,14 @@
-import { useEffect, useRef } from 'react';
+import { RefObject, useEffect, useRef } from 'react';
 
 /**
  * Runs the given handler when a click event is fired outside the HTMLElement
  * the given RefObject points to.
  *
- * @param ref - RefObject pointing to a HTMLElement to track clicks outside
+ * @param refs - RefObject[] pointing to a HTMLElement to track clicks outside
  * @param handler - Event handler to run on click outside
  */
 export function useOnClickOutside(
-  ref: React.RefObject<HTMLElement>,
+  refs: React.RefObject<HTMLElement>[],
   handler: (event: MouseEvent) => void | null,
 ) {
   const noHandler = !handler;
@@ -19,11 +19,12 @@ export function useOnClickOutside(
       return;
     }
 
+    const refContains = (ref:RefObject<HTMLElement>, node: Node) =>
+      ref.current && ref.current.contains(node)
     const listener = (event: MouseEvent) => {
       if (
-        !ref.current ||
         !handlerRef.current ||
-        ref.current.contains(event.target as Node)
+        refs.some((ref) => refContains(ref, event.target as Node))
       ) {
         return;
       }
@@ -36,5 +37,5 @@ export function useOnClickOutside(
     return () => {
       document.removeEventListener('click', listener, {});
     };
-  }, [noHandler, ref]);
+  }, [noHandler, refs]);
 }
