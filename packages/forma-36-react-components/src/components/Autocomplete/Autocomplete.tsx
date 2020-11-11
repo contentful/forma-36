@@ -228,13 +228,13 @@ export const Autocomplete = <T extends {}>({
     onToggle: handleInputButtonClick,
     inputRef: inputRef as React.RefObject<HTMLInputElement>,
   };
-
+  const { nonClosingRefs, ...otherDropdownProps } = dropdownProps ?? {};
   const renderToggleElementFunction =
     renderToggleElement || renderDefaultToggleElement;
 
   return (
     <Dropdown
-      nonClosingRefs={[inputRef]}
+      nonClosingRefs={[inputRef, ...(nonClosingRefs || [])]}
       className={dropdownClassNames}
       isOpen={isOpen}
       onClose={() => {
@@ -242,7 +242,7 @@ export const Autocomplete = <T extends {}>({
         dispatch({ type: TOGGLED_LIST, payload: false });
       }}
       toggleElement={renderToggleElementFunction(toggleProps)}
-      {...dropdownProps}
+      {...otherDropdownProps}
     >
       <DropdownList testId="autocomplete.dropdown-list" maxHeight={maxHeight}>
         <div ref={listRef as React.RefObject<HTMLDivElement>}>
