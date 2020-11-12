@@ -25,9 +25,9 @@ it('has no a11y issues', async () => {
 
 describe('should have correct styles', () => {
   it('rowGap should be 0 by default', () => {
-    const { debug } = render(<Grid>Grid</Grid>);
+    render(<Grid>Grid</Grid>);
     const element = screen.getByText('Grid');
-    debug();
+
     expect(element).toMatchSnapshot();
     expect(screen.getByText('Grid')).toHaveStyle({ rowGap: 0 });
   });
