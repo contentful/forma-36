@@ -29,14 +29,14 @@ describe('should have correct styles', () => {
     const element = screen.getByText('Grid');
     debug();
     expect(element).toMatchSnapshot();
-    expect(screen.getByText('Grid')).toHaveStyle({ gridRowGap: 0 });
+    expect(screen.getByText('Grid')).toHaveStyle({ rowGap: 0 });
   });
 
   it('columnGap should be 1rem by default', () => {
     render(<Grid>Grid</Grid>);
     const element = screen.getByText('Grid');
 
-    expect(screen.getByText('Grid')).toHaveStyle({ gridColumnGap: '1rem' });
+    expect(screen.getByText('Grid')).toHaveStyle({ columnGap: '1rem' });
     expect(element).toMatchSnapshot();
   });
 
