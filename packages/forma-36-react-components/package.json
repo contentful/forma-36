@@ -55,6 +55,7 @@
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "babel-plugin-typescript-to-proptypes": "0.17.1",
     "css-loader": "^1.0.1",
+    "csstype": "^3.0.2",
     "cz-conventional-changelog": "^2.1.0",
     "eslint": "5.16.0",
     "eslint-config-dev": "2.0.0",
