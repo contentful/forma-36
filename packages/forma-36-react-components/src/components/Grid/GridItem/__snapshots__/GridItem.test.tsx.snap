@@ -2,12 +2,7 @@
 
 exports[`renders the component 1`] = `
 <div
-  style={
-    Object {
-      "gridArea": "auto / auto / auto / auto",
-      "order": undefined,
-    }
-  }
+  style="grid-area: auto / auto / auto / auto;"
 >
   Grid Item
 </div>
@@ -15,13 +10,8 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <div
-  className="my-extra-class"
-  style={
-    Object {
-      "gridArea": "auto / auto / auto / auto",
-      "order": undefined,
-    }
-  }
+  class="my-extra-class"
+  style="grid-area: auto / auto / auto / auto;"
 >
   Grid Item
 </div>

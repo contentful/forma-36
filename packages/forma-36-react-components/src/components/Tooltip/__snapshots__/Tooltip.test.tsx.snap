@@ -1,171 +1,71 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`does not render the component if no mouseover event on child 1`] = `
-<Tooltip
-  containerElement="span"
-  content="Tooltip content"
-  isVisible={false}
-  maxWidth={360}
-  place="auto"
-  testId="cf-ui-tooltip"
->
-  <span
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
-  >
-    <span>
-      Hover me
-    </span>
+<span>
+  <span>
+    Hover me
   </span>
-</Tooltip>
+</span>
 `;
 
 exports[`renders the component 1`] = `
-<Tooltip
-  containerElement="span"
-  content="Tooltip content"
-  isVisible={false}
-  maxWidth={360}
-  place="auto"
-  testId="cf-ui-tooltip"
->
+<span>
   <span
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
+    id="test"
   >
-    <span
-      id="test"
-    >
-      Hover me
-    </span>
+    Hover me
   </span>
-</Tooltip>
+</span>
 `;
 
 exports[`renders the component as span with a id attribute 1`] = `
-<Tooltip
-  containerElement="span"
-  content="Tooltip content"
-  isVisible={false}
-  maxWidth={360}
-  place="auto"
-  testId="cf-ui-tooltip"
->
+<span>
   <span
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
+    id="test"
   >
-    <span
-      id="test"
-    >
-      Hover me
-    </span>
+    Hover me
   </span>
-</Tooltip>
+</span>
 `;
 
 exports[`renders the component with a id attribute 1`] = `
-<Tooltip
-  containerElement="span"
-  content="Tooltip content"
-  id="Tooltip"
-  isVisible={false}
-  maxWidth={360}
-  place="auto"
-  testId="cf-ui-tooltip"
->
+<span>
   <span
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
+    id="test"
   >
-    <span
-      id="test"
-    >
-      Hover me
-    </span>
+    Hover me
   </span>
-</Tooltip>
+</span>
 `;
 
 exports[`renders the component with a place attribute 1`] = `
-<Tooltip
-  containerElement="span"
-  content="Tooltip content"
-  isVisible={false}
-  maxWidth={360}
-  place="left"
-  testId="cf-ui-tooltip"
->
+<span>
   <span
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
+    id="test"
   >
-    <span
-      id="test"
-    >
-      Hover me
-    </span>
+    Hover me
   </span>
-</Tooltip>
+</span>
 `;
 
 exports[`renders the component with a target wrapper classname 1`] = `
-<Tooltip
-  containerElement="span"
-  content="Tooltip content"
-  isVisible={false}
-  maxWidth={360}
-  place="auto"
-  targetWrapperClassName="target-wrapper-class-name"
-  testId="cf-ui-tooltip"
+<span
+  class="target-wrapper-class-name"
 >
   <span
-    className="target-wrapper-class-name"
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
+    id="test"
   >
-    <span
-      id="test"
-    >
-      Hover me
-    </span>
+    Hover me
   </span>
-</Tooltip>
+</span>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
-<Tooltip
-  className="extra-class-name"
-  containerElement="span"
-  content="Tooltip content"
-  isVisible={false}
-  maxWidth={360}
-  place="auto"
-  testId="cf-ui-tooltip"
->
+<span>
   <span
-    onBlur={[Function]}
-    onFocus={[Function]}
-    onMouseEnter={[Function]}
-    onMouseLeave={[Function]}
+    id="test"
   >
-    <span
-      id="test"
-    >
-      Hover me
-    </span>
+    Hover me
   </span>
-</Tooltip>
+</span>
 `;

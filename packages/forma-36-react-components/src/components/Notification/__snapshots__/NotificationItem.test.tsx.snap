@@ -3,56 +3,84 @@
 exports[`renders the component 1`] = `
 <div
   aria-live="polite"
-  className="NotificationItem"
+  class="NotificationItem"
   data-intent="success"
   data-test-id="cf-ui-notification"
   role="alert"
 >
   <div
-    className="NotificationItem__intent"
+    class="NotificationItem__intent"
   >
     success
   </div>
   <div
     aria-hidden="true"
-    className="NotificationItem__icon NotificationItem__icon--success"
+    class="NotificationItem__icon NotificationItem__icon--success"
   >
-    <Icon
-      color="white"
-      icon="CheckCircle"
-      size="small"
-      testId="cf-ui-icon"
-    />
+    <svg
+      class="Icon Icon--small Icon--white"
+      data-test-id="cf-ui-icon"
+      height="18"
+      viewBox="0 0 24 24"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+      <path
+        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+      />
+    </svg>
   </div>
   <div
-    className="NotificationItem__content"
+    class="NotificationItem__content"
   >
     <div
-      className="NotificationItem__text"
+      class="NotificationItem__text"
     >
       <h2
-        className="NotificationItem__title"
+        class="NotificationItem__title"
       >
         Notification text
       </h2>
       <p
-        className="NotificationItem__body"
+        class="NotificationItem__body"
       />
     </div>
-    <IconButton
-      buttonType="secondary"
-      className="NotificationItem__dismiss"
-      disabled={false}
-      iconProps={
-        Object {
-          "icon": "Close",
-        }
-      }
-      label="Dismiss"
-      onClick={[Function]}
-      testId="cf-ui-notification-close"
-      withDropdown={false}
-    />
+    <button
+      class="IconButton NotificationItem__dismiss IconButton--secondary"
+      data-test-id="cf-ui-notification-close"
+      type="button"
+    >
+      <span
+        class="TabFocusTrap IconButton__inner"
+        tabindex="-1"
+      >
+        <svg
+          class="Icon Icon--small Icon--primary IconButton__icon"
+          data-test-id="cf-ui-icon"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+          />
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+        </svg>
+        <span
+          class="IconButton__label"
+        >
+          Dismiss
+        </span>
+      </span>
+    </button>
   </div>
 </div>
 `;
@@ -60,56 +88,84 @@ exports[`renders the component 1`] = `
 exports[`renders the component with "error" intent 1`] = `
 <div
   aria-live="assertive"
-  className="NotificationItem"
+  class="NotificationItem"
   data-intent="error"
   data-test-id="cf-ui-notification"
   role="alert"
 >
   <div
-    className="NotificationItem__intent"
+    class="NotificationItem__intent"
   >
     error
   </div>
   <div
     aria-hidden="true"
-    className="NotificationItem__icon NotificationItem__icon--error"
+    class="NotificationItem__icon NotificationItem__icon--error"
   >
-    <Icon
-      color="white"
-      icon="ErrorCircle"
-      size="small"
-      testId="cf-ui-icon"
-    />
+    <svg
+      class="Icon Icon--small Icon--white"
+      data-test-id="cf-ui-icon"
+      height="18"
+      viewBox="0 0 24 24"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+      <path
+        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
+      />
+    </svg>
   </div>
   <div
-    className="NotificationItem__content"
+    class="NotificationItem__content"
   >
     <div
-      className="NotificationItem__text"
+      class="NotificationItem__text"
     >
       <h2
-        className="NotificationItem__title"
+        class="NotificationItem__title"
       >
         Notification text
       </h2>
       <p
-        className="NotificationItem__body"
+        class="NotificationItem__body"
       />
     </div>
-    <IconButton
-      buttonType="secondary"
-      className="NotificationItem__dismiss"
-      disabled={false}
-      iconProps={
-        Object {
-          "icon": "Close",
-        }
-      }
-      label="Dismiss"
-      onClick={[Function]}
-      testId="cf-ui-notification-close"
-      withDropdown={false}
-    />
+    <button
+      class="IconButton NotificationItem__dismiss IconButton--secondary"
+      data-test-id="cf-ui-notification-close"
+      type="button"
+    >
+      <span
+        class="TabFocusTrap IconButton__inner"
+        tabindex="-1"
+      >
+        <svg
+          class="Icon Icon--small Icon--primary IconButton__icon"
+          data-test-id="cf-ui-icon"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+          />
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+        </svg>
+        <span
+          class="IconButton__label"
+        >
+          Dismiss
+        </span>
+      </span>
+    </button>
   </div>
 </div>
 `;
@@ -117,56 +173,84 @@ exports[`renders the component with "error" intent 1`] = `
 exports[`renders the component with "warning" intent 1`] = `
 <div
   aria-live="assertive"
-  className="NotificationItem"
+  class="NotificationItem"
   data-intent="warning"
   data-test-id="cf-ui-notification"
   role="alert"
 >
   <div
-    className="NotificationItem__intent"
+    class="NotificationItem__intent"
   >
     warning
   </div>
   <div
     aria-hidden="true"
-    className="NotificationItem__icon NotificationItem__icon--warning"
+    class="NotificationItem__icon NotificationItem__icon--warning"
   >
-    <Icon
-      color="white"
-      icon="Warning"
-      size="small"
-      testId="cf-ui-icon"
-    />
+    <svg
+      class="Icon Icon--small Icon--white"
+      data-test-id="cf-ui-icon"
+      height="18"
+      viewBox="0 0 24 24"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+      <path
+        d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
+      />
+    </svg>
   </div>
   <div
-    className="NotificationItem__content"
+    class="NotificationItem__content"
   >
     <div
-      className="NotificationItem__text"
+      class="NotificationItem__text"
     >
       <h2
-        className="NotificationItem__title"
+        class="NotificationItem__title"
       >
         Notification text
       </h2>
       <p
-        className="NotificationItem__body"
+        class="NotificationItem__body"
       />
     </div>
-    <IconButton
-      buttonType="secondary"
-      className="NotificationItem__dismiss"
-      disabled={false}
-      iconProps={
-        Object {
-          "icon": "Close",
-        }
-      }
-      label="Dismiss"
-      onClick={[Function]}
-      testId="cf-ui-notification-close"
-      withDropdown={false}
-    />
+    <button
+      class="IconButton NotificationItem__dismiss IconButton--secondary"
+      data-test-id="cf-ui-notification-close"
+      type="button"
+    >
+      <span
+        class="TabFocusTrap IconButton__inner"
+        tabindex="-1"
+      >
+        <svg
+          class="Icon Icon--small Icon--primary IconButton__icon"
+          data-test-id="cf-ui-icon"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+          />
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+        </svg>
+        <span
+          class="IconButton__label"
+        >
+          Dismiss
+        </span>
+      </span>
+    </button>
   </div>
 </div>
 `;
@@ -174,66 +258,98 @@ exports[`renders the component with "warning" intent 1`] = `
 exports[`renders the component with a cta 1`] = `
 <div
   aria-live="assertive"
-  className="NotificationItem"
+  class="NotificationItem"
   data-intent="warning"
   data-test-id="cf-ui-notification"
   role="alert"
 >
   <div
-    className="NotificationItem__intent"
+    class="NotificationItem__intent"
   >
     warning
   </div>
   <div
     aria-hidden="true"
-    className="NotificationItem__icon NotificationItem__icon--warning"
+    class="NotificationItem__icon NotificationItem__icon--warning"
   >
-    <Icon
-      color="white"
-      icon="Warning"
-      size="small"
-      testId="cf-ui-icon"
-    />
+    <svg
+      class="Icon Icon--small Icon--white"
+      data-test-id="cf-ui-icon"
+      height="18"
+      viewBox="0 0 24 24"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+      <path
+        d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"
+      />
+    </svg>
   </div>
   <div
-    className="NotificationItem__content"
+    class="NotificationItem__content"
   >
     <div
-      className="NotificationItem__text"
+      class="NotificationItem__text"
     >
       <h2
-        className="NotificationItem__title"
+        class="NotificationItem__title"
       >
         This is the body text.
       </h2>
       <p
-        className="NotificationItem__body"
+        class="NotificationItem__body"
       />
       <div>
-        <TextLink
-          disabled={false}
-          iconPosition="left"
-          linkType="primary"
-          testId="cf-ui-text-link"
+        <button
+          class="TextLink TextLink--primary"
+          data-test-id="cf-ui-text-link"
+          type="button"
         >
-          This is some label text
-        </TextLink>
+          <span
+            class="TabFocusTrap"
+            tabindex="-1"
+          >
+            This is some label text
+          </span>
+        </button>
       </div>
     </div>
-    <IconButton
-      buttonType="secondary"
-      className="NotificationItem__dismiss"
-      disabled={false}
-      iconProps={
-        Object {
-          "icon": "Close",
-        }
-      }
-      label="Dismiss"
-      onClick={[Function]}
-      testId="cf-ui-notification-close"
-      withDropdown={false}
-    />
+    <button
+      class="IconButton NotificationItem__dismiss IconButton--secondary"
+      data-test-id="cf-ui-notification-close"
+      type="button"
+    >
+      <span
+        class="TabFocusTrap IconButton__inner"
+        tabindex="-1"
+      >
+        <svg
+          class="Icon Icon--small Icon--primary IconButton__icon"
+          data-test-id="cf-ui-icon"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+          />
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+        </svg>
+        <span
+          class="IconButton__label"
+        >
+          Dismiss
+        </span>
+      </span>
+    </button>
   </div>
 </div>
 `;
@@ -241,58 +357,86 @@ exports[`renders the component with a cta 1`] = `
 exports[`renders the component with a title and a body 1`] = `
 <div
   aria-live="polite"
-  className="NotificationItem"
+  class="NotificationItem"
   data-intent="success"
   data-test-id="cf-ui-notification"
   role="alert"
 >
   <div
-    className="NotificationItem__intent"
+    class="NotificationItem__intent"
   >
     success
   </div>
   <div
     aria-hidden="true"
-    className="NotificationItem__icon NotificationItem__icon--success"
+    class="NotificationItem__icon NotificationItem__icon--success"
   >
-    <Icon
-      color="white"
-      icon="CheckCircle"
-      size="small"
-      testId="cf-ui-icon"
-    />
+    <svg
+      class="Icon Icon--small Icon--white"
+      data-test-id="cf-ui-icon"
+      height="18"
+      viewBox="0 0 24 24"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+      <path
+        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+      />
+    </svg>
   </div>
   <div
-    className="NotificationItem__content"
+    class="NotificationItem__content"
   >
     <div
-      className="NotificationItem__text"
+      class="NotificationItem__text"
     >
       <h2
-        className="NotificationItem__title"
+        class="NotificationItem__title"
       >
         Notification title
       </h2>
       <p
-        className="NotificationItem__body"
+        class="NotificationItem__body"
       >
         This is the body text.
       </p>
     </div>
-    <IconButton
-      buttonType="secondary"
-      className="NotificationItem__dismiss"
-      disabled={false}
-      iconProps={
-        Object {
-          "icon": "Close",
-        }
-      }
-      label="Dismiss"
-      onClick={[Function]}
-      testId="cf-ui-notification-close"
-      withDropdown={false}
-    />
+    <button
+      class="IconButton NotificationItem__dismiss IconButton--secondary"
+      data-test-id="cf-ui-notification-close"
+      type="button"
+    >
+      <span
+        class="TabFocusTrap IconButton__inner"
+        tabindex="-1"
+      >
+        <svg
+          class="Icon Icon--small Icon--primary IconButton__icon"
+          data-test-id="cf-ui-icon"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+          />
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+        </svg>
+        <span
+          class="IconButton__label"
+        >
+          Dismiss
+        </span>
+      </span>
+    </button>
   </div>
 </div>
 `;

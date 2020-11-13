@@ -1,188 +1,104 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
-<Card
-  className="InlineEntryCard"
+<div
+  class="Card InlineEntryCard Card--padding-default"
   data-test-id="cf-ui-inline-entry-card"
-  padding="default"
-  selected={false}
-  testId="cf-ui-card"
 >
-  <CSSTransition
-    classNames={
-      Object {
-        "enter": "InlineEntryCard__spinner--enter",
-        "enterActive": "InlineEntryCard__spinner--enter-active",
-        "exit": "InlineEntryCard__spinner--exit",
-        "exitActive": "InlineEntryCard__spinner--exit-active",
-      }
-    }
-    mountOnEnter={true}
-    timeout={100}
-    unmountOnExit={true}
-  >
-    <div
-      className="InlineEntryCard__skeleton-wrapper"
-    >
-      <EntryCardSkeleton />
-    </div>
-  </CSSTransition>
   <div
-    className="InlineEntryCard__status-indicator"
+    class="InlineEntryCard__status-indicator"
   />
   <span
-    className="InlineEntryCard__text-wrapper"
+    class="InlineEntryCard__text-wrapper"
   >
     Title of inline entry
   </span>
-</Card>
+</div>
 `;
 
 exports[`renders the component with a dropdown 1`] = `
-<Card
-  className="InlineEntryCard my-extra-class"
+<div
+  class="Card InlineEntryCard my-extra-class Card--padding-default"
   data-test-id="cf-ui-inline-entry-card"
-  padding="default"
-  selected={false}
-  testId="cf-ui-card"
 >
-  <CSSTransition
-    classNames={
-      Object {
-        "enter": "InlineEntryCard__spinner--enter",
-        "enterActive": "InlineEntryCard__spinner--enter-active",
-        "exit": "InlineEntryCard__spinner--exit",
-        "exitActive": "InlineEntryCard__spinner--exit-active",
-      }
-    }
-    mountOnEnter={true}
-    timeout={100}
-    unmountOnExit={true}
-  >
-    <div
-      className="InlineEntryCard__skeleton-wrapper"
-    >
-      <EntryCardSkeleton />
-    </div>
-  </CSSTransition>
   <div
-    className="InlineEntryCard__status-indicator"
+    class="InlineEntryCard__status-indicator"
   />
   <span
-    className="InlineEntryCard__text-wrapper"
+    class="InlineEntryCard__text-wrapper"
   >
     Title of inline entry
   </span>
-  <CardActions
-    className="InlineEntryCard__actions"
-    iconButtonProps={
-      Object {
-        "onClick": [Function],
-      }
-    }
-    isDisabled={false}
-    testId="cf-ui-card-actions"
+  <div
+    class="Dropdown InlineEntryCard__actions"
+    data-test-id="cf-ui-card-actions"
   >
-    <DropdownList
-      testId="cf-ui-dropdown-list"
+    <button
+      aria-expanded="false"
+      aria-haspopup="menu"
+      class="IconButton IconButton--secondary"
+      data-test-id="cf-ui-icon-button"
+      type="button"
     >
-      <DropdownListItem
-        isActive={false}
-        isDisabled={false}
-        isTitle={false}
-        key="edit"
-        onClick={[Function]}
-        testId="cf-ui-dropdown-list-item"
+      <span
+        class="TabFocusTrap IconButton__inner"
+        tabindex="-1"
       >
-        Edit
-      </DropdownListItem>
-      <DropdownListItem
-        isActive={false}
-        isDisabled={false}
-        isTitle={false}
-        key="remove"
-        onClick={[Function]}
-        testId="cf-ui-dropdown-list-item"
-      >
-        Remove
-      </DropdownListItem>
-    </DropdownList>
-  </CardActions>
-</Card>
+        <svg
+          class="Icon Icon--small Icon--primary IconButton__icon"
+          data-test-id="cf-ui-icon"
+          height="18"
+          viewBox="0 0 24 24"
+          width="18"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+          />
+        </svg>
+        <span
+          class="IconButton__label"
+        >
+          Actions
+        </span>
+      </span>
+    </button>
+  </div>
+</div>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
-<Card
-  className="InlineEntryCard my-extra-class"
+<div
+  class="Card InlineEntryCard my-extra-class Card--padding-default"
   data-test-id="cf-ui-inline-entry-card"
-  padding="default"
-  selected={false}
-  testId="cf-ui-card"
 >
-  <CSSTransition
-    classNames={
-      Object {
-        "enter": "InlineEntryCard__spinner--enter",
-        "enterActive": "InlineEntryCard__spinner--enter-active",
-        "exit": "InlineEntryCard__spinner--exit",
-        "exitActive": "InlineEntryCard__spinner--exit-active",
-      }
-    }
-    mountOnEnter={true}
-    timeout={100}
-    unmountOnExit={true}
-  >
-    <div
-      className="InlineEntryCard__skeleton-wrapper"
-    >
-      <EntryCardSkeleton />
-    </div>
-  </CSSTransition>
   <div
-    className="InlineEntryCard__status-indicator"
+    class="InlineEntryCard__status-indicator"
   />
   <span
-    className="InlineEntryCard__text-wrapper"
+    class="InlineEntryCard__text-wrapper"
   >
     Title of inline entry
   </span>
-</Card>
+</div>
 `;
 
 exports[`renders the component with published status 1`] = `
-<Card
-  className="InlineEntryCard my-extra-class"
+<div
+  class="Card InlineEntryCard my-extra-class Card--padding-default"
   data-test-id="cf-ui-inline-entry-card"
-  padding="default"
-  selected={false}
-  testId="cf-ui-card"
 >
-  <CSSTransition
-    classNames={
-      Object {
-        "enter": "InlineEntryCard__spinner--enter",
-        "enterActive": "InlineEntryCard__spinner--enter-active",
-        "exit": "InlineEntryCard__spinner--exit",
-        "exitActive": "InlineEntryCard__spinner--exit-active",
-      }
-    }
-    mountOnEnter={true}
-    timeout={100}
-    unmountOnExit={true}
-  >
-    <div
-      className="InlineEntryCard__skeleton-wrapper"
-    >
-      <EntryCardSkeleton />
-    </div>
-  </CSSTransition>
   <div
-    className="InlineEntryCard__status-indicator InlineEntryCard__status-indicator--published"
+    class="InlineEntryCard__status-indicator InlineEntryCard__status-indicator--published"
   />
   <span
-    className="InlineEntryCard__text-wrapper"
+    class="InlineEntryCard__text-wrapper"
   >
     Title of inline entry
   </span>
-</Card>
+</div>
 `;

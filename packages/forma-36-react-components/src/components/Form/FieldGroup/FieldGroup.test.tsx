@@ -1,11 +1,12 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import axe from '../../../utils/axeHelper';
 import FieldGroup from './FieldGroup';
 import CheckboxField from '../../CheckboxField';
 
 it('renders the component', () => {
-  const output = shallow(
+  const { container } = render(
     <FieldGroup>
       <CheckboxField
         labelText="Do you agree?"
@@ -20,11 +21,11 @@ it('renders the component', () => {
     </FieldGroup>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(
+  const { container } = render(
     <FieldGroup className="my-extra-class">
       <CheckboxField
         labelText="Do you agree?"
@@ -39,11 +40,11 @@ it('renders the component with an additional class name', () => {
     </FieldGroup>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component children in a row', () => {
-  const output = shallow(
+  const { container } = render(
     <FieldGroup className="my-extra-class" row>
       <CheckboxField
         labelText="Do you agree?"
@@ -58,11 +59,11 @@ it('renders the component children in a row', () => {
     </FieldGroup>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('has no a11y issues', async () => {
-  const output = mount(
+  const { container } = render(
     <FieldGroup>
       <CheckboxField
         labelText="Do you agree?"
@@ -75,8 +76,8 @@ it('has no a11y issues', async () => {
         id="reallyAgree"
       />
     </FieldGroup>,
-  ).html();
-  const results = await axe(output);
+  );
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });

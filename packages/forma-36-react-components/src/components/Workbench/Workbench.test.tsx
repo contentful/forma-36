@@ -1,5 +1,6 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import axe from '../../utils/axeHelper';
 import Workbench from './Workbench';
 import Icon from '../Icon';
@@ -40,14 +41,14 @@ const components = [
 
 components.forEach(({ type, Component }) => {
   it(`renders the component (${type})`, () => {
-    const output = shallow(<Component />);
+    const { container } = render(<Component />);
 
-    expect(output).toMatchSnapshot();
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   it(`has no a11y issues (${type})`, async () => {
-    const output = mount(<Component />).html();
-    const results = await axe(output);
+    const { container } = render(<Component />);
+    const results = await axe(container);
 
     expect(results).toHaveNoViolations();
   });

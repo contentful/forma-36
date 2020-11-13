@@ -1,24 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
-<ControlledInput
-  disabled={false}
-  labelText="radio-button"
-  required={false}
-  testId="cf-ui-radio-button"
+<input
+  aria-label="radio-button"
+  class="ControlledInput"
+  data-test-id="cf-ui-radio-button"
   type="radio"
-  willBlurOnEsc={true}
+  value=""
 />
 `;
 
 exports[`renders the component with an additional class name 1`] = `
-<ControlledInput
-  className="my-extra-class"
-  disabled={false}
-  labelText="radio-button"
-  required={false}
-  testId="cf-ui-radio-button"
+<input
+  aria-label="radio-button"
+  class="ControlledInput my-extra-class"
+  data-test-id="cf-ui-radio-button"
   type="radio"
-  willBlurOnEsc={true}
+  value=""
 />
 `;

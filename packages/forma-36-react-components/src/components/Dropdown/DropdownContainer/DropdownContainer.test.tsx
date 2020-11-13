@@ -1,35 +1,45 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import DropdownContainer from './DropdownContainer';
 
 it('renders the component', () => {
-  const output = shallow(
-    <DropdownContainer isOpen>DropdownContainer</DropdownContainer>,
+  const ref = jest.fn();
+
+  const { container } = render(
+    <DropdownContainer isOpen ref={ref}>
+      DropdownContainer
+    </DropdownContainer>,
   );
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(
-    <DropdownContainer className="extraClassName" isOpen>
+  const ref = jest.fn();
+  const { container } = render(
+    <DropdownContainer className="extraClassName" isOpen ref={ref}>
       DropdownContainer
     </DropdownContainer>,
   );
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component as a submenu', () => {
-  const output = shallow(
-    <DropdownContainer className="extraClassName" isOpen submenu>
+  const ref = jest.fn();
+  const { container } = render(
+    <DropdownContainer className="extraClassName" isOpen submenu ref={ref}>
       DropdownContainer
     </DropdownContainer>,
   );
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('has no a11y issues', async () => {
-  const output = shallow(
-    <DropdownContainer isOpen>DropdownContainer</DropdownContainer>,
+  const ref = jest.fn();
+  const { container } = render(
+    <DropdownContainer isOpen ref={ref}>
+      DropdownContainer
+    </DropdownContainer>,
   );
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });

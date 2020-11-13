@@ -2,230 +2,266 @@
 
 exports[`allows passing a test id 1`] = `
 <button
-  className="TextLink TextLink--primary"
+  class="TextLink TextLink--primary"
   data-test-id="test-id"
-  disabled={false}
   type="button"
 >
-  <TabFocusTrap>
+  <span
+    class="TabFocusTrap"
+    tabindex="-1"
+  >
     Text Link
-  </TabFocusTrap>
+  </span>
 </button>
 `;
 
 exports[`allows passing additional class names to component 1`] = `
 <button
-  className="TextLink testing TextLink--primary"
+  class="TextLink testing TextLink--primary"
   data-test-id="cf-ui-text-link"
-  disabled={false}
   type="button"
 >
-  <TabFocusTrap>
+  <span
+    class="TabFocusTrap"
+    tabindex="-1"
+  >
     Text Link
-  </TabFocusTrap>
+  </span>
 </button>
 `;
 
 exports[`allows passing additional props not consumed by component 1`] = `
 <button
-  className="TextLink TextLink--primary"
+  class="TextLink TextLink--primary"
   data-test-id="Testing Id"
-  disabled={false}
   type="button"
 >
-  <TabFocusTrap>
+  <span
+    class="TabFocusTrap"
+    tabindex="-1"
+  >
     Text Link
-  </TabFocusTrap>
+  </span>
 </button>
 `;
 
 exports[`calls an onClick function 1`] = `
 <button
-  className="TextLink TextLink--primary"
+  class="TextLink TextLink--primary"
   data-test-id="cf-ui-text-link"
-  disabled={false}
-  onClick={
-    [MockFunction] {
-      "calls": Array [
-        Array [],
-      ],
-      "results": Array [
-        Object {
-          "type": "return",
-          "value": undefined,
-        },
-      ],
-    }
-  }
   type="button"
 >
-  <TabFocusTrap>
+  <span
+    class="TabFocusTrap"
+    tabindex="-1"
+  >
     Text Link
-  </TabFocusTrap>
+  </span>
 </button>
 `;
 
 exports[`prevents onClick function from being called when disabled 1`] = `
 <button
-  className="TextLink TextLink--primary TextLink--disabled"
+  class="TextLink TextLink--primary TextLink--disabled"
   data-test-id="cf-ui-text-link"
-  disabled={true}
-  onClick={[Function]}
+  disabled=""
   type="button"
 >
-  <TabFocusTrap>
+  <span
+    class="TabFocusTrap"
+    tabindex="-1"
+  >
     Text Link
-  </TabFocusTrap>
+  </span>
 </button>
 `;
 
 exports[`renders as a "muted" link type 1`] = `
 <button
-  className="TextLink TextLink--muted"
+  class="TextLink TextLink--muted"
   data-test-id="cf-ui-text-link"
-  disabled={false}
   type="button"
 >
-  <TabFocusTrap>
+  <span
+    class="TabFocusTrap"
+    tabindex="-1"
+  >
     Text Link
-  </TabFocusTrap>
+  </span>
 </button>
 `;
 
 exports[`renders as a "negative" link type 1`] = `
 <button
-  className="TextLink TextLink--negative"
+  class="TextLink TextLink--negative"
   data-test-id="cf-ui-text-link"
-  disabled={false}
   type="button"
 >
-  <TabFocusTrap>
+  <span
+    class="TabFocusTrap"
+    tabindex="-1"
+  >
     Text Link
-  </TabFocusTrap>
+  </span>
 </button>
 `;
 
 exports[`renders as a "positive" link type 1`] = `
 <button
-  className="TextLink TextLink--positive"
+  class="TextLink TextLink--positive"
   data-test-id="cf-ui-text-link"
-  disabled={false}
   type="button"
 >
-  <TabFocusTrap>
+  <span
+    class="TabFocusTrap"
+    tabindex="-1"
+  >
     Text Link
-  </TabFocusTrap>
+  </span>
 </button>
 `;
 
 exports[`renders as a "primary" link type 1`] = `
 <button
-  className="TextLink TextLink--primary"
+  class="TextLink TextLink--primary"
   data-test-id="cf-ui-text-link"
-  disabled={false}
   type="button"
 >
-  <TabFocusTrap>
+  <span
+    class="TabFocusTrap"
+    tabindex="-1"
+  >
     Text Link
-  </TabFocusTrap>
+  </span>
 </button>
 `;
 
 exports[`renders as a "secondary" link type 1`] = `
 <button
-  className="TextLink TextLink--secondary"
+  class="TextLink TextLink--secondary"
   data-test-id="cf-ui-text-link"
-  disabled={false}
   type="button"
 >
-  <TabFocusTrap>
+  <span
+    class="TabFocusTrap"
+    tabindex="-1"
+  >
     Text Link
-  </TabFocusTrap>
+  </span>
 </button>
 `;
 
 exports[`renders as a "white" link type 1`] = `
 <button
-  className="TextLink TextLink--white"
+  class="TextLink TextLink--white"
   data-test-id="cf-ui-text-link"
-  disabled={false}
   type="button"
 >
-  <TabFocusTrap>
+  <span
+    class="TabFocusTrap"
+    tabindex="-1"
+  >
     Text Link
-  </TabFocusTrap>
+  </span>
 </button>
 `;
 
 exports[`renders as a button 1`] = `
 <button
-  className="TextLink TextLink--primary"
+  class="TextLink TextLink--primary"
   data-test-id="cf-ui-text-link"
-  disabled={false}
   type="button"
 >
-  <TabFocusTrap>
+  <span
+    class="TabFocusTrap"
+    tabindex="-1"
+  >
     Text Link
-  </TabFocusTrap>
+  </span>
 </button>
 `;
 
 exports[`renders as a link 1`] = `
 <a
-  className="TextLink TextLink--primary"
+  class="TextLink TextLink--primary"
   data-test-id="cf-ui-text-link"
   href="#"
 >
-  <TabFocusTrap>
+  <span
+    class="TabFocusTrap"
+    tabindex="-1"
+  >
     Text Link
-  </TabFocusTrap>
+  </span>
 </a>
 `;
 
 exports[`renders with an icon 1`] = `
 <button
-  className="TextLink TextLink--primary"
+  class="TextLink TextLink--primary"
   data-test-id="cf-ui-text-link"
-  disabled={false}
   type="button"
 >
-  <TabFocusTrap>
+  <span
+    class="TabFocusTrap"
+    tabindex="-1"
+  >
     <div
-      className="TextLink__icon-wrapper"
+      class="TextLink__icon-wrapper"
     >
-      <Icon
-        className="TextLink__icon"
-        color="primary"
-        icon="ArrowDown"
-        size="small"
-        testId="cf-ui-icon"
-      />
+      <svg
+        class="Icon Icon--small Icon--primary TextLink__icon"
+        data-test-id="cf-ui-icon"
+        height="24"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M7 10l5 5 5-5z"
+        />
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+      </svg>
     </div>
     Text Link
-  </TabFocusTrap>
+  </span>
 </button>
 `;
 
 exports[`renders with an icon aligned right to the text 1`] = `
 <button
-  className="TextLink TextLink--primary"
+  class="TextLink TextLink--primary"
   data-test-id="cf-ui-text-link"
-  disabled={false}
   type="button"
 >
-  <TabFocusTrap>
+  <span
+    class="TabFocusTrap"
+    tabindex="-1"
+  >
     Text Link
     <div
-      className="TextLink__icon-wrapper--right"
+      class="TextLink__icon-wrapper--right"
     >
-      <Icon
-        className="TextLink__icon"
-        color="primary"
-        icon="ArrowDown"
-        size="small"
-        testId="cf-ui-icon"
-      />
+      <svg
+        class="Icon Icon--small Icon--primary TextLink__icon"
+        data-test-id="cf-ui-icon"
+        height="24"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M7 10l5 5 5-5z"
+        />
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+      </svg>
     </div>
-  </TabFocusTrap>
+  </span>
 </button>
 `;

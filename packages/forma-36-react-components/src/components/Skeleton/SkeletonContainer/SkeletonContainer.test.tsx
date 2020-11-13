@@ -1,31 +1,32 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import axe from '../../../utils/axeHelper';
 import SkeletonContainer from './SkeletonContainer';
 import SkeletonBodyText from '../SkeletonBodyText';
 
 it('renders the component', () => {
-  const output = shallow(
+  const { container } = render(
     <SkeletonContainer>
       <SkeletonBodyText />
     </SkeletonContainer>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(
+  const { container } = render(
     <SkeletonContainer className="className">
       <SkeletonBodyText />
     </SkeletonContainer>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders with unique default ids', () => {
-  const output = shallow(
+  const { container } = render(
     <div>
       <SkeletonContainer testId="first">
         <SkeletonBodyText />
@@ -36,166 +37,166 @@ it('renders with unique default ids', () => {
     </div>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a custom testId', () => {
-  const output = shallow(
+  const { container } = render(
     <SkeletonContainer testId="someId">
       <SkeletonBodyText />
     </SkeletonContainer>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a custom aria label', () => {
-  const output = shallow(
+  const { container } = render(
     <SkeletonContainer ariaLabel="Custom Aria Label">
       <SkeletonBodyText />
     </SkeletonContainer>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a custom width', () => {
-  const output = shallow(
+  const { container } = render(
     <SkeletonContainer width="50%">
       <SkeletonBodyText />
     </SkeletonContainer>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a custom height', () => {
-  const output = shallow(
+  const { container } = render(
     <SkeletonContainer height="50%">
       <SkeletonBodyText />
     </SkeletonContainer>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a custom aspect ratio', () => {
-  const output = shallow(
+  const { container } = render(
     <SkeletonContainer preserveAspectRatio="xMidYMin slice">
       <SkeletonBodyText />
     </SkeletonContainer>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a custom clip id', () => {
-  const output = shallow(
+  const { container } = render(
     <SkeletonContainer clipId="some-clip-id">
       <SkeletonBodyText />
     </SkeletonContainer>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a custom gradient id', () => {
-  const output = shallow(
+  const { container } = render(
     <SkeletonContainer gradientId="some-gradient-id">
       <SkeletonBodyText />
     </SkeletonContainer>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a custom primary color', () => {
-  const output = shallow(
+  const { container } = render(
     <SkeletonContainer backgroundColor="#ffffff">
       <SkeletonBodyText />
     </SkeletonContainer>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a custom primary opacity', () => {
-  const output = shallow(
+  const { container } = render(
     <SkeletonContainer backgroundOpacity={0}>
       <SkeletonBodyText />
     </SkeletonContainer>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a custom secondary color', () => {
-  const output = shallow(
+  const { container } = render(
     <SkeletonContainer foregroundColor="#ffffff">
       <SkeletonBodyText />
     </SkeletonContainer>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a custom secondary opacity', () => {
-  const output = shallow(
+  const { container } = render(
     <SkeletonContainer foregroundOpacity={0}>
       <SkeletonBodyText />
     </SkeletonContainer>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component without animation', () => {
-  const output = shallow(
+  const { container } = render(
     <SkeletonContainer animate={false}>
       <SkeletonBodyText />
     </SkeletonContainer>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a custom animation speed', () => {
-  const output = shallow(
+  const { container } = render(
     <SkeletonContainer speed={5}>
       <SkeletonBodyText />
     </SkeletonContainer>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the svg with a custom height', () => {
-  const output = shallow(
+  const { container } = render(
     <SkeletonContainer svgHeight={100}>
       <SkeletonBodyText />
     </SkeletonContainer>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the svg with a custom width', () => {
-  const output = shallow(
+  const { container } = render(
     <SkeletonContainer svgWidth={100}>
       <SkeletonBodyText />
     </SkeletonContainer>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('has no a11y issues', async () => {
-  const output = mount(
+  const { container } = render(
     <SkeletonContainer>
       <SkeletonBodyText />
     </SkeletonContainer>,
-  ).html();
-  const results = await axe(output);
+  );
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });

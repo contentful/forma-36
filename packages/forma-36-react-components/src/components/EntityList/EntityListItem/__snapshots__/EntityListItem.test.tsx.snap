@@ -2,99 +2,114 @@
 
 exports[`can call an onClick callback 1`] = `
 <li
-  className="EntityListItem EntityListItem--is-interactive"
+  class="EntityListItem EntityListItem--is-interactive"
   data-test-id="cf-ui-entity-list-item"
 >
   <a
-    className="EntityListItem__inner"
-    onClick={
-      [MockFunction] {
-        "calls": Array [
-          Array [],
-        ],
-        "results": Array [
-          Object {
-            "type": "return",
-            "value": undefined,
-          },
-        ],
-      }
-    }
-    tabIndex={0}
+    class="EntityListItem__inner"
+    tabindex="0"
   >
-    <TabFocusTrap
-      className="EntityListItem__focus-trap"
+    <span
+      class="TabFocusTrap EntityListItem__focus-trap"
+      tabindex="-1"
     >
       <figure
-        className="EntityListItem__media"
+        class="EntityListItem__media"
       >
-        <Icon
-          color="muted"
-          icon="Entry"
-          size="small"
-          testId="cf-ui-icon"
-        />
+        <svg
+          class="Icon Icon--small Icon--muted"
+          data-test-id="cf-ui-icon"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0V0z"
+            fill="none"
+          />
+          <path
+            d="M8 16h8v2H8zM8 12h8v2H8z"
+          />
+          <path
+            d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"
+          />
+        </svg>
       </figure>
       <div
-        className="EntityListItem__content"
+        class="EntityListItem__content"
       >
         <div
-          className="EntityListItem__heading"
+          class="EntityListItem__heading"
         >
           <h1
-            className="EntityListItem__title"
+            class="EntityListItem__title"
           >
             Title
           </h1>
         </div>
         <p
-          className="EntityListItem__description"
+          class="EntityListItem__description"
         >
           Description
         </p>
       </div>
       <div
-        className="EntityListItem__meta"
+        class="EntityListItem__meta"
       />
-    </TabFocusTrap>
+    </span>
   </a>
 </li>
 `;
 
 exports[`renders the component 1`] = `
 <li
-  className="EntityListItem"
+  class="EntityListItem"
   data-test-id="cf-ui-entity-list-item"
 >
   <article
-    className="EntityListItem__inner"
+    class="EntityListItem__inner"
   >
-    <TabFocusTrap
-      className="EntityListItem__focus-trap"
+    <span
+      class="TabFocusTrap EntityListItem__focus-trap"
+      tabindex="-1"
     >
       <figure
-        className="EntityListItem__media"
+        class="EntityListItem__media"
       >
-        <Icon
-          color="muted"
-          icon="Entry"
-          size="small"
-          testId="cf-ui-icon"
-        />
+        <svg
+          class="Icon Icon--small Icon--muted"
+          data-test-id="cf-ui-icon"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0V0z"
+            fill="none"
+          />
+          <path
+            d="M8 16h8v2H8zM8 12h8v2H8z"
+          />
+          <path
+            d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"
+          />
+        </svg>
       </figure>
       <div
-        className="EntityListItem__content"
+        class="EntityListItem__content"
       >
         <div
-          className="EntityListItem__heading"
+          class="EntityListItem__heading"
         >
           <h1
-            className="EntityListItem__title"
+            class="EntityListItem__title"
           >
             Title
           </h1>
           <div
-            className="EntityListItem__content-type"
+            class="EntityListItem__content-type"
           >
             (
             Content type
@@ -103,95 +118,125 @@ exports[`renders the component 1`] = `
         </div>
       </div>
       <div
-        className="EntityListItem__meta"
+        class="EntityListItem__meta"
       />
-    </TabFocusTrap>
+    </span>
   </article>
 </li>
 `;
 
 exports[`renders the component as an \`a\` element if passed a href prop 1`] = `
 <li
-  className="EntityListItem EntityListItem--is-interactive"
+  class="EntityListItem EntityListItem--is-interactive"
   data-test-id="cf-ui-entity-list-item"
 >
   <article
-    className="EntityListItem__inner"
+    class="EntityListItem__inner"
     href="#"
   >
-    <TabFocusTrap
-      className="EntityListItem__focus-trap"
+    <span
+      class="TabFocusTrap EntityListItem__focus-trap"
+      tabindex="-1"
     >
       <figure
-        className="EntityListItem__media"
+        class="EntityListItem__media"
       >
-        <Icon
-          color="muted"
-          icon="Entry"
-          size="small"
-          testId="cf-ui-icon"
-        />
+        <svg
+          class="Icon Icon--small Icon--muted"
+          data-test-id="cf-ui-icon"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0V0z"
+            fill="none"
+          />
+          <path
+            d="M8 16h8v2H8zM8 12h8v2H8z"
+          />
+          <path
+            d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"
+          />
+        </svg>
       </figure>
       <div
-        className="EntityListItem__content"
+        class="EntityListItem__content"
       >
         <div
-          className="EntityListItem__heading"
+          class="EntityListItem__heading"
         >
           <h1
-            className="EntityListItem__title"
+            class="EntityListItem__title"
           >
             Title
           </h1>
         </div>
         <p
-          className="EntityListItem__description"
+          class="EntityListItem__description"
         >
           Description
         </p>
       </div>
       <div
-        className="EntityListItem__meta"
+        class="EntityListItem__meta"
       />
-    </TabFocusTrap>
+    </span>
   </article>
 </li>
 `;
 
 exports[`renders the component as an Asset with a lower-cased entityType 1`] = `
 <li
-  className="EntityListItem"
+  class="EntityListItem"
   data-test-id="cf-ui-entity-list-item"
 >
   <article
-    className="EntityListItem__inner"
+    class="EntityListItem__inner"
   >
-    <TabFocusTrap
-      className="EntityListItem__focus-trap"
+    <span
+      class="TabFocusTrap EntityListItem__focus-trap"
+      tabindex="-1"
     >
       <figure
-        className="EntityListItem__media"
+        class="EntityListItem__media"
       >
-        <Icon
-          color="muted"
-          icon="Asset"
-          size="small"
-          testId="cf-ui-icon"
-        />
+        <svg
+          class="Icon Icon--small Icon--muted"
+          data-test-id="cf-ui-icon"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0V0z"
+            fill="none"
+          />
+          <g>
+            <path
+              d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+            />
+            <path
+              d="M14.14 11.86l-3 3.87L9 13.14 6 17h12l-3.86-5.14z"
+            />
+          </g>
+        </svg>
       </figure>
       <div
-        className="EntityListItem__content"
+        class="EntityListItem__content"
       >
         <div
-          className="EntityListItem__heading"
+          class="EntityListItem__heading"
         >
           <h1
-            className="EntityListItem__title"
+            class="EntityListItem__title"
           >
             Title
           </h1>
           <div
-            className="EntityListItem__content-type"
+            class="EntityListItem__content-type"
           >
             (
             Content type
@@ -199,64 +244,80 @@ exports[`renders the component as an Asset with a lower-cased entityType 1`] = `
           </div>
         </div>
         <p
-          className="EntityListItem__description"
+          class="EntityListItem__description"
         >
           Description
         </p>
       </div>
       <div
-        className="EntityListItem__meta"
+        class="EntityListItem__meta"
       >
         <div
-          className="EntityListItem__status"
+          class="EntityListItem__status"
         >
-          <Tag
-            tagType="positive"
-            testId="cf-ui-tag"
+          <div
+            class="Tag Tag--positive"
+            data-test-id="cf-ui-tag"
           >
             published
-          </Tag>
+          </div>
         </div>
       </div>
-    </TabFocusTrap>
+    </span>
   </article>
 </li>
 `;
 
 exports[`renders the component as an Asset with a title-cased entityType 1`] = `
 <li
-  className="EntityListItem"
+  class="EntityListItem"
   data-test-id="cf-ui-entity-list-item"
 >
   <article
-    className="EntityListItem__inner"
+    class="EntityListItem__inner"
   >
-    <TabFocusTrap
-      className="EntityListItem__focus-trap"
+    <span
+      class="TabFocusTrap EntityListItem__focus-trap"
+      tabindex="-1"
     >
       <figure
-        className="EntityListItem__media"
+        class="EntityListItem__media"
       >
-        <Icon
-          color="muted"
-          icon="Asset"
-          size="small"
-          testId="cf-ui-icon"
-        />
+        <svg
+          class="Icon Icon--small Icon--muted"
+          data-test-id="cf-ui-icon"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0V0z"
+            fill="none"
+          />
+          <g>
+            <path
+              d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+            />
+            <path
+              d="M14.14 11.86l-3 3.87L9 13.14 6 17h12l-3.86-5.14z"
+            />
+          </g>
+        </svg>
       </figure>
       <div
-        className="EntityListItem__content"
+        class="EntityListItem__content"
       >
         <div
-          className="EntityListItem__heading"
+          class="EntityListItem__heading"
         >
           <h1
-            className="EntityListItem__title"
+            class="EntityListItem__title"
           >
             Title
           </h1>
           <div
-            className="EntityListItem__content-type"
+            class="EntityListItem__content-type"
           >
             (
             Content type
@@ -264,64 +325,80 @@ exports[`renders the component as an Asset with a title-cased entityType 1`] = `
           </div>
         </div>
         <p
-          className="EntityListItem__description"
+          class="EntityListItem__description"
         >
           Description
         </p>
       </div>
       <div
-        className="EntityListItem__meta"
+        class="EntityListItem__meta"
       >
         <div
-          className="EntityListItem__status"
+          class="EntityListItem__status"
         >
-          <Tag
-            tagType="positive"
-            testId="cf-ui-tag"
+          <div
+            class="Tag Tag--positive"
+            data-test-id="cf-ui-tag"
           >
             published
-          </Tag>
+          </div>
         </div>
       </div>
-    </TabFocusTrap>
+    </span>
   </article>
 </li>
 `;
 
 exports[`renders the component as an asset entityType icon with an archived status 1`] = `
 <li
-  className="EntityListItem"
+  class="EntityListItem"
   data-test-id="cf-ui-entity-list-item"
 >
   <article
-    className="EntityListItem__inner"
+    class="EntityListItem__inner"
   >
-    <TabFocusTrap
-      className="EntityListItem__focus-trap"
+    <span
+      class="TabFocusTrap EntityListItem__focus-trap"
+      tabindex="-1"
     >
       <figure
-        className="EntityListItem__media"
+        class="EntityListItem__media"
       >
-        <Icon
-          color="muted"
-          icon="Asset"
-          size="small"
-          testId="cf-ui-icon"
-        />
+        <svg
+          class="Icon Icon--small Icon--muted"
+          data-test-id="cf-ui-icon"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0V0z"
+            fill="none"
+          />
+          <g>
+            <path
+              d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+            />
+            <path
+              d="M14.14 11.86l-3 3.87L9 13.14 6 17h12l-3.86-5.14z"
+            />
+          </g>
+        </svg>
       </figure>
       <div
-        className="EntityListItem__content"
+        class="EntityListItem__content"
       >
         <div
-          className="EntityListItem__heading"
+          class="EntityListItem__heading"
         >
           <h1
-            className="EntityListItem__title"
+            class="EntityListItem__title"
           >
             Title
           </h1>
           <div
-            className="EntityListItem__content-type"
+            class="EntityListItem__content-type"
           >
             (
             Content type
@@ -329,64 +406,80 @@ exports[`renders the component as an asset entityType icon with an archived stat
           </div>
         </div>
         <p
-          className="EntityListItem__description"
+          class="EntityListItem__description"
         >
           Description
         </p>
       </div>
       <div
-        className="EntityListItem__meta"
+        class="EntityListItem__meta"
       >
         <div
-          className="EntityListItem__status"
+          class="EntityListItem__status"
         >
-          <Tag
-            tagType="negative"
-            testId="cf-ui-tag"
+          <div
+            class="Tag Tag--negative"
+            data-test-id="cf-ui-tag"
           >
             archived
-          </Tag>
+          </div>
         </div>
       </div>
-    </TabFocusTrap>
+    </span>
   </article>
 </li>
 `;
 
 exports[`renders the component as an asset entityType variant 1`] = `
 <li
-  className="EntityListItem"
+  class="EntityListItem"
   data-test-id="cf-ui-entity-list-item"
 >
   <article
-    className="EntityListItem__inner"
+    class="EntityListItem__inner"
   >
-    <TabFocusTrap
-      className="EntityListItem__focus-trap"
+    <span
+      class="TabFocusTrap EntityListItem__focus-trap"
+      tabindex="-1"
     >
       <figure
-        className="EntityListItem__media"
+        class="EntityListItem__media"
       >
-        <Icon
-          color="muted"
-          icon="Asset"
-          size="small"
-          testId="cf-ui-icon"
-        />
+        <svg
+          class="Icon Icon--small Icon--muted"
+          data-test-id="cf-ui-icon"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0V0z"
+            fill="none"
+          />
+          <g>
+            <path
+              d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+            />
+            <path
+              d="M14.14 11.86l-3 3.87L9 13.14 6 17h12l-3.86-5.14z"
+            />
+          </g>
+        </svg>
       </figure>
       <div
-        className="EntityListItem__content"
+        class="EntityListItem__content"
       >
         <div
-          className="EntityListItem__heading"
+          class="EntityListItem__heading"
         >
           <h1
-            className="EntityListItem__title"
+            class="EntityListItem__title"
           >
             Title
           </h1>
           <div
-            className="EntityListItem__content-type"
+            class="EntityListItem__content-type"
           >
             (
             Content type
@@ -394,63 +487,64 @@ exports[`renders the component as an asset entityType variant 1`] = `
           </div>
         </div>
         <p
-          className="EntityListItem__description"
+          class="EntityListItem__description"
         >
           Description
         </p>
       </div>
       <div
-        className="EntityListItem__meta"
+        class="EntityListItem__meta"
       >
         <div
-          className="EntityListItem__status"
+          class="EntityListItem__status"
         >
-          <Tag
-            tagType="positive"
-            testId="cf-ui-tag"
+          <div
+            class="Tag Tag--positive"
+            data-test-id="cf-ui-tag"
           >
             published
-          </Tag>
+          </div>
         </div>
       </div>
-    </TabFocusTrap>
+    </span>
   </article>
 </li>
 `;
 
 exports[`renders the component as an asset thumbnail preview 1`] = `
 <li
-  className="EntityListItem"
+  class="EntityListItem"
   data-test-id="cf-ui-entity-list-item"
 >
   <article
-    className="EntityListItem__inner"
+    class="EntityListItem__inner"
   >
-    <TabFocusTrap
-      className="EntityListItem__focus-trap"
+    <span
+      class="TabFocusTrap EntityListItem__focus-trap"
+      tabindex="-1"
     >
       <figure
-        className="EntityListItem__media"
+        class="EntityListItem__media"
       >
         <img
           alt="Something clever"
-          className="EntityListItem__thumbnail"
+          class="EntityListItem__thumbnail"
           src="https://path/to/thumbnail.jpg"
         />
       </figure>
       <div
-        className="EntityListItem__content"
+        class="EntityListItem__content"
       >
         <div
-          className="EntityListItem__heading"
+          class="EntityListItem__heading"
         >
           <h1
-            className="EntityListItem__title"
+            class="EntityListItem__title"
           >
             Title
           </h1>
           <div
-            className="EntityListItem__content-type"
+            class="EntityListItem__content-type"
           >
             (
             Content type
@@ -458,109 +552,182 @@ exports[`renders the component as an asset thumbnail preview 1`] = `
           </div>
         </div>
         <p
-          className="EntityListItem__description"
+          class="EntityListItem__description"
         >
           Description
         </p>
       </div>
       <div
-        className="EntityListItem__meta"
+        class="EntityListItem__meta"
       >
         <div
-          className="EntityListItem__status"
+          class="EntityListItem__status"
         >
-          <Tag
-            tagType="positive"
-            testId="cf-ui-tag"
+          <div
+            class="Tag Tag--positive"
+            data-test-id="cf-ui-tag"
           >
             published
-          </Tag>
+          </div>
         </div>
       </div>
-    </TabFocusTrap>
+    </span>
   </article>
 </li>
 `;
 
 exports[`renders the component as isLoading 1`] = `
 <li
-  className="EntityListItem"
+  class="EntityListItem"
   data-test-id="cf-ui-entity-list-item"
 >
   <article
-    className="EntityListItem__inner"
+    class="EntityListItem__inner"
   >
-    <SkeletonContainer
-      animate={true}
-      animateId="animation-1"
-      ariaLabel="Loading component..."
-      backgroundColor="#e5ebed"
-      backgroundOpacity={1}
-      clipId="f36-entity-list-item-skeleton"
-      foregroundColor="#f7f9fa"
-      foregroundOpacity={1}
-      gradientId="cf-ui-skeleton-clip-gradient-0"
+    <svg
+      aria-label="Loading component..."
+      class="SkeletonContainer"
+      data-test-id="cf-ui-skeleton-form"
       height="100%"
       preserveAspectRatio="xMidYMid meet"
-      speed={2}
-      svgHeight="100%"
-      svgWidth="100%"
-      testId="cf-ui-skeleton-form"
+      role="img"
       width="100%"
     >
-      <SkeletonImage
-        height={46}
-        radiusX={0}
-        radiusY={0}
-        testId="cf-ui-skeleton-image"
-        width={46}
+      <title>
+        Loading component...
+      </title>
+      <rect
+        clip-path="url(#f36-entity-list-item-skeleton)"
+        height="100%"
+        style="fill: url(#cf-ui-skeleton-clip-gradient-0);"
+        width="100%"
+        x="0"
+        y="0"
       />
-      <SkeletonBodyText
-        lineHeight={18}
-        marginBottom={8}
-        numberOfLines={2}
-        offsetLeft={54}
-        offsetTop={0}
-      />
-    </SkeletonContainer>
+      <defs>
+        <clippath
+          id="f36-entity-list-item-skeleton"
+        >
+          <rect
+            height="46"
+            rx="0"
+            ry="0"
+            width="46"
+          />
+          <rect
+            height="18"
+            rx="0"
+            ry="0"
+            width="100%"
+            x="54"
+            y="0"
+          />
+          <rect
+            height="18"
+            rx="0"
+            ry="0"
+            width="80%"
+            x="54"
+            y="26"
+          />
+        </clippath>
+        <lineargradient
+          id="cf-ui-skeleton-clip-gradient-0"
+        >
+          <stop
+            offset="0%"
+            stop-color="#e5ebed"
+            stop-opacity="1"
+          >
+            <animate
+              attributeName="stop-color"
+              dur="2s"
+              id="animation-1"
+              repeatCount="indefinite"
+              values="#e5ebed; #f7f9fa; #e5ebed"
+            />
+          </stop>
+          <stop
+            offset="50%"
+            stop-color="#f7f9fa"
+            stop-opacity="1"
+          >
+            <animate
+              attributeName="stop-color"
+              begin="animation-1.begin+0.25s"
+              dur="2s"
+              repeatCount="indefinite"
+              values="#e5ebed; #f7f9fa; #e5ebed"
+            />
+          </stop>
+          <stop
+            offset="100%"
+            stop-color="#e5ebed"
+            stop-opacity="1"
+          >
+            <animate
+              attributeName="stop-color"
+              begin="animation-1.begin+0.5s"
+              dur="2s"
+              repeatCount="indefinite"
+              values="#e5ebed; #f7f9fa; #e5ebed"
+            />
+          </stop>
+        </lineargradient>
+      </defs>
+    </svg>
   </article>
 </li>
 `;
 
 exports[`renders the component with a description 1`] = `
 <li
-  className="EntityListItem"
+  class="EntityListItem"
   data-test-id="cf-ui-entity-list-item"
 >
   <article
-    className="EntityListItem__inner"
+    class="EntityListItem__inner"
   >
-    <TabFocusTrap
-      className="EntityListItem__focus-trap"
+    <span
+      class="TabFocusTrap EntityListItem__focus-trap"
+      tabindex="-1"
     >
       <figure
-        className="EntityListItem__media"
+        class="EntityListItem__media"
       >
-        <Icon
-          color="muted"
-          icon="Entry"
-          size="small"
-          testId="cf-ui-icon"
-        />
+        <svg
+          class="Icon Icon--small Icon--muted"
+          data-test-id="cf-ui-icon"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0V0z"
+            fill="none"
+          />
+          <path
+            d="M8 16h8v2H8zM8 12h8v2H8z"
+          />
+          <path
+            d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"
+          />
+        </svg>
       </figure>
       <div
-        className="EntityListItem__content"
+        class="EntityListItem__content"
       >
         <div
-          className="EntityListItem__heading"
+          class="EntityListItem__heading"
         >
           <h1
-            className="EntityListItem__title"
+            class="EntityListItem__title"
           >
             Title
           </h1>
           <div
-            className="EntityListItem__content-type"
+            class="EntityListItem__content-type"
           >
             (
             Content type
@@ -568,59 +735,93 @@ exports[`renders the component with a description 1`] = `
           </div>
         </div>
         <p
-          className="EntityListItem__description"
+          class="EntityListItem__description"
         >
           Description
         </p>
       </div>
       <div
-        className="EntityListItem__meta"
+        class="EntityListItem__meta"
       />
-    </TabFocusTrap>
+    </span>
   </article>
 </li>
 `;
 
 exports[`renders the component with a drag handle 1`] = `
 <li
-  className="EntityListItem"
+  class="EntityListItem"
   data-test-id="cf-ui-entity-list-item"
 >
-  <CardDragHandle
-    isDragActive={false}
-    testId="cf-ui-card-drag-handle"
+  <div
+    class="CardDragHandle"
+    data-test-id="cf-ui-card-drag-handle"
   >
-    Reorder entry
-  </CardDragHandle>
+    <svg
+      class="Icon Icon--small Icon--muted"
+      data-test-id="cf-ui-icon"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 0h24v24H0V0z"
+        fill="none"
+      />
+      <path
+        d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+      />
+    </svg>
+    <span
+      class="CardDragHandle__sr-label"
+    >
+      Reorder entry
+    </span>
+  </div>
   <article
-    className="EntityListItem__inner"
+    class="EntityListItem__inner"
   >
-    <TabFocusTrap
-      className="EntityListItem__focus-trap"
+    <span
+      class="TabFocusTrap EntityListItem__focus-trap"
+      tabindex="-1"
     >
       <figure
-        className="EntityListItem__media"
+        class="EntityListItem__media"
       >
-        <Icon
-          color="muted"
-          icon="Entry"
-          size="small"
-          testId="cf-ui-icon"
-        />
+        <svg
+          class="Icon Icon--small Icon--muted"
+          data-test-id="cf-ui-icon"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0V0z"
+            fill="none"
+          />
+          <path
+            d="M8 16h8v2H8zM8 12h8v2H8z"
+          />
+          <path
+            d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"
+          />
+        </svg>
       </figure>
       <div
-        className="EntityListItem__content"
+        class="EntityListItem__content"
       >
         <div
-          className="EntityListItem__heading"
+          class="EntityListItem__heading"
         >
           <h1
-            className="EntityListItem__title"
+            class="EntityListItem__title"
           >
             Title
           </h1>
           <div
-            className="EntityListItem__content-type"
+            class="EntityListItem__content-type"
           >
             (
             Content type
@@ -628,64 +829,78 @@ exports[`renders the component with a drag handle 1`] = `
           </div>
         </div>
         <p
-          className="EntityListItem__description"
+          class="EntityListItem__description"
         >
           Description
         </p>
       </div>
       <div
-        className="EntityListItem__meta"
+        class="EntityListItem__meta"
       >
         <div
-          className="EntityListItem__status"
+          class="EntityListItem__status"
         >
-          <Tag
-            tagType="positive"
-            testId="cf-ui-tag"
+          <div
+            class="Tag Tag--positive"
+            data-test-id="cf-ui-tag"
           >
             published
-          </Tag>
+          </div>
         </div>
       </div>
-    </TabFocusTrap>
+    </span>
   </article>
 </li>
 `;
 
 exports[`renders the component with a status 1`] = `
 <li
-  className="EntityListItem"
+  class="EntityListItem"
   data-test-id="cf-ui-entity-list-item"
 >
   <article
-    className="EntityListItem__inner"
+    class="EntityListItem__inner"
   >
-    <TabFocusTrap
-      className="EntityListItem__focus-trap"
+    <span
+      class="TabFocusTrap EntityListItem__focus-trap"
+      tabindex="-1"
     >
       <figure
-        className="EntityListItem__media"
+        class="EntityListItem__media"
       >
-        <Icon
-          color="muted"
-          icon="Entry"
-          size="small"
-          testId="cf-ui-icon"
-        />
+        <svg
+          class="Icon Icon--small Icon--muted"
+          data-test-id="cf-ui-icon"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0V0z"
+            fill="none"
+          />
+          <path
+            d="M8 16h8v2H8zM8 12h8v2H8z"
+          />
+          <path
+            d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"
+          />
+        </svg>
       </figure>
       <div
-        className="EntityListItem__content"
+        class="EntityListItem__content"
       >
         <div
-          className="EntityListItem__heading"
+          class="EntityListItem__heading"
         >
           <h1
-            className="EntityListItem__title"
+            class="EntityListItem__title"
           >
             Title
           </h1>
           <div
-            className="EntityListItem__content-type"
+            class="EntityListItem__content-type"
           >
             (
             Content type
@@ -693,64 +908,78 @@ exports[`renders the component with a status 1`] = `
           </div>
         </div>
         <p
-          className="EntityListItem__description"
+          class="EntityListItem__description"
         >
           Description
         </p>
       </div>
       <div
-        className="EntityListItem__meta"
+        class="EntityListItem__meta"
       >
         <div
-          className="EntityListItem__status"
+          class="EntityListItem__status"
         >
-          <Tag
-            tagType="positive"
-            testId="cf-ui-tag"
+          <div
+            class="Tag Tag--positive"
+            data-test-id="cf-ui-tag"
           >
             published
-          </Tag>
+          </div>
         </div>
       </div>
-    </TabFocusTrap>
+    </span>
   </article>
 </li>
 `;
 
 exports[`renders the component with active drag state 1`] = `
 <li
-  className="EntityListItem EntityListItem--drag-active"
+  class="EntityListItem EntityListItem--drag-active"
   data-test-id="cf-ui-entity-list-item"
 >
   <article
-    className="EntityListItem__inner"
+    class="EntityListItem__inner"
   >
-    <TabFocusTrap
-      className="EntityListItem__focus-trap"
+    <span
+      class="TabFocusTrap EntityListItem__focus-trap"
+      tabindex="-1"
     >
       <figure
-        className="EntityListItem__media"
+        class="EntityListItem__media"
       >
-        <Icon
-          color="muted"
-          icon="Entry"
-          size="small"
-          testId="cf-ui-icon"
-        />
+        <svg
+          class="Icon Icon--small Icon--muted"
+          data-test-id="cf-ui-icon"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0V0z"
+            fill="none"
+          />
+          <path
+            d="M8 16h8v2H8zM8 12h8v2H8z"
+          />
+          <path
+            d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"
+          />
+        </svg>
       </figure>
       <div
-        className="EntityListItem__content"
+        class="EntityListItem__content"
       >
         <div
-          className="EntityListItem__heading"
+          class="EntityListItem__heading"
         >
           <h1
-            className="EntityListItem__title"
+            class="EntityListItem__title"
           >
             Title
           </h1>
           <div
-            className="EntityListItem__content-type"
+            class="EntityListItem__content-type"
           >
             (
             Content type
@@ -758,64 +987,78 @@ exports[`renders the component with active drag state 1`] = `
           </div>
         </div>
         <p
-          className="EntityListItem__description"
+          class="EntityListItem__description"
         >
           Description
         </p>
       </div>
       <div
-        className="EntityListItem__meta"
+        class="EntityListItem__meta"
       >
         <div
-          className="EntityListItem__status"
+          class="EntityListItem__status"
         >
-          <Tag
-            tagType="positive"
-            testId="cf-ui-tag"
+          <div
+            class="Tag Tag--positive"
+            data-test-id="cf-ui-tag"
           >
             published
-          </Tag>
+          </div>
         </div>
       </div>
-    </TabFocusTrap>
+    </span>
   </article>
 </li>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
 <li
-  className="EntityListItem my-extra-class"
+  class="EntityListItem my-extra-class"
   data-test-id="cf-ui-entity-list-item"
 >
   <article
-    className="EntityListItem__inner"
+    class="EntityListItem__inner"
   >
-    <TabFocusTrap
-      className="EntityListItem__focus-trap"
+    <span
+      class="TabFocusTrap EntityListItem__focus-trap"
+      tabindex="-1"
     >
       <figure
-        className="EntityListItem__media"
+        class="EntityListItem__media"
       >
-        <Icon
-          color="muted"
-          icon="Entry"
-          size="small"
-          testId="cf-ui-icon"
-        />
+        <svg
+          class="Icon Icon--small Icon--muted"
+          data-test-id="cf-ui-icon"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0V0z"
+            fill="none"
+          />
+          <path
+            d="M8 16h8v2H8zM8 12h8v2H8z"
+          />
+          <path
+            d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"
+          />
+        </svg>
       </figure>
       <div
-        className="EntityListItem__content"
+        class="EntityListItem__content"
       >
         <div
-          className="EntityListItem__heading"
+          class="EntityListItem__heading"
         >
           <h1
-            className="EntityListItem__title"
+            class="EntityListItem__title"
           >
             Title
           </h1>
           <div
-            className="EntityListItem__content-type"
+            class="EntityListItem__content-type"
           >
             (
             Content type
@@ -823,59 +1066,93 @@ exports[`renders the component with an additional class name 1`] = `
           </div>
         </div>
         <p
-          className="EntityListItem__description"
+          class="EntityListItem__description"
         >
           Description
         </p>
       </div>
       <div
-        className="EntityListItem__meta"
+        class="EntityListItem__meta"
       />
-    </TabFocusTrap>
+    </span>
   </article>
 </li>
 `;
 
 exports[`renders the component with custom drag handle 1`] = `
 <li
-  className="EntityListItem"
+  class="EntityListItem"
   data-test-id="cf-ui-entity-list-item"
 >
-  <CardDragHandle
-    isDragActive={false}
-    testId="cf-ui-card-drag-handle"
+  <div
+    class="CardDragHandle"
+    data-test-id="cf-ui-card-drag-handle"
   >
-    Reorder card
-  </CardDragHandle>
+    <svg
+      class="Icon Icon--small Icon--muted"
+      data-test-id="cf-ui-icon"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 0h24v24H0V0z"
+        fill="none"
+      />
+      <path
+        d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+      />
+    </svg>
+    <span
+      class="CardDragHandle__sr-label"
+    >
+      Reorder card
+    </span>
+  </div>
   <article
-    className="EntityListItem__inner"
+    class="EntityListItem__inner"
   >
-    <TabFocusTrap
-      className="EntityListItem__focus-trap"
+    <span
+      class="TabFocusTrap EntityListItem__focus-trap"
+      tabindex="-1"
     >
       <figure
-        className="EntityListItem__media"
+        class="EntityListItem__media"
       >
-        <Icon
-          color="muted"
-          icon="Entry"
-          size="small"
-          testId="cf-ui-icon"
-        />
+        <svg
+          class="Icon Icon--small Icon--muted"
+          data-test-id="cf-ui-icon"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0V0z"
+            fill="none"
+          />
+          <path
+            d="M8 16h8v2H8zM8 12h8v2H8z"
+          />
+          <path
+            d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"
+          />
+        </svg>
       </figure>
       <div
-        className="EntityListItem__content"
+        class="EntityListItem__content"
       >
         <div
-          className="EntityListItem__heading"
+          class="EntityListItem__heading"
         >
           <h1
-            className="EntityListItem__title"
+            class="EntityListItem__title"
           >
             Title
           </h1>
           <div
-            className="EntityListItem__content-type"
+            class="EntityListItem__content-type"
           >
             (
             Content type
@@ -883,64 +1160,78 @@ exports[`renders the component with custom drag handle 1`] = `
           </div>
         </div>
         <p
-          className="EntityListItem__description"
+          class="EntityListItem__description"
         >
           Description
         </p>
       </div>
       <div
-        className="EntityListItem__meta"
+        class="EntityListItem__meta"
       >
         <div
-          className="EntityListItem__status"
+          class="EntityListItem__status"
         >
-          <Tag
-            tagType="positive"
-            testId="cf-ui-tag"
+          <div
+            class="Tag Tag--positive"
+            data-test-id="cf-ui-tag"
           >
             published
-          </Tag>
+          </div>
         </div>
       </div>
-    </TabFocusTrap>
+    </span>
   </article>
 </li>
 `;
 
 exports[`renders the component with disabled actions 1`] = `
 <li
-  className="EntityListItem my-extra-class"
+  class="EntityListItem my-extra-class"
   data-test-id="cf-ui-entity-list-item"
 >
   <article
-    className="EntityListItem__inner"
+    class="EntityListItem__inner"
   >
-    <TabFocusTrap
-      className="EntityListItem__focus-trap"
+    <span
+      class="TabFocusTrap EntityListItem__focus-trap"
+      tabindex="-1"
     >
       <figure
-        className="EntityListItem__media"
+        class="EntityListItem__media"
       >
-        <Icon
-          color="muted"
-          icon="Entry"
-          size="small"
-          testId="cf-ui-icon"
-        />
+        <svg
+          class="Icon Icon--small Icon--muted"
+          data-test-id="cf-ui-icon"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0V0z"
+            fill="none"
+          />
+          <path
+            d="M8 16h8v2H8zM8 12h8v2H8z"
+          />
+          <path
+            d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"
+          />
+        </svg>
       </figure>
       <div
-        className="EntityListItem__content"
+        class="EntityListItem__content"
       >
         <div
-          className="EntityListItem__heading"
+          class="EntityListItem__heading"
         >
           <h1
-            className="EntityListItem__title"
+            class="EntityListItem__title"
           >
             Title
           </h1>
           <div
-            className="EntityListItem__content-type"
+            class="EntityListItem__content-type"
           >
             (
             Content type
@@ -948,53 +1239,67 @@ exports[`renders the component with disabled actions 1`] = `
           </div>
         </div>
         <p
-          className="EntityListItem__description"
+          class="EntityListItem__description"
         >
           Description
         </p>
       </div>
       <div
-        className="EntityListItem__meta"
+        class="EntityListItem__meta"
       />
-    </TabFocusTrap>
+    </span>
   </article>
 </li>
 `;
 
 exports[`renders the component with dropdownListElements 1`] = `
 <li
-  className="EntityListItem"
+  class="EntityListItem"
   data-test-id="cf-ui-entity-list-item"
 >
   <article
-    className="EntityListItem__inner"
+    class="EntityListItem__inner"
   >
-    <TabFocusTrap
-      className="EntityListItem__focus-trap"
+    <span
+      class="TabFocusTrap EntityListItem__focus-trap"
+      tabindex="-1"
     >
       <figure
-        className="EntityListItem__media"
+        class="EntityListItem__media"
       >
-        <Icon
-          color="muted"
-          icon="Entry"
-          size="small"
-          testId="cf-ui-icon"
-        />
+        <svg
+          class="Icon Icon--small Icon--muted"
+          data-test-id="cf-ui-icon"
+          height="24"
+          viewBox="0 0 24 24"
+          width="24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0V0z"
+            fill="none"
+          />
+          <path
+            d="M8 16h8v2H8zM8 12h8v2H8z"
+          />
+          <path
+            d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"
+          />
+        </svg>
       </figure>
       <div
-        className="EntityListItem__content"
+        class="EntityListItem__content"
       >
         <div
-          className="EntityListItem__heading"
+          class="EntityListItem__heading"
         >
           <h1
-            className="EntityListItem__title"
+            class="EntityListItem__title"
           >
             Title
           </h1>
           <div
-            className="EntityListItem__content-type"
+            class="EntityListItem__content-type"
           >
             (
             Content type
@@ -1002,76 +1307,65 @@ exports[`renders the component with dropdownListElements 1`] = `
           </div>
         </div>
         <p
-          className="EntityListItem__description"
+          class="EntityListItem__description"
         >
           Description
         </p>
       </div>
       <div
-        className="EntityListItem__meta"
+        class="EntityListItem__meta"
       >
         <div
-          className="EntityListItem__status"
+          class="EntityListItem__status"
         >
-          <Tag
-            tagType="positive"
-            testId="cf-ui-tag"
+          <div
+            class="Tag Tag--positive"
+            data-test-id="cf-ui-tag"
           >
             published
-          </Tag>
+          </div>
         </div>
-        <CardActions
-          className="EntityListItem__actions"
-          iconButtonProps={
-            Object {
-              "onClick": [Function],
-            }
-          }
-          isDisabled={false}
-          testId="cf-ui-card-actions"
+        <div
+          class="Dropdown EntityListItem__actions"
+          data-test-id="cf-ui-card-actions"
         >
-          <DropdownList
-            testId="cf-ui-dropdown-list"
+          <button
+            aria-expanded="false"
+            aria-haspopup="menu"
+            class="IconButton IconButton--secondary"
+            data-test-id="cf-ui-icon-button"
+            type="button"
           >
-            <DropdownListItem
-              isActive={false}
-              isDisabled={false}
-              isTitle={true}
-              testId="cf-ui-dropdown-list-item"
+            <span
+              class="TabFocusTrap IconButton__inner"
+              tabindex="-1"
             >
-              Actions
-            </DropdownListItem>
-            <DropdownListItem
-              isActive={false}
-              isDisabled={false}
-              isTitle={false}
-              onClick={[Function]}
-              testId="cf-ui-dropdown-list-item"
-            >
-              Edit
-            </DropdownListItem>
-            <DropdownListItem
-              isActive={false}
-              isDisabled={false}
-              isTitle={false}
-              onClick={[Function]}
-              testId="cf-ui-dropdown-list-item"
-            >
-              Download
-            </DropdownListItem>
-            <DropdownListItem
-              isActive={false}
-              isDisabled={false}
-              isTitle={false}
-              onClick={[Function]}
-              testId="cf-ui-dropdown-list-item"
-            >
-              Remove
-            </DropdownListItem>
-          </DropdownList>
-        </CardActions>
+              <svg
+                class="Icon Icon--small Icon--primary IconButton__icon"
+                data-test-id="cf-ui-icon"
+                height="18"
+                viewBox="0 0 24 24"
+                width="18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0 0h24v24H0z"
+                  fill="none"
+                />
+                <path
+                  d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+                />
+              </svg>
+              <span
+                class="IconButton__label"
+              >
+                Actions
+              </span>
+            </span>
+          </button>
+        </div>
       </div>
-    </TabFocusTrap>
+    </span>
   </article>
 </li>
 `;

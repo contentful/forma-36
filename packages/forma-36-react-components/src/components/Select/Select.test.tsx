@@ -1,99 +1,107 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
 import axe from '../../utils/axeHelper';
 import Select from './Select';
 import Option from './Option';
 
 it('renders the component', () => {
-  const output = shallow(
+  const { container } = render(
     <Select name="optionSelect" id="optionSelect">
       <Option value="optionOne">Option One</Option>
     </Select>,
   );
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an extra class name', () => {
-  const output = shallow(
+  const { container } = render(
     <Select name="optionSelect" id="optionSelect" className="extraClassName">
       <Option value="optionOne">Option One</Option>
     </Select>,
   );
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component in disabled state', () => {
-  const output = shallow(
+  const { container } = render(
     <Select isDisabled name="optionSelect" id="optionSelect">
       <Option value="optionOne">Option One</Option>
     </Select>,
   );
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with error', () => {
-  const output = shallow(
+  const { container } = render(
     <Select hasError name="optionSelect" id="optionSelect">
       <Option value="optionOne">Option One</Option>
     </Select>,
   );
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a value', () => {
-  const output = shallow(
+  const { container } = render(
     <Select value="value1" name="optionSelect" id="optionSelect">
       <Option value="optionOne">Option One</Option>
     </Select>,
   );
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component as required', () => {
-  const output = shallow(
+  const { container } = render(
     <Select name="optionSelect" id="optionSelect" required>
       <Option value="optionOne">Option One</Option>
     </Select>,
   );
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('should not dispatch onChange if disabled', () => {
   const mockOnChange = jest.fn();
-  const select = mount(
+  render(
     <Select
       name="optionSelect"
       id="optionSelect"
       onChange={mockOnChange}
       isDisabled
+      data-testid="select"
     >
       <Option value="optionOne">Option One</Option>
     </Select>,
   );
 
-  select.find('select').simulate('change');
+  userEvent.selectOptions(screen.getByTestId('select'), ['optionOne']);
   expect(mockOnChange).not.toHaveBeenCalled();
 });
 
 it('should dispatch onChange', () => {
   const mockOnChange = jest.fn();
-  const select = mount(
-    <Select name="optionSelect" id="optionSelect" onChange={mockOnChange}>
+  render(
+    <Select
+      name="optionSelect"
+      id="optionSelect"
+      onChange={mockOnChange}
+      data-testid="select"
+    >
       <Option value="optionOne">Option One</Option>
     </Select>,
   );
 
-  select.find('select').simulate('change', { target: { value: 'optionOne' } });
+  userEvent.selectOptions(screen.getByTestId('select'), ['optionOne']);
   expect(mockOnChange).toHaveBeenCalled();
 });
 
 it('has no a11y issues', async () => {
-  const output = mount(
+  const { container } = render(
     <Select id="optionSelect" name="optionSelect">
       <Option value="optionOne">Option 1</Option>
     </Select>,
-  ).html();
-  const results = await axe(output);
+  );
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });

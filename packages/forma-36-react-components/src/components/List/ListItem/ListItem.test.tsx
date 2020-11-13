@@ -1,17 +1,18 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import ListItem from './ListItem';
 
 it('renders the component', () => {
-  const output = shallow(<ListItem>ListItem</ListItem>);
+  const { container } = render(<ListItem>ListItem</ListItem>);
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(
+  const { container } = render(
     <ListItem className="my-extra-class">ListItem</ListItem>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });

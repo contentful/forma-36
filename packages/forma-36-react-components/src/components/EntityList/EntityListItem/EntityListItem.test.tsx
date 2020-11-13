@@ -1,5 +1,7 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
 import axe from '../../../utils/axeHelper';
 import EntityListItem from './EntityListItem';
 import DropdownList from '../../Dropdown/DropdownList';
@@ -7,15 +9,15 @@ import DropdownListItem from '../../Dropdown/DropdownListItem';
 import CardDragHandle from './../../Card/CardDragHandle';
 
 it('renders the component', () => {
-  const output = shallow(
+  const { container } = render(
     <EntityListItem title="Title" contentType="Content type" />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a description', () => {
-  const output = shallow(
+  const { container } = render(
     <EntityListItem
       title="Title"
       description="Description"
@@ -23,11 +25,11 @@ it('renders the component with a description', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a status', () => {
-  const output = shallow(
+  const { container } = render(
     <EntityListItem
       title="Title"
       description="Description"
@@ -36,11 +38,11 @@ it('renders the component with a status', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component as an Asset with a title-cased entityType', () => {
-  const output = shallow(
+  const { container } = render(
     <EntityListItem
       title="Title"
       description="Description"
@@ -50,11 +52,11 @@ it('renders the component as an Asset with a title-cased entityType', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component as an Asset with a lower-cased entityType', () => {
-  const output = shallow(
+  const { container } = render(
     <EntityListItem
       title="Title"
       description="Description"
@@ -64,11 +66,11 @@ it('renders the component as an Asset with a lower-cased entityType', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with dropdownListElements', () => {
-  const output = shallow(
+  const { container } = render(
     <EntityListItem
       title="Title"
       description="Description"
@@ -85,11 +87,11 @@ it('renders the component with dropdownListElements', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with custom drag handle', () => {
-  const output = shallow(
+  const { container } = render(
     <EntityListItem
       title="Title"
       description="Description"
@@ -99,11 +101,11 @@ it('renders the component with custom drag handle', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a drag handle', () => {
-  const output = shallow(
+  const { container } = render(
     <EntityListItem
       title="Title"
       description="Description"
@@ -113,11 +115,11 @@ it('renders the component with a drag handle', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with active drag state', () => {
-  const output = shallow(
+  const { container } = render(
     <EntityListItem
       title="Title"
       description="Description"
@@ -127,11 +129,11 @@ it('renders the component with active drag state', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component as an asset entityType variant', () => {
-  const output = shallow(
+  const { container } = render(
     <EntityListItem
       title="Title"
       description="Description"
@@ -141,11 +143,11 @@ it('renders the component as an asset entityType variant', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component as an asset thumbnail preview', () => {
-  const output = shallow(
+  const { container } = render(
     <EntityListItem
       title="Title"
       description="Description"
@@ -157,11 +159,11 @@ it('renders the component as an asset thumbnail preview', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component as an asset entityType icon with an archived status', () => {
-  const output = shallow(
+  const { container } = render(
     <EntityListItem
       title="Title"
       description="Description"
@@ -173,29 +175,29 @@ it('renders the component as an asset entityType icon with an archived status', 
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component as isLoading', () => {
-  const output = shallow(
+  const { container } = render(
     <EntityListItem title="Title" description="Description" isLoading />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component as an `a` element if passed a href prop', () => {
-  const output = shallow(
+  const { container } = render(
     <EntityListItem title="Title" description="Description" href="#" />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('can call an onClick callback', () => {
   const mockOnClick = jest.fn();
 
-  const output = shallow(
+  const { container } = render(
     <EntityListItem
       title="Title"
       description="Description"
@@ -203,13 +205,13 @@ it('can call an onClick callback', () => {
     />,
   );
 
-  output.find('a').simulate('click');
+  userEvent.click(screen.getByText('Title'));
   expect(mockOnClick).toHaveBeenCalled();
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(
+  const { container } = render(
     <EntityListItem
       title="Title"
       description="Description"
@@ -218,11 +220,11 @@ it('renders the component with an additional class name', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with disabled actions', () => {
-  const output = shallow(
+  const { container } = render(
     <EntityListItem
       title="Title"
       description="Description"
@@ -232,11 +234,11 @@ it('renders the component with disabled actions', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('has no a11y issues', async () => {
-  const output = mount(
+  const { container } = render(
     <ul>
       <EntityListItem
         title="Title"
@@ -244,8 +246,8 @@ it('has no a11y issues', async () => {
         contentType="Content type"
       />
     </ul>,
-  ).html();
-  const results = await axe(output);
+  );
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });

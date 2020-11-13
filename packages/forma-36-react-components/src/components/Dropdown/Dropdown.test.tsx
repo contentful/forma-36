@@ -1,5 +1,7 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
 import axe from '../../utils/axeHelper';
 import Dropdown from './Dropdown';
 import Button from '../Button';
@@ -7,18 +9,18 @@ import DropdownListItem from './DropdownListItem';
 import DropdownList from './DropdownList';
 
 it('renders the component', () => {
-  const output = shallow(
+  const { container } = render(
     <Dropdown toggleElement={<Button onClick={() => {}}>Toggle</Button>}>
       <DropdownList>
         <DropdownListItem>entry</DropdownListItem>
       </DropdownList>
     </Dropdown>,
   );
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(
+  const { container } = render(
     <Dropdown toggleElement={<Button onClick={() => {}}>Toggle</Button>}>
       <DropdownList>
         <DropdownListItem>entry</DropdownListItem>
@@ -26,11 +28,11 @@ it('renders the component with an additional class name', () => {
     </Dropdown>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component as open', () => {
-  const output = shallow(
+  const { container } = render(
     <Dropdown isOpen toggleElement={<Button onClick={() => {}}>Toggle</Button>}>
       <DropdownList>
         <DropdownListItem>entry</DropdownListItem>
@@ -38,13 +40,13 @@ it('renders the component as open', () => {
     </Dropdown>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('toggleElement dispactions onClick event', () => {
   const onClickFunc = jest.fn();
 
-  const output = shallow(
+  render(
     <Dropdown toggleElement={<Button onClick={onClickFunc}>Toggle</Button>}>
       <DropdownList>
         <DropdownListItem>entry</DropdownListItem>
@@ -52,12 +54,12 @@ it('toggleElement dispactions onClick event', () => {
     </Dropdown>,
   );
 
-  output.find('Button').simulate('click');
+  userEvent.click(screen.getByText('Toggle'));
   expect(onClickFunc).toHaveBeenCalled();
 });
 
 it('renders the component with a submenu', () => {
-  const output = shallow(
+  const { container } = render(
     <Dropdown isOpen toggleElement={<Button onClick={() => {}}>Toggle</Button>}>
       <DropdownList>
         <DropdownListItem>entry</DropdownListItem>
@@ -69,18 +71,18 @@ it('renders the component with a submenu', () => {
     </Dropdown>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('has no a11y issues', async () => {
-  const output = mount(
+  const { container } = render(
     <Dropdown toggleElement={<Button onClick={() => {}}>Toggle</Button>}>
       <DropdownList>
         <DropdownListItem>entry</DropdownListItem>
       </DropdownList>
     </Dropdown>,
-  ).html();
-  const results = await axe(output);
+  );
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });

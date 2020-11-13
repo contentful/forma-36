@@ -102,8 +102,8 @@ export const Grid = (props: GridProps) => {
     flow,
     justifyContent,
     alignContent,
-    gridColumnGap: columnGap && handleGap(columnGap),
-    gridRowGap: rowGap && handleGap(rowGap),
+    columnGap: columnGap && handleGap(columnGap),
+    rowGap: rowGap && handleGap(rowGap),
     ...style,
   };
 

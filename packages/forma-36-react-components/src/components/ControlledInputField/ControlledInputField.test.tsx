@@ -1,18 +1,19 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import axe from '../../utils/axeHelper';
 import ControlledInputField from './ControlledInputField';
 
 it('renders the component', () => {
-  const output = shallow(
+  const { container } = render(
     <ControlledInputField id="checkbox" labelText="label text" />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(
+  const { container } = render(
     <ControlledInputField
       className="my-extra-class"
       id="checkbox"
@@ -20,11 +21,11 @@ it('renders the component with an additional class name', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component as required', () => {
-  const output = shallow(
+  const { container } = render(
     <ControlledInputField
       className="my-extra-class"
       id="checkbox"
@@ -33,11 +34,11 @@ it('renders the component as required', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a help text', () => {
-  const output = shallow(
+  const { container } = render(
     <ControlledInputField
       className="my-extra-class"
       id="checkbox"
@@ -46,11 +47,11 @@ it('renders the component with a help text', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a validation message', () => {
-  const output = shallow(
+  const { container } = render(
     <ControlledInputField
       className="my-extra-class"
       id="checkbox"
@@ -59,11 +60,11 @@ it('renders the component with a validation message', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component in a disabled state', () => {
-  const output = shallow(
+  const { container } = render(
     <ControlledInputField
       className="my-extra-class"
       id="checkbox"
@@ -72,11 +73,11 @@ it('renders the component in a disabled state', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a light label variation', () => {
-  const output = shallow(
+  const { container } = render(
     <ControlledInputField
       className="my-extra-class"
       id="checkbox"
@@ -86,11 +87,11 @@ it('renders the component with a light label variation', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component as checked', () => {
-  const output = shallow(
+  const { container } = render(
     <ControlledInputField
       className="my-extra-class"
       id="checkbox"
@@ -99,11 +100,11 @@ it('renders the component as checked', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a value', () => {
-  const output = shallow(
+  const { container } = render(
     <ControlledInputField
       className="my-extra-class"
       id="checkbox"
@@ -112,14 +113,14 @@ it('renders the component with a value', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('has no a11y issues', async () => {
-  const output = mount(
+  const { container } = render(
     <ControlledInputField id="checkbox" labelText="label text" />,
-  ).html();
-  const results = await axe(output);
+  );
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });

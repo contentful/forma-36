@@ -2,45 +2,150 @@
 
 exports[`renders the component 1`] = `
 <ul
-  className="Accordion Accordion--end"
+  class="Accordion Accordion--end"
   data-test-id="cf-ui-accordion"
 >
-  <AccordionItem
-    testId="cf-ui-accordion-item"
-    title="Accordion Title"
-    titleElement="h2"
+  <li
+    class="AccordionItem"
+    data-test-id="cf-ui-accordion-item-1"
   >
-    Accordion content
-  </AccordionItem>
+    <h2
+      class="Subheading"
+      data-test-id="cf-ui-subheading"
+    >
+      <button
+        aria-controls="accordion-panel--1"
+        aria-expanded="false"
+        class="AccordionHeader"
+        id="accordion--1"
+        type="button"
+      >
+        <svg
+          class="Icon Icon--small Icon--secondary Icon--trimmed AccordionHeader__icon"
+          data-test-id="cf-ui-icon"
+          viewBox="0 0 9 18"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1.1 5.9l3.4 3.4 3.4-3.4 1.1 1-4.5 4.5L0 6.9l1.1-1z"
+          />
+          <path
+            d="M0 0h9v18H0V0z"
+            fill="none"
+          />
+        </svg>
+        Accordion Title
+      </button>
+    </h2>
+    <div
+      aria-hidden="true"
+      aria-labelledby="accordion--1"
+      class="AccordionPanel"
+      id="accordion-panel--1"
+      role="region"
+    >
+      Accordion content
+    </div>
+  </li>
 </ul>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
 <ul
-  className="Accordion my-extra-class Accordion--end"
+  class="Accordion my-extra-class Accordion--end"
   data-test-id="cf-ui-accordion"
 >
-  <AccordionItem
-    testId="cf-ui-accordion-item"
-    title="Accordion Title"
-    titleElement="h2"
+  <li
+    class="AccordionItem"
+    data-test-id="cf-ui-accordion-item-2"
   >
-    Accordion content
-  </AccordionItem>
+    <h2
+      class="Subheading"
+      data-test-id="cf-ui-subheading"
+    >
+      <button
+        aria-controls="accordion-panel--2"
+        aria-expanded="false"
+        class="AccordionHeader"
+        id="accordion--2"
+        type="button"
+      >
+        <svg
+          class="Icon Icon--small Icon--secondary Icon--trimmed AccordionHeader__icon"
+          data-test-id="cf-ui-icon"
+          viewBox="0 0 9 18"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1.1 5.9l3.4 3.4 3.4-3.4 1.1 1-4.5 4.5L0 6.9l1.1-1z"
+          />
+          <path
+            d="M0 0h9v18H0V0z"
+            fill="none"
+          />
+        </svg>
+        Accordion Title
+      </button>
+    </h2>
+    <div
+      aria-hidden="true"
+      aria-labelledby="accordion--2"
+      class="AccordionPanel"
+      id="accordion-panel--2"
+      role="region"
+    >
+      Accordion content
+    </div>
+  </li>
 </ul>
 `;
 
 exports[`renders the component with chevron on the left 1`] = `
 <ul
-  className="Accordion Accordion--start"
+  class="Accordion Accordion--start"
   data-test-id="cf-ui-accordion"
 >
-  <AccordionItem
-    testId="cf-ui-accordion-item"
-    title="Accordion Title"
-    titleElement="h2"
+  <li
+    class="AccordionItem"
+    data-test-id="cf-ui-accordion-item-3"
   >
-    Accordion content
-  </AccordionItem>
+    <h2
+      class="Subheading"
+      data-test-id="cf-ui-subheading"
+    >
+      <button
+        aria-controls="accordion-panel--3"
+        aria-expanded="false"
+        class="AccordionHeader"
+        id="accordion--3"
+        type="button"
+      >
+        <svg
+          class="Icon Icon--small Icon--secondary Icon--trimmed AccordionHeader__icon"
+          data-test-id="cf-ui-icon"
+          viewBox="0 0 9 18"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M1.1 5.9l3.4 3.4 3.4-3.4 1.1 1-4.5 4.5L0 6.9l1.1-1z"
+          />
+          <path
+            d="M0 0h9v18H0V0z"
+            fill="none"
+          />
+        </svg>
+        Accordion Title
+      </button>
+    </h2>
+    <div
+      aria-hidden="true"
+      aria-labelledby="accordion--3"
+      class="AccordionPanel"
+      id="accordion-panel--3"
+      role="region"
+    >
+      Accordion content
+    </div>
+  </li>
 </ul>
 `;

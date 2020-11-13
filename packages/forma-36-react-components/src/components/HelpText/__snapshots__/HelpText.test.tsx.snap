@@ -2,7 +2,7 @@
 
 exports[`renders the component 1`] = `
 <p
-  className="HelpText"
+  class="HelpText"
   data-test-id="cf-ui-help-text"
 >
   Lorem Ipsum dolor sit amet
@@ -11,7 +11,7 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <p
-  className="HelpText my-extra-class"
+  class="HelpText my-extra-class"
   data-test-id="cf-ui-help-text"
 >
   Lorem Ipsum dolor sit amet

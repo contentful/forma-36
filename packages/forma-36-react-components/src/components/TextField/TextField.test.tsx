@@ -1,18 +1,20 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
 import axe from '../../utils/axeHelper';
 import TextField from './TextField';
 
 it('renders the component', () => {
-  const output = shallow(
+  const { container } = render(
     <TextField labelText="test" name="someComponent" id="someComponent" />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(
+  const { container } = render(
     <TextField
       labelText="test"
       name="someComponent"
@@ -21,11 +23,11 @@ it('renders the component with an additional class name', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with validation message', () => {
-  const output = shallow(
+  const { container } = render(
     <TextField
       labelText="test"
       name="someComponent"
@@ -34,11 +36,11 @@ it('renders the component with validation message', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with required text', () => {
-  const output = shallow(
+  const { container } = render(
     <TextField
       labelText="test"
       name="someComponent"
@@ -49,11 +51,11 @@ it('renders the component with required text', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with help text', () => {
-  const output = shallow(
+  const { container } = render(
     <TextField
       labelText="test"
       name="someComponent"
@@ -62,11 +64,11 @@ it('renders the component with help text', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a textlink', () => {
-  const output = shallow(
+  const { container } = render(
     <TextField
       labelText="test"
       name="someComponent"
@@ -79,11 +81,11 @@ it('renders the component with a textlink', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a value', () => {
-  const output = shallow(
+  const { container } = render(
     <TextField
       labelText="test"
       name="someComponent"
@@ -92,11 +94,11 @@ it('renders the component with a value', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with as textarea', () => {
-  const output = shallow(
+  const { container } = render(
     <TextField
       labelText="test"
       name="someComponent"
@@ -105,11 +107,11 @@ it('renders the component with as textarea', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a copybutton', () => {
-  const output = shallow(
+  const { container } = render(
     <TextField
       labelText="test"
       name="someComponent"
@@ -120,11 +122,11 @@ it('renders the component with a copybutton', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with characters count', () => {
-  const output = shallow(
+  const { container } = render(
     <TextField
       countCharacters
       labelText="test"
@@ -136,11 +138,11 @@ it('renders the component with characters count', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('updates the characters counter', () => {
-  const output = mount(
+  render(
     <TextField
       countCharacters
       value="foo"
@@ -153,21 +155,14 @@ it('updates the characters counter', () => {
     />,
   );
 
-  const input = output.find('input');
-  const counter = output.find('p.TextField__count');
+  const counter = screen.getByText('3/20');
 
-  expect(counter.text()).toBe('3/20');
-
-  const changeEvt = {
-    target: { value: 'foobar' },
-  };
-  input.simulate('change', changeEvt);
-
-  expect(counter.text()).toBe('6/20');
+  userEvent.type(screen.getByLabelText('test'), 'bar');
+  expect(counter.textContent).toBe('6/20');
 });
 
 it('renders the component with small width', () => {
-  const output = shallow(
+  const { container } = render(
     <TextField
       labelText="test"
       name="someComponent"
@@ -176,11 +171,11 @@ it('renders the component with small width', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with max length of characters', () => {
-  const output = shallow(
+  const { container } = render(
     <TextField
       labelText="test"
       name="someComponent"
@@ -191,11 +186,11 @@ it('renders the component with max length of characters', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a placeholder text', () => {
-  const output = shallow(
+  const { container } = render(
     <TextField
       labelText="test"
       name="someComponent"
@@ -206,11 +201,11 @@ it('renders the component with a placeholder text', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a rows defined', () => {
-  const output = shallow(
+  const { container } = render(
     <TextField
       labelText="test"
       name="someComponent"
@@ -221,11 +216,11 @@ it('renders the component with a rows defined', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with additional prop', () => {
-  const output = shallow(
+  const { container } = render(
     <TextField
       labelText="test"
       name="someComponent"
@@ -236,19 +231,19 @@ it('renders the component with additional prop', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('has no a11y issues', async () => {
-  const output = mount(
+  const { container } = render(
     <TextField
       labelText="test"
       name="someComponent"
       id="someComponent"
       className="my-extra-class"
     />,
-  ).html();
-  const results = await axe(output);
+  );
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });

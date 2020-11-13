@@ -2,108 +2,228 @@
 
 exports[`renders the component 1`] = `
 <div
-  className="FieldGroup"
+  class="FieldGroup"
   data-test-id="cf-ui-field-group"
 >
   <div
-    className="FieldGroup__item"
-    key=".0"
+    class="FieldGroup__item"
   >
-    <CheckboxField
-      checked={false}
-      helpText="Click if you agree"
-      id="agree"
-      inputType="checkbox"
-      labelIsLight={false}
-      labelText="Do you agree?"
-      testId="cf-ui-checkbox-field"
-    />
+    <div
+      class="ControlledInputField"
+      data-test-id="cf-ui-checkbox-field"
+    >
+      <input
+        aria-label="Do you agree?"
+        class="ControlledInput ControlledInputField__input"
+        data-test-id="cf-ui-controlled-input"
+        id="agree"
+        type="checkbox"
+        value=""
+      />
+      <div
+        class="Checkbox__label-wrapper"
+      >
+        <label
+          class="FormLabel ControlledInputField__label"
+          data-test-id="cf-ui-form-label"
+          for="agree"
+        >
+          Do you agree?
+        </label>
+        <p
+          class="HelpText ControlledInputField__help-text"
+          data-test-id="cf-ui-help-text"
+        >
+          Click if you agree
+        </p>
+      </div>
+    </div>
   </div>
   <div
-    className="FieldGroup__item"
-    key=".1"
+    class="FieldGroup__item"
   >
-    <CheckboxField
-      checked={false}
-      helpText="Click if you really agree"
-      id="reallyAgree"
-      inputType="checkbox"
-      labelIsLight={false}
-      labelText="Do you really agree?"
-      testId="cf-ui-checkbox-field"
-    />
+    <div
+      class="ControlledInputField"
+      data-test-id="cf-ui-checkbox-field"
+    >
+      <input
+        aria-label="Do you really agree?"
+        class="ControlledInput ControlledInputField__input"
+        data-test-id="cf-ui-controlled-input"
+        id="reallyAgree"
+        type="checkbox"
+        value=""
+      />
+      <div
+        class="Checkbox__label-wrapper"
+      >
+        <label
+          class="FormLabel ControlledInputField__label"
+          data-test-id="cf-ui-form-label"
+          for="reallyAgree"
+        >
+          Do you really agree?
+        </label>
+        <p
+          class="HelpText ControlledInputField__help-text"
+          data-test-id="cf-ui-help-text"
+        >
+          Click if you really agree
+        </p>
+      </div>
+    </div>
   </div>
 </div>
 `;
 
 exports[`renders the component children in a row 1`] = `
 <div
-  className="FieldGroup my-extra-class FieldGroup--row"
+  class="FieldGroup my-extra-class FieldGroup--row"
   data-test-id="cf-ui-field-group"
 >
   <div
-    className="FieldGroup__item"
-    key=".0"
+    class="FieldGroup__item"
   >
-    <CheckboxField
-      checked={false}
-      helpText="Click if you agree"
-      id="agree"
-      inputType="checkbox"
-      labelIsLight={false}
-      labelText="Do you agree?"
-      testId="cf-ui-checkbox-field"
-    />
+    <div
+      class="ControlledInputField"
+      data-test-id="cf-ui-checkbox-field"
+    >
+      <input
+        aria-label="Do you agree?"
+        class="ControlledInput ControlledInputField__input"
+        data-test-id="cf-ui-controlled-input"
+        id="agree"
+        type="checkbox"
+        value=""
+      />
+      <div
+        class="Checkbox__label-wrapper"
+      >
+        <label
+          class="FormLabel ControlledInputField__label"
+          data-test-id="cf-ui-form-label"
+          for="agree"
+        >
+          Do you agree?
+        </label>
+        <p
+          class="HelpText ControlledInputField__help-text"
+          data-test-id="cf-ui-help-text"
+        >
+          Click if you agree
+        </p>
+      </div>
+    </div>
   </div>
   <div
-    className="FieldGroup__item"
-    key=".1"
+    class="FieldGroup__item"
   >
-    <CheckboxField
-      checked={false}
-      helpText="Click if you really agree"
-      id="reallyAgree"
-      inputType="checkbox"
-      labelIsLight={false}
-      labelText="Do you really agree?"
-      testId="cf-ui-checkbox-field"
-    />
+    <div
+      class="ControlledInputField"
+      data-test-id="cf-ui-checkbox-field"
+    >
+      <input
+        aria-label="Do you really agree?"
+        class="ControlledInput ControlledInputField__input"
+        data-test-id="cf-ui-controlled-input"
+        id="reallyAgree"
+        type="checkbox"
+        value=""
+      />
+      <div
+        class="Checkbox__label-wrapper"
+      >
+        <label
+          class="FormLabel ControlledInputField__label"
+          data-test-id="cf-ui-form-label"
+          for="reallyAgree"
+        >
+          Do you really agree?
+        </label>
+        <p
+          class="HelpText ControlledInputField__help-text"
+          data-test-id="cf-ui-help-text"
+        >
+          Click if you really agree
+        </p>
+      </div>
+    </div>
   </div>
 </div>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
 <div
-  className="FieldGroup my-extra-class"
+  class="FieldGroup my-extra-class"
   data-test-id="cf-ui-field-group"
 >
   <div
-    className="FieldGroup__item"
-    key=".0"
+    class="FieldGroup__item"
   >
-    <CheckboxField
-      checked={false}
-      helpText="Click if you agree"
-      id="agree"
-      inputType="checkbox"
-      labelIsLight={false}
-      labelText="Do you agree?"
-      testId="cf-ui-checkbox-field"
-    />
+    <div
+      class="ControlledInputField"
+      data-test-id="cf-ui-checkbox-field"
+    >
+      <input
+        aria-label="Do you agree?"
+        class="ControlledInput ControlledInputField__input"
+        data-test-id="cf-ui-controlled-input"
+        id="agree"
+        type="checkbox"
+        value=""
+      />
+      <div
+        class="Checkbox__label-wrapper"
+      >
+        <label
+          class="FormLabel ControlledInputField__label"
+          data-test-id="cf-ui-form-label"
+          for="agree"
+        >
+          Do you agree?
+        </label>
+        <p
+          class="HelpText ControlledInputField__help-text"
+          data-test-id="cf-ui-help-text"
+        >
+          Click if you agree
+        </p>
+      </div>
+    </div>
   </div>
   <div
-    className="FieldGroup__item"
-    key=".1"
+    class="FieldGroup__item"
   >
-    <CheckboxField
-      checked={false}
-      helpText="Click if you really agree"
-      id="reallyAgree"
-      inputType="checkbox"
-      labelIsLight={false}
-      labelText="Do you really agree?"
-      testId="cf-ui-checkbox-field"
-    />
+    <div
+      class="ControlledInputField"
+      data-test-id="cf-ui-checkbox-field"
+    >
+      <input
+        aria-label="Do you really agree?"
+        class="ControlledInput ControlledInputField__input"
+        data-test-id="cf-ui-controlled-input"
+        id="reallyAgree"
+        type="checkbox"
+        value=""
+      />
+      <div
+        class="Checkbox__label-wrapper"
+      >
+        <label
+          class="FormLabel ControlledInputField__label"
+          data-test-id="cf-ui-form-label"
+          for="reallyAgree"
+        >
+          Do you really agree?
+        </label>
+        <p
+          class="HelpText ControlledInputField__help-text"
+          data-test-id="cf-ui-help-text"
+        >
+          Click if you really agree
+        </p>
+      </div>
+    </div>
   </div>
 </div>
 `;

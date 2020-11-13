@@ -1,24 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
-<ControlledInput
-  disabled={false}
-  labelText="checkbox"
-  required={false}
-  testId="ctf-ui-checkbox"
+<input
+  aria-label="checkbox"
+  class="ControlledInput"
+  data-test-id="ctf-ui-checkbox"
   type="checkbox"
-  willBlurOnEsc={true}
+  value=""
 />
 `;
 
 exports[`renders the component with an additional class name 1`] = `
-<ControlledInput
-  className="my-extra-class"
-  disabled={false}
-  labelText="checkbox"
-  required={false}
-  testId="ctf-ui-checkbox"
+<input
+  aria-label="checkbox"
+  class="ControlledInput my-extra-class"
+  data-test-id="ctf-ui-checkbox"
   type="checkbox"
-  willBlurOnEsc={true}
+  value=""
 />
 `;

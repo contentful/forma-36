@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component 1`] = `
+<h3
+  class="SectionHeading"
+  data-test-id="cf-ui-section-heading"
+>
+  SectionHeading
+</h3>
+`;
+
+exports[`renders the component h3 1`] = `
+<h3
+  class="SectionHeading"
+  data-test-id="cf-ui-section-heading"
+>
+  SectionHeading
+</h3>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+<h3
+  class="SectionHeading my-extra-class"
+  data-test-id="cf-ui-section-heading"
+>
+  SectionHeading
+</h3>
+`;

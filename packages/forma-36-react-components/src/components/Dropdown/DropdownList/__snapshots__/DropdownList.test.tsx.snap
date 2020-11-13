@@ -2,69 +2,57 @@
 
 exports[`renders the component 1`] = `
 <ul
-  className="DropdownList"
+  class="DropdownList"
   data-test-id="cf-ui-dropdown-list"
   role="menu"
-  style={
-    Object {
-      "maxHeight": "auto",
-      "overflowY": "visible",
-    }
-  }
+  style="max-height: auto; overflow-y: visible;"
 >
-  <DropdownListItem
-    isActive={false}
-    isDisabled={false}
-    isTitle={false}
-    testId="cf-ui-dropdown-list-item"
+  <li
+    class="DropdownListItem"
+    data-test-id="cf-ui-dropdown-list-item"
+    role="menuitem"
   >
-    List Item
-  </DropdownListItem>
+    <span>
+      List Item
+    </span>
+  </li>
 </ul>
 `;
 
 exports[`renders the component with a border attribute 1`] = `
 <ul
-  className="DropdownList DropdownList--border-top"
+  class="DropdownList DropdownList--border-top"
   data-test-id="cf-ui-dropdown-list"
   role="menu"
-  style={
-    Object {
-      "maxHeight": "auto",
-      "overflowY": "visible",
-    }
-  }
+  style="max-height: auto; overflow-y: visible;"
 >
-  <DropdownListItem
-    isActive={false}
-    isDisabled={false}
-    isTitle={false}
-    testId="cf-ui-dropdown-list-item"
+  <li
+    class="DropdownListItem"
+    data-test-id="cf-ui-dropdown-list-item"
+    role="menuitem"
   >
-    List Item
-  </DropdownListItem>
+    <span>
+      List Item
+    </span>
+  </li>
 </ul>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
 <ul
-  className="DropdownList my-extra-class"
+  class="DropdownList my-extra-class"
   data-test-id="cf-ui-dropdown-list"
   role="menu"
-  style={
-    Object {
-      "maxHeight": "auto",
-      "overflowY": "visible",
-    }
-  }
+  style="max-height: auto; overflow-y: visible;"
 >
-  <DropdownListItem
-    isActive={false}
-    isDisabled={false}
-    isTitle={false}
-    testId="cf-ui-dropdown-list-item"
+  <li
+    class="DropdownListItem"
+    data-test-id="cf-ui-dropdown-list-item"
+    role="menuitem"
   >
-    List Item
-  </DropdownListItem>
+    <span>
+      List Item
+    </span>
+  </li>
 </ul>
 `;

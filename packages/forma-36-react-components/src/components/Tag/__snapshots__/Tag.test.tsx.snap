@@ -2,7 +2,7 @@
 
 exports[`renders a "archived" Tag 1`] = `
 <div
-  className="Tag Tag--negative"
+  class="Tag Tag--negative"
   data-test-id="cf-ui-tag"
 >
   Archived
@@ -11,7 +11,7 @@ exports[`renders a "archived" Tag 1`] = `
 
 exports[`renders a "changed" Tag 1`] = `
 <div
-  className="Tag Tag--primary"
+  class="Tag Tag--primary"
   data-test-id="cf-ui-tag"
 >
   Changed
@@ -20,7 +20,7 @@ exports[`renders a "changed" Tag 1`] = `
 
 exports[`renders a "deleted" Tag 1`] = `
 <div
-  className="Tag Tag--negative"
+  class="Tag Tag--negative"
   data-test-id="cf-ui-tag"
 >
   Deleted
@@ -29,7 +29,7 @@ exports[`renders a "deleted" Tag 1`] = `
 
 exports[`renders a "draft" Tag 1`] = `
 <div
-  className="Tag Tag--warning"
+  class="Tag Tag--warning"
   data-test-id="cf-ui-tag"
 >
   Draft
@@ -38,7 +38,7 @@ exports[`renders a "draft" Tag 1`] = `
 
 exports[`renders a "muted" Tag 1`] = `
 <div
-  className="Tag Tag--muted"
+  class="Tag Tag--muted"
   data-test-id="cf-ui-tag"
 >
   Tag
@@ -47,7 +47,7 @@ exports[`renders a "muted" Tag 1`] = `
 
 exports[`renders a "negative" Tag 1`] = `
 <div
-  className="Tag Tag--negative"
+  class="Tag Tag--negative"
   data-test-id="cf-ui-tag"
 >
   Tag
@@ -56,7 +56,7 @@ exports[`renders a "negative" Tag 1`] = `
 
 exports[`renders a "positive" Tag 1`] = `
 <div
-  className="Tag Tag--positive"
+  class="Tag Tag--positive"
   data-test-id="cf-ui-tag"
 >
   Tag
@@ -65,7 +65,7 @@ exports[`renders a "positive" Tag 1`] = `
 
 exports[`renders a "primary" Tag 1`] = `
 <div
-  className="Tag Tag--primary"
+  class="Tag Tag--primary"
   data-test-id="cf-ui-tag"
 >
   Tag
@@ -74,7 +74,7 @@ exports[`renders a "primary" Tag 1`] = `
 
 exports[`renders a "published" Tag 1`] = `
 <div
-  className="Tag Tag--positive"
+  class="Tag Tag--positive"
   data-test-id="cf-ui-tag"
 >
   Published
@@ -83,7 +83,7 @@ exports[`renders a "published" Tag 1`] = `
 
 exports[`renders a "secondary" Tag 1`] = `
 <div
-  className="Tag Tag--secondary"
+  class="Tag Tag--secondary"
   data-test-id="cf-ui-tag"
 >
   Tag
@@ -92,7 +92,7 @@ exports[`renders a "secondary" Tag 1`] = `
 
 exports[`renders a "warning" Tag 1`] = `
 <div
-  className="Tag Tag--warning"
+  class="Tag Tag--warning"
   data-test-id="cf-ui-tag"
 >
   Tag
@@ -101,7 +101,7 @@ exports[`renders a "warning" Tag 1`] = `
 
 exports[`renders the component 1`] = `
 <div
-  className="Tag Tag--primary"
+  class="Tag Tag--primary"
   data-test-id="cf-ui-tag"
 >
   Tag
@@ -110,7 +110,7 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <div
-  className="Tag my-extra-class Tag--primary"
+  class="Tag my-extra-class Tag--primary"
   data-test-id="cf-ui-tag"
 >
   Tag

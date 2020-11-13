@@ -1,29 +1,30 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import axe from '../../utils/axeHelper';
 import NotificationItem from './NotificationItem';
 
 it('renders the component', () => {
-  const output = shallow(
+  const { container } = render(
     <NotificationItem onClose={() => {}} intent="success">
       Notification text
     </NotificationItem>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a title and a body', () => {
-  const output = shallow(
+  const { container } = render(
     <NotificationItem title="Notification title" intent="success">
       This is the body text.
     </NotificationItem>,
   );
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a cta', () => {
-  const output = shallow(
+  const { container } = render(
     <NotificationItem
       cta={{ label: 'This is some label text' }}
       intent="warning"
@@ -31,37 +32,37 @@ it('renders the component with a cta', () => {
       This is the body text.
     </NotificationItem>,
   );
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with "error" intent', () => {
-  const output = shallow(
+  const { container } = render(
     <NotificationItem onClose={() => {}} intent="error">
       Notification text
     </NotificationItem>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with "warning" intent', () => {
-  const output = shallow(
+  const { container } = render(
     <NotificationItem onClose={() => {}} intent="warning">
       Notification text
     </NotificationItem>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it(`has no a11y issues`, async () => {
-  const output = mount(
+  const { container } = render(
     <NotificationItem onClose={() => {}} intent="success">
       Notification text
     </NotificationItem>,
-  ).html();
+  );
 
-  const results = await axe(output);
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });

@@ -1,45 +1,48 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+
 import axe from '../../utils/axeHelper';
 import Spinner from './Spinner';
 
 it('renders the component', () => {
-  const output = shallow(<Spinner />);
+  const { container } = render(<Spinner />);
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with the size "small"', () => {
-  const output = shallow(<Spinner size="small" />);
+  const { container } = render(<Spinner size="small" />);
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with the size "large"', () => {
-  const output = shallow(<Spinner size="large" />);
+  const { container } = render(<Spinner size="large" />);
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a custom size', () => {
-  const output = shallow(<Spinner customSize={42} />);
+  const { container } = render(
+    <Spinner customSize={42} data-testid="spinner" />,
+  );
 
-  expect(output.find('svg').get(0).props.style).toEqual({
+  expect(screen.getByTestId('spinner')).toHaveStyle({
     height: '42px',
     width: '42px',
   });
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(<Spinner className="my-extra-class" />);
+  const { container } = render(<Spinner className="my-extra-class" />);
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('has no a11y issues', async () => {
-  const output = mount(<Spinner />).html();
-  const results = await axe(output);
+  const { container } = render(<Spinner />);
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });

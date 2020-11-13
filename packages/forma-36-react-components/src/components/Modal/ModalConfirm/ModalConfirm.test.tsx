@@ -1,5 +1,6 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import axe from '../../../utils/axeHelper';
 import ModalConfirm from './ModalConfirm';
 
@@ -21,17 +22,17 @@ jest.mock(
 );
 
 it('renders the component', () => {
-  const output = mount(
+  const { container } = render(
     <ModalConfirm isShown onConfirm={() => {}} onCancel={() => {}}>
       ModalConfirm
     </ModalConfirm>,
   );
 
-  expect(output.find('[data-test-id="cf-ui-modal-confirm"]')).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with override header, content and controls', () => {
-  const output = mount(
+  const { container } = render(
     <ModalConfirm
       isShown
       onConfirm={() => {}}
@@ -46,16 +47,17 @@ it('renders the component with override header, content and controls', () => {
       modalControlsProps={{
         className: 'additional controls class',
       }}
+      data-testid="modal-confirm"
     >
       ModalConfirm
     </ModalConfirm>,
   );
 
-  expect(output.find('[data-test-id="cf-ui-modal-confirm"]')).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('can accept custom labels', () => {
-  const output = mount(
+  const { container } = render(
     <ModalConfirm
       isShown
       intent="negative"
@@ -70,16 +72,16 @@ it('can accept custom labels', () => {
     </ModalConfirm>,
   );
 
-  expect(output.find('[data-test-id="cf-ui-modal-confirm"]')).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('has no a11y issues', async () => {
-  const output = mount(
+  const { container } = render(
     <ModalConfirm isShown onConfirm={() => {}} onCancel={() => {}}>
       ModalConfirm
     </ModalConfirm>,
-  ).html();
-  const results = await axe(output);
+  );
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });

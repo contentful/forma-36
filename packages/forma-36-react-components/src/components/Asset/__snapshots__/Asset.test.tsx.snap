@@ -2,23 +2,23 @@
 
 exports[`renders the component 1`] = `
 <div
-  className="Asset"
+  class="Asset"
   data-test-id="cf-ui-asset"
 >
   <div
-    className="Asset__image-container"
+    class="Asset__image-container"
   >
     <img
       alt="Image of a cat"
-      className="Asset__image-container__image"
+      class="Asset__image-container__image"
       src="https://placekitten.com/200/300"
     />
   </div>
   <div
-    className="Asset__title-container"
+    class="Asset__title-container"
   >
     <span
-      className="Asset__title-container__title"
+      class="Asset__title-container__title"
     >
       Image of a cat
     </span>
@@ -28,23 +28,23 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <div
-  className="Asset extra-class-name"
+  class="Asset extra-class-name"
   data-test-id="cf-ui-asset"
 >
   <div
-    className="Asset__image-container"
+    class="Asset__image-container"
   >
     <img
       alt="Image of a cat"
-      className="Asset__image-container__image"
+      class="Asset__image-container__image"
       src="https://placekitten.com/200/300"
     />
   </div>
   <div
-    className="Asset__title-container"
+    class="Asset__title-container"
   >
     <span
-      className="Asset__title-container__title"
+      class="Asset__title-container__title"
     >
       Image of a cat
     </span>
@@ -54,22 +54,44 @@ exports[`renders the component with an additional class name 1`] = `
 
 exports[`renders the component with type pdf 1`] = `
 <div
-  className="Asset extra-class-name"
+  class="Asset extra-class-name"
   data-test-id="cf-ui-asset"
 >
   <div
-    className="Asset__asset-container"
+    class="Asset__asset-container"
   >
     <div
-      className="Asset__illustration-container"
+      class="Asset__illustration-container"
     >
-      <AssetIcon
-        testId="cf-ui-asset-icon"
-        type="pdf"
-      />
+      <svg
+        class="Illustration"
+        data-test-id="cf-ui-asset-icon"
+        height="24"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g
+          fill="none"
+          stroke="#000"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-miterlimit="10"
+        >
+          <path
+            d="M15.5.5v6h6"
+          />
+          <path
+            d="M21.5 23.5h-19V.5h13l6 6z"
+          />
+          <path
+            d="M11.5 18.5v-5h1c1.152 0 2 1.068 2 2.5s-.848 2.5-2 2.5h-1zM16.5 18.5v-5H19M16.5 15.5H18M6.5 18.499V13.5h1.25a1.25 1.25 0 1 1 0 2.5H6.5"
+          />
+        </g>
+      </svg>
     </div>
     <span
-      className="Asset__asset-container__title"
+      class="Asset__asset-container__title"
     >
       Image of a cat
     </span>

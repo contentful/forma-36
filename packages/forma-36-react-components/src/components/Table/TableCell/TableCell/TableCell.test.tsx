@@ -1,9 +1,16 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import TableCell from './TableCell';
 
 it('renders the component', () => {
-  const output = shallow(<TableCell sorting="asc">Foo</TableCell>);
+  const table = document.createElement('table');
+  const row = document.createElement('tr');
+  document.body.appendChild(table);
 
-  expect(output).toMatchSnapshot();
+  const { container } = render(<TableCell sorting="asc">Foo</TableCell>, {
+    container: table.appendChild(row),
+  });
+
+  expect(container.firstChild).toMatchSnapshot();
 });

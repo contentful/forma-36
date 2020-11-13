@@ -1,16 +1,19 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import axe from '../../../utils/axeHelper';
 import EditorToolbarButton from './EditorToolbarButton';
 
 it('renders the component', () => {
-  const output = shallow(<EditorToolbarButton icon="HeadingOne" label="H1" />);
+  const { container } = render(
+    <EditorToolbarButton icon="HeadingOne" label="H1" />,
+  );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(
+  const { container } = render(
     <EditorToolbarButton
       icon="HeadingOne"
       label="H1"
@@ -18,35 +21,35 @@ it('renders the component with an additional class name', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with a tooltip', () => {
-  const output = shallow(
+  const { container } = render(
     <EditorToolbarButton icon="HeadingOne" label="H1" tooltip="H1" />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component as active', () => {
-  const output = shallow(
+  const { container } = render(
     <EditorToolbarButton icon="HeadingOne" label="H1" tooltip="H1" isActive />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component as disabled', () => {
-  const output = shallow(
+  const { container } = render(
     <EditorToolbarButton icon="HeadingOne" label="H1" tooltip="H1" disabled />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders with a dropdown indicator', () => {
-  const output = shallow(
+  const { container } = render(
     <EditorToolbarButton
       icon="HeadingOne"
       label="H1"
@@ -55,14 +58,14 @@ it('renders with a dropdown indicator', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('has no a11y issues', async () => {
-  const output = mount(
+  const { container } = render(
     <EditorToolbarButton icon="HeadingOne" label="H1" />,
-  ).html();
-  const results = await axe(output);
+  );
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });

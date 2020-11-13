@@ -1,29 +1,55 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
-<ControlledInputField
-  checked={false}
-  id="radio-button"
-  inputProps={
-    Object {
-      "labelText": "radio button field",
-    }
-  }
-  inputType="radio"
-  labelIsLight={false}
-  labelText="radio button field"
-  testId="cf-ui-radio-button-field"
-/>
+<div
+  class="ControlledInputField"
+  data-test-id="cf-ui-radio-button-field"
+>
+  <input
+    aria-label="radio button field"
+    class="ControlledInput ControlledInputField__input"
+    data-test-id="cf-ui-controlled-input"
+    id="radio-button"
+    type="radio"
+    value=""
+  />
+  <div
+    class="Checkbox__label-wrapper"
+  >
+    <label
+      class="FormLabel ControlledInputField__label"
+      data-test-id="cf-ui-form-label"
+      for="radio-button"
+    >
+      radio button field
+    </label>
+  </div>
+</div>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
-<ControlledInputField
-  checked={false}
-  className="my-extra-class"
-  id="radio-button"
-  inputType="radio"
-  labelIsLight={false}
-  labelText="radio button field"
-  testId="cf-ui-radio-button-field"
-/>
+<div
+  class="ControlledInputField my-extra-class"
+  data-test-id="cf-ui-radio-button-field"
+>
+  <input
+    aria-label="radio button field"
+    class="ControlledInput ControlledInputField__input"
+    data-test-id="cf-ui-controlled-input"
+    id="radio-button"
+    type="radio"
+    value=""
+  />
+  <div
+    class="Checkbox__label-wrapper"
+  >
+    <label
+      class="FormLabel ControlledInputField__label"
+      data-test-id="cf-ui-form-label"
+      for="radio-button"
+    >
+      radio button field
+    </label>
+  </div>
+</div>
 `;

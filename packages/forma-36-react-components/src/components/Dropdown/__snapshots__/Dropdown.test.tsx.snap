@@ -2,164 +2,104 @@
 
 exports[`renders the component 1`] = `
 <div
-  className="Dropdown"
+  class="Dropdown"
   data-test-id="cf-ui-dropdown"
 >
-  <Button
-    aria-expanded={false}
+  <button
+    aria-expanded="false"
     aria-haspopup="menu"
-    buttonType="primary"
-    disabled={false}
-    indicateDropdown={false}
-    isFullWidth={false}
-    loading={false}
-    onClick={[Function]}
-    testId="cf-ui-button"
+    class="Button Button--primary"
+    data-test-id="cf-ui-button"
     type="button"
   >
-    Toggle
-  </Button>
+    <span
+      class="TabFocusTrap Button__inner-wrapper"
+      tabindex="-1"
+    >
+      <span
+        class="Button__label"
+      >
+        Toggle
+      </span>
+    </span>
+  </button>
 </div>
 `;
 
 exports[`renders the component as open 1`] = `
 <div
-  className="Dropdown"
+  class="Dropdown"
   data-test-id="cf-ui-dropdown"
 >
-  <Button
-    aria-expanded={true}
+  <button
+    aria-expanded="true"
     aria-haspopup="menu"
-    buttonType="primary"
-    disabled={false}
-    indicateDropdown={false}
-    isFullWidth={false}
-    loading={false}
-    onClick={[Function]}
-    testId="cf-ui-button"
+    class="Button Button--primary"
+    data-test-id="cf-ui-button"
     type="button"
   >
-    Toggle
-  </Button>
-  <DropdownContainer
-    getRef={[Function]}
-    isOpen={true}
-    openSubmenu={[Function]}
-    position="bottom-left"
-    style={
-      Object {
-        "left": "0",
-        "position": "absolute",
-        "top": "0",
-      }
-    }
-    submenu={false}
-    testId="cf-ui-dropdown-container"
-    usePortal={true}
-  >
-    <DropdownList
-      testId="cf-ui-dropdown-list"
+    <span
+      class="TabFocusTrap Button__inner-wrapper"
+      tabindex="-1"
     >
-      <DropdownListItem
-        isActive={false}
-        isDisabled={false}
-        isTitle={false}
-        testId="cf-ui-dropdown-list-item"
+      <span
+        class="Button__label"
       >
-        entry
-      </DropdownListItem>
-    </DropdownList>
-  </DropdownContainer>
+        Toggle
+      </span>
+    </span>
+  </button>
 </div>
 `;
 
 exports[`renders the component with a submenu 1`] = `
 <div
-  className="Dropdown"
+  class="Dropdown"
   data-test-id="cf-ui-dropdown"
 >
-  <Button
-    aria-expanded={true}
+  <button
+    aria-expanded="true"
     aria-haspopup="menu"
-    buttonType="primary"
-    disabled={false}
-    indicateDropdown={false}
-    isFullWidth={false}
-    loading={false}
-    onClick={[Function]}
-    testId="cf-ui-button"
+    class="Button Button--primary"
+    data-test-id="cf-ui-button"
     type="button"
   >
-    Toggle
-  </Button>
-  <DropdownContainer
-    getRef={[Function]}
-    isOpen={true}
-    openSubmenu={[Function]}
-    position="bottom-left"
-    style={
-      Object {
-        "left": "0",
-        "position": "absolute",
-        "top": "0",
-      }
-    }
-    submenu={false}
-    testId="cf-ui-dropdown-container"
-    usePortal={true}
-  >
-    <DropdownList
-      testId="cf-ui-dropdown-list"
+    <span
+      class="TabFocusTrap Button__inner-wrapper"
+      tabindex="-1"
     >
-      <DropdownListItem
-        isActive={false}
-        isDisabled={false}
-        isTitle={false}
-        testId="cf-ui-dropdown-list-item"
+      <span
+        class="Button__label"
       >
-        entry
-      </DropdownListItem>
-      <Dropdown
-        getContainerRef={[Function]}
-        isAutoalignmentEnabled={true}
-        isOpen={true}
-        position="bottom-left"
-        submenuToggleLabel="Submenu"
-        testId="cf-ui-dropdown"
-      >
-        <DropdownListItem
-          isActive={false}
-          isDisabled={false}
-          isTitle={false}
-          testId="cf-ui-dropdown-list-item"
-        >
-          entry
-        </DropdownListItem>
-      </Dropdown>
-      ,
-    </DropdownList>
-  </DropdownContainer>
+        Toggle
+      </span>
+    </span>
+  </button>
 </div>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
 <div
-  className="Dropdown"
+  class="Dropdown"
   data-test-id="cf-ui-dropdown"
 >
-  <Button
-    aria-expanded={false}
+  <button
+    aria-expanded="false"
     aria-haspopup="menu"
-    buttonType="primary"
-    disabled={false}
-    indicateDropdown={false}
-    isFullWidth={false}
-    loading={false}
-    onClick={[Function]}
-    testId="cf-ui-button"
+    class="Button Button--primary"
+    data-test-id="cf-ui-button"
     type="button"
   >
-    Toggle
-  </Button>
+    <span
+      class="TabFocusTrap Button__inner-wrapper"
+      tabindex="-1"
+    >
+      <span
+        class="Button__label"
+      >
+        Toggle
+      </span>
+    </span>
+  </button>
 </div>
 `;

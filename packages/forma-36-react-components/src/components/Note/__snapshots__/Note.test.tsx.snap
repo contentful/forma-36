@@ -2,21 +2,31 @@
 
 exports[`renders the component 1`] = `
 <div
-  className="Note Note--primary"
+  class="Note Note--primary"
   data-test-id="cf-ui-note"
 >
   <div
-    className="Note__icon"
+    class="Note__icon"
   >
-    <Icon
-      color="primary"
-      icon="InfoCircle"
-      size="small"
-      testId="cf-ui-icon"
-    />
+    <svg
+      class="Icon Icon--small Icon--primary"
+      data-test-id="cf-ui-icon"
+      height="18"
+      viewBox="0 0 24 24"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+      <path
+        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+      />
+    </svg>
   </div>
   <div
-    className="Note__info"
+    class="Note__info"
   >
     <div>
       A piece of information that is relevant to the context the user is currently in.
@@ -27,21 +37,31 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <div
-  className="Note my-extra-class Note--primary"
+  class="Note my-extra-class Note--primary"
   data-test-id="cf-ui-note"
 >
   <div
-    className="Note__icon"
+    class="Note__icon"
   >
-    <Icon
-      color="primary"
-      icon="InfoCircle"
-      size="small"
-      testId="cf-ui-icon"
-    />
+    <svg
+      class="Icon Icon--small Icon--primary"
+      data-test-id="cf-ui-icon"
+      height="18"
+      viewBox="0 0 24 24"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+      <path
+        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+      />
+    </svg>
   </div>
   <div
-    className="Note__info"
+    class="Note__info"
   >
     <div>
       A piece of information that is relevant to the context the user is currently in.
@@ -52,24 +72,34 @@ exports[`renders the component with an additional class name 1`] = `
 
 exports[`renders the component with title 1`] = `
 <div
-  className="Note Note--positive"
+  class="Note Note--positive"
   data-test-id="cf-ui-note"
 >
   <div
-    className="Note__icon"
+    class="Note__icon"
   >
-    <Icon
-      color="positive"
-      icon="CheckCircle"
-      size="small"
-      testId="cf-ui-icon"
-    />
+    <svg
+      class="Icon Icon--small Icon--positive"
+      data-test-id="cf-ui-icon"
+      height="18"
+      viewBox="0 0 24 24"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+      <path
+        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+      />
+    </svg>
   </div>
   <div
-    className="Note__info"
+    class="Note__info"
   >
     <div
-      className="Note__title"
+      class="Note__title"
     >
       Positive title
     </div>

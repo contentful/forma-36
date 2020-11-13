@@ -1,101 +1,85 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
-<ContextProvider
-  value={
-    Object {
-      "element": "th",
-      "name": "head",
-      "offsetTop": 0,
-    }
-  }
+<thead
+  class=""
+  data-test-id="cf-ui-table-head"
 >
-  <thead
-    className=""
-    data-test-id="cf-ui-table-head"
+  <tr
+    class="TableRow"
+    data-test-id="cf-ui-table-row"
   >
-    <TableCell
+    <th
       align="left"
-      sorting={false}
-      testId="cf-ui-table-cell"
+      class="TableCell TableCell--head"
+      data-test-id="cf-ui-table-cell"
+      style="top: 0px;"
     >
       test
-    </TableCell>
-  </thead>
-</ContextProvider>
+    </th>
+  </tr>
+</thead>
 `;
 
 exports[`renders the component as sticky 1`] = `
-<ContextProvider
-  value={
-    Object {
-      "element": "th",
-      "name": "head",
-      "offsetTop": 0,
-    }
-  }
+<thead
+  class="TableHead--sticky"
+  data-test-id="cf-ui-table-head"
 >
-  <thead
-    className="TableHead--sticky"
-    data-test-id="cf-ui-table-head"
+  <tr
+    class="TableRow"
+    data-test-id="cf-ui-table-row"
   >
-    <TableCell
+    <th
       align="left"
-      sorting={false}
-      testId="cf-ui-table-cell"
+      class="TableCell TableCell--head"
+      data-test-id="cf-ui-table-cell"
+      style="top: 0px;"
     >
       test
-    </TableCell>
-  </thead>
-</ContextProvider>
+    </th>
+  </tr>
+</thead>
 `;
 
 exports[`renders the component as sticky and with an offset Top 1`] = `
-<ContextProvider
-  value={
-    Object {
-      "element": "th",
-      "name": "head",
-      "offsetTop": "20px",
-    }
-  }
+<thead
+  class="TableHead--sticky"
+  data-test-id="cf-ui-table-head"
 >
-  <thead
-    className="TableHead--sticky"
-    data-test-id="cf-ui-table-head"
+  <tr
+    class="TableRow"
+    data-test-id="cf-ui-table-row"
   >
-    <TableCell
+    <th
       align="left"
-      sorting={false}
-      testId="cf-ui-table-cell"
+      class="TableCell TableCell--head"
+      data-test-id="cf-ui-table-cell"
+      style="top: 20px;"
     >
       test
-    </TableCell>
-  </thead>
-</ContextProvider>
+    </th>
+  </tr>
+</thead>
 `;
 
 exports[`renders the component with additional className 1`] = `
-<ContextProvider
-  value={
-    Object {
-      "element": "th",
-      "name": "head",
-      "offsetTop": 0,
-    }
-  }
+<thead
+  class="extra-class-name"
+  data-test-id="cf-ui-table-head"
 >
-  <thead
-    className="extra-class-name"
-    data-test-id="cf-ui-table-head"
+  <tr
+    class="TableRow"
+    data-test-id="cf-ui-table-row"
   >
-    <TableCell
+    <th
       align="left"
-      sorting={false}
-      testId="cf-ui-table-cell"
+      class="TableCell TableCell--head"
+      data-test-id="cf-ui-table-cell"
+      style="top: 0px;"
     >
       test
-    </TableCell>
-  </thead>
-</ContextProvider>
+    </th>
+  </tr>
+</thead>
 `;

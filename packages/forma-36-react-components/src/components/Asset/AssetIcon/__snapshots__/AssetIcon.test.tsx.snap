@@ -1,24 +1,106 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
-<Illustration
-  illustration="Archive"
-  testId="cf-ui-asset-icon"
-/>
+<svg
+  class="Illustration"
+  data-test-id="cf-ui-asset-icon"
+  height="24"
+  viewBox="0 0 24 24"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g
+    fill="none"
+    stroke="#000"
+    stroke-linejoin="round"
+    stroke-miterlimit="10"
+  >
+    <path
+      d="M20.5 23.5h-17V.5h13l4 4z"
+      stroke-linecap="round"
+    />
+    <path
+      d="M11.5.5v2.001h1v5h-3V2.5M10.5 9.5h1M10.5 11.5h1M10.5 13.5h1M10.5 15.5h1M10.5 17.5h1M10.5 19.5h1M10.5 21.5h1M11.5 10.5h1M11.5 12.5h1M11.5 14.5h1M11.5 16.5h1M11.5 18.5h1M11.5 20.5h1"
+      stroke-linecap="round"
+    />
+    <path
+      d="M9.5 5.5H11"
+    />
+  </g>
+</svg>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
-<Illustration
-  className="extra-class-name"
-  illustration="Presentation"
-  testId="cf-ui-asset-icon"
-/>
+<svg
+  class="Illustration extra-class-name"
+  data-test-id="cf-ui-asset-icon"
+  height="24"
+  viewBox="0 0 24 24"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g
+    fill="none"
+    stroke="#000"
+    stroke-linejoin="round"
+    stroke-miterlimit="10"
+  >
+    <path
+      d="M.5.5h22v3H.5z"
+    />
+    <path
+      d="M.521 17.5h21.958"
+      stroke-linecap="round"
+    />
+    <path
+      d="M2.5 3.5h18v14h-18zM11.5 17.5v3"
+    />
+    <circle
+      cx="11.5"
+      cy="22"
+      r="1.5"
+    />
+    <g
+      stroke-linecap="round"
+    >
+      <path
+        d="M10.5 8.228l3.272 2.272-3.272 2.272z"
+      />
+      <circle
+        cx="11.5"
+        cy="10.5"
+        r="5"
+      />
+    </g>
+  </g>
+</svg>
 `;
 
 exports[`renders the component with type pdf 1`] = `
-<Illustration
-  className="extra-class-name"
-  illustration="Pdf"
-  testId="cf-ui-asset-icon"
-/>
+<svg
+  class="Illustration extra-class-name"
+  data-test-id="cf-ui-asset-icon"
+  height="24"
+  viewBox="0 0 24 24"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g
+    fill="none"
+    stroke="#000"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    stroke-miterlimit="10"
+  >
+    <path
+      d="M15.5.5v6h6"
+    />
+    <path
+      d="M21.5 23.5h-19V.5h13l6 6z"
+    />
+    <path
+      d="M11.5 18.5v-5h1c1.152 0 2 1.068 2 2.5s-.848 2.5-2 2.5h-1zM16.5 18.5v-5H19M16.5 15.5H18M6.5 18.499V13.5h1.25a1.25 1.25 0 1 1 0 2.5H6.5"
+    />
+  </g>
+</svg>
 `;

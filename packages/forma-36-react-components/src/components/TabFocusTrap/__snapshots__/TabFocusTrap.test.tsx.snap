@@ -2,8 +2,8 @@
 
 exports[`renders the component 1`] = `
 <span
-  className="TabFocusTrap"
-  tabIndex={-1}
+  class="TabFocusTrap"
+  tabindex="-1"
 >
   TabFocusTrap
 </span>
@@ -11,8 +11,8 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <span
-  className="TabFocusTrap my-extra-class"
-  tabIndex={-1}
+  class="TabFocusTrap my-extra-class"
+  tabindex="-1"
 >
   TabFocusTrap
 </span>

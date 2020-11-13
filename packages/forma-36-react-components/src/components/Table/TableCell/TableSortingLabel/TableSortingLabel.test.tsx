@@ -1,23 +1,24 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import TableSortingLabel from './TableSortingLabel';
 
 it('renders the component', () => {
-  const output = shallow(
+  const { container } = render(
     <TableSortingLabel active direction="asc">
       Foo
     </TableSortingLabel>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component inactive', () => {
-  const output = shallow(
+  const { container } = render(
     <TableSortingLabel active={false} direction="desc">
       Foo
     </TableSortingLabel>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });

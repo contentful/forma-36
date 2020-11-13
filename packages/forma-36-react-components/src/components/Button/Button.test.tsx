@@ -1,103 +1,107 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
 import axe from '../../utils/axeHelper';
 import Button from './Button';
 
 it('renders the component', () => {
-  const output = shallow(<Button>Embed entry</Button>);
+  const { container } = render(<Button>Embed entry</Button>);
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(
+  const { container } = render(
     <Button className="my-extra-class">Embed entry</Button>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component disabled', () => {
-  const output = shallow(<Button disabled>Embed entry</Button>);
+  const { container } = render(<Button disabled>Embed entry</Button>);
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component in loading state', () => {
-  const output = shallow(<Button loading>Embed entry</Button>);
+  const { container } = render(<Button loading>Embed entry</Button>);
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component as primary', () => {
-  const output = shallow(<Button buttonType="primary">Embed entry</Button>);
+  const { container } = render(
+    <Button buttonType="primary">Embed entry</Button>,
+  );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component as naked', () => {
-  const output = shallow(<Button buttonType="naked">Embed entry</Button>);
+  const { container } = render(<Button buttonType="naked">Embed entry</Button>);
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with dropdown indicator', () => {
-  const output = shallow(<Button indicateDropdown>Embed Entry</Button>);
+  const { container } = render(<Button indicateDropdown>Embed Entry</Button>);
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with icon', () => {
-  const output = shallow(<Button icon="ChevronUp">Embed entry</Button>);
+  const { container } = render(<Button icon="ChevronUp">Embed entry</Button>);
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component full width', () => {
-  const output = shallow(<Button isFullWidth>Embed entry</Button>);
+  const { container } = render(<Button isFullWidth>Embed entry</Button>);
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('should not dispatch onClick if loading', () => {
   const mockOnClick = jest.fn();
-  const button = shallow(
+  render(
     <Button loading onClick={mockOnClick}>
       Embed entry
     </Button>,
   );
 
-  button.simulate('click');
+  userEvent.click(screen.getByText('Embed entry'));
   expect(mockOnClick).not.toHaveBeenCalled();
 });
 
 it('should not dispatch onClick if disabled', () => {
   const mockOnClick = jest.fn();
-  const button = shallow(
+  render(
     <Button disabled onClick={mockOnClick}>
       Embed entry
     </Button>,
   );
 
-  button.simulate('click');
+  userEvent.click(screen.getByText('Embed entry'));
   expect(mockOnClick).not.toHaveBeenCalled();
 });
 
 it('has no a11y issues', async () => {
-  const output = mount(<Button>Embed entry</Button>).html();
-  const results = await axe(output);
+  const { container } = render(<Button>Embed entry</Button>);
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });
 
 it('renders the button as link', () => {
-  const output = shallow(<Button href="/">Button link</Button>);
+  const { container } = render(<Button href="/">Button link</Button>);
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the button as active', () => {
-  const output = shallow(<Button isActive>Active button</Button>);
+  const { container } = render(<Button isActive>Active button</Button>);
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });

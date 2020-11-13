@@ -1,11 +1,12 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { fireEvent, render, screen } from '@testing-library/react';
+
 import axe from '../../utils/axeHelper';
 import Form from './Form';
 import TextField from '../TextField';
 
 it('renders the component', () => {
-  const output = shallow(
+  const { container } = render(
     <Form>
       <TextField
         required
@@ -18,11 +19,11 @@ it('renders the component', () => {
     </Form>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(
+  const { container } = render(
     <Form className="my-extra-class">
       <TextField
         required
@@ -35,11 +36,11 @@ it('renders the component with an additional class name', () => {
     </Form>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with condensed spacing', () => {
-  const output = shallow(
+  const { container } = render(
     <Form className="my-extra-class" spacing="condensed">
       <TextField
         required
@@ -52,13 +53,13 @@ it('renders the component with condensed spacing', () => {
     </Form>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with condensed spacing (prevent default)', () => {
   const mockOnSubmit = jest.fn();
-  const output = shallow(
-    <Form className="my-extra-class" onSubmit={mockOnSubmit}>
+  render(
+    <Form className="my-extra-class" onSubmit={mockOnSubmit} data-testid="form">
       <TextField
         required
         name="nameInput"
@@ -70,14 +71,12 @@ it('renders the component with condensed spacing (prevent default)', () => {
     </Form>,
   );
 
-  output.simulate('submit', {
-    preventDefault: () => {},
-  });
+  fireEvent.submit(screen.getByTestId('form'));
   expect(mockOnSubmit).toHaveBeenCalled();
 });
 
 it('has no a11y issues', async () => {
-  const output = mount(
+  const { container } = render(
     <Form>
       <TextField
         required
@@ -88,8 +87,8 @@ it('has no a11y issues', async () => {
         helpText="Please enter your name"
       />
     </Form>,
-  ).html();
-  const results = await axe(output);
+  );
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });

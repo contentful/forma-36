@@ -1,5 +1,6 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import axe from '../../utils/axeHelper';
 import Modal from './Modal';
 
@@ -13,17 +14,17 @@ jest.mock(
 );
 
 it('renders the component', () => {
-  const output = shallow(
+  const { container } = render(
     <Modal title="Title" isShown onClose={() => {}}>
       Content
     </Modal>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('has no a11y issues', async () => {
-  const output = mount(
+  const { container } = render(
     <Modal
       title="Modal window with no a11y issues :) "
       isShown
@@ -31,24 +32,24 @@ it('has no a11y issues', async () => {
     >
       Content
     </Modal>,
-  ).html();
-  const results = await axe(output);
+  );
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });
 
 it('renders the component without title', () => {
-  const output = shallow(
+  const { container } = render(
     <Modal isShown onClose={() => {}}>
       Content
     </Modal>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('can override header and content properties', () => {
-  const output = shallow(
+  const { container } = render(
     <Modal
       title="Hello!"
       isShown
@@ -65,11 +66,11 @@ it('can override header and content properties', () => {
     </Modal>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('can be controlled', () => {
-  const output = shallow(
+  const { container } = render(
     <Modal isShown onClose={() => {}}>
       {({ onClose }: { onClose: Function }) => (
         <React.Fragment>
@@ -82,5 +83,5 @@ it('can be controlled', () => {
       )}
     </Modal>,
   );
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });

@@ -2,245 +2,355 @@
 
 exports[`renders the component 1`] = `
 <div
-  className="SelectField"
+  class="SelectField"
   data-test-id="cf-ui-select-field"
 >
   <div
-    className="SelectField__label-wrapper"
+    class="SelectField__label-wrapper"
   >
-    <FormLabel
-      htmlFor="optionSelect"
-      required={false}
-      requiredText="required"
-      testId="cf-ui-form-label"
+    <label
+      class="FormLabel"
+      data-test-id="cf-ui-form-label"
+      for="optionSelect"
     >
       Label
-    </FormLabel>
+    </label>
   </div>
-  <Select
-    hasError={false}
-    id="optionSelect"
-    isDisabled={false}
-    name="optionSelect"
-    onChange={[Function]}
-    required={false}
-    testId="cf-ui-select"
-    width="full"
-    willBlurOnEsc={true}
+  <div
+    class="Select__wrapper Select--full"
   >
-    <Option
-      testId="cf-ui-select-option"
-      value="optionOne"
+    <select
+      aria-label="optionSelect"
+      class="Select"
+      data-test-id="cf-ui-select"
+      id="optionSelect"
+      name="optionSelect"
     >
-      Option 1
-    </Option>
-  </Select>
+      <option
+        data-test-id="cf-ui-select-option"
+        value="optionOne"
+      >
+        Option 1
+      </option>
+    </select>
+    <svg
+      class="Icon Icon--small Icon--muted Select__icon"
+      data-test-id="cf-ui-icon"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7 10l5 5 5-5z"
+      />
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+    </svg>
+  </div>
 </div>
 `;
 
 exports[`renders the component as disabled 1`] = `
 <div
-  className="SelectField"
+  class="SelectField"
   data-test-id="cf-ui-select-field"
 >
   <div
-    className="SelectField__label-wrapper"
+    class="SelectField__label-wrapper"
   >
-    <FormLabel
-      htmlFor="optionSelect"
-      required={false}
-      requiredText="required"
-      testId="cf-ui-form-label"
+    <label
+      class="FormLabel"
+      data-test-id="cf-ui-form-label"
+      for="optionSelect"
     >
       Label
-    </FormLabel>
+    </label>
   </div>
-  <Select
-    hasError={false}
-    id="optionSelect"
-    isDisabled={true}
-    name="optionSelect"
-    onChange={[Function]}
-    required={false}
-    testId="cf-ui-select"
-    width="full"
-    willBlurOnEsc={true}
+  <div
+    class="Select__wrapper Select--full"
   >
-    <Option
-      testId="cf-ui-select-option"
-      value="optionOne"
+    <select
+      aria-label="optionSelect"
+      class="Select Select--disabled"
+      data-test-id="cf-ui-select"
+      disabled=""
+      id="optionSelect"
+      name="optionSelect"
     >
-      Option 1
-    </Option>
-  </Select>
+      <option
+        data-test-id="cf-ui-select-option"
+        value="optionOne"
+      >
+        Option 1
+      </option>
+    </select>
+    <svg
+      class="Icon Icon--small Icon--muted Select__icon"
+      data-test-id="cf-ui-icon"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7 10l5 5 5-5z"
+      />
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+    </svg>
+  </div>
 </div>
 `;
 
 exports[`renders the component as required 1`] = `
 <div
-  className="SelectField"
+  class="SelectField"
   data-test-id="cf-ui-select-field"
 >
   <div
-    className="SelectField__label-wrapper"
+    class="SelectField__label-wrapper"
   >
-    <FormLabel
-      htmlFor="optionSelect"
-      required={false}
-      requiredText="required"
-      testId="cf-ui-form-label"
+    <label
+      class="FormLabel"
+      data-test-id="cf-ui-form-label"
+      for="optionSelect"
     >
       Label
-    </FormLabel>
+    </label>
   </div>
-  <Select
-    hasError={false}
-    id="optionSelect"
-    isDisabled={false}
-    name="optionSelect"
-    onChange={[Function]}
-    required={false}
-    testId="cf-ui-select"
-    width="full"
-    willBlurOnEsc={true}
+  <div
+    class="Select__wrapper Select--full"
   >
-    <Option
-      testId="cf-ui-select-option"
-      value="optionOne"
+    <select
+      aria-label="optionSelect"
+      class="Select"
+      data-test-id="cf-ui-select"
+      id="optionSelect"
+      name="optionSelect"
     >
-      Option 1
-    </Option>
-  </Select>
+      <option
+        data-test-id="cf-ui-select-option"
+        value="optionOne"
+      >
+        Option 1
+      </option>
+    </select>
+    <svg
+      class="Icon Icon--small Icon--muted Select__icon"
+      data-test-id="cf-ui-icon"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7 10l5 5 5-5z"
+      />
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+    </svg>
+  </div>
 </div>
 `;
 
 exports[`renders the component with a help text 1`] = `
 <div
-  className="SelectField"
+  class="SelectField"
   data-test-id="cf-ui-select-field"
 >
   <div
-    className="SelectField__label-wrapper"
+    class="SelectField__label-wrapper"
   >
-    <FormLabel
-      htmlFor="optionSelect"
-      required={false}
-      requiredText="required"
-      testId="cf-ui-form-label"
+    <label
+      class="FormLabel"
+      data-test-id="cf-ui-form-label"
+      for="optionSelect"
     >
       Label
-    </FormLabel>
+    </label>
   </div>
-  <Select
-    hasError={false}
-    id="optionSelect"
-    isDisabled={false}
-    name="optionSelect"
-    onChange={[Function]}
-    required={false}
-    testId="cf-ui-select"
-    width="full"
-    willBlurOnEsc={true}
-  >
-    <Option
-      testId="cf-ui-select-option"
-      value="optionOne"
-    >
-      Option 1
-    </Option>
-  </Select>
   <div
-    className="SelectField__hints"
+    class="Select__wrapper Select--full"
   >
-    <HelpText
-      className="SelectField__help-text"
-      testId="cf-ui-help-text"
+    <select
+      aria-label="optionSelect"
+      class="Select"
+      data-test-id="cf-ui-select"
+      id="optionSelect"
+      name="optionSelect"
+    >
+      <option
+        data-test-id="cf-ui-select-option"
+        value="optionOne"
+      >
+        Option 1
+      </option>
+    </select>
+    <svg
+      class="Icon Icon--small Icon--muted Select__icon"
+      data-test-id="cf-ui-icon"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7 10l5 5 5-5z"
+      />
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+    </svg>
+  </div>
+  <div
+    class="SelectField__hints"
+  >
+    <p
+      class="HelpText SelectField__help-text"
+      data-test-id="cf-ui-help-text"
     >
       please select an option
-    </HelpText>
+    </p>
   </div>
 </div>
 `;
 
 exports[`renders the component with a validation message 1`] = `
 <div
-  className="SelectField"
+  class="SelectField"
   data-test-id="cf-ui-select-field"
 >
   <div
-    className="SelectField__label-wrapper"
+    class="SelectField__label-wrapper"
   >
-    <FormLabel
-      htmlFor="optionSelect"
-      required={false}
-      requiredText="required"
-      testId="cf-ui-form-label"
+    <label
+      class="FormLabel"
+      data-test-id="cf-ui-form-label"
+      for="optionSelect"
     >
       Label
-    </FormLabel>
+    </label>
   </div>
-  <Select
-    hasError={true}
-    id="optionSelect"
-    isDisabled={false}
-    name="optionSelect"
-    onChange={[Function]}
-    required={false}
-    testId="cf-ui-select"
-    width="full"
-    willBlurOnEsc={true}
+  <div
+    class="Select__wrapper Select--full"
   >
-    <Option
-      testId="cf-ui-select-option"
-      value="optionOne"
+    <select
+      aria-label="optionSelect"
+      class="Select Select--negative"
+      data-test-id="cf-ui-select"
+      id="optionSelect"
+      name="optionSelect"
     >
-      Option 1
-    </Option>
-  </Select>
-  <ValidationMessage
-    className="SelectField__validation-message"
-    testId="cf-ui-validation-message"
+      <option
+        data-test-id="cf-ui-select-option"
+        value="optionOne"
+      >
+        Option 1
+      </option>
+    </select>
+    <svg
+      class="Icon Icon--small Icon--muted Select__icon"
+      data-test-id="cf-ui-icon"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7 10l5 5 5-5z"
+      />
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+    </svg>
+  </div>
+  <div
+    class="ValidationMessage SelectField__validation-message"
+    data-test-id="cf-ui-validation-message"
   >
-    not valid
-  </ValidationMessage>
+    <svg
+      class="Icon Icon--small Icon--negative ValidationMessage__icon"
+      data-test-id="cf-ui-icon"
+      height="18"
+      viewBox="0 0 24 24"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+      <path
+        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
+      />
+    </svg>
+    <p
+      class="ValidationMessage__text"
+    >
+      not valid
+    </p>
+  </div>
 </div>
 `;
 
 exports[`renders the component with a value 1`] = `
 <div
-  className="SelectField"
+  class="SelectField"
   data-test-id="cf-ui-select-field"
 >
   <div
-    className="SelectField__label-wrapper"
+    class="SelectField__label-wrapper"
   >
-    <FormLabel
-      htmlFor="optionSelect"
-      required={false}
-      requiredText="required"
-      testId="cf-ui-form-label"
+    <label
+      class="FormLabel"
+      data-test-id="cf-ui-form-label"
+      for="optionSelect"
     >
       Label
-    </FormLabel>
+    </label>
   </div>
-  <Select
-    hasError={false}
-    id="optionSelect"
-    isDisabled={false}
-    name="optionSelect"
-    onChange={[Function]}
-    required={false}
-    testId="cf-ui-select"
-    value="optionOne"
-    width="full"
-    willBlurOnEsc={true}
+  <div
+    class="Select__wrapper Select--full"
   >
-    <Option
-      testId="cf-ui-select-option"
-      value="optionOne"
+    <select
+      aria-label="optionSelect"
+      class="Select"
+      data-test-id="cf-ui-select"
+      id="optionSelect"
+      name="optionSelect"
     >
-      Option 1
-    </Option>
-  </Select>
+      <option
+        data-test-id="cf-ui-select-option"
+        value="optionOne"
+      >
+        Option 1
+      </option>
+    </select>
+    <svg
+      class="Icon Icon--small Icon--muted Select__icon"
+      data-test-id="cf-ui-icon"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7 10l5 5 5-5z"
+      />
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+    </svg>
+  </div>
 </div>
 `;

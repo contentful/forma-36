@@ -1,44 +1,63 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import TableHead from './TableHead';
 import TableCell from '../TableCell';
+import TableRow from '../TableRow';
 
 it('renders the component', () => {
-  const output = shallow(
+  const table = document.createElement('table');
+
+  const { container } = render(
     <TableHead>
-      <TableCell>test</TableCell>
+      <TableRow>
+        <TableCell>test</TableCell>
+      </TableRow>
     </TableHead>,
+    { container: document.body.appendChild(table) },
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with additional className', () => {
-  const output = shallow(
+  const table = document.createElement('table');
+  const { container } = render(
     <TableHead className="extra-class-name">
-      <TableCell>test</TableCell>
+      <TableRow>
+        <TableCell>test</TableCell>
+      </TableRow>
     </TableHead>,
+    { container: document.body.appendChild(table) },
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component as sticky', () => {
-  const output = shallow(
+  const table = document.createElement('table');
+  const { container } = render(
     <TableHead isSticky>
-      <TableCell>test</TableCell>
+      <TableRow>
+        <TableCell>test</TableCell>
+      </TableRow>
     </TableHead>,
+    { container: document.body.appendChild(table) },
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component as sticky and with an offset Top', () => {
-  const output = shallow(
+  const table = document.createElement('table');
+  const { container } = render(
     <TableHead isSticky offsetTop="20px">
-      <TableCell>test</TableCell>
+      <TableRow>
+        <TableCell>test</TableCell>
+      </TableRow>
     </TableHead>,
+    { container: document.body.appendChild(table) },
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });

@@ -1,305 +1,565 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders a small variant of the component 1`] = `
-<Card
-  className="AssetCard AssetCard--size-small"
-  padding="none"
-  selected={false}
-  testId="cf-ui-asset-card"
+<div
+  class="Card AssetCard AssetCard--size-small Card--padding-none"
+  data-test-id="cf-ui-asset-card"
   title="picture of a cat"
 >
   <div
-    className="AssetCard__wrapper"
+    class="AssetCard__wrapper"
   >
     <div
-      className="AssetCard__header"
+      class="AssetCard__header"
     />
     <div
-      className="AssetCard__content"
+      class="AssetCard__content"
     >
-      <Asset
-        className="AssetCard__asset"
-        src="http://placekitten.com/200/300"
-        testId="cf-ui-asset"
-        title="picture of a cat"
-        type="image"
-      />
+      <div
+        class="Asset AssetCard__asset"
+        data-test-id="cf-ui-asset"
+      >
+        <div
+          class="Asset__image-container"
+        >
+          <img
+            alt="picture of a cat"
+            class="Asset__image-container__image"
+            src="http://placekitten.com/200/300"
+          />
+        </div>
+        <div
+          class="Asset__title-container"
+        >
+          <span
+            class="Asset__title-container__title"
+          >
+            picture of a cat
+          </span>
+        </div>
+      </div>
     </div>
   </div>
-</Card>
+</div>
 `;
 
 exports[`renders the component 1`] = `
-<Card
-  className="AssetCard AssetCard--size-default"
-  padding="none"
-  selected={false}
-  testId="cf-ui-asset-card"
+<div
+  class="Card AssetCard AssetCard--size-default Card--padding-none"
+  data-test-id="cf-ui-asset-card"
   title="picture of a cat"
 >
   <div
-    className="AssetCard__wrapper"
+    class="AssetCard__wrapper"
   >
     <div
-      className="AssetCard__header"
+      class="AssetCard__header"
     />
     <div
-      className="AssetCard__content"
+      class="AssetCard__content"
     >
-      <Asset
-        className="AssetCard__asset"
-        src="http://placekitten.com/200/300"
-        testId="cf-ui-asset"
-        title="picture of a cat"
-        type="image"
-      />
+      <div
+        class="Asset AssetCard__asset"
+        data-test-id="cf-ui-asset"
+      >
+        <div
+          class="Asset__image-container"
+        >
+          <img
+            alt="picture of a cat"
+            class="Asset__image-container__image"
+            src="http://placekitten.com/200/300"
+          />
+        </div>
+        <div
+          class="Asset__title-container"
+        >
+          <span
+            class="Asset__title-container__title"
+          >
+            picture of a cat
+          </span>
+        </div>
+      </div>
     </div>
   </div>
-</Card>
+</div>
 `;
 
 exports[`renders the component in loading state 1`] = `
-<Card
-  className="AssetCard AssetCard--size-default"
-  padding="none"
-  selected={false}
-  testId="cf-ui-asset-card"
+<div
+  class="Card AssetCard AssetCard--size-default Card--padding-none"
+  data-test-id="cf-ui-asset-card"
   title="picture of a cat"
 >
-  <AssetCardSkeleton
-    size="default"
-  />
-</Card>
+  <svg
+    aria-label="Loading component..."
+    class="SkeletonContainer"
+    data-test-id="cf-ui-skeleton-form"
+    height="100%"
+    preserveAspectRatio="xMidYMid meet"
+    role="img"
+    width="240"
+  >
+    <title>
+      Loading component...
+    </title>
+    <rect
+      clip-path="url(#f36-asset-card-skeleton)"
+      height="100%"
+      style="fill: url(#cf-ui-skeleton-clip-gradient-0);"
+      width="100%"
+      x="0"
+      y="0"
+    />
+    <defs>
+      <clippath
+        id="f36-asset-card-skeleton"
+      >
+        <rect
+          height="70"
+          rx="0"
+          ry="0"
+          width="70"
+          x="85"
+          y="100"
+        />
+        <rect
+          height="16"
+          rx="0"
+          ry="0"
+          width="100"
+          x="70"
+          y="190"
+        />
+      </clippath>
+      <lineargradient
+        id="cf-ui-skeleton-clip-gradient-0"
+      >
+        <stop
+          offset="0%"
+          stop-color="#e5ebed"
+          stop-opacity="1"
+        >
+          <animate
+            attributeName="stop-color"
+            dur="2s"
+            id="animation-1"
+            repeatCount="indefinite"
+            values="#e5ebed; #f7f9fa; #e5ebed"
+          />
+        </stop>
+        <stop
+          offset="50%"
+          stop-color="#f7f9fa"
+          stop-opacity="1"
+        >
+          <animate
+            attributeName="stop-color"
+            begin="animation-1.begin+0.25s"
+            dur="2s"
+            repeatCount="indefinite"
+            values="#e5ebed; #f7f9fa; #e5ebed"
+          />
+        </stop>
+        <stop
+          offset="100%"
+          stop-color="#e5ebed"
+          stop-opacity="1"
+        >
+          <animate
+            attributeName="stop-color"
+            begin="animation-1.begin+0.5s"
+            dur="2s"
+            repeatCount="indefinite"
+            values="#e5ebed; #f7f9fa; #e5ebed"
+          />
+        </stop>
+      </lineargradient>
+    </defs>
+  </svg>
+</div>
 `;
 
 exports[`renders the component with a custom drag handle 1`] = `
-<Card
-  className="AssetCard AssetCard--size-default my-extra-class"
-  padding="none"
-  selected={false}
-  testId="cf-ui-asset-card"
+<div
+  class="Card AssetCard AssetCard--size-default my-extra-class Card--padding-none"
+  data-test-id="cf-ui-asset-card"
   title="picture of a cat"
 >
-  <CardDragHandle
-    isDragActive={false}
-    testId="cf-ui-card-drag-handle"
-  >
-    Reorder card
-  </CardDragHandle>
   <div
-    className="AssetCard__wrapper"
+    class="CardDragHandle"
+    data-test-id="cf-ui-card-drag-handle"
+  >
+    <svg
+      class="Icon Icon--small Icon--muted"
+      data-test-id="cf-ui-icon"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M0 0h24v24H0V0z"
+        fill="none"
+      />
+      <path
+        d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+      />
+    </svg>
+    <span
+      class="CardDragHandle__sr-label"
+    >
+      Reorder card
+    </span>
+  </div>
+  <div
+    class="AssetCard__wrapper"
   >
     <div
-      className="AssetCard__header"
+      class="AssetCard__header"
     />
     <div
-      className="AssetCard__content"
+      class="AssetCard__content"
     >
-      <Asset
-        className="AssetCard__asset"
-        src="http://placekitten.com/200/300"
-        testId="cf-ui-asset"
-        title="picture of a cat"
-        type="image"
-      />
+      <div
+        class="Asset AssetCard__asset"
+        data-test-id="cf-ui-asset"
+      >
+        <div
+          class="Asset__image-container"
+        >
+          <img
+            alt="picture of a cat"
+            class="Asset__image-container__image"
+            src="http://placekitten.com/200/300"
+          />
+        </div>
+        <div
+          class="Asset__title-container"
+        >
+          <span
+            class="Asset__title-container__title"
+          >
+            picture of a cat
+          </span>
+        </div>
+      </div>
     </div>
   </div>
-</Card>
+</div>
 `;
 
 exports[`renders the component with a drag handle 1`] = `
-<Card
-  className="AssetCard AssetCard--size-default my-extra-class"
-  padding="none"
-  selected={false}
-  testId="cf-ui-asset-card"
-  title="picture of a cat"
->
-  <CardDragHandle
-    isDragActive={false}
-    testId="cf-ui-card-drag-handle"
-  >
-    Reorder entry
-  </CardDragHandle>
+<div>
   <div
-    className="AssetCard__wrapper"
+    class="Card AssetCard AssetCard--size-default my-extra-class Card--padding-none"
+    data-test-id="cf-ui-asset-card"
+    title="picture of a cat"
   >
     <div
-      className="AssetCard__header"
-    />
-    <div
-      className="AssetCard__content"
+      class="CardDragHandle"
+      data-test-id="cf-ui-card-drag-handle"
     >
-      <Asset
-        className="AssetCard__asset"
-        src="http://placekitten.com/200/300"
-        testId="cf-ui-asset"
-        title="picture of a cat"
-        type="image"
+      <svg
+        class="Icon Icon--small Icon--muted"
+        data-test-id="cf-ui-icon"
+        height="24"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0 0h24v24H0V0z"
+          fill="none"
+        />
+        <path
+          d="M11 18c0 1.1-.9 2-2 2s-2-.9-2-2 .9-2 2-2 2 .9 2 2zm-2-8c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6 4c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+        />
+      </svg>
+      <span
+        class="CardDragHandle__sr-label"
+      >
+        Reorder entry
+      </span>
+    </div>
+    <div
+      class="AssetCard__wrapper"
+    >
+      <div
+        class="AssetCard__header"
       />
+      <div
+        class="AssetCard__content"
+      >
+        <div
+          class="Asset AssetCard__asset"
+          data-test-id="cf-ui-asset"
+        >
+          <div
+            class="Asset__image-container"
+          >
+            <img
+              alt="picture of a cat"
+              class="Asset__image-container__image"
+              src="http://placekitten.com/200/300"
+            />
+          </div>
+          <div
+            class="Asset__title-container"
+          >
+            <span
+              class="Asset__title-container__title"
+            >
+              picture of a cat
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</Card>
+</div>
 `;
 
 exports[`renders the component with actions 1`] = `
-<Card
-  className="AssetCard AssetCard--size-default"
-  padding="none"
-  selected={false}
-  testId="cf-ui-asset-card"
+<div
+  class="Card AssetCard AssetCard--size-default Card--padding-none"
+  data-test-id="cf-ui-asset-card"
   title="picture of a cat"
 >
   <div
-    className="AssetCard__wrapper"
+    class="AssetCard__wrapper"
   >
     <div
-      className="AssetCard__header"
+      class="AssetCard__header"
     >
-      <CardActions
-        className="AssetCard__actions"
-        iconButtonProps={
-          Object {
-            "onClick": [Function],
-          }
-        }
-        isDisabled={false}
-        testId="cf-ui-card-actions"
+      <div
+        class="Dropdown AssetCard__actions"
+        data-test-id="cf-ui-card-actions"
       >
-        <DropdownList
-          testId="cf-ui-dropdown-list"
+        <button
+          aria-expanded="false"
+          aria-haspopup="menu"
+          class="IconButton IconButton--secondary"
+          data-test-id="cf-ui-icon-button"
+          type="button"
         >
-          <DropdownListItem
-            isActive={false}
-            isDisabled={false}
-            isTitle={true}
-            testId="cf-ui-dropdown-list-item"
+          <span
+            class="TabFocusTrap IconButton__inner"
+            tabindex="-1"
           >
-            Actions
-          </DropdownListItem>
-          <DropdownListItem
-            isActive={false}
-            isDisabled={false}
-            isTitle={false}
-            onClick={[Function]}
-            testId="cf-ui-dropdown-list-item"
-          >
-            Edit
-          </DropdownListItem>
-        </DropdownList>
-      </CardActions>
+            <svg
+              class="Icon Icon--small Icon--primary IconButton__icon"
+              data-test-id="cf-ui-icon"
+              height="18"
+              viewBox="0 0 24 24"
+              width="18"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+              />
+              <path
+                d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+              />
+            </svg>
+            <span
+              class="IconButton__label"
+            >
+              Actions
+            </span>
+          </span>
+        </button>
+      </div>
     </div>
     <div
-      className="AssetCard__content"
+      class="AssetCard__content"
     >
-      <Asset
-        className="AssetCard__asset"
-        src="http://placekitten.com/200/300"
-        testId="cf-ui-asset"
-        title="picture of a cat"
-        type="image"
-      />
+      <div
+        class="Asset AssetCard__asset"
+        data-test-id="cf-ui-asset"
+      >
+        <div
+          class="Asset__image-container"
+        >
+          <img
+            alt="picture of a cat"
+            class="Asset__image-container__image"
+            src="http://placekitten.com/200/300"
+          />
+        </div>
+        <div
+          class="Asset__title-container"
+        >
+          <span
+            class="Asset__title-container__title"
+          >
+            picture of a cat
+          </span>
+        </div>
+      </div>
     </div>
   </div>
-</Card>
+</div>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
-<Card
-  className="AssetCard AssetCard--size-default my-extra-class"
-  padding="none"
-  selected={false}
-  testId="cf-ui-asset-card"
+<div
+  class="Card AssetCard AssetCard--size-default my-extra-class Card--padding-none"
+  data-test-id="cf-ui-asset-card"
   title="picture of a cat"
 >
   <div
-    className="AssetCard__wrapper"
+    class="AssetCard__wrapper"
   >
     <div
-      className="AssetCard__header"
+      class="AssetCard__header"
     />
     <div
-      className="AssetCard__content"
+      class="AssetCard__content"
     >
-      <Asset
-        className="AssetCard__asset"
-        src="http://placekitten.com/200/300"
-        testId="cf-ui-asset"
-        title="picture of a cat"
-        type="image"
-      />
+      <div
+        class="Asset AssetCard__asset"
+        data-test-id="cf-ui-asset"
+      >
+        <div
+          class="Asset__image-container"
+        >
+          <img
+            alt="picture of a cat"
+            class="Asset__image-container__image"
+            src="http://placekitten.com/200/300"
+          />
+        </div>
+        <div
+          class="Asset__title-container"
+        >
+          <span
+            class="Asset__title-container__title"
+          >
+            picture of a cat
+          </span>
+        </div>
+      </div>
     </div>
   </div>
-</Card>
+</div>
 `;
 
 exports[`renders the component with status 1`] = `
-<Card
-  className="AssetCard AssetCard--size-default"
-  padding="none"
-  selected={false}
-  testId="cf-ui-asset-card"
+<div
+  class="Card AssetCard AssetCard--size-default Card--padding-none"
+  data-test-id="cf-ui-asset-card"
   title="picture of a cat"
 >
   <div
-    className="AssetCard__wrapper"
+    class="AssetCard__wrapper"
   >
     <div
-      className="AssetCard__header"
+      class="AssetCard__header"
     >
-      <Tag
-        style={
-          Object {
-            "marginLeft": "auto",
-          }
-        }
-        tagType="negative"
-        testId="cf-ui-tag"
+      <div
+        class="Tag Tag--negative"
+        data-test-id="cf-ui-tag"
+        style="margin-left: auto;"
       >
         archived
-      </Tag>
+      </div>
     </div>
     <div
-      className="AssetCard__content"
+      class="AssetCard__content"
     >
-      <Asset
-        className="AssetCard__asset"
-        src="http://placekitten.com/200/300"
-        status="archived"
-        testId="cf-ui-asset"
-        title="picture of a cat"
-        type="image"
-      />
+      <div
+        class="Asset AssetCard__asset"
+        data-test-id="cf-ui-asset"
+      >
+        <div
+          class="Asset__asset-container"
+        >
+          <div
+            class="Asset__illustration-container"
+          >
+            <svg
+              class="Illustration"
+              data-test-id="cf-ui-asset-icon"
+              height="24"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g
+                fill="none"
+                stroke="#000"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-miterlimit="10"
+              >
+                <path
+                  d="M19.5 23.5H.5V.5h13l6 6z"
+                />
+                <path
+                  d="M13.5.5v6h6M13 11l-3 5.5-2-2-2.5 5h10z"
+                />
+                <circle
+                  cx="7"
+                  cy="9"
+                  r="1.5"
+                />
+              </g>
+            </svg>
+          </div>
+          <span
+            class="Asset__asset-container__title"
+          >
+            picture of a cat
+          </span>
+        </div>
+      </div>
     </div>
   </div>
-</Card>
+</div>
 `;
 
 exports[`renders the component without actions 1`] = `
-<Card
-  className="AssetCard AssetCard--size-default"
-  padding="none"
-  selected={false}
-  testId="cf-ui-asset-card"
+<div
+  class="Card AssetCard AssetCard--size-default Card--padding-none"
+  data-test-id="cf-ui-asset-card"
   title="picture of a cat"
 >
   <div
-    className="AssetCard__wrapper"
+    class="AssetCard__wrapper"
   >
     <div
-      className="AssetCard__header"
+      class="AssetCard__header"
     />
     <div
-      className="AssetCard__content"
+      class="AssetCard__content"
     >
-      <Asset
-        className="AssetCard__asset"
-        src="http://placekitten.com/200/300"
-        testId="cf-ui-asset"
-        title="picture of a cat"
-        type="image"
-      />
+      <div
+        class="Asset AssetCard__asset"
+        data-test-id="cf-ui-asset"
+      >
+        <div
+          class="Asset__image-container"
+        >
+          <img
+            alt="picture of a cat"
+            class="Asset__image-container__image"
+            src="http://placekitten.com/200/300"
+          />
+        </div>
+        <div
+          class="Asset__title-container"
+        >
+          <span
+            class="Asset__title-container__title"
+          >
+            picture of a cat
+          </span>
+        </div>
+      </div>
     </div>
   </div>
-</Card>
+</div>
 `;

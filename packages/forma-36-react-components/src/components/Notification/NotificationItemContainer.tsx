@@ -21,7 +21,7 @@ export class NotificationItemContainer extends Component<
 > {
   static defaultProps = defaultProps;
 
-  timer: NodeJS.Timeout | null = null;
+  timer: number | null = null;
 
   state = {
     isShown: false,

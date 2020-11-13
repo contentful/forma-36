@@ -2,119 +2,99 @@
 
 exports[`renders the component 1`] = `
 <div
-  className="Switch__wrapper"
+  class="Switch__wrapper"
 >
   <input
-    className="Switch"
+    class="Switch"
     id="testCheckbox"
-    onClick={[Function]}
-    onKeyUp={[Function]}
     type="checkbox"
   />
-  <FormLabel
-    className="Switch__label"
-    htmlFor="testCheckbox"
-    required={false}
-    requiredText="required"
-    testId="cf-ui-form-label"
+  <label
+    class="FormLabel Switch__label"
+    data-test-id="cf-ui-form-label"
+    for="testCheckbox"
   >
     foobar
-  </FormLabel>
+  </label>
 </div>
 `;
 
 exports[`renders the component as checked 1`] = `
 <div
-  className="Switch__wrapper"
+  class="Switch__wrapper"
 >
   <input
-    className="Switch Switch--checked"
-    defaultChecked={true}
+    checked=""
+    class="Switch Switch--checked"
     id="testCheckbox"
-    onClick={[Function]}
-    onKeyUp={[Function]}
     type="checkbox"
   />
-  <FormLabel
-    className="Switch__label"
-    htmlFor="testCheckbox"
-    required={false}
-    requiredText="required"
-    testId="cf-ui-form-label"
+  <label
+    class="FormLabel Switch__label"
+    data-test-id="cf-ui-form-label"
+    for="testCheckbox"
   >
     foobar
-  </FormLabel>
+  </label>
 </div>
 `;
 
 exports[`renders the component as disabled 1`] = `
 <div
-  className="Switch__wrapper"
+  class="Switch__wrapper"
 >
   <input
-    className="Switch Switch--disabled"
-    disabled={true}
+    class="Switch Switch--disabled"
+    disabled=""
     id="testCheckbox"
-    onClick={[Function]}
-    onKeyUp={[Function]}
     type="checkbox"
   />
-  <FormLabel
-    className="Switch__label Switch__label--disabled"
-    htmlFor="testCheckbox"
-    required={false}
-    requiredText="required"
-    testId="cf-ui-form-label"
+  <label
+    class="FormLabel Switch__label Switch__label--disabled"
+    data-test-id="cf-ui-form-label"
+    for="testCheckbox"
   >
     foobar
-  </FormLabel>
+  </label>
 </div>
 `;
 
 exports[`renders the component as disabled and checked 1`] = `
 <div
-  className="Switch__wrapper"
+  class="Switch__wrapper"
 >
   <input
-    className="Switch Switch--checked Switch--disabled"
-    defaultChecked={true}
-    disabled={true}
+    checked=""
+    class="Switch Switch--checked Switch--disabled"
+    disabled=""
     id="testCheckbox"
-    onClick={[Function]}
-    onKeyUp={[Function]}
     type="checkbox"
   />
-  <FormLabel
-    className="Switch__label Switch__label--disabled"
-    htmlFor="testCheckbox"
-    required={false}
-    requiredText="required"
-    testId="cf-ui-form-label"
+  <label
+    class="FormLabel Switch__label Switch__label--disabled"
+    data-test-id="cf-ui-form-label"
+    for="testCheckbox"
   >
     foobar
-  </FormLabel>
+  </label>
 </div>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
 <div
-  className="Switch__wrapper my-extra-class"
+  class="Switch__wrapper my-extra-class"
 >
   <input
-    className="Switch"
+    class="Switch"
     id="testCheckbox"
-    onClick={[Function]}
-    onKeyUp={[Function]}
     type="checkbox"
   />
-  <FormLabel
-    className="Switch__label"
-    htmlFor="testCheckbox"
-    required={false}
-    requiredText="required"
-    testId="cf-ui-form-label"
+  <label
+    class="FormLabel Switch__label"
+    data-test-id="cf-ui-form-label"
+    for="testCheckbox"
   >
     foobar
-  </FormLabel>
+  </label>
 </div>
 `;

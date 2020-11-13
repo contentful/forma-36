@@ -2,228 +2,288 @@
 
 exports[`allows passing additional props not consumed by the component 1`] = `
 <button
-  className="IconButton IconButton--primary"
+  class="IconButton IconButton--primary"
   data-test-id="Testing ID"
-  disabled={false}
   type="button"
 >
-  <TabFocusTrap
-    className="IconButton__inner"
+  <span
+    class="TabFocusTrap IconButton__inner"
+    tabindex="-1"
   >
-    <Icon
-      className="IconButton__icon"
-      color="primary"
-      icon="ArrowDown"
-      size="small"
-      testId="cf-ui-icon"
-    />
+    <svg
+      class="Icon Icon--small Icon--primary IconButton__icon"
+      data-test-id="cf-ui-icon"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7 10l5 5 5-5z"
+      />
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+    </svg>
     <span
-      className="IconButton__label"
+      class="IconButton__label"
     >
       My Icon
     </span>
-  </TabFocusTrap>
+  </span>
 </button>
 `;
 
 exports[`calls an onClick function 1`] = `
 <button
-  className="IconButton IconButton--primary"
+  class="IconButton IconButton--primary"
   data-test-id="cf-ui-icon-button"
-  disabled={false}
-  onClick={
-    [MockFunction] {
-      "calls": Array [
-        Array [],
-      ],
-      "results": Array [
-        Object {
-          "type": "return",
-          "value": undefined,
-        },
-      ],
-    }
-  }
   type="button"
 >
-  <TabFocusTrap
-    className="IconButton__inner"
+  <span
+    class="TabFocusTrap IconButton__inner"
+    tabindex="-1"
   >
-    <Icon
-      className="IconButton__icon"
-      color="primary"
-      icon="ArrowDown"
-      size="small"
-      testId="cf-ui-icon"
-    />
+    <svg
+      class="Icon Icon--small Icon--primary IconButton__icon"
+      data-test-id="cf-ui-icon"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7 10l5 5 5-5z"
+      />
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+    </svg>
     <span
-      className="IconButton__label"
+      class="IconButton__label"
     >
       My Icon
     </span>
-  </TabFocusTrap>
+  </span>
 </button>
 `;
 
 exports[`prevents an onClick function from being called when disabled 1`] = `
 <button
-  className="IconButton IconButton--disabled IconButton--primary"
+  class="IconButton IconButton--disabled IconButton--primary"
   data-test-id="cf-ui-icon-button"
-  disabled={true}
+  disabled=""
   type="button"
 >
-  <TabFocusTrap
-    className="IconButton__inner"
+  <span
+    class="TabFocusTrap IconButton__inner"
+    tabindex="-1"
   >
-    <Icon
-      className="IconButton__icon"
-      color="primary"
-      icon="ArrowDown"
-      size="small"
-      testId="cf-ui-icon"
-    />
+    <svg
+      class="Icon Icon--small Icon--primary IconButton__icon"
+      data-test-id="cf-ui-icon"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7 10l5 5 5-5z"
+      />
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+    </svg>
     <span
-      className="IconButton__label"
+      class="IconButton__label"
     >
       My Icon
     </span>
-  </TabFocusTrap>
+  </span>
 </button>
 `;
 
 exports[`renders as a "muted" link type 1`] = `
 <button
-  className="IconButton IconButton--muted"
+  class="IconButton IconButton--muted"
   data-test-id="cf-ui-icon-button"
-  disabled={false}
   type="button"
 >
-  <TabFocusTrap
-    className="IconButton__inner"
+  <span
+    class="TabFocusTrap IconButton__inner"
+    tabindex="-1"
   >
-    <Icon
-      className="IconButton__icon"
-      color="primary"
-      icon="ArrowDown"
-      size="small"
-      testId="cf-ui-icon"
-    />
+    <svg
+      class="Icon Icon--small Icon--primary IconButton__icon"
+      data-test-id="cf-ui-icon"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7 10l5 5 5-5z"
+      />
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+    </svg>
     <span
-      className="IconButton__label"
+      class="IconButton__label"
     >
       My Icon
     </span>
-  </TabFocusTrap>
+  </span>
 </button>
 `;
 
 exports[`renders as a "negative" link type 1`] = `
 <button
-  className="IconButton IconButton--negative"
+  class="IconButton IconButton--negative"
   data-test-id="cf-ui-icon-button"
-  disabled={false}
   type="button"
 >
-  <TabFocusTrap
-    className="IconButton__inner"
+  <span
+    class="TabFocusTrap IconButton__inner"
+    tabindex="-1"
   >
-    <Icon
-      className="IconButton__icon"
-      color="primary"
-      icon="ArrowDown"
-      size="small"
-      testId="cf-ui-icon"
-    />
+    <svg
+      class="Icon Icon--small Icon--primary IconButton__icon"
+      data-test-id="cf-ui-icon"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7 10l5 5 5-5z"
+      />
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+    </svg>
     <span
-      className="IconButton__label"
+      class="IconButton__label"
     >
       My Icon
     </span>
-  </TabFocusTrap>
+  </span>
 </button>
 `;
 
 exports[`renders as a "positive" link type 1`] = `
 <button
-  className="IconButton IconButton--positive"
+  class="IconButton IconButton--positive"
   data-test-id="cf-ui-icon-button"
-  disabled={false}
   type="button"
 >
-  <TabFocusTrap
-    className="IconButton__inner"
+  <span
+    class="TabFocusTrap IconButton__inner"
+    tabindex="-1"
   >
-    <Icon
-      className="IconButton__icon"
-      color="primary"
-      icon="ArrowDown"
-      size="small"
-      testId="cf-ui-icon"
-    />
+    <svg
+      class="Icon Icon--small Icon--primary IconButton__icon"
+      data-test-id="cf-ui-icon"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7 10l5 5 5-5z"
+      />
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+    </svg>
     <span
-      className="IconButton__label"
+      class="IconButton__label"
     >
       My Icon
     </span>
-  </TabFocusTrap>
+  </span>
 </button>
 `;
 
 exports[`renders as a "primary" link type 1`] = `
 <button
-  className="IconButton IconButton--primary"
+  class="IconButton IconButton--primary"
   data-test-id="cf-ui-icon-button"
-  disabled={false}
   type="button"
 >
-  <TabFocusTrap
-    className="IconButton__inner"
+  <span
+    class="TabFocusTrap IconButton__inner"
+    tabindex="-1"
   >
-    <Icon
-      className="IconButton__icon"
-      color="primary"
-      icon="ArrowDown"
-      size="small"
-      testId="cf-ui-icon"
-    />
+    <svg
+      class="Icon Icon--small Icon--primary IconButton__icon"
+      data-test-id="cf-ui-icon"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7 10l5 5 5-5z"
+      />
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+    </svg>
     <span
-      className="IconButton__label"
+      class="IconButton__label"
     >
       My Icon
     </span>
-  </TabFocusTrap>
+  </span>
 </button>
 `;
 
 exports[`renders as a "secondary" link type 1`] = `
 <button
-  className="IconButton IconButton--secondary"
+  class="IconButton IconButton--secondary"
   data-test-id="cf-ui-icon-button"
-  disabled={false}
   type="button"
 >
-  <TabFocusTrap
-    className="IconButton__inner"
+  <span
+    class="TabFocusTrap IconButton__inner"
+    tabindex="-1"
   >
-    <Icon
-      className="IconButton__icon"
-      color="primary"
-      icon="ArrowDown"
-      size="small"
-      testId="cf-ui-icon"
-    />
+    <svg
+      class="Icon Icon--small Icon--primary IconButton__icon"
+      data-test-id="cf-ui-icon"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7 10l5 5 5-5z"
+      />
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+    </svg>
     <span
-      className="IconButton__label"
+      class="IconButton__label"
     >
       My Icon
     </span>
-  </TabFocusTrap>
+  </span>
 </button>
 `;
 
 exports[`renders as a link 1`] = `
 <a
-  className="IconButton IconButton--primary"
+  class="IconButton IconButton--primary"
   data-test-id="cf-ui-icon-button"
   href="#"
 >
@@ -233,85 +293,121 @@ exports[`renders as a link 1`] = `
 
 exports[`renders the component 1`] = `
 <button
-  className="IconButton IconButton--primary"
+  class="IconButton IconButton--primary"
   data-test-id="cf-ui-icon-button"
-  disabled={false}
   type="button"
 >
-  <TabFocusTrap
-    className="IconButton__inner"
+  <span
+    class="TabFocusTrap IconButton__inner"
+    tabindex="-1"
   >
-    <Icon
-      className="IconButton__icon"
-      color="primary"
-      icon="ArrowDown"
-      size="small"
-      testId="cf-ui-icon"
-    />
+    <svg
+      class="Icon Icon--small Icon--primary IconButton__icon"
+      data-test-id="cf-ui-icon"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7 10l5 5 5-5z"
+      />
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+    </svg>
     <span
-      className="IconButton__label"
+      class="IconButton__label"
     >
       My Icon
     </span>
-  </TabFocusTrap>
+  </span>
 </button>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
 <button
-  className="IconButton my-extra-class IconButton--primary"
+  class="IconButton my-extra-class IconButton--primary"
   data-test-id="cf-ui-icon-button"
-  disabled={false}
   type="button"
 >
-  <TabFocusTrap
-    className="IconButton__inner"
+  <span
+    class="TabFocusTrap IconButton__inner"
+    tabindex="-1"
   >
-    <Icon
-      className="IconButton__icon"
-      color="primary"
-      icon="ArrowDown"
-      size="small"
-      testId="cf-ui-icon"
-    />
+    <svg
+      class="Icon Icon--small Icon--primary IconButton__icon"
+      data-test-id="cf-ui-icon"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7 10l5 5 5-5z"
+      />
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+    </svg>
     <span
-      className="IconButton__label"
+      class="IconButton__label"
     >
       My Icon
     </span>
-  </TabFocusTrap>
+  </span>
 </button>
 `;
 
 exports[`renders with a dropdown indicator 1`] = `
 <button
-  className="IconButton IconButton--primary"
+  class="IconButton IconButton--primary"
   data-test-id="cf-ui-icon-button"
-  disabled={false}
   type="button"
 >
-  <TabFocusTrap
-    className="IconButton__inner"
+  <span
+    class="TabFocusTrap IconButton__inner"
+    tabindex="-1"
   >
-    <Icon
-      className="IconButton__icon"
-      color="primary"
-      icon="ArrowDown"
-      size="small"
-      testId="cf-ui-icon"
-    />
+    <svg
+      class="Icon Icon--small Icon--primary IconButton__icon"
+      data-test-id="cf-ui-icon"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7 10l5 5 5-5z"
+      />
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+    </svg>
     <span
-      className="IconButton__label"
+      class="IconButton__label"
     >
       My Icon
     </span>
-    <Icon
-      className="IconButton__dropdown"
-      color="secondary"
-      icon="ChevronDown"
-      size="small"
-      testId="cf-ui-icon"
-    />
-  </TabFocusTrap>
+    <svg
+      class="Icon Icon--small Icon--secondary IconButton__dropdown"
+      data-test-id="cf-ui-icon"
+      height="18"
+      viewBox="0 0 24 24"
+      width="18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"
+      />
+      <path
+        d="M0-.75h24v24H0z"
+        fill="none"
+      />
+    </svg>
+  </span>
 </button>
 `;

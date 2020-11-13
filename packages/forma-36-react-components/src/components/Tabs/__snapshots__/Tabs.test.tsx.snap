@@ -1,263 +1,107 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
-Array [
-  <Tabs
-    role="tablist"
-    testId="cf-ui-tabs"
-    withDivider={false}
+<div
+  class="Tabs"
+  data-test-id="cf-ui-tabs"
+  role="tablist"
+>
+  <div
+    aria-controls="first"
+    aria-selected="false"
+    class="Tab"
+    data-test-id="cf-ui-tab"
+    role="tab"
+    tabindex="0"
   >
-    <div
-      className="Tabs"
-      data-test-id="cf-ui-tabs"
-      role="tablist"
-    >
-      <Tab
-        disabled={false}
-        id="first"
-        selected={false}
-        tabIndex={0}
-        testId="cf-ui-tab"
-      >
-        <div
-          aria-controls="first"
-          aria-selected={false}
-          className="Tab"
-          data-test-id="cf-ui-tab"
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          role="tab"
-          tabIndex={0}
-        >
-          First
-        </div>
-      </Tab>
-      <Tab
-        disabled={false}
-        id="second"
-        selected={false}
-        tabIndex={0}
-        testId="cf-ui-tab"
-      >
-        <div
-          aria-controls="second"
-          aria-selected={false}
-          className="Tab"
-          data-test-id="cf-ui-tab"
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          role="tab"
-          tabIndex={0}
-        >
-          Second
-        </div>
-      </Tab>
-      <Tab
-        disabled={false}
-        id="third"
-        selected={false}
-        tabIndex={0}
-        testId="cf-ui-tab"
-      >
-        <div
-          aria-controls="third"
-          aria-selected={false}
-          className="Tab"
-          data-test-id="cf-ui-tab"
-          onClick={[Function]}
-          onKeyPress={[Function]}
-          role="tab"
-          tabIndex={0}
-        >
-          Third
-        </div>
-      </Tab>
-    </div>
-  </Tabs>,
-  <TabPanel
-    id="first"
-    testId="cf-ui-tab-panel"
+    First
+  </div>
+  <div
+    aria-controls="second"
+    aria-selected="false"
+    class="Tab"
+    data-test-id="cf-ui-tab"
+    role="tab"
+    tabindex="0"
   >
-    <div
-      data-test-id="cf-ui-tab-panel"
-      id="first"
-      role="tabpanel"
-    >
-      content first panel
-    </div>
-  </TabPanel>,
-  <TabPanel
-    id="second"
-    testId="cf-ui-tab-panel"
+    Second
+  </div>
+  <div
+    aria-controls="third"
+    aria-selected="false"
+    class="Tab"
+    data-test-id="cf-ui-tab"
+    role="tab"
+    tabindex="0"
   >
-    <div
-      data-test-id="cf-ui-tab-panel"
-      id="second"
-      role="tabpanel"
-    >
-      content second panel
-    </div>
-  </TabPanel>,
-  <TabPanel
-    id="third"
-    testId="cf-ui-tab-panel"
-  >
-    <div
-      data-test-id="cf-ui-tab-panel"
-      id="third"
-      role="tabpanel"
-    >
-      content third panel
-    </div>
-  </TabPanel>,
-]
+    Third
+  </div>
+</div>
 `;
 
 exports[`renders the component the first tab disbaled 1`] = `
-<Tabs
-  className="my-extra-class"
+<nav
+  class="Tabs my-extra-class"
+  data-test-id="cf-ui-tabs"
   role="navigation"
-  testId="cf-ui-tabs"
-  withDivider={false}
 >
-  <nav
-    className="Tabs my-extra-class"
-    data-test-id="cf-ui-tabs"
-    role="navigation"
+  <a
+    aria-disabled="true"
+    class="Tab Tab__disabled"
+    data-test-id="cf-ui-tab"
+    href="/first-link"
+    tabindex="0"
   >
-    <Tab
-      disabled={true}
-      href="/first-link"
-      id="first"
-      selected={false}
-      tabIndex={0}
-      testId="cf-ui-tab"
-    >
-      <a
-        aria-disabled={true}
-        className="Tab Tab__disabled"
-        data-test-id="cf-ui-tab"
-        href="/first-link"
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        tabIndex={0}
-      >
-        First
-      </a>
-    </Tab>
-    <Tab
-      className="super-tab"
-      disabled={false}
-      href="/second-link"
-      id="second"
-      selected={false}
-      tabIndex={0}
-      testId="cf-ui-tab"
-    >
-      <a
-        className="Tab super-tab"
-        data-test-id="cf-ui-tab"
-        href="/second-link"
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        tabIndex={0}
-      >
-        Second
-      </a>
-    </Tab>
-    <Tab
-      disabled={false}
-      href="/third-link"
-      id="third"
-      selected={false}
-      tabIndex={0}
-      testId="cf-ui-tab"
-    >
-      <a
-        className="Tab"
-        data-test-id="cf-ui-tab"
-        href="/third-link"
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        tabIndex={0}
-      >
-        Third
-      </a>
-    </Tab>
-  </nav>
-</Tabs>
+    First
+  </a>
+  <a
+    class="Tab super-tab"
+    data-test-id="cf-ui-tab"
+    href="/second-link"
+    tabindex="0"
+  >
+    Second
+  </a>
+  <a
+    class="Tab"
+    data-test-id="cf-ui-tab"
+    href="/third-link"
+    tabindex="0"
+  >
+    Third
+  </a>
+</nav>
 `;
 
 exports[`renders the component with role=navigation and an additional class name 1`] = `
-<Tabs
-  className="my-extra-class"
+<nav
+  class="Tabs my-extra-class"
+  data-test-id="cf-ui-tabs"
   role="navigation"
-  testId="cf-ui-tabs"
-  withDivider={false}
 >
-  <nav
-    className="Tabs my-extra-class"
-    data-test-id="cf-ui-tabs"
-    role="navigation"
+  <a
+    class="Tab"
+    data-test-id="cf-ui-tab"
+    href="/first-link"
+    tabindex="0"
   >
-    <Tab
-      disabled={false}
-      href="/first-link"
-      id="first"
-      selected={false}
-      tabIndex={0}
-      testId="cf-ui-tab"
-    >
-      <a
-        className="Tab"
-        data-test-id="cf-ui-tab"
-        href="/first-link"
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        tabIndex={0}
-      >
-        First
-      </a>
-    </Tab>
-    <Tab
-      className="super-tab"
-      disabled={false}
-      href="/second-link"
-      id="second"
-      selected={false}
-      tabIndex={0}
-      testId="cf-ui-tab"
-    >
-      <a
-        className="Tab super-tab"
-        data-test-id="cf-ui-tab"
-        href="/second-link"
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        tabIndex={0}
-      >
-        Second
-      </a>
-    </Tab>
-    <Tab
-      disabled={false}
-      href="/third-link"
-      id="third"
-      selected={false}
-      tabIndex={0}
-      testId="cf-ui-tab"
-    >
-      <a
-        className="Tab"
-        data-test-id="cf-ui-tab"
-        href="/third-link"
-        onClick={[Function]}
-        onKeyPress={[Function]}
-        tabIndex={0}
-      >
-        Third
-      </a>
-    </Tab>
-  </nav>
-</Tabs>
+    First
+  </a>
+  <a
+    class="Tab super-tab"
+    data-test-id="cf-ui-tab"
+    href="/second-link"
+    tabindex="0"
+  >
+    Second
+  </a>
+  <a
+    class="Tab"
+    data-test-id="cf-ui-tab"
+    href="/third-link"
+    tabindex="0"
+  >
+    Third
+  </a>
+</nav>
 `;

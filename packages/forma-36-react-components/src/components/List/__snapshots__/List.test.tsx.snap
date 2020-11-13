@@ -2,26 +2,28 @@
 
 exports[`renders the component 1`] = `
 <ul
-  className="List"
+  class="List"
   data-test-id="cf-ui-list"
 >
-  <ListItem
-    testId="cf-ui-list-item"
+  <li
+    class="ListItem"
+    data-test-id="cf-ui-list-item"
   >
     Item
-  </ListItem>
+  </li>
 </ul>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
 <ul
-  className="List my-extra-class"
+  class="List my-extra-class"
   data-test-id="cf-ui-list"
 >
-  <ListItem
-    testId="cf-ui-list-item"
+  <li
+    class="ListItem"
+    data-test-id="cf-ui-list-item"
   >
     Item
-  </ListItem>
+  </li>
 </ul>
 `;

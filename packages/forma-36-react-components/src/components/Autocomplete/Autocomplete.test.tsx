@@ -1,12 +1,5 @@
 import React from 'react';
-import '@testing-library/jest-dom/extend-expect';
-import {
-  render,
-  cleanup,
-  fireEvent,
-  within,
-  configure,
-} from '@testing-library/react';
+import { render, fireEvent, within, configure } from '@testing-library/react';
 
 import { KEY_CODE } from './utils';
 import Autocomplete, { AutocompleteProps } from '../Autocomplete';
@@ -29,8 +22,6 @@ describe('Autocomplete', () => {
   let onChangeFn: (value: Item) => void;
   let onQueryChangeFn: (query: string) => void;
 
-  afterEach(cleanup);
-
   const build = ({
     placeholder = '',
     width = 'large',
@@ -47,7 +38,7 @@ describe('Autocomplete', () => {
         width={width}
       >
         {(options: Item[]) =>
-          options.map(option => (
+          options.map((option) => (
             <span key={option.value} data-testid="option-content">
               {option.label}
             </span>

@@ -2,28 +2,8 @@
 
 exports[`renders the component 1`] = `
 <div
-  className="Flex"
+  class="Flex"
   data-test-id="cf-ui-flex"
-  style={
-    Object {
-      "alignItems": undefined,
-      "alignSelf": undefined,
-      "flexDirection": undefined,
-      "flexGrow": undefined,
-      "flexWrap": undefined,
-      "justifyContent": undefined,
-      "justifyItems": undefined,
-      "justifySelf": undefined,
-      "marginBottom": undefined,
-      "marginLeft": undefined,
-      "marginRight": undefined,
-      "marginTop": undefined,
-      "paddingBottom": undefined,
-      "paddingLeft": undefined,
-      "paddingRight": undefined,
-      "paddingTop": undefined,
-    }
-  }
 >
   Flex
 </div>
@@ -31,28 +11,8 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <div
-  className="Flex my-extra-class"
+  class="Flex my-extra-class"
   data-test-id="cf-ui-flex"
-  style={
-    Object {
-      "alignItems": undefined,
-      "alignSelf": undefined,
-      "flexDirection": undefined,
-      "flexGrow": undefined,
-      "flexWrap": undefined,
-      "justifyContent": undefined,
-      "justifyItems": undefined,
-      "justifySelf": undefined,
-      "marginBottom": undefined,
-      "marginLeft": undefined,
-      "marginRight": undefined,
-      "marginTop": undefined,
-      "paddingBottom": undefined,
-      "paddingLeft": undefined,
-      "paddingRight": undefined,
-      "paddingTop": undefined,
-    }
-  }
 >
   Flex
 </div>

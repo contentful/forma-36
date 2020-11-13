@@ -1,44 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
-<Heading
-  element="h1"
-  testId="cf-ui-heading"
->
+<div>
   <h1
-    className="Heading"
+    class="Heading"
     data-test-id="cf-ui-heading"
   >
     Heading
   </h1>
-</Heading>
+</div>
 `;
 
 exports[`renders the component h3 1`] = `
-<Heading
-  element="h3"
-  testId="cf-ui-heading"
->
+<div>
   <h3
-    className="Heading"
+    class="Heading"
     data-test-id="cf-ui-heading"
   >
     Heading
   </h3>
-</Heading>
+</div>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
-<Heading
-  className="my-extra-class"
-  element="h1"
-  testId="cf-ui-heading"
->
+<div>
   <h1
-    className="Heading my-extra-class"
+    class="Heading my-extra-class"
     data-test-id="cf-ui-heading"
   >
     Heading
   </h1>
-</Heading>
+</div>
 `;

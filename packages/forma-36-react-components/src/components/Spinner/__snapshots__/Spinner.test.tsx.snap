@@ -2,9 +2,8 @@
 
 exports[`renders the component 1`] = `
 <svg
-  className="Spinner Spinner--default"
+  class="Spinner Spinner--default"
   data-test-id="cf-ui-spinner"
-  style={Object {}}
   viewBox="0 0 20 20"
   xmlns="http://www.w3.org/2000/svg"
 >
@@ -16,25 +15,17 @@ exports[`renders the component 1`] = `
   />
   <path
     d="M10,0V2a8,8,0,0,1,0,16v2A10,10,0,0,0,10,0Z"
-    style={
-      Object {
-        "opacity": 0.4,
-      }
-    }
+    style="opacity: 0.4;"
   />
 </svg>
 `;
 
 exports[`renders the component with a custom size 1`] = `
 <svg
-  className="Spinner Spinner--default"
+  class="Spinner Spinner--default"
   data-test-id="cf-ui-spinner"
-  style={
-    Object {
-      "height": "42px",
-      "width": "42px",
-    }
-  }
+  data-testid="spinner"
+  style="height: 42px; width: 42px;"
   viewBox="0 0 20 20"
   xmlns="http://www.w3.org/2000/svg"
 >
@@ -46,20 +37,15 @@ exports[`renders the component with a custom size 1`] = `
   />
   <path
     d="M10,0V2a8,8,0,0,1,0,16v2A10,10,0,0,0,10,0Z"
-    style={
-      Object {
-        "opacity": 0.4,
-      }
-    }
+    style="opacity: 0.4;"
   />
 </svg>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
 <svg
-  className="Spinner my-extra-class Spinner--default"
+  class="Spinner my-extra-class Spinner--default"
   data-test-id="cf-ui-spinner"
-  style={Object {}}
   viewBox="0 0 20 20"
   xmlns="http://www.w3.org/2000/svg"
 >
@@ -71,20 +57,15 @@ exports[`renders the component with an additional class name 1`] = `
   />
   <path
     d="M10,0V2a8,8,0,0,1,0,16v2A10,10,0,0,0,10,0Z"
-    style={
-      Object {
-        "opacity": 0.4,
-      }
-    }
+    style="opacity: 0.4;"
   />
 </svg>
 `;
 
 exports[`renders the component with the size "large" 1`] = `
 <svg
-  className="Spinner Spinner--large Spinner--default"
+  class="Spinner Spinner--large Spinner--default"
   data-test-id="cf-ui-spinner"
-  style={Object {}}
   viewBox="0 0 20 20"
   xmlns="http://www.w3.org/2000/svg"
 >
@@ -96,20 +77,15 @@ exports[`renders the component with the size "large" 1`] = `
   />
   <path
     d="M10,0V2a8,8,0,0,1,0,16v2A10,10,0,0,0,10,0Z"
-    style={
-      Object {
-        "opacity": 0.4,
-      }
-    }
+    style="opacity: 0.4;"
   />
 </svg>
 `;
 
 exports[`renders the component with the size "small" 1`] = `
 <svg
-  className="Spinner Spinner--small Spinner--default"
+  class="Spinner Spinner--small Spinner--default"
   data-test-id="cf-ui-spinner"
-  style={Object {}}
   viewBox="0 0 20 20"
   xmlns="http://www.w3.org/2000/svg"
 >
@@ -121,11 +97,7 @@ exports[`renders the component with the size "small" 1`] = `
   />
   <path
     d="M10,0V2a8,8,0,0,1,0,16v2A10,10,0,0,0,10,0Z"
-    style={
-      Object {
-        "opacity": 0.4,
-      }
-    }
+    style="opacity: 0.4;"
   />
 </svg>
 `;

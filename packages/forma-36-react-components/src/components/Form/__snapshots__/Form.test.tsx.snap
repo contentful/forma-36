@@ -2,78 +2,174 @@
 
 exports[`renders the component 1`] = `
 <form
-  className="Form"
+  class="Form"
   data-test-id="cf-ui-form"
-  onSubmit={[Function]}
 >
   <div
-    className="Form__item Form__item--default"
-    key=".0"
+    class="Form__item Form__item--default"
   >
-    <TextField
-      countCharacters={false}
-      helpText="Please enter your name"
-      id="nameInput"
-      labelText="Name"
-      name="nameInput"
-      required={true}
-      testId="cf-ui-text-field"
-      textarea={false}
-      value="Johannes Bugiel"
-      width="full"
-    />
+    <div
+      class="TextField TextField--full"
+      data-test-id="cf-ui-text-field"
+    >
+      <div
+        class="TextField__label-wrapper"
+      >
+        <label
+          class="FormLabel"
+          data-test-id="cf-ui-form-label"
+          for="nameInput"
+        >
+          Name
+          <span
+            class="FormLabel__required-text"
+          >
+            (
+            required
+            )
+          </span>
+        </label>
+      </div>
+      <div
+        class="TextInput TextInput--full"
+      >
+        <input
+          aria-label="nameInput"
+          class="TextInput__input"
+          data-test-id="cf-ui-text-input"
+          id="nameInput"
+          name="nameInput"
+          required=""
+          value="Johannes Bugiel"
+        />
+      </div>
+      <div
+        class="TextField__hints"
+      >
+        <p
+          class="HelpText TextField__help-text"
+          data-test-id="cf-ui-help-text"
+        >
+          Please enter your name
+        </p>
+      </div>
+    </div>
   </div>
 </form>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
 <form
-  className="Form my-extra-class"
+  class="Form my-extra-class"
   data-test-id="cf-ui-form"
-  onSubmit={[Function]}
 >
   <div
-    className="Form__item Form__item--default"
-    key=".0"
+    class="Form__item Form__item--default"
   >
-    <TextField
-      countCharacters={false}
-      helpText="Please enter your name"
-      id="nameInput"
-      labelText="Name"
-      name="nameInput"
-      required={true}
-      testId="cf-ui-text-field"
-      textarea={false}
-      value="Johannes Bugiel"
-      width="full"
-    />
+    <div
+      class="TextField TextField--full"
+      data-test-id="cf-ui-text-field"
+    >
+      <div
+        class="TextField__label-wrapper"
+      >
+        <label
+          class="FormLabel"
+          data-test-id="cf-ui-form-label"
+          for="nameInput"
+        >
+          Name
+          <span
+            class="FormLabel__required-text"
+          >
+            (
+            required
+            )
+          </span>
+        </label>
+      </div>
+      <div
+        class="TextInput TextInput--full"
+      >
+        <input
+          aria-label="nameInput"
+          class="TextInput__input"
+          data-test-id="cf-ui-text-input"
+          id="nameInput"
+          name="nameInput"
+          required=""
+          value="Johannes Bugiel"
+        />
+      </div>
+      <div
+        class="TextField__hints"
+      >
+        <p
+          class="HelpText TextField__help-text"
+          data-test-id="cf-ui-help-text"
+        >
+          Please enter your name
+        </p>
+      </div>
+    </div>
   </div>
 </form>
 `;
 
 exports[`renders the component with condensed spacing 1`] = `
 <form
-  className="Form my-extra-class"
+  class="Form my-extra-class"
   data-test-id="cf-ui-form"
-  onSubmit={[Function]}
 >
   <div
-    className="Form__item Form__item--condensed"
-    key=".0"
+    class="Form__item Form__item--condensed"
   >
-    <TextField
-      countCharacters={false}
-      helpText="Please enter your name"
-      id="nameInput"
-      labelText="Name"
-      name="nameInput"
-      required={true}
-      testId="cf-ui-text-field"
-      textarea={false}
-      value="Johannes Bugiel"
-      width="full"
-    />
+    <div
+      class="TextField TextField--full"
+      data-test-id="cf-ui-text-field"
+    >
+      <div
+        class="TextField__label-wrapper"
+      >
+        <label
+          class="FormLabel"
+          data-test-id="cf-ui-form-label"
+          for="nameInput"
+        >
+          Name
+          <span
+            class="FormLabel__required-text"
+          >
+            (
+            required
+            )
+          </span>
+        </label>
+      </div>
+      <div
+        class="TextInput TextInput--full"
+      >
+        <input
+          aria-label="nameInput"
+          class="TextInput__input"
+          data-test-id="cf-ui-text-input"
+          id="nameInput"
+          name="nameInput"
+          required=""
+          value="Johannes Bugiel"
+        />
+      </div>
+      <div
+        class="TextField__hints"
+      >
+        <p
+          class="HelpText TextField__help-text"
+          data-test-id="cf-ui-help-text"
+        >
+          Please enter your name
+        </p>
+      </div>
+    </div>
   </div>
 </form>
 `;

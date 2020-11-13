@@ -1,12 +1,13 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import axe from '../../../utils/axeHelper';
 import CardActions from './CardActions';
 import DropdownListItem from '../../Dropdown/DropdownListItem';
 import DropdownList from '../../Dropdown/DropdownList';
 
 it('renders the component using a single dropdown list', () => {
-  const output = shallow(
+  const { container } = render(
     <CardActions>
       <DropdownList>
         <DropdownListItem onClick={() => {}}>Edit</DropdownListItem>
@@ -16,11 +17,11 @@ it('renders the component using a single dropdown list', () => {
     </CardActions>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component as disabled', () => {
-  const output = shallow(
+  const { container } = render(
     <CardActions isDisabled>
       <DropdownList>
         <DropdownListItem onClick={() => {}}>Edit</DropdownListItem>
@@ -28,11 +29,11 @@ it('renders the component as disabled', () => {
     </CardActions>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component using a multiple dropdown lists', () => {
-  const output = shallow(
+  const { container } = render(
     <CardActions>
       <DropdownList>
         <DropdownListItem onClick={() => {}}>Edit</DropdownListItem>
@@ -47,11 +48,11 @@ it('renders the component using a multiple dropdown lists', () => {
     </CardActions>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(
+  const { container } = render(
     <CardActions className="my-extra-class">
       <DropdownList>
         <DropdownListItem onClick={() => {}}>Edit</DropdownListItem>
@@ -61,11 +62,11 @@ it('renders the component with an additional class name', () => {
     </CardActions>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with published status', () => {
-  const output = shallow(
+  const { container } = render(
     <CardActions>
       <DropdownList>
         <DropdownListItem onClick={() => {}}>Edit</DropdownListItem>
@@ -75,11 +76,11 @@ it('renders the component with published status', () => {
     </CardActions>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('has no a11y issues using a single dropdown list', async () => {
-  const output = mount(
+  const { container } = render(
     <CardActions>
       <DropdownList>
         <DropdownListItem onClick={() => {}}>Edit</DropdownListItem>
@@ -87,14 +88,14 @@ it('has no a11y issues using a single dropdown list', async () => {
         <DropdownListItem onClick={() => {}}>Remove</DropdownListItem>
       </DropdownList>
     </CardActions>,
-  ).html();
-  const results = await axe(output);
+  );
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });
 
 it('has no a11y issues using multiple dropdown lists', async () => {
-  const output = mount(
+  const { container } = render(
     <CardActions>
       <DropdownList>
         <DropdownListItem onClick={() => {}}>Edit</DropdownListItem>
@@ -107,8 +108,8 @@ it('has no a11y issues using multiple dropdown lists', async () => {
         <DropdownListItem onClick={() => {}}>Remove</DropdownListItem>
       </DropdownList>
     </CardActions>,
-  ).html();
-  const results = await axe(output);
+  );
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });

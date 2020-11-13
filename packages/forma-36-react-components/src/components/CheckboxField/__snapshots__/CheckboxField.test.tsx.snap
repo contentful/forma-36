@@ -1,12 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
-<ControlledInputField
-  checked={false}
-  id="checkbox"
-  inputType="checkbox"
-  labelIsLight={false}
-  labelText="label text"
-  testId="cf-ui-checkbox-field"
-/>
+<div
+  class="ControlledInputField"
+  data-test-id="cf-ui-checkbox-field"
+>
+  <input
+    aria-label="label text"
+    class="ControlledInput ControlledInputField__input"
+    data-test-id="cf-ui-controlled-input"
+    id="checkbox"
+    type="checkbox"
+    value=""
+  />
+  <div
+    class="Checkbox__label-wrapper"
+  >
+    <label
+      class="FormLabel ControlledInputField__label"
+      data-test-id="cf-ui-form-label"
+      for="checkbox"
+    >
+      label text
+    </label>
+  </div>
+</div>
 `;

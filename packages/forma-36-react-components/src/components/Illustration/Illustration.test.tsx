@@ -1,37 +1,38 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import axe from '../../utils/axeHelper';
 import Illustration, { IllustrationType } from './Illustration';
 import { illustrationName } from './constants';
 
 it('renders the component', () => {
-  const output = shallow(
+  const { container } = render(
     <Illustration
       illustration={illustrationName[Object.keys(illustrationName)[0]]}
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(
+  const { container } = render(
     <Illustration
       illustration={illustrationName[Object.keys(illustrationName)[0]]}
       className="my-extra-class"
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
-Object.keys(illustrationName).forEach(illustration => {
+Object.keys(illustrationName).forEach((illustration) => {
   it(`${illustration} has no a11y issues`, async () => {
-    const output = mount(
+    const { container } = render(
       <Illustration illustration={illustration as IllustrationType} />,
-    ).html();
+    );
 
-    const results = await axe(output);
+    const results = await axe(container);
 
     expect(results).toHaveNoViolations();
   });

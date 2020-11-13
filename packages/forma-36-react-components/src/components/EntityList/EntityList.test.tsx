@@ -1,17 +1,18 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import axe from '../../utils/axeHelper';
 import EntityList from './EntityList';
 import EntityListItem from './EntityListItem';
 
 it('renders the component', () => {
-  const output = shallow(<EntityList />);
+  const { container } = render(<EntityList />);
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with EntityListItems as children', () => {
-  const output = shallow(
+  const { container } = render(
     <EntityList>
       <EntityListItem
         title="Entry 1"
@@ -31,24 +32,24 @@ it('renders the component with EntityListItems as children', () => {
     </EntityList>,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(<EntityList className="my-extra-class" />);
+  const { container } = render(<EntityList className="my-extra-class" />);
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('has no a11y issues', async () => {
-  const output = mount(<EntityList />).html();
-  const results = await axe(output);
+  const { container } = render(<EntityList />);
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });
 
 it('has no a11y issues with children', async () => {
-  const output = mount(
+  const { container } = render(
     <EntityList>
       <EntityListItem
         title="Entry 1"
@@ -66,8 +67,8 @@ it('has no a11y issues with children', async () => {
         contentType="My content type"
       />
     </EntityList>,
-  ).html();
-  const results = await axe(output);
+  );
+  const results = await axe(container);
 
   expect(results).toHaveNoViolations();
 });

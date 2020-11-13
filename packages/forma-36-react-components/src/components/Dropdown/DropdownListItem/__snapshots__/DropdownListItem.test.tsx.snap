@@ -2,7 +2,7 @@
 
 exports[`renders the component 1`] = `
 <li
-  className="DropdownListItem"
+  class="DropdownListItem"
   data-test-id="cf-ui-dropdown-list-item"
   role="menuitem"
 >
@@ -14,7 +14,7 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component as active 1`] = `
 <li
-  className="DropdownListItem DropdownListItem--active"
+  class="DropdownListItem DropdownListItem--active"
   data-test-id="cf-ui-dropdown-list-item"
   role="menuitem"
 >
@@ -26,7 +26,7 @@ exports[`renders the component as active 1`] = `
 
 exports[`renders the component as disabled 1`] = `
 <li
-  className="DropdownListItem DropdownListItem--disabled"
+  class="DropdownListItem DropdownListItem--disabled"
   data-test-id="cf-ui-dropdown-list-item"
   role="menuitem"
 >
@@ -38,33 +38,34 @@ exports[`renders the component as disabled 1`] = `
 
 exports[`renders the component with a href 1`] = `
 <li
-  className="DropdownListItem DropdownListItem__submenu-toggle"
+  class="DropdownListItem DropdownListItem__submenu-toggle"
   data-test-id="cf-ui-dropdown-list-item"
   role="menuitem"
 >
   <a
-    className="DropdownListItem__button"
+    class="DropdownListItem__button"
     data-test-id="cf-ui-dropdown-list-item-button"
     href="#"
     type="button"
   >
-    <TabFocusTrap
-      className="DropdownListItem__button__inner-wrapper"
+    <span
+      class="TabFocusTrap DropdownListItem__button__inner-wrapper"
+      tabindex="-1"
     >
       DropdownListItem with a href
-    </TabFocusTrap>
+    </span>
   </a>
 </li>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
 <li
-  className="DropdownListItem my-extra-class"
+  class="DropdownListItem my-extra-class"
   data-test-id="cf-ui-dropdown-list-item"
   role="menuitem"
 >
   <span
-    className="my-extra-class"
+    class="my-extra-class"
   >
     Entry
   </span>

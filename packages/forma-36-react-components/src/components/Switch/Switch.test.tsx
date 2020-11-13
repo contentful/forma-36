@@ -1,35 +1,42 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import Switch from './Switch';
 
 it('renders the component', () => {
-  const output = shallow(<Switch id="testCheckbox" labelText="foobar" />);
+  const { container } = render(<Switch id="testCheckbox" labelText="foobar" />);
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component as checked', () => {
-  const output = shallow(<Switch id="testCheckbox" labelText="foobar" isChecked />);
+  const { container } = render(
+    <Switch id="testCheckbox" labelText="foobar" isChecked />,
+  );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component as disabled', () => {
-  const output = shallow(<Switch id="testCheckbox" labelText="foobar" isDisabled />);
+  const { container } = render(
+    <Switch id="testCheckbox" labelText="foobar" isDisabled />,
+  );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component as disabled and checked', () => {
-  const output = shallow(<Switch id="testCheckbox" labelText="foobar" isDisabled isChecked />);
+  const { container } = render(
+    <Switch id="testCheckbox" labelText="foobar" isDisabled isChecked />,
+  );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(
+  const { container } = render(
     <Switch id="testCheckbox" labelText="foobar" className="my-extra-class" />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });

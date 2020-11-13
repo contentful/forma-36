@@ -1,55 +1,56 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render } from '@testing-library/react';
+
 import axe from '../../utils/axeHelper';
 import Icon from './Icon';
 import { iconName } from './constants';
 
 it('renders the component', () => {
-  const output = shallow(<Icon icon={'ArrowDown'} />);
+  const { container } = render(<Icon icon={'ArrowDown'} />);
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
-  const output = shallow(
+  const { container } = render(
     <Icon icon={'ArrowDown'} className="my-extra-class" />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders a large icon', () => {
-  const output = shallow(<Icon icon={'ArrowDown'} size="large" />);
+  const { container } = render(<Icon icon={'ArrowDown'} size="large" />);
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders as a "primary" icon', () => {
-  const output = shallow(
+  const { container } = render(
     <Icon icon={'ArrowDown'} size="large" color="primary" />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders as a "positive" icon', () => {
-  const output = shallow(
+  const { container } = render(
     <Icon icon={'ArrowDown'} size="large" color="positive" />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders as a "negative" icon', () => {
-  const output = shallow(
+  const { container } = render(
     <Icon icon={'ArrowDown'} size="large" color="negative" />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders as a "warning" icon', () => {
-  const output = shallow(
+  const { container } = render(
     <Icon
       icon={iconName[Object.keys(iconName)[0]]}
       size="large"
@@ -57,39 +58,39 @@ it('renders as a "warning" icon', () => {
     />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders as a "secondary" icon', () => {
-  const output = shallow(
+  const { container } = render(
     <Icon icon={'ArrowDown'} size="large" color="secondary" />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders as a "muted" icon', () => {
-  const output = shallow(
+  const { container } = render(
     <Icon icon={'ArrowDown'} size="large" color="muted" />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders as a "white" icon', () => {
-  const output = shallow(
+  const { container } = render(
     <Icon icon={'ArrowDown'} size="large" color="white" />,
   );
 
-  expect(output).toMatchSnapshot();
+  expect(container.firstChild).toMatchSnapshot();
 });
 
-Object.keys(iconName).forEach(icon => {
+Object.keys(iconName).forEach((icon) => {
   it(`${icon} has no a11y issues`, async () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const output = mount(<Icon icon={icon as any} />).html();
+    const { container } = render(<Icon icon={icon as any} />);
 
-    const results = await axe(output);
+    const results = await axe(container);
 
     expect(results).toHaveNoViolations();
   });

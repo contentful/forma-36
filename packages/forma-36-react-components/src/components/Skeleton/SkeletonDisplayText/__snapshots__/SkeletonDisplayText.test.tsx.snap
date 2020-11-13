@@ -3,7 +3,7 @@
 exports[`renders the component 1`] = `
 <svg
   aria-label="Loading component..."
-  className="SkeletonContainer"
+  class="SkeletonContainer"
   data-test-id="cf-ui-skeleton-form"
   height="100%"
   preserveAspectRatio="xMidYMid meet"
@@ -14,37 +14,33 @@ exports[`renders the component 1`] = `
     Loading component...
   </title>
   <rect
-    clipPath="url(#cf-ui-skeleton-clip-0)"
+    clip-path="url(#cf-ui-skeleton-clip-0)"
     height="100%"
-    style={
-      Object {
-        "fill": "url(#cf-ui-skeleton-clip-gradient-1)",
-      }
-    }
+    style="fill: url(#cf-ui-skeleton-clip-gradient-1);"
     width="100%"
     x="0"
     y="0"
   />
   <defs>
-    <clipPath
+    <clippath
       id="cf-ui-skeleton-clip-0"
     >
-      <SkeletonDisplayText
-        lineHeight={21}
-        marginBottom={20}
-        numberOfLines={1}
-        offsetLeft={0}
-        offsetTop={0}
-        width={100}
+      <rect
+        height="21"
+        rx="0"
+        ry="0"
+        width="100"
+        x="0"
+        y="0"
       />
-    </clipPath>
-    <linearGradient
+    </clippath>
+    <lineargradient
       id="cf-ui-skeleton-clip-gradient-1"
     >
       <stop
         offset="0%"
-        stopColor="#e5ebed"
-        stopOpacity={1}
+        stop-color="#e5ebed"
+        stop-opacity="1"
       >
         <animate
           attributeName="stop-color"
@@ -56,8 +52,8 @@ exports[`renders the component 1`] = `
       </stop>
       <stop
         offset="50%"
-        stopColor="#f7f9fa"
-        stopOpacity={1}
+        stop-color="#f7f9fa"
+        stop-opacity="1"
       >
         <animate
           attributeName="stop-color"
@@ -69,8 +65,8 @@ exports[`renders the component 1`] = `
       </stop>
       <stop
         offset="100%"
-        stopColor="#e5ebed"
-        stopOpacity={1}
+        stop-color="#e5ebed"
+        stop-opacity="1"
       >
         <animate
           attributeName="stop-color"
@@ -80,7 +76,7 @@ exports[`renders the component 1`] = `
           values="#e5ebed; #f7f9fa; #e5ebed"
         />
       </stop>
-    </linearGradient>
+    </lineargradient>
   </defs>
 </svg>
 `;
