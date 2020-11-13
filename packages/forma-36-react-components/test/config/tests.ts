@@ -2,10 +2,6 @@
 
 import '@testing-library/jest-dom';
 import 'jest-axe/extend-expect';
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-
-configure({ adapter: new Adapter() });
 
 // We shouldn't allow failed prop types in tests
 const error = console.error;

@@ -36,7 +36,6 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.2.0",
     "@types/classnames": "2.2.7",
-    "@types/enzyme": "^3.10.7",
     "@types/jest": "^24.0.25",
     "@types/jest-axe": "^3.5.1",
     "@types/react": "16.8.6",
@@ -57,9 +56,6 @@
     "babel-plugin-typescript-to-proptypes": "0.17.1",
     "css-loader": "^1.0.1",
     "cz-conventional-changelog": "^2.1.0",
-    "enzyme": "^3.8.0",
-    "enzyme-adapter-react-16": "^1.9.1",
-    "enzyme-to-json": "^3.3.5",
     "eslint": "5.16.0",
     "eslint-config-dev": "2.0.0",
     "eslint-config-prettier": "4.2.0",
@@ -157,10 +153,7 @@
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/test/__mocks__/fileMock.js",
       "\\.css": "identity-obj-proxy"
-    },
-    "snapshotSerializers": [
-      "enzyme-to-json/serializer"
-    ]
+    }
   },
   "repository": {
     "type": "git",
