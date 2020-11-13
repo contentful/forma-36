@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.65.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.65.0...@contentful/forma-36-react-components@3.65.1) (2020-11-13)
+
+
+### Bug Fixes
+
+* **grid:** update CSS grid property names ([5a4b988](https://github.com/contentful/forma-36/commit/5a4b988690c4feaf715fa2b813df3295c2b5b4ec))
+
+
+
+
+
 # [3.65.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.64.4...@contentful/forma-36-react-components@3.65.0) (2020-11-11)
 
 
