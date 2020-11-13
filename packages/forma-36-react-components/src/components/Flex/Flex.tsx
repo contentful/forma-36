@@ -1,7 +1,7 @@
 import React from 'react';
-import * as CSS from 'csstype';
 import tokens from '@contentful/forma-36-tokens';
 import cn from 'classnames';
+import type * as CSS from 'csstype';
 
 import styles from './Flex.css';
 
@@ -45,28 +45,28 @@ export interface FlexProps {
   noShrink?: boolean;
   /**
    * One of flex-wrap css values */
-  flexWrap?: CSS.FlexWrapProperty;
+  flexWrap?: CSS.Property.FlexWrap;
   /**
    * One of flex-direction css values */
-  flexDirection?: CSS.FlexDirectionProperty;
+  flexDirection?: CSS.Property.FlexDirection;
   /**
    * One of flex-grow css values */
-  flexGrow?: CSS.GlobalsNumber;
+  flexGrow?: CSS.Property.FlexGrow;
   /**
    * One of justify-content css values */
-  justifyContent?: CSS.JustifyContentProperty;
+  justifyContent?: CSS.Property.JustifyContent;
   /**
    * One of justify-content css values */
-  justifyItems?: CSS.JustifyContentProperty;
+  justifyItems?: CSS.Property.JustifyContent;
   /**
    * One of justify-self css values */
-  justifySelf?: CSS.JustifySelfProperty;
+  justifySelf?: CSS.Property.JustifySelf;
   /**
    * One of align-items css values */
-  alignItems?: CSS.AlignItemsProperty;
+  alignItems?: CSS.Property.AlignItems;
   /**
    * One of align-self css values */
-  alignSelf?: CSS.AlignItemsProperty;
+  alignSelf?: CSS.Property.AlignItems;
   /**
    * sets margin to one of the corresponding spacing tokens, default is none */
   margin?: SpacingTypes;

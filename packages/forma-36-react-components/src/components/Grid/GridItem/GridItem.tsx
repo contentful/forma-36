@@ -1,5 +1,5 @@
 import React from 'react';
-import * as CSS from 'csstype';
+import type * as CSS from 'csstype';
 
 export interface GridItemProps {
   /**
@@ -13,19 +13,19 @@ export interface GridItemProps {
   testId?: string;
   /**
    * one of grid-column-start css values */
-  columnStart?: CSS.GridColumnStartProperty;
+  columnStart?: CSS.Property.GridColumnStart;
   /**
    * one of grid-column-end css values */
-  columnEnd?: CSS.GridColumnEndProperty;
+  columnEnd?: CSS.Property.GridColumnEnd;
   /**
    * one of grid-column-start css values */
-  rowStart?: CSS.GridRowStartProperty;
+  rowStart?: CSS.Property.GridRowStart;
   /**
    * one of grid-row-end css values */
-  rowEnd?: CSS.GridRowEndProperty;
+  rowEnd?: CSS.Property.GridRowEnd;
   /**
    * one of grid-area css values */
-  area?: CSS.GridAreaProperty;
+  area?: CSS.Property.GridArea;
   /**
    * order css property */
   order?: number;
