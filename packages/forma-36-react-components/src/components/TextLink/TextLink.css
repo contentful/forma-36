@@ -24,6 +24,7 @@
   white-space: normal;
   text-align: left;
   cursor: pointer;
+  font-weight: var(--font-weight-medium);
 
   & > span {
     outline: 0;
