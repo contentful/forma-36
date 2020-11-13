@@ -1,11 +1,26 @@
+import React from 'react';
+
 // Storybook Addon Dependencies
 import { jsxDecorator } from 'storybook-addon-jsx';
+import { fontStackPrimary } from '@contentful/forma-36-tokens';
 
 // Setup Decorators
-export const decorators = [jsxDecorator];
+export const decorators = [
+  jsxDecorator,
+  (Story) => (
+    <div
+      style={{
+        fontFamily: fontStackPrimary,
+      }}
+    >
+      <Story />
+    </div>
+  ),
+];
 
 // Setup Parameters
 export const parameters = {
+  layout: 'centered',
   options: {
     storySort: {
       method: 'alphabetical',
