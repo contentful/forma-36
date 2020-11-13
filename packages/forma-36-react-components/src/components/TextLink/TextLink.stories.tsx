@@ -1,49 +1,55 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { text, select, boolean } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
 
 import TextLink from './TextLink';
-import notes from './TextLink.md';
-import { iconName } from '../Icon/constants';
+import Paragraph from '../Typography/Paragraph';
+import notes from './README.md';
 
-storiesOf('Components/TextLink', module)
-  .addParameters({
+export default {
+  title: 'Components/TextLink',
+  component: TextLink,
+  parameters: {
     propTypes: TextLink['__docgenInfo'],
-    component: TextLink,
-  })
-  .add(
-    'default',
-    () => (
+    notes,
+  },
+};
+
+export const Default = ({ linkLabel, ...args }) => {
+  return <TextLink {...args}>{linkLabel}</TextLink>;
+};
+Default.args = {
+  linkLabel: 'This is a text link',
+};
+
+export const UsedWithText = ({ linkLabel, ...args }) => {
+  return (
+    <Paragraph>
+      Berlin (/bɜːrˈlɪn/; German: [bɛʁˈliːn] (About this soundlisten)) is the{' '}
       <TextLink
-        href={text('href', '')}
-        onClick={action('onClick')}
-        linkType={select(
-          'linkType',
-          {
-            'Primary (default)': 'primary',
-            Positive: 'positive',
-            Negative: 'negative',
-            Secondary: 'secondary',
-            Muted: 'muted',
-            White: 'white',
-          },
-          'primary',
-        )}
-        disabled={boolean('disabled', false)}
-        className={text('className', '')}
-        iconPosition={select(
-          'iconPosition',
-          {
-            'left (default)': 'left',
-            right: 'right',
-          },
-          'left',
-        )}
-        icon={select('icon', ['', ...Object.keys(iconName)], undefined)}
+        href="https://www.wikiwand.com/en/Capital_city"
+        target="_blanck"
       >
-        {text('children', 'Text Link Label')}
+        capital
+      </TextLink>{' '}
+      and largest city of{' '}
+      <TextLink href="https://www.wikiwand.com/en/Germany" target="_blanck">
+        Germany
+      </TextLink>{' '}
+      by both area and population. Its 3,769,495 inhabitants as of 31 December
+      2019 make it the most populous city of the European Union, according to
+      population within city limits.[8] The city is also one of Germany's 16
+      federal states. It is surrounded by the state of{' '}
+      <TextLink href="https://www.wikiwand.com/en/Brandenburg" target="_blanck">
+        Brandenburg
       </TextLink>
-    ),
-    { notes },
+      , and contiguous with{' '}
+      <TextLink href="https://www.wikiwand.com/en/Potsdam" target="_blanck">
+        Potsdam
+      </TextLink>
+      , Brandenburg's capital. The two cities are at the center of the
+      Berlin-Brandenburg capital region, which is, with about six million
+      inhabitants and an area of more than 30,000 km2,[9] Germany's
+      third-largest metropolitan region after the Rhine-Ruhr and Rhine-Main
+      regions.
+    </Paragraph>
   );
+};
