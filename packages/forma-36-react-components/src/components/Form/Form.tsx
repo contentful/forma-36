@@ -1,4 +1,4 @@
-import React, { Component, FormEventHandler, FormEvent } from 'react';
+import React, { FormEventHandler, FormEvent } from 'react';
 import cn from 'classnames';
 
 import styles from './Form.css';
@@ -17,49 +17,47 @@ const defaultProps: Partial<FormProps> = {
   testId: 'cf-ui-form',
 };
 
-export class Form extends Component<FormProps> {
-  static defaultProps = defaultProps;
+export const Form = (props: FormProps) => {
+  const {
+    className,
+    children,
+    testId,
+    onSubmit,
+    spacing,
+    ...otherProps
+  } = props;
 
-  handleSubmit = (event: FormEvent) => {
+  const classNames = cn(styles.Form, className);
+
+  const formItemClassNames = cn(
+    styles.Form__item,
+    styles[`Form__item--${spacing}`],
+  );
+
+  const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
-    if (this.props.onSubmit) {
-      this.props.onSubmit(event);
+    if (onSubmit) {
+      onSubmit(event);
     }
   };
 
-  render() {
-    const {
-      className,
-      children,
-      testId,
-      onSubmit,
-      spacing,
-      ...otherProps
-    } = this.props;
+  return (
+    <form
+      className={classNames}
+      data-test-id={testId}
+      onSubmit={handleSubmit}
+      {...otherProps}
+    >
+      {React.Children.map(children, (child) => {
+        if (child) {
+          return <div className={formItemClassNames}>{child}</div>;
+        }
+        return null;
+      })}
+    </form>
+  );
+};
 
-    const classNames = cn(styles.Form, className);
-
-    const formItemClassNames = cn(
-      styles.Form__item,
-      styles[`Form__item--${spacing}`],
-    );
-
-    return (
-      <form
-        className={classNames}
-        data-test-id={testId}
-        onSubmit={this.handleSubmit}
-        {...otherProps}
-      >
-        {React.Children.map(children, (child) => {
-          if (child) {
-            return <div className={formItemClassNames}>{child}</div>;
-          }
-          return null;
-        })}
-      </form>
-    );
-  }
-}
+Form.defaultProps = defaultProps;
 
 export default Form;
