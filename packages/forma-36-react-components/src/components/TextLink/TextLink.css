@@ -16,13 +16,15 @@
   padding: 0;
   font-family: var(--font-stack-primary);
   font-size: var(--font-size-m);
-  text-decoration: underline;
+  text-decoration: none;
   background: none;
   transition: color var(--transition-duration-short)
     var(--transition-easing-default);
   appearance: none;
   white-space: normal;
   text-align: left;
+  cursor: pointer;
+  font-weight: var(--font-weight-medium);
 
   & > span {
     outline: 0;
@@ -31,14 +33,13 @@
 
   &:hover,
   &:focus {
-    color: var(--color-text-dark);
-    cursor: pointer;
+    text-decoration: underline;
   }
 }
 
 .TextLink--primary,
 .TextLink--primary:link {
-  color: var(--color-blue-base);
+  color: var(--color-blue-mid);
 }
 
 .TextLink--positive,

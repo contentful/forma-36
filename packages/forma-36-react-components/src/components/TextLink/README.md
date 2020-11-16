@@ -1,5 +1,3 @@
-# TextLink
-
 TextLinks communicate actions and linked resources to users.
 
 ## When to use
