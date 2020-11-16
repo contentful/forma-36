@@ -12,9 +12,7 @@ exports[`renders the component 1`] = `
     data-test-id="cf-ui-dropdown-list-item"
     role="menuitem"
   >
-    <span>
-      List Item
-    </span>
+    List Item
   </li>
 </ul>
 `;
@@ -31,9 +29,7 @@ exports[`renders the component with a border attribute 1`] = `
     data-test-id="cf-ui-dropdown-list-item"
     role="menuitem"
   >
-    <span>
-      List Item
-    </span>
+    List Item
   </li>
 </ul>
 `;
@@ -50,9 +46,7 @@ exports[`renders the component with an additional class name 1`] = `
     data-test-id="cf-ui-dropdown-list-item"
     role="menuitem"
   >
-    <span>
-      List Item
-    </span>
+    List Item
   </li>
 </ul>
 `;

@@ -6,9 +6,7 @@ exports[`renders the component 1`] = `
   data-test-id="cf-ui-dropdown-list-item"
   role="menuitem"
 >
-  <span>
-    DropdownMenuItem
-  </span>
+  DropdownMenuItem
 </li>
 `;
 
@@ -18,9 +16,7 @@ exports[`renders the component as active 1`] = `
   data-test-id="cf-ui-dropdown-list-item"
   role="menuitem"
 >
-  <span>
-    entry
-  </span>
+  entry
 </li>
 `;
 
@@ -30,9 +26,7 @@ exports[`renders the component as disabled 1`] = `
   data-test-id="cf-ui-dropdown-list-item"
   role="menuitem"
 >
-  <span>
-    entry
-  </span>
+  entry
 </li>
 `;
 
@@ -64,10 +58,6 @@ exports[`renders the component with an additional class name 1`] = `
   data-test-id="cf-ui-dropdown-list-item"
   role="menuitem"
 >
-  <span
-    class="my-extra-class"
-  >
-    Entry
-  </span>
+  Entry
 </li>
 `;
