@@ -110,7 +110,7 @@ export const DropdownListItem = forwardRef<HTMLElement, DropdownListItemProps>(
         );
       }
 
-      return <span {...otherProps}>{children}</span>;
+      return children;
     }, [onClick, props]);
 
     const { className, listItemRef, onMouseDown, href } = props;
