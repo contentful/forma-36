@@ -1,7 +1,7 @@
 {
   "name": "@contentful/forma-36-react-components",
   "description": "Contentful UI Component Library",
-  "version": "3.65.2",
+  "version": "3.65.3",
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
   "style": "dist/styles.css",
@@ -94,7 +94,6 @@
     "storybook-addon-jsx": "^7.3.4",
     "storybook-prop-types-addon": "1.0.2",
     "style-loader": "^0.23.1",
-    "travis-deploy-once": "^4.4.1",
     "typescript": "3.9.7",
     "webpack": "^4.39.3",
     "webpack-cli": "^3.3.5"
@@ -133,7 +132,6 @@
     "add-component": "yarn generate component",
     "add-documentation": "yarn generate documentation",
     "prepublishOnly": "yarn lint && yarn test && yarn build",
-    "travis-deploy-once": "travis-deploy-once --pro",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
     "semantic-release": "semantic-release",
