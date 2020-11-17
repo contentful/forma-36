@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.66.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.66.0...@contentful/forma-36-react-components@3.66.1) (2020-11-16)
+
+
+### Bug Fixes
+
+* **DropdownListItem:** render children directly ([#643](https://github.com/contentful/forma-36/issues/643)) ([951946d](https://github.com/contentful/forma-36/commit/951946d76cf499d051e5009aa63fc29747e4f645))
+
+
+
+
+
 # [3.66.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.65.3...@contentful/forma-36-react-components@3.66.0) (2020-11-16)
 
 
