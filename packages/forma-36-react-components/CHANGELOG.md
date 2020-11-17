@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.67.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.66.1...@contentful/forma-36-react-components@3.67.0) (2020-11-17)
+
+
+### Features
+
+* **tooltip:** make the tooltip stay open when hovering on the content ([3edc0a0](https://github.com/contentful/forma-36/commit/3edc0a08b3bb8fea75cf47f78b5d441f96951aaa))
+
+
+
+
+
 ## [3.66.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.66.0...@contentful/forma-36-react-components@3.66.1) (2020-11-16)
 
 
