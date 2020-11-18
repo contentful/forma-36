@@ -89,7 +89,7 @@
     "rollup-plugin-node-resolve": "^4.0.1",
     "rollup-plugin-replace": "^2.1.1",
     "rollup-plugin-terser": "^4.0.4",
-    "semantic-release": "^15.14.0",
+    "semantic-release": "^17.2.3",
     "size-limit": "^4.5.5",
     "storybook-addon-jsx": "^7.3.4",
     "storybook-prop-types-addon": "1.0.2",
