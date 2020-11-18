@@ -1,6 +1,7 @@
 import React, {
   useState,
   useEffect,
+  useCallback,
   RefObject,
   FocusEvent,
   KeyboardEvent,
@@ -67,6 +68,7 @@ export const TextInput = (props: TextInputProps) => {
     id,
     inputRef,
     willBlurOnEsc,
+    onKeyDown,
     ...otherProps
   } = props;
 
@@ -79,6 +81,7 @@ export const TextInput = (props: TextInputProps) => {
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    e.persist();
     if (disabled || isReadOnly) return;
 
     if (onChange) {
@@ -87,17 +90,20 @@ export const TextInput = (props: TextInputProps) => {
     setValueState(e.currentTarget.value);
   };
 
-  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
-    const ESC = 27;
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent<HTMLInputElement>) => {
+      const ESC = 27;
 
-    if (props.onKeyDown) {
-      props.onKeyDown(e);
-    }
+      if (onKeyDown) {
+        onKeyDown(e);
+      }
 
-    if (e.keyCode === ESC && props.willBlurOnEsc) {
-      e.currentTarget.blur();
-    }
-  };
+      if (e.keyCode === ESC && willBlurOnEsc) {
+        e.currentTarget.blur();
+      }
+    },
+    [willBlurOnEsc, onKeyDown],
+  );
 
   useEffect(() => {
     setValueState(value);

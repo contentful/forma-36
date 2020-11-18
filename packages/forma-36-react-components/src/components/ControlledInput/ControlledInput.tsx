@@ -3,6 +3,7 @@ import React, {
   ChangeEvent,
   FocusEvent,
   KeyboardEvent,
+  useCallback,
 } from 'react';
 import cn from 'classnames';
 
@@ -56,13 +57,17 @@ export const ControlledInput = (props: ControlledInputPropTypes) => {
     [styles['ControlledInput--disabled']]: disabled,
   });
 
-  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
-    const ESC = 27;
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent<HTMLInputElement>) => {
+      e.persist();
+      const ESC = 27;
 
-    if (e.keyCode === ESC && willBlurOnEsc) {
-      e.currentTarget.blur();
-    }
-  };
+      if (e.keyCode === ESC && willBlurOnEsc) {
+        e.currentTarget.blur();
+      }
+    },
+    [willBlurOnEsc],
+  );
 
   return (
     <input

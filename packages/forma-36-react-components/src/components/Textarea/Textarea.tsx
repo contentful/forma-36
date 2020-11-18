@@ -7,6 +7,7 @@ import React, {
   KeyboardEventHandler,
   RefObject,
   ChangeEvent,
+  useCallback,
 } from 'react';
 import cn from 'classnames';
 import styles from './Textarea.css';
@@ -73,19 +74,24 @@ export const Textarea = (props: TextareaProps) => {
     setValueState(value);
   }, [value]);
 
-  const handleKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {
-    const ESC = 27;
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent<HTMLTextAreaElement>) => {
+      e.persist();
+      const ESC = 27;
 
-    if (onKeyDown) {
-      onKeyDown(e);
-    }
+      if (onKeyDown) {
+        onKeyDown(e);
+      }
 
-    if (e.keyCode === ESC && willBlurOnEsc) {
-      e.currentTarget.blur();
-    }
-  };
+      if (e.keyCode === ESC && willBlurOnEsc) {
+        e.currentTarget.blur();
+      }
+    },
+    [willBlurOnEsc, onKeyDown],
+  );
 
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    e.persist();
     setValueState(e.target.value);
     if (onChange) {
       onChange(e);
