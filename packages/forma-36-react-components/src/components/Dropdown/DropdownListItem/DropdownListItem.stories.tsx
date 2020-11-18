@@ -15,6 +15,7 @@ storiesOf('Components/Dropdown/DropdownListItem', module)
       isDisabled={boolean('isDisabled', false)}
       isActive={boolean('isActive', false)}
       isTitle={boolean('isTitle', false)}
+      className={text('className', '')}
       href={text('href', '')}
     >
       {text('children', 'Menu Entry')}

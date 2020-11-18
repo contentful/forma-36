@@ -44,7 +44,7 @@ basic.parameters = {
 export const withHtml = (args: { content: string }) => {
   return (
     <Paragraph>
-      Lorem Ipsum dolor sit amet &nbsp;
+      Lorem Ipsum dolor sit amet&nbsp;
       <Tooltip {...args}>
         <TextLink>Hover me</TextLink>.
       </Tooltip>
@@ -117,6 +117,48 @@ autoPlacement.parameters = {
   docs: {
     source: {
       code: autoPlacementSourceCode,
+    },
+  },
+};
+
+export const contentHover = (args: { content: string }) => {
+  return (
+    <Paragraph>
+      Lorem Ipsum dolor sit amet&nbsp;
+      <Tooltip {...args}>
+        <TextLink>Hover me</TextLink>.
+      </Tooltip>
+      &nbsp; Lorem Ipsum dolor sit amet.
+    </Paragraph>
+  );
+};
+contentHover.args = {
+  closeOnMouseLeave: false,
+  content: (
+    <>
+      You can interact with the content in me
+      <br />
+      <button type="button">Button</button>
+      <br />
+      <a style={{ color: 'white' }} href="/" target="_blank" rel="noopener noreferrer">Click me!</a> 
+    </>
+  ),
+};
+const contentHoverSourceCode = `<Tooltip closeOnMouseLeave={false} content={(
+  <>
+    You can interact with the content in me
+    <br />
+    <button type="button">Button</button>
+    <br />
+    <a style={{ color: 'white' }} href="/" target="_blank" rel="noopener noreferrer">Click me!</a> 
+  </>
+)}>
+  <TextLink>Hover me</TextLink>
+</Tooltip>`;
+contentHover.parameters = {
+  docs: {
+    source: {
+      code: contentHoverSourceCode,
     },
   },
 };
