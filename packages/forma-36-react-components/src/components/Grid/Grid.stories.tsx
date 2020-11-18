@@ -1,24 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { text, number, select } from '@storybook/addon-knobs';
 import tokens from '@contentful/forma-36-tokens';
 
 import Grid from './Grid';
 import GridItem from './GridItem';
-import notes from './Grid.md';
-
-const gridKnobsId = 'Grid Props';
-const spacingValues = [
-  'spacing2Xs',
-  'spacingXs',
-  'spacingS',
-  'spacingM',
-  'spacingL',
-  'spacingXl',
-  'spacing2Xl',
-  'spacing3Xl',
-  'spacing4Xl',
-];
+import notes from './README.md';
 
 const styles = {
   demoBox: {
@@ -26,6 +11,16 @@ const styles = {
   },
   demoBoxDark: {
     backgroundColor: tokens.colorContrastDark,
+  },
+};
+
+export default {
+  title: '(alpha)/Grid',
+  component: Grid,
+  subcomponents: { GridItem },
+  parameters: {
+    propTypes: [Grid['__docgenInfo'], GridItem['__docgenInfo']],
+    notes,
   },
 };
 
@@ -40,38 +35,21 @@ const DemoBox = ({ times, id }: { times?: number; id?: string }) => {
   return <GridItem style={styles.demoBox}></GridItem>;
 };
 
-storiesOf('(alpha)/Grid', module)
-  .addParameters({
-    propTypes: Grid['__docgenInfo'],
-    component: Grid,
-    subcomponents: { GridItem },
-  })
-  .add(
-    'default',
-    () => {
-      const knobs = {
-        columns: number('columns', 6, '', gridKnobsId),
-        rows: number('rows', 4, '', gridKnobsId),
-        columnGap: select('columnGap', spacingValues, 'spacingXs', gridKnobsId),
-        rowGap: select('rowGap', spacingValues, 'spacingXs', gridKnobsId),
-        className: text('className', '', gridKnobsId),
-        exampleBoxes: number('Example Items', 24),
-        exampleGridHeight: text('Example Grid Height', '90vh'),
-      };
-
-      return (
-        <Grid
-          columns={knobs.columns}
-          rows={knobs.rows}
-          columnGap={knobs.columnGap}
-          rowGap={knobs.rowGap}
-          flow="row"
-          className={knobs.className}
-          style={{ height: knobs.exampleGridHeight }}
-        >
-          <DemoBox id="g" times={knobs.exampleBoxes} />
-        </Grid>
-      );
-    },
-    { notes },
+export const Default = ({ exampleBoxes, exampleGridHeight, ...args }) => {
+  return (
+    <div style={{ width: '90vw' }}>
+      <Grid {...args} style={{ height: exampleGridHeight }}>
+        <DemoBox id="g" times={exampleBoxes} />
+      </Grid>
+    </div>
   );
+};
+Default.args = {
+  exampleBoxes: 24,
+  exampleGridHeight: '90vh',
+  columns: 6,
+  rows: 4,
+  columnGap: 'spacingXs',
+  rowGap: 'spacingXs',
+  flow: 'row',
+};
