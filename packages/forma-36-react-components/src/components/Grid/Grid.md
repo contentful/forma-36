@@ -34,7 +34,7 @@ Accepts a number or any of [grid-template-rows](https://developer.mozilla.org/en
 ### columnGap & rowGap
 `columnGap` represents space between columns, `rowGap` represents the space between rows, both accepts one of [spacing](https://f36.contentful.com/foundation/spacing/) token names.
 
-`spacing2xs` | `spacingXs` | `spacingXs` | `spacingS` | `spacingM` | `spacingL` | `spacingXl` | `spacing2Xl` | `spacing3Xl` | `spacing4Xl`
+`spacing2Xs` | `spacingXs` | `spacingXs` | `spacingS` | `spacingM` | `spacingL` | `spacingXl` | `spacing2Xl` | `spacing3Xl` | `spacing4Xl`
 
 **e.g.**
 
