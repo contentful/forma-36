@@ -1,4 +1,4 @@
-import React, { MouseEventHandler, MouseEvent } from 'react';
+import React, { MouseEvent, KeyboardEvent } from 'react';
 import cn from 'classnames';
 import styles from './Card.css';
 
@@ -29,7 +29,7 @@ interface CardPropTypes extends BaseCardProps {
   /**
    * The action to be performed when user clicks on the Card
    */
-  onClick?: MouseEventHandler<HTMLElement>;
+  onClick?: (e: MouseEvent<HTMLElement> | KeyboardEvent<HTMLElement>) => void;
   /**
    * Applies padding styles of different sizes
    */
@@ -61,12 +61,6 @@ export const Card: React.FC<CardPropTypes> = ({
   selected,
   ...otherProps
 }) => {
-  const handleClick = (event: MouseEvent<HTMLElement>) => {
-    if (!onClick) return;
-
-    onClick(event);
-  };
-
   const classNames = cn(styles.Card, className, {
     [styles[`Card--padding-${padding}`]]: padding,
     [styles['Card--is-interactive']]: onClick || href,
@@ -82,7 +76,16 @@ export const Card: React.FC<CardPropTypes> = ({
       target: href && target,
       'data-test-id': testId,
       className: classNames,
-      ...(!!onClick && { onClick: handleClick }),
+      ...(!!onClick && {
+        tabindex: '0', // necessary to make the div accessible with tab navigation
+        onClick: (event: MouseEvent<HTMLElement>) => onClick(event),
+        onKeyDown: (event: KeyboardEvent<HTMLElement>) => {
+          if (event.keyCode === 13) {
+            onClick(event);
+            event.currentTarget.focus();
+          }
+        },
+      }),
       ...otherProps,
     },
     children,
