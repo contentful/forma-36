@@ -1,8 +1,4 @@
-import React, {
-  Component,
-  MouseEventHandler,
-  MouseEvent as ReactMouseEvent,
-} from 'react';
+import React, { MouseEventHandler, MouseEvent } from 'react';
 import cn from 'classnames';
 import styles from './Card.css';
 
@@ -31,7 +27,7 @@ export interface BaseCardProps {
 
 interface CardPropTypes extends BaseCardProps {
   /**
-   * The action to be performed on click of the Card component
+   * The action to be performed when user clicks on the Card
    */
   onClick?: MouseEventHandler<HTMLElement>;
   /**
@@ -46,7 +42,6 @@ interface CardPropTypes extends BaseCardProps {
    * Any additional styles that are being applied
    */
   style?: React.CSSProperties;
-  children: React.ReactNode;
 }
 
 const defaultProps: Partial<CardPropTypes> = {
@@ -55,48 +50,44 @@ const defaultProps: Partial<CardPropTypes> = {
   selected: false,
 };
 
-export class Card extends Component<CardPropTypes> {
-  static defaultProps = defaultProps;
+export const Card: React.FC<CardPropTypes> = ({
+  className,
+  testId,
+  children,
+  href,
+  target,
+  onClick,
+  padding,
+  selected,
+  ...otherProps
+}) => {
+  const handleClick = (event: MouseEvent<HTMLElement>) => {
+    if (!onClick) return;
 
-  handleClick = (event: ReactMouseEvent<HTMLElement>) => {
-    if (!this.props.onClick) return;
-
-    this.props.onClick(event);
+    onClick(event);
   };
 
-  render() {
-    const {
-      className,
-      testId,
-      children,
+  const classNames = cn(styles.Card, className, {
+    [styles[`Card--padding-${padding}`]]: padding,
+    [styles['Card--is-interactive']]: onClick || href,
+    [styles['Card--is-selected']]: selected,
+  });
+
+  const Element: React.ElementType = href ? 'a' : 'div';
+
+  return React.createElement(
+    Element,
+    {
       href,
-      target,
-      onClick,
-      padding,
-      selected,
-      ...otherProps
-    } = this.props;
-
-    const classNames = cn(styles.Card, className, {
-      [styles[`Card--padding-${padding}`]]: padding,
-      [styles['Card--is-interactive']]: onClick || href,
-      [styles['Card--is-selected']]: selected,
-    });
-
-    const Element: React.ReactType = href ? 'a' : 'div';
-    return React.createElement(
-      Element,
-      {
-        href,
-        target: href && target,
-        className: classNames,
-        onClick: this.handleClick,
-        'data-test-id': testId,
-        ...otherProps,
-      },
-      children,
-    );
-  }
-}
+      target: href && target,
+      'data-test-id': testId,
+      className: classNames,
+      ...(!!onClick && { onClick: handleClick }),
+      ...otherProps,
+    },
+    children,
+  );
+};
+Card.defaultProps = defaultProps;
 
 export default Card;

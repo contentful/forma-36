@@ -1,0 +1,102 @@
+import { useState } from 'react';
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+
+import { Typography } from '../Typography/Typography';
+import { Heading } from '../Typography/Heading';
+import { Paragraph } from '../Typography/Paragraph';
+
+import { Card } from './Card';
+
+<Meta title="Components/Card" component={Card} />
+
+# Card
+
+[source code](https://github.com/contentful/forma-36/blob/master/packages/forma-36-react-components/src/components/Card/Card.tsx)
+
+A Card is a component to group information or content of a particular subject in one place.
+
+<Canvas>
+  <Story
+    name="default"
+    args={{ title: 'Title', content: 'This is the Card’s content' }}
+  >
+    {({ title, content, ...args }) => (
+      <Card {...args}>
+        <Typography>
+          <Heading>{title}</Heading>
+          <Paragraph>{content}</Paragraph>
+        </Typography>
+      </Card>
+    )}
+  </Story>
+</Canvas>
+
+## Table of contents
+
+- [Usage](#usage)
+  - [With onClick](#with-onclick)
+  - [With link and target](#with-link-and-target)
+- [Props](#props)
+
+## Usage
+
+Here you will find the most common ways of using the Card component.
+
+### With `onClick`
+
+It’s possible to call an action when the user clicks on the Card. To do that, you only need to pass a function to the `onClick` prop.
+
+<Canvas>
+  <Story name="with onClick">
+    {(args) => {
+      const [show, setShow] = useState(false);
+      return (
+        <div>
+          <Card
+            {...args}
+            onClick={() => setShow(!show)}
+            style={{ textAlign: 'center' }}
+          >
+            Click on this card
+            <br />
+            {show && (
+              <span role="img" aria-label="sparkles">
+                ✨✨✨
+              </span>
+            )}
+          </Card>
+        </div>
+      );
+    }}
+  </Story>
+</Canvas>
+
+### With `link` and `target`
+
+A Card can be used with the pourpose to navigate a user to an external page. To do that a user must pass a value to the `href` prop.
+Optionally, the user can pass a `target` prop to control how the link should be open.
+
+<Canvas>
+  <Story
+    name="with link and target"
+    args={{ href: 'http://f36.contentful.com', target: '_blank' }}
+  >
+    {(args) => (
+      <Card {...args}>
+        <Typography>
+          <Heading>Forma36</Heading>
+          <Paragraph>
+            Forma 36 is an open-source design system by Contentful created with
+            the intent to reduce the overhead of creating UI by providing tools
+            and guidance for digital teams building and extending Contentful
+            products.
+          </Paragraph>
+        </Typography>
+      </Card>
+    )}
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable of={Card} />
