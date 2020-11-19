@@ -1,0 +1,64 @@
+import { Asset } from './Asset';
+
+# Asset
+
+The Asset component is a visual representation of an asset file such as a video or a PDF document.
+
+<Asset title="Archive of files" type="archive" />
+
+## Table of contents
+
+- [Usage](#usage)
+  - [An image asset and an archived image asset](#an-image-asset-and-an-archived-image-asset)
+- [Asset types](#asset-types)
+- [An archive asset](#an-archive-asset)
+
+## Usage
+
+```jsx
+import { Asset } from '@contentful/forma-36-react-components';
+
+<Asset
+  src="https://placekitten.com/200/300"
+  title="An archive asset"
+  type="archive"
+/>;
+```
+
+### An image asset and an archived image asset
+
+Image assets are rendered directly unless they have the prop `status="archived"`.
+
+```jsx
+import { Asset } from '@contentful/forma-36-react-components';
+
+<Asset
+  src="https://placekitten.com/200/300"
+  title="An image asset"
+  type="image"
+/>;
+```
+
+```jsx
+import { Asset } from '@contentful/forma-36-react-components';
+
+<Asset
+  src="https://placekitten.com/200/300"
+  status="archived"
+  title="An archived image asset"
+  type="image"
+/>;
+```
+
+## Asset types
+
+- **Archive**
+- **Audio**
+- **Code**
+- **Markup**
+- **PDF**
+- **Plaintext**
+- **Presentation**
+- **Richtext**
+- **Spreadsheet**
+- **Video**
