@@ -7,7 +7,7 @@
   display: inline-block;
   cursor: pointer;
   border: 0;
-  padding: 10px;
+  padding: var(--spacing-s);
   margin: 0 1px;
   background: transparent;
 }
