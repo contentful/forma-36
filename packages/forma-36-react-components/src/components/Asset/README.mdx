@@ -1,0 +1,107 @@
+import { Asset } from './Asset';
+
+# Asset
+
+[Source code](https://github.com/contentful/forma-36/blob/master/packages/forma-36-react-components/src/components/Asset/Asset.tsx)
+
+The asset component is a visual representation of an asset file such as a video or a PDF document.
+
+<Asset title="Archive of files" type="archive" />
+
+## Table of contents
+
+- [Usage](#usage)
+  - [With an image](#with-an-image)
+  - [With link and target](#with-link-and-target)
+- [Props](#props)
+
+## Usage
+
+### An archive asset
+
+<Asset
+  src="https://placekitten.com/200/300"
+  title="An archive asset"
+  type="archive"
+/>
+
+### An audio asset
+
+<Asset
+  src="https://placekitten.com/200/300"
+  title="An audio asset"
+  type="audio"
+/>
+
+### A code asset
+
+<Asset src="https://placekitten.com/200/300" title="A code asset" type="code" />
+
+### An image asset and an archived image asset
+
+Image assets are rendered directly unless they have the prop `status="archived"`.
+
+<Asset
+  src="https://placekitten.com/200/300"
+  title="An image asset"
+  type="image"
+/>
+
+<Asset
+  src="https://placekitten.com/200/300"
+  status="archived"
+  title="An archived image asset"
+  type="image"
+/>
+
+### A markup asset
+
+<Asset
+  src="https://placekitten.com/200/300"
+  title="A markup asset"
+  type="markup"
+/>
+
+### A PDF asset
+
+<Asset src="https://placekitten.com/200/300" title="A PDF asset" type="pdf" />
+
+### A plaintext file
+
+<Asset
+  src="https://placekitten.com/200/300"
+  title="A plaintext file"
+  type="plaintext"
+/>
+
+### A presentation asset
+
+<Asset
+  src="https://placekitten.com/200/300"
+  title="A presentation asset"
+  type="presentation"
+/>
+
+### A richtext asset
+
+<Asset
+  src="https://placekitten.com/200/300"
+  title="A richtext asset"
+  type="richtext"
+/>
+
+### A spreadsheet asset
+
+<Asset
+  src="https://placekitten.com/200/300"
+  title="A spreadsheet asset"
+  type="spreadsheet"
+/>
+
+### A video asset
+
+<Asset
+  src="https://placekitten.com/200/300"
+  title="A video asset"
+  type="video"
+/>
