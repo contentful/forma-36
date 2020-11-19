@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   Illustration,
   IllustrationProps,
@@ -14,32 +14,26 @@ export interface AssetIconProps
   type?: AssetType;
 }
 
-const defaultProps: Partial<AssetIconProps> = {
-  type: 'archive',
-  testId: 'cf-ui-asset-icon',
-};
-
 /**
  * Renders only the Illustration that would represent this asset's type
  */
-export class AssetIcon extends Component<AssetIconProps> {
-  static defaultProps = defaultProps;
-
-  render() {
-    const { type, ...otherProps } = this.props;
-
-    let illustrationName = type!.charAt(0).toUpperCase() + type!.slice(1); // eslint-disable-line @typescript-eslint/no-non-null-assertion
-    if (!isIllustrationType(illustrationName)) {
-      illustrationName = DEFAULT_ILLUSTRATION_NAME;
-    }
-
-    return (
-      <Illustration
-        illustration={illustrationName as IllustrationType}
-        {...otherProps}
-      />
-    );
+export function AssetIcon({ type, ...otherProps }: AssetIconProps) {
+  let illustrationName = type!.charAt(0).toUpperCase() + type!.slice(1); // eslint-disable-line @typescript-eslint/no-non-null-assertion
+  if (!isIllustrationType(illustrationName)) {
+    illustrationName = DEFAULT_ILLUSTRATION_NAME;
   }
+
+  return (
+    <Illustration
+      illustration={illustrationName as IllustrationType}
+      {...otherProps}
+    />
+  );
 }
+
+AssetIcon.defaultProps = {
+  type: 'archive',
+  testId: 'cf-ui-asset-icon',
+};
 
 export default AssetIcon;
