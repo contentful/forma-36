@@ -32,11 +32,15 @@ export const Spinner = ({
 
   return (
     <svg
-      id="spinner"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       viewBox="0 0 60 51"
       className={classNames}
+      style={
+        customSize
+          ? { height: `${customSize}px`, width: `${customSize}px` }
+          : {}
+      }
       {...otherProps}
     >
       <g
