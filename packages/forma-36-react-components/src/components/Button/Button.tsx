@@ -142,7 +142,9 @@ export class Button extends Component<ButtonProps> {
               className={styles.Button__spinner}
               size="small"
               color={
-                buttonType === 'muted' || buttonType === 'naked'
+                buttonType === 'muted' ||
+                buttonType === 'naked' ||
+                buttonType === 'warning'
                   ? 'default'
                   : 'white'
               }

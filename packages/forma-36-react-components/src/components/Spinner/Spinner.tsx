@@ -3,15 +3,11 @@ import cn from 'classnames';
 
 import styles from './Spinner.css';
 
-type SpinnerSize = 'default' | 'small' | 'large';
-
-type SpinnerColor = 'default' | 'white';
-
 export interface SpinnerProps {
-  size?: SpinnerSize;
-  customSize?: number;
-  color?: SpinnerColor;
   className?: string;
+  color?: 'default' | 'primary' | 'white';
+  customSize?: number;
+  size?: 'default' | 'small' | 'large';
   testId?: string;
 }
 
@@ -21,14 +17,14 @@ const defaultProps: Partial<SpinnerProps> = {
   color: 'default',
 };
 
-export const Spinner: React.FC<SpinnerProps> = ({
+export const Spinner = ({
   className,
-  size,
-  testId,
   color,
   customSize,
+  size,
+  testId,
   ...otherProps
-}) => {
+}: SpinnerProps) => {
   const classNames = cn(styles.Spinner, className, {
     [styles[`Spinner--${size}`]]: size,
     [styles[`Spinner--${color}`]]: color,
@@ -36,23 +32,39 @@ export const Spinner: React.FC<SpinnerProps> = ({
 
   return (
     <svg
+      id="spinner"
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 20 20"
-      data-test-id={testId}
+      xmlnsXlink="http://www.w3.org/1999/xlink"
+      viewBox="0 0 60 51"
       className={classNames}
-      style={
-        customSize
-          ? { height: `${customSize}px`, width: `${customSize}px` }
-          : {}
-      }
       {...otherProps}
     >
-      <title>Loading…</title>
-      <path d="M2,10a8,8,0,0,1,8-8V0a10,10,0,0,0,0,20V18A8,8,0,0,1,2,10Z" />
-      <path
-        d="M10,0V2a8,8,0,0,1,0,16v2A10,10,0,0,0,10,0Z"
-        style={{ opacity: 0.4 }}
-      />
+      <g
+        className={styles['circle1--translate']}
+        transform="translate(10,33.528168)"
+      >
+        <g className={styles['circle1--scale']}>
+          <circle id="circle1" r="6" transform="translate(0,10.471832)" />
+        </g>
+      </g>
+
+      <g
+        className={styles['circle2--translate']}
+        transform="translate(30,33.528168)"
+      >
+        <g className={styles['circle2--scale']}>
+          <circle id="circle2" r="6" transform="translate(0,10.471832)" />
+        </g>
+      </g>
+
+      <g
+        className={styles['circle3--translate']}
+        transform="translate(50,33.528168)"
+      >
+        <g className={styles['circle3--scale']}>
+          <circle id="circle3" r="6" transform="translate(0,10.471832)" />
+        </g>
+      </g>
     </svg>
   );
 };
