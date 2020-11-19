@@ -4,6 +4,7 @@ exports[`calls an onClick function 1`] = `
 <div
   class="Card Card--padding-default Card--is-interactive"
   data-test-id="cf-ui-card"
+  tabindex="0"
 >
   Card
 </div>
