@@ -23,9 +23,13 @@ export interface BaseCardProps {
    * Class names to be appended to the className prop of the component
    */
   className?: string;
+  /**
+   * Child nodes to be rendered in the component
+   */
+  children?: React.ReactNode;
 }
 
-interface CardPropTypes extends BaseCardProps {
+export interface CardProps extends BaseCardProps {
   /**
    * The action to be performed when user clicks on the Card
    */
@@ -44,13 +48,13 @@ interface CardPropTypes extends BaseCardProps {
   style?: React.CSSProperties;
 }
 
-const defaultProps: Partial<CardPropTypes> = {
+const defaultProps: Partial<CardProps> = {
   padding: 'default',
   testId: 'cf-ui-card',
   selected: false,
 };
 
-export const Card: React.FC<CardPropTypes> = ({
+export const Card = ({
   className,
   testId,
   children,
@@ -60,7 +64,7 @@ export const Card: React.FC<CardPropTypes> = ({
   padding,
   selected,
   ...otherProps
-}) => {
+}: CardProps) => {
   const classNames = cn(styles.Card, className, {
     [styles[`Card--padding-${padding}`]]: padding,
     [styles['Card--is-interactive']]: onClick || href,
