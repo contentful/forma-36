@@ -5,7 +5,7 @@ import { text, boolean, select } from '@storybook/addon-knobs';
 import { iconName } from '../Icon/constants';
 
 import Button from './Button';
-import notes from './README.md';
+import notes from './README.mdx';
 
 storiesOf('Components/Button', module)
   .addParameters({
