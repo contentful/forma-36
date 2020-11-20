@@ -1,0 +1,32 @@
+import { CopyButton } from './CopyButton';
+
+# CopyButton
+
+The CopyButton is a styled button that copies text into the user's clipboard.
+
+<CopyButton copyValue="Lorem Ipsum" />;
+
+## Table of contents
+
+- [Usage](#usage)
+  - [With custom tooltips](#with-custom-tooltips)
+
+## Usage
+
+```jsx
+import { CopyButton } from '@contentful/forma-36-react-components';
+
+<CopyButton copyValue="Lorem Ipsum" />;
+```
+
+### With custom tooltips
+
+```jsx
+import { CopyButton } from '@contentful/forma-36-react-components';
+
+<CopyButton
+  copyValue="Lorem Ipsum"
+  tooltipCopiedText="The text has been copied"
+  tooltipText="Copy this text to clipboard"
+/>;
+```

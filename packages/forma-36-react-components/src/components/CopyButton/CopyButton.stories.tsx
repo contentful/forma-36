@@ -1,31 +1,33 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { text, select } from '@storybook/addon-knobs';
+import type { Meta, Story } from '@storybook/react/types-6-0';
 
 import CopyButton from './CopyButton';
+import type { CopyButtonProps } from './CopyButton';
+import notes from './README.mdx';
 
-storiesOf('Components/CopyButton', module)
-  .addParameters({
+export default {
+  argTypes: {
+    children: { control: { disable: true } },
+    className: { control: { disable: true } },
+    testId: { control: { disable: true } },
+    tooltipText: { control: 'text' },
+    tooltipCopiedText: { control: 'text' },
+  },
+  component: CopyButton,
+  parameters: {
     propTypes: CopyButton['__docgenInfo'],
-    component: CopyButton,
-  })
-  .add('default', () => (
-    <div>
-      <CopyButton
-        className={text('className', '')}
-        copyValue={text('copyValue', 'Lorem Ipsum')}
-        tooltipPlace={select(
-          'place',
-          {
-            Top: 'top',
-            Bottom: 'bottom',
-            Left: 'left',
-            Right: 'right',
-          },
-          'bottom',
-        )}
-        tooltipText={text('tooltipText', 'Copy to clipboard')}
-        tooltipCopiedText={text('tooltipText', 'Copied!')}
-      />
-    </div>
-  ));
+    notes,
+  },
+  title: 'Components/CopyButton',
+} as Meta;
+
+export const Default: Story<CopyButtonProps> = (args) => {
+  return <CopyButton {...args} />;
+};
+
+Default.args = {
+  copyValue: 'Lorem Ipsum',
+  tooltipCopiedText: 'Copied!',
+  tooltipPlace: 'bottom',
+  tooltipText: 'Copy to clipboard',
+};
