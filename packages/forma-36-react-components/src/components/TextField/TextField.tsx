@@ -1,4 +1,5 @@
 import React, {
+  useCallback,
   useState,
   ChangeEvent,
   ChangeEventHandler,
@@ -75,12 +76,13 @@ export const TextField = (props: TextFieldProps) => {
   // Store a copy of the value in state.
   // This is used by this component when the `countCharacters`
   // option is on
-  const handleOnChange = (
-    e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>,
-  ) => {
-    setValueState(e.target.value);
-    if (onChange) onChange(e);
-  };
+  const handleOnChange = useCallback(
+    (e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+      setValueState(e.target.value);
+      if (onChange) onChange(e);
+    },
+    [onChange],
+  );
 
   const widthClass = `TextField--${width}`;
   const classNames = cn(styles['TextField'], styles[widthClass], className);
@@ -95,28 +97,23 @@ export const TextField = (props: TextFieldProps) => {
         </FormLabel>
         {textLinkProps && (
           <TextLink
-            {...{
-              ...textLinkProps,
-              className: styles['TextField__label-link'],
-            }}
+            className={styles['TextField__label-link']}
+            {...textLinkProps}
           >
             {textLinkProps.text}
           </TextLink>
         )}
       </div>
       <Element
-        {...{
-          error: !!validationMessage,
-          name,
-          id,
-          onBlur,
-          onFocus,
-          onChange: handleOnChange,
-          value,
-          required,
-          ...textInputProps,
-          width: 'full',
-        }}
+        error={!!validationMessage}
+        name={name}
+        id={id}
+        onBlur={onBlur}
+        onFocus={onFocus}
+        onChange={handleOnChange}
+        value={value}
+        required={required}
+        width={'full'}
       />
       {validationMessage && (
         <ValidationMessage className={styles['TextField__validation-message']}>

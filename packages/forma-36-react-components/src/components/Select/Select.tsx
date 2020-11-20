@@ -1,10 +1,11 @@
 import React, {
+  useCallback,
   useState,
-  useEffect,
   ChangeEventHandler,
   FocusEventHandler,
   KeyboardEvent,
   ChangeEvent,
+  ReactNode,
 } from 'react';
 import cn from 'classnames';
 import Icon from '../Icon';
@@ -23,7 +24,7 @@ export interface SelectProps {
   width?: 'auto' | 'small' | 'medium' | 'large' | 'full';
   testId?: string;
   className?: string;
-  children: React.ReactNode;
+  children: ReactNode;
   willBlurOnEsc?: boolean;
 }
 
@@ -54,29 +55,28 @@ export const Select = (props: SelectProps) => {
     willBlurOnEsc,
     ...otherProps
   } = props;
-  const [valueState, setValueState] = useState<string | undefined>();
+  const [valueState, setValueState] = useState<string | undefined>(value);
 
   const handleKeyDown = (e: KeyboardEvent<HTMLSelectElement>) => {
-    const ESC = 27;
+    const ESC = '27';
 
-    if (e.keyCode === ESC && willBlurOnEsc) {
+    if (e.nativeEvent.code === ESC && willBlurOnEsc) {
       e.currentTarget.blur();
     }
   };
 
-  const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    if (!isDisabled) {
-      setValueState(e.target.value);
+  const handleChange = useCallback(
+    (e: ChangeEvent<HTMLSelectElement>) => {
+      if (!isDisabled) {
+        setValueState(e.target.value);
 
-      if (onChange) {
-        onChange(e);
+        if (onChange) {
+          onChange(e);
+        }
       }
-    }
-  };
-
-  useEffect(() => {
-    setValueState(value);
-  }, [value]);
+    },
+    [onChange, isDisabled],
+  );
 
   const widthClass = `Select--${width}`;
   const classNames = cn(styles['Select'], {

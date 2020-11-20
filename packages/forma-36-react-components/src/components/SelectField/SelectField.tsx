@@ -1,6 +1,5 @@
 import React, {
   useState,
-  useEffect,
   ChangeEvent,
   FocusEventHandler,
   ChangeEventHandler,
@@ -65,15 +64,12 @@ export const SelectField = (props: SelectFieldProps) => {
   // This is used by this component when the `countCharacters`
   // option is on
   const handleOnChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    e.persist();
     setValueState(e.currentTarget.value);
     if (onChange) {
       onChange(e);
     }
   };
-
-  useEffect(() => {
-    setValueState(value);
-  }, [value]);
 
   const classNames = cn(styles['SelectField'], className);
 
@@ -85,26 +81,22 @@ export const SelectField = (props: SelectFieldProps) => {
         </FormLabel>
         {textLinkProps && (
           <TextLink
-            {...{
-              ...textLinkProps,
-              className: styles['SelectField__label-link'],
-            }}
+            className={styles['SelectField__label-link']}
+            {...textLinkProps}
           >
             {textLinkProps.text}
           </TextLink>
         )}
       </div>
       <Select
-        {...{
-          hasError: !!validationMessage,
-          name,
-          id,
-          onBlur,
-          onChange: handleOnChange,
-          value: valueState,
-          required,
-          ...selectProps,
-        }}
+        hasError={!!validationMessage}
+        name={name}
+        id={id}
+        onBlur={onBlur}
+        onChange={handleOnChange}
+        value={valueState}
+        required={required}
+        {...selectProps}
       >
         {children}
       </Select>

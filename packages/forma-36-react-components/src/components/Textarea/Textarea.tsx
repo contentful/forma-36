@@ -77,26 +77,29 @@ export const Textarea = (props: TextareaProps) => {
   const handleKeyDown = useCallback(
     (e: KeyboardEvent<HTMLTextAreaElement>) => {
       e.persist();
-      const ESC = 27;
+      const ESC = '27';
 
       if (onKeyDown) {
         onKeyDown(e);
       }
 
-      if (e.keyCode === ESC && willBlurOnEsc) {
+      if (e.nativeEvent.code === ESC && willBlurOnEsc) {
         e.currentTarget.blur();
       }
     },
     [willBlurOnEsc, onKeyDown],
   );
 
-  const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    e.persist();
-    setValueState(e.target.value);
-    if (onChange) {
-      onChange(e);
-    }
-  };
+  const handleChange = useCallback(
+    (e: ChangeEvent<HTMLTextAreaElement>) => {
+      e.persist();
+      setValueState(e.target.value);
+      if (onChange) {
+        onChange(e);
+      }
+    },
+    [onChange],
+  );
 
   const widthClass = `Textarea--${width}`;
   const classNames = cn(styles['Textarea'], className, styles[widthClass], {

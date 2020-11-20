@@ -89,11 +89,13 @@ export const Button = (props: ButtonProps) => {
   return (
     <Element
       onBlur={(e: FocusEvent) => {
+        e.persist();
         if (onBlur && !disabled) {
           onBlur(e);
         }
       }}
       onClick={(e: ReactMouseEvent) => {
+        e.persist();
         if (onClick && !disabled && !loading) {
           onClick(e);
         }

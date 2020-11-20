@@ -1,6 +1,5 @@
 import React, {
   useState,
-  useEffect,
   useCallback,
   RefObject,
   FocusEvent,
@@ -75,6 +74,7 @@ export const TextInput = (props: TextInputProps) => {
   const [valueState, setValueState] = useState<string | undefined>(value);
 
   const handleFocus = (e: FocusEvent) => {
+    e.persist();
     if (disabled) {
       (e.target as HTMLInputElement).select();
     }
@@ -92,22 +92,19 @@ export const TextInput = (props: TextInputProps) => {
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent<HTMLInputElement>) => {
-      const ESC = 27;
+      e.persist();
+      const ESC = '27';
 
       if (onKeyDown) {
         onKeyDown(e);
       }
 
-      if (e.keyCode === ESC && willBlurOnEsc) {
+      if (e.nativeEvent.code === ESC && willBlurOnEsc) {
         e.currentTarget.blur();
       }
     },
     [willBlurOnEsc, onKeyDown],
   );
-
-  useEffect(() => {
-    setValueState(value);
-  }, [value]);
 
   const widthClass = `TextInput--${width}`;
   const classNames = cn(styles['TextInput'], className, styles[widthClass], {

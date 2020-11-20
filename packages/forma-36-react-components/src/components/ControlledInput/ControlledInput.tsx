@@ -60,9 +60,9 @@ export const ControlledInput = (props: ControlledInputPropTypes) => {
   const handleKeyDown = useCallback(
     (e: KeyboardEvent<HTMLInputElement>) => {
       e.persist();
-      const ESC = 27;
+      const ESC = '27';
 
-      if (e.keyCode === ESC && willBlurOnEsc) {
+      if (e.nativeEvent.code === ESC && willBlurOnEsc) {
         e.currentTarget.blur();
       }
     },

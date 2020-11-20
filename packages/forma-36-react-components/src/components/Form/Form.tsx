@@ -1,4 +1,12 @@
-import React, { FormEventHandler, FormEvent } from 'react';
+import React, {
+  Children,
+  useCallback,
+  CSSProperties,
+  FormEventHandler,
+  FormEvent,
+  ReactChild,
+  ReactNodeArray,
+} from 'react';
 import cn from 'classnames';
 
 import styles from './Form.css';
@@ -7,9 +15,9 @@ export interface FormProps {
   onSubmit?: FormEventHandler;
   spacing?: 'condensed' | 'default';
   testId?: string;
-  style?: React.CSSProperties;
+  style?: CSSProperties;
   className?: string;
-  children: React.ReactChild | React.ReactNodeArray;
+  children: ReactChild | ReactNodeArray;
 }
 
 const defaultProps: Partial<FormProps> = {
@@ -34,12 +42,15 @@ export const Form = (props: FormProps) => {
     styles[`Form__item--${spacing}`],
   );
 
-  const handleSubmit = (event: FormEvent) => {
-    event.preventDefault();
-    if (onSubmit) {
-      onSubmit(event);
-    }
-  };
+  const handleSubmit = useCallback(
+    (event: FormEvent) => {
+      event.preventDefault();
+      if (onSubmit) {
+        onSubmit(event);
+      }
+    },
+    [onSubmit],
+  );
 
   return (
     <form
@@ -48,7 +59,7 @@ export const Form = (props: FormProps) => {
       onSubmit={handleSubmit}
       {...otherProps}
     >
-      {React.Children.map(children, (child) => {
+      {Children.map(children, (child) => {
         if (child) {
           return <div className={formItemClassNames}>{child}</div>;
         }

@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler } from 'react';
+import React, { ChangeEventHandler, ReactNode } from 'react';
 import cn from 'classnames';
 import FormLabel from '../FormLabel';
 import HelpText from '../HelpText';
@@ -24,7 +24,7 @@ export interface ControlledInputFieldPropTypes {
   onChange?: ChangeEventHandler;
   className?: string;
   testId?: string;
-  children?: React.ReactNode;
+  children?: ReactNode;
 }
 
 const defaultProps: Partial<ControlledInputFieldPropTypes> = {
