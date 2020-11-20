@@ -1,0 +1,47 @@
+import { Button } from '../../Button';
+import { EditorToolbar } from '../EditorToolbar';
+import { EditorToolbarButton } from '../EditorToolbarButton';
+import { EditorToolbarDivider } from '../EditorToolbarDivider';
+
+# EditorToolbarDivider
+
+The EditorToolbarDivider is a styled element for visually diving a rich text editor toolbar into multiple parts.
+
+<EditorToolbar style={{ justifyContent: 'space-between' }}>
+  <EditorToolbarButton
+    icon="FormatBold"
+    tooltip="Bold"
+    label="Bold"
+    isActive={boolean('isActive (bold)', false)}
+  />
+  <EditorToolbarDivider />
+  <EditorToolbarButton
+    icon="FormatItalic"
+    tooltip="Italic"
+    label="Italic"
+    isActive={boolean('isActive (italic)', false)}
+  />
+  <EditorToolbarButton
+    icon="FormatUnderlined"
+    tooltip="Underlined"
+    label="Underlined"
+    isActive={boolean('isActive (underline)', false)}
+  />
+</EditorToolbar>
+
+## Table of contents
+
+- [Usage](#usage)
+
+## Usage
+
+```jsx
+import {
+  EditorToolbar,
+  EditorToolbarDivider,
+} from '@contentful/forma-36-react-components';
+
+<EditorToolbar>
+  <EditorToolbarDivider />
+</EditorToolbar>;
+```
