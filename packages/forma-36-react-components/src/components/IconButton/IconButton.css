@@ -1,6 +1,7 @@
 @import 'settings/colors';
 @import 'settings/typography';
 @import 'settings/transitions';
+@import 'settings/dimensions';
 
 .IconButton {
   composes: focus-outline--default from './../../styles/settings/a11y.css';
