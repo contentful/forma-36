@@ -1,19 +1,30 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { text, select } from '@storybook/addon-knobs';
+import type { Meta, Story } from '@storybook/react/types-6-0';
 
-import { types, AssetType } from '../Asset';
 import { AssetIcon } from './AssetIcon';
+import type { AssetIconProps } from './AssetIcon';
+import { types } from '../Asset';
+import notes from './README.mdx';
 
-storiesOf('Components/Asset/AssetIcon', module)
-  .addParameters({
+export default {
+  argTypes: {
+    className: { control: { disable: true } },
+    type: {
+      control: {
+        type: 'select',
+        options: Object.keys(types),
+      },
+      defaultValue: Object.keys(types)[0],
+    },
+  },
+  component: AssetIcon,
+  parameters: {
     propTypes: AssetIcon['__docgenInfo'],
-    component: AssetIcon,
-  })
-  .add('default', () => <AssetIcon className={text('className', '')} />)
-  .add('with type image', () => (
-    <AssetIcon
-      className={text('className', '')}
-      type={select('type', types, 'image') as AssetType}
-    />
-  ));
+    notes,
+  },
+  title: 'Components/Asset/AssetIcon',
+} as Meta;
+
+export const Default: Story<AssetIconProps> = (args) => {
+  return <AssetIcon {...args} />;
+};
