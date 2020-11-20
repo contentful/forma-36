@@ -1,0 +1,57 @@
+import { Button } from '../../Button';
+import { EditorToolbar } from './EditorToolbar';
+import { EditorToolbarButton } from '../EditorToolbarButton';
+
+# EditorToolbar
+
+The EditorToolbar is a toolbar component for rich text editors. It provides a styled shell that toolbar actions such as buttons can be wrapped in.
+
+<EditorToolbar style={{ justifyContent: 'space-between' }}>
+  <div>
+    <EditorToolbarButton
+      icon="FormatBold"
+      tooltip="Bold"
+      label="Bold"
+      isActive={boolean('isActive (bold)', false)}
+    />
+    <EditorToolbarButton
+      icon="FormatItalic"
+      tooltip="Italic"
+      label="Italic"
+      isActive={boolean('isActive (italic)', false)}
+    />
+    <EditorToolbarButton
+      icon="FormatUnderlined"
+      tooltip="Underlined"
+      label="Underlined"
+      isActive={boolean('isActive (underline)', false)}
+    />
+  </div>
+  <div>
+    <Button size="small" buttonType="muted">
+      Example button
+    </Button>
+  </div>
+</EditorToolbar>
+
+## Table of contents
+
+- [Usage](#usage)
+
+## Usage
+
+```jsx
+import {
+  EditorToolbar,
+  EditorToolbarButton,
+} from '@contentful/forma-36-react-components';
+
+<EditorToolbar>
+  <EditorToolbarButton
+    icon="FormatBold"
+    tooltip="Bold"
+    label="Bold"
+    isActive={false}
+  />
+</EditorToolbar>;
+```
