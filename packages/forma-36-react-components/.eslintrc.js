@@ -59,4 +59,12 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
   },
+  overrides: [
+    {
+      files: ['**/*.stories.*'],
+      rules: {
+        '@typescript-eslint/no-object-literal-type-assertion': 'off',
+      },
+    },
+  ],
 };
