@@ -58,9 +58,7 @@ export const Select = (props: SelectProps) => {
   const [valueState, setValueState] = useState<string | undefined>(value);
 
   const handleKeyDown = (e: KeyboardEvent<HTMLSelectElement>) => {
-    const ESC = '27';
-
-    if (e.nativeEvent.code === ESC && willBlurOnEsc) {
+    if (e.nativeEvent.code === 'Escape' && willBlurOnEsc) {
       e.currentTarget.blur();
     }
   };

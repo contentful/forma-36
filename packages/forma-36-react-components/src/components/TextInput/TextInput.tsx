@@ -96,13 +96,12 @@ export const TextInput = (props: TextInputProps) => {
   const handleKeyDown = useCallback(
     (e: KeyboardEvent<HTMLInputElement>) => {
       e.persist();
-      const ESC = '27';
 
       if (onKeyDown) {
         onKeyDown(e);
       }
 
-      if (e.nativeEvent.code === ESC && willBlurOnEsc) {
+      if (e.nativeEvent.code === 'Escape' && willBlurOnEsc) {
         e.currentTarget.blur();
       }
     },
