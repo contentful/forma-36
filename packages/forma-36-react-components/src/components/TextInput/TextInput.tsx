@@ -80,15 +80,18 @@ export const TextInput = (props: TextInputProps) => {
     }
   };
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    e.persist();
-    if (disabled || isReadOnly) return;
+  const handleChange = useCallback(
+    (e: ChangeEvent<HTMLInputElement>) => {
+      e.persist();
+      if (disabled || isReadOnly) return;
 
-    if (onChange) {
-      onChange(e);
-    }
-    setValueState(e.currentTarget.value);
-  };
+      if (onChange) {
+        onChange(e);
+      }
+      setValueState(e.currentTarget.value);
+    },
+    [onChange, disabled, isReadOnly],
+  );
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent<HTMLInputElement>) => {
