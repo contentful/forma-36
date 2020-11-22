@@ -7,7 +7,7 @@ import styles from './Flex.css';
 
 export type SpacingTypes =
   | 'none'
-  | 'spacing2xs'
+  | 'spacing2Xs'
   | 'spacingXs'
   | 'spacingS'
   | 'spacingM'

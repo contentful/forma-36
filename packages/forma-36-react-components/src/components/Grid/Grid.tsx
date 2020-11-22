@@ -7,7 +7,7 @@ import styles from './Grid.css';
 
 export type GapTypes =
   | 'none'
-  | 'spacing2xs'
+  | 'spacing2Xs'
   | 'spacingXs'
   | 'spacingS'
   | 'spacingM'
