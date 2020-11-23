@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.67.6](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.67.5...@contentful/forma-36-react-components@3.67.6) (2020-11-23)
+
+
+### Bug Fixes
+
+* **card:** make it a div even when onClick has a value ([#655](https://github.com/contentful/forma-36/issues/655)) ([80bde60](https://github.com/contentful/forma-36/commit/80bde60346dfe7148afb73880ec009b3abfa3a7d))
+
+
+
+
+
 ## [3.67.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.67.4...@contentful/forma-36-react-components@3.67.5) (2020-11-23)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
