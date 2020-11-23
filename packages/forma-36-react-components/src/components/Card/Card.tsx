@@ -1,4 +1,4 @@
-import React, { MouseEvent, KeyboardEvent } from 'react';
+import React, { ReactNode, MouseEvent, KeyboardEvent } from 'react';
 import cn from 'classnames';
 import styles from './Card.css';
 
@@ -26,7 +26,7 @@ export interface BaseCardProps {
   /**
    * Child nodes to be rendered in the component
    */
-  children?: React.ReactNode;
+  children?: ReactNode;
 }
 
 export interface CardProps extends BaseCardProps {
@@ -39,30 +39,29 @@ export interface CardProps extends BaseCardProps {
    */
   padding?: 'default' | 'large' | 'none';
   /**
-   * The title of the entry
+   * The title of the entry. It will also be used as aria-label
    */
   title?: string;
   /**
    * Any additional styles that are being applied
    */
   style?: React.CSSProperties;
+  /**
+   * If the card is selectable and has no title, it will need a aria-label to help screen readers identify it
+   */
+  ariaLabel?: string;
 }
-
-const defaultProps: Partial<CardProps> = {
-  padding: 'default',
-  testId: 'cf-ui-card',
-  selected: false,
-};
 
 export const Card = ({
   className,
-  testId,
+  testId = 'cf-ui-card',
   children,
   href,
   target,
   onClick,
-  padding,
-  selected,
+  padding = 'default',
+  selected = false,
+  ariaLabel,
   ...otherProps
 }: CardProps) => {
   const classNames = cn(styles.Card, className, {
@@ -71,30 +70,32 @@ export const Card = ({
     [styles['Card--is-selected']]: selected,
   });
 
-  const Element: React.ElementType = href ? 'a' : 'div';
+  let Element: React.ElementType = 'div';
 
-  return React.createElement(
-    Element,
-    {
-      href,
-      target: href && target,
-      'data-test-id': testId,
-      className: classNames,
-      ...(!!onClick && {
-        tabindex: '0', // necessary to make the div accessible with tab navigation
-        onClick: (event: MouseEvent<HTMLElement>) => onClick(event),
-        onKeyDown: (event: KeyboardEvent<HTMLElement>) => {
-          if (event.keyCode === 13) {
-            onClick(event);
-            event.currentTarget.focus();
-          }
-        },
-      }),
-      ...otherProps,
-    },
-    children,
+  if (href) {
+    Element = 'a';
+  } else if (onClick) {
+    Element = 'button';
+  }
+
+  const handleClick = onClick
+    ? (event: MouseEvent<HTMLElement>) => onClick(event)
+    : undefined;
+
+  return (
+    <Element
+      className={classNames}
+      href={href}
+      target={target}
+      data-test-id={testId}
+      aria-label={otherProps.title || ariaLabel}
+      aria-pressed={onClick ? (selected ? 'true' : 'false') : undefined}
+      onClick={handleClick}
+      {...otherProps}
+    >
+      {children}
+    </Element>
   );
 };
-Card.defaultProps = defaultProps;
 
 export default Card;

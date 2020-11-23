@@ -95,3 +95,7 @@ export const WithLinkAndTarget = (args: CardProps) => {
     </Card>
   );
 };
+WithLinkAndTarget.args = {
+  href: 'https://f36.contentful.com/',
+  target: '_blank',
+};
