@@ -1,13 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`calls an onClick function 1`] = `
-<button
+<div
   aria-pressed="false"
   class="Card Card--padding-default Card--is-interactive"
   data-test-id="cf-ui-card"
+  tabindex="0"
 >
   Card
-</button>
+</div>
 `;
 
 exports[`can be selected 1`] = `
