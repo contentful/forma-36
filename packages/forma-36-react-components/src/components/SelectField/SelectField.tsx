@@ -1,4 +1,5 @@
 import React, {
+  useEffect,
   useState,
   ChangeEvent,
   FocusEventHandler,
@@ -70,6 +71,10 @@ export const SelectField = (props: SelectFieldProps) => {
       onChange(e);
     }
   };
+
+  useEffect(() => {
+    setValueState(value);
+  }, [value]);
 
   const classNames = cn(styles['SelectField'], className);
 

@@ -1,5 +1,6 @@
 import React, {
   useState,
+  useEffect,
   useCallback,
   RefObject,
   FocusEvent,
@@ -107,6 +108,10 @@ export const TextInput = (props: TextInputProps) => {
     },
     [willBlurOnEsc, onKeyDown],
   );
+
+  useEffect(() => {
+    setValueState(value);
+  }, [value]);
 
   const widthClass = `TextInput--${width}`;
   const classNames = cn(styles['TextInput'], className, styles[widthClass], {

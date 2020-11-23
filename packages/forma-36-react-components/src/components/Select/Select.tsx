@@ -1,5 +1,6 @@
 import React, {
   useCallback,
+  useEffect,
   useState,
   ChangeEventHandler,
   FocusEventHandler,
@@ -75,6 +76,10 @@ export const Select = (props: SelectProps) => {
     },
     [onChange, isDisabled],
   );
+
+  useEffect(() => {
+    setValueState(value);
+  }, [value]);
 
   const widthClass = `Select--${width}`;
   const classNames = cn(styles['Select'], {
