@@ -3,9 +3,9 @@
 exports[`renders the component 1`] = `
 <svg
   class="Spinner Spinner--default"
+  data-test-id="cf-ui-spinner"
   viewBox="0 0 60 51"
   xmlns="http://www.w3.org/2000/svg"
-  xmlns:xlink="http://www.w3.org/1999/xlink"
 >
   <g
     class="circle1--translate"
@@ -55,11 +55,11 @@ exports[`renders the component 1`] = `
 exports[`renders the component with a custom size 1`] = `
 <svg
   class="Spinner Spinner--default"
+  data-test-id="cf-ui-spinner"
   data-testid="spinner"
   style="height: 42px; width: 42px;"
   viewBox="0 0 60 51"
   xmlns="http://www.w3.org/2000/svg"
-  xmlns:xlink="http://www.w3.org/1999/xlink"
 >
   <g
     class="circle1--translate"
@@ -109,9 +109,9 @@ exports[`renders the component with a custom size 1`] = `
 exports[`renders the component with an additional class name 1`] = `
 <svg
   class="Spinner my-extra-class Spinner--default"
+  data-test-id="cf-ui-spinner"
   viewBox="0 0 60 51"
   xmlns="http://www.w3.org/2000/svg"
-  xmlns:xlink="http://www.w3.org/1999/xlink"
 >
   <g
     class="circle1--translate"
@@ -161,9 +161,9 @@ exports[`renders the component with an additional class name 1`] = `
 exports[`renders the component with the size "large" 1`] = `
 <svg
   class="Spinner Spinner--large Spinner--default"
+  data-test-id="cf-ui-spinner"
   viewBox="0 0 60 51"
   xmlns="http://www.w3.org/2000/svg"
-  xmlns:xlink="http://www.w3.org/1999/xlink"
 >
   <g
     class="circle1--translate"
@@ -213,9 +213,9 @@ exports[`renders the component with the size "large" 1`] = `
 exports[`renders the component with the size "small" 1`] = `
 <svg
   class="Spinner Spinner--small Spinner--default"
+  data-test-id="cf-ui-spinner"
   viewBox="0 0 60 51"
   xmlns="http://www.w3.org/2000/svg"
-  xmlns:xlink="http://www.w3.org/1999/xlink"
 >
   <g
     class="circle1--translate"
