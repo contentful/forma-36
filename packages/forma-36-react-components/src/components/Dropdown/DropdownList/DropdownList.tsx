@@ -1,6 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
-import * as CSS from 'csstype';
+import type * as CSS from 'csstype';
 
 import cssStyles from './DropdownList.css';
 
@@ -10,7 +10,7 @@ export interface DropdownListProps {
   className?: string;
   testId?: string;
   border?: 'top' | 'bottom';
-  maxHeight?: number | CSS.MaxHeightProperty<string>;
+  maxHeight?: number | CSS.Property.MaxHeight;
   styles?: object;
 }
 
