@@ -1,7 +1,7 @@
-import React, { Component, MouseEventHandler } from 'react';
+import React, { Component } from 'react';
 import cn from 'classnames';
 import truncate from 'truncate';
-import Card, { BaseCardProps } from '../Card';
+import Card, { BaseCardProps, CardProps } from '../Card';
 import CardActions from '../CardActions';
 import Tag, { TagType } from '../../Tag';
 import EntryCardSkeleton from './EntryCardSkeleton';
@@ -46,7 +46,7 @@ export interface EntryCardPropTypes extends BaseCardProps {
   /**
    * The action to be performed on click of the EntryCard
    */
-  onClick?: MouseEventHandler;
+  onClick?: CardProps['onClick'];
   /**
    * The DropdownList elements used to render an actions dropdown for the EntryCard
    */

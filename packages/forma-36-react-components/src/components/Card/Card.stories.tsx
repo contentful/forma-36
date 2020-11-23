@@ -1,68 +1,101 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { text, boolean, select } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
+import React, { useState } from 'react';
 
-import Card from './Card';
+import { Typography } from '../Typography/Typography';
+import { Heading } from '../Typography/Heading';
+import { Paragraph } from '../Typography/Paragraph';
 
-storiesOf('Components/Card', module)
-  .addParameters({
+import { Card, CardProps } from './Card';
+
+export default {
+  title: 'Components/Card',
+  component: Card,
+  parameters: {
     propTypes: Card['__docgenInfo'],
-    component: Card,
-  })
-  .add('default', () => (
-    <Card
-      className={text('className', '')}
-      href={text('href', '') || undefined}
-      padding={select(
-        'padding',
-        {
-          Default: 'default',
-          Large: 'large',
-          None: 'none',
-        },
-        'default',
-      )}
-      selected={boolean('selected', false)}
-    >
-      {text('children', 'Card')}
+  },
+};
+
+export const Default = ({ children, ...args }: CardProps) => {
+  return (
+    <Card {...args}>
+      <Typography>
+        <Paragraph>{children}</Paragraph>
+      </Typography>
     </Card>
-  ))
-  .add('with href and target', () => (
-    <Card
-      className={text('className', '')}
-      href={text('href', 'http://f36.contentful.com') || undefined}
-      target={text('target', '_blank') || undefined}
-      padding={select(
-        'padding',
-        {
-          Default: 'default',
-          Large: 'large',
-          None: 'none',
-        },
-        'default',
-      )}
-      selected={boolean('selected', false)}
-    >
-      {text('children', 'Go to F36 website')}
+  );
+};
+Default.args = { title: 'Title', children: 'This is the Card’s content' };
+
+export const WithOnClick = (args: CardProps) => {
+  const [show, setShow] = useState(false);
+  return (
+    <div>
+      <Card
+        {...args}
+        onClick={() => setShow(!show)}
+        style={{ textAlign: 'center' }}
+      >
+        Click on this card
+        <br />
+        {show && (
+          <span role="img" aria-label="sparkles">
+            ✨✨✨
+          </span>
+        )}
+      </Card>
+    </div>
+  );
+};
+
+export const SelectableCards = () => {
+  const [taco, setTaco] = useState(false);
+  const [pizza, setPizza] = useState(false);
+  const [broccoli, setBroccoli] = useState(false);
+  return (
+    <div style={{ maxWidth: '280px' }}>
+      <Heading>What is your favorite food?</Heading>
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          marginTop: '1rem',
+        }}
+      >
+        <Card onClick={() => setTaco(!taco)} selected={taco}>
+          <span style={{ fontSize: '3rem' }} role="img" aria-label="taco">
+            🌮
+          </span>
+        </Card>
+        <Card onClick={() => setPizza(!pizza)} selected={pizza}>
+          <span style={{ fontSize: '3rem' }} role="img" aria-label="pizza">
+            🍕
+          </span>
+        </Card>
+        <Card onClick={() => setBroccoli(!broccoli)} selected={broccoli}>
+          <span style={{ fontSize: '3rem' }} role="img" aria-label="broccoli">
+            🥦
+          </span>
+        </Card>
+      </div>
+    </div>
+  );
+};
+
+export const WithLinkAndTarget = (args: CardProps) => {
+  return (
+    <Card {...args}>
+      <Typography>
+        <Heading>Forma36</Heading>
+        <Paragraph>
+          Forma 36 is an open-source design system by Contentful created with
+          the intent to reduce the overhead of creating UI by providing tools
+          and guidance for digital teams building and extending Contentful
+          products.
+        </Paragraph>
+      </Typography>
     </Card>
-  ))
-  .add('with onClick handler', () => (
-    <Card
-      className={text('className', '')}
-      href={text('href', '') || undefined}
-      onClick={action('onClick')}
-      padding={select(
-        'padding',
-        {
-          Default: 'default',
-          Large: 'large',
-          None: 'none',
-        },
-        'default',
-      )}
-      selected={boolean('selected', false)}
-    >
-      {text('children', 'Card')}
-    </Card>
-  ));
+  );
+};
+WithLinkAndTarget.args = {
+  href: 'https://f36.contentful.com/',
+  target: '_blank',
+};

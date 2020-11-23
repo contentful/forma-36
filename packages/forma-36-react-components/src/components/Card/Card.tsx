@@ -1,8 +1,4 @@
-import React, {
-  Component,
-  MouseEventHandler,
-  MouseEvent as ReactMouseEvent,
-} from 'react';
+import React, { ReactNode, MouseEvent, KeyboardEvent } from 'react';
 import cn from 'classnames';
 import styles from './Card.css';
 
@@ -27,76 +23,79 @@ export interface BaseCardProps {
    * Class names to be appended to the className prop of the component
    */
   className?: string;
+  /**
+   * Child nodes to be rendered in the component
+   */
+  children?: ReactNode;
 }
 
-interface CardPropTypes extends BaseCardProps {
+export interface CardProps extends BaseCardProps {
   /**
-   * The action to be performed on click of the Card component
+   * The action to be performed when user clicks on the Card
    */
-  onClick?: MouseEventHandler<HTMLElement>;
+  onClick?: (e: MouseEvent<HTMLElement> | KeyboardEvent<HTMLElement>) => void;
   /**
    * Applies padding styles of different sizes
    */
   padding?: 'default' | 'large' | 'none';
   /**
-   * The title of the entry
+   * The title of the entry. It will also be used as aria-label
    */
   title?: string;
   /**
    * Any additional styles that are being applied
    */
   style?: React.CSSProperties;
-  children: React.ReactNode;
+  /**
+   * If the card is selectable and has no title, it will need a aria-label to help screen readers identify it
+   */
+  ariaLabel?: string;
 }
 
-const defaultProps: Partial<CardPropTypes> = {
-  padding: 'default',
-  testId: 'cf-ui-card',
-  selected: false,
-};
+export const Card = ({
+  className,
+  testId = 'cf-ui-card',
+  children,
+  href,
+  target,
+  onClick,
+  padding = 'default',
+  selected = false,
+  ariaLabel,
+  ...otherProps
+}: CardProps) => {
+  const classNames = cn(styles.Card, className, {
+    [styles[`Card--padding-${padding}`]]: padding,
+    [styles['Card--is-interactive']]: onClick || href,
+    [styles['Card--is-selected']]: selected,
+  });
 
-export class Card extends Component<CardPropTypes> {
-  static defaultProps = defaultProps;
+  let Element: React.ElementType = 'div';
 
-  handleClick = (event: ReactMouseEvent<HTMLElement>) => {
-    if (!this.props.onClick) return;
-
-    this.props.onClick(event);
-  };
-
-  render() {
-    const {
-      className,
-      testId,
-      children,
-      href,
-      target,
-      onClick,
-      padding,
-      selected,
-      ...otherProps
-    } = this.props;
-
-    const classNames = cn(styles.Card, className, {
-      [styles[`Card--padding-${padding}`]]: padding,
-      [styles['Card--is-interactive']]: onClick || href,
-      [styles['Card--is-selected']]: selected,
-    });
-
-    const Element: React.ReactType = href ? 'a' : 'div';
-    return React.createElement(
-      Element,
-      {
-        href,
-        target: href && target,
-        className: classNames,
-        onClick: this.handleClick,
-        'data-test-id': testId,
-        ...otherProps,
-      },
-      children,
-    );
+  if (href) {
+    Element = 'a';
+  } else if (onClick) {
+    Element = 'button';
   }
-}
+
+  const handleClick = onClick
+    ? (event: MouseEvent<HTMLElement>) => onClick(event)
+    : undefined;
+
+  return (
+    <Element
+      className={classNames}
+      href={href}
+      target={target}
+      data-test-id={testId}
+      aria-label={otherProps.title || ariaLabel}
+      aria-pressed={onClick ? (selected ? 'true' : 'false') : undefined}
+      onClick={handleClick}
+      {...otherProps}
+    >
+      {children}
+    </Element>
+  );
+};
 
 export default Card;

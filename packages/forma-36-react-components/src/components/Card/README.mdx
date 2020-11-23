@@ -1,0 +1,89 @@
+# Card
+
+A Card is a component to group information or content of a particular subject in one place.
+
+```jsx
+<Card title="Title">
+  <Typography>
+    <Paragraph>This is the Card’s content</Paragraph>
+  </Typography>
+</Card>
+```
+
+## Table of contents
+
+- [Examples of usage](#examples-of-usage)
+  - [With onClick](#with-onclick)
+  - [Selectable cards](#selectable-cards)
+  - [With link and target](#with-link-and-target)
+
+## Examples of usage
+
+Here you will find the most common ways of using the Card component.
+
+### With `onClick`
+
+It’s possible to call an action when the user clicks on the Card. To do that, you only need to pass a function to the `onClick` prop.
+
+```jsx
+const [show, setShow] = useState(false);
+
+<Card onClick={() => setShow(!show)}>
+  Click on this card
+  <br />
+  {show && (
+    <span role="img" aria-label="sparkles">
+      ✨✨✨
+    </span>
+  )}
+</Card>;
+```
+
+### Selectable cards
+
+Sometimes you will need to use the Card as an selectable element in the UI. To achieve that behaviour,
+you should use a combination of the `onClick` and `selected` props. The former controlling the latter.
+
+```jsx
+const [taco, setTaco] = useState(false);
+const [pizza, setPizza] = useState(false);
+const [broccoli, setBroccoli] = useState(false);
+
+<div>
+  <Heading>What is your favorite food?</Heading>
+  <div>
+    <Card onClick={() => setTaco(!taco)} selected={taco}>
+      <span role="img" aria-label="taco">
+        🌮
+      </span>
+    </Card>
+    <Card onClick={() => setPizza(!pizza)} selected={pizza}>
+      <span role="img" aria-label="pizza">
+        🍕
+      </span>
+    </Card>
+    <Card onClick={() => setBroccoli(!broccoli)} selected={broccoli}>
+      <span role="img" aria-label="broccoli">
+        🥦
+      </span>
+    </Card>
+  </div>
+</div>;
+```
+
+### With `link` and `target`
+
+A Card can be used with the pourpose to navigate a user to an external page. To do that a user must pass a value to the `href` prop.
+Optionally, the user can pass a `target` prop to control how the link should be open.
+
+```jsx
+<Card href="http://f36.contentful.com" target="_blank">
+  <Typography>
+    <Paragraph>
+      Forma 36 is an open-source design system by Contentful created with the
+      intent to reduce the overhead of creating UI by providing tools and
+      guidance for digital teams building and extending Contentful products.
+    </Paragraph>
+  </Typography>
+</Card>
+```
