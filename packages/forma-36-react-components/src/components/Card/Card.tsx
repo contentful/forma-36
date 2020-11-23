@@ -70,16 +70,22 @@ export const Card = ({
     [styles['Card--is-selected']]: selected,
   });
 
-  let Element: React.ElementType = 'div';
-
-  if (href) {
-    Element = 'a';
-  } else if (onClick) {
-    Element = 'button';
-  }
+  const Element: React.ElementType = href ? 'a' : 'div';
 
   const handleClick = onClick
     ? (event: MouseEvent<HTMLElement>) => onClick(event)
+    : undefined;
+
+  const handleKeyDown = onClick
+    ? (event: KeyboardEvent<HTMLElement>) => {
+        if (
+          event.nativeEvent.code === 'Enter' ||
+          event.nativeEvent.code === 'Space'
+        ) {
+          onClick(event);
+          event.currentTarget.focus();
+        }
+      }
     : undefined;
 
   return (
@@ -90,7 +96,10 @@ export const Card = ({
       data-test-id={testId}
       aria-label={otherProps.title || ariaLabel}
       aria-pressed={onClick ? (selected ? 'true' : 'false') : undefined}
+      tabIndex={onClick ? 0 : undefined}
+      role={onClick ? 'button' : undefined}
       onClick={handleClick}
+      onKeyDown={handleKeyDown}
       {...otherProps}
     >
       {children}
