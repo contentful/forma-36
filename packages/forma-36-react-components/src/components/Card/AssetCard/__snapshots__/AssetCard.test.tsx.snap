@@ -2,6 +2,7 @@
 
 exports[`renders a small variant of the component 1`] = `
 <div
+  aria-label="picture of a cat"
   class="Card AssetCard AssetCard--size-small Card--padding-none"
   data-test-id="cf-ui-asset-card"
   title="picture of a cat"
@@ -45,6 +46,7 @@ exports[`renders a small variant of the component 1`] = `
 
 exports[`renders the component 1`] = `
 <div
+  aria-label="picture of a cat"
   class="Card AssetCard AssetCard--size-default Card--padding-none"
   data-test-id="cf-ui-asset-card"
   title="picture of a cat"
@@ -88,6 +90,7 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component in loading state 1`] = `
 <div
+  aria-label="picture of a cat"
   class="Card AssetCard AssetCard--size-default Card--padding-none"
   data-test-id="cf-ui-asset-card"
   title="picture of a cat"
@@ -183,6 +186,7 @@ exports[`renders the component in loading state 1`] = `
 
 exports[`renders the component with a custom drag handle 1`] = `
 <div
+  aria-label="picture of a cat"
   class="Card AssetCard AssetCard--size-default my-extra-class Card--padding-none"
   data-test-id="cf-ui-asset-card"
   title="picture of a cat"
@@ -253,6 +257,7 @@ exports[`renders the component with a custom drag handle 1`] = `
 exports[`renders the component with a drag handle 1`] = `
 <div>
   <div
+    aria-label="picture of a cat"
     class="Card AssetCard AssetCard--size-default my-extra-class Card--padding-none"
     data-test-id="cf-ui-asset-card"
     title="picture of a cat"
@@ -323,6 +328,7 @@ exports[`renders the component with a drag handle 1`] = `
 
 exports[`renders the component with actions 1`] = `
 <div
+  aria-label="picture of a cat"
   class="Card AssetCard AssetCard--size-default Card--padding-none"
   data-test-id="cf-ui-asset-card"
   title="picture of a cat"
@@ -406,6 +412,7 @@ exports[`renders the component with actions 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <div
+  aria-label="picture of a cat"
   class="Card AssetCard AssetCard--size-default my-extra-class Card--padding-none"
   data-test-id="cf-ui-asset-card"
   title="picture of a cat"
@@ -449,6 +456,7 @@ exports[`renders the component with an additional class name 1`] = `
 
 exports[`renders the component with status 1`] = `
 <div
+  aria-label="picture of a cat"
   class="Card AssetCard AssetCard--size-default Card--padding-none"
   data-test-id="cf-ui-asset-card"
   title="picture of a cat"
@@ -523,6 +531,7 @@ exports[`renders the component with status 1`] = `
 
 exports[`renders the component without actions 1`] = `
 <div
+  aria-label="picture of a cat"
   class="Card AssetCard AssetCard--size-default Card--padding-none"
   data-test-id="cf-ui-asset-card"
   title="picture of a cat"
