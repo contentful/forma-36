@@ -8,8 +8,8 @@ import React, {
 } from 'react';
 import { usePopper } from 'react-popper';
 import { Placement } from '@popperjs/core';
-import * as CSS from 'csstype';
 import cn from 'classnames';
+import type * as CSS from 'csstype';
 
 import styles from './Tooltip.css';
 import tokens from '@contentful/forma-36-tokens';
@@ -45,7 +45,7 @@ export interface TooltipProps {
   /**
    * It sets a max-width for the Tooltip
    */
-  maxWidth?: number | CSS.MaxWidthProperty<string>;
+  maxWidth?: number | CSS.Property.MaxWidth;
   /**
    * Function that will be called when target gets blurred
    */

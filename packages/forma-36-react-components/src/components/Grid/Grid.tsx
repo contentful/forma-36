@@ -1,13 +1,13 @@
 import React from 'react';
-import * as CSS from 'csstype';
 import tokens from '@contentful/forma-36-tokens';
 import cn from 'classnames';
+import type * as CSS from 'csstype';
 
 import styles from './Grid.css';
 
 export type GapTypes =
   | 'none'
-  | 'spacing2xs'
+  | 'spacing2Xs'
   | 'spacingXs'
   | 'spacingS'
   | 'spacingM'
@@ -29,10 +29,10 @@ export interface GridProps {
   testId?: string;
   /**
    * Defines how many columns, default is `auto` */
-  columns?: number | CSS.GridTemplateColumnsProperty<string>;
+  columns?: number | CSS.Property.GridTemplateColumns;
   /**
    * Defines how many rows, default is `auto` */
-  rows?: number | CSS.GridTemplateColumnsProperty<string>;
+  rows?: number | CSS.Property.GridTemplateColumns;
   /**
    * Spaces between rows, corresponds to of spacing tokens values, default is none */
   rowGap?: GapTypes;
@@ -41,16 +41,16 @@ export interface GridProps {
   columnGap?: GapTypes;
   /**
    * One of grid-auto-flow css values */
-  flow?: CSS.GridAutoFlowProperty;
+  flow?: CSS.Property.GridAutoFlow;
   /**
    * Sets display:inline-grid */
   inline?: boolean;
   /**
    * One of justify-content css values */
-  justifyContent?: CSS.JustifyContentProperty;
+  justifyContent?: CSS.Property.JustifyContent;
   /**
    * One of justify-content css values */
-  alignContent?: CSS.AlignContentProperty;
+  alignContent?: CSS.Property.AlignContent;
   /**
    * style prop, for inline styles */
   style?: React.CSSProperties;

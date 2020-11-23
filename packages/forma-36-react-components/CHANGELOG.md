@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.67.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.67.3...@contentful/forma-36-react-components@3.67.4) (2020-11-23)
+
+
+### Bug Fixes
+
+* **deps:** update React types and fix csstype errors ([ad25008](https://github.com/contentful/forma-36/commit/ad2500835da5f2225e2c598d999437b37e37222b))
+
+
+
+
+
+## [3.67.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.67.2...@contentful/forma-36-react-components@3.67.3) (2020-11-20)
+
+
+### Bug Fixes
+
+* **grid:** GapTypes typos ([#644](https://github.com/contentful/forma-36/issues/644)) ([ceafea9](https://github.com/contentful/forma-36/commit/ceafea9f29e13813a7c92984c4a4fd260eb6c744))
+
+
+
+
+
+## [3.67.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.67.1...@contentful/forma-36-react-components@3.67.2) (2020-11-20)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
 ## [3.67.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.67.0...@contentful/forma-36-react-components@3.67.1) (2020-11-18)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
