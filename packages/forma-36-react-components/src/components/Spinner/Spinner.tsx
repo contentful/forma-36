@@ -4,25 +4,34 @@ import cn from 'classnames';
 import styles from './Spinner.css';
 
 export interface SpinnerProps {
+  /**
+   * Class names to be appended to the className prop of the component
+   */
   className?: string;
+  /**
+   * The color that will be used in the `fill` property of the SVG
+   */
   color?: 'default' | 'primary' | 'white';
+  /**
+   * Allows resizing the spinner with any N value. The final size will be NxN pixels
+   */
   customSize?: number;
+  /**
+   * Controls the size of the spinner. The `default` size is 20px wide, the `small` size is 14px wide, and the `large` size is 36px wide
+   */
   size?: 'default' | 'small' | 'large';
+  /**
+   * An ID used for testing purposes applied as a data attribute (data-test-id)
+   */
   testId?: string;
 }
 
-const defaultProps: Partial<SpinnerProps> = {
-  testId: 'cf-ui-spinner',
-  size: 'default',
-  color: 'default',
-};
-
 export const Spinner = ({
   className,
-  color,
+  color = 'default',
   customSize,
-  size,
-  testId,
+  size = 'default',
+  testId = 'cf-ui-spinner',
   ...otherProps
 }: SpinnerProps) => {
   const classNames = cn(styles.Spinner, className, {
@@ -41,6 +50,7 @@ export const Spinner = ({
           ? { height: `${customSize}px`, width: `${customSize}px` }
           : {}
       }
+      data-test-id={testId}
       {...otherProps}
     >
       <g
@@ -72,6 +82,5 @@ export const Spinner = ({
     </svg>
   );
 };
-Spinner.defaultProps = defaultProps;
 
 export default Spinner;
