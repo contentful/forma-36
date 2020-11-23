@@ -41,7 +41,7 @@ import { Flex, Button, TextLink, Paragraph } from '@contenful/forma-36-react-com
 Margins and padding for Flex component are based on our [spacing system](https://f36.contentful.com/foundation/spacing/).
 Here is an overview of spacings that are availeble:
 
-`spacing2xs` | `spacingXs` | `spacingXs` | `spacingS` | `spacingM` | `spacingL` | `spacingXl` | `spacing2Xl` | `spacing3Xl` | `spacing4Xl`
+`spacing2Xs` | `spacingXs` | `spacingXs` | `spacingS` | `spacingM` | `spacingL` | `spacingXl` | `spacing2Xl` | `spacing3Xl` | `spacing4Xl`
 
 Flex, as any other element, can get margin value, which will be added evenly to all of it's sides or more specific instructions like margin-top or margin-right. those 2 can not be added at the same time - they will overwrite itself. That's why, please remember to not use them together:
 

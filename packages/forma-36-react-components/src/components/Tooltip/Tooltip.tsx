@@ -8,8 +8,8 @@ import React, {
 } from 'react';
 import { usePopper } from 'react-popper';
 import { Placement } from '@popperjs/core';
-import * as CSS from 'csstype';
 import cn from 'classnames';
+import type * as CSS from 'csstype';
 
 import styles from './Tooltip.css';
 import tokens from '@contentful/forma-36-tokens';
@@ -39,9 +39,13 @@ export interface TooltipProps {
    */
   isVisible?: boolean;
   /**
+   * It controls whether or not the tooltip stays open when hovering on the content
+   */
+  closeOnMouseLeave?: boolean;
+  /**
    * It sets a max-width for the Tooltip
    */
-  maxWidth?: number | CSS.MaxWidthProperty<string>;
+  maxWidth?: number | CSS.Property.MaxWidth;
   /**
    * Function that will be called when target gets blurred
    */
@@ -84,6 +88,7 @@ export const Tooltip = ({
   content,
   id,
   isVisible,
+  closeOnMouseLeave,
   maxWidth,
   onBlur,
   onFocus,
@@ -135,6 +140,18 @@ export const Tooltip = ({
     }
   }, [attributes.popper]);
 
+  const [isHoveringTarget, setIsHoveringTarget] = useState(false)
+  const [isHoveringContent, setIsHoveringContent] = useState(false)
+  useEffect(() => {
+    if (closeOnMouseLeave) {
+      setShow(isHoveringTarget)
+    } else {
+      setShow(isHoveringContent || isHoveringTarget)
+    }
+  }, [closeOnMouseLeave, isHoveringTarget, isHoveringContent])
+
+  const delay = closeOnMouseLeave ? 0 : 1000;
+
   const arrowStyles = {
     ...popperStyles.arrow,
     ...arrowPosition,
@@ -164,19 +181,19 @@ export const Tooltip = ({
         ref={elementRef}
         className={targetWrapperClassName}
         onMouseEnter={(evt: MouseEvent) => {
-          setShow(true);
+          setIsHoveringTarget(true);
           if (onMouseOver) onMouseOver(evt);
         }}
         onMouseLeave={(evt: MouseEvent) => {
-          setShow(false);
+          setTimeout(() => setIsHoveringTarget(false), delay);
           if (onMouseLeave) onMouseLeave(evt);
-        }}
+      }}
         onFocus={(evt: FocusEvent) => {
-          setShow(true);
+          setIsHoveringTarget(true);
           if (onFocus) onFocus(evt);
         }}
         onBlur={(evt: FocusEvent) => {
-          setShow(false);
+          setTimeout(() => setIsHoveringTarget(false), delay);
           if (onBlur) onBlur(evt);
         }}
         {...otherProps}
@@ -195,6 +212,12 @@ export const Tooltip = ({
             [styles['Tooltip--hidden']]: !show,
           })}
           data-test-id={testId}
+          onMouseEnter={() => {
+            setIsHoveringContent(true)
+          }}
+          onMouseLeave={() => {
+            setIsHoveringContent(false)
+          }}
           {...attributes.popper}
         >
           {content}
@@ -211,6 +234,7 @@ export const Tooltip = ({
 Tooltip.defaultProps = {
   containerElement: 'span',
   isVisible: false,
+  closeOnMouseLeave: true,
   maxWidth: 360,
   testId: 'cf-ui-tooltip',
   place: 'auto',

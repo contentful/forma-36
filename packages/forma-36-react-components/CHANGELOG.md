@@ -3,6 +3,93 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.67.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.67.4...@contentful/forma-36-react-components@3.67.5) (2020-11-23)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+## [3.67.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.67.3...@contentful/forma-36-react-components@3.67.4) (2020-11-23)
+
+
+### Bug Fixes
+
+* **deps:** update React types and fix csstype errors ([ad25008](https://github.com/contentful/forma-36/commit/ad2500835da5f2225e2c598d999437b37e37222b))
+
+
+
+
+
+## [3.67.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.67.2...@contentful/forma-36-react-components@3.67.3) (2020-11-20)
+
+
+### Bug Fixes
+
+* **grid:** GapTypes typos ([#644](https://github.com/contentful/forma-36/issues/644)) ([ceafea9](https://github.com/contentful/forma-36/commit/ceafea9f29e13813a7c92984c4a4fd260eb6c744))
+
+
+
+
+
+## [3.67.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.67.1...@contentful/forma-36-react-components@3.67.2) (2020-11-20)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+## [3.67.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.67.0...@contentful/forma-36-react-components@3.67.1) (2020-11-18)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+# [3.67.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.66.1...@contentful/forma-36-react-components@3.67.0) (2020-11-17)
+
+
+### Features
+
+* **tooltip:** make the tooltip stay open when hovering on the content ([3edc0a0](https://github.com/contentful/forma-36/commit/3edc0a08b3bb8fea75cf47f78b5d441f96951aaa))
+
+
+
+
+
+## [3.66.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.66.0...@contentful/forma-36-react-components@3.66.1) (2020-11-16)
+
+
+### Bug Fixes
+
+* **DropdownListItem:** render children directly ([#643](https://github.com/contentful/forma-36/issues/643)) ([951946d](https://github.com/contentful/forma-36/commit/951946d76cf499d051e5009aa63fc29747e4f645))
+
+
+
+
+
+# [3.66.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.65.3...@contentful/forma-36-react-components@3.66.0) (2020-11-16)
+
+
+### Features
+
+* **text-link:** remove underline from link and add new story ([#637](https://github.com/contentful/forma-36/issues/637)) ([4827170](https://github.com/contentful/forma-36/commit/482717095fd0caf1da5de0c38e06c7a5305d0a69))
+
+
+
+
+
+## [3.65.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.65.2...@contentful/forma-36-react-components@3.65.3) (2020-11-14)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
 ## [3.65.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.65.1...@contentful/forma-36-react-components@3.65.2) (2020-11-13)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components

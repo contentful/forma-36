@@ -26,14 +26,14 @@ export interface SpinnerProps {
   testId?: string;
 }
 
-export const Spinner = ({
+export function Spinner({
   className,
   color = 'default',
   customSize,
   size = 'default',
   testId = 'cf-ui-spinner',
   ...otherProps
-}: SpinnerProps) => {
+}: SpinnerProps): React.ReactElement {
   const classNames = cn(styles.Spinner, className, {
     [styles[`Spinner--${size}`]]: size,
     [styles[`Spinner--${color}`]]: color,
@@ -42,7 +42,6 @@ export const Spinner = ({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      xmlnsXlink="http://www.w3.org/1999/xlink"
       viewBox="0 0 60 51"
       className={classNames}
       style={
@@ -81,6 +80,6 @@ export const Spinner = ({
       </g>
     </svg>
   );
-};
+}
 
 export default Spinner;
