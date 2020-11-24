@@ -132,6 +132,7 @@
     "lint": "yarn eslint",
     "add-component": "yarn generate component",
     "add-documentation": "yarn generate documentation",
+    "add-readme": "yarn generate README",
     "prepublishOnly": "yarn lint && yarn test && yarn build",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
