@@ -51,9 +51,9 @@ module.exports = plop => {
       {
         type: 'add',
         path: path.resolve(
-          './src/components/{{pascalCase name}}/{{pascalCase name}}.md',
+          './src/components/{{pascalCase name}}/README.mdx',
         ),
-        templateFile: 'plop-templates/components/notes.md.hbs',
+        templateFile: 'plop-templates/components/readme.mdx.hbs',
       },
       {
         type: 'modify',
@@ -62,6 +62,30 @@ module.exports = plop => {
         template: `export { {{pascalCase name}} } from './components/{{pascalCase name}}/{{pascalCase name}}';\r\n$1`,
       },
     ],
+  });
+
+  plop.setGenerator('README', {
+    description: 'Add a new README file',
+    prompts: [
+      {
+        type: 'input',
+        name: 'name',
+        message: 'What is the name of your component that you like to add README to?',
+        validate(value) {
+          if (typeof value === 'string' && value.length > 0) return true;
+          return 'name is required';
+        },
+      },
+    ],
+    actions: [
+      {
+        type: 'add',
+        path: path.resolve(
+          './src/components/{{pascalCase name}}/README.mdx',
+        ),
+        templateFile: 'plop-templates/components/readme.mdx.hbs',
+      }
+    ]
   });
 
   plop.setGenerator('documentation', {
@@ -81,7 +105,7 @@ module.exports = plop => {
       {
         type: 'add',
         path: path.resolve(
-          './tools/.storybook/docs/{{pascalCase name}}/{{pascalCase name}}.md',
+          './tools/.storybook/docs/{{pascalCase name}}/{{pascalCase name}}.mdx',
         ),
         templateFile: 'plop-templates/documentation/documentation.md.hbs',
       },

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.67.7](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.67.6...@contentful/forma-36-react-components@3.67.7) (2020-11-24)
+
+
+### Bug Fixes
+
+* improve README around docs and refresh plop templates ([#656](https://github.com/contentful/forma-36/issues/656)) ([49b10ee](https://github.com/contentful/forma-36/commit/49b10eea2f67af536c9c124c5e8c76d637c48579))
+
+
+
+
+
 ## [3.67.6](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.67.5...@contentful/forma-36-react-components@3.67.6) (2020-11-23)
 
 

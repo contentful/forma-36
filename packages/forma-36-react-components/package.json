@@ -1,7 +1,7 @@
 {
   "name": "@contentful/forma-36-react-components",
   "description": "Contentful UI Component Library",
-  "version": "3.67.6",
+  "version": "3.67.7",
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
   "style": "dist/styles.css",
@@ -132,6 +132,7 @@
     "lint": "yarn eslint",
     "add-component": "yarn generate component",
     "add-documentation": "yarn generate documentation",
+    "add-readme": "yarn generate README",
     "prepublishOnly": "yarn lint && yarn test && yarn build",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
