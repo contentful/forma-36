@@ -2,9 +2,9 @@ import React from 'react';
 
 import DateTime, { DateTimeProps } from './DateTime';
 
-const exampleDate = '2020-08-13T13:45:56.0123Z';
-
 import notes from '../README.md';
+
+const exampleDate = '2020-08-13T13:45:56.0123Z';
 
 export default {
   title: 'Components/DateTime/DateTime',

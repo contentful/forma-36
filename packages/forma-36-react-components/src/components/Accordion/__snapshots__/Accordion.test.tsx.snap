@@ -23,8 +23,9 @@ exports[`renders the component 1`] = `
         <svg
           class="Icon Icon--small Icon--secondary Icon--trimmed AccordionHeader__icon"
           data-test-id="cf-ui-icon"
+          height="1em"
           viewBox="0 0 9 18"
-          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
         >
           <path
             d="M1.1 5.9l3.4 3.4 3.4-3.4 1.1 1-4.5 4.5L0 6.9l1.1-1z"
@@ -73,8 +74,9 @@ exports[`renders the component with an additional class name 1`] = `
         <svg
           class="Icon Icon--small Icon--secondary Icon--trimmed AccordionHeader__icon"
           data-test-id="cf-ui-icon"
+          height="1em"
           viewBox="0 0 9 18"
-          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
         >
           <path
             d="M1.1 5.9l3.4 3.4 3.4-3.4 1.1 1-4.5 4.5L0 6.9l1.1-1z"
@@ -123,8 +125,9 @@ exports[`renders the component with chevron on the left 1`] = `
         <svg
           class="Icon Icon--small Icon--secondary Icon--trimmed AccordionHeader__icon"
           data-test-id="cf-ui-icon"
+          height="1em"
           viewBox="0 0 9 18"
-          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
         >
           <path
             d="M1.1 5.9l3.4 3.4 3.4-3.4 1.1 1-4.5 4.5L0 6.9l1.1-1z"

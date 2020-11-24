@@ -192,7 +192,7 @@ export const Autocomplete = <T extends {}>({
       <div className={styles.autocompleteInput}>
         <TextInput
           value={toggleProps.query}
-          onChange={e => toggleProps.onChange(e.target.value)}
+          onChange={(e) => toggleProps.onChange(e.target.value)}
           onFocus={toggleProps.onFocus}
           onKeyDown={toggleProps.onKeyDown}
           disabled={toggleProps.disabled}
@@ -228,21 +228,28 @@ export const Autocomplete = <T extends {}>({
     onToggle: handleInputButtonClick,
     inputRef: inputRef as React.RefObject<HTMLInputElement>,
   };
-  const { nonClosingRefs, ...otherDropdownProps } = dropdownProps ?? {};
+  let nonClosingRefs: DropdownProps['nonClosingRefs'] = [];
+
+  if (dropdownProps && dropdownProps.nonClosingRefs) {
+    nonClosingRefs = dropdownProps.nonClosingRefs;
+
+    delete dropdownProps.nonClosingRefs;
+  }
+
   const renderToggleElementFunction =
     renderToggleElement || renderDefaultToggleElement;
 
   return (
     <Dropdown
-      nonClosingRefs={[inputRef, ...(nonClosingRefs || [])]}
+      nonClosingRefs={[inputRef, ...nonClosingRefs]}
       className={dropdownClassNames}
-      isOpen={isOpen}
       onClose={() => {
         willClearQueryOnClose && updateQuery('');
         dispatch({ type: TOGGLED_LIST, payload: false });
       }}
       toggleElement={renderToggleElementFunction(toggleProps)}
-      {...otherDropdownProps}
+      {...dropdownProps}
+      isOpen={isOpen}
     >
       <DropdownList testId="autocomplete.dropdown-list" maxHeight={maxHeight}>
         <div ref={listRef as React.RefObject<HTMLDivElement>}>

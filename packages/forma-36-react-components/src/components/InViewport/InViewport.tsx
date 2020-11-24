@@ -114,7 +114,7 @@ export class InViewport extends Component<InViewportProps> {
 
     return (
       <div
-        ref={(ref) => {
+        ref={ref => {
           this.nodeRef = ref;
         }}
         className={classNames}

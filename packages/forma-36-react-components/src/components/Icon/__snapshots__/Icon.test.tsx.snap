@@ -4,10 +4,9 @@ exports[`renders a large icon 1`] = `
 <svg
   class="Icon Icon--large Icon--primary"
   data-test-id="cf-ui-icon"
-  height="24"
+  height="1em"
   viewBox="0 0 24 24"
-  width="24"
-  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
 >
   <path
     d="M7 10l5 5 5-5z"
@@ -23,10 +22,9 @@ exports[`renders as a "muted" icon 1`] = `
 <svg
   class="Icon Icon--large Icon--muted"
   data-test-id="cf-ui-icon"
-  height="24"
+  height="1em"
   viewBox="0 0 24 24"
-  width="24"
-  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
 >
   <path
     d="M7 10l5 5 5-5z"
@@ -42,10 +40,9 @@ exports[`renders as a "negative" icon 1`] = `
 <svg
   class="Icon Icon--large Icon--negative"
   data-test-id="cf-ui-icon"
-  height="24"
+  height="1em"
   viewBox="0 0 24 24"
-  width="24"
-  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
 >
   <path
     d="M7 10l5 5 5-5z"
@@ -61,10 +58,9 @@ exports[`renders as a "positive" icon 1`] = `
 <svg
   class="Icon Icon--large Icon--positive"
   data-test-id="cf-ui-icon"
-  height="24"
+  height="1em"
   viewBox="0 0 24 24"
-  width="24"
-  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
 >
   <path
     d="M7 10l5 5 5-5z"
@@ -80,10 +76,9 @@ exports[`renders as a "primary" icon 1`] = `
 <svg
   class="Icon Icon--large Icon--primary"
   data-test-id="cf-ui-icon"
-  height="24"
+  height="1em"
   viewBox="0 0 24 24"
-  width="24"
-  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
 >
   <path
     d="M7 10l5 5 5-5z"
@@ -99,10 +94,9 @@ exports[`renders as a "secondary" icon 1`] = `
 <svg
   class="Icon Icon--large Icon--secondary"
   data-test-id="cf-ui-icon"
-  height="24"
+  height="1em"
   viewBox="0 0 24 24"
-  width="24"
-  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
 >
   <path
     d="M7 10l5 5 5-5z"
@@ -118,10 +112,9 @@ exports[`renders as a "warning" icon 1`] = `
 <svg
   class="Icon Icon--large Icon--warning"
   data-test-id="cf-ui-icon"
-  height="24"
+  height="1em"
   viewBox="0 0 24 24"
-  width="24"
-  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
 >
   <path
     d="M7 10l5 5 5-5z"
@@ -137,10 +130,9 @@ exports[`renders as a "white" icon 1`] = `
 <svg
   class="Icon Icon--large Icon--white"
   data-test-id="cf-ui-icon"
-  height="24"
+  height="1em"
   viewBox="0 0 24 24"
-  width="24"
-  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
 >
   <path
     d="M7 10l5 5 5-5z"
@@ -156,10 +148,9 @@ exports[`renders the component 1`] = `
 <svg
   class="Icon Icon--small Icon--primary"
   data-test-id="cf-ui-icon"
-  height="24"
+  height="1em"
   viewBox="0 0 24 24"
-  width="24"
-  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
 >
   <path
     d="M7 10l5 5 5-5z"
@@ -175,10 +166,9 @@ exports[`renders the component with an additional class name 1`] = `
 <svg
   class="Icon Icon--small Icon--primary my-extra-class"
   data-test-id="cf-ui-icon"
-  height="24"
+  height="1em"
   viewBox="0 0 24 24"
-  width="24"
-  xmlns="http://www.w3.org/2000/svg"
+  width="1em"
 >
   <path
     d="M7 10l5 5 5-5z"

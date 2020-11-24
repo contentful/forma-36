@@ -36,10 +36,9 @@ exports[`renders the component 1`] = `
     <svg
       class="Icon Icon--small Icon--muted Select__icon"
       data-test-id="cf-ui-icon"
-      height="24"
+      height="1em"
       viewBox="0 0 24 24"
-      width="24"
-      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
     >
       <path
         d="M7 10l5 5 5-5z"
@@ -90,10 +89,9 @@ exports[`renders the component as disabled 1`] = `
     <svg
       class="Icon Icon--small Icon--muted Select__icon"
       data-test-id="cf-ui-icon"
-      height="24"
+      height="1em"
       viewBox="0 0 24 24"
-      width="24"
-      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
     >
       <path
         d="M7 10l5 5 5-5z"
@@ -143,10 +141,9 @@ exports[`renders the component as required 1`] = `
     <svg
       class="Icon Icon--small Icon--muted Select__icon"
       data-test-id="cf-ui-icon"
-      height="24"
+      height="1em"
       viewBox="0 0 24 24"
-      width="24"
-      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
     >
       <path
         d="M7 10l5 5 5-5z"
@@ -196,10 +193,9 @@ exports[`renders the component with a help text 1`] = `
     <svg
       class="Icon Icon--small Icon--muted Select__icon"
       data-test-id="cf-ui-icon"
-      height="24"
+      height="1em"
       viewBox="0 0 24 24"
-      width="24"
-      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
     >
       <path
         d="M7 10l5 5 5-5z"
@@ -259,10 +255,9 @@ exports[`renders the component with a validation message 1`] = `
     <svg
       class="Icon Icon--small Icon--muted Select__icon"
       data-test-id="cf-ui-icon"
-      height="24"
+      height="1em"
       viewBox="0 0 24 24"
-      width="24"
-      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
     >
       <path
         d="M7 10l5 5 5-5z"
@@ -280,10 +275,9 @@ exports[`renders the component with a validation message 1`] = `
     <svg
       class="Icon Icon--small Icon--negative ValidationMessage__icon"
       data-test-id="cf-ui-icon"
-      height="18"
+      height="1em"
       viewBox="0 0 24 24"
-      width="18"
-      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
     >
       <path
         d="M0 0h24v24H0z"
@@ -338,10 +332,9 @@ exports[`renders the component with a value 1`] = `
     <svg
       class="Icon Icon--small Icon--muted Select__icon"
       data-test-id="cf-ui-icon"
-      height="24"
+      height="1em"
       viewBox="0 0 24 24"
-      width="24"
-      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
     >
       <path
         d="M7 10l5 5 5-5z"

@@ -13,10 +13,9 @@ exports[`allows passing additional props not consumed by the component 1`] = `
     <svg
       class="Icon Icon--small Icon--primary IconButton__icon"
       data-test-id="cf-ui-icon"
-      height="24"
+      height="1em"
       viewBox="0 0 24 24"
-      width="24"
-      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
     >
       <path
         d="M7 10l5 5 5-5z"
@@ -48,10 +47,9 @@ exports[`calls an onClick function 1`] = `
     <svg
       class="Icon Icon--small Icon--primary IconButton__icon"
       data-test-id="cf-ui-icon"
-      height="24"
+      height="1em"
       viewBox="0 0 24 24"
-      width="24"
-      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
     >
       <path
         d="M7 10l5 5 5-5z"
@@ -84,10 +82,9 @@ exports[`prevents an onClick function from being called when disabled 1`] = `
     <svg
       class="Icon Icon--small Icon--primary IconButton__icon"
       data-test-id="cf-ui-icon"
-      height="24"
+      height="1em"
       viewBox="0 0 24 24"
-      width="24"
-      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
     >
       <path
         d="M7 10l5 5 5-5z"
@@ -119,10 +116,9 @@ exports[`renders as a "muted" link type 1`] = `
     <svg
       class="Icon Icon--small Icon--primary IconButton__icon"
       data-test-id="cf-ui-icon"
-      height="24"
+      height="1em"
       viewBox="0 0 24 24"
-      width="24"
-      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
     >
       <path
         d="M7 10l5 5 5-5z"
@@ -154,10 +150,9 @@ exports[`renders as a "negative" link type 1`] = `
     <svg
       class="Icon Icon--small Icon--primary IconButton__icon"
       data-test-id="cf-ui-icon"
-      height="24"
+      height="1em"
       viewBox="0 0 24 24"
-      width="24"
-      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
     >
       <path
         d="M7 10l5 5 5-5z"
@@ -189,10 +184,9 @@ exports[`renders as a "positive" link type 1`] = `
     <svg
       class="Icon Icon--small Icon--primary IconButton__icon"
       data-test-id="cf-ui-icon"
-      height="24"
+      height="1em"
       viewBox="0 0 24 24"
-      width="24"
-      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
     >
       <path
         d="M7 10l5 5 5-5z"
@@ -224,10 +218,9 @@ exports[`renders as a "primary" link type 1`] = `
     <svg
       class="Icon Icon--small Icon--primary IconButton__icon"
       data-test-id="cf-ui-icon"
-      height="24"
+      height="1em"
       viewBox="0 0 24 24"
-      width="24"
-      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
     >
       <path
         d="M7 10l5 5 5-5z"
@@ -259,10 +252,9 @@ exports[`renders as a "secondary" link type 1`] = `
     <svg
       class="Icon Icon--small Icon--primary IconButton__icon"
       data-test-id="cf-ui-icon"
-      height="24"
+      height="1em"
       viewBox="0 0 24 24"
-      width="24"
-      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
     >
       <path
         d="M7 10l5 5 5-5z"
@@ -304,10 +296,9 @@ exports[`renders the component 1`] = `
     <svg
       class="Icon Icon--small Icon--primary IconButton__icon"
       data-test-id="cf-ui-icon"
-      height="24"
+      height="1em"
       viewBox="0 0 24 24"
-      width="24"
-      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
     >
       <path
         d="M7 10l5 5 5-5z"
@@ -339,10 +330,9 @@ exports[`renders the component with an additional class name 1`] = `
     <svg
       class="Icon Icon--small Icon--primary IconButton__icon"
       data-test-id="cf-ui-icon"
-      height="24"
+      height="1em"
       viewBox="0 0 24 24"
-      width="24"
-      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
     >
       <path
         d="M7 10l5 5 5-5z"
@@ -374,10 +364,9 @@ exports[`renders with a dropdown indicator 1`] = `
     <svg
       class="Icon Icon--small Icon--primary IconButton__icon"
       data-test-id="cf-ui-icon"
-      height="24"
+      height="1em"
       viewBox="0 0 24 24"
-      width="24"
-      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
     >
       <path
         d="M7 10l5 5 5-5z"
@@ -395,10 +384,9 @@ exports[`renders with a dropdown indicator 1`] = `
     <svg
       class="Icon Icon--small Icon--secondary IconButton__dropdown"
       data-test-id="cf-ui-icon"
-      height="18"
+      height="1em"
       viewBox="0 0 24 24"
-      width="18"
-      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
     >
       <path
         d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"

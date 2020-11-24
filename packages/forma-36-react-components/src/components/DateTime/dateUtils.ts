@@ -21,7 +21,10 @@ export type DateTimeFormat = keyof typeof formatTokens;
  * > formatDateTime(date, 'DATE_ONLY')
  * 13 Aug 2019
  */
-export const formatDateTime = (date: CoercibleDate, token: DateTimeFormat = 'FULL'): string => {
+export const formatDateTime = (
+  date: CoercibleDate,
+  token: DateTimeFormat = 'FULL',
+): string => {
   if (!formatTokens[token]) {
     throw new TypeError(`Unknown date format '${token}'`);
   }
@@ -55,6 +58,9 @@ export const formatWeekdayDate = (date: CoercibleDate): string => {
   return formatDateTime(date, 'WEEKDAY_DATE');
 };
 
-export const formatRelativeDateTime = (date: CoercibleDate, baseDate: CoercibleDate = new Date()): string => {
+export const formatRelativeDateTime = (
+  date: CoercibleDate,
+  baseDate: CoercibleDate = new Date(),
+): string => {
   return dayjs(date).from(baseDate);
 };

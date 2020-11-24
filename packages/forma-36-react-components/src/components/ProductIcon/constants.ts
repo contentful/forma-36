@@ -21,6 +21,14 @@ export const productIconName = {
   UserProfile: 'UserProfile',
 };
 
-export const productIconSize = ['small' , 'medium' , 'large' , 'xlarge']
-export const productIconColor = ['primary', 'positive', 'negative', 'warning', 'secondary', 'muted', 'white']
-export const productIconTag = ['div' , 'span']
+export const productIconSize = ['small', 'medium', 'large', 'xlarge'];
+export const productIconColor = [
+  'primary',
+  'positive',
+  'negative',
+  'warning',
+  'secondary',
+  'muted',
+  'white',
+];
+export const productIconTag = ['div', 'span'];
