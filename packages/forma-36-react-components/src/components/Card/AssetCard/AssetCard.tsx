@@ -36,7 +36,7 @@ export interface AssetCardProps extends BaseCardProps {
   /**
    * An icon for the status of the entry
    */
-  statusIcon?: React.ReactNode;
+  statusIcon?: React.ReactNode | IconType;
   /**
    * The type of asset being represented
    */

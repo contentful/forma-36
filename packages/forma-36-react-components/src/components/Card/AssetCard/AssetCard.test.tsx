@@ -128,27 +128,27 @@ it('has no a11y issues', async () => {
 });
 
 it('renders a component with a status icon', async () => {
-  const output = mount(
+  const { container } = render(
     <AssetCard
       src="http://placekitten.com/200/300"
       title="picture of a cat"
       statusIcon="Clock"
     />,
-  ).html();
-  const results = await axe(output);
+  );
+  const results = await axe(container);
 
-  expect(results).toMatchSnapshot();
+  expect(results).toHaveNoViolations();
 });
 
 it('renders a component with a custom status icon', async () => {
-  const output = mount(
+  const { container } = render(
     <AssetCard
       src="http://placekitten.com/200/300"
       title="picture of a cat"
       statusIcon={<Icon icon="Calendar" />}
     />,
-  ).html();
-  const results = await axe(output);
+  );
+  const results = await axe(container);
 
-  expect(results).toMatchSnapshot();
+  expect(results).toHaveNoViolations();
 });
