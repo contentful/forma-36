@@ -17,9 +17,5 @@ export default {
 };
 
 export const basic = (args: {{pascalCase name}}Props) => (
-  <{{pascalCase name}}
-      testId={args.testId}
-    />
+  <{{pascalCase name}} {...args} />
 );
-
-basic.args = { testId: 'testId' };
