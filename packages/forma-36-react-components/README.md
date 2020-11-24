@@ -126,6 +126,7 @@ Here is the example output of running the `yarn add-component` command:
 [SUCCESS] add /src/components/Button/Button.css
 [SUCCESS] add /src/components/Button/Button.test.js
 [SUCCESS] add /src/components/Button/Button.stories.js
+[SUCCESS] add /src/components/Button/README.mdx
 [SUCCESS] modify /src/index.js
 [SUCCESS] modify /src/index.js
 ```
@@ -141,6 +142,19 @@ Here is the example output of running the `yarn add-documentation` command:
 [SUCCESS] add /.storybook/docs/General/General.md
 [SUCCESS] add /.storybook/docs/General/General.stories.js
 ```
+
+### Adding documentation for component
+
+We would like to make sure that every component contains a README file with recommendations and guidelines. Using `yarn add-readme` it will generate a template README file for you for the component that you specify. Follow steps in the CLI to create new README.
+Make sure that your documentation for the component contains following parts:
+
+1. A short summary of the component.
+2. Variations/types - try to provide the overview of the components variants.
+3. Example of usage - try to add couple of examples, that includes import
+4. Content recommendations - notes about best practices when it comes to the content used in the component, like message or title
+5. Best practices - try to describe in couple of points when to use the component
+6. Accessibility - If possible, we strongly recommend providing accessibility guidelines.
+
 
 ## Testing
 
