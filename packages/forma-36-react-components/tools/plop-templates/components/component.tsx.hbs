@@ -18,7 +18,11 @@ export interface {{pascalCase name}}Props {
   testId?: string;
 };
 
-export function {{pascalCase name}}({className, children, testId = 'cf-ui-{{kebabCase name}}', ...otherProps}: {{pascalCase name}}Props) {
+const defaultProps: Partial<{{pascalCase name}}Props> = {
+  testId: 'cf-ui-{{kebabCase name}}',
+};
+
+export function {{pascalCase name}}({className, children, testId, ...otherProps}: {{pascalCase name}}Props) {
   const classNames = cn(styles.{{pascalCase name}}, className);
 
   return (
