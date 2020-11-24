@@ -2,7 +2,7 @@ import React from 'react';
 
 import TextLink from './TextLink';
 import Paragraph from '../Typography/Paragraph';
-import notes from './README.md';
+import notes from './README.mdx';
 
 export default {
   title: 'Components/TextLink',

@@ -4,7 +4,7 @@ import Accordion, { AccordionProps } from './Accordion';
 import AccordionItem from './AccordionItem';
 import Typography from '../Typography/Typography';
 import Paragraph from '../Typography/Paragraph';
-import notes from './README.md';
+import notes from './README.mdx';
 
 export default {
   title: '(alpha)/Accordion',

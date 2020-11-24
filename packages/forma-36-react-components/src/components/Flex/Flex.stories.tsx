@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { boolean, number, select } from '@storybook/addon-knobs';
 import tokens from '@contentful/forma-36-tokens';
 import Flex from './Flex';
-import notes from './README.md';
+import notes from './README.mdx';
 
 const flexKnobsId = 'Flex Props';
 const spacingValues = [
