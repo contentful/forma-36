@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.68.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.67.9...@contentful/forma-36-react-components@3.68.0) (2020-11-25)
+
+
+### Features
+
+* add support for status icon for an asset card ([#622](https://github.com/contentful/forma-36/issues/622)) ([02a8887](https://github.com/contentful/forma-36/commit/02a8887c51c405cf77b651f481aaaeefa5b8f9c6))
+
+
+
+
+
 ## [3.67.9](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.67.8...@contentful/forma-36-react-components@3.67.9) (2020-11-25)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components

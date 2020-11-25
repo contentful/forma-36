@@ -465,9 +465,8 @@ exports[`renders the component with status 1`] = `
       class="AssetCard__header"
     >
       <div
-        class="Tag Tag--negative"
+        class="Tag AssetCard__status Tag--negative"
         data-test-id="cf-ui-tag"
-        style="margin-left: auto;"
       >
         archived
       </div>
