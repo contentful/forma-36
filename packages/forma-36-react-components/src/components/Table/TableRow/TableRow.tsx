@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
+import React, { HTMLProps } from 'react';
 import cn from 'classnames';
 
 import styles from './TableRow.css';
 
-export interface TableRowProps {
+export interface TableRowProps extends HTMLProps<HTMLTableRowElement> {
   className?: string;
-  style?: React.CSSProperties;
   testId?: string;
   children: React.ReactNode;
 }
@@ -14,22 +13,20 @@ const defaultProps: Partial<TableRowProps> = {
   testId: 'cf-ui-table-row',
 };
 
-export class TableRow extends Component<TableRowProps> {
-  static defaultProps = defaultProps;
+const TableRow = (props: TableRowProps) => {
+  const { className, children, testId, ...otherProps } = props;
 
-  render() {
-    const { className, children, testId, ...otherProps } = this.props;
+  return (
+    <tr
+      className={cn(styles['TableRow'], className)}
+      data-test-id={testId}
+      {...otherProps}
+    >
+      {children}
+    </tr>
+  );
+};
 
-    return (
-      <tr
-        className={cn(styles['TableRow'], className)}
-        data-test-id={testId}
-        {...otherProps}
-      >
-        {children}
-      </tr>
-    );
-  }
-}
+TableRow.defaultProps = defaultProps;
 
 export default TableRow;
