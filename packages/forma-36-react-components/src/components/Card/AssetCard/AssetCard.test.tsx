@@ -6,6 +6,7 @@ import AssetCard from './AssetCard';
 import DropdownList from '../../Dropdown/DropdownList';
 import DropdownListItem from '../../Dropdown/DropdownListItem';
 import CardDragHandle from './../CardDragHandle';
+import Icon from '../../Icon';
 
 it('renders the component', () => {
   const { container } = render(
@@ -120,6 +121,32 @@ it('renders a small variant of the component', () => {
 it('has no a11y issues', async () => {
   const { container } = render(
     <AssetCard src="http://placekitten.com/200/300" title="picture of a cat" />,
+  );
+  const results = await axe(container);
+
+  expect(results).toHaveNoViolations();
+});
+
+it('renders a component with a status icon', async () => {
+  const { container } = render(
+    <AssetCard
+      src="http://placekitten.com/200/300"
+      title="picture of a cat"
+      statusIcon="Clock"
+    />,
+  );
+  const results = await axe(container);
+
+  expect(results).toHaveNoViolations();
+});
+
+it('renders a component with a custom status icon', async () => {
+  const { container } = render(
+    <AssetCard
+      src="http://placekitten.com/200/300"
+      title="picture of a cat"
+      statusIcon={<Icon icon="Calendar" />}
+    />,
   );
   const results = await axe(container);
 
