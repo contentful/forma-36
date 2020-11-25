@@ -1,16 +1,21 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { text } from '@storybook/addon-knobs';
 
-import {{pascalCase name}} from './{{pascalCase name}}';
+import {{pascalCase name}}, { {{pascalCase name}}Props } from './{{pascalCase name}}';
+import notes from './README.mdx';
 
-storiesOf('Components/{{pascalCase name}}', module)
-.addParameters({
-propTypes: {{pascalCase name}}['__docgenInfo'],
-component: {{pascalCase name}},
-})
-.add('default', () => (
-<{{pascalCase name}} className={text('className', '' )}>
-  {{{pascalCase name}}}
-</{{pascalCase name}}>
-));
+
+export default {
+  title: 'Components/{{pascalCase name}}',
+  component: {{pascalCase name}},
+  parameters: {
+    propTypes: [{{pascalCase name}}['__docgenInfo']],
+    notes,
+  },
+  argTypes: {
+    testId: { control: { disable: true } },
+  },
+};
+
+export const basic = (args: {{pascalCase name}}Props) => (
+  <{{pascalCase name}} {...args} />
+);

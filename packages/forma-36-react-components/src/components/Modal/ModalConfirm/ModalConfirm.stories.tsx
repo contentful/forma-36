@@ -123,7 +123,7 @@ function ComplexStory() {
         </p>
         <TextInput
           value={repeat}
-          onChange={e => setRepeat((e.target as HTMLInputElement).value)}
+          onChange={(e) => setRepeat((e.target as HTMLInputElement).value)}
         />
       </ModalConfirm>
     </div>

@@ -1,0 +1,5 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["./"],
+  "exclude": ["dist", "dist-storybook", "node_modules"]
+}

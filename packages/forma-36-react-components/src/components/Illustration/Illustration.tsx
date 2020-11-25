@@ -2,17 +2,19 @@ import React, { Component } from 'react';
 import cn from 'classnames';
 import { illustrationName } from './constants';
 
-import Archive from './svg/Archive.svg';
-import Audio from './svg/Audio.svg';
-import Code from './svg/Code.svg';
-import Image from './svg/Image.svg';
-import Markup from './svg/Markup.svg';
-import Pdf from './svg/Pdf.svg';
-import Plaintext from './svg/Plaintext.svg';
-import Presentation from './svg/Presentation.svg';
-import Richtext from './svg/Richtext.svg';
-import Spreadsheet from './svg/Spreadsheet.svg';
-import Video from './svg/Video.svg';
+import {
+  Archive,
+  Audio,
+  Code,
+  Image,
+  Markup,
+  Pdf,
+  Plaintext,
+  Presentation,
+  Richtext,
+  Spreadsheet,
+  Video,
+} from './svg';
 
 import styles from './Illustration.css';
 

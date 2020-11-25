@@ -1,7 +1,12 @@
 import React from 'react';
 
-import ProductIcon, {ProductIconProps} from './ProductIcon';
-import { productIconName, productIconSize, productIconColor, productIconTag } from './constants';
+import ProductIcon, { ProductIconProps } from './ProductIcon';
+import {
+  productIconName,
+  productIconSize,
+  productIconColor,
+  productIconTag,
+} from './constants';
 import notes from './README.md';
 
 export default {
@@ -15,7 +20,7 @@ export default {
     icon: { control: { type: 'select', options: productIconName } },
     size: { control: { type: 'select', options: productIconSize } },
     color: { control: { type: 'select', options: productIconColor } },
-    tag:{ control: { type: 'select', options: productIconTag } },
+    tag: { control: { type: 'select', options: productIconTag } },
   },
 };
 
@@ -32,5 +37,5 @@ basic.args = {
   icon: 'Apis',
   size: 'large',
   color: 'positive',
-  tag: 'div'
+  tag: 'div',
 };

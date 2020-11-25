@@ -18,23 +18,16 @@ export interface {{pascalCase name}}Props {
   testId?: string;
 };
 
-const defaultProps: Partial<{{pascalCase name}}Props> = {
-  testId: 'cf-ui-{{kebabCase name}}',
-};
+export function {{pascalCase name}}({className, children, testId = 'cf-ui-{{kebabCase name}}', ...otherProps}: {{pascalCase name}}Props) {
+  const classNames = cn(styles.{{pascalCase name}}, className);
 
-export class {{pascalCase name}} extends Component<{{pascalCase name}}Props> {
-  static defaultProps = defaultProps;
-
-  render() {
-    const { className, children, testId, ...otherProps } = this.props;
-    const classNames = cn(styles.{{pascalCase name}}, className);
-
-    return (
-      <div {...otherProps} className={classNames} data-test-id={testId}>
-        {children}
-      </div>
-    );
-  }
+  return (
+    <div {...otherProps} className={classNames} data-test-id={testId}>
+      {children}
+    </div>
+  );
 }
+
+{{pascalCase name}}.defaultProps = defaultProps;
 
 export default {{pascalCase name}};

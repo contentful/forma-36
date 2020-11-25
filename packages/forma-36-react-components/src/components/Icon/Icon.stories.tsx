@@ -47,8 +47,8 @@ storiesOf('Components/Icon', module)
       }}
     >
       {Object.keys(iconName)
-        .filter(icon => !icon.toLowerCase().includes('trimmed'))
-        .map(icon => (
+        .filter((icon) => !icon.toLowerCase().includes('trimmed'))
+        .map((icon) => (
           <div
             key={icon}
             style={{ padding: '4px', fontSize: '14px', lineHeight: '21px' }}

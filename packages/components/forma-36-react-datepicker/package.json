@@ -1,6 +1,6 @@
 {
   "name": "@contentful/forma-36-react-datepicker",
-  "version": "0.3.1-alpha.100",
+  "version": "0.3.1-alpha.104",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/forma-36-react-datepicker.esm.js",
@@ -21,11 +21,6 @@
     "react": ">=16.8",
     "react-dom": ">=16.8"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
-  },
   "prettier": {
     "printWidth": 80,
     "semi": true,
@@ -33,16 +28,16 @@
     "trailingComma": "es5"
   },
   "devDependencies": {
-    "@contentful/forma-36-react-components": "^3.67.5",
-    "@testing-library/jest-dom": "^4.2.3",
-    "@testing-library/react": "^9.3.2",
-    "@types/jest": "^24.0.21",
+    "@contentful/forma-36-react-components": "^3.67.9",
+    "@testing-library/jest-dom": "5.11.6",
+    "@testing-library/react": "11.2.2",
+    "@types/jest": "25.2.3",
     "@types/pikaday": "^1.7.4",
     "date-fns": "^2.6.0",
-    "husky": "^3.0.9",
-    "tsdx": "^0.11.0",
-    "tslib": "^1.10.0",
-    "typescript": "^3.6.4"
+    "eslint-plugin-prettier": "^3.1.4",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.0.3",
+    "typescript": "3.9.7"
   },
   "dependencies": {
     "emotion": "^10.0.23",
