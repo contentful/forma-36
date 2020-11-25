@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ControlledInput, { ControlledInputPropTypes } from '../ControlledInput';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
@@ -12,13 +12,9 @@ const defaultProps: Partial<CheckboxProps> = {
   willBlurOnEsc: true,
 };
 
-export class Checkbox extends Component<CheckboxProps> {
-  static defaultProps = defaultProps;
-
-  render() {
-    return <ControlledInput {...this.props} />;
-  }
-}
+export const Checkbox = (props: CheckboxProps) => {
+  return <ControlledInput {...props} />;
+};
 
 Checkbox.defaultProps = defaultProps;
 

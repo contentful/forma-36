@@ -1,10 +1,13 @@
 import React, {
-  Component,
+  useState,
+  useEffect,
   KeyboardEvent,
   FocusEventHandler,
   ChangeEventHandler,
   KeyboardEventHandler,
   RefObject,
+  ChangeEvent,
+  useCallback,
 } from 'react';
 import cn from 'classnames';
 import styles from './Textarea.css';
@@ -44,87 +47,88 @@ const defaultProps: Partial<TextareaProps> = {
   willBlurOnEsc: true,
 };
 
-export class Textarea extends Component<TextareaProps, TextareaState> {
-  static defaultProps = defaultProps;
+export const Textarea = (props: TextareaProps) => {
+  const {
+    className,
+    testId,
+    placeholder,
+    maxLength,
+    onChange,
+    disabled,
+    required,
+    onBlur,
+    onKeyDown,
+    error,
+    width,
+    value,
+    name,
+    rows,
+    id,
+    willBlurOnEsc,
+    textareaRef,
+    ...otherProps
+  } = props;
+  const [valueState, setValueState] = useState<string | undefined>(value);
 
-  state = {
-    value: this.props.value,
-  };
+  useEffect(() => {
+    setValueState(value);
+  }, [value]);
 
-  UNSAFE_componentWillReceiveProps(nextProps: TextareaProps) {
-    if (this.props.value !== nextProps.value) {
-      this.setState({
-        value: nextProps.value,
-      });
-    }
-  }
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent<HTMLTextAreaElement>) => {
+      e.persist();
 
-  handleKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {
-    const ESC = 27;
+      if (onKeyDown) {
+        onKeyDown(e);
+      }
 
-    if (this.props.onKeyDown) {
-      this.props.onKeyDown(e);
-    }
+      if (e.nativeEvent.code === 'Escape' && willBlurOnEsc) {
+        e.currentTarget.blur();
+      }
+    },
+    [willBlurOnEsc, onKeyDown],
+  );
 
-    if (e.keyCode === ESC && this.props.willBlurOnEsc) {
-      e.currentTarget.blur();
-    }
-  };
+  const handleChange = useCallback(
+    (e: ChangeEvent<HTMLTextAreaElement>) => {
+      e.persist();
+      setValueState(e.target.value);
+      if (onChange) {
+        onChange(e);
+      }
+    },
+    [onChange],
+  );
 
-  render() {
-    const {
-      className,
-      testId,
-      placeholder,
-      maxLength,
-      onChange,
-      disabled,
-      required,
-      onBlur,
-      error,
-      width,
-      value,
-      name,
-      rows,
-      id,
-      willBlurOnEsc,
-      textareaRef,
-      ...otherProps
-    } = this.props;
+  const widthClass = `Textarea--${width}`;
+  const classNames = cn(styles['Textarea'], className, styles[widthClass], {
+    [styles['Textarea--disabled']]: disabled,
+    [styles['Textarea--negative']]: error,
+  });
 
-    const widthClass = `Textarea--${width}`;
-    const classNames = cn(styles['Textarea'], className, styles[widthClass], {
-      [styles['Textarea--disabled']]: disabled,
-      [styles['Textarea--negative']]: error,
-    });
+  return (
+    <div className={classNames}>
+      <textarea
+        data-test-id={testId}
+        aria-label={name}
+        className={styles['Textarea__textarea']}
+        id={id}
+        rows={rows}
+        onBlur={onBlur}
+        disabled={disabled}
+        placeholder={placeholder}
+        name={name}
+        onChange={handleChange}
+        maxLength={maxLength}
+        value={disabled ? value : valueState}
+        onKeyDown={handleKeyDown}
+        ref={textareaRef}
+        {...otherProps}
+      />
+    </div>
+  );
+};
 
-    return (
-      <div className={classNames}>
-        <textarea
-          data-test-id={testId}
-          aria-label={name}
-          className={styles['Textarea__textarea']}
-          id={id}
-          rows={rows}
-          onBlur={onBlur}
-          disabled={disabled}
-          placeholder={placeholder}
-          name={name}
-          onChange={(e) => {
-            if (onChange) {
-              onChange(e);
-            }
-            this.setState({ value: e.target.value });
-          }}
-          maxLength={maxLength}
-          value={disabled ? value : this.state && this.state.value}
-          onKeyDown={this.handleKeyDown}
-          ref={textareaRef}
-          {...otherProps}
-        />
-      </div>
-    );
-  }
-}
+Textarea.defaultProps = defaultProps;
 
 export default Textarea;

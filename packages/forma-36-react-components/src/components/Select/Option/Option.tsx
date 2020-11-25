@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 export interface OptionProps {
   value: string;
@@ -10,18 +10,16 @@ const defaultProps: Partial<OptionProps> = {
   testId: 'cf-ui-select-option',
 };
 
-export class Option extends Component<OptionProps> {
-  static defaultProps = defaultProps;
+export const Option = (props: OptionProps) => {
+  const { value, children, testId, ...otherProps } = props;
 
-  render() {
-    const { value, children, testId, ...otherProps } = this.props;
+  return (
+    <option value={value} data-test-id={testId} {...otherProps}>
+      {children}
+    </option>
+  );
+};
 
-    return (
-      <option value={value} data-test-id={testId} {...otherProps}>
-        {children}
-      </option>
-    );
-  }
-}
+Option.defaultProps = defaultProps;
 
 export default Option;
