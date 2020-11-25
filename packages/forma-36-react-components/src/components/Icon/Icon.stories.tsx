@@ -2,9 +2,14 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, select } from '@storybook/addon-knobs';
 
-import Icon from './Icon';
-import { iconName } from './constants';
+// import Icon from './Icon';
+import { Icon } from '@contentful/forma-36-icons';
 
+// import { iconName } from './constants';
+const iconName = {
+  ArrowDown: 'ArrowDown',
+  ArrowUp: 'ArrowUp',
+}
 storiesOf('Components/Icon', module)
   .addParameters({
     propTypes: Icon['__docgenInfo'],
@@ -12,7 +17,7 @@ storiesOf('Components/Icon', module)
   })
   .add('Icon (default)', () => (
     <Icon
-      icon={select('icon', Object.keys(iconName), Object.keys(iconName)[0])}
+      icon="ArrowDown"
       size={select(
         'size',
         {

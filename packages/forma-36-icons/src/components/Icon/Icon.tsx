@@ -1,4 +1,4 @@
-import React, { Component, CSSProperties } from 'react';
+import React, { CSSProperties } from 'react';
 import cn from 'classnames';
 import { iconName } from './constants';
 
@@ -42,29 +42,26 @@ export type IconColorType =
     color: 'primary',
   };
   
-  export class Icon extends Component<IconProps> {
-    static defaultProps = defaultProps;
-  
-    render() {
-      const { className, icon, size, color, testId, ...otherProps } = this.props;
-  
-      const classNames = cn(
-        styles.Icon,
-        {
-          [styles[`Icon--${size}`]]: size,
-          [styles[`Icon--${color}`]]: color,
-          [styles['Icon--trimmed']]: icon.toLowerCase().includes('trimmed'),
-        },
-        className,
-      );
-  
-      const Element = iconComponents[icon];
-  
-      return (
-        <Element data-test-id={testId} className={classNames} {...otherProps} />
-      );
-    }
-  }
-  
-  export default Icon;
+export function Icon({className, icon, size, color, testId, ...otherProps}: IconProps) {
+  const classNames = cn(
+    styles.Icon,
+    {
+      [styles[`Icon--${size}`]]: size,
+      [styles[`Icon--${color}`]]: color,
+      [styles['Icon--trimmed']]: icon.toLowerCase().includes('trimmed'),
+    },
+    className,
+  );
+
+  const Element = iconComponents[icon];
+
+  return (
+    <Element data-test-id={testId} className={classNames} {...otherProps} />
+  )
+}
+
+Icon.defaultProps = defaultProps;
+
+export default Icon;
+
   

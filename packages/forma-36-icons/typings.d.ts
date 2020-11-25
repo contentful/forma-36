@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-declare module '*.md' {
+declare module '*.mdx' {
   const value: string;
   export default value;
 }
@@ -13,12 +13,6 @@ declare module '*.svg' {
 
   const url: string;
   export default url;
-}
-
-declare module 'react-animate-height' {
-  // eslint-disable-next-line
-  const value: any;
-  export default value;
 }
 
 declare module '@storybook/addon-knobs' {
@@ -38,16 +32,6 @@ declare module '@storybook/addon-knobs/react' {
 
 declare module '@storybook/addon-actions' {
   export const action: any;
-}
-
-declare module 'react-modal' {
-  const value: any;
-  export default value;
-}
-
-declare module 'truncate' {
-  const value: (value: string, chars: number, option: any) => string;
-  export default value;
 }
 
 declare module '*.css' {
