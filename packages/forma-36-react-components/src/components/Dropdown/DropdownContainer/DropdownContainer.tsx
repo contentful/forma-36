@@ -85,7 +85,7 @@ export const DropdownContainer = forwardRef<
           openSubmenu(false);
         }
       }}
-      ref={node => {
+      ref={(node) => {
         setReference(node);
         dropdown.current = node;
       }}

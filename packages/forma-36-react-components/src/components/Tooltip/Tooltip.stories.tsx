@@ -140,7 +140,14 @@ contentHover.args = {
       <br />
       <button type="button">Button</button>
       <br />
-      <a style={{ color: 'white' }} href="/" target="_blank" rel="noopener noreferrer">Click me!</a> 
+      <a
+        style={{ color: 'white' }}
+        href="/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Click me!
+      </a>
     </>
   ),
 };

@@ -68,7 +68,7 @@ export class CopyButton extends Component<CopyButtonProps, CopyButtonState> {
     const classNames = cn(styles['CopyButton'], className);
     return (
       <div
-        ref={ref => {
+        ref={(ref) => {
           this.tooltipAnchor = ref;
         }}
         className={classNames}
@@ -85,7 +85,7 @@ export class CopyButton extends Component<CopyButtonProps, CopyButtonState> {
           >
             <button
               type="button"
-              ref={ref => {
+              ref={(ref) => {
                 this.copyButton = ref;
               }}
               className={styles['CopyButton__button']}

@@ -29,7 +29,7 @@ export class SectionHeading extends Component<SectionHeadingProps> {
 
     return (
       <TypographyContext.Consumer>
-        {value => {
+        {(value) => {
           return (
             <Element
               className={cn(classNames, [
