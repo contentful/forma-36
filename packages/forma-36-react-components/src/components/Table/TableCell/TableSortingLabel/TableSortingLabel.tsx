@@ -19,7 +19,7 @@ const defaultProps: Partial<TableSortingLabelProps> = {
   testId: 'cf-ui-table-sorting-label',
 };
 
-const TableSortingLabel = (props: TableSortingLabelProps) => {
+export const TableSortingLabel = (props: TableSortingLabelProps) => {
   const { className, children, active, testId, ...otherProps } = props;
 
   const renderIcon = () => {

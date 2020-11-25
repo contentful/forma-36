@@ -27,7 +27,7 @@ const defaultProps: Partial<TableCellProps> = {
   testId: 'cf-ui-table-cell',
 };
 
-const TableCell = (props: TableCellProps) => {
+export const TableCell = (props: TableCellProps) => {
   const { className, children, sorting, align, testId, ...otherProps } = props;
 
   return (

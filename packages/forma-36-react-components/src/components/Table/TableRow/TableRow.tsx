@@ -13,7 +13,7 @@ const defaultProps: Partial<TableRowProps> = {
   testId: 'cf-ui-table-row',
 };
 
-const TableRow = (props: TableRowProps) => {
+export const TableRow = (props: TableRowProps) => {
   const { className, children, testId, ...otherProps } = props;
 
   return (

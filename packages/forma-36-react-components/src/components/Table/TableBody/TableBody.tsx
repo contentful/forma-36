@@ -11,7 +11,7 @@ const defaultProps: Partial<TableBodyProps> = {
   testId: 'cf-ui-table-body',
 };
 
-const TableBody = (props: TableBodyProps) => {
+export const TableBody = (props: TableBodyProps) => {
   const { className, children, testId, ...otherProps } = props;
 
   return (

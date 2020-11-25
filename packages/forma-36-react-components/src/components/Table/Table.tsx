@@ -12,7 +12,7 @@ const defaultProps: Partial<TableProps> = {
   testId: 'cf-ui-table',
 };
 
-const Table = (props: TableProps) => {
+export const Table = (props: TableProps) => {
   const { className, children, testId, ...otherProps } = props;
 
   return (

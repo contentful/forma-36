@@ -17,7 +17,7 @@ const defaultProps: Partial<TableHeadProps> = {
   testId: 'cf-ui-table-head',
 };
 
-const TableHead = (props: TableHeadProps) => {
+export const TableHead = (props: TableHeadProps) => {
   const {
     className,
     testId,
