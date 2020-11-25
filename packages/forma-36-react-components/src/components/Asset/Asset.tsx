@@ -95,9 +95,10 @@ export class Asset extends Component<AssetProps> {
 
     return (
       <div className={classNames} data-test-id={testId} {...otherProps}>
-        {asImage
-          ? this.renderImage(src, title)
-          : this.renderAsset(type!, title) // eslint-disable-line @typescript-eslint/no-non-null-assertion
+        {
+          asImage
+            ? this.renderImage(src, title)
+            : this.renderAsset(type!, title) // eslint-disable-line @typescript-eslint/no-non-null-assertion
         }
       </div>
     );

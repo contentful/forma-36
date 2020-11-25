@@ -276,7 +276,7 @@ export class EntityListItem extends Component<EntityListItemProps> {
                     className={styles['EntityListItem__actions']}
                     isDisabled={isActionsDisabled}
                     iconButtonProps={{
-                      onClick: e => e.stopPropagation,
+                      onClick: (e) => e.stopPropagation,
                     }}
                   >
                     {dropdownListElements}

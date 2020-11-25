@@ -44,14 +44,14 @@ function DefaultStory() {
           labelText="I agree"
           value="yes"
           helpText="Click if you agree"
-          onChange={e => setTerms((e.target as HTMLInputElement).value)}
+          onChange={(e) => setTerms((e.target as HTMLInputElement).value)}
           checked={agreeTerms === 'yes'}
           id="termsCheckboxYes"
         />
         <CheckboxField
           labelText="I don't agree"
           value="no"
-          onChange={e => setTerms((e.target as HTMLInputElement).value)}
+          onChange={(e) => setTerms((e.target as HTMLInputElement).value)}
           checked={agreeTerms === 'no'}
           helpText="Click if you don't agree"
           id="termsCheckboxNo"

@@ -140,15 +140,15 @@ export const Tooltip = ({
     }
   }, [attributes.popper]);
 
-  const [isHoveringTarget, setIsHoveringTarget] = useState(false)
-  const [isHoveringContent, setIsHoveringContent] = useState(false)
+  const [isHoveringTarget, setIsHoveringTarget] = useState(false);
+  const [isHoveringContent, setIsHoveringContent] = useState(false);
   useEffect(() => {
     if (closeOnMouseLeave) {
-      setShow(isHoveringTarget)
+      setShow(isHoveringTarget);
     } else {
-      setShow(isHoveringContent || isHoveringTarget)
+      setShow(isHoveringContent || isHoveringTarget);
     }
-  }, [closeOnMouseLeave, isHoveringTarget, isHoveringContent])
+  }, [closeOnMouseLeave, isHoveringTarget, isHoveringContent]);
 
   const delay = closeOnMouseLeave ? 0 : 1000;
 
@@ -187,7 +187,7 @@ export const Tooltip = ({
         onMouseLeave={(evt: MouseEvent) => {
           setTimeout(() => setIsHoveringTarget(false), delay);
           if (onMouseLeave) onMouseLeave(evt);
-      }}
+        }}
         onFocus={(evt: FocusEvent) => {
           setIsHoveringTarget(true);
           if (onFocus) onFocus(evt);
@@ -213,10 +213,10 @@ export const Tooltip = ({
           })}
           data-test-id={testId}
           onMouseEnter={() => {
-            setIsHoveringContent(true)
+            setIsHoveringContent(true);
           }}
           onMouseLeave={() => {
-            setIsHoveringContent(false)
+            setIsHoveringContent(false);
           }}
           {...attributes.popper}
         >

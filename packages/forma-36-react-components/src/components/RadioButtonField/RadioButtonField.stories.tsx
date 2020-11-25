@@ -18,7 +18,7 @@ function DefaultStory() {
         name="someOption"
         checked={activeOption === 'yes'}
         value="yes"
-        onChange={e => {
+        onChange={(e) => {
           setActiveOption((e.target as HTMLInputElement).value);
         }}
         labelIsLight={boolean('labelIsLight', false)}
@@ -36,7 +36,7 @@ function DefaultStory() {
         name="someOption"
         value="no"
         checked={activeOption === 'no'}
-        onChange={e => {
+        onChange={(e) => {
           setActiveOption((e.target as HTMLInputElement).value);
         }}
         labelIsLight={boolean('labelIsLight', false)}

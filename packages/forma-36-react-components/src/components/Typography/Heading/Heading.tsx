@@ -29,7 +29,7 @@ export class Heading extends Component<HeadingProps> {
 
     return (
       <TypographyContext.Consumer>
-        {value => {
+        {(value) => {
           return (
             <Element
               className={cn(classNames, [

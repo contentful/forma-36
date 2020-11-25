@@ -89,13 +89,13 @@ export class NotificationsManager extends PureComponent<
     }
   };
 
-  setDuration: SetDurationAction<void> = duration => {
+  setDuration: SetDurationAction<void> = (duration) => {
     this.setState({ duration });
   };
 
-  close: CloseAction<void> = id => {
-    this.setState(state => ({
-      items: state.items.map(item => {
+  close: CloseAction<void> = (id) => {
+    this.setState((state) => ({
+      items: state.items.map((item) => {
         if (item.id !== id) {
           return item;
         }
@@ -108,14 +108,14 @@ export class NotificationsManager extends PureComponent<
   };
 
   closeAndDelete = (id: string | number) => {
-    this.setState(state => ({
-      items: state.items.filter(item => item.id !== id),
+    this.setState((state) => ({
+      items: state.items.filter((item) => item.id !== id),
     }));
   };
 
   closeAll: CloseAllAction<void> = () => {
-    this.setState(state => ({
-      items: state.items.map(item => ({
+    this.setState((state) => ({
+      items: state.items.map((item) => ({
         ...item,
         isShown: false,
       })),
@@ -150,14 +150,14 @@ export class NotificationsManager extends PureComponent<
     };
 
     const alreadyThere = this.state.items.find(
-      item => item.id === notification.id,
+      (item) => item.id === notification.id,
     );
 
     if (alreadyThere) {
       return alreadyThere;
     }
 
-    this.setState(state => {
+    this.setState((state) => {
       if (state.position === 'top') {
         return {
           ...state,
@@ -183,7 +183,7 @@ export class NotificationsManager extends PureComponent<
         style={{ [this.state.position]: this.state.positionOffset }}
       >
         <div className={styles.NotificationsManager__container}>
-          {this.state.items.map(item => (
+          {this.state.items.map((item) => (
             <NotificationItemContainer
               intent={item.intent}
               duration={item.duration}

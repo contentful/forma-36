@@ -103,7 +103,7 @@ export class Select extends Component<SelectProps, SelectState> {
           value={this.state.value}
           disabled={isDisabled}
           onFocus={onFocus}
-          onChange={e => {
+          onChange={(e) => {
             if (!isDisabled) {
               this.setState({
                 value: e.target.value,
