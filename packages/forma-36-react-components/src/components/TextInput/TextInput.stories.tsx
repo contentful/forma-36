@@ -18,7 +18,7 @@ storiesOf('Components/TextInput', module)
       disabled={boolean('disabled', false)}
       isReadOnly={boolean('isReadOnly', false)}
       withCopyButton={boolean('withCopyButton', false)}
-      value={text('valiue', '123456')}
+      value={text('value', '123456')}
       maxLength={number('maxLength', 50)}
       width={select(
         'width',

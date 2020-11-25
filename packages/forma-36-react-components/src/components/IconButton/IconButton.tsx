@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import cn from 'classnames';
 import Icon, { IconProps } from '../Icon';
 import TabFocusTrap from '../TabFocusTrap';
@@ -29,69 +29,67 @@ const defaultProps: Partial<IconButtonProps> = {
   withDropdown: false,
 };
 
-export class IconButton extends Component<IconButtonProps> {
-  static defaultProps = defaultProps;
+export const IconButton = (props: IconButtonProps) => {
+  const {
+    label,
+    iconProps,
+    href,
+    testId,
+    disabled,
+    onClick,
+    buttonType,
+    withDropdown,
+    className,
+    ...otherProps
+  } = props;
 
-  render() {
-    const {
-      label,
-      iconProps,
-      href,
-      testId,
-      disabled,
-      onClick,
-      buttonType,
-      withDropdown,
-      className,
-      ...otherProps
-    } = this.props;
+  const classNames = cn(styles.IconButton, className, {
+    [styles['IconButton--disabled']]: disabled,
+    [styles[`IconButton--${buttonType}`]]: buttonType,
+  });
 
-    const classNames = cn(styles.IconButton, className, {
-      [styles['IconButton--disabled']]: disabled,
-      [styles[`IconButton--${buttonType}`]]: buttonType,
-    });
+  const elementProps = {
+    className: classNames,
+    onClick: !disabled ? onClick : undefined,
+    'data-test-id': testId,
+    ...otherProps,
+  };
 
-    const elementProps = {
-      className: classNames,
-      onClick: !disabled ? onClick : undefined,
-      'data-test-id': testId,
-      ...otherProps,
-    };
-
-    const content = (
-      <TabFocusTrap className={styles.IconButton__inner}>
+  const content = (
+    <TabFocusTrap className={styles.IconButton__inner}>
+      <Icon
+        {...iconProps}
+        className={cn(styles.IconButton__icon, iconProps.className)}
+      />
+      <span className={styles.IconButton__label}>{label}</span>
+      {withDropdown && (
         <Icon
-          {...iconProps}
-          className={cn(styles.IconButton__icon, iconProps.className)}
+          icon="ChevronDown"
+          color="secondary"
+          className={styles.IconButton__dropdown}
         />
-        <span className={styles.IconButton__label}>{label}</span>
-        {withDropdown && (
-          <Icon
-            icon="ChevronDown"
-            color="secondary"
-            className={styles.IconButton__dropdown}
-          />
-        )}
-      </TabFocusTrap>
-    );
+      )}
+    </TabFocusTrap>
+  );
 
-    if (href) {
-      if (disabled) {
-        return <a {...elementProps}>{content}</a>;
-      }
-      return (
-        <a {...elementProps} href={href}>
-          content
-        </a>
-      );
+  if (href) {
+    if (disabled) {
+      return <a {...elementProps}>{content}</a>;
     }
-
     return (
-      <button {...elementProps} type="button" disabled={disabled}>
-        {content}
-      </button>
+      <a {...elementProps} href={href}>
+        content
+      </a>
     );
   }
-}
+
+  return (
+    <button {...elementProps} type="button" disabled={disabled}>
+      {content}
+    </button>
+  );
+};
+
+IconButton.defaultProps = defaultProps;
 
 export default IconButton;

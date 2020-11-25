@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import cn from 'classnames';
 import Card from '../Card/Card';
 import Icon, { IconType } from '../Icon/Icon';
@@ -22,66 +22,63 @@ const defaultProps: Partial<ToggleButtonProps> = {
   isDisabled: false,
 };
 
-export class ToggleButton extends Component<ToggleButtonProps> {
-  static defaultProps = defaultProps;
+export const ToggleButton = (props: ToggleButtonProps) => {
+  const {
+    className,
+    icon,
+    children,
+    isActive,
+    isDisabled,
+    onToggle,
+    ...otherProps
+  } = props;
 
-  handleToggle = () => {
-    if (!this.props.isDisabled) {
-      if (this.props.onToggle) {
-        this.props.onToggle();
-      }
+  const classNames = cn(styles.Toggle, className, {
+    [styles['Toggle--active']]: isActive,
+    [styles['Toggle--disabled']]: isDisabled,
+    [styles['Toggle--square']]: !children,
+  });
+
+  const handleToggle = () => {
+    if (!isDisabled && onToggle) {
+      onToggle();
     }
   };
 
-  render() {
-    const {
-      className,
-      icon,
-      children,
-      isActive,
-      isDisabled,
-      ...otherProps
-    } = this.props;
-
-    const classNames = cn(styles.Toggle, className, {
-      [styles['Toggle--active']]: isActive,
-      [styles['Toggle--disabled']]: isDisabled,
-      [styles['Toggle--square']]: !children,
-    });
-
-    return (
-      <Card
-        className={classNames}
-        padding="none"
-        selected={isActive}
-        {...otherProps}
+  return (
+    <Card
+      className={classNames}
+      padding="none"
+      selected={isActive}
+      {...otherProps}
+    >
+      <button
+        type="button"
+        className={styles.Toggle__button}
+        disabled={isDisabled}
+        data-test-id="button"
+        onClick={handleToggle}
+        aria-pressed={isActive}
       >
-        <button
-          type="button"
-          className={styles.Toggle__button}
-          disabled={isDisabled}
-          data-test-id="button"
-          onClick={this.handleToggle}
-          aria-pressed={isActive}
-        >
-          <TabFocusTrap className={styles['Toggle__button__inner-wrapper']}>
-            {icon && (
-              <Icon
-                icon={icon}
-                color="secondary"
-                className={styles.Toggle__button__icon}
-              />
-            )}
-            {children && (
-              <span className={styles['Toggle__content-wrapper']}>
-                {children}
-              </span>
-            )}
-          </TabFocusTrap>
-        </button>
-      </Card>
-    );
-  }
-}
+        <TabFocusTrap className={styles['Toggle__button__inner-wrapper']}>
+          {icon && (
+            <Icon
+              icon={icon}
+              color="secondary"
+              className={styles.Toggle__button__icon}
+            />
+          )}
+          {children && (
+            <span className={styles['Toggle__content-wrapper']}>
+              {children}
+            </span>
+          )}
+        </TabFocusTrap>
+      </button>
+    </Card>
+  );
+};
+
+ToggleButton.defaultProps = defaultProps;
 
 export default ToggleButton;

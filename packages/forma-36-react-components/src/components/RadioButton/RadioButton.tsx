@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ControlledInput, { ControlledInputPropTypes } from '../ControlledInput';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
@@ -12,13 +12,9 @@ const defaultProps: Partial<RadioButtonProps> = {
   willBlurOnEsc: true,
 };
 
-export class RadioButton extends Component<RadioButtonProps> {
-  static defaultProps = defaultProps;
-
-  render() {
-    return <ControlledInput {...this.props} />;
-  }
-}
+export const RadioButton = (props: RadioButtonProps) => {
+  return <ControlledInput {...props} />;
+};
 
 RadioButton.defaultProps = defaultProps;
 

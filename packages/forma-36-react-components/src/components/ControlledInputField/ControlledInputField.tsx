@@ -1,4 +1,4 @@
-import React, { Component, ChangeEventHandler } from 'react';
+import React, { ChangeEventHandler, ReactNode } from 'react';
 import cn from 'classnames';
 import FormLabel from '../FormLabel';
 import HelpText from '../HelpText';
@@ -24,7 +24,7 @@ export interface ControlledInputFieldPropTypes {
   onChange?: ChangeEventHandler;
   className?: string;
   testId?: string;
-  children?: React.ReactNode;
+  children?: ReactNode;
 }
 
 const defaultProps: Partial<ControlledInputFieldPropTypes> = {
@@ -34,83 +34,79 @@ const defaultProps: Partial<ControlledInputFieldPropTypes> = {
   inputType: 'checkbox',
 };
 
-export class ControlledInputField extends Component<
-  ControlledInputFieldPropTypes
-> {
-  static defaultProps = defaultProps;
+export const ControlledInputField = (props: ControlledInputFieldPropTypes) => {
+  const {
+    id,
+    labelIsLight,
+    testId,
+    required,
+    helpText,
+    disabled,
+    labelText,
+    helpTextProps,
+    formLabelProps,
+    className,
+    checked,
+    value,
+    validationMessage,
+    onChange,
+    children,
+    inputType,
+    inputProps,
+    name,
+    ...otherProps
+  } = props;
 
-  render() {
-    const {
-      id,
-      labelIsLight,
-      testId,
-      required,
-      helpText,
-      disabled,
-      labelText,
-      helpTextProps,
-      formLabelProps,
-      className,
-      checked,
-      value,
-      validationMessage,
-      onChange,
-      children,
-      inputType,
-      inputProps,
-      name,
-      ...otherProps
-    } = this.props;
+  const classNames = cn(styles['ControlledInputField'], className, {
+    [styles['ControlledInputField--disabled']]: disabled,
+  });
 
-    const classNames = cn(styles['ControlledInputField'], className, {
-      [styles['ControlledInputField--disabled']]: disabled,
-    });
-
-    return (
-      <div data-test-id={testId} className={classNames} {...otherProps}>
-        <ControlledInput
-          id={id}
-          labelText={labelText}
-          type={inputType}
-          name={name}
+  return (
+    <div data-test-id={testId} className={classNames} {...otherProps}>
+      <ControlledInput
+        id={id}
+        labelText={labelText}
+        type={inputType}
+        name={name}
+        required={required}
+        checked={checked}
+        disabled={disabled}
+        value={value}
+        onChange={onChange}
+        className={styles.ControlledInputField__input}
+        {...inputProps}
+      />
+      <div className={styles['Checkbox__label-wrapper']}>
+        <FormLabel
+          className={cn(styles.ControlledInputField__label, {
+            [styles['ControlledInputField__label--light']]: labelIsLight,
+          })}
           required={required}
-          checked={checked}
-          disabled={disabled}
-          value={value}
-          onChange={onChange}
-          className={styles.ControlledInputField__input}
-          {...inputProps}
-        />
-        <div className={styles['Checkbox__label-wrapper']}>
-          <FormLabel
-            className={cn(styles.ControlledInputField__label, {
-              [styles['ControlledInputField__label--light']]: labelIsLight,
-            })}
-            required={required}
-            htmlFor={id}
-            {...formLabelProps}
+          htmlFor={id}
+          {...formLabelProps}
+        >
+          {labelText}
+        </FormLabel>
+        {helpText && (
+          <HelpText
+            className={styles['ControlledInputField__help-text']}
+            {...helpTextProps}
           >
-            {labelText}
-          </FormLabel>
-          {helpText && (
-            <HelpText
-              className={styles['ControlledInputField__help-text']}
-              {...helpTextProps}
-            >
-              {helpText}
-            </HelpText>
-          )}
-          {validationMessage && (
-            <ValidationMessage
-              className={styles['ControlledInputField__validation-message']}
-            >
-              {validationMessage}
-            </ValidationMessage>
-          )}
-        </div>
+            {helpText}
+          </HelpText>
+        )}
+        {validationMessage && (
+          <ValidationMessage
+            className={styles['ControlledInputField__validation-message']}
+          >
+            {validationMessage}
+          </ValidationMessage>
+        )}
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
+ControlledInputField.defaultProps = defaultProps;
 
 export default ControlledInputField;
