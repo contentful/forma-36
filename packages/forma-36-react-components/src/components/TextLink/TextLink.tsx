@@ -78,10 +78,12 @@ export class TextLink extends Component<TextLinkProps> {
 
     const content = (
       <TabFocusTrap>
-        {icon && iconPosition === 'left' && this.renderIcon(icon, linkType!) // eslint-disable-line @typescript-eslint/no-non-null-assertion
+        {
+          icon && iconPosition === 'left' && this.renderIcon(icon, linkType!) // eslint-disable-line @typescript-eslint/no-non-null-assertion
         }
         {text || children}
-        {icon && iconPosition === 'right' && this.renderIcon(icon, linkType!) // eslint-disable-line @typescript-eslint/no-non-null-assertion
+        {
+          icon && iconPosition === 'right' && this.renderIcon(icon, linkType!) // eslint-disable-line @typescript-eslint/no-non-null-assertion
         }
       </TabFocusTrap>
     );
@@ -93,7 +95,7 @@ export class TextLink extends Component<TextLinkProps> {
           data-test-id={testId}
           onClick={
             disabled
-              ? e => {
+              ? (e) => {
                   e.preventDefault();
                 }
               : onClick

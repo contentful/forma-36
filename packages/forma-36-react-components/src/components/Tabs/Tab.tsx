@@ -32,7 +32,7 @@ const defaultProps: Partial<TabProps> = {
 export class Tab extends Component<TabProps> {
   static defaultProps = defaultProps;
 
-  onClick: MouseEventHandler = e => {
+  onClick: MouseEventHandler = (e) => {
     if (this.props.onSelect && !this.props.disabled) {
       this.props.onSelect(this.props.id, e);
     }

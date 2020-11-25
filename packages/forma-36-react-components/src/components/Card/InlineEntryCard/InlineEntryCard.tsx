@@ -101,7 +101,7 @@ export class InlineEntryCard extends Component<InlineEntryCardPropTypes> {
           <CardActions
             className={styles['InlineEntryCard__actions']}
             iconButtonProps={{
-              onClick: e => e.stopPropagation,
+              onClick: (e) => e.stopPropagation,
             }}
           >
             {dropdownListElements}

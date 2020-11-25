@@ -36,15 +36,15 @@ export const AccordionPanel: FC<AccordionPanelProps> = ({
       const finalHeight = `calc(${panelHeight} + ${tokens.spacingXs} + ${tokens.spacingM})`;
 
       if (isExpanded) {
-        requestAnimationFrame(function() {
+        requestAnimationFrame(function () {
           current.style.height = '0px';
 
-          requestAnimationFrame(function() {
+          requestAnimationFrame(function () {
             current.style.height = finalHeight;
           });
         });
       } else {
-        requestAnimationFrame(function() {
+        requestAnimationFrame(function () {
           current.style.height = '0px';
         });
       }

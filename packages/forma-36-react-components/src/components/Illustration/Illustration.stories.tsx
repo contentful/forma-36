@@ -28,8 +28,10 @@ storiesOf('Components/Illustration', module)
       }}
     >
       {Object.keys(illustrationName)
-        .filter(illustration => !illustration.toLowerCase().includes('trimmed'))
-        .map(illustration => (
+        .filter(
+          (illustration) => !illustration.toLowerCase().includes('trimmed'),
+        )
+        .map((illustration) => (
           <div
             key={illustration}
             style={{ padding: '4px', fontSize: '14px', lineHeight: '21px' }}

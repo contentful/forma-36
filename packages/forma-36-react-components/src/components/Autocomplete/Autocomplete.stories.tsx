@@ -24,7 +24,7 @@ const AutocompleteDefaultStory = ({ items }: { items: Item[] }) => {
   const handleQueryChange = useCallback(
     (query: string) => {
       setFilteredItems(
-        query ? items.filter(item => item.label.includes(query)) : items,
+        query ? items.filter((item) => item.label.includes(query)) : items,
       );
     },
     [items, setFilteredItems],

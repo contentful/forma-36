@@ -29,7 +29,7 @@ export class Paragraph extends Component<ParagraphProps> {
 
     return (
       <TypographyContext.Consumer>
-        {value => {
+        {(value) => {
           return (
             <Element
               className={cn(classNames, [

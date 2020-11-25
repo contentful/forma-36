@@ -42,7 +42,7 @@ function afterInit<PromiseValueType>(fn: Function) {
   return (...args: any[]) => {
     if (!initiated) {
       initiated = true;
-      return new Promise<PromiseValueType>(resolve => {
+      return new Promise<PromiseValueType>((resolve) => {
         createRoot(() => {
           resolve(fn(...args));
         });
