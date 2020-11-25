@@ -13,7 +13,7 @@ module.exports = {
   plugins: ['react-hooks', 'jest-dom', 'testing-library'],
   parserOptions: {
     ecmaVersion: 7,
-    project: './tsconfig.json',
+    project: './tsconfig.eslint.json',
     sourceType: 'module',
   },
   env: {

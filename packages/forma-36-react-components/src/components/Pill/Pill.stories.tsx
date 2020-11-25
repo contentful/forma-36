@@ -2,9 +2,8 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import Icon from '../Icon';
 
-import Pill, {PillProps} from './Pill';
+import Pill, { PillProps } from './Pill';
 import notes from './README.md';
-
 
 export default {
   title: 'Components/Pill',
@@ -14,29 +13,21 @@ export default {
     notes,
   },
   argTypes: {
-    label: { control: { type: 'text'} },
+    label: { control: { type: 'text' } },
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
-    onClose:{ control: { disable: true } },
-    onDrag:{ control: { disable: true } },
+    onClose: { control: { disable: true } },
+    onDrag: { control: { disable: true } },
     dragHandleComponent: { control: { disable: true } },
   },
 };
 
-export const basic = (args: PillProps) => (
-  <Pill
-      label={args.label}
-    />
-);
+export const basic = (args: PillProps) => <Pill label={args.label} />;
 
 export const onDragAndOnClose = (args: PillProps) => (
   <>
     <div>
-      <Pill
-        label={args.label}
-        onClose={args.onClose}
-        onDrag={args.onDrag}
-      />
+      <Pill label={args.label} onClose={args.onClose} onDrag={args.onDrag} />
     </div>
     <div className="f36-margin-top--m">
       <Pill

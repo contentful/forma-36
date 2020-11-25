@@ -19,8 +19,8 @@ export function useOnClickOutside(
       return;
     }
 
-    const refContains = (ref:RefObject<HTMLElement>, node: Node) =>
-      ref.current && ref.current.contains(node)
+    const refContains = (ref: RefObject<HTMLElement>, node: Node) =>
+      ref.current && ref.current.contains(node);
     const listener = (event: MouseEvent) => {
       if (
         !handlerRef.current ||

@@ -81,10 +81,9 @@ exports[`renders the component with a copybutton 1`] = `
             <svg
               class="Icon Icon--small Icon--muted"
               data-test-id="cf-ui-icon"
-              height="18"
+              height="1em"
               viewBox="0 0 24 24"
-              width="18"
-              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
             >
               <path
                 d="M0 0h24v24H0z"
@@ -196,10 +195,9 @@ exports[`renders the component with a textlink 1`] = `
           <svg
             class="Icon Icon--small Icon--primary TextLink__icon"
             data-test-id="cf-ui-icon"
-            height="18"
+            height="1em"
             viewBox="0 0 24 24"
-            width="18"
-            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
           >
             <path
               d="M0 0h24v24H0z"
@@ -566,10 +564,9 @@ exports[`renders the component with validation message 1`] = `
     <svg
       class="Icon Icon--small Icon--negative ValidationMessage__icon"
       data-test-id="cf-ui-icon"
-      height="18"
+      height="1em"
       viewBox="0 0 24 24"
-      width="18"
-      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
     >
       <path
         d="M0 0h24v24H0z"

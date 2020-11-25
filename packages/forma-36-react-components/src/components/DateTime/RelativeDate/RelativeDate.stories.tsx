@@ -2,9 +2,9 @@ import React from 'react';
 
 import RelativeDate, { RelativeDateProps } from './RelativeDate';
 
-const THREE_MINUTES = 3 * 60 * 1000;
-
 import notes from '../README.md';
+
+const THREE_MINUTES = 3 * 60 * 1000;
 
 export default {
   title: 'Components/DateTime/RelativeDate',

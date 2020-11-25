@@ -31,7 +31,6 @@ export interface AccordionItemProps {
    * A function to be called when the accordion item is closed
    */
   onCollapse?: Function;
-
 }
 
 const defaultProps: AccordionItemProps = {
@@ -53,13 +52,13 @@ export const AccordionItem: FC<AccordionItemProps> = ({
 
   const onClick = () => {
     if (!isExpanded && onExpand) {
-      onExpand()
+      onExpand();
     }
-     if (isExpanded && onCollapse) {
-      onCollapse()
+    if (isExpanded && onCollapse) {
+      onCollapse();
     }
 
-    setIsExpanded(!isExpanded)
+    setIsExpanded(!isExpanded);
   };
 
   return (

@@ -26,7 +26,7 @@ export const RelativeDate: React.FC<RelativeDateProps> = ({
   baseDate,
 }) => {
   if (typeof date === 'string' || typeof date === 'number') {
-    date = new Date(date)
+    date = new Date(date);
   }
   const [relativeTime, setRelativeTime] = useState(
     formatRelativeDateTime(date, baseDate),
@@ -36,7 +36,7 @@ export const RelativeDate: React.FC<RelativeDateProps> = ({
   useEffect(() => {
     if (baseDate) {
       // No need to trigger a re-render if we are doing a static comparison
-      return
+      return;
     }
 
     const intervalId = setInterval(() => {

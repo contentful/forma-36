@@ -5,7 +5,7 @@ import tokens from '@contentful/forma-36-tokens';
 import Workbench, { WorkbenchProps } from './Workbench';
 import Icon from '../Icon';
 import Button from '../Button';
-import notes from './README.md'
+import notes from './README.md';
 
 export default {
   title: 'components/Workbench',
@@ -45,7 +45,7 @@ export const basic = (args: WorkbenchProps) => (
       </Workbench.Content>
     </Workbench>
   </div>
-)
+);
 
 export const withLeftSidebar = (args: WorkbenchProps) => (
   <Workbench>
@@ -66,14 +66,12 @@ export const withLeftSidebar = (args: WorkbenchProps) => (
         'default',
       )}
     >
-      <div
-        style={{ height: '2000px', backgroundColor: tokens.colorBlueBase }}
-      >
+      <div style={{ height: '2000px', backgroundColor: tokens.colorBlueBase }}>
         {args['workbench content']}
       </div>
     </Workbench.Content>
   </Workbench>
-)
+);
 
 export const withRightSidebar = (args: WorkbenchProps) => (
   <Workbench>
@@ -89,9 +87,7 @@ export const withRightSidebar = (args: WorkbenchProps) => (
         'default',
       )}
     >
-      <div
-        style={{ height: '2000px', backgroundColor: tokens.colorBlueBase }}
-      >
+      <div style={{ height: '2000px', backgroundColor: tokens.colorBlueBase }}>
         {args['workbench content']}
       </div>
     </Workbench.Content>
@@ -122,9 +118,7 @@ export const withLeftAndRightSidebar = (args: WorkbenchProps) => (
         'default',
       )}
     >
-      <div
-        style={{ height: '2000px', backgroundColor: tokens.colorBlueBase }}
-      >
+      <div style={{ height: '2000px', backgroundColor: tokens.colorBlueBase }}>
         {args['workbench content']}
       </div>
     </Workbench.Content>
@@ -134,7 +128,7 @@ export const withLeftAndRightSidebar = (args: WorkbenchProps) => (
       </div>
     </Workbench.Sidebar>
   </Workbench>
-)
+);
 
 export const withBackButton = (args: WorkbenchProps) => (
   <Workbench>
@@ -151,9 +145,7 @@ export const withBackButton = (args: WorkbenchProps) => (
         'default',
       )}
     >
-      <div
-        style={{ height: '2000px', backgroundColor: tokens.colorBlueBase }}
-      >
+      <div style={{ height: '2000px', backgroundColor: tokens.colorBlueBase }}>
         {args['workbench content']}
       </div>
     </Workbench.Content>
@@ -161,25 +153,25 @@ export const withBackButton = (args: WorkbenchProps) => (
 );
 
 basic.args = {
-  ['header title']: 'Page title',
-  ['header description']: 'Lorem Ipsum dolor sit amet.',
-  ['workbench content']: 'Workbench',
-  ['left sidebar']: 'left sidebar',
-  ['right sidebar']: 'right sidebar'
-}
+  'header title': 'Page title',
+  'header description': 'Lorem Ipsum dolor sit amet.',
+  'workbench content': 'Workbench',
+  'left sidebar': 'left sidebar',
+  'right sidebar': 'right sidebar',
+};
 
 withLeftSidebar.args = {
   ...basic.args,
-}
+};
 
 withRightSidebar.args = {
   ...basic.args,
-}
+};
 
 withLeftAndRightSidebar.args = {
   ...basic.args,
-}
+};
 
 withBackButton.args = {
   ...basic.args,
-}
+};
