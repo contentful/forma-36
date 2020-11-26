@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.68.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.68.3...@contentful/forma-36-react-components@3.68.4) (2020-11-26)
+
+
+### Bug Fixes
+
+* **text input:** remove webkit search styling ([35508dd](https://github.com/contentful/forma-36/commit/35508dd48e953c8da147e5e79ad19663ae8f5b8c))
+
+
+
+
+
 ## [3.68.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.68.2...@contentful/forma-36-react-components@3.68.3) (2020-11-26)
 
 
