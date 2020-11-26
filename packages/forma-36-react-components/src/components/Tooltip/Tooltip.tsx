@@ -99,7 +99,7 @@ export const Tooltip = ({
   testId,
   ...otherProps
 }: TooltipProps) => {
-  const [show, setShow] = useState(isVisible);
+  const [show, setShow] = useState(false);
   const [arrowPosition, setArrowPosition] = useState<ArrowPositionState>(
     getArrowPosition('bottom'),
   );
@@ -149,6 +149,11 @@ export const Tooltip = ({
       setShow(isHoveringContent || isHoveringTarget);
     }
   }, [closeOnMouseLeave, isHoveringTarget, isHoveringContent]);
+
+  useEffect(() => {
+    if (isVisible) setShow(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const delay = closeOnMouseLeave ? 0 : 1000;
 
