@@ -18,7 +18,6 @@
     "build": "tsdx build --entry src/index.ts && yarn",
     "start": "start-storybook -p 9001 -c ./tools/.storybook -s ./tools/.storybook/public",
     "storybook": "yarn build-storybook -c tools/.storybook -s ./tools/.storybook/public -o dist-storybook",
-    "lint": "tsdx lint",
     "test": "yarn jest"
   },
   "peerDependencies": {
