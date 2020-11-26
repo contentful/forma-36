@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import cn from 'classnames';
 
 import styles from './FieldGroup.css';
@@ -16,24 +16,22 @@ const defaultProps: Partial<FieldGroupProps> = {
   testId: 'cf-ui-field-group',
 };
 
-export class FieldGroup extends Component<FieldGroupProps> {
-  static defaultProps = defaultProps;
+export const FieldGroup = (props: FieldGroupProps) => {
+  const { className, children, row, testId, ...otherProps } = props;
 
-  render() {
-    const { className, children, row, testId, ...otherProps } = this.props;
+  const classNames = cn(styles.FieldGroup, className, {
+    [styles['FieldGroup--row']]: row,
+  });
 
-    const classNames = cn(styles.FieldGroup, className, {
-      [styles['FieldGroup--row']]: row,
-    });
+  return (
+    <div {...otherProps} data-test-id={testId} className={classNames}>
+      {React.Children.map(children, (child) => (
+        <div className={styles.FieldGroup__item}>{child}</div>
+      ))}
+    </div>
+  );
+};
 
-    return (
-      <div {...otherProps} data-test-id={testId} className={classNames}>
-        {React.Children.map(children, (child) => (
-          <div className={styles.FieldGroup__item}>{child}</div>
-        ))}
-      </div>
-    );
-  }
-}
+FieldGroup.defaultProps = defaultProps;
 
 export default FieldGroup;

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ControlledInputField, {
   ControlledInputFieldPropTypes,
 } from '../ControlledInputField';
@@ -13,16 +13,14 @@ const defaultProps: Partial<RadioButtonFieldProps> = {
   testId: 'cf-ui-radio-button-field',
 };
 
-export class RadioButtonField extends Component<RadioButtonFieldProps> {
-  static defaultProps = defaultProps;
+export const RadioButtonField = (props: RadioButtonFieldProps) => {
+  const { testId, ...otherProps } = props;
 
-  render() {
-    const { testId, ...otherProps } = this.props;
+  return (
+    <ControlledInputField testId={testId} {...otherProps} inputType="radio" />
+  );
+};
 
-    return (
-      <ControlledInputField testId={testId} {...otherProps} inputType="radio" />
-    );
-  }
-}
+RadioButtonField.defaultProps = defaultProps;
 
 export default RadioButtonField;

@@ -1,8 +1,12 @@
 import React, {
-  Component,
+  useCallback,
+  useEffect,
+  useState,
   ChangeEventHandler,
   FocusEventHandler,
   KeyboardEvent,
+  ChangeEvent,
+  ReactNode,
 } from 'react';
 import cn from 'classnames';
 import Icon from '../Icon';
@@ -21,12 +25,8 @@ export interface SelectProps {
   width?: 'auto' | 'small' | 'medium' | 'large' | 'full';
   testId?: string;
   className?: string;
-  children: React.ReactNode;
+  children: ReactNode;
   willBlurOnEsc?: boolean;
-}
-
-export interface SelectState {
-  value?: string;
 }
 
 const defaultProps: Partial<SelectProps> = {
@@ -38,95 +38,85 @@ const defaultProps: Partial<SelectProps> = {
   willBlurOnEsc: true,
 };
 
-export class Select extends Component<SelectProps, SelectState> {
-  static defaultProps = defaultProps;
+export const Select = (props: SelectProps) => {
+  const {
+    id,
+    name,
+    required,
+    children,
+    width,
+    className,
+    testId,
+    onChange,
+    onBlur,
+    onFocus,
+    isDisabled,
+    hasError,
+    value,
+    willBlurOnEsc,
+    ...otherProps
+  } = props;
+  const [valueState, setValueState] = useState<string | undefined>(value);
 
-  state = {
-    value: this.props.value,
-  };
-
-  UNSAFE_componentWillReceiveProps(nextProps: SelectProps) {
-    if (this.props.value !== nextProps.value) {
-      this.setState({
-        value: nextProps.value,
-      });
-    }
-  }
-
-  handleKeyDown = (e: KeyboardEvent<HTMLSelectElement>) => {
-    const ESC = 27;
-
-    if (e.keyCode === ESC && this.props.willBlurOnEsc) {
+  const handleKeyDown = (e: KeyboardEvent<HTMLSelectElement>) => {
+    if (e.nativeEvent.code === 'Escape' && willBlurOnEsc) {
       e.currentTarget.blur();
     }
   };
 
-  render() {
-    const {
-      id,
-      name,
-      required,
-      children,
-      width,
-      className,
-      testId,
-      onChange,
-      onBlur,
-      onFocus,
-      isDisabled,
-      hasError,
-      willBlurOnEsc,
-      ...otherProps
-    } = this.props;
+  const handleChange = useCallback(
+    (e: ChangeEvent<HTMLSelectElement>) => {
+      if (!isDisabled) {
+        setValueState(e.target.value);
 
-    const widthClass = `Select--${width}`;
-    const classNames = cn(styles['Select'], {
-      [styles['Select--disabled']]: isDisabled,
-      [styles['Select--negative']]: hasError,
-    });
+        if (onChange) {
+          onChange(e);
+        }
+      }
+    },
+    [onChange, isDisabled],
+  );
 
-    const wrapperClassNames = cn(
-      styles['Select__wrapper'],
-      styles[widthClass],
-      className,
-    );
+  useEffect(() => {
+    setValueState(value);
+  }, [value]);
 
-    return (
-      <div className={wrapperClassNames}>
-        <select
-          id={id}
-          required={required}
-          name={name}
-          aria-label={name}
-          data-test-id={testId}
-          className={classNames}
-          value={this.state.value}
-          disabled={isDisabled}
-          onFocus={onFocus}
-          onChange={(e) => {
-            if (!isDisabled) {
-              this.setState({
-                value: e.target.value,
-              });
-              if (onChange) {
-                onChange(e);
-              }
-            }
-          }}
-          onBlur={onBlur}
-          onKeyDown={this.handleKeyDown}
-          {...otherProps}
-        >
-          {children}
-        </select>
-        <Icon
-          className={styles['Select__icon']}
-          icon="ArrowDown"
-          color="muted"
-        />
-      </div>
-    );
-  }
-}
+  const widthClass = `Select--${width}`;
+  const classNames = cn(styles['Select'], {
+    [styles['Select--disabled']]: isDisabled,
+    [styles['Select--negative']]: hasError,
+  });
+
+  const wrapperClassNames = cn(
+    styles['Select__wrapper'],
+    styles[widthClass],
+    className,
+  );
+
+  return (
+    <div className={wrapperClassNames}>
+      <select
+        id={id}
+        required={required}
+        name={name}
+        aria-label={name}
+        data-test-id={testId}
+        className={classNames}
+        value={valueState}
+        disabled={isDisabled}
+        onFocus={onFocus}
+        onChange={handleChange}
+        onBlur={onBlur}
+        onKeyDown={handleKeyDown}
+        {...otherProps}
+      >
+        {children}
+      </select>
+      <Icon className={styles['Select__icon']} icon="ArrowDown" color="muted" />
+    </div>
+  );
+};
+
+Select.defaultProps = defaultProps;
 
 export default Select;

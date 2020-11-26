@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ControlledInputField, {
   ControlledInputFieldPropTypes,
 } from '../ControlledInputField';
@@ -13,20 +13,18 @@ const defaultProps: Partial<CheckboxFieldProps> = {
   testId: 'cf-ui-checkbox-field',
 };
 
-export class CheckboxField extends Component<CheckboxFieldProps> {
-  static defaultProps = defaultProps;
+export const CheckboxField = (props: CheckboxFieldProps) => {
+  const { testId, ...otherProps } = props;
 
-  render() {
-    const { testId, ...otherProps } = this.props;
+  return (
+    <ControlledInputField
+      testId={testId}
+      {...otherProps}
+      inputType="checkbox"
+    />
+  );
+};
 
-    return (
-      <ControlledInputField
-        testId={testId}
-        {...otherProps}
-        inputType="checkbox"
-      />
-    );
-  }
-}
+CheckboxField.defaultProps = defaultProps;
 
 export default CheckboxField;

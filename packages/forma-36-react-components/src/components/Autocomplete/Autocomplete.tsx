@@ -1,4 +1,4 @@
-import React, { useMemo, useReducer, useRef } from 'react';
+import React, { useMemo, useReducer, useRef, ChangeEvent } from 'react';
 
 import TextInput from '../TextInput';
 import Dropdown, { DropdownProps } from '../Dropdown';
@@ -192,7 +192,9 @@ export const Autocomplete = <T extends {}>({
       <div className={styles.autocompleteInput}>
         <TextInput
           value={toggleProps.query}
-          onChange={(e) => toggleProps.onChange(e.target.value)}
+          onChange={(e: ChangeEvent<HTMLInputElement>) =>
+            toggleProps.onChange(e.target.value)
+          }
           onFocus={toggleProps.onFocus}
           onKeyDown={toggleProps.onKeyDown}
           disabled={toggleProps.disabled}

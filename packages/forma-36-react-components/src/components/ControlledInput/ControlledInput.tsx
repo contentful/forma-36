@@ -1,9 +1,9 @@
 import React, {
-  Component,
   EventHandler,
   ChangeEvent,
   FocusEvent,
   KeyboardEvent,
+  useCallback,
 } from 'react';
 import cn from 'classnames';
 
@@ -34,72 +34,73 @@ const defaultProps: Partial<ControlledInputPropTypes> = {
   willBlurOnEsc: true,
 };
 
-export class ControlledInput extends Component<ControlledInputPropTypes> {
-  static defaultProps = defaultProps;
+export const ControlledInput = (props: ControlledInputPropTypes) => {
+  const {
+    className,
+    id,
+    testId,
+    required,
+    disabled,
+    onFocus,
+    onBlur,
+    name,
+    onChange,
+    checked,
+    value,
+    type,
+    labelText,
+    willBlurOnEsc,
+    ...otherProps
+  } = props;
 
-  handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
-    const ESC = 27;
+  const classNames = cn(styles['ControlledInput'], className, {
+    [styles['ControlledInput--disabled']]: disabled,
+  });
 
-    if (e.keyCode === ESC && this.props.willBlurOnEsc) {
-      e.currentTarget.blur();
-    }
-  };
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent<HTMLInputElement>) => {
+      e.persist();
 
-  render() {
-    const {
-      className,
-      id,
-      testId,
-      required,
-      disabled,
-      onFocus,
-      onBlur,
-      name,
-      onChange,
-      checked,
-      value,
-      type,
-      labelText,
-      willBlurOnEsc,
-      ...otherProps
-    } = this.props;
+      if (e.nativeEvent.code === 'Escape' && willBlurOnEsc) {
+        e.currentTarget.blur();
+      }
+    },
+    [willBlurOnEsc],
+  );
 
-    const classNames = cn(styles['ControlledInput'], className, {
-      [styles['ControlledInput--disabled']]: disabled,
-    });
+  return (
+    <input
+      className={classNames}
+      value={value}
+      name={name}
+      checked={props.checked}
+      type={type}
+      data-test-id={testId}
+      onChange={(e) => {
+        if (onChange) {
+          onChange(e);
+        }
+      }}
+      onBlur={(e) => {
+        if (onBlur) {
+          onBlur(e);
+        }
+      }}
+      onFocus={(e) => {
+        if (onFocus) {
+          onFocus(e);
+        }
+      }}
+      aria-label={labelText}
+      id={id}
+      required={required}
+      disabled={disabled}
+      onKeyDown={handleKeyDown}
+      {...otherProps}
+    />
+  );
+};
 
-    return (
-      <input
-        className={classNames}
-        value={value}
-        name={name}
-        checked={this.props.checked}
-        type={type}
-        data-test-id={testId}
-        onChange={(e) => {
-          if (onChange) {
-            onChange(e);
-          }
-        }}
-        onBlur={(e) => {
-          if (onBlur) {
-            onBlur(e);
-          }
-        }}
-        onFocus={(e) => {
-          if (onFocus) {
-            onFocus(e);
-          }
-        }}
-        aria-label={labelText}
-        id={id}
-        required={required}
-        disabled={disabled}
-        onKeyDown={this.handleKeyDown}
-        {...otherProps}
-      />
-    );
-  }
-}
+ControlledInput.defaultProps = defaultProps;
 
 export default ControlledInput;

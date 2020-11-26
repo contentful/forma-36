@@ -5,6 +5,7 @@ import React, {
   FocusEventHandler,
   useEffect,
   FocusEvent,
+  ChangeEvent,
 } from 'react';
 import isHotkey from 'is-hotkey';
 import orderBy from 'lodash.orderby';
@@ -323,7 +324,9 @@ const TimePicker: React.FC<TimepickerProps> = ({
               onKeyDown={handleKeyDown}
               onFocus={handleFocus}
               onBlur={handleBlur}
-              onChange={(e) => handleChange(e.target.value)}
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                handleChange(e.target.value)
+              }
               disabled={disabled}
               autoComplete="off"
             />
