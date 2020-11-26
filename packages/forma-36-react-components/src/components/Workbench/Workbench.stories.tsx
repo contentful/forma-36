@@ -5,7 +5,7 @@ import tokens from '@contentful/forma-36-tokens';
 import Workbench, { WorkbenchProps } from './Workbench';
 import Icon from '../Icon';
 import Button from '../Button';
-import notes from './README.md';
+import notes from './README.mdx';
 
 export default {
   title: 'components/Workbench',
