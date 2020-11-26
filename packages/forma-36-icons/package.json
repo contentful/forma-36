@@ -17,14 +17,17 @@
   "scripts": {
     "build": "tsdx build --entry src/index.ts && yarn",
     "start": "start-storybook -p 9001 -c ./tools/.storybook -s ./tools/.storybook/public",
-    "storybook": "yarn build-storybook -c tools/.storybook -s ./tools/.storybook/public -o dist-storybook"
+    "storybook": "yarn build-storybook -c tools/.storybook -s ./tools/.storybook/public -o dist-storybook",
+    "lint": "tsdx lint",
+    "test": "yarn jest"
   },
   "peerDependencies": {
     "react": "^16.8.6 || ^17.0.0",
     "react-dom": "^16.8.6 || ^17.0.0"
   },
   "dependencies": {
-    "classnames": "^2.2.6"
+    "classnames": "^2.2.6",
+    "ts-jest": "^26.4.4"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",

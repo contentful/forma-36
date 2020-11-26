@@ -16,7 +16,7 @@
     "target": "esnext",
     "typeRoots": ["node_modules/@types", "./typings.d.ts"]
   },
-  "include": ["./"],
+  "include": ["./", ".eslintrc.js"],
   "exclude": [
     "dist",
     "dist-storybook",
