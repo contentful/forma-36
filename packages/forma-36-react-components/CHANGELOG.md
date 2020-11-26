@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.68.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.68.2...@contentful/forma-36-react-components@3.68.3) (2020-11-26)
+
+
+### Bug Fixes
+
+* update docs on the storybook main page ([#662](https://github.com/contentful/forma-36/issues/662)) ([503950a](https://github.com/contentful/forma-36/commit/503950a1fbdf8d31a83b39639956c5ff41768748))
+
+
+
+
+
 ## [3.68.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.68.1...@contentful/forma-36-react-components@3.68.2) (2020-11-26)
 
 
