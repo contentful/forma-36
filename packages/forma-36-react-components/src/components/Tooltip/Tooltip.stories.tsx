@@ -3,7 +3,7 @@ import React from 'react';
 import Tooltip from './Tooltip';
 import Paragraph from '../Typography/Paragraph';
 import TextLink from '../TextLink';
-import notes from './README.md';
+import notes from './README.mdx';
 
 export default {
   title: 'Components/Tooltip',

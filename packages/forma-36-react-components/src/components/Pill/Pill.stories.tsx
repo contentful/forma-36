@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions';
 import Icon from '../Icon';
 
 import Pill, { PillProps } from './Pill';
-import notes from './README.md';
+import notes from './README.mdx';
 
 export default {
   title: 'Components/Pill',

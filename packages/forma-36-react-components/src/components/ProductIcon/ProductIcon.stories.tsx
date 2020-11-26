@@ -7,7 +7,7 @@ import {
   productIconColor,
   productIconTag,
 } from './constants';
-import notes from './README.md';
+import notes from './README.mdx';
 
 export default {
   title: '(alpha)/ProductIcon',
