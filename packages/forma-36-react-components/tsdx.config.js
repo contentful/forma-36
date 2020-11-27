@@ -13,6 +13,7 @@ module.exports = {
         config: {
           path: path.resolve(__dirname, './tools/postcss.config.js'),
         },
+        minimize: true,
         modules: true,
         extract: 'styles.css',
       }),
