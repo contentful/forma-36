@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import axe from '../../../tools/axeHelper';
+import axe from '../../tests/axeHelper';
 import Icon from './Icon';
 import { iconName } from './constants';
 
