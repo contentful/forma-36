@@ -1347,6 +1347,11 @@
   resolved "https://registry.yarnpkg.com/@commitlint/types/-/types-11.0.0.tgz#719cf05fcc1abb6533610a2e0f5dd1e61eac14fe"
   integrity sha512-VoNqai1vR5anRF5Tuh/+SWDFk7xi7oMwHrHrbm1BprYXjB2RJsWLhUrStMssDxEl5lW/z3EUdg8RvH/IUBccSQ==
 
+"@contentful/browserslist-config@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@contentful/browserslist-config/-/browserslist-config-1.0.1.tgz#fc5aa36bb26f6a8982b3d511af486c2eedc43634"
+  integrity sha512-0Tf8nMfNoaDtATwVzqbwb1Q1EpLCAI8cZ21ds6P/uB2cu7RuJ/xa+1B/OafrG5huhVH/PxoJk3QWTjlCo6k0sg==
+
 "@contentful/forma-36-tokens@0.2.0":
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@contentful/forma-36-tokens/-/forma-36-tokens-0.2.0.tgz#c4a1062e7acc2ae0ae5699e7c8606d5b5047a1c5"

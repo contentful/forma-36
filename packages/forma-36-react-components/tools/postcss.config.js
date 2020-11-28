@@ -11,7 +11,7 @@ module.exports = {
     postCssUrl,
     postcssPresetEnv({
       stage: 0, // Allow experimental CSS features
-      browsers: ['Chrome >= 75', 'Edge >= 17', 'Firefox >= 70', 'Safari >= 12'],
+      browsers: 'extends @contentful/browserslist-config',
       preserve: false, // Remove the pre-polyfilled CSS
     }),
   ],
