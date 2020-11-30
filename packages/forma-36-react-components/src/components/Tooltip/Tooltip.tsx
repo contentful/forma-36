@@ -47,6 +47,10 @@ export interface TooltipProps {
    */
   maxWidth?: number | CSS.Property.MaxWidth;
   /**
+   * It sets a delay period for the Tooltip
+   */
+  delay?: Partial<DelayProps>;
+  /**
    * Function that will be called when target gets blurred
    */
   onBlur?: (evt: FocusEvent) => void;
@@ -80,6 +84,10 @@ interface ArrowPositionState {
   top: string;
   left: string;
 }
+export interface DelayProps {
+  hide: number;
+  show: number;
+}
 
 export const Tooltip = ({
   children,
@@ -90,6 +98,7 @@ export const Tooltip = ({
   isVisible,
   closeOnMouseLeave,
   maxWidth,
+  delay,
   onBlur,
   onFocus,
   onMouseLeave,
@@ -100,6 +109,7 @@ export const Tooltip = ({
   ...otherProps
 }: TooltipProps) => {
   const [show, setShow] = useState(false);
+  const [delaySettings, setDelaySettings] = useState(delay);
   const [arrowPosition, setArrowPosition] = useState<ArrowPositionState>(
     getArrowPosition('bottom'),
   );
@@ -153,9 +163,15 @@ export const Tooltip = ({
   useEffect(() => {
     if (isVisible) setShow(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
+    if (!delay) {
+      if (closeOnMouseLeave) {
+        setDelaySettings({ hide: 0, show: 0 });
+      } else {
+        setDelaySettings({ hide: 500, show: 0 });
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  const delay = closeOnMouseLeave ? 0 : 1000;
 
   const arrowStyles = {
     ...popperStyles.arrow,
@@ -186,11 +202,17 @@ export const Tooltip = ({
         ref={elementRef}
         className={targetWrapperClassName}
         onMouseEnter={(evt: MouseEvent) => {
-          setIsHoveringTarget(true);
+          setTimeout(
+            () => setIsHoveringTarget(true),
+            delaySettings && delaySettings.show,
+          );
           if (onMouseOver) onMouseOver(evt);
         }}
         onMouseLeave={(evt: MouseEvent) => {
-          setTimeout(() => setIsHoveringTarget(false), delay);
+          setTimeout(
+            () => setIsHoveringTarget(false),
+            delaySettings && delaySettings.hide,
+          );
           if (onMouseLeave) onMouseLeave(evt);
         }}
         onFocus={(evt: FocusEvent) => {
@@ -198,7 +220,10 @@ export const Tooltip = ({
           if (onFocus) onFocus(evt);
         }}
         onBlur={(evt: FocusEvent) => {
-          setTimeout(() => setIsHoveringTarget(false), delay);
+          setTimeout(
+            () => setIsHoveringTarget(false),
+            delaySettings && delaySettings.hide,
+          );
           if (onBlur) onBlur(evt);
         }}
         {...otherProps}
