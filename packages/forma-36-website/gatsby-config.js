@@ -152,6 +152,10 @@ module.exports = {
             link: '/components/entity-list/',
           },
           {
+            name: 'Flex',
+            link: '/components/flex/',
+          },
+          {
             name: 'Form',
             link: '/components/form/',
           },
