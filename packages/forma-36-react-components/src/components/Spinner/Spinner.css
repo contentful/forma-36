@@ -23,7 +23,7 @@
 }
 
 .circle1--translate {
-  animation: circle1-translate 1500ms linear infinite normal forwards;
+  animation: circle1-translate 1s linear infinite normal forwards;
 }
 @keyframes circle1-translate {
   0% {
@@ -59,7 +59,7 @@
 }
 
 .circle1--scale {
-  animation: circle1-scale 1500ms linear infinite normal forwards;
+  animation: circle1-scale 1s linear infinite normal forwards;
 }
 @keyframes circle1-scale {
   0% {
@@ -95,7 +95,7 @@
 }
 
 .circle2--translate {
-  animation: circle2-translate 1500ms linear infinite normal forwards;
+  animation: circle2-translate 1s linear infinite normal forwards;
 }
 @keyframes circle2-translate {
   0% {
@@ -133,7 +133,7 @@
   }
 }
 .circle2--scale {
-  animation: circle2-scale 1500ms linear infinite normal forwards;
+  animation: circle2-scale 1s linear infinite normal forwards;
 }
 @keyframes circle2-scale {
   0% {
@@ -172,7 +172,7 @@
 }
 
 .circle3--translate {
-  animation: circle3-translate 1500ms linear infinite normal forwards;
+  animation: circle3-translate 1s linear infinite normal forwards;
 }
 @keyframes circle3-translate {
   0% {
@@ -210,7 +210,7 @@
   }
 }
 .circle3--scale {
-  animation: circle3-scale 1500ms linear infinite normal forwards;
+  animation: circle3-scale 1s linear infinite normal forwards;
 }
 @keyframes circle3-scale {
   0% {
