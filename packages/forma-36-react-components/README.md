@@ -53,6 +53,13 @@ import { Input } from '@contentful/forma-36-react-components';
 import '@contentful/forma-36-react-components/dist/styles.css';
 ```
 
+NOTE: If a component is still in alpha state:
+
+```js
+import { AlphaComponent } from '@contentful/forma-36-react-components/dist/alpha';
+```
+
+
 ## Development
 
 ### Switch to the correct version of Node (using NVM)
