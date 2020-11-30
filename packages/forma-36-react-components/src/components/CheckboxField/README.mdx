@@ -1,10 +1,6 @@
 # CheckboxField
 
-CheckboxField is a component that gives an possiblity to easy setup proper checkbox with it's label. Component contains options for set also helper text if needed that would be displayed below the label.
-
-## Variations/types
-
-Provide the overview of the components variants.
+CheckboxField is a component that gives an possiblity to easy setup proper checkbox with it's label. Component contains also an options that allows to set helper text displayed below the label. You might see checkboxes in forms, they might be also used for filtering data on the page or terms and conditions. Everywhere where user have multiple choice you might want to use this component.
 
 ## Example of usage
 
@@ -21,6 +17,22 @@ import {CheckboxField} from '@contentful/forma-36-react-components';
 />
 ```
 
+Light label example
+
+```jsx
+import {CheckboxField} from '@contentful/forma-36-react-components';
+
+<CheckboxField
+  checked={}
+  onChange={hadnleOnChange}
+  name="checkbox name"
+  id="randomId"
+  labelText="Label text"
+  helpText="Helper text displayed below"
+  labelIsLight
+/>
+```
+
 ## Content recommendations
 
  - Start every option from a capital letter
@@ -29,10 +41,17 @@ import {CheckboxField} from '@contentful/forma-36-react-components';
 
 ## Best practices
 
- - Checkboxes should work independently, checking one should not affect any other checkbox. 
- - Checkbox should always have a label if it's used for toggling
- - Listing options for a user should have some order, some sort of system is most likely expected by the user when working with lists (numerical, time based)
- 
+ - Checkboxes should work independently, checking one should not affect any other checkbox in the interface. 
+ - Checkbox should always have a label, especially if it's used for toggling settings
+ - Listing options for a user should have some order. Some sort of system is most likely expected by the user when working with lists (numerical, time based)
+ - For the label, 2 different styles can be used, depending on the context and importance one wants to give to the checkbox. The default is the medium weight label. You can change it to regular weight label by using `labelIsLight` property
+
+NOTE: When attaching a help text to a checkbox, the medium label has to be used to ensure that there's enough contrast.
+
+![alt text](https://projects.invisionapp.com/static-signed/live-embed/118156364/217188034/1/latest/GViqYux2SMhP4QlwGAMCr0HdFfUbLHSFKyKmTgJN6tglOfRkKvycWfyQiLk6s2omHt8wJXTYoehOQiFHX1ezqQlE/Checkbox.png 'Checkbox')
+
 ## Accessibility
 
-If possible, we strongly recommend providing accessibility guidelines.
+ - Checkboxes should have a clear and concise label.
+ - Users should be warned if selecting a checkbox will cause a change in context.
+ - When the checkbox has focus, pressing the Space key changes the state of the checkbox.
