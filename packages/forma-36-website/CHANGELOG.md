@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.84](https://github.com/contentful/forma-36/compare/forma-36-website@0.9.83...forma-36-website@0.9.84) (2020-11-30)
+
+
+### Bug Fixes
+
+* add small improvements for readme around alpha components ([#673](https://github.com/contentful/forma-36/issues/673)) ([48c81e4](https://github.com/contentful/forma-36/commit/48c81e419b1fd29ab7d779e51af78222759bfb01))
+
+
+
+
+
 ## [0.9.83](https://github.com/contentful/forma-36/compare/forma-36-website@0.9.82...forma-36-website@0.9.83) (2020-11-27)
 
 **Note:** Version bump only for package forma-36-website
