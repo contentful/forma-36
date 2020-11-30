@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.68.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.68.4...@contentful/forma-36-react-components@3.68.5) (2020-11-27)
+
+
+### Bug Fixes
+
+* proper styles.css build ([#668](https://github.com/contentful/forma-36/issues/668)) ([71cbf78](https://github.com/contentful/forma-36/commit/71cbf78a91d329c329a0014fafd35142dabc8df3))
+
+
+
+
+
+## [3.68.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.68.3...@contentful/forma-36-react-components@3.68.4) (2020-11-26)
+
+
+### Bug Fixes
+
+* **text input:** remove webkit search styling ([35508dd](https://github.com/contentful/forma-36/commit/35508dd48e953c8da147e5e79ad19663ae8f5b8c))
+
+
+
+
+
+## [3.68.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.68.2...@contentful/forma-36-react-components@3.68.3) (2020-11-26)
+
+
+### Bug Fixes
+
+* update docs on the storybook main page ([#662](https://github.com/contentful/forma-36/issues/662)) ([503950a](https://github.com/contentful/forma-36/commit/503950a1fbdf8d31a83b39639956c5ff41768748))
+
+
+
+
+
 ## [3.68.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.68.1...@contentful/forma-36-react-components@3.68.2) (2020-11-26)
 
 
