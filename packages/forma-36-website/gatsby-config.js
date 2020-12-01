@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   siteMetadata: {
     title: 'Forma 36 - The Contentful Design System',
@@ -300,7 +302,10 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'pages',
-        path: `${__dirname}/src/pages/`,
+        path: path.resolve(
+          __dirname,
+          '../forma-36-react-components/src/components/',
+        ), //`${__dirname}/src/pages/`,
       },
     },
     'gatsby-transformer-javascript-frontmatter',

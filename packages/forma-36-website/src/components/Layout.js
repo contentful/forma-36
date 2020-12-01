@@ -24,6 +24,10 @@ const styles = {
   `,
 };
 
+const getComponentName = (nodes) => {
+  return nodes.map(item => console.log(item));
+};
+
 const Layout = props => (
   <StaticQuery
     query={graphql`
@@ -52,9 +56,24 @@ const Layout = props => (
             }
           }
         }
+        allMdx {
+          nodes {
+            id
+            fileAbsolutePath
+            internal {
+              content
+            }
+          }
+        }
       }
     `}
     render={data => {
+      const componentsNames = data.allMdx.nodes.map(item => {
+        const pathArray = item.fileAbsolutePath.split('/');
+        pathArray.pop();
+        return pathArray.pop();
+      })
+      console.log(componentsNames);
       return (
         <div css={styles.test}>
           <Helmet
