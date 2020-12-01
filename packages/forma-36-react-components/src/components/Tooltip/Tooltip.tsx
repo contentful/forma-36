@@ -39,17 +39,13 @@ export interface TooltipProps {
    */
   isVisible?: boolean;
   /**
-   * It controls whether or not the tooltip stays open when hovering on the content
-   */
-  closeOnMouseLeave?: boolean;
-  /**
    * It sets a max-width for the Tooltip
    */
   maxWidth?: number | CSS.Property.MaxWidth;
   /**
    * It sets a delay period for the Tooltip
    */
-  delay?: Partial<DelayProps>;
+  hideDelay?: number;
   /**
    * Function that will be called when target gets blurred
    */
@@ -84,10 +80,6 @@ interface ArrowPositionState {
   top: string;
   left: string;
 }
-export interface DelayProps {
-  hide: number;
-  show: number;
-}
 
 export const Tooltip = ({
   children,
@@ -95,21 +87,19 @@ export const Tooltip = ({
   containerElement: ContainerElement = 'span',
   content,
   id,
-  isVisible,
-  closeOnMouseLeave,
-  maxWidth,
-  delay,
+  isVisible = false,
+  hideDelay = 0,
   onBlur,
   onFocus,
   onMouseLeave,
   onMouseOver,
-  place,
   targetWrapperClassName,
-  testId,
+  maxWidth = 360,
+  testId = 'cf-ui-tooltip',
+  place = 'auto',
   ...otherProps
 }: TooltipProps) => {
   const [show, setShow] = useState(false);
-  const [delaySettings, setDelaySettings] = useState(delay);
   const [arrowPosition, setArrowPosition] = useState<ArrowPositionState>(
     getArrowPosition('bottom'),
   );
@@ -153,23 +143,11 @@ export const Tooltip = ({
   const [isHoveringTarget, setIsHoveringTarget] = useState(false);
   const [isHoveringContent, setIsHoveringContent] = useState(false);
   useEffect(() => {
-    if (closeOnMouseLeave) {
-      setShow(isHoveringTarget);
-    } else {
-      setShow(isHoveringContent || isHoveringTarget);
-    }
-  }, [closeOnMouseLeave, isHoveringTarget, isHoveringContent]);
+    setShow(isHoveringContent || isHoveringTarget);
+  }, [isHoveringTarget, isHoveringContent]);
 
   useEffect(() => {
     if (isVisible) setShow(true);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    if (!delay) {
-      if (closeOnMouseLeave) {
-        setDelaySettings({ hide: 0, show: 0 });
-      } else {
-        setDelaySettings({ hide: 500, show: 0 });
-      }
-    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -196,23 +174,19 @@ export const Tooltip = ({
     );
   }
 
+  // const delay = !hideDelay ? (closeOnMouseLeave ? 0 : 300) : hideDelay;
+
   return (
     <>
       <ContainerElement
         ref={elementRef}
         className={targetWrapperClassName}
         onMouseEnter={(evt: MouseEvent) => {
-          setTimeout(
-            () => setIsHoveringTarget(true),
-            delaySettings && delaySettings.show,
-          );
+          setIsHoveringTarget(true);
           if (onMouseOver) onMouseOver(evt);
         }}
         onMouseLeave={(evt: MouseEvent) => {
-          setTimeout(
-            () => setIsHoveringTarget(false),
-            delaySettings && delaySettings.hide,
-          );
+          setTimeout(() => setIsHoveringTarget(false), hideDelay);
           if (onMouseLeave) onMouseLeave(evt);
         }}
         onFocus={(evt: FocusEvent) => {
@@ -220,10 +194,7 @@ export const Tooltip = ({
           if (onFocus) onFocus(evt);
         }}
         onBlur={(evt: FocusEvent) => {
-          setTimeout(
-            () => setIsHoveringTarget(false),
-            delaySettings && delaySettings.hide,
-          );
+          setTimeout(() => setIsHoveringTarget(false), hideDelay);
           if (onBlur) onBlur(evt);
         }}
         {...otherProps}
@@ -260,14 +231,6 @@ export const Tooltip = ({
       )}
     </>
   );
-};
-Tooltip.defaultProps = {
-  containerElement: 'span',
-  isVisible: false,
-  closeOnMouseLeave: true,
-  maxWidth: 360,
-  testId: 'cf-ui-tooltip',
-  place: 'auto',
 };
 
 function getArrowPosition(popperPlacement: string) {
