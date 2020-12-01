@@ -4,19 +4,51 @@ exports[`renders the component 1`] = `
 <svg
   class="Spinner Spinner--default"
   data-test-id="cf-ui-spinner"
-  viewBox="0 0 20 20"
+  viewBox="0 0 60 51"
   xmlns="http://www.w3.org/2000/svg"
 >
-  <title>
-    Loading…
-  </title>
-  <path
-    d="M2,10a8,8,0,0,1,8-8V0a10,10,0,0,0,0,20V18A8,8,0,0,1,2,10Z"
-  />
-  <path
-    d="M10,0V2a8,8,0,0,1,0,16v2A10,10,0,0,0,10,0Z"
-    style="opacity: 0.4;"
-  />
+  <g
+    class="circle1--translate"
+    transform="translate(10,33.528168)"
+  >
+    <g
+      class="circle1--scale"
+    >
+      <circle
+        id="circle1"
+        r="6"
+        transform="translate(0,10.471832)"
+      />
+    </g>
+  </g>
+  <g
+    class="circle2--translate"
+    transform="translate(30,33.528168)"
+  >
+    <g
+      class="circle2--scale"
+    >
+      <circle
+        id="circle2"
+        r="6"
+        transform="translate(0,10.471832)"
+      />
+    </g>
+  </g>
+  <g
+    class="circle3--translate"
+    transform="translate(50,33.528168)"
+  >
+    <g
+      class="circle3--scale"
+    >
+      <circle
+        id="circle3"
+        r="6"
+        transform="translate(0,10.471832)"
+      />
+    </g>
+  </g>
 </svg>
 `;
 
@@ -26,19 +58,51 @@ exports[`renders the component with a custom size 1`] = `
   data-test-id="cf-ui-spinner"
   data-testid="spinner"
   style="height: 42px; width: 42px;"
-  viewBox="0 0 20 20"
+  viewBox="0 0 60 51"
   xmlns="http://www.w3.org/2000/svg"
 >
-  <title>
-    Loading…
-  </title>
-  <path
-    d="M2,10a8,8,0,0,1,8-8V0a10,10,0,0,0,0,20V18A8,8,0,0,1,2,10Z"
-  />
-  <path
-    d="M10,0V2a8,8,0,0,1,0,16v2A10,10,0,0,0,10,0Z"
-    style="opacity: 0.4;"
-  />
+  <g
+    class="circle1--translate"
+    transform="translate(10,33.528168)"
+  >
+    <g
+      class="circle1--scale"
+    >
+      <circle
+        id="circle1"
+        r="6"
+        transform="translate(0,10.471832)"
+      />
+    </g>
+  </g>
+  <g
+    class="circle2--translate"
+    transform="translate(30,33.528168)"
+  >
+    <g
+      class="circle2--scale"
+    >
+      <circle
+        id="circle2"
+        r="6"
+        transform="translate(0,10.471832)"
+      />
+    </g>
+  </g>
+  <g
+    class="circle3--translate"
+    transform="translate(50,33.528168)"
+  >
+    <g
+      class="circle3--scale"
+    >
+      <circle
+        id="circle3"
+        r="6"
+        transform="translate(0,10.471832)"
+      />
+    </g>
+  </g>
 </svg>
 `;
 
@@ -46,19 +110,51 @@ exports[`renders the component with an additional class name 1`] = `
 <svg
   class="Spinner my-extra-class Spinner--default"
   data-test-id="cf-ui-spinner"
-  viewBox="0 0 20 20"
+  viewBox="0 0 60 51"
   xmlns="http://www.w3.org/2000/svg"
 >
-  <title>
-    Loading…
-  </title>
-  <path
-    d="M2,10a8,8,0,0,1,8-8V0a10,10,0,0,0,0,20V18A8,8,0,0,1,2,10Z"
-  />
-  <path
-    d="M10,0V2a8,8,0,0,1,0,16v2A10,10,0,0,0,10,0Z"
-    style="opacity: 0.4;"
-  />
+  <g
+    class="circle1--translate"
+    transform="translate(10,33.528168)"
+  >
+    <g
+      class="circle1--scale"
+    >
+      <circle
+        id="circle1"
+        r="6"
+        transform="translate(0,10.471832)"
+      />
+    </g>
+  </g>
+  <g
+    class="circle2--translate"
+    transform="translate(30,33.528168)"
+  >
+    <g
+      class="circle2--scale"
+    >
+      <circle
+        id="circle2"
+        r="6"
+        transform="translate(0,10.471832)"
+      />
+    </g>
+  </g>
+  <g
+    class="circle3--translate"
+    transform="translate(50,33.528168)"
+  >
+    <g
+      class="circle3--scale"
+    >
+      <circle
+        id="circle3"
+        r="6"
+        transform="translate(0,10.471832)"
+      />
+    </g>
+  </g>
 </svg>
 `;
 
@@ -66,19 +162,51 @@ exports[`renders the component with the size "large" 1`] = `
 <svg
   class="Spinner Spinner--large Spinner--default"
   data-test-id="cf-ui-spinner"
-  viewBox="0 0 20 20"
+  viewBox="0 0 60 51"
   xmlns="http://www.w3.org/2000/svg"
 >
-  <title>
-    Loading…
-  </title>
-  <path
-    d="M2,10a8,8,0,0,1,8-8V0a10,10,0,0,0,0,20V18A8,8,0,0,1,2,10Z"
-  />
-  <path
-    d="M10,0V2a8,8,0,0,1,0,16v2A10,10,0,0,0,10,0Z"
-    style="opacity: 0.4;"
-  />
+  <g
+    class="circle1--translate"
+    transform="translate(10,33.528168)"
+  >
+    <g
+      class="circle1--scale"
+    >
+      <circle
+        id="circle1"
+        r="6"
+        transform="translate(0,10.471832)"
+      />
+    </g>
+  </g>
+  <g
+    class="circle2--translate"
+    transform="translate(30,33.528168)"
+  >
+    <g
+      class="circle2--scale"
+    >
+      <circle
+        id="circle2"
+        r="6"
+        transform="translate(0,10.471832)"
+      />
+    </g>
+  </g>
+  <g
+    class="circle3--translate"
+    transform="translate(50,33.528168)"
+  >
+    <g
+      class="circle3--scale"
+    >
+      <circle
+        id="circle3"
+        r="6"
+        transform="translate(0,10.471832)"
+      />
+    </g>
+  </g>
 </svg>
 `;
 
@@ -86,18 +214,50 @@ exports[`renders the component with the size "small" 1`] = `
 <svg
   class="Spinner Spinner--small Spinner--default"
   data-test-id="cf-ui-spinner"
-  viewBox="0 0 20 20"
+  viewBox="0 0 60 51"
   xmlns="http://www.w3.org/2000/svg"
 >
-  <title>
-    Loading…
-  </title>
-  <path
-    d="M2,10a8,8,0,0,1,8-8V0a10,10,0,0,0,0,20V18A8,8,0,0,1,2,10Z"
-  />
-  <path
-    d="M10,0V2a8,8,0,0,1,0,16v2A10,10,0,0,0,10,0Z"
-    style="opacity: 0.4;"
-  />
+  <g
+    class="circle1--translate"
+    transform="translate(10,33.528168)"
+  >
+    <g
+      class="circle1--scale"
+    >
+      <circle
+        id="circle1"
+        r="6"
+        transform="translate(0,10.471832)"
+      />
+    </g>
+  </g>
+  <g
+    class="circle2--translate"
+    transform="translate(30,33.528168)"
+  >
+    <g
+      class="circle2--scale"
+    >
+      <circle
+        id="circle2"
+        r="6"
+        transform="translate(0,10.471832)"
+      />
+    </g>
+  </g>
+  <g
+    class="circle3--translate"
+    transform="translate(50,33.528168)"
+  >
+    <g
+      class="circle3--scale"
+    >
+      <circle
+        id="circle3"
+        r="6"
+        transform="translate(0,10.471832)"
+      />
+    </g>
+  </g>
 </svg>
 `;

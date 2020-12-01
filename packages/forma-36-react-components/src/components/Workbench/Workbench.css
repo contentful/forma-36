@@ -35,7 +35,7 @@
 }
 
 .Workbench__header-back {
-  margin: calc(-1 * var(--spacing-l));
+  margin: calc((-1) * var(--spacing-l));
   margin-right: var(--spacing-m);
   border-right: 1px solid var(--color-element-light);
 }

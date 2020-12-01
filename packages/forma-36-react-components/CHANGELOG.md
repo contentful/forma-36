@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.68.10](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.68.9...@contentful/forma-36-react-components@3.68.10) (2020-12-01)
+
+
+### Bug Fixes
+
+* **Workbench-css:** Wrap calc in parenthesis ([f4cb1f2](https://github.com/contentful/forma-36/commit/f4cb1f24d654c4ba27a32dbd8e5a0d61075703a8))
+
+
+
+
+
+## [3.68.9](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.68.8...@contentful/forma-36-react-components@3.68.9) (2020-12-01)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+## [3.68.8](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.68.7...@contentful/forma-36-react-components@3.68.8) (2020-11-30)
+
+
+### Bug Fixes
+
+* Autocomplete component docs ([#666](https://github.com/contentful/forma-36/issues/666)) ([c12052d](https://github.com/contentful/forma-36/commit/c12052d2a0a43a431fb1eed1167bad1e361c4630))
+
+
+
+
+
 ## [3.68.7](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.68.6...@contentful/forma-36-react-components@3.68.7) (2020-11-30)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
