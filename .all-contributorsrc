@@ -14,6 +14,16 @@
         "code",
         "maintenance"
       ]
+    },
+     {
+      "login": "wichniowski",
+      "name": "Johannes Bugiel",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1766274?v=4",
+      "profile": "http://bugiel.studio",
+      "contributions": [
+        "code",
+        "maintenance"
+      ]
     }
   ],
   "contributorsPerLine": 7,
