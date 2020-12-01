@@ -44,6 +44,16 @@
         "code",
         "maintenance"
       ]
+    },
+    {
+      "login": "burakukula",
+      "name": "Patrycja Radaczyńska",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/4272331?v=4",
+      "profile": "http://kazimir.app/",
+      "contributions": [
+        "code",
+        "maintenance"
+      ]
     }
   ],
   "contributorsPerLine": 7,
