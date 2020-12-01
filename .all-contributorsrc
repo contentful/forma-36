@@ -54,6 +54,15 @@
         "code",
         "maintenance"
       ]
+    },
+    {
+      "login": "domarku",
+      "name": "Dominik Markušić",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/7631029?v=4",
+      "profile": "https://github.com/domarku",
+      "contributions": [
+        "design"
+      ]
     }
   ],
   "contributorsPerLine": 7,
