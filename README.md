@@ -1,6 +1,6 @@
 <h1><img src="./forma-icon.svg" height="24"> Forma 36 - The Contentful Design System</h1>
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Contentful](https://circleci.com/gh/contentful/forma-36.svg?style=shield)](https://circleci.com/gh/contentful/forma-36)
@@ -103,6 +103,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://lol.xxx"><img src="https://avatars0.githubusercontent.com/u/4446634?v=4" width="100px;" alt=""/><br /><sub><b>Mike Mitchell</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=m10l" title="Code">💻</a> <a href="#maintenance-m10l" title="Maintenance">🚧</a></td>
     <td align="center"><a href="http://bugiel.studio"><img src="https://avatars2.githubusercontent.com/u/1766274?v=4" width="100px;" alt=""/><br /><sub><b>Johannes Bugiel</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=wichniowski" title="Code">💻</a> <a href="#maintenance-wichniowski" title="Maintenance">🚧</a></td>
     <td align="center"><a href="http://guisantos.com/"><img src="https://avatars0.githubusercontent.com/u/6597467?v=4" width="100px;" alt=""/><br /><sub><b>Gui Santos</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=gui-santos" title="Code">💻</a> <a href="#maintenance-gui-santos" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="http://mshaaban.com"><img src="https://avatars0.githubusercontent.com/u/6163988?v=4" width="100px;" alt=""/><br /><sub><b>Moe Shaaban</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=mshaaban0" title="Code">💻</a> <a href="#maintenance-mshaaban0" title="Maintenance">🚧</a></td>
   </tr>
 </table>
 
