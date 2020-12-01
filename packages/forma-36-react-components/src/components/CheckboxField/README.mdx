@@ -4,12 +4,22 @@ CheckboxField is a component that gives an possiblity to easy setup proper check
 
 ## Example of usage
 
+Basic usage
+
 ```jsx
 import {CheckboxField} from '@contentful/forma-36-react-components';
 
 <CheckboxField
-  checked={}
-  onChange={hadnleOnChange}
+  labelText="Label text"
+/>
+```
+
+Example using helper text, which will be displayed below the label
+
+```jsx
+import {CheckboxField} from '@contentful/forma-36-react-components';
+
+<CheckboxField
   name="checkbox name"
   id="randomId"
   labelText="Label text"
@@ -17,18 +27,15 @@ import {CheckboxField} from '@contentful/forma-36-react-components';
 />
 ```
 
-Light label example
+Light label example - `labelIsLight` changes label font weight to regular. Please keep in mind to not use it with helper text. For that case the medium label has to be used to ensure that there's enough contrast.
 
 ```jsx
 import {CheckboxField} from '@contentful/forma-36-react-components';
 
 <CheckboxField
-  checked={}
-  onChange={hadnleOnChange}
   name="checkbox name"
   id="randomId"
   labelText="Label text"
-  helpText="Helper text displayed below"
   labelIsLight
 />
 ```
@@ -41,7 +48,7 @@ import {CheckboxField} from '@contentful/forma-36-react-components';
 
 ## Best practices
 
- - Checkboxes should work independently, checking one should not affect any other checkbox in the interface. 
+ - Checkboxes should work independently, checking one should not affect any other checkbox in the interface. For single choice, please consider using [RadioButton](../RadioButton/RadioButton.tsx)
  - Checkbox should always have a label, especially if it's used for toggling settings
  - Listing options for a user should have some order. Some sort of system is most likely expected by the user when working with lists (numerical, time based)
  - For the label, 2 different styles can be used, depending on the context and importance one wants to give to the checkbox. The default is the medium weight label. You can change it to regular weight label by using `labelIsLight` property
