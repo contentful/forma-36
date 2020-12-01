@@ -83,6 +83,15 @@
         "code",
         "maintenance"
       ]
+    },
+    {
+      "login": "Gracegross",
+      "name": "Gracegross",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/69515265?v=4",
+      "profile": "https://github.com/Gracegross",
+      "contributions": [
+        "design"
+      ]
     }
   ],
   "contributorsPerLine": 7,
