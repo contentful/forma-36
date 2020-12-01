@@ -6,6 +6,16 @@
   "commit": false,
   "contributors": [
     {
+      "login": "m10l",
+      "name": "Mike Mitchell",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4446634?v=4",
+      "profile": "http://lol.xxx",
+      "contributions": [
+        "code",
+        "maintenance"
+      ]
+    },
+     {
       "login": "wichniowski",
       "name": "Johannes Bugiel",
       "avatar_url": "https://avatars2.githubusercontent.com/u/1766274?v=4",
