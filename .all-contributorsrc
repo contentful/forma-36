@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "gui",
+      "name": "Nick Muerdter",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/12112?v=4",
+      "profile": "https://github.com/GUI",
+      "contributions": [
+        "code",
+        "maintenance"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "forma-36",
+  "projectOwner": "contentful",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
