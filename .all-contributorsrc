@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "m10l",
+      "name": "Mike Mitchell",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4446634?v=4",
+      "profile": "http://lol.xxx",
+      "contributions": [
+        "code",
+        "maintenance"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "forma-36",
+  "projectOwner": "contentful",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
