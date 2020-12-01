@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "burakukula",
+      "name": "Patrycja Radaczyńska",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/4272331?v=4",
+      "profile": "http://kazimir.app/",
+      "contributions": [
+        "code",
+        "maintenance"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "forma-36",
+  "projectOwner": "contentful",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
