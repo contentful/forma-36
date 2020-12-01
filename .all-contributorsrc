@@ -1,0 +1,25 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "wichniowski",
+      "name": "Johannes Bugiel",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1766274?v=4",
+      "profile": "http://bugiel.studio",
+      "contributions": [
+        "code",
+        "maintenance"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "forma-36",
+  "projectOwner": "contentful",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
