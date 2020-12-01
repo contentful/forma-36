@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.69.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.68.10...@contentful/forma-36-react-components@3.69.0) (2020-12-01)
+
+
+### Features
+
+* refactor table components to functional components [PUL-1298] ([#660](https://github.com/contentful/forma-36/issues/660)) ([7936ad9](https://github.com/contentful/forma-36/commit/7936ad91ff49744a918f6b0a266ae2451c40ceb9)), closes [#651](https://github.com/contentful/forma-36/issues/651)
+
+
+
+
+
 ## [3.68.10](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.68.9...@contentful/forma-36-react-components@3.68.10) (2020-12-01)
 
 
