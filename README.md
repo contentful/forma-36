@@ -1,6 +1,6 @@
 <h1><img src="./forma-icon.svg" height="24"> Forma 36 - The Contentful Design System</h1>
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![Contentful](https://circleci.com/gh/contentful/forma-36.svg?style=shield)](https://circleci.com/gh/contentful/forma-36)
@@ -111,6 +111,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://suevalov.com"><img src="https://avatars3.githubusercontent.com/u/3672221?v=4" width="100px;" alt=""/><br /><sub><b>Alexander Suevalov</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=suevalov" title="Code">💻</a> <a href="#maintenance-suevalov" title="Maintenance">🚧</a></td>
     <td align="center"><a href="https://github.com/Gracegross"><img src="https://avatars2.githubusercontent.com/u/69515265?v=4" width="100px;" alt=""/><br /><sub><b>Gracegross</b></sub></a><br /><a href="#design-Gracegross" title="Design">🎨</a></td>
+    <td align="center"><a href="https://github.com/Miretxu"><img src="https://avatars0.githubusercontent.com/u/22014714?v=4" width="100px;" alt=""/><br /><sub><b>miretxu</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=miretxu" title="Code">💻</a></td>
   </tr>
 </table>
 
