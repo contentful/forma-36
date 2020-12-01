@@ -73,6 +73,16 @@
         "code",
         "maintenance"
       ]
+    },
+    {
+      "login": "suevalov",
+      "name": "Alexander Suevalov",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/3672221?v=4",
+      "profile": "https://suevalov.com",
+      "contributions": [
+        "code",
+        "maintenance"
+      ]
     }
   ],
   "contributorsPerLine": 7,
