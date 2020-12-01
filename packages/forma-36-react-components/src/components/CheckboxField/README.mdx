@@ -1,6 +1,6 @@
 # CheckboxField
 
-CheckboxField is a component that gives an possiblity to easy setup proper checkbox with its label. Component also contains an options that allows setting helper text displayed below the label. You might see checkboxes in forms, they might be also used for filtering data on the page or terms and conditions. Everywhere where user have multiple choice you might want to use this component.
+CheckboxField is containing a checkbox with its label. Use this component to give users the possibility to select multiple elements. It might be used in forms, for filtering data on the page or terms and conditions. For a single choice, please consider using RadioButton component. 
 
 ## Example of usage
 
@@ -48,10 +48,10 @@ import {CheckboxField} from '@contentful/forma-36-react-components';
 
 ## Best practices
 
- - Checkboxes should work independently, checking one should not affect any other checkbox in the interface. For single choice, please consider using RadioButton.
- - Checkbox should always have a label, especially if it's used for toggling settings
+ - Checkboxes should work independently, checking one should not affect any other checkbox in the interface
+ - Checkbox should always have a label
  - Listing options for a user should have some order. Some sort of system is most likely expected by the user when working with lists (numerical, time based)
- - For the label, 2 different styles can be used, depending on the context and importance one wants to give to the checkbox. The default is the medium weight label. You can change it to regular weight label by using `labelIsLight` property
+ - For the label, 2 different styles can be used, depending on the context and importance one wants to give to the checkbox. The default is the medium weight label. You can change it to a regular weight label by using `labelIsLight` property
 
 NOTE: When attaching a help text to a checkbox, the medium label has to be used to ensure that there's enough contrast.
 
