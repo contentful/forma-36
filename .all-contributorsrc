@@ -34,6 +34,16 @@
         "code",
         "maintenance"
       ]
+    },
+    {
+      "login": "mshaaban0",
+      "name": "Moe Shaaban",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/6163988?v=4",
+      "profile": "http://mshaaban.com",
+      "contributions": [
+        "code",
+        "maintenance"
+      ]
     }
   ],
   "contributorsPerLine": 7,
