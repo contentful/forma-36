@@ -63,6 +63,16 @@
       "contributions": [
         "design"
       ]
+    },
+    {
+      "login": "denkristoffer",
+      "name": "Kristoffer",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/219017?v=4",
+      "profile": "https://kristoffer.is",
+      "contributions": [
+        "code",
+        "maintenance"
+      ]
     }
   ],
   "contributorsPerLine": 7,
