@@ -3,6 +3,66 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.69.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.68.10...@contentful/forma-36-react-components@3.69.0) (2020-12-01)
+
+
+### Features
+
+* refactor table components to functional components [PUL-1298] ([#660](https://github.com/contentful/forma-36/issues/660)) ([7936ad9](https://github.com/contentful/forma-36/commit/7936ad91ff49744a918f6b0a266ae2451c40ceb9)), closes [#651](https://github.com/contentful/forma-36/issues/651)
+
+
+
+
+
+## [3.68.10](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.68.9...@contentful/forma-36-react-components@3.68.10) (2020-12-01)
+
+
+### Bug Fixes
+
+* **Workbench-css:** Wrap calc in parenthesis ([f4cb1f2](https://github.com/contentful/forma-36/commit/f4cb1f24d654c4ba27a32dbd8e5a0d61075703a8))
+
+
+
+
+
+## [3.68.9](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.68.8...@contentful/forma-36-react-components@3.68.9) (2020-12-01)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+## [3.68.8](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.68.7...@contentful/forma-36-react-components@3.68.8) (2020-11-30)
+
+
+### Bug Fixes
+
+* Autocomplete component docs ([#666](https://github.com/contentful/forma-36/issues/666)) ([c12052d](https://github.com/contentful/forma-36/commit/c12052d2a0a43a431fb1eed1167bad1e361c4630))
+
+
+
+
+
+## [3.68.7](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.68.6...@contentful/forma-36-react-components@3.68.7) (2020-11-30)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+## [3.68.6](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.68.5...@contentful/forma-36-react-components@3.68.6) (2020-11-30)
+
+
+### Bug Fixes
+
+* add small improvements for readme around alpha components ([#673](https://github.com/contentful/forma-36/issues/673)) ([48c81e4](https://github.com/contentful/forma-36/commit/48c81e419b1fd29ab7d779e51af78222759bfb01))
+
+
+
+
+
 ## [3.68.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.68.4...@contentful/forma-36-react-components@3.68.5) (2020-11-27)
 
 

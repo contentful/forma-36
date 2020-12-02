@@ -1,0 +1,115 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "m10l",
+      "name": "Mike Mitchell",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/4446634?v=4",
+      "profile": "http://lol.xxx",
+      "contributions": [
+        "code",
+        "maintenance"
+      ]
+    },
+    {
+      "login": "wichniowski",
+      "name": "Johannes Bugiel",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1766274?v=4",
+      "profile": "http://bugiel.studio",
+      "contributions": [
+        "code",
+        "maintenance"
+      ]
+    },
+    {
+      "login": "gui-santos",
+      "name": "Gui Santos",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/6597467?v=4",
+      "profile": "http://guisantos.com/",
+      "contributions": [
+        "code",
+        "maintenance",
+        "doc"
+      ]
+    },
+    {
+      "login": "mshaaban0",
+      "name": "Moe Shaaban",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/6163988?v=4",
+      "profile": "http://mshaaban.com",
+      "contributions": [
+        "code",
+        "maintenance",
+        "doc"
+      ]
+    },
+    {
+      "login": "burakukula",
+      "name": "Patrycja Radaczyńska",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/4272331?v=4",
+      "profile": "http://kazimir.app/",
+      "contributions": [
+        "code",
+        "maintenance",
+        "doc"
+      ]
+    },
+    {
+      "login": "domarku",
+      "name": "Dominik Markušić",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/7631029?v=4",
+      "profile": "https://github.com/domarku",
+      "contributions": [
+        "design"
+      ]
+    },
+    {
+      "login": "denkristoffer",
+      "name": "Kristoffer",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/219017?v=4",
+      "profile": "https://kristoffer.is",
+      "contributions": [
+        "code",
+        "maintenance"
+      ]
+    },
+    {
+      "login": "suevalov",
+      "name": "Alexander Suevalov",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/3672221?v=4",
+      "profile": "https://suevalov.com",
+      "contributions": [
+        "code",
+        "maintenance"
+      ]
+    },
+    {
+      "login": "Gracegross",
+      "name": "Gracegross",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/69515265?v=4",
+      "profile": "https://github.com/Gracegross",
+      "contributions": [
+        "design"
+      ]
+    },
+    {
+      "login": "miretxu",
+      "name": "miretxu",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/22014714?v=4",
+      "profile": "https://github.com/Miretxu",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "forma-36",
+  "projectOwner": "contentful",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
