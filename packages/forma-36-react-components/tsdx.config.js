@@ -7,7 +7,11 @@ const filenameMatcher = /^src\/(.+)(\..+)$/;
 
 module.exports = {
   // This function will run for each entry/format/env combination
-  rollup(config, _options) {
+  rollup(config) {
+    const outputDir = process.cwd() + '/dist/';
+
+    const [, inputFilename] = config.input.match(filenameMatcher);
+
     config.plugins = [
       postcss({
         config: {
@@ -23,9 +27,6 @@ module.exports = {
       }),
       ...config.plugins,
     ];
-
-    const outputDir = process.cwd() + '/dist/';
-    let [, inputFilename] = config.input.match(filenameMatcher);
 
     // Manual name changes. Not great...
     if (inputFilename === 'alpha') {
