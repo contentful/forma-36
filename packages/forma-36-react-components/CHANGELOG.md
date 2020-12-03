@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.69.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.69.3...@contentful/forma-36-react-components@3.69.4) (2020-12-03)
+
+
+### Bug Fixes
+
+* **component:** add delay property to Toolbox component ([5f03ff5](https://github.com/contentful/forma-36/commit/5f03ff53c78a0086079c1a83868d863bb2889c3e))
+
+
+
+
+
 ## [3.69.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.69.2...@contentful/forma-36-react-components@3.69.3) (2020-12-03)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
