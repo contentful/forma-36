@@ -18,7 +18,7 @@ import {Autocomplete } from '@contentful/forma-36-react-components/dist/alpha';
   emptyListMessage={'no result found'}
   noMatchesMessage={'no matches'}
   dropdownProps={{ isFullWidth: true }}
-  disabled={disabled}
+  disabled={disabled}>
   {(options) => options.map((option) => <span key={option.value}>{option.label}</span>)}
 </Autocomplete>
 ```
