@@ -77,8 +77,7 @@ const markToComponentMap = {
 };
 
 const Container = data => {
-  const { frontmatter, children } = data;
-
+  const { frontmatter, children, dataFromReadme } = data;
   const isHomePage = frontmatter && frontmatter.type === 'home';
 
   return (
@@ -86,7 +85,7 @@ const Container = data => {
       <div css={styles.main}>
         <Typography css={isHomePage ? styles.innerHomePage : styles.inner}>
           <MDXProvider components={markToComponentMap}>
-            <DocFormatter frontmatter={frontmatter}>{children}</DocFormatter>
+            <DocFormatter frontmatter={frontmatter} dataFromReadme={dataFromReadme}>{children}</DocFormatter>
           </MDXProvider>
         </Typography>
       </div>
@@ -95,6 +94,6 @@ const Container = data => {
   );
 };
 Container.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 export default Container;
