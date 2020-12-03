@@ -1,15 +1,14 @@
-import React, { Component } from 'react';
+import React, { HTMLProps } from 'react';
 import cn from 'classnames';
 import styles from './TableHead.css';
 
 import { TableCellContext, contextOptions } from '../TableCell';
 
-export interface TableHeadProps {
+export interface TableHeadProps extends HTMLProps<HTMLTableSectionElement> {
   isSticky?: boolean;
   offsetTop?: number | string;
   className?: string;
   testId?: string;
-  style?: React.CSSProperties;
   children: React.ReactNode;
 }
 
@@ -18,32 +17,31 @@ const defaultProps: Partial<TableHeadProps> = {
   testId: 'cf-ui-table-head',
 };
 
-export class TableHead extends Component<TableHeadProps> {
-  static defaultProps = defaultProps;
+export const TableHead = (props: TableHeadProps) => {
+  const {
+    className,
+    testId,
+    offsetTop,
+    isSticky,
+    children,
+    ...otherProps
+  } = props;
 
-  render() {
-    const {
-      className,
-      testId,
-      offsetTop,
-      isSticky,
-      children,
-      ...otherProps
-    } = this.props;
+  const classNames = cn(className, {
+    [styles[`TableHead--sticky`]]: isSticky,
+  });
 
-    const classNames = cn(className, {
-      [styles[`TableHead--sticky`]]: isSticky,
-    });
-    return (
-      <TableCellContext.Provider
-        value={{ ...contextOptions.head, offsetTop: offsetTop || 0 }}
-      >
-        <thead className={classNames} data-test-id={testId} {...otherProps}>
-          {children}
-        </thead>
-      </TableCellContext.Provider>
-    );
-  }
-}
+  return (
+    <TableCellContext.Provider
+      value={{ ...contextOptions.head, offsetTop: offsetTop || 0 }}
+    >
+      <thead className={classNames} data-test-id={testId} {...otherProps}>
+        {children}
+      </thead>
+    </TableCellContext.Provider>
+  );
+};
+
+TableHead.defaultProps = defaultProps;
 
 export default TableHead;
