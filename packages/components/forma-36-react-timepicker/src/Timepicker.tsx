@@ -102,10 +102,10 @@ function parseRawInput(raw: string) {
     'hh',
     'HH',
   ]
-    .map(timeFormat =>
+    .map((timeFormat) =>
       parse(normalisedValue, `${DATE_NOW_FORMAT} ${timeFormat}`, new Date()),
     )
-    .filter(date => isValid(date));
+    .filter((date) => isValid(date));
 
   if (times.length === 0) {
     return null;
@@ -121,7 +121,7 @@ type hour = {
 
 function getSuggestionList(value: string, date: string) {
   let isActive = true;
-  return allHourSuggestions.map(timeSuggestion => {
+  return allHourSuggestions.map((timeSuggestion) => {
     if (
       isBefore(
         parse(
@@ -234,7 +234,7 @@ const TimePicker: React.FC<TimepickerProps> = ({
   );
 
   const handleChange = useCallback(
-    val => {
+    (val) => {
       setSelectedTime(val);
       const parsedTime = parseRawInput(val);
       if (parsedTime && isValid(parsedTime)) {
@@ -247,12 +247,12 @@ const TimePicker: React.FC<TimepickerProps> = ({
   );
 
   const handleKeyUp = useCallback(
-    event => {
+    (event) => {
       if (isHotkey('enter', event)) {
         setTimeSuggestionOpen(false);
       }
 
-      const activeIndex = filteredHours.findIndex(elem => elem.isActive);
+      const activeIndex = filteredHours.findIndex((elem) => elem.isActive);
       let nextIndex = 0;
 
       if (isHotkey('arrowUp', event) && filteredHours[activeIndex + 1]) {
@@ -270,20 +270,20 @@ const TimePicker: React.FC<TimepickerProps> = ({
     [handleChange, filteredHours],
   );
 
-  const handleKeyDown = useCallback(event => {
+  const handleKeyDown = useCallback((event) => {
     if (isHotkey('arrowUp', event) || isHotkey('arrowDown', event)) {
       event.preventDefault();
     }
   }, []);
 
-  const handleFocus = useCallback(e => {
+  const handleFocus = useCallback((e) => {
     e.preventDefault();
     e.target.select();
     setTimeSuggestionOpen(true);
   }, []);
 
   const handleBlur = useCallback(
-    e => {
+    (e) => {
       const time = getTimeFromUserInputOrDefaultToValue();
       setSelectedTime(time);
       closeDropdown(e);
