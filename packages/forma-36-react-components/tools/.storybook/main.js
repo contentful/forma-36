@@ -80,6 +80,17 @@ module.exports = {
       ],
     });
 
+    // We need to split into chunks to avoid terser running out of memory
+    // when trying to minify one huge JS file
+    config.optimization = {
+      ...config.optimization,
+      splitChunks: {
+        chunks: 'all',
+        minSize: 30 * 1024, // 30KB
+        maxSize: 1024 * 1024, // 1MB
+      },
+    };
+
     return config;
   },
 };
