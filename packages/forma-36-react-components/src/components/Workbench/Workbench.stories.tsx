@@ -153,11 +153,11 @@ export const withBackButton = (args: WorkbenchProps) => (
 );
 
 basic.args = {
-  'header title': 'Page title',
-  'header description': 'Lorem Ipsum dolor sit amet.',
-  'workbench content': 'Workbench',
-  'left sidebar': 'left sidebar',
-  'right sidebar': 'right sidebar',
+  ['header title']: 'Page title',
+  ['header description']: 'Lorem Ipsum dolor sit amet.',
+  ['workbench content']: 'Workbench',
+  ['left sidebar']: 'left sidebar',
+  ['right sidebar']: 'right sidebar',
 };
 
 withLeftSidebar.args = {

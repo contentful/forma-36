@@ -1,7 +1,6 @@
 import React from 'react';
 
 import RelativeDate, { RelativeDateProps } from './RelativeDate';
-
 import notes from '../README.mdx';
 
 const THREE_MINUTES = 3 * 60 * 1000;

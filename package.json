@@ -8,7 +8,9 @@
       "packages/components/*"
     ],
     "nohoist": [
-      "@contentful/forma-36-fcss/node-sass-import"
+      "@contentful/forma-36-fcss/node-sass-import",
+      "**/tsdx",
+      "**/tsdx/**"
     ]
   },
   "devDependencies": {
@@ -39,7 +41,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "yarn pretty-quick --staged",
-      "pre-push": "yarn lint && yarn test",
+      "pre-push": "yarn lint && yarn type-check && yarn test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   }

@@ -70,7 +70,7 @@ export const DropdownListItem = forwardRef<HTMLElement, DropdownListItemProps>(
           {children}
         </React.Fragment>
       );
-    }, [onClick, submenuToggleLabel, props]);
+    }, [onClick, props, submenuToggleLabel]);
 
     const renderListItem = useCallback(() => {
       const { onMouseDown, href, children, listItemRef, ...otherProps } = props;

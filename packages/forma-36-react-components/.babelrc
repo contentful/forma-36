@@ -1,0 +1,36 @@
+{
+  "presets": ["@babel/env", "@babel/react", "@babel/typescript"],
+  "plugins": [
+    "babel-plugin-typescript-to-proptypes",
+    "@babel/plugin-transform-runtime",
+    ["@babel/plugin-proposal-class-properties", { "loose": true }],
+    "babel-plugin-add-react-displayname",
+
+    // Other
+    "inline-react-svg"
+  ],
+  "env": {
+    "build": {
+      "plugins": [
+        [
+          "css-modules-transform",
+          {
+            "generateScopedName": "[name]__[local]___[hash:base64:5]"
+          }
+        ]
+      ]
+    },
+    "esm": {
+      "presets": [["@babel/preset-env", { "modules": false }]],
+      "plugins": [
+        [
+          "css-modules-transform",
+          {
+            "generateScopedName": "[name]__[local]___[hash:base64:5]"
+          }
+        ],
+        ["@babel/plugin-transform-runtime", { "useESModules": true }]
+      ]
+    }
+  }
+}

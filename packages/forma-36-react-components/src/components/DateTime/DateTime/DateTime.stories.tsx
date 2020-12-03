@@ -1,7 +1,6 @@
 import React from 'react';
 
 import DateTime, { DateTimeProps } from './DateTime';
-
 import notes from '../README.mdx';
 
 const exampleDate = '2020-08-13T13:45:56.0123Z';

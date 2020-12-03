@@ -6,13 +6,8 @@ declare module '*.md' {
 }
 
 declare module '*.svg' {
-  import * as React from 'react';
-
-  const ReactComponent: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
-  export { ReactComponent };
-
-  const url: string;
-  export default url;
+  const content: React.FunctionComponent<React.SVGAttributes<SVGElement>>;
+  export default content;
 }
 
 declare module 'react-animate-height' {

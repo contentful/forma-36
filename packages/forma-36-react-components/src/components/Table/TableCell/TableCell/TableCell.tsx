@@ -1,10 +1,9 @@
-import React, { HTMLProps } from 'react';
+import React from 'react';
 import cn from 'classnames';
+import type { ElementType, HTMLProps } from 'react';
 
 import { TableCellContext } from './TableCellContext';
-
 import styles from './TableCell.css';
-import { ElementType } from 'react';
 
 export const sortingDirections = {
   asc: 'asc',

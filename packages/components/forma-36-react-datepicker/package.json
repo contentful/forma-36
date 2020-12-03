@@ -27,6 +27,11 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
   "devDependencies": {
     "@contentful/forma-36-react-components": "^3.69.4",
     "@testing-library/jest-dom": "5.11.6",

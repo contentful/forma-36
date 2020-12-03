@@ -48,10 +48,10 @@ export const basic = ({ align, ...args }: AccordionProps) => (
 );
 basic.args = {
   align: 'end',
-  'AccordionItem Title #1': 'Accordion I',
-  'AccordionItem Content #1': defaultText,
-  'AccordionItem Title #2': 'Accordion II',
-  'AccordionItem Content #2': defaultText,
-  'AccordionItem Title #3': 'Accordion III',
-  'AccordionItem Content #3': defaultText,
+  ['AccordionItem Title #1']: 'Accordion I',
+  ['AccordionItem Content #1']: defaultText,
+  ['AccordionItem Title #2']: 'Accordion II',
+  ['AccordionItem Content #2']: defaultText,
+  ['AccordionItem Title #3']: 'Accordion III',
+  ['AccordionItem Content #3']: defaultText,
 };
