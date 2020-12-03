@@ -1,7 +1,10 @@
 const path = require('path');
 
 module.exports = {
-  stories: ['./docs/**/*.stories.mdx', '../../src/components/**/*.stories.tsx'],
+  stories: [
+    './docs/**/*.stories.mdx',
+    '../../src/components/**/*.stories.@(ts|md)x',
+  ],
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-knobs',
@@ -12,7 +15,7 @@ module.exports = {
       name: '@storybook/addon-storysource',
       options: {
         rule: {
-          test: /\.stories\.(js|ts)x?$/,
+          test: /\.stories\.(ts|md)x$/,
           include: [path.resolve(__dirname, '../../src/components')],
         },
       },
