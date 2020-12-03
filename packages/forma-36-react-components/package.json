@@ -1,7 +1,7 @@
 {
   "name": "@contentful/forma-36-react-components",
   "description": "Contentful UI Component Library",
-  "version": "3.68.7",
+  "version": "3.69.2",
   "main": "dist/index.js",
   "module": "dist/forma-36-react-components.esm.js",
   "style": "dist/styles.css",
@@ -90,6 +90,7 @@
     "jest-axe": "3.5.0",
     "markdown-it": "^8.4.2",
     "plop": "^2.5.3",
+    "postcss-custom-properties": "10.0.0",
     "postcss-import": "^12.0.1",
     "postcss-preset-env": "^6.7.0",
     "postcss-url": "^8.0.0",

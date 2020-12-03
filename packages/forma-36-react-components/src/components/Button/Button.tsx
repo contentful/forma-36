@@ -150,7 +150,6 @@ export const Button = (props: ButtonProps) => {
     </Element>
   );
 };
-
 Button.defaultProps = defaultProps;
 
 export default Button;

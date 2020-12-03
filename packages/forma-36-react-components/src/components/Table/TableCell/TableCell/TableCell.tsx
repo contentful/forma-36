@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React, { HTMLProps } from 'react';
 import cn from 'classnames';
 
 import { TableCellContext } from './TableCellContext';
 
 import styles from './TableCell.css';
+import { ElementType } from 'react';
 
 export const sortingDirections = {
   asc: 'asc',
@@ -12,10 +13,9 @@ export const sortingDirections = {
 
 export type TableCellSorting = keyof typeof sortingDirections | boolean;
 
-export interface TableCellProps {
+export interface TableCellProps extends HTMLProps<HTMLTableCellElement> {
   align?: 'center' | 'left' | 'right';
   sorting?: TableCellSorting;
-  style?: React.CSSProperties;
   className?: string;
   testId?: string;
   children?: React.ReactNode;
@@ -27,44 +27,34 @@ const defaultProps: Partial<TableCellProps> = {
   testId: 'cf-ui-table-cell',
 };
 
-export class TableCell extends Component<TableCellProps> {
-  static defaultProps = defaultProps;
+export const TableCell = (props: TableCellProps) => {
+  const { className, children, sorting, align, testId, ...otherProps } = props;
 
-  render() {
-    const {
-      className,
-      children,
-      sorting,
-      align,
-      testId,
-      ...otherProps
-    } = this.props;
+  return (
+    <TableCellContext.Consumer>
+      {({ name: context, element, offsetTop }) => {
+        const Element = element as ElementType;
+        return (
+          <Element
+            className={cn(styles['TableCell'], className, {
+              [styles['TableCell--head']]: context === 'head',
+              [styles['TableCell--head__sorting']]: sorting,
+            })}
+            style={{
+              top: offsetTop,
+            }}
+            align={align}
+            data-test-id={testId}
+            {...otherProps}
+          >
+            {children}
+          </Element>
+        );
+      }}
+    </TableCellContext.Consumer>
+  );
+};
 
-    return (
-      <TableCellContext.Consumer>
-        {({ name: context, element, offsetTop }) => {
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          const Element = element as any;
-          return (
-            <Element
-              className={cn(styles['TableCell'], className, {
-                [styles['TableCell--head']]: context === 'head',
-                [styles['TableCell--head__sorting']]: sorting,
-              })}
-              style={{
-                top: offsetTop,
-              }}
-              align={align}
-              data-test-id={testId}
-              {...otherProps}
-            >
-              {children}
-            </Element>
-          );
-        }}
-      </TableCellContext.Consumer>
-    );
-  }
-}
+TableCell.defaultProps = defaultProps;
 
 export default TableCell;

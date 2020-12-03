@@ -1,0 +1,68 @@
+# CheckboxField
+
+Use CheckboxField to give users the possibility to select multiple elements, zero, one or more items. This component can be used for example in forms or terms and conditions. It contains a checkbox with its label. For a single choice, please consider using RadioButton component.
+
+## Table of contents
+- [How to use CheckboxField](#how-to-use-checkboxField)
+- [Code examples](#code-examples)
+- [Content recommendations](#content-recommendations)
+- [Accessibility](#accessibility)
+
+## How to use CheckboxField
+
+ - Checkboxes should work independently, checking one should not affect any other checkbox in the interface
+ - Checkbox should always have a label
+ - Listing options for a user should have some order. Some sort of system is most likely expected by the user when working with lists (numerical, time based)
+ - For the label, 2 different styles can be used, depending on the context and importance one wants to give to the checkbox. The default is the medium weight label. You can change it to a regular weight label by using `labelIsLight` property
+
+NOTE: When attaching a help text to a checkbox, the medium label has to be used to ensure that there's enough contrast.
+
+## Code examples
+
+Basic usage
+
+```jsx
+import {CheckboxField} from '@contentful/forma-36-react-components';
+
+<CheckboxField
+  labelText="Label text"
+/>
+```
+
+Example using helper text, which will be displayed below the label
+
+```jsx
+import {CheckboxField} from '@contentful/forma-36-react-components';
+
+<CheckboxField
+  name="checkbox name"
+  id="randomId"
+  labelText="Label text"
+  helpText="Helper text displayed below"
+/>
+```
+
+Light label example - `labelIsLight` changes label font weight to regular. Please keep in mind to not use it with helper text. For that case the medium label has to be used to ensure that there's enough contrast.
+
+```jsx
+import {CheckboxField} from '@contentful/forma-36-react-components';
+
+<CheckboxField
+  name="checkbox name"
+  id="randomId"
+  labelText="Label text"
+  labelIsLight
+/>
+```
+
+## Content recommendations
+
+ - Start every option from a capital letter
+ - Do not use commas at the end of each line
+ - If the checkbox is used to agree to terms and conditions, we recommend to use first person in the sentence
+
+## Accessibility
+
+ - Checkboxes should have a clear and concise label.
+ - Users should be warned if selecting a checkbox will cause a change in context.
+ - When the checkbox has focus, pressing the Space key changes the state of the checkbox.
