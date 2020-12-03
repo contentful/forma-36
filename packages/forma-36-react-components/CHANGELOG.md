@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.69.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.69.0...@contentful/forma-36-react-components@3.69.1) (2020-12-02)
+
+
+### Bug Fixes
+
+* checkbox field docs ([#671](https://github.com/contentful/forma-36/issues/671)) ([f2265fc](https://github.com/contentful/forma-36/commit/f2265fcb83932356a41d8345446e7ac8baf3f5b6))
+
+
+
+
+
 # [3.69.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.68.10...@contentful/forma-36-react-components@3.69.0) (2020-12-01)
 
 
