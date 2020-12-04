@@ -29,6 +29,7 @@ export { default as Cycle } from './Cycle';
 export { default as CycleTrimmed } from './CycleTrimmed';
 export { default as Delete } from './Delete';
 export { default as DeleteTrimmed } from './DeleteTrimmed';
+export { default as DoubleArrow } from './DoubleArrow';
 export { default as Download } from './Download';
 export { default as DownloadTrimmed } from './DownloadTrimmed';
 export { default as Drag } from './Drag';
