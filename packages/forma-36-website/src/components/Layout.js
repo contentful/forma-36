@@ -67,7 +67,7 @@ const Layout = props => {
   const dataFromReadme = {};
 
   data.allFile.edges.map(item => {
-    if(item.node.childMdx.slug.includes(props.pageContext.frontmatter.title)) {
+    if(props.pageContext && item.node.childMdx.slug.includes(props.pageContext.frontmatter.title)) {
       dataFromReadme[props.pageContext.frontmatter.title] = item.node.childMdx.body
     }
     return
@@ -110,7 +110,7 @@ const Layout = props => {
         />
         <Container
           frontmatter={props.pageContext && props.pageContext.frontmatter}
-          dataFromReadme={dataFromReadme[props.pageContext.frontmatter.title]}
+          dataFromReadme={props.pageContext ? dataFromReadme[props.pageContext.frontmatter.title] : null}
         >
           {props.children}
         </Container>
