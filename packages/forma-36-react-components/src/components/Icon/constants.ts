@@ -30,6 +30,7 @@ export const iconName = {
   CycleTrimmed: 'CycleTrimmed',
   Delete: 'Delete',
   DeleteTrimmed: 'DeleteTrimmed',
+  DoubleArrow: 'DoubleArrow',
   Download: 'Download',
   DownloadTrimmed: 'DownloadTrimmed',
   Drag: 'Drag',
