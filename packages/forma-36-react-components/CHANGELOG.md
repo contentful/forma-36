@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.70.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.69.4...@contentful/forma-36-react-components@3.70.0) (2020-12-04)
+
+
+### Features
+
+* added missed files during commit ([369fae7](https://github.com/contentful/forma-36/commit/369fae76128f2362aef1d08e226838ae6fe56fa4))
+* **super/sub script icons:** added icons for supperscript and subscript for reach-text ([7c2097e](https://github.com/contentful/forma-36/commit/7c2097eb6a02859bac1f166d0c3bc5f36542f510))
+
+
+
+
+
 ## [3.69.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.69.3...@contentful/forma-36-react-components@3.69.4) (2020-12-03)
 
 
