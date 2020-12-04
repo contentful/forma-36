@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.71.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.70.0...@contentful/forma-36-react-components@3.71.0) (2020-12-04)
+
+
+### Features
+
+* **MOI-1788:** add double arrow icon ([5f69ecf](https://github.com/contentful/forma-36/commit/5f69ecf9322ecea195c6dac03985106d3e36ff66))
+
+
+
+
+
 # [3.70.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.69.4...@contentful/forma-36-react-components@3.70.0) (2020-12-04)
 
 
