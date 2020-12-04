@@ -133,7 +133,7 @@ export const contentHover = (args: { content: string }) => {
   );
 };
 contentHover.args = {
-  closeOnMouseLeave: false,
+  hideDelay: 300,
   content: (
     <>
       You can interact with the content in me
@@ -151,13 +151,13 @@ contentHover.args = {
     </>
   ),
 };
-const contentHoverSourceCode = `<Tooltip closeOnMouseLeave={false} content={(
+const contentHoverSourceCode = `<Tooltip hideDelay={300} content={(
   <>
     You can interact with the content in me
     <br />
     <button type="button">Button</button>
     <br />
-    <a style={{ color: 'white' }} href="/" target="_blank" rel="noopener noreferrer">Click me!</a> 
+    <a style={{ color: 'white' }} href="/" target="_blank" rel="noopener noreferrer">Click me!</a>
   </>
 )}>
   <TextLink>Hover me</TextLink>
