@@ -70,11 +70,6 @@ contribute to a package, see the README of the corresponding package.
 
 You can reach out to us using the [Contentful community Slack](https://www.contentful.com/slack/). We've setup a channel [#forma36](https://contentful-community.slack.com/messages/CFXGTMB98) in which we announce latest changes and updates.
 
-### Maintainers
-
-- [Johannes Bugiel](https://github.com/wichniowski)
-- [Mike Mitchell](https://github.com/m10l)
-
 ### You found a bug or want to propose a feature?
 
 - File an issue here on GitHub: [![File an issue](https://img.shields.io/badge/-Create%20Issue-6cc644.svg?logo=github&maxAge=31557600)](https://github.com/contentful/forma-36/issues/new). Make sure to remove any credential from your code before sharing it.
