@@ -29,9 +29,9 @@
     "gatsby-transformer-remark": "^2.6.50",
     "gatsby-transformer-sharp": "^2.5.20",
     "prop-types": "^15.7.2",
-    "react": "^16.13.1",
+    "react": "16.14.0",
     "react-copy-to-clipboard": "^5.0.1",
-    "react-dom": "^16.13.1",
+    "react-dom": "16.14.0",
     "react-helmet": "^5.2.1",
     "react-live": "^2.2.0",
     "webpack-dev-server": "3.8.0"
