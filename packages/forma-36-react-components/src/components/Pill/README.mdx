@@ -1,9 +1,20 @@
 Pills represent a set of one or multiple objects which can be entered or changed by the user. By default, pills can be removed by the user. When necessary, the order of pills can be changed by the user using drag and drop. They are used to represent complex entities in small blocks such as contact details. Contentful Pills are are used to render transition locales and tag elements.
 
-## Examples of usage
+## Table of contents
+- [How to use Pill](#how-to-use-pill)
+- [Code examples](#code-examples)
+- [Content recommendations](#content-recommendations)
+- [Accessibility](#accessibility)
+
+## How to use Pill
+
+- use Pill to represent data like contact details or tagging
+- it can be used for web content that needs to be labeled, categorized, or organized using keywords that describe them.
+
+## Code examples
 
 ```jsx
-import { Pill } from '@contentful/forma-36-react-components';
+// import { Pill } from '@contentful/forma-36-react-components';
 
 const renderTags = (tags) => {
   return tags.sort().map((tag) => (
@@ -21,7 +32,7 @@ const renderTags = (tags) => {
 Example of usage with dragable option
 
 ```jsx
-import { Pill } from '@contentful/forma-36-react-components';
+// import { Pill } from '@contentful/forma-36-react-components';
 
 <Pill
   tabIndex={0}
@@ -39,7 +50,7 @@ import { Pill } from '@contentful/forma-36-react-components';
 Example of the Pill component with dragHandle, in that case Icon.
 
 ```jsx
-import { Pill } from '@contentful/forma-36-react-components';
+// import { Pill } from '@contentful/forma-36-react-components';
 
 <Pill
   label="example.user@contentful.com"
@@ -52,11 +63,6 @@ import { Pill } from '@contentful/forma-36-react-components';
   }
 />;
 ```
-
-## Best practices
-
-- use Pill to represent data like contact details or tagging
-- it can be used for web content that needs to be labeled, categorized, or organized using keywords that describe them.
 
 ## Content recommendations:
 

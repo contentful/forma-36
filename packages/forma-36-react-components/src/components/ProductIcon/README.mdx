@@ -2,12 +2,23 @@
 
 The `ProductIcon` component is used in combination with navigation and title UI elements. The ProductIcon uses a separate set of SVG icons tailored specifically to Contentful concepts, whereas the `Icon` component contains generic UI icons.
 
-## Examples of usage
+## Table of contents
+- [How to use Product Icon](#how-to-use-product-icon)
+- [Code examples](#code-examples)
+- [Accessibility](#accessibility)
+
+## How to use Product Icon
+
+- Select an icon that accurately represents the subject
+- Pair icons with text
+- Make sure that the size of the icon is same or similar to the line height of the text
+
+## Code examples
 
 Common practice is to use ProductIcons in the top navigation in Contentful webapp. In the case of the top navigation, white icon is shown on the dark background next to the white text.
 
 ```jsx
-import { NavigationIcon } from '@contentful/forma-36-react-components/dist/alpha';
+// import { NavigationIcon } from '@contentful/forma-36-react-components/dist/alpha';
 
 <NavigationIcon
   icon={item.navIcon}
@@ -20,8 +31,8 @@ import { NavigationIcon } from '@contentful/forma-36-react-components/dist/alpha
 Another good example of usage of ProductIcons is the headlines of the pages, next to the title. In that case icons are used within our `Workbench` component.
 
 ```jsx
-import { Workbench } from '@contentful/forma-36-react-components';
-import { NavigationIcon } from '@contentful/forma-36-react-components/dist/alpha';
+// import { Workbench } from '@contentful/forma-36-react-components';
+// import { NavigationIcon } from '@contentful/forma-36-react-components/dist/alpha';
 
 <>
   <DocumentTitle title="Users" />
@@ -34,12 +45,6 @@ import { NavigationIcon } from '@contentful/forma-36-react-components/dist/alpha
   </Workbench>
 </>
 ```
-
-## Best practices
-
-- Select an icon that accurately represents the subject
-- Pair icons with text
-- Make sure that the size of the icon is same or similar to the line height of the text
 
 ## Accessibility
 

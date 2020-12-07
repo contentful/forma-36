@@ -2,31 +2,22 @@ Dropdowns allow users to access a list of multiple actions. A common use-case fo
 
 A Dropdown should contain at least one DropdownList, and multiple DropdownListItem components to represent each action.
 
-## Props
+## Table of contents
+- [How to use Dropdowns](#how-to-use-dropdowns)
+- [Code examples](#code-examples)
+- [Content recommendations](#content-recommendations)
+- [Accessibility](#accessibility)
 
-- `children`: Child nodes to be rendered in the component.
-- `className`: Class names to be appended to the className prop of the Dropdown wrapper.
-- `dropdownContainerClassName`: Class names to be appended to the className prop of the `DropdownContainer`.
-- `getContainerRef`: A callback reference function to get the reference of the `DropdownContainer`.
-- `isAutoalignmentEnabled`: Boolean to disable automatic positioning of the element to fit the available viewport. Instead this forces the element to follow the given or default value of the `position` prop.
-- `isFullWidth`: Boolean to determine if the Dropdown should take the full width of the container.
-- `isOpen`: Boolean to control whether or not the Dropdown is open.
-- `onClose`: Callback function to run when the Dropdown closes.
-- `position`: Determines the preferred position of the Dropdown. This position is not guaranteed, as the Dropdown might be moved to fit the viewport.
-- `submenuToggleLabel`: A text label to use as the toggle element for the submenu.
-- `testId`: An ID used for testing purposes applied as a data attribute (`data-test-id`).
-- `toggleElement`: React element to use as the toggle, opening and closing the Dropdown.
-- `usePortal`: Boolean to control whether or not to render the dropdown in a [React Portal](https://reactjs.org/docs/portals.html). Rendering content inside a Portal allows the dropdown to escape the bounds of its parent while still being positioned correctly. Using a Portal is necessary if an ancestor of the dropdown hides overflow. Defaults to `true`.
+## How to use Dropdowns
 
-## Examples of usage
+- If there is a single action to display, use TextLink or Button instead
+- Use lists and titles to group similar actions
+- Use a single TextLink at the bottom of the list for an action that is considerably different than the rest
+
+## Code examples
 
 ```jsx
-import {
-  Button,
-  Dropdown,
-  DropdownList,
-  DropdownListItem,
-} from '@contentful/forma-36-react-components';
+// import { Button, Dropdown, DropdownList, DropdownListItem } from '@contentful/forma-36-react-components';
 
 function DropdownExample() {
   const [isOpen, setOpen] = React.useState(false);
@@ -61,12 +52,7 @@ function DropdownExample() {
 Dropdown with a title – Use a title to clarify the purpose of a dropdown.
 
 ```jsx
-import {
-  Button,
-  Dropdown,
-  DropdownList,
-  DropdownListItem,
-} from '@contentful/forma-36-react-components';
+// import { Button, Dropdown, DropdownList, DropdownListItem } from '@contentful/forma-36-react-components';
 
 function DropdownExample() {
   const [isOpen, setOpen] = React.useState(false);
@@ -102,12 +88,7 @@ function DropdownExample() {
 Dropdown with multiple DropdownLists – Use multiple DropdownLists to group actions together. A DropdownList can contain a border to visually separating these lists.
 
 ```jsx
-import {
-  Button,
-  Dropdown,
-  DropdownList,
-  DropdownListItem,
-} from '@contentful/forma-36-react-components';
+// import { Button, Dropdown, DropdownList, DropdownListItem } from '@contentful/forma-36-react-components';
 
 function DropdownExample() {
   const [isOpen, setOpen] = React.useState(false);
@@ -150,12 +131,7 @@ function DropdownExample() {
 Dropdown with links – DropdownListItems can also contain TextLinks. These are often used to highlight related actions to the content of the DropdownList.
 
 ```jsx
-import {
-  Button,
-  Dropdown,
-  DropdownList,
-  DropdownListItem,
-} from '@contentful/forma-36-react-components';
+// import { Button, Dropdown, DropdownList, DropdownListItem } from '@contentful/forma-36-react-components';
 
 function DropdownExample() {
   const [isOpen, setOpen] = React.useState(false);
@@ -193,12 +169,7 @@ function DropdownExample() {
 Dropdown with max height – DropdownLists can have a max height to limit the height of the dropdown and introduce scrolling. This should be used when dropdowns need to contain a lot of data.
 
 ```jsx
-import {
-  Button,
-  Dropdown,
-  DropdownList,
-  DropdownListItem,
-} from '@contentful/forma-36-react-components';
+// import { Button, Dropdown, DropdownList, DropdownListItem } from '@contentful/forma-36-react-components';
 
 function DropdownExample() {
   const [isOpen, setOpen] = React.useState(false);
@@ -242,12 +213,6 @@ function DropdownExample() {
   );
 }
 ```
-
-## Best practices
-
-- If there is a single action to display, use TextLink or Button instead
-- Use lists and titles to group similar actions
-- Use a single TextLink at the bottom of the list for an action that is considerably different than the rest
 
 ## Content recommendations:
 

@@ -1,12 +1,23 @@
-# Autocomplete (alpha)
+*This component is in an alpha state. Breaking changes to the API can happen with any future updates. We don't recommend using the component in production environments*
 
 The autocomplete component is an input field that provides selectable suggestions as a user types into it. It allows users to quickly search through and select from large collections of options.
 Keep in mind that this component is still in alpha state, which means it's unsupported and subject to breaking changes without warning.
 
-## Example of usage
+## Table of contents
+- [How to use Autocomplete](#how-to-use-autocomplete)
+- [Code examples](#code-examples)
+- [Content recommendations](#content-recommendations)
+- [Accessibility](#accessibility)
+
+## Best practices
+
+ - Autocomplete should have a clear label so user understands what type of action is possible
+ - Consider using autocomplete over selects if user will be will be choosing from a very long list, like for example country list.
+
+## Code examples
 
 ```jsx
-import {Autocomplete } from '@contentful/forma-36-react-components/dist/alpha';
+// import {Autocomplete } from '@contentful/forma-36-react-components/dist/alpha';
 
 <Autocomplete
   items={items}
@@ -27,11 +38,6 @@ import {Autocomplete } from '@contentful/forma-36-react-components/dist/alpha';
 
  - Autocomplete label should be short, contain 1 to 3 words
  - Label should be written in a sentence case (the first word capitalized, the rest lowercase)
-
-## Best practices
-
- - Autocomplete should have a clear label so user understands what type of action is possible
- - Consider using autocomplete over selects if user will be will be choosing from a very long list, like for example country list.
 
 ## Accessibility
 
