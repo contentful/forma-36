@@ -44,6 +44,7 @@ class ComponentSource extends React.Component {
             </div>
             {this.state.isOpen && (
               <React.Fragment>
+                <LiveError css={styles.error} />
                 <LiveEditor css={styles.editor} />
               </React.Fragment>
             )}
