@@ -33,18 +33,17 @@ class ComponentSource extends React.Component {
       return { isOpen: !prevState.isOpen };
     });
   };
-  
+
   render() {
     return (
       <div className="f36-margin-bottom--m">
-        <LiveProvider code={this.props.children} scope={{ ...f36Components, Grid, GridItem, Autocomplete, Flex, ProductIcon }}>
+        <LiveProvider code={this.props.children.trim()} scope={{ ...f36Components, Grid, GridItem, Autocomplete, Flex, ProductIcon }}>
           <Card padding="none">
             <div css={styles.preview}>
               <LivePreview />
             </div>
             {this.state.isOpen && (
               <React.Fragment>
-                <LiveError css={styles.error} />
                 <LiveEditor css={styles.editor} />
               </React.Fragment>
             )}
