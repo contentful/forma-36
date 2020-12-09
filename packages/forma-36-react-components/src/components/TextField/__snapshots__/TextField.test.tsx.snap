@@ -58,6 +58,45 @@ exports[`renders the component with a copybutton 1`] = `
       name="someComponent"
       value=""
     />
+    <div
+      class="CopyButton TextInput__copy-button"
+      data-test-id="cf-ui-copy-button"
+      id="copyButton"
+    >
+      <span>
+        <button
+          class="CopyButton__button"
+          type="button"
+        >
+          <span
+            class="TabFocusTrap CopyButton__TabFocusTrap"
+            tabindex="-1"
+          >
+            <span
+              class="CopyButton__text"
+            >
+              Copy 
+               to clipboard
+            </span>
+            <svg
+              class="Icon Icon--small Icon--muted"
+              data-test-id="cf-ui-icon"
+              height="1em"
+              viewBox="0 0 24 24"
+              width="1em"
+            >
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+              />
+              <path
+                d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"
+              />
+            </svg>
+          </span>
+        </button>
+      </span>
+    </div>
   </div>
 </div>
 `;
@@ -87,6 +126,7 @@ exports[`renders the component with a placeholder text 1`] = `
       data-test-id="cf-ui-text-input"
       id="someComponent"
       name="someComponent"
+      placeholder="placeholder"
       value=""
     />
   </div>
@@ -118,6 +158,7 @@ exports[`renders the component with a rows defined 1`] = `
       data-test-id="cf-ui-text-input"
       id="someComponent"
       name="someComponent"
+      rows="2"
       value=""
     />
   </div>
@@ -239,7 +280,7 @@ exports[`renders the component with additional prop 1`] = `
     <input
       aria-label="someComponent"
       class="TextInput__input"
-      data-test-id="cf-ui-text-input"
+      data-test-id="test"
       id="someComponent"
       name="someComponent"
       value=""
@@ -333,6 +374,7 @@ exports[`renders the component with characters count 1`] = `
       class="TextInput__input"
       data-test-id="cf-ui-text-input"
       id="someComponent"
+      maxlength="20"
       name="someComponent"
       value=""
     />
@@ -417,6 +459,7 @@ exports[`renders the component with max length of characters 1`] = `
       class="TextInput__input"
       data-test-id="cf-ui-text-input"
       id="someComponent"
+      maxlength="10"
       name="someComponent"
       value=""
     />
