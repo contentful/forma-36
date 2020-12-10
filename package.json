@@ -33,7 +33,7 @@
     "lint": "lerna run lint",
     "type-check": "lerna run type-check",
     "build-storybook": "lerna run storybook --stream",
-    "chromatic": "chromatic ./packages/forma-36-react-components/dist-storybook"
+    "chromatic": "chromatic ./packages/forma-36-react-components/dist-storybook --exit-zero-on-changes"
   },
   "config": {
     "commitizen": {
