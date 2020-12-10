@@ -17,6 +17,7 @@
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
     "commitizen": "^4.2.1",
+    "chromatic": "^5.4.0",
     "husky": "^4.3.0",
     "lerna": "^3.22.1",
     "prettier": "^2.1.2",
@@ -46,8 +47,5 @@
       "pre-push": "yarn lint && yarn test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
-  },
-  "dependencies": {
-    "chromatic": "^5.4.0"
   }
 }
