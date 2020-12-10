@@ -62,8 +62,8 @@ jobs:
             - yarn-deps-{{ checksum "yarn.lock" }}
             - yarn-deps
       - run: yarn install
-      - run: yarn build-storybook
-      - run: yarn chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}
+      - run: yarn run build-storybook
+      - run: yarn run chromatic --project-token=${CHROMATIC_PROJECT_TOKEN}
   release:
     docker:
       - image: circleci/node:12.0-browsers
