@@ -3,56 +3,67 @@ version: 2.1
 orbs:
   docker: circleci/docker@1.0.1
 
-cache-key: &cache-key
-  key: dependency-cache-primary-{{ arch }}-yarn-packages-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}-{{ .Branch }}
-
-commands:
-  yarn_install:
-    steps:
-      - restore_cache: *cache-key
-      - run: 'echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc'
-      - run: yarn install --prefer-offline --pure-lockfile
-      - save_cache:
-          <<: *cache-key
-          paths:
-            - ~/.cache/yarn
-
 jobs:
   prepare-dependencies:
     docker:
       - image: circleci/node:12.0-browsers
+    resource_class: xlarge
     steps:
       - checkout
-      - yarn_install
-  lint:
+      - run:
+          name: Compute version number
+          command: echo "0.0.${CIRCLE_BUILD_NUM}-${CIRCLE_SHA1:0:7}" | tee version.txt
+      - restore_cache:
+          keys:
+            - yarn-deps-{{ checksum "yarn.lock" }}
+            - yarn-deps
+      - run:
+          name: yarn
+          command: yarn
+      - save_cache:
+          paths:
+            - node_modules
+          key: yarn-deps-{{ checksum "yarn.lock" }}-{{ epoch }}
+      - store_artifacts:
+          path: yarn.lock
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .
+
+  lint-and-test:
     docker:
       - image: circleci/node:12.0-browsers
+    resource_class: xlarge
     steps:
-      - checkout
-      - yarn_install
-      - run: yarn run lint
-      - run: yarn run type-check
-  test:
-    docker:
-      - image: circleci/node:12.0-browsers
-    steps:
-      - checkout
-      - yarn_install
-      - run: yarn run test
+      - attach_workspace:
+          at: .
+      - run:
+          name: Lint
+          command: yarn lint
+      - run:
+          name: Check Types
+          command: yarn type-check
+      - run:
+          name: Test
+          command: yarn test
+
   chromatic-deployment:
     docker:
       - image: circleci/node:12.0-browsers
+    resource_class: xlarge
     steps:
-      - checkout
-      - yarn_install
+      - attach_workspace:
+          at: .
       - run: yarn run build-storybook
       - run: yarn run chromatic --project-token=${CHROMATIC_PROJECT_TOKEN} --exit-zero-on-changes
+
   release:
     docker:
       - image: circleci/node:12.0-browsers
     steps:
-      - checkout
-      - yarn_install
+      - attach_workspace:
+          at: .
       - run:
           name: Pre deploy
           command: bin/before-deploy
@@ -62,26 +73,20 @@ jobs:
 
 workflows:
   version: 2
-  # run on every commit
   commit-check:
     jobs:
       - prepare-dependencies
-      - lint:
-          requires:
-            - prepare-dependencies
-      - test:
+      - lint-and-test:
           requires:
             - prepare-dependencies
       - chromatic-deployment:
           requires:
             - prepare-dependencies
-            - lint
-            - test
+            - lint-and-test
       - release:
           filters:
             branches:
               only: master
           requires:
-            - lint
-            - test
+            - lint-and-test
             - chromatic-deployment
