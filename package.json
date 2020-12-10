@@ -31,7 +31,8 @@
     "build": "lerna run build",
     "test": "lerna run test",
     "lint": "lerna run lint",
-    "type-check": "lerna run type-check"
+    "type-check": "lerna run type-check",
+    "build-storybook": "lerna run storybook --stream"
   },
   "config": {
     "commitizen": {
@@ -44,5 +45,8 @@
       "pre-push": "yarn lint && yarn test",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "dependencies": {
+    "chromatic": "^5.4.0"
   }
 }
