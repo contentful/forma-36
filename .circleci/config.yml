@@ -3,6 +3,14 @@ version: 2.1
 orbs:
   docker: circleci/docker@1.0.1
 
+commands:
+  check-changed-files-or-halt:
+    parameters:
+      pattern:
+        type: string
+    steps:
+      - run: git show -m HEAD --name-only --pretty="" | egrep -q '<< parameters.pattern >>' || circleci step halt
+
 jobs:
   prepare-dependencies:
     docker:
@@ -55,6 +63,8 @@ jobs:
     steps:
       - attach_workspace:
           at: .
+      - check-changed-files-or-halt:
+          pattern: ^(forma-36-fcss|forma-36-react-components|forma-36-tokens)|(.js|jsx|ts|tsx|css|scss)$
       - run: yarn run build-storybook
       - run: yarn run chromatic --project-token=${CHROMATIC_PROJECT_TOKEN} --exit-zero-on-changes
 
