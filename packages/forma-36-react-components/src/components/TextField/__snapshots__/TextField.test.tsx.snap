@@ -584,3 +584,30 @@ exports[`renders the component with validation message 1`] = `
   </div>
 </div>
 `;
+
+exports[`updates the value 1`] = `
+<div
+  class="TextField TextField--full"
+  data-test-id="cf-ui-text-field"
+>
+  <div
+    class="TextField__label-wrapper"
+  >
+    <label
+      class="FormLabel"
+      data-test-id="cf-ui-form-label"
+    >
+      test
+    </label>
+  </div>
+  <div
+    class="TextInput TextInput--full"
+  >
+    <input
+      class="TextInput__input"
+      data-test-id="cf-ui-text-input"
+      value="new value"
+    />
+  </div>
+</div>
+`;
