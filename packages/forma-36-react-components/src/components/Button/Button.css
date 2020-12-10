@@ -17,7 +17,7 @@
   padding: 0;
   border: calc(1rem * (1 / var(--font-base-default))) solid
     var(--color-element-dark);
-  border-radius: var(--border-radius-medium);
+  border-radius: var(--border-radius-small);
   font-family: var(--font-stack-primary);
   font-size: calc(1rem * (14 / var(--font-base-default)));
   overflow: hidden;
