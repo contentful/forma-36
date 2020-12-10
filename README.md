@@ -9,18 +9,16 @@ This is the monorepo for the Forma 36 design system by [Contentful](https://www.
 <!-- TOC -->
 
 - [Packages](#packages)
-  - [Forma 36 React Components](./packages/forma-36-react-components/README.md)
-  - [Forma 36 FCSS](./packages/forma-36-fcss/README.md)
-  - [Forma 36 Tokens](./packages/forma-36-tokens/README.md)
-  - [Forma 36 Website (WIP)](./packages/forma-36-website/README.md)
-- [Adding packages](#adding-packages)
+  - [Adding packages](#adding-packages)
 - [Development](#development)
 - [Commits & releases](#commits--releases)
 - [Testing changes locally](#testing-changes-locally)
-- [Get Involved](#get-involved)
+- [Get involved](#get-involved)
 - [Reach out to us](#reach-out-to-us)
+  - [You found a bug or want to propose a feature?](#you-found-a-bug-or-want-to-propose-a-feature)
 - [License](#license)
-- [Code of conduct](#code-of-conduct)
+- [Code of Conduct](#code-of-conduct)
+- [Contributors ✨](#contributors-)
   <!-- /TOC -->
 
 ## Packages
@@ -163,6 +161,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
