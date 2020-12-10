@@ -20,13 +20,13 @@ commands:
 jobs:
   prepare-dependencies:
     docker:
-      - image: circleci/node:12.0
+      - image: circleci/node:12.0-browsers
     steps:
       - checkout
       - yarn_install
   lint:
     docker:
-      - image: circleci/node:12.0
+      - image: circleci/node:12.0-browsers
     steps:
       - checkout
       - yarn_install
@@ -34,14 +34,14 @@ jobs:
       - run: yarn run type-check
   test:
     docker:
-      - image: circleci/node:12.0
+      - image: circleci/node:12.0-browsers
     steps:
       - checkout
       - yarn_install
       - run: yarn run test
   chromatic-deployment:
     docker:
-      - image: circleci/node:12.0
+      - image: circleci/node:12.0-browsers
     steps:
       - checkout
       - yarn_install
@@ -49,7 +49,7 @@ jobs:
       - run: yarn run chromatic --project-token=${CHROMATIC_PROJECT_TOKEN} --exit-zero-on-changes
   release:
     docker:
-      - image: circleci/node:12.0
+      - image: circleci/node:12.0-browsers
     steps:
       - checkout
       - yarn_install
