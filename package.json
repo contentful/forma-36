@@ -17,6 +17,7 @@
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
     "commitizen": "^4.2.1",
+    "chromatic": "^5.4.0",
     "husky": "^4.3.0",
     "lerna": "^3.22.1",
     "prettier": "^2.1.2",
@@ -31,7 +32,9 @@
     "build": "lerna run build",
     "test": "lerna run test",
     "lint": "lerna run lint",
-    "type-check": "lerna run type-check"
+    "type-check": "lerna run type-check",
+    "build-storybook": "lerna run storybook --stream",
+    "chromatic": "chromatic --storybook-build-dir ./packages/forma-36-react-components/dist-storybook"
   },
   "config": {
     "commitizen": {

@@ -50,6 +50,20 @@ jobs:
       - run:
           name: Test
           command: yarn test
+  chromatic-deployment:
+    docker:
+      - image: circleci/node:12.0-browsers
+    resource_class: xlarge
+    steps:
+      - attach_workspace:
+          at: .
+      - restore_cache:
+          keys:
+            - yarn-deps-{{ checksum "yarn.lock" }}
+            - yarn-deps
+      - run: yarn install
+      - run: yarn run build-storybook
+      - run: yarn run chromatic --project-token=${CHROMATIC_PROJECT_TOKEN} --exit-zero-on-changes
   release:
     docker:
       - image: circleci/node:12.0-browsers
@@ -76,6 +90,11 @@ workflows:
       - test:
           requires:
             - prepare-dependencies
+      - chromatic-deployment:
+          requires:
+            - prepare-dependencies
+            - lint
+            - test
       - release:
           filters:
             branches:
