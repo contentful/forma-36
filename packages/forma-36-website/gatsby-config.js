@@ -204,6 +204,10 @@ module.exports = {
             link: '/components/pill/',
           },
           {
+            name: 'Product Icon',
+            link: '/components/product-icon/',
+          },
+          {
             name: 'Radio button',
             link: '/components/radio-button/',
           },

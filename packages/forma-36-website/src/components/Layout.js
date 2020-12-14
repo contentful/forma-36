@@ -24,7 +24,7 @@ const styles = {
   `,
 };
 
-const Layout = props => {
+const Layout = (props) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -51,7 +51,9 @@ const Layout = props => {
           }
         }
       }
-      allFile(filter: {sourceInstanceName: {eq: "forma-36-react-components"}}) {
+      allFile(
+        filter: { sourceInstanceName: { eq: "forma-36-react-components" } }
+      ) {
         edges {
           node {
             childMdx {
@@ -66,12 +68,21 @@ const Layout = props => {
 
   const dataFromReadme = {};
 
-  data.allFile.edges.map(item => {
-    if(props.pageContext && item.node.childMdx.slug.includes(props.pageContext.frontmatter.title)) {
-      dataFromReadme[props.pageContext.frontmatter.title] = item.node.childMdx.body
+  data.allFile.edges.map((item) => {
+    if (props.pageContext) {
+      const arrFromSlug = item.node.childMdx.slug.split('/');
+      const trimmedTitle = props.pageContext.frontmatter.title.replace(
+        /\s/g,
+        '',
+      );
+
+      if (arrFromSlug.indexOf(trimmedTitle) > -1) {
+        dataFromReadme[props.pageContext.frontmatter.title] =
+          item.node.childMdx.body;
+      }
     }
-    return
-  })
+    return;
+  });
 
   return (
     <div css={styles.test}>
@@ -103,14 +114,16 @@ const Layout = props => {
 
       <div css={styles.main}>
         <Navigation
-          menuItems={
-            data.site.siteMetadata && data.site.siteMetadata.menuLinks
-          }
+          menuItems={data.site.siteMetadata && data.site.siteMetadata.menuLinks}
           currentPath={props && props.location && props.location.pathname}
         />
         <Container
           frontmatter={props.pageContext && props.pageContext.frontmatter}
-          dataFromReadme={props.pageContext ? dataFromReadme[props.pageContext.frontmatter.title] : null}
+          dataFromReadme={
+            props.pageContext
+              ? dataFromReadme[props.pageContext.frontmatter.title]
+              : null
+          }
         >
           {props.children}
         </Container>
