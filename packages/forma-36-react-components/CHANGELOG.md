@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.71.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.71.3...@contentful/forma-36-react-components@3.71.4) (2020-12-10)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+## [3.71.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.71.2...@contentful/forma-36-react-components@3.71.3) (2020-12-09)
+
+
+### Bug Fixes
+
+* pass down textInputProps to Element ([cc42ba5](https://github.com/contentful/forma-36/commit/cc42ba583bcbdad1bce0ba9d557aff77edcb195c))
+
+
+
+
+
 ## [3.71.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.71.1...@contentful/forma-36-react-components@3.71.2) (2020-12-08)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components

@@ -9,18 +9,16 @@ This is the monorepo for the Forma 36 design system by [Contentful](https://www.
 <!-- TOC -->
 
 - [Packages](#packages)
-  - [Forma 36 React Components](./packages/forma-36-react-components/README.md)
-  - [Forma 36 FCSS](./packages/forma-36-fcss/README.md)
-  - [Forma 36 Tokens](./packages/forma-36-tokens/README.md)
-  - [Forma 36 Website (WIP)](./packages/forma-36-website/README.md)
-- [Adding packages](#adding-packages)
+  - [Adding packages](#adding-packages)
 - [Development](#development)
 - [Commits & releases](#commits--releases)
 - [Testing changes locally](#testing-changes-locally)
-- [Get Involved](#get-involved)
+- [Get involved](#get-involved)
 - [Reach out to us](#reach-out-to-us)
+  - [You found a bug or want to propose a feature?](#you-found-a-bug-or-want-to-propose-a-feature)
 - [License](#license)
-- [Code of conduct](#code-of-conduct)
+- [Code of Conduct](#code-of-conduct)
+- [Contributors ✨](#contributors-)
   <!-- /TOC -->
 
 ## Packages
@@ -157,11 +155,13 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/arpl"><img src="https://avatars0.githubusercontent.com/u/1368611?v=4" width="100px;" alt=""/><br /><sub><b>Aris Plakias</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=arpl" title="Code">💻</a></td>
+    <td align="center"><a href="https://kamsar.net"><img src="https://avatars0.githubusercontent.com/u/103677?v=4" width="100px;" alt=""/><br /><sub><b>Kam Figy</b></sub></a><br /><a href="https://github.com/contentful/forma-36/issues?q=author%3Akamsar" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
