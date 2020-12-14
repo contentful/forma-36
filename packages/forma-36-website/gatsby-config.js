@@ -116,6 +116,10 @@ module.exports = {
         link: '',
         menuLinks: [
           {
+            name: 'Accordion',
+            link: '/components/accordion/',
+          },
+          {
             name: 'Asset',
             link: '/components/asset/',
           },
@@ -302,8 +306,8 @@ module.exports = {
         name: `forma-36-react-components`,
         remote: `https://github.com/contentful/forma-36.git`,
         branch: `master`,
-        patterns: `packages/forma-36-react-components/src/components/**/*.mdx`
-      }
+        patterns: `packages/forma-36-react-components/src/components/**/*.mdx`,
+      },
     },
     {
       resolve: 'gatsby-source-filesystem',
