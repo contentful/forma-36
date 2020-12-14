@@ -97,6 +97,21 @@ it('renders the component with a value', () => {
   expect(container.firstChild).toMatchSnapshot();
 });
 
+it('updates the value', () => {
+  const { container } = render(
+    <TextField labelText="test" data-test-id="input" value="" />,
+  );
+
+  const input = container.querySelector(
+    '[data-test-id="cf-ui-text-field"] input',
+  );
+
+  userEvent.type(input, 'new value');
+
+  expect(screen.getByDisplayValue('new value')).toBeInTheDocument();
+  expect(container.firstChild).toMatchSnapshot();
+});
+
 it('renders the component with as textarea', () => {
   const { container } = render(
     <TextField

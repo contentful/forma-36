@@ -114,6 +114,7 @@ export const TextField = (props: TextFieldProps) => {
         value={value}
         required={required}
         width={'full'}
+        {...textInputProps}
       />
       {validationMessage && (
         <ValidationMessage className={styles['TextField__validation-message']}>
