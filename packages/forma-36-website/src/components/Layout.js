@@ -69,7 +69,7 @@ const Layout = (props) => {
   const dataFromReadme = {};
 
   data.allFile.edges.map((item) => {
-    if (props.pageContext) {
+    if (props.pageContext && props.pageContext.frontmatter.title) {
       const arrFromSlug = item.node.childMdx.slug.split('/');
       const trimmedTitle = props.pageContext.frontmatter.title.replace(
         /\s/g,
