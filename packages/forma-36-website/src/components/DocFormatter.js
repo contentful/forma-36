@@ -5,6 +5,7 @@ import tokens from '@contentful/forma-36-tokens';
 import { DisplayText, Button, Tag } from '@contentful/forma-36-react-components';
 import storybookIcon from '../images/storybook.svg';
 import githubIcon from '../images/github.svg';
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
 const styles = {
   header: css`
@@ -57,7 +58,7 @@ const styles = {
   `,
 };
 
-const DocFormatter = ({ frontmatter, children }) => {
+const DocFormatter = ({ frontmatter, dataFromReadme, children }) => {
   const [ activeSection, setActiveSection ] = useState('design');
   const designDocs = Array.isArray(children) && children.filter(child => child.props.mdxType === 'DesignDocs');
   const developDocs = Array.isArray(children) && children.filter(child => child.props.mdxType === 'DevelopDocs');
@@ -124,6 +125,8 @@ const DocFormatter = ({ frontmatter, children }) => {
       <main>
         {activeSection === 'design' && hasDesignDocs && designDocs}
         {activeSection === 'develop' && hasDevelopDocs && developDocs}
+        
+        {dataFromReadme && <MDXRenderer>{dataFromReadme}</MDXRenderer>}
         {!hasDevelopDocs && !hasDesignDocs && children}
       </main>
     </React.Fragment>

@@ -1,12 +1,14 @@
-*This component is in an alpha state. Breaking changes to the API can happen with any future updates. We don't recommend using the component in production environments*
+_This component is in an alpha state. Breaking changes to the API can happen with any future updates. We don't recommend using the component in production environments_
 
 [CSS Grid](https://developer.mozilla.org/en-US/docs/Glossary/Grid) based React component, comes with predefined values to ensure design consistency, and ease of use.
 
 ## Table of contents
+
 - [How to use Grid](#how-to-use-grid)
 - [Code examples](#code-examples)
 
 ## How to use Grid
+
 The Grid consists of two components:
 
 - Grid: Used as a container for GridItems
@@ -23,9 +25,10 @@ When defined as a number, it will split the space into equally sized columns; it
 // Grid component is still in alpha stage
 // import { Grid, GridItem } from '@contenful/forma-36-react-components/dist/alpha';
 
-<Grid columns={6}></Grid>
-// Or
-<Grid columns={'auto 1fr'}></Grid>
+<React.Fragment>
+  <Grid columns={6}></Grid>
+  <Grid columns={'auto 1fr'}></Grid>
+</React.Fragment>
 ```
 
 ### rows
@@ -36,9 +39,10 @@ Accepts a number or any of [grid-template-rows](https://developer.mozilla.org/en
 // Grid component is still in alpha stage
 // import { Grid, GridItem } from '@contenful/forma-36-react-components/dist/alpha';
 
-<Grid rows={6}></Grid>
-// Or
-<Grid rows={'auto 1fr'}></Grid>
+<React.Fragment>
+  <Grid rows={6}></Grid>
+  <Grid rows={'auto 1fr'}></Grid>
+</React.Fragment>
 ```
 
 ### columnGap & rowGap

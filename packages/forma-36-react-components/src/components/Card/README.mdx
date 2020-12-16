@@ -1,6 +1,7 @@
 A Card is a component to group information or content of a particular subject in one place.
 
 ## Table of contents
+
 - [How to use Cards](#how-to-use-buttons)
 - [Component variations](#component-variations)
 - [Code examples](#code-examples)
@@ -11,6 +12,7 @@ A Card is a component to group information or content of a particular subject in
 - [Accessibility](#accessibility)
 
 ## Component variations
+
 ```jsx
 <Card title="Title">
   <Typography>
@@ -28,17 +30,22 @@ Here you will find the most common ways of using the Card component.
 It’s possible to call an action when the user clicks on the Card. To do that, you only need to pass a function to the `onClick` prop.
 
 ```jsx
-const [show, setShow] = useState(false);
-
-<Card onClick={() => setShow(!show)}>
-  Click on this card
-  <br />
-  {show && (
-    <span role="img" aria-label="sparkles">
-      ✨✨✨
-    </span>
-  )}
-</Card>;
+function CardExample() {
+  const [show, setShow] = React.useState(false);
+  return (
+    <React.Fragment>
+      <Card onClick={() => setShow(!show)}>
+        Click on this card
+        <br />
+        {show && (
+          <span role="img" aria-label="sparkles">
+            ✨✨✨
+          </span>
+        )}
+      </Card>
+    </React.Fragment>
+  );
+}
 ```
 
 ### Selectable cards
@@ -47,30 +54,34 @@ Sometimes you will need to use the Card as an selectable element in the UI. To a
 you should use a combination of the `onClick` and `selected` props. The former controlling the latter.
 
 ```jsx
-const [taco, setTaco] = useState(false);
-const [pizza, setPizza] = useState(false);
-const [broccoli, setBroccoli] = useState(false);
+function CardsExample() {
+  const [taco, setTaco] = React.useState(false);
+  const [pizza, setPizza] = React.useState(false);
+  const [broccoli, setBroccoli] = React.useState(false);
 
-<div>
-  <Heading>What is your favorite food?</Heading>
-  <div>
-    <Card onClick={() => setTaco(!taco)} selected={taco}>
-      <span role="img" aria-label="taco">
-        🌮
-      </span>
-    </Card>
-    <Card onClick={() => setPizza(!pizza)} selected={pizza}>
-      <span role="img" aria-label="pizza">
-        🍕
-      </span>
-    </Card>
-    <Card onClick={() => setBroccoli(!broccoli)} selected={broccoli}>
-      <span role="img" aria-label="broccoli">
-        🥦
-      </span>
-    </Card>
-  </div>
-</div>;
+  return (
+    <div>
+      <Heading>What is your favorite food?</Heading>
+      <div>
+        <Card onClick={() => setTaco(!taco)} selected={taco}>
+          <span role="img" aria-label="taco">
+            🌮
+          </span>
+        </Card>
+        <Card onClick={() => setPizza(!pizza)} selected={pizza}>
+          <span role="img" aria-label="pizza">
+            🍕
+          </span>
+        </Card>
+        <Card onClick={() => setBroccoli(!broccoli)} selected={broccoli}>
+          <span role="img" aria-label="broccoli">
+            🥦
+          </span>
+        </Card>
+      </div>
+    </div>
+  );
+}
 ```
 
 ### With `link` and `target`

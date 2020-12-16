@@ -116,6 +116,10 @@ module.exports = {
         link: '',
         menuLinks: [
           {
+            name: 'Accordion',
+            link: '/components/accordion/',
+          },
+          {
             name: 'Asset',
             link: '/components/asset/',
           },
@@ -198,6 +202,10 @@ module.exports = {
           {
             name: 'Pill',
             link: '/components/pill/',
+          },
+          {
+            name: 'Product Icon',
+            link: '/components/product-icon/',
           },
           {
             name: 'Radio button',
@@ -296,6 +304,15 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-svgr',
+    {
+      resolve: `gatsby-source-git`,
+      options: {
+        name: `forma-36-react-components`,
+        remote: `https://github.com/contentful/forma-36.git`,
+        branch: `master`,
+        patterns: `packages/forma-36-react-components/src/components/**/*.mdx`,
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {

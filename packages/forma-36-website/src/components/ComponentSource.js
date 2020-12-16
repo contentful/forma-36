@@ -3,7 +3,7 @@ import { css } from '@emotion/core';
 import tokens from '@contentful/forma-36-tokens';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import * as f36Components from '@contentful/forma-36-react-components';
-import { Grid, GridItem, Autocomplete } from '@contentful/forma-36-react-components/dist/alpha';
+import * as f36ComponentsAlpha from '@contentful/forma-36-react-components/dist/alpha';
 import { Card, Button } from '@contentful/forma-36-react-components';
 
 const styles = {
@@ -26,10 +26,10 @@ const styles = {
 };
 
 class ComponentSource extends React.Component {
-  state = { isOpen: false };
+  state = { isOpen: true };
 
   handleToggle = () => {
-    this.setState(prevState => {
+    this.setState((prevState) => {
       return { isOpen: !prevState.isOpen };
     });
   };
@@ -37,7 +37,13 @@ class ComponentSource extends React.Component {
   render() {
     return (
       <div className="f36-margin-bottom--m">
-        <LiveProvider code={this.props.children} scope={{ ...f36Components, Grid, GridItem, Autocomplete }}>
+        <LiveProvider
+          code={this.props.children.trim()}
+          scope={{
+            ...f36Components,
+            ...f36ComponentsAlpha,
+          }}
+        >
           <Card padding="none">
             <div css={styles.preview}>
               <LivePreview />

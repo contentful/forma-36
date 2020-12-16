@@ -18,18 +18,37 @@ Keep in mind that this component is still in alpha state, which means it's unsup
 
 ```jsx
 // import {Autocomplete } from '@contentful/forma-36-react-components/dist/alpha';
-
 <Autocomplete
-  items={items}
+  items={
+    [
+      {
+        label: 'entry foo',
+        value: 1
+      },
+      {
+        label: 'entry bar',
+        value: 2
+      },
+      {
+        label: 'entry baz',
+        value: 3
+      },
+      {
+        label: 'entry fooBar',
+        value: 4
+      },
+      {
+        label: 'entry out of viewport',
+        value: 5
+      }
+    ]
+  }
   width={'full'}
-  onQueryChange={onQueryChange}
-  onChange={onChange}
-  isLoading={isLoading}
   placeholder={'search'}
   emptyListMessage={'no result found'}
   noMatchesMessage={'no matches'}
   dropdownProps={{ isFullWidth: true }}
-  disabled={disabled}>
+  disabled={false}>
   {(options) => options.map((option) => <span key={option.value}>{option.label}</span>)}
 </Autocomplete>
 ```
