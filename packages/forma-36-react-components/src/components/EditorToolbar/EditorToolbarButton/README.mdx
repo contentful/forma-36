@@ -4,34 +4,20 @@ import { EditorToolbarButton } from './EditorToolbarButton';
 
 # EditorToolbarButton
 
-The EditorToolbarButton is a styled button for actions that should be shown on a rich text editor toolbar.
-
-<EditorToolbar>
-  <EditorToolbarButton
-    icon="FormatBold"
-    tooltip="Bold"
-    label="Bold"
-    isActive={boolean('isActive (bold)', false)}
-  />
-  <EditorToolbarButton
-    icon="FormatItalic"
-    tooltip="Italic"
-    label="Italic"
-    isActive={boolean('isActive (italic)', false)}
-  />
-  <EditorToolbarButton
-    icon="FormatUnderlined"
-    tooltip="Underlined"
-    label="Underlined"
-    isActive={boolean('isActive (underline)', false)}
-  />
-</EditorToolbar>
+The EditorToolbarButton is a styled button for actions that should be shown on a rich text editor toolbar. It composes the IconButton component, which means it can show any icon that the IconButton can.
 
 ## Table of contents
 
-- [Usage](#usage)
+- [How to use EditorToolbarButton](#how-to-use-EditorToolbarButton)
+- [Code examples](#code-examples)
+- [Content recommendations](#content-recommendations)
+- [Accessibility](#accessibility)
 
-## Usage
+## How to use EditorToolbarButton
+
+- The EditorToolbarButton should be used as a child of the EditorToolbar.
+
+## Code examples
 
 ```jsx
 import {
@@ -60,3 +46,11 @@ import {
   />
 </EditorToolbar>;
 ```
+
+## Content recommendations
+
+- Start every label and tooltip with a capital letter.
+
+## Accessibility
+
+- Buttons should have a clear and concise label and tooltip.
