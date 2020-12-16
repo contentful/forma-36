@@ -76,7 +76,7 @@ const Layout = (props) => {
         '',
       );
 
-      if (arrFromSlug.indexOf(trimmedTitle) > -1) {
+      if (arrFromSlug.includes(trimmedTitle)) {
         dataFromReadme[props.pageContext.frontmatter.title] =
           item.node.childMdx.body;
       }
