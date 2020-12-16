@@ -3,15 +3,7 @@ import { css } from '@emotion/core';
 import tokens from '@contentful/forma-36-tokens';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import * as f36Components from '@contentful/forma-36-react-components';
-import {
-  Grid,
-  GridItem,
-  Autocomplete,
-  Flex,
-  ProductIcon,
-  Accordion,
-  AccordionItem,
-} from '@contentful/forma-36-react-components/dist/alpha';
+import * as f36ComponentsAlpha from '@contentful/forma-36-react-components/dist/alpha';
 import { Card, Button } from '@contentful/forma-36-react-components';
 
 const styles = {
@@ -49,13 +41,7 @@ class ComponentSource extends React.Component {
           code={this.props.children.trim()}
           scope={{
             ...f36Components,
-            Grid,
-            GridItem,
-            Autocomplete,
-            Flex,
-            ProductIcon,
-            Accordion,
-            AccordionItem,
+            ...f36ComponentsAlpha,
           }}
         >
           <Card padding="none">
