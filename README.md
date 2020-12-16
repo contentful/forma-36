@@ -156,12 +156,12 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/arpl"><img src="https://avatars0.githubusercontent.com/u/1368611?v=4" width="100px;" alt=""/><br /><sub><b>Aris Plakias</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=arpl" title="Code">💻</a></td>
     <td align="center"><a href="https://kamsar.net"><img src="https://avatars0.githubusercontent.com/u/103677?v=4" width="100px;" alt=""/><br /><sub><b>Kam Figy</b></sub></a><br /><a href="https://github.com/contentful/forma-36/issues?q=author%3Akamsar" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/VaguelySerious"><img src="https://avatars0.githubusercontent.com/u/29887157?v=4" width="100px;" alt=""/><br /><sub><b>Peter Wielander</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=VaguelySerious" title="Code">💻</a> <a href="https://github.com/contentful/forma-36/issues?q=author%3AVaguelySerious" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
-
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

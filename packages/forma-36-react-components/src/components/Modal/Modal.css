@@ -15,6 +15,7 @@
 
 .Modal__overlay {
   display: flex;
+  align-items: baseline;
   flex-wrap: wrap;
   top: 0;
   right: 0;
