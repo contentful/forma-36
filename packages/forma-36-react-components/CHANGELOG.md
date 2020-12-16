@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.72.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.71.5...@contentful/forma-36-react-components@3.72.0) (2020-12-16)
+
+
+### Features
+
+* gatsby page consumes REAMDE files from react components ([#702](https://github.com/contentful/forma-36/issues/702)) ([85a6fc0](https://github.com/contentful/forma-36/commit/85a6fc0aab74319bab62ea0f6fc3cc06b2685d15))
+
+
+
+
+
 ## [3.71.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.71.4...@contentful/forma-36-react-components@3.71.5) (2020-12-15)
 
 
