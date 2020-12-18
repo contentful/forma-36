@@ -32,7 +32,7 @@ export const basic = (args: ButtonProps) => (
   </Button>
 );
 
-export const overviewTypes = (args: ButtonProps) => (
+export const typesOverview = (args: ButtonProps) => (
   <>
     <Button buttonType="primary">primary</Button>
     <Button buttonType="positive">posiitve</Button>
