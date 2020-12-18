@@ -1,0 +1,41 @@
+import { CopyButton } from './CopyButton';
+
+# CopyButton
+
+The CopyButton is a styled button that copies text into the user's clipboard. This is useful in combination with for example tables or inputs that show values that the user is likely to use elsewhere, such as automatically generated passwords.
+
+## Table of contents
+
+- [How to use CopyButton](#how-to-use-CopyButton)
+- [Component variations](#component-variations)
+- [Code examples](#code-examples)
+- [Content recommendations](#content-recommendations)
+- [Accessibility](#accessibility)
+
+## How to use CopyButton
+
+CopyButton can be used in combination with text inputs where the input value should be easy to copy. In such cases it is best to position the CopyButton at the end of the input.
+
+## Component variations
+
+<CopyButton copyValue="Lorem Ipsum" />;
+
+## Code examples
+
+```jsx
+import { CopyButton } from '@contentful/forma-36-react-components';
+
+<CopyButton copyValue="Lorem Ipsum" />;
+```
+
+An example with a custom tooltip:
+
+```jsx
+import { CopyButton } from '@contentful/forma-36-react-components';
+
+<CopyButton
+  copyValue="Lorem Ipsum"
+  tooltipCopiedText="The text has been copied"
+  tooltipText="Copy this text to clipboard"
+/>;
+```
