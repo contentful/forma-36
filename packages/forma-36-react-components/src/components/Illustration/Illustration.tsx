@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import cn from 'classnames';
-import { illustrationName } from './constants';
 
+import { illustrationName } from './constants';
 import {
   Archive,
   Audio,
@@ -15,7 +15,6 @@ import {
   Spreadsheet,
   Video,
 } from './svg';
-
 import styles from './Illustration.css';
 
 export type IllustrationType = keyof typeof illustrationName;
@@ -32,37 +31,37 @@ export interface IllustrationProps {
   style?: React.CSSProperties;
 }
 
-const defaultProps: Partial<IllustrationProps> = {
+export function Illustration({
+  className,
+  testId,
+  illustration,
+  ...otherProps
+}: IllustrationProps): React.ReactElement {
+  const illustrationComponents = {
+    Archive,
+    Audio,
+    Richtext,
+    Code,
+    Image,
+    Markup,
+    Pdf,
+    Plaintext,
+    Presentation,
+    Spreadsheet,
+    Video,
+  };
+
+  const classNames = cn(styles['Illustration'], className);
+
+  const Element = illustrationComponents[illustration];
+
+  return (
+    <Element {...otherProps} data-test-id={testId} className={classNames} />
+  );
+}
+
+Illustration.defaultProps = {
   testId: 'cf-ui-illustration',
 };
-
-export class Illustration extends Component<IllustrationProps> {
-  static defaultProps = defaultProps;
-
-  render() {
-    const { className, testId, illustration, ...otherProps } = this.props;
-    const illustrationComponents = {
-      Archive,
-      Audio,
-      Richtext,
-      Code,
-      Image,
-      Markup,
-      Pdf,
-      Plaintext,
-      Presentation,
-      Spreadsheet,
-      Video,
-    };
-
-    const classNames = cn(styles['Illustration'], className);
-
-    const Element = illustrationComponents[illustration];
-
-    return (
-      <Element {...otherProps} data-test-id={testId} className={classNames} />
-    );
-  }
-}
 
 export default Illustration;

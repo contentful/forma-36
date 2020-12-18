@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 export interface TabPanelProps {
   id: string;
@@ -8,27 +8,28 @@ export interface TabPanelProps {
   children: React.ReactNode;
 }
 
-const defaultProps: Partial<TabPanelProps> = {
+export function TabPanel({
+  testId,
+  className,
+  children,
+  id,
+  ...rest
+}: TabPanelProps): React.ReactElement {
+  return (
+    <div
+      {...rest}
+      id={id}
+      role="tabpanel"
+      data-test-id={testId}
+      className={className}
+    >
+      {children}
+    </div>
+  );
+}
+
+TabPanel.defaultProps = {
   testId: 'cf-ui-tab-panel',
 };
-
-export class TabPanel extends Component<TabPanelProps> {
-  static defaultProps = defaultProps;
-
-  render() {
-    const { testId, className, children, id, ...rest } = this.props;
-    return (
-      <div
-        {...rest}
-        id={id}
-        role="tabpanel"
-        data-test-id={testId}
-        className={className}
-      >
-        {children}
-      </div>
-    );
-  }
-}
 
 export default TabPanel;

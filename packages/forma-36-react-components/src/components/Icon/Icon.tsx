@@ -1,5 +1,7 @@
-import React, { Component, CSSProperties } from 'react';
+import React from 'react';
 import cn from 'classnames';
+import type { CSSProperties } from 'react';
+
 import { iconName } from './constants';
 
 import {
@@ -297,34 +299,35 @@ export interface IconProps {
   testId?: string;
 }
 
-const defaultProps: Partial<IconProps> = {
+export function Icon({
+  className,
+  icon,
+  size,
+  color,
+  testId,
+  ...otherProps
+}: IconProps): React.ReactElement {
+  const classNames = cn(
+    styles.Icon,
+    {
+      [styles[`Icon--${size}`]]: size,
+      [styles[`Icon--${color}`]]: color,
+      [styles['Icon--trimmed']]: icon.toLowerCase().includes('trimmed'),
+    },
+    className,
+  );
+
+  const Element = iconComponents[icon];
+
+  return (
+    <Element data-test-id={testId} className={classNames} {...otherProps} />
+  );
+}
+
+Icon.defaultProps = {
   testId: 'cf-ui-icon',
   size: 'small',
   color: 'primary',
 };
-
-export class Icon extends Component<IconProps> {
-  static defaultProps = defaultProps;
-
-  render() {
-    const { className, icon, size, color, testId, ...otherProps } = this.props;
-
-    const classNames = cn(
-      styles.Icon,
-      {
-        [styles[`Icon--${size}`]]: size,
-        [styles[`Icon--${color}`]]: color,
-        [styles['Icon--trimmed']]: icon.toLowerCase().includes('trimmed'),
-      },
-      className,
-    );
-
-    const Element = iconComponents[icon];
-
-    return (
-      <Element data-test-id={testId} className={classNames} {...otherProps} />
-    );
-  }
-}
 
 export default Icon;

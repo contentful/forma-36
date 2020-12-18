@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import cn from 'classnames';
 import styles from './SkeletonContainer.css';
 
@@ -26,7 +26,106 @@ export interface SkeletonContainerProps {
 
 let idCounter = 0;
 
-const defaultProps: Partial<SkeletonContainerProps> = {
+export function SkeletonContainer({
+  className,
+  children,
+  testId,
+  ariaLabel,
+  width,
+  height,
+  preserveAspectRatio,
+  clipId,
+  gradientId,
+  animateId,
+  backgroundColor,
+  backgroundOpacity,
+  animate,
+  speed,
+  foregroundColor,
+  foregroundOpacity,
+  svgWidth,
+  svgHeight,
+  ...otherProps
+}: SkeletonContainerProps): React.ReactElement {
+  const classNames = cn(styles['SkeletonContainer'], className);
+
+  return (
+    <svg
+      role="img"
+      className={classNames}
+      aria-label={ariaLabel}
+      preserveAspectRatio={preserveAspectRatio}
+      width={svgWidth}
+      height={svgHeight}
+      data-test-id={testId}
+      {...otherProps}
+    >
+      {ariaLabel ? <title>{ariaLabel}</title> : null}
+      <rect
+        x="0"
+        y="0"
+        width={width}
+        height={height}
+        clipPath={`url(#${clipId})`}
+        style={{ fill: `url(#${gradientId})` }}
+      />
+
+      <defs>
+        <clipPath id={clipId}>{children}</clipPath>
+
+        <linearGradient id={gradientId}>
+          <stop
+            offset="0%"
+            stopColor={backgroundColor}
+            stopOpacity={backgroundOpacity}
+          >
+            {animate && (
+              <animate
+                id={animateId}
+                attributeName="stop-color"
+                values={`${backgroundColor}; ${foregroundColor}; ${backgroundColor}`}
+                dur={`${speed}s`}
+                repeatCount="indefinite"
+              />
+            )}
+          </stop>
+          <stop
+            offset="50%"
+            stopColor={foregroundColor}
+            stopOpacity={foregroundOpacity}
+          >
+            {animate && (
+              <animate
+                attributeName="stop-color"
+                values={`${backgroundColor}; ${foregroundColor}; ${backgroundColor}`}
+                begin={`${animateId}.begin+0.25s`}
+                dur={`${speed}s`}
+                repeatCount="indefinite"
+              />
+            )}
+          </stop>
+          <stop
+            offset="100%"
+            stopColor={backgroundColor}
+            stopOpacity={backgroundOpacity}
+          >
+            {animate && (
+              <animate
+                attributeName="stop-color"
+                begin={`${animateId}.begin+0.5s`}
+                values={`${backgroundColor}; ${foregroundColor}; ${backgroundColor}`}
+                dur={`${speed}s`}
+                repeatCount="indefinite"
+              />
+            )}
+          </stop>
+        </linearGradient>
+      </defs>
+    </svg>
+  );
+}
+
+SkeletonContainer.defaultProps = {
   testId: 'cf-ui-skeleton-form',
   ariaLabel: 'Loading component...',
   width: '100%',
@@ -50,110 +149,5 @@ const defaultProps: Partial<SkeletonContainerProps> = {
   svgWidth: '100%' as string | number,
   svgHeight: '100%' as string | number,
 };
-
-export class SkeletonContainer extends Component<SkeletonContainerProps> {
-  static defaultProps = defaultProps;
-
-  render() {
-    const {
-      className,
-      children,
-      testId,
-      ariaLabel,
-      width,
-      height,
-      preserveAspectRatio,
-      clipId,
-      gradientId,
-      animateId,
-      backgroundColor,
-      backgroundOpacity,
-      animate,
-      speed,
-      foregroundColor,
-      foregroundOpacity,
-      svgWidth,
-      svgHeight,
-      ...otherProps
-    } = this.props;
-
-    const classNames = cn(styles['SkeletonContainer'], className);
-
-    return (
-      <svg
-        role="img"
-        className={classNames}
-        aria-label={ariaLabel}
-        preserveAspectRatio={preserveAspectRatio}
-        width={svgWidth}
-        height={svgHeight}
-        data-test-id={testId}
-        {...otherProps}
-      >
-        {ariaLabel ? <title>{ariaLabel}</title> : null}
-        <rect
-          x="0"
-          y="0"
-          width={width}
-          height={height}
-          clipPath={`url(#${clipId})`}
-          style={{ fill: `url(#${gradientId})` }}
-        />
-
-        <defs>
-          <clipPath id={clipId}>{children}</clipPath>
-
-          <linearGradient id={gradientId}>
-            <stop
-              offset="0%"
-              stopColor={backgroundColor}
-              stopOpacity={backgroundOpacity}
-            >
-              {animate && (
-                <animate
-                  id={animateId}
-                  attributeName="stop-color"
-                  values={`${backgroundColor}; ${foregroundColor}; ${backgroundColor}`}
-                  dur={`${speed}s`}
-                  repeatCount="indefinite"
-                />
-              )}
-            </stop>
-            <stop
-              offset="50%"
-              stopColor={foregroundColor}
-              stopOpacity={foregroundOpacity}
-            >
-              {animate && (
-                <animate
-                  attributeName="stop-color"
-                  values={`${backgroundColor}; ${foregroundColor}; ${backgroundColor}`}
-                  begin={`${animateId}.begin+0.25s`}
-                  dur={`${speed}s`}
-                  repeatCount="indefinite"
-                />
-              )}
-            </stop>
-            <stop
-              offset="100%"
-              stopColor={backgroundColor}
-              stopOpacity={backgroundOpacity}
-            >
-              {animate && (
-                <animate
-                  attributeName="stop-color"
-                  begin={`${animateId}.begin+0.5s`}
-                  values={`${backgroundColor}; ${foregroundColor}; ${backgroundColor}`}
-                  dur={`${speed}s`}
-                  repeatCount="indefinite"
-                />
-              )}
-            </stop>
-          </linearGradient>
-        </defs>
-      </svg>
-    );
-  }
-}
 
 export default SkeletonContainer;
