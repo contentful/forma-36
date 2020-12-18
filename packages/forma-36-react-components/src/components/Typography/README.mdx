@@ -1,0 +1,75 @@
+Forma 36 includes a number of typography components, including a wrapper to automatically add spacing to typography elements.
+
+Typography components are not tied to specific semantic elements - it's possible to render any typography component as a `h1`, `h2`, `h3`, `h4`, `h5`, `h6` or `p` element.
+
+Forma 36 uses system UI fonts. System UI fonts refer to the fonts used to render text in the UI of an operating system. When used on the web they offer familiarity, load with zero-latency, and support a wide number of character sets.
+
+## Component variations
+
+### Heading <a name="heading" />
+
+_Heading_ is intended to be used to define a section. Headings are very important for accessibility, as it helps to make copy more easily scannable and guides a user through your content.
+
+Another accessibility consideration screen readers. Visually impaired people often use screen readers, which find sections in your copy based on your heading hierarchy.
+
+Font size: **21px** = **1.313rem** - Line Height: **31px** = **1.938rem** - Weight: **700**
+
+```jsx
+<Heading>Heading</Heading>
+```
+
+### Subheading
+
+_Subheadings_ are intended to be used as headings for copy nested within a section. EX: a subheading under Contact may be Address or Phone number.
+
+Font size: **16px** = **1rem** - Line Height: **24px** = **1.5rem** - Weight: **700**
+
+```jsx
+<Subheading>Subheading</Subheading>
+```
+
+### SectionHeading
+
+_Section Heading_ is intended to be used as a title for a widget, and is most commonly used in the sidebar.
+
+Font size: **12px** = **0.75rem** - Line Height: **18px** = **1.125rem** - Weight: **600**
+
+```jsx
+<SectionHeading>SectionHeading</SectionHeading>
+```
+
+### Paragraph
+
+_Body_ is the base font size for content. It is intended to be used as paragraph copy.
+
+Font size: **14px**=**0.875rem** - Line Height: **21px**=**1.313rem** - Weight: **500**
+
+```jsx
+<Paragraph>Paragraph</Paragraph>
+```
+
+### DisplayText
+
+DisplayText is used to display text in special scenarios - example usages of DisplayText include empty states, promotional/featured items, etc.
+
+DisplayText should **not** be used as a replacement for headings/page titles (use the Heading component instead).
+
+```jsx
+<React.Fragment>
+  <DisplayText size="large">DisplayText (large)</DisplayText>
+  <DisplayText>DisplayText</DisplayText>
+</React.Fragment>
+```
+
+## Typography wrapper
+
+The `<Typography>` component should be used to wrap a group of typography components (`<Heading>`, `<Paragraph>`, etc) for cases where you wish to display these components with default margins.
+
+We follow the principle that a component should only be responsible for its own internal spacing - never its external spacing. This means that we're flexible in where our components can be used without having to override margins.
+
+```jsx
+<Typography>
+  <Heading>My heading</Heading>
+  <Paragraph>My paragraph</Paragraph>
+</Typography>
+```

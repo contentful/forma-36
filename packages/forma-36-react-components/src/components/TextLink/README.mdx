@@ -1,24 +1,21 @@
 TextLinks communicate actions and linked resources to users.
 
-- [How to use TextLinks](#how-to-use-TextLink)
+- [How to use TextLinks](#how-to-use-TextLinks)
 - [Component variations](#component-variations)
 - [Code examples](#code-examples)
-  - [With onClick](#with-onclick)
-  - [Selectable cards](#selectable-cards)
-  - [With link and target](#with-link-and-target)
 - [Content recommendations](#content-recommendations)
 - [Accessibility](#accessibility)
 
 ## How to use TextLinks
 
-- TextLinks are used to display actions that have a lower priority compared to actions that are accessible via a button. 
+- TextLinks are used to display actions that have a lower priority compared to actions that are accessible via a button.
 - They should also be used when linking to URLs, and are preferred over using buttons when used for this purpose.
 - Use clear, succinct, and accurate labels
 - Start TextLink labels with verbs, for example "Add field", not "New field"
 - Reduce complexity by using a small number of actions. Too many actions can create confusion when having to decide
 
-
 ## Component variations
+
 There are a number of variations of TextLink styles, here is a guide for when to use them:
 
 - **Primary** - Used for primary actions, or the default for links to URLs.
@@ -28,3 +25,65 @@ There are a number of variations of TextLink styles, here is a guide for when to
 - **Muted** - For actions that should be emphasized less than the secondary style.
 - **White** - For actions appearing on a dark background.
 
+```jsx
+<React.Fragment>
+  <TextLink linkType="primary">Primary</TextLink>
+  <br />
+  <TextLink linkType="positive">Positive</TextLink>
+  <br />
+  <TextLink linkType="negative">Negative</TextLink>
+  <br />
+  <TextLink linkType="muted">Muted</TextLink>
+  <br />
+  <TextLink linkType="secondary">Secondary</TextLink>
+  <br />
+</React.Fragment>
+```
+
+## Code examples
+
+Text links communicate actions and highlight linked resources to users.
+
+```jsx
+<React.Fragment>
+  <TextLink linkType="primary">Text link</TextLink>
+</React.Fragment>
+```
+
+### TextLink with icon (`icon`) <a name="textlink-with-icon" />
+
+```jsx
+<React.Fragment>
+  <TextLink linkType="primary" icon="ExternalLink">
+    Primary
+  </TextLink>
+  <br />
+  <TextLink linkType="positive" icon="ExternalLink">
+    Positive
+  </TextLink>
+  <br />
+  <TextLink linkType="negative" icon="ExternalLink">
+    Negative
+  </TextLink>
+  <br />
+  <TextLink linkType="muted" icon="ExternalLink">
+    Muted
+  </TextLink>
+  <br />
+  <TextLink linkType="secondary" icon="ExternalLink">
+    Secondary
+  </TextLink>
+  <br />
+</React.Fragment>
+```
+
+## Content recommendations
+
+- To make `TextLink` action-oriented, use a verb. For example, "Add field", not "New field"
+- If a `TextLink` is used to navigate to a new page, clearly communicate what the user will see when they click on the link. For example, “View teams documentation” vs “Learn about teams”
+- Use clear and succinct copy
+- If a `TextLink` is at the end of a sentence, don’t add period after the TextLink
+
+## Accessibility
+
+missing

@@ -24,23 +24,6 @@ Common practice is to use ProductIcons in the top navigation in Contentful webap
 <ProductIcon icon="Spaces" size="large" color="positive" />
 ```
 
-Another good example of usage of ProductIcons is the headlines of the pages, next to the title. In that case icons are used within our `Workbench` component.
-
-```jsx
-// import { Workbench } from '@contentful/forma-36-react-components';
-// import { ProductIcon } from '@contentful/forma-36-react-components/dist/alpha';
-
-<>
-  <Workbench>
-    <Workbench.Header
-      title={'Page title'}
-      icon={<ProductIcon icon="Users" size="large" />}
-    />
-    <Workbench.Content>...</Workbench.Content>
-  </Workbench>
-</>
-```
-
 ## Accessibility
 
 - Make sure to use proper color for the icon and text in the context. It passes the the accesibility color contrast [requirements](https://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html) - contrast ratio of at least 3:1.

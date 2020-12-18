@@ -51,16 +51,10 @@ const Layout = (props) => {
           }
         }
       }
-      allFile(
-        filter: { sourceInstanceName: { eq: "forma-36-react-components" } }
-      ) {
-        edges {
-          node {
-            childMdx {
-              body
-              slug
-            }
-          }
+      allMdx {
+        nodes {
+          slug
+          body
         }
       }
     }
@@ -68,17 +62,16 @@ const Layout = (props) => {
 
   const dataFromReadme = {};
 
-  data.allFile.edges.map((item) => {
+  data.allMdx.nodes.forEach((item) => {
     if (props.pageContext && props.pageContext.frontmatter.title) {
-      const arrFromSlug = item.node.childMdx.slug.split('/');
+      const arrFromSlug = item.slug.split('/');
       const trimmedTitle = props.pageContext.frontmatter.title.replace(
         /\s/g,
         '',
       );
 
       if (arrFromSlug.includes(trimmedTitle)) {
-        dataFromReadme[props.pageContext.frontmatter.title] =
-          item.node.childMdx.body;
+        dataFromReadme[props.pageContext.frontmatter.title] = item.body;
       }
     }
     return;
