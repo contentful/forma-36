@@ -1,8 +1,9 @@
-import React, { CSSProperties, Component } from 'react';
+import React from 'react';
 import classNames from 'classnames';
+import type { CSSProperties } from 'react';
+
 import Icon, { IconType } from '../Icon';
 import { iconName } from '../Icon/constants';
-
 import styles from './Note.css';
 import IconButton from '../IconButton';
 
@@ -24,60 +25,61 @@ export interface NoteProps {
   onClose?: Function;
 }
 
-const defaultProps: Partial<NoteProps> = {
+export function Note({
+  children,
+  className,
+  hasCloseButton,
+  noteType,
+  onClose,
+  style,
+  testId,
+  title,
+}: NoteProps): React.ReactElement {
+  const icon = Icons[noteType!] as IconType; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+  if (!icon) {
+    throw new Error(`Intent ${noteType} is not supported in Note component.`);
+  }
+
+  return (
+    <div
+      style={style}
+      className={classNames(styles.Note, className, {
+        [styles['Note--primary']]: noteType === 'primary',
+        [styles['Note--positive']]: noteType === 'positive',
+        [styles['Note--negative']]: noteType === 'negative',
+        [styles['Note--warning']]: noteType === 'warning',
+        [styles['Note--hasCloseButton']]: hasCloseButton,
+      })}
+      data-test-id={testId}
+    >
+      <div className={styles.Note__icon}>
+        <Icon icon={icon} color={noteType} />
+      </div>
+      <div className={styles.Note__info}>
+        {title && <div className={styles.Note__title}>{title}</div>}
+        <div>{children}</div>
+      </div>
+      {hasCloseButton && (
+        <IconButton
+          buttonType="secondary"
+          iconProps={{ icon: 'Close' }}
+          onClick={() => {
+            if (onClose) {
+              onClose();
+            }
+          }}
+          testId="cf-ui-note-close"
+          label="Dismiss"
+          className={styles.Note__dismiss}
+        />
+      )}
+    </div>
+  );
+}
+
+Note.defaultProps = {
   noteType: 'primary',
   testId: 'cf-ui-note',
 };
-
-export class Note extends Component<NoteProps> {
-  static defaultProps = defaultProps;
-
-  render() {
-    const icon = Icons[this.props.noteType!] as IconType; // eslint-disable-line @typescript-eslint/no-non-null-assertion
-    if (!icon) {
-      throw new Error(
-        `Intent ${this.props.noteType} is not supported in Note component.`,
-      );
-    }
-
-    return (
-      <div
-        style={this.props.style}
-        className={classNames(styles.Note, this.props.className, {
-          [styles['Note--primary']]: this.props.noteType === 'primary',
-          [styles['Note--positive']]: this.props.noteType === 'positive',
-          [styles['Note--negative']]: this.props.noteType === 'negative',
-          [styles['Note--warning']]: this.props.noteType === 'warning',
-          [styles['Note--hasCloseButton']]: this.props.hasCloseButton,
-        })}
-        data-test-id={this.props.testId}
-      >
-        <div className={styles.Note__icon}>
-          <Icon icon={icon} color={this.props.noteType} />
-        </div>
-        <div className={styles.Note__info}>
-          {this.props.title && (
-            <div className={styles.Note__title}>{this.props.title}</div>
-          )}
-          <div>{this.props.children}</div>
-        </div>
-        {this.props.hasCloseButton && (
-          <IconButton
-            buttonType="secondary"
-            iconProps={{ icon: 'Close' }}
-            onClick={() => {
-              if (this.props.onClose) {
-                this.props.onClose();
-              }
-            }}
-            testId="cf-ui-note-close"
-            label="Dismiss"
-            className={styles.Note__dismiss}
-          />
-        )}
-      </div>
-    );
-  }
-}
 
 export default Note;

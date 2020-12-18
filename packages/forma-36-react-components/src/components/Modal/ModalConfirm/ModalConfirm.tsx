@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import Modal, { ModalSizeType } from '../Modal';
 import { ModalHeaderProps } from '../ModalHeader';
@@ -102,7 +102,88 @@ export interface ModalConfirmProps {
   children: React.ReactNode;
 }
 
-const defaultProps: Partial<ModalConfirmProps> = {
+export function ModalConfirm({
+  allowHeightOverflow,
+  cancelLabel,
+  cancelTestId,
+  children,
+  confirmLabel,
+  confirmTestId,
+  intent,
+  isConfirmDisabled,
+  isConfirmLoading,
+  isSecondaryDisabled,
+  isSecondaryLoading,
+  isShown,
+  modalContentProps,
+  modalControlsProps,
+  modalHeaderProps,
+  onCancel,
+  onConfirm,
+  onSecondary,
+  secondaryIntent,
+  secondaryLabel,
+  secondaryTestId,
+  shouldCloseOnEscapePress,
+  shouldCloseOnOverlayClick,
+  size,
+  testId,
+  title,
+}: ModalConfirmProps): React.ReactElement {
+  return (
+    <Modal
+      testId={testId}
+      isShown={isShown}
+      onClose={onCancel}
+      size={size}
+      shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
+      shouldCloseOnEscapePress={shouldCloseOnEscapePress}
+      allowHeightOverflow={allowHeightOverflow}
+    >
+      {() => (
+        <div>
+          <Modal.Header title={title || ''} {...modalHeaderProps} />
+          <Modal.Content {...modalContentProps}>{children}</Modal.Content>
+          <Modal.Controls {...modalControlsProps}>
+            {confirmLabel && (
+              <Button
+                testId={confirmTestId}
+                disabled={isConfirmDisabled}
+                loading={isConfirmLoading}
+                buttonType={intent}
+                onClick={() => onConfirm()}
+              >
+                {confirmLabel}
+              </Button>
+            )}
+            {secondaryLabel && (
+              <Button
+                testId={secondaryTestId}
+                disabled={isSecondaryDisabled}
+                loading={isSecondaryLoading}
+                buttonType={secondaryIntent}
+                onClick={() => onSecondary && onSecondary()}
+              >
+                {secondaryLabel}
+              </Button>
+            )}
+            {cancelLabel && (
+              <Button
+                testId={cancelTestId}
+                buttonType="muted"
+                onClick={() => onCancel()}
+              >
+                {cancelLabel}
+              </Button>
+            )}
+          </Modal.Controls>
+        </div>
+      )}
+    </Modal>
+  );
+}
+
+ModalConfirm.defaultProps = {
   testId: 'cf-ui-modal-confirm',
   confirmTestId: 'cf-ui-modal-confirm-confirm-button',
   secondaryTestId: 'cf-ui-modal-confirm-secondary-button',
@@ -118,91 +199,5 @@ const defaultProps: Partial<ModalConfirmProps> = {
   size: 'medium',
   allowHeightOverflow: false,
 };
-
-export class ModalConfirm extends Component<ModalConfirmProps> {
-  static defaultProps = defaultProps;
-
-  render() {
-    const {
-      children,
-      testId,
-      isShown,
-      title,
-      onConfirm,
-      onSecondary,
-      onCancel,
-      size,
-      confirmLabel,
-      secondaryLabel,
-      cancelLabel,
-      intent,
-      secondaryIntent,
-      shouldCloseOnOverlayClick,
-      shouldCloseOnEscapePress,
-      allowHeightOverflow,
-      isConfirmDisabled,
-      isSecondaryDisabled,
-      isConfirmLoading,
-      isSecondaryLoading,
-      confirmTestId,
-      secondaryTestId,
-      cancelTestId,
-    } = this.props;
-
-    return (
-      <Modal
-        testId={testId}
-        isShown={isShown}
-        onClose={onCancel}
-        size={size}
-        shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
-        shouldCloseOnEscapePress={shouldCloseOnEscapePress}
-        allowHeightOverflow={allowHeightOverflow}
-      >
-        {() => (
-          <div>
-            <Modal.Header title={title} {...this.props.modalHeaderProps} />
-            <Modal.Content {...this.props.modalContentProps}>
-              {children}
-            </Modal.Content>
-            <Modal.Controls {...this.props.modalControlsProps}>
-              {confirmLabel && (
-                <Button
-                  testId={confirmTestId}
-                  disabled={isConfirmDisabled}
-                  loading={isConfirmLoading}
-                  buttonType={intent}
-                  onClick={() => onConfirm()}
-                >
-                  {confirmLabel}
-                </Button>
-              )}
-              {secondaryLabel && (
-                <Button
-                  testId={secondaryTestId}
-                  disabled={isSecondaryDisabled}
-                  loading={isSecondaryLoading}
-                  buttonType={secondaryIntent}
-                  onClick={() => onSecondary && onSecondary()}
-                >
-                  {secondaryLabel}
-                </Button>
-              )}
-              {cancelLabel && (
-                <Button
-                  testId={cancelTestId}
-                  buttonType="muted"
-                  onClick={() => onCancel()}
-                >
-                  {cancelLabel}
-                </Button>
-              )}
-            </Modal.Controls>
-          </div>
-        )}
-      </Modal>
-    );
-  }
-}
 
 export default ModalConfirm;

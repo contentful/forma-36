@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import cn from 'classnames';
 
 import styles from './Typography.css';
@@ -19,27 +19,27 @@ const defaultConfiguration = {
   subheading: { spacing: 'm' },
 };
 
-const defaultProps: Partial<TypographyProps> = {
-  testId: 'cf-ui-text-container',
-};
-
 export const TypographyContext = React.createContext({});
 
-export class Typography extends Component<TypographyProps> {
-  static defaultProps = defaultProps;
+export function Typography({
+  className,
+  children,
+  testId,
+  ...otherProps
+}: TypographyProps): React.ReactElement {
+  const classNames = cn(styles.Typography, className);
 
-  render() {
-    const { className, children, testId, ...otherProps } = this.props;
-    const classNames = cn(styles.Typography, className);
-
-    return (
-      <TypographyContext.Provider value={defaultConfiguration}>
-        <div {...otherProps} className={classNames} data-test-id={testId}>
-          {children}
-        </div>
-      </TypographyContext.Provider>
-    );
-  }
+  return (
+    <TypographyContext.Provider value={defaultConfiguration}>
+      <div {...otherProps} className={classNames} data-test-id={testId}>
+        {children}
+      </div>
+    </TypographyContext.Provider>
+  );
 }
+
+Typography.defaultProps = {
+  testId: 'cf-ui-text-container',
+};
 
 export default Typography;

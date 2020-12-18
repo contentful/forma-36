@@ -1,8 +1,9 @@
-import React, { Component, MouseEventHandler } from 'react';
+import React, { useCallback } from 'react';
 import cn from 'classnames';
+import type { MouseEventHandler } from 'react';
+
 import Icon, { IconType } from '../Icon';
 import TabFocusTrap from '../TabFocusTrap';
-
 import styles from './TextLink.css';
 
 export type TextLinkType =
@@ -30,97 +31,98 @@ export interface TextLinkProps {
   iconPosition?: IconPositionType;
 }
 
-const defaultProps: Partial<TextLinkProps> = {
+export function TextLink({
+  children,
+  className,
+  disabled,
+  href,
+  icon,
+  iconPosition,
+  linkType,
+  onClick,
+  testId,
+  text,
+  ...otherProps
+}: TextLinkProps): React.ReactElement {
+  const renderIcon = useCallback(
+    (icon: IconType, linkType: TextLinkType) => {
+      if (!icon) return undefined;
+
+      return (
+        <div
+          className={
+            iconPosition === 'right'
+              ? styles['TextLink__icon-wrapper--right']
+              : styles['TextLink__icon-wrapper']
+          }
+        >
+          <Icon
+            icon={icon}
+            color={linkType}
+            className={styles.TextLink__icon}
+          />
+        </div>
+      );
+    },
+    [iconPosition],
+  );
+
+  const classNames = cn(styles.TextLink, className, {
+    [styles[`TextLink--${linkType}`]]: linkType,
+    [styles['TextLink--disabled']]: disabled,
+  });
+
+  const content = (
+    <TabFocusTrap>
+      {
+        icon && iconPosition === 'left' && renderIcon(icon, linkType!) // eslint-disable-line @typescript-eslint/no-non-null-assertion
+      }
+      {text || children}
+      {
+        icon && iconPosition === 'right' && renderIcon(icon, linkType!) // eslint-disable-line @typescript-eslint/no-non-null-assertion
+      }
+    </TabFocusTrap>
+  );
+
+  if (href) {
+    return (
+      <a
+        className={classNames}
+        data-test-id={testId}
+        onClick={
+          disabled
+            ? (e) => {
+                e.preventDefault();
+              }
+            : onClick
+        }
+        href={href}
+        {...otherProps}
+      >
+        {content}
+      </a>
+    );
+  }
+
+  return (
+    <button
+      type="button"
+      className={classNames}
+      data-test-id={testId}
+      onClick={!disabled ? onClick : () => {}}
+      disabled={disabled}
+      {...otherProps}
+    >
+      {content}
+    </button>
+  );
+}
+
+TextLink.defaultProps = {
   linkType: 'primary',
   testId: 'cf-ui-text-link',
   disabled: false,
   iconPosition: 'left',
 };
-
-export class TextLink extends Component<TextLinkProps> {
-  static defaultProps = defaultProps;
-
-  renderIcon(icon: IconType, linkType: TextLinkType) {
-    if (!icon) return undefined;
-
-    return (
-      <div
-        className={
-          this.props.iconPosition === 'right'
-            ? styles['TextLink__icon-wrapper--right']
-            : styles['TextLink__icon-wrapper']
-        }
-      >
-        <Icon icon={icon} color={linkType} className={styles.TextLink__icon} />
-      </div>
-    );
-  }
-
-  render() {
-    const {
-      children,
-      href,
-      linkType,
-      testId,
-      onClick,
-      disabled,
-      className,
-      icon,
-      text,
-      iconPosition,
-      ...otherProps
-    } = this.props;
-
-    const classNames = cn(styles.TextLink, className, {
-      [styles[`TextLink--${linkType}`]]: linkType,
-      [styles['TextLink--disabled']]: disabled,
-    });
-
-    const content = (
-      <TabFocusTrap>
-        {
-          icon && iconPosition === 'left' && this.renderIcon(icon, linkType!) // eslint-disable-line @typescript-eslint/no-non-null-assertion
-        }
-        {text || children}
-        {
-          icon && iconPosition === 'right' && this.renderIcon(icon, linkType!) // eslint-disable-line @typescript-eslint/no-non-null-assertion
-        }
-      </TabFocusTrap>
-    );
-
-    if (href) {
-      return (
-        <a
-          className={classNames}
-          data-test-id={testId}
-          onClick={
-            disabled
-              ? (e) => {
-                  e.preventDefault();
-                }
-              : onClick
-          }
-          href={href}
-          {...otherProps}
-        >
-          {content}
-        </a>
-      );
-    }
-
-    return (
-      <button
-        type="button"
-        className={classNames}
-        data-test-id={testId}
-        onClick={!disabled ? onClick : () => {}}
-        disabled={disabled}
-        {...otherProps}
-      >
-        {content}
-      </button>
-    );
-  }
-}
 
 export default TextLink;

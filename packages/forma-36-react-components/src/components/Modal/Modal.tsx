@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import cn from 'classnames';
 import ReactModal from 'react-modal';
+
 import ModalHeader, { ModalHeaderProps } from './ModalHeader';
 import ModalContent, { ModalContentProps } from './ModalContent';
 import ModalControls from './ModalControls/ModalControls';
-
 import styles from './Modal.css';
 
 const ModalSizesMapper = {
@@ -85,7 +85,80 @@ export interface ModalProps {
   children: any;
 }
 
-const defaultProps: Partial<ModalProps> = {
+export function Modal(props: ModalProps): React.ReactElement {
+  const renderDefault = () => {
+    return (
+      <React.Fragment>
+        {props.title && (
+          <ModalHeader
+            title={props.title}
+            onClose={props.onClose}
+            {...props.modalHeaderProps}
+          />
+        )}
+        <ModalContent {...props.modalContentProps}>
+          {props.children}
+        </ModalContent>
+      </React.Fragment>
+    );
+  };
+
+  return (
+    <ReactModal
+      ariaHideApp={false}
+      onRequestClose={props.onClose}
+      isOpen={props.isShown}
+      onAfterOpen={props.onAfterOpen}
+      shouldCloseOnEsc={props.shouldCloseOnEscapePress}
+      shouldCloseOnOverlayClick={props.shouldCloseOnOverlayClick}
+      portalClassName={styles.Modal__portal}
+      className={{
+        base: cn(styles.Modal__wrap, {
+          [styles['Modal__wrap--zen']]: props.size === 'zen',
+        }),
+        afterOpen: styles['Modal__wrap--after-open'],
+        beforeClose: styles['Modal__wrap--before-close'],
+      }}
+      style={{
+        content: {
+          top: props.position === 'center' ? 0 : props.topOffset,
+        },
+      }}
+      overlayClassName={{
+        base: cn({
+          [styles.Modal__overlay]: true,
+          [styles['Modal__overlay--centered']]: props.position === 'center',
+        }),
+        afterOpen: styles['Modal__overlay--after-open'],
+        beforeClose: styles['Modal__overlay--before-close'],
+      }}
+      htmlOpenClassName="Modal__html--open"
+      bodyOpenClassName="Modal__body--open"
+      closeTimeoutMS={300}
+    >
+      <div
+        data-test-id={props.testId}
+        style={{
+          width: ModalSizesMapper[props.size!] || props.size, // eslint-disable-line @typescript-eslint/no-non-null-assertion
+        }}
+        className={cn(styles.Modal, props.className, {
+          [styles['Modal--overflow']]: props.allowHeightOverflow,
+          [styles['Modal--zen']]: props.size === 'zen',
+        })}
+      >
+        {typeof props.children === 'function'
+          ? props.children(props)
+          : renderDefault()}
+      </div>
+    </ReactModal>
+  );
+}
+
+Modal.Header = ModalHeader;
+Modal.Content = ModalContent;
+Modal.Controls = ModalControls;
+
+Modal.defaultProps = {
   shouldCloseOnEscapePress: true,
   shouldCloseOnOverlayClick: true,
   position: 'center',
@@ -94,85 +167,5 @@ const defaultProps: Partial<ModalProps> = {
   size: 'medium',
   allowHeightOverflow: false,
 };
-
-export class Modal extends Component<ModalProps> {
-  static Header = ModalHeader;
-
-  static Content = ModalContent;
-
-  static Controls = ModalControls;
-
-  static defaultProps = defaultProps;
-
-  renderDefault() {
-    return (
-      <React.Fragment>
-        {this.props.title && (
-          <ModalHeader
-            title={this.props.title}
-            onClose={this.props.onClose}
-            {...this.props.modalHeaderProps}
-          />
-        )}
-        <ModalContent {...this.props.modalContentProps}>
-          {this.props.children}
-        </ModalContent>
-      </React.Fragment>
-    );
-  }
-
-  render() {
-    return (
-      <ReactModal
-        ariaHideApp={false}
-        onRequestClose={this.props.onClose}
-        isOpen={this.props.isShown}
-        onAfterOpen={this.props.onAfterOpen}
-        shouldCloseOnEsc={this.props.shouldCloseOnEscapePress}
-        shouldCloseOnOverlayClick={this.props.shouldCloseOnOverlayClick}
-        portalClassName={styles.Modal__portal}
-        className={{
-          base: cn(styles.Modal__wrap, {
-            [styles['Modal__wrap--zen']]: this.props.size === 'zen',
-          }),
-          afterOpen: styles['Modal__wrap--after-open'],
-          beforeClose: styles['Modal__wrap--before-close'],
-        }}
-        style={{
-          content: {
-            top: this.props.position === 'center' ? 0 : this.props.topOffset,
-          },
-        }}
-        overlayClassName={{
-          base: cn({
-            [styles.Modal__overlay]: true,
-            [styles['Modal__overlay--centered']]:
-              this.props.position === 'center',
-          }),
-          afterOpen: styles['Modal__overlay--after-open'],
-          beforeClose: styles['Modal__overlay--before-close'],
-        }}
-        htmlOpenClassName="Modal__html--open"
-        bodyOpenClassName="Modal__body--open"
-        closeTimeoutMS={300}
-      >
-        <div
-          data-test-id={this.props.testId}
-          style={{
-            width: ModalSizesMapper[this.props.size!] || this.props.size, // eslint-disable-line @typescript-eslint/no-non-null-assertion
-          }}
-          className={cn(styles.Modal, this.props.className, {
-            [styles['Modal--overflow']]: this.props.allowHeightOverflow,
-            [styles['Modal--zen']]: this.props.size === 'zen',
-          })}
-        >
-          {typeof this.props.children === 'function'
-            ? this.props.children(this.props)
-            : this.renderDefault()}
-        </div>
-      </ReactModal>
-    );
-  }
-}
 
 export default Modal;

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import cn from 'classnames';
 import styles from './DisplayText.css';
 
@@ -13,52 +13,46 @@ export interface DisplayTextProps {
   testId?: string;
 }
 
-const defaultProps: Partial<DisplayTextProps> = {
+export function DisplayText({
+  className,
+  children,
+  testId,
+  element,
+  size,
+  ...otherProps
+}: DisplayTextProps): React.ReactElement {
+  const classNames = cn(styles['DisplayText'], className, {
+    [styles[`DisplayText--${size}`]]: size,
+  });
+
+  const Element = element!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+
+  return (
+    <TypographyContext.Consumer>
+      {(value) => {
+        const contextSize =
+          size === 'large' ? value['displayTextLarge'] : value['displayText'];
+
+        return (
+          <Element
+            className={cn(classNames, [
+              contextSize && `f36-margin-bottom--${contextSize.spacing}`,
+            ])}
+            data-test-id={testId}
+            {...otherProps}
+          >
+            {children}
+          </Element>
+        );
+      }}
+    </TypographyContext.Consumer>
+  );
+}
+
+DisplayText.defaultProps = {
   element: 'h1',
   testId: 'cf-ui-display-text',
   size: 'default',
 };
-
-export class DisplayText extends Component<DisplayTextProps> {
-  static defaultProps = defaultProps;
-
-  render() {
-    const {
-      className,
-      children,
-      testId,
-      element,
-      size,
-      ...otherProps
-    } = this.props;
-
-    const classNames = cn(styles['DisplayText'], className, {
-      [styles[`DisplayText--${size}`]]: size,
-    });
-
-    const Element = element!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
-
-    return (
-      <TypographyContext.Consumer>
-        {(value) => {
-          const contextSize =
-            size === 'large' ? value['displayTextLarge'] : value['displayText'];
-
-          return (
-            <Element
-              className={cn(classNames, [
-                contextSize && `f36-margin-bottom--${contextSize.spacing}`,
-              ])}
-              data-test-id={testId}
-              {...otherProps}
-            >
-              {children}
-            </Element>
-          );
-        }}
-      </TypographyContext.Consumer>
-    );
-  }
-}
 
 export default DisplayText;

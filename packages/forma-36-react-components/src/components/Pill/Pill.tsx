@@ -1,8 +1,8 @@
 import React from 'react';
 import cn from 'classnames';
+
 import Icon from '../Icon/Icon';
 import TabFocusTrap from '../TabFocusTrap';
-
 import styles from './Pill.css';
 
 export interface PillProps {

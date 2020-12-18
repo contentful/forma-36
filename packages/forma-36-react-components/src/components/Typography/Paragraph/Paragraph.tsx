@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import cn from 'classnames';
 import styles from './Paragraph.css';
 
@@ -12,40 +12,40 @@ export interface ParagraphProps {
   style?: React.CSSProperties;
 }
 
-const defaultProps: Partial<ParagraphProps> = {
+export function Paragraph({
+  className,
+  children,
+  testId,
+  element,
+  ...otherProps
+}: ParagraphProps): React.ReactElement {
+  const classNames = cn(styles['Paragraph'], className);
+
+  const Element = element!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+
+  return (
+    <TypographyContext.Consumer>
+      {(value) => {
+        return (
+          <Element
+            className={cn(classNames, [
+              value['paragraph'] &&
+                `f36-margin-bottom--${value['paragraph']['spacing']}`,
+            ])}
+            data-test-id={testId}
+            {...otherProps}
+          >
+            {children}
+          </Element>
+        );
+      }}
+    </TypographyContext.Consumer>
+  );
+}
+
+Paragraph.defaultProps = {
   element: 'p',
   testId: 'cf-ui-paragraph',
 };
-
-export class Paragraph extends Component<ParagraphProps> {
-  static defaultProps = defaultProps;
-
-  render() {
-    const { className, children, testId, element, ...otherProps } = this.props;
-
-    const classNames = cn(styles['Paragraph'], className);
-
-    const Element = element!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
-
-    return (
-      <TypographyContext.Consumer>
-        {(value) => {
-          return (
-            <Element
-              className={cn(classNames, [
-                value['paragraph'] &&
-                  `f36-margin-bottom--${value['paragraph']['spacing']}`,
-              ])}
-              data-test-id={testId}
-              {...otherProps}
-            >
-              {children}
-            </Element>
-          );
-        }}
-      </TypographyContext.Consumer>
-    );
-  }
-}
 
 export default Paragraph;
