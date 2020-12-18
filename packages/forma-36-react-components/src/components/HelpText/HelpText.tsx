@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import cn from 'classnames';
 
 import styles from './HelpText.css';
@@ -10,24 +10,23 @@ export interface HelpTextProps {
   children: React.ReactNode;
 }
 
-const defaultProps: Partial<HelpTextProps> = {
+export function HelpText({
+  className,
+  children,
+  testId,
+  ...otherProps
+}: HelpTextProps): React.ReactElement {
+  const classNames = cn(styles.HelpText, className);
+
+  return (
+    <p {...otherProps} className={classNames} data-test-id={testId}>
+      {children}
+    </p>
+  );
+}
+
+HelpText.defaultProps = {
   testId: 'cf-ui-help-text',
 };
-
-export class HelpText extends Component<HelpTextProps> {
-  static defaultProps = defaultProps;
-
-  render() {
-    const { className, children, testId, ...otherProps } = this.props;
-
-    const classNames = cn(styles.HelpText, className);
-
-    return (
-      <p {...otherProps} className={classNames} data-test-id={testId}>
-        {children}
-      </p>
-    );
-  }
-}
 
 export default HelpText;

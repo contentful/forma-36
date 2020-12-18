@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import cn from 'classnames';
 import styles from './Heading.css';
 
@@ -12,40 +12,40 @@ export interface HeadingProps {
   testId?: string;
 }
 
-const defaultProps: Partial<HeadingProps> = {
+export function Heading({
+  className,
+  children,
+  testId,
+  element,
+  ...otherProps
+}: HeadingProps): React.ReactElement {
+  const classNames = cn(styles['Heading'], className);
+
+  const Element = element!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+
+  return (
+    <TypographyContext.Consumer>
+      {(value) => {
+        return (
+          <Element
+            className={cn(classNames, [
+              value['heading'] &&
+                `f36-margin-bottom--${value['heading']['spacing']}`,
+            ])}
+            data-test-id={testId}
+            {...otherProps}
+          >
+            {children}
+          </Element>
+        );
+      }}
+    </TypographyContext.Consumer>
+  );
+}
+
+Heading.defaultProps = {
   element: 'h1',
   testId: 'cf-ui-heading',
 };
-
-export class Heading extends Component<HeadingProps> {
-  static defaultProps = defaultProps;
-
-  render() {
-    const { className, children, testId, element, ...otherProps } = this.props;
-
-    const classNames = cn(styles['Heading'], className);
-
-    const Element = element!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
-
-    return (
-      <TypographyContext.Consumer>
-        {(value) => {
-          return (
-            <Element
-              className={cn(classNames, [
-                value['heading'] &&
-                  `f36-margin-bottom--${value['heading']['spacing']}`,
-              ])}
-              data-test-id={testId}
-              {...otherProps}
-            >
-              {children}
-            </Element>
-          );
-        }}
-      </TypographyContext.Consumer>
-    );
-  }
-}
 
 export default Heading;
