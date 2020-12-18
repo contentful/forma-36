@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import cn from 'classnames';
 
 import styles from './ListItem.css';
@@ -10,28 +10,27 @@ export interface ListItemProps {
   testId?: string;
 }
 
-const defaultProps: Partial<ListItemProps> = {
+export function ListItem({
+  className,
+  children,
+  testId,
+  ...otherProps
+}: ListItemProps): React.ReactElement {
+  const classNames = cn(styles['ListItem'], className, {
+    [styles['ListItem--nested-list']]:
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      (children as any).type === List,
+  });
+
+  return (
+    <li className={classNames} data-test-id={testId} {...otherProps}>
+      {children}
+    </li>
+  );
+}
+
+ListItem.defaultProps = {
   testId: 'cf-ui-list-item',
 };
-
-export class ListItem extends Component<ListItemProps> {
-  static defaultProps = defaultProps;
-
-  render() {
-    const { className, children, testId, ...otherProps } = this.props;
-
-    const classNames = cn(styles['ListItem'], className, {
-      [styles['ListItem--nested-list']]:
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        (this.props.children as any).type === List,
-    });
-
-    return (
-      <li className={classNames} data-test-id={testId} {...otherProps}>
-        {children}
-      </li>
-    );
-  }
-}
 
 export default ListItem;

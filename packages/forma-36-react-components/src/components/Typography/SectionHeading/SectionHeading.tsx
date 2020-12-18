@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import cn from 'classnames';
 import styles from './SectionHeading.css';
 
@@ -12,40 +12,40 @@ export interface SectionHeadingProps {
   style?: React.CSSProperties;
 }
 
-const defaultProps: Partial<SectionHeadingProps> = {
+export function SectionHeading({
+  className,
+  children,
+  testId,
+  element,
+  ...otherProps
+}: SectionHeadingProps): React.ReactElement {
+  const classNames = cn(styles['SectionHeading'], className);
+
+  const Element = element!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
+
+  return (
+    <TypographyContext.Consumer>
+      {(value) => {
+        return (
+          <Element
+            className={cn(classNames, [
+              value['sectionHeading'] &&
+                `f36-margin-bottom--${value['sectionHeading']['spacing']}`,
+            ])}
+            data-test-id={testId}
+            {...otherProps}
+          >
+            {children}
+          </Element>
+        );
+      }}
+    </TypographyContext.Consumer>
+  );
+}
+
+SectionHeading.defaultProps = {
   element: 'h3',
   testId: 'cf-ui-section-heading',
 };
-
-export class SectionHeading extends Component<SectionHeadingProps> {
-  static defaultProps = defaultProps;
-
-  render() {
-    const { className, children, testId, element, ...otherProps } = this.props;
-
-    const classNames = cn(styles['SectionHeading'], className);
-
-    const Element = element!; // eslint-disable-line @typescript-eslint/no-non-null-assertion
-
-    return (
-      <TypographyContext.Consumer>
-        {(value) => {
-          return (
-            <Element
-              className={cn(classNames, [
-                value['sectionHeading'] &&
-                  `f36-margin-bottom--${value['sectionHeading']['spacing']}`,
-              ])}
-              data-test-id={testId}
-              {...otherProps}
-            >
-              {children}
-            </Element>
-          );
-        }}
-      </TypographyContext.Consumer>
-    );
-  }
-}
 
 export default SectionHeading;

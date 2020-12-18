@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import cn from 'classnames';
 
 import styles from './ModalContent.css';
@@ -10,24 +10,25 @@ export interface ModalContentProps {
   style?: React.CSSProperties;
 }
 
-const defaultProps: Partial<ModalContentProps> = {
+export function ModalContent({
+  testId,
+  className,
+  children,
+  ...rest
+}: ModalContentProps): React.ReactElement {
+  return (
+    <div
+      {...rest}
+      className={cn(styles.ModalContent, className)}
+      data-test-id={testId}
+    >
+      {children}
+    </div>
+  );
+}
+
+ModalContent.defaultProps = {
   testId: 'cf-ui-modal-content',
 };
-
-export class ModalContent extends Component<ModalContentProps> {
-  static defaultProps = defaultProps;
-  render() {
-    const { testId, className, children, ...rest } = this.props;
-    return (
-      <div
-        {...rest}
-        className={cn(styles.ModalContent, className)}
-        data-test-id={testId}
-      >
-        {children}
-      </div>
-    );
-  }
-}
 
 export default ModalContent;
