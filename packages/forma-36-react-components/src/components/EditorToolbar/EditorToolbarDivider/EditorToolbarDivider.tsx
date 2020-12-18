@@ -1,27 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
 import cn from 'classnames';
+
 import styles from './EditorToolbarDivider.css';
 
 export interface EditorToolbarDividerProps {
-  testId?: string;
+  children?: React.ReactNode | React.ReactNode[];
   className?: string;
+  testId?: string;
 }
 
-const defaultProps: Partial<EditorToolbarDividerProps> = {
+export function EditorToolbarDivider({
+  className,
+  testId,
+  ...otherProps
+}: EditorToolbarDividerProps): React.ReactElement {
+  const classNames = cn(styles['EditorToolbarDivider'], className);
+
+  return <span data-test-id={testId} className={classNames} {...otherProps} />;
+}
+
+EditorToolbarDivider.defaultProps = {
   testId: 'cf-editor-toolbar-divider',
 };
-
-export class EditorToolbarDivider extends Component<EditorToolbarDividerProps> {
-  static defaultProps = defaultProps;
-  render() {
-    const { className, testId, ...otherProps } = this.props;
-
-    const classNames = cn(styles['EditorToolbarDivider'], className);
-
-    return (
-      <span data-test-id={testId} className={classNames} {...otherProps} />
-    );
-  }
-}
 
 export default EditorToolbarDivider;

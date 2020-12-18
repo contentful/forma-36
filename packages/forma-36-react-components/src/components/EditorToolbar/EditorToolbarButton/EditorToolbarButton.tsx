@@ -1,9 +1,11 @@
-import React, { Component, MouseEventHandler } from 'react';
+import React, { MouseEventHandler } from 'react';
 import cn from 'classnames';
-import IconButton, { IconButtonProps } from '../../IconButton';
+
+import IconButton from '../../IconButton';
 import Tooltip from '../../Tooltip';
-import { IconType } from '../../Icon';
 import styles from './EditorToolbarButton.css';
+import type { IconButtonProps } from '../../IconButton';
+import type { IconType } from '../../Icon';
 
 export interface EditorToolbarButtonProps {
   label: string;
@@ -18,54 +20,48 @@ export interface EditorToolbarButtonProps {
   testId?: string;
 }
 
-const defaultProps: Partial<EditorToolbarButtonProps> = {
+export function EditorToolbarButton({
+  className,
+  label,
+  testId,
+  icon,
+  tooltip,
+  iconButtonProps,
+  isActive,
+  disabled,
+  onClick,
+  withDropdown,
+  ...otherProps
+}: EditorToolbarButtonProps): React.ReactElement {
+  const classNames = cn(styles['EditorToolbarButton'], className, {
+    [styles['EditorToolbarButton--is-active']]: isActive,
+  });
+
+  return (
+    <React.Fragment>
+      <Tooltip content={!disabled ? tooltip : undefined}>
+        <IconButton
+          {...{ iconProps: { icon } }}
+          testId={testId}
+          buttonType="secondary"
+          label={label}
+          className={classNames}
+          onClick={!disabled ? onClick : () => {}}
+          disabled={disabled}
+          withDropdown={withDropdown}
+          {...iconButtonProps}
+          {...otherProps}
+        />
+      </Tooltip>
+    </React.Fragment>
+  );
+}
+
+EditorToolbarButton.defaultProps = {
   testId: 'cf-ui-editor-toolbar-button',
   isActive: false,
   disabled: false,
   withDropdown: false,
 };
-
-export class EditorToolbarButton extends Component<EditorToolbarButtonProps> {
-  static defaultProps = defaultProps;
-
-  render() {
-    const {
-      className,
-      label,
-      testId,
-      icon,
-      tooltip,
-      iconButtonProps,
-      isActive,
-      disabled,
-      onClick,
-      withDropdown,
-      ...otherProps
-    } = this.props;
-
-    const classNames = cn(styles['EditorToolbarButton'], className, {
-      [styles['EditorToolbarButton--is-active']]: isActive,
-    });
-
-    return (
-      <React.Fragment>
-        <Tooltip content={!disabled ? tooltip : undefined}>
-          <IconButton
-            {...{ iconProps: { icon } }}
-            testId={testId}
-            buttonType="secondary"
-            label={label}
-            className={classNames}
-            onClick={!disabled ? onClick : () => {}}
-            disabled={disabled}
-            withDropdown={withDropdown}
-            {...iconButtonProps}
-            {...otherProps}
-          />
-        </Tooltip>
-      </React.Fragment>
-    );
-  }
-}
 
 export default EditorToolbarButton;

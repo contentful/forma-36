@@ -1,0 +1,56 @@
+import { Button } from '../../Button';
+import { EditorToolbar } from '../EditorToolbar';
+import { EditorToolbarButton } from './EditorToolbarButton';
+
+# EditorToolbarButton
+
+The EditorToolbarButton is a styled button for actions that should be shown on a rich text editor toolbar. It composes the IconButton component, which means it can show any icon that the IconButton can.
+
+## Table of contents
+
+- [How to use EditorToolbarButton](#how-to-use-EditorToolbarButton)
+- [Code examples](#code-examples)
+- [Content recommendations](#content-recommendations)
+- [Accessibility](#accessibility)
+
+## How to use EditorToolbarButton
+
+- The EditorToolbarButton should be used as a child of the EditorToolbar.
+
+## Code examples
+
+```jsx
+import {
+  EditorToolbar,
+  EditorToolbarButton,
+} from '@contentful/forma-36-react-components';
+
+<EditorToolbar>
+  <EditorToolbarButton
+    icon="FormatBold"
+    tooltip="Bold"
+    label="Bold"
+    isActive={false}
+  />
+  <EditorToolbarButton
+    icon="FormatItalic"
+    tooltip="Italic"
+    label="Italic"
+    isActive={false}
+  />
+  <EditorToolbarButton
+    icon="FormatUnderlined"
+    tooltip="Underlined"
+    label="Underlined"
+    isActive={false}
+  />
+</EditorToolbar>;
+```
+
+## Content recommendations
+
+- Start every label and tooltip with a capital letter.
+
+## Accessibility
+
+- Buttons should have a clear and concise label and tooltip.
