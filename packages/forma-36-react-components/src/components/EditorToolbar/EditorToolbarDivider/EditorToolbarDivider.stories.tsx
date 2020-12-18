@@ -1,16 +1,23 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { text } from '@storybook/addon-knobs';
+import type { Meta } from '@storybook/react/types-6-0';
 
 import EditorToolbarDivider from './EditorToolbarDivider';
+import type { EditorToolbarDividerProps } from './EditorToolbarDivider';
+import notes from './README.mdx';
 
-storiesOf('Components/EditorToolbar/EditorToolbarDivider', module)
-  .addParameters({
+export default {
+  argTypes: {
+    className: { control: { disable: true } },
+    testId: { control: { disable: true } },
+  },
+  component: EditorToolbarDivider,
+  parameters: {
     propTypes: EditorToolbarDivider['__docgenInfo'],
-    component: EditorToolbarDivider,
-  })
-  .add('default', () => (
-    <EditorToolbarDivider className={text('className', '')}>
-      EditorToolbarDivider
-    </EditorToolbarDivider>
-  ));
+    notes,
+  },
+  title: 'Components/EditorToolbar/EditorToolbarDivider',
+} as Meta;
+
+export const Default: Story<EditorToolbarDividerProps> = ({ ...args }) => {
+  return <EditorToolbarDivider {...args} />;
+};
