@@ -1,0 +1,135 @@
+`TextField` is a composition of the `FormLabel`, `TextInput`, `HelpText` and `ValidationMessage` components.
+It allows users to input text or numbers and should be used in a form context.
+
+## Table of contents
+
+- [How to use TextField](#how-to-use-TextField)
+- [Code examples](#code-examples)
+- [Code examples](#content-recommendations)
+- [Accessibility](#accessibility)
+
+## How to use TextField
+
+The TextField component can be configured in a number of different ways. Use this guidance to determine the correct variation based on the context.
+
+## Code examples
+
+```jsx
+<React.Fragment>
+  <TextField
+    labelText="Email address"
+    helpText="Please enter your email address"
+    required
+  />
+</React.Fragment>
+```
+
+## TextField variations
+
+### Compositional properties
+
+Since the TextField is a composition of multiple components, it is possible to pass child component specific properties.
+For this purpose, the TextField exposes the following properties:
+
+```jsx
+<React.Fragment>
+  <TextField
+    labelText="E-mail address"
+    helpText="Please enter your email address"
+    textInputProps={{ withCopyButton: true }}
+    textLinkProps={{ text: 'privacy' }}
+    formLabelProps={{ requiredText: 'required' }}
+    required
+  />
+</React.Fragment>
+```
+
+### Label and text properties (`labelText, helpText, validationMessage`)
+
+```jsx
+<React.Fragment>
+  <TextField
+    labelText="E-mail address"
+    helpText="Please enter your email address"
+    validationMessage="This address is not valid"
+  />
+</React.Fragment>
+```
+
+### Required field (`required`)
+
+```jsx
+<React.Fragment>
+  <TextField
+    labelText="E-mail address"
+    helpText="Please enter your email address"
+    required
+  />
+</React.Fragment>
+```
+
+### Render textarea (`textfield`)
+
+Instead of an input, the TextField component can render a text area for long text requirements.
+
+```jsx
+<React.Fragment>
+  <TextField
+    labelText="Description"
+    helpText="Please enter a description"
+    textarea
+  />
+</React.Fragment>
+```
+
+### Additional TextLink (`textLinkProps`)
+
+The TextField can be configured to display an additional TextLink in the label.
+
+```jsx
+<React.Fragment>
+  <TextField
+    labelText="User Name"
+    textLinkProps={{
+      icon: 'Lock',
+      text: 'Unlock to edit',
+      onClick: (e) => {
+        console.log('textLinkClick', e);
+      },
+    }}
+    value="Lorem Ipsum"
+    textInputProps={{
+      disabled: true,
+    }}
+  />
+</React.Fragment>
+```
+
+### Character count (`countCharacters`)
+
+The TextField can be configured to display a character count. This is useful when an input field has a character limit.<br/>
+**Note**: The `maxLength` property must be provided in the TextInput component using `textInputProps`.
+
+```jsx
+<React.Fragment>
+  <TextField
+    labelText="User Name"
+    countCharacters
+    value="Lorem Ipsum"
+    textInputProps={{ maxLength: 20 }}
+  />
+</React.Fragment>
+```
+
+## Content recommendations
+
+- Use direct, succinct copy that helps the user to successfully complete the form
+- Do not preface the instructions with introductory text, such as "please"
+- To add additional context, link out to documentation
+- In cases where additional context is unnecessary, help text can be substituted for text in the label
+- Do not use punctuation for labels, help text and links
+- Use sentence style caps (in which only the first word of a sentence or term is capitalized)
+
+## Accessibility
+
+- To ensure `TextField` meets accessibility standards, provide `labelText`, `name` and `id`

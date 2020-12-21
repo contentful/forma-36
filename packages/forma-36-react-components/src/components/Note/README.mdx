@@ -1,0 +1,74 @@
+Notes provide context and information about a situation or action.
+
+## Table of contents
+
+- [How to use Note](#how-to-use-note)
+- [Component variations](#component-variations)
+- [Code examples](#code-examples)
+- [Content recommendations](#content-recommendations)
+- [Accessibility](#accessibility)
+
+## How to use Note
+
+- Use an adequate note type to communicate the right kind of information
+- Place the note visually closer to the action or real estate it relates to
+- Unlike notifications, notes don't show up as feedback only after a user has performed an action
+
+## Component variations
+
+Give couple of clear examples of the usage of the components, that includes import
+
+## Code examples
+
+The Note component can be configured in a number of different ways. Learn when to use certain variations with this guide.
+
+### Basic example
+
+```jsx
+<React.Fragment>
+  <Note>
+    Information that is relevant to the context the user is currently in.
+  </Note>
+</React.Fragment>
+```
+
+### Note type (`noteType`)
+
+```jsx
+<React.Fragment>
+  <Note>Primary (default)</Note>
+  <Note noteType="positive">Positive</Note>
+  <Note noteType="warning">Warning</Note>
+  <Note noteType="negative">Negative</Note>
+</React.Fragment>
+```
+
+### Note with title (`title`)
+
+```jsx
+<React.Fragment>
+  <Note title="Primary title">Primary (default)</Note>
+  <Note title="Positive title" noteType="positive">
+    Positive
+  </Note>
+  <Note title="Warning title" noteType="warning">
+    Warning
+  </Note>
+  <Note title="Negative title" noteType="negative">
+    Negative
+  </Note>
+</React.Fragment>
+```
+
+## Content recommendations
+
+- Use clear and succinct copy
+- Ensure the copy is easily scannable. Focus on the objective and limit the number of concepts in each sentence
+- Use progressive disclosure. Eliminate details that can be revealed as the user interacts and requires more information
+- Use active voice, present tense, and consider tone of voice depending on the circumstance
+- To add additional context, link out to documentation
+- Do not preface the instructions with introductory text, such as "please"
+
+## Accessibility
+
+Missing

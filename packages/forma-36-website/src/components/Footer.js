@@ -1,5 +1,6 @@
 import React from 'react';
 import { TextLink } from '@contentful/forma-36-react-components';
+import { Flex } from '@contentful/forma-36-react-components/dist/alpha';
 import tokens from '@contentful/forma-36-tokens';
 import { css } from '@emotion/core';
 
@@ -24,40 +25,44 @@ const styles = {
 
 const Footer = () => (
   <footer css={styles.footer}>
-    <div css={styles.links}>
-      <TextLink
-        href="https://github.com/contentful/forma-36"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="f36-margin-right--xs"
-      >
-        GitHub
-      </TextLink>
-      <TextLink
-        href="https://www.contentful.com/legal/de"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="f36-margin-right--xs"
-      >
-        Imprint / Legal
-      </TextLink>
-      <TextLink
-        href="https://www.contentful.com/legal/de/privacy/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="f36-margin-right--xs"
-      >
-        Privacy
-      </TextLink>
-      <TextLink
-        href="https://www.contentful.com/security/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="f36-margin-right--xs"
-      >
-        Security
-      </TextLink>
-    </div>
+    <Flex css={styles.links}>
+      <Flex marginRight="spacingXs">
+        <TextLink
+          href="https://github.com/contentful/forma-36"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </TextLink>
+      </Flex>
+      <Flex marginRight="spacingXs">
+        <TextLink
+          href="https://www.contentful.com/legal/de"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Imprint / Legal
+        </TextLink>
+      </Flex>
+      <Flex marginRight="spacingXs">
+        <TextLink
+          href="https://www.contentful.com/legal/de/privacy/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Privacy
+        </TextLink>
+      </Flex>
+      <Flex marginRight="spacingXs">
+        <TextLink
+          href="https://www.contentful.com/security/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Security
+        </TextLink>
+      </Flex>
+    </Flex>
 
     <div css={styles.logo}>
       <a

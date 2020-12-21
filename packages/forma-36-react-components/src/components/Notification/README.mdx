@@ -1,0 +1,88 @@
+Notifications give immediate feedback about an action triggered or experienced by an user. They will dismiss after 6 seconds, or after being clicked.
+
+## Table of contents
+
+- [How to use Notifiaction](#how-to-use-notifiaction)
+- [Component variations](#component-variations)
+- [Content recommendations](#content-recommendations)
+- [Accessibility](#accessibility)
+
+## How to use Notifiaction
+
+- Consider where the notification will be placed and which variation is most appropriate
+- Don't confuse notifications with notes, which persist in the UI and do not dismiss
+
+## Code examples
+
+### Basic example
+
+```jsx
+<Button
+  buttonType="muted"
+  onClick={() => Notification.success('An example notification')}
+>
+  Show notification
+</Button>
+```
+
+The `Notification` component can be configured in a number of different ways. Here is a guide to when to use certain variations.
+
+### Intent
+
+```jsx
+<React.Fragment>
+  <Button
+    buttonType="positive"
+    onClick={() => Notification.success('This is a success notification')}
+  >
+    Show success notification
+  </Button>
+  <Button
+    buttonType="negative"
+    onClick={() => Notification.error('This is an error notification')}
+  >
+    Show error notification
+  </Button>
+  <Button
+    buttonType="warning"
+    onClick={() => Notification.warning('This is a warning notification')}
+  >
+    Show warning notification
+  </Button>
+</React.Fragment>
+```
+
+### Position
+
+```jsx
+<React.Fragment>
+  <Button
+    buttonType="muted"
+    onClick={() => {
+      Notification.setPosition('top');
+      Notification.success('Notification message at top');
+    }}
+  >
+    Show notification at top of viewport
+  </Button>
+  <Button
+    buttonType="muted"
+    onClick={() => {
+      Notification.setPosition('bottom');
+      Notification.success('Notification message at bottom');
+    }}
+  >
+    Show notification at bottom of viewport
+  </Button>
+</React.Fragment>
+```
+
+## Content recommendations
+
+- Use clear and succinct copy, since the notification will only be available for 6 seconds
+- Use active voice, present tense, and consider tone of voice depending on the circumstance
+- Use sentence style caps (in which only the first word of a sentence or term is capitalized)
+
+## Accessibility
+
+Missing

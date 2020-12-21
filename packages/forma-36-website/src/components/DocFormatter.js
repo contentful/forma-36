@@ -5,7 +5,9 @@ import {
   DisplayText,
   Button,
   Tag,
+  Note
 } from '@contentful/forma-36-react-components';
+import { Flex } from '@contentful/forma-36-react-components/dist/alpha';
 import storybookIcon from '../images/storybook.svg';
 import githubIcon from '../images/github.svg';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
@@ -144,6 +146,15 @@ const DocFormatter = ({ frontmatter, dataFromReadme, children }) => {
       <main>
         {activeSection === 'design' && hasDesignDocs && designDocs}
         {activeSection === 'develop' && hasDevelopDocs && developDocs}
+        {data.status === 'alpha' && (
+          <Flex marginBottom="spacingM">
+            <Note noteType="warning">
+              This component is in an alpha state. Breaking changes to the API
+              can happen with any future updates. We don't recommend using the
+              component in production environments
+            </Note>
+          </Flex>
+        )}
 
         {dataFromReadme && <MDXRenderer>{dataFromReadme}</MDXRenderer>}
         {!hasDevelopDocs && !hasDesignDocs && children}
