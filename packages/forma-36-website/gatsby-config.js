@@ -321,6 +321,7 @@ module.exports = {
           __dirname,
           '../forma-36-react-components/src/components/',
         ),
+        ignore: ['**/*.css', '**/*.js', '**/*.snap', '**/*.ts', '**/*.tsx'],
       },
     },
     'gatsby-transformer-javascript-frontmatter',
