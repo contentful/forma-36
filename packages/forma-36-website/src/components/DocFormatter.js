@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-
 import { css } from '@emotion/core';
 import tokens from '@contentful/forma-36-tokens';
-import { DisplayText, Button, Tag } from '@contentful/forma-36-react-components';
+import {
+  DisplayText,
+  Button,
+  Tag,
+} from '@contentful/forma-36-react-components';
 import storybookIcon from '../images/storybook.svg';
 import githubIcon from '../images/github.svg';
-import { MDXRenderer } from "gatsby-plugin-mdx"
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 const styles = {
   header: css`
@@ -42,7 +45,7 @@ const styles = {
     display: inline-flex;
     align-items: center;
     text-decoration: none;
-    padding: calc(${tokens.spacing2Xs}/2) ${tokens.spacingXs};
+    padding: calc(${tokens.spacing2Xs} / 2) ${tokens.spacingXs};
     border-radius: calc(${tokens.fontSizeS} / 5);
 
     &:hover {
@@ -59,9 +62,13 @@ const styles = {
 };
 
 const DocFormatter = ({ frontmatter, dataFromReadme, children }) => {
-  const [ activeSection, setActiveSection ] = useState('design');
-  const designDocs = Array.isArray(children) && children.filter(child => child.props.mdxType === 'DesignDocs');
-  const developDocs = Array.isArray(children) && children.filter(child => child.props.mdxType === 'DevelopDocs');
+  const [activeSection, setActiveSection] = useState('design');
+  const designDocs =
+    Array.isArray(children) &&
+    children.filter((child) => child.props.mdxType === 'DesignDocs');
+  const developDocs =
+    Array.isArray(children) &&
+    children.filter((child) => child.props.mdxType === 'DevelopDocs');
   const hasDevelopDocs = developDocs.length > 0;
   const hasDesignDocs = designDocs.length > 0;
 
@@ -75,29 +82,31 @@ const DocFormatter = ({ frontmatter, dataFromReadme, children }) => {
     <React.Fragment>
       {/* Remove styles condition once all docs follow the same structure */}
       <header css={data.title ? styles.header : ''}>
-        {data.title &&
-          <DisplayText>
-            {data.title}
-          </DisplayText>
-        }
+        {data.title && <DisplayText>{data.title}</DisplayText>}
         <div css={styles.subheaderRow}>
           <div css={styles.buttonList}>
             {hasDevelopDocs && hasDesignDocs && (
               <>
                 <Button 
-                  size='small'
+                  size="small"
                   buttonType={activeSection === 'design' ? 'primary' : 'muted'}
                   css={styles.buttonLeft} 
                   icon={activeSection === 'design' && 'CheckCircleTrimmed'} 
                   isActive={activeSection === 'design'} 
-                  onClick={() => setActiveSection('design')}>Design</Button>
+                  onClick={() => setActiveSection('design')}
+                >
+                  Design
+                </Button>
                 <Button 
-                  size='small' 
+                  size="small"
                   css={styles.buttonRight} 
                   buttonType={activeSection === 'develop' ? 'primary' : 'muted'}
                   icon={activeSection === 'develop' && 'CheckCircleTrimmed'} 
                   isActive={activeSection === 'develop'} 
-                  onClick={() => setActiveSection('develop')}>Develop</Button>
+                  onClick={() => setActiveSection('develop')}
+                >
+                  Develop
+                </Button>
               </>
             )}
             {data.githubUrl && (
@@ -116,7 +125,9 @@ const DocFormatter = ({ frontmatter, dataFromReadme, children }) => {
           
           {data.status && (
             <span css={styles.tag}>
-              <Tag tagType={data.status === 'alpha'? 'warning' : 'positive'}>{data.status}</Tag>
+              <Tag tagType={data.status === 'alpha' ? 'warning' : 'positive'}>
+                {data.status}
+              </Tag>
             </span>
           )}
         </div>
@@ -131,6 +142,6 @@ const DocFormatter = ({ frontmatter, dataFromReadme, children }) => {
       </main>
     </React.Fragment>
   );
-}
+};
 
 export default DocFormatter;
