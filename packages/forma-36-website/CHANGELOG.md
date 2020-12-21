@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.5](https://github.com/contentful/forma-36/compare/forma-36-website@0.10.4...forma-36-website@0.10.5) (2020-12-21)
+
+
+### Bug Fixes
+
+* storybook and github frontmatter urls ([31ae779](https://github.com/contentful/forma-36/commit/31ae779d212ddabf7358a9f048f30e9ef4d7a8a3))
+
+
+
+
+
 ## [0.10.4](https://github.com/contentful/forma-36/compare/forma-36-website@0.10.3...forma-36-website@0.10.4) (2020-12-21)
 
 **Note:** Version bump only for package forma-36-website
