@@ -74,10 +74,10 @@ const DocFormatter = ({ frontmatter, dataFromReadme, children }) => {
 
   const data = {
     title: frontmatter && frontmatter.title,
-    githubUrl: frontmatter && frontmatter.storybook,
-    storybookUrl: frontmatter && frontmatter.github,
-    status: frontmatter && frontmatter.status
-  }
+    githubUrl: frontmatter && frontmatter.github,
+    storybookUrl: frontmatter && frontmatter.storybook,
+    status: frontmatter && frontmatter.status,
+  };
   return (
     <React.Fragment>
       {/* Remove styles condition once all docs follow the same structure */}
@@ -87,42 +87,50 @@ const DocFormatter = ({ frontmatter, dataFromReadme, children }) => {
           <div css={styles.buttonList}>
             {hasDevelopDocs && hasDesignDocs && (
               <>
-                <Button 
+                <Button
                   size="small"
                   buttonType={activeSection === 'design' ? 'primary' : 'muted'}
-                  css={styles.buttonLeft} 
-                  icon={activeSection === 'design' && 'CheckCircleTrimmed'} 
-                  isActive={activeSection === 'design'} 
+                  css={styles.buttonLeft}
+                  icon={activeSection === 'design' && 'CheckCircleTrimmed'}
+                  isActive={activeSection === 'design'}
                   onClick={() => setActiveSection('design')}
                 >
                   Design
                 </Button>
-                <Button 
+                <Button
                   size="small"
-                  css={styles.buttonRight} 
+                  css={styles.buttonRight}
                   buttonType={activeSection === 'develop' ? 'primary' : 'muted'}
-                  icon={activeSection === 'develop' && 'CheckCircleTrimmed'} 
-                  isActive={activeSection === 'develop'} 
+                  icon={activeSection === 'develop' && 'CheckCircleTrimmed'}
+                  isActive={activeSection === 'develop'}
                   onClick={() => setActiveSection('develop')}
                 >
                   Develop
                 </Button>
               </>
             )}
-            {data.githubUrl && (
-              <a css={styles.imageLink} href={data.githubUrl} title={`View ${data.title} in Storybook`}>
+            {data.storybookUrl && (
+              <a
+                css={styles.imageLink}
+                href={data.storybookUrl}
+                title={`View ${data.title} in Storybook`}
+              >
                 <img src={storybookIcon} alt="" />
                 <span>Storybook</span>
               </a>
             )}
-            {data.storybookUrl && (
-              <a css={styles.imageLink} href={data.storybookUrl} title={`View ${data.title} on GitHub`}>
+            {data.githubUrl && (
+              <a
+                css={styles.imageLink}
+                href={data.githubUrl}
+                title={`View ${data.title} on GitHub`}
+              >
                 <img src={githubIcon} alt="" />
                 <span>Github</span>
               </a>
             )}
           </div>
-          
+
           {data.status && (
             <span css={styles.tag}>
               <Tag tagType={data.status === 'alpha' ? 'warning' : 'positive'}>
@@ -132,11 +140,11 @@ const DocFormatter = ({ frontmatter, dataFromReadme, children }) => {
           )}
         </div>
       </header>
-      
+
       <main>
         {activeSection === 'design' && hasDesignDocs && designDocs}
         {activeSection === 'develop' && hasDevelopDocs && developDocs}
-        
+
         {dataFromReadme && <MDXRenderer>{dataFromReadme}</MDXRenderer>}
         {!hasDevelopDocs && !hasDesignDocs && children}
       </main>
