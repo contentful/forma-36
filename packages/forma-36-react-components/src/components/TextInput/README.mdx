@@ -1,0 +1,116 @@
+`TextInput` allows a user to input text or numbers.
+
+## Table of contents
+
+- [How to use TextInput](#how-to-use-TextInput)
+- [Code examples](#code-examples)
+- [Accessibility](#accessibility)
+
+## How to use TextInput
+
+The TextInput component can be configured in a number of different ways. Use this guidance to determine the best configuration based on the context.
+
+## Code examples
+
+```jsx
+<React.Fragment>
+  <TextInput
+    name="example"
+    type="text"
+    value="Example text"
+    className="f36-margin-bottom--m"
+  />
+</React.Fragment>
+```
+
+### TextInput type (`type`)
+
+```jsx
+<React.Fragment>
+  <TextInput
+    name="example"
+    type="text"
+    value="Example text"
+    className="f36-margin-bottom--m"
+  />
+  <TextInput
+    name="example"
+    type="password"
+    value="Forma 36"
+    className="f36-margin-bottom--m"
+  />
+  <TextInput
+    name="example"
+    type="email"
+    value="f36@contentful.com"
+    className="f36-margin-bottom--m"
+  />
+  <TextInput
+    name="example"
+    type="number"
+    value="36"
+    className="f36-margin-bottom--m"
+  />
+  <TextInput name="example" type="url" value="https://f36.contentful.com" />
+</React.Fragment>
+```
+
+### TextInput width (`width`)
+
+```jsx
+<React.Fragment>
+  <TextInput
+    name="example"
+    width="full"
+    className="f36-margin-bottom--m"
+    value="Example text "
+  />
+  <TextInput
+    name="example"
+    width="large"
+    className="f36-margin-bottom--m"
+    value="Example text "
+  />
+  <TextInput
+    name="example"
+    width="medium"
+    className="f36-margin-bottom--m"
+    value="Example text "
+  />
+  <TextInput name="example" width="small" />
+</React.Fragment>
+```
+
+### TextInput states (`error, disabled`)
+
+```jsx
+<React.Fragment>
+  <TextInput
+    name="example"
+    disabled
+    className="f36-margin-bottom--m"
+    value="Example text"
+  />
+  <TextInput name="example" error value="Example text" />
+</React.Fragment>
+```
+
+### TextInput with copy button (`withCopyButton`)
+
+```jsx
+<React.Fragment>
+  <TextInput name="example" withCopyButton value="Example text" />
+</React.Fragment>
+```
+
+### TextInput maximal length (`maxLength`)
+
+```jsx
+<React.Fragment>
+  <TextInput name="example" maxLength={30} value="Example text" />
+</React.Fragment>
+```
+
+## Accessibility
+
+- To ensure accessability, provide a `name`
