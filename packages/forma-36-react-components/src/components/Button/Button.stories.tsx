@@ -32,7 +32,7 @@ export const basic = (args: ButtonProps) => (
   </Button>
 );
 
-export const typesOverview = (args: ButtonProps) => (
+export const typesOverview = () => (
   <>
     <Button buttonType="primary">primary</Button>
     <Button buttonType="positive">posiitve</Button>
@@ -46,11 +46,11 @@ export const typesOverview = (args: ButtonProps) => (
 
 export const sizesOverview = (args: ButtonProps) => (
   <>
-    <Button buttonType="primary" size="small">
+    <Button buttonType={args.buttonType} size="small">
       small
     </Button>
-    <Button buttonType="primary">default size</Button>
-    <Button buttonType="primary" size="large">
+    <Button buttonType={args.buttonType}>default size</Button>
+    <Button buttonType={args.buttonType} size="large">
       large
     </Button>
   </>
@@ -58,16 +58,16 @@ export const sizesOverview = (args: ButtonProps) => (
 
 export const statesOverview = (args: ButtonProps) => (
   <>
-    <Button buttonType="primary" isActive>
+    <Button buttonType={args.buttonType} isActive>
       isActive
     </Button>
-    <Button buttonType="primary" disabled>
+    <Button buttonType={args.buttonType} disabled>
       disabled
     </Button>
-    <Button buttonType="primary" indicateDropdown>
+    <Button buttonType={args.buttonType} indicateDropdown>
       indicateDropdown
     </Button>
-    <Button buttonType="primary" loading>
+    <Button buttonType={args.buttonType} loading>
       loading
     </Button>
   </>
