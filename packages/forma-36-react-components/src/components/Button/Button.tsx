@@ -14,6 +14,15 @@ import Spinner from '../Spinner';
 
 import styles from './Button.css';
 
+export const buttonTypes = [
+  'primary',
+  'positive',
+  'negative',
+  'warning',
+  'muted',
+  'naked',
+];
+
 export interface ButtonProps {
   icon?: IconType;
   indicateDropdown?: boolean;
