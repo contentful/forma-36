@@ -1,7 +1,7 @@
 {
   "name": "@contentful/forma-36-react-components",
   "description": "Contentful UI Component Library",
-  "version": "3.72.7",
+  "version": "3.72.8",
   "main": "dist/index.js",
   "module": "dist/forma-36-react-components.esm.js",
   "style": "dist/styles.css",
