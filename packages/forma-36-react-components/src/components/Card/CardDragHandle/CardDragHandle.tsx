@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import cn from 'classnames';
-import Icon from '../../Icon';
 
+import Icon from '../../Icon';
 import styles from './CardDragHandle.css';
 
 export interface CardDragHandlePropTypes {
@@ -24,36 +24,30 @@ export interface CardDragHandlePropTypes {
   isDragActive?: boolean;
 }
 
-const defaultProps: Partial<CardDragHandlePropTypes> = {
+export function CardDragHandle({
+  className,
+  testId,
+  children,
+  isDragActive,
+  ...otherProps
+}: CardDragHandlePropTypes): React.ReactElement {
+  const classNames = cn(
+    styles.CardDragHandle,
+    { [styles['CardDragHandle--drag-active']]: isDragActive },
+    className,
+  );
+
+  return (
+    <div className={classNames} data-test-id={testId} {...otherProps}>
+      <Icon icon="Drag" color="muted" />
+      <span className={styles['CardDragHandle__sr-label']}>{children}</span>
+    </div>
+  );
+}
+
+CardDragHandle.defaultProps = {
   testId: 'cf-ui-card-drag-handle',
   isDragActive: false,
 };
-
-export class CardDragHandle extends Component<CardDragHandlePropTypes> {
-  static defaultProps = defaultProps;
-
-  render() {
-    const {
-      className,
-      testId,
-      children,
-      isDragActive,
-      ...otherProps
-    } = this.props;
-
-    const classNames = cn(
-      styles.CardDragHandle,
-      { [styles['CardDragHandle--drag-active']]: isDragActive },
-      className,
-    );
-
-    return (
-      <div className={classNames} data-test-id={testId} {...otherProps}>
-        <Icon icon="Drag" color="muted" />
-        <span className={styles['CardDragHandle__sr-label']}>{children}</span>
-      </div>
-    );
-  }
-}
 
 export default CardDragHandle;
