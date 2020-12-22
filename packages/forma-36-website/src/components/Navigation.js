@@ -45,17 +45,16 @@ const styles = {
       ${tokens.transitionEasingDefault};
 
     &:hover {
-      background-color: ${tokens.colorElementLightest};
+      background-color: ${tokens.colorElementLight};
     }
   `,
 
   linkActive: css`
-    background-color: ${tokens.colorElementLight};
-    color: ${tokens.colorTextDark};
-    font-weight: bold;
+    background-color: ${tokens.colorPrimary};
+    color: ${tokens.colorWhite};
 
     &:hover {
-      background-color: ${tokens.colorElementLight};
+      background-color: ${tokens.colorPrimary};
     }
   `,
 
