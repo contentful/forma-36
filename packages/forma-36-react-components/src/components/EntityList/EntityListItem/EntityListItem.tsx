@@ -1,5 +1,6 @@
-import React, { Component, MouseEventHandler } from 'react';
+import React, { useCallback } from 'react';
 import cn from 'classnames';
+import type { MouseEventHandler } from 'react';
 
 import Tag, { TagType } from '../../Tag';
 import Icon from '../../Icon';
@@ -11,7 +12,6 @@ import TabFocusTrap from '../../TabFocusTrap';
 import CardDragHandle, {
   CardDragHandlePropTypes,
 } from '../../Card/CardDragHandle';
-
 import styles from './EntityListItem.css';
 
 export type EntityListItemStatus =
@@ -101,19 +101,29 @@ export interface EntityListItemProps {
   isActionsDisabled?: boolean;
 }
 
-const defaultProps: Partial<EntityListItemProps> = {
-  testId: 'cf-ui-entity-list-item',
-  entityType: 'entry',
-  withThumbnail: true,
-  isActionsDisabled: false,
-};
-
-export class EntityListItem extends Component<EntityListItemProps> {
-  static defaultProps = defaultProps;
-
-  renderIcon() {
-    const { entityType } = this.props;
-
+export function EntityListItem({
+  className,
+  testId,
+  title,
+  description,
+  contentType,
+  entityType,
+  withThumbnail,
+  thumbnailUrl,
+  thumbnailAltText,
+  status,
+  dropdownListElements,
+  withDragHandle,
+  isDragActive,
+  isLoading,
+  onClick,
+  href,
+  cardDragHandleProps,
+  cardDragHandleComponent,
+  isActionsDisabled,
+  ...otherProps
+}: EntityListItemProps): React.ReactElement {
+  const renderIcon = useCallback(() => {
     const iconMap = {
       asset: 'Asset',
       entry: 'Entry',
@@ -122,19 +132,19 @@ export class EntityListItem extends Component<EntityListItemProps> {
     const icon = entityType ? iconMap[entityType.toLowerCase()] : 'Entry';
 
     return <Icon icon={icon} color="muted" />;
-  }
+  }, [entityType]);
 
-  renderThumbnail() {
+  const renderThumbnail = useCallback(() => {
     return (
       <img
-        src={this.props.thumbnailUrl}
+        src={thumbnailUrl}
         className={styles['EntityListItem__thumbnail']}
-        alt={this.props.thumbnailAltText}
+        alt={thumbnailAltText}
       />
     );
-  }
+  }, [thumbnailAltText, thumbnailUrl]);
 
-  renderStatus = (status: EntityListItemStatus) => {
+  const renderStatus = useCallback((status: EntityListItemStatus) => {
     let label: string;
     let type: TagType;
 
@@ -164,9 +174,9 @@ export class EntityListItem extends Component<EntityListItemProps> {
         <Tag tagType={type}>{label}</Tag>
       </div>
     );
-  };
+  }, []);
 
-  renderLoadingCard() {
+  const renderLoadingCard = useCallback(() => {
     return (
       <article className={styles['EntityListItem__inner']}>
         <SkeletonContainer clipId="f36-entity-list-item-skeleton">
@@ -175,16 +185,9 @@ export class EntityListItem extends Component<EntityListItemProps> {
         </SkeletonContainer>
       </article>
     );
-  }
+  }, []);
 
-  renderCardDragHandle() {
-    const {
-      cardDragHandleComponent,
-      isDragActive,
-      cardDragHandleProps,
-      withDragHandle,
-    } = this.props;
-
+  const renderCardDragHandle = useCallback(() => {
     if (cardDragHandleComponent) {
       return cardDragHandleComponent;
     } else if (withDragHandle) {
@@ -194,101 +197,88 @@ export class EntityListItem extends Component<EntityListItemProps> {
         </CardDragHandle>
       );
     }
-  }
+  }, [
+    cardDragHandleComponent,
+    cardDragHandleProps,
+    isDragActive,
+    withDragHandle,
+  ]);
 
-  render() {
-    const {
-      className,
-      testId,
-      title,
-      description,
-      contentType,
-      entityType,
-      withThumbnail,
-      thumbnailUrl,
-      thumbnailAltText,
-      status,
-      dropdownListElements,
-      withDragHandle,
-      isDragActive,
-      isLoading,
-      onClick,
-      href,
-      cardDragHandleProps,
-      cardDragHandleComponent,
-      isActionsDisabled,
-      ...otherProps
-    } = this.props;
+  const classNames = cn(styles.EntityListItem, className, {
+    [styles['EntityListItem--drag-active']]: isDragActive,
+    [styles['EntityListItem--is-interactive']]: onClick || href,
+  });
 
-    const classNames = cn(styles.EntityListItem, className, {
-      [styles['EntityListItem--drag-active']]: isDragActive,
-      [styles['EntityListItem--is-interactive']]: onClick || href,
-    });
+  const Element = onClick ? 'a' : 'article';
 
-    const Element = onClick ? 'a' : 'article';
+  // archived assets will not be available on the CDN, resulting in a broken image src
+  const isArchived = status === 'archived';
+  const asIcon = isArchived || !thumbnailUrl;
 
-    // archived assets will not be available on the CDN, resulting in a broken image src
-    const isArchived = status === 'archived';
-    const asIcon = isArchived || !thumbnailUrl;
+  return (
+    <li {...otherProps} className={classNames} data-test-id={testId}>
+      {renderCardDragHandle()}
+      {isLoading ? (
+        renderLoadingCard()
+      ) : (
+        <Element
+          className={styles['EntityListItem__inner']}
+          onClick={onClick}
+          href={href}
+          tabIndex={onClick && 0}
+          target={onClick && href ? '_blank' : undefined}
+        >
+          <TabFocusTrap className={styles['EntityListItem__focus-trap']}>
+            {withThumbnail && (
+              <figure className={styles['EntityListItem__media']}>
+                {asIcon ? renderIcon() : renderThumbnail()}
+              </figure>
+            )}
 
-    return (
-      <li {...otherProps} className={classNames} data-test-id={testId}>
-        {this.renderCardDragHandle()}
-        {isLoading ? (
-          this.renderLoadingCard()
-        ) : (
-          <Element
-            className={styles['EntityListItem__inner']}
-            onClick={onClick}
-            href={href}
-            tabIndex={onClick && 0}
-            target={onClick && href ? '_blank' : undefined}
-          >
-            <TabFocusTrap className={styles['EntityListItem__focus-trap']}>
-              {withThumbnail && (
-                <figure className={styles['EntityListItem__media']}>
-                  {asIcon ? this.renderIcon() : this.renderThumbnail()}
-                </figure>
+            <div className={styles['EntityListItem__content']}>
+              <div className={styles['EntityListItem__heading']}>
+                <h1 className={styles['EntityListItem__title']}>{title}</h1>
+
+                {contentType && (
+                  <div className={styles['EntityListItem__content-type']}>
+                    ({contentType})
+                  </div>
+                )}
+              </div>
+              {description && (
+                <p className={styles['EntityListItem__description']}>
+                  {description}
+                </p>
               )}
+            </div>
 
-              <div className={styles['EntityListItem__content']}>
-                <div className={styles['EntityListItem__heading']}>
-                  <h1 className={styles['EntityListItem__title']}>{title}</h1>
+            <div className={styles['EntityListItem__meta']}>
+              {status && renderStatus(status)}
 
-                  {contentType && (
-                    <div className={styles['EntityListItem__content-type']}>
-                      ({contentType})
-                    </div>
-                  )}
-                </div>
-                {description && (
-                  <p className={styles['EntityListItem__description']}>
-                    {description}
-                  </p>
-                )}
-              </div>
-
-              <div className={styles['EntityListItem__meta']}>
-                {status && this.renderStatus(status)}
-
-                {dropdownListElements && (
-                  <CardActions
-                    className={styles['EntityListItem__actions']}
-                    isDisabled={isActionsDisabled}
-                    iconButtonProps={{
-                      onClick: (e) => e.stopPropagation,
-                    }}
-                  >
-                    {dropdownListElements}
-                  </CardActions>
-                )}
-              </div>
-            </TabFocusTrap>
-          </Element>
-        )}
-      </li>
-    );
-  }
+              {dropdownListElements && (
+                <CardActions
+                  className={styles['EntityListItem__actions']}
+                  isDisabled={isActionsDisabled}
+                  iconButtonProps={{
+                    onClick: (e) => e.stopPropagation,
+                  }}
+                >
+                  {dropdownListElements}
+                </CardActions>
+              )}
+            </div>
+          </TabFocusTrap>
+        </Element>
+      )}
+    </li>
+  );
 }
+
+EntityListItem.defaultProps = {
+  testId: 'cf-ui-entity-list-item',
+  entityType: 'entry',
+  withThumbnail: true,
+  isActionsDisabled: false,
+};
 
 export default EntityListItem;
