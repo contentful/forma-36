@@ -1,6 +1,8 @@
 import React from 'react';
+import type { Meta, Story } from '@storybook/react/types-6-0';
 
-import {{pascalCase name}}, { {{pascalCase name}}Props } from './{{pascalCase name}}';
+import {{pascalCase name}} from './{{pascalCase name}}';
+import type { {{pascalCase name}}Props } from './{{pascalCase name}}';
 import notes from './README.mdx';
 
 
@@ -14,8 +16,8 @@ export default {
   argTypes: {
     testId: { control: { disable: true } },
   },
-};
+} as Meta;
 
-export const basic = (args: {{pascalCase name}}Props) => (
+export const Basic: Story<{{pascalCase name}}Props> = (args: {{pascalCase name}}Props) => (
   <{{pascalCase name}} {...args} />
 );

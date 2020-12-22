@@ -50,11 +50,11 @@ const styles = {
   `,
 
   linkActive: css`
-    background-color: ${tokens.colorBlueLight};
+    background-color: ${tokens.colorPrimary};
     color: ${tokens.colorWhite};
 
     &:hover {
-      background-color: ${tokens.colorBlueMid};
+      background-color: ${tokens.colorPrimary};
     }
   `,
 
@@ -82,18 +82,18 @@ const checkActive = (item, currentPath) => {
 
   return (
     item.menuLinks &&
-    item.menuLinks.some(item => checkActive(item, currentPath))
+    item.menuLinks.some((item) => checkActive(item, currentPath))
   );
 };
 
-const checkCategory = name =>
+const checkCategory = (name) =>
   name === 'Foundation' || name === 'Guidelines' || name === 'Components';
 
 const MenuListItem = ({ item, currentPath, isActive, hierarchyLevel }) => {
   const isCategory = checkCategory(item.name);
   const [isExpanded, setIsExpanded] = useState(isActive || isCategory);
 
-  const handleToggle = event => {
+  const handleToggle = (event) => {
     event.preventDefault();
     setIsExpanded(!isExpanded);
   };
@@ -117,6 +117,7 @@ const MenuListItem = ({ item, currentPath, isActive, hierarchyLevel }) => {
             <Icon
               css={styles.linkIcon}
               color="secondary"
+              size="medium"
               icon={isExpanded ? 'ChevronDown' : 'ChevronRight'}
             />
           </div>

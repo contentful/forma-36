@@ -49,34 +49,34 @@ const styles = {
 };
 
 const markToComponentMap = {
-  h1: props => <DisplayText {...props} />,
-  h2: props => <Heading element="h2" {...props} />,
-  h3: props => <Subheading element="h3" {...props} />,
-  h4: props => <Subheading element="h4" {...props} />,
-  h5: props => <Subheading element="h5" {...props} />,
-  h6: props => <Subheading element="h6" {...props} />,
-  p: props => <Paragraph className="f36-font-size--l" {...props} />,
-  a: props => <TextLink {...props} />,
-  ul: props => <List className="f36-margin-bottom--m" {...props} />,
-  li: props => (
+  h1: (props) => <DisplayText {...props} />,
+  h2: (props) => <Heading element="h2" {...props} />,
+  h3: (props) => <Subheading element="h3" {...props} />,
+  h4: (props) => <Subheading element="h4" {...props} />,
+  h5: (props) => <Subheading element="h5" {...props} />,
+  h6: (props) => <Subheading element="h6" {...props} />,
+  p: (props) => <Paragraph className="f36-font-size--l" {...props} />,
+  a: (props) => <TextLink style={{ fontSize: tokens.fontSizeL }} {...props} />,
+  ul: (props) => <List className="f36-margin-bottom--m" {...props} />,
+  li: (props) => (
     <ListItem className="f36-font-size--l f36-color--text-mid" {...props} />
   ),
-  code: props => <ComponentSource>{props.children}</ComponentSource>,
-  table: props => <Table className="f36-margin-bottom--m" {...props} />,
-  thead: props => <TableHead {...props} />,
-  tbody: props => <TableBody {...props} />,
-  tr: props => <TableRow {...props} />,
-  th: props => (
+  code: (props) => <ComponentSource>{props.children}</ComponentSource>,
+  table: (props) => <Table className="f36-margin-bottom--m" {...props} />,
+  thead: (props) => <TableHead {...props} />,
+  tbody: (props) => <TableBody {...props} />,
+  tr: (props) => <TableRow {...props} />,
+  th: (props) => (
     <TableCell
       className="f36-font-size--l"
       style={{ textAlign: 'left' }}
       {...props}
     />
   ),
-  td: props => <TableCell className="f36-font-size--l" {...props} />,
+  td: (props) => <TableCell className="f36-font-size--l" {...props} />,
 };
 
-const Container = data => {
+const Container = (data) => {
   const { frontmatter, children, dataFromReadme } = data;
   const isHomePage = frontmatter && frontmatter.type === 'home';
 
@@ -85,7 +85,12 @@ const Container = data => {
       <div css={styles.main}>
         <Typography css={isHomePage ? styles.innerHomePage : styles.inner}>
           <MDXProvider components={markToComponentMap}>
-            <DocFormatter frontmatter={frontmatter} dataFromReadme={dataFromReadme}>{children}</DocFormatter>
+            <DocFormatter
+              frontmatter={frontmatter}
+              dataFromReadme={dataFromReadme}
+            >
+              {children}
+            </DocFormatter>
           </MDXProvider>
         </Typography>
       </div>
