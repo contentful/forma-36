@@ -1,0 +1,46 @@
+`ValidationMessage` provides a consistent styled paragraph for messages in case of validation errors.
+
+## Table of contents
+
+- [How to use ValidationMessage](#how-to-use-ValidationMessage)
+- [Component variations](#component-variations)
+- [Code examples](#code-examples)
+- [Content recommendations](#content-recommendations)
+- [Accessibility](#accessibility)
+
+## How to use ValidationMessage
+
+Only use this component in the context of a form and as corresponding guidance to an input field which has validations
+
+## Example of usage
+
+Give couple of clear examples of the usage of the components, that includes import
+
+## Code examples
+
+```jsx
+<React.Fragment>
+  <FormLabel htmlFor="name" required>
+    Full name
+  </FormLabel>
+  <TextInput
+    name="name"
+    value="Claus Mitchell"
+    className="f36-margin-bottom--xs"
+  />
+  <ValidationMessage>Name is a required field</ValidationMessage>
+</React.Fragment>
+```
+
+## Content recommendations
+
+- Avoid negative words and tone
+- Give direction on how to fix the error
+- Use direct, succinct copy. Do not preface the instructions with introductory text, such as "please"
+- To add additional context, link out to documentation
+- Do not use punctuation
+- Use sentence style caps (in which only the first word of a sentence or term is capitalized)
+
+## Accessibility
+
+missing
