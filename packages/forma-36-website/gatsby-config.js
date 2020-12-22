@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   siteMetadata: {
     title: 'Forma 36 - The Contentful Design System',
@@ -305,19 +307,21 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-svgr',
     {
-      resolve: `gatsby-source-git`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `forma-36-react-components`,
-        remote: `https://github.com/contentful/forma-36.git`,
-        branch: `master`,
-        patterns: `packages/forma-36-react-components/src/components/**/*.mdx`,
+        name: 'pages',
+        path: `${__dirname}/src/pages/`,
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'pages',
-        path: `${__dirname}/src/pages/`,
+        path: path.resolve(
+          __dirname,
+          '../forma-36-react-components/src/components/',
+        ),
+        ignore: ['**/*.css', '**/*.js', '**/*.snap', '**/*.ts', '**/*.tsx'],
       },
     },
     'gatsby-transformer-javascript-frontmatter',

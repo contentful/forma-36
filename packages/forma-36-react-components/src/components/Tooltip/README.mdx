@@ -1,7 +1,34 @@
-Tooltips are very useful to communicate extra information related to an element on the screen.
+Tooltips are very useful to communicate extra information related to an element on the screen. The information should be contextual, useful, and nonessential.
 
-## Best practices
+- [How to use Tooltip](#how-to-use-Tooltip)
+- [Component variations](#component-variations)
+- [Code examples](#code-examples)
+- [Content recommendations](#content-recommendations)
+- [Accessibility](#accessibility)
 
-- Use short and clear messages as the Tooltip’s content
+## How to use Tooltip
+
 - Even though it's possible to pass any ReactNode as a content of the Tooltip,
   we do not recommend passing very complex components try to use only [Phrasing content](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#Phrasing_content)
+
+## Code examples
+
+```jsx
+// import {Tooltip} from '@contentful/forma-36-react-components'
+<Tooltip
+  place="top"
+  id="tip1"
+  targetWrapperClassName="targetWrapperClassName"
+  content="Hi I am a Tooltip"
+>
+  <TextLink>Hover me</TextLink>
+</Tooltip>
+```
+
+## Content recommendations
+
+- Use short and clear messages as the Tooltip’s content
+
+## Accessibility
+
+missing
