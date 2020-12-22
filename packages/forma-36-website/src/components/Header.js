@@ -6,7 +6,7 @@ import { Link } from 'gatsby';
 const styles = {
   header: css`
     display: flex;
-    background-color: ${tokens.colorBlueMid};
+    background-color: ${tokens.colorBlueDark};
     color: #fff;
     padding: 0 ${tokens.spacingXl};
     height: 70px;
