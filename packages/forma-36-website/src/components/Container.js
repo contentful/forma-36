@@ -56,7 +56,7 @@ const markToComponentMap = {
   h5: (props) => <Subheading element="h5" {...props} />,
   h6: (props) => <Subheading element="h6" {...props} />,
   p: (props) => <Paragraph className="f36-font-size--l" {...props} />,
-  a: (props) => <TextLink style={{ fontSize: tokens.fontSizeL }} {...props} />,
+  a: (props) => <TextLink className="f36-font-size--l" {...props} />,
   ul: (props) => <List className="f36-margin-bottom--m" {...props} />,
   li: (props) => (
     <ListItem className="f36-font-size--l f36-color--text-mid" {...props} />
