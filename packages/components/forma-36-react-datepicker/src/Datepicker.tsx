@@ -1,4 +1,5 @@
-import React, { Component, FocusEventHandler, FocusEvent } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import type { FocusEventHandler, FocusEvent } from 'react';
 import Pikaday from 'pikaday';
 import format from 'date-fns/format';
 import {
@@ -37,98 +38,89 @@ export interface DatePickerProps {
   dateFormat?: string;
 }
 
-export interface DatePickerState {
-  validationError?: string;
+export function Datepicker({
+  labelText,
+  required,
+  name,
+  id,
+  testId,
+  dateFormat,
+  disabled,
+  ...otherProps
+}: DatePickerProps): React.ReactElement {
+  const [validationError] = useState<string>();
+  const pikaday = useRef<Pikaday>();
+  const datePickerNode = useRef<HTMLInputElement | null>(null);
+
+  useEffect(() => {
+    pikaday.current = new Pikaday({
+      field: datePickerNode && datePickerNode.current,
+      minDate: otherProps.minDate,
+      maxDate: otherProps.maxDate,
+      yearRange: 5,
+      theme: cx(styles.datePicker, 'hide-carret'),
+      onSelect: (value) => {
+        otherProps.onChange?.(value);
+      },
+    });
+
+    return () => {
+      if (pikaday.current) {
+        pikaday.current.destroy();
+      }
+    };
+  }, []);
+
+  const handleOpen = useCallback(() => {
+    if (pikaday.current) {
+      pikaday.current.show();
+    }
+  }, []);
+
+  const handleBlur = useCallback((e: FocusEvent) => {
+    otherProps.onBlur?.(e);
+    if (
+      pikaday.current &&
+      !pikaday.current.el.contains(e.relatedTarget as HTMLInputElement)
+    ) {
+      pikaday.current.hide();
+    }
+  }, []);
+
+  return (
+    <div className={styles.datePickerWrapper}>
+      {labelText && (
+        <FormLabel required={required} htmlFor={id}>
+          {labelText}
+        </FormLabel>
+      )}
+      <TextInput
+        disabled={disabled}
+        required={required}
+        name={name}
+        testId={testId}
+        readOnly={true}
+        inputRef={datePickerNode}
+        value={
+          otherProps.value && format(otherProps.value, dateFormat!) // eslint-disable-line @typescript-eslint/no-non-null-assertion
+        }
+        id={id}
+        onFocus={handleOpen}
+        onBlur={handleBlur}
+        autoComplete="off"
+      />
+      {validationError && (
+        <ValidationMessage>{validationError}</ValidationMessage>
+      )}
+    </div>
+  );
 }
 
-const defaultProps: Partial<DatePickerProps> = {
+Datepicker.defaultProps = {
   name: 'cf-ui-datepicker',
   id: 'cf-ui-datepicker',
   testId: 'cf-ui-datepicker',
   dateFormat: 'do MMM yyyy',
 };
-
-export class Datepicker extends Component<DatePickerProps, DatePickerState> {
-  static defaultProps = defaultProps;
-  state = {
-    validationError: undefined,
-  };
-  pikaday?: Pikaday;
-  datePickerNode = React.createRef<HTMLInputElement>();
-
-  componentDidMount() {
-    this.pikaday = new Pikaday({
-      field: this.datePickerNode && this.datePickerNode.current,
-      minDate: this.props.minDate,
-      maxDate: this.props.maxDate,
-      yearRange: 5,
-      theme: cx(styles.datePicker, 'hide-carret'),
-      onSelect: (value) => {
-        this.props.onChange?.(value);
-      },
-    });
-  }
-
-  componentWillUnmount() {
-    if (this.pikaday) {
-      this.pikaday.destroy();
-    }
-  }
-
-  handleOpen = () => {
-    if (this.pikaday) {
-      this.pikaday.show();
-    }
-  };
-
-  handleBlur = (e: FocusEvent) => {
-    this.props.onBlur?.(e);
-    if (
-      this.pikaday &&
-      !this.pikaday.el.contains(e.relatedTarget as HTMLInputElement)
-    ) {
-      this.pikaday.hide();
-    }
-  };
-
-  render() {
-    const {
-      labelText,
-      required,
-      name,
-      id,
-      testId,
-      dateFormat,
-      disabled,
-    } = this.props;
-    return (
-      <div className={styles.datePickerWrapper}>
-        {labelText && (
-          <FormLabel required={required} htmlFor={id}>
-            {labelText}
-          </FormLabel>
-        )}
-        <TextInput
-          disabled={disabled}
-          required={required}
-          name={name}
-          testId={testId}
-          readOnly={true}
-          inputRef={this.datePickerNode}
-          value={
-            this.props.value && format(this.props.value, dateFormat!) // eslint-disable-line @typescript-eslint/no-non-null-assertion
-          }
-          id={id}
-          onFocus={this.handleOpen}
-          onBlur={this.handleBlur}
-          autoComplete="off"
-        />
-        {this.state.validationError && (
-          <ValidationMessage>{this.state.validationError}</ValidationMessage>
-        )}
-      </div>
-    );
-  }
-}
 
 export default Datepicker;

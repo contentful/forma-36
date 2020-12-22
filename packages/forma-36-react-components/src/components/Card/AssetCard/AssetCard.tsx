@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { useCallback } from 'react';
 import cn from 'classnames';
+
 import Card, { BaseCardProps } from '../Card';
 import Icon, { IconType } from '../../Icon';
 import CardActions from './../CardActions';
@@ -63,66 +64,69 @@ export interface AssetCardProps extends BaseCardProps {
   size?: 'small' | 'default';
 }
 
-const defaultProps: Partial<AssetCardProps> = {
-  isLoading: false,
-  testId: 'cf-ui-asset-card',
-  size: 'default',
-};
+export function AssetCard({
+  className,
+  src,
+  type,
+  title,
+  status,
+  statusIcon,
+  isLoading,
+  dropdownListElements,
+  isDragActive,
+  size,
+  cardDragHandleProps,
+  cardDragHandleComponent,
+  withDragHandle,
+  ...otherProps
+}: AssetCardProps): React.ReactElement {
+  const renderStatus = useCallback(
+    (status: AssetState, statusIcon: React.ReactNode) => {
+      let label;
+      let type: TagType | null = null;
 
-export class AssetCard extends Component<AssetCardProps> {
-  static defaultProps = defaultProps;
+      switch (status) {
+        case 'archived':
+          label = 'archived';
+          type = 'negative';
+          break;
 
-  renderStatus = (status: AssetState, statusIcon: React.ReactNode) => {
-    let label;
-    let type: TagType | null = null;
+        case 'changed':
+          label = 'changed';
+          type = 'primary';
+          break;
 
-    switch (status) {
-      case 'archived':
-        label = 'archived';
-        type = 'negative';
-        break;
+        case 'published':
+          label = 'published';
+          type = 'positive';
+          break;
 
-      case 'changed':
-        label = 'changed';
-        type = 'primary';
-        break;
+        default:
+          label = 'draft';
+          type = 'warning';
+      }
 
-      case 'published':
-        label = 'published';
-        type = 'positive';
-        break;
+      return (
+        <>
+          {statusIcon && typeof statusIcon === 'string' ? (
+            <Icon
+              icon={statusIcon as IconType}
+              color="muted"
+              className="f36-margin-right--xs"
+            />
+          ) : (
+            statusIcon
+          )}
+          <Tag className={styles['AssetCard__status']} tagType={type}>
+            {label}
+          </Tag>
+        </>
+      );
+    },
+    [],
+  );
 
-      default:
-        label = 'draft';
-        type = 'warning';
-    }
-
-    return (
-      <>
-        {statusIcon && typeof statusIcon === 'string' ? (
-          <Icon
-            icon={statusIcon as IconType}
-            color="muted"
-            className="f36-margin-right--xs"
-          />
-        ) : (
-          statusIcon
-        )}
-        <Tag className={styles['AssetCard__status']} tagType={type}>
-          {label}
-        </Tag>
-      </>
-    );
-  };
-
-  renderCardDragHandle() {
-    const {
-      cardDragHandleComponent,
-      isDragActive,
-      cardDragHandleProps,
-      withDragHandle,
-    } = this.props;
-
+  const renderCardDragHandle = useCallback(() => {
     if (cardDragHandleComponent) {
       return cardDragHandleComponent;
     } else if (withDragHandle) {
@@ -132,71 +136,63 @@ export class AssetCard extends Component<AssetCardProps> {
         </CardDragHandle>
       );
     }
-  }
+  }, [
+    cardDragHandleComponent,
+    cardDragHandleProps,
+    isDragActive,
+    withDragHandle,
+  ]);
 
-  render() {
-    const {
-      className,
-      src,
-      type,
-      title,
-      status,
-      statusIcon,
-      isLoading,
-      dropdownListElements,
-      isDragActive,
-      size,
-      cardDragHandleProps,
-      cardDragHandleComponent,
-      withDragHandle,
-      ...otherProps
-    } = this.props;
+  const classNames = cn(
+    styles.AssetCard,
+    {
+      [styles['AssetCard--drag-active']]: isDragActive,
+      [styles[`AssetCard--size-${size}`]]: size,
+    },
+    className,
+  );
 
-    const classNames = cn(
-      styles.AssetCard,
-      {
-        [styles['AssetCard--drag-active']]: isDragActive,
-        [styles[`AssetCard--size-${size}`]]: size,
-      },
-      className,
-    );
-
-    return (
-      <Card className={classNames} padding="none" title={title} {...otherProps}>
-        {isLoading ? (
-          <AssetCardSkeleton size={size} />
-        ) : (
-          <React.Fragment>
-            {this.renderCardDragHandle()}
-            <div className={styles['AssetCard__wrapper']}>
-              <div className={styles['AssetCard__header']}>
-                {status && this.renderStatus(status, statusIcon)}
-                {dropdownListElements && (
-                  <CardActions
-                    className={styles['AssetCard__actions']}
-                    iconButtonProps={{
-                      onClick: (e) => e.stopPropagation,
-                    }}
-                  >
-                    {dropdownListElements}
-                  </CardActions>
-                )}
-              </div>
-              <div className={styles['AssetCard__content']}>
-                <Asset
-                  className={styles['AssetCard__asset']}
-                  src={src}
-                  title={title}
-                  type={type}
-                  status={status}
-                />
-              </div>
+  return (
+    <Card className={classNames} padding="none" title={title} {...otherProps}>
+      {isLoading ? (
+        <AssetCardSkeleton size={size} />
+      ) : (
+        <React.Fragment>
+          {renderCardDragHandle()}
+          <div className={styles['AssetCard__wrapper']}>
+            <div className={styles['AssetCard__header']}>
+              {status && renderStatus(status, statusIcon)}
+              {dropdownListElements && (
+                <CardActions
+                  className={styles['AssetCard__actions']}
+                  iconButtonProps={{
+                    onClick: (e) => e.stopPropagation,
+                  }}
+                >
+                  {dropdownListElements}
+                </CardActions>
+              )}
             </div>
-          </React.Fragment>
-        )}
-      </Card>
-    );
-  }
+            <div className={styles['AssetCard__content']}>
+              <Asset
+                className={styles['AssetCard__asset']}
+                src={src}
+                title={title}
+                type={type}
+                status={status}
+              />
+            </div>
+          </div>
+        </React.Fragment>
+      )}
+    </Card>
+  );
 }
+
+AssetCard.defaultProps = {
+  isLoading: false,
+  testId: 'cf-ui-asset-card',
+  size: 'default',
+};
 
 export default AssetCard;

@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
+import React, { useCallback } from 'react';
 import cn from 'classnames';
 import truncate from 'truncate';
+
 import Card, { BaseCardProps, CardProps } from '../Card';
 import CardActions from '../CardActions';
 import Tag, { TagType } from '../../Tag';
 import EntryCardSkeleton from './EntryCardSkeleton';
 import CardDragHandle, { CardDragHandlePropTypes } from '../CardDragHandle';
 import Icon, { IconType } from '../../Icon';
-
 import styles from './EntryCard.css';
 
 export type EntryCardStatus = 'archived' | 'changed' | 'draft' | 'published';
@@ -73,20 +73,25 @@ export interface EntryCardPropTypes extends BaseCardProps {
   size: EntryCardSize;
 }
 
-const defaultProps: Partial<EntryCardPropTypes> = {
-  title: 'Untitled',
-  testId: 'cf-ui-entry-card',
-  size: 'default',
-};
-
-export class EntryCard extends Component<EntryCardPropTypes> {
-  static defaultProps = defaultProps;
-
-  state = {
-    isDropdownOpen: false,
-  };
-
-  renderTitle = (size: EntryCardSize, title?: string) => {
+export function EntryCard({
+  className,
+  title,
+  onClick,
+  description,
+  contentType,
+  status,
+  statusIcon,
+  thumbnailElement,
+  loading,
+  dropdownListElements,
+  isDragActive,
+  size,
+  cardDragHandleComponent,
+  cardDragHandleProps,
+  withDragHandle,
+  ...otherProps
+}: EntryCardPropTypes): React.ReactElement {
+  const renderTitle = useCallback((_size: EntryCardSize, title?: string) => {
     if (!title) {
       return;
     }
@@ -102,36 +107,39 @@ export class EntryCard extends Component<EntryCardPropTypes> {
         {truncatedTitle}
       </h1>
     );
-  };
+  }, []);
 
-  renderDescription = (size: EntryCardSize, description?: string) => {
-    if (!description || size === 'small') {
-      return;
-    }
+  const renderDescription = useCallback(
+    (size: EntryCardSize, description?: string) => {
+      if (!description || size === 'small') {
+        return;
+      }
 
-    const truncatedDescription = truncate(description, 95, {});
+      const truncatedDescription = truncate(description, 95, {});
 
-    return (
-      <p className={styles.EntryCard__description}>{truncatedDescription}</p>
-    );
-  };
+      return (
+        <p className={styles.EntryCard__description}>{truncatedDescription}</p>
+      );
+    },
+    [],
+  );
 
-  renderThumbnail = (
-    size: EntryCardSize,
-    thumbnailElement?: React.ReactNode,
-  ) => {
-    if (!thumbnailElement || size === 'small') {
-      return;
-    }
+  const renderThumbnail = useCallback(
+    (size: EntryCardSize, thumbnailElement?: React.ReactNode) => {
+      if (!thumbnailElement || size === 'small') {
+        return;
+      }
 
-    return (
-      <figure className={styles.EntryCard__thumbnail}>
-        {thumbnailElement}
-      </figure>
-    );
-  };
+      return (
+        <figure className={styles.EntryCard__thumbnail}>
+          {thumbnailElement}
+        </figure>
+      );
+    },
+    [],
+  );
 
-  renderStatus = (status: EntryCardStatus) => {
+  const renderStatus = useCallback((status: EntryCardStatus) => {
     let label: string;
     let type: TagType;
 
@@ -157,16 +165,9 @@ export class EntryCard extends Component<EntryCardPropTypes> {
     }
 
     return <Tag tagType={type}>{label}</Tag>;
-  };
+  }, []);
 
-  renderCardDragHandle() {
-    const {
-      cardDragHandleComponent,
-      isDragActive,
-      cardDragHandleProps,
-      withDragHandle,
-    } = this.props;
-
+  const renderCardDragHandle = useCallback(() => {
     if (cardDragHandleComponent) {
       return cardDragHandleComponent;
     } else if (withDragHandle) {
@@ -176,95 +177,85 @@ export class EntryCard extends Component<EntryCardPropTypes> {
         </CardDragHandle>
       );
     }
-  }
+  }, [
+    cardDragHandleComponent,
+    cardDragHandleProps,
+    isDragActive,
+    withDragHandle,
+  ]);
 
-  render() {
-    const {
-      className,
-      title,
-      onClick,
-      description,
-      contentType,
-      status,
-      statusIcon,
-      thumbnailElement,
-      loading,
-      dropdownListElements,
-      isDragActive,
-      size,
-      cardDragHandleComponent,
-      cardDragHandleProps,
-      withDragHandle,
-      ...otherProps
-    } = this.props;
+  const classNames = cn(
+    styles.EntryCard,
+    styles[`EntryCard--size-${size}`],
+    {
+      [styles['EntryCard--drag-active']]: isDragActive,
+    },
+    className,
+  );
 
-    const classNames = cn(
-      styles.EntryCard,
-      styles[`EntryCard--size-${size}`],
-      {
-        [styles['EntryCard--drag-active']]: isDragActive,
-      },
-      className,
-    );
-
-    return (
-      <Card
-        className={classNames}
-        onClick={!loading ? onClick : undefined}
-        padding="none"
-        {...otherProps}
-      >
-        {loading ? (
-          <div className={styles.EntryCard__wrapper}>
-            <EntryCardSkeleton />
-          </div>
-        ) : (
-          <React.Fragment>
-            {this.renderCardDragHandle()}
-            <article className={styles.EntryCard__wrapper}>
-              <React.Fragment>
-                <div className={styles.EntryCard__meta}>
-                  <div
-                    className={styles['EntryCard__content-type']}
-                    data-test-id="content-type"
+  return (
+    <Card
+      className={classNames}
+      onClick={!loading ? onClick : undefined}
+      padding="none"
+      {...otherProps}
+    >
+      {loading ? (
+        <div className={styles.EntryCard__wrapper}>
+          <EntryCardSkeleton />
+        </div>
+      ) : (
+        <React.Fragment>
+          {renderCardDragHandle()}
+          <article className={styles.EntryCard__wrapper}>
+            <React.Fragment>
+              <div className={styles.EntryCard__meta}>
+                <div
+                  className={styles['EntryCard__content-type']}
+                  data-test-id="content-type"
+                >
+                  {contentType}
+                </div>
+                {statusIcon && typeof statusIcon === 'string' ? (
+                  <Icon
+                    icon={statusIcon as IconType}
+                    color="muted"
+                    className="f36-margin-right--xs"
+                  />
+                ) : (
+                  statusIcon
+                )}
+                {status && renderStatus(status)}
+                {dropdownListElements && (
+                  <CardActions
+                    className={styles['EntryCard__actions']}
+                    iconButtonProps={{
+                      onClick: (e) => e.stopPropagation,
+                    }}
                   >
-                    {contentType}
-                  </div>
-                  {statusIcon && typeof statusIcon === 'string' ? (
-                    <Icon
-                      icon={statusIcon as IconType}
-                      color="muted"
-                      className="f36-margin-right--xs"
-                    />
-                  ) : (
-                    statusIcon
-                  )}
-                  {status && this.renderStatus(status)}
-                  {dropdownListElements && (
-                    <CardActions
-                      className={styles['EntryCard__actions']}
-                      iconButtonProps={{
-                        onClick: (e) => e.stopPropagation,
-                      }}
-                    >
-                      {dropdownListElements}
-                    </CardActions>
-                  )}
+                    {dropdownListElements}
+                  </CardActions>
+                )}
+              </div>
+              <div className={styles.EntryCard__content}>
+                <div className={styles.EntryCard__body}>
+                  {renderTitle(size, title)}
+                  {renderDescription(size, description)}
                 </div>
-                <div className={styles.EntryCard__content}>
-                  <div className={styles.EntryCard__body}>
-                    {this.renderTitle(size, title)}
-                    {this.renderDescription(size, description)}
-                  </div>
-                  {this.renderThumbnail(size, thumbnailElement)}
-                </div>
-              </React.Fragment>
-            </article>
-          </React.Fragment>
-        )}
-      </Card>
-    );
-  }
+                {renderThumbnail(size, thumbnailElement)}
+              </div>
+            </React.Fragment>
+          </article>
+        </React.Fragment>
+      )}
+    </Card>
+  );
 }
+
+EntryCard.defaultProps = {
+  title: 'Untitled',
+  testId: 'cf-ui-entry-card',
+  size: 'default',
+};
 
 export default EntryCard;

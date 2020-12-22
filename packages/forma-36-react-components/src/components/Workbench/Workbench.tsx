@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import cn from 'classnames';
+
 import Heading from '../Typography/Heading';
 import IconButton from '../IconButton';
-
 import styles from './Workbench.css';
 
 export interface WorkbenchHeaderProps {
@@ -164,43 +164,42 @@ export interface WorkbenchProps {
   testId?: string;
 }
 
-const defaultProps: Partial<WorkbenchProps> = {
+export function Workbench({
+  className,
+  children,
+  testId,
+  ...otherProps
+}: WorkbenchProps): React.ReactElement {
+  const childrenArray = React.Children.toArray(children);
+  const header: React.ReactNode[] = [];
+  const other: React.ReactNode[] = [];
+  childrenArray.forEach(
+    // eslint-disable-next-line
+    (item: any) => {
+      if (item && item.type && item.type.displayName === 'Workbench.Header') {
+        header.push(item);
+      } else {
+        other.push(item);
+      }
+    },
+  );
+
+  const classNames = cn(styles.Workbench, className);
+
+  return (
+    <div {...otherProps} className={classNames} data-test-id={testId}>
+      {header}
+      <div className={styles['Workbench__content-wrapper']}>{other}</div>
+    </div>
+  );
+}
+
+Workbench.defaultProps = {
   testId: 'cf-ui-workbench',
 };
 
-export class Workbench extends Component<WorkbenchProps> {
-  static defaultProps = defaultProps;
-
-  static Header = WorkbenchHeader;
-  static Content = WorkbenchContent;
-  static Sidebar = WorkbenchSidebar;
-
-  render() {
-    const { className, children, testId, ...otherProps } = this.props;
-
-    const childrenArray = React.Children.toArray(children);
-    const header: React.ReactNode[] = [];
-    const other: React.ReactNode[] = [];
-    childrenArray.forEach(
-      // eslint-disable-next-line
-      (item: any) => {
-        if (item && item.type && item.type.displayName === 'Workbench.Header') {
-          header.push(item);
-        } else {
-          other.push(item);
-        }
-      },
-    );
-
-    const classNames = cn(styles.Workbench, className);
-
-    return (
-      <div {...otherProps} className={classNames} data-test-id={testId}>
-        {header}
-        <div className={styles['Workbench__content-wrapper']}>{other}</div>
-      </div>
-    );
-  }
-}
+Workbench.Header = WorkbenchHeader;
+Workbench.Content = WorkbenchContent;
+Workbench.Sidebar = WorkbenchSidebar;
 
 export default Workbench;
