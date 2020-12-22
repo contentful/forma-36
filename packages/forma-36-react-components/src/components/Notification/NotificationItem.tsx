@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { useCallback } from 'react';
 import classNames from 'classnames';
+
 import IconButton from '../IconButton';
 import Icon, { IconType } from '../Icon';
 import TextLink, { TextLinkProps } from '../TextLink';
-
 import styles from './NotificationItem.css';
 
 export type NotificationIntent = 'success' | 'error' | 'warning';
@@ -23,45 +23,37 @@ export interface NotificationItemProps {
   cta?: Partial<NotificationCtaProps>;
 }
 
-const defaultProps: Partial<NotificationItemProps> = {
-  testId: 'cf-ui-notification',
-  intent: 'success' as NotificationIntent,
-  hasCloseButton: true,
-};
-
-export class NotificationItem extends Component<NotificationItemProps> {
-  static defaultProps = defaultProps;
-
-  renderTitle() {
-    const { title, children } = this.props;
-
+export function NotificationItem({
+  children,
+  cta,
+  hasCloseButton,
+  intent,
+  onClose,
+  testId,
+  title,
+}: NotificationItemProps) {
+  const renderTitle = useCallback(() => {
     return (
       <h2 className={styles.NotificationItem__title}>
         {title ? title : children}
       </h2>
     );
-  }
+  }, [children, title]);
 
-  renderBody() {
-    const { title, children } = this.props;
-
+  const renderBody = useCallback(() => {
     return <p className={styles.NotificationItem__body}>{title && children}</p>;
-  }
+  }, [children, title]);
 
-  renderCta() {
-    const { cta } = this.props;
-
+  const renderCta = useCallback(() => {
     if (cta && cta.label)
       return (
         <div>
           <TextLink {...cta.textLinkProps}>{cta.label}</TextLink>
         </div>
       );
-  }
+  }, [cta]);
 
-  renderIcon() {
-    const { intent } = this.props;
-
+  const renderIcon = useCallback(() => {
     const iconClasses = classNames(styles.NotificationItem__icon, {
       [styles[`NotificationItem__icon--${intent}`]]: true,
     });
@@ -90,45 +82,47 @@ export class NotificationItem extends Component<NotificationItemProps> {
         <Icon icon={icon} color="white" />
       </div>
     );
-  }
+  }, [intent]);
 
-  render() {
-    const { testId, intent, onClose, hasCloseButton } = this.props;
-
-    return (
-      <div
-        className={styles.NotificationItem}
-        data-test-id={testId}
-        data-intent={intent}
-        role="alert"
-        aria-live={intent === 'success' ? 'polite' : 'assertive'}
-      >
-        <div className={styles.NotificationItem__intent}>{intent}</div>
-        {this.renderIcon()}
-        <div className={styles.NotificationItem__content}>
-          <div className={styles.NotificationItem__text}>
-            {this.renderTitle()}
-            {this.renderBody()}
-            {this.renderCta()}
-          </div>
-          {hasCloseButton && (
-            <IconButton
-              buttonType="secondary"
-              iconProps={{ icon: 'Close' }}
-              onClick={() => {
-                if (onClose) {
-                  onClose();
-                }
-              }}
-              testId="cf-ui-notification-close"
-              label="Dismiss"
-              className={styles.NotificationItem__dismiss}
-            />
-          )}
+  return (
+    <div
+      className={styles.NotificationItem}
+      data-test-id={testId}
+      data-intent={intent}
+      role="alert"
+      aria-live={intent === 'success' ? 'polite' : 'assertive'}
+    >
+      <div className={styles.NotificationItem__intent}>{intent}</div>
+      {renderIcon()}
+      <div className={styles.NotificationItem__content}>
+        <div className={styles.NotificationItem__text}>
+          {renderTitle()}
+          {renderBody()}
+          {renderCta()}
         </div>
+        {hasCloseButton && (
+          <IconButton
+            buttonType="secondary"
+            iconProps={{ icon: 'Close' }}
+            onClick={() => {
+              if (onClose) {
+                onClose();
+              }
+            }}
+            testId="cf-ui-notification-close"
+            label="Dismiss"
+            className={styles.NotificationItem__dismiss}
+          />
+        )}
       </div>
-    );
-  }
+    </div>
+  );
 }
+
+NotificationItem.defaultProps = {
+  testId: 'cf-ui-notification',
+  intent: 'success' as NotificationIntent,
+  hasCloseButton: true,
+};
 
 export default NotificationItem;
