@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.72.7](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.72.6...@contentful/forma-36-react-components@3.72.7) (2020-12-22)
+
+
+### Bug Fixes
+
+* refactor Button storybook ([#721](https://github.com/contentful/forma-36/issues/721)) ([15d8029](https://github.com/contentful/forma-36/commit/15d8029ebea2958c6ca52a90d21d60b29d1e63c9))
+
+
+
+
+
 ## [3.72.6](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.72.5...@contentful/forma-36-react-components@3.72.6) (2020-12-22)
 
 
