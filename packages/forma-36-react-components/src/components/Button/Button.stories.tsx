@@ -39,7 +39,6 @@ export const typesOverview = (args: ButtonProps) => (
     <Flex flexDirection="column">
       <Flex marginBottom="spacingS">
         <SectionHeading element="h3">Button variants</SectionHeading>
-        <br />
       </Flex>
       <Flex flexDirection="row" marginBottom="spacingM">
         <Button buttonType="primary">primary</Button>
