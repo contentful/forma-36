@@ -102,92 +102,71 @@ export const WithLinkAndTarget: Story<CardProps> = (args) => {
 export const cardsOverview: Story<CardProps> = (args) => {
   return (
     <>
-      <Flex flexDirection="column" marginBottom="spacingM">
-        <Flex marginBottom="spacingS">
-          <SectionHeading element="h3">
-            Card with link and target
-          </SectionHeading>
-        </Flex>
-        <Flex marginBottom="spacingS">
-          <Card {...args}>
-            <Typography>
-              <Heading>Forma36</Heading>
-              <Paragraph>
-                Forma 36 is an open-source design system by Contentful created
-                with the intent to reduce the overhead of creating UI by
-                providing tools and guidance for digital teams building and
-                extending Contentful products.
-              </Paragraph>
-            </Typography>
-          </Card>
-        </Flex>
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Card with link and target</SectionHeading>
       </Flex>
-      <Flex flexDirection="column" marginBottom="spacingM">
-        <Flex marginBottom="spacingS">
-          <SectionHeading element="h3">Card selected</SectionHeading>
-        </Flex>
-        <Flex marginBottom="spacingS">
-          <Card selected>
-            <Heading>Forma36</Heading>
-            <Paragraph>
-              Forma 36 is an open-source design system by Contentful created
-              with the intent to reduce the overhead of creating UI by providing
-              tools and guidance for digital teams building and extending
-              Contentful products.
-            </Paragraph>
-          </Card>
-        </Flex>
+      <Card {...args}>
+        <Typography>
+          <Heading>Forma36</Heading>
+          <Paragraph>
+            Forma 36 is an open-source design system by Contentful created with
+            the intent to reduce the overhead of creating UI by providing tools
+            and guidance for digital teams building and extending Contentful
+            products.
+          </Paragraph>
+        </Typography>
+      </Card>
+
+      <Flex marginBottom="spacingS" marginTop="spacingM">
+        <SectionHeading element="h3">Card selected</SectionHeading>
       </Flex>
-      <Flex flexDirection="column" marginBottom="spacingM">
-        <Flex marginBottom="spacingS">
-          <SectionHeading element="h3">
-            Card with default padding
-          </SectionHeading>
-        </Flex>
-        <Flex marginBottom="spacingS">
-          <Card padding="default">
-            <Heading>Forma36</Heading>
-            <Paragraph>
-              Forma 36 is an open-source design system by Contentful created
-              with the intent to reduce the overhead of creating UI by providing
-              tools and guidance for digital teams building and extending
-              Contentful products.
-            </Paragraph>
-          </Card>
-        </Flex>
+      <Card selected>
+        <Heading>Forma36</Heading>
+        <Paragraph>
+          Forma 36 is an open-source design system by Contentful created with
+          the intent to reduce the overhead of creating UI by providing tools
+          and guidance for digital teams building and extending Contentful
+          products.
+        </Paragraph>
+      </Card>
+
+      <Flex marginBottom="spacingS" marginTop="spacingM">
+        <SectionHeading element="h3">Card with default padding</SectionHeading>
       </Flex>
-      <Flex flexDirection="column" marginBottom="spacingM">
-        <Flex marginBottom="spacingS">
-          <SectionHeading element="h3">Card with large padding</SectionHeading>
-        </Flex>
-        <Flex marginBottom="spacingS">
-          <Card padding="large">
-            <Heading>Forma36</Heading>
-            <Paragraph>
-              Forma 36 is an open-source design system by Contentful created
-              with the intent to reduce the overhead of creating UI by providing
-              tools and guidance for digital teams building and extending
-              Contentful products.
-            </Paragraph>
-          </Card>
-        </Flex>
+      <Card padding="default">
+        <Heading>Forma36</Heading>
+        <Paragraph>
+          Forma 36 is an open-source design system by Contentful created with
+          the intent to reduce the overhead of creating UI by providing tools
+          and guidance for digital teams building and extending Contentful
+          products.
+        </Paragraph>
+      </Card>
+      <Flex marginBottom="spacingS" marginTop="spacingM">
+        <SectionHeading element="h3">Card with large padding</SectionHeading>
       </Flex>
-      <Flex flexDirection="column" marginBottom="spacingM">
-        <Flex marginBottom="spacingS">
-          <SectionHeading element="h3">Card without padding</SectionHeading>
-        </Flex>
-        <Flex marginBottom="spacingS">
-          <Card padding="none">
-            <Heading>Forma36</Heading>
-            <Paragraph>
-              Forma 36 is an open-source design system by Contentful created
-              with the intent to reduce the overhead of creating UI by providing
-              tools and guidance for digital teams building and extending
-              Contentful products.
-            </Paragraph>
-          </Card>
-        </Flex>
+      <Card padding="large">
+        <Heading>Forma36</Heading>
+        <Paragraph>
+          Forma 36 is an open-source design system by Contentful created with
+          the intent to reduce the overhead of creating UI by providing tools
+          and guidance for digital teams building and extending Contentful
+          products.
+        </Paragraph>
+      </Card>
+
+      <Flex marginBottom="spacingS" marginTop="spacingM">
+        <SectionHeading element="h3">Card without padding</SectionHeading>
       </Flex>
+      <Card padding="none">
+        <Heading>Forma36</Heading>
+        <Paragraph>
+          Forma 36 is an open-source design system by Contentful created with
+          the intent to reduce the overhead of creating UI by providing tools
+          and guidance for digital teams building and extending Contentful
+          products.
+        </Paragraph>
+      </Card>
     </>
   );
 };
