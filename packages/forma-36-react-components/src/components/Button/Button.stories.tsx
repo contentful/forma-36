@@ -36,7 +36,6 @@ export const typesOverview = () => (
   <>
     <Button buttonType="primary">primary</Button>
     <Button buttonType="positive">posiitve</Button>
-
     <Button buttonType="warning">warning</Button>
     <Button buttonType="negative">negative</Button>
     <Button buttonType="muted">muted</Button>
@@ -56,19 +55,94 @@ export const sizesOverview = (args: ButtonProps) => (
   </>
 );
 
-export const statesOverview = (args: ButtonProps) => (
+export const isActiveStateOverview = () => (
   <>
-    <Button buttonType={args.buttonType} isActive>
-      isActive
+    <Button buttonType="primary" isActive>
+      primary
     </Button>
-    <Button buttonType={args.buttonType} disabled>
-      disabled
+    <Button buttonType="positive" isActive>
+      posiitve
     </Button>
-    <Button buttonType={args.buttonType} indicateDropdown>
-      indicateDropdown
+    <Button buttonType="warning" isActive>
+      warning
     </Button>
-    <Button buttonType={args.buttonType} loading>
-      loading
+    <Button buttonType="negative" isActive>
+      negative
+    </Button>
+    <Button buttonType="muted" isActive>
+      muted
+    </Button>
+    <Button buttonType="naked" isActive>
+      naked
+    </Button>
+  </>
+);
+
+export const disabledStateOverview = () => (
+  <>
+    <Button buttonType="primary" disabled>
+      primary
+    </Button>
+    <Button buttonType="positive" disabled>
+      posiitve
+    </Button>
+    <Button buttonType="warning" disabled>
+      warning
+    </Button>
+    <Button buttonType="negative" disabled>
+      negative
+    </Button>
+    <Button buttonType="muted" disabled>
+      muted
+    </Button>
+    <Button buttonType="naked" disabled>
+      naked
+    </Button>
+  </>
+);
+
+export const indicateDropdownStateOverview = () => (
+  <>
+    <Button buttonType="primary" indicateDropdown>
+      primary
+    </Button>
+    <Button buttonType="positive" indicateDropdown>
+      posiitve
+    </Button>
+    <Button buttonType="warning" indicateDropdown>
+      warning
+    </Button>
+    <Button buttonType="negative" indicateDropdown>
+      negative
+    </Button>
+    <Button buttonType="muted" indicateDropdown>
+      muted
+    </Button>
+    <Button buttonType="naked" indicateDropdown>
+      naked
+    </Button>
+  </>
+);
+
+export const loadingDropdownStateOverview = () => (
+  <>
+    <Button buttonType="primary" loading>
+      primary
+    </Button>
+    <Button buttonType="positive" loading>
+      posiitve
+    </Button>
+    <Button buttonType="warning" loading>
+      warning
+    </Button>
+    <Button buttonType="negative" loading>
+      negative
+    </Button>
+    <Button buttonType="muted" loading>
+      muted
+    </Button>
+    <Button buttonType="naked" loading>
+      naked
     </Button>
   </>
 );
