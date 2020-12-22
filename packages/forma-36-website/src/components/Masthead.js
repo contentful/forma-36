@@ -8,7 +8,7 @@ const styles = {
   masthead: css`
     display: flex;
     justify-content: center;
-    background-color: ${tokens.colorPrimary};
+    background-color: ${tokens.colorBlueDark};
     text-align: center;
     padding: ${tokens.spacing3Xl} 0;
     background-image: url(${bg});

@@ -138,10 +138,6 @@ module.exports = {
             link: '/components/card/',
           },
           {
-            name: 'Checkbox',
-            link: '/components/checkbox/',
-          },
-          {
             name: 'Dropdown',
             link: '/components/dropdown/',
           },
@@ -162,12 +158,50 @@ module.exports = {
             link: '/components/flex/',
           },
           {
-            name: 'Form',
-            link: '/components/form/',
-          },
-          {
-            name: 'Form label',
-            link: '/components/form-label/',
+            name: 'Form Elements',
+            link: '',
+            menuLinks: [
+              {
+                name: 'Checkbox Field',
+                link: '/components/checkbox-field/',
+              },
+              {
+                name: 'Form',
+                link: '/components/form/',
+              },
+              {
+                name: 'Form label',
+                link: '/components/form-label/',
+              },
+              {
+                name: 'Radio button',
+                link: '/components/radio-button/',
+              },
+              {
+                name: 'Select',
+                link: '/components/select/',
+              },
+              {
+                name: 'Select field',
+                link: '/components/select-field/',
+              },
+              {
+                name: 'Text field',
+                link: '/components/text-field/',
+              },
+              {
+                name: 'Text input',
+                link: '/components/text-input/',
+              },
+              {
+                name: 'Text link',
+                link: '/components/text-link/',
+              },
+              {
+                name: 'Textarea',
+                link: '/components/textarea/',
+              },
+            ],
           },
           {
             name: 'Grid',
@@ -210,18 +244,6 @@ module.exports = {
             link: '/components/product-icon/',
           },
           {
-            name: 'Radio button',
-            link: '/components/radio-button/',
-          },
-          {
-            name: 'Select',
-            link: '/components/select/',
-          },
-          {
-            name: 'Select field',
-            link: '/components/select-field/',
-          },
-          {
             name: 'Skeletons',
             link: '',
             menuLinks: [
@@ -262,22 +284,6 @@ module.exports = {
           {
             name: 'Tag',
             link: '/components/tag/',
-          },
-          {
-            name: 'Text field',
-            link: '/components/text-field/',
-          },
-          {
-            name: 'Text input',
-            link: '/components/text-input/',
-          },
-          {
-            name: 'Text link',
-            link: '/components/text-link/',
-          },
-          {
-            name: 'Textarea',
-            link: '/components/textarea/',
           },
           {
             name: 'Toggle button',
