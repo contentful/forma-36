@@ -9,13 +9,13 @@ The Asset component is a visual representation of an asset file such as a video 
 ## Code examples
 
 ```jsx
-import { Asset } from '@contentful/forma-36-react-components';
+// import { Asset } from '@contentful/forma-36-react-components';
 
 <Asset
   src="https://placekitten.com/200/300"
   title="An archive asset"
   type="archive"
-/>;
+/>
 ```
 
 ### An image asset and an archived image asset
@@ -23,22 +23,22 @@ import { Asset } from '@contentful/forma-36-react-components';
 By default an asset with the `type` `image` will render the `src` attribute directly, like a HTML `<img />` element. If asset `status` is set to `archived`, an image icon is displayed instead of the actual image.
 
 ```jsx
-import { Asset } from '@contentful/forma-36-react-components';
+// import { Asset } from '@contentful/forma-36-react-components';
 
 <Asset
   src="https://placekitten.com/200/300"
   title="An image asset"
   type="image"
-/>;
+/>
 ```
 
 ```jsx
-import { Asset } from '@contentful/forma-36-react-components';
+// import { Asset } from '@contentful/forma-36-react-components';
 
 <Asset
   src="https://placekitten.com/200/300"
   status="archived"
   title="An archived image asset"
   type="image"
-/>;
+/>
 ```
