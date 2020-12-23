@@ -133,3 +133,20 @@ export const iconName = {
   WarningTrimmed: 'WarningTrimmed',
   Workflows: 'Workflows',
 };
+
+export const iconSizes = {
+  tiny: '16px',
+  small: '18px',
+  medium: '24px',
+  large: '32px',
+};
+
+export const iconColors = [
+  'primary',
+  'positive',
+  'negative',
+  'warning',
+  'muted',
+  'secondary',
+  'white',
+];
