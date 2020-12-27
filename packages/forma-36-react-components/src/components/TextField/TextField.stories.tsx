@@ -4,6 +4,8 @@ import { text, boolean, select, number } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
 
 import TextField from './TextField';
+import SectionHeading from '../Typography/SectionHeading';
+import Flex from '../Flex/Flex';
 
 storiesOf('Components/TextField', module)
   .addParameters({
@@ -197,4 +199,86 @@ storiesOf('Components/TextField', module)
       helpText={text('helpText', '')}
       validationMessage={text('validationMessage', '')}
     />
+  ))
+  .add('overview', () => (
+    <>
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">
+          Textarea field default with countCharacters
+        </SectionHeading>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <TextField
+          countCharacters
+          labelText="Label"
+          name="emailInput"
+          id="emailInput"
+          value="123456"
+          textInputProps={{
+            placeholder: 'Placeholder text',
+            maxLength: 20,
+            rows: 2,
+            type: 'text',
+          }}
+        />
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">
+          Textarea field default with help text
+        </SectionHeading>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <TextField
+          labelText="Label"
+          name="emailInput"
+          id="emailInput"
+          value="123456"
+          textInputProps={{
+            placeholder: 'Placeholder text',
+            maxLength: 20,
+            rows: 2,
+            type: 'text',
+          }}
+          helpText="help text"
+        />
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Textarea field error</SectionHeading>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <TextField
+          labelText="Label"
+          name="emailInput"
+          id="emailInput"
+          value="123456"
+          textInputProps={{
+            placeholder: 'Placeholder text',
+            maxLength: 20,
+            rows: 2,
+            type: 'text',
+          }}
+          validationMessage="validationMessage"
+        />
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Textarea field disabled</SectionHeading>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <TextField
+          labelText="Label"
+          name="emailInput"
+          id="emailInput"
+          value="123456"
+          textInputProps={{
+            disabled: true,
+            placeholder: 'Placeholder text',
+            maxLength: 20,
+            rows: 2,
+            type: 'text',
+          }}
+          helpText={text('helpText', '')}
+          validationMessage={text('validationMessage', '')}
+        />
+      </Flex>
+    </>
   ));

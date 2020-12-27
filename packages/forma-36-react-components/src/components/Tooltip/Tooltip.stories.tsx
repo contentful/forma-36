@@ -3,6 +3,8 @@ import React from 'react';
 import Tooltip from './Tooltip';
 import Paragraph from '../Typography/Paragraph';
 import TextLink from '../TextLink';
+import SectionHeading from '../Typography/SectionHeading';
+import Flex from '../Flex/Flex';
 import notes from './README.mdx';
 
 export default {
@@ -168,4 +170,83 @@ contentHover.parameters = {
       code: contentHoverSourceCode,
     },
   },
+};
+
+export const overview = (args: { content: string }) => {
+  return (
+    <>
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Tooltip disabled</SectionHeading>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <Tooltip content="I am a Tooltip 🙌" maxWidth={360} place="top">
+          <TextLink disabled iconPosition="left" linkType="primary">
+            Hover me
+          </TextLink>
+        </Tooltip>
+      </Flex>
+
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Tooltip left</SectionHeading>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <Tooltip
+          content="I am a Tooltip 🙌"
+          maxWidth={360}
+          place="left"
+          isVisible
+        >
+          <TextLink disabled={false} iconPosition="left" linkType="primary">
+            Hover me
+          </TextLink>
+        </Tooltip>
+      </Flex>
+
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Tooltip right</SectionHeading>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <Tooltip
+          content="I am a Tooltip 🙌"
+          maxWidth={360}
+          place="right"
+          isVisible
+        >
+          <TextLink disabled={false} iconPosition="left" linkType="primary">
+            Hover me
+          </TextLink>
+        </Tooltip>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Tooltip top</SectionHeading>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <Tooltip
+          content="I am a Tooltip 🙌"
+          maxWidth={360}
+          place="top"
+          isVisible
+        >
+          <TextLink disabled={false} iconPosition="left" linkType="primary">
+            Hover me
+          </TextLink>
+        </Tooltip>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Tooltip bottom</SectionHeading>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <Tooltip
+          content="I am a Tooltip 🙌"
+          maxWidth={360}
+          place="bottom"
+          isVisible
+        >
+          <TextLink disabled={false} iconPosition="left" linkType="primary">
+            Hover me
+          </TextLink>
+        </Tooltip>
+      </Flex>
+    </>
+  );
 };

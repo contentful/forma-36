@@ -5,6 +5,8 @@ import { action } from '@storybook/addon-actions';
 
 import TextInput from './TextInput';
 import Button from './../Button';
+import SectionHeading from '../Typography/SectionHeading';
+import Flex from '../Flex/Flex';
 
 storiesOf('Components/TextInput', module)
   .addParameters({
@@ -78,4 +80,96 @@ storiesOf('Components/TextInput', module)
         </Button>
       </React.Fragment>
     );
-  });
+  })
+  .add('overview', () => (
+    <>
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Text input default</SectionHeading>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <TextInput
+          value="123456"
+          maxLength={50}
+          name="emailInput"
+          id="emailInput"
+        />
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Text input width small</SectionHeading>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <TextInput
+          value="123456"
+          maxLength={50}
+          width="small"
+          name="emailInput"
+          id="emailInput"
+        />
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Text input width medium</SectionHeading>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <TextInput
+          value="123456"
+          maxLength={50}
+          width="medium"
+          name="emailInput"
+          id="emailInput"
+        />
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Text input width large</SectionHeading>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <TextInput
+          value="123456"
+          maxLength={50}
+          width="large"
+          name="emailInput"
+          id="emailInput"
+        />
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Text input with error</SectionHeading>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <TextInput
+          error
+          value="123456"
+          maxLength={50}
+          width="large"
+          name="emailInput"
+          id="emailInput"
+        />
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Text input disabled</SectionHeading>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <TextInput
+          disabled
+          value="123456"
+          maxLength={50}
+          width="large"
+          name="emailInput"
+          id="emailInput"
+        />
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">
+          Text input with copy button
+        </SectionHeading>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <TextInput
+          withCopyButton
+          value="123456"
+          maxLength={50}
+          width="large"
+          name="emailInput"
+          id="emailInput"
+        />
+      </Flex>
+    </>
+  ));

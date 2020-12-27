@@ -8,6 +8,9 @@ import {
   productIconTag,
 } from './constants';
 import notes from './README.mdx';
+import Flex from '../Flex/Flex';
+import SectionHeading from '../Typography/SectionHeading';
+import Paragraph from '../Typography/Paragraph';
 
 export default {
   title: '(alpha)/ProductIcon',
@@ -31,6 +34,44 @@ export const basic = (args: ProductIconProps) => (
     color={args.color}
     tag={args.tag}
   />
+);
+
+export const overview = () => (
+  <>
+    <Flex marginBottom="spacingS">
+      <SectionHeading element="h3">Product icon overview</SectionHeading>
+    </Flex>
+    {Object.keys(productIconName).map((icon, idx) => (
+      <Flex marginBottom="spacingM" alignItems="center" key={idx}>
+        <Flex marginRight="spacingS">
+          <ProductIcon icon={icon} size="large" color="positive" />
+        </Flex>
+        <Paragraph>{icon}</Paragraph>
+      </Flex>
+    ))}
+    <Flex marginBottom="spacingS">
+      <SectionHeading element="h3">Product icon sizes overview</SectionHeading>
+    </Flex>
+    {productIconSize.map((size) => (
+      <Flex marginBottom="spacingM" alignItems="center">
+        <Flex marginRight="spacingS">
+          <ProductIcon icon="ContentModel" size={size} color="positive" />
+        </Flex>
+        <Paragraph>{size}</Paragraph>
+      </Flex>
+    ))}
+    <Flex marginBottom="spacingS">
+      <SectionHeading element="h3">Product icon colors overview</SectionHeading>
+    </Flex>
+    {productIconColor.map((color) => (
+      <Flex marginBottom="spacingM" alignItems="center">
+        <Flex marginRight="spacingS">
+          <ProductIcon icon="ContentModel" size="medium" color={color} />
+        </Flex>
+        <Paragraph>{color}</Paragraph>
+      </Flex>
+    ))}
+  </>
 );
 
 basic.args = {
