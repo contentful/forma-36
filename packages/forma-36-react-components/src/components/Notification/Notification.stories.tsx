@@ -7,6 +7,9 @@ import Button from '../Button';
 import Notification from './index';
 import notes from './Notification.md';
 import NotificationItem from './NotificationItem';
+import Flex from '../Flex/Flex';
+import SectionHeading from '../Typography/SectionHeading';
+import Paragraph from '../Typography/Paragraph';
 
 let index = 0;
 const getUniqueNumber = () => {
@@ -124,6 +127,47 @@ storiesOf('Components/Notification', module)
           {text('body', 'Body for the notification')}
         </NotificationItem>
       </div>
+    ),
+    { notes },
+  )
+  .add(
+    'overview',
+    () => (
+      <>
+        <Flex marginBottom="spacingS">
+          <SectionHeading element="h3">Notifiactions overview</SectionHeading>
+        </Flex>
+        <Flex marginBottom="spacingS">
+          <NotificationItem
+            hasCloseButton={boolean('hasCloseButton', true)}
+            title={text('title', 'Notification title')}
+            intent="success"
+            cta={{ label: text('cta.label', 'Notification CTA') }}
+          >
+            {text('body', 'Body for the notification')}
+          </NotificationItem>
+        </Flex>
+        <Flex marginBottom="spacingS">
+          <NotificationItem
+            hasCloseButton={boolean('hasCloseButton', true)}
+            title={text('title', 'Notification title')}
+            intent="error"
+            cta={{ label: text('cta.label', 'Notification CTA') }}
+          >
+            {text('body', 'Body for the notification')}
+          </NotificationItem>
+        </Flex>
+        <Flex marginBottom="spacingS">
+          <NotificationItem
+            hasCloseButton={boolean('hasCloseButton', true)}
+            title={text('title', 'Notification title')}
+            intent="warning"
+            cta={{ label: text('cta.label', 'Notification CTA') }}
+          >
+            {text('body', 'Body for the notification')}
+          </NotificationItem>
+        </Flex>
+      </>
     ),
     { notes },
   );
