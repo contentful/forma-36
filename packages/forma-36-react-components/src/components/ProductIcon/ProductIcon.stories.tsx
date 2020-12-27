@@ -52,8 +52,8 @@ export const overview = () => (
     <Flex marginBottom="spacingS">
       <SectionHeading element="h3">Product icon sizes overview</SectionHeading>
     </Flex>
-    {productIconSize.map((size) => (
-      <Flex marginBottom="spacingM" alignItems="center">
+    {productIconSize.map((size, idx) => (
+      <Flex marginBottom="spacingM" alignItems="center" key={idx}>
         <Flex marginRight="spacingS">
           <ProductIcon icon="ContentModel" size={size} color="positive" />
         </Flex>
@@ -63,8 +63,8 @@ export const overview = () => (
     <Flex marginBottom="spacingS">
       <SectionHeading element="h3">Product icon colors overview</SectionHeading>
     </Flex>
-    {productIconColor.map((color) => (
-      <Flex marginBottom="spacingM" alignItems="center">
+    {productIconColor.map((color, idx) => (
+      <Flex marginBottom="spacingM" alignItems="center" key={idx}>
         <Flex marginRight="spacingS">
           <ProductIcon icon="ContentModel" size="medium" color={color} />
         </Flex>
