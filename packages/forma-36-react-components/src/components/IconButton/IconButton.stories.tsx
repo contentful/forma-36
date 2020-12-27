@@ -49,8 +49,8 @@ storiesOf('Components/IconButton', module)
           Icon button colors overview
         </SectionHeading>
       </Flex>
-      {iconButtonColors.map((color) => (
-        <Flex marginBottom="spacingM" alignItems="center">
+      {iconButtonColors.map((color, idx) => (
+        <Flex marginBottom="spacingM" alignItems="center" key={idx}>
           <Flex marginRight="spacingS">
             <IconButton
               iconProps={{

@@ -9,7 +9,6 @@ import notes from './Notification.md';
 import NotificationItem from './NotificationItem';
 import Flex from '../Flex/Flex';
 import SectionHeading from '../Typography/SectionHeading';
-import Paragraph from '../Typography/Paragraph';
 
 let index = 0;
 const getUniqueNumber = () => {

@@ -68,14 +68,14 @@ storiesOf('Components/Icon', module)
         ))}
     </div>
   ))
-  .add('Icon variants overview', () => (
+  .add('overview', () => (
     <>
       <Flex marginBottom="spacingS">
         <SectionHeading element="h3">Icon sizes overview</SectionHeading>
       </Flex>
 
-      {Object.entries(iconSizes).map((icon) => (
-        <Flex marginBottom="spacingM" alignItems="center">
+      {Object.entries(iconSizes).map((icon, idx) => (
+        <Flex marginBottom="spacingM" alignItems="center" key={idx}>
           <Flex marginRight="spacingS">
             <Icon icon="Calendar" color="primary" size={icon[0]} />
           </Flex>
@@ -85,8 +85,8 @@ storiesOf('Components/Icon', module)
       <Flex marginBottom="spacingS">
         <SectionHeading element="h3">Icon colors overview</SectionHeading>
       </Flex>
-      {iconColors.map((color) => (
-        <Flex marginBottom="spacingM" alignItems="center">
+      {iconColors.map((color, idx) => (
+        <Flex marginBottom="spacingM" alignItems="center" key={idx}>
           <Flex marginRight="spacingS">
             <Icon icon="Calendar" color={color} size="medium" />
           </Flex>
