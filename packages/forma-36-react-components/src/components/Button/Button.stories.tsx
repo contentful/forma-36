@@ -34,7 +34,7 @@ export const basic = (args: ButtonProps) => (
   </Button>
 );
 
-export const typesOverview = (args: ButtonProps) => (
+export const overview = (args: ButtonProps) => (
   <>
     <Flex flexDirection="column">
       <Flex marginBottom="spacingS">

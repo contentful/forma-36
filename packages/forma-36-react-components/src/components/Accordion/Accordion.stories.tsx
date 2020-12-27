@@ -51,7 +51,7 @@ export const basic = ({ align, ...args }: AccordionProps) => (
   </Accordion>
 );
 
-export const accordionOverview = ({ align, ...args }: AccordionProps) => (
+export const overview = ({ align, ...args }: AccordionProps) => (
   <>
     <Flex flexDirection="column" marginBottom="spacingM" fullWidth>
       <Flex marginBottom="spacingS">

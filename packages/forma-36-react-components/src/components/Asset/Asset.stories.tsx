@@ -58,7 +58,7 @@ WithAnArchivedImage.args = {
   type: 'image',
 };
 
-export const assetOverview: Story<AssetProps> = () => (
+export const overview: Story<AssetProps> = () => (
   <>
     <Flex flexDirection="column" marginBottom="spacingM">
       <Flex marginBottom="spacingS">

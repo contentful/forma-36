@@ -99,7 +99,7 @@ export const WithLinkAndTarget: Story<CardProps> = (args) => {
   );
 };
 
-export const cardsOverview: Story<CardProps> = (args) => {
+export const overview: Story<CardProps> = (args) => {
   return (
     <>
       <Flex marginBottom="spacingS">
