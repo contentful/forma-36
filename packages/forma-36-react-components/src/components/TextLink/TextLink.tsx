@@ -14,6 +14,15 @@ export type TextLinkType =
   | 'muted'
   | 'white';
 
+export const textLinkColor = [
+  'primary',
+  'positive',
+  'negative',
+  'secondary',
+  'muted',
+  'white',
+];
+
 type IconPositionType = 'right' | 'left';
 
 export interface TextLinkProps {
