@@ -172,7 +172,7 @@ contentHover.parameters = {
   },
 };
 
-export const overview = (args: { content: string }) => {
+export const overview = () => {
   return (
     <>
       <Flex marginBottom="spacingS">

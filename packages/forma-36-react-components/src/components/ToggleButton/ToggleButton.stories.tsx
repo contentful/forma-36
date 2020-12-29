@@ -30,25 +30,25 @@ storiesOf('Components/ToggleButton', module)
         <SectionHeading element="h3">Toggle Button default</SectionHeading>
       </Flex>
       <Flex marginBottom="spacingS">
-        <ToggleButton>'Embed Entry'</ToggleButton>
+        <ToggleButton>Embed Entry</ToggleButton>
       </Flex>
       <Flex marginBottom="spacingS">
         <SectionHeading element="h3">Toggle Button with icon</SectionHeading>
       </Flex>
       <Flex marginBottom="spacingS">
-        <ToggleButton icon="Calendar">'Embed Entry'</ToggleButton>
+        <ToggleButton icon="Calendar">Embed Entry</ToggleButton>
       </Flex>
       <Flex marginBottom="spacingS">
         <SectionHeading element="h3">Toggle Button active</SectionHeading>
       </Flex>
       <Flex marginBottom="spacingS">
-        <ToggleButton isActive>'Embed Entry'</ToggleButton>
+        <ToggleButton isActive>Embed Entry</ToggleButton>
       </Flex>
       <Flex marginBottom="spacingS">
         <SectionHeading element="h3">Toggle Button disabled</SectionHeading>
       </Flex>
       <Flex marginBottom="spacingS">
-        <ToggleButton isDisabled>'Embed Entry'</ToggleButton>
+        <ToggleButton isDisabled>Embed Entry</ToggleButton>
       </Flex>
     </>
   ));
