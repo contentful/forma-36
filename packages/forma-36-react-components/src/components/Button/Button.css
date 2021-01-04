@@ -5,10 +5,6 @@
 @import 'settings/borders';
 @import 'settings/z-index';
 
-.Button {
-  composes: focus-border--default from './../../styles/settings/a11y.css';
-}
-
 .Button,
 .Button:link {
   box-sizing: border-box;
@@ -34,6 +30,10 @@
   &:hover:not(.Button--disabled) {
     cursor: pointer;
   }
+
+  &:focus:not(.Button--disabled) {
+    outline: none;
+  }
 }
 
 .Button__icon {
@@ -46,20 +46,17 @@
 
 .Button--muted {
   background-color: var(--color-white);
-  border-color: var(--color-element-light);
+  border-color: var(--color-element-dark);
   box-shadow: 0px 1px 0px rgb(25 37 50 / 4%);
 
-  &:hover:not(.Button--disabled),
-  &:focus:not(.Button--disabled) {
+  &.Button--is-active:not(.Button--disabled),
+  &:active:not(.Button--disabled),
+  &:hover:not(.Button--disabled) {
     background-color: var(--color-element-lightest);
-    border-color: var(--color-element-mid);
   }
 
-  &:active:not(.Button--disabled),
-  &.Button--is-active:not(.Button--disabled) {
-    transition: none;
-    background-color: var(--color-element-light);
-    border-color: var(--color-element-mid);
+  &:focus:not(.Button--disabled) {
+    box-shadow: 0px 0px 0px 3px var(--color-element-light);
   }
 }
 
@@ -87,28 +84,19 @@
   border-color: var(--color-blue-mid);
   background-color: var(--color-blue-mid);
 
-  &:hover:not(.Button--disabled),
-  &:focus:not(.Button--disabled) {
-    background-position: 0 100%;
-    border-color: var(--color-blue-base);
-    background-color: var(--color-blue-base);
-  }
-
-  &:focus:not(.Button--disabled) {
-    border-color: var(--color-blue-base);
-    background-color: var(--color-blue-base);
-  }
-
+  &.Button--is-active:not(.Button--disabled),
   &:active:not(.Button--disabled),
-  &.Button--is-active:not(.Button--disabled) {
-    transition: none;
-    background-image: none;
+  &:hover:not(.Button--disabled) {
     border-color: var(--color-blue-base);
     background-color: var(--color-blue-base);
+  }
+
+  &:focus:not(.Button--disabled) {
+    box-shadow: 0px 0px 0px 3px var(--color-blue-light);
   }
 
   & .Button__label {
-    color: var(--color-element-lightest);
+    color: var(--color-white);
   }
 
   &.Button:link {
@@ -121,28 +109,19 @@
   background-color: var(--color-green-mid);
   background-size: 100% 200%;
 
-  &:hover:not(.Button--disabled),
-  &:focus:not(.Button--disabled) {
-    background-position: 0 100%;
-    border-color: var(--color-green-base);
-    background-color: var(--color-green-base);
-  }
-
-  &:focus:not(.Button--disabled) {
-    border-color: var(--color-green-base);
-    background-color: var(--color-green-base);
-  }
-
+  &.Button--is-active:not(.Button--disabled),
   &:active:not(.Button--disabled),
-  &.Button--is-active:not(.Button--disabled) {
-    transition: none;
-    background-image: none;
+  &:hover:not(.Button--disabled) {
     border-color: var(--color-green-base);
     background-color: var(--color-green-base);
+  }
+
+  &:focus:not(.Button--disabled) {
+    box-shadow: 0px 0px 0px 3px var(--color-green-light);
   }
 
   & .Button__label {
-    color: var(--color-element-lightest);
+    color: var(--color-white);
   }
 
   &.Button:link {
@@ -155,28 +134,20 @@
   background-color: var(--color-red-mid);
   background-size: 100% 200%;
 
-  &:hover:not(.Button--disabled),
-  &:focus:not(.Button--disabled) {
+  &.Button--is-active:not(.Button--disabled),
+  &:active:not(.Button--disabled),
+  &:hover:not(.Button--disabled) {
     background-position: 0 100%;
     border-color: var(--color-red-base);
     background-color: var(--color-red-base);
   }
 
   &:focus:not(.Button--disabled) {
-    border-color: var(--color-red-dark);
-    background-color: var(--color-red-dark);
-  }
-
-  &:active:not(.Button--disabled),
-  &.Button--is-active:not(.Button--disabled) {
-    transition: none;
-    background-image: none;
-    border-color: var(--color-red-dark);
-    background-color: var(--color-red-dark);
+    box-shadow: 0px 0px 0px 3px var(--color-red-light);
   }
 
   & .Button__label {
-    color: var(--color-element-lightest);
+    color: var(--color-white);
   }
 
   &.Button:link {
@@ -209,10 +180,6 @@
     background-color: var(--color-orange-base);
   }
 
-  &.Button__label {
-    color: var(--color-text-dark);
-  }
-
   &.Button:link {
     border-color: var(--color-orange-mid);
   }
@@ -236,7 +203,7 @@
 
 .Button__label {
   margin: 0 calc(1rem * (4 / var(--font-base-default)));
-  color: var(--color-text-mid);
+  color: var(--color-contrast-mid);
   line-height: 2;
   white-space: nowrap;
   text-overflow: ellipsis;
