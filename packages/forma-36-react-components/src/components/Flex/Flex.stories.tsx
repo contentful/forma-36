@@ -82,7 +82,7 @@ const DemoBox = ({ times }: { times?: number }) => {
   return <Flex style={styles.demoBox}>Example element</Flex>;
 };
 
-storiesOf('(alpha)/Flex', module)
+storiesOf('Components/Flex', module)
   .addParameters({
     propTypes: Flex['__docgenInfo'],
     component: Flex,
