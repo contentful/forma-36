@@ -35,7 +35,7 @@ export function CopyButton({
   const [copied, setCopied] = useState<boolean>(false);
   const button = useRef<HTMLButtonElement | null>(null);
   const tooltipAnchor = useRef<HTMLDivElement | null>(null);
-  console.log(className);
+
   const handleCopy = useCallback(
     (e: string) => {
       if (onCopy) {
@@ -54,7 +54,7 @@ export function CopyButton({
     [onCopy],
   );
 
-  const classNames = cn(className, styles['CopyButton']);
+  const classNames = cn(styles['CopyButton'], className);
 
   return (
     <div
