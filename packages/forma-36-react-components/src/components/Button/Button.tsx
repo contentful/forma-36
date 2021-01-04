@@ -113,7 +113,7 @@ export const Button = (props: ButtonProps) => {
         {indicateDropdown && !loading && (
           <Icon
             className={styles['Button__dropdown-icon']}
-            icon="ArrowDown"
+            icon="ChevronDown"
             color={iconColor}
           />
         )}
