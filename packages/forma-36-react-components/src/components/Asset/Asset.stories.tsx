@@ -12,7 +12,10 @@ import notes from './README.mdx';
 export default {
   argTypes: {
     className: { control: { disable: true } },
-    src: { control: 'text', defaultValue: 'https://placekitten.com/200/300' },
+    src: {
+      control: 'text',
+      defaultValue: 'https://via.placeholder.com/200x300',
+    },
     status: {
       control: {
         type: 'select',
@@ -67,19 +70,19 @@ export const overview: Story<AssetProps> = () => (
       <Flex marginBottom="spacingS">
         <Flex flexDirection="column" marginRight="spacingS">
           <Paragraph>published</Paragraph>
-          <Asset status="published" src="https://placekitten.com/200/300" />
+          <Asset status="published" src="https://via.placeholder.com/200x300" />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
           <Paragraph>draft</Paragraph>
-          <Asset status="draft" src="https://placekitten.com/200/300" />
+          <Asset status="draft" src="https://via.placeholder.com/200x300" />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
           <Paragraph>changed</Paragraph>
-          <Asset status="changed" src="https://placekitten.com/200/300" />
+          <Asset status="changed" src="https://via.placeholder.com/200x300" />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
           <Paragraph>archived</Paragraph>
-          <Asset status="archived" src="https://placekitten.com/200/300" />
+          <Asset status="archived" src="https://via.placeholder.com/200x300" />
         </Flex>
       </Flex>
     </Flex>
@@ -90,43 +93,46 @@ export const overview: Story<AssetProps> = () => (
       <Flex marginBottom="spacingS">
         <Flex flexDirection="column" marginRight="spacingS">
           <Paragraph>image</Paragraph>
-          <Asset type="image" src="https://placekitten.com/200/300" />
+          <Asset type="image" src="https://via.placeholder.com/200x300" />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
           <Paragraph>archive</Paragraph>
-          <Asset type="archive" src="https://placekitten.com/200/300" />
+          <Asset type="archive" src="https://via.placeholder.com/200x300" />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
           <Paragraph>audio</Paragraph>
-          <Asset type="audio" src="https://placekitten.com/200/300" />
+          <Asset type="audio" src="https://via.placeholder.com/200x300" />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
           <Paragraph>code</Paragraph>
-          <Asset type="code" src="https://placekitten.com/200/300" />
+          <Asset type="code" src="https://via.placeholder.com/200x300" />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
           <Paragraph>markup</Paragraph>
-          <Asset type="markup" src="https://placekitten.com/200/300" />
+          <Asset type="markup" src="https://via.placeholder.com/200x300" />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
           <Paragraph>pdf</Paragraph>
-          <Asset type="pdf" src="https://placekitten.com/200/300" />
+          <Asset type="pdf" src="https://via.placeholder.com/200x300" />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
           <Paragraph>plaintext</Paragraph>
-          <Asset type="plaintext" src="https://placekitten.com/200/300" />
+          <Asset type="plaintext" src="https://via.placeholder.com/200x300" />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
           <Paragraph>presentation</Paragraph>
-          <Asset type="presentation" src="https://placekitten.com/200/300" />
+          <Asset
+            type="presentation"
+            src="https://via.placeholder.com/200x300"
+          />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
           <Paragraph>spreadsheet</Paragraph>
-          <Asset type="spreadsheet" src="https://placekitten.com/200/300" />
+          <Asset type="spreadsheet" src="https://via.placeholder.com/200x300" />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
           <Paragraph>video</Paragraph>
-          <Asset type="video" src="https://placekitten.com/200/300" />
+          <Asset type="video" src="https://via.placeholder.com/200x300" />
         </Flex>
       </Flex>
     </Flex>

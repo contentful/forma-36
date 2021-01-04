@@ -11,7 +11,7 @@ exports[`renders the component 1`] = `
     <img
       alt="Image of a cat"
       class="Asset__image-container__image"
-      src="https://placekitten.com/200/300"
+      src="https://via.placeholder.com/200x300"
     />
   </div>
   <div
@@ -37,7 +37,7 @@ exports[`renders the component with an additional class name 1`] = `
     <img
       alt="Image of a cat"
       class="Asset__image-container__image"
-      src="https://placekitten.com/200/300"
+      src="https://via.placeholder.com/200x300"
     />
   </div>
   <div
