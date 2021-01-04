@@ -19,7 +19,7 @@ storiesOf('Components/EntityList/EntityListItem', module)
       title={text('title', 'My title')}
       description={text('description', 'My description')}
       contentType={text('contentType', 'My content type')}
-      thumbnailUrl={text('thumbnailUrl', 'https://placekitten.com/400/400')}
+      thumbnailUrl={text('thumbnailUrl', 'https://via.placeholder.com/400x400')}
       thumbnailAltText={text('thumbnailAltText', 'My thumbnail text')}
       isActionsDisabled={boolean('isActionsDisabled', false)}
       withThumbnail={boolean('withThumbnail', true)}
@@ -70,7 +70,7 @@ storiesOf('Components/EntityList/EntityListItem', module)
       title={text('title', 'My title')}
       description={text('description', 'My description')}
       contentType={text('contentType', 'My content type')}
-      thumbnailUrl={text('thumbnailUrl', 'https://placekitten.com/400/400')}
+      thumbnailUrl={text('thumbnailUrl', 'https://via.placeholder.com/400x400')}
       thumbnailAltText={text('thumbnailAltText', 'My thumbnail text')}
       isActionsDisabled={boolean('isActionsDisabled', false)}
       withThumbnail={boolean('withThumbnail', true)}

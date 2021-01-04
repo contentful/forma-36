@@ -10,7 +10,10 @@ import Icon from '../../Icon';
 
 it('renders the component', () => {
   const { container } = render(
-    <AssetCard title="picture of a cat" src="http://placekitten.com/200/300">
+    <AssetCard
+      title="picture of a cat"
+      src="https://via.placeholder.com/200x300"
+    >
       AssetCard
     </AssetCard>,
   );
@@ -21,7 +24,7 @@ it('renders the component with an additional class name', () => {
   const { container } = render(
     <AssetCard
       className="my-extra-class"
-      src="http://placekitten.com/200/300"
+      src="https://via.placeholder.com/200x300"
       title="picture of a cat"
     />,
   );
@@ -33,7 +36,7 @@ it('renders the component in loading state', () => {
   const { container } = render(
     <AssetCard
       isLoading
-      src="http://placekitten.com/200/300"
+      src="https://via.placeholder.com/200x300"
       title="picture of a cat"
     />,
   );
@@ -45,7 +48,7 @@ it('renders the component with status', () => {
   const { container } = render(
     <AssetCard
       status="archived"
-      src="http://placekitten.com/200/300"
+      src="https://via.placeholder.com/200x300"
       title="picture of a cat"
     />,
   );
@@ -62,7 +65,7 @@ it('renders the component with actions', () => {
           <DropdownListItem onClick={() => {}}>Edit</DropdownListItem>
         </DropdownList>
       }
-      src="http://placekitten.com/200/300"
+      src="https://via.placeholder.com/200x300"
       title="picture of a cat"
     />,
   );
@@ -72,7 +75,10 @@ it('renders the component with actions', () => {
 
 it('renders the component without actions', () => {
   const { container } = render(
-    <AssetCard src="http://placekitten.com/200/300" title="picture of a cat" />,
+    <AssetCard
+      src="https://via.placeholder.com/200x300"
+      title="picture of a cat"
+    />,
   );
   const dropdown = container.querySelector('[data-test-id="cf-ui-dropdown"]');
 
@@ -84,7 +90,7 @@ it('renders the component with a drag handle', () => {
   const { container } = render(
     <AssetCard
       className="my-extra-class"
-      src="http://placekitten.com/200/300"
+      src="https://via.placeholder.com/200x300"
       title="picture of a cat"
       withDragHandle
     />,
@@ -97,7 +103,7 @@ it('renders the component with a custom drag handle', () => {
   const { container } = render(
     <AssetCard
       className="my-extra-class"
-      src="http://placekitten.com/200/300"
+      src="https://via.placeholder.com/200x300"
       title="picture of a cat"
       cardDragHandleComponent={<CardDragHandle>Reorder card</CardDragHandle>}
     />,
@@ -110,7 +116,7 @@ it('renders a small variant of the component', () => {
   const { container } = render(
     <AssetCard
       size="small"
-      src="http://placekitten.com/200/300"
+      src="https://via.placeholder.com/200x300"
       title="picture of a cat"
     />,
   );
@@ -120,7 +126,10 @@ it('renders a small variant of the component', () => {
 
 it('has no a11y issues', async () => {
   const { container } = render(
-    <AssetCard src="http://placekitten.com/200/300" title="picture of a cat" />,
+    <AssetCard
+      src="https://via.placeholder.com/200x300"
+      title="picture of a cat"
+    />,
   );
   const results = await axe(container);
 
@@ -130,7 +139,7 @@ it('has no a11y issues', async () => {
 it('renders a component with a status icon', async () => {
   const { container } = render(
     <AssetCard
-      src="http://placekitten.com/200/300"
+      src="https://via.placeholder.com/200x300"
       title="picture of a cat"
       statusIcon="Clock"
     />,
@@ -143,7 +152,7 @@ it('renders a component with a status icon', async () => {
 it('renders a component with a custom status icon', async () => {
   const { container } = render(
     <AssetCard
-      src="http://placekitten.com/200/300"
+      src="https://via.placeholder.com/200x300"
       title="picture of a cat"
       statusIcon={<Icon icon="Calendar" />}
     />,

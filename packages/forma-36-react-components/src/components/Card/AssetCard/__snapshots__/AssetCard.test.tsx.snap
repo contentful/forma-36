@@ -26,7 +26,7 @@ exports[`renders a small variant of the component 1`] = `
           <img
             alt="picture of a cat"
             class="Asset__image-container__image"
-            src="http://placekitten.com/200/300"
+            src="https://via.placeholder.com/200x300"
           />
         </div>
         <div
@@ -70,7 +70,7 @@ exports[`renders the component 1`] = `
           <img
             alt="picture of a cat"
             class="Asset__image-container__image"
-            src="http://placekitten.com/200/300"
+            src="https://via.placeholder.com/200x300"
           />
         </div>
         <div
@@ -235,7 +235,7 @@ exports[`renders the component with a custom drag handle 1`] = `
           <img
             alt="picture of a cat"
             class="Asset__image-container__image"
-            src="http://placekitten.com/200/300"
+            src="https://via.placeholder.com/200x300"
           />
         </div>
         <div
@@ -305,7 +305,7 @@ exports[`renders the component with a drag handle 1`] = `
             <img
               alt="picture of a cat"
               class="Asset__image-container__image"
-              src="http://placekitten.com/200/300"
+              src="https://via.placeholder.com/200x300"
             />
           </div>
           <div
@@ -389,7 +389,7 @@ exports[`renders the component with actions 1`] = `
           <img
             alt="picture of a cat"
             class="Asset__image-container__image"
-            src="http://placekitten.com/200/300"
+            src="https://via.placeholder.com/200x300"
           />
         </div>
         <div
@@ -433,7 +433,7 @@ exports[`renders the component with an additional class name 1`] = `
           <img
             alt="picture of a cat"
             class="Asset__image-container__image"
-            src="http://placekitten.com/200/300"
+            src="https://via.placeholder.com/200x300"
           />
         </div>
         <div
@@ -550,7 +550,7 @@ exports[`renders the component without actions 1`] = `
           <img
             alt="picture of a cat"
             class="Asset__image-container__image"
-            src="http://placekitten.com/200/300"
+            src="https://via.placeholder.com/200x300"
           />
         </div>
         <div
