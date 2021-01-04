@@ -41,6 +41,10 @@
   margin-right: calc(1rem * (8 / var(--font-base-default)));
 }
 
+.Button__dropdown-icon {
+  margin-left: calc(1rem * (8 / var(--font-base-default)));
+}
+
 .Button--full-width {
   width: 100%;
 }
@@ -203,6 +207,7 @@
 }
 
 .Button__label {
+  font-size: calc(1rem * (16 / var(--font-base-default)));
   color: var(--color-contrast-mid);
   line-height: 2;
   white-space: nowrap;
@@ -212,22 +217,17 @@
 
 .Button--small,
 .Button--small:link {
-  height: calc(1rem * (30 / var(--font-base-default)));
+  height: calc(1rem * (32 / var(--font-base-default)));
 
   & .Button__inner-wrapper {
-    padding: 0 calc(1rem * (10 / var(--font-base-default)));
-  }
-
-  & .Button__label {
-    font-size: calc(1rem * (14 / var(--font-base-default)));
+    padding: 0 calc(1rem * (14 / var(--font-base-default)));
   }
 }
 
 .Button--large {
   height: calc(1rem * (48 / var(--font-base-default)));
+
   & .Button__label {
-    line-height: 1;
-    margin: 0.25rem;
     font-size: 1.15rem;
   }
 }
