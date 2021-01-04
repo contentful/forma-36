@@ -38,6 +38,7 @@
 
 .Button__icon {
   min-width: calc(1rem * (18 / var(--font-base-default)));
+  margin-right: calc(1rem * (8 / var(--font-base-default)));
 }
 
 .Button--full-width {
@@ -196,13 +197,12 @@
   display: flex;
   height: 100%;
   z-index: var(--z-index-default);
-  padding: 0 calc(1rem * (14 / var(--font-base-default)));
+  padding: 0 calc(1rem * (16 / var(--font-base-default)));
   align-items: center;
   justify-content: center;
 }
 
 .Button__label {
-  margin: 0 calc(1rem * (4 / var(--font-base-default)));
   color: var(--color-contrast-mid);
   line-height: 2;
   white-space: nowrap;
