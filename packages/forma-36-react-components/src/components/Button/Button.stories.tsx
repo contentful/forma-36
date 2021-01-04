@@ -21,7 +21,6 @@ export default {
     testId: { control: { disable: true } },
     onClick: { control: { disable: true } },
     onBlur: { control: { disable: true } },
-    loading: { control: { disable: true } },
   },
 };
 

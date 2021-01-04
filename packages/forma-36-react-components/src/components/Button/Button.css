@@ -233,6 +233,7 @@
 }
 
 .Button__spinner {
+  margin-left: calc(1rem * (8 / var(--font-base-default)));
   transition: opacity,
     width var(--transition-duration-default) var(--transition-easing-default);
 }

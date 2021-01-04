@@ -110,7 +110,7 @@ export const Button = (props: ButtonProps) => {
           />
         )}
         {children && <span className={styles.Button__label}>{children}</span>}
-        {indicateDropdown && (
+        {indicateDropdown && !loading && (
           <Icon
             className={styles['Button__dropdown-icon']}
             icon="ArrowDown"
@@ -133,7 +133,9 @@ export const Button = (props: ButtonProps) => {
             className={styles.Button__spinner}
             size="small"
             color={
-              buttonType === 'muted' || buttonType === 'naked'
+              buttonType === 'muted' ||
+              buttonType === 'warning' ||
+              buttonType === 'naked'
                 ? 'default'
                 : 'white'
             }
