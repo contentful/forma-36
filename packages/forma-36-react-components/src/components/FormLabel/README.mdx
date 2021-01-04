@@ -1,0 +1,59 @@
+`FormLabel` makes it possible to define input label components.
+
+## Table of contents
+
+- [How to use FormLabel](#how-to-use-FormLabel)
+- [Component variations](#component-variations)
+- [Code examples](#code-examples)
+- [Content recommendations](#content-recommendations)
+- [Accessibility](#accessibility)
+
+## How to use FormLabel
+
+- Provide html for all properties of the input label
+
+## Component variations
+
+### Basic example
+
+```jsx
+<React.Fragment>
+  <FormLabel htmlFor="name">Full name</FormLabel>
+  <TextInput
+    name="name"
+    value="Claus Mitchell"
+    className="f36-margin-bottom--xs"
+  />
+</React.Fragment>
+```
+
+## FormLabel required properties (`required, requiredText`)
+
+To communicate that the corresponding input of the `FormLabel` is required, use the props `required` and `requiredText`.
+Use this guidance to determine the correct required properties to use based on the context.
+
+```jsx
+<React.Fragment>
+  <FormLabel htmlFor="example1" required>
+    Name
+  </FormLabel>
+  <TextInput
+    name="example1"
+    value="Claus Mitchell"
+    className="f36-margin-bottom--m"
+  />
+  <FormLabel htmlFor="example2" required requiredText="required">
+    Email address
+  </FormLabel>
+  <TextInput value="claus.mitchell@contentful.com" name="example2" />
+</React.Fragment>
+```
+
+## Content recommendations
+
+- Do not use punctuation following a label
+- Use sentence style caps (in which only the first word of a sentence or term is capitalized) on labels
+
+## Accessibility
+
+Missing

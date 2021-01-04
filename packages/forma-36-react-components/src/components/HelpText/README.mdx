@@ -1,0 +1,40 @@
+`HelpText` is a styled copy block with guidance, placed in the context of form components.
+
+## Table of contents
+
+- [How to use HelpText](#how-to-use-HelpText)
+- [Code examples](#code-examples)
+- [Content recommendations](#content-recommendations)
+- [Accessibility](#accessibility)
+
+## How to use HelpText
+
+- Only use this component in the context of a form, and as corresponding guidance to an input field
+
+## Code examples
+
+### Basic example
+
+```jsx
+<React.Fragment>
+  <FormLabel htmlFor="name">Full name</FormLabel>
+  <TextInput
+    name="name"
+    value="Claus Mitchell"
+    className="f36-margin-bottom--xs"
+  />
+  <HelpText>Enter your first and last name</HelpText>
+</React.Fragment>
+```
+
+## Content recommendations
+
+- Use direct, succinct copy that helps the user to successfully complete the form
+- Do not preface the instructions with introductory text, such as "please"
+- To add additional context, link out to documentation
+- Do not use punctuation
+- Use sentence style caps (in which only the first word of a sentence or term is capitalized)
+
+## Accessibility
+
+Missing
