@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import React from 'react';
 import PropTypes from 'prop-types';
 import tokens from '@contentful/forma-36-tokens';

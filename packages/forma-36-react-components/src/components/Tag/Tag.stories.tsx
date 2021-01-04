@@ -50,7 +50,7 @@ storiesOf('Components/Tag', module)
       {tagType.map((type, idx) => (
         <Flex marginBottom="spacingM" alignItems="center" key={idx}>
           <Flex marginRight="spacingS">
-            <Tag tagType={type}>{type}</Tag>
+            <Tag tagType={type as any}>{type}</Tag>
           </Flex>
         </Flex>
       ))}

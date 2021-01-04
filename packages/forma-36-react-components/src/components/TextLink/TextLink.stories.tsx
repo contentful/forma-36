@@ -64,7 +64,7 @@ export const overview = () => (
           <TextLink
             href="https://www.wikiwand.com/en/Potsdam"
             target="_blanck"
-            linkType={color}
+            linkType={color as any}
           >
             Potsdam
           </TextLink>

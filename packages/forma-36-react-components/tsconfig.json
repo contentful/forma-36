@@ -1,28 +1,8 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "allowJs": false,
-    "allowSyntheticDefaultImports": true,
-    "checkJs": false,
-    "declaration": true,
-    "esModuleInterop": true,
-    "jsx": "react",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "outDir": "dist",
-    "resolveJsonModule": true,
-    "rootDir": "./src",
-    "skipLibCheck": true,
-    "strict": true,
-    "suppressImplicitAnyIndexErrors": true,
-    "target": "esnext",
     "typeRoots": ["node_modules/@types", "./typings.d.ts"]
   },
   "include": ["./"],
-  "exclude": [
-    "dist",
-    "dist-storybook",
-    "node_modules",
-    "**/*.stories.tsx",
-    "**/*.test.tsx"
-  ]
+  "exclude": ["dist", "dist-storybook", "node_modules"]
 }

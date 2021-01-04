@@ -1,7 +1,7 @@
-const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const postcssOptions = require('./postcss.config.js');
 
 module.exports = {
   entry: ['./src/index.ts', './src/alpha.ts'],
@@ -61,11 +61,7 @@ module.exports = {
           },
           {
             loader: 'postcss-loader',
-            options: {
-              config: {
-                path: path.resolve(__dirname, './postcss.config.js'),
-              },
-            },
+            options: { postcssOptions },
           },
         ],
       },
@@ -86,11 +82,7 @@ module.exports = {
           },
           {
             loader: 'postcss-loader',
-            options: {
-              config: {
-                path: path.resolve(__dirname, './postcss.config.js'),
-              },
-            },
+            options: { postcssOptions },
           },
         ],
       },

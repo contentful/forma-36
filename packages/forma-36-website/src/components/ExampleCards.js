@@ -60,7 +60,7 @@ const ExampleCards = ({ goodExample, badExample }) => (
       <Card css={styles.card}>
         <Subheading css={styles.title}>
           <Icon icon="Warning" color="negative" css={styles.icon} />
-          Don't
+          {"Don't"}
         </Subheading>
         <div css={styles.example}>{badExample.example}</div>
         {badExample.info && (

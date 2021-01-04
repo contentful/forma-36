@@ -47,11 +47,14 @@ jobs:
       - attach_workspace:
           at: .
       - run:
+          name: Prettier
+          command: yarn prettier:check
+      - run:
           name: Lint
           command: yarn lint
       - run:
           name: Check Types
-          command: yarn type-check
+          command: yarn tsc
       - run:
           name: Test
           command: yarn test
@@ -89,14 +92,14 @@ workflows:
       - lint-and-test:
           requires:
             - prepare-dependencies
-      - chromatic-deployment:
-          requires:
-            - prepare-dependencies
-            - lint-and-test
+      # - chromatic-deployment:
+      #     requires:
+      #       - prepare-dependencies
+      #       - lint-and-test
       - release:
           filters:
             branches:
               only: master
           requires:
             - lint-and-test
-            - chromatic-deployment
+            # - chromatic-deployment
