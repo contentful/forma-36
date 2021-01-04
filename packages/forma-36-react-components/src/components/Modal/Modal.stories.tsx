@@ -14,7 +14,7 @@ function fillArray(value: string, len: number) {
 }
 
 function DefaultStory() {
-  const [isShown, setShown] = useState(false);
+  const [isShown, setShown] = useState(true);
   return (
     <div>
       <Button
@@ -72,7 +72,7 @@ function DefaultStory() {
 }
 
 function LongModalStory() {
-  const [isShown, setShown] = useState(false);
+  const [isShown, setShown] = useState(true);
   return (
     <div>
       <Button onClick={() => setShown(true)}>
@@ -97,7 +97,7 @@ function LongModalStory() {
 }
 
 function ControllerModalStory() {
-  const [isShown, setShown] = useState(false);
+  const [isShown, setShown] = useState(true);
   return (
     <div>
       <Button onClick={() => setShown(true)}>Show centered modal</Button>

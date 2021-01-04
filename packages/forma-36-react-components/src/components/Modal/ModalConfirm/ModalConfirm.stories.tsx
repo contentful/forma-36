@@ -8,7 +8,7 @@ import Button from '../../Button';
 import TextInput from '../../TextInput';
 
 function DefaultStory() {
-  const [isShown, setShown] = useState(false);
+  const [isShown, setShown] = useState(true);
   return (
     <div>
       <Button buttonType="negative" onClick={() => setShown(true)}>
@@ -90,7 +90,7 @@ function DefaultStory() {
 }
 
 function ComplexStory() {
-  const [isShown, setShown] = useState(false);
+  const [isShown, setShown] = useState(true);
   const [isLoading, setLoading] = useState(false);
   const [repeat, setRepeat] = useState('');
 
