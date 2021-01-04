@@ -2,7 +2,7 @@
 
 exports[`renders the button as active 1`] = `
 <button
-  class="Button Button--primary Button--is-active"
+  class="Button Button--primary Button--medium Button--is-active"
   data-test-id="cf-ui-button"
   type="button"
 >
@@ -21,7 +21,7 @@ exports[`renders the button as active 1`] = `
 
 exports[`renders the button as link 1`] = `
 <a
-  class="Button Button--primary"
+  class="Button Button--primary Button--medium"
   data-test-id="cf-ui-button"
   href="/"
   type="button"
@@ -41,7 +41,7 @@ exports[`renders the button as link 1`] = `
 
 exports[`renders the component 1`] = `
 <button
-  class="Button Button--primary"
+  class="Button Button--primary Button--medium"
   data-test-id="cf-ui-button"
   type="button"
 >
@@ -60,7 +60,7 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component as naked 1`] = `
 <button
-  class="Button Button--naked"
+  class="Button Button--naked Button--medium"
   data-test-id="cf-ui-button"
   type="button"
 >
@@ -79,7 +79,7 @@ exports[`renders the component as naked 1`] = `
 
 exports[`renders the component as primary 1`] = `
 <button
-  class="Button Button--primary"
+  class="Button Button--primary Button--medium"
   data-test-id="cf-ui-button"
   type="button"
 >
@@ -98,7 +98,7 @@ exports[`renders the component as primary 1`] = `
 
 exports[`renders the component disabled 1`] = `
 <button
-  class="Button Button--primary Button--disabled"
+  class="Button Button--primary Button--disabled Button--medium"
   data-test-id="cf-ui-button"
   disabled=""
   type="button"
@@ -118,7 +118,7 @@ exports[`renders the component disabled 1`] = `
 
 exports[`renders the component full width 1`] = `
 <button
-  class="Button Button--primary Button--full-width"
+  class="Button Button--primary Button--medium Button--full-width"
   data-test-id="cf-ui-button"
   type="button"
 >
@@ -137,7 +137,7 @@ exports[`renders the component full width 1`] = `
 
 exports[`renders the component in loading state 1`] = `
 <button
-  class="Button Button--primary"
+  class="Button Button--primary Button--medium"
   data-test-id="cf-ui-button"
   type="button"
 >
@@ -173,7 +173,7 @@ exports[`renders the component in loading state 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <button
-  class="Button my-extra-class Button--primary"
+  class="Button my-extra-class Button--primary Button--medium"
   data-test-id="cf-ui-button"
   type="button"
 >
@@ -192,7 +192,7 @@ exports[`renders the component with an additional class name 1`] = `
 
 exports[`renders the component with dropdown indicator 1`] = `
 <button
-  class="Button Button--primary"
+  class="Button Button--primary Button--medium"
   data-test-id="cf-ui-button"
   type="button"
 >
@@ -226,7 +226,7 @@ exports[`renders the component with dropdown indicator 1`] = `
 
 exports[`renders the component with icon 1`] = `
 <button
-  class="Button Button--primary"
+  class="Button Button--primary Button--medium"
   data-test-id="cf-ui-button"
   type="button"
 >

@@ -69,15 +69,14 @@
   background-color: transparent;
   border: none;
 
-  &:hover:not(.Button--disabled),
-  &:focus:not(.Button--disabled) {
+  &.Button--is-active:not(.Button--disabled),
+  &:active:not(.Button--disabled),
+  &:hover:not(.Button--disabled) {
     background-color: var(--color-element-light);
   }
 
-  &:active:not(.Button--disabled),
-  &.Button--is-active:not(.Button--disabled) {
-    transition: none;
-    background-color: var(--color-element-mid);
+  &:focus:not(.Button--disabled) {
+    box-shadow: 0px 0px 0px 3px var(--color-element-light);
   }
 
   &.Button:link {
@@ -165,24 +164,16 @@
   background-color: var(--color-orange-mid);
   background-size: 100% 200%;
 
-  &:hover:not(.Button--disabled),
-  &:focus:not(.Button--disabled) {
+  &.Button--is-active:not(.Button--disabled),
+  &:active:not(.Button--disabled),
+  &:hover:not(.Button--disabled) {
     background-position: 0 100%;
     border-color: var(--color-orange-base);
     background-color: var(--color-orange-base);
   }
 
   &:focus:not(.Button--disabled) {
-    border-color: var(--color-orange-base);
-    background-color: var(--color-orange-base);
-  }
-
-  &:active:not(.Button--disabled),
-  &.Button--is-active:not(.Button--disabled) {
-    transition: none;
-    background-image: none;
-    border-color: var(--color-orange-base);
-    background-color: var(--color-orange-base);
+    box-shadow: 0px 0px 0px 3px var(--color-orange-light);
   }
 
   &.Button:link {
