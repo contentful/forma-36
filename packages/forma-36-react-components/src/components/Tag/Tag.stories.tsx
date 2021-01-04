@@ -2,7 +2,9 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, select } from '@storybook/addon-knobs';
 
-import Tag from './Tag';
+import Tag, { tagType } from './Tag';
+import SectionHeading from '../Typography/SectionHeading';
+import Flex from '../Flex/Flex';
 
 storiesOf('Components/Tag', module)
   .addParameters({
@@ -39,4 +41,18 @@ storiesOf('Components/Tag', module)
     >
       {text('Children', 'Published')}
     </Tag>
+  ))
+  .add('overview', () => (
+    <>
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Tag types overview</SectionHeading>
+      </Flex>
+      {tagType.map((type, idx) => (
+        <Flex marginBottom="spacingM" alignItems="center" key={idx}>
+          <Flex marginRight="spacingS">
+            <Tag tagType={type}>{type}</Tag>
+          </Flex>
+        </Flex>
+      ))}
+    </>
   ));

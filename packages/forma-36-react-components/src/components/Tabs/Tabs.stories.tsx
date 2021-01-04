@@ -6,6 +6,8 @@ import { text, boolean } from '@storybook/addon-knobs';
 import Tabs from './Tabs';
 import Tab from './Tab';
 import TabPanel from './TabPanel';
+import SectionHeading from '../Typography/SectionHeading';
+import Flex from '../Flex/Flex';
 
 function DefaultStory() {
   const [selected, setSelected] = useState('first');
@@ -117,4 +119,40 @@ storiesOf('Components/Tabs', module)
     subcomponents: { Tabs, TabPanel },
   })
   .add('default', () => <DefaultStory />)
-  .add('as navigation', () => <AsNavigationStory />);
+  .add('as navigation', () => <AsNavigationStory />)
+  .add('overview', () => (
+    <>
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Tabs default</SectionHeading>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <Tabs role="navigation">
+          <Tab id="first" href="https://contentful.com" selected>
+            First
+          </Tab>
+          <Tab id="second" href="https://contentful.com">
+            Second
+          </Tab>
+          <Tab id="third" href="https://contentful.com">
+            Third
+          </Tab>
+        </Tabs>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Tabs with divider</SectionHeading>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <Tabs role="navigation" withDivider>
+          <Tab id="first" href="https://contentful.com" selected>
+            First
+          </Tab>
+          <Tab id="second" href="https://contentful.com">
+            Second
+          </Tab>
+          <Tab id="third" href="https://contentful.com">
+            Third
+          </Tab>
+        </Tabs>
+      </Flex>
+    </>
+  ));

@@ -5,6 +5,8 @@ import { text, boolean, select } from '@storybook/addon-knobs';
 
 import Select from './Select';
 import Option from './Option';
+import Flex from '../Flex/Flex';
+import SectionHeading from '../Typography/SectionHeading';
 
 storiesOf('Components/Select', module)
   .addParameters({
@@ -37,4 +39,71 @@ storiesOf('Components/Select', module)
       <Option value="optionOne">Option 1</Option>
       <Option value="optionTwo">Long Option 2</Option>
     </Select>
+  ))
+  .add('overview', () => (
+    <>
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Select default</SectionHeading>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <Select id="optionSelect" name="optionSelect">
+          <Option value="optionOne">Option 1</Option>
+          <Option value="optionTwo">Long Option 2</Option>
+        </Select>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Select full width</SectionHeading>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <Select id="optionSelect" name="optionSelect" width="full">
+          <Option value="optionOne">Option 1</Option>
+          <Option value="optionTwo">Long Option 2</Option>
+        </Select>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Select large width</SectionHeading>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <Select id="optionSelect" name="optionSelect" width="large">
+          <Option value="optionOne">Option 1</Option>
+          <Option value="optionTwo">Long Option 2</Option>
+        </Select>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Select small width</SectionHeading>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <Select id="optionSelect" name="optionSelect" width="small">
+          <Option value="optionOne">Option 1</Option>
+          <Option value="optionTwo">Long Option 2</Option>
+        </Select>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Select auto width</SectionHeading>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <Select id="optionSelect" name="optionSelect" width="auto">
+          <Option value="optionOne">Option 1</Option>
+          <Option value="optionTwo">Long Option 2</Option>
+        </Select>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Select disabled</SectionHeading>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <Select id="optionSelect" name="optionSelect" isDisabled>
+          <Option value="optionOne">Option 1</Option>
+          <Option value="optionTwo">Long Option 2</Option>
+        </Select>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Select with error</SectionHeading>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <Select id="optionSelect" name="optionSelect" hasError>
+          <Option value="optionOne">Option 1</Option>
+          <Option value="optionTwo">Long Option 2</Option>
+        </Select>
+      </Flex>
+    </>
   ));

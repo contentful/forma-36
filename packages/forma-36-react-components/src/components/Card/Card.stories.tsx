@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import type { Meta, Story } from '@storybook/react/types-6-0';
 
 import { Typography } from '../Typography/Typography';
 import { Heading } from '../Typography/Heading';
 import { Paragraph } from '../Typography/Paragraph';
+import Flex from '../Flex/Flex';
+import SectionHeading from '../Typography/SectionHeading';
 
 import { Card, CardProps } from './Card';
 
@@ -12,9 +15,9 @@ export default {
   parameters: {
     propTypes: Card['__docgenInfo'],
   },
-};
+} as Meta;
 
-export const Default = ({ children, ...args }: CardProps) => {
+export const Default: Story<CardProps> = ({ children, ...args }) => {
   return (
     <Card {...args}>
       <Typography>
@@ -46,7 +49,7 @@ export const WithOnClick = (args: CardProps) => {
   );
 };
 
-export const SelectableCards = () => {
+export const SelectableCards: Story<CardProps> = () => {
   const [taco, setTaco] = useState(false);
   const [pizza, setPizza] = useState(false);
   const [broccoli, setBroccoli] = useState(false);
@@ -80,7 +83,7 @@ export const SelectableCards = () => {
   );
 };
 
-export const WithLinkAndTarget = (args: CardProps) => {
+export const WithLinkAndTarget: Story<CardProps> = (args) => {
   return (
     <Card {...args}>
       <Typography>
@@ -95,6 +98,79 @@ export const WithLinkAndTarget = (args: CardProps) => {
     </Card>
   );
 };
+
+export const overview: Story<CardProps> = (args) => {
+  return (
+    <>
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Card with link and target</SectionHeading>
+      </Flex>
+      <Card {...args}>
+        <Typography>
+          <Heading>Forma36</Heading>
+          <Paragraph>
+            Forma 36 is an open-source design system by Contentful created with
+            the intent to reduce the overhead of creating UI by providing tools
+            and guidance for digital teams building and extending Contentful
+            products.
+          </Paragraph>
+        </Typography>
+      </Card>
+
+      <Flex marginBottom="spacingS" marginTop="spacingM">
+        <SectionHeading element="h3">Card selected</SectionHeading>
+      </Flex>
+      <Card selected>
+        <Heading>Forma36</Heading>
+        <Paragraph>
+          Forma 36 is an open-source design system by Contentful created with
+          the intent to reduce the overhead of creating UI by providing tools
+          and guidance for digital teams building and extending Contentful
+          products.
+        </Paragraph>
+      </Card>
+
+      <Flex marginBottom="spacingS" marginTop="spacingM">
+        <SectionHeading element="h3">Card with default padding</SectionHeading>
+      </Flex>
+      <Card padding="default">
+        <Heading>Forma36</Heading>
+        <Paragraph>
+          Forma 36 is an open-source design system by Contentful created with
+          the intent to reduce the overhead of creating UI by providing tools
+          and guidance for digital teams building and extending Contentful
+          products.
+        </Paragraph>
+      </Card>
+      <Flex marginBottom="spacingS" marginTop="spacingM">
+        <SectionHeading element="h3">Card with large padding</SectionHeading>
+      </Flex>
+      <Card padding="large">
+        <Heading>Forma36</Heading>
+        <Paragraph>
+          Forma 36 is an open-source design system by Contentful created with
+          the intent to reduce the overhead of creating UI by providing tools
+          and guidance for digital teams building and extending Contentful
+          products.
+        </Paragraph>
+      </Card>
+
+      <Flex marginBottom="spacingS" marginTop="spacingM">
+        <SectionHeading element="h3">Card without padding</SectionHeading>
+      </Flex>
+      <Card padding="none">
+        <Heading>Forma36</Heading>
+        <Paragraph>
+          Forma 36 is an open-source design system by Contentful created with
+          the intent to reduce the overhead of creating UI by providing tools
+          and guidance for digital teams building and extending Contentful
+          products.
+        </Paragraph>
+      </Card>
+    </>
+  );
+};
+
 WithLinkAndTarget.args = {
   href: 'https://f36.contentful.com/',
   target: '_blank',

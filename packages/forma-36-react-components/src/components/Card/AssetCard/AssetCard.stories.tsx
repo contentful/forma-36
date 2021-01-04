@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { storiesOf } from '@storybook/react';
 import { text, select, boolean } from '@storybook/addon-knobs';
 import { action } from '@storybook/addon-actions';
@@ -9,6 +10,8 @@ import DropdownList from '../../Dropdown/DropdownList';
 import DropdownListItem from '../../Dropdown/DropdownListItem';
 import CardDragHandle from './../CardDragHandle';
 import { types } from '../../Asset/Asset';
+import Flex from '../../Flex/Flex';
+import SectionHeading from '../../Typography/SectionHeading';
 
 storiesOf('Components/Card/AssetCard', module)
   .addParameters({
@@ -184,4 +187,175 @@ storiesOf('Components/Card/AssetCard', module)
         'default',
       )}
     />
+  ))
+  .add('overview', () => (
+    <>
+      <Flex flexDirection="column" marginBottom="spacingM">
+        <Flex marginBottom="spacingS">
+          <SectionHeading element="h3">
+            Published card small and default with image
+          </SectionHeading>
+        </Flex>
+        <Flex marginBottom="spacingS">
+          <AssetCard
+            status="published"
+            type="image"
+            src={text('src', 'https://placekitten.com/200/300')}
+            title={text('title', 'Image of a cat')}
+            size="default"
+          />
+          <AssetCard
+            status="published"
+            type="image"
+            src={text('src', 'https://placekitten.com/200/300')}
+            title={text('title', 'Image of a cat')}
+            size="small"
+          />
+        </Flex>
+      </Flex>
+      <Flex flexDirection="column" marginBottom="spacingM">
+        <Flex marginBottom="spacingS">
+          <SectionHeading element="h3">
+            Draft card small and default with image
+          </SectionHeading>
+        </Flex>
+        <Flex marginBottom="spacingS">
+          <AssetCard
+            status="draft"
+            type="image"
+            src={text('src', 'https://placekitten.com/200/300')}
+            title={text('title', 'Image of a cat')}
+            size="default"
+          />
+          <AssetCard
+            status="draft"
+            type="image"
+            src={text('src', 'https://placekitten.com/200/300')}
+            title={text('title', 'Image of a cat')}
+            size="small"
+          />
+        </Flex>
+      </Flex>
+      <Flex flexDirection="column" marginBottom="spacingM">
+        <Flex marginBottom="spacingS">
+          <SectionHeading element="h3">
+            archived card small and default with image
+          </SectionHeading>
+        </Flex>
+        <Flex marginBottom="spacingS">
+          <AssetCard
+            status="archived"
+            type="image"
+            src={text('src', 'https://placekitten.com/200/300')}
+            title={text('title', 'Image of a cat')}
+            size="default"
+          />
+          <AssetCard
+            status="archived"
+            type="image"
+            src={text('src', 'https://placekitten.com/200/300')}
+            title={text('title', 'Image of a cat')}
+            size="small"
+          />
+        </Flex>
+      </Flex>
+      <Flex flexDirection="column" marginBottom="spacingM">
+        <Flex marginBottom="spacingS">
+          <SectionHeading element="h3">
+            changed card small and default with image
+          </SectionHeading>
+        </Flex>
+        <Flex marginBottom="spacingS">
+          <AssetCard
+            status="changed"
+            type="image"
+            src={text('src', 'https://placekitten.com/200/300')}
+            title={text('title', 'Image of a cat')}
+            size="default"
+          />
+          <AssetCard
+            status="changed"
+            type="image"
+            src={text('src', 'https://placekitten.com/200/300')}
+            title={text('title', 'Image of a cat')}
+            size="small"
+          />
+        </Flex>
+      </Flex>
+      <Flex flexDirection="column" marginBottom="spacingM">
+        <Flex marginBottom="spacingS">
+          <SectionHeading element="h3">
+            Published card, small and default, with custom icon
+          </SectionHeading>
+        </Flex>
+        <Flex marginBottom="spacingS">
+          <AssetCard
+            status="published"
+            statusIcon={<Icon icon="Calendar" color="positive" />}
+            type="image"
+            src={text('src', 'https://placekitten.com/200/300')}
+            title={text('title', 'Image of a cat')}
+            size="default"
+          />
+          <AssetCard
+            status="published"
+            statusIcon={<Icon icon="Calendar" color="positive" />}
+            type="image"
+            src={text('src', 'https://placekitten.com/200/300')}
+            title={text('title', 'Image of a cat')}
+            size="small"
+          />
+        </Flex>
+      </Flex>
+      <Flex flexDirection="column" marginBottom="spacingM">
+        <Flex marginBottom="spacingS">
+          <SectionHeading element="h3">
+            card withDragHandle, small and default with image
+          </SectionHeading>
+        </Flex>
+        <Flex marginBottom="spacingS">
+          <AssetCard
+            status="published"
+            withDragHandle
+            type="image"
+            src={text('src', 'https://placekitten.com/200/300')}
+            title={text('title', 'Image of a cat')}
+            size="default"
+          />
+          <AssetCard
+            status="published"
+            withDragHandle
+            type="image"
+            src={text('src', 'https://placekitten.com/200/300')}
+            title={text('title', 'Image of a cat')}
+            size="small"
+          />
+        </Flex>
+      </Flex>
+      <Flex flexDirection="column" marginBottom="spacingM">
+        <Flex marginBottom="spacingS">
+          <SectionHeading element="h3">
+            loading state of card, small and default
+          </SectionHeading>
+        </Flex>
+        <Flex marginBottom="spacingS">
+          <AssetCard
+            status="published"
+            isLoading
+            type="image"
+            src={text('src', 'https://placekitten.com/200/300')}
+            title={text('title', 'Image of a cat')}
+            size="default"
+          />
+          <AssetCard
+            status="published"
+            isLoading
+            type="image"
+            src={text('src', 'https://placekitten.com/200/300')}
+            title={text('title', 'Image of a cat')}
+            size="small"
+          />
+        </Flex>
+      </Flex>
+    </>
   ));

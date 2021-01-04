@@ -3,6 +3,8 @@ import { storiesOf } from '@storybook/react';
 import { text, boolean } from '@storybook/addon-knobs';
 
 import Switch from './Switch';
+import SectionHeading from '../Typography/SectionHeading';
+import Flex from '../Flex/Flex';
 
 function DefaultStory() {
   const [isActive, setActive] = useState(false);
@@ -24,4 +26,26 @@ storiesOf('Components/Switch', module)
     propTypes: Switch['__docgenInfo'],
     component: Switch,
   })
-  .add('default', () => <DefaultStory />);
+  .add('default', () => <DefaultStory />)
+  .add('overview', () => (
+    <>
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Switch default</SectionHeading>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <Switch id="testSwitch" labelText="My label text" />
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Switch checked</SectionHeading>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <Switch id="testSwitch" isChecked labelText="My label text" />
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Switch disabled</SectionHeading>
+      </Flex>
+      <Flex marginBottom="spacingS">
+        <Switch id="testSwitch" isDisabled labelText="My label text" />
+      </Flex>
+    </>
+  ));

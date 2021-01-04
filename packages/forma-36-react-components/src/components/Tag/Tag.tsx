@@ -11,6 +11,15 @@ export type TagType =
   | 'secondary'
   | 'muted';
 
+export const tagType = [
+  'primary',
+  'positive',
+  'negative',
+  'warning',
+  'muted',
+  'secondary',
+];
+
 type Status = 'published' | 'draft' | 'archived' | 'changed' | 'deleted';
 
 const statusTagTypeMap = {

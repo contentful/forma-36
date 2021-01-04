@@ -34,20 +34,31 @@ export const basic = (args: ButtonProps) => (
   </Button>
 );
 
-export const typesOverview = (args: ButtonProps) => (
+export const overview = (args: ButtonProps) => (
   <>
     <Flex flexDirection="column">
       <Flex marginBottom="spacingS">
         <SectionHeading element="h3">Button variants</SectionHeading>
-        <br />
       </Flex>
       <Flex flexDirection="row" marginBottom="spacingM">
-        <Button buttonType="primary">primary</Button>
-        <Button buttonType="positive">posiitve</Button>
-        <Button buttonType="warning">warning</Button>
-        <Button buttonType="negative">negative</Button>
-        <Button buttonType="muted">muted</Button>
-        <Button buttonType="naked">naked</Button>
+        <Flex marginRight="spacingXs">
+          <Button buttonType="primary">primary</Button>
+        </Flex>
+        <Flex marginRight="spacingXs">
+          <Button buttonType="positive">posiitve</Button>
+        </Flex>
+        <Flex marginRight="spacingXs">
+          <Button buttonType="warning">warning</Button>
+        </Flex>
+        <Flex marginRight="spacingXs">
+          <Button buttonType="negative">negative</Button>
+        </Flex>
+        <Flex marginRight="spacingXs">
+          <Button buttonType="muted">muted</Button>
+        </Flex>
+        <Flex marginRight="spacingXs">
+          <Button buttonType="naked">naked</Button>
+        </Flex>
       </Flex>
     </Flex>
     <Flex flexDirection="column">
@@ -55,13 +66,19 @@ export const typesOverview = (args: ButtonProps) => (
         <SectionHeading element="h3">Button sizes</SectionHeading>
       </Flex>
       <Flex flexDirection="row" marginBottom="spacingM">
-        <Button buttonType={args.buttonType} size="small">
-          small
-        </Button>
-        <Button buttonType={args.buttonType}>default size</Button>
-        <Button buttonType={args.buttonType} size="large">
-          large
-        </Button>
+        <Flex marginRight="spacingXs">
+          <Button buttonType={args.buttonType} size="small">
+            small
+          </Button>
+        </Flex>
+        <Flex marginRight="spacingXs">
+          <Button buttonType={args.buttonType}>default size</Button>
+        </Flex>
+        <Flex marginRight="spacingXs">
+          <Button buttonType={args.buttonType} size="large">
+            large
+          </Button>
+        </Flex>
       </Flex>
     </Flex>
     <Flex flexDirection="column">
@@ -69,24 +86,36 @@ export const typesOverview = (args: ButtonProps) => (
         <SectionHeading element="h3">Button active state</SectionHeading>
       </Flex>
       <Flex flexDirection="row" marginBottom="spacingM">
-        <Button buttonType="primary" isActive>
-          primary isActive
-        </Button>
-        <Button buttonType="positive" isActive>
-          posiitve isActive
-        </Button>
-        <Button buttonType="warning" isActive>
-          warning isActive
-        </Button>
-        <Button buttonType="negative" isActive>
-          negative isActive
-        </Button>
-        <Button buttonType="muted" isActive>
-          muted isActive
-        </Button>
-        <Button buttonType="naked" isActive>
-          naked isActive
-        </Button>
+        <Flex marginRight="spacingXs">
+          <Button buttonType="primary" isActive>
+            primary isActive
+          </Button>
+        </Flex>
+        <Flex marginRight="spacingXs">
+          <Button buttonType="positive" isActive>
+            posiitve isActive
+          </Button>
+        </Flex>
+        <Flex marginRight="spacingXs">
+          <Button buttonType="warning" isActive>
+            warning isActive
+          </Button>
+        </Flex>
+        <Flex marginRight="spacingXs">
+          <Button buttonType="negative" isActive>
+            negative isActive
+          </Button>
+        </Flex>
+        <Flex marginRight="spacingXs">
+          <Button buttonType="muted" isActive>
+            muted isActive
+          </Button>
+        </Flex>
+        <Flex marginRight="spacingXs">
+          <Button buttonType="naked" isActive>
+            naked isActive
+          </Button>
+        </Flex>
       </Flex>
     </Flex>
 
@@ -95,24 +124,36 @@ export const typesOverview = (args: ButtonProps) => (
         <SectionHeading element="h3">Button disabled</SectionHeading>
       </Flex>
       <Flex flexDirection="row" marginBottom="spacingM">
-        <Button buttonType="primary" disabled>
-          primary disabled
-        </Button>
-        <Button buttonType="positive" disabled>
-          posiitve disabled
-        </Button>
-        <Button buttonType="warning" disabled>
-          warning disabled
-        </Button>
-        <Button buttonType="negative" disabled>
-          negative disabled
-        </Button>
-        <Button buttonType="muted" disabled>
-          muted disabled
-        </Button>
-        <Button buttonType="naked" disabled>
-          naked disabled
-        </Button>
+        <Flex marginRight="spacingXs">
+          <Button buttonType="primary" disabled>
+            primary disabled
+          </Button>
+        </Flex>
+        <Flex marginRight="spacingXs">
+          <Button buttonType="positive" disabled>
+            posiitve disabled
+          </Button>
+        </Flex>
+        <Flex marginRight="spacingXs">
+          <Button buttonType="warning" disabled>
+            warning disabled
+          </Button>
+        </Flex>
+        <Flex marginRight="spacingXs">
+          <Button buttonType="negative" disabled>
+            negative disabled
+          </Button>
+        </Flex>
+        <Flex marginRight="spacingXs">
+          <Button buttonType="muted" disabled>
+            muted disabled
+          </Button>
+        </Flex>
+        <Flex marginRight="spacingXs">
+          <Button buttonType="naked" disabled>
+            naked disabled
+          </Button>
+        </Flex>
       </Flex>
     </Flex>
     <Flex flexDirection="column">
@@ -120,24 +161,36 @@ export const typesOverview = (args: ButtonProps) => (
         <SectionHeading element="h3">Button with dropdown</SectionHeading>
       </Flex>
       <Flex flexDirection="row" marginBottom="spacingM">
-        <Button buttonType="primary" indicateDropdown>
-          primary with dropdown
-        </Button>
-        <Button buttonType="positive" indicateDropdown>
-          posiitve with dropdown
-        </Button>
-        <Button buttonType="warning" indicateDropdown>
-          warning with dropdown
-        </Button>
-        <Button buttonType="negative" indicateDropdown>
-          negative with dropdown
-        </Button>
-        <Button buttonType="muted" indicateDropdown>
-          muted with dropdown
-        </Button>
-        <Button buttonType="naked" indicateDropdown>
-          naked with dropdown
-        </Button>
+        <Flex marginRight="spacingXs">
+          <Button buttonType="primary" indicateDropdown>
+            primary with dropdown
+          </Button>
+        </Flex>
+        <Flex marginRight="spacingXs">
+          <Button buttonType="positive" indicateDropdown>
+            posiitve with dropdown
+          </Button>
+        </Flex>
+        <Flex marginRight="spacingXs">
+          <Button buttonType="warning" indicateDropdown>
+            warning with dropdown
+          </Button>
+        </Flex>
+        <Flex marginRight="spacingXs">
+          <Button buttonType="negative" indicateDropdown>
+            negative with dropdown
+          </Button>
+        </Flex>
+        <Flex marginRight="spacingXs">
+          <Button buttonType="muted" indicateDropdown>
+            muted with dropdown
+          </Button>
+        </Flex>
+        <Flex marginRight="spacingXs">
+          <Button buttonType="naked" indicateDropdown>
+            naked with dropdown
+          </Button>
+        </Flex>
       </Flex>
     </Flex>
 
@@ -146,24 +199,36 @@ export const typesOverview = (args: ButtonProps) => (
         <SectionHeading element="h3">Button loading</SectionHeading>
       </Flex>
       <Flex flexDirection="row" marginBottom="spacingM">
-        <Button buttonType="primary" loading>
-          primary loading
-        </Button>
-        <Button buttonType="positive" loading>
-          posiitve loading
-        </Button>
-        <Button buttonType="warning" loading>
-          warning loading
-        </Button>
-        <Button buttonType="negative" loading>
-          negative loading
-        </Button>
-        <Button buttonType="muted" loading>
-          muted loading
-        </Button>
-        <Button buttonType="naked" loading>
-          naked loading
-        </Button>
+        <Flex marginRight="spacingXs">
+          <Button buttonType="primary" loading>
+            primary loading
+          </Button>
+        </Flex>
+        <Flex marginRight="spacingXs">
+          <Button buttonType="positive" loading>
+            posiitve loading
+          </Button>
+        </Flex>
+        <Flex marginRight="spacingXs">
+          <Button buttonType="warning" loading>
+            warning loading
+          </Button>
+        </Flex>
+        <Flex marginRight="spacingXs">
+          <Button buttonType="negative" loading>
+            negative loading
+          </Button>
+        </Flex>
+        <Flex marginRight="spacingXs">
+          <Button buttonType="muted" loading>
+            muted loading
+          </Button>
+        </Flex>
+        <Flex marginRight="spacingXs">
+          <Button buttonType="naked" loading>
+            naked loading
+          </Button>
+        </Flex>
       </Flex>
     </Flex>
   </>

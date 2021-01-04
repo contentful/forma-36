@@ -8,6 +8,7 @@ import Heading from './../Heading';
 import Subheading from './../Subheading';
 import SectionHeading from '../SectionHeading';
 import Paragraph from './../Paragraph';
+import Flex from '../../Flex/Flex';
 
 storiesOf('Components/Typography/Typography', module)
   .addParameters({
@@ -103,4 +104,26 @@ storiesOf('Components/Typography/Typography', module)
       </Typography>
     ),
     { notes },
-  );
+  )
+  .add('overview', () => (
+    <>
+      <Flex marginBottom="spacingM">
+        <DisplayText size="large">This is Display text large</DisplayText>
+      </Flex>
+      <Flex marginBottom="spacingM">
+        <DisplayText>This is Display text</DisplayText>
+      </Flex>
+      <Flex marginBottom="spacingM">
+        <Heading>This is Heading</Heading>
+      </Flex>
+      <Flex marginBottom="spacingM">
+        <Subheading>This is Subheading</Subheading>
+      </Flex>
+      <Flex marginBottom="spacingM">
+        <SectionHeading>This is section heading</SectionHeading>
+      </Flex>
+      <Flex marginBottom="spacingM">
+        <Paragraph>This is Paragraph</Paragraph>
+      </Flex>
+    </>
+  ));

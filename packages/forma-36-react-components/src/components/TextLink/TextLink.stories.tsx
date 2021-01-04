@@ -1,8 +1,10 @@
 import React from 'react';
 
-import TextLink from './TextLink';
+import TextLink, { textLinkColor } from './TextLink';
 import Paragraph from '../Typography/Paragraph';
 import notes from './README.mdx';
+import SectionHeading from '../Typography/SectionHeading';
+import Flex from '../Flex/Flex';
 
 export default {
   title: 'Components/TextLink',
@@ -50,3 +52,65 @@ export const UsedWithText = () => {
     </Paragraph>
   );
 };
+
+export const overview = () => (
+  <>
+    <Flex marginBottom="spacingS">
+      <SectionHeading element="h3">Text link types</SectionHeading>
+    </Flex>
+    {textLinkColor.map((color, idx) => (
+      <Flex marginBottom="spacingM" alignItems="center" key={idx}>
+        <Flex marginRight="spacingS">
+          <TextLink
+            href="https://www.wikiwand.com/en/Potsdam"
+            target="_blanck"
+            linkType={color}
+          >
+            Potsdam
+          </TextLink>
+        </Flex>
+        <Paragraph>{color}</Paragraph>
+      </Flex>
+    ))}
+    <Flex marginBottom="spacingS">
+      <SectionHeading element="h3">Text link with icon on left</SectionHeading>
+    </Flex>
+    <Flex marginRight="spacingS">
+      <TextLink
+        href="https://www.wikiwand.com/en/Potsdam"
+        target="_blanck"
+        icon="Calendar"
+      >
+        Potsdam
+      </TextLink>
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <SectionHeading element="h3">
+        Text link with icon on the right
+      </SectionHeading>
+    </Flex>
+    <Flex marginRight="spacingS">
+      <TextLink
+        href="https://www.wikiwand.com/en/Potsdam"
+        target="_blanck"
+        icon="Calendar"
+        iconPosition="right"
+      >
+        Potsdam
+      </TextLink>
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <SectionHeading element="h3">Text link disabled</SectionHeading>
+    </Flex>
+    <Flex marginRight="spacingS">
+      <TextLink
+        href="https://www.wikiwand.com/en/Potsdam"
+        target="_blanck"
+        icon="Calendar"
+        disabled
+      >
+        Potsdam
+      </TextLink>
+    </Flex>
+  </>
+);

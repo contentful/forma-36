@@ -8,6 +8,8 @@ import DropdownListItem from './DropdownListItem';
 import Button from '../Button';
 import TextLink from '../TextLink';
 import DropdownList from './DropdownList';
+import Flex from '../Flex/Flex';
+import SectionHeading from '../Typography/SectionHeading';
 
 function DefaultStory() {
   const [isOpen, setOpen] = useState(false);
@@ -185,4 +187,52 @@ storiesOf('Components/Dropdown', module)
   })
   .add('default', () => <DefaultStory />)
   .add('scrollable', () => <ScrollableStory />)
-  .add('dynamic', () => <DynamicContentStory />);
+  .add('dynamic', () => <DynamicContentStory />)
+  .add('overview', () => (
+    <>
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Dropdown default</SectionHeading>
+      </Flex>
+      <DefaultStory />
+      <Flex marginBottom="spacingS" marginTop="spacingM">
+        <SectionHeading element="h3">Dropdown default open</SectionHeading>
+      </Flex>
+      <Dropdown
+        isOpen
+        isAutoalignmentEnabled
+        usePortal
+        position="bottom-left"
+        toggleElement={
+          <Button size="small" buttonType="muted" indicateDropdown>
+            Choose more options and settings
+          </Button>
+        }
+        className={text('className', '')}
+      >
+        <DropdownList>
+          <DropdownListItem isTitle>Entry Title</DropdownListItem>
+          <DropdownListItem onClick={action('onClick Element')}>
+            Embed existing entry
+          </DropdownListItem>
+          <Dropdown
+            position="right"
+            submenuToggleLabel="Create and embed existing entry"
+          >
+            <DropdownList>
+              <DropdownListItem onClick={action('submenu click')}>
+                Embed as inline element
+              </DropdownListItem>
+              <DropdownListItem isDisabled>
+                Embed as block element
+              </DropdownListItem>
+            </DropdownList>
+          </Dropdown>
+        </DropdownList>
+        <DropdownList border="top">
+          <DropdownListItem>
+            <TextLink href="http://google.com">This is a Link</TextLink>
+          </DropdownListItem>
+        </DropdownList>
+      </Dropdown>
+    </>
+  ));
