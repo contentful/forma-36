@@ -15,15 +15,6 @@ import Spinner from '../Spinner';
 
 import styles from './Button.css';
 
-export const buttonTypes = [
-  'primary',
-  'positive',
-  'negative',
-  'warning',
-  'muted',
-  'naked',
-];
-
 export interface ButtonProps {
   icon?: IconType;
   indicateDropdown?: boolean;
@@ -41,7 +32,7 @@ export interface ButtonProps {
     | 'muted'
     | 'naked';
   type?: 'button' | 'submit' | 'reset';
-  size?: 'small' | 'large';
+  size?: 'small' | 'medium' | 'large';
   href?: string;
   style?: CSSProperties;
   className?: string;
@@ -51,11 +42,11 @@ export interface ButtonProps {
 
 export const Button = (props: ButtonProps) => {
   const {
-    className,
     children,
+    className,
     icon,
     buttonType = 'primary',
-    size,
+    size = 'medium',
     isFullWidth = false,
     onBlur,
     testId = 'cf-ui-button',
