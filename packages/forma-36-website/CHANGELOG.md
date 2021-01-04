@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.11.0](https://github.com/contentful/forma-36/compare/forma-36-website@0.10.12...forma-36-website@0.11.0) (2021-01-04)
+
+
+### Features
+
+* export previous alpha components as stable ([ba1f919](https://github.com/contentful/forma-36/commit/ba1f91949be0517a2a03567bc8b3588037f5d021))
+
+
+
+
+
 ## [0.10.12](https://github.com/contentful/forma-36/compare/forma-36-website@0.10.11...forma-36-website@0.10.12) (2021-01-04)
 
 **Note:** Version bump only for package forma-36-website
