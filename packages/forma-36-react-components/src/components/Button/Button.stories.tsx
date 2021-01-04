@@ -3,7 +3,7 @@ import React from 'react';
 import Button, { ButtonProps } from './Button';
 import Flex from '../Flex/Flex';
 import SectionHeading from '../Typography/SectionHeading';
-import Paragraph from '../Typography/Paragraph';
+import Tag from '../Tag';
 import { iconName } from '../Icon/constants';
 
 import notes from './README.mdx';
@@ -64,7 +64,7 @@ export const Overview = (args: ButtonProps) => (
         </Flex>
       </Flex>
       <Flex marginBottom="spacingXs">
-        <Paragraph>(deprecated)</Paragraph>
+        <Tag tagType="warning">(deprecated)</Tag>
       </Flex>
       <Flex flexDirection="row" marginBottom="spacingM">
         <Flex marginRight="spacingXs">
@@ -87,17 +87,17 @@ export const Overview = (args: ButtonProps) => (
       <Flex flexDirection="row" marginBottom="spacingM">
         <Flex marginRight="spacingXs">
           <Button icon={args.icon} buttonType={args.buttonType} size="small">
-            small
+            Small
           </Button>
         </Flex>
         <Flex marginRight="spacingXs">
           <Button icon={args.icon} buttonType={args.buttonType}>
-            default size
+            Medium (default)
           </Button>
         </Flex>
         <Flex marginRight="spacingXs">
           <Button icon={args.icon} buttonType={args.buttonType} size="large">
-            large
+            Large
           </Button>
         </Flex>
       </Flex>
@@ -110,37 +110,37 @@ export const Overview = (args: ButtonProps) => (
       <Flex flexDirection="row" marginBottom="spacingM">
         <Flex marginRight="spacingXs">
           <Button icon={args.icon} buttonType="primary" isActive>
-            primary isActive
+            Primary isActive
           </Button>
         </Flex>
         <Flex marginRight="spacingXs">
           <Button icon={args.icon} buttonType="muted" isActive>
-            muted isActive
+            Muted isActive
           </Button>
         </Flex>
         <Flex marginRight="spacingXs">
           <Button icon={args.icon} buttonType="positive" isActive>
-            posiitve isActive
+            Posiitve isActive
           </Button>
         </Flex>
         <Flex marginRight="spacingXs">
           <Button icon={args.icon} buttonType="negative" isActive>
-            negative isActive
+            Negative isActive
           </Button>
         </Flex>
       </Flex>
       <Flex marginBottom="spacingXs">
-        <Paragraph>(deprecated)</Paragraph>
+        <Tag tagType="warning">(deprecated)</Tag>
       </Flex>
       <Flex flexDirection="row" marginBottom="spacingM">
         <Flex marginRight="spacingXs">
           <Button icon={args.icon} buttonType="warning" isActive>
-            warning isActive
+            Warning isActive
           </Button>
         </Flex>
         <Flex marginRight="spacingXs">
           <Button icon={args.icon} buttonType="naked" isActive>
-            naked isActive
+            Naked isActive
           </Button>
         </Flex>
       </Flex>
@@ -153,37 +153,37 @@ export const Overview = (args: ButtonProps) => (
       <Flex flexDirection="row" marginBottom="spacingM">
         <Flex marginRight="spacingXs">
           <Button icon={args.icon} buttonType="primary" disabled>
-            primary disabled
+            Primary disabled
           </Button>
         </Flex>
         <Flex marginRight="spacingXs">
           <Button icon={args.icon} buttonType="muted" disabled>
-            muted disabled
+            Muted disabled
           </Button>
         </Flex>
         <Flex marginRight="spacingXs">
           <Button icon={args.icon} buttonType="positive" disabled>
-            posiitve disabled
+            Posiitve disabled
           </Button>
         </Flex>
         <Flex marginRight="spacingXs">
           <Button icon={args.icon} buttonType="negative" disabled>
-            negative disabled
+            Negative disabled
           </Button>
         </Flex>
       </Flex>
       <Flex marginBottom="spacingXs">
-        <Paragraph>(deprecated)</Paragraph>
+        <Tag tagType="warning">(deprecated)</Tag>
       </Flex>
       <Flex flexDirection="row" marginBottom="spacingM">
         <Flex marginRight="spacingXs">
           <Button icon={args.icon} buttonType="warning" disabled>
-            warning disabled
+            Warning disabled
           </Button>
         </Flex>
         <Flex marginRight="spacingXs">
           <Button icon={args.icon} buttonType="naked" disabled>
-            naked disabled
+            Naked disabled
           </Button>
         </Flex>
       </Flex>
@@ -196,37 +196,37 @@ export const Overview = (args: ButtonProps) => (
       <Flex flexDirection="row" marginBottom="spacingM">
         <Flex marginRight="spacingXs">
           <Button icon={args.icon} buttonType="primary" indicateDropdown>
-            primary with dropdown
+            Primary with dropdown
           </Button>
         </Flex>
         <Flex marginRight="spacingXs">
           <Button icon={args.icon} buttonType="muted" indicateDropdown>
-            muted with dropdown
+            Muted with dropdown
           </Button>
         </Flex>
         <Flex marginRight="spacingXs">
           <Button icon={args.icon} buttonType="positive" indicateDropdown>
-            posiitve with dropdown
+            Posiitve with dropdown
           </Button>
         </Flex>
         <Flex marginRight="spacingXs">
           <Button icon={args.icon} buttonType="negative" indicateDropdown>
-            negative with dropdown
+            Negative with dropdown
           </Button>
         </Flex>
       </Flex>
       <Flex marginBottom="spacingXs">
-        <Paragraph>(deprecated)</Paragraph>
+        <Tag tagType="warning">(deprecated)</Tag>
       </Flex>
       <Flex flexDirection="row" marginBottom="spacingM">
         <Flex marginRight="spacingXs">
           <Button icon={args.icon} buttonType="warning" indicateDropdown>
-            warning with dropdown
+            Warning with dropdown
           </Button>
         </Flex>
         <Flex marginRight="spacingXs">
           <Button icon={args.icon} buttonType="naked" indicateDropdown>
-            naked with dropdown
+            Naked with dropdown
           </Button>
         </Flex>
       </Flex>
@@ -259,7 +259,7 @@ export const Overview = (args: ButtonProps) => (
         </Flex>
       </Flex>
       <Flex marginBottom="spacingXs">
-        <Paragraph>(deprecated)</Paragraph>
+        <Tag tagType="warning">(deprecated)</Tag>
       </Flex>
       <Flex flexDirection="row" marginBottom="spacingM">
         <Flex marginRight="spacingXs">
