@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import { text, boolean, select } from '@storybook/addon-knobs';
 
-import ModalConfirm from './ModalConfirm';
+import ModalConfirm, { ModalConfirmProps } from './ModalConfirm';
 import Button from '../../Button';
 import TextInput from '../../TextInput';
 
-function DefaultStory() {
+export function DefaultStory(props: ModalConfirmProps) {
   const [isShown, setShown] = useState(true);
   return (
     <div>
@@ -16,60 +14,7 @@ function DefaultStory() {
       </Button>
       <ModalConfirm
         isShown={isShown}
-        title={text('title', ModalConfirm.defaultProps.title)}
-        intent={select(
-          'intent',
-          ['negative', 'positive', 'primary'],
-          ModalConfirm.defaultProps.intent,
-        )}
-        secondaryIntent={select('secondaryIntent', [
-          'negative',
-          'positive',
-          'primary',
-          'muted',
-        ])}
-        size={select(
-          'size',
-          ['small', 'medium', 'large', '300px', '1500px'],
-          ModalConfirm.defaultProps.size,
-        )}
-        shouldCloseOnEscapePress={boolean(
-          'shouldCloseOnEscapePress',
-          ModalConfirm.defaultProps.shouldCloseOnEscapePress,
-        )}
-        shouldCloseOnOverlayClick={boolean(
-          'shouldCloseOnOverlayClick',
-          ModalConfirm.defaultProps.shouldCloseOnOverlayClick,
-        )}
-        confirmLabel={text(
-          'confirmLabel',
-          ModalConfirm.defaultProps.confirmLabel,
-        )}
-        secondaryLabel={text('secondaryLabel')}
-        cancelLabel={text('cancelLabel', ModalConfirm.defaultProps.cancelLabel)}
-        isConfirmDisabled={boolean(
-          'isConfirmDisabled',
-          ModalConfirm.defaultProps.isConfirmDisabled,
-        )}
-        isSecondaryDisabled={boolean('secondaryDisabled')}
-        isConfirmLoading={boolean(
-          'isConfirmLoading',
-          ModalConfirm.defaultProps.isConfirmLoading,
-        )}
-        isSecondaryLoading={boolean('isSecondaryLoading')}
-        testId={text('testId', ModalConfirm.defaultProps.testId)}
-        confirmTestId={text(
-          'confirmTestId',
-          ModalConfirm.defaultProps.confirmTestId,
-        )}
-        secondaryTestId={text(
-          'secondaryTestId',
-          ModalConfirm.defaultProps.secondaryTestId,
-        )}
-        cancelTestId={text(
-          'cancelTextId',
-          ModalConfirm.defaultProps.cancelTestId,
-        )}
+        {...props}
         onCancel={() => {
           setShown(false);
           action('onCancel')();
@@ -89,7 +34,11 @@ function DefaultStory() {
   );
 }
 
-function ComplexStory() {
+DefaultStory.args = {
+  ...ModalConfirm.defaultProps,
+};
+
+export function ComplexStory(props: ModalConfirmProps) {
   const [isShown, setShown] = useState(true);
   const [isLoading, setLoading] = useState(false);
   const [repeat, setRepeat] = useState('');
@@ -117,6 +66,7 @@ function ComplexStory() {
           }, 1500);
           action('onConfirm')();
         }}
+        {...props}
       >
         <p>
           Type <strong>unlock</strong> to allow confirming this modal
@@ -130,10 +80,45 @@ function ComplexStory() {
   );
 }
 
-storiesOf('Components/Modal/ModalConfirm', module)
-  .addParameters({
-    propTypes: ModalConfirm['__docgenInfo'],
-    component: ModalConfirm,
-  })
-  .add('default', () => <DefaultStory />)
-  .add('complex example', () => <ComplexStory />);
+ComplexStory.args = {
+  title: 'A really long modal',
+  ...ModalConfirm.defaultProps,
+};
+
+export default {
+  title: 'Components/Modal/ModalConfirm',
+  component: ModalConfirm,
+  parameters: {
+    propTypes: [ModalConfirm['__docgenInfo']],
+  },
+  decorators: [
+    // eslint-disable-next-line react/display-name
+    (storyFn) => (
+      <div style={{ width: '1200px', height: '800px' }}>{storyFn()}</div>
+    ),
+  ],
+  argTypes: {
+    children: { control: { disable: true } },
+    className: { control: { disable: true } },
+    testId: { control: { disable: true } },
+    position: { control: { type: 'select', options: ['center', 'top'] } },
+    size: {
+      control: {
+        type: 'select',
+        options: ['small', 'medium', 'large', '300px', '1500px'],
+      },
+    },
+    intent: {
+      control: {
+        type: 'select',
+        options: ['negative', 'positive', 'primary'],
+      },
+    },
+    secondaryIntent: {
+      control: {
+        type: 'select',
+        options: ['negative', 'positive', 'primary', 'muted'],
+      },
+    },
+  },
+};

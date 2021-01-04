@@ -1,8 +1,7 @@
 import React, { useState, MouseEventHandler } from 'react';
-import { storiesOf } from '@storybook/react';
-import { text, boolean, select } from '@storybook/addon-knobs';
+// import { text, boolean, select } from '@storybook/addon-knobs';
 
-import Modal from './Modal';
+import Modal, { ModalProps } from './Modal';
 import Button from '../Button';
 
 function fillArray(value: string, len: number) {
@@ -13,7 +12,17 @@ function fillArray(value: string, len: number) {
   return a;
 }
 
-function DefaultStory() {
+export function Basic({
+  title,
+  shouldCloseOnEscapePress,
+  shouldCloseOnOverlayClick,
+  size,
+  position,
+  testId,
+  className,
+  allowHeightOverflow,
+  topOffset,
+}: ModalProps) {
   const [isShown, setShown] = useState(true);
   return (
     <div>
@@ -25,35 +34,15 @@ function DefaultStory() {
         Open modal
       </Button>
       <Modal
-        title={text('title', 'Default modal')}
-        shouldCloseOnEscapePress={boolean(
-          'shouldCloseOnEscapePress',
-          Modal.defaultProps.shouldCloseOnEscapePress,
-        )}
-        shouldCloseOnOverlayClick={boolean(
-          'shouldCloseOnOverlayClick',
-          Modal.defaultProps.shouldCloseOnOverlayClick,
-        )}
-        size={select(
-          'size',
-          ['small', 'medium', 'large', 'fullWidth', 'zen', '200px', '1500px'],
-          Modal.defaultProps.size,
-        )}
-        position={select(
-          'position',
-          ['center', 'top'],
-          Modal.defaultProps.position,
-        )}
-        topOffset={text(
-          'topOffset (if position is top)',
-          Modal.defaultProps.topOffset,
-        )}
-        allowHeightOverflow={boolean(
-          'allowHeightOverflow (applicable if modal is long)',
-          Modal.defaultProps.allowHeightOverflow,
-        )}
-        testId={text('testId', Modal.defaultProps.testId)}
-        className={text('className', '')}
+        title={title}
+        shouldCloseOnEscapePress={shouldCloseOnEscapePress}
+        shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
+        size={size}
+        position={position}
+        topOffset={topOffset}
+        allowHeightOverflow={allowHeightOverflow}
+        testId={testId}
+        className={className}
         modalHeaderProps={{
           className: 'additional-modal-header-class',
         }}
@@ -71,7 +60,12 @@ function DefaultStory() {
   );
 }
 
-function LongModalStory() {
+Basic.args = {
+  title: 'Default modal',
+  ...Modal.defaultProps,
+};
+
+export function LongModal({ title, allowHeightOverflow }: ModalProps) {
   const [isShown, setShown] = useState(true);
   return (
     <div>
@@ -79,8 +73,8 @@ function LongModalStory() {
         Different behaviors for modal
       </Button>
       <Modal
-        title="A really long modal"
-        allowHeightOverflow={boolean('allowHeightOverflow', false)}
+        title={title}
+        allowHeightOverflow={allowHeightOverflow}
         isShown={isShown}
         onClose={() => setShown(false)}
       >
@@ -96,16 +90,18 @@ function LongModalStory() {
   );
 }
 
-function ControllerModalStory() {
+LongModal.args = {
+  title: 'A really long modal',
+  ...Modal.defaultProps,
+  allowHeightOverflow: false,
+};
+
+export function ControllerModal({ title }: ModalProps) {
   const [isShown, setShown] = useState(true);
   return (
     <div>
       <Button onClick={() => setShown(true)}>Show centered modal</Button>
-      <Modal
-        title="Centered modal"
-        isShown={isShown}
-        onClose={() => setShown(false)}
-      >
+      <Modal title={title} isShown={isShown} onClose={() => setShown(false)}>
         {({
           title,
           onClose,
@@ -131,11 +127,41 @@ function ControllerModalStory() {
   );
 }
 
-storiesOf('Components/Modal', module)
-  .addParameters({
-    propTypes: Modal['__docgenInfo'],
-    component: Modal,
-  })
-  .add('default', () => <DefaultStory />)
-  .add('long', () => <LongModalStory />)
-  .add('controlled', () => <ControllerModalStory />);
+ControllerModal.args = {
+  title: 'Centered modal',
+  ...Modal.defaultProps,
+};
+
+export default {
+  title: 'Components/Modal',
+  component: Modal,
+  parameters: {
+    propTypes: [Modal['__docgenInfo']],
+  },
+  decorators: [
+    // eslint-disable-next-line react/display-name
+    (storyFn) => (
+      <div style={{ width: '1200px', height: '800px' }}>{storyFn()}</div>
+    ),
+  ],
+  argTypes: {
+    children: { control: { disable: true } },
+    className: { control: { disable: true } },
+    testId: { control: { disable: true } },
+    position: { control: { type: 'select', options: ['center', 'top'] } },
+    size: {
+      control: {
+        type: 'select',
+        options: [
+          'small',
+          'medium',
+          'large',
+          'fullWidth',
+          'zen',
+          '200px',
+          '1500px',
+        ],
+      },
+    },
+  },
+};
