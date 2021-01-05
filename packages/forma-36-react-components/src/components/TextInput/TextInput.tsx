@@ -29,7 +29,7 @@ export type TextInputProps = {
   className?: string;
   withCopyButton?: boolean;
   testId?: string;
-  onChange?: ChangeEventHandler;
+  onChange?: ChangeEventHandler<HTMLInputElement>;
   onCopy?: (value: string) => void;
   value?: string;
   inputRef?: RefObject<HTMLInputElement>;
