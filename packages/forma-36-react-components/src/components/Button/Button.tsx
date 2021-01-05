@@ -101,19 +101,11 @@ export const Button = (props: ButtonProps) => {
       {...otherProps}
     >
       <TabFocusTrap className={styles['Button__inner-wrapper']}>
-        {icon && (
+        {icon && !loading && (
           <Icon
             className={styles.Button__icon}
             size={size === 'small' ? 'tiny' : 'small'}
             icon={icon}
-            color={iconColor}
-          />
-        )}
-        {children && <span className={styles.Button__label}>{children}</span>}
-        {indicateDropdown && !loading && (
-          <Icon
-            className={styles['Button__dropdown-icon']}
-            icon="ChevronDown"
             color={iconColor}
           />
         )}
@@ -131,7 +123,7 @@ export const Button = (props: ButtonProps) => {
         >
           <Spinner
             className={styles.Button__spinner}
-            size="small"
+            customSize={18}
             color={
               buttonType === 'muted' ||
               buttonType === 'warning' ||
@@ -141,6 +133,14 @@ export const Button = (props: ButtonProps) => {
             }
           />
         </CSSTransition>
+        {children && <span className={styles.Button__label}>{children}</span>}
+        {indicateDropdown && (
+          <Icon
+            className={styles['Button__dropdown-icon']}
+            icon="ChevronDown"
+            color={iconColor}
+          />
+        )}
       </TabFocusTrap>
     </Element>
   );

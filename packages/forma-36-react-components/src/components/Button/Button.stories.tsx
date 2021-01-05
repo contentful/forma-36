@@ -120,7 +120,7 @@ export const Overview = (args: ButtonProps) => (
         </Flex>
         <Flex marginRight="spacingXs">
           <Button icon={args.icon} buttonType="positive" isActive>
-            Posiitve isActive
+            Positive isActive
           </Button>
         </Flex>
         <Flex marginRight="spacingXs">
@@ -163,7 +163,7 @@ export const Overview = (args: ButtonProps) => (
         </Flex>
         <Flex marginRight="spacingXs">
           <Button icon={args.icon} buttonType="positive" disabled>
-            Posiitve disabled
+            Positive disabled
           </Button>
         </Flex>
         <Flex marginRight="spacingXs">
@@ -206,7 +206,7 @@ export const Overview = (args: ButtonProps) => (
         </Flex>
         <Flex marginRight="spacingXs">
           <Button icon={args.icon} buttonType="positive" indicateDropdown>
-            Posiitve with dropdown
+            Positive with dropdown
           </Button>
         </Flex>
         <Flex marginRight="spacingXs">
