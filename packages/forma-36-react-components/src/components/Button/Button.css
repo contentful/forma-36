@@ -54,10 +54,13 @@
   border-color: var(--color-element-dark);
   box-shadow: 0px 1px 0px rgb(25 37 50 / 4%);
 
-  &.Button--is-active:not(.Button--disabled),
-  &:active:not(.Button--disabled),
   &:hover:not(.Button--disabled) {
     background-color: var(--color-element-lightest);
+  }
+
+  &.Button--is-active:not(.Button--disabled),
+  &:active:not(.Button--disabled) {
+    background-color: var(--color-element-light);
   }
 
   &:focus:not(.Button--disabled) {
@@ -68,10 +71,14 @@
 .Button--naked {
   background-color: transparent;
   border: none;
+  box-shadow: none;
+
+  &:hover:not(.Button--disabled) {
+    background-color: var(--color-element-lightest);
+  }
 
   &.Button--is-active:not(.Button--disabled),
-  &:active:not(.Button--disabled),
-  &:hover:not(.Button--disabled) {
+  &:active:not(.Button--disabled) {
     background-color: var(--color-element-light);
   }
 
@@ -88,11 +95,15 @@
   border-color: var(--color-blue-mid);
   background-color: var(--color-blue-mid);
 
-  &.Button--is-active:not(.Button--disabled),
-  &:active:not(.Button--disabled),
   &:hover:not(.Button--disabled) {
     border-color: var(--color-blue-base);
     background-color: var(--color-blue-base);
+  }
+
+  &.Button--is-active:not(.Button--disabled),
+  &:active:not(.Button--disabled) {
+    border-color: var(--color-blue-dark);
+    background-color: var(--color-blue-dark);
   }
 
   &:focus:not(.Button--disabled) {
@@ -113,11 +124,15 @@
   background-color: var(--color-green-mid);
   background-size: 100% 200%;
 
-  &.Button--is-active:not(.Button--disabled),
-  &:active:not(.Button--disabled),
   &:hover:not(.Button--disabled) {
     border-color: var(--color-green-base);
     background-color: var(--color-green-base);
+  }
+
+  &.Button--is-active:not(.Button--disabled),
+  &:active:not(.Button--disabled) {
+    border-color: var(--color-green-dark);
+    background-color: var(--color-green-dark);
   }
 
   &:focus:not(.Button--disabled) {
@@ -138,12 +153,17 @@
   background-color: var(--color-red-mid);
   background-size: 100% 200%;
 
-  &.Button--is-active:not(.Button--disabled),
-  &:active:not(.Button--disabled),
   &:hover:not(.Button--disabled) {
     background-position: 0 100%;
     border-color: var(--color-red-base);
     background-color: var(--color-red-base);
+  }
+
+  &.Button--is-active:not(.Button--disabled),
+  &:active:not(.Button--disabled) {
+    background-position: 0 100%;
+    border-color: var(--color-red-dark);
+    background-color: var(--color-red-dark);
   }
 
   &:focus:not(.Button--disabled) {
@@ -164,12 +184,17 @@
   background-color: var(--color-orange-mid);
   background-size: 100% 200%;
 
-  &.Button--is-active:not(.Button--disabled),
-  &:active:not(.Button--disabled),
   &:hover:not(.Button--disabled) {
     background-position: 0 100%;
     border-color: var(--color-orange-base);
     background-color: var(--color-orange-base);
+  }
+
+  &.Button--is-active:not(.Button--disabled),
+  &:active:not(.Button--disabled) {
+    background-position: 0 100%;
+    border-color: var(--color-orange-dark);
+    background-color: var(--color-orange-dark);
   }
 
   &:focus:not(.Button--disabled) {
