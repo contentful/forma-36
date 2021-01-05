@@ -12,6 +12,9 @@ export default {
   parameters: {
     propTypes: Spinner['__docgenInfo'],
   },
+  argTypes: {
+    className: { control: { disable: true } },
+  },
 };
 
 export const Default = (args: SpinnerProps) => {
@@ -34,19 +37,13 @@ export const overview = () => {
   return (
     <>
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">Spinner color overview</SectionHeading>
+        <SectionHeading element="h3">Spinner colors</SectionHeading>
       </Flex>
       <Flex marginBottom="spacingM">
         Loading <Spinner color="default" />
       </Flex>
-      <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">Spinner color overview</SectionHeading>
-      </Flex>
       <Flex marginBottom="spacingM">
         Loading <Spinner color="primary" />
-      </Flex>
-      <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">Spinner color overview</SectionHeading>
       </Flex>
       <Flex
         marginBottom="spacingM"
