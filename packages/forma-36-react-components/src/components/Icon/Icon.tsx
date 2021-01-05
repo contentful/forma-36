@@ -281,20 +281,17 @@ const iconComponents = {
 };
 
 export type IconType = keyof typeof iconName;
-export type IconColorType =
-  | 'primary'
-  | 'positive'
-  | 'negative'
-  | 'warning'
-  | 'secondary'
-  | 'muted'
-  | 'white';
-
-export type IconSize = 'tiny' | 'small' | 'medium' | 'large';
 
 export interface IconProps {
-  size?: IconSize;
-  color?: IconColorType;
+  size?: 'tiny' | 'small' | 'medium' | 'large';
+  color?:
+    | 'primary'
+    | 'positive'
+    | 'negative'
+    | 'warning'
+    | 'secondary'
+    | 'muted'
+    | 'white';
   style?: CSSProperties;
   icon: IconType;
   className?: string;
