@@ -25,27 +25,37 @@ storiesOf('Components/RadioButton', module)
   ))
   .add('overview', () => (
     <>
-      <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">Radio button default</SectionHeading>
+      <Flex flexDirection="column" marginBottom="spacingM">
+        <Flex marginBottom="spacingS">
+          <SectionHeading element="h3">Radio button default</SectionHeading>
+        </Flex>
+        <RadioButton
+          id="Checkbox"
+          labelText="some label text"
+          name="some-name"
+        />
       </Flex>
-      <RadioButton id="Checkbox" labelText="some label text" name="some-name" />
-      <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">Radio button checked</SectionHeading>
+      <Flex flexDirection="column" marginBottom="spacingM">
+        <Flex marginBottom="spacingS">
+          <SectionHeading element="h3">Radio button checked</SectionHeading>
+        </Flex>
+        <RadioButton
+          id="Checkbox"
+          checked
+          labelText="some label text"
+          name="some-name"
+        />
       </Flex>
-      <RadioButton
-        id="Checkbox"
-        checked
-        labelText="some label text"
-        name="some-name"
-      />
-      <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">Radio button disabled</SectionHeading>
+      <Flex flexDirection="column" marginBottom="spacingM">
+        <Flex marginBottom="spacingS">
+          <SectionHeading element="h3">Radio button disabled</SectionHeading>
+        </Flex>
+        <RadioButton
+          id="Checkbox"
+          labelText="some label text"
+          disabled
+          name="some-name"
+        />
       </Flex>
-      <RadioButton
-        id="Checkbox"
-        labelText="some label text"
-        disabled
-        name="some-name"
-      />
     </>
   ));

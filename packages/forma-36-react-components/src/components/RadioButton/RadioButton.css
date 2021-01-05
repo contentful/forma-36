@@ -1,0 +1,77 @@
+@import 'settings/colors';
+@import 'settings/typography';
+@import 'settings/dimensions';
+
+.RadioButton {
+  display: inline-block;
+  position: relative;
+  text-overflow: ellipsis;
+  line-height: var(--spacing-l);
+  min-height: var(--spacing-l);
+  margin: 0;
+  width: var(--spacing-m);
+  height: var(--spacing-m);
+  min-height: var(--spacing-m);
+
+  & input {
+    opacity: 0;
+    position: absolute;
+    margin: 0;
+    width: var(--spacing-m);
+    height: var(--spacing-m);
+    z-index: 1;
+
+    &:checked {
+      & + .RadioButton__ghost {
+        border-color: var(--color-blue-mid);
+        background: var(--color-blue-mid);
+      }
+
+      & + .RadioButton__ghost::before {
+        background: var(--color-white);
+      }
+
+      &:disabled {
+        & + .RadioButton__ghost {
+          border-color: var(--color-element-mid);
+          background: var(--color-element-mid);
+        }
+
+        & + .RadioButton__ghost::before {
+          background: var(--color-element-darkest);
+        }
+      }
+    }
+
+    &:disabled {
+      & + .RadioButton__ghost {
+        background: var(--color-element-mid);
+      }
+
+      & + .RadioButton__ghost::before {
+        background: var(--color-element-mid);
+      }
+    }
+  }
+}
+
+.RadioButton__ghost {
+  background: var(--color-white);
+  width: var(--spacing-m);
+  height: var(--spacing-m);
+  border: 2px solid var(--color-element-mid);
+  fill: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+
+  &:before {
+    content: '';
+    border-radius: 50%;
+    background-color: var(--color-white);
+    width: var(--spacing-xs);
+    height: var(--spacing-xs);
+  }
+}
