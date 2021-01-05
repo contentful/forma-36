@@ -223,7 +223,7 @@
 }
 
 .Button__label {
-  font-size: calc(1rem * (16 / var(--font-base-default)));
+  font-size: calc(1rem * (14 / var(--font-base-default)));
   color: var(--color-contrast-mid);
   line-height: 2;
   white-space: nowrap;
