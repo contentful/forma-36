@@ -5,14 +5,22 @@ exports[`renders the component 1`] = `
   class="ControlledInputField"
   data-test-id="cf-ui-checkbox-field"
 >
-  <input
-    aria-label="label text"
-    class="ControlledInput ControlledInputField__input"
-    data-test-id="cf-ui-controlled-input"
-    id="checkbox"
-    type="checkbox"
-    value=""
-  />
+  <div
+    class="ControlledInputField__input Checkbox"
+  >
+    <input
+      aria-label="label text"
+      class="ControlledInput"
+      data-test-id="cf-ui-controlled-input"
+      id="checkbox"
+      type="checkbox"
+      value=""
+    />
+    <label
+      class="Checkbox__ghost"
+      for="checkbox"
+    />
+  </div>
   <div
     class="Checkbox__label-wrapper"
   >

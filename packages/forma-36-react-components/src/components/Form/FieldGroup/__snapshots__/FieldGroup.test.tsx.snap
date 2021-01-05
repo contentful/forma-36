@@ -12,14 +12,22 @@ exports[`renders the component 1`] = `
       class="ControlledInputField"
       data-test-id="cf-ui-checkbox-field"
     >
-      <input
-        aria-label="Do you agree?"
-        class="ControlledInput ControlledInputField__input"
-        data-test-id="cf-ui-controlled-input"
-        id="agree"
-        type="checkbox"
-        value=""
-      />
+      <div
+        class="ControlledInputField__input Checkbox"
+      >
+        <input
+          aria-label="Do you agree?"
+          class="ControlledInput"
+          data-test-id="cf-ui-controlled-input"
+          id="agree"
+          type="checkbox"
+          value=""
+        />
+        <label
+          class="Checkbox__ghost"
+          for="agree"
+        />
+      </div>
       <div
         class="Checkbox__label-wrapper"
       >
@@ -46,14 +54,22 @@ exports[`renders the component 1`] = `
       class="ControlledInputField"
       data-test-id="cf-ui-checkbox-field"
     >
-      <input
-        aria-label="Do you really agree?"
-        class="ControlledInput ControlledInputField__input"
-        data-test-id="cf-ui-controlled-input"
-        id="reallyAgree"
-        type="checkbox"
-        value=""
-      />
+      <div
+        class="ControlledInputField__input Checkbox"
+      >
+        <input
+          aria-label="Do you really agree?"
+          class="ControlledInput"
+          data-test-id="cf-ui-controlled-input"
+          id="reallyAgree"
+          type="checkbox"
+          value=""
+        />
+        <label
+          class="Checkbox__ghost"
+          for="reallyAgree"
+        />
+      </div>
       <div
         class="Checkbox__label-wrapper"
       >
@@ -88,14 +104,22 @@ exports[`renders the component children in a row 1`] = `
       class="ControlledInputField"
       data-test-id="cf-ui-checkbox-field"
     >
-      <input
-        aria-label="Do you agree?"
-        class="ControlledInput ControlledInputField__input"
-        data-test-id="cf-ui-controlled-input"
-        id="agree"
-        type="checkbox"
-        value=""
-      />
+      <div
+        class="ControlledInputField__input Checkbox"
+      >
+        <input
+          aria-label="Do you agree?"
+          class="ControlledInput"
+          data-test-id="cf-ui-controlled-input"
+          id="agree"
+          type="checkbox"
+          value=""
+        />
+        <label
+          class="Checkbox__ghost"
+          for="agree"
+        />
+      </div>
       <div
         class="Checkbox__label-wrapper"
       >
@@ -122,14 +146,22 @@ exports[`renders the component children in a row 1`] = `
       class="ControlledInputField"
       data-test-id="cf-ui-checkbox-field"
     >
-      <input
-        aria-label="Do you really agree?"
-        class="ControlledInput ControlledInputField__input"
-        data-test-id="cf-ui-controlled-input"
-        id="reallyAgree"
-        type="checkbox"
-        value=""
-      />
+      <div
+        class="ControlledInputField__input Checkbox"
+      >
+        <input
+          aria-label="Do you really agree?"
+          class="ControlledInput"
+          data-test-id="cf-ui-controlled-input"
+          id="reallyAgree"
+          type="checkbox"
+          value=""
+        />
+        <label
+          class="Checkbox__ghost"
+          for="reallyAgree"
+        />
+      </div>
       <div
         class="Checkbox__label-wrapper"
       >
@@ -164,14 +196,22 @@ exports[`renders the component with an additional class name 1`] = `
       class="ControlledInputField"
       data-test-id="cf-ui-checkbox-field"
     >
-      <input
-        aria-label="Do you agree?"
-        class="ControlledInput ControlledInputField__input"
-        data-test-id="cf-ui-controlled-input"
-        id="agree"
-        type="checkbox"
-        value=""
-      />
+      <div
+        class="ControlledInputField__input Checkbox"
+      >
+        <input
+          aria-label="Do you agree?"
+          class="ControlledInput"
+          data-test-id="cf-ui-controlled-input"
+          id="agree"
+          type="checkbox"
+          value=""
+        />
+        <label
+          class="Checkbox__ghost"
+          for="agree"
+        />
+      </div>
       <div
         class="Checkbox__label-wrapper"
       >
@@ -198,14 +238,22 @@ exports[`renders the component with an additional class name 1`] = `
       class="ControlledInputField"
       data-test-id="cf-ui-checkbox-field"
     >
-      <input
-        aria-label="Do you really agree?"
-        class="ControlledInput ControlledInputField__input"
-        data-test-id="cf-ui-controlled-input"
-        id="reallyAgree"
-        type="checkbox"
-        value=""
-      />
+      <div
+        class="ControlledInputField__input Checkbox"
+      >
+        <input
+          aria-label="Do you really agree?"
+          class="ControlledInput"
+          data-test-id="cf-ui-controlled-input"
+          id="reallyAgree"
+          type="checkbox"
+          value=""
+        />
+        <label
+          class="Checkbox__ghost"
+          for="reallyAgree"
+        />
+      </div>
       <div
         class="Checkbox__label-wrapper"
       >

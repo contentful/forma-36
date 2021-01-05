@@ -1,21 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
-<input
-  aria-label="checkbox"
-  class="ControlledInput"
-  data-test-id="ctf-ui-checkbox"
-  type="checkbox"
-  value=""
-/>
+<div
+  class="Checkbox"
+>
+  <input
+    aria-label="checkbox"
+    class="ControlledInput"
+    data-test-id="ctf-ui-checkbox"
+    type="checkbox"
+    value=""
+  />
+  <label
+    class="Checkbox__ghost"
+  />
+</div>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
-<input
-  aria-label="checkbox"
-  class="ControlledInput my-extra-class"
-  data-test-id="ctf-ui-checkbox"
-  type="checkbox"
-  value=""
-/>
+<div
+  class="my-extra-class Checkbox"
+>
+  <input
+    aria-label="checkbox"
+    class="ControlledInput"
+    data-test-id="ctf-ui-checkbox"
+    type="checkbox"
+    value=""
+  />
+  <label
+    class="Checkbox__ghost"
+  />
+</div>
 `;
