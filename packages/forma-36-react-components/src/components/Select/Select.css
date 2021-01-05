@@ -85,6 +85,6 @@
   position: absolute;
   right: calc(1rem * (12 / var(--font-base-default)));
   top: 50%;
-  margin-top: -9px;
+  margin-top: -8px;
   pointer-events: none;
 }
