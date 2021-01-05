@@ -90,7 +90,7 @@
     "babel-jest": "^24.1.0",
     "babel-loader": "^8.2.2",
     "postcss": "^8.2.2",
-    "css-loader": "^5.0.1",
+    "css-loader": "^3.6.0",
     "file-loader": "^3.0.1",
     "postcss-copy-assets": "^0.3.1",
     "postcss-custom-properties": "^10.0.0",

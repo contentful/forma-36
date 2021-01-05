@@ -19,7 +19,7 @@
     "build:esm": "BABEL_ENV=esm yarn babel src --out-dir esm --ignore 'src/**/*.stories.js','src/**/*.stories.tsx','src/**/*.test.tsx','src/**/*.test.js','src/**/*.css.d.ts' --extensions '.ts','.tsx','.js' && rollup -c tools/rollup.esm.config.js && rm -rf esm",
     "build:styles": "yarn webpack --config ./tools/webpack.production.config.js",
     "build:umd": "rollup -c tools/rollup.umd.config.js",
-    "build:types": "tsc --emitDeclarationOnly",
+    "build:types": "tsc --emitDeclarationOnly --noEmit false --declaration true",
     "build:post-clean": "rm -rf dist/styles.js dist/main.js",
     "build": "yarn build:clean && yarn build:scripts && yarn build:esm && yarn build:styles && yarn build:types && yarn build:umd && yarn size && yarn build:post-clean",
     "size": "size-limit",
