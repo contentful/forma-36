@@ -1,5 +1,6 @@
 {
   "name": "@contentful/forma-36-test-component",
+  "private": true,
   "version": "0.0.1",
   "description": "Forma 36: Test Component",
   "license": "MIT",
