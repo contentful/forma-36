@@ -116,11 +116,6 @@ export const TextField = (props: TextFieldProps) => {
         width={'full'}
         {...textInputProps}
       />
-      {validationMessage && (
-        <ValidationMessage className={styles['TextField__validation-message']}>
-          {validationMessage}
-        </ValidationMessage>
-      )}
       {(helpText || countCharacters) && (
         <div className={styles['TextField__hints']}>
           {helpText && (
@@ -139,6 +134,11 @@ export const TextField = (props: TextFieldProps) => {
             </HelpText>
           )}
         </div>
+      )}
+      {validationMessage && (
+        <ValidationMessage className={styles['TextField__validation-message']}>
+          {validationMessage}
+        </ValidationMessage>
       )}
     </div>
   );

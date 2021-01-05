@@ -2,6 +2,7 @@
 @import 'settings/dimensions';
 @import 'settings/transitions';
 @import 'settings/shadows';
+@import 'settings/borders';
 
 .Select__wrapper {
   position: relative;
@@ -19,7 +20,8 @@
   font-size: var(--font-size-m);
   font-family: var(--font-stack-primary);
   border: 1px solid var(--color-element-mid);
-  border-radius: 0;
+  border-radius: var(--border-radius-medium);
+  box-shadow: var(--inset-box-shadow-default);
   height: calc(1rem * (40 / var(--font-base-default)));
   &:focus {
     outline: 0;
@@ -74,12 +76,15 @@
     border-color: var(--color-negative);
     box-shadow: var(--glow-negative);
   }
+  &.Select--disabled {
+    border-color: var(--color-red-light);
+  }
 }
 
 .Select__icon {
   position: absolute;
   right: calc(1rem * (12 / var(--font-base-default)));
   top: 50%;
-  margin-top: -10px;
+  margin-top: -9px;
   pointer-events: none;
 }

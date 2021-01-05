@@ -3,6 +3,7 @@
 @import 'settings/dimensions';
 @import 'settings/transitions';
 @import 'settings/shadows';
+@import 'settings/borders';
 
 .Textarea {
   display: flex;
@@ -12,7 +13,9 @@
   composes: focus-border--default from './../../styles/settings/a11y.css';
   resize: vertical;
   outline: none;
+  box-shadow: var(--inset-box-shadow-default);
   border: 1px solid var(--color-element-mid);
+  border-radius: var(--border-radius-medium);
   min-height: calc(1rem * (40 / var(--font-base-default)));
   color: var(--color-text-mid);
   font-family: var(--font-stack-primary);

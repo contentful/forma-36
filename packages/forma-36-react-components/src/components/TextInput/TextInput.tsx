@@ -117,6 +117,7 @@ export const TextInput = (props: TextInputProps) => {
   const classNames = cn(styles['TextInput'], className, styles[widthClass], {
     [styles['TextInput--disabled']]: disabled,
     [styles['TextInput--negative']]: error,
+    [styles['TextInput--with-copy-button']]: withCopyButton,
   });
 
   return (
