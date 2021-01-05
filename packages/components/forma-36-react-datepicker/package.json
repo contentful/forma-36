@@ -1,6 +1,6 @@
 {
   "name": "@contentful/forma-36-react-datepicker",
-  "version": "0.3.1-alpha.140",
+  "version": "0.3.1-alpha.141",
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/forma-36-react-datepicker.esm.js",
@@ -28,7 +28,7 @@
     "trailingComma": "es5"
   },
   "devDependencies": {
-    "@contentful/forma-36-react-components": "^3.73.0",
+    "@contentful/forma-36-react-components": "^3.73.1",
     "@testing-library/jest-dom": "5.11.6",
     "@testing-library/react": "11.2.2",
     "@types/jest": "25.2.3",
