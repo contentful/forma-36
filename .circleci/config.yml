@@ -14,7 +14,7 @@ commands:
 jobs:
   prepare-dependencies:
     docker:
-      - image: circleci/node:12.0-browsers
+      - image: circleci/node:14.15.0-browsers
     resource_class: xlarge
     steps:
       - checkout
@@ -41,7 +41,7 @@ jobs:
 
   lint-and-test:
     docker:
-      - image: circleci/node:12.0-browsers
+      - image: circleci/node:14.15.0-browsers
     resource_class: xlarge
     steps:
       - attach_workspace:
@@ -61,7 +61,7 @@ jobs:
 
   chromatic-deployment:
     docker:
-      - image: circleci/node:12.0-browsers
+      - image: circleci/node:14.15.0-browsers
     resource_class: xlarge
     steps:
       - attach_workspace:
@@ -73,7 +73,7 @@ jobs:
 
   release:
     docker:
-      - image: circleci/node:12.0-browsers
+      - image: circleci/node:14.15.0-browsers
     steps:
       - attach_workspace:
           at: .
