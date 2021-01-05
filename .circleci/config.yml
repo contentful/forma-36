@@ -95,14 +95,14 @@ workflows:
       - lint-and-test:
           requires:
             - prepare-dependencies
-      # - chromatic-deployment:
-      #     requires:
-      #       - prepare-dependencies
-      #       - lint-and-test
+      - chromatic-deployment:
+          requires:
+            - prepare-dependencies
+            - lint-and-test
       - release:
           filters:
             branches:
               only: master
           requires:
             - lint-and-test
-            # - chromatic-deployment
+            - chromatic-deployment
