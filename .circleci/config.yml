@@ -28,6 +28,9 @@ jobs:
       - run:
           name: yarn
           command: yarn
+      - run:
+          name: yarn build
+          command: yarn build
       - save_cache:
           paths:
             - node_modules

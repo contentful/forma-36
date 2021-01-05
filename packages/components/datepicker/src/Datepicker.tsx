@@ -1,7 +1,5 @@
-/** @jsx jsx */
-
-import { jsx, css, cx } from '@emotion/react';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { css, cx } from '@emotion/css';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import type { FocusEventHandler, FocusEvent } from 'react';
 import Pikaday from 'pikaday';
 import format from 'date-fns/format';
@@ -90,7 +88,7 @@ export function Datepicker({
   }, []);
 
   return (
-    <div css={styles.datePickerWrapper}>
+    <div className={styles.datePickerWrapper}>
       {labelText && (
         <FormLabel required={required} htmlFor={id}>
           {labelText}

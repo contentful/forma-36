@@ -38,7 +38,7 @@
     "@contentful/forma-36-react-components": "^3.72.11",
     "@babel/runtime": "^7.6.2",
     "date-fns": "^2.9.0",
-    "@emotion/react": "^11.1.4",
+    "@emotion/css": "^11.1.0",
     "is-hotkey": "^0.1.6",
     "lodash.orderby": "^4.6.0"
   }

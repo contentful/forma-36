@@ -1,8 +1,6 @@
-/** @jsx jsx */
+import { css } from '@emotion/css';
 
-import { jsx, css } from '@emotion/react';
-
-import {
+import React, {
   useState,
   useCallback,
   useRef,

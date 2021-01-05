@@ -31,7 +31,8 @@
       "es2017.intl",
       "esnext.intl"
     ],
-    "skipLibCheck": false
+    "skipLibCheck": false,
+    "typeRoots": ["node_modules/@types", "./types"]
   },
   "include": ["packages", "types"],
   "exclude": ["**/node_modules", "**/dist"]

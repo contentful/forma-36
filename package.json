@@ -12,7 +12,7 @@
     ]
   },
   "scripts": {
-    "build": "lerna run build --no-private --stream",
+    "build": "lerna run build --stream",
     "build-storybook": "yarn build-storybook -c ./scripts/.storybook -s ./scripts/.storybook/public -o dist-storybook",
     "chromatic": "chromatic --storybook-build-dir ./dist-storybook",
     "commit": "git-cz",

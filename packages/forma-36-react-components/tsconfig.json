@@ -1,14 +1,16 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "typeRoots": ["node_modules/@types", "./typings.d.ts"]
+    "outDir": "dist",
+    "rootDir": "./src"
   },
-  "include": ["./"],
+  "include": ["./", "../../types"],
   "exclude": [
     "dist",
     "dist-storybook",
     "node_modules",
     "**/*.stories.tsx",
-    "**/*.test.tsx"
+    "**/*.test.tsx",
+    "tools"
   ]
 }
