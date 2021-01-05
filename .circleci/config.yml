@@ -96,7 +96,9 @@ workflows:
       - release:
           filters:
             branches:
-              only: master
+              only:
+                - master
+                - v3-visual-changes
           requires:
             - lint-and-test
             - chromatic-deployment
