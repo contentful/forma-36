@@ -112,7 +112,11 @@ export const Select = (props: SelectProps) => {
       >
         {children}
       </select>
-      <Icon className={styles['Select__icon']} icon="ArrowDown" color="muted" />
+      <Icon
+        className={styles['Select__icon']}
+        icon="ChevronDown"
+        color="muted"
+      />
     </div>
   );
 };

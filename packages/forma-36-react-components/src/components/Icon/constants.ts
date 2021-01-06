@@ -44,6 +44,7 @@ export const iconName = {
   Entry: 'Entry',
   EntryTrimmed: 'EntryTrimmed',
   ErrorCircle: 'ErrorCircle',
+  ErrorCircleOutline: 'ErrorCircleOutline',
   ErrorCircleTrimmed: 'ErrorCircleTrimmed',
   ExternalLink: 'ExternalLink',
   ExternalLinkTrimmed: 'ExternalLinkTrimmed',
