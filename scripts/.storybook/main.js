@@ -4,7 +4,6 @@ const postcssOptions = require('../../packages/forma-36-react-components/tools/p
 module.exports = {
   stories: ['./docs/**/*.stories.mdx', '../../packages/**/*.stories.@(ts|md)x'],
   addons: [
-    '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-knobs',
     '@storybook/addon-a11y',
