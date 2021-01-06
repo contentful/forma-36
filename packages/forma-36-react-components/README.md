@@ -77,7 +77,7 @@ For local development run `yarn` from the root of this repo to install all depen
 [Storybook](https://storybook.js.org/) is a UI development environment we are using to power our component library. Using Storybook allows us to work on components in isolation.
 
 ```bash
-yarn start
+yarn storybook
 ```
 
 Using Storybook requires you to wrap your component in a story. Look in the `src/components` directory for an example `.stories.js` file. Storybook has been configured to automatically include any files with the `.stories.js` file extension.
