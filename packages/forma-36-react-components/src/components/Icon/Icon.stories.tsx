@@ -77,7 +77,7 @@ storiesOf('Components/Icon', module)
       {Object.entries(iconSizes).map((icon, idx) => (
         <Flex marginBottom="spacingM" alignItems="center" key={idx}>
           <Flex marginRight="spacingS">
-            <Icon icon="Calendar" color="primary" size={icon[0]} />
+            <Icon icon="Calendar" color="primary" size={icon[0] as any} />
           </Flex>
           <Paragraph>{icon[1]}</Paragraph>
         </Flex>
@@ -88,7 +88,7 @@ storiesOf('Components/Icon', module)
       {iconColors.map((color, idx) => (
         <Flex marginBottom="spacingM" alignItems="center" key={idx}>
           <Flex marginRight="spacingS">
-            <Icon icon="Calendar" color={color} size="medium" />
+            <Icon icon="Calendar" color={color as any} size="medium" />
           </Flex>
           <Paragraph>{color}</Paragraph>
         </Flex>

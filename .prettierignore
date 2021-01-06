@@ -1,2 +1,8 @@
 *.hbs
 *.css.d.ts
+node_modules
+.docz
+dist
+dist-storybook
+build
+.parcel-cache

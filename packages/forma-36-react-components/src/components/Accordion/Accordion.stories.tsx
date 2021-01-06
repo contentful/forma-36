@@ -11,7 +11,7 @@ import Paragraph from '../Typography/Paragraph';
 import notes from './README.mdx';
 
 export default {
-  title: '(alpha)/Accordion',
+  title: 'Components/Accordion',
   component: Accordion,
   subcomponents: { AccordionItem },
   parameters: {

@@ -74,4 +74,11 @@ export { EntityListItem } from './components/EntityList/EntityListItem/EntityLis
 export { EmptyState } from './components/EmptyState/EmptyState';
 export { Switch } from './components/Switch/Switch';
 export { Workbench } from './components/Workbench/Workbench';
+export { Autocomplete } from './components/Autocomplete/Autocomplete';
+export { Grid } from './components/Grid';
+export { GridItem } from './components/Grid/GridItem';
+export { Flex } from './components/Flex';
+export { Accordion } from './components/Accordion/Accordion';
+export { AccordionItem } from './components/Accordion/AccordionItem';
+export { ModalLauncher } from './components/Modal/ModalLauncher/ModalLauncher';
 // -- Add imports above this line (required by plopfile.js) --

@@ -1,0 +1,45 @@
+{
+  "name": "@contentful/forma-36-react-datepicker",
+  "description": "Forma 36: Test Component",
+  "version": "0.3.1-alpha.139",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "main": "dist/main.js",
+  "module": "dist/module.js",
+  "types": "dist/types.d.ts",
+  "source": "src/index.ts",
+  "sideEffects": false,
+  "browserslist": "extends @contentful/browserslist-config",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/contentful/forma-36"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "prepublishOnly": "yarn build",
+    "build": "parcel build index.ts --no-minify"
+  },
+  "peerDependencies": {
+    "@contentful/forma-36-react-components": "^3.72.11",
+    "react": ">=16.8"
+  },
+  "devDependencies": {
+    "@contentful/forma-36-react-components": "^3.72.11",
+    "@testing-library/jest-dom": "5.11.6",
+    "@testing-library/react": "11.2.2",
+    "@types/jest": "25.2.3",
+    "@types/pikaday": "^1.7.4",
+    "date-fns": "^2.6.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.6.2",
+    "@emotion/css": "^11.1.0",
+    "pikaday": "^1.8.0",
+    "date-fns": "^2.6.0"
+  }
+}

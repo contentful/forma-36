@@ -3,7 +3,18 @@ version: 2.1
 orbs:
   docker: circleci/docker@1.0.1
 
+cache-key: &cache-key
+  key: dependency-cache-primary-{{ arch }}-yarn-packages-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
+
 commands:
+  yarn_install:
+    steps:
+      - restore_cache: *cache-key
+      - run: yarn install --frozen-lockfile --cache-folder ~/.cache/yarn
+      - save_cache:
+          <<: *cache-key
+          paths:
+            - ~/.cache/yarn
   check-changed-files-or-halt:
     parameters:
       pattern:
@@ -12,91 +23,69 @@ commands:
       - run: git show -m HEAD --name-only --pretty="" | egrep -q '<< parameters.pattern >>' || circleci step halt
 
 jobs:
-  prepare-dependencies:
+  lint-and-test:
     docker:
-      - image: circleci/node:12.0-browsers
+      - image: circleci/node:14.15.0-browsers
     resource_class: xlarge
     steps:
       - checkout
+      - yarn_install
       - run:
-          name: Compute version number
-          command: echo "0.0.${CIRCLE_BUILD_NUM}-${CIRCLE_SHA1:0:7}" | tee version.txt
-      - restore_cache:
-          keys:
-            - yarn-deps-{{ checksum "yarn.lock" }}
-            - yarn-deps
+          name: Prettier
+          command: yarn prettier:check
       - run:
-          name: yarn
-          command: yarn
-      - save_cache:
-          paths:
-            - node_modules
-          key: yarn-deps-{{ checksum "yarn.lock" }}-{{ epoch }}
-      - store_artifacts:
-          path: yarn.lock
-      - persist_to_workspace:
-          root: .
-          paths:
-            - .
-
-  lint-and-test:
-    docker:
-      - image: circleci/node:12.0-browsers
-    resource_class: xlarge
-    steps:
-      - attach_workspace:
-          at: .
+          name: Build
+          command: yarn build
       - run:
           name: Lint
           command: yarn lint
       - run:
           name: Check Types
-          command: yarn type-check
+          command: yarn tsc
       - run:
           name: Test
           command: yarn test
 
   chromatic-deployment:
     docker:
-      - image: circleci/node:12.0-browsers
+      - image: circleci/node:14.15.0-browsers
     resource_class: xlarge
     steps:
-      - attach_workspace:
-          at: .
+      - checkout
       - check-changed-files-or-halt:
-          pattern: ^(forma-36-fcss|forma-36-react-components|forma-36-tokens)|(.js|jsx|ts|tsx|css|scss)$
-      - run: yarn run build-storybook
+          pattern: ^(packages)|(.js|jsx|ts|tsx|css|scss)$
+      - yarn_install
+      - run: yarn run storybook:build
       - run: yarn run chromatic --project-token=${CHROMATIC_PROJECT_TOKEN} --exit-zero-on-changes
 
   release:
     docker:
-      - image: circleci/node:12.0-browsers
+      - image: circleci/node:14.15.0-browsers
     steps:
-      - attach_workspace:
-          at: .
+      - checkout
+      - yarn_install
       - run:
           name: Pre deploy
           command: bin/before-deploy
       - run:
           name: Deploy
-          command: bin/deploy
+          # command: bin/deploy
+          command: yarn lerna publish --canary --dist-tag next-v3 --yes
 
 workflows:
   version: 2
   commit-check:
     jobs:
-      - prepare-dependencies
-      - lint-and-test:
-          requires:
-            - prepare-dependencies
+      - lint-and-test
       - chromatic-deployment:
           requires:
-            - prepare-dependencies
             - lint-and-test
       - release:
           filters:
             branches:
-              only: master
+              only:
+                - master
+                - v3-visual-changes
           requires:
             - lint-and-test
             - chromatic-deployment

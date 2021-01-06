@@ -1,6 +1,7 @@
 Buttons communicate the action that will occur when the user clicks them. They communicate calls to action to the user and allow users to interact with pages in a variety of ways. They contain a text label to describe the action, and an icon if appropriate.
 
 ## Table of contents
+
 - [How to use Buttons](#how-to-use-buttons)
 - [Component variations](#component-variations)
 - [Code examples](#code-examples)
@@ -29,14 +30,20 @@ Buttons communicate the action that will occur when the user clicks them. They c
   <Button buttonType="naked">Naked</Button>
 </>
 ```
+
 Buttons can be used in couple of different variations, like active, disabled or loading. Worth mentioning is `indicateDropdown` property in the component, which enables chevron icon on the right side of the button. Using `icon` property in the Button on the other hand, enables choosen icon on the left side of the button.
 
-Contentful buttons are available in 3 different sizes: 
+Contentful buttons are available in 3 different sizes:
+
 ```jsx
 <>
-  <Button buttonType="positive" size="large">Large</Button>
+  <Button buttonType="positive" size="large">
+    Large
+  </Button>
   <Button buttonType="positive">Default</Button>
-  <Button buttonType="positive" size="small">Small</Button>
+  <Button buttonType="positive" size="small">
+    Small
+  </Button>
 </>
 ```
 
@@ -45,8 +52,9 @@ Contentful buttons are available in 3 different sizes:
 ```jsx
 // import {Button} from '@contentful/forma-36-react-components';
 
-<Button buttonType="primary" data-test-id="create-content-type-empty-state">Add content type</Button>
-
+<Button buttonType="primary" data-test-id="create-content-type-empty-state">
+  Add content type
+</Button>
 ```
 
 Usage of the button with icon
@@ -54,17 +62,18 @@ Usage of the button with icon
 ```jsx
 // import {Button} from '@contentful/forma-36-react-components';
 
-<Button buttonType="primary" icon="Star">Primary star</Button>
-
+<Button buttonType="primary" icon="Star">
+  Primary star
+</Button>
 ```
 
 ## Content recommendations:
 
- - UI usage - Button labels should be no longer than 3 words
- - Webpage usage - Button labels should be no longer than 5 words
- - Start labels with action verbs. If the button is part of an action dialog, make sure it matches the dialog header.
- - Use specific words, ideally ones that align with preceding content.
- - For buttons that are used to cancel destructive actions: label them "Never mind" or similar, instead of cancel. It makes things much easier for users to understand.
+- UI usage - Button labels should be no longer than 3 words
+- Webpage usage - Button labels should be no longer than 5 words
+- Start labels with action verbs. If the button is part of an action dialog, make sure it matches the dialog header.
+- Use specific words, ideally ones that align with preceding content.
+- For buttons that are used to cancel destructive actions: label them "Never mind" or similar, instead of cancel. It makes things much easier for users to understand.
 
 ## Accessibility
 

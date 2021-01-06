@@ -6,7 +6,7 @@ import { Asset } from './Asset';
 
 it('renders the component', () => {
   const { container } = render(
-    <Asset src="https://placekitten.com/200/300" title="Image of a cat" />,
+    <Asset src="https://via.placeholder.com/200x300" title="Image of a cat" />,
   );
 
   expect(container.firstChild).toMatchSnapshot();
@@ -15,7 +15,7 @@ it('renders the component', () => {
 it('renders the component with an additional class name', () => {
   const { container } = render(
     <Asset
-      src="https://placekitten.com/200/300"
+      src="https://via.placeholder.com/200x300"
       title="Image of a cat"
       className="extra-class-name"
     />,
@@ -27,7 +27,7 @@ it('renders the component with an additional class name', () => {
 it('renders the component with type pdf', () => {
   const { container } = render(
     <Asset
-      src="https://placekitten.com/200/300"
+      src="https://via.placeholder.com/200x300"
       title="Image of a cat"
       className="extra-class-name"
       type="pdf"
@@ -41,7 +41,7 @@ describe('with type=image', () => {
   it('renders the component as a preview', () => {
     const { container } = render(
       <Asset
-        src="https://placekitten.com/200/300"
+        src="https://via.placeholder.com/200x300"
         title="Image of a cat"
         className="extra-class-name"
         type="image"
@@ -55,7 +55,7 @@ describe('with type=image', () => {
   it('renders the component as a standard asset with status=archived', () => {
     const { container } = render(
       <Asset
-        src="https://placekitten.com/200/300"
+        src="https://via.placeholder.com/200x300"
         title="Image of a cat"
         className="extra-class-name"
         type="image"
@@ -70,7 +70,10 @@ describe('with type=image', () => {
 
 it('has no a11y issues', async () => {
   const { container } = render(
-    <Asset src="http://placekitten.com/200/300" title="picture of a cat" />,
+    <Asset
+      src="https://via.placeholder.com/200x300"
+      title="picture of a cat"
+    />,
   );
   const results = await axe(container);
 

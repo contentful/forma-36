@@ -7,25 +7,26 @@ A React component library for [Contentful](https://www.contentful.com), powered 
 
 ## Table of contents
 
-- [Library Usage](#library-usage)
-  - [Install package from NPM](#install-package-from-npm)
-  - [Import desired component into your project](#import-desired-component-into-your-project)
-  - [Import styles](#import-styles)
-- [Development](#development)
-  - [Switch to the correct version of Node (using NVM)](#switch-to-the-correct-version-of-node-using-nvm)
-  - [Install dependencies](#install-dependencies)
-  - [Run Storybook](#run-storybook)
-  - [Example component directory structure](#example-component-directory-structure)
-  - [Styling](#styling)
-  - [Component principles](#component-principles)
-  - [Adding a new component](#adding-a-new-component)
-  - [Adding new Storybook documentation](#adding-new-storybook-documentation)
-- [Testing](#testing)
-  - [Run tests](#run-tests)
-- [Building](#building)
-  - [Create a build of the library](#create-a-build-of-the-library)
-- [Commits](#commits)
-- [Alpha components](#alpha-components)
+- [Forma 36 React Components](#forma-36-react-components)
+  - [Table of contents](#table-of-contents)
+  - [Library Usage](#library-usage)
+    - [Install package from NPM](#install-package-from-npm)
+    - [Import desired component into your project](#import-desired-component-into-your-project)
+    - [Import styles](#import-styles)
+  - [Development](#development)
+    - [Switch to the correct version of Node (using NVM)](#switch-to-the-correct-version-of-node-using-nvm)
+    - [Install dependencies](#install-dependencies)
+    - [Run Storybook](#run-storybook)
+    - [Example component directory structure](#example-component-directory-structure)
+    - [Styling](#styling)
+    - [Component principles](#component-principles)
+    - [Adding documentation for component](#adding-documentation-for-component)
+  - [Testing](#testing)
+    - [Run tests](#run-tests)
+  - [Building](#building)
+    - [Create a build of the library](#create-a-build-of-the-library)
+  - [Commits](#commits)
+  - [Alpha components](#alpha-components)
 
 ## Library Usage
 
@@ -58,7 +59,6 @@ NOTE: If a component is still in alpha state:
 ```js
 import { AlphaComponent } from '@contentful/forma-36-react-components/dist/alpha';
 ```
-
 
 ## Development
 
@@ -121,35 +121,6 @@ We recommend the following naming convention for PropTypes to make them as clear
 - Element - use the suffix 'Element'. E.g. `triggerElement`
 - Event handler functions - use the prefix 'on'. E.g. `onOpen`, `onClick`
 
-### Adding a new component
-
-You can use [Plop](https://plopjs.com/) to scaffold new components. Run `yarn add-component` and follow the steps in the CLI to create a component. Using your input here, Plop will generate the relevant files and add the relevant imports/exports to the main `src/index.js` file required to make the component available when publishing the library.
-
-Here is the example output of running the `yarn add-component` command:
-
-```
-? What is the name of your component? button
-[SUCCESS] add /src/components/Button/Button.js
-[SUCCESS] add /src/components/Button/Button.css
-[SUCCESS] add /src/components/Button/Button.test.js
-[SUCCESS] add /src/components/Button/Button.stories.js
-[SUCCESS] add /src/components/Button/README.mdx
-[SUCCESS] modify /src/index.js
-[SUCCESS] modify /src/index.js
-```
-
-### Adding new Storybook documentation
-
-You can also use [Plop](https://plopjs.com/) to scaffold documentation sections in Storybook. Run `yarn add-documentation` and follow the steps in the CLI to create new documentation. Using your input here, Plop will generate the relevant files required to make the documentation show in Storybook.
-
-Here is the example output of running the `yarn add-documentation` command:
-
-```
-? What is the title of your documentation? general
-[SUCCESS] add /.storybook/docs/General/General.md
-[SUCCESS] add /.storybook/docs/General/General.stories.js
-```
-
 ### Adding documentation for component
 
 We would like to make sure that every component contains a README file with recommendations and guidelines. Using `yarn add-readme` it will generate a template README file for you for the component that you specify. Follow steps in the CLI to create new README.
@@ -161,7 +132,6 @@ Make sure that your documentation for the component contains following parts:
 4. Content recommendations - notes about best practices when it comes to the content used in the component, like message or title
 5. Best practices - try to describe in couple of points when to use the component
 6. Accessibility - If possible, we strongly recommend providing accessibility guidelines.
-
 
 ## Testing
 

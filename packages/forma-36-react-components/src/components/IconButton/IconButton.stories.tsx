@@ -56,7 +56,7 @@ storiesOf('Components/IconButton', module)
               iconProps={{
                 icon: 'Calendar',
               }}
-              buttonType={color}
+              buttonType={color as any}
               label="Add New Element"
             />
           </Flex>

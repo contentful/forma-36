@@ -18,6 +18,6 @@ export default {
   title: 'Components/EditorToolbar/EditorToolbarDivider',
 } as Meta;
 
-export const Default: Story<EditorToolbarDividerProps> = ({ ...args }) => {
+export const Default = ({ ...args }: EditorToolbarDividerProps) => {
   return <EditorToolbarDivider {...args} />;
 };

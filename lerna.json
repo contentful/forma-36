@@ -1,6 +1,11 @@
 {
-  "packages": ["packages/*", "packages/components/*"],
-  "version": "independent",
+  "lerna": "3.0.0",
   "npmClient": "yarn",
-  "useWorkspaces": true
+  "version": "independent",
+  "useWorkspaces": true,
+  "command": {
+    "publish": {
+      "allowBranch": ["master", "v3-visual-changes"]
+    }
+  }
 }

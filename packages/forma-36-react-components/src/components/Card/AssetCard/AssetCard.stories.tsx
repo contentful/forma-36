@@ -33,7 +33,7 @@ storiesOf('Components/Card/AssetCard', module)
       )}
       type={select('type', types, 'image')}
       isLoading={boolean('isLoading', false)}
-      src={text('src', 'https://placekitten.com/200/300')}
+      src={text('src', 'https://via.placeholder.com/200x300')}
       title={text('title', 'Image of a cat')}
       withDragHandle={boolean('withDragHandle', false)}
       isDragActive={boolean('isDragActive', false)}
@@ -62,7 +62,7 @@ storiesOf('Components/Card/AssetCard', module)
       )}
       type={select('type', types, 'image')}
       isLoading={boolean('isLoading', false)}
-      src={text('src', 'https://placekitten.com/200/300')}
+      src={text('src', 'https://via.placeholder.com/200x300')}
       title={text('title', 'Image of a cat')}
       cardDragHandleComponent={<CardDragHandle>Reorder card</CardDragHandle>}
       isDragActive={boolean('isDragActive', false)}
@@ -91,7 +91,7 @@ storiesOf('Components/Card/AssetCard', module)
       )}
       type={select('type', types, 'image')}
       isLoading={boolean('isLoading', false)}
-      src={text('src', 'https://placekitten.com/200/300')}
+      src={text('src', 'https://via.placeholder.com/200x300')}
       title={text('title', 'Image of a cat')}
       withDragHandle={boolean('withDragHandle', false)}
       isDragActive={boolean('isDragActive', false)}
@@ -144,7 +144,7 @@ storiesOf('Components/Card/AssetCard', module)
       statusIcon="Clock"
       type={select('type', types, 'image')}
       isLoading={boolean('isLoading', false)}
-      src={text('src', 'https://placekitten.com/200/300')}
+      src={text('src', 'https://via.placeholder.com/200x300')}
       title={text('title', 'Image of a cat')}
       withDragHandle={boolean('withDragHandle', false)}
       isDragActive={boolean('isDragActive', false)}
@@ -174,7 +174,7 @@ storiesOf('Components/Card/AssetCard', module)
       statusIcon={<Icon icon="Calendar" />}
       type={select('type', types, 'image')}
       isLoading={boolean('isLoading', false)}
-      src={text('src', 'https://placekitten.com/200/300')}
+      src={text('src', 'https://via.placeholder.com/200x300')}
       title={text('title', 'Image of a cat')}
       withDragHandle={boolean('withDragHandle', false)}
       isDragActive={boolean('isDragActive', false)}
@@ -200,14 +200,14 @@ storiesOf('Components/Card/AssetCard', module)
           <AssetCard
             status="published"
             type="image"
-            src={text('src', 'https://placekitten.com/200/300')}
+            src={text('src', 'https://via.placeholder.com/200x300')}
             title={text('title', 'Image of a cat')}
             size="default"
           />
           <AssetCard
             status="published"
             type="image"
-            src={text('src', 'https://placekitten.com/200/300')}
+            src={text('src', 'https://via.placeholder.com/200x300')}
             title={text('title', 'Image of a cat')}
             size="small"
           />
@@ -223,14 +223,14 @@ storiesOf('Components/Card/AssetCard', module)
           <AssetCard
             status="draft"
             type="image"
-            src={text('src', 'https://placekitten.com/200/300')}
+            src={text('src', 'https://via.placeholder.com/200x300')}
             title={text('title', 'Image of a cat')}
             size="default"
           />
           <AssetCard
             status="draft"
             type="image"
-            src={text('src', 'https://placekitten.com/200/300')}
+            src={text('src', 'https://via.placeholder.com/200x300')}
             title={text('title', 'Image of a cat')}
             size="small"
           />
@@ -246,14 +246,14 @@ storiesOf('Components/Card/AssetCard', module)
           <AssetCard
             status="archived"
             type="image"
-            src={text('src', 'https://placekitten.com/200/300')}
+            src={text('src', 'https://via.placeholder.com/200x300')}
             title={text('title', 'Image of a cat')}
             size="default"
           />
           <AssetCard
             status="archived"
             type="image"
-            src={text('src', 'https://placekitten.com/200/300')}
+            src={text('src', 'https://via.placeholder.com/200x300')}
             title={text('title', 'Image of a cat')}
             size="small"
           />
@@ -269,14 +269,14 @@ storiesOf('Components/Card/AssetCard', module)
           <AssetCard
             status="changed"
             type="image"
-            src={text('src', 'https://placekitten.com/200/300')}
+            src={text('src', 'https://via.placeholder.com/200x300')}
             title={text('title', 'Image of a cat')}
             size="default"
           />
           <AssetCard
             status="changed"
             type="image"
-            src={text('src', 'https://placekitten.com/200/300')}
+            src={text('src', 'https://via.placeholder.com/200x300')}
             title={text('title', 'Image of a cat')}
             size="small"
           />
@@ -293,7 +293,7 @@ storiesOf('Components/Card/AssetCard', module)
             status="published"
             statusIcon={<Icon icon="Calendar" color="positive" />}
             type="image"
-            src={text('src', 'https://placekitten.com/200/300')}
+            src={text('src', 'https://via.placeholder.com/200x300')}
             title={text('title', 'Image of a cat')}
             size="default"
           />
@@ -301,7 +301,7 @@ storiesOf('Components/Card/AssetCard', module)
             status="published"
             statusIcon={<Icon icon="Calendar" color="positive" />}
             type="image"
-            src={text('src', 'https://placekitten.com/200/300')}
+            src={text('src', 'https://via.placeholder.com/200x300')}
             title={text('title', 'Image of a cat')}
             size="small"
           />
@@ -318,7 +318,7 @@ storiesOf('Components/Card/AssetCard', module)
             status="published"
             withDragHandle
             type="image"
-            src={text('src', 'https://placekitten.com/200/300')}
+            src={text('src', 'https://via.placeholder.com/200x300')}
             title={text('title', 'Image of a cat')}
             size="default"
           />
@@ -326,7 +326,7 @@ storiesOf('Components/Card/AssetCard', module)
             status="published"
             withDragHandle
             type="image"
-            src={text('src', 'https://placekitten.com/200/300')}
+            src={text('src', 'https://via.placeholder.com/200x300')}
             title={text('title', 'Image of a cat')}
             size="small"
           />
@@ -343,7 +343,7 @@ storiesOf('Components/Card/AssetCard', module)
             status="published"
             isLoading
             type="image"
-            src={text('src', 'https://placekitten.com/200/300')}
+            src={text('src', 'https://via.placeholder.com/200x300')}
             title={text('title', 'Image of a cat')}
             size="default"
           />
@@ -351,7 +351,7 @@ storiesOf('Components/Card/AssetCard', module)
             status="published"
             isLoading
             type="image"
-            src={text('src', 'https://placekitten.com/200/300')}
+            src={text('src', 'https://via.placeholder.com/200x300')}
             title={text('title', 'Image of a cat')}
             size="small"
           />

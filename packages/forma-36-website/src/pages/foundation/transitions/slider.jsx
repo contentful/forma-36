@@ -22,12 +22,12 @@ const styles = {
   `,
 };
 
-const Slider = props => (
+const Slider = (props) => (
   <div css={styles.slider} {...props}>
     {props.children}
   </div>
 );
 
-export const SliderKnob = props => <div css={styles.sliderKnob} {...props} />;
+export const SliderKnob = (props) => <div css={styles.sliderKnob} {...props} />;
 
 export default Slider;

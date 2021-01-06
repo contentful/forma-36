@@ -5,29 +5,32 @@ Grid items are child elements of [Grid](./info/components-grid--default) compone
 ```js
 import { Grid, GridItem } from '@contenful/forma-36-react-components';
 ```
+
 <br />
 ## Usage
 
 ### columnStart
+
 Specifies a grid item’s start position within the grid columns; corresponds to [grid-column-start](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-start) CSS property.
 
 ```jsx
 <GridItem columnStart={1}></GridItem>
-// Or 
+// Or
 <GridItem columnStart='columnName'></GridItem>
 ```
 
-
 ### columnEnd
+
 Specifies a grid item’s end position within the grid columns; corresponds to [grid-column-end](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-end) CSS property.
 
 ```jsx
 <GridItem columnEnd={6}></GridItem>
-// Or 
+// Or
 <GridItem columnEnd='columnName'></GridItem>
 ```
 
 ### rowStart
+
 Specifies a grid item’s start position within the grid rows; corresponds to [grid-row-start](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-start) CSS property.
 
 **e.g.**
@@ -39,6 +42,7 @@ Specifies a grid item’s start position within the grid rows; corresponds to [g
 ```
 
 ### rowStart
+
 Specifies a grid item’s end position within the grid rows; corresponds to [grid-row-end](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-end) CSS property.
 
 **e.g.**
@@ -50,7 +54,8 @@ Specifies a grid item’s end position within the grid rows; corresponds to [gri
 ```
 
 ### area
-A grid area is one or more grid items that make up a rectangular area on the grid. 
+
+A grid area is one or more grid items that make up a rectangular area on the grid.
 It is a shorthand property for `grid-row-start`, `grid-column-start`, `grid-row-end` and `grid-column-end`
 
 **e.g**
@@ -61,10 +66,10 @@ It is a shorthand property for `grid-row-start`, `grid-column-start`, `grid-row-
   <GridItem area='rowStartName / columnStartName / rowEndName / columnEndName'></GridItem>
 ```
 
-
 ## Best practices
 
 ### Nesting grids
+
 A grid item can become a grid container. Replace any `GridItem` with `Grid` component, e.g.
 
 ```jsx

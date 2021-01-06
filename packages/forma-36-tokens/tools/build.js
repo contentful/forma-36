@@ -22,7 +22,7 @@ const buildCssTokens = (srcPath, tokens) => {
 
   const renderTokenTemplate = () =>
     Object.keys(tokens)
-      .map(token => `--${token}: ${tokens[token]};`)
+      .map((token) => `--${token}: ${tokens[token]};`)
       .join(' ');
 
   fse.outputFile(pathName, `:root { ${renderTokenTemplate()} }`);
@@ -36,7 +36,7 @@ const buildScssTokens = (srcPath, tokens) => {
 
   const renderTokenTemplate = () =>
     Object.keys(tokens)
-      .map(token => `--${token}: ${tokens[token]};`)
+      .map((token) => `--${token}: ${tokens[token]};`)
       .join(' ');
 
   fse.outputFile(pathName, `:root { ${renderTokenTemplate()} }`);
@@ -56,11 +56,10 @@ const buildIndexJS = (srcPath, tokens) => {
 };
 
 function createInterfaceDefinition(tokens) {
-  const defs = _.mapValues(tokens, value => {
-
+  const defs = _.mapValues(tokens, (value) => {
     return {
       value: value,
-      type: typeof value
+      type: typeof value,
     };
   });
 
@@ -92,7 +91,7 @@ const buildIndexDTS = (srcPath, tokens) => {
 // Generate Index
 const generateIndex = (paths, extension) => {
   const fileContents = paths
-    .map(srcPath => {
+    .map((srcPath) => {
       let fileName;
 
       if (extension === 'css') {
@@ -118,7 +117,7 @@ const generateIndex = (paths, extension) => {
 
   let allTokens = {};
 
-  paths.forEach(srcPath => {
+  paths.forEach((srcPath) => {
     const tokens = require(path.resolve(srcPath)); // eslint-disable-line
 
     buildJson(srcPath, tokens);

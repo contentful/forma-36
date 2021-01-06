@@ -32,9 +32,9 @@ export function NotificationItemContainer({
     if (duration) {
       if (duration === 0) return;
 
-      timer.current = setTimeout(() => {
+      timer.current = (setTimeout(() => {
         close();
-      }, duration);
+      }, duration) as unknown) as number;
     }
   }, [duration, close]);
 
