@@ -23,7 +23,6 @@
     "build:post-clean": "rm -rf dist/styles.js dist/main.js",
     "build": "yarn build:clean && yarn build:scripts && yarn build:esm && yarn build:styles && yarn build:types && yarn build:umd && yarn build:post-clean && yarn size",
     "size": "size-limit",
-    "prepublishOnly": "yarn build",
     "semantic-release": "semantic-release"
   },
   "peerDependencies": {
@@ -45,8 +44,6 @@
     "truncate": "^2.0.1"
   },
   "devDependencies": {
-    "@contentful/forma-36-fcss": "^0.2.13",
-    "@contentful/forma-36-tokens": "^0.9.3",
     "@size-limit/preset-big-lib": "^4.5.5",
     "@types/classnames": "2.2.7",
     "@types/react-color": "^3.0.1",

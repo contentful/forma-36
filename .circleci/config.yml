@@ -10,6 +10,7 @@ commands:
   yarn_install:
     steps:
       - restore_cache: *cache-key
+      - run: 'echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc'
       - run: yarn install --frozen-lockfile --cache-folder ~/.cache/yarn
       - save_cache:
           <<: *cache-key
@@ -64,13 +65,10 @@ jobs:
     steps:
       - checkout
       - yarn_install
-      - run:
-          name: Pre deploy
-          command: bin/before-deploy
+      - yarn run build
       - run:
           name: Deploy
-          # command: bin/deploy
-          command: yarn lerna publish --conventional-commits --exact --canary --no-git-tag-version --no-push --preid next-v3-$CIRCLE_SHA1 --dist-tag next-v3 --force-publish --no-changelog --yes
+          command: yarn lerna publish --exact --canary --no-git-tag-version --no-push --preid next-v3-$CIRCLE_BUILD_NUM --dist-tag next-v3 --force-publish --no-changelog --yes
 
 workflows:
   version: 2

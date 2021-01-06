@@ -21,7 +21,6 @@
     "access": "public"
   },
   "scripts": {
-    "prepublishOnly": "yarn build",
     "build": "parcel build index.ts --no-minify"
   },
   "peerDependencies": {
