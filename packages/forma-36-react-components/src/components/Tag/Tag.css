@@ -27,13 +27,13 @@
 }
 
 .Tag--negative {
-  color: var(--color-red-base);
-  background-color: color-mod(var(--color-red-base) a(6%));
+  color: var(--color-red-mid);
+  background-color: color-mod(var(--color-red-mid) a(6%));
 }
 
 .Tag--warning {
-  color: var(--color-orange-base);
-  background-color: color-mod(var(--color-orange-base) a(4%));
+  color: var(--color-orange-dark);
+  background-color: color-mod(var(--color-orange-dark) a(4%));
 }
 
 .Tag--secondary {
