@@ -70,7 +70,7 @@ jobs:
       - run:
           name: Deploy
           # command: bin/deploy
-          command: yarn lerna publish --conventional-commits --exact --canary --no-git-tag-version --no-push --preid next-v3 --dist-tag next-v3 --force-publish --no-changelog --yes
+          command: yarn lerna publish --conventional-commits --exact --canary --no-git-tag-version --no-push --preid next-v3-$CIRCLE_SHA1 --dist-tag next-v3 --force-publish --no-changelog --yes
 
 workflows:
   version: 2
