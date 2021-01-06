@@ -40,26 +40,24 @@ export interface ButtonProps {
   isActive?: boolean;
 }
 
-export const Button = (props: ButtonProps) => {
-  const {
-    children,
-    className,
-    icon,
-    buttonType = 'primary',
-    size = 'medium',
-    isFullWidth = false,
-    onBlur,
-    testId = 'cf-ui-button',
-    onClick,
-    loading = false,
-    disabled = false,
-    indicateDropdown = false,
-    href,
-    type = 'button',
-    isActive,
-    ...otherProps
-  } = props;
-
+export const Button = ({
+  buttonType = 'primary',
+  children,
+  className,
+  disabled = false,
+  href,
+  icon,
+  indicateDropdown = false,
+  isActive,
+  isFullWidth = false,
+  loading = false,
+  onBlur,
+  onClick,
+  size = 'medium',
+  testId = 'cf-ui-button',
+  type = 'button',
+  ...otherProps
+}: ButtonProps) => {
   const classNames = cn(
     styles.Button,
     className,
