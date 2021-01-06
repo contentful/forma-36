@@ -33,7 +33,7 @@
 
 .Tag--warning {
   color: var(--color-orange-dark);
-  background-color: var(--color-orange-lightest);
+  background-color: #ffefd5; /* temporary hardcoded value until palette improvements */
 }
 
 .Tag--secondary {
