@@ -27,36 +27,27 @@ export interface ControlledInputFieldPropTypes {
   children?: ReactNode;
 }
 
-const defaultProps: Partial<ControlledInputFieldPropTypes> = {
-  testId: 'cf-ui-controlled-input-field',
-  labelIsLight: false,
-  checked: false,
-  inputType: 'checkbox',
-};
-
-export const ControlledInputField = (props: ControlledInputFieldPropTypes) => {
-  const {
-    id,
-    labelIsLight,
-    testId,
-    required,
-    helpText,
-    disabled,
-    labelText,
-    helpTextProps,
-    formLabelProps,
-    className,
-    checked,
-    value,
-    validationMessage,
-    onChange,
-    children,
-    inputType,
-    inputProps,
-    name,
-    ...otherProps
-  } = props;
-
+export const ControlledInputField = ({
+  id,
+  labelIsLight = false,
+  testId = 'cf-ui-controlled-input-field',
+  required,
+  helpText,
+  disabled,
+  labelText,
+  helpTextProps,
+  formLabelProps,
+  className,
+  checked = false,
+  value,
+  validationMessage,
+  onChange,
+  children,
+  inputType = 'checkbox',
+  inputProps,
+  name,
+  ...otherProps
+}: ControlledInputFieldPropTypes) => {
   const classNames = cn(styles['ControlledInputField'], className, {
     [styles['ControlledInputField--disabled']]: disabled,
   });
@@ -106,7 +97,5 @@ export const ControlledInputField = (props: ControlledInputFieldPropTypes) => {
     </div>
   );
 };
-
-ControlledInputField.defaultProps = defaultProps;
 
 export default ControlledInputField;

@@ -35,39 +35,26 @@ export interface TextareaProps {
   textareaRef?: RefObject<HTMLTextAreaElement>;
 }
 
-export interface TextareaState {
-  value?: string;
-}
-
-const defaultProps: Partial<TextareaProps> = {
-  testId: 'cf-ui-textarea',
-  disabled: false,
-  required: false,
-  width: 'full',
-  willBlurOnEsc: true,
-};
-
-export const Textarea = (props: TextareaProps) => {
-  const {
-    className,
-    testId,
-    placeholder,
-    maxLength,
-    onChange,
-    disabled,
-    required,
-    onBlur,
-    onKeyDown,
-    error,
-    width,
-    value,
-    name,
-    rows,
-    id,
-    willBlurOnEsc,
-    textareaRef,
-    ...otherProps
-  } = props;
+export const Textarea = ({
+  className,
+  disabled = false,
+  error,
+  id,
+  maxLength,
+  name,
+  onBlur,
+  onChange,
+  onKeyDown,
+  placeholder,
+  required = false,
+  rows,
+  testId = 'cf-ui-textarea',
+  textareaRef,
+  value,
+  width = 'full',
+  willBlurOnEsc = true,
+  ...otherProps
+}: TextareaProps) => {
   const [valueState, setValueState] = useState<string | undefined>(value);
 
   useEffect(() => {
@@ -122,13 +109,12 @@ export const Textarea = (props: TextareaProps) => {
         maxLength={maxLength}
         value={disabled ? value : valueState}
         onKeyDown={handleKeyDown}
+        required={required}
         ref={textareaRef}
         {...otherProps}
       />
     </div>
   );
 };
-
-Textarea.defaultProps = defaultProps;
 
 export default Textarea;

@@ -44,7 +44,7 @@ export function InlineEntryCard({
   dropdownListElements,
   isSelected,
   children,
-  testId,
+  testId = 'cf-ui-inline-entry-card',
   isLoading,
   status,
   href,
@@ -101,9 +101,5 @@ export function InlineEntryCard({
     </Card>
   );
 }
-
-InlineEntryCard.defaultProps = {
-  testId: 'cf-ui-inline-entry-card',
-};
 
 export default InlineEntryCard;

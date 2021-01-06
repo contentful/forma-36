@@ -596,6 +596,7 @@ exports[`updates the value 1`] = `
     <label
       class="FormLabel"
       data-test-id="cf-ui-form-label"
+      for="someComponent"
     >
       test
     </label>
@@ -604,8 +605,11 @@ exports[`updates the value 1`] = `
     class="TextInput TextInput--full"
   >
     <input
+      aria-label="someComponent"
       class="TextInput__input"
       data-test-id="cf-ui-text-input"
+      id="someComponent"
+      name="someComponent"
       value="new value"
     />
   </div>

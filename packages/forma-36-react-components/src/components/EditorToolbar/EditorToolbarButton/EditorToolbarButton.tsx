@@ -1,5 +1,6 @@
-import React, { MouseEventHandler } from 'react';
+import React from 'react';
 import cn from 'classnames';
+import type { MouseEventHandler } from 'react';
 
 import IconButton from '../../IconButton';
 import Tooltip from '../../Tooltip';
@@ -23,14 +24,14 @@ export interface EditorToolbarButtonProps {
 export function EditorToolbarButton({
   className,
   label,
-  testId,
+  testId = 'cf-ui-editor-toolbar-button',
   icon,
   tooltip,
   iconButtonProps,
-  isActive,
-  disabled,
+  isActive = false,
+  disabled = false,
   onClick,
-  withDropdown,
+  withDropdown = false,
   ...otherProps
 }: EditorToolbarButtonProps): React.ReactElement {
   const classNames = cn(styles['EditorToolbarButton'], className, {
@@ -56,12 +57,5 @@ export function EditorToolbarButton({
     </React.Fragment>
   );
 }
-
-EditorToolbarButton.defaultProps = {
-  testId: 'cf-ui-editor-toolbar-button',
-  isActive: false,
-  disabled: false,
-  withDropdown: false,
-};
 
 export default EditorToolbarButton;

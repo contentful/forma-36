@@ -10,7 +10,7 @@ export interface AccordionItemProps {
   /**
    * The accordion title
    */
-  title: React.ReactNode;
+  title?: React.ReactNode;
   /**
    * The heading element that will be used by the AccordionHeader
    */
@@ -33,16 +33,10 @@ export interface AccordionItemProps {
   onCollapse?: Function;
 }
 
-const defaultProps: AccordionItemProps = {
-  title: 'Accordion Title',
-  testId: 'cf-ui-accordion-item',
-  titleElement: 'h2',
-};
-
 export const AccordionItem: FC<AccordionItemProps> = ({
-  title,
-  titleElement,
-  testId,
+  title = 'Accordion Title',
+  titleElement = 'h2',
+  testId = 'cf-ui-accordion-item',
   onExpand,
   onCollapse,
   children,
@@ -78,6 +72,5 @@ export const AccordionItem: FC<AccordionItemProps> = ({
     </li>
   );
 };
-AccordionItem.defaultProps = defaultProps;
 
 export default AccordionItem;

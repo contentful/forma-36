@@ -11,14 +11,13 @@ export interface FieldGroupProps {
   row?: boolean;
 }
 
-const defaultProps: Partial<FieldGroupProps> = {
-  row: false,
-  testId: 'cf-ui-field-group',
-};
-
-export const FieldGroup = (props: FieldGroupProps) => {
-  const { className, children, row, testId, ...otherProps } = props;
-
+export const FieldGroup = ({
+  children,
+  className,
+  row = false,
+  testId = 'cf-ui-field-group',
+  ...otherProps
+}: FieldGroupProps) => {
   const classNames = cn(styles.FieldGroup, className, {
     [styles['FieldGroup--row']]: row,
   });
@@ -31,7 +30,5 @@ export const FieldGroup = (props: FieldGroupProps) => {
     </div>
   );
 };
-
-FieldGroup.defaultProps = defaultProps;
 
 export default FieldGroup;

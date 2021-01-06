@@ -11,7 +11,7 @@ export interface ModalContentProps {
 }
 
 export function ModalContent({
-  testId,
+  testId = 'cf-ui-modal-content',
   className,
   children,
   ...rest
@@ -26,9 +26,5 @@ export function ModalContent({
     </div>
   );
 }
-
-ModalContent.defaultProps = {
-  testId: 'cf-ui-modal-content',
-};
 
 export default ModalContent;

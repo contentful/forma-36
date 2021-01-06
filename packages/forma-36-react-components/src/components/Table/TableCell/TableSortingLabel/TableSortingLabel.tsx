@@ -1,5 +1,6 @@
-import React, { ButtonHTMLAttributes } from 'react';
+import React from 'react';
 import cn from 'classnames';
+import type { ButtonHTMLAttributes } from 'react';
 
 import Icon from '../../../Icon/Icon';
 import { sortingDirections } from '../TableCell/TableCell';
@@ -15,15 +16,15 @@ export interface TableSortingLabelProps
   testId?: string;
 }
 
-const defaultProps: Partial<TableSortingLabelProps> = {
-  testId: 'cf-ui-table-sorting-label',
-};
-
-export const TableSortingLabel = (props: TableSortingLabelProps) => {
-  const { className, children, active, testId, ...otherProps } = props;
-
+export const TableSortingLabel = ({
+  active,
+  children,
+  className,
+  direction,
+  testId = 'cf-ui-table-sorting-label',
+  ...otherProps
+}: TableSortingLabelProps) => {
   const renderIcon = () => {
-    const { direction } = props;
     const classNames = cn(
       styles['TableSortingLabel__icon'],
       styles[`TableSortingLabel__icon--${direction as string}`],
@@ -46,7 +47,5 @@ export const TableSortingLabel = (props: TableSortingLabelProps) => {
     </button>
   );
 };
-
-TableSortingLabel.defaultProps = defaultProps;
 
 export default TableSortingLabel;

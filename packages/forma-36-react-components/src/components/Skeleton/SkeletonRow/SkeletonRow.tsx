@@ -10,12 +10,10 @@ export interface SkeletonRowProps {
   columnCount?: number;
 }
 
-const defaultProps = {
-  rowCount: 1,
-  columnCount: 5,
-};
-
-export const SkeletonRow = ({ rowCount, columnCount }: SkeletonRowProps) => {
+export const SkeletonRow = ({
+  columnCount = 5,
+  rowCount = 1,
+}: SkeletonRowProps) => {
   return (
     <>
       {Array.from(Array(rowCount)).map((_, rowIndex) => (
@@ -28,6 +26,5 @@ export const SkeletonRow = ({ rowCount, columnCount }: SkeletonRowProps) => {
     </>
   );
 };
-SkeletonRow.defaultProps = defaultProps;
 
 export default SkeletonRow;

@@ -26,6 +26,7 @@ exports[`renders the component 1`] = `
       id="cf-ui-skeleton-clip-0"
     >
       <rect
+        data-test-id="cf-ui-skeleton-image"
         height="70"
         rx="0"
         ry="0"
@@ -105,6 +106,7 @@ exports[`renders the component with a custom height 1`] = `
       id="cf-ui-skeleton-clip-3"
     >
       <rect
+        data-test-id="cf-ui-skeleton-image"
         height="100"
         rx="0"
         ry="0"
@@ -184,6 +186,7 @@ exports[`renders the component with a custom width 1`] = `
       id="cf-ui-skeleton-clip-6"
     >
       <rect
+        data-test-id="cf-ui-skeleton-image"
         height="70"
         rx="0"
         ry="0"
@@ -263,6 +266,7 @@ exports[`renders the component with a radius x 1`] = `
       id="cf-ui-skeleton-clip-15"
     >
       <rect
+        data-test-id="cf-ui-skeleton-image"
         height="70"
         rx="15"
         ry="0"
@@ -342,6 +346,7 @@ exports[`renders the component with a radius y 1`] = `
       id="cf-ui-skeleton-clip-18"
     >
       <rect
+        data-test-id="cf-ui-skeleton-image"
         height="70"
         rx="0"
         ry="15"
@@ -421,6 +426,7 @@ exports[`renders the component with an offset left 1`] = `
       id="cf-ui-skeleton-clip-12"
     >
       <rect
+        data-test-id="cf-ui-skeleton-image"
         height="70"
         rx="0"
         ry="0"
@@ -501,6 +507,7 @@ exports[`renders the component with an offset top 1`] = `
       id="cf-ui-skeleton-clip-9"
     >
       <rect
+        data-test-id="cf-ui-skeleton-image"
         height="70"
         rx="0"
         ry="0"

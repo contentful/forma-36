@@ -33,7 +33,7 @@ export interface IllustrationProps {
 
 export function Illustration({
   className,
-  testId,
+  testId = 'cf-ui-illustration',
   illustration,
   ...otherProps
 }: IllustrationProps): React.ReactElement {
@@ -59,9 +59,5 @@ export function Illustration({
     <Element {...otherProps} data-test-id={testId} className={classNames} />
   );
 }
-
-Illustration.defaultProps = {
-  testId: 'cf-ui-illustration',
-};
 
 export default Illustration;

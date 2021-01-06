@@ -13,13 +13,13 @@ export interface SkeletonImageProps {
 }
 
 export function SkeletonImage({
-  testId,
+  testId = 'cf-ui-skeleton-image',
   offsetLeft,
   offsetTop,
-  width,
-  height,
-  radiusX,
-  radiusY,
+  width = 70,
+  height = 70,
+  radiusX = 0,
+  radiusY = 0,
   ...otherProps
 }: SkeletonImageProps): React.ReactElement {
   return (
@@ -30,17 +30,10 @@ export function SkeletonImage({
       ry={radiusY}
       width={width}
       height={height}
+      data-test-id={testId}
       {...otherProps}
     />
   );
 }
-
-SkeletonImage.defaultProps = {
-  testId: 'cf-ui-skeleton-image',
-  width: 70,
-  height: 70,
-  radiusX: 0,
-  radiusY: 0,
-};
 
 export default SkeletonImage;

@@ -15,8 +15,8 @@ export interface SubheadingProps {
 export function Subheading({
   className,
   children,
-  testId,
-  element,
+  testId = 'cf-ui-subheading',
+  element = 'h2',
   ...otherProps
 }: SubheadingProps): React.ReactElement {
   const classNames = cn(styles['Subheading'], className);
@@ -42,10 +42,5 @@ export function Subheading({
     </TypographyContext.Consumer>
   );
 }
-
-Subheading.defaultProps = {
-  element: 'h2',
-  testId: 'cf-ui-subheading',
-};
 
 export default Subheading;

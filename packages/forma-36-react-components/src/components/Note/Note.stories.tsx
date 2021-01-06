@@ -17,7 +17,7 @@ storiesOf('Components/Note', module)
         noteType={select(
           'noteType',
           ['positive', 'negative', 'warning', 'primary'],
-          Note.defaultProps.noteType,
+          'primary',
         )}
         title={text('title', '')}
         hasCloseButton={boolean('hasCloseButton', false)}
