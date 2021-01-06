@@ -4,13 +4,13 @@ orbs:
   docker: circleci/docker@1.0.1
 
 cache-key: &cache-key
-  key: dependency-cache-primary-{{ arch }}-yarn-packages-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}-{{ .Branch }}
+  key: dependency-cache-primary-{{ arch }}-yarn-packages-{{ checksum ".nvmrc" }}-{{ checksum "yarn.lock" }}
 
 commands:
   yarn_install:
     steps:
       - restore_cache: *cache-key
-      - run: yarn install --prefer-offline --pure-lockfile
+      - run: yarn install --frozen-lockfile --cache-folder ~/.cache/yarn
       - save_cache:
           <<: *cache-key
           paths:
