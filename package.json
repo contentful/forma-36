@@ -140,8 +140,6 @@
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "rimraf": "^3.0.2",
-    "storybook-addon-jsx": "^7.3.4",
-    "storybook-prop-types-addon": "1.0.2",
     "ts-jest": "^26.4.4",
     "typescript": "3.9.7"
   },
