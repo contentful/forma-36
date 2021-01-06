@@ -171,7 +171,7 @@ exports[`renders the component with small width 1`] = `
 
 exports[`renders the component with the copy button 1`] = `
 <div
-  class="TextInput TextInput--full"
+  class="TextInput TextInput--full TextInput--with-copy-button"
 >
   <input
     aria-label="userEmail"

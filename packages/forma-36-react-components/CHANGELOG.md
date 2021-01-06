@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.73.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.73.3...@contentful/forma-36-react-components@3.73.4) (2021-01-06)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+## [3.73.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.73.1...@contentful/forma-36-react-components@3.73.3) (2021-01-06)
+
+
+### Bug Fixes
+
+* specify input element type in ChangeEventHandler ([fe8c27d](https://github.com/contentful/forma-36/commit/fe8c27d2beb14f21b54a8aafdb0170f5d698d94e))
+
+
+
+
+
 ## [3.73.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.73.1...@contentful/forma-36-react-components@3.73.2) (2021-01-05)
 
 

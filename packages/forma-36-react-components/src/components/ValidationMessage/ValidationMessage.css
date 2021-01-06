@@ -8,7 +8,7 @@
 }
 
 .ValidationMessage__icon {
-  margin-right: var(--spacing-xs);
+  margin-right: var(--spacing-2xs);
   margin-top: calc(var(--spacing-2xs) / 2);
   min-height: 18px;
   min-width: 18px;

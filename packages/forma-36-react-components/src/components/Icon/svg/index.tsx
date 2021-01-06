@@ -43,6 +43,7 @@ export { default as EmbeddedEntryInlineTrimmed } from './EmbeddedEntryInlineTrim
 export { default as Entry } from './Entry';
 export { default as EntryTrimmed } from './EntryTrimmed';
 export { default as ErrorCircle } from './ErrorCircle';
+export { default as ErrorCircleOutline } from './ErrorCircleOutline';
 export { default as ErrorCircleTrimmed } from './ErrorCircleTrimmed';
 export { default as ExternalLink } from './ExternalLink';
 export { default as ExternalLinkTrimmed } from './ExternalLinkTrimmed';
