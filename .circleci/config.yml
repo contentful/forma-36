@@ -70,7 +70,7 @@ jobs:
       - run:
           name: Deploy
           # command: bin/deploy
-          command: yarn lerna publish --canary --dist-tag next-v3 --yes
+          command: yarn lerna publish from-git --canary --dist-tag next-v3 --no-changelog --no-git-tag-version --yes
 
 workflows:
   version: 2
