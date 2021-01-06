@@ -8,7 +8,7 @@ exports[`renders the component 1`] = `
   <button
     aria-expanded="false"
     aria-haspopup="menu"
-    class="Button Button--primary"
+    class="Button Button--primary Button--medium"
     data-test-id="cf-ui-button"
     type="button"
   >
@@ -34,7 +34,7 @@ exports[`renders the component as open 1`] = `
   <button
     aria-expanded="true"
     aria-haspopup="menu"
-    class="Button Button--primary"
+    class="Button Button--primary Button--medium"
     data-test-id="cf-ui-button"
     type="button"
   >
@@ -60,7 +60,7 @@ exports[`renders the component with a submenu 1`] = `
   <button
     aria-expanded="true"
     aria-haspopup="menu"
-    class="Button Button--primary"
+    class="Button Button--primary Button--medium"
     data-test-id="cf-ui-button"
     type="button"
   >
@@ -86,7 +86,7 @@ exports[`renders the component with an additional class name 1`] = `
   <button
     aria-expanded="false"
     aria-haspopup="menu"
-    class="Button Button--primary"
+    class="Button Button--primary Button--medium"
     data-test-id="cf-ui-button"
     type="button"
   >
