@@ -17,8 +17,8 @@
 }
 
 .Tag--primary {
-  color: var(--color-blue-base);
-  background-color: color-mod(var(--color-blue-base) a(7%));
+  color: var(--color-primary);
+  background-color: color-mod(var(--color-primary) a(7%));
 }
 
 .Tag--positive {
