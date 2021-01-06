@@ -1,8 +1,15 @@
 import React from 'react';
-import { render, fireEvent, within, configure } from '@testing-library/react';
+import {
+  render,
+  fireEvent,
+  within,
+  configure,
+  screen,
+} from '@testing-library/react';
 
 import { KEY_CODE } from './utils';
 import Autocomplete, { AutocompleteProps } from '../Autocomplete';
+import { positionType } from '../Dropdown';
 
 interface Item {
   value: number;
@@ -25,6 +32,11 @@ describe('Autocomplete', () => {
   const build = ({
     placeholder = '',
     width = 'large',
+    dropdownProps = {
+      isOpen: false,
+      children: null,
+      position: 'top',
+    },
   }: Partial<AutocompleteProps<Item>>) => {
     onChangeFn = jest.fn();
     onQueryChangeFn = jest.fn();
@@ -36,6 +48,7 @@ describe('Autocomplete', () => {
         onQueryChange={onQueryChangeFn}
         placeholder={placeholder}
         width={width}
+        dropdownProps={dropdownProps}
       >
         {(options: Item[]) =>
           options.map((option) => (
@@ -78,6 +91,65 @@ describe('Autocomplete', () => {
   });
 
   describe('dropdown', () => {
+    it('is closed by default', () => {
+      build({});
+      const dropdown = screen.queryByTestId('autocomplete.dropdown-list');
+      expect(dropdown).not.toBeInTheDocument();
+    });
+
+    it('opens when the isOpen prop is set to true', () => {
+      const dropdownProps = {
+        usePortal: false,
+        isOpen: true,
+        children: null,
+        position: 'top' as positionType,
+      };
+      build({ dropdownProps });
+      const dropdown = screen.getByTestId('autocomplete.dropdown-list');
+      expect(dropdown).toBeInTheDocument();
+    });
+
+    it('closes the dropdown when an item is clicked [isOpen = false]', () => {
+      build({});
+      const input = screen.getByTestId('autocomplete.input');
+      expect(
+        screen.queryByTestId('autocomplete.dropdown-list'),
+      ).not.toBeInTheDocument();
+      fireEvent.keyDown(input, { keyCode: KEY_CODE.ARROW_DOWN });
+      expect(
+        screen.getByTestId('autocomplete.dropdown-list'),
+      ).toBeInTheDocument();
+      const firstItem = screen.getAllByTestId(
+        'cf-ui-dropdown-list-item-button',
+      )[0];
+      fireEvent.click(firstItem);
+      expect(
+        screen.queryByTestId('autocomplete.dropdown-list'),
+      ).not.toBeInTheDocument();
+    });
+
+    it('keeps the dropdown open when an item is clicked [isOpen = true]', () => {
+      const dropdownProps = {
+        usePortal: false,
+        isOpen: true,
+        children: null,
+        position: 'top' as positionType,
+      };
+      build({ dropdownProps });
+      expect(
+        screen.getByTestId('autocomplete.dropdown-list'),
+      ).toBeInTheDocument();
+      const firstItem = screen.getAllByTestId(
+        'cf-ui-dropdown-list-item-button',
+      )[0];
+      fireEvent.click(firstItem);
+      expect(
+        screen.queryByTestId('autocomplete.dropdown-list'),
+      ).toBeInTheDocument();
+    });
+  });
+
+  describe('dropdown with focus', () => {
     let input: HTMLElement;
     let dropdown: HTMLElement;
     let options: HTMLElement[];

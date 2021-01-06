@@ -59,18 +59,12 @@ type Action =
   | { type: typeof TOGGLED_LIST; payload?: boolean }
   | { type: typeof NAVIGATED_ITEMS; payload: number | null }
   | { type: typeof QUERY_CHANGED; payload: string }
-  | { type: typeof ITEM_SELECTED };
+  | { type: typeof ITEM_SELECTED; payload: State };
 
 enum Direction {
   DOWN = 1,
   UP = -1,
 }
-
-const initialState: State = {
-  isOpen: false,
-  query: '',
-  highlightedItemIndex: null,
-};
 
 const reducer = (state: State, action: Action): State => {
   switch (action.type) {
@@ -94,7 +88,7 @@ const reducer = (state: State, action: Action): State => {
         query: action.payload,
       };
     case ITEM_SELECTED:
-      return { ...initialState };
+      return { ...action.payload };
     default:
       return state;
   }
@@ -121,6 +115,12 @@ export const Autocomplete = <T extends {}>({
   const listRef = useRef<HTMLDivElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
 
+  const initialState: State = {
+    isOpen: dropdownProps?.isOpen ?? false,
+    query: '',
+    highlightedItemIndex: null,
+  };
+
   const [{ isOpen, query, highlightedItemIndex }, dispatch] = useReducer(
     reducer,
     initialState,
@@ -131,7 +131,7 @@ export const Autocomplete = <T extends {}>({
   };
 
   const selectItem = (item: T) => {
-    dispatch({ type: ITEM_SELECTED });
+    dispatch({ type: ITEM_SELECTED, payload: initialState });
     onQueryChange('');
     onChange(item);
   };
