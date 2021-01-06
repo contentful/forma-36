@@ -16,13 +16,17 @@ export default {
   },
 };
 
-export const basic = (args: TagProps) => (
-  <Tag tagType={args.tagType}>{args['Tag Text']}</Tag>
+interface Args extends TagProps {
+  tagText?: string;
+}
+
+export const basic = ({ tagText, ...args }: Args) => (
+  <Tag {...args}>{tagText}</Tag>
 );
 
 basic.args = {
   tagType: 'primary',
-  'Tag Text': 'Published',
+  tagText: 'Published',
 };
 
 export const overview = () => (
