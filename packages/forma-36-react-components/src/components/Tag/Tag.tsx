@@ -5,6 +5,7 @@ import styles from './Tag.css';
 
 export type TagType =
   | 'primary'
+  | 'filled-primary'
   | 'positive'
   | 'negative'
   | 'warning'
@@ -13,6 +14,7 @@ export type TagType =
 
 export const tagType = [
   'primary',
+  'filled-primary',
   'positive',
   'negative',
   'warning',
@@ -20,7 +22,13 @@ export const tagType = [
   'secondary',
 ];
 
-type Status = 'published' | 'draft' | 'archived' | 'changed' | 'deleted';
+type Status =
+  | 'published'
+  | 'draft'
+  | 'archived'
+  | 'changed'
+  | 'deleted'
+  | 'new';
 
 const statusTagTypeMap = {
   published: 'positive',
@@ -28,6 +36,7 @@ const statusTagTypeMap = {
   archived: 'negative',
   changed: 'primary',
   deleted: 'negative',
+  new: 'filled-primary',
 };
 
 export interface TagProps {
