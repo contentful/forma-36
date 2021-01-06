@@ -1,10 +1,11 @@
 const path = require('path');
-const postcssOptions = require('../../packages/forma-36-react-components/tools/postcss.config.js');
 
 module.exports = {
-  stories: ['./docs/**/*.stories.mdx', '../../packages/**/*.stories.@(ts|md)x'],
+  stories: [
+    './docs/**/*.stories.mdx',
+    '../../src/components/**/*.stories.@(ts|md)x',
+  ],
   addons: [
-    '@storybook/addon-links',
     '@storybook/addon-essentials',
     '@storybook/addon-knobs',
     '@storybook/addon-a11y',
@@ -13,7 +14,7 @@ module.exports = {
       options: {
         rule: {
           test: /\.stories\.(ts|md)x$/,
-          include: [path.resolve(__dirname, '../../packages')],
+          include: [path.resolve(__dirname, '../../src/components')],
         },
       },
     },
@@ -41,7 +42,9 @@ module.exports = {
         {
           loader: 'postcss-loader',
           options: {
-            postcssOptions,
+            config: {
+              path: path.resolve(__dirname, '../postcss.config.js'),
+            },
           },
         },
       ],
@@ -61,12 +64,15 @@ module.exports = {
               localIdentName: '[name]__[local]___[hash:base64:5]',
             },
             sourceMap: true,
+            // minimize: true,
           },
         },
         {
           loader: 'postcss-loader',
           options: {
-            postcssOptions,
+            config: {
+              path: path.resolve(__dirname, '../postcss.config.js'),
+            },
           },
         },
       ],

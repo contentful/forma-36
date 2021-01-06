@@ -1,7 +1,7 @@
 import { create } from '@storybook/theming/create';
 import tokens from '@contentful/forma-36-tokens';
 
-import logo from './public/forma-logo.png';
+import logo from './docs/images/forma-logo.png';
 
 export default create({
   base: 'light',

@@ -1,3 +1,8 @@
+import React from 'react';
+
+// Storybook Addon Dependencies
+import createContentfulTheme from './contentful-theme';
+import DocPage from './components/DocPage/DocPage';
 import { fontStackPrimary } from '@contentful/forma-36-tokens';
 
 // Setup Decorators
@@ -16,7 +21,6 @@ export const decorators = [
 
 // Setup Parameters
 export const parameters = {
-  actions: { argTypesRegex: '^on[A-Z].*' },
   layout: 'centered',
   options: {
     storySort: {
