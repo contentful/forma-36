@@ -69,7 +69,8 @@ jobs:
           command: bin/before-deploy
       - run:
           name: Deploy
-          command: bin/deploy
+          # command: bin/deploy
+          command: yarn lerna publish --canary --dist-tag next-v4 --yes
 
 workflows:
   version: 2
@@ -82,7 +83,9 @@ workflows:
       - release:
           filters:
             branches:
-              only: master
+              only:
+                - master
+                - forma-v4
           requires:
             - lint-and-test
             - chromatic-deployment
