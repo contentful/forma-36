@@ -41,10 +41,10 @@ export interface DatePickerProps {
 export function Datepicker({
   labelText,
   required,
-  name,
-  id,
-  testId,
-  dateFormat,
+  name = 'cf-ui-datepicker',
+  id = 'cf-ui-datepicker',
+  testId = 'cf-ui-datepicker',
+  dateFormat = 'do MMM yyyy',
   disabled,
   ...otherProps
 }: DatePickerProps): React.ReactElement {
@@ -115,12 +115,5 @@ export function Datepicker({
     </div>
   );
 }
-
-Datepicker.defaultProps = {
-  name: 'cf-ui-datepicker',
-  id: 'cf-ui-datepicker',
-  testId: 'cf-ui-datepicker',
-  dateFormat: 'do MMM yyyy',
-};
 
 export default Datepicker;

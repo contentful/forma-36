@@ -15,8 +15,8 @@ export interface HeadingProps {
 export function Heading({
   className,
   children,
-  testId,
-  element,
+  testId = 'cf-ui-heading',
+  element = 'h1',
   ...otherProps
 }: HeadingProps): React.ReactElement {
   const classNames = cn(styles['Heading'], className);
@@ -42,10 +42,5 @@ export function Heading({
     </TypographyContext.Consumer>
   );
 }
-
-Heading.defaultProps = {
-  element: 'h1',
-  testId: 'cf-ui-heading',
-};
 
 export default Heading;

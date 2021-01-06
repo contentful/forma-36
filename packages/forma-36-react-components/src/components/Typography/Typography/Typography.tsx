@@ -24,7 +24,7 @@ export const TypographyContext = React.createContext({});
 export function Typography({
   className,
   children,
-  testId,
+  testId = 'cf-ui-text-container',
   ...otherProps
 }: TypographyProps): React.ReactElement {
   const classNames = cn(styles.Typography, className);
@@ -37,9 +37,5 @@ export function Typography({
     </TypographyContext.Provider>
   );
 }
-
-Typography.defaultProps = {
-  testId: 'cf-ui-text-container',
-};
 
 export default Typography;

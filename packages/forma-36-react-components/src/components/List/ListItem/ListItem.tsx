@@ -13,7 +13,7 @@ export interface ListItemProps {
 export function ListItem({
   className,
   children,
-  testId,
+  testId = 'cf-ui-list-item',
   ...otherProps
 }: ListItemProps): React.ReactElement {
   const classNames = cn(styles['ListItem'], className, {
@@ -28,9 +28,5 @@ export function ListItem({
     </li>
   );
 }
-
-ListItem.defaultProps = {
-  testId: 'cf-ui-list-item',
-};
 
 export default ListItem;

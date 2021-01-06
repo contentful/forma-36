@@ -19,8 +19,15 @@ export interface EntityListProps {
 }
 
 export const EntityList = forwardRef<HTMLUListElement, EntityListProps>(
-  (props: EntityListProps, ref) => {
-    const { className, children, testId, ...otherProps } = props;
+  (
+    {
+      className,
+      children,
+      testId = 'cf-ui-entity-list',
+      ...otherProps
+    }: EntityListProps,
+    ref,
+  ) => {
     const classNames = cn(styles.EntityList, className);
 
     return (
@@ -35,9 +42,7 @@ export const EntityList = forwardRef<HTMLUListElement, EntityListProps>(
     );
   },
 );
+
 EntityList.displayName = 'EntityList';
-EntityList.defaultProps = {
-  testId: 'cf-ui-entity-list',
-};
 
 export default EntityList;

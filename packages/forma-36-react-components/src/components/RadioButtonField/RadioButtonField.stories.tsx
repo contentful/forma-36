@@ -69,6 +69,7 @@ storiesOf('Components/RadioButtonField', module)
           helpText="This is a helptext"
           name="someOption"
           value="no"
+          id="radioButtonFieldOption"
         />
       </Flex>
       <Flex marginBottom="spacingS">
@@ -84,6 +85,7 @@ storiesOf('Components/RadioButtonField', module)
           disabled={boolean('disabled', false)}
           name="someOption"
           value="no"
+          id="radioButtonFieldOption2"
         />
       </Flex>
       <Flex marginBottom="spacingS">
@@ -96,6 +98,7 @@ storiesOf('Components/RadioButtonField', module)
           disabled
           name="someOption"
           value="no"
+          id="radioButtonFieldOption3"
         />
       </Flex>
       <Flex marginBottom="spacingS">
@@ -110,6 +113,7 @@ storiesOf('Components/RadioButtonField', module)
           name="someOption"
           value="no"
           labelIsLight
+          id="radioButtonFieldOption4"
         />
       </Flex>
     </>

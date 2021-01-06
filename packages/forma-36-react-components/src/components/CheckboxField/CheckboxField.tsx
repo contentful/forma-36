@@ -1,30 +1,27 @@
 import React from 'react';
-import ControlledInputField, {
+import ControlledInputField from '../ControlledInputField';
+import type { ControlledInputFieldPropTypes } from '../ControlledInputField';
+
+export type CheckboxFieldProps = Omit<
   ControlledInputFieldPropTypes,
-} from '../ControlledInputField';
+  'inputType'
+>;
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface CheckboxFieldProps extends ControlledInputFieldPropTypes {}
-
-const defaultProps: Partial<CheckboxFieldProps> = {
-  labelIsLight: false,
-  checked: false,
-  inputType: 'checkbox',
-  testId: 'cf-ui-checkbox-field',
-};
-
-export const CheckboxField = (props: CheckboxFieldProps) => {
-  const { testId, ...otherProps } = props;
-
+export const CheckboxField = ({
+  checked = false,
+  labelIsLight = false,
+  testId = 'cf-ui-checkbox-field',
+  ...otherProps
+}: CheckboxFieldProps) => {
   return (
     <ControlledInputField
+      checked={checked}
+      labelIsLight={labelIsLight}
       testId={testId}
       {...otherProps}
       inputType="checkbox"
     />
   );
 };
-
-CheckboxField.defaultProps = defaultProps;
 
 export default CheckboxField;

@@ -16,7 +16,7 @@ export interface ModalHeaderProps {
 export function ModalHeader({
   onClose,
   title,
-  testId,
+  testId = 'cf-ui-modal-header',
   isNotWrapped,
   className,
   ...rest
@@ -43,9 +43,5 @@ export function ModalHeader({
     </div>
   );
 }
-
-ModalHeader.defaultProps = {
-  testId: 'cf-ui-modal-header',
-};
 
 export default ModalHeader;

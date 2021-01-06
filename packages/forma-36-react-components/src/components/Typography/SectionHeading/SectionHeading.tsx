@@ -15,8 +15,8 @@ export interface SectionHeadingProps {
 export function SectionHeading({
   className,
   children,
-  testId,
-  element,
+  testId = 'cf-ui-section-heading',
+  element = 'h3',
   ...otherProps
 }: SectionHeadingProps): React.ReactElement {
   const classNames = cn(styles['SectionHeading'], className);
@@ -42,10 +42,5 @@ export function SectionHeading({
     </TypographyContext.Consumer>
   );
 }
-
-SectionHeading.defaultProps = {
-  element: 'h3',
-  testId: 'cf-ui-section-heading',
-};
 
 export default SectionHeading;

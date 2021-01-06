@@ -602,6 +602,7 @@ exports[`renders the component as isLoading 1`] = `
           id="f36-entity-list-item-skeleton"
         >
           <rect
+            data-test-id="cf-ui-skeleton-image"
             height="46"
             rx="0"
             ry="0"

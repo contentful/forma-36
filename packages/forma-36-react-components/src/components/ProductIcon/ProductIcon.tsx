@@ -68,23 +68,16 @@ export interface ProductIconProps {
   icon: ProductIconType;
   className?: string;
   testId?: string;
-  tag: ProductIconTagType;
+  tag?: ProductIconTagType;
 }
-
-const defaultProps = {
-  testId: 'cf-ui-navigation-icon',
-  size: 'medium',
-  color: 'positive',
-  tag: 'div',
-};
 
 export const ProductIcon = ({
   className,
   icon,
-  size,
-  color,
-  testId,
-  tag,
+  size = 'medium',
+  color = 'positive',
+  testId = 'cf-ui-navigation-icon',
+  tag = 'div',
   ...otherProps
 }: ProductIconProps) => {
   const classNames = cn(
@@ -114,7 +107,5 @@ export const ProductIcon = ({
     </Tag>
   );
 };
-
-ProductIcon.defaultProps = defaultProps;
 
 export default ProductIcon;

@@ -56,9 +56,9 @@ export function Asset({
   className,
   src,
   status,
-  testId,
+  testId = 'cf-ui-asset',
   title,
-  type,
+  type = 'image',
   ...otherProps
 }: AssetProps): React.ReactElement {
   const classNames = cn(styles.Asset, className);
@@ -101,10 +101,5 @@ export function Asset({
     </div>
   );
 }
-
-Asset.defaultProps = {
-  type: 'image',
-  testId: 'cf-ui-asset',
-};
 
 export default Asset;

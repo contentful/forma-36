@@ -18,7 +18,7 @@ export const DropdownList = ({
   className,
   border,
   maxHeight,
-  testId,
+  testId = 'cf-ui-dropdown-list',
   children,
   listRef,
   styles,
@@ -44,10 +44,6 @@ export const DropdownList = ({
       {children}
     </ul>
   );
-};
-
-DropdownList.defaultProps = {
-  testId: 'cf-ui-dropdown-list',
 };
 
 export default DropdownList;

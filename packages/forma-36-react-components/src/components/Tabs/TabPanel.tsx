@@ -9,7 +9,7 @@ export interface TabPanelProps {
 }
 
 export function TabPanel({
-  testId,
+  testId = 'cf-ui-tab-panel',
   className,
   children,
   id,
@@ -27,9 +27,5 @@ export function TabPanel({
     </div>
   );
 }
-
-TabPanel.defaultProps = {
-  testId: 'cf-ui-tab-panel',
-};
 
 export default TabPanel;

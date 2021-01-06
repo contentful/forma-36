@@ -1,16 +1,15 @@
-import React, {
-  useEffect,
-  useState,
-  ChangeEvent,
-  FocusEventHandler,
-  ChangeEventHandler,
-} from 'react';
+import React, { useEffect, useState } from 'react';
+import type { ChangeEvent, FocusEventHandler, ChangeEventHandler } from 'react';
 import cn from 'classnames';
+
 import ValidationMessage from '../ValidationMessage';
-import FormLabel, { FormLabelProps } from '../FormLabel';
+import FormLabel from '../FormLabel';
+import type { FormLabelProps } from '../FormLabel';
 import HelpText from '../HelpText';
-import Select, { SelectProps } from '../Select';
-import TextLink, { TextLinkProps } from '../TextLink';
+import Select from '../Select';
+import type { SelectProps } from '../Select';
+import TextLink from '../TextLink';
+import type { TextLinkProps } from '../TextLink';
 import styles from './SelectField.css';
 
 export interface SelectFieldProps {
@@ -31,34 +30,24 @@ export interface SelectFieldProps {
   className?: string;
 }
 
-export interface SelectFieldState {
-  value?: string;
-}
-
-const defaultProps: Partial<SelectFieldProps> = {
-  testId: 'cf-ui-select-field',
-  required: false,
-};
-
-export const SelectField = (props: SelectFieldProps) => {
-  const {
-    validationMessage,
-    className,
-    children,
-    selectProps,
-    testId,
-    formLabelProps,
-    textLinkProps,
-    labelText,
-    helpText,
-    required,
-    onChange,
-    onBlur,
-    value,
-    name,
-    id,
-    ...otherProps
-  } = props;
+export const SelectField = ({
+  children,
+  className,
+  formLabelProps,
+  helpText,
+  id,
+  labelText,
+  name,
+  onBlur,
+  onChange,
+  required = false,
+  selectProps,
+  testId = 'cf-ui-select-field',
+  textLinkProps,
+  validationMessage,
+  value,
+  ...otherProps
+}: SelectFieldProps) => {
   const [valueState, setValueState] = useState<string | undefined>(value);
 
   // Store a copy of the value in state.
@@ -124,7 +113,5 @@ export const SelectField = (props: SelectFieldProps) => {
     </div>
   );
 };
-
-SelectField.defaultProps = defaultProps;
 
 export default SelectField;

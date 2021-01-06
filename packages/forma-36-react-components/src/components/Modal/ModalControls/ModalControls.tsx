@@ -11,7 +11,7 @@ export interface ModalControlsProps {
 }
 
 export function ModalControls({
-  testId,
+  testId = 'cf-ui-modal-controls',
   className,
   children,
   ...rest
@@ -26,9 +26,5 @@ export function ModalControls({
     </div>
   );
 }
-
-ModalControls.defaultProps = {
-  testId: 'cf-ui-modal-controls',
-};
 
 export default ModalControls;

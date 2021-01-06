@@ -18,7 +18,7 @@ export interface PillProps {
 export function Pill({
   label,
   onClose,
-  testId,
+  testId = 'cf-ui-pill',
   onDrag,
   className,
   dragHandleComponent,
@@ -59,9 +59,5 @@ export function Pill({
     </div>
   );
 }
-
-Pill.defaultProps = {
-  testId: 'cf-ui-pill',
-};
 
 export default Pill;

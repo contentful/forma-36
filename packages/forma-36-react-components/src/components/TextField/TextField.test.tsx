@@ -99,7 +99,13 @@ it('renders the component with a value', () => {
 
 it('updates the value', () => {
   const { container } = render(
-    <TextField labelText="test" data-test-id="input" value="" />,
+    <TextField
+      id="someComponent"
+      name="someComponent"
+      labelText="test"
+      data-test-id="input"
+      value=""
+    />,
   );
 
   const input = container.querySelector(

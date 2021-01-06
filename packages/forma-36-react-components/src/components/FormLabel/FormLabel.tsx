@@ -12,23 +12,15 @@ export interface FormLabelProps {
   required?: boolean;
 }
 
-const defaultProps: Partial<FormLabelProps> = {
-  testId: 'cf-ui-form-label',
-  requiredText: 'required',
-  required: false,
-};
-
-export const FormLabel = (props: FormLabelProps) => {
-  const {
-    className,
-    children,
-    testId,
-    htmlFor,
-    requiredText,
-    required,
-    ...otherProps
-  } = props;
-
+export const FormLabel = ({
+  children,
+  className,
+  htmlFor,
+  required = false,
+  requiredText = 'required',
+  testId = 'cf-ui-form-label',
+  ...otherProps
+}: FormLabelProps) => {
   const classNames = cn(styles.FormLabel, className);
 
   return (
@@ -48,7 +40,5 @@ export const FormLabel = (props: FormLabelProps) => {
     </label>
   );
 };
-
-FormLabel.defaultProps = defaultProps;
 
 export default FormLabel;

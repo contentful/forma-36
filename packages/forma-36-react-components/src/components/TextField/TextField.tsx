@@ -36,41 +36,27 @@ export interface TextFieldProps {
   onFocus?: FocusEventHandler;
 }
 
-export interface TextFieldState {
-  value?: string;
-  initialValue?: string;
-}
-
-const defaultProps: Partial<TextFieldProps> = {
-  testId: 'cf-ui-text-field',
-  textarea: false,
-  required: false,
-  countCharacters: false,
-  width: 'full',
-};
-
-export const TextField = (props: TextFieldProps) => {
-  const {
-    validationMessage,
-    className,
-    textInputProps,
-    testId,
-    width,
-    formLabelProps,
-    textLinkProps,
-    labelText,
-    helpText,
-    textarea,
-    countCharacters,
-    required,
-    onChange,
-    onBlur,
-    onFocus,
-    value,
-    name,
-    id,
-    ...otherProps
-  } = props;
+export const TextField = ({
+  className,
+  countCharacters = false,
+  formLabelProps,
+  helpText,
+  id,
+  labelText,
+  name,
+  onBlur,
+  onChange,
+  onFocus,
+  required = false,
+  testId = 'cf-ui-text-field',
+  textarea = false,
+  textInputProps,
+  textLinkProps,
+  validationMessage,
+  value,
+  width = 'full',
+  ...otherProps
+}: TextFieldProps) => {
   const [valueState, setValueState] = useState<string | undefined>(value);
 
   // Store a copy of the value in state.
@@ -143,7 +129,5 @@ export const TextField = (props: TextFieldProps) => {
     </div>
   );
 };
-
-TextField.defaultProps = defaultProps;
 
 export default TextField;

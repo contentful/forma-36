@@ -304,9 +304,9 @@ export interface IconProps {
 export function Icon({
   className,
   icon,
-  size,
-  color,
-  testId,
+  size = 'small',
+  color = 'primary',
+  testId = 'cf-ui-icon',
   ...otherProps
 }: IconProps): React.ReactElement {
   const classNames = cn(
@@ -325,11 +325,5 @@ export function Icon({
     <Element data-test-id={testId} className={classNames} {...otherProps} />
   );
 }
-
-Icon.defaultProps = {
-  testId: 'cf-ui-icon',
-  size: 'small',
-  color: 'primary',
-};
 
 export default Icon;

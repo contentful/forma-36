@@ -24,6 +24,7 @@ exports[`renders the component as required 1`] = `
     data-test-id="cf-ui-textarea"
     id="someInput"
     name="userEmail"
+    required=""
   />
 </div>
 `;
