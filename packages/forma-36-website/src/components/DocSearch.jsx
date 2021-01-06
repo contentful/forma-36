@@ -30,6 +30,7 @@ const DocSearch = () => {
     if (typeof window === 'undefined') return;
 
     if (typeof window.docsearch === 'undefined') {
+      // eslint-disable-next-line no-console
       console.error('DocSearch unavailable');
     }
 

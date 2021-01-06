@@ -14,7 +14,7 @@ commands:
 jobs:
   prepare-dependencies:
     docker:
-      - image: circleci/node:12.0-browsers
+      - image: circleci/node:14.15.0-browsers
     resource_class: xlarge
     steps:
       - checkout
@@ -28,6 +28,9 @@ jobs:
       - run:
           name: yarn
           command: yarn
+      - run:
+          name: yarn build
+          command: yarn build
       - save_cache:
           paths:
             - node_modules
@@ -41,36 +44,39 @@ jobs:
 
   lint-and-test:
     docker:
-      - image: circleci/node:12.0-browsers
+      - image: circleci/node:14.15.0-browsers
     resource_class: xlarge
     steps:
       - attach_workspace:
           at: .
       - run:
+          name: Prettier
+          command: yarn prettier:check
+      - run:
           name: Lint
           command: yarn lint
       - run:
           name: Check Types
-          command: yarn type-check
+          command: yarn tsc
       - run:
           name: Test
           command: yarn test
 
   chromatic-deployment:
     docker:
-      - image: circleci/node:12.0-browsers
+      - image: circleci/node:14.15.0-browsers
     resource_class: xlarge
     steps:
       - attach_workspace:
           at: .
       - check-changed-files-or-halt:
           pattern: ^(forma-36-fcss|forma-36-react-components|forma-36-tokens)|(.js|jsx|ts|tsx|css|scss)$
-      - run: yarn run build-storybook
+      - run: yarn run storybook:build
       - run: yarn run chromatic --project-token=${CHROMATIC_PROJECT_TOKEN} --exit-zero-on-changes
 
   release:
     docker:
-      - image: circleci/node:12.0-browsers
+      - image: circleci/node:14.15.0-browsers
     steps:
       - attach_workspace:
           at: .

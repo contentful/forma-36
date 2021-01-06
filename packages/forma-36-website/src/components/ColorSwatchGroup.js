@@ -7,7 +7,7 @@ class ColorSwatchGroup extends Component {
 
     return (
       <div className="f36-margin-bottom--l">
-        {Object.keys(group).map(item => {
+        {Object.keys(group).map((item) => {
           const value = group[item];
 
           return (

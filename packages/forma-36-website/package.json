@@ -42,7 +42,7 @@
     "webpack-dev-server": "3.1.11"
   },
   "scripts": {
-    "build": "gatsby build",
+    "build:website": "gatsby build",
     "develop": "gatsby develop",
     "start": "npm run develop"
   }
