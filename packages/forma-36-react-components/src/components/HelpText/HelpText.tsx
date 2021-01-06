@@ -13,7 +13,7 @@ export interface HelpTextProps {
 export function HelpText({
   className,
   children,
-  testId,
+  testId = 'cf-ui-help-text',
   ...otherProps
 }: HelpTextProps): React.ReactElement {
   const classNames = cn(styles.HelpText, className);
@@ -24,9 +24,5 @@ export function HelpText({
     </p>
   );
 }
-
-HelpText.defaultProps = {
-  testId: 'cf-ui-help-text',
-};
 
 export default HelpText;

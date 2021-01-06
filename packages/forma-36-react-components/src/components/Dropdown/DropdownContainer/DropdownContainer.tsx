@@ -1,4 +1,5 @@
-import React, { forwardRef, useEffect, useRef, RefObject } from 'react';
+import React, { forwardRef, useEffect, useRef } from 'react';
+import type { RefObject } from 'react';
 import cn from 'classnames';
 
 import { useOnClickOutside } from '../../../utils/useOnClickOutside';
@@ -32,11 +33,11 @@ export const DropdownContainer = forwardRef<
     isOpen,
     onClose,
     openSubmenu,
-    position,
+    // position = 'bottom-left' as positionType,
     style,
-    submenu,
-    testId,
-    usePortal,
+    submenu = false,
+    testId = 'cf-ui-dropdown-portal',
+    usePortal = true,
     nonClosingRefs,
     ...props
   },
@@ -103,12 +104,5 @@ export const DropdownContainer = forwardRef<
 });
 
 DropdownContainer.displayName = 'DropdownContainer';
-
-DropdownContainer.defaultProps = {
-  testId: 'cf-ui-dropdown-portal',
-  position: 'bottom-left' as positionType,
-  submenu: false,
-  usePortal: true,
-};
 
 export default DropdownContainer;

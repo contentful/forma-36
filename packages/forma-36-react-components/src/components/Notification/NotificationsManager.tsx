@@ -54,13 +54,6 @@ export interface NotificationsManagerProps {
   register: (name: string, callback: Function) => void;
 }
 
-export interface NotificationsManagerState {
-  position: Position;
-  positionOffset: number;
-  duration: number;
-  items: Notification[];
-}
-
 export function NotificationsManager({
   register,
 }: NotificationsManagerProps): React.ReactElement {

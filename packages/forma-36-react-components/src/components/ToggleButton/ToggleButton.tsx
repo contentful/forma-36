@@ -1,9 +1,10 @@
 import React from 'react';
 import cn from 'classnames';
-import Card from '../Card/Card';
-import Icon, { IconType } from '../Icon/Icon';
-import TabFocusTrap from '../TabFocusTrap/TabFocusTrap';
 
+import Card from '../Card/Card';
+import Icon from '../Icon/Icon';
+import type { IconType } from '../Icon/Icon';
+import TabFocusTrap from '../TabFocusTrap/TabFocusTrap';
 import styles from './ToggleButton.css';
 
 export interface ToggleButtonProps {
@@ -16,23 +17,16 @@ export interface ToggleButtonProps {
   className?: string;
 }
 
-const defaultProps: Partial<ToggleButtonProps> = {
-  testId: 'cf-ui-toggle-button',
-  isActive: false,
-  isDisabled: false,
-};
-
-export const ToggleButton = (props: ToggleButtonProps) => {
-  const {
-    className,
-    icon,
-    children,
-    isActive,
-    isDisabled,
-    onToggle,
-    ...otherProps
-  } = props;
-
+export const ToggleButton = ({
+  children,
+  className,
+  icon,
+  isActive = false,
+  isDisabled = false,
+  onToggle,
+  testId = 'cf-ui-toggle-button',
+  ...otherProps
+}: ToggleButtonProps) => {
   const classNames = cn(styles.Toggle, className, {
     [styles['Toggle--active']]: isActive,
     [styles['Toggle--disabled']]: isDisabled,
@@ -50,6 +44,7 @@ export const ToggleButton = (props: ToggleButtonProps) => {
       className={classNames}
       padding="none"
       selected={isActive}
+      testId={testId}
       {...otherProps}
     >
       <button
@@ -78,7 +73,5 @@ export const ToggleButton = (props: ToggleButtonProps) => {
     </Card>
   );
 };
-
-ToggleButton.defaultProps = defaultProps;
 
 export default ToggleButton;

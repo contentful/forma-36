@@ -1,5 +1,7 @@
-import React, { HTMLProps } from 'react';
+import React from 'react';
 import cn from 'classnames';
+import type { HTMLProps } from 'react';
+
 import styles from './Table.css';
 
 export interface TableProps extends HTMLProps<HTMLTableElement> {
@@ -8,13 +10,12 @@ export interface TableProps extends HTMLProps<HTMLTableElement> {
   children: React.ReactNode;
 }
 
-const defaultProps: Partial<TableProps> = {
-  testId: 'cf-ui-table',
-};
-
-export const Table = (props: TableProps) => {
-  const { className, children, testId, ...otherProps } = props;
-
+export const Table = ({
+  className,
+  children,
+  testId = 'cf-ui-table',
+  ...otherProps
+}: TableProps) => {
   return (
     <table
       className={cn(className, styles['Table'])}
@@ -27,7 +28,5 @@ export const Table = (props: TableProps) => {
     </table>
   );
 };
-
-Table.defaultProps = defaultProps;
 
 export default Table;

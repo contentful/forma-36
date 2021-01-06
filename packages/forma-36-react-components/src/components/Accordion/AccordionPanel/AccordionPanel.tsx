@@ -21,7 +21,7 @@ interface AccordionPanelProps {
 
 export const AccordionPanel: FC<AccordionPanelProps> = ({
   children,
-  isExpanded,
+  isExpanded = false,
   ariaId,
 }: AccordionPanelProps) => {
   const panelEl = useRef<HTMLDivElement>(null);
@@ -65,9 +65,6 @@ export const AccordionPanel: FC<AccordionPanelProps> = ({
       {children}
     </div>
   );
-};
-AccordionPanel.defaultProps = {
-  isExpanded: false,
 };
 
 export default AccordionPanel;

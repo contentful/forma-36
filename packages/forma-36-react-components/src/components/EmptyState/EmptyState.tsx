@@ -69,7 +69,7 @@ interface ImageProps {
 export function EmptyState({
   className,
   children,
-  testId,
+  testId = 'cf-ui-empty-state',
   customImageElement,
   imageProps,
   headingProps,
@@ -121,9 +121,5 @@ export function EmptyState({
     </div>
   );
 }
-
-EmptyState.defaultProps = {
-  testId: 'cf-ui-empty-state',
-};
 
 export default EmptyState;

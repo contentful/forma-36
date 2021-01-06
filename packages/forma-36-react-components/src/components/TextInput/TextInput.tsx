@@ -34,44 +34,32 @@ export type TextInputProps = {
   value?: string;
   inputRef?: RefObject<HTMLInputElement>;
   error?: boolean;
-  willBlurOnEsc: boolean;
+  willBlurOnEsc?: boolean;
 } & JSX.IntrinsicElements['input'];
 
-const defaultProps: Partial<TextInputProps> = {
-  withCopyButton: false,
-  testId: 'cf-ui-text-input',
-  disabled: false,
-  isReadOnly: false,
-  required: false,
-  width: 'full',
-  willBlurOnEsc: true,
-};
-
-export const TextInput = (props: TextInputProps) => {
-  const {
-    className,
-    withCopyButton,
-    placeholder,
-    maxLength,
-    disabled,
-    required,
-    isReadOnly,
-    onChange,
-    testId,
-    onBlur,
-    onCopy,
-    error,
-    width,
-    value,
-    type,
-    name,
-    id,
-    inputRef,
-    willBlurOnEsc,
-    onKeyDown,
-    ...otherProps
-  } = props;
-
+export const TextInput = ({
+  className,
+  disabled = false,
+  error,
+  id,
+  inputRef,
+  isReadOnly = false,
+  maxLength,
+  name,
+  onBlur,
+  onChange,
+  onCopy,
+  onKeyDown,
+  placeholder,
+  required = false,
+  testId = 'cf-ui-text-input',
+  type,
+  value,
+  width = 'full',
+  willBlurOnEsc = true,
+  withCopyButton = false,
+  ...otherProps
+}: TextInputProps) => {
   const [valueState, setValueState] = useState<string | undefined>(value);
 
   const handleFocus = (e: FocusEvent) => {
@@ -150,7 +138,5 @@ export const TextInput = (props: TextInputProps) => {
     </div>
   );
 };
-
-TextInput.defaultProps = defaultProps;
 
 export default TextInput;

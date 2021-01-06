@@ -5,29 +5,28 @@ import { SkeletonTextProps } from '../SkeletonText';
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface SkeletonBodyTextProps extends SkeletonTextProps {}
 
-const defaultProps: Partial<SkeletonBodyTextProps> = {
-  numberOfLines: 2,
-  offsetTop: 0,
-  offsetLeft: 0,
-  lineHeight: 16,
-  marginBottom: 8,
-};
-
 export const SkeletonBodyText = ({
-  numberOfLines,
+  lineHeight = 16,
+  marginBottom = 8,
+  numberOfLines = 2,
+  offsetLeft = 0,
+  offsetTop = 0,
   ...otherProps
 }: SkeletonBodyTextProps) => {
   return (
     <SkeletonText
+      lineHeight={lineHeight}
+      marginBottom={marginBottom}
       numberOfLines={
         numberOfLines! > 0 // eslint-disable-line @typescript-eslint/no-non-null-assertion
           ? numberOfLines
           : 1
       }
+      offsetLeft={offsetLeft}
+      offsetTop={offsetTop}
       {...otherProps}
     />
   );
 };
-SkeletonBodyText.defaultProps = defaultProps;
 
 export default SkeletonBodyText;

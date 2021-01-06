@@ -36,9 +36,9 @@ interface AccordionHeaderProps {
 export const AccordionHeader: FC<AccordionHeaderProps> = ({
   children,
   handleClick,
-  isExpanded,
+  isExpanded = false,
   ariaId,
-  element,
+  element = 'h2',
 }: AccordionHeaderProps) => {
   const classNames = cn(styles.AccordionHeader, {
     [styles['AccordionHeader--expanded']]: isExpanded,
@@ -63,10 +63,6 @@ export const AccordionHeader: FC<AccordionHeaderProps> = ({
       </button>
     </Subheading>
   );
-};
-AccordionHeader.defaultProps = {
-  isExpanded: false,
-  element: 'h2',
 };
 
 export default AccordionHeader;

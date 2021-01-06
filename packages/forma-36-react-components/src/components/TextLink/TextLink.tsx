@@ -43,13 +43,13 @@ export interface TextLinkProps {
 export function TextLink({
   children,
   className,
-  disabled,
+  disabled = false,
   href,
   icon,
-  iconPosition,
-  linkType,
+  iconPosition = 'left',
+  linkType = 'primary',
   onClick,
-  testId,
+  testId = 'cf-ui-text-link',
   text,
   ...otherProps
 }: TextLinkProps): React.ReactElement {
@@ -126,12 +126,5 @@ export function TextLink({
     </button>
   );
 }
-
-TextLink.defaultProps = {
-  linkType: 'primary',
-  testId: 'cf-ui-text-link',
-  disabled: false,
-  iconPosition: 'left',
-};
 
 export default TextLink;

@@ -30,12 +30,12 @@ export interface DropdownListItemProps
 export const DropdownListItem = forwardRef<HTMLElement, DropdownListItemProps>(
   function DropdownListItem(
     {
-      isActive,
-      isDisabled,
-      isTitle,
+      isActive = false,
+      isDisabled = false,
+      isTitle = false,
       onClick,
       submenuToggleLabel,
-      testId,
+      testId = 'cf-ui-dropdown-list-item',
       ...props
     },
     refCallback,
@@ -145,12 +145,5 @@ export const DropdownListItem = forwardRef<HTMLElement, DropdownListItemProps>(
 );
 
 DropdownListItem.displayName = 'DropdownListItem';
-
-DropdownListItem.defaultProps = {
-  testId: 'cf-ui-dropdown-list-item',
-  isDisabled: false,
-  isActive: false,
-  isTitle: false,
-};
 
 export default DropdownListItem;

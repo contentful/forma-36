@@ -23,36 +23,26 @@ export interface ControlledInputPropTypes {
   type?: 'checkbox' | 'radio';
   className?: string;
   testId?: string;
-  willBlurOnEsc: boolean;
+  willBlurOnEsc?: boolean;
 }
 
-const defaultProps: Partial<ControlledInputPropTypes> = {
-  testId: 'cf-ui-controlled-input',
-  required: false,
-  disabled: false,
-  type: 'checkbox',
-  willBlurOnEsc: true,
-};
-
-export const ControlledInput = (props: ControlledInputPropTypes) => {
-  const {
-    className,
-    id,
-    testId,
-    required,
-    disabled,
-    onFocus,
-    onBlur,
-    name,
-    onChange,
-    checked,
-    value,
-    type,
-    labelText,
-    willBlurOnEsc,
-    ...otherProps
-  } = props;
-
+export const ControlledInput = ({
+  checked,
+  className,
+  disabled = false,
+  id,
+  labelText,
+  name,
+  onBlur,
+  onChange,
+  onFocus,
+  required = false,
+  testId = 'cf-ui-controlled-input',
+  type = 'checkbox',
+  value,
+  willBlurOnEsc = true,
+  ...otherProps
+}: ControlledInputPropTypes) => {
   const classNames = cn(styles['ControlledInput'], className, {
     [styles['ControlledInput--disabled']]: disabled,
   });
@@ -73,7 +63,7 @@ export const ControlledInput = (props: ControlledInputPropTypes) => {
       className={classNames}
       value={value}
       name={name}
-      checked={props.checked}
+      checked={checked}
       type={type}
       data-test-id={testId}
       onChange={(e) => {
@@ -100,7 +90,5 @@ export const ControlledInput = (props: ControlledInputPropTypes) => {
     />
   );
 };
-
-ControlledInput.defaultProps = defaultProps;
 
 export default ControlledInput;

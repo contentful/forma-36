@@ -161,10 +161,6 @@ export interface TimepickerProps {
   disabled: boolean;
 }
 
-const defaultProps: Partial<TimepickerProps> = {
-  isRequired: false,
-};
-
 const TimePicker: React.FC<TimepickerProps> = ({
   id,
   value,
@@ -173,7 +169,7 @@ const TimePicker: React.FC<TimepickerProps> = ({
   validationMessage,
   onChange,
   onBlur,
-  isRequired,
+  isRequired = false,
   labelText,
   disabled,
 }) => {
@@ -362,7 +358,5 @@ const TimePicker: React.FC<TimepickerProps> = ({
     </div>
   );
 };
-
-TimePicker.defaultProps = defaultProps;
 
 export default TimePicker;

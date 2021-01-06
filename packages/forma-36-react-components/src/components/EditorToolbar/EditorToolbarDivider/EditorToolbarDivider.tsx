@@ -11,16 +11,12 @@ export interface EditorToolbarDividerProps {
 
 export function EditorToolbarDivider({
   className,
-  testId,
+  testId = 'cf-editor-toolbar-divider',
   ...otherProps
 }: EditorToolbarDividerProps): React.ReactElement {
   const classNames = cn(styles['EditorToolbarDivider'], className);
 
   return <span data-test-id={testId} className={classNames} {...otherProps} />;
 }
-
-EditorToolbarDivider.defaultProps = {
-  testId: 'cf-editor-toolbar-divider',
-};
 
 export default EditorToolbarDivider;

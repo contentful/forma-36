@@ -70,12 +70,12 @@ export interface EntryCardPropTypes extends BaseCardProps {
   /**
    * Changes the height of the component. When small will also ensure thumbnail and description aren't rendered
    */
-  size: EntryCardSize;
+  size?: EntryCardSize;
 }
 
 export function EntryCard({
   className,
-  title,
+  title = 'Untitled',
   onClick,
   description,
   contentType,
@@ -85,7 +85,8 @@ export function EntryCard({
   loading,
   dropdownListElements,
   isDragActive,
-  size,
+  size = 'default',
+  testId = 'cf-ui-entry-card',
   cardDragHandleComponent,
   cardDragHandleProps,
   withDragHandle,
@@ -198,6 +199,7 @@ export function EntryCard({
       className={classNames}
       onClick={!loading ? onClick : undefined}
       padding="none"
+      data-test-id={testId}
       {...otherProps}
     >
       {loading ? (
@@ -251,11 +253,5 @@ export function EntryCard({
     </Card>
   );
 }
-
-EntryCard.defaultProps = {
-  title: 'Untitled',
-  testId: 'cf-ui-entry-card',
-  size: 'default',
-};
 
 export default EntryCard;
