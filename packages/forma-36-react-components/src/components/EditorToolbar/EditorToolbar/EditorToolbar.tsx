@@ -12,7 +12,7 @@ export interface EditorToolbarProps {
 export function EditorToolbar({
   className,
   children,
-  testId,
+  testId = 'cf-ui-editor-toolbar',
   ...otherProps
 }: EditorToolbarProps): React.ReactElement {
   const classNames = cn(styles['EditorToolbar'], className);
@@ -23,9 +23,5 @@ export function EditorToolbar({
     </div>
   );
 }
-
-EditorToolbar.defaultProps = {
-  testId: 'cf-ui-editor-toolbar',
-};
 
 export default EditorToolbar;

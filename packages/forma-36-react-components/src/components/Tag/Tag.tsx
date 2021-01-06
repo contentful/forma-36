@@ -42,9 +42,9 @@ export interface TagProps {
 export function Tag({
   className,
   children,
-  tagType,
+  tagType = 'primary' as TagType,
   entityStatusType,
-  testId,
+  testId = 'cf-ui-tag',
   ...otherProps
 }: TagProps): React.ReactElement {
   const classNames = cn(styles.Tag, className, {
@@ -65,10 +65,5 @@ export function Tag({
     </div>
   );
 }
-
-Tag.defaultProps = {
-  tagType: 'primary' as TagType,
-  testId: 'cf-ui-tag',
-};
 
 export default Tag;

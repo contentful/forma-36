@@ -29,33 +29,23 @@ export interface SelectProps {
   willBlurOnEsc?: boolean;
 }
 
-const defaultProps: Partial<SelectProps> = {
-  testId: 'cf-ui-select',
-  required: false,
-  hasError: false,
-  isDisabled: false,
-  width: 'full',
-  willBlurOnEsc: true,
-};
-
-export const Select = (props: SelectProps) => {
-  const {
-    id,
-    name,
-    required,
-    children,
-    width,
-    className,
-    testId,
-    onChange,
-    onBlur,
-    onFocus,
-    isDisabled,
-    hasError,
-    value,
-    willBlurOnEsc,
-    ...otherProps
-  } = props;
+export const Select = ({
+  children,
+  className,
+  hasError = false,
+  id,
+  isDisabled = false,
+  name,
+  onBlur,
+  onChange,
+  onFocus,
+  required = false,
+  testId = 'cf-ui-select',
+  value,
+  width = 'full',
+  willBlurOnEsc = true,
+  ...otherProps
+}: SelectProps) => {
   const [valueState, setValueState] = useState<string | undefined>(value);
 
   const handleKeyDown = (e: KeyboardEvent<HTMLSelectElement>) => {
@@ -116,7 +106,5 @@ export const Select = (props: SelectProps) => {
     </div>
   );
 };
-
-Select.defaultProps = defaultProps;
 
 export default Select;

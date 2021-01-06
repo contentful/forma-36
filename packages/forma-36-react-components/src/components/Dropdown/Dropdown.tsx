@@ -94,7 +94,7 @@ export interface DropdownProps {
   /**
    * Boolean to control whether or not the Dropdown is open
    */
-  isOpen: boolean;
+  isOpen?: boolean;
   /**
    * Callback function to run when the Dropdown closes
    */
@@ -103,7 +103,7 @@ export interface DropdownProps {
    * Determines the preferred position of the Dropdown. This position is not
    * guaranteed, as the Dropdown might be moved to fit the viewport
    */
-  position: positionType;
+  position?: positionType;
   /**
    * A text label to use as the toggle element for the submenu
    */
@@ -138,14 +138,14 @@ export function Dropdown({
   children,
   className,
   dropdownContainerClassName,
-  getContainerRef,
-  isAutoalignmentEnabled,
+  getContainerRef = () => {},
+  isAutoalignmentEnabled = true,
   isFullWidth,
-  isOpen: isOpenProp,
+  isOpen: isOpenProp = false,
   onClose,
-  position,
+  position = 'bottom-left',
   submenuToggleLabel,
-  testId,
+  testId = 'cf-ui-dropdown',
   toggleElement,
   usePortal,
   nonClosingRefs,
@@ -298,13 +298,5 @@ export function Dropdown({
     </div>
   );
 }
-
-Dropdown.defaultProps = {
-  testId: 'cf-ui-dropdown',
-  position: 'bottom-left',
-  isAutoalignmentEnabled: true,
-  isOpen: false,
-  getContainerRef: () => {},
-};
 
 export default Dropdown;

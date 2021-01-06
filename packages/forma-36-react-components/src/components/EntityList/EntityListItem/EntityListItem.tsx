@@ -103,12 +103,12 @@ export interface EntityListItemProps {
 
 export function EntityListItem({
   className,
-  testId,
+  testId = 'cf-ui-entity-list-item',
   title,
   description,
   contentType,
-  entityType,
-  withThumbnail,
+  entityType = 'entry',
+  withThumbnail = true,
   thumbnailUrl,
   thumbnailAltText,
   status,
@@ -120,7 +120,7 @@ export function EntityListItem({
   href,
   cardDragHandleProps,
   cardDragHandleComponent,
-  isActionsDisabled,
+  isActionsDisabled = false,
   ...otherProps
 }: EntityListItemProps): React.ReactElement {
   const renderIcon = useCallback(() => {
@@ -273,12 +273,5 @@ export function EntityListItem({
     </li>
   );
 }
-
-EntityListItem.defaultProps = {
-  testId: 'cf-ui-entity-list-item',
-  entityType: 'entry',
-  withThumbnail: true,
-  isActionsDisabled: false,
-};
 
 export default EntityListItem;

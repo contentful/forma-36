@@ -1,7 +1,8 @@
-import React, { HTMLProps } from 'react';
+import React from 'react';
 import cn from 'classnames';
-import styles from './TableHead.css';
+import type { HTMLProps } from 'react';
 
+import styles from './TableHead.css';
 import { TableCellContext, contextOptions } from '../TableCell';
 
 export interface TableHeadProps extends HTMLProps<HTMLTableSectionElement> {
@@ -12,21 +13,14 @@ export interface TableHeadProps extends HTMLProps<HTMLTableSectionElement> {
   children: React.ReactNode;
 }
 
-const defaultProps: Partial<TableHeadProps> = {
-  isSticky: false,
-  testId: 'cf-ui-table-head',
-};
-
-export const TableHead = (props: TableHeadProps) => {
-  const {
-    className,
-    testId,
-    offsetTop,
-    isSticky,
-    children,
-    ...otherProps
-  } = props;
-
+export const TableHead = ({
+  children,
+  className,
+  isSticky = false,
+  offsetTop,
+  testId = 'cf-ui-table-head',
+  ...otherProps
+}: TableHeadProps) => {
   const classNames = cn(className, {
     [styles[`TableHead--sticky`]]: isSticky,
   });
@@ -41,7 +35,5 @@ export const TableHead = (props: TableHeadProps) => {
     </TableCellContext.Provider>
   );
 };
-
-TableHead.defaultProps = defaultProps;
 
 export default TableHead;

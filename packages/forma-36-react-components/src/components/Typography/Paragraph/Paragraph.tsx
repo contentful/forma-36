@@ -15,8 +15,8 @@ export interface ParagraphProps {
 export function Paragraph({
   className,
   children,
-  testId,
-  element,
+  testId = 'cf-ui-paragraph',
+  element = 'p',
   ...otherProps
 }: ParagraphProps): React.ReactElement {
   const classNames = cn(styles['Paragraph'], className);
@@ -42,10 +42,5 @@ export function Paragraph({
     </TypographyContext.Consumer>
   );
 }
-
-Paragraph.defaultProps = {
-  element: 'p',
-  testId: 'cf-ui-paragraph',
-};
 
 export default Paragraph;

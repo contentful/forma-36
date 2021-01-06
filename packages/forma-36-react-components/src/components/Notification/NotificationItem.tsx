@@ -26,10 +26,10 @@ export interface NotificationItemProps {
 export function NotificationItem({
   children,
   cta,
-  hasCloseButton,
-  intent,
+  hasCloseButton = true,
+  intent = 'success' as NotificationIntent,
   onClose,
-  testId,
+  testId = 'cf-ui-notification',
   title,
 }: NotificationItemProps) {
   const renderTitle = useCallback(() => {
@@ -118,11 +118,5 @@ export function NotificationItem({
     </div>
   );
 }
-
-NotificationItem.defaultProps = {
-  testId: 'cf-ui-notification',
-  intent: 'success' as NotificationIntent,
-  hasCloseButton: true,
-};
 
 export default NotificationItem;

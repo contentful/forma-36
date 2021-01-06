@@ -22,16 +22,11 @@ export interface AccordionProps {
   testId?: string;
 }
 
-const defaultProps = {
-  align: 'end',
-  testId: 'cf-ui-accordion',
-};
-
 export const Accordion = ({
-  align,
+  align = 'end',
   children,
   className,
-  testId,
+  testId = 'cf-ui-accordion',
   ...otherProps
 }: AccordionProps) => {
   const classNames = cn(styles.Accordion, className, {
@@ -44,6 +39,5 @@ export const Accordion = ({
     </ul>
   );
 };
-Accordion.defaultProps = defaultProps;
 
 export default Accordion;

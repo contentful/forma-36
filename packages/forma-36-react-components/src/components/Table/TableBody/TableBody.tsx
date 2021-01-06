@@ -1,4 +1,5 @@
-import React, { HTMLProps } from 'react';
+import React from 'react';
+import type { HTMLProps } from 'react';
 
 export interface TableBodyProps extends HTMLProps<HTMLTableSectionElement> {
   className?: string;
@@ -7,20 +8,17 @@ export interface TableBodyProps extends HTMLProps<HTMLTableSectionElement> {
   children: React.ReactNode;
 }
 
-const defaultProps: Partial<TableBodyProps> = {
-  testId: 'cf-ui-table-body',
-};
-
-export const TableBody = (props: TableBodyProps) => {
-  const { className, children, testId, ...otherProps } = props;
-
+export const TableBody = ({
+  className,
+  children,
+  testId = 'cf-ui-table-body',
+  ...otherProps
+}: TableBodyProps) => {
   return (
     <tbody data-test-id={testId} className={className} {...otherProps}>
       {children}
     </tbody>
   );
 };
-
-TableBody.defaultProps = defaultProps;
 
 export default TableBody;

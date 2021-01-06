@@ -105,42 +105,36 @@ export interface FlexProps {
 const handleSpacing = (value: SpacingTypes) =>
   value === 'none' ? 0 : tokens[value];
 
-const defaultProps = {
-  testId: 'cf-ui-flex',
-};
-
-export const Flex = (props: FlexProps) => {
-  const {
-    htmlTag: Container = 'div',
-    fullWidth,
-    fullHeight,
-    noShrink,
-    flexWrap,
-    flexDirection,
-    flexGrow,
-    inlineFlex,
-    justifyContent,
-    justifyItems,
-    justifySelf,
-    alignItems,
-    alignSelf,
-    margin,
-    marginTop,
-    marginRight,
-    marginBottom,
-    marginLeft,
-    padding,
-    paddingTop,
-    paddingRight,
-    paddingBottom,
-    paddingLeft,
-    className,
-    children,
-    testId,
-    style,
-    ...otherProps
-  } = props;
-
+export const Flex = ({
+  alignItems,
+  alignSelf,
+  children,
+  className,
+  flexDirection,
+  flexGrow,
+  flexWrap,
+  fullHeight,
+  fullWidth,
+  htmlTag: Container = 'div',
+  inlineFlex,
+  justifyContent,
+  justifyItems,
+  justifySelf,
+  margin,
+  marginBottom,
+  marginLeft,
+  marginRight,
+  marginTop,
+  noShrink,
+  padding,
+  paddingBottom,
+  paddingLeft,
+  paddingRight,
+  paddingTop,
+  style,
+  testId = 'cf-ui-flex',
+  ...otherProps
+}: FlexProps) => {
   const fullMargins = { margin: margin && handleSpacing(margin) };
   const sidesMargins = {
     marginTop: marginTop && handleSpacing(marginTop),
@@ -188,6 +182,5 @@ export const Flex = (props: FlexProps) => {
     </Container>
   );
 };
-Flex.defaultProps = defaultProps;
 
 export default Flex;

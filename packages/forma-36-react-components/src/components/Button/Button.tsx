@@ -1,4 +1,5 @@
-import React, {
+import React from 'react';
+import type {
   CSSProperties,
   FocusEvent,
   MouseEvent as ReactMouseEvent,
@@ -48,32 +49,22 @@ export interface ButtonProps {
   isActive?: boolean;
 }
 
-const defaultProps: Partial<ButtonProps> = {
-  loading: false,
-  isFullWidth: false,
-  indicateDropdown: false,
-  disabled: false,
-  testId: 'cf-ui-button',
-  buttonType: 'primary',
-  type: 'button',
-};
-
 export const Button = (props: ButtonProps) => {
   const {
     className,
     children,
     icon,
-    buttonType,
+    buttonType = 'primary',
     size,
-    isFullWidth,
+    isFullWidth = false,
     onBlur,
-    testId,
+    testId = 'cf-ui-button',
     onClick,
-    loading,
-    disabled,
-    indicateDropdown,
+    loading = false,
+    disabled = false,
+    indicateDropdown = false,
     href,
-    type,
+    type = 'button',
     isActive,
     ...otherProps
   } = props;
@@ -159,6 +150,5 @@ export const Button = (props: ButtonProps) => {
     </Element>
   );
 };
-Button.defaultProps = defaultProps;
 
 export default Button;

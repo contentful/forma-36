@@ -16,9 +16,9 @@ export interface TabsProps {
 export function Tabs({
   className,
   children,
-  testId,
-  role,
-  withDivider,
+  testId = 'cf-ui-tabs',
+  role = 'tablist',
+  withDivider = false,
   style,
 }: TabsProps): React.ReactElement {
   const classNames = cn(
@@ -47,11 +47,5 @@ export function Tabs({
     </div>
   );
 }
-
-Tabs.defaultProps = {
-  testId: 'cf-ui-tabs',
-  role: 'tablist',
-  withDivider: false,
-};
 
 export default Tabs;

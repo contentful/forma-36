@@ -29,22 +29,22 @@ let idCounter = 0;
 export function SkeletonContainer({
   className,
   children,
-  testId,
-  ariaLabel,
-  width,
-  height,
-  preserveAspectRatio,
-  clipId,
-  gradientId,
-  animateId,
-  backgroundColor,
-  backgroundOpacity,
-  animate,
-  speed,
-  foregroundColor,
-  foregroundOpacity,
-  svgWidth,
-  svgHeight,
+  testId = 'cf-ui-skeleton-form',
+  ariaLabel = 'Loading component...',
+  width = '100%',
+  height = '100%',
+  preserveAspectRatio = 'xMidYMid meet',
+  clipId = `cf-ui-skeleton-clip-${idCounter++}`,
+  gradientId = `cf-ui-skeleton-clip-gradient-${idCounter++}`,
+  animateId = `animation-${idCounter++}`,
+  backgroundColor = '#e5ebed',
+  backgroundOpacity = 1,
+  animate = true,
+  speed = 2,
+  foregroundColor = '#f7f9fa',
+  foregroundOpacity = 1,
+  svgWidth = '100%',
+  svgHeight = '100%',
   ...otherProps
 }: SkeletonContainerProps): React.ReactElement {
   const classNames = cn(styles['SkeletonContainer'], className);
@@ -124,30 +124,5 @@ export function SkeletonContainer({
     </svg>
   );
 }
-
-SkeletonContainer.defaultProps = {
-  testId: 'cf-ui-skeleton-form',
-  ariaLabel: 'Loading component...',
-  width: '100%',
-  height: '100%',
-  preserveAspectRatio: 'xMidYMid meet',
-  get clipId() {
-    return `cf-ui-skeleton-clip-${idCounter++}`;
-  },
-  get gradientId() {
-    return `cf-ui-skeleton-clip-gradient-${idCounter++}`;
-  },
-  get animateId() {
-    return `animation-${idCounter++}`;
-  },
-  backgroundColor: '#e5ebed',
-  backgroundOpacity: 1,
-  animate: true,
-  speed: 2,
-  foregroundColor: '#f7f9fa',
-  foregroundOpacity: 1,
-  svgWidth: '100%' as string | number,
-  svgHeight: '100%' as string | number,
-};
 
 export default SkeletonContainer;

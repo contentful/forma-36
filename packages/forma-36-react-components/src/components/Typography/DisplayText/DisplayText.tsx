@@ -16,9 +16,9 @@ export interface DisplayTextProps {
 export function DisplayText({
   className,
   children,
-  testId,
-  element,
-  size,
+  testId = 'cf-ui-display-text',
+  element = 'h1',
+  size = 'default',
   ...otherProps
 }: DisplayTextProps): React.ReactElement {
   const classNames = cn(styles['DisplayText'], className, {
@@ -48,11 +48,5 @@ export function DisplayText({
     </TypographyContext.Consumer>
   );
 }
-
-DisplayText.defaultProps = {
-  element: 'h1',
-  testId: 'cf-ui-display-text',
-  size: 'default',
-};
 
 export default DisplayText;

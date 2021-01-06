@@ -13,7 +13,7 @@ export interface ValidationMessageProps {
 export function ValidationMessage({
   className,
   children,
-  testId,
+  testId = 'cf-ui-validation-message',
   ...otherProps
 }: ValidationMessageProps): React.ReactElement {
   const classNames = cn(styles['ValidationMessage'], className);
@@ -29,9 +29,5 @@ export function ValidationMessage({
     </div>
   );
 }
-
-ValidationMessage.defaultProps = {
-  testId: 'cf-ui-validation-message',
-};
 
 export default ValidationMessage;
