@@ -12,11 +12,11 @@ export interface SkeletonTextProps {
 }
 
 export function SkeletonText({
-  numberOfLines,
-  offsetLeft,
-  offsetTop,
-  lineHeight,
-  marginBottom,
+  numberOfLines = 1,
+  offsetLeft = 0,
+  offsetTop = 0,
+  lineHeight = 21,
+  marginBottom = 20,
   width,
 }: SkeletonTextProps): React.ReactElement {
   const getLineWidth = useCallback(
@@ -50,13 +50,5 @@ export function SkeletonText({
     </React.Fragment>
   );
 }
-
-SkeletonText.defaultProps = {
-  numberOfLines: 1,
-  offsetTop: 0,
-  offsetLeft: 0,
-  lineHeight: 21,
-  marginBottom: 20,
-};
 
 export default SkeletonText;

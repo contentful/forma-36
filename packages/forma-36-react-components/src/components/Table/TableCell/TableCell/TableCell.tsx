@@ -20,15 +20,14 @@ export interface TableCellProps extends HTMLProps<HTMLTableCellElement> {
   children?: React.ReactNode;
 }
 
-const defaultProps: Partial<TableCellProps> = {
-  align: 'left',
-  sorting: false as TableCellSorting,
-  testId: 'cf-ui-table-cell',
-};
-
-export const TableCell = (props: TableCellProps) => {
-  const { className, children, sorting, align, testId, ...otherProps } = props;
-
+export const TableCell = ({
+  align = 'left',
+  children,
+  className,
+  sorting = false as TableCellSorting,
+  testId = 'cf-ui-table-cell',
+  ...otherProps
+}: TableCellProps) => {
   return (
     <TableCellContext.Consumer>
       {({ name: context, element, offsetTop }) => {
@@ -53,7 +52,5 @@ export const TableCell = (props: TableCellProps) => {
     </TableCellContext.Consumer>
   );
 };
-
-TableCell.defaultProps = defaultProps;
 
 export default TableCell;

@@ -9,6 +9,7 @@ export interface NotificationItemContainerProps extends NotificationItemProps {
 
 export function NotificationItemContainer({
   duration,
+  isShown: isShownProp = false,
   ...props
 }: NotificationItemContainerProps): React.ReactElement {
   const timer = useRef<number | null>(null);
@@ -48,8 +49,8 @@ export function NotificationItemContainer({
   }, [startTimer, stopTimer]);
 
   useEffect(() => {
-    setIsShown(Boolean(props.isShown));
-  }, [props.isShown]);
+    setIsShown(Boolean(isShownProp));
+  }, [isShownProp]);
 
   const handleMouseEnter = useCallback(() => {
     stopTimer();
@@ -83,9 +84,5 @@ export function NotificationItemContainer({
     </AnimateHeight>
   );
 }
-
-NotificationItemContainer.defaultProps = {
-  isShown: false,
-};
 
 export default NotificationItemContainer;

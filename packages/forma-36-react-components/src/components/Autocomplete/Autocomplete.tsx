@@ -50,7 +50,7 @@ export interface AutocompleteProps<T extends {}> {
 }
 
 interface State {
-  isOpen?: boolean;
+  isOpen: boolean;
   query: string;
   highlightedItemIndex: number | null;
 }
@@ -77,7 +77,7 @@ const reducer = (state: State, action: Action): State => {
     case TOGGLED_LIST:
       return {
         ...state,
-        isOpen: action.payload,
+        isOpen: action.payload ? action.payload : !state.isOpen,
         highlightedItemIndex: null,
       };
     case NAVIGATED_ITEMS:

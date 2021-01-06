@@ -21,14 +21,14 @@ export interface TabProps {
 export function Tab({
   children,
   className,
-  disabled,
+  disabled = false,
   href,
   id,
   onSelect,
-  selected,
+  selected = false,
   style,
-  tabIndex,
-  testId,
+  tabIndex = 0,
+  testId = 'cf-ui-tab',
 }: TabProps): React.ReactElement {
   const handleClick = useCallback(
     (e: MouseEvent<HTMLElement>) => {
@@ -81,12 +81,5 @@ export function Tab({
     return <div {...elementProps}>{children}</div>;
   }
 }
-
-Tab.defaultProps = {
-  selected: false,
-  disabled: false,
-  testId: 'cf-ui-tab',
-  tabIndex: 0,
-};
 
 export default Tab;

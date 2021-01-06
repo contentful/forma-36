@@ -56,31 +56,21 @@ export interface GridProps {
   style?: React.CSSProperties;
 }
 
-const defaultProps = {
-  columns: 'auto',
-  rows: 'auto',
-  columnGap: 'spacingM',
-  rowGap: 'none',
-  testId: 'cf-ui-grid',
-};
-
-export const Grid = (props: GridProps) => {
-  const {
-    className,
-    children,
-    testId,
-    rows,
-    columns,
-    inline,
-    rowGap,
-    columnGap,
-    justifyContent,
-    alignContent,
-    flow,
-    style,
-    ...otherProps
-  } = props;
-
+export const Grid = ({
+  alignContent,
+  children,
+  className,
+  columnGap = 'spacingM',
+  columns = 'auto',
+  flow,
+  inline,
+  justifyContent,
+  rowGap = 'none',
+  rows = 'auto',
+  style,
+  testId = 'cf-ui-grid',
+  ...otherProps
+}: GridProps) => {
   const handleGridTemplate = (value?: string | number) => {
     if (typeof value === 'number') {
       return `repeat(${value}, minmax(0, 1fr)`;
@@ -122,6 +112,5 @@ export const Grid = (props: GridProps) => {
     </div>
   );
 };
-Grid.defaultProps = defaultProps;
 
 export default Grid;

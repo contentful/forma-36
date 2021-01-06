@@ -85,19 +85,51 @@ export interface ModalProps {
   children: any;
 }
 
-export function Modal(props: ModalProps): React.ReactElement {
+// Use defaultProps instead of default values in the function to allow the
+// Storybook to import and use these values
+Modal.defaultProps = {
+  allowHeightOverflow: false,
+  position: 'center',
+  shouldCloseOnEscapePress: true,
+  shouldCloseOnOverlayClick: true,
+  size: 'medium',
+  testId: 'cf-ui-modal',
+  topOffset: '50px',
+};
+
+export function Modal({
+  allowHeightOverflow,
+  position,
+  shouldCloseOnEscapePress,
+  shouldCloseOnOverlayClick,
+  size,
+  testId,
+  topOffset,
+  ...otherProps
+}: ModalProps): React.ReactElement {
+  const allProps = {
+    ...otherProps,
+    allowHeightOverflow,
+    position,
+    shouldCloseOnEscapePress,
+    shouldCloseOnOverlayClick,
+    size,
+    testId,
+    topOffset,
+  };
+
   const renderDefault = () => {
     return (
       <React.Fragment>
-        {props.title && (
+        {otherProps.title && (
           <ModalHeader
-            title={props.title}
-            onClose={props.onClose}
-            {...props.modalHeaderProps}
+            title={otherProps.title}
+            onClose={otherProps.onClose}
+            {...otherProps.modalHeaderProps}
           />
         )}
-        <ModalContent {...props.modalContentProps}>
-          {props.children}
+        <ModalContent {...otherProps.modalContentProps}>
+          {otherProps.children}
         </ModalContent>
       </React.Fragment>
     );
@@ -106,28 +138,28 @@ export function Modal(props: ModalProps): React.ReactElement {
   return (
     <ReactModal
       ariaHideApp={false}
-      onRequestClose={props.onClose}
-      isOpen={props.isShown}
-      onAfterOpen={props.onAfterOpen}
-      shouldCloseOnEsc={props.shouldCloseOnEscapePress}
-      shouldCloseOnOverlayClick={props.shouldCloseOnOverlayClick}
+      onRequestClose={otherProps.onClose}
+      isOpen={otherProps.isShown}
+      onAfterOpen={otherProps.onAfterOpen}
+      shouldCloseOnEsc={shouldCloseOnEscapePress}
+      shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
       portalClassName={styles.Modal__portal}
       className={{
         base: cn(styles.Modal__wrap, {
-          [styles['Modal__wrap--zen']]: props.size === 'zen',
+          [styles['Modal__wrap--zen']]: size === 'zen',
         }),
         afterOpen: styles['Modal__wrap--after-open'],
         beforeClose: styles['Modal__wrap--before-close'],
       }}
       style={{
         content: {
-          top: props.position === 'center' ? 0 : props.topOffset,
+          top: position === 'center' ? 0 : topOffset,
         },
       }}
       overlayClassName={{
         base: cn({
           [styles.Modal__overlay]: true,
-          [styles['Modal__overlay--centered']]: props.position === 'center',
+          [styles['Modal__overlay--centered']]: position === 'center',
         }),
         afterOpen: styles['Modal__overlay--after-open'],
         beforeClose: styles['Modal__overlay--before-close'],
@@ -137,17 +169,17 @@ export function Modal(props: ModalProps): React.ReactElement {
       closeTimeoutMS={300}
     >
       <div
-        data-test-id={props.testId}
+        data-test-id={testId}
         style={{
-          width: ModalSizesMapper[props.size!] || props.size, // eslint-disable-line @typescript-eslint/no-non-null-assertion
+          width: size ? ModalSizesMapper[size] : size,
         }}
-        className={cn(styles.Modal, props.className, {
-          [styles['Modal--overflow']]: props.allowHeightOverflow,
-          [styles['Modal--zen']]: props.size === 'zen',
+        className={cn(styles.Modal, otherProps.className, {
+          [styles['Modal--overflow']]: allowHeightOverflow,
+          [styles['Modal--zen']]: size === 'zen',
         })}
       >
-        {typeof props.children === 'function'
-          ? props.children(props)
+        {typeof otherProps.children === 'function'
+          ? otherProps.children(allProps)
           : renderDefault()}
       </div>
     </ReactModal>
@@ -157,15 +189,5 @@ export function Modal(props: ModalProps): React.ReactElement {
 Modal.Header = ModalHeader;
 Modal.Content = ModalContent;
 Modal.Controls = ModalControls;
-
-Modal.defaultProps = {
-  shouldCloseOnEscapePress: true,
-  shouldCloseOnOverlayClick: true,
-  position: 'center',
-  testId: 'cf-ui-modal',
-  topOffset: '50px',
-  size: 'medium',
-  allowHeightOverflow: false,
-};
 
 export default Modal;

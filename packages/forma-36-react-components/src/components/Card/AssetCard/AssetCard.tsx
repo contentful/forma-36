@@ -71,10 +71,11 @@ export function AssetCard({
   title,
   status,
   statusIcon,
-  isLoading,
+  isLoading = false,
   dropdownListElements,
   isDragActive,
-  size,
+  size = 'default',
+  testId = 'cf-ui-asset-card',
   cardDragHandleProps,
   cardDragHandleComponent,
   withDragHandle,
@@ -153,7 +154,13 @@ export function AssetCard({
   );
 
   return (
-    <Card className={classNames} padding="none" title={title} {...otherProps}>
+    <Card
+      className={classNames}
+      padding="none"
+      testId={testId}
+      title={title}
+      {...otherProps}
+    >
       {isLoading ? (
         <AssetCardSkeleton size={size} />
       ) : (
@@ -188,11 +195,5 @@ export function AssetCard({
     </Card>
   );
 }
-
-AssetCard.defaultProps = {
-  isLoading: false,
-  testId: 'cf-ui-asset-card',
-  size: 'default',
-};
 
 export default AssetCard;

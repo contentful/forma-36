@@ -29,10 +29,10 @@ export function Note({
   children,
   className,
   hasCloseButton,
-  noteType,
+  noteType = 'primary',
   onClose,
   style,
-  testId,
+  testId = 'cf-ui-note',
   title,
 }: NoteProps): React.ReactElement {
   const icon = Icons[noteType!] as IconType; // eslint-disable-line @typescript-eslint/no-non-null-assertion
@@ -76,10 +76,5 @@ export function Note({
     </div>
   );
 }
-
-Note.defaultProps = {
-  noteType: 'primary',
-  testId: 'cf-ui-note',
-};
 
 export default Note;

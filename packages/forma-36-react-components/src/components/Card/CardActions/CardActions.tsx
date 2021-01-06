@@ -30,27 +30,26 @@ export interface CardActionsPropTypes {
   testId?: string;
 }
 
-export interface CardActionsState {
-  isDropdownOpen: boolean;
-}
-
 export function CardActions({
   className,
   children,
-  testId,
+  testId = 'cf-ui-card-actions',
   iconButtonProps,
-  isDisabled,
+  isDisabled = false,
   ...otherProps
 }: CardActionsPropTypes): React.ReactElement {
   const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
 
-  const handleClick = useCallback((event: ReactMouseEvent) => {
-    setIsDropdownOpen((prevState) => !prevState);
+  const handleClick = useCallback(
+    (event: ReactMouseEvent) => {
+      setIsDropdownOpen((prevState) => !prevState);
 
-    if (iconButtonProps && iconButtonProps.onClick) {
-      event.stopPropagation();
-    }
-  }, []);
+      if (iconButtonProps && iconButtonProps.onClick) {
+        event.stopPropagation();
+      }
+    },
+    [iconButtonProps],
+  );
 
   return (
     <Dropdown
@@ -102,10 +101,5 @@ export function CardActions({
     </Dropdown>
   );
 }
-
-CardActions.defaultProps = {
-  testId: 'cf-ui-card-actions',
-  isDisabled: false,
-};
 
 export default CardActions;

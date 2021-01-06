@@ -18,7 +18,11 @@ export interface AssetIconProps
 /**
  * Renders only the Illustration that would represent this asset's type
  */
-export function AssetIcon({ type, ...otherProps }: AssetIconProps) {
+export function AssetIcon({
+  type = 'archive',
+  testId = 'cf-ui-asset-icon',
+  ...otherProps
+}: AssetIconProps) {
   let illustrationName = type!.charAt(0).toUpperCase() + type!.slice(1); // eslint-disable-line @typescript-eslint/no-non-null-assertion
   if (!isIllustrationType(illustrationName)) {
     illustrationName = DEFAULT_ILLUSTRATION_NAME;
@@ -27,14 +31,10 @@ export function AssetIcon({ type, ...otherProps }: AssetIconProps) {
   return (
     <Illustration
       illustration={illustrationName as IllustrationType}
+      testId={testId}
       {...otherProps}
     />
   );
 }
-
-AssetIcon.defaultProps = {
-  type: 'archive',
-  testId: 'cf-ui-asset-icon',
-};
 
 export default AssetIcon;

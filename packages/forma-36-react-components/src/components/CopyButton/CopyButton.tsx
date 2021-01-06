@@ -18,18 +18,18 @@ export interface CopyButtonProps {
   tooltipCopiedText?: React.ReactNode;
 }
 
-export interface CopyButtonState {
-  copied: boolean;
-}
-
 export function CopyButton({
   copyValue,
   className,
-  testId,
+  testId = 'cf-ui-copy-button',
   onCopy,
   tooltipPlace,
-  tooltipText,
-  tooltipCopiedText,
+  tooltipText = (
+    <React.Fragment>
+      Copy to <br /> clipboard
+    </React.Fragment>
+  ),
+  tooltipCopiedText = <React.Fragment>Copied!</React.Fragment>,
   ...otherProps
 }: CopyButtonProps) {
   const [copied, setCopied] = useState<boolean>(false);
@@ -92,15 +92,5 @@ export function CopyButton({
     </div>
   );
 }
-
-CopyButton.defaultProps = {
-  testId: 'cf-ui-copy-button',
-  tooltipText: (
-    <React.Fragment>
-      Copy to <br /> clipboard
-    </React.Fragment>
-  ),
-  tooltipCopiedText: <React.Fragment>Copied!</React.Fragment>,
-};
 
 export default CopyButton;

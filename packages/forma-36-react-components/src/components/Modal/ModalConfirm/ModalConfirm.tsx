@@ -1,6 +1,7 @@
 import React from 'react';
 
-import Modal, { ModalSizeType } from '../Modal';
+import Modal from '../Modal';
+import type { ModalSizeType } from '../Modal';
 import { ModalHeaderProps } from '../ModalHeader';
 import { ModalContentProps } from '../ModalContent';
 import { ModalControlsProps } from '../ModalControls';
@@ -103,15 +104,15 @@ export interface ModalConfirmProps {
 }
 
 export function ModalConfirm({
-  allowHeightOverflow,
-  cancelLabel,
-  cancelTestId,
+  allowHeightOverflow = false,
+  cancelLabel = 'Cancel',
+  cancelTestId = 'cf-ui-modal-confirm-cancel-button',
   children,
-  confirmLabel,
-  confirmTestId,
-  intent,
-  isConfirmDisabled,
-  isConfirmLoading,
+  confirmLabel = 'Confirm',
+  confirmTestId = 'cf-ui-modal-confirm-confirm-button',
+  intent = 'positive',
+  isConfirmDisabled = false,
+  isConfirmLoading = false,
   isSecondaryDisabled,
   isSecondaryLoading,
   isShown,
@@ -123,12 +124,12 @@ export function ModalConfirm({
   onSecondary,
   secondaryIntent,
   secondaryLabel,
-  secondaryTestId,
-  shouldCloseOnEscapePress,
-  shouldCloseOnOverlayClick,
-  size,
-  testId,
-  title,
+  secondaryTestId = 'cf-ui-modal-confirm-secondary-button',
+  shouldCloseOnEscapePress = true,
+  shouldCloseOnOverlayClick = true,
+  size = 'medium',
+  testId = 'cf-ui-modal-confirm',
+  title = 'Are you sure?',
 }: ModalConfirmProps): React.ReactElement {
   return (
     <Modal
@@ -182,22 +183,5 @@ export function ModalConfirm({
     </Modal>
   );
 }
-
-ModalConfirm.defaultProps = {
-  testId: 'cf-ui-modal-confirm',
-  confirmTestId: 'cf-ui-modal-confirm-confirm-button',
-  secondaryTestId: 'cf-ui-modal-confirm-secondary-button',
-  cancelTestId: 'cf-ui-modal-confirm-cancel-button',
-  title: 'Are you sure?',
-  confirmLabel: 'Confirm',
-  cancelLabel: 'Cancel',
-  intent: 'positive',
-  shouldCloseOnOverlayClick: true,
-  shouldCloseOnEscapePress: true,
-  isConfirmDisabled: false,
-  isConfirmLoading: false,
-  size: 'medium',
-  allowHeightOverflow: false,
-};
 
 export default ModalConfirm;

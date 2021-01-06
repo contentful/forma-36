@@ -1,11 +1,49 @@
 import React, { useState } from 'react';
+import type { Meta, Story } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
 
 import ModalConfirm, { ModalConfirmProps } from './ModalConfirm';
 import Button from '../../Button';
 import TextInput from '../../TextInput';
 
-export function DefaultStory(props: ModalConfirmProps) {
+export default {
+  title: 'Components/Modal/ModalConfirm',
+  component: ModalConfirm,
+  parameters: {
+    propTypes: [ModalConfirm['__docgenInfo']],
+  },
+  decorators: [
+    // eslint-disable-next-line react/display-name
+    (storyFn) => (
+      <div style={{ width: '1200px', height: '800px' }}>{storyFn()}</div>
+    ),
+  ],
+  argTypes: {
+    children: { control: { disable: true } },
+    className: { control: { disable: true } },
+    testId: { control: { disable: true } },
+    size: {
+      control: {
+        type: 'select',
+        options: ['small', 'medium', 'large', '300px', '1500px'],
+      },
+    },
+    intent: {
+      control: {
+        type: 'select',
+        options: ['negative', 'positive', 'primary'],
+      },
+    },
+    secondaryIntent: {
+      control: {
+        type: 'select',
+        options: ['negative', 'positive', 'primary', 'muted'],
+      },
+    },
+  },
+} as Meta;
+
+export const Default: Story<ModalConfirmProps> = (props) => {
   const [isShown, setShown] = useState(true);
   return (
     <div>
@@ -32,10 +70,6 @@ export function DefaultStory(props: ModalConfirmProps) {
       </ModalConfirm>
     </div>
   );
-}
-
-DefaultStory.args = {
-  ...ModalConfirm.defaultProps,
 };
 
 export function ComplexStory(props: ModalConfirmProps) {
@@ -79,46 +113,3 @@ export function ComplexStory(props: ModalConfirmProps) {
     </div>
   );
 }
-
-ComplexStory.args = {
-  title: 'A really long modal',
-  ...ModalConfirm.defaultProps,
-};
-
-export default {
-  title: 'Components/Modal/ModalConfirm',
-  component: ModalConfirm,
-  parameters: {
-    propTypes: [ModalConfirm['__docgenInfo']],
-  },
-  decorators: [
-    // eslint-disable-next-line react/display-name
-    (storyFn) => (
-      <div style={{ width: '1200px', height: '800px' }}>{storyFn()}</div>
-    ),
-  ],
-  argTypes: {
-    children: { control: { disable: true } },
-    className: { control: { disable: true } },
-    testId: { control: { disable: true } },
-    position: { control: { type: 'select', options: ['center', 'top'] } },
-    size: {
-      control: {
-        type: 'select',
-        options: ['small', 'medium', 'large', '300px', '1500px'],
-      },
-    },
-    intent: {
-      control: {
-        type: 'select',
-        options: ['negative', 'positive', 'primary'],
-      },
-    },
-    secondaryIntent: {
-      control: {
-        type: 'select',
-        options: ['negative', 'positive', 'primary', 'muted'],
-      },
-    },
-  },
-};

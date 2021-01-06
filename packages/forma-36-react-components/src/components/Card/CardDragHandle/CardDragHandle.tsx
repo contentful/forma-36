@@ -26,9 +26,9 @@ export interface CardDragHandlePropTypes {
 
 export function CardDragHandle({
   className,
-  testId,
+  testId = 'cf-ui-card-drag-handle',
   children,
-  isDragActive,
+  isDragActive = false,
   ...otherProps
 }: CardDragHandlePropTypes): React.ReactElement {
   const classNames = cn(
@@ -44,10 +44,5 @@ export function CardDragHandle({
     </div>
   );
 }
-
-CardDragHandle.defaultProps = {
-  testId: 'cf-ui-card-drag-handle',
-  isDragActive: false,
-};
 
 export default CardDragHandle;

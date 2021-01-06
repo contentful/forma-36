@@ -20,21 +20,14 @@ export interface FormProps {
   children: ReactChild | ReactNodeArray;
 }
 
-const defaultProps: Partial<FormProps> = {
-  spacing: 'default',
-  testId: 'cf-ui-form',
-};
-
-export const Form = (props: FormProps) => {
-  const {
-    className,
-    children,
-    testId,
-    onSubmit,
-    spacing,
-    ...otherProps
-  } = props;
-
+export const Form = ({
+  children,
+  className,
+  onSubmit,
+  spacing = 'default',
+  testId = 'cf-ui-form',
+  ...otherProps
+}: FormProps) => {
   const classNames = cn(styles.Form, className);
 
   const formItemClassNames = cn(
@@ -68,7 +61,5 @@ export const Form = (props: FormProps) => {
     </form>
   );
 };
-
-Form.defaultProps = defaultProps;
 
 export default Form;

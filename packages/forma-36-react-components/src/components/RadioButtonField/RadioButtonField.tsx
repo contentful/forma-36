@@ -1,26 +1,28 @@
 import React from 'react';
-import ControlledInputField, {
-  ControlledInputFieldPropTypes,
-} from '../ControlledInputField';
+import ControlledInputField from '../ControlledInputField';
+import type { ControlledInputFieldPropTypes } from '../ControlledInputField';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface RadioButtonFieldProps extends ControlledInputFieldPropTypes {}
+export type RadioButtonFieldProps = Omit<
+  ControlledInputFieldPropTypes,
+  'inputType'
+>;
 
-const defaultProps: Partial<RadioButtonFieldProps> = {
-  labelIsLight: false,
-  checked: false,
-  inputType: 'checkbox',
-  testId: 'cf-ui-radio-button-field',
-};
-
-export const RadioButtonField = (props: RadioButtonFieldProps) => {
-  const { testId, ...otherProps } = props;
-
+export const RadioButtonField = ({
+  checked = false,
+  labelIsLight = false,
+  testId = 'cf-ui-radio-button-field',
+  ...otherProps
+}: RadioButtonFieldProps) => {
   return (
-    <ControlledInputField testId={testId} {...otherProps} inputType="radio" />
+    <ControlledInputField
+      checked={checked}
+      labelIsLight={labelIsLight}
+      testId={testId}
+      {...otherProps}
+      inputType="radio"
+    />
   );
 };
-
-RadioButtonField.defaultProps = defaultProps;
 
 export default RadioButtonField;

@@ -22,27 +22,18 @@ export interface IconButtonProps extends React.HTMLAttributes<HTMLElement> {
   testId?: string;
 }
 
-const defaultProps: Partial<IconButtonProps> = {
-  disabled: false,
-  testId: 'cf-ui-icon-button',
-  buttonType: 'primary',
-  withDropdown: false,
-};
-
-export const IconButton = (props: IconButtonProps) => {
-  const {
-    label,
-    iconProps,
-    href,
-    testId,
-    disabled,
-    onClick,
-    buttonType,
-    withDropdown,
-    className,
-    ...otherProps
-  } = props;
-
+export const IconButton = ({
+  buttonType = 'primary',
+  className,
+  disabled = false,
+  href,
+  iconProps,
+  label,
+  onClick,
+  testId = 'cf-ui-icon-button',
+  withDropdown = false,
+  ...otherProps
+}: IconButtonProps) => {
   const classNames = cn(styles.IconButton, className, {
     [styles['IconButton--disabled']]: disabled,
     [styles[`IconButton--${buttonType}`]]: buttonType,
@@ -89,7 +80,5 @@ export const IconButton = (props: IconButtonProps) => {
     </button>
   );
 };
-
-IconButton.defaultProps = defaultProps;
 
 export default IconButton;
