@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Tag, { tagType, TagProps } from './Tag';
+import Tag, { TagProps } from './Tag';
 import SectionHeading from '../Typography/SectionHeading';
 import Flex from '../Flex/Flex';
 
@@ -30,12 +30,40 @@ export const overview = () => (
     <Flex marginBottom="spacingS">
       <SectionHeading element="h3">Tag types overview</SectionHeading>
     </Flex>
-    {tagType.map((type, idx) => (
-      <Flex marginBottom="spacingM" alignItems="center" key={idx}>
-        <Flex marginRight="spacingS">
-          <Tag tagType={type}>{type}</Tag>
-        </Flex>
+    <Flex marginBottom="spacingM" alignItems="center">
+      <Flex marginRight="spacingS">
+        <Tag tagType="primary">primary</Tag>
       </Flex>
-    ))}
+    </Flex>
+    <Flex marginBottom="spacingM" alignItems="center">
+      <Flex marginRight="spacingS">
+        <Tag tagType="filled-primary">filled-primary</Tag>
+      </Flex>
+    </Flex>
+    <Flex marginBottom="spacingM" alignItems="center">
+      <Flex marginRight="spacingS">
+        <Tag tagType="positive">positive</Tag>
+      </Flex>
+    </Flex>
+    <Flex marginBottom="spacingM" alignItems="center">
+      <Flex marginRight="spacingS">
+        <Tag tagType="negative">negative</Tag>
+      </Flex>
+    </Flex>
+    <Flex marginBottom="spacingM" alignItems="center">
+      <Flex marginRight="spacingS">
+        <Tag tagType="warning">warning</Tag>
+      </Flex>
+    </Flex>
+    <Flex marginBottom="spacingM" alignItems="center">
+      <Flex marginRight="spacingS">
+        <Tag tagType="muted">muted</Tag>
+      </Flex>
+    </Flex>
+    <Flex marginBottom="spacingM" alignItems="center">
+      <Flex marginRight="spacingS">
+        <Tag tagType="secondary">secondary</Tag>
+      </Flex>
+    </Flex>
   </>
 );

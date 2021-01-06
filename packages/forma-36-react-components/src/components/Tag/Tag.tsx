@@ -12,16 +12,6 @@ export type TagType =
   | 'secondary'
   | 'muted';
 
-export const tagType = [
-  'primary',
-  'filled-primary',
-  'positive',
-  'negative',
-  'warning',
-  'muted',
-  'secondary',
-];
-
 type Status =
   | 'published'
   | 'draft'
