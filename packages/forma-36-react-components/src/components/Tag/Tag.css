@@ -11,7 +11,7 @@
   font-size: calc(1rem * (12 / var(--font-base-default)));
   line-height: 20px;
   text-transform: uppercase;
-  letter-spacing: var(--letter-spacing-wide);
+  letter-spacing: 0.06rem; /*move to tokens or update wide letter spacing token*/
   padding: 0 var(--spacing-xs);
   border-radius: var(--border-radius-small);
 }
