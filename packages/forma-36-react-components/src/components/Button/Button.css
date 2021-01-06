@@ -26,7 +26,7 @@
       var(--transition-easing-default);
   vertical-align: middle;
   text-decoration: none;
-  box-shadow: 0px 1px 0px rgb(25, 37, 50, 0.1);
+  box-shadow: var(--box-shadow-positive);
 
   &:hover:not(.Button--disabled) {
     cursor: pointer;
