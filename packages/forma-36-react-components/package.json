@@ -31,6 +31,8 @@
     "react-dom": "^16.8.6 || ^17.0.0"
   },
   "dependencies": {
+    "@contentful/forma-36-fcss": "^0.2.13",
+    "@contentful/forma-36-tokens": "^0.9.3",
     "@babel/runtime": "^7.3.4",
     "@popperjs/core": "^2.4.4",
     "classnames": "^2.2.6",
