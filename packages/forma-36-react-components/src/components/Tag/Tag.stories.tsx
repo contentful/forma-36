@@ -37,7 +37,7 @@ export const overview = () => (
     </Flex>
     <Flex marginBottom="spacingM" alignItems="center">
       <Flex marginRight="spacingS">
-        <Tag tagType="filled-primary">filled-primary</Tag>
+        <Tag tagType="primary-filled">primary filled</Tag>
       </Flex>
     </Flex>
     <Flex marginBottom="spacingM" alignItems="center">

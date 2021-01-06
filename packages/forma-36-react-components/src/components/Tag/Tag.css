@@ -46,7 +46,7 @@
   background-color: var(--color-element-lightest);
 }
 
-.Tag--filled-primary {
+.Tag--primary-filled {
   color: var(--color-white);
   background-color: var(--color-primary);
 }
