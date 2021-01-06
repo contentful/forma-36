@@ -108,6 +108,7 @@
   }
 
   &:focus:not(.Button--disabled) {
+    border-color: var(--color-blue-base);
     box-shadow: var(--glow-primary);
   }
 
@@ -137,6 +138,7 @@
   }
 
   &:focus:not(.Button--disabled) {
+    border-color: var(--color-green-base);
     box-shadow: var(--glow-positive);
   }
 
@@ -168,6 +170,7 @@
   }
 
   &:focus:not(.Button--disabled) {
+    border-color: var(--color-red-base);
     box-shadow: var(--glow-negative);
   }
 
@@ -199,6 +202,7 @@
   }
 
   &:focus:not(.Button--disabled) {
+    border-color: var(--color-orange-base);
     box-shadow: var(--glow-warning);
   }
 
