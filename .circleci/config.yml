@@ -10,6 +10,9 @@ commands:
   yarn_install:
     steps:
       - restore_cache: *cache-key
+      - run: git config --global user.email ${GITHUB_EMAIL}
+      - run: git config --global user.name ${GITHUB_USER}
+      - run: 'echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc'
       - run: yarn install --frozen-lockfile --cache-folder ~/.cache/yarn
       - save_cache:
           <<: *cache-key
@@ -65,11 +68,11 @@ jobs:
       - checkout
       - yarn_install
       - run:
-          name: Pre deploy
-          command: bin/before-deploy
+          name: Build
+          command: yarn build
       - run:
           name: Deploy
-          command: bin/deploy
+          command: yarn lerna publish --conventional-commits --conventional-prerelease=@contentful/forma-36-react-datepicker,@contentful/forma-36-react-timepicker --github-release --yes
 
 workflows:
   version: 2

@@ -17,8 +17,7 @@
   "scripts": {
     "build:clean": "rm -rf dist",
     "build:tokens": "node tools/build.js",
-    "build": "yarn build:clean && yarn build:tokens",
-    "prepublishOnly": "yarn build"
+    "build": "yarn build:clean && yarn build:tokens"
   },
   "publishConfig": {
     "access": "public"
