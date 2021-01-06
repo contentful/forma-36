@@ -17,33 +17,33 @@
 }
 
 .Tag--primary {
-  color: var(--color-primary);
-  background-color: color-mod(var(--color-primary) a(7%));
+  color: var(--color-blue-base);
+  background-color: var(--color-blue-lightest);
 }
 
 .Tag--positive {
   color: var(--color-green-base);
-  background-color: color-mod(var(--color-green-base) a(8%));
+  background-color: var(--color-green-lightest);
 }
 
 .Tag--negative {
-  color: var(--color-red-mid);
-  background-color: color-mod(var(--color-red-mid) a(6%));
+  color: var(--color-red-base);
+  background-color: var(--color-red-lightest);
 }
 
 .Tag--warning {
   color: var(--color-orange-dark);
-  background-color: color-mod(var(--color-orange-dark) a(4%));
+  background-color: var(--color-orange-lightest);
 }
 
 .Tag--secondary {
-  color: var(--color-text-mid);
-  background-color: color-mod(var(--color-text-mid) a(5%));
+  color: var(--color-text-base);
+  background-color: var(--color-element-light);
 }
 
 .Tag--muted {
-  color: var(--color-text-light);
-  background-color: color-mod(var(--color-text-light) a(5%));
+  color: var(--color-text-mid);
+  background-color: var(--color-element-lightest);
 }
 
 .Tag--filled-primary {

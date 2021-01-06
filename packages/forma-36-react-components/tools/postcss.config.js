@@ -3,7 +3,6 @@ const postCssImport = require('postcss-import');
 const postCssUrl = require('postcss-url');
 const postcssPresetEnv = require('postcss-preset-env');
 const postcssCustomProperties = require('postcss-custom-properties');
-const postcssColorMod = require('postcss-color-mod-function');
 
 module.exports = {
   plugins: [
@@ -16,7 +15,6 @@ module.exports = {
       browsers: ['last 2 versions, ie >= 11'],
       preserve: false, // Remove the pre-polyfilled CSS
     }),
-    postcssColorMod(),
     postcssCustomProperties(),
   ],
 };
