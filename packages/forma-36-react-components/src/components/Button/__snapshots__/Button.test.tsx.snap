@@ -192,7 +192,7 @@ exports[`renders the component with an additional class name 1`] = `
 
 exports[`renders the component with dropdown indicator 1`] = `
 <button
-  class="Button Button--primary Button--medium"
+  class="Button Button--primary Button--medium Button--is-dropdown"
   data-test-id="cf-ui-button"
   type="button"
 >

@@ -19,7 +19,7 @@
   font-weight: 500;
   overflow: hidden;
   background-size: 100% 200%;
-  transition: background var(--transition-duration-default)
+  transition: background var(--transition-duration-short)
       var(--transition-easing-default),
     opacity var(--transition-duration-default) var(--transition-easing-default),
     border-color var(--transition-duration-default)
@@ -220,6 +220,12 @@
   z-index: var(--z-index-default);
   padding: 0 calc(1rem * (16 / var(--font-base-default)));
   align-items: center;
+}
+
+.Button--is-dropdown {
+  & .Button__inner-wrapper {
+    padding-right: calc(1rem * (8 / var(--font-base-default)));
+  }
 }
 
 .Button__label {

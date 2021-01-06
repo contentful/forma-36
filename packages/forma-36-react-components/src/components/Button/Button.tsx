@@ -69,6 +69,7 @@ export const Button = (props: ButtonProps) => {
       [styles[`Button--${size}`]]: size,
       [styles['Button--full-width']]: isFullWidth,
       [styles['Button--is-active']]: isActive,
+      [styles['Button--is-dropdown']]: indicateDropdown,
     },
   );
 
