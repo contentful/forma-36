@@ -1,7 +1,7 @@
 {
   "name": "@contentful/forma-36-react-components",
   "description": "Contentful UI Component Library",
-  "version": "3.73.4",
+  "version": "3.73.5",
   "main": "dist/index.js",
   "module": "dist/forma-36-react-components.esm.js",
   "style": "dist/styles.css",
@@ -23,7 +23,6 @@
     "build:post-clean": "rm -rf dist/styles.js dist/main.js",
     "build": "yarn build:clean && yarn build:scripts && yarn build:esm && yarn build:styles && yarn build:types && yarn build:umd && yarn build:post-clean && yarn size",
     "size": "size-limit",
-    "prepublishOnly": "yarn build",
     "semantic-release": "semantic-release"
   },
   "peerDependencies": {
