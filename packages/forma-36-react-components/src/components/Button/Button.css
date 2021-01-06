@@ -61,6 +61,7 @@
 
   &.Button--is-active:not(.Button--disabled),
   &:active:not(.Button--disabled) {
+    transition: none;
     background-color: var(--color-element-light);
   }
 
@@ -80,6 +81,7 @@
 
   &.Button--is-active:not(.Button--disabled),
   &:active:not(.Button--disabled) {
+    transition: none;
     background-color: var(--color-element-light);
   }
 
@@ -103,6 +105,7 @@
 
   &.Button--is-active:not(.Button--disabled),
   &:active:not(.Button--disabled) {
+    transition: none;
     border-color: var(--color-blue-dark);
     background-color: var(--color-blue-dark);
   }
@@ -133,6 +136,7 @@
 
   &.Button--is-active:not(.Button--disabled),
   &:active:not(.Button--disabled) {
+    transition: none;
     border-color: var(--color-green-dark);
     background-color: var(--color-green-dark);
   }
@@ -164,13 +168,14 @@
 
   &.Button--is-active:not(.Button--disabled),
   &:active:not(.Button--disabled) {
+    transition: none;
     background-position: 0 100%;
     border-color: var(--color-red-dark);
     background-color: var(--color-red-dark);
   }
 
   &:focus:not(.Button--disabled) {
-    border-color: var(--color-red-base);
+    border-color: var(--color-red-dark);
     box-shadow: var(--glow-negative);
   }
 
@@ -196,6 +201,7 @@
 
   &.Button--is-active:not(.Button--disabled),
   &:active:not(.Button--disabled) {
+    transition: none;
     background-position: 0 100%;
     border-color: var(--color-orange-dark);
     background-color: var(--color-orange-dark);
