@@ -10,6 +10,8 @@ commands:
   yarn_install:
     steps:
       - restore_cache: *cache-key
+      - run: git config --global user.email ${GITHUB_EMAIL}
+      - run: git config --global user.name ${GITHUB_USER}
       - run: 'echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc'
       - run: yarn install --frozen-lockfile --cache-folder ~/.cache/yarn
       - save_cache:
