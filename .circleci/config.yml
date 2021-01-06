@@ -69,7 +69,8 @@ jobs:
           command: bin/before-deploy
       - run:
           name: Deploy
-          command: bin/deploy
+          # command: bin/deploy
+          command: yarn lerna publish --canary --dist-tag next-v3 --conventional-commits --conventional-prerelease=@contentful/forma-36-react-datepicker,@contentful/forma-36-react-timepicker --yes
 
 workflows:
   version: 2

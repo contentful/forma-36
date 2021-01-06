@@ -2,5 +2,5 @@
 #
 # publish a new version depending on conventional commits
 set -e
-yarn lerna publish --canary --dist-tag next-v3 --conventional-commits --conventional-prerelease=@contentful/forma-36-react-datepicker,@contentful/forma-36-react-timepicker --yes
+yarn lerna publish --conventional-commits --conventional-prerelease=@contentful/forma-36-react-datepicker,@contentful/forma-36-react-timepicker --github-release --yes
 set +e
