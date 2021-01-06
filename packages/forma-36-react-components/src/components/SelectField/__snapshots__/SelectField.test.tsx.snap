@@ -41,10 +41,10 @@ exports[`renders the component 1`] = `
       width="1em"
     >
       <path
-        d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"
+        d="M7 10l5 5 5-5z"
       />
       <path
-        d="M0-.75h24v24H0z"
+        d="M0 0h24v24H0z"
         fill="none"
       />
     </svg>
@@ -94,10 +94,10 @@ exports[`renders the component as disabled 1`] = `
       width="1em"
     >
       <path
-        d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"
+        d="M7 10l5 5 5-5z"
       />
       <path
-        d="M0-.75h24v24H0z"
+        d="M0 0h24v24H0z"
         fill="none"
       />
     </svg>
@@ -146,10 +146,10 @@ exports[`renders the component as required 1`] = `
       width="1em"
     >
       <path
-        d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"
+        d="M7 10l5 5 5-5z"
       />
       <path
-        d="M0-.75h24v24H0z"
+        d="M0 0h24v24H0z"
         fill="none"
       />
     </svg>
@@ -198,10 +198,10 @@ exports[`renders the component with a help text 1`] = `
       width="1em"
     >
       <path
-        d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"
+        d="M7 10l5 5 5-5z"
       />
       <path
-        d="M0-.75h24v24H0z"
+        d="M0 0h24v24H0z"
         fill="none"
       />
     </svg>
@@ -260,10 +260,10 @@ exports[`renders the component with a validation message 1`] = `
       width="1em"
     >
       <path
-        d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"
+        d="M7 10l5 5 5-5z"
       />
       <path
-        d="M0-.75h24v24H0z"
+        d="M0 0h24v24H0z"
         fill="none"
       />
     </svg>
@@ -280,11 +280,11 @@ exports[`renders the component with a validation message 1`] = `
       width="1em"
     >
       <path
-        d="M0 0h24v24H0V0z"
+        d="M0 0h24v24H0z"
         fill="none"
       />
       <path
-        d="M11 15h2v2h-2zm0-8h2v6h-2zm.99-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
       />
     </svg>
     <p
@@ -337,10 +337,10 @@ exports[`renders the component with a value 1`] = `
       width="1em"
     >
       <path
-        d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"
+        d="M7 10l5 5 5-5z"
       />
       <path
-        d="M0-.75h24v24H0z"
+        d="M0 0h24v24H0z"
         fill="none"
       />
     </svg>

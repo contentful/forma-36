@@ -26,10 +26,10 @@ exports[`renders the component 1`] = `
     width="1em"
   >
     <path
-      d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"
+      d="M7 10l5 5 5-5z"
     />
     <path
-      d="M0-.75h24v24H0z"
+      d="M0 0h24v24H0z"
       fill="none"
     />
   </svg>
@@ -63,10 +63,10 @@ exports[`renders the component as required 1`] = `
     width="1em"
   >
     <path
-      d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"
+      d="M7 10l5 5 5-5z"
     />
     <path
-      d="M0-.75h24v24H0z"
+      d="M0 0h24v24H0z"
       fill="none"
     />
   </svg>
@@ -100,10 +100,10 @@ exports[`renders the component in disabled state 1`] = `
     width="1em"
   >
     <path
-      d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"
+      d="M7 10l5 5 5-5z"
     />
     <path
-      d="M0-.75h24v24H0z"
+      d="M0 0h24v24H0z"
       fill="none"
     />
   </svg>
@@ -136,10 +136,10 @@ exports[`renders the component with a value 1`] = `
     width="1em"
   >
     <path
-      d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"
+      d="M7 10l5 5 5-5z"
     />
     <path
-      d="M0-.75h24v24H0z"
+      d="M0 0h24v24H0z"
       fill="none"
     />
   </svg>
@@ -172,10 +172,10 @@ exports[`renders the component with an extra class name 1`] = `
     width="1em"
   >
     <path
-      d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"
+      d="M7 10l5 5 5-5z"
     />
     <path
-      d="M0-.75h24v24H0z"
+      d="M0 0h24v24H0z"
       fill="none"
     />
   </svg>
@@ -208,10 +208,10 @@ exports[`renders the component with error 1`] = `
     width="1em"
   >
     <path
-      d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"
+      d="M7 10l5 5 5-5z"
     />
     <path
-      d="M0-.75h24v24H0z"
+      d="M0 0h24v24H0z"
       fill="none"
     />
   </svg>
