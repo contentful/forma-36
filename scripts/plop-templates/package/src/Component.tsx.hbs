@@ -6,9 +6,17 @@ export type {{componentName}}Props = {
   children: React.ReactNode
 }
 
-function {{componentName}}(props: {{componentName}}Props, ref: DOMRef<HTMLDivElement>) {
+
+function {{componentName}}(props: {{componentName}}Props, ref: React.Ref<HTMLDivElement>) {
   return (
-    <div className={css({})}>{props.children}</div>
+    <div
+      ref={ref}
+      className={css({
+        color: tokens.colorRedBase,
+      })}
+    >
+      {props.children}
+    </div>
   );
 }
 
