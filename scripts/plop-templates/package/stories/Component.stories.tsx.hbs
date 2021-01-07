@@ -1,0 +1,17 @@
+import React from 'react';
+import type { Meta, Story } from '@storybook/react/types-6-0';
+
+import { {{componentName}} } from '../src/{{componentName}}';
+import type { {{componentName}}Props } from '../src/{{componentName}}';
+
+export default {
+  component: {{componentName}},
+  parameters: {
+    propTypes: {{componentName}}['__docgenInfo'],
+  },
+  title: 'Components/{{componentName}}',
+} as Meta;
+
+export const Default: Story<{{componentName}}Props> = (args) => {
+  return <{{componentName}} {...args}>{{componentName}}</{{componentName}}>;
+};
