@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.73.8](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.73.7...@contentful/forma-36-react-components@3.73.8) (2021-01-07)
+
+
+### Bug Fixes
+
+* **Autocomplete:** Make use of dropdownProp.isOpen ([566cbb5](https://github.com/contentful/forma-36/commit/566cbb5c4d86b04ba08f7d6988b1fa38bea02f5e))
+
+
+
+
+
 ## [3.73.7](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.73.6...@contentful/forma-36-react-components@3.73.7) (2021-01-07)
 
 
