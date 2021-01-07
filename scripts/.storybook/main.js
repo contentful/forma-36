@@ -7,8 +7,6 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-knobs',
     '@storybook/addon-a11y',
-    'storybook-prop-types-addon',
-    'storybook-addon-jsx',
     {
       name: '@storybook/addon-storysource',
       options: {
