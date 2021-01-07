@@ -83,7 +83,7 @@ export const overview = () => (
       disabled
       name="someOption"
       value="no"
-      id="termsCheckboxOption2"
+      id="termsCheckboxOption3"
     />
     <Flex marginBottom="spacingS" marginTop="spacingM">
       <SectionHeading element="h3">
@@ -97,7 +97,7 @@ export const overview = () => (
       checked
       name="someOption"
       value="no"
-      id="termsCheckboxOption2"
+      id="termsCheckboxOption4"
     />
   </>
 );

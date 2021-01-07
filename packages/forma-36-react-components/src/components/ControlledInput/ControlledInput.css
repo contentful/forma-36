@@ -2,6 +2,7 @@
 @import 'settings/typography';
 @import 'settings/transitions';
 @import 'settings/dimensions';
+@import 'settings/shadows';
 
 .ControlledInput {
   display: inline-block;
@@ -31,6 +32,15 @@
     width: 1rem;
     height: 1rem;
     z-index: 1;
+    cursor: pointer;
+
+    &:focus {
+      & + .RadioButton__ghost {
+        outline: none;
+        border: 1px solid var(--color-primary);
+        box-shadow: var(--glow-primary);
+      }
+    }
 
     &:checked {
       & + .RadioButton__ghost {
@@ -85,6 +95,15 @@
     width: 1rem;
     height: 1rem;
     z-index: 1;
+    cursor: pointer;
+
+    &:focus {
+      & + .Checkbox__ghost {
+        outline: none;
+        border: 1px solid var(--color-primary);
+        box-shadow: var(--glow-primary);
+      }
+    }
 
     &:checked {
       & + .Checkbox__ghost {
@@ -117,7 +136,6 @@
 }
 
 .Input__ghost {
-  composes: focus-border--default from './../../styles/settings/a11y.css';
   background: var(--color-white);
   width: 1rem;
   height: 1rem;
@@ -126,7 +144,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   box-sizing: border-box;
 }
 
@@ -144,4 +161,11 @@
 
 .Checkbox__ghost {
   border-radius: 20%;
+
+  & svg {
+    width: 12px;
+    min-width: 12px;
+    min-height: 12px;
+    height: 12px;
+  }
 }
