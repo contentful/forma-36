@@ -97,16 +97,20 @@ export const ControlledInput = ({
       />
       {type === 'radio' ? (
         /* eslint-disable-next-line jsx-a11y/label-has-associated-control */
-        <label className={styles['RadioButton__ghost']} htmlFor={id} />
+        <label
+          className={cn(styles['Input__ghost'], styles['RadioButton__ghost'])}
+          htmlFor={id}
+        />
       ) : (
-        <label className={styles['Checkbox__ghost']} htmlFor={id}>
-          {checked && (
-            <Icon
-              icon="Done"
-              color={disabled ? 'secondary' : 'white'}
-              size="medium"
-            />
-          )}
+        <label
+          className={cn(styles['Input__ghost'], styles['Checkbox__ghost'])}
+          htmlFor={id}
+        >
+          <Icon
+            icon="Done"
+            color={disabled ? 'secondary' : 'white'}
+            size="medium"
+          />
         </label>
       )}
     </div>
