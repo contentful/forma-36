@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.9.3...@contentful/forma-36-tokens@0.9.4) (2021-01-07)
+
+**Note:** Version bump only for package @contentful/forma-36-tokens
+
+
+
+
+
 ## [0.9.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.9.2...@contentful/forma-36-tokens@0.9.3) (2021-01-06)
 
 **Note:** Version bump only for package @contentful/forma-36-tokens
