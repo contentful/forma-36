@@ -10,8 +10,6 @@ commands:
   yarn_install:
     steps:
       - restore_cache: *cache-key
-      - run: git config --global user.email ${GITHUB_EMAIL}
-      - run: git config --global user.name ${GITHUB_USER}
       - run: 'echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc'
       - run: yarn install --frozen-lockfile --cache-folder ~/.cache/yarn
       - save_cache:
@@ -67,12 +65,17 @@ jobs:
     steps:
       - checkout
       - yarn_install
+      - add_ssh_keys:
+          fingerprints:
+            - '3b:f4:8d:1e:07:c6:88:2b:94:d2:49:88:39:56:8a:eb'
+      - run: git config --global user.email ${GITHUB_EMAIL}
+      - run: git config --global user.name ${GITHUB_USER}
       - run:
           name: Build
           command: yarn build
       - run:
           name: Deploy
-          command: yarn lerna publish --conventional-commits --conventional-prerelease=@contentful/forma-36-react-datepicker,@contentful/forma-36-react-timepicker --github-release --yes
+          command: yarn lerna publish --no-private --conventional-commits --conventional-prerelease=@contentful/forma-36-react-datepicker,@contentful/forma-36-react-timepicker --create-release github --yes
 
 workflows:
   version: 2
