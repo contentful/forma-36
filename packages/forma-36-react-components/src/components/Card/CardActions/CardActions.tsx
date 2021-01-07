@@ -1,11 +1,11 @@
 import React, { useCallback, useState } from 'react';
 import type { MouseEvent as ReactMouseEvent } from 'react';
 
-import Dropdown from '../../Dropdown';
+import Dropdown, { DropdownProps } from '../../Dropdown';
 import DropdownList from '../../Dropdown/DropdownList';
 import IconButton, { IconButtonProps } from '../../IconButton';
 
-export interface CardActionsPropTypes {
+export interface CardActionsPropTypes extends DropdownProps {
   /**
    * Class names to be appended to the className prop of the component
    */
