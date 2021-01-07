@@ -1,36 +1,52 @@
 @import 'settings/colors';
 @import 'settings/typography';
 @import 'settings/transitions';
+@import 'settings/dimensions';
+@import 'settings/borders';
 
 .Tag {
   display: inline-block;
   font-family: var(--font-stack-primary);
   font-weight: var(--font-weight-medium);
   font-size: calc(1rem * (12 / var(--font-base-default)));
+  line-height: 20px;
   text-transform: uppercase;
-  letter-spacing: var(--letter-spacing-wide);
+  letter-spacing: 0.06rem; /*move to tokens or update wide letter spacing token*/
+  padding: 0 var(--spacing-xs);
+  border-radius: var(--border-radius-small);
 }
 
 .Tag--primary {
-  color: var(--color-primary);
+  color: var(--color-blue-base);
+  background-color: var(--color-blue-lightest);
 }
 
 .Tag--positive {
-  color: var(--color-positive);
+  color: var(--color-green-base);
+  background-color: var(--color-green-lightest);
 }
 
 .Tag--negative {
-  color: var(--color-negative);
+  color: var(--color-red-base);
+  background-color: var(--color-red-lightest);
 }
 
 .Tag--warning {
-  color: var(--color-warning);
+  color: var(--color-orange-dark);
+  background-color: #ffefd5; /* temporary hardcoded value until palette improvements */
 }
 
 .Tag--secondary {
-  color: var(--color-text-mid);
+  color: var(--color-text-base);
+  background-color: var(--color-element-light);
 }
 
 .Tag--muted {
-  color: var(--color-text-light);
+  color: var(--color-text-mid);
+  background-color: var(--color-element-lightest);
+}
+
+.Tag--primary-filled {
+  color: var(--color-white);
+  background-color: var(--color-primary);
 }
