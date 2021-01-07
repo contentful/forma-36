@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1-alpha.146](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-datepicker@0.3.1-alpha.145...@contentful/forma-36-react-datepicker@0.3.1-alpha.146) (2021-01-07)
+
+
+### Bug Fixes
+
+* fallback to emotion@10 in timepicker and datepicker ([#752](https://github.com/contentful/forma-36/issues/752)) ([208c24e](https://github.com/contentful/forma-36/commit/208c24e4589d16663d2e5cb1d90c6980f116ef04))
+
+
+
+
+
 ## [0.3.1-alpha.145](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-datepicker@0.3.1-alpha.144...@contentful/forma-36-react-datepicker@0.3.1-alpha.145) (2021-01-07)
 
 **Note:** Version bump only for package @contentful/forma-36-react-datepicker
