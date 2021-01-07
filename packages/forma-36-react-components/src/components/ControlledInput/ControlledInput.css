@@ -37,7 +37,7 @@
     &:focus {
       & + .RadioButton__ghost {
         outline: none;
-        border: 1px solid var(--color-primary);
+        border: 2px solid var(--color-primary);
         box-shadow: var(--glow-primary);
       }
     }
@@ -100,7 +100,7 @@
     &:focus {
       & + .Checkbox__ghost {
         outline: none;
-        border: 1px solid var(--color-primary);
+        border: 2px solid var(--color-primary);
         box-shadow: var(--glow-primary);
       }
     }
