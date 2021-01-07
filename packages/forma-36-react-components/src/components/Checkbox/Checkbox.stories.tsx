@@ -20,7 +20,6 @@ export const basic = (args: CheckboxProps) => <Checkbox {...args} />;
 
 basic.args = {
   id: 'Checkbox',
-  labelText: 'some label text',
   name: 'some name',
 };
 

@@ -20,7 +20,6 @@ export const basic = (args: RadioButtonProps) => <RadioButton {...args} />;
 
 basic.args = {
   id: 'Checkbox',
-  labelText: 'some label text',
   name: 'some name',
 };
 
