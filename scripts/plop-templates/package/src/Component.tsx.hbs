@@ -1,0 +1,19 @@
+import { css } from 'emotion';
+import React from 'react';
+import tokens from '@contentful/forma-36-tokens';
+
+export type {{componentName}}Props = {
+  children: React.ReactNode
+}
+
+function {{componentName}}(props: {{componentName}}Props, ref: DOMRef<HTMLDivElement>) {
+  return (
+    <div className={css({})}>{props.children}</div>
+  );
+}
+
+/**
+ * TODO: Add description of component here.
+ */
+const _{{componentName}} = React.forwardRef({{componentName}});
+export {_{{componentName}} as {{componentName~}}};
