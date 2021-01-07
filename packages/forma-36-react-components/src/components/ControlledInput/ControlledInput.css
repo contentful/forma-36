@@ -106,10 +106,10 @@
 
     &:disabled {
       & + .Checkbox__ghost {
-        background: var(--color-element-mid);
+        background: var(--color-element-dark);
 
         & svg {
-          fill: var(--color-element-mid);
+          fill: var(--color-element-dark);
         }
       }
     }
