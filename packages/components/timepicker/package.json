@@ -1,6 +1,6 @@
 {
   "name": "@contentful/forma-36-react-timepicker",
-  "version": "0.4.1-alpha.147",
+  "version": "0.4.1-alpha.148",
   "license": "MIT",
   "files": [
     "dist",
@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",
-    "@contentful/forma-36-react-components": "^3.73.7",
+    "@contentful/forma-36-react-components": "^3.73.8",
     "@emotion/css": "^11.1.0",
     "date-fns": "^2.9.0",
     "is-hotkey": "^0.1.6",
