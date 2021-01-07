@@ -12,7 +12,7 @@ exports[`renders the component 1`] = `
     value=""
   />
   <label
-    class="RadioButton__ghost"
+    class="Input__ghost RadioButton__ghost"
   />
 </div>
 `;
@@ -29,7 +29,7 @@ exports[`renders the component with an additional class name 1`] = `
     value=""
   />
   <label
-    class="RadioButton__ghost"
+    class="Input__ghost RadioButton__ghost"
   />
 </div>
 `;

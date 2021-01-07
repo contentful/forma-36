@@ -17,9 +17,25 @@ exports[`renders the component 1`] = `
       value=""
     />
     <label
-      class="Checkbox__ghost"
+      class="Input__ghost Checkbox__ghost"
       for="checkbox"
-    />
+    >
+      <svg
+        class="Icon Icon--medium Icon--white"
+        data-test-id="cf-ui-icon"
+        height="1em"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+        <path
+          d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
+        />
+      </svg>
+    </label>
   </div>
   <div
     class="Checkbox__label-wrapper"
@@ -53,7 +69,7 @@ exports[`renders the component as checked 1`] = `
       value=""
     />
     <label
-      class="Checkbox__ghost"
+      class="Input__ghost Checkbox__ghost"
       for="checkbox"
     >
       <svg
@@ -105,9 +121,25 @@ exports[`renders the component as required 1`] = `
       value=""
     />
     <label
-      class="Checkbox__ghost"
+      class="Input__ghost Checkbox__ghost"
       for="checkbox"
-    />
+    >
+      <svg
+        class="Icon Icon--medium Icon--white"
+        data-test-id="cf-ui-icon"
+        height="1em"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+        <path
+          d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
+        />
+      </svg>
+    </label>
   </div>
   <div
     class="Checkbox__label-wrapper"
@@ -148,9 +180,25 @@ exports[`renders the component in a disabled state 1`] = `
       value=""
     />
     <label
-      class="Checkbox__ghost"
+      class="Input__ghost Checkbox__ghost"
       for="checkbox"
-    />
+    >
+      <svg
+        class="Icon Icon--medium Icon--secondary"
+        data-test-id="cf-ui-icon"
+        height="1em"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+        <path
+          d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
+        />
+      </svg>
+    </label>
   </div>
   <div
     class="Checkbox__label-wrapper"
@@ -183,9 +231,25 @@ exports[`renders the component with a help text 1`] = `
       value=""
     />
     <label
-      class="Checkbox__ghost"
+      class="Input__ghost Checkbox__ghost"
       for="checkbox"
-    />
+    >
+      <svg
+        class="Icon Icon--medium Icon--white"
+        data-test-id="cf-ui-icon"
+        height="1em"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+        <path
+          d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
+        />
+      </svg>
+    </label>
   </div>
   <div
     class="Checkbox__label-wrapper"
@@ -224,9 +288,25 @@ exports[`renders the component with a light label variation 1`] = `
       value=""
     />
     <label
-      class="Checkbox__ghost"
+      class="Input__ghost Checkbox__ghost"
       for="checkbox"
-    />
+    >
+      <svg
+        class="Icon Icon--medium Icon--white"
+        data-test-id="cf-ui-icon"
+        height="1em"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+        <path
+          d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
+        />
+      </svg>
+    </label>
   </div>
   <div
     class="Checkbox__label-wrapper"
@@ -284,9 +364,25 @@ exports[`renders the component with a validation message 1`] = `
       value=""
     />
     <label
-      class="Checkbox__ghost"
+      class="Input__ghost Checkbox__ghost"
       for="checkbox"
-    />
+    >
+      <svg
+        class="Icon Icon--medium Icon--white"
+        data-test-id="cf-ui-icon"
+        height="1em"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+        <path
+          d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
+        />
+      </svg>
+    </label>
   </div>
   <div
     class="Checkbox__label-wrapper"
@@ -344,9 +440,25 @@ exports[`renders the component with a value 1`] = `
       value="someValue"
     />
     <label
-      class="Checkbox__ghost"
+      class="Input__ghost Checkbox__ghost"
       for="checkbox"
-    />
+    >
+      <svg
+        class="Icon Icon--medium Icon--white"
+        data-test-id="cf-ui-icon"
+        height="1em"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+        <path
+          d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
+        />
+      </svg>
+    </label>
   </div>
   <div
     class="Checkbox__label-wrapper"
@@ -379,9 +491,25 @@ exports[`renders the component with an additional class name 1`] = `
       value=""
     />
     <label
-      class="Checkbox__ghost"
+      class="Input__ghost Checkbox__ghost"
       for="checkbox"
-    />
+    >
+      <svg
+        class="Icon Icon--medium Icon--white"
+        data-test-id="cf-ui-icon"
+        height="1em"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+        <path
+          d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
+        />
+      </svg>
+    </label>
   </div>
   <div
     class="Checkbox__label-wrapper"
