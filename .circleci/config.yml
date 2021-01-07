@@ -10,8 +10,6 @@ commands:
   yarn_install:
     steps:
       - restore_cache: *cache-key
-      - run: git config --global user.email ${GITHUB_EMAIL}
-      - run: git config --global user.name ${GITHUB_USER}
       - run: 'echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc'
       - run: yarn install --frozen-lockfile --cache-folder ~/.cache/yarn
       - save_cache:
@@ -67,12 +65,17 @@ jobs:
     steps:
       - checkout
       - yarn_install
+      - add_ssh_keys:
+          fingerprints:
+            - '2b:9f:13:79:d8:7b:f5:38:43:8f:3d:a8:7d:53:22:b2'
+      - run: git config --global user.email ${GITHUB_EMAIL}
+      - run: git config --global user.name ${GITHUB_USER}
       - run:
           name: Build
           command: yarn build
       - run:
           name: Deploy
-          command: yarn lerna publish --exact --canary --no-git-tag-version --no-push --preid next-v4-$CIRCLE_BUILD_NUM --dist-tag next-v4 --force-publish --no-changelog --yes
+          command: yarn lerna publish --no-private --exact --canary --no-git-tag-version --no-push --preid next-v4-$CIRCLE_BUILD_NUM --dist-tag next-v4 --force-publish --no-changelog --yes
 
 workflows:
   version: 2
