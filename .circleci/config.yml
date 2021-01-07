@@ -67,7 +67,7 @@ jobs:
       - yarn_install
       - add_ssh_keys:
           fingerprints:
-            - '3b:f4:8d:1e:07:c6:88:2b:94:d2:49:88:39:56:8a:eb'
+            - '2b:9f:13:79:d8:7b:f5:38:43:8f:3d:a8:7d:53:22:b2'
       - run: git config --global user.email ${GITHUB_EMAIL}
       - run: git config --global user.name ${GITHUB_USER}
       - run:
