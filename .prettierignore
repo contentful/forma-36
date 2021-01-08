@@ -6,3 +6,5 @@ dist
 dist-storybook
 build
 .parcel-cache
+public
+.cache

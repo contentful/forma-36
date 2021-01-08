@@ -39,7 +39,7 @@ The monorepo is currently structured into the following packages:
 
 ### Adding packages
 
-To add another package create a new directory in the packages folder. Make sure that the package name is prefixed with forma-36 (e.g. forma-36-css-utilities). Since we are using Lerna all package scripts are available from the root by running lerna run {script_name}
+You can use [Plop](https://plopjs.com/) to scaffold new component package. Run `yarn generate` and follow the steps in the CLI to create a component package. Using your input here, Plop will generate the relevant files and add the relevant imports/exports to the main `src/index.ts` file required to make the component available when publishing the library.
 
 ## Development
 
@@ -162,6 +162,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
