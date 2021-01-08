@@ -17,7 +17,7 @@
 }
 
 .Note__title {
-  font-weight: var(--font-weight-demi-bold);
+  font-weight: var(--font-weight-medium);
   font-size: var(--font-size-l);
   margin-bottom: var(--spacing-xs);
 }
