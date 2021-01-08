@@ -8,7 +8,7 @@
   margin: 0;
   font-family: var(--font-stack-primary);
   font-weight: var(--font-weight-normal);
-  line-height: var(--line-height-large);
+  line-height: var(--line-height-default);
   font-size: var(--font-size-m);
   color: var(--color-text-base);
   display: flex;
@@ -74,6 +74,7 @@
 .Note__icon {
   margin-right: var(--spacing-s);
   display: flex;
+  margin-top: 2px;
 }
 
 .Note__dismiss {
