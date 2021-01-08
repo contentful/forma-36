@@ -88,9 +88,12 @@ export function NotificationItem({
     );
   }, [intent]);
 
+  const NotificationClassName = classNames(styles.NotificationItem, {
+    [styles[`NotificationItem--${intent}`]]: intent,
+  });
   return (
     <div
-      className={styles.NotificationItem}
+      className={NotificationClassName}
       data-test-id={testId}
       data-intent={intent}
       role="alert"

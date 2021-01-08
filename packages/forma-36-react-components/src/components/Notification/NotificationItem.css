@@ -21,7 +21,9 @@
   border-radius: var(--border-radius-small);
   background: var(--color-white);
   box-shadow: var(--box-shadow-default);
+}
 
+.NotificationItem--success {
   &:before {
     content: '';
     position: absolute;
@@ -29,7 +31,33 @@
     left: 0px;
     width: 2px;
     height: 100%;
-    background-color: rgb(46, 117, 212);
+    background-color: var(--color-positive);
+    border-radius: var(--border-radius-small) 0 0 var(--border-radius-small);
+  }
+}
+
+.NotificationItem--error {
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 2px;
+    height: 100%;
+    background-color: var(--color-negative);
+    border-radius: var(--border-radius-small) 0 0 var(--border-radius-small);
+  }
+}
+
+.NotificationItem--warning {
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 2px;
+    height: 100%;
+    background-color: var(--color-warning);
     border-radius: var(--border-radius-small) 0 0 var(--border-radius-small);
   }
 }
@@ -47,7 +75,6 @@
 .NotificationItem__content {
   display: flex;
   width: 100%;
-  /* flex: 1 1 auto; */
   border-left: 0;
   border-radius: 0 var(--border-radius-small) var(--border-radius-small) 0;
 }
