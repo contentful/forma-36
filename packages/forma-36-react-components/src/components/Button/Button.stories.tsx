@@ -239,22 +239,22 @@ export const Overview = (args: ButtonProps) => (
       <Flex flexDirection="row" marginBottom="spacingM">
         <Flex marginRight="spacingXs">
           <Button icon={args.icon} buttonType="primary" loading>
-            primary loading
+            Primary loading
           </Button>
         </Flex>
         <Flex marginRight="spacingXs">
           <Button icon={args.icon} buttonType="muted" loading>
-            muted loading
+            Muted loading
           </Button>
         </Flex>
         <Flex marginRight="spacingXs">
           <Button icon={args.icon} buttonType="positive" loading>
-            posiitve loading
+            Positive loading
           </Button>
         </Flex>
         <Flex marginRight="spacingXs">
           <Button icon={args.icon} buttonType="negative" loading>
-            negative loading
+            Negative loading
           </Button>
         </Flex>
       </Flex>
@@ -264,14 +264,33 @@ export const Overview = (args: ButtonProps) => (
       <Flex flexDirection="row" marginBottom="spacingM">
         <Flex marginRight="spacingXs">
           <Button icon={args.icon} buttonType="warning" loading>
-            warning loading
+            Warning loading
           </Button>
         </Flex>
         <Flex marginRight="spacingXs">
           <Button icon={args.icon} buttonType="naked" loading>
-            naked loading
+            Naked loading
           </Button>
         </Flex>
+      </Flex>
+    </Flex>
+
+    <Flex flexDirection="column" marginBottom="spacingL">
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Full width button</SectionHeading>
+      </Flex>
+      <Flex flexDirection="row" marginBottom="spacingS">
+        <Button isFullWidth>Full width button</Button>
+      </Flex>
+      <Flex flexDirection="row" marginBottom="spacingS">
+        <Button icon="Star" isFullWidth>
+          Full width button
+        </Button>
+      </Flex>
+      <Flex flexDirection="row" marginBottom="spacingS">
+        <Button icon="Star" indicateDropdown isFullWidth>
+          Full width button
+        </Button>
       </Flex>
     </Flex>
   </>
