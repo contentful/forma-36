@@ -134,7 +134,7 @@ storiesOf('Components/Notification', module)
     () => (
       <Flex fullWidth flexDirection="column">
         <Flex marginBottom="spacingS">
-          <SectionHeading element="h3">Notifiactions overview</SectionHeading>
+          <SectionHeading element="h3">Notifiaction success</SectionHeading>
         </Flex>
         <Flex marginBottom="spacingS">
           <NotificationItem
@@ -143,32 +143,29 @@ storiesOf('Components/Notification', module)
             intent="success"
             cta={{ label: text('cta.label', 'Notification CTA') }}
           >
-            {text('body', 'Body for the notification')}
-          </NotificationItem>
-        </Flex>
-        <Flex marginBottom="spacingS">
-          <SectionHeading element="h3">Notifiactions overview</SectionHeading>
-        </Flex>
-        <Flex marginBottom="spacingS">
-          <NotificationItem
-            hasCloseButton={boolean('hasCloseButton', true)}
-            intent="success"
-          >
             {text(
               'body',
-              'Body for the notification which might be a bit longer',
+              'A piece of information that is displayed in the notification',
             )}
           </NotificationItem>
         </Flex>
         <Flex marginBottom="spacingS">
+          <SectionHeading element="h3">Notifiaction error</SectionHeading>
+        </Flex>
+        <Flex marginBottom="spacingS">
           <NotificationItem
             hasCloseButton={boolean('hasCloseButton', true)}
-            title={text('title', 'Notification title')}
+            title={text('title', '')}
             intent="error"
-            cta={{ label: text('cta.label', 'Notification CTA') }}
           >
-            {text('body', 'Body for the notification')}
+            {text(
+              'body',
+              'A piece of information that is displayed in the notification',
+            )}
           </NotificationItem>
+        </Flex>
+        <Flex marginBottom="spacingS">
+          <SectionHeading element="h3">Notifiaction warning</SectionHeading>
         </Flex>
         <Flex marginBottom="spacingS">
           <NotificationItem
@@ -177,7 +174,10 @@ storiesOf('Components/Notification', module)
             intent="warning"
             cta={{ label: text('cta.label', 'Notification CTA') }}
           >
-            {text('body', 'Body for the notification')}
+            {text(
+              'body',
+              'A piece of information that is displayed in the notification',
+            )}
           </NotificationItem>
         </Flex>
       </Flex>

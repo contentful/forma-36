@@ -20,7 +20,7 @@
   border: none;
   border-radius: var(--border-radius-small);
   background: var(--color-white);
-  box-shadow: var(--box-shadow-default);
+  box-shadow: var(--box-shadow-heavy);
 }
 
 .NotificationItem--success {
@@ -70,6 +70,7 @@
   display: flex;
   margin-right: var(--spacing-s);
   align-items: flex-start;
+  margin-top: 2px;
 }
 
 .NotificationItem__content {
