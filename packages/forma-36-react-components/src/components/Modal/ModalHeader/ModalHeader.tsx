@@ -34,7 +34,7 @@ export function ModalHeader({
       <h1 className={titleClassNames}>{title}</h1>
       {onClose && (
         <IconButton
-          iconProps={{ icon: 'Close' }}
+          iconProps={{ icon: 'Close', size: 'small' }}
           buttonType="muted"
           label="Close"
           onClick={() => onClose()}

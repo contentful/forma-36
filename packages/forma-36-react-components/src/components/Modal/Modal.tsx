@@ -48,7 +48,7 @@ export interface ModalProps {
    */
   shouldCloseOnEscapePress?: boolean;
   /**
-   * Boolean indicating if modal is centered
+   * Indicating if modal is centered or linked to the top
    */
   position?: 'center' | 'top';
   /**

@@ -43,7 +43,7 @@ export default {
   },
 } as Meta;
 
-export const Default: Story<ModalConfirmProps> = (props) => {
+function SimpleDemo(props: ModalConfirmProps) {
   const [isShown, setShown] = useState(true);
   return (
     <div>
@@ -66,10 +66,24 @@ export const Default: Story<ModalConfirmProps> = (props) => {
           action('onSecondary')();
         }}
       >
-        <p>You are about to delete SOMETHING. Think twice!</p>
+        <div>You are about to delete SOMETHING. Think twice!</div>
       </ModalConfirm>
     </div>
   );
+}
+
+export const Default: Story<ModalConfirmProps> = (props) => {
+  return <SimpleDemo {...props} />;
+};
+
+export const RightButtons: Story<ModalConfirmProps> = (props) => {
+  return <SimpleDemo {...props} />;
+};
+
+RightButtons.args = {
+  modalControlsProps: {
+    position: 'right',
+  },
 };
 
 export function ComplexStory(props: ModalConfirmProps) {
@@ -102,9 +116,9 @@ export function ComplexStory(props: ModalConfirmProps) {
         }}
         {...props}
       >
-        <p>
+        <div>
           Type <strong>unlock</strong> to allow confirming this modal
-        </p>
+        </div>
         <TextInput
           value={repeat}
           onChange={(e) => setRepeat((e.target as HTMLInputElement).value)}
