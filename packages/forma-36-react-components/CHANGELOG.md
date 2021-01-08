@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.73.9](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.73.8...@contentful/forma-36-react-components@3.73.9) (2021-01-08)
+
+
+### Reverts
+
+* **card-actions:** revert to class component ([#754](https://github.com/contentful/forma-36/issues/754)) ([508d61b](https://github.com/contentful/forma-36/commit/508d61bae184350cc48553970597a9ed4876bb10))
+
+
+
+
+
 ## [3.73.8](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.73.7...@contentful/forma-36-react-components@3.73.8) (2021-01-07)
 
 
