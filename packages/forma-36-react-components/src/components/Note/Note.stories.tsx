@@ -1,90 +1,109 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { boolean, select, text } from '@storybook/addon-knobs';
 
-import notes from './Note.md';
-import Note from './Note';
+import notes from './README.mdx';
+import Note, { NoteProps } from './Note';
 import TextLink from '../TextLink';
-import Paragraph from '../Typography/Paragraph';
-import Flex from '../Flex';
+import SectionHeading from '../Typography/SectionHeading';
+import Flex from '../Flex/Flex';
 
-storiesOf('Components/Note', module)
-  .addParameters({
-    propTypes: Note['__docgenInfo'],
-    component: Note,
-  })
-  .add(
-    'default',
-    () => (
-      <Note
-        noteType={select(
-          'noteType',
-          ['positive', 'negative', 'warning', 'primary'],
-          'primary',
-        )}
-        title={text('title', '')}
-        hasCloseButton={boolean('hasCloseButton', false)}
-      >
-        {text(
-          'children',
-          'A piece of information that is relevant to the context the user is currently in.',
-        )}
+export default {
+  title: 'Components/Note',
+  component: Note,
+  parameters: {
+    propTypes: [Note['__docgenInfo']],
+    notes,
+  },
+  argTypes: {
+    className: { control: { disable: true } },
+    testId: { control: { disable: true } },
+  },
+};
+
+interface Args extends NoteProps {
+  noteText?: string;
+}
+
+export const basic = ({ noteText, ...args }: Args) => (
+  <Note {...args}>{noteText}</Note>
+);
+
+basic.args = {
+  noteType: 'primary',
+  noteText:
+    'A piece of information that is relevant to the context the user is currently in',
+};
+
+export const overview = () => (
+  <Flex fullWidth flexDirection="column">
+    <Flex marginBottom="spacingS">
+      <SectionHeading element="h3">Note primary</SectionHeading>
+    </Flex>
+    <Flex marginBottom="spacingM">
+      <Note>
+        A piece of information that is relevant to the context the user is
+        currently in.
       </Note>
-    ),
-    { notes },
-  )
-  .add(
-    'all notes',
-    () => (
-      <div>
-        <Note>
-          A piece of information that is relevant to the context the user is
-          currently in.
-        </Note>
-        <div style={{ marginTop: 20 }} />
-        <Note noteType={'negative'}>
-          A piece of information that is relevant to the context the user is
-          currently in.
-        </Note>
-        <div style={{ marginTop: 20 }} />
-        <Note noteType={'warning'}>
-          A piece of information that is relevant to the context the user is
-          currently in.
-        </Note>
-        <div style={{ marginTop: 20 }} />
-        <Note noteType={'positive'}>
-          A piece of information that is relevant to the context the user is
-          currently in.
-        </Note>
-        <div style={{ marginTop: 60 }} />
-        <Note title="Short, yet succint title">
-          A piece of information that is relevant to the context the user is
-          currently in. If you like it then you should put{' '}
-          <a href="https://contentful.com">a link</a> in it.
-        </Note>
-        <div style={{ marginTop: 20 }} />
-        <Note noteType={'negative'} title="Short, yet succint title">
-          Something went wrong, apparently. Please try again.{' '}
-        </Note>
-        <div style={{ marginTop: 20 }} />
-        <Note noteType={'warning'} title="Short, yet succint title">
-          A piece of information that is relevant to the context the user is
-          currently in. If you like it then you should put{' '}
-          <a href="https://contentful.com">a link</a> in it.
-        </Note>
-        <div style={{ marginTop: 20 }} />
-        <Note
-          noteType={'positive'}
-          title="Short, yet succint title"
-          hasCloseButton
-        >
-          <Flex marginBottom="spacingXs">
-            Make sure to immediately copy your new signing secret. You will not
-            be able to see it again.
-          </Flex>
-          <TextLink>Dismiss</TextLink>
-        </Note>
-      </div>
-    ),
-    { notes },
-  );
+    </Flex>
+    <Flex marginBottom="spacingM">
+      <Note title="Short, yet succint title" hasCloseButton>
+        A piece of information that is relevant to the context the user is
+        currently in. If you like it then you should put{' '}
+        <a href="https://contentful.com">a link</a> in it.
+      </Note>
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <SectionHeading element="h3">Note negative</SectionHeading>
+    </Flex>
+    <Flex marginBottom="spacingM">
+      <Note noteType={'negative'}>
+        A piece of information that is relevant to the context the user is
+        currently in.
+      </Note>
+    </Flex>
+    <Flex marginBottom="spacingM">
+      <Note
+        noteType={'negative'}
+        title="Short, yet succint title"
+        hasCloseButton
+      >
+        Something went wrong, apparently. Please try again.{' '}
+      </Note>
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <SectionHeading element="h3">Note warning</SectionHeading>
+    </Flex>
+    <Flex marginBottom="spacingM">
+      <Note noteType={'warning'}>
+        A piece of information that is relevant to the context the user is
+        currently in.
+      </Note>
+    </Flex>
+    <Flex marginBottom="spacingM">
+      <Note
+        noteType={'warning'}
+        title="Short, yet succint title"
+        hasCloseButton
+      >
+        A piece of information that is relevant to the context the user is
+        currently in. If you like it then you should put{' '}
+        <a href="https://contentful.com">a link</a> in it.
+      </Note>
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <SectionHeading element="h3">Note positive</SectionHeading>
+    </Flex>
+    <Flex marginBottom="spacingM">
+      <Note noteType={'positive'}>
+        A piece of information that is relevant to the context the user is
+        currently in.
+      </Note>
+    </Flex>
+    <Note noteType={'positive'} title="Short, yet succint title" hasCloseButton>
+      <Flex marginBottom="spacingXs">
+        Make sure to immediately copy your new signing secret. You will not be
+        able to see it again.
+      </Flex>
+      <TextLink>Dismiss</TextLink>
+    </Note>
+  </Flex>
+);
