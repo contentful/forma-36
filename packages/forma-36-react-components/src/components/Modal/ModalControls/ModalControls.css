@@ -1,10 +1,31 @@
 @import 'settings/typography';
+@import 'settings/dimensions';
 
 .ModalControls {
-  padding: calc(1rem * (30 / var(--font-base-default)));
-  padding-top: 0;
+  width: calc(100% - 2 * var(--spacing-l));
+  display: flex;
+  flex-direction: row;
+  padding: 0 var(--spacing-l) var(--spacing-l) var(--spacing-l);
+  margin-top: calc(-1 * var(--spacing-xs));
+}
+
+.ModalControls--right {
+  justify-content: flex-end;
+}
+
+.ModalControls.ModalControls--right button {
+  margin-right: 0;
+  margin-left: var(--spacing-xs);
+
+  &:first-child {
+    margin-left: 0;
+  }
 }
 
 .ModalControls button {
-  margin-right: 1rem;
+  margin-right: var(--spacing-xs);
+
+  &:last-child {
+    margin-right: 0;
+  }
 }

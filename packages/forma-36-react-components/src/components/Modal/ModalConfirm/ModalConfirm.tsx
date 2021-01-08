@@ -131,6 +131,60 @@ export function ModalConfirm({
   testId = 'cf-ui-modal-confirm',
   title = 'Are you sure?',
 }: ModalConfirmProps): React.ReactElement {
+  const confirmButton = confirmLabel ? (
+    <Button
+      size="small"
+      testId={confirmTestId}
+      disabled={isConfirmDisabled}
+      loading={isConfirmLoading}
+      buttonType={intent}
+      onClick={() => onConfirm()}
+    >
+      {confirmLabel}
+    </Button>
+  ) : null;
+
+  const secondaryButton = secondaryLabel ? (
+    <Button
+      size="small"
+      testId={secondaryTestId}
+      disabled={isSecondaryDisabled}
+      loading={isSecondaryLoading}
+      buttonType={secondaryIntent}
+      onClick={() => onSecondary && onSecondary()}
+    >
+      {secondaryLabel}
+    </Button>
+  ) : null;
+
+  const cancelButton = cancelLabel ? (
+    <Button
+      size="small"
+      testId={cancelTestId}
+      buttonType="muted"
+      onClick={() => onCancel()}
+    >
+      {cancelLabel}
+    </Button>
+  ) : null;
+
+  let buttons = (
+    <>
+      {confirmButton}
+      {secondaryButton}
+      {cancelButton}
+    </>
+  );
+
+  if (modalControlsProps && modalControlsProps.position === 'right') {
+    buttons = (
+      <>
+        {cancelButton}
+        {secondaryButton}
+        {confirmButton}
+      </>
+    );
+  }
   return (
     <Modal
       testId={testId}
@@ -145,39 +199,7 @@ export function ModalConfirm({
         <div>
           <Modal.Header title={title || ''} {...modalHeaderProps} />
           <Modal.Content {...modalContentProps}>{children}</Modal.Content>
-          <Modal.Controls {...modalControlsProps}>
-            {confirmLabel && (
-              <Button
-                testId={confirmTestId}
-                disabled={isConfirmDisabled}
-                loading={isConfirmLoading}
-                buttonType={intent}
-                onClick={() => onConfirm()}
-              >
-                {confirmLabel}
-              </Button>
-            )}
-            {secondaryLabel && (
-              <Button
-                testId={secondaryTestId}
-                disabled={isSecondaryDisabled}
-                loading={isSecondaryLoading}
-                buttonType={secondaryIntent}
-                onClick={() => onSecondary && onSecondary()}
-              >
-                {secondaryLabel}
-              </Button>
-            )}
-            {cancelLabel && (
-              <Button
-                testId={cancelTestId}
-                buttonType="muted"
-                onClick={() => onCancel()}
-              >
-                {cancelLabel}
-              </Button>
-            )}
-          </Modal.Controls>
+          <Modal.Controls {...modalControlsProps}>{buttons}</Modal.Controls>
         </div>
       )}
     </Modal>

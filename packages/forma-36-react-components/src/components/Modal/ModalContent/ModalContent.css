@@ -1,9 +1,10 @@
 @import 'settings/colors';
 @import 'settings/typography';
+@import 'settings/dimensions';
 @import 'settings/transitions';
 
 .ModalContent {
-  padding: calc(1rem * (30 / var(--font-base-default)));
+  padding: var(--spacing-m) var(--spacing-l) var(--spacing-l) var(--spacing-l);
   color: var(--color-text-mid);
   font-size: var(--font-size-m);
   font-family: var(--font-stack-primary);

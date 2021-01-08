@@ -9,6 +9,7 @@ import Subheading from './../Subheading';
 import SectionHeading from '../SectionHeading';
 import Paragraph from './../Paragraph';
 import Flex from '../../Flex/Flex';
+import '@contentful/forma-36-fcss/dist/styles.css';
 
 storiesOf('Components/Typography/Typography', module)
   .addParameters({
