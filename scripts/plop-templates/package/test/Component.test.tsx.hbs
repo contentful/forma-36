@@ -1,0 +1,11 @@
+import React from 'react';
+import { render } from '@testing-library/react';
+import { {{componentName}} } from '../src/{{componentName}}';
+
+describe('{{componentName}}', function () {
+  it('renders', () => {
+    const tree = render(<{{componentName}}>hello world</{{componentName}}>);
+
+    expect(tree).toBeTruthy();
+  });
+});

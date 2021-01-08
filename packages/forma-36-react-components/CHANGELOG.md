@@ -3,27 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [3.73.8](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.73.7...@contentful/forma-36-react-components@3.73.8) (2021-01-07)
+## [3.73.11](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.73.10...@contentful/forma-36-react-components@3.73.11) (2021-01-08)
 
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+## [3.73.10](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.73.9...@contentful/forma-36-react-components@3.73.10) (2021-01-08)
 
 ### Bug Fixes
 
-* **Autocomplete:** Make use of dropdownProp.isOpen ([566cbb5](https://github.com/contentful/forma-36/commit/566cbb5c4d86b04ba08f7d6988b1fa38bea02f5e))
+- **dropdown-container:** remove position prop ([#758](https://github.com/contentful/forma-36/issues/758)) ([2b07587](https://github.com/contentful/forma-36/commit/2b07587b3ed9f7304f503aac4659c5af53ee9e04))
 
+## [3.73.9](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.73.8...@contentful/forma-36-react-components@3.73.9) (2021-01-08)
 
+### Reverts
 
+- **card-actions:** revert to class component ([#754](https://github.com/contentful/forma-36/issues/754)) ([508d61b](https://github.com/contentful/forma-36/commit/508d61bae184350cc48553970597a9ed4876bb10))
 
+## [3.73.8](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.73.7...@contentful/forma-36-react-components@3.73.8) (2021-01-07)
+
+### Bug Fixes
+
+- **Autocomplete:** Make use of dropdownProp.isOpen ([566cbb5](https://github.com/contentful/forma-36/commit/566cbb5c4d86b04ba08f7d6988b1fa38bea02f5e))
 
 ## [3.73.7](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.73.6...@contentful/forma-36-react-components@3.73.7) (2021-01-07)
 
-
 ### Bug Fixes
 
-* **card-actions:** extend DropdownProps ([#751](https://github.com/contentful/forma-36/issues/751)) ([6c0d263](https://github.com/contentful/forma-36/commit/6c0d263a82e398966b4989693a40b47f6f95513b))
-
-
-
-
+- **card-actions:** extend DropdownProps ([#751](https://github.com/contentful/forma-36/issues/751)) ([6c0d263](https://github.com/contentful/forma-36/commit/6c0d263a82e398966b4989693a40b47f6f95513b))
 
 ## [3.73.6](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.73.5...@contentful/forma-36-react-components@3.73.6) (2021-01-07)
 
