@@ -76,7 +76,6 @@
 .Note__icon {
   margin-right: var(--spacing-s);
   display: flex;
-  /* margin-top: 2px; */
 }
 
 .Note__dismiss {
