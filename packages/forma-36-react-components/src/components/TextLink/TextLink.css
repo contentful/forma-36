@@ -42,9 +42,27 @@
   color: var(--color-blue-mid);
 }
 
+.TextLink--primary:hover,
+.TextLink--primary:focus {
+  color: var(--color-blue-dark);
+
+  & .TextLink__icon {
+    fill: var(--color-blue-dark);
+  }
+}
+
 .TextLink--positive,
 .TextLink--positive:link {
   color: var(--color-green-base);
+}
+
+.TextLink--positive:hover,
+.TextLink--positive:focus {
+  color: var(--color-green-dark);
+
+  & .TextLink__icon {
+    fill: var(--color-green-dark);
+  }
 }
 
 .TextLink--negative,
@@ -52,14 +70,41 @@
   color: var(--color-red-base);
 }
 
+.TextLink--negative:hover,
+.TextLink--negative:focus {
+  color: var(--color-red-dark);
+
+  & .TextLink__icon {
+    fill: var(--color-red-dark);
+  }
+}
+
 .TextLink--secondary,
 .TextLink--secondary:link {
   color: var(--color-text-mid);
 }
 
+.TextLink--secondary:hover,
+.TextLink--secondary:focus {
+  color: var(--color-text-dark);
+
+  & .TextLink__icon {
+    fill: var(--color-text-dark);
+  }
+}
+
 .TextLink--muted,
 .TextLink--muted:link {
   color: var(--color-text-light);
+}
+
+.TextLink--muted:hover,
+.TextLink--muted:focus {
+  color: var(--color-text-mid);
+
+  & .TextLink__icon {
+    fill: var(--color-text-mid);
+  }
 }
 
 .TextLink--white,
@@ -125,7 +170,7 @@
     & .TextLink__icon {
       fill: var(--color-white);
     }
-
+    opacity: 0.5;
     color: var(--color-white);
   }
 }
@@ -136,13 +181,6 @@
     var(--transition-easing-default);
   position: relative;
   bottom: 1px; /* For optical alignment of icon with TextLink text */
-}
-
-.TextLink:hover .TextLink__icon,
-.TextLink:focus .TextLink__icon,
-.TextLink:hover .TextLink__icon:link,
-.TextLink:focus .TextLink__icon:link {
-  fill: var(--color-text-dark);
 }
 
 .TextLink__icon-wrapper {
