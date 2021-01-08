@@ -3,8 +3,9 @@ import React from 'react';
 import TextLink, { textLinkColor } from './TextLink';
 import Paragraph from '../Typography/Paragraph';
 import notes from './README.mdx';
-import SectionHeading from '../Typography/SectionHeading';
 import Flex from '../Flex/Flex';
+import tokens from '@contentful/forma-36-tokens';
+import '@contentful/forma-36-fcss/dist/styles.css';
 
 export default {
   title: 'Components/TextLink',
@@ -54,13 +55,18 @@ export const UsedWithText = () => {
 };
 
 export const overview = () => (
-  <>
-    <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Text link types</SectionHeading>
-    </Flex>
+  <div
+    style={{
+      backgroundColor: tokens.colorElementLight,
+      padding: tokens.spacingM,
+    }}
+  >
     {textLinkColor.map((color, idx) => (
-      <Flex marginBottom="spacingM" alignItems="center" key={idx}>
-        <Flex marginRight="spacingS">
+      <Flex marginBottom="spacingXl" alignItems="center" key={idx}>
+        <Flex marginRight="spacing2Xl">
+          <Paragraph style={{ width: 100 }}>{color}</Paragraph>
+        </Flex>
+        <Flex marginRight="spacingXl">
           <TextLink
             href="https://www.wikiwand.com/en/Potsdam"
             target="_blanck"
@@ -69,48 +75,39 @@ export const overview = () => (
             Potsdam
           </TextLink>
         </Flex>
-        <Paragraph>{color}</Paragraph>
+        <Flex marginRight="spacingXl">
+          <TextLink
+            icon="Calendar"
+            href="https://www.wikiwand.com/en/Potsdam"
+            target="_blanck"
+            linkType={color as any}
+          >
+            Potsdam
+          </TextLink>
+        </Flex>
+        <Flex marginRight="spacingXl">
+          <TextLink
+            icon="Download"
+            iconPosition="right"
+            href="https://www.wikiwand.com/en/Potsdam"
+            target="_blanck"
+            linkType={color as any}
+          >
+            Potsdam
+          </TextLink>
+        </Flex>
+        <Flex marginRight="spacingXl">
+          <TextLink
+            icon="ChatBubble"
+            href="https://www.wikiwand.com/en/Potsdam"
+            target="_blanck"
+            linkType={color as any}
+            disabled
+          >
+            Potsdam (disabled)
+          </TextLink>
+        </Flex>
       </Flex>
     ))}
-    <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Text link with icon on left</SectionHeading>
-    </Flex>
-    <Flex marginRight="spacingS">
-      <TextLink
-        href="https://www.wikiwand.com/en/Potsdam"
-        target="_blanck"
-        icon="Calendar"
-      >
-        Potsdam
-      </TextLink>
-    </Flex>
-    <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">
-        Text link with icon on the right
-      </SectionHeading>
-    </Flex>
-    <Flex marginRight="spacingS">
-      <TextLink
-        href="https://www.wikiwand.com/en/Potsdam"
-        target="_blanck"
-        icon="Calendar"
-        iconPosition="right"
-      >
-        Potsdam
-      </TextLink>
-    </Flex>
-    <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Text link disabled</SectionHeading>
-    </Flex>
-    <Flex marginRight="spacingS">
-      <TextLink
-        href="https://www.wikiwand.com/en/Potsdam"
-        target="_blanck"
-        icon="Calendar"
-        disabled
-      >
-        Potsdam
-      </TextLink>
-    </Flex>
-  </>
+  </div>
 );
