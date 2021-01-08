@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.73.12](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.73.11...@contentful/forma-36-react-components@3.73.12) (2021-01-08)
+
+
+### Bug Fixes
+
+* return previous modal size logic ([#764](https://github.com/contentful/forma-36/issues/764)) ([8b672aa](https://github.com/contentful/forma-36/commit/8b672aa10cc69881641ed9735747bf11bd06b257))
+
+
+### Reverts
+
+* **notification-item-container:** change back to class component ([#765](https://github.com/contentful/forma-36/issues/765)) ([a61fb3b](https://github.com/contentful/forma-36/commit/a61fb3b00c24eb75b0241d8042adcb001477eca9))
+
+
+
+
+
 ## [3.73.11](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.73.10...@contentful/forma-36-react-components@3.73.11) (2021-01-08)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
