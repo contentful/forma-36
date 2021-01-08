@@ -4,6 +4,8 @@ import { action } from '@storybook/addon-actions';
 
 import ModalConfirm, { ModalConfirmProps } from './ModalConfirm';
 import Button from '../../Button';
+import Paragraph from '../../Typography/Paragraph';
+import Typography from '../../Typography/Typography';
 import TextInput from '../../TextInput';
 
 export default {
@@ -116,9 +118,11 @@ export function ComplexStory(props: ModalConfirmProps) {
         }}
         {...props}
       >
-        <div>
-          Type <strong>unlock</strong> to allow confirming this modal
-        </div>
+        <Typography>
+          <Paragraph>
+            Type <strong>unlock</strong> to allow confirming this modal
+          </Paragraph>
+        </Typography>
         <TextInput
           value={repeat}
           onChange={(e) => setRepeat((e.target as HTMLInputElement).value)}
