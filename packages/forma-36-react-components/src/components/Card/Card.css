@@ -31,12 +31,12 @@
 
 .Card--is-interactive:hover,
 .Card--is-interactive:focus {
+  box-shadow: var(--glow-primary);
   outline: none;
-  border-color: var(--color-blue-dark);
+  border-color: var(--color-primary);
   cursor: pointer;
 }
 
 .Card--is-selected {
-  box-shadow: 0px 0px 0px 3px inset var(--color-blue-dark),
-    var(--box-shadow-default);
+  box-shadow: var(--glow-primary);
 }
