@@ -70,7 +70,6 @@
   display: flex;
   margin-right: var(--spacing-s);
   align-items: flex-start;
-  margin-top: 2px;
 }
 
 .NotificationItem__content {
@@ -83,6 +82,7 @@
 .NotificationItem__text {
   flex-grow: 1;
   margin-right: var(--spacing-s);
+  line-height: 18px; /* hack for alignment of the icon, will be fixed with Typography update */
 }
 
 .NotificationItem__title {
@@ -90,6 +90,7 @@
   font-size: var(--font-size-m);
   margin-bottom: var(--spacing-2xs);
   margin-top: 0;
+  line-height: 18px; /* hack for alignment of the icon, will be fixed with Typography update */
 }
 
 .NotificationItem__body {
