@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.73.10](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.73.9...@contentful/forma-36-react-components@3.73.10) (2021-01-08)
+
+
+### Bug Fixes
+
+* **dropdown-container:** remove position prop ([#758](https://github.com/contentful/forma-36/issues/758)) ([2b07587](https://github.com/contentful/forma-36/commit/2b07587b3ed9f7304f503aac4659c5af53ee9e04))
+
+
+
+
+
 ## [3.73.9](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.73.8...@contentful/forma-36-react-components@3.73.9) (2021-01-08)
 
 
