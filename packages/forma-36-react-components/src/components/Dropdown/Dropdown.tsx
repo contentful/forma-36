@@ -7,7 +7,7 @@ import DropdownListItem from './DropdownListItem/DropdownListItem';
 import DropdownContainer from './DropdownContainer';
 import styles from './Dropdown.css';
 
-const offestModifier = {
+const offsetModifier = {
   name: 'offset',
   options: {
     offset: [0, 6],
@@ -170,7 +170,7 @@ export function Dropdown({
     {
       placement,
       modifiers: [
-        offestModifier,
+        offsetModifier,
         isFullWidth ? sameWidth : {},
         isAutoalignmentEnabled !== undefined
           ? {
