@@ -252,7 +252,6 @@ export function Dropdown({
           isOpen={isOpen}
           onClose={onClose}
           openSubmenu={openSubmenu}
-          position={position}
           ref={setPopperElement}
           style={popperStyles.popper}
           submenu
@@ -284,7 +283,6 @@ export function Dropdown({
           isOpen={isOpen}
           onClose={onClose}
           openSubmenu={openSubmenu}
-          position={position}
           ref={setPopperElement}
           style={popperStyles.popper}
           submenu={false}
