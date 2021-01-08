@@ -42,7 +42,7 @@ export function Spinner({
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 20 20"
+      viewBox="0 0 60 51"
       className={classNames}
       style={
         customSize
@@ -53,11 +53,32 @@ export function Spinner({
       {...otherProps}
     >
       <title>Loading…</title>
-      <path d="M2,10a8,8,0,0,1,8-8V0a10,10,0,0,0,0,20V18A8,8,0,0,1,2,10Z" />
-      <path
-        d="M10,0V2a8,8,0,0,1,0,16v2A10,10,0,0,0,10,0Z"
-        style={{ opacity: 0.4 }}
-      />
+      <g
+        className={styles['circle1--translate']}
+        transform="translate(10,33.528168)"
+      >
+        <g className={styles['circle1--scale']}>
+          <circle id="circle1" r="6" transform="translate(0,10.471832)" />
+        </g>
+      </g>
+
+      <g
+        className={styles['circle2--translate']}
+        transform="translate(30,33.528168)"
+      >
+        <g className={styles['circle2--scale']}>
+          <circle id="circle2" r="6" transform="translate(0,10.471832)" />
+        </g>
+      </g>
+
+      <g
+        className={styles['circle3--translate']}
+        transform="translate(50,33.528168)"
+      >
+        <g className={styles['circle3--scale']}>
+          <circle id="circle3" r="6" transform="translate(0,10.471832)" />
+        </g>
+      </g>
     </svg>
   );
 }
