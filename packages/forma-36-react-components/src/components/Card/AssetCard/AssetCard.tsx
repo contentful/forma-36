@@ -113,7 +113,7 @@ export function AssetCard({
             <Icon
               icon={statusIcon as IconType}
               color="muted"
-              className="f36-margin-right--xs"
+              className={styles['AssetCard__icon']}
             />
           ) : (
             statusIcon
