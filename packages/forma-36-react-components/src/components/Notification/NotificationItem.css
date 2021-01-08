@@ -7,7 +7,7 @@
 
 .NotificationItem {
   display: flex;
-  padding: 0;
+  padding: var(--spacing-m);
   transition: transform var(--transition-duration-default)
       var(--transition-easing-default),
     opacity var(--transition-duration-default) var(--transition-easing-default);
@@ -21,6 +21,17 @@
   border-radius: var(--border-radius-small);
   background: var(--color-white);
   box-shadow: var(--box-shadow-default);
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 2px;
+    height: 100%;
+    background-color: rgb(46, 117, 212);
+    border-radius: var(--border-radius-small) 0 0 var(--border-radius-small);
+  }
 }
 
 .NotificationItem__intent {
@@ -29,28 +40,14 @@
 
 .NotificationItem__icon {
   display: flex;
-  padding: var(--spacing-m);
-  align-items: center;
-  border-radius: var(--border-radius-small) 0 0 var(--border-radius-small);
-}
-
-.NotificationItem__icon--success {
-  background: var(--color-green-mid);
-}
-
-.NotificationItem__icon--error {
-  background: var(--color-red-mid);
-}
-
-.NotificationItem__icon--warning {
-  background: var(--color-orange-base);
+  margin-right: var(--spacing-s);
+  align-items: flex-start;
 }
 
 .NotificationItem__content {
   display: flex;
-  flex: 1 1 auto;
-  padding: var(--spacing-m);
-  border: 1px solid var(--color-element-mid);
+  width: 100%;
+  /* flex: 1 1 auto; */
   border-left: 0;
   border-radius: 0 var(--border-radius-small) var(--border-radius-small) 0;
 }

@@ -132,7 +132,7 @@ storiesOf('Components/Notification', module)
   .add(
     'overview',
     () => (
-      <>
+      <Flex fullWidth flexDirection="column">
         <Flex marginBottom="spacingS">
           <SectionHeading element="h3">Notifiactions overview</SectionHeading>
         </Flex>
@@ -144,6 +144,20 @@ storiesOf('Components/Notification', module)
             cta={{ label: text('cta.label', 'Notification CTA') }}
           >
             {text('body', 'Body for the notification')}
+          </NotificationItem>
+        </Flex>
+        <Flex marginBottom="spacingS">
+          <SectionHeading element="h3">Notifiactions overview</SectionHeading>
+        </Flex>
+        <Flex marginBottom="spacingS">
+          <NotificationItem
+            hasCloseButton={boolean('hasCloseButton', true)}
+            intent="success"
+          >
+            {text(
+              'body',
+              'Body for the notification which might be a bit longer',
+            )}
           </NotificationItem>
         </Flex>
         <Flex marginBottom="spacingS">
@@ -166,7 +180,7 @@ storiesOf('Components/Notification', module)
             {text('body', 'Body for the notification')}
           </NotificationItem>
         </Flex>
-      </>
+      </Flex>
     ),
     { notes },
   );

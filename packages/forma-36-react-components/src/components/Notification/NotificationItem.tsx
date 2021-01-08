@@ -59,18 +59,22 @@ export function NotificationItem({
     });
 
     let icon: IconType;
+    let color;
 
     switch (intent) {
       case 'success':
         icon = 'CheckCircle';
+        color = 'positive';
         break;
 
       case 'warning':
         icon = 'Warning';
+        color = 'warning';
         break;
 
       case 'error':
         icon = 'ErrorCircle';
+        color = 'negative';
         break;
 
       default:
@@ -79,7 +83,7 @@ export function NotificationItem({
 
     return (
       <div className={iconClasses} aria-hidden="true">
-        <Icon icon={icon} color="white" />
+        <Icon icon={icon} color={color} />
       </div>
     );
   }, [intent]);
