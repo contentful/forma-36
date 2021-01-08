@@ -4,6 +4,9 @@ import { boolean, select, text } from '@storybook/addon-knobs';
 
 import notes from './Note.md';
 import Note from './Note';
+import TextLink from '../TextLink';
+import Paragraph from '../Typography/Paragraph';
+import Flex from '../Flex';
 
 storiesOf('Components/Note', module)
   .addParameters({
@@ -61,9 +64,7 @@ storiesOf('Components/Note', module)
         </Note>
         <div style={{ marginTop: 20 }} />
         <Note noteType={'negative'} title="Short, yet succint title">
-          A piece of information that is relevant to the context the user is
-          currently in. If you like it then you should put{' '}
-          <a href="https://contentful.com">a link</a> in it.
+          Something went wrong, apparently. Please try again.{' '}
         </Note>
         <div style={{ marginTop: 20 }} />
         <Note noteType={'warning'} title="Short, yet succint title">
@@ -72,10 +73,16 @@ storiesOf('Components/Note', module)
           <a href="https://contentful.com">a link</a> in it.
         </Note>
         <div style={{ marginTop: 20 }} />
-        <Note noteType={'positive'} title="Short, yet succint title">
-          A piece of information that is relevant to the context the user is
-          currently in. If you like it then you should put{' '}
-          <a href="https://contentful.com">a link</a> in it.
+        <Note
+          noteType={'positive'}
+          title="Short, yet succint title"
+          hasCloseButton
+        >
+          <Flex marginBottom="spacingXs">
+            Make sure to immediately copy your new signing secret. You will not
+            be able to see it again.
+          </Flex>
+          <TextLink>Dismiss</TextLink>
         </Note>
       </div>
     ),

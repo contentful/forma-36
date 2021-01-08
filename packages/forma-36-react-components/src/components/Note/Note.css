@@ -1,19 +1,29 @@
 @import 'settings/colors';
 @import 'settings/typography';
 @import 'settings/dimensions';
+@import 'settings/borders';
 
 .Note {
-  padding: var(--spacing-s);
-  padding-right: var(--spacing-l);
+  padding: var(--spacing-m);
   margin: 0;
-
   font-family: var(--font-stack-primary);
   font-weight: var(--font-weight-normal);
-  line-height: var(--line-height-default);
+  line-height: var(--line-height-large);
   font-size: var(--font-size-m);
   color: var(--color-text-mid);
   display: flex;
   flex-direction: row;
+  border-radius: var(--border-radius-medium);
+}
+
+.Note__title {
+  font-weight: var(--font-weight-demi-bold);
+  font-size: var(--font-size-l);
+  margin-bottom: var(--spacing-xs);
+}
+
+.Note__content {
+  width: 100%;
 }
 
 .Note--primary {
@@ -56,10 +66,6 @@
   padding-right: var(--spacing-s);
 }
 
-.Note__title {
-  font-weight: var(--font-weight-demi-bold);
-}
-
 .Note--hasCloseButton .Note__info {
   margin-right: var(--spacing-s);
 }
@@ -67,7 +73,6 @@
 .Note__icon {
   margin-right: var(--spacing-s);
   display: flex;
-  margin-top: 1px;
 }
 
 .Note__dismiss {
