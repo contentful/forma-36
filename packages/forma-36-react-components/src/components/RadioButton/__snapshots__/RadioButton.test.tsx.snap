@@ -1,21 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
-<input
-  aria-label="radio-button"
-  class="ControlledInput"
-  data-test-id="cf-ui-radio-button"
-  type="radio"
-  value=""
-/>
+<div
+  class="RadioButton"
+>
+  <input
+    aria-label="radio-button"
+    class="ControlledInput"
+    data-test-id="cf-ui-radio-button"
+    type="radio"
+    value=""
+  />
+  <label
+    class="Input__ghost RadioButton__ghost"
+  />
+</div>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
-<input
-  aria-label="radio-button"
-  class="ControlledInput my-extra-class"
-  data-test-id="cf-ui-radio-button"
-  type="radio"
-  value=""
-/>
+<div
+  class="my-extra-class RadioButton"
+>
+  <input
+    aria-label="radio-button"
+    class="ControlledInput"
+    data-test-id="cf-ui-radio-button"
+    type="radio"
+    value=""
+  />
+  <label
+    class="Input__ghost RadioButton__ghost"
+  />
+</div>
 `;

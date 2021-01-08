@@ -6,6 +6,7 @@ import React, {
   useCallback,
 } from 'react';
 import cn from 'classnames';
+import Icon from '../Icon';
 
 import styles from './ControlledInput.css';
 
@@ -43,8 +44,13 @@ export const ControlledInput = ({
   willBlurOnEsc = true,
   ...otherProps
 }: ControlledInputPropTypes) => {
-  const classNames = cn(styles['ControlledInput'], className, {
+  const classNames = cn(styles['ControlledInput'], {
     [styles['ControlledInput--disabled']]: disabled,
+  });
+
+  const wrapperClassname = cn(className, {
+    [styles['RadioButton']]: type === 'radio',
+    [styles['Checkbox']]: type === 'checkbox',
   });
 
   const handleKeyDown = useCallback(
@@ -59,35 +65,55 @@ export const ControlledInput = ({
   );
 
   return (
-    <input
-      className={classNames}
-      value={value}
-      name={name}
-      checked={checked}
-      type={type}
-      data-test-id={testId}
-      onChange={(e) => {
-        if (onChange) {
-          onChange(e);
-        }
-      }}
-      onBlur={(e) => {
-        if (onBlur) {
-          onBlur(e);
-        }
-      }}
-      onFocus={(e) => {
-        if (onFocus) {
-          onFocus(e);
-        }
-      }}
-      aria-label={labelText}
-      id={id}
-      required={required}
-      disabled={disabled}
-      onKeyDown={handleKeyDown}
-      {...otherProps}
-    />
+    <div className={wrapperClassname}>
+      <input
+        className={classNames}
+        value={value}
+        name={name}
+        checked={checked}
+        type={type}
+        data-test-id={testId}
+        onChange={(e) => {
+          if (onChange) {
+            onChange(e);
+          }
+        }}
+        onBlur={(e) => {
+          if (onBlur) {
+            onBlur(e);
+          }
+        }}
+        onFocus={(e) => {
+          if (onFocus) {
+            onFocus(e);
+          }
+        }}
+        aria-label={labelText}
+        id={id}
+        required={required}
+        disabled={disabled}
+        onKeyDown={handleKeyDown}
+        {...otherProps}
+      />
+      {type === 'radio' ? (
+        /* eslint-disable-next-line jsx-a11y/label-has-associated-control */
+        <label
+          className={cn(styles['Input__ghost'], styles['RadioButton__ghost'])}
+          htmlFor={id}
+        />
+      ) : (
+        <label
+          className={cn(styles['Input__ghost'], styles['Checkbox__ghost'])}
+          htmlFor={id}
+        >
+          <Icon
+            icon="Done"
+            color={disabled ? 'secondary' : 'white'}
+            size="medium"
+          />
+        </label>
+      )}
+    </div>
   );
 };
 

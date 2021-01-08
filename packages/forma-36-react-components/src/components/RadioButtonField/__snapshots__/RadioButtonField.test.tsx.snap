@@ -5,14 +5,22 @@ exports[`renders the component 1`] = `
   class="ControlledInputField"
   data-test-id="cf-ui-radio-button-field"
 >
-  <input
-    aria-label="radio button field"
-    class="ControlledInput ControlledInputField__input"
-    data-test-id="cf-ui-controlled-input"
-    id="radio-button"
-    type="radio"
-    value=""
-  />
+  <div
+    class="ControlledInputField__input RadioButton"
+  >
+    <input
+      aria-label="radio button field"
+      class="ControlledInput"
+      data-test-id="cf-ui-controlled-input"
+      id="radio-button"
+      type="radio"
+      value=""
+    />
+    <label
+      class="Input__ghost RadioButton__ghost"
+      for="radio-button"
+    />
+  </div>
   <div
     class="Checkbox__label-wrapper"
   >
@@ -32,14 +40,22 @@ exports[`renders the component with an additional class name 1`] = `
   class="ControlledInputField my-extra-class"
   data-test-id="cf-ui-radio-button-field"
 >
-  <input
-    aria-label="radio button field"
-    class="ControlledInput ControlledInputField__input"
-    data-test-id="cf-ui-controlled-input"
-    id="radio-button"
-    type="radio"
-    value=""
-  />
+  <div
+    class="ControlledInputField__input RadioButton"
+  >
+    <input
+      aria-label="radio button field"
+      class="ControlledInput"
+      data-test-id="cf-ui-controlled-input"
+      id="radio-button"
+      type="radio"
+      value=""
+    />
+    <label
+      class="Input__ghost RadioButton__ghost"
+      for="radio-button"
+    />
+  </div>
   <div
     class="Checkbox__label-wrapper"
   >

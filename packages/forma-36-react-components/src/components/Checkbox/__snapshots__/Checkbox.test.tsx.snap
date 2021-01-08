@@ -1,21 +1,67 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
-<input
-  aria-label="checkbox"
-  class="ControlledInput"
-  data-test-id="ctf-ui-checkbox"
-  type="checkbox"
-  value=""
-/>
+<div
+  class="Checkbox"
+>
+  <input
+    aria-label="checkbox"
+    class="ControlledInput"
+    data-test-id="ctf-ui-checkbox"
+    type="checkbox"
+    value=""
+  />
+  <label
+    class="Input__ghost Checkbox__ghost"
+  >
+    <svg
+      class="Icon Icon--medium Icon--white"
+      data-test-id="cf-ui-icon"
+      height="1em"
+      viewBox="0 0 24 24"
+      width="1em"
+    >
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+      <path
+        d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
+      />
+    </svg>
+  </label>
+</div>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
-<input
-  aria-label="checkbox"
-  class="ControlledInput my-extra-class"
-  data-test-id="ctf-ui-checkbox"
-  type="checkbox"
-  value=""
-/>
+<div
+  class="my-extra-class Checkbox"
+>
+  <input
+    aria-label="checkbox"
+    class="ControlledInput"
+    data-test-id="ctf-ui-checkbox"
+    type="checkbox"
+    value=""
+  />
+  <label
+    class="Input__ghost Checkbox__ghost"
+  >
+    <svg
+      class="Icon Icon--medium Icon--white"
+      data-test-id="cf-ui-icon"
+      height="1em"
+      viewBox="0 0 24 24"
+      width="1em"
+    >
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+      <path
+        d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
+      />
+    </svg>
+  </label>
+</div>
 `;

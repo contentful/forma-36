@@ -1,6 +1,8 @@
 @import 'settings/colors';
 @import 'settings/typography';
 @import 'settings/transitions';
+@import 'settings/dimensions';
+@import 'settings/shadows';
 
 .ControlledInput {
   display: inline-block;
@@ -9,4 +11,161 @@
 
 .ControlledInput--disabled {
   cursor: not-allowed;
+}
+
+.RadioButton {
+  display: inline-block;
+  position: relative;
+  text-overflow: ellipsis;
+  line-height: 1.5rem;
+  min-height: 1.5rem;
+  margin: 0;
+  width: 1rem;
+  height: 1rem;
+  min-height: 1rem;
+  overflow: visible;
+
+  & input {
+    opacity: 0;
+    position: absolute;
+    margin: 0;
+    width: 1rem;
+    height: 1rem;
+    z-index: 1;
+    cursor: pointer;
+
+    &:focus {
+      & + .RadioButton__ghost {
+        outline: none;
+        border: 2px solid var(--color-primary);
+        box-shadow: var(--glow-primary);
+      }
+    }
+
+    &:checked {
+      & + .RadioButton__ghost {
+        border-color: var(--color-blue-mid);
+        background: var(--color-blue-mid);
+      }
+
+      & + .RadioButton__ghost::before {
+        background: var(--color-white);
+      }
+
+      &:disabled {
+        & + .RadioButton__ghost {
+          border-color: var(--color-element-dark);
+          background: var(--color-element-dark);
+        }
+
+        & + .RadioButton__ghost::before {
+          background: var(--color-element-darkest);
+        }
+      }
+    }
+
+    &:disabled {
+      & + .RadioButton__ghost {
+        background: var(--color-element-dark);
+      }
+
+      & + .RadioButton__ghost::before {
+        background: var(--color-text-lightest);
+      }
+    }
+  }
+}
+
+.Checkbox {
+  display: inline-block;
+  position: relative;
+  text-overflow: ellipsis;
+  line-height: 1.5rem;
+  min-height: 1.5rem;
+  margin: 0;
+  width: 1rem;
+  height: 1rem;
+  min-height: 1rem;
+  overflow: visible;
+
+  & input {
+    opacity: 0;
+    position: absolute;
+    margin: 0;
+    width: 1rem;
+    height: 1rem;
+    z-index: 1;
+    cursor: pointer;
+
+    &:focus {
+      & + .Checkbox__ghost {
+        outline: none;
+        border: 2px solid var(--color-primary);
+        box-shadow: var(--glow-primary);
+      }
+    }
+
+    &:checked {
+      & + .Checkbox__ghost {
+        border-color: var(--color-blue-mid);
+        background: var(--color-blue-mid);
+      }
+
+      &:disabled {
+        & + .Checkbox__ghost {
+          border-color: var(--color-element-dark);
+          background: var(--color-element-dark);
+
+          & svg {
+            fill: var(--color-text-lightest);
+          }
+        }
+      }
+    }
+
+    &:disabled {
+      & + .Checkbox__ghost {
+        background: var(--color-element-dark);
+
+        & svg {
+          fill: var(--color-element-dark);
+        }
+      }
+    }
+  }
+}
+
+.Input__ghost {
+  background: var(--color-white);
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid var(--color-element-dark);
+  fill: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.RadioButton__ghost {
+  border-radius: 50%;
+
+  &:before {
+    content: '';
+    border-radius: 50%;
+    background-color: var(--color-white);
+    width: 6px;
+    height: 6px;
+  }
+}
+
+.Checkbox__ghost {
+  border-radius: 20%;
+
+  & svg {
+    width: 12px;
+    min-width: 12px;
+    min-height: 12px;
+    height: 12px;
+  }
 }

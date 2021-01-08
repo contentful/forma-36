@@ -2,7 +2,6 @@
 
 .ControlledInputField {
   display: inline-flex;
-  align-items: baseline;
 }
 
 .ControlledInputField--disabled,
@@ -13,7 +12,7 @@
 
 .ControlledInputField__input {
   margin-right: calc(1rem * (8 / var(--font-base-default)));
-  transform: translateY(1px);
+  transform: translateY(2px);
 }
 
 .ControlledInputField__label {
