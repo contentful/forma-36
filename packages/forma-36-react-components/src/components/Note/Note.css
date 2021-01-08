@@ -10,7 +10,7 @@
   font-weight: var(--font-weight-normal);
   line-height: var(--line-height-large);
   font-size: var(--font-size-m);
-  color: var(--color-text-mid);
+  color: var(--color-text-base);
   display: flex;
   flex-direction: row;
   border-radius: var(--border-radius-medium);
@@ -20,6 +20,7 @@
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-l);
   margin-bottom: var(--spacing-xs);
+  color: var(--color-text-dark);
 }
 
 .Note__content {
