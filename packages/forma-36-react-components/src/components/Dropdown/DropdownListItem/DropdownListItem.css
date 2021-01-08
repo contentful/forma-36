@@ -1,10 +1,10 @@
 @import 'settings/colors';
 @import 'settings/typography';
+@import 'settings/dimensions';
 
 .DropdownListItem {
   display: inline-block;
-  padding: calc(1rem * (7 / var(--font-base-default)))
-    calc(1rem * (20 / var(--font-base-default)));
+  padding: var(--spacing-xs) var(--spacing-m);
   font-family: var(--font-stack-primary);
   font-size: var(--font-size-m);
   white-space: nowrap;
@@ -44,8 +44,7 @@ a.DropdownListItem__button:link {
 
 .DropdownListItem__button__inner-wrapper {
   display: block;
-  padding: calc(1rem * (7 / var(--font-base-default)))
-    calc(1rem * (20 / var(--font-base-default)));
+  padding: var(--spacing-xs) var(--spacing-m);
   line-height: 1.5;
 }
 
@@ -72,7 +71,7 @@ a.DropdownListItem__button:link {
 
 .DropdownListItem--title {
   line-height: 1.8;
-  padding-bottom: calc(1rem * (5 / var(--font-base-default)));
+  padding-bottom: var(--spacing-xs);
 }
 
 .DropdownListItem--title,

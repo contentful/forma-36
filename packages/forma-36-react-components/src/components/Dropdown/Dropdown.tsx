@@ -7,6 +7,13 @@ import DropdownListItem from './DropdownListItem/DropdownListItem';
 import DropdownContainer from './DropdownContainer';
 import styles from './Dropdown.css';
 
+const offestModifier = {
+  name: 'offset',
+  options: {
+    offset: [0, 6],
+  },
+};
+
 /**
  * Popper.js modifier to give the popper element the full width of the reference
  */
@@ -163,6 +170,7 @@ export function Dropdown({
     {
       placement,
       modifiers: [
+        offestModifier,
         isFullWidth ? sameWidth : {},
         isAutoalignmentEnabled !== undefined
           ? {
