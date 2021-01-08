@@ -82,7 +82,9 @@ export const Button = (props: ButtonProps) => {
   );
 
   const iconColor =
-    buttonType === 'muted' || buttonType === 'naked' ? 'secondary' : 'white';
+    buttonType === 'muted' || buttonType === 'warning' || buttonType === 'naked'
+      ? 'secondary'
+      : 'white';
 
   const Element: ElementType = href ? 'a' : 'button';
 
@@ -140,7 +142,9 @@ export const Button = (props: ButtonProps) => {
             className={styles.Button__spinner}
             size="small"
             color={
-              buttonType === 'muted' || buttonType === 'naked'
+              buttonType === 'muted' ||
+              buttonType === 'warning' ||
+              buttonType === 'naked'
                 ? 'default'
                 : 'white'
             }
