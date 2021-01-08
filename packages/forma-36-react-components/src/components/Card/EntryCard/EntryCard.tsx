@@ -222,7 +222,7 @@ export function EntryCard({
                   <Icon
                     icon={statusIcon as IconType}
                     color="muted"
-                    className="f36-margin-right--xs"
+                    className={styles['EntryCard__icon']}
                   />
                 ) : (
                   statusIcon

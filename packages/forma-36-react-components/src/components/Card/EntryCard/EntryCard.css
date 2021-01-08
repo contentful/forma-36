@@ -1,6 +1,7 @@
 @import 'settings/colors';
 @import 'settings/typography';
 @import 'settings/transitions';
+@import 'settings/dimensions';
 @import 'settings/shadows';
 
 .EntryCard {
@@ -45,6 +46,7 @@
 
 .EntryCard__meta {
   display: flex;
+  align-items: flex-start;
 }
 
 .EntryCard__content-type {
@@ -56,8 +58,12 @@
   word-break: break-word;
 }
 
+.EntryCard__icon {
+  margin-right: var(--spacing-xs);
+}
+
 .EntryCard__actions {
-  margin-left: calc(1rem * (8 / var(--font-base-default)));
+  margin-left: var(--spacing-xs);
 }
 
 .EntryCard__content {
