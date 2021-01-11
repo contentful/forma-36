@@ -6,13 +6,14 @@
 
 .Toggle {
   display: inline-block;
+  background-color: var(--color-white);
   padding: 0;
   border-radius: var(--border-radius-medium);
   border: calc(1rem * (1 / var(--font-base-default))) solid
     var(--color-element-dark);
   position: relative;
-  transition: all var(--transition-duration-default)
-    var(--transition-easing-default);
+  /* transition: all var(--transition-duration-default)
+    var(--transition-easing-default); */
 }
 
 .Toggle--disabled {
@@ -90,4 +91,37 @@
   padding: 0px;
   width: 100%;
   height: 100%;
+}
+
+.ToggleGroup {
+  display: inline-flex;
+  position: relative;
+}
+
+.ToggleGroup .Toggle--active {
+  z-index: 2;
+}
+
+.ToggleGroup .Toggle {
+  border-radius: 0;
+  display: inline-flex;
+  margin-right: -2px;
+  margin-left: 1px;
+
+  &:hover,
+  &:focus {
+    z-index: 2;
+  }
+
+  &:first-child {
+    border-top-left-radius: var(--border-radius-medium);
+    border-bottom-left-radius: var(--border-radius-medium);
+    margin-left: 0;
+  }
+
+  &:last-child {
+    border-top-right-radius: var(--border-radius-medium);
+    border-bottom-right-radius: var(--border-radius-medium);
+    margin-right: 0;
+  }
 }

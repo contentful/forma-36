@@ -67,4 +67,20 @@ export const ToggleButton = ({
   );
 };
 
+ToggleButton.Group = function ToggleButtonGroup({
+  className,
+  testId = 'cf-ui-toggle-button-group',
+  children,
+}: {
+  className?: string;
+  testId?: string;
+  children: React.ReactElement<ToggleButtonProps>[];
+}) {
+  return (
+    <div data-test-id={testId} className={cn(styles.ToggleGroup, className)}>
+      {children}
+    </div>
+  );
+};
+
 export default ToggleButton;
