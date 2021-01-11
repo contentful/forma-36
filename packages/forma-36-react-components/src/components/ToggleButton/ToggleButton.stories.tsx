@@ -1,54 +1,63 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { text, select, boolean } from '@storybook/addon-knobs';
-import { iconName } from '../Icon/constants';
 
-import ToggleButton from './ToggleButton';
+import ToggleButton, { ToggleButtonProps } from './ToggleButton';
 import SectionHeading from '../Typography/SectionHeading';
 import Flex from '../Flex/Flex';
 
-storiesOf('Components/ToggleButton', module)
-  .addParameters({
-    propTypes: ToggleButton['__docgenInfo'],
-    component: ToggleButton,
-  })
-  .add('default', () => (
-    <div>
-      <ToggleButton
-        className={text('className', '')}
-        isDisabled={boolean('isDisabled', false)}
-        isActive={boolean('isActive', false)}
-        icon={select('icon', [undefined, ...Object.keys(iconName)], undefined)}
-      >
-        {text('children', 'Embed Entry')}
+import type { Meta } from '@storybook/react/types-6-0';
+
+export default {
+  title: 'Components/ToggleButton',
+  component: ToggleButton,
+  parameters: {
+    propTypes: [ToggleButton['__docgenInfo']],
+  },
+  argTypes: {
+    className: { control: { disable: true } },
+    testId: { control: { disable: true } },
+  },
+} as Meta;
+
+export const Default = (props: ToggleButtonProps) => (
+  <div>
+    <ToggleButton {...props} />
+  </div>
+);
+
+Default.args = {
+  isDisabled: false,
+  isActive: false,
+  icon: undefined,
+  children: 'Embed Entry',
+};
+
+export const overview = () => (
+  <>
+    <Flex marginBottom="spacingS">
+      <SectionHeading element="h3">Toggle Button default</SectionHeading>
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <ToggleButton>Embed Entry</ToggleButton>
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <SectionHeading element="h3">Toggle Button with icon</SectionHeading>
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <ToggleButton icon="Calendar">Embed Entry</ToggleButton>
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <SectionHeading element="h3">Toggle Button active</SectionHeading>
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <ToggleButton isActive icon="Calendar">
+        Embed Entry
       </ToggleButton>
-    </div>
-  ))
-  .add('overview', () => (
-    <>
-      <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">Toggle Button default</SectionHeading>
-      </Flex>
-      <Flex marginBottom="spacingS">
-        <ToggleButton>Embed Entry</ToggleButton>
-      </Flex>
-      <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">Toggle Button with icon</SectionHeading>
-      </Flex>
-      <Flex marginBottom="spacingS">
-        <ToggleButton icon="Calendar">Embed Entry</ToggleButton>
-      </Flex>
-      <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">Toggle Button active</SectionHeading>
-      </Flex>
-      <Flex marginBottom="spacingS">
-        <ToggleButton isActive>Embed Entry</ToggleButton>
-      </Flex>
-      <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">Toggle Button disabled</SectionHeading>
-      </Flex>
-      <Flex marginBottom="spacingS">
-        <ToggleButton isDisabled>Embed Entry</ToggleButton>
-      </Flex>
-    </>
-  ));
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <SectionHeading element="h3">Toggle Button disabled</SectionHeading>
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <ToggleButton isDisabled>Embed Entry</ToggleButton>
+    </Flex>
+  </>
+);

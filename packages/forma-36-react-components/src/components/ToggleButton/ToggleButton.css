@@ -1,19 +1,18 @@
 @import 'settings/colors';
 @import 'settings/typography';
 @import 'settings/transitions';
+@import 'settings/borders';
 @import 'settings/shadows';
 
 .Toggle {
   display: inline-block;
+  padding: 0;
+  border-radius: var(--border-radius-medium);
+  border: calc(1rem * (1 / var(--font-base-default))) solid
+    var(--color-element-dark);
   position: relative;
-  box-shadow: 0px 0px 0px 1px inset transparent, var(--box-shadow-default);
   transition: all var(--transition-duration-default)
     var(--transition-easing-default);
-}
-
-.Toggle--active {
-  box-shadow: 0px 0px 0px 1px inset var(--color-blue-dark),
-    var(--box-shadow-default);
 }
 
 .Toggle--disabled {
@@ -31,8 +30,24 @@
   cursor: not-allowed;
 }
 
-.Toggle:hover {
-  border: 1px solid var(--color-blue-dark);
+.Toggle--active {
+  border: 1px solid var(--color-blue-mid);
+  background-color: var(--color-blue-lightest);
+
+  box-shadow: 0px 0px 0px 1px inset var(--color-blue-mid);
+
+  & .Toggle__content-wrapper {
+    color: var(--color-blue-mid);
+  }
+
+  & .Toggle__button__icon {
+    fill: var(--color-blue-mid);
+  }
+}
+
+.Toggle:hover,
+.Toggle:focus {
+  border: 1px solid var(--color-blue-mid);
 }
 
 .Toggle__button {
