@@ -14,7 +14,9 @@
   background: var(--color-white);
   box-shadow: var(--box-shadow-default);
   transition: border-color var(--transition-duration-default)
-    var(--transition-easing-default);
+      var(--transition-easing-default),
+    box-shadow var(--transition-duration-default)
+      var(--transition-easing-default);
 }
 
 .Card--padding-default {
@@ -38,5 +40,12 @@
 }
 
 .Card--is-selected {
-  box-shadow: var(--glow-primary);
+  background-color: var(--color-blue-lightest);
+  box-shadow: 0px 0px 0px 1px inset var(--color-blue-mid);
+  border-color: var(--color-blue-mid);
+}
+
+.Card--is-selected:hover,
+.Card--is-selected:focus {
+  box-shadow: var(--glow-primary), 0px 0px 0px 1px inset var(--color-blue-mid);
 }
