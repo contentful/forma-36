@@ -1,19 +1,17 @@
 @import 'settings/colors';
 @import 'settings/typography';
 @import 'settings/transitions';
+@import 'settings/borders';
 @import 'settings/shadows';
 
 .Toggle {
   display: inline-block;
+  background-color: var(--color-white);
+  padding: 0;
+  border-radius: var(--border-radius-medium);
+  border: calc(1rem * (1 / var(--font-base-default))) solid
+    var(--color-element-dark);
   position: relative;
-  box-shadow: 0px 0px 0px 1px inset transparent, var(--box-shadow-default);
-  transition: all var(--transition-duration-default)
-    var(--transition-easing-default);
-}
-
-.Toggle--active {
-  box-shadow: 0px 0px 0px 1px inset var(--color-blue-dark),
-    var(--box-shadow-default);
 }
 
 .Toggle--disabled {
@@ -31,8 +29,24 @@
   cursor: not-allowed;
 }
 
-.Toggle:hover {
-  border: 1px solid var(--color-blue-dark);
+.Toggle--active {
+  border: 1px solid var(--color-blue-mid);
+  background-color: var(--color-blue-lightest);
+
+  box-shadow: 0px 0px 0px 1px inset var(--color-blue-mid);
+
+  & .Toggle__content-wrapper {
+    color: var(--color-blue-mid);
+  }
+
+  & .Toggle__button__icon {
+    fill: var(--color-blue-mid);
+  }
+}
+
+.Toggle:hover,
+.Toggle:focus {
+  border: 1px solid var(--color-blue-mid);
 }
 
 .Toggle__button {
@@ -75,4 +89,37 @@
   padding: 0px;
   width: 100%;
   height: 100%;
+}
+
+.ToggleGroup {
+  display: inline-flex;
+  position: relative;
+}
+
+.ToggleGroup .Toggle--active {
+  z-index: 2;
+}
+
+.ToggleGroup .Toggle {
+  border-radius: 0;
+  display: inline-flex;
+  margin-right: -2px;
+  margin-left: 1px;
+
+  &:hover,
+  &:focus {
+    z-index: 2;
+  }
+
+  &:first-child {
+    border-top-left-radius: var(--border-radius-medium);
+    border-bottom-left-radius: var(--border-radius-medium);
+    margin-left: 0;
+  }
+
+  &:last-child {
+    border-top-right-radius: var(--border-radius-medium);
+    border-bottom-right-radius: var(--border-radius-medium);
+    margin-right: 0;
+  }
 }
