@@ -132,26 +132,31 @@ export const overview = ({ notificationText, ...args }: OverviewArgs) => (
       <SectionHeading element="h3">Notifiaction success</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingS">
-      <NotificationItem {...args}>{notificationText}</NotificationItem>
+      <NotificationItem {...args} intent="success">
+        {notificationText}
+      </NotificationItem>
     </Flex>
     <Flex marginBottom="spacingS">
       <SectionHeading element="h3">Notifiaction error</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingS">
-      <NotificationItem {...args}>{notificationText}</NotificationItem>
+      <NotificationItem {...args} intent="error">
+        {notificationText}
+      </NotificationItem>
     </Flex>
     <Flex marginBottom="spacingS">
       <SectionHeading element="h3">Notifiaction warning</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingS">
-      <NotificationItem {...args}>{notificationText}</NotificationItem>
+      <NotificationItem {...args} intent="warning">
+        {notificationText}
+      </NotificationItem>
     </Flex>
   </Flex>
 );
 
 overview.args = {
   title: 'Notification title',
-  intent: 'success',
   cta: {
     label: 'Notification CTA',
   },
