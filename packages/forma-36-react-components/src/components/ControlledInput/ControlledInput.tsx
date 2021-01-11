@@ -48,10 +48,13 @@ export const ControlledInput = ({
     [styles['ControlledInput--disabled']]: disabled,
   });
 
-  const wrapperClassname = cn(className, {
-    [styles['RadioButton']]: type === 'radio',
-    [styles['Checkbox']]: type === 'checkbox',
-  });
+  const wrapperClassname = cn(
+    {
+      [styles['RadioButton']]: type === 'radio',
+      [styles['Checkbox']]: type === 'checkbox',
+    },
+    className,
+  );
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent<HTMLInputElement>) => {
