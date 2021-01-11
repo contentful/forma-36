@@ -12,11 +12,9 @@
   color: var(--color-text-dark);
   text-decoration: none;
   background: var(--color-white);
-  box-shadow: var(--box-shadow-default);
   transition: border-color var(--transition-duration-default)
       var(--transition-easing-default),
-    box-shadow var(--transition-duration-default)
-      var(--transition-easing-default);
+    box-shadow var(--transition-duration-short) var(--transition-easing-default);
 }
 
 .Card--padding-default {
@@ -33,10 +31,13 @@
 
 .Card--is-interactive:hover,
 .Card--is-interactive:focus {
-  box-shadow: var(--glow-primary);
   outline: none;
   border-color: var(--color-primary);
   cursor: pointer;
+}
+
+.Card--is-interactive:focus {
+  box-shadow: var(--glow-primary);
 }
 
 .Card--is-selected {
@@ -45,7 +46,6 @@
   border-color: var(--color-blue-mid);
 }
 
-.Card--is-selected:hover,
 .Card--is-selected:focus {
   box-shadow: var(--glow-primary), 0px 0px 0px 1px inset var(--color-blue-mid);
 }
