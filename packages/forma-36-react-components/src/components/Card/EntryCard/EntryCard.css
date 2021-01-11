@@ -18,8 +18,19 @@
       var(--transition-easing-default);
 }
 
+.EntryCard__header {
+  height: calc(1rem * (45 / var(--font-base-default)));
+  padding: 0 calc(1rem * (14 / var(--font-base-default)));
+  display: flex;
+  justify-content: flex-end;
+  display: flex;
+  align-items: center;
+  border-bottom: calc(1rem * (1 / var(--font-base-default))) solid
+    var(--color-element-mid);
+}
+
 .EntryCard--size-default {
-  height: calc(1rem * (135 / var(--font-base-default)));
+  height: calc(1rem * (146 / var(--font-base-default)));
 }
 
 .EntryCard--size-small {
@@ -31,9 +42,12 @@
 }
 
 .EntryCard__wrapper {
-  padding: calc(1rem * (14 / var(--font-base-default)));
   flex: 1 1 0;
   overflow: auto;
+}
+
+.EntryCard__skeleton-wrapper {
+  padding: calc(1rem * (14 / var(--font-base-default)));
 }
 
 .EntryCard--drag-active {
@@ -44,17 +58,12 @@
   overflow: hidden;
 }
 
-.EntryCard__meta {
-  display: flex;
-  align-items: flex-start;
-}
-
 .EntryCard__content-type {
   flex: 1 1 0;
   padding-right: calc(1rem * (20 / var(--font-base-default)));
-  margin-bottom: calc(1rem * (4 / var(--font-base-default)));
+  margin-bottom: 0;
   color: var(--color-text-light);
-  font-size: var(--font-size-l);
+  font-size: var(--font-size-m);
   word-break: break-word;
 }
 
@@ -68,6 +77,7 @@
 
 .EntryCard__content {
   display: flex;
+  padding: calc(1rem * (14 / var(--font-base-default)));
 }
 
 .EntryCard__body {
