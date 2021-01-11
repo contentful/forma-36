@@ -1,6 +1,7 @@
 @import 'settings/colors';
 @import 'settings/typography';
 @import 'settings/transitions';
+@import 'settings/borders';
 
 .Pill {
   display: inline-flex;
