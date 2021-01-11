@@ -6,7 +6,7 @@ exports[`renders the component 1`] = `
   data-test-id="cf-ui-radio-button-field"
 >
   <div
-    class="ControlledInputField__input RadioButton"
+    class="RadioButton ControlledInputField__input"
   >
     <input
       aria-label="radio button field"
@@ -41,7 +41,7 @@ exports[`renders the component with an additional class name 1`] = `
   data-test-id="cf-ui-radio-button-field"
 >
   <div
-    class="ControlledInputField__input RadioButton"
+    class="RadioButton ControlledInputField__input"
   >
     <input
       aria-label="radio button field"

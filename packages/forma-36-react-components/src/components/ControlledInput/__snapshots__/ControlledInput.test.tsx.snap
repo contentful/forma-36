@@ -2,7 +2,7 @@
 
 exports[`renders the component with a value 1`] = `
 <div
-  class="my-extra-class Checkbox"
+  class="Checkbox my-extra-class"
 >
   <input
     aria-label="ControlledInput"
@@ -72,7 +72,7 @@ exports[`renders the component with all required props 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <div
-  class="my-extra-class Checkbox"
+  class="Checkbox my-extra-class"
 >
   <input
     aria-label="ControlledInput"
@@ -107,7 +107,7 @@ exports[`renders the component with an additional class name 1`] = `
 
 exports[`renders the component with as checked 1`] = `
 <div
-  class="my-extra-class Checkbox"
+  class="Checkbox my-extra-class"
 >
   <input
     aria-label="ControlledInput"
@@ -143,7 +143,7 @@ exports[`renders the component with as checked 1`] = `
 
 exports[`renders the component with disabled prop 1`] = `
 <div
-  class="my-extra-class Checkbox"
+  class="Checkbox my-extra-class"
 >
   <input
     aria-label="ControlledInput"
@@ -179,7 +179,7 @@ exports[`renders the component with disabled prop 1`] = `
 
 exports[`renders the component with required prop 1`] = `
 <div
-  class="my-extra-class Checkbox"
+  class="Checkbox my-extra-class"
 >
   <input
     aria-label="ControlledInput"

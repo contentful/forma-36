@@ -19,7 +19,7 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <div
-  class="my-extra-class RadioButton"
+  class="RadioButton my-extra-class"
 >
   <input
     aria-label="radio-button"

@@ -6,7 +6,7 @@ exports[`renders the component 1`] = `
   data-test-id="cf-ui-checkbox-field"
 >
   <div
-    class="ControlledInputField__input Checkbox"
+    class="Checkbox ControlledInputField__input"
   >
     <input
       aria-label="label text"
