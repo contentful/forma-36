@@ -12,8 +12,6 @@
   border: calc(1rem * (1 / var(--font-base-default))) solid
     var(--color-element-dark);
   position: relative;
-  /* transition: all var(--transition-duration-default)
-    var(--transition-easing-default); */
 }
 
 .Toggle--disabled {

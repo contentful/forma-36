@@ -31,20 +31,18 @@ Default.args = {
   children: 'Embed Entry',
 };
 
-export const Grouped = () => {
-  return (
-    <ToggleButton.Group>
-      <ToggleButton>Apples</ToggleButton>
-      <ToggleButton isActive>Pears</ToggleButton>
-      <ToggleButton>Peaches</ToggleButton>
-      <ToggleButton>Mangos</ToggleButton>
-      <ToggleButton icon="Calendar" isActive>
-        Kiwis
-      </ToggleButton>
-      <ToggleButton isDisabled>Bananas</ToggleButton>
-    </ToggleButton.Group>
-  );
-};
+export const Grouped = () => (
+  <ToggleButton.Group>
+    <ToggleButton>Apples</ToggleButton>
+    <ToggleButton isActive>Pears</ToggleButton>
+    <ToggleButton>Peaches</ToggleButton>
+    <ToggleButton>Mangos</ToggleButton>
+    <ToggleButton icon="Calendar" isActive>
+      Kiwis
+    </ToggleButton>
+    <ToggleButton isDisabled>Bananas</ToggleButton>
+  </ToggleButton.Group>
+);
 
 export const Overview = () => (
   <>
@@ -73,6 +71,12 @@ export const Overview = () => (
     </Flex>
     <Flex marginBottom="spacingS">
       <ToggleButton isDisabled>Embed Entry</ToggleButton>
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <SectionHeading element="h3">Grouped</SectionHeading>
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <Grouped />
     </Flex>
   </>
 );
