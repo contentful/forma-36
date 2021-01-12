@@ -41,8 +41,12 @@ export function NotificationItem({
   }, [children, title]);
 
   const renderBody = useCallback(() => {
-    return <p className={styles.NotificationItem__body}>{title && children}</p>;
-  }, [children, title]);
+    const bodyClasses = classNames(styles.NotificationItem__body, {
+      [styles[`NotificationItem__body--naked`]]: !title && !cta,
+    });
+
+    return <p className={bodyClasses}>{title && children}</p>;
+  }, [children, title, cta]);
 
   const renderCta = useCallback(() => {
     if (cta && cta.label)
@@ -59,18 +63,22 @@ export function NotificationItem({
     });
 
     let icon: IconType;
+    let color;
 
     switch (intent) {
       case 'success':
         icon = 'CheckCircle';
+        color = 'positive';
         break;
 
       case 'warning':
         icon = 'Warning';
+        color = 'warning';
         break;
 
       case 'error':
         icon = 'ErrorCircle';
+        color = 'negative';
         break;
 
       default:
@@ -79,14 +87,18 @@ export function NotificationItem({
 
     return (
       <div className={iconClasses} aria-hidden="true">
-        <Icon icon={icon} color="white" />
+        <Icon icon={icon} color={color} />
       </div>
     );
   }, [intent]);
 
+  const NotificationClassName = classNames(styles.NotificationItem, {
+    [styles[`NotificationItem--${intent}`]]: intent,
+  });
+
   return (
     <div
-      className={styles.NotificationItem}
+      className={NotificationClassName}
       data-test-id={testId}
       data-intent={intent}
       role="alert"

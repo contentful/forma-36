@@ -3,7 +3,7 @@
 exports[`renders the component 1`] = `
 <div
   aria-live="polite"
-  class="NotificationItem"
+  class="NotificationItem NotificationItem--success"
   data-intent="success"
   data-test-id="cf-ui-notification"
   role="alert"
@@ -18,7 +18,7 @@ exports[`renders the component 1`] = `
     class="NotificationItem__icon NotificationItem__icon--success"
   >
     <svg
-      class="Icon Icon--small Icon--white"
+      class="Icon Icon--small Icon--positive"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -45,7 +45,7 @@ exports[`renders the component 1`] = `
         Notification text
       </h2>
       <p
-        class="NotificationItem__body"
+        class="NotificationItem__body NotificationItem__body--naked"
       />
     </div>
     <button
@@ -86,7 +86,7 @@ exports[`renders the component 1`] = `
 exports[`renders the component with "error" intent 1`] = `
 <div
   aria-live="assertive"
-  class="NotificationItem"
+  class="NotificationItem NotificationItem--error"
   data-intent="error"
   data-test-id="cf-ui-notification"
   role="alert"
@@ -101,7 +101,7 @@ exports[`renders the component with "error" intent 1`] = `
     class="NotificationItem__icon NotificationItem__icon--error"
   >
     <svg
-      class="Icon Icon--small Icon--white"
+      class="Icon Icon--small Icon--negative"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -128,7 +128,7 @@ exports[`renders the component with "error" intent 1`] = `
         Notification text
       </h2>
       <p
-        class="NotificationItem__body"
+        class="NotificationItem__body NotificationItem__body--naked"
       />
     </div>
     <button
@@ -169,7 +169,7 @@ exports[`renders the component with "error" intent 1`] = `
 exports[`renders the component with "warning" intent 1`] = `
 <div
   aria-live="assertive"
-  class="NotificationItem"
+  class="NotificationItem NotificationItem--warning"
   data-intent="warning"
   data-test-id="cf-ui-notification"
   role="alert"
@@ -184,7 +184,7 @@ exports[`renders the component with "warning" intent 1`] = `
     class="NotificationItem__icon NotificationItem__icon--warning"
   >
     <svg
-      class="Icon Icon--small Icon--white"
+      class="Icon Icon--small Icon--warning"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -211,7 +211,7 @@ exports[`renders the component with "warning" intent 1`] = `
         Notification text
       </h2>
       <p
-        class="NotificationItem__body"
+        class="NotificationItem__body NotificationItem__body--naked"
       />
     </div>
     <button
@@ -252,7 +252,7 @@ exports[`renders the component with "warning" intent 1`] = `
 exports[`renders the component with a cta 1`] = `
 <div
   aria-live="assertive"
-  class="NotificationItem"
+  class="NotificationItem NotificationItem--warning"
   data-intent="warning"
   data-test-id="cf-ui-notification"
   role="alert"
@@ -267,7 +267,7 @@ exports[`renders the component with a cta 1`] = `
     class="NotificationItem__icon NotificationItem__icon--warning"
   >
     <svg
-      class="Icon Icon--small Icon--white"
+      class="Icon Icon--small Icon--warning"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -349,7 +349,7 @@ exports[`renders the component with a cta 1`] = `
 exports[`renders the component with a title and a body 1`] = `
 <div
   aria-live="polite"
-  class="NotificationItem"
+  class="NotificationItem NotificationItem--success"
   data-intent="success"
   data-test-id="cf-ui-notification"
   role="alert"
@@ -364,7 +364,7 @@ exports[`renders the component with a title and a body 1`] = `
     class="NotificationItem__icon NotificationItem__icon--success"
   >
     <svg
-      class="Icon Icon--small Icon--white"
+      class="Icon Icon--small Icon--positive"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
