@@ -5,11 +5,11 @@ exports[`renders a small sized variant of the component 1`] = `
   class="Card EntryCard EntryCard--size-small Card--padding-none"
   data-test-id="cf-ui-entry-card"
 >
-  <article
+  <div
     class="EntryCard__wrapper"
   >
     <div
-      class="EntryCard__meta"
+      class="EntryCard__header"
     >
       <div
         class="EntryCard__content-type"
@@ -39,7 +39,7 @@ exports[`renders a small sized variant of the component 1`] = `
         </h1>
       </div>
     </div>
-  </article>
+  </div>
 </div>
 `;
 
@@ -48,11 +48,11 @@ exports[`renders the component 1`] = `
   class="Card EntryCard EntryCard--size-default Card--padding-none"
   data-test-id="cf-ui-entry-card"
 >
-  <article
+  <div
     class="EntryCard__wrapper"
   >
     <div
-      class="EntryCard__meta"
+      class="EntryCard__header"
     >
       <div
         class="EntryCard__content-type"
@@ -87,7 +87,7 @@ exports[`renders the component 1`] = `
         </p>
       </div>
     </div>
-  </article>
+  </div>
 </div>
 `;
 
@@ -121,11 +121,11 @@ exports[`renders the component with a custom drag handle 1`] = `
       Reorder card
     </span>
   </div>
-  <article
+  <div
     class="EntryCard__wrapper"
   >
     <div
-      class="EntryCard__meta"
+      class="EntryCard__header"
     >
       <div
         class="EntryCard__content-type"
@@ -160,7 +160,7 @@ exports[`renders the component with a custom drag handle 1`] = `
         </p>
       </div>
     </div>
-  </article>
+  </div>
 </div>
 `;
 
@@ -194,11 +194,11 @@ exports[`renders the component with a drag handle 1`] = `
       Reorder entry
     </span>
   </div>
-  <article
+  <div
     class="EntryCard__wrapper"
   >
     <div
-      class="EntryCard__meta"
+      class="EntryCard__header"
     >
       <div
         class="EntryCard__content-type"
@@ -233,7 +233,7 @@ exports[`renders the component with a drag handle 1`] = `
         </p>
       </div>
     </div>
-  </article>
+  </div>
 </div>
 `;
 
@@ -242,11 +242,11 @@ exports[`renders the component with a thumbnail element 1`] = `
   class="Card EntryCard EntryCard--size-default Card--padding-none"
   data-test-id="cf-ui-entry-card"
 >
-  <article
+  <div
     class="EntryCard__wrapper"
   >
     <div
-      class="EntryCard__meta"
+      class="EntryCard__header"
     >
       <div
         class="EntryCard__content-type"
@@ -289,7 +289,7 @@ exports[`renders the component with a thumbnail element 1`] = `
         />
       </figure>
     </div>
-  </article>
+  </div>
 </div>
 `;
 
@@ -298,11 +298,11 @@ exports[`renders the component with an additional class name 1`] = `
   class="Card EntryCard EntryCard--size-default my-extra-class Card--padding-none"
   data-test-id="cf-ui-entry-card"
 >
-  <article
+  <div
     class="EntryCard__wrapper"
   >
     <div
-      class="EntryCard__meta"
+      class="EntryCard__header"
     >
       <div
         class="EntryCard__content-type"
@@ -337,7 +337,7 @@ exports[`renders the component with an additional class name 1`] = `
         </p>
       </div>
     </div>
-  </article>
+  </div>
 </div>
 `;
 
@@ -346,11 +346,11 @@ exports[`renders the component with dropdownListElements 1`] = `
   class="Card EntryCard EntryCard--size-default Card--padding-none"
   data-test-id="cf-ui-entry-card"
 >
-  <article
+  <div
     class="EntryCard__wrapper"
   >
     <div
-      class="EntryCard__meta"
+      class="EntryCard__header"
     >
       <div
         class="EntryCard__content-type"
@@ -423,6 +423,6 @@ exports[`renders the component with dropdownListElements 1`] = `
         </p>
       </div>
     </div>
-  </article>
+  </div>
 </div>
 `;

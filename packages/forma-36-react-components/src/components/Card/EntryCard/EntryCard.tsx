@@ -203,15 +203,20 @@ export function EntryCard({
       {...otherProps}
     >
       {loading ? (
-        <div className={styles.EntryCard__wrapper}>
+        <div
+          className={cn(
+            styles.EntryCard__wrapper,
+            styles['EntryCard__skeleton-wrapper'],
+          )}
+        >
           <EntryCardSkeleton />
         </div>
       ) : (
         <React.Fragment>
           {renderCardDragHandle()}
-          <article className={styles.EntryCard__wrapper}>
+          <div className={styles.EntryCard__wrapper}>
             <React.Fragment>
-              <div className={styles.EntryCard__meta}>
+              <div className={styles.EntryCard__header}>
                 <div
                   className={styles['EntryCard__content-type']}
                   data-test-id="content-type"
@@ -247,7 +252,7 @@ export function EntryCard({
                 {renderThumbnail(size, thumbnailElement)}
               </div>
             </React.Fragment>
-          </article>
+          </div>
         </React.Fragment>
       )}
     </Card>
