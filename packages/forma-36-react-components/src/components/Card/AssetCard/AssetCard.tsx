@@ -118,9 +118,7 @@ export function AssetCard({
           ) : (
             statusIcon
           )}
-          <Tag className={styles['AssetCard__status']} tagType={type}>
-            {label}
-          </Tag>
+          <Tag tagType={type}>{label}</Tag>
         </>
       );
     },

@@ -316,7 +316,7 @@ storiesOf('Components/Card/EntryCard', module)
         dropdownListElements={dropdownElements}
       />
       <Flex marginBottom="spacingS" marginTop="spacingM">
-        <SectionHeading element="h3">Entry Card loading</SectionHeading>
+        <SectionHeading element="h3">With Status icon</SectionHeading>
       </Flex>
       <EntryCard
         title="Closer"
