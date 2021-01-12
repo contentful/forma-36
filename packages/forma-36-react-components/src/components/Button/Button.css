@@ -1,5 +1,6 @@
 @import 'settings/colors';
 @import 'settings/typography';
+@import 'settings/dimensions';
 @import 'settings/transitions';
 @import 'settings/shadows';
 @import 'settings/borders';
@@ -8,12 +9,12 @@
 .Button,
 .Button:link {
   box-sizing: border-box;
-  height: calc(1rem * (40 / var(--font-base-default)));
-  display: inline-block;
-  padding: 0;
-  border: calc(1rem * (1 / var(--font-base-default))) solid
-    var(--color-element-dark);
+  display: inline-flex;
+  /* TODO: Remove calc once the 14px font-size line-height is 20px */
+  padding: calc(var(--spacing-xs) + 1px) var(--spacing-m);
+  border: 1px solid var(--color-element-dark);
   border-radius: var(--border-radius-medium);
+  color: var(--color-contrast-mid);
   font-family: var(--font-stack-primary);
   font-size: calc(1rem * (14 / var(--font-base-default)));
   font-weight: 500;
@@ -24,7 +25,6 @@
     opacity var(--transition-duration-default) var(--transition-easing-default),
     border-color var(--transition-duration-default)
       var(--transition-easing-default);
-  vertical-align: middle;
   text-decoration: none;
   box-shadow: var(--box-shadow-positive);
 
@@ -96,6 +96,7 @@
 .Button--primary {
   border-color: var(--color-blue-mid);
   background-color: var(--color-blue-mid);
+  color: var(--color-white);
 
   &:hover:not(.Button--disabled) {
     border-color: var(--color-blue-base);
@@ -127,6 +128,7 @@
   border-color: var(--color-green-mid);
   background-color: var(--color-green-mid);
   background-size: 100% 200%;
+  color: var(--color-white);
 
   &:hover:not(.Button--disabled) {
     border-color: var(--color-green-base);
@@ -158,6 +160,7 @@
   border-color: var(--color-red-mid);
   background-color: var(--color-red-mid);
   background-size: 100% 200%;
+  color: var(--color-white);
 
   &:hover:not(.Button--disabled) {
     background-position: 0 100%;
