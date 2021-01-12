@@ -120,6 +120,7 @@ withButtons.args = {
     label: 'Notification CTA',
   },
   notificationText: 'Body for the notification',
+  duration: 6000,
 };
 
 interface OverviewArgs extends NotificationsAPI {
@@ -151,6 +152,14 @@ export const overview = ({ notificationText, ...args }: OverviewArgs) => (
       <NotificationItem {...args} intent="warning">
         {notificationText}
       </NotificationItem>
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <SectionHeading element="h3">
+        Notifiaction warning only with body
+      </SectionHeading>
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <NotificationItem intent="warning">{notificationText}</NotificationItem>
     </Flex>
   </Flex>
 );

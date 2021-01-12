@@ -41,8 +41,12 @@ export function NotificationItem({
   }, [children, title]);
 
   const renderBody = useCallback(() => {
-    return <p className={styles.NotificationItem__body}>{title && children}</p>;
-  }, [children, title]);
+    const bodyClasses = classNames(styles.NotificationItem__body, {
+      [styles[`NotificationItem__body--naked`]]: !title && !cta,
+    });
+
+    return <p className={bodyClasses}>{title && children}</p>;
+  }, [children, title, cta]);
 
   const renderCta = useCallback(() => {
     if (cta && cta.label)
@@ -91,6 +95,7 @@ export function NotificationItem({
   const NotificationClassName = classNames(styles.NotificationItem, {
     [styles[`NotificationItem--${intent}`]]: intent,
   });
+
   return (
     <div
       className={NotificationClassName}

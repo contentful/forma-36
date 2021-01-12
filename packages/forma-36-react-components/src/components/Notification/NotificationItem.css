@@ -88,7 +88,7 @@
 .NotificationItem__title {
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-m);
-  margin-bottom: var(--spacing-2xs);
+  margin-bottom: 0;
   margin-top: 0;
   line-height: 18px; /* hack for alignment of the icon, will be fixed with Typography update */
 }
@@ -96,6 +96,12 @@
 .NotificationItem__body {
   margin-top: 0;
   margin-bottom: var(--spacing-2xs);
+  margin-top: var(--spacing-2xs);
+}
+
+.NotificationItem__body--naked {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .NotificationItem__dismiss {
