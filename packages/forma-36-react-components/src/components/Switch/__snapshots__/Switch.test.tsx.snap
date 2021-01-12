@@ -10,11 +10,40 @@ exports[`renders the component 1`] = `
     type="checkbox"
   />
   <label
-    class="FormLabel Switch__label"
-    data-test-id="cf-ui-form-label"
+    class="Switch__label"
     for="testCheckbox"
   >
+    <svg
+      class="Icon Icon--tiny Icon--white Switch__icon Switch__icon--done"
+      data-test-id="cf-ui-icon"
+      height="1em"
+      viewBox="0 0 24 24"
+      width="1em"
+    >
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+      <path
+        d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
+      />
+    </svg>
     foobar
+    <svg
+      class="Icon Icon--tiny Icon--white Switch__icon Switch__icon--close"
+      data-test-id="cf-ui-icon"
+      height="1em"
+      viewBox="0 0 24 24"
+      width="1em"
+    >
+      <path
+        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+      />
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+    </svg>
   </label>
 </div>
 `;
@@ -30,11 +59,40 @@ exports[`renders the component as checked 1`] = `
     type="checkbox"
   />
   <label
-    class="FormLabel Switch__label"
-    data-test-id="cf-ui-form-label"
+    class="Switch__label"
     for="testCheckbox"
   >
+    <svg
+      class="Icon Icon--tiny Icon--white Switch__icon Switch__icon--done"
+      data-test-id="cf-ui-icon"
+      height="1em"
+      viewBox="0 0 24 24"
+      width="1em"
+    >
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+      <path
+        d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
+      />
+    </svg>
     foobar
+    <svg
+      class="Icon Icon--tiny Icon--white Switch__icon Switch__icon--close"
+      data-test-id="cf-ui-icon"
+      height="1em"
+      viewBox="0 0 24 24"
+      width="1em"
+    >
+      <path
+        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+      />
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+    </svg>
   </label>
 </div>
 `;
@@ -50,11 +108,40 @@ exports[`renders the component as disabled 1`] = `
     type="checkbox"
   />
   <label
-    class="FormLabel Switch__label Switch__label--disabled"
-    data-test-id="cf-ui-form-label"
+    class="Switch__label Switch__label--disabled"
     for="testCheckbox"
   >
+    <svg
+      class="Icon Icon--tiny Icon--white Switch__icon Switch__icon--done"
+      data-test-id="cf-ui-icon"
+      height="1em"
+      viewBox="0 0 24 24"
+      width="1em"
+    >
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+      <path
+        d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
+      />
+    </svg>
     foobar
+    <svg
+      class="Icon Icon--tiny Icon--white Switch__icon Switch__icon--close"
+      data-test-id="cf-ui-icon"
+      height="1em"
+      viewBox="0 0 24 24"
+      width="1em"
+    >
+      <path
+        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+      />
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+    </svg>
   </label>
 </div>
 `;
@@ -71,11 +158,40 @@ exports[`renders the component as disabled and checked 1`] = `
     type="checkbox"
   />
   <label
-    class="FormLabel Switch__label Switch__label--disabled"
-    data-test-id="cf-ui-form-label"
+    class="Switch__label Switch__label--disabled"
     for="testCheckbox"
   >
+    <svg
+      class="Icon Icon--tiny Icon--white Switch__icon Switch__icon--done"
+      data-test-id="cf-ui-icon"
+      height="1em"
+      viewBox="0 0 24 24"
+      width="1em"
+    >
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+      <path
+        d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
+      />
+    </svg>
     foobar
+    <svg
+      class="Icon Icon--tiny Icon--white Switch__icon Switch__icon--close"
+      data-test-id="cf-ui-icon"
+      height="1em"
+      viewBox="0 0 24 24"
+      width="1em"
+    >
+      <path
+        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+      />
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+    </svg>
   </label>
 </div>
 `;
@@ -90,11 +206,40 @@ exports[`renders the component with an additional class name 1`] = `
     type="checkbox"
   />
   <label
-    class="FormLabel Switch__label"
-    data-test-id="cf-ui-form-label"
+    class="Switch__label"
     for="testCheckbox"
   >
+    <svg
+      class="Icon Icon--tiny Icon--white Switch__icon Switch__icon--done"
+      data-test-id="cf-ui-icon"
+      height="1em"
+      viewBox="0 0 24 24"
+      width="1em"
+    >
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+      <path
+        d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"
+      />
+    </svg>
     foobar
+    <svg
+      class="Icon Icon--tiny Icon--white Switch__icon Switch__icon--close"
+      data-test-id="cf-ui-icon"
+      height="1em"
+      viewBox="0 0 24 24"
+      width="1em"
+    >
+      <path
+        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+      />
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+    </svg>
   </label>
 </div>
 `;
