@@ -45,7 +45,7 @@ exports[`renders the component 1`] = `
         Notification text
       </h2>
       <p
-        class="NotificationItem__body"
+        class="NotificationItem__body NotificationItem__body--naked"
       />
     </div>
     <button
@@ -128,7 +128,7 @@ exports[`renders the component with "error" intent 1`] = `
         Notification text
       </h2>
       <p
-        class="NotificationItem__body"
+        class="NotificationItem__body NotificationItem__body--naked"
       />
     </div>
     <button
@@ -211,7 +211,7 @@ exports[`renders the component with "warning" intent 1`] = `
         Notification text
       </h2>
       <p
-        class="NotificationItem__body"
+        class="NotificationItem__body NotificationItem__body--naked"
       />
     </div>
     <button
