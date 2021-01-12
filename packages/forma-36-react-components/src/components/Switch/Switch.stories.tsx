@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
-import { text, boolean } from '@storybook/addon-knobs';
 
 import Switch, { SwitchProps } from './Switch';
 import SectionHeading from '../Typography/SectionHeading';

@@ -1,5 +1,4 @@
 import React, { FunctionComponent, KeyboardEvent } from 'react';
-import FormLabel from '../FormLabel';
 import classNames from 'classnames';
 import styles from './Switch.css';
 import Icon from '../Icon';
