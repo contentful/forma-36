@@ -1,26 +1,68 @@
 @import 'settings/colors';
 @import 'settings/dimensions';
 @import 'settings/transitions';
+@import 'settings/borders';
 
 .Switch__wrapper {
   display: flex;
+  position: relative;
 }
 
 .Switch {
   box-sizing: content-box;
   width: calc(1rem * (34 / var(--font-base-default)));
   height: calc(1rem * (17 / var(--font-base-default)));
-  background-color: var(--color-element-mid);
-  border-radius: calc(1rem * (17 / var(--font-base-default)));
+  background-color: var(--color-text-lightest);
+  border-radius: var(--border-radius-small);
   cursor: pointer;
   outline: none;
   margin: 0 var(--spacing-xs) 0 0;
-  border: 2px solid var(--color-element-mid);
+  border: 2px solid var(--color-text-lightest);
   appearance: none;
   transition: background-color var(--transition-easing-default)
       var(--transition-duration-default),
     border-color var(--transition-easing-default)
       var(--transition-duration-default);
+}
+
+.Switch--small {
+  width: calc(1rem * (28 / var(--font-base-default)));
+  height: calc(1rem * (12 / var(--font-base-default)));
+
+  & + .Switch__label {
+    & .Switch__icon--done {
+      top: 2px;
+      left: 3px;
+    }
+
+    & .Switch__icon--close {
+      top: 2px;
+      left: 17px;
+    }
+  }
+}
+
+.Switch__label {
+  color: var(--color-text-dark);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Switch__icon {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+}
+
+.Switch__icon--done {
+  top: 5px;
+  left: 5px;
+}
+
+.Switch__icon--close {
+  top: 5px;
+  left: 22px;
 }
 
 .Switch:before {
@@ -31,8 +73,13 @@
   background-color: var(--color-white);
   transition: transform var(--transition-easing-default)
     var(--transition-duration-default);
-  border-radius: 50%;
+  border-radius: 2px;
   transform: translate3d(0, 0, 0);
+}
+
+.Switch.Switch--small::before {
+  width: 12px;
+  height: 12px;
 }
 
 .Switch--checked {
@@ -44,6 +91,10 @@
   background-color: var(--color-element-light);
   border-color: var(--color-element-light);
   cursor: not-allowed;
+
+  &:before {
+    background-color: var(--color-element-darkest);
+  }
 }
 
 .Switch--checked.Switch--disabled {
@@ -55,10 +106,14 @@
   transform: translate3d(100%, 0, 0);
 }
 
-.Switch__label {
-  color: var(--color-text-dark);
+.Switch--checked.Switch--small:before {
+  transform: translate3d(130%, 0, 0);
 }
 
 .Switch__label--disabled {
   color: var(--color-text-light);
+
+  & .Switch__icon {
+    fill: var(--color-element-darkest);
+  }
 }
