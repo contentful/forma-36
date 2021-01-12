@@ -8,10 +8,7 @@ export interface AssetCardSkeletonProps {
 }
 
 const AssetCardSkeleton = (props: AssetCardSkeletonProps) => (
-  <SkeletonContainer
-    svgWidth={props.size === 'small' ? 150 : 240}
-    clipId="f36-asset-card-skeleton"
-  >
+  <SkeletonContainer svgWidth={props.size === 'small' ? 150 : 240}>
     <SkeletonImage
       offsetLeft={props.size === 'small' ? 40 : 85}
       offsetTop={props.size === 'small' ? 50 : 100}
