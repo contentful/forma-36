@@ -161,7 +161,7 @@ export interface TimepickerProps {
   disabled: boolean;
 }
 
-const TimePicker: React.FC<TimepickerProps> = ({
+export const Timepicker: React.FC<TimepickerProps> = ({
   id,
   value,
   date,
@@ -358,5 +358,3 @@ const TimePicker: React.FC<TimepickerProps> = ({
     </div>
   );
 };
-
-export default TimePicker;
