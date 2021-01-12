@@ -9,7 +9,7 @@ import type {
 } from 'react';
 import cn from 'classnames';
 import { CSSTransition } from 'react-transition-group';
-import Icon, { IconType } from '../Icon';
+import Icon, { IconType, IconProps } from '../Icon';
 import TabFocusTrap from '../TabFocusTrap';
 import Spinner from '../Spinner';
 
@@ -17,6 +17,7 @@ import styles from './Button.css';
 
 export interface ButtonProps {
   icon?: IconType;
+  iconProps?: IconProps;
   indicateDropdown?: boolean;
   onClick?: MouseEventHandler;
   isFullWidth?: boolean;
@@ -32,10 +33,12 @@ export interface ButtonProps {
     | 'muted'
     | 'naked';
   type?: 'button' | 'submit' | 'reset';
-  size?: 'small' | 'medium' | 'large';
+  /* 'trimmed' to be removed in v4, don't use */
+  size?: 'small' | 'medium' | 'large' | 'trimmed';
   href?: string;
   style?: CSSProperties;
   className?: string;
+  innerWrapperClassName?: string;
   children?: React.ReactNode;
   isActive?: boolean;
 }
@@ -44,9 +47,11 @@ export const Button = ({
   buttonType = 'primary',
   children,
   className,
+  innerWrapperClassName,
   disabled = false,
   href,
   icon,
+  iconProps,
   indicateDropdown = false,
   isActive,
   isFullWidth = false,
@@ -69,6 +74,11 @@ export const Button = ({
       [styles['Button--is-active']]: isActive,
       [styles['Button--is-dropdown']]: indicateDropdown,
     },
+  );
+
+  const innerWrapperClassNames = cn(
+    innerWrapperClassName,
+    styles['Button__inner-wrapper'],
   );
 
   const iconColor =
@@ -99,13 +109,14 @@ export const Button = ({
       type={type}
       {...otherProps}
     >
-      <TabFocusTrap className={styles['Button__inner-wrapper']}>
+      <TabFocusTrap className={innerWrapperClassNames}>
         {icon && !loading && (
           <Icon
             className={styles.Button__icon}
             size={size === 'small' ? 'tiny' : 'small'}
             icon={icon}
             color={iconColor}
+            {...iconProps}
           />
         )}
         <CSSTransition

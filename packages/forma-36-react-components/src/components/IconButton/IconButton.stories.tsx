@@ -5,6 +5,7 @@ import { iconName } from '../Icon/constants';
 import Flex from '../Flex/Flex';
 import SectionHeading from '../Typography/SectionHeading';
 import Paragraph from '../Typography/Paragraph';
+import Tag from '../Tag';
 
 // TODO align colors between Icon and IconButton? (warning is missing in IconButton)
 enum IconButtonTypes {
@@ -77,6 +78,34 @@ export const Overview = () => (
     ))}
     <Flex marginTop="spacingL" marginBottom="spacingS">
       <SectionHeading element="h3">IconButton sizes</SectionHeading>
+    </Flex>
+    <Flex flexDirection="row">
+      <Flex marginRight="spacingS">
+        <IconButton
+          size="small"
+          iconProps={{
+            icon: 'Star',
+          }}
+        />
+      </Flex>
+      <Flex marginRight="spacingS">
+        <IconButton
+          size="large"
+          iconProps={{
+            icon: 'Star',
+            size: 'small',
+          }}
+        />
+      </Flex>
+    </Flex>
+
+    <Flex marginTop="spacingL" marginBottom="spacingS">
+      <SectionHeading element="h3">
+        <del>Icon sizes</del>
+      </SectionHeading>
+      <Flex marginLeft="spacingXs">
+        <Tag tagType="warning">(deprecated)</Tag>
+      </Flex>
     </Flex>
     <Flex flexDirection="row">
       <Flex marginRight="spacingS">
