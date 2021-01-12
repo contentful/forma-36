@@ -2,10 +2,12 @@
 @import 'settings/dimensions';
 @import 'settings/transitions';
 @import 'settings/borders';
+@import 'settings/shadows';
 
 .Switch__wrapper {
   display: flex;
   position: relative;
+  align-items: center;
 }
 
 .Switch {
@@ -23,6 +25,12 @@
       var(--transition-duration-default),
     border-color var(--transition-easing-default)
       var(--transition-duration-default);
+
+  &:focus {
+    outline: none;
+    border: 2px solid var(--color-primary);
+    box-shadow: var(--glow-primary);
+  }
 }
 
 .Switch--small {
@@ -31,12 +39,12 @@
 
   & + .Switch__label {
     & .Switch__icon--done {
-      top: 2px;
+      top: 3px;
       left: 3px;
     }
 
     & .Switch__icon--close {
-      top: 2px;
+      top: 3px;
       left: 17px;
     }
   }
@@ -53,16 +61,7 @@
   position: absolute;
   width: 12px;
   height: 12px;
-}
-
-.Switch__icon--done {
-  top: 5px;
-  left: 5px;
-}
-
-.Switch__icon--close {
-  top: 5px;
-  left: 22px;
+  cursor: pointer;
 }
 
 .Switch:before {
@@ -116,4 +115,14 @@
   & .Switch__icon {
     fill: var(--color-element-darkest);
   }
+}
+
+.Switch__icon--done {
+  top: 5px;
+  left: 5px;
+}
+
+.Switch__icon--close {
+  top: 5px;
+  left: 22px;
 }

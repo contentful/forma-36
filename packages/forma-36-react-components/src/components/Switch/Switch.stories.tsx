@@ -31,6 +31,8 @@ export const Basic = (args: SwitchProps) => {
 
 Basic.args = {
   labelText: 'My label text',
+  size: 'default',
+  isDisabled: false,
 };
 
 export const Overview = () => (
