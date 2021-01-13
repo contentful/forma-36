@@ -109,11 +109,11 @@
 }
 
 .Switch--checked:before {
-  transform: translate3d(114%, 0, 0);
+  transform: translate3d(113%, 0, 0);
 }
 
 .Switch--checked.Switch--small:before {
-  transform: translate3d(135%, 0, 0);
+  transform: translate3d(133%, 0, 0);
 }
 
 .Switch__label--disabled {
