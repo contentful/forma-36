@@ -79,13 +79,13 @@ export const IconButton = ({
   const elementProps = {
     className: classNames,
     onClick: !disabled ? onClick : undefined,
-    'data-testid': testId,
     ...otherProps,
   };
 
   return (
     <Button
       {...elementProps}
+      testId={testId}
       className={classNames}
       innerWrapperClassName={styles[`IconButton--${size}`]}
       indicateDropdown={withDropdown}

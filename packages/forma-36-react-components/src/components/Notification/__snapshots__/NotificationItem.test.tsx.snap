@@ -51,8 +51,7 @@ exports[`renders the component 1`] = `
     <button
       aria-label="Dismiss"
       class="Button IconButton NotificationItem__dismiss IconButton--secondary IconButton--deprecated Button--muted Button--trimmed"
-      data-test-id="cf-ui-button"
-      data-testid="cf-ui-notification-close"
+      data-test-id="cf-ui-notification-close"
       type="button"
     >
       <span
@@ -127,8 +126,7 @@ exports[`renders the component with "error" intent 1`] = `
     <button
       aria-label="Dismiss"
       class="Button IconButton NotificationItem__dismiss IconButton--secondary IconButton--deprecated Button--muted Button--trimmed"
-      data-test-id="cf-ui-button"
-      data-testid="cf-ui-notification-close"
+      data-test-id="cf-ui-notification-close"
       type="button"
     >
       <span
@@ -203,8 +201,7 @@ exports[`renders the component with "warning" intent 1`] = `
     <button
       aria-label="Dismiss"
       class="Button IconButton NotificationItem__dismiss IconButton--secondary IconButton--deprecated Button--muted Button--trimmed"
-      data-test-id="cf-ui-button"
-      data-testid="cf-ui-notification-close"
+      data-test-id="cf-ui-notification-close"
       type="button"
     >
       <span
@@ -293,8 +290,7 @@ exports[`renders the component with a cta 1`] = `
     <button
       aria-label="Dismiss"
       class="Button IconButton NotificationItem__dismiss IconButton--secondary IconButton--deprecated Button--muted Button--trimmed"
-      data-test-id="cf-ui-button"
-      data-testid="cf-ui-notification-close"
+      data-test-id="cf-ui-notification-close"
       type="button"
     >
       <span
@@ -371,8 +367,7 @@ exports[`renders the component with a title and a body 1`] = `
     <button
       aria-label="Dismiss"
       class="Button IconButton NotificationItem__dismiss IconButton--secondary IconButton--deprecated Button--muted Button--trimmed"
-      data-test-id="cf-ui-button"
-      data-testid="cf-ui-notification-close"
+      data-test-id="cf-ui-notification-close"
       type="button"
     >
       <span

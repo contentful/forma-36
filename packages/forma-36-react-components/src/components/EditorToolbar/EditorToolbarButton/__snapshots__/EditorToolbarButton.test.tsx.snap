@@ -5,8 +5,7 @@ exports[`renders the component 1`] = `
   <button
     aria-label="H1"
     class="Button IconButton EditorToolbarButton IconButton--secondary IconButton--deprecated Button--muted Button--trimmed"
-    data-test-id="cf-ui-button"
-    data-testid="cf-ui-editor-toolbar-button"
+    data-test-id="cf-ui-editor-toolbar-button"
     type="button"
   >
     <span
@@ -38,8 +37,7 @@ exports[`renders the component as active 1`] = `
   <button
     aria-label="H1"
     class="Button IconButton EditorToolbarButton EditorToolbarButton--is-active IconButton--secondary IconButton--deprecated Button--muted Button--trimmed"
-    data-test-id="cf-ui-button"
-    data-testid="cf-ui-editor-toolbar-button"
+    data-test-id="cf-ui-editor-toolbar-button"
     type="button"
   >
     <span
@@ -71,8 +69,7 @@ exports[`renders the component as disabled 1`] = `
   <button
     aria-label="H1"
     class="Button IconButton EditorToolbarButton IconButton--secondary IconButton--disabled IconButton--deprecated Button--muted Button--disabled Button--trimmed"
-    data-test-id="cf-ui-button"
-    data-testid="cf-ui-editor-toolbar-button"
+    data-test-id="cf-ui-editor-toolbar-button"
     disabled=""
     type="button"
   >
@@ -105,8 +102,7 @@ exports[`renders the component with a tooltip 1`] = `
   <button
     aria-label="H1"
     class="Button IconButton EditorToolbarButton IconButton--secondary IconButton--deprecated Button--muted Button--trimmed"
-    data-test-id="cf-ui-button"
-    data-testid="cf-ui-editor-toolbar-button"
+    data-test-id="cf-ui-editor-toolbar-button"
     type="button"
   >
     <span
@@ -138,8 +134,7 @@ exports[`renders the component with an additional class name 1`] = `
   <button
     aria-label="H1"
     class="Button IconButton EditorToolbarButton my-extra-class IconButton--secondary IconButton--deprecated Button--muted Button--trimmed"
-    data-test-id="cf-ui-button"
-    data-testid="cf-ui-editor-toolbar-button"
+    data-test-id="cf-ui-editor-toolbar-button"
     type="button"
   >
     <span
@@ -171,8 +166,7 @@ exports[`renders with a dropdown indicator 1`] = `
   <button
     aria-label="H1"
     class="Button IconButton EditorToolbarButton IconButton--secondary IconButton--deprecated Button--muted Button--trimmed Button--is-dropdown"
-    data-test-id="cf-ui-button"
-    data-testid="cf-ui-editor-toolbar-button"
+    data-test-id="cf-ui-editor-toolbar-button"
     type="button"
   >
     <span

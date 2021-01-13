@@ -1,6 +1,8 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, configure } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+
+configure({ testIdAttribute: 'data-test-id' });
 
 import axe from '../../utils/axeHelper';
 import IconButton from './IconButton';

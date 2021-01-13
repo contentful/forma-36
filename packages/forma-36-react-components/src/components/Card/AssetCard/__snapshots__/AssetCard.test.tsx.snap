@@ -347,8 +347,7 @@ exports[`renders the component with actions 1`] = `
           aria-haspopup="menu"
           aria-label="Actions"
           class="Button IconButton IconButton--secondary IconButton--deprecated Button--muted Button--trimmed"
-          data-test-id="cf-ui-button"
-          data-testid="cf-ui-icon-button"
+          data-test-id="cf-ui-icon-button"
           type="button"
         >
           <span
