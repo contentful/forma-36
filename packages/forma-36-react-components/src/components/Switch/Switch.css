@@ -21,9 +21,9 @@
   margin: 0 var(--spacing-xs) 0 0;
   border: 2px solid var(--color-text-lightest);
   appearance: none;
-  transition: background-color var(--transition-easing-default)
+  transition: background-color cubic-bezier(0.65, 0.05, 0.36, 1)
       var(--transition-duration-default),
-    border-color var(--transition-easing-default)
+    border-color cubic-bezier(0.65, 0.05, 0.36, 1)
       var(--transition-duration-default);
 
   &:focus {
@@ -71,7 +71,7 @@
   width: 17px;
   height: 17px;
   background-color: var(--color-white);
-  transition: transform var(--transition-easing-default)
+  transition: transform cubic-bezier(0.65, 0.05, 0.36, 1)
     var(--transition-duration-default);
   border-radius: 2px;
   transform: translate3d(0, 0, 0);
@@ -107,7 +107,7 @@
 }
 
 .Switch--checked.Switch--small:before {
-  transform: translate3d(130%, 0, 0);
+  transform: translate3d(135%, 0, 0);
 }
 
 .Switch__label--disabled {
@@ -120,11 +120,11 @@
 
 /* Temporary aligning icons, TODO in v4*/
 .Switch__icon--done {
-  top: 5px;
+  top: 4px;
   left: 5px;
 }
 
 .Switch__icon--close {
-  top: 5px;
+  top: 4px;
   left: 22px;
 }
