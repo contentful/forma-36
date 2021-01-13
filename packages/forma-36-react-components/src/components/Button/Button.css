@@ -39,11 +39,10 @@
 
 .Button__icon {
   min-width: calc(1rem * (18 / var(--font-base-default)));
-  margin-right: calc(1rem * (8 / var(--font-base-default)));
 }
 
 .Button__dropdown-icon {
-  margin-left: calc(1rem * (8 / var(--font-base-default)));
+  margin-left: calc(1rem * (4 / var(--font-base-default)));
 }
 
 .Button--full-width {
@@ -242,6 +241,7 @@
 
 .Button__label {
   width: 100%;
+  margin: 0 calc(1rem * (4 / var(--font-base-default)));
   font-size: calc(1rem * (14 / var(--font-base-default)));
   color: var(--color-contrast-mid);
   line-height: 2;
@@ -268,7 +268,6 @@
 }
 
 .Button__spinner {
-  margin-right: calc(1rem * (8 / var(--font-base-default)));
   transition: opacity,
     width var(--transition-duration-default) var(--transition-easing-default);
 }

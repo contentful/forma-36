@@ -277,6 +277,32 @@ export const Overview = (args: ButtonProps) => (
 
     <Flex flexDirection="column" marginBottom="spacingL">
       <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Icon only button</SectionHeading>
+      </Flex>
+      <Flex flexDirection="row" marginBottom="spacingM">
+        <Flex marginRight="spacingXs">
+          <Button buttonType="muted" icon="Download" aria-label="Download" />
+        </Flex>
+        <Flex marginRight="spacingXs">
+          <Button buttonType="muted" icon={args.icon} loading />
+        </Flex>
+        <Flex marginRight="spacingXs">
+          <Button buttonType="positive" icon="Drag" aria-label="Resize" />
+        </Flex>
+        <Flex marginRight="spacingXs">
+          <Button buttonType="negative" icon="Delete" aria-label="Delete" />
+        </Flex>
+        <Flex marginRight="spacingXs">
+          <Button buttonType="warning" icon="Edit" aria-label="Edit" />
+        </Flex>
+        <Flex marginRight="spacingXs">
+          <Button buttonType="primary" icon="Plus" aria-label="Add" />
+        </Flex>
+      </Flex>
+    </Flex>
+
+    <Flex flexDirection="column" marginBottom="spacingL">
+      <Flex marginBottom="spacingS">
         <SectionHeading element="h3">Full width button</SectionHeading>
       </Flex>
       <Flex flexDirection="row" marginBottom="spacingS">
