@@ -13,7 +13,7 @@
 .Switch {
   box-sizing: content-box;
   width: calc(1rem * (34 / var(--font-base-default)));
-  height: calc(1rem * (17 / var(--font-base-default)));
+  height: calc(1rem * (16 / var(--font-base-default)));
   background-color: var(--color-text-lightest);
   border-radius: var(--border-radius-small);
   cursor: pointer;
@@ -68,8 +68,8 @@
 .Switch:before {
   content: '';
   display: block;
-  width: 17px;
-  height: 17px;
+  width: 16px;
+  height: 16px;
   background-color: var(--color-white);
   transition: transform cubic-bezier(0.65, 0.05, 0.36, 1)
     var(--transition-duration-default);
@@ -109,7 +109,7 @@
 }
 
 .Switch--checked:before {
-  transform: translate3d(100%, 0, 0);
+  transform: translate3d(110%, 0, 0);
 }
 
 .Switch--checked.Switch--small:before {
