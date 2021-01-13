@@ -36,16 +36,18 @@ exports[`renders the component with a dropdown 1`] = `
     <button
       aria-expanded="false"
       aria-haspopup="menu"
-      class="IconButton IconButton--secondary"
-      data-test-id="cf-ui-icon-button"
+      aria-label="Actions"
+      class="Button IconButton IconButton--secondary IconButton--deprecated Button--muted Button--trimmed"
+      data-test-id="cf-ui-button"
+      data-testid="cf-ui-icon-button"
       type="button"
     >
       <span
-        class="TabFocusTrap IconButton__inner"
+        class="TabFocusTrap IconButton--trimmed Button__inner-wrapper"
         tabindex="-1"
       >
         <svg
-          class="Icon Icon--small Icon--primary IconButton__icon"
+          class="Icon Icon--small Icon--secondary IconButton__icon"
           data-test-id="cf-ui-icon"
           height="1em"
           viewBox="0 0 24 24"
@@ -59,11 +61,6 @@ exports[`renders the component with a dropdown 1`] = `
             d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
           />
         </svg>
-        <span
-          class="IconButton__label"
-        >
-          Actions
-        </span>
       </span>
     </button>
   </div>

@@ -1,23 +1,35 @@
 @import 'settings/colors';
 @import 'settings/typography';
 @import 'settings/transitions';
+@import 'settings/dimensions';
+@import 'settings/borders';
 
 .IconButton {
   composes: focus-outline--default from './../../styles/settings/a11y.css';
-  display: inline-block;
-  cursor: pointer;
-  border: 0;
-  padding: 0;
-  margin: 0 1px;
-  background: transparent;
 }
 
-.IconButton__inner {
-  display: flex;
-  height: 100%;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
+.IconButton .IconButton--small {
+  padding-left: var(--spacing-xs);
+  padding-right: var(--spacing-xs);
+}
+
+.IconButton--large {
+  /* Todo: Remove calc() once the 20px icon size is available */
+  padding: 0 calc(var(--spacing-s) + 2px);
+}
+
+/* Todo: Remove in v4 */
+.IconButton--deprecated,
+.IconButton--trimmed {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  height: auto;
+
+  &:hover {
+    background-color: transparent !important;
+  }
 }
 
 .IconButton--disabled {
@@ -100,16 +112,4 @@
 
 .IconButton--white .IconButton__icon {
   fill: var(--color-white);
-}
-
-.IconButton__label {
-  composes: sr-only from './../../styles/settings/helpers.css';
-}
-
-.IconButton__dropdown {
-  height: calc(1rem * (10 / var(--font-base-default)));
-  width: calc(1rem * (10 / var(--font-base-default)));
-  margin-left: calc(
-    -1rem * (5 / var(--font-base-default))
-  ); /* Optical adjustment, to be revised */
 }

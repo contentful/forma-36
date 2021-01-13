@@ -87,13 +87,14 @@ it('calls an onClick function', () => {
     <IconButton
       iconProps={{ icon: 'ArrowDown' }}
       label="My Icon"
+      testId="onclick-iconButton"
       onClick={onClickFunc}
     />,
   );
 
   expect(container.firstChild).toMatchSnapshot();
 
-  userEvent.click(screen.getByText('My Icon'));
+  userEvent.click(screen.getByTestId('onclick-iconButton'));
   expect(onClickFunc).toHaveBeenCalled();
 });
 
@@ -103,6 +104,7 @@ it('prevents an onClick function from being called when disabled', () => {
     <IconButton
       iconProps={{ icon: 'ArrowDown' }}
       label="My Icon"
+      testId="func-iconButton"
       onClick={onClickFunc}
       disabled
     />,
@@ -110,7 +112,7 @@ it('prevents an onClick function from being called when disabled', () => {
 
   expect(container.firstChild).toMatchSnapshot();
 
-  userEvent.click(screen.getByText('My Icon'));
+  userEvent.click(screen.getByTestId('func-iconButton'));
   expect(onClickFunc).not.toHaveBeenCalled();
 });
 

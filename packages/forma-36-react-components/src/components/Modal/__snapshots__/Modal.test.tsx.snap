@@ -19,16 +19,18 @@ exports[`can be controlled 1`] = `
         Hello
       </h1>
       <button
-        class="IconButton IconButton--muted"
-        data-test-id="cf-ui-icon-button"
+        aria-label="Close"
+        class="Button IconButton IconButton--muted IconButton--deprecated Button--muted Button--trimmed"
+        data-test-id="cf-ui-button"
+        data-testid="cf-ui-icon-button"
         type="button"
       >
         <span
-          class="TabFocusTrap IconButton__inner"
+          class="TabFocusTrap IconButton--trimmed Button__inner-wrapper"
           tabindex="-1"
         >
           <svg
-            class="Icon Icon--small Icon--primary IconButton__icon"
+            class="Icon Icon--small Icon--secondary IconButton__icon"
             data-test-id="cf-ui-icon"
             height="1em"
             viewBox="0 0 24 24"
@@ -38,11 +40,6 @@ exports[`can be controlled 1`] = `
               d="M18.7071 6.70711C19.0976 6.31658 19.0976 5.68342 18.7071 5.29289C18.3166 4.90237 17.6834 4.90237 17.2929 5.29289L12 10.5858L6.70711 5.29289C6.31658 4.90237 5.68342 4.90237 5.29289 5.29289C4.90237 5.68342 4.90237 6.31658 5.29289 6.70711L10.5858 12L5.29289 17.2929C4.90237 17.6834 4.90237 18.3166 5.29289 18.7071C5.68342 19.0976 6.31658 19.0976 6.70711 18.7071L12 13.4142L17.2929 18.7071C17.6834 19.0976 18.3166 19.0976 18.7071 18.7071C19.0976 18.3166 19.0976 17.6834 18.7071 17.2929L13.4142 12L18.7071 6.70711Z"
             />
           </svg>
-          <span
-            class="IconButton__label"
-          >
-            Close
-          </span>
         </span>
       </button>
     </div>
@@ -85,16 +82,18 @@ exports[`can override header and content properties 1`] = `
         Hello!
       </h1>
       <button
-        class="IconButton IconButton--muted"
-        data-test-id="cf-ui-icon-button"
+        aria-label="Close"
+        class="Button IconButton IconButton--muted IconButton--deprecated Button--muted Button--trimmed"
+        data-test-id="cf-ui-button"
+        data-testid="cf-ui-icon-button"
         type="button"
       >
         <span
-          class="TabFocusTrap IconButton__inner"
+          class="TabFocusTrap IconButton--trimmed Button__inner-wrapper"
           tabindex="-1"
         >
           <svg
-            class="Icon Icon--small Icon--primary IconButton__icon"
+            class="Icon Icon--small Icon--secondary IconButton__icon"
             data-test-id="cf-ui-icon"
             height="1em"
             viewBox="0 0 24 24"
@@ -104,11 +103,6 @@ exports[`can override header and content properties 1`] = `
               d="M18.7071 6.70711C19.0976 6.31658 19.0976 5.68342 18.7071 5.29289C18.3166 4.90237 17.6834 4.90237 17.2929 5.29289L12 10.5858L6.70711 5.29289C6.31658 4.90237 5.68342 4.90237 5.29289 5.29289C4.90237 5.68342 4.90237 6.31658 5.29289 6.70711L10.5858 12L5.29289 17.2929C4.90237 17.6834 4.90237 18.3166 5.29289 18.7071C5.68342 19.0976 6.31658 19.0976 6.70711 18.7071L12 13.4142L17.2929 18.7071C17.6834 19.0976 18.3166 19.0976 18.7071 18.7071C19.0976 18.3166 19.0976 17.6834 18.7071 17.2929L13.4142 12L18.7071 6.70711Z"
             />
           </svg>
-          <span
-            class="IconButton__label"
-          >
-            Close
-          </span>
         </span>
       </button>
     </div>
@@ -141,16 +135,18 @@ exports[`renders the component 1`] = `
         Title
       </h1>
       <button
-        class="IconButton IconButton--muted"
-        data-test-id="cf-ui-icon-button"
+        aria-label="Close"
+        class="Button IconButton IconButton--muted IconButton--deprecated Button--muted Button--trimmed"
+        data-test-id="cf-ui-button"
+        data-testid="cf-ui-icon-button"
         type="button"
       >
         <span
-          class="TabFocusTrap IconButton__inner"
+          class="TabFocusTrap IconButton--trimmed Button__inner-wrapper"
           tabindex="-1"
         >
           <svg
-            class="Icon Icon--small Icon--primary IconButton__icon"
+            class="Icon Icon--small Icon--secondary IconButton__icon"
             data-test-id="cf-ui-icon"
             height="1em"
             viewBox="0 0 24 24"
@@ -160,11 +156,6 @@ exports[`renders the component 1`] = `
               d="M18.7071 6.70711C19.0976 6.31658 19.0976 5.68342 18.7071 5.29289C18.3166 4.90237 17.6834 4.90237 17.2929 5.29289L12 10.5858L6.70711 5.29289C6.31658 4.90237 5.68342 4.90237 5.29289 5.29289C4.90237 5.68342 4.90237 6.31658 5.29289 6.70711L10.5858 12L5.29289 17.2929C4.90237 17.6834 4.90237 18.3166 5.29289 18.7071C5.68342 19.0976 6.31658 19.0976 6.70711 18.7071L12 13.4142L17.2929 18.7071C17.6834 19.0976 18.3166 19.0976 18.7071 18.7071C19.0976 18.3166 19.0976 17.6834 18.7071 17.2929L13.4142 12L18.7071 6.70711Z"
             />
           </svg>
-          <span
-            class="IconButton__label"
-          >
-            Close
-          </span>
         </span>
       </button>
     </div>
