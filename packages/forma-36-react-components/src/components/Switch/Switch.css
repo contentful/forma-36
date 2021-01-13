@@ -28,7 +28,7 @@
 
   &:focus {
     outline: none;
-    border: 2px solid var(--color-primary);
+    border: 2px solid var(--color-text-lightest);
     box-shadow: var(--glow-primary);
   }
 }
@@ -85,6 +85,12 @@
 .Switch--checked {
   background-color: var(--color-primary);
   border-color: var(--color-primary);
+
+  &:focus {
+    outline: none;
+    border: 2px solid var(--color-primary);
+    box-shadow: var(--glow-primary);
+  }
 }
 
 .Switch--disabled {
