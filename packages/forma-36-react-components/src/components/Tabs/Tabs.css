@@ -10,12 +10,13 @@
 .Tab {
   box-sizing: border-box;
   white-space: nowrap;
+  align-items: center;
   color: var(--color-text-lightest);
+  display: flex;
   position: relative;
   cursor: pointer;
   padding: 0 var(--spacing-m);
   height: var(--spacing-2xl);
-  line-height: var(--spacing-2xl);
   font-size: var(--font-size-m);
   font-family: var(--font-stack-primary);
   font-weight: var(--font-weight-medium);
