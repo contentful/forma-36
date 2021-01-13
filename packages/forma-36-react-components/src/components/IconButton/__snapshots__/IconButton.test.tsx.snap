@@ -2,16 +2,18 @@
 
 exports[`allows passing additional props not consumed by the component 1`] = `
 <button
-  class="IconButton IconButton--primary"
+  aria-label="My Icon"
+  class="Button IconButton IconButton--primary IconButton--deprecated Button--muted Button--trimmed"
   data-test-id="Testing ID"
+  data-testid="cf-ui-icon-button"
   type="button"
 >
   <span
-    class="TabFocusTrap IconButton__inner"
+    class="TabFocusTrap IconButton--trimmed Button__inner-wrapper"
     tabindex="-1"
   >
     <svg
-      class="Icon Icon--small Icon--primary IconButton__icon"
+      class="Icon Icon--small Icon--secondary IconButton__icon"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -25,27 +27,24 @@ exports[`allows passing additional props not consumed by the component 1`] = `
         fill="none"
       />
     </svg>
-    <span
-      class="IconButton__label"
-    >
-      My Icon
-    </span>
   </span>
 </button>
 `;
 
 exports[`calls an onClick function 1`] = `
 <button
-  class="IconButton IconButton--primary"
-  data-test-id="cf-ui-icon-button"
+  aria-label="My Icon"
+  class="Button IconButton IconButton--primary IconButton--deprecated Button--muted Button--trimmed"
+  data-test-id="cf-ui-button"
+  data-testid="onclick-iconButton"
   type="button"
 >
   <span
-    class="TabFocusTrap IconButton__inner"
+    class="TabFocusTrap IconButton--trimmed Button__inner-wrapper"
     tabindex="-1"
   >
     <svg
-      class="Icon Icon--small Icon--primary IconButton__icon"
+      class="Icon Icon--small Icon--secondary IconButton__icon"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -59,28 +58,25 @@ exports[`calls an onClick function 1`] = `
         fill="none"
       />
     </svg>
-    <span
-      class="IconButton__label"
-    >
-      My Icon
-    </span>
   </span>
 </button>
 `;
 
 exports[`prevents an onClick function from being called when disabled 1`] = `
 <button
-  class="IconButton IconButton--disabled IconButton--primary"
-  data-test-id="cf-ui-icon-button"
+  aria-label="My Icon"
+  class="Button IconButton IconButton--primary IconButton--disabled IconButton--deprecated Button--muted Button--disabled Button--trimmed"
+  data-test-id="cf-ui-button"
+  data-testid="func-iconButton"
   disabled=""
   type="button"
 >
   <span
-    class="TabFocusTrap IconButton__inner"
+    class="TabFocusTrap IconButton--trimmed Button__inner-wrapper"
     tabindex="-1"
   >
     <svg
-      class="Icon Icon--small Icon--primary IconButton__icon"
+      class="Icon Icon--small Icon--secondary IconButton__icon"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -94,27 +90,24 @@ exports[`prevents an onClick function from being called when disabled 1`] = `
         fill="none"
       />
     </svg>
-    <span
-      class="IconButton__label"
-    >
-      My Icon
-    </span>
   </span>
 </button>
 `;
 
 exports[`renders as a "muted" link type 1`] = `
 <button
-  class="IconButton IconButton--muted"
-  data-test-id="cf-ui-icon-button"
+  aria-label="My Icon"
+  class="Button IconButton IconButton--muted IconButton--deprecated Button--muted Button--trimmed"
+  data-test-id="cf-ui-button"
+  data-testid="cf-ui-icon-button"
   type="button"
 >
   <span
-    class="TabFocusTrap IconButton__inner"
+    class="TabFocusTrap IconButton--trimmed Button__inner-wrapper"
     tabindex="-1"
   >
     <svg
-      class="Icon Icon--small Icon--primary IconButton__icon"
+      class="Icon Icon--small Icon--secondary IconButton__icon"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -128,27 +121,24 @@ exports[`renders as a "muted" link type 1`] = `
         fill="none"
       />
     </svg>
-    <span
-      class="IconButton__label"
-    >
-      My Icon
-    </span>
   </span>
 </button>
 `;
 
 exports[`renders as a "negative" link type 1`] = `
 <button
-  class="IconButton IconButton--negative"
-  data-test-id="cf-ui-icon-button"
+  aria-label="My Icon"
+  class="Button IconButton IconButton--negative IconButton--deprecated Button--muted Button--trimmed"
+  data-test-id="cf-ui-button"
+  data-testid="cf-ui-icon-button"
   type="button"
 >
   <span
-    class="TabFocusTrap IconButton__inner"
+    class="TabFocusTrap IconButton--trimmed Button__inner-wrapper"
     tabindex="-1"
   >
     <svg
-      class="Icon Icon--small Icon--primary IconButton__icon"
+      class="Icon Icon--small Icon--secondary IconButton__icon"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -162,27 +152,24 @@ exports[`renders as a "negative" link type 1`] = `
         fill="none"
       />
     </svg>
-    <span
-      class="IconButton__label"
-    >
-      My Icon
-    </span>
   </span>
 </button>
 `;
 
 exports[`renders as a "positive" link type 1`] = `
 <button
-  class="IconButton IconButton--positive"
-  data-test-id="cf-ui-icon-button"
+  aria-label="My Icon"
+  class="Button IconButton IconButton--positive IconButton--deprecated Button--muted Button--trimmed"
+  data-test-id="cf-ui-button"
+  data-testid="cf-ui-icon-button"
   type="button"
 >
   <span
-    class="TabFocusTrap IconButton__inner"
+    class="TabFocusTrap IconButton--trimmed Button__inner-wrapper"
     tabindex="-1"
   >
     <svg
-      class="Icon Icon--small Icon--primary IconButton__icon"
+      class="Icon Icon--small Icon--secondary IconButton__icon"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -196,27 +183,24 @@ exports[`renders as a "positive" link type 1`] = `
         fill="none"
       />
     </svg>
-    <span
-      class="IconButton__label"
-    >
-      My Icon
-    </span>
   </span>
 </button>
 `;
 
 exports[`renders as a "primary" link type 1`] = `
 <button
-  class="IconButton IconButton--primary"
-  data-test-id="cf-ui-icon-button"
+  aria-label="My Icon"
+  class="Button IconButton IconButton--primary IconButton--deprecated Button--muted Button--trimmed"
+  data-test-id="cf-ui-button"
+  data-testid="cf-ui-icon-button"
   type="button"
 >
   <span
-    class="TabFocusTrap IconButton__inner"
+    class="TabFocusTrap IconButton--trimmed Button__inner-wrapper"
     tabindex="-1"
   >
     <svg
-      class="Icon Icon--small Icon--primary IconButton__icon"
+      class="Icon Icon--small Icon--secondary IconButton__icon"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -230,27 +214,24 @@ exports[`renders as a "primary" link type 1`] = `
         fill="none"
       />
     </svg>
-    <span
-      class="IconButton__label"
-    >
-      My Icon
-    </span>
   </span>
 </button>
 `;
 
 exports[`renders as a "secondary" link type 1`] = `
 <button
-  class="IconButton IconButton--secondary"
-  data-test-id="cf-ui-icon-button"
+  aria-label="My Icon"
+  class="Button IconButton IconButton--secondary IconButton--deprecated Button--muted Button--trimmed"
+  data-test-id="cf-ui-button"
+  data-testid="cf-ui-icon-button"
   type="button"
 >
   <span
-    class="TabFocusTrap IconButton__inner"
+    class="TabFocusTrap IconButton--trimmed Button__inner-wrapper"
     tabindex="-1"
   >
     <svg
-      class="Icon Icon--small Icon--primary IconButton__icon"
+      class="Icon Icon--small Icon--secondary IconButton__icon"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -264,37 +245,25 @@ exports[`renders as a "secondary" link type 1`] = `
         fill="none"
       />
     </svg>
-    <span
-      class="IconButton__label"
-    >
-      My Icon
-    </span>
   </span>
 </button>
 `;
 
 exports[`renders as a link 1`] = `
 <a
-  class="IconButton IconButton--primary"
-  data-test-id="cf-ui-icon-button"
+  aria-label="My Icon"
+  class="Button IconButton IconButton--primary IconButton--deprecated Button--muted Button--trimmed"
+  data-test-id="cf-ui-button"
+  data-testid="cf-ui-icon-button"
   href="#"
->
-  content
-</a>
-`;
-
-exports[`renders the component 1`] = `
-<button
-  class="IconButton IconButton--primary"
-  data-test-id="cf-ui-icon-button"
   type="button"
 >
   <span
-    class="TabFocusTrap IconButton__inner"
+    class="TabFocusTrap IconButton--trimmed Button__inner-wrapper"
     tabindex="-1"
   >
     <svg
-      class="Icon Icon--small Icon--primary IconButton__icon"
+      class="Icon Icon--small Icon--secondary IconButton__icon"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -308,27 +277,55 @@ exports[`renders the component 1`] = `
         fill="none"
       />
     </svg>
-    <span
-      class="IconButton__label"
+  </span>
+</a>
+`;
+
+exports[`renders the component 1`] = `
+<button
+  aria-label="My Icon"
+  class="Button IconButton IconButton--primary IconButton--deprecated Button--muted Button--trimmed"
+  data-test-id="cf-ui-button"
+  data-testid="cf-ui-icon-button"
+  type="button"
+>
+  <span
+    class="TabFocusTrap IconButton--trimmed Button__inner-wrapper"
+    tabindex="-1"
+  >
+    <svg
+      class="Icon Icon--small Icon--secondary IconButton__icon"
+      data-test-id="cf-ui-icon"
+      height="1em"
+      viewBox="0 0 24 24"
+      width="1em"
     >
-      My Icon
-    </span>
+      <path
+        d="M7 10l5 5 5-5z"
+      />
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+    </svg>
   </span>
 </button>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
 <button
-  class="IconButton my-extra-class IconButton--primary"
-  data-test-id="cf-ui-icon-button"
+  aria-label="My Icon"
+  class="Button IconButton my-extra-class IconButton--primary IconButton--deprecated Button--muted Button--trimmed"
+  data-test-id="cf-ui-button"
+  data-testid="cf-ui-icon-button"
   type="button"
 >
   <span
-    class="TabFocusTrap IconButton__inner"
+    class="TabFocusTrap IconButton--trimmed Button__inner-wrapper"
     tabindex="-1"
   >
     <svg
-      class="Icon Icon--small Icon--primary IconButton__icon"
+      class="Icon Icon--small Icon--secondary IconButton__icon"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -343,9 +340,9 @@ exports[`renders the component with an additional class name 1`] = `
       />
     </svg>
     <span
-      class="IconButton__label"
+      class="Button__label"
     >
-      My Icon
+      IconButton
     </span>
   </span>
 </button>
@@ -353,16 +350,18 @@ exports[`renders the component with an additional class name 1`] = `
 
 exports[`renders with a dropdown indicator 1`] = `
 <button
-  class="IconButton IconButton--primary"
-  data-test-id="cf-ui-icon-button"
+  aria-label="My Icon"
+  class="Button IconButton IconButton--primary IconButton--deprecated Button--muted Button--trimmed Button--is-dropdown"
+  data-test-id="cf-ui-button"
+  data-testid="cf-ui-icon-button"
   type="button"
 >
   <span
-    class="TabFocusTrap IconButton__inner"
+    class="TabFocusTrap IconButton--trimmed Button__inner-wrapper"
     tabindex="-1"
   >
     <svg
-      class="Icon Icon--small Icon--primary IconButton__icon"
+      class="Icon Icon--small Icon--secondary IconButton__icon"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -376,13 +375,8 @@ exports[`renders with a dropdown indicator 1`] = `
         fill="none"
       />
     </svg>
-    <span
-      class="IconButton__label"
-    >
-      My Icon
-    </span>
     <svg
-      class="Icon Icon--small Icon--secondary IconButton__dropdown"
+      class="Icon Icon--small Icon--secondary Button__dropdown-icon"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"

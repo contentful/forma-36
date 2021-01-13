@@ -79,7 +79,7 @@ export const IconButton = ({
   const elementProps = {
     className: classNames,
     onClick: !disabled ? onClick : undefined,
-    'data-test-id': testId,
+    'data-testid': testId,
     ...otherProps,
   };
 
