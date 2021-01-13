@@ -1,49 +1,106 @@
 @import 'settings/colors';
 @import 'settings/dimensions';
 @import 'settings/transitions';
+@import 'settings/borders';
+@import 'settings/shadows';
 
 .Switch__wrapper {
   display: flex;
+  position: relative;
+  align-items: center;
 }
 
 .Switch {
   box-sizing: content-box;
   width: calc(1rem * (34 / var(--font-base-default)));
-  height: calc(1rem * (17 / var(--font-base-default)));
-  background-color: var(--color-element-mid);
-  border-radius: calc(1rem * (17 / var(--font-base-default)));
+  height: calc(1rem * (16 / var(--font-base-default)));
+  background-color: var(--color-text-lightest);
+  border-radius: var(--border-radius-small);
   cursor: pointer;
   outline: none;
   margin: 0 var(--spacing-xs) 0 0;
-  border: 2px solid var(--color-element-mid);
+  border: 2px solid var(--color-text-lightest);
   appearance: none;
-  transition: background-color var(--transition-easing-default)
+  transition: background-color cubic-bezier(0.65, 0.05, 0.36, 1)
       var(--transition-duration-default),
-    border-color var(--transition-easing-default)
+    border-color cubic-bezier(0.65, 0.05, 0.36, 1)
       var(--transition-duration-default);
+
+  &:focus {
+    outline: none;
+    border: 2px solid var(--color-text-lightest);
+    box-shadow: var(--glow-primary);
+  }
+}
+
+.Switch--small {
+  width: calc(1rem * (28 / var(--font-base-default)));
+  height: calc(1rem * (12 / var(--font-base-default)));
+
+  & + .Switch__label {
+    & .Switch__icon--done {
+      top: 3px;
+      left: 3px;
+    }
+
+    & .Switch__icon--close {
+      top: 3px;
+      left: 17px;
+    }
+  }
+}
+
+.Switch__label {
+  color: var(--color-text-dark);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Switch__icon {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  cursor: pointer;
+  pointer-events: none;
 }
 
 .Switch:before {
   content: '';
   display: block;
-  width: 17px;
-  height: 17px;
+  width: 16px;
+  height: 16px;
   background-color: var(--color-white);
-  transition: transform var(--transition-easing-default)
+  transition: transform cubic-bezier(0.65, 0.05, 0.36, 1)
     var(--transition-duration-default);
-  border-radius: 50%;
+  border-radius: 2px;
   transform: translate3d(0, 0, 0);
+}
+
+.Switch.Switch--small::before {
+  width: 12px;
+  height: 12px;
 }
 
 .Switch--checked {
   background-color: var(--color-primary);
   border-color: var(--color-primary);
+
+  &:focus {
+    outline: none;
+    border: 2px solid var(--color-primary);
+    box-shadow: var(--glow-primary);
+  }
 }
 
 .Switch--disabled {
   background-color: var(--color-element-light);
   border-color: var(--color-element-light);
   cursor: not-allowed;
+
+  &:before {
+    background-color: var(--color-element-darkest);
+  }
 }
 
 .Switch--checked.Switch--disabled {
@@ -52,13 +109,28 @@
 }
 
 .Switch--checked:before {
-  transform: translate3d(100%, 0, 0);
+  transform: translate3d(113%, 0, 0);
 }
 
-.Switch__label {
-  color: var(--color-text-dark);
+.Switch--checked.Switch--small:before {
+  transform: translate3d(133%, 0, 0);
 }
 
 .Switch__label--disabled {
   color: var(--color-text-light);
+
+  & .Switch__icon {
+    fill: var(--color-element-darkest);
+  }
+}
+
+/* Temporary aligning icons, TODO in v4*/
+.Switch__icon--done {
+  top: 4px;
+  left: 5px;
+}
+
+.Switch__icon--close {
+  top: 4px;
+  left: 22px;
 }
