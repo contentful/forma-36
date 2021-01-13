@@ -109,7 +109,7 @@
 }
 
 .Switch--checked:before {
-  transform: translate3d(110%, 0, 0);
+  transform: translate3d(114%, 0, 0);
 }
 
 .Switch--checked.Switch--small:before {
