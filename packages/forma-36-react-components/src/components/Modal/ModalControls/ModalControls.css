@@ -15,7 +15,7 @@
 
 .ModalControls.ModalControls--right button {
   margin-right: 0;
-  margin-left: var(--spacing-xs);
+  margin-left: var(--spacing-s);
 
   &:first-child {
     margin-left: 0;
@@ -23,7 +23,7 @@
 }
 
 .ModalControls button {
-  margin-right: var(--spacing-xs);
+  margin-right: var(--spacing-s);
 
   &:last-child {
     margin-right: 0;

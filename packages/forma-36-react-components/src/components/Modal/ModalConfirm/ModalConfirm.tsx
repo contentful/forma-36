@@ -133,7 +133,6 @@ export function ModalConfirm({
 }: ModalConfirmProps): React.ReactElement {
   const confirmButton = confirmLabel ? (
     <Button
-      size="small"
       testId={confirmTestId}
       disabled={isConfirmDisabled}
       loading={isConfirmLoading}
@@ -146,7 +145,6 @@ export function ModalConfirm({
 
   const secondaryButton = secondaryLabel ? (
     <Button
-      size="small"
       testId={secondaryTestId}
       disabled={isSecondaryDisabled}
       loading={isSecondaryLoading}
@@ -158,12 +156,7 @@ export function ModalConfirm({
   ) : null;
 
   const cancelButton = cancelLabel ? (
-    <Button
-      size="small"
-      testId={cancelTestId}
-      buttonType="muted"
-      onClick={() => onCancel()}
-    >
+    <Button testId={cancelTestId} buttonType="muted" onClick={() => onCancel()}>
       {cancelLabel}
     </Button>
   ) : null;
