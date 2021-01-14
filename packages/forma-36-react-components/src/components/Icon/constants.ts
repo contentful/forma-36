@@ -93,6 +93,7 @@ export const iconName = {
   LooksTwoTrimmed: 'LooksTwoTrimmed',
   Menu: 'Menu',
   MenuTrimmed: 'MenuTrimmed',
+  Minus: 'Minus',
   MoreHorizontal: 'MoreHorizontal',
   MoreHorizontalTrimmed: 'MoreHorizontalTrimmed',
   MoreVertical: 'MoreVertical',

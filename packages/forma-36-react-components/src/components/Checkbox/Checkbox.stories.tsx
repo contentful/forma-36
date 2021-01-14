@@ -39,12 +39,33 @@ export const overview = () => (
       name="some-name"
     />
     <Flex marginBottom="spacingS" marginTop="spacingM">
+      <SectionHeading element="h3">Checkbox indeterminate</SectionHeading>
+    </Flex>
+    <Checkbox
+      id="Checkbox"
+      indeterminate
+      labelText="multiple selection"
+      name="some-name"
+    />
+    <Flex marginBottom="spacingS" marginTop="spacingM">
       <SectionHeading element="h3">Checkbox disabled</SectionHeading>
     </Flex>
     <Checkbox
       id="Checkbox"
       disabled
       labelText="some label text"
+      name="some-name"
+    />
+    <Flex marginBottom="spacingS" marginTop="spacingM">
+      <SectionHeading element="h3">
+        Checkbox disabled indeterminate
+      </SectionHeading>
+    </Flex>
+    <Checkbox
+      id="Checkbox"
+      disabled
+      indeterminate
+      labelText="multiple selection"
       name="some-name"
     />
     <Flex marginBottom="spacingS" marginTop="spacingM">
