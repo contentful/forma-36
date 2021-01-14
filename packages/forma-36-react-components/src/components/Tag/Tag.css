@@ -10,6 +10,7 @@
   font-weight: var(--font-weight-medium);
   font-size: calc(1rem * (12 / var(--font-base-default)));
   line-height: 20px;
+  max-height: 20px;
   text-transform: uppercase;
   letter-spacing: 0.06rem; /*move to tokens or update wide letter spacing token*/
   padding: 0 var(--spacing-xs);
