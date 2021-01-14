@@ -1,7 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { text, boolean, select, number } from '@storybook/addon-knobs';
-import { action } from '@storybook/addon-actions';
 
 import TextField, { TextFieldProps } from './TextField';
 import SectionHeading from '../Typography/SectionHeading';
@@ -102,8 +99,6 @@ export const Overview = (args: TextFieldProps) => (
         textInputProps={{
           disabled: true,
         }}
-        helpText={text('helpText', '')}
-        validationMessage={text('validationMessage', '')}
       />
     </Flex>
   </>
