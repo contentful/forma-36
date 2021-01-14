@@ -25,7 +25,7 @@
   flex-basis: 100%;
 
   &::placeholder {
-    color: var(--color-text-light);
+    color: var(--color-text-lightest);
   }
 
   &:active {

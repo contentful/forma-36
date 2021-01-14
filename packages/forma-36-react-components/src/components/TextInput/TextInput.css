@@ -28,7 +28,7 @@
   -webkit-appearance: textfield;
 
   &::placeholder {
-    color: var(--color-text-light);
+    color: var(--color-text-lightest);
   }
 
   &::-webkit-search-decoration,
