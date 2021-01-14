@@ -13,10 +13,11 @@
   align-items: center;
   color: var(--color-text-lightest);
   display: flex;
+  height: 100%;
+  min-height: 56px; /* @todo: change to var(--spacing-2xl) */
   position: relative;
   cursor: pointer;
   padding: 0 var(--spacing-m);
-  height: var(--spacing-2xl);
   font-size: var(--font-size-m);
   font-family: var(--font-stack-primary);
   font-weight: var(--font-weight-medium);
