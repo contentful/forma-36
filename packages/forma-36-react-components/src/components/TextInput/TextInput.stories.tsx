@@ -66,6 +66,20 @@ export const controlledTextInput = (args: TextInputProps) => (
 export const overview = () => (
   <>
     <Flex marginBottom="spacingS">
+      <SectionHeading element="h3">
+        Text input default with placeholder
+      </SectionHeading>
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <TextInput
+        value=""
+        maxLength={50}
+        name="emailInput"
+        id="emailInput"
+        placeholder="Placeholder text"
+      />
+    </Flex>
+    <Flex marginBottom="spacingS">
       <SectionHeading element="h3">Text input default</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingS">
