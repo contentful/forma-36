@@ -36,10 +36,18 @@
   height: calc(
     1rem * (263 / var(--font-base-default))
   ); /* 263 Height of the container substracted by the border width of the header */
+  border-bottom-left-radius: var(--border-radius-medium);
+  border-bottom-right-radius: var(--border-radius-medium);
+  overflow: hidden;
 }
 
 .AssetCard__wrapper {
   flex: 1 1 auto;
+  overflow: hidden;
+}
+
+.AssetCard__content {
+  overflow: hidden;
 }
 
 .AssetCard__header {
