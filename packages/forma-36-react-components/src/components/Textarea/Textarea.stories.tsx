@@ -61,6 +61,17 @@ export const overview = () => (
       <SectionHeading element="h3">Textarea default</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingS">
+      <Textarea
+        name="someInput"
+        id="someInput"
+        placeholder="Placeholder value"
+        rows={2}
+      />
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <SectionHeading element="h3">Textarea default with value</SectionHeading>
+    </Flex>
+    <Flex marginBottom="spacingS">
       <Textarea name="someInput" id="someInput" value="123456" rows={2} />
     </Flex>
     <Flex marginBottom="spacingS">
