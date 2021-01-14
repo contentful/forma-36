@@ -5,6 +5,8 @@ import React, {
   FocusEvent,
   KeyboardEvent,
   useCallback,
+  useRef,
+  useEffect,
 } from 'react';
 import cn from 'classnames';
 import Icon from '../Icon';
@@ -47,6 +49,8 @@ export const ControlledInput = ({
   indeterminate,
   ...otherProps
 }: ControlledInputPropTypes) => {
+  const inputRef = useRef(null);
+
   const classNames = cn(styles['ControlledInput'], {
     [styles['ControlledInput--disabled']]: disabled,
   });
@@ -70,6 +74,10 @@ export const ControlledInput = ({
     [willBlurOnEsc],
   );
 
+  useEffect(() => {
+    inputRef.current.indeterminate = indeterminate;
+  }, [indeterminate]);
+
   return (
     <div className={wrapperClassname}>
       <input
@@ -78,7 +86,7 @@ export const ControlledInput = ({
         name={name}
         checked={checked}
         type={type}
-        ref={(el) => el && (el.indeterminate = indeterminate)}
+        ref={inputRef}
         data-test-id={testId}
         onChange={(e) => {
           if (onChange) {
