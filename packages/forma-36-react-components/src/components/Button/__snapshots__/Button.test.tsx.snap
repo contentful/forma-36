@@ -145,6 +145,11 @@ exports[`renders the component in loading state 1`] = `
     class="TabFocusTrap Button__inner-wrapper"
     tabindex="-1"
   >
+    <span
+      class="Button__label"
+    >
+      Embed entry
+    </span>
     <svg
       class="Spinner Button__spinner Spinner--default Spinner--white"
       data-test-id="cf-ui-spinner"
@@ -198,11 +203,6 @@ exports[`renders the component in loading state 1`] = `
         </g>
       </g>
     </svg>
-    <span
-      class="Button__label"
-    >
-      Embed entry
-    </span>
   </span>
 </button>
 `;
