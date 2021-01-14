@@ -108,6 +108,7 @@ export const Button = ({
             color={iconColor}
           />
         )}
+        {children && <span className={styles.Button__label}>{children}</span>}
         <CSSTransition
           in={loading}
           timeout={1000}
@@ -132,7 +133,6 @@ export const Button = ({
             }
           />
         </CSSTransition>
-        {children && <span className={styles.Button__label}>{children}</span>}
         {indicateDropdown && (
           <Icon
             className={styles['Button__dropdown-icon']}
