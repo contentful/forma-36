@@ -1,4 +1,5 @@
 import React, {
+  HTMLProps,
   EventHandler,
   ChangeEvent,
   FocusEvent,
@@ -10,7 +11,7 @@ import Icon from '../Icon';
 
 import styles from './ControlledInput.css';
 
-export interface ControlledInputPropTypes {
+export interface ControlledInputPropTypes extends HTMLProps<HTMLInputElement> {
   id?: string;
   required?: boolean;
   labelText: string;
@@ -25,6 +26,7 @@ export interface ControlledInputPropTypes {
   className?: string;
   testId?: string;
   willBlurOnEsc?: boolean;
+  indeterminate?: boolean;
 }
 
 export const ControlledInput = ({
@@ -42,6 +44,7 @@ export const ControlledInput = ({
   type = 'checkbox',
   value,
   willBlurOnEsc = true,
+  indeterminate,
   ...otherProps
 }: ControlledInputPropTypes) => {
   const classNames = cn(styles['ControlledInput'], {
@@ -75,6 +78,7 @@ export const ControlledInput = ({
         name={name}
         checked={checked}
         type={type}
+        ref={(el) => el && (el.indeterminate = indeterminate)}
         data-test-id={testId}
         onChange={(e) => {
           if (onChange) {
@@ -110,7 +114,7 @@ export const ControlledInput = ({
           htmlFor={id}
         >
           <Icon
-            icon="Done"
+            icon={indeterminate ? 'Minus' : 'Done'}
             color={disabled ? 'secondary' : 'white'}
             size="medium"
           />

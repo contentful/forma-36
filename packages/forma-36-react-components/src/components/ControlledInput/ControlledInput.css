@@ -105,7 +105,8 @@
       }
     }
 
-    &:checked {
+    &:checked,
+    &:indeterminate {
       & + .Checkbox__ghost {
         border-color: var(--color-blue-mid);
         background: var(--color-blue-mid);

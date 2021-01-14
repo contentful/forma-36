@@ -92,6 +92,7 @@ export { default as LooksTwo } from './LooksTwo';
 export { default as LooksTwoTrimmed } from './LooksTwoTrimmed';
 export { default as Menu } from './Menu';
 export { default as MenuTrimmed } from './MenuTrimmed';
+export { default as Minus } from './Minus';
 export { default as MoreHorizontal } from './MoreHorizontal';
 export { default as MoreHorizontalTrimmed } from './MoreHorizontalTrimmed';
 export { default as MoreVertical } from './MoreVertical';
