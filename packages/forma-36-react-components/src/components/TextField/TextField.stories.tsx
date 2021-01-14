@@ -39,7 +39,7 @@ Basic.args = {
 };
 
 export const WithTextarea = (args: TextFieldProps) => (
-  <TextField className={text('className', '')} textarea {...args} />
+  <TextField textarea {...args} />
 );
 
 WithTextarea.args = {
