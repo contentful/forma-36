@@ -124,7 +124,7 @@ export const Overview = () => (
           </TableRow>
         </TableHead>
         <TableBody>
-          <TableRow>
+          <TableRow selected>
             <TableCell>Jane Roe</TableCell>
             <TableCell>jane@roe.com</TableCell>
             <TableCell>CEO</TableCell>
@@ -135,6 +135,12 @@ export const Overview = () => (
             <TableCell>john@doe.com</TableCell>
             <TableCell>CTO</TableCell>
             <TableCell>July 27, 2019</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Bill Oh</TableCell>
+            <TableCell>bill@oh.com</TableCell>
+            <TableCell>CFO</TableCell>
+            <TableCell>January 27, 2021</TableCell>
           </TableRow>
         </TableBody>
       </Table>
@@ -155,7 +161,7 @@ export const Overview = () => (
           </TableRow>
         </TableHead>
         <TableBody>
-          <TableRow>
+          <TableRow selected>
             <TableCell>Jane Roe</TableCell>
             <TableCell>jane@roe.com</TableCell>
             <TableCell>CEO</TableCell>
@@ -166,6 +172,12 @@ export const Overview = () => (
             <TableCell>john@doe.com</TableCell>
             <TableCell>CTO</TableCell>
             <TableCell>July 27, 2019</TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell>Bill Oh</TableCell>
+            <TableCell>bill@oh.com</TableCell>
+            <TableCell>CFO</TableCell>
+            <TableCell>January 27, 2021</TableCell>
           </TableRow>
         </TableBody>
       </Table>
