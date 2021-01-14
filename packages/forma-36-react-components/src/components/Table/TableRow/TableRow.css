@@ -6,5 +6,5 @@ tbody .TableRow:hover {
 
 .TableRow--selected {
   background-color: var(--color-blue-lightest);
-  box-shadow: inset -2px 0 0 var(--color-blue-mid);
+  border-right: 2px solid var(--color-blue-mid);
 }

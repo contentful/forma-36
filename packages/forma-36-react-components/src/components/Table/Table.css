@@ -3,6 +3,7 @@
 
 .Table {
   width: 100%;
+  border-collapse: collapse;
 }
 
 .Table--inline {
