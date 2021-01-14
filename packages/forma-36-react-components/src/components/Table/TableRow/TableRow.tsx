@@ -6,6 +6,7 @@ import styles from './TableRow.css';
 
 export interface TableRowProps extends HTMLProps<HTMLTableRowElement> {
   className?: string;
+  selected?: boolean;
   testId?: string;
   children: React.ReactNode;
 }
@@ -13,12 +14,15 @@ export interface TableRowProps extends HTMLProps<HTMLTableRowElement> {
 export const TableRow = ({
   className,
   children,
+  selected = false,
   testId = 'cf-ui-table-row',
   ...otherProps
 }: TableRowProps) => {
   return (
     <tr
-      className={cn(styles['TableRow'], className)}
+      className={cn(styles['TableRow'], className, {
+        [styles['TableRow--selected']]: selected,
+      })}
       data-test-id={testId}
       {...otherProps}
     >
