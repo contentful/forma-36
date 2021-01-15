@@ -185,8 +185,6 @@ export const Tooltip = ({
     );
   }
 
-  // const delay = !hideDelay ? (closeOnMouseLeave ? 0 : 300) : hideDelay;
-
   const tooltip = (
     <span
       id={id}
