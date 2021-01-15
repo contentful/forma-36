@@ -98,7 +98,7 @@ exports[`renders the component as primary 1`] = `
 
 exports[`renders the component disabled 1`] = `
 <button
-  class="Button Button--primary Button--disabled Button--medium"
+  class="Button Button--primary Button--medium Button--disabled"
   data-test-id="cf-ui-button"
   disabled=""
   type="button"
