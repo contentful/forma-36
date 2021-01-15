@@ -13,6 +13,7 @@ import type * as CSS from 'csstype';
 
 import styles from './Tooltip.css';
 import tokens from '@contentful/forma-36-tokens';
+import Portal from '../Portal';
 
 export type TooltipPlace = Placement;
 
@@ -74,6 +75,15 @@ export interface TooltipProps {
    * An ID used for testing purposes applied as a data attribute (data-test-id)
    */
   testId?: string;
+  /**
+   * Boolean to control whether or not to render the tooltip in a React Portal.
+   * Rendering content inside a Portal allows the tooltip to escape the bounds
+   * of its parent while still being positioned correctly. Using a Portal is
+   * necessary if an ancestor of the tooltip hides overflow.
+   *
+   * Defaults to `false`
+   */
+  usePortal?: boolean;
 }
 
 interface ArrowPositionState {
@@ -97,6 +107,7 @@ export const Tooltip = ({
   maxWidth = 360,
   testId = 'cf-ui-tooltip',
   place = 'auto',
+  usePortal = false,
   ...otherProps
 }: TooltipProps) => {
   const [show, setShow] = useState(false);
@@ -176,6 +187,34 @@ export const Tooltip = ({
 
   // const delay = !hideDelay ? (closeOnMouseLeave ? 0 : 300) : hideDelay;
 
+  const tooltip = (
+    <span
+      id={id}
+      ref={popperRef}
+      aria-hidden={show ? 'true' : 'false'}
+      role="tooltip"
+      style={contentStyles}
+      className={cn(styles.Tooltip, className, {
+        [styles['Tooltip--hidden']]: !show,
+      })}
+      data-test-id={testId}
+      onMouseEnter={() => {
+        setIsHoveringContent(true);
+      }}
+      onMouseLeave={() => {
+        setIsHoveringContent(false);
+      }}
+      {...attributes.popper}
+    >
+      {content}
+      <span
+        ref={setArrowRef}
+        style={arrowStyles}
+        className={styles.Tooltip__arrow}
+      />
+    </span>
+  );
+
   return (
     <>
       <ContainerElement
@@ -202,33 +241,7 @@ export const Tooltip = ({
         {children}
       </ContainerElement>
 
-      {show && (
-        <span
-          id={id}
-          ref={popperRef}
-          aria-hidden={show ? 'true' : 'false'}
-          role="tooltip"
-          style={contentStyles}
-          className={cn(styles.Tooltip, className, {
-            [styles['Tooltip--hidden']]: !show,
-          })}
-          data-test-id={testId}
-          onMouseEnter={() => {
-            setIsHoveringContent(true);
-          }}
-          onMouseLeave={() => {
-            setIsHoveringContent(false);
-          }}
-          {...attributes.popper}
-        >
-          {content}
-          <span
-            ref={setArrowRef}
-            style={arrowStyles}
-            className={styles.Tooltip__arrow}
-          />
-        </span>
-      )}
+      {show ? <>{usePortal ? <Portal>{tooltip}</Portal> : tooltip}</> : null}
     </>
   );
 };
