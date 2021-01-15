@@ -62,9 +62,9 @@ export const Button = ({
     styles.Button,
     className,
     styles[`Button--${buttonType}`],
+    styles[`Button--${size}`],
     {
       [styles['Button--disabled']]: disabled,
-      [styles[`Button--${size}`]]: size,
       [styles['Button--full-width']]: isFullWidth,
       [styles['Button--is-active']]: isActive,
       [styles['Button--is-dropdown']]: indicateDropdown,

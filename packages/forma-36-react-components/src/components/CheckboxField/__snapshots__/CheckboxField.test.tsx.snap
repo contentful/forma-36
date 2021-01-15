@@ -33,9 +33,7 @@ exports[`renders the component 1`] = `
       </svg>
     </label>
   </div>
-  <div
-    class="Checkbox__label-wrapper"
-  >
+  <div>
     <label
       class="FormLabel ControlledInputField__label"
       data-test-id="cf-ui-form-label"

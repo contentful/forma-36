@@ -21,9 +21,7 @@ exports[`renders the component 1`] = `
       for="radio-button"
     />
   </div>
-  <div
-    class="Checkbox__label-wrapper"
-  >
+  <div>
     <label
       class="FormLabel ControlledInputField__label"
       data-test-id="cf-ui-form-label"
@@ -56,9 +54,7 @@ exports[`renders the component with an additional class name 1`] = `
       for="radio-button"
     />
   </div>
-  <div
-    class="Checkbox__label-wrapper"
-  >
+  <div>
     <label
       class="FormLabel ControlledInputField__label"
       data-test-id="cf-ui-form-label"
