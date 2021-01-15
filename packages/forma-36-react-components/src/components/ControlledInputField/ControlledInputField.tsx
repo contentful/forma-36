@@ -67,7 +67,7 @@ export const ControlledInputField = ({
         className={styles.ControlledInputField__input}
         {...inputProps}
       />
-      <div className={styles['Checkbox__label-wrapper']}>
+      <div>
         <FormLabel
           className={cn(styles.ControlledInputField__label, {
             [styles['ControlledInputField__label--light']]: labelIsLight,

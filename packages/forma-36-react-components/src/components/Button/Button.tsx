@@ -58,7 +58,6 @@ export const Button = ({
   type = 'button',
   ...otherProps
 }: ButtonProps) => {
-  console.log(styles, size, disabled);
   const classNames = cn(
     styles.Button,
     className,

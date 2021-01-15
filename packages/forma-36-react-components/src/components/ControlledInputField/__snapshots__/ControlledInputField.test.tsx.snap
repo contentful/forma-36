@@ -33,9 +33,7 @@ exports[`renders the component 1`] = `
       </svg>
     </label>
   </div>
-  <div
-    class="Checkbox__label-wrapper"
-  >
+  <div>
     <label
       class="FormLabel ControlledInputField__label"
       data-test-id="cf-ui-form-label"
@@ -81,9 +79,7 @@ exports[`renders the component as checked 1`] = `
       </svg>
     </label>
   </div>
-  <div
-    class="Checkbox__label-wrapper"
-  >
+  <div>
     <label
       class="FormLabel ControlledInputField__label"
       data-test-id="cf-ui-form-label"
@@ -129,9 +125,7 @@ exports[`renders the component as required 1`] = `
       </svg>
     </label>
   </div>
-  <div
-    class="Checkbox__label-wrapper"
-  >
+  <div>
     <label
       class="FormLabel ControlledInputField__label"
       data-test-id="cf-ui-form-label"
@@ -184,9 +178,7 @@ exports[`renders the component in a disabled state 1`] = `
       </svg>
     </label>
   </div>
-  <div
-    class="Checkbox__label-wrapper"
-  >
+  <div>
     <label
       class="FormLabel ControlledInputField__label"
       data-test-id="cf-ui-form-label"
@@ -231,9 +223,7 @@ exports[`renders the component with a help text 1`] = `
       </svg>
     </label>
   </div>
-  <div
-    class="Checkbox__label-wrapper"
-  >
+  <div>
     <label
       class="FormLabel ControlledInputField__label"
       data-test-id="cf-ui-form-label"
@@ -284,9 +274,7 @@ exports[`renders the component with a light label variation 1`] = `
       </svg>
     </label>
   </div>
-  <div
-    class="Checkbox__label-wrapper"
-  >
+  <div>
     <label
       class="FormLabel ControlledInputField__label ControlledInputField__label--light"
       data-test-id="cf-ui-form-label"
@@ -356,9 +344,7 @@ exports[`renders the component with a validation message 1`] = `
       </svg>
     </label>
   </div>
-  <div
-    class="Checkbox__label-wrapper"
-  >
+  <div>
     <label
       class="FormLabel ControlledInputField__label"
       data-test-id="cf-ui-form-label"
@@ -428,9 +414,7 @@ exports[`renders the component with a value 1`] = `
       </svg>
     </label>
   </div>
-  <div
-    class="Checkbox__label-wrapper"
-  >
+  <div>
     <label
       class="FormLabel ControlledInputField__label"
       data-test-id="cf-ui-form-label"
@@ -475,9 +459,7 @@ exports[`renders the component with an additional class name 1`] = `
       </svg>
     </label>
   </div>
-  <div
-    class="Checkbox__label-wrapper"
-  >
+  <div>
     <label
       class="FormLabel ControlledInputField__label"
       data-test-id="cf-ui-form-label"
