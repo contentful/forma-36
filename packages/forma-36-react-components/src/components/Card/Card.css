@@ -3,6 +3,7 @@
 @import 'settings/transitions';
 @import 'settings/borders';
 @import 'settings/shadows';
+@import 'settings/dimensions';
 
 .Card {
   display: block;
@@ -18,11 +19,11 @@
 }
 
 .Card--padding-default {
-  padding: calc(1rem * (14 / var(--font-base-default)));
+  padding: var(--spacing-m);
 }
 
 .Card--padding-large {
-  padding: calc(1rem * (24 / var(--font-base-default)));
+  padding: var(--spacing-l);
 }
 
 .Card--padding-none {
