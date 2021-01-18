@@ -86,11 +86,6 @@ export interface TooltipProps {
   usePortal?: boolean;
 }
 
-interface ArrowPositionState {
-  top: string;
-  left: string;
-}
-
 export const Tooltip = ({
   children,
   className,
@@ -111,9 +106,6 @@ export const Tooltip = ({
   ...otherProps
 }: TooltipProps) => {
   const [show, setShow] = useState(false);
-  const [arrowPosition, setArrowPosition] = useState<ArrowPositionState>(
-    getArrowPosition('bottom'),
-  );
 
   const elementRef = useRef(null);
   const popperRef = useRef(null);
@@ -124,7 +116,13 @@ export const Tooltip = ({
     {
       placement: place,
       modifiers: [
-        { name: 'arrow', options: { element: arrowRef } },
+        {
+          name: 'arrow',
+          options: {
+            element: arrowRef,
+            padding: parseFloat(tokens.borderRadiusSmall),
+          },
+        },
         {
           name: 'offset',
           options: {
@@ -142,15 +140,6 @@ export const Tooltip = ({
     }
   }, [content, forceUpdate]);
 
-  useEffect(() => {
-    if (attributes.popper) {
-      const newPosition = getArrowPosition(
-        attributes.popper['data-popper-placement'],
-      );
-      setArrowPosition(newPosition);
-    }
-  }, [attributes.popper]);
-
   const [isHoveringTarget, setIsHoveringTarget] = useState(false);
   const [isHoveringContent, setIsHoveringContent] = useState(false);
   useEffect(() => {
@@ -161,12 +150,6 @@ export const Tooltip = ({
     if (isVisible) setShow(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  const arrowStyles = {
-    ...popperStyles.arrow,
-    ...arrowPosition,
-    transform: 'rotate(45deg)',
-  };
 
   const contentMaxWidth =
     typeof maxWidth === 'string' ? maxWidth : `${maxWidth}px`;
@@ -185,18 +168,13 @@ export const Tooltip = ({
     );
   }
 
-  // const delay = !hideDelay ? (closeOnMouseLeave ? 0 : 300) : hideDelay;
-
   const tooltip = (
     <span
       id={id}
       ref={popperRef}
-      aria-hidden={show ? 'true' : 'false'}
       role="tooltip"
       style={contentStyles}
-      className={cn(styles.Tooltip, className, {
-        [styles['Tooltip--hidden']]: !show,
-      })}
+      className={cn(styles.Tooltip, className)}
       data-test-id={testId}
       onMouseEnter={() => {
         setIsHoveringContent(true);
@@ -206,11 +184,14 @@ export const Tooltip = ({
       }}
       {...attributes.popper}
     >
-      {content}
+      <span>{content}</span>
       <span
+        className={styles['Tooltip__arrow']}
+        data-placement={
+          attributes.popper && attributes.popper['data-popper-placement']
+        }
         ref={setArrowRef}
-        style={arrowStyles}
-        className={styles.Tooltip__arrow}
+        style={popperStyles.arrow}
       />
     </span>
   );
@@ -245,41 +226,5 @@ export const Tooltip = ({
     </>
   );
 };
-
-function getArrowPosition(popperPlacement: string) {
-  const centered = 'calc(50% - 5px)';
-  const oppositeToThisSide = 'calc(100% - 5px)';
-  const atThisSide = '-5px';
-  const atStart = '10px';
-  const atEnd = 'calc(100% - 20px)';
-
-  // the arrow is 10x10, that's why we need the -5px to correct its center
-  switch (popperPlacement) {
-    case 'top':
-      return { top: oppositeToThisSide, left: centered }; // arrow will be V
-    case 'top-start':
-      return { top: oppositeToThisSide, left: atStart };
-    case 'top-end':
-      return { top: oppositeToThisSide, left: atEnd };
-    case 'right':
-      return { top: centered, left: atThisSide }; // arrow will be <
-    case 'right-start':
-      return { top: atStart, left: atThisSide };
-    case 'right-end':
-      return { top: atEnd, left: atThisSide };
-    case 'left':
-      return { top: centered, left: oppositeToThisSide }; // arrow will be >
-    case 'left-start':
-      return { top: atStart, left: oppositeToThisSide };
-    case 'left-end':
-      return { top: atEnd, left: oppositeToThisSide };
-    case 'bottom-start':
-      return { top: atThisSide, left: atStart }; // arrow will be ^
-    case 'bottom-end':
-      return { top: atThisSide, left: atEnd };
-    default:
-      return { top: atThisSide, left: centered };
-  }
-}
 
 export default Tooltip;
