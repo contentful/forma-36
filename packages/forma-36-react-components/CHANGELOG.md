@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.74.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.74.0...@contentful/forma-36-react-components@3.74.1) (2021-01-15)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+# [3.74.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.73.12...@contentful/forma-36-react-components@3.74.0) (2021-01-15)
+
+
+### Features
+
+* **tooltip:** implement usePortal prop ([#794](https://github.com/contentful/forma-36/issues/794)) ([f927229](https://github.com/contentful/forma-36/commit/f927229ddca809c2bdd9485e37cdc7d179e593c1))
+
+
+
+
+
 ## [3.73.12](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.73.11...@contentful/forma-36-react-components@3.73.12) (2021-01-08)
 
 
