@@ -113,14 +113,12 @@ export function AssetCard({
             <Icon
               icon={statusIcon as IconType}
               color="muted"
-              className="f36-margin-right--xs"
+              className={styles['AssetCard__icon']}
             />
           ) : (
             statusIcon
           )}
-          <Tag className={styles['AssetCard__status']} tagType={type}>
-            {label}
-          </Tag>
+          <Tag tagType={type}>{label}</Tag>
         </>
       );
     },

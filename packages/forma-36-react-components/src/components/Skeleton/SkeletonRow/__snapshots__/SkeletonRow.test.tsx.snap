@@ -4,7 +4,7 @@ exports[`renders the component 1`] = `
 <table
   cellpadding="0"
   cellspacing="0"
-  class="Table"
+  class="Table Table--inline"
   data-test-id="cf-ui-table"
 >
   <tbody
@@ -448,7 +448,7 @@ exports[`renders the component with 10 cells 1`] = `
 <table
   cellpadding="0"
   cellspacing="0"
-  class="Table"
+  class="Table Table--inline"
   data-test-id="cf-ui-table"
 >
   <tbody
@@ -1317,7 +1317,7 @@ exports[`renders the component with 10 rows 1`] = `
 <table
   cellpadding="0"
   cellspacing="0"
-  class="Table"
+  class="Table Table--inline"
   data-test-id="cf-ui-table"
 >
   <tbody

@@ -42,7 +42,7 @@
 }
 
 .Icon--secondary {
-  fill: var(--color-text-mid);
+  fill: var(--color-contrast-mid);
 }
 
 .Icon--muted {

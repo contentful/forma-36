@@ -42,108 +42,55 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @contentful/forma-36-react-timepicker
 
-
-
-
-
 ## [0.4.1-alpha.151](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-timepicker@0.4.1-alpha.150...@contentful/forma-36-react-timepicker@0.4.1-alpha.151) (2021-01-08)
 
 **Note:** Version bump only for package @contentful/forma-36-react-timepicker
-
-
-
-
 
 ## [0.4.1-alpha.150](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-timepicker@0.4.1-alpha.149...@contentful/forma-36-react-timepicker@0.4.1-alpha.150) (2021-01-08)
 
 **Note:** Version bump only for package @contentful/forma-36-react-timepicker
 
-
-
-
-
 ## [0.4.1-alpha.149](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-timepicker@0.4.1-alpha.148...@contentful/forma-36-react-timepicker@0.4.1-alpha.149) (2021-01-07)
-
 
 ### Bug Fixes
 
-* fallback to emotion@10 in timepicker and datepicker ([#752](https://github.com/contentful/forma-36/issues/752)) ([208c24e](https://github.com/contentful/forma-36/commit/208c24e4589d16663d2e5cb1d90c6980f116ef04))
-
-
-
-
+- fallback to emotion@10 in timepicker and datepicker ([#752](https://github.com/contentful/forma-36/issues/752)) ([208c24e](https://github.com/contentful/forma-36/commit/208c24e4589d16663d2e5cb1d90c6980f116ef04))
 
 ## [0.4.1-alpha.148](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-timepicker@0.4.1-alpha.147...@contentful/forma-36-react-timepicker@0.4.1-alpha.148) (2021-01-07)
 
 **Note:** Version bump only for package @contentful/forma-36-react-timepicker
 
-
-
-
-
 ## [0.4.1-alpha.147](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-timepicker@0.4.1-alpha.146...@contentful/forma-36-react-timepicker@0.4.1-alpha.147) (2021-01-07)
 
 **Note:** Version bump only for package @contentful/forma-36-react-timepicker
-
-
-
-
 
 ## [0.4.1-alpha.146](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-timepicker@0.4.1-alpha.145...@contentful/forma-36-react-timepicker@0.4.1-alpha.146) (2021-01-07)
 
 **Note:** Version bump only for package @contentful/forma-36-react-timepicker
 
-
-
-
-
 ## [0.4.1-alpha.145](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-timepicker@0.4.1-alpha.144...@contentful/forma-36-react-timepicker@0.4.1-alpha.145) (2021-01-06)
 
 **Note:** Version bump only for package @contentful/forma-36-react-timepicker
-
-
-
-
 
 ## [0.4.1-alpha.144](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-timepicker@0.4.1-alpha.143...@contentful/forma-36-react-timepicker@0.4.1-alpha.144) (2021-01-06)
 
 **Note:** Version bump only for package @contentful/forma-36-react-timepicker
 
-
-
-
-
 ## [0.4.1-alpha.143](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-timepicker@0.4.1-alpha.139...@contentful/forma-36-react-timepicker@0.4.1-alpha.143) (2021-01-06)
 
 **Note:** Version bump only for package @contentful/forma-36-react-timepicker
-
-
-
-
 
 ## [0.4.1-alpha.142](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-timepicker@0.4.1-alpha.141...@contentful/forma-36-react-timepicker@0.4.1-alpha.142) (2021-01-05)
 
 **Note:** Version bump only for package @contentful/forma-36-react-timepicker
 
-
-
-
-
 ## [0.4.1-alpha.141](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-timepicker@0.4.1-alpha.140...@contentful/forma-36-react-timepicker@0.4.1-alpha.141) (2021-01-05)
 
 **Note:** Version bump only for package @contentful/forma-36-react-timepicker
 
-
-
-
-
 ## [0.4.1-alpha.140](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-timepicker@0.4.1-alpha.139...@contentful/forma-36-react-timepicker@0.4.1-alpha.140) (2021-01-04)
 
 **Note:** Version bump only for package @contentful/forma-36-react-timepicker
-
-
-
-
 
 ## [0.4.1-alpha.139](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-timepicker@0.4.1-alpha.138...@contentful/forma-36-react-timepicker@0.4.1-alpha.139) (2021-01-04)
 

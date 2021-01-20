@@ -21,7 +21,7 @@ export function ValidationMessage({
   return (
     <div {...otherProps} className={classNames} data-test-id={testId}>
       <Icon
-        icon="ErrorCircle"
+        icon="ErrorCircleOutline"
         className={styles['ValidationMessage__icon']}
         color="negative"
       />

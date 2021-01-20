@@ -1,51 +1,102 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
-import { text, boolean } from '@storybook/addon-knobs';
 
-import Switch from './Switch';
+import Switch, { SwitchProps } from './Switch';
 import SectionHeading from '../Typography/SectionHeading';
 import Flex from '../Flex/Flex';
 
-function DefaultStory() {
+export default {
+  title: 'Components/Switch',
+  component: Switch,
+  parameters: {
+    propTypes: [Switch['__docgenInfo']],
+  },
+  argTypes: {
+    className: { control: { disable: true } },
+    testId: { control: { disable: true } },
+  },
+};
+
+export const Basic = (args: SwitchProps) => {
   const [isActive, setActive] = useState(false);
 
   return (
     <Switch
+      {...args}
       id="testSwitch"
-      className={text('className', '')}
-      isChecked={boolean('isChecked', isActive)}
-      isDisabled={boolean('isDisabled', false)}
-      labelText={text('labelText', 'My label text')}
+      isChecked={isActive}
       onToggle={setActive}
     />
   );
-}
+};
 
-storiesOf('Components/Switch', module)
-  .addParameters({
-    propTypes: Switch['__docgenInfo'],
-    component: Switch,
-  })
-  .add('default', () => <DefaultStory />)
-  .add('overview', () => (
-    <>
-      <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">Switch default</SectionHeading>
-      </Flex>
-      <Flex marginBottom="spacingS">
-        <Switch id="testSwitch" labelText="My label text" />
-      </Flex>
-      <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">Switch checked</SectionHeading>
-      </Flex>
-      <Flex marginBottom="spacingS">
-        <Switch id="testSwitch" isChecked labelText="My label text" />
-      </Flex>
-      <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">Switch disabled</SectionHeading>
-      </Flex>
-      <Flex marginBottom="spacingS">
-        <Switch id="testSwitch" isDisabled labelText="My label text" />
-      </Flex>
-    </>
-  ));
+Basic.args = {
+  labelText: 'My label text',
+  size: 'default',
+  isDisabled: false,
+};
+
+export const Overview = () => (
+  <>
+    <Flex marginBottom="spacingS">
+      <SectionHeading element="h3">Switch default</SectionHeading>
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <Switch id="testSwitch" labelText="My label text" />
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <SectionHeading element="h3">Switch checked</SectionHeading>
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <Switch id="testSwitch" isChecked labelText="My label text" />
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <SectionHeading element="h3">Switch disabled</SectionHeading>
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <Switch id="testSwitch" isDisabled labelText="My label text" />
+    </Flex>
+
+    <Flex marginBottom="spacingS">
+      <SectionHeading element="h3">Switch small</SectionHeading>
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <Switch size="small" id="testSwitch" labelText="My label text" />
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <SectionHeading element="h3">Switch small checked</SectionHeading>
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <Switch
+        size="small"
+        id="testSwitch"
+        isChecked
+        labelText="My label text"
+      />
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <SectionHeading element="h3">
+        Switch small checked disabled
+      </SectionHeading>
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <Switch
+        size="small"
+        id="testSwitch"
+        isDisabled
+        isChecked
+        labelText="My label text"
+      />
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <SectionHeading element="h3">Switch small disabled</SectionHeading>
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <Switch
+        size="small"
+        id="testSwitch"
+        isDisabled
+        labelText="My label text"
+      />
+    </Flex>
+  </>
+);

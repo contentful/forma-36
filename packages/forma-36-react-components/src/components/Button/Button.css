@@ -5,10 +5,6 @@
 @import 'settings/borders';
 @import 'settings/z-index';
 
-.Button {
-  composes: focus-border--default from './../../styles/settings/a11y.css';
-}
-
 .Button,
 .Button:link {
   box-sizing: border-box;
@@ -20,18 +16,24 @@
   border-radius: var(--border-radius-medium);
   font-family: var(--font-stack-primary);
   font-size: calc(1rem * (14 / var(--font-base-default)));
+  font-weight: 500;
   overflow: hidden;
   background-size: 100% 200%;
-  transition: background var(--transition-duration-default)
+  transition: background var(--transition-duration-short)
       var(--transition-easing-default),
     opacity var(--transition-duration-default) var(--transition-easing-default),
     border-color var(--transition-duration-default)
       var(--transition-easing-default);
   vertical-align: middle;
   text-decoration: none;
+  box-shadow: var(--box-shadow-positive);
 
   &:hover:not(.Button--disabled) {
     cursor: pointer;
+  }
+
+  &:focus:not(.Button--disabled) {
+    outline: none;
   }
 }
 
@@ -39,38 +41,51 @@
   min-width: calc(1rem * (18 / var(--font-base-default)));
 }
 
+.Button__dropdown-icon {
+  margin-left: calc(1rem * (4 / var(--font-base-default)));
+}
+
 .Button--full-width {
   width: 100%;
 }
 
 .Button--muted {
-  background-color: var(--color-element-light);
+  background-color: var(--color-white);
+  border-color: var(--color-element-dark);
+  box-shadow: 0px 1px 0px rgb(25, 37, 50, 0.08);
 
-  &:hover:not(.Button--disabled),
-  &:focus:not(.Button--disabled) {
-    background-color: var(--color-element-mid);
+  &:hover:not(.Button--disabled) {
+    background-color: var(--color-element-lightest);
   }
 
-  &:active:not(.Button--disabled),
-  &.Button--is-active:not(.Button--disabled) {
+  &.Button--is-active:not(.Button--disabled),
+  &:active:not(.Button--disabled) {
     transition: none;
-    background-color: var(--color-element-dark);
+    background-color: var(--color-element-light);
+  }
+
+  &:focus:not(.Button--disabled) {
+    box-shadow: var(--glow-muted);
   }
 }
 
 .Button--naked {
   background-color: transparent;
   border: none;
+  box-shadow: none;
 
-  &:hover:not(.Button--disabled),
-  &:focus:not(.Button--disabled) {
+  &:hover:not(.Button--disabled) {
+    background-color: var(--color-element-lightest);
+  }
+
+  &.Button--is-active:not(.Button--disabled),
+  &:active:not(.Button--disabled) {
+    transition: none;
     background-color: var(--color-element-light);
   }
 
-  &:active:not(.Button--disabled),
-  &.Button--is-active:not(.Button--disabled) {
-    transition: none;
-    background-color: var(--color-element-mid);
+  &:focus:not(.Button--disabled) {
+    box-shadow: var(--glow-muted);
   }
 
   &.Button:link {
@@ -82,28 +97,25 @@
   border-color: var(--color-blue-mid);
   background-color: var(--color-blue-mid);
 
-  &:hover:not(.Button--disabled),
-  &:focus:not(.Button--disabled) {
-    background-position: 0 100%;
+  &:hover:not(.Button--disabled) {
     border-color: var(--color-blue-base);
     background-color: var(--color-blue-base);
   }
 
-  &:focus:not(.Button--disabled) {
-    border-color: var(--color-blue-base);
-    background-color: var(--color-blue-base);
-  }
-
-  &:active:not(.Button--disabled),
-  &.Button--is-active:not(.Button--disabled) {
+  &.Button--is-active:not(.Button--disabled),
+  &:active:not(.Button--disabled) {
     transition: none;
-    background-image: none;
+    border-color: var(--color-blue-dark);
+    background-color: var(--color-blue-dark);
+  }
+
+  &:focus:not(.Button--disabled) {
     border-color: var(--color-blue-base);
-    background-color: var(--color-blue-base);
+    box-shadow: var(--glow-primary);
   }
 
   & .Button__label {
-    color: var(--color-element-lightest);
+    color: var(--color-white);
   }
 
   &.Button:link {
@@ -116,28 +128,25 @@
   background-color: var(--color-green-mid);
   background-size: 100% 200%;
 
-  &:hover:not(.Button--disabled),
-  &:focus:not(.Button--disabled) {
-    background-position: 0 100%;
+  &:hover:not(.Button--disabled) {
     border-color: var(--color-green-base);
     background-color: var(--color-green-base);
   }
 
-  &:focus:not(.Button--disabled) {
-    border-color: var(--color-green-base);
-    background-color: var(--color-green-base);
-  }
-
-  &:active:not(.Button--disabled),
-  &.Button--is-active:not(.Button--disabled) {
+  &.Button--is-active:not(.Button--disabled),
+  &:active:not(.Button--disabled) {
     transition: none;
-    background-image: none;
+    border-color: var(--color-green-dark);
+    background-color: var(--color-green-dark);
+  }
+
+  &:focus:not(.Button--disabled) {
     border-color: var(--color-green-base);
-    background-color: var(--color-green-base);
+    box-shadow: var(--glow-positive);
   }
 
   & .Button__label {
-    color: var(--color-element-lightest);
+    color: var(--color-white);
   }
 
   &.Button:link {
@@ -150,28 +159,27 @@
   background-color: var(--color-red-mid);
   background-size: 100% 200%;
 
-  &:hover:not(.Button--disabled),
-  &:focus:not(.Button--disabled) {
+  &:hover:not(.Button--disabled) {
     background-position: 0 100%;
     border-color: var(--color-red-base);
     background-color: var(--color-red-base);
   }
 
-  &:focus:not(.Button--disabled) {
+  &.Button--is-active:not(.Button--disabled),
+  &:active:not(.Button--disabled) {
+    transition: none;
+    background-position: 0 100%;
     border-color: var(--color-red-dark);
     background-color: var(--color-red-dark);
   }
 
-  &:active:not(.Button--disabled),
-  &.Button--is-active:not(.Button--disabled) {
-    transition: none;
-    background-image: none;
+  &:focus:not(.Button--disabled) {
     border-color: var(--color-red-dark);
-    background-color: var(--color-red-dark);
+    box-shadow: var(--glow-negative);
   }
 
   & .Button__label {
-    color: var(--color-element-lightest);
+    color: var(--color-white);
   }
 
   &.Button:link {
@@ -184,28 +192,23 @@
   background-color: var(--color-orange-mid);
   background-size: 100% 200%;
 
-  &:hover:not(.Button--disabled),
-  &:focus:not(.Button--disabled) {
+  &:hover:not(.Button--disabled) {
     background-position: 0 100%;
     border-color: var(--color-orange-base);
     background-color: var(--color-orange-base);
   }
 
+  &.Button--is-active:not(.Button--disabled),
+  &:active:not(.Button--disabled) {
+    transition: none;
+    background-position: 0 100%;
+    border-color: var(--color-orange-dark);
+    background-color: var(--color-orange-dark);
+  }
+
   &:focus:not(.Button--disabled) {
     border-color: var(--color-orange-base);
-    background-color: var(--color-orange-base);
-  }
-
-  &:active:not(.Button--disabled),
-  &.Button--is-active:not(.Button--disabled) {
-    transition: none;
-    background-image: none;
-    border-color: var(--color-orange-base);
-    background-color: var(--color-orange-base);
-  }
-
-  &.Button__label {
-    color: var(--color-text-dark);
+    box-shadow: var(--glow-warning);
   }
 
   &.Button:link {
@@ -224,14 +227,21 @@
   display: flex;
   height: 100%;
   z-index: var(--z-index-default);
-  padding: 0 calc(1rem * (14 / var(--font-base-default)));
+  padding: 0 calc(1rem * (16 / var(--font-base-default)));
   align-items: center;
   justify-content: center;
 }
 
+.Button--is-dropdown {
+  & .Button__inner-wrapper {
+    padding-right: calc(1rem * (8 / var(--font-base-default)));
+  }
+}
+
 .Button__label {
   margin: 0 calc(1rem * (4 / var(--font-base-default)));
-  color: var(--color-text-mid);
+  font-size: calc(1rem * (14 / var(--font-base-default)));
+  color: var(--color-contrast-mid);
   line-height: 2;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -240,22 +250,17 @@
 
 .Button--small,
 .Button--small:link {
-  height: calc(1rem * (30 / var(--font-base-default)));
+  height: calc(1rem * (32 / var(--font-base-default)));
 
   & .Button__inner-wrapper {
-    padding: 0 calc(1rem * (10 / var(--font-base-default)));
-  }
-
-  & .Button__label {
-    font-size: calc(1rem * (14 / var(--font-base-default)));
+    padding: 0 calc(1rem * (14 / var(--font-base-default)));
   }
 }
 
 .Button--large {
   height: calc(1rem * (48 / var(--font-base-default)));
+
   & .Button__label {
-    line-height: 1;
-    margin: 0.25rem;
     font-size: 1.15rem;
   }
 }

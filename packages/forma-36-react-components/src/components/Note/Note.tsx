@@ -10,7 +10,7 @@ import IconButton from '../IconButton';
 const Icons = {
   primary: iconName.InfoCircle,
   positive: iconName.CheckCircle,
-  negative: iconName.Warning,
+  negative: iconName.ErrorCircle,
   warning: iconName.Warning,
 };
 
@@ -44,10 +44,7 @@ export function Note({
     <div
       style={style}
       className={classNames(styles.Note, className, {
-        [styles['Note--primary']]: noteType === 'primary',
-        [styles['Note--positive']]: noteType === 'positive',
-        [styles['Note--negative']]: noteType === 'negative',
-        [styles['Note--warning']]: noteType === 'warning',
+        [styles[`Note--${noteType}`]]: noteType,
         [styles['Note--hasCloseButton']]: hasCloseButton,
       })}
       data-test-id={testId}
@@ -57,7 +54,7 @@ export function Note({
       </div>
       <div className={styles.Note__info}>
         {title && <div className={styles.Note__title}>{title}</div>}
-        <div>{children}</div>
+        <div className={styles.Note__content}>{children}</div>
       </div>
       {hasCloseButton && (
         <IconButton

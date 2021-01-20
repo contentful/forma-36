@@ -8,10 +8,12 @@ export interface ModalControlsProps {
   className?: string;
   children: React.ReactNode;
   style?: React.CSSProperties;
+  position?: 'left' | 'right';
 }
 
 export function ModalControls({
   testId = 'cf-ui-modal-controls',
+  position = 'left',
   className,
   children,
   ...rest
@@ -19,7 +21,13 @@ export function ModalControls({
   return (
     <div
       {...rest}
-      className={cn(styles.ModalControls, className)}
+      className={cn(
+        styles.ModalControls,
+        {
+          [styles['ModalControls--right']]: position === 'right',
+        },
+        className,
+      )}
       data-test-id={testId}
     >
       {children}

@@ -1,58 +1,73 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { text, select } from '@storybook/addon-knobs';
 
-import Tag, { tagType } from './Tag';
+import Tag, { TagProps } from './Tag';
 import SectionHeading from '../Typography/SectionHeading';
 import Flex from '../Flex/Flex';
 
-storiesOf('Components/Tag', module)
-  .addParameters({
-    propTypes: Tag['__docgenInfo'],
-    component: Tag,
-  })
-  .add('default', () => (
-    <Tag
-      tagType={select(
-        'tagType',
-        {
-          'Primary (default)': 'primary',
-          Positive: 'positive',
-          Negative: 'negative',
-          Warning: 'warning',
-          Secondary: 'secondary',
-          Muted: 'muted',
-        },
-        'primary',
-      )}
-      entityStatusType={select(
-        'Entity Status Type',
-        {
-          Published: 'published',
-          Archived: 'archived',
-          draft: 'draft',
-          changed: 'changed',
-          deleted: 'deleted',
-          'None (default)': undefined,
-        },
-        undefined,
-      )}
-      className={text('className', '')}
-    >
-      {text('Children', 'Published')}
-    </Tag>
-  ))
-  .add('overview', () => (
-    <>
-      <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">Tag types overview</SectionHeading>
+export default {
+  title: 'Components/Tag',
+  component: Tag,
+  parameters: {
+    propTypes: [Tag['__docgenInfo']],
+  },
+  argTypes: {
+    className: { control: { disable: true } },
+    testId: { control: { disable: true } },
+  },
+};
+
+interface Args extends TagProps {
+  tagText?: string;
+}
+
+export const basic = ({ tagText, ...args }: Args) => (
+  <Tag {...args}>{tagText}</Tag>
+);
+
+basic.args = {
+  tagType: 'primary',
+  tagText: 'Published',
+};
+
+export const overview = () => (
+  <>
+    <Flex marginBottom="spacingS">
+      <SectionHeading element="h3">Tag types overview</SectionHeading>
+    </Flex>
+    <Flex marginBottom="spacingM" alignItems="center">
+      <Flex marginRight="spacingS">
+        <Tag tagType="primary">primary</Tag>
       </Flex>
-      {tagType.map((type, idx) => (
-        <Flex marginBottom="spacingM" alignItems="center" key={idx}>
-          <Flex marginRight="spacingS">
-            <Tag tagType={type as any}>{type}</Tag>
-          </Flex>
-        </Flex>
-      ))}
-    </>
-  ));
+    </Flex>
+    <Flex marginBottom="spacingM" alignItems="center">
+      <Flex marginRight="spacingS">
+        <Tag tagType="primary-filled">primary filled</Tag>
+      </Flex>
+    </Flex>
+    <Flex marginBottom="spacingM" alignItems="center">
+      <Flex marginRight="spacingS">
+        <Tag tagType="positive">positive</Tag>
+      </Flex>
+    </Flex>
+    <Flex marginBottom="spacingM" alignItems="center">
+      <Flex marginRight="spacingS">
+        <Tag tagType="negative">negative</Tag>
+      </Flex>
+    </Flex>
+    <Flex marginBottom="spacingM" alignItems="center">
+      <Flex marginRight="spacingS">
+        <Tag tagType="warning">warning</Tag>
+      </Flex>
+    </Flex>
+    <Flex marginBottom="spacingM" alignItems="center">
+      <Flex marginRight="spacingS">
+        <Tag tagType="muted">muted</Tag>
+      </Flex>
+    </Flex>
+    <Flex marginBottom="spacingM" alignItems="center">
+      <Flex marginRight="spacingS">
+        <Tag tagType="secondary">secondary</Tag>
+      </Flex>
+    </Flex>
+  </>
+);

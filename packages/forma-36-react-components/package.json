@@ -30,6 +30,8 @@
     "react-dom": "^16.8.6 || ^17.0.0"
   },
   "dependencies": {
+    "@contentful/forma-36-fcss": "^0.2.14",
+    "@contentful/forma-36-tokens": "^0.9.4",
     "@babel/runtime": "^7.3.4",
     "@popperjs/core": "^2.4.4",
     "classnames": "^2.2.6",
@@ -42,8 +44,6 @@
     "truncate": "^2.0.1"
   },
   "devDependencies": {
-    "@contentful/forma-36-fcss": "^0.2.14",
-    "@contentful/forma-36-tokens": "^0.9.4",
     "@size-limit/preset-big-lib": "^4.5.5",
     "@types/classnames": "2.2.7",
     "@types/react-color": "^3.0.1",

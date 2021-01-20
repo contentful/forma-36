@@ -94,13 +94,6 @@ export const SelectField = ({
       >
         {children}
       </Select>
-      {validationMessage && (
-        <ValidationMessage
-          className={styles['SelectField__validation-message']}
-        >
-          {validationMessage}
-        </ValidationMessage>
-      )}
       {helpText && (
         <div className={styles['SelectField__hints']}>
           {helpText && (
@@ -109,6 +102,13 @@ export const SelectField = ({
             </HelpText>
           )}
         </div>
+      )}
+      {validationMessage && (
+        <ValidationMessage
+          className={styles['SelectField__validation-message']}
+        >
+          {validationMessage}
+        </ValidationMessage>
       )}
     </div>
   );
