@@ -75,7 +75,7 @@ jobs:
           command: yarn build
       - run:
           name: Deploy
-          command: yarn lerna publish --no-private --exact --canary --no-git-tag-version --no-push --preid next-v3-$CIRCLE_BUILD_NUM --dist-tag next-v3 --force-publish --no-changelog --yes
+          command: yarn lerna publish --no-private --conventional-commits --conventional-prerelease=@contentful/forma-36-react-datepicker,@contentful/forma-36-react-timepicker --create-release github --yes
 
 workflows:
   version: 2
@@ -90,7 +90,6 @@ workflows:
             branches:
               only:
                 - master
-                - v3-visual-changes
           requires:
             - lint-and-test
             - chromatic-deployment

@@ -18,7 +18,7 @@
       ]
     },
     "publish": {
-      "allowBranch": ["master", "v3-visual-changes"]
+      "allowBranch": ["master"]
     }
   }
 }
