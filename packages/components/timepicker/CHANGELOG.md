@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0-alpha.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-timepicker@0.5.0-alpha.0...@contentful/forma-36-react-timepicker@0.5.0-alpha.1) (2021-01-21)
+
+
+### Bug Fixes
+
+* **timepicker:** allow clicking on input without closing dropdown ([#800](https://github.com/contentful/forma-36/issues/800)) ([8ff93c3](https://github.com/contentful/forma-36/commit/8ff93c31c120f028f728ddecd6728f674a980625))
+
+
+
+
+
 # [0.5.0-alpha.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-timepicker@0.4.1-alpha.156...@contentful/forma-36-react-timepicker@0.5.0-alpha.0) (2021-01-20)
 
 
