@@ -1,5 +1,6 @@
 import React from 'react';
 import tokens from '@contentful/forma-36-tokens';
+import { Tag, Flex } from '@contentful/forma-36-react-components';
 import { css } from '@emotion/core';
 
 const styles = {
@@ -9,20 +10,9 @@ const styles = {
     padding: ${tokens.spacingXs};
     display: flex;
     justify-content: center;
+    align-items: center;
     font-size: ${tokens.fontSizeM};
     font-weight: ${tokens.fontWeightMedium};
-  `,
-  new: css`
-    background-color: #fff;
-    display: flex;
-    color: ${tokens.colorTextDark};
-    align-items: center;
-    font-weight: ${tokens.fontWeightDemiBold};
-    text-transform: uppercase;
-    border-radius: 2px;
-    padding: 0 ${tokens.spacingS};
-    margin-right: ${tokens.spacingS};
-    font-size: ${tokens.fontSizeS};
   `,
   link: css`
     margin-left: ${tokens.spacingS};
@@ -30,9 +20,12 @@ const styles = {
   `,
 };
 
-const Promo = ({ text, linkText, linkHref }) => (
+const Promo = ({ text, linkText, linkHref, tagText }) => (
   <div css={styles.promo}>
-    <span css={styles.new}>New</span> {text}
+    <Flex marginRight="spacingXs">
+      <Tag tagType="primary">{tagText}</Tag>
+    </Flex>
+    {text}
     {linkHref && (
       <a
         href={linkHref}
