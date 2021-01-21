@@ -274,13 +274,13 @@ export const Timepicker: React.FC<TimepickerProps> = ({
     }
   }, []);
 
-  const handleFocus = useCallback((e) => {
+  const handleFocus = useCallback<FocusEventHandler<HTMLInputElement>>((e) => {
     e.preventDefault();
     e.target.select();
     setTimeSuggestionOpen(true);
   }, []);
 
-  const handleBlur = useCallback(
+  const handleBlur = useCallback<FocusEventHandler<HTMLInputElement>>(
     (e) => {
       const time = getTimeFromUserInputOrDefaultToValue();
       setSelectedTime(time);
@@ -310,6 +310,7 @@ export const Timepicker: React.FC<TimepickerProps> = ({
           dropdownContainerClassName={styles.dropdownContainer}
           // TODO: Fix getContainerRef on Dropdown to accept ref object. F36 4.0 Breaking Change
           getContainerRef={setDropdownContainer}
+          nonClosingRefs={[inputRef]}
           toggleElement={
             <TextInput
               id={inputId}
