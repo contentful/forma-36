@@ -3,9 +3,11 @@ const path = require('path');
 module.exports = {
   siteMetadata: {
     title: 'Forma 36 - The Contentful Design System',
-    promoText: '',
-    promoLink: '',
-    promoLinkText: '',
+    promoText: 'Introducing a visual refresh to Forma 36 components',
+    promoLink:
+      'https://github.com/contentful/forma-36/releases/tag/%40contentful%2Fforma-36-react-components%403.75.0',
+    promoLinkText: 'Release notes',
+    promoTagText: 'New release',
     menuLinks: [
       {
         name: 'Foundation',

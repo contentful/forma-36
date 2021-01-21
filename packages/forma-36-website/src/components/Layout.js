@@ -33,6 +33,7 @@ const Layout = (props) => {
           promoText
           promoLink
           promoLinkText
+          promoTagText
           menuLinks {
             name
             link
@@ -100,6 +101,7 @@ const Layout = (props) => {
           text={data.site.siteMetadata.promoText}
           linkHref={data.site.siteMetadata.promoLink}
           linkText={data.site.siteMetadata.promoLinkText}
+          tagText={data.site.siteMetadata.promoTagText}
         />
       )}
 
