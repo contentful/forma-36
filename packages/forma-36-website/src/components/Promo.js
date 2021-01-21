@@ -1,7 +1,6 @@
 import React from 'react';
 import tokens from '@contentful/forma-36-tokens';
-import { Tag } from '@contentful/forma-36-react-components';
-import { Flex } from '@contentful/forma-36-react-components/dist/alpha';
+import { Tag, Flex } from '@contentful/forma-36-react-components';
 import { css } from '@emotion/core';
 
 const styles = {
