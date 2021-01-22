@@ -17,3 +17,11 @@
 .Table--inline th:last-child {
   border-top-right-radius: var(--border-radius-medium);
 }
+
+.Table--inline tr:last-child td:first-child {
+  border-bottom-left-radius: var(--border-radius-medium);
+}
+
+.Table--inline tr:last-child td:last-child {
+  border-bottom-right-radius: var(--border-radius-medium);
+}
