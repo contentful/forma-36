@@ -24,9 +24,9 @@ export default {
   },
 };
 
-interface Args extends ButtonProps {
+type Args = ButtonProps & {
   label?: string;
-}
+};
 
 export const basic = ({ label, ...args }: Args) => (
   <Button {...args}>{label}</Button>
