@@ -47,6 +47,26 @@ jobs:
           name: Test
           command: yarn test
 
+  e2e-test:
+    docker:
+      - image: cypress/base:14
+    environment:
+      CYPRESS_BASE_URL: http://localhost:9001
+      CYPRESS_RETRIES: 2
+    steps:
+      - checkout
+      - yarn_install
+      - run:
+          command: yarn storybook
+          background: true
+      - run: yarn wait-on -t 60000 http://localhost:9001 && yarn cypress:run
+      - store_test_results:
+          path: cypress/reports
+      - store_artifacts:
+          path: cypress/screenshots
+      - store_artifacts:
+          path: cypress/videos
+
   chromatic-deployment:
     docker:
       - image: circleci/node:14.15.0-browsers
@@ -82,14 +102,17 @@ workflows:
   commit-check:
     jobs:
       - lint-and-test
+      - e2e-test
       - chromatic-deployment:
           requires:
             - lint-and-test
+            - e2e-test
       - release:
           filters:
             branches:
               only:
                 - master
           requires:
+            - e2e-test
             - lint-and-test
             - chromatic-deployment

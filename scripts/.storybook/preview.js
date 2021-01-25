@@ -1,3 +1,4 @@
+import 'cypress-storybook/react';
 import { fontStackPrimary } from '@contentful/forma-36-tokens';
 
 // Setup Decorators

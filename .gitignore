@@ -30,3 +30,6 @@
 .vscode/
 .idea/
 *.log
+
+cypress/videos/
+cypress/screenshots/
