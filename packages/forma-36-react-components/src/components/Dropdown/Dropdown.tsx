@@ -10,7 +10,7 @@ import styles from './Dropdown.css';
 const offsetModifier = {
   name: 'offset',
   options: {
-    offset: [0, 6],
+    offset: [0, 0],
   },
 };
 
