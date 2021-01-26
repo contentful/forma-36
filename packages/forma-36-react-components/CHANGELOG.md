@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.76.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.75.1...@contentful/forma-36-react-components@3.76.0) (2021-01-26)
+
+
+### Features
+
+* handle tag change in the List component ([#809](https://github.com/contentful/forma-36/issues/809)) ([11267d2](https://github.com/contentful/forma-36/commit/11267d2fefdb6abd9ca020cc1c7fc0708da2439b))
+
+
+
+
+
 ## [3.75.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.75.0...@contentful/forma-36-react-components@3.75.1) (2021-01-26)
 
 
