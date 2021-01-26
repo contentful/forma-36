@@ -19,6 +19,28 @@ exports[`renders the button as active 1`] = `
 </button>
 `;
 
+exports[`renders the button as an external link 1`] = `
+<a
+  class="Button Button--primary Button--medium"
+  data-test-id="cf-ui-button"
+  href="/"
+  rel="noreferrer noopener"
+  target="_blank"
+  type="button"
+>
+  <span
+    class="TabFocusTrap Button__inner-wrapper"
+    tabindex="-1"
+  >
+    <span
+      class="Button__label"
+    >
+      Button link
+    </span>
+  </span>
+</a>
+`;
+
 exports[`renders the button as link 1`] = `
 <a
   class="Button Button--primary Button--medium"
