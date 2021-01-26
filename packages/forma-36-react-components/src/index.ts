@@ -41,7 +41,6 @@ export { AssetCard } from './components/Card/AssetCard/AssetCard';
 export { Asset, AssetIcon } from './components/Asset';
 export { Tag } from './components/Tag/Tag';
 export { Heading } from './components/Typography/Heading/Heading';
-export { InViewport } from './components/InViewport/InViewport';
 export { Modal } from './components/Modal/Modal';
 export { ModalConfirm } from './components/Modal/ModalConfirm/ModalConfirm';
 export { FieldGroup } from './components/Form/FieldGroup/FieldGroup';
