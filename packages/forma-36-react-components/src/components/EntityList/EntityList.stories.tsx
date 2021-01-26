@@ -1,49 +1,57 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { text } from '@storybook/addon-knobs';
 
 import EntityList from './EntityList';
 import EntityListItem from './EntityListItem';
 
-storiesOf('Components/EntityList/EntityList', module)
-  .addParameters({
-    propTypes: EntityList['__docgenInfo'],
-    component: EntityList,
-    subcomponents: { EntityListItem },
-  })
-  .add('default', () => (
-    <EntityList className={text('className', '')}>
+import notes from './README.mdx';
+
+export default {
+  title: 'Components/EntityList/EntityList',
+  component: EntityList,
+  parameters: {
+    propTypes: [EntityList['__docgenInfo']],
+    notes,
+  },
+  argTypes: {
+    className: { control: { disable: true } },
+    testId: { control: { disable: true } },
+  },
+};
+
+export const Basic = () => (
+  <EntityList>
+    <EntityListItem
+      title="Entry 1"
+      description="Description"
+      contentType="My content type"
+      status="published"
+    />
+    <EntityListItem
+      title="Entry 2"
+      description="Description"
+      contentType="My content type"
+      status="draft"
+    />
+    <EntityListItem
+      title="Entry 3"
+      description="Description"
+      contentType="My content type"
+      status="archived"
+    />
+  </EntityList>
+);
+
+export const WithRef = () => {
+  const ref = React.createRef<HTMLUListElement>();
+
+  return (
+    <EntityList ref={ref}>
       <EntityListItem
         title="Entry 1"
         description="Description"
         contentType="My content type"
         status="published"
       />
-      <EntityListItem
-        title="Entry 2"
-        description="Description"
-        contentType="My content type"
-        status="published"
-      />
-      <EntityListItem
-        title="Entry 3"
-        description="Description"
-        contentType="My content type"
-        status="published"
-      />
     </EntityList>
-  ))
-  .add('with Ref', () => {
-    const ref = React.createRef<HTMLUListElement>();
-
-    return (
-      <EntityList className={text('className', '')} ref={ref}>
-        <EntityListItem
-          title="Entry 1"
-          description="Description"
-          contentType="My content type"
-          status="published"
-        />
-      </EntityList>
-    );
-  });
+  );
+};
