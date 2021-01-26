@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.77.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.76.0...@contentful/forma-36-react-components@3.77.0) (2021-01-26)
+
+
+### Features
+
+* **button:** add additional optional properties for using Buttons as external links ([#807](https://github.com/contentful/forma-36/issues/807)) ([61771c0](https://github.com/contentful/forma-36/commit/61771c010d83d1bc78328eeb6b2ce70bc150856c))
+
+
+
+
+
 # [3.76.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.75.1...@contentful/forma-36-react-components@3.76.0) (2021-01-26)
 
 
