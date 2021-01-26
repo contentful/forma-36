@@ -3,7 +3,6 @@ import type { RefObject } from 'react';
 import cn from 'classnames';
 
 import { useOnClickOutside } from '../../../utils/useOnClickOutside';
-import { positionType } from '../Dropdown';
 import styles from './DropdownContainer.css';
 import Portal from '../../Portal';
 
@@ -16,7 +15,6 @@ export interface DropdownContainerProps
   isOpen: boolean;
   onClose?: Function;
   openSubmenu?: (value: boolean) => void;
-  position?: positionType;
   submenu?: boolean;
   testId?: string;
   usePortal?: boolean;
@@ -33,7 +31,6 @@ export const DropdownContainer = forwardRef<
     isOpen,
     onClose,
     openSubmenu,
-    // position = 'bottom-left' as positionType,
     style,
     submenu = false,
     testId = 'cf-ui-dropdown-portal',

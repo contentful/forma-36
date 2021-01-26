@@ -7,6 +7,13 @@ import DropdownListItem from './DropdownListItem/DropdownListItem';
 import DropdownContainer from './DropdownContainer';
 import styles from './Dropdown.css';
 
+const offsetModifier = {
+  name: 'offset',
+  options: {
+    offset: [0, 0],
+  },
+};
+
 /**
  * Popper.js modifier to give the popper element the full width of the reference
  */
@@ -163,6 +170,7 @@ export function Dropdown({
     {
       placement,
       modifiers: [
+        offsetModifier,
         isFullWidth ? sameWidth : {},
         isAutoalignmentEnabled !== undefined
           ? {
@@ -252,7 +260,6 @@ export function Dropdown({
           isOpen={isOpen}
           onClose={onClose}
           openSubmenu={openSubmenu}
-          position={position}
           ref={setPopperElement}
           style={popperStyles.popper}
           submenu
@@ -284,7 +291,6 @@ export function Dropdown({
           isOpen={isOpen}
           onClose={onClose}
           openSubmenu={openSubmenu}
-          position={position}
           ref={setPopperElement}
           style={popperStyles.popper}
           submenu={false}

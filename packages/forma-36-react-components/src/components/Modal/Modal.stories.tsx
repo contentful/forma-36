@@ -124,12 +124,12 @@ export const ControllerModal: Story<ModalProps> = (props) => {
           <React.Fragment>
             <Modal.Header title={title} onClose={onClose} />
             <Modal.Content>Hello from controlled modal window</Modal.Content>
-            <Modal.Controls>
-              <Button onClick={onClose} buttonType="positive">
-                Confirm
-              </Button>
+            <Modal.Controls position="right">
               <Button onClick={onClose} buttonType="muted">
                 Close
+              </Button>
+              <Button onClick={onClose} buttonType="positive">
+                Confirm
               </Button>
             </Modal.Controls>
           </React.Fragment>

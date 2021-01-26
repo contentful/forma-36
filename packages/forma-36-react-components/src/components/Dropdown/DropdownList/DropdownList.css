@@ -1,25 +1,11 @@
 @import 'settings/colors';
 @import 'settings/typography';
+@import 'settings/dimensions';
 
 .DropdownList {
   padding: 0;
   margin: 0;
-  padding: calc(1rem * (14 / var(--font-base-default))) 0;
-}
-
-/* For multiple DropdownLists */
-.DropdownList + .DropdownList {
-  padding: calc(1rem * (7 / var(--font-base-default))) 0;
-}
-
-/* First DropdownList if multiple */
-.DropdownList:first-child:not(:only-child) {
-  padding-bottom: calc(1rem * (7 / var(--font-base-default)));
-}
-
-/* Last DropdownList if multiple */
-.DropdownList:last-child:not(:only-child) {
-  padding-bottom: calc(1rem * (14 / var(--font-base-default)));
+  padding: var(--spacing-xs) 0;
 }
 
 .DropdownList--border-top {

@@ -102,7 +102,11 @@ export const Select = ({
       >
         {children}
       </select>
-      <Icon className={styles['Select__icon']} icon="ArrowDown" color="muted" />
+      <Icon
+        className={styles['Select__icon']}
+        icon="ChevronDown"
+        color="muted"
+      />
     </div>
   );
 };

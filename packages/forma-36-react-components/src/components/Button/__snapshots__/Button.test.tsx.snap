@@ -2,7 +2,7 @@
 
 exports[`renders the button as active 1`] = `
 <button
-  class="Button Button--primary Button--is-active"
+  class="Button Button--primary Button--medium Button--is-active"
   data-test-id="cf-ui-button"
   type="button"
 >
@@ -21,7 +21,7 @@ exports[`renders the button as active 1`] = `
 
 exports[`renders the button as link 1`] = `
 <a
-  class="Button Button--primary"
+  class="Button Button--primary Button--medium"
   data-test-id="cf-ui-button"
   href="/"
   type="button"
@@ -41,7 +41,7 @@ exports[`renders the button as link 1`] = `
 
 exports[`renders the component 1`] = `
 <button
-  class="Button Button--primary"
+  class="Button Button--primary Button--medium"
   data-test-id="cf-ui-button"
   type="button"
 >
@@ -60,7 +60,7 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component as naked 1`] = `
 <button
-  class="Button Button--naked"
+  class="Button Button--naked Button--medium"
   data-test-id="cf-ui-button"
   type="button"
 >
@@ -79,7 +79,7 @@ exports[`renders the component as naked 1`] = `
 
 exports[`renders the component as primary 1`] = `
 <button
-  class="Button Button--primary"
+  class="Button Button--primary Button--medium"
   data-test-id="cf-ui-button"
   type="button"
 >
@@ -98,7 +98,7 @@ exports[`renders the component as primary 1`] = `
 
 exports[`renders the component disabled 1`] = `
 <button
-  class="Button Button--primary Button--disabled"
+  class="Button Button--primary Button--medium Button--disabled"
   data-test-id="cf-ui-button"
   disabled=""
   type="button"
@@ -118,7 +118,7 @@ exports[`renders the component disabled 1`] = `
 
 exports[`renders the component full width 1`] = `
 <button
-  class="Button Button--primary Button--full-width"
+  class="Button Button--primary Button--medium Button--full-width"
   data-test-id="cf-ui-button"
   type="button"
 >
@@ -137,7 +137,7 @@ exports[`renders the component full width 1`] = `
 
 exports[`renders the component in loading state 1`] = `
 <button
-  class="Button Button--primary"
+  class="Button Button--primary Button--medium"
   data-test-id="cf-ui-button"
   type="button"
 >
@@ -151,21 +151,57 @@ exports[`renders the component in loading state 1`] = `
       Embed entry
     </span>
     <svg
-      class="Spinner Button__spinner Spinner--small Spinner--white"
+      class="Spinner Button__spinner Spinner--default Spinner--white"
       data-test-id="cf-ui-spinner"
-      viewBox="0 0 20 20"
+      style="height: 18px; width: 18px;"
+      viewBox="0 0 60 51"
       xmlns="http://www.w3.org/2000/svg"
     >
       <title>
         Loading…
       </title>
-      <path
-        d="M2,10a8,8,0,0,1,8-8V0a10,10,0,0,0,0,20V18A8,8,0,0,1,2,10Z"
-      />
-      <path
-        d="M10,0V2a8,8,0,0,1,0,16v2A10,10,0,0,0,10,0Z"
-        style="opacity: 0.4;"
-      />
+      <g
+        class="circle1--translate"
+        transform="translate(10,33.528168)"
+      >
+        <g
+          class="circle1--scale"
+        >
+          <circle
+            id="circle1"
+            r="6"
+            transform="translate(0,10.471832)"
+          />
+        </g>
+      </g>
+      <g
+        class="circle2--translate"
+        transform="translate(30,33.528168)"
+      >
+        <g
+          class="circle2--scale"
+        >
+          <circle
+            id="circle2"
+            r="6"
+            transform="translate(0,10.471832)"
+          />
+        </g>
+      </g>
+      <g
+        class="circle3--translate"
+        transform="translate(50,33.528168)"
+      >
+        <g
+          class="circle3--scale"
+        >
+          <circle
+            id="circle3"
+            r="6"
+            transform="translate(0,10.471832)"
+          />
+        </g>
+      </g>
     </svg>
   </span>
 </button>
@@ -173,7 +209,7 @@ exports[`renders the component in loading state 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <button
-  class="Button my-extra-class Button--primary"
+  class="Button my-extra-class Button--primary Button--medium"
   data-test-id="cf-ui-button"
   type="button"
 >
@@ -192,7 +228,7 @@ exports[`renders the component with an additional class name 1`] = `
 
 exports[`renders the component with dropdown indicator 1`] = `
 <button
-  class="Button Button--primary"
+  class="Button Button--primary Button--medium Button--is-dropdown"
   data-test-id="cf-ui-button"
   type="button"
 >
@@ -213,11 +249,7 @@ exports[`renders the component with dropdown indicator 1`] = `
       width="1em"
     >
       <path
-        d="M7 10l5 5 5-5z"
-      />
-      <path
-        d="M0 0h24v24H0z"
-        fill="none"
+        d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
       />
     </svg>
   </span>
@@ -226,7 +258,7 @@ exports[`renders the component with dropdown indicator 1`] = `
 
 exports[`renders the component with icon 1`] = `
 <button
-  class="Button Button--primary"
+  class="Button Button--primary Button--medium"
   data-test-id="cf-ui-button"
   type="button"
 >
@@ -242,11 +274,7 @@ exports[`renders the component with icon 1`] = `
       width="1em"
     >
       <path
-        d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"
-      />
-      <path
-        d="M0 0h24v24H0z"
-        fill="none"
+        d="M18.7071 15.7071C18.3166 16.0976 17.6834 16.0976 17.2929 15.7071L12 10.4142L6.70711 15.7071C6.31659 16.0976 5.68342 16.0976 5.2929 15.7071C4.90237 15.3166 4.90237 14.6834 5.2929 14.2929L11.2929 8.29289C11.6834 7.90237 12.3166 7.90237 12.7071 8.29289L18.7071 14.2929C19.0976 14.6834 19.0976 15.3166 18.7071 15.7071Z"
       />
     </svg>
     <span

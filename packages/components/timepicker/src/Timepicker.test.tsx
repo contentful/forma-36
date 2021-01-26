@@ -4,7 +4,7 @@ import * as dateFns from 'date-fns';
 import '@testing-library/jest-dom/extend-expect';
 import { fireEvent, render } from '@testing-library/react';
 
-import Timepicker from './Timepicker';
+import { Timepicker } from './Timepicker';
 
 describe('TimePicker', () => {
   let dateNowSpy: any;

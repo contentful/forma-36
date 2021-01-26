@@ -12,7 +12,6 @@
   display: flex;
   font-weight: inherit;
   font-size: inherit;
-  padding: 0;
   text-align: inherit;
   width: 100%;
 
@@ -26,8 +25,7 @@
 }
 
 .TableSortingLabel__button__text {
-  padding: var(--table-cell-padding-vertical-compact)
-    var(--table-cell-padding-horizontal);
+  padding: var(--spacing-s) var(--spacing-m);
   align-items: center;
   width: 100%;
 }

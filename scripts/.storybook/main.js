@@ -7,8 +7,6 @@ module.exports = {
     '@storybook/addon-essentials',
     '@storybook/addon-knobs',
     '@storybook/addon-a11y',
-    'storybook-prop-types-addon',
-    'storybook-addon-jsx',
     {
       name: '@storybook/addon-storysource',
       options: {
@@ -48,10 +46,24 @@ module.exports = {
       ],
     });
 
+    config.module.rules.push({
+      test: /forma-36-fcss\/dist\/styles.css$/,
+      loaders: [
+        'style-loader',
+        'css-loader',
+        {
+          loader: 'postcss-loader',
+          options: {
+            postcssOptions,
+          },
+        },
+      ],
+    });
+
     // CSS Modules
     config.module.rules.push({
       test: /\.css$/,
-      exclude: [/node_modules/, /\.global\.css$/],
+      exclude: [/node_modules/, /\.global\.css$/, /forma-36-fcss/],
       loaders: [
         'style-loader',
         {

@@ -27,7 +27,9 @@ exports[`renders the component 1`] = `
   <div
     class="Note__info"
   >
-    <div>
+    <div
+      class="Note__content"
+    >
       A piece of information that is relevant to the context the user is currently in.
     </div>
   </div>
@@ -61,7 +63,9 @@ exports[`renders the component with an additional class name 1`] = `
   <div
     class="Note__info"
   >
-    <div>
+    <div
+      class="Note__content"
+    >
       A piece of information that is relevant to the context the user is currently in.
     </div>
   </div>
@@ -100,7 +104,9 @@ exports[`renders the component with title 1`] = `
     >
       Positive title
     </div>
-    <div>
+    <div
+      class="Note__content"
+    >
       A piece of information that is relevant to the context the user is currently in.
     </div>
   </div>

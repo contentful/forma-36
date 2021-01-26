@@ -15,6 +15,16 @@ it('renders the component', () => {
   expect(container.firstChild).toMatchSnapshot();
 });
 
+it('renders as ordered list', () => {
+  const { container } = render(
+    <List element="ol">
+      <ListItem>Item</ListItem>
+    </List>,
+  );
+
+  expect(container.firstChild).toMatchSnapshot();
+});
+
 it('renders the component with an additional class name', () => {
   const { container } = render(
     <List className="my-extra-class">

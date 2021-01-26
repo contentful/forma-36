@@ -1,11 +1,8 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { button, text, number, boolean, select } from '@storybook/addon-knobs';
 
 import Button from '../Button';
-import Notification from './index';
-import notes from './Notification.md';
+import Notification, { NotificationsAPI } from './index';
+import notes from './README.mdx';
 import NotificationItem from './NotificationItem';
 import Flex from '../Flex/Flex';
 import SectionHeading from '../Typography/SectionHeading';
@@ -16,157 +13,161 @@ const getUniqueNumber = () => {
   return index;
 };
 
-storiesOf('Components/Notification', module)
-  .add(
-    'default',
-    () => {
-      button('set position: top', () => {
-        Notification.setPosition('top');
-      });
+export default {
+  title: 'Components/Notification',
+  component: Notification,
+  parameters: {
+    propTypes: [Notification['__docgenInfo']],
+    notes,
+  },
+  argTypes: {
+    className: { control: { disable: true } },
+    testId: { control: { disable: true } },
+  },
+};
 
-      button('set position: bottom', () => {
-        Notification.setPosition('bottom');
-      });
+interface Args extends NotificationsAPI {
+  notificationText?: string;
+}
 
-      button('close all', () => {
-        Notification.closeAll();
-      });
+export const basic = ({ notificationText, ...args }: Args) => (
+  <NotificationItem {...args}>{notificationText}</NotificationItem>
+);
 
-      text('text', 'Hello world');
+basic.args = {
+  title: 'Notification title',
+  intent: 'success',
+  cta: {
+    label: 'Notification CTA',
+  },
+  notificationText: 'Body for the notification',
+};
 
-      return (
-        <div>
-          <Button
-            buttonType="positive"
-            onClick={() =>
-              Notification.success(
-                `${text('text', 'Hello world')} ${getUniqueNumber()}`,
-                {
-                  duration: number('duration', 6000),
-                },
-              )
-            }
-          >
-            show success
-          </Button>
-          <Button
-            style={{ marginLeft: 20 }}
-            buttonType="negative"
-            onClick={() =>
-              Notification.error(
-                `${text('text', 'Hello world')} ${getUniqueNumber()}`,
-                {
-                  duration: number('duration', 6000),
-                },
-              )
-            }
-          >
-            show error
-          </Button>
-          <Button
-            style={{ marginLeft: 20 }}
-            buttonType="muted"
-            onClick={() =>
-              Notification.warning(
-                `${text('text', 'Hello world')} ${getUniqueNumber()}`,
-                {
-                  duration: number('duration', 6000),
-                },
-              )
-            }
-          >
-            show warning
-          </Button>
-          <Button
-            style={{ marginLeft: 20 }}
-            buttonType="muted"
-            onClick={() =>
-              Notification.warning('Notification that should not be repeated', {
-                duration: number('duration', 6000),
-                id: 'some-concrete-notification',
-              })
-            }
-          >
-            show notification with the same id
-          </Button>
-          <Button
-            style={{ marginLeft: 20 }}
-            buttonType="positive"
-            onClick={() =>
-              Notification.success(
-                `${text('text', 'Hello world')} ${getUniqueNumber()}`,
-                {
-                  duration: number('duration', 6000),
-                  title: text('title', 'Example title'),
-                  cta: {
-                    label: text('cta.label', 'Example label'),
-                    textLinkProps: { onClick: action('onClick') },
-                  },
-                },
-              )
-            }
-          >
-            show notification with title and CTA
-          </Button>
-        </div>
-      );
-    },
-    { notes },
-  )
-  .add(
-    'items',
-    () => (
-      <div>
-        <NotificationItem
-          hasCloseButton={boolean('hasCloseButton', true)}
-          title={text('title', 'Notification title')}
-          intent={select('intent', ['success', 'error', 'warning'], 'success')}
-          cta={{ label: text('cta.label', 'Notification CTA') }}
-        >
-          {text('body', 'Body for the notification')}
-        </NotificationItem>
-      </div>
-    ),
-    { notes },
-  )
-  .add(
-    'overview',
-    () => (
-      <>
-        <Flex marginBottom="spacingS">
-          <SectionHeading element="h3">Notifiactions overview</SectionHeading>
-        </Flex>
-        <Flex marginBottom="spacingS">
-          <NotificationItem
-            hasCloseButton={boolean('hasCloseButton', true)}
-            title={text('title', 'Notification title')}
-            intent="success"
-            cta={{ label: text('cta.label', 'Notification CTA') }}
-          >
-            {text('body', 'Body for the notification')}
-          </NotificationItem>
-        </Flex>
-        <Flex marginBottom="spacingS">
-          <NotificationItem
-            hasCloseButton={boolean('hasCloseButton', true)}
-            title={text('title', 'Notification title')}
-            intent="error"
-            cta={{ label: text('cta.label', 'Notification CTA') }}
-          >
-            {text('body', 'Body for the notification')}
-          </NotificationItem>
-        </Flex>
-        <Flex marginBottom="spacingS">
-          <NotificationItem
-            hasCloseButton={boolean('hasCloseButton', true)}
-            title={text('title', 'Notification title')}
-            intent="warning"
-            cta={{ label: text('cta.label', 'Notification CTA') }}
-          >
-            {text('body', 'Body for the notification')}
-          </NotificationItem>
-        </Flex>
-      </>
-    ),
-    { notes },
-  );
+interface WithButtonArgs extends NotificationsAPI {
+  notificationText?: string;
+  duration?: number;
+}
+
+export const withButtons = ({
+  notificationText,
+  duration,
+  ...args
+}: WithButtonArgs) => (
+  <div>
+    <Button
+      buttonType="positive"
+      onClick={() =>
+        Notification.success(`${notificationText} ${getUniqueNumber()}`, {
+          duration: duration,
+        })
+      }
+    >
+      show success
+    </Button>
+    <Button
+      style={{ marginLeft: 20 }}
+      buttonType="negative"
+      onClick={() =>
+        Notification.error(`${notificationText} ${getUniqueNumber()}`, {
+          duration: duration,
+        })
+      }
+    >
+      show error
+    </Button>
+    <Button
+      style={{ marginLeft: 20 }}
+      buttonType="muted"
+      onClick={() =>
+        Notification.warning(`${notificationText} ${getUniqueNumber()}`, {
+          duration: duration,
+        })
+      }
+    >
+      show warning
+    </Button>
+    <Button
+      style={{ marginLeft: 20 }}
+      buttonType="muted"
+      onClick={() =>
+        Notification.warning('Notification that should not be repeated', {
+          duration: duration,
+          id: 'some-concrete-notification',
+        })
+      }
+    >
+      show notification with the same id
+    </Button>
+    <Button
+      style={{ marginLeft: 20 }}
+      buttonType="positive"
+      onClick={() =>
+        Notification.success(`${notificationText} ${getUniqueNumber()}`, {
+          duration: duration,
+          ...args,
+        })
+      }
+    >
+      show notification with title and CTA
+    </Button>
+  </div>
+);
+
+withButtons.args = {
+  title: 'Notification title',
+  intent: 'success',
+  cta: {
+    label: 'Notification CTA',
+  },
+  notificationText: 'Body for the notification',
+  duration: 6000,
+};
+
+interface OverviewArgs extends NotificationsAPI {
+  notificationText?: string;
+}
+
+export const overview = ({ notificationText, ...args }: OverviewArgs) => (
+  <Flex fullWidth flexDirection="column">
+    <Flex marginBottom="spacingS">
+      <SectionHeading element="h3">Notifiaction success</SectionHeading>
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <NotificationItem {...args} intent="success">
+        {notificationText}
+      </NotificationItem>
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <SectionHeading element="h3">Notifiaction error</SectionHeading>
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <NotificationItem {...args} intent="error">
+        {notificationText}
+      </NotificationItem>
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <SectionHeading element="h3">Notifiaction warning</SectionHeading>
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <NotificationItem {...args} intent="warning">
+        {notificationText}
+      </NotificationItem>
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <SectionHeading element="h3">
+        Notifiaction warning only with body
+      </SectionHeading>
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <NotificationItem intent="warning">{notificationText}</NotificationItem>
+    </Flex>
+  </Flex>
+);
+
+overview.args = {
+  title: 'Notification title',
+  cta: {
+    label: 'Notification CTA',
+  },
+  notificationText: 'Body for the notification',
+};

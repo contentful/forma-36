@@ -36,6 +36,7 @@ import {
   CycleTrimmed,
   Delete,
   DeleteTrimmed,
+  Done,
   DoubleArrow,
   Download,
   DownloadTrimmed,
@@ -50,6 +51,7 @@ import {
   Entry,
   EntryTrimmed,
   ErrorCircle,
+  ErrorCircleOutline,
   ErrorCircleTrimmed,
   ExternalLink,
   ExternalLinkTrimmed,
@@ -97,6 +99,7 @@ import {
   LooksTwoTrimmed,
   Menu,
   MenuTrimmed,
+  Minus,
   MoreHorizontal,
   MoreHorizontalTrimmed,
   MoreVertical,
@@ -174,6 +177,7 @@ const iconComponents = {
   CycleTrimmed,
   Delete,
   DeleteTrimmed,
+  Done,
   DoubleArrow,
   Download,
   DownloadTrimmed,
@@ -188,6 +192,7 @@ const iconComponents = {
   Entry,
   EntryTrimmed,
   ErrorCircle,
+  ErrorCircleOutline,
   ErrorCircleTrimmed,
   ExternalLink,
   ExternalLinkTrimmed,
@@ -235,6 +240,7 @@ const iconComponents = {
   LooksTwoTrimmed,
   Menu,
   MenuTrimmed,
+  Minus,
   MoreHorizontal,
   MoreHorizontalTrimmed,
   MoreVertical,
@@ -279,20 +285,17 @@ const iconComponents = {
 };
 
 export type IconType = keyof typeof iconName;
-export type IconColorType =
-  | 'primary'
-  | 'positive'
-  | 'negative'
-  | 'warning'
-  | 'secondary'
-  | 'muted'
-  | 'white';
-
-export type IconSize = 'tiny' | 'small' | 'medium' | 'large';
 
 export interface IconProps {
-  size?: IconSize;
-  color?: IconColorType;
+  size?: 'tiny' | 'small' | 'medium' | 'large';
+  color?:
+    | 'primary'
+    | 'positive'
+    | 'negative'
+    | 'warning'
+    | 'secondary'
+    | 'muted'
+    | 'white';
   style?: CSSProperties;
   icon: IconType;
   className?: string;

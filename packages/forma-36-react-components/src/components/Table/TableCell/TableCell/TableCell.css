@@ -1,13 +1,6 @@
 @import 'settings/colors';
+@import 'settings/dimensions';
 @import 'settings/typography';
-
-:root {
-  --table-cell-padding-vertical: calc(1rem * (15 / var(--font-base-default)));
-  --table-cell-padding-vertical-compact: calc(
-    1rem * (10 / var(--font-base-default))
-  );
-  --table-cell-padding-horizontal: calc(1rem * (20 / var(--font-base-default)));
-}
 
 .TableCell {
   border-bottom: 1px solid var(--color-element-light);
@@ -16,8 +9,7 @@
   font-family: var(--font-stack-primary);
   font-weight: var(--font-weight-normal);
   line-height: 1.5;
-  padding: var(--table-cell-padding-vertical)
-    var(--table-cell-padding-horizontal);
+  padding: var(--spacing-s) var(--spacing-m);
   vertical-align: top;
 }
 
@@ -26,14 +18,11 @@ tbody tr:last-child .TableCell {
 }
 
 .TableCell--head {
-  color: var(--color-text-light);
   background-color: var(--color-element-lightest);
-  padding: var(--table-cell-padding-vertical-compact)
-    var(--table-cell-padding-horizontal);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-medium);
 }
 
 .TableCell--head__sorting {
-  padding: 0;
-  font-weight: var(--font-weight-demi-bold);
-  color: var(--color-text-light);
+  color: var(--color-text-dark);
 }

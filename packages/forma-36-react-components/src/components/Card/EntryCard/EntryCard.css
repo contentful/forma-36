@@ -1,6 +1,7 @@
 @import 'settings/colors';
 @import 'settings/typography';
 @import 'settings/transitions';
+@import 'settings/dimensions';
 @import 'settings/shadows';
 
 .EntryCard {
@@ -17,22 +18,33 @@
       var(--transition-easing-default);
 }
 
+.EntryCard__header {
+  padding: var(--spacing-xs) var(--spacing-m);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom: 1px solid var(--color-element-mid);
+}
+
 .EntryCard--size-default {
-  height: calc(1rem * (135 / var(--font-base-default)));
+  height: calc(1rem * (136 / var(--font-base-default)));
 }
 
 .EntryCard--size-small {
-  height: calc(1rem * (84 / var(--font-base-default)));
+  height: calc(1rem * (90 / var(--font-base-default)));
 }
 
 .EntryCard--size-auto {
-  min-height: calc(1rem * (84 / var(--font-base-default)));
+  min-height: calc(1rem * (90 / var(--font-base-default)));
 }
 
 .EntryCard__wrapper {
-  padding: calc(1rem * (14 / var(--font-base-default)));
   flex: 1 1 0;
   overflow: auto;
+}
+
+.EntryCard__skeleton-wrapper {
+  padding: var(--spacing-m);
 }
 
 .EntryCard--drag-active {
@@ -43,25 +55,26 @@
   overflow: hidden;
 }
 
-.EntryCard__meta {
-  display: flex;
-}
-
 .EntryCard__content-type {
   flex: 1 1 0;
-  padding-right: calc(1rem * (20 / var(--font-base-default)));
-  margin-bottom: calc(1rem * (4 / var(--font-base-default)));
+  padding-right: var(--spacing-m);
+  margin-bottom: 0;
   color: var(--color-text-light);
-  font-size: var(--font-size-l);
+  font-size: var(--font-size-m);
   word-break: break-word;
 }
 
+.EntryCard__icon {
+  margin-right: var(--spacing-xs);
+}
+
 .EntryCard__actions {
-  margin-left: calc(1rem * (8 / var(--font-base-default)));
+  margin-left: var(--spacing-xs);
 }
 
 .EntryCard__content {
   display: flex;
+  padding: var(--spacing-s) var(--spacing-m);
 }
 
 .EntryCard__body {
@@ -79,11 +92,11 @@
   text-overflow: ellipsis;
   overflow: hidden;
   color: var(--color-text-dark);
-  font-weight: var(--font-weight-demi-bold);
+  font-weight: var(--font-weight-medium);
 }
 
 .EntryCard__description {
-  margin: calc(1rem * (4 / var(--font-base-default))) 0 0;
+  margin: var(--spacing-xs) 0 0;
   line-height: var(--line-height-default);
   word-break: break-word;
   white-space: initial;
@@ -95,7 +108,7 @@
   height: 70px;
   width: 70px;
   background-color: var(--color-element-lightest);
-  margin: 0 0 0 calc(1rem * (20 / var(--font-base-default)));
+  margin: 0 0 0 var(--spacing-s);
   padding: 0;
 }
 
@@ -104,5 +117,5 @@
 }
 
 .EntryCard__actions {
-  margin-left: calc(1rem * (10 / var(--font-base-default)));
+  margin-left: var(--spacing-s);
 }

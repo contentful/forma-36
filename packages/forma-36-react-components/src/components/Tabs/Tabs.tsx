@@ -4,7 +4,9 @@ import type { CSSProperties } from 'react';
 
 import styles from './Tabs.css';
 
+// @todo: Rename divider props in v4:
 export interface TabsProps {
+  dividerOrientation?: 'horizontal' | 'vertical';
   role?: 'navigation' | 'tablist';
   style?: CSSProperties;
   className?: string;
@@ -16,6 +18,7 @@ export interface TabsProps {
 export function Tabs({
   className,
   children,
+  dividerOrientation = 'horizontal',
   testId = 'cf-ui-tabs',
   role = 'tablist',
   withDivider = false,
@@ -23,7 +26,7 @@ export function Tabs({
 }: TabsProps): React.ReactElement {
   const classNames = cn(
     styles.Tabs,
-    { [styles['Tabs__with-divider']]: withDivider },
+    { [styles[`Tabs__divider--${dividerOrientation}`]]: withDivider },
     className,
   );
 

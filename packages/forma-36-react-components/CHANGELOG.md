@@ -3,6 +3,72 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.76.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.75.1...@contentful/forma-36-react-components@3.76.0) (2021-01-26)
+
+### Features
+
+- handle tag change in the List component ([#809](https://github.com/contentful/forma-36/issues/809)) ([11267d2](https://github.com/contentful/forma-36/commit/11267d2fefdb6abd9ca020cc1c7fc0708da2439b))
+
+## [3.75.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.75.0...@contentful/forma-36-react-components@3.75.1) (2021-01-26)
+
+### Bug Fixes
+
+- **dropdown:** remove offset to avoid dropdown unexpectedly closing ([#808](https://github.com/contentful/forma-36/issues/808)) ([d46031e](https://github.com/contentful/forma-36/commit/d46031e9a413a78b3d95aa41deb07f15b12b6c7b))
+
+# [3.75.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.74.1...@contentful/forma-36-react-components@3.75.0) (2021-01-20)
+
+### Features
+
+- visual changes with a new look & feel ([#732](https://github.com/contentful/forma-36/issues/732)) ([9273145](https://github.com/contentful/forma-36/commit/9273145fe11192c7449b1896323b8c0ba402ff44)), closes [#742](https://github.com/contentful/forma-36/issues/742) [#741](https://github.com/contentful/forma-36/issues/741) [#759](https://github.com/contentful/forma-36/issues/759) [#763](https://github.com/contentful/forma-36/issues/763) [#767](https://github.com/contentful/forma-36/issues/767) [#760](https://github.com/contentful/forma-36/issues/760) [#768](https://github.com/contentful/forma-36/issues/768) [#762](https://github.com/contentful/forma-36/issues/762) [#769](https://github.com/contentful/forma-36/issues/769) [#773](https://github.com/contentful/forma-36/issues/773) [#777](https://github.com/contentful/forma-36/issues/777) [#775](https://github.com/contentful/forma-36/issues/775) [#790](https://github.com/contentful/forma-36/issues/790) [#791](https://github.com/contentful/forma-36/issues/791) [#798](https://github.com/contentful/forma-36/issues/798)
+
+## [3.74.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.74.0...@contentful/forma-36-react-components@3.74.1) (2021-01-15)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+# [3.74.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.73.12...@contentful/forma-36-react-components@3.74.0) (2021-01-15)
+
+### Features
+
+- **tooltip:** implement usePortal prop ([#794](https://github.com/contentful/forma-36/issues/794)) ([f927229](https://github.com/contentful/forma-36/commit/f927229ddca809c2bdd9485e37cdc7d179e593c1))
+
+## [3.73.12](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.73.11...@contentful/forma-36-react-components@3.73.12) (2021-01-08)
+
+### Bug Fixes
+
+- return previous modal size logic ([#764](https://github.com/contentful/forma-36/issues/764)) ([8b672aa](https://github.com/contentful/forma-36/commit/8b672aa10cc69881641ed9735747bf11bd06b257))
+
+### Reverts
+
+- **notification-item-container:** change back to class component ([#765](https://github.com/contentful/forma-36/issues/765)) ([a61fb3b](https://github.com/contentful/forma-36/commit/a61fb3b00c24eb75b0241d8042adcb001477eca9))
+
+## [3.73.11](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.73.10...@contentful/forma-36-react-components@3.73.11) (2021-01-08)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+## [3.73.10](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.73.9...@contentful/forma-36-react-components@3.73.10) (2021-01-08)
+
+### Bug Fixes
+
+- **dropdown-container:** remove position prop ([#758](https://github.com/contentful/forma-36/issues/758)) ([2b07587](https://github.com/contentful/forma-36/commit/2b07587b3ed9f7304f503aac4659c5af53ee9e04))
+
+## [3.73.9](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.73.8...@contentful/forma-36-react-components@3.73.9) (2021-01-08)
+
+### Reverts
+
+- **card-actions:** revert to class component ([#754](https://github.com/contentful/forma-36/issues/754)) ([508d61b](https://github.com/contentful/forma-36/commit/508d61bae184350cc48553970597a9ed4876bb10))
+
+## [3.73.8](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.73.7...@contentful/forma-36-react-components@3.73.8) (2021-01-07)
+
+### Bug Fixes
+
+- **Autocomplete:** Make use of dropdownProp.isOpen ([566cbb5](https://github.com/contentful/forma-36/commit/566cbb5c4d86b04ba08f7d6988b1fa38bea02f5e))
+
+## [3.73.7](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.73.6...@contentful/forma-36-react-components@3.73.7) (2021-01-07)
+
+### Bug Fixes
+
+- **card-actions:** extend DropdownProps ([#751](https://github.com/contentful/forma-36/issues/751)) ([6c0d263](https://github.com/contentful/forma-36/commit/6c0d263a82e398966b4989693a40b47f6f95513b))
+
 ## [3.73.6](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.73.5...@contentful/forma-36-react-components@3.73.6) (2021-01-07)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components

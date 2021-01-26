@@ -4,6 +4,7 @@
 @import 'settings/transitions';
 @import 'settings/shadows';
 @import 'settings/z-index';
+@import 'settings/borders';
 
 .TextInput {
   display: flex;
@@ -12,8 +13,10 @@
 .TextInput__input {
   composes: focus-border--default from './../../styles/settings/a11y.css';
   outline: none;
+  box-shadow: var(--inset-box-shadow-default);
   background-color: var(--color-white);
   border: 1px solid var(--color-element-mid);
+  border-radius: var(--border-radius-medium);
   max-height: calc(1rem * (40 / var(--font-base-default)));
   color: var(--color-text-mid);
   font-family: var(--font-stack-primary);
@@ -24,8 +27,8 @@
 
   -webkit-appearance: textfield;
 
-  &::-webkit-input-placeholder {
-    color: var(--color-ice-dark);
+  &::placeholder {
+    color: var(--color-text-lightest);
   }
 
   &::-webkit-search-decoration,
@@ -80,10 +83,26 @@
   }
 }
 
+.TextInput--with-copy-button {
+  & .TextInput__input {
+    border-radius: var(--border-radius-medium) 0 0 var(--border-radius-medium);
+  }
+}
+
 .TextInput__copy-button {
-  & > button {
+  & button {
     border-left: none;
     height: 100%;
+    background-color: var(--color-white);
+    border-radius: 0 var(--border-radius-medium) var(--border-radius-medium) 0;
+
+    &:hover {
+      background-color: var(--color-element-lightest);
+    }
+
+    &:focus {
+      box-shadow: var(--glow-primary);
+    }
   }
 
   &:focus-within {

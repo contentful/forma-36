@@ -1,8 +1,8 @@
 @import 'settings/typography';
+@import 'settings/dimensions';
 
 .ControlledInputField {
   display: inline-flex;
-  align-items: baseline;
 }
 
 .ControlledInputField--disabled,
@@ -11,9 +11,10 @@
   cursor: not-allowed;
 }
 
+/** important are used to fix order issue in production build. delete once we move to css-in-js */
 .ControlledInputField__input {
-  margin-right: calc(1rem * (8 / var(--font-base-default)));
-  transform: translateY(1px);
+  margin-right: var(--spacing-xs) !important;
+  margin-top: 4px !important;
 }
 
 .ControlledInputField__label {

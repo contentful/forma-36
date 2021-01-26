@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { Component } from 'react';
 import AnimateHeight from 'react-animate-height';
 import NotificationItem, { NotificationItemProps } from './NotificationItem';
 
@@ -7,82 +7,101 @@ export interface NotificationItemContainerProps extends NotificationItemProps {
   isShown?: boolean;
 }
 
-export function NotificationItemContainer({
-  duration,
-  isShown: isShownProp = false,
-  ...props
-}: NotificationItemContainerProps): React.ReactElement {
-  const timer = useRef<number | null>(null);
-  const [isShown, setIsShown] = useState<boolean>(false);
+export interface NotificationItemContainerState {
+  isShown: boolean;
+}
 
-  const stopTimer = useCallback(() => {
-    if (duration === 0) return;
+const defaultProps: Partial<NotificationItemContainerProps> = {
+  isShown: false,
+};
 
-    if (timer.current) {
-      clearTimeout(timer.current);
-      timer.current = null;
+export class NotificationItemContainer extends Component<
+  NotificationItemContainerProps,
+  NotificationItemContainerState
+> {
+  static defaultProps = defaultProps;
+
+  timer: number | null = null;
+
+  state = {
+    isShown: false,
+  };
+
+  componentDidMount() {
+    this.startTimer();
+    this.setState({ isShown: true });
+  }
+
+  componentDidUpdate(prevProps: NotificationItemContainerProps) {
+    if (prevProps.isShown !== this.props.isShown) {
+      this.setState({
+        isShown: this.props.isShown!, // eslint-disable-line @typescript-eslint/no-non-null-assertion
+      });
     }
-  }, [duration]);
+  }
 
-  const close = useCallback(() => {
-    stopTimer();
-    setIsShown(false);
-  }, [stopTimer]);
+  componentWillUnmount() {
+    this.stopTimer();
+  }
 
-  const startTimer = useCallback(() => {
-    if (duration) {
-      if (duration === 0) return;
+  startTimer = () => {
+    if (this.props.duration) {
+      if (this.props.duration === 0) return;
 
-      timer.current = (setTimeout(() => {
-        close();
-      }, duration) as unknown) as number;
+      this.timer = window.setTimeout(() => {
+        this.close();
+      }, this.props.duration);
     }
-  }, [duration, close]);
+  };
 
-  useEffect(() => {
-    startTimer();
-    setIsShown(true);
+  stopTimer = () => {
+    if (this.props.duration === 0) return;
 
-    return () => {
-      stopTimer();
-    };
-  }, [startTimer, stopTimer]);
+    if (this.timer) {
+      clearTimeout(this.timer);
+      this.timer = null;
+    }
+  };
 
-  useEffect(() => {
-    setIsShown(Boolean(isShownProp));
-  }, [isShownProp]);
+  close = () => {
+    this.stopTimer();
+    this.setState({ isShown: false });
+  };
 
-  const handleMouseEnter = useCallback(() => {
-    stopTimer();
-  }, [stopTimer]);
+  handleMouseEnter = () => {
+    this.stopTimer();
+  };
 
-  const handleMouseLeave = useCallback(() => {
-    startTimer();
-  }, [startTimer]);
+  handleMouseLeave = () => {
+    this.startTimer();
+  };
 
-  return (
-    <AnimateHeight
-      duration={200}
-      height={isShown ? 'auto' : 0}
-      easing="ease-in-out"
-      animateOpacity
-      onAnimationEnd={() => {
-        if (isShown === false) {
-          if (props.onClose) {
-            props.onClose();
+  render() {
+    const { duration, ...rest } = this.props;
+    return (
+      <AnimateHeight
+        duration={200}
+        height={this.state.isShown ? 'auto' : 0}
+        easing="ease-in-out"
+        animateOpacity
+        onAnimationEnd={() => {
+          if (this.state.isShown === false) {
+            if (this.props.onClose) {
+              this.props.onClose();
+            }
           }
-        }
-      }}
-    >
-      <div
-        style={{ pointerEvents: 'all' }}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
+        }}
       >
-        <NotificationItem {...props} onClose={close} />
-      </div>
-    </AnimateHeight>
-  );
+        <div
+          style={{ pointerEvents: 'all' }}
+          onMouseEnter={this.handleMouseEnter}
+          onMouseLeave={this.handleMouseLeave}
+        >
+          <NotificationItem {...rest} onClose={this.close} />
+        </div>
+      </AnimateHeight>
+    );
+  }
 }
 
 export default NotificationItemContainer;

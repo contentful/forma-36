@@ -43,7 +43,7 @@ exports[`renders the component (complex) 1`] = `
       class="Workbench__header-actions"
     >
       <button
-        class="Button Button--muted"
+        class="Button Button--muted Button--medium"
         data-test-id="cf-ui-button"
         type="button"
       >
@@ -132,7 +132,7 @@ exports[`renders the component (simple) 1`] = `
       class="Workbench__header-actions"
     >
       <button
-        class="Button Button--muted"
+        class="Button Button--muted Button--medium"
         data-test-id="cf-ui-button"
         type="button"
       >

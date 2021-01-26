@@ -1,2 +1,2 @@
-export * from './Timepicker';
-export { default } from './Timepicker';
+export { Timepicker } from './Timepicker';
+export type { TimepickerProps } from './Timepicker';

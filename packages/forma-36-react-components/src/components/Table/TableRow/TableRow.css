@@ -1,5 +1,10 @@
 @import 'settings/colors';
 
-.TableRow:hover {
+tbody .TableRow:hover {
   background-color: var(--color-element-lightest);
+}
+
+.TableRow--selected {
+  background-color: var(--color-blue-lightest);
+  box-shadow: inset -2px 0 0 var(--color-blue-mid);
 }

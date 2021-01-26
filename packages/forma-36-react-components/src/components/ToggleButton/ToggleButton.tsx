@@ -1,7 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
 
-import Card from '../Card/Card';
 import Icon from '../Icon/Icon';
 import type { IconType } from '../Icon/Icon';
 import TabFocusTrap from '../TabFocusTrap/TabFocusTrap';
@@ -40,13 +39,7 @@ export const ToggleButton = ({
   };
 
   return (
-    <Card
-      className={classNames}
-      padding="none"
-      selected={isActive}
-      testId={testId}
-      {...otherProps}
-    >
+    <div className={classNames} data-test-id={testId} {...otherProps}>
       <button
         type="button"
         className={styles.Toggle__button}
@@ -70,7 +63,23 @@ export const ToggleButton = ({
           )}
         </TabFocusTrap>
       </button>
-    </Card>
+    </div>
+  );
+};
+
+ToggleButton.Group = function ToggleButtonGroup({
+  className,
+  testId = 'cf-ui-toggle-button-group',
+  children,
+}: {
+  className?: string;
+  testId?: string;
+  children: React.ReactElement<ToggleButtonProps>[];
+}) {
+  return (
+    <div data-test-id={testId} className={cn(styles.ToggleGroup, className)}>
+      {children}
+    </div>
   );
 };
 

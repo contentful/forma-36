@@ -1,15 +1,17 @@
 @import 'settings/colors';
 @import 'settings/typography';
 @import 'settings/transitions';
+@import 'settings/dimensions';
 @import 'settings/shadows';
+@import 'settings/borders';
 @import 'settings/z-index';
 
 .DropdownContainer {
   background: var(--color-white);
-  box-shadow: var(--box-shadow-default);
   box-sizing: border-box;
-  border: calc(1rem * (1 / var(--font-base-default))) solid
-    var(--color-element-mid);
+  border: 0;
+  border-radius: var(--border-radius-medium);
+  box-shadow: var(--box-shadow-default);
   list-style: none;
   padding: 0;
   /*

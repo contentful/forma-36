@@ -1,4 +1,4 @@
-import { css, cx } from '@emotion/css';
+import { css, cx } from 'emotion';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import type { FocusEventHandler, FocusEvent } from 'react';
 import Pikaday from 'pikaday';

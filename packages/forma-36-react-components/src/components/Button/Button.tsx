@@ -15,15 +15,6 @@ import Spinner from '../Spinner';
 
 import styles from './Button.css';
 
-export const buttonTypes = [
-  'primary',
-  'positive',
-  'negative',
-  'warning',
-  'muted',
-  'naked',
-];
-
 export interface ButtonProps {
   icon?: IconType;
   indicateDropdown?: boolean;
@@ -41,7 +32,7 @@ export interface ButtonProps {
     | 'muted'
     | 'naked';
   type?: 'button' | 'submit' | 'reset';
-  size?: 'small' | 'large';
+  size?: 'small' | 'medium' | 'large';
   href?: string;
   style?: CSSProperties;
   className?: string;
@@ -49,40 +40,41 @@ export interface ButtonProps {
   isActive?: boolean;
 }
 
-export const Button = (props: ButtonProps) => {
-  const {
-    className,
-    children,
-    icon,
-    buttonType = 'primary',
-    size,
-    isFullWidth = false,
-    onBlur,
-    testId = 'cf-ui-button',
-    onClick,
-    loading = false,
-    disabled = false,
-    indicateDropdown = false,
-    href,
-    type = 'button',
-    isActive,
-    ...otherProps
-  } = props;
-
+export const Button = ({
+  buttonType = 'primary',
+  children,
+  className,
+  disabled = false,
+  href,
+  icon,
+  indicateDropdown = false,
+  isActive,
+  isFullWidth = false,
+  loading = false,
+  onBlur,
+  onClick,
+  size = 'medium',
+  testId = 'cf-ui-button',
+  type = 'button',
+  ...otherProps
+}: ButtonProps) => {
   const classNames = cn(
     styles.Button,
     className,
     styles[`Button--${buttonType}`],
+    styles[`Button--${size}`],
     {
       [styles['Button--disabled']]: disabled,
-      [styles[`Button--${size}`]]: size,
       [styles['Button--full-width']]: isFullWidth,
       [styles['Button--is-active']]: isActive,
+      [styles['Button--is-dropdown']]: indicateDropdown,
     },
   );
 
   const iconColor =
-    buttonType === 'muted' || buttonType === 'naked' ? 'secondary' : 'white';
+    buttonType === 'muted' || buttonType === 'warning' || buttonType === 'naked'
+      ? 'secondary'
+      : 'white';
 
   const Element: ElementType = href ? 'a' : 'button';
 
@@ -108,7 +100,7 @@ export const Button = (props: ButtonProps) => {
       {...otherProps}
     >
       <TabFocusTrap className={styles['Button__inner-wrapper']}>
-        {icon && (
+        {icon && !loading && (
           <Icon
             className={styles.Button__icon}
             size={size === 'small' ? 'tiny' : 'small'}
@@ -117,13 +109,6 @@ export const Button = (props: ButtonProps) => {
           />
         )}
         {children && <span className={styles.Button__label}>{children}</span>}
-        {indicateDropdown && (
-          <Icon
-            className={styles['Button__dropdown-icon']}
-            icon="ArrowDown"
-            color={iconColor}
-          />
-        )}
         <CSSTransition
           in={loading}
           timeout={1000}
@@ -138,14 +123,23 @@ export const Button = (props: ButtonProps) => {
         >
           <Spinner
             className={styles.Button__spinner}
-            size="small"
+            customSize={18}
             color={
-              buttonType === 'muted' || buttonType === 'naked'
+              buttonType === 'muted' ||
+              buttonType === 'warning' ||
+              buttonType === 'naked'
                 ? 'default'
                 : 'white'
             }
           />
         </CSSTransition>
+        {indicateDropdown && (
+          <Icon
+            className={styles['Button__dropdown-icon']}
+            icon="ChevronDown"
+            color={iconColor}
+          />
+        )}
       </TabFocusTrap>
     </Element>
   );

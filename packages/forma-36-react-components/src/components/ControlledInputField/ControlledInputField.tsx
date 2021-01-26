@@ -67,7 +67,7 @@ export const ControlledInputField = ({
         className={styles.ControlledInputField__input}
         {...inputProps}
       />
-      <div className={styles['Checkbox__label-wrapper']}>
+      <div>
         <FormLabel
           className={cn(styles.ControlledInputField__label, {
             [styles['ControlledInputField__label--light']]: labelIsLight,
@@ -78,6 +78,13 @@ export const ControlledInputField = ({
         >
           {labelText}
         </FormLabel>
+        {validationMessage && (
+          <ValidationMessage
+            className={styles['ControlledInputField__validation-message']}
+          >
+            {validationMessage}
+          </ValidationMessage>
+        )}
         {helpText && (
           <HelpText
             className={styles['ControlledInputField__help-text']}
@@ -85,13 +92,6 @@ export const ControlledInputField = ({
           >
             {helpText}
           </HelpText>
-        )}
-        {validationMessage && (
-          <ValidationMessage
-            className={styles['ControlledInputField__validation-message']}
-          >
-            {validationMessage}
-          </ValidationMessage>
         )}
       </div>
     </div>

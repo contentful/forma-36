@@ -1,4 +1,4 @@
-import { css } from '@emotion/css';
+import { css } from 'emotion';
 
 import React, {
   useState,
@@ -161,7 +161,7 @@ export interface TimepickerProps {
   disabled: boolean;
 }
 
-const TimePicker: React.FC<TimepickerProps> = ({
+export const Timepicker: React.FC<TimepickerProps> = ({
   id,
   value,
   date,
@@ -274,13 +274,13 @@ const TimePicker: React.FC<TimepickerProps> = ({
     }
   }, []);
 
-  const handleFocus = useCallback((e) => {
+  const handleFocus = useCallback<FocusEventHandler<HTMLInputElement>>((e) => {
     e.preventDefault();
     e.target.select();
     setTimeSuggestionOpen(true);
   }, []);
 
-  const handleBlur = useCallback(
+  const handleBlur = useCallback<FocusEventHandler<HTMLInputElement>>(
     (e) => {
       const time = getTimeFromUserInputOrDefaultToValue();
       setSelectedTime(time);
@@ -310,6 +310,7 @@ const TimePicker: React.FC<TimepickerProps> = ({
           dropdownContainerClassName={styles.dropdownContainer}
           // TODO: Fix getContainerRef on Dropdown to accept ref object. F36 4.0 Breaking Change
           getContainerRef={setDropdownContainer}
+          nonClosingRefs={[inputRef]}
           toggleElement={
             <TextInput
               id={inputId}
@@ -358,5 +359,3 @@ const TimePicker: React.FC<TimepickerProps> = ({
     </div>
   );
 };
-
-export default TimePicker;

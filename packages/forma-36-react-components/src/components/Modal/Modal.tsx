@@ -48,7 +48,7 @@ export interface ModalProps {
    */
   shouldCloseOnEscapePress?: boolean;
   /**
-   * Boolean indicating if modal is centered
+   * Indicating if modal is centered or linked to the top
    */
   position?: 'center' | 'top';
   /**
@@ -84,18 +84,6 @@ export interface ModalProps {
   // eslint-disable-next-line
   children: any;
 }
-
-// Use defaultProps instead of default values in the function to allow the
-// Storybook to import and use these values
-Modal.defaultProps = {
-  allowHeightOverflow: false,
-  position: 'center',
-  shouldCloseOnEscapePress: true,
-  shouldCloseOnOverlayClick: true,
-  size: 'medium',
-  testId: 'cf-ui-modal',
-  topOffset: '50px',
-};
 
 export function Modal({
   allowHeightOverflow,
@@ -171,7 +159,7 @@ export function Modal({
       <div
         data-test-id={testId}
         style={{
-          width: size ? ModalSizesMapper[size] : size,
+          width: ModalSizesMapper[size] || size,
         }}
         className={cn(styles.Modal, otherProps.className, {
           [styles['Modal--overflow']]: allowHeightOverflow,
@@ -189,5 +177,17 @@ export function Modal({
 Modal.Header = ModalHeader;
 Modal.Content = ModalContent;
 Modal.Controls = ModalControls;
+
+// Use defaultProps instead of default values in the function to allow the
+// Storybook to import and use these values
+Modal.defaultProps = {
+  allowHeightOverflow: false,
+  position: 'center',
+  shouldCloseOnEscapePress: true,
+  shouldCloseOnOverlayClick: true,
+  size: 'medium',
+  testId: 'cf-ui-modal',
+  topOffset: '50px',
+};
 
 export default Modal;
