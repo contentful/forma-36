@@ -1,21 +1,20 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { text, boolean } from '@storybook/addon-knobs';
-
 import CardDragHandle from './CardDragHandle';
 
-storiesOf('Components/Card/CardDragHandle', module)
-  .addParameters({
-    propTypes: CardDragHandle['__docgenInfo'],
-    component: CardDragHandle,
-  })
-  .add('default', () => (
-    <div style={{ height: 100 }}>
-      <CardDragHandle
-        className={text('className', '')}
-        isDragActive={boolean('isDragActive', false)}
-      >
-        {text('children', 'CardDragHandle')}
-      </CardDragHandle>
-    </div>
-  ));
+export default {
+  title: 'Components/Card/CardDragHandle',
+  component: CardDragHandle,
+  parameters: {
+    propTypes: [CardDragHandle['__docgenInfo']],
+  },
+  argTypes: {
+    className: { control: { disable: true } },
+    testId: { control: { disable: true } },
+  },
+};
+
+export const Basic = () => (
+  <div style={{ height: 100 }}>
+    <CardDragHandle>CardDragHandle</CardDragHandle>
+  </div>
+);
