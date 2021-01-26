@@ -1,0 +1,37 @@
+List is component that helps with vertical indexing of content.
+Every list item begins with a bullet or a number.
+
+## Table of contents
+
+- [How to use List](#how-to-use-list)
+- [Component variations](#component-variations)
+- [Code example](#code-example)
+
+## How to use List
+
+- when displaying vertical data (text and images)
+- when displaying hierarchically indexed content
+
+## Component variations
+
+The List component can be configured in two different ways: to display bulleted (unordered) list or numbered (ordered) list.
+
+## Code example
+
+```jsx
+// import { List, ListItem } from '@contentful/forma-36-react-components';
+
+<List element="ul">
+  <ListItem>List Item 1</ListItem>
+  <ListItem>List Item 2</ListItem>
+  <ListItem>
+    List Item with <TextLink>text link</TextLink>
+  </ListItem>
+  <ListItem>
+    <List element="ol">
+      <ListItem>Sublist Item 1</ListItem>
+      <ListItem>Sublist Item 2</ListItem>
+    </List>
+  </ListItem>
+</List>
+```
