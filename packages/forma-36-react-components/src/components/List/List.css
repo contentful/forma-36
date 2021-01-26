@@ -1,3 +1,7 @@
 .List {
   margin: 0;
 }
+
+.List--unordered {
+  list-style-type: disc;
+}
