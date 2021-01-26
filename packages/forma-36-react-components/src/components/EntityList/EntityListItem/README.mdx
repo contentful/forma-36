@@ -1,0 +1,30 @@
+The EntityListItem component is used to represent lists of entities (entries and assets).
+
+## Table of contents
+
+- [How to use EntityList](#how-to-use-entityList)
+- [Code examples](#code-examples)
+
+## How to use EntityList
+
+This component should be used in combination with the EntryList component which wraps it. It differs from existing EntryCard/AssetCard components as it's intended use is for lists of entities, not individual ones.
+
+## Code examples
+
+```jsx
+<EntityListItem
+  title="Entry title"
+  description="Description"
+  contentType="My content type"
+  status="draft"
+  entityType="entry"
+  dropdownListElements={
+    <DropdownList>
+      <DropdownListItem isTitle>Actions</DropdownListItem>
+      <DropdownListItem>Edit</DropdownListItem>
+      <DropdownListItem>Download</DropdownListItem>
+      <DropdownListItem>Remove</DropdownListItem>
+    </DropdownList>
+  }
+/>
+```
