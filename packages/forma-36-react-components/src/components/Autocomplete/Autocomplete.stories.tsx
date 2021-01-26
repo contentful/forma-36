@@ -42,7 +42,12 @@ export const Basic = (args: AutocompleteProps) => {
   );
 
   return (
-    <Autocomplete<Item> {...args} items={filteredItems}>
+    <Autocomplete<Item>
+      {...args}
+      onQueryChange={handleQueryChange}
+      items={filteredItems}
+      onChange={() => {}}
+    >
       {(options: Item[]) =>
         options.map((option: Item) => (
           <span key={option.value}>{option.label}</span>

@@ -76,7 +76,7 @@ WithThumbnailElement.args = {
   ...Basic.args,
 };
 
-export const Overview = (args: EntryCardPropTypes) => (
+export const Overview = () => (
   <div>
     <Flex marginBottom="spacingS" marginTop="spacingM">
       <SectionHeading element="h3">Entry Card published</SectionHeading>
