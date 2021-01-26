@@ -1,17 +1,27 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { number } from '@storybook/addon-knobs';
 
 import SkeletonContainer from '../SkeletonContainer';
-import SkeletonDisplayText from './SkeletonDisplayText';
+import SkeletonDisplayText, {
+  SkeletonDisplayTextProps,
+} from './SkeletonDisplayText';
 
-storiesOf('Components/Skeleton/SkeletonDisplayText', module)
-  .addParameters({
-    propTypes: SkeletonDisplayText['__docgenInfo'],
-    component: SkeletonDisplayText,
-  })
-  .add('default', () => (
-    <SkeletonContainer>
-      <SkeletonDisplayText numberOfLines={number('numberOfLines', 1)} />
-    </SkeletonContainer>
-  ));
+export default {
+  title: 'Components/Skeleton/SkeletonDisplayText',
+  component: SkeletonDisplayText,
+  parameters: {
+    propTypes: [SkeletonDisplayText['__docgenInfo']],
+  },
+  argTypes: {
+    className: { control: { disable: true } },
+  },
+};
+
+export const Basic = (args: SkeletonDisplayTextProps) => (
+  <SkeletonContainer>
+    <SkeletonDisplayText {...args} />
+  </SkeletonContainer>
+);
+
+Basic.args = {
+  numberOfLines: 1,
+};
