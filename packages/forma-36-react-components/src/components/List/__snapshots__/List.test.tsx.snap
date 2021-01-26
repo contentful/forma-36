@@ -1,8 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`renders as ordered list 1`] = `
+<ol
+  class="List"
+  data-test-id="cf-ui-list"
+>
+  <li
+    class="ListItem"
+    data-test-id="cf-ui-list-item"
+  >
+    Item
+  </li>
+</ol>
+`;
+
 exports[`renders the component 1`] = `
 <ul
-  class="List"
+  class="List List--unordered"
   data-test-id="cf-ui-list"
 >
   <li
@@ -16,7 +30,7 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <ul
-  class="List my-extra-class"
+  class="List List--unordered my-extra-class"
   data-test-id="cf-ui-list"
 >
   <li

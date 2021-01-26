@@ -3,7 +3,10 @@ import cn from 'classnames';
 
 import styles from './List.css';
 
+type ListType = 'ul' | 'ol';
+
 export interface ListProps {
+  element?: ListType;
   className?: string;
   children: React.ReactNode;
   style?: React.CSSProperties;
@@ -11,17 +14,22 @@ export interface ListProps {
 }
 
 export function List({
+  element: Tag = 'ul',
   className,
   children,
   testId = 'cf-ui-list',
   ...otherProps
 }: ListProps): React.ReactElement {
-  const classNames = cn(styles['List'], className);
+  const classNames = cn(
+    styles['List'],
+    { [styles['List--unordered']]: Tag === 'ul' },
+    className,
+  );
 
   return (
-    <ul {...otherProps} className={classNames} data-test-id={testId}>
+    <Tag {...otherProps} className={classNames} data-test-id={testId}>
       {children}
-    </ul>
+    </Tag>
   );
 }
 
