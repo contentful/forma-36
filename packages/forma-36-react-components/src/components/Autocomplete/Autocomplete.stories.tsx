@@ -29,7 +29,7 @@ const items: Item[] = [
   { value: 5, label: 'entry out of viewport' },
 ];
 
-export const Basic = (args: AutocompleteProps) => {
+export const Basic = (args: AutocompleteProps<{}>) => {
   const [filteredItems, setFilteredItems] = useState(items);
 
   const handleQueryChange = useCallback(
