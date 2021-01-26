@@ -1,16 +1,25 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { text } from '@storybook/addon-knobs';
+import ValidationMessage, { ValidationMessageProps } from './ValidationMessage';
 
-import ValidationMessage from './ValidationMessage';
+export default {
+  title: 'Components/ValidationMessage',
+  component: ValidationMessage,
+  parameters: {
+    propTypes: [ValidationMessage['__docgenInfo']],
+  },
+  argTypes: {
+    className: { control: { disable: true } },
+  },
+};
 
-storiesOf('Components/ValidationMessage', module)
-  .addParameters({
-    propTypes: ValidationMessage['__docgenInfo'],
-    component: ValidationMessage,
-  })
-  .add('default', () => (
-    <ValidationMessage className={text('className', '')}>
-      {text('children', 'This field is required')}
-    </ValidationMessage>
-  ));
+interface Args extends ValidationMessageProps {
+  validationMessageText: string;
+}
+
+export const Basic = (validationMessageText: Args) => (
+  <ValidationMessage>{validationMessageText}</ValidationMessage>
+);
+
+Basic.args = {
+  validationMessageText: 'Section heading',
+};
