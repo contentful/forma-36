@@ -6,7 +6,9 @@ exports[`renders the component 1`] = `
   data-test-id="cf-ui-copy-button"
   id="copyButton"
 >
-  <span>
+  <span
+    class="TooltipContainer"
+  >
     <button
       class="CopyButton__button"
       type="button"
@@ -48,7 +50,9 @@ exports[`renders the component with a copy value 1`] = `
   data-test-id="cf-ui-copy-button"
   id="copyButton"
 >
-  <span>
+  <span
+    class="TooltipContainer"
+  >
     <button
       class="CopyButton__button"
       type="button"
@@ -91,7 +95,9 @@ exports[`renders the component with an additional class name 1`] = `
   data-test-id="cf-ui-copy-button"
   id="copyButton"
 >
-  <span>
+  <span
+    class="TooltipContainer"
+  >
     <button
       class="CopyButton__button"
       type="button"

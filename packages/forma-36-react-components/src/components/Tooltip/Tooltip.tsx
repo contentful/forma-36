@@ -200,7 +200,7 @@ export const Tooltip = ({
     <>
       <ContainerElement
         ref={elementRef}
-        className={targetWrapperClassName}
+        className={cn(styles.TooltipContainer, targetWrapperClassName)}
         onMouseEnter={(evt: MouseEvent) => {
           setIsHoveringTarget(true);
           if (onMouseOver) onMouseOver(evt);

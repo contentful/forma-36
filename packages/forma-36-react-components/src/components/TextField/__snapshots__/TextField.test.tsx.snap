@@ -63,7 +63,9 @@ exports[`renders the component with a copybutton 1`] = `
       data-test-id="cf-ui-copy-button"
       id="copyButton"
     >
-      <span>
+      <span
+        class="TooltipContainer"
+      >
         <button
           class="CopyButton__button"
           type="button"

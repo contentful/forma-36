@@ -3,6 +3,28 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.77.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.77.0...@contentful/forma-36-react-components@3.77.1) (2021-01-27)
+
+
+### Bug Fixes
+
+* **tooltip:** pointer-events disabled on button toggles ([#816](https://github.com/contentful/forma-36/issues/816)) ([19d2fa2](https://github.com/contentful/forma-36/commit/19d2fa2127dd2e47c8e53717a0bc350beb97e603)), closes [#805](https://github.com/contentful/forma-36/issues/805) [/github.com/facebook/react/issues/4251#issuecomment-267004045](https://github.com//github.com/facebook/react/issues/4251/issues/issuecomment-267004045)
+
+
+
+
+
+# [3.77.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.76.0...@contentful/forma-36-react-components@3.77.0) (2021-01-26)
+
+
+### Features
+
+* **button:** add additional optional properties for using Buttons as external links ([#807](https://github.com/contentful/forma-36/issues/807)) ([61771c0](https://github.com/contentful/forma-36/commit/61771c010d83d1bc78328eeb6b2ce70bc150856c))
+
+
+
+
+
 # [3.76.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.75.1...@contentful/forma-36-react-components@3.76.0) (2021-01-26)
 
 

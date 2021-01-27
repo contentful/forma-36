@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { HTMLProps } from 'react';
 import type {
   CSSProperties,
   FocusEvent,
@@ -15,7 +15,19 @@ import Spinner from '../Spinner';
 
 import styles from './Button.css';
 
-export interface ButtonProps {
+type AnchorProps =
+  | {
+      href?: undefined;
+      rel?: never;
+      target?: never;
+    }
+  | {
+      href: string;
+      rel?: HTMLProps<HTMLAnchorElement>['rel'];
+      target?: HTMLProps<HTMLAnchorElement>['target'];
+    };
+
+export type ButtonProps = {
   icon?: IconType;
   indicateDropdown?: boolean;
   onClick?: MouseEventHandler;
@@ -33,12 +45,11 @@ export interface ButtonProps {
     | 'naked';
   type?: 'button' | 'submit' | 'reset';
   size?: 'small' | 'medium' | 'large';
-  href?: string;
   style?: CSSProperties;
   className?: string;
   children?: React.ReactNode;
   isActive?: boolean;
-}
+} & AnchorProps;
 
 export const Button = ({
   buttonType = 'primary',
@@ -46,6 +57,8 @@ export const Button = ({
   className,
   disabled = false,
   href,
+  rel,
+  target,
   icon,
   indicateDropdown = false,
   isActive,
@@ -96,6 +109,8 @@ export const Button = ({
       className={classNames}
       disabled={disabled}
       href={!disabled ? href : undefined}
+      rel={rel}
+      target={target}
       type={type}
       {...otherProps}
     >
