@@ -1,0 +1,35 @@
+The EntityList component is used to wrap EntityListItem components.
+
+## Table of contents
+
+- [How to use EntityList](#how-to-use-entityList)
+- [Code examples](#code-examples)
+
+## How to use EntityList
+
+This component should be used in combination with the EntryListItem components, and should be used to entries or assets when in a list context, for example, a multiple entry reference field.
+
+## Code examples
+
+```jsx
+<EntityList>
+  <EntityListItem
+    title="Entry 1"
+    description="Description"
+    contentType="My content type"
+    status="published"
+  />
+  <EntityListItem
+    title="Entry 2"
+    description="Description"
+    contentType="My content type"
+    status="draft"
+  />
+  <EntityListItem
+    title="Entry 3"
+    description="Description"
+    contentType="My content type"
+    status="archived"
+  />
+</EntityList>
+```

@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`does not render the component if no mouseover event on child 1`] = `
-<span>
+<span
+  class="TooltipContainer"
+>
   <span>
     Hover me
   </span>
@@ -9,7 +11,9 @@ exports[`does not render the component if no mouseover event on child 1`] = `
 `;
 
 exports[`renders the component 1`] = `
-<span>
+<span
+  class="TooltipContainer"
+>
   <span
     id="test"
   >
@@ -19,7 +23,9 @@ exports[`renders the component 1`] = `
 `;
 
 exports[`renders the component as span with a id attribute 1`] = `
-<span>
+<span
+  class="TooltipContainer"
+>
   <span
     id="test"
   >
@@ -29,7 +35,9 @@ exports[`renders the component as span with a id attribute 1`] = `
 `;
 
 exports[`renders the component with a id attribute 1`] = `
-<span>
+<span
+  class="TooltipContainer"
+>
   <span
     id="test"
   >
@@ -39,7 +47,9 @@ exports[`renders the component with a id attribute 1`] = `
 `;
 
 exports[`renders the component with a place attribute 1`] = `
-<span>
+<span
+  class="TooltipContainer"
+>
   <span
     id="test"
   >
@@ -50,7 +60,7 @@ exports[`renders the component with a place attribute 1`] = `
 
 exports[`renders the component with a target wrapper classname 1`] = `
 <span
-  class="target-wrapper-class-name"
+  class="TooltipContainer target-wrapper-class-name"
 >
   <span
     id="test"
@@ -61,7 +71,9 @@ exports[`renders the component with a target wrapper classname 1`] = `
 `;
 
 exports[`renders the component with an additional class name 1`] = `
-<span>
+<span
+  class="TooltipContainer"
+>
   <span
     id="test"
   >

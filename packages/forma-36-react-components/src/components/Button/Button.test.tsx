@@ -100,6 +100,16 @@ it('renders the button as link', () => {
   expect(container.firstChild).toMatchSnapshot();
 });
 
+it('renders the button as an external link', () => {
+  const { container } = render(
+    <Button href="/" target="_blank" rel="noreferrer noopener">
+      Button link
+    </Button>,
+  );
+
+  expect(container.firstChild).toMatchSnapshot();
+});
+
 it('renders the button as active', () => {
   const { container } = render(<Button isActive>Active button</Button>);
 

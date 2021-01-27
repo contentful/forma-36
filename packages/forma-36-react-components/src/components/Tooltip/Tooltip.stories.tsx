@@ -22,28 +22,31 @@ export default {
   },
 };
 
-export const basic = (args: { content: string }) => {
+export const Basic = (args: { content: string }) => {
   return (
     <Tooltip {...args}>
       <TextLink>Hover me</TextLink>
     </Tooltip>
   );
 };
-basic.args = {
+
+Basic.args = {
   content: 'I am a Tooltip 🙌',
 };
-const basicSourceCode = `<Tooltip content="I am a Tooltip 🙌">
+
+const BasicSourceCode = `<Tooltip content="I am a Tooltip 🙌">
   <TextLink>Hover me</TextLink>
 </Tooltip>`;
-basic.parameters = {
+
+Basic.parameters = {
   docs: {
     source: {
-      code: basicSourceCode,
+      code: BasicSourceCode,
     },
   },
 };
 
-export const withHtml = (args: { content: string }) => {
+export const WithHtml = (args: { content: string }) => {
   return (
     <Paragraph>
       Lorem Ipsum dolor sit amet&nbsp;
@@ -54,29 +57,32 @@ export const withHtml = (args: { content: string }) => {
     </Paragraph>
   );
 };
-withHtml.args = {
+
+WithHtml.args = {
   content: (
     <>
       I have some <b style={{ color: 'red' }}>HTML</b> in me
     </>
   ),
 };
-const withHtmlSourceCode = `<Tooltip content={(
+
+const WithHtmlSourceCode = `<Tooltip content={(
   <>
     I have some <b style={{ color: 'red' }}>HTML</b> in me
   </>
 )}>
   <TextLink>Hover me</TextLink>
 </Tooltip>`;
-withHtml.parameters = {
+
+WithHtml.parameters = {
   docs: {
     source: {
-      code: withHtmlSourceCode,
+      code: WithHtmlSourceCode,
     },
   },
 };
 
-export const autoPlacement = (args: { content: string }) => {
+export const AutoPlacement = (args: { content: string }) => {
   return (
     <div
       style={{
@@ -102,7 +108,8 @@ export const autoPlacement = (args: { content: string }) => {
     </div>
   );
 };
-autoPlacement.args = {
+
+AutoPlacement.args = {
   place: 'auto',
   content: (
     <>
@@ -112,18 +119,20 @@ autoPlacement.args = {
     </>
   ),
 };
-const autoPlacementSourceCode = `<Tooltip place="auto" content={<>I will reposition automatically<br/>when you scroll</>}>
+
+const AutoPlacementSourceCode = `<Tooltip place="auto" content={<>I will reposition automatically<br/>when you scroll</>}>
   <TextLink>Hover me</TextLink>
 </Tooltip>`;
-autoPlacement.parameters = {
+
+AutoPlacement.parameters = {
   docs: {
     source: {
-      code: autoPlacementSourceCode,
+      code: AutoPlacementSourceCode,
     },
   },
 };
 
-export const contentHover = (args: { content: string }) => {
+export const ContentHover = (args: { content: string }) => {
   return (
     <Paragraph>
       Lorem Ipsum dolor sit amet&nbsp;
@@ -134,7 +143,8 @@ export const contentHover = (args: { content: string }) => {
     </Paragraph>
   );
 };
-contentHover.args = {
+
+ContentHover.args = {
   hideDelay: 300,
   content: (
     <>
@@ -153,7 +163,8 @@ contentHover.args = {
     </>
   ),
 };
-const contentHoverSourceCode = `<Tooltip hideDelay={300} content={(
+
+const ContentHoverSourceCode = `<Tooltip hideDelay={300} content={(
   <>
     You can interact with the content in me
     <br />
@@ -164,15 +175,16 @@ const contentHoverSourceCode = `<Tooltip hideDelay={300} content={(
 )}>
   <TextLink>Hover me</TextLink>
 </Tooltip>`;
-contentHover.parameters = {
+
+ContentHover.parameters = {
   docs: {
     source: {
-      code: contentHoverSourceCode,
+      code: ContentHoverSourceCode,
     },
   },
 };
 
-export const overview = () => {
+export const Overview = () => {
   return (
     <>
       <Flex marginBottom="spacingS">
