@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.78.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.77.1...@contentful/forma-36-react-components@3.78.0) (2021-01-28)
+
+
+### Features
+
+* **icon:** add environment and environment alias ([ca51443](https://github.com/contentful/forma-36/commit/ca514435c6ead0e2a34b6b84081adb77930a53db))
+
+
+
+
+
 ## [3.77.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.77.0...@contentful/forma-36-react-components@3.77.1) (2021-01-27)
 
 
