@@ -44,6 +44,8 @@ export const iconName = {
   EmbeddedEntryInlineTrimmed: 'EmbeddedEntryInlineTrimmed',
   Entry: 'Entry',
   EntryTrimmed: 'EntryTrimmed',
+  Environment: 'Environment',
+  EnvironmentAlias: 'EnvironmentAlias',
   ErrorCircle: 'ErrorCircle',
   ErrorCircleOutline: 'ErrorCircleOutline',
   ErrorCircleTrimmed: 'ErrorCircleTrimmed',
