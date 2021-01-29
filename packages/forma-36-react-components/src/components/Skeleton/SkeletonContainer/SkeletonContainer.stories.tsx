@@ -1,28 +1,31 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { text, boolean, number } from '@storybook/addon-knobs';
 
 import SkeletonBodyText from '../SkeletonBodyText';
 import SkeletonDisplayText from '../SkeletonDisplayText';
-import SkeletonContainer from './SkeletonContainer';
+import SkeletonContainer, { SkeletonContainerProps } from './SkeletonContainer';
 
-storiesOf('Components/Skeleton/SkeletonContainer', module)
-  .addParameters({
-    propTypes: SkeletonContainer['__docgenInfo'],
-    component: SkeletonContainer,
-  })
+export default {
+  title: 'Components/Skeleton/SkeletonContainer',
+  component: SkeletonContainer,
+  parameters: {
+    propTypes: [SkeletonContainer['__docgenInfo']],
+  },
+  argTypes: {
+    className: { control: { disable: true } },
+  },
+};
 
-  .add('default', () => (
-    <SkeletonContainer
-      className={text('className', '')}
-      animate={boolean('animate', true)}
-      width={text('width', '100%')}
-      height={text('height', '100')}
-      backgroundColor={text('backgroundColor', '#e5ebed')}
-      foregroundColor={text('foregroundColor', '#f7f9fa')}
-      speed={number('speed', 2)}
-    >
-      <SkeletonDisplayText numberOfLines={1} />
-      <SkeletonBodyText numberOfLines={3} offsetTop={35} />
-    </SkeletonContainer>
-  ));
+export const Basic = (args: SkeletonContainerProps) => (
+  <SkeletonContainer {...args}>
+    <SkeletonDisplayText numberOfLines={1} />
+    <SkeletonBodyText numberOfLines={3} offsetTop={35} />
+  </SkeletonContainer>
+);
+
+Basic.args = {
+  width: '100%',
+  height: '100',
+  backgroundColor: '#e5ebed',
+  foregroundColor: '#f7f9fa',
+  speed: 2,
+};

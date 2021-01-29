@@ -1,23 +1,26 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { text, select } from '@storybook/addon-knobs';
+import Heading, { HeadingProps } from './Heading';
 
-import Heading from './Heading';
+export default {
+  title: 'Components/Typography/Heading',
+  component: Heading,
+  parameters: {
+    propTypes: [Heading['__docgenInfo']],
+  },
+  argTypes: {
+    className: { control: { disable: true } },
+  },
+};
 
-storiesOf('Components/Typography/Heading', module)
-  .addParameters({
-    propTypes: Heading['__docgenInfo'],
-    component: Heading,
-  })
-  .add('default', () => (
-    <Heading
-      className={text('className', '')}
-      element={select(
-        'element',
-        ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p'],
-        'h1',
-      )}
-    >
-      {text('children', 'Heading')}
-    </Heading>
-  ));
+interface Args extends HeadingProps {
+  headingText: string;
+}
+
+export const Basic = ({ headingText, ...args }: Args) => (
+  <Heading {...args}>{headingText}</Heading>
+);
+
+Basic.args = {
+  element: 'h1',
+  headingText: 'Heading',
+};
