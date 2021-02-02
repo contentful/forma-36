@@ -485,6 +485,15 @@
         "code",
         "bug"
       ]
+    },
+    {
+      "login": "FLoppix",
+      "name": "Felix Boenke",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4083285?v=4",
+      "profile": "http://felixboenke.dev",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
