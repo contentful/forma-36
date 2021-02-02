@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.78.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.78.0...@contentful/forma-36-react-components@3.78.1) (2021-01-29)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+# [3.78.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.77.1...@contentful/forma-36-react-components@3.78.0) (2021-01-28)
+
+
+### Features
+
+* **icon:** add environment and environment alias ([ca51443](https://github.com/contentful/forma-36/commit/ca514435c6ead0e2a34b6b84081adb77930a53db))
+
+
+
+
+
+## [3.77.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.77.0...@contentful/forma-36-react-components@3.77.1) (2021-01-27)
+
+
+### Bug Fixes
+
+* **tooltip:** pointer-events disabled on button toggles ([#816](https://github.com/contentful/forma-36/issues/816)) ([19d2fa2](https://github.com/contentful/forma-36/commit/19d2fa2127dd2e47c8e53717a0bc350beb97e603)), closes [#805](https://github.com/contentful/forma-36/issues/805) [/github.com/facebook/react/issues/4251#issuecomment-267004045](https://github.com//github.com/facebook/react/issues/4251/issues/issuecomment-267004045)
+
+
+
+
+
 # [3.77.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.76.0...@contentful/forma-36-react-components@3.77.0) (2021-01-26)
 
 

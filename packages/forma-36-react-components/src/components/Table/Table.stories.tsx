@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { button } from '@storybook/addon-knobs';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 
 import Table from './Table';
@@ -11,6 +10,7 @@ import SkeletonRow from '../Skeleton/SkeletonRow';
 import notes from './Table.md';
 import Flex from '../Flex/Flex';
 import SectionHeading from '../Typography/SectionHeading';
+import Button from '../Button/Button';
 
 export default {
   argTypes: {
@@ -66,11 +66,6 @@ export const Default: Story = (args) => {
 export const WithLoadingState: Story = () => {
   const [isLoading, setIsLoading] = useState(true);
 
-  button('toggle isLoading', () => {
-    setIsLoading((state) => !state);
-    return false;
-  });
-
   return (
     <div style={{ width: '800px' }}>
       <Table>
@@ -103,6 +98,14 @@ export const WithLoadingState: Story = () => {
           )}
         </TableBody>
       </Table>
+      <br />
+      <Button
+        size="small"
+        buttonType="muted"
+        onClick={() => setIsLoading((state) => !state)}
+      >
+        isLoading toggle button
+      </Button>
     </div>
   );
 };

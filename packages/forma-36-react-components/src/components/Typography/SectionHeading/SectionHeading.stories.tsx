@@ -1,23 +1,26 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { text, select } from '@storybook/addon-knobs';
+import SectionHeading, { SectionHeadingProps } from './SectionHeading';
 
-import SectionHeading from './SectionHeading';
+export default {
+  title: 'Components/Typography/SectionHeading',
+  component: SectionHeading,
+  parameters: {
+    propTypes: [SectionHeading['__docgenInfo']],
+  },
+  argTypes: {
+    className: { control: { disable: true } },
+  },
+};
 
-storiesOf('Components/Typography/SectionHeading', module)
-  .addParameters({
-    propTypes: SectionHeading['__docgenInfo'],
-    component: SectionHeading,
-  })
-  .add('default', () => (
-    <SectionHeading
-      className={text('className', '')}
-      element={select(
-        'element',
-        ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p'],
-        'h1',
-      )}
-    >
-      {text('children', 'Section heading')}
-    </SectionHeading>
-  ));
+interface Args extends SectionHeadingProps {
+  sectionHeadingText: string;
+}
+
+export const Basic = ({ sectionHeadingText, ...args }: Args) => (
+  <SectionHeading {...args}>{sectionHeadingText}</SectionHeading>
+);
+
+Basic.args = {
+  element: 'h3',
+  sectionHeadingText: 'Section heading',
+};

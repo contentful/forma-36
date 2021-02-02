@@ -11,7 +11,12 @@ import AssetCardSkeleton from './AssetCardSkeleton';
 import CardDragHandle, { CardDragHandlePropTypes } from '../CardDragHandle';
 import styles from './AssetCard.css';
 
-export type AssetState = 'archived' | 'changed' | 'draft' | 'published';
+export type AssetState =
+  | 'deleted'
+  | 'archived'
+  | 'changed'
+  | 'draft'
+  | 'published';
 
 export interface AssetCardProps extends BaseCardProps {
   /**

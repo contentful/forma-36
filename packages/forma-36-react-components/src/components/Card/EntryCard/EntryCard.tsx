@@ -10,7 +10,12 @@ import CardDragHandle, { CardDragHandlePropTypes } from '../CardDragHandle';
 import Icon, { IconType } from '../../Icon';
 import styles from './EntryCard.css';
 
-export type EntryCardStatus = 'archived' | 'changed' | 'draft' | 'published';
+export type EntryCardStatus =
+  | 'deleted'
+  | 'archived'
+  | 'changed'
+  | 'draft'
+  | 'published';
 
 export type EntryCardSize = 'default' | 'small' | 'auto';
 

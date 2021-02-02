@@ -1,25 +1,9 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { text, number, select } from '@storybook/addon-knobs';
 import tokens from '@contentful/forma-36-tokens';
 
-import Grid from '../Grid';
-import GridItem from './GridItem';
+import Grid, { GridProps } from '../Grid';
+import GridItem, { GridItemProps } from './GridItem';
 import notes from './GridItem.md';
-
-const gridKnobsId = 'Grid Props';
-const gridItemKnobsId = 'GridItem Props';
-const spacingValues = [
-  'spacing2Xs',
-  'spacingXs',
-  'spacingS',
-  'spacingM',
-  'spacingL',
-  'spacingXl',
-  'spacing2Xl',
-  'spacing3Xl',
-  'spacing4Xl',
-];
 
 const styles = {
   demoBox: {
@@ -27,6 +11,20 @@ const styles = {
   },
   demoBoxDark: {
     backgroundColor: tokens.colorContrastDark,
+  },
+};
+
+export default {
+  title: 'components/Grid/GridItem',
+  component: GridItem,
+  parameters: {
+    propTypes: GridItem['__docgenInfo'],
+    notes,
+  },
+  argTypes: {
+    children: { control: { disable: true } },
+    className: { control: { disable: true } },
+    testId: { control: { disable: true } },
   },
 };
 
@@ -41,62 +39,49 @@ const DemoBox = ({ times, id }: { times?: number; id?: string }) => {
   return <GridItem style={styles.demoBox}></GridItem>;
 };
 
-storiesOf('Components/Grid/GridItem', module)
-  .addParameters({
-    propTypes: GridItem['__docgenInfo'],
-    component: GridItem,
-  })
-  .add(
-    'default',
-    () => {
-      const knobs = {
-        exampleBoxes: number('Example Items', 23),
-        exampleGridHeight: text('Example Grid Height', '90vh'),
-        grid: {
-          columns: number('columns', 6, '', gridKnobsId),
-          rows: number('rows', 4, '', gridKnobsId),
-          columnGap: select(
-            'columnGap',
-            spacingValues,
-            'spacingXs',
-            gridKnobsId,
-          ),
-          rowGap: select('rowGap', spacingValues, 'spacingXs', gridKnobsId),
-          className: text('className', '', gridKnobsId),
-        },
-        gridItem: {
-          columnStart: number('columnStart', 1, '', gridItemKnobsId),
-          columnEnd: number('columnEnd', 3, '', gridItemKnobsId),
-          rowStart: number('rowStart', 1, '', gridItemKnobsId),
-          rowEnd: number('rowEnd', 4, '', gridItemKnobsId),
-          area: text('area', '', gridItemKnobsId),
-          className: text('className', '', gridItemKnobsId),
-          order: number('order', 0, '', gridItemKnobsId),
-        },
-      };
+interface GridItemArgs extends GridItemProps {
+  exampleBoxes: number;
+}
 
-      return (
-        <Grid
-          columns={knobs.grid.columns}
-          rows={knobs.grid.rows}
-          columnGap={knobs.grid.columnGap}
-          rowGap={knobs.grid.rowGap}
-          className={knobs.grid.className}
-          style={{ height: knobs.exampleGridHeight }}
-        >
-          <GridItem
-            style={styles.demoBoxDark}
-            columnStart={knobs.gridItem.columnStart}
-            columnEnd={knobs.gridItem.columnEnd}
-            rowStart={knobs.gridItem.rowStart}
-            rowEnd={knobs.gridItem.rowEnd}
-            className={knobs.gridItem.className}
-            area={knobs.gridItem.area}
-            order={knobs.gridItem.order}
-          />
-          <DemoBox id="gi" times={knobs.exampleBoxes} />
-        </Grid>
-      );
-    },
-    { notes },
-  );
+interface GridArgs extends GridProps {
+  exampleGridHeight: string;
+}
+
+export const Basic = ({
+  exampleGridHeight,
+  exampleBoxes,
+  ...args
+}: GridArgs & GridItemArgs) => (
+  <Grid
+    columns={args.columns}
+    rows={args.rows}
+    columnGap={args.columnGap}
+    rowGap={args.rowGap}
+    style={{ height: exampleGridHeight }}
+  >
+    <GridItem
+      style={styles.demoBoxDark}
+      columnStart={args.columnStart}
+      columnEnd={args.columnEnd}
+      rowStart={args.rowStart}
+      rowEnd={args.rowEnd}
+      area={args.area}
+      order={args.order}
+    />
+    <DemoBox id="gi" times={exampleBoxes} />
+  </Grid>
+);
+
+Basic.args = {
+  exampleBoxes: 23,
+  exampleGridHeight: '90vh',
+  columns: 6,
+  rows: 4,
+  columnGap: 'spacingXs',
+  rowGap: 'spacingXs',
+  columnStart: 1,
+  columnEnd: 3,
+  rowStart: 1,
+  rowEnd: 4,
+  order: 0,
+};

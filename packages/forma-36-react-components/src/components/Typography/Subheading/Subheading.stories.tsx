@@ -1,23 +1,26 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { text, select } from '@storybook/addon-knobs';
+import Subheading, { SubheadingProps } from './Subheading';
 
-import Subheading from './Subheading';
+export default {
+  title: 'Components/Typography/Subheading',
+  component: Subheading,
+  parameters: {
+    propTypes: [Subheading['__docgenInfo']],
+  },
+  argTypes: {
+    className: { control: { disable: true } },
+  },
+};
 
-storiesOf('Components/Typography/Subheading', module)
-  .addParameters({
-    propTypes: Subheading['__docgenInfo'],
-    component: Subheading,
-  })
-  .add('default', () => (
-    <Subheading
-      className={text('className', '')}
-      element={select(
-        'element',
-        ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p'],
-        'h1',
-      )}
-    >
-      {text('children', 'Subheading')}
-    </Subheading>
-  ));
+interface Args extends SubheadingProps {
+  SubheadingText: string;
+}
+
+export const Basic = ({ SubheadingText, ...args }: Args) => (
+  <Subheading {...args}>{SubheadingText}</Subheading>
+);
+
+Basic.args = {
+  element: 'h3',
+  SubheadingText: 'Section heading',
+};

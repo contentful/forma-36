@@ -1,20 +1,28 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { text, boolean } from '@storybook/addon-knobs';
+import FormLabel, { FormLabelProps } from './FormLabel';
 
-import FormLabel from './FormLabel';
+export default {
+  title: 'Components/Form/FormLabel',
+  component: FormLabel,
+  parameters: {
+    propTypes: [FormLabel['__docgenInfo']],
+  },
+  argTypes: {
+    className: { control: { disable: true } },
+    testId: { control: { disable: true } },
+  },
+};
 
-storiesOf('Components/FormLabel', module)
-  .addParameters({
-    propTypes: FormLabel['__docgenInfo'],
-    component: FormLabel,
-  })
-  .add('default', () => (
-    <FormLabel
-      required={boolean('required', false)}
-      requiredText={text('requiredText', 'required')}
-      htmlFor="someInput"
-    >
-      {text('children', 'Input label')}
-    </FormLabel>
-  ));
+interface Args extends FormLabelProps {
+  formLabelText: string;
+}
+
+export const Basic = ({ formLabelText, ...args }: Args) => (
+  <FormLabel {...args}>{formLabelText}</FormLabel>
+);
+
+Basic.args = {
+  requiredText: 'requiredText',
+  htmlFor: 'someInput',
+  formLabelText: 'Input label',
+};
