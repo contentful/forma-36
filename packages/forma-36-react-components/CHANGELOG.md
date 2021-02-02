@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.78.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.78.1...@contentful/forma-36-react-components@3.78.2) (2021-02-02)
+
+
+### Bug Fixes
+
+* **table:** move row styling to table cells ([#802](https://github.com/contentful/forma-36/issues/802)) ([0ba151e](https://github.com/contentful/forma-36/commit/0ba151ec4b4bcf948dcd695d6cfb02bf330dc5d7))
+
+
+
+
+
 ## [3.78.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.78.0...@contentful/forma-36-react-components@3.78.1) (2021-01-29)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
