@@ -12,7 +12,7 @@ module.exports = {
     postCssUrl,
     postcssPresetEnv({
       stage: 0, // Allow experimental CSS features
-      browsers: ['last 2 versions, ie >= 11'],
+      browsers: 'extends @contentful/browserslist-config',
       preserve: false, // Remove the pre-polyfilled CSS
     }),
     postcssCustomProperties(),
