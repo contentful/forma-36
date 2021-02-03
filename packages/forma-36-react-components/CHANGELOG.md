@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.78.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.78.2...@contentful/forma-36-react-components@3.78.3) (2021-02-03)
+
+
+### Bug Fixes
+
+* **deps:** use csstype as a dependency ([#820](https://github.com/contentful/forma-36/issues/820)) ([f64a445](https://github.com/contentful/forma-36/commit/f64a445d35c470ead9c65220519dbc69d47916c3))
+* **table:** add z-index to table head ([#822](https://github.com/contentful/forma-36/issues/822)) ([5c8ad0a](https://github.com/contentful/forma-36/commit/5c8ad0a61b0ee2ce79c9f999bc0267ee86adc156))
+
+
+
+
+
 ## [3.78.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.78.1...@contentful/forma-36-react-components@3.78.2) (2021-02-02)
 
 
