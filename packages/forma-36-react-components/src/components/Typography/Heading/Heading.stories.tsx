@@ -2,7 +2,7 @@ import React from 'react';
 import Heading, { HeadingProps } from './Heading';
 
 export default {
-  title: 'Components/Typography/Heading',
+  title: 'Typography/Heading',
   component: Heading,
   parameters: {
     propTypes: [Heading['__docgenInfo']],
@@ -21,6 +21,5 @@ export const Basic = ({ headingText, ...args }: Args) => (
 );
 
 Basic.args = {
-  element: 'h1',
   headingText: 'Heading',
 };
