@@ -21,6 +21,25 @@ export default {
   },
 };
 
+export const WithDisplayHuge = (args: TypographyProps) => {
+  return (
+    <ExampleContainer>
+      <Typography {...args}>
+        <DisplayText size="huge">My DisplayText</DisplayText>
+        <Paragraph>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis
+          accusantium vel voluptate incidunt, tempora consectetur consequuntur
+          magnam reiciendis ea ipsam!
+        </Paragraph>
+        <Paragraph>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ut
+          accusamus quia debitis expedita consectetur!
+        </Paragraph>
+      </Typography>
+    </ExampleContainer>
+  );
+};
+
 export const WithDisplayLarge = (args: TypographyProps) => {
   return (
     <ExampleContainer>
