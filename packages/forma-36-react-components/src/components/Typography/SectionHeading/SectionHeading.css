@@ -5,10 +5,10 @@
 .SectionHeading {
   display: block;
   font-family: var(--font-stack-primary);
-  font-weight: var(--font-weight-demi-bold);
+  font-weight: var(--font-weight-medium);
   color: var(--color-text-dark);
   font-size: var(--font-size-s);
-  line-height: var(--line-height-default);
+  line-height: var(--line-height-s);
   letter-spacing: var(--letter-spacing-wide);
   text-transform: uppercase;
   text-rendering: optimizeLegibility;
