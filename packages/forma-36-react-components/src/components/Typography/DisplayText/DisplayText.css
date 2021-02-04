@@ -5,7 +5,7 @@
 .DisplayText {
   display: block;
   font-family: var(--font-stack-primary);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-demi-bold);
   color: var(--color-text-dark);
   text-rendering: optimizeLegibility;
   margin: 0;
