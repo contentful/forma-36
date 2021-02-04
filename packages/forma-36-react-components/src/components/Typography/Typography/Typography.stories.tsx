@@ -21,16 +21,21 @@ export default {
   },
 };
 
-export const WithDisplayHuge = (args: TypographyProps) => {
+const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis
+accusantium vel voluptate incidunt, tempora consectetur consequuntur
+magnam reiciendis ea ipsam!`;
+
+interface Arg extends TypographyProps {
+  title?: string;
+  paragraph?: string;
+}
+
+export const WithDisplayHuge = ({ title, paragraph, ...args }: Arg) => {
   return (
     <ExampleContainer>
       <Typography {...args}>
-        <DisplayText size="huge">My DisplayText</DisplayText>
-        <Paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis
-          accusantium vel voluptate incidunt, tempora consectetur consequuntur
-          magnam reiciendis ea ipsam!
-        </Paragraph>
+        <DisplayText size="huge">{title}</DisplayText>
+        <Paragraph>{paragraph}</Paragraph>
         <Paragraph>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ut
           accusamus quia debitis expedita consectetur!
@@ -39,17 +44,17 @@ export const WithDisplayHuge = (args: TypographyProps) => {
     </ExampleContainer>
   );
 };
+WithDisplayHuge.args = {
+  title: 'My DisplayText',
+  paragraph: loremIpsum,
+};
 
-export const WithDisplayLarge = (args: TypographyProps) => {
+export const WithDisplayLarge = ({ title, paragraph, ...args }: Arg) => {
   return (
     <ExampleContainer>
       <Typography {...args}>
-        <DisplayText size="large">My DisplayText</DisplayText>
-        <Paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis
-          accusantium vel voluptate incidunt, tempora consectetur consequuntur
-          magnam reiciendis ea ipsam!
-        </Paragraph>
+        <DisplayText size="large">{title}</DisplayText>
+        <Paragraph>{paragraph}</Paragraph>
         <Paragraph>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ut
           accusamus quia debitis expedita consectetur!
@@ -58,17 +63,17 @@ export const WithDisplayLarge = (args: TypographyProps) => {
     </ExampleContainer>
   );
 };
+WithDisplayLarge.args = {
+  title: 'My DisplayText',
+  paragraph: loremIpsum,
+};
 
-export const WithDisplayDefault = (args: TypographyProps) => {
+export const WithDisplayDefault = ({ title, paragraph, ...args }: Arg) => {
   return (
     <ExampleContainer>
       <Typography {...args}>
-        <DisplayText>My DisplayText</DisplayText>
-        <Paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis
-          accusantium vel voluptate incidunt, tempora consectetur consequuntur
-          magnam reiciendis ea ipsam!
-        </Paragraph>
+        <DisplayText>{title}</DisplayText>
+        <Paragraph>{paragraph}</Paragraph>
         <Paragraph>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ut
           accusamus quia debitis expedita consectetur!
@@ -77,17 +82,17 @@ export const WithDisplayDefault = (args: TypographyProps) => {
     </ExampleContainer>
   );
 };
+WithDisplayDefault.args = {
+  title: 'My DisplayText',
+  paragraph: loremIpsum,
+};
 
-export const WithHeading = (args: TypographyProps) => {
+export const WithHeading = ({ title, paragraph, ...args }: Arg) => {
   return (
     <ExampleContainer>
       <Typography {...args}>
-        <Heading>My Heading</Heading>
-        <Paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis
-          accusantium vel voluptate incidunt, tempora consectetur consequuntur
-          magnam reiciendis ea ipsam!
-        </Paragraph>
+        <Heading>{title}</Heading>
+        <Paragraph>{paragraph}</Paragraph>
         <Paragraph>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ut
           accusamus quia debitis expedita consectetur!
@@ -96,17 +101,17 @@ export const WithHeading = (args: TypographyProps) => {
     </ExampleContainer>
   );
 };
+WithHeading.args = {
+  title: 'My Heading',
+  paragraph: loremIpsum,
+};
 
-export const WithSubheading = (args: TypographyProps) => {
+export const WithSubheading = ({ title, paragraph, ...args }: Arg) => {
   return (
     <ExampleContainer>
       <Typography {...args}>
-        <Subheading>My Subheading</Subheading>
-        <Paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis
-          accusantium vel voluptate incidunt, tempora consectetur consequuntur
-          magnam reiciendis ea ipsam!
-        </Paragraph>
+        <Subheading>{title}</Subheading>
+        <Paragraph>{paragraph}</Paragraph>
         <Paragraph>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ut
           accusamus quia debitis expedita consectetur!
@@ -115,17 +120,17 @@ export const WithSubheading = (args: TypographyProps) => {
     </ExampleContainer>
   );
 };
+WithSubheading.args = {
+  title: 'My Subheading',
+  paragraph: loremIpsum,
+};
 
-export const WithSectionHeading = (args: TypographyProps) => {
+export const WithSectionHeading = ({ title, paragraph, ...args }: Arg) => {
   return (
     <ExampleContainer>
       <Typography {...args}>
-        <SectionHeading>My SectionHeading</SectionHeading>
-        <Paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis
-          accusantium vel voluptate incidunt, tempora consectetur consequuntur
-          magnam reiciendis ea ipsam!
-        </Paragraph>
+        <SectionHeading>{title}</SectionHeading>
+        <Paragraph>{paragraph}</Paragraph>
         <Paragraph>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ut
           accusamus quia debitis expedita consectetur!
@@ -133,6 +138,10 @@ export const WithSectionHeading = (args: TypographyProps) => {
       </Typography>
     </ExampleContainer>
   );
+};
+WithSectionHeading.args = {
+  title: 'My SectionHeading',
+  paragraph: loremIpsum,
 };
 
 export const Overview = () => {
