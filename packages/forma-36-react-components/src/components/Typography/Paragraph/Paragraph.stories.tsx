@@ -2,7 +2,7 @@ import React from 'react';
 import Paragraph, { ParagraphProps } from './Paragraph';
 
 export default {
-  title: 'Components/Typography/Paragraph',
+  title: 'Typography/Paragraph',
   component: Paragraph,
   parameters: {
     propTypes: [Paragraph['__docgenInfo']],
@@ -21,6 +21,5 @@ export const Basic = ({ paragraphText, ...args }: Args) => (
 );
 
 Basic.args = {
-  element: 'p',
-  paragraphText: 'Parahraph',
+  paragraphText: 'Paragraph',
 };

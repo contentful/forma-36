@@ -8,6 +8,6 @@
   font-weight: var(--font-weight-normal);
   color: var(--color-text-mid);
   font-size: var(--font-size-m);
-  line-height: var(--line-height-default);
+  line-height: var(--line-height-m);
   margin: 0;
 }
