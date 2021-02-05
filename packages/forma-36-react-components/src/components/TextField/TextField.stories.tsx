@@ -5,7 +5,7 @@ import SectionHeading from '../Typography/SectionHeading';
 import Flex from '../Flex/Flex';
 
 export default {
-  title: 'Components/TextField',
+  title: 'Forms/TextField',
   component: TextField,
   parameters: {
     propTypes: [TextField['__docgenInfo']],

@@ -4,7 +4,7 @@ import CheckboxField from '../../CheckboxField';
 import FieldGroup from './FieldGroup';
 
 export default {
-  title: 'Components/Form/FieldGroup',
+  title: 'Forms/FieldGroup',
   component: FieldGroup,
   parameters: {
     propTypes: [FieldGroup['__docgenInfo']],

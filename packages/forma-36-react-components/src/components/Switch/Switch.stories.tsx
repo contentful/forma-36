@@ -5,7 +5,7 @@ import SectionHeading from '../Typography/SectionHeading';
 import Flex from '../Flex/Flex';
 
 export default {
-  title: 'Components/Switch',
+  title: 'Forms/Switch',
   component: Switch,
   parameters: {
     propTypes: [Switch['__docgenInfo']],

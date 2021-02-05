@@ -6,7 +6,7 @@ import SectionHeading from '../Typography/SectionHeading';
 import Flex from '../Flex/Flex';
 
 export default {
-  title: 'Components/TextArea',
+  title: 'Forms/TextArea',
   component: Textarea,
   parameters: {
     propTypes: [Textarea['__docgenInfo']],

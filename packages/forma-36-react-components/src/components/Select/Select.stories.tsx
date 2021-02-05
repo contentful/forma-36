@@ -6,7 +6,7 @@ import Flex from '../Flex/Flex';
 import SectionHeading from '../Typography/SectionHeading';
 
 export default {
-  title: 'Components/Select',
+  title: 'Forms/Select',
   component: Select,
   parameters: {
     propTypes: [Select['__docgenInfo']],

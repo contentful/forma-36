@@ -3,7 +3,7 @@ import SelectField, { SelectFieldProps } from './SelectField';
 import Option from '../Select/Option';
 
 export default {
-  title: 'Components/SelectField',
+  title: 'Forms/SelectField',
   component: SelectField,
   parameters: {
     propTypes: [SelectField['__docgenInfo']],
