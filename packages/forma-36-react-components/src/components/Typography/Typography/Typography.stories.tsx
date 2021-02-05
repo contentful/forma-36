@@ -13,7 +13,6 @@ export default {
   component: Typography,
   parameters: {
     propTypes: [Typography['__docgenInfo']],
-    // notes,
   },
   argTypes: {
     className: { control: { disable: true } },
