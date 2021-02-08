@@ -6,7 +6,7 @@ import Flex from '../Flex/Flex';
 import SectionHeading from '../Typography/SectionHeading';
 
 export default {
-  title: 'Components/CheckboxField',
+  title: 'Form Elements/CheckboxField',
   component: CheckboxField,
   parameters: {
     propTypes: [CheckboxField['__docgenInfo']],
