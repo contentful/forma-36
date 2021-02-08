@@ -2,6 +2,16 @@
 @import 'settings/dimensions';
 @import 'settings/typography';
 
+.TableCell--head {
+  background-color: var(--color-element-lightest);
+  font-size: var(--font-size-s);
+  font-weight: var(--font-weight-medium);
+}
+
+.TableCell--head__sorting {
+  color: var(--color-text-dark);
+}
+
 .TableCell {
   border-bottom: 1px solid var(--color-element-light);
   color: var(--color-text-mid);
@@ -13,16 +23,18 @@
   vertical-align: top;
 }
 
+tr:hover td:not(.TableCell--head) {
+  background-color: var(--color-element-lightest);
+}
+
+.TableRow--selected .TableCell {
+  background-color: var(--color-blue-lightest);
+}
+
+.TableRow--selected .TableCell:last-child {
+  box-shadow: inset -2px 0 0 var(--color-blue-mid);
+}
+
 tbody tr:last-child .TableCell {
   border-bottom: none;
-}
-
-.TableCell--head {
-  background-color: var(--color-element-lightest);
-  font-size: var(--font-size-s);
-  font-weight: var(--font-weight-medium);
-}
-
-.TableCell--head__sorting {
-  color: var(--color-text-dark);
 }
