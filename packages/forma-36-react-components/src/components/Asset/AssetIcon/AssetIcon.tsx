@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 import {
   Illustration,
@@ -18,23 +18,25 @@ export interface AssetIconProps
 /**
  * Renders only the Illustration that would represent this asset's type
  */
-export function AssetIcon({
-  type = 'archive',
-  testId = 'cf-ui-asset-icon',
-  ...otherProps
-}: AssetIconProps) {
-  let illustrationName = type!.charAt(0).toUpperCase() + type!.slice(1); // eslint-disable-line @typescript-eslint/no-non-null-assertion
-  if (!isIllustrationType(illustrationName)) {
-    illustrationName = DEFAULT_ILLUSTRATION_NAME;
-  }
+export const AssetIcon = forwardRef<SVGSVGElement, AssetIconProps>(
+  function AssetIcon(
+    { type = 'archive', testId = 'cf-ui-asset-icon', ...otherProps },
+    forwardedRef,
+  ) {
+    let illustrationName = type!.charAt(0).toUpperCase() + type!.slice(1); // eslint-disable-line @typescript-eslint/no-non-null-assertion
+    if (!isIllustrationType(illustrationName)) {
+      illustrationName = DEFAULT_ILLUSTRATION_NAME;
+    }
 
-  return (
-    <Illustration
-      illustration={illustrationName as IllustrationType}
-      testId={testId}
-      {...otherProps}
-    />
-  );
-}
+    return (
+      <Illustration
+        illustration={illustrationName as IllustrationType}
+        testId={testId}
+        ref={forwardedRef}
+        {...otherProps}
+      />
+    );
+  },
+);
 
 export default AssetIcon;

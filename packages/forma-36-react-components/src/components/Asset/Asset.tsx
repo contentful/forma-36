@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import cn from 'classnames';
 
 import { AssetIcon } from './AssetIcon/AssetIcon';
@@ -52,15 +52,18 @@ export interface AssetProps {
   type?: AssetType;
 }
 
-export function Asset({
-  className,
-  src,
-  status,
-  testId = 'cf-ui-asset',
-  title,
-  type = 'image',
-  ...otherProps
-}: AssetProps): React.ReactElement {
+export const Asset = forwardRef<HTMLDivElement, AssetProps>(function Asset(
+  {
+    className,
+    src,
+    status,
+    testId = 'cf-ui-asset',
+    title,
+    type = 'image',
+    ...otherProps
+  },
+  forwardedRef,
+): React.ReactElement {
   const classNames = cn(styles.Asset, className);
   const isImage = type === 'image' && src !== undefined && src !== '';
 
@@ -68,7 +71,12 @@ export function Asset({
   const showPreview = isImage && status !== 'archived';
 
   return (
-    <div className={classNames} data-test-id={testId} {...otherProps}>
+    <div
+      className={classNames}
+      data-test-id={testId}
+      {...otherProps}
+      ref={forwardedRef}
+    >
       {showPreview ? (
         <React.Fragment>
           <div className={styles['Asset__image-container']}>
@@ -100,6 +108,6 @@ export function Asset({
       )}
     </div>
   );
-}
+});
 
 export default Asset;

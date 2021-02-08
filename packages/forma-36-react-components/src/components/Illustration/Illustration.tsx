@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import cn from 'classnames';
 
 import { illustrationName } from './constants';
@@ -31,33 +31,38 @@ export interface IllustrationProps {
   style?: React.CSSProperties;
 }
 
-export function Illustration({
-  className,
-  testId = 'cf-ui-illustration',
-  illustration,
-  ...otherProps
-}: IllustrationProps): React.ReactElement {
-  const illustrationComponents = {
-    Archive,
-    Audio,
-    Richtext,
-    Code,
-    Image,
-    Markup,
-    Pdf,
-    Plaintext,
-    Presentation,
-    Spreadsheet,
-    Video,
-  };
+export const Illustration = forwardRef<SVGSVGElement, IllustrationProps>(
+  function Illustration(
+    { className, testId = 'cf-ui-illustration', illustration, ...otherProps },
+    forwardedRef,
+  ) {
+    const illustrationComponents = {
+      Archive,
+      Audio,
+      Richtext,
+      Code,
+      Image,
+      Markup,
+      Pdf,
+      Plaintext,
+      Presentation,
+      Spreadsheet,
+      Video,
+    };
 
-  const classNames = cn(styles['Illustration'], className);
+    const classNames = cn(styles['Illustration'], className);
 
-  const Element = illustrationComponents[illustration];
+    const Element = illustrationComponents[illustration];
 
-  return (
-    <Element {...otherProps} data-test-id={testId} className={classNames} />
-  );
-}
+    return (
+      <Element
+        {...otherProps}
+        data-test-id={testId}
+        className={classNames}
+        ref={forwardedRef}
+      />
+    );
+  },
+);
 
 export default Illustration;
