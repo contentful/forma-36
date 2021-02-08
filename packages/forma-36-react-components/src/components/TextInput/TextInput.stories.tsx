@@ -6,7 +6,7 @@ import SectionHeading from '../Typography/SectionHeading';
 import Flex from '../Flex/Flex';
 
 export default {
-  title: 'Forms/TextInput',
+  title: 'Form Elements/TextInput',
   component: TextInput,
   parameters: {
     propTypes: [TextInput['__docgenInfo']],

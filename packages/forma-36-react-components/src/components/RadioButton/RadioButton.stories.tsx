@@ -5,7 +5,7 @@ import Flex from '../Flex/Flex';
 import SectionHeading from '../Typography/SectionHeading';
 
 export default {
-  title: 'Forms/RadioButton',
+  title: 'Form Elements/RadioButton',
   component: RadioButton,
   parameters: {
     propTypes: [RadioButton['__docgenInfo']],

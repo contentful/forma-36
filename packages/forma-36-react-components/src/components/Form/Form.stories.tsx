@@ -8,7 +8,7 @@ import CheckboxField from '../CheckboxField';
 import notes from './README.mdx';
 
 export default {
-  title: 'Forms/Form',
+  title: 'Form Elements/Form',
   component: Form,
   parameters: {
     propTypes: [Form['__docgenInfo']],
