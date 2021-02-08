@@ -66,12 +66,15 @@ const Layout = (props) => {
   data.allMdx.nodes.forEach((item) => {
     if (props.pageContext && props.pageContext.frontmatter.title) {
       const arrFromSlug = item.slug.split('/');
-      const trimmedTitle = props.pageContext.frontmatter.title.replace(
-        /\s/g,
-        '',
+      const arrFromSlugLowercase = arrFromSlug.map((item) =>
+        item.toLowerCase(),
       );
 
-      if (arrFromSlug.includes(trimmedTitle)) {
+      const trimmedTitle = props.pageContext.frontmatter.title
+        .replace(/\s/g, '')
+        .toLowerCase();
+
+      if (arrFromSlugLowercase.includes(trimmedTitle)) {
         dataFromReadme[props.pageContext.frontmatter.title] = item.body;
       }
     }
