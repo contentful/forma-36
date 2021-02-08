@@ -1,4 +1,4 @@
-The EntityList component is used to wrap EntityListItem components.
+The EntityList component is used to wrap EntityListItem components. The EntityListItem component is used to represent lists of entities (entries and assets).
 
 ## Table of contents
 
@@ -7,7 +7,7 @@ The EntityList component is used to wrap EntityListItem components.
 
 ## How to use EntityList
 
-This component should be used in combination with the EntryListItem components, and should be used to entries or assets when in a list context, for example, a multiple entry reference field.
+This component should be used in combination with the EntryListItem components, and should be used to entries or assets when in a list context, for example, a multiple entry reference field. It differs from existing EntryCard/AssetCard components as it's intended use is for lists of entities, not individual ones.
 
 ## Code examples
 
@@ -30,6 +30,41 @@ This component should be used in combination with the EntryListItem components, 
     description="Description"
     contentType="My content type"
     status="archived"
+  />
+</EntityList>
+```
+
+```jsx
+<EntityList>
+  <EntityListItem
+    title="Entry title"
+    description="Description"
+    contentType="My content type"
+    status="draft"
+    entityType="entry"
+    dropdownListElements={
+      <DropdownList>
+        <DropdownListItem isTitle>Actions</DropdownListItem>
+        <DropdownListItem>Edit</DropdownListItem>
+        <DropdownListItem>Download</DropdownListItem>
+        <DropdownListItem>Remove</DropdownListItem>
+      </DropdownList>
+    }
+  />
+  <EntityListItem
+    title="Other entry title"
+    description="Description"
+    contentType="My content type"
+    status="published"
+    entityType="entry"
+    dropdownListElements={
+      <DropdownList>
+        <DropdownListItem isTitle>Actions</DropdownListItem>
+        <DropdownListItem>Edit</DropdownListItem>
+        <DropdownListItem>Download</DropdownListItem>
+        <DropdownListItem>Remove</DropdownListItem>
+      </DropdownList>
+    }
   />
 </EntityList>
 ```
