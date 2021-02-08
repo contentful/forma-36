@@ -2,7 +2,7 @@ import React from 'react';
 import FormLabel, { FormLabelProps } from './FormLabel';
 
 export default {
-  title: 'Components/Form/FormLabel',
+  title: 'Form Elements/FormLabel',
   component: FormLabel,
   parameters: {
     propTypes: [FormLabel['__docgenInfo']],
