@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import cn from 'classnames';
 
 import styles from './Accordion.css';
@@ -22,22 +22,30 @@ export interface AccordionProps {
   testId?: string;
 }
 
-export const Accordion = ({
-  align = 'end',
-  children,
-  className,
-  testId = 'cf-ui-accordion',
-  ...otherProps
-}: AccordionProps) => {
+export const Accordion = forwardRef<HTMLUListElement, AccordionProps>(function (
+  {
+    align = 'end',
+    children,
+    className,
+    testId = 'cf-ui-accordion',
+    ...otherProps
+  },
+  forwardedRef,
+) {
   const classNames = cn(styles.Accordion, className, {
     [styles[`Accordion--${align}`]]: align,
   });
 
   return (
-    <ul className={classNames} data-test-id={testId} {...otherProps}>
+    <ul
+      className={classNames}
+      data-test-id={testId}
+      ref={forwardedRef}
+      {...otherProps}
+    >
       {children}
     </ul>
   );
-};
+});
 
 export default Accordion;

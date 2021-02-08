@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { forwardRef, useState } from 'react';
 
 import useId from '../../../utils/useId';
 import AccordionHeader from '../AccordionHeader';
@@ -33,44 +33,53 @@ export interface AccordionItemProps {
   onCollapse?: Function;
 }
 
-export const AccordionItem: FC<AccordionItemProps> = ({
-  title = 'Accordion Title',
-  titleElement = 'h2',
-  testId = 'cf-ui-accordion-item',
-  onExpand,
-  onCollapse,
-  children,
-}: AccordionItemProps) => {
-  const id = useId();
-  const [isExpanded, setIsExpanded] = useState(false);
+export const AccordionItem = forwardRef<HTMLLIElement, AccordionItemProps>(
+  function AccordionItem(
+    {
+      title = 'Accordion Title',
+      titleElement = 'h2',
+      testId = 'cf-ui-accordion-item',
+      onExpand,
+      onCollapse,
+      children,
+    },
+    forwardedRef,
+  ) {
+    const id = useId();
+    const [isExpanded, setIsExpanded] = useState(false);
 
-  const onClick = () => {
-    if (!isExpanded && onExpand) {
-      onExpand();
-    }
-    if (isExpanded && onCollapse) {
-      onCollapse();
-    }
+    const onClick = () => {
+      if (!isExpanded && onExpand) {
+        onExpand();
+      }
+      if (isExpanded && onCollapse) {
+        onCollapse();
+      }
 
-    setIsExpanded(!isExpanded);
-  };
+      setIsExpanded(!isExpanded);
+    };
 
-  return (
-    <li className={styles.AccordionItem} data-test-id={`${testId}-${id}`}>
-      <AccordionHeader
-        handleClick={onClick}
-        isExpanded={isExpanded}
-        element={titleElement}
-        ariaId={id}
+    return (
+      <li
+        className={styles.AccordionItem}
+        data-test-id={`${testId}-${id}`}
+        ref={forwardedRef}
       >
-        {title}
-      </AccordionHeader>
+        <AccordionHeader
+          handleClick={onClick}
+          isExpanded={isExpanded}
+          element={titleElement}
+          ariaId={id}
+        >
+          {title}
+        </AccordionHeader>
 
-      <AccordionPanel ariaId={id} isExpanded={isExpanded}>
-        {children}
-      </AccordionPanel>
-    </li>
-  );
-};
+        <AccordionPanel ariaId={id} isExpanded={isExpanded}>
+          {children}
+        </AccordionPanel>
+      </li>
+    );
+  },
+);
 
 export default AccordionItem;

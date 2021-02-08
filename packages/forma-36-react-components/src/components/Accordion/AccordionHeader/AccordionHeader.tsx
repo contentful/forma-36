@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { forwardRef } from 'react';
 import cn from 'classnames';
 
 import Subheading from '../../Typography/Subheading';
@@ -33,13 +33,13 @@ interface AccordionHeaderProps {
   element?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 }
 
-export const AccordionHeader: FC<AccordionHeaderProps> = ({
-  children,
-  handleClick,
-  isExpanded = false,
-  ariaId,
-  element = 'h2',
-}: AccordionHeaderProps) => {
+export const AccordionHeader = forwardRef<
+  HTMLButtonElement,
+  AccordionHeaderProps
+>(function AccordionHeader(
+  { children, handleClick, isExpanded = false, ariaId, element = 'h2' },
+  forwardedRef,
+) {
   const classNames = cn(styles.AccordionHeader, {
     [styles['AccordionHeader--expanded']]: isExpanded,
   });
@@ -53,6 +53,7 @@ export const AccordionHeader: FC<AccordionHeaderProps> = ({
         id={`accordion--${ariaId}`}
         className={classNames}
         onClick={handleClick}
+        ref={forwardedRef}
       >
         <Icon
           icon="ChevronDownTrimmed"
@@ -63,6 +64,6 @@ export const AccordionHeader: FC<AccordionHeaderProps> = ({
       </button>
     </Subheading>
   );
-};
+});
 
 export default AccordionHeader;
