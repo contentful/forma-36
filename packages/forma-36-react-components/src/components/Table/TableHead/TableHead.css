@@ -1,4 +1,7 @@
+@import 'settings/z-index';
+
 .TableHead--sticky th {
   position: sticky;
   top: 0;
+  z-index: var(--z-index-default);
 }

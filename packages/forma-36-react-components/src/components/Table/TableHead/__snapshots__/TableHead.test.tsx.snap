@@ -6,7 +6,7 @@ exports[`renders the component 1`] = `
   data-test-id="cf-ui-table-head"
 >
   <tr
-    class="TableRow"
+    class=""
     data-test-id="cf-ui-table-row"
   >
     <th
@@ -27,7 +27,7 @@ exports[`renders the component as sticky 1`] = `
   data-test-id="cf-ui-table-head"
 >
   <tr
-    class="TableRow"
+    class=""
     data-test-id="cf-ui-table-row"
   >
     <th
@@ -48,7 +48,7 @@ exports[`renders the component as sticky and with an offset Top 1`] = `
   data-test-id="cf-ui-table-head"
 >
   <tr
-    class="TableRow"
+    class=""
     data-test-id="cf-ui-table-row"
   >
     <th
@@ -69,7 +69,7 @@ exports[`renders the component with additional className 1`] = `
   data-test-id="cf-ui-table-head"
 >
   <tr
-    class="TableRow"
+    class=""
     data-test-id="cf-ui-table-row"
   >
     <th
