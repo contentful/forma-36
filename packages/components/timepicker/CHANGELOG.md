@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0-alpha.10](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-timepicker@0.5.0-alpha.9...@contentful/forma-36-react-timepicker@0.5.0-alpha.10) (2021-02-09)
+
+**Note:** Version bump only for package @contentful/forma-36-react-timepicker
+
+
+
+
+
 # [0.5.0-alpha.9](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-timepicker@0.5.0-alpha.8...@contentful/forma-36-react-timepicker@0.5.0-alpha.9) (2021-02-03)
 
 **Note:** Version bump only for package @contentful/forma-36-react-timepicker
