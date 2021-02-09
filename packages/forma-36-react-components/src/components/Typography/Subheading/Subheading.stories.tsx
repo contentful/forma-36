@@ -2,7 +2,7 @@ import React from 'react';
 import Subheading, { SubheadingProps } from './Subheading';
 
 export default {
-  title: 'Components/Typography/Subheading',
+  title: 'Typography/Subheading',
   component: Subheading,
   parameters: {
     propTypes: [Subheading['__docgenInfo']],
@@ -21,6 +21,5 @@ export const Basic = ({ SubheadingText, ...args }: Args) => (
 );
 
 Basic.args = {
-  element: 'h3',
-  SubheadingText: 'Section heading',
+  SubheadingText: 'Subheading',
 };

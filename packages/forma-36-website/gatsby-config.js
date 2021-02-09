@@ -140,6 +140,14 @@ module.exports = {
             link: '/components/card/',
           },
           {
+            name: 'Copy button',
+            link: '/components/copy-button/',
+          },
+          {
+            name: 'DateTime',
+            link: '/components/date-time/',
+          },
+          {
             name: 'Dropdown',
             link: '/components/dropdown/',
           },
@@ -164,6 +172,10 @@ module.exports = {
             link: '',
             menuLinks: [
               {
+                name: 'Checkbox',
+                link: '/components/checkbox/',
+              },
+              {
                 name: 'Checkbox Field',
                 link: '/components/checkbox-field/',
               },
@@ -178,6 +190,10 @@ module.exports = {
               {
                 name: 'Radio button',
                 link: '/components/radio-button/',
+              },
+              {
+                name: 'Radio button field',
+                link: '/components/radio-button-field/',
               },
               {
                 name: 'Select',
@@ -220,6 +236,10 @@ module.exports = {
           {
             name: 'Icon button',
             link: '/components/icon-button/',
+          },
+          {
+            name: 'Illustration',
+            link: '/components/illustration/',
           },
           {
             name: 'List',

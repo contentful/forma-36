@@ -81,7 +81,7 @@ exports[`renders the component with title 1`] = `
     class="Note__icon"
   >
     <svg
-      class="Icon Icon--small Icon--positive"
+      class="Icon Icon--medium Icon--positive"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"

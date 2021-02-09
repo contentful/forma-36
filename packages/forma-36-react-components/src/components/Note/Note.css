@@ -21,12 +21,12 @@
   font-size: var(--font-size-l);
   margin-bottom: var(--spacing-xs);
   color: var(--color-text-dark);
-  line-height: 18px; /* ugly hack to align icon with text, it will be fixed when changes in typography will be implemented */
+  line-height: var(--line-height-l);
 }
 
 .Note__content {
   width: 100%;
-  line-height: 18px; /* ugly hack to align icon with text, it will be fixed when changes in typography will be implemented */
+  line-height: var(--line-height-m);
 }
 
 .Note--primary {

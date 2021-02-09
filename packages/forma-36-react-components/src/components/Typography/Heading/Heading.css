@@ -8,7 +8,7 @@
   font-weight: var(--font-weight-demi-bold);
   color: var(--color-text-dark);
   font-size: var(--font-size-xl);
-  line-height: var(--line-height-default);
+  line-height: var(--line-height-xl);
   text-rendering: optimizeLegibility;
   margin: 0;
 }
