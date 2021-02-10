@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.79.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.79.0...@contentful/forma-36-react-components@3.79.1) (2021-02-10)
+
+
+### Bug Fixes
+
+* **help-circle-inverted:** always override fill ([dc84651](https://github.com/contentful/forma-36/commit/dc8465152cdeae47499894529a032cdc84a851f3))
+
+
+
+
+
 # [3.79.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.78.4...@contentful/forma-36-react-components@3.79.0) (2021-02-10)
 
 
