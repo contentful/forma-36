@@ -1,22 +1,33 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { text } from '@storybook/addon-knobs';
 
-import HelpText from './HelpText';
+import HelpText, { HelpTextProps } from './HelpText';
 import TextLink from '../TextLink';
 
-storiesOf('Components/HelpText', module)
-  .addParameters({
-    propTypes: HelpText['__docgenInfo'],
-    component: HelpText,
-  })
-  .add('default', () => (
-    <HelpText className={text('className', '')}>
-      {text('Child Text', 'Lorem Ipsum dolor sit amet')}
-    </HelpText>
-  ))
-  .add('with link', () => (
-    <HelpText className={text('className', '')}>
-      Some Text and then <TextLink> a link.</TextLink>
-    </HelpText>
-  ));
+export default {
+  title: 'Components/HelpText',
+  component: HelpText,
+  parameters: {
+    propTypes: [HelpText['__docgenInfo']],
+  },
+  argTypes: {
+    className: { control: { disable: true } },
+    testId: { control: { disable: true } },
+  },
+};
+
+interface Args extends HelpTextProps {
+  helpText: string;
+}
+export const Basic = ({ helpText, ...args }: Args) => (
+  <HelpText {...args}>{helpText}</HelpText>
+);
+
+Basic.args = {
+  helpText: 'Lorem Ipsum dolor sit amet',
+};
+
+export const WithLink = () => (
+  <HelpText>
+    Some Text and then <TextLink> a link.</TextLink>
+  </HelpText>
+);

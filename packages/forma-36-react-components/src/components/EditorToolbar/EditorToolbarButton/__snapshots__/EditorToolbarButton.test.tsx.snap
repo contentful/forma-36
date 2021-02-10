@@ -37,7 +37,9 @@ exports[`renders the component 1`] = `
 `;
 
 exports[`renders the component as active 1`] = `
-<span>
+<span
+  class="TooltipContainer"
+>
   <button
     class="IconButton EditorToolbarButton EditorToolbarButton--is-active IconButton--secondary"
     data-test-id="cf-ui-editor-toolbar-button"
@@ -110,7 +112,9 @@ exports[`renders the component as disabled 1`] = `
 `;
 
 exports[`renders the component with a tooltip 1`] = `
-<span>
+<span
+  class="TooltipContainer"
+>
   <button
     class="IconButton EditorToolbarButton IconButton--secondary"
     data-test-id="cf-ui-editor-toolbar-button"
@@ -182,7 +186,9 @@ exports[`renders the component with an additional class name 1`] = `
 `;
 
 exports[`renders with a dropdown indicator 1`] = `
-<span>
+<span
+  class="TooltipContainer"
+>
   <button
     class="IconButton EditorToolbarButton IconButton--secondary"
     data-test-id="cf-ui-editor-toolbar-button"

@@ -1,5 +1,4 @@
 import React from 'react';
-import { select } from '@storybook/addon-knobs';
 import tokens from '@contentful/forma-36-tokens';
 
 import Workbench, { WorkbenchProps } from './Workbench';
@@ -30,13 +29,7 @@ export const basic = (args: WorkbenchProps) => (
         icon={<Icon icon="ArrowDown" />}
         actions={<Button buttonType="muted">Click</Button>}
       />
-      <Workbench.Content
-        type={select(
-          'Workbench.Content -> type',
-          ['default', 'text', 'full'],
-          'default',
-        )}
-      >
+      <Workbench.Content type="default">
         <div
           style={{ height: '2000px', backgroundColor: tokens.colorBlueBase }}
         >
@@ -59,13 +52,7 @@ export const withLeftSidebar = (args: WorkbenchProps) => (
         {args['left sidebar']}
       </div>
     </Workbench.Sidebar>
-    <Workbench.Content
-      type={select(
-        'Workbench.Content -> type',
-        ['default', 'text', 'full'],
-        'default',
-      )}
-    >
+    <Workbench.Content type="default">
       <div style={{ height: '2000px', backgroundColor: tokens.colorBlueBase }}>
         {args['workbench content']}
       </div>
@@ -80,13 +67,7 @@ export const withRightSidebar = (args: WorkbenchProps) => (
       icon={<Icon icon="ArrowDown" />}
       actions={<Button buttonType="muted">Click</Button>}
     />
-    <Workbench.Content
-      type={select(
-        'Workbench.Content -> type',
-        ['default', 'text', 'full'],
-        'default',
-      )}
-    >
+    <Workbench.Content type="default">
       <div style={{ height: '2000px', backgroundColor: tokens.colorBlueBase }}>
         {args['workbench content']}
       </div>
@@ -111,13 +92,7 @@ export const withLeftAndRightSidebar = (args: WorkbenchProps) => (
         {args['left sidebar']}
       </div>
     </Workbench.Sidebar>
-    <Workbench.Content
-      type={select(
-        'Workbench.Content -> type',
-        ['default', 'text', 'full'],
-        'default',
-      )}
-    >
+    <Workbench.Content type="default">
       <div style={{ height: '2000px', backgroundColor: tokens.colorBlueBase }}>
         {args['workbench content']}
       </div>
@@ -138,13 +113,7 @@ export const withBackButton = (args: WorkbenchProps) => (
       icon={<Icon icon="ArrowDown" />}
       actions={<Button buttonType="muted">Click</Button>}
     />
-    <Workbench.Content
-      type={select(
-        'Workbench.Content -> type',
-        ['default', 'text', 'full'],
-        'default',
-      )}
-    >
+    <Workbench.Content type="default">
       <div style={{ height: '2000px', backgroundColor: tokens.colorBlueBase }}>
         {args['workbench content']}
       </div>

@@ -1,15 +1,25 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
-import { boolean } from '@storybook/addon-knobs';
 import CheckboxField from '../../CheckboxField';
 
 import FieldGroup from './FieldGroup';
 
-function DefaultStory() {
+export default {
+  title: 'Form Elements/FieldGroup',
+  component: FieldGroup,
+  parameters: {
+    propTypes: [FieldGroup['__docgenInfo']],
+  },
+  argTypes: {
+    className: { control: { disable: true } },
+    testId: { control: { disable: true } },
+  },
+};
+
+export const Basic = () => {
   const [agreeTerms, setTerms] = useState('yes');
 
   return (
-    <FieldGroup row={boolean('row', false)}>
+    <FieldGroup>
       <CheckboxField
         labelText="I agree"
         value="yes"
@@ -28,11 +38,4 @@ function DefaultStory() {
       />
     </FieldGroup>
   );
-}
-
-storiesOf('Components/Form/FieldGroup', module)
-  .addParameters({
-    propTypes: CheckboxField['__docgenInfo'],
-    component: FieldGroup,
-  })
-  .add('default', () => <DefaultStory />);
+};

@@ -35,6 +35,10 @@
   z-index: var(--z-index-negative);
 }
 
+.TooltipContainer > button[disabled] {
+  pointer-events: none;
+}
+
 .Tooltip__arrow {
   position: absolute;
 }

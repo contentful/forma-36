@@ -50,7 +50,7 @@ export function Note({
       data-test-id={testId}
     >
       <div className={styles.Note__icon}>
-        <Icon icon={icon} color={noteType} />
+        <Icon icon={icon} color={noteType} size={title ? 'medium' : 'small'} />
       </div>
       <div className={styles.Note__info}>
         {title && <div className={styles.Note__title}>{title}</div>}

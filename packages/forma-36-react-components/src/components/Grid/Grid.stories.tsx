@@ -1,7 +1,7 @@
 import React from 'react';
 import tokens from '@contentful/forma-36-tokens';
 
-import Grid from './Grid';
+import Grid, { GridProps } from './Grid';
 import GridItem from './GridItem';
 import notes from './README.mdx';
 
@@ -35,7 +35,12 @@ const DemoBox = ({ times, id }: { times?: number; id?: string }) => {
   return <GridItem style={styles.demoBox}></GridItem>;
 };
 
-export const Default = ({ exampleBoxes, exampleGridHeight, ...args }) => {
+interface Args extends GridProps {
+  exampleBoxes: number;
+  exampleGridHeight: string;
+}
+
+export const Basic = ({ exampleBoxes, exampleGridHeight, ...args }: Args) => {
   return (
     <div style={{ width: '90vw' }}>
       <Grid {...args} style={{ height: exampleGridHeight }}>
@@ -44,7 +49,8 @@ export const Default = ({ exampleBoxes, exampleGridHeight, ...args }) => {
     </div>
   );
 };
-Default.args = {
+
+Basic.args = {
   exampleBoxes: 24,
   exampleGridHeight: '90vh',
   columns: 6,

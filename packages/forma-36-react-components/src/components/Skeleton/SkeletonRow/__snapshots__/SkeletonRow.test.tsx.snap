@@ -11,7 +11,7 @@ exports[`renders the component 1`] = `
     data-test-id="cf-ui-table-body"
   >
     <tr
-      class="TableRow"
+      class=""
       data-test-id="cf-ui-table-row"
     >
       <td
@@ -455,7 +455,7 @@ exports[`renders the component with 10 cells 1`] = `
     data-test-id="cf-ui-table-body"
   >
     <tr
-      class="TableRow"
+      class=""
       data-test-id="cf-ui-table-row"
     >
       <td
@@ -1324,7 +1324,7 @@ exports[`renders the component with 10 rows 1`] = `
     data-test-id="cf-ui-table-body"
   >
     <tr
-      class="TableRow"
+      class=""
       data-test-id="cf-ui-table-row"
     >
       <td
@@ -1754,7 +1754,7 @@ exports[`renders the component with 10 rows 1`] = `
       </td>
     </tr>
     <tr
-      class="TableRow"
+      class=""
       data-test-id="cf-ui-table-row"
     >
       <td
@@ -2184,7 +2184,7 @@ exports[`renders the component with 10 rows 1`] = `
       </td>
     </tr>
     <tr
-      class="TableRow"
+      class=""
       data-test-id="cf-ui-table-row"
     >
       <td
@@ -2614,7 +2614,7 @@ exports[`renders the component with 10 rows 1`] = `
       </td>
     </tr>
     <tr
-      class="TableRow"
+      class=""
       data-test-id="cf-ui-table-row"
     >
       <td
@@ -3044,7 +3044,7 @@ exports[`renders the component with 10 rows 1`] = `
       </td>
     </tr>
     <tr
-      class="TableRow"
+      class=""
       data-test-id="cf-ui-table-row"
     >
       <td
@@ -3474,7 +3474,7 @@ exports[`renders the component with 10 rows 1`] = `
       </td>
     </tr>
     <tr
-      class="TableRow"
+      class=""
       data-test-id="cf-ui-table-row"
     >
       <td
@@ -3904,7 +3904,7 @@ exports[`renders the component with 10 rows 1`] = `
       </td>
     </tr>
     <tr
-      class="TableRow"
+      class=""
       data-test-id="cf-ui-table-row"
     >
       <td
@@ -4334,7 +4334,7 @@ exports[`renders the component with 10 rows 1`] = `
       </td>
     </tr>
     <tr
-      class="TableRow"
+      class=""
       data-test-id="cf-ui-table-row"
     >
       <td
@@ -4764,7 +4764,7 @@ exports[`renders the component with 10 rows 1`] = `
       </td>
     </tr>
     <tr
-      class="TableRow"
+      class=""
       data-test-id="cf-ui-table-row"
     >
       <td
@@ -5194,7 +5194,7 @@ exports[`renders the component with 10 rows 1`] = `
       </td>
     </tr>
     <tr
-      class="TableRow"
+      class=""
       data-test-id="cf-ui-table-row"
     >
       <td

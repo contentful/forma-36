@@ -1,28 +1,29 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { boolean, select } from '@storybook/addon-knobs';
 
-import Form from './Form';
+import Form, { FormProps } from './Form';
 import FieldGroup from './FieldGroup';
 import Button from '../Button';
 import TextField from '../TextField';
 import CheckboxField from '../CheckboxField';
+import notes from './README.mdx';
 
-function DefaultStory() {
+export default {
+  title: 'Form Elements/Form',
+  component: Form,
+  parameters: {
+    propTypes: [Form['__docgenInfo']],
+    notes,
+  },
+  argTypes: {
+    className: { control: { disable: true } },
+    testId: { control: { disable: true } },
+  },
+};
+
+export const Basic = (args: FormProps) => {
   const [agreeTerms, setTerms] = useState('yes');
   return (
-    <Form
-      onSubmit={action('onSubmit')}
-      spacing={select(
-        'spacing',
-        {
-          Default: 'default',
-          Condensed: 'condensed',
-        },
-        'default',
-      )}
-    >
+    <Form {...args}>
       <TextField
         required
         name="nameInput"
@@ -39,7 +40,7 @@ function DefaultStory() {
         value="johannes.bugiel@contentful.com"
         helpText="Please enter your mail"
       />
-      <FieldGroup row={boolean('row', false)}>
+      <FieldGroup>
         <CheckboxField
           labelText="I agree"
           value="yes"
@@ -60,11 +61,8 @@ function DefaultStory() {
       <Button>Submit</Button>
     </Form>
   );
-}
+};
 
-storiesOf('Components/Form', module)
-  .addParameters({
-    propTypes: Form['__docgenInfo'],
-    component: Form,
-  })
-  .add('default', () => <DefaultStory />);
+Basic.args = {
+  spacing: 'default',
+};
