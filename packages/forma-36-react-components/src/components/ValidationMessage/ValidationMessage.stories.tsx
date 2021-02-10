@@ -16,10 +16,10 @@ interface Args extends ValidationMessageProps {
   validationMessageText: string;
 }
 
-export const Basic = (validationMessageText: Args) => (
-  <ValidationMessage>{validationMessageText}</ValidationMessage>
+export const Basic = ({ validationMessageText, ...args }: Args) => (
+  <ValidationMessage {...args}>{validationMessageText}</ValidationMessage>
 );
 
 Basic.args = {
-  validationMessageText: 'Section heading',
+  validationMessageText: 'Validation message',
 };
