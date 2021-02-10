@@ -59,7 +59,7 @@ it('renders the component with condensed spacing', () => {
 it('renders the component with condensed spacing (prevent default)', () => {
   const mockOnSubmit = jest.fn();
   render(
-    <Form className="my-extra-class" onSubmit={mockOnSubmit} data-testid="form">
+    <Form className="my-extra-class" onSubmit={mockOnSubmit}>
       <TextField
         required
         name="nameInput"
@@ -71,7 +71,7 @@ it('renders the component with condensed spacing (prevent default)', () => {
     </Form>,
   );
 
-  fireEvent.submit(screen.getByTestId('form'));
+  fireEvent.submit(screen.getByTestId('cf-ui-form'));
   expect(mockOnSubmit).toHaveBeenCalled();
 });
 

@@ -23,11 +23,9 @@ it('renders the component with the size "large"', () => {
 });
 
 it('renders the component with a custom size', () => {
-  const { container } = render(
-    <Spinner customSize={42} data-testid="spinner" />,
-  );
+  const { container } = render(<Spinner customSize={42} />);
 
-  expect(screen.getByTestId('spinner')).toHaveStyle({
+  expect(screen.getByTestId('cf-ui-spinner')).toHaveStyle({
     height: '42px',
     width: '42px',
   });
