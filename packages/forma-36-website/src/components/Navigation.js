@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
+import { useScrollRestoration } from 'gatsby-react-router-scroll';
 
 import { css } from '@emotion/core';
 import tokens from '@contentful/forma-36-tokens';
@@ -190,11 +191,17 @@ MenuList.defaultProps = {
 };
 
 const Navigation = ({ menuItems, currentPath }) => {
+  const scrollRestoration = useScrollRestoration('undefined');
+
   return (
     <div css={styles.sidemenu}>
       <DocSearch />
 
-      <nav css={styles.navList} aria-label="Main Navigation">
+      <nav
+        css={styles.navList}
+        aria-label="Main Navigation"
+        {...scrollRestoration}
+      >
         <MenuList
           menuItems={menuItems}
           currentPath={currentPath}
