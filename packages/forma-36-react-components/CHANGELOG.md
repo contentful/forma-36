@@ -3,6 +3,25 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.79.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.78.4...@contentful/forma-36-react-components@3.79.0) (2021-02-10)
+
+
+### Features
+
+* add HelpCircleInverted icon ([2d51094](https://github.com/contentful/forma-36/commit/2d5109463308b16d79aac06cace7bc83f481ee0b))
+
+
+
+
+
+## [3.78.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.78.3...@contentful/forma-36-react-components@3.78.4) (2021-02-09)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
 ## [3.78.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.78.2...@contentful/forma-36-react-components@3.78.3) (2021-02-03)
 
 
