@@ -46,22 +46,26 @@ const ControlledTextInput = (args: TextInputProps) => {
   );
 };
 
-export const basic = (args: TextInputProps) => (
-  <TextInput
-    value={args.value}
-    width={args.width}
-    name="emailInput"
-    id="emailInput"
-    required={args.required}
-    error={args.error}
-    disabled={args.disabled}
-    maxLength={args.maxLength}
-  />
-);
+export const basic = (args: TextInputProps) => <TextInput {...args} />;
+
+basic.args = {
+  name: 'emailInput',
+  id: 'emailInput,',
+  width: 'full',
+  value: '123456',
+  required: false,
+  error: false,
+  disabled: false,
+  maxLength: 50,
+};
 
 export const controlledTextInput = (args: TextInputProps) => (
   <ControlledTextInput {...args} />
 );
+
+controlledTextInput.args = {
+  ...basic.args,
+};
 
 export const overview = () => (
   <>
@@ -167,11 +171,3 @@ export const overview = () => (
     </Flex>
   </>
 );
-basic.args = {
-  width: 'full',
-  value: '123456',
-  required: false,
-  error: false,
-  disabled: false,
-  maxLength: 50,
-};
