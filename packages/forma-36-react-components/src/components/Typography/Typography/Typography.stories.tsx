@@ -1,130 +1,201 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
-import notes from './Typography.md';
-import Typography from './Typography';
+import Typography, { TypographyProps } from './Typography';
 import DisplayText from '../DisplayText';
 import Heading from './../Heading';
 import Subheading from './../Subheading';
 import SectionHeading from '../SectionHeading';
 import Paragraph from './../Paragraph';
 import Flex from '../../Flex/Flex';
-import '@contentful/forma-36-fcss/dist/styles.css';
 
-storiesOf('Components/Typography/Typography', module)
-  .addParameters({
-    propTypes: Typography['__docgenInfo'],
-    component: Typography,
-  })
-  .add(
-    'DisplayText - Large',
-    () => (
-      <Typography>
-        <DisplayText size="large">My DisplayText</DisplayText>
-        <Paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis
-          accusantium vel voluptate incidunt, tempora consectetur consequuntur
-          magnam reiciendis ea ipsam!
-        </Paragraph>
-        <Paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ut
-          accusamus quia debitis expedita consectetur!
-        </Paragraph>
-      </Typography>
-    ),
-    { notes },
-  )
-  .add(
-    'DisplayText - Default',
-    () => (
-      <Typography>
-        <DisplayText>My DisplayText</DisplayText>
-        <Paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis
-          accusantium vel voluptate incidunt, tempora consectetur consequuntur
-          magnam reiciendis ea ipsam!
-        </Paragraph>
+export default {
+  title: 'Typography/Typography',
+  component: Typography,
+  parameters: {
+    propTypes: [Typography['__docgenInfo']],
+  },
+  argTypes: {
+    className: { control: { disable: true } },
+    testId: { control: { disable: true } },
+  },
+};
+
+const loremIpsum = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis
+accusantium vel voluptate incidunt, tempora consectetur consequuntur
+magnam reiciendis ea ipsam!`;
+
+interface Arg extends TypographyProps {
+  title?: string;
+  paragraph?: string;
+}
+
+export const WithDisplayHuge = ({ title, paragraph, ...args }: Arg) => {
+  return (
+    <ExampleContainer>
+      <Typography {...args}>
+        <DisplayText size="huge">{title}</DisplayText>
+        <Paragraph>{paragraph}</Paragraph>
         <Paragraph>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ut
           accusamus quia debitis expedita consectetur!
         </Paragraph>
       </Typography>
-    ),
-    { notes },
-  )
-  .add(
-    'Heading',
-    () => (
-      <Typography>
-        <Heading>My Heading</Heading>
-        <Paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis
-          accusantium vel voluptate incidunt, tempora consectetur consequuntur
-          magnam reiciendis ea ipsam!
-        </Paragraph>
-        <Paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ut
-          accusamus quia debitis expedita consectetur!
-        </Paragraph>
-      </Typography>
-    ),
-    { notes },
-  )
-  .add(
-    'Subheading',
-    () => (
-      <Typography>
-        <Subheading>My Subheading</Subheading>
-        <Paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis
-          accusantium vel voluptate incidunt, tempora consectetur consequuntur
-          magnam reiciendis ea ipsam!
-        </Paragraph>
+    </ExampleContainer>
+  );
+};
+WithDisplayHuge.args = {
+  title: 'My DisplayText',
+  paragraph: loremIpsum,
+};
+
+export const WithDisplayLarge = ({ title, paragraph, ...args }: Arg) => {
+  return (
+    <ExampleContainer>
+      <Typography {...args}>
+        <DisplayText size="large">{title}</DisplayText>
+        <Paragraph>{paragraph}</Paragraph>
         <Paragraph>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ut
           accusamus quia debitis expedita consectetur!
         </Paragraph>
       </Typography>
-    ),
-    { notes },
-  )
-  .add(
-    'SectionHeading',
-    () => (
-      <Typography>
-        <SectionHeading>Section Heading</SectionHeading>
-        <Paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis
-          accusantium vel voluptate incidunt, tempora consectetur consequuntur
-          magnam reiciendis ea ipsam!
-        </Paragraph>
+    </ExampleContainer>
+  );
+};
+WithDisplayLarge.args = {
+  title: 'My DisplayText',
+  paragraph: loremIpsum,
+};
+
+export const WithDisplayDefault = ({ title, paragraph, ...args }: Arg) => {
+  return (
+    <ExampleContainer>
+      <Typography {...args}>
+        <DisplayText>{title}</DisplayText>
+        <Paragraph>{paragraph}</Paragraph>
         <Paragraph>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ut
           accusamus quia debitis expedita consectetur!
         </Paragraph>
       </Typography>
-    ),
-    { notes },
-  )
-  .add('overview', () => (
+    </ExampleContainer>
+  );
+};
+WithDisplayDefault.args = {
+  title: 'My DisplayText',
+  paragraph: loremIpsum,
+};
+
+export const WithHeading = ({ title, paragraph, ...args }: Arg) => {
+  return (
+    <ExampleContainer>
+      <Typography {...args}>
+        <Heading>{title}</Heading>
+        <Paragraph>{paragraph}</Paragraph>
+        <Paragraph>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ut
+          accusamus quia debitis expedita consectetur!
+        </Paragraph>
+      </Typography>
+    </ExampleContainer>
+  );
+};
+WithHeading.args = {
+  title: 'My Heading',
+  paragraph: loremIpsum,
+};
+
+export const WithSubheading = ({ title, paragraph, ...args }: Arg) => {
+  return (
+    <ExampleContainer>
+      <Typography {...args}>
+        <Subheading>{title}</Subheading>
+        <Paragraph>{paragraph}</Paragraph>
+        <Paragraph>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ut
+          accusamus quia debitis expedita consectetur!
+        </Paragraph>
+      </Typography>
+    </ExampleContainer>
+  );
+};
+WithSubheading.args = {
+  title: 'My Subheading',
+  paragraph: loremIpsum,
+};
+
+export const WithSectionHeading = ({ title, paragraph, ...args }: Arg) => {
+  return (
+    <ExampleContainer>
+      <Typography {...args}>
+        <SectionHeading>{title}</SectionHeading>
+        <Paragraph>{paragraph}</Paragraph>
+        <Paragraph>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ut
+          accusamus quia debitis expedita consectetur!
+        </Paragraph>
+      </Typography>
+    </ExampleContainer>
+  );
+};
+WithSectionHeading.args = {
+  title: 'My SectionHeading',
+  paragraph: loremIpsum,
+};
+
+export const Overview = () => {
+  return (
     <>
-      <Flex marginBottom="spacingM">
-        <DisplayText size="large">This is Display text large</DisplayText>
+      <Flex alignItems="center" marginBottom="spacingM">
+        <Flex marginRight="spacingS">
+          <Paragraph>48</Paragraph>
+        </Flex>
+        <DisplayText size="huge">Display Huge</DisplayText>
       </Flex>
-      <Flex marginBottom="spacingM">
-        <DisplayText>This is Display text</DisplayText>
+      <Flex alignItems="center" marginBottom="spacingM">
+        <Flex marginRight="spacingS">
+          <Paragraph>36</Paragraph>
+        </Flex>
+        <DisplayText size="large">Display Large</DisplayText>
       </Flex>
-      <Flex marginBottom="spacingM">
-        <Heading>This is Heading</Heading>
+      <Flex alignItems="center" marginBottom="spacingM">
+        <Flex marginRight="spacingS">
+          <Paragraph>28</Paragraph>
+        </Flex>
+        <DisplayText size="default">Display</DisplayText>
       </Flex>
-      <Flex marginBottom="spacingM">
-        <Subheading>This is Subheading</Subheading>
+
+      <Flex alignItems="center" marginBottom="spacingM">
+        <Flex marginRight="spacingS">
+          <Paragraph>20</Paragraph>
+        </Flex>
+        <Heading>Heading</Heading>
       </Flex>
-      <Flex marginBottom="spacingM">
-        <SectionHeading>This is section heading</SectionHeading>
+
+      <Flex alignItems="center" marginBottom="spacingM">
+        <Flex marginRight="spacingS">
+          <Paragraph>16</Paragraph>
+        </Flex>
+        <Subheading>Subheading</Subheading>
       </Flex>
-      <Flex marginBottom="spacingM">
-        <Paragraph>This is Paragraph</Paragraph>
+
+      <Flex alignItems="center" marginBottom="spacingM">
+        <Flex marginRight="spacingS">
+          <Paragraph>12</Paragraph>
+        </Flex>
+        <SectionHeading>Section Heading</SectionHeading>
+      </Flex>
+
+      <Flex alignItems="center" marginBottom="spacingM">
+        <Flex marginRight="spacingS">
+          <Paragraph>14</Paragraph>
+        </Flex>
+        <Paragraph>Paragraph</Paragraph>
       </Flex>
     </>
-  ));
+  );
+};
+
+function ExampleContainer({ children }) {
+  return <Flex style={{ maxWidth: '600px' }}>{children}</Flex>;
+}

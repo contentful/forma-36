@@ -2,7 +2,7 @@ import React from 'react';
 import SectionHeading, { SectionHeadingProps } from './SectionHeading';
 
 export default {
-  title: 'Components/Typography/SectionHeading',
+  title: 'Typography/SectionHeading',
   component: SectionHeading,
   parameters: {
     propTypes: [SectionHeading['__docgenInfo']],
@@ -21,6 +21,5 @@ export const Basic = ({ sectionHeadingText, ...args }: Args) => (
 );
 
 Basic.args = {
-  element: 'h3',
   sectionHeadingText: 'Section heading',
 };
