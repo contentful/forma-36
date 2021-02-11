@@ -168,7 +168,7 @@ module.exports = {
             link: '/components/flex/',
           },
           {
-            name: 'Form elements',
+            name: 'Form Elements',
             link: '',
             menuLinks: [
               {
