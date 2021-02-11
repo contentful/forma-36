@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  render,
-  fireEvent,
-  within,
-  configure,
-  screen,
-} from '@testing-library/react';
+import { render, fireEvent, within, screen } from '@testing-library/react';
 
 import { KEY_CODE } from './utils';
 import Autocomplete, { AutocompleteProps } from '../Autocomplete';
@@ -22,8 +16,6 @@ const items: Item[] = [
   { value: 3, label: 'Avocado' },
   { value: 4, label: 'Coriander' },
 ];
-
-configure({ testIdAttribute: 'data-test-id' });
 
 describe('Autocomplete', () => {
   let onChangeFn: (value: Item) => void;

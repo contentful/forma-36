@@ -68,30 +68,24 @@ it('should not dispatch onChange if disabled', () => {
       id="optionSelect"
       onChange={mockOnChange}
       isDisabled
-      data-testid="select"
     >
       <Option value="optionOne">Option One</Option>
     </Select>,
   );
 
-  userEvent.selectOptions(screen.getByTestId('select'), ['optionOne']);
+  userEvent.selectOptions(screen.getByTestId('cf-ui-select'), ['optionOne']);
   expect(mockOnChange).not.toHaveBeenCalled();
 });
 
 it('should dispatch onChange', () => {
   const mockOnChange = jest.fn();
   render(
-    <Select
-      name="optionSelect"
-      id="optionSelect"
-      onChange={mockOnChange}
-      data-testid="select"
-    >
+    <Select name="optionSelect" id="optionSelect" onChange={mockOnChange}>
       <Option value="optionOne">Option One</Option>
     </Select>,
   );
 
-  userEvent.selectOptions(screen.getByTestId('select'), ['optionOne']);
+  userEvent.selectOptions(screen.getByTestId('cf-ui-select'), ['optionOne']);
   expect(mockOnChange).toHaveBeenCalled();
 });
 
