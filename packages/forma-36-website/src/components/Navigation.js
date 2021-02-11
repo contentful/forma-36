@@ -90,10 +90,7 @@ const checkActive = (item, currentPath) => {
 };
 
 const checkCategory = (name) =>
-  name === 'Foundation' ||
-  name === 'Guidelines' ||
-  name === 'Components' ||
-  name === 'Form elements';
+  name === 'Foundation' || name === 'Guidelines' || name === 'Components';
 
 const MenuListItem = ({ item, currentPath, isActive, hierarchyLevel }) => {
   const isCategory = checkCategory(item.name);

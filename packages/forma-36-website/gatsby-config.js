@@ -116,60 +116,6 @@ module.exports = {
         ],
       },
       {
-        name: 'Form elements',
-        link: '',
-        menuLinks: [
-          {
-            name: 'Checkbox',
-            link: '/components/checkbox/',
-          },
-          {
-            name: 'Checkbox Field',
-            link: '/components/checkbox-field/',
-          },
-          {
-            name: 'Form',
-            link: '/components/form/',
-          },
-          {
-            name: 'Form label',
-            link: '/components/form-label/',
-          },
-          {
-            name: 'Radio button',
-            link: '/components/radio-button/',
-          },
-          {
-            name: 'Radio button field',
-            link: '/components/radio-button-field/',
-          },
-          {
-            name: 'Select',
-            link: '/components/select/',
-          },
-          {
-            name: 'Select field',
-            link: '/components/select-field/',
-          },
-          {
-            name: 'Text field',
-            link: '/components/text-field/',
-          },
-          {
-            name: 'Text input',
-            link: '/components/text-input/',
-          },
-          {
-            name: 'Text link',
-            link: '/components/text-link/',
-          },
-          {
-            name: 'Textarea',
-            link: '/components/textarea/',
-          },
-        ],
-      },
-      {
         name: 'Components',
         link: '',
         menuLinks: [
@@ -220,6 +166,60 @@ module.exports = {
           {
             name: 'Flex',
             link: '/components/flex/',
+          },
+          {
+            name: 'Form elements',
+            link: '',
+            menuLinks: [
+              {
+                name: 'Checkbox',
+                link: '/components/checkbox/',
+              },
+              {
+                name: 'Checkbox Field',
+                link: '/components/checkbox-field/',
+              },
+              {
+                name: 'Form',
+                link: '/components/form/',
+              },
+              {
+                name: 'Form label',
+                link: '/components/form-label/',
+              },
+              {
+                name: 'Radio button',
+                link: '/components/radio-button/',
+              },
+              {
+                name: 'Radio button field',
+                link: '/components/radio-button-field/',
+              },
+              {
+                name: 'Select',
+                link: '/components/select/',
+              },
+              {
+                name: 'Select field',
+                link: '/components/select-field/',
+              },
+              {
+                name: 'Text field',
+                link: '/components/text-field/',
+              },
+              {
+                name: 'Text input',
+                link: '/components/text-input/',
+              },
+              {
+                name: 'Text link',
+                link: '/components/text-link/',
+              },
+              {
+                name: 'Textarea',
+                link: '/components/textarea/',
+              },
+            ],
           },
           {
             name: 'Grid',
