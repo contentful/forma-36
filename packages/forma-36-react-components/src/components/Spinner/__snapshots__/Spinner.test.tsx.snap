@@ -59,7 +59,6 @@ exports[`renders the component with a custom size 1`] = `
 <svg
   class="Spinner Spinner--default"
   data-test-id="cf-ui-spinner"
-  data-testid="spinner"
   style="height: 42px; width: 42px;"
   viewBox="0 0 60 51"
   xmlns="http://www.w3.org/2000/svg"

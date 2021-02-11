@@ -73,6 +73,7 @@ export { default as HeadingTrimmed } from './HeadingTrimmed';
 export { default as HeadingTwo } from './HeadingTwo';
 export { default as HeadingTwoTrimmed } from './HeadingTwoTrimmed';
 export { default as HelpCircle } from './HelpCircle';
+export { default as HelpCircleInverted } from './HelpCircleInverted';
 export { default as HelpCircleTrimmed } from './HelpCircleTrimmed';
 export { default as HorizontalRule } from './HorizontalRule';
 export { default as HorizontalRuleTrimmed } from './HorizontalRuleTrimmed';

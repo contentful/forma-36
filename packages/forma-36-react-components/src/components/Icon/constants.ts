@@ -74,6 +74,7 @@ export const iconName = {
   HeadingTwo: 'HeadingTwo',
   HeadingTwoTrimmed: 'HeadingTwoTrimmed',
   HelpCircle: 'HelpCircle',
+  HelpCircleInverted: 'HelpCircleInverted',
   HelpCircleTrimmed: 'HelpCircleTrimmed',
   HorizontalRule: 'HorizontalRule',
   HorizontalRuleTrimmed: 'HorizontalRuleTrimmed',
