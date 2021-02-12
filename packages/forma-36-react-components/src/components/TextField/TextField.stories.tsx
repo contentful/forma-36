@@ -3,6 +3,7 @@ import React from 'react';
 import TextField, { TextFieldProps } from './TextField';
 import SectionHeading from '../Typography/SectionHeading';
 import Flex from '../Flex/Flex';
+import Grid from '../Grid/Grid';
 
 export default {
   title: 'Form Elements/TextField',
@@ -20,34 +21,56 @@ export default {
     onFocus: { control: { disable: true } },
     onKeyPress: { control: { disable: true } },
     textLinkProps: { control: { disable: true } },
+    textInputProps: { control: { disable: true } },
+    formLabelProps: { control: { disable: true } },
   },
 };
 
-export const Basic = (args: TextFieldProps) => (
-  <TextField name="emailInput" id="emailInput" {...args} />
+interface Args extends TextFieldProps {
+  placeholder?: string;
+  maxLength?: number;
+  disabled?: boolean;
+}
+
+export const Basic = ({ placeholder, maxLength, disabled, ...args }: Args) => (
+  <TextField {...args} textInputProps={{ placeholder, maxLength, disabled }} />
 );
 
 Basic.args = {
-  width: 'full',
-  maxLength: 50,
+  id: 'basic-input',
+  name: 'basic-input',
   labelText: 'Label text',
-  textInputProps: {
-    placeholder: 'Placeholder text',
-    maxLength: 50,
-    type: 'text',
-  },
+  placeholder: 'Placeholder text',
+  maxLength: 100,
+  disabled: false,
 };
 
-export const WithTextarea = (args: TextFieldProps) => (
-  <TextField textarea {...args} />
+export const WithTextarea = ({
+  placeholder,
+  maxLength,
+  disabled,
+  ...args
+}: Args) => (
+  <TextField {...args} textInputProps={{ placeholder, maxLength }} textarea />
 );
 
 WithTextarea.args = {
   ...Basic.args,
 };
 
-export const WithTextLink = (args: TextFieldProps) => (
-  <TextField textarea {...args} />
+export const WithTextLink = ({
+  placeholder,
+  maxLength,
+  disabled,
+  textLinkProps,
+  ...args
+}: Args) => (
+  <TextField
+    {...args}
+    textInputProps={{ placeholder, maxLength }}
+    textLinkProps={textLinkProps}
+    textarea
+  />
 );
 
 WithTextLink.args = {
@@ -59,49 +82,93 @@ WithTextLink.args = {
 };
 
 export const Overview = (args: TextFieldProps) => (
-  <>
-    <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">
-        Textarea field default with countCharacters
-      </SectionHeading>
+  <Flex style={{ minWidth: '800px' }} flexDirection="column">
+    <Flex flexDirection="column" marginBottom="spacingXl">
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">TextField default</SectionHeading>
+      </Flex>
+      <Grid columns="1fr 1fr" columnGap="spacingXl">
+        <TextField {...args} />
+        <TextField {...args} textarea />
+      </Grid>
     </Flex>
-    <Flex marginBottom="spacingS">
-      <TextField countCharacters {...args} />
+
+    <Flex flexDirection="column" marginBottom="spacingXl">
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">
+          TextField with countCharacters
+        </SectionHeading>
+      </Flex>
+      <Grid columns="1fr 1fr" columnGap="spacingXl">
+        <TextField
+          {...args}
+          countCharacters
+          textInputProps={{ maxLength: 50 }}
+        />
+        <TextField
+          {...args}
+          countCharacters
+          textInputProps={{ maxLength: 50 }}
+          textarea
+        />
+      </Grid>
     </Flex>
-    <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">
-        Textarea field default with value
-      </SectionHeading>
+
+    <Flex flexDirection="column" marginBottom="spacingXl">
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">
+          TextField with default value
+        </SectionHeading>
+      </Flex>
+      <Grid columns="1fr 1fr" columnGap="spacingXl">
+        <TextField value="Example value" {...args} />
+        <TextField value="Example value" {...args} textarea />
+      </Grid>
     </Flex>
-    <Flex marginBottom="spacingS">
-      <TextField value="Example value" {...args} />
+
+    <Flex flexDirection="column" marginBottom="spacingXl">
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">TextField with help text</SectionHeading>
+      </Flex>
+      <Grid columns="1fr 1fr" columnGap="spacingXl">
+        <TextField {...args} helpText="help text" />
+        <TextField {...args} helpText="help text" textarea />
+      </Grid>
     </Flex>
-    <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">
-        Textarea field default with help text
-      </SectionHeading>
+
+    <Flex flexDirection="column" marginBottom="spacingXl">
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">
+          TextField with validation message
+        </SectionHeading>
+      </Flex>
+      <Grid columns="1fr 1fr" columnGap="spacingXl">
+        <TextField {...args} validationMessage="Validation message" />
+        <TextField {...args} validationMessage="Validation message" textarea />
+      </Grid>
     </Flex>
-    <Flex marginBottom="spacingS">
-      <TextField {...args} helpText="help text" />
+
+    <Flex flexDirection="column">
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">TextField disabled</SectionHeading>
+      </Flex>
+      <Grid columns="1fr 1fr" columnGap="spacingXl">
+        <TextField
+          {...args}
+          textInputProps={{
+            disabled: true,
+          }}
+        />
+        <TextField
+          {...args}
+          textInputProps={{
+            disabled: true,
+          }}
+          textarea
+        />
+      </Grid>
     </Flex>
-    <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Textarea field error</SectionHeading>
-    </Flex>
-    <Flex marginBottom="spacingS">
-      <TextField {...args} validationMessage="validationMessage" />
-    </Flex>
-    <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Textarea field disabled</SectionHeading>
-    </Flex>
-    <Flex marginBottom="spacingS">
-      <TextField
-        {...args}
-        textInputProps={{
-          disabled: true,
-        }}
-      />
-    </Flex>
-  </>
+  </Flex>
 );
 
 Overview.args = {
