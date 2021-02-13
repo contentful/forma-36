@@ -1,0 +1,143 @@
+Tags are used to label and organize items in the interface, using keywords that describe them.
+
+## Table of contents
+
+- [How to use Tag](#how-to-use-tag)
+- [Component variations](#component-variations)
+- [Code examples](#code-examples)
+- [Content recommendations](#content-recommendations)
+- [Accessibility](#accessibility)
+
+## How to use Tag
+
+- tags can increase the amount of visual noise on a screen, so use them wisely.
+- keep in mind the reccomended color coding for each of types of Tag, they are aligned with prioritization of the color pallete
+
+## Component variations
+
+- **Primary** - Used for the entity that has been changed, it mapps to entityStatusType `changed`
+
+```jsx
+<div style={{ width: '800px' }}>
+  <Table>
+    <TableHead>
+      <TableRow>
+        <TableCell>Name</TableCell>
+        <TableCell>Content Type</TableCell>
+        <TableCell>Author</TableCell>
+        <TableCell>Updated</TableCell>
+        <TableCell>Status</TableCell>
+      </TableRow>
+    </TableHead>
+    <TableBody>
+      <TableRow>
+        <TableCell>My entry title</TableCell>
+        <TableCell>Blog post</TableCell>
+        <TableCell>Jane Roe</TableCell>
+        <TableCell>Oct 29, 2020</TableCell>
+        <TableCell>
+          <Tag tagType="primary">changed</Tag>
+        </TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</div>
+```
+
+- **Primary filled** - Used for new funtionality or to inditcate changes in the interface.
+
+- **Positive** - Used for the entity that has been published, it mapps to entityStatusType `published`
+
+```jsx
+<div style={{ width: '800px' }}>
+  <Table>
+    <TableHead>
+      <TableRow>
+        <TableCell>Name</TableCell>
+        <TableCell>Content Type</TableCell>
+        <TableCell>Author</TableCell>
+        <TableCell>Updated</TableCell>
+        <TableCell>Status</TableCell>
+      </TableRow>
+    </TableHead>
+    <TableBody>
+      <TableRow>
+        <TableCell>My entry title</TableCell>
+        <TableCell>Blog post</TableCell>
+        <TableCell>Jane Roe</TableCell>
+        <TableCell>Oct 29, 2020</TableCell>
+        <TableCell>
+          <Tag tagType="positive">published</Tag>
+        </TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</div>
+```
+
+- **Negative** - Used for the entity that has been deleted, it mapps to entityStatusType `deleted`.
+
+```jsx
+<div style={{ width: '800px' }}>
+  <Table>
+    <TableHead>
+      <TableRow>
+        <TableCell>Name</TableCell>
+        <TableCell>Content Type</TableCell>
+        <TableCell>Author</TableCell>
+        <TableCell>Updated</TableCell>
+        <TableCell>Status</TableCell>
+      </TableRow>
+    </TableHead>
+    <TableBody>
+      <TableRow>
+        <TableCell>My entry title</TableCell>
+        <TableCell>Blog post</TableCell>
+        <TableCell>Jane Roe</TableCell>
+        <TableCell>Oct 29, 2020</TableCell>
+        <TableCell>
+          <Tag tagType="negative">deleted</Tag>
+        </TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</div>
+```
+
+- **Warning** - Used for the entity that has been deleted, it mapps to entityStatusType `deleted`.
+
+```jsx
+<div style={{ width: '800px' }}>
+  <Table>
+    <TableHead>
+      <TableRow>
+        <TableCell>Name</TableCell>
+        <TableCell>Content Type</TableCell>
+        <TableCell>Author</TableCell>
+        <TableCell>Updated</TableCell>
+        <TableCell>Status</TableCell>
+      </TableRow>
+    </TableHead>
+    <TableBody>
+      <TableRow>
+        <TableCell>My entry title</TableCell>
+        <TableCell>Blog post</TableCell>
+        <TableCell>Jane Roe</TableCell>
+        <TableCell>Oct 29, 2020</TableCell>
+        <TableCell>
+          <Tag tagType="warning">draft</Tag>
+        </TableCell>
+      </TableRow>
+    </TableBody>
+  </Table>
+</div>
+```
+
+- **Secondary** - Link button
+- **Muted** - Link button
+
+## Code examples
+
+## Content recommendations
+
+## Accessibility

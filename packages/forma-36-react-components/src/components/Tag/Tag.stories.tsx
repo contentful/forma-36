@@ -31,42 +31,60 @@ basic.args = {
 
 export const overview = () => (
   <>
+    <Flex marginBottom="spacingM" flexDirection="column">
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Tag types overview</SectionHeading>
+      </Flex>
+      <Flex marginBottom="spacingM" alignItems="center">
+        <Flex marginRight="spacingS">
+          <Tag tagType="primary">primary</Tag>
+        </Flex>
+      </Flex>
+      <Flex marginBottom="spacingM" alignItems="center">
+        <Flex marginRight="spacingS">
+          <Tag tagType="primary-filled">primary filled</Tag>
+        </Flex>
+      </Flex>
+      <Flex marginBottom="spacingM" alignItems="center">
+        <Flex marginRight="spacingS">
+          <Tag tagType="positive">positive</Tag>
+        </Flex>
+      </Flex>
+      <Flex marginBottom="spacingM" alignItems="center">
+        <Flex marginRight="spacingS">
+          <Tag tagType="negative">negative</Tag>
+        </Flex>
+      </Flex>
+      <Flex marginBottom="spacingM" alignItems="center">
+        <Flex marginRight="spacingS">
+          <Tag tagType="warning">warning</Tag>
+        </Flex>
+      </Flex>
+      <Flex marginBottom="spacingM" alignItems="center">
+        <Flex marginRight="spacingS">
+          <Tag tagType="muted">muted</Tag>
+        </Flex>
+      </Flex>
+      <Flex marginBottom="spacingM" alignItems="center">
+        <Flex marginRight="spacingS">
+          <Tag tagType="secondary">secondary</Tag>
+        </Flex>
+      </Flex>
+    </Flex>
+
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Tag types overview</SectionHeading>
+      <SectionHeading element="h3">Tag sizes overview</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingM" alignItems="center">
       <Flex marginRight="spacingS">
-        <Tag tagType="primary">primary</Tag>
+        <Tag tagType="primary-filled">default</Tag>
       </Flex>
     </Flex>
     <Flex marginBottom="spacingM" alignItems="center">
       <Flex marginRight="spacingS">
-        <Tag tagType="primary-filled">primary filled</Tag>
-      </Flex>
-    </Flex>
-    <Flex marginBottom="spacingM" alignItems="center">
-      <Flex marginRight="spacingS">
-        <Tag tagType="positive">positive</Tag>
-      </Flex>
-    </Flex>
-    <Flex marginBottom="spacingM" alignItems="center">
-      <Flex marginRight="spacingS">
-        <Tag tagType="negative">negative</Tag>
-      </Flex>
-    </Flex>
-    <Flex marginBottom="spacingM" alignItems="center">
-      <Flex marginRight="spacingS">
-        <Tag tagType="warning">warning</Tag>
-      </Flex>
-    </Flex>
-    <Flex marginBottom="spacingM" alignItems="center">
-      <Flex marginRight="spacingS">
-        <Tag tagType="muted">muted</Tag>
-      </Flex>
-    </Flex>
-    <Flex marginBottom="spacingM" alignItems="center">
-      <Flex marginRight="spacingS">
-        <Tag tagType="secondary">secondary</Tag>
+        <Tag tagType="primary-filled" size="small">
+          small
+        </Tag>
       </Flex>
     </Flex>
   </>
