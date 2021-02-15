@@ -1,143 +1,196 @@
-Tags are used to label and organize items in the interface, using keywords that describe them.
+Tags (future label/badge) are used to label or highlight items in the interface.
 
 ## Table of contents
 
 - [How to use Tag](#how-to-use-tag)
 - [Component variations](#component-variations)
-- [Code examples](#code-examples)
 - [Content recommendations](#content-recommendations)
 - [Accessibility](#accessibility)
 
 ## How to use Tag
 
-- tags can increase the amount of visual noise on a screen, so use them wisely.
-- keep in mind the reccomended color coding for each of types of Tag, they are aligned with prioritization of the color pallete
+- tags are used to inform users of the status of an element in the interface
+- tags can increase the amount of visual noise on a screen, so use them wisely
+- keep in mind the recommended color coding for each of types of Tag, they are aligned with the prioritization of the color pallet
+- there is a `small` size of Tag available, it is 16px height and 10px font-size. This might be used in denser areas of content
 
 ## Component variations
 
-- **Primary** - Used for the entity that has been changed, it mapps to entityStatusType `changed`
+- **Primary** - used for the entity that has been changed, it maps to entityStatusType `changed`
 
 ```jsx
-<div style={{ width: '800px' }}>
-  <Table>
-    <TableHead>
-      <TableRow>
-        <TableCell>Name</TableCell>
-        <TableCell>Content Type</TableCell>
-        <TableCell>Author</TableCell>
-        <TableCell>Updated</TableCell>
-        <TableCell>Status</TableCell>
-      </TableRow>
-    </TableHead>
-    <TableBody>
-      <TableRow>
-        <TableCell>My entry title</TableCell>
-        <TableCell>Blog post</TableCell>
-        <TableCell>Jane Roe</TableCell>
-        <TableCell>Oct 29, 2020</TableCell>
-        <TableCell>
-          <Tag tagType="primary">changed</Tag>
-        </TableCell>
-      </TableRow>
-    </TableBody>
-  </Table>
-</div>
+<Table>
+  <TableHead>
+    <TableRow>
+      <TableCell>Name</TableCell>
+      <TableCell>Content Type</TableCell>
+      <TableCell>Author</TableCell>
+      <TableCell>Updated</TableCell>
+      <TableCell>Status</TableCell>
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    <TableRow>
+      <TableCell>My entry title</TableCell>
+      <TableCell>Blog post</TableCell>
+      <TableCell>Jane Roe</TableCell>
+      <TableCell>Oct 29, 2020</TableCell>
+      <TableCell>
+        <Tag tagType="primary">changed</Tag>
+      </TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
 ```
 
-- **Primary filled** - Used for new funtionality or to inditcate changes in the interface.
-
-- **Positive** - Used for the entity that has been published, it mapps to entityStatusType `published`
+- **Primary filled** - used to highlight a new functionality or to indicate changes in the interface.
 
 ```jsx
-<div style={{ width: '800px' }}>
-  <Table>
-    <TableHead>
-      <TableRow>
-        <TableCell>Name</TableCell>
-        <TableCell>Content Type</TableCell>
-        <TableCell>Author</TableCell>
-        <TableCell>Updated</TableCell>
-        <TableCell>Status</TableCell>
-      </TableRow>
-    </TableHead>
-    <TableBody>
-      <TableRow>
-        <TableCell>My entry title</TableCell>
-        <TableCell>Blog post</TableCell>
-        <TableCell>Jane Roe</TableCell>
-        <TableCell>Oct 29, 2020</TableCell>
-        <TableCell>
-          <Tag tagType="positive">published</Tag>
-        </TableCell>
-      </TableRow>
-    </TableBody>
-  </Table>
-</div>
+<FormLabel htmlFor="">
+  Instance parameter definitions{' '}
+  <Tag size="small" tagType="primary-filled">
+    new
+  </Tag>
+</FormLabel>
 ```
 
-- **Negative** - Used for the entity that has been deleted, it mapps to entityStatusType `deleted`.
+- **Positive** - used for the entity that has been published, it maps to entityStatusType `published`
 
 ```jsx
-<div style={{ width: '800px' }}>
-  <Table>
-    <TableHead>
-      <TableRow>
-        <TableCell>Name</TableCell>
-        <TableCell>Content Type</TableCell>
-        <TableCell>Author</TableCell>
-        <TableCell>Updated</TableCell>
-        <TableCell>Status</TableCell>
-      </TableRow>
-    </TableHead>
-    <TableBody>
-      <TableRow>
-        <TableCell>My entry title</TableCell>
-        <TableCell>Blog post</TableCell>
-        <TableCell>Jane Roe</TableCell>
-        <TableCell>Oct 29, 2020</TableCell>
-        <TableCell>
-          <Tag tagType="negative">deleted</Tag>
-        </TableCell>
-      </TableRow>
-    </TableBody>
-  </Table>
-</div>
+<Table>
+  <TableHead>
+    <TableRow>
+      <TableCell>Name</TableCell>
+      <TableCell>Content Type</TableCell>
+      <TableCell>Author</TableCell>
+      <TableCell>Updated</TableCell>
+      <TableCell>Status</TableCell>
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    <TableRow>
+      <TableCell>My entry title</TableCell>
+      <TableCell>Blog post</TableCell>
+      <TableCell>Jane Roe</TableCell>
+      <TableCell>Oct 29, 2020</TableCell>
+      <TableCell>
+        <Tag tagType="positive">published</Tag>
+      </TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
 ```
 
-- **Warning** - Used for the entity that has been deleted, it mapps to entityStatusType `deleted`.
+- **Negative** - used for the entity that has been deleted, it maps to entityStatusType `deleted`.
 
 ```jsx
-<div style={{ width: '800px' }}>
-  <Table>
-    <TableHead>
-      <TableRow>
-        <TableCell>Name</TableCell>
-        <TableCell>Content Type</TableCell>
-        <TableCell>Author</TableCell>
-        <TableCell>Updated</TableCell>
-        <TableCell>Status</TableCell>
-      </TableRow>
-    </TableHead>
-    <TableBody>
-      <TableRow>
-        <TableCell>My entry title</TableCell>
-        <TableCell>Blog post</TableCell>
-        <TableCell>Jane Roe</TableCell>
-        <TableCell>Oct 29, 2020</TableCell>
-        <TableCell>
-          <Tag tagType="warning">draft</Tag>
-        </TableCell>
-      </TableRow>
-    </TableBody>
-  </Table>
-</div>
+<Table>
+  <TableHead>
+    <TableRow>
+      <TableCell>Name</TableCell>
+      <TableCell>Content Type</TableCell>
+      <TableCell>Author</TableCell>
+      <TableCell>Updated</TableCell>
+      <TableCell>Status</TableCell>
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    <TableRow>
+      <TableCell>My entry title</TableCell>
+      <TableCell>Blog post</TableCell>
+      <TableCell>Jane Roe</TableCell>
+      <TableCell>Oct 29, 2020</TableCell>
+      <TableCell>
+        <Tag tagType="negative">deleted</Tag>
+      </TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
 ```
 
-- **Secondary** - Link button
-- **Muted** - Link button
+- **Warning** - used for the entity that has been deleted, it maps to entityStatusType `deleted`.
 
-## Code examples
+```jsx
+<Table>
+  <TableHead>
+    <TableRow>
+      <TableCell>Name</TableCell>
+      <TableCell>Content Type</TableCell>
+      <TableCell>Author</TableCell>
+      <TableCell>Updated</TableCell>
+      <TableCell>Status</TableCell>
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    <TableRow>
+      <TableCell>My entry title</TableCell>
+      <TableCell>Blog post</TableCell>
+      <TableCell>Jane Roe</TableCell>
+      <TableCell>Oct 29, 2020</TableCell>
+      <TableCell>
+        <Tag tagType="warning">draft</Tag>
+      </TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+```
+
+- **Secondary** - used for all the secondary elements, for example in the list of versions:
+
+```jsx
+<>
+  <div>
+    <Flex justifyContent="space-between" alignItems="center">
+      <Flex
+        htmlTag="label"
+        paddingTop="spacingXs"
+        paddingBottom="spacingXs"
+        alignItems="center"
+      >
+        <RadioButtonField
+          type="radio"
+          name="selected"
+          role="option"
+          labelText="Yesterday, 1:36PM"
+          checked
+        />
+      </Flex>
+      <div>
+        <Tag tagType="secondary">current</Tag>
+      </div>
+    </Flex>
+  </div>
+  <div>
+    <Flex justifyContent="space-between" alignItems="center">
+      <Flex
+        htmlTag="label"
+        paddingTop="spacingXs"
+        paddingBottom="spacingXs"
+        alignItems="center"
+      >
+        <RadioButtonField
+          type="radio"
+          name="selected"
+          role="option"
+          labelText="Yesterday, 1:36PM"
+        />
+      </Flex>
+      <div>
+        <Tag tagType="positive">published</Tag>
+      </div>
+    </Flex>
+  </div>
+</>
+```
+
+- **Muted** - this `tagType` is deprecated
 
 ## Content recommendations
 
+- try to use labels with short, scannable text
+- try to use a single word to describe the status of an element
+- try to describe the status in the past tense, like changed or archived
+
 ## Accessibility
+
+- text must be clear enough for color-blind users to be able to understand immediately without needing to rely only on the color.
