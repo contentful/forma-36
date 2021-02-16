@@ -8,7 +8,7 @@ import { Asset } from '../../Asset';
 import { AssetType } from '../../Asset';
 import Tag, { TagType } from '../../Tag';
 import AssetCardSkeleton from './AssetCardSkeleton';
-import CardDragHandle, { CardDragHandlePropTypes } from '../CardDragHandle';
+import CardDragHandle, { CardDragHandleProps } from '../CardDragHandle';
 import styles from './AssetCard.css';
 
 export type AssetState =
@@ -58,7 +58,7 @@ export interface AssetCardProps extends BaseCardProps {
   /**
    * Props to pass down to the default CardDragHandle component (does not work with cardDragHandleComponent prop)
    */
-  cardDragHandleProps?: Partial<CardDragHandlePropTypes>;
+  cardDragHandleProps?: Partial<CardDragHandleProps>;
   /**
    * Applies styling for when the component is actively being dragged by the user
    */

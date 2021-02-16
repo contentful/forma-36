@@ -1,5 +1,5 @@
 import React from 'react';
-import InlineEntryCard, { InlineEntryCardPropTypes } from './InlineEntryCard';
+import InlineEntryCard, { InlineEntryCardProps } from './InlineEntryCard';
 import DropdownListItem from '../../Dropdown/DropdownListItem';
 import DropdownList from '../../Dropdown/DropdownList';
 
@@ -32,7 +32,7 @@ const dropdownElements = (
   </React.Fragment>
 );
 
-interface Args extends InlineEntryCardPropTypes {
+interface Args extends InlineEntryCardProps {
   entryText?: string;
 }
 

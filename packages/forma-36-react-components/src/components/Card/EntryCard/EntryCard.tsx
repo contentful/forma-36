@@ -6,7 +6,7 @@ import Card, { BaseCardProps, CardProps } from '../Card';
 import CardActions from '../CardActions';
 import Tag, { TagType } from '../../Tag';
 import EntryCardSkeleton from './EntryCardSkeleton';
-import CardDragHandle, { CardDragHandlePropTypes } from '../CardDragHandle';
+import CardDragHandle, { CardDragHandleProps } from '../CardDragHandle';
 import Icon, { IconType } from '../../Icon';
 import styles from './EntryCard.css';
 
@@ -19,7 +19,7 @@ export type EntryCardStatus =
 
 export type EntryCardSize = 'default' | 'small' | 'auto';
 
-export interface EntryCardPropTypes extends BaseCardProps {
+export interface EntryCardProps extends BaseCardProps {
   /**
    * The title of the entry
    */
@@ -67,7 +67,7 @@ export interface EntryCardPropTypes extends BaseCardProps {
   /**
    * Props to pass down to the default CardDragHandle component (does not work with cardDragHandleComponent prop)
    */
-  cardDragHandleProps?: Partial<CardDragHandlePropTypes>;
+  cardDragHandleProps?: Partial<CardDragHandleProps>;
   /**
    * Applies styling for when the component is actively being dragged by the user
    */
@@ -96,7 +96,7 @@ export function EntryCard({
   cardDragHandleProps,
   withDragHandle,
   ...otherProps
-}: EntryCardPropTypes): React.ReactElement {
+}: EntryCardProps): React.ReactElement {
   const renderTitle = useCallback((_size: EntryCardSize, title?: string) => {
     if (!title) {
       return;

@@ -4,7 +4,7 @@ import cn from 'classnames';
 import Icon from '../../Icon';
 import styles from './CardDragHandle.css';
 
-export interface CardDragHandlePropTypes {
+export interface CardDragHandleProps {
   /**
    * Label rendered as child in CardDragHandle - not visible on screen as
    * purpose is for screen readers only
@@ -30,7 +30,7 @@ export function CardDragHandle({
   children,
   isDragActive = false,
   ...otherProps
-}: CardDragHandlePropTypes): React.ReactElement {
+}: CardDragHandleProps): React.ReactElement {
   const classNames = cn(
     styles.CardDragHandle,
     { [styles['CardDragHandle--drag-active']]: isDragActive },

@@ -1,8 +1,8 @@
 import React from 'react';
-import ControlledInput, { ControlledInputPropTypes } from '../ControlledInput';
+import ControlledInput, { ControlledInputProps } from '../ControlledInput';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface CheckboxProps extends ControlledInputPropTypes {}
+export interface CheckboxProps extends ControlledInputProps {}
 
 export const Checkbox = ({
   disabled = false,

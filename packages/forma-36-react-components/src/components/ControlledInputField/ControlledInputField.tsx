@@ -6,7 +6,7 @@ import ValidationMessage from '../ValidationMessage';
 import ControlledInput from '../ControlledInput/ControlledInput';
 import styles from './ControlledInputField.css';
 
-export interface ControlledInputFieldPropTypes {
+export interface ControlledInputFieldProps {
   id: string;
   labelText: string;
   labelIsLight?: boolean;
@@ -47,7 +47,7 @@ export const ControlledInputField = ({
   inputProps,
   name,
   ...otherProps
-}: ControlledInputFieldPropTypes) => {
+}: ControlledInputFieldProps) => {
   const classNames = cn(styles['ControlledInputField'], className, {
     [styles['ControlledInputField--disabled']]: disabled,
   });

@@ -13,7 +13,7 @@ import Icon from '../Icon';
 
 import styles from './ControlledInput.css';
 
-export interface ControlledInputPropTypes extends HTMLProps<HTMLInputElement> {
+export interface ControlledInputProps extends HTMLProps<HTMLInputElement> {
   id?: string;
   required?: boolean;
   labelText: string;
@@ -48,7 +48,7 @@ export const ControlledInput = ({
   willBlurOnEsc = true,
   indeterminate,
   ...otherProps
-}: ControlledInputPropTypes) => {
+}: ControlledInputProps) => {
   const inputRef = useRef(null);
 
   const classNames = cn(styles['ControlledInput'], {
