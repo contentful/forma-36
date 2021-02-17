@@ -7,7 +7,7 @@ exports[`renders the component 1`] = `
   <input
     aria-label="checkbox"
     class="ControlledInput"
-    data-test-id="ctf-ui-checkbox"
+    data-test-id="cf-ui-checkbox"
     type="checkbox"
     value=""
   />
@@ -36,7 +36,7 @@ exports[`renders the component with an additional class name 1`] = `
   <input
     aria-label="checkbox"
     class="ControlledInput"
-    data-test-id="ctf-ui-checkbox"
+    data-test-id="cf-ui-checkbox"
     type="checkbox"
     value=""
   />

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.79.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.79.3...@contentful/forma-36-react-components@3.79.4) (2021-02-17)
+
+
+### Bug Fixes
+
+* **checkbox:** change testId to match "cf" namespace ([#840](https://github.com/contentful/forma-36/issues/840)) ([167ad6c](https://github.com/contentful/forma-36/commit/167ad6c8666f39b2ccd9de6a762329923d9eb1dd))
+
+
+
+
+
 ## [3.79.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.79.2...@contentful/forma-36-react-components@3.79.3) (2021-02-15)
 
 
