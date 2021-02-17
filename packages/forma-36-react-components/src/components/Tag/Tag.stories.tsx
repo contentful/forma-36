@@ -3,6 +3,8 @@ import React from 'react';
 import Tag, { TagProps } from './Tag';
 import SectionHeading from '../Typography/SectionHeading';
 import Flex from '../Flex/Flex';
+import tokens from '@contentful/forma-36-tokens';
+import { Paragraph } from '../Typography/Paragraph/Paragraph';
 
 export default {
   title: 'Components/Tag',
@@ -62,12 +64,19 @@ export const overview = () => (
       </Flex>
       <Flex marginBottom="spacingM" alignItems="center">
         <Flex marginRight="spacingS">
-          <Tag tagType="muted">muted</Tag>
+          <Tag tagType="secondary">secondary</Tag>
         </Flex>
       </Flex>
       <Flex marginBottom="spacingM" alignItems="center">
         <Flex marginRight="spacingS">
-          <Tag tagType="secondary">secondary</Tag>
+          <Tag tagType="muted">muted</Tag>
+          <Paragraph style={{ color: `${tokens.colorRedBase}` }}>
+            {' '}
+            - this tagType is deprecated, please use <strong>
+              secondary
+            </strong>{' '}
+            instead
+          </Paragraph>
         </Flex>
       </Flex>
     </Flex>
