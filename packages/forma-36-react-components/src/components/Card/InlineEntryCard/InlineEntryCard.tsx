@@ -7,7 +7,7 @@ import CardActions from './../CardActions';
 import InlineEntryCardSkeleton from './InlineEntryCardSkeleton';
 import styles from './InlineEntryCard.css';
 
-export interface InlineEntryCardPropTypes {
+export interface InlineEntryCardProps {
   /**
    * Gives the component a selected state
    */
@@ -49,7 +49,7 @@ export function InlineEntryCard({
   status,
   href,
   ...otherProps
-}: InlineEntryCardPropTypes): React.ReactElement {
+}: InlineEntryCardProps): React.ReactElement {
   const classNames = cn(styles.InlineEntryCard, className);
 
   const statusIndicatorClassNames = cn(

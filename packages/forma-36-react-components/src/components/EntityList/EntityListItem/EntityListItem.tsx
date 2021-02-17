@@ -9,9 +9,7 @@ import SkeletonBodyText from '../../Skeleton/SkeletonBodyText';
 import SkeletonImage from '../../Skeleton/SkeletonImage';
 import SkeletonContainer from '../../Skeleton/SkeletonContainer';
 import TabFocusTrap from '../../TabFocusTrap';
-import CardDragHandle, {
-  CardDragHandlePropTypes,
-} from '../../Card/CardDragHandle';
+import CardDragHandle, { CardDragHandleProps } from '../../Card/CardDragHandle';
 import styles from './EntityListItem.css';
 
 export type EntityListItemStatus =
@@ -68,7 +66,7 @@ export interface EntityListItemProps {
   /**
    * Props to pass down to the default CardDragHandle component (does not work with cardDragHandleComponent prop)
    */
-  cardDragHandleProps?: Partial<CardDragHandlePropTypes>;
+  cardDragHandleProps?: Partial<CardDragHandleProps>;
   /**
    * An entity can either be an Entry, an Asset or a Release. This prop will apply styling based on if the entity is an asset, a release or an entry
    *

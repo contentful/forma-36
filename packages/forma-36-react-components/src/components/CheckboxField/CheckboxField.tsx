@@ -1,11 +1,8 @@
 import React from 'react';
 import ControlledInputField from '../ControlledInputField';
-import type { ControlledInputFieldPropTypes } from '../ControlledInputField';
+import type { ControlledInputFieldProps } from '../ControlledInputField';
 
-export type CheckboxFieldProps = Omit<
-  ControlledInputFieldPropTypes,
-  'inputType'
->;
+export type CheckboxFieldProps = Omit<ControlledInputFieldProps, 'inputType'>;
 
 export const CheckboxField = ({
   checked = false,

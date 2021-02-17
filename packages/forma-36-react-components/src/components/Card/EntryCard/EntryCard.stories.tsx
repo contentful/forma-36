@@ -1,6 +1,6 @@
 import React from 'react';
 
-import EntryCard, { EntryCardPropTypes } from './EntryCard';
+import EntryCard, { EntryCardProps } from './EntryCard';
 import CardDragHandle from './../CardDragHandle';
 import DropdownList from '../../Dropdown/DropdownList';
 import DropdownListItem from '../../Dropdown/DropdownListItem';
@@ -36,7 +36,7 @@ const dropdownElements = (
   </React.Fragment>
 );
 
-export const Basic = (args: EntryCardPropTypes) => <EntryCard {...args} />;
+export const Basic = (args: EntryCardProps) => <EntryCard {...args} />;
 
 Basic.args = {
   size: 'default',
@@ -49,7 +49,7 @@ Basic.args = {
   dropdownListElements: dropdownElements,
 };
 
-export const WithCustomCardDragHandle = (args: EntryCardPropTypes) => (
+export const WithCustomCardDragHandle = (args: EntryCardProps) => (
   <EntryCard
     {...args}
     cardDragHandleComponent={<CardDragHandle>Reorder card</CardDragHandle>}
@@ -60,7 +60,7 @@ WithCustomCardDragHandle.args = {
   ...Basic.args,
 };
 
-export const WithThumbnailElement = (args: EntryCardPropTypes) => (
+export const WithThumbnailElement = (args: EntryCardProps) => (
   <EntryCard
     {...args}
     thumbnailElement={

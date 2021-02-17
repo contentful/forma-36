@@ -3,7 +3,7 @@ import Dropdown, { DropdownProps } from '../../Dropdown';
 import DropdownList from '../../Dropdown/DropdownList';
 import IconButton, { IconButtonProps } from '../../IconButton';
 
-export interface CardActionsPropTypes extends DropdownProps {
+export interface CardActionsProps extends DropdownProps {
   /**
    * Class names to be appended to the className prop of the component
    */
@@ -32,15 +32,12 @@ export interface CardActionsState {
   isDropdownOpen: boolean;
 }
 
-const defaultProps: Partial<CardActionsPropTypes> = {
+const defaultProps: Partial<CardActionsProps> = {
   testId: 'cf-ui-card-actions',
   isDisabled: false,
 };
 
-export class CardActions extends Component<
-  CardActionsPropTypes,
-  CardActionsState
-> {
+export class CardActions extends Component<CardActionsProps, CardActionsState> {
   static defaultProps = defaultProps;
 
   state = { isDropdownOpen: false };
