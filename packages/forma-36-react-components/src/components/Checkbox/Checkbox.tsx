@@ -7,7 +7,7 @@ export interface CheckboxProps extends ControlledInputPropTypes {}
 export const Checkbox = ({
   disabled = false,
   required = false,
-  testId = 'ctf-ui-checkbox',
+  testId = 'cf-ui-checkbox',
   type = 'checkbox',
   willBlurOnEsc = true,
   ...otherProps
