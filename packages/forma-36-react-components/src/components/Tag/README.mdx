@@ -10,11 +10,12 @@ Tags are used to label or highlight items in the interface.
 ## How to use Tag
 
 - tags are used to inform users of the status of an element in the interface
-- tags can increase the amount of visual noise on a screen, so use them wisely
-- keep in mind the recommended color coding for each of types of Tag, they are aligned with the prioritization of the color pallet
-- there is a `small` size of Tag available, it is 16px height and 10px font-size. This might be used in denser areas of content
+- keep in mind the recommended color coding for each of tagType
+- there is a `small` size of Tag available. This might be used in denser areas of content
 
 ## Component variations
+
+### Tag types
 
 - **Primary** - used for the entity that has been changed, it maps to entityStatusType `changed`
 
@@ -184,6 +185,22 @@ Tags are used to label or highlight items in the interface.
 ```
 
 - **Muted** - this `tagType` is deprecated
+
+### Tag sizes
+
+- **default**
+
+```jsx
+<Tag tagType="positive">published</Tag>
+```
+
+- **small**
+
+```jsx
+<Tag tagType="primary-filled" size="small">
+  new
+</Tag>
+```
 
 ## Content recommendations
 
