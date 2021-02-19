@@ -53,8 +53,8 @@
 }
 
 .Tag--small {
-  padding: 3px 5px;
-  font-size: 10px;
-  line-height: 10px;
+  padding: 3px var(--spacing-2xs);
+  font-size: 0.625rem;
+  line-height: 0.625rem;
   max-height: 16px;
 }
