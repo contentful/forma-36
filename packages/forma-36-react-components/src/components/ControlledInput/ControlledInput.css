@@ -54,23 +54,23 @@
 
       &:disabled {
         & + .RadioButton__ghost {
-          border-color: var(--color-element-dark);
           background: var(--color-element-dark);
         }
 
         & + .RadioButton__ghost::before {
-          background: var(--color-element-darkest);
+          background: var(--color-text-lightest);
         }
       }
     }
 
     &:disabled {
       & + .RadioButton__ghost {
+        border-color: var(--color-element-dark);
         background: var(--color-element-dark);
       }
 
       & + .RadioButton__ghost::before {
-        background: var(--color-text-lightest);
+        background: var(--color-element-darkest);
       }
     }
   }

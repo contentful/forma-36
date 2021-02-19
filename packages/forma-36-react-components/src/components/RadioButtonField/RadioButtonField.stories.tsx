@@ -95,6 +95,22 @@ export const overview = () => (
     </Flex>
     <Flex marginBottom="spacingS">
       <SectionHeading element="h3">
+        Radio button disabled checked
+      </SectionHeading>
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <RadioButtonField
+        labelText="Label text"
+        helpText="This is a helptext"
+        disabled
+        checked
+        name="someOption"
+        value="no"
+        id="radioButton3"
+      />
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <SectionHeading element="h3">
         Radio button with light label
       </SectionHeading>
     </Flex>
