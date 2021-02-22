@@ -81,6 +81,7 @@ export { default as InfoCircle } from './InfoCircle';
 export { default as InfoCircleTrimmed } from './InfoCircleTrimmed';
 export { default as Language } from './Language';
 export { default as Link } from './Link';
+export { default as LinkAlternate } from './LinkAlternate';
 export { default as LinkTrimmed } from './LinkTrimmed';
 export { default as ListBulleted } from './ListBulleted';
 export { default as ListBulletedTrimmed } from './ListBulletedTrimmed';
