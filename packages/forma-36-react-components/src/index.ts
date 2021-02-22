@@ -80,4 +80,5 @@ export { Flex } from './components/Flex';
 export { Accordion } from './components/Accordion/Accordion';
 export { AccordionItem } from './components/Accordion/AccordionItem';
 export { ModalLauncher } from './components/Modal/ModalLauncher/ModalLauncher';
+export { Portal } from './components/Portal/Portal';
 // -- Add imports above this line (required by plopfile.js) --

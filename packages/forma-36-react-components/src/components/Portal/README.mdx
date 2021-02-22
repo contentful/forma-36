@@ -1,0 +1,17 @@
+[Portal] renders a React component tree in a separate part of the DOM.
+
+## Table of contents
+
+- [Code examples](#code-examples)
+
+## How to use Portal
+
+Anything that you put inside the Portal component renders in a `<div data-cf-ui-portal>` element that gets appended to `document.body` by default. You can append to a different container by passing the HTML element of the container as the `container` prop.
+
+## Code examples
+
+```jsx
+// import { Portal } from '@contenful/forma-36-react-components';
+
+<Portal>Render in a new tree.</Portal>
+```

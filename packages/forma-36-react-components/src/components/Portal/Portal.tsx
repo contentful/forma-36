@@ -6,7 +6,7 @@ export interface PortalProps {
   container?: Document | HTMLElement;
 }
 
-export default function Portal({
+export function Portal({
   children,
   container: containerElement,
 }: PortalProps): React.ReactPortal | null {
@@ -21,6 +21,7 @@ export default function Portal({
     }
 
     const portalContainer = portal.current;
+    portalContainer.setAttribute('data-cf-ui-portal', '');
     container.current.appendChild(portalContainer);
 
     return () => {
@@ -32,3 +33,5 @@ export default function Portal({
 
   return portal.current ? createPortal(children, portal.current) : null;
 }
+
+export default Portal;
