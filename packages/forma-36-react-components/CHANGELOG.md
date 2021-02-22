@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.80.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.80.0...@contentful/forma-36-react-components@3.80.1) (2021-02-22)
+
+
+### Bug Fixes
+
+* **link-alternate:** revise icon size and spacing ([#845](https://github.com/contentful/forma-36/issues/845)) ([be4c1c6](https://github.com/contentful/forma-36/commit/be4c1c6571f00ffd99d1a1acf7664c7ef60fd637))
+
+
+
+
+
 # [3.80.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.79.5...@contentful/forma-36-react-components@3.80.0) (2021-02-22)
 
 
