@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.80.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.79.5...@contentful/forma-36-react-components@3.80.0) (2021-02-22)
+
+
+### Features
+
+* **icon:** add LinkAlternate ([#843](https://github.com/contentful/forma-36/issues/843)) ([ca7ee3a](https://github.com/contentful/forma-36/commit/ca7ee3a2f74430587bc25cfba0cbce8f2bebfa55))
+
+
+
+
+
 ## [3.79.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.79.4...@contentful/forma-36-react-components@3.79.5) (2021-02-19)
 
 
