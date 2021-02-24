@@ -1,0 +1,213 @@
+Tags are used to label or highlight items in the interface.
+
+## Table of contents
+
+- [How to use Tag](#how-to-use-tag)
+- [Component variations](#component-variations)
+- [Content recommendations](#content-recommendations)
+- [Accessibility](#accessibility)
+
+## How to use Tag
+
+- tags are used to inform users of the status of an element in the interface
+- keep in mind the recommended color coding for each of tagType
+- there is a `small` size of Tag available. This might be used in denser areas of content
+
+## Component variations
+
+### Tag types
+
+- **Primary** - used for the entity that has been changed, it maps to entityStatusType `changed`
+
+```jsx
+<Table>
+  <TableHead>
+    <TableRow>
+      <TableCell>Name</TableCell>
+      <TableCell>Content Type</TableCell>
+      <TableCell>Author</TableCell>
+      <TableCell>Updated</TableCell>
+      <TableCell>Status</TableCell>
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    <TableRow>
+      <TableCell>My entry title</TableCell>
+      <TableCell>Blog post</TableCell>
+      <TableCell>Jane Roe</TableCell>
+      <TableCell>Oct 29, 2020</TableCell>
+      <TableCell>
+        <Tag tagType="primary">changed</Tag>
+      </TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+```
+
+- **Primary filled** - used to highlight a new functionality or to indicate changes in the interface.
+
+```jsx
+<FormLabel htmlFor="">
+  Instance parameter definitions{' '}
+  <Tag size="small" tagType="primary-filled">
+    new
+  </Tag>
+</FormLabel>
+```
+
+- **Positive** - used for the entity that has been published, it maps to entityStatusType `published`
+
+```jsx
+<Table>
+  <TableHead>
+    <TableRow>
+      <TableCell>Name</TableCell>
+      <TableCell>Content Type</TableCell>
+      <TableCell>Author</TableCell>
+      <TableCell>Updated</TableCell>
+      <TableCell>Status</TableCell>
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    <TableRow>
+      <TableCell>My entry title</TableCell>
+      <TableCell>Blog post</TableCell>
+      <TableCell>Jane Roe</TableCell>
+      <TableCell>Oct 29, 2020</TableCell>
+      <TableCell>
+        <Tag tagType="positive">published</Tag>
+      </TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+```
+
+- **Negative** - used for the entity that has been deleted, it maps to entityStatusType `deleted`.
+
+```jsx
+<Table>
+  <TableHead>
+    <TableRow>
+      <TableCell>Name</TableCell>
+      <TableCell>Content Type</TableCell>
+      <TableCell>Author</TableCell>
+      <TableCell>Updated</TableCell>
+      <TableCell>Status</TableCell>
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    <TableRow>
+      <TableCell>My entry title</TableCell>
+      <TableCell>Blog post</TableCell>
+      <TableCell>Jane Roe</TableCell>
+      <TableCell>Oct 29, 2020</TableCell>
+      <TableCell>
+        <Tag tagType="negative">deleted</Tag>
+      </TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+```
+
+- **Warning** - used for the entity that has been deleted, it maps to entityStatusType `deleted`.
+
+```jsx
+<Table>
+  <TableHead>
+    <TableRow>
+      <TableCell>Name</TableCell>
+      <TableCell>Content Type</TableCell>
+      <TableCell>Author</TableCell>
+      <TableCell>Updated</TableCell>
+      <TableCell>Status</TableCell>
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    <TableRow>
+      <TableCell>My entry title</TableCell>
+      <TableCell>Blog post</TableCell>
+      <TableCell>Jane Roe</TableCell>
+      <TableCell>Oct 29, 2020</TableCell>
+      <TableCell>
+        <Tag tagType="warning">draft</Tag>
+      </TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+```
+
+- **Secondary** - used for all the secondary elements, for example in the list of versions:
+
+```jsx
+<>
+  <div>
+    <Flex justifyContent="space-between" alignItems="center">
+      <Flex
+        htmlTag="label"
+        paddingTop="spacingXs"
+        paddingBottom="spacingXs"
+        alignItems="center"
+      >
+        <RadioButtonField
+          type="radio"
+          name="selected"
+          role="option"
+          labelText="Yesterday, 1:36PM"
+          checked
+        />
+      </Flex>
+      <div>
+        <Tag tagType="secondary">current</Tag>
+      </div>
+    </Flex>
+  </div>
+  <div>
+    <Flex justifyContent="space-between" alignItems="center">
+      <Flex
+        htmlTag="label"
+        paddingTop="spacingXs"
+        paddingBottom="spacingXs"
+        alignItems="center"
+      >
+        <RadioButtonField
+          type="radio"
+          name="selected"
+          role="option"
+          labelText="Yesterday, 1:36PM"
+        />
+      </Flex>
+      <div>
+        <Tag tagType="positive">published</Tag>
+      </div>
+    </Flex>
+  </div>
+</>
+```
+
+- **Muted** - this `tagType` is deprecated, please use `tagType` `secondary` instead
+
+### Tag sizes
+
+- **default**
+
+```jsx
+<Tag tagType="positive">published</Tag>
+```
+
+- **small**
+
+```jsx
+<Tag tagType="primary-filled" size="small">
+  new
+</Tag>
+```
+
+## Content recommendations
+
+- try to use labels with short, scannable text
+- try to use a single word to describe the status of an element
+- try to describe the status in the past tense, like changed or archived
+
+## Accessibility
+
+- text must be clear enough for color-blind users to be able to understand immediately without needing to rely only on the color.

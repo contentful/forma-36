@@ -51,3 +51,10 @@
   color: var(--color-white);
   background-color: var(--color-primary);
 }
+
+.Tag--small {
+  padding: 3px var(--spacing-2xs);
+  font-size: 0.625rem;
+  line-height: 0.625rem;
+  max-height: 16px;
+}
