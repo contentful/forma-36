@@ -1,4 +1,11 @@
-import React, { useMemo, useReducer, useRef, ChangeEvent } from 'react';
+import React, {
+  useMemo,
+  useReducer,
+  useRef,
+  ChangeEvent,
+  KeyboardEvent,
+  MouseEvent,
+} from 'react';
 
 import TextInput from '../TextInput';
 import Dropdown, { DropdownProps } from '../Dropdown';
@@ -21,7 +28,7 @@ interface RenderToggleElementProps {
   query?: string;
   onChange: (value: string) => void;
   onFocus: () => void;
-  onKeyDown: (event: React.KeyboardEvent) => void;
+  onKeyDown: (event: KeyboardEvent) => void;
   onToggle: () => void;
   disabled?: boolean;
   placeholder?: string;
@@ -33,7 +40,7 @@ interface RenderToggleElementProps {
 export interface AutocompleteProps<T extends {}> {
   children: (items: T[]) => React.ReactNode[];
   items: T[];
-  onChange: (item: T) => void;
+  onChange: (item: T, event: KeyboardEvent | MouseEvent) => void;
   onQueryChange: (query: string) => void;
   disabled?: boolean;
   placeholder?: string;
@@ -130,10 +137,10 @@ export const Autocomplete = <T extends {}>({
     dispatch({ type: TOGGLED_LIST, payload: isOpen });
   };
 
-  const selectItem = (item: T) => {
+  const selectItem = (item: T, event: KeyboardEvent | MouseEvent) => {
     dispatch({ type: ITEM_SELECTED, payload: initialState });
     onQueryChange('');
-    onChange(item);
+    onChange(item, event);
   };
 
   const updateQuery = (value: string) => {
@@ -141,7 +148,7 @@ export const Autocomplete = <T extends {}>({
     onQueryChange(value);
   };
 
-  const handleKeyDown = (event: React.KeyboardEvent) => {
+  const handleKeyDown = (event: KeyboardEvent) => {
     const isEnter = event.keyCode === KEY_CODE.ENTER;
     const isTab =
       event.keyCode === KEY_CODE.TAB ||
@@ -163,7 +170,7 @@ export const Autocomplete = <T extends {}>({
       dispatch({ type: NAVIGATED_ITEMS, payload: newIndex });
     } else if (isEnter && hasUserSelection) {
       const selected = items[highlightedItemIndex as number];
-      selectItem(selected);
+      selectItem(selected, event);
     } else if (isTab) {
       toggleList(false);
     }
@@ -273,7 +280,7 @@ export const Autocomplete = <T extends {}>({
                   key={index}
                   isActive={isActive}
                   data-selected={isActive} // this should be coming from the component library
-                  onClick={() => selectItem(option)}
+                  onClick={(e) => selectItem(option, e)}
                   testId="autocomplete.dropdown-list-item"
                 >
                   {child}
@@ -309,7 +316,7 @@ function OptionSkeleton() {
   );
 }
 
-function getNavigationDirection(event: React.KeyboardEvent): Direction | null {
+function getNavigationDirection(event: KeyboardEvent): Direction | null {
   if (event.keyCode === KEY_CODE.ARROW_DOWN) {
     return Direction.DOWN;
   }
