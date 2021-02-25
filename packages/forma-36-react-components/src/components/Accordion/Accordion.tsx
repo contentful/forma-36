@@ -22,13 +22,13 @@ export interface AccordionProps {
   testId?: string;
 }
 
-export const Accordion = ({
+export function Accordion({
   align = 'end',
   children,
   className,
   testId = 'cf-ui-accordion',
   ...otherProps
-}: AccordionProps) => {
+}: AccordionProps): React.ReactElement {
   const classNames = cn(styles.Accordion, className, {
     [styles[`Accordion--${align}`]]: align,
   });
@@ -38,6 +38,4 @@ export const Accordion = ({
       {children}
     </ul>
   );
-};
-
-export default Accordion;
+}
