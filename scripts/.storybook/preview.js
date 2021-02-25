@@ -21,13 +21,7 @@ export const parameters = {
   options: {
     storySort: {
       method: 'alphabetical',
-      order: [
-        'Documentation',
-        'Typography',
-        'Form Elements',
-        'Components',
-        '(alpha)',
-      ],
+      order: ['Documentation', 'Typography', 'Form Elements', 'Components'],
     },
   },
   // Creating DocPage from our old notes
