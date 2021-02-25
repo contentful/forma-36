@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { KeyboardEvent, MouseEvent } from 'react';
 import { render, fireEvent, within, screen } from '@testing-library/react';
 
 import { KEY_CODE } from './utils';
@@ -18,7 +18,7 @@ const items: Item[] = [
 ];
 
 describe('Autocomplete', () => {
-  let onChangeFn: (value: Item) => void;
+  let onChangeFn: (value: Item, event: MouseEvent | KeyboardEvent) => void;
   let onQueryChangeFn: (query: string) => void;
 
   const build = ({
@@ -161,17 +161,24 @@ describe('Autocomplete', () => {
     });
 
     it('calls the onChange and onQueryChange callbacks when the selecting an item with the enter key', () => {
+      const mockedKeyEvent = expect.objectContaining({
+        keyCode: KEY_CODE.ENTER,
+      });
       fireEvent.keyDown(input, { keyCode: KEY_CODE.ENTER });
-      expect(onChangeFn).toHaveBeenCalledWith(items[0]);
+      expect(onChangeFn).toHaveBeenCalledWith(items[0], mockedKeyEvent);
       expect(onQueryChangeFn).toHaveBeenCalledWith('');
     });
 
     it('calls the onChange and onQueryChange callbacks when selecting an item with a mouse click', () => {
+      const mockedMouseEvent = expect.objectContaining({
+        movementX: expect.any(Function),
+        movementY: expect.any(Function),
+      });
       const button = within(options[1]).getByTestId(
         'cf-ui-dropdown-list-item-button',
       );
       fireEvent.click(button); // select the second item
-      expect(onChangeFn).toHaveBeenCalledWith(items[1]);
+      expect(onChangeFn).toHaveBeenCalledWith(items[1], mockedMouseEvent);
       expect(onQueryChangeFn).toHaveBeenCalledWith('');
     });
 
