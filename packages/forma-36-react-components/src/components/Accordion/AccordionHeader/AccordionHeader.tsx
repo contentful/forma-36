@@ -1,12 +1,11 @@
 import React, { FC } from 'react';
 import cn from 'classnames';
 
+import styles from '../Accordion.css';
 import Subheading from '../../Typography/Subheading';
 import Icon from '../../Icon';
 
-import styles from '../Accordion.css';
-
-interface AccordionHeaderProps {
+export interface AccordionHeaderProps {
   /**
    * Child nodes to be rendered in the component
    */
@@ -64,5 +63,3 @@ export const AccordionHeader: FC<AccordionHeaderProps> = ({
     </Subheading>
   );
 };
-
-export default AccordionHeader;

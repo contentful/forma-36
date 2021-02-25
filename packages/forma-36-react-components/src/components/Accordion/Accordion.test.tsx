@@ -3,8 +3,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import axe from '../../utils/axeHelper';
-import Accordion from './Accordion';
-import AccordionItem from './AccordionItem';
+import { Accordion, AccordionItem } from './';
 
 it('renders the component', () => {
   const { container } = render(

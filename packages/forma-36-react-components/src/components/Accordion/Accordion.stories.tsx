@@ -1,12 +1,9 @@
 import React from 'react';
 
-import Accordion, { AccordionProps } from './Accordion';
-import AccordionItem from './AccordionItem';
+import { Accordion, AccordionItem, AccordionProps } from './';
 import Flex from '../Flex/Flex';
-
 import Typography from '../Typography/Typography';
 import SectionHeading from '../Typography/SectionHeading';
-
 import Paragraph from '../Typography/Paragraph';
 import notes from './README.mdx';
 

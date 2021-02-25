@@ -4,7 +4,7 @@ import tokens from '@contentful/forma-36-tokens';
 
 import styles from './AccordionPanel.css';
 
-interface AccordionPanelProps {
+export interface AccordionPanelProps {
   /**
    * Child nodes to be rendered in the component
    */
@@ -66,5 +66,3 @@ export const AccordionPanel: FC<AccordionPanelProps> = ({
     </div>
   );
 };
-
-export default AccordionPanel;
