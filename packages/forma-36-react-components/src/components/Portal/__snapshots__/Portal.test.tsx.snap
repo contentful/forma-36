@@ -3,7 +3,9 @@
 exports[`renders the component 1`] = `
 <body>
   <div />
-  <div>
+  <div
+    data-cf-ui-portal=""
+  >
     👋
   </div>
 </body>
@@ -12,7 +14,9 @@ exports[`renders the component 1`] = `
 exports[`renders the component in a separate container 1`] = `
 <body>
   <span>
-    <div>
+    <div
+      data-cf-ui-portal=""
+    >
       👋
     </div>
   </span>
