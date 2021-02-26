@@ -3,7 +3,6 @@ import { css } from '@emotion/core';
 import tokens from '@contentful/forma-36-tokens';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import * as f36Components from '@contentful/forma-36-react-components';
-import * as f36ComponentsAlpha from '@contentful/forma-36-react-components/dist/alpha';
 import { Card, Button } from '@contentful/forma-36-react-components';
 
 const styles = {
@@ -37,13 +36,7 @@ class ComponentSource extends React.Component {
   render() {
     return (
       <div className="f36-margin-bottom--m">
-        <LiveProvider
-          code={this.props.children.trim()}
-          scope={{
-            ...f36Components,
-            ...f36ComponentsAlpha,
-          }}
-        >
+        <LiveProvider code={this.props.children.trim()} scope={f36Components}>
           <Card padding="none">
             <div css={styles.preview}>
               <LivePreview />

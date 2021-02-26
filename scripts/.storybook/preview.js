@@ -27,7 +27,6 @@ export const parameters = {
         'Form Elements',
         'Components',
         'Utilities',
-        '(alpha)',
       ],
     },
   },
