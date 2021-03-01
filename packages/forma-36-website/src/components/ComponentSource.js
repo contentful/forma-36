@@ -1,9 +1,9 @@
 import React from 'react';
 import { css } from '@emotion/core';
-import tokens from '@contentful/forma-36-tokens';
+import tokens from '@contentful/f36-tokens';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
-import * as f36Components from '@contentful/forma-36-react-components';
-import { Card, Button } from '@contentful/forma-36-react-components';
+import * as f36Components from '@contentful/f36-components';
+import { Card, Button } from '@contentful/f36-components';
 
 const styles = {
   preview: css`

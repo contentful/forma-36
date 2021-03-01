@@ -80,7 +80,7 @@ function createInterfaceDefinition(tokens) {
 const buildIndexDTS = (srcPath, tokens) => {
   return fse.outputFile(
     srcPath,
-    `declare module '@contentful/forma-36-tokens' {
+    `declare module '@contentful/f36-tokens' {
       ${createInterfaceDefinition(tokens)}
       const tokens: F36Tokens;
       export default tokens;

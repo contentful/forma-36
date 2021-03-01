@@ -1,7 +1,7 @@
 /* eslint-disable react/display-name */
 import React from 'react';
 import PropTypes from 'prop-types';
-import tokens from '@contentful/forma-36-tokens';
+import tokens from '@contentful/f36-tokens';
 import { css } from '@emotion/core';
 import { MDXProvider } from '@mdx-js/react';
 import {
@@ -18,7 +18,8 @@ import {
   TableBody,
   TableRow,
   TableCell,
-} from '@contentful/forma-36-react-components';
+} from '@contentful/f36-components';
+
 import ComponentSource from './ComponentSource';
 import DocFormatter from './DocFormatter';
 import Footer from './Footer';

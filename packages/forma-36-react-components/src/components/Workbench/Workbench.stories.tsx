@@ -1,5 +1,5 @@
 import React from 'react';
-import tokens from '@contentful/forma-36-tokens';
+import tokens from '@contentful/f36-tokens';
 
 import Workbench, { WorkbenchProps } from './Workbench';
 import Icon from '../Icon';

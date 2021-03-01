@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { Icon } from '@contentful/forma-36-react-components';
+import { Icon } from '@contentful/f36-components';
 import { css } from '@emotion/core';
 
 const styles = {

@@ -1,6 +1,6 @@
 import React, { FC, useLayoutEffect, useRef } from 'react';
 import cn from 'classnames';
-import tokens from '@contentful/forma-36-tokens';
+import tokens from '@contentful/f36-tokens';
 
 import styles from './AccordionPanel.css';
 

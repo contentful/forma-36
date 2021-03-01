@@ -1,6 +1,6 @@
 import React from 'react';
-import { TextLink, Flex } from '@contentful/forma-36-react-components';
-import tokens from '@contentful/forma-36-tokens';
+import { TextLink, Flex } from '@contentful/f36-components';
+import tokens from '@contentful/f36-tokens';
 import { css } from '@emotion/core';
 
 const styles = {

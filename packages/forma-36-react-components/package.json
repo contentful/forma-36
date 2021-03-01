@@ -1,9 +1,9 @@
 {
-  "name": "@contentful/forma-36-react-components",
+  "name": "@contentful/f36-components",
   "description": "Contentful UI Component Library",
-  "version": "3.79.1",
+  "version": "4.0.0",
   "main": "dist/index.js",
-  "module": "dist/forma-36-react-components.esm.js",
+  "module": "dist/f36-components.esm.js",
   "style": "dist/styles.css",
   "license": "MIT",
   "types": "dist/index.d.ts",
@@ -31,8 +31,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.3.4",
-    "@contentful/forma-36-fcss": "^0.3.1",
-    "@contentful/forma-36-tokens": "^0.10.1",
+    "@contentful/forma-36-fcss": "^4.0.0",
+    "@contentful/f36-tokens": "^4.0.0",
     "@popperjs/core": "^2.4.4",
     "classnames": "^2.2.6",
     "csstype": "^3.0.5",

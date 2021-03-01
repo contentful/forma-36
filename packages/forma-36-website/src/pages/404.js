@@ -1,5 +1,5 @@
 import React from 'react';
-import { DisplayText, Card } from '@contentful/forma-36-react-components';
+import { DisplayText, Card } from '@contentful/f36-components';
 import Layout from '../components/Layout';
 
 const NotFoundPage = () => (

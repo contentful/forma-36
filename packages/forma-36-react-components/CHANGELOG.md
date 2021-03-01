@@ -5,97 +5,54 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [3.79.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.79.0...@contentful/forma-36-react-components@3.79.1) (2021-02-10)
 
-
 ### Bug Fixes
 
-* **help-circle-inverted:** always override fill ([dc84651](https://github.com/contentful/forma-36/commit/dc8465152cdeae47499894529a032cdc84a851f3))
-
-
-
-
+- **help-circle-inverted:** always override fill ([dc84651](https://github.com/contentful/forma-36/commit/dc8465152cdeae47499894529a032cdc84a851f3))
 
 # [3.79.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.78.4...@contentful/forma-36-react-components@3.79.0) (2021-02-10)
 
-
 ### Features
 
-* add HelpCircleInverted icon ([2d51094](https://github.com/contentful/forma-36/commit/2d5109463308b16d79aac06cace7bc83f481ee0b))
-
-
-
-
+- add HelpCircleInverted icon ([2d51094](https://github.com/contentful/forma-36/commit/2d5109463308b16d79aac06cace7bc83f481ee0b))
 
 ## [3.78.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.78.3...@contentful/forma-36-react-components@3.78.4) (2021-02-09)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
 
-
-
-
-
 ## [3.78.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.78.2...@contentful/forma-36-react-components@3.78.3) (2021-02-03)
-
 
 ### Bug Fixes
 
-* **deps:** use csstype as a dependency ([#820](https://github.com/contentful/forma-36/issues/820)) ([f64a445](https://github.com/contentful/forma-36/commit/f64a445d35c470ead9c65220519dbc69d47916c3))
-* **table:** add z-index to table head ([#822](https://github.com/contentful/forma-36/issues/822)) ([5c8ad0a](https://github.com/contentful/forma-36/commit/5c8ad0a61b0ee2ce79c9f999bc0267ee86adc156))
-
-
-
-
+- **deps:** use csstype as a dependency ([#820](https://github.com/contentful/forma-36/issues/820)) ([f64a445](https://github.com/contentful/forma-36/commit/f64a445d35c470ead9c65220519dbc69d47916c3))
+- **table:** add z-index to table head ([#822](https://github.com/contentful/forma-36/issues/822)) ([5c8ad0a](https://github.com/contentful/forma-36/commit/5c8ad0a61b0ee2ce79c9f999bc0267ee86adc156))
 
 ## [3.78.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.78.1...@contentful/forma-36-react-components@3.78.2) (2021-02-02)
 
-
 ### Bug Fixes
 
-* **table:** move row styling to table cells ([#802](https://github.com/contentful/forma-36/issues/802)) ([0ba151e](https://github.com/contentful/forma-36/commit/0ba151ec4b4bcf948dcd695d6cfb02bf330dc5d7))
-
-
-
-
+- **table:** move row styling to table cells ([#802](https://github.com/contentful/forma-36/issues/802)) ([0ba151e](https://github.com/contentful/forma-36/commit/0ba151ec4b4bcf948dcd695d6cfb02bf330dc5d7))
 
 ## [3.78.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.78.0...@contentful/forma-36-react-components@3.78.1) (2021-01-29)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
 
-
-
-
-
 # [3.78.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.77.1...@contentful/forma-36-react-components@3.78.0) (2021-01-28)
-
 
 ### Features
 
-* **icon:** add environment and environment alias ([ca51443](https://github.com/contentful/forma-36/commit/ca514435c6ead0e2a34b6b84081adb77930a53db))
-
-
-
-
+- **icon:** add environment and environment alias ([ca51443](https://github.com/contentful/forma-36/commit/ca514435c6ead0e2a34b6b84081adb77930a53db))
 
 ## [3.77.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.77.0...@contentful/forma-36-react-components@3.77.1) (2021-01-27)
 
-
 ### Bug Fixes
 
-* **tooltip:** pointer-events disabled on button toggles ([#816](https://github.com/contentful/forma-36/issues/816)) ([19d2fa2](https://github.com/contentful/forma-36/commit/19d2fa2127dd2e47c8e53717a0bc350beb97e603)), closes [#805](https://github.com/contentful/forma-36/issues/805) [/github.com/facebook/react/issues/4251#issuecomment-267004045](https://github.com//github.com/facebook/react/issues/4251/issues/issuecomment-267004045)
-
-
-
-
+- **tooltip:** pointer-events disabled on button toggles ([#816](https://github.com/contentful/forma-36/issues/816)) ([19d2fa2](https://github.com/contentful/forma-36/commit/19d2fa2127dd2e47c8e53717a0bc350beb97e603)), closes [#805](https://github.com/contentful/forma-36/issues/805) [/github.com/facebook/react/issues/4251#issuecomment-267004045](https://github.com//github.com/facebook/react/issues/4251/issues/issuecomment-267004045)
 
 # [3.77.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.76.0...@contentful/forma-36-react-components@3.77.0) (2021-01-26)
 
-
 ### Features
 
-* **button:** add additional optional properties for using Buttons as external links ([#807](https://github.com/contentful/forma-36/issues/807)) ([61771c0](https://github.com/contentful/forma-36/commit/61771c010d83d1bc78328eeb6b2ce70bc150856c))
-
-
-
-
+- **button:** add additional optional properties for using Buttons as external links ([#807](https://github.com/contentful/forma-36/issues/807)) ([61771c0](https://github.com/contentful/forma-36/commit/61771c010d83d1bc78328eeb6b2ce70bc150856c))
 
 # [3.76.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.75.1...@contentful/forma-36-react-components@3.76.0) (2021-01-26)
 

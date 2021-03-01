@@ -17,7 +17,7 @@
     "commit": "git-cz",
     "commitmsg": "validate-commit-msg",
     "generate": "plop --plopfile scripts/plopfile.js",
-    "postinstall": "lerna run --scope @contentful/forma-36-tokens build && lerna run --scope @contentful/forma-36-fcss build",
+    "postinstall": "lerna run --scope @contentful/f36-tokens build && lerna run --scope @contentful/forma-36-fcss build",
     "lint": "yarn run lint:js && yarn run lint:packages",
     "lint:js": "eslint packages --ext .js,.jsx,.ts,.tsx",
     "lint:packages": "node scripts/lint-packages.js",
