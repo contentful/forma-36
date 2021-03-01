@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.82.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.81.0...@contentful/forma-36-react-components@3.82.0) (2021-03-01)
+
+
+### Features
+
+* **autocomplete:** add preventDefault for enter key ([#854](https://github.com/contentful/forma-36/issues/854)) ([1602fff](https://github.com/contentful/forma-36/commit/1602fff1b1d8932153cc8adfd80a27682a53a7fb))
+
+
+
+
+
 # [3.81.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.80.1...@contentful/forma-36-react-components@3.81.0) (2021-02-24)
 
 
