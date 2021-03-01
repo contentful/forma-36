@@ -151,6 +151,10 @@ export const Autocomplete = <T extends {}>({
     const lastIndex = items.length ? items.length - 1 : 0;
     const direction = getNavigationDirection(event);
 
+    if (isEnter) {
+      event.preventDefault();
+    }
+
     if (direction) {
       const newIndex = getNewIndex(
         highlightedItemIndex as number,
