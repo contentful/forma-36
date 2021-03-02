@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.82.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.82.0...@contentful/forma-36-react-components@3.82.1) (2021-03-02)
+
+
+### Bug Fixes
+
+* **flex:** typo in fullHeight prop preventing the height to take effect ([#855](https://github.com/contentful/forma-36/issues/855)) ([1602b7e](https://github.com/contentful/forma-36/commit/1602b7e0e0ff100fc81d78e9f21452aadec40747))
+
+
+
+
+
 # [3.82.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.81.0...@contentful/forma-36-react-components@3.82.0) (2021-03-01)
 
 
