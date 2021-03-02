@@ -2,8 +2,8 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import axe from '../../utils/axeHelper';
-import ToggleButton from './ToggleButton';
+import { axe } from '../../utils/axeHelper';
+import { ToggleButton } from './ToggleButton';
 
 it('renders the component', () => {
   const { container } = render(<ToggleButton>Toggle</ToggleButton>);

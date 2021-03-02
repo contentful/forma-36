@@ -1,8 +1,8 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import Icon from '../Icon';
+import { Icon } from '../Icon';
 
-import Pill, { PillProps } from './Pill';
+import { Pill, PillProps } from './Pill';
 import notes from './README.mdx';
 
 export default {

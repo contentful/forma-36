@@ -2,12 +2,15 @@ import React, { useCallback } from 'react';
 import cn from 'classnames';
 import truncate from 'truncate';
 
-import Card, { BaseCardProps, CardProps } from '../Card';
-import CardActions from '../CardActions';
-import Tag, { TagType } from '../../Tag';
-import EntryCardSkeleton from './EntryCardSkeleton';
-import CardDragHandle, { CardDragHandlePropTypes } from '../CardDragHandle';
-import Icon, { IconType } from '../../Icon';
+import { Card, BaseCardProps, CardProps } from '../Card';
+import { CardActions } from '../CardActions/CardActions';
+import { Tag, TagType } from '../../Tag';
+import { EntryCardSkeleton } from './EntryCardSkeleton';
+import {
+  CardDragHandle,
+  CardDragHandlePropTypes,
+} from '../CardDragHandle/CardDragHandle';
+import { Icon, IconType } from '../../Icon';
 import styles from './EntryCard.css';
 
 export type EntryCardStatus =
@@ -263,5 +266,3 @@ export function EntryCard({
     </Card>
   );
 }
-
-export default EntryCard;

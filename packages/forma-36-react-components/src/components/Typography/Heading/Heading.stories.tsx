@@ -1,5 +1,5 @@
 import React from 'react';
-import Heading, { HeadingProps } from './Heading';
+import { Heading, HeadingProps } from './Heading';
 
 export default {
   title: 'Typography/Heading',

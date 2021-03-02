@@ -6,7 +6,7 @@ export interface PortalProps {
   container?: Document | HTMLElement;
 }
 
-export default function Portal({
+export function Portal({
   children,
   container: containerElement,
 }: PortalProps): React.ReactPortal | null {

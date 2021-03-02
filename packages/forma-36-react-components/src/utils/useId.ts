@@ -26,5 +26,3 @@ export const useId = () => {
 
   return id;
 };
-
-export default useId;

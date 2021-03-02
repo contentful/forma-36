@@ -2,10 +2,10 @@ import React from 'react';
 import classNames from 'classnames';
 import type { CSSProperties } from 'react';
 
-import Icon, { IconType } from '../Icon';
+import { Icon, IconType } from '../Icon';
 import { iconName } from '../Icon/constants';
 import styles from './Note.css';
-import IconButton from '../IconButton';
+import { IconButton } from '../IconButton';
 
 const Icons = {
   primary: iconName.InfoCircle,
@@ -73,5 +73,3 @@ export function Note({
     </div>
   );
 }
-
-export default Note;

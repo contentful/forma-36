@@ -4,7 +4,7 @@ import cn from 'classnames';
 
 import { useOnClickOutside } from '../../../utils/useOnClickOutside';
 import styles from './DropdownContainer.css';
-import Portal from '../../Portal';
+import { Portal } from '../../Portal';
 
 export interface DropdownContainerProps
   extends React.HTMLAttributes<HTMLElement> {
@@ -101,5 +101,3 @@ export const DropdownContainer = forwardRef<
 });
 
 DropdownContainer.displayName = 'DropdownContainer';
-
-export default DropdownContainer;

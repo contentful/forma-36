@@ -1,5 +1,6 @@
 import React from 'react';
-import CardDragHandle from './CardDragHandle';
+
+import { CardDragHandle } from './CardDragHandle';
 
 export default {
   title: 'Components/Card/CardDragHandle',

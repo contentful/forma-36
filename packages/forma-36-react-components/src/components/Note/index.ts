@@ -1,2 +1,2 @@
-export * from './Note';
-export { default } from './Note';
+export { Note } from './Note';
+export type { NoteProps } from './Note';

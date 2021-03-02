@@ -1,9 +1,9 @@
 import React from 'react';
 
-import TextField, { TextFieldProps } from './TextField';
-import SectionHeading from '../Typography/SectionHeading';
-import Flex from '../Flex/Flex';
-import Grid from '../Grid/Grid';
+import { TextField, TextFieldProps } from './TextField';
+import { SectionHeading } from '../Typography';
+import { Flex } from '../Flex';
+import { Grid } from '../Grid';
 
 export default {
   title: 'Form Elements/TextField',

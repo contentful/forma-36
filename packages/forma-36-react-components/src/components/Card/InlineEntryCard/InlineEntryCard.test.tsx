@@ -1,10 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import axe from '../../../utils/axeHelper';
-import InlineEntryCard from './InlineEntryCard';
-import DropdownListItem from '../../Dropdown/DropdownListItem';
-import DropdownList from '../../Dropdown/DropdownList';
+import { axe } from '../../../utils/axeHelper';
+import { InlineEntryCard } from './InlineEntryCard';
+import { DropdownList, DropdownListItem } from '../../Dropdown';
 
 it('renders the component', () => {
   const { container } = render(

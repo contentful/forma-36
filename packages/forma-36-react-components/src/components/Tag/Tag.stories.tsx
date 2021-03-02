@@ -1,10 +1,9 @@
 import React from 'react';
-
-import Tag, { TagProps } from './Tag';
-import SectionHeading from '../Typography/SectionHeading';
-import Flex from '../Flex/Flex';
 import tokens from '@contentful/forma-36-tokens';
-import { Paragraph } from '../Typography/Paragraph/Paragraph';
+
+import { Tag, TagProps } from './Tag';
+import { Flex } from '../Flex';
+import { Paragraph, SectionHeading } from '../Typography';
 
 export default {
   title: 'Components/Tag',

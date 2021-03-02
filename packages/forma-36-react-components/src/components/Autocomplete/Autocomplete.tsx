@@ -1,16 +1,17 @@
 import React, { useMemo, useReducer, useRef, ChangeEvent } from 'react';
+import cn from 'classnames';
 
-import TextInput from '../TextInput';
-import Dropdown, { DropdownProps } from '../Dropdown';
-import DropdownList from '../Dropdown/DropdownList';
-import DropdownListItem from '../Dropdown/DropdownListItem';
-import SkeletonBodyText from '../Skeleton/SkeletonBodyText';
-import SkeletonContainer from '../Skeleton/SkeletonContainer';
-import IconButton from '../IconButton';
-
+import { TextInput } from '../TextInput';
+import {
+  Dropdown,
+  DropdownList,
+  DropdownListItem,
+  DropdownProps,
+} from '../Dropdown';
+import { SkeletonBodyText, SkeletonContainer } from '../Skeleton';
+import { IconButton } from '../IconButton';
 import { KEY_CODE } from './utils';
 import styles from './Autocomplete.css';
-import cn from 'classnames';
 
 const TOGGLED_LIST = 'TOGGLED_LIST';
 const NAVIGATED_ITEMS = 'NAVIGATED_ITEMS';
@@ -357,5 +358,3 @@ function scrollToItem(list: HTMLElement, index: number): void {
   const item = list.children[index as number];
   item.scrollIntoView({ block: 'nearest' });
 }
-
-export default Autocomplete;

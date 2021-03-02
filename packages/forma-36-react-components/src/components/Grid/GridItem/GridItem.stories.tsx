@@ -1,8 +1,8 @@
 import React from 'react';
 import tokens from '@contentful/forma-36-tokens';
 
-import Grid, { GridProps } from '../Grid';
-import GridItem, { GridItemProps } from './GridItem';
+import { Grid, GridProps } from '../Grid';
+import { GridItem, GridItemProps } from './GridItem';
 import notes from './GridItem.md';
 
 const styles = {

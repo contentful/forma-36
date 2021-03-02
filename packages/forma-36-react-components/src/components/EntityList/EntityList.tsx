@@ -44,5 +44,3 @@ export const EntityList = forwardRef<HTMLUListElement, EntityListProps>(
 );
 
 EntityList.displayName = 'EntityList';
-
-export default EntityList;

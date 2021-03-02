@@ -1,2 +1,2 @@
-export * from './Pill';
-export { default } from './Pill';
+export { Pill } from './Pill';
+export type { PillProps } from './Pill';

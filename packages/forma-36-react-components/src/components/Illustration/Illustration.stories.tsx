@@ -1,12 +1,13 @@
 import React from 'react';
 
-import Illustration, {
+import {
+  Illustration,
   IllustrationProps,
   IllustrationType,
 } from './Illustration';
 import { illustrationName } from './constants';
-import Flex from '../Flex/Flex';
-import Grid from '../Grid/Grid';
+import { Flex } from '../Flex';
+import { Grid } from '../Grid/Grid';
 
 export default {
   title: 'Components/Illustration',

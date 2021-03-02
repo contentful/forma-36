@@ -1,2 +1,2 @@
-export * from './ProductIcon';
-export { default } from './ProductIcon';
+export { ProductIcon } from './ProductIcon';
+export type { ProductIconProps } from './ProductIcon';

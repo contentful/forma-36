@@ -26,5 +26,3 @@ export function ModalContent({
     </div>
   );
 }
-
-export default ModalContent;

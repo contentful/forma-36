@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import axe from '../../utils/axeHelper';
-import Pill from './Pill';
+import { axe } from '../../utils/axeHelper';
+import { Pill } from './Pill';
 
 it('renders the component', () => {
   const { container } = render(<Pill label="test" />);

@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import axe from '../../utils/axeHelper';
-import NotificationItem from './NotificationItem';
+import { axe } from '../../utils/axeHelper';
+import { NotificationItem } from './NotificationItem';
 
 it('renders the component', () => {
   const { container } = render(

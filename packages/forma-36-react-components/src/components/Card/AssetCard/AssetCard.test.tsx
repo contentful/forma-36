@@ -1,12 +1,11 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import axe from '../../../utils/axeHelper';
-import AssetCard from './AssetCard';
-import DropdownList from '../../Dropdown/DropdownList';
-import DropdownListItem from '../../Dropdown/DropdownListItem';
-import CardDragHandle from './../CardDragHandle';
-import Icon from '../../Icon';
+import { axe } from '../../../utils/axeHelper';
+import { AssetCard } from './AssetCard';
+import { DropdownList, DropdownListItem } from '../../Dropdown';
+import { CardDragHandle } from '../CardDragHandle/CardDragHandle';
+import { Icon } from '../../Icon';
 
 it('renders the component', () => {
   const { container } = render(

@@ -1,7 +1,7 @@
 import React from 'react';
-import CardActions from './CardActions';
-import DropdownList from './../../Dropdown/DropdownList';
-import DropdownListItem from './../../Dropdown/DropdownListItem';
+
+import { CardActions } from './CardActions';
+import { DropdownList, DropdownListItem } from './../../Dropdown';
 
 export default {
   title: 'Components/Card/CardActions',

@@ -1,2 +1,1 @@
-export * from './InViewport';
-export { default } from './InViewport';
+export { InViewport } from './InViewport';

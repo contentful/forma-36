@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+
 import { formatDateTime, formatRelativeDateTime } from '../dateUtils';
 import { CoercibleDate } from '../types';
 
@@ -59,5 +60,3 @@ export const RelativeDate: React.FC<RelativeDateProps> = ({
     </time>
   );
 };
-
-export default RelativeDate;

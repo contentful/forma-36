@@ -8,9 +8,8 @@ import {
   productIconTag,
 } from './constants';
 import notes from './README.mdx';
-import Flex from '../Flex/Flex';
-import SectionHeading from '../Typography/SectionHeading';
-import Paragraph from '../Typography/Paragraph';
+import { Flex } from '../Flex';
+import { Paragraph, SectionHeading } from '../Typography';
 
 export default {
   title: '(alpha)/ProductIcon',

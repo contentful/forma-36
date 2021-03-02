@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AnimateHeight from 'react-animate-height';
-import NotificationItem, { NotificationItemProps } from './NotificationItem';
+
+import { NotificationItem, NotificationItemProps } from './NotificationItem';
 
 export interface NotificationItemContainerProps extends NotificationItemProps {
   duration?: number;
@@ -103,5 +104,3 @@ export class NotificationItemContainer extends Component<
     );
   }
 }
-
-export default NotificationItemContainer;

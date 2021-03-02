@@ -13,7 +13,7 @@ import type * as CSS from 'csstype';
 
 import styles from './Tooltip.css';
 import tokens from '@contentful/forma-36-tokens';
-import Portal from '../Portal';
+import { Portal } from '../Portal';
 
 export type TooltipPlace = Placement;
 
@@ -226,5 +226,3 @@ export const Tooltip = ({
     </>
   );
 };
-
-export default Tooltip;

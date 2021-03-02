@@ -10,7 +10,7 @@ module.exports = {
     'plugin:jest/recommended',
     'plugin:jest/style',
   ],
-  plugins: ['react-hooks', 'jest-dom', 'testing-library'],
+  plugins: ['import', 'react-hooks', 'jest-dom', 'testing-library'],
   parserOptions: {
     ecmaVersion: 7,
     project: './tsconfig.json',
@@ -60,12 +60,15 @@ module.exports = {
     '@typescript-eslint/no-empty-function': 'off',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
+    'import/named': 'error',
+    'import/no-default-export': 'error',
   },
   overrides: [
     {
       files: ['**/*.stories.*'],
       rules: {
         '@typescript-eslint/no-object-literal-type-assertion': 'off',
+        'import/no-default-export': 'off',
       },
     },
     {
@@ -81,6 +84,19 @@ module.exports = {
       env: {
         node: true,
         browser: true,
+      },
+    },
+    {
+      files: [
+        '**/forma-36-website/**/*',
+        '**/forma-36-react-components/tools/**/*',
+        '**/forma-36-react-components/**/Icon/svg/*',
+        '**/forma-36-react-components/**/ProductIcon/**/*',
+        '**/forma-36-react-components/**/Illustration/**/*',
+        '**/packages/components/**/*',
+      ],
+      rules: {
+        'import/no-default-export': 'off',
       },
     },
   ],

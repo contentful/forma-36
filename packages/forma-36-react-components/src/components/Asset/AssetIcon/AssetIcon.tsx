@@ -36,5 +36,3 @@ export function AssetIcon({
     />
   );
 }
-
-export default AssetIcon;

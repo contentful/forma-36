@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
 
-import Tabs from './Tabs';
-import Tab from './Tab';
-import TabPanel from './TabPanel';
-import SectionHeading from '../Typography/SectionHeading';
-import Flex from '../Flex/Flex';
+import { Tabs } from './Tabs';
+import { Tab } from './Tab';
+import { TabPanel } from './TabPanel';
+import { SectionHeading } from '../Typography';
+import { Flex } from '../Flex';
 
 export default {
   argTypes: {

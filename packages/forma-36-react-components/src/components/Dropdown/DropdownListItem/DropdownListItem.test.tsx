@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import DropdownListItem from './DropdownListItem';
+import { DropdownListItem } from './DropdownListItem';
 
 it('renders the component', () => {
   const { container } = render(

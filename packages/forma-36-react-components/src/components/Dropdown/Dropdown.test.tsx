@@ -2,11 +2,11 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import axe from '../../utils/axeHelper';
-import Dropdown from './Dropdown';
-import Button from '../Button';
-import DropdownListItem from './DropdownListItem';
-import DropdownList from './DropdownList';
+import { axe } from '../../utils/axeHelper';
+import { Dropdown } from './Dropdown';
+import { Button } from '../Button';
+import { DropdownListItem } from './DropdownListItem/DropdownListItem';
+import { DropdownList } from './DropdownList/DropdownList';
 
 it('renders the component', () => {
   const { container } = render(

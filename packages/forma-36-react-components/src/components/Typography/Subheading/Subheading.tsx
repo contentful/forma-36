@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import styles from './Subheading.css';
 
-import { TypographyContext } from '../Typography';
+import { TypographyContext } from '../Typography/Typography';
 
 export interface SubheadingProps {
   element?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
@@ -42,5 +42,3 @@ export function Subheading({
     </TypographyContext.Consumer>
   );
 }
-
-export default Subheading;

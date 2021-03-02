@@ -1,11 +1,10 @@
 import React from 'react';
 
-import List, { ListProps } from './List';
-import ListItem from './ListItem';
-import TextLink from '../TextLink';
-import Flex from '../Flex/Flex';
-import SectionHeading from '../Typography/SectionHeading';
-
+import { List, ListProps } from './List';
+import { ListItem } from './ListItem/ListItem';
+import { TextLink } from '../TextLink';
+import { Flex } from '../Flex';
+import { SectionHeading } from '../Typography';
 import notes from './README.mdx';
 
 export default {

@@ -9,10 +9,10 @@ import type {
 } from 'react';
 import cn from 'classnames';
 import { CSSTransition } from 'react-transition-group';
-import Icon, { IconType } from '../Icon';
-import TabFocusTrap from '../TabFocusTrap';
-import Spinner from '../Spinner';
 
+import { Icon, IconType } from '../Icon';
+import { TabFocusTrap } from '../TabFocusTrap';
+import { Spinner } from '../Spinner';
 import styles from './Button.css';
 
 type AnchorProps =
@@ -159,5 +159,3 @@ export const Button = ({
     </Element>
   );
 };
-
-export default Button;

@@ -2,16 +2,19 @@ import React, { useCallback } from 'react';
 import cn from 'classnames';
 import type { MouseEventHandler } from 'react';
 
-import Tag, { TagType } from '../../Tag';
-import Icon from '../../Icon';
-import CardActions from '../../Card/CardActions';
-import SkeletonBodyText from '../../Skeleton/SkeletonBodyText';
-import SkeletonImage from '../../Skeleton/SkeletonImage';
-import SkeletonContainer from '../../Skeleton/SkeletonContainer';
-import TabFocusTrap from '../../TabFocusTrap';
-import CardDragHandle, {
+import { Tag, TagType } from '../../Tag';
+import { Icon } from '../../Icon';
+import {
+  CardActions,
+  CardDragHandle,
   CardDragHandlePropTypes,
-} from '../../Card/CardDragHandle';
+} from '../../Card';
+import {
+  SkeletonBodyText,
+  SkeletonContainer,
+  SkeletonImage,
+} from '../../Skeleton';
+import { TabFocusTrap } from '../../TabFocusTrap';
 import styles from './EntityListItem.css';
 
 export type EntityListItemStatus =
@@ -273,5 +276,3 @@ export function EntityListItem({
     </li>
   );
 }
-
-export default EntityListItem;

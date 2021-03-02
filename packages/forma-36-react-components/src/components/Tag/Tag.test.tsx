@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import axe from '../../utils/axeHelper';
-import Tag from './Tag';
+import { axe } from '../../utils/axeHelper';
+import { Tag } from './Tag';
 
 it('renders the component', () => {
   const { container } = render(<Tag>Tag</Tag>);

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import HelpText, { HelpTextProps } from './HelpText';
-import TextLink from '../TextLink';
+import { HelpText, HelpTextProps } from './HelpText';
+import { TextLink } from '../TextLink';
 
 export default {
   title: 'Components/HelpText',

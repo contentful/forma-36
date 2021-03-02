@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-import Switch, { SwitchProps } from './Switch';
-import SectionHeading from '../Typography/SectionHeading';
-import Flex from '../Flex/Flex';
+import { Switch, SwitchProps } from './Switch';
+import { SectionHeading } from '../Typography';
+import { Flex } from '../Flex';
 
 export default {
   title: 'Components/Switch',

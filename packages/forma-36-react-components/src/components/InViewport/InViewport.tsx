@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
-import isBrowser from '../../utils/isBrowser';
-import throttle from '../../utils/throttle';
+import { isBrowser } from '../../utils/isBrowser';
+import { throttle } from '../../utils/throttle';
 import styles from './InViewport.css';
 
 export interface InViewportProps {
@@ -126,5 +126,3 @@ export class InViewport extends Component<InViewportProps> {
     );
   }
 }
-
-export default InViewport;

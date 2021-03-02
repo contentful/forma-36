@@ -1,5 +1,6 @@
 import React from 'react';
-import ValidationMessage, { ValidationMessageProps } from './ValidationMessage';
+
+import { ValidationMessage, ValidationMessageProps } from './ValidationMessage';
 
 export default {
   title: 'Components/ValidationMessage',

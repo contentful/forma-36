@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import axe from '../../utils/axeHelper';
-import ValidationMessage from './ValidationMessage';
+import { axe } from '../../utils/axeHelper';
+import { ValidationMessage } from './ValidationMessage';
 
 it('renders the component with all required props', () => {
   const { container } = render(

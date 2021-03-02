@@ -1,6 +1,7 @@
 import React from 'react';
 import tokens from '@contentful/forma-36-tokens';
-import Flex, { FlexProps } from './Flex';
+
+import { Flex, FlexProps } from './Flex';
 import notes from './README.mdx';
 
 const styles = {

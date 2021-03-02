@@ -2,8 +2,8 @@ import React, { useCallback } from 'react';
 import cn from 'classnames';
 import type { MouseEventHandler } from 'react';
 
-import Icon, { IconType } from '../Icon';
-import TabFocusTrap from '../TabFocusTrap';
+import { Icon, IconType } from '../Icon';
+import { TabFocusTrap } from '../TabFocusTrap';
 import styles from './TextLink.css';
 
 export type TextLinkType =
@@ -126,5 +126,3 @@ export function TextLink({
     </button>
   );
 }
-
-export default TextLink;

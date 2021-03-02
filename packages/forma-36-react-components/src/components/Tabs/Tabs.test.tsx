@@ -1,10 +1,10 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import axe from '../../utils/axeHelper';
-import Tabs from './Tabs';
-import Tab from './Tab';
-import TabPanel from './TabPanel';
+import { axe } from '../../utils/axeHelper';
+import { Tabs } from './Tabs';
+import { Tab } from './Tab';
+import { TabPanel } from './TabPanel';
 
 it('renders the component', () => {
   const { container } = render(

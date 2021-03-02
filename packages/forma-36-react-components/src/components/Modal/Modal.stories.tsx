@@ -1,8 +1,8 @@
 import React, { useState, MouseEventHandler } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 
-import Modal, { ModalProps } from './Modal';
-import Button from '../Button';
+import { Modal, ModalProps } from './Modal';
+import { Button } from '../Button';
 
 function fillArray(value: string, len: number) {
   if (len === 0) return [];

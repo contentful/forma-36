@@ -1,11 +1,10 @@
 import React from 'react';
 
-import Button, { ButtonProps } from './Button';
-import Flex from '../Flex/Flex';
-import SectionHeading from '../Typography/SectionHeading';
-import Tag from '../Tag';
+import { Button, ButtonProps } from './Button';
+import { Flex } from '../Flex';
+import { SectionHeading } from '../Typography';
+import { Tag } from '../Tag';
 import { iconName } from '../Icon/constants';
-
 import notes from './README.mdx';
 
 export default {

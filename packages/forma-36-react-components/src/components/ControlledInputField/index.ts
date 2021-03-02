@@ -1,2 +1,2 @@
-export * from './ControlledInputField';
-export { default } from './ControlledInputField';
+export { ControlledInputField } from './ControlledInputField';
+export type { ControlledInputFieldPropTypes } from './ControlledInputField';

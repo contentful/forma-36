@@ -85,5 +85,3 @@ export function Tag({
     </div>
   );
 }
-
-export default Tag;

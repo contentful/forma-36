@@ -1,5 +1,6 @@
 import React from 'react';
-import Subheading, { SubheadingProps } from './Subheading';
+
+import { Subheading, SubheadingProps } from './Subheading';
 
 export default {
   title: 'Typography/Subheading',

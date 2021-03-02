@@ -1,8 +1,8 @@
 import React from 'react';
-import SkeletonContainer from '../../Skeleton/SkeletonContainer';
-import SkeletonBodyText from '../../Skeleton/SkeletonBodyText';
 
-const EntryCardSkeleton = () => (
+import { SkeletonBodyText, SkeletonContainer } from '../../Skeleton';
+
+export const InlineEntryCardSkeleton = () => (
   <SkeletonContainer
     width="100%"
     clipId="f36-inline-entry-card-skeleton"
@@ -11,5 +11,3 @@ const EntryCardSkeleton = () => (
     <SkeletonBodyText numberOfLines={1} />
   </SkeletonContainer>
 );
-
-export default EntryCardSkeleton;

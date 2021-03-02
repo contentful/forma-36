@@ -1,10 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import axe from '../../../utils/axeHelper';
-import CardActions from './CardActions';
-import DropdownListItem from '../../Dropdown/DropdownListItem';
-import DropdownList from '../../Dropdown/DropdownList';
+import { axe } from '../../../utils/axeHelper';
+import { CardActions } from './CardActions';
+import { DropdownList, DropdownListItem } from '../../Dropdown';
 
 it('renders the component using a single dropdown list', () => {
   const { container } = render(

@@ -1,15 +1,16 @@
 import React from 'react';
 import cn from 'classnames';
+import type { ReactElement } from 'react';
 
-import Heading from '../Typography/Heading';
-import IconButton from '../IconButton';
+import { Heading } from '../Typography';
+import { IconButton } from '../IconButton';
 import styles from './Workbench.css';
 
 export interface WorkbenchHeaderProps {
-  title?: React.ReactElement | string;
-  description?: React.ReactElement | string;
-  icon?: React.ReactElement;
-  actions?: React.ReactElement;
+  title?: ReactElement | string;
+  description?: ReactElement | string;
+  icon?: ReactElement;
+  actions?: ReactElement;
   onBack?: Function;
   className?: string;
   testId?: string;
@@ -88,7 +89,7 @@ export function WorkbenchHeader({
 
 WorkbenchHeader.displayName = 'Workbench.Header';
 
-interface WorkbenchSidebarProps {
+export interface WorkbenchSidebarProps {
   children: React.ReactNode;
   className?: string;
   position?: 'left' | 'right';
@@ -118,7 +119,7 @@ export function WorkbenchSidebar({
   );
 }
 
-interface WorkbenchContentProps {
+export interface WorkbenchContentProps {
   children: React.ReactNode;
   type?: 'default' | 'text' | 'full';
   className?: string;
@@ -169,7 +170,7 @@ export function Workbench({
   children,
   testId = 'cf-ui-workbench',
   ...otherProps
-}: WorkbenchProps): React.ReactElement {
+}: WorkbenchProps): ReactElement {
   const childrenArray = React.Children.toArray(children);
   const header: React.ReactNode[] = [];
   const other: React.ReactNode[] = [];
@@ -197,5 +198,3 @@ export function Workbench({
 Workbench.Header = WorkbenchHeader;
 Workbench.Content = WorkbenchContent;
 Workbench.Sidebar = WorkbenchSidebar;
-
-export default Workbench;

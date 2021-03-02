@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import axe from '../../../utils/axeHelper';
-import SkeletonContainer from '../SkeletonContainer';
-import SkeletonDisplayText from './SkeletonDisplayText';
+import { axe } from '../../../utils/axeHelper';
+import { SkeletonContainer } from '../SkeletonContainer/SkeletonContainer';
+import { SkeletonDisplayText } from './SkeletonDisplayText';
 
 it('renders the component', () => {
   const { container } = render(

@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import axe from '../../../utils/axeHelper';
-import EditorToolbarDivider from './EditorToolbarDivider';
+import { axe } from '../../../utils/axeHelper';
+import { EditorToolbarDivider } from './EditorToolbarDivider';
 
 it('renders the component', () => {
   const { container } = render(

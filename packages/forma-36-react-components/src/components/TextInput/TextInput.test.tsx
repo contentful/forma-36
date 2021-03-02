@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import axe from '../../utils/axeHelper';
-import TextInput from './TextInput';
+import { axe } from '../../utils/axeHelper';
+import { TextInput } from './TextInput';
 
 it('renders the component with all required props', () => {
   const { container } = render(<TextInput id="someInput" name="userEmail" />);

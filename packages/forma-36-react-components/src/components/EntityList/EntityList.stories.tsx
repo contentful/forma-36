@@ -1,8 +1,7 @@
 import React from 'react';
 
-import EntityList from './EntityList';
-import EntityListItem from './EntityListItem';
-
+import { EntityList } from './EntityList';
+import { EntityListItem } from './EntityListItem/EntityListItem';
 import notes from './README.mdx';
 
 export default {

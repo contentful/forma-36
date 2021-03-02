@@ -1,7 +1,8 @@
 import React from 'react';
 
-import SkeletonContainer from '../SkeletonContainer';
-import SkeletonDisplayText, {
+import { SkeletonContainer } from '../SkeletonContainer/SkeletonContainer';
+import {
+  SkeletonDisplayText,
   SkeletonDisplayTextProps,
 } from './SkeletonDisplayText';
 

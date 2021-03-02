@@ -1,11 +1,7 @@
 import React from 'react';
 
-import SkeletonRow, { SkeletonRowProps } from './SkeletonRow';
-import Table from '../../Table';
-import TableHead from '../../Table/TableHead';
-import TableBody from '../../Table/TableBody';
-import TableCell from '../../Table/TableCell';
-import TableRow from '../../Table/TableRow';
+import { SkeletonRow, SkeletonRowProps } from './SkeletonRow';
+import { Table, TableHead, TableBody, TableCell, TableRow } from '../../Table';
 
 export default {
   title: 'Components/Skeleton/SkeletonRow',

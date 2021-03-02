@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import axe from '../../../utils/axeHelper';
-import SectionHeading from './SectionHeading';
+import { axe } from '../../../utils/axeHelper';
+import { SectionHeading } from './SectionHeading';
 
 it('renders the component', () => {
   const { container } = render(<SectionHeading>SectionHeading</SectionHeading>);

@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import axe from '../../utils/axeHelper';
-import Modal from './Modal';
+import { axe } from '../../utils/axeHelper';
+import { Modal } from './Modal';
 
 jest.mock(
   'react-modal',

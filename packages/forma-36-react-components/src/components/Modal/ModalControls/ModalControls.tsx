@@ -34,5 +34,3 @@ export function ModalControls({
     </div>
   );
 }
-
-export default ModalControls;
