@@ -3,7 +3,7 @@
   "description": "Contentful UI Component Library",
   "version": "3.82.1",
   "main": "dist/index.js",
-  "module": "dist/forma-36-react-components.esm.js",
+  "module": "dist/esm/index.js",
   "style": "dist/styles.css",
   "license": "MIT",
   "types": "dist/index.d.ts",
