@@ -4,7 +4,7 @@ import truncate from 'truncate';
 
 import Card, { BaseCardProps, CardProps } from '../Card';
 import CardActions from '../CardActions';
-import Tag, { TagType } from '../../Tag';
+import { Tag, TagType } from '@contentful/f36-tag';
 import EntryCardSkeleton from './EntryCardSkeleton';
 import CardDragHandle, { CardDragHandleProps } from '../CardDragHandle';
 import Icon, { IconType } from '../../Icon';

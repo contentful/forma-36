@@ -6,7 +6,7 @@ import Icon, { IconType } from '../../Icon';
 import CardActions from './../CardActions';
 import { Asset } from '../../Asset';
 import { AssetType } from '../../Asset';
-import Tag, { TagType } from '../../Tag';
+import { Tag, TagType } from '@contentful/f36-tag';
 import AssetCardSkeleton from './AssetCardSkeleton';
 import CardDragHandle, { CardDragHandleProps } from '../CardDragHandle';
 import styles from './AssetCard.css';

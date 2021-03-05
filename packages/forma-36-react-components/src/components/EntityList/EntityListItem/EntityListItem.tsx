@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import cn from 'classnames';
 import type { MouseEventHandler } from 'react';
 
-import Tag, { TagType } from '../../Tag';
+import { Tag, TagType } from '@contentful/f36-tag';
 import Icon from '../../Icon';
 import CardActions from '../../Card/CardActions';
 import SkeletonBodyText from '../../Skeleton/SkeletonBodyText';
