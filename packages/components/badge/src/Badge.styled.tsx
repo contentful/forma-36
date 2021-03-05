@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { css } from '@emotion/core';
 import type { BadgeVariant } from './types';
 
-const tagTypeToStyles = ({ variant }: { variant: BadgeVariant }) => {
+const variantToStyles = ({ variant }: { variant: BadgeVariant }) => {
   switch (variant) {
     case 'positive':
       return css`
@@ -57,5 +57,5 @@ export const Container = styled.div<{ variant: BadgeVariant }>`
   padding: 0 ${tokens.spacingXs};
   border-radius: ${tokens.borderRadiusSmall};
 
-  ${tagTypeToStyles}
+  ${variantToStyles}
 `;
