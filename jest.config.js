@@ -120,7 +120,7 @@ module.exports = {
   setupFilesAfterEnv: ['<rootDir>/scripts/test/setupTests.js'],
 
   // A list of paths to snapshot serializer modules Jest should use for snapshot testing
-  // snapshotSerializers: [],
+  snapshotSerializers: ['jest-emotion'],
 
   // The test environment that will be used for testing
   testEnvironment: 'jsdom',
