@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Badge } from '../src/Badge';
-import { BadgeProps } from '../src/types';
+import { BadgeProps } from '../src/Badge';
 import SectionHeading from '../../../forma-36-react-components/src/components/Typography/SectionHeading/SectionHeading';
 import Flex from '../../../forma-36-react-components/src/components/Flex/Flex';
 

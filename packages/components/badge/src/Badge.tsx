@@ -1,36 +1,30 @@
 import React from 'react';
-import type { BadgeVariant, BadgeProps } from './types';
+import type { BadgeVariant } from './types';
 import { Container } from './Badge.styled';
 
-const statusTagTypeMap: { [key: string]: BadgeVariant } = {
-  published: 'positive',
-  draft: 'warning',
-  archived: 'negative',
-  changed: 'primary',
-  deleted: 'negative',
-  new: 'primary-filled',
-};
+export interface BadgeProps {
+  variant?: BadgeVariant;
+  style?: React.CSSProperties;
+  className?: string;
+  testId?: string;
+  children: React.ReactNode;
+}
 
 function Badge(props: BadgeProps, ref: React.Ref<HTMLDivElement>) {
   const {
     className,
     children,
     variant = 'primary',
-    entityStatusType,
     testId = 'cf-ui-badge',
     ...otherProps
   } = props;
-
-  const calculatedVariant = entityStatusType
-    ? statusTagTypeMap[entityStatusType]
-    : variant;
 
   return (
     <Container
       className={className}
       ref={ref}
       data-test-id={testId}
-      variant={calculatedVariant}
+      variant={variant}
       {...otherProps}
     >
       {children}

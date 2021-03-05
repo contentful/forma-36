@@ -14,12 +14,3 @@ export type EntityStatus =
   | 'changed'
   | 'deleted'
   | 'new';
-
-export interface BadgeProps {
-  variant?: BadgeVariant;
-  style?: React.CSSProperties;
-  className?: string;
-  testId?: string;
-  children: React.ReactNode;
-  entityStatusType?: EntityStatus;
-}

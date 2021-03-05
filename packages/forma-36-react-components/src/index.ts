@@ -39,8 +39,12 @@ export { TableRow } from './components/Table/TableRow/TableRow';
 export { ToggleButton } from './components/ToggleButton/ToggleButton';
 export { AssetCard } from './components/Card/AssetCard/AssetCard';
 export { Asset, AssetIcon } from './components/Asset';
-export { Badge } from '@contentful/f36-badge';
-export type { BadgeProps, BadgeVariant } from '@contentful/f36-badge';
+export { Badge, EntityStatusBadge } from '@contentful/f36-badge';
+export type {
+  BadgeProps,
+  BadgeVariant,
+  EntityStatusBadgeProps,
+} from '@contentful/f36-badge';
 export { Heading } from './components/Typography/Heading/Heading';
 export { Modal } from './components/Modal/Modal';
 export { ModalConfirm } from './components/Modal/ModalConfirm/ModalConfirm';
