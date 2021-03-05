@@ -3,7 +3,7 @@ import React from 'react';
 import Button, { ButtonProps } from './Button';
 import Flex from '../Flex/Flex';
 import SectionHeading from '../Typography/SectionHeading';
-import { Tag } from '@contentful/f36-tag';
+import { Badge } from '@contentful/f36-badge';
 import { iconName } from '../Icon/constants';
 
 import notes from './README.mdx';
@@ -64,7 +64,7 @@ export const Overview = (args: ButtonProps) => (
         </Flex>
       </Flex>
       <Flex marginBottom="spacingXs">
-        <Tag tagType="warning">(deprecated)</Tag>
+        <Badge variant="warning">(deprecated)</Badge>
       </Flex>
       <Flex flexDirection="row" marginBottom="spacingM">
         <Flex marginRight="spacingXs">
@@ -130,7 +130,7 @@ export const Overview = (args: ButtonProps) => (
         </Flex>
       </Flex>
       <Flex marginBottom="spacingXs">
-        <Tag tagType="warning">(deprecated)</Tag>
+        <Badge variant="warning">(deprecated)</Badge>
       </Flex>
       <Flex flexDirection="row" marginBottom="spacingM">
         <Flex marginRight="spacingXs">
@@ -173,7 +173,7 @@ export const Overview = (args: ButtonProps) => (
         </Flex>
       </Flex>
       <Flex marginBottom="spacingXs">
-        <Tag tagType="warning">(deprecated)</Tag>
+        <Badge variant="warning">(deprecated)</Badge>
       </Flex>
       <Flex flexDirection="row" marginBottom="spacingM">
         <Flex marginRight="spacingXs">
@@ -216,7 +216,7 @@ export const Overview = (args: ButtonProps) => (
         </Flex>
       </Flex>
       <Flex marginBottom="spacingXs">
-        <Tag tagType="warning">(deprecated)</Tag>
+        <Badge variant="warning">(deprecated)</Badge>
       </Flex>
       <Flex flexDirection="row" marginBottom="spacingM">
         <Flex marginRight="spacingXs">
@@ -259,7 +259,7 @@ export const Overview = (args: ButtonProps) => (
         </Flex>
       </Flex>
       <Flex marginBottom="spacingXs">
-        <Tag tagType="warning">(deprecated)</Tag>
+        <Badge variant="warning">(deprecated)</Badge>
       </Flex>
       <Flex flexDirection="row" marginBottom="spacingM">
         <Flex marginRight="spacingXs">

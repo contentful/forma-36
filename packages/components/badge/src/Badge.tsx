@@ -1,8 +1,8 @@
 import React from 'react';
-import type { TagType, TagProps } from './types';
-import { Container } from './Tag.styled';
+import type { BadgeVariant, BadgeProps } from './types';
+import { Container } from './Badge.styled';
 
-const statusTagTypeMap: { [key: string]: TagType } = {
+const statusTagTypeMap: { [key: string]: BadgeVariant } = {
   published: 'positive',
   draft: 'warning',
   archived: 'negative',
@@ -11,26 +11,26 @@ const statusTagTypeMap: { [key: string]: TagType } = {
   new: 'primary-filled',
 };
 
-function Tag(props: TagProps, ref: React.Ref<HTMLDivElement>) {
+function Badge(props: BadgeProps, ref: React.Ref<HTMLDivElement>) {
   const {
     className,
     children,
-    tagType = 'primary' as TagType,
+    variant = 'primary',
     entityStatusType,
-    testId = 'cf-ui-tag',
+    testId = 'cf-ui-badge',
     ...otherProps
   } = props;
 
-  const calculatedTagType = entityStatusType
+  const calculatedVariant = entityStatusType
     ? statusTagTypeMap[entityStatusType]
-    : tagType;
+    : variant;
 
   return (
     <Container
       className={className}
       ref={ref}
       data-test-id={testId}
-      tagType={calculatedTagType}
+      variant={calculatedVariant}
       {...otherProps}
     >
       {children}
@@ -38,5 +38,5 @@ function Tag(props: TagProps, ref: React.Ref<HTMLDivElement>) {
   );
 }
 
-const _Tag = React.forwardRef(Tag);
-export { _Tag as Tag };
+const _Badge = React.forwardRef(Badge);
+export { _Badge as Badge };

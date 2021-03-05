@@ -1,19 +1,10 @@
 import tokens from '@contentful/f36-tokens';
 import styled from '@emotion/styled';
 import { css } from '@emotion/core';
-import type { EntityStatus, TagType } from './types';
+import type { BadgeVariant } from './types';
 
-export interface TagProps {
-  tagType?: TagType;
-  style?: React.CSSProperties;
-  className?: string;
-  testId?: string;
-  children: React.ReactNode;
-  entityStatusType?: EntityStatus;
-}
-
-const tagTypeToStyles = ({ tagType }: { tagType: TagType }) => {
-  switch (tagType) {
+const tagTypeToStyles = ({ variant }: { variant: BadgeVariant }) => {
+  switch (variant) {
     case 'positive':
       return css`
         color: ${tokens.colorGreenBase};
@@ -54,7 +45,7 @@ const tagTypeToStyles = ({ tagType }: { tagType: TagType }) => {
   }
 };
 
-export const Container = styled.div<{ tagType: TagType }>`
+export const Container = styled.div<{ variant: BadgeVariant }>`
   display: inline-block;
   font-family: ${tokens.fontStackPrimary};
   font-weight: ${tokens.fontWeightMedium};

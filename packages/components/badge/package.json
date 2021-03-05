@@ -1,8 +1,8 @@
 {
-  "name": "@contentful/f36-tag",
+  "name": "@contentful/f36-badge",
   "version": "4.0.0",
   "private": true,
-  "description": "Forma 36: Tag React Component",
+  "description": "Forma 36: Badge React Component",
   "license": "MIT",
   "files": [
     "dist",

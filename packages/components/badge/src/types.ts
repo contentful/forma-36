@@ -1,4 +1,4 @@
-export type TagType =
+export type BadgeVariant =
   | 'primary'
   | 'primary-filled'
   | 'positive'
@@ -15,8 +15,8 @@ export type EntityStatus =
   | 'deleted'
   | 'new';
 
-export interface TagProps {
-  tagType?: TagType;
+export interface BadgeProps {
+  variant?: BadgeVariant;
   style?: React.CSSProperties;
   className?: string;
   testId?: string;
