@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Tag, TagProps } from '../src/Tag';
+import { Tag } from '../src/Tag';
+import { TagProps } from '../src/types';
 import SectionHeading from '../../../forma-36-react-components/src/components/Typography/SectionHeading/SectionHeading';
 import Flex from '../../../forma-36-react-components/src/components/Flex/Flex';
 
