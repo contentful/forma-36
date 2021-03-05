@@ -6,7 +6,7 @@ import Icon, { IconType } from '../../Icon';
 import CardActions from './../CardActions';
 import { Asset } from '../../Asset';
 import { AssetType } from '../../Asset';
-import { Badge, BadgeVariant } from '@contentful/f36-badge';
+import { EntityStatusBadge } from '@contentful/f36-badge';
 import AssetCardSkeleton from './AssetCardSkeleton';
 import CardDragHandle, { CardDragHandleProps } from '../CardDragHandle';
 import styles from './AssetCard.css';
@@ -88,30 +88,6 @@ export function AssetCard({
 }: AssetCardProps): React.ReactElement {
   const renderStatus = useCallback(
     (status: AssetState, statusIcon: React.ReactNode) => {
-      let label;
-      let variant: BadgeVariant | null = null;
-
-      switch (status) {
-        case 'archived':
-          label = 'archived';
-          variant = 'negative';
-          break;
-
-        case 'changed':
-          label = 'changed';
-          variant = 'primary';
-          break;
-
-        case 'published':
-          label = 'published';
-          variant = 'positive';
-          break;
-
-        default:
-          label = 'draft';
-          variant = 'warning';
-      }
-
       return (
         <>
           {statusIcon && typeof statusIcon === 'string' ? (
@@ -123,7 +99,7 @@ export function AssetCard({
           ) : (
             statusIcon
           )}
-          <Badge variant={variant}>{label}</Badge>
+          <EntityStatusBadge entityStatus={status} />
         </>
       );
     },

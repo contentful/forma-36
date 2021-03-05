@@ -4,7 +4,7 @@ import truncate from 'truncate';
 
 import Card, { BaseCardProps, CardProps } from '../Card';
 import CardActions from '../CardActions';
-import { Badge, BadgeVariant } from '@contentful/f36-badge';
+import { EntityStatusBadge } from '@contentful/f36-badge';
 import EntryCardSkeleton from './EntryCardSkeleton';
 import CardDragHandle, { CardDragHandleProps } from '../CardDragHandle';
 import Icon, { IconType } from '../../Icon';
@@ -146,31 +146,7 @@ export function EntryCard({
   );
 
   const renderStatus = useCallback((status: EntryCardStatus) => {
-    let label: string;
-    let variant: BadgeVariant;
-
-    switch (status) {
-      case 'archived':
-        label = 'archived';
-        variant = 'negative';
-        break;
-
-      case 'changed':
-        label = 'changed';
-        variant = 'primary';
-        break;
-
-      case 'published':
-        label = 'published';
-        variant = 'positive';
-        break;
-
-      default:
-        label = 'draft';
-        variant = 'warning';
-    }
-
-    return <Badge variant={variant}>{label}</Badge>;
+    return <EntityStatusBadge entityStatus={status} />;
   }, []);
 
   const renderCardDragHandle = useCallback(() => {

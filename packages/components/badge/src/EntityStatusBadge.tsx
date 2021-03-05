@@ -12,7 +12,10 @@ const statusMap: { [key: string]: BadgeVariant } = {
   new: 'primary-filled',
 };
 
-export type EntityStatusBadgeProps = Omit<BadgeProps, 'variant'> & {
+export type EntityStatusBadgeProps = Omit<
+  BadgeProps,
+  'variant' | 'children'
+> & {
   entityStatus: EntityStatus;
 };
 
@@ -22,7 +25,11 @@ function EntityStatusBadge(
 ) {
   const { entityStatus, ...rest } = props;
   const variant = statusMap[entityStatus];
-  return <Badge {...rest} variant={variant} ref={ref} />;
+  return (
+    <Badge {...rest} variant={variant} ref={ref}>
+      {entityStatus}
+    </Badge>
+  );
 }
 
 const _EntityStatusBadge = React.forwardRef(EntityStatusBadge);

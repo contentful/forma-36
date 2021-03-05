@@ -271,7 +271,7 @@ exports[`renders the component as an Asset with a lower-cased entityType 1`] = `
         >
           <div
             class="emotion-0"
-            data-test-id="cf-ui-tag"
+            data-test-id="cf-ui-badge"
           >
             published
           </div>
@@ -369,7 +369,7 @@ exports[`renders the component as an Asset with a title-cased entityType 1`] = `
         >
           <div
             class="emotion-0"
-            data-test-id="cf-ui-tag"
+            data-test-id="cf-ui-badge"
           >
             published
           </div>
@@ -467,7 +467,7 @@ exports[`renders the component as an asset entityType icon with an archived stat
         >
           <div
             class="emotion-0"
-            data-test-id="cf-ui-tag"
+            data-test-id="cf-ui-badge"
           >
             archived
           </div>
@@ -565,7 +565,7 @@ exports[`renders the component as an asset entityType variant 1`] = `
         >
           <div
             class="emotion-0"
-            data-test-id="cf-ui-tag"
+            data-test-id="cf-ui-badge"
           >
             published
           </div>
@@ -648,7 +648,7 @@ exports[`renders the component as an asset thumbnail preview 1`] = `
         >
           <div
             class="emotion-0"
-            data-test-id="cf-ui-tag"
+            data-test-id="cf-ui-badge"
           >
             published
           </div>
@@ -941,7 +941,7 @@ exports[`renders the component with a drag handle 1`] = `
         >
           <div
             class="emotion-0"
-            data-test-id="cf-ui-tag"
+            data-test-id="cf-ui-badge"
           >
             published
           </div>
@@ -1037,7 +1037,7 @@ exports[`renders the component with a status 1`] = `
         >
           <div
             class="emotion-0"
-            data-test-id="cf-ui-tag"
+            data-test-id="cf-ui-badge"
           >
             published
           </div>
@@ -1133,7 +1133,7 @@ exports[`renders the component with active drag state 1`] = `
         >
           <div
             class="emotion-0"
-            data-test-id="cf-ui-tag"
+            data-test-id="cf-ui-badge"
           >
             published
           </div>
@@ -1321,7 +1321,7 @@ exports[`renders the component with custom drag handle 1`] = `
         >
           <div
             class="emotion-0"
-            data-test-id="cf-ui-tag"
+            data-test-id="cf-ui-badge"
           >
             published
           </div>
@@ -1484,7 +1484,7 @@ exports[`renders the component with dropdownListElements 1`] = `
         >
           <div
             class="emotion-0"
-            data-test-id="cf-ui-tag"
+            data-test-id="cf-ui-badge"
           >
             published
           </div>

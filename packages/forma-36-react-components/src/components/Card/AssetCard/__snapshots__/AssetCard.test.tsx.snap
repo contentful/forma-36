@@ -485,7 +485,7 @@ exports[`renders the component with status 1`] = `
     >
       <div
         class="emotion-0"
-        data-test-id="cf-ui-tag"
+        data-test-id="cf-ui-badge"
       >
         archived
       </div>

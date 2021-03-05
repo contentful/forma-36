@@ -37,7 +37,7 @@ exports[`renders a small sized variant of the component 1`] = `
       </div>
       <div
         class="emotion-0"
-        data-test-id="cf-ui-tag"
+        data-test-id="cf-ui-badge"
       >
         published
       </div>
@@ -98,7 +98,7 @@ exports[`renders the component 1`] = `
       </div>
       <div
         class="emotion-0"
-        data-test-id="cf-ui-tag"
+        data-test-id="cf-ui-badge"
       >
         published
       </div>
@@ -189,7 +189,7 @@ exports[`renders the component with a custom drag handle 1`] = `
       </div>
       <div
         class="emotion-0"
-        data-test-id="cf-ui-tag"
+        data-test-id="cf-ui-badge"
       >
         published
       </div>
@@ -280,7 +280,7 @@ exports[`renders the component with a drag handle 1`] = `
       </div>
       <div
         class="emotion-0"
-        data-test-id="cf-ui-tag"
+        data-test-id="cf-ui-badge"
       >
         published
       </div>
@@ -346,7 +346,7 @@ exports[`renders the component with a thumbnail element 1`] = `
       </div>
       <div
         class="emotion-0"
-        data-test-id="cf-ui-tag"
+        data-test-id="cf-ui-badge"
       >
         published
       </div>
@@ -420,7 +420,7 @@ exports[`renders the component with an additional class name 1`] = `
       </div>
       <div
         class="emotion-0"
-        data-test-id="cf-ui-tag"
+        data-test-id="cf-ui-badge"
       >
         published
       </div>
@@ -486,7 +486,7 @@ exports[`renders the component with dropdownListElements 1`] = `
       </div>
       <div
         class="emotion-0"
-        data-test-id="cf-ui-tag"
+        data-test-id="cf-ui-badge"
       >
         published
       </div>
