@@ -1,8 +1,7 @@
 import React from 'react';
-import tokens from '@contentful/forma-36-tokens';
-
+import tokens from '@contentful/f36-tokens';
 import { css } from '@emotion/core';
-import { DisplayText, TextLink } from '@contentful/forma-36-react-components';
+import { DisplayText, TextLink } from '@contentful/f36-components';
 
 const styles = {
   header: css`

@@ -4,7 +4,7 @@ import TextLink, { textLinkColor } from './TextLink';
 import Paragraph from '../Typography/Paragraph';
 import notes from './README.mdx';
 import Flex from '../Flex/Flex';
-import tokens from '@contentful/forma-36-tokens';
+import tokens from '@contentful/f36-tokens';
 import '@contentful/forma-36-fcss/dist/styles.css';
 
 export default {

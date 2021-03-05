@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
-import '@contentful/forma-36-react-components/dist/styles.css';
+import '@contentful/f36-components/dist/styles.css';
 import '@contentful/forma-36-fcss/dist/styles.css';
 import { css } from '@emotion/core';
 import Header from './Header';

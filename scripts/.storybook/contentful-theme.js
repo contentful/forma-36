@@ -1,5 +1,5 @@
 import { create } from '@storybook/theming/create';
-import tokens from '@contentful/forma-36-tokens';
+import tokens from '@contentful/f36-tokens';
 
 import logo from './public/forma-logo.png';
 

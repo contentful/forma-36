@@ -4,7 +4,7 @@ import Spinner, { SpinnerProps } from './Spinner';
 import SectionHeading from '../Typography/SectionHeading';
 import Flex from '../Flex/Flex';
 import Subheading from '../Typography/Subheading';
-import tokens from '@contentful/forma-36-tokens';
+import tokens from '@contentful/f36-tokens';
 
 export default {
   title: 'Components/Spinner',

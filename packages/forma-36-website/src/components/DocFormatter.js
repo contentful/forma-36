@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
 import { css } from '@emotion/core';
-import tokens from '@contentful/forma-36-tokens';
-import {
-  DisplayText,
-  Button,
-  Tag,
-} from '@contentful/forma-36-react-components';
+import tokens from '@contentful/f36-tokens';
+import { DisplayText, Button, Tag } from '@contentful/f36-components';
 import storybookIcon from '../images/storybook.svg';
 import githubIcon from '../images/github.svg';
 import { MDXRenderer } from 'gatsby-plugin-mdx';

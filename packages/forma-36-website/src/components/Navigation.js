@@ -5,8 +5,8 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 
 import { css } from '@emotion/core';
-import tokens from '@contentful/forma-36-tokens';
-import { Icon, SectionHeading } from '@contentful/forma-36-react-components';
+import tokens from '@contentful/f36-tokens';
+import { Icon, SectionHeading } from '@contentful/f36-components';
 
 import DocSearch from './DocSearch';
 

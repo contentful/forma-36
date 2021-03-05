@@ -4,8 +4,8 @@ import {
   Subheading,
   Paragraph,
   TextLink,
-} from '@contentful/forma-36-react-components';
-import tokens from '@contentful/forma-36-tokens';
+} from '@contentful/f36-components';
+import tokens from '@contentful/f36-tokens';
 import { css } from '@emotion/core';
 
 const styles = {

@@ -1,4 +1,4 @@
-import { fontStackPrimary } from '@contentful/forma-36-tokens';
+import { fontStackPrimary } from '@contentful/f36-tokens';
 
 // Setup Decorators
 export const decorators = [

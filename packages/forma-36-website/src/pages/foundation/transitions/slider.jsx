@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from '@emotion/core';
-import tokens from '@contentful/forma-36-tokens';
+import tokens from '@contentful/f36-tokens';
 
 const styles = {
   slider: css`

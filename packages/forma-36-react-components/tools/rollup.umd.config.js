@@ -17,7 +17,7 @@ function getConfig(environment) {
           __dirname,
           '../dist',
           'umd',
-          `forma-36-react-components.${environment}.min.js`,
+          `f36-components.${environment}.min.js`,
         ),
         globals: {
           react: 'React',
