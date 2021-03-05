@@ -1,8 +1,8 @@
 import React from 'react';
 
-import RadioButton, { RadioButtonProps } from './RadioButton';
-import Flex from '../Flex/Flex';
-import SectionHeading from '../Typography/SectionHeading';
+import { RadioButton, RadioButtonProps } from './RadioButton';
+import { Flex } from '../Flex';
+import { SectionHeading } from '../Typography';
 
 export default {
   title: 'Form Elements/RadioButton',

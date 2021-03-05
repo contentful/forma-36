@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import axe from '../../utils/axeHelper';
-import Illustration, { IllustrationType } from './Illustration';
+import { axe } from '../../utils/axeHelper';
+import { Illustration, IllustrationType } from './Illustration';
 import { illustrationName } from './constants';
 
 it('renders the component', () => {

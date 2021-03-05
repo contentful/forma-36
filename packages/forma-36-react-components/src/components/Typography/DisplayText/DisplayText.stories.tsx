@@ -1,8 +1,8 @@
 import React from 'react';
-import DisplayText, { DisplayTextProps } from './DisplayText';
+import { DisplayText, DisplayTextProps } from './DisplayText';
 
-import Flex from '../../Flex/Flex';
-import Paragraph from './../Paragraph';
+import { Flex } from '../../Flex';
+import { Paragraph } from '../Paragraph/Paragraph';
 
 export default {
   title: 'Typography/DisplayText',

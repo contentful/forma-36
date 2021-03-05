@@ -1,9 +1,9 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import axe from '../../utils/axeHelper';
-import Form from './Form';
-import TextField from '../TextField';
+import { axe } from '../../utils/axeHelper';
+import { Form } from './Form';
+import { TextField } from '../TextField';
 
 it('renders the component', () => {
   const { container } = render(

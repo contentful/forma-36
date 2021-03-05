@@ -1,12 +1,11 @@
 import React from 'react';
 
-import AssetCard, { AssetCardProps } from './AssetCard';
-import Icon from '../../Icon';
-import DropdownList from '../../Dropdown/DropdownList';
-import DropdownListItem from '../../Dropdown/DropdownListItem';
-import CardDragHandle from './../CardDragHandle';
-import Flex from '../../Flex/Flex';
-import SectionHeading from '../../Typography/SectionHeading';
+import { AssetCard, AssetCardProps } from './AssetCard';
+import { Icon } from '../../Icon';
+import { DropdownList, DropdownListItem } from '../../Dropdown';
+import { CardDragHandle } from '../CardDragHandle/CardDragHandle';
+import { Flex } from '../../Flex';
+import { SectionHeading } from '../../Typography';
 
 export default {
   title: 'Components/Card/AssetCard',

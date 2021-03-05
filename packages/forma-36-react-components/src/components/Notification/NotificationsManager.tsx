@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 import classNames from 'classnames';
 
 import { NotificationIntent, NotificationCtaProps } from './NotificationItem';
-import NotificationItemContainer from './NotificationItemContainer';
+import { NotificationItemContainer } from './NotificationItemContainer';
 import styles from './NotificationsManager.css';
 import { useAsyncState } from '../../utils/useAsyncState';
 
@@ -15,7 +15,7 @@ const getUniqueId = (): number => {
 
 export type Position = 'top' | 'bottom';
 
-export interface Notification {
+export interface NotificationProps {
   id: string | number;
   text: string;
   close: Function;
@@ -57,7 +57,7 @@ export interface NotificationsManagerProps {
 export function NotificationsManager({
   register,
 }: NotificationsManagerProps): React.ReactElement {
-  const [items, setItems] = useAsyncState<Notification[]>([]);
+  const [items, setItems] = useAsyncState<NotificationProps[]>([]);
   const [position, setPositionState] = useState('bottom');
   const [positionOffset, setPositionOffset] = useState(20);
   const [duration, setDuration] = useState(6000);
@@ -109,7 +109,7 @@ export function NotificationsManager({
     );
   }, [items, setItems]);
 
-  const show: ShowAction<Notification> = useCallback(
+  const show: ShowAction<NotificationProps> = useCallback(
     (text, settings) => {
       const itemDuration =
         settings && typeof settings.duration !== 'undefined' // Needed as 0 is falsy but 0 is valid to disable auto-closing a notification
@@ -189,5 +189,3 @@ export function NotificationsManager({
     </div>
   );
 }
-
-export default NotificationsManager;

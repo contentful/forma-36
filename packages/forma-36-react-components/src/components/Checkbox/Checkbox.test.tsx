@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import axe from '../../utils/axeHelper';
-import Checkbox from './Checkbox';
+import { axe } from '../../utils/axeHelper';
+import { Checkbox } from './Checkbox';
 
 it('renders the component', () => {
   const { container } = render(<Checkbox labelText="checkbox" />);

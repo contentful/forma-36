@@ -1,11 +1,10 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import axe from '../../../utils/axeHelper';
-import EntryCard from './EntryCard';
-import DropdownList from '../../Dropdown/DropdownList';
-import DropdownListItem from '../../Dropdown/DropdownListItem';
-import CardDragHandle from './../CardDragHandle';
+import { axe } from '../../../utils/axeHelper';
+import { EntryCard } from './EntryCard';
+import { DropdownList, DropdownListItem } from '../../Dropdown';
+import { CardDragHandle } from '../CardDragHandle/CardDragHandle';
 
 it('renders the component', () => {
   const { container } = render(

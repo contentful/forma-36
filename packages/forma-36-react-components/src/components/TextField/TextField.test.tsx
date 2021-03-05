@@ -2,8 +2,8 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import axe from '../../utils/axeHelper';
-import TextField from './TextField';
+import { axe } from '../../utils/axeHelper';
+import { TextField } from './TextField';
 
 it('renders the component', () => {
   const { container } = render(

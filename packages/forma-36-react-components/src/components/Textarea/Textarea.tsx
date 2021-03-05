@@ -10,6 +10,7 @@ import React, {
   useCallback,
 } from 'react';
 import cn from 'classnames';
+
 import styles from './Textarea.css';
 
 export interface TextareaProps {
@@ -116,5 +117,3 @@ export const Textarea = ({
     </div>
   );
 };
-
-export default Textarea;

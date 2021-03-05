@@ -1,7 +1,7 @@
 import React, { FunctionComponent, KeyboardEvent } from 'react';
 import classNames from 'classnames';
 import styles from './Switch.css';
-import Icon from '../Icon';
+import { Icon } from '../Icon';
 
 export interface SwitchProps {
   onToggle?: (isChecked: boolean) => void;
@@ -70,5 +70,3 @@ export const Switch: FunctionComponent<SwitchProps> = (props: SwitchProps) => {
     }
   }
 };
-
-export default Switch;

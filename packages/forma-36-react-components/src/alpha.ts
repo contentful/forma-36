@@ -1,8 +1,6 @@
-export { Autocomplete } from './components/Autocomplete/Autocomplete';
-export { Grid } from './components/Grid';
-export { GridItem } from './components/Grid/GridItem';
+export { Accordion, AccordionItem } from './components/Accordion';
+export { Autocomplete } from './components/Autocomplete';
 export { Flex } from './components/Flex';
+export { Grid, GridItem } from './components/Grid';
+export { ModalLauncher } from './components/Modal';
 export { ProductIcon } from './components/ProductIcon/ProductIcon';
-export { Accordion } from './components/Accordion/Accordion';
-export { AccordionItem } from './components/Accordion/AccordionItem';
-export { ModalLauncher } from './components/Modal/ModalLauncher/ModalLauncher';

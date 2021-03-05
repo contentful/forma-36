@@ -3,7 +3,10 @@ import cn from 'classnames';
 import type { HTMLProps } from 'react';
 
 import styles from './TableHead.css';
-import { TableCellContext, contextOptions } from '../TableCell';
+import {
+  TableCellContext,
+  contextOptions,
+} from '../TableCell/TableCellContext';
 
 export interface TableHeadProps extends HTMLProps<HTMLTableSectionElement> {
   isSticky?: boolean;
@@ -35,5 +38,3 @@ export const TableHead = ({
     </TableCellContext.Provider>
   );
 };
-
-export default TableHead;

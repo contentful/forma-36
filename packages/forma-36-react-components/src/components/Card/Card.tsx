@@ -1,5 +1,6 @@
 import React, { ReactNode, MouseEvent, KeyboardEvent } from 'react';
 import cn from 'classnames';
+
 import styles from './Card.css';
 
 export interface BaseCardProps {
@@ -106,5 +107,3 @@ export const Card = ({
     </Element>
   );
 };
-
-export default Card;

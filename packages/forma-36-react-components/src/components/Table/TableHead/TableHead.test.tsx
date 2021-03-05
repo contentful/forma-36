@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import TableHead from './TableHead';
-import TableCell from '../TableCell';
-import TableRow from '../TableRow';
+import { TableHead } from './TableHead';
+import { TableCell } from '../TableCell/TableCell';
+import { TableRow } from '../TableRow/TableRow';
 
 it('renders the component', () => {
   const table = document.createElement('table');

@@ -1,9 +1,9 @@
 import React from 'react';
 
-import TextInput, { TextInputProps } from './TextInput';
-import Button from './../Button';
-import SectionHeading from '../Typography/SectionHeading';
-import Flex from '../Flex/Flex';
+import { TextInput, TextInputProps } from './TextInput';
+import { Button } from './../Button';
+import { SectionHeading } from '../Typography';
+import { Flex } from '../Flex';
 
 export default {
   title: 'Form Elements/TextInput',

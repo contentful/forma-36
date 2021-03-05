@@ -1,6 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
-import Icon from '../Icon/Icon';
+
+import { Icon } from '../Icon';
 import styles from './ValidationMessage.css';
 
 export interface ValidationMessageProps {
@@ -29,5 +30,3 @@ export function ValidationMessage({
     </div>
   );
 }
-
-export default ValidationMessage;

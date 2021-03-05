@@ -1,8 +1,8 @@
 import React, { FC, useState } from 'react';
 
-import useId from '../../../utils/useId';
-import AccordionHeader from '../AccordionHeader';
-import AccordionPanel from '../AccordionPanel';
+import { useId } from '../../../utils/useId';
+import { AccordionHeader } from '../AccordionHeader/AccordionHeader';
+import { AccordionPanel } from '../AccordionPanel/AccordionPanel';
 
 import styles from '../Accordion.css';
 
@@ -72,5 +72,3 @@ export const AccordionItem: FC<AccordionItemProps> = ({
     </li>
   );
 };
-
-export default AccordionItem;

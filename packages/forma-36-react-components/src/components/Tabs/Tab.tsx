@@ -81,5 +81,3 @@ export function Tab({
     return <div {...elementProps}>{children}</div>;
   }
 }
-
-export default Tab;

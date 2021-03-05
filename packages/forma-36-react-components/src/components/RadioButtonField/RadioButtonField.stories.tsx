@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-import RadioButtonField, { RadioButtonFieldProps } from './RadioButtonField';
-import FieldGroup from '../Form/FieldGroup';
-import Flex from '../Flex/Flex';
-import SectionHeading from '../Typography/SectionHeading';
+import { RadioButtonField, RadioButtonFieldProps } from './RadioButtonField';
+import { FieldGroup } from '../Form';
+import { Flex } from '../Flex';
+import { SectionHeading } from '../Typography';
 
 export default {
   title: 'Form Elements/RadioButtonField',

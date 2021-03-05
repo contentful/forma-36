@@ -30,5 +30,3 @@ export const FieldGroup = ({
     </div>
   );
 };
-
-export default FieldGroup;

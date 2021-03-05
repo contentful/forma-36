@@ -2,9 +2,9 @@ import React from 'react';
 import cn from 'classnames';
 import { CSSTransition } from 'react-transition-group';
 
-import Card from '../Card';
-import CardActions from './../CardActions';
-import InlineEntryCardSkeleton from './InlineEntryCardSkeleton';
+import { Card } from '../Card';
+import { CardActions } from '../CardActions/CardActions';
+import { InlineEntryCardSkeleton } from './InlineEntryCardSkeleton';
 import styles from './InlineEntryCard.css';
 
 export interface InlineEntryCardPropTypes {
@@ -101,5 +101,3 @@ export function InlineEntryCard({
     </Card>
   );
 }
-
-export default InlineEntryCard;

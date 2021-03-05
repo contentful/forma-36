@@ -1,2 +1,2 @@
-export * from './Illustration';
-export { default } from './Illustration';
+export { Illustration, isIllustrationType } from './Illustration';
+export type { IllustrationProps, IllustrationType } from './Illustration';

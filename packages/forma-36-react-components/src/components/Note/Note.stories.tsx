@@ -1,10 +1,10 @@
 import React from 'react';
 
 import notes from './README.mdx';
-import Note, { NoteProps } from './Note';
-import TextLink from '../TextLink';
-import SectionHeading from '../Typography/SectionHeading';
-import Flex from '../Flex/Flex';
+import { Note, NoteProps } from './Note';
+import { TextLink } from '../TextLink';
+import { SectionHeading } from '../Typography';
+import { Flex } from '../Flex';
 
 export default {
   title: 'Components/Note',

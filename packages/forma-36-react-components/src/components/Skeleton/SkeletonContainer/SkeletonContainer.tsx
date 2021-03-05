@@ -124,5 +124,3 @@ export function SkeletonContainer({
     </svg>
   );
 }
-
-export default SkeletonContainer;

@@ -72,5 +72,3 @@ export const GridItem = (props: GridItemProps) => {
     </Container>
   );
 };
-
-export default GridItem;

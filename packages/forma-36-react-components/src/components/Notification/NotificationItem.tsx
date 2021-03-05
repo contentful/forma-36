@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
 import classNames from 'classnames';
 
-import IconButton from '../IconButton';
-import Icon, { IconType } from '../Icon';
-import TextLink, { TextLinkProps } from '../TextLink';
+import { IconButton } from '../IconButton';
+import { Icon, IconType } from '../Icon';
+import { TextLink, TextLinkProps } from '../TextLink';
 import styles from './NotificationItem.css';
 
 export type NotificationIntent = 'success' | 'error' | 'warning';
@@ -130,5 +130,3 @@ export function NotificationItem({
     </div>
   );
 }
-
-export default NotificationItem;

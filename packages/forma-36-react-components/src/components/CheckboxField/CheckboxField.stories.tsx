@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-import FieldGroup from '../Form/FieldGroup';
-import CheckboxField, { CheckboxFieldProps } from './CheckboxField';
-import Flex from '../Flex/Flex';
-import SectionHeading from '../Typography/SectionHeading';
+import { FieldGroup } from '../Form';
+import { CheckboxField, CheckboxFieldProps } from './CheckboxField';
+import { Flex } from '../Flex';
+import { SectionHeading } from '../Typography';
 
 export default {
   title: 'Form Elements/CheckboxField',

@@ -2,10 +2,10 @@ import React, { useCallback, useRef, useState } from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
 
 import cn from 'classnames';
-import Icon from '../Icon';
+import { Icon } from '../Icon';
 import { Tooltip } from '../Tooltip';
 import type { TooltipPlace } from '../Tooltip';
-import TabFocusTrap from '../TabFocusTrap';
+import { TabFocusTrap } from '../TabFocusTrap';
 import styles from './CopyButton.css';
 
 export interface CopyButtonProps {
@@ -92,5 +92,3 @@ export function CopyButton({
     </div>
   );
 }
-
-export default CopyButton;

@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import axe from '../../utils/axeHelper';
-import FormLabel from './FormLabel';
+import { axe } from '../../utils/axeHelper';
+import { FormLabel } from './FormLabel';
 
 it('renders the component with all required props', () => {
   const { container } = render(

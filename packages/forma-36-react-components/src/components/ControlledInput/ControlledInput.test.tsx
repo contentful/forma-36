@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import axe from '../../utils/axeHelper';
-import ControlledInput from './ControlledInput';
+import { axe } from '../../utils/axeHelper';
+import { ControlledInput } from './ControlledInput';
 
 it('renders the component with all required props', () => {
   const { container } = render(

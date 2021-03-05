@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 
 import styles from './ListItem.css';
-import List from '../List';
+import { List } from '../List';
 
 export interface ListItemProps {
   className?: string;
@@ -28,5 +28,3 @@ export function ListItem({
     </li>
   );
 }
-
-export default ListItem;

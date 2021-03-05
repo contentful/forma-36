@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 
-import { Typography } from '../Typography/Typography';
-import { Heading } from '../Typography/Heading';
-import { Paragraph } from '../Typography/Paragraph';
-import Flex from '../Flex/Flex';
-import SectionHeading from '../Typography/SectionHeading';
-
+import { Heading, Paragraph, SectionHeading, Typography } from '../Typography';
+import { Flex } from '../Flex';
 import { Card, CardProps } from './Card';
 
 export default {

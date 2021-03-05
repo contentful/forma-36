@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import CheckboxField from '../../CheckboxField';
 
-import FieldGroup from './FieldGroup';
+import { CheckboxField } from '../../CheckboxField';
+import { FieldGroup } from './FieldGroup';
 
 export default {
   title: 'Form Elements/FieldGroup',

@@ -1,10 +1,9 @@
 import React from 'react';
 
-import Icon, { IconProps } from './Icon';
+import { Icon, IconProps } from './Icon';
 import { iconName, iconSizes, iconColors } from './constants';
-import Flex from '../Flex/Flex';
-import SectionHeading from '../Typography/SectionHeading';
-import Paragraph from '../Typography/Paragraph';
+import { Flex } from '../Flex';
+import { Paragraph, SectionHeading } from '../Typography';
 import { Grid } from '../Grid/Grid';
 
 export default {

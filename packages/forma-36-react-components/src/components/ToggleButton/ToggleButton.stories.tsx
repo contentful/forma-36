@@ -1,8 +1,8 @@
 import React from 'react';
 
-import ToggleButton, { ToggleButtonProps } from './ToggleButton';
-import SectionHeading from '../Typography/SectionHeading';
-import Flex from '../Flex/Flex';
+import { ToggleButton, ToggleButtonProps } from './ToggleButton';
+import { SectionHeading } from '../Typography';
+import { Flex } from '../Flex';
 
 import type { Meta } from '@storybook/react/types-6-0';
 

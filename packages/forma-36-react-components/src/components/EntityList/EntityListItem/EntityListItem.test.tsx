@@ -2,11 +2,10 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import axe from '../../../utils/axeHelper';
-import EntityListItem from './EntityListItem';
-import DropdownList from '../../Dropdown/DropdownList';
-import DropdownListItem from '../../Dropdown/DropdownListItem';
-import CardDragHandle from './../../Card/CardDragHandle';
+import { axe } from '../../../utils/axeHelper';
+import { EntityListItem } from './EntityListItem';
+import { DropdownList, DropdownListItem } from '../../Dropdown';
+import { CardDragHandle } from './../../Card';
 
 it('renders the component', () => {
   const { container } = render(

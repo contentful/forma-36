@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Checkbox, { CheckboxProps } from './Checkbox';
-import Flex from '../Flex/Flex';
-import SectionHeading from '../Typography/SectionHeading';
+import { Checkbox, CheckboxProps } from './Checkbox';
+import { Flex } from '../Flex';
+import { SectionHeading } from '../Typography';
 
 export default {
   title: 'Form Elements/Checkbox',

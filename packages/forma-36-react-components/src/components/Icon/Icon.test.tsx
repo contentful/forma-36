@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import axe from '../../utils/axeHelper';
-import Icon from './Icon';
+import { axe } from '../../utils/axeHelper';
+import { Icon } from './Icon';
 import { iconName } from './constants';
 
 it('renders the component', () => {

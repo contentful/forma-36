@@ -2,8 +2,8 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import axe from '../../utils/axeHelper';
-import IconButton from './IconButton';
+import { axe } from '../../utils/axeHelper';
+import { IconButton } from './IconButton';
 
 it('renders the component', () => {
   const { container } = render(

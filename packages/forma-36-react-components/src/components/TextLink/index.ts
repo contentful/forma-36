@@ -1,2 +1,2 @@
-export * from './TextLink';
-export { default } from './TextLink';
+export { TextLink } from './TextLink';
+export type { TextLinkProps } from './TextLink';

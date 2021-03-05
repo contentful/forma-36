@@ -2,7 +2,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import Portal from './Portal';
+import { Portal } from './Portal';
 
 it('renders the component', () => {
   const { baseElement } = render(

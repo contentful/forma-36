@@ -1,6 +1,6 @@
 import React from 'react';
-import SkeletonText from '../SkeletonText';
-import { SkeletonTextProps } from '../SkeletonText';
+
+import { SkeletonText, SkeletonTextProps } from '../SkeletonText/SkeletonText';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface SkeletonBodyTextProps extends SkeletonTextProps {}
@@ -28,5 +28,3 @@ export const SkeletonBodyText = ({
     />
   );
 };
-
-export default SkeletonBodyText;

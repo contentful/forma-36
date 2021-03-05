@@ -1,6 +1,6 @@
 import React from 'react';
-import EmptyState, { EmptyStateProps } from './EmptyState';
-import Button from '../Button';
+import { EmptyState, EmptyStateProps } from './EmptyState';
+import { Button } from '../Button';
 
 export default {
   title: 'Components/EmptyState',

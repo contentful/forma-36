@@ -2,9 +2,9 @@ import React from 'react';
 import cn from 'classnames';
 import ReactModal from 'react-modal';
 
-import ModalHeader, { ModalHeaderProps } from './ModalHeader';
-import ModalContent, { ModalContentProps } from './ModalContent';
-import ModalControls from './ModalControls/ModalControls';
+import { ModalHeader, ModalHeaderProps } from './ModalHeader/ModalHeader';
+import { ModalContent, ModalContentProps } from './ModalContent/ModalContent';
+import { ModalControls } from './ModalControls/ModalControls';
 import styles from './Modal.css';
 
 const ModalSizesMapper = {
@@ -189,5 +189,3 @@ Modal.defaultProps = {
   testId: 'cf-ui-modal',
   topOffset: '50px',
 };
-
-export default Modal;

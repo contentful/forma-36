@@ -1,8 +1,8 @@
 import React from 'react';
 
-import TableCell from '../../../Table/TableCell';
-import SkeletonContainer from '../../SkeletonContainer';
-import SkeletonBodyText from '../../SkeletonBodyText';
+import { TableCell } from '../../../Table';
+import { SkeletonContainer } from '../../SkeletonContainer/SkeletonContainer';
+import { SkeletonBodyText } from '../../SkeletonBodyText/SkeletonBodyText';
 
 export const SkeletonTableCell = () => {
   return (
@@ -15,5 +15,3 @@ export const SkeletonTableCell = () => {
     </TableCell>
   );
 };
-
-export default SkeletonTableCell;

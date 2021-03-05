@@ -40,5 +40,3 @@ export const FormLabel = ({
     </label>
   );
 };
-
-export default FormLabel;

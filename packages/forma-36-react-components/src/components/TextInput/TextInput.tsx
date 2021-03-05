@@ -9,7 +9,8 @@ import React, {
   ChangeEventHandler,
 } from 'react';
 import cn from 'classnames';
-import CopyButton from '../CopyButton';
+
+import { CopyButton } from '../CopyButton';
 import styles from './TextInput.css';
 
 export type TextInputProps = {
@@ -139,5 +140,3 @@ export const TextInput = ({
     </div>
   );
 };
-
-export default TextInput;

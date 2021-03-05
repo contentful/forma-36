@@ -1,14 +1,17 @@
 import React, { useCallback } from 'react';
 import cn from 'classnames';
 
-import Card, { BaseCardProps } from '../Card';
-import Icon, { IconType } from '../../Icon';
-import CardActions from './../CardActions';
+import { Card, BaseCardProps } from '../Card';
+import { Icon, IconType } from '../../Icon';
+import { CardActions } from '../CardActions/CardActions';
 import { Asset } from '../../Asset';
 import { AssetType } from '../../Asset';
-import Tag, { TagType } from '../../Tag';
-import AssetCardSkeleton from './AssetCardSkeleton';
-import CardDragHandle, { CardDragHandlePropTypes } from '../CardDragHandle';
+import { Tag, TagType } from '../../Tag';
+import { AssetCardSkeleton } from './AssetCardSkeleton';
+import {
+  CardDragHandle,
+  CardDragHandlePropTypes,
+} from '../CardDragHandle/CardDragHandle';
 import styles from './AssetCard.css';
 
 export type AssetState =
@@ -198,5 +201,3 @@ export function AssetCard({
     </Card>
   );
 }
-
-export default AssetCard;

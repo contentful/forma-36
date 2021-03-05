@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import axe from '../../utils/axeHelper';
-import TabFocusTrap from './TabFocusTrap';
+import { axe } from '../../utils/axeHelper';
+import { TabFocusTrap } from './TabFocusTrap';
 
 it('renders the component', () => {
   const { container } = render(<TabFocusTrap>TabFocusTrap</TabFocusTrap>);

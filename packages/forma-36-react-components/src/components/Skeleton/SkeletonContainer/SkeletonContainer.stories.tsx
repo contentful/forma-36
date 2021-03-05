@@ -1,8 +1,8 @@
 import React from 'react';
 
-import SkeletonBodyText from '../SkeletonBodyText';
-import SkeletonDisplayText from '../SkeletonDisplayText';
-import SkeletonContainer, { SkeletonContainerProps } from './SkeletonContainer';
+import { SkeletonBodyText } from '../SkeletonBodyText/SkeletonBodyText';
+import { SkeletonDisplayText } from '../SkeletonDisplayText/SkeletonDisplayText';
+import { SkeletonContainer, SkeletonContainerProps } from './SkeletonContainer';
 
 export default {
   title: 'Components/Skeleton/SkeletonContainer',

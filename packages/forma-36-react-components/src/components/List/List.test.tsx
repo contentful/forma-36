@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import axe from '../../utils/axeHelper';
-import List from './List';
-import ListItem from './ListItem';
+import { axe } from '../../utils/axeHelper';
+import { List } from './List';
+import { ListItem } from './ListItem/ListItem';
 
 it('renders the component', () => {
   const { container } = render(

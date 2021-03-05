@@ -1,12 +1,12 @@
 import React from 'react';
 
-import Typography, { TypographyProps } from './Typography';
-import DisplayText from '../DisplayText';
-import Heading from './../Heading';
-import Subheading from './../Subheading';
-import SectionHeading from '../SectionHeading';
-import Paragraph from './../Paragraph';
-import Flex from '../../Flex/Flex';
+import { Typography, TypographyProps } from './Typography';
+import { DisplayText } from '../DisplayText/DisplayText';
+import { Heading } from './../Heading/Heading';
+import { Subheading } from './../Subheading/Subheading';
+import { SectionHeading } from '../SectionHeading/SectionHeading';
+import { Paragraph } from './../Paragraph/Paragraph';
+import { Flex } from '../../Flex';
 
 export default {
   title: 'Typography/Typography',

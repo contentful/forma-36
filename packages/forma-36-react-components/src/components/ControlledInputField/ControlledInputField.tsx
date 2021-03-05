@@ -1,9 +1,10 @@
 import React, { ChangeEventHandler, ReactNode } from 'react';
 import cn from 'classnames';
-import FormLabel from '../FormLabel';
-import HelpText from '../HelpText';
-import ValidationMessage from '../ValidationMessage';
-import ControlledInput from '../ControlledInput/ControlledInput';
+
+import { FormLabel } from '../FormLabel';
+import { HelpText } from '../HelpText';
+import { ValidationMessage } from '../ValidationMessage';
+import { ControlledInput } from '../ControlledInput/ControlledInput';
 import styles from './ControlledInputField.css';
 
 export interface ControlledInputFieldPropTypes {
@@ -97,5 +98,3 @@ export const ControlledInputField = ({
     </div>
   );
 };
-
-export default ControlledInputField;

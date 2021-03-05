@@ -1,10 +1,9 @@
 import React from 'react';
 
-import Tooltip from './Tooltip';
-import Paragraph from '../Typography/Paragraph';
-import TextLink from '../TextLink';
-import SectionHeading from '../Typography/SectionHeading';
-import Flex from '../Flex/Flex';
+import { Tooltip } from './Tooltip';
+import { Paragraph, SectionHeading } from '../Typography';
+import { TextLink } from '../TextLink';
+import { Flex } from '../Flex';
 import notes from './README.mdx';
 
 export default {

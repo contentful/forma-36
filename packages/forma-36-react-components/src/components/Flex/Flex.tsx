@@ -182,5 +182,3 @@ export const Flex = ({
     </Container>
   );
 };
-
-export default Flex;

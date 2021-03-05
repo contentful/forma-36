@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import axe from '../../../utils/axeHelper';
-import Subheading from './Subheading';
+import { axe } from '../../../utils/axeHelper';
+import { Subheading } from './Subheading';
 
 it('renders the component', () => {
   const { container } = render(<Subheading>Subheading</Subheading>);

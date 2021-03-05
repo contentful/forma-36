@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react';
 import type { ChangeEvent, FocusEventHandler, ChangeEventHandler } from 'react';
 import cn from 'classnames';
 
-import ValidationMessage from '../ValidationMessage';
-import FormLabel from '../FormLabel';
+import { ValidationMessage } from '../ValidationMessage';
+import { FormLabel } from '../FormLabel';
 import type { FormLabelProps } from '../FormLabel';
-import HelpText from '../HelpText';
-import Select from '../Select';
+import { HelpText } from '../HelpText';
+import { Select } from '../Select';
 import type { SelectProps } from '../Select';
-import TextLink from '../TextLink';
+import { TextLink } from '../TextLink';
 import type { TextLinkProps } from '../TextLink';
 import styles from './SelectField.css';
 
@@ -113,5 +113,3 @@ export const SelectField = ({
     </div>
   );
 };
-
-export default SelectField;

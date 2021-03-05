@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import axe from '../../../utils/axeHelper';
-import DisplayText from './DisplayText';
+import { axe } from '../../../utils/axeHelper';
+import { DisplayText } from './DisplayText';
 
 it('renders the component', () => {
   const { container } = render(<DisplayText>DisplayText</DisplayText>);

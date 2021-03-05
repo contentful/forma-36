@@ -2,8 +2,8 @@ import React from 'react';
 import cn from 'classnames';
 import type { CSSProperties } from 'react';
 
+import styles from './Icon.css';
 import { iconName } from './constants';
-
 import {
   ArrowDown,
   ArrowDownTrimmed,
@@ -146,8 +146,6 @@ import {
   WarningTrimmed,
   Workflows,
 } from './svg';
-
-import styles from './Icon.css';
 
 const iconComponents = {
   ArrowDown,
@@ -334,5 +332,3 @@ export function Icon({
     <Element data-test-id={testId} className={classNames} {...otherProps} />
   );
 }
-
-export default Icon;

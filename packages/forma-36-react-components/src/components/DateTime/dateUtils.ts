@@ -1,7 +1,8 @@
 import dayjs from 'dayjs';
 import RelativeTime from 'dayjs/plugin/relativeTime';
-import { CoercibleDate } from './types';
 dayjs.extend(RelativeTime);
+
+import { CoercibleDate } from './types';
 
 const formatTokens = {
   FULL: 'D MMM YYYY[ at ]h:mm a',

@@ -1,9 +1,8 @@
 import React from 'react';
 
-import EntityListItem, { EntityListItemProps } from './EntityListItem';
-import DropdownList from '../../Dropdown/DropdownList';
-import DropdownListItem from '../../Dropdown/DropdownListItem';
-import CardDragHandle from './../../Card/CardDragHandle';
+import { EntityListItem, EntityListItemProps } from './EntityListItem';
+import { DropdownList, DropdownListItem } from '../../Dropdown';
+import { CardDragHandle } from './../../Card';
 import notes from './README.mdx';
 
 export default {

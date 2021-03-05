@@ -101,5 +101,3 @@ export function Asset({
     </div>
   );
 }
-
-export default Asset;

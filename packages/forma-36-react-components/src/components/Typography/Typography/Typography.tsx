@@ -37,5 +37,3 @@ export function Typography({
     </TypographyContext.Provider>
   );
 }
-
-export default Typography;
