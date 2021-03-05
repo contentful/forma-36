@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.82.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.82.1...@contentful/forma-36-react-components@3.82.2) (2021-03-05)
+
+
+### Bug Fixes
+
+* **react-components:** correct esm entry file ([7233e6e](https://github.com/contentful/forma-36/commit/7233e6e48b9a57ac4f020d9d5aa1a9ff2b9ef5ad))
+
+
+
+
+
 ## [3.82.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.82.0...@contentful/forma-36-react-components@3.82.1) (2021-03-02)
 
 
