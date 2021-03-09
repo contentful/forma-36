@@ -33,5 +33,3 @@ export function Portal({
 
   return portal.current ? createPortal(children, portal.current) : null;
 }
-
-export default Portal;
