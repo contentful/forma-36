@@ -1,14 +1,15 @@
 import React from 'react';
 
-import Tag, { TagProps } from './Tag';
-import SectionHeading from '../Typography/SectionHeading';
-import Flex from '../Flex/Flex';
+import { Badge } from '../src/Badge';
+import { BadgeProps } from '../src/Badge';
+import SectionHeading from '../../../forma-36-react-components/src/components/Typography/SectionHeading/SectionHeading';
+import Flex from '../../../forma-36-react-components/src/components/Flex/Flex';
 
 export default {
-  title: 'Components/Tag',
-  component: Tag,
+  title: 'Components/Badge',
+  component: Badge,
   parameters: {
-    propTypes: [Tag['__docgenInfo']],
+    propTypes: [Badge['__docgenInfo']],
   },
   argTypes: {
     className: { control: { disable: true } },
@@ -16,57 +17,51 @@ export default {
   },
 };
 
-interface Args extends TagProps {
-  tagText?: string;
-}
-
-export const basic = ({ tagText, ...args }: Args) => (
-  <Tag {...args}>{tagText}</Tag>
-);
+export const basic = (args: BadgeProps) => <Badge {...args} />;
 
 basic.args = {
-  tagType: 'primary',
-  tagText: 'Published',
+  variant: 'primary',
+  children: 'Published',
 };
 
 export const overview = () => (
   <>
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Tag types overview</SectionHeading>
+      <SectionHeading element="h3">Badge types overview</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingM" alignItems="center">
       <Flex marginRight="spacingS">
-        <Tag tagType="primary">primary</Tag>
+        <Badge variant="primary">primary</Badge>
       </Flex>
     </Flex>
     <Flex marginBottom="spacingM" alignItems="center">
       <Flex marginRight="spacingS">
-        <Tag tagType="primary-filled">primary filled</Tag>
+        <Badge variant="primary-filled">primary filled</Badge>
       </Flex>
     </Flex>
     <Flex marginBottom="spacingM" alignItems="center">
       <Flex marginRight="spacingS">
-        <Tag tagType="positive">positive</Tag>
+        <Badge variant="positive">positive</Badge>
       </Flex>
     </Flex>
     <Flex marginBottom="spacingM" alignItems="center">
       <Flex marginRight="spacingS">
-        <Tag tagType="negative">negative</Tag>
+        <Badge variant="negative">negative</Badge>
       </Flex>
     </Flex>
     <Flex marginBottom="spacingM" alignItems="center">
       <Flex marginRight="spacingS">
-        <Tag tagType="warning">warning</Tag>
+        <Badge variant="warning">warning</Badge>
       </Flex>
     </Flex>
     <Flex marginBottom="spacingM" alignItems="center">
       <Flex marginRight="spacingS">
-        <Tag tagType="muted">muted</Tag>
+        <Badge variant="muted">muted</Badge>
       </Flex>
     </Flex>
     <Flex marginBottom="spacingM" alignItems="center">
       <Flex marginRight="spacingS">
-        <Tag tagType="secondary">secondary</Tag>
+        <Badge variant="secondary">secondary</Badge>
       </Flex>
     </Flex>
   </>

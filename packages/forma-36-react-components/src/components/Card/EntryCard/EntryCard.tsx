@@ -4,7 +4,7 @@ import truncate from 'truncate';
 
 import Card, { BaseCardProps, CardProps } from '../Card';
 import CardActions from '../CardActions';
-import Tag, { TagType } from '../../Tag';
+import { EntityStatusBadge } from '@contentful/f36-badge';
 import EntryCardSkeleton from './EntryCardSkeleton';
 import CardDragHandle, { CardDragHandleProps } from '../CardDragHandle';
 import Icon, { IconType } from '../../Icon';
@@ -146,31 +146,7 @@ export function EntryCard({
   );
 
   const renderStatus = useCallback((status: EntryCardStatus) => {
-    let label: string;
-    let type: TagType;
-
-    switch (status) {
-      case 'archived':
-        label = 'archived';
-        type = 'negative';
-        break;
-
-      case 'changed':
-        label = 'changed';
-        type = 'primary';
-        break;
-
-      case 'published':
-        label = 'published';
-        type = 'positive';
-        break;
-
-      default:
-        label = 'draft';
-        type = 'warning';
-    }
-
-    return <Tag tagType={type}>{label}</Tag>;
+    return <EntityStatusBadge entityStatus={status} />;
   }, []);
 
   const renderCardDragHandle = useCallback(() => {

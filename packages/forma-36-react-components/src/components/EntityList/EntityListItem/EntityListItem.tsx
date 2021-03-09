@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import cn from 'classnames';
 import type { MouseEventHandler } from 'react';
 
-import Tag, { TagType } from '../../Tag';
+import { EntityStatusBadge } from '@contentful/f36-badge';
 import Icon from '../../Icon';
 import CardActions from '../../Card/CardActions';
 import SkeletonBodyText from '../../Skeleton/SkeletonBodyText';
@@ -143,33 +143,9 @@ export function EntityListItem({
   }, [thumbnailAltText, thumbnailUrl]);
 
   const renderStatus = useCallback((status: EntityListItemStatus) => {
-    let label: string;
-    let type: TagType;
-
-    switch (status) {
-      case 'archived':
-        label = 'archived';
-        type = 'negative';
-        break;
-
-      case 'changed':
-        label = 'changed';
-        type = 'primary';
-        break;
-
-      case 'published':
-        label = 'published';
-        type = 'positive';
-        break;
-
-      default:
-        label = 'draft';
-        type = 'warning';
-    }
-
     return (
       <div className={styles['EntityListItem__status']}>
-        <Tag tagType={type}>{label}</Tag>
+        <EntityStatusBadge entityStatus={status} />
       </div>
     );
   }, []);

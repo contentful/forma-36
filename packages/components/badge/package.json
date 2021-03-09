@@ -1,8 +1,8 @@
 {
-  "name": "@contentful/f36-{{packageName}}",
+  "name": "@contentful/f36-badge",
   "version": "4.0.0",
   "private": true,
-  "description": "Forma 36: {{packageName}} React Component",
+  "description": "Forma 36: Badge React Component",
   "license": "MIT",
   "files": [
     "dist",
@@ -23,7 +23,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",
-    "emotion": "^10.0.17",
+    "@emotion/core": "^10.1.1",
+    "@emotion/styled": "^10.0.27",
     "@contentful/f36-tokens": "^4.0.0"
   },
   "peerDependencies": {
