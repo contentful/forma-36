@@ -1,13 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`allows passing additional props not consumed by the component 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="IconButton IconButton--primary"
   data-test-id="Testing ID"
   type="button"
 >
   <span
-    class="TabFocusTrap IconButton__inner"
+    class="emotion-0 IconButton__inner"
     tabindex="-1"
   >
     <svg
@@ -35,13 +40,18 @@ exports[`allows passing additional props not consumed by the component 1`] = `
 `;
 
 exports[`calls an onClick function 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="IconButton IconButton--primary"
   data-test-id="cf-ui-icon-button"
   type="button"
 >
   <span
-    class="TabFocusTrap IconButton__inner"
+    class="emotion-0 IconButton__inner"
     tabindex="-1"
   >
     <svg
@@ -69,6 +79,11 @@ exports[`calls an onClick function 1`] = `
 `;
 
 exports[`prevents an onClick function from being called when disabled 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="IconButton IconButton--disabled IconButton--primary"
   data-test-id="cf-ui-icon-button"
@@ -76,7 +91,7 @@ exports[`prevents an onClick function from being called when disabled 1`] = `
   type="button"
 >
   <span
-    class="TabFocusTrap IconButton__inner"
+    class="emotion-0 IconButton__inner"
     tabindex="-1"
   >
     <svg
@@ -104,13 +119,18 @@ exports[`prevents an onClick function from being called when disabled 1`] = `
 `;
 
 exports[`renders as a "muted" link type 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="IconButton IconButton--muted"
   data-test-id="cf-ui-icon-button"
   type="button"
 >
   <span
-    class="TabFocusTrap IconButton__inner"
+    class="emotion-0 IconButton__inner"
     tabindex="-1"
   >
     <svg
@@ -138,13 +158,18 @@ exports[`renders as a "muted" link type 1`] = `
 `;
 
 exports[`renders as a "negative" link type 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="IconButton IconButton--negative"
   data-test-id="cf-ui-icon-button"
   type="button"
 >
   <span
-    class="TabFocusTrap IconButton__inner"
+    class="emotion-0 IconButton__inner"
     tabindex="-1"
   >
     <svg
@@ -172,13 +197,18 @@ exports[`renders as a "negative" link type 1`] = `
 `;
 
 exports[`renders as a "positive" link type 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="IconButton IconButton--positive"
   data-test-id="cf-ui-icon-button"
   type="button"
 >
   <span
-    class="TabFocusTrap IconButton__inner"
+    class="emotion-0 IconButton__inner"
     tabindex="-1"
   >
     <svg
@@ -206,13 +236,18 @@ exports[`renders as a "positive" link type 1`] = `
 `;
 
 exports[`renders as a "primary" link type 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="IconButton IconButton--primary"
   data-test-id="cf-ui-icon-button"
   type="button"
 >
   <span
-    class="TabFocusTrap IconButton__inner"
+    class="emotion-0 IconButton__inner"
     tabindex="-1"
   >
     <svg
@@ -240,13 +275,18 @@ exports[`renders as a "primary" link type 1`] = `
 `;
 
 exports[`renders as a "secondary" link type 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="IconButton IconButton--secondary"
   data-test-id="cf-ui-icon-button"
   type="button"
 >
   <span
-    class="TabFocusTrap IconButton__inner"
+    class="emotion-0 IconButton__inner"
     tabindex="-1"
   >
     <svg
@@ -284,13 +324,18 @@ exports[`renders as a link 1`] = `
 `;
 
 exports[`renders the component 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="IconButton IconButton--primary"
   data-test-id="cf-ui-icon-button"
   type="button"
 >
   <span
-    class="TabFocusTrap IconButton__inner"
+    class="emotion-0 IconButton__inner"
     tabindex="-1"
   >
     <svg
@@ -318,13 +363,18 @@ exports[`renders the component 1`] = `
 `;
 
 exports[`renders the component with an additional class name 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="IconButton my-extra-class IconButton--primary"
   data-test-id="cf-ui-icon-button"
   type="button"
 >
   <span
-    class="TabFocusTrap IconButton__inner"
+    class="emotion-0 IconButton__inner"
     tabindex="-1"
   >
     <svg
@@ -352,13 +402,18 @@ exports[`renders the component with an additional class name 1`] = `
 `;
 
 exports[`renders with a dropdown indicator 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="IconButton IconButton--primary"
   data-test-id="cf-ui-icon-button"
   type="button"
 >
   <span
-    class="TabFocusTrap IconButton__inner"
+    class="emotion-0 IconButton__inner"
     tabindex="-1"
   >
     <svg

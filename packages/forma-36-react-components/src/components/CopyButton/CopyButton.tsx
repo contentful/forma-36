@@ -5,7 +5,7 @@ import cn from 'classnames';
 import { Icon } from '../Icon';
 import { Tooltip } from '../Tooltip';
 import type { TooltipPlace } from '../Tooltip';
-import { TabFocusTrap } from '../TabFocusTrap';
+import { TabFocusTrap } from '@contentful/f36-utils';
 import styles from './CopyButton.css';
 
 export interface CopyButtonProps {

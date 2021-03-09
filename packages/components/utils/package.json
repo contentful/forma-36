@@ -22,7 +22,8 @@
     "build": "parcel build index.ts"
   },
   "dependencies": {
-    "@babel/runtime": "^7.6.2"
+    "@babel/runtime": "^7.6.2",
+    "emotion": "^10.0.17"
   },
   "peerDependencies": {
     "react": ">=16.8",

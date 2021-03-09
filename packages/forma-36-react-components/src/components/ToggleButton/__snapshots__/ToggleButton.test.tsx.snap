@@ -1,6 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <div
   class="Toggle"
   data-test-id="cf-ui-toggle-button"
@@ -12,7 +17,7 @@ exports[`renders the component 1`] = `
     type="button"
   >
     <span
-      class="TabFocusTrap Toggle__button__inner-wrapper"
+      class="emotion-0 Toggle__button__inner-wrapper"
       tabindex="-1"
     >
       <span
@@ -26,6 +31,11 @@ exports[`renders the component 1`] = `
 `;
 
 exports[`renders the component active 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <div
   class="Toggle my-extra-class Toggle--active"
   data-test-id="cf-ui-toggle-button"
@@ -37,7 +47,7 @@ exports[`renders the component active 1`] = `
     type="button"
   >
     <span
-      class="TabFocusTrap Toggle__button__inner-wrapper"
+      class="emotion-0 Toggle__button__inner-wrapper"
       tabindex="-1"
     >
       <span
@@ -51,6 +61,11 @@ exports[`renders the component active 1`] = `
 `;
 
 exports[`renders the component with an additional class name 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <div
   class="Toggle my-extra-class"
   data-test-id="cf-ui-toggle-button"
@@ -62,7 +77,7 @@ exports[`renders the component with an additional class name 1`] = `
     type="button"
   >
     <span
-      class="TabFocusTrap Toggle__button__inner-wrapper"
+      class="emotion-0 Toggle__button__inner-wrapper"
       tabindex="-1"
     >
       <span
@@ -76,6 +91,11 @@ exports[`renders the component with an additional class name 1`] = `
 `;
 
 exports[`renders the component with icon 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <div
   class="Toggle my-extra-class"
   data-test-id="cf-ui-toggle-button"
@@ -87,7 +107,7 @@ exports[`renders the component with icon 1`] = `
     type="button"
   >
     <span
-      class="TabFocusTrap Toggle__button__inner-wrapper"
+      class="emotion-0 Toggle__button__inner-wrapper"
       tabindex="-1"
     >
       <svg

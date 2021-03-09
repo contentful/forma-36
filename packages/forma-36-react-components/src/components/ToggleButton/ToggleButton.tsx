@@ -3,7 +3,7 @@ import cn from 'classnames';
 
 import { Icon } from '../Icon';
 import type { IconType } from '../Icon';
-import { TabFocusTrap } from '../TabFocusTrap';
+import { TabFocusTrap } from '@contentful/f36-utils';
 import styles from './ToggleButton.css';
 
 export interface ToggleButtonProps {

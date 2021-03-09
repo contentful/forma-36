@@ -17,6 +17,11 @@ exports[`renders the component 1`] = `
 `;
 
 exports[`renders the component with a dropdown 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <div
   class="Card InlineEntryCard my-extra-class Card--padding-default"
   data-test-id="cf-ui-inline-entry-card"
@@ -41,7 +46,7 @@ exports[`renders the component with a dropdown 1`] = `
       type="button"
     >
       <span
-        class="TabFocusTrap IconButton__inner"
+        class="emotion-0 IconButton__inner"
         tabindex="-1"
       >
         <svg

@@ -170,6 +170,11 @@ exports[`renders the component with small width 1`] = `
 `;
 
 exports[`renders the component with the copy button 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <div
   class="TextInput TextInput--full TextInput--with-copy-button"
 >
@@ -194,7 +199,7 @@ exports[`renders the component with the copy button 1`] = `
         type="button"
       >
         <span
-          class="TabFocusTrap CopyButton__TabFocusTrap"
+          class="emotion-0 CopyButton__TabFocusTrap"
           tabindex="-1"
         >
           <span
