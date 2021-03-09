@@ -15,7 +15,7 @@ import styles from './Tooltip.css';
 
 import tokens from '@contentful/f36-tokens';
 
-import { Portal } from '../Portal';
+import { Portal } from '@contentful/f36-utils';
 
 export type TooltipPlace = Placement;
 
