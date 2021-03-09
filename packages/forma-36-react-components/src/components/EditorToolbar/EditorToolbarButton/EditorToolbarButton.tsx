@@ -2,8 +2,8 @@ import React from 'react';
 import cn from 'classnames';
 import type { MouseEventHandler } from 'react';
 
-import IconButton from '../../IconButton';
-import Tooltip from '../../Tooltip';
+import { IconButton } from '../../IconButton';
+import { Tooltip } from '../../Tooltip';
 import styles from './EditorToolbarButton.css';
 import type { IconButtonProps } from '../../IconButton';
 import type { IconType } from '../../Icon';
@@ -57,5 +57,3 @@ export function EditorToolbarButton({
     </React.Fragment>
   );
 }
-
-export default EditorToolbarButton;

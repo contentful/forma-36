@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import axe from '../../utils/axeHelper';
-import EntityList from './EntityList';
-import EntityListItem from './EntityListItem';
+import { axe } from '../../utils/axeHelper';
+import { EntityList } from './EntityList';
+import { EntityListItem } from './EntityListItem/EntityListItem';
 
 it('renders the component', () => {
   const { container } = render(<EntityList />);

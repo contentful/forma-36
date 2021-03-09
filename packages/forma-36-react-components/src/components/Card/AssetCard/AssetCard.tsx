@@ -1,14 +1,17 @@
 import React, { useCallback } from 'react';
 import cn from 'classnames';
 
-import Card, { BaseCardProps } from '../Card';
-import Icon, { IconType } from '../../Icon';
-import CardActions from './../CardActions';
+import { Card, BaseCardProps } from '../Card';
+import { Icon, IconType } from '../../Icon';
+import { CardActions } from '../CardActions/CardActions';
 import { Asset } from '../../Asset';
 import { AssetType } from '../../Asset';
 import { EntityStatusBadge } from '@contentful/f36-badge';
-import AssetCardSkeleton from './AssetCardSkeleton';
-import CardDragHandle, { CardDragHandleProps } from '../CardDragHandle';
+import { AssetCardSkeleton } from './AssetCardSkeleton';
+import {
+  CardDragHandle,
+  CardDragHandleProps,
+} from '../CardDragHandle/CardDragHandle';
 import styles from './AssetCard.css';
 
 export type AssetState =
@@ -174,5 +177,3 @@ export function AssetCard({
     </Card>
   );
 }
-
-export default AssetCard;

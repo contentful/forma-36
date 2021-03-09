@@ -158,6 +158,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://kamsar.net"><img src="https://avatars0.githubusercontent.com/u/103677?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kam Figy</b></sub></a><br /><a href="https://github.com/contentful/forma-36/issues?q=author%3Akamsar" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/VaguelySerious"><img src="https://avatars0.githubusercontent.com/u/29887157?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Peter Wielander</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=VaguelySerious" title="Code">💻</a> <a href="https://github.com/contentful/forma-36/issues?q=author%3AVaguelySerious" title="Bug reports">🐛</a></td>
     <td align="center"><a href="http://felixboenke.dev"><img src="https://avatars.githubusercontent.com/u/4083285?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Felix Boenke</b></sub></a><br /><a href="https://github.com/contentful/forma-36/issues?q=author%3AFLoppix" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/damienxy"><img src="https://avatars.githubusercontent.com/u/33579339?v=4?s=100" width="100px;" alt=""/><br /><sub><b>damienxy</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=damienxy" title="Code">💻</a></td>
   </tr>
 </table>
 

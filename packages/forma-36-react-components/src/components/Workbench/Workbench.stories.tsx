@@ -1,9 +1,9 @@
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
 
-import Workbench, { WorkbenchProps } from './Workbench';
-import Icon from '../Icon';
-import Button from '../Button';
+import { Workbench, WorkbenchProps } from './Workbench';
+import { Icon } from '../Icon';
+import { Button } from '../Button';
 import notes from './README.mdx';
 
 export default {

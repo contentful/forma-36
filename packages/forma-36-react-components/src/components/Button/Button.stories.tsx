@@ -1,11 +1,10 @@
 import React from 'react';
 
-import Button, { ButtonProps } from './Button';
-import Flex from '../Flex/Flex';
-import SectionHeading from '../Typography/SectionHeading';
+import { Button, ButtonProps } from './Button';
+import { Flex } from '../Flex';
+import { SectionHeading } from '../Typography';
 import { Badge } from '@contentful/f36-badge';
 import { iconName } from '../Icon/constants';
-
 import notes from './README.mdx';
 
 export default {

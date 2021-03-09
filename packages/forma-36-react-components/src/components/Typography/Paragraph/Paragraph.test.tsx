@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import axe from '../../../utils/axeHelper';
-import Paragraph from './Paragraph';
+import { axe } from '../../../utils/axeHelper';
+import { Paragraph } from './Paragraph';
 
 it('renders the component', () => {
   const { container } = render(<Paragraph>Paragraph</Paragraph>);

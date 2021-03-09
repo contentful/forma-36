@@ -1,7 +1,7 @@
 import React from 'react';
 
-import TableRow from '../../Table/TableRow';
-import SkeletonTableCell from './SkeletonTableCell/SkeletonTableCell';
+import { TableRow } from '../../Table';
+import { SkeletonTableCell } from './SkeletonTableCell/SkeletonTableCell';
 
 export interface SkeletonRowProps {
   /** Defines the number of rows to be rendered */
@@ -26,5 +26,3 @@ export const SkeletonRow = ({
     </>
   );
 };
-
-export default SkeletonRow;

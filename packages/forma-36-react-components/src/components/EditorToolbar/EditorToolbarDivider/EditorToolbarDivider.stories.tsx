@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta } from '@storybook/react/types-6-0';
 
-import EditorToolbarDivider from './EditorToolbarDivider';
+import { EditorToolbarDivider } from './EditorToolbarDivider';
 import type { EditorToolbarDividerProps } from './EditorToolbarDivider';
 import notes from './README.mdx';
 

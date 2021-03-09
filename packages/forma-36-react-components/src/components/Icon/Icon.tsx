@@ -2,8 +2,8 @@ import React from 'react';
 import cn from 'classnames';
 import type { CSSProperties } from 'react';
 
+import styles from './Icon.css';
 import { iconName } from './constants';
-
 import {
   ArrowDown,
   ArrowDownTrimmed,
@@ -88,6 +88,7 @@ import {
   InfoCircleTrimmed,
   Language,
   Link,
+  LinkAlternate,
   LinkTrimmed,
   ListBulleted,
   ListBulletedTrimmed,
@@ -145,8 +146,6 @@ import {
   WarningTrimmed,
   Workflows,
 } from './svg';
-
-import styles from './Icon.css';
 
 const iconComponents = {
   ArrowDown,
@@ -232,6 +231,7 @@ const iconComponents = {
   InfoCircleTrimmed,
   Language,
   Link,
+  LinkAlternate,
   LinkTrimmed,
   ListBulleted,
   ListBulletedTrimmed,
@@ -332,5 +332,3 @@ export function Icon({
     <Element data-test-id={testId} className={classNames} {...otherProps} />
   );
 }
-
-export default Icon;

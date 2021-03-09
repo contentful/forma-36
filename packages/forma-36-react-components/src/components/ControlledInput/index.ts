@@ -1,2 +1,2 @@
-export * from './ControlledInput';
-export { default } from './ControlledInput';
+export { ControlledInput } from './ControlledInput';
+export type { ControlledInputProps } from './ControlledInput';

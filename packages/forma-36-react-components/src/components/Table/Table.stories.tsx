@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 
-import Table from './Table';
-import TableHead from './TableHead';
-import TableBody from './TableBody';
-import TableCell from './TableCell';
-import TableRow from './TableRow';
-import SkeletonRow from '../Skeleton/SkeletonRow';
+import { Table } from './Table';
+import { TableHead } from './TableHead/TableHead';
+import { TableBody } from './TableBody/TableBody';
+import { TableCell } from './TableCell/TableCell';
+import { TableRow } from './TableRow/TableRow';
+import { SkeletonRow } from '../Skeleton';
 import notes from './Table.md';
-import Flex from '../Flex/Flex';
-import SectionHeading from '../Typography/SectionHeading';
-import Button from '../Button/Button';
+import { Flex } from '../Flex';
+import { SectionHeading } from '../Typography';
+import { Button } from '../Button/Button';
 
 export default {
   argTypes: {

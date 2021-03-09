@@ -2,8 +2,8 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import axe from '../../utils/axeHelper';
-import Button from './Button';
+import { axe } from '../../utils/axeHelper';
+import { Button } from './Button';
 
 it('renders the component', () => {
   const { container } = render(<Button>Embed entry</Button>);

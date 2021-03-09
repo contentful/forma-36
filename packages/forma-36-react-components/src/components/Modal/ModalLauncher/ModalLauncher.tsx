@@ -76,5 +76,3 @@ function open<T = any>(
 export const ModalLauncher = {
   open,
 };
-
-export default ModalLauncher;

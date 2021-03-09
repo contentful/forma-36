@@ -1,10 +1,10 @@
 import React from 'react';
 
-import Spinner, { SpinnerProps } from './Spinner';
-import SectionHeading from '../Typography/SectionHeading';
-import Flex from '../Flex/Flex';
-import Subheading from '../Typography/Subheading';
 import tokens from '@contentful/f36-tokens';
+
+import { Spinner, SpinnerProps } from './Spinner';
+import { SectionHeading, Subheading } from '../Typography';
+import { Flex } from '../Flex';
 
 export default {
   title: 'Components/Spinner',

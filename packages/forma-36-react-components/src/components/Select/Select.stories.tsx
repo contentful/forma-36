@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Select, { SelectProps } from './Select';
-import Option from './Option';
-import Flex from '../Flex/Flex';
-import SectionHeading from '../Typography/SectionHeading';
+import { Select, SelectProps } from './Select';
+import { Option } from './Option';
+import { Flex } from '../Flex';
+import { SectionHeading } from '../Typography';
 
 export default {
   title: 'Form Elements/Select',

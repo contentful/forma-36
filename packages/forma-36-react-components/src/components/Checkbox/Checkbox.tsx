@@ -1,5 +1,6 @@
 import React from 'react';
-import ControlledInput, { ControlledInputProps } from '../ControlledInput';
+
+import { ControlledInput, ControlledInputProps } from '../ControlledInput';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface CheckboxProps extends ControlledInputProps {}
@@ -7,7 +8,7 @@ export interface CheckboxProps extends ControlledInputProps {}
 export const Checkbox = ({
   disabled = false,
   required = false,
-  testId = 'ctf-ui-checkbox',
+  testId = 'cf-ui-checkbox',
   type = 'checkbox',
   willBlurOnEsc = true,
   ...otherProps
@@ -23,5 +24,3 @@ export const Checkbox = ({
     />
   );
 };
-
-export default Checkbox;

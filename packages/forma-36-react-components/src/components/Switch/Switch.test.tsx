@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import Switch from './Switch';
+import { Switch } from './Switch';
 
 it('renders the component', () => {
   const { container } = render(<Switch id="testCheckbox" labelText="foobar" />);

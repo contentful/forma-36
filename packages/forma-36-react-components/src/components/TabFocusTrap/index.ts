@@ -1,2 +1,2 @@
-export * from './TabFocusTrap';
-export { default } from './TabFocusTrap';
+export { TabFocusTrap } from './TabFocusTrap';
+export type { TabFocusTrapProps } from './TabFocusTrap';

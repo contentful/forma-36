@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 
-import IconButton from '../../IconButton/IconButton';
+import { IconButton } from '../../IconButton';
 import styles from './ModalHeader.css';
 
 export interface ModalHeaderProps {
@@ -43,5 +43,3 @@ export function ModalHeader({
     </div>
   );
 }
-
-export default ModalHeader;

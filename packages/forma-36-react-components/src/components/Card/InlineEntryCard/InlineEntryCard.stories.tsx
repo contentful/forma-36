@@ -1,7 +1,8 @@
 import React from 'react';
-import InlineEntryCard, { InlineEntryCardProps } from './InlineEntryCard';
-import DropdownListItem from '../../Dropdown/DropdownListItem';
-import DropdownList from '../../Dropdown/DropdownList';
+
+import { InlineEntryCard, InlineEntryCardProps } from './InlineEntryCard';
+import { DropdownListItem } from '../../Dropdown/DropdownListItem/DropdownListItem';
+import { DropdownList } from '../../Dropdown/DropdownList/DropdownList';
 
 export default {
   title: 'Components/Card/InlineEntryCard',

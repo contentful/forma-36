@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import axe from '../../utils/axeHelper';
-import Textarea from './Textarea';
+import { axe } from '../../utils/axeHelper';
+import { Textarea } from './Textarea';
 
 it('renders the component', () => {
   const { container } = render(<Textarea id="someInput" name="userEmail" />);

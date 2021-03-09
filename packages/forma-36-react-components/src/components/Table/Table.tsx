@@ -32,5 +32,3 @@ export const Table = ({
     </table>
   );
 };
-
-export default Table;

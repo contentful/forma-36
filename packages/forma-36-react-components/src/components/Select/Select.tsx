@@ -9,7 +9,7 @@ import React, {
   ReactNode,
 } from 'react';
 import cn from 'classnames';
-import Icon from '../Icon';
+import { Icon } from '../Icon';
 import styles from './Select.css';
 
 export interface SelectProps {
@@ -110,5 +110,3 @@ export const Select = ({
     </div>
   );
 };
-
-export default Select;

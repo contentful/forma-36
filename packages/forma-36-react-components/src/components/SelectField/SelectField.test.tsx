@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import axe from '../../utils/axeHelper';
-import SelectField from './SelectField';
-import Option from '../Select/Option';
+import { axe } from '../../utils/axeHelper';
+import { SelectField } from './SelectField';
+import { Option } from '../Select';
 
 it('renders the component', () => {
   const { container } = render(

@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import axe from '../../../utils/axeHelper';
-import ModalConfirm from './ModalConfirm';
+import { axe } from '../../../utils/axeHelper';
+import { ModalConfirm } from './ModalConfirm';
 import '@contentful/forma-36-fcss/dist/styles.css';
 
 jest.mock(
@@ -14,13 +14,11 @@ jest.mock(
     },
 );
 
-jest.mock(
-  '../../Button',
-  () =>
-    function Button() {
-      return null;
-    },
-);
+jest.mock('../../Button', () => ({
+  Button: () => {
+    return null;
+  },
+}));
 
 it('renders the component', () => {
   const { container } = render(

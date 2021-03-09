@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import axe from '../../../utils/axeHelper';
-import GridItem from './GridItem';
+import { axe } from '../../../utils/axeHelper';
+import { GridItem } from './GridItem';
 
 it('renders the component', () => {
   const { container } = render(<GridItem>Grid Item</GridItem>);

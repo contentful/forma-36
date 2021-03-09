@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import styles from './DisplayText.css';
 
-import { TypographyContext } from '../Typography';
+import { TypographyContext } from '../Typography/Typography';
 
 export interface DisplayTextProps {
   element?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
@@ -48,5 +48,3 @@ export function DisplayText({
     </TypographyContext.Consumer>
   );
 }
-
-export default DisplayText;

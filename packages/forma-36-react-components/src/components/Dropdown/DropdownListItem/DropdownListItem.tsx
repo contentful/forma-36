@@ -6,7 +6,7 @@ import React, {
 } from 'react';
 import cn from 'classnames';
 
-import TabFocusTrap from '../../TabFocusTrap/TabFocusTrap';
+import { TabFocusTrap } from '../../TabFocusTrap';
 import styles from './DropdownListItem.css';
 
 export interface DropdownListItemProps
@@ -145,5 +145,3 @@ export const DropdownListItem = forwardRef<HTMLElement, DropdownListItemProps>(
 );
 
 DropdownListItem.displayName = 'DropdownListItem';
-
-export default DropdownListItem;

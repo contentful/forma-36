@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import axe from '../../utils/axeHelper';
-import RadioButton from './RadioButton';
+import { axe } from '../../utils/axeHelper';
+import { RadioButton } from './RadioButton';
 
 it('renders the component', () => {
   const { container } = render(<RadioButton labelText="radio-button" />);

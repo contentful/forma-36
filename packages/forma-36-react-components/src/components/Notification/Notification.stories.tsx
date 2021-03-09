@@ -1,11 +1,11 @@
 import React from 'react';
 
-import Button from '../Button';
-import Notification, { NotificationsAPI } from './index';
+import { Button } from '../Button';
+import { Notification, NotificationsAPI } from './Notification';
 import notes from './README.mdx';
-import NotificationItem from './NotificationItem';
-import Flex from '../Flex/Flex';
-import SectionHeading from '../Typography/SectionHeading';
+import { NotificationItem } from './NotificationItem';
+import { Flex } from '../Flex';
+import { SectionHeading } from '../Typography';
 
 let index = 0;
 const getUniqueNumber = () => {

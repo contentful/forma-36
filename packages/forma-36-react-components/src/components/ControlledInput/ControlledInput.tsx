@@ -9,8 +9,8 @@ import React, {
   useEffect,
 } from 'react';
 import cn from 'classnames';
-import Icon from '../Icon';
 
+import { Icon } from '../Icon';
 import styles from './ControlledInput.css';
 
 export interface ControlledInputProps extends HTMLProps<HTMLInputElement> {
@@ -131,5 +131,3 @@ export const ControlledInput = ({
     </div>
   );
 };
-
-export default ControlledInput;

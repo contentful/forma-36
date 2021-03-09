@@ -1,2 +1,12 @@
-export * from './Table';
-export { default } from './Table';
+export { Table } from './Table';
+export type { TableProps } from './Table';
+export { TableBody } from './TableBody/TableBody';
+export type { TableBodyProps } from './TableBody/TableBody';
+export { TableCell } from './TableCell/TableCell';
+export type { TableCellProps, TableCellSorting } from './TableCell/TableCell';
+export { TableHead } from './TableHead/TableHead';
+export type { TableHeadProps } from './TableHead/TableHead';
+export { TableSortingLabel } from './TableSortingLabel/TableSortingLabel';
+export type { TableSortingLabelProps } from './TableSortingLabel/TableSortingLabel';
+export { TableRow } from './TableRow/TableRow';
+export type { TableRowProps } from './TableRow/TableRow';

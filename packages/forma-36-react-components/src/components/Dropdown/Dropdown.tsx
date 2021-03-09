@@ -3,8 +3,8 @@ import cn from 'classnames';
 import { usePopper } from 'react-popper';
 import { Modifier, Placement, State as PopperState } from '@popperjs/core';
 
-import DropdownListItem from './DropdownListItem/DropdownListItem';
-import DropdownContainer from './DropdownContainer';
+import { DropdownListItem } from './DropdownListItem/DropdownListItem';
+import { DropdownContainer } from './DropdownContainer/DropdownContainer';
 import styles from './Dropdown.css';
 
 const offsetModifier = {
@@ -33,7 +33,7 @@ const sameWidth: Modifier<'sameWidth', {}> = {
   },
 };
 
-export type positionType =
+export type Position =
   | 'top'
   | 'right'
   | 'left'
@@ -42,13 +42,16 @@ export type positionType =
   | 'top-right'
   | 'top-left';
 
+// @todo: Remove in v4
+export type positionType = Position;
+
 /**
  * Helper method to map our current Dropdown position props to Popper.js
  * placements.
  *
  * @todo: Maybe we can use the Popper placements in the next breaking change?
  */
-const mapPositionTypeToPlacement = (position: positionType): Placement => {
+const mapPositionTypeToPlacement = (position: Position): Placement => {
   switch (position) {
     case 'bottom-left':
       return 'bottom-start';
@@ -304,5 +307,3 @@ export function Dropdown({
     </div>
   );
 }
-
-export default Dropdown;

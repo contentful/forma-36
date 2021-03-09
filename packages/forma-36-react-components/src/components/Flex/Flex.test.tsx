@@ -1,8 +1,8 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 
-import axe from '../../utils/axeHelper';
-import Flex from './Flex';
+import { axe } from '../../utils/axeHelper';
+import { Flex } from './Flex';
 
 it('renders the component', () => {
   const { container } = render(<Flex>Flex</Flex>);

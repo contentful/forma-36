@@ -35,5 +35,3 @@ export function SkeletonImage({
     />
   );
 }
-
-export default SkeletonImage;

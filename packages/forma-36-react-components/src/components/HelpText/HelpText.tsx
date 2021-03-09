@@ -24,5 +24,3 @@ export function HelpText({
     </p>
   );
 }
-
-export default HelpText;

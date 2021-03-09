@@ -1,2 +1,2 @@
-export * from './CopyButton';
-export { default } from './CopyButton';
+export { CopyButton } from './CopyButton';
+export type { CopyButtonProps } from './CopyButton';

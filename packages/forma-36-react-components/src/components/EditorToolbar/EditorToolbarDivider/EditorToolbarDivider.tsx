@@ -18,5 +18,3 @@ export function EditorToolbarDivider({
 
   return <span data-test-id={testId} className={classNames} {...otherProps} />;
 }
-
-export default EditorToolbarDivider;

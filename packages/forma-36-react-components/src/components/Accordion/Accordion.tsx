@@ -39,5 +39,3 @@ export const Accordion = ({
     </ul>
   );
 };
-
-export default Accordion;

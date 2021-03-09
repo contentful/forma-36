@@ -1,11 +1,10 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import axe from '../../../utils/axeHelper';
+import { axe } from '../../../utils/axeHelper';
 
-import SkeletonRow from './SkeletonRow';
-import Table from '../../Table';
-import TableBody from '../../Table/TableBody';
+import { SkeletonRow } from './SkeletonRow';
+import { Table, TableBody } from '../../Table';
 
 it('renders the component', () => {
   const { container } = render(

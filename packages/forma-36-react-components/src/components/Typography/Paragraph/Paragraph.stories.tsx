@@ -1,5 +1,6 @@
 import React from 'react';
-import Paragraph, { ParagraphProps } from './Paragraph';
+
+import { Paragraph, ParagraphProps } from './Paragraph';
 
 export default {
   title: 'Typography/Paragraph',

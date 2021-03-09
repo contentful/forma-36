@@ -2,8 +2,8 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import axe from '../../utils/axeHelper';
-import Card from './Card';
+import { axe } from '../../utils/axeHelper';
+import { Card } from './Card';
 
 it('renders the component', () => {
   const { container } = render(<Card>Card</Card>);

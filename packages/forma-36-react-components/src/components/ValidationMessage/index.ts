@@ -1,2 +1,2 @@
-export * from './ValidationMessage';
-export { default } from './ValidationMessage';
+export { ValidationMessage } from './ValidationMessage';
+export type { ValidationMessageProps } from './ValidationMessage';

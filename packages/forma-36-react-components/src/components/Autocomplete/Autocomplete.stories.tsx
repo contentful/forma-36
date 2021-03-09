@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
-import Autocomplete, { AutocompleteProps } from './Autocomplete';
 
+import { Autocomplete, AutocompleteProps } from './Autocomplete';
 import notes from './README.mdx';
 
 export default {

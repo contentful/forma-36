@@ -1,8 +1,8 @@
 import React from 'react';
 import cn from 'classnames';
-import Icon, { IconProps } from '../Icon';
-import TabFocusTrap from '../TabFocusTrap';
 
+import { Icon, IconProps } from '../Icon';
+import { TabFocusTrap } from '../TabFocusTrap';
 import styles from './IconButton.css';
 
 export interface IconButtonProps extends React.HTMLAttributes<HTMLElement> {
@@ -106,5 +106,3 @@ export const IconButton = ({
     </button>
   );
 };
-
-export default IconButton;

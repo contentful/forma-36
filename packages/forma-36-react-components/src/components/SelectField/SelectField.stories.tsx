@@ -1,6 +1,7 @@
 import React from 'react';
-import SelectField, { SelectFieldProps } from './SelectField';
-import Option from '../Select/Option';
+
+import { SelectField, SelectFieldProps } from './SelectField';
+import { Option } from '../Select';
 
 export default {
   title: 'Form Elements/SelectField',

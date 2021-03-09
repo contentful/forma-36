@@ -2,8 +2,8 @@ import React from 'react';
 
 import { Badge } from '../src/Badge';
 import { BadgeProps } from '../src/Badge';
-import SectionHeading from '../../../forma-36-react-components/src/components/Typography/SectionHeading/SectionHeading';
-import Flex from '../../../forma-36-react-components/src/components/Flex/Flex';
+import { SectionHeading } from '../../../forma-36-react-components/src/components/Typography/SectionHeading/SectionHeading';
+import { Flex } from '../../../forma-36-react-components/src/components/Flex/Flex';
 
 export default {
   title: 'Components/Badge',
@@ -53,6 +53,10 @@ export const overview = () => (
       <Flex marginRight="spacingS">
         <Badge variant="warning">warning</Badge>
       </Flex>
+    </Flex>
+
+    <Flex marginBottom="spacingS">
+      <SectionHeading element="h3">Tag sizes overview</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingM" alignItems="center">
       <Flex marginRight="spacingS">

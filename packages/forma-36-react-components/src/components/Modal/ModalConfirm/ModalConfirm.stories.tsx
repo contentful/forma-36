@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
 
-import ModalConfirm, { ModalConfirmProps } from './ModalConfirm';
-import Button from '../../Button';
-import Paragraph from '../../Typography/Paragraph';
-import Typography from '../../Typography/Typography';
-import TextInput from '../../TextInput';
+import { ModalConfirm, ModalConfirmProps } from './ModalConfirm';
+import { Button } from '../../Button';
+import { Paragraph, Typography } from '../../Typography';
+import { TextInput } from '../../TextInput';
 
 export default {
   title: 'Components/Modal/ModalConfirm',

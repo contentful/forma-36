@@ -1,5 +1,5 @@
 import React from 'react';
-import ControlledInputField from '../ControlledInputField';
+import { ControlledInputField } from '../ControlledInputField';
 import type { ControlledInputFieldProps } from '../ControlledInputField';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
@@ -24,5 +24,3 @@ export const RadioButtonField = ({
     />
   );
 };
-
-export default RadioButtonField;

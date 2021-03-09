@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-import RadioButtonField, { RadioButtonFieldProps } from './RadioButtonField';
-import FieldGroup from '../Form/FieldGroup';
-import Flex from '../Flex/Flex';
-import SectionHeading from '../Typography/SectionHeading';
+import { RadioButtonField, RadioButtonFieldProps } from './RadioButtonField';
+import { FieldGroup } from '../Form';
+import { Flex } from '../Flex';
+import { SectionHeading } from '../Typography';
 
 export default {
   title: 'Form Elements/RadioButtonField',
@@ -88,6 +88,22 @@ export const overview = () => (
         labelText="Label text"
         helpText="This is a helptext"
         disabled
+        name="someOption"
+        value="no"
+        id="radioButton3"
+      />
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <SectionHeading element="h3">
+        Radio button disabled checked
+      </SectionHeading>
+    </Flex>
+    <Flex marginBottom="spacingS">
+      <RadioButtonField
+        labelText="Label text"
+        helpText="This is a helptext"
+        disabled
+        checked
         name="someOption"
         value="no"
         id="radioButton3"

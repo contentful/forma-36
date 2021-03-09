@@ -1,11 +1,10 @@
 import React from 'react';
 
-import EntryCard, { EntryCardProps } from './EntryCard';
-import CardDragHandle from './../CardDragHandle';
-import DropdownList from '../../Dropdown/DropdownList';
-import DropdownListItem from '../../Dropdown/DropdownListItem';
-import Flex from '../../Flex/Flex';
-import SectionHeading from '../../Typography/SectionHeading';
+import { EntryCard, EntryCardProps } from './EntryCard';
+import { CardDragHandle } from '../CardDragHandle/CardDragHandle';
+import { DropdownList, DropdownListItem } from '../../Dropdown';
+import { Flex } from '../../Flex';
+import { SectionHeading } from '../../Typography';
 
 export default {
   title: 'Components/Card/EntryCard',

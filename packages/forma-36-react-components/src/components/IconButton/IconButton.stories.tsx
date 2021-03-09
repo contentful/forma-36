@@ -1,10 +1,9 @@
 import React from 'react';
 
-import IconButton, { IconButtonProps } from './IconButton';
+import { IconButton, IconButtonProps } from './IconButton';
 import { iconName } from '../Icon/constants';
-import Flex from '../Flex/Flex';
-import SectionHeading from '../Typography/SectionHeading';
-import Paragraph from '../Typography/Paragraph';
+import { Flex } from '../Flex';
+import { Paragraph, SectionHeading } from '../Typography';
 
 // TODO align colors between Icon and IconButton? (warning is missing in IconButton)
 enum IconButtonTypes {

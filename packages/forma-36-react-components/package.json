@@ -3,7 +3,7 @@
   "description": "Contentful UI Component Library",
   "version": "4.0.0",
   "main": "dist/index.js",
-  "module": "dist/f36-components.esm.js",
+  "module": "dist/esm/index.js",
   "style": "dist/styles.css",
   "license": "MIT",
   "types": "dist/index.d.ts",

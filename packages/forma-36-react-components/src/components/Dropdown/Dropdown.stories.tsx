@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
 
-import Dropdown from './Dropdown';
-import DropdownListItem from './DropdownListItem';
-import Button from '../Button';
-import TextLink from '../TextLink';
-import DropdownList from './DropdownList';
-import Flex from '../Flex/Flex';
-import SectionHeading from '../Typography/SectionHeading';
+import { Dropdown } from './Dropdown';
+import { DropdownListItem } from './DropdownListItem/DropdownListItem';
+import { Button } from '../Button';
+import { TextLink } from '../TextLink';
+import { DropdownList } from './DropdownList/DropdownList';
+import { Flex } from '../Flex';
+import { SectionHeading } from '../Typography';
 
 export default {
   argTypes: {

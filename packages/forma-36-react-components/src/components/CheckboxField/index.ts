@@ -1,2 +1,2 @@
-export * from './CheckboxField';
-export { default } from './CheckboxField';
+export { CheckboxField } from './CheckboxField';
+export type { CheckboxFieldProps } from './CheckboxField';

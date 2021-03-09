@@ -1,6 +1,7 @@
 import React from 'react';
-import DropdownListItem from '../DropdownListItem';
-import DropdownList from './DropdownList';
+
+import { DropdownList } from './DropdownList';
+import { DropdownListItem } from '../DropdownListItem/DropdownListItem';
 
 export default {
   title: 'Components/Dropdown/DropdownList',

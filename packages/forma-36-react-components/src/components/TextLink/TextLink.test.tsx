@@ -2,8 +2,8 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import axe from '../../utils/axeHelper';
-import TextLink from './TextLink';
+import { axe } from '../../utils/axeHelper';
+import { TextLink } from './TextLink';
 import { iconName } from '../Icon/constants';
 
 it('renders as a button', () => {

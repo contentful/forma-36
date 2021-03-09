@@ -50,5 +50,3 @@ export function SkeletonText({
     </React.Fragment>
   );
 }
-
-export default SkeletonText;

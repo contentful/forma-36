@@ -1,11 +1,12 @@
 import React from 'react';
 
-import TextLink, { textLinkColor } from './TextLink';
-import Paragraph from '../Typography/Paragraph';
-import notes from './README.mdx';
-import Flex from '../Flex/Flex';
+import { TextLink, textLinkColor } from './TextLink';
+import { Paragraph } from '../Typography';
 import tokens from '@contentful/f36-tokens';
+import { Flex } from '../Flex';
 import '@contentful/forma-36-fcss/dist/styles.css';
+
+import notes from './README.mdx';
 
 export default {
   title: 'Components/TextLink',

@@ -1,9 +1,9 @@
 import React from 'react';
 
-import TextInput, { TextInputProps } from './TextInput';
-import Button from './../Button';
-import SectionHeading from '../Typography/SectionHeading';
-import Flex from '../Flex/Flex';
+import { TextInput, TextInputProps } from './TextInput';
+import { Button } from './../Button';
+import { SectionHeading } from '../Typography';
+import { Flex } from '../Flex';
 
 export default {
   title: 'Form Elements/TextInput',
@@ -22,55 +22,41 @@ export default {
   },
 };
 
-const ControlledTextInput = (args: TextInputProps) => {
+export const Basic = (args: TextInputProps) => <TextInput {...args} />;
+
+Basic.args = {
+  name: 'text-input',
+  id: 'text-input',
+};
+
+export const ControlledTextInput = (args: TextInputProps) => {
   const textInputRef = React.createRef<HTMLInputElement>();
+
   return (
     <>
-      <TextInput
-        value={args.value}
-        width={args.width}
-        name="emailInput"
-        id="emailInput"
-        required={args.required}
-        error={args.error}
-        disabled={args.disabled}
-        maxLength={args.maxLength}
-        inputRef={textInputRef}
-      />
-      <Button
-        onClick={() => (textInputRef.current as HTMLInputElement).focus()}
-      >
-        Focus TextInput with ref
-      </Button>
+      <TextInput {...args} inputRef={textInputRef} />
+      <Flex marginTop="spacingL">
+        <Button onClick={() => textInputRef.current.focus()}>
+          Focus Textinput with ref
+        </Button>
+      </Flex>
     </>
   );
 };
 
-export const basic = (args: TextInputProps) => (
-  <TextInput
-    value={args.value}
-    width={args.width}
-    name="emailInput"
-    id="emailInput"
-    required={args.required}
-    error={args.error}
-    disabled={args.disabled}
-    maxLength={args.maxLength}
-  />
-);
+ControlledTextInput.args = {
+  name: 'text-input',
+  id: 'text-input',
+};
 
-export const controlledTextInput = (args: TextInputProps) => (
-  <ControlledTextInput {...args} />
-);
-
-export const overview = () => (
+export const Overview = () => (
   <>
-    <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">
-        Text input default with placeholder
-      </SectionHeading>
-    </Flex>
-    <Flex marginBottom="spacingS">
+    <Flex flexDirection="column" marginBottom="spacingXl">
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">
+          Text input default with placeholder
+        </SectionHeading>
+      </Flex>
       <TextInput
         value=""
         maxLength={50}
@@ -79,10 +65,11 @@ export const overview = () => (
         placeholder="Placeholder text"
       />
     </Flex>
-    <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Text input default</SectionHeading>
-    </Flex>
-    <Flex marginBottom="spacingS">
+
+    <Flex flexDirection="column" marginBottom="spacingXl">
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Text input default</SectionHeading>
+      </Flex>
       <TextInput
         value="123456"
         maxLength={50}
@@ -90,10 +77,11 @@ export const overview = () => (
         id="emailInput"
       />
     </Flex>
-    <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Text input width small</SectionHeading>
-    </Flex>
-    <Flex marginBottom="spacingS">
+
+    <Flex flexDirection="column" marginBottom="spacingXl">
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Text input width small</SectionHeading>
+      </Flex>
       <TextInput
         value="123456"
         maxLength={50}
@@ -102,10 +90,11 @@ export const overview = () => (
         id="emailInput"
       />
     </Flex>
-    <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Text input width medium</SectionHeading>
-    </Flex>
-    <Flex marginBottom="spacingS">
+
+    <Flex flexDirection="column" marginBottom="spacingXl">
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Text input width medium</SectionHeading>
+      </Flex>
       <TextInput
         value="123456"
         maxLength={50}
@@ -114,10 +103,11 @@ export const overview = () => (
         id="emailInput"
       />
     </Flex>
-    <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Text input width large</SectionHeading>
-    </Flex>
-    <Flex marginBottom="spacingS">
+
+    <Flex flexDirection="column" marginBottom="spacingXl">
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Text input width large</SectionHeading>
+      </Flex>
       <TextInput
         value="123456"
         maxLength={50}
@@ -126,10 +116,11 @@ export const overview = () => (
         id="emailInput"
       />
     </Flex>
-    <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Text input with error</SectionHeading>
-    </Flex>
-    <Flex marginBottom="spacingS">
+
+    <Flex flexDirection="column" marginBottom="spacingXl">
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Text input with error</SectionHeading>
+      </Flex>
       <TextInput
         error
         value="123456"
@@ -139,10 +130,11 @@ export const overview = () => (
         id="emailInput"
       />
     </Flex>
-    <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Text input disabled</SectionHeading>
-    </Flex>
-    <Flex marginBottom="spacingS">
+
+    <Flex flexDirection="column" marginBottom="spacingXl">
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">Text input disabled</SectionHeading>
+      </Flex>
       <TextInput
         disabled
         value="123456"
@@ -152,10 +144,13 @@ export const overview = () => (
         id="emailInput"
       />
     </Flex>
-    <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Text input with copy button</SectionHeading>
-    </Flex>
-    <Flex marginBottom="spacingS">
+
+    <Flex flexDirection="column" marginBottom="spacingXl">
+      <Flex marginBottom="spacingS">
+        <SectionHeading element="h3">
+          Text input with copy button
+        </SectionHeading>
+      </Flex>
       <TextInput
         withCopyButton
         value="123456"
@@ -167,11 +162,3 @@ export const overview = () => (
     </Flex>
   </>
 );
-basic.args = {
-  width: 'full',
-  value: '123456',
-  required: false,
-  error: false,
-  disabled: false,
-  maxLength: 50,
-};

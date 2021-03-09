@@ -27,5 +27,3 @@ export function TabPanel({
     </div>
   );
 }
-
-export default TabPanel;

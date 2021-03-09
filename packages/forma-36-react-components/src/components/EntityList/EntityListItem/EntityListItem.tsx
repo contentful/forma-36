@@ -3,13 +3,14 @@ import cn from 'classnames';
 import type { MouseEventHandler } from 'react';
 
 import { EntityStatusBadge } from '@contentful/f36-badge';
-import Icon from '../../Icon';
-import CardActions from '../../Card/CardActions';
-import SkeletonBodyText from '../../Skeleton/SkeletonBodyText';
-import SkeletonImage from '../../Skeleton/SkeletonImage';
-import SkeletonContainer from '../../Skeleton/SkeletonContainer';
-import TabFocusTrap from '../../TabFocusTrap';
-import CardDragHandle, { CardDragHandleProps } from '../../Card/CardDragHandle';
+import { Icon } from '../../Icon';
+import { CardActions, CardDragHandle, CardDragHandleProps } from '../../Card';
+import {
+  SkeletonBodyText,
+  SkeletonContainer,
+  SkeletonImage,
+} from '../../Skeleton';
+import { TabFocusTrap } from '../../TabFocusTrap';
 import styles from './EntityListItem.css';
 
 export type EntityListItemStatus =
@@ -247,5 +248,3 @@ export function EntityListItem({
     </li>
   );
 }
-
-export default EntityListItem;

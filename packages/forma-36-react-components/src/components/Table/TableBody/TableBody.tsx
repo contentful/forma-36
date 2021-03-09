@@ -20,5 +20,3 @@ export const TableBody = ({
     </tbody>
   );
 };
-
-export default TableBody;

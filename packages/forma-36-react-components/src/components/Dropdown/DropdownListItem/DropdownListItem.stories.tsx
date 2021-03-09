@@ -1,5 +1,6 @@
 import React from 'react';
-import DropdownListItem, { DropdownListItemProps } from './DropdownListItem';
+
+import { DropdownListItem, DropdownListItemProps } from './DropdownListItem';
 
 export default {
   title: 'Components/Dropdown/DropdownListItem',

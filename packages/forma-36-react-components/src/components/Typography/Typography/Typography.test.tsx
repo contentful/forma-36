@@ -1,13 +1,13 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import axe from '../../../utils/axeHelper';
-import Typography from './Typography';
-import DisplayText from './../DisplayText';
-import Heading from './../Heading';
-import Paragraph from './../Paragraph';
-import SectionHeading from './../SectionHeading';
-import Subheading from './../Subheading';
+import { axe } from '../../../utils/axeHelper';
+import { Typography } from './Typography';
+import { DisplayText } from '../DisplayText/DisplayText';
+import { Heading } from '../Heading/Heading';
+import { Paragraph } from '../Paragraph/Paragraph';
+import { SectionHeading } from '../SectionHeading/SectionHeading';
+import { Subheading } from '../Subheading/Subheading';
 
 it('renders the component', () => {
   const { container } = render(

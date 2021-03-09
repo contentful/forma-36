@@ -1,5 +1,6 @@
 import React from 'react';
-import FormLabel, { FormLabelProps } from './FormLabel';
+
+import { FormLabel, FormLabelProps } from './FormLabel';
 
 export default {
   title: 'Form Elements/FormLabel',

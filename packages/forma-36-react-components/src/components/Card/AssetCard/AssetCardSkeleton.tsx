@@ -1,13 +1,16 @@
 import React from 'react';
-import SkeletonContainer from '../../Skeleton/SkeletonContainer';
-import SkeletonBodyText from '../../Skeleton/SkeletonBodyText';
-import SkeletonImage from '../../Skeleton/SkeletonImage';
+
+import {
+  SkeletonBodyText,
+  SkeletonContainer,
+  SkeletonImage,
+} from '../../Skeleton';
 
 export interface AssetCardSkeletonProps {
   size?: 'small' | 'default';
 }
 
-const AssetCardSkeleton = (props: AssetCardSkeletonProps) => (
+export const AssetCardSkeleton = (props: AssetCardSkeletonProps) => (
   <SkeletonContainer svgWidth={props.size === 'small' ? 150 : 240}>
     <SkeletonImage
       offsetLeft={props.size === 'small' ? 40 : 85}
@@ -21,5 +24,3 @@ const AssetCardSkeleton = (props: AssetCardSkeletonProps) => (
     />
   </SkeletonContainer>
 );
-
-export default AssetCardSkeleton;

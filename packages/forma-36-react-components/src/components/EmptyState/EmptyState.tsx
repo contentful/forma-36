@@ -1,8 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 
-import Heading from '../Typography/Heading';
-import Paragraph from '../Typography/Paragraph';
+import { Heading, Paragraph } from '../Typography/';
 import styles from './EmptyState.css';
 
 export interface EmptyStateProps {
@@ -121,5 +120,3 @@ export function EmptyState({
     </div>
   );
 }
-
-export default EmptyState;

@@ -1,5 +1,5 @@
 import React from 'react';
-import ControlledInputField from '../ControlledInputField';
+import { ControlledInputField } from '../ControlledInputField';
 import type { ControlledInputFieldProps } from '../ControlledInputField';
 
 export type CheckboxFieldProps = Omit<ControlledInputFieldProps, 'inputType'>;
@@ -20,5 +20,3 @@ export const CheckboxField = ({
     />
   );
 };
-
-export default CheckboxField;

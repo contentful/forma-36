@@ -1,7 +1,7 @@
 import React, { Component, MouseEvent as ReactMouseEvent } from 'react';
-import Dropdown, { DropdownProps } from '../../Dropdown';
-import DropdownList from '../../Dropdown/DropdownList';
-import IconButton, { IconButtonProps } from '../../IconButton';
+
+import { Dropdown, DropdownList, DropdownProps } from '../../Dropdown';
+import { IconButton, IconButtonProps } from '../../IconButton';
 
 export interface CardActionsProps extends DropdownProps {
   /**
@@ -115,5 +115,3 @@ export class CardActions extends Component<CardActionsProps, CardActionsState> {
     );
   }
 }
-
-export default CardActions;

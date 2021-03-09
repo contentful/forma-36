@@ -1,10 +1,10 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import axe from '../../utils/axeHelper';
-import Workbench from './Workbench';
-import Icon from '../Icon';
-import Button from '../Button';
+import { axe } from '../../utils/axeHelper';
+import { Workbench } from './Workbench';
+import { Icon } from '../Icon';
+import { Button } from '../Button';
 
 function TestWorkbench() {
   return (

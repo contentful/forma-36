@@ -2,7 +2,7 @@ import React from 'react';
 import { render, fireEvent, within, screen } from '@testing-library/react';
 
 import { KEY_CODE } from './utils';
-import Autocomplete, { AutocompleteProps } from '../Autocomplete';
+import { Autocomplete, AutocompleteProps } from '../Autocomplete';
 import { positionType } from '../Dropdown';
 
 interface Item {

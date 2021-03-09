@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import axe from '../../utils/axeHelper';
-import ControlledInputField from './ControlledInputField';
+import { axe } from '../../utils/axeHelper';
+import { ControlledInputField } from './ControlledInputField';
 
 it('renders the component', () => {
   const { container } = render(

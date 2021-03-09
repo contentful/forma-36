@@ -1,9 +1,9 @@
 import React from 'react';
 import cn from 'classnames';
 
-import Icon from '../Icon/Icon';
-import type { IconType } from '../Icon/Icon';
-import TabFocusTrap from '../TabFocusTrap/TabFocusTrap';
+import { Icon } from '../Icon';
+import type { IconType } from '../Icon';
+import { TabFocusTrap } from '../TabFocusTrap';
 import styles from './ToggleButton.css';
 
 export interface ToggleButtonProps {
@@ -82,5 +82,3 @@ ToggleButton.Group = function ToggleButtonGroup({
     </div>
   );
 };
-
-export default ToggleButton;

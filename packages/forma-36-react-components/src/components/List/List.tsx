@@ -32,5 +32,3 @@ export function List({
     </Tag>
   );
 }
-
-export default List;

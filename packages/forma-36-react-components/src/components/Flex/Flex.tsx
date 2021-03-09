@@ -167,7 +167,7 @@ export const Flex = ({
   const classNames = cn(styles.Flex, className, {
     [styles.Flex__inline]: inlineFlex,
     [styles.Flex__fullWidth]: fullWidth,
-    [styles.Flex__fullHight]: fullHeight,
+    [styles.Flex__fullHeight]: fullHeight,
     [styles.Flex__noShrink]: noShrink,
   });
 
@@ -182,5 +182,3 @@ export const Flex = ({
     </Container>
   );
 };
-
-export default Flex;

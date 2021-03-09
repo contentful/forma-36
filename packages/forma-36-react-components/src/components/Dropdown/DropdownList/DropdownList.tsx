@@ -45,5 +45,3 @@ export const DropdownList = ({
     </ul>
   );
 };
-
-export default DropdownList;

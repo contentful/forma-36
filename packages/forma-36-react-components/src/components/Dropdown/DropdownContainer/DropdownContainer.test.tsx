@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import DropdownContainer from './DropdownContainer';
+import { DropdownContainer } from './DropdownContainer';
 
 it('renders the component', () => {
   const ref = jest.fn();

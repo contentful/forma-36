@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import axe from '../../../utils/axeHelper';
-import DropdownList from './DropdownList';
-import DropdownListItem from '../DropdownListItem/DropdownListItem';
+import { axe } from '../../../utils/axeHelper';
+import { DropdownList } from './DropdownList';
+import { DropdownListItem } from '../DropdownListItem/DropdownListItem';
 
 it('renders the component', () => {
   const { container } = render(

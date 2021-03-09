@@ -2,9 +2,9 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import axe from '../../utils/axeHelper';
-import Select from './Select';
-import Option from './Option';
+import { axe } from '../../utils/axeHelper';
+import { Select } from './Select';
+import { Option } from './Option';
 
 it('renders the component', () => {
   const { container } = render(

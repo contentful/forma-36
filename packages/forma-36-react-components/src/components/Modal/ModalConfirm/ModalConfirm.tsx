@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
-import Modal from '../Modal';
+import { Modal } from '../Modal';
 import type { ModalSizeType } from '../Modal';
-import { ModalHeaderProps } from '../ModalHeader';
-import { ModalContentProps } from '../ModalContent';
-import { ModalControlsProps } from '../ModalControls';
-import Button from '../../Button';
+import type { ModalHeaderProps } from '../ModalHeader/ModalHeader';
+import type { ModalContentProps } from '../ModalContent/ModalContent';
+import type { ModalControlsProps } from '../ModalControls/ModalControls';
+import { Button } from '../../Button';
 
 export interface ModalConfirmProps {
   /**
@@ -161,23 +161,6 @@ export function ModalConfirm({
     </Button>
   ) : null;
 
-  let buttons = (
-    <>
-      {confirmButton}
-      {secondaryButton}
-      {cancelButton}
-    </>
-  );
-
-  if (modalControlsProps && modalControlsProps.position === 'right') {
-    buttons = (
-      <>
-        {cancelButton}
-        {secondaryButton}
-        {confirmButton}
-      </>
-    );
-  }
   return (
     <Modal
       testId={testId}
@@ -188,15 +171,29 @@ export function ModalConfirm({
       shouldCloseOnEscapePress={shouldCloseOnEscapePress}
       allowHeightOverflow={allowHeightOverflow}
     >
-      {() => (
-        <div>
-          <Modal.Header title={title || ''} {...modalHeaderProps} />
-          <Modal.Content {...modalContentProps}>{children}</Modal.Content>
-          <Modal.Controls {...modalControlsProps}>{buttons}</Modal.Controls>
-        </div>
-      )}
+      {() => {
+        return (
+          <div>
+            <Modal.Header title={title || ''} {...modalHeaderProps} />
+            <Modal.Content {...modalContentProps}>{children}</Modal.Content>
+            <Modal.Controls {...modalControlsProps}>
+              {modalControlsProps?.position === 'right' ? (
+                <Fragment>
+                  {cancelButton}
+                  {secondaryButton}
+                  {confirmButton}
+                </Fragment>
+              ) : (
+                <Fragment>
+                  {confirmButton}
+                  {secondaryButton}
+                  {cancelButton}
+                </Fragment>
+              )}
+            </Modal.Controls>
+          </div>
+        );
+      }}
     </Modal>
   );
 }
-
-export default ModalConfirm;

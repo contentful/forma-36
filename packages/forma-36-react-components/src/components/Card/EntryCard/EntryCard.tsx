@@ -2,12 +2,16 @@ import React, { useCallback } from 'react';
 import cn from 'classnames';
 import truncate from 'truncate';
 
-import Card, { BaseCardProps, CardProps } from '../Card';
-import CardActions from '../CardActions';
+import { Card, BaseCardProps, CardProps } from '../Card';
+import { CardActions } from '../CardActions/CardActions';
 import { EntityStatusBadge } from '@contentful/f36-badge';
-import EntryCardSkeleton from './EntryCardSkeleton';
-import CardDragHandle, { CardDragHandleProps } from '../CardDragHandle';
-import Icon, { IconType } from '../../Icon';
+
+import { EntryCardSkeleton } from './EntryCardSkeleton';
+import {
+  CardDragHandle,
+  CardDragHandleProps,
+} from '../CardDragHandle/CardDragHandle';
+import { Icon, IconType } from '../../Icon';
 import styles from './EntryCard.css';
 
 export type EntryCardStatus =
@@ -239,5 +243,3 @@ export function EntryCard({
     </Card>
   );
 }
-
-export default EntryCard;

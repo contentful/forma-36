@@ -1,2 +1,4 @@
-export * from './List';
-export { default } from './List';
+export { List } from './List';
+export type { ListProps } from './List';
+export { ListItem } from './ListItem/ListItem';
+export type { ListItemProps } from './ListItem/ListItem';

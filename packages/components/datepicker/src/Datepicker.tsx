@@ -69,7 +69,7 @@ export function Datepicker({
         pikaday.current.destroy();
       }
     };
-  }, []);
+  }, [otherProps]);
 
   const handleOpen = useCallback(() => {
     if (pikaday.current) {
@@ -77,15 +77,18 @@ export function Datepicker({
     }
   }, []);
 
-  const handleBlur = useCallback((e: FocusEvent) => {
-    otherProps.onBlur?.(e);
-    if (
-      pikaday.current &&
-      !pikaday.current.el.contains(e.relatedTarget as HTMLInputElement)
-    ) {
-      pikaday.current.hide();
-    }
-  }, []);
+  const handleBlur = useCallback(
+    (e: FocusEvent) => {
+      otherProps.onBlur?.(e);
+      if (
+        pikaday.current &&
+        !pikaday.current.el.contains(e.relatedTarget as HTMLInputElement)
+      ) {
+        pikaday.current.hide();
+      }
+    },
+    [otherProps],
+  );
 
   return (
     <div className={styles.datePickerWrapper}>

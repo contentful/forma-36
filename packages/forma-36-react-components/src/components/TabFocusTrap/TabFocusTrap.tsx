@@ -21,5 +21,3 @@ export function TabFocusTrap({
     </span>
   );
 }
-
-export default TabFocusTrap;

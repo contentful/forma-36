@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 
-import Icon from '../../Icon';
+import { Icon } from '../../Icon';
 import styles from './CardDragHandle.css';
 
 export interface CardDragHandleProps {
@@ -44,5 +44,3 @@ export function CardDragHandle({
     </div>
   );
 }
-
-export default CardDragHandle;
