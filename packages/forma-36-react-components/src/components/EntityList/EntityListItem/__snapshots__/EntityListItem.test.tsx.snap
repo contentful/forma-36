@@ -1,6 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`can call an onClick callback 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <li
   class="EntityListItem EntityListItem--is-interactive"
   data-test-id="cf-ui-entity-list-item"
@@ -10,7 +15,7 @@ exports[`can call an onClick callback 1`] = `
     tabindex="0"
   >
     <span
-      class="TabFocusTrap EntityListItem__focus-trap"
+      class="emotion-0 EntityListItem__focus-trap"
       tabindex="-1"
     >
       <figure
@@ -62,6 +67,11 @@ exports[`can call an onClick callback 1`] = `
 `;
 
 exports[`renders the component 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <li
   class="EntityListItem"
   data-test-id="cf-ui-entity-list-item"
@@ -70,7 +80,7 @@ exports[`renders the component 1`] = `
     class="EntityListItem__inner"
   >
     <span
-      class="TabFocusTrap EntityListItem__focus-trap"
+      class="emotion-0 EntityListItem__focus-trap"
       tabindex="-1"
     >
       <figure
@@ -124,6 +134,11 @@ exports[`renders the component 1`] = `
 `;
 
 exports[`renders the component as an \`a\` element if passed a href prop 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <li
   class="EntityListItem EntityListItem--is-interactive"
   data-test-id="cf-ui-entity-list-item"
@@ -133,7 +148,7 @@ exports[`renders the component as an \`a\` element if passed a href prop 1`] = `
     href="#"
   >
     <span
-      class="TabFocusTrap EntityListItem__focus-trap"
+      class="emotion-0 EntityListItem__focus-trap"
       tabindex="-1"
     >
       <figure
@@ -185,6 +200,11 @@ exports[`renders the component as an \`a\` element if passed a href prop 1`] = `
 `;
 
 exports[`renders the component as an Asset with a lower-cased entityType 1`] = `
+.emotion-1 {
+  display: inherit;
+  outline: 0;
+}
+
 .emotion-0 {
   display: inline-block;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
@@ -211,7 +231,7 @@ exports[`renders the component as an Asset with a lower-cased entityType 1`] = `
     class="EntityListItem__inner"
   >
     <span
-      class="TabFocusTrap EntityListItem__focus-trap"
+      class="emotion-1 EntityListItem__focus-trap"
       tabindex="-1"
     >
       <figure
@@ -283,6 +303,11 @@ exports[`renders the component as an Asset with a lower-cased entityType 1`] = `
 `;
 
 exports[`renders the component as an Asset with a title-cased entityType 1`] = `
+.emotion-1 {
+  display: inherit;
+  outline: 0;
+}
+
 .emotion-0 {
   display: inline-block;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
@@ -309,7 +334,7 @@ exports[`renders the component as an Asset with a title-cased entityType 1`] = `
     class="EntityListItem__inner"
   >
     <span
-      class="TabFocusTrap EntityListItem__focus-trap"
+      class="emotion-1 EntityListItem__focus-trap"
       tabindex="-1"
     >
       <figure
@@ -381,6 +406,11 @@ exports[`renders the component as an Asset with a title-cased entityType 1`] = `
 `;
 
 exports[`renders the component as an asset entityType icon with an archived status 1`] = `
+.emotion-1 {
+  display: inherit;
+  outline: 0;
+}
+
 .emotion-0 {
   display: inline-block;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
@@ -407,7 +437,7 @@ exports[`renders the component as an asset entityType icon with an archived stat
     class="EntityListItem__inner"
   >
     <span
-      class="TabFocusTrap EntityListItem__focus-trap"
+      class="emotion-1 EntityListItem__focus-trap"
       tabindex="-1"
     >
       <figure
@@ -479,6 +509,11 @@ exports[`renders the component as an asset entityType icon with an archived stat
 `;
 
 exports[`renders the component as an asset entityType variant 1`] = `
+.emotion-1 {
+  display: inherit;
+  outline: 0;
+}
+
 .emotion-0 {
   display: inline-block;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
@@ -505,7 +540,7 @@ exports[`renders the component as an asset entityType variant 1`] = `
     class="EntityListItem__inner"
   >
     <span
-      class="TabFocusTrap EntityListItem__focus-trap"
+      class="emotion-1 EntityListItem__focus-trap"
       tabindex="-1"
     >
       <figure
@@ -577,6 +612,11 @@ exports[`renders the component as an asset entityType variant 1`] = `
 `;
 
 exports[`renders the component as an asset thumbnail preview 1`] = `
+.emotion-1 {
+  display: inherit;
+  outline: 0;
+}
+
 .emotion-0 {
   display: inline-block;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
@@ -603,7 +643,7 @@ exports[`renders the component as an asset thumbnail preview 1`] = `
     class="EntityListItem__inner"
   >
     <span
-      class="TabFocusTrap EntityListItem__focus-trap"
+      class="emotion-1 EntityListItem__focus-trap"
       tabindex="-1"
     >
       <figure
@@ -765,6 +805,11 @@ exports[`renders the component as isLoading 1`] = `
 `;
 
 exports[`renders the component with a description 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <li
   class="EntityListItem"
   data-test-id="cf-ui-entity-list-item"
@@ -773,7 +818,7 @@ exports[`renders the component with a description 1`] = `
     class="EntityListItem__inner"
   >
     <span
-      class="TabFocusTrap EntityListItem__focus-trap"
+      class="emotion-0 EntityListItem__focus-trap"
       tabindex="-1"
     >
       <figure
@@ -832,6 +877,11 @@ exports[`renders the component with a description 1`] = `
 `;
 
 exports[`renders the component with a drag handle 1`] = `
+.emotion-1 {
+  display: inherit;
+  outline: 0;
+}
+
 .emotion-0 {
   display: inline-block;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
@@ -883,7 +933,7 @@ exports[`renders the component with a drag handle 1`] = `
     class="EntityListItem__inner"
   >
     <span
-      class="TabFocusTrap EntityListItem__focus-trap"
+      class="emotion-1 EntityListItem__focus-trap"
       tabindex="-1"
     >
       <figure
@@ -953,6 +1003,11 @@ exports[`renders the component with a drag handle 1`] = `
 `;
 
 exports[`renders the component with a status 1`] = `
+.emotion-1 {
+  display: inherit;
+  outline: 0;
+}
+
 .emotion-0 {
   display: inline-block;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
@@ -979,7 +1034,7 @@ exports[`renders the component with a status 1`] = `
     class="EntityListItem__inner"
   >
     <span
-      class="TabFocusTrap EntityListItem__focus-trap"
+      class="emotion-1 EntityListItem__focus-trap"
       tabindex="-1"
     >
       <figure
@@ -1049,6 +1104,11 @@ exports[`renders the component with a status 1`] = `
 `;
 
 exports[`renders the component with active drag state 1`] = `
+.emotion-1 {
+  display: inherit;
+  outline: 0;
+}
+
 .emotion-0 {
   display: inline-block;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
@@ -1075,7 +1135,7 @@ exports[`renders the component with active drag state 1`] = `
     class="EntityListItem__inner"
   >
     <span
-      class="TabFocusTrap EntityListItem__focus-trap"
+      class="emotion-1 EntityListItem__focus-trap"
       tabindex="-1"
     >
       <figure
@@ -1145,6 +1205,11 @@ exports[`renders the component with active drag state 1`] = `
 `;
 
 exports[`renders the component with an additional class name 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <li
   class="EntityListItem my-extra-class"
   data-test-id="cf-ui-entity-list-item"
@@ -1153,7 +1218,7 @@ exports[`renders the component with an additional class name 1`] = `
     class="EntityListItem__inner"
   >
     <span
-      class="TabFocusTrap EntityListItem__focus-trap"
+      class="emotion-0 EntityListItem__focus-trap"
       tabindex="-1"
     >
       <figure
@@ -1212,6 +1277,11 @@ exports[`renders the component with an additional class name 1`] = `
 `;
 
 exports[`renders the component with custom drag handle 1`] = `
+.emotion-1 {
+  display: inherit;
+  outline: 0;
+}
+
 .emotion-0 {
   display: inline-block;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
@@ -1263,7 +1333,7 @@ exports[`renders the component with custom drag handle 1`] = `
     class="EntityListItem__inner"
   >
     <span
-      class="TabFocusTrap EntityListItem__focus-trap"
+      class="emotion-1 EntityListItem__focus-trap"
       tabindex="-1"
     >
       <figure
@@ -1333,6 +1403,11 @@ exports[`renders the component with custom drag handle 1`] = `
 `;
 
 exports[`renders the component with disabled actions 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <li
   class="EntityListItem my-extra-class"
   data-test-id="cf-ui-entity-list-item"
@@ -1341,7 +1416,7 @@ exports[`renders the component with disabled actions 1`] = `
     class="EntityListItem__inner"
   >
     <span
-      class="TabFocusTrap EntityListItem__focus-trap"
+      class="emotion-0 EntityListItem__focus-trap"
       tabindex="-1"
     >
       <figure
@@ -1400,6 +1475,11 @@ exports[`renders the component with disabled actions 1`] = `
 `;
 
 exports[`renders the component with dropdownListElements 1`] = `
+.emotion-1 {
+  display: inherit;
+  outline: 0;
+}
+
 .emotion-0 {
   display: inline-block;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
@@ -1426,7 +1506,7 @@ exports[`renders the component with dropdownListElements 1`] = `
     class="EntityListItem__inner"
   >
     <span
-      class="TabFocusTrap EntityListItem__focus-trap"
+      class="emotion-1 EntityListItem__focus-trap"
       tabindex="-1"
     >
       <figure
@@ -1501,7 +1581,7 @@ exports[`renders the component with dropdownListElements 1`] = `
             type="button"
           >
             <span
-              class="TabFocusTrap IconButton__inner"
+              class="emotion-1 IconButton__inner"
               tabindex="-1"
             >
               <svg

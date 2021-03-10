@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import { axe } from '../../utils/axeHelper';
+import { axe } from '../../../../../scripts/test/axeHelper';
 import { TabFocusTrap } from './TabFocusTrap';
 
 it('renders the component', () => {

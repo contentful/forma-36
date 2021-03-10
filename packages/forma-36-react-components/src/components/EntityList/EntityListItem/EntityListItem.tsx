@@ -10,7 +10,7 @@ import {
   SkeletonContainer,
   SkeletonImage,
 } from '../../Skeleton';
-import { TabFocusTrap } from '../../TabFocusTrap';
+import { TabFocusTrap } from '@contentful/f36-utils';
 import styles from './EntityListItem.css';
 
 export type EntityListItemStatus =

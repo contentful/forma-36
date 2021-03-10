@@ -3,7 +3,7 @@ import cn from 'classnames';
 import type { MouseEventHandler } from 'react';
 
 import { Icon, IconType } from '../Icon';
-import { TabFocusTrap } from '../TabFocusTrap';
+import { TabFocusTrap } from '@contentful/f36-utils';
 import styles from './TextLink.css';
 
 export type TextLinkType =

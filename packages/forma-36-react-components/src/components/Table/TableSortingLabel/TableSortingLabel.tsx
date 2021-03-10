@@ -4,7 +4,7 @@ import type { ButtonHTMLAttributes } from 'react';
 
 import { Icon } from '../../Icon';
 import { sortingDirections } from '../TableCell/TableCell';
-import { TabFocusTrap } from '../../TabFocusTrap/TabFocusTrap';
+import { TabFocusTrap } from '@contentful/f36-utils';
 import styles from './TableSortingLabel.css';
 
 export interface TableSortingLabelProps

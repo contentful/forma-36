@@ -1,6 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component (complex) 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <div
   class="Workbench"
   data-test-id="cf-ui-workbench"
@@ -48,7 +53,7 @@ exports[`renders the component (complex) 1`] = `
         type="button"
       >
         <span
-          class="TabFocusTrap Button__inner-wrapper"
+          class="emotion-0 Button__inner-wrapper"
           tabindex="-1"
         >
           <span
@@ -90,6 +95,11 @@ exports[`renders the component (complex) 1`] = `
 `;
 
 exports[`renders the component (simple) 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <div
   class="Workbench"
   data-test-id="cf-ui-workbench"
@@ -137,7 +147,7 @@ exports[`renders the component (simple) 1`] = `
         type="button"
       >
         <span
-          class="TabFocusTrap Button__inner-wrapper"
+          class="emotion-0 Button__inner-wrapper"
           tabindex="-1"
         >
           <span

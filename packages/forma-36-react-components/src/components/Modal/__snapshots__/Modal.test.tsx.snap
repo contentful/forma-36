@@ -1,6 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`can be controlled 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <div
   class="react-modal"
 >
@@ -24,7 +29,7 @@ exports[`can be controlled 1`] = `
         type="button"
       >
         <span
-          class="TabFocusTrap IconButton__inner"
+          class="emotion-0 IconButton__inner"
           tabindex="-1"
         >
           <svg
@@ -67,6 +72,11 @@ exports[`can be controlled 1`] = `
 `;
 
 exports[`can override header and content properties 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <div
   class="react-modal"
 >
@@ -90,7 +100,7 @@ exports[`can override header and content properties 1`] = `
         type="button"
       >
         <span
-          class="TabFocusTrap IconButton__inner"
+          class="emotion-0 IconButton__inner"
           tabindex="-1"
         >
           <svg
@@ -123,6 +133,11 @@ exports[`can override header and content properties 1`] = `
 `;
 
 exports[`renders the component 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <div
   class="react-modal"
 >
@@ -146,7 +161,7 @@ exports[`renders the component 1`] = `
         type="button"
       >
         <span
-          class="TabFocusTrap IconButton__inner"
+          class="emotion-0 IconButton__inner"
           tabindex="-1"
         >
           <svg
