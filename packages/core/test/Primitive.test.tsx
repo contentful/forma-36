@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 
-import { Primitive } from '../src/';
+import { Primitive } from '../src';
 
 it('renders the component as a div', () => {
   const { container } = render(<Primitive />);
