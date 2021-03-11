@@ -46,5 +46,6 @@ export * from './components/Tooltip';
 export * from './components/Typography';
 export * from './components/ValidationMessage';
 export * from './components/Workbench';
+export * from './components/Workbench';
 
 // -- Add imports above this line (required by plopfile.js) --

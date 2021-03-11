@@ -55,7 +55,7 @@ interface Args extends FlexProps {
   exampleBoxesNumber: number;
 }
 export const Basic = ({ exampleBoxesNumber, ...args }: Args) => (
-  <Flex {...args} htmlTag="article">
+  <Flex {...args} as="article">
     <DemoBox times={exampleBoxesNumber} />
   </Flex>
 );
