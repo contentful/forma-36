@@ -89,9 +89,6 @@ type FlexOwnProps = {
   /**
    * sets padding-left to one of the corresponding spacing tokens, default is none */
   paddingLeft?: SpacingTypes;
-  /**
-   * style prop, for inline styles */
-  style?: React.CSSProperties;
 };
 
 export type FlexProps<E extends React.ElementType> = PolymorphicComponentProps<

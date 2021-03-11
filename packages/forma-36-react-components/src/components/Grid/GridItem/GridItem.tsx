@@ -27,9 +27,6 @@ type GridItemOwnProps = {
   /**
    * order css property */
   order?: number;
-  /**
-   * inline css properties */
-  style?: React.CSSProperties;
 };
 
 export type GridItemProps<
