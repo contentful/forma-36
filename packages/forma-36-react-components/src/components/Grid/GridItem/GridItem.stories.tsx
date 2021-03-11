@@ -39,7 +39,7 @@ const DemoBox = ({ times, id }: { times?: number; id?: string }) => {
   return <GridItem style={styles.demoBox}></GridItem>;
 };
 
-interface GridItemArgs extends GridItemProps {
+interface GridItemArgs extends GridItemProps<'div'> {
   exampleBoxes: number;
 }
 
