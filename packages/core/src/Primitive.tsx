@@ -31,7 +31,7 @@ const defaultElement = 'div';
 
 export const Primitive: <E extends React.ElementType = typeof defaultElement>(
   props: PrimitiveProps<E>,
-) => React.ReactElement | null = React.forwardRef(function Box(
+) => React.ReactElement | null = React.forwardRef(function Primitive(
   props: PrimitiveOwnProps,
   ref: React.Ref<Element>,
 ) {
