@@ -35,7 +35,7 @@ export interface FlexProps {
    * Sets width: 100% */
   fullWidth?: boolean;
   /**
-   * Sets hegiht: 100% */
+   * Sets height: 100% */
   fullHeight?: boolean;
   /**
    * Sets display:inline-flex */
