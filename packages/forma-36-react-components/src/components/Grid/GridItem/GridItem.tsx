@@ -45,7 +45,7 @@ function GridItem<E extends React.ElementType = typeof DEFAULT_TAG>(
     style: styleProp,
     ...otherProps
   }: GridItemProps<E>,
-  forwardedRef,
+  ref: typeof otherProps.ref,
 ) {
   const calculatedArea = area
     ? area
@@ -63,12 +63,7 @@ function GridItem<E extends React.ElementType = typeof DEFAULT_TAG>(
   };
 
   return (
-    <Primitive
-      as={DEFAULT_TAG}
-      {...otherProps}
-      ref={forwardedRef}
-      style={style}
-    >
+    <Primitive as={DEFAULT_TAG} {...otherProps} ref={ref} style={style}>
       {children}
     </Primitive>
   );

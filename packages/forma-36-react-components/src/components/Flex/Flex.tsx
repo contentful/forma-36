@@ -101,35 +101,38 @@ const handleSpacing = (value: SpacingTypes) =>
 
 const DEFAULT_TAG = 'div';
 
-function Flex<E extends React.ElementType = typeof DEFAULT_TAG>({
-  alignItems,
-  alignSelf,
-  children,
-  className,
-  flexDirection,
-  flexGrow,
-  flexWrap,
-  fullHeight,
-  fullWidth,
-  inlineFlex,
-  justifyContent,
-  justifyItems,
-  justifySelf,
-  margin,
-  marginBottom,
-  marginLeft,
-  marginRight,
-  marginTop,
-  noShrink,
-  padding,
-  paddingBottom,
-  paddingLeft,
-  paddingRight,
-  paddingTop,
-  style,
-  testId = 'cf-ui-flex',
-  ...otherProps
-}: FlexProps<E>) {
+function Flex<E extends React.ElementType = typeof DEFAULT_TAG>(
+  {
+    alignItems,
+    alignSelf,
+    children,
+    className,
+    flexDirection,
+    flexGrow,
+    flexWrap,
+    fullHeight,
+    fullWidth,
+    inlineFlex,
+    justifyContent,
+    justifyItems,
+    justifySelf,
+    margin,
+    marginBottom,
+    marginLeft,
+    marginRight,
+    marginTop,
+    noShrink,
+    padding,
+    paddingBottom,
+    paddingLeft,
+    paddingRight,
+    paddingTop,
+    style,
+    testId = 'cf-ui-flex',
+    ...otherProps
+  }: FlexProps<E>,
+  ref: typeof otherProps.ref,
+) {
   const fullMargins = { margin: margin && handleSpacing(margin) };
   const sidesMargins = {
     marginTop: marginTop && handleSpacing(marginTop),
@@ -170,6 +173,7 @@ function Flex<E extends React.ElementType = typeof DEFAULT_TAG>({
     <Primitive
       as={DEFAULT_TAG}
       {...otherProps}
+      ref={ref}
       className={classNames}
       style={{ ...inlineStyle, ...marginResult, ...paddingsResult, ...style }}
       testId={testId}
