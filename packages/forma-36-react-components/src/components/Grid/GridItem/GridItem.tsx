@@ -1,44 +1,43 @@
-import React, { forwardRef } from 'react';
-import { Primitive } from '@contentful/f36-primitive';
-import type { PrimitiveProps } from '@contentful/f36-primitive';
-import type * as Polymorphic from '@contentful/f36-polymorphic';
+import React from 'react';
+import { Primitive } from '@contentful/f36-core';
+import type { PolymorphicComponentProps } from '@contentful/f36-core';
 import type * as CSS from 'csstype';
 
 const DEFAULT_TAG = 'div';
 
-export type GridItemProps = Polymorphic.Merge<
-  PrimitiveProps,
-  {
-    /**
-     * Child nodes to be rendered in the component */
-    children?: React.ReactNode;
-    /**
-     * one of grid-column-start css values */
-    columnStart?: CSS.Property.GridColumnStart;
-    /**
-     * one of grid-column-end css values */
-    columnEnd?: CSS.Property.GridColumnEnd;
-    /**
-     * one of grid-column-start css values */
-    rowStart?: CSS.Property.GridRowStart;
-    /**
-     * one of grid-row-end css values */
-    rowEnd?: CSS.Property.GridRowEnd;
-    /**
-     * one of grid-area css values */
-    area?: CSS.Property.GridArea;
-    /**
-     * order css property */
-    order?: number;
-    /**
-     * inline css properties */
-    style?: React.CSSProperties;
-  }
->;
+type GridItemOwnProps = {
+  /**
+   * Child nodes to be rendered in the component */
+  children?: React.ReactNode;
+  /**
+   * one of grid-column-start css values */
+  columnStart?: CSS.Property.GridColumnStart;
+  /**
+   * one of grid-column-end css values */
+  columnEnd?: CSS.Property.GridColumnEnd;
+  /**
+   * one of grid-column-start css values */
+  rowStart?: CSS.Property.GridRowStart;
+  /**
+   * one of grid-row-end css values */
+  rowEnd?: CSS.Property.GridRowEnd;
+  /**
+   * one of grid-area css values */
+  area?: CSS.Property.GridArea;
+  /**
+   * order css property */
+  order?: number;
+  /**
+   * inline css properties */
+  style?: React.CSSProperties;
+};
 
-export const GridItem = forwardRef(function GridItem(
+export type GridItemProps<
+  E extends React.ElementType
+> = PolymorphicComponentProps<E, GridItemOwnProps>;
+
+function GridItem<E extends React.ElementType = typeof DEFAULT_TAG>(
   {
-    as = DEFAULT_TAG,
     children,
     columnStart,
     columnEnd,
@@ -48,7 +47,7 @@ export const GridItem = forwardRef(function GridItem(
     order,
     style: styleProp,
     ...otherProps
-  }: GridItemProps,
+  }: GridItemProps<E>,
   forwardedRef,
 ) {
   const calculatedArea = area
@@ -67,8 +66,16 @@ export const GridItem = forwardRef(function GridItem(
   };
 
   return (
-    <Primitive {...otherProps} as={as} ref={forwardedRef} style={style}>
+    <Primitive
+      as={DEFAULT_TAG}
+      {...otherProps}
+      ref={forwardedRef}
+      style={style}
+    >
       {children}
     </Primitive>
   );
-}) as Polymorphic.ForwardRefComponent<typeof DEFAULT_TAG, GridItemProps>;
+}
+
+const _GridItem = React.forwardRef(GridItem);
+export { _GridItem as GridItem };

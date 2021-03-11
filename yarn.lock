@@ -1415,11 +1415,6 @@
   resolved "https://registry.yarnpkg.com/@contentful/forma-36-tokens/-/forma-36-tokens-0.10.1.tgz#e98f4cabc8381927317c7507279fcd6721c46735"
   integrity sha512-K0HX1N9N7H4iofqXmljAfwf6BnPYqeHIeFkiQnXN4+XCI0Z7Dyg++D1880lN5EhyCjEkgPUBViU/hjUj2ULZhw==
 
-"@contentful/forma-36-tokens@^0.9.4":
-  version "0.9.4"
-  resolved "https://registry.yarnpkg.com/@contentful/forma-36-tokens/-/forma-36-tokens-0.9.4.tgz#e4ad397a30c3b1af9e708beb353454ad00d16dad"
-  integrity sha512-lCv9MGjivCUYV25g2sNeGmqJmCk3KUF7EHy4iDru8Xo2DzqciVIumOZIyx7TVWzAckK94f4rEJ8E2PlRL5gYvg==
-
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
