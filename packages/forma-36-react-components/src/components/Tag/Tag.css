@@ -7,7 +7,7 @@
 .Tag {
   display: inline-block;
   font-family: var(--font-stack-primary);
-  font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-demi-bold);
   font-size: calc(1rem * (12 / var(--font-base-default)));
   line-height: 20px;
   max-height: 20px;
