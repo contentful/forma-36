@@ -4,6 +4,8 @@ import { Icon } from '../Icon';
 
 import { Pill, PillProps } from './Pill';
 import notes from './README.mdx';
+import { SectionHeading } from '../Typography';
+import { Flex } from '../Flex';
 
 export default {
   title: 'Components/Pill',
@@ -19,6 +21,7 @@ export default {
     onClose: { control: { disable: true } },
     onDrag: { control: { disable: true } },
     dragHandleComponent: { control: { disable: true } },
+    variant: { control: { disable: true } },
   },
 };
 
@@ -54,6 +57,44 @@ export const CustomHandleComponent = (args: PillProps) => (
   />
 );
 
+export const PillVariants = (args: PillProps) => (
+  <>
+    <div>
+      <Flex marginBottom="spacingXs">
+        <SectionHeading element="h3">Idle</SectionHeading>
+      </Flex>
+      <Pill
+        label={args.label}
+        onClose={args.onClose}
+        onDrag={args.onDrag}
+        variant="idle"
+      />
+    </div>
+    <div className="f36-margin-top--m">
+      <Flex marginBottom="spacingXs">
+        <SectionHeading element="h3">Active</SectionHeading>
+      </Flex>
+      <Pill
+        label={args.label}
+        onClose={args.onClose}
+        onDrag={args.onDrag}
+        variant="active"
+      />
+    </div>
+    <div className="f36-margin-top--m">
+      <Flex marginBottom="spacingXs">
+        <SectionHeading element="h3">Deleted</SectionHeading>
+      </Flex>
+      <Pill
+        label={args.label}
+        onClose={args.onClose}
+        onDrag={args.onDrag}
+        variant="deleted"
+      />
+    </div>
+  </>
+);
+
 basic.args = { label: 'example.user@contentful.com' };
 
 onDragAndOnClose.args = {
@@ -63,6 +104,12 @@ onDragAndOnClose.args = {
 };
 
 CustomHandleComponent.args = {
+  label: 'example.user@contentful.com',
+  onClose: action('clicked'),
+  onDrag: action('dragged'),
+};
+
+PillVariants.args = {
   label: 'example.user@contentful.com',
   onClose: action('clicked'),
   onDrag: action('dragged'),
