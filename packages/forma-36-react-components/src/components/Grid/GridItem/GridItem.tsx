@@ -5,7 +5,7 @@ import type * as CSS from 'csstype';
 
 const DEFAULT_TAG = 'div';
 
-export type GridItemOwnProps = {
+export type GridItemInternalProps = {
   /**
    * Child nodes to be rendered in the component */
   children?: React.ReactNode;
@@ -31,7 +31,7 @@ export type GridItemOwnProps = {
 
 export type GridItemProps<
   E extends React.ElementType
-> = PolymorphicComponentProps<E, GridItemOwnProps>;
+> = PolymorphicComponentProps<E, GridItemInternalProps>;
 
 function GridItem<E extends React.ElementType = typeof DEFAULT_TAG>(
   {

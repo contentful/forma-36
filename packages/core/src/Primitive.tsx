@@ -1,9 +1,7 @@
 import React from 'react';
 import type { CommonProps } from './types';
 
-export type PrimitiveOwnProps<
-  E extends React.ElementType = React.ElementType
-> = {
+type PrimitiveOwnProps<E extends React.ElementType = React.ElementType> = {
   as?: E;
 } & CommonProps;
 

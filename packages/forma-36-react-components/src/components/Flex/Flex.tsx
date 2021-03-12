@@ -19,7 +19,7 @@ export type SpacingTypes =
   | 'spacing3Xl'
   | 'spacing4Xl';
 
-export type FlexOwnProps = {
+export type FlexInternalProps = {
   /**
    * Child nodes to be rendered in the component */
   children?: React.ReactNode;
@@ -93,7 +93,7 @@ export type FlexOwnProps = {
 
 export type FlexProps<E extends React.ElementType> = PolymorphicComponentProps<
   E,
-  FlexOwnProps
+  FlexInternalProps
 >;
 
 const handleSpacing = (value: SpacingTypes) =>

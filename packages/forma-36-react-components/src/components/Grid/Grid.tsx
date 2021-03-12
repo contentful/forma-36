@@ -18,7 +18,7 @@ export type GapTypes =
   | 'spacing3Xl'
   | 'spacing4Xl';
 
-export interface GridOwnProps {
+export interface GridInternalProps {
   /**
    * Child nodes to be rendered in the component */
   children?: React.ReactNode;
@@ -50,7 +50,7 @@ export interface GridOwnProps {
 
 export type GridProps<E extends React.ElementType> = PolymorphicComponentProps<
   E,
-  GridOwnProps
+  GridInternalProps
 >;
 
 const DEFAULT_TAG = 'div';

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import tokens from '@contentful/forma-36-tokens';
-import { Flex, FlexOwnProps } from './Flex';
+import { Flex, FlexInternalProps } from './Flex';
 
 import notes from './README.mdx';
 
@@ -51,7 +51,7 @@ const DemoBox = ({ times }: { times?: number }) => {
   return <Flex style={styles.demoBox}>Example element</Flex>;
 };
 
-interface Args extends FlexOwnProps {
+interface Args extends FlexInternalProps {
   exampleBoxesNumber: number;
 }
 
