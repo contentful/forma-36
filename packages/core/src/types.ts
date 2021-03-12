@@ -1,3 +1,5 @@
+import type { CSSProperties } from 'react';
+
 export type CommonProps = {
   /**
    * Class names to be appended to the className prop of the component
@@ -8,4 +10,6 @@ export type CommonProps = {
    * (data-test-id)
    */
   testId?: string;
+  /** Styles */
+  style?: CSSProperties;
 };

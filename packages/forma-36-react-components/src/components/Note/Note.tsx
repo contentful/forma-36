@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
-import type { CSSProperties } from 'react';
+import { Primitive } from '@contentful/f36-core';
+import type { CommonProps } from '@contentful/f36-core';
 
 import { Icon, IconType } from '../Icon';
 import { iconName } from '../Icon/constants';
@@ -14,12 +15,9 @@ const Icons = {
   warning: iconName.Warning,
 };
 
-export interface NoteProps {
+export interface NoteProps extends CommonProps {
   noteType?: 'primary' | 'positive' | 'negative' | 'warning';
-  className?: string;
   title?: string;
-  style?: CSSProperties;
-  testId?: string;
   children: React.ReactNode;
   hasCloseButton?: boolean;
   onClose?: Function;
@@ -41,13 +39,14 @@ export function Note({
   }
 
   return (
-    <div
+    <Primitive
+      as="div"
       style={style}
       className={classNames(styles.Note, className, {
         [styles[`Note--${noteType}`]]: noteType,
         [styles['Note--hasCloseButton']]: hasCloseButton,
       })}
-      data-test-id={testId}
+      testId={testId}
     >
       <div className={styles.Note__icon}>
         <Icon icon={icon} color={noteType} size={title ? 'medium' : 'small'} />
@@ -70,6 +69,6 @@ export function Note({
           className={styles.Note__dismiss}
         />
       )}
-    </div>
+    </Primitive>
   );
 }
