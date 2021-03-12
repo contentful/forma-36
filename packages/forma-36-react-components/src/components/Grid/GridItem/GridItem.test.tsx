@@ -12,7 +12,9 @@ it('renders the component', () => {
 
 it('renders the component with an additional class name', () => {
   const { container } = render(
-    <GridItem className="my-extra-class">Grid Item</GridItem>,
+    <GridItem as="span" className="my-extra-class">
+      Grid Item
+    </GridItem>,
   );
 
   expect(container.firstChild).toMatchSnapshot();

@@ -4,3 +4,4 @@ export type {
   PolymorphicComponentProps,
   PolymorphicComponent,
 } from './Primitive';
+export type { CommonProps } from './types';

@@ -1,19 +1,11 @@
 import React from 'react';
+import type { CommonProps } from './types';
 
 export type PrimitiveOwnProps<
   E extends React.ElementType = React.ElementType
 > = {
   as?: E;
-  /**
-   * Class names to be appended to the className prop of the component
-   */
-  className?: string;
-  /**
-   * A selection ID used for testing purposes applied as a data attribute
-   * (data-test-id)
-   */
-  testId?: string;
-};
+} & CommonProps;
 
 export type PrimitiveProps<E extends React.ElementType> = PrimitiveOwnProps<E> &
   Omit<React.ComponentProps<E>, keyof PrimitiveOwnProps>;

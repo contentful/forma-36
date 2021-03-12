@@ -1,5 +1,6 @@
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
+import { PolymorphicComponentProps, Primitive } from '@contentful/f36-core';
 import cn from 'classnames';
 import type * as CSS from 'csstype';
 
@@ -17,16 +18,10 @@ export type GapTypes =
   | 'spacing3Xl'
   | 'spacing4Xl';
 
-export interface GridProps {
-  /**
-   * Class names to be appended to the className prop of the component */
-  className?: string;
+export interface GridOwnProps {
   /**
    * Child nodes to be rendered in the component */
   children?: React.ReactNode;
-  /**
-   * An ID used for testing purposes applied as a data attribute (data-test-id) */
-  testId?: string;
   /**
    * Defines how many columns, default is `auto` */
   columns?: number | CSS.Property.GridTemplateColumns;
@@ -51,12 +46,16 @@ export interface GridProps {
   /**
    * One of justify-content css values */
   alignContent?: CSS.Property.AlignContent;
-  /**
-   * style prop, for inline styles */
-  style?: React.CSSProperties;
 }
 
-export const Grid = ({
+export type GridProps<E extends React.ElementType> = PolymorphicComponentProps<
+  E,
+  GridOwnProps
+>;
+
+const DEFAULT_TAG = 'div';
+
+export function Grid<E extends React.ElementType = typeof DEFAULT_TAG>({
   alignContent,
   children,
   className,
@@ -70,7 +69,7 @@ export const Grid = ({
   style,
   testId = 'cf-ui-grid',
   ...otherProps
-}: GridProps) => {
+}: GridProps<E>) {
   const handleGridTemplate = (value?: string | number) => {
     if (typeof value === 'number') {
       return `repeat(${value}, minmax(0, 1fr)`;
@@ -102,13 +101,14 @@ export const Grid = ({
   });
 
   return (
-    <div
+    <Primitive
+      as={DEFAULT_TAG}
       {...otherProps}
       style={inlineStyle}
       className={classNames}
-      data-test-id={testId}
+      testId={testId}
     >
       {children}
-    </div>
+    </Primitive>
   );
-};
+}
