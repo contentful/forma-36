@@ -5,7 +5,6 @@
 
 .Pill {
   display: inline-flex;
-  background: var(--color-element-light);
   font-family: var(--font-stack-primary);
   border-radius: var(--border-radius-small);
   border: none;
@@ -14,21 +13,41 @@
   composes: focus-outline--default from './../../styles/settings/a11y.css';
 }
 
+.Pill--deleted {
+  background: var(--color-element-light);
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.Pill--idle {
+  background: var(--color-element-light);
+}
+
+.Pill--active {
+  background: var(--color-element-dark);
+}
+
 .Pill__label {
   line-height: 1.5rem;
   padding: 0.375rem 0.625rem;
   font-size: 0.875rem;
-  color: var(--color-text-mid);
-  color: var(--color-text-mid);
   flex-grow: 2;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
 
+.Pill__label--deleted,
+.Pill__label--idle {
+  color: var(--color-text-base);
+}
+
+.Pill__label--active {
+  color: var(--color-text-dark);
+}
+
 .Pill__close-button {
   border: none;
-  border-left: 1px solid var(--color-element-dark);
   border-top-right-radius: var(--border-radius-medium);
   border-bottom-right-radius: var(--border-radius-medium);
   padding: 0.375rem;
@@ -44,13 +63,33 @@
   }
 }
 
+.Pill__close-button--deleted,
+.Pill__close-button--idle {
+  border-left: 1px solid var(--color-element-darkest);
+}
+
+.Pill__close-button--active {
+  border-left: 1px solid var(--color-text-lightest);
+  &:hover,
+  &:focus {
+    background: var(--color-element-darkest);
+    cursor: pointer;
+  }
+}
+
 .Pill__drag-icon {
   line-height: 1.3rem;
   padding: 0.375rem 0.625rem;
   padding-right: 0;
 }
 
-.Pill__icon {
+.Pill__icon--deleted,
+.Pill__icon--idle {
+  fill: var(--color-element-darkest);
+  vertical-align: middle;
+}
+
+.Pill__icon--active {
   fill: var(--color-text-lightest);
   vertical-align: middle;
 }
