@@ -503,6 +503,16 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "nikazawila",
+      "name": "Nika Zawila",
+      "avatar_url": "https://avatars.githubusercontent.com/u/9191638?v=4",
+      "profile": "https://nikazawila.com",
+      "contributions": [
+        "code",
+        "maintenance"
+      ]
     }
   ],
   "contributorsPerLine": 7,

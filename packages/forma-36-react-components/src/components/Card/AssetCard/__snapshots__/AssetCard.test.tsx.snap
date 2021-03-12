@@ -326,6 +326,11 @@ exports[`renders the component with a drag handle 1`] = `
 `;
 
 exports[`renders the component with actions 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <div
   aria-label="picture of a cat"
   class="Card AssetCard AssetCard--size-default Card--padding-none"
@@ -350,7 +355,7 @@ exports[`renders the component with actions 1`] = `
           type="button"
         >
           <span
-            class="TabFocusTrap IconButton__inner"
+            class="emotion-0 IconButton__inner"
             tabindex="-1"
           >
             <svg

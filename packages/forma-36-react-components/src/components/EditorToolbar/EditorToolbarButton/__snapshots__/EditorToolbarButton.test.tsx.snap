@@ -1,6 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <span>
   <button
     class="IconButton EditorToolbarButton IconButton--secondary"
@@ -8,7 +13,7 @@ exports[`renders the component 1`] = `
     type="button"
   >
     <span
-      class="TabFocusTrap IconButton__inner"
+      class="emotion-0 IconButton__inner"
       tabindex="-1"
     >
       <svg
@@ -37,6 +42,11 @@ exports[`renders the component 1`] = `
 `;
 
 exports[`renders the component as active 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <span
   class="TooltipContainer"
 >
@@ -46,7 +56,7 @@ exports[`renders the component as active 1`] = `
     type="button"
   >
     <span
-      class="TabFocusTrap IconButton__inner"
+      class="emotion-0 IconButton__inner"
       tabindex="-1"
     >
       <svg
@@ -75,6 +85,11 @@ exports[`renders the component as active 1`] = `
 `;
 
 exports[`renders the component as disabled 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <span>
   <button
     class="IconButton EditorToolbarButton IconButton--disabled IconButton--secondary"
@@ -83,7 +98,7 @@ exports[`renders the component as disabled 1`] = `
     type="button"
   >
     <span
-      class="TabFocusTrap IconButton__inner"
+      class="emotion-0 IconButton__inner"
       tabindex="-1"
     >
       <svg
@@ -112,6 +127,11 @@ exports[`renders the component as disabled 1`] = `
 `;
 
 exports[`renders the component with a tooltip 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <span
   class="TooltipContainer"
 >
@@ -121,7 +141,7 @@ exports[`renders the component with a tooltip 1`] = `
     type="button"
   >
     <span
-      class="TabFocusTrap IconButton__inner"
+      class="emotion-0 IconButton__inner"
       tabindex="-1"
     >
       <svg
@@ -150,6 +170,11 @@ exports[`renders the component with a tooltip 1`] = `
 `;
 
 exports[`renders the component with an additional class name 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <span>
   <button
     class="IconButton EditorToolbarButton my-extra-class IconButton--secondary"
@@ -157,7 +182,7 @@ exports[`renders the component with an additional class name 1`] = `
     type="button"
   >
     <span
-      class="TabFocusTrap IconButton__inner"
+      class="emotion-0 IconButton__inner"
       tabindex="-1"
     >
       <svg
@@ -186,6 +211,11 @@ exports[`renders the component with an additional class name 1`] = `
 `;
 
 exports[`renders with a dropdown indicator 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <span
   class="TooltipContainer"
 >
@@ -195,7 +225,7 @@ exports[`renders with a dropdown indicator 1`] = `
     type="button"
   >
     <span
-      class="TabFocusTrap IconButton__inner"
+      class="emotion-0 IconButton__inner"
       tabindex="-1"
     >
       <svg

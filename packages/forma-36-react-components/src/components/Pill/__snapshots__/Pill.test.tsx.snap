@@ -16,6 +16,11 @@ exports[`renders the component 1`] = `
 `;
 
 exports[`renders the component with a close button 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <div
   class="Pill my-extra-class"
   data-test-id="cf-ui-pill"
@@ -33,7 +38,7 @@ exports[`renders the component with a close button 1`] = `
     type="button"
   >
     <span
-      class="TabFocusTrap"
+      class="emotion-0"
       tabindex="-1"
     >
       <svg

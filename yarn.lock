@@ -1379,10 +1379,10 @@
   dependencies:
     chalk "^4.0.0"
 
-"@contentful/browserslist-config@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@contentful/browserslist-config/-/browserslist-config-1.0.1.tgz#fc5aa36bb26f6a8982b3d511af486c2eedc43634"
-  integrity sha512-0Tf8nMfNoaDtATwVzqbwb1Q1EpLCAI8cZ21ds6P/uB2cu7RuJ/xa+1B/OafrG5huhVH/PxoJk3QWTjlCo6k0sg==
+"@contentful/browserslist-config@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@contentful/browserslist-config/-/browserslist-config-2.0.0.tgz#1d21dccd87a1e284e04a11976a7eebd4d0769076"
+  integrity sha512-wx/zWaVfhxwiIwET/51+Zg5PzEeyMIfWbOIgyi1zR4IM+1gJhyDgMPzUsChJazakI0EUqn1mcr+UJpwVnZ71MQ==
 
 "@contentful/forma-36-fcss@^0.3.1":
   version "0.3.1"
@@ -1391,10 +1391,10 @@
   dependencies:
     "@contentful/forma-36-tokens" "^0.10.1"
 
-"@contentful/forma-36-react-components@^3.83.0":
-  version "3.83.0"
-  resolved "https://registry.yarnpkg.com/@contentful/forma-36-react-components/-/forma-36-react-components-3.83.0.tgz#c2bf5d16e61a40b35d42f26979190c876f07cd47"
-  integrity sha512-yhqIJjVN0F4OexlouVGEfLYAio6QoHluwYG/Y4V7g0JuWT7MW5PKnC6OzXEgoGdA0OtdfR0fGckOPxj0b1F6Qg==
+"@contentful/forma-36-react-components@^3.83.1":
+  version "3.83.1"
+  resolved "https://registry.yarnpkg.com/@contentful/forma-36-react-components/-/forma-36-react-components-3.83.1.tgz#6b1354efaf602976ef88ec88aab7c21e8b067cc7"
+  integrity sha512-rpbT7VJ4Aij8IWQN8oV3lD3LDqwTZauzB69/dO2bxnHouiwdzaL52BhQG3xOKGVArnnJVopBJd2J9rEDjUGsNw==
   dependencies:
     "@babel/runtime" "^7.3.4"
     "@contentful/forma-36-fcss" "^0.3.1"
@@ -26094,10 +26094,10 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@3.9.7:
-  version "3.9.7"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.7.tgz#98d600a5ebdc38f40cb277522f12dc800e9e25fa"
-  integrity sha512-BLbiRkiBzAwsjut4x/dsibSTB6yWpwT5qWmC2OfuCg3GgVQCSgMs4vEctYPhsaGtd0AeuuHMkjZ2h2WG8MSzRw==
+typescript@4.2.3:
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.2.3.tgz#39062d8019912d43726298f09493d598048c1ce3"
+  integrity sha512-qOcYwxaByStAWrBf4x0fibwZvMRG+r4cQoTjbPtUlrWjBHbmCAww1i448U0GJ+3cNNEtebDteo/cHOR3xJ4wEw==
 
 uc.micro@^1.0.1, uc.micro@^1.0.5:
   version "1.0.6"

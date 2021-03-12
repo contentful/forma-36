@@ -1,19 +1,24 @@
 import React from 'react';
-import cn from 'classnames';
-
-import styles from './TabFocusTrap.css';
+import { css, cx } from 'emotion';
 
 export interface TabFocusTrapProps {
   className?: string;
   children: React.ReactNode;
 }
 
+const styles = {
+  root: css({
+    display: 'inherit',
+    outline: 0,
+  }),
+};
+
 export function TabFocusTrap({
   className,
   children,
   ...otherProps
 }: TabFocusTrapProps): React.ReactElement {
-  const classNames = cn(styles.TabFocusTrap, className);
+  const classNames = cx(styles.root, className);
 
   return (
     <span tabIndex={-1} className={classNames} {...otherProps}>

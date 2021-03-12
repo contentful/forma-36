@@ -1,6 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <div
   aria-live="polite"
   class="NotificationItem NotificationItem--success"
@@ -54,7 +59,7 @@ exports[`renders the component 1`] = `
       type="button"
     >
       <span
-        class="TabFocusTrap IconButton__inner"
+        class="emotion-0 IconButton__inner"
         tabindex="-1"
       >
         <svg
@@ -80,6 +85,11 @@ exports[`renders the component 1`] = `
 `;
 
 exports[`renders the component with "error" intent 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <div
   aria-live="assertive"
   class="NotificationItem NotificationItem--error"
@@ -133,7 +143,7 @@ exports[`renders the component with "error" intent 1`] = `
       type="button"
     >
       <span
-        class="TabFocusTrap IconButton__inner"
+        class="emotion-0 IconButton__inner"
         tabindex="-1"
       >
         <svg
@@ -159,6 +169,11 @@ exports[`renders the component with "error" intent 1`] = `
 `;
 
 exports[`renders the component with "warning" intent 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <div
   aria-live="assertive"
   class="NotificationItem NotificationItem--warning"
@@ -212,7 +227,7 @@ exports[`renders the component with "warning" intent 1`] = `
       type="button"
     >
       <span
-        class="TabFocusTrap IconButton__inner"
+        class="emotion-0 IconButton__inner"
         tabindex="-1"
       >
         <svg
@@ -238,6 +253,11 @@ exports[`renders the component with "warning" intent 1`] = `
 `;
 
 exports[`renders the component with a cta 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <div
   aria-live="assertive"
   class="NotificationItem NotificationItem--warning"
@@ -291,7 +311,7 @@ exports[`renders the component with a cta 1`] = `
           type="button"
         >
           <span
-            class="TabFocusTrap"
+            class="emotion-0"
             tabindex="-1"
           >
             This is some label text
@@ -305,7 +325,7 @@ exports[`renders the component with a cta 1`] = `
       type="button"
     >
       <span
-        class="TabFocusTrap IconButton__inner"
+        class="emotion-0 IconButton__inner"
         tabindex="-1"
       >
         <svg
@@ -331,6 +351,11 @@ exports[`renders the component with a cta 1`] = `
 `;
 
 exports[`renders the component with a title and a body 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <div
   aria-live="polite"
   class="NotificationItem NotificationItem--success"
@@ -386,7 +411,7 @@ exports[`renders the component with a title and a body 1`] = `
       type="button"
     >
       <span
-        class="TabFocusTrap IconButton__inner"
+        class="emotion-0 IconButton__inner"
         tabindex="-1"
       >
         <svg

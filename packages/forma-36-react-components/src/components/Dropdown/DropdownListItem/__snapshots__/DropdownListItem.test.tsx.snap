@@ -31,6 +31,11 @@ exports[`renders the component as disabled 1`] = `
 `;
 
 exports[`renders the component with a href 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <li
   class="DropdownListItem DropdownListItem__submenu-toggle"
   data-test-id="cf-ui-dropdown-list-item"
@@ -43,7 +48,7 @@ exports[`renders the component with a href 1`] = `
     type="button"
   >
     <span
-      class="TabFocusTrap DropdownListItem__button__inner-wrapper"
+      class="emotion-0 DropdownListItem__button__inner-wrapper"
       tabindex="-1"
     >
       DropdownListItem with a href

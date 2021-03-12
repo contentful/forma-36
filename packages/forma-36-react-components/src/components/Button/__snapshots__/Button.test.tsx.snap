@@ -1,13 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the button as active 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="Button Button--primary Button--medium Button--is-active"
   data-test-id="cf-ui-button"
   type="button"
 >
   <span
-    class="TabFocusTrap Button__inner-wrapper"
+    class="emotion-0 Button__inner-wrapper"
     tabindex="-1"
   >
     <span
@@ -20,6 +25,11 @@ exports[`renders the button as active 1`] = `
 `;
 
 exports[`renders the button as an external link 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <a
   class="Button Button--primary Button--medium"
   data-test-id="cf-ui-button"
@@ -29,7 +39,7 @@ exports[`renders the button as an external link 1`] = `
   type="button"
 >
   <span
-    class="TabFocusTrap Button__inner-wrapper"
+    class="emotion-0 Button__inner-wrapper"
     tabindex="-1"
   >
     <span
@@ -42,6 +52,11 @@ exports[`renders the button as an external link 1`] = `
 `;
 
 exports[`renders the button as link 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <a
   class="Button Button--primary Button--medium"
   data-test-id="cf-ui-button"
@@ -49,7 +64,7 @@ exports[`renders the button as link 1`] = `
   type="button"
 >
   <span
-    class="TabFocusTrap Button__inner-wrapper"
+    class="emotion-0 Button__inner-wrapper"
     tabindex="-1"
   >
     <span
@@ -62,13 +77,18 @@ exports[`renders the button as link 1`] = `
 `;
 
 exports[`renders the component 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="Button Button--primary Button--medium"
   data-test-id="cf-ui-button"
   type="button"
 >
   <span
-    class="TabFocusTrap Button__inner-wrapper"
+    class="emotion-0 Button__inner-wrapper"
     tabindex="-1"
   >
     <span
@@ -81,13 +101,18 @@ exports[`renders the component 1`] = `
 `;
 
 exports[`renders the component as naked 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="Button Button--naked Button--medium"
   data-test-id="cf-ui-button"
   type="button"
 >
   <span
-    class="TabFocusTrap Button__inner-wrapper"
+    class="emotion-0 Button__inner-wrapper"
     tabindex="-1"
   >
     <span
@@ -100,13 +125,18 @@ exports[`renders the component as naked 1`] = `
 `;
 
 exports[`renders the component as primary 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="Button Button--primary Button--medium"
   data-test-id="cf-ui-button"
   type="button"
 >
   <span
-    class="TabFocusTrap Button__inner-wrapper"
+    class="emotion-0 Button__inner-wrapper"
     tabindex="-1"
   >
     <span
@@ -119,6 +149,11 @@ exports[`renders the component as primary 1`] = `
 `;
 
 exports[`renders the component disabled 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="Button Button--primary Button--medium Button--disabled"
   data-test-id="cf-ui-button"
@@ -126,7 +161,7 @@ exports[`renders the component disabled 1`] = `
   type="button"
 >
   <span
-    class="TabFocusTrap Button__inner-wrapper"
+    class="emotion-0 Button__inner-wrapper"
     tabindex="-1"
   >
     <span
@@ -139,13 +174,18 @@ exports[`renders the component disabled 1`] = `
 `;
 
 exports[`renders the component full width 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="Button Button--primary Button--medium Button--full-width"
   data-test-id="cf-ui-button"
   type="button"
 >
   <span
-    class="TabFocusTrap Button__inner-wrapper"
+    class="emotion-0 Button__inner-wrapper"
     tabindex="-1"
   >
     <span
@@ -158,13 +198,18 @@ exports[`renders the component full width 1`] = `
 `;
 
 exports[`renders the component in loading state 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="Button Button--primary Button--medium"
   data-test-id="cf-ui-button"
   type="button"
 >
   <span
-    class="TabFocusTrap Button__inner-wrapper"
+    class="emotion-0 Button__inner-wrapper"
     tabindex="-1"
   >
     <span
@@ -230,13 +275,18 @@ exports[`renders the component in loading state 1`] = `
 `;
 
 exports[`renders the component with an additional class name 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="Button my-extra-class Button--primary Button--medium"
   data-test-id="cf-ui-button"
   type="button"
 >
   <span
-    class="TabFocusTrap Button__inner-wrapper"
+    class="emotion-0 Button__inner-wrapper"
     tabindex="-1"
   >
     <span
@@ -249,13 +299,18 @@ exports[`renders the component with an additional class name 1`] = `
 `;
 
 exports[`renders the component with dropdown indicator 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="Button Button--primary Button--medium Button--is-dropdown"
   data-test-id="cf-ui-button"
   type="button"
 >
   <span
-    class="TabFocusTrap Button__inner-wrapper"
+    class="emotion-0 Button__inner-wrapper"
     tabindex="-1"
   >
     <span
@@ -279,13 +334,18 @@ exports[`renders the component with dropdown indicator 1`] = `
 `;
 
 exports[`renders the component with icon 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="Button Button--primary Button--medium"
   data-test-id="cf-ui-button"
   type="button"
 >
   <span
-    class="TabFocusTrap Button__inner-wrapper"
+    class="emotion-0 Button__inner-wrapper"
     tabindex="-1"
   >
     <svg

@@ -34,7 +34,6 @@ export * from './components/SelectField';
 export * from './components/Skeleton';
 export * from './components/Spinner';
 export * from './components/Switch';
-export * from './components/TabFocusTrap';
 export * from './components/Table';
 export * from './components/Tabs';
 export * from './components/Textarea';

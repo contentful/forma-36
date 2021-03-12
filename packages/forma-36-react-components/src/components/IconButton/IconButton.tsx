@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 
 import { Icon, IconProps } from '../Icon';
-import { TabFocusTrap } from '../TabFocusTrap';
+import { TabFocusTrap } from '@contentful/f36-utils';
 import styles from './IconButton.css';
 
 export interface IconButtonProps extends React.HTMLAttributes<HTMLElement> {

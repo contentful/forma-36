@@ -1,6 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <div
   class="CopyButton"
   data-test-id="cf-ui-copy-button"
@@ -14,7 +19,7 @@ exports[`renders the component 1`] = `
       type="button"
     >
       <span
-        class="TabFocusTrap CopyButton__TabFocusTrap"
+        class="emotion-0 CopyButton__TabFocusTrap"
         tabindex="-1"
       >
         <span
@@ -45,6 +50,11 @@ exports[`renders the component 1`] = `
 `;
 
 exports[`renders the component with a copy value 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <div
   class="CopyButton"
   data-test-id="cf-ui-copy-button"
@@ -58,7 +68,7 @@ exports[`renders the component with a copy value 1`] = `
       type="button"
     >
       <span
-        class="TabFocusTrap CopyButton__TabFocusTrap"
+        class="emotion-0 CopyButton__TabFocusTrap"
         tabindex="-1"
       >
         <span
@@ -90,6 +100,11 @@ exports[`renders the component with a copy value 1`] = `
 `;
 
 exports[`renders the component with an additional class name 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <div
   class="CopyButton my-extra-class"
   data-test-id="cf-ui-copy-button"
@@ -103,7 +118,7 @@ exports[`renders the component with an additional class name 1`] = `
       type="button"
     >
       <span
-        class="TabFocusTrap CopyButton__TabFocusTrap"
+        class="emotion-0 CopyButton__TabFocusTrap"
         tabindex="-1"
       >
         <span
