@@ -5,7 +5,7 @@ import type * as CSS from 'csstype';
 
 const DEFAULT_TAG = 'div';
 
-type GridItemOwnProps = {
+export type GridItemOwnProps = {
   /**
    * Child nodes to be rendered in the component */
   children?: React.ReactNode;
