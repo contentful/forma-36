@@ -55,21 +55,24 @@ export type GridProps<E extends React.ElementType> = PolymorphicComponentProps<
 
 const DEFAULT_TAG = 'div';
 
-export function Grid<E extends React.ElementType = typeof DEFAULT_TAG>({
-  alignContent,
-  children,
-  className,
-  columnGap = 'spacingM',
-  columns = 'auto',
-  flow,
-  inline,
-  justifyContent,
-  rowGap = 'none',
-  rows = 'auto',
-  style,
-  testId = 'cf-ui-grid',
-  ...otherProps
-}: GridProps<E>) {
+function Grid<E extends React.ElementType = typeof DEFAULT_TAG>(
+  {
+    alignContent,
+    children,
+    className,
+    columnGap = 'spacingM',
+    columns = 'auto',
+    flow,
+    inline,
+    justifyContent,
+    rowGap = 'none',
+    rows = 'auto',
+    style,
+    testId = 'cf-ui-grid',
+    ...otherProps
+  }: GridProps<E>,
+  ref: typeof otherProps.ref,
+) {
   const handleGridTemplate = (value?: string | number) => {
     if (typeof value === 'number') {
       return `repeat(${value}, minmax(0, 1fr)`;
@@ -104,6 +107,7 @@ export function Grid<E extends React.ElementType = typeof DEFAULT_TAG>({
     <Primitive
       as={DEFAULT_TAG}
       {...otherProps}
+      ref={ref}
       style={inlineStyle}
       className={classNames}
       testId={testId}
@@ -112,3 +116,6 @@ export function Grid<E extends React.ElementType = typeof DEFAULT_TAG>({
     </Primitive>
   );
 }
+
+const _Grid = React.forwardRef(Grid);
+export { _Grid as Grid };
