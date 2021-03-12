@@ -21,7 +21,7 @@ export default {
     onClose: { control: { disable: true } },
     onDrag: { control: { disable: true } },
     dragHandleComponent: { control: { disable: true } },
-    state: { control: { disable: true } },
+    variant: { control: { disable: true } },
   },
 };
 
@@ -57,39 +57,39 @@ export const CustomHandleComponent = (args: PillProps) => (
   />
 );
 
-export const PillStates = (args: PillProps) => (
+export const PillVariants = (args: PillProps) => (
   <>
     <div>
       <Flex marginBottom="spacingXs">
-        <SectionHeading element="h3">Idle state</SectionHeading>
+        <SectionHeading element="h3">Idle</SectionHeading>
       </Flex>
       <Pill
         label={args.label}
         onClose={args.onClose}
         onDrag={args.onDrag}
-        state="idle"
+        variant="idle"
       />
     </div>
     <div className="f36-margin-top--m">
       <Flex marginBottom="spacingXs">
-        <SectionHeading element="h3">Active state</SectionHeading>
+        <SectionHeading element="h3">Active</SectionHeading>
       </Flex>
       <Pill
         label={args.label}
         onClose={args.onClose}
         onDrag={args.onDrag}
-        state="active"
+        variant="active"
       />
     </div>
     <div className="f36-margin-top--m">
       <Flex marginBottom="spacingXs">
-        <SectionHeading element="h3">Deleted state</SectionHeading>
+        <SectionHeading element="h3">Deleted</SectionHeading>
       </Flex>
       <Pill
         label={args.label}
         onClose={args.onClose}
         onDrag={args.onDrag}
-        state="deleted"
+        variant="deleted"
       />
     </div>
   </>
@@ -109,7 +109,7 @@ CustomHandleComponent.args = {
   onDrag: action('dragged'),
 };
 
-PillStates.args = {
+PillVariants.args = {
   label: 'example.user@contentful.com',
   onClose: action('clicked'),
   onDrag: action('dragged'),

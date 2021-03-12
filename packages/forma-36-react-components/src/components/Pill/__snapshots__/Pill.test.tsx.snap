@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders no close button in deleted state 1`] = `
+exports[`renders no close button in "deleted" variant 1`] = `
 <div
   class="Pill Pill--deleted my-extra-class"
   data-test-id="cf-ui-pill"
@@ -30,7 +30,7 @@ exports[`renders the component 1`] = `
 </div>
 `;
 
-exports[`renders the component in active state 1`] = `
+exports[`renders the component in "active" variant 1`] = `
 <div
   class="Pill Pill--active my-extra-class"
   data-test-id="cf-ui-pill"
@@ -45,7 +45,7 @@ exports[`renders the component in active state 1`] = `
 </div>
 `;
 
-exports[`renders the component in deleted state 1`] = `
+exports[`renders the component in "deleted" variant 1`] = `
 <div
   class="Pill Pill--deleted my-extra-class"
   data-test-id="cf-ui-pill"
@@ -60,7 +60,7 @@ exports[`renders the component in deleted state 1`] = `
 </div>
 `;
 
-exports[`renders the component in idle state by default 1`] = `
+exports[`renders the component in "idle" variant by default 1`] = `
 <div
   class="Pill Pill--idle my-extra-class"
   data-test-id="cf-ui-pill"
