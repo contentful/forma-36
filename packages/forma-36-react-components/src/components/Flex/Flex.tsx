@@ -19,7 +19,7 @@ export type SpacingTypes =
   | 'spacing3Xl'
   | 'spacing4Xl';
 
-type FlexOwnProps = {
+export type FlexOwnProps = {
   /**
    * Child nodes to be rendered in the component */
   children?: React.ReactNode;
