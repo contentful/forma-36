@@ -1,7 +1,7 @@
 import React from 'react';
 
 import tokens from '@contentful/f36-tokens';
-import { Flex, FlexInternalProps } from './Flex';
+import { Flex, FlexInternalProps } from '../src/Flex/Flex';
 
 import notes from './README.mdx';
 
