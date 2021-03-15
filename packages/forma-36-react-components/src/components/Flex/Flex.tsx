@@ -183,5 +183,8 @@ function Flex<E extends React.ElementType = typeof DEFAULT_TAG>(
   );
 }
 
-const _Flex = React.forwardRef(Flex);
+const _Flex: <E extends React.ElementType = typeof DEFAULT_TAG>(
+  props: FlexProps<E>,
+) => React.ReactElement | null = React.forwardRef(Flex);
+
 export { _Flex as Flex };

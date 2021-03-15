@@ -69,5 +69,8 @@ function GridItem<E extends React.ElementType = typeof DEFAULT_TAG>(
   );
 }
 
-const _GridItem = React.forwardRef(GridItem);
+const _GridItem: <E extends React.ElementType = typeof DEFAULT_TAG>(
+  props: GridItemProps<E>,
+) => React.ReactElement | null = React.forwardRef(GridItem);
+
 export { _GridItem as GridItem };

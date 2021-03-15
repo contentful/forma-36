@@ -117,5 +117,8 @@ function Grid<E extends React.ElementType = typeof DEFAULT_TAG>(
   );
 }
 
-const _Grid = React.forwardRef(Grid);
+const _Grid: <E extends React.ElementType = typeof DEFAULT_TAG>(
+  props: GridProps<E>,
+) => React.ReactElement | null = React.forwardRef(Grid);
+
 export { _Grid as Grid };
