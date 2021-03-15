@@ -1,9 +1,8 @@
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
 
-import { Grid, GridInternalProps } from './Grid';
-import { GridItem } from './GridItem/GridItem';
-import notes from './README.mdx';
+import { Grid, GridInternalProps } from '../src/Grid/Grid';
+import { GridItem } from '../src/Grid/GridItem/GridItem';
 
 const styles = {
   demoBox: {
@@ -20,7 +19,6 @@ export default {
   subcomponents: { GridItem },
   parameters: {
     propTypes: [Grid['__docgenInfo'], GridItem['__docgenInfo']],
-    notes,
   },
 };
 

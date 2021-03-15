@@ -1,8 +1,8 @@
 {
-  "name": "@contentful/f36-core",
+  "name": "@contentful/f36-layout",
   "version": "4.0.0",
   "private": true,
-  "description": "Forma 36 core",
+  "description": "Forma 36: Layout React Components",
   "license": "MIT",
   "files": [
     "dist",
@@ -19,12 +19,14 @@
     "url": "https://github.com/contentful/forma-36"
   },
   "scripts": {
-    "build": "parcel build src/index.ts"
+    "build": "parcel build index.ts"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",
     "emotion": "^10.0.17",
-    "@contentful/f36-tokens": "^4.0.0"
+    "@contentful/f36-tokens": "^4.0.0",
+    "@contentful/f36-core": "^4.0.0",
+    "csstype": "^3.0.5"
   },
   "peerDependencies": {
     "react": ">=16.8"
