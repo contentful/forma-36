@@ -48,7 +48,7 @@ const variantToStyles = ({ variant }: { variant: BadgeVariant }) => {
 export const Container = styled.div<{ variant: BadgeVariant }>`
   display: inline-block;
   font-family: ${tokens.fontStackPrimary};
-  font-weight: ${tokens.fontWeightMedium};
+  font-weight: ${tokens.fontWeightDemiBold};
   font-size: calc(1rem * (12 / ${tokens.fontBaseDefault}));
   line-height: 20px;
   max-height: 20px;
