@@ -1,6 +1,9 @@
 import React from 'react';
 import { Primitive } from '@contentful/f36-core';
-import type { PolymorphicComponentProps } from '@contentful/f36-core';
+import type {
+  PolymorphicComponentProps,
+  PolymorphicComponent,
+} from '@contentful/f36-core';
 import type * as CSS from 'csstype';
 
 const DEFAULT_TAG = 'div';
@@ -69,8 +72,9 @@ function GridItem<E extends React.ElementType = typeof DEFAULT_TAG>(
   );
 }
 
-const _GridItem: <E extends React.ElementType = typeof DEFAULT_TAG>(
-  props: GridItemProps<E>,
-) => React.ReactElement | null = React.forwardRef(GridItem);
+const _GridItem: PolymorphicComponent<
+  GridItemInternalProps,
+  typeof DEFAULT_TAG
+> = React.forwardRef(GridItem);
 
 export { _GridItem as GridItem };

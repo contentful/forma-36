@@ -1,6 +1,10 @@
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
-import { PolymorphicComponentProps, Primitive } from '@contentful/f36-core';
+import {
+  PolymorphicComponentProps,
+  PolymorphicComponent,
+  Primitive,
+} from '@contentful/f36-core';
 import cn from 'classnames';
 import type * as CSS from 'csstype';
 
@@ -117,8 +121,9 @@ function Grid<E extends React.ElementType = typeof DEFAULT_TAG>(
   );
 }
 
-const _Grid: <E extends React.ElementType = typeof DEFAULT_TAG>(
-  props: GridProps<E>,
-) => React.ReactElement | null = React.forwardRef(Grid);
+const _Grid: PolymorphicComponent<
+  GridInternalProps,
+  typeof DEFAULT_TAG
+> = React.forwardRef(Grid);
 
 export { _Grid as Grid };

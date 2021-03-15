@@ -2,7 +2,10 @@ import React from 'react';
 import tokens from '@contentful/f36-tokens';
 import cn from 'classnames';
 import { Primitive } from '@contentful/f36-core';
-import type { PolymorphicComponentProps } from '@contentful/f36-core';
+import type {
+  PolymorphicComponentProps,
+  PolymorphicComponent,
+} from '@contentful/f36-core';
 import type * as CSS from 'csstype';
 
 import styles from './Flex.css';
@@ -183,8 +186,9 @@ function Flex<E extends React.ElementType = typeof DEFAULT_TAG>(
   );
 }
 
-const _Flex: <E extends React.ElementType = typeof DEFAULT_TAG>(
-  props: FlexProps<E>,
-) => React.ReactElement | null = React.forwardRef(Flex);
+const _Flex: PolymorphicComponent<
+  FlexInternalProps,
+  typeof DEFAULT_TAG
+> = React.forwardRef(Flex);
 
 export { _Flex as Flex };
