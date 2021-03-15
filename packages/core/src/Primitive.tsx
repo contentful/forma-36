@@ -25,6 +25,12 @@ export const Primitive: <E extends React.ElementType = typeof defaultElement>(
   props: PrimitiveOwnProps,
   ref: React.Ref<Element>,
 ) {
-  const { as: Element = defaultElement, testId = undefined, ...rest } = props;
-  return <Element ref={ref} data-test-id={testId} {...rest} as={undefined} />;
+  const {
+    as: Element = defaultElement,
+    testId = undefined,
+    ...otherProps
+  } = props;
+  return (
+    <Element ref={ref} data-test-id={testId} {...otherProps} as={undefined} />
+  );
 });

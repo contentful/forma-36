@@ -14,11 +14,11 @@ export function ModalContent({
   testId = 'cf-ui-modal-content',
   className,
   children,
-  ...rest
+  ...otherProps
 }: ModalContentProps): React.ReactElement {
   return (
     <div
-      {...rest}
+      {...otherProps}
       className={cn(styles.ModalContent, className)}
       data-test-id={testId}
     >
