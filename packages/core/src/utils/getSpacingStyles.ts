@@ -24,7 +24,7 @@ const SpacingTable: { [key in Spacing]: string | undefined } = {
   spacing4Xl: tokens.spacing4Xl,
 };
 
-function convertSpacingToToken(spacing: Spacing) {
+export function convertSpacingToToken(spacing: Spacing) {
   return SpacingTable[spacing];
 }
 
