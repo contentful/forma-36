@@ -34,6 +34,43 @@ it('renders the component with a close button', () => {
   expect(container.firstChild).toMatchSnapshot();
 });
 
+it('renders the component in "idle" variant by default', () => {
+  const { container } = render(
+    <Pill className="my-extra-class" label="test" />,
+  );
+
+  expect(container.firstChild).toMatchSnapshot();
+});
+
+it('renders the component in "active" variant', () => {
+  const { container } = render(
+    <Pill className="my-extra-class" label="test" variant="active" />,
+  );
+
+  expect(container.firstChild).toMatchSnapshot();
+});
+
+it('renders the component in "deleted" variant', () => {
+  const { container } = render(
+    <Pill className="my-extra-class" label="test" variant="deleted" />,
+  );
+
+  expect(container.firstChild).toMatchSnapshot();
+});
+
+it('renders no close button in "deleted" variant', () => {
+  const { container } = render(
+    <Pill
+      className="my-extra-class"
+      label="test"
+      variant="deleted"
+      onClose={() => {}}
+    />,
+  );
+
+  expect(container.firstChild).toMatchSnapshot();
+});
+
 it('renders the component with a test id', () => {
   const { container } = render(
     <Pill className="my-extra-class" label="test" testId="test-id" />,

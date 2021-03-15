@@ -1384,37 +1384,6 @@
   resolved "https://registry.yarnpkg.com/@contentful/browserslist-config/-/browserslist-config-2.0.0.tgz#1d21dccd87a1e284e04a11976a7eebd4d0769076"
   integrity sha512-wx/zWaVfhxwiIwET/51+Zg5PzEeyMIfWbOIgyi1zR4IM+1gJhyDgMPzUsChJazakI0EUqn1mcr+UJpwVnZ71MQ==
 
-"@contentful/forma-36-fcss@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@contentful/forma-36-fcss/-/forma-36-fcss-0.3.1.tgz#b111e14a0075693678325a528d4751a7a4cea925"
-  integrity sha512-rzf2VM057ExIRIqdAES336LwpMlO9yGLXbap01P77vv1kXl/gqXOxqpXZCRZhCr5rOwZfKyVeManxK8EJ0FNCQ==
-  dependencies:
-    "@contentful/forma-36-tokens" "^0.10.1"
-
-"@contentful/forma-36-react-components@^3.83.1":
-  version "3.83.1"
-  resolved "https://registry.yarnpkg.com/@contentful/forma-36-react-components/-/forma-36-react-components-3.83.1.tgz#6b1354efaf602976ef88ec88aab7c21e8b067cc7"
-  integrity sha512-rpbT7VJ4Aij8IWQN8oV3lD3LDqwTZauzB69/dO2bxnHouiwdzaL52BhQG3xOKGVArnnJVopBJd2J9rEDjUGsNw==
-  dependencies:
-    "@babel/runtime" "^7.3.4"
-    "@contentful/forma-36-fcss" "^0.3.1"
-    "@contentful/forma-36-tokens" "^0.10.1"
-    "@popperjs/core" "^2.4.4"
-    classnames "^2.2.6"
-    csstype "^3.0.5"
-    dayjs "^1.9.1"
-    react-animate-height "^2.0.7"
-    react-copy-to-clipboard "^5.0.1"
-    react-modal "^3.11.2"
-    react-popper "^2.2.3"
-    react-transition-group "^2.4.0"
-    truncate "^2.0.1"
-
-"@contentful/forma-36-tokens@^0.10.1":
-  version "0.10.1"
-  resolved "https://registry.yarnpkg.com/@contentful/forma-36-tokens/-/forma-36-tokens-0.10.1.tgz#e98f4cabc8381927317c7507279fcd6721c46735"
-  integrity sha512-K0HX1N9N7H4iofqXmljAfwf6BnPYqeHIeFkiQnXN4+XCI0Z7Dyg++D1880lN5EhyCjEkgPUBViU/hjUj2ULZhw==
-
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
