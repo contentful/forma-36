@@ -1,6 +1,11 @@
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
 import cn from 'classnames';
+import { Primitive } from '@contentful/f36-core';
+import type {
+  PolymorphicComponentProps,
+  PolymorphicComponent,
+} from '@contentful/f36-core';
 import type * as CSS from 'csstype';
 
 import styles from './Flex.css';
@@ -17,20 +22,10 @@ export type SpacingTypes =
   | 'spacing3Xl'
   | 'spacing4Xl';
 
-export interface FlexProps {
-  /**
-   * Class names to be appended to the className prop of the component */
-  className?: string;
+export type FlexInternalProps = {
   /**
    * Child nodes to be rendered in the component */
   children?: React.ReactNode;
-  /**
-   * An ID used for testing purposes applied as a data attribute (data-test-id) */
-  testId?: string;
-  /**
-   * Html tag used as container
-   */
-  htmlTag?: React.ElementType;
   /**
    * Sets width: 100% */
   fullWidth?: boolean;
@@ -97,44 +92,50 @@ export interface FlexProps {
   /**
    * sets padding-left to one of the corresponding spacing tokens, default is none */
   paddingLeft?: SpacingTypes;
-  /**
-   * style prop, for inline styles */
-  style?: React.CSSProperties;
-}
+};
+
+export type FlexProps<E extends React.ElementType> = PolymorphicComponentProps<
+  E,
+  FlexInternalProps
+>;
 
 const handleSpacing = (value: SpacingTypes) =>
   value === 'none' ? 0 : tokens[value];
 
-export const Flex = ({
-  alignItems,
-  alignSelf,
-  children,
-  className,
-  flexDirection,
-  flexGrow,
-  flexWrap,
-  fullHeight,
-  fullWidth,
-  htmlTag: Container = 'div',
-  inlineFlex,
-  justifyContent,
-  justifyItems,
-  justifySelf,
-  margin,
-  marginBottom,
-  marginLeft,
-  marginRight,
-  marginTop,
-  noShrink,
-  padding,
-  paddingBottom,
-  paddingLeft,
-  paddingRight,
-  paddingTop,
-  style,
-  testId = 'cf-ui-flex',
-  ...otherProps
-}: FlexProps) => {
+const DEFAULT_TAG = 'div';
+
+function Flex<E extends React.ElementType = typeof DEFAULT_TAG>(
+  {
+    alignItems,
+    alignSelf,
+    children,
+    className,
+    flexDirection,
+    flexGrow,
+    flexWrap,
+    fullHeight,
+    fullWidth,
+    inlineFlex,
+    justifyContent,
+    justifyItems,
+    justifySelf,
+    margin,
+    marginBottom,
+    marginLeft,
+    marginRight,
+    marginTop,
+    noShrink,
+    padding,
+    paddingBottom,
+    paddingLeft,
+    paddingRight,
+    paddingTop,
+    style,
+    testId = 'cf-ui-flex',
+    ...otherProps
+  }: FlexProps<E>,
+  ref: typeof otherProps.ref,
+) {
   const fullMargins = { margin: margin && handleSpacing(margin) };
   const sidesMargins = {
     marginTop: marginTop && handleSpacing(marginTop),
@@ -172,13 +173,22 @@ export const Flex = ({
   });
 
   return (
-    <Container
+    <Primitive
+      as={DEFAULT_TAG}
       {...otherProps}
-      style={{ ...inlineStyle, ...marginResult, ...paddingsResult, ...style }}
+      ref={ref}
       className={classNames}
-      data-test-id={testId}
+      style={{ ...inlineStyle, ...marginResult, ...paddingsResult, ...style }}
+      testId={testId}
     >
       {children}
-    </Container>
+    </Primitive>
   );
-};
+}
+
+const _Flex: PolymorphicComponent<
+  FlexInternalProps,
+  typeof DEFAULT_TAG
+> = React.forwardRef(Flex);
+
+export { _Flex as Flex };

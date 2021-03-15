@@ -1,7 +1,7 @@
 import React from 'react';
 
 import tokens from '@contentful/f36-tokens';
-import { Flex, FlexProps } from './Flex';
+import { Flex, FlexInternalProps } from './Flex';
 
 import notes from './README.mdx';
 
@@ -51,11 +51,12 @@ const DemoBox = ({ times }: { times?: number }) => {
   return <Flex style={styles.demoBox}>Example element</Flex>;
 };
 
-interface Args extends FlexProps {
+interface Args extends FlexInternalProps {
   exampleBoxesNumber: number;
 }
+
 export const Basic = ({ exampleBoxesNumber, ...args }: Args) => (
-  <Flex {...args} htmlTag="article">
+  <Flex as="article" {...args}>
     <DemoBox times={exampleBoxesNumber} />
   </Flex>
 );

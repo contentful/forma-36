@@ -1,5 +1,10 @@
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
+import {
+  PolymorphicComponentProps,
+  PolymorphicComponent,
+  Primitive,
+} from '@contentful/f36-core';
 import cn from 'classnames';
 import type * as CSS from 'csstype';
 
@@ -17,16 +22,10 @@ export type GapTypes =
   | 'spacing3Xl'
   | 'spacing4Xl';
 
-export interface GridProps {
-  /**
-   * Class names to be appended to the className prop of the component */
-  className?: string;
+export interface GridInternalProps {
   /**
    * Child nodes to be rendered in the component */
   children?: React.ReactNode;
-  /**
-   * An ID used for testing purposes applied as a data attribute (data-test-id) */
-  testId?: string;
   /**
    * Defines how many columns, default is `auto` */
   columns?: number | CSS.Property.GridTemplateColumns;
@@ -51,26 +50,33 @@ export interface GridProps {
   /**
    * One of justify-content css values */
   alignContent?: CSS.Property.AlignContent;
-  /**
-   * style prop, for inline styles */
-  style?: React.CSSProperties;
 }
 
-export const Grid = ({
-  alignContent,
-  children,
-  className,
-  columnGap = 'spacingM',
-  columns = 'auto',
-  flow,
-  inline,
-  justifyContent,
-  rowGap = 'none',
-  rows = 'auto',
-  style,
-  testId = 'cf-ui-grid',
-  ...otherProps
-}: GridProps) => {
+export type GridProps<E extends React.ElementType> = PolymorphicComponentProps<
+  E,
+  GridInternalProps
+>;
+
+const DEFAULT_TAG = 'div';
+
+function Grid<E extends React.ElementType = typeof DEFAULT_TAG>(
+  {
+    alignContent,
+    children,
+    className,
+    columnGap = 'spacingM',
+    columns = 'auto',
+    flow,
+    inline,
+    justifyContent,
+    rowGap = 'none',
+    rows = 'auto',
+    style,
+    testId = 'cf-ui-grid',
+    ...otherProps
+  }: GridProps<E>,
+  ref: typeof otherProps.ref,
+) {
   const handleGridTemplate = (value?: string | number) => {
     if (typeof value === 'number') {
       return `repeat(${value}, minmax(0, 1fr)`;
@@ -102,13 +108,22 @@ export const Grid = ({
   });
 
   return (
-    <div
+    <Primitive
+      as={DEFAULT_TAG}
       {...otherProps}
+      ref={ref}
       style={inlineStyle}
       className={classNames}
-      data-test-id={testId}
+      testId={testId}
     >
       {children}
-    </div>
+    </Primitive>
   );
-};
+}
+
+const _Grid: PolymorphicComponent<
+  GridInternalProps,
+  typeof DEFAULT_TAG
+> = React.forwardRef(Grid);
+
+export { _Grid as Grid };

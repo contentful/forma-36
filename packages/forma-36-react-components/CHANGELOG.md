@@ -5,6 +5,8 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [3.84.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.83.1...@contentful/forma-36-react-components@3.84.0) (2021-03-12)
 
+=======
+
 ### Features
 
 - **pill:** add pill variants ([#874](https://github.com/contentful/forma-36/issues/874)) ([f1dd1cd](https://github.com/contentful/forma-36/commit/f1dd1cd34a62acaa9e22cf31ffa353151a04ca20))

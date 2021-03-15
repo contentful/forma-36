@@ -1,8 +1,9 @@
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
 
-import { Grid, GridProps } from '../Grid';
-import { GridItem, GridItemProps } from './GridItem';
+import { Grid, GridInternalProps } from '../Grid';
+import { GridItem, GridItemInternalProps } from './GridItem';
+
 import notes from './GridItem.md';
 
 const styles = {
@@ -39,11 +40,11 @@ const DemoBox = ({ times, id }: { times?: number; id?: string }) => {
   return <GridItem style={styles.demoBox}></GridItem>;
 };
 
-interface GridItemArgs extends GridItemProps {
+interface GridItemArgs extends GridItemInternalProps {
   exampleBoxes: number;
 }
 
-interface GridArgs extends GridProps {
+interface GridArgs extends GridInternalProps {
   exampleGridHeight: string;
 }
 

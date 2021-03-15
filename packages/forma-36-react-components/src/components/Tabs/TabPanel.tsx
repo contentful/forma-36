@@ -13,11 +13,11 @@ export function TabPanel({
   className,
   children,
   id,
-  ...rest
+  ...otherProps
 }: TabPanelProps): React.ReactElement {
   return (
     <div
-      {...rest}
+      {...otherProps}
       id={id}
       role="tabpanel"
       data-test-id={testId}

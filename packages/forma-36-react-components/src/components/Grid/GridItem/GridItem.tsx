@@ -1,16 +1,17 @@
 import React from 'react';
+import { Primitive } from '@contentful/f36-core';
+import type {
+  PolymorphicComponentProps,
+  PolymorphicComponent,
+} from '@contentful/f36-core';
 import type * as CSS from 'csstype';
 
-export interface GridItemProps {
-  /**
-   * Class names to be appended to the className prop of the component */
-  className?: string;
+const DEFAULT_TAG = 'div';
+
+export type GridItemInternalProps = {
   /**
    * Child nodes to be rendered in the component */
   children?: React.ReactNode;
-  /**
-   * An ID used for testing purposes applied as a data attribute (data-test-id) */
-  testId?: string;
   /**
    * one of grid-column-start css values */
   columnStart?: CSS.Property.GridColumnStart;
@@ -29,28 +30,26 @@ export interface GridItemProps {
   /**
    * order css property */
   order?: number;
-  /**
-   * inline css properties */
-  style?: React.CSSProperties;
-  /**
-   * html tag */
-  htmlTag?: React.ElementType;
-}
+};
 
-export const GridItem = (props: GridItemProps) => {
-  const {
+export type GridItemProps<
+  E extends React.ElementType
+> = PolymorphicComponentProps<E, GridItemInternalProps>;
+
+function GridItem<E extends React.ElementType = typeof DEFAULT_TAG>(
+  {
     children,
-    className,
     columnStart,
     columnEnd,
     rowStart,
     rowEnd,
     area,
     order,
-    htmlTag: Container = 'div',
+    style: styleProp,
     ...otherProps
-  } = props;
-
+  }: GridItemProps<E>,
+  ref: typeof otherProps.ref,
+) {
   const calculatedArea = area
     ? area
     : [
@@ -63,12 +62,19 @@ export const GridItem = (props: GridItemProps) => {
   const style = {
     gridArea: calculatedArea,
     order,
-    ...props.style,
+    ...styleProp,
   };
 
   return (
-    <Container {...otherProps} className={className} style={style}>
+    <Primitive as={DEFAULT_TAG} {...otherProps} ref={ref} style={style}>
       {children}
-    </Container>
+    </Primitive>
   );
-};
+}
+
+const _GridItem: PolymorphicComponent<
+  GridItemInternalProps,
+  typeof DEFAULT_TAG
+> = React.forwardRef(GridItem);
+
+export { _GridItem as GridItem };

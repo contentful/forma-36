@@ -31,9 +31,10 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.3.4",
-    "@contentful/forma-36-fcss": "^4.0.0",
-    "@contentful/f36-tokens": "^4.0.0",
     "@contentful/f36-badge": "^4.0.0",
+    "@contentful/f36-core": "^4.0.0",
+    "@contentful/f36-tokens": "^4.0.0",
+    "@contentful/forma-36-fcss": "^4.0.0",
     "@contentful/f36-utils": "^4.0.0",
     "@popperjs/core": "^2.4.4",
     "classnames": "^2.2.6",
