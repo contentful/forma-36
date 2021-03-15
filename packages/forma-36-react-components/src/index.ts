@@ -1,5 +1,6 @@
 export * from '@contentful/f36-badge';
-export * from '@contentful/f36-core';
+export { Flex, Grid, GridItem } from '@contentful/f36-core';
+export type { FlexProps, GridProps, GridItemProps } from '@contentful/f36-core';
 export * from './components/Accordion';
 export * from './components/Asset';
 export * from './components/Autocomplete';
