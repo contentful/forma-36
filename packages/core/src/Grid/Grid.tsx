@@ -1,10 +1,12 @@
-import React from 'react';
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
+
+import { forwardRef } from 'react';
 import {
   PolymorphicComponentProps,
   PolymorphicComponent,
 } from '../Primitive/Primitive';
 import { Box } from '../Box';
-import { cx, css } from 'emotion';
 import type * as CSS from 'csstype';
 import type { MarginProps, PaddingProps, Spacing } from '../types';
 import { convertSpacingToToken } from '../utils/getSpacingStyles';
@@ -70,26 +72,22 @@ function Grid<E extends React.ElementType = typeof DEFAULT_TAG>(
     return value;
   };
 
-  const classNames = cx(
-    css({
-      gridTemplateColumns: handleGridTemplate(columns),
-      gridTemplateRows: handleGridTemplate(rows),
-      flow,
-      justifyContent,
-      alignContent,
-      columnGap: convertSpacingToToken(columnGap) ?? 0,
-      rowGap: convertSpacingToToken(rowGap) ?? 0,
-    }),
-    className,
-  );
-
   return (
     <Box
       as={DEFAULT_TAG}
       {...otherProps}
+      css={{
+        gridTemplateColumns: handleGridTemplate(columns),
+        gridTemplateRows: handleGridTemplate(rows),
+        flow,
+        justifyContent,
+        alignContent,
+        columnGap: convertSpacingToToken(columnGap) ?? 0,
+        rowGap: convertSpacingToToken(rowGap) ?? 0,
+      }}
       display={inline ? 'inline-grid' : 'grid'}
       ref={ref}
-      className={classNames}
+      className={className}
       testId={testId}
     >
       {children}
@@ -100,6 +98,6 @@ function Grid<E extends React.ElementType = typeof DEFAULT_TAG>(
 const _Grid: PolymorphicComponent<
   GridInternalProps,
   typeof DEFAULT_TAG
-> = React.forwardRef(Grid);
+> = forwardRef(Grid);
 
 export { _Grid as Grid };

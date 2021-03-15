@@ -1,5 +1,7 @@
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
+
 import React from 'react';
-import { css, cx } from 'emotion';
 import {
   PolymorphicComponentProps,
   PolymorphicComponent,
@@ -78,30 +80,26 @@ function Flex<E extends React.ElementType = typeof DEFAULT_TAG>(
   }: FlexProps<E>,
   ref: typeof otherProps.ref,
 ) {
-  const classNames = cx(
-    css({
-      width: fullWidth ? '100%' : undefined,
-      height: fullHeight ? '100%' : undefined,
-      flexShrink: noShrink ? 0 : undefined,
-      flexDirection,
-      justifyContent,
-      justifyItems,
-      justifySelf,
-      alignItems,
-      alignSelf,
-      flexWrap,
-      flexGrow,
-    }),
-    className,
-  );
-
   return (
     <Box
       as={DEFAULT_TAG}
       {...otherProps}
+      css={{
+        width: fullWidth ? '100%' : undefined,
+        height: fullHeight ? '100%' : undefined,
+        flexShrink: noShrink ? 0 : undefined,
+        flexDirection,
+        justifyContent,
+        justifyItems,
+        justifySelf,
+        alignItems,
+        alignSelf,
+        flexWrap,
+        flexGrow,
+      }}
       display={inlineFlex ? 'inline-flex' : 'flex'}
       ref={ref}
-      className={classNames}
+      className={className}
       testId={testId}
     >
       {children}

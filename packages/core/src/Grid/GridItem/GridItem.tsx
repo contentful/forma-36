@@ -1,5 +1,7 @@
-import React from 'react';
-import { css, cx } from 'emotion';
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
+
+import { forwardRef } from 'react';
 import {
   PolymorphicComponentProps,
   PolymorphicComponent,
@@ -65,13 +67,11 @@ function GridItem<E extends React.ElementType = typeof DEFAULT_TAG>(
     <Box
       as={DEFAULT_TAG}
       {...otherProps}
-      className={cx(
-        css({
-          gridArea: calculatedArea,
-          order,
-        }),
-        className,
-      )}
+      css={{
+        gridArea: calculatedArea,
+        order,
+      }}
+      className={className}
       ref={ref}
     >
       {children}
@@ -82,6 +82,6 @@ function GridItem<E extends React.ElementType = typeof DEFAULT_TAG>(
 const _GridItem: PolymorphicComponent<
   GridItemInternalProps,
   typeof DEFAULT_TAG
-> = React.forwardRef(GridItem);
+> = forwardRef(GridItem);
 
 export { _GridItem as GridItem };

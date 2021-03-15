@@ -18,7 +18,7 @@ exports[`renders the component with an additional class name 1`] = `
 }
 
 <div
-  class="emotion-0 my-extra-class"
+  class="my-extra-class emotion-0"
 >
   Box
 </div>

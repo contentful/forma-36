@@ -79,6 +79,7 @@ exports[`should have correct styles should has correct numbers of columns 1`] = 
   grid-template-rows: auto;
   column-gap: 1rem;
   row-gap: 0;
+  label: Grid;
 }
 
 <div
@@ -96,6 +97,7 @@ exports[`should have correct styles should has correct numbers of rows 1`] = `
   grid-template-rows: repeat(12,minmax(0,1fr);
   column-gap: 1rem;
   row-gap: 0;
+  label: Grid;
 }
 
 <div

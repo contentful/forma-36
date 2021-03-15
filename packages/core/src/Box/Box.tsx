@@ -1,6 +1,8 @@
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
+
 import * as React from 'react';
 import * as CSS from 'csstype';
-import { css, cx } from 'emotion';
 import type { MarginProps, PaddingProps } from '../types';
 import { getSpacingStyles } from '../utils/getSpacingStyles';
 
@@ -30,10 +32,8 @@ function Box<E extends React.ElementType = typeof DEFAULT_TAG>(
     <Primitive
       {...otherProps}
       ref={ref}
-      className={cx(
-        css({ display, ...getSpacingStyles(otherProps) }),
-        className,
-      )}
+      css={{ display, ...getSpacingStyles(otherProps) }}
+      className={className}
     >
       {children}
     </Primitive>
