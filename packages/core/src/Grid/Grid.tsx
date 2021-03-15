@@ -60,7 +60,6 @@ function Grid<E extends React.ElementType = typeof DEFAULT_TAG>(
     justifyContent,
     rowGap = 'none',
     rows = 'auto',
-    testId = 'cf-ui-grid',
     ...otherProps
   }: GridProps<E>,
   ref: typeof otherProps.ref,
@@ -88,7 +87,6 @@ function Grid<E extends React.ElementType = typeof DEFAULT_TAG>(
       display={inline ? 'inline-grid' : 'grid'}
       ref={ref}
       className={className}
-      testId={testId}
     >
       {children}
     </Box>

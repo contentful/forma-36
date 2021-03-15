@@ -75,7 +75,6 @@ function Flex<E extends React.ElementType = typeof DEFAULT_TAG>(
     justifyItems,
     justifySelf,
     noShrink,
-    testId = 'cf-ui-flex',
     ...otherProps
   }: FlexProps<E>,
   ref: typeof otherProps.ref,
@@ -100,7 +99,6 @@ function Flex<E extends React.ElementType = typeof DEFAULT_TAG>(
       display={inlineFlex ? 'inline-flex' : 'flex'}
       ref={ref}
       className={className}
-      testId={testId}
     >
       {children}
     </Box>
