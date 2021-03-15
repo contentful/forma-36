@@ -28,9 +28,8 @@ import {
   Dropdown,
   DropdownListItem,
   DropdownList,
-} from '@contentful/forma-36-react-components';
-
-import tokens from '@contentful/forma-36-tokens';
+} from '@contentful/f36-components';
+import tokens from '@contentful/f36-tokens';
 
 const styles = {
   selectedTime: css({

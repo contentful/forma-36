@@ -7,7 +7,7 @@ import {
   TextInput,
   FormLabel,
   ValidationMessage,
-} from '@contentful/forma-36-react-components';
+} from '@contentful/f36-components';
 
 const styles = {
   datePickerWrapper: css({
