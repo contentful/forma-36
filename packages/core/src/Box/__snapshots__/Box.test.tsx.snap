@@ -37,3 +37,18 @@ exports[`should have correct styles should render correct padding and margin val
   Box
 </div>
 `;
+
+exports[`should have correct styles should render correct padding and margin values and apply polymorphic props 1`] = `
+.emotion-0 {
+  display: block;
+  margin-bottom: 4rem;
+  padding: 1rem;
+}
+
+<a
+  class="emotion-0"
+  href="https://contentful.com"
+>
+  Link to Contentful
+</a>
+`;

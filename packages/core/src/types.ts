@@ -13,3 +13,40 @@ export type CommonProps = {
   /** Styles */
   style?: CSSProperties;
 };
+
+export type Spacing =
+  | '2xs'
+  | 'xs'
+  | 's'
+  | 'm'
+  | 'l'
+  | 'xl'
+  | '2xl'
+  | '3xl'
+  | '4xl';
+
+export interface MarginProps {
+  m?: Spacing;
+  margin?: Spacing;
+  ml?: Spacing;
+  marginLeft?: Spacing;
+  mr?: Spacing;
+  marginRight?: Spacing;
+  mt?: Spacing;
+  marginTop?: Spacing;
+  mb?: Spacing;
+  marginBottom?: Spacing;
+}
+
+export interface PaddingProps {
+  p?: Spacing;
+  padding?: Spacing;
+  pl?: Spacing;
+  paddingLeft?: Spacing;
+  pr?: Spacing;
+  paddingRight?: Spacing;
+  pt?: Spacing;
+  paddingTop?: Spacing;
+  pb?: Spacing;
+  paddingBottom?: Spacing;
+}

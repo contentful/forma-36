@@ -1,5 +1,6 @@
 import React from 'react';
 import type { CommonProps } from '../types';
+import isPropValid from '@emotion/is-prop-valid';
 
 type PrimitiveOwnProps<E extends React.ElementType = React.ElementType> = {
   as?: E;
@@ -30,7 +31,13 @@ export const Primitive: <E extends React.ElementType = typeof defaultElement>(
     testId = undefined,
     ...otherProps
   } = props;
+  const validProps: Partial<PrimitiveOwnProps> = {};
+  for (const key in otherProps) {
+    if (isPropValid(key)) {
+      validProps[key] = otherProps[key];
+    }
+  }
   return (
-    <Element ref={ref} data-test-id={testId} {...otherProps} as={undefined} />
+    <Element ref={ref} data-test-id={testId} {...validProps} as={undefined} />
   );
 });

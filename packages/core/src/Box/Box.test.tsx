@@ -33,4 +33,20 @@ describe('should have correct styles', () => {
 
     expect(container.firstChild).toMatchSnapshot();
   });
+
+  it('should render correct padding and margin values and apply polymorphic props', () => {
+    const { container } = render(
+      <Box
+        p="m"
+        mb="xl"
+        marginBottom="3xl"
+        as="a"
+        href="https://contentful.com"
+      >
+        Link to Contentful
+      </Box>,
+    );
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
