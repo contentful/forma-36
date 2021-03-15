@@ -4,7 +4,7 @@ import tokens from '@contentful/f36-tokens';
 
 import { Spinner, SpinnerProps } from './Spinner';
 import { SectionHeading, Subheading } from '../Typography';
-import { Flex } from '../Flex';
+import { Flex } from '@contentful/f36-core';
 
 export default {
   title: 'Components/Spinner',

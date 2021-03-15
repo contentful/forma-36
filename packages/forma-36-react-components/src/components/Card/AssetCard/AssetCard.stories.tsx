@@ -1,10 +1,10 @@
 import React from 'react';
+import { Flex } from '@contentful/f36-core';
 
 import { AssetCard, AssetCardProps } from './AssetCard';
 import { Icon } from '../../Icon';
 import { DropdownList, DropdownListItem } from '../../Dropdown';
 import { CardDragHandle } from '../CardDragHandle/CardDragHandle';
-import { Flex } from '../../Flex';
 import { SectionHeading } from '../../Typography';
 
 export default {

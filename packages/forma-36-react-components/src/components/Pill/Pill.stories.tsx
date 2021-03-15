@@ -5,7 +5,7 @@ import { Icon } from '../Icon';
 import { Pill, PillProps } from './Pill';
 import notes from './README.mdx';
 import { SectionHeading } from '../Typography';
-import { Flex } from '../Flex';
+import { Flex } from '@contentful/f36-core';
 
 export default {
   title: 'Components/Pill',

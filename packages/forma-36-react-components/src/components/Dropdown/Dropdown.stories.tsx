@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
+import { Flex } from '@contentful/f36-core';
 
 import { Dropdown } from './Dropdown';
 import { DropdownListItem } from './DropdownListItem/DropdownListItem';
 import { Button } from '../Button';
 import { TextLink } from '../TextLink';
 import { DropdownList } from './DropdownList/DropdownList';
-import { Flex } from '../Flex';
 import { SectionHeading } from '../Typography';
 
 export default {

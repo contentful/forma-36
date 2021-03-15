@@ -1,5 +1,5 @@
 import React from 'react';
-import type { CommonProps } from './types';
+import type { CommonProps } from '../types';
 
 type PrimitiveOwnProps<E extends React.ElementType = React.ElementType> = {
   as?: E;

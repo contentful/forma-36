@@ -4,7 +4,7 @@ import { Button } from '../Button';
 import { Notification, NotificationsAPI } from './Notification';
 import notes from './README.mdx';
 import { NotificationItem } from './NotificationItem';
-import { Flex } from '../Flex';
+import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '../Typography';
 
 let index = 0;

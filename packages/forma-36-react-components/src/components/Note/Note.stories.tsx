@@ -4,7 +4,7 @@ import notes from './README.mdx';
 import { Note, NoteProps } from './Note';
 import { TextLink } from '../TextLink';
 import { SectionHeading } from '../Typography';
-import { Flex } from '../Flex';
+import { Flex } from '@contentful/f36-core';
 
 export default {
   title: 'Components/Note',

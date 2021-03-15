@@ -1,9 +1,9 @@
 import React from 'react';
+import { Flex } from '@contentful/f36-core';
 
 import { EntryCard, EntryCardProps } from './EntryCard';
 import { CardDragHandle } from '../CardDragHandle/CardDragHandle';
 import { DropdownList, DropdownListItem } from '../../Dropdown';
-import { Flex } from '../../Flex';
 import { SectionHeading } from '../../Typography';
 
 export default {

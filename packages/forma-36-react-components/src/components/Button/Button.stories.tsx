@@ -1,7 +1,7 @@
 import React from 'react';
+import { Flex } from '@contentful/f36-core';
 
 import { Button, ButtonProps } from './Button';
-import { Flex } from '../Flex';
 import { SectionHeading } from '../Typography';
 import { Badge } from '@contentful/f36-badge';
 import { iconName } from '../Icon/constants';

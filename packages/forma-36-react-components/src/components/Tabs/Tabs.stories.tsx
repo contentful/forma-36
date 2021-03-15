@@ -6,7 +6,7 @@ import { Tabs } from './Tabs';
 import { Tab } from './Tab';
 import { TabPanel } from './TabPanel';
 import { SectionHeading } from '../Typography';
-import { Flex } from '../Flex';
+import { Flex } from '@contentful/f36-core';
 
 export default {
   argTypes: {

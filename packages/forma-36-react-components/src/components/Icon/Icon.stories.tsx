@@ -1,10 +1,9 @@
 import React from 'react';
+import { Flex, Grid } from '@contentful/f36-core';
 
 import { Icon, IconProps } from './Icon';
 import { iconName, iconSizes, iconColors } from './constants';
-import { Flex } from '../Flex';
 import { Paragraph, SectionHeading } from '../Typography';
-import { Grid } from '../Grid/Grid';
 
 export default {
   title: 'Components/Icon',

@@ -1,9 +1,9 @@
 import React from 'react';
-import { Primitive } from '@contentful/f36-core';
-import type {
+import {
+  Primitive,
   PolymorphicComponentProps,
   PolymorphicComponent,
-} from '@contentful/f36-core';
+} from '../../Primitive/Primitive';
 import type * as CSS from 'csstype';
 
 const DEFAULT_TAG = 'div';

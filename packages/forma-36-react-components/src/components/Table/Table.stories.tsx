@@ -8,7 +8,7 @@ import { TableCell } from './TableCell/TableCell';
 import { TableRow } from './TableRow/TableRow';
 import { SkeletonRow } from '../Skeleton';
 import notes from './Table.md';
-import { Flex } from '../Flex';
+import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '../Typography';
 import { Button } from '../Button/Button';
 
