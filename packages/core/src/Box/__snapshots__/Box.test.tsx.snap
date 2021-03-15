@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component 1`] = `
+.emotion-0 {
+  display: block;
+}
+
+<div
+  class="emotion-0"
+>
+  Box
+</div>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+.emotion-0 {
+  display: block;
+}
+
+<div
+  class="emotion-0 my-extra-class"
+>
+  Box
+</div>
+`;
+
+exports[`should have correct styles should render correct padding and margin values 1`] = `
+.emotion-0 {
+  display: block;
+  margin-left: 2rem;
+  padding-right: 0.5rem;
+}
+
+<div
+  class="emotion-0"
+>
+  Box
+</div>
+`;
