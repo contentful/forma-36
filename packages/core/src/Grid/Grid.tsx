@@ -4,11 +4,9 @@ import {
   PolymorphicComponentProps,
   PolymorphicComponent,
   Primitive,
-} from '@contentful/f36-core';
-import cn from 'classnames';
+} from '../Primitive';
+import { cx, css } from 'emotion';
 import type * as CSS from 'csstype';
-
-import styles from './Grid.css';
 
 export type GapTypes =
   | 'none'
@@ -103,9 +101,12 @@ function Grid<E extends React.ElementType = typeof DEFAULT_TAG>(
     ...style,
   };
 
-  const classNames = cn(styles.Grid, className, {
-    [styles.Grid__inline]: inline,
-  });
+  const classNames = cx(
+    css({
+      display: inline ? 'inline-grid' : 'grid',
+    }),
+    className,
+  );
 
   return (
     <Primitive

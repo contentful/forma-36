@@ -1,7 +1,3 @@
-export { Primitive } from './Primitive';
-export type {
-  PrimitiveProps,
-  PolymorphicComponentProps,
-  PolymorphicComponent,
-} from './Primitive';
+export * from './Primitive';
+export * from './Grid';
 export type { CommonProps } from './types';

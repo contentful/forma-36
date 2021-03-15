@@ -1,4 +1,6 @@
 export * from '@contentful/f36-badge';
+export { Grid, GridItem } from '@contentful/f36-core';
+export type { GridItemProps, GridProps } from '@contentful/f36-core';
 export * from './components/Accordion';
 export * from './components/Asset';
 export * from './components/Autocomplete';
@@ -18,7 +20,6 @@ export * from './components/EntityList';
 export * from './components/Flex';
 export * from './components/Form';
 export * from './components/FormLabel';
-export * from './components/Grid';
 export * from './components/HelpText';
 export * from './components/Icon';
 export * from './components/IconButton';
