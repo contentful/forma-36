@@ -4,7 +4,7 @@ import {
   PolymorphicComponentProps,
   PolymorphicComponent,
   Primitive,
-} from '@contentful/f36-core';
+} from '../Primitive/Primitive';
 import { cx, css } from 'emotion';
 import type * as CSS from 'csstype';
 

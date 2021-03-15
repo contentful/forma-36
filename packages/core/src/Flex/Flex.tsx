@@ -1,11 +1,11 @@
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
 import { css, cx } from 'emotion';
-import { Primitive } from '@contentful/f36-core';
-import type {
+import {
+  Primitive,
   PolymorphicComponentProps,
   PolymorphicComponent,
-} from '@contentful/f36-core';
+} from '../Primitive/Primitive';
 import type * as CSS from 'csstype';
 
 export type SpacingTypes =
