@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as CSS from 'csstype';
-import { cx, css } from 'emotion';
+import { css, cx } from 'emotion';
 import type { MarginProps, PaddingProps } from '../types';
 import { getSpacingStyles } from '../utils/getSpacingStyles';
 
@@ -14,7 +14,7 @@ import {
 
 export interface BoxInternalProps extends MarginProps, PaddingProps {
   display?: CSS.Property.Display;
-  children?: React.ReactNode | React.ReactNode[];
+  children?: React.ReactNode;
 }
 
 export type BoxProps<E extends React.ElementType> = PolymorphicComponentProps<
