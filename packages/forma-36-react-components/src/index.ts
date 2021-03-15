@@ -16,7 +16,6 @@ export * from './components/EmptyState';
 export * from './components/Illustration';
 export * from './components/DateTime';
 export * from './components/EntityList';
-export * from './components/Flex';
 export * from './components/Form';
 export * from './components/FormLabel';
 export * from './components/HelpText';

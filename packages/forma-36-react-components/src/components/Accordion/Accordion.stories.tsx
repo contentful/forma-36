@@ -1,8 +1,8 @@
 import React from 'react';
+import { Flex } from '@contentful/f36-layout';
 
 import { Accordion, AccordionProps } from './Accordion';
 import { AccordionItem } from './AccordionItem/AccordionItem';
-import { Flex } from '../Flex';
 import { Paragraph, SectionHeading, Typography } from '../Typography';
 import notes from './README.mdx';
 

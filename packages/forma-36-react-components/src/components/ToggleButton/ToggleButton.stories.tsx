@@ -2,7 +2,7 @@ import React from 'react';
 
 import { ToggleButton, ToggleButtonProps } from './ToggleButton';
 import { SectionHeading } from '../Typography';
-import { Flex } from '../Flex';
+import { Flex } from '@contentful/f36-layout';
 
 import type { Meta } from '@storybook/react/types-6-0';
 

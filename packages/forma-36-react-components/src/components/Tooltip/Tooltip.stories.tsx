@@ -3,7 +3,7 @@ import React from 'react';
 import { Tooltip } from './Tooltip';
 import { Paragraph, SectionHeading } from '../Typography';
 import { TextLink } from '../TextLink';
-import { Flex } from '../Flex';
+import { Flex } from '@contentful/f36-layout';
 import notes from './README.mdx';
 
 export default {

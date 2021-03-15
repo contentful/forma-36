@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { Switch, SwitchProps } from './Switch';
 import { SectionHeading } from '../Typography';
-import { Flex } from '../Flex';
+import { Flex } from '@contentful/f36-layout';
 
 export default {
   title: 'Components/Switch',

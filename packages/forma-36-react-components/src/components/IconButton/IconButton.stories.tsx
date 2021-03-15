@@ -2,7 +2,7 @@ import React from 'react';
 
 import { IconButton, IconButtonProps } from './IconButton';
 import { iconName } from '../Icon/constants';
-import { Flex } from '../Flex';
+import { Flex } from '@contentful/f36-layout';
 import { Paragraph, SectionHeading } from '../Typography';
 
 // TODO align colors between Icon and IconButton? (warning is missing in IconButton)

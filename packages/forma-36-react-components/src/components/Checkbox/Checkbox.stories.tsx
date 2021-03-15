@@ -1,7 +1,7 @@
 import React from 'react';
+import { Flex } from '@contentful/f36-layout';
 
 import { Checkbox, CheckboxProps } from './Checkbox';
-import { Flex } from '../Flex';
 import { SectionHeading } from '../Typography';
 
 export default {

@@ -1,8 +1,8 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
+import { Flex } from '@contentful/f36-layout';
 
 import { Asset, types } from './Asset';
-import { Flex } from '../Flex';
 import { Paragraph, SectionHeading } from '../Typography';
 import type { AssetProps } from './Asset';
 import notes from './README.mdx';

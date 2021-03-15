@@ -6,8 +6,7 @@ import {
   IllustrationType,
 } from './Illustration';
 import { illustrationName } from './constants';
-import { Flex } from '../Flex';
-import { Grid } from '../Grid/Grid';
+import { Flex, Grid } from '@contentful/f36-layout';
 
 export default {
   title: 'Components/Illustration',

@@ -1,14 +1,12 @@
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
-import cn from 'classnames';
+import { css, cx } from 'emotion';
 import { Primitive } from '@contentful/f36-core';
 import type {
   PolymorphicComponentProps,
   PolymorphicComponent,
 } from '@contentful/f36-core';
 import type * as CSS from 'csstype';
-
-import styles from './Flex.css';
 
 export type SpacingTypes =
   | 'none'
@@ -165,12 +163,15 @@ function Flex<E extends React.ElementType = typeof DEFAULT_TAG>(
     flexGrow,
   };
 
-  const classNames = cn(styles.Flex, className, {
-    [styles.Flex__inline]: inlineFlex,
-    [styles.Flex__fullWidth]: fullWidth,
-    [styles.Flex__fullHeight]: fullHeight,
-    [styles.Flex__noShrink]: noShrink,
-  });
+  const classNames = cx(
+    css({
+      display: inlineFlex ? 'inline-flex' : 'flex',
+      width: fullWidth ? '100%' : undefined,
+      height: fullHeight ? '100%' : undefined,
+      flexShrink: noShrink ? 0 : undefined,
+    }),
+    className,
+  );
 
   return (
     <Primitive
