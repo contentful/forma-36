@@ -1,7 +1,5 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
+import * as React from 'react';
 
-import { forwardRef } from 'react';
 import {
   PolymorphicComponentProps,
   PolymorphicComponent,
@@ -96,6 +94,6 @@ function Grid<E extends React.ElementType = typeof DEFAULT_TAG>(
 const _Grid: PolymorphicComponent<
   GridInternalProps,
   typeof DEFAULT_TAG
-> = forwardRef(Grid);
+> = React.forwardRef(Grid);
 
 export { _Grid as Grid };

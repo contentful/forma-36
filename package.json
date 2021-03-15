@@ -68,6 +68,7 @@
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
     "@contentful/browserslist-config": "^2.0.0",
+    "@emotion/babel-preset-css-prop": "10.2.1",
     "@parcel/babel-plugin-transform-runtime": "2.0.0-nightly.2233",
     "@parcel/babel-preset-env": "2.0.0-nightly.612",
     "@parcel/transformer-typescript-types": "2.0.0-nightly.612",

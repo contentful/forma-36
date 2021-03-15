@@ -1,6 +1,3 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
-
 import * as React from 'react';
 import * as CSS from 'csstype';
 import type { MarginProps, PaddingProps } from '../types';

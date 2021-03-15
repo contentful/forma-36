@@ -1,7 +1,5 @@
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
+import * as React from 'react';
 
-import { forwardRef } from 'react';
 import {
   PolymorphicComponentProps,
   PolymorphicComponent,
@@ -82,6 +80,6 @@ function GridItem<E extends React.ElementType = typeof DEFAULT_TAG>(
 const _GridItem: PolymorphicComponent<
   GridItemInternalProps,
   typeof DEFAULT_TAG
-> = forwardRef(GridItem);
+> = React.forwardRef(GridItem);
 
 export { _GridItem as GridItem };

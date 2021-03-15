@@ -2,6 +2,7 @@
   "presets": [
     "@babel/preset-typescript",
     "@babel/preset-react",
+    "@emotion/babel-preset-css-prop",
     [
       "@parcel/babel-preset-env",
       {
@@ -9,21 +10,6 @@
       }
     ]
   ],
-  "env": {
-    "storybook": {
-      "presets": [
-        [
-          "@parcel/babel-preset-env",
-          {
-            "loose": true,
-            "targets": {
-              "esmodules": true
-            }
-          }
-        ]
-      ]
-    }
-  },
   "plugins": [
     [
       "@parcel/babel-plugin-transform-runtime",

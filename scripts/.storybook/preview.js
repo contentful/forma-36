@@ -1,3 +1,4 @@
+import React from 'react';
 import { fontStackPrimary } from '@contentful/f36-tokens';
 
 // Setup Decorators
