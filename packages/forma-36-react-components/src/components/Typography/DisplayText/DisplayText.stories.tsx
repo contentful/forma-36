@@ -1,7 +1,7 @@
 import React from 'react';
 import { DisplayText, DisplayTextProps } from './DisplayText';
 
-import { Flex } from '@contentful/f36-layout';
+import { Flex } from '@contentful/f36-core';
 import { Paragraph } from '../Paragraph/Paragraph';
 
 export default {

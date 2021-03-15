@@ -2,7 +2,7 @@ import React from 'react';
 
 import { TextField, TextFieldProps } from './TextField';
 import { SectionHeading } from '../Typography';
-import { Flex, Grid } from '@contentful/f36-layout';
+import { Flex, Grid } from '@contentful/f36-core';
 
 export default {
   title: 'Form Elements/TextField',

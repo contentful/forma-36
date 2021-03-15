@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex } from '@contentful/f36-layout';
+import { Flex } from '@contentful/f36-core';
 
 import { Badge } from '../src/Badge';
 import { BadgeProps } from '../src/Badge';

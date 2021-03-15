@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { RadioButtonField, RadioButtonFieldProps } from './RadioButtonField';
 import { FieldGroup } from '../Form';
-import { Flex } from '@contentful/f36-layout';
+import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '../Typography';
 
 export default {

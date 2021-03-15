@@ -6,7 +6,7 @@ import { Heading } from './../Heading/Heading';
 import { Subheading } from './../Subheading/Subheading';
 import { SectionHeading } from '../SectionHeading/SectionHeading';
 import { Paragraph } from './../Paragraph/Paragraph';
-import { Flex } from '@contentful/f36-layout';
+import { Flex } from '@contentful/f36-core';
 
 export default {
   title: 'Typography/Typography',

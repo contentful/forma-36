@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex } from '@contentful/f36-layout';
+import { Flex } from '@contentful/f36-core';
 
 import { AssetCard, AssetCardProps } from './AssetCard';
 import { Icon } from '../../Icon';

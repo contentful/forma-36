@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 
-import { axe } from '../../../../../scripts/test/axeHelper';
+import { axe } from '../../../../scripts/test/axeHelper';
 import { Flex } from './Flex';
 
 it('renders the component', () => {

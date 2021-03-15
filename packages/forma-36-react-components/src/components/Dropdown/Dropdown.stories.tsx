@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
-import { Flex } from '@contentful/f36-layout';
+import { Flex } from '@contentful/f36-core';
 
 import { Dropdown } from './Dropdown';
 import { DropdownListItem } from './DropdownListItem/DropdownListItem';

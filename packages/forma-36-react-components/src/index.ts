@@ -1,5 +1,5 @@
 export * from '@contentful/f36-badge';
-export * from '@contentful/f36-layout';
+export * from '@contentful/f36-core';
 export * from './components/Accordion';
 export * from './components/Asset';
 export * from './components/Autocomplete';

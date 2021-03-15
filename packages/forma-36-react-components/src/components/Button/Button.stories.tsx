@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex } from '@contentful/f36-layout';
+import { Flex } from '@contentful/f36-core';
 
 import { Button, ButtonProps } from './Button';
 import { SectionHeading } from '../Typography';

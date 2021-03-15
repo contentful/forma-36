@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Select, SelectProps } from './Select';
 import { Option } from './Option';
-import { Flex } from '@contentful/f36-layout';
+import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '../Typography';
 
 export default {

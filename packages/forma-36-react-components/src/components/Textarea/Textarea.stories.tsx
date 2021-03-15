@@ -3,7 +3,7 @@ import React from 'react';
 import { Textarea, TextareaProps } from './Textarea';
 import { Button } from './../Button';
 import { SectionHeading } from '../Typography';
-import { Flex } from '@contentful/f36-layout';
+import { Flex } from '@contentful/f36-core';
 
 export default {
   title: 'Form Elements/TextArea',

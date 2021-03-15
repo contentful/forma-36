@@ -3,7 +3,7 @@ import React from 'react';
 import { List, ListProps } from './List';
 import { ListItem } from './ListItem/ListItem';
 import { TextLink } from '../TextLink';
-import { Flex } from '@contentful/f36-layout';
+import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '../Typography';
 import notes from './README.mdx';
 

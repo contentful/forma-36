@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, Grid } from '@contentful/f36-layout';
+import { Flex, Grid } from '@contentful/f36-core';
 
 import { Icon, IconProps } from './Icon';
 import { iconName, iconSizes, iconColors } from './constants';

@@ -28,7 +28,7 @@
     "@contentful/f36-tokens": "^4.0.0"
   },
   "devDependencies": {
-    "@contentful/f36-layout": "^4.0.0"
+    "@contentful/f36-core": "^4.0.0"
   },
   "peerDependencies": {
     "react": ">=16.8"
