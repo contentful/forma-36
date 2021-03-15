@@ -1,13 +1,73 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders the component 1`] = `
+exports[`renders no close button in "deleted" variant 1`] = `
 <div
-  class="Pill"
+  class="Pill Pill--deleted my-extra-class"
   data-test-id="cf-ui-pill"
 >
   <span
     aria-label="test"
-    class="Pill__label"
+    class="Pill__label Pill__label--deleted"
+    title="test"
+  >
+    test
+  </span>
+</div>
+`;
+
+exports[`renders the component 1`] = `
+<div
+  class="Pill Pill--idle"
+  data-test-id="cf-ui-pill"
+>
+  <span
+    aria-label="test"
+    class="Pill__label Pill__label--idle"
+    title="test"
+  >
+    test
+  </span>
+</div>
+`;
+
+exports[`renders the component in "active" variant 1`] = `
+<div
+  class="Pill Pill--active my-extra-class"
+  data-test-id="cf-ui-pill"
+>
+  <span
+    aria-label="test"
+    class="Pill__label Pill__label--active"
+    title="test"
+  >
+    test
+  </span>
+</div>
+`;
+
+exports[`renders the component in "deleted" variant 1`] = `
+<div
+  class="Pill Pill--deleted my-extra-class"
+  data-test-id="cf-ui-pill"
+>
+  <span
+    aria-label="test"
+    class="Pill__label Pill__label--deleted"
+    title="test"
+  >
+    test
+  </span>
+</div>
+`;
+
+exports[`renders the component in "idle" variant by default 1`] = `
+<div
+  class="Pill Pill--idle my-extra-class"
+  data-test-id="cf-ui-pill"
+>
+  <span
+    aria-label="test"
+    class="Pill__label Pill__label--idle"
     title="test"
   >
     test
@@ -22,19 +82,19 @@ exports[`renders the component with a close button 1`] = `
 }
 
 <div
-  class="Pill my-extra-class"
+  class="Pill Pill--idle my-extra-class"
   data-test-id="cf-ui-pill"
 >
   <span
     aria-label="test"
-    class="Pill__label"
+    class="Pill__label Pill__label--idle"
     title="test"
   >
     test
   </span>
   <button
     aria-label="close"
-    class="Pill__close-button"
+    class="Pill__close-button Pill__close-button--idle"
     type="button"
   >
     <span
@@ -42,7 +102,7 @@ exports[`renders the component with a close button 1`] = `
       tabindex="-1"
     >
       <svg
-        class="Icon Icon--small Icon--muted Pill__icon"
+        class="Icon Icon--small Icon--muted Pill__icon--idle"
         data-test-id="cf-ui-icon"
         height="1em"
         viewBox="0 0 24 24"
@@ -59,14 +119,14 @@ exports[`renders the component with a close button 1`] = `
 
 exports[`renders the component with a dragging handle 1`] = `
 <div
-  class="Pill my-extra-class"
+  class="Pill Pill--idle my-extra-class"
   data-test-id="cf-ui-pill"
 >
   <span
     class="Pill__drag-icon"
   >
     <svg
-      class="Icon Icon--small Icon--muted Pill__icon"
+      class="Icon Icon--small Icon--muted Pill__icon--idle"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -83,7 +143,7 @@ exports[`renders the component with a dragging handle 1`] = `
   </span>
   <span
     aria-label="test"
-    class="Pill__label"
+    class="Pill__label Pill__label--idle"
     title="test"
   >
     test
@@ -93,12 +153,12 @@ exports[`renders the component with a dragging handle 1`] = `
 
 exports[`renders the component with a test id 1`] = `
 <div
-  class="Pill my-extra-class"
+  class="Pill Pill--idle my-extra-class"
   data-test-id="test-id"
 >
   <span
     aria-label="test"
-    class="Pill__label"
+    class="Pill__label Pill__label--idle"
     title="test"
   >
     test
@@ -108,12 +168,12 @@ exports[`renders the component with a test id 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <div
-  class="Pill my-extra-class"
+  class="Pill Pill--idle my-extra-class"
   data-test-id="cf-ui-pill"
 >
   <span
     aria-label="test"
-    class="Pill__label"
+    class="Pill__label Pill__label--idle"
     title="test"
   >
     test
