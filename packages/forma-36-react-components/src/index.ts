@@ -1,6 +1,15 @@
 export * from '@contentful/f36-badge';
-export { Flex, Grid, GridItem } from '@contentful/f36-core';
-export type { FlexProps, GridProps, GridItemProps } from '@contentful/f36-core';
+export { Flex, Grid, GridItem, Box } from '@contentful/f36-core';
+export type {
+  FlexProps,
+  GridProps,
+  GridItemProps,
+  BoxProps,
+  CommonProps,
+  MarginProps,
+  PaddingProps,
+  Spacing,
+} from '@contentful/f36-core';
 export * from './components/Accordion';
 export * from './components/Asset';
 export * from './components/Autocomplete';
