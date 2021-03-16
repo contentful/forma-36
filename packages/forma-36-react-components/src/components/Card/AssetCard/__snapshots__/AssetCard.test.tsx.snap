@@ -489,7 +489,7 @@ exports[`renders the component with status 1`] = `
       class="AssetCard__header"
     >
       <div
-        class="emotion-0 emotion-1"
+        class="emotion-0"
         data-test-id="cf-ui-badge"
       >
         archived

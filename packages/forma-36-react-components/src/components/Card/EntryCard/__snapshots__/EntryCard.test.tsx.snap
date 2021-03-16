@@ -36,7 +36,7 @@ exports[`renders a small sized variant of the component 1`] = `
         My Content Type
       </div>
       <div
-        class="emotion-0 emotion-1"
+        class="emotion-0"
         data-test-id="cf-ui-badge"
       >
         published
@@ -97,7 +97,7 @@ exports[`renders the component 1`] = `
         My Content Type
       </div>
       <div
-        class="emotion-0 emotion-1"
+        class="emotion-0"
         data-test-id="cf-ui-badge"
       >
         published
@@ -188,7 +188,7 @@ exports[`renders the component with a custom drag handle 1`] = `
         My Content Type
       </div>
       <div
-        class="emotion-0 emotion-1"
+        class="emotion-0"
         data-test-id="cf-ui-badge"
       >
         published
@@ -279,7 +279,7 @@ exports[`renders the component with a drag handle 1`] = `
         My Content Type
       </div>
       <div
-        class="emotion-0 emotion-1"
+        class="emotion-0"
         data-test-id="cf-ui-badge"
       >
         published
@@ -345,7 +345,7 @@ exports[`renders the component with a thumbnail element 1`] = `
         My Content Type
       </div>
       <div
-        class="emotion-0 emotion-1"
+        class="emotion-0"
         data-test-id="cf-ui-badge"
       >
         published
@@ -419,7 +419,7 @@ exports[`renders the component with an additional class name 1`] = `
         My Content Type
       </div>
       <div
-        class="emotion-0 emotion-1"
+        class="emotion-0"
         data-test-id="cf-ui-badge"
       >
         published
@@ -450,7 +450,7 @@ exports[`renders the component with an additional class name 1`] = `
 `;
 
 exports[`renders the component with dropdownListElements 1`] = `
-.emotion-2 {
+.emotion-1 {
   display: inherit;
   outline: 0;
 }
@@ -490,7 +490,7 @@ exports[`renders the component with dropdownListElements 1`] = `
         My Content Type
       </div>
       <div
-        class="emotion-0 emotion-1"
+        class="emotion-0"
         data-test-id="cf-ui-badge"
       >
         published
@@ -507,7 +507,7 @@ exports[`renders the component with dropdownListElements 1`] = `
           type="button"
         >
           <span
-            class="emotion-2 IconButton__inner"
+            class="emotion-1 IconButton__inner"
             tabindex="-1"
           >
             <svg
