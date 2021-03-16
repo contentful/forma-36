@@ -53,14 +53,14 @@ interface Args extends FlexInternalProps {
 }
 
 export const Basic = ({ exampleBoxesNumber, ...args }: Args) => (
-  <Flex as="article" {...args}>
+  <Flex as="article" flexDirection="row" {...args}>
     <DemoBox times={exampleBoxesNumber} />
   </Flex>
 );
 
 Basic.args = {
   exampleBoxesNumber: 4,
-  flexDirection: 'start',
+  flexDirection: 'row',
   justifyContent: 'center',
   alignItems: 'center',
   flexWrap: 'wrap',
