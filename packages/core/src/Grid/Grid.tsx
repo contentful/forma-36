@@ -64,7 +64,7 @@ function Grid<E extends React.ElementType = typeof DEFAULT_TAG>(
 ) {
   const handleGridTemplate = (value?: string | number) => {
     if (typeof value === 'number') {
-      return `repeat(${value}, minmax(0, 1fr)`;
+      return `repeat(${value}, minmax(0, 1fr))`;
     }
     return value;
   };
@@ -91,7 +91,7 @@ function Grid<E extends React.ElementType = typeof DEFAULT_TAG>(
   );
 }
 
-const _Grid: PolymorphicComponent<
+export const _Grid: PolymorphicComponent<
   GridInternalProps,
   typeof DEFAULT_TAG
 > = React.forwardRef(Grid);

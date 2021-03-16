@@ -1,7 +1,7 @@
 import React from 'react';
 
 import tokens from '@contentful/f36-tokens';
-import { Flex, FlexInternalProps } from '../src/Flex/Flex';
+import { Flex, _Flex, FlexInternalProps } from '../src/Flex/Flex';
 
 const styles = {
   demoBox: {
@@ -16,11 +16,13 @@ export default {
   title: 'Components/Flex',
   component: Flex,
   parameters: {
-    propTypes: [Flex['__docgenInfo']],
+    propTypes: [_Flex['__docgenInfo']],
   },
   argTypes: {
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
+    as: { control: { disable: true } },
+    style: { control: { disable: true } },
     exampleBoxesNumber: {
       control: { type: 'number', min: 1, max: 20, step: 1 },
     },
@@ -36,8 +38,8 @@ const DemoBox = ({ times }: { times?: number }) => {
           style={styles.demoBox}
           justifyContent="center"
           alignItems="center"
-          padding="spacingM"
-          margin="spacingXs"
+          p="m"
+          m="xs"
         >
           Example element {i}
         </Flex>,

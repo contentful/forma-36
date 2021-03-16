@@ -103,7 +103,7 @@ function Flex<E extends React.ElementType = typeof DEFAULT_TAG>(
   );
 }
 
-const _Flex: PolymorphicComponent<
+export const _Flex: PolymorphicComponent<
   FlexInternalProps,
   typeof DEFAULT_TAG
 > = React.forwardRef(Flex);

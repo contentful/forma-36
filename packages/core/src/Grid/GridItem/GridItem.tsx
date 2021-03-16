@@ -77,7 +77,7 @@ function GridItem<E extends React.ElementType = typeof DEFAULT_TAG>(
   );
 }
 
-const _GridItem: PolymorphicComponent<
+export const _GridItem: PolymorphicComponent<
   GridItemInternalProps,
   typeof DEFAULT_TAG
 > = React.forwardRef(GridItem);
