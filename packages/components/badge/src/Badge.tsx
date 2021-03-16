@@ -33,5 +33,5 @@ function Badge(props: BadgeProps, ref: React.Ref<HTMLDivElement>) {
   );
 }
 
-const _Badge = React.forwardRef(Badge);
+export const _Badge = React.forwardRef(Badge);
 export { _Badge as Badge };
