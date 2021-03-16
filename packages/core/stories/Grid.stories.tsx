@@ -53,7 +53,7 @@ Basic.args = {
   exampleGridHeight: '90vh',
   columns: 6,
   rows: 4,
-  columnGap: 'xs',
-  rowGap: 'xs',
+  columnGap: 'spacingXs',
+  rowGap: 'spacingXs',
   flow: 'row',
 };
