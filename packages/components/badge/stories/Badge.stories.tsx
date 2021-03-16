@@ -1,7 +1,7 @@
 import React from 'react';
 import { Flex } from '@contentful/f36-core';
 
-import { Badge, _Badge } from '../src/Badge';
+import { Badge } from '../src/Badge';
 import { BadgeProps } from '../src/Badge';
 import { SectionHeading } from '../../../forma-36-react-components/src/components/Typography/SectionHeading/SectionHeading';
 
@@ -9,11 +9,12 @@ export default {
   title: 'Components/Badge',
   component: Badge,
   parameters: {
-    propTypes: [_Badge['__docgenInfo']],
+    propTypes: [Badge['__docgenInfo']],
   },
   argTypes: {
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
+    style: { control: { disable: true } },
   },
 };
 

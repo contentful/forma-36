@@ -20,6 +20,7 @@ function Badge(props: BadgeProps, ref: React.Ref<HTMLDivElement>) {
 
   return (
     <Box
+      as="div"
       className={className}
       ref={ref}
       data-test-id={testId}
@@ -32,5 +33,5 @@ function Badge(props: BadgeProps, ref: React.Ref<HTMLDivElement>) {
   );
 }
 
-export const _Badge = React.forwardRef(Badge);
+const _Badge = React.forwardRef(Badge);
 export { _Badge as Badge };
