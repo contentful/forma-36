@@ -24,7 +24,6 @@
   "dependencies": {
     "@babel/runtime": "^7.6.2",
     "@emotion/core": "^10.1.1",
-    "classnames": "^2.2.6",
     "@emotion/is-prop-valid": "^1.1.0",
     "@contentful/f36-tokens": "^4.0.0"
   },
