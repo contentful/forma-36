@@ -27,17 +27,37 @@ export type Spacing =
   | 'spacing4Xl';
 
 export interface MarginProps {
+  /**
+   * sets margin to one of the corresponding spacing tokens, default is none */
   margin?: Spacing;
-  marginLeft?: Spacing;
-  marginRight?: Spacing;
+  /**
+   * sets margin-top to one of the corresponding spacing tokens, default is none */
   marginTop?: Spacing;
+  /**
+   * sets margin-right to one of the corresponding spacing tokens, default is none */
+  marginRight?: Spacing;
+  /**
+   * sets margin-bottom to one of the corresponding spacing tokens, default is none */
   marginBottom?: Spacing;
+  /**
+   * sets margin-left to one of the corresponding spacing tokens, default is none */
+  marginLeft?: Spacing;
 }
 
 export interface PaddingProps {
+  /**
+   * sets padding to one of the corresponding spacing tokens, default is none */
   padding?: Spacing;
-  paddingLeft?: Spacing;
-  paddingRight?: Spacing;
+  /**
+   * sets padding-top to one of the corresponding spacing tokens, default is none */
   paddingTop?: Spacing;
+  /**
+   * sets padding-right to one of the corresponding spacing tokens, default is none */
+  paddingRight?: Spacing;
+  /**
+   * sets padding-bottom to one of the corresponding spacing tokens, default is none */
   paddingBottom?: Spacing;
+  /**
+   * sets padding-left to one of the corresponding spacing tokens, default is none */
+  paddingLeft?: Spacing;
 }
