@@ -14,7 +14,7 @@ const styles = {
 };
 
 export default {
-  title: 'Components/Grid',
+  title: 'Layout/Grid',
   component: Grid,
   subcomponents: { GridItem },
   parameters: {

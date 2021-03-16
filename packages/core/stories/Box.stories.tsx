@@ -1,7 +1,7 @@
 import React from 'react';
 
 import tokens from '@contentful/f36-tokens';
-import { Flex, _Flex, FlexInternalProps } from '../src/Flex/Flex';
+import { Box, _Box, BoxInternalProps } from '../src/Box/Box';
 
 const styles = {
   demoBox: {
@@ -13,10 +13,10 @@ const styles = {
 };
 
 export default {
-  title: 'Layout/Flex',
-  component: Flex,
+  title: 'Layout/Box',
+  component: Box,
   parameters: {
-    propTypes: [_Flex['__docgenInfo']],
+    propTypes: [_Box['__docgenInfo']],
   },
   argTypes: {
     className: { control: { disable: true } },
@@ -34,37 +34,27 @@ const DemoBox = ({ times }: { times?: number }) => {
     const result = [];
     for (let i = 0; i < times; i++) {
       result.push(
-        <Flex
-          style={styles.demoBox}
-          justifyContent="center"
-          alignItems="center"
-          p="m"
-          m="xs"
-        >
+        <Box style={styles.demoBox} p="m" m="xs">
           Example element {i}
-        </Flex>,
+        </Box>,
       );
     }
     return <>{result}</>;
   }
-  return <Flex style={styles.demoBox}>Example element</Flex>;
+  return <Box style={styles.demoBox}>Example element</Box>;
 };
 
-interface Args extends FlexInternalProps {
+interface Args extends BoxInternalProps {
   exampleBoxesNumber: number;
 }
 
 export const Basic = ({ exampleBoxesNumber, ...args }: Args) => (
-  <Flex as="article" flexDirection="row" {...args}>
+  <Box as="article" {...args}>
     <DemoBox times={exampleBoxesNumber} />
-  </Flex>
+  </Box>
 );
 
 Basic.args = {
   exampleBoxesNumber: 4,
-  flexDirection: 'row',
-  justifyContent: 'center',
-  alignItems: 'center',
-  flexWrap: 'wrap',
   margin: 'spacing4Xl',
 };

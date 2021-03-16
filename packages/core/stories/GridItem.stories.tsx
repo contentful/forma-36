@@ -18,7 +18,7 @@ const styles = {
 };
 
 export default {
-  title: 'components/Grid/GridItem',
+  title: 'Layout/Grid/GridItem',
   component: GridItem,
   parameters: {
     propTypes: _GridItem['__docgenInfo'],

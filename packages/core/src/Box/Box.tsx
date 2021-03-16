@@ -37,7 +37,7 @@ function Box<E extends React.ElementType = typeof DEFAULT_TAG>(
   );
 }
 
-const _Box: PolymorphicComponent<
+export const _Box: PolymorphicComponent<
   BoxInternalProps,
   typeof DEFAULT_TAG
 > = React.forwardRef(Box);

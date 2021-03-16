@@ -71,11 +71,11 @@ exports[`should have correct styles rowGap should be 0 by default 1`] = `
 exports[`should have correct styles should has correct numbers of columns 1`] = `
 .emotion-0 {
   display: grid;
-  grid-template-columns: repeat(12,minmax(0,1fr);
+  grid-template-columns: repeat(12,minmax(0,1fr));
   grid-template-rows: auto;
+  -webkit-column-gap: 1rem;
   column-gap: 1rem;
   row-gap: 0;
-  label: Grid;
 }
 
 <div
@@ -89,10 +89,10 @@ exports[`should have correct styles should has correct numbers of rows 1`] = `
 .emotion-0 {
   display: grid;
   grid-template-columns: auto;
-  grid-template-rows: repeat(12,minmax(0,1fr);
+  grid-template-rows: repeat(12,minmax(0,1fr));
+  -webkit-column-gap: 1rem;
   column-gap: 1rem;
   row-gap: 0;
-  label: Grid;
 }
 
 <div

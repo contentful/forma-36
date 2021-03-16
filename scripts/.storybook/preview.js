@@ -24,6 +24,7 @@ export const parameters = {
       method: 'alphabetical',
       order: [
         'Documentation',
+        'Layout',
         'Typography',
         'Form Elements',
         'Components',
