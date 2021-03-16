@@ -34,7 +34,7 @@ const DemoBox = ({ times }: { times?: number }) => {
     const result = [];
     for (let i = 0; i < times; i++) {
       result.push(
-        <Box style={styles.demoBox} p="m" m="xs">
+        <Box style={styles.demoBox} padding="spacingM" margin="spacingXs">
           Example element {i}
         </Box>,
       );

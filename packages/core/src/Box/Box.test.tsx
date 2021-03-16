@@ -26,7 +26,7 @@ it('has no a11y issues', async () => {
 describe('should have correct styles', () => {
   it('should render correct padding and margin values', () => {
     const { container } = render(
-      <Box pr="xs" ml="xl">
+      <Box paddingRight="spacingXs" marginLeft="spacingXl">
         Box
       </Box>,
     );
@@ -37,9 +37,8 @@ describe('should have correct styles', () => {
   it('should render correct padding and margin values and apply polymorphic props', () => {
     const { container } = render(
       <Box
-        p="m"
-        mb="xl"
-        marginBottom="3xl"
+        padding="spacingM"
+        marginBottom="spacing3Xl"
         as="a"
         href="https://contentful.com"
       >

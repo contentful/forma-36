@@ -38,8 +38,8 @@ const DemoBox = ({ times }: { times?: number }) => {
           style={styles.demoBox}
           justifyContent="center"
           alignItems="center"
-          p="m"
-          m="xs"
+          padding="spacingM"
+          margin="spacingXs"
         >
           Example element {i}
         </Flex>,
