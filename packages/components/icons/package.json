@@ -1,0 +1,40 @@
+{
+  "name": "@contentful/f36-icons",
+  "version": "4.0.0",
+  "private": true,
+  "description": "Forma 36: icons React Component",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "main": "dist/main.js",
+  "module": "dist/module.js",
+  "types": "dist/types.d.ts",
+  "source": "src/index.ts",
+  "sideEffects": false,
+  "browserslist": "extends @contentful/browserslist-config",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/contentful/forma-36"
+  },
+  "scripts": {
+    "build": "parcel build index.ts --no-minify",
+    "generate": "npx @svgr/cli -d src src && rm -rf src/*.svg",
+    "generate:clean": "rm -rf src/*.svg"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.6.2",
+    "emotion": "^10.0.17",
+    "@contentful/forma-36-tokens": "^0.9.4"
+  },
+  "devDependencies": {
+    "@svgr/cli": "^5.5.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.8"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
