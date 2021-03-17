@@ -3,7 +3,6 @@ import type { Meta } from '@storybook/react/types-6-0';
 
 import { EditorToolbarDivider } from './EditorToolbarDivider';
 import type { EditorToolbarDividerProps } from './EditorToolbarDivider';
-import notes from './README.mdx';
 
 export default {
   argTypes: {
@@ -13,7 +12,6 @@ export default {
   component: EditorToolbarDivider,
   parameters: {
     propTypes: EditorToolbarDivider['__docgenInfo'],
-    notes,
   },
   title: 'Components/EditorToolbar/EditorToolbarDivider',
 } as Meta;

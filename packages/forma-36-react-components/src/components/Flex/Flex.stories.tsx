@@ -2,7 +2,6 @@ import React from 'react';
 import tokens from '@contentful/forma-36-tokens';
 
 import { Flex, FlexProps } from './Flex';
-import notes from './README.mdx';
 
 const styles = {
   demoBox: {
@@ -18,7 +17,6 @@ export default {
   component: Flex,
   parameters: {
     propTypes: [Flex['__docgenInfo']],
-    notes,
   },
   argTypes: {
     className: { control: { disable: true } },

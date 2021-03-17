@@ -3,7 +3,6 @@ import type { Meta, Story } from '@storybook/react/types-6-0';
 
 import { EditorToolbarButton } from './EditorToolbarButton';
 import type { EditorToolbarButtonProps } from './EditorToolbarButton';
-import notes from './README.mdx';
 import { iconName } from './../../Icon/constants';
 
 export default {
@@ -26,7 +25,6 @@ export default {
   component: EditorToolbarButton,
   parameters: {
     propTypes: EditorToolbarButton['__docgenInfo'],
-    notes,
   },
   title: 'Components/EditorToolbar/EditorToolbarButton',
 } as Meta;

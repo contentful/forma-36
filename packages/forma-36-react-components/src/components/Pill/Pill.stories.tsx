@@ -3,7 +3,6 @@ import { action } from '@storybook/addon-actions';
 import { Icon } from '../Icon';
 
 import { Pill, PillProps } from './Pill';
-import notes from './README.mdx';
 import { SectionHeading } from '../Typography';
 import { Flex } from '../Flex';
 
@@ -12,7 +11,6 @@ export default {
   component: Pill,
   parameters: {
     propTypes: [Pill['__docgenInfo']],
-    notes,
   },
   argTypes: {
     label: { control: { type: 'text' } },

@@ -5,7 +5,6 @@ import { ListItem } from './ListItem/ListItem';
 import { TextLink } from '../TextLink';
 import { Flex } from '../Flex';
 import { SectionHeading } from '../Typography';
-import notes from './README.mdx';
 
 export default {
   title: 'Components/List',
@@ -13,7 +12,6 @@ export default {
   subcomponents: { ListItem },
   parameters: {
     propTypes: [List['__docgenInfo'], ListItem['__docgenInfo']],
-    notes,
   },
   argTypes: {
     element: {

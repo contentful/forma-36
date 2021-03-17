@@ -2,14 +2,12 @@ import React from 'react';
 
 import { EntityList } from './EntityList';
 import { EntityListItem } from './EntityListItem/EntityListItem';
-import notes from './README.mdx';
 
 export default {
   title: 'Components/EntityList/EntityList',
   component: EntityList,
   parameters: {
     propTypes: [EntityList['__docgenInfo']],
-    notes,
   },
   argTypes: {
     className: { control: { disable: true } },

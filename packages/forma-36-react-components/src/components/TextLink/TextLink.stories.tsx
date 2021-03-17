@@ -3,7 +3,6 @@ import tokens from '@contentful/forma-36-tokens';
 
 import { TextLink, textLinkColor } from './TextLink';
 import { Paragraph } from '../Typography';
-import notes from './README.mdx';
 import { Flex } from '../Flex';
 import '@contentful/forma-36-fcss/dist/styles.css';
 
@@ -12,7 +11,6 @@ export default {
   component: TextLink,
   parameters: {
     propTypes: TextLink['__docgenInfo'],
-    notes,
   },
 };
 

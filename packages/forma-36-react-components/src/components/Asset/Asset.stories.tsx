@@ -5,7 +5,6 @@ import { Asset, types } from './Asset';
 import { Flex } from '../Flex';
 import { Paragraph, SectionHeading } from '../Typography';
 import type { AssetProps } from './Asset';
-import notes from './README.mdx';
 
 export default {
   argTypes: {
@@ -33,7 +32,6 @@ export default {
   component: Asset,
   parameters: {
     propTypes: Asset['__docgenInfo'],
-    notes,
   },
   title: 'Components/Asset',
 } as Meta;
