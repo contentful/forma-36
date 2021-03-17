@@ -10,34 +10,32 @@ Detailed documentation will be provided soon. For now, please have a look into t
 
 ```jsx
 <React.Fragment>
-  <EditorToolbar
-      style={{ justifyContent: 'space-between' }}
-    >
-      <div>
-        <EditorToolbarButton
-          icon="FormatBold"
-          tooltip="Bold"
-          label="Bold"
-          isActive={false}
-        />
-        <EditorToolbarButton
-          icon="FormatItalic"
-          tooltip="Italic"
-          label="Italic"
-          isActive={false}
-        />
-        <EditorToolbarButton
-          icon="FormatUnderlined"
-          tooltip="Underlined"
-          label="Underlined"
-          isActive={false}
-        />
-      </div>
-      <div>
-        <Button size="small" buttonType="muted">
-          Example button
-        </Button>
-      </div>
-    </EditorToolbar>
+  <EditorToolbar style={{ justifyContent: 'space-between' }}>
+    <div>
+      <EditorToolbarButton
+        icon="FormatBold"
+        tooltip="Bold"
+        label="Bold"
+        isActive={false}
+      />
+      <EditorToolbarButton
+        icon="FormatItalic"
+        tooltip="Italic"
+        label="Italic"
+        isActive={false}
+      />
+      <EditorToolbarButton
+        icon="FormatUnderlined"
+        tooltip="Underlined"
+        label="Underlined"
+        isActive={false}
+      />
+    </div>
+    <div>
+      <Button size="small" buttonType="muted">
+        Example button
+      </Button>
+    </div>
+  </EditorToolbar>
 </React.Fragment>
 ```

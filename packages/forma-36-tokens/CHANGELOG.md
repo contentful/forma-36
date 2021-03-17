@@ -7,20 +7,11 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @contentful/forma-36-tokens
 
-
-
-
-
 # [0.10.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.9.4...@contentful/forma-36-tokens@0.10.0) (2021-01-20)
-
 
 ### Features
 
-* visual changes with a new look & feel ([#732](https://github.com/contentful/forma-36/issues/732)) ([9273145](https://github.com/contentful/forma-36/commit/9273145fe11192c7449b1896323b8c0ba402ff44)), closes [#742](https://github.com/contentful/forma-36/issues/742) [#741](https://github.com/contentful/forma-36/issues/741) [#759](https://github.com/contentful/forma-36/issues/759) [#763](https://github.com/contentful/forma-36/issues/763) [#767](https://github.com/contentful/forma-36/issues/767) [#760](https://github.com/contentful/forma-36/issues/760) [#768](https://github.com/contentful/forma-36/issues/768) [#762](https://github.com/contentful/forma-36/issues/762) [#769](https://github.com/contentful/forma-36/issues/769) [#773](https://github.com/contentful/forma-36/issues/773) [#777](https://github.com/contentful/forma-36/issues/777) [#775](https://github.com/contentful/forma-36/issues/775) [#790](https://github.com/contentful/forma-36/issues/790) [#791](https://github.com/contentful/forma-36/issues/791) [#798](https://github.com/contentful/forma-36/issues/798)
-
-
-
-
+- visual changes with a new look & feel ([#732](https://github.com/contentful/forma-36/issues/732)) ([9273145](https://github.com/contentful/forma-36/commit/9273145fe11192c7449b1896323b8c0ba402ff44)), closes [#742](https://github.com/contentful/forma-36/issues/742) [#741](https://github.com/contentful/forma-36/issues/741) [#759](https://github.com/contentful/forma-36/issues/759) [#763](https://github.com/contentful/forma-36/issues/763) [#767](https://github.com/contentful/forma-36/issues/767) [#760](https://github.com/contentful/forma-36/issues/760) [#768](https://github.com/contentful/forma-36/issues/768) [#762](https://github.com/contentful/forma-36/issues/762) [#769](https://github.com/contentful/forma-36/issues/769) [#773](https://github.com/contentful/forma-36/issues/773) [#777](https://github.com/contentful/forma-36/issues/777) [#775](https://github.com/contentful/forma-36/issues/775) [#790](https://github.com/contentful/forma-36/issues/790) [#791](https://github.com/contentful/forma-36/issues/791) [#798](https://github.com/contentful/forma-36/issues/798)
 
 ## [0.9.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.9.3...@contentful/forma-36-tokens@0.9.4) (2021-01-07)
 
