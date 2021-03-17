@@ -13,7 +13,5 @@ Anything that you put inside the Portal component renders in a `<div data-cf-ui-
 ### Code examples
 
 ```jsx
-// import { Portal } from '@contenful/forma-36-react-components';
-
 <Portal>Render in a new tree.</Portal>
 ```

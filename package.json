@@ -29,7 +29,7 @@
     "test": "jest",
     "tsc": "tsc --noEmit",
     "tsc:watch": "tsc --noEmit --watch",
-    "docs:dev": "lerna run --scope f36-website develop --stream"
+    "docs:dev": "lerna run --scope f36-website start --stream"
   },
   "husky": {
     "hooks": {

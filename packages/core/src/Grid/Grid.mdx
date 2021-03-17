@@ -13,6 +13,7 @@ The Grid consists of two components:
 - GridItem: Elements within the Grid
 
 <br />
+
 ## Code examples
 
 ### columns
@@ -20,8 +21,6 @@ The Grid consists of two components:
 When defined as a number, it will split the space into equally sized columns; it also accepts any of the [grid-template-columns](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-columns) css properties. e.g.
 
 ```jsx
-// import { Grid, GridItem } from '@contenful/forma-36-react-components';
-
 <React.Fragment>
   <Grid columns={6}></Grid>
   <Grid columns={'auto 1fr'}></Grid>
@@ -33,8 +32,6 @@ When defined as a number, it will split the space into equally sized columns; it
 Accepts a number or any of [grid-template-rows](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template-rows) css properties.
 
 ```jsx
-// import { Grid, GridItem } from '@contenful/forma-36-react-components';
-
 <React.Fragment>
   <Grid rows={6}></Grid>
   <Grid rows={'auto 1fr'}></Grid>
@@ -50,7 +47,5 @@ Accepts a number or any of [grid-template-rows](https://developer.mozilla.org/en
 **e.g.**
 
 ```jsx
-// import { Grid, GridItem } from '@contenful/forma-36-react-components';
-
 <Grid columnGap="spacingXs" rowGap="spacingXl"></Grid>
 ```
