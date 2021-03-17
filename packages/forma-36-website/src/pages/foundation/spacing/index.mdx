@@ -1,4 +1,4 @@
-import tokens from '@contentful/forma-36-tokens/src/tokens/spacing';
+import tokens from '@contentful/f36-tokens/src/tokens/spacing';
 
 import {
   Table,
@@ -6,7 +6,7 @@ import {
   TableBody,
   TableCell,
   TableRow,
-} from '@contentful/forma-36-react-components';
+} from '@contentful/f36-components';
 
 # Spacing
 
@@ -20,7 +20,7 @@ import {
     </TableRow>
   </TableHead>
   <TableBody>
-    {Object.keys(tokens).map(token => {
+    {Object.keys(tokens).map((token) => {
       const value = tokens[token];
       const valuePx = 1 * parseFloat(value) * 16; // 16 = REM Base
       return (

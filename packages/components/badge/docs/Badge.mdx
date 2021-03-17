@@ -1,23 +1,23 @@
-Tags are used to label or highlight items in the interface.
+Badge is used to label or highlight items in the interface.
 
 ## Table of contents
 
-- [How to use Tag](#how-to-use-tag)
+- [Table of contents](#table-of-contents)
+- [How to use Badge](#how-to-use-badge)
 - [Component variations](#component-variations)
 - [Content recommendations](#content-recommendations)
 - [Accessibility](#accessibility)
 
-## How to use Tag
+## How to use Badge
 
-- tags are used to inform users of the status of an element in the interface
-- keep in mind the recommended color coding for each of tagType
-- there is a `small` size of Tag available. This might be used in denser areas of content
+- badges are used to inform users of the status of an element in the interface
+- keep in mind the recommended color coding for each of variant
 
 ## Component variations
 
 ### Tag types
 
-- **Primary** - used for the entity that has been changed, it maps to entityStatusType `changed`
+- **Primary** - used for the entity that has been changed
 
 ```jsx
 <Table>
@@ -37,7 +37,7 @@ Tags are used to label or highlight items in the interface.
       <TableCell>Jane Roe</TableCell>
       <TableCell>Oct 29, 2020</TableCell>
       <TableCell>
-        <Tag tagType="primary">changed</Tag>
+        <Badge variation="primary">changed</Badge>
       </TableCell>
     </TableRow>
   </TableBody>
@@ -48,14 +48,11 @@ Tags are used to label or highlight items in the interface.
 
 ```jsx
 <FormLabel htmlFor="">
-  Instance parameter definitions{' '}
-  <Tag size="small" tagType="primary-filled">
-    new
-  </Tag>
+  Instance parameter definitions <Badge variant="primary-filled">new</Badge>
 </FormLabel>
 ```
 
-- **Positive** - used for the entity that has been published, it maps to entityStatusType `published`
+- **Positive** - used for the entity that has been published
 
 ```jsx
 <Table>
@@ -75,14 +72,14 @@ Tags are used to label or highlight items in the interface.
       <TableCell>Jane Roe</TableCell>
       <TableCell>Oct 29, 2020</TableCell>
       <TableCell>
-        <Tag tagType="positive">published</Tag>
+        <Badge variant="positive">published</Badge>
       </TableCell>
     </TableRow>
   </TableBody>
 </Table>
 ```
 
-- **Negative** - used for the entity that has been deleted, it maps to entityStatusType `deleted`.
+- **Negative** - used for the entity that has been deleted.
 
 ```jsx
 <Table>
@@ -102,14 +99,14 @@ Tags are used to label or highlight items in the interface.
       <TableCell>Jane Roe</TableCell>
       <TableCell>Oct 29, 2020</TableCell>
       <TableCell>
-        <Tag tagType="negative">deleted</Tag>
+        <Badge variant="negative">deleted</Badge>
       </TableCell>
     </TableRow>
   </TableBody>
 </Table>
 ```
 
-- **Warning** - used for the entity that has been deleted, it maps to entityStatusType `deleted`.
+- **Warning** - used for the entity that has been deleted.
 
 ```jsx
 <Table>
@@ -129,7 +126,7 @@ Tags are used to label or highlight items in the interface.
       <TableCell>Jane Roe</TableCell>
       <TableCell>Oct 29, 2020</TableCell>
       <TableCell>
-        <Tag tagType="warning">draft</Tag>
+        <Badge variant="warning">draft</Badge>
       </TableCell>
     </TableRow>
   </TableBody>
@@ -143,7 +140,7 @@ Tags are used to label or highlight items in the interface.
   <div>
     <Flex justifyContent="space-between" alignItems="center">
       <Flex
-        htmlTag="label"
+        as="label"
         paddingTop="spacingXs"
         paddingBottom="spacingXs"
         alignItems="center"
@@ -157,14 +154,14 @@ Tags are used to label or highlight items in the interface.
         />
       </Flex>
       <div>
-        <Tag tagType="secondary">current</Tag>
+        <Badge variant="secondary">current</Badge>
       </div>
     </Flex>
   </div>
   <div>
     <Flex justifyContent="space-between" alignItems="center">
       <Flex
-        htmlTag="label"
+        as="label"
         paddingTop="spacingXs"
         paddingBottom="spacingXs"
         alignItems="center"
@@ -177,30 +174,14 @@ Tags are used to label or highlight items in the interface.
         />
       </Flex>
       <div>
-        <Tag tagType="positive">published</Tag>
+        <Badge variant="positive">published</Badge>
       </div>
     </Flex>
   </div>
 </>
 ```
 
-- **Muted** - this `tagType` is deprecated, please use `tagType` `secondary` instead
-
-### Tag sizes
-
-- **default**
-
-```jsx
-<Tag tagType="positive">published</Tag>
-```
-
-- **small**
-
-```jsx
-<Tag tagType="primary-filled" size="small">
-  new
-</Tag>
-```
+- **Muted** - this `variant` is deprecated, please use `variant` `secondary` instead
 
 ## Content recommendations
 

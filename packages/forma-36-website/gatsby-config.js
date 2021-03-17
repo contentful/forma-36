@@ -132,6 +132,10 @@ module.exports = {
             link: '/components/autocomplete/',
           },
           {
+            name: 'Badge',
+            link: '/components/badge/',
+          },
+          {
             name: 'Button',
             link: '/components/button/',
           },
@@ -304,10 +308,6 @@ module.exports = {
             link: '/components/tabs/',
           },
           {
-            name: 'Tag',
-            link: '/components/tag/',
-          },
-          {
             name: 'Toggle button',
             link: '/components/toggle-button/',
           },
@@ -349,6 +349,22 @@ module.exports = {
           __dirname,
           '../forma-36-react-components/src/components/',
         ),
+        ignore: ['**/*.css', '**/*.js', '**/*.snap', '**/*.ts', '**/*.tsx'],
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'pages',
+        path: path.resolve(__dirname, '../components/'),
+        ignore: ['**/*.css', '**/*.js', '**/*.snap', '**/*.ts', '**/*.tsx'],
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'pages',
+        path: path.resolve(__dirname, '../core/'),
         ignore: ['**/*.css', '**/*.js', '**/*.snap', '**/*.ts', '**/*.tsx'],
       },
     },
