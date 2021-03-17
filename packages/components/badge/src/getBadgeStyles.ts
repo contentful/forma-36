@@ -1,6 +1,6 @@
 import tokens from '@contentful/f36-tokens';
 import { Interpolation } from '@emotion/core';
-import type { BadgeVariant } from './types';
+import type { BadgeVariant, BadgeSize } from './types';
 
 const variantToStyles = ({
   variant,
@@ -49,24 +49,43 @@ const variantToStyles = ({
   }
 };
 
+const sizeToStyles = ({ size }: { size: BadgeSize }): Interpolation => {
+  switch (size) {
+    case 'small':
+      return {
+        padding: `3px ${tokens.spacing2Xs}`,
+        fontSize: '0.625rem',
+        lineHeight: '0.625rem',
+        maxHeight: '16px',
+      };
+    default:
+      return {
+        padding: `0 ${tokens.spacingXs}`,
+        fontSize: `calc(1rem * (12 / ${tokens.fontBaseDefault}))`,
+        lineHeight: '20px',
+        maxHeight: '20px',
+      };
+  }
+};
+
 export const getBadgeStyles = ({
   variant,
+  size,
 }: {
   variant: BadgeVariant;
+  size: BadgeSize;
 }): Interpolation => {
   return [
     {
       fontFamily: tokens.fontStackPrimary,
       fontWeight: tokens.fontWeightDemiBold,
-      fontSize: `calc(1rem * (12 / ${tokens.fontBaseDefault}))`,
-      lineHeight: '20px',
-      maxHeight: '20px',
+
       textTransform: 'uppercase',
       letterSpacing:
         '0.06rem' /*move to tokens or update wide letter spacing token*/,
-      padding: `0 ${tokens.spacingXs}`,
       borderRadius: `${tokens.borderRadiusSmall}`,
     },
     variantToStyles({ variant }),
+    sizeToStyles({ size }),
   ];
 };
