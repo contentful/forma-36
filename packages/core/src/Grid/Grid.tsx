@@ -1,26 +1,15 @@
-import React from 'react';
-import tokens from '@contentful/f36-tokens';
+import * as React from 'react';
+
 import {
   PolymorphicComponentProps,
   PolymorphicComponent,
-  Primitive,
 } from '../Primitive/Primitive';
-import { cx, css } from 'emotion';
+import { Box } from '../Box';
 import type * as CSS from 'csstype';
+import type { MarginProps, PaddingProps, Spacing } from '../types';
+import { convertSpacingToToken } from '../utils/getSpacingStyles';
 
-export type GapTypes =
-  | 'none'
-  | 'spacing2Xs'
-  | 'spacingXs'
-  | 'spacingS'
-  | 'spacingM'
-  | 'spacingL'
-  | 'spacingXl'
-  | 'spacing2Xl'
-  | 'spacing3Xl'
-  | 'spacing4Xl';
-
-export interface GridInternalProps {
+export interface GridInternalProps extends MarginProps, PaddingProps {
   /**
    * Child nodes to be rendered in the component */
   children?: React.ReactNode;
@@ -32,10 +21,10 @@ export interface GridInternalProps {
   rows?: number | CSS.Property.GridTemplateColumns;
   /**
    * Spaces between rows, corresponds to of spacing tokens values, default is none */
-  rowGap?: GapTypes;
+  rowGap?: Spacing;
   /**
    * One of Spacing tokens values, default is 0 */
-  columnGap?: GapTypes;
+  columnGap?: Spacing;
   /**
    * One of grid-auto-flow css values */
   flow?: CSS.Property.GridAutoFlow;
@@ -69,60 +58,40 @@ function Grid<E extends React.ElementType = typeof DEFAULT_TAG>(
     justifyContent,
     rowGap = 'none',
     rows = 'auto',
-    style,
-    testId = 'cf-ui-grid',
     ...otherProps
   }: GridProps<E>,
   ref: typeof otherProps.ref,
 ) {
   const handleGridTemplate = (value?: string | number) => {
     if (typeof value === 'number') {
-      return `repeat(${value}, minmax(0, 1fr)`;
+      return `repeat(${value}, minmax(0, 1fr))`;
     }
     return value;
   };
 
-  const handleGap = (value: GapTypes) => {
-    if (value === 'none') {
-      return 0;
-    } else {
-      return tokens[value];
-    }
-  };
-
-  const inlineStyle = {
-    gridTemplateColumns: handleGridTemplate(columns),
-    gridTemplateRows: handleGridTemplate(rows),
-    flow,
-    justifyContent,
-    alignContent,
-    columnGap: columnGap && handleGap(columnGap),
-    rowGap: rowGap && handleGap(rowGap),
-    ...style,
-  };
-
-  const classNames = cx(
-    css({
-      display: inline ? 'inline-grid' : 'grid',
-    }),
-    className,
-  );
-
   return (
-    <Primitive
+    <Box
       as={DEFAULT_TAG}
       {...otherProps}
+      css={{
+        gridTemplateColumns: handleGridTemplate(columns),
+        gridTemplateRows: handleGridTemplate(rows),
+        flow,
+        justifyContent,
+        alignContent,
+        columnGap: convertSpacingToToken(columnGap) ?? 0,
+        rowGap: convertSpacingToToken(rowGap) ?? 0,
+      }}
+      display={inline ? 'inline-grid' : 'grid'}
       ref={ref}
-      style={inlineStyle}
-      className={classNames}
-      testId={testId}
+      className={className}
     >
       {children}
-    </Primitive>
+    </Box>
   );
 }
 
-const _Grid: PolymorphicComponent<
+export const _Grid: PolymorphicComponent<
   GridInternalProps,
   typeof DEFAULT_TAG
 > = React.forwardRef(Grid);

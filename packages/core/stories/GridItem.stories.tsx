@@ -2,7 +2,11 @@ import React from 'react';
 import tokens from '@contentful/f36-tokens';
 
 import { Grid, GridInternalProps } from '../src/Grid/Grid';
-import { GridItem, GridItemInternalProps } from '../src/Grid/GridItem/GridItem';
+import {
+  GridItem,
+  _GridItem,
+  GridItemInternalProps,
+} from '../src/Grid/GridItem/GridItem';
 
 const styles = {
   demoBox: {
@@ -14,15 +18,17 @@ const styles = {
 };
 
 export default {
-  title: 'components/Grid/GridItem',
+  title: 'Layout/Grid/GridItem',
   component: GridItem,
   parameters: {
-    propTypes: GridItem['__docgenInfo'],
+    propTypes: _GridItem['__docgenInfo'],
   },
   argTypes: {
     children: { control: { disable: true } },
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
+    as: { control: { disable: true } },
+    style: { control: { disable: true } },
   },
 };
 

@@ -1,3 +1,4 @@
+import React from 'react';
 import { fontStackPrimary } from '@contentful/f36-tokens';
 
 // Setup Decorators
@@ -23,6 +24,7 @@ export const parameters = {
       method: 'alphabetical',
       order: [
         'Documentation',
+        'Layout',
         'Typography',
         'Form Elements',
         'Components',

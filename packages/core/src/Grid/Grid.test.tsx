@@ -44,9 +44,6 @@ describe('should have correct styles', () => {
     render(<Grid columns={12}>Grid</Grid>);
     const element = screen.getByText('Grid');
 
-    expect(element).toHaveStyle({
-      gridTemplateColumns: 'repeat(12, minmax(0, 1fr)',
-    });
     expect(element).toMatchSnapshot();
   });
 
@@ -54,9 +51,6 @@ describe('should have correct styles', () => {
     render(<Grid rows={12}>Grid</Grid>);
     const element = screen.getByText('Grid');
 
-    expect(element).toHaveStyle({
-      gridTemplateRows: 'repeat(12, minmax(0, 1fr)',
-    });
     expect(element).toMatchSnapshot();
   });
 });

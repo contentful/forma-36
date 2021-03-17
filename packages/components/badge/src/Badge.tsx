@@ -1,12 +1,11 @@
 import React from 'react';
 import type { BadgeVariant } from './types';
-import { Container } from './Badge.styled';
+import { Box } from '@contentful/f36-core';
+import type { CommonProps } from '@contentful/f36-core';
+import { getBadgeStyles } from './getBadgeStyles';
 
-export interface BadgeProps {
+export interface BadgeProps extends CommonProps {
   variant?: BadgeVariant;
-  style?: React.CSSProperties;
-  className?: string;
-  testId?: string;
   children: React.ReactNode;
 }
 
@@ -20,17 +19,19 @@ function Badge(props: BadgeProps, ref: React.Ref<HTMLDivElement>) {
   } = props;
 
   return (
-    <Container
+    <Box
+      as="div"
       className={className}
       ref={ref}
       data-test-id={testId}
-      variant={variant}
+      display="inline-block"
+      css={getBadgeStyles({ variant })}
       {...otherProps}
     >
       {children}
-    </Container>
+    </Box>
   );
 }
 
-const _Badge = React.forwardRef(Badge);
+export const _Badge = React.forwardRef(Badge);
 export { _Badge as Badge };

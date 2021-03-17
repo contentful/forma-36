@@ -1,14 +1,16 @@
-import React from 'react';
+import * as React from 'react';
+
 import {
-  Primitive,
   PolymorphicComponentProps,
   PolymorphicComponent,
 } from '../../Primitive/Primitive';
+import { Box } from '../../Box';
+import type { MarginProps, PaddingProps } from '../../types';
 import type * as CSS from 'csstype';
 
 const DEFAULT_TAG = 'div';
 
-export type GridItemInternalProps = {
+export interface GridItemInternalProps extends MarginProps, PaddingProps {
   /**
    * Child nodes to be rendered in the component */
   children?: React.ReactNode;
@@ -30,7 +32,7 @@ export type GridItemInternalProps = {
   /**
    * order css property */
   order?: number;
-};
+}
 
 export type GridItemProps<
   E extends React.ElementType
@@ -45,7 +47,7 @@ function GridItem<E extends React.ElementType = typeof DEFAULT_TAG>(
     rowEnd,
     area,
     order,
-    style: styleProp,
+    className,
     ...otherProps
   }: GridItemProps<E>,
   ref: typeof otherProps.ref,
@@ -59,20 +61,23 @@ function GridItem<E extends React.ElementType = typeof DEFAULT_TAG>(
         columnEnd || 'auto',
       ].join(' / ');
 
-  const style = {
-    gridArea: calculatedArea,
-    order,
-    ...styleProp,
-  };
-
   return (
-    <Primitive as={DEFAULT_TAG} {...otherProps} ref={ref} style={style}>
+    <Box
+      as={DEFAULT_TAG}
+      {...otherProps}
+      css={{
+        gridArea: calculatedArea,
+        order,
+      }}
+      className={className}
+      ref={ref}
+    >
       {children}
-    </Primitive>
+    </Box>
   );
 }
 
-const _GridItem: PolymorphicComponent<
+export const _GridItem: PolymorphicComponent<
   GridItemInternalProps,
   typeof DEFAULT_TAG
 > = React.forwardRef(GridItem);

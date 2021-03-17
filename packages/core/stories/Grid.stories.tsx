@@ -1,8 +1,8 @@
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
 
-import { Grid, GridInternalProps } from '../src/Grid/Grid';
-import { GridItem } from '../src/Grid/GridItem/GridItem';
+import { Grid, _Grid, GridInternalProps } from '../src/Grid/Grid';
+import { GridItem, _GridItem } from '../src/Grid/GridItem/GridItem';
 
 const styles = {
   demoBox: {
@@ -14,11 +14,11 @@ const styles = {
 };
 
 export default {
-  title: 'Components/Grid',
+  title: 'Layout/Grid',
   component: Grid,
   subcomponents: { GridItem },
   parameters: {
-    propTypes: [Grid['__docgenInfo'], GridItem['__docgenInfo']],
+    propTypes: [_Grid['__docgenInfo'], _GridItem['__docgenInfo']],
   },
 };
 

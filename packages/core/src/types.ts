@@ -13,3 +13,51 @@ export type CommonProps = {
   /** Styles */
   style?: CSSProperties;
 };
+
+export type Spacing =
+  | 'none'
+  | 'spacing2Xs'
+  | 'spacingXs'
+  | 'spacingS'
+  | 'spacingM'
+  | 'spacingL'
+  | 'spacingXl'
+  | 'spacing2Xl'
+  | 'spacing3Xl'
+  | 'spacing4Xl';
+
+export interface MarginProps {
+  /**
+   * sets margin to one of the corresponding spacing tokens, default is none */
+  margin?: Spacing;
+  /**
+   * sets margin-top to one of the corresponding spacing tokens, default is none */
+  marginTop?: Spacing;
+  /**
+   * sets margin-right to one of the corresponding spacing tokens, default is none */
+  marginRight?: Spacing;
+  /**
+   * sets margin-bottom to one of the corresponding spacing tokens, default is none */
+  marginBottom?: Spacing;
+  /**
+   * sets margin-left to one of the corresponding spacing tokens, default is none */
+  marginLeft?: Spacing;
+}
+
+export interface PaddingProps {
+  /**
+   * sets padding to one of the corresponding spacing tokens, default is none */
+  padding?: Spacing;
+  /**
+   * sets padding-top to one of the corresponding spacing tokens, default is none */
+  paddingTop?: Spacing;
+  /**
+   * sets padding-right to one of the corresponding spacing tokens, default is none */
+  paddingRight?: Spacing;
+  /**
+   * sets padding-bottom to one of the corresponding spacing tokens, default is none */
+  paddingBottom?: Spacing;
+  /**
+   * sets padding-left to one of the corresponding spacing tokens, default is none */
+  paddingLeft?: Spacing;
+}

@@ -10,7 +10,6 @@ exports[`renders the component 1`] = `
 
 <div
   class="emotion-0"
-  data-test-id="cf-ui-flex"
 >
   Flex
 </div>
@@ -25,8 +24,7 @@ exports[`renders the component with an additional class name 1`] = `
 }
 
 <div
-  class="emotion-0 my-extra-class"
-  data-test-id="cf-ui-flex"
+  class="my-extra-class emotion-0"
 >
   Flex
 </div>
