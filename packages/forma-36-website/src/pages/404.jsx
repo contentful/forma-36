@@ -5,7 +5,7 @@ import Layout from '../components/Layout';
 const NotFoundPage = () => (
   <Layout>
     <Card className="f36-padding--xl">
-      <DisplayText>404 NOT FOUND</DisplayText>
+      <DisplayText>{`We're unable to find the page you're looking for.`}</DisplayText>
     </Card>
   </Layout>
 );

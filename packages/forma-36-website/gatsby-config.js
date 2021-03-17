@@ -341,17 +341,17 @@ module.exports = {
         path: `${__dirname}/src/pages/`,
       },
     },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'pages',
-        path: path.resolve(
-          __dirname,
-          '../forma-36-react-components/src/components/',
-        ),
-        ignore: ['**/*.css', '**/*.js', '**/*.snap', '**/*.ts', '**/*.tsx'],
-      },
-    },
+    // {
+    //   resolve: 'gatsby-source-filesystem',
+    //   options: {
+    //     name: 'pages',
+    //     path: path.resolve(
+    //       __dirname,
+    //       '../forma-36-react-components/src/components/',
+    //     ),
+    //     ignore: ['**/*.css', '**/*.js', '**/*.snap', '**/*.ts', '**/*.tsx'],
+    //   },
+    // },
     'gatsby-transformer-javascript-frontmatter',
     'gatsby-transformer-sharp',
     {
