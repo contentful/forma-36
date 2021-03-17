@@ -20,7 +20,7 @@ import {
     </TableRow>
   </TableHead>
   <TableBody>
-    {Object.keys(tokens).map(token => {
+    {Object.keys(tokens).map((token) => {
       const value = tokens[token];
       const valuePx = 1 * parseFloat(value) * 16; // 16 = REM Base
       return (
