@@ -120,6 +120,20 @@ module.exports = {
         link: '',
         menuLinks: [
           {
+            name: 'Layout',
+            link: '',
+            menuLinks: [
+              {
+                name: 'Flex',
+                link: '/components/flex/',
+              },
+              {
+                name: 'Grid',
+                link: '/components/grid/',
+              },
+            ],
+          },
+          {
             name: 'Accordion',
             link: '/components/accordion/',
           },
@@ -130,6 +144,10 @@ module.exports = {
           {
             name: 'Autocomplete',
             link: '/components/autocomplete/',
+          },
+          {
+            name: 'Badge',
+            link: '/components/badge/',
           },
           {
             name: 'Button',
@@ -163,10 +181,7 @@ module.exports = {
             name: 'Entity list',
             link: '/components/entity-list/',
           },
-          {
-            name: 'Flex',
-            link: '/components/flex/',
-          },
+
           {
             name: 'Form Elements',
             link: '',
@@ -221,10 +236,7 @@ module.exports = {
               },
             ],
           },
-          {
-            name: 'Grid',
-            link: '/components/grid/',
-          },
+
           {
             name: 'Help text',
             link: '/components/help-text/',
@@ -304,10 +316,6 @@ module.exports = {
             link: '/components/tabs/',
           },
           {
-            name: 'Tag',
-            link: '/components/tag/',
-          },
-          {
             name: 'Toggle button',
             link: '/components/toggle-button/',
           },
@@ -349,6 +357,22 @@ module.exports = {
           __dirname,
           '../forma-36-react-components/src/components/',
         ),
+        ignore: ['**/*.css', '**/*.js', '**/*.snap', '**/*.ts', '**/*.tsx'],
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'pages',
+        path: path.resolve(__dirname, '../components/'),
+        ignore: ['**/*.css', '**/*.js', '**/*.snap', '**/*.ts', '**/*.tsx'],
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'pages',
+        path: path.resolve(__dirname, '../core/'),
         ignore: ['**/*.css', '**/*.js', '**/*.snap', '**/*.ts', '**/*.tsx'],
       },
     },

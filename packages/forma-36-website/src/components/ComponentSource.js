@@ -25,7 +25,7 @@ const styles = {
 };
 
 class ComponentSource extends React.Component {
-  state = { isOpen: true };
+  state = { isOpen: false };
 
   handleToggle = () => {
     this.setState((prevState) => {

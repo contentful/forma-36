@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { css } from '@emotion/core';
 import tokens from '@contentful/f36-tokens';
-import { DisplayText, Button, Tag } from '@contentful/f36-components';
+import { DisplayText, Button, Badge } from '@contentful/f36-components';
 import storybookIcon from '../images/storybook.svg';
 import githubIcon from '../images/github.svg';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
@@ -29,7 +29,7 @@ const styles = {
     border-bottom-left-radius: 0;
     margin-right: ${tokens.spacingM};
   `,
-  tag: css`
+  badge: css`
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -128,10 +128,10 @@ const DocFormatter = ({ frontmatter, dataFromReadme, children }) => {
           </div>
 
           {data.status && (
-            <span css={styles.tag}>
-              <Tag tagType={data.status === 'alpha' ? 'warning' : 'positive'}>
+            <span css={styles.badge}>
+              <Badge variant={data.status === 'alpha' ? 'warning' : 'positive'}>
                 {data.status}
-              </Tag>
+              </Badge>
             </span>
           )}
         </div>

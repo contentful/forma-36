@@ -2,8 +2,8 @@
 title: 'Box Shadows'
 ---
 
-import boxShadowTokens from '@contentful/forma-36-tokens/src/tokens/box-shadows/box-shadows';
-import glowTokens from '@contentful/forma-36-tokens/src/tokens/box-shadows/glows';
+import boxShadowTokens from '@contentful/f36-tokens/src/tokens/box-shadows/box-shadows';
+import glowTokens from '@contentful/f36-tokens/src/tokens/box-shadows/glows';
 
 import {
   Table,
@@ -12,7 +12,7 @@ import {
   TableCell,
   TableRow,
   Card,
-} from '@contentful/forma-36-react-components';
+} from '@contentful/f36-components';
 
 # Box Shadows
 
@@ -30,7 +30,7 @@ Box shadows are used to give depth to the user interface.
     </TableRow>
   </TableHead>
   <TableBody>
-    {Object.keys(boxShadowTokens).map(token => {
+    {Object.keys(boxShadowTokens).map((token) => {
       const value = boxShadowTokens[token];
       return (
         <TableRow key={token}>
@@ -61,7 +61,7 @@ Button component.
     </TableRow>
   </TableHead>
   <TableBody>
-    {Object.keys(glowTokens).map(token => {
+    {Object.keys(glowTokens).map((token) => {
       const value = glowTokens[token];
       return (
         <TableRow key={token}>

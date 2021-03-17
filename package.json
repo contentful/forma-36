@@ -28,7 +28,8 @@
     "storybook:build": "yarn build-storybook -c ./scripts/.storybook -s ./scripts/.storybook/public -o dist-storybook",
     "test": "jest",
     "tsc": "tsc --noEmit",
-    "tsc:watch": "tsc --noEmit --watch"
+    "tsc:watch": "tsc --noEmit --watch",
+    "docs:dev": "lerna run --scope f36-website start --stream"
   },
   "husky": {
     "hooks": {

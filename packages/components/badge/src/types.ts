@@ -1,3 +1,5 @@
+export type BadgeSize = 'default' | 'small';
+
 export type BadgeVariant =
   | 'primary'
   | 'primary-filled'

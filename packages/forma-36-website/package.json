@@ -43,7 +43,6 @@
   },
   "scripts": {
     "build:website": "gatsby build",
-    "develop": "gatsby develop",
-    "start": "npm run develop"
+    "start": "gatsby develop"
   }
 }

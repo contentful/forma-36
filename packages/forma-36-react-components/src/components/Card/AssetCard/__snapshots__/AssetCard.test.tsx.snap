@@ -462,18 +462,18 @@ exports[`renders the component with status 1`] = `
   display: inline-block;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
-  font-size: calc(1rem * (12 / 16));
-  line-height: 20px;
-  max-height: 20px;
   text-transform: uppercase;
   -webkit-letter-spacing: 0.06rem;
   -moz-letter-spacing: 0.06rem;
   -ms-letter-spacing: 0.06rem;
   letter-spacing: 0.06rem;
-  padding: 0 0.5rem;
   border-radius: 4px;
   color: #A82D3E;
   background-color: #FCE9E8;
+  padding: 0 0.5rem;
+  font-size: calc(1rem * (12 / 16));
+  line-height: 20px;
+  max-height: 20px;
 }
 
 <div
