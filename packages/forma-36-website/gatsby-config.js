@@ -120,6 +120,20 @@ module.exports = {
         link: '',
         menuLinks: [
           {
+            name: 'Layout',
+            link: '',
+            menuLinks: [
+              {
+                name: 'Flex',
+                link: '/components/flex/',
+              },
+              {
+                name: 'Grid',
+                link: '/components/grid/',
+              },
+            ],
+          },
+          {
             name: 'Accordion',
             link: '/components/accordion/',
           },
@@ -167,10 +181,7 @@ module.exports = {
             name: 'Entity list',
             link: '/components/entity-list/',
           },
-          {
-            name: 'Flex',
-            link: '/components/flex/',
-          },
+
           {
             name: 'Form Elements',
             link: '',
@@ -225,10 +236,7 @@ module.exports = {
               },
             ],
           },
-          {
-            name: 'Grid',
-            link: '/components/grid/',
-          },
+
           {
             name: 'Help text',
             link: '/components/help-text/',
