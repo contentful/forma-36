@@ -7,10 +7,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @contentful/forma-36-fcss
 
-
-
-
-
 # [0.3.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-fcss@0.2.14...@contentful/forma-36-fcss@0.3.0) (2021-01-20)
 
 ### Features

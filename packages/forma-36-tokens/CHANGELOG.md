@@ -7,10 +7,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @contentful/forma-36-tokens
 
-
-
-
-
 # [0.10.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-tokens@0.9.4...@contentful/forma-36-tokens@0.10.0) (2021-01-20)
 
 ### Features
