@@ -52,34 +52,8 @@ const Layout = (props) => {
           }
         }
       }
-      allMdx {
-        nodes {
-          slug
-          body
-        }
-      }
     }
   `);
-
-  const dataFromReadme = {};
-
-  data.allMdx.nodes.forEach((item) => {
-    if (props.pageContext && props.pageContext.frontmatter.title) {
-      const arrFromSlug = item.slug.split('/');
-      const arrFromSlugLowercase = arrFromSlug.map((item) =>
-        item.toLowerCase(),
-      );
-
-      const trimmedTitle = props.pageContext.frontmatter.title
-        .replace(/\s/g, '')
-        .toLowerCase();
-
-      if (arrFromSlugLowercase.includes(trimmedTitle)) {
-        dataFromReadme[props.pageContext.frontmatter.title] = item.body;
-      }
-    }
-    return;
-  });
 
   return (
     <div css={styles.test}>
@@ -117,11 +91,7 @@ const Layout = (props) => {
         />
         <Container
           frontmatter={props.pageContext && props.pageContext.frontmatter}
-          dataFromReadme={
-            props.pageContext
-              ? dataFromReadme[props.pageContext.frontmatter.title]
-              : null
-          }
+          dataFromReadme={props.pageContext && props.pageContext.body}
         >
           {props.children}
         </Container>

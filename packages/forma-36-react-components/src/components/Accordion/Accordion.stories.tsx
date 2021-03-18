@@ -4,7 +4,6 @@ import { Flex } from '@contentful/f36-core';
 import { Accordion, AccordionProps } from './Accordion';
 import { AccordionItem } from './AccordionItem/AccordionItem';
 import { Paragraph, SectionHeading, Typography } from '../Typography';
-import notes from './README.mdx';
 
 export default {
   title: 'Components/Accordion',
@@ -12,7 +11,6 @@ export default {
   subcomponents: { AccordionItem },
   parameters: {
     propTypes: [Accordion['__docgenInfo'], AccordionItem['__docgenInfo']],
-    notes,
   },
   argTypes: {
     align: { control: { type: 'select', options: ['start', 'end'] } },

@@ -8,6 +8,7 @@ const styles = {
     display: flex;
     width: 960px;
     margin: 0 auto;
+    min-height: 150px;
     padding: ${tokens.spacingL};
     align-items: center;
   `,

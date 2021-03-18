@@ -4,14 +4,12 @@ import tokens from '@contentful/f36-tokens';
 import { Workbench, WorkbenchProps } from './Workbench';
 import { Icon } from '../Icon';
 import { Button } from '../Button';
-import notes from './README.mdx';
 
 export default {
   title: 'components/Workbench',
   component: Workbench,
   parameters: {
     propTypes: Workbench['__docgenInfo'],
-    notes,
   },
   argTypes: {
     children: { control: { disable: true } },

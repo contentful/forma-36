@@ -6,14 +6,11 @@ import tokens from '@contentful/f36-tokens';
 import { Flex } from '@contentful/f36-core';
 import '@contentful/forma-36-fcss/dist/styles.css';
 
-import notes from './README.mdx';
-
 export default {
   title: 'Components/TextLink',
   component: TextLink,
   parameters: {
     propTypes: TextLink['__docgenInfo'],
-    notes,
   },
 };
 

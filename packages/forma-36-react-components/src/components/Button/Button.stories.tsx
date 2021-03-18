@@ -5,14 +5,12 @@ import { Button, ButtonProps } from './Button';
 import { SectionHeading } from '../Typography';
 import { Badge } from '@contentful/f36-badge';
 import { iconName } from '../Icon/constants';
-import notes from './README.mdx';
 
 export default {
   title: 'Components/Button',
   component: Button,
   parameters: {
     propTypes: [Button['__docgenInfo']],
-    notes,
   },
   argTypes: {
     icon: { control: { type: 'select', options: iconName } },

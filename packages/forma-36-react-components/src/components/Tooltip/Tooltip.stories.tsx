@@ -4,14 +4,12 @@ import { Tooltip } from './Tooltip';
 import { Paragraph, SectionHeading } from '../Typography';
 import { TextLink } from '../TextLink';
 import { Flex } from '@contentful/f36-core';
-import notes from './README.mdx';
 
 export default {
   title: 'Components/Tooltip',
   component: Tooltip,
   parameters: {
     propTypes: Tooltip['__docgenInfo'],
-    notes,
   },
   argTypes: {
     content: { control: 'text' },

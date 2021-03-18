@@ -158,7 +158,7 @@ module.exports = {
             link: '/components/card/',
           },
           {
-            name: 'Copy button',
+            name: 'CopyButton',
             link: '/components/copy-button/',
           },
           {
@@ -170,15 +170,15 @@ module.exports = {
             link: '/components/dropdown/',
           },
           {
-            name: 'Editor toolbar',
+            name: 'EditorToolbar',
             link: '/components/editor-toolbar/',
           },
           {
-            name: 'Empty state',
+            name: 'EmptyState',
             link: '/components/empty-state/',
           },
           {
-            name: 'Entity list',
+            name: 'EntityList',
             link: '/components/entity-list/',
           },
 
@@ -191,7 +191,7 @@ module.exports = {
                 link: '/components/checkbox/',
               },
               {
-                name: 'Checkbox Field',
+                name: 'CheckboxField',
                 link: '/components/checkbox-field/',
               },
               {
@@ -199,15 +199,15 @@ module.exports = {
                 link: '/components/form/',
               },
               {
-                name: 'Form label',
+                name: 'FormLabel',
                 link: '/components/form-label/',
               },
               {
-                name: 'Radio button',
+                name: 'RadioButton',
                 link: '/components/radio-button/',
               },
               {
-                name: 'Radio button field',
+                name: 'RadioButtonField',
                 link: '/components/radio-button-field/',
               },
               {
@@ -215,19 +215,19 @@ module.exports = {
                 link: '/components/select/',
               },
               {
-                name: 'Select field',
+                name: 'SelectField',
                 link: '/components/select-field/',
               },
               {
-                name: 'Text field',
+                name: 'TextField',
                 link: '/components/text-field/',
               },
               {
-                name: 'Text input',
+                name: 'TextInput',
                 link: '/components/text-input/',
               },
               {
-                name: 'Text link',
+                name: 'TextLink',
                 link: '/components/text-link/',
               },
               {
@@ -238,7 +238,7 @@ module.exports = {
           },
 
           {
-            name: 'Help text',
+            name: 'HelpText',
             link: '/components/help-text/',
           },
           {
@@ -246,7 +246,7 @@ module.exports = {
             link: '/components/icon/',
           },
           {
-            name: 'Icon button',
+            name: 'IconButton',
             link: '/components/icon-button/',
           },
           {
@@ -274,7 +274,7 @@ module.exports = {
             link: '/components/pill/',
           },
           {
-            name: 'Product Icon',
+            name: 'ProductIcon',
             link: '/components/product-icon/',
           },
           {
@@ -282,19 +282,19 @@ module.exports = {
             link: '',
             menuLinks: [
               {
-                name: 'Skeleton body text',
+                name: 'SkeletonBodyText',
                 link: '/components/skeleton/skeleton-body-text/',
               },
               {
-                name: 'Skeleton display text',
+                name: 'SkeletonDisplayText',
                 link: '/components/skeleton/skeleton-display-text/',
               },
               {
-                name: 'Skeleton image',
+                name: 'SkeletonImage',
                 link: '/components/skeleton/skeleton-image/',
               },
               {
-                name: 'Skeleton row',
+                name: 'SkeletonRow',
                 link: '/components/skeleton/skeleton-row/',
               },
             ],
@@ -316,7 +316,7 @@ module.exports = {
             link: '/components/tabs/',
           },
           {
-            name: 'Toggle button',
+            name: 'ToggleButton',
             link: '/components/toggle-button/',
           },
           {
@@ -328,7 +328,7 @@ module.exports = {
             link: '/components/typography/',
           },
           {
-            name: 'Validation message',
+            name: 'ValidationMessage',
             link: '/components/validation-message/',
           },
           {
@@ -346,7 +346,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'pages',
-        path: `${__dirname}/src/pages/`,
+        path: `${__dirname}/src/content/`,
       },
     },
     {

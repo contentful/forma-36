@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { RelativeDate, RelativeDateProps } from './RelativeDate';
-import notes from '../README.mdx';
 
 const THREE_MINUTES = 3 * 60 * 1000;
 
@@ -10,7 +9,6 @@ export default {
   component: RelativeDate,
   parameters: {
     propTypes: RelativeDate['__docgenInfo'],
-    notes,
   },
   argTypes: {
     date: { control: { type: 'date' } },

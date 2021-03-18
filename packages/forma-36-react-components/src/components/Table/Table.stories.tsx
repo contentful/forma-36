@@ -7,7 +7,6 @@ import { TableBody } from './TableBody/TableBody';
 import { TableCell } from './TableCell/TableCell';
 import { TableRow } from './TableRow/TableRow';
 import { SkeletonRow } from '../Skeleton';
-import notes from './Table.md';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '../Typography';
 import { Button } from '../Button/Button';
@@ -26,7 +25,6 @@ export default {
       TableCell['__docgenInfo'],
       TableRow['__docgenInfo'],
     ],
-    notes,
   },
   subcomponents: { TableHead, TableBody, TableCell, TableRow },
   title: 'Components/Table',
