@@ -3,14 +3,12 @@ import React from 'react';
 import { EntityListItem, EntityListItemProps } from './EntityListItem';
 import { DropdownList, DropdownListItem } from '../../Dropdown';
 import { CardDragHandle } from './../../Card';
-import notes from './README.mdx';
 
 export default {
   title: 'Components/EntityList/EntityListItem',
   component: EntityListItem,
   parameters: {
     propTypes: [EntityListItem['__docgenInfo']],
-    notes,
   },
   argTypes: {
     className: { control: { disable: true } },

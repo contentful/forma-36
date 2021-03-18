@@ -7,7 +7,7 @@ import { TableBody } from './TableBody/TableBody';
 import { TableCell } from './TableCell/TableCell';
 import { TableRow } from './TableRow/TableRow';
 import { SkeletonRow } from '../Skeleton';
-import notes from './Table.md';
+import notes from './README.mdx';
 import { Flex } from '../Flex';
 import { SectionHeading } from '../Typography';
 import { Button } from '../Button/Button';

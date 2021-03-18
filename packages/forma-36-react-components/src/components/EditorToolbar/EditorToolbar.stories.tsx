@@ -5,7 +5,6 @@ import { EditorToolbar } from './EditorToolbar';
 import type { EditorToolbarProps } from './EditorToolbar';
 import { Button } from '../Button';
 import { EditorToolbarButton } from './EditorToolbarButton/EditorToolbarButton';
-import notes from './README.mdx';
 
 export default {
   argTypes: {
@@ -18,7 +17,6 @@ export default {
       EditorToolbar['__docgenInfo'],
       EditorToolbarButton['__docgenInfo'],
     ],
-    notes,
   },
   subcomponents: { EditorToolbarButton },
   title: 'Components/EditorToolbar',

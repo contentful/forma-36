@@ -5,14 +5,12 @@ import { FieldGroup } from './FieldGroup/FieldGroup';
 import { Button } from '../Button';
 import { TextField } from '../TextField';
 import { CheckboxField } from '../CheckboxField';
-import notes from './README.mdx';
 
 export default {
   title: 'Form Elements/Form',
   component: Form,
   parameters: {
     propTypes: [Form['__docgenInfo']],
-    notes,
   },
   argTypes: {
     className: { control: { disable: true } },

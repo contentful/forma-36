@@ -1,14 +1,12 @@
 import React, { useState, useCallback } from 'react';
 
 import { Autocomplete, AutocompleteProps } from './Autocomplete';
-import notes from './README.mdx';
 
 export default {
   title: 'Components/Autocomplete',
   component: Autocomplete,
   parameters: {
     propTypes: [Autocomplete['__docgenInfo']],
-    notes,
   },
   argTypes: {
     className: { control: { disable: true } },

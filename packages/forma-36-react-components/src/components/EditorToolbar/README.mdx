@@ -1,4 +1,11 @@
-# EditorToolbar
+---
+title: 'EditorToolbar'
+type: 'component'
+status: 'stable'
+slug: /components/editor-toolbar/
+github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/EditorToolbar'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-editortoolbar--default'
+---
 
 The EditorToolbar is a toolbar component for rich text editors. It provides a styled shell that toolbar actions such as buttons can be wrapped in.
 
@@ -9,11 +16,6 @@ The EditorToolbar is a toolbar component for rich text editors. It provides a st
 ## Examples of usage
 
 ```jsx
-import {
-  EditorToolbar,
-  EditorToolbarButton,
-} from '@contentful/forma-36-react-components';
-
 <EditorToolbar>
   <EditorToolbarButton
     icon="FormatBold"
@@ -21,5 +23,37 @@ import {
     label="Bold"
     isActive={false}
   />
-</EditorToolbar>;
+</EditorToolbar>
+```
+
+```jsx
+<React.Fragment>
+  <EditorToolbar style={{ justifyContent: 'space-between' }}>
+    <div>
+      <EditorToolbarButton
+        icon="FormatBold"
+        tooltip="Bold"
+        label="Bold"
+        isActive={false}
+      />
+      <EditorToolbarButton
+        icon="FormatItalic"
+        tooltip="Italic"
+        label="Italic"
+        isActive={false}
+      />
+      <EditorToolbarButton
+        icon="FormatUnderlined"
+        tooltip="Underlined"
+        label="Underlined"
+        isActive={false}
+      />
+    </div>
+    <div>
+      <Button size="small" buttonType="muted">
+        Example button
+      </Button>
+    </div>
+  </EditorToolbar>
+</React.Fragment>
 ```

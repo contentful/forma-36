@@ -7,7 +7,6 @@ import {
   productIconColor,
   productIconTag,
 } from './constants';
-import notes from './README.mdx';
 import { Flex } from '../Flex';
 import { Paragraph, SectionHeading } from '../Typography';
 
@@ -16,7 +15,6 @@ export default {
   component: ProductIcon,
   parameters: {
     propTypes: [ProductIcon['__docgenInfo']],
-    notes,
   },
   argTypes: {
     icon: { control: { type: 'select', options: productIconName } },

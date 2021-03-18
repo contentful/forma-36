@@ -2,7 +2,6 @@ import React from 'react';
 
 import { Button } from '../Button';
 import { Notification, NotificationsAPI } from './Notification';
-import notes from './README.mdx';
 import { NotificationItem } from './NotificationItem';
 import { Flex } from '../Flex';
 import { SectionHeading } from '../Typography';
@@ -18,7 +17,6 @@ export default {
   component: Notification,
   parameters: {
     propTypes: [Notification['__docgenInfo']],
-    notes,
   },
   argTypes: {
     className: { control: { disable: true } },

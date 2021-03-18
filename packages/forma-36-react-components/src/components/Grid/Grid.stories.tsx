@@ -3,7 +3,7 @@ import tokens from '@contentful/forma-36-tokens';
 
 import { Grid, GridProps } from './Grid';
 import { GridItem } from './GridItem/GridItem';
-import notes from './README.mdx';
+import notes from './docs/README.mdx';
 
 const styles = {
   demoBox: {

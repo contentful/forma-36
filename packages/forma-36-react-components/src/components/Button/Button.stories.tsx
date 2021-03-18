@@ -5,14 +5,12 @@ import { Flex } from '../Flex';
 import { SectionHeading } from '../Typography';
 import { Tag } from '../Tag';
 import { iconName } from '../Icon/constants';
-import notes from './README.mdx';
 
 export default {
   title: 'Components/Button',
   component: Button,
   parameters: {
     propTypes: [Button['__docgenInfo']],
-    notes,
   },
   argTypes: {
     icon: { control: { type: 'select', options: iconName } },

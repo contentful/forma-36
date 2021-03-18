@@ -1,6 +1,5 @@
 import React from 'react';
 
-import notes from './README.mdx';
 import { Note, NoteProps } from './Note';
 import { TextLink } from '../TextLink';
 import { SectionHeading } from '../Typography';
@@ -11,7 +10,6 @@ export default {
   component: Note,
   parameters: {
     propTypes: [Note['__docgenInfo']],
-    notes,
   },
   argTypes: {
     className: { control: { disable: true } },
