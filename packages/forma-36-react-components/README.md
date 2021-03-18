@@ -12,7 +12,6 @@ A React component library for [Contentful](https://www.contentful.com), powered 
   - [Library Usage](#library-usage)
     - [Install package from NPM](#install-package-from-npm)
     - [Import desired component into your project](#import-desired-component-into-your-project)
-    - [Import styles](#import-styles)
   - [Development](#development)
     - [Switch to the correct version of Node (using NVM)](#switch-to-the-correct-version-of-node-using-nvm)
     - [Install dependencies](#install-dependencies)
@@ -45,19 +44,7 @@ npm i @contentful/forma-36-react-components
 ### Import desired component into your project
 
 ```js
-import { Input } from '@contentful/forma-36-react-components';
-```
-
-### Import styles
-
-```js
-import '@contentful/forma-36-react-components/dist/styles.css';
-```
-
-NOTE: If a component is still in alpha state:
-
-```js
-import { AlphaComponent } from '@contentful/forma-36-react-components/dist/alpha';
+import { Input } from '@contentful/f36-components';
 ```
 
 ## Development

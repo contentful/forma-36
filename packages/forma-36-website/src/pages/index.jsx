@@ -1,11 +1,7 @@
 import React from 'react';
 
-import tokens from '@contentful/forma-36-tokens';
-import {
-  DisplayText,
-  Paragraph,
-  Button,
-} from '@contentful/forma-36-react-components';
+import tokens from '@contentful/f36-tokens';
+import { DisplayText, Paragraph, Button } from '@contentful/f36-components';
 
 import componentsImg from './components.png';
 import fcssImg from './fcss.png';
