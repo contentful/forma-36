@@ -17,3 +17,21 @@ pre {
   margin: 0;
   white-space: normal;
 }
+
+.prism-code {
+  font-size: var(--font-size-m);
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+code {
+  font-family: var(--font-stack-monospace);
+  color: var(--color-blue-base);
+  font-size: var(--font-size-m);
+  white-space: nowrap;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-weight: var(--font-weight-medium);
+}

@@ -36,7 +36,10 @@ class ComponentSource extends React.Component {
   render() {
     return (
       <div className="f36-margin-bottom--m">
-        <LiveProvider code={this.props.children.trim()} scope={f36Components}>
+        <LiveProvider
+          code={this.props.children.trim()}
+          scope={{ ...f36Components, tokens }}
+        >
           <Card padding="none">
             <div css={styles.preview}>
               <LivePreview />
