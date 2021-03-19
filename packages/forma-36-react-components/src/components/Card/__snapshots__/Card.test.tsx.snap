@@ -92,6 +92,7 @@ exports[`has an "is-interactive" class if has an onClick prop 1`] = `
   class="Card Card--padding-default Card--is-interactive"
   data-test-id="cf-ui-card"
   href="/"
+  rel="noreferrer"
 >
   Card
 </a>
@@ -102,6 +103,7 @@ exports[`renders as a link if passed a href prop 1`] = `
   class="Card Card--padding-default Card--is-interactive"
   data-test-id="cf-ui-card"
   href="/"
+  rel="noreferrer"
 >
   Card
 </a>

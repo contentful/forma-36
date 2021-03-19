@@ -98,7 +98,7 @@ export const Card = ({
     <Element
       className={classNames}
       href={href}
-      rel={rel}
+      rel={href && rel}
       target={target}
       data-test-id={testId}
       aria-label={otherProps.title || ariaLabel}
