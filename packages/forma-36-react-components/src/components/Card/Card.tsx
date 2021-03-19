@@ -9,6 +9,10 @@ export interface BaseCardProps {
    */
   href?: string;
   /**
+   * Used with href to define a relationship between a linked resource and the current document
+   */
+  rel?: string;
+  /**
    * Used with href to specify target attribute value
    */
   target?: React.AnchorHTMLAttributes<HTMLAnchorElement>['target'];
@@ -58,6 +62,7 @@ export const Card = ({
   testId = 'cf-ui-card',
   children,
   href,
+  rel = 'noreferrer',
   target,
   onClick,
   padding = 'default',
@@ -93,6 +98,7 @@ export const Card = ({
     <Element
       className={classNames}
       href={href}
+      rel={rel}
       target={target}
       data-test-id={testId}
       aria-label={otherProps.title || ariaLabel}
