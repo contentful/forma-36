@@ -1,10 +1,11 @@
 import React, { useCallback } from 'react';
 import cn from 'classnames';
 import truncate from 'truncate';
+import { EntityStatusBadge } from '@contentful/f36-badge';
+import type { EntityStatus, PickUnion } from '@contentful/f36-core';
 
 import { Card, BaseCardProps, CardProps } from '../Card';
 import { CardActions } from '../CardActions/CardActions';
-import { EntityStatusBadge } from '@contentful/f36-badge';
 
 import { EntryCardSkeleton } from './EntryCardSkeleton';
 import {
@@ -14,12 +15,10 @@ import {
 import { Icon, IconType } from '../../Icon';
 import styles from './EntryCard.css';
 
-export type EntryCardStatus =
-  | 'deleted'
-  | 'archived'
-  | 'changed'
-  | 'draft'
-  | 'published';
+type EntryCardStatus = PickUnion<
+  EntityStatus,
+  'deleted' | 'archived' | 'changed' | 'draft' | 'published'
+>;
 
 export type EntryCardSize = 'default' | 'small' | 'auto';
 
@@ -149,7 +148,7 @@ export function EntryCard({
     [],
   );
 
-  const renderStatus = useCallback((status: EntryCardStatus) => {
+  const renderStatus = useCallback((status: EntryCardProps['status']) => {
     return <EntityStatusBadge entityStatus={status} />;
   }, []);
 

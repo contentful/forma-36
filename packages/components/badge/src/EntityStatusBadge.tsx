@@ -1,9 +1,11 @@
 import React from 'react';
-import type { BadgeVariant, EntityStatus } from './types';
+import type { EntityStatus } from '@contentful/f36-core';
+
 import { Badge } from './Badge';
 import type { BadgeProps } from './Badge';
+import { BadgeVariant } from './types';
 
-const statusMap: { [key: string]: BadgeVariant } = {
+const statusMap: { [key in EntityStatus]: BadgeVariant } = {
   published: 'positive',
   draft: 'warning',
   archived: 'negative',

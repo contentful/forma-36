@@ -1,7 +1,8 @@
 import React from 'react';
-import type { BadgeVariant, BadgeSize } from './types';
 import { Box } from '@contentful/f36-core';
 import type { CommonProps } from '@contentful/f36-core';
+
+import type { BadgeSize, BadgeVariant } from './types';
 import { getBadgeStyles } from './getBadgeStyles';
 
 export interface BadgeProps extends CommonProps {
@@ -33,9 +34,9 @@ function Badge(props: BadgeProps, ref: React.Ref<HTMLDivElement>) {
       as="div"
       className={className}
       ref={ref}
-      data-test-id={testId}
       display="inline-block"
       css={getBadgeStyles({ variant, size })}
+      testId={testId}
       {...otherProps}
     >
       {children}

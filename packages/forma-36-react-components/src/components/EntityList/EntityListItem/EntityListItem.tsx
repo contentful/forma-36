@@ -1,8 +1,9 @@
 import React, { useCallback } from 'react';
 import cn from 'classnames';
 import type { MouseEventHandler } from 'react';
-
 import { EntityStatusBadge } from '@contentful/f36-badge';
+import type { EntityStatus, PickUnion } from '@contentful/f36-core';
+
 import { Icon } from '../../Icon';
 import { CardActions, CardDragHandle, CardDragHandleProps } from '../../Card';
 import {
@@ -13,11 +14,10 @@ import {
 import { TabFocusTrap } from '@contentful/f36-utils';
 import styles from './EntityListItem.css';
 
-export type EntityListItemStatus =
-  | 'archived'
-  | 'changed'
-  | 'draft'
-  | 'published';
+type EntityListItemStatus = PickUnion<
+  EntityStatus,
+  'archived' | 'changed' | 'draft' | 'published'
+>;
 
 export interface EntityListItemProps {
   /**
@@ -35,7 +35,7 @@ export interface EntityListItemProps {
   /**
    * The publish status of the entry
    */
-  status?: 'archived' | 'changed' | 'draft' | 'published';
+  status?: EntityListItemStatus;
   /**
    * A boolean used to render the Thumbnail or not
    */
@@ -143,7 +143,7 @@ export function EntityListItem({
     );
   }, [thumbnailAltText, thumbnailUrl]);
 
-  const renderStatus = useCallback((status: EntityListItemStatus) => {
+  const renderStatus = useCallback((status: EntityListItemProps['status']) => {
     return (
       <div className={styles['EntityListItem__status']}>
         <EntityStatusBadge entityStatus={status} />
