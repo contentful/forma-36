@@ -114,8 +114,10 @@ const markToComponentMap = {
 };
 
 const Container = (data) => {
-  const { frontmatter, children, dataFromReadme } = data;
+  const { frontmatter, children, dataFromReadme, propsMetadata } = data;
   const isHomePage = frontmatter && frontmatter.type === 'home';
+
+  console.log(propsMetadata);
 
   return (
     <div css={styles.container}>
