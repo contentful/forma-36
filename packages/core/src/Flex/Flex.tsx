@@ -8,7 +8,6 @@ import {
 import { Box } from '../Box';
 import type { MarginProps, PaddingProps } from '../types';
 import type * as CSS from 'csstype';
-import { FlexSpacer } from './FlexSpacer';
 
 export interface FlexInternalProps extends MarginProps, PaddingProps {
   /**
@@ -25,6 +24,10 @@ export interface FlexInternalProps extends MarginProps, PaddingProps {
    * Sets display: inline-flex */
   isInline?: boolean;
 
+  /**
+   * A shorthand property for flex-grow, flex-shrink, flex-basis
+   */
+  flex?: CSS.Property.Flex;
   /**
    * Defines the initial size of a flexbox item.
    * */
@@ -84,6 +87,7 @@ const Flex: PolymorphicComponentWithRef<
     alignItems,
     alignSelf,
     alignContent,
+    flex,
     flexBasis,
     flexShrink,
     flexDirection,
@@ -108,6 +112,7 @@ const Flex: PolymorphicComponentWithRef<
       css={{
         width: fullWidth ? '100%' : undefined,
         height: fullHeight ? '100%' : undefined,
+        flex,
         flexBasis,
         flexShrink,
         flexDirection,
@@ -133,8 +138,6 @@ const Flex: PolymorphicComponentWithRef<
 export const _Flex: PolymorphicComponent<
   FlexInternalProps,
   typeof DEFAULT_TAG
-> & { Spacer: typeof FlexSpacer } = Object.assign(React.forwardRef(Flex), {
-  Spacer: FlexSpacer,
-});
+> = React.forwardRef(Flex);
 
 export { _Flex as Flex };

@@ -61,31 +61,6 @@ export const Basic = ({ exampleBoxesNumber, ...args }: Args) => (
   </Flex>
 );
 
-export const WithSpacer = (args: Args) => (
-  <Flex
-    padding="spacingM"
-    style={{ backgroundColor: tokens.colorElementLight }}
-    {...args}
-  >
-    <Box
-      padding="spacingM"
-      style={{ backgroundColor: tokens.colorRedBase, color: tokens.colorWhite }}
-    >
-      Box 1
-    </Box>
-    <Flex.Spacer />
-    <Box
-      padding="spacingM"
-      style={{
-        backgroundColor: tokens.colorGreenBase,
-        color: tokens.colorWhite,
-      }}
-    >
-      Box 2
-    </Box>
-  </Flex>
-);
-
 Basic.args = {
   exampleBoxesNumber: 4,
   flexDirection: 'row',

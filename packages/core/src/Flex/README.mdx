@@ -60,36 +60,13 @@ To control the behaviour of the Flex component you can use specific properies th
 };
 ```
 
-### Using Flex.Spacer
-
-Flex.Spacer allows you to create an adjustable, empty space that can be used to tune the spacing between child elements within Flex.
-
-```jsx
-<Flex>
-  <Box
-    padding="spacingM"
-    style={{ backgroundColor: tokens.colorRedBase, color: tokens.colorWhite }}
-  >
-    Box 1
-  </Box>
-  <Flex.Spacer />
-  <Box
-    padding="spacingM"
-    style={{ backgroundColor: tokens.colorGreenBase, color: tokens.colorWhite }}
-  >
-    Box 2
-  </Box>
-</Flex>
-```
-
 ### Real-world example
 
 ```jsx
-<Flex alignItems="center">
+<Flex alignItems="center" justifyContent="space-between">
   <Box>
     <Subheading>User name</Subheading>
   </Box>
-  <Flex.Spacer />
   <Flex alignItems="center">
     <Box marginRight="spacingM">
       <TextLink href="http://google.com">User profile</TextLink>
