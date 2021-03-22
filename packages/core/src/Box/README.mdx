@@ -1,0 +1,96 @@
+---
+title: 'Box'
+type: 'component'
+slug: /components/box/
+github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/Box'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-box--default'
+---
+
+Box is the most abstract layout component that allows to apply `margin` and `padding` properties according to the [spacing system]. By default, it renders a `div` element.
+
+## How to use Box
+
+The Box component is useful because it helps with several common cases:
+
+- Create a layout that uses Forma 36 [spacing system]
+- Compose new component and allow to override element using the `as` property.
+
+### Import
+
+```js static=true
+import { Box } from '@contentful/f36-components';
+```
+
+## Code examples
+
+### Margins & Paddings
+
+Margins and paddings for Box component are based on our [spacing system].
+
+Here is an overview of spacings that are available:
+
+- `spacing2Xs`
+- `spacingXs`
+- `spacingXs`
+- `spacingS`
+- `spacingM`
+- `spacingL`
+- `spacingXl`
+- `spacing2Xl`
+- `spacing3Xl`
+- `spacing4Xl`
+
+```jsx
+() => {
+  const SmallWhiteBox = () => (
+    <Box
+      as="span"
+      style={{
+        width: '30px',
+        height: '30px',
+        backgroundColor: tokens.colorWhite,
+      }}
+    />
+  );
+
+  return (
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+      <Box
+        padding="spacingXs"
+        marginRight="spacingM"
+        style={{
+          backgroundColor: tokens.colorRedBase,
+        }}
+      >
+        <SmallWhiteBox />
+      </Box>
+      <Box
+        padding="spacingXs"
+        marginRight="spacingM"
+        style={{
+          backgroundColor: tokens.colorBlueBase,
+        }}
+      >
+        <SmallWhiteBox />
+      </Box>
+    </div>
+  );
+};
+```
+
+### as property
+
+If you want to keep all the styling you've applied to a component but just switch out what's being ultimately rendered (be it a different HTML tag or a different custom component), you can use the "as" prop to do this at runtime.
+
+```jsx
+<Box as="article" padding="spacingXs" margin="spacingS">
+  <Box as="span" display="inline" marginRight="spacingS">
+    item 1
+  </Box>
+  <Box as="span" display="inline" marginRight="spacingS">
+    item 2
+  </Box>
+</Box>
+```
+
+[spacing system]: ../../foundation/spacing

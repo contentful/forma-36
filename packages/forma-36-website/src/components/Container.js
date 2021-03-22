@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import tokens from '@contentful/f36-tokens';
 import { css } from '@emotion/core';
 import { MDXProvider } from '@mdx-js/react';
+
 import {
   Typography,
   DisplayText,
@@ -24,6 +25,7 @@ import ComponentSource from './ComponentSource';
 import DocFormatter from './DocFormatter';
 import Footer from './Footer';
 import { heightOfHeader } from './Navigation';
+import { StaticSource } from './StaticSource';
 
 const styles = {
   container: css`
@@ -52,30 +54,63 @@ const styles = {
 
 const markToComponentMap = {
   h1: (props) => <DisplayText {...props} />,
-  h2: (props) => <Heading element="h2" {...props} />,
-  h3: (props) => <Subheading element="h3" {...props} />,
-  h4: (props) => <Subheading element="h4" {...props} />,
-  h5: (props) => <Subheading element="h5" {...props} />,
-  h6: (props) => <Subheading element="h6" {...props} />,
-  p: (props) => <Paragraph className="f36-font-size--l" {...props} />,
-  a: (props) => <TextLink style={{ fontSize: tokens.fontSizeL }} {...props} />,
-  ul: (props) => <List className="f36-margin-bottom--m" {...props} />,
-  li: (props) => (
-    <ListItem className="f36-font-size--l f36-color--text-mid" {...props} />
+  h2: (props) => (
+    <Heading
+      element="h2"
+      {...props}
+      css={{
+        marginBottom: tokens.spacingL,
+        marginTop: tokens.spacingXl,
+      }}
+    />
   ),
-  code: (props) => <ComponentSource>{props.children}</ComponentSource>,
+  h3: (props) => (
+    <Subheading
+      element="h3"
+      {...props}
+      css={{
+        marginBottom: tokens.spacingM,
+        marginTop: tokens.spacingL,
+      }}
+    />
+  ),
+  h4: (props) => (
+    <Subheading
+      element="h4"
+      {...props}
+      css={{
+        marginBottom: tokens.spacingM,
+        marginTop: tokens.spacingL,
+      }}
+    />
+  ),
+  h5: (props) => (
+    <Subheading
+      element="h5"
+      {...props}
+      css={{
+        marginBottom: tokens.spacingM,
+        marginTop: tokens.spacingL,
+      }}
+    />
+  ),
+  h6: (props) => <Subheading element="h6" {...props} />,
+  p: (props) => <Paragraph {...props} />,
+  a: (props) => <TextLink {...props} />,
+  ul: (props) => <List className="f36-margin-bottom--m" {...props} />,
+  li: (props) => <ListItem className="f36-color--text-mid" {...props} />,
+  code: (props) => {
+    if (props.static) {
+      return <StaticSource {...props} />;
+    }
+    return <ComponentSource>{props.children}</ComponentSource>;
+  },
   table: (props) => <Table className="f36-margin-bottom--m" {...props} />,
   thead: (props) => <TableHead {...props} />,
   tbody: (props) => <TableBody {...props} />,
   tr: (props) => <TableRow {...props} />,
-  th: (props) => (
-    <TableCell
-      className="f36-font-size--l"
-      style={{ textAlign: 'left' }}
-      {...props}
-    />
-  ),
-  td: (props) => <TableCell className="f36-font-size--l" {...props} />,
+  th: (props) => <TableCell style={{ textAlign: 'left' }} {...props} />,
+  td: (props) => <TableCell {...props} />,
 };
 
 const Container = (data) => {

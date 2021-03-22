@@ -18,6 +18,14 @@ export type PolymorphicComponent<P, D extends React.ElementType = 'div'> = <
   props: PolymorphicComponentProps<E, P>,
 ) => React.ReactElement | null;
 
+export type PolymorphicComponentWithRef<
+  P,
+  D extends React.ElementType = 'div'
+> = <E extends React.ElementType = D>(
+  props: PolymorphicComponentProps<E, P>,
+  ref: typeof props.ref,
+) => React.ReactElement | null;
+
 const defaultElement = 'div';
 
 export const Primitive: <E extends React.ElementType = typeof defaultElement>(

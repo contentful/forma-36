@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import {
   PolymorphicComponentProps,
+  PolymorphicComponentWithRef,
   PolymorphicComponent,
 } from '../Primitive/Primitive';
 import { Box } from '../Box';
@@ -18,36 +19,56 @@ export interface FlexInternalProps extends MarginProps, PaddingProps {
   /**
    * Sets height: 100% */
   fullHeight?: boolean;
+
   /**
-   * Sets display:inline-flex */
-  inlineFlex?: boolean;
+   * Sets display: inline-flex */
+  isInline?: boolean;
+
   /**
-   * Sets flex-shrink: 0 */
-  noShrink?: boolean;
+   * A shorthand property for flex-grow, flex-shrink, flex-basis
+   */
+  flex?: CSS.Property.Flex;
   /**
-   * One of flex-wrap css values */
+   * Defines the initial size of a flexbox item.
+   * */
+  flexBasis?: CSS.Property.FlexBasis;
+  /**
+   * Defines how much a flexbox item should shrink if there's not enough space available. */
+  flexShrink?: CSS.Property.FlexShrink;
+  /**
+   * Defines if flexbox items appear on a single line or on multiple lines within a flexbox container. */
   flexWrap?: CSS.Property.FlexWrap;
   /**
-   * One of flex-direction css values */
+   * Defines how flexbox items are ordered within a flexbox container. */
   flexDirection?: CSS.Property.FlexDirection;
   /**
-   * One of flex-grow css values */
+   * Defines how much a flexbox item should grow if there's space available. */
   flexGrow?: CSS.Property.FlexGrow;
   /**
-   * One of justify-content css values */
+   * Defines how flexbox/grid items are aligned according to the main axis, within a flexbox/grid container. */
   justifyContent?: CSS.Property.JustifyContent;
   /**
-   * One of justify-content css values */
+   * Defines the default justify-self for all items of the box, giving them all a default way of justifying each box along the appropriate axis. */
   justifyItems?: CSS.Property.JustifyContent;
   /**
-   * One of justify-self css values */
+   * Sets the way a box is justified inside its alignment container along the appropriate axis. */
   justifySelf?: CSS.Property.JustifySelf;
   /**
-   * One of align-items css values */
+   * Defines how flexbox items are aligned according to the cross axis, within a line of a flexbox container.
+   */
   alignItems?: CSS.Property.AlignItems;
   /**
-   * One of align-self css values */
+   * Works like align-items, but applies only to a single flexbox item, instead of all of them.
+   */
   alignSelf?: CSS.Property.AlignItems;
+  /**
+   * Defines how each line is aligned within a flexbox/grid container.
+   */
+  alignContent?: CSS.Property.AlignContent;
+  /**
+   * Defines the order of a flexbox item
+   */
+  order?: CSS.Property.Order;
 }
 
 export type FlexProps<E extends React.ElementType> = PolymorphicComponentProps<
@@ -57,26 +78,33 @@ export type FlexProps<E extends React.ElementType> = PolymorphicComponentProps<
 
 const DEFAULT_TAG = 'div';
 
-function Flex<E extends React.ElementType = typeof DEFAULT_TAG>(
+const Flex: PolymorphicComponentWithRef<
+  FlexInternalProps,
+  typeof DEFAULT_TAG
+> = (
   {
+    isInline,
     alignItems,
     alignSelf,
-    children,
-    className,
+    alignContent,
+    flex,
+    flexBasis,
+    flexShrink,
     flexDirection,
     flexGrow,
     flexWrap,
     fullHeight,
     fullWidth,
-    inlineFlex,
     justifyContent,
     justifyItems,
     justifySelf,
-    noShrink,
+    order,
+    children,
+    className,
     ...otherProps
-  }: FlexProps<E>,
-  ref: typeof otherProps.ref,
-) {
+  },
+  ref,
+) => {
   return (
     <Box
       as={DEFAULT_TAG}
@@ -84,24 +112,28 @@ function Flex<E extends React.ElementType = typeof DEFAULT_TAG>(
       css={{
         width: fullWidth ? '100%' : undefined,
         height: fullHeight ? '100%' : undefined,
-        flexShrink: noShrink ? 0 : undefined,
+        flex,
+        flexBasis,
+        flexShrink,
         flexDirection,
         justifyContent,
         justifyItems,
         justifySelf,
         alignItems,
         alignSelf,
+        alignContent,
+        order,
         flexWrap,
         flexGrow,
       }}
-      display={inlineFlex ? 'inline-flex' : 'flex'}
+      display={isInline ? 'inline-flex' : 'flex'}
       ref={ref}
       className={className}
     >
       {children}
     </Box>
   );
-}
+};
 
 export const _Flex: PolymorphicComponent<
   FlexInternalProps,

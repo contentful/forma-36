@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import {
   PolymorphicComponentProps,
+  PolymorphicComponentWithRef,
   PolymorphicComponent,
 } from '../Primitive/Primitive';
 import { Box } from '../Box';
@@ -30,7 +31,7 @@ export interface GridInternalProps extends MarginProps, PaddingProps {
   flow?: CSS.Property.GridAutoFlow;
   /**
    * Sets display:inline-grid */
-  inline?: boolean;
+  isInline?: boolean;
   /**
    * One of justify-content css values */
   justifyContent?: CSS.Property.JustifyContent;
@@ -46,7 +47,10 @@ export type GridProps<E extends React.ElementType> = PolymorphicComponentProps<
 
 const DEFAULT_TAG = 'div';
 
-function Grid<E extends React.ElementType = typeof DEFAULT_TAG>(
+const Grid: PolymorphicComponentWithRef<
+  GridInternalProps,
+  typeof DEFAULT_TAG
+> = (
   {
     alignContent,
     children,
@@ -54,14 +58,14 @@ function Grid<E extends React.ElementType = typeof DEFAULT_TAG>(
     columnGap = 'spacingM',
     columns = 'auto',
     flow,
-    inline,
+    isInline,
     justifyContent,
     rowGap = 'none',
     rows = 'auto',
     ...otherProps
-  }: GridProps<E>,
-  ref: typeof otherProps.ref,
-) {
+  },
+  ref,
+) => {
   const handleGridTemplate = (value?: string | number) => {
     if (typeof value === 'number') {
       return `repeat(${value}, minmax(0, 1fr))`;
@@ -82,14 +86,14 @@ function Grid<E extends React.ElementType = typeof DEFAULT_TAG>(
         columnGap: convertSpacingToToken(columnGap) ?? 0,
         rowGap: convertSpacingToToken(rowGap) ?? 0,
       }}
-      display={inline ? 'inline-grid' : 'grid'}
+      display={isInline ? 'inline-grid' : 'grid'}
       ref={ref}
       className={className}
     >
       {children}
     </Box>
   );
-}
+};
 
 export const _Grid: PolymorphicComponent<
   GridInternalProps,

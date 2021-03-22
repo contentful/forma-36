@@ -8,6 +8,7 @@ const DEFAULT_TAG = 'div';
 import {
   Primitive,
   PolymorphicComponentProps,
+  PolymorphicComponentWithRef,
   PolymorphicComponent,
 } from '../Primitive/Primitive';
 
@@ -21,10 +22,10 @@ export type BoxProps<E extends React.ElementType> = PolymorphicComponentProps<
   BoxInternalProps
 >;
 
-function Box<E extends React.ElementType = typeof DEFAULT_TAG>(
-  { display = 'block', className, children, ...otherProps }: BoxProps<E>,
+const Box: PolymorphicComponentWithRef<BoxInternalProps, typeof DEFAULT_TAG> = (
+  { display = 'block', className, children, ...otherProps },
   ref: typeof otherProps.ref,
-) {
+) => {
   return (
     <Primitive
       {...otherProps}
@@ -35,7 +36,7 @@ function Box<E extends React.ElementType = typeof DEFAULT_TAG>(
       {children}
     </Primitive>
   );
-}
+};
 
 export const _Box: PolymorphicComponent<
   BoxInternalProps,

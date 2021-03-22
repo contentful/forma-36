@@ -120,9 +120,13 @@ module.exports = {
         link: '',
         menuLinks: [
           {
-            name: 'Layout',
+            name: 'Layout Components',
             link: '',
             menuLinks: [
+              {
+                name: 'Box',
+                link: '/components/box/',
+              },
               {
                 name: 'Flex',
                 link: '/components/flex/',
