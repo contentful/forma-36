@@ -13,6 +13,9 @@ import {
 } from '../Primitive/Primitive';
 
 export interface BoxInternalProps extends MarginProps, PaddingProps {
+  /**
+   * Sets the display behavior of the element
+   */
   display?: CSS.Property.Display;
   children?: React.ReactNode;
 }
