@@ -16,6 +16,11 @@ body {
 pre {
   margin: 0;
   white-space: normal;
+  font-family: var(--font-stack-primary);
+}
+
+pre.prism-code {
+  font-family: var(--font-stack-monospace);
 }
 
 .prism-code {

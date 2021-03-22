@@ -21,7 +21,15 @@ export interface FlexInternalProps extends MarginProps, PaddingProps {
   fullHeight?: boolean;
   /**
    * Sets display:inline-flex */
-  inlineFlex?: boolean;
+  isInline?: boolean;
+  /**
+   * One of flex css values
+   */
+  flex?: CSS.Property.Flex;
+  /**
+   * One of flex-basis css values
+   * */
+  flexBasis?: CSS.Property.FlexBasis;
   /**
    * One of flex-shrink css values*/
   flexShrink?: CSS.Property.FlexShrink;
@@ -67,13 +75,15 @@ const Flex: PolymorphicComponentWithRef<
     alignSelf,
     children,
     className,
+    flex,
+    flexBasis,
     flexShrink,
     flexDirection,
     flexGrow,
     flexWrap,
     fullHeight,
     fullWidth,
-    inlineFlex,
+    isInline,
     justifyContent,
     justifyItems,
     justifySelf,
@@ -88,6 +98,8 @@ const Flex: PolymorphicComponentWithRef<
       css={{
         width: fullWidth ? '100%' : undefined,
         height: fullHeight ? '100%' : undefined,
+        flex,
+        flexBasis,
         flexShrink,
         flexDirection,
         justifyContent,
@@ -98,7 +110,7 @@ const Flex: PolymorphicComponentWithRef<
         flexWrap,
         flexGrow,
       }}
-      display={inlineFlex ? 'inline-flex' : 'flex'}
+      display={isInline ? 'inline-flex' : 'flex'}
       ref={ref}
       className={className}
     >

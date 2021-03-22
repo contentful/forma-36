@@ -6,74 +6,77 @@ github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-re
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-flex--default'
 ---
 
-[Flex](https://developer.mozilla.org/en-US/docs/Glossary/Flex) is a great tool when you wan't to line things up in one direction. For example boxes in the limited amout of space, that would wrap or not wrap. When it comes to Flex, browser calculate things only in one direction, each row at the time. When for example CSS Grid calculates always rows and columns at the same time. If you think CSS Grid component is what you are looking for go ahead and have a look on our [Grid component](../grid)
+Flex components is [Box] with `display: flex` and abilities to apply other flexbox CSS properties via properties of the component.
 
-## Table of contents
+The Box component is useful because it helps with several common cases:
 
-- [How to use Flex](#how-to-use-flex)
-- [Code examples](#code-examples)
+- Create a layout with uses Forma36 spacing
+- Compose new component and allow to override element using the `as` property.
 
-## How to use Flex
+## Import
 
-### Margins
-
-Margins and padding for Flex component are based on our [spacing system](https://f36.contentful.com/foundation/spacing/).
-Here is an overview of spacings that are availeble:
-
-`spacing2Xs` | `spacingXs` | `spacingXs` | `spacingS` | `spacingM` | `spacingL` | `spacingXl` | `spacing2Xl` | `spacing3Xl` | `spacing4Xl`
-
-Flex, as any other element, can get margin value, which will be added evenly to all of it's sides or more specific instructions like margin-top or margin-right. those 2 can not be added at the same time - they will overwrite itself. That's why, please remember to not use them together:
-
-**e.g. WRONG**
-
-```jsx
-<Flex marginTop="spacingXs" margin="spacingXs">
-  Element
-</Flex>
+```js static=true
+import { Flex } from '@contentful/f36-components';
 ```
 
-**e.g. GOOD**
+## Usage
 
-```jsx
-<Flex marginTop="spacingXs" marginLeft="spacingXs">
-  Element
-</Flex>
-```
+### Margins & Paddings
 
-## Code examples
+Flex components inherits behaviour of [Box] component and allows to pass margins and paddings that are based on our [spacing system].
+
+## Usage
 
 ```js
-<Flex
-  justifyContent="space-between"
-  alignItems="center"
-  marginBottom="spacingM"
->
-  <Flex>Example item</Flex>
-  <Flex>Example item</Flex>
-  <Flex>Example item</Flex>
-</Flex>
+() => {
+  const ColorBox = ({ backgroundColor, ...rest }) => (
+    <Flex
+      as="div"
+      justifyContent="center"
+      alignItems="center"
+      style={{
+        width: '120px',
+        height: '120px',
+        color: tokens.colorWhite,
+        backgroundColor,
+      }}
+      {...rest}
+    />
+  );
+
+  return (
+    <Flex
+      justifyContent="space-between"
+      alignItems="center"
+      marginBottom="spacingM"
+    >
+      <ColorBox backgroundColor={tokens.colorGreenBase}>Example item</ColorBox>
+      <ColorBox backgroundColor={tokens.colorRedBase}>Example item</ColorBox>
+      <ColorBox backgroundColor={tokens.colorBlueBase}>Example item</ColorBox>
+    </Flex>
+  );
+};
 ```
 
 <br />
 
 ```jsx
-<Flex
-  justifyContent="space-between"
-  alignItems="center"
-  marginBottom="spacingM"
->
-  <Flex>
+<Flex justifyContent="space-between" alignItems="center">
+  <Box>
     <Paragraph>User name</Paragraph>
-  </Flex>
-  <Flex>
-    <Flex marginRight="spacingM">
+  </Box>
+  <Flex alignItems="center">
+    <Box marginRight="spacingM">
       <TextLink href="http://google.com">User profile</TextLink>
-    </Flex>
-    <Flex>
+    </Box>
+    <Box>
       <Button>Add user to the team</Button>
-    </Flex>
+    </Box>
   </Flex>
 </Flex>
 ```
 
 <br />
+
+[box]: ../box
+[spacing system]: ../../foundation/spacing

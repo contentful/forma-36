@@ -31,7 +31,7 @@ export interface GridInternalProps extends MarginProps, PaddingProps {
   flow?: CSS.Property.GridAutoFlow;
   /**
    * Sets display:inline-grid */
-  inline?: boolean;
+  isInline?: boolean;
   /**
    * One of justify-content css values */
   justifyContent?: CSS.Property.JustifyContent;
@@ -58,7 +58,7 @@ const Grid: PolymorphicComponentWithRef<
     columnGap = 'spacingM',
     columns = 'auto',
     flow,
-    inline,
+    isInline,
     justifyContent,
     rowGap = 'none',
     rows = 'auto',
@@ -86,7 +86,7 @@ const Grid: PolymorphicComponentWithRef<
         columnGap: convertSpacingToToken(columnGap) ?? 0,
         rowGap: convertSpacingToToken(rowGap) ?? 0,
       }}
-      display={inline ? 'inline-grid' : 'grid'}
+      display={isInline ? 'inline-grid' : 'grid'}
       ref={ref}
       className={className}
     >

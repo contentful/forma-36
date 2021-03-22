@@ -6,11 +6,11 @@ github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-re
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-box--default'
 ---
 
-Box is the most abstract layout component that allows to apply `margin` and `padding` properties according to [Forma36 spacing](../../foundation/spacing). By default, it renders a `div` element.
+Box is the most abstract layout component that allows to apply `margin` and `padding` properties according to the [spacing system]. By default, it renders a `div` element.
 
 The Box component is useful because it helps with several common cases:
 
-- Create a layout with uses Forma36 spacing
+- Create a layout that uses Forma36 [spacing system]
 - Compose new component and allow to override element using the `as` property.
 
 ## Import
@@ -20,6 +20,23 @@ import { Box } from '@contentful/f36-components';
 ```
 
 ## Usage
+
+### Margins & Paddings
+
+Margins and paddings for Box component are based on our [spacing system].
+
+Here is an overview of spacings that are available:
+
+- `spacing2Xs`
+- `spacingXs`
+- `spacingXs`
+- `spacingS`
+- `spacingM`
+- `spacingL`
+- `spacingXl`
+- `spacing2Xl`
+- `spacing3Xl`
+- `spacing4Xl`
 
 ```jsx
 () => {
@@ -64,7 +81,14 @@ import { Box } from '@contentful/f36-components';
 You can use the `as` prop to change the element render, just like styled-components.
 
 ```jsx
-<Box as="button" padding="spacingXs" margin="spacingS">
-  Button
+<Box as="article" padding="spacingXs" margin="spacingS">
+  <Box as="span" display="inline" marginRight="spacingS">
+    item 1
+  </Box>
+  <Box as="span" display="inline" marginRight="spacingS">
+    item 2
+  </Box>
 </Box>
 ```
+
+[spacing system]: ../../foundation/spacing
