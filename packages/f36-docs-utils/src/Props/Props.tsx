@@ -1,4 +1,5 @@
 import React from 'react';
+import orderBy from 'lodash.orderby';
 import {
   Table,
   TableHead,
@@ -19,10 +20,29 @@ import type {
 const getComponentMetadata = (of: string): PropDefinition[] => {
   const metadata = (window as any).propsMetadata || {};
   const componentMetadata = metadata[of] as PropComponentDefinition | undefined;
+
   if (!componentMetadata) {
     return [];
   }
-  return Object.values(componentMetadata.props);
+  const values = Object.values(componentMetadata.props);
+  let core: PropDefinition[] = [];
+  let component: PropDefinition[] = [];
+  values.map((value) => {
+    if (['ref', 'key'].includes(value.name)) {
+      // don't add this types
+    } else if (
+      ['as', 'children', 'className', 'style', 'testId'].includes(value.name)
+    ) {
+      core.push(value);
+    } else {
+      component.push(value);
+    }
+  });
+
+  core = orderBy(core, 'name');
+  component = orderBy(component, ['required', 'name']);
+
+  return [...component, ...core];
 };
 
 function EnumPropertyType({ type }: { type: PropType }) {
@@ -108,8 +128,10 @@ export function Props(props: { of: string }) {
             <TableCell>
               <code>{item.name}</code>
             </TableCell>
-            <TableCell>{item.defaultValue ? item.defaultValue : ''}</TableCell>
             <TableCell>{item.required ? 'required' : ''}</TableCell>
+            <TableCell>
+              {item.defaultValue ? item.defaultValue.value : ''}
+            </TableCell>
             <TableCell>
               <PropertyType name={item.name} type={item.type} />
             </TableCell>

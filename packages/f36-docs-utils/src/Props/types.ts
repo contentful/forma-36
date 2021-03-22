@@ -5,7 +5,7 @@ export interface PropType {
 }
 
 export interface PropDefinition {
-  defaultValue: null;
+  defaultValue: null | { value: string };
   description: string;
   name: string;
   required: boolean;
