@@ -2,6 +2,7 @@ import React from 'react';
 
 import tokens from '@contentful/f36-tokens';
 import { Flex, _Flex, FlexInternalProps } from '../src/Flex/Flex';
+import { Box } from '../src/Box/Box';
 
 const styles = {
   demoBox: {
@@ -57,6 +58,31 @@ interface Args extends FlexInternalProps {
 export const Basic = ({ exampleBoxesNumber, ...args }: Args) => (
   <Flex as="article" flexDirection="row" {...args}>
     <DemoBox times={exampleBoxesNumber} />
+  </Flex>
+);
+
+export const WithSpacer = (args: Args) => (
+  <Flex
+    padding="spacingM"
+    style={{ backgroundColor: tokens.colorElementLight }}
+    {...args}
+  >
+    <Box
+      padding="spacingM"
+      style={{ backgroundColor: tokens.colorRedBase, color: tokens.colorWhite }}
+    >
+      Box 1
+    </Box>
+    <Flex.Spacer />
+    <Box
+      padding="spacingM"
+      style={{
+        backgroundColor: tokens.colorGreenBase,
+        color: tokens.colorWhite,
+      }}
+    >
+      Box 2
+    </Box>
   </Flex>
 );
 

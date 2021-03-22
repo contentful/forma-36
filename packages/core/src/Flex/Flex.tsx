@@ -8,6 +8,7 @@ import {
 import { Box } from '../Box';
 import type { MarginProps, PaddingProps } from '../types';
 import type * as CSS from 'csstype';
+import { FlexSpacer } from './FlexSpacer';
 
 export interface FlexInternalProps extends MarginProps, PaddingProps {
   /**
@@ -19,44 +20,52 @@ export interface FlexInternalProps extends MarginProps, PaddingProps {
   /**
    * Sets height: 100% */
   fullHeight?: boolean;
+
   /**
-   * Sets display:inline-flex */
+   * Sets display: inline-flex */
   isInline?: boolean;
+
   /**
-   * One of flex css values
-   */
-  flex?: CSS.Property.Flex;
-  /**
-   * One of flex-basis css values
+   * Defines the initial size of a flexbox item.
    * */
   flexBasis?: CSS.Property.FlexBasis;
   /**
-   * One of flex-shrink css values*/
+   * Defines how much a flexbox item should shrink if there's not enough space available. */
   flexShrink?: CSS.Property.FlexShrink;
   /**
-   * One of flex-wrap css values */
+   * Defines if flexbox items appear on a single line or on multiple lines within a flexbox container. */
   flexWrap?: CSS.Property.FlexWrap;
   /**
-   * One of flex-direction css values */
+   * Defines how flexbox items are ordered within a flexbox container. */
   flexDirection?: CSS.Property.FlexDirection;
   /**
-   * One of flex-grow css values */
+   * Defines how much a flexbox item should grow if there's space available. */
   flexGrow?: CSS.Property.FlexGrow;
   /**
-   * One of justify-content css values */
+   * Defines how flexbox/grid items are aligned according to the main axis, within a flexbox/grid container. */
   justifyContent?: CSS.Property.JustifyContent;
   /**
-   * One of justify-content css values */
+   * Defines the default justify-self for all items of the box, giving them all a default way of justifying each box along the appropriate axis. */
   justifyItems?: CSS.Property.JustifyContent;
   /**
-   * One of justify-self css values */
+   * Sets the way a box is justified inside its alignment container along the appropriate axis. */
   justifySelf?: CSS.Property.JustifySelf;
   /**
-   * One of align-items css values */
+   * Defines how flexbox items are aligned according to the cross axis, within a line of a flexbox container.
+   */
   alignItems?: CSS.Property.AlignItems;
   /**
-   * One of align-self css values */
+   * Works like align-items, but applies only to a single flexbox item, instead of all of them.
+   */
   alignSelf?: CSS.Property.AlignItems;
+  /**
+   * Defines how each line is aligned within a flexbox/grid container.
+   */
+  alignContent?: CSS.Property.AlignContent;
+  /**
+   * Defines the order of a flexbox item
+   */
+  order?: CSS.Property.Order;
 }
 
 export type FlexProps<E extends React.ElementType> = PolymorphicComponentProps<
@@ -71,11 +80,10 @@ const Flex: PolymorphicComponentWithRef<
   typeof DEFAULT_TAG
 > = (
   {
+    isInline,
     alignItems,
     alignSelf,
-    children,
-    className,
-    flex,
+    alignContent,
     flexBasis,
     flexShrink,
     flexDirection,
@@ -83,10 +91,12 @@ const Flex: PolymorphicComponentWithRef<
     flexWrap,
     fullHeight,
     fullWidth,
-    isInline,
     justifyContent,
     justifyItems,
     justifySelf,
+    order,
+    children,
+    className,
     ...otherProps
   },
   ref,
@@ -98,7 +108,6 @@ const Flex: PolymorphicComponentWithRef<
       css={{
         width: fullWidth ? '100%' : undefined,
         height: fullHeight ? '100%' : undefined,
-        flex,
         flexBasis,
         flexShrink,
         flexDirection,
@@ -107,6 +116,8 @@ const Flex: PolymorphicComponentWithRef<
         justifySelf,
         alignItems,
         alignSelf,
+        alignContent,
+        order,
         flexWrap,
         flexGrow,
       }}
@@ -122,6 +133,8 @@ const Flex: PolymorphicComponentWithRef<
 export const _Flex: PolymorphicComponent<
   FlexInternalProps,
   typeof DEFAULT_TAG
-> = React.forwardRef(Flex);
+> & { Spacer: typeof FlexSpacer } = Object.assign(React.forwardRef(Flex), {
+  Spacer: FlexSpacer,
+});
 
 export { _Flex as Flex };

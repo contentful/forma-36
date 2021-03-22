@@ -29,3 +29,31 @@ exports[`renders the component with an additional class name 1`] = `
   Flex
 </div>
 `;
+
+exports[`should have correct styles exposes static Spacer component 1`] = `
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-0 {
+  display: block;
+  justify-self: center;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+<div
+  class="emotion-1"
+>
+  <div
+    class="emotion-0"
+  />
+</div>
+`;

@@ -27,6 +27,8 @@ Flex components inherits behaviour of [Box] component and allows to pass margins
 
 ## Usage
 
+To control the behaviour of the Flex component you can use specific properies that match [all main Flexbox related CSS attributes](https://cssreference.io/flexbox/).
+
 ```js
 () => {
   const ColorBox = ({ backgroundColor, ...rest }) => (
@@ -58,13 +60,36 @@ Flex components inherits behaviour of [Box] component and allows to pass margins
 };
 ```
 
-<br />
+### Using Flex.Spacer
+
+Flex.Spacer allows you to create an adjustable, empty space that can be used to tune the spacing between child elements within Flex.
 
 ```jsx
-<Flex justifyContent="space-between" alignItems="center">
-  <Box>
-    <Paragraph>User name</Paragraph>
+<Flex>
+  <Box
+    padding="spacingM"
+    style={{ backgroundColor: tokens.colorRedBase, color: tokens.colorWhite }}
+  >
+    Box 1
   </Box>
+  <Flex.Spacer />
+  <Box
+    padding="spacingM"
+    style={{ backgroundColor: tokens.colorGreenBase, color: tokens.colorWhite }}
+  >
+    Box 2
+  </Box>
+</Flex>
+```
+
+### Real-world example
+
+```jsx
+<Flex alignItems="center">
+  <Box>
+    <Subheading>User name</Subheading>
+  </Box>
+  <Flex.Spacer />
   <Flex alignItems="center">
     <Box marginRight="spacingM">
       <TextLink href="http://google.com">User profile</TextLink>

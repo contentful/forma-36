@@ -51,4 +51,13 @@ describe('should have correct styles', () => {
       paddingRight: '0.5rem',
     });
   });
+
+  it('exposes static Spacer component', () => {
+    const { container } = render(
+      <Flex>
+        <Flex.Spacer />
+      </Flex>,
+    );
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
