@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import {
   PolymorphicComponentProps,
+  PolymorphicComponentWithRef,
   PolymorphicComponent,
 } from '../../Primitive/Primitive';
 import { Box } from '../../Box';
@@ -38,7 +39,10 @@ export type GridItemProps<
   E extends React.ElementType
 > = PolymorphicComponentProps<E, GridItemInternalProps>;
 
-function GridItem<E extends React.ElementType = typeof DEFAULT_TAG>(
+const GridItem: PolymorphicComponentWithRef<
+  GridItemInternalProps,
+  typeof DEFAULT_TAG
+> = (
   {
     children,
     columnStart,
@@ -49,9 +53,9 @@ function GridItem<E extends React.ElementType = typeof DEFAULT_TAG>(
     order,
     className,
     ...otherProps
-  }: GridItemProps<E>,
-  ref: typeof otherProps.ref,
-) {
+  },
+  ref,
+) => {
   const calculatedArea = area
     ? area
     : [
@@ -75,7 +79,7 @@ function GridItem<E extends React.ElementType = typeof DEFAULT_TAG>(
       {children}
     </Box>
   );
-}
+};
 
 export const _GridItem: PolymorphicComponent<
   GridItemInternalProps,

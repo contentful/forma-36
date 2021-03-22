@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import {
   PolymorphicComponentProps,
+  PolymorphicComponentWithRef,
   PolymorphicComponent,
 } from '../Primitive/Primitive';
 import { Box } from '../Box';
@@ -46,7 +47,10 @@ export type GridProps<E extends React.ElementType> = PolymorphicComponentProps<
 
 const DEFAULT_TAG = 'div';
 
-function Grid<E extends React.ElementType = typeof DEFAULT_TAG>(
+const Grid: PolymorphicComponentWithRef<
+  GridInternalProps,
+  typeof DEFAULT_TAG
+> = (
   {
     alignContent,
     children,
@@ -59,9 +63,9 @@ function Grid<E extends React.ElementType = typeof DEFAULT_TAG>(
     rowGap = 'none',
     rows = 'auto',
     ...otherProps
-  }: GridProps<E>,
-  ref: typeof otherProps.ref,
-) {
+  },
+  ref,
+) => {
   const handleGridTemplate = (value?: string | number) => {
     if (typeof value === 'number') {
       return `repeat(${value}, minmax(0, 1fr))`;
@@ -89,7 +93,7 @@ function Grid<E extends React.ElementType = typeof DEFAULT_TAG>(
       {children}
     </Box>
   );
-}
+};
 
 export const _Grid: PolymorphicComponent<
   GridInternalProps,

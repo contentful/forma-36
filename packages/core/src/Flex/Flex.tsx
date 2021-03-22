@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import {
   PolymorphicComponentProps,
+  PolymorphicComponentWithRef,
   PolymorphicComponent,
 } from '../Primitive/Primitive';
 import { Box } from '../Box';
@@ -22,8 +23,8 @@ export interface FlexInternalProps extends MarginProps, PaddingProps {
    * Sets display:inline-flex */
   inlineFlex?: boolean;
   /**
-   * Sets flex-shrink: 0 */
-  noShrink?: boolean;
+   * One of flex-shrink css values*/
+  flexShrink?: CSS.Property.FlexShrink;
   /**
    * One of flex-wrap css values */
   flexWrap?: CSS.Property.FlexWrap;
@@ -57,12 +58,16 @@ export type FlexProps<E extends React.ElementType> = PolymorphicComponentProps<
 
 const DEFAULT_TAG = 'div';
 
-function Flex<E extends React.ElementType = typeof DEFAULT_TAG>(
+const Flex: PolymorphicComponentWithRef<
+  FlexInternalProps,
+  typeof DEFAULT_TAG
+> = (
   {
     alignItems,
     alignSelf,
     children,
     className,
+    flexShrink,
     flexDirection,
     flexGrow,
     flexWrap,
@@ -72,11 +77,10 @@ function Flex<E extends React.ElementType = typeof DEFAULT_TAG>(
     justifyContent,
     justifyItems,
     justifySelf,
-    noShrink,
     ...otherProps
-  }: FlexProps<E>,
-  ref: typeof otherProps.ref,
-) {
+  },
+  ref,
+) => {
   return (
     <Box
       as={DEFAULT_TAG}
@@ -84,7 +88,7 @@ function Flex<E extends React.ElementType = typeof DEFAULT_TAG>(
       css={{
         width: fullWidth ? '100%' : undefined,
         height: fullHeight ? '100%' : undefined,
-        flexShrink: noShrink ? 0 : undefined,
+        flexShrink,
         flexDirection,
         justifyContent,
         justifyItems,
@@ -101,7 +105,7 @@ function Flex<E extends React.ElementType = typeof DEFAULT_TAG>(
       {children}
     </Box>
   );
-}
+};
 
 export const _Flex: PolymorphicComponent<
   FlexInternalProps,
