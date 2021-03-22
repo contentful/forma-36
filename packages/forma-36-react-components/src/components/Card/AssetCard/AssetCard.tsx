@@ -1,25 +1,18 @@
 import React, { useCallback } from 'react';
 import cn from 'classnames';
+import { EntityStatusBadge } from '@contentful/f36-badge';
 
 import { Card, BaseCardProps } from '../Card';
 import { Icon, IconType } from '../../Icon';
 import { CardActions } from '../CardActions/CardActions';
 import { Asset } from '../../Asset';
-import { AssetType } from '../../Asset';
-import { EntityStatusBadge } from '@contentful/f36-badge';
+import type { AssetType, AssetProps } from '../../Asset';
 import { AssetCardSkeleton } from './AssetCardSkeleton';
 import {
   CardDragHandle,
   CardDragHandleProps,
 } from '../CardDragHandle/CardDragHandle';
 import styles from './AssetCard.css';
-
-export type AssetState =
-  | 'deleted'
-  | 'archived'
-  | 'changed'
-  | 'draft'
-  | 'published';
 
 export interface AssetCardProps extends BaseCardProps {
   /**
@@ -41,7 +34,7 @@ export interface AssetCardProps extends BaseCardProps {
   /**
    * The publish status of the asset
    */
-  status?: AssetState;
+  status?: AssetProps['status'];
   /**
    * An icon for the status of the entry
    */
@@ -90,7 +83,7 @@ export function AssetCard({
   ...otherProps
 }: AssetCardProps): React.ReactElement {
   const renderStatus = useCallback(
-    (status: AssetState, statusIcon: React.ReactNode) => {
+    (status: AssetCardProps['status'], statusIcon: React.ReactNode) => {
       return (
         <>
           {statusIcon && typeof statusIcon === 'string' ? (

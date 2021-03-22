@@ -1,11 +1,17 @@
 import React from 'react';
 import cn from 'classnames';
 import { CSSTransition } from 'react-transition-group';
+import type { EntityStatus, PickUnion } from '@contentful/f36-core';
 
 import { Card } from '../Card';
 import { CardActions } from '../CardActions/CardActions';
 import { InlineEntryCardSkeleton } from './InlineEntryCardSkeleton';
 import styles from './InlineEntryCard.css';
+
+export type InlineEntryCardStatus = PickUnion<
+  EntityStatus,
+  'archived' | 'changed' | 'draft' | 'published'
+>;
 
 export interface InlineEntryCardProps {
   /**
@@ -23,7 +29,8 @@ export interface InlineEntryCardProps {
   /**
    * The publish status of the entry
    */
-  status?: 'archived' | 'changed' | 'draft' | 'published';
+  status?: InlineEntryCardStatus;
+
   /**
    * Class names to be appended to the className prop of the component
    */

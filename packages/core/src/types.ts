@@ -14,6 +14,27 @@ export type CommonProps = {
   style?: CSSProperties;
 };
 
+/**
+ * Forma 36 component variants
+ */
+export type ComponentVariant =
+  | 'negative'
+  | 'positive'
+  | 'primary'
+  | 'secondary'
+  | 'warning';
+
+/**
+ * Contentful entity status
+ */
+export type EntityStatus =
+  | 'archived'
+  | 'changed'
+  | 'deleted'
+  | 'draft'
+  | 'new'
+  | 'published';
+
 export type Spacing =
   | 'none'
   | 'spacing2Xs'
@@ -61,3 +82,8 @@ export interface PaddingProps {
    * sets padding-left to one of the corresponding spacing tokens, default is none */
   paddingLeft?: Spacing;
 }
+
+export type PickUnion<UnionType, Keys> = Exclude<
+  UnionType,
+  Exclude<UnionType, Keys>
+>;
