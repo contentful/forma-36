@@ -1,5 +1,4 @@
 import React from 'react';
-import orderBy from 'lodash.orderby';
 import {
   Table,
   TableHead,
@@ -11,47 +10,16 @@ import {
   TextLink,
   Tooltip,
 } from '@contentful/f36-components';
-import type {
-  PropDefinition,
-  PropType,
-  PropComponentDefinition,
-} from './types';
-
-const getComponentMetadata = (of: string): PropDefinition[] => {
-  const metadata = (window as any).propsMetadata || {};
-  const componentMetadata = metadata[of] as PropComponentDefinition | undefined;
-
-  if (!componentMetadata) {
-    return [];
-  }
-  const values = Object.values(componentMetadata.props);
-  let core: PropDefinition[] = [];
-  let component: PropDefinition[] = [];
-  values.map((value) => {
-    if (['ref', 'key'].includes(value.name)) {
-      // don't add this types
-    } else if (
-      ['as', 'children', 'className', 'style', 'testId'].includes(value.name)
-    ) {
-      core.push(value);
-    } else {
-      component.push(value);
-    }
-  });
-
-  core = orderBy(core, 'name');
-  component = orderBy(component, ['required', 'name']);
-
-  return [...component, ...core];
-};
+import type { PropType } from './types';
+import { useProps } from './PropsProvider';
 
 function EnumPropertyType({ type }: { type: PropType }) {
   return (
     <Flex flexWrap="wrap">
       {type.value.map((value) => {
         return (
-          <Box key={value.value} marginRight="spacingS" marginTop="spacingS">
-            <code>{value.value}</code>
+          <Box key={value.value} marginRight="spacingS" marginBottom="spacingS">
+            {value.value}
           </Box>
         );
       })}
@@ -99,17 +67,11 @@ function PropertyType({ type, name }: { type: PropType; name: string }) {
 }
 
 export function Props(props: { of: string }) {
-  const [metadata, setMetadata] = React.useState<PropDefinition[]>([]);
-
-  React.useEffect(() => {
-    setMetadata(getComponentMetadata(props.of));
-  }, [props.of]);
+  const metadata = useProps({ of: props.of });
 
   if (metadata.length === 0) {
     return null;
   }
-
-  console.log(metadata);
 
   return (
     <Table layout="embedded">
@@ -130,7 +92,7 @@ export function Props(props: { of: string }) {
             </TableCell>
             <TableCell>{item.required ? 'required' : ''}</TableCell>
             <TableCell>
-              {item.defaultValue ? item.defaultValue.value : ''}
+              {item.defaultValue ? <>{item.defaultValue.value}</> : ''}
             </TableCell>
             <TableCell>
               <PropertyType name={item.name} type={item.type} />

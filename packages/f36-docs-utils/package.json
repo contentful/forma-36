@@ -21,6 +21,7 @@
     "watch": "parcel watch index.ts"
   },
   "dependencies": {
+    "constate": "^3.2.0",
     "@babel/runtime": "^7.6.2",
     "@contentful/f36-tokens": "^4.0.0",
     "@contentful/f36-components": "^4.0.0",

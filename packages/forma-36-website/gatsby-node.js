@@ -11,6 +11,7 @@ function getTypescriptMetaInformation(sourcePath) {
         savePropValueAsString: true,
         shouldExtractLiteralValuesFromEnum: true,
         shouldExtractValuesFromUnion: true,
+        skipChildrenPropWithoutDoc: false,
       },
     );
 
