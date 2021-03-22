@@ -73,16 +73,23 @@ exports.createPages = ({ graphql, actions }) => {
 
     pages.forEach((page) => {
       const slug = page.node.frontmatter.slug || page.node.fields.slug;
-      const sourcePath = page.node.frontmatter.typescript
-        ? path.resolve(
-            path.dirname(page.node.fileAbsolutePath),
-            page.node.frontmatter.typescript,
-          )
-        : null;
+      const typescriptSources = (page.node.frontmatter.typescript || '')
+        .trim()
+        .split(',');
 
-      let propsMetadata = sourcePath
-        ? getTypescriptMetaInformation(sourcePath)
-        : {};
+      const propsMetadata = {};
+
+      typescriptSources.forEach((source) => {
+        const sourcePath = source
+          ? path.resolve(path.dirname(page.node.fileAbsolutePath), source)
+          : null;
+        if (sourcePath) {
+          Object.assign(
+            propsMetadata,
+            getTypescriptMetaInformation(sourcePath),
+          );
+        }
+      });
 
       createPage({
         path: slug,

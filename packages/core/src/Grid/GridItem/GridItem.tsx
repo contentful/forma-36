@@ -86,4 +86,6 @@ export const _GridItem: PolymorphicComponent<
   typeof DEFAULT_TAG
 > = React.forwardRef(GridItem);
 
+_GridItem.displayName = 'GridItem';
+
 export { _GridItem as GridItem };

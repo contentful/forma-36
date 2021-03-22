@@ -388,6 +388,7 @@ module.exports = {
         defaultLayouts: {
           default: require.resolve('./src/components/Layout'),
         },
+        remarkPlugins: [require('remark-slug')],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,

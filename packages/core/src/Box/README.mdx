@@ -4,9 +4,16 @@ type: 'component'
 slug: /components/box/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/Box'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-box--default'
+typescript: ./Box.tsx
 ---
 
 Box is the most abstract layout component that allows to apply `margin` and `padding` properties according to the [spacing system]. By default, it renders a `div` element.
+
+## Table of contents
+
+- [How to use Box](#how-to-use-box)
+- [Code examples](#code-examples)
+- [Props](#props)
 
 ## How to use Box
 
@@ -92,5 +99,11 @@ If you want to keep all the styling you've applied to a component but just switc
   </Box>
 </Box>
 ```
+
+## Props
+
+import { Props } from '@contentful/f36-docs-utils';
+
+<Props of="Box" />
 
 [spacing system]: ../../foundation/spacing

@@ -4,9 +4,16 @@ type: 'component'
 slug: /components/grid/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/core/src/Grid'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-grid--default'
+typescript: ./Grid.tsx,./GridItem/GridItem.tsx
 ---
 
 [CSS Grid](https://developer.mozilla.org/en-US/docs/Glossary/Grid) based React component, comes with predefined values to ensure design consistency, and ease of use.
+
+## Table of contents
+
+- [How to use Grid](#how-to-use-grid)
+- [Code examples](#code-examples)
+- [Props](#props)
 
 ## How to use Grid
 
@@ -203,3 +210,15 @@ The grid can re-order it's content in various ways through the order css propert
 keyboard navigation and focus order maybe affected.
 
 Set the correct order of the elements with `tabindex` attribute to avoid accessibility issues.
+
+## Props
+
+import { Props } from '@contentful/f36-docs-utils';
+
+### Grid
+
+<Props of="Grid" />
+
+### GridItem
+
+<Props of="GridItem" />

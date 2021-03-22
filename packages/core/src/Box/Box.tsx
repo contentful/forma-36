@@ -43,4 +43,6 @@ export const _Box: PolymorphicComponent<
   typeof DEFAULT_TAG
 > = React.forwardRef(Box);
 
+_Box.displayName = 'Box';
+
 export { _Box as Box };
