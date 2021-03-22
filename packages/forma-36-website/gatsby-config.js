@@ -116,27 +116,27 @@ module.exports = {
         ],
       },
       {
-        name: 'Layout Components',
-        link: '',
-        menuLinks: [
-          {
-            name: 'Box',
-            link: '/components/box/',
-          },
-          {
-            name: 'Flex',
-            link: '/components/flex/',
-          },
-          {
-            name: 'Grid',
-            link: '/components/grid/',
-          },
-        ],
-      },
-      {
         name: 'Components',
         link: '',
         menuLinks: [
+          {
+            name: 'Layout Components',
+            link: '',
+            menuLinks: [
+              {
+                name: 'Box',
+                link: '/components/box/',
+              },
+              {
+                name: 'Flex',
+                link: '/components/flex/',
+              },
+              {
+                name: 'Grid',
+                link: '/components/grid/',
+              },
+            ],
+          },
           {
             name: 'Accordion',
             link: '/components/accordion/',
