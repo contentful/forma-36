@@ -1,7 +1,32 @@
 const fs = require('fs');
-
+const docgen = require('react-docgen-typescript');
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
+
+function getTypescriptMetaInformation(sourcePath) {
+  try {
+    const tsConfigParser = docgen.withCustomConfig(
+      path.resolve('../../tsconfig.json'),
+      {
+        savePropValueAsString: true,
+        shouldExtractLiteralValuesFromEnum: true,
+        shouldExtractValuesFromUnion: true,
+      },
+    );
+
+    const components = tsConfigParser.parse(sourcePath) || [];
+
+    const result = {};
+    components.map((component) => {
+      result[component.displayName] = component;
+    });
+
+    return result;
+  } catch (e) {
+    console.log('Problem with parsing Typescript props for  ' + sourcePath);
+    return {};
+  }
+}
 
 exports.onPostBuild = () => {
   fs.copyFileSync('./_redirects', './public/_redirects');
@@ -19,6 +44,7 @@ exports.createPages = ({ graphql, actions }) => {
           edges {
             node {
               id
+              fileAbsolutePath
               fields {
                 slug
               }
@@ -29,6 +55,7 @@ exports.createPages = ({ graphql, actions }) => {
                 status
                 github
                 storybook
+                typescript
               }
               body
             }
@@ -45,6 +72,17 @@ exports.createPages = ({ graphql, actions }) => {
 
     pages.forEach((page) => {
       const slug = page.node.frontmatter.slug || page.node.fields.slug;
+      const sourcePath = page.node.frontmatter.typescript
+        ? path.resolve(
+            path.dirname(page.node.fileAbsolutePath),
+            page.node.frontmatter.typescript,
+          )
+        : null;
+
+      let propsMetadata = sourcePath
+        ? getTypescriptMetaInformation(sourcePath)
+        : {};
+
       createPage({
         path: slug,
         component: layout,
@@ -52,6 +90,7 @@ exports.createPages = ({ graphql, actions }) => {
           slug: slug,
           frontmatter: page.node.frontmatter,
           body: page.node.body,
+          propsMetadata,
         },
       });
     });
