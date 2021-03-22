@@ -2,7 +2,6 @@ import React from 'react';
 
 import tokens from '@contentful/f36-tokens';
 import { Flex, _Flex, FlexInternalProps } from '../src/Flex/Flex';
-import { Box } from '../src/Box/Box';
 
 const styles = {
   demoBox: {
