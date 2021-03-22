@@ -117,7 +117,8 @@ const Container = (data) => {
   const { frontmatter, children, dataFromReadme, propsMetadata } = data;
   const isHomePage = frontmatter && frontmatter.type === 'home';
 
-  console.log(propsMetadata);
+  // write metadata to window object so it can get accessed by Props component
+  window.propsMetadata = propsMetadata;
 
   return (
     <div css={styles.container}>
