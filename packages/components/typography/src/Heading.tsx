@@ -53,4 +53,6 @@ export const _Heading: PolymorphicComponent<
   typeof DEFAULT_TAG
 > = React.forwardRef(Heading);
 
+_Heading.displayName = 'Heading';
+
 export { _Heading as Heading };

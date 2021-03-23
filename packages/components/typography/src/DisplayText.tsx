@@ -66,4 +66,6 @@ export const _DisplayText: PolymorphicComponent<
   typeof DEFAULT_TAG
 > = React.forwardRef(DisplayText);
 
+_DisplayText.displayName = 'DisplayText';
+
 export { _DisplayText as DisplayText };

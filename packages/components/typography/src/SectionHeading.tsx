@@ -38,4 +38,6 @@ export const _SectionHeading: PolymorphicComponent<
   typeof DEFAULT_TAG
 > = React.forwardRef(SectionHeading);
 
+_SectionHeading.displayName = 'SectionHeading';
+
 export { _SectionHeading as SectionHeading };

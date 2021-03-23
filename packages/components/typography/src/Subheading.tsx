@@ -36,4 +36,6 @@ export const _Subheading: PolymorphicComponent<
   typeof DEFAULT_TAG
 > = React.forwardRef(Subheading);
 
+_Subheading.displayName = 'Subheading';
+
 export { _Subheading as Subheading };
