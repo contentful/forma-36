@@ -1,5 +1,5 @@
 import React from 'react';
-import { DisplayText, Paragraph } from '@contentful/f36-components';
+import { DisplayText, Paragraph, Typography } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
 import { css } from '@emotion/core';
 import bg from '../images/dot-bg.png';
@@ -53,12 +53,14 @@ const Masthead = ({ title, description, hasLogo }) => (
   <div css={styles.masthead}>
     <div css={styles.content}>
       {hasLogo && <Logo />}
-      <DisplayText size="large" css={styles.title}>
-        {title}
-      </DisplayText>
-      {description && (
-        <Paragraph css={styles.description}>{description}</Paragraph>
-      )}
+      <Typography>
+        <DisplayText size="large" css={styles.title}>
+          {title}
+        </DisplayText>
+        {description && (
+          <Paragraph css={styles.description}>{description}</Paragraph>
+        )}
+      </Typography>
     </div>
   </div>
 );

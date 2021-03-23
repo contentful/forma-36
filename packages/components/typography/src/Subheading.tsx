@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import tokens from '@contentful/f36-tokens';
 import {
   PolymorphicComponent,
@@ -16,7 +16,7 @@ const _Subheading: PolymorphicComponentWithRef<
   HeadingInternalProps,
   typeof DEFAULT_TAG
 > = ({ children, ...otherProps }, ref) => {
-  const configuration = React.useContext(TypographyContext);
+  const configuration = useContext(TypographyContext);
   return (
     <Heading
       as={DEFAULT_TAG}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import tokens from '@contentful/f36-tokens';
 import {
   PolymorphicComponent,
@@ -24,7 +24,7 @@ const _DisplayText: PolymorphicComponentWithRef<
   DisplayTextInternalProps,
   typeof DEFAULT_TAG
 > = ({ children, size = 'default', ...otherProps }, ref) => {
-  const configuration = React.useContext(TypographyContext);
+  const configuration = useContext(TypographyContext);
 
   let css: Interpolation = {};
 
