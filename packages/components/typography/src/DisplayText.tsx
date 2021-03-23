@@ -46,7 +46,6 @@ const _DisplayText: PolymorphicComponentWithRef<
     <Heading
       as={DEFAULT_TAG}
       testId="cf-ui-display-text"
-      marginBottom={size === 'default' ? 'spacingL' : 'spacingXl'}
       css={css}
       {...otherProps}
       ref={ref}

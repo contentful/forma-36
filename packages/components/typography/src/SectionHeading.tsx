@@ -19,7 +19,6 @@ const _SectionHeading: PolymorphicComponentWithRef<
     <Heading
       as={DEFAULT_TAG}
       testId="cf-ui-section-heading"
-      marginBottom="spacingL"
       css={{
         fontSize: tokens.fontSizeS,
         lineHeight: tokens.lineHeightS,

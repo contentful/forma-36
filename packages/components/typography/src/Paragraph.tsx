@@ -19,7 +19,6 @@ const _Paragraph: PolymorphicComponentWithRef<
     <Heading
       as={DEFAULT_TAG}
       testId="cf-ui-paragraph"
-      marginBottom="spacingM"
       css={{
         fontWeight: tokens.fontWeightNormal,
         color: tokens.colorTextMid,
