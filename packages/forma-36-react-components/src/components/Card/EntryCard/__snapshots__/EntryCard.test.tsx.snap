@@ -468,11 +468,6 @@ exports[`renders the component with dropdownListElements 1`] = `
   max-height: 20px;
 }
 
-.emotion-1 {
-  display: inherit;
-  outline: 0;
-}
-
 <div
   class="Card EntryCard EntryCard--size-default Card--padding-none"
   data-test-id="cf-ui-entry-card"
@@ -506,8 +501,8 @@ exports[`renders the component with dropdownListElements 1`] = `
           data-test-id="cf-ui-icon-button"
           type="button"
         >
-          <span
-            class="IconButton__inner emotion-1"
+          <div
+            class="IconButton__inner"
             tabindex="-1"
           >
             <svg
@@ -530,7 +525,7 @@ exports[`renders the component with dropdownListElements 1`] = `
             >
               Actions
             </span>
-          </span>
+          </div>
         </button>
       </div>
     </div>

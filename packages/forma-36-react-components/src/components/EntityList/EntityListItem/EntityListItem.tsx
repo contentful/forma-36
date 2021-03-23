@@ -11,7 +11,6 @@ import {
   SkeletonContainer,
   SkeletonImage,
 } from '../../Skeleton';
-import { TabFocusTrap } from '@contentful/f36-utils';
 import styles from './EntityListItem.css';
 
 type EntityListItemStatus = PickUnion<
@@ -203,7 +202,7 @@ export function EntityListItem({
           tabIndex={onClick && 0}
           target={onClick && href ? '_blank' : undefined}
         >
-          <TabFocusTrap className={styles['EntityListItem__focus-trap']}>
+          <div tabIndex={-1} className={styles['EntityListItem__focus-trap']}>
             {withThumbnail && (
               <figure className={styles['EntityListItem__media']}>
                 {asIcon ? renderIcon() : renderThumbnail()}
@@ -242,7 +241,7 @@ export function EntityListItem({
                 </CardActions>
               )}
             </div>
-          </TabFocusTrap>
+          </div>
         </Element>
       )}
     </li>

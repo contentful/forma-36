@@ -11,7 +11,6 @@ import cn from 'classnames';
 import { CSSTransition } from 'react-transition-group';
 
 import { Icon, IconType } from '../Icon';
-import { TabFocusTrap } from '@contentful/f36-utils';
 import { Spinner } from '../Spinner';
 import styles from './Button.css';
 
@@ -114,7 +113,7 @@ export const Button = ({
       type={type}
       {...otherProps}
     >
-      <TabFocusTrap className={styles['Button__inner-wrapper']}>
+      <div tabIndex={-1} className={styles['Button__inner-wrapper']}>
         {icon && !loading && (
           <Icon
             className={styles.Button__icon}
@@ -155,7 +154,7 @@ export const Button = ({
             color={iconColor}
           />
         )}
-      </TabFocusTrap>
+      </div>
     </Element>
   );
 };

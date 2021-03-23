@@ -3,7 +3,6 @@ import cn from 'classnames';
 import type { MouseEventHandler } from 'react';
 
 import { Icon, IconType } from '../Icon';
-import { TabFocusTrap } from '@contentful/f36-utils';
 import styles from './TextLink.css';
 
 export type TextLinkType =
@@ -82,7 +81,7 @@ export function TextLink({
   });
 
   const content = (
-    <TabFocusTrap>
+    <div tabIndex={-1} style={{ display: 'inherit', outline: 0 }}>
       {
         icon && iconPosition === 'left' && renderIcon(icon, linkType!) // eslint-disable-line @typescript-eslint/no-non-null-assertion
       }
@@ -90,7 +89,7 @@ export function TextLink({
       {
         icon && iconPosition === 'right' && renderIcon(icon, linkType!) // eslint-disable-line @typescript-eslint/no-non-null-assertion
       }
-    </TabFocusTrap>
+    </div>
   );
 
   if (href) {

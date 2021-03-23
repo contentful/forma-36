@@ -37,6 +37,11 @@
   overflow: hidden;
 }
 
+.Pill__focus-trap {
+  outline: 0;
+  display: inherit;
+}
+
 .Pill__label--deleted,
 .Pill__label--idle {
   color: var(--color-text-base);

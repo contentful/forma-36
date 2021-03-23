@@ -28,6 +28,8 @@
 
 .EntityListItem__focus-trap {
   width: 100%;
+  display: inherit;
+  outline: 0;
 }
 
 .EntityListItem__inner {

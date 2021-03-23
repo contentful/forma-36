@@ -1,11 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`can be controlled 1`] = `
-.emotion-0 {
-  display: inherit;
-  outline: 0;
-}
-
 <div
   class="react-modal"
 >
@@ -28,8 +23,8 @@ exports[`can be controlled 1`] = `
         data-test-id="cf-ui-icon-button"
         type="button"
       >
-        <span
-          class="IconButton__inner emotion-0"
+        <div
+          class="IconButton__inner"
           tabindex="-1"
         >
           <svg
@@ -48,7 +43,7 @@ exports[`can be controlled 1`] = `
           >
             Close
           </span>
-        </span>
+        </div>
       </button>
     </div>
     <div
@@ -72,11 +67,6 @@ exports[`can be controlled 1`] = `
 `;
 
 exports[`can override header and content properties 1`] = `
-.emotion-0 {
-  display: inherit;
-  outline: 0;
-}
-
 <div
   class="react-modal"
 >
@@ -99,8 +89,8 @@ exports[`can override header and content properties 1`] = `
         data-test-id="cf-ui-icon-button"
         type="button"
       >
-        <span
-          class="IconButton__inner emotion-0"
+        <div
+          class="IconButton__inner"
           tabindex="-1"
         >
           <svg
@@ -119,7 +109,7 @@ exports[`can override header and content properties 1`] = `
           >
             Close
           </span>
-        </span>
+        </div>
       </button>
     </div>
     <div
@@ -133,11 +123,6 @@ exports[`can override header and content properties 1`] = `
 `;
 
 exports[`renders the component 1`] = `
-.emotion-0 {
-  display: inherit;
-  outline: 0;
-}
-
 <div
   class="react-modal"
 >
@@ -160,8 +145,8 @@ exports[`renders the component 1`] = `
         data-test-id="cf-ui-icon-button"
         type="button"
       >
-        <span
-          class="IconButton__inner emotion-0"
+        <div
+          class="IconButton__inner"
           tabindex="-1"
         >
           <svg
@@ -180,7 +165,7 @@ exports[`renders the component 1`] = `
           >
             Close
           </span>
-        </span>
+        </div>
       </button>
     </div>
     <div

@@ -1,11 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`can call an onClick callback 1`] = `
-.emotion-0 {
-  display: inherit;
-  outline: 0;
-}
-
 <li
   class="EntityListItem EntityListItem--is-interactive"
   data-test-id="cf-ui-entity-list-item"
@@ -14,8 +9,8 @@ exports[`can call an onClick callback 1`] = `
     class="EntityListItem__inner"
     tabindex="0"
   >
-    <span
-      class="EntityListItem__focus-trap emotion-0"
+    <div
+      class="EntityListItem__focus-trap"
       tabindex="-1"
     >
       <figure
@@ -61,17 +56,12 @@ exports[`can call an onClick callback 1`] = `
       <div
         class="EntityListItem__meta"
       />
-    </span>
+    </div>
   </a>
 </li>
 `;
 
 exports[`renders the component 1`] = `
-.emotion-0 {
-  display: inherit;
-  outline: 0;
-}
-
 <li
   class="EntityListItem"
   data-test-id="cf-ui-entity-list-item"
@@ -79,8 +69,8 @@ exports[`renders the component 1`] = `
   <article
     class="EntityListItem__inner"
   >
-    <span
-      class="EntityListItem__focus-trap emotion-0"
+    <div
+      class="EntityListItem__focus-trap"
       tabindex="-1"
     >
       <figure
@@ -128,17 +118,12 @@ exports[`renders the component 1`] = `
       <div
         class="EntityListItem__meta"
       />
-    </span>
+    </div>
   </article>
 </li>
 `;
 
 exports[`renders the component as an \`a\` element if passed a href prop 1`] = `
-.emotion-0 {
-  display: inherit;
-  outline: 0;
-}
-
 <li
   class="EntityListItem EntityListItem--is-interactive"
   data-test-id="cf-ui-entity-list-item"
@@ -147,8 +132,8 @@ exports[`renders the component as an \`a\` element if passed a href prop 1`] = `
     class="EntityListItem__inner"
     href="#"
   >
-    <span
-      class="EntityListItem__focus-trap emotion-0"
+    <div
+      class="EntityListItem__focus-trap"
       tabindex="-1"
     >
       <figure
@@ -194,17 +179,12 @@ exports[`renders the component as an \`a\` element if passed a href prop 1`] = `
       <div
         class="EntityListItem__meta"
       />
-    </span>
+    </div>
   </article>
 </li>
 `;
 
 exports[`renders the component as an Asset with a lower-cased entityType 1`] = `
-.emotion-1 {
-  display: inherit;
-  outline: 0;
-}
-
 .emotion-0 {
   display: inline-block;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
@@ -230,8 +210,8 @@ exports[`renders the component as an Asset with a lower-cased entityType 1`] = `
   <article
     class="EntityListItem__inner"
   >
-    <span
-      class="EntityListItem__focus-trap emotion-1"
+    <div
+      class="EntityListItem__focus-trap"
       tabindex="-1"
     >
       <figure
@@ -297,17 +277,12 @@ exports[`renders the component as an Asset with a lower-cased entityType 1`] = `
           </div>
         </div>
       </div>
-    </span>
+    </div>
   </article>
 </li>
 `;
 
 exports[`renders the component as an Asset with a title-cased entityType 1`] = `
-.emotion-1 {
-  display: inherit;
-  outline: 0;
-}
-
 .emotion-0 {
   display: inline-block;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
@@ -333,8 +308,8 @@ exports[`renders the component as an Asset with a title-cased entityType 1`] = `
   <article
     class="EntityListItem__inner"
   >
-    <span
-      class="EntityListItem__focus-trap emotion-1"
+    <div
+      class="EntityListItem__focus-trap"
       tabindex="-1"
     >
       <figure
@@ -400,17 +375,12 @@ exports[`renders the component as an Asset with a title-cased entityType 1`] = `
           </div>
         </div>
       </div>
-    </span>
+    </div>
   </article>
 </li>
 `;
 
 exports[`renders the component as an asset entityType icon with an archived status 1`] = `
-.emotion-1 {
-  display: inherit;
-  outline: 0;
-}
-
 .emotion-0 {
   display: inline-block;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
@@ -436,8 +406,8 @@ exports[`renders the component as an asset entityType icon with an archived stat
   <article
     class="EntityListItem__inner"
   >
-    <span
-      class="EntityListItem__focus-trap emotion-1"
+    <div
+      class="EntityListItem__focus-trap"
       tabindex="-1"
     >
       <figure
@@ -503,17 +473,12 @@ exports[`renders the component as an asset entityType icon with an archived stat
           </div>
         </div>
       </div>
-    </span>
+    </div>
   </article>
 </li>
 `;
 
 exports[`renders the component as an asset entityType variant 1`] = `
-.emotion-1 {
-  display: inherit;
-  outline: 0;
-}
-
 .emotion-0 {
   display: inline-block;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
@@ -539,8 +504,8 @@ exports[`renders the component as an asset entityType variant 1`] = `
   <article
     class="EntityListItem__inner"
   >
-    <span
-      class="EntityListItem__focus-trap emotion-1"
+    <div
+      class="EntityListItem__focus-trap"
       tabindex="-1"
     >
       <figure
@@ -606,17 +571,12 @@ exports[`renders the component as an asset entityType variant 1`] = `
           </div>
         </div>
       </div>
-    </span>
+    </div>
   </article>
 </li>
 `;
 
 exports[`renders the component as an asset thumbnail preview 1`] = `
-.emotion-1 {
-  display: inherit;
-  outline: 0;
-}
-
 .emotion-0 {
   display: inline-block;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
@@ -642,8 +602,8 @@ exports[`renders the component as an asset thumbnail preview 1`] = `
   <article
     class="EntityListItem__inner"
   >
-    <span
-      class="EntityListItem__focus-trap emotion-1"
+    <div
+      class="EntityListItem__focus-trap"
       tabindex="-1"
     >
       <figure
@@ -694,7 +654,7 @@ exports[`renders the component as an asset thumbnail preview 1`] = `
           </div>
         </div>
       </div>
-    </span>
+    </div>
   </article>
 </li>
 `;
@@ -805,11 +765,6 @@ exports[`renders the component as isLoading 1`] = `
 `;
 
 exports[`renders the component with a description 1`] = `
-.emotion-0 {
-  display: inherit;
-  outline: 0;
-}
-
 <li
   class="EntityListItem"
   data-test-id="cf-ui-entity-list-item"
@@ -817,8 +772,8 @@ exports[`renders the component with a description 1`] = `
   <article
     class="EntityListItem__inner"
   >
-    <span
-      class="EntityListItem__focus-trap emotion-0"
+    <div
+      class="EntityListItem__focus-trap"
       tabindex="-1"
     >
       <figure
@@ -871,17 +826,12 @@ exports[`renders the component with a description 1`] = `
       <div
         class="EntityListItem__meta"
       />
-    </span>
+    </div>
   </article>
 </li>
 `;
 
 exports[`renders the component with a drag handle 1`] = `
-.emotion-1 {
-  display: inherit;
-  outline: 0;
-}
-
 .emotion-0 {
   display: inline-block;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
@@ -932,8 +882,8 @@ exports[`renders the component with a drag handle 1`] = `
   <article
     class="EntityListItem__inner"
   >
-    <span
-      class="EntityListItem__focus-trap emotion-1"
+    <div
+      class="EntityListItem__focus-trap"
       tabindex="-1"
     >
       <figure
@@ -997,17 +947,12 @@ exports[`renders the component with a drag handle 1`] = `
           </div>
         </div>
       </div>
-    </span>
+    </div>
   </article>
 </li>
 `;
 
 exports[`renders the component with a status 1`] = `
-.emotion-1 {
-  display: inherit;
-  outline: 0;
-}
-
 .emotion-0 {
   display: inline-block;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
@@ -1033,8 +978,8 @@ exports[`renders the component with a status 1`] = `
   <article
     class="EntityListItem__inner"
   >
-    <span
-      class="EntityListItem__focus-trap emotion-1"
+    <div
+      class="EntityListItem__focus-trap"
       tabindex="-1"
     >
       <figure
@@ -1098,17 +1043,12 @@ exports[`renders the component with a status 1`] = `
           </div>
         </div>
       </div>
-    </span>
+    </div>
   </article>
 </li>
 `;
 
 exports[`renders the component with active drag state 1`] = `
-.emotion-1 {
-  display: inherit;
-  outline: 0;
-}
-
 .emotion-0 {
   display: inline-block;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
@@ -1134,8 +1074,8 @@ exports[`renders the component with active drag state 1`] = `
   <article
     class="EntityListItem__inner"
   >
-    <span
-      class="EntityListItem__focus-trap emotion-1"
+    <div
+      class="EntityListItem__focus-trap"
       tabindex="-1"
     >
       <figure
@@ -1199,17 +1139,12 @@ exports[`renders the component with active drag state 1`] = `
           </div>
         </div>
       </div>
-    </span>
+    </div>
   </article>
 </li>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
-.emotion-0 {
-  display: inherit;
-  outline: 0;
-}
-
 <li
   class="EntityListItem my-extra-class"
   data-test-id="cf-ui-entity-list-item"
@@ -1217,8 +1152,8 @@ exports[`renders the component with an additional class name 1`] = `
   <article
     class="EntityListItem__inner"
   >
-    <span
-      class="EntityListItem__focus-trap emotion-0"
+    <div
+      class="EntityListItem__focus-trap"
       tabindex="-1"
     >
       <figure
@@ -1271,17 +1206,12 @@ exports[`renders the component with an additional class name 1`] = `
       <div
         class="EntityListItem__meta"
       />
-    </span>
+    </div>
   </article>
 </li>
 `;
 
 exports[`renders the component with custom drag handle 1`] = `
-.emotion-1 {
-  display: inherit;
-  outline: 0;
-}
-
 .emotion-0 {
   display: inline-block;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
@@ -1332,8 +1262,8 @@ exports[`renders the component with custom drag handle 1`] = `
   <article
     class="EntityListItem__inner"
   >
-    <span
-      class="EntityListItem__focus-trap emotion-1"
+    <div
+      class="EntityListItem__focus-trap"
       tabindex="-1"
     >
       <figure
@@ -1397,17 +1327,12 @@ exports[`renders the component with custom drag handle 1`] = `
           </div>
         </div>
       </div>
-    </span>
+    </div>
   </article>
 </li>
 `;
 
 exports[`renders the component with disabled actions 1`] = `
-.emotion-0 {
-  display: inherit;
-  outline: 0;
-}
-
 <li
   class="EntityListItem my-extra-class"
   data-test-id="cf-ui-entity-list-item"
@@ -1415,8 +1340,8 @@ exports[`renders the component with disabled actions 1`] = `
   <article
     class="EntityListItem__inner"
   >
-    <span
-      class="EntityListItem__focus-trap emotion-0"
+    <div
+      class="EntityListItem__focus-trap"
       tabindex="-1"
     >
       <figure
@@ -1469,17 +1394,12 @@ exports[`renders the component with disabled actions 1`] = `
       <div
         class="EntityListItem__meta"
       />
-    </span>
+    </div>
   </article>
 </li>
 `;
 
 exports[`renders the component with dropdownListElements 1`] = `
-.emotion-1 {
-  display: inherit;
-  outline: 0;
-}
-
 .emotion-0 {
   display: inline-block;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
@@ -1505,8 +1425,8 @@ exports[`renders the component with dropdownListElements 1`] = `
   <article
     class="EntityListItem__inner"
   >
-    <span
-      class="EntityListItem__focus-trap emotion-1"
+    <div
+      class="EntityListItem__focus-trap"
       tabindex="-1"
     >
       <figure
@@ -1580,8 +1500,8 @@ exports[`renders the component with dropdownListElements 1`] = `
             data-test-id="cf-ui-icon-button"
             type="button"
           >
-            <span
-              class="IconButton__inner emotion-1"
+            <div
+              class="IconButton__inner"
               tabindex="-1"
             >
               <svg
@@ -1604,11 +1524,11 @@ exports[`renders the component with dropdownListElements 1`] = `
               >
                 Actions
               </span>
-            </span>
+            </div>
           </button>
         </div>
       </div>
-    </span>
+    </div>
   </article>
 </li>
 `;

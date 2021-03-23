@@ -1,11 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component as disabled 1`] = `
-.emotion-0 {
-  display: inherit;
-  outline: 0;
-}
-
 <div
   class="Dropdown"
   data-test-id="cf-ui-card-actions"
@@ -18,8 +13,8 @@ exports[`renders the component as disabled 1`] = `
     disabled=""
     type="button"
   >
-    <span
-      class="IconButton__inner emotion-0"
+    <div
+      class="IconButton__inner"
       tabindex="-1"
     >
       <svg
@@ -42,17 +37,12 @@ exports[`renders the component as disabled 1`] = `
       >
         Actions
       </span>
-    </span>
+    </div>
   </button>
 </div>
 `;
 
 exports[`renders the component using a multiple dropdown lists 1`] = `
-.emotion-0 {
-  display: inherit;
-  outline: 0;
-}
-
 <div
   class="Dropdown"
   data-test-id="cf-ui-card-actions"
@@ -64,8 +54,8 @@ exports[`renders the component using a multiple dropdown lists 1`] = `
     data-test-id="cf-ui-icon-button"
     type="button"
   >
-    <span
-      class="IconButton__inner emotion-0"
+    <div
+      class="IconButton__inner"
       tabindex="-1"
     >
       <svg
@@ -88,17 +78,12 @@ exports[`renders the component using a multiple dropdown lists 1`] = `
       >
         Actions
       </span>
-    </span>
+    </div>
   </button>
 </div>
 `;
 
 exports[`renders the component using a single dropdown list 1`] = `
-.emotion-0 {
-  display: inherit;
-  outline: 0;
-}
-
 <div
   class="Dropdown"
   data-test-id="cf-ui-card-actions"
@@ -110,8 +95,8 @@ exports[`renders the component using a single dropdown list 1`] = `
     data-test-id="cf-ui-icon-button"
     type="button"
   >
-    <span
-      class="IconButton__inner emotion-0"
+    <div
+      class="IconButton__inner"
       tabindex="-1"
     >
       <svg
@@ -134,17 +119,12 @@ exports[`renders the component using a single dropdown list 1`] = `
       >
         Actions
       </span>
-    </span>
+    </div>
   </button>
 </div>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
-.emotion-0 {
-  display: inherit;
-  outline: 0;
-}
-
 <div
   class="Dropdown my-extra-class"
   data-test-id="cf-ui-card-actions"
@@ -156,8 +136,8 @@ exports[`renders the component with an additional class name 1`] = `
     data-test-id="cf-ui-icon-button"
     type="button"
   >
-    <span
-      class="IconButton__inner emotion-0"
+    <div
+      class="IconButton__inner"
       tabindex="-1"
     >
       <svg
@@ -180,17 +160,12 @@ exports[`renders the component with an additional class name 1`] = `
       >
         Actions
       </span>
-    </span>
+    </div>
   </button>
 </div>
 `;
 
 exports[`renders the component with published status 1`] = `
-.emotion-0 {
-  display: inherit;
-  outline: 0;
-}
-
 <div
   class="Dropdown"
   data-test-id="cf-ui-card-actions"
@@ -202,8 +177,8 @@ exports[`renders the component with published status 1`] = `
     data-test-id="cf-ui-icon-button"
     type="button"
   >
-    <span
-      class="IconButton__inner emotion-0"
+    <div
+      class="IconButton__inner"
       tabindex="-1"
     >
       <svg
@@ -226,7 +201,7 @@ exports[`renders the component with published status 1`] = `
       >
         Actions
       </span>
-    </span>
+    </div>
   </button>
 </div>
 `;

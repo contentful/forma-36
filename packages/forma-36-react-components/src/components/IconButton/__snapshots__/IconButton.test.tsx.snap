@@ -1,18 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`allows passing additional props not consumed by the component 1`] = `
-.emotion-0 {
-  display: inherit;
-  outline: 0;
-}
-
 <button
   class="IconButton IconButton--primary"
   data-test-id="Testing ID"
   type="button"
 >
-  <span
-    class="IconButton__inner emotion-0"
+  <div
+    class="IconButton__inner"
     tabindex="-1"
   >
     <svg
@@ -35,23 +30,18 @@ exports[`allows passing additional props not consumed by the component 1`] = `
     >
       My Icon
     </span>
-  </span>
+  </div>
 </button>
 `;
 
 exports[`calls an onClick function 1`] = `
-.emotion-0 {
-  display: inherit;
-  outline: 0;
-}
-
 <button
   class="IconButton IconButton--primary"
   data-test-id="cf-ui-icon-button"
   type="button"
 >
-  <span
-    class="IconButton__inner emotion-0"
+  <div
+    class="IconButton__inner"
     tabindex="-1"
   >
     <svg
@@ -74,24 +64,19 @@ exports[`calls an onClick function 1`] = `
     >
       My Icon
     </span>
-  </span>
+  </div>
 </button>
 `;
 
 exports[`prevents an onClick function from being called when disabled 1`] = `
-.emotion-0 {
-  display: inherit;
-  outline: 0;
-}
-
 <button
   class="IconButton IconButton--disabled IconButton--primary"
   data-test-id="cf-ui-icon-button"
   disabled=""
   type="button"
 >
-  <span
-    class="IconButton__inner emotion-0"
+  <div
+    class="IconButton__inner"
     tabindex="-1"
   >
     <svg
@@ -114,23 +99,18 @@ exports[`prevents an onClick function from being called when disabled 1`] = `
     >
       My Icon
     </span>
-  </span>
+  </div>
 </button>
 `;
 
 exports[`renders as a "muted" link type 1`] = `
-.emotion-0 {
-  display: inherit;
-  outline: 0;
-}
-
 <button
   class="IconButton IconButton--muted"
   data-test-id="cf-ui-icon-button"
   type="button"
 >
-  <span
-    class="IconButton__inner emotion-0"
+  <div
+    class="IconButton__inner"
     tabindex="-1"
   >
     <svg
@@ -153,23 +133,18 @@ exports[`renders as a "muted" link type 1`] = `
     >
       My Icon
     </span>
-  </span>
+  </div>
 </button>
 `;
 
 exports[`renders as a "negative" link type 1`] = `
-.emotion-0 {
-  display: inherit;
-  outline: 0;
-}
-
 <button
   class="IconButton IconButton--negative"
   data-test-id="cf-ui-icon-button"
   type="button"
 >
-  <span
-    class="IconButton__inner emotion-0"
+  <div
+    class="IconButton__inner"
     tabindex="-1"
   >
     <svg
@@ -192,23 +167,18 @@ exports[`renders as a "negative" link type 1`] = `
     >
       My Icon
     </span>
-  </span>
+  </div>
 </button>
 `;
 
 exports[`renders as a "positive" link type 1`] = `
-.emotion-0 {
-  display: inherit;
-  outline: 0;
-}
-
 <button
   class="IconButton IconButton--positive"
   data-test-id="cf-ui-icon-button"
   type="button"
 >
-  <span
-    class="IconButton__inner emotion-0"
+  <div
+    class="IconButton__inner"
     tabindex="-1"
   >
     <svg
@@ -231,23 +201,18 @@ exports[`renders as a "positive" link type 1`] = `
     >
       My Icon
     </span>
-  </span>
+  </div>
 </button>
 `;
 
 exports[`renders as a "primary" link type 1`] = `
-.emotion-0 {
-  display: inherit;
-  outline: 0;
-}
-
 <button
   class="IconButton IconButton--primary"
   data-test-id="cf-ui-icon-button"
   type="button"
 >
-  <span
-    class="IconButton__inner emotion-0"
+  <div
+    class="IconButton__inner"
     tabindex="-1"
   >
     <svg
@@ -270,23 +235,18 @@ exports[`renders as a "primary" link type 1`] = `
     >
       My Icon
     </span>
-  </span>
+  </div>
 </button>
 `;
 
 exports[`renders as a "secondary" link type 1`] = `
-.emotion-0 {
-  display: inherit;
-  outline: 0;
-}
-
 <button
   class="IconButton IconButton--secondary"
   data-test-id="cf-ui-icon-button"
   type="button"
 >
-  <span
-    class="IconButton__inner emotion-0"
+  <div
+    class="IconButton__inner"
     tabindex="-1"
   >
     <svg
@@ -309,7 +269,7 @@ exports[`renders as a "secondary" link type 1`] = `
     >
       My Icon
     </span>
-  </span>
+  </div>
 </button>
 `;
 
@@ -324,18 +284,13 @@ exports[`renders as a link 1`] = `
 `;
 
 exports[`renders the component 1`] = `
-.emotion-0 {
-  display: inherit;
-  outline: 0;
-}
-
 <button
   class="IconButton IconButton--primary"
   data-test-id="cf-ui-icon-button"
   type="button"
 >
-  <span
-    class="IconButton__inner emotion-0"
+  <div
+    class="IconButton__inner"
     tabindex="-1"
   >
     <svg
@@ -358,23 +313,18 @@ exports[`renders the component 1`] = `
     >
       My Icon
     </span>
-  </span>
+  </div>
 </button>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
-.emotion-0 {
-  display: inherit;
-  outline: 0;
-}
-
 <button
   class="IconButton my-extra-class IconButton--primary"
   data-test-id="cf-ui-icon-button"
   type="button"
 >
-  <span
-    class="IconButton__inner emotion-0"
+  <div
+    class="IconButton__inner"
     tabindex="-1"
   >
     <svg
@@ -397,23 +347,18 @@ exports[`renders the component with an additional class name 1`] = `
     >
       My Icon
     </span>
-  </span>
+  </div>
 </button>
 `;
 
 exports[`renders with a dropdown indicator 1`] = `
-.emotion-0 {
-  display: inherit;
-  outline: 0;
-}
-
 <button
   class="IconButton IconButton--primary"
   data-test-id="cf-ui-icon-button"
   type="button"
 >
-  <span
-    class="IconButton__inner emotion-0"
+  <div
+    class="IconButton__inner"
     tabindex="-1"
   >
     <svg
@@ -447,6 +392,6 @@ exports[`renders with a dropdown indicator 1`] = `
         d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
       />
     </svg>
-  </span>
+  </div>
 </button>
 `;

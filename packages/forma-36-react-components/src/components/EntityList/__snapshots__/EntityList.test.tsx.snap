@@ -8,11 +8,6 @@ exports[`renders the component 1`] = `
 `;
 
 exports[`renders the component with EntityListItems as children 1`] = `
-.emotion-0 {
-  display: inherit;
-  outline: 0;
-}
-
 <ul
   class="EntityList"
   data-test-id="cf-ui-entity-list"
@@ -24,8 +19,8 @@ exports[`renders the component with EntityListItems as children 1`] = `
     <article
       class="EntityListItem__inner"
     >
-      <span
-        class="EntityListItem__focus-trap emotion-0"
+      <div
+        class="EntityListItem__focus-trap"
         tabindex="-1"
       >
         <figure
@@ -78,7 +73,7 @@ exports[`renders the component with EntityListItems as children 1`] = `
         <div
           class="EntityListItem__meta"
         />
-      </span>
+      </div>
     </article>
   </li>
   <li
@@ -88,8 +83,8 @@ exports[`renders the component with EntityListItems as children 1`] = `
     <article
       class="EntityListItem__inner"
     >
-      <span
-        class="EntityListItem__focus-trap emotion-0"
+      <div
+        class="EntityListItem__focus-trap"
         tabindex="-1"
       >
         <figure
@@ -142,7 +137,7 @@ exports[`renders the component with EntityListItems as children 1`] = `
         <div
           class="EntityListItem__meta"
         />
-      </span>
+      </div>
     </article>
   </li>
   <li
@@ -152,8 +147,8 @@ exports[`renders the component with EntityListItems as children 1`] = `
     <article
       class="EntityListItem__inner"
     >
-      <span
-        class="EntityListItem__focus-trap emotion-0"
+      <div
+        class="EntityListItem__focus-trap"
         tabindex="-1"
       >
         <figure
@@ -206,7 +201,7 @@ exports[`renders the component with EntityListItems as children 1`] = `
         <div
           class="EntityListItem__meta"
         />
-      </span>
+      </div>
     </article>
   </li>
 </ul>

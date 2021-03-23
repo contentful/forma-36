@@ -12,11 +12,6 @@ exports[`renders the component (complex) 1`] = `
   text-rendering: optimizeLegibility;
 }
 
-.emotion-1 {
-  display: inherit;
-  outline: 0;
-}
-
 <div
   class="Workbench"
   data-test-id="cf-ui-workbench"
@@ -63,8 +58,8 @@ exports[`renders the component (complex) 1`] = `
         data-test-id="cf-ui-button"
         type="button"
       >
-        <span
-          class="Button__inner-wrapper emotion-1"
+        <div
+          class="Button__inner-wrapper"
           tabindex="-1"
         >
           <span
@@ -72,7 +67,7 @@ exports[`renders the component (complex) 1`] = `
           >
             Click
           </span>
-        </span>
+        </div>
       </button>
     </div>
   </div>
@@ -117,11 +112,6 @@ exports[`renders the component (simple) 1`] = `
   text-rendering: optimizeLegibility;
 }
 
-.emotion-1 {
-  display: inherit;
-  outline: 0;
-}
-
 <div
   class="Workbench"
   data-test-id="cf-ui-workbench"
@@ -168,8 +158,8 @@ exports[`renders the component (simple) 1`] = `
         data-test-id="cf-ui-button"
         type="button"
       >
-        <span
-          class="Button__inner-wrapper emotion-1"
+        <div
+          class="Button__inner-wrapper"
           tabindex="-1"
         >
           <span
@@ -177,7 +167,7 @@ exports[`renders the component (simple) 1`] = `
           >
             Click
           </span>
-        </span>
+        </div>
       </button>
     </div>
   </div>

@@ -326,11 +326,6 @@ exports[`renders the component with a drag handle 1`] = `
 `;
 
 exports[`renders the component with actions 1`] = `
-.emotion-0 {
-  display: inherit;
-  outline: 0;
-}
-
 <div
   aria-label="picture of a cat"
   class="Card AssetCard AssetCard--size-default Card--padding-none"
@@ -354,8 +349,8 @@ exports[`renders the component with actions 1`] = `
           data-test-id="cf-ui-icon-button"
           type="button"
         >
-          <span
-            class="IconButton__inner emotion-0"
+          <div
+            class="IconButton__inner"
             tabindex="-1"
           >
             <svg
@@ -378,7 +373,7 @@ exports[`renders the component with actions 1`] = `
             >
               Actions
             </span>
-          </span>
+          </div>
         </button>
       </div>
     </div>

@@ -1,11 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
-.emotion-0 {
-  display: inherit;
-  outline: 0;
-}
-
 <div
   class="Dropdown"
   data-test-id="cf-ui-dropdown"
@@ -17,8 +12,8 @@ exports[`renders the component 1`] = `
     data-test-id="cf-ui-button"
     type="button"
   >
-    <span
-      class="Button__inner-wrapper emotion-0"
+    <div
+      class="Button__inner-wrapper"
       tabindex="-1"
     >
       <span
@@ -26,17 +21,12 @@ exports[`renders the component 1`] = `
       >
         Toggle
       </span>
-    </span>
+    </div>
   </button>
 </div>
 `;
 
 exports[`renders the component as open 1`] = `
-.emotion-0 {
-  display: inherit;
-  outline: 0;
-}
-
 <div
   class="Dropdown"
   data-test-id="cf-ui-dropdown"
@@ -48,8 +38,8 @@ exports[`renders the component as open 1`] = `
     data-test-id="cf-ui-button"
     type="button"
   >
-    <span
-      class="Button__inner-wrapper emotion-0"
+    <div
+      class="Button__inner-wrapper"
       tabindex="-1"
     >
       <span
@@ -57,17 +47,12 @@ exports[`renders the component as open 1`] = `
       >
         Toggle
       </span>
-    </span>
+    </div>
   </button>
 </div>
 `;
 
 exports[`renders the component with a submenu 1`] = `
-.emotion-0 {
-  display: inherit;
-  outline: 0;
-}
-
 <div
   class="Dropdown"
   data-test-id="cf-ui-dropdown"
@@ -79,8 +64,8 @@ exports[`renders the component with a submenu 1`] = `
     data-test-id="cf-ui-button"
     type="button"
   >
-    <span
-      class="Button__inner-wrapper emotion-0"
+    <div
+      class="Button__inner-wrapper"
       tabindex="-1"
     >
       <span
@@ -88,17 +73,12 @@ exports[`renders the component with a submenu 1`] = `
       >
         Toggle
       </span>
-    </span>
+    </div>
   </button>
 </div>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
-.emotion-0 {
-  display: inherit;
-  outline: 0;
-}
-
 <div
   class="Dropdown"
   data-test-id="cf-ui-dropdown"
@@ -110,8 +90,8 @@ exports[`renders the component with an additional class name 1`] = `
     data-test-id="cf-ui-button"
     type="button"
   >
-    <span
-      class="Button__inner-wrapper emotion-0"
+    <div
+      class="Button__inner-wrapper"
       tabindex="-1"
     >
       <span
@@ -119,7 +99,7 @@ exports[`renders the component with an additional class name 1`] = `
       >
         Toggle
       </span>
-    </span>
+    </div>
   </button>
 </div>
 `;

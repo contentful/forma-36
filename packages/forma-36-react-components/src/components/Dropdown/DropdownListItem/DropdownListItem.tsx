@@ -6,7 +6,6 @@ import React, {
 } from 'react';
 import cn from 'classnames';
 
-import { TabFocusTrap } from '@contentful/f36-utils';
 import styles from './DropdownListItem.css';
 
 export interface DropdownListItemProps
@@ -61,11 +60,12 @@ export const DropdownListItem = forwardRef<HTMLElement, DropdownListItemProps>(
             onMouseLeave={onLeave}
             {...otherProps}
           >
-            <TabFocusTrap
+            <div
+              tabIndex={-1}
               className={styles['DropdownListItem__button__inner-wrapper']}
             >
               {submenuToggleLabel}
-            </TabFocusTrap>
+            </div>
           </button>
           {children}
         </React.Fragment>
@@ -101,11 +101,12 @@ export const DropdownListItem = forwardRef<HTMLElement, DropdownListItemProps>(
             className={styles['DropdownListItem__button']}
             data-test-id="cf-ui-dropdown-list-item-button"
           >
-            <TabFocusTrap
+            <div
+              tabIndex={-1}
               className={styles['DropdownListItem__button__inner-wrapper']}
             >
               {children}
-            </TabFocusTrap>
+            </div>
           </Element>
         );
       }

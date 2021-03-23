@@ -1,18 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
-.emotion-0 {
-  display: inherit;
-  outline: 0;
-}
-
 <button
   class="TableSortingLabel__button"
   data-test-id="cf-ui-table-sorting-label"
   type="button"
 >
-  <span
-    class="TableSortingLabel__button__text emotion-0"
+  <div
+    class="TableSortingLabel__button__text"
     tabindex="-1"
   >
     Foo
@@ -31,26 +26,21 @@ exports[`renders the component 1`] = `
         fill="none"
       />
     </svg>
-  </span>
+  </div>
 </button>
 `;
 
 exports[`renders the component inactive 1`] = `
-.emotion-0 {
-  display: inherit;
-  outline: 0;
-}
-
 <button
   class="TableSortingLabel__button"
   data-test-id="cf-ui-table-sorting-label"
   type="button"
 >
-  <span
-    class="TableSortingLabel__button__text emotion-0"
+  <div
+    class="TableSortingLabel__button__text"
     tabindex="-1"
   >
     Foo
-  </span>
+  </div>
 </button>
 `;

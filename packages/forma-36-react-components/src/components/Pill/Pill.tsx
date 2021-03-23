@@ -2,7 +2,6 @@ import React from 'react';
 import cn from 'classnames';
 
 import { Icon } from '../Icon';
-import { TabFocusTrap } from '@contentful/f36-utils';
 import styles from './Pill.css';
 
 export interface PillProps {
@@ -64,13 +63,13 @@ export function Pill({
             styles[`Pill__close-button--${variant}`],
           )}
         >
-          <TabFocusTrap>
+          <div tabIndex={-1} className={styles['Pill__focus-trap']}>
             <Icon
               icon="Close"
               color="muted"
               className={styles[`Pill__icon--${variant}`]}
             />
-          </TabFocusTrap>
+          </div>
         </button>
       )}
     </div>
