@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Flex } from '@contentful/f36-core';
-import { Heading } from '@contentful/f36-typography';
+import { Heading, SectionHeading } from '@contentful/f36-typography';
 
-import { Paragraph, SectionHeading, Typography } from '../Typography';
+import { Paragraph, Typography } from '../Typography';
 import { Card, CardProps } from './Card';
 
 export default {
@@ -100,7 +100,7 @@ export const overview: Story<CardProps> = (args) => {
   return (
     <>
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">Card with link and target</SectionHeading>
+        <SectionHeading as="h3">Card with link and target</SectionHeading>
       </Flex>
       <Card {...args}>
         <Typography>
@@ -115,7 +115,7 @@ export const overview: Story<CardProps> = (args) => {
       </Card>
 
       <Flex marginBottom="spacingS" marginTop="spacingM">
-        <SectionHeading element="h3">Card selected</SectionHeading>
+        <SectionHeading as="h3">Card selected</SectionHeading>
       </Flex>
       <Card selected>
         <Heading>Forma36</Heading>
@@ -128,7 +128,7 @@ export const overview: Story<CardProps> = (args) => {
       </Card>
 
       <Flex marginBottom="spacingS" marginTop="spacingM">
-        <SectionHeading element="h3">Card with default padding</SectionHeading>
+        <SectionHeading as="h3">Card with default padding</SectionHeading>
       </Flex>
       <Card padding="default">
         <Heading>Forma36</Heading>
@@ -140,7 +140,7 @@ export const overview: Story<CardProps> = (args) => {
         </Paragraph>
       </Card>
       <Flex marginBottom="spacingS" marginTop="spacingM">
-        <SectionHeading element="h3">Card with large padding</SectionHeading>
+        <SectionHeading as="h3">Card with large padding</SectionHeading>
       </Flex>
       <Card padding="large">
         <Heading>Forma36</Heading>
@@ -153,7 +153,7 @@ export const overview: Story<CardProps> = (args) => {
       </Card>
 
       <Flex marginBottom="spacingS" marginTop="spacingM">
-        <SectionHeading element="h3">Card without padding</SectionHeading>
+        <SectionHeading as="h3">Card without padding</SectionHeading>
       </Flex>
       <Card padding="none">
         <Heading>Forma36</Heading>

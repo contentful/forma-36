@@ -1,8 +1,7 @@
 import React from 'react';
-
+import { SectionHeading } from '@contentful/f36-typography';
 import { Note, NoteProps } from './Note';
 import { TextLink } from '../TextLink';
-import { SectionHeading } from '../Typography';
 import { Flex } from '@contentful/f36-core';
 
 export default {
@@ -34,7 +33,7 @@ basic.args = {
 export const overview = () => (
   <Flex fullWidth flexDirection="column">
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Note primary</SectionHeading>
+      <SectionHeading as="h3">Note primary</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingM">
       <Note>
@@ -50,7 +49,7 @@ export const overview = () => (
       </Note>
     </Flex>
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Note negative</SectionHeading>
+      <SectionHeading as="h3">Note negative</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingM">
       <Note noteType={'negative'}>
@@ -68,7 +67,7 @@ export const overview = () => (
       </Note>
     </Flex>
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Note warning</SectionHeading>
+      <SectionHeading as="h3">Note warning</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingM">
       <Note noteType={'warning'}>
@@ -88,7 +87,7 @@ export const overview = () => (
       </Note>
     </Flex>
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Note positive</SectionHeading>
+      <SectionHeading as="h3">Note positive</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingM">
       <Note noteType={'positive'}>

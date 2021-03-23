@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
-
+import { SectionHeading } from '@contentful/f36-typography';
 import { Table } from './Table';
 import { TableHead } from './TableHead/TableHead';
 import { TableBody } from './TableBody/TableBody';
@@ -8,7 +8,6 @@ import { TableCell } from './TableCell/TableCell';
 import { TableRow } from './TableRow/TableRow';
 import { SkeletonRow } from '../Skeleton';
 import { Flex } from '@contentful/f36-core';
-import { SectionHeading } from '../Typography';
 import { Button } from '../Button/Button';
 
 export default {
@@ -112,7 +111,7 @@ export const Overview = () => (
   <>
     <Flex flexDirection="column" marginBottom="spacingL">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">Inline Table</SectionHeading>
+        <SectionHeading as="h3">Inline Table</SectionHeading>
       </Flex>
 
       <Table>
@@ -149,7 +148,7 @@ export const Overview = () => (
 
     <Flex flexDirection="column" marginBottom="spacingL">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">Embedded Table</SectionHeading>
+        <SectionHeading as="h3">Embedded Table</SectionHeading>
       </Flex>
 
       <Table layout="embedded">

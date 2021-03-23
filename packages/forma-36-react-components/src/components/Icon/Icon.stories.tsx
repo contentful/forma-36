@@ -1,9 +1,9 @@
 import React from 'react';
 import { Flex, Grid } from '@contentful/f36-core';
-
+import { SectionHeading } from '@contentful/f36-typography';
 import { Icon, IconProps } from './Icon';
 import { iconName, iconSizes, iconColors } from './constants';
-import { Paragraph, SectionHeading } from '../Typography';
+import { Paragraph } from '../Typography';
 
 export default {
   title: 'Components/Icon',
@@ -55,7 +55,7 @@ export const AllIcons = () => (
 export const Overview = () => (
   <>
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Icon sizes overview</SectionHeading>
+      <SectionHeading as="h3">Icon sizes overview</SectionHeading>
     </Flex>
 
     {Object.entries(iconSizes).map((icon, idx) => (
@@ -67,7 +67,7 @@ export const Overview = () => (
       </Flex>
     ))}
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Icon colors overview</SectionHeading>
+      <SectionHeading as="h3">Icon colors overview</SectionHeading>
     </Flex>
     {iconColors.map((color, idx) => (
       <Flex marginBottom="spacingM" alignItems="center" key={idx}>

@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-
+import { SectionHeading } from '@contentful/f36-typography';
 import { RadioButtonField, RadioButtonFieldProps } from './RadioButtonField';
 import { FieldGroup } from '../Form';
 import { Flex } from '@contentful/f36-core';
-import { SectionHeading } from '../Typography';
 
 export default {
   title: 'Form Elements/RadioButtonField',
@@ -54,7 +53,7 @@ Basic.args = {
 export const overview = () => (
   <>
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Radio button field default</SectionHeading>
+      <SectionHeading as="h3">Radio button field default</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingS">
       <RadioButtonField
@@ -66,7 +65,7 @@ export const overview = () => (
       />
     </Flex>
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">
+      <SectionHeading as="h3">
         Radio button field with validation message
       </SectionHeading>
     </Flex>
@@ -81,7 +80,7 @@ export const overview = () => (
       />
     </Flex>
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Radio button disabled</SectionHeading>
+      <SectionHeading as="h3">Radio button disabled</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingS">
       <RadioButtonField
@@ -94,9 +93,7 @@ export const overview = () => (
       />
     </Flex>
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">
-        Radio button disabled checked
-      </SectionHeading>
+      <SectionHeading as="h3">Radio button disabled checked</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingS">
       <RadioButtonField
@@ -110,9 +107,7 @@ export const overview = () => (
       />
     </Flex>
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">
-        Radio button with light label
-      </SectionHeading>
+      <SectionHeading as="h3">Radio button with light label</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingS">
       <RadioButtonField

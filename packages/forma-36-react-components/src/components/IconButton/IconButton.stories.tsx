@@ -1,9 +1,9 @@
 import React from 'react';
-
+import { SectionHeading } from '@contentful/f36-typography';
 import { IconButton, IconButtonProps } from './IconButton';
 import { iconName } from '../Icon/constants';
 import { Flex } from '@contentful/f36-core';
-import { Paragraph, SectionHeading } from '../Typography';
+import { Paragraph } from '../Typography';
 
 // TODO align colors between Icon and IconButton? (warning is missing in IconButton)
 enum IconButtonTypes {
@@ -51,7 +51,7 @@ Basic.args = {
 export const Overview = () => (
   <>
     <Flex marginBottom="spacingXs">
-      <SectionHeading element="h3">IconButton colors</SectionHeading>
+      <SectionHeading as="h3">IconButton colors</SectionHeading>
     </Flex>
     {Object.keys(IconButtonTypes).map((color, idx) => (
       <Flex
@@ -75,7 +75,7 @@ export const Overview = () => (
       </Flex>
     ))}
     <Flex marginTop="spacingL" marginBottom="spacingS">
-      <SectionHeading element="h3">IconButton sizes</SectionHeading>
+      <SectionHeading as="h3">IconButton sizes</SectionHeading>
     </Flex>
     <Flex flexDirection="row">
       <Flex marginRight="spacingS">
@@ -112,7 +112,7 @@ export const Overview = () => (
       </Flex>
     </Flex>
     <Flex marginTop="spacingL" marginBottom="spacingS">
-      <SectionHeading element="h3">IconButton disabled</SectionHeading>
+      <SectionHeading as="h3">IconButton disabled</SectionHeading>
     </Flex>
     <IconButton
       iconProps={{
@@ -124,7 +124,7 @@ export const Overview = () => (
     />
     {/* Not sure what how this option should look like and where it is used */}
     <Flex marginTop="spacingL" marginBottom="spacingS">
-      <SectionHeading element="h3">IconButton with dropdown</SectionHeading>
+      <SectionHeading as="h3">IconButton with dropdown</SectionHeading>
     </Flex>
     <IconButton
       iconProps={{

@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
-
+import { SectionHeading } from '@contentful/f36-typography';
 import { Tabs } from './Tabs';
 import { Tab } from './Tab';
 import { TabPanel } from './TabPanel';
-import { SectionHeading } from '../Typography';
 import { Flex } from '@contentful/f36-core';
 
 export default {
@@ -78,7 +77,7 @@ export const Default: Story = (args) => {
 export const Overview: Story = () => (
   <>
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Tabs default</SectionHeading>
+      <SectionHeading as="h3">Tabs default</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingS">
       <Tabs role="navigation">
@@ -94,7 +93,7 @@ export const Overview: Story = () => (
       </Tabs>
     </Flex>
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Tabs with horizontal divider</SectionHeading>
+      <SectionHeading as="h3">Tabs with horizontal divider</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingS">
       <Tabs role="navigation" withDivider>
@@ -110,7 +109,7 @@ export const Overview: Story = () => (
       </Tabs>
     </Flex>
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Tabs with vertical divider</SectionHeading>
+      <SectionHeading as="h3">Tabs with vertical divider</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingS">
       <Tabs role="navigation" withDivider dividerOrientation="vertical">

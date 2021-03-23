@@ -1,8 +1,8 @@
 import React from 'react';
-
+import { SectionHeading } from '@contentful/f36-typography';
 import { Textarea, TextareaProps } from './Textarea';
 import { Button } from './../Button';
-import { SectionHeading } from '../Typography';
+
 import { Flex } from '@contentful/f36-core';
 
 export default {
@@ -47,7 +47,7 @@ export const Overview = () => (
   <>
     <Flex flexDirection="column" marginBottom="spacingXl">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">Textarea default</SectionHeading>
+        <SectionHeading as="h3">Textarea default</SectionHeading>
       </Flex>
       <Textarea
         name="someInput"
@@ -59,16 +59,14 @@ export const Overview = () => (
 
     <Flex flexDirection="column" marginBottom="spacingXl">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">
-          Textarea default with value
-        </SectionHeading>
+        <SectionHeading as="h3">Textarea default with value</SectionHeading>
       </Flex>
       <Textarea name="someInput" id="someInput" value="123456" rows={2} />
     </Flex>
 
     <Flex flexDirection="column" marginBottom="spacingXl">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">Textarea small width</SectionHeading>
+        <SectionHeading as="h3">Textarea small width</SectionHeading>
       </Flex>
       <Textarea
         name="someInput"
@@ -81,7 +79,7 @@ export const Overview = () => (
 
     <Flex flexDirection="column" marginBottom="spacingXl">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">Textarea medium width</SectionHeading>
+        <SectionHeading as="h3">Textarea medium width</SectionHeading>
       </Flex>
       <Textarea
         name="someInput"
@@ -94,7 +92,7 @@ export const Overview = () => (
 
     <Flex flexDirection="column" marginBottom="spacingXl">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">Textarea large width</SectionHeading>
+        <SectionHeading as="h3">Textarea large width</SectionHeading>
       </Flex>
       <Textarea
         name="someInput"
@@ -107,14 +105,14 @@ export const Overview = () => (
 
     <Flex flexDirection="column" marginBottom="spacingXl">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">Textarea with error</SectionHeading>
+        <SectionHeading as="h3">Textarea with error</SectionHeading>
       </Flex>
       <Textarea name="someInput" id="someInput" error value="123456" rows={2} />
     </Flex>
 
     <Flex flexDirection="column" marginBottom="spacingXl">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">Textarea disabled</SectionHeading>
+        <SectionHeading as="h3">Textarea disabled</SectionHeading>
       </Flex>
       <Textarea
         name="someInput"

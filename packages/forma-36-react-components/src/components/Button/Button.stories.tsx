@@ -1,8 +1,7 @@
 import React from 'react';
 import { Flex } from '@contentful/f36-core';
-
+import { SectionHeading } from '@contentful/f36-typography';
 import { Button, ButtonProps } from './Button';
-import { SectionHeading } from '../Typography';
 import { Badge } from '@contentful/f36-badge';
 import { iconName } from '../Icon/constants';
 
@@ -36,7 +35,7 @@ export const Overview = (args: ButtonProps) => (
   <>
     <Flex flexDirection="column" marginBottom="spacingL">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">Button variants</SectionHeading>
+        <SectionHeading as="h3">Button variants</SectionHeading>
       </Flex>
       <Flex flexDirection="row" marginBottom="spacingM">
         <Flex marginRight="spacingXs">
@@ -79,7 +78,7 @@ export const Overview = (args: ButtonProps) => (
 
     <Flex flexDirection="column" marginBottom="spacingL">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">Button sizes</SectionHeading>
+        <SectionHeading as="h3">Button sizes</SectionHeading>
       </Flex>
       <Flex flexDirection="row" marginBottom="spacingM">
         <Flex marginRight="spacingXs">
@@ -102,7 +101,7 @@ export const Overview = (args: ButtonProps) => (
 
     <Flex flexDirection="column" marginBottom="spacingL">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">Button active state</SectionHeading>
+        <SectionHeading as="h3">Button active state</SectionHeading>
       </Flex>
       <Flex flexDirection="row" marginBottom="spacingM">
         <Flex marginRight="spacingXs">
@@ -145,7 +144,7 @@ export const Overview = (args: ButtonProps) => (
 
     <Flex flexDirection="column" marginBottom="spacingL">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">Button disabled</SectionHeading>
+        <SectionHeading as="h3">Button disabled</SectionHeading>
       </Flex>
       <Flex flexDirection="row" marginBottom="spacingM">
         <Flex marginRight="spacingXs">
@@ -188,7 +187,7 @@ export const Overview = (args: ButtonProps) => (
 
     <Flex flexDirection="column" marginBottom="spacingL">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">Button with dropdown</SectionHeading>
+        <SectionHeading as="h3">Button with dropdown</SectionHeading>
       </Flex>
       <Flex flexDirection="row" marginBottom="spacingM">
         <Flex marginRight="spacingXs">
@@ -231,7 +230,7 @@ export const Overview = (args: ButtonProps) => (
 
     <Flex flexDirection="column" marginBottom="spacingL">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">Button loading</SectionHeading>
+        <SectionHeading as="h3">Button loading</SectionHeading>
       </Flex>
       <Flex flexDirection="row" marginBottom="spacingM">
         <Flex marginRight="spacingXs">
@@ -274,7 +273,7 @@ export const Overview = (args: ButtonProps) => (
 
     <Flex flexDirection="column" marginBottom="spacingL">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">Icon only button</SectionHeading>
+        <SectionHeading as="h3">Icon only button</SectionHeading>
       </Flex>
       <Flex flexDirection="row" marginBottom="spacingM">
         <Flex marginRight="spacingXs">
@@ -300,7 +299,7 @@ export const Overview = (args: ButtonProps) => (
 
     <Flex flexDirection="column" marginBottom="spacingL">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">Full width button</SectionHeading>
+        <SectionHeading as="h3">Full width button</SectionHeading>
       </Flex>
       <Flex flexDirection="row" marginBottom="spacingS">
         <Button isFullWidth>Full width button</Button>

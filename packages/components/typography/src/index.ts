@@ -6,3 +6,5 @@ export { Typography } from './Typography';
 export type { TypographyProps } from './Typography';
 export { DisplayText } from './DisplayText';
 export type { DisplayTextProps } from './DisplayText';
+export { SectionHeading } from './SectionHeading';
+export type { SectionHeadingProps } from './SectionHeading';

@@ -1,7 +1,6 @@
 import React from 'react';
-
+import { SectionHeading } from '@contentful/f36-typography';
 import { TextField, TextFieldProps } from './TextField';
-import { SectionHeading } from '../Typography';
 import { Flex, Grid } from '@contentful/f36-core';
 
 export default {
@@ -84,7 +83,7 @@ export const Overview = (args: TextFieldProps) => (
   <Flex style={{ minWidth: '800px' }} flexDirection="column">
     <Flex flexDirection="column" marginBottom="spacingXl">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">TextField default</SectionHeading>
+        <SectionHeading as="h3">TextField default</SectionHeading>
       </Flex>
       <Grid columns="1fr 1fr" columnGap="spacingXl">
         <TextField {...args} />
@@ -94,9 +93,7 @@ export const Overview = (args: TextFieldProps) => (
 
     <Flex flexDirection="column" marginBottom="spacingXl">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">
-          TextField with countCharacters
-        </SectionHeading>
+        <SectionHeading as="h3">TextField with countCharacters</SectionHeading>
       </Flex>
       <Grid columns="1fr 1fr" columnGap="spacingXl">
         <TextField
@@ -115,9 +112,7 @@ export const Overview = (args: TextFieldProps) => (
 
     <Flex flexDirection="column" marginBottom="spacingXl">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">
-          TextField with default value
-        </SectionHeading>
+        <SectionHeading as="h3">TextField with default value</SectionHeading>
       </Flex>
       <Grid columns="1fr 1fr" columnGap="spacingXl">
         <TextField value="Example value" {...args} />
@@ -127,7 +122,7 @@ export const Overview = (args: TextFieldProps) => (
 
     <Flex flexDirection="column" marginBottom="spacingXl">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">TextField with help text</SectionHeading>
+        <SectionHeading as="h3">TextField with help text</SectionHeading>
       </Flex>
       <Grid columns="1fr 1fr" columnGap="spacingXl">
         <TextField {...args} helpText="help text" />
@@ -137,7 +132,7 @@ export const Overview = (args: TextFieldProps) => (
 
     <Flex flexDirection="column" marginBottom="spacingXl">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">
+        <SectionHeading as="h3">
           TextField with validation message
         </SectionHeading>
       </Flex>
@@ -149,7 +144,7 @@ export const Overview = (args: TextFieldProps) => (
 
     <Flex flexDirection="column">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">TextField disabled</SectionHeading>
+        <SectionHeading as="h3">TextField disabled</SectionHeading>
       </Flex>
       <Grid columns="1fr 1fr" columnGap="spacingXl">
         <TextField

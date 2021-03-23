@@ -1,10 +1,9 @@
 import React from 'react';
 import { Flex } from '@contentful/f36-core';
-
+import { SectionHeading } from '@contentful/f36-typography';
 import { EntryCard, EntryCardProps } from './EntryCard';
 import { CardDragHandle } from '../CardDragHandle/CardDragHandle';
 import { DropdownList, DropdownListItem } from '../../Dropdown';
-import { SectionHeading } from '../../Typography';
 
 export default {
   title: 'Components/Card/EntryCard',
@@ -78,7 +77,7 @@ WithThumbnailElement.args = {
 export const Overview = () => (
   <div>
     <Flex marginBottom="spacingS" marginTop="spacingM">
-      <SectionHeading element="h3">Entry Card published</SectionHeading>
+      <SectionHeading as="h3">Entry Card published</SectionHeading>
     </Flex>
     <EntryCard
       size="auto"
@@ -95,7 +94,7 @@ export const Overview = () => (
       dropdownListElements={dropdownElements}
     />
     <Flex marginBottom="spacingS" marginTop="spacingM">
-      <SectionHeading element="h3">Entry Card draft</SectionHeading>
+      <SectionHeading as="h3">Entry Card draft</SectionHeading>
     </Flex>
     <EntryCard
       size="auto"
@@ -112,7 +111,7 @@ export const Overview = () => (
       dropdownListElements={dropdownElements}
     />
     <Flex marginBottom="spacingS" marginTop="spacingM">
-      <SectionHeading element="h3">Entry Card changed</SectionHeading>
+      <SectionHeading as="h3">Entry Card changed</SectionHeading>
     </Flex>
     <EntryCard
       size="auto"
@@ -129,7 +128,7 @@ export const Overview = () => (
       dropdownListElements={dropdownElements}
     />
     <Flex marginBottom="spacingS" marginTop="spacingM">
-      <SectionHeading element="h3">Entry Card changed</SectionHeading>
+      <SectionHeading as="h3">Entry Card changed</SectionHeading>
     </Flex>
     <EntryCard
       size="auto"
@@ -146,7 +145,7 @@ export const Overview = () => (
       dropdownListElements={dropdownElements}
     />
     <Flex marginBottom="spacingS" marginTop="spacingM">
-      <SectionHeading element="h3">Entry Card changed</SectionHeading>
+      <SectionHeading as="h3">Entry Card changed</SectionHeading>
     </Flex>
     <EntryCard
       title="Closer"
@@ -164,7 +163,7 @@ export const Overview = () => (
       dropdownListElements={dropdownElements}
     />
     <Flex marginBottom="spacingS" marginTop="spacingM">
-      <SectionHeading element="h3">With Status icon</SectionHeading>
+      <SectionHeading as="h3">With Status icon</SectionHeading>
     </Flex>
     <EntryCard
       title="Closer"
@@ -175,7 +174,7 @@ export const Overview = () => (
       dropdownListElements={dropdownElements}
     />
     <Flex marginBottom="spacingS" marginTop="spacingM">
-      <SectionHeading element="h3">Entry Card loading</SectionHeading>
+      <SectionHeading as="h3">Entry Card loading</SectionHeading>
     </Flex>
     <EntryCard
       title="Closer"

@@ -1,9 +1,10 @@
 import React from 'react';
 import { Flex } from '@contentful/f36-core';
+import { SectionHeading } from '@contentful/f36-typography';
 
 import { Accordion, AccordionProps } from './Accordion';
 import { AccordionItem } from './AccordionItem/AccordionItem';
-import { Paragraph, SectionHeading, Typography } from '../Typography';
+import { Paragraph, Typography } from '../Typography';
 
 export default {
   title: 'Components/Accordion',
