@@ -1,5 +1,7 @@
 import React from 'react';
+import { Flex } from '@contentful/f36-core';
 import { DisplayText, DisplayTextInternalProps } from '../src/DisplayText';
+import { Paragraph } from '../src/Paragraph';
 
 export default {
   title: 'Typography/DisplayText',
@@ -21,37 +23,31 @@ Basic.args = {
   children: 'Display text',
 };
 
-// export const Overview = ({ displayText, ...args }: Args) => (
-//   <>
-//     <Flex alignItems="center" marginBottom="spacingL">
-//       <Flex marginRight="spacingS">
-//         <Paragraph>48</Paragraph>
-//       </Flex>
-//       <DisplayText {...args} size="huge">
-//         {displayText}
-//       </DisplayText>
-//     </Flex>
+export const Overview = (props: DisplayTextInternalProps) => (
+  <>
+    <Flex alignItems="center" marginBottom="spacingL">
+      <Flex marginRight="spacingS">
+        <Paragraph>48</Paragraph>
+      </Flex>
+      <DisplayText {...props} size="huge" />
+    </Flex>
 
-//     <Flex alignItems="center" marginBottom="spacingL">
-//       <Flex marginRight="spacingS">
-//         <Paragraph>36</Paragraph>
-//       </Flex>
-//       <DisplayText {...args} size="large">
-//         {displayText}
-//       </DisplayText>
-//     </Flex>
+    <Flex alignItems="center" marginBottom="spacingL">
+      <Flex marginRight="spacingS">
+        <Paragraph>36</Paragraph>
+      </Flex>
+      <DisplayText {...props} size="large" />
+    </Flex>
 
-//     <Flex alignItems="center">
-//       <Flex marginRight="spacingS">
-//         <Paragraph>28</Paragraph>
-//       </Flex>
-//       <DisplayText {...args} size="default">
-//         {displayText}
-//       </DisplayText>
-//     </Flex>
-//   </>
-// );
+    <Flex alignItems="center">
+      <Flex marginRight="spacingS">
+        <Paragraph>28</Paragraph>
+      </Flex>
+      <DisplayText {...props} size="default" />
+    </Flex>
+  </>
+);
 
-// Overview.args = {
-//   displayText: 'Display text',
-// };
+Overview.args = {
+  children: 'Display text',
+};
