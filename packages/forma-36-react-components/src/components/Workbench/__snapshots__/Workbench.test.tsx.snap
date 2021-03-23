@@ -1,9 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component (complex) 1`] = `
-.emotion-0 {
+.emotion-1 {
   display: inherit;
   outline: 0;
+}
+
+.emotion-0 {
+  display: block;
+  display: block;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-weight: 600;
+  color: #192532;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  text-rendering: optimizeLegibility;
+  margin: 0;
 }
 
 <div
@@ -37,12 +49,11 @@ exports[`renders the component (complex) 1`] = `
       class="Workbench__header-title"
       data-test-id="workbench-title"
     >
-      <h1
-        class="Heading Workbench__header-title__heading"
-        data-test-id="cf-ui-heading"
+      <div
+        class="Workbench__header-title__heading emotion-0"
       >
         Page title
-      </h1>
+      </div>
     </div>
     <div
       class="Workbench__header-actions"
@@ -53,7 +64,7 @@ exports[`renders the component (complex) 1`] = `
         type="button"
       >
         <span
-          class="emotion-0 Button__inner-wrapper"
+          class="emotion-1 Button__inner-wrapper"
           tabindex="-1"
         >
           <span
@@ -95,9 +106,21 @@ exports[`renders the component (complex) 1`] = `
 `;
 
 exports[`renders the component (simple) 1`] = `
-.emotion-0 {
+.emotion-1 {
   display: inherit;
   outline: 0;
+}
+
+.emotion-0 {
+  display: block;
+  display: block;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-weight: 600;
+  color: #192532;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  text-rendering: optimizeLegibility;
+  margin: 0;
 }
 
 <div
@@ -131,12 +154,11 @@ exports[`renders the component (simple) 1`] = `
       class="Workbench__header-title"
       data-test-id="workbench-title"
     >
-      <h1
-        class="Heading Workbench__header-title__heading"
-        data-test-id="cf-ui-heading"
+      <div
+        class="Workbench__header-title__heading emotion-0"
       >
         Page title
-      </h1>
+      </div>
     </div>
     <div
       class="Workbench__header-actions"
@@ -147,7 +169,7 @@ exports[`renders the component (simple) 1`] = `
         type="button"
       >
         <span
-          class="emotion-0 Button__inner-wrapper"
+          class="emotion-1 Button__inner-wrapper"
           tabindex="-1"
         >
           <span

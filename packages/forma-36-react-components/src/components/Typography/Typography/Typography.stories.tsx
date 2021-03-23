@@ -1,8 +1,7 @@
 import React from 'react';
-
+import { Heading } from '@contentful/f36-typography';
 import { Typography, TypographyProps } from './Typography';
 import { DisplayText } from '../DisplayText/DisplayText';
-import { Heading } from './../Heading/Heading';
 import { Subheading } from './../Subheading/Subheading';
 import { SectionHeading } from '../SectionHeading/SectionHeading';
 import { Paragraph } from './../Paragraph/Paragraph';

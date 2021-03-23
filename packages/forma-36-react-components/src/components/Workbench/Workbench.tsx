@@ -1,8 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import type { ReactElement } from 'react';
-
-import { Heading } from '../Typography';
+import { Heading } from '@contentful/f36-typography';
 import { IconButton } from '../IconButton';
 import styles from './Workbench.css';
 
@@ -58,7 +57,10 @@ export function WorkbenchHeader({
           className={styles['Workbench__header-title']}
         >
           {typeof title === 'string' ? (
-            <Heading className={styles['Workbench__header-title__heading']}>
+            <Heading
+              marginBottom="none"
+              className={styles['Workbench__header-title__heading']}
+            >
               {title}
             </Heading>
           ) : (

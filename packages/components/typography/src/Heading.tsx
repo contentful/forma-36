@@ -10,7 +10,7 @@ import {
 } from '@contentful/f36-core';
 
 export interface HeadingInternalProps extends CommonProps, MarginProps {
-  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
   children?: React.ReactNode;
 }
 
@@ -34,8 +34,11 @@ const Heading: PolymorphicComponentWithRef<
         fontSize: tokens.fontSizeXl,
         lineHeight: tokens.lineHeightXl,
         textRendering: 'optimizeLegibility',
+        marginTop: 0,
+        marginLeft: 0,
+        marginRight: 0,
+        marginBottom: tokens.spacingM,
       }}
-      marginBottom="spacingM"
       {...otherProps}
       ref={ref}
     >

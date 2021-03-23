@@ -1,6 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders all typography components with the expected spacing classes 1`] = `
+.emotion-0 {
+  display: block;
+  margin-bottom: 1rem;
+  display: block;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-weight: 600;
+  color: #192532;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+}
+
 <div
   class="Typography"
   data-test-id="cf-ui-text-container"
@@ -11,12 +24,11 @@ exports[`renders all typography components with the expected spacing classes 1`]
   >
     My DisplayText
   </h1>
-  <h1
-    class="Heading f36-margin-bottom--m"
-    data-test-id="cf-ui-heading"
+  <div
+    class="emotion-0"
   >
     My Heading
-  </h1>
+  </div>
   <p
     class="Paragraph f36-margin-bottom--m"
     data-test-id="cf-ui-paragraph"
@@ -39,16 +51,28 @@ exports[`renders all typography components with the expected spacing classes 1`]
 `;
 
 exports[`renders the component 1`] = `
+.emotion-0 {
+  display: block;
+  margin-bottom: 1rem;
+  display: block;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-weight: 600;
+  color: #192532;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+}
+
 <div
   class="Typography"
   data-test-id="cf-ui-text-container"
 >
-  <h1
-    class="Heading f36-margin-bottom--m"
-    data-test-id="cf-ui-heading"
+  <div
+    class="emotion-0"
   >
     My Heading
-  </h1>
+  </div>
   <p
     class="Paragraph f36-margin-bottom--m"
     data-test-id="cf-ui-paragraph"
@@ -59,16 +83,28 @@ exports[`renders the component 1`] = `
 `;
 
 exports[`renders the component with an additional class name 1`] = `
+.emotion-0 {
+  display: block;
+  margin-bottom: 1rem;
+  display: block;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-weight: 600;
+  color: #192532;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+}
+
 <div
   class="Typography my-extra-class"
   data-test-id="cf-ui-text-container"
 >
-  <h1
-    class="Heading f36-margin-bottom--m"
-    data-test-id="cf-ui-heading"
+  <div
+    class="emotion-0"
   >
     My Heading
-  </h1>
+  </div>
   <p
     class="Paragraph f36-margin-bottom--m"
     data-test-id="cf-ui-paragraph"

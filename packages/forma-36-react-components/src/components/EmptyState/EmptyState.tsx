@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
-
-import { Heading, Paragraph } from '../Typography/';
+import { Heading } from '@contentful/f36-typography';
+import { Paragraph } from '../Typography/';
 import styles from './EmptyState.css';
 
 export interface EmptyStateProps {
@@ -99,7 +99,7 @@ export function EmptyState({
               )}
         </div>
         <Heading
-          element={headingProps.elementType ? headingProps.elementType : 'h1'}
+          as={headingProps.elementType ? headingProps.elementType : 'h1'}
           className={styles['EmptyState_element']}
         >
           {headingProps.text}
