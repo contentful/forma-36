@@ -3,6 +3,7 @@ import cn from 'classnames';
 
 import { Icon } from '../Icon';
 import type { IconType } from '../Icon';
+import { TabFocusTrap } from '@contentful/f36-utils';
 import styles from './ToggleButton.css';
 
 export interface ToggleButtonProps {
@@ -47,7 +48,7 @@ export const ToggleButton = ({
         onClick={handleToggle}
         aria-pressed={isActive}
       >
-        <div tabIndex={-1} className={styles['Toggle__button__inner-wrapper']}>
+        <TabFocusTrap className={styles['Toggle__button__inner-wrapper']}>
           {icon && (
             <Icon
               icon={icon}
@@ -60,7 +61,7 @@ export const ToggleButton = ({
               {children}
             </span>
           )}
-        </div>
+        </TabFocusTrap>
       </button>
     </div>
   );

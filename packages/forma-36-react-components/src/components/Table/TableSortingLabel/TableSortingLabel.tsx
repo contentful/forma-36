@@ -4,6 +4,7 @@ import type { ButtonHTMLAttributes } from 'react';
 
 import { Icon } from '../../Icon';
 import { sortingDirections } from '../TableCell/TableCell';
+import { TabFocusTrap } from '@contentful/f36-utils';
 import styles from './TableSortingLabel.css';
 
 export interface TableSortingLabelProps
@@ -39,10 +40,10 @@ export const TableSortingLabel = ({
       data-test-id={testId}
       {...otherProps}
     >
-      <div tabIndex={-1} className={styles['TableSortingLabel__button__text']}>
+      <TabFocusTrap className={styles['TableSortingLabel__button__text']}>
         {children}
         {active && renderIcon()}
-      </div>
+      </TabFocusTrap>
     </button>
   );
 };

@@ -75,7 +75,6 @@
   padding: calc(1rem * (5 / var(--font-base-default)))
     calc(1rem * (7 / var(--font-base-default)));
   display: flex;
-  outline: 0;
 }
 
 .Toggle--square {

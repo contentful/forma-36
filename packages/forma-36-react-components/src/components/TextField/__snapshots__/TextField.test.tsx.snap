@@ -32,6 +32,11 @@ exports[`renders the component 1`] = `
 `;
 
 exports[`renders the component with a copybutton 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <div
   class="TextField TextField--full"
   data-test-id="cf-ui-text-field"
@@ -70,8 +75,8 @@ exports[`renders the component with a copybutton 1`] = `
           class="CopyButton__button"
           type="button"
         >
-          <div
-            class="CopyButton__TabFocusTrap"
+          <span
+            class="CopyButton__TabFocusTrap emotion-0"
             tabindex="-1"
           >
             <span
@@ -95,7 +100,7 @@ exports[`renders the component with a copybutton 1`] = `
                 d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"
               />
             </svg>
-          </div>
+          </span>
         </button>
       </span>
     </div>
@@ -168,6 +173,11 @@ exports[`renders the component with a rows defined 1`] = `
 `;
 
 exports[`renders the component with a textlink 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <div
   class="TextField TextField--full"
   data-test-id="cf-ui-text-field"
@@ -187,8 +197,8 @@ exports[`renders the component with a textlink 1`] = `
       data-test-id="cf-ui-text-link"
       type="button"
     >
-      <div
-        style="display: inherit; outline: 0;"
+      <span
+        class="emotion-0"
         tabindex="-1"
       >
         <div
@@ -211,7 +221,7 @@ exports[`renders the component with a textlink 1`] = `
           </svg>
         </div>
         Unlock to edit
-      </div>
+      </span>
     </button>
   </div>
   <div

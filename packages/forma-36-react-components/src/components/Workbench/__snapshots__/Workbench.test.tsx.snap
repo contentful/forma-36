@@ -12,104 +12,9 @@ exports[`renders the component (complex) 1`] = `
   text-rendering: optimizeLegibility;
 }
 
-<div
-  class="Workbench"
-  data-test-id="cf-ui-workbench"
->
-  <div
-    class="Workbench__header"
-    data-test-id="cf-ui-workbench-header"
-  >
-    <div
-      class="Workbench__header-icon"
-    >
-      <svg
-        class="Icon Icon--small Icon--primary"
-        data-test-id="cf-ui-icon"
-        height="1em"
-        viewBox="0 0 24 24"
-        width="1em"
-      >
-        <path
-          d="M7 10l5 5 5-5z"
-        />
-        <path
-          d="M0 0h24v24H0z"
-          fill="none"
-        />
-      </svg>
-    </div>
-    <div
-      class="Workbench__header-title"
-      data-test-id="workbench-title"
-    >
-      <h1
-        class="Workbench__header-title__heading emotion-0"
-        data-test-id="cf-ui-heading"
-      >
-        Page title
-      </h1>
-    </div>
-    <div
-      class="Workbench__header-actions"
-    >
-      <button
-        class="Button Button--muted Button--medium"
-        data-test-id="cf-ui-button"
-        type="button"
-      >
-        <div
-          class="Button__inner-wrapper"
-          tabindex="-1"
-        >
-          <span
-            class="Button__label"
-          >
-            Click
-          </span>
-        </div>
-      </button>
-    </div>
-  </div>
-  <div
-    class="Workbench__content-wrapper"
-  >
-    <div
-      class="Workbench__sidebar Workbench__sidebar--left"
-      data-test-id="cf-ui-workbench-sidebar-left"
-    >
-      Left sidebar
-    </div>
-    <div
-      class="Workbench__content"
-      data-test-id="cf-ui-workbench-content"
-    >
-      <div
-        class="Workbench__content-inner Workbench__content-inner--default"
-      >
-        Workbench
-      </div>
-    </div>
-    <div
-      class="Workbench__sidebar Workbench__sidebar--right"
-      data-test-id="cf-ui-workbench-sidebar-right"
-    >
-      Right sidebar
-    </div>
-  </div>
-</div>
-`;
-
-exports[`renders the component (simple) 1`] = `
-.emotion-0 {
-  display: block;
-  margin: 0;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  font-weight: 600;
-  color: #192532;
-  font-size: 1.25rem;
-  line-height: 2rem;
-  text-rendering: optimizeLegibility;
+.emotion-1 {
+  display: inherit;
+  outline: 0;
 }
 
 <div
@@ -158,8 +63,8 @@ exports[`renders the component (simple) 1`] = `
         data-test-id="cf-ui-button"
         type="button"
       >
-        <div
-          class="Button__inner-wrapper"
+        <span
+          class="Button__inner-wrapper emotion-1"
           tabindex="-1"
         >
           <span
@@ -167,7 +72,112 @@ exports[`renders the component (simple) 1`] = `
           >
             Click
           </span>
-        </div>
+        </span>
+      </button>
+    </div>
+  </div>
+  <div
+    class="Workbench__content-wrapper"
+  >
+    <div
+      class="Workbench__sidebar Workbench__sidebar--left"
+      data-test-id="cf-ui-workbench-sidebar-left"
+    >
+      Left sidebar
+    </div>
+    <div
+      class="Workbench__content"
+      data-test-id="cf-ui-workbench-content"
+    >
+      <div
+        class="Workbench__content-inner Workbench__content-inner--default"
+      >
+        Workbench
+      </div>
+    </div>
+    <div
+      class="Workbench__sidebar Workbench__sidebar--right"
+      data-test-id="cf-ui-workbench-sidebar-right"
+    >
+      Right sidebar
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders the component (simple) 1`] = `
+.emotion-0 {
+  display: block;
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-weight: 600;
+  color: #192532;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  text-rendering: optimizeLegibility;
+}
+
+.emotion-1 {
+  display: inherit;
+  outline: 0;
+}
+
+<div
+  class="Workbench"
+  data-test-id="cf-ui-workbench"
+>
+  <div
+    class="Workbench__header"
+    data-test-id="cf-ui-workbench-header"
+  >
+    <div
+      class="Workbench__header-icon"
+    >
+      <svg
+        class="Icon Icon--small Icon--primary"
+        data-test-id="cf-ui-icon"
+        height="1em"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M7 10l5 5 5-5z"
+        />
+        <path
+          d="M0 0h24v24H0z"
+          fill="none"
+        />
+      </svg>
+    </div>
+    <div
+      class="Workbench__header-title"
+      data-test-id="workbench-title"
+    >
+      <h1
+        class="Workbench__header-title__heading emotion-0"
+        data-test-id="cf-ui-heading"
+      >
+        Page title
+      </h1>
+    </div>
+    <div
+      class="Workbench__header-actions"
+    >
+      <button
+        class="Button Button--muted Button--medium"
+        data-test-id="cf-ui-button"
+        type="button"
+      >
+        <span
+          class="Button__inner-wrapper emotion-1"
+          tabindex="-1"
+        >
+          <span
+            class="Button__label"
+          >
+            Click
+          </span>
+        </span>
       </button>
     </div>
   </div>

@@ -1,6 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <div
   aria-live="polite"
   class="NotificationItem NotificationItem--success"
@@ -53,8 +58,8 @@ exports[`renders the component 1`] = `
       data-test-id="cf-ui-notification-close"
       type="button"
     >
-      <div
-        class="IconButton__inner"
+      <span
+        class="IconButton__inner emotion-0"
         tabindex="-1"
       >
         <svg
@@ -73,13 +78,18 @@ exports[`renders the component 1`] = `
         >
           Dismiss
         </span>
-      </div>
+      </span>
     </button>
   </div>
 </div>
 `;
 
 exports[`renders the component with "error" intent 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <div
   aria-live="assertive"
   class="NotificationItem NotificationItem--error"
@@ -132,8 +142,8 @@ exports[`renders the component with "error" intent 1`] = `
       data-test-id="cf-ui-notification-close"
       type="button"
     >
-      <div
-        class="IconButton__inner"
+      <span
+        class="IconButton__inner emotion-0"
         tabindex="-1"
       >
         <svg
@@ -152,13 +162,18 @@ exports[`renders the component with "error" intent 1`] = `
         >
           Dismiss
         </span>
-      </div>
+      </span>
     </button>
   </div>
 </div>
 `;
 
 exports[`renders the component with "warning" intent 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <div
   aria-live="assertive"
   class="NotificationItem NotificationItem--warning"
@@ -211,8 +226,8 @@ exports[`renders the component with "warning" intent 1`] = `
       data-test-id="cf-ui-notification-close"
       type="button"
     >
-      <div
-        class="IconButton__inner"
+      <span
+        class="IconButton__inner emotion-0"
         tabindex="-1"
       >
         <svg
@@ -231,13 +246,18 @@ exports[`renders the component with "warning" intent 1`] = `
         >
           Dismiss
         </span>
-      </div>
+      </span>
     </button>
   </div>
 </div>
 `;
 
 exports[`renders the component with a cta 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <div
   aria-live="assertive"
   class="NotificationItem NotificationItem--warning"
@@ -290,12 +310,12 @@ exports[`renders the component with a cta 1`] = `
           data-test-id="cf-ui-text-link"
           type="button"
         >
-          <div
-            style="display: inherit; outline: 0;"
+          <span
+            class="emotion-0"
             tabindex="-1"
           >
             This is some label text
-          </div>
+          </span>
         </button>
       </div>
     </div>
@@ -304,8 +324,8 @@ exports[`renders the component with a cta 1`] = `
       data-test-id="cf-ui-notification-close"
       type="button"
     >
-      <div
-        class="IconButton__inner"
+      <span
+        class="IconButton__inner emotion-0"
         tabindex="-1"
       >
         <svg
@@ -324,13 +344,18 @@ exports[`renders the component with a cta 1`] = `
         >
           Dismiss
         </span>
-      </div>
+      </span>
     </button>
   </div>
 </div>
 `;
 
 exports[`renders the component with a title and a body 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <div
   aria-live="polite"
   class="NotificationItem NotificationItem--success"
@@ -385,8 +410,8 @@ exports[`renders the component with a title and a body 1`] = `
       data-test-id="cf-ui-notification-close"
       type="button"
     >
-      <div
-        class="IconButton__inner"
+      <span
+        class="IconButton__inner emotion-0"
         tabindex="-1"
       >
         <svg
@@ -405,7 +430,7 @@ exports[`renders the component with a title and a body 1`] = `
         >
           Dismiss
         </span>
-      </div>
+      </span>
     </button>
   </div>
 </div>

@@ -1,13 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the button as active 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="Button Button--primary Button--medium Button--is-active"
   data-test-id="cf-ui-button"
   type="button"
 >
-  <div
-    class="Button__inner-wrapper"
+  <span
+    class="Button__inner-wrapper emotion-0"
     tabindex="-1"
   >
     <span
@@ -15,11 +20,16 @@ exports[`renders the button as active 1`] = `
     >
       Active button
     </span>
-  </div>
+  </span>
 </button>
 `;
 
 exports[`renders the button as an external link 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <a
   class="Button Button--primary Button--medium"
   data-test-id="cf-ui-button"
@@ -28,8 +38,8 @@ exports[`renders the button as an external link 1`] = `
   target="_blank"
   type="button"
 >
-  <div
-    class="Button__inner-wrapper"
+  <span
+    class="Button__inner-wrapper emotion-0"
     tabindex="-1"
   >
     <span
@@ -37,19 +47,24 @@ exports[`renders the button as an external link 1`] = `
     >
       Button link
     </span>
-  </div>
+  </span>
 </a>
 `;
 
 exports[`renders the button as link 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <a
   class="Button Button--primary Button--medium"
   data-test-id="cf-ui-button"
   href="/"
   type="button"
 >
-  <div
-    class="Button__inner-wrapper"
+  <span
+    class="Button__inner-wrapper emotion-0"
     tabindex="-1"
   >
     <span
@@ -57,18 +72,23 @@ exports[`renders the button as link 1`] = `
     >
       Button link
     </span>
-  </div>
+  </span>
 </a>
 `;
 
 exports[`renders the component 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="Button Button--primary Button--medium"
   data-test-id="cf-ui-button"
   type="button"
 >
-  <div
-    class="Button__inner-wrapper"
+  <span
+    class="Button__inner-wrapper emotion-0"
     tabindex="-1"
   >
     <span
@@ -76,18 +96,23 @@ exports[`renders the component 1`] = `
     >
       Embed entry
     </span>
-  </div>
+  </span>
 </button>
 `;
 
 exports[`renders the component as naked 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="Button Button--naked Button--medium"
   data-test-id="cf-ui-button"
   type="button"
 >
-  <div
-    class="Button__inner-wrapper"
+  <span
+    class="Button__inner-wrapper emotion-0"
     tabindex="-1"
   >
     <span
@@ -95,18 +120,23 @@ exports[`renders the component as naked 1`] = `
     >
       Embed entry
     </span>
-  </div>
+  </span>
 </button>
 `;
 
 exports[`renders the component as primary 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="Button Button--primary Button--medium"
   data-test-id="cf-ui-button"
   type="button"
 >
-  <div
-    class="Button__inner-wrapper"
+  <span
+    class="Button__inner-wrapper emotion-0"
     tabindex="-1"
   >
     <span
@@ -114,19 +144,24 @@ exports[`renders the component as primary 1`] = `
     >
       Embed entry
     </span>
-  </div>
+  </span>
 </button>
 `;
 
 exports[`renders the component disabled 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="Button Button--primary Button--medium Button--disabled"
   data-test-id="cf-ui-button"
   disabled=""
   type="button"
 >
-  <div
-    class="Button__inner-wrapper"
+  <span
+    class="Button__inner-wrapper emotion-0"
     tabindex="-1"
   >
     <span
@@ -134,18 +169,23 @@ exports[`renders the component disabled 1`] = `
     >
       Embed entry
     </span>
-  </div>
+  </span>
 </button>
 `;
 
 exports[`renders the component full width 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="Button Button--primary Button--medium Button--full-width"
   data-test-id="cf-ui-button"
   type="button"
 >
-  <div
-    class="Button__inner-wrapper"
+  <span
+    class="Button__inner-wrapper emotion-0"
     tabindex="-1"
   >
     <span
@@ -153,18 +193,23 @@ exports[`renders the component full width 1`] = `
     >
       Embed entry
     </span>
-  </div>
+  </span>
 </button>
 `;
 
 exports[`renders the component in loading state 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="Button Button--primary Button--medium"
   data-test-id="cf-ui-button"
   type="button"
 >
-  <div
-    class="Button__inner-wrapper"
+  <span
+    class="Button__inner-wrapper emotion-0"
     tabindex="-1"
   >
     <span
@@ -225,18 +270,23 @@ exports[`renders the component in loading state 1`] = `
         </g>
       </g>
     </svg>
-  </div>
+  </span>
 </button>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="Button my-extra-class Button--primary Button--medium"
   data-test-id="cf-ui-button"
   type="button"
 >
-  <div
-    class="Button__inner-wrapper"
+  <span
+    class="Button__inner-wrapper emotion-0"
     tabindex="-1"
   >
     <span
@@ -244,18 +294,23 @@ exports[`renders the component with an additional class name 1`] = `
     >
       Embed entry
     </span>
-  </div>
+  </span>
 </button>
 `;
 
 exports[`renders the component with dropdown indicator 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="Button Button--primary Button--medium Button--is-dropdown"
   data-test-id="cf-ui-button"
   type="button"
 >
-  <div
-    class="Button__inner-wrapper"
+  <span
+    class="Button__inner-wrapper emotion-0"
     tabindex="-1"
   >
     <span
@@ -274,18 +329,23 @@ exports[`renders the component with dropdown indicator 1`] = `
         d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
       />
     </svg>
-  </div>
+  </span>
 </button>
 `;
 
 exports[`renders the component with icon 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="Button Button--primary Button--medium"
   data-test-id="cf-ui-button"
   type="button"
 >
-  <div
-    class="Button__inner-wrapper"
+  <span
+    class="Button__inner-wrapper emotion-0"
     tabindex="-1"
   >
     <svg
@@ -304,6 +364,6 @@ exports[`renders the component with icon 1`] = `
     >
       Embed entry
     </span>
-  </div>
+  </span>
 </button>
 `;

@@ -1,209 +1,279 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`allows passing a test id 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="TextLink TextLink--primary"
   data-test-id="test-id"
   type="button"
 >
-  <div
-    style="display: inherit; outline: 0;"
+  <span
+    class="emotion-0"
     tabindex="-1"
   >
     Text Link
-  </div>
+  </span>
 </button>
 `;
 
 exports[`allows passing additional class names to component 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="TextLink testing TextLink--primary"
   data-test-id="cf-ui-text-link"
   type="button"
 >
-  <div
-    style="display: inherit; outline: 0;"
+  <span
+    class="emotion-0"
     tabindex="-1"
   >
     Text Link
-  </div>
+  </span>
 </button>
 `;
 
 exports[`allows passing additional props not consumed by component 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="TextLink TextLink--primary"
   data-test-id="Testing Id"
   type="button"
 >
-  <div
-    style="display: inherit; outline: 0;"
+  <span
+    class="emotion-0"
     tabindex="-1"
   >
     Text Link
-  </div>
+  </span>
 </button>
 `;
 
 exports[`calls an onClick function 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="TextLink TextLink--primary"
   data-test-id="cf-ui-text-link"
   type="button"
 >
-  <div
-    style="display: inherit; outline: 0;"
+  <span
+    class="emotion-0"
     tabindex="-1"
   >
     Text Link
-  </div>
+  </span>
 </button>
 `;
 
 exports[`prevents onClick function from being called when disabled 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="TextLink TextLink--primary TextLink--disabled"
   data-test-id="cf-ui-text-link"
   disabled=""
   type="button"
 >
-  <div
-    style="display: inherit; outline: 0;"
+  <span
+    class="emotion-0"
     tabindex="-1"
   >
     Text Link
-  </div>
+  </span>
 </button>
 `;
 
 exports[`renders as a "muted" link type 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="TextLink TextLink--muted"
   data-test-id="cf-ui-text-link"
   type="button"
 >
-  <div
-    style="display: inherit; outline: 0;"
+  <span
+    class="emotion-0"
     tabindex="-1"
   >
     Text Link
-  </div>
+  </span>
 </button>
 `;
 
 exports[`renders as a "negative" link type 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="TextLink TextLink--negative"
   data-test-id="cf-ui-text-link"
   type="button"
 >
-  <div
-    style="display: inherit; outline: 0;"
+  <span
+    class="emotion-0"
     tabindex="-1"
   >
     Text Link
-  </div>
+  </span>
 </button>
 `;
 
 exports[`renders as a "positive" link type 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="TextLink TextLink--positive"
   data-test-id="cf-ui-text-link"
   type="button"
 >
-  <div
-    style="display: inherit; outline: 0;"
+  <span
+    class="emotion-0"
     tabindex="-1"
   >
     Text Link
-  </div>
+  </span>
 </button>
 `;
 
 exports[`renders as a "primary" link type 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="TextLink TextLink--primary"
   data-test-id="cf-ui-text-link"
   type="button"
 >
-  <div
-    style="display: inherit; outline: 0;"
+  <span
+    class="emotion-0"
     tabindex="-1"
   >
     Text Link
-  </div>
+  </span>
 </button>
 `;
 
 exports[`renders as a "secondary" link type 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="TextLink TextLink--secondary"
   data-test-id="cf-ui-text-link"
   type="button"
 >
-  <div
-    style="display: inherit; outline: 0;"
+  <span
+    class="emotion-0"
     tabindex="-1"
   >
     Text Link
-  </div>
+  </span>
 </button>
 `;
 
 exports[`renders as a "white" link type 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="TextLink TextLink--white"
   data-test-id="cf-ui-text-link"
   type="button"
 >
-  <div
-    style="display: inherit; outline: 0;"
+  <span
+    class="emotion-0"
     tabindex="-1"
   >
     Text Link
-  </div>
+  </span>
 </button>
 `;
 
 exports[`renders as a button 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="TextLink TextLink--primary"
   data-test-id="cf-ui-text-link"
   type="button"
 >
-  <div
-    style="display: inherit; outline: 0;"
+  <span
+    class="emotion-0"
     tabindex="-1"
   >
     Text Link
-  </div>
+  </span>
 </button>
 `;
 
 exports[`renders as a link 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <a
   class="TextLink TextLink--primary"
   data-test-id="cf-ui-text-link"
   href="#"
 >
-  <div
-    style="display: inherit; outline: 0;"
+  <span
+    class="emotion-0"
     tabindex="-1"
   >
     Text Link
-  </div>
+  </span>
 </a>
 `;
 
 exports[`renders with an icon 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="TextLink TextLink--primary"
   data-test-id="cf-ui-text-link"
   type="button"
 >
-  <div
-    style="display: inherit; outline: 0;"
+  <span
+    class="emotion-0"
     tabindex="-1"
   >
     <div
@@ -226,18 +296,23 @@ exports[`renders with an icon 1`] = `
       </svg>
     </div>
     Text Link
-  </div>
+  </span>
 </button>
 `;
 
 exports[`renders with an icon aligned right to the text 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <button
   class="TextLink TextLink--primary"
   data-test-id="cf-ui-text-link"
   type="button"
 >
-  <div
-    style="display: inherit; outline: 0;"
+  <span
+    class="emotion-0"
     tabindex="-1"
   >
     Text Link
@@ -260,6 +335,6 @@ exports[`renders with an icon aligned right to the text 1`] = `
         />
       </svg>
     </div>
-  </div>
+  </span>
 </button>
 `;

@@ -65,7 +65,6 @@ export const WithDisplayLarge = ({ title, paragraph, ...args }: Arg) => {
     </ExampleContainer>
   );
 };
-
 WithDisplayLarge.args = {
   title: 'My DisplayText',
   paragraph: loremIpsum,

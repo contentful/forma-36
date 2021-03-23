@@ -28,8 +28,6 @@
   padding: var(--spacing-s) var(--spacing-m);
   align-items: center;
   width: 100%;
-  display: inherit;
-  outline: 0;
 }
 
 .TableSortingLabel__icon {

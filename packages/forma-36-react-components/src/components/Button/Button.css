@@ -230,7 +230,6 @@
   padding: 0 calc(1rem * (16 / var(--font-base-default)));
   align-items: center;
   justify-content: center;
-  outline: 0;
 }
 
 .Button--is-dropdown {

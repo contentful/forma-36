@@ -1,14 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <span>
   <button
     class="IconButton EditorToolbarButton IconButton--secondary"
     data-test-id="cf-ui-editor-toolbar-button"
     type="button"
   >
-    <div
-      class="IconButton__inner"
+    <span
+      class="IconButton__inner emotion-0"
       tabindex="-1"
     >
       <svg
@@ -31,12 +36,17 @@ exports[`renders the component 1`] = `
       >
         H1
       </span>
-    </div>
+    </span>
   </button>
 </span>
 `;
 
 exports[`renders the component as active 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <span
   class="TooltipContainer"
 >
@@ -45,8 +55,8 @@ exports[`renders the component as active 1`] = `
     data-test-id="cf-ui-editor-toolbar-button"
     type="button"
   >
-    <div
-      class="IconButton__inner"
+    <span
+      class="IconButton__inner emotion-0"
       tabindex="-1"
     >
       <svg
@@ -69,12 +79,17 @@ exports[`renders the component as active 1`] = `
       >
         H1
       </span>
-    </div>
+    </span>
   </button>
 </span>
 `;
 
 exports[`renders the component as disabled 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <span>
   <button
     class="IconButton EditorToolbarButton IconButton--disabled IconButton--secondary"
@@ -82,8 +97,8 @@ exports[`renders the component as disabled 1`] = `
     disabled=""
     type="button"
   >
-    <div
-      class="IconButton__inner"
+    <span
+      class="IconButton__inner emotion-0"
       tabindex="-1"
     >
       <svg
@@ -106,12 +121,17 @@ exports[`renders the component as disabled 1`] = `
       >
         H1
       </span>
-    </div>
+    </span>
   </button>
 </span>
 `;
 
 exports[`renders the component with a tooltip 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <span
   class="TooltipContainer"
 >
@@ -120,8 +140,8 @@ exports[`renders the component with a tooltip 1`] = `
     data-test-id="cf-ui-editor-toolbar-button"
     type="button"
   >
-    <div
-      class="IconButton__inner"
+    <span
+      class="IconButton__inner emotion-0"
       tabindex="-1"
     >
       <svg
@@ -144,20 +164,25 @@ exports[`renders the component with a tooltip 1`] = `
       >
         H1
       </span>
-    </div>
+    </span>
   </button>
 </span>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <span>
   <button
     class="IconButton EditorToolbarButton my-extra-class IconButton--secondary"
     data-test-id="cf-ui-editor-toolbar-button"
     type="button"
   >
-    <div
-      class="IconButton__inner"
+    <span
+      class="IconButton__inner emotion-0"
       tabindex="-1"
     >
       <svg
@@ -180,12 +205,17 @@ exports[`renders the component with an additional class name 1`] = `
       >
         H1
       </span>
-    </div>
+    </span>
   </button>
 </span>
 `;
 
 exports[`renders with a dropdown indicator 1`] = `
+.emotion-0 {
+  display: inherit;
+  outline: 0;
+}
+
 <span
   class="TooltipContainer"
 >
@@ -194,8 +224,8 @@ exports[`renders with a dropdown indicator 1`] = `
     data-test-id="cf-ui-editor-toolbar-button"
     type="button"
   >
-    <div
-      class="IconButton__inner"
+    <span
+      class="IconButton__inner emotion-0"
       tabindex="-1"
     >
       <svg
@@ -229,7 +259,7 @@ exports[`renders with a dropdown indicator 1`] = `
           d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
         />
       </svg>
-    </div>
+    </span>
   </button>
 </span>
 `;

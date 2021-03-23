@@ -5,6 +5,7 @@ import cn from 'classnames';
 import { Icon } from '../Icon';
 import { Tooltip } from '../Tooltip';
 import type { TooltipPlace } from '../Tooltip';
+import { TabFocusTrap } from '@contentful/f36-utils';
 import styles from './CopyButton.css';
 
 export interface CopyButtonProps {
@@ -79,12 +80,12 @@ export function CopyButton({
             ref={button}
             className={styles['CopyButton__button']}
           >
-            <div tabIndex={-1} className={styles['CopyButton__TabFocusTrap']}>
+            <TabFocusTrap className={styles['CopyButton__TabFocusTrap']}>
               <span className={styles['CopyButton__text']}>
                 Copy {copyValue} to clipboard
               </span>
               <Icon icon="Copy" color="muted" />
-            </div>
+            </TabFocusTrap>
           </button>
         </Tooltip>
       </CopyToClipboard>

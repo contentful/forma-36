@@ -2,6 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 
 import { Icon, IconProps } from '../Icon';
+import { TabFocusTrap } from '@contentful/f36-utils';
 import styles from './IconButton.css';
 
 export interface IconButtonProps extends React.HTMLAttributes<HTMLElement> {
@@ -72,7 +73,7 @@ export const IconButton = ({
   };
 
   const content = (
-    <div tabIndex={-1} className={styles.IconButton__inner}>
+    <TabFocusTrap className={styles.IconButton__inner}>
       <Icon
         {...iconProps}
         className={cn(styles.IconButton__icon, iconProps.className)}
@@ -85,7 +86,7 @@ export const IconButton = ({
           className={styles.IconButton__dropdown}
         />
       )}
-    </div>
+    </TabFocusTrap>
   );
 
   if (href) {
