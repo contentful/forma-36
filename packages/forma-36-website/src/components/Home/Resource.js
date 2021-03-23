@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Typography,
+  Box,
   Subheading,
   Paragraph,
   TextLink,
@@ -37,7 +37,7 @@ const styles = {
 const Resource = ({ title, description, imageNode, linkHref, linkText }) => (
   <article css={styles.resource}>
     <div css={styles.image}>{imageNode}</div>
-    <Typography css={styles.text}>
+    <Box css={styles.text}>
       <Subheading>{title}</Subheading>
       <Paragraph css={styles.paragraph}>{description}</Paragraph>
       <Paragraph css={styles.paragraph}>
@@ -50,7 +50,7 @@ const Resource = ({ title, description, imageNode, linkHref, linkText }) => (
           {linkText}
         </TextLink>
       </Paragraph>
-    </Typography>
+    </Box>
   </article>
 );
 
