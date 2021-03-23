@@ -1,9 +1,9 @@
 import React from 'react';
 import {
-  Box,
   Subheading,
   Paragraph,
   TextLink,
+  Typography,
 } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
 import { css } from '@emotion/core';
@@ -37,7 +37,7 @@ const styles = {
 const Resource = ({ title, description, imageNode, linkHref, linkText }) => (
   <article css={styles.resource}>
     <div css={styles.image}>{imageNode}</div>
-    <Box css={styles.text}>
+    <Typography css={styles.text}>
       <Subheading>{title}</Subheading>
       <Paragraph css={styles.paragraph}>{description}</Paragraph>
       <Paragraph css={styles.paragraph}>
@@ -50,7 +50,7 @@ const Resource = ({ title, description, imageNode, linkHref, linkText }) => (
           {linkText}
         </TextLink>
       </Paragraph>
-    </Box>
+    </Typography>
   </article>
 );
 

@@ -1,6 +1,10 @@
 import React from 'react';
 import { Flex } from '@contentful/f36-core';
-import { SectionHeading, Paragraph } from '@contentful/f36-typography';
+import {
+  SectionHeading,
+  Paragraph,
+  Typography,
+} from '@contentful/f36-typography';
 
 import { Accordion, AccordionProps } from './Accordion';
 import { AccordionItem } from './AccordionItem/AccordionItem';
@@ -28,13 +32,19 @@ nisi ut aliquip ex ea commodo consequat.`;
 export const basic = ({ align, ...args }: AccordionProps) => (
   <Accordion align={align}>
     <AccordionItem title={args['AccordionItem Title #1']}>
-      <Paragraph>{args['AccordionItem Content #1']}</Paragraph>
+      <Typography>
+        <Paragraph>{args['AccordionItem Content #1']}</Paragraph>
+      </Typography>
     </AccordionItem>
     <AccordionItem title={args['AccordionItem Title #2']}>
-      <Paragraph>{args['AccordionItem Content #2']}</Paragraph>
+      <Typography>
+        <Paragraph>{args['AccordionItem Content #2']}</Paragraph>
+      </Typography>
     </AccordionItem>
     <AccordionItem title={args['AccordionItem Title #3']}>
-      <Paragraph>{args['AccordionItem Content #3']}</Paragraph>
+      <Typography>
+        <Paragraph>{args['AccordionItem Content #3']}</Paragraph>
+      </Typography>
     </AccordionItem>
   </Accordion>
 );
@@ -48,13 +58,19 @@ export const overview = ({ align, ...args }: AccordionProps) => (
       <Flex>
         <Accordion align="start">
           <AccordionItem title={args['AccordionItem Title #1']}>
-            <Paragraph>{args['AccordionItem Content #1']}</Paragraph>
+            <Typography>
+              <Paragraph>{args['AccordionItem Content #1']}</Paragraph>
+            </Typography>
           </AccordionItem>
           <AccordionItem title={args['AccordionItem Title #2']}>
-            <Paragraph>{args['AccordionItem Content #2']}</Paragraph>
+            <Typography>
+              <Paragraph>{args['AccordionItem Content #2']}</Paragraph>
+            </Typography>
           </AccordionItem>
           <AccordionItem title={args['AccordionItem Title #3']}>
-            <Paragraph>{args['AccordionItem Content #3']}</Paragraph>
+            <Typography>
+              <Paragraph>{args['AccordionItem Content #3']}</Paragraph>
+            </Typography>
           </AccordionItem>
         </Accordion>
       </Flex>
@@ -66,13 +82,19 @@ export const overview = ({ align, ...args }: AccordionProps) => (
       <Flex>
         <Accordion align="end">
           <AccordionItem title={args['AccordionItem Title #1']}>
-            <Paragraph>{args['AccordionItem Content #1']}</Paragraph>
+            <Typography>
+              <Paragraph>{args['AccordionItem Content #1']}</Paragraph>
+            </Typography>
           </AccordionItem>
           <AccordionItem title={args['AccordionItem Title #2']}>
-            <Paragraph>{args['AccordionItem Content #2']}</Paragraph>
+            <Typography>
+              <Paragraph>{args['AccordionItem Content #2']}</Paragraph>
+            </Typography>
           </AccordionItem>
           <AccordionItem title={args['AccordionItem Title #3']}>
-            <Paragraph>{args['AccordionItem Content #3']}</Paragraph>
+            <Typography>
+              <Paragraph>{args['AccordionItem Content #3']}</Paragraph>
+            </Typography>
           </AccordionItem>
         </Accordion>
       </Flex>

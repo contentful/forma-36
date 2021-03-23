@@ -6,7 +6,6 @@ import { css } from '@emotion/core';
 import { MDXProvider } from '@mdx-js/react';
 import { PropsProvider } from '@contentful/f36-docs-utils';
 import {
-  Box,
   DisplayText,
   Heading,
   Subheading,
@@ -26,6 +25,7 @@ import DocFormatter from './DocFormatter';
 import Footer from './Footer';
 import { heightOfHeader } from './Navigation';
 import { StaticSource } from './StaticSource';
+import { Typography } from '@contentful/f36-typography';
 
 const styles = {
   container: css`
@@ -121,7 +121,7 @@ const Container = (data) => {
     <div css={styles.container}>
       <div css={styles.main}>
         <PropsProvider metadata={propsMetadata}>
-          <Box css={isHomePage ? styles.innerHomePage : styles.inner}>
+          <Typography css={isHomePage ? styles.innerHomePage : styles.inner}>
             <MDXProvider components={markToComponentMap}>
               <DocFormatter
                 frontmatter={frontmatter}
@@ -130,7 +130,7 @@ const Container = (data) => {
                 {children}
               </DocFormatter>
             </MDXProvider>
-          </Box>
+          </Typography>
         </PropsProvider>
       </div>
       <Footer />

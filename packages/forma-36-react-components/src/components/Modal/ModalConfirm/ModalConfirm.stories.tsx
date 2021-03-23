@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
-import { Paragraph } from '@contentful/f36-typography';
+import { Paragraph, Typography } from '@contentful/f36-typography';
 import { ModalConfirm, ModalConfirmProps } from './ModalConfirm';
 import { Button } from '../../Button';
 
@@ -117,7 +117,7 @@ export function ComplexStory(props: ModalConfirmProps) {
         }}
         {...props}
       >
-        <Paragraph>
+        <Paragraph marginBottom="spacingM">
           Type <strong>unlock</strong> to allow confirming this modal
         </Paragraph>
         <TextInput
