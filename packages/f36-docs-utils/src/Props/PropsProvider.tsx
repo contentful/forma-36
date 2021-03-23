@@ -1,6 +1,6 @@
 import constate from 'constate';
 import { PropComponentDefinition, PropDefinition } from './types';
-import orderBy from 'lodash.orderby';
+import orderBy from 'lodash/orderBy';
 
 const [PropsProvider, usePropsContext] = constate(
   (props: { metadata: { [key: string]: PropComponentDefinition } }) => {
