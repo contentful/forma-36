@@ -1,5 +1,3 @@
-export { DisplayText } from './DisplayText/DisplayText';
-export type { DisplayTextProps } from './DisplayText/DisplayText';
 export { Paragraph } from './Paragraph/Paragraph';
 export type { ParagraphProps } from './Paragraph/Paragraph';
 export { SectionHeading } from './SectionHeading/SectionHeading';

@@ -10,11 +10,17 @@ export type {
   PaddingProps,
   Spacing,
 } from '@contentful/f36-core';
-export { Typography, Heading, Subheading } from '@contentful/f36-typography';
+export {
+  Typography,
+  Heading,
+  Subheading,
+  DisplayText,
+} from '@contentful/f36-typography';
 export type {
   TypographyProps,
   HeadingProps,
   SubheadingProps,
+  DisplayTextProps,
 } from '@contentful/f36-typography';
 export * from './components/Accordion';
 export * from './components/Asset';
