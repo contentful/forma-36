@@ -76,7 +76,7 @@ exports[`renders the component with a copybutton 1`] = `
           type="button"
         >
           <span
-            class="emotion-0 CopyButton__TabFocusTrap"
+            class="CopyButton__TabFocusTrap emotion-0"
             tabindex="-1"
           >
             <span

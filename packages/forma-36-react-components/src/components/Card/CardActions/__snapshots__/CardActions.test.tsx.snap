@@ -19,7 +19,7 @@ exports[`renders the component as disabled 1`] = `
     type="button"
   >
     <span
-      class="emotion-0 IconButton__inner"
+      class="IconButton__inner emotion-0"
       tabindex="-1"
     >
       <svg
@@ -65,7 +65,7 @@ exports[`renders the component using a multiple dropdown lists 1`] = `
     type="button"
   >
     <span
-      class="emotion-0 IconButton__inner"
+      class="IconButton__inner emotion-0"
       tabindex="-1"
     >
       <svg
@@ -111,7 +111,7 @@ exports[`renders the component using a single dropdown list 1`] = `
     type="button"
   >
     <span
-      class="emotion-0 IconButton__inner"
+      class="IconButton__inner emotion-0"
       tabindex="-1"
     >
       <svg
@@ -157,7 +157,7 @@ exports[`renders the component with an additional class name 1`] = `
     type="button"
   >
     <span
-      class="emotion-0 IconButton__inner"
+      class="IconButton__inner emotion-0"
       tabindex="-1"
     >
       <svg
@@ -203,7 +203,7 @@ exports[`renders the component with published status 1`] = `
     type="button"
   >
     <span
-      class="emotion-0 IconButton__inner"
+      class="IconButton__inner emotion-0"
       tabindex="-1"
     >
       <svg

@@ -17,7 +17,7 @@ exports[`renders the component 1`] = `
     type="button"
   >
     <span
-      class="emotion-0 Toggle__button__inner-wrapper"
+      class="Toggle__button__inner-wrapper emotion-0"
       tabindex="-1"
     >
       <span
@@ -47,7 +47,7 @@ exports[`renders the component active 1`] = `
     type="button"
   >
     <span
-      class="emotion-0 Toggle__button__inner-wrapper"
+      class="Toggle__button__inner-wrapper emotion-0"
       tabindex="-1"
     >
       <span
@@ -77,7 +77,7 @@ exports[`renders the component with an additional class name 1`] = `
     type="button"
   >
     <span
-      class="emotion-0 Toggle__button__inner-wrapper"
+      class="Toggle__button__inner-wrapper emotion-0"
       tabindex="-1"
     >
       <span
@@ -107,7 +107,7 @@ exports[`renders the component with icon 1`] = `
     type="button"
   >
     <span
-      class="emotion-0 Toggle__button__inner-wrapper"
+      class="Toggle__button__inner-wrapper emotion-0"
       tabindex="-1"
     >
       <svg

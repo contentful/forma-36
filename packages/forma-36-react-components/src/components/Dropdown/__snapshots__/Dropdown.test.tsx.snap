@@ -18,7 +18,7 @@ exports[`renders the component 1`] = `
     type="button"
   >
     <span
-      class="emotion-0 Button__inner-wrapper"
+      class="Button__inner-wrapper emotion-0"
       tabindex="-1"
     >
       <span
@@ -49,7 +49,7 @@ exports[`renders the component as open 1`] = `
     type="button"
   >
     <span
-      class="emotion-0 Button__inner-wrapper"
+      class="Button__inner-wrapper emotion-0"
       tabindex="-1"
     >
       <span
@@ -80,7 +80,7 @@ exports[`renders the component with a submenu 1`] = `
     type="button"
   >
     <span
-      class="emotion-0 Button__inner-wrapper"
+      class="Button__inner-wrapper emotion-0"
       tabindex="-1"
     >
       <span
@@ -111,7 +111,7 @@ exports[`renders the component with an additional class name 1`] = `
     type="button"
   >
     <span
-      class="emotion-0 Button__inner-wrapper"
+      class="Button__inner-wrapper emotion-0"
       tabindex="-1"
     >
       <span

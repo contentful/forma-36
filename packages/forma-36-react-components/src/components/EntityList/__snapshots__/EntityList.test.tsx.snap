@@ -25,7 +25,7 @@ exports[`renders the component with EntityListItems as children 1`] = `
       class="EntityListItem__inner"
     >
       <span
-        class="emotion-0 EntityListItem__focus-trap"
+        class="EntityListItem__focus-trap emotion-0"
         tabindex="-1"
       >
         <figure
@@ -89,7 +89,7 @@ exports[`renders the component with EntityListItems as children 1`] = `
       class="EntityListItem__inner"
     >
       <span
-        class="emotion-0 EntityListItem__focus-trap"
+        class="EntityListItem__focus-trap emotion-0"
         tabindex="-1"
       >
         <figure
@@ -153,7 +153,7 @@ exports[`renders the component with EntityListItems as children 1`] = `
       class="EntityListItem__inner"
     >
       <span
-        class="emotion-0 EntityListItem__focus-trap"
+        class="EntityListItem__focus-trap emotion-0"
         tabindex="-1"
       >
         <figure

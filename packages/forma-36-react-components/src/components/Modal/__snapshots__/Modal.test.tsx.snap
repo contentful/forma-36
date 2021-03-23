@@ -29,7 +29,7 @@ exports[`can be controlled 1`] = `
         type="button"
       >
         <span
-          class="emotion-0 IconButton__inner"
+          class="IconButton__inner emotion-0"
           tabindex="-1"
         >
           <svg
@@ -100,7 +100,7 @@ exports[`can override header and content properties 1`] = `
         type="button"
       >
         <span
-          class="emotion-0 IconButton__inner"
+          class="IconButton__inner emotion-0"
           tabindex="-1"
         >
           <svg
@@ -161,7 +161,7 @@ exports[`renders the component 1`] = `
         type="button"
       >
         <span
-          class="emotion-0 IconButton__inner"
+          class="IconButton__inner emotion-0"
           tabindex="-1"
         >
           <svg

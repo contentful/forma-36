@@ -12,7 +12,7 @@ exports[`allows passing additional props not consumed by the component 1`] = `
   type="button"
 >
   <span
-    class="emotion-0 IconButton__inner"
+    class="IconButton__inner emotion-0"
     tabindex="-1"
   >
     <svg
@@ -51,7 +51,7 @@ exports[`calls an onClick function 1`] = `
   type="button"
 >
   <span
-    class="emotion-0 IconButton__inner"
+    class="IconButton__inner emotion-0"
     tabindex="-1"
   >
     <svg
@@ -91,7 +91,7 @@ exports[`prevents an onClick function from being called when disabled 1`] = `
   type="button"
 >
   <span
-    class="emotion-0 IconButton__inner"
+    class="IconButton__inner emotion-0"
     tabindex="-1"
   >
     <svg
@@ -130,7 +130,7 @@ exports[`renders as a "muted" link type 1`] = `
   type="button"
 >
   <span
-    class="emotion-0 IconButton__inner"
+    class="IconButton__inner emotion-0"
     tabindex="-1"
   >
     <svg
@@ -169,7 +169,7 @@ exports[`renders as a "negative" link type 1`] = `
   type="button"
 >
   <span
-    class="emotion-0 IconButton__inner"
+    class="IconButton__inner emotion-0"
     tabindex="-1"
   >
     <svg
@@ -208,7 +208,7 @@ exports[`renders as a "positive" link type 1`] = `
   type="button"
 >
   <span
-    class="emotion-0 IconButton__inner"
+    class="IconButton__inner emotion-0"
     tabindex="-1"
   >
     <svg
@@ -247,7 +247,7 @@ exports[`renders as a "primary" link type 1`] = `
   type="button"
 >
   <span
-    class="emotion-0 IconButton__inner"
+    class="IconButton__inner emotion-0"
     tabindex="-1"
   >
     <svg
@@ -286,7 +286,7 @@ exports[`renders as a "secondary" link type 1`] = `
   type="button"
 >
   <span
-    class="emotion-0 IconButton__inner"
+    class="IconButton__inner emotion-0"
     tabindex="-1"
   >
     <svg
@@ -335,7 +335,7 @@ exports[`renders the component 1`] = `
   type="button"
 >
   <span
-    class="emotion-0 IconButton__inner"
+    class="IconButton__inner emotion-0"
     tabindex="-1"
   >
     <svg
@@ -374,7 +374,7 @@ exports[`renders the component with an additional class name 1`] = `
   type="button"
 >
   <span
-    class="emotion-0 IconButton__inner"
+    class="IconButton__inner emotion-0"
     tabindex="-1"
   >
     <svg
@@ -413,7 +413,7 @@ exports[`renders with a dropdown indicator 1`] = `
   type="button"
 >
   <span
-    class="emotion-0 IconButton__inner"
+    class="IconButton__inner emotion-0"
     tabindex="-1"
   >
     <svg

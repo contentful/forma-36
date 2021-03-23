@@ -355,7 +355,7 @@ exports[`renders the component with actions 1`] = `
           type="button"
         >
           <span
-            class="emotion-0 IconButton__inner"
+            class="IconButton__inner emotion-0"
             tabindex="-1"
           >
             <svg

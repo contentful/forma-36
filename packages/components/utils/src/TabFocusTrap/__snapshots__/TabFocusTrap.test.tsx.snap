@@ -21,7 +21,7 @@ exports[`renders the component with an additional class name 1`] = `
 }
 
 <span
-  class="emotion-0 my-extra-class"
+  class="my-extra-class emotion-0"
   tabindex="-1"
 >
   TabFocusTrap

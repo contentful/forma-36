@@ -46,7 +46,7 @@ exports[`renders the component with a dropdown 1`] = `
       type="button"
     >
       <span
-        class="emotion-0 IconButton__inner"
+        class="IconButton__inner emotion-0"
         tabindex="-1"
       >
         <svg
