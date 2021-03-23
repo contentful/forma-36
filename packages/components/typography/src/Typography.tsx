@@ -1,4 +1,5 @@
 import React from 'react';
+import { Box } from '@contentful/f36-core';
 import type { CommonProps, Spacing } from '@contentful/f36-core';
 
 export interface TypographyProps extends CommonProps {
@@ -30,7 +31,7 @@ export const TypographyContext = React.createContext<TypographyConfiguration>(
 export function Typography(props: TypographyProps) {
   return (
     <TypographyContext.Provider value={defaultConfiguration}>
-      <div {...props}>{props.children}</div>
+      <Box testId="cf-ui-text-container" {...props} />
     </TypographyContext.Provider>
   );
 }
