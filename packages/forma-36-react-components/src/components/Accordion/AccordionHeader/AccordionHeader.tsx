@@ -43,7 +43,7 @@ export const AccordionHeader: FC<AccordionHeaderProps> = ({
   });
 
   return (
-    <Subheading as={element} marginBottom="none">
+    <Subheading as={element}>
       <button
         type="button"
         aria-expanded={isExpanded}

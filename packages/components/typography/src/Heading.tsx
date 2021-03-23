@@ -29,8 +29,10 @@ const Heading: PolymorphicComponentWithRef<
   return (
     <Box
       as={DEFAULT_TAG}
+      display="block"
+      margin="none"
+      testId="cf-ui-heading"
       css={{
-        display: 'block',
         fontFamily: tokens.fontStackPrimary,
         fontWeight: tokens.fontWeightDemiBold,
         color: tokens.colorTextDark,
@@ -38,8 +40,6 @@ const Heading: PolymorphicComponentWithRef<
         lineHeight: tokens.lineHeightXl,
         textRendering: 'optimizeLegibility',
       }}
-      margin="none"
-      testId="cf-ui-heading"
       {...otherProps}
       ref={ref}
     >

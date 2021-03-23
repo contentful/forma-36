@@ -20,7 +20,7 @@ it('renders the component with an additional class name', () => {
 
 it('renders the component h3', () => {
   const { container } = render(
-    <Heading as="h1" marginBottom="none">
+    <Heading as="h1" marginBottom="spacingM">
       Heading
     </Heading>,
   );
