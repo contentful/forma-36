@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import { axe } from '../../../utils/axeHelper';
+import { axe } from '../../../../scripts/test/axeHelper';
 import { SectionHeading } from './SectionHeading';
 
 it('renders the component', () => {
@@ -20,7 +20,7 @@ it('renders the component with an additional class name', () => {
 
 it('renders the component h3', () => {
   const { container } = render(
-    <SectionHeading element="h3">SectionHeading</SectionHeading>,
+    <SectionHeading as="h3">SectionHeading</SectionHeading>,
   );
 
   expect(container.firstChild).toMatchSnapshot();
