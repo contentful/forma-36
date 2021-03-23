@@ -48,7 +48,7 @@ exports[`renders the component with a href 1`] = `
     type="button"
   >
     <span
-      class="DropdownListItem__button__inner-wrapper emotion-0"
+      class="emotion-0 DropdownListItem__button__inner-wrapper"
       tabindex="-1"
     >
       DropdownListItem with a href

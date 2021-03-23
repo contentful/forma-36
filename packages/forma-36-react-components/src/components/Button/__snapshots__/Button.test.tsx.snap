@@ -12,7 +12,7 @@ exports[`renders the button as active 1`] = `
   type="button"
 >
   <span
-    class="Button__inner-wrapper emotion-0"
+    class="emotion-0 Button__inner-wrapper"
     tabindex="-1"
   >
     <span
@@ -39,7 +39,7 @@ exports[`renders the button as an external link 1`] = `
   type="button"
 >
   <span
-    class="Button__inner-wrapper emotion-0"
+    class="emotion-0 Button__inner-wrapper"
     tabindex="-1"
   >
     <span
@@ -64,7 +64,7 @@ exports[`renders the button as link 1`] = `
   type="button"
 >
   <span
-    class="Button__inner-wrapper emotion-0"
+    class="emotion-0 Button__inner-wrapper"
     tabindex="-1"
   >
     <span
@@ -88,7 +88,7 @@ exports[`renders the component 1`] = `
   type="button"
 >
   <span
-    class="Button__inner-wrapper emotion-0"
+    class="emotion-0 Button__inner-wrapper"
     tabindex="-1"
   >
     <span
@@ -112,7 +112,7 @@ exports[`renders the component as naked 1`] = `
   type="button"
 >
   <span
-    class="Button__inner-wrapper emotion-0"
+    class="emotion-0 Button__inner-wrapper"
     tabindex="-1"
   >
     <span
@@ -136,7 +136,7 @@ exports[`renders the component as primary 1`] = `
   type="button"
 >
   <span
-    class="Button__inner-wrapper emotion-0"
+    class="emotion-0 Button__inner-wrapper"
     tabindex="-1"
   >
     <span
@@ -161,7 +161,7 @@ exports[`renders the component disabled 1`] = `
   type="button"
 >
   <span
-    class="Button__inner-wrapper emotion-0"
+    class="emotion-0 Button__inner-wrapper"
     tabindex="-1"
   >
     <span
@@ -185,7 +185,7 @@ exports[`renders the component full width 1`] = `
   type="button"
 >
   <span
-    class="Button__inner-wrapper emotion-0"
+    class="emotion-0 Button__inner-wrapper"
     tabindex="-1"
   >
     <span
@@ -209,7 +209,7 @@ exports[`renders the component in loading state 1`] = `
   type="button"
 >
   <span
-    class="Button__inner-wrapper emotion-0"
+    class="emotion-0 Button__inner-wrapper"
     tabindex="-1"
   >
     <span
@@ -286,7 +286,7 @@ exports[`renders the component with an additional class name 1`] = `
   type="button"
 >
   <span
-    class="Button__inner-wrapper emotion-0"
+    class="emotion-0 Button__inner-wrapper"
     tabindex="-1"
   >
     <span
@@ -310,7 +310,7 @@ exports[`renders the component with dropdown indicator 1`] = `
   type="button"
 >
   <span
-    class="Button__inner-wrapper emotion-0"
+    class="emotion-0 Button__inner-wrapper"
     tabindex="-1"
   >
     <span
@@ -345,7 +345,7 @@ exports[`renders the component with icon 1`] = `
   type="button"
 >
   <span
-    class="Button__inner-wrapper emotion-0"
+    class="emotion-0 Button__inner-wrapper"
     tabindex="-1"
   >
     <svg

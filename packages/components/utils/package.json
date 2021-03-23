@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",
-    "@emotion/core": "^10.1.1"
+    "emotion": "^10.0.17"
   },
   "peerDependencies": {
     "react": ">=16.8",

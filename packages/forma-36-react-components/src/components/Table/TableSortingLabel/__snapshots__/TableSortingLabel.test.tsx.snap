@@ -12,7 +12,7 @@ exports[`renders the component 1`] = `
   type="button"
 >
   <span
-    class="TableSortingLabel__button__text emotion-0"
+    class="emotion-0 TableSortingLabel__button__text"
     tabindex="-1"
   >
     Foo
@@ -47,7 +47,7 @@ exports[`renders the component inactive 1`] = `
   type="button"
 >
   <span
-    class="TableSortingLabel__button__text emotion-0"
+    class="emotion-0 TableSortingLabel__button__text"
     tabindex="-1"
   >
     Foo
