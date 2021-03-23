@@ -51,7 +51,6 @@ const _GridItem: PolymorphicComponentWithRef<
     rowEnd,
     area,
     order,
-    className,
     ...otherProps
   },
   ref,
@@ -68,12 +67,11 @@ const _GridItem: PolymorphicComponentWithRef<
   return (
     <Box
       as={DEFAULT_TAG}
-      {...otherProps}
       css={{
         gridArea: calculatedArea,
         order,
       }}
-      className={className}
+      {...otherProps}
       ref={ref}
     >
       {children}

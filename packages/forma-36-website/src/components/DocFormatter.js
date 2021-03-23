@@ -78,7 +78,9 @@ const DocFormatter = ({ frontmatter, dataFromReadme, children }) => {
     <React.Fragment>
       {/* Remove styles condition once all docs follow the same structure */}
       <header css={data.title ? styles.header : ''}>
-        {data.title && <DisplayText>{data.title}</DisplayText>}
+        {data.title && (
+          <DisplayText marginBottom="spacingL">{data.title}</DisplayText>
+        )}
         <div css={styles.subheaderRow}>
           <div css={styles.buttonList}>
             {hasDevelopDocs && hasDesignDocs && (

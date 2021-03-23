@@ -54,7 +54,6 @@ const _Grid: PolymorphicComponentWithRef<
   {
     alignContent,
     children,
-    className,
     columnGap = 'spacingM',
     columns = 'auto',
     flow,
@@ -76,7 +75,7 @@ const _Grid: PolymorphicComponentWithRef<
   return (
     <Box
       as={DEFAULT_TAG}
-      {...otherProps}
+      display={isInline ? 'inline-grid' : 'grid'}
       css={{
         gridTemplateColumns: handleGridTemplate(columns),
         gridTemplateRows: handleGridTemplate(rows),
@@ -86,9 +85,8 @@ const _Grid: PolymorphicComponentWithRef<
         columnGap: convertSpacingToToken(columnGap) ?? 0,
         rowGap: convertSpacingToToken(rowGap) ?? 0,
       }}
-      display={isInline ? 'inline-grid' : 'grid'}
+      {...otherProps}
       ref={ref}
-      className={className}
     >
       {children}
     </Box>

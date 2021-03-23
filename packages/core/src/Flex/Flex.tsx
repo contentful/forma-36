@@ -100,7 +100,6 @@ const _Flex: PolymorphicComponentWithRef<
     justifySelf,
     order,
     children,
-    className,
     ...otherProps
   },
   ref,
@@ -108,7 +107,7 @@ const _Flex: PolymorphicComponentWithRef<
   return (
     <Box
       as={DEFAULT_TAG}
-      {...otherProps}
+      display={isInline ? 'inline-flex' : 'flex'}
       css={{
         width: fullWidth ? '100%' : undefined,
         height: fullHeight ? '100%' : undefined,
@@ -126,9 +125,8 @@ const _Flex: PolymorphicComponentWithRef<
         flexWrap,
         flexGrow,
       }}
-      display={isInline ? 'inline-flex' : 'flex'}
+      {...otherProps}
       ref={ref}
-      className={className}
     >
       {children}
     </Box>
