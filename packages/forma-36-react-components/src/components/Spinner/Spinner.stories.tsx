@@ -1,9 +1,10 @@
 import React from 'react';
 
 import tokens from '@contentful/f36-tokens';
+import { Subheading } from '@contentful/f36-typography';
 
 import { Spinner, SpinnerProps } from './Spinner';
-import { SectionHeading, Subheading } from '../Typography';
+import { SectionHeading } from '../Typography';
 import { Flex } from '@contentful/f36-core';
 
 export default {

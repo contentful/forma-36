@@ -10,16 +10,16 @@ exports[`renders the component 1`] = `
   font-size: 1.25rem;
   line-height: 2rem;
   text-rendering: optimizeLegibility;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
-<div>
-  <h1
-    class="emotion-0"
-    data-test-id="cf-ui-heading"
-  >
-    Heading
-  </h1>
-</div>
+<h2
+  class="emotion-0"
+  data-test-id="cf-ui-subheading"
+>
+  Subheading
+</h2>
 `;
 
 exports[`renders the component h3 1`] = `
@@ -32,16 +32,16 @@ exports[`renders the component h3 1`] = `
   font-size: 1.25rem;
   line-height: 2rem;
   text-rendering: optimizeLegibility;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
-<div>
-  <h1
-    class="emotion-0"
-    data-test-id="cf-ui-heading"
-  >
-    Heading
-  </h1>
-</div>
+<h3
+  class="emotion-0"
+  data-test-id="cf-ui-subheading"
+>
+  Subheading
+</h3>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
@@ -54,14 +54,14 @@ exports[`renders the component with an additional class name 1`] = `
   font-size: 1.25rem;
   line-height: 2rem;
   text-rendering: optimizeLegibility;
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
-<div>
-  <h1
-    class="my-extra-class emotion-0"
-    data-test-id="cf-ui-heading"
-  >
-    Heading
-  </h1>
-</div>
+<h2
+  class="my-extra-class emotion-0"
+  data-test-id="cf-ui-subheading"
+>
+  Subheading
+</h2>
 `;

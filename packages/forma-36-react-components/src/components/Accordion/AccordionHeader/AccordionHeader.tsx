@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import cn from 'classnames';
-
-import { Subheading } from '../../Typography';
+import { Subheading } from '@contentful/f36-typography';
 import { Icon } from '../../Icon';
 import styles from '../Accordion.css';
 
@@ -44,7 +43,7 @@ export const AccordionHeader: FC<AccordionHeaderProps> = ({
   });
 
   return (
-    <Subheading element={element}>
+    <Subheading as={element} marginBottom="none">
       <button
         type="button"
         aria-expanded={isExpanded}

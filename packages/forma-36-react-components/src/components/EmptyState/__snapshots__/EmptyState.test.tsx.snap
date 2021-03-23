@@ -3,7 +3,6 @@
 exports[`renders component with custom image element 1`] = `
 .emotion-0 {
   display: block;
-  margin-bottom: 1rem;
   display: block;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
@@ -11,7 +10,10 @@ exports[`renders component with custom image element 1`] = `
   font-size: 1.25rem;
   line-height: 2rem;
   text-rendering: optimizeLegibility;
-  margin: 0;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 1rem;
 }
 
 <div
@@ -31,6 +33,7 @@ exports[`renders component with custom image element 1`] = `
     </div>
     <h1
       class="EmptyState_element emotion-0"
+      data-test-id="cf-ui-heading"
     >
       Heading
     </h1>
@@ -47,7 +50,6 @@ exports[`renders component with custom image element 1`] = `
 exports[`renders component with image 1`] = `
 .emotion-0 {
   display: block;
-  margin-bottom: 1rem;
   display: block;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
@@ -55,7 +57,10 @@ exports[`renders component with image 1`] = `
   font-size: 1.25rem;
   line-height: 2rem;
   text-rendering: optimizeLegibility;
-  margin: 0;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 1rem;
 }
 
 <div
@@ -77,6 +82,7 @@ exports[`renders component with image 1`] = `
     </div>
     <h1
       class="EmptyState_element emotion-0"
+      data-test-id="cf-ui-heading"
     >
       Heading
     </h1>
@@ -93,7 +99,6 @@ exports[`renders component with image 1`] = `
 exports[`renders the component 1`] = `
 .emotion-0 {
   display: block;
-  margin-bottom: 1rem;
   display: block;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
@@ -101,7 +106,10 @@ exports[`renders the component 1`] = `
   font-size: 1.25rem;
   line-height: 2rem;
   text-rendering: optimizeLegibility;
-  margin: 0;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 1rem;
 }
 
 <div
@@ -116,6 +124,7 @@ exports[`renders the component 1`] = `
     />
     <h1
       class="EmptyState_element emotion-0"
+      data-test-id="cf-ui-heading"
     >
       Heading
     </h1>
@@ -132,7 +141,6 @@ exports[`renders the component 1`] = `
 exports[`renders the component with an additional class name 1`] = `
 .emotion-0 {
   display: block;
-  margin-bottom: 1rem;
   display: block;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
@@ -140,7 +148,10 @@ exports[`renders the component with an additional class name 1`] = `
   font-size: 1.25rem;
   line-height: 2rem;
   text-rendering: optimizeLegibility;
-  margin: 0;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 1rem;
 }
 
 <div
@@ -155,6 +166,7 @@ exports[`renders the component with an additional class name 1`] = `
     />
     <h1
       class="EmptyState_element emotion-0"
+      data-test-id="cf-ui-heading"
     >
       Heading
     </h1>

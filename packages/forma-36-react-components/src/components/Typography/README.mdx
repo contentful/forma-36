@@ -69,16 +69,3 @@ DisplayText should **not** be used as a replacement for headings/page titles (us
   <DisplayText>DisplayText</DisplayText>
 </React.Fragment>
 ```
-
-## Typography wrapper
-
-The `<Typography>` component should be used to wrap a group of typography components (`<Heading>`, `<Paragraph>`, etc) for cases where you wish to display these components with default margins.
-
-We follow the principle that a component should only be responsible for its own internal spacing - never its external spacing. This means that we're flexible in where our components can be used without having to override margins.
-
-```jsx
-<Typography>
-  <Heading>My heading</Heading>
-  <Paragraph>My paragraph</Paragraph>
-</Typography>
-```

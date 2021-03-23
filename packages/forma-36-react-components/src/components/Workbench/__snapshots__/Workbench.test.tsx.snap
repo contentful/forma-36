@@ -15,7 +15,10 @@ exports[`renders the component (complex) 1`] = `
   font-size: 1.25rem;
   line-height: 2rem;
   text-rendering: optimizeLegibility;
-  margin: 0;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 1rem;
 }
 
 <div
@@ -49,11 +52,12 @@ exports[`renders the component (complex) 1`] = `
       class="Workbench__header-title"
       data-test-id="workbench-title"
     >
-      <div
+      <h1
         class="Workbench__header-title__heading emotion-0"
+        data-test-id="cf-ui-heading"
       >
         Page title
-      </div>
+      </h1>
     </div>
     <div
       class="Workbench__header-actions"
@@ -120,7 +124,10 @@ exports[`renders the component (simple) 1`] = `
   font-size: 1.25rem;
   line-height: 2rem;
   text-rendering: optimizeLegibility;
-  margin: 0;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 1rem;
 }
 
 <div
@@ -154,11 +161,12 @@ exports[`renders the component (simple) 1`] = `
       class="Workbench__header-title"
       data-test-id="workbench-title"
     >
-      <div
+      <h1
         class="Workbench__header-title__heading emotion-0"
+        data-test-id="cf-ui-heading"
       >
         Page title
-      </div>
+      </h1>
     </div>
     <div
       class="Workbench__header-actions"

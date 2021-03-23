@@ -9,8 +9,10 @@ import {
   PolymorphicComponentWithRef,
 } from '@contentful/f36-core';
 
+export type HeadingElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
+
 export interface HeadingInternalProps extends CommonProps, MarginProps {
-  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
+  as?: HeadingElement;
   children?: React.ReactNode;
 }
 
@@ -26,6 +28,7 @@ const Heading: PolymorphicComponentWithRef<
 > = ({ children, ...otherProps }, ref: typeof otherProps.ref) => {
   return (
     <Box
+      as={DEFAULT_TAG}
       css={{
         display: 'block',
         fontFamily: tokens.fontStackPrimary,
@@ -34,11 +37,9 @@ const Heading: PolymorphicComponentWithRef<
         fontSize: tokens.fontSizeXl,
         lineHeight: tokens.lineHeightXl,
         textRendering: 'optimizeLegibility',
-        marginTop: 0,
-        marginLeft: 0,
-        marginRight: 0,
-        marginBottom: tokens.spacingM,
       }}
+      margin="none"
+      testId="cf-ui-heading"
       {...otherProps}
       ref={ref}
     >
