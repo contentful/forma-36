@@ -22,10 +22,10 @@ export type HeadingProps<
 
 const DEFAULT_TAG = 'h1';
 
-const Heading: PolymorphicComponentWithRef<
+const _Heading: PolymorphicComponentWithRef<
   HeadingInternalProps,
   typeof DEFAULT_TAG
-> = ({ children, ...otherProps }, ref: typeof otherProps.ref) => {
+> = ({ children, ...otherProps }, ref) => {
   return (
     <Box
       as={DEFAULT_TAG}
@@ -48,11 +48,7 @@ const Heading: PolymorphicComponentWithRef<
   );
 };
 
-export const _Heading: PolymorphicComponent<
+export const Heading: PolymorphicComponent<
   HeadingInternalProps,
   typeof DEFAULT_TAG
-> = React.forwardRef(Heading);
-
-_Heading.displayName = 'Heading';
-
-export { _Heading as Heading };
+> = React.forwardRef(_Heading);

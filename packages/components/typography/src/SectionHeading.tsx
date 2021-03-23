@@ -11,10 +11,10 @@ const DEFAULT_TAG = 'h3';
 
 export type SectionHeadingProps<E extends React.ElementType> = HeadingProps<E>;
 
-const SectionHeading: PolymorphicComponentWithRef<
+const _SectionHeading: PolymorphicComponentWithRef<
   HeadingInternalProps,
   typeof DEFAULT_TAG
-> = ({ children, ...otherProps }, ref: typeof otherProps.ref) => {
+> = ({ children, ...otherProps }, ref) => {
   return (
     <Heading
       as={DEFAULT_TAG}
@@ -33,11 +33,7 @@ const SectionHeading: PolymorphicComponentWithRef<
   );
 };
 
-export const _SectionHeading: PolymorphicComponent<
+export const SectionHeading: PolymorphicComponent<
   HeadingInternalProps,
   typeof DEFAULT_TAG
-> = React.forwardRef(SectionHeading);
-
-_SectionHeading.displayName = 'SectionHeading';
-
-export { _SectionHeading as SectionHeading };
+> = React.forwardRef(_SectionHeading);

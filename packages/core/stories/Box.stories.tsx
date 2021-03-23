@@ -1,7 +1,7 @@
 import React from 'react';
 
 import tokens from '@contentful/f36-tokens';
-import { Box, _Box, BoxInternalProps } from '../src/Box/Box';
+import { Box, BoxInternalProps } from '../src/Box/Box';
 
 const styles = {
   demoBox: {
@@ -16,7 +16,7 @@ export default {
   title: 'Layout/Box',
   component: Box,
   parameters: {
-    propTypes: [_Box['__docgenInfo']],
+    propTypes: [Box['__docgenInfo']],
   },
   argTypes: {
     className: { control: { disable: true } },

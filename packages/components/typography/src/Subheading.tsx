@@ -11,10 +11,10 @@ const DEFAULT_TAG = 'h2';
 
 export type SubheadingProps<E extends React.ElementType> = HeadingProps<E>;
 
-const Subheading: PolymorphicComponentWithRef<
+const _Subheading: PolymorphicComponentWithRef<
   HeadingInternalProps,
   typeof DEFAULT_TAG
-> = ({ children, ...otherProps }, ref: typeof otherProps.ref) => {
+> = ({ children, ...otherProps }, ref) => {
   return (
     <Heading
       as={DEFAULT_TAG}
@@ -31,11 +31,7 @@ const Subheading: PolymorphicComponentWithRef<
   );
 };
 
-export const _Subheading: PolymorphicComponent<
+export const Subheading: PolymorphicComponent<
   HeadingInternalProps,
   typeof DEFAULT_TAG
-> = React.forwardRef(Subheading);
-
-_Subheading.displayName = 'Subheading';
-
-export { _Subheading as Subheading };
+> = React.forwardRef(_Subheading);

@@ -1,11 +1,11 @@
 import React from 'react';
-import { Heading, _Heading, HeadingProps } from '../src/Heading';
+import { Heading, HeadingProps } from '../src/Heading';
 
 export default {
   title: 'Typography/Heading',
   component: Heading,
   parameters: {
-    propTypes: [_Heading['__docgenInfo']],
+    propTypes: [Heading['__docgenInfo']],
   },
   argTypes: {
     className: { control: { disable: true } },

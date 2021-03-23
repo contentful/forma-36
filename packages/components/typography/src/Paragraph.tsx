@@ -11,10 +11,10 @@ const DEFAULT_TAG = 'p';
 
 export type ParagraphProps<E extends React.ElementType> = HeadingProps<E>;
 
-const Paragraph: PolymorphicComponentWithRef<
+const _Paragraph: PolymorphicComponentWithRef<
   HeadingInternalProps,
   typeof DEFAULT_TAG
-> = ({ children, ...otherProps }, ref: typeof otherProps.ref) => {
+> = ({ children, ...otherProps }, ref) => {
   return (
     <Heading
       as={DEFAULT_TAG}
@@ -33,11 +33,7 @@ const Paragraph: PolymorphicComponentWithRef<
   );
 };
 
-export const _Paragraph: PolymorphicComponent<
+export const Paragraph: PolymorphicComponent<
   HeadingInternalProps,
   typeof DEFAULT_TAG
-> = React.forwardRef(Paragraph);
-
-_Paragraph.displayName = 'Paragraph';
-
-export { _Paragraph as Paragraph };
+> = React.forwardRef(_Paragraph);

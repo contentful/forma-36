@@ -78,7 +78,7 @@ export type FlexProps<E extends React.ElementType> = PolymorphicComponentProps<
 
 const DEFAULT_TAG = 'div';
 
-const Flex: PolymorphicComponentWithRef<
+const _Flex: PolymorphicComponentWithRef<
   FlexInternalProps,
   typeof DEFAULT_TAG
 > = (
@@ -135,11 +135,7 @@ const Flex: PolymorphicComponentWithRef<
   );
 };
 
-export const _Flex: PolymorphicComponent<
+export const Flex: PolymorphicComponent<
   FlexInternalProps,
   typeof DEFAULT_TAG
-> = React.forwardRef(Flex);
-
-_Flex.displayName = 'Flex';
-
-export { _Flex as Flex };
+> = React.forwardRef(_Flex);

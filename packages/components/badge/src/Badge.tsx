@@ -20,7 +20,7 @@ export interface BadgeProps extends CommonProps {
   children: React.ReactNode;
 }
 
-function Badge(props: BadgeProps, ref: React.Ref<HTMLDivElement>) {
+const _Badge = (props: BadgeProps, ref: React.Ref<HTMLDivElement>) => {
   const {
     className,
     children,
@@ -43,9 +43,6 @@ function Badge(props: BadgeProps, ref: React.Ref<HTMLDivElement>) {
       {children}
     </Box>
   );
-}
+};
 
-export const _Badge = React.forwardRef(Badge);
-_Badge.displayName = 'Badge';
-
-export { _Badge as Badge };
+export const Badge = React.forwardRef(_Badge);

@@ -11,5 +11,5 @@ export function Typography(props: TypographyProps) {
       'Forma 36: Typography component is deprecated, you can safely remove it from the JSX.',
     );
   }, []);
-  return props.children;
+  return <div {...props}>{props.children}</div>;
 }

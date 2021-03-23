@@ -3,14 +3,14 @@ import tokens from '@contentful/f36-tokens';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 
-import { Badge, _Badge } from '../src/Badge';
+import { Badge } from '../src/Badge';
 import { BadgeProps } from '../src/Badge';
 
 export default {
   title: 'Components/Badge',
   component: Badge,
   parameters: {
-    propTypes: [_Badge['__docgenInfo']],
+    propTypes: [Badge['__docgenInfo']],
   },
   argTypes: {
     className: { control: { disable: true } },

@@ -1,15 +1,11 @@
 import React from 'react';
-import {
-  DisplayText,
-  _DisplayText,
-  DisplayTextProps,
-} from '../src/DisplayText';
+import { DisplayText, DisplayTextInternalProps } from '../src/DisplayText';
 
 export default {
   title: 'Typography/DisplayText',
   component: DisplayText,
   parameters: {
-    propTypes: [_DisplayText['__docgenInfo']],
+    propTypes: [DisplayText['__docgenInfo']],
   },
   argTypes: {
     className: { control: { disable: true } },
@@ -17,7 +13,7 @@ export default {
   },
 };
 
-export const Basic = (props: DisplayTextProps<'h1'>) => (
+export const Basic = (props: DisplayTextInternalProps) => (
   <DisplayText {...props} />
 );
 

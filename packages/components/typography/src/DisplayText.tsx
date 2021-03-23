@@ -11,21 +11,18 @@ import { Interpolation } from 'create-emotion';
 
 const DEFAULT_TAG = 'h1';
 
-export type DisplayTextInternalProps = HeadingInternalProps & {
+export interface DisplayTextInternalProps extends HeadingInternalProps {
   size?: 'default' | 'large' | 'huge';
-};
+}
 
 export type DisplayTextProps<
   E extends React.ElementType
 > = PolymorphicComponentProps<E, DisplayTextInternalProps>;
 
-const DisplayText: PolymorphicComponentWithRef<
+const _DisplayText: PolymorphicComponentWithRef<
   DisplayTextInternalProps,
   typeof DEFAULT_TAG
-> = (
-  { children, size = 'default', ...otherProps },
-  ref: typeof otherProps.ref,
-) => {
+> = ({ children, size = 'default', ...otherProps }, ref) => {
   let css: Interpolation = {};
 
   if (size === 'huge') {
@@ -61,11 +58,7 @@ const DisplayText: PolymorphicComponentWithRef<
   );
 };
 
-export const _DisplayText: PolymorphicComponent<
+export const DisplayText: PolymorphicComponent<
   DisplayTextInternalProps,
   typeof DEFAULT_TAG
-> = React.forwardRef(DisplayText);
-
-_DisplayText.displayName = 'DisplayText';
-
-export { _DisplayText as DisplayText };
+> = React.forwardRef(_DisplayText);

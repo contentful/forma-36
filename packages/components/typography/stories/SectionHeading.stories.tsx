@@ -1,16 +1,12 @@
 import React from 'react';
 
-import {
-  SectionHeading,
-  _SectionHeading,
-  SectionHeadingProps,
-} from '../src/SectionHeading';
+import { SectionHeading, SectionHeadingProps } from '../src/SectionHeading';
 
 export default {
   title: 'Typography/SectionHeading',
   component: SectionHeading,
   parameters: {
-    propTypes: [_SectionHeading['__docgenInfo']],
+    propTypes: [SectionHeading['__docgenInfo']],
   },
   argTypes: {
     className: { control: { disable: true } },
