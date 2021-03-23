@@ -1,7 +1,6 @@
 import React from 'react';
-import { SectionHeading } from '@contentful/f36-typography';
+import { SectionHeading, Paragraph } from '@contentful/f36-typography';
 import { Tooltip } from './Tooltip';
-import { Paragraph } from '../Typography';
 import { TextLink } from '../TextLink';
 import { Flex } from '@contentful/f36-core';
 

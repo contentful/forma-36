@@ -1,7 +1,7 @@
 import React from 'react';
+import { Paragraph } from '@contentful/f36-typography';
 
 import { TextLink, textLinkColor } from './TextLink';
-import { Paragraph } from '../Typography';
 import tokens from '@contentful/f36-tokens';
 import { Flex } from '@contentful/f36-core';
 import '@contentful/forma-36-fcss/dist/styles.css';

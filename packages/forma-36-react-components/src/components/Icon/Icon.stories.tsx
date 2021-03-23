@@ -1,9 +1,8 @@
 import React from 'react';
 import { Flex, Grid } from '@contentful/f36-core';
-import { SectionHeading } from '@contentful/f36-typography';
+import { SectionHeading, Paragraph } from '@contentful/f36-typography';
 import { Icon, IconProps } from './Icon';
 import { iconName, iconSizes, iconColors } from './constants';
-import { Paragraph } from '../Typography';
 
 export default {
   title: 'Components/Icon',

@@ -1,9 +1,8 @@
 import React from 'react';
-import { SectionHeading } from '@contentful/f36-typography';
+import { SectionHeading, Paragraph } from '@contentful/f36-typography';
 import { IconButton, IconButtonProps } from './IconButton';
 import { iconName } from '../Icon/constants';
 import { Flex } from '@contentful/f36-core';
-import { Paragraph } from '../Typography';
 
 // TODO align colors between Icon and IconButton? (warning is missing in IconButton)
 enum IconButtonTypes {

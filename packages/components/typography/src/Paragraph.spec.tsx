@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import { axe } from '../../../utils/axeHelper';
+import { axe } from '../../../../scripts/test/axeHelper';
 import { Paragraph } from './Paragraph';
 
 it('renders the component', () => {
@@ -19,7 +19,7 @@ it('renders the component with an additional class name', () => {
 });
 
 it('renders the component h3', () => {
-  const { container } = render(<Paragraph element="h3">Paragraph</Paragraph>);
+  const { container } = render(<Paragraph as="h3">Paragraph</Paragraph>);
 
   expect(container).toMatchSnapshot();
 });

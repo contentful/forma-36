@@ -1,9 +1,9 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Flex } from '@contentful/f36-core';
-import { SectionHeading } from '@contentful/f36-typography';
+import { SectionHeading, Paragraph } from '@contentful/f36-typography';
 import { Asset, types } from './Asset';
-import { Paragraph } from '../Typography';
+
 import type { AssetProps } from './Asset';
 
 export default {
