@@ -6,6 +6,7 @@ import {
 } from '@contentful/f36-core';
 import type { HeadingInternalProps, HeadingProps } from './Heading';
 import { Heading } from './Heading';
+import { TypographyContext } from './Typography';
 
 const DEFAULT_TAG = 'h2';
 
@@ -15,10 +16,12 @@ const _Subheading: PolymorphicComponentWithRef<
   HeadingInternalProps,
   typeof DEFAULT_TAG
 > = ({ children, ...otherProps }, ref) => {
+  const configuration = React.useContext(TypographyContext);
   return (
     <Heading
       as={DEFAULT_TAG}
       testId="cf-ui-subheading"
+      marginBottom={configuration.subheading}
       css={{
         fontSize: tokens.fontSizeL,
         lineHeight: tokens.lineHeightL,

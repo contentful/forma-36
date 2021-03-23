@@ -8,6 +8,7 @@ import {
   PolymorphicComponentProps,
   PolymorphicComponentWithRef,
 } from '@contentful/f36-core';
+import { TypographyContext } from './Typography';
 
 export type HeadingElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
 
@@ -26,11 +27,14 @@ const _Heading: PolymorphicComponentWithRef<
   HeadingInternalProps,
   typeof DEFAULT_TAG
 > = ({ children, ...otherProps }, ref) => {
+  const configuration = React.useContext(TypographyContext);
+
   return (
     <Box
       as={DEFAULT_TAG}
       display="block"
       margin="none"
+      marginBottom={configuration.heading}
       testId="cf-ui-heading"
       css={{
         fontFamily: tokens.fontStackPrimary,

@@ -8,6 +8,7 @@ import {
 import type { HeadingInternalProps } from './Heading';
 import { Heading } from './Heading';
 import { Interpolation } from 'create-emotion';
+import { TypographyContext } from './Typography';
 
 const DEFAULT_TAG = 'h1';
 
@@ -23,6 +24,8 @@ const _DisplayText: PolymorphicComponentWithRef<
   DisplayTextInternalProps,
   typeof DEFAULT_TAG
 > = ({ children, size = 'default', ...otherProps }, ref) => {
+  const configuration = React.useContext(TypographyContext);
+
   let css: Interpolation = {};
 
   if (size === 'huge') {
@@ -46,6 +49,11 @@ const _DisplayText: PolymorphicComponentWithRef<
     <Heading
       as={DEFAULT_TAG}
       testId="cf-ui-display-text"
+      marginBottom={
+        size === 'default'
+          ? configuration.displayText
+          : configuration.displayTextLarge
+      }
       css={css}
       {...otherProps}
       ref={ref}
