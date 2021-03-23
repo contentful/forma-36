@@ -31,6 +31,7 @@ const _Heading: PolymorphicComponentWithRef<
       as={DEFAULT_TAG}
       display="block"
       margin="none"
+      marginBottom="spacingM"
       testId="cf-ui-heading"
       css={{
         fontFamily: tokens.fontStackPrimary,

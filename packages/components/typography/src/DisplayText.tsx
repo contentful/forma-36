@@ -29,19 +29,16 @@ const _DisplayText: PolymorphicComponentWithRef<
     css = {
       fontSize: tokens.fontSize4Xl,
       lineHeight: tokens.lineHeight4Xl,
-      marginBottom: tokens.spacingXl,
     };
   } else if (size === 'large') {
     css = {
       fontSize: tokens.fontSize3Xl,
       lineHeight: tokens.lineHeight3Xl,
-      marginBottom: tokens.spacingXl,
     };
   } else {
     css = {
       fontSize: tokens.fontSize2Xl,
       lineHeight: tokens.lineHeight2Xl,
-      marginBottom: tokens.spacingL,
     };
   }
 
@@ -49,6 +46,7 @@ const _DisplayText: PolymorphicComponentWithRef<
     <Heading
       as={DEFAULT_TAG}
       testId="cf-ui-display-text"
+      marginBottom={size === 'default' ? 'spacingL' : 'spacingXl'}
       css={css}
       {...otherProps}
       ref={ref}

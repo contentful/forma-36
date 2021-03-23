@@ -19,6 +19,7 @@ const _Subheading: PolymorphicComponentWithRef<
     <Heading
       as={DEFAULT_TAG}
       testId="cf-ui-subheading"
+      marginBottom="spacingM"
       css={{
         fontSize: tokens.fontSizeL,
         lineHeight: tokens.lineHeightL,

@@ -9,6 +9,7 @@ exports[`renders the component (complex) 1`] = `
 .emotion-0 {
   display: block;
   margin: 0;
+  margin-bottom: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #192532;
@@ -114,6 +115,7 @@ exports[`renders the component (simple) 1`] = `
 .emotion-0 {
   display: block;
   margin: 0;
+  margin-bottom: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #192532;

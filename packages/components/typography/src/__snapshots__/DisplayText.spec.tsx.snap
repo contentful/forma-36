@@ -4,6 +4,7 @@ exports[`renders a large varient 1`] = `
 .emotion-0 {
   display: block;
   margin: 0;
+  margin-bottom: 2rem;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #192532;
@@ -12,7 +13,6 @@ exports[`renders a large varient 1`] = `
   text-rendering: optimizeLegibility;
   font-size: 2.25rem;
   line-height: 3rem;
-  margin-bottom: 2rem;
 }
 
 <h1
@@ -27,6 +27,7 @@ exports[`renders the component 1`] = `
 .emotion-0 {
   display: block;
   margin: 0;
+  margin-bottom: 1.5rem;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #192532;
@@ -35,7 +36,6 @@ exports[`renders the component 1`] = `
   text-rendering: optimizeLegibility;
   font-size: 1.75rem;
   line-height: 2.25rem;
-  margin-bottom: 1.5rem;
 }
 
 <h1
@@ -50,6 +50,7 @@ exports[`renders the component h3 1`] = `
 .emotion-0 {
   display: block;
   margin: 0;
+  margin-bottom: 1.5rem;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #192532;
@@ -58,7 +59,6 @@ exports[`renders the component h3 1`] = `
   text-rendering: optimizeLegibility;
   font-size: 1.75rem;
   line-height: 2.25rem;
-  margin-bottom: 1.5rem;
 }
 
 <h3
@@ -73,6 +73,7 @@ exports[`renders the component with an additional class name 1`] = `
 .emotion-0 {
   display: block;
   margin: 0;
+  margin-bottom: 1.5rem;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #192532;
@@ -81,7 +82,6 @@ exports[`renders the component with an additional class name 1`] = `
   text-rendering: optimizeLegibility;
   font-size: 1.75rem;
   line-height: 2.25rem;
-  margin-bottom: 1.5rem;
 }
 
 <h1
