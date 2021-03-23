@@ -13,6 +13,9 @@ import {
 } from '../Primitive/Primitive';
 
 export interface BoxInternalProps extends MarginProps, PaddingProps {
+  /**
+   * Sets the display behavior of the element
+   */
   display?: CSS.Property.Display;
   children?: React.ReactNode;
 }
@@ -42,5 +45,7 @@ export const _Box: PolymorphicComponent<
   BoxInternalProps,
   typeof DEFAULT_TAG
 > = React.forwardRef(Box);
+
+_Box.displayName = 'Box';
 
 export { _Box as Box };

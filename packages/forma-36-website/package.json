@@ -7,6 +7,7 @@
     "@contentful/forma-36-fcss": "^4.0.0",
     "@contentful/f36-components": "^4.0.0",
     "@contentful/f36-tokens": "^4.0.0",
+    "@contentful/f36-docs-utils": "^4.0.0",
     "@emotion/core": "^10.0.16",
     "@emotion/styled": "^10.0.15",
     "@mdx-js/mdx": "^1.6.18",

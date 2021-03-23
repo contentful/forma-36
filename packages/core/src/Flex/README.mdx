@@ -4,9 +4,16 @@ type: 'component'
 slug: /components/flex/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/Flex'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-flex--default'
+typescript: ./Flex.tsx
 ---
 
 Flex components is [Box] with `display: flex` and abilities to apply other flexbox CSS properties via properties of the component.
+
+## Table of contents
+
+- [How to use Flex](#how-to-use-flex)
+- [Code examples](#code-examples)
+- [Props](#props)
 
 ## How to use Flex
 
@@ -78,7 +85,11 @@ To control the behaviour of the Flex component you can use specific properies th
 </Flex>
 ```
 
-<br />
+## Props
+
+import { Props } from '@contentful/f36-docs-utils';
+
+<Props of="Flex" />
 
 [box]: ../box
 [spacing system]: ../../foundation/spacing

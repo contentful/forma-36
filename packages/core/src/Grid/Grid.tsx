@@ -100,4 +100,6 @@ export const _Grid: PolymorphicComponent<
   typeof DEFAULT_TAG
 > = React.forwardRef(Grid);
 
+_Grid.displayName = 'Grid';
+
 export { _Grid as Grid };

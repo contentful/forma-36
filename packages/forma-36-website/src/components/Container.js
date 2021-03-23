@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import tokens from '@contentful/f36-tokens';
 import { css } from '@emotion/core';
 import { MDXProvider } from '@mdx-js/react';
-
+import { PropsProvider } from '@contentful/f36-docs-utils';
 import {
   Typography,
   DisplayText,
@@ -114,22 +114,24 @@ const markToComponentMap = {
 };
 
 const Container = (data) => {
-  const { frontmatter, children, dataFromReadme } = data;
+  const { frontmatter, children, dataFromReadme, propsMetadata } = data;
   const isHomePage = frontmatter && frontmatter.type === 'home';
 
   return (
     <div css={styles.container}>
       <div css={styles.main}>
-        <Typography css={isHomePage ? styles.innerHomePage : styles.inner}>
-          <MDXProvider components={markToComponentMap}>
-            <DocFormatter
-              frontmatter={frontmatter}
-              dataFromReadme={dataFromReadme}
-            >
-              {children}
-            </DocFormatter>
-          </MDXProvider>
-        </Typography>
+        <PropsProvider metadata={propsMetadata}>
+          <Typography css={isHomePage ? styles.innerHomePage : styles.inner}>
+            <MDXProvider components={markToComponentMap}>
+              <DocFormatter
+                frontmatter={frontmatter}
+                dataFromReadme={dataFromReadme}
+              >
+                {children}
+              </DocFormatter>
+            </MDXProvider>
+          </Typography>
+        </PropsProvider>
       </div>
       <Footer />
     </div>

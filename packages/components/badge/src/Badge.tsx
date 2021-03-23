@@ -7,15 +7,16 @@ import { getBadgeStyles } from './getBadgeStyles';
 
 export interface BadgeProps extends CommonProps {
   /**
-   * property to set size of the component
+   * Sets the size of the component
    * @default default
    */
   size?: BadgeSize;
   /**
-   * prop, used for setting variation of the component
+   * Determines the variation of the component
    * @default primary
    */
   variant?: BadgeVariant;
+
   children: React.ReactNode;
 }
 
@@ -45,4 +46,6 @@ function Badge(props: BadgeProps, ref: React.Ref<HTMLDivElement>) {
 }
 
 export const _Badge = React.forwardRef(Badge);
+_Badge.displayName = 'Badge';
+
 export { _Badge as Badge };

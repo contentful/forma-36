@@ -92,6 +92,7 @@ const Layout = (props) => {
         <Container
           frontmatter={props.pageContext && props.pageContext.frontmatter}
           dataFromReadme={props.pageContext && props.pageContext.body}
+          propsMetadata={props.pageContext && props.pageContext.propsMetadata}
         >
           {props.children}
         </Container>

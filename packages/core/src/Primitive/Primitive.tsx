@@ -12,11 +12,13 @@ export type PrimitiveProps<E extends React.ElementType> = PrimitiveOwnProps<E> &
 export type PolymorphicComponentProps<E extends React.ElementType, P> = P &
   PrimitiveProps<E>;
 
-export type PolymorphicComponent<P, D extends React.ElementType = 'div'> = <
+export type PolymorphicComponent<P, D extends React.ElementType = 'div'> = (<
   E extends React.ElementType = D
 >(
   props: PolymorphicComponentProps<E, P>,
-) => React.ReactElement | null;
+) => React.ReactElement | null) & {
+  displayName?: string;
+};
 
 export type PolymorphicComponentWithRef<
   P,

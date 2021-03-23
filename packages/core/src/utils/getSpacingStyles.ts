@@ -1,8 +1,8 @@
 import tokens from '@contentful/f36-tokens';
 import type { MarginProps, PaddingProps, Spacing } from '../types';
 
-const SpacingTable: { [key in Spacing]: string | undefined } = {
-  none: undefined,
+const SpacingTable: { [key in Spacing]: string | number | undefined } = {
+  none: 0,
   spacing2Xs: tokens.spacing2Xs,
   spacingXs: tokens.spacingXs,
   spacingS: tokens.spacingS,

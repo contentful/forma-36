@@ -2,15 +2,14 @@ import type { CSSProperties } from 'react';
 
 export type CommonProps = {
   /**
-   * Class names to be appended to the className prop of the component
+   * CSS class to be appended to the root element
    */
   className?: string;
   /**
-   * A selection ID used for testing purposes applied as a data attribute
-   * (data-test-id)
+   * A [data-test-id] attribute used for testing purposes
    */
   testId?: string;
-  /** Styles */
+  /** Accepts a JavaScript object with camelCased properties rather than a CSS string */
   style?: CSSProperties;
 };
 
@@ -49,37 +48,41 @@ export type Spacing =
 
 export interface MarginProps {
   /**
-   * sets margin to one of the corresponding spacing tokens, default is none */
+   * sets margin to one of the corresponding spacing tokens
+   */
   margin?: Spacing;
   /**
-   * sets margin-top to one of the corresponding spacing tokens, default is none */
+   * sets margin-top to one of the corresponding spacing tokens
+   */
   marginTop?: Spacing;
   /**
-   * sets margin-right to one of the corresponding spacing tokens, default is none */
+   * sets margin-right to one of the corresponding spacing tokens
+   */
   marginRight?: Spacing;
   /**
-   * sets margin-bottom to one of the corresponding spacing tokens, default is none */
+   * sets margin-bottom to one of the corresponding spacing tokens
+   */
   marginBottom?: Spacing;
   /**
-   * sets margin-left to one of the corresponding spacing tokens, default is none */
+   * sets margin-left to one of the corresponding spacing tokens */
   marginLeft?: Spacing;
 }
 
 export interface PaddingProps {
   /**
-   * sets padding to one of the corresponding spacing tokens, default is none */
+   * sets padding to one of the corresponding spacing tokens */
   padding?: Spacing;
   /**
-   * sets padding-top to one of the corresponding spacing tokens, default is none */
+   * sets padding-top to one of the corresponding spacing tokens */
   paddingTop?: Spacing;
   /**
-   * sets padding-right to one of the corresponding spacing tokens, default is none */
+   * sets padding-right to one of the corresponding spacing tokens */
   paddingRight?: Spacing;
   /**
-   * sets padding-bottom to one of the corresponding spacing tokens, default is none */
+   * sets padding-bottom to one of the corresponding spacing tokens */
   paddingBottom?: Spacing;
   /**
-   * sets padding-left to one of the corresponding spacing tokens, default is none */
+   * sets padding-left to one of the corresponding spacing tokens */
   paddingLeft?: Spacing;
 }
 

@@ -140,4 +140,6 @@ export const _Flex: PolymorphicComponent<
   typeof DEFAULT_TAG
 > = React.forwardRef(Flex);
 
+_Flex.displayName = 'Flex';
+
 export { _Flex as Flex };
