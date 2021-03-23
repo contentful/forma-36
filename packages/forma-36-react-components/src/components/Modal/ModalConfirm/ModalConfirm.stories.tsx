@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
-import { Paragraph, Typography } from '@contentful/f36-typography';
+import { Paragraph } from '@contentful/f36-typography';
 import { ModalConfirm, ModalConfirmProps } from './ModalConfirm';
 import { Button } from '../../Button';
 
