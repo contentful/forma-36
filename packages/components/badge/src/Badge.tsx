@@ -17,7 +17,7 @@ export interface BadgeProps extends CommonProps {
    */
   variant?: BadgeVariant;
 
-  children: React.ReactText;
+  children: React.ReactNode;
 }
 
 function Badge(props: BadgeProps, ref: React.Ref<HTMLDivElement>) {
