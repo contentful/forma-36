@@ -1,7 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
-import { Heading } from '@contentful/f36-typography';
-import { Paragraph } from '@contentful/f36-typography';
+import { Heading, Paragraph, Typography } from '@contentful/f36-typography';
 import styles from './EmptyState.css';
 
 export interface EmptyStateProps {
@@ -80,7 +79,12 @@ export function EmptyState({
   return (
     <div {...otherProps} className={classNames} data-test-id={testId}>
       <div className={styles['EmptyState_container']}>
-        <div className={styles['EmptyState_element']}>
+        <div
+          className={cn(
+            styles['EmptyState_element'],
+            styles['EmptyState_illustration_container'],
+          )}
+        >
           {customImageElement
             ? customImageElement
             : imageProps && (
@@ -98,21 +102,22 @@ export function EmptyState({
                 />
               )}
         </div>
-        <Heading
-          as={headingProps.elementType ? headingProps.elementType : 'h1'}
-          className={styles['EmptyState_element']}
-        >
-          {headingProps.text}
-        </Heading>
-        <Paragraph
-          as={descriptionProps.elementType ? descriptionProps.elementType : 'p'}
-          className={cn(
-            styles['EmptyState_paragraph'],
-            styles['EmptyState_element'],
-          )}
-        >
-          {descriptionProps.text}
-        </Paragraph>
+        <Typography>
+          <Heading
+            as={headingProps.elementType ? headingProps.elementType : 'h1'}
+            className={styles['EmptyState_element']}
+          >
+            {headingProps.text}
+          </Heading>
+          <Paragraph
+            as={
+              descriptionProps.elementType ? descriptionProps.elementType : 'p'
+            }
+            className={styles['EmptyState_element']}
+          >
+            {descriptionProps.text}
+          </Paragraph>
+        </Typography>
         {children}
       </div>
     </div>
