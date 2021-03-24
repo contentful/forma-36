@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import { css, cx } from 'emotion';
 import {
   PolymorphicComponentProps,
   PolymorphicComponentWithRef,
@@ -51,6 +51,7 @@ const _GridItem: PolymorphicComponentWithRef<
     rowEnd,
     area,
     order,
+    className,
     ...otherProps
   },
   ref,
@@ -67,10 +68,13 @@ const _GridItem: PolymorphicComponentWithRef<
   return (
     <Box
       as={DEFAULT_TAG}
-      css={{
-        gridArea: calculatedArea,
-        order,
-      }}
+      className={cx(
+        css({
+          gridArea: calculatedArea,
+          order,
+        }),
+        className,
+      )}
       {...otherProps}
       ref={ref}
     >

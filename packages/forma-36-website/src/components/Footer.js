@@ -1,7 +1,7 @@
 import React from 'react';
 import { TextLink, Flex } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
-import { css } from '@emotion/core';
+import { css } from 'emotion';
 
 const styles = {
   footer: css`
@@ -24,8 +24,8 @@ const styles = {
 };
 
 const Footer = () => (
-  <footer css={styles.footer}>
-    <Flex css={styles.links}>
+  <footer className={styles.footer}>
+    <Flex className={styles.links}>
       <Flex marginRight="spacingXs">
         <TextLink
           href="https://github.com/contentful/forma-36"
@@ -64,7 +64,7 @@ const Footer = () => (
       </Flex>
     </Flex>
 
-    <div css={styles.logo}>
+    <div className={styles.logo}>
       <a
         href="https://www.contentful.com"
         target="_blank"
@@ -75,7 +75,7 @@ const Footer = () => (
           width="320"
           height="66"
           viewBox="0 0 320 66"
-          css={styles.svg}
+          className={styles.svg}
         >
           <g fill="none" fillRule="evenodd" transform="translate(0 .126)">
             <g fillRule="nonzero">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { css } from '@emotion/core';
+import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import * as f36Components from '@contentful/f36-components';
@@ -41,13 +41,13 @@ class ComponentSource extends React.Component {
           scope={{ ...f36Components, tokens }}
         >
           <Card padding="none">
-            <div css={styles.preview}>
+            <div className={styles.preview}>
               <LivePreview />
             </div>
             {this.state.isOpen && (
               <React.Fragment>
-                <LiveError css={styles.error} />
-                <LiveEditor css={styles.editor} />
+                <LiveError className={styles.error} />
+                <LiveEditor className={styles.editor} />
               </React.Fragment>
             )}
             <Button isFullWidth buttonType="muted" onClick={this.handleToggle}>

@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 
-import { css } from '@emotion/core';
+import { css, cx } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { Icon, SectionHeading } from '@contentful/f36-components';
 
@@ -103,11 +103,11 @@ const MenuListItem = ({ item, currentPath, isActive, hierarchyLevel }) => {
   const itemOffset = { paddingLeft: `${1 + hierarchyLevel}rem` };
 
   return (
-    <li css={[isCategory && styles.category]}>
+    <li className={isCategory ? styles.category : ''}>
       {item.menuLinks ? (
         <>
           <div
-            css={[styles.link, styles.linkGroup, itemOffset]}
+            className={cx(styles.link, styles.linkGroup, css(itemOffset))}
             onClick={handleToggle}
           >
             {isCategory ? (
@@ -117,7 +117,7 @@ const MenuListItem = ({ item, currentPath, isActive, hierarchyLevel }) => {
             )}
 
             <Icon
-              css={styles.linkIcon}
+              className={styles.linkIcon}
               color="secondary"
               size="medium"
               icon={isExpanded ? 'ChevronDown' : 'ChevronRight'}
@@ -133,7 +133,11 @@ const MenuListItem = ({ item, currentPath, isActive, hierarchyLevel }) => {
         </>
       ) : (
         <Link
-          css={[styles.link, isActive && styles.linkActive, itemOffset]}
+          className={cx(
+            styles.link,
+            isActive && styles.linkActive,
+            css(itemOffset),
+          )}
           to={item.link}
           href={item.link}
         >
@@ -159,7 +163,7 @@ MenuListItem.defaultProps = {
 
 const MenuList = ({ menuItems, currentPath, hierarchyLevel }) => {
   return (
-    <ul css={styles.list}>
+    <ul className={styles.list}>
       {menuItems.map((item, index) => {
         return (
           <MenuListItem
@@ -191,10 +195,10 @@ MenuList.defaultProps = {
 
 const Navigation = ({ menuItems, currentPath }) => {
   return (
-    <div css={styles.sidemenu}>
+    <div className={styles.sidemenu}>
       <DocSearch />
 
-      <nav css={styles.navList} aria-label="Main Navigation">
+      <nav className={styles.navList} aria-label="Main Navigation">
         <MenuList
           menuItems={menuItems}
           currentPath={currentPath}

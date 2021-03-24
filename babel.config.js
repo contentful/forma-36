@@ -14,16 +14,19 @@ module.exports = {
         loose: true,
       },
     ],
-    [
-      '@emotion/babel-preset-css-prop',
-      {
-        autoLabel: 'dev-only',
-        labelFormat: '[local]',
-      },
-    ],
     ['@babel/preset-typescript', { allExtensions: true, isTSX: true }],
   ],
   plugins: [
+    [
+      'babel-plugin-emotion',
+      {
+        // sourceMap is on by default but source maps are dead code eliminated in production
+        sourceMap: true,
+        autoLabel: process.env.NODE_ENV !== 'production',
+        labelFormat: '[local]',
+        cssPropOptimization: true,
+      },
+    ],
     [
       '@parcel/babel-plugin-transform-runtime',
       {

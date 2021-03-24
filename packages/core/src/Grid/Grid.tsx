@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import { css, cx } from 'emotion';
 import {
   PolymorphicComponentProps,
   PolymorphicComponentWithRef,
@@ -61,6 +61,7 @@ const _Grid: PolymorphicComponentWithRef<
     justifyContent,
     rowGap = 'none',
     rows = 'auto',
+    className,
     ...otherProps
   },
   ref,
@@ -76,15 +77,18 @@ const _Grid: PolymorphicComponentWithRef<
     <Box
       as={DEFAULT_TAG}
       display={isInline ? 'inline-grid' : 'grid'}
-      css={{
-        gridTemplateColumns: handleGridTemplate(columns),
-        gridTemplateRows: handleGridTemplate(rows),
-        flow,
-        justifyContent,
-        alignContent,
-        columnGap: convertSpacingToToken(columnGap) ?? 0,
-        rowGap: convertSpacingToToken(rowGap) ?? 0,
-      }}
+      className={cx(
+        css({
+          gridTemplateColumns: handleGridTemplate(columns),
+          gridTemplateRows: handleGridTemplate(rows),
+          flow,
+          justifyContent,
+          alignContent,
+          columnGap: convertSpacingToToken(columnGap) ?? 0,
+          rowGap: convertSpacingToToken(rowGap) ?? 0,
+        }),
+        className,
+      )}
       {...otherProps}
       ref={ref}
     >

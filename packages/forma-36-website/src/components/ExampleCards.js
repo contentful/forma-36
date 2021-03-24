@@ -1,6 +1,6 @@
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
-import { css } from '@emotion/core';
+import { css } from 'emotion';
 import { Card, Icon, Subheading, Paragraph } from '@contentful/f36-components';
 
 const styles = {
@@ -38,28 +38,28 @@ const styles = {
 };
 
 const ExampleCards = ({ goodExample, badExample }) => (
-  <div css={styles.wrapper}>
+  <div className={styles.wrapper}>
     {goodExample && (
-      <Card css={styles.card}>
-        <Subheading css={styles.title}>
-          <Icon icon="CheckCircle" color="positive" css={styles.icon} />
+      <Card className={styles.card}>
+        <Subheading className={styles.title}>
+          <Icon icon="CheckCircle" color="positive" className={styles.icon} />
           Do
         </Subheading>
-        <div css={styles.example}>{goodExample.example}</div>
+        <div className={styles.example}>{goodExample.example}</div>
         {goodExample.info && (
-          <Paragraph css={styles.info}>{goodExample.info}</Paragraph>
+          <Paragraph className={styles.info}>{goodExample.info}</Paragraph>
         )}
       </Card>
     )}
     {badExample && (
-      <Card css={styles.card}>
-        <Subheading css={styles.title}>
-          <Icon icon="Warning" color="negative" css={styles.icon} />
+      <Card className={styles.card}>
+        <Subheading className={styles.title}>
+          <Icon icon="Warning" color="negative" className={styles.icon} />
           {"Don't"}
         </Subheading>
-        <div css={styles.example}>{badExample.example}</div>
+        <div className={styles.example}>{badExample.example}</div>
         {badExample.info && (
-          <Paragraph css={styles.info}>{badExample.info}</Paragraph>
+          <Paragraph className={styles.info}>{badExample.info}</Paragraph>
         )}
       </Card>
     )}

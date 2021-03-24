@@ -1,6 +1,6 @@
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
-import { css } from '@emotion/core';
+import { css } from 'emotion';
 
 const styles = {
   resources: css`
@@ -13,7 +13,7 @@ const styles = {
 };
 
 const Resources = ({ children }) => (
-  <div css={styles.resources}>{children}</div>
+  <div className={styles.resources}>{children}</div>
 );
 
 export default Resources;

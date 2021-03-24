@@ -1,7 +1,7 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
+import * as React from 'react';
+import { CacheProvider } from '@emotion/core';
+import { cache } from 'emotion';
 
-// You can delete this file if you're not using it
+export const wrapRootElement = ({ element }) => {
+  return <CacheProvider value={cache}>{element}</CacheProvider>;
+};

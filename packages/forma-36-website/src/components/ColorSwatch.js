@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Icon } from '@contentful/f36-components';
-import { css } from '@emotion/core';
+import { css } from 'emotion';
 
 const styles = {
   container: css`
@@ -48,15 +48,15 @@ class ColorSwatch extends Component {
     const { name, hex, cssVar, ...otherProps } = this.props;
 
     return (
-      <div css={styles.container} {...otherProps}>
-        <div css={styles.swatch} style={{ backgroundColor: hex }} />
-        <div css={styles.label}>
-          <div css={styles.name}>{name}</div>
+      <div className={styles.container} {...otherProps}>
+        <div className={styles.swatch} style={{ backgroundColor: hex }} />
+        <div className={styles.label}>
+          <div className={styles.name}>{name}</div>
           <CopyToClipboard
             text={cssVar}
             onCopy={() => this.setState({ copiedCssVar: true })}
           >
-            <div css={styles.cssVar}>
+            <div className={styles.cssVar}>
               {cssVar}
               <Icon
                 icon="Copy"
@@ -73,7 +73,7 @@ class ColorSwatch extends Component {
             text={hex}
             onCopy={() => this.setState({ copiedHex: true })}
           >
-            <div css={styles.hex}>
+            <div className={styles.hex}>
               {hex}
               <Icon
                 icon="Copy"

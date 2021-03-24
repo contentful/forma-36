@@ -1,6 +1,6 @@
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
-import { css } from '@emotion/core';
+import { css } from 'emotion';
 
 const styles = {
   section: css`
@@ -15,7 +15,7 @@ const styles = {
 };
 
 const Section = ({ children, isSecondary }) => (
-  <section css={isSecondary ? styles.sectionSecondary : styles.section}>
+  <section className={isSecondary ? styles.sectionSecondary : styles.section}>
     {children}
   </section>
 );

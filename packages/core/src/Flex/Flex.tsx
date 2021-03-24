@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import { css, cx } from 'emotion';
 import {
   PolymorphicComponentProps,
   PolymorphicComponentWithRef,
@@ -99,6 +99,7 @@ const _Flex: PolymorphicComponentWithRef<
     justifyItems,
     justifySelf,
     order,
+    className,
     children,
     ...otherProps
   },
@@ -108,23 +109,26 @@ const _Flex: PolymorphicComponentWithRef<
     <Box
       as={DEFAULT_TAG}
       display={isInline ? 'inline-flex' : 'flex'}
-      css={{
-        width: fullWidth ? '100%' : undefined,
-        height: fullHeight ? '100%' : undefined,
-        flex,
-        flexBasis,
-        flexShrink,
-        flexDirection,
-        justifyContent,
-        justifyItems,
-        justifySelf,
-        alignItems,
-        alignSelf,
-        alignContent,
-        order,
-        flexWrap,
-        flexGrow,
-      }}
+      className={cx(
+        css({
+          width: fullWidth ? '100%' : undefined,
+          height: fullHeight ? '100%' : undefined,
+          flex,
+          flexBasis,
+          flexShrink,
+          flexDirection,
+          justifyContent,
+          justifyItems,
+          justifySelf,
+          alignItems,
+          alignSelf,
+          alignContent,
+          order,
+          flexWrap,
+          flexGrow,
+        }),
+        className,
+      )}
       {...otherProps}
       ref={ref}
     >

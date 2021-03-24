@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import tokens from '@contentful/f36-tokens';
+import { css, cx } from 'emotion';
 import {
   PolymorphicComponent,
   PolymorphicComponentWithRef,
@@ -15,19 +16,22 @@ export type SectionHeadingProps<E extends React.ElementType> = HeadingProps<E>;
 const _SectionHeading: PolymorphicComponentWithRef<
   HeadingInternalProps,
   typeof DEFAULT_TAG
-> = ({ children, ...otherProps }, ref) => {
+> = ({ children, className, ...otherProps }, ref) => {
   const configuration = useContext(TypographyContext);
   return (
     <Heading
       as={DEFAULT_TAG}
       testId="cf-ui-section-heading"
       marginBottom={configuration.sectionHeading}
-      css={{
-        fontSize: tokens.fontSizeS,
-        lineHeight: tokens.lineHeightS,
-        letterSpacing: tokens.letterSpacingWide,
-        textTransform: 'uppercase',
-      }}
+      className={cx(
+        css({
+          fontSize: tokens.fontSizeS,
+          lineHeight: tokens.lineHeightS,
+          letterSpacing: tokens.letterSpacingWide,
+          textTransform: 'uppercase',
+        }),
+        className,
+      )}
       {...otherProps}
       ref={ref}
     >

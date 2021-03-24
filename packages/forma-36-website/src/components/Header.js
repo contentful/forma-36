@@ -1,6 +1,6 @@
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
-import { css } from '@emotion/core';
+import { css } from 'emotion';
 import { Link } from 'gatsby';
 
 const styles = {
@@ -68,18 +68,18 @@ const Logo = () => (
 );
 
 const Header = () => (
-  <header css={styles.header}>
-    <Link to="/" css={styles.logoLink}>
+  <header className={styles.header}>
+    <Link to="/" className={styles.logoLink}>
       <Logo />
-      <div css={styles.logoText}>Forma 36</div>
+      <div className={styles.logoText}>Forma 36</div>
     </Link>
 
-    <div css={styles.searchNavContainer}>
-      <nav css={styles.nav}>
-        <ul css={styles.navList}>
-          <li css={styles.navListItem}>
+    <div className={styles.searchNavContainer}>
+      <nav className={styles.nav}>
+        <ul className={styles.navList}>
+          <li className={styles.navListItem}>
             <a
-              css={styles.navListLink}
+              className={styles.navListLink}
               href="https://github.com/contentful/forma-36"
               target="_blank"
               rel="noopener noreferrer"
@@ -87,9 +87,9 @@ const Header = () => (
               GitHub
             </a>
           </li>
-          <li css={styles.navListItem}>
+          <li className={styles.navListItem}>
             <a
-              css={styles.navListLink}
+              className={styles.navListLink}
               href="https://contentful.design/"
               target="_blank"
               rel="noopener noreferrer"
@@ -97,9 +97,9 @@ const Header = () => (
               Blog
             </a>
           </li>
-          <li css={styles.navListItem}>
+          <li className={styles.navListItem}>
             <a
-              css={styles.navListLink}
+              className={styles.navListLink}
               href="https://www.contentful.com/developers/"
               target="_blank"
               rel="noopener noreferrer"
