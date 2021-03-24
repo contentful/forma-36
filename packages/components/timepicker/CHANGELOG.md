@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0-alpha.30](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-timepicker@0.5.0-alpha.29...@contentful/forma-36-react-timepicker@0.5.0-alpha.30) (2021-03-24)
+
+
+### Features
+
+* add 'featured' tagType to Tag ([#891](https://github.com/contentful/forma-36/issues/891)) ([b7a0baa](https://github.com/contentful/forma-36/commit/b7a0baa272d264ded326bf92efc41080fa6d3b7f))
+
+
+
+
+
 # [0.5.0-alpha.29](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-timepicker@0.5.0-alpha.28...@contentful/forma-36-react-timepicker@0.5.0-alpha.29) (2021-03-19)
 
 **Note:** Version bump only for package @contentful/forma-36-react-timepicker
