@@ -55,6 +55,11 @@ const buildIndexJS = (srcPath, tokens) => {
   );
 };
 
+function createUnionFromKeys(keys, typename) {
+  const concatanated = keys.map((key) => `'${key}'`).join(' | ');
+  return `export type ${typename} = | ${concatanated};`;
+}
+
 function createInterfaceDefinition(tokens) {
   const defs = _.mapValues(tokens, (value) => {
     return {
@@ -72,16 +77,34 @@ function createInterfaceDefinition(tokens) {
     "${tokenName}": ${def.type}`,
   ).join(',');
 
-  return `interface F36Tokens {
+  return `export type F36Tokens = {
     ${fields}
-  }`;
+  };`;
 }
 
 const buildIndexDTS = (srcPath, tokens) => {
+  const createUnionThatStarts = (startsWith, name) => {
+    return createUnionFromKeys(
+      Object.keys(tokens).filter((name) => name.startsWith(startsWith)),
+      name,
+    );
+  };
+
   return fse.outputFile(
     srcPath,
     `declare module '@contentful/f36-tokens' {
       ${createInterfaceDefinition(tokens)}
+      ${createUnionThatStarts('color', 'F36Color')}
+      ${createUnionThatStarts('spacing', 'F36Spacing')}
+      ${createUnionThatStarts('fontSize', 'F36FontSize')}
+      ${createUnionThatStarts('lineHeight', 'F36LineHeight')}
+      ${createUnionThatStarts('letterSpacing', 'F36LetterSpacing')}
+      ${createUnionThatStarts('fontWeight', 'F36FontWeight')}
+      ${createUnionThatStarts('fontStack', 'F36FontStack')}
+      ${createUnionThatStarts('boxShadow', 'F36BoxShadow')}
+      ${createUnionThatStarts('borderRadius', 'F36BorderRadius')}
+      ${createUnionThatStarts('zIndex', 'F36ZIndex')}
+      ${createUnionThatStarts('glow', 'F36Glow')}
       const tokens: F36Tokens;
       export default tokens;
     }`,
