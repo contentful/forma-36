@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Flex } from '@contentful/f36-core';
-
+import { SectionHeading } from '@contentful/f36-typography';
 import { FieldGroup } from '../Form';
 import { CheckboxField, CheckboxFieldProps } from './CheckboxField';
-import { SectionHeading } from '../Typography';
 
 export default {
   title: 'Form Elements/CheckboxField',
@@ -51,7 +50,7 @@ Basic.args = {
 export const overview = () => (
   <>
     <Flex marginBottom="spacingS" marginTop="spacingM">
-      <SectionHeading element="h3">Checkbox Field default</SectionHeading>
+      <SectionHeading as="h3">Checkbox Field default</SectionHeading>
     </Flex>
     <CheckboxField
       labelText="Option 1"
@@ -62,7 +61,7 @@ export const overview = () => (
       id="termsCheckbox"
     />
     <Flex marginBottom="spacingS" marginTop="spacingM">
-      <SectionHeading element="h3">
+      <SectionHeading as="h3">
         Checkbox Field with validation message
       </SectionHeading>
     </Flex>
@@ -75,7 +74,7 @@ export const overview = () => (
       id="termsCheckboxOption2"
     />
     <Flex marginBottom="spacingS" marginTop="spacingM">
-      <SectionHeading element="h3">Checkbox Field diabled</SectionHeading>
+      <SectionHeading as="h3">Checkbox Field diabled</SectionHeading>
     </Flex>
     <CheckboxField
       labelText="Option 2"
@@ -86,9 +85,7 @@ export const overview = () => (
       id="termsCheckboxOption3"
     />
     <Flex marginBottom="spacingS" marginTop="spacingM">
-      <SectionHeading element="h3">
-        Checkbox Field diabled checked
-      </SectionHeading>
+      <SectionHeading as="h3">Checkbox Field diabled checked</SectionHeading>
     </Flex>
     <CheckboxField
       labelText="Option 2"

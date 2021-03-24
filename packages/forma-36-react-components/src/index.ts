@@ -1,4 +1,5 @@
 export * from '@contentful/f36-badge';
+export * from '@contentful/f36-typography';
 export { Flex, Grid, GridItem, Box } from '@contentful/f36-core';
 export type {
   FlexProps,
@@ -51,7 +52,6 @@ export * from './components/TextInput';
 export * from './components/TextLink';
 export * from './components/ToggleButton';
 export * from './components/Tooltip';
-export * from './components/Typography';
 export * from './components/ValidationMessage';
 export * from './components/Workbench';
 

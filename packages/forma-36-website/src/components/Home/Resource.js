@@ -1,9 +1,9 @@
 import React from 'react';
 import {
-  Typography,
   Subheading,
   Paragraph,
   TextLink,
+  Typography,
 } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
 import { css } from '@emotion/core';

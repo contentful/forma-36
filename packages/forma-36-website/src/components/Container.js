@@ -6,7 +6,6 @@ import { css } from '@emotion/core';
 import { MDXProvider } from '@mdx-js/react';
 import { PropsProvider } from '@contentful/f36-docs-utils';
 import {
-  Typography,
   DisplayText,
   Heading,
   Subheading,
@@ -19,6 +18,7 @@ import {
   TableBody,
   TableRow,
   TableCell,
+  Box,
 } from '@contentful/f36-components';
 
 import ComponentSource from './ComponentSource';
@@ -53,49 +53,50 @@ const styles = {
 };
 
 const markToComponentMap = {
-  h1: (props) => <DisplayText {...props} />,
+  h1: (props) => (
+    <DisplayText marginBottom="spacingL" marginTop="spacingXl" {...props} />
+  ),
   h2: (props) => (
     <Heading
       element="h2"
+      marginBottom="spacingL"
+      marginTop="spacingXl"
       {...props}
-      css={{
-        marginBottom: tokens.spacingL,
-        marginTop: tokens.spacingXl,
-      }}
     />
   ),
   h3: (props) => (
     <Subheading
       element="h3"
+      marginBottom="spacingM"
+      marginTop="spacingL"
       {...props}
-      css={{
-        marginBottom: tokens.spacingM,
-        marginTop: tokens.spacingL,
-      }}
     />
   ),
   h4: (props) => (
     <Subheading
       element="h4"
+      marginBottom="spacingM"
+      marginTop="spacingL"
       {...props}
-      css={{
-        marginBottom: tokens.spacingM,
-        marginTop: tokens.spacingL,
-      }}
     />
   ),
   h5: (props) => (
     <Subheading
       element="h5"
+      marginBottom="spacingM"
+      marginTop="spacingL"
       {...props}
-      css={{
-        marginBottom: tokens.spacingM,
-        marginTop: tokens.spacingL,
-      }}
     />
   ),
-  h6: (props) => <Subheading element="h6" {...props} />,
-  p: (props) => <Paragraph {...props} />,
+  h6: (props) => (
+    <Subheading
+      marginBottom="spacingS"
+      marginTop="spacingM"
+      element="h6"
+      {...props}
+    />
+  ),
+  p: (props) => <Paragraph marginBottom="spacingS" {...props} />,
   a: (props) => <TextLink {...props} />,
   ul: (props) => <List className="f36-margin-bottom--m" {...props} />,
   li: (props) => <ListItem className="f36-color--text-mid" {...props} />,
@@ -121,7 +122,7 @@ const Container = (data) => {
     <div css={styles.container}>
       <div css={styles.main}>
         <PropsProvider metadata={propsMetadata}>
-          <Typography css={isHomePage ? styles.innerHomePage : styles.inner}>
+          <Box css={isHomePage ? styles.innerHomePage : styles.inner}>
             <MDXProvider components={markToComponentMap}>
               <DocFormatter
                 frontmatter={frontmatter}
@@ -130,7 +131,7 @@ const Container = (data) => {
                 {children}
               </DocFormatter>
             </MDXProvider>
-          </Typography>
+          </Box>
         </PropsProvider>
       </div>
       <Footer />

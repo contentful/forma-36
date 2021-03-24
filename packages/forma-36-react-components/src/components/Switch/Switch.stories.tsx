@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-
+import { SectionHeading } from '@contentful/f36-typography';
 import { Switch, SwitchProps } from './Switch';
-import { SectionHeading } from '../Typography';
 import { Flex } from '@contentful/f36-core';
 
 export default {
@@ -38,32 +37,32 @@ Basic.args = {
 export const Overview = () => (
   <>
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Switch default</SectionHeading>
+      <SectionHeading as="h3">Switch default</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingS">
       <Switch id="testSwitch" labelText="My label text" />
     </Flex>
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Switch checked</SectionHeading>
+      <SectionHeading as="h3">Switch checked</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingS">
       <Switch id="testSwitch" isChecked labelText="My label text" />
     </Flex>
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Switch disabled</SectionHeading>
+      <SectionHeading as="h3">Switch disabled</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingS">
       <Switch id="testSwitch" isDisabled labelText="My label text" />
     </Flex>
 
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Switch small</SectionHeading>
+      <SectionHeading as="h3">Switch small</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingS">
       <Switch size="small" id="testSwitch" labelText="My label text" />
     </Flex>
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Switch small checked</SectionHeading>
+      <SectionHeading as="h3">Switch small checked</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingS">
       <Switch
@@ -74,9 +73,7 @@ export const Overview = () => (
       />
     </Flex>
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">
-        Switch small checked disabled
-      </SectionHeading>
+      <SectionHeading as="h3">Switch small checked disabled</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingS">
       <Switch
@@ -88,7 +85,7 @@ export const Overview = () => (
       />
     </Flex>
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Switch small disabled</SectionHeading>
+      <SectionHeading as="h3">Switch small disabled</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingS">
       <Switch

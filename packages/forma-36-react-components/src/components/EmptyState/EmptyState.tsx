@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
-
-import { Heading, Paragraph } from '../Typography/';
+import type { HeadingElement } from '@contentful/f36-typography';
+import { Heading, Paragraph, Typography } from '@contentful/f36-typography';
 import styles from './EmptyState.css';
 
 export interface EmptyStateProps {
@@ -37,7 +37,7 @@ export interface EmptyStateProps {
 
 interface TextElementProps {
   text: React.ReactNode;
-  elementType?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
+  elementType?: HeadingElement;
 }
 
 interface ImageProps {
@@ -80,7 +80,12 @@ export function EmptyState({
   return (
     <div {...otherProps} className={classNames} data-test-id={testId}>
       <div className={styles['EmptyState_container']}>
-        <div className={styles['EmptyState_element']}>
+        <div
+          className={cn(
+            styles['EmptyState_element'],
+            styles['EmptyState_illustration_container'],
+          )}
+        >
           {customImageElement
             ? customImageElement
             : imageProps && (
@@ -98,23 +103,22 @@ export function EmptyState({
                 />
               )}
         </div>
-        <Heading
-          element={headingProps.elementType ? headingProps.elementType : 'h1'}
-          className={styles['EmptyState_element']}
-        >
-          {headingProps.text}
-        </Heading>
-        <Paragraph
-          element={
-            descriptionProps.elementType ? descriptionProps.elementType : 'p'
-          }
-          className={cn(
-            styles['EmptyState_paragraph'],
-            styles['EmptyState_element'],
-          )}
-        >
-          {descriptionProps.text}
-        </Paragraph>
+        <Typography>
+          <Heading
+            as={headingProps.elementType ? headingProps.elementType : 'h1'}
+            className={styles['EmptyState_element']}
+          >
+            {headingProps.text}
+          </Heading>
+          <Paragraph
+            as={
+              descriptionProps.elementType ? descriptionProps.elementType : 'p'
+            }
+            className={styles['EmptyState_element']}
+          >
+            {descriptionProps.text}
+          </Paragraph>
+        </Typography>
         {children}
       </div>
     </div>

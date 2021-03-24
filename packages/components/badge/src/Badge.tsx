@@ -20,32 +20,26 @@ export interface BadgeProps extends CommonProps {
   children: React.ReactNode;
 }
 
-function Badge(props: BadgeProps, ref: React.Ref<HTMLDivElement>) {
+const _Badge = (props: BadgeProps, ref: React.Ref<HTMLDivElement>) => {
   const {
-    className,
     children,
     variant = 'primary',
     size = 'default',
-    testId = 'cf-ui-badge',
     ...otherProps
   } = props;
 
   return (
     <Box
       as="div"
-      className={className}
-      ref={ref}
+      testId="cf-ui-badge"
       display="inline-block"
       css={getBadgeStyles({ variant, size })}
-      testId={testId}
       {...otherProps}
+      ref={ref}
     >
       {children}
     </Box>
   );
-}
+};
 
-export const _Badge = React.forwardRef(Badge);
-_Badge.displayName = 'Badge';
-
-export { _Badge as Badge };
+export const Badge = React.forwardRef(_Badge);

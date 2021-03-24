@@ -1,11 +1,10 @@
 import React from 'react';
 import { Flex } from '@contentful/f36-core';
-
+import { SectionHeading } from '@contentful/f36-typography';
 import { AssetCard, AssetCardProps } from './AssetCard';
 import { Icon } from '../../Icon';
 import { DropdownList, DropdownListItem } from '../../Dropdown';
 import { CardDragHandle } from '../CardDragHandle/CardDragHandle';
-import { SectionHeading } from '../../Typography';
 
 export default {
   title: 'Components/Card/AssetCard',
@@ -84,7 +83,7 @@ export const Overview = () => (
   <>
     <Flex flexDirection="column" marginBottom="spacingM">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">
+        <SectionHeading as="h3">
           Published card small and default with image
         </SectionHeading>
       </Flex>
@@ -107,7 +106,7 @@ export const Overview = () => (
     </Flex>
     <Flex flexDirection="column" marginBottom="spacingM">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">
+        <SectionHeading as="h3">
           Draft card small and default with image
         </SectionHeading>
       </Flex>
@@ -130,7 +129,7 @@ export const Overview = () => (
     </Flex>
     <Flex flexDirection="column" marginBottom="spacingM">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">
+        <SectionHeading as="h3">
           archived card small and default with image
         </SectionHeading>
       </Flex>
@@ -153,7 +152,7 @@ export const Overview = () => (
     </Flex>
     <Flex flexDirection="column" marginBottom="spacingM">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">
+        <SectionHeading as="h3">
           changed card small and default with image
         </SectionHeading>
       </Flex>
@@ -176,7 +175,7 @@ export const Overview = () => (
     </Flex>
     <Flex flexDirection="column" marginBottom="spacingM">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">
+        <SectionHeading as="h3">
           Published card, small and default, with custom icon
         </SectionHeading>
       </Flex>
@@ -201,7 +200,7 @@ export const Overview = () => (
     </Flex>
     <Flex flexDirection="column" marginBottom="spacingM">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">
+        <SectionHeading as="h3">
           card withDragHandle, small and default with image
         </SectionHeading>
       </Flex>
@@ -226,7 +225,7 @@ export const Overview = () => (
     </Flex>
     <Flex flexDirection="column" marginBottom="spacingM">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">
+        <SectionHeading as="h3">
           loading state of card, small and default
         </SectionHeading>
       </Flex>

@@ -29,13 +29,13 @@ The accordion has two variations that define the alignment of the chevron icon: 
 ## Code examples
 
 ```jsx
-// import { Accordion, AccordionItem } from '@contentful/f36-components';
-
 <Accordion>
   <AccordionItem title="What payment methods do you accept?">
-    Customers on the Team tier can pay with a credit card (American Express,
-    MasterCard or Visa). Enterprise customers have the choice of paying with a
-    credit card or wire transfer.
+    <Paragraph>
+      Customers on the Team tier can pay with a credit card (American Express,
+      MasterCard or Visa). Enterprise customers have the choice of paying with a
+      credit card or wire transfer.
+    </Paragraph>
   </AccordionItem>
 </Accordion>
 ```
@@ -43,13 +43,11 @@ The accordion has two variations that define the alignment of the chevron icon: 
 Other typographic components can be passed as the accordion's title and anything can be used as the accordion's content. For example:
 
 ```jsx
-// import { Accordion, AccordionItem, SectionHeading, Paragraph, Button } from '@contentful/f36-components';
-
 <Accordion>
   <AccordionItem
     title={<SectionHeading>What payment methods do you accept?</SectionHeading>}
   >
-    <Paragraph>
+    <Paragraph marginBottom="spacingS">
       Customers on the Team tier can pay with a credit card (American Express,
       MasterCard or Visa). Enterprise customers have the choice of paying with a
       credit card or wire transfer.

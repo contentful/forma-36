@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
+import { Paragraph } from '@contentful/f36-typography';
 
 import { ModalLauncher } from './ModalLauncher';
 import { Button } from '../../Button';
 import { Modal } from '../Modal';
-import { Paragraph } from '../../Typography';
 
 function DefaultStory() {
   const [hiddenText, setHiddenText] = useState('');

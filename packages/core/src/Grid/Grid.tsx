@@ -47,14 +47,13 @@ export type GridProps<E extends React.ElementType> = PolymorphicComponentProps<
 
 const DEFAULT_TAG = 'div';
 
-const Grid: PolymorphicComponentWithRef<
+const _Grid: PolymorphicComponentWithRef<
   GridInternalProps,
   typeof DEFAULT_TAG
 > = (
   {
     alignContent,
     children,
-    className,
     columnGap = 'spacingM',
     columns = 'auto',
     flow,
@@ -76,7 +75,7 @@ const Grid: PolymorphicComponentWithRef<
   return (
     <Box
       as={DEFAULT_TAG}
-      {...otherProps}
+      display={isInline ? 'inline-grid' : 'grid'}
       css={{
         gridTemplateColumns: handleGridTemplate(columns),
         gridTemplateRows: handleGridTemplate(rows),
@@ -86,20 +85,15 @@ const Grid: PolymorphicComponentWithRef<
         columnGap: convertSpacingToToken(columnGap) ?? 0,
         rowGap: convertSpacingToToken(rowGap) ?? 0,
       }}
-      display={isInline ? 'inline-grid' : 'grid'}
+      {...otherProps}
       ref={ref}
-      className={className}
     >
       {children}
     </Box>
   );
 };
 
-export const _Grid: PolymorphicComponent<
+export const Grid: PolymorphicComponent<
   GridInternalProps,
   typeof DEFAULT_TAG
-> = React.forwardRef(Grid);
-
-_Grid.displayName = 'Grid';
-
-export { _Grid as Grid };
+> = React.forwardRef(_Grid);

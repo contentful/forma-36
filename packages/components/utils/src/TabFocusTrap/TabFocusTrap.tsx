@@ -1,5 +1,5 @@
 import React from 'react';
-import { css, cx } from 'emotion';
+import { cx, css } from 'emotion';
 
 export interface TabFocusTrapProps {
   className?: string;
@@ -18,10 +18,8 @@ export function TabFocusTrap({
   children,
   ...otherProps
 }: TabFocusTrapProps): React.ReactElement {
-  const classNames = cx(styles.root, className);
-
   return (
-    <span tabIndex={-1} className={classNames} {...otherProps}>
+    <span tabIndex={-1} className={cx(styles.root, className)} {...otherProps}>
       {children}
     </span>
   );

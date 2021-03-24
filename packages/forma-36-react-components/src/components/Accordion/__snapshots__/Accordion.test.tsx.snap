@@ -1,6 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
+.emotion-0 {
+  display: block;
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-weight: 600;
+  color: #192532;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  text-rendering: optimizeLegibility;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 <ul
   class="Accordion Accordion--end"
   data-test-id="cf-ui-accordion"
@@ -10,7 +23,7 @@ exports[`renders the component 1`] = `
     data-test-id="cf-ui-accordion-item-1"
   >
     <h2
-      class="Subheading"
+      class="emotion-0"
       data-test-id="cf-ui-subheading"
     >
       <button
@@ -52,6 +65,19 @@ exports[`renders the component 1`] = `
 `;
 
 exports[`renders the component with an additional class name 1`] = `
+.emotion-0 {
+  display: block;
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-weight: 600;
+  color: #192532;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  text-rendering: optimizeLegibility;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 <ul
   class="Accordion my-extra-class Accordion--end"
   data-test-id="cf-ui-accordion"
@@ -61,7 +87,7 @@ exports[`renders the component with an additional class name 1`] = `
     data-test-id="cf-ui-accordion-item-2"
   >
     <h2
-      class="Subheading"
+      class="emotion-0"
       data-test-id="cf-ui-subheading"
     >
       <button
@@ -103,6 +129,19 @@ exports[`renders the component with an additional class name 1`] = `
 `;
 
 exports[`renders the component with chevron on the left 1`] = `
+.emotion-0 {
+  display: block;
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-weight: 600;
+  color: #192532;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  text-rendering: optimizeLegibility;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
 <ul
   class="Accordion Accordion--start"
   data-test-id="cf-ui-accordion"
@@ -112,7 +151,7 @@ exports[`renders the component with chevron on the left 1`] = `
     data-test-id="cf-ui-accordion-item-3"
   >
     <h2
-      class="Subheading"
+      class="emotion-0"
       data-test-id="cf-ui-subheading"
     >
       <button

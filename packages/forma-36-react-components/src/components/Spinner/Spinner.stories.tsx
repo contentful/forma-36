@@ -1,9 +1,9 @@
 import React from 'react';
-
+import { SectionHeading } from '@contentful/f36-typography';
 import tokens from '@contentful/f36-tokens';
+import { Subheading } from '@contentful/f36-typography';
 
 import { Spinner, SpinnerProps } from './Spinner';
-import { SectionHeading, Subheading } from '../Typography';
 import { Flex } from '@contentful/f36-core';
 
 export default {
@@ -37,7 +37,7 @@ export const overview = () => {
   return (
     <>
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">Spinner colors</SectionHeading>
+        <SectionHeading as="h3">Spinner colors</SectionHeading>
       </Flex>
       <Flex marginBottom="spacingM">
         Loading <Spinner color="default" />

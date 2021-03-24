@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import cn from 'classnames';
-
-import { Subheading } from '../../Typography';
+import { Subheading } from '@contentful/f36-typography';
+import type { HeadingElement } from '@contentful/f36-typography';
 import { Icon } from '../../Icon';
 import styles from '../Accordion.css';
 
@@ -29,7 +29,7 @@ export interface AccordionHeaderProps {
   /**
    * The heading element that will be used by the Subheading component
    */
-  element?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  element?: HeadingElement;
 }
 
 export const AccordionHeader: FC<AccordionHeaderProps> = ({
@@ -44,7 +44,7 @@ export const AccordionHeader: FC<AccordionHeaderProps> = ({
   });
 
   return (
-    <Subheading element={element}>
+    <Subheading as={element}>
       <button
         type="button"
         aria-expanded={isExpanded}

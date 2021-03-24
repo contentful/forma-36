@@ -1,9 +1,13 @@
 import React from 'react';
 import { Flex } from '@contentful/f36-core';
+import {
+  SectionHeading,
+  Paragraph,
+  Typography,
+} from '@contentful/f36-typography';
 
 import { Accordion, AccordionProps } from './Accordion';
 import { AccordionItem } from './AccordionItem/AccordionItem';
-import { Paragraph, SectionHeading, Typography } from '../Typography';
 
 export default {
   title: 'Components/Accordion',
@@ -54,7 +58,9 @@ export const overview = ({ align, ...args }: AccordionProps) => (
       <Flex>
         <Accordion align="start">
           <AccordionItem title={args['AccordionItem Title #1']}>
-            <Paragraph>{args['AccordionItem Content #1']}</Paragraph>
+            <Typography>
+              <Paragraph>{args['AccordionItem Content #1']}</Paragraph>
+            </Typography>
           </AccordionItem>
           <AccordionItem title={args['AccordionItem Title #2']}>
             <Typography>

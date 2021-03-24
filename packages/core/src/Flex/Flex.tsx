@@ -78,7 +78,7 @@ export type FlexProps<E extends React.ElementType> = PolymorphicComponentProps<
 
 const DEFAULT_TAG = 'div';
 
-const Flex: PolymorphicComponentWithRef<
+const _Flex: PolymorphicComponentWithRef<
   FlexInternalProps,
   typeof DEFAULT_TAG
 > = (
@@ -100,7 +100,6 @@ const Flex: PolymorphicComponentWithRef<
     justifySelf,
     order,
     children,
-    className,
     ...otherProps
   },
   ref,
@@ -108,7 +107,7 @@ const Flex: PolymorphicComponentWithRef<
   return (
     <Box
       as={DEFAULT_TAG}
-      {...otherProps}
+      display={isInline ? 'inline-flex' : 'flex'}
       css={{
         width: fullWidth ? '100%' : undefined,
         height: fullHeight ? '100%' : undefined,
@@ -126,20 +125,15 @@ const Flex: PolymorphicComponentWithRef<
         flexWrap,
         flexGrow,
       }}
-      display={isInline ? 'inline-flex' : 'flex'}
+      {...otherProps}
       ref={ref}
-      className={className}
     >
       {children}
     </Box>
   );
 };
 
-export const _Flex: PolymorphicComponent<
+export const Flex: PolymorphicComponent<
   FlexInternalProps,
   typeof DEFAULT_TAG
-> = React.forwardRef(Flex);
-
-_Flex.displayName = 'Flex';
-
-export { _Flex as Flex };
+> = React.forwardRef(_Flex);

@@ -1,9 +1,9 @@
 import React from 'react';
+import { SectionHeading } from '@contentful/f36-typography';
 import { action } from '@storybook/addon-actions';
 import { Icon } from '../Icon';
 
 import { Pill, PillProps } from './Pill';
-import { SectionHeading } from '../Typography';
 import { Flex } from '@contentful/f36-core';
 
 export default {
@@ -59,7 +59,7 @@ export const PillVariants = (args: PillProps) => (
   <>
     <div>
       <Flex marginBottom="spacingXs">
-        <SectionHeading element="h3">Idle</SectionHeading>
+        <SectionHeading as="h3">Idle</SectionHeading>
       </Flex>
       <Pill
         label={args.label}
@@ -70,7 +70,7 @@ export const PillVariants = (args: PillProps) => (
     </div>
     <div className="f36-margin-top--m">
       <Flex marginBottom="spacingXs">
-        <SectionHeading element="h3">Active</SectionHeading>
+        <SectionHeading as="h3">Active</SectionHeading>
       </Flex>
       <Pill
         label={args.label}
@@ -81,7 +81,7 @@ export const PillVariants = (args: PillProps) => (
     </div>
     <div className="f36-margin-top--m">
       <Flex marginBottom="spacingXs">
-        <SectionHeading element="h3">Deleted</SectionHeading>
+        <SectionHeading as="h3">Deleted</SectionHeading>
       </Flex>
       <Pill
         label={args.label}

@@ -39,7 +39,7 @@ export type GridItemProps<
   E extends React.ElementType
 > = PolymorphicComponentProps<E, GridItemInternalProps>;
 
-const GridItem: PolymorphicComponentWithRef<
+const _GridItem: PolymorphicComponentWithRef<
   GridItemInternalProps,
   typeof DEFAULT_TAG
 > = (
@@ -51,7 +51,6 @@ const GridItem: PolymorphicComponentWithRef<
     rowEnd,
     area,
     order,
-    className,
     ...otherProps
   },
   ref,
@@ -68,12 +67,11 @@ const GridItem: PolymorphicComponentWithRef<
   return (
     <Box
       as={DEFAULT_TAG}
-      {...otherProps}
       css={{
         gridArea: calculatedArea,
         order,
       }}
-      className={className}
+      {...otherProps}
       ref={ref}
     >
       {children}
@@ -81,11 +79,7 @@ const GridItem: PolymorphicComponentWithRef<
   );
 };
 
-export const _GridItem: PolymorphicComponent<
+export const GridItem: PolymorphicComponent<
   GridItemInternalProps,
   typeof DEFAULT_TAG
-> = React.forwardRef(GridItem);
-
-_GridItem.displayName = 'GridItem';
-
-export { _GridItem as GridItem };
+> = React.forwardRef(_GridItem);

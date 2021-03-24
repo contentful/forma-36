@@ -1,6 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders component with custom image element 1`] = `
+.emotion-2 {
+  display: block;
+}
+
+.emotion-0 {
+  display: block;
+  margin: 0;
+  margin-bottom: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-weight: 600;
+  color: #192532;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  text-rendering: optimizeLegibility;
+}
+
+.emotion-1 {
+  display: block;
+  margin: 0;
+  margin-bottom: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-weight: 600;
+  color: #192532;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  text-rendering: optimizeLegibility;
+  font-weight: 400;
+  color: #536171;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 <div
   class="EmptyState"
   data-test-id="cf-ui-empty-state"
@@ -9,30 +41,67 @@ exports[`renders component with custom image element 1`] = `
     class="EmptyState_container"
   >
     <div
-      class="EmptyState_element"
+      class="EmptyState_element EmptyState_illustration_container"
     >
       <img
         alt=""
         src="/url"
       />
     </div>
-    <h1
-      class="Heading EmptyState_element"
-      data-test-id="cf-ui-heading"
+    <div
+      class="emotion-2"
+      data-test-id="cf-ui-text-container"
     >
-      Heading
-    </h1>
-    <p
-      class="Paragraph EmptyState_paragraph EmptyState_element"
-      data-test-id="cf-ui-paragraph"
-    >
-      This is a description for the empty state. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate, sem a porttitor porttitor, velit nulla lacinia dolor, sit amet interdum ligula lectus hendrerit sem. Aliquam ultricies viverra tincidunt.
-    </p>
+      <h1
+        class="EmptyState_element emotion-0"
+        data-test-id="cf-ui-heading"
+      >
+        Heading
+      </h1>
+      <p
+        class="EmptyState_element emotion-1"
+        data-test-id="cf-ui-paragraph"
+      >
+        This is a description for the empty state. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate, sem a porttitor porttitor, velit nulla lacinia dolor, sit amet interdum ligula lectus hendrerit sem. Aliquam ultricies viverra tincidunt.
+      </p>
+    </div>
   </div>
 </div>
 `;
 
 exports[`renders component with image 1`] = `
+.emotion-2 {
+  display: block;
+}
+
+.emotion-0 {
+  display: block;
+  margin: 0;
+  margin-bottom: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-weight: 600;
+  color: #192532;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  text-rendering: optimizeLegibility;
+}
+
+.emotion-1 {
+  display: block;
+  margin: 0;
+  margin-bottom: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-weight: 600;
+  color: #192532;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  text-rendering: optimizeLegibility;
+  font-weight: 400;
+  color: #536171;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 <div
   class="EmptyState"
   data-test-id="cf-ui-empty-state"
@@ -41,7 +110,7 @@ exports[`renders component with image 1`] = `
     class="EmptyState_container"
   >
     <div
-      class="EmptyState_element"
+      class="EmptyState_element EmptyState_illustration_container"
     >
       <img
         alt="Image description"
@@ -50,23 +119,60 @@ exports[`renders component with image 1`] = `
         style="height: 250px; width: 340px;"
       />
     </div>
-    <h1
-      class="Heading EmptyState_element"
-      data-test-id="cf-ui-heading"
+    <div
+      class="emotion-2"
+      data-test-id="cf-ui-text-container"
     >
-      Heading
-    </h1>
-    <p
-      class="Paragraph EmptyState_paragraph EmptyState_element"
-      data-test-id="cf-ui-paragraph"
-    >
-      This is a description for the empty state. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate, sem a porttitor porttitor, velit nulla lacinia dolor, sit amet interdum ligula lectus hendrerit sem. Aliquam ultricies viverra tincidunt.
-    </p>
+      <h1
+        class="EmptyState_element emotion-0"
+        data-test-id="cf-ui-heading"
+      >
+        Heading
+      </h1>
+      <p
+        class="EmptyState_element emotion-1"
+        data-test-id="cf-ui-paragraph"
+      >
+        This is a description for the empty state. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate, sem a porttitor porttitor, velit nulla lacinia dolor, sit amet interdum ligula lectus hendrerit sem. Aliquam ultricies viverra tincidunt.
+      </p>
+    </div>
   </div>
 </div>
 `;
 
 exports[`renders the component 1`] = `
+.emotion-2 {
+  display: block;
+}
+
+.emotion-0 {
+  display: block;
+  margin: 0;
+  margin-bottom: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-weight: 600;
+  color: #192532;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  text-rendering: optimizeLegibility;
+}
+
+.emotion-1 {
+  display: block;
+  margin: 0;
+  margin-bottom: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-weight: 600;
+  color: #192532;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  text-rendering: optimizeLegibility;
+  font-weight: 400;
+  color: #536171;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 <div
   class="EmptyState"
   data-test-id="cf-ui-empty-state"
@@ -75,25 +181,62 @@ exports[`renders the component 1`] = `
     class="EmptyState_container"
   >
     <div
-      class="EmptyState_element"
+      class="EmptyState_element EmptyState_illustration_container"
     />
-    <h1
-      class="Heading EmptyState_element"
-      data-test-id="cf-ui-heading"
+    <div
+      class="emotion-2"
+      data-test-id="cf-ui-text-container"
     >
-      Heading
-    </h1>
-    <p
-      class="Paragraph EmptyState_paragraph EmptyState_element"
-      data-test-id="cf-ui-paragraph"
-    >
-      This is a description for the empty state.
-    </p>
+      <h1
+        class="EmptyState_element emotion-0"
+        data-test-id="cf-ui-heading"
+      >
+        Heading
+      </h1>
+      <p
+        class="EmptyState_element emotion-1"
+        data-test-id="cf-ui-paragraph"
+      >
+        This is a description for the empty state.
+      </p>
+    </div>
   </div>
 </div>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
+.emotion-2 {
+  display: block;
+}
+
+.emotion-0 {
+  display: block;
+  margin: 0;
+  margin-bottom: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-weight: 600;
+  color: #192532;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  text-rendering: optimizeLegibility;
+}
+
+.emotion-1 {
+  display: block;
+  margin: 0;
+  margin-bottom: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-weight: 600;
+  color: #192532;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  text-rendering: optimizeLegibility;
+  font-weight: 400;
+  color: #536171;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 <div
   class="EmptyState my-extra-class"
   data-test-id="cf-ui-empty-state"
@@ -102,20 +245,25 @@ exports[`renders the component with an additional class name 1`] = `
     class="EmptyState_container"
   >
     <div
-      class="EmptyState_element"
+      class="EmptyState_element EmptyState_illustration_container"
     />
-    <h1
-      class="Heading EmptyState_element"
-      data-test-id="cf-ui-heading"
+    <div
+      class="emotion-2"
+      data-test-id="cf-ui-text-container"
     >
-      Heading
-    </h1>
-    <p
-      class="Paragraph EmptyState_paragraph EmptyState_element"
-      data-test-id="cf-ui-paragraph"
-    >
-      This is a description for the empty state.
-    </p>
+      <h1
+        class="EmptyState_element emotion-0"
+        data-test-id="cf-ui-heading"
+      >
+        Heading
+      </h1>
+      <p
+        class="EmptyState_element emotion-1"
+        data-test-id="cf-ui-paragraph"
+      >
+        This is a description for the empty state.
+      </p>
+    </div>
   </div>
 </div>
 `;

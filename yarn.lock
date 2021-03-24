@@ -1410,7 +1410,7 @@
     "@emotion/utils" "0.11.3"
     "@emotion/weak-memoize" "0.2.5"
 
-"@emotion/core@^10.0.16", "@emotion/core@^10.1.1":
+"@emotion/core@^10.1.1":
   version "10.1.1"
   resolved "https://registry.yarnpkg.com/@emotion/core/-/core-10.1.1.tgz#c956c1365f2f2481960064bcb8c4732e5fb612c3"
   integrity sha512-ZMLG6qpXR8x031NXD8HJqugy/AZSkAuMxxqB46pmAR7ze47MhNJ56cdoX243QPZdGctrdfo+s08yZTiwaUcRKA==
@@ -12454,7 +12454,7 @@ gatsby-plugin-algolia-docsearch@^1.0.5:
   dependencies:
     "@babel/runtime" "^7.0.0"
 
-gatsby-plugin-emotion@^4.1.4:
+gatsby-plugin-emotion@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-emotion/-/gatsby-plugin-emotion-4.5.0.tgz#f54dee45030a42321e3db04e5cfa969293df0f1a"
   integrity sha512-BY8TleuXFOvrX3YWq3kYJE3iBWzopisXuTAh2d951mAG4PdcEEDVKsGrKfjjOCVKxakFYA4rqVozo4Co2LA3qg==

@@ -25,27 +25,22 @@ export type BoxProps<E extends React.ElementType> = PolymorphicComponentProps<
   BoxInternalProps
 >;
 
-const Box: PolymorphicComponentWithRef<BoxInternalProps, typeof DEFAULT_TAG> = (
-  { display = 'block', className, children, ...otherProps },
-  ref: typeof otherProps.ref,
-) => {
+const _Box: PolymorphicComponentWithRef<
+  BoxInternalProps,
+  typeof DEFAULT_TAG
+> = ({ display = 'block', children, ...otherProps }, ref) => {
   return (
     <Primitive
+      css={{ display, ...getSpacingStyles(otherProps) }}
       {...otherProps}
       ref={ref}
-      css={{ display, ...getSpacingStyles(otherProps) }}
-      className={className}
     >
       {children}
     </Primitive>
   );
 };
 
-export const _Box: PolymorphicComponent<
+export const Box: PolymorphicComponent<
   BoxInternalProps,
   typeof DEFAULT_TAG
-> = React.forwardRef(Box);
-
-_Box.displayName = 'Box';
-
-export { _Box as Box };
+> = React.forwardRef(_Box);

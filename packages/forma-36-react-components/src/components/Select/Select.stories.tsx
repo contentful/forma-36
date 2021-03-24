@@ -1,9 +1,8 @@
 import React from 'react';
-
+import { SectionHeading } from '@contentful/f36-typography';
 import { Select, SelectProps } from './Select';
 import { Option } from './Option';
 import { Flex } from '@contentful/f36-core';
-import { SectionHeading } from '../Typography';
 
 export default {
   title: 'Form Elements/Select',
@@ -31,7 +30,7 @@ export const basic = (args: SelectProps) => (
 export const overview = () => (
   <>
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Select default</SectionHeading>
+      <SectionHeading as="h3">Select default</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingS">
       <Select id="optionSelect" name="optionSelect">
@@ -40,7 +39,7 @@ export const overview = () => (
       </Select>
     </Flex>
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Select full width</SectionHeading>
+      <SectionHeading as="h3">Select full width</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingS">
       <Select id="optionSelect" name="optionSelect" width="full">
@@ -49,7 +48,7 @@ export const overview = () => (
       </Select>
     </Flex>
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Select large width</SectionHeading>
+      <SectionHeading as="h3">Select large width</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingS">
       <Select id="optionSelect" name="optionSelect" width="large">
@@ -58,7 +57,7 @@ export const overview = () => (
       </Select>
     </Flex>
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Select small width</SectionHeading>
+      <SectionHeading as="h3">Select small width</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingS">
       <Select id="optionSelect" name="optionSelect" width="small">
@@ -67,7 +66,7 @@ export const overview = () => (
       </Select>
     </Flex>
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Select auto width</SectionHeading>
+      <SectionHeading as="h3">Select auto width</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingS">
       <Select id="optionSelect" name="optionSelect" width="auto">
@@ -76,7 +75,7 @@ export const overview = () => (
       </Select>
     </Flex>
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Select disabled</SectionHeading>
+      <SectionHeading as="h3">Select disabled</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingS">
       <Select id="optionSelect" name="optionSelect" isDisabled>
@@ -85,7 +84,7 @@ export const overview = () => (
       </Select>
     </Flex>
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Select with error</SectionHeading>
+      <SectionHeading as="h3">Select with error</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingS">
       <Select id="optionSelect" name="optionSelect" hasError>
