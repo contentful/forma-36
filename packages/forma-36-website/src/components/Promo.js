@@ -1,7 +1,7 @@
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
 import { Badge, Flex } from '@contentful/f36-components';
-import { css } from '@emotion/core';
+import { css } from 'emotion';
 
 const styles = {
   promo: css`
@@ -21,7 +21,7 @@ const styles = {
 };
 
 const Promo = ({ text, linkText, linkHref, tagText }) => (
-  <div css={styles.promo}>
+  <div className={styles.promo}>
     <Flex marginRight="spacingXs">
       <Badge variant="primary">{tagText}</Badge>
     </Flex>
@@ -29,7 +29,7 @@ const Promo = ({ text, linkText, linkHref, tagText }) => (
     {linkHref && (
       <a
         href={linkHref}
-        css={styles.link}
+        className={styles.link}
         target="_blank"
         rel="noopener noreferrer"
       >

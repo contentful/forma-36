@@ -1,7 +1,7 @@
 import React from 'react';
 import { DisplayText, Paragraph, Typography } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
-import { css } from '@emotion/core';
+import { css } from 'emotion';
 import bg from '../images/dot-bg.png';
 
 const styles = {
@@ -38,7 +38,7 @@ const Logo = () => (
     height="80px"
     viewBox="0 0 90 90"
     enableBackground="new 0 0 90 90"
-    css={styles.logo}
+    className={styles.logo}
   >
     <circle fill="#ffffff" cx="45" cy="10" r="10" />
     <circle fill="#ffffff" cx="10" cy="10" r="10" />
@@ -50,15 +50,15 @@ const Logo = () => (
 );
 
 const Masthead = ({ title, description, hasLogo }) => (
-  <div css={styles.masthead}>
-    <div css={styles.content}>
+  <div className={styles.masthead}>
+    <div className={styles.content}>
       {hasLogo && <Logo />}
       <Typography>
-        <DisplayText size="large" css={styles.title}>
+        <DisplayText size="large" className={styles.title}>
           {title}
         </DisplayText>
         {description && (
-          <Paragraph css={styles.description}>{description}</Paragraph>
+          <Paragraph className={styles.description}>{description}</Paragraph>
         )}
       </Typography>
     </div>

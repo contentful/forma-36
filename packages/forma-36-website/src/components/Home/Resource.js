@@ -6,7 +6,7 @@ import {
   Typography,
 } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
-import { css } from '@emotion/core';
+import { css } from 'emotion';
 
 const styles = {
   resource: css`
@@ -35,14 +35,14 @@ const styles = {
 };
 
 const Resource = ({ title, description, imageNode, linkHref, linkText }) => (
-  <article css={styles.resource}>
-    <div css={styles.image}>{imageNode}</div>
-    <Typography css={styles.text}>
+  <article className={styles.resource}>
+    <div className={styles.image}>{imageNode}</div>
+    <Typography className={styles.text}>
       <Subheading>{title}</Subheading>
-      <Paragraph css={styles.paragraph}>{description}</Paragraph>
-      <Paragraph css={styles.paragraph}>
+      <Paragraph className={styles.paragraph}>{description}</Paragraph>
+      <Paragraph className={styles.paragraph}>
         <TextLink
-          css={styles.link}
+          className={styles.link}
           href={linkHref}
           target="_blank"
           rel="noopener noreferrer"

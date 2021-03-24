@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import tokens from '@contentful/f36-tokens';
-import { css } from '@emotion/core';
+import { css } from 'emotion';
 import { MDXProvider } from '@mdx-js/react';
 import { PropsProvider } from '@contentful/f36-docs-utils';
 import {
@@ -119,10 +119,10 @@ const Container = (data) => {
   const isHomePage = frontmatter && frontmatter.type === 'home';
 
   return (
-    <div css={styles.container}>
-      <div css={styles.main}>
+    <div className={styles.container}>
+      <div className={styles.main}>
         <PropsProvider metadata={propsMetadata}>
-          <Box css={isHomePage ? styles.innerHomePage : styles.inner}>
+          <Box className={isHomePage ? styles.innerHomePage : styles.inner}>
             <MDXProvider components={markToComponentMap}>
               <DocFormatter
                 frontmatter={frontmatter}

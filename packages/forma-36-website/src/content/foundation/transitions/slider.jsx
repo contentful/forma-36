@@ -1,5 +1,5 @@
 import React from 'react';
-import { css } from '@emotion/core';
+import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 
 const styles = {
@@ -23,11 +23,13 @@ const styles = {
 };
 
 const Slider = (props) => (
-  <div css={styles.slider} {...props}>
+  <div className={styles.slider} {...props}>
     {props.children}
   </div>
 );
 
-export const SliderKnob = (props) => <div css={styles.sliderKnob} {...props} />;
+export const SliderKnob = (props) => (
+  <div className={styles.sliderKnob} {...props} />
+);
 
 export default Slider;
