@@ -1,4 +1,5 @@
 import tokens from '@contentful/f36-tokens';
+import { css } from 'emotion';
 import type { BadgeVariant, BadgeSize } from './types';
 
 const variantToStyles = ({ variant }: { variant: BadgeVariant }) => {
@@ -70,17 +71,15 @@ export const getBadgeStyles = ({
   variant: BadgeVariant;
   size: BadgeSize;
 }) => {
-  return [
-    {
-      fontFamily: tokens.fontStackPrimary,
-      fontWeight: tokens.fontWeightDemiBold,
+  return css({
+    fontFamily: tokens.fontStackPrimary,
+    fontWeight: tokens.fontWeightDemiBold,
 
-      textTransform: 'uppercase',
-      letterSpacing:
-        '0.06rem' /*move to tokens or update wide letter spacing token*/,
-      borderRadius: `${tokens.borderRadiusSmall}`,
-    },
-    variantToStyles({ variant }),
-    sizeToStyles({ size }),
-  ];
+    textTransform: 'uppercase',
+    letterSpacing:
+      '0.06rem' /*move to tokens or update wide letter spacing token*/,
+    borderRadius: `${tokens.borderRadiusSmall}`,
+    ...variantToStyles({ variant }),
+    ...sizeToStyles({ size }),
+  });
 };
