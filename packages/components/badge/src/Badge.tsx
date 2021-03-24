@@ -1,4 +1,5 @@
 import React from 'react';
+import { css, cx } from 'emotion';
 import { Box } from '@contentful/f36-core';
 import type { CommonProps } from '@contentful/f36-core';
 
@@ -25,6 +26,7 @@ const _Badge = (props: BadgeProps, ref: React.Ref<HTMLDivElement>) => {
     children,
     variant = 'primary',
     size = 'default',
+    className,
     ...otherProps
   } = props;
 
@@ -33,7 +35,7 @@ const _Badge = (props: BadgeProps, ref: React.Ref<HTMLDivElement>) => {
       as="div"
       testId="cf-ui-badge"
       display="inline-block"
-      css={getBadgeStyles({ variant, size })}
+      className={cx(css(getBadgeStyles({ variant, size })), className)}
       {...otherProps}
       ref={ref}
     >

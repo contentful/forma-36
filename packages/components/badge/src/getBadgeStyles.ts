@@ -1,5 +1,5 @@
 import tokens from '@contentful/f36-tokens';
-import { Interpolation } from '@emotion/core';
+import type { Interpolation } from '@emotion/serialize';
 import type { BadgeVariant, BadgeSize } from './types';
 
 const variantToStyles = ({

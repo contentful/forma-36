@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import tokens from '@contentful/f36-tokens';
+import { css, cx } from 'emotion';
 import {
   Box,
   CommonProps,
@@ -35,7 +36,7 @@ const DEFAULT_TAG = 'h1';
 const _Heading: PolymorphicComponentWithRef<
   HeadingInternalProps,
   typeof DEFAULT_TAG
-> = ({ children, ...otherProps }, ref) => {
+> = ({ children, className, ...otherProps }, ref) => {
   const configuration = useContext(TypographyContext);
 
   return (
@@ -45,14 +46,17 @@ const _Heading: PolymorphicComponentWithRef<
       margin="none"
       marginBottom={configuration.heading}
       testId="cf-ui-heading"
-      css={{
-        fontFamily: tokens.fontStackPrimary,
-        fontWeight: tokens.fontWeightDemiBold,
-        color: tokens.colorTextDark,
-        fontSize: tokens.fontSizeXl,
-        lineHeight: tokens.lineHeightXl,
-        textRendering: 'optimizeLegibility',
-      }}
+      className={cx(
+        css({
+          fontFamily: tokens.fontStackPrimary,
+          fontWeight: tokens.fontWeightDemiBold,
+          color: tokens.colorTextDark,
+          fontSize: tokens.fontSizeXl,
+          lineHeight: tokens.lineHeightXl,
+          textRendering: 'optimizeLegibility',
+        }),
+        className,
+      )}
       {...otherProps}
       ref={ref}
     >

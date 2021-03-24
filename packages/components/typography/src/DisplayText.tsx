@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import tokens from '@contentful/f36-tokens';
+import { css, cx } from 'emotion';
 import {
   PolymorphicComponent,
   PolymorphicComponentProps,
@@ -7,7 +8,6 @@ import {
 } from '@contentful/f36-core';
 import type { HeadingInternalProps } from './Heading';
 import { Heading } from './Heading';
-import { Interpolation } from 'create-emotion';
 import { TypographyContext } from './Typography';
 
 const DEFAULT_TAG = 'h1';
@@ -23,26 +23,26 @@ export type DisplayTextProps<
 const _DisplayText: PolymorphicComponentWithRef<
   DisplayTextInternalProps,
   typeof DEFAULT_TAG
-> = ({ children, size = 'default', ...otherProps }, ref) => {
+> = ({ children, className, size = 'default', ...otherProps }, ref) => {
   const configuration = useContext(TypographyContext);
 
-  let css: Interpolation = {};
+  let styles = '';
 
   if (size === 'huge') {
-    css = {
+    styles = css({
       fontSize: tokens.fontSize4Xl,
       lineHeight: tokens.lineHeight4Xl,
-    };
+    });
   } else if (size === 'large') {
-    css = {
+    styles = css({
       fontSize: tokens.fontSize3Xl,
       lineHeight: tokens.lineHeight3Xl,
-    };
+    });
   } else {
-    css = {
+    styles = css({
       fontSize: tokens.fontSize2Xl,
       lineHeight: tokens.lineHeight2Xl,
-    };
+    });
   }
 
   return (
@@ -54,7 +54,7 @@ const _DisplayText: PolymorphicComponentWithRef<
           ? configuration.displayText
           : configuration.displayTextLarge
       }
-      css={css}
+      className={cx(styles, className)}
       {...otherProps}
       ref={ref}
     >

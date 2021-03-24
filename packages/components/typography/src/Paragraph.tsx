@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import tokens from '@contentful/f36-tokens';
+import { css, cx } from 'emotion';
 import {
   PolymorphicComponent,
   PolymorphicComponentWithRef,
@@ -15,19 +16,22 @@ export type ParagraphProps<E extends React.ElementType> = HeadingProps<E>;
 const _Paragraph: PolymorphicComponentWithRef<
   HeadingInternalProps,
   typeof DEFAULT_TAG
-> = ({ children, ...otherProps }, ref) => {
+> = ({ children, className, ...otherProps }, ref) => {
   const configuration = useContext(TypographyContext);
   return (
     <Heading
       as={DEFAULT_TAG}
       testId="cf-ui-paragraph"
       marginBottom={configuration.paragraph}
-      css={{
-        fontWeight: tokens.fontWeightNormal,
-        color: tokens.colorTextMid,
-        fontSize: tokens.fontSizeM,
-        lineHeight: tokens.lineHeightM,
-      }}
+      className={cx(
+        css({
+          fontWeight: tokens.fontWeightNormal,
+          color: tokens.colorTextMid,
+          fontSize: tokens.fontSizeM,
+          lineHeight: tokens.lineHeightM,
+        }),
+        className,
+      )}
       {...otherProps}
       ref={ref}
     >

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as CSS from 'csstype';
+import { css, cx } from 'emotion';
 import type { MarginProps, PaddingProps } from '../types';
 import { getSpacingStyles } from '../utils/getSpacingStyles';
 
@@ -28,10 +29,13 @@ export type BoxProps<E extends React.ElementType> = PolymorphicComponentProps<
 const _Box: PolymorphicComponentWithRef<
   BoxInternalProps,
   typeof DEFAULT_TAG
-> = ({ display = 'block', children, ...otherProps }, ref) => {
+> = ({ display = 'block', children, className, ...otherProps }, ref) => {
   return (
     <Primitive
-      css={{ display, ...getSpacingStyles(otherProps) }}
+      className={cx(
+        css({ display, ...getSpacingStyles(otherProps) }),
+        className,
+      )}
       {...otherProps}
       ref={ref}
     >
