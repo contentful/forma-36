@@ -94,6 +94,16 @@ export const overview = () => (
     </Flex>
     <Flex marginBottom="spacingM" alignItems="center">
       <Flex marginRight="spacingS">
+        <Badge variant="featured">featured</Badge>
+      </Flex>
+      <Flex marginRight="spacingS">
+        <Badge variant="featured" size="small">
+          featured
+        </Badge>
+      </Flex>
+    </Flex>
+    <Flex marginBottom="spacingM" alignItems="center">
+      <Flex marginRight="spacingS">
         <Badge variant="muted">muted</Badge>
       </Flex>
       <Flex marginRight="spacingS">
