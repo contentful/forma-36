@@ -68,6 +68,11 @@ export const overview = () => (
       </Flex>
       <Flex marginBottom="spacingM" alignItems="center">
         <Flex marginRight="spacingS">
+          <Tag tagType="featured">featured</Tag>
+        </Flex>
+      </Flex>
+      <Flex marginBottom="spacingM" alignItems="center">
+        <Flex marginRight="spacingS">
           <Tag tagType="muted">muted</Tag>
           <Paragraph style={{ color: `${tokens.colorRedBase}` }}>
             {' '}

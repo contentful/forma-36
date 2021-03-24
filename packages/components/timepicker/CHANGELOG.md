@@ -7,10 +7,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @contentful/forma-36-react-timepicker
 
-
-
-
-
 # [0.5.0-alpha.28](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-timepicker@0.5.0-alpha.27...@contentful/forma-36-react-timepicker@0.5.0-alpha.28) (2021-03-18)
 
 **Note:** Version bump only for package @contentful/forma-36-react-timepicker

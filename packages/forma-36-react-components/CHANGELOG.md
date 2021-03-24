@@ -5,14 +5,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [3.85.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.84.3...@contentful/forma-36-react-components@3.85.0) (2021-03-19)
 
-
 ### Features
 
-* add rel attribute to card component ([ca18a23](https://github.com/contentful/forma-36/commit/ca18a239e0c35e8f0685ae9573be040b185e9b96))
-
-
-
-
+- add rel attribute to card component ([ca18a23](https://github.com/contentful/forma-36/commit/ca18a239e0c35e8f0685ae9573be040b185e9b96))
 
 ## [3.84.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.84.2...@contentful/forma-36-react-components@3.84.3) (2021-03-18)
 
