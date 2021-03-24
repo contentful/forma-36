@@ -1,12 +1,7 @@
 import tokens from '@contentful/f36-tokens';
-import type { Interpolation } from '@emotion/serialize';
 import type { BadgeVariant, BadgeSize } from './types';
 
-const variantToStyles = ({
-  variant,
-}: {
-  variant: BadgeVariant;
-}): Interpolation => {
+const variantToStyles = ({ variant }: { variant: BadgeVariant }) => {
   switch (variant) {
     case 'positive':
       return {
@@ -49,7 +44,7 @@ const variantToStyles = ({
   }
 };
 
-const sizeToStyles = ({ size }: { size: BadgeSize }): Interpolation => {
+const sizeToStyles = ({ size }: { size: BadgeSize }) => {
   switch (size) {
     case 'small':
       return {
@@ -74,7 +69,7 @@ export const getBadgeStyles = ({
 }: {
   variant: BadgeVariant;
   size: BadgeSize;
-}): Interpolation => {
+}) => {
   return [
     {
       fontFamily: tokens.fontStackPrimary,
