@@ -52,6 +52,11 @@
   background-color: var(--color-primary);
 }
 
+.Tag--featured {
+  color: var(--color-purple-base);
+  background-color: var(--color-purple-lightest);
+}
+
 .Tag--small {
   padding: 3px var(--spacing-2xs);
   font-size: 0.625rem;
