@@ -44,6 +44,11 @@ const variantToStyles = ({
         color: tokens.colorWhite,
         backgroundColor: tokens.colorPrimary,
       };
+    case 'featured':
+      return {
+        color: tokens.colorPurpleBase,
+        backgroundColor: tokens.colorPurpleLightest,
+      };
     default:
       return {};
   }
