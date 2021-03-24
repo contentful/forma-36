@@ -33,7 +33,7 @@ const statusTagTypeMap = {
 export interface TagProps {
   /**
    * prop, used for setting type of the component from
-   * TagTypes - primary, primary-filled, positive, negative, warning, secondary, muted, featured */
+   */
   tagType?: TagType;
   /**
    * property to set size of the component */

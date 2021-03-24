@@ -193,6 +193,29 @@ Tags are used to label or highlight items in the interface.
 </>
 ```
 
+- **Featured** - used for featured entities that should be highlighted.
+
+```jsx
+<Table>
+  <TableHead>
+    <TableRow>
+      <TableCell>Space</TableCell>
+      <TableCell>Updated</TableCell>
+      <TableCell>Status</TableCell>
+    </TableRow>
+  </TableHead>
+  <TableBody>
+    <TableRow>
+      <TableCell>My space</TableCell>
+      <TableCell>Oct 29, 2020</TableCell>
+      <TableCell>
+        <Tag tagType="primary">trial</Tag>
+      </TableCell>
+    </TableRow>
+  </TableBody>
+</Table>
+```
+
 - **Muted** - this `tagType` is deprecated, please use `tagType` `secondary` instead
 
 ### Tag sizes
