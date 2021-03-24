@@ -10,7 +10,16 @@ import {
 } from '@contentful/f36-core';
 import { TypographyContext } from './Typography';
 
-export type HeadingElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
+export type HeadingElement =
+  | 'h1'
+  | 'h2'
+  | 'h3'
+  | 'h4'
+  | 'h5'
+  | 'h6'
+  | 'p'
+  | 'div'
+  | 'span';
 
 export interface HeadingInternalProps extends CommonProps, MarginProps {
   as?: HeadingElement;

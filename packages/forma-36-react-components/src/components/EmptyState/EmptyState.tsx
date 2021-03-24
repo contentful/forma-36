@@ -1,5 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
+import type { HeadingElement } from '@contentful/f36-typography';
 import { Heading, Paragraph, Typography } from '@contentful/f36-typography';
 import styles from './EmptyState.css';
 
@@ -36,7 +37,7 @@ export interface EmptyStateProps {
 
 interface TextElementProps {
   text: React.ReactNode;
-  elementType?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
+  elementType?: HeadingElement;
 }
 
 interface ImageProps {
