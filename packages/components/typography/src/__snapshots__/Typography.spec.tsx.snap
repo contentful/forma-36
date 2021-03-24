@@ -203,7 +203,7 @@ exports[`renders the component with an additional class name 1`] = `
 }
 
 <div
-  class="my-extra-class emotion-2"
+  class="emotion-2 my-extra-class"
   data-test-id="cf-ui-text-container"
 >
   <h1
