@@ -1,4 +1,4 @@
-import type { F36Spacing } from '@contentful/f36-tokens';
+import type { SpacingTokens } from '@contentful/f36-tokens';
 import type { CSSProperties } from 'react';
 
 export type CommonProps = {
@@ -35,7 +35,7 @@ export type EntityStatus =
   | 'new'
   | 'published';
 
-export type Spacing = F36Spacing | 'none';
+export type Spacing = SpacingTokens | 'none';
 
 export interface MarginProps {
   /**

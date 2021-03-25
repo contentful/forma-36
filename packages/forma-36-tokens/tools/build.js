@@ -94,17 +94,17 @@ const buildIndexDTS = (srcPath, tokens) => {
     srcPath,
     `declare module '@contentful/f36-tokens' {
       ${createInterfaceDefinition(tokens)}
-      ${createUnionThatStarts('color', 'F36Color')}
-      ${createUnionThatStarts('spacing', 'F36Spacing')}
-      ${createUnionThatStarts('fontSize', 'F36FontSize')}
-      ${createUnionThatStarts('lineHeight', 'F36LineHeight')}
-      ${createUnionThatStarts('letterSpacing', 'F36LetterSpacing')}
-      ${createUnionThatStarts('fontWeight', 'F36FontWeight')}
-      ${createUnionThatStarts('fontStack', 'F36FontStack')}
-      ${createUnionThatStarts('boxShadow', 'F36BoxShadow')}
-      ${createUnionThatStarts('borderRadius', 'F36BorderRadius')}
-      ${createUnionThatStarts('zIndex', 'F36ZIndex')}
-      ${createUnionThatStarts('glow', 'F36Glow')}
+      ${createUnionThatStarts('color', 'ColorTokens')}
+      ${createUnionThatStarts('spacing', 'SpacingTokens')}
+      ${createUnionThatStarts('fontSize', 'FontSizeTokens')}
+      ${createUnionThatStarts('lineHeight', 'LineHeightTokens')}
+      ${createUnionThatStarts('letterSpacing', 'LetterSpacingTokens')}
+      ${createUnionThatStarts('fontWeight', 'FontWeightTokens')}
+      ${createUnionThatStarts('fontStack', 'FontStackTokens')}
+      ${createUnionThatStarts('boxShadow', 'BoxShadowTokens')}
+      ${createUnionThatStarts('borderRadius', 'BorderRadiusTokens')}
+      ${createUnionThatStarts('zIndex', 'ZIndexTokens')}
+      ${createUnionThatStarts('glow', 'GlowTokens')}
       const tokens: F36Tokens;
       export default tokens;
     }`,
