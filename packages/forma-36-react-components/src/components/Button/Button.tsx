@@ -80,7 +80,6 @@ export const Button = ({
       [styles['Button--disabled']]: disabled,
       [styles['Button--full-width']]: isFullWidth,
       [styles['Button--is-active']]: isActive,
-      [styles['Button--is-dropdown']]: indicateDropdown,
     },
   );
 
