@@ -513,6 +513,15 @@
         "code",
         "maintenance"
       ]
+    },
+    {
+      "login": "Sarah-Roediger",
+      "name": "Sarah",
+      "avatar_url": "https://avatars.githubusercontent.com/u/67960996?v=4",
+      "profile": "https://github.com/Sarah-Roediger",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
