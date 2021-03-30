@@ -128,3 +128,15 @@ it('has no a11y issues', async () => {
 
   expect(results).toHaveNoViolations();
 });
+
+it('renders the component with custom content', () => {
+  const { container } = render(
+    <EntryCard
+      status="published"
+      contentType="My Content Type"
+      contentElement={<div>This is custom content</div>}
+    />,
+  );
+
+  expect(container.firstChild).toMatchSnapshot();
+});

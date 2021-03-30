@@ -79,6 +79,10 @@ export interface EntryCardPropTypes extends BaseCardProps {
    * Changes the height of the component. When small will also ensure thumbnail and description aren't rendered
    */
   size?: EntryCardSize;
+  /**
+   * Render custom content for the entry. This will override the props title, description and thumbnailElement
+   */
+  contentElement?: React.ReactNode;
 }
 
 export function EntryCard({
@@ -98,6 +102,7 @@ export function EntryCard({
   cardDragHandleComponent,
   cardDragHandleProps,
   withDragHandle,
+  contentElement,
   ...otherProps
 }: EntryCardPropTypes): React.ReactElement {
   const renderTitle = useCallback((_size: EntryCardSize, title?: string) => {
@@ -253,11 +258,15 @@ export function EntryCard({
                 )}
               </div>
               <div className={styles.EntryCard__content}>
-                <div className={styles.EntryCard__body}>
-                  {renderTitle(size, title)}
-                  {renderDescription(size, description)}
-                </div>
-                {renderThumbnail(size, thumbnailElement)}
+                {contentElement ?? (
+                  <React.Fragment>
+                    <div className={styles.EntryCard__body}>
+                      {renderTitle(size, title)}
+                      {renderDescription(size, description)}
+                    </div>
+                    {renderThumbnail(size, thumbnailElement)}
+                  </React.Fragment>
+                )}
               </div>
             </React.Fragment>
           </div>

@@ -341,6 +341,41 @@ exports[`renders the component with an additional class name 1`] = `
 </div>
 `;
 
+exports[`renders the component with custom content 1`] = `
+<div
+  class="Card EntryCard EntryCard--size-default Card--padding-none"
+  data-test-id="cf-ui-entry-card"
+>
+  <div
+    class="EntryCard__wrapper"
+  >
+    <div
+      class="EntryCard__header"
+    >
+      <div
+        class="EntryCard__content-type"
+        data-test-id="content-type"
+      >
+        My Content Type
+      </div>
+      <div
+        class="Tag Tag--positive"
+        data-test-id="cf-ui-tag"
+      >
+        published
+      </div>
+    </div>
+    <div
+      class="EntryCard__content"
+    >
+      <div>
+        This is custom content
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`renders the component with dropdownListElements 1`] = `
 <div
   class="Card EntryCard EntryCard--size-default Card--padding-none"

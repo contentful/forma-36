@@ -75,6 +75,30 @@ WithThumbnailElement.args = {
   ...Basic.args,
 };
 
+export const WithContentElement = (args: EntryCardPropTypes) => (
+  <EntryCard
+    {...args}
+    size="auto"
+    contentElement={
+      <Flex
+        alignItems="center"
+        flexDirection="column"
+        style={{ width: '100%' }}
+      >
+        <img
+          src="https://via.placeholder.com/300x200"
+          alt="Joy Division - Closer album cover"
+        />
+        <div>Joy Division - Closer</div>
+      </Flex>
+    }
+  />
+);
+
+WithContentElement.args = {
+  ...Basic.args,
+};
+
 export const Overview = () => (
   <div>
     <Flex marginBottom="spacingS" marginTop="spacingM">
