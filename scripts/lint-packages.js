@@ -108,11 +108,11 @@ for (const pkg of packages) {
     `${pkg} has incorrect or missing repository url`,
   );
 
-  const readme = path.join(path.dirname(pkg), 'README.md');
+  const readme = path.join(path.dirname(pkg), 'README.mdx');
   if (!fs.existsSync(readme)) {
     fs.writeFileSync(
       readme,
-      `# ${json.name}\n\nThis package is part of [forma-36](https://github.com/contentful/forma-36). See the repo for more details.`,
+      `# ${json.name}\n\nThis package is part of [forma-36](https://github.com/contentful/forma-36). See the repo for more details.\n`,
     );
   }
 }

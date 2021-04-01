@@ -76,9 +76,16 @@ exports[`renders the component in "idle" variant by default 1`] = `
 `;
 
 exports[`renders the component with a close button 1`] = `
-.emotion-0 {
+.emotion-1 {
   display: inherit;
   outline: 0;
+}
+
+.emotion-0 {
+  display: inline-block;
+  fill: #606C7C;
+  height: 18px;
+  width: 18px;
 }
 
 <div
@@ -98,11 +105,11 @@ exports[`renders the component with a close button 1`] = `
     type="button"
   >
     <span
-      class="emotion-0"
+      class="emotion-1"
       tabindex="-1"
     >
       <svg
-        class="Icon Icon--small Icon--muted Pill__icon--idle"
+        class="emotion-0 Pill__icon--idle"
         data-test-id="cf-ui-icon"
         height="1em"
         viewBox="0 0 24 24"
@@ -118,6 +125,13 @@ exports[`renders the component with a close button 1`] = `
 `;
 
 exports[`renders the component with a dragging handle 1`] = `
+.emotion-0 {
+  display: inline-block;
+  fill: #606C7C;
+  height: 18px;
+  width: 18px;
+}
+
 <div
   class="Pill Pill--idle my-extra-class"
   data-test-id="cf-ui-pill"
@@ -126,7 +140,7 @@ exports[`renders the component with a dragging handle 1`] = `
     class="Pill__drag-icon"
   >
     <svg
-      class="Icon Icon--small Icon--muted Pill__icon--idle"
+      class="emotion-0 Pill__icon--idle"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"

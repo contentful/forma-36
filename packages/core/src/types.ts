@@ -81,3 +81,5 @@ export type PickUnion<UnionType, Keys> = Exclude<
   UnionType,
   Exclude<UnionType, Keys>
 >;
+
+export type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };

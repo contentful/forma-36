@@ -9,7 +9,8 @@ import React, {
   ReactNode,
 } from 'react';
 import cn from 'classnames';
-import { Icon } from '../Icon';
+import { ChevronDown } from '@contentful/f36-icons';
+
 import styles from './Select.css';
 
 export interface SelectProps {
@@ -102,11 +103,7 @@ export const Select = ({
       >
         {children}
       </select>
-      <Icon
-        className={styles['Select__icon']}
-        icon="ChevronDown"
-        color="muted"
-      />
+      <ChevronDown className={styles['Select__icon']} variant="muted" />
     </div>
   );
 };

@@ -1,10 +1,10 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { ArrowDown } from '@contentful/f36-icons';
 
 import { axe } from '../../utils/axeHelper';
 import { TextLink } from './TextLink';
-import { iconName } from '../Icon/constants';
 
 it('renders as a button', () => {
   const { container } = render(<TextLink>Text Link</TextLink>);
@@ -125,16 +125,14 @@ it('has no a11y issues when rendered as a link', async () => {
 });
 
 it('renders with an icon', () => {
-  const { container } = render(
-    <TextLink icon={iconName[Object.keys(iconName)[0]]}>Text Link</TextLink>,
-  );
+  const { container } = render(<TextLink icon={ArrowDown}>Text Link</TextLink>);
 
   expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders with an icon aligned right to the text', () => {
   const { container } = render(
-    <TextLink iconPosition="right" icon={iconName[Object.keys(iconName)[0]]}>
+    <TextLink iconPosition="right" icon={ArrowDown}>
       Text Link
     </TextLink>,
   );

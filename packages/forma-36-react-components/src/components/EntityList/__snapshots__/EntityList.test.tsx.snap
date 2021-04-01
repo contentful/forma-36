@@ -8,9 +8,16 @@ exports[`renders the component 1`] = `
 `;
 
 exports[`renders the component with EntityListItems as children 1`] = `
-.emotion-0 {
+.emotion-1 {
   display: inherit;
   outline: 0;
+}
+
+.emotion-0 {
+  display: inline-block;
+  fill: #606C7C;
+  height: 18px;
+  width: 18px;
 }
 
 <ul
@@ -25,14 +32,14 @@ exports[`renders the component with EntityListItems as children 1`] = `
       class="EntityListItem__inner"
     >
       <span
-        class="emotion-0 EntityListItem__focus-trap"
+        class="emotion-1 EntityListItem__focus-trap"
         tabindex="-1"
       >
         <figure
           class="EntityListItem__media"
         >
           <svg
-            class="Icon Icon--small Icon--muted"
+            class="emotion-0"
             data-test-id="cf-ui-icon"
             height="1em"
             viewBox="0 0 24 24"
@@ -89,14 +96,14 @@ exports[`renders the component with EntityListItems as children 1`] = `
       class="EntityListItem__inner"
     >
       <span
-        class="emotion-0 EntityListItem__focus-trap"
+        class="emotion-1 EntityListItem__focus-trap"
         tabindex="-1"
       >
         <figure
           class="EntityListItem__media"
         >
           <svg
-            class="Icon Icon--small Icon--muted"
+            class="emotion-0"
             data-test-id="cf-ui-icon"
             height="1em"
             viewBox="0 0 24 24"
@@ -153,14 +160,14 @@ exports[`renders the component with EntityListItems as children 1`] = `
       class="EntityListItem__inner"
     >
       <span
-        class="emotion-0 EntityListItem__focus-trap"
+        class="emotion-1 EntityListItem__focus-trap"
         tabindex="-1"
       >
         <figure
           class="EntityListItem__media"
         >
           <svg
-            class="Icon Icon--small Icon--muted"
+            class="emotion-0"
             data-test-id="cf-ui-icon"
             height="1em"
             viewBox="0 0 24 24"

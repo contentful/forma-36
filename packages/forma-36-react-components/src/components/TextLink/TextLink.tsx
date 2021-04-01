@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
 import cn from 'classnames';
 import type { MouseEventHandler } from 'react';
-
-import { Icon, IconType } from '../Icon';
 import { TabFocusTrap } from '@contentful/f36-utils';
+import type { IconComponent } from '@contentful/f36-icon';
+
 import styles from './TextLink.css';
 
 export type TextLinkType =
@@ -35,7 +35,7 @@ export interface TextLinkProps {
   testId?: string;
   onClick?: MouseEventHandler<HTMLAnchorElement | HTMLButtonElement>;
   className?: string;
-  icon?: IconType;
+  icon?: IconComponent;
   text?: string;
   iconPosition?: IconPositionType;
 }
@@ -54,8 +54,9 @@ export function TextLink({
   ...otherProps
 }: TextLinkProps): React.ReactElement {
   const renderIcon = useCallback(
-    (icon: IconType, linkType: TextLinkType) => {
-      if (!icon) return undefined;
+    (Component: TextLinkProps['icon'], linkType: TextLinkType) => {
+      console.log('Component', Component);
+      if (!Component) return undefined;
 
       return (
         <div
@@ -65,11 +66,7 @@ export function TextLink({
               : styles['TextLink__icon-wrapper']
           }
         >
-          <Icon
-            icon={icon}
-            color={linkType}
-            className={styles.TextLink__icon}
-          />
+          <Component className={styles.TextLink__icon} variant={linkType} />
         </div>
       );
     },

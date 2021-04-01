@@ -1,6 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
+.emotion-0 {
+  display: inline-block;
+  fill: #606C7C;
+  height: 18px;
+  width: 18px;
+}
+
 <div
   class="SelectField"
   data-test-id="cf-ui-select-field"
@@ -34,7 +41,7 @@ exports[`renders the component 1`] = `
       </option>
     </select>
     <svg
-      class="Icon Icon--small Icon--muted Select__icon"
+      class="emotion-0 Select__icon"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -49,6 +56,13 @@ exports[`renders the component 1`] = `
 `;
 
 exports[`renders the component as disabled 1`] = `
+.emotion-0 {
+  display: inline-block;
+  fill: #606C7C;
+  height: 18px;
+  width: 18px;
+}
+
 <div
   class="SelectField"
   data-test-id="cf-ui-select-field"
@@ -83,7 +97,7 @@ exports[`renders the component as disabled 1`] = `
       </option>
     </select>
     <svg
-      class="Icon Icon--small Icon--muted Select__icon"
+      class="emotion-0 Select__icon"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -98,6 +112,13 @@ exports[`renders the component as disabled 1`] = `
 `;
 
 exports[`renders the component as required 1`] = `
+.emotion-0 {
+  display: inline-block;
+  fill: #606C7C;
+  height: 18px;
+  width: 18px;
+}
+
 <div
   class="SelectField"
   data-test-id="cf-ui-select-field"
@@ -131,7 +152,7 @@ exports[`renders the component as required 1`] = `
       </option>
     </select>
     <svg
-      class="Icon Icon--small Icon--muted Select__icon"
+      class="emotion-0 Select__icon"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -146,6 +167,13 @@ exports[`renders the component as required 1`] = `
 `;
 
 exports[`renders the component with a help text 1`] = `
+.emotion-0 {
+  display: inline-block;
+  fill: #606C7C;
+  height: 18px;
+  width: 18px;
+}
+
 <div
   class="SelectField"
   data-test-id="cf-ui-select-field"
@@ -179,7 +207,7 @@ exports[`renders the component with a help text 1`] = `
       </option>
     </select>
     <svg
-      class="Icon Icon--small Icon--muted Select__icon"
+      class="emotion-0 Select__icon"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -204,6 +232,20 @@ exports[`renders the component with a help text 1`] = `
 `;
 
 exports[`renders the component with a validation message 1`] = `
+.emotion-0 {
+  display: inline-block;
+  fill: #606C7C;
+  height: 18px;
+  width: 18px;
+}
+
+.emotion-1 {
+  display: inline-block;
+  fill: #BF3045;
+  height: 18px;
+  width: 18px;
+}
+
 <div
   class="SelectField"
   data-test-id="cf-ui-select-field"
@@ -237,7 +279,7 @@ exports[`renders the component with a validation message 1`] = `
       </option>
     </select>
     <svg
-      class="Icon Icon--small Icon--muted Select__icon"
+      class="emotion-0 Select__icon"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -253,7 +295,7 @@ exports[`renders the component with a validation message 1`] = `
     data-test-id="cf-ui-validation-message"
   >
     <svg
-      class="Icon Icon--small Icon--negative ValidationMessage__icon"
+      class="emotion-1 ValidationMessage__icon"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -277,6 +319,13 @@ exports[`renders the component with a validation message 1`] = `
 `;
 
 exports[`renders the component with a value 1`] = `
+.emotion-0 {
+  display: inline-block;
+  fill: #606C7C;
+  height: 18px;
+  width: 18px;
+}
+
 <div
   class="SelectField"
   data-test-id="cf-ui-select-field"
@@ -310,7 +359,7 @@ exports[`renders the component with a value 1`] = `
       </option>
     </select>
     <svg
-      class="Icon Icon--small Icon--muted Select__icon"
+      class="emotion-0 Select__icon"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"

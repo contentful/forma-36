@@ -1,12 +1,13 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import { HeadingOne } from '@contentful/f36-icons';
 
 import { axe } from '../../../utils/axeHelper';
 import { EditorToolbarButton } from './EditorToolbarButton';
 
 it('renders the component', () => {
   const { container } = render(
-    <EditorToolbarButton icon="HeadingOne" label="H1" />,
+    <EditorToolbarButton icon={HeadingOne} label="H1" />,
   );
 
   expect(container.firstChild).toMatchSnapshot();
@@ -15,7 +16,7 @@ it('renders the component', () => {
 it('renders the component with an additional class name', () => {
   const { container } = render(
     <EditorToolbarButton
-      icon="HeadingOne"
+      icon={HeadingOne}
       label="H1"
       className="my-extra-class"
     />,
@@ -26,7 +27,7 @@ it('renders the component with an additional class name', () => {
 
 it('renders the component with a tooltip', () => {
   const { container } = render(
-    <EditorToolbarButton icon="HeadingOne" label="H1" tooltip="H1" />,
+    <EditorToolbarButton icon={HeadingOne} label="H1" tooltip="H1" />,
   );
 
   expect(container.firstChild).toMatchSnapshot();
@@ -34,7 +35,7 @@ it('renders the component with a tooltip', () => {
 
 it('renders the component as active', () => {
   const { container } = render(
-    <EditorToolbarButton icon="HeadingOne" label="H1" tooltip="H1" isActive />,
+    <EditorToolbarButton icon={HeadingOne} label="H1" tooltip="H1" isActive />,
   );
 
   expect(container.firstChild).toMatchSnapshot();
@@ -42,7 +43,7 @@ it('renders the component as active', () => {
 
 it('renders the component as disabled', () => {
   const { container } = render(
-    <EditorToolbarButton icon="HeadingOne" label="H1" tooltip="H1" disabled />,
+    <EditorToolbarButton icon={HeadingOne} label="H1" tooltip="H1" disabled />,
   );
 
   expect(container.firstChild).toMatchSnapshot();
@@ -51,7 +52,7 @@ it('renders the component as disabled', () => {
 it('renders with a dropdown indicator', () => {
   const { container } = render(
     <EditorToolbarButton
-      icon="HeadingOne"
+      icon={HeadingOne}
       label="H1"
       tooltip="H1"
       withDropdown
@@ -63,7 +64,7 @@ it('renders with a dropdown indicator', () => {
 
 it('has no a11y issues', async () => {
   const { container } = render(
-    <EditorToolbarButton icon="HeadingOne" label="H1" />,
+    <EditorToolbarButton icon={HeadingOne} label="H1" />,
   );
   const results = await axe(container);
 

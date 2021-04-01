@@ -1,0 +1,62 @@
+---
+title: 'Icon'
+type: 'component'
+slug: /components/icon/
+github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/Select'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-icon--default'
+typescript: ./src/Icon.tsx
+---
+
+The icon component can be used to enhance custom icons with Forma 36's icon props and styles.
+
+## Table of contents
+
+- [How to use icon](#how-to-use-icon)
+- [Component variations](#component-variations)
+- [Accessibility](#accessibility)
+
+## How to use icons
+
+Please see the [documentation for Forma 36's built-in icons](/components/icons#how-to-use-icons) for recommendations on when and how to use icons.
+
+## Code examples
+
+### Custom icons
+
+Custom icons can be rendered with Forma 36 icon props and styling by wrapping SVG paths in the `Icon` component:
+
+```tsx static=true
+import { Icon } from '@contentful/f36-icon';
+
+<Icon>
+  <path d="M7 10l5 5 5-5z" />,
+  <path d="M0 0h24v24H0z" fill="none" />
+</Icon>;
+```
+
+### Third-party icon libraries
+
+The `Icon` component can also be used to wrap icons from third-party icon libraries such as [`react-icons`](https://react-icons.github.io/react-icons):
+
+```tsx static=true
+import { Icon } from '@contentful/f36-icons';
+import { MdAccessAlarm } from 'react-icons/md';
+
+const AccessAlarm = (props) => {
+  return <Icon {...props} as={MdAccessAlarm} />;
+};
+```
+
+## Component variations
+
+Custom icons created with the icon component can be configured with the [same props as Forma 36's built-in icons](/components/icons#component-variations).
+
+## Accessibility
+
+Missing
+
+## Props
+
+import { Props } from '@contentful/f36-docs-utils';
+
+<Props of="Icon" />

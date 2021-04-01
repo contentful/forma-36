@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { Icon } from '@contentful/f36-components';
+import { Copy } from '@contentful/f36-icons';
 import { css } from 'emotion';
 
 const styles = {
@@ -58,9 +58,8 @@ class ColorSwatch extends Component {
           >
             <div className={styles.cssVar}>
               {cssVar}
-              <Icon
-                icon="Copy"
-                color="muted"
+              <Copy
+                variant="muted"
                 style={{
                   width: '12px',
                   height: '12px',
@@ -75,9 +74,8 @@ class ColorSwatch extends Component {
           >
             <div className={styles.hex}>
               {hex}
-              <Icon
-                icon="Copy"
-                color="muted"
+              <Copy
+                variant="muted"
                 style={{
                   width: '12px',
                   height: '12px',

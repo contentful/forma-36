@@ -1,8 +1,8 @@
 import React from 'react';
 import cn from 'classnames';
-
-import { Icon } from '../Icon';
 import { TabFocusTrap } from '@contentful/f36-utils';
+import { Drag, Close } from '@contentful/f36-icons';
+
 import styles from './Pill.css';
 
 export interface PillProps {
@@ -40,10 +40,9 @@ export function Pill({
           dragHandleComponent
         ) : (
           <span className={styles['Pill__drag-icon']}>
-            <Icon
-              icon="Drag"
-              color="muted"
+            <Drag
               className={styles[`Pill__icon--${variant}`]}
+              variant="muted"
             />
           </span>
         ))}
@@ -65,10 +64,9 @@ export function Pill({
           )}
         >
           <TabFocusTrap>
-            <Icon
-              icon="Close"
-              color="muted"
+            <Close
               className={styles[`Pill__icon--${variant}`]}
+              variant="muted"
             />
           </TabFocusTrap>
         </button>

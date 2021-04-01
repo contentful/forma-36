@@ -170,9 +170,16 @@ exports[`renders the component with small width 1`] = `
 `;
 
 exports[`renders the component with the copy button 1`] = `
-.emotion-0 {
+.emotion-1 {
   display: inherit;
   outline: 0;
+}
+
+.emotion-0 {
+  display: inline-block;
+  fill: #606C7C;
+  height: 18px;
+  width: 18px;
 }
 
 <div
@@ -199,7 +206,7 @@ exports[`renders the component with the copy button 1`] = `
         type="button"
       >
         <span
-          class="emotion-0 CopyButton__TabFocusTrap"
+          class="emotion-1 CopyButton__TabFocusTrap"
           tabindex="-1"
         >
           <span
@@ -209,7 +216,7 @@ exports[`renders the component with the copy button 1`] = `
              to clipboard
           </span>
           <svg
-            class="Icon Icon--small Icon--muted"
+            class="emotion-0"
             data-test-id="cf-ui-icon"
             height="1em"
             viewBox="0 0 24 24"

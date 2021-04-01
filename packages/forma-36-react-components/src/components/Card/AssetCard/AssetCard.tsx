@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
 import cn from 'classnames';
 import { EntityStatusBadge } from '@contentful/f36-badge';
+import type { IconComponent } from '@contentful/f36-icon';
 
 import { Card, BaseCardProps } from '../Card';
-import { Icon, IconType } from '../../Icon';
 import { CardActions } from '../CardActions/CardActions';
 import { Asset } from '../../Asset';
 import type { AssetType, AssetProps } from '../../Asset';
@@ -38,7 +38,7 @@ export interface AssetCardProps extends BaseCardProps {
   /**
    * An icon for the status of the entry
    */
-  statusIcon?: React.ReactNode | IconType;
+  statusIcon?: IconComponent;
   /**
    * The type of asset being represented
    */
@@ -83,18 +83,12 @@ export function AssetCard({
   ...otherProps
 }: AssetCardProps): React.ReactElement {
   const renderStatus = useCallback(
-    (status: AssetCardProps['status'], statusIcon: React.ReactNode) => {
+    (status: AssetCardProps['status'], Icon: AssetCardProps['statusIcon']) => {
       return (
         <>
-          {statusIcon && typeof statusIcon === 'string' ? (
-            <Icon
-              icon={statusIcon as IconType}
-              color="muted"
-              className={styles['AssetCard__icon']}
-            />
-          ) : (
-            statusIcon
-          )}
+          {Icon ? (
+            <Icon className={styles['AssetCard__icon']} variant="muted" />
+          ) : null}
           <EntityStatusBadge entityStatus={status} />
         </>
       );
@@ -159,9 +153,9 @@ export function AssetCard({
               <Asset
                 className={styles['AssetCard__asset']}
                 src={src}
+                status={status}
                 title={title}
                 type={type}
-                status={status}
               />
             </div>
           </div>

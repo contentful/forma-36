@@ -262,9 +262,16 @@ exports[`renders as a link 1`] = `
 `;
 
 exports[`renders with an icon 1`] = `
-.emotion-0 {
+.emotion-1 {
   display: inherit;
   outline: 0;
+}
+
+.emotion-0 {
+  display: inline-block;
+  fill: #2D64B3;
+  height: 18px;
+  width: 18px;
 }
 
 <button
@@ -273,14 +280,14 @@ exports[`renders with an icon 1`] = `
   type="button"
 >
   <span
-    class="emotion-0"
+    class="emotion-1"
     tabindex="-1"
   >
     <div
       class="TextLink__icon-wrapper"
     >
       <svg
-        class="Icon Icon--small Icon--primary TextLink__icon"
+        class="emotion-0 TextLink__icon"
         data-test-id="cf-ui-icon"
         height="1em"
         viewBox="0 0 24 24"
@@ -289,6 +296,7 @@ exports[`renders with an icon 1`] = `
         <path
           d="M7 10l5 5 5-5z"
         />
+        ,
         <path
           d="M0 0h24v24H0z"
           fill="none"
@@ -301,9 +309,16 @@ exports[`renders with an icon 1`] = `
 `;
 
 exports[`renders with an icon aligned right to the text 1`] = `
-.emotion-0 {
+.emotion-1 {
   display: inherit;
   outline: 0;
+}
+
+.emotion-0 {
+  display: inline-block;
+  fill: #2D64B3;
+  height: 18px;
+  width: 18px;
 }
 
 <button
@@ -312,7 +327,7 @@ exports[`renders with an icon aligned right to the text 1`] = `
   type="button"
 >
   <span
-    class="emotion-0"
+    class="emotion-1"
     tabindex="-1"
   >
     Text Link
@@ -320,7 +335,7 @@ exports[`renders with an icon aligned right to the text 1`] = `
       class="TextLink__icon-wrapper--right"
     >
       <svg
-        class="Icon Icon--small Icon--primary TextLink__icon"
+        class="emotion-0 TextLink__icon"
         data-test-id="cf-ui-icon"
         height="1em"
         viewBox="0 0 24 24"
@@ -329,6 +344,7 @@ exports[`renders with an icon aligned right to the text 1`] = `
         <path
           d="M7 10l5 5 5-5z"
         />
+        ,
         <path
           d="M0 0h24v24H0z"
           fill="none"

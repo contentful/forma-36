@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { Lock } from '@contentful/f36-icons';
 
 import { axe } from '../../utils/axeHelper';
 import { TextField } from './TextField';
@@ -74,7 +75,7 @@ it('renders the component with a textlink', () => {
       name="someComponent"
       id="someComponent"
       textLinkProps={{
-        icon: 'Lock',
+        icon: Lock,
         text: 'Unlock to edit',
         onClick: () => {},
       }}
