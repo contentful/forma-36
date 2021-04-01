@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.86.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.86.1...@contentful/forma-36-react-components@3.86.2) (2021-04-01)
+
+
+### Bug Fixes
+
+* equal left & right paddings in a dropdown button ([#902](https://github.com/contentful/forma-36/issues/902)) ([334c598](https://github.com/contentful/forma-36/commit/334c598fb27848e9df2d2996d67b6a0dcbbf77fd))
+
+
+
+
+
 ## [3.86.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.86.0...@contentful/forma-36-react-components@3.86.1) (2021-04-01)
 
 ### Bug Fixes
