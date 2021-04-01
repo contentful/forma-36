@@ -5,14 +5,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [3.86.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.86.0...@contentful/forma-36-react-components@3.86.1) (2021-04-01)
 
-
 ### Bug Fixes
 
-* **copy-button:** center icon alignment ([#905](https://github.com/contentful/forma-36/issues/905)) ([0d1e7c4](https://github.com/contentful/forma-36/commit/0d1e7c44b866bcf216573e1461d8b7c72ebae7e6)), closes [#904](https://github.com/contentful/forma-36/issues/904)
-
-
-
-
+- **copy-button:** center icon alignment ([#905](https://github.com/contentful/forma-36/issues/905)) ([0d1e7c4](https://github.com/contentful/forma-36/commit/0d1e7c44b866bcf216573e1461d8b7c72ebae7e6)), closes [#904](https://github.com/contentful/forma-36/issues/904)
 
 # [3.86.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.85.0...@contentful/forma-36-react-components@3.86.0) (2021-03-24)
 
