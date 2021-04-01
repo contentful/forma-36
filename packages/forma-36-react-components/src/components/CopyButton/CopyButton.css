@@ -41,7 +41,7 @@
   composes: sr-only from './../../styles/settings/helpers.css';
 }
 
-.CopyButton__TabFocusTrap {
+.CopyButton .CopyButton__TabFocusTrap {
   width: 100%;
   height: 100%;
   display: flex;
