@@ -6,6 +6,8 @@ import type {
   CommonProps,
   BoxProps,
   ComponentVariant,
+  MarginProps,
+  PaddingProps,
   PolymorphicComponent,
   PolymorphicComponentProps,
   PolymorphicComponentWithRef,
@@ -83,18 +85,19 @@ type IconInternalProps = {
    * Custom SVG viewBox attribute to use
    */
   viewBox?: SVGAttributes<SVGSVGElement>['viewBox'];
-} & AsOrChildren;
-
-export type IconProps = IconInternalProps &
-  Omit<BoxProps<'svg'>, 'as' | 'children'> &
+} & AsOrChildren &
+  MarginProps &
+  PaddingProps &
+  // Omit<BoxProps<'svg'>, 'as' | 'children' | 'display'> &
   SVGAttributes<SVGSVGElement>;
+
+export type IconProps = PolymorphicComponentProps<'svg', IconInternalProps>;
 
 export const _Icon: PolymorphicComponentWithRef<
   IconInternalProps,
   typeof DEFAULT_TAG
 > = (
   {
-    as,
     children,
     className,
     variant = 'primary',
@@ -109,7 +112,6 @@ export const _Icon: PolymorphicComponentWithRef<
   const shared = {
     className: cx(
       css({
-        display: 'inline-block',
         fill: fills[variant],
         height: sizes[size].height,
         width: trimmed ? 'auto' : sizes[size].width,
@@ -120,15 +122,16 @@ export const _Icon: PolymorphicComponentWithRef<
     testId,
   };
 
-  if (as && typeof as !== 'string') {
-    return <Box {...otherProps} {...shared} as={as} />;
-  }
+  // if (as && typeof as !== 'string') {
+  //   return <Box {...otherProps} {...shared} as={as} />;
+  // }
 
   return (
     <Box
       height="1em"
       viewBox={viewBox}
       width="1em"
+      display="inline-block"
       {...otherProps}
       as={DEFAULT_TAG}
       {...shared}
