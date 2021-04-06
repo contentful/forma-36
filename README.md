@@ -160,6 +160,10 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://felixboenke.dev"><img src="https://avatars.githubusercontent.com/u/4083285?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Felix Boenke</b></sub></a><br /><a href="https://github.com/contentful/forma-36/issues?q=author%3AFLoppix" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/damienxy"><img src="https://avatars.githubusercontent.com/u/33579339?v=4?s=100" width="100px;" alt=""/><br /><sub><b>damienxy</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=damienxy" title="Code">💻</a></td>
     <td align="center"><a href="https://nikazawila.com"><img src="https://avatars.githubusercontent.com/u/9191638?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nika Zawila</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=nikazawila" title="Code">💻</a> <a href="#maintenance-nikazawila" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://github.com/Sarah-Roediger"><img src="https://avatars.githubusercontent.com/u/67960996?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sarah</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=Sarah-Roediger" title="Documentation">📖</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/th1nkgr33n"><img src="https://avatars.githubusercontent.com/u/7330927?v=4?s=100" width="100px;" alt=""/><br /><sub><b>th1nkgr33n</b></sub></a><br /><a href="https://github.com/contentful/forma-36/issues?q=author%3Ath1nkgr33n" title="Bug reports">🐛</a></td>
   </tr>
 </table>
 

@@ -513,6 +513,24 @@
         "code",
         "maintenance"
       ]
+    },
+    {
+      "login": "Sarah-Roediger",
+      "name": "Sarah",
+      "avatar_url": "https://avatars.githubusercontent.com/u/67960996?v=4",
+      "profile": "https://github.com/Sarah-Roediger",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "th1nkgr33n",
+      "name": "th1nkgr33n",
+      "avatar_url": "https://avatars.githubusercontent.com/u/7330927?v=4",
+      "profile": "https://github.com/th1nkgr33n",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,

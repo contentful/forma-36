@@ -21,6 +21,7 @@
     "lint": "yarn run lint:js && yarn run lint:packages",
     "lint:js": "eslint packages --ext .js,.jsx,.ts,.tsx",
     "lint:packages": "node scripts/lint-packages.js",
+    "postversion": "yarn run prettier",
     "prettier": "prettier --write '**/*.{jsx,js,ts,tsx,md,mdx}'",
     "prettier:check": "prettier --check '**/*.{jsx,js,ts,tsx,md,mdx}'",
     "semantic-release": "lerna exec --concurrency 1 -- npx --no-install semantic-release -e semantic-release-monorepo",
