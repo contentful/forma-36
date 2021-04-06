@@ -40,7 +40,15 @@ class ComponentSource extends React.Component {
       <div className="f36-margin-bottom--m">
         <LiveProvider
           code={this.props.children.trim()}
-          scope={{ ...f36Components, tokens, ...f36icons, Icon }}
+          // The order is important here as `f36icons` and `f36Components` both
+          // export a component called `Heading`
+          scope={{
+            ...f36icons,
+            HeadingIcon: f36icons.Heading,
+            ...f36Components,
+            tokens,
+            Icon,
+          }}
         >
           <Card padding="none">
             <div className={styles.preview}>

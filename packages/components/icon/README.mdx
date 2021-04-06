@@ -2,61 +2,309 @@
 title: 'Icon'
 type: 'component'
 slug: /components/icon/
-github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/Select'
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/icon'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-icon--default'
-typescript: ./src/Icon.tsx
+typescript: ./src/Icon.tsx,../icons/src/ArrowDown.tsx
 ---
 
-The icon component can be used to enhance custom icons with Forma 36's icon props and styles.
+import { Props } from '@contentful/f36-docs-utils';
+
+Icons are used to indicate actions, statuses and navigation. The icon components can be used in `Button`, `TextLink`, `Note` and other components.
 
 ## Table of contents
 
-- [How to use icon](#how-to-use-icon)
+- [How to use icons](#how-to-use-icons)
+- [Code examples](#code-examples)
 - [Component variations](#component-variations)
 - [Accessibility](#accessibility)
+- [Custom icons and third-party libraries](#custom-icons-and-third-party-libraries)
+- [Props](#props)
 
 ## How to use icons
 
-Please see the [documentation for Forma 36's built-in icons](/components/icons#how-to-use-icons) for recommendations on when and how to use icons.
+- Select an icon that accurately represents the subject
+- Pair icons with text
+- Position buttons consistently in the interface
+- Ensure the behavior of the button is consistent in all use cases
+- Consider how the button fits into the context of the screen and reduce complexity where possible
 
 ## Code examples
 
-### Custom icons
-
-Custom icons can be rendered with Forma 36 icon props and styling by wrapping SVG paths in the `Icon` component:
+Forma 36 provides a list of built-in icons that can be used as regular React components:
 
 ```tsx static=true
-import { Icon } from '@contentful/f36-icon';
+import { ArrowDown } from '@contentful/f36-icons';
 
-<Icon>
-  <path d="M7 10l5 5 5-5z" />,
-  <path d="M0 0h24v24H0z" fill="none" />
-</Icon>;
+<ArrowDown />;
 ```
 
-### Third-party icon libraries
+## Component variations
 
-The `Icon` component can also be used to wrap icons from third-party icon libraries such as [`react-icons`](https://react-icons.github.io/react-icons):
+The icon components can be configured in different ways using variations in color and size:
+
+### Icon variants
+
+```tsx
+<React.Fragment>
+  <div>
+    <Calendar variant="primary" /> Primary
+  </div>
+  <div>
+    <Calendar variant="positive" /> Positive
+  </div>
+  <div>
+    <Calendar variant="negative" /> Negative
+  </div>
+  <div>
+    <Calendar variant="warning" /> Warning
+  </div>
+  <div>
+    <Calendar variant="secondary" /> Secondary
+  </div>
+  <div style={{ backgroundColor: '#8091a5' }}>
+    <Calendar variant="white" /> White
+  </div>
+</React.Fragment>
+```
+
+### Icon sizes
+
+```tsx
+<React.Fragment>
+  <div>
+    <Calendar size="tiny" /> Tiny
+  </div>
+  <div>
+    <Calendar size="small" /> Small
+  </div>
+  <div>
+    <Calendar size="medium" /> Medium
+  </div>
+  <div>
+    <Calendar size="large" /> Large
+  </div>
+</React.Fragment>
+```
+
+### Icons
+
+```tsx
+<Grid columns={'repeat(3, 1fr)'}>
+  {Object.entries({
+    ArrowDown,
+    ArrowDownTrimmed,
+    ArrowUp,
+    ArrowUpTrimmed,
+    Asset,
+    AssetTrimmed,
+    Calendar,
+    ChatBubble,
+    ChatBubbleTrimmed,
+    CheckCircle,
+    CheckCircleTrimmed,
+    ChevronDown,
+    ChevronDownTrimmed,
+    ChevronLeft,
+    ChevronLeftTrimmed,
+    ChevronRight,
+    ChevronRightTrimmed,
+    ChevronUp,
+    ChevronUpTrimmed,
+    Clock,
+    ClockTrimmed,
+    Close,
+    CloseTrimmed,
+    Code,
+    CodeTrimmed,
+    Copy,
+    CopyTrimmed,
+    Cycle,
+    CycleTrimmed,
+    Delete,
+    DeleteTrimmed,
+    Done,
+    DoubleArrow,
+    Download,
+    DownloadTrimmed,
+    Drag,
+    DragTrimmed,
+    Edit,
+    EditTrimmed,
+    EmbeddedEntryBlock,
+    EmbeddedEntryBlockTrimmed,
+    EmbeddedEntryInline,
+    EmbeddedEntryInlineTrimmed,
+    Entry,
+    EntryTrimmed,
+    Environment,
+    EnvironmentAlias,
+    ErrorCircle,
+    ErrorCircleOutline,
+    ErrorCircleTrimmed,
+    ExternalLink,
+    ExternalLinkTrimmed,
+    FaceHappy,
+    FaceHappyTrimmed,
+    Filter,
+    FilterTrimmed,
+    Folder,
+    FolderCreate,
+    FolderCreateTrimmed,
+    FolderOpen,
+    FolderOpenTrimmed,
+    FolderTrimmed,
+    FormatBold,
+    FormatBoldTrimmed,
+    FormatItalic,
+    FormatItalicTrimmed,
+    FormatUnderlined,
+    FormatUnderlinedTrimmed,
+    HeadingIcon,
+    HeadingOne,
+    HeadingOneTrimmed,
+    HeadingTrimmed,
+    HeadingTwo,
+    HeadingTwoTrimmed,
+    HelpCircle,
+    HelpCircleInverted,
+    HelpCircleTrimmed,
+    HorizontalRule,
+    HorizontalRuleTrimmed,
+    InfoCircle,
+    InfoCircleTrimmed,
+    Language,
+    Link,
+    LinkAlternate,
+    LinkTrimmed,
+    ListBulleted,
+    ListBulletedTrimmed,
+    ListNumbered,
+    ListNumberedTrimmed,
+    Lock,
+    LockTrimmed,
+    Logout,
+    LooksOne,
+    LooksOneTrimmed,
+    LooksTwo,
+    LooksTwoTrimmed,
+    Menu,
+    MenuTrimmed,
+    Minus,
+    MoreHorizontal,
+    MoreHorizontalTrimmed,
+    MoreVertical,
+    MoreVerticalTrimmed,
+    Person,
+    Plus,
+    PlusCircle,
+    PlusCircleTrimmed,
+    PlusTrimmed,
+    Preview,
+    Quote,
+    QuoteTrimmed,
+    Receipt,
+    ReceiptTrimmed,
+    References,
+    Release,
+    ReleaseTrimmed,
+    Search,
+    SearchTrimmed,
+    Settings,
+    SettingsTrimmed,
+    ShoppingCart,
+    ShoppingCartTrimmed,
+    Star,
+    StarTrimmed,
+    Subscript,
+    SubscriptTrimmed,
+    Superscript,
+    SuperscriptTrimmed,
+    Tags,
+    Text,
+    TextTrimmed,
+    ThumbDown,
+    ThumbDownTrimmed,
+    ThumbUp,
+    ThumbUpTrimmed,
+    Users,
+    UsersTrimmed,
+    Warning,
+    WarningTrimmed,
+    Workflows,
+  }).map(([name, icon]) => {
+    const Component = icon;
+
+    // `Heading` is exposed as `HeadingIcon` to avoid a clash with the
+    // typography component of the same name
+    if (name === 'HeadingIcon') {
+      name = 'Heading';
+    }
+
+    return (
+      <Flex
+        key={name}
+        padding="spacingS"
+        marginRight="spacingM"
+        alignItems="center"
+        justifyContent="flex-start"
+        flexGrow={0}
+      >
+        <Flex marginRight="spacingS">
+          <Component key={name} size="large" />
+        </Flex>
+        {name}
+      </Flex>
+    );
+  })}
+</Grid>
+```
+
+## Accessibility
+
+Missing
+
+## Custom icons and third-party libraries
+
+Custom icons can be rendered with Forma 36 to take advantage of the same props and styling as the built-in icons. This means you can use a prop like `variant="primary"` or `size="large"` on your own icons and they will match the built-in icons from Forma 36.
+
+Custom icons can be used in two ways:
+
+### `as` prop
+
+Passing a React component with an SVG icon to the `as` prop on `Icon` makes it render that SVG. This works both with your own icons and with icons from third-party icon libraries such as [`react-icons`](https://react-icons.github.io/react-icons):
 
 ```tsx static=true
 import { Icon } from '@contentful/f36-icons';
 import { MdAccessAlarm } from 'react-icons/md';
 
 const AccessAlarm = (props) => {
-  return <Icon {...props} as={MdAccessAlarm} />;
+  return <Icon {...props} as={MdAccessAlarm} variant="secondary" />;
 };
 ```
 
-## Component variations
+### SVG paths
 
-Custom icons created with the icon component can be configured with the [same props as Forma 36's built-in icons](/components/icons#component-variations).
+Another way to render custom icons is to wrapping SVG paths in the `Icon` component directly:
 
-## Accessibility
+```tsx static=true
+import { Icon } from '@contentful/f36-icon';
 
-Missing
+const CustomIcon = (props) => {
+  return (
+    <Icon {...props} variant="secondary">
+      <path d="M7 10l5 5 5-5z" />,
+      <path d="M0 0h24v24H0z" fill="none" />
+    </Icon>
+  );
+};
+```
 
 ## Props
 
-import { Props } from '@contentful/f36-docs-utils';
+### Built-in icons
+
+<Props of="ArrowDown" />
+
+### Custom icons
 
 <Props of="Icon" />

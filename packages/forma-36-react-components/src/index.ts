@@ -1,5 +1,5 @@
 export * from '@contentful/f36-badge';
-export * from '@contentful/f36-typography';
+export * from '@contentful/f36-icon';
 export { Flex, Grid, GridItem, Box } from '@contentful/f36-core';
 export type {
   FlexProps,
@@ -11,6 +11,7 @@ export type {
   PaddingProps,
   Spacing,
 } from '@contentful/f36-core';
+export * from '@contentful/f36-typography';
 export * from './components/Accordion';
 export * from './components/Asset';
 export * from './components/Autocomplete';

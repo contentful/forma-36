@@ -11,4 +11,3 @@ export type {
 export * from './Flex';
 export * from './Grid';
 export * from './Box';
-export { getSpacingStyles } from './utils/getSpacingStyles';

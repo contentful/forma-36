@@ -15,7 +15,7 @@ export type {
 (function () {
   fs.readdir(path.join('.', 'src'), (error, allFiles) => {
     if (error) {
-      console.log('error:');
+      console.log('error reading icons:');
       console.log(error);
     }
 
@@ -35,7 +35,7 @@ export type {
       },
       (error) => {
         if (error) {
-          console.log('error');
+          console.log('error writing icons index file:');
           console.log(error);
         }
       },

@@ -1,12 +1,14 @@
 import { css, cx } from 'emotion';
 import React, { forwardRef } from 'react';
 import tokens from '@contentful/f36-tokens';
-import { getSpacingStyles, Primitive } from '@contentful/f36-core';
+import { Box } from '@contentful/f36-core';
 import type {
   CommonProps,
+  BoxProps,
   ComponentVariant,
-  MarginProps,
-  PaddingProps,
+  PolymorphicComponent,
+  PolymorphicComponentProps,
+  PolymorphicComponentWithRef,
   Simplify,
 } from '@contentful/f36-core';
 import type {
@@ -15,6 +17,8 @@ import type {
   ReactElement,
   SVGAttributes,
 } from 'react';
+
+const DEFAULT_TAG = 'svg';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type IconComponent = ExoticComponent<any> | ComponentType<any>;
@@ -82,12 +86,13 @@ type IconInternalProps = {
 } & AsOrChildren;
 
 export type IconProps = IconInternalProps &
-  CommonProps &
-  MarginProps &
-  PaddingProps &
+  Omit<BoxProps<'svg'>, 'as' | 'children'> &
   SVGAttributes<SVGSVGElement>;
 
-export const Icon = forwardRef<SVGSVGElement, IconProps>(function Icon(
+export const _Icon: PolymorphicComponentWithRef<
+  IconInternalProps,
+  typeof DEFAULT_TAG
+> = (
   {
     as,
     children,
@@ -100,11 +105,10 @@ export const Icon = forwardRef<SVGSVGElement, IconProps>(function Icon(
     ...otherProps
   },
   forwardedRef,
-) {
+) => {
   const shared = {
     className: cx(
       css({
-        ...getSpacingStyles(otherProps),
         display: 'inline-block',
         fill: fills[variant],
         height: sizes[size].height,
@@ -117,19 +121,24 @@ export const Icon = forwardRef<SVGSVGElement, IconProps>(function Icon(
   };
 
   if (as && typeof as !== 'string') {
-    return <Primitive {...otherProps} {...shared} as={as} />;
+    return <Box {...otherProps} {...shared} as={as} />;
   }
 
   return (
-    <Primitive
+    <Box
       height="1em"
       viewBox={viewBox}
       width="1em"
       {...otherProps}
-      as="svg"
+      as={DEFAULT_TAG}
       {...shared}
     >
       {children}
-    </Primitive>
+    </Box>
   );
-});
+};
+
+export const Icon: PolymorphicComponent<
+  IconInternalProps,
+  typeof DEFAULT_TAG
+> = forwardRef(_Icon);

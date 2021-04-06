@@ -55,7 +55,6 @@ export function TextLink({
 }: TextLinkProps): React.ReactElement {
   const renderIcon = useCallback(
     (Component: TextLinkProps['icon'], linkType: TextLinkType) => {
-      console.log('Component', Component);
       if (!Component) return undefined;
 
       return (
