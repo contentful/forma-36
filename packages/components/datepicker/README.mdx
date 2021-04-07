@@ -26,6 +26,12 @@ The TextField component can be configured in a number of different ways. Use thi
 <Datepicker />
 ```
 
+### Formatting displayed dates
+
+```tsx
+<Datepicker dateFormat="YYYY-MM-DD" value={new Date(1990, 5, 15)} />
+```
+
 ## Accessibility
 
 - To ensure `TextInput` meets accessibility standards, provide `labelText`, `name` and `id`
