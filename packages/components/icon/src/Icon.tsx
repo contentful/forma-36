@@ -91,13 +91,17 @@ type IconInternalProps = {
   // Omit<BoxProps<'svg'>, 'as' | 'children' | 'display'> &
   SVGAttributes<SVGSVGElement>;
 
-export type IconProps = PolymorphicComponentProps<'svg', IconInternalProps>;
+export type IconProps = PolymorphicComponentProps<
+  IconComponent,
+  IconInternalProps
+>;
 
 export const _Icon: PolymorphicComponentWithRef<
   IconInternalProps,
-  typeof DEFAULT_TAG
+  IconComponent
 > = (
   {
+    as,
     children,
     className,
     variant = 'primary',
@@ -123,8 +127,9 @@ export const _Icon: PolymorphicComponentWithRef<
   };
 
   // if (as && typeof as !== 'string') {
-  //   return <Box {...otherProps} {...shared} as={as} />;
-  // }
+  if (as) {
+    return <Box display="inline-block" {...otherProps} {...shared} as={as} />;
+  }
 
   return (
     <Box
@@ -143,5 +148,5 @@ export const _Icon: PolymorphicComponentWithRef<
 
 export const Icon: PolymorphicComponent<
   IconInternalProps,
-  typeof DEFAULT_TAG
+  IconComponent
 > = forwardRef(_Icon);

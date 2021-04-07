@@ -1,5 +1,11 @@
 export * from '@contentful/f36-badge';
-export * from '@contentful/f36-icon';
+export { Icon } from '@contentful/f36-icon';
+export type {
+  IconComponent,
+  IconProps,
+  IconSize,
+  IconVariant,
+} from '@contentful/f36-icon';
 export { Flex, Grid, GridItem, Box } from '@contentful/f36-core';
 export type {
   FlexProps,
