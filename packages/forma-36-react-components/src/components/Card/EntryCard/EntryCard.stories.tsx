@@ -75,11 +75,11 @@ WithThumbnailElement.args = {
   ...Basic.args,
 };
 
-export const WithContentElement = (args: EntryCardPropTypes) => (
+export const WithCustomBody = (args: EntryCardPropTypes) => (
   <EntryCard
     {...args}
     size="auto"
-    contentElement={
+    customBody={
       <Flex
         alignItems="center"
         flexDirection="column"
@@ -95,7 +95,7 @@ export const WithContentElement = (args: EntryCardPropTypes) => (
   />
 );
 
-WithContentElement.args = {
+WithCustomBody.args = {
   ...Basic.args,
 };
 

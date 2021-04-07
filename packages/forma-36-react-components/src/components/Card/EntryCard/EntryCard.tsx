@@ -80,9 +80,9 @@ export interface EntryCardPropTypes extends BaseCardProps {
    */
   size?: EntryCardSize;
   /**
-   * Render custom content for the entry. This will override the props title, description and thumbnailElement
+   * Render custom body for the entry. This will override the props title, description and thumbnailElement
    */
-  contentElement?: React.ReactNode;
+  customBody?: React.ReactNode;
 }
 
 export function EntryCard({
@@ -102,7 +102,7 @@ export function EntryCard({
   cardDragHandleComponent,
   cardDragHandleProps,
   withDragHandle,
-  contentElement,
+  customBody,
   ...otherProps
 }: EntryCardPropTypes): React.ReactElement {
   const renderTitle = useCallback((_size: EntryCardSize, title?: string) => {
@@ -258,7 +258,7 @@ export function EntryCard({
                 )}
               </div>
               <div className={styles.EntryCard__content}>
-                {contentElement ?? (
+                {customBody ?? (
                   <React.Fragment>
                     <div className={styles.EntryCard__body}>
                       {renderTitle(size, title)}

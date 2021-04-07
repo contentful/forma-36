@@ -134,7 +134,7 @@ it('renders the component with custom content', () => {
     <EntryCard
       status="published"
       contentType="My Content Type"
-      contentElement={<div>This is custom content</div>}
+      customBody={<div>This is custom content</div>}
     />,
   );
 
