@@ -117,3 +117,20 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     });
   }
 };
+
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if (stage === 'build-html' || stage === 'develop-html') {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            // Pikaday uses `window` without checking for undefined, which
+            // breaks on SSR, so we skip loading it completely
+            test: /pikaday/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    });
+  }
+};

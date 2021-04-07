@@ -1,12 +1,31 @@
 {
   "name": "@contentful/f36-datepicker",
-  "description": "Forma 36: Datepicker component",
   "version": "4.0.0",
+  "description": "Forma 36: Datepicker component",
   "license": "MIT",
   "files": [
     "dist",
     "src"
   ],
+  "scripts": {
+    "build": "parcel build src/index.ts"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.6.2",
+    "@contentful/f36-core": "^4.0.0",
+    "@types/pikaday": "^1.7.4",
+    "dayjs": "^1.9.1",
+    "emotion": "^10.0.17",
+    "pikaday": "^1.8.0"
+  },
+  "devDependencies": {
+    "@contentful/f36-components": "^4.0.0",
+    "@types/jest": "25.2.3"
+  },
+  "peerDependencies": {
+    "@contentful/f36-components": "^4.0.0",
+    "react": ">=16.8"
+  },
   "main": "dist/main.js",
   "module": "dist/module.js",
   "types": "dist/types.d.ts",
@@ -19,26 +38,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "scripts": {
-    "build": "parcel build index.ts"
-  },
-  "peerDependencies": {
-    "@contentful/f36-components": "^4.0.0",
-    "react": ">=16.8"
-  },
-  "devDependencies": {
-    "@contentful/f36-components": "^4.0.0",
-    "@testing-library/jest-dom": "5.11.6",
-    "@testing-library/react": "11.2.2",
-    "@types/jest": "25.2.3",
-    "@types/pikaday": "^1.7.4",
-    "date-fns": "^2.6.0"
-  },
-  "dependencies": {
-    "@babel/runtime": "^7.6.2",
-    "date-fns": "^2.6.0",
-    "emotion": "^10.0.17",
-    "pikaday": "^1.8.0"
   }
 }

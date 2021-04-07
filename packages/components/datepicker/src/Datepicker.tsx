@@ -1,63 +1,112 @@
 import { css, cx } from 'emotion';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
-import type { FocusEventHandler, FocusEvent } from 'react';
+import React, {
+  forwardRef,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
+import type { FocusEvent, FocusEventHandler } from 'react';
+import { Box } from '@contentful/f36-core';
+import type {
+  PolymorphicComponent,
+  PolymorphicComponentProps,
+  PolymorphicComponentWithRef,
+} from '@contentful/f36-core';
 import Pikaday from 'pikaday';
-import format from 'date-fns/format';
-import { Label } from '@contentful/f36-forms';
+import dayjs from 'dayjs';
 import { TextInput, ValidationMessage } from '@contentful/f36-components';
+import { Label } from '@contentful/f36-forms';
+import tokens from '@contentful/f36-tokens';
+import 'pikaday/css/pikaday.css';
 
 const styles = {
-  datePickerWrapper: css({
+  root: css({
     maxHeight: 70,
   }),
-  datePicker: css({
-    zIndex: 1002,
+  datepicker: css({
+    zIndex: tokens.zIndexDropdown,
     display: 'block',
-    '.is-hidden': {
+    '&.is-hidden': {
       display: 'none',
     },
   }),
 };
 
-export interface DatePickerProps {
-  disabled: boolean;
-  required: boolean;
-  value?: Date;
-  minDate?: Date;
-  maxDate?: Date;
-  onChange?: (val: Date) => void;
-  onBlur?: FocusEventHandler;
-  name?: string;
-  helpText?: string;
-  labelText?: string;
-  id?: string;
-  testId?: string;
-  dateFormat?: string;
-}
+const DEFAULT_TAG = 'div';
 
-export function Datepicker({
-  labelText,
-  required,
-  name = 'cf-ui-datepicker',
-  id = 'cf-ui-datepicker',
-  testId = 'cf-ui-datepicker',
-  dateFormat = 'do MMM yyyy',
-  disabled,
-  ...otherProps
-}: DatePickerProps): React.ReactElement {
+export type DatepickerInternalProps = {
+  /**
+   * Date format to display the date input value with
+   */
+  dateFormat?: string;
+  helpText?: string;
+  /**
+   * Boolean to control the open state of the datepicker
+   */
+  isOpen?: boolean;
+  /**
+   * Text to render as label for the input
+   */
+  labelText?: string;
+  /**
+   * The latest date that users should be able to choose in the calendar
+   */
+  maxDate?: Date;
+  /**
+   * The earliest date that users should be able to choose in the calendar
+   */
+  minDate?: Date;
+  onBlur?: FocusEventHandler;
+  onChange?: (val: Date) => void;
+  onFocus?: FocusEventHandler;
+  /**
+   * Default value to use
+   */
+  value?: Date;
+};
+
+export type DatepickerProps<
+  E extends React.ElementType
+> = PolymorphicComponentProps<E, DatepickerInternalProps>;
+
+export const _Datepicker: PolymorphicComponentWithRef<
+  DatepickerInternalProps,
+  typeof DEFAULT_TAG
+> = (
+  {
+    className,
+    dateFormat = 'do MMM yyyy',
+    disabled,
+    id,
+    isOpen,
+    labelText,
+    maxDate,
+    minDate,
+    onBlur,
+    onChange,
+    onFocus,
+    required,
+    testId = 'cf-ui-datepicker',
+    value,
+    ...otherProps
+  },
+  forwardedRef,
+) => {
   const [validationError] = useState<string>();
   const pikaday = useRef<Pikaday>();
-  const datePickerNode = useRef<HTMLInputElement | null>(null);
+  const input = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
     pikaday.current = new Pikaday({
-      field: datePickerNode && datePickerNode.current,
-      minDate: otherProps.minDate,
-      maxDate: otherProps.maxDate,
+      bound: typeof isOpen === 'undefined',
+      field: input && input.current,
+      minDate: minDate,
+      maxDate: maxDate,
       yearRange: 5,
-      theme: cx(styles.datePicker, 'hide-carret'),
+      theme: cx(styles.datepicker, 'hide-carret'),
       onSelect: (value) => {
-        otherProps.onChange?.(value);
+        onChange?.(value);
       },
     });
 
@@ -66,29 +115,47 @@ export function Datepicker({
         pikaday.current.destroy();
       }
     };
-  }, [otherProps]);
+  }, [isOpen, minDate, maxDate, onChange]);
 
-  const handleOpen = useCallback(() => {
-    if (pikaday.current) {
+  useEffect(() => {
+    if (isOpen && pikaday.current) {
       pikaday.current.show();
     }
-  }, []);
+  }, [isOpen]);
+
+  const handleFocus = useCallback(
+    (event: FocusEvent<HTMLInputElement>) => {
+      onFocus?.(event);
+
+      if (typeof isOpen === 'undefined' && pikaday.current) {
+        pikaday.current.show();
+      }
+    },
+    [isOpen, onFocus],
+  );
 
   const handleBlur = useCallback(
-    (e: FocusEvent) => {
-      otherProps.onBlur?.(e);
+    (event: FocusEvent<HTMLInputElement>) => {
+      onBlur?.(event);
+
       if (
+        typeof isOpen === 'undefined' &&
         pikaday.current &&
-        !pikaday.current.el.contains(e.relatedTarget as HTMLInputElement)
+        !pikaday.current.el.contains(event.relatedTarget as HTMLInputElement)
       ) {
         pikaday.current.hide();
       }
     },
-    [otherProps],
+    [isOpen, onBlur],
   );
 
   return (
-    <div className={styles.datePickerWrapper}>
+    <Box
+      as={DEFAULT_TAG}
+      {...otherProps}
+      className={cx(styles.root, className)}
+      ref={forwardedRef}
+    >
       {labelText && (
         <Label required={required} htmlFor={id}>
           {labelText}
@@ -96,24 +163,24 @@ export function Datepicker({
       )}
       <TextInput
         disabled={disabled}
+        id={id}
         required={required}
-        name={name}
         testId={testId}
         readOnly={true}
-        inputRef={datePickerNode}
-        value={
-          otherProps.value && format(otherProps.value, dateFormat!) // eslint-disable-line @typescript-eslint/no-non-null-assertion
-        }
-        id={id}
-        onFocus={handleOpen}
+        inputRef={input}
+        value={value && dayjs(value).format(dateFormat)}
+        onFocus={handleFocus}
         onBlur={handleBlur}
         autoComplete="off"
       />
       {validationError && (
         <ValidationMessage>{validationError}</ValidationMessage>
       )}
-    </div>
+    </Box>
   );
-}
+};
 
-export default Datepicker;
+export const Datepicker: PolymorphicComponent<
+  DatepickerInternalProps,
+  typeof DEFAULT_TAG
+> = forwardRef(_Datepicker);

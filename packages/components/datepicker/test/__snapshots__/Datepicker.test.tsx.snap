@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Datepicker renders 1`] = `
+.emotion-0 {
+  display: block;
+  max-height: 70px;
+}
+
+<div
+  class="emotion-0"
+>
+  <div
+    class="TextInput__TextInput___36-K- TextInput__TextInput--full___1EJEW"
+  >
+    <input
+      autocomplete="off"
+      class="TextInput__TextInput__input___27vDB a11y__focus-border--default___60AXp"
+      data-test-id="cf-ui-datepicker"
+      readonly=""
+      value=""
+    />
+  </div>
+</div>
+`;
