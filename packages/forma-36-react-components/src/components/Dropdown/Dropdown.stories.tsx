@@ -195,7 +195,6 @@ export const Overview: Story = () => (
 
       <Dropdown
         isOpen
-        isAutoalignmentEnabled
         usePortal
         position="bottom-left"
         toggleElement={
@@ -237,6 +236,7 @@ export const Overview: Story = () => (
 
     <Dropdown
       isOpen
+      usePortal
       isFullWidth
       toggleElement={
         <Button size="small" buttonType="muted" indicateDropdown>
