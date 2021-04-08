@@ -3,6 +3,26 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0-alpha.31](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-datepicker@0.4.0-alpha.30...@contentful/forma-36-react-datepicker@0.4.0-alpha.31) (2021-04-01)
+
+### Bug Fixes
+
+- equal left & right paddings in a dropdown button ([#902](https://github.com/contentful/forma-36/issues/902)) ([334c598](https://github.com/contentful/forma-36/commit/334c598fb27848e9df2d2996d67b6a0dcbbf77fd))
+
+# [0.4.0-alpha.30](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-datepicker@0.4.0-alpha.29...@contentful/forma-36-react-datepicker@0.4.0-alpha.30) (2021-04-01)
+
+**Note:** Version bump only for package @contentful/forma-36-react-datepicker
+
+# [0.4.0-alpha.29](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-datepicker@0.4.0-alpha.28...@contentful/forma-36-react-datepicker@0.4.0-alpha.29) (2021-03-24)
+
+### Features
+
+- add 'featured' tagType to Tag ([#891](https://github.com/contentful/forma-36/issues/891)) ([b7a0baa](https://github.com/contentful/forma-36/commit/b7a0baa272d264ded326bf92efc41080fa6d3b7f))
+
+# [0.4.0-alpha.28](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-datepicker@0.4.0-alpha.27...@contentful/forma-36-react-datepicker@0.4.0-alpha.28) (2021-03-19)
+
+**Note:** Version bump only for package @contentful/forma-36-react-datepicker
+
 # [0.4.0-alpha.27](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-datepicker@0.4.0-alpha.26...@contentful/forma-36-react-datepicker@0.4.0-alpha.27) (2021-03-18)
 
 **Note:** Version bump only for package @contentful/forma-36-react-datepicker

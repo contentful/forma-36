@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.86.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.86.1...@contentful/forma-36-react-components@3.86.2) (2021-04-01)
+
+### Bug Fixes
+
+- equal left & right paddings in a dropdown button ([#902](https://github.com/contentful/forma-36/issues/902)) ([334c598](https://github.com/contentful/forma-36/commit/334c598fb27848e9df2d2996d67b6a0dcbbf77fd))
+
+## [3.86.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.86.0...@contentful/forma-36-react-components@3.86.1) (2021-04-01)
+
+### Bug Fixes
+
+- **copy-button:** center icon alignment ([#905](https://github.com/contentful/forma-36/issues/905)) ([0d1e7c4](https://github.com/contentful/forma-36/commit/0d1e7c44b866bcf216573e1461d8b7c72ebae7e6)), closes [#904](https://github.com/contentful/forma-36/issues/904)
+
+# [3.86.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.85.0...@contentful/forma-36-react-components@3.86.0) (2021-03-24)
+
+### Features
+
+- add 'featured' tagType to Tag ([#891](https://github.com/contentful/forma-36/issues/891)) ([b7a0baa](https://github.com/contentful/forma-36/commit/b7a0baa272d264ded326bf92efc41080fa6d3b7f))
+
+# [3.85.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.84.3...@contentful/forma-36-react-components@3.85.0) (2021-03-19)
+
+### Features
+
+- add rel attribute to card component ([ca18a23](https://github.com/contentful/forma-36/commit/ca18a239e0c35e8f0685ae9573be040b185e9b96))
+
 ## [3.84.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.84.2...@contentful/forma-36-react-components@3.84.3) (2021-03-18)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components

@@ -232,12 +232,6 @@
   justify-content: center;
 }
 
-.Button--is-dropdown {
-  & .Button__inner-wrapper {
-    padding-right: calc(1rem * (8 / var(--font-base-default)));
-  }
-}
-
 .Button__label {
   margin: 0 calc(1rem * (4 / var(--font-base-default)));
   font-size: calc(1rem * (14 / var(--font-base-default)));
