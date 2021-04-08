@@ -188,43 +188,68 @@ export const Overview: Story = () => (
 
     <Default />
 
-    <Flex marginBottom="spacingS" marginTop="spacingM">
-      <SectionHeading element="h3">Dropdown default open</SectionHeading>
+    <Flex flexDirection="column" style={{ marginBottom: '200px' }}>
+      <Flex marginBottom="spacingS" marginTop="spacingM">
+        <SectionHeading element="h3">Dropdown default open</SectionHeading>
+      </Flex>
+
+      <Dropdown
+        isOpen
+        isAutoalignmentEnabled
+        usePortal
+        position="bottom-left"
+        toggleElement={
+          <Button size="small" buttonType="muted" indicateDropdown>
+            Choose more options and settings
+          </Button>
+        }
+      >
+        <DropdownList>
+          <DropdownListItem isTitle>Entry Title</DropdownListItem>
+          <DropdownListItem onClick={action('onClick Element')}>
+            Embed existing entry
+          </DropdownListItem>
+          <Dropdown
+            position="right"
+            submenuToggleLabel="Create and embed existing entry"
+          >
+            <DropdownList>
+              <DropdownListItem onClick={action('submenu click')}>
+                Embed as inline element
+              </DropdownListItem>
+              <DropdownListItem isDisabled>
+                Embed as block element
+              </DropdownListItem>
+            </DropdownList>
+          </Dropdown>
+        </DropdownList>
+        <DropdownList border="top">
+          <DropdownListItem>
+            <TextLink href="http://google.com">This is a Link</TextLink>
+          </DropdownListItem>
+        </DropdownList>
+      </Dropdown>
+    </Flex>
+
+    <Flex marginBottom="spacingS">
+      <SectionHeading element="h3">Dropdown with full width</SectionHeading>
     </Flex>
 
     <Dropdown
       isOpen
-      isAutoalignmentEnabled
-      usePortal
-      position="bottom-left"
+      isFullWidth
       toggleElement={
         <Button size="small" buttonType="muted" indicateDropdown>
-          Choose more options and settings
+          Open dropdown
         </Button>
       }
     >
-      <DropdownList>
-        <DropdownListItem isTitle>Entry Title</DropdownListItem>
-        <DropdownListItem onClick={action('onClick Element')}>
-          Embed existing entry
+      <DropdownList maxHeight={200}>
+        <DropdownListItem onClick={action('click')}>
+          This list item is wider than the dropdown
         </DropdownListItem>
-        <Dropdown
-          position="right"
-          submenuToggleLabel="Create and embed existing entry"
-        >
-          <DropdownList>
-            <DropdownListItem onClick={action('submenu click')}>
-              Embed as inline element
-            </DropdownListItem>
-            <DropdownListItem isDisabled>
-              Embed as block element
-            </DropdownListItem>
-          </DropdownList>
-        </Dropdown>
-      </DropdownList>
-      <DropdownList border="top">
-        <DropdownListItem>
-          <TextLink href="http://google.com">This is a Link</TextLink>
+        <DropdownListItem onClick={action('click')}>
+          Short list item
         </DropdownListItem>
       </DropdownList>
     </Dropdown>
