@@ -21,7 +21,7 @@ export default {
   title: 'Components/Icon',
 } as Meta;
 
-export const WithSVGPath: Story<IconProps & { as?: never }> = (args) => (
+export const WithSVGPath: Story<IconProps> = (args) => (
   <Fragment>
     <SectionHeading as="h3" marginBottom="spacingS">
       Icon component with SVG paths

@@ -85,16 +85,14 @@ type IconInternalProps = {
    * Custom SVG viewBox attribute to use
    */
   viewBox?: SVGAttributes<SVGSVGElement>['viewBox'];
-} & AsOrChildren &
-  MarginProps &
-  PaddingProps &
-  // Omit<BoxProps<'svg'>, 'as' | 'children' | 'display'> &
+} & Omit<BoxProps<'svg'>, 'as' | 'children' | 'display' | 'ref'> &
   SVGAttributes<SVGSVGElement>;
 
-export type IconProps = PolymorphicComponentProps<
-  IconComponent,
-  IconInternalProps
->;
+export type IconProps = Omit<
+  PolymorphicComponentProps<IconComponent, IconInternalProps>,
+  'as' | 'children'
+> &
+  AsOrChildren;
 
 export const _Icon: PolymorphicComponentWithRef<
   IconInternalProps,
