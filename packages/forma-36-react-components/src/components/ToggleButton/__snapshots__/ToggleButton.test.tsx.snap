@@ -91,9 +91,16 @@ exports[`renders the component with an additional class name 1`] = `
 `;
 
 exports[`renders the component with icon 1`] = `
-.emotion-0 {
+.emotion-1 {
   display: inherit;
   outline: 0;
+}
+
+.emotion-0 {
+  display: inline-block;
+  fill: #192532;
+  height: 18px;
+  width: 18px;
 }
 
 <div
@@ -107,11 +114,11 @@ exports[`renders the component with icon 1`] = `
     type="button"
   >
     <span
-      class="emotion-0 Toggle__button__inner-wrapper"
+      class="emotion-1 Toggle__button__inner-wrapper"
       tabindex="-1"
     >
       <svg
-        class="Icon Icon--small Icon--secondary Toggle__button__icon"
+        class="Toggle__button__icon emotion-0"
         data-test-id="cf-ui-icon"
         height="1em"
         viewBox="0 0 24 24"

@@ -1,16 +1,16 @@
 import React from 'react';
 import cn from 'classnames';
 import type { MouseEventHandler } from 'react';
+import type { IconComponent } from '@contentful/f36-icon';
 
 import { IconButton } from '../../IconButton';
 import { Tooltip } from '../../Tooltip';
 import styles from './EditorToolbarButton.css';
 import type { IconButtonProps } from '../../IconButton';
-import type { IconType } from '../../Icon';
 
 export interface EditorToolbarButtonProps {
   label: string;
-  icon: IconType;
+  icon: IconComponent;
   tooltip?: string;
   iconButtonProps?: Partial<IconButtonProps>;
   isActive?: boolean;
@@ -42,7 +42,7 @@ export function EditorToolbarButton({
     <React.Fragment>
       <Tooltip content={!disabled ? tooltip : undefined}>
         <IconButton
-          {...{ iconProps: { icon } }}
+          iconProps={{ as: icon }}
           testId={testId}
           buttonType="secondary"
           label={label}

@@ -1,6 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
+.emotion-0 {
+  display: inline-block;
+  fill: #606C7C;
+  height: 18px;
+  width: 18px;
+}
+
 <div
   class="Select__wrapper Select--full"
 >
@@ -19,7 +26,7 @@ exports[`renders the component 1`] = `
     </option>
   </select>
   <svg
-    class="Icon Icon--small Icon--muted Select__icon"
+    class="Select__icon emotion-0"
     data-test-id="cf-ui-icon"
     height="1em"
     viewBox="0 0 24 24"
@@ -33,6 +40,13 @@ exports[`renders the component 1`] = `
 `;
 
 exports[`renders the component as required 1`] = `
+.emotion-0 {
+  display: inline-block;
+  fill: #606C7C;
+  height: 18px;
+  width: 18px;
+}
+
 <div
   class="Select__wrapper Select--full"
 >
@@ -52,7 +66,7 @@ exports[`renders the component as required 1`] = `
     </option>
   </select>
   <svg
-    class="Icon Icon--small Icon--muted Select__icon"
+    class="Select__icon emotion-0"
     data-test-id="cf-ui-icon"
     height="1em"
     viewBox="0 0 24 24"
@@ -66,6 +80,13 @@ exports[`renders the component as required 1`] = `
 `;
 
 exports[`renders the component in disabled state 1`] = `
+.emotion-0 {
+  display: inline-block;
+  fill: #606C7C;
+  height: 18px;
+  width: 18px;
+}
+
 <div
   class="Select__wrapper Select--full"
 >
@@ -85,7 +106,7 @@ exports[`renders the component in disabled state 1`] = `
     </option>
   </select>
   <svg
-    class="Icon Icon--small Icon--muted Select__icon"
+    class="Select__icon emotion-0"
     data-test-id="cf-ui-icon"
     height="1em"
     viewBox="0 0 24 24"
@@ -99,6 +120,13 @@ exports[`renders the component in disabled state 1`] = `
 `;
 
 exports[`renders the component with a value 1`] = `
+.emotion-0 {
+  display: inline-block;
+  fill: #606C7C;
+  height: 18px;
+  width: 18px;
+}
+
 <div
   class="Select__wrapper Select--full"
 >
@@ -117,7 +145,7 @@ exports[`renders the component with a value 1`] = `
     </option>
   </select>
   <svg
-    class="Icon Icon--small Icon--muted Select__icon"
+    class="Select__icon emotion-0"
     data-test-id="cf-ui-icon"
     height="1em"
     viewBox="0 0 24 24"
@@ -131,6 +159,13 @@ exports[`renders the component with a value 1`] = `
 `;
 
 exports[`renders the component with an extra class name 1`] = `
+.emotion-0 {
+  display: inline-block;
+  fill: #606C7C;
+  height: 18px;
+  width: 18px;
+}
+
 <div
   class="Select__wrapper Select--full extraClassName"
 >
@@ -149,7 +184,7 @@ exports[`renders the component with an extra class name 1`] = `
     </option>
   </select>
   <svg
-    class="Icon Icon--small Icon--muted Select__icon"
+    class="Select__icon emotion-0"
     data-test-id="cf-ui-icon"
     height="1em"
     viewBox="0 0 24 24"
@@ -163,6 +198,13 @@ exports[`renders the component with an extra class name 1`] = `
 `;
 
 exports[`renders the component with error 1`] = `
+.emotion-0 {
+  display: inline-block;
+  fill: #606C7C;
+  height: 18px;
+  width: 18px;
+}
+
 <div
   class="Select__wrapper Select--full"
 >
@@ -181,7 +223,7 @@ exports[`renders the component with error 1`] = `
     </option>
   </select>
   <svg
-    class="Icon Icon--small Icon--muted Select__icon"
+    class="Select__icon emotion-0"
     data-test-id="cf-ui-icon"
     height="1em"
     viewBox="0 0 24 24"

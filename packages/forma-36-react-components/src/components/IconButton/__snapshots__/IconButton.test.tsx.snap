@@ -1,9 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`allows passing additional props not consumed by the component 1`] = `
-.emotion-0 {
+.emotion-1 {
   display: inherit;
   outline: 0;
+}
+
+.emotion-0 {
+  display: inline-block;
+  fill: #2D64B3;
+  height: 18px;
+  width: 18px;
+  display: inline-block;
+  fill: #2D64B3;
+  height: 18px;
+  width: 18px;
 }
 
 <button
@@ -12,11 +23,11 @@ exports[`allows passing additional props not consumed by the component 1`] = `
   type="button"
 >
   <span
-    class="emotion-0 IconButton__inner"
+    class="emotion-1 IconButton__inner"
     tabindex="-1"
   >
     <svg
-      class="Icon Icon--small Icon--primary IconButton__icon"
+      class="IconButton__icon emotion-0"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -25,6 +36,7 @@ exports[`allows passing additional props not consumed by the component 1`] = `
       <path
         d="M7 10l5 5 5-5z"
       />
+      ,
       <path
         d="M0 0h24v24H0z"
         fill="none"
@@ -40,9 +52,20 @@ exports[`allows passing additional props not consumed by the component 1`] = `
 `;
 
 exports[`calls an onClick function 1`] = `
-.emotion-0 {
+.emotion-1 {
   display: inherit;
   outline: 0;
+}
+
+.emotion-0 {
+  display: inline-block;
+  fill: #2D64B3;
+  height: 18px;
+  width: 18px;
+  display: inline-block;
+  fill: #2D64B3;
+  height: 18px;
+  width: 18px;
 }
 
 <button
@@ -51,11 +74,11 @@ exports[`calls an onClick function 1`] = `
   type="button"
 >
   <span
-    class="emotion-0 IconButton__inner"
+    class="emotion-1 IconButton__inner"
     tabindex="-1"
   >
     <svg
-      class="Icon Icon--small Icon--primary IconButton__icon"
+      class="IconButton__icon emotion-0"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -64,6 +87,7 @@ exports[`calls an onClick function 1`] = `
       <path
         d="M7 10l5 5 5-5z"
       />
+      ,
       <path
         d="M0 0h24v24H0z"
         fill="none"
@@ -79,9 +103,20 @@ exports[`calls an onClick function 1`] = `
 `;
 
 exports[`prevents an onClick function from being called when disabled 1`] = `
-.emotion-0 {
+.emotion-1 {
   display: inherit;
   outline: 0;
+}
+
+.emotion-0 {
+  display: inline-block;
+  fill: #2D64B3;
+  height: 18px;
+  width: 18px;
+  display: inline-block;
+  fill: #2D64B3;
+  height: 18px;
+  width: 18px;
 }
 
 <button
@@ -91,11 +126,11 @@ exports[`prevents an onClick function from being called when disabled 1`] = `
   type="button"
 >
   <span
-    class="emotion-0 IconButton__inner"
+    class="emotion-1 IconButton__inner"
     tabindex="-1"
   >
     <svg
-      class="Icon Icon--small Icon--primary IconButton__icon"
+      class="IconButton__icon emotion-0"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -104,6 +139,7 @@ exports[`prevents an onClick function from being called when disabled 1`] = `
       <path
         d="M7 10l5 5 5-5z"
       />
+      ,
       <path
         d="M0 0h24v24H0z"
         fill="none"
@@ -119,9 +155,20 @@ exports[`prevents an onClick function from being called when disabled 1`] = `
 `;
 
 exports[`renders as a "muted" link type 1`] = `
-.emotion-0 {
+.emotion-1 {
   display: inherit;
   outline: 0;
+}
+
+.emotion-0 {
+  display: inline-block;
+  fill: #2D64B3;
+  height: 18px;
+  width: 18px;
+  display: inline-block;
+  fill: #2D64B3;
+  height: 18px;
+  width: 18px;
 }
 
 <button
@@ -130,11 +177,11 @@ exports[`renders as a "muted" link type 1`] = `
   type="button"
 >
   <span
-    class="emotion-0 IconButton__inner"
+    class="emotion-1 IconButton__inner"
     tabindex="-1"
   >
     <svg
-      class="Icon Icon--small Icon--primary IconButton__icon"
+      class="IconButton__icon emotion-0"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -143,6 +190,7 @@ exports[`renders as a "muted" link type 1`] = `
       <path
         d="M7 10l5 5 5-5z"
       />
+      ,
       <path
         d="M0 0h24v24H0z"
         fill="none"
@@ -158,9 +206,20 @@ exports[`renders as a "muted" link type 1`] = `
 `;
 
 exports[`renders as a "negative" link type 1`] = `
-.emotion-0 {
+.emotion-1 {
   display: inherit;
   outline: 0;
+}
+
+.emotion-0 {
+  display: inline-block;
+  fill: #2D64B3;
+  height: 18px;
+  width: 18px;
+  display: inline-block;
+  fill: #2D64B3;
+  height: 18px;
+  width: 18px;
 }
 
 <button
@@ -169,11 +228,11 @@ exports[`renders as a "negative" link type 1`] = `
   type="button"
 >
   <span
-    class="emotion-0 IconButton__inner"
+    class="emotion-1 IconButton__inner"
     tabindex="-1"
   >
     <svg
-      class="Icon Icon--small Icon--primary IconButton__icon"
+      class="IconButton__icon emotion-0"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -182,6 +241,7 @@ exports[`renders as a "negative" link type 1`] = `
       <path
         d="M7 10l5 5 5-5z"
       />
+      ,
       <path
         d="M0 0h24v24H0z"
         fill="none"
@@ -197,9 +257,20 @@ exports[`renders as a "negative" link type 1`] = `
 `;
 
 exports[`renders as a "positive" link type 1`] = `
-.emotion-0 {
+.emotion-1 {
   display: inherit;
   outline: 0;
+}
+
+.emotion-0 {
+  display: inline-block;
+  fill: #2D64B3;
+  height: 18px;
+  width: 18px;
+  display: inline-block;
+  fill: #2D64B3;
+  height: 18px;
+  width: 18px;
 }
 
 <button
@@ -208,11 +279,11 @@ exports[`renders as a "positive" link type 1`] = `
   type="button"
 >
   <span
-    class="emotion-0 IconButton__inner"
+    class="emotion-1 IconButton__inner"
     tabindex="-1"
   >
     <svg
-      class="Icon Icon--small Icon--primary IconButton__icon"
+      class="IconButton__icon emotion-0"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -221,6 +292,7 @@ exports[`renders as a "positive" link type 1`] = `
       <path
         d="M7 10l5 5 5-5z"
       />
+      ,
       <path
         d="M0 0h24v24H0z"
         fill="none"
@@ -236,9 +308,20 @@ exports[`renders as a "positive" link type 1`] = `
 `;
 
 exports[`renders as a "primary" link type 1`] = `
-.emotion-0 {
+.emotion-1 {
   display: inherit;
   outline: 0;
+}
+
+.emotion-0 {
+  display: inline-block;
+  fill: #2D64B3;
+  height: 18px;
+  width: 18px;
+  display: inline-block;
+  fill: #2D64B3;
+  height: 18px;
+  width: 18px;
 }
 
 <button
@@ -247,11 +330,11 @@ exports[`renders as a "primary" link type 1`] = `
   type="button"
 >
   <span
-    class="emotion-0 IconButton__inner"
+    class="emotion-1 IconButton__inner"
     tabindex="-1"
   >
     <svg
-      class="Icon Icon--small Icon--primary IconButton__icon"
+      class="IconButton__icon emotion-0"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -260,6 +343,7 @@ exports[`renders as a "primary" link type 1`] = `
       <path
         d="M7 10l5 5 5-5z"
       />
+      ,
       <path
         d="M0 0h24v24H0z"
         fill="none"
@@ -275,9 +359,20 @@ exports[`renders as a "primary" link type 1`] = `
 `;
 
 exports[`renders as a "secondary" link type 1`] = `
-.emotion-0 {
+.emotion-1 {
   display: inherit;
   outline: 0;
+}
+
+.emotion-0 {
+  display: inline-block;
+  fill: #2D64B3;
+  height: 18px;
+  width: 18px;
+  display: inline-block;
+  fill: #2D64B3;
+  height: 18px;
+  width: 18px;
 }
 
 <button
@@ -286,11 +381,11 @@ exports[`renders as a "secondary" link type 1`] = `
   type="button"
 >
   <span
-    class="emotion-0 IconButton__inner"
+    class="emotion-1 IconButton__inner"
     tabindex="-1"
   >
     <svg
-      class="Icon Icon--small Icon--primary IconButton__icon"
+      class="IconButton__icon emotion-0"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -299,6 +394,7 @@ exports[`renders as a "secondary" link type 1`] = `
       <path
         d="M7 10l5 5 5-5z"
       />
+      ,
       <path
         d="M0 0h24v24H0z"
         fill="none"
@@ -324,9 +420,20 @@ exports[`renders as a link 1`] = `
 `;
 
 exports[`renders the component 1`] = `
-.emotion-0 {
+.emotion-1 {
   display: inherit;
   outline: 0;
+}
+
+.emotion-0 {
+  display: inline-block;
+  fill: #2D64B3;
+  height: 18px;
+  width: 18px;
+  display: inline-block;
+  fill: #2D64B3;
+  height: 18px;
+  width: 18px;
 }
 
 <button
@@ -335,11 +442,11 @@ exports[`renders the component 1`] = `
   type="button"
 >
   <span
-    class="emotion-0 IconButton__inner"
+    class="emotion-1 IconButton__inner"
     tabindex="-1"
   >
     <svg
-      class="Icon Icon--small Icon--primary IconButton__icon"
+      class="IconButton__icon emotion-0"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -348,6 +455,7 @@ exports[`renders the component 1`] = `
       <path
         d="M7 10l5 5 5-5z"
       />
+      ,
       <path
         d="M0 0h24v24H0z"
         fill="none"
@@ -363,9 +471,20 @@ exports[`renders the component 1`] = `
 `;
 
 exports[`renders the component with an additional class name 1`] = `
-.emotion-0 {
+.emotion-1 {
   display: inherit;
   outline: 0;
+}
+
+.emotion-0 {
+  display: inline-block;
+  fill: #2D64B3;
+  height: 18px;
+  width: 18px;
+  display: inline-block;
+  fill: #2D64B3;
+  height: 18px;
+  width: 18px;
 }
 
 <button
@@ -374,11 +493,11 @@ exports[`renders the component with an additional class name 1`] = `
   type="button"
 >
   <span
-    class="emotion-0 IconButton__inner"
+    class="emotion-1 IconButton__inner"
     tabindex="-1"
   >
     <svg
-      class="Icon Icon--small Icon--primary IconButton__icon"
+      class="IconButton__icon emotion-0"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -387,6 +506,7 @@ exports[`renders the component with an additional class name 1`] = `
       <path
         d="M7 10l5 5 5-5z"
       />
+      ,
       <path
         d="M0 0h24v24H0z"
         fill="none"
@@ -402,9 +522,27 @@ exports[`renders the component with an additional class name 1`] = `
 `;
 
 exports[`renders with a dropdown indicator 1`] = `
-.emotion-0 {
+.emotion-2 {
   display: inherit;
   outline: 0;
+}
+
+.emotion-0 {
+  display: inline-block;
+  fill: #2D64B3;
+  height: 18px;
+  width: 18px;
+  display: inline-block;
+  fill: #2D64B3;
+  height: 18px;
+  width: 18px;
+}
+
+.emotion-1 {
+  display: inline-block;
+  fill: #192532;
+  height: 18px;
+  width: 18px;
 }
 
 <button
@@ -413,11 +551,11 @@ exports[`renders with a dropdown indicator 1`] = `
   type="button"
 >
   <span
-    class="emotion-0 IconButton__inner"
+    class="emotion-2 IconButton__inner"
     tabindex="-1"
   >
     <svg
-      class="Icon Icon--small Icon--primary IconButton__icon"
+      class="IconButton__icon emotion-0"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -426,6 +564,7 @@ exports[`renders with a dropdown indicator 1`] = `
       <path
         d="M7 10l5 5 5-5z"
       />
+      ,
       <path
         d="M0 0h24v24H0z"
         fill="none"
@@ -437,7 +576,7 @@ exports[`renders with a dropdown indicator 1`] = `
       My Icon
     </span>
     <svg
-      class="Icon Icon--small Icon--secondary IconButton__dropdown"
+      class="IconButton__dropdown emotion-1"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"

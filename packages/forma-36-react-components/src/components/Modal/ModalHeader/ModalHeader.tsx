@@ -1,5 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
+import { Close } from '@contentful/f36-icons';
 
 import { IconButton } from '../../IconButton';
 import styles from './ModalHeader.css';
@@ -34,7 +35,7 @@ export function ModalHeader({
       <h1 className={titleClassNames}>{title}</h1>
       {onClose && (
         <IconButton
-          iconProps={{ icon: 'Close', size: 'small' }}
+          iconProps={{ as: Close, size: 'small' }}
           buttonType="muted"
           label="Close"
           onClick={() => onClose()}

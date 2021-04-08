@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
+import { ErrorCircleOutline } from '@contentful/f36-icons';
 
-import { Icon } from '../Icon';
 import styles from './ValidationMessage.css';
 
 export interface ValidationMessageProps {
@@ -21,10 +21,9 @@ export function ValidationMessage({
 
   return (
     <div {...otherProps} className={classNames} data-test-id={testId}>
-      <Icon
-        icon="ErrorCircleOutline"
+      <ErrorCircleOutline
         className={styles['ValidationMessage__icon']}
-        color="negative"
+        variant="negative"
       />
       <p className={styles['ValidationMessage__text']}>{children}</p>
     </div>

@@ -2,13 +2,16 @@ import React from 'react';
 import cn from 'classnames';
 import type { ReactElement } from 'react';
 import { Heading } from '@contentful/f36-typography';
+import { ChevronLeft } from '@contentful/f36-icons';
+import type { IconComponent } from '@contentful/f36-icon';
+
 import { IconButton } from '../IconButton';
 import styles from './Workbench.css';
 
 export interface WorkbenchHeaderProps {
   title?: ReactElement | string;
   description?: ReactElement | string;
-  icon?: ReactElement;
+  icon?: IconComponent;
   actions?: ReactElement;
   onBack?: Function;
   className?: string;
@@ -24,6 +27,8 @@ export function WorkbenchHeader({
   testId = 'cf-ui-workbench-header',
   title,
 }: WorkbenchHeaderProps) {
+  const Icon = icon ?? null;
+
   return (
     <div
       className={cn(styles['Workbench__header'], className)}
@@ -42,14 +47,14 @@ export function WorkbenchHeader({
             label="Back"
             buttonType="muted"
             iconProps={{
+              as: ChevronLeft,
               size: 'large',
-              icon: 'ChevronLeft',
             }}
           />
         </div>
       ) : null}
-      {icon ? (
-        <div className={styles['Workbench__header-icon']}>{icon}</div>
+      {Icon ? (
+        <div className={styles['Workbench__header-icon']}>{<Icon />}</div>
       ) : null}
       {title && (
         <div

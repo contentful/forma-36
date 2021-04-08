@@ -3,8 +3,8 @@ import cn from 'classnames';
 import type { MouseEventHandler } from 'react';
 import { EntityStatusBadge } from '@contentful/f36-badge';
 import type { EntityStatus, PickUnion } from '@contentful/f36-core';
+import { Asset, Entry, Release } from '@contentful/f36-icons';
 
-import { Icon } from '../../Icon';
 import { CardActions, CardDragHandle, CardDragHandleProps } from '../../Card';
 import {
   SkeletonBodyText,
@@ -124,13 +124,13 @@ export function EntityListItem({
 }: EntityListItemProps): React.ReactElement {
   const renderIcon = useCallback(() => {
     const iconMap = {
-      asset: 'Asset',
-      entry: 'Entry',
-      release: 'Release',
+      asset: Asset,
+      entry: Entry,
+      release: Release,
     };
-    const icon = entityType ? iconMap[entityType.toLowerCase()] : 'Entry';
+    const Icon = entityType ? iconMap[entityType.toLowerCase()] : 'Entry';
 
-    return <Icon icon={icon} color="muted" />;
+    return <Icon variant="muted" />;
   }, [entityType]);
 
   const renderThumbnail = useCallback(() => {

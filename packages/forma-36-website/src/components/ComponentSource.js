@@ -4,6 +4,8 @@ import tokens from '@contentful/f36-tokens';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import * as f36Components from '@contentful/f36-components';
 import { Card, Button } from '@contentful/f36-components';
+import * as f36icons from '@contentful/f36-icons';
+import { Icon } from '@contentful/f36-icon';
 
 const styles = {
   preview: css`
@@ -38,7 +40,15 @@ class ComponentSource extends React.Component {
       <div className="f36-margin-bottom--m">
         <LiveProvider
           code={this.props.children.trim()}
-          scope={{ ...f36Components, tokens }}
+          // The order is important here as `f36icons` and `f36Components` both
+          // export a component called `Heading`
+          scope={{
+            ...f36icons,
+            HeadingIcon: f36icons.Heading,
+            ...f36Components,
+            tokens,
+            Icon,
+          }}
         >
           <Card padding="none">
             <div className={styles.preview}>

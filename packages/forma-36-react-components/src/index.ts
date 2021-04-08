@@ -1,5 +1,11 @@
 export * from '@contentful/f36-badge';
-export * from '@contentful/f36-typography';
+export { Icon } from '@contentful/f36-icon';
+export type {
+  IconComponent,
+  IconProps,
+  IconSize,
+  IconVariant,
+} from '@contentful/f36-icon';
 export { Flex, Grid, GridItem, Box } from '@contentful/f36-core';
 export type {
   FlexProps,
@@ -11,6 +17,7 @@ export type {
   PaddingProps,
   Spacing,
 } from '@contentful/f36-core';
+export * from '@contentful/f36-typography';
 export * from './components/Accordion';
 export * from './components/Asset';
 export * from './components/Autocomplete';
@@ -30,7 +37,6 @@ export * from './components/EntityList';
 export * from './components/Form';
 export * from './components/FormLabel';
 export * from './components/HelpText';
-export * from './components/Icon';
 export * from './components/IconButton';
 export * from './components/List';
 export * from './components/Modal';

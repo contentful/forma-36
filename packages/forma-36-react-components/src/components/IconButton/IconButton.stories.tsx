@@ -1,8 +1,10 @@
 import React from 'react';
 import { SectionHeading, Paragraph } from '@contentful/f36-typography';
-import { IconButton, IconButtonProps } from './IconButton';
-import { iconName } from '../Icon/constants';
+import * as icons from '@contentful/f36-icons';
 import { Flex } from '@contentful/f36-core';
+import type { Story } from '@storybook/react/types-6-0';
+
+import { IconButton, IconButtonProps } from './IconButton';
 
 // TODO align colors between Icon and IconButton? (warning is missing in IconButton)
 enum IconButtonTypes {
@@ -21,10 +23,17 @@ export default {
     propTypes: [IconButton['__docgenInfo']],
   },
   argTypes: {
+    as: { control: { disable: true } },
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
+    icon: {
+      control: {
+        options: Object.keys(icons),
+        type: 'select',
+      },
+      defaultValue: 'Star',
+    },
     iconProps: { control: { disable: true } },
-    icon: { control: { type: 'select', options: iconName } },
     iconSize: {
       control: {
         type: 'select',
@@ -35,103 +44,107 @@ export default {
 };
 
 interface Args extends IconButtonProps {
-  icon: IconButtonProps['iconProps']['icon'];
+  icon: string;
   iconSize?: IconButtonProps['iconProps']['size'];
 }
 
-export const Basic = ({ icon, iconSize, ...args }: Args) => (
-  <IconButton iconProps={{ icon, size: iconSize }} {...args} />
+export const Basic: Story<Args> = ({ icon, iconSize, ...args }) => (
+  <IconButton iconProps={{ as: icons[icon], size: iconSize }} {...args} />
 );
 Basic.args = {
-  icon: iconName.Star,
+  icon: 'Star',
   iconSize: 'medium',
 };
 
-export const Overview = () => (
-  <>
-    <Flex marginBottom="spacingXs">
-      <SectionHeading as="h3">IconButton colors</SectionHeading>
-    </Flex>
-    {Object.keys(IconButtonTypes).map((color, idx) => (
-      <Flex
-        padding="spacingXs"
-        alignItems="center"
-        style={{ backgroundColor: color === 'white' ? 'black' : 'transparent' }}
-        key={idx}
-      >
+export const Overview: Story<Args> = (args) => {
+  return (
+    <>
+      <Flex marginBottom="spacingXs">
+        <SectionHeading as="h3">IconButton colors</SectionHeading>
+      </Flex>
+      {Object.keys(IconButtonTypes).map((color, idx) => (
+        <Flex
+          padding="spacingXs"
+          alignItems="center"
+          style={{
+            backgroundColor: color === 'white' ? 'black' : 'transparent',
+          }}
+          key={idx}
+        >
+          <Flex marginRight="spacingS">
+            <IconButton
+              iconProps={{
+                as: icons[args.icon],
+              }}
+              buttonType={IconButtonTypes[color]}
+              label="Add New Element"
+            />
+          </Flex>
+          <Paragraph style={{ color: color === 'white' ? 'white' : 'initial' }}>
+            {color}
+          </Paragraph>
+        </Flex>
+      ))}
+      <Flex marginTop="spacingL" marginBottom="spacingS">
+        <SectionHeading as="h3">IconButton sizes</SectionHeading>
+      </Flex>
+      <Flex flexDirection="row">
         <Flex marginRight="spacingS">
           <IconButton
             iconProps={{
-              icon: 'Star',
+              as: icons[args.icon],
+              size: 'tiny',
             }}
-            buttonType={IconButtonTypes[color]}
-            label="Add New Element"
           />
         </Flex>
-        <Paragraph style={{ color: color === 'white' ? 'white' : 'initial' }}>
-          {color}
-        </Paragraph>
+        <Flex marginRight="spacingS">
+          <IconButton
+            iconProps={{
+              as: icons[args.icon],
+              size: 'small',
+            }}
+          />
+        </Flex>
+        <Flex marginRight="spacingS">
+          <IconButton
+            iconProps={{
+              as: icons[args.icon],
+              size: 'medium',
+            }}
+          />
+        </Flex>
+        <Flex marginRight="spacingS">
+          <IconButton
+            iconProps={{
+              as: icons[args.icon],
+              size: 'large',
+            }}
+          />
+        </Flex>
       </Flex>
-    ))}
-    <Flex marginTop="spacingL" marginBottom="spacingS">
-      <SectionHeading as="h3">IconButton sizes</SectionHeading>
-    </Flex>
-    <Flex flexDirection="row">
-      <Flex marginRight="spacingS">
-        <IconButton
-          iconProps={{
-            icon: 'Star',
-            size: 'tiny',
-          }}
-        />
+      <Flex marginTop="spacingL" marginBottom="spacingS">
+        <SectionHeading as="h3">IconButton disabled</SectionHeading>
       </Flex>
-      <Flex marginRight="spacingS">
-        <IconButton
-          iconProps={{
-            icon: 'Star',
-            size: 'small',
-          }}
-        />
+      <IconButton
+        iconProps={{
+          as: icons[args.icon],
+        }}
+        buttonType="primary"
+        label="Add New Element"
+        disabled
+      />
+      {/* Not sure what how this option should look like and where it is used */}
+      <Flex marginTop="spacingL" marginBottom="spacingS">
+        <SectionHeading as="h3">IconButton with dropdown</SectionHeading>
       </Flex>
-      <Flex marginRight="spacingS">
-        <IconButton
-          iconProps={{
-            icon: 'Star',
-            size: 'medium',
-          }}
-        />
-      </Flex>
-      <Flex marginRight="spacingS">
-        <IconButton
-          iconProps={{
-            icon: 'Star',
-            size: 'large',
-          }}
-        />
-      </Flex>
-    </Flex>
-    <Flex marginTop="spacingL" marginBottom="spacingS">
-      <SectionHeading as="h3">IconButton disabled</SectionHeading>
-    </Flex>
-    <IconButton
-      iconProps={{
-        icon: 'Star',
-      }}
-      buttonType="primary"
-      label="Add New Element"
-      disabled
-    />
-    {/* Not sure what how this option should look like and where it is used */}
-    <Flex marginTop="spacingL" marginBottom="spacingS">
-      <SectionHeading as="h3">IconButton with dropdown</SectionHeading>
-    </Flex>
-    <IconButton
-      iconProps={{
-        icon: 'Star',
-      }}
-      buttonType="primary"
-      label="Add New Element"
-      withDropdown
-    />
-  </>
-);
+      <IconButton
+        iconProps={{
+          as: icons[args.icon],
+        }}
+        buttonType="primary"
+        label="Add New Element"
+        withDropdown
+      />
+    </>
+  );
+};

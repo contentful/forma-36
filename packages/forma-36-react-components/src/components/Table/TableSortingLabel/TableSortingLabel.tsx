@@ -1,8 +1,8 @@
 import React from 'react';
 import cn from 'classnames';
 import type { ButtonHTMLAttributes } from 'react';
+import { ArrowUp } from '@contentful/f36-icons';
 
-import { Icon } from '../../Icon';
 import { sortingDirections } from '../TableCell/TableCell';
 import { TabFocusTrap } from '@contentful/f36-utils';
 import styles from './TableSortingLabel.css';
@@ -30,7 +30,7 @@ export const TableSortingLabel = ({
       styles[`TableSortingLabel__icon--${direction as string}`],
     );
 
-    return <Icon className={classNames} icon="ArrowUp" color="muted" />;
+    return <ArrowUp className={classNames} variant="muted" />;
   };
 
   return (

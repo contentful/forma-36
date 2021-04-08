@@ -186,6 +186,13 @@ exports[`renders the component in loading state 1`] = `
 `;
 
 exports[`renders the component with a custom drag handle 1`] = `
+.emotion-0 {
+  display: inline-block;
+  fill: #606C7C;
+  height: 18px;
+  width: 18px;
+}
+
 <div
   aria-label="picture of a cat"
   class="Card AssetCard AssetCard--size-default my-extra-class Card--padding-none"
@@ -197,7 +204,7 @@ exports[`renders the component with a custom drag handle 1`] = `
     data-test-id="cf-ui-card-drag-handle"
   >
     <svg
-      class="Icon Icon--small Icon--muted"
+      class="emotion-0"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -255,6 +262,13 @@ exports[`renders the component with a custom drag handle 1`] = `
 `;
 
 exports[`renders the component with a drag handle 1`] = `
+.emotion-0 {
+  display: inline-block;
+  fill: #606C7C;
+  height: 18px;
+  width: 18px;
+}
+
 <div>
   <div
     aria-label="picture of a cat"
@@ -267,7 +281,7 @@ exports[`renders the component with a drag handle 1`] = `
       data-test-id="cf-ui-card-drag-handle"
     >
       <svg
-        class="Icon Icon--small Icon--muted"
+        class="emotion-0"
         data-test-id="cf-ui-icon"
         height="1em"
         viewBox="0 0 24 24"
@@ -326,9 +340,20 @@ exports[`renders the component with a drag handle 1`] = `
 `;
 
 exports[`renders the component with actions 1`] = `
-.emotion-0 {
+.emotion-1 {
   display: inherit;
   outline: 0;
+}
+
+.emotion-0 {
+  display: inline-block;
+  fill: #2D64B3;
+  height: 18px;
+  width: 18px;
+  display: inline-block;
+  fill: #2D64B3;
+  height: 18px;
+  width: 18px;
 }
 
 <div
@@ -355,11 +380,11 @@ exports[`renders the component with actions 1`] = `
           type="button"
         >
           <span
-            class="emotion-0 IconButton__inner"
+            class="emotion-1 IconButton__inner"
             tabindex="-1"
           >
             <svg
-              class="Icon Icon--small Icon--primary IconButton__icon"
+              class="IconButton__icon emotion-0"
               data-test-id="cf-ui-icon"
               height="1em"
               viewBox="0 0 24 24"

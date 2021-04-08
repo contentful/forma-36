@@ -1,4 +1,5 @@
 import React, { Component, MouseEvent as ReactMouseEvent } from 'react';
+import { MoreHorizontal } from '@contentful/f36-icons';
 
 import { Dropdown, DropdownList, DropdownProps } from '../../Dropdown';
 import { IconButton, IconButtonProps } from '../../IconButton';
@@ -75,7 +76,7 @@ export class CardActions extends Component<CardActionsProps, CardActionsState> {
         testId={testId}
         toggleElement={
           <IconButton
-            iconProps={{ icon: 'MoreHorizontal' }}
+            iconProps={{ as: MoreHorizontal }}
             buttonType="secondary"
             disabled={isDisabled}
             label="Actions"

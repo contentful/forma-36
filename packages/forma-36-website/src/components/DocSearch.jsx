@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
-import { TextInput, Icon } from '@contentful/f36-components';
+import { Search } from '@contentful/f36-icons';
+import { TextInput } from '@contentful/f36-components';
 
 const styles = {
   container: css`
@@ -47,7 +48,7 @@ const DocSearch = () => {
   return (
     <div className={styles.container}>
       <div className={styles.icon}>
-        <Icon icon="Search" color="muted" />
+        <Search color="muted" />
       </div>
       <TextInput
         id="search"

@@ -6,6 +6,7 @@ export type {
   MarginProps,
   PaddingProps,
   PickUnion,
+  Simplify,
 } from './types';
 export * from './Flex';
 export * from './Grid';
