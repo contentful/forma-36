@@ -3,11 +3,8 @@ import React, { forwardRef } from 'react';
 import tokens from '@contentful/f36-tokens';
 import { Box } from '@contentful/f36-core';
 import type {
-  CommonProps,
   BoxProps,
   ComponentVariant,
-  MarginProps,
-  PaddingProps,
   PolymorphicComponent,
   PolymorphicComponentProps,
   PolymorphicComponentWithRef,
