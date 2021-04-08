@@ -146,6 +146,40 @@ export const DynamicContent: Story = (args) => {
   );
 };
 
+export const WithFullWidth: Story = (args) => {
+  const [isOpen, setOpen] = useState(true);
+
+  return (
+    <Dropdown
+      {...args}
+      isOpen={isOpen}
+      onClose={() => setOpen(false)}
+      toggleElement={
+        <Button
+          size="small"
+          buttonType="muted"
+          indicateDropdown
+          onClick={() => setOpen(!isOpen)}
+        >
+          Open dropdown
+        </Button>
+      }
+    >
+      <DropdownList maxHeight={200}>
+        <DropdownListItem onClick={action('click')}>
+          This list item is wider than the dropdown
+        </DropdownListItem>
+        <DropdownListItem onClick={action('click')}>
+          Short list item
+        </DropdownListItem>
+      </DropdownList>
+    </Dropdown>
+  );
+};
+WithFullWidth.args = {
+  isFullWidth: true,
+};
+
 export const Overview: Story = () => (
   <>
     <Flex marginBottom="spacingS">
