@@ -322,7 +322,7 @@ exports[`renders with a dropdown indicator 1`] = `
         H1
       </span>
       <svg
-        class="emotion-1 IconButton__dropdown"
+        class="IconButton__dropdown emotion-1"
         data-test-id="cf-ui-icon"
         height="1em"
         viewBox="0 0 24 24"

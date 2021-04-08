@@ -326,7 +326,7 @@ exports[`renders the component with dropdown indicator 1`] = `
       Embed Entry
     </span>
     <svg
-      class="emotion-0 Button__dropdown-icon"
+      class="Button__dropdown-icon emotion-0"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"

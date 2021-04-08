@@ -109,7 +109,7 @@ exports[`renders the component with a close button 1`] = `
       tabindex="-1"
     >
       <svg
-        class="emotion-0 Pill__icon--idle"
+        class="Pill__icon--idle emotion-0"
         data-test-id="cf-ui-icon"
         height="1em"
         viewBox="0 0 24 24"
@@ -140,7 +140,7 @@ exports[`renders the component with a dragging handle 1`] = `
     class="Pill__drag-icon"
   >
     <svg
-      class="emotion-0 Pill__icon--idle"
+      class="Pill__icon--idle emotion-0"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"

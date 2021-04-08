@@ -219,7 +219,7 @@ exports[`renders the component with a textlink 1`] = `
           class="TextLink__icon-wrapper"
         >
           <svg
-            class="emotion-0 TextLink__icon"
+            class="TextLink__icon emotion-0"
             data-test-id="cf-ui-icon"
             height="1em"
             viewBox="0 0 24 24"
@@ -595,7 +595,7 @@ exports[`renders the component with validation message 1`] = `
     data-test-id="cf-ui-validation-message"
   >
     <svg
-      class="emotion-0 ValidationMessage__icon"
+      class="ValidationMessage__icon emotion-0"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"

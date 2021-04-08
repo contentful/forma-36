@@ -24,7 +24,7 @@ exports[`renders the component 1`] = `
   >
     Foo
     <svg
-      class="emotion-0 TableSortingLabel__icon TableSortingLabel__icon--asc"
+      class="TableSortingLabel__icon TableSortingLabel__icon--asc emotion-0"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
