@@ -236,7 +236,6 @@ export const Overview: Story = () => (
 
     <Dropdown
       isOpen
-      usePortal
       isFullWidth
       toggleElement={
         <Button size="small" buttonType="muted" indicateDropdown>
@@ -244,7 +243,7 @@ export const Overview: Story = () => (
         </Button>
       }
     >
-      <DropdownList maxHeight={200}>
+      <DropdownList>
         <DropdownListItem onClick={action('click')}>
           This list item is wider than the dropdown
         </DropdownListItem>
@@ -253,5 +252,8 @@ export const Overview: Story = () => (
         </DropdownListItem>
       </DropdownList>
     </Dropdown>
+
+    {/* hack to make the open dropdown show up in chromatic */}
+    <Flex style={{ paddingBottom: '132px' }} />
   </>
 );
