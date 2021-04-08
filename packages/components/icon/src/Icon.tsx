@@ -124,8 +124,8 @@ export const _Icon: PolymorphicComponentWithRef<
     testId,
   };
 
-  // if (as && typeof as !== 'string') {
   if (as) {
+    // @ts-expect-error mute polymorphic error
     return <Box display="inline-block" {...otherProps} {...shared} as={as} />;
   }
 
