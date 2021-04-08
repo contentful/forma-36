@@ -10,6 +10,7 @@
 
 <!-- TOC -->
 
+- [Table of contents](#table-of-contents)
 - [Packages](#packages)
   - [Creating new packages](#creating-new-packages)
 - [Development](#development)
@@ -50,6 +51,8 @@ We use use [Plop](https://plopjs.com/) create scripts that help you to scaffold 
 
 For local development, in the root of the repo run `yarn` to install all dependencies and then `yarn build` to build all packages. Now follow the instructions of the specific package you’re working on.
 You will find each package’s instructions in their README files, check the [Packages](#packages) section for a list of all packages.
+
+> In case you are having problems to install the dependencies, try using NVM to get the same node version we use by running `nvm use` in the root of the repo
 
 ### Storybook for forma-36-react-components
 
