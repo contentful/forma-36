@@ -1,9 +1,9 @@
 import React, { ChangeEventHandler, ReactNode } from 'react';
 import cn from 'classnames';
+import { ValidationMessage } from '@contentful/f36-validation-message';
 
 import { FormLabel } from '../FormLabel';
 import { HelpText } from '../HelpText';
-import { ValidationMessage } from '../ValidationMessage';
 import { ControlledInput } from '../ControlledInput/ControlledInput';
 import styles from './ControlledInputField.css';
 

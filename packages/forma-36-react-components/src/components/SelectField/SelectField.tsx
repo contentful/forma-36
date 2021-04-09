@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import type { ChangeEvent, FocusEventHandler, ChangeEventHandler } from 'react';
 import cn from 'classnames';
+import { ValidationMessage } from '@contentful/f36-validation-message';
 
-import { ValidationMessage } from '../ValidationMessage';
 import { FormLabel } from '../FormLabel';
 import type { FormLabelProps } from '../FormLabel';
 import { HelpText } from '../HelpText';

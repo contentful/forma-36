@@ -7,8 +7,8 @@ import React, {
   ElementType,
 } from 'react';
 import cn from 'classnames';
+import { ValidationMessage } from '@contentful/f36-validation-message';
 
-import { ValidationMessage } from '../ValidationMessage';
 import { FormLabel, FormLabelProps } from '../FormLabel';
 import { HelpText } from '../HelpText';
 import { TextInput, TextInputProps } from '../TextInput';

@@ -3,8 +3,9 @@ title: 'ValidationMessage'
 type: 'component'
 status: 'stable'
 slug: /components/validation-message/
-github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/ValidationMessage'
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/validation-message'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-validationmessage--default'
+typescript: ./src/ValidationMessage.tsx
 ---
 
 `ValidationMessage` provides a consistent styled paragraph for messages in case of validation errors.
@@ -12,22 +13,17 @@ storybook: 'https://f36-storybook.contentful.com/?path=/story/components-validat
 ## Table of contents
 
 - [How to use ValidationMessage](#how-to-use-ValidationMessage)
-- [Component variations](#component-variations)
 - [Code examples](#code-examples)
 - [Content recommendations](#content-recommendations)
-- [Accessibility](#accessibility)
+- [Props](#props)
 
 ## How to use ValidationMessage
 
 Only use this component in the context of a form and as corresponding guidance to an input field which has validations
 
-## Example of usage
-
-Give couple of clear examples of the usage of the components, that includes import
-
 ## Code examples
 
-```jsx
+```tsx
 <React.Fragment>
   <FormLabel htmlFor="name" required>
     Full name
@@ -50,6 +46,8 @@ Give couple of clear examples of the usage of the components, that includes impo
 - Do not use punctuation
 - Use sentence style caps (in which only the first word of a sentence or term is capitalized)
 
-## Accessibility
+## Props
 
-missing
+import { Props } from '@contentful/f36-docs-utils';
+
+<Props of="ValidationMessage" />

@@ -18,6 +18,8 @@ export type {
   Spacing,
 } from '@contentful/f36-core';
 export * from '@contentful/f36-typography';
+export { ValidationMessage } from '@contentful/f36-validation-message';
+export type { ValidationMessageProps } from '@contentful/f36-validation-message';
 export * from './components/Accordion';
 export * from './components/Asset';
 export * from './components/Autocomplete';
@@ -58,7 +60,6 @@ export * from './components/TextInput';
 export * from './components/TextLink';
 export * from './components/ToggleButton';
 export * from './components/Tooltip';
-export * from './components/ValidationMessage';
 export * from './components/Workbench';
 
 // -- Add imports above this line (required by plopfile.js) --
