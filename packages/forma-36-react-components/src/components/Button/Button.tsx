@@ -14,8 +14,8 @@ import { TabFocusTrap } from '@contentful/f36-utils';
 import { Icon } from '@contentful/f36-icon';
 import { ChevronDown } from '@contentful/f36-icons';
 import type { IconComponent } from '@contentful/f36-icon';
+import { Spinner } from '@contentful/f36-spinner';
 
-import { Spinner } from '../Spinner';
 import styles from './Button.css';
 
 type AnchorProps =

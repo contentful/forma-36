@@ -35,6 +35,7 @@
     "@contentful/f36-icon": "^4.0.0",
     "@contentful/f36-icons": "^4.0.0",
     "@contentful/f36-list": "^4.0.0",
+    "@contentful/f36-spinner": "^4.0.0",
     "@contentful/f36-tokens": "^4.0.0",
     "@contentful/f36-typography": "^4.0.0",
     "@contentful/f36-validation-message": "^4.0.0",
