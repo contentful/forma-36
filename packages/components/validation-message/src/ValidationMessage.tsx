@@ -1,7 +1,7 @@
-import { cx, css } from 'emotion';
+import { css } from 'emotion';
 import React, { forwardRef } from 'react';
 import tokens from '@contentful/f36-tokens';
-import { Box } from '@contentful/f36-core';
+import { Flex } from '@contentful/f36-core';
 import type {
   BoxInternalProps,
   PolymorphicComponent,
@@ -18,9 +18,6 @@ const styles = {
     marginTop: `calc(${tokens.spacing2Xs} / 2)`,
     minHeight: '18px',
     minWidth: '18px',
-  }),
-  root: css({
-    display: 'flex',
   }),
   text: css({
     color: tokens.colorNegative,
@@ -47,15 +44,15 @@ const _ValidationMessage: PolymorphicComponentWithRef<
   forwardedRef,
 ) => {
   return (
-    <Box
+    <Flex
       {...otherProps}
-      className={cx(styles.root, className)}
+      className={className}
       ref={forwardedRef}
       testId={testId}
     >
       <ErrorCircleOutline className={styles.icon} variant="negative" />
       <p className={styles.text}>{children}</p>
-    </Box>
+    </Flex>
   );
 };
 
