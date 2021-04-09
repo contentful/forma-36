@@ -1,17 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ValidationMessage renders the component with all required props 1`] = `
-.emotion-1 {
-  color: #BF3045;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  margin: 0;
-  display: inline-block;
-}
-
 .emotion-2 {
-  display: block;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -27,6 +17,23 @@ exports[`ValidationMessage renders the component with all required props 1`] = `
   margin-top: calc(0.25rem / 2);
   min-height: 18px;
   min-width: 18px;
+}
+
+.emotion-1 {
+  display: block;
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-weight: 600;
+  color: #192532;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  text-rendering: optimizeLegibility;
+  font-weight: 400;
+  color: #536171;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #BF3045;
+  margin: 0;
 }
 
 <div
@@ -50,6 +57,7 @@ exports[`ValidationMessage renders the component with all required props 1`] = `
   </svg>
   <p
     class="emotion-1"
+    data-test-id="cf-ui-paragraph"
   >
     This field is required
   </p>
@@ -57,17 +65,7 @@ exports[`ValidationMessage renders the component with all required props 1`] = `
 `;
 
 exports[`ValidationMessage renders the component with an additional class name 1`] = `
-.emotion-1 {
-  color: #BF3045;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  margin: 0;
-  display: inline-block;
-}
-
 .emotion-2 {
-  display: block;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -83,6 +81,23 @@ exports[`ValidationMessage renders the component with an additional class name 1
   margin-top: calc(0.25rem / 2);
   min-height: 18px;
   min-width: 18px;
+}
+
+.emotion-1 {
+  display: block;
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-weight: 600;
+  color: #192532;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  text-rendering: optimizeLegibility;
+  font-weight: 400;
+  color: #536171;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #BF3045;
+  margin: 0;
 }
 
 <div
@@ -106,6 +121,7 @@ exports[`ValidationMessage renders the component with an additional class name 1
   </svg>
   <p
     class="emotion-1"
+    data-test-id="cf-ui-paragraph"
   >
     This field is required
   </p>
