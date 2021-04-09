@@ -9,6 +9,7 @@ import type {
   PolymorphicComponentWithRef,
 } from '@contentful/f36-core';
 import { ErrorCircleOutline } from '@contentful/f36-icons';
+import { Paragraph } from '@contentful/f36-typography';
 
 const DEFAULT_TAG = 'div';
 
@@ -21,11 +22,7 @@ const styles = {
   }),
   text: css({
     color: tokens.colorNegative,
-    fontFamily: tokens.fontStackPrimary,
-    fontSize: tokens.fontSizeM,
-    lineHeight: tokens.lineHeightDefault,
     margin: 0,
-    display: 'inline-block',
   }),
 };
 
@@ -51,7 +48,7 @@ const _ValidationMessage: PolymorphicComponentWithRef<
       testId={testId}
     >
       <ErrorCircleOutline className={styles.icon} variant="negative" />
-      <p className={styles.text}>{children}</p>
+      <Paragraph className={styles.text}>{children}</Paragraph>
     </Flex>
   );
 };
