@@ -1,4 +1,5 @@
 export * from '@contentful/f36-badge';
+export * from '@contentful/f36-list';
 export { Icon } from '@contentful/f36-icon';
 export type {
   IconComponent,
@@ -40,7 +41,6 @@ export * from './components/Form';
 export * from './components/FormLabel';
 export * from './components/HelpText';
 export * from './components/IconButton';
-export * from './components/List';
 export * from './components/Modal';
 export * from './components/Note';
 export * from './components/Notification';
