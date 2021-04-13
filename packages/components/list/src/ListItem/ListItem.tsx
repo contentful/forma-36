@@ -1,16 +1,12 @@
 import { cx, css } from 'emotion';
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
+import { CommonProps } from '@contentful/f36-core';
 
 import { List } from '../List';
 
-export interface ListItemProps {
-  // Additional className
-  className?: string;
-  // The children of the ListItem
-  children: React.ReactNode;
-  // Class used for testing purposes
-  testId?: string;
+export interface ListItemProps extends CommonProps {
+  children?: React.ReactNode;
 }
 
 export function ListItem({
