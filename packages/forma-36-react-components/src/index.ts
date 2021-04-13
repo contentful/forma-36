@@ -20,8 +20,8 @@ export type {
 export * from '@contentful/f36-typography';
 export { ValidationMessage } from '@contentful/f36-validation-message';
 export type { ValidationMessageProps } from '@contentful/f36-validation-message';
-export { List } from '@contentful/f36-list';
-export type { ListProps } from '@contentful/f36-list';
+export { List, ListItem } from '@contentful/f36-list';
+export type { ListProps, ListItemProps } from '@contentful/f36-list';
 export * from './components/Accordion';
 export * from './components/Asset';
 export * from './components/Autocomplete';
