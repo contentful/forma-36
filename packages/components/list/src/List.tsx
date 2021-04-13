@@ -25,7 +25,7 @@ export type ListProps = PolymorphicComponentProps<
 const _List: PolymorphicComponentWithRef<
   ListInternalProps,
   typeof DEFAULT_TAG
-> = ({ as: Tag = 'ul', className, children, ...otherProps }, ref) => {
+> = ({ as: Tag = DEFAULT_TAG, className, children, ...otherProps }, ref) => {
   return (
     <Box
       as={DEFAULT_TAG}
