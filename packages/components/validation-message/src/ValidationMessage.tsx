@@ -3,7 +3,7 @@ import React, { forwardRef } from 'react';
 import tokens from '@contentful/f36-tokens';
 import { Flex } from '@contentful/f36-core';
 import type {
-  BoxInternalProps,
+  FlexInternalProps,
   PolymorphicComponent,
   PolymorphicComponentProps,
   PolymorphicComponentWithRef,
@@ -26,7 +26,7 @@ const styles = {
   }),
 };
 
-export type ValidationMessageInternalProps = BoxInternalProps;
+export type ValidationMessageInternalProps = FlexInternalProps;
 
 export type ValidationMessageProps = PolymorphicComponentProps<
   typeof DEFAULT_TAG,
