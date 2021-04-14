@@ -5,14 +5,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [3.86.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.86.2...@contentful/forma-36-react-components@3.86.3) (2021-04-08)
 
-
 ### Bug Fixes
 
-* add css to break wide list items in the dropdown ([#910](https://github.com/contentful/forma-36/issues/910)) ([42b0709](https://github.com/contentful/forma-36/commit/42b0709854b501c8c25aef106ee4db7756967b97))
-
-
-
-
+- add css to break wide list items in the dropdown ([#910](https://github.com/contentful/forma-36/issues/910)) ([42b0709](https://github.com/contentful/forma-36/commit/42b0709854b501c8c25aef106ee4db7756967b97))
 
 ## [3.86.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.86.1...@contentful/forma-36-react-components@3.86.2) (2021-04-01)
 
