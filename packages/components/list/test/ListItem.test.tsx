@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import { ListItem } from './ListItem';
+import { ListItem } from '../src/ListItem/ListItem';
 
 it('renders the component', () => {
   const { container } = render(<ListItem>ListItem</ListItem>);

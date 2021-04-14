@@ -1,9 +1,11 @@
 import React from 'react';
-import { SectionHeading } from '@contentful/f36-typography';
-import { List, ListProps } from './List';
-import { ListItem } from './ListItem/ListItem';
-import { TextLink } from '../TextLink';
+import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Flex } from '@contentful/f36-core';
+import { SectionHeading } from '@contentful/f36-typography';
+
+import { List } from '../src/List';
+import type { ListProps } from '../src/List';
+import { ListItem } from '../src/ListItem/ListItem';
 
 export default {
   title: 'Components/List',
@@ -13,7 +15,7 @@ export default {
     propTypes: [List['__docgenInfo'], ListItem['__docgenInfo']],
   },
   argTypes: {
-    element: {
+    as: {
       table: { defaultValue: { summary: 'ul' } },
       control: { type: 'select', options: ['ul', 'ol'] },
     },
@@ -21,24 +23,22 @@ export default {
     testId: { control: { disable: true } },
     children: { control: { disable: true } },
   },
-};
+} as Meta;
 
-export const basic = ({ ...args }: ListProps) => (
-  <List {...args}>
-    <ListItem>List Item 1</ListItem>
-    <ListItem>List Item 2</ListItem>
-    <ListItem>
-      List Item with a&nbsp;
-      <TextLink>text link</TextLink>&nbsp;
-    </ListItem>
-    <ListItem>
-      <List>
-        <ListItem>Sublist Item 1</ListItem>
-        <ListItem>Sublist Item 2</ListItem>
-      </List>
-    </ListItem>
-  </List>
-);
+export const Default: Story<ListProps> = (args) => {
+  return (
+    <List {...args}>
+      <ListItem>List Item 1</ListItem>
+      <ListItem>List Item 2</ListItem>
+      <ListItem>
+        <List>
+          <ListItem>Sublist Item 1</ListItem>
+          <ListItem>Sublist Item 2</ListItem>
+        </List>
+      </ListItem>
+    </List>
+  );
+};
 
 export const overview = ({ ...args }: ListProps) => (
   <>
@@ -50,10 +50,6 @@ export const overview = ({ ...args }: ListProps) => (
         <List {...args}>
           <ListItem>List Item 1</ListItem>
           <ListItem>List Item 2</ListItem>
-          <ListItem>
-            List Item with a&nbsp;
-            <TextLink>text link</TextLink>&nbsp;
-          </ListItem>
           <ListItem>
             <List>
               <ListItem>Sublist Item 1</ListItem>
@@ -68,15 +64,11 @@ export const overview = ({ ...args }: ListProps) => (
         <SectionHeading>Ordered List</SectionHeading>
       </Flex>
       <Flex>
-        <List element="ol" {...args}>
+        <List as="ol" {...args}>
           <ListItem>List Item 1</ListItem>
           <ListItem>List Item 2</ListItem>
           <ListItem>
-            List Item with a&nbsp;
-            <TextLink>text link</TextLink>&nbsp;
-          </ListItem>
-          <ListItem>
-            <List element="ol">
+            <List as="ol">
               <ListItem>Sublist Item 1</ListItem>
               <ListItem>Sublist Item 2</ListItem>
             </List>

@@ -1,10 +1,15 @@
+# @contentful/f36-list
+
 ---
+
 title: 'List'
 type: 'component'
 status: 'stable'
 slug: /components/list/
-github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/List'
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/List'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-list--default'
+typescript: ./src/List.tsx
+
 ---
 
 List is component that helps with vertical indexing of content.
@@ -15,6 +20,7 @@ Every list item begins with a bullet or a number.
 - [How to use List](#how-to-use-list)
 - [Component variations](#component-variations)
 - [Code example](#code-example)
+- [Props](#props)
 
 ## How to use List
 
@@ -27,7 +33,7 @@ The List component can be configured in two different ways: to display bulleted 
 
 ## Code example
 
-```jsx
+```tsx
 // import { List, ListItem } from '@contentful/f36-components';
 
 <List element="ul">
@@ -44,3 +50,9 @@ The List component can be configured in two different ways: to display bulleted 
   </ListItem>
 </List>
 ```
+
+## Props
+
+import { Props } from '@contentful/f36-docs-utils';
+
+<Props of="List" />
