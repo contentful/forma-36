@@ -66,6 +66,7 @@ export { default as FormatItalic } from './FormatItalic';
 export { default as FormatItalicTrimmed } from './FormatItalicTrimmed';
 export { default as FormatUnderlined } from './FormatUnderlined';
 export { default as FormatUnderlinedTrimmed } from './FormatUnderlinedTrimmed';
+export { default as Gift } from './Gift';
 export { default as Heading } from './Heading';
 export { default as HeadingOne } from './HeadingOne';
 export { default as HeadingOneTrimmed } from './HeadingOneTrimmed';
