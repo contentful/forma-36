@@ -20,7 +20,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "parcel build index.ts --no-minify"
+    "build": "parcel build index.ts"
   },
   "peerDependencies": {
     "react": ">=16.8"
