@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0-alpha.33](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-datepicker@0.4.0-alpha.32...@contentful/forma-36-react-datepicker@0.4.0-alpha.33) (2021-04-15)
+
+
+### Features
+
+* add Gift icon ([#921](https://github.com/contentful/forma-36/issues/921)) ([fa494ff](https://github.com/contentful/forma-36/commit/fa494ff6240867dd5dd5afc129586864198c179b))
+
+
+
+
+
 # [0.4.0-alpha.32](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-datepicker@0.4.0-alpha.31...@contentful/forma-36-react-datepicker@0.4.0-alpha.32) (2021-04-08)
 
 **Note:** Version bump only for package @contentful/forma-36-react-datepicker
