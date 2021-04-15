@@ -67,6 +67,7 @@ export const iconName = {
   FormatItalicTrimmed: 'FormatItalicTrimmed',
   FormatUnderlined: 'FormatUnderlined',
   FormatUnderlinedTrimmed: 'FormatUnderlinedTrimmed',
+  Gift: 'Gift',
   Heading: 'Heading',
   HeadingOne: 'HeadingOne',
   HeadingOneTrimmed: 'HeadingOneTrimmed',
