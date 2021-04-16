@@ -52,8 +52,8 @@ function SimpleDemo(props: ModalConfirmProps) {
         Delete something
       </Button>
       <ModalConfirm
-        isShown={isShown}
         {...props}
+        isShown={isShown}
         onCancel={() => {
           setShown(false);
           action('onCancel')();
@@ -98,6 +98,7 @@ export function ComplexStory(props: ModalConfirmProps) {
         Delete something
       </Button>
       <ModalConfirm
+        {...props}
         isShown={isShown}
         intent="negative"
         isConfirmDisabled={repeat !== 'unlock'}
@@ -115,7 +116,6 @@ export function ComplexStory(props: ModalConfirmProps) {
           }, 1500);
           action('onConfirm')();
         }}
-        {...props}
       >
         <Typography>
           <Paragraph>
