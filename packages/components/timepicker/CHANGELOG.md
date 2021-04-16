@@ -5,14 +5,9 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 # [0.5.0-alpha.34](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-timepicker@0.5.0-alpha.33...@contentful/forma-36-react-timepicker@0.5.0-alpha.34) (2021-04-15)
 
-
 ### Features
 
-* add Gift icon ([#921](https://github.com/contentful/forma-36/issues/921)) ([fa494ff](https://github.com/contentful/forma-36/commit/fa494ff6240867dd5dd5afc129586864198c179b))
-
-
-
-
+- add Gift icon ([#921](https://github.com/contentful/forma-36/issues/921)) ([fa494ff](https://github.com/contentful/forma-36/commit/fa494ff6240867dd5dd5afc129586864198c179b))
 
 # [0.5.0-alpha.33](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-timepicker@0.5.0-alpha.32...@contentful/forma-36-react-timepicker@0.5.0-alpha.33) (2021-04-08)
 

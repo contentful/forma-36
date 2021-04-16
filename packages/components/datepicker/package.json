@@ -21,7 +21,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "parcel build index.ts --no-minify"
+    "build": "parcel build index.ts"
   },
   "peerDependencies": {
     "@contentful/forma-36-react-components": "^3.72.11",
