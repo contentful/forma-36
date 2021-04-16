@@ -51,9 +51,12 @@ describe('DateTime', () => {
   it('does not allow for an unknown format', () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const format = 'NOT_REAL' as any;
-
+    // Throw error silently
+    const spy = jest.spyOn(console, 'error');
+    spy.mockImplementation(() => {});
     expect(() => {
       render(<DateTime date={exampleDate} format={format} />);
     }).toThrow(`Unknown date format 'NOT_REAL'`);
+    spy.mockRestore();
   });
 });

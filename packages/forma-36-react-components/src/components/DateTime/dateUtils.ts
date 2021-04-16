@@ -1,5 +1,8 @@
 import dayjs from 'dayjs';
 import RelativeTime from 'dayjs/plugin/relativeTime';
+import utcPlugin from 'dayjs/plugin/utc';
+
+dayjs.extend(utcPlugin);
 dayjs.extend(RelativeTime);
 
 import { CoercibleDate } from './types';
@@ -9,6 +12,13 @@ const formatTokens = {
   DATE_ONLY: 'D MMM YYYY',
   TIME_ONLY: 'h:mm a',
   WEEKDAY_DATE: 'ddd[, ]D MMM',
+};
+
+const formatTokensMachineReadable = {
+  FULL: 'YYYY-MM-DDTHH:mm:ss.SSS[Z]',
+  DATE_ONLY: 'YYYY-MM-DD',
+  TIME_ONLY: 'HH:mm:ss.SSS',
+  WEEKDAY_DATE: 'MM-DD',
 };
 
 export type DateTimeFormat = keyof typeof formatTokens;
@@ -30,6 +40,25 @@ export const formatDateTime = (
     throw new TypeError(`Unknown date format '${token}'`);
   }
   return dayjs(date).format(formatTokens[token]);
+};
+
+/**
+ * @example
+ * > formatMachineReadableDateTime(date)
+ * 2019-08-13T10:00:00.000Z
+ *
+ * @example
+ * > formatMachineReadableDateTime(date, 'DATE_ONLY')
+ * 2019-08-13
+ */
+export const formatMachineReadableDateTime = (
+  date: CoercibleDate,
+  token: DateTimeFormat = 'FULL',
+): string => {
+  if (!formatTokens[token]) {
+    throw new TypeError(`Unknown date format '${token}'`);
+  }
+  return dayjs(date).utc().format(formatTokensMachineReadable[token]);
 };
 
 /**
