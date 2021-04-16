@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.87.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.86.3...@contentful/forma-36-react-components@3.87.0) (2021-04-15)
+### Features
+
+* add Gift icon ([#921](https://github.com/contentful/forma-36/issues/921)) ([fa494ff](https://github.com/contentful/forma-36/commit/fa494ff6240867dd5dd5afc129586864198c179b))
+
 ## [3.86.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.86.2...@contentful/forma-36-react-components@3.86.3) (2021-04-08)
 
 ### Bug Fixes

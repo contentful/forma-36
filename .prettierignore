@@ -8,3 +8,4 @@ build
 .parcel-cache
 public
 .cache
+packages/**/CHANGELOG.md
