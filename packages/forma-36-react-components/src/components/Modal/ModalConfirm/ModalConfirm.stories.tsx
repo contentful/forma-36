@@ -45,7 +45,7 @@ export default {
 } as Meta;
 
 function SimpleDemo(props: ModalConfirmProps) {
-  const [isShown, setShown] = useState(true);
+  const [isShown, setShown] = useState(false);
   return (
     <div>
       <Button buttonType="negative" onClick={() => setShown(true)}>
@@ -88,7 +88,7 @@ RightButtons.args = {
 };
 
 export function ComplexStory(props: ModalConfirmProps) {
-  const [isShown, setShown] = useState(true);
+  const [isShown, setShown] = useState(false);
   const [isLoading, setLoading] = useState(false);
   const [repeat, setRepeat] = useState('');
 
@@ -100,7 +100,6 @@ export function ComplexStory(props: ModalConfirmProps) {
       <ModalConfirm
         {...props}
         isShown={isShown}
-        intent="negative"
         isConfirmDisabled={repeat !== 'unlock'}
         isConfirmLoading={isLoading}
         onCancel={() => {
