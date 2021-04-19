@@ -5,7 +5,7 @@ import { DateTime } from './DateTime';
 
 const exampleDate = new Date('2020-04-09T16:17:18.912Z');
 
-const monkeyPatch = (errorMessage: string) => {
+const silenceErrorsWithMessage = (errorMessage: string) => {
   // Throw expected error silently
   const originalFunction = console.error;
   const spy = jest.spyOn(console, 'error');
@@ -67,7 +67,7 @@ describe('DateTime', () => {
   it('does not allow for an unknown format', () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const format = 'NOT_REAL' as any;
-    const restoreErrorPatch = monkeyPatch("Unknown date format 'NOT_REAL'");
+    const restoreErrorPatch = silenceErrorsWithMessage("Unknown date format 'NOT_REAL'");
     expect(() => {
       render(<DateTime date={exampleDate} format={format} />);
     }).toThrow(`Unknown date format 'NOT_REAL'`);
