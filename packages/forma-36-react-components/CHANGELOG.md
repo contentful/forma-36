@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.88.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.87.1...@contentful/forma-36-react-components@3.88.0) (2021-04-19)
+
+
+### Features
+
+* Machine Readable Formats for DateTime with DATE_ONLY or TIME_ONLY ([#925](https://github.com/contentful/forma-36/issues/925)) ([cd2c6c4](https://github.com/contentful/forma-36/commit/cd2c6c469ba5dff3c0708c660023cddd9d9e08ec))
+
+
+
+
+
 ## [3.87.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.87.0...@contentful/forma-36-react-components@3.87.1) (2021-04-19)
 
 
