@@ -164,6 +164,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/th1nkgr33n"><img src="https://avatars.githubusercontent.com/u/7330927?v=4?s=100" width="100px;" alt=""/><br /><sub><b>th1nkgr33n</b></sub></a><br /><a href="https://github.com/contentful/forma-36/issues?q=author%3Ath1nkgr33n" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="http://chaoste.github.io"><img src="https://avatars.githubusercontent.com/u/9327071?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Thomas Kellermeier</b></sub></a><br /><a href="https://github.com/contentful/forma-36/issues?q=author%3AChaoste" title="Bug reports">🐛</a> <a href="https://github.com/contentful/forma-36/commits?author=Chaoste" title="Code">💻</a></td>
   </tr>
 </table>
 
