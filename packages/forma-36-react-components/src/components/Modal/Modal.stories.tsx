@@ -47,18 +47,13 @@ export default {
 } as Meta;
 
 export const Default: Story<ModalProps> = (props) => {
-  const [isShown, setShown] = useState(true);
+  const [isShown, setShown] = useState(false);
 
   return (
     <div>
-      <Button
-        onClick={() => {
-          setShown(true);
-        }}
-      >
-        Open modal
-      </Button>
+      <Button onClick={() => setShown(true)}>Open modal</Button>
       <Modal
+        {...props}
         modalHeaderProps={{
           className: 'additional-modal-header-class',
         }}
@@ -66,10 +61,7 @@ export const Default: Story<ModalProps> = (props) => {
           className: 'additional-modal-content-class',
         }}
         isShown={isShown}
-        onClose={() => {
-          setShown(false);
-        }}
-        {...props}
+        onClose={() => setShown(false)}
       >
         Modal content. It is centered by default.
       </Modal>
@@ -82,14 +74,14 @@ Default.args = {
 };
 
 export const LongModal: Story<ModalProps> = (props) => {
-  const [isShown, setShown] = useState(true);
+  const [isShown, setShown] = useState(false);
 
   return (
     <div>
       <Button onClick={() => setShown(true)}>
         Different behaviors for modal
       </Button>
-      <Modal isShown={isShown} onClose={() => setShown(false)} {...props}>
+      <Modal {...props} isShown={isShown} onClose={() => setShown(false)}>
         <div style={{ marginBottom: 10 }}>
           Toggle <code>allowHeightOverflow</code> to see different behaviours
         </div>
@@ -108,12 +100,12 @@ LongModal.args = {
 };
 
 export const ControllerModal: Story<ModalProps> = (props) => {
-  const [isShown, setShown] = useState(true);
+  const [isShown, setShown] = useState(false);
 
   return (
     <div>
       <Button onClick={() => setShown(true)}>Show centered modal</Button>
-      <Modal isShown={isShown} onClose={() => setShown(false)} {...props}>
+      <Modal {...props} isShown={isShown} onClose={() => setShown(false)}>
         {({
           title,
           onClose,
