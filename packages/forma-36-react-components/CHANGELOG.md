@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.87.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.87.0...@contentful/forma-36-react-components@3.87.1) (2021-04-19)
+
+
+### Bug Fixes
+
+* make children optional in Workbench sidebar and content ([#927](https://github.com/contentful/forma-36/issues/927)) ([6347532](https://github.com/contentful/forma-36/commit/634753215405cb1dc98d8be42a7799197559e49f))
+* storybook stories for Modal ([#924](https://github.com/contentful/forma-36/issues/924)) ([6a01021](https://github.com/contentful/forma-36/commit/6a010217b80774b10075f7133501560cc94df3b8))
+
+
+
+
+
 # [3.87.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.86.3...@contentful/forma-36-react-components@3.87.0) (2021-04-15)
 ### Features
 
