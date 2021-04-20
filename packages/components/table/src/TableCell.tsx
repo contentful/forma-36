@@ -64,7 +64,7 @@ export const TableCell = forwardRef<HTMLTableCellElement, TableCellProps>(
               ref={forwardedRef}
               style={{
                 ...otherProps.style,
-                top: offsetTop,
+                top: offsetTop || undefined,
               }}
               testId={testId}
             >
