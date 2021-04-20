@@ -5,13 +5,6 @@ import { Box } from '@contentful/f36-core';
 import type { BoxProps } from '@contentful/f36-core';
 import tokens from '@contentful/f36-tokens';
 
-export type TableInternalProps = HTMLProps<HTMLTableElement> &
-  Omit<BoxProps<'table'>, 'as'> & {
-    layout?: 'inline' | 'embedded';
-  };
-
-export type TableProps = TableInternalProps;
-
 const styles = {
   inline: css({
     borderRadius: tokens.borderRadiusMedium,
@@ -33,6 +26,13 @@ const styles = {
     width: '100%',
   }),
 };
+
+export type TableInternalProps = HTMLProps<HTMLTableElement> &
+  Omit<BoxProps<'table'>, 'as'> & {
+    layout?: 'inline' | 'embedded';
+  };
+
+export type TableProps = TableInternalProps;
 
 export const Table = forwardRef<HTMLTableElement, TableInternalProps>(
   function Table(

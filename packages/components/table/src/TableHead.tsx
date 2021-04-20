@@ -7,16 +7,6 @@ import tokens from '@contentful/f36-tokens';
 
 import { TableCellContext, contextOptions } from './';
 
-const styles = {
-  sticky: css({
-    th: {
-      position: 'sticky',
-      top: 0,
-      zIdex: tokens.zIndexDefault,
-    },
-  }),
-};
-
 export type TableHeadInternalProps = CommonProps &
   HTMLProps<HTMLTableSectionElement> & {
     isSticky?: boolean;
@@ -27,7 +17,7 @@ export type TableHeadInternalProps = CommonProps &
 export type TableHeadProps = TableHeadInternalProps;
 
 export const TableHead = forwardRef<HTMLTableSectionElement, TableHeadProps>(
-  (
+  function TableHead(
     {
       children,
       className,
@@ -37,10 +27,21 @@ export const TableHead = forwardRef<HTMLTableSectionElement, TableHeadProps>(
       ...otherProps
     },
     forwardedRef,
-  ) => {
-    const classNames = cx(className, {
-      [styles.sticky]: isSticky,
-    });
+  ) {
+    const classNames = cx(
+      // For some reason Parcel doesn't build properly if we extract this to
+      // a variable 🤷
+      isSticky
+        ? css({
+            th: {
+              position: 'sticky',
+              top: 0,
+              zIndex: tokens.zIndexDefault,
+            },
+          })
+        : '',
+      className,
+    );
 
     return (
       <TableCellContext.Provider
