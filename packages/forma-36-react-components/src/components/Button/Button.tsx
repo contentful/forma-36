@@ -141,7 +141,7 @@ export const Button = ({
           <Spinner
             className={styles.Button__spinner}
             customSize={12}
-            color={
+            variant={
               buttonType === 'muted' ||
               buttonType === 'warning' ||
               buttonType === 'naked'
