@@ -631,7 +631,7 @@ exports[`renders the component in loading state 1`] = `
 
 .emotion-6 {
   display: block;
-  fill: #536171;
+  fill: #f7f9fa;
 }
 
 .emotion-7 {
@@ -657,7 +657,6 @@ exports[`renders the component in loading state 1`] = `
     </span>
     <div
       class="Button__spinner emotion-7"
-      color="white"
       data-test-id="cf-ui-spinner"
     >
       <svg
