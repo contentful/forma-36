@@ -1,14 +1,10 @@
 import React, { useState } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { SectionHeading } from '@contentful/f36-typography';
-import { Table } from './Table';
-import { TableHead } from './TableHead/TableHead';
-import { TableBody } from './TableBody/TableBody';
-import { TableCell } from './TableCell/TableCell';
-import { TableRow } from './TableRow/TableRow';
-import { SkeletonRow } from '../Skeleton';
 import { Flex } from '@contentful/f36-core';
-import { Button } from '../Button/Button';
+import { Button, SkeletonRow } from '@contentful/f36-components';
+
+import { Table, TableBody, TableCell, TableHead, TableRow } from '../src/';
 
 export default {
   argTypes: {
@@ -107,12 +103,12 @@ export const WithLoadingState: Story = () => {
   );
 };
 
-export const Overview = () => (
+export const Overview: Story = () => (
   <>
     <Flex flexDirection="column" marginBottom="spacingL">
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">Inline Table</SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Inline Table
+      </SectionHeading>
 
       <Table>
         <TableHead>
@@ -147,9 +143,9 @@ export const Overview = () => (
     </Flex>
 
     <Flex flexDirection="column" marginBottom="spacingL">
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">Embedded Table</SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Embedded Table
+      </SectionHeading>
 
       <Table layout="embedded">
         <TableHead>

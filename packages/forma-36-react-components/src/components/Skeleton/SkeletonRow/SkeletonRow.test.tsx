@@ -1,10 +1,10 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import { Table, TableBody } from '@contentful/f36-table';
 
 import { axe } from '../../../utils/axeHelper';
 
 import { SkeletonRow } from './SkeletonRow';
-import { Table, TableBody } from '../../Table';
 
 it('renders the component', () => {
   const { container } = render(
