@@ -4,17 +4,56 @@ type: 'component'
 status: 'stable'
 slug: /components/textarea/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/Textarea'
-storybook: 'https://f36-storybook.contentful.com/?path=/story/components-textarea--default'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-textarea--basic'
 ---
 
-Detailed documentation will be provided soon. For now, please have a look into the storybook for implementation details.
+`Textarea` is a form element that allows the user to enter a sizeable amount of multi-line plain text.
 
-```jsx
+## Table of contents
+
+- [How to use Textarea](#how-to-use-Textarea)
+- [Code examples](#code-examples)
+- [Accessibility](#accessibility)
+
+## How to use Textarea
+
+Textarea is a form element, it should be used within the context of `<Form>`
+It can be configured in a number of different ways; use this guide to determine the best configuration based on the context.
+
+## Code examples
+
+```tsx
+// import { Textarea } from '@contentful/forma-36-react-components';
+
 <Textarea
-  name="someInput"
-  id="someInput"
+  name="description"
+  id="textarea"
   width="large"
   value="Example text in the textarea"
   rows={2}
 />
 ```
+
+### Textarea state (`disabled`)
+
+```tsx
+<Textarea name="description" id="textarea" disabled value="123456" rows={2} />
+```
+
+### Textarea can be controlled by passing a `textareaRef` prop
+
+```tsx
+<Textarea
+  name="description"
+  id="textarea"
+  disabled
+  value="123456"
+  rows={2}
+  textareaRef={}
+/>
+```
+
+## Accessibility
+
+- To ensure accessibility, provide a `name` prop
+- Always feedback the user if the Textarea is a required field
