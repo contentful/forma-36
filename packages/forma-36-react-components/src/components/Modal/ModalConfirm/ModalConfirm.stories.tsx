@@ -45,15 +45,15 @@ export default {
 } as Meta;
 
 function SimpleDemo(props: ModalConfirmProps) {
-  const [isShown, setShown] = useState(true);
+  const [isShown, setShown] = useState(false);
   return (
     <div>
       <Button buttonType="negative" onClick={() => setShown(true)}>
         Delete something
       </Button>
       <ModalConfirm
-        isShown={isShown}
         {...props}
+        isShown={isShown}
         onCancel={() => {
           setShown(false);
           action('onCancel')();
@@ -88,7 +88,7 @@ RightButtons.args = {
 };
 
 export function ComplexStory(props: ModalConfirmProps) {
-  const [isShown, setShown] = useState(true);
+  const [isShown, setShown] = useState(false);
   const [isLoading, setLoading] = useState(false);
   const [repeat, setRepeat] = useState('');
 
@@ -98,8 +98,8 @@ export function ComplexStory(props: ModalConfirmProps) {
         Delete something
       </Button>
       <ModalConfirm
+        {...props}
         isShown={isShown}
-        intent="negative"
         isConfirmDisabled={repeat !== 'unlock'}
         isConfirmLoading={isLoading}
         onCancel={() => {
@@ -115,7 +115,6 @@ export function ComplexStory(props: ModalConfirmProps) {
           }, 1500);
           action('onConfirm')();
         }}
-        {...props}
       >
         <Paragraph marginBottom="spacingM">
           Type <strong>unlock</strong> to allow confirming this modal

@@ -17,6 +17,24 @@ describe('formatAbsoluteDateTime', () => {
   });
 });
 
+describe('formatMachineReadableDateTime', () => {
+  it('formats with the expected values', () => {
+    const date = new Date('2020-02-29T09:31:46.345Z');
+    const formatToExpected: [dateUtils.DateTimeFormat, string][] = [
+      ['FULL', '2020-02-29T09:31:46.345Z'],
+      ['DATE_ONLY', '2020-02-29'],
+      ['TIME_ONLY', '09:31:46.345'],
+      ['WEEKDAY_DATE', '02-29'],
+    ];
+
+    formatToExpected.forEach(([format, expected]) => {
+      expect(dateUtils.formatMachineReadableDateTime(date, format)).toEqual(
+        expected,
+      );
+    });
+  });
+});
+
 describe('formatWeekdayDate', () => {
   it('formats with the expected values', () => {
     const dateToExpected = [['2020-08-12T23:45:00.000Z', 'Wed, 12 Aug']];

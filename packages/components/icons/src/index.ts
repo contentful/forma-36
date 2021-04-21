@@ -76,6 +76,7 @@ export { FormatItalic } from './FormatItalic';
 export { FormatItalicTrimmed } from './FormatItalicTrimmed';
 export { FormatUnderlined } from './FormatUnderlined';
 export { FormatUnderlinedTrimmed } from './FormatUnderlinedTrimmed';
+export { Gift } from './Gift';
 export { Heading } from './Heading';
 export { HeadingOne } from './HeadingOne';
 export { HeadingOneTrimmed } from './HeadingOneTrimmed';

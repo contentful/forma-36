@@ -94,7 +94,7 @@ export function WorkbenchHeader({
 WorkbenchHeader.displayName = 'Workbench.Header';
 
 export interface WorkbenchSidebarProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   className?: string;
   position?: 'left' | 'right';
   testId?: string;
@@ -124,7 +124,7 @@ export function WorkbenchSidebar({
 }
 
 export interface WorkbenchContentProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   type?: 'default' | 'text' | 'full';
   className?: string;
   testId?: string;

@@ -3,6 +3,40 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.88.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.87.1...@contentful/forma-36-react-components@3.88.0) (2021-04-19)
+
+
+### Features
+
+* Machine Readable Formats for DateTime with DATE_ONLY or TIME_ONLY ([#925](https://github.com/contentful/forma-36/issues/925)) ([cd2c6c4](https://github.com/contentful/forma-36/commit/cd2c6c469ba5dff3c0708c660023cddd9d9e08ec))
+
+
+
+
+
+## [3.87.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.87.0...@contentful/forma-36-react-components@3.87.1) (2021-04-19)
+
+
+### Bug Fixes
+
+* make children optional in Workbench sidebar and content ([#927](https://github.com/contentful/forma-36/issues/927)) ([6347532](https://github.com/contentful/forma-36/commit/634753215405cb1dc98d8be42a7799197559e49f))
+* storybook stories for Modal ([#924](https://github.com/contentful/forma-36/issues/924)) ([6a01021](https://github.com/contentful/forma-36/commit/6a010217b80774b10075f7133501560cc94df3b8))
+
+
+
+
+
+# [3.87.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.86.3...@contentful/forma-36-react-components@3.87.0) (2021-04-15)
+### Features
+
+* add Gift icon ([#921](https://github.com/contentful/forma-36/issues/921)) ([fa494ff](https://github.com/contentful/forma-36/commit/fa494ff6240867dd5dd5afc129586864198c179b))
+
+## [3.86.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.86.2...@contentful/forma-36-react-components@3.86.3) (2021-04-08)
+
+### Bug Fixes
+
+- add css to break wide list items in the dropdown ([#910](https://github.com/contentful/forma-36/issues/910)) ([42b0709](https://github.com/contentful/forma-36/commit/42b0709854b501c8c25aef106ee4db7756967b97))
+
 ## [3.86.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.86.1...@contentful/forma-36-react-components@3.86.2) (2021-04-01)
 
 ### Bug Fixes
