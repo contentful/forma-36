@@ -19,7 +19,7 @@ export default {
 export const basic = (args: RadioButtonProps) => <RadioButton {...args} />;
 
 basic.args = {
-  id: 'Checkbox',
+  id: 'Radio',
   name: 'some name',
 };
 
@@ -29,17 +29,17 @@ export const overview = () => (
       <Flex marginBottom="spacingS">
         <SectionHeading element="h3">Radio button default</SectionHeading>
       </Flex>
-      <RadioButton id="Checkbox" labelText="some label text" name="some-name" />
+      <RadioButton id="Radio" labelText="some label text" name="option1" />
     </Flex>
     <Flex flexDirection="column" marginBottom="spacingM">
       <Flex marginBottom="spacingS">
         <SectionHeading element="h3">Radio button checked</SectionHeading>
       </Flex>
       <RadioButton
-        id="Checkbox"
+        id="Radio"
         checked
         labelText="some label text"
-        name="some-name"
+        name="option2"
       />
     </Flex>
     <Flex flexDirection="column" marginBottom="spacingM">
@@ -47,10 +47,10 @@ export const overview = () => (
         <SectionHeading element="h3">Radio button disabled</SectionHeading>
       </Flex>
       <RadioButton
-        id="Checkbox"
+        id="Radio"
         labelText="some label text"
         disabled
-        name="some-name"
+        name="option3"
       />
     </Flex>
   </>
