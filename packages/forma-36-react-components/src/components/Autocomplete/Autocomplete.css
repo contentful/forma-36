@@ -16,7 +16,7 @@
   display: none;
 }
 
-.inputIconButton {
+.autocompleteInput .inputIconButton {
   position: relative;
   margin-left: calc(-1 * var(--spacing-xl));
 }
