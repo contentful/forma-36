@@ -4,20 +4,33 @@ type: 'component'
 status: 'stable'
 slug: /components/radio-button/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/RadioButton'
-storybook: 'https://f36-storybook.contentful.com/?path=/story/components-radiobutton--default'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-radiobutton--basic'
 ---
 
-Detailed documentation will be provided soon. For now, please have a look into the storybook for implementation details.
+RadioButton is a form element that gives users the possibility to select only one option from a number of choices.
+This is a stripped down version for custom made solutions - please consider using [RadioButtonField component](https://f36.contentful.com/components/radio-button-field/) for full-fledged `<input type='radio'>` experience.
 
-```jsx
-<>
-  <RadioButtonField
-    labelText="Radio button label"
-    helpText="This is a helptext"
-    name="someOption"
-    checked={true}
-    value="yes"
-    id="termsCheckbox"
-  />
-</>
+## Table of contents
+
+- [How to use RadioButton](#how-to-use-radioButton)
+- [Code examples](#code-examples)
+- [Accessibility](#accessibility)
+
+## How to use RadioButton
+
+- RadioButton should be used in a group. Please include at least two choices for users.
+- Options provided for users should be mutually exclusive.
+- Add a custom label to explain each choice.
+
+## Code examples
+
+Basic usage
+
+```tsx
+// import { RadioButton } from '@contentful/forma-36-react-components';
+<RadioButton name="someOption" id="radio" />
 ```
+
+## Accessibility
+
+- Radio buttons should always have a clear and concise label and a `name` prop.
