@@ -7,7 +7,29 @@ github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-re
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-select--default'
 ---
 
-Detailed documentation will be provided soon. For now, please have a look into the storybook for implementation details.
+Select allows users to make a single selection from an options menu.
+We provide also [SelectField](https://f36.contentful.com/components/select-field/) component, that contains Label and hint or error message. Keep in mind that Select should not be used without the label, we recommend to use `SelectField` that will provide the label for you.
+
+## Table of contents
+
+- [How to use Select](#how-to-use-select)
+- [Code examples](#code-examples)
+- [Content recommendations](#content-recommendations)
+- [Accessibility](#accessibility)
+
+## How to use Select
+
+- Use Select to present many different options in a compact unit. When you have only a few options present them all at once, using [radio buttons](https://f36.contentful.com/components/radio-button/).
+- Select usually are used in forms
+- Order the list of options in a logical way, so it make sense for user
+- Don't use Select for very long list of options, istead for those cases use [Autocomplete](https://f36.contentful.com/components/autocomplete/)
+
+### Select vs dropdown
+
+Dropdown menus are typically used for navigation or command menus, where an action is initiated based on the selection.
+Select is a type of input, where user is choosing one option from the list, typically used in Forms.
+
+## Code examples
 
 ```jsx
 <>
@@ -17,3 +39,16 @@ Detailed documentation will be provided soon. For now, please have a look into t
   </Select>
 </>
 ```
+
+## Content recommendations
+
+- Give a short description (1–3 words) of the requested input.
+- Be written in sentence case (the first word capitalized, the rest lowercase).
+- Avoid punctuation and articles (“the”, “an”, “a”).
+- Be independent sentences. To support internationalization, they should not act as the first part of a sentence that is finished by the component’s options.
+- If the selection needs more explanation, use help text below the field.
+- options should be labelled in a clear way, so it's obvious what the option will do
+
+## Accessibility
+
+- select should contain label and if possible hint or validation if it's required. We provide [SelectField](https://f36.contentful.com/components/select-field/) component, that contains all of those necessary elements.
