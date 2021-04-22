@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.88.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.88.1...@contentful/forma-36-react-components@3.88.2) (2021-04-22)
+
+
+### Bug Fixes
+
+* **autocomplete:** chevron position ([b27472b](https://github.com/contentful/forma-36/commit/b27472bdcb31e697b5e900daf7bfef1b9e4ca5b6))
+
+
+
+
+
 ## [3.88.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.88.0...@contentful/forma-36-react-components@3.88.1) (2021-04-21)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
