@@ -43,14 +43,20 @@ It can be configured in a number of different ways; use this guide to determine 
 ### Textarea can be controlled by passing a `textareaRef` prop
 
 ```tsx
-<Textarea
-  name="description"
-  id="textarea"
-  disabled
-  value="123456"
-  rows={2}
-  textareaRef={}
-/>
+function TextareaRef() {
+  const textareaRef = React.createRef();
+
+  return (
+    <Textarea
+      name="description"
+      id="textarea"
+      disabled
+      value="123456"
+      rows={2}
+      textareaRef={textareaRef}
+    />
+  );
+}
 ```
 
 ## Accessibility
