@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.88.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.88.2...@contentful/forma-36-react-components@3.88.3) (2021-04-22)
+
+
+### Bug Fixes
+
+* **autocomplete:** Disable chevron when autocomplete is disabled ([#935](https://github.com/contentful/forma-36/issues/935)) ([3ca71d2](https://github.com/contentful/forma-36/commit/3ca71d27c89a57bae7aa2dbbea3203e36a130289))
+
+
+
+
+
 ## [3.88.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.88.1...@contentful/forma-36-react-components@3.88.2) (2021-04-22)
 
 
