@@ -17,6 +17,8 @@ export type {
   PaddingProps,
   Spacing,
 } from '@contentful/f36-core';
+export { Spinner } from '@contentful/f36-spinner';
+export type { SpinnerProps } from '@contentful/f36-spinner';
 export * from '@contentful/f36-typography';
 export { ValidationMessage } from '@contentful/f36-validation-message';
 export type { ValidationMessageProps } from '@contentful/f36-validation-message';
@@ -51,7 +53,6 @@ export * from './components/RadioButtonField';
 export * from './components/Select';
 export * from './components/SelectField';
 export * from './components/Skeleton';
-export * from './components/Spinner';
 export * from './components/Switch';
 export * from './components/Table';
 export * from './components/Tabs';
