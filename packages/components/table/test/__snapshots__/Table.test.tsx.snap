@@ -22,7 +22,7 @@ exports[`TableHead renders the component as sticky 1`] = `
   color: #536171;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 0.875rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5;
   padding: 0.75rem 1rem;
   text-align: left;
@@ -69,7 +69,7 @@ exports[`TableHead renders the component as sticky and with an offset Top 1`] = 
   color: #536171;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 0.875rem;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.5;
   padding: 0.75rem 1rem;
   text-align: left;

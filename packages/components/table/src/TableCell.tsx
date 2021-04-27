@@ -53,7 +53,9 @@ export const TableCell = forwardRef<HTMLTableCellElement, TableCellProps>(
                   color: sorting ? tokens.colorTextDark : tokens.colorTextMid,
                   fontFamily: tokens.fontStackPrimary,
                   fontSize: tokens.fontSizeM,
-                  fontWeight: tokens.fontWeightNormal,
+                  fontWeight: isTableHead
+                    ? tokens.fontWeightMedium
+                    : tokens.fontWeightNormal,
                   lineHeight: tokens.lineHeightDefault,
                   padding: `${tokens.spacingS} ${tokens.spacingM}`,
                   textAlign: align,
