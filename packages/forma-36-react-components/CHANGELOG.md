@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.88.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.88.3...@contentful/forma-36-react-components@3.88.4) (2021-04-27)
+
+
+### Bug Fixes
+
+* restore margins on EmptyState by increasing selector specificity ([c61890c](https://github.com/contentful/forma-36/commit/c61890c5d69b1e80827173a7f9925684bfdfd930))
+
+
+
+
+
 ## [3.88.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.88.2...@contentful/forma-36-react-components@3.88.3) (2021-04-22)
 
 
