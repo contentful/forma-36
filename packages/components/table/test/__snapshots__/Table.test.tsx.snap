@@ -40,7 +40,6 @@ exports[`TableHead renders the component as sticky 1`] = `
     <th
       class="emotion-0"
       data-test-id="cf-ui-table-cell"
-      style="top: 0px;"
     >
       test
     </th>
