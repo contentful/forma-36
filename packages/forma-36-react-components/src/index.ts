@@ -33,7 +33,6 @@ export type {
   TableProps,
   TableRowProps,
 } from '@contentful/f36-table';
-// export { contextOptions, TableCellContext } from './tableCellContext';
 export * from '@contentful/f36-typography';
 export { ValidationMessage } from '@contentful/f36-validation-message';
 export type { ValidationMessageProps } from '@contentful/f36-validation-message';
