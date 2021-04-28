@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Button } from '../src/Button';
-import type { ButtonProps } from '../src/Button';
 import { Box, Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 
@@ -17,7 +16,7 @@ export default {
   },
 };
 
-export const basic = (args: ButtonProps) => <Button {...args} />;
+export const basic = (args) => <Button {...args} />;
 
 basic.args = {
   size: 'medium',
@@ -46,7 +45,7 @@ export const Overview = (args) => {
             <Button variant="negative">Negative</Button>
           </Box>
           <Box marginRight="spacingXs">
-            <Button disabled variant="Primary">
+            <Button disabled variant="primary">
               Disabled
             </Button>
           </Box>
@@ -59,15 +58,17 @@ export const Overview = (args) => {
         </Box>
         <Flex flexDirection="row" marginBottom="spacingM">
           <Box marginRight="spacingXs">
-            <Button buttonType={args.variant} size="small">
+            <Button variant="primary" size="small">
               Small
             </Button>
           </Box>
           <Box marginRight="spacingXs">
-            <Button variant={args.variant}>Medium (default)</Button>
+            <Button variant="primary" size="medium">
+              Medium (default)
+            </Button>
           </Box>
           <Box marginRight="spacingXs">
-            <Button variant={args.variant} size="large">
+            <Button variant="primary" size="large">
               Large
             </Button>
           </Box>

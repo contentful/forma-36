@@ -1,41 +1,37 @@
-import React, {
-  HTMLProps,
-  ButtonHTMLAttributes,
-  AnchorHTMLAttributes,
-} from 'react';
+import React, { HTMLProps } from 'react';
 
-import { PolymorphicComponentWithRef, Primitive } from '@contentful/f36-core';
+import { Primitive } from '@contentful/f36-core';
 import type { CommonProps } from '@contentful/f36-core';
 
 import type { ButtonVariant, ButtonSize } from './types';
 import { styles } from './styles';
 
 type ButtonInternalProps = Omit<
-  HTMLProps<
-    | ButtonHTMLAttributes<HTMLButtonElement>
-    | AnchorHTMLAttributes<HTMLAnchorElement>
-  >,
+  HTMLProps<HTMLButtonElement | HTMLAnchorElement>,
   'size'
 >;
 
-export interface ButtonProps
-  extends CommonProps,
-    ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends CommonProps, ButtonInternalProps {
   children?: React.ReactNode;
   as?: 'button' | 'a';
+  /**
+   * Determines style variation of Button component
+   * @default secondary
+   */
   variant?: ButtonVariant;
+  /**
+   * Determines size variation of Button component
+   * @default medium
+   */
   size?: ButtonSize;
 }
 
-const _Button: PolymorphicComponentWithRef<ButtonInternalProps> = (
-  props,
-  ref,
-) => {
+const _Button = (props: ButtonProps, ref) => {
   const {
     children,
     variant = 'secondary',
     size = 'medium',
-    as = 'button',
+    href,
     ...otherProps
   } = props;
 
@@ -43,7 +39,7 @@ const _Button: PolymorphicComponentWithRef<ButtonInternalProps> = (
     <Primitive
       ref={ref}
       className={styles.button(variant, size)}
-      as={as}
+      as={href ? 'a' : 'button'}
       {...otherProps}
     >
       {children}
