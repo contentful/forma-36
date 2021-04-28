@@ -3,6 +3,40 @@ import type { CSSObject } from '@emotion/serialize';
 import tokens from '@contentful/f36-tokens';
 import { ButtonSize, ButtonVariant } from './types';
 
+const variantActiveStyles = (variant: ButtonVariant): CSSObject => {
+  switch (variant) {
+    case 'primary':
+      return {
+        ', &:hover': {
+          backgroundColor: tokens.colorBlueDark,
+          borderColor: tokens.colorBlueDark,
+        },
+      };
+    case 'secondary':
+      return {
+        ', &:hover': {
+          backgroundColor: tokens.colorElementLight,
+        },
+      };
+    case 'positive':
+      return {
+        ', &:hover': {
+          backgroundColor: tokens.colorGreenDark,
+          borderColor: tokens.colorGreenDark,
+        },
+      };
+    case 'negative':
+      return {
+        ', &:hover': {
+          backgroundColor: tokens.colorRedDark,
+          borderColor: tokens.colorRedDark,
+        },
+      };
+    default:
+      return {};
+  }
+};
+
 const variantToStyles = (variant: ButtonVariant): CSSObject => {
   switch (variant) {
     case 'primary':
@@ -14,16 +48,12 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
           backgroundColor: tokens.colorBlueBase,
           borderColor: tokens.colorBlueBase,
         },
-        '&:active': {
-          backgroundColor: tokens.colorBlueDark,
-          borderColor: tokens.colorBlueDark,
-        },
+        '&:active': variantActiveStyles(variant),
         '&:focus': {
           borderColor: tokens.colorBlueDark,
           boxShadow: tokens.glowPrimary,
         },
       };
-      break;
     case 'secondary':
       return {
         color: tokens.colorTextBase,
@@ -32,14 +62,11 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
         '&:hover': {
           backgroundColor: tokens.colorElementLightest,
         },
-        '&:active': {
-          backgroundColor: tokens.colorElementLight,
-        },
+        '&:active': variantActiveStyles(variant),
         '&:focus': {
           boxShadow: tokens.glowMuted,
         },
       };
-      break;
     case 'positive':
       return {
         color: tokens.colorWhite,
@@ -49,16 +76,12 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
           backgroundColor: tokens.colorGreenBase,
           borderColor: tokens.colorGreenBase,
         },
-        '&:active': {
-          backgroundColor: tokens.colorGreenDark,
-          borderColor: tokens.colorGreenDark,
-        },
+        '&:active': variantActiveStyles(variant),
         '&:focus': {
           borderColor: tokens.colorGreenDark,
           boxShadow: tokens.glowPositive,
         },
       };
-      break;
     case 'negative':
       return {
         color: tokens.colorWhite,
@@ -68,19 +91,14 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
           backgroundColor: tokens.colorRedBase,
           borderColor: tokens.colorRedBase,
         },
-        '&:active': {
-          backgroundColor: tokens.colorRedDark,
-          borderColor: tokens.colorRedDark,
-        },
+        '&:active': variantActiveStyles(variant),
         '&:focus': {
           borderColor: tokens.colorRedDark,
           boxShadow: tokens.glowNegative,
         },
       };
-      break;
     default:
       return {};
-      break;
   }
 };
 
@@ -92,24 +110,20 @@ const sizeToStyles = (size: ButtonSize): CSSObject => {
         lineHeight: tokens.lineHeightCondensed,
         padding: `${tokens.spacing2Xs} ${tokens.spacingS}`,
       };
-      break;
     case 'medium':
       return {
         fontSize: tokens.fontSizeM,
         lineHeight: tokens.lineHeightCondensed,
         padding: `${tokens.spacingXs} ${tokens.spacingM}`,
       };
-      break;
     case 'large':
       return {
         fontSize: tokens.fontSizeXl,
         lineHeight: tokens.lineHeightXl,
         padding: `${tokens.spacingXs} ${tokens.spacingM}`,
       };
-      break;
     default:
       return {};
-      break;
   }
 };
 
@@ -126,4 +140,5 @@ export const styles = {
       ...variantToStyles(variant),
       ...sizeToStyles(size),
     }),
+  isActive: (variant) => css(variantActiveStyles(variant)),
 };

@@ -1,5 +1,5 @@
 import React, { HTMLProps } from 'react';
-
+import { cx } from 'emotion';
 import { Primitive } from '@contentful/f36-core';
 import type { CommonProps } from '@contentful/f36-core';
 
@@ -24,6 +24,11 @@ export interface ButtonProps extends CommonProps, ButtonInternalProps {
    * @default medium
    */
   size?: ButtonSize;
+  /**
+   * Applies active styles
+   * @default false
+   */
+  isActive?: boolean;
 }
 
 const _Button = (props: ButtonProps, ref) => {
@@ -32,13 +37,18 @@ const _Button = (props: ButtonProps, ref) => {
     variant = 'secondary',
     size = 'medium',
     href,
+    isActive,
     ...otherProps
   } = props;
+
+  const rootClassNames = cx(styles.button(variant, size), {
+    [styles.isActive(variant)]: isActive,
+  });
 
   return (
     <Primitive
       ref={ref}
-      className={styles.button(variant, size)}
+      className={rootClassNames}
       as={href ? 'a' : 'button'}
       {...otherProps}
     >

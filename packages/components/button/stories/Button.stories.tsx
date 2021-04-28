@@ -75,48 +75,35 @@ export const Overview = (args) => {
         </Flex>
       </Flex>
 
-      {/* <Flex flexDirection="column" marginBottom="spacingL">
+      <Flex flexDirection="column" marginBottom="spacingL">
         <Flex marginBottom="spacingS">
           <SectionHeading as="h3">Button active state</SectionHeading>
         </Flex>
         <Flex flexDirection="row" marginBottom="spacingM">
           <Flex marginRight="spacingXs">
-            <Button buttonType="primary" icon={icons[args.icon]} isActive>
+            <Button variant="primary" isActive>
               Primary isActive
             </Button>
           </Flex>
           <Flex marginRight="spacingXs">
-            <Button buttonType="muted" icon={icons[args.icon]} isActive>
-              Muted isActive
+            <Button variant="secondary" isActive>
+              Secondary isActive
             </Button>
           </Flex>
           <Flex marginRight="spacingXs">
-            <Button buttonType="positive" icon={icons[args.icon]} isActive>
+            <Button variant="positive" isActive>
               Positive isActive
             </Button>
           </Flex>
           <Flex marginRight="spacingXs">
-            <Button buttonType="negative" icon={icons[args.icon]} isActive>
+            <Button variant="negative" isActive>
               Negative isActive
             </Button>
           </Flex>
         </Flex>
-        <Flex marginBottom="spacingXs">
-          <Badge variant="warning">(deprecated)</Badge>
-        </Flex>
-        <Flex flexDirection="row" marginBottom="spacingM">
-          <Flex marginRight="spacingXs">
-            <Button buttonType="warning" icon={icons[args.icon]} isActive>
-              Warning isActive
-            </Button>
-          </Flex>
-          <Flex marginRight="spacingXs">
-            <Button buttonType="naked" icon={icons[args.icon]} isActive>
-              Naked isActive
-            </Button>
-          </Flex>
-        </Flex>
       </Flex>
+
+      {/*
 
       <Flex flexDirection="column" marginBottom="spacingL">
         <Flex marginBottom="spacingS">
