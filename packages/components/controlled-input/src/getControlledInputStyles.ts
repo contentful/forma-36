@@ -30,7 +30,7 @@ export const getControlledInputStyles = () => ({
         boxShadow: tokens.glowPrimary,
       },
     },
-    '&:checked, &:indeterminate': {
+    '&:checked': {
       '& + label': {
         borderColor: tokens.colorBlueMid,
         background: tokens.colorBlueMid,
@@ -113,7 +113,7 @@ export const getControlledInputStyles = () => ({
   ghostRadioButton: css({
     borderRadius: '50%',
     '&:before': {
-      content: '',
+      content: '""',
       borderRadius: '50%',
       backgroundColor: tokens.colorWhite,
       width: tokens.borderRadiusMedium,

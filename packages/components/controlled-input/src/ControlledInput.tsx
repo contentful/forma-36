@@ -34,24 +34,27 @@ export interface ControlledInputProps extends HTMLProps<HTMLInputElement> {
 
 const styles = getControlledInputStyles();
 
-export const ControlledInput = ({
-  checked,
-  className,
-  disabled = false,
-  id,
-  labelText,
-  name,
-  onBlur,
-  onChange,
-  onFocus,
-  required = false,
-  testId = 'cf-ui-controlled-input',
-  type = 'checkbox',
-  value,
-  willBlurOnEsc = true,
-  indeterminate,
-  ...otherProps
-}: ControlledInputProps) => {
+const _ControlledInput = (
+  {
+    checked,
+    className,
+    disabled = false,
+    id,
+    labelText,
+    name,
+    onBlur,
+    onChange,
+    onFocus,
+    required = false,
+    testId = 'cf-ui-controlled-input',
+    type = 'checkbox',
+    value,
+    willBlurOnEsc = true,
+    indeterminate,
+    ...otherProps
+  }: ControlledInputProps,
+  ref: React.Ref<HTMLDivElement>,
+) => {
   const inputRef = useRef(null);
 
   const inputClassnames = cx(styles.input, {
@@ -83,7 +86,7 @@ export const ControlledInput = ({
   };
 
   return (
-    <div className={wrapperClassnames}>
+    <div className={wrapperClassnames} ref={ref}>
       <input
         className={inputClassnames}
         value={value}
@@ -128,3 +131,5 @@ export const ControlledInput = ({
     </div>
   );
 };
+
+export const ControlledInput = React.forwardRef(_ControlledInput);
