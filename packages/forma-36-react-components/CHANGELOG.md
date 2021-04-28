@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.88.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.88.4...@contentful/forma-36-react-components@3.88.5) (2021-04-28)
+
+
+### Bug Fixes
+
+* fix IconButton href ([#940](https://github.com/contentful/forma-36/issues/940)) ([6647018](https://github.com/contentful/forma-36/commit/66470180d6926adeb93b72a6322d9d4c82346d71))
+
+
+
+
+
 ## [3.88.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.88.3...@contentful/forma-36-react-components@3.88.4) (2021-04-27)
 
 
