@@ -95,7 +95,7 @@ export const IconButton = ({
     }
     return (
       <a {...elementProps} href={href}>
-        content
+        {content}
       </a>
     );
   }
