@@ -33,8 +33,8 @@ const _Button: PolymorphicComponentWithRef<ButtonInternalProps> = (
 ) => {
   const {
     children,
-    variant,
-    size = 'default',
+    variant = 'secondary',
+    size = 'medium',
     as = 'button',
     ...otherProps
   } = props;
