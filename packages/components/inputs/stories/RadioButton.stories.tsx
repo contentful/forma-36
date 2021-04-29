@@ -1,6 +1,6 @@
 import React from 'react';
 import { SectionHeading } from '@contentful/f36-typography';
-import { RadioButton, RadioButtonProps } from './RadioButton';
+import { RadioButton, RadioButtonProps } from '..';
 import { Flex } from '@contentful/f36-core';
 
 export default {

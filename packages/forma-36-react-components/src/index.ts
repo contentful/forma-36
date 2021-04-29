@@ -47,7 +47,6 @@ export * from './components/Modal';
 export * from './components/Note';
 export * from './components/Notification';
 export * from './components/Pill';
-export * from './components/RadioButton';
 export * from './components/RadioButtonField';
 export * from './components/Select';
 export * from './components/SelectField';

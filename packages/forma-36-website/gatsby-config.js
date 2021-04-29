@@ -211,7 +211,7 @@ module.exports = {
               },
               {
                 name: 'RadioButton',
-                link: '/components/radio-button/',
+                link: '/components/inputs/src/radio-button/',
               },
               {
                 name: 'RadioButtonField',
