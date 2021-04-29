@@ -23,7 +23,7 @@ export default {
 };
 
 export const basic = (args: ControlledInputProps) => (
-  <ControlledInput {...args} ref={undefined} />
+  <ControlledInput {...args} />
 );
 
 basic.args = {

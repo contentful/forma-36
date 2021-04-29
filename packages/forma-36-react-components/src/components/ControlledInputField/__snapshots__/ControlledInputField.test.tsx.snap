@@ -24,25 +24,9 @@ exports[`renders the component 1`] = `
   background: #2E75D4;
 }
 
-.emotion-0:checked + label::before {
-  background: #ffffff;
-}
-
-.emotion-0:checked:disabled + label {
-  background: #c3cfd5;
-}
-
-.emotion-0:checked:disabled + label::before {
-  background: #6B7888;
-}
-
 .emotion-0:disabled + label {
-  background: #c3cfd5;
   border-color: #c3cfd5;
-}
-
-.emotion-0:disabled + label::before {
-  background: #b4c3ca;
+  background: #c3cfd5;
 }
 
 .emotion-0:checked + label,
@@ -51,14 +35,14 @@ exports[`renders the component 1`] = `
   background: #2E75D4;
 }
 
-.emotion-0:checked:disabled + label,
-.emotion-0:indeterminate:disabled + label {
-  border-color: #c3cfd5;
-}
-
 .emotion-0:checked:disabled + label svg,
 .emotion-0:indeterminate:disabled + label svg {
   fill: #6B7888;
+}
+
+.emotion-0:disabled + label {
+  border-color: #c3cfd5;
+  background: #c3cfd5;
 }
 
 .emotion-0:disabled + label svg {
@@ -181,25 +165,9 @@ exports[`renders the component as checked 1`] = `
   background: #2E75D4;
 }
 
-.emotion-0:checked + label::before {
-  background: #ffffff;
-}
-
-.emotion-0:checked:disabled + label {
-  background: #c3cfd5;
-}
-
-.emotion-0:checked:disabled + label::before {
-  background: #6B7888;
-}
-
 .emotion-0:disabled + label {
-  background: #c3cfd5;
   border-color: #c3cfd5;
-}
-
-.emotion-0:disabled + label::before {
-  background: #b4c3ca;
+  background: #c3cfd5;
 }
 
 .emotion-0:checked + label,
@@ -208,14 +176,14 @@ exports[`renders the component as checked 1`] = `
   background: #2E75D4;
 }
 
-.emotion-0:checked:disabled + label,
-.emotion-0:indeterminate:disabled + label {
-  border-color: #c3cfd5;
-}
-
 .emotion-0:checked:disabled + label svg,
 .emotion-0:indeterminate:disabled + label svg {
   fill: #6B7888;
+}
+
+.emotion-0:disabled + label {
+  border-color: #c3cfd5;
+  background: #c3cfd5;
 }
 
 .emotion-0:disabled + label svg {
@@ -339,25 +307,9 @@ exports[`renders the component as required 1`] = `
   background: #2E75D4;
 }
 
-.emotion-0:checked + label::before {
-  background: #ffffff;
-}
-
-.emotion-0:checked:disabled + label {
-  background: #c3cfd5;
-}
-
-.emotion-0:checked:disabled + label::before {
-  background: #6B7888;
-}
-
 .emotion-0:disabled + label {
-  background: #c3cfd5;
   border-color: #c3cfd5;
-}
-
-.emotion-0:disabled + label::before {
-  background: #b4c3ca;
+  background: #c3cfd5;
 }
 
 .emotion-0:checked + label,
@@ -366,14 +318,14 @@ exports[`renders the component as required 1`] = `
   background: #2E75D4;
 }
 
-.emotion-0:checked:disabled + label,
-.emotion-0:indeterminate:disabled + label {
-  border-color: #c3cfd5;
-}
-
 .emotion-0:checked:disabled + label svg,
 .emotion-0:indeterminate:disabled + label svg {
   fill: #6B7888;
+}
+
+.emotion-0:disabled + label {
+  border-color: #c3cfd5;
+  background: #c3cfd5;
 }
 
 .emotion-0:disabled + label svg {
@@ -546,25 +498,9 @@ exports[`renders the component in a disabled state 1`] = `
   background: #2E75D4;
 }
 
-.emotion-0:checked + label::before {
-  background: #ffffff;
-}
-
-.emotion-0:checked:disabled + label {
-  background: #c3cfd5;
-}
-
-.emotion-0:checked:disabled + label::before {
-  background: #6B7888;
-}
-
 .emotion-0:disabled + label {
-  background: #c3cfd5;
   border-color: #c3cfd5;
-}
-
-.emotion-0:disabled + label::before {
-  background: #b4c3ca;
+  background: #c3cfd5;
 }
 
 .emotion-0:checked + label,
@@ -573,14 +509,14 @@ exports[`renders the component in a disabled state 1`] = `
   background: #2E75D4;
 }
 
-.emotion-0:checked:disabled + label,
-.emotion-0:indeterminate:disabled + label {
-  border-color: #c3cfd5;
-}
-
 .emotion-0:checked:disabled + label svg,
 .emotion-0:indeterminate:disabled + label svg {
   fill: #6B7888;
+}
+
+.emotion-0:disabled + label {
+  border-color: #c3cfd5;
+  background: #c3cfd5;
 }
 
 .emotion-0:disabled + label svg {
@@ -663,25 +599,9 @@ exports[`renders the component with a help text 1`] = `
   background: #2E75D4;
 }
 
-.emotion-0:checked + label::before {
-  background: #ffffff;
-}
-
-.emotion-0:checked:disabled + label {
-  background: #c3cfd5;
-}
-
-.emotion-0:checked:disabled + label::before {
-  background: #6B7888;
-}
-
 .emotion-0:disabled + label {
-  background: #c3cfd5;
   border-color: #c3cfd5;
-}
-
-.emotion-0:disabled + label::before {
-  background: #b4c3ca;
+  background: #c3cfd5;
 }
 
 .emotion-0:checked + label,
@@ -690,14 +610,14 @@ exports[`renders the component with a help text 1`] = `
   background: #2E75D4;
 }
 
-.emotion-0:checked:disabled + label,
-.emotion-0:indeterminate:disabled + label {
-  border-color: #c3cfd5;
-}
-
 .emotion-0:checked:disabled + label svg,
 .emotion-0:indeterminate:disabled + label svg {
   fill: #6B7888;
+}
+
+.emotion-0:disabled + label {
+  border-color: #c3cfd5;
+  background: #c3cfd5;
 }
 
 .emotion-0:disabled + label svg {
@@ -826,25 +746,9 @@ exports[`renders the component with a light label variation 1`] = `
   background: #2E75D4;
 }
 
-.emotion-0:checked + label::before {
-  background: #ffffff;
-}
-
-.emotion-0:checked:disabled + label {
-  background: #c3cfd5;
-}
-
-.emotion-0:checked:disabled + label::before {
-  background: #6B7888;
-}
-
 .emotion-0:disabled + label {
-  background: #c3cfd5;
   border-color: #c3cfd5;
-}
-
-.emotion-0:disabled + label::before {
-  background: #b4c3ca;
+  background: #c3cfd5;
 }
 
 .emotion-0:checked + label,
@@ -853,14 +757,14 @@ exports[`renders the component with a light label variation 1`] = `
   background: #2E75D4;
 }
 
-.emotion-0:checked:disabled + label,
-.emotion-0:indeterminate:disabled + label {
-  border-color: #c3cfd5;
-}
-
 .emotion-0:checked:disabled + label svg,
 .emotion-0:indeterminate:disabled + label svg {
   fill: #6B7888;
+}
+
+.emotion-0:disabled + label {
+  border-color: #c3cfd5;
+  background: #c3cfd5;
 }
 
 .emotion-0:disabled + label svg {
@@ -1044,25 +948,9 @@ exports[`renders the component with a validation message 1`] = `
   background: #2E75D4;
 }
 
-.emotion-0:checked + label::before {
-  background: #ffffff;
-}
-
-.emotion-0:checked:disabled + label {
-  background: #c3cfd5;
-}
-
-.emotion-0:checked:disabled + label::before {
-  background: #6B7888;
-}
-
 .emotion-0:disabled + label {
-  background: #c3cfd5;
   border-color: #c3cfd5;
-}
-
-.emotion-0:disabled + label::before {
-  background: #b4c3ca;
+  background: #c3cfd5;
 }
 
 .emotion-0:checked + label,
@@ -1071,14 +959,14 @@ exports[`renders the component with a validation message 1`] = `
   background: #2E75D4;
 }
 
-.emotion-0:checked:disabled + label,
-.emotion-0:indeterminate:disabled + label {
-  border-color: #c3cfd5;
-}
-
 .emotion-0:checked:disabled + label svg,
 .emotion-0:indeterminate:disabled + label svg {
   fill: #6B7888;
+}
+
+.emotion-0:disabled + label {
+  border-color: #c3cfd5;
+  background: #c3cfd5;
 }
 
 .emotion-0:disabled + label svg {
@@ -1262,25 +1150,9 @@ exports[`renders the component with a value 1`] = `
   background: #2E75D4;
 }
 
-.emotion-0:checked + label::before {
-  background: #ffffff;
-}
-
-.emotion-0:checked:disabled + label {
-  background: #c3cfd5;
-}
-
-.emotion-0:checked:disabled + label::before {
-  background: #6B7888;
-}
-
 .emotion-0:disabled + label {
-  background: #c3cfd5;
   border-color: #c3cfd5;
-}
-
-.emotion-0:disabled + label::before {
-  background: #b4c3ca;
+  background: #c3cfd5;
 }
 
 .emotion-0:checked + label,
@@ -1289,14 +1161,14 @@ exports[`renders the component with a value 1`] = `
   background: #2E75D4;
 }
 
-.emotion-0:checked:disabled + label,
-.emotion-0:indeterminate:disabled + label {
-  border-color: #c3cfd5;
-}
-
 .emotion-0:checked:disabled + label svg,
 .emotion-0:indeterminate:disabled + label svg {
   fill: #6B7888;
+}
+
+.emotion-0:disabled + label {
+  border-color: #c3cfd5;
+  background: #c3cfd5;
 }
 
 .emotion-0:disabled + label svg {
@@ -1419,25 +1291,9 @@ exports[`renders the component with an additional class name 1`] = `
   background: #2E75D4;
 }
 
-.emotion-0:checked + label::before {
-  background: #ffffff;
-}
-
-.emotion-0:checked:disabled + label {
-  background: #c3cfd5;
-}
-
-.emotion-0:checked:disabled + label::before {
-  background: #6B7888;
-}
-
 .emotion-0:disabled + label {
-  background: #c3cfd5;
   border-color: #c3cfd5;
-}
-
-.emotion-0:disabled + label::before {
-  background: #b4c3ca;
+  background: #c3cfd5;
 }
 
 .emotion-0:checked + label,
@@ -1446,14 +1302,14 @@ exports[`renders the component with an additional class name 1`] = `
   background: #2E75D4;
 }
 
-.emotion-0:checked:disabled + label,
-.emotion-0:indeterminate:disabled + label {
-  border-color: #c3cfd5;
-}
-
 .emotion-0:checked:disabled + label svg,
 .emotion-0:indeterminate:disabled + label svg {
   fill: #6B7888;
+}
+
+.emotion-0:disabled + label {
+  border-color: #c3cfd5;
+  background: #c3cfd5;
 }
 
 .emotion-0:disabled + label svg {

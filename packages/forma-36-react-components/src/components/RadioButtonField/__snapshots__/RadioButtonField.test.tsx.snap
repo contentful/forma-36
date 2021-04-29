@@ -24,21 +24,17 @@ exports[`renders the component 1`] = `
   background: #2E75D4;
 }
 
+.emotion-0:disabled + label {
+  border-color: #c3cfd5;
+  background: #c3cfd5;
+}
+
 .emotion-0:checked + label::before {
   background: #ffffff;
 }
 
-.emotion-0:checked:disabled + label {
-  background: #c3cfd5;
-}
-
 .emotion-0:checked:disabled + label::before {
   background: #6B7888;
-}
-
-.emotion-0:disabled + label {
-  background: #c3cfd5;
-  border-color: #c3cfd5;
 }
 
 .emotion-0:disabled + label::before {
@@ -143,21 +139,17 @@ exports[`renders the component with an additional class name 1`] = `
   background: #2E75D4;
 }
 
+.emotion-0:disabled + label {
+  border-color: #c3cfd5;
+  background: #c3cfd5;
+}
+
 .emotion-0:checked + label::before {
   background: #ffffff;
 }
 
-.emotion-0:checked:disabled + label {
-  background: #c3cfd5;
-}
-
 .emotion-0:checked:disabled + label::before {
   background: #6B7888;
-}
-
-.emotion-0:disabled + label {
-  background: #c3cfd5;
-  border-color: #c3cfd5;
 }
 
 .emotion-0:disabled + label::before {

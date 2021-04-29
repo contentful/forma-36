@@ -15,7 +15,8 @@ import type { IconProps } from '@contentful/f36-icons';
 import { styles } from './ControlledInput.styles';
 import { Box } from '@contentful/f36-core';
 
-export interface ControlledInputProps extends HTMLProps<HTMLInputElement> {
+export interface ControlledInputProps
+  extends Omit<HTMLProps<HTMLInputElement>, 'ref'> {
   id?: string;
   required?: boolean;
   labelText: string;
@@ -31,30 +32,7 @@ export interface ControlledInputProps extends HTMLProps<HTMLInputElement> {
   testId?: string;
   willBlurOnEsc?: boolean;
   indeterminate?: boolean;
-  ref?: React.Ref<HTMLInputElement>;
 }
-
-// Use forwarded ref with React hooks
-// Src: https://itnext.io/reusing-the-ref-from-forwardref-with-react-hooks-4ce9df693dd
-const useCombinedRefs = <T extends HTMLElement>(
-  ...refs: (React.MutableRefObject<T> | React.RefCallback<T>)[]
-): React.MutableRefObject<T> => {
-  const targetRef = React.useRef<T>();
-
-  React.useEffect(() => {
-    refs.forEach((ref) => {
-      if (!ref) return;
-
-      if (typeof ref === 'function') {
-        (ref as React.RefCallback<T>)(targetRef.current);
-      } else {
-        ref.current = targetRef.current;
-      }
-    });
-  }, [refs]);
-
-  return targetRef;
-};
 
 const _ControlledInput = (
   {
@@ -75,10 +53,9 @@ const _ControlledInput = (
     indeterminate,
     ...otherProps
   }: ControlledInputProps,
-  ref: React.Ref<HTMLInputElement>,
+  ref: React.Ref<HTMLDivElement>,
 ) => {
-  const innerRef = useRef<HTMLInputElement>();
-  const mergedRef = useCombinedRefs(ref, innerRef);
+  const inputRef = useRef(null);
 
   const inputClassnames = cx(styles.input, {
     [styles.inputRadioButton]: type === 'radio',
@@ -100,8 +77,8 @@ const _ControlledInput = (
   );
 
   useEffect(() => {
-    mergedRef.current.indeterminate = indeterminate;
-  }, [mergedRef, indeterminate]);
+    inputRef.current.indeterminate = indeterminate;
+  }, [indeterminate]);
 
   const iconProps: IconProps = {
     size: 'medium',
@@ -121,7 +98,7 @@ const _ControlledInput = (
         name={name}
         checked={checked}
         type={type}
-        ref={mergedRef}
+        ref={inputRef}
         data-test-id={testId}
         onChange={(e) => {
           if (onChange) {
