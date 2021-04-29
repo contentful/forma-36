@@ -13,7 +13,7 @@ import { Done, Minus } from '@contentful/f36-icons';
 import type { IconProps } from '@contentful/f36-icons';
 
 import { styles } from './ControlledInput.styles';
-import { Box } from '@contentful/f36-core';
+import { Box, BoxProps } from '@contentful/f36-core';
 
 export interface ControlledInputProps
   extends Omit<HTMLProps<HTMLInputElement>, 'ref'> {
@@ -32,6 +32,7 @@ export interface ControlledInputProps
   testId?: string;
   willBlurOnEsc?: boolean;
   indeterminate?: boolean;
+  boxProps?: BoxProps<'div'>;
 }
 
 const _ControlledInput = (
@@ -51,6 +52,7 @@ const _ControlledInput = (
     value,
     willBlurOnEsc = true,
     indeterminate,
+    boxProps,
     ...otherProps
   }: ControlledInputProps,
   ref: React.Ref<HTMLDivElement>,
@@ -91,6 +93,7 @@ const _ControlledInput = (
       display="inline-block"
       className={wrapperClassnames}
       ref={ref}
+      {...boxProps}
     >
       <input
         className={inputClassnames}
