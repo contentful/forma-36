@@ -110,11 +110,11 @@ exports[`renders the component 1`] = `
     >
       <div
         class="ControlledInputField__input emotion-3"
+        data-test-id="cf-ui-controlled-input"
       >
         <input
           aria-label="Do you agree?"
           class="emotion-0"
-          data-test-id="cf-ui-controlled-input"
           id="agree"
           type="checkbox"
           value=""
@@ -162,11 +162,11 @@ exports[`renders the component 1`] = `
     >
       <div
         class="ControlledInputField__input emotion-3"
+        data-test-id="cf-ui-controlled-input"
       >
         <input
           aria-label="Do you really agree?"
           class="emotion-0"
-          data-test-id="cf-ui-controlled-input"
           id="reallyAgree"
           type="checkbox"
           value=""
@@ -318,11 +318,11 @@ exports[`renders the component children in a row 1`] = `
     >
       <div
         class="ControlledInputField__input emotion-3"
+        data-test-id="cf-ui-controlled-input"
       >
         <input
           aria-label="Do you agree?"
           class="emotion-0"
-          data-test-id="cf-ui-controlled-input"
           id="agree"
           type="checkbox"
           value=""
@@ -370,11 +370,11 @@ exports[`renders the component children in a row 1`] = `
     >
       <div
         class="ControlledInputField__input emotion-3"
+        data-test-id="cf-ui-controlled-input"
       >
         <input
           aria-label="Do you really agree?"
           class="emotion-0"
-          data-test-id="cf-ui-controlled-input"
           id="reallyAgree"
           type="checkbox"
           value=""
@@ -526,11 +526,11 @@ exports[`renders the component with an additional class name 1`] = `
     >
       <div
         class="ControlledInputField__input emotion-3"
+        data-test-id="cf-ui-controlled-input"
       >
         <input
           aria-label="Do you agree?"
           class="emotion-0"
-          data-test-id="cf-ui-controlled-input"
           id="agree"
           type="checkbox"
           value=""
@@ -578,11 +578,11 @@ exports[`renders the component with an additional class name 1`] = `
     >
       <div
         class="ControlledInputField__input emotion-3"
+        data-test-id="cf-ui-controlled-input"
       >
         <input
           aria-label="Do you really agree?"
           class="emotion-0"
-          data-test-id="cf-ui-controlled-input"
           id="reallyAgree"
           type="checkbox"
           value=""

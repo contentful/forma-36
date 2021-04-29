@@ -89,11 +89,11 @@ exports[`renders the component 1`] = `
 >
   <div
     class="ControlledInputField__input emotion-2"
+    data-test-id="cf-ui-controlled-input"
   >
     <input
       aria-label="radio button field"
       class="emotion-0"
-      data-test-id="cf-ui-controlled-input"
       id="radio-button"
       type="radio"
       value=""
@@ -204,11 +204,11 @@ exports[`renders the component with an additional class name 1`] = `
 >
   <div
     class="ControlledInputField__input emotion-2"
+    data-test-id="cf-ui-controlled-input"
   >
     <input
       aria-label="radio button field"
       class="emotion-0"
-      data-test-id="cf-ui-controlled-input"
       id="radio-button"
       type="radio"
       value=""

@@ -99,11 +99,11 @@ exports[`renders the component 1`] = `
 
 <div
   class="emotion-3"
+  data-test-id="cf-ui-checkbox"
 >
   <input
     aria-label="checkbox"
     class="emotion-0"
-    data-test-id="cf-ui-checkbox"
     type="checkbox"
     value=""
   />
@@ -224,11 +224,11 @@ exports[`renders the component with an additional class name 1`] = `
 
 <div
   class="my-extra-class emotion-3"
+  data-test-id="cf-ui-checkbox"
 >
   <input
     aria-label="checkbox"
     class="emotion-0"
-    data-test-id="cf-ui-checkbox"
     type="checkbox"
     value=""
   />

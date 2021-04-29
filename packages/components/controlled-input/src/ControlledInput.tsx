@@ -91,6 +91,7 @@ const _ControlledInput = (
       display="inline-block"
       className={wrapperClassnames}
       ref={ref}
+      data-test-id={testId}
       {...otherProps}
     >
       <input
@@ -100,7 +101,6 @@ const _ControlledInput = (
         checked={checked}
         type={type}
         ref={inputRef}
-        data-test-id={testId}
         onChange={(e) => {
           if (onChange) {
             onChange(e);

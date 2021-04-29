@@ -103,11 +103,11 @@ exports[`renders the component 1`] = `
 >
   <div
     class="ControlledInputField__input emotion-3"
+    data-test-id="cf-ui-controlled-input"
   >
     <input
       aria-label="label text"
       class="emotion-0"
-      data-test-id="cf-ui-controlled-input"
       id="checkbox"
       type="checkbox"
       value=""
@@ -244,12 +244,12 @@ exports[`renders the component as checked 1`] = `
 >
   <div
     class="ControlledInputField__input emotion-3"
+    data-test-id="cf-ui-controlled-input"
   >
     <input
       aria-label="Label Text"
       checked=""
       class="emotion-0"
-      data-test-id="cf-ui-controlled-input"
       id="checkbox"
       type="checkbox"
       value=""
@@ -386,11 +386,11 @@ exports[`renders the component as required 1`] = `
 >
   <div
     class="ControlledInputField__input emotion-3"
+    data-test-id="cf-ui-controlled-input"
   >
     <input
       aria-label="Label Text"
       class="emotion-0"
-      data-test-id="cf-ui-controlled-input"
       id="checkbox"
       required=""
       type="checkbox"
@@ -536,11 +536,11 @@ exports[`renders the component in a disabled state 1`] = `
 >
   <div
     class="ControlledInputField__input emotion-3"
+    data-test-id="cf-ui-controlled-input"
   >
     <input
       aria-label="Label Text"
       class="emotion-0"
-      data-test-id="cf-ui-controlled-input"
       disabled=""
       id="checkbox"
       type="checkbox"
@@ -678,11 +678,11 @@ exports[`renders the component with a help text 1`] = `
 >
   <div
     class="ControlledInputField__input emotion-3"
+    data-test-id="cf-ui-controlled-input"
   >
     <input
       aria-label="Label Text"
       class="emotion-0"
-      data-test-id="cf-ui-controlled-input"
       id="checkbox"
       type="checkbox"
       value=""
@@ -860,11 +860,11 @@ exports[`renders the component with a light label variation 1`] = `
 >
   <div
     class="ControlledInputField__input emotion-3"
+    data-test-id="cf-ui-controlled-input"
   >
     <input
       aria-label="Label Text"
       class="emotion-0"
-      data-test-id="cf-ui-controlled-input"
       id="checkbox"
       type="checkbox"
       value=""
@@ -1062,11 +1062,11 @@ exports[`renders the component with a validation message 1`] = `
 >
   <div
     class="ControlledInputField__input emotion-3"
+    data-test-id="cf-ui-controlled-input"
   >
     <input
       aria-label="Label Text"
       class="emotion-0"
-      data-test-id="cf-ui-controlled-input"
       id="checkbox"
       type="checkbox"
       value=""
@@ -1229,11 +1229,11 @@ exports[`renders the component with a value 1`] = `
 >
   <div
     class="ControlledInputField__input emotion-3"
+    data-test-id="cf-ui-controlled-input"
   >
     <input
       aria-label="Label Text"
       class="emotion-0"
-      data-test-id="cf-ui-controlled-input"
       id="checkbox"
       type="checkbox"
       value="someValue"
@@ -1370,11 +1370,11 @@ exports[`renders the component with an additional class name 1`] = `
 >
   <div
     class="ControlledInputField__input emotion-3"
+    data-test-id="cf-ui-controlled-input"
   >
     <input
       aria-label="Label Text"
       class="emotion-0"
-      data-test-id="cf-ui-controlled-input"
       id="checkbox"
       type="checkbox"
       value=""

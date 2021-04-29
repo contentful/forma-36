@@ -99,11 +99,11 @@ exports[`renders the component with a value 1`] = `
 
 <div
   class="my-extra-class emotion-3"
+  data-test-id="cf-ui-controlled-input"
 >
   <input
     aria-label="ControlledInput"
     class="emotion-0"
-    data-test-id="cf-ui-controlled-input"
     id="ControlledInput"
     type="checkbox"
     value="someValue"
@@ -226,11 +226,11 @@ exports[`renders the component with all required props 1`] = `
 
 <div
   class="emotion-3"
+  data-test-id="cf-ui-controlled-input"
 >
   <input
     aria-label="ControlledInput"
     class="emotion-0"
-    data-test-id="cf-ui-controlled-input"
     id="ControlledInput"
     type="checkbox"
     value=""
@@ -353,11 +353,11 @@ exports[`renders the component with an additional class name 1`] = `
 
 <div
   class="my-extra-class emotion-3"
+  data-test-id="cf-ui-controlled-input"
 >
   <input
     aria-label="ControlledInput"
     class="emotion-0"
-    data-test-id="cf-ui-controlled-input"
     id="ControlledInput"
     type="checkbox"
     value=""
@@ -480,12 +480,12 @@ exports[`renders the component with as checked 1`] = `
 
 <div
   class="my-extra-class emotion-3"
+  data-test-id="cf-ui-controlled-input"
 >
   <input
     aria-label="ControlledInput"
     checked=""
     class="emotion-0"
-    data-test-id="cf-ui-controlled-input"
     id="ControlledInput"
     type="checkbox"
     value=""
@@ -609,11 +609,11 @@ exports[`renders the component with disabled prop 1`] = `
 
 <div
   class="my-extra-class emotion-3"
+  data-test-id="cf-ui-controlled-input"
 >
   <input
     aria-label="ControlledInput"
     class="emotion-0"
-    data-test-id="cf-ui-controlled-input"
     disabled=""
     id="ControlledInput"
     type="checkbox"
@@ -737,11 +737,11 @@ exports[`renders the component with required prop 1`] = `
 
 <div
   class="my-extra-class emotion-3"
+  data-test-id="cf-ui-controlled-input"
 >
   <input
     aria-label="ControlledInput"
     class="emotion-0"
-    data-test-id="cf-ui-controlled-input"
     id="ControlledInput"
     required=""
     type="checkbox"

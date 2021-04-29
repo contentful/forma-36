@@ -85,11 +85,11 @@ exports[`renders the component 1`] = `
 
 <div
   class="emotion-2"
+  data-test-id="cf-ui-radio-button"
 >
   <input
     aria-label="radio-button"
     class="emotion-0"
-    data-test-id="cf-ui-radio-button"
     type="radio"
     value=""
   />
@@ -184,11 +184,11 @@ exports[`renders the component with an additional class name 1`] = `
 
 <div
   class="my-extra-class emotion-2"
+  data-test-id="cf-ui-radio-button"
 >
   <input
     aria-label="radio-button"
     class="emotion-0"
-    data-test-id="cf-ui-radio-button"
     type="radio"
     value=""
   />

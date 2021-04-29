@@ -103,11 +103,11 @@ exports[`renders the component 1`] = `
 >
   <div
     class="ControlledInputField__input emotion-3"
+    data-test-id="cf-ui-controlled-input"
   >
     <input
       aria-label="label text"
       class="emotion-0"
-      data-test-id="cf-ui-controlled-input"
       id="checkbox"
       type="checkbox"
       value=""
