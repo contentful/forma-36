@@ -12,7 +12,8 @@ import { cx } from 'emotion';
 import { Done, Minus } from '@contentful/f36-icons';
 import type { IconProps } from '@contentful/f36-icons';
 
-import { getControlledInputStyles } from './getControlledInputStyles';
+import { styles } from './ControlledInput.styles';
+import { Box } from '@contentful/f36-core';
 
 export interface ControlledInputProps extends HTMLProps<HTMLInputElement> {
   id?: string;
@@ -30,9 +31,30 @@ export interface ControlledInputProps extends HTMLProps<HTMLInputElement> {
   testId?: string;
   willBlurOnEsc?: boolean;
   indeterminate?: boolean;
+  ref?: React.Ref<HTMLInputElement>;
 }
 
-const styles = getControlledInputStyles();
+// Use forwarded ref with React hooks
+// Src: https://itnext.io/reusing-the-ref-from-forwardref-with-react-hooks-4ce9df693dd
+const useCombinedRefs = <T extends HTMLElement>(
+  ...refs: (React.MutableRefObject<T> | React.RefCallback<T>)[]
+): React.MutableRefObject<T> => {
+  const targetRef = React.useRef<T>();
+
+  React.useEffect(() => {
+    refs.forEach((ref) => {
+      if (!ref) return;
+
+      if (typeof ref === 'function') {
+        (ref as React.RefCallback<T>)(targetRef.current);
+      } else {
+        ref.current = targetRef.current;
+      }
+    });
+  }, [refs]);
+
+  return targetRef;
+};
 
 const _ControlledInput = (
   {
@@ -53,9 +75,10 @@ const _ControlledInput = (
     indeterminate,
     ...otherProps
   }: ControlledInputProps,
-  ref: React.Ref<HTMLDivElement>,
+  ref: React.Ref<HTMLInputElement>,
 ) => {
-  const inputRef = useRef(null);
+  const innerRef = useRef<HTMLInputElement>();
+  const mergedRef = useCombinedRefs(ref, innerRef);
 
   const inputClassnames = cx(styles.input, {
     [styles.inputRadioButton]: type === 'radio',
@@ -77,8 +100,8 @@ const _ControlledInput = (
   );
 
   useEffect(() => {
-    inputRef.current.indeterminate = indeterminate;
-  }, [indeterminate]);
+    mergedRef.current.indeterminate = indeterminate;
+  }, [mergedRef, indeterminate]);
 
   const iconProps: IconProps = {
     size: 'medium',
@@ -86,14 +109,19 @@ const _ControlledInput = (
   };
 
   return (
-    <div className={wrapperClassnames} ref={ref}>
+    <Box
+      as="div"
+      display="inline-block"
+      className={wrapperClassnames}
+      ref={ref}
+    >
       <input
         className={inputClassnames}
         value={value}
         name={name}
         checked={checked}
         type={type}
-        ref={inputRef}
+        ref={mergedRef}
         data-test-id={testId}
         onChange={(e) => {
           if (onChange) {
@@ -128,7 +156,7 @@ const _ControlledInput = (
           {indeterminate ? <Minus {...iconProps} /> : <Done {...iconProps} />}
         </label>
       )}
-    </div>
+    </Box>
   );
 };
 

@@ -1,18 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
-.emotion-3 {
-  display: inline-block;
-  position: relative;
-  text-overflow: ellipsis;
-  line-height: 1.5rem;
-  margin: 0;
-  width: 1rem;
-  height: 1rem;
-  min-height: 1rem;
-  overflow: visible;
-}
-
 .emotion-0 {
   display: inline-block;
   font-size: 0.875rem;
@@ -31,19 +19,30 @@ exports[`renders the component 1`] = `
   box-shadow: 0px 0px 0px 3px #84B9F5;
 }
 
-.emotion-0:checked + label,
-.emotion-0:indeterminate + label {
+.emotion-0:checked + label {
   border-color: #2E75D4;
   background: #2E75D4;
 }
 
-.emotion-0:checked:disabled + label,
-.emotion-0:indeterminate:disabled + label {
+.emotion-0:checked + label::before {
+  background: #ffffff;
+}
+
+.emotion-0:checked:disabled + label {
   background: #c3cfd5;
+}
+
+.emotion-0:checked:disabled + label::before {
+  background: #6B7888;
 }
 
 .emotion-0:disabled + label {
   background: #c3cfd5;
+  border-color: #c3cfd5;
+}
+
+.emotion-0:disabled + label::before {
+  background: #b4c3ca;
 }
 
 .emotion-0:checked + label,
@@ -95,6 +94,18 @@ exports[`renders the component 1`] = `
   height: 0.75rem;
 }
 
+.emotion-3 {
+  display: inline-block;
+  position: relative;
+  text-overflow: ellipsis;
+  line-height: 1.5rem;
+  margin: 0;
+  width: 1rem;
+  height: 1rem;
+  min-height: 1rem;
+  overflow: visible;
+}
+
 .emotion-1 {
   display: inline-block;
   fill: #ffffff;
@@ -107,7 +118,7 @@ exports[`renders the component 1`] = `
   data-test-id="cf-ui-checkbox-field"
 >
   <div
-    class="emotion-3 ControlledInputField__input"
+    class="ControlledInputField__input emotion-3"
   >
     <input
       aria-label="label text"

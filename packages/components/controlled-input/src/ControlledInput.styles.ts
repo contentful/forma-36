@@ -1,9 +1,8 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 
-export const getControlledInputStyles = () => ({
+export const styles = {
   container: css({
-    display: 'inline-block',
     position: 'relative',
     textOverflow: 'ellipsis',
     lineHeight: tokens.lineHeightL,
@@ -35,16 +34,10 @@ export const getControlledInputStyles = () => ({
         borderColor: tokens.colorBlueMid,
         background: tokens.colorBlueMid,
       },
-      '&:disabled': {
-        '& + label': {
-          // TODO: check if we can always define label (merge all from inputRadioButton in here)
-          background: tokens.colorElementDark,
-        },
-      },
     },
-
     '&:disabled': {
       '& + label': {
+        borderColor: tokens.colorElementDark,
         background: tokens.colorElementDark,
       },
     },
@@ -57,19 +50,13 @@ export const getControlledInputStyles = () => ({
       '& + label::before': {
         background: tokens.colorWhite,
       },
-
       '&:disabled': {
         '& + label::before': {
           background: tokens.colorTextLightest,
         },
       },
     },
-
     '&:disabled': {
-      '& + label': {
-        borderColor: tokens.colorElementDark,
-      },
-
       '& + label::before': {
         background: tokens.colorElementDarkest,
       },
@@ -83,8 +70,6 @@ export const getControlledInputStyles = () => ({
       },
       '&:disabled': {
         '& + label': {
-          borderColor: tokens.colorElementDark,
-
           '& svg': {
             fill: tokens.colorTextLightest,
           },
@@ -93,6 +78,8 @@ export const getControlledInputStyles = () => ({
     },
     '&:disabled': {
       '& + label': {
+        borderColor: tokens.colorElementDark,
+        background: tokens.colorElementDark,
         '& svg': {
           fill: tokens.colorElementDark,
         },
@@ -129,4 +116,4 @@ export const getControlledInputStyles = () => ({
       height: tokens.spacingS,
     },
   }),
-});
+};
