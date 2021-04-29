@@ -1,8 +1,5 @@
 import React from 'react';
-import {
-  ControlledInput,
-  ControlledInputProps,
-} from '@contentful/f36-controlled-input';
+import { ControlledInput, ControlledInputProps } from '@contentful/f36-inputs';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface RadioButtonProps extends ControlledInputProps {}
