@@ -135,10 +135,31 @@ export const styles = {
       borderRadius: tokens.borderRadiusMedium,
       cursor: 'pointer',
       display: 'inline-flex',
+      justifyContent: 'center',
+      alignItems: 'center',
       fontWeight: tokens.fontWeightMedium,
       outline: 'none',
+      textDecoration: 'none',
       ...variantToStyles(variant),
       ...sizeToStyles(size),
     }),
+  buttonText: css({
+    display: 'inline-block',
+  }),
+  buttonIcon: css({
+    fill: 'currentColor',
+  }),
+  dropdownIcon: css({
+    marginLeft: tokens.spacingXs,
+    fill: 'currentColor',
+  }),
   isActive: (variant) => css(variantActiveStyles(variant)),
+  isDisabled: css({
+    opacity: 0.5,
+    cursor: 'not-allowed',
+  }),
+  isFullWidth: css({
+    display: 'flex',
+    minWidth: '100%',
+  }),
 };

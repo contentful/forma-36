@@ -3,6 +3,8 @@ import React from 'react';
 import { Button } from '../src/Button';
 import { Box, Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
+import * as icons from '@contentful/f36-icons';
+import type { Story } from '@storybook/react';
 
 export default {
   title: 'Component/Button',
@@ -13,10 +15,20 @@ export default {
   argTypes: {
     classNames: { control: { disable: true } },
     testId: { control: { disable: true } },
+    icon: {
+      control: {
+        options: Object.keys(icons),
+        type: 'select',
+      },
+    },
   },
 };
 
-export const basic = (args) => <Button {...args} />;
+export const basic: Story<any> = ({ icon, children, ...args }) => (
+  <Button icon={icons[icon]} {...args}>
+    {children}
+  </Button>
+);
 
 basic.args = {
   size: 'medium',
@@ -33,16 +45,24 @@ export const Overview = (args) => {
         </Box>
         <Flex flexDirection="row" marginBottom="spacingM">
           <Box marginRight="spacingXs">
-            <Button variant="primary">Primary</Button>
+            <Button variant="primary" icon={icons[args.icon]}>
+              Primary
+            </Button>
           </Box>
           <Box marginRight="spacingXs">
-            <Button variant="secondary">Secondary</Button>
+            <Button variant="secondary" icon={icons[args.icon]}>
+              Secondary
+            </Button>
           </Box>
           <Box marginRight="spacingXs">
-            <Button variant="positive">Positive</Button>
+            <Button variant="positive" icon={icons[args.icon]}>
+              Positive
+            </Button>
           </Box>
           <Box marginRight="spacingXs">
-            <Button variant="negative">Negative</Button>
+            <Button variant="negative" icon={icons[args.icon]}>
+              Negative
+            </Button>
           </Box>
           <Box marginRight="spacingXs">
             <Button disabled variant="primary">
@@ -76,206 +96,152 @@ export const Overview = (args) => {
       </Flex>
 
       <Flex flexDirection="column" marginBottom="spacingL">
-        <Flex marginBottom="spacingS">
+        <Box marginBottom="spacingS">
           <SectionHeading as="h3">Button active state</SectionHeading>
-        </Flex>
+        </Box>
         <Flex flexDirection="row" marginBottom="spacingM">
-          <Flex marginRight="spacingXs">
+          <Box marginRight="spacingXs">
             <Button variant="primary" isActive>
               Primary isActive
             </Button>
-          </Flex>
-          <Flex marginRight="spacingXs">
+          </Box>
+          <Box marginRight="spacingXs">
             <Button variant="secondary" isActive>
               Secondary isActive
             </Button>
-          </Flex>
-          <Flex marginRight="spacingXs">
+          </Box>
+          <Box marginRight="spacingXs">
             <Button variant="positive" isActive>
               Positive isActive
             </Button>
-          </Flex>
-          <Flex marginRight="spacingXs">
+          </Box>
+          <Box marginRight="spacingXs">
             <Button variant="negative" isActive>
               Negative isActive
             </Button>
-          </Flex>
+          </Box>
         </Flex>
       </Flex>
 
-      {/*
-
       <Flex flexDirection="column" marginBottom="spacingL">
-        <Flex marginBottom="spacingS">
+        <Box marginBottom="spacingS">
           <SectionHeading as="h3">Button disabled</SectionHeading>
-        </Flex>
+        </Box>
         <Flex flexDirection="row" marginBottom="spacingM">
-          <Flex marginRight="spacingXs">
-            <Button buttonType="primary" disabled icon={icons[args.icon]}>
+          <Box marginRight="spacingXs">
+            <Button variant="primary" disabled>
               Primary disabled
             </Button>
-          </Flex>
-          <Flex marginRight="spacingXs">
-            <Button buttonType="muted" disabled icon={icons[args.icon]}>
-              Muted disabled
+          </Box>
+          <Box marginRight="spacingXs">
+            <Button variant="secondary" disabled>
+              Secondary disabled
             </Button>
-          </Flex>
-          <Flex marginRight="spacingXs">
-            <Button buttonType="positive" disabled icon={icons[args.icon]}>
+          </Box>
+          <Box marginRight="spacingXs">
+            <Button variant="positive" disabled>
               Positive disabled
             </Button>
-          </Flex>
-          <Flex marginRight="spacingXs">
-            <Button buttonType="negative" disabled icon={icons[args.icon]}>
+          </Box>
+          <Box marginRight="spacingXs">
+            <Button variant="negative" disabled>
               Negative disabled
             </Button>
-          </Flex>
-        </Flex>
-        <Flex marginBottom="spacingXs">
-          <Badge variant="warning">(deprecated)</Badge>
-        </Flex>
-        <Flex flexDirection="row" marginBottom="spacingM">
-          <Flex marginRight="spacingXs">
-            <Button buttonType="warning" disabled icon={icons[args.icon]}>
-              Warning disabled
-            </Button>
-          </Flex>
-          <Flex marginRight="spacingXs">
-            <Button buttonType="naked" disabled icon={icons[args.icon]}>
-              Naked disabled
-            </Button>
-          </Flex>
+          </Box>
         </Flex>
       </Flex>
 
       <Flex flexDirection="column" marginBottom="spacingL">
-        <Flex marginBottom="spacingS">
+        <Box marginBottom="spacingS">
           <SectionHeading as="h3">Button with dropdown</SectionHeading>
-        </Flex>
+        </Box>
         <Flex flexDirection="row" marginBottom="spacingM">
-          <Flex marginRight="spacingXs">
-            <Button buttonType="primary" indicateDropdown>
+          <Box marginRight="spacingXs">
+            <Button variant="primary" isDropdown>
               Primary with dropdown
             </Button>
-          </Flex>
-          <Flex marginRight="spacingXs">
-            <Button buttonType="muted" indicateDropdown>
-              Muted with dropdown
+          </Box>
+          <Box marginRight="spacingXs">
+            <Button variant="secondary" isDropdown>
+              Secondary with dropdown
             </Button>
-          </Flex>
-          <Flex marginRight="spacingXs">
-            <Button buttonType="positive" indicateDropdown>
+          </Box>
+          <Box marginRight="spacingXs">
+            <Button variant="positive" isDropdown>
               Positive with dropdown
             </Button>
-          </Flex>
-          <Flex marginRight="spacingXs">
-            <Button buttonType="negative" indicateDropdown>
+          </Box>
+          <Box marginRight="spacingXs">
+            <Button variant="negative" isDropdown>
               Negative with dropdown
             </Button>
-          </Flex>
-        </Flex>
-        <Flex marginBottom="spacingXs">
-          <Badge variant="warning">(deprecated)</Badge>
-        </Flex>
-        <Flex flexDirection="row" marginBottom="spacingM">
-          <Flex marginRight="spacingXs">
-            <Button buttonType="warning" indicateDropdown>
-              Warning with dropdown
-            </Button>
-          </Flex>
-          <Flex marginRight="spacingXs">
-            <Button buttonType="naked" indicateDropdown>
-              Naked with dropdown
-            </Button>
-          </Flex>
+          </Box>
         </Flex>
       </Flex>
 
       <Flex flexDirection="column" marginBottom="spacingL">
-        <Flex marginBottom="spacingS">
+        <Box marginBottom="spacingS">
           <SectionHeading as="h3">Button loading</SectionHeading>
-        </Flex>
+        </Box>
         <Flex flexDirection="row" marginBottom="spacingM">
-          <Flex marginRight="spacingXs">
-            <Button buttonType="primary" loading>
-              Primary loading
+          <Box marginRight="spacingXs">
+            <Button variant="primary" isLoading>
+              Primary isLoading
             </Button>
-          </Flex>
-          <Flex marginRight="spacingXs">
-            <Button buttonType="muted" loading>
-              Muted loading
+          </Box>
+          <Box marginRight="spacingXs">
+            <Button variant="secondary" isLoading>
+              Muted isLoading
             </Button>
-          </Flex>
-          <Flex marginRight="spacingXs">
-            <Button buttonType="positive" loading>
-              Positive loading
+          </Box>
+          <Box marginRight="spacingXs">
+            <Button variant="positive" isLoading>
+              Positive isLoading
             </Button>
-          </Flex>
-          <Flex marginRight="spacingXs">
-            <Button buttonType="negative" loading>
-              Negative loading
+          </Box>
+          <Box marginRight="spacingXs">
+            <Button variant="negative" isLoading>
+              Negative isLoading
             </Button>
-          </Flex>
-        </Flex>
-        <Flex marginBottom="spacingXs">
-          <Badge variant="warning">(deprecated)</Badge>
-        </Flex>
-        <Flex flexDirection="row" marginBottom="spacingM">
-          <Flex marginRight="spacingXs">
-            <Button buttonType="warning" loading>
-              Warning loading
-            </Button>
-          </Flex>
-          <Flex marginRight="spacingXs">
-            <Button buttonType="naked" loading>
-              Naked loading
-            </Button>
-          </Flex>
+          </Box>
         </Flex>
       </Flex>
 
       <Flex flexDirection="column" marginBottom="spacingL">
-        <Flex marginBottom="spacingS">
+        <Box marginBottom="spacingS">
           <SectionHeading as="h3">Icon only button</SectionHeading>
-        </Flex>
+        </Box>
         <Flex flexDirection="row" marginBottom="spacingM">
-          <Flex marginRight="spacingXs">
+          <Box marginRight="spacingXs">
             <Button
-              buttonType="muted"
+              variant="secondary"
               icon={icons.Download}
               aria-label="Download"
             />
-          </Flex>
-          <Flex marginRight="spacingXs">
-            <Button buttonType="muted" icon={icons.Download} loading />
-          </Flex>
-          <Flex marginRight="spacingXs">
+          </Box>
+          <Box marginRight="spacingXs">
+            <Button variant="secondary" icon={icons.Download} isLoading />
+          </Box>
+          <Box marginRight="spacingXs">
+            <Button variant="positive" icon={icons.Drag} aria-label="Resize" />
+          </Box>
+          <Box marginRight="spacingXs">
             <Button
-              buttonType="positive"
-              icon={icons.Drag}
-              aria-label="Resize"
-            />
-          </Flex>
-          <Flex marginRight="spacingXs">
-            <Button
-              buttonType="negative"
+              variant="negative"
               icon={icons.Delete}
               aria-label="Delete"
             />
-          </Flex>
-          <Flex marginRight="spacingXs">
-            <Button buttonType="warning" icon={icons.Edit} aria-label="Edit" />
-          </Flex>
-          <Flex marginRight="spacingXs">
-            <Button buttonType="primary" icon={icons.Plus} aria-label="Add" />
-          </Flex>
+          </Box>
+          <Box marginRight="spacingXs">
+            <Button variant="primary" icon={icons.Plus} aria-label="Add" />
+          </Box>
         </Flex>
       </Flex>
 
       <Flex flexDirection="column" marginBottom="spacingL">
-        <Flex marginBottom="spacingS">
+        <Box marginBottom="spacingS">
           <SectionHeading as="h3">Full width button</SectionHeading>
-        </Flex>
+        </Box>
         <Flex flexDirection="row" marginBottom="spacingS">
           <Button isFullWidth>Full width button</Button>
         </Flex>
@@ -285,11 +251,11 @@ export const Overview = (args) => {
           </Button>
         </Flex>
         <Flex flexDirection="row" marginBottom="spacingS">
-          <Button icon={icons.Download} indicateDropdown isFullWidth>
+          <Button icon={icons.Download} isDropdown isFullWidth>
             Full width button
           </Button>
         </Flex>
-      </Flex> */}
+      </Flex>
     </>
   );
 };

@@ -1,19 +1,17 @@
-import React, { HTMLProps } from 'react';
+import React, { ElementType, HTMLProps } from 'react';
 import { cx } from 'emotion';
-import { Primitive } from '@contentful/f36-core';
-import type { CommonProps } from '@contentful/f36-core';
+import { Flex, CommonProps } from '@contentful/f36-core';
+import { ChevronDown } from '@contentful/f36-icons';
+import { Icon, IconComponent } from '@contentful/f36-icon';
 
 import type { ButtonVariant, ButtonSize } from './types';
 import { styles } from './styles';
+import { Spinner } from '@contentful/f36-spinner';
 
-type ButtonInternalProps = Omit<
-  HTMLProps<HTMLButtonElement | HTMLAnchorElement>,
-  'size'
->;
-
-export interface ButtonProps extends CommonProps, ButtonInternalProps {
+export interface ButtonProps
+  extends Omit<HTMLProps<HTMLButtonElement & HTMLAnchorElement>, 'size'>,
+    CommonProps {
   children?: React.ReactNode;
-  as?: 'button' | 'a';
   /**
    * Determines style variation of Button component
    * @default secondary
@@ -29,6 +27,31 @@ export interface ButtonProps extends CommonProps, ButtonInternalProps {
    * @default false
    */
   isActive?: boolean;
+  /**
+   * Disabled interaction and applies disabled styles
+   * @default false
+   */
+  disabled?: boolean;
+  /**
+   * Button html type attribute
+   */
+  type?: 'submit' | 'button' | 'reset';
+  /**
+   * Adds dropdown indicator icon
+   */
+  isDropdown?: boolean;
+  /**
+   * Expects any of the icon components
+   */
+  icon?: IconComponent;
+  /**
+   * Adds loading indicator icon and disables interactions
+   */
+  isLoading?: boolean;
+  /**
+   * Forces button to take 100% of the container
+   */
+  isFullWidth?: boolean;
 }
 
 const _Button = (props: ButtonProps, ref) => {
@@ -37,27 +60,52 @@ const _Button = (props: ButtonProps, ref) => {
     variant = 'secondary',
     size = 'medium',
     href,
+    disabled,
+    type,
+    icon,
     isActive,
+    isDropdown,
+    isLoading,
+    isFullWidth,
     ...otherProps
   } = props;
 
   const rootClassNames = cx(styles.button(variant, size), {
     [styles.isActive(variant)]: isActive,
+    [styles.isDisabled]: disabled,
+    [styles.isFullWidth]: isFullWidth,
   });
 
+  const Element: ElementType = href ? 'a' : 'button';
+
   return (
-    <Primitive
+    <Element
       ref={ref}
+      type={type}
       className={rootClassNames}
-      as={href ? 'a' : 'button'}
+      href={href}
+      disabled={disabled}
       {...otherProps}
     >
-      {children}
-    </Primitive>
+      {icon && !isLoading && (
+        <Flex as="span" marginRight={children ? 'spacing2Xs' : 'none'}>
+          <Icon className={styles.buttonIcon} as={icon} />
+        </Flex>
+      )}
+      <span className={styles.buttonText}>{children}</span>
+      {isLoading && (
+        <Spinner
+          marginLeft={children || !isLoading ? 'spacingXs' : 'none'}
+          customSize={12}
+          variant={variant === 'secondary' ? 'default' : 'white'}
+        />
+      )}
+      {isDropdown && <ChevronDown className={styles.dropdownIcon} />}
+    </Element>
   );
 };
 
 /**
- * TODO: Add description of component here.
+ * @description: Buttons communicate the action that will occur when the user clicks it
  */
 export const Button = React.forwardRef(_Button);
