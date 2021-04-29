@@ -191,7 +191,7 @@ module.exports = {
             menuLinks: [
               {
                 name: 'Checkbox',
-                link: '/components/checkbox/',
+                link: '/components/inputs/src/checkbox/',
               },
               {
                 name: 'CheckboxField',

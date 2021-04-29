@@ -1,7 +1,7 @@
 {
-  "name": "@contentful/f36-controlled-input",
+  "name": "@contentful/f36-inputs",
   "version": "4.0.0",
-  "description": "Forma 36: ControlledInput React Component",
+  "description": "Forma 36: Input React Components",
   "license": "MIT",
   "files": [
     "dist",
@@ -26,9 +26,6 @@
     "@contentful/f36-core": "^4.0.0",
     "@contentful/f36-tokens": "^4.0.0",
     "@contentful/f36-icons": "^4.0.0"
-  },
-  "devDependencies": {
-    "@contentful/f36-typography": "^4.0.0"
   },
   "peerDependencies": {
     "react": ">=16.8"

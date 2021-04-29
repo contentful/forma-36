@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { ControlledInput } from '../src/ControlledInput';
-import { ControlledInputProps } from '../src/ControlledInput';
+import { ControlledInput } from '..';
+import { ControlledInputProps } from '..';
 
 export default {
   title: 'Components/ControlledInput',

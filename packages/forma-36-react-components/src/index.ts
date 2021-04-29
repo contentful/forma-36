@@ -1,5 +1,5 @@
 export * from '@contentful/f36-badge';
-export * from '@contentful/f36-controlled-input';
+export * from '@contentful/f36-inputs';
 export { Icon } from '@contentful/f36-icon';
 export type {
   IconComponent,
@@ -44,7 +44,6 @@ export * from './components/Asset';
 export * from './components/Autocomplete';
 export * from './components/Button';
 export * from './components/Card';
-export * from './components/Checkbox';
 export * from './components/CheckboxField';
 export * from './components/ControlledInputField';
 export * from './components/CopyButton';
