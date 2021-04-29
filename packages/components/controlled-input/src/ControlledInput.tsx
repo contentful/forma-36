@@ -1,5 +1,4 @@
 import React, {
-  HTMLProps,
   EventHandler,
   ChangeEvent,
   FocusEvent,
@@ -15,8 +14,7 @@ import type { IconProps } from '@contentful/f36-icons';
 import { styles } from './ControlledInput.styles';
 import { Box, BoxProps } from '@contentful/f36-core';
 
-export interface ControlledInputProps
-  extends Omit<HTMLProps<HTMLInputElement>, 'ref'> {
+export interface ControlledInputProps extends Omit<BoxProps<'div'>, 'ref'> {
   id?: string;
   required?: boolean;
   labelText: string;
@@ -32,7 +30,7 @@ export interface ControlledInputProps
   testId?: string;
   willBlurOnEsc?: boolean;
   indeterminate?: boolean;
-  boxProps?: BoxProps<'div'>;
+  inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
 }
 
 const _ControlledInput = (
@@ -52,7 +50,7 @@ const _ControlledInput = (
     value,
     willBlurOnEsc = true,
     indeterminate,
-    boxProps,
+    inputProps,
     ...otherProps
   }: ControlledInputProps,
   ref: React.Ref<HTMLDivElement>,
@@ -93,7 +91,7 @@ const _ControlledInput = (
       display="inline-block"
       className={wrapperClassnames}
       ref={ref}
-      {...boxProps}
+      {...otherProps}
     >
       <input
         className={inputClassnames}
@@ -123,7 +121,7 @@ const _ControlledInput = (
         required={required}
         disabled={disabled}
         onKeyDown={handleKeyDown}
-        {...otherProps}
+        {...inputProps}
       />
       {type === 'radio' ? (
         // eslint-disable-next-line jsx-a11y/label-has-associated-control
