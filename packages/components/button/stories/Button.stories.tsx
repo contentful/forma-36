@@ -246,6 +246,11 @@ export const Overview = (args) => {
           <Button isFullWidth>Full width button</Button>
         </Flex>
         <Flex flexDirection="row" marginBottom="spacingS">
+          <Button href="https://contentful.com" isFullWidth>
+            Full width link button
+          </Button>
+        </Flex>
+        <Flex flexDirection="row" marginBottom="spacingS">
           <Button icon={icons.Download} isFullWidth>
             Full width button
           </Button>

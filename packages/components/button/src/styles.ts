@@ -130,6 +130,7 @@ const sizeToStyles = (size: ButtonSize): CSSObject => {
 export const styles = {
   button: (variant: ButtonVariant, size: ButtonSize) =>
     css({
+      boxSizing: 'border-box',
       border: `1px solid`,
       boxShadow: '0px 1px 0px rgb(25, 37, 50, 0.08)',
       borderRadius: tokens.borderRadiusMedium,
@@ -140,6 +141,7 @@ export const styles = {
       fontWeight: tokens.fontWeightMedium,
       outline: 'none',
       textDecoration: 'none',
+      transition: `background-color ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
       ...variantToStyles(variant),
       ...sizeToStyles(size),
     }),

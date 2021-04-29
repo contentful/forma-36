@@ -96,7 +96,7 @@ const _Button = (props: ButtonProps, ref) => {
       {isLoading && (
         <Spinner
           marginLeft={children || !isLoading ? 'spacingXs' : 'none'}
-          customSize={12}
+          customSize={18}
           variant={variant === 'secondary' ? 'default' : 'white'}
         />
       )}
