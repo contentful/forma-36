@@ -61,7 +61,7 @@ const _Button = (props: ButtonProps, ref) => {
     size = 'medium',
     href,
     disabled,
-    type,
+    type = !href ? 'button' : undefined,
     icon,
     isActive,
     isDropdown,
@@ -70,11 +70,15 @@ const _Button = (props: ButtonProps, ref) => {
     ...otherProps
   } = props;
 
-  const rootClassNames = cx(styles.button(variant, size), {
-    [styles.isActive(variant)]: isActive,
-    [styles.isDisabled]: disabled,
-    [styles.isFullWidth]: isFullWidth,
-  });
+  const rootClassNames = cx(
+    styles.button({
+      variant,
+      size,
+      isActive,
+      isDisabled: disabled,
+      isFullWidth,
+    }),
+  );
 
   const Element: ElementType = href ? 'a' : 'button';
 

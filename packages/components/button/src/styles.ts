@@ -1,7 +1,7 @@
 import { css } from 'emotion';
 import type { CSSObject } from '@emotion/serialize';
 import tokens from '@contentful/f36-tokens';
-import { ButtonSize, ButtonVariant } from './types';
+import { ButtonSize, ButtonVariant, ButtonStylesProps } from './types';
 
 const variantActiveStyles = (variant: ButtonVariant): CSSObject => {
   switch (variant) {
@@ -128,14 +128,22 @@ const sizeToStyles = (size: ButtonSize): CSSObject => {
 };
 
 export const styles = {
-  button: (variant: ButtonVariant, size: ButtonSize) =>
+  button: ({
+    variant,
+    size,
+    isActive,
+    isDisabled,
+    isFullWidth,
+  }: ButtonStylesProps) =>
     css({
       boxSizing: 'border-box',
       border: `1px solid`,
       boxShadow: '0px 1px 0px rgb(25, 37, 50, 0.08)',
       borderRadius: tokens.borderRadiusMedium,
-      cursor: 'pointer',
-      display: 'inline-flex',
+      cursor: isDisabled ? 'not-allowed' : 'pointer',
+      opacity: isDisabled ? 0.5 : 1,
+      display: isFullWidth ? 'flex' : 'inline-flex',
+      minWidth: isFullWidth ? '100%' : 'auto',
       justifyContent: 'center',
       alignItems: 'center',
       fontWeight: tokens.fontWeightMedium,
@@ -144,6 +152,7 @@ export const styles = {
       transition: `background-color ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
       ...variantToStyles(variant),
       ...sizeToStyles(size),
+      ...(isActive ? variantActiveStyles(variant) : {}),
     }),
   buttonText: css({
     display: 'inline-block',
@@ -154,14 +163,5 @@ export const styles = {
   dropdownIcon: css({
     marginLeft: tokens.spacingXs,
     fill: 'currentColor',
-  }),
-  isActive: (variant) => css(variantActiveStyles(variant)),
-  isDisabled: css({
-    opacity: 0.5,
-    cursor: 'not-allowed',
-  }),
-  isFullWidth: css({
-    display: 'flex',
-    minWidth: '100%',
   }),
 };
