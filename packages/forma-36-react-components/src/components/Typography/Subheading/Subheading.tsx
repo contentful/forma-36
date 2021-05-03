@@ -1,15 +1,12 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 import cn from 'classnames';
 import styles from './Subheading.css';
 
 import { TypographyContext } from '../Typography/Typography';
 
-export interface SubheadingProps {
+export interface SubheadingProps extends HTMLAttributes<HTMLElement> {
   element?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
-  className?: string;
-  children?: React.ReactNode;
   testId?: string;
-  style?: React.CSSProperties;
 }
 
 export function Subheading({

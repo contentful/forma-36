@@ -1,15 +1,12 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 import cn from 'classnames';
 import styles from './DisplayText.css';
 
 import { TypographyContext } from '../Typography/Typography';
 
-export interface DisplayTextProps {
+export interface DisplayTextProps extends HTMLAttributes<HTMLElement> {
   element?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
   size?: 'default' | 'large' | 'huge';
-  className?: string;
-  children?: React.ReactNode;
-  style?: React.CSSProperties;
   testId?: string;
 }
 
