@@ -73,7 +73,6 @@ const _Button = (props: ButtonProps, ref) => {
   } = props;
 
   const rootClassNames = cx(
-    className,
     styles.button({
       variant,
       size,
@@ -81,6 +80,7 @@ const _Button = (props: ButtonProps, ref) => {
       isDisabled: disabled,
       isFullWidth,
     }),
+    className,
   );
 
   const Element: ElementType = href ? 'a' : 'button';
