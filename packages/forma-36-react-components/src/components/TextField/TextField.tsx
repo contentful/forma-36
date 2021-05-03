@@ -33,8 +33,8 @@ export interface TextFieldProps {
   textarea?: boolean;
   countCharacters?: boolean;
   onChange?: ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement>;
-  onBlur?: FocusEventHandler;
-  onFocus?: FocusEventHandler;
+  onBlur?: FocusEventHandler<HTMLTextAreaElement | HTMLInputElement>;
+  onFocus?: FocusEventHandler<HTMLTextAreaElement | HTMLInputElement>;
 }
 
 export const TextField = ({
