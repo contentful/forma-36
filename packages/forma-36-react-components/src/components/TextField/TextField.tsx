@@ -32,7 +32,7 @@ export interface TextFieldProps {
   required?: boolean;
   textarea?: boolean;
   countCharacters?: boolean;
-  onChange?: ChangeEventHandler;
+  onChange?: ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement>;
   onBlur?: FocusEventHandler;
   onFocus?: FocusEventHandler;
 }
