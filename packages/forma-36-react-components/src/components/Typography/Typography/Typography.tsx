@@ -1,12 +1,9 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 import cn from 'classnames';
 
 import styles from './Typography.css';
 
-export interface TypographyProps {
-  className?: string;
-  children?: React.ReactNode;
-  style?: React.CSSProperties;
+export interface TypographyProps extends HTMLAttributes<HTMLElement> {
   testId?: string;
 }
 
