@@ -57,6 +57,8 @@ export interface ButtonProps
 const _Button = (props: ButtonProps, ref) => {
   const {
     children,
+    className,
+    testId,
     variant = 'secondary',
     size = 'medium',
     href,
@@ -71,6 +73,7 @@ const _Button = (props: ButtonProps, ref) => {
   } = props;
 
   const rootClassNames = cx(
+    className,
     styles.button({
       variant,
       size,
@@ -89,6 +92,7 @@ const _Button = (props: ButtonProps, ref) => {
       className={rootClassNames}
       href={href}
       disabled={disabled}
+      data-test-id={testId}
       {...otherProps}
     >
       {icon && !isLoading && (
