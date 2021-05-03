@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.89.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.88.6...@contentful/forma-36-react-components@3.89.0) (2021-05-03)
+
+
+### Bug Fixes
+
+* fix inputs onChange, onBlur, onFocus types ([#946](https://github.com/contentful/forma-36/issues/946)) ([a6181d0](https://github.com/contentful/forma-36/commit/a6181d0d97c5293720910ac7f249f640375c8397))
+
+
+### Features
+
+* add global HTML element attributes to typography components ([#947](https://github.com/contentful/forma-36/issues/947)) ([453fc61](https://github.com/contentful/forma-36/commit/453fc61a48ac2e391242ac7b927db1f3c6676a86))
+
+
+
+
+
 ## [3.88.6](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.88.5...@contentful/forma-36-react-components@3.88.6) (2021-04-28)
 
 
