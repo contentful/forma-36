@@ -22,7 +22,7 @@ export interface ControlledInputFieldPropTypes {
   checked?: boolean;
   inputProps?: object;
   inputType?: 'radio' | 'checkbox';
-  onChange?: ChangeEventHandler;
+  onChange?: ChangeEventHandler<HTMLInputElement>;
   className?: string;
   testId?: string;
   children?: ReactNode;

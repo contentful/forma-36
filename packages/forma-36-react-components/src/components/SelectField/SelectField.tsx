@@ -24,8 +24,8 @@ export interface SelectFieldProps {
   selectProps?: Partial<SelectProps>;
   helpText?: string;
   required?: boolean;
-  onChange?: ChangeEventHandler;
-  onBlur?: FocusEventHandler;
+  onChange?: ChangeEventHandler<HTMLSelectElement>;
+  onBlur?: FocusEventHandler<HTMLSelectElement>;
   testId?: string;
   className?: string;
 }
