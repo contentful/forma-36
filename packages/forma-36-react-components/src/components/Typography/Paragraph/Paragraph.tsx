@@ -10,6 +10,7 @@ export interface ParagraphProps {
   children?: React.ReactNode;
   testId?: string;
   style?: React.CSSProperties;
+  title?: string;
 }
 
 export function Paragraph({

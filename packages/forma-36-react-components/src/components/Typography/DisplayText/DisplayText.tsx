@@ -11,6 +11,7 @@ export interface DisplayTextProps {
   children?: React.ReactNode;
   style?: React.CSSProperties;
   testId?: string;
+  title?: string;
 }
 
 export function DisplayText({

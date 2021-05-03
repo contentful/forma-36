@@ -10,6 +10,7 @@ export interface SubheadingProps {
   children?: React.ReactNode;
   testId?: string;
   style?: React.CSSProperties;
+  title?: string;
 }
 
 export function Subheading({

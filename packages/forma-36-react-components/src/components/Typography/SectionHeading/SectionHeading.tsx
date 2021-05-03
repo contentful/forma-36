@@ -10,6 +10,7 @@ export interface SectionHeadingProps {
   children?: React.ReactNode | string;
   testId?: string;
   style?: React.CSSProperties;
+  title?: string;
 }
 
 export function SectionHeading({

@@ -10,6 +10,7 @@ export interface HeadingProps {
   className?: string;
   children?: React.ReactNode;
   testId?: string;
+  title?: string;
 }
 
 export function Heading({

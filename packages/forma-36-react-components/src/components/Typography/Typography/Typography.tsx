@@ -8,6 +8,7 @@ export interface TypographyProps {
   children?: React.ReactNode;
   style?: React.CSSProperties;
   testId?: string;
+  title?: string;
 }
 
 const defaultConfiguration = {
