@@ -1,16 +1,12 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 import cn from 'classnames';
 import styles from './Heading.css';
 
 import { TypographyContext } from '../Typography/Typography';
 
-export interface HeadingProps {
+export interface HeadingProps extends HTMLAttributes<HTMLElement> {
   element?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
-  style?: React.CSSProperties;
-  className?: string;
-  children?: React.ReactNode;
   testId?: string;
-  title?: string;
 }
 
 export function Heading({

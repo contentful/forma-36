@@ -1,16 +1,12 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 import cn from 'classnames';
 import styles from './Paragraph.css';
 
 import { TypographyContext } from '../Typography/Typography';
 
-export interface ParagraphProps {
+export interface ParagraphProps extends HTMLAttributes<HTMLElement> {
   element?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p';
-  className?: string;
-  children?: React.ReactNode;
   testId?: string;
-  style?: React.CSSProperties;
-  title?: string;
 }
 
 export function Paragraph({
