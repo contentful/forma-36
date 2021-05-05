@@ -7,7 +7,7 @@ import * as icons from '@contentful/f36-icons';
 import type { Story } from '@storybook/react';
 
 export default {
-  title: 'Component/Button',
+  title: 'Components/Button',
   component: Button,
   parameters: {
     propTypes: Button['__docgenInfo'],
