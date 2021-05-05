@@ -190,6 +190,10 @@ module.exports = {
             link: '',
             menuLinks: [
               {
+                name: 'ControlledInput',
+                link: '/components/inputs/src/controlled-input/',
+              },
+              {
                 name: 'Checkbox',
                 link: '/components/inputs/src/checkbox/',
               },
