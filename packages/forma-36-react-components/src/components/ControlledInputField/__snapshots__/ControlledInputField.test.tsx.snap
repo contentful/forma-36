@@ -3,6 +3,95 @@
 exports[`renders the component 1`] = `
 .emotion-0 {
   display: inline-block;
+  font-size: 0.875rem;
+  opacity: 0;
+  position: absolute;
+  margin: 0;
+  width: 1rem;
+  height: 1rem;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.emotion-0:focus + label {
+  outline: none;
+  border: 2px solid #2E75D4;
+  box-shadow: 0px 0px 0px 3px #84B9F5;
+}
+
+.emotion-0:checked + label {
+  border-color: #2E75D4;
+  background: #2E75D4;
+}
+
+.emotion-0:disabled + label {
+  border-color: #c3cfd5;
+  background: #c3cfd5;
+}
+
+.emotion-0:checked + label,
+.emotion-0:indeterminate + label {
+  border-color: #2E75D4;
+  background: #2E75D4;
+}
+
+.emotion-0:checked:disabled + label svg,
+.emotion-0:indeterminate:disabled + label svg {
+  fill: #6B7888;
+}
+
+.emotion-0:disabled + label {
+  border-color: #c3cfd5;
+  background: #c3cfd5;
+}
+
+.emotion-0:disabled + label svg {
+  fill: #c3cfd5;
+}
+
+.emotion-2 {
+  background: #ffffff;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid #c3cfd5;
+  fill: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 20%;
+}
+
+.emotion-2 svg {
+  width: 0.75rem;
+  min-width: 0.75rem;
+  min-height: 0.75rem;
+  height: 0.75rem;
+}
+
+.emotion-3 {
+  display: inline-block;
+  position: relative;
+  text-overflow: ellipsis;
+  line-height: 1.5rem;
+  margin: 0;
+  width: 1rem;
+  height: 1rem;
+  min-height: 1rem;
+  overflow: visible;
+}
+
+.emotion-1 {
+  display: inline-block;
   fill: #ffffff;
   height: 24px;
   width: 24px;
@@ -13,22 +102,22 @@ exports[`renders the component 1`] = `
   data-test-id="cf-ui-controlled-input-field"
 >
   <div
-    class="Checkbox ControlledInputField__input"
+    class="ControlledInputField__input emotion-3"
+    data-test-id="cf-ui-controlled-input"
   >
     <input
       aria-label="label text"
-      class="ControlledInput"
-      data-test-id="cf-ui-controlled-input"
+      class="emotion-0"
       id="checkbox"
       type="checkbox"
       value=""
     />
     <label
-      class="Input__ghost Checkbox__ghost"
+      class="emotion-2"
       for="checkbox"
     >
       <svg
-        class="emotion-0"
+        class="emotion-1"
         data-test-id="cf-ui-icon"
         height="1em"
         viewBox="0 0 24 24"
@@ -55,6 +144,95 @@ exports[`renders the component 1`] = `
 exports[`renders the component as checked 1`] = `
 .emotion-0 {
   display: inline-block;
+  font-size: 0.875rem;
+  opacity: 0;
+  position: absolute;
+  margin: 0;
+  width: 1rem;
+  height: 1rem;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.emotion-0:focus + label {
+  outline: none;
+  border: 2px solid #2E75D4;
+  box-shadow: 0px 0px 0px 3px #84B9F5;
+}
+
+.emotion-0:checked + label {
+  border-color: #2E75D4;
+  background: #2E75D4;
+}
+
+.emotion-0:disabled + label {
+  border-color: #c3cfd5;
+  background: #c3cfd5;
+}
+
+.emotion-0:checked + label,
+.emotion-0:indeterminate + label {
+  border-color: #2E75D4;
+  background: #2E75D4;
+}
+
+.emotion-0:checked:disabled + label svg,
+.emotion-0:indeterminate:disabled + label svg {
+  fill: #6B7888;
+}
+
+.emotion-0:disabled + label {
+  border-color: #c3cfd5;
+  background: #c3cfd5;
+}
+
+.emotion-0:disabled + label svg {
+  fill: #c3cfd5;
+}
+
+.emotion-2 {
+  background: #ffffff;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid #c3cfd5;
+  fill: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 20%;
+}
+
+.emotion-2 svg {
+  width: 0.75rem;
+  min-width: 0.75rem;
+  min-height: 0.75rem;
+  height: 0.75rem;
+}
+
+.emotion-3 {
+  display: inline-block;
+  position: relative;
+  text-overflow: ellipsis;
+  line-height: 1.5rem;
+  margin: 0;
+  width: 1rem;
+  height: 1rem;
+  min-height: 1rem;
+  overflow: visible;
+}
+
+.emotion-1 {
+  display: inline-block;
   fill: #ffffff;
   height: 24px;
   width: 24px;
@@ -65,23 +243,23 @@ exports[`renders the component as checked 1`] = `
   data-test-id="cf-ui-controlled-input-field"
 >
   <div
-    class="Checkbox ControlledInputField__input"
+    class="ControlledInputField__input emotion-3"
+    data-test-id="cf-ui-controlled-input"
   >
     <input
       aria-label="Label Text"
       checked=""
-      class="ControlledInput"
-      data-test-id="cf-ui-controlled-input"
+      class="emotion-0"
       id="checkbox"
       type="checkbox"
       value=""
     />
     <label
-      class="Input__ghost Checkbox__ghost"
+      class="emotion-2"
       for="checkbox"
     >
       <svg
-        class="emotion-0"
+        class="emotion-1"
         data-test-id="cf-ui-icon"
         height="1em"
         viewBox="0 0 24 24"
@@ -108,6 +286,95 @@ exports[`renders the component as checked 1`] = `
 exports[`renders the component as required 1`] = `
 .emotion-0 {
   display: inline-block;
+  font-size: 0.875rem;
+  opacity: 0;
+  position: absolute;
+  margin: 0;
+  width: 1rem;
+  height: 1rem;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.emotion-0:focus + label {
+  outline: none;
+  border: 2px solid #2E75D4;
+  box-shadow: 0px 0px 0px 3px #84B9F5;
+}
+
+.emotion-0:checked + label {
+  border-color: #2E75D4;
+  background: #2E75D4;
+}
+
+.emotion-0:disabled + label {
+  border-color: #c3cfd5;
+  background: #c3cfd5;
+}
+
+.emotion-0:checked + label,
+.emotion-0:indeterminate + label {
+  border-color: #2E75D4;
+  background: #2E75D4;
+}
+
+.emotion-0:checked:disabled + label svg,
+.emotion-0:indeterminate:disabled + label svg {
+  fill: #6B7888;
+}
+
+.emotion-0:disabled + label {
+  border-color: #c3cfd5;
+  background: #c3cfd5;
+}
+
+.emotion-0:disabled + label svg {
+  fill: #c3cfd5;
+}
+
+.emotion-2 {
+  background: #ffffff;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid #c3cfd5;
+  fill: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 20%;
+}
+
+.emotion-2 svg {
+  width: 0.75rem;
+  min-width: 0.75rem;
+  min-height: 0.75rem;
+  height: 0.75rem;
+}
+
+.emotion-3 {
+  display: inline-block;
+  position: relative;
+  text-overflow: ellipsis;
+  line-height: 1.5rem;
+  margin: 0;
+  width: 1rem;
+  height: 1rem;
+  min-height: 1rem;
+  overflow: visible;
+}
+
+.emotion-1 {
+  display: inline-block;
   fill: #ffffff;
   height: 24px;
   width: 24px;
@@ -118,23 +385,23 @@ exports[`renders the component as required 1`] = `
   data-test-id="cf-ui-controlled-input-field"
 >
   <div
-    class="Checkbox ControlledInputField__input"
+    class="ControlledInputField__input emotion-3"
+    data-test-id="cf-ui-controlled-input"
   >
     <input
       aria-label="Label Text"
-      class="ControlledInput"
-      data-test-id="cf-ui-controlled-input"
+      class="emotion-0"
       id="checkbox"
       required=""
       type="checkbox"
       value=""
     />
     <label
-      class="Input__ghost Checkbox__ghost"
+      class="emotion-2"
       for="checkbox"
     >
       <svg
-        class="emotion-0"
+        class="emotion-1"
         data-test-id="cf-ui-icon"
         height="1em"
         viewBox="0 0 24 24"
@@ -166,7 +433,97 @@ exports[`renders the component as required 1`] = `
 `;
 
 exports[`renders the component in a disabled state 1`] = `
+.emotion-2 {
+  background: #ffffff;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid #c3cfd5;
+  fill: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 20%;
+}
+
+.emotion-2 svg {
+  width: 0.75rem;
+  min-width: 0.75rem;
+  min-height: 0.75rem;
+  height: 0.75rem;
+}
+
+.emotion-3 {
+  display: inline-block;
+  position: relative;
+  text-overflow: ellipsis;
+  line-height: 1.5rem;
+  margin: 0;
+  width: 1rem;
+  height: 1rem;
+  min-height: 1rem;
+  overflow: visible;
+}
+
 .emotion-0 {
+  display: inline-block;
+  font-size: 0.875rem;
+  opacity: 0;
+  position: absolute;
+  margin: 0;
+  width: 1rem;
+  height: 1rem;
+  z-index: 1;
+  cursor: pointer;
+  cursor: not-allowed;
+}
+
+.emotion-0:focus + label {
+  outline: none;
+  border: 2px solid #2E75D4;
+  box-shadow: 0px 0px 0px 3px #84B9F5;
+}
+
+.emotion-0:checked + label {
+  border-color: #2E75D4;
+  background: #2E75D4;
+}
+
+.emotion-0:disabled + label {
+  border-color: #c3cfd5;
+  background: #c3cfd5;
+}
+
+.emotion-0:checked + label,
+.emotion-0:indeterminate + label {
+  border-color: #2E75D4;
+  background: #2E75D4;
+}
+
+.emotion-0:checked:disabled + label svg,
+.emotion-0:indeterminate:disabled + label svg {
+  fill: #6B7888;
+}
+
+.emotion-0:disabled + label {
+  border-color: #c3cfd5;
+  background: #c3cfd5;
+}
+
+.emotion-0:disabled + label svg {
+  fill: #c3cfd5;
+}
+
+.emotion-1 {
   display: inline-block;
   fill: #192532;
   height: 24px;
@@ -178,23 +535,23 @@ exports[`renders the component in a disabled state 1`] = `
   data-test-id="cf-ui-controlled-input-field"
 >
   <div
-    class="Checkbox ControlledInputField__input"
+    class="ControlledInputField__input emotion-3"
+    data-test-id="cf-ui-controlled-input"
   >
     <input
       aria-label="Label Text"
-      class="ControlledInput ControlledInput--disabled"
-      data-test-id="cf-ui-controlled-input"
+      class="emotion-0"
       disabled=""
       id="checkbox"
       type="checkbox"
       value=""
     />
     <label
-      class="Input__ghost Checkbox__ghost"
+      class="emotion-2"
       for="checkbox"
     >
       <svg
-        class="emotion-0"
+        class="emotion-1"
         data-test-id="cf-ui-icon"
         height="1em"
         viewBox="0 0 24 24"
@@ -221,6 +578,95 @@ exports[`renders the component in a disabled state 1`] = `
 exports[`renders the component with a help text 1`] = `
 .emotion-0 {
   display: inline-block;
+  font-size: 0.875rem;
+  opacity: 0;
+  position: absolute;
+  margin: 0;
+  width: 1rem;
+  height: 1rem;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.emotion-0:focus + label {
+  outline: none;
+  border: 2px solid #2E75D4;
+  box-shadow: 0px 0px 0px 3px #84B9F5;
+}
+
+.emotion-0:checked + label {
+  border-color: #2E75D4;
+  background: #2E75D4;
+}
+
+.emotion-0:disabled + label {
+  border-color: #c3cfd5;
+  background: #c3cfd5;
+}
+
+.emotion-0:checked + label,
+.emotion-0:indeterminate + label {
+  border-color: #2E75D4;
+  background: #2E75D4;
+}
+
+.emotion-0:checked:disabled + label svg,
+.emotion-0:indeterminate:disabled + label svg {
+  fill: #6B7888;
+}
+
+.emotion-0:disabled + label {
+  border-color: #c3cfd5;
+  background: #c3cfd5;
+}
+
+.emotion-0:disabled + label svg {
+  fill: #c3cfd5;
+}
+
+.emotion-2 {
+  background: #ffffff;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid #c3cfd5;
+  fill: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 20%;
+}
+
+.emotion-2 svg {
+  width: 0.75rem;
+  min-width: 0.75rem;
+  min-height: 0.75rem;
+  height: 0.75rem;
+}
+
+.emotion-3 {
+  display: inline-block;
+  position: relative;
+  text-overflow: ellipsis;
+  line-height: 1.5rem;
+  margin: 0;
+  width: 1rem;
+  height: 1rem;
+  min-height: 1rem;
+  overflow: visible;
+}
+
+.emotion-1 {
+  display: inline-block;
   fill: #ffffff;
   height: 24px;
   width: 24px;
@@ -231,22 +677,22 @@ exports[`renders the component with a help text 1`] = `
   data-test-id="cf-ui-controlled-input-field"
 >
   <div
-    class="Checkbox ControlledInputField__input"
+    class="ControlledInputField__input emotion-3"
+    data-test-id="cf-ui-controlled-input"
   >
     <input
       aria-label="Label Text"
-      class="ControlledInput"
-      data-test-id="cf-ui-controlled-input"
+      class="emotion-0"
       id="checkbox"
       type="checkbox"
       value=""
     />
     <label
-      class="Input__ghost Checkbox__ghost"
+      class="emotion-2"
       for="checkbox"
     >
       <svg
-        class="emotion-0"
+        class="emotion-1"
         data-test-id="cf-ui-icon"
         height="1em"
         viewBox="0 0 24 24"
@@ -279,19 +725,108 @@ exports[`renders the component with a help text 1`] = `
 exports[`renders the component with a light label variation 1`] = `
 .emotion-0 {
   display: inline-block;
+  font-size: 0.875rem;
+  opacity: 0;
+  position: absolute;
+  margin: 0;
+  width: 1rem;
+  height: 1rem;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.emotion-0:focus + label {
+  outline: none;
+  border: 2px solid #2E75D4;
+  box-shadow: 0px 0px 0px 3px #84B9F5;
+}
+
+.emotion-0:checked + label {
+  border-color: #2E75D4;
+  background: #2E75D4;
+}
+
+.emotion-0:disabled + label {
+  border-color: #c3cfd5;
+  background: #c3cfd5;
+}
+
+.emotion-0:checked + label,
+.emotion-0:indeterminate + label {
+  border-color: #2E75D4;
+  background: #2E75D4;
+}
+
+.emotion-0:checked:disabled + label svg,
+.emotion-0:indeterminate:disabled + label svg {
+  fill: #6B7888;
+}
+
+.emotion-0:disabled + label {
+  border-color: #c3cfd5;
+  background: #c3cfd5;
+}
+
+.emotion-0:disabled + label svg {
+  fill: #c3cfd5;
+}
+
+.emotion-2 {
+  background: #ffffff;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid #c3cfd5;
+  fill: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 20%;
+}
+
+.emotion-2 svg {
+  width: 0.75rem;
+  min-width: 0.75rem;
+  min-height: 0.75rem;
+  height: 0.75rem;
+}
+
+.emotion-3 {
+  display: inline-block;
+  position: relative;
+  text-overflow: ellipsis;
+  line-height: 1.5rem;
+  margin: 0;
+  width: 1rem;
+  height: 1rem;
+  min-height: 1rem;
+  overflow: visible;
+}
+
+.emotion-1 {
+  display: inline-block;
   fill: #ffffff;
   height: 24px;
   width: 24px;
 }
 
-.emotion-3 {
+.emotion-6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.emotion-1 {
+.emotion-4 {
   display: inline-block;
   fill: #BF3045;
   height: 18px;
@@ -302,7 +837,7 @@ exports[`renders the component with a light label variation 1`] = `
   min-width: 18px;
 }
 
-.emotion-2 {
+.emotion-5 {
   display: block;
   margin: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
@@ -324,22 +859,22 @@ exports[`renders the component with a light label variation 1`] = `
   data-test-id="cf-ui-controlled-input-field"
 >
   <div
-    class="Checkbox ControlledInputField__input"
+    class="ControlledInputField__input emotion-3"
+    data-test-id="cf-ui-controlled-input"
   >
     <input
       aria-label="Label Text"
-      class="ControlledInput"
-      data-test-id="cf-ui-controlled-input"
+      class="emotion-0"
       id="checkbox"
       type="checkbox"
       value=""
     />
     <label
-      class="Input__ghost Checkbox__ghost"
+      class="emotion-2"
       for="checkbox"
     >
       <svg
-        class="emotion-0"
+        class="emotion-1"
         data-test-id="cf-ui-icon"
         height="1em"
         viewBox="0 0 24 24"
@@ -360,11 +895,11 @@ exports[`renders the component with a light label variation 1`] = `
       Label Text
     </label>
     <div
-      class="ControlledInputField__validation-message emotion-3"
+      class="ControlledInputField__validation-message emotion-6"
       data-test-id="cf-ui-validation-message"
     >
       <svg
-        class="emotion-1"
+        class="emotion-4"
         data-test-id="cf-ui-icon"
         height="1em"
         viewBox="0 0 24 24"
@@ -379,7 +914,7 @@ exports[`renders the component with a light label variation 1`] = `
         />
       </svg>
       <p
-        class="emotion-2"
+        class="emotion-5"
         data-test-id="cf-ui-paragraph"
       >
         Not valid!
@@ -392,19 +927,108 @@ exports[`renders the component with a light label variation 1`] = `
 exports[`renders the component with a validation message 1`] = `
 .emotion-0 {
   display: inline-block;
+  font-size: 0.875rem;
+  opacity: 0;
+  position: absolute;
+  margin: 0;
+  width: 1rem;
+  height: 1rem;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.emotion-0:focus + label {
+  outline: none;
+  border: 2px solid #2E75D4;
+  box-shadow: 0px 0px 0px 3px #84B9F5;
+}
+
+.emotion-0:checked + label {
+  border-color: #2E75D4;
+  background: #2E75D4;
+}
+
+.emotion-0:disabled + label {
+  border-color: #c3cfd5;
+  background: #c3cfd5;
+}
+
+.emotion-0:checked + label,
+.emotion-0:indeterminate + label {
+  border-color: #2E75D4;
+  background: #2E75D4;
+}
+
+.emotion-0:checked:disabled + label svg,
+.emotion-0:indeterminate:disabled + label svg {
+  fill: #6B7888;
+}
+
+.emotion-0:disabled + label {
+  border-color: #c3cfd5;
+  background: #c3cfd5;
+}
+
+.emotion-0:disabled + label svg {
+  fill: #c3cfd5;
+}
+
+.emotion-2 {
+  background: #ffffff;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid #c3cfd5;
+  fill: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 20%;
+}
+
+.emotion-2 svg {
+  width: 0.75rem;
+  min-width: 0.75rem;
+  min-height: 0.75rem;
+  height: 0.75rem;
+}
+
+.emotion-3 {
+  display: inline-block;
+  position: relative;
+  text-overflow: ellipsis;
+  line-height: 1.5rem;
+  margin: 0;
+  width: 1rem;
+  height: 1rem;
+  min-height: 1rem;
+  overflow: visible;
+}
+
+.emotion-1 {
+  display: inline-block;
   fill: #ffffff;
   height: 24px;
   width: 24px;
 }
 
-.emotion-3 {
+.emotion-6 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.emotion-1 {
+.emotion-4 {
   display: inline-block;
   fill: #BF3045;
   height: 18px;
@@ -415,7 +1039,7 @@ exports[`renders the component with a validation message 1`] = `
   min-width: 18px;
 }
 
-.emotion-2 {
+.emotion-5 {
   display: block;
   margin: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
@@ -437,22 +1061,22 @@ exports[`renders the component with a validation message 1`] = `
   data-test-id="cf-ui-controlled-input-field"
 >
   <div
-    class="Checkbox ControlledInputField__input"
+    class="ControlledInputField__input emotion-3"
+    data-test-id="cf-ui-controlled-input"
   >
     <input
       aria-label="Label Text"
-      class="ControlledInput"
-      data-test-id="cf-ui-controlled-input"
+      class="emotion-0"
       id="checkbox"
       type="checkbox"
       value=""
     />
     <label
-      class="Input__ghost Checkbox__ghost"
+      class="emotion-2"
       for="checkbox"
     >
       <svg
-        class="emotion-0"
+        class="emotion-1"
         data-test-id="cf-ui-icon"
         height="1em"
         viewBox="0 0 24 24"
@@ -473,11 +1097,11 @@ exports[`renders the component with a validation message 1`] = `
       Label Text
     </label>
     <div
-      class="ControlledInputField__validation-message emotion-3"
+      class="ControlledInputField__validation-message emotion-6"
       data-test-id="cf-ui-validation-message"
     >
       <svg
-        class="emotion-1"
+        class="emotion-4"
         data-test-id="cf-ui-icon"
         height="1em"
         viewBox="0 0 24 24"
@@ -492,7 +1116,7 @@ exports[`renders the component with a validation message 1`] = `
         />
       </svg>
       <p
-        class="emotion-2"
+        class="emotion-5"
         data-test-id="cf-ui-paragraph"
       >
         Not valid!
@@ -505,6 +1129,95 @@ exports[`renders the component with a validation message 1`] = `
 exports[`renders the component with a value 1`] = `
 .emotion-0 {
   display: inline-block;
+  font-size: 0.875rem;
+  opacity: 0;
+  position: absolute;
+  margin: 0;
+  width: 1rem;
+  height: 1rem;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.emotion-0:focus + label {
+  outline: none;
+  border: 2px solid #2E75D4;
+  box-shadow: 0px 0px 0px 3px #84B9F5;
+}
+
+.emotion-0:checked + label {
+  border-color: #2E75D4;
+  background: #2E75D4;
+}
+
+.emotion-0:disabled + label {
+  border-color: #c3cfd5;
+  background: #c3cfd5;
+}
+
+.emotion-0:checked + label,
+.emotion-0:indeterminate + label {
+  border-color: #2E75D4;
+  background: #2E75D4;
+}
+
+.emotion-0:checked:disabled + label svg,
+.emotion-0:indeterminate:disabled + label svg {
+  fill: #6B7888;
+}
+
+.emotion-0:disabled + label {
+  border-color: #c3cfd5;
+  background: #c3cfd5;
+}
+
+.emotion-0:disabled + label svg {
+  fill: #c3cfd5;
+}
+
+.emotion-2 {
+  background: #ffffff;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid #c3cfd5;
+  fill: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 20%;
+}
+
+.emotion-2 svg {
+  width: 0.75rem;
+  min-width: 0.75rem;
+  min-height: 0.75rem;
+  height: 0.75rem;
+}
+
+.emotion-3 {
+  display: inline-block;
+  position: relative;
+  text-overflow: ellipsis;
+  line-height: 1.5rem;
+  margin: 0;
+  width: 1rem;
+  height: 1rem;
+  min-height: 1rem;
+  overflow: visible;
+}
+
+.emotion-1 {
+  display: inline-block;
   fill: #ffffff;
   height: 24px;
   width: 24px;
@@ -515,22 +1228,22 @@ exports[`renders the component with a value 1`] = `
   data-test-id="cf-ui-controlled-input-field"
 >
   <div
-    class="Checkbox ControlledInputField__input"
+    class="ControlledInputField__input emotion-3"
+    data-test-id="cf-ui-controlled-input"
   >
     <input
       aria-label="Label Text"
-      class="ControlledInput"
-      data-test-id="cf-ui-controlled-input"
+      class="emotion-0"
       id="checkbox"
       type="checkbox"
       value="someValue"
     />
     <label
-      class="Input__ghost Checkbox__ghost"
+      class="emotion-2"
       for="checkbox"
     >
       <svg
-        class="emotion-0"
+        class="emotion-1"
         data-test-id="cf-ui-icon"
         height="1em"
         viewBox="0 0 24 24"
@@ -557,6 +1270,95 @@ exports[`renders the component with a value 1`] = `
 exports[`renders the component with an additional class name 1`] = `
 .emotion-0 {
   display: inline-block;
+  font-size: 0.875rem;
+  opacity: 0;
+  position: absolute;
+  margin: 0;
+  width: 1rem;
+  height: 1rem;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.emotion-0:focus + label {
+  outline: none;
+  border: 2px solid #2E75D4;
+  box-shadow: 0px 0px 0px 3px #84B9F5;
+}
+
+.emotion-0:checked + label {
+  border-color: #2E75D4;
+  background: #2E75D4;
+}
+
+.emotion-0:disabled + label {
+  border-color: #c3cfd5;
+  background: #c3cfd5;
+}
+
+.emotion-0:checked + label,
+.emotion-0:indeterminate + label {
+  border-color: #2E75D4;
+  background: #2E75D4;
+}
+
+.emotion-0:checked:disabled + label svg,
+.emotion-0:indeterminate:disabled + label svg {
+  fill: #6B7888;
+}
+
+.emotion-0:disabled + label {
+  border-color: #c3cfd5;
+  background: #c3cfd5;
+}
+
+.emotion-0:disabled + label svg {
+  fill: #c3cfd5;
+}
+
+.emotion-2 {
+  background: #ffffff;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid #c3cfd5;
+  fill: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 20%;
+}
+
+.emotion-2 svg {
+  width: 0.75rem;
+  min-width: 0.75rem;
+  min-height: 0.75rem;
+  height: 0.75rem;
+}
+
+.emotion-3 {
+  display: inline-block;
+  position: relative;
+  text-overflow: ellipsis;
+  line-height: 1.5rem;
+  margin: 0;
+  width: 1rem;
+  height: 1rem;
+  min-height: 1rem;
+  overflow: visible;
+}
+
+.emotion-1 {
+  display: inline-block;
   fill: #ffffff;
   height: 24px;
   width: 24px;
@@ -567,22 +1369,22 @@ exports[`renders the component with an additional class name 1`] = `
   data-test-id="cf-ui-controlled-input-field"
 >
   <div
-    class="Checkbox ControlledInputField__input"
+    class="ControlledInputField__input emotion-3"
+    data-test-id="cf-ui-controlled-input"
   >
     <input
       aria-label="Label Text"
-      class="ControlledInput"
-      data-test-id="cf-ui-controlled-input"
+      class="emotion-0"
       id="checkbox"
       type="checkbox"
       value=""
     />
     <label
-      class="Input__ghost Checkbox__ghost"
+      class="emotion-2"
       for="checkbox"
     >
       <svg
-        class="emotion-0"
+        class="emotion-1"
         data-test-id="cf-ui-icon"
         height="1em"
         viewBox="0 0 24 24"

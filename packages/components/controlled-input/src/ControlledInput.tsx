@@ -1,5 +1,4 @@
 import React, {
-  HTMLProps,
   EventHandler,
   ChangeEvent,
   FocusEvent,
@@ -8,13 +7,14 @@ import React, {
   useRef,
   useEffect,
 } from 'react';
-import cn from 'classnames';
+import { cx } from 'emotion';
 import { Done, Minus } from '@contentful/f36-icons';
 import type { IconProps } from '@contentful/f36-icons';
 
-import styles from './ControlledInput.css';
+import { styles } from './ControlledInput.styles';
+import { Box, BoxProps } from '@contentful/f36-core';
 
-export interface ControlledInputProps extends HTMLProps<HTMLInputElement> {
+export interface ControlledInputProps extends Omit<BoxProps<'div'>, 'ref'> {
   id?: string;
   required?: boolean;
   labelText: string;
@@ -30,39 +30,40 @@ export interface ControlledInputProps extends HTMLProps<HTMLInputElement> {
   testId?: string;
   willBlurOnEsc?: boolean;
   indeterminate?: boolean;
+  inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
 }
 
-export const ControlledInput = ({
-  checked,
-  className,
-  disabled = false,
-  id,
-  labelText,
-  name,
-  onBlur,
-  onChange,
-  onFocus,
-  required = false,
-  testId = 'cf-ui-controlled-input',
-  type = 'checkbox',
-  value,
-  willBlurOnEsc = true,
-  indeterminate,
-  ...otherProps
-}: ControlledInputProps) => {
+const _ControlledInput = (
+  {
+    checked,
+    className,
+    disabled = false,
+    id,
+    labelText,
+    name,
+    onBlur,
+    onChange,
+    onFocus,
+    required = false,
+    testId = 'cf-ui-controlled-input',
+    type = 'checkbox',
+    value,
+    willBlurOnEsc = true,
+    indeterminate,
+    inputProps,
+    ...otherProps
+  }: ControlledInputProps,
+  ref: React.Ref<HTMLDivElement>,
+) => {
   const inputRef = useRef(null);
 
-  const classNames = cn(styles['ControlledInput'], {
-    [styles['ControlledInput--disabled']]: disabled,
+  const inputClassnames = cx(styles.input, {
+    [styles.inputRadioButton]: type === 'radio',
+    [styles.inputCheckbox]: type === 'checkbox',
+    [styles.inputDisabled]: disabled,
   });
 
-  const wrapperClassname = cn(
-    {
-      [styles['RadioButton']]: type === 'radio',
-      [styles['Checkbox']]: type === 'checkbox',
-    },
-    className,
-  );
+  const wrapperClassnames = cx(styles.container, className);
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent<HTMLInputElement>) => {
@@ -85,15 +86,21 @@ export const ControlledInput = ({
   };
 
   return (
-    <div className={wrapperClassname}>
+    <Box
+      as="div"
+      display="inline-block"
+      className={wrapperClassnames}
+      ref={ref}
+      testId={testId}
+      {...otherProps}
+    >
       <input
-        className={classNames}
+        className={inputClassnames}
         value={value}
         name={name}
         checked={checked}
         type={type}
         ref={inputRef}
-        data-test-id={testId}
         onChange={(e) => {
           if (onChange) {
             onChange(e);
@@ -114,22 +121,21 @@ export const ControlledInput = ({
         required={required}
         disabled={disabled}
         onKeyDown={handleKeyDown}
-        {...otherProps}
+        {...inputProps}
       />
       {type === 'radio' ? (
-        /* eslint-disable-next-line jsx-a11y/label-has-associated-control */
+        // eslint-disable-next-line jsx-a11y/label-has-associated-control
         <label
-          className={cn(styles['Input__ghost'], styles['RadioButton__ghost'])}
+          className={cx(styles.ghost, styles.ghostRadioButton)}
           htmlFor={id}
         />
       ) : (
-        <label
-          className={cn(styles['Input__ghost'], styles['Checkbox__ghost'])}
-          htmlFor={id}
-        >
+        <label className={cx(styles.ghost, styles.ghostCheckbox)} htmlFor={id}>
           {indeterminate ? <Minus {...iconProps} /> : <Done {...iconProps} />}
         </label>
       )}
-    </div>
+    </Box>
   );
 };
+
+export const ControlledInput = React.forwardRef(_ControlledInput);

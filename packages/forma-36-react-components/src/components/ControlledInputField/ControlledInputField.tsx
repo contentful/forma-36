@@ -4,7 +4,7 @@ import { ValidationMessage } from '@contentful/f36-validation-message';
 
 import { FormLabel } from '../FormLabel';
 import { HelpText } from '../HelpText';
-import { ControlledInput } from '../ControlledInput/ControlledInput';
+import { ControlledInput } from '@contentful/f36-controlled-input';
 import styles from './ControlledInputField.css';
 
 export interface ControlledInputFieldProps {
