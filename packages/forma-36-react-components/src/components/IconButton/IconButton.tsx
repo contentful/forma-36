@@ -46,6 +46,10 @@ export interface IconButtonProps extends React.HTMLAttributes<HTMLElement> {
    * An ID used for testing purposes applied as a data attribute (data-test-id)
    */
   testId?: string;
+  /**
+   * Used with href to specify target attribute value
+   */
+  target?: React.AnchorHTMLAttributes<HTMLAnchorElement>['target'];
 }
 
 export const IconButton = ({
