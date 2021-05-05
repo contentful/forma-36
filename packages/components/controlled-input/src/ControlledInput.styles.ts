@@ -20,26 +20,20 @@ export const styles = {
     margin: '0',
     width: tokens.spacingM,
     height: tokens.spacingM,
-    zIndex: 1,
+    zIndex: tokens.zIndexDefault,
     cursor: 'pointer',
-    '&:focus': {
-      '& + label': {
-        outline: 'none',
-        border: `2px solid ${tokens.colorPrimary}`,
-        boxShadow: tokens.glowPrimary,
-      },
+    '&:focus + label': {
+      outline: 'none',
+      border: `2px solid ${tokens.colorPrimary}`,
+      boxShadow: tokens.glowPrimary,
     },
-    '&:checked': {
-      '& + label': {
-        borderColor: tokens.colorBlueMid,
-        background: tokens.colorBlueMid,
-      },
+    '&:checked + label': {
+      borderColor: tokens.colorBlueMid,
+      background: tokens.colorBlueMid,
     },
-    '&:disabled': {
-      '& + label': {
-        borderColor: tokens.colorElementDark,
-        background: tokens.colorElementDark,
-      },
+    '&:disabled + label': {
+      borderColor: tokens.colorElementDark,
+      background: tokens.colorElementDark,
     },
   }),
   inputDisabled: css({
@@ -50,16 +44,12 @@ export const styles = {
       '& + label::before': {
         background: tokens.colorWhite,
       },
-      '&:disabled': {
-        '& + label::before': {
-          background: tokens.colorTextLightest,
-        },
+      '&:disabled + label::before': {
+        background: tokens.colorTextLightest,
       },
     },
-    '&:disabled': {
-      '& + label::before': {
-        background: tokens.colorElementDarkest,
-      },
+    '&:disabled + label::before': {
+      background: tokens.colorElementDarkest,
     },
   }),
   inputCheckbox: css({
@@ -68,12 +58,8 @@ export const styles = {
         borderColor: tokens.colorBlueMid,
         background: tokens.colorBlueMid,
       },
-      '&:disabled': {
-        '& + label': {
-          '& svg': {
-            fill: tokens.colorTextLightest,
-          },
-        },
+      '&:disabled + label svg': {
+        fill: tokens.colorTextLightest,
       },
     },
     '&:disabled': {

@@ -24,7 +24,6 @@ export const Checkbox = ({
       type={type}
       willBlurOnEsc={willBlurOnEsc}
       {...otherProps}
-      ref={undefined}
     />
   );
 };
