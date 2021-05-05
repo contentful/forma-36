@@ -36,7 +36,7 @@ type IconButtonAnchorProps =
     };
 
 export interface IconButtonProps
-  extends React.HTMLAttributes<HTMLElement | HTMLButtonElement> {
+  extends React.HTMLAttributes<HTMLAnchorElement | HTMLButtonElement> {
   /**
    * It used to controls which icon to render and it accepts all props that you could pass in the Icon component.
    *
