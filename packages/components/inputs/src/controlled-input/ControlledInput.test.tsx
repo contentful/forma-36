@@ -6,7 +6,7 @@ import { ControlledInput } from './ControlledInput';
 
 it('renders the component with all required props', () => {
   const { container } = render(
-    <ControlledInput id="ControlledInput" labelText="ControlledInput" />,
+    <ControlledInput id="ControlledInput" label="ControlledInput" />,
   );
 
   expect(container.firstChild).toMatchSnapshot();
@@ -17,7 +17,7 @@ it('renders the component with an additional class name', () => {
     <ControlledInput
       className="my-extra-class"
       id="ControlledInput"
-      labelText="ControlledInput"
+      label="ControlledInput"
     />,
   );
 
@@ -29,8 +29,8 @@ it('renders the component with required prop', () => {
     <ControlledInput
       className="my-extra-class"
       id="ControlledInput"
-      labelText="ControlledInput"
-      required
+      label="ControlledInput"
+      isRequired
     />,
   );
 
@@ -42,8 +42,8 @@ it('renders the component with disabled prop', () => {
     <ControlledInput
       className="my-extra-class"
       id="ControlledInput"
-      labelText="ControlledInput"
-      disabled
+      label="ControlledInput"
+      isDisabled
     />,
   );
 
@@ -55,8 +55,8 @@ it('renders the component with as checked', () => {
     <ControlledInput
       className="my-extra-class"
       id="ControlledInput"
-      labelText="ControlledInput"
-      checked
+      label="ControlledInput"
+      isChecked
     />,
   );
 
@@ -68,7 +68,7 @@ it('renders the component with a value', () => {
     <ControlledInput
       className="my-extra-class"
       id="ControlledInput"
-      labelText="ControlledInput"
+      label="ControlledInput"
       value="someValue"
     />,
   );
@@ -78,7 +78,7 @@ it('renders the component with a value', () => {
 
 it('has no a11y issues', async () => {
   const { container } = render(
-    <ControlledInput id="ControlledInput" labelText="ControlledInput" />,
+    <ControlledInput id="ControlledInput" label="ControlledInput" />,
   );
   const results = await axe(container);
 

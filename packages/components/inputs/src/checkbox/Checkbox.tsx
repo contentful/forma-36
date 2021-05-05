@@ -6,8 +6,8 @@ import { ControlledInput, ControlledInputProps } from '..';
 export interface CheckboxProps extends ControlledInputProps {}
 
 export const Checkbox = ({
-  disabled = false,
-  required = false,
+  isDisabled = false,
+  isRequired = false,
   testId = 'cf-ui-checkbox',
   type = 'checkbox',
   willBlurOnEsc = true,
@@ -15,8 +15,8 @@ export const Checkbox = ({
 }: CheckboxProps) => {
   return (
     <ControlledInput
-      disabled={disabled}
-      required={required}
+      isDisabled={isDisabled}
+      isRequired={isRequired}
       data-test-id={testId}
       type={type}
       willBlurOnEsc={willBlurOnEsc}

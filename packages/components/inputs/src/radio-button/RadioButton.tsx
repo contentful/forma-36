@@ -5,8 +5,8 @@ import { ControlledInput, ControlledInputProps } from '..';
 export interface RadioButtonProps extends ControlledInputProps {}
 
 export const RadioButton = ({
-  disabled = false,
-  required = false,
+  isDisabled = false,
+  isRequired = false,
   testId = 'cf-ui-radio-button',
   type = 'radio',
   willBlurOnEsc = true,
@@ -14,12 +14,12 @@ export const RadioButton = ({
 }: RadioButtonProps) => {
   return (
     <ControlledInput
-      {...otherProps}
-      disabled={disabled}
-      required={required}
+      isDisabled={isDisabled}
+      isRequired={isRequired}
       data-test-id={testId}
       type={type}
       willBlurOnEsc={willBlurOnEsc}
+      {...otherProps}
     />
   );
 };

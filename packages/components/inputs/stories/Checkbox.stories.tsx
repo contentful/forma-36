@@ -27,14 +27,14 @@ export const overview = () => (
     <Flex marginBottom="spacingS" marginTop="spacingM">
       <SectionHeading as="h3">Checkbox default</SectionHeading>
     </Flex>
-    <Checkbox id="Checkbox" labelText="some label text" name="some-name" />
+    <Checkbox id="Checkbox" label="some label text" name="some-name" />
     <Flex marginBottom="spacingS" marginTop="spacingM">
       <SectionHeading as="h3">Checkbox checked</SectionHeading>
     </Flex>
     <Checkbox
       id="Checkbox"
-      checked
-      labelText="some label text"
+      isChecked
+      label="some label text"
       name="some-name"
     />
     <Flex marginBottom="spacingS" marginTop="spacingM">
@@ -42,8 +42,8 @@ export const overview = () => (
     </Flex>
     <Checkbox
       id="Checkbox"
-      indeterminate
-      labelText="multiple selection"
+      isIndeterminate
+      label="multiple selection"
       name="some-name"
     />
     <Flex marginBottom="spacingS" marginTop="spacingM">
@@ -51,8 +51,8 @@ export const overview = () => (
     </Flex>
     <Checkbox
       id="Checkbox"
-      disabled
-      labelText="some label text"
+      isDisabled
+      label="some label text"
       name="some-name"
     />
     <Flex marginBottom="spacingS" marginTop="spacingM">
@@ -60,9 +60,9 @@ export const overview = () => (
     </Flex>
     <Checkbox
       id="Checkbox"
-      disabled
-      indeterminate
-      labelText="multiple selection"
+      isDisabled
+      isIndeterminate
+      label="multiple selection"
       name="some-name"
     />
     <Flex marginBottom="spacingS" marginTop="spacingM">
@@ -70,9 +70,9 @@ export const overview = () => (
     </Flex>
     <Checkbox
       id="Checkbox"
-      disabled
-      checked
-      labelText="some label text"
+      isDisabled
+      isChecked
+      label="some label text"
       name="some-name"
     />
   </>
