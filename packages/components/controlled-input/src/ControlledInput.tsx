@@ -91,7 +91,7 @@ const _ControlledInput = (
       display="inline-block"
       className={wrapperClassnames}
       ref={ref}
-      data-test-id={testId}
+      testId={testId}
       {...otherProps}
     >
       <input
