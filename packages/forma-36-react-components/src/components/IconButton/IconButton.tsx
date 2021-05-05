@@ -35,7 +35,8 @@ type IconButtonAnchorProps =
       target?: React.AnchorHTMLAttributes<HTMLAnchorElement>['target'];
     };
 
-export interface IconButtonProps extends React.HTMLAttributes<HTMLElement> {
+export interface IconButtonProps
+  extends React.HTMLAttributes<HTMLElement | HTMLButtonElement> {
   /**
    * It used to controls which icon to render and it accepts all props that you could pass in the Icon component.
    *
@@ -84,6 +85,7 @@ export const IconButton = ({
   onClick,
   testId = 'cf-ui-icon-button',
   withDropdown = false,
+  target,
   ...otherProps
 }: IconButtonProps & IconButtonAnchorProps) => {
   const classNames = cn(styles.IconButton, className, {
@@ -120,7 +122,7 @@ export const IconButton = ({
       return <a {...elementProps}>{content}</a>;
     }
     return (
-      <a {...elementProps} href={href}>
+      <a {...elementProps} href={href} target={target}>
         {content}
       </a>
     );
