@@ -5,36 +5,6 @@ import { Icon, IconProps } from '../Icon';
 import { TabFocusTrap } from '../TabFocusTrap';
 import styles from './IconButton.css';
 
-type IconButtonAnchorProps =
-  | {
-      /**
-       * Used to make the decision of either rendering as a <a> or as a <button> tag
-       */
-      href?: undefined;
-      /**
-       * Used with href to define a relationship between a linked resource and the current document
-       */
-      rel?: never;
-      /**
-       * Used with href to specify target attribute value
-       */
-      target?: never;
-    }
-  | {
-      /**
-       * Used to make the decision of either rendering as a <a> or as a <button> tag
-       */
-      href: string;
-      /**
-       * Used with href to define a relationship between a linked resource and the current document
-       */
-      rel?: React.AnchorHTMLAttributes<HTMLAnchorElement>['rel'];
-      /**
-       * Used with href to specify target attribute value
-       */
-      target?: React.AnchorHTMLAttributes<HTMLAnchorElement>['target'];
-    };
-
 export interface IconButtonProps
   extends React.HTMLAttributes<HTMLAnchorElement | HTMLButtonElement> {
   /**
@@ -73,6 +43,14 @@ export interface IconButtonProps
    * An ID used for testing purposes applied as a data attribute (data-test-id)
    */
   testId?: string;
+  /**
+   * Used to make the decision of either rendering as a <a> or as a <button> tag
+   */
+  href?: string;
+  /**
+   * Used with href to specify target attribute value
+   */
+  target?: React.AnchorHTMLAttributes<HTMLAnchorElement>['target'];
 }
 
 export const IconButton = ({
@@ -87,7 +65,7 @@ export const IconButton = ({
   withDropdown = false,
   target,
   ...otherProps
-}: IconButtonProps & IconButtonAnchorProps) => {
+}: IconButtonProps) => {
   const classNames = cn(styles.IconButton, className, {
     [styles['IconButton--disabled']]: disabled,
     [styles[`IconButton--${buttonType}`]]: buttonType,
