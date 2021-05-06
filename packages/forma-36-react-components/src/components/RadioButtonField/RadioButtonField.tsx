@@ -9,15 +9,15 @@ export type RadioButtonFieldProps = Omit<
 >;
 
 export const RadioButtonField = ({
-  checked = false,
-  labelIsLight = false,
+  isChecked = false,
+  isLabelLight = false,
   testId = 'cf-ui-radio-button-field',
   ...otherProps
 }: RadioButtonFieldProps) => {
   return (
     <ControlledInputField
-      checked={checked}
-      labelIsLight={labelIsLight}
+      isChecked={isChecked}
+      isLabelLight={isLabelLight}
       testId={testId}
       {...otherProps}
       inputType="radio"

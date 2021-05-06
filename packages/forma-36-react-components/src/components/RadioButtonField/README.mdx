@@ -11,8 +11,9 @@ Use RadioButtonField to give users the possibility to select only one option fro
 
 ## Table of contents
 
-- [How to use RadioButtonField](#how-to-use-radioButtonField)
-- [Code examples](#component-variations)
+- [Table of contents](#table-of-contents)
+- [How to use RadioButtonField](#how-to-use-radiobuttonfield)
+- [Code examples](#code-examples)
 - [Content recommendations](#content-recommendations)
 - [Accessibility](#accessibility)
 
@@ -30,7 +31,7 @@ Basic usage
 ```jsx
 // import {RadioButtonField} from '@contentful/f36-components';
 
-<RadioButtonField labelText="Label text" id="randomId" />
+<RadioButtonField label="Label text" id="randomId" />
 ```
 
 Example with 2 options with helper text displayed
@@ -51,18 +52,18 @@ function RadioButtonFieldExample() {
         onChange={(e) => {
           setActiveOption(e.target.value);
         }}
-        labelText="Radio button checked"
+        label="Radio button checked"
         helpText="Helper text displayed below"
       />
       <RadioButtonField
         name="radio option 2"
         id="randomId2"
         value="no"
-        checked={activeOption === 'no'}
+        isChecked={activeOption === 'no'}
         onChange={(e) => {
           setActiveOption(e.target.value);
         }}
-        labelText="Second option"
+        label="Second option"
         helpText="Helper text displayed below"
       />
     </Flex>

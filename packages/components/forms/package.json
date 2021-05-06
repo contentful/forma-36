@@ -23,12 +23,9 @@
   "dependencies": {
     "@babel/runtime": "^7.6.2",
     "emotion": "^10.0.17",
-    "@contentful/f36-core": "^4.0.0",
+    "@contentful/f36-validation-message": "^4.0.0",
     "@contentful/f36-tokens": "^4.0.0",
-    "@contentful/f36-icons": "^4.0.0",
-    "@contentful/f36-inputs": "^4.0.0"
-  },
-  "devDependencies": {
+    "@contentful/f36-inputs": "^4.0.0",
     "@contentful/f36-components": "^4.0.0"
   },
   "peerDependencies": {

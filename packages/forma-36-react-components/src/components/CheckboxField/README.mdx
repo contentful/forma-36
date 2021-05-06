@@ -11,7 +11,8 @@ Use CheckboxField to give users the possibility to select multiple elements, zer
 
 ## Table of contents
 
-- [How to use CheckboxField](#how-to-use-checkboxField)
+- [Table of contents](#table-of-contents)
+- [How to use CheckboxField](#how-to-use-checkboxfield)
 - [Code examples](#code-examples)
 - [Content recommendations](#content-recommendations)
 - [Accessibility](#accessibility)
@@ -21,7 +22,7 @@ Use CheckboxField to give users the possibility to select multiple elements, zer
 - Checkboxes should work independently, checking one should not affect any other checkbox in the interface
 - Checkbox should always have a label
 - Listing options for a user should have some order. Some sort of system is most likely expected by the user when working with lists (numerical, time based)
-- For the label, 2 different styles can be used, depending on the context and importance one wants to give to the checkbox. The default is the medium weight label. You can change it to a regular weight label by using `labelIsLight` property
+- For the label, 2 different styles can be used, depending on the context and importance one wants to give to the checkbox. The default is the medium weight label. You can change it to a regular weight label by using `isLabelLight` property
 
 NOTE: When attaching a help text to a checkbox, the medium label has to be used to ensure that there's enough contrast.
 
@@ -32,7 +33,7 @@ Basic usage
 ```jsx
 // import {CheckboxField} from '@contentful/f36-components';
 
-<CheckboxField labelText="Label text" />
+<CheckboxField label="Label text" />
 ```
 
 Example using helper text, which will be displayed below the label
@@ -43,12 +44,12 @@ Example using helper text, which will be displayed below the label
 <CheckboxField
   name="checkbox name"
   id="randomId"
-  labelText="Label text"
+  label="Label text"
   helpText="Helper text displayed below"
 />
 ```
 
-Light label example - `labelIsLight` changes label font weight to regular. Please keep in mind to not use it with helper text. For that case the medium label has to be used to ensure that there's enough contrast.
+Light label example - `isLabelLight` changes label font weight to regular. Please keep in mind to not use it with helper text. For that case the medium label has to be used to ensure that there's enough contrast.
 
 ```jsx
 // import {CheckboxField} from '@contentful/f36-components';
@@ -56,8 +57,8 @@ Light label example - `labelIsLight` changes label font weight to regular. Pleas
 <CheckboxField
   name="checkbox name"
   id="randomId"
-  labelText="Label text"
-  labelIsLight
+  label="Label text"
+  isLabelLight
 />
 ```
 

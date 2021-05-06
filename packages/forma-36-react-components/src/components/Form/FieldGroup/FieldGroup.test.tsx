@@ -9,12 +9,12 @@ it('renders the component', () => {
   const { container } = render(
     <FieldGroup>
       <CheckboxField
-        labelText="Do you agree?"
+        label="Do you agree?"
         helpText="Click if you agree"
         id="agree"
       />
       <CheckboxField
-        labelText="Do you really agree?"
+        label="Do you really agree?"
         helpText="Click if you really agree"
         id="reallyAgree"
       />
@@ -28,12 +28,12 @@ it('renders the component with an additional class name', () => {
   const { container } = render(
     <FieldGroup className="my-extra-class">
       <CheckboxField
-        labelText="Do you agree?"
+        label="Do you agree?"
         helpText="Click if you agree"
         id="agree"
       />
       <CheckboxField
-        labelText="Do you really agree?"
+        label="Do you really agree?"
         helpText="Click if you really agree"
         id="reallyAgree"
       />
@@ -47,12 +47,12 @@ it('renders the component children in a row', () => {
   const { container } = render(
     <FieldGroup className="my-extra-class" row>
       <CheckboxField
-        labelText="Do you agree?"
+        label="Do you agree?"
         helpText="Click if you agree"
         id="agree"
       />
       <CheckboxField
-        labelText="Do you really agree?"
+        label="Do you really agree?"
         helpText="Click if you really agree"
         id="reallyAgree"
       />
@@ -66,12 +66,12 @@ it('has no a11y issues', async () => {
   const { container } = render(
     <FieldGroup>
       <CheckboxField
-        labelText="Do you agree?"
+        label="Do you agree?"
         helpText="Click if you agree"
         id="agree"
       />
       <CheckboxField
-        labelText="Do you really agree?"
+        label="Do you really agree?"
         helpText="Click if you really agree"
         id="reallyAgree"
       />

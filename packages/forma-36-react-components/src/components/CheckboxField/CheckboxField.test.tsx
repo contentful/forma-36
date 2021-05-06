@@ -6,7 +6,7 @@ import { CheckboxField } from './CheckboxField';
 
 it('renders the component', () => {
   const { container } = render(
-    <CheckboxField id="checkbox" labelText="label text" />,
+    <CheckboxField id="checkbox" label="label text" />,
   );
 
   expect(container.firstChild).toMatchSnapshot();
@@ -14,7 +14,7 @@ it('renders the component', () => {
 
 it('has no a11y issues', async () => {
   const { container } = render(
-    <CheckboxField id="checkbox" labelText="label text" />,
+    <CheckboxField id="checkbox" label="label text" />,
   );
   const results = await axe(container);
 

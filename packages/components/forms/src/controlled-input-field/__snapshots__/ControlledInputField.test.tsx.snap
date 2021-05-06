@@ -1,6 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
+.emotion-5 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-4 {
+  margin-bottom: 0;
+}
+
 .emotion-0 {
   display: inline-block;
   font-size: 0.875rem;
@@ -88,6 +99,8 @@ exports[`renders the component 1`] = `
   height: 1rem;
   min-height: 1rem;
   overflow: visible;
+  margin-right: 0.5rem !important;
+  margin-top: 0.25rem !important;
 }
 
 .emotion-1 {
@@ -98,11 +111,11 @@ exports[`renders the component 1`] = `
 }
 
 <div
-  class="ControlledInputField"
+  class="emotion-5"
   data-test-id="cf-ui-controlled-input-field"
 >
   <div
-    class="ControlledInputField__input emotion-3"
+    class="emotion-3"
     data-test-id="cf-ui-controlled-input"
   >
     <input
@@ -131,7 +144,7 @@ exports[`renders the component 1`] = `
   </div>
   <div>
     <label
-      class="FormLabel__FormLabel___3d6zQ ControlledInputField__label"
+      class="FormLabel__FormLabel___3d6zQ emotion-4"
       data-test-id="cf-ui-form-label"
       for="checkbox"
     >
@@ -142,6 +155,17 @@ exports[`renders the component 1`] = `
 `;
 
 exports[`renders the component as checked 1`] = `
+.emotion-5 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-4 {
+  margin-bottom: 0;
+}
+
 .emotion-0 {
   display: inline-block;
   font-size: 0.875rem;
@@ -229,6 +253,8 @@ exports[`renders the component as checked 1`] = `
   height: 1rem;
   min-height: 1rem;
   overflow: visible;
+  margin-right: 0.5rem !important;
+  margin-top: 0.25rem !important;
 }
 
 .emotion-1 {
@@ -239,11 +265,11 @@ exports[`renders the component as checked 1`] = `
 }
 
 <div
-  class="ControlledInputField my-extra-class"
+  class="emotion-5 my-extra-class"
   data-test-id="cf-ui-controlled-input-field"
 >
   <div
-    class="ControlledInputField__input emotion-3"
+    class="emotion-3"
     data-test-id="cf-ui-controlled-input"
   >
     <input
@@ -273,7 +299,7 @@ exports[`renders the component as checked 1`] = `
   </div>
   <div>
     <label
-      class="FormLabel__FormLabel___3d6zQ ControlledInputField__label"
+      class="FormLabel__FormLabel___3d6zQ emotion-4"
       data-test-id="cf-ui-form-label"
       for="checkbox"
     >
@@ -284,6 +310,17 @@ exports[`renders the component as checked 1`] = `
 `;
 
 exports[`renders the component as required 1`] = `
+.emotion-5 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-4 {
+  margin-bottom: 0;
+}
+
 .emotion-0 {
   display: inline-block;
   font-size: 0.875rem;
@@ -371,6 +408,8 @@ exports[`renders the component as required 1`] = `
   height: 1rem;
   min-height: 1rem;
   overflow: visible;
+  margin-right: 0.5rem !important;
+  margin-top: 0.25rem !important;
 }
 
 .emotion-1 {
@@ -381,11 +420,11 @@ exports[`renders the component as required 1`] = `
 }
 
 <div
-  class="ControlledInputField my-extra-class"
+  class="emotion-5 my-extra-class"
   data-test-id="cf-ui-controlled-input-field"
 >
   <div
-    class="ControlledInputField__input emotion-3"
+    class="emotion-3"
     data-test-id="cf-ui-controlled-input"
   >
     <input
@@ -415,7 +454,7 @@ exports[`renders the component as required 1`] = `
   </div>
   <div>
     <label
-      class="FormLabel__FormLabel___3d6zQ ControlledInputField__label"
+      class="FormLabel__FormLabel___3d6zQ emotion-4"
       data-test-id="cf-ui-form-label"
       for="checkbox"
     >
@@ -472,6 +511,23 @@ exports[`renders the component in a disabled state 1`] = `
   height: 1rem;
   min-height: 1rem;
   overflow: visible;
+  margin-right: 0.5rem !important;
+  margin-top: 0.25rem !important;
+}
+
+.emotion-5 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.emotion-4 {
+  margin-bottom: 0;
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
 .emotion-0 {
@@ -531,11 +587,11 @@ exports[`renders the component in a disabled state 1`] = `
 }
 
 <div
-  class="ControlledInputField my-extra-class ControlledInputField--disabled"
+  class="my-extra-class emotion-5"
   data-test-id="cf-ui-controlled-input-field"
 >
   <div
-    class="ControlledInputField__input emotion-3"
+    class="emotion-3"
     data-test-id="cf-ui-controlled-input"
   >
     <input
@@ -565,7 +621,7 @@ exports[`renders the component in a disabled state 1`] = `
   </div>
   <div>
     <label
-      class="FormLabel__FormLabel___3d6zQ ControlledInputField__label"
+      class="FormLabel__FormLabel___3d6zQ emotion-4"
       data-test-id="cf-ui-form-label"
       for="checkbox"
     >
@@ -576,6 +632,17 @@ exports[`renders the component in a disabled state 1`] = `
 `;
 
 exports[`renders the component with a help text 1`] = `
+.emotion-5 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-4 {
+  margin-bottom: 0;
+}
+
 .emotion-0 {
   display: inline-block;
   font-size: 0.875rem;
@@ -663,6 +730,8 @@ exports[`renders the component with a help text 1`] = `
   height: 1rem;
   min-height: 1rem;
   overflow: visible;
+  margin-right: 0.5rem !important;
+  margin-top: 0.25rem !important;
 }
 
 .emotion-1 {
@@ -683,11 +752,11 @@ exports[`renders the component with a help text 1`] = `
 }
 
 <div
-  class="ControlledInputField my-extra-class"
+  class="emotion-5 my-extra-class"
   data-test-id="cf-ui-controlled-input-field"
 >
   <div
-    class="ControlledInputField__input emotion-3"
+    class="emotion-3"
     data-test-id="cf-ui-controlled-input"
   >
     <input
@@ -716,14 +785,14 @@ exports[`renders the component with a help text 1`] = `
   </div>
   <div>
     <label
-      class="FormLabel__FormLabel___3d6zQ ControlledInputField__label"
+      class="FormLabel__FormLabel___3d6zQ emotion-4"
       data-test-id="cf-ui-form-label"
       for="checkbox"
     >
       Label Text
     </label>
     <p
-      class="HelpText__HelpText___uWbja ControlledInputField__help-text"
+      class="HelpText__HelpText___uWbja"
       data-test-id="cf-ui-help-text"
     >
       Help Text
@@ -733,6 +802,13 @@ exports[`renders the component with a help text 1`] = `
 `;
 
 exports[`renders the component with a light label variation 1`] = `
+.emotion-8 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
 .emotion-0 {
   display: inline-block;
   font-size: 0.875rem;
@@ -820,6 +896,8 @@ exports[`renders the component with a light label variation 1`] = `
   height: 1rem;
   min-height: 1rem;
   overflow: visible;
+  margin-right: 0.5rem !important;
+  margin-top: 0.25rem !important;
 }
 
 .emotion-1 {
@@ -829,14 +907,14 @@ exports[`renders the component with a light label variation 1`] = `
   width: 24px;
 }
 
-.emotion-6 {
+.emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.emotion-4 {
+.emotion-5 {
   display: inline-block;
   fill: #BF3045;
   height: 18px;
@@ -847,7 +925,7 @@ exports[`renders the component with a light label variation 1`] = `
   min-width: 18px;
 }
 
-.emotion-5 {
+.emotion-6 {
   display: block;
   margin: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
@@ -864,12 +942,17 @@ exports[`renders the component with a light label variation 1`] = `
   margin: 0;
 }
 
+.emotion-4 {
+  margin-bottom: 0;
+  font-weight: 400;
+}
+
 <div
-  class="ControlledInputField my-extra-class"
+  class="emotion-8 my-extra-class"
   data-test-id="cf-ui-controlled-input-field"
 >
   <div
-    class="ControlledInputField__input emotion-3"
+    class="emotion-3"
     data-test-id="cf-ui-controlled-input"
   >
     <input
@@ -898,18 +981,18 @@ exports[`renders the component with a light label variation 1`] = `
   </div>
   <div>
     <label
-      class="FormLabel__FormLabel___3d6zQ ControlledInputField__label ControlledInputField__label--light"
+      class="FormLabel__FormLabel___3d6zQ emotion-4"
       data-test-id="cf-ui-form-label"
       for="checkbox"
     >
       Label Text
     </label>
     <div
-      class="ControlledInputField__validation-message emotion-6"
+      class="emotion-7"
       data-test-id="cf-ui-validation-message"
     >
       <svg
-        class="emotion-4"
+        class="emotion-5"
         data-test-id="cf-ui-icon"
         height="1em"
         viewBox="0 0 24 24"
@@ -924,7 +1007,7 @@ exports[`renders the component with a light label variation 1`] = `
         />
       </svg>
       <p
-        class="emotion-5"
+        class="emotion-6"
         data-test-id="cf-ui-paragraph"
       >
         Not valid!
@@ -935,6 +1018,17 @@ exports[`renders the component with a light label variation 1`] = `
 `;
 
 exports[`renders the component with a validation message 1`] = `
+.emotion-8 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-4 {
+  margin-bottom: 0;
+}
+
 .emotion-0 {
   display: inline-block;
   font-size: 0.875rem;
@@ -1022,6 +1116,8 @@ exports[`renders the component with a validation message 1`] = `
   height: 1rem;
   min-height: 1rem;
   overflow: visible;
+  margin-right: 0.5rem !important;
+  margin-top: 0.25rem !important;
 }
 
 .emotion-1 {
@@ -1031,14 +1127,14 @@ exports[`renders the component with a validation message 1`] = `
   width: 24px;
 }
 
-.emotion-6 {
+.emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.emotion-4 {
+.emotion-5 {
   display: inline-block;
   fill: #BF3045;
   height: 18px;
@@ -1049,7 +1145,7 @@ exports[`renders the component with a validation message 1`] = `
   min-width: 18px;
 }
 
-.emotion-5 {
+.emotion-6 {
   display: block;
   margin: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
@@ -1067,11 +1163,11 @@ exports[`renders the component with a validation message 1`] = `
 }
 
 <div
-  class="ControlledInputField my-extra-class"
+  class="emotion-8 my-extra-class"
   data-test-id="cf-ui-controlled-input-field"
 >
   <div
-    class="ControlledInputField__input emotion-3"
+    class="emotion-3"
     data-test-id="cf-ui-controlled-input"
   >
     <input
@@ -1100,18 +1196,18 @@ exports[`renders the component with a validation message 1`] = `
   </div>
   <div>
     <label
-      class="FormLabel__FormLabel___3d6zQ ControlledInputField__label"
+      class="FormLabel__FormLabel___3d6zQ emotion-4"
       data-test-id="cf-ui-form-label"
       for="checkbox"
     >
       Label Text
     </label>
     <div
-      class="ControlledInputField__validation-message emotion-6"
+      class="emotion-7"
       data-test-id="cf-ui-validation-message"
     >
       <svg
-        class="emotion-4"
+        class="emotion-5"
         data-test-id="cf-ui-icon"
         height="1em"
         viewBox="0 0 24 24"
@@ -1126,7 +1222,7 @@ exports[`renders the component with a validation message 1`] = `
         />
       </svg>
       <p
-        class="emotion-5"
+        class="emotion-6"
         data-test-id="cf-ui-paragraph"
       >
         Not valid!
@@ -1137,6 +1233,17 @@ exports[`renders the component with a validation message 1`] = `
 `;
 
 exports[`renders the component with a value 1`] = `
+.emotion-5 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-4 {
+  margin-bottom: 0;
+}
+
 .emotion-0 {
   display: inline-block;
   font-size: 0.875rem;
@@ -1224,6 +1331,8 @@ exports[`renders the component with a value 1`] = `
   height: 1rem;
   min-height: 1rem;
   overflow: visible;
+  margin-right: 0.5rem !important;
+  margin-top: 0.25rem !important;
 }
 
 .emotion-1 {
@@ -1234,11 +1343,11 @@ exports[`renders the component with a value 1`] = `
 }
 
 <div
-  class="ControlledInputField my-extra-class"
+  class="emotion-5 my-extra-class"
   data-test-id="cf-ui-controlled-input-field"
 >
   <div
-    class="ControlledInputField__input emotion-3"
+    class="emotion-3"
     data-test-id="cf-ui-controlled-input"
   >
     <input
@@ -1267,7 +1376,7 @@ exports[`renders the component with a value 1`] = `
   </div>
   <div>
     <label
-      class="FormLabel__FormLabel___3d6zQ ControlledInputField__label"
+      class="FormLabel__FormLabel___3d6zQ emotion-4"
       data-test-id="cf-ui-form-label"
       for="checkbox"
     >
@@ -1278,6 +1387,17 @@ exports[`renders the component with a value 1`] = `
 `;
 
 exports[`renders the component with an additional class name 1`] = `
+.emotion-5 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.emotion-4 {
+  margin-bottom: 0;
+}
+
 .emotion-0 {
   display: inline-block;
   font-size: 0.875rem;
@@ -1365,6 +1485,8 @@ exports[`renders the component with an additional class name 1`] = `
   height: 1rem;
   min-height: 1rem;
   overflow: visible;
+  margin-right: 0.5rem !important;
+  margin-top: 0.25rem !important;
 }
 
 .emotion-1 {
@@ -1375,11 +1497,11 @@ exports[`renders the component with an additional class name 1`] = `
 }
 
 <div
-  class="ControlledInputField my-extra-class"
+  class="emotion-5 my-extra-class"
   data-test-id="cf-ui-controlled-input-field"
 >
   <div
-    class="ControlledInputField__input emotion-3"
+    class="emotion-3"
     data-test-id="cf-ui-controlled-input"
   >
     <input
@@ -1408,7 +1530,7 @@ exports[`renders the component with an additional class name 1`] = `
   </div>
   <div>
     <label
-      class="FormLabel__FormLabel___3d6zQ ControlledInputField__label"
+      class="FormLabel__FormLabel___3d6zQ emotion-4"
       data-test-id="cf-ui-form-label"
       for="checkbox"
     >
