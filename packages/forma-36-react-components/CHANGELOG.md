@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.89.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.89.1...@contentful/forma-36-react-components@3.89.2) (2021-05-06)
+
+
+### Bug Fixes
+
+* adding cloud upload icon ([#951](https://github.com/contentful/forma-36/issues/951)) ([782f11b](https://github.com/contentful/forma-36/commit/782f11bd5d7de01a46caae1318c55de3f7145c13))
+
+
+
+
+
 ## [3.89.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.89.0...@contentful/forma-36-react-components@3.89.1) (2021-05-05)
 
 
