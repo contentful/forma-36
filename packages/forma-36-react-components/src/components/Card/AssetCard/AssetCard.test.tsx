@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { Calendar } from '@contentful/f36-icons';
+import { axe } from '@/scripts/test/axeHelper';
 
-import { axe } from '../../../utils/axeHelper';
 import { AssetCard } from './AssetCard';
 import { DropdownList, DropdownListItem } from '../../Dropdown';
 import { CardDragHandle } from '../CardDragHandle/CardDragHandle';

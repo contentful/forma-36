@@ -1,8 +1,8 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { ArrowDown } from '@contentful/f36-icons';
+import { axe } from '@/scripts/test/axeHelper';
 
-import { axe } from '../../utils/axeHelper';
 import { Workbench } from './Workbench';
 import { Button } from '../Button';
 

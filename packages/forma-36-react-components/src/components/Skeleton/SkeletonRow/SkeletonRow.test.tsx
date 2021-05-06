@@ -1,8 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { Table, TableBody } from '@contentful/f36-table';
-
-import { axe } from '../../../utils/axeHelper';
+import { axe } from '@/scripts/test/axeHelper';
 
 import { SkeletonRow } from './SkeletonRow';
 

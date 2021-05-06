@@ -2,8 +2,8 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Entry } from '@contentful/f36-icons';
+import { axe } from '@/scripts/test/axeHelper';
 
-import { axe } from '../../utils/axeHelper';
 import { ToggleButton } from './ToggleButton';
 
 it('renders the component', () => {

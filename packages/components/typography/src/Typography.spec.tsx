@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from '@/scripts/test/axeHelper';
 
-import { axe } from '../../../../scripts/test/axeHelper';
 import { Typography } from './Typography';
 import { DisplayText } from './DisplayText';
 import { Heading } from './Heading';
