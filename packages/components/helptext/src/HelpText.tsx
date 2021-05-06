@@ -13,9 +13,10 @@ export interface HelpTextInternalProps extends CommonProps {
   children: React.ReactNode;
 }
 
-export type HelpTextProps<
-  E extends React.ElementType
-> = PolymorphicComponentProps<E, HelpTextInternalProps>;
+export type HelpTextProps = PolymorphicComponentProps<
+  React.ElementType,
+  HelpTextInternalProps
+>;
 
 const DEFAULT_TAG = 'p';
 
