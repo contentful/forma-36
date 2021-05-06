@@ -54,6 +54,10 @@ export type ButtonProps = {
   isActive?: boolean;
 } & AnchorProps;
 
+/**
+ *
+ * @deprecated This component is deprecated, please use button from '@contentful/f36-button'
+ */
 export const Button = ({
   buttonType = 'primary',
   children,
