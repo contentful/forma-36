@@ -7,4 +7,110 @@ github: 'https://github.com/contentful/forma-36/tree/master/packages/components/
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-checkbox--overview'
 ---
 
-Detailed documentation will be provided soon. For now, please have a look into the storybook for implementation details.
+Checkbox is used to show a checkbox form element. Under the hood, it uses `ControlledInput` with `type='checkbox'` .
+
+## Table of contents
+
+- [Table of contents](#table-of-contents)
+- [How to use Checkbox](#how-to-use-checkbox)
+- [Component variations](#component-variations)
+- [Content recommendations](#content-recommendations)
+- [Accessibility](#accessibility)
+- [Props](#props)
+
+## How to use Checkbox
+
+- You only need to define a suitable `label` to get a basic checkbox.
+- All common states (disabled, required, checked, indeterminate) are functionally and visually supported.
+- Control the current input value by setting `isChecked`.
+- Listen to native element events via `onChange`, `onBlur`, `onFocus`. More event handler can be attached by defining them via `inputProps`.
+
+## Component variations
+
+- **default**
+
+```jsx
+<div>
+  <Checkbox label="Subscribe to newsletter" name="newsletter-subscribe" />
+</div>
+```
+
+- **checked**
+
+```jsx
+<div>
+  <Checkbox
+    label="Subscribe to newsletter"
+    name="newsletter-subscribe"
+    isChecked
+  />
+</div>
+```
+
+- **indeterminate**
+
+```jsx
+<div>
+  <Checkbox
+    label="Subscribe to newsletter"
+    name="newsletter-subscribe"
+    isIndeterminate
+  />
+</div>
+```
+
+- **disabled**
+
+```jsx
+<div>
+  <Checkbox
+    label="Subscribe to newsletter"
+    name="newsletter-subscribe"
+    isDisabled
+  />
+</div>
+```
+
+- **disabled indeterminate**
+
+```jsx
+<div>
+  <Checkbox
+    label="Subscribe to newsletter"
+    name="newsletter-subscribe"
+    isIndeterminate
+    isDisabled
+  />
+</div>
+```
+
+- **disabled checked**
+
+```jsx
+<div>
+  <Checkbox
+    label="Subscribe to newsletter"
+    name="newsletter-subscribe"
+    isChecked
+    isDisabled
+  />
+</div>
+```
+
+## Content recommendations
+
+- Try to use labels with short, scannable text.
+
+## Accessibility
+
+- The `label` will be rendered as `aria-label` of the input node.
+- Use a unique `id`.
+- A explicit label node is rendered for showing a custom check mark. According to [w3](https://www.w3.org/WAI/tutorials/forms/labels/#associating-labels-implicitly), explicit labels provide a better support for assistive technologies.
+
+## Props
+
+```jsx
+import { Props } from '@contentful/f36-docs-utils';
+
+<Props of="Checkbox" />;
+```
