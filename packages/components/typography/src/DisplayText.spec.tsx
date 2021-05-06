@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from '@/scripts/test/axeHelper';
 
-import { axe } from '../../../../scripts/test/axeHelper';
 import { DisplayText } from './DisplayText';
 
 it('renders the component', () => {

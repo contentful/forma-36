@@ -1,7 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-
-import { axe } from '../../../utils/axeHelper';
+import { axe } from '@/scripts/test/axeHelper';
 
 import { SkeletonRow } from './SkeletonRow';
 import { Table, TableBody } from '../../Table';
