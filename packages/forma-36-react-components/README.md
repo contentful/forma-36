@@ -85,7 +85,7 @@ YourComponent
 └── YourComponent.test.js.   // Component tests
 ```
 
-> If you use `yarn generate` in the root of the repo, this structure will be create automatically for you
+> If you use `yarn generate` in the root of the repo, this structure will be created automatically for you
 
 ### Styling
 
