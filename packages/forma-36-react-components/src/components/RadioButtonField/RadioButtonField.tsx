@@ -1,6 +1,6 @@
 import React from 'react';
-import { ControlledInputField } from '../ControlledInputField';
-import type { ControlledInputFieldProps } from '../ControlledInputField';
+import { ControlledInputField } from '@contentful/f36-forms';
+import type { ControlledInputFieldProps } from '@contentful/f36-forms';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export type RadioButtonFieldProps = Omit<

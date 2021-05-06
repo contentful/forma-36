@@ -1,7 +1,7 @@
 import React, { ChangeEventHandler, ReactNode } from 'react';
 import cn from 'classnames';
 import { ValidationMessage } from '@contentful/f36-validation-message';
-import { Label } from '@contentful/f36-forms';
+import { Label } from '../Label';
 import { ControlledInput } from '@contentful/f36-inputs';
 import { HelpText } from '@contentful/f36-helptext';
 

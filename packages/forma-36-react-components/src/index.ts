@@ -53,7 +53,6 @@ export * from './components/Autocomplete';
 export * from './components/Button';
 export * from './components/Card';
 export * from './components/CheckboxField';
-export * from './components/ControlledInputField';
 export * from './components/CopyButton';
 export * from './components/Dropdown';
 export * from './components/EditorToolbar';
