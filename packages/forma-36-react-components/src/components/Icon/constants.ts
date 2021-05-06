@@ -22,6 +22,7 @@ export const iconName = {
   ClockTrimmed: 'ClockTrimmed',
   Close: 'Close',
   CloseTrimmed: 'CloseTrimmed',
+  CloudUpload: 'CloudUpload',
   Code: 'Code',
   CodeTrimmed: 'CodeTrimmed',
   Copy: 'Copy',
