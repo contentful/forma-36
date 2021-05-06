@@ -1,24 +1,65 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
+.emotion-5:last-child td {
+  border-bottom: none;
+}
+
+.emotion-5:hover td {
+  background-color: #f7f9fa;
+}
+
+.emotion-6 {
+  display: table;
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 0 0 1px #e5ebed;
+}
+
+.emotion-6 th:first-child {
+  border-top-left-radius: 6px;
+}
+
+.emotion-6 th:last-child {
+  border-top-right-radius: 6px;
+}
+
+.emotion-6 tr:last-child td:first-child {
+  border-bottom-left-radius: 6px;
+}
+
+.emotion-6 tr:last-child td:last-child {
+  border-bottom-right-radius: 6px;
+}
+
+.emotion-0 {
+  border-bottom: 1px solid #e5ebed;
+  color: #536171;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  vertical-align: top;
+}
+
 <table
   cellpadding="0"
   cellspacing="0"
-  class="Table Table--inline"
+  class="emotion-6"
   data-test-id="cf-ui-table"
 >
   <tbody
     data-test-id="cf-ui-table-body"
   >
     <tr
-      class=""
+      class="emotion-5"
       data-test-id="cf-ui-table-row"
     >
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -100,10 +141,8 @@ exports[`renders the component 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -185,10 +224,8 @@ exports[`renders the component 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -270,10 +307,8 @@ exports[`renders the component 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -355,10 +390,8 @@ exports[`renders the component 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -445,24 +478,65 @@ exports[`renders the component 1`] = `
 `;
 
 exports[`renders the component with 10 cells 1`] = `
+.emotion-10:last-child td {
+  border-bottom: none;
+}
+
+.emotion-10:hover td {
+  background-color: #f7f9fa;
+}
+
+.emotion-11 {
+  display: table;
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 0 0 1px #e5ebed;
+}
+
+.emotion-11 th:first-child {
+  border-top-left-radius: 6px;
+}
+
+.emotion-11 th:last-child {
+  border-top-right-radius: 6px;
+}
+
+.emotion-11 tr:last-child td:first-child {
+  border-bottom-left-radius: 6px;
+}
+
+.emotion-11 tr:last-child td:last-child {
+  border-bottom-right-radius: 6px;
+}
+
+.emotion-0 {
+  border-bottom: 1px solid #e5ebed;
+  color: #536171;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  vertical-align: top;
+}
+
 <table
   cellpadding="0"
   cellspacing="0"
-  class="Table Table--inline"
+  class="emotion-11"
   data-test-id="cf-ui-table"
 >
   <tbody
     data-test-id="cf-ui-table-body"
   >
     <tr
-      class=""
+      class="emotion-10"
       data-test-id="cf-ui-table-row"
     >
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -544,10 +618,8 @@ exports[`renders the component with 10 cells 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -629,10 +701,8 @@ exports[`renders the component with 10 cells 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -714,10 +784,8 @@ exports[`renders the component with 10 cells 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -799,10 +867,8 @@ exports[`renders the component with 10 cells 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -884,10 +950,8 @@ exports[`renders the component with 10 cells 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -969,10 +1033,8 @@ exports[`renders the component with 10 cells 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -1054,10 +1116,8 @@ exports[`renders the component with 10 cells 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -1139,10 +1199,8 @@ exports[`renders the component with 10 cells 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -1224,10 +1282,8 @@ exports[`renders the component with 10 cells 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -1314,24 +1370,65 @@ exports[`renders the component with 10 cells 1`] = `
 `;
 
 exports[`renders the component with 10 rows 1`] = `
+.emotion-5:last-child td {
+  border-bottom: none;
+}
+
+.emotion-5:hover td {
+  background-color: #f7f9fa;
+}
+
+.emotion-60 {
+  display: table;
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 0 0 1px #e5ebed;
+}
+
+.emotion-60 th:first-child {
+  border-top-left-radius: 6px;
+}
+
+.emotion-60 th:last-child {
+  border-top-right-radius: 6px;
+}
+
+.emotion-60 tr:last-child td:first-child {
+  border-bottom-left-radius: 6px;
+}
+
+.emotion-60 tr:last-child td:last-child {
+  border-bottom-right-radius: 6px;
+}
+
+.emotion-0 {
+  border-bottom: 1px solid #e5ebed;
+  color: #536171;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  vertical-align: top;
+}
+
 <table
   cellpadding="0"
   cellspacing="0"
-  class="Table Table--inline"
+  class="emotion-60"
   data-test-id="cf-ui-table"
 >
   <tbody
     data-test-id="cf-ui-table-body"
   >
     <tr
-      class=""
+      class="emotion-5"
       data-test-id="cf-ui-table-row"
     >
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -1413,10 +1510,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -1498,10 +1593,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -1583,10 +1676,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -1668,10 +1759,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -1754,14 +1843,12 @@ exports[`renders the component with 10 rows 1`] = `
       </td>
     </tr>
     <tr
-      class=""
+      class="emotion-5"
       data-test-id="cf-ui-table-row"
     >
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -1843,10 +1930,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -1928,10 +2013,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -2013,10 +2096,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -2098,10 +2179,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -2184,14 +2263,12 @@ exports[`renders the component with 10 rows 1`] = `
       </td>
     </tr>
     <tr
-      class=""
+      class="emotion-5"
       data-test-id="cf-ui-table-row"
     >
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -2273,10 +2350,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -2358,10 +2433,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -2443,10 +2516,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -2528,10 +2599,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -2614,14 +2683,12 @@ exports[`renders the component with 10 rows 1`] = `
       </td>
     </tr>
     <tr
-      class=""
+      class="emotion-5"
       data-test-id="cf-ui-table-row"
     >
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -2703,10 +2770,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -2788,10 +2853,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -2873,10 +2936,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -2958,10 +3019,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -3044,14 +3103,12 @@ exports[`renders the component with 10 rows 1`] = `
       </td>
     </tr>
     <tr
-      class=""
+      class="emotion-5"
       data-test-id="cf-ui-table-row"
     >
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -3133,10 +3190,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -3218,10 +3273,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -3303,10 +3356,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -3388,10 +3439,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -3474,14 +3523,12 @@ exports[`renders the component with 10 rows 1`] = `
       </td>
     </tr>
     <tr
-      class=""
+      class="emotion-5"
       data-test-id="cf-ui-table-row"
     >
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -3563,10 +3610,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -3648,10 +3693,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -3733,10 +3776,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -3818,10 +3859,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -3904,14 +3943,12 @@ exports[`renders the component with 10 rows 1`] = `
       </td>
     </tr>
     <tr
-      class=""
+      class="emotion-5"
       data-test-id="cf-ui-table-row"
     >
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -3993,10 +4030,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -4078,10 +4113,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -4163,10 +4196,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -4248,10 +4279,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -4334,14 +4363,12 @@ exports[`renders the component with 10 rows 1`] = `
       </td>
     </tr>
     <tr
-      class=""
+      class="emotion-5"
       data-test-id="cf-ui-table-row"
     >
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -4423,10 +4450,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -4508,10 +4533,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -4593,10 +4616,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -4678,10 +4699,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -4764,14 +4783,12 @@ exports[`renders the component with 10 rows 1`] = `
       </td>
     </tr>
     <tr
-      class=""
+      class="emotion-5"
       data-test-id="cf-ui-table-row"
     >
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -4853,10 +4870,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -4938,10 +4953,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -5023,10 +5036,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -5108,10 +5119,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -5194,14 +5203,12 @@ exports[`renders the component with 10 rows 1`] = `
       </td>
     </tr>
     <tr
-      class=""
+      class="emotion-5"
       data-test-id="cf-ui-table-row"
     >
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -5283,10 +5290,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -5368,10 +5373,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -5453,10 +5456,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."
@@ -5538,10 +5539,8 @@ exports[`renders the component with 10 rows 1`] = `
         </svg>
       </td>
       <td
-        align="left"
-        class="TableCell"
+        class="emotion-0"
         data-test-id="cf-ui-table-cell"
-        style="top: 0px;"
       >
         <svg
           aria-label="Loading component..."

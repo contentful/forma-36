@@ -45,6 +45,8 @@ export const Primitive: <E extends React.ElementType = typeof defaultElement>(
   for (const key in otherProps) {
     if (isPropValid(key)) {
       validProps[key] = otherProps[key];
+    } else {
+      console.warn('Invalid prop', key);
     }
   }
   return (

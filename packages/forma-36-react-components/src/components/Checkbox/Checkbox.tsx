@@ -1,6 +1,9 @@
 import React from 'react';
 
-import { ControlledInput, ControlledInputProps } from '../ControlledInput';
+import {
+  ControlledInput,
+  ControlledInputProps,
+} from '@contentful/f36-controlled-input';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface CheckboxProps extends ControlledInputProps {}

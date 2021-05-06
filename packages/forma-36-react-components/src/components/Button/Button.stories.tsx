@@ -24,7 +24,7 @@ export default {
   parameters: {
     propTypes: [Button['__docgenInfo']],
   },
-  title: 'Components/Button',
+  title: 'Components/Button(Deprecated)',
 };
 
 type Args = ButtonProps & {

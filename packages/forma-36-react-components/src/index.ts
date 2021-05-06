@@ -1,4 +1,5 @@
 export * from '@contentful/f36-badge';
+export * from '@contentful/f36-controlled-input';
 export { Icon } from '@contentful/f36-icon';
 export type {
   IconComponent,
@@ -19,6 +20,20 @@ export type {
 } from '@contentful/f36-core';
 export { Spinner } from '@contentful/f36-spinner';
 export type { SpinnerProps } from '@contentful/f36-spinner';
+export {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
+} from '@contentful/f36-table';
+export type {
+  TableBodyProps,
+  TableCellProps,
+  TableHeadProps,
+  TableProps,
+  TableRowProps,
+} from '@contentful/f36-table';
 export * from '@contentful/f36-typography';
 export { ValidationMessage } from '@contentful/f36-validation-message';
 export type { ValidationMessageProps } from '@contentful/f36-validation-message';
@@ -31,7 +46,6 @@ export * from './components/Button';
 export * from './components/Card';
 export * from './components/Checkbox';
 export * from './components/CheckboxField';
-export * from './components/ControlledInput';
 export * from './components/ControlledInputField';
 export * from './components/CopyButton';
 export * from './components/Dropdown';
@@ -54,7 +68,6 @@ export * from './components/Select';
 export * from './components/SelectField';
 export * from './components/Skeleton';
 export * from './components/Switch';
-export * from './components/Table';
 export * from './components/Tabs';
 export * from './components/Textarea';
 export * from './components/TextField';
