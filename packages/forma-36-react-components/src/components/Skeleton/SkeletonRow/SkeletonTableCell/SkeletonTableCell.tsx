@@ -1,6 +1,6 @@
 import React from 'react';
+import { TableCell } from '@contentful/f36-table';
 
-import { TableCell } from '../../../Table';
 import { SkeletonContainer } from '../../SkeletonContainer/SkeletonContainer';
 import { SkeletonBodyText } from '../../SkeletonBodyText/SkeletonBodyText';
 
