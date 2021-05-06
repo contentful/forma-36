@@ -21,6 +21,7 @@ export { default as Clock } from './Clock';
 export { default as ClockTrimmed } from './ClockTrimmed';
 export { default as Close } from './Close';
 export { default as CloseTrimmed } from './CloseTrimmed';
+export { default as CloudUpload } from './CloudUpload';
 export { default as Code } from './Code';
 export { default as CodeTrimmed } from './CodeTrimmed';
 export { default as Copy } from './Copy';
