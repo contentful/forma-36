@@ -175,7 +175,7 @@ exports[`renders the component in loading state 1`] = `
     <svg
       class="Spinner Button__spinner Spinner--default Spinner--white"
       data-test-id="cf-ui-spinner"
-      style="height: 18px; width: 18px;"
+      style="height: 12px; width: 12px;"
       viewBox="0 0 60 51"
       xmlns="http://www.w3.org/2000/svg"
     >

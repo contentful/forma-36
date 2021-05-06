@@ -4,20 +4,82 @@ type: 'component'
 status: 'stable'
 slug: /components/select-field/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/SelectField'
-storybook: 'https://f36-storybook.contentful.com/?path=/story/components-selectfield--default'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-selectfield--basic'
 ---
 
-Detailed documentation will be provided soon. For now, please have a look into the storybook for implementation details.
+SelectField allows users to make a single selection from an options menu. It contains label, can display help message and validation message if necessary.
 
-```jsx
+## Table of contents
+
+- [How to use SelectField](#how-to-use-selectField)
+- [Code examples](#code-examples)
+- [Content recommendations](#content-recommendations)
+- [Accessibility](#accessibility)
+
+## How to use SelectField
+
+- Use labels. Labels are used to clearly communicate what the choices in the Select mean. They are also required from accessibility perspective.
+- Use help text. Include any necessary information as clear as possible to help users make a choice.
+- Use error messages. Guide users with the message and try to help your them solve the issue.
+
+## Code examples
+
+```tsx
+// import { SelectField } from '@contentful/forma-36-react-components';
+
 <SelectField
   name="optionSelect"
   id="optionSelect"
   labelText="Label"
   selectProps="large"
-  helpText="helpText"
 >
   <Option value="optionOne">Option 1</Option>
   <Option value="optionTwo">Long Option 2</Option>
 </SelectField>
 ```
+
+### SelectField with help message
+
+```tsx
+// import { SelectField } from '@contentful/forma-36-react-components';
+
+<SelectField
+  name="optionSelect"
+  id="optionSelect"
+  labelText="Label"
+  selectProps="large"
+  helpText="Here you can add an additional information about the select"
+>
+  <Option value="optionOne">Option 1</Option>
+  <Option value="optionTwo">Long Option 2</Option>
+</SelectField>
+```
+
+### SelectField with error message
+
+```tsx
+// import { SelectField } from '@contentful/forma-36-react-components';
+
+<SelectField
+  name="optionSelect"
+  id="optionSelect"
+  labelText="Label"
+  selectProps="large"
+  validationMessage="In case of error you can add your validation message over here"
+>
+  <Option value="optionOne">Option 1</Option>
+  <Option value="optionTwo">Long Option 2</Option>
+</SelectField>
+```
+
+## Content recommendations
+
+- For the label, use short descriptive phrases
+- Options should be labeled in a clear way, so it's obvious what the option will do
+- If the selection needs more explanation, use help text below the field.
+- For validation provide solution focused error messages to guide users how to solve the issue
+
+## Accessibility
+
+- Select should always contain label, help or validation message.
+- Select should always have a `name` property.

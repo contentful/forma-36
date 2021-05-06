@@ -501,7 +501,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/33579339?v=4",
       "profile": "https://github.com/damienxy",
       "contributions": [
-        "code"
+        "code",
+        "bug"
       ]
     },
     {
@@ -530,6 +531,16 @@
       "profile": "https://github.com/th1nkgr33n",
       "contributions": [
         "bug"
+      ]
+    },
+    {
+      "login": "Chaoste",
+      "name": "Thomas Kellermeier",
+      "avatar_url": "https://avatars.githubusercontent.com/u/9327071?v=4",
+      "profile": "http://chaoste.github.io",
+      "contributions": [
+        "bug",
+        "code"
       ]
     }
   ],

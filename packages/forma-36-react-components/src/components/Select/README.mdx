@@ -4,16 +4,72 @@ type: 'component'
 status: 'stable'
 slug: /components/select/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/Select'
-storybook: 'https://f36-storybook.contentful.com/?path=/story/components-select--default'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-select--overview'
 ---
 
-Detailed documentation will be provided soon. For now, please have a look into the storybook for implementation details.
+Select allows users to make a single selection from an options menu.
+Keep in mind that Select should not be used without the label. We provide [SelectField](https://f36.contentful.com/components/select-field/) component, which contains label, help or error message if needed.
 
-```jsx
-<>
-  <Select id="optionSelect" name="optionSelect" width="large">
-    <Option value="optionOne">Option 1</Option>
-    <Option value="optionTwo">Long Option 2</Option>
-  </Select>
-</>
+## Table of contents
+
+- [How to use Select](#how-to-use-select)
+- [Code examples](#code-examples)
+- [Content recommendations](#content-recommendations)
+- [Accessibility](#accessibility)
+
+## How to use Select
+
+- Use Select to present many different options in one component
+- When you have only a few options try to show them all at once, using [Radio buttons](https://f36.contentful.com/components/radio-button/).
+- Use Select in Forms
+- Order the list of options in a logical way, so it make sense for the user
+- Don't use Select for a very long list of options, instead for those cases use [Autocomplete](https://f36.contentful.com/components/autocomplete/)
+- if you use Select component add your custom label to it or use our [SelectField](https://f36.contentful.com/components/select-field/) instead
+
+### Select vs dropdown
+
+1. Dropdown menus are typically used for navigation or command menus, where an action is initiated based on the selection.
+2. Select is a type of input, where the user is choosing one option from the list, typically used in Forms.
+
+## Code examples
+
+```tsx
+// import { Select } from '@contentful/forma-36-react-components';
+
+<Select id="optionSelect" name="optionSelect" width="large">
+  <Option value="optionOne">Option 1</Option>
+  <Option value="optionTwo">Long Option 2</Option>
+</Select>
 ```
+
+### Select state (`disabled`)
+
+```tsx
+// import { Select } from '@contentful/forma-36-react-components';
+
+<Select id="optionSelect" name="optionSelect" isDisabled>
+  <Option value="optionOne">Option 1</Option>
+  <Option value="optionTwo">Long Option 2</Option>
+</Select>
+```
+
+### Select with error
+
+```tsx
+// import { Select } from '@contentful/forma-36-react-components';
+
+<Select id="optionSelect" name="optionSelect" hasError>
+  <Option value="optionOne">Option 1</Option>
+  <Option value="optionTwo">Long Option 2</Option>
+</Select>
+```
+
+## Content recommendations
+
+- Options should be written in sentence case (the first word capitalized, the rest lowercase).
+- Options should be labeled in a clear way, so it's obvious what the option will do
+
+## Accessibility
+
+- Select should contain a label, if needed help message and validation message if needed. We provide [SelectField](https://f36.contentful.com/components/select-field/) component, that contains all of those elements.
+- Select should always a `name` property.

@@ -2,7 +2,7 @@
 
 exports[`DateTime allows for DATE_ONLY formatting 1`] = `
 <time
-  datetime="2020-04-09T16:17:18.912Z"
+  datetime="2020-04-09"
 >
   9 Apr 2020
 </time>
@@ -18,7 +18,7 @@ exports[`DateTime allows for FULL formatting 1`] = `
 
 exports[`DateTime allows for TIME_ONLY formatting 1`] = `
 <time
-  datetime="2020-04-09T16:17:18.912Z"
+  datetime="16:17:18.912"
 >
   9:17 am
 </time>
@@ -26,7 +26,7 @@ exports[`DateTime allows for TIME_ONLY formatting 1`] = `
 
 exports[`DateTime allows for WEEKDAY_DATE formatting 1`] = `
 <time
-  datetime="2020-04-09T16:17:18.912Z"
+  datetime="04-09"
 >
   Thu, 9 Apr
 </time>

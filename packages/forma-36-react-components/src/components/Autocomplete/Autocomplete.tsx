@@ -214,6 +214,7 @@ export const Autocomplete = <T extends {}>({
         <IconButton
           className={styles.inputIconButton}
           tabIndex={-1}
+          disabled={toggleProps.disabled}
           buttonType="muted"
           iconProps={{ icon: toggleProps.query ? 'Close' : 'ChevronDown' }}
           onClick={toggleProps.onToggle}

@@ -18,7 +18,7 @@
   background-position: center;
 }
 
-.EmptyState_element {
+.EmptyState .EmptyState_element {
   max-width: calc(1rem * (500 / var(--font-base-default)));
   margin-bottom: var(--spacing-m);
 }

@@ -5,7 +5,8 @@ import { Icon, IconProps } from '../Icon';
 import { TabFocusTrap } from '../TabFocusTrap';
 import styles from './IconButton.css';
 
-export interface IconButtonProps extends React.HTMLAttributes<HTMLElement> {
+export interface IconButtonProps
+  extends React.HTMLAttributes<HTMLAnchorElement | HTMLButtonElement> {
   /**
    * It used to controls which icon to render and it accepts all props that you could pass in the Icon component.
    *
@@ -27,10 +28,6 @@ export interface IconButtonProps extends React.HTMLAttributes<HTMLElement> {
    */
   label?: string;
   /**
-   * It should be used when the button works as a link
-   */
-  href?: string;
-  /**
    * If true, it will render the Chevron icon to indicate that the button opens a dropdown
    */
   withDropdown?: boolean;
@@ -46,6 +43,18 @@ export interface IconButtonProps extends React.HTMLAttributes<HTMLElement> {
    * An ID used for testing purposes applied as a data attribute (data-test-id)
    */
   testId?: string;
+  /**
+   * Used to make the decision of either rendering as a <a> or as a <button> tag
+   */
+  href?: string;
+  /**
+   * Used with href to specify target attribute value
+   */
+  target?: React.AnchorHTMLAttributes<HTMLAnchorElement>['target'];
+  /**
+   * Used with href to define a relationship between a linked resource and the current document
+   */
+  rel?: string;
 }
 
 export const IconButton = ({
@@ -58,6 +67,8 @@ export const IconButton = ({
   onClick,
   testId = 'cf-ui-icon-button',
   withDropdown = false,
+  target,
+  rel,
   ...otherProps
 }: IconButtonProps) => {
   const classNames = cn(styles.IconButton, className, {
@@ -94,8 +105,8 @@ export const IconButton = ({
       return <a {...elementProps}>{content}</a>;
     }
     return (
-      <a {...elementProps} href={href}>
-        content
+      <a {...elementProps} href={href} target={target} rel={rel}>
+        {content}
       </a>
     );
   }

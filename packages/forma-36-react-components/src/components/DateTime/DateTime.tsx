@@ -1,6 +1,10 @@
 import React from 'react';
 
-import { DateTimeFormat, formatDateTime } from './dateUtils';
+import {
+  DateTimeFormat,
+  formatDateTime,
+  formatMachineReadableDateTime,
+} from './dateUtils';
 import { CoercibleDate } from './types';
 
 export interface DateTimeProps {
@@ -35,10 +39,11 @@ export const DateTime: React.FC<DateTimeProps> = ({
     date = new Date(date);
   }
   const formatted = formatDateTime(date, format);
+  const machineReadable = formatMachineReadableDateTime(date, format);
 
   return (
     <time
-      dateTime={date.toISOString()}
+      dateTime={machineReadable}
       className={className}
       data-test-id={testId}
     >
