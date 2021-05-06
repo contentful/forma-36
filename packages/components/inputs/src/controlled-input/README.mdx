@@ -24,26 +24,26 @@ ControlledInput is used to show a controlled checkbox or radio button.
 - Create a checkbox or radio button by defining the `type`.
 - All common states (disabled, required, checked, indeterminate) are functionally and visually supported.
 - Control the current input value by setting `isChecked`.
-- Listen to native element events via `onChange`, `onBlur`, `onFocus`. More event handler can be attached by defining them via `inputProps`.
+- Listen to native element events via `onChange`, `onBlur`, `onFocus`. More event handlers can be attached by defining them via `inputProps`.
 
 ## Component variations
 
 - **Checkbox** - render a basic checkbox node. Visit the documentation of Checkbox to see all variations.
 
 ```jsx
-<div>
+<>
   <ControlledInput
     type="checkbox"
     label="Subscribe to newsletter"
     name="newsletter-subscribe"
   />
-</div>
+</>
 ```
 
 - **Radio button** - render a basic radio button node. Visit the documentation of RadioButton to see all variations.
 
 ```jsx
-<div>
+<>
   <ControlledInput
     type="radio"
     label="Which pill?"
@@ -56,7 +56,7 @@ ControlledInput is used to show a controlled checkbox or radio button.
     name="pill-decision"
     value="Red pill"
   />
-</div>
+</>
 ```
 
 ## Content recommendations

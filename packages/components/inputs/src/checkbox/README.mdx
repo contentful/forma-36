@@ -23,78 +23,78 @@ Checkbox is used to show a checkbox form element. Under the hood, it uses `Contr
 - You only need to define a suitable `label` to get a basic checkbox.
 - All common states (disabled, required, checked, indeterminate) are functionally and visually supported.
 - Control the current input value by setting `isChecked`.
-- Listen to native element events via `onChange`, `onBlur`, `onFocus`. More event handler can be attached by defining them via `inputProps`.
+- Listen to native element events via `onChange`, `onBlur`, `onFocus`. More event handlers can be attached by defining them via `inputProps`.
 
 ## Component variations
 
 - **default**
 
 ```jsx
-<div>
+<>
   <Checkbox label="Subscribe to newsletter" name="newsletter-subscribe" />
-</div>
+</>
 ```
 
 - **checked**
 
 ```jsx
-<div>
+<>
   <Checkbox
     label="Subscribe to newsletter"
     name="newsletter-subscribe"
     isChecked
   />
-</div>
+</>
 ```
 
 - **indeterminate**
 
 ```jsx
-<div>
+<>
   <Checkbox
     label="Subscribe to newsletter"
     name="newsletter-subscribe"
     isIndeterminate
   />
-</div>
+</>
 ```
 
 - **disabled**
 
 ```jsx
-<div>
+<>
   <Checkbox
     label="Subscribe to newsletter"
     name="newsletter-subscribe"
     isDisabled
   />
-</div>
+</>
 ```
 
 - **disabled indeterminate**
 
 ```jsx
-<div>
+<>
   <Checkbox
     label="Subscribe to newsletter"
     name="newsletter-subscribe"
     isIndeterminate
     isDisabled
   />
-</div>
+</>
 ```
 
 - **disabled checked**
 
 ```jsx
-<div>
+<>
   <Checkbox
     label="Subscribe to newsletter"
     name="newsletter-subscribe"
     isChecked
     isDisabled
   />
-</div>
+</>
 ```
 
 ## Content recommendations

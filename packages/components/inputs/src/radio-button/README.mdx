@@ -23,48 +23,48 @@ RadioButton is used to show a radio button form element. Under the hood, it uses
 - You only need to define a suitable `label` to get a basic checkbox.
 - All common states (disabled, required, checked) are functionally and visually supported.
 - Control the current input value by setting `isChecked`.
-- Listen to native element events via `onChange`, `onBlur`, `onFocus`. More event handler can be attached by defining them via `inputProps`.
+- Listen to native element events via `onChange`, `onBlur`, `onFocus`. More event handlers can be attached by defining them via `inputProps`.
 
 ## Component variations
 
 - **default**
 
 ```jsx
-<div>
+<>
   <RadioButton label="Which pill?" name="pill-decision" value="Blue pill" />
-</div>
+</>
 ```
 
 - **checked**
 
 ```jsx
-<div>
+<>
   <RadioButton
     label="Which pill?"
     name="pill-decision"
     value="Blue pill"
     isChecked
   />
-</div>
+</>
 ```
 
 - **disabled**
 
 ```jsx
-<div>
+<>
   <RadioButton
     label="Which pill?"
     name="pill-decision"
     value="Blue pill"
     isDisabled
   />
-</div>
+</>
 ```
 
 - **disabled checked**
 
 ```jsx
-<div>
+<>
   <RadioButton
     label="Which pill?"
     name="pill-decision"
@@ -72,7 +72,7 @@ RadioButton is used to show a radio button form element. Under the hood, it uses
     isChecked
     isDisabled
   />
-</div>
+</>
 ```
 
 ## Content recommendations
