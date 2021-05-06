@@ -51,6 +51,10 @@ export interface IconButtonProps
    * Used with href to specify target attribute value
    */
   target?: React.AnchorHTMLAttributes<HTMLAnchorElement>['target'];
+  /**
+   * Used with href to define a relationship between a linked resource and the current document
+   */
+  rel?: string;
 }
 
 export const IconButton = ({
@@ -64,6 +68,7 @@ export const IconButton = ({
   testId = 'cf-ui-icon-button',
   withDropdown = false,
   target,
+  rel,
   ...otherProps
 }: IconButtonProps) => {
   const classNames = cn(styles.IconButton, className, {
@@ -100,7 +105,7 @@ export const IconButton = ({
       return <a {...elementProps}>{content}</a>;
     }
     return (
-      <a {...elementProps} href={href} target={target}>
+      <a {...elementProps} href={href} target={target} rel={rel}>
         {content}
       </a>
     );
