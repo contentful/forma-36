@@ -101,7 +101,7 @@ We follow the principle that a component should only be responsible for its own 
 We recommend the following naming convention for PropTypes to make them as clear as possible:
 
 - Number - use a prefix or suffix to imply that the prop accepts a number. E.g. `numItems`, `itemCount`, `itemIndex`
-- Boolean - use the prefix 'is'/'can'/'has'/'will'. E.g. `isVisible`, `canExpand`, `hasImage`
+- Boolean - use the prefix 'is'/'can'/'has'. E.g. `isVisible`, `canExpand`, `hasImage`
 - Array - use a plural noun. E.g. `items`
 - Object - use a noun. E.g. `item`
 - Node - use the suffix 'Node'. E.g. `containerNode`

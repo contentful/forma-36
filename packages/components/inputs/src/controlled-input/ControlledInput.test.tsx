@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { axe } from '@/scripts/test/axeHelper';
 
 import { ControlledInput } from './ControlledInput';
@@ -83,4 +83,23 @@ it('has no a11y issues', async () => {
   const results = await axe(container);
 
   expect(results).toHaveNoViolations();
+});
+
+it('can blur when clicking escape', () => {
+  const onBlur = jest.fn();
+  const { getByRole } = render(
+    <ControlledInput
+      id="ControlledInput"
+      label="ControlledInput"
+      onBlur={onBlur}
+      canBlurOnEsc
+      type="checkbox"
+    />,
+  );
+  const input = getByRole('checkbox');
+  fireEvent.keyDown(input, {
+    code: 'Escape',
+    target: { blur: onBlur },
+  });
+  expect(onBlur).toHaveBeenCalled();
 });

@@ -28,7 +28,7 @@ export interface ControlledInputProps extends Omit<BoxProps<'div'>, 'ref'> {
   type?: 'checkbox' | 'radio';
   className?: string;
   testId?: string;
-  willBlurOnEsc?: boolean;
+  canBlurOnEsc?: boolean;
   isIndeterminate?: boolean;
   inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
 }
@@ -48,7 +48,7 @@ const _ControlledInput = (
     testId = 'cf-ui-controlled-input',
     type = 'checkbox',
     value,
-    willBlurOnEsc = true,
+    canBlurOnEsc = true,
     isIndeterminate,
     inputProps,
     ...otherProps
@@ -72,12 +72,11 @@ const _ControlledInput = (
   const handleOnKeyDown = useCallback(
     (e: KeyboardEvent<HTMLInputElement>) => {
       e.persist();
-
-      if (e.nativeEvent.code === 'Escape' && willBlurOnEsc) {
+      if (e.nativeEvent.code === 'Escape' && canBlurOnEsc) {
         e.currentTarget.blur();
       }
     },
-    [willBlurOnEsc],
+    [canBlurOnEsc],
   );
 
   useEffect(() => {
