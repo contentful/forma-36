@@ -7,4 +7,73 @@ github: 'https://github.com/contentful/forma-36/tree/master/packages/components/
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-controlled-input--overview'
 ---
 
-Detailed documentation will be provided soon. For now, please have a look into the storybook for implementation details.
+ControlledInput is used to show a controlled checkbox or radio button.
+
+## Table of contents
+
+- [Table of contents](#table-of-contents)
+- [How to use ControlledInput](#how-to-use-controlledinput)
+- [Component variations](#component-variations)
+- [Content recommendations](#content-recommendations)
+- [Accessibility](#accessibility)
+- [Props](#props)
+
+## How to use ControlledInput
+
+- You only need to define a suitable `label` to get a basic controlled input.
+- Create a checkbox or radio button by defining the `type`.
+- All common states (disabled, required, checked, indeterminate) are functionally and visually supported.
+- Control the current input value by setting `isChecked`.
+- Listen to native element events via `onChange`, `onBlur`, `onFocus`. More event handler can be attached by defining them via `inputProps`.
+
+## Component variations
+
+- **Checkbox** - render a basic checkbox node. Visit the documentation of Checkbox to see all variations.
+
+```jsx
+<div>
+  <ControlledInput
+    type="checkbox"
+    label="Subscribe to newsletter"
+    name="newsletter-subscribe"
+  />
+</div>
+```
+
+- **Radio button** - render a basic radio button node. Visit the documentation of RadioButton to see all variations.
+
+```jsx
+<div>
+  <ControlledInput
+    type="radio"
+    label="Which pill?"
+    name="pill-decision"
+    value="Blue pill"
+  />
+  <ControlledInput
+    type="radio"
+    label="Which pill?"
+    name="pill-decision"
+    value="Red pill"
+  />
+</div>
+```
+
+## Content recommendations
+
+- Try to use labels with short, scannable text.
+- Prefer using the components Checkbox or RadioButton instead of directly using the ControlledInput.
+
+## Accessibility
+
+- The `label` will be rendered as `aria-label` of the input node.
+- Use a unique `id`.
+- A explicit label node is rendered for showing a custom check mark. According to [w3](https://www.w3.org/WAI/tutorials/forms/labels/#associating-labels-implicitly), explicit labels provide a better support for assistive technologies.
+
+## Props
+
+```jsx
+import { Props } from '@contentful/f36-docs-utils';
+
+<Props of="ControlledInput" />;
+```
