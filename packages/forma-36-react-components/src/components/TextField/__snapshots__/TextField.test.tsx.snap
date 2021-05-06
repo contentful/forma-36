@@ -377,6 +377,16 @@ exports[`renders the component with as textarea 1`] = `
 `;
 
 exports[`renders the component with characters count 1`] = `
+.emotion-0 {
+  display: block;
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  color: #606C7C;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+}
+
 <div
   class="TextField TextField--full"
   data-test-id="cf-ui-text-field"
@@ -409,7 +419,7 @@ exports[`renders the component with characters count 1`] = `
     class="TextField__hints"
   >
     <p
-      class="HelpText TextField__help-text TextField__count"
+      class="TextField__help-text TextField__count emotion-0"
       data-test-id="cf-ui-help-text"
     >
       0
@@ -421,6 +431,16 @@ exports[`renders the component with characters count 1`] = `
 `;
 
 exports[`renders the component with help text 1`] = `
+.emotion-0 {
+  display: block;
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  color: #606C7C;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+}
+
 <div
   class="TextField TextField--full"
   data-test-id="cf-ui-text-field"
@@ -452,7 +472,7 @@ exports[`renders the component with help text 1`] = `
     class="TextField__hints"
   >
     <p
-      class="HelpText TextField__help-text"
+      class="TextField__help-text emotion-0"
       data-test-id="cf-ui-help-text"
     >
       You need to fill out this field
