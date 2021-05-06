@@ -10,7 +10,7 @@ import cn from 'classnames';
 import { ValidationMessage } from '@contentful/f36-validation-message';
 
 import { FormLabel, FormLabelProps } from '../FormLabel';
-import { HelpText } from '../HelpText';
+import { HelpText } from '@contentful/f36-helptext';
 import { TextInput, TextInputProps } from '../TextInput';
 import { TextLink, TextLinkProps } from '../TextLink';
 import { Textarea, TextareaProps } from '../Textarea';

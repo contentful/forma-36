@@ -5,7 +5,7 @@ import { ValidationMessage } from '@contentful/f36-validation-message';
 
 import { FormLabel } from '../FormLabel';
 import type { FormLabelProps } from '../FormLabel';
-import { HelpText } from '../HelpText';
+import { HelpText } from '@contentful/f36-helptext';
 import { Select } from '../Select';
 import type { SelectProps } from '../Select';
 import { TextLink } from '../TextLink';
