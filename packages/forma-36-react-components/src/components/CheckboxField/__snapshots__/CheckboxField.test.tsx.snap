@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
+.emotion-4 {
+  margin-bottom: 0;
+}
+
 .emotion-5 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-}
-
-.emotion-4 {
-  margin-bottom: 0;
 }
 
 .emotion-0 {
