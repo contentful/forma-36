@@ -3,7 +3,7 @@
     "path": "dist/index.js",
     "name": "gzipped js",
     "gzip": false,
-    "limit": "405 KB",
+    "limit": "401 KB",
     "ignore": [
       "react",
       "react-dom"
