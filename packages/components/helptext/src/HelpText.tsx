@@ -30,7 +30,7 @@ const _HelpText: PolymorphicComponentWithRef<
   return (
     <Box
       as={DEFAULT_TAG}
-      data-test-id={testId}
+      testId={testId}
       ref={ref}
       className={cx(styles.helpText, className)}
       {...otherProps}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { axe } from '../../../forma-36-react-components/src/utils/axeHelper';
+import { axe } from '@/scripts/test/axeHelper';
 import { HelpText } from '../src/HelpText';
 
 describe('HelpText', function () {
