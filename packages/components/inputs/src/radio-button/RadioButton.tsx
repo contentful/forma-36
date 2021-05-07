@@ -5,10 +5,13 @@ import { ControlledInput, ControlledInputProps } from '..';
 export interface RadioButtonProps
   extends Omit<ControlledInputProps, 'isIndeterminate'> {}
 
-export const RadioButton = ({
-  testId = 'cf-ui-radio-button',
-  type = 'radio',
-  ...otherProps
-}: RadioButtonProps) => {
-  return <ControlledInput testId={testId} type={type} {...otherProps} />;
+const _RadioButton = (
+  { testId = 'cf-ui-radio-button', ...otherProps }: RadioButtonProps,
+  ref: React.Ref<HTMLDivElement>,
+) => {
+  return (
+    <ControlledInput testId={testId} type="radio" ref={ref} {...otherProps} />
+  );
 };
+
+export const RadioButton = React.forwardRef(_RadioButton);

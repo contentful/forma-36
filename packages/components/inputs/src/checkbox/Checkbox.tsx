@@ -5,10 +5,18 @@ import { ControlledInput, ControlledInputProps } from '..';
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface CheckboxProps extends ControlledInputProps {}
 
-export const Checkbox = ({
-  testId = 'cf-ui-checkbox',
-  type = 'checkbox',
-  ...otherProps
-}: CheckboxProps) => {
-  return <ControlledInput testId={testId} type={type} {...otherProps} />;
+export const _Checkbox = (
+  { testId = 'cf-ui-checkbox', ...otherProps }: CheckboxProps,
+  ref: React.Ref<HTMLDivElement>,
+) => {
+  return (
+    <ControlledInput
+      testId={testId}
+      type="checkbox"
+      ref={ref}
+      {...otherProps}
+    />
+  );
 };
+
+export const Checkbox = React.forwardRef(_Checkbox);
