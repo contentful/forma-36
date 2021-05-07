@@ -47,6 +47,8 @@ export { Note } from '@contentful/f36-note';
 export type { NoteProps } from '@contentful/f36-note';
 export { EmptyState } from '@contentful/f36-empty-state';
 export type { EmptyStateProps } from '@contentful/f36-empty-state';
+export { ControlledInputField } from '@contentful/f36-forms';
+export type { ControlledInputFieldProps } from '@contentful/f36-forms';
 export * from './components/Accordion';
 export * from './components/Asset';
 export * from './components/Autocomplete';

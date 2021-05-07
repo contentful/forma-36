@@ -40,18 +40,18 @@ export const Basic = (args: FormProps) => {
       />
       <FieldGroup>
         <CheckboxField
-          labelText="I agree"
+          label="I agree"
           value="yes"
           helpText="Click if you agree"
           onChange={(e) => setTerms((e.target as HTMLInputElement).value)}
-          checked={agreeTerms === 'yes'}
+          isChecked={agreeTerms === 'yes'}
           id="termsCheckboxYes"
         />
         <CheckboxField
-          labelText="I don't agree"
+          label="I don't agree"
           value="no"
           onChange={(e) => setTerms((e.target as HTMLInputElement).value)}
-          checked={agreeTerms === 'no'}
+          isChecked={agreeTerms === 'no'}
           helpText="Click if you don't agree"
           id="termsCheckboxNo"
         />

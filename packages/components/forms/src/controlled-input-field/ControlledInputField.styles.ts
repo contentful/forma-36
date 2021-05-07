@@ -2,9 +2,6 @@ import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 
 export const styles = {
-  root: css({
-    display: 'inline-flex',
-  }),
   rootOrLabelDisabled: css({
     opacity: 0.7,
     cursor: 'not-allowed',
