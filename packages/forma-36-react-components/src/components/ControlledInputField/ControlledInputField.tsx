@@ -3,8 +3,9 @@ import cn from 'classnames';
 import { ValidationMessage } from '@contentful/f36-validation-message';
 
 import { FormLabel } from '../FormLabel';
-import { HelpText } from '../HelpText';
+
 import { ControlledInput } from '@contentful/f36-inputs';
+import { HelpText } from '@contentful/f36-helptext';
 import styles from './ControlledInputField.css';
 
 export interface ControlledInputFieldProps {

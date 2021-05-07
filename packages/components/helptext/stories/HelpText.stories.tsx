@@ -1,7 +1,8 @@
 import React from 'react';
+import type { Meta } from '@storybook/react/types-6-0';
 
-import { HelpText, HelpTextProps } from './HelpText';
-import { TextLink } from '../TextLink';
+import { HelpText } from '../src/HelpText';
+import type { HelpTextProps } from '../src/HelpText';
 
 export default {
   title: 'Components/HelpText',
@@ -13,21 +14,15 @@ export default {
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
   },
-};
+} as Meta;
 
 interface Args extends HelpTextProps {
   helpText: string;
 }
-export const Basic = ({ helpText, ...args }: Args) => (
+export const Default = ({ helpText, ...args }: Args) => (
   <HelpText {...args}>{helpText}</HelpText>
 );
 
-Basic.args = {
+Default.args = {
   helpText: 'Lorem Ipsum dolor sit amet',
 };
-
-export const WithLink = () => (
-  <HelpText>
-    Some Text and then <TextLink> a link.</TextLink>
-  </HelpText>
-);

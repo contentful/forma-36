@@ -97,6 +97,16 @@ exports[`renders the component 1`] = `
   width: 24px;
 }
 
+.emotion-4 {
+  display: block;
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  color: #606C7C;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+}
+
 <div
   class="FieldGroup"
   data-test-id="cf-ui-field-group"
@@ -145,7 +155,7 @@ exports[`renders the component 1`] = `
           Do you agree?
         </label>
         <p
-          class="HelpText ControlledInputField__help-text"
+          class="ControlledInputField__help-text emotion-4"
           data-test-id="cf-ui-help-text"
         >
           Click if you agree
@@ -197,7 +207,7 @@ exports[`renders the component 1`] = `
           Do you really agree?
         </label>
         <p
-          class="HelpText ControlledInputField__help-text"
+          class="ControlledInputField__help-text emotion-4"
           data-test-id="cf-ui-help-text"
         >
           Click if you really agree
@@ -305,6 +315,16 @@ exports[`renders the component children in a row 1`] = `
   width: 24px;
 }
 
+.emotion-4 {
+  display: block;
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  color: #606C7C;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+}
+
 <div
   class="FieldGroup my-extra-class FieldGroup--row"
   data-test-id="cf-ui-field-group"
@@ -353,7 +373,7 @@ exports[`renders the component children in a row 1`] = `
           Do you agree?
         </label>
         <p
-          class="HelpText ControlledInputField__help-text"
+          class="ControlledInputField__help-text emotion-4"
           data-test-id="cf-ui-help-text"
         >
           Click if you agree
@@ -405,7 +425,7 @@ exports[`renders the component children in a row 1`] = `
           Do you really agree?
         </label>
         <p
-          class="HelpText ControlledInputField__help-text"
+          class="ControlledInputField__help-text emotion-4"
           data-test-id="cf-ui-help-text"
         >
           Click if you really agree
@@ -513,6 +533,16 @@ exports[`renders the component with an additional class name 1`] = `
   width: 24px;
 }
 
+.emotion-4 {
+  display: block;
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  color: #606C7C;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+}
+
 <div
   class="FieldGroup my-extra-class"
   data-test-id="cf-ui-field-group"
@@ -561,7 +591,7 @@ exports[`renders the component with an additional class name 1`] = `
           Do you agree?
         </label>
         <p
-          class="HelpText ControlledInputField__help-text"
+          class="ControlledInputField__help-text emotion-4"
           data-test-id="cf-ui-help-text"
         >
           Click if you agree
@@ -613,7 +643,7 @@ exports[`renders the component with an additional class name 1`] = `
           Do you really agree?
         </label>
         <p
-          class="HelpText ControlledInputField__help-text"
+          class="ControlledInputField__help-text emotion-4"
           data-test-id="cf-ui-help-text"
         >
           Click if you really agree
