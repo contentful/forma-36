@@ -1,7 +1,7 @@
 import React from 'react';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
-import { Checkbox, CheckboxProps } from './Checkbox';
+import { Checkbox, CheckboxProps } from '../src';
 
 export default {
   title: 'Form Elements/Checkbox',

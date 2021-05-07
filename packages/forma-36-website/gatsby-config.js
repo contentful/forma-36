@@ -190,8 +190,12 @@ module.exports = {
             link: '',
             menuLinks: [
               {
+                name: 'ControlledInput',
+                link: '/components/inputs/src/controlled-input/',
+              },
+              {
                 name: 'Checkbox',
-                link: '/components/checkbox/',
+                link: '/components/inputs/src/checkbox/',
               },
               {
                 name: 'CheckboxField',
@@ -207,7 +211,7 @@ module.exports = {
               },
               {
                 name: 'RadioButton',
-                link: '/components/radio-button/',
+                link: '/components/inputs/src/radio-button/',
               },
               {
                 name: 'RadioButtonField',
