@@ -1,6 +1,6 @@
-import { cx, css } from 'emotion';
+import { cx } from 'emotion';
 import React from 'react';
-import tokens from '@contentful/f36-tokens';
+import { styles } from './HelpText.styles';
 import {
   Box,
   CommonProps,
@@ -32,17 +32,7 @@ const _HelpText: PolymorphicComponentWithRef<
       as={DEFAULT_TAG}
       data-test-id={testId}
       ref={ref}
-      className={cx(
-        css({
-          margin: 0,
-          fontFamily: tokens.fontStackPrimary,
-          color: tokens.colorTextLight,
-          fontSize: tokens.fontSizeM,
-          lineHeight: tokens.lineHeightDefault,
-          textRendering: 'optimizeLegibility',
-        }),
-        className,
-      )}
+      className={cx(styles.helpText, className)}
       {...otherProps}
     >
       {children}
