@@ -92,8 +92,8 @@ exports[`renders the component 1`] = `
   height: 1rem;
   min-height: 1rem;
   overflow: visible;
-  margin-right: 0.5rem !important;
-  margin-top: 0.25rem !important;
+  margin-right: 0.5rem;
+  margin-top: 0.25rem;
 }
 
 <div
@@ -220,8 +220,8 @@ exports[`renders the component with an additional class name 1`] = `
   height: 1rem;
   min-height: 1rem;
   overflow: visible;
-  margin-right: 0.5rem !important;
-  margin-top: 0.25rem !important;
+  margin-right: 0.5rem;
+  margin-top: 0.25rem;
 }
 
 <div
