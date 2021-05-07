@@ -1,0 +1,82 @@
+---
+title: 'ControlledInputField'
+type: 'component'
+status: 'stable'
+slug: /components/inputs/src/controlled-input-field/
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/inputs/src/controlled-input-field'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-controlled-input-field--overview'
+---
+
+ControlledInputField is used to show a controlled checkbox or radio button together with a descriptive text, a validation message and a help text.
+
+## Table of contents
+
+- [Table of contents](#table-of-contents)
+- [How to use ControlledInputField](#how-to-use-controlledinputfield)
+- [Component variations](#component-variations)
+- [Content recommendations](#content-recommendations)
+- [Accessibility](#accessibility)
+- [Props](#props)
+
+## How to use ControlledInputField
+
+- You only need to define a suitable `id` and `label` to get a basic controlled input field.
+- Create a checkbox or radio button by defining the `inputType`.
+- All common states (disabled, required, checked, indeterminate) are functionally and visually supported.
+- Control the current input value by setting `isChecked`.
+- Listen to native element events via `onChange`. More event handlers can be attached by defining them via `inputProps` (`onBlur` and `onFocus`) or `inputProps.inputProps`.
+
+## Component variations
+
+- **Checkbox** - render a basic checkbox node. Visit the documentation of CheckboxField to see all variations.
+
+```jsx
+<>
+  <ControlledInputField
+    id="my-check"
+    inputType="checkbox"
+    label="Subscribe to newsletter"
+    name="newsletter-subscribe"
+  />
+</>
+```
+
+- **Radio button** - render a basic radio button node. Visit the documentation of RadioButtonField to see all variations.
+
+```jsx
+<>
+  <ControlledInputField
+    id="pill-decision-1"
+    inputType="radio"
+    label="Which pill?"
+    name="pill-decision"
+    value="Blue pill"
+  />
+  <ControlledInputField
+    id="pill-decision-2"
+    inputType="radio"
+    label="Which pill?"
+    name="pill-decision"
+    value="Red pill"
+  />
+</>
+```
+
+## Content recommendations
+
+- Try to use labels with short, scannable text.
+- Prefer using the components CheckboxField or RadioButtonField instead of directly using the ControlledInputField.
+
+## Accessibility
+
+- The `label` will be rendered as `aria-label` of the input node and also rendered as plain text next to the input element.
+- Use a unique `id`.
+- Explicit label nodes are rendered for showing a custom check mark and the label text. According to [w3](https://www.w3.org/WAI/tutorials/forms/labels/#associating-labels-implicitly), explicit labels provide a better support for assistive technologies.
+
+## Props
+
+```jsx
+import { Props } from '@contentful/f36-docs-utils';
+
+<Props of="ControlledInputField" />;
+```

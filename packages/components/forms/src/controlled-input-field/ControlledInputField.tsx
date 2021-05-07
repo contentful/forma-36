@@ -84,8 +84,8 @@ export const _ControlledInputField = (
         isDisabled={isDisabled}
         value={value}
         onChange={onChange}
-        className={inputClassNames}
         {...inputProps}
+        className={inputClassNames}
       />
       <div>
         <Label
