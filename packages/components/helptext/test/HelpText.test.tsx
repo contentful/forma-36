@@ -5,9 +5,7 @@ import { HelpText } from '../src/HelpText';
 
 describe('HelpText', function () {
   it('renders the component', () => {
-    const { container } = render(
-      <HelpText>Lorem Ipsum dolor sit amet</HelpText>,
-    );
+    const { container } = render(<HelpText>Lorem Ipsum dolor sit</HelpText>);
 
     expect(container.firstChild).toMatchSnapshot();
   });
