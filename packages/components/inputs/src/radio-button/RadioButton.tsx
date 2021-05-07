@@ -2,24 +2,16 @@ import React from 'react';
 import { ControlledInput, ControlledInputProps } from '..';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface RadioButtonProps extends ControlledInputProps {}
+export interface RadioButtonProps
+  extends Omit<ControlledInputProps, 'isIndeterminate'> {}
 
-export const RadioButton = ({
-  disabled = false,
-  required = false,
-  testId = 'cf-ui-radio-button',
-  type = 'radio',
-  willBlurOnEsc = true,
-  ...otherProps
-}: RadioButtonProps) => {
+const _RadioButton = (
+  { testId = 'cf-ui-radio-button', ...otherProps }: RadioButtonProps,
+  ref: React.Ref<HTMLDivElement>,
+) => {
   return (
-    <ControlledInput
-      {...otherProps}
-      disabled={disabled}
-      required={required}
-      data-test-id={testId}
-      type={type}
-      willBlurOnEsc={willBlurOnEsc}
-    />
+    <ControlledInput testId={testId} type="radio" ref={ref} {...otherProps} />
   );
 };
+
+export const RadioButton = React.forwardRef(_RadioButton);

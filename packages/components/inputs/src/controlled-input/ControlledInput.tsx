@@ -16,40 +16,40 @@ import { Box, BoxProps } from '@contentful/f36-core';
 
 export interface ControlledInputProps extends Omit<BoxProps<'div'>, 'ref'> {
   id?: string;
-  required?: boolean;
-  labelText: string;
-  checked?: boolean;
+  isRequired?: boolean;
+  label: string;
+  isChecked?: boolean;
   onChange?: EventHandler<ChangeEvent<HTMLInputElement>>;
   name?: string;
   onBlur?: EventHandler<FocusEvent<HTMLInputElement>>;
   onFocus?: EventHandler<FocusEvent<HTMLInputElement>>;
   value?: string;
-  disabled?: boolean;
+  isDisabled?: boolean;
   type?: 'checkbox' | 'radio';
   className?: string;
   testId?: string;
-  willBlurOnEsc?: boolean;
-  indeterminate?: boolean;
+  canBlurOnEsc?: boolean;
+  isIndeterminate?: boolean;
   inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
 }
 
 const _ControlledInput = (
   {
-    checked,
+    isChecked,
     className,
-    disabled = false,
+    isDisabled = false,
     id,
-    labelText,
+    label,
     name,
     onBlur,
     onChange,
     onFocus,
-    required = false,
+    isRequired = false,
     testId = 'cf-ui-controlled-input',
     type = 'checkbox',
     value,
-    willBlurOnEsc = true,
-    indeterminate,
+    canBlurOnEsc = true,
+    isIndeterminate,
     inputProps,
     ...otherProps
   }: ControlledInputProps,
@@ -57,48 +57,52 @@ const _ControlledInput = (
 ) => {
   const inputRef = useRef(null);
 
-  const inputClassnames = cx(styles.input, {
-    [styles.inputRadioButton]: type === 'radio',
-    [styles.inputCheckbox]: type === 'checkbox',
-    [styles.inputDisabled]: disabled,
-  });
+  const inputClassnames = cx(
+    styles.input,
+    {
+      [styles.inputRadioButton]: type === 'radio',
+      [styles.inputCheckbox]: type === 'checkbox',
+      [styles.inputDisabled]: isDisabled,
+    },
+    inputProps?.className,
+  );
 
   const wrapperClassnames = cx(styles.container, className);
 
-  const handleKeyDown = useCallback(
+  const handleOnKeyDown = useCallback(
     (e: KeyboardEvent<HTMLInputElement>) => {
       e.persist();
-
-      if (e.nativeEvent.code === 'Escape' && willBlurOnEsc) {
+      if (e.nativeEvent.code === 'Escape' && canBlurOnEsc) {
         e.currentTarget.blur();
       }
     },
-    [willBlurOnEsc],
+    [canBlurOnEsc],
   );
 
   useEffect(() => {
-    inputRef.current.indeterminate = indeterminate;
-  }, [indeterminate]);
+    inputRef.current.indeterminate = isIndeterminate;
+  }, [isIndeterminate]);
 
   const iconProps: IconProps = {
     size: 'medium',
-    variant: disabled ? 'secondary' : 'white',
+    variant: isDisabled ? 'secondary' : 'white',
   };
 
   return (
     <Box
       as="div"
       display="inline-block"
-      className={wrapperClassnames}
       ref={ref}
       testId={testId}
       {...otherProps}
+      className={wrapperClassnames}
     >
       <input
+        {...inputProps}
         className={inputClassnames}
         value={value}
         name={name}
-        checked={checked}
+        checked={isChecked}
         type={type}
         ref={inputRef}
         onChange={(e) => {
@@ -116,12 +120,11 @@ const _ControlledInput = (
             onFocus(e);
           }
         }}
-        aria-label={labelText}
+        aria-label={label}
         id={id}
-        required={required}
-        disabled={disabled}
-        onKeyDown={handleKeyDown}
-        {...inputProps}
+        required={isRequired}
+        disabled={isDisabled}
+        onKeyDown={handleOnKeyDown}
       />
       {type === 'radio' ? (
         // eslint-disable-next-line jsx-a11y/label-has-associated-control
@@ -131,7 +134,7 @@ const _ControlledInput = (
         />
       ) : (
         <label className={cx(styles.ghost, styles.ghostCheckbox)} htmlFor={id}>
-          {indeterminate ? <Minus {...iconProps} /> : <Done {...iconProps} />}
+          {isIndeterminate ? <Minus {...iconProps} /> : <Done {...iconProps} />}
         </label>
       )}
     </Box>

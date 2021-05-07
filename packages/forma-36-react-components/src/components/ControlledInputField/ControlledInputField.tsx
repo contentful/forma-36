@@ -57,12 +57,12 @@ export const ControlledInputField = ({
     <div data-test-id={testId} className={classNames} {...otherProps}>
       <ControlledInput
         id={id}
-        labelText={labelText}
+        label={labelText}
         type={inputType}
         name={name}
-        required={required}
-        checked={checked}
-        disabled={disabled}
+        isRequired={required}
+        isChecked={checked}
+        isDisabled={disabled}
         value={value}
         onChange={onChange}
         className={styles.ControlledInputField__input}
