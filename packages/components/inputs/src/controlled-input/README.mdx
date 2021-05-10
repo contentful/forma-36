@@ -31,32 +31,49 @@ ControlledInput is used to show a controlled checkbox or radio button.
 - **Checkbox** - render a basic checkbox node. Visit the documentation of Checkbox to see all variations.
 
 ```jsx
-<>
-  <ControlledInput
-    type="checkbox"
-    label="Subscribe to newsletter"
-    name="newsletter-subscribe"
-  />
-</>
+// import {ControlledInput} from '@contentful/f36-inputs';
+
+<ControlledInput
+  type="checkbox"
+  label="Subscribe to newsletter"
+  name="newsletter-subscribe"
+/>
 ```
 
 - **Radio button** - render a basic radio button node. Visit the documentation of RadioButton to see all variations.
 
 ```jsx
-<>
-  <ControlledInput
-    type="radio"
-    label="Which pill?"
-    name="pill-decision"
-    value="Blue pill"
-  />
-  <ControlledInput
-    type="radio"
-    label="Which pill?"
-    name="pill-decision"
-    value="Red pill"
-  />
-</>
+// import {ControlledInput} from '@contentful/f36-inputs';
+function RadioButtonExample() {
+  const [activeOption, setActiveOption] = React.useState('');
+
+  return (
+    <Flex flexDirection="column">
+      <ControlledInput
+        id="pill-decision-1"
+        type="radio"
+        label="Take the blue pill"
+        name="pill-decision"
+        value="blue"
+        isChecked={activeOption === 'blue'}
+        onChange={(e) => {
+          setActiveOption(e.target.value);
+        }}
+      />
+      <ControlledInput
+        id="pill-decision-2"
+        type="radio"
+        label="Take the red pill"
+        name="pill-decision"
+        value="red"
+        isChecked={activeOption === 'red'}
+        onChange={(e) => {
+          setActiveOption(e.target.value);
+        }}
+      />
+    </Flex>
+  );
+}
 ```
 
 ## Content recommendations

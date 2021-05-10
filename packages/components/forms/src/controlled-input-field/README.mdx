@@ -31,35 +31,50 @@ ControlledInputField is used to show a controlled checkbox or radio button toget
 - **Checkbox** - render a basic checkbox node. Visit the documentation of CheckboxField to see all variations.
 
 ```jsx
-<>
-  <ControlledInputField
-    id="my-check"
-    inputType="checkbox"
-    label="Subscribe to newsletter"
-    name="newsletter-subscribe"
-  />
-</>
+// import {ControlledInputField} from '@contentful/f36-forms';
+
+<ControlledInputField
+  id="my-check"
+  inputType="checkbox"
+  label="Subscribe to newsletter"
+  name="newsletter-subscribe"
+/>
 ```
 
 - **Radio button** - render a basic radio button node. Visit the documentation of RadioButtonField to see all variations.
 
 ```jsx
-<>
-  <ControlledInputField
-    id="pill-decision-1"
-    inputType="radio"
-    label="Which pill?"
-    name="pill-decision"
-    value="Blue pill"
-  />
-  <ControlledInputField
-    id="pill-decision-2"
-    inputType="radio"
-    label="Which pill?"
-    name="pill-decision"
-    value="Red pill"
-  />
-</>
+// import {ControlledInputField} from '@contentful/f36-forms';
+function RadioButtonFieldExample() {
+  const [activeOption, setActiveOption] = React.useState('');
+
+  return (
+    <Flex flexDirection="column">
+      <ControlledInputField
+        id="pill-decision-1"
+        inputType="radio"
+        label="Take the blue pill"
+        name="pill-decision"
+        value="blue"
+        isChecked={activeOption === 'blue'}
+        onChange={(e) => {
+          setActiveOption(e.target.value);
+        }}
+      />
+      <ControlledInputField
+        id="pill-decision-2"
+        inputType="radio"
+        label="Take the red pill"
+        name="pill-decision"
+        value="red"
+        isChecked={activeOption === 'red'}
+        onChange={(e) => {
+          setActiveOption(e.target.value);
+        }}
+      />
+    </Flex>
+  );
+}
 ```
 
 ## Content recommendations

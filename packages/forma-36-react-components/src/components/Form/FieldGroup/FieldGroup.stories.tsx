@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import { CheckboxField } from '@contentful/f36-forms';
 
-import { CheckboxField } from '../../CheckboxField';
 import { FieldGroup } from './FieldGroup';
 
 export default {

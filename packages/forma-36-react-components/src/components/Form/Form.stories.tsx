@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
+import { CheckboxField } from '@contentful/f36-forms';
 
 import { Form, FormProps } from './Form';
 import { FieldGroup } from './FieldGroup/FieldGroup';
 import { Button } from '../Button';
 import { TextField } from '../TextField';
-import { CheckboxField } from '../CheckboxField';
 
 export default {
   title: 'Form Elements/Form',
