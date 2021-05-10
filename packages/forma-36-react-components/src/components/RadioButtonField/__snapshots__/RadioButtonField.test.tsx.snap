@@ -117,6 +117,7 @@ exports[`renders the component 1`] = `
       aria-label="radio button field"
       class="emotion-0"
       id="radio-button"
+      style="color: red;"
       type="radio"
       value=""
     />
