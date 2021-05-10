@@ -1,25 +1,23 @@
 import React from 'react';
-import { ControlledInputField } from '@contentful/f36-forms';
-import type { ControlledInputFieldProps } from '@contentful/f36-forms';
+import { ControlledInputField } from '..';
+import type { ControlledInputFieldProps } from '..';
 
 export type CheckboxFieldProps = Omit<
   ControlledInputFieldProps,
   'inputType' | 'ref'
 >;
 
-export const CheckboxField = ({
-  isChecked = false,
-  isLabelLight = false,
+export const _CheckboxField = ({
   testId = 'cf-ui-checkbox-field',
   ...otherProps
 }: CheckboxFieldProps) => {
   return (
     <ControlledInputField
-      isChecked={isChecked}
-      isLabelLight={isLabelLight}
       testId={testId}
       {...otherProps}
       inputType="checkbox"
     />
   );
 };
+
+export const CheckboxField = React.forwardRef(_CheckboxField);
