@@ -31,6 +31,7 @@ export { Clock } from './Clock';
 export { ClockTrimmed } from './ClockTrimmed';
 export { Close } from './Close';
 export { CloseTrimmed } from './CloseTrimmed';
+export { CloudUpload } from './CloudUpload';
 export { Code } from './Code';
 export { CodeTrimmed } from './CodeTrimmed';
 export { Copy } from './Copy';
