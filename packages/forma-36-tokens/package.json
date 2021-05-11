@@ -1,7 +1,7 @@
 {
   "name": "@contentful/forma-36-tokens",
   "description": "Forma 36 Tokens",
-  "version": "0.10.1",
+  "version": "0.10.2",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
@@ -12,7 +12,7 @@
   "devDependencies": {
     "fs-extra": "^7.0.1",
     "globby": "^10.0.1",
-    "lodash": "4.17.19"
+    "lodash": "4.17.21"
   },
   "scripts": {
     "build:clean": "rm -rf dist",
