@@ -31,8 +31,8 @@
     "@testing-library/jest-dom": "5.11.6",
     "@testing-library/react": "11.2.2",
     "@types/is-hotkey": "^0.1.1",
-    "@types/jest": "25.2.3",
-    "@types/lodash.orderby": "^4.6.6"
+    "@types/lodash-es": "^4.17.4",
+    "@types/jest": "25.2.3"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",
@@ -40,6 +40,6 @@
     "date-fns": "^2.9.0",
     "emotion": "^10.0.17",
     "is-hotkey": "^0.1.6",
-    "lodash.orderby": "^4.6.0"
+    "lodash-es": "4.17.21"
   }
 }

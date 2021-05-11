@@ -10,7 +10,7 @@ import React, {
   ChangeEvent,
 } from 'react';
 import isHotkey from 'is-hotkey';
-import orderBy from 'lodash.orderby';
+import { orderBy } from 'lodash-es';
 import {
   format,
   addHours,
