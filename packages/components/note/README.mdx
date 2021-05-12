@@ -5,6 +5,7 @@ status: 'stable'
 slug: /components/note/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/Note'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-note--default'
+typescript: ./src/Note.tsx
 ---
 
 Notes provide context and information about a situation or action. Notes draw the users attention to a circumstance relevant to an action they're performing or a screen they're accessing. Don't confuse notes with notifications, which appear as feedback after a user has performed an action.
@@ -15,7 +16,7 @@ Notes provide context and information about a situation or action. Notes draw th
 - [Component variations](#component-variations)
 - [Code examples](#code-examples)
 - [Content recommendations](#content-recommendations)
-- [Accessibility](#accessibility)
+- [Props](#props)
 
 ## How to use Note
 
@@ -78,6 +79,8 @@ The Note component can be configured in a number of different ways. Learn when t
 - To add additional context, link out to documentation
 - Do not preface the instructions with introductory text, such as "please"
 
-## Accessibility
+## Props
 
-Missing
+import { Props } from '@contentful/f36-docs-utils';
+
+<Props of="Note" />

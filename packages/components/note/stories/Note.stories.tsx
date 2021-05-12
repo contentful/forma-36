@@ -1,8 +1,9 @@
 import React from 'react';
-import { SectionHeading } from '@contentful/f36-typography';
-import { Note, NoteProps } from './Note';
-import { TextLink } from '../TextLink';
+import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Flex } from '@contentful/f36-core';
+import { SectionHeading } from '@contentful/f36-typography';
+import { Note } from '../src/Note';
+import type { NoteProps } from '../src/Note';
 
 export default {
   title: 'Components/Note',
@@ -14,18 +15,18 @@ export default {
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
   },
-};
+} as Meta;
 
 interface Args extends NoteProps {
   noteText?: string;
 }
 
-export const basic = ({ noteText, ...args }: Args) => (
+export const basic: Story<any> = ({ noteText, ...args }: Args) => (
   <Note {...args}>{noteText}</Note>
 );
 
 basic.args = {
-  noteType: 'primary',
+  variant: 'primary',
   noteText:
     'A piece of information that is relevant to the context the user is currently in',
 };
@@ -52,14 +53,14 @@ export const overview = () => (
       <SectionHeading as="h3">Note negative</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingM">
-      <Note noteType={'negative'}>
+      <Note variant={'negative'}>
         A piece of information that is relevant to the context the user is
         currently in.
       </Note>
     </Flex>
     <Flex marginBottom="spacingM">
       <Note
-        noteType={'negative'}
+        variant={'negative'}
         title="Short, yet succint title"
         hasCloseButton
       >
@@ -70,17 +71,13 @@ export const overview = () => (
       <SectionHeading as="h3">Note warning</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingM">
-      <Note noteType={'warning'}>
+      <Note variant={'warning'}>
         A piece of information that is relevant to the context the user is
         currently in.
       </Note>
     </Flex>
     <Flex marginBottom="spacingM">
-      <Note
-        noteType={'warning'}
-        title="Short, yet succint title"
-        hasCloseButton
-      >
+      <Note variant={'warning'} title="Short, yet succint title" hasCloseButton>
         A piece of information that is relevant to the context the user is
         currently in. If you like it then you should put{' '}
         <a href="https://contentful.com">a link</a> in it.
@@ -90,17 +87,20 @@ export const overview = () => (
       <SectionHeading as="h3">Note positive</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingM">
-      <Note noteType={'positive'}>
+      <Note variant={'positive'}>
         A piece of information that is relevant to the context the user is
         currently in.
       </Note>
     </Flex>
-    <Note noteType={'positive'} title="Short, yet succint title" hasCloseButton>
-      <Flex marginBottom="spacingXs">
+    <Flex marginBottom="spacingM">
+      <Note
+        variant={'positive'}
+        title="Short, yet succint title"
+        hasCloseButton
+      >
         Make sure to immediately copy your new signing secret. You will not be
         able to see it again.
-      </Flex>
-      <TextLink>Dismiss</TextLink>
-    </Note>
+      </Note>
+    </Flex>
   </Flex>
 );

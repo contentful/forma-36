@@ -1,0 +1,290 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Note renders the component 1`] = `
+.emotion-1 {
+  margin-right: 0.75rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-2 {
+  width: 100%;
+  line-height: 1.25rem;
+}
+
+.emotion-4 {
+  padding: 1rem;
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 0.875rem;
+  color: #283848;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  border-radius: 6px;
+  padding-right: 1rem;
+  border: 1px solid;
+  background-color: #EDF4FC;
+  border-color: #84B9F5;
+}
+
+.emotion-4 a {
+  color: #174E8C;
+}
+
+.emotion-3 {
+  margin-left: 0.5rem;
+  fill: currentColor;
+  margin-right: unset;
+}
+
+.emotion-0 {
+  display: inline-block;
+  fill: #2D64B3;
+  height: 18px;
+  width: 18px;
+}
+
+<div
+  class="emotion-4"
+  data-test-id="cf-ui-note"
+>
+  <div
+    class="emotion-1"
+  >
+    <svg
+      class="emotion-0"
+      data-test-id="cf-ui-icon"
+      height="1em"
+      viewBox="0 0 24 24"
+      width="1em"
+    >
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+      <path
+        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+      />
+    </svg>
+  </div>
+  <div
+    class="emotion-3"
+  >
+    <div
+      class="emotion-2"
+    >
+      A piece of information that is relevant to the context the user is currently in.
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Note renders the component with an additional class name 1`] = `
+.emotion-1 {
+  margin-right: 0.75rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-2 {
+  width: 100%;
+  line-height: 1.25rem;
+}
+
+.emotion-4 {
+  padding: 1rem;
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 0.875rem;
+  color: #283848;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  border-radius: 6px;
+  padding-right: 1rem;
+  border: 1px solid;
+  background-color: #EDF4FC;
+  border-color: #84B9F5;
+}
+
+.emotion-4 a {
+  color: #174E8C;
+}
+
+.emotion-3 {
+  margin-left: 0.5rem;
+  fill: currentColor;
+  margin-right: unset;
+}
+
+.emotion-0 {
+  display: inline-block;
+  fill: #2D64B3;
+  height: 18px;
+  width: 18px;
+}
+
+<div
+  class="emotion-4 my-extra-class"
+  data-test-id="cf-ui-note"
+>
+  <div
+    class="emotion-1"
+  >
+    <svg
+      class="emotion-0"
+      data-test-id="cf-ui-icon"
+      height="1em"
+      viewBox="0 0 24 24"
+      width="1em"
+    >
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+      <path
+        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+      />
+    </svg>
+  </div>
+  <div
+    class="emotion-3"
+  >
+    <div
+      class="emotion-2"
+    >
+      A piece of information that is relevant to the context the user is currently in.
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Note renders the component with title 1`] = `
+.emotion-2 {
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #192532;
+  line-height: 1.5rem;
+}
+
+.emotion-1 {
+  margin-right: 0.75rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-3 {
+  width: 100%;
+  line-height: 1.25rem;
+}
+
+.emotion-4 {
+  margin-left: 0.5rem;
+  fill: currentColor;
+  margin-right: unset;
+}
+
+.emotion-5 {
+  padding: 1rem;
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 0.875rem;
+  color: #283848;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+  border-radius: 6px;
+  padding-right: 1rem;
+  border: 1px solid;
+  background-color: #D9F2E4;
+  border-color: #8AD6B1;
+}
+
+.emotion-5 a {
+  color: #1A593E;
+}
+
+.emotion-0 {
+  display: inline-block;
+  fill: #16875D;
+  height: 24px;
+  width: 24px;
+}
+
+<div
+  class="emotion-5"
+  data-test-id="cf-ui-note"
+>
+  <div
+    class="emotion-1"
+  >
+    <svg
+      class="emotion-0"
+      data-test-id="cf-ui-icon"
+      height="1em"
+      viewBox="0 0 24 24"
+      width="1em"
+    >
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+      <path
+        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+      />
+    </svg>
+  </div>
+  <div
+    class="emotion-4"
+  >
+    <div
+      class="emotion-2"
+    >
+      Positive title
+    </div>
+    <div
+      class="emotion-3"
+    >
+      A piece of information that is relevant to the context the user is currently in.
+    </div>
+  </div>
+</div>
+`;
