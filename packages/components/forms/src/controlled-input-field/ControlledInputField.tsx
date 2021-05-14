@@ -6,7 +6,7 @@ import { ControlledInput } from '@contentful/f36-inputs';
 import { HelpText } from '@contentful/f36-helptext';
 import type { ControlledInputProps } from '@contentful/f36-inputs';
 import { styles } from './ControlledInputField.styles';
-import { Box, BoxProps } from '@contentful/f36-core';
+import { Box, BoxProps, CommonProps } from '@contentful/f36-core';
 
 export interface ControlledInputFieldProps extends BoxProps<'div'> {
   id: string;
@@ -27,6 +27,7 @@ export interface ControlledInputFieldProps extends BoxProps<'div'> {
   className?: string;
   testId?: string;
   children?: ReactNode;
+  ref: React.Ref<HTMLDivElement>;
 }
 
 export const _ControlledInputField = (
