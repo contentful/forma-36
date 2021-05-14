@@ -5,7 +5,7 @@ import type { ControlledInputFieldProps } from '@contentful/f36-forms';
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export type RadioButtonFieldProps = Omit<
   ControlledInputFieldProps,
-  'inputType'
+  'inputType' | 'ref'
 >;
 
 export const RadioButtonField = ({
