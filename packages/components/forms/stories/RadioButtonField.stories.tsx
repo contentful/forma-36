@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { SectionHeading } from '@contentful/f36-typography';
-import { RadioButtonField, RadioButtonFieldProps } from './RadioButtonField';
-import { FieldGroup } from '../Form';
+import {
+  RadioButtonField,
+  RadioButtonFieldProps,
+} from '../src/radio-button-field';
+import { FieldGroup } from '@contentful/f36-components';
 import { Flex } from '@contentful/f36-core';
 
 export default {
@@ -23,8 +26,8 @@ export const Basic = (args: RadioButtonFieldProps) => {
       <RadioButtonField
         {...args}
         name="someOption1"
-        isChecked={activeOption === 'yes'}
         value="yes"
+        isChecked={activeOption === 'yes'}
         onChange={(e) => {
           setActiveOption((e.target as HTMLInputElement).value);
         }}

@@ -11,6 +11,7 @@ export const styles = {
     marginTop: tokens.spacing2Xs,
   }),
   label: css({
+    fontWeight: tokens.fontWeightMedium,
     marginBottom: 0,
   }),
   labelLight: css({
