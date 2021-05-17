@@ -88,7 +88,7 @@ const IndexPage = () => (
       >
         We appreciate your contributions. For more details about how to
         contribute to a package, see the README of the corresponding package on
-        Github
+        GitHub
       </Paragraph>
       <Button
         href="https://github.com/contentful/forma-36"
