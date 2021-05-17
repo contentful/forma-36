@@ -85,4 +85,9 @@ export const styles = {
     width: '100%',
     lineHeight: tokens.lineHeightM,
   }),
+  close: css({
+    border: 0,
+    background: 'transparent',
+    boxShadow: 'unset',
+  }),
 };

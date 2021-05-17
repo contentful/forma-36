@@ -3,7 +3,7 @@ import React from 'react';
 import { Primitive } from '@contentful/f36-core';
 import type { CommonProps, ComponentVariant } from '@contentful/f36-core';
 import { styles } from './Note.styles';
-import { IconButton } from '@contentful/f36-components';
+import { Button } from '@contentful/f36-button';
 import {
   CheckCircle,
   Close,
@@ -78,9 +78,9 @@ const _Note = (props: NoteProps, ref) => {
         <div className={styles.content}>{children}</div>
       </div>
       {hasCloseButton && (
-        <IconButton
-          buttonType="secondary"
-          iconProps={{ as: Close }}
+        <Button
+          variant="secondary"
+          icon={Close}
           onClick={() => {
             if (onClose) {
               onClose();
@@ -88,6 +88,7 @@ const _Note = (props: NoteProps, ref) => {
           }}
           testId={`${testId}-close`}
           label="Dismiss"
+          className={styles.close}
         />
       )}
     </Primitive>
