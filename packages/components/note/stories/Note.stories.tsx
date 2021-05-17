@@ -3,7 +3,6 @@ import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 import { Note } from '../src/Note';
-import type { NoteProps } from '../src/Note';
 
 export default {
   title: 'Components/Note',
@@ -17,17 +16,13 @@ export default {
   },
 } as Meta;
 
-interface Args extends NoteProps {
-  noteText?: string;
-}
-
-export const basic: Story<any> = ({ noteText, ...args }) => (
-  <Note {...args}>{noteText}</Note>
+export const basic: Story<any> = ({ children, ...args }) => (
+  <Note {...args}>{children}</Note>
 );
 
 basic.args = {
   variant: 'primary',
-  noteText:
+  children:
     'A piece of information that is relevant to the context the user is currently in',
 };
 
