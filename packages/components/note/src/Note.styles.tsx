@@ -68,8 +68,6 @@ export const styles = {
     fontWeight: tokens.fontWeightMedium,
     fontSize: tokens.fontSizeL,
     marginBottom: tokens.spacingXs,
-    color: tokens.colorTextDark,
-    lineHeight: tokens.lineHeightL,
   }),
   icon: css({
     marginRight: tokens.spacingS,
@@ -83,7 +81,6 @@ export const styles = {
     }),
   content: css({
     width: '100%',
-    lineHeight: tokens.lineHeightM,
   }),
   close: css({
     border: 0,

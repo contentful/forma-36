@@ -4,6 +4,7 @@ import { Primitive } from '@contentful/f36-core';
 import type { CommonProps, ComponentVariant } from '@contentful/f36-core';
 import { styles } from './Note.styles';
 import { Button } from '@contentful/f36-button';
+import { Heading, Paragraph } from '@contentful/f36-typography';
 import {
   CheckCircle,
   Close,
@@ -63,7 +64,7 @@ const _Note = (props: NoteProps, ref) => {
 
   return (
     <Primitive
-      as="div"
+      as="article"
       style={style}
       className={cx(styles.note({ variant, hasCloseButton }), className)}
       testId={testId}
@@ -74,8 +75,12 @@ const _Note = (props: NoteProps, ref) => {
         <Icon variant={variant} size={title ? 'medium' : 'small'} />
       </div>
       <div className={styles.info({ hasCloseButton })}>
-        {title && <div className={styles.title}>{title}</div>}
-        <div className={styles.content}>{children}</div>
+        {title && (
+          <Heading as="h2" className={styles.title}>
+            {title}
+          </Heading>
+        )}
+        <Paragraph className={styles.content}>{children}</Paragraph>
       </div>
       {hasCloseButton && (
         <Button
