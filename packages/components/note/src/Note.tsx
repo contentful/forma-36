@@ -3,7 +3,7 @@ import React from 'react';
 import { Primitive } from '@contentful/f36-core';
 import type { CommonProps, ComponentVariant } from '@contentful/f36-core';
 import { styles } from './Note.styles';
-import { IconButton } from '../../../forma-36-react-components/src/components/IconButton';
+import { IconButton } from '@contentful/f36-components';
 import {
   CheckCircle,
   Close,
