@@ -86,7 +86,7 @@ const _Note = (props: NoteProps, ref) => {
               onClose();
             }
           }}
-          testId="cf-ui-note-close"
+          testId={`${testId}-close`}
           label="Dismiss"
         />
       )}

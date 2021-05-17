@@ -21,7 +21,7 @@ interface Args extends NoteProps {
   noteText?: string;
 }
 
-export const basic: Story<any> = ({ noteText, ...args }: Args) => (
+export const basic: Story<any> = ({ noteText, ...args }) => (
   <Note {...args}>{noteText}</Note>
 );
 
@@ -53,17 +53,13 @@ export const overview = () => (
       <SectionHeading as="h3">Note negative</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingM">
-      <Note variant={'negative'}>
+      <Note variant="negative">
         A piece of information that is relevant to the context the user is
         currently in.
       </Note>
     </Flex>
     <Flex marginBottom="spacingM">
-      <Note
-        variant={'negative'}
-        title="Short, yet succint title"
-        hasCloseButton
-      >
+      <Note variant="negative" title="Short, yet succint title" hasCloseButton>
         Something went wrong, apparently. Please try again.{' '}
       </Note>
     </Flex>
@@ -71,13 +67,13 @@ export const overview = () => (
       <SectionHeading as="h3">Note warning</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingM">
-      <Note variant={'warning'}>
+      <Note variant="warning">
         A piece of information that is relevant to the context the user is
         currently in.
       </Note>
     </Flex>
     <Flex marginBottom="spacingM">
-      <Note variant={'warning'} title="Short, yet succint title" hasCloseButton>
+      <Note variant="warning" title="Short, yet succint title" hasCloseButton>
         A piece of information that is relevant to the context the user is
         currently in. If you like it then you should put{' '}
         <a href="https://contentful.com">a link</a> in it.
@@ -87,17 +83,13 @@ export const overview = () => (
       <SectionHeading as="h3">Note positive</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingM">
-      <Note variant={'positive'}>
+      <Note variant="positive">
         A piece of information that is relevant to the context the user is
         currently in.
       </Note>
     </Flex>
     <Flex marginBottom="spacingM">
-      <Note
-        variant={'positive'}
-        title="Short, yet succint title"
-        hasCloseButton
-      >
+      <Note variant="positive" title="Short, yet succint title" hasCloseButton>
         Make sure to immediately copy your new signing secret. You will not be
         able to see it again.
       </Note>
