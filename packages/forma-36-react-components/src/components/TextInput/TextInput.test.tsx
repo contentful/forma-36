@@ -5,14 +5,21 @@ import { axe } from '../../utils/axeHelper';
 import { TextInput } from './TextInput';
 
 it('renders the component with all required props', () => {
-  const { container } = render(<TextInput id="someInput" name="userEmail" />);
+  const { container } = render(
+    <TextInput id="someInput" name="userEmail" labelText="userEmail" />,
+  );
 
   expect(container.firstChild).toMatchSnapshot();
 });
 
 it('renders the component with an additional class name', () => {
   const { container } = render(
-    <TextInput id="someInput" name="userEmail" className="my-extra-class" />,
+    <TextInput
+      id="someInput"
+      name="userEmail"
+      labelText="userEmail"
+      className="my-extra-class"
+    />,
   );
 
   expect(container.firstChild).toMatchSnapshot();
@@ -20,7 +27,12 @@ it('renders the component with an additional class name', () => {
 
 it('renders the component with disabled prop', () => {
   const { container } = render(
-    <TextInput id="someInput" name="userEmail" disabled />,
+    <TextInput
+      id="someInput"
+      name="userEmail"
+      labelText="userEmail"
+      disabled
+    />,
   );
 
   expect(container.firstChild).toMatchSnapshot();
@@ -28,7 +40,7 @@ it('renders the component with disabled prop', () => {
 
 it('renders the component with error prop', () => {
   const { container } = render(
-    <TextInput id="someInput" name="userEmail" error />,
+    <TextInput id="someInput" name="userEmail" labelText="userEmail" error />,
   );
 
   expect(container.firstChild).toMatchSnapshot();
@@ -36,7 +48,12 @@ it('renders the component with error prop', () => {
 
 it('renders the component with value prop', () => {
   const { container } = render(
-    <TextInput id="someInput" name="userEmail" value="123" />,
+    <TextInput
+      id="someInput"
+      name="userEmail"
+      labelText="userEmail"
+      value="123"
+    />,
   );
 
   expect(container.firstChild).toMatchSnapshot();
@@ -44,7 +61,12 @@ it('renders the component with value prop', () => {
 
 it('renders the component with onChange prop', () => {
   const { container } = render(
-    <TextInput id="someInput" name="userEmail" onChange={() => {}} />,
+    <TextInput
+      id="someInput"
+      name="userEmail"
+      labelText="userEmail"
+      onChange={() => {}}
+    />,
   );
 
   expect(container.firstChild).toMatchSnapshot();
@@ -52,7 +74,12 @@ it('renders the component with onChange prop', () => {
 
 it('renders the component with onBlur prop', () => {
   const { container } = render(
-    <TextInput id="someInput" name="userEmail" onBlur={() => {}} />,
+    <TextInput
+      id="someInput"
+      name="userEmail"
+      labelText="userEmail"
+      onBlur={() => {}}
+    />,
   );
 
   expect(container.firstChild).toMatchSnapshot();
@@ -60,7 +87,12 @@ it('renders the component with onBlur prop', () => {
 
 it('renders the component with the copy button', () => {
   const { container } = render(
-    <TextInput id="someInput" name="userEmail" withCopyButton />,
+    <TextInput
+      id="someInput"
+      name="userEmail"
+      labelText="userEmail"
+      withCopyButton
+    />,
   );
 
   expect(container.firstChild).toMatchSnapshot();
@@ -68,7 +100,12 @@ it('renders the component with the copy button', () => {
 
 it('renders the component with small width', () => {
   const { container } = render(
-    <TextInput id="someInput" name="userEmail" width="small" />,
+    <TextInput
+      id="someInput"
+      name="userEmail"
+      labelText="userEmail"
+      width="small"
+    />,
   );
 
   expect(container.firstChild).toMatchSnapshot();
@@ -76,7 +113,12 @@ it('renders the component with small width', () => {
 
 it('renders the component with maxLength', () => {
   const { container } = render(
-    <TextInput id="someInput" name="userEmail" maxLength={10} />,
+    <TextInput
+      id="someInput"
+      name="userEmail"
+      labelText="userEmail"
+      maxLength={10}
+    />,
   );
 
   expect(container.firstChild).toMatchSnapshot();
@@ -87,6 +129,7 @@ it('renders the component with a placeholder text', () => {
     <TextInput
       id="someInput"
       name="userEmail"
+      labelText="userEmail"
       placeholder="placeholder text"
     />,
   );
@@ -96,7 +139,12 @@ it('renders the component with a placeholder text', () => {
 
 it('renders the component with a test id', () => {
   const { container } = render(
-    <TextInput id="someInput" name="userEmail" testId="someTestId" />,
+    <TextInput
+      id="someInput"
+      name="userEmail"
+      labelText="userEmail"
+      testId="someTestId"
+    />,
   );
 
   expect(container.firstChild).toMatchSnapshot();
@@ -104,7 +152,13 @@ it('renders the component with a test id', () => {
 
 it('renders the component as required', () => {
   const { container } = render(
-    <TextInput id="someInput" name="userEmail" testId="someTestId" required />,
+    <TextInput
+      id="someInput"
+      name="userEmail"
+      labelText="userEmail"
+      testId="someTestId"
+      required
+    />,
   );
 
   expect(container.firstChild).toMatchSnapshot();
