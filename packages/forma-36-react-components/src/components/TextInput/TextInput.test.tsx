@@ -111,7 +111,9 @@ it('renders the component as required', () => {
 });
 
 it('has no a11y issues', async () => {
-  const { container } = render(<TextInput id="someInput" name="userEmail" />);
+  const { container } = render(
+    <TextInput id="someInput" name="userEmail" labelText="userEmail" />,
+  );
   const results = await axe(container);
 
   expect(results).toHaveNoViolations();
