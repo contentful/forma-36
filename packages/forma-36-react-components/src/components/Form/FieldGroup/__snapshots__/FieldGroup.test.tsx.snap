@@ -99,9 +99,9 @@ exports[`renders the component 1`] = `
 
 .emotion-4 {
   display: inline-block;
+  color: #192532;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 0.875rem;
-  color: #192532;
   font-weight: 500;
   line-height: 1.5;
   margin-bottom: calc(1rem * (8 / 16));
@@ -327,9 +327,9 @@ exports[`renders the component children in a row 1`] = `
 
 .emotion-4 {
   display: inline-block;
+  color: #192532;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 0.875rem;
-  color: #192532;
   font-weight: 500;
   line-height: 1.5;
   margin-bottom: calc(1rem * (8 / 16));
@@ -555,9 +555,9 @@ exports[`renders the component with an additional class name 1`] = `
 
 .emotion-4 {
   display: inline-block;
+  color: #192532;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 0.875rem;
-  color: #192532;
   font-weight: 500;
   line-height: 1.5;
   margin-bottom: calc(1rem * (8 / 16));
