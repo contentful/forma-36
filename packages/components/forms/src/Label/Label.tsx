@@ -6,9 +6,26 @@ import { Box } from '@contentful/f36-core';
 import type { BoxProps } from '@contentful/f36-core';
 
 export type LabelInternalProps = {
+  /**
+   * Label value to show
+   */
   children: React.ReactText;
+  /**
+   * ID of the input to associate the label with
+   */
   htmlFor: HTMLProps<HTMLLabelElement>['htmlFor'];
+  /**
+   * Whether or not the associated input element is required
+   *
+   * @default false
+   */
   required?: boolean;
+  /**
+   * Custom text to show in parentheses that gets rendered if the associated
+   * input is required
+   *
+   * @default "required"
+   */
   requiredText?: string;
 };
 
@@ -20,8 +37,8 @@ export const Label = forwardRef<HTMLLabelElement, LabelProps>(function Label(
     children,
     className,
     htmlFor,
-    required,
-    requiredText,
+    required = false,
+    requiredText = 'required',
     testId = 'cf-ui-form-label',
     ...otherProps
   },
