@@ -34,7 +34,7 @@ exports[`EmptyState renders component with custom image element 1`] = `
 }
 
 .emotion-0 {
-  margin-mottom: 1rem;
+  margin-bottom: 1rem;
   max-width: 32rem;
 }
 
@@ -148,7 +148,7 @@ exports[`EmptyState renders component with image 1`] = `
 }
 
 .emotion-1 {
-  margin-mottom: 1rem;
+  margin-bottom: 1rem;
   max-width: 32rem;
 }
 
@@ -258,7 +258,7 @@ exports[`EmptyState renders the component 1`] = `
 }
 
 .emotion-0 {
-  margin-mottom: 1rem;
+  margin-bottom: 1rem;
   max-width: 32rem;
 }
 
@@ -361,7 +361,7 @@ exports[`EmptyState renders the component with an additional class name 1`] = `
 }
 
 .emotion-0 {
-  margin-mottom: 1rem;
+  margin-bottom: 1rem;
   max-width: 32rem;
 }
 
