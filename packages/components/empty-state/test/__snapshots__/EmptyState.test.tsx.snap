@@ -1,11 +1,48 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders component with custom image element 1`] = `
-.emotion-2 {
-  display: block;
+exports[`EmptyState renders component with custom image element 1`] = `
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
 }
 
 .emotion-0 {
+  margin-bottom: 1rem;
+  max-width: 32rem;
+}
+
+.emotion-3 {
+  display: block;
+}
+
+.emotion-1 {
   display: block;
   margin: 0;
   margin-bottom: 1rem;
@@ -15,9 +52,10 @@ exports[`renders component with custom image element 1`] = `
   font-size: 1.25rem;
   line-height: 2rem;
   text-rendering: optimizeLegibility;
+  max-width: 32rem;
 }
 
-.emotion-1 {
+.emotion-2 {
   display: block;
   margin: 0;
   margin-bottom: 1rem;
@@ -31,17 +69,18 @@ exports[`renders component with custom image element 1`] = `
   color: #536171;
   font-size: 0.875rem;
   line-height: 1.25rem;
+  max-width: 32rem;
 }
 
-<div
-  class="EmptyState"
+<article
+  class="emotion-5"
   data-test-id="cf-ui-empty-state"
 >
   <div
-    class="EmptyState_container"
+    class="emotion-4"
   >
     <div
-      class="EmptyState_element EmptyState_illustration_container"
+      class="emotion-0"
     >
       <img
         alt=""
@@ -49,32 +88,75 @@ exports[`renders component with custom image element 1`] = `
       />
     </div>
     <div
-      class="emotion-2"
+      class="emotion-3"
       data-test-id="cf-ui-text-container"
     >
       <h1
-        class="EmptyState_element emotion-0"
+        class="emotion-1"
         data-test-id="cf-ui-heading"
       >
         Heading
       </h1>
       <p
-        class="EmptyState_element emotion-1"
+        class="emotion-2"
         data-test-id="cf-ui-paragraph"
       >
         This is a description for the empty state. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate, sem a porttitor porttitor, velit nulla lacinia dolor, sit amet interdum ligula lectus hendrerit sem. Aliquam ultricies viverra tincidunt.
       </p>
     </div>
   </div>
-</div>
+</article>
 `;
 
-exports[`renders component with image 1`] = `
-.emotion-2 {
-  display: block;
+exports[`EmptyState renders component with image 1`] = `
+.emotion-6 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
 }
 
 .emotion-0 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.emotion-1 {
+  margin-bottom: 1rem;
+  max-width: 32rem;
+}
+
+.emotion-4 {
+  display: block;
+}
+
+.emotion-2 {
   display: block;
   margin: 0;
   margin-bottom: 1rem;
@@ -84,9 +166,10 @@ exports[`renders component with image 1`] = `
   font-size: 1.25rem;
   line-height: 2rem;
   text-rendering: optimizeLegibility;
+  max-width: 32rem;
 }
 
-.emotion-1 {
+.emotion-3 {
   display: block;
   margin: 0;
   margin-bottom: 1rem;
@@ -100,52 +183,90 @@ exports[`renders component with image 1`] = `
   color: #536171;
   font-size: 0.875rem;
   line-height: 1.25rem;
+  max-width: 32rem;
 }
 
-<div
-  class="EmptyState"
+<article
+  class="emotion-6"
   data-test-id="cf-ui-empty-state"
 >
   <div
-    class="EmptyState_container"
+    class="emotion-5"
   >
     <div
-      class="EmptyState_element EmptyState_illustration_container"
+      class="emotion-1"
     >
       <img
         alt="Image description"
-        class="EmptyState_illustration"
+        class="emotion-0"
         src="url"
         style="height: 250px; width: 340px;"
       />
     </div>
     <div
-      class="emotion-2"
+      class="emotion-4"
       data-test-id="cf-ui-text-container"
     >
       <h1
-        class="EmptyState_element emotion-0"
+        class="emotion-2"
         data-test-id="cf-ui-heading"
       >
         Heading
       </h1>
       <p
-        class="EmptyState_element emotion-1"
+        class="emotion-3"
         data-test-id="cf-ui-paragraph"
       >
         This is a description for the empty state. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate, sem a porttitor porttitor, velit nulla lacinia dolor, sit amet interdum ligula lectus hendrerit sem. Aliquam ultricies viverra tincidunt.
       </p>
     </div>
   </div>
-</div>
+</article>
 `;
 
-exports[`renders the component 1`] = `
-.emotion-2 {
-  display: block;
+exports[`EmptyState renders the component 1`] = `
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
 }
 
 .emotion-0 {
+  margin-bottom: 1rem;
+  max-width: 32rem;
+}
+
+.emotion-3 {
+  display: block;
+}
+
+.emotion-1 {
   display: block;
   margin: 0;
   margin-bottom: 1rem;
@@ -155,9 +276,10 @@ exports[`renders the component 1`] = `
   font-size: 1.25rem;
   line-height: 2rem;
   text-rendering: optimizeLegibility;
+  max-width: 32rem;
 }
 
-.emotion-1 {
+.emotion-2 {
   display: block;
   margin: 0;
   margin-bottom: 1rem;
@@ -171,45 +293,83 @@ exports[`renders the component 1`] = `
   color: #536171;
   font-size: 0.875rem;
   line-height: 1.25rem;
+  max-width: 32rem;
 }
 
-<div
-  class="EmptyState"
+<article
+  class="emotion-5"
   data-test-id="cf-ui-empty-state"
 >
   <div
-    class="EmptyState_container"
+    class="emotion-4"
   >
     <div
-      class="EmptyState_element EmptyState_illustration_container"
+      class="emotion-0"
     />
     <div
-      class="emotion-2"
+      class="emotion-3"
       data-test-id="cf-ui-text-container"
     >
       <h1
-        class="EmptyState_element emotion-0"
+        class="emotion-1"
         data-test-id="cf-ui-heading"
       >
         Heading
       </h1>
       <p
-        class="EmptyState_element emotion-1"
+        class="emotion-2"
         data-test-id="cf-ui-paragraph"
       >
         This is a description for the empty state.
       </p>
     </div>
   </div>
-</div>
+</article>
 `;
 
-exports[`renders the component with an additional class name 1`] = `
-.emotion-2 {
-  display: block;
+exports[`EmptyState renders the component with an additional class name 1`] = `
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
 }
 
 .emotion-0 {
+  margin-bottom: 1rem;
+  max-width: 32rem;
+}
+
+.emotion-3 {
+  display: block;
+}
+
+.emotion-1 {
   display: block;
   margin: 0;
   margin-bottom: 1rem;
@@ -219,9 +379,10 @@ exports[`renders the component with an additional class name 1`] = `
   font-size: 1.25rem;
   line-height: 2rem;
   text-rendering: optimizeLegibility;
+  max-width: 32rem;
 }
 
-.emotion-1 {
+.emotion-2 {
   display: block;
   margin: 0;
   margin-bottom: 1rem;
@@ -235,35 +396,36 @@ exports[`renders the component with an additional class name 1`] = `
   color: #536171;
   font-size: 0.875rem;
   line-height: 1.25rem;
+  max-width: 32rem;
 }
 
-<div
-  class="EmptyState my-extra-class"
+<article
+  class="emotion-5 my-extra-class"
   data-test-id="cf-ui-empty-state"
 >
   <div
-    class="EmptyState_container"
+    class="emotion-4"
   >
     <div
-      class="EmptyState_element EmptyState_illustration_container"
+      class="emotion-0"
     />
     <div
-      class="emotion-2"
+      class="emotion-3"
       data-test-id="cf-ui-text-container"
     >
       <h1
-        class="EmptyState_element emotion-0"
+        class="emotion-1"
         data-test-id="cf-ui-heading"
       >
         Heading
       </h1>
       <p
-        class="EmptyState_element emotion-1"
+        class="emotion-2"
         data-test-id="cf-ui-paragraph"
       >
         This is a description for the empty state.
       </p>
     </div>
   </div>
-</div>
+</article>
 `;

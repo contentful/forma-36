@@ -1,8 +1,9 @@
+import { cx } from 'emotion';
 import React from 'react';
-import cn from 'classnames';
+import { styles } from './EmptyState.styles';
+import { Primitive } from '@contentful/f36-core';
 import type { HeadingElement } from '@contentful/f36-typography';
 import { Heading, Paragraph, Typography } from '@contentful/f36-typography';
-import styles from './EmptyState.css';
 
 export interface EmptyStateProps {
   /**
@@ -28,11 +29,11 @@ export interface EmptyStateProps {
   /**
    * Heading text and semantic element type
    */
-  headingProps: TextElementProps;
+  headingProps?: TextElementProps;
   /**
    * Description text and semantic element type
    */
-  descriptionProps: TextElementProps;
+  descriptionProps?: TextElementProps;
 }
 
 interface TextElementProps {
@@ -65,37 +66,35 @@ interface ImageProps {
   className?: string;
 }
 
-export function EmptyState({
-  className,
-  children,
-  testId = 'cf-ui-empty-state',
-  customImageElement,
-  imageProps,
-  headingProps,
-  descriptionProps,
-  ...otherProps
-}: EmptyStateProps): React.ReactElement {
-  const classNames = cn(styles.EmptyState, className);
+const _EmptyState = (props: EmptyStateProps, ref) => {
+  const {
+    className,
+    children,
+    testId = 'cf-ui-empty-state',
+    customImageElement,
+    imageProps,
+    headingProps,
+    descriptionProps,
+    ...otherProps
+  } = props;
 
   return (
-    <div {...otherProps} className={classNames} data-test-id={testId}>
-      <div className={styles['EmptyState_container']}>
-        <div
-          className={cn(
-            styles['EmptyState_element'],
-            styles['EmptyState_illustration_container'],
-          )}
-        >
+    <Primitive
+      ref={ref}
+      as="article"
+      {...otherProps}
+      className={cx(styles.emptyState, className)}
+      testId={testId}
+    >
+      <div className={styles.container}>
+        <div className={cx([styles.illustrationContainer, styles.element])}>
           {customImageElement
             ? customImageElement
             : imageProps && (
                 <img
                   src={imageProps.url}
                   alt={imageProps.description}
-                  className={cn(
-                    imageProps.className,
-                    styles['EmptyState_illustration'],
-                  )}
+                  className={styles.illustration}
                   style={{
                     height: imageProps.height,
                     width: imageProps.width,
@@ -106,7 +105,7 @@ export function EmptyState({
         <Typography>
           <Heading
             as={headingProps.elementType ? headingProps.elementType : 'h1'}
-            className={styles['EmptyState_element']}
+            className={styles.element}
           >
             {headingProps.text}
           </Heading>
@@ -114,13 +113,18 @@ export function EmptyState({
             as={
               descriptionProps.elementType ? descriptionProps.elementType : 'p'
             }
-            className={styles['EmptyState_element']}
+            className={styles.element}
           >
             {descriptionProps.text}
           </Paragraph>
         </Typography>
         {children}
       </div>
-    </div>
+    </Primitive>
   );
-}
+};
+
+/**
+ * @description: EmptyState is a component that helps communicate a interim state in the interface where there is nothing to display.
+ */
+export const EmptyState = React.forwardRef(_EmptyState);

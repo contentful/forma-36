@@ -3,11 +3,28 @@ title: 'EmptyState'
 type: 'component'
 status: 'stable'
 slug: /components/empty-state/
-github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/EmptyState'
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/EmptyState'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-emptystate--default'
+typescript: ./src/EmptyState.tsx
 ---
 
-Detailed documentation will be provided soon. For now, please have a look into the storybook for implementation details.
+EmptyState is a component that helps communicate a interim state in the interface where there is nothing to display.
+
+## Table of contents
+
+- [How to use EmptyState](#how-to-use-empty-state)
+- [Code examples](#code-examples)
+- [Accessibility](#accessibility)
+- [Props](#props)
+
+## How to use EmptyState
+
+Use EmptyState when your application needs a visual placeholder.
+A useful empty state will let the user know what’s happening, why it’s happening, and what to do about it.
+
+Empty states are often used in cases of first use, user cleared(when user removed all data available), errors and no results/no data after running a search/filtering.
+
+## Code examples
 
 ```jsx
 <React.Fragment>
@@ -27,3 +44,14 @@ Detailed documentation will be provided soon. For now, please have a look into t
   />
 </React.Fragment>
 ```
+
+## Accessibility
+
+- when using `imageProps` use description prop that will set the alt attribute for you
+- when using `customImageElement` please always remember about setting the alt attribute yourself
+
+## Props
+
+import { Props } from '@contentful/f36-docs-utils';
+
+<Props of="EmptyState" />
