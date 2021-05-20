@@ -13,7 +13,7 @@ export type LabelInternalProps = {
 };
 
 export type LabelProps = LabelInternalProps &
-  Omit<BoxProps<'label'>, 'as' | 'display'>;
+  Omit<BoxProps<'label'>, 'as' | 'display' | 'ref'>;
 
 export const Label = forwardRef<HTMLLabelElement, LabelProps>(function Label(
   {
@@ -25,7 +25,7 @@ export const Label = forwardRef<HTMLLabelElement, LabelProps>(function Label(
     testId = 'cf-ui-form-label',
     ...otherProps
   },
-  ref,
+  forwardedRef,
 ) {
   const shouldShowRequiredText = required && requiredText?.length > 0;
 
@@ -46,7 +46,7 @@ export const Label = forwardRef<HTMLLabelElement, LabelProps>(function Label(
       )}
       display="inline-block"
       htmlFor={htmlFor}
-      ref={ref}
+      ref={forwardedRef}
       testId={testId}
     >
       {children}
