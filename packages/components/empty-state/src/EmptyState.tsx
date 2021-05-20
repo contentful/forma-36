@@ -80,6 +80,7 @@ const _EmptyState = (props: EmptyStateProps, ref) => {
 
   return (
     <Primitive
+      ref={ref}
       as="article"
       {...otherProps}
       className={cx(styles.emptyState, className)}
