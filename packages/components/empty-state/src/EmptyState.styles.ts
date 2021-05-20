@@ -19,7 +19,7 @@ export const styles = {
     textAlign: 'center',
   }),
   illustrationContainer: css({
-    marginMottom: tokens.spacingM,
+    marginBottom: tokens.spacingM,
   }),
   illustration: css({
     backgroundRepeat: 'no-repeat',

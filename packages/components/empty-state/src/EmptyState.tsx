@@ -84,10 +84,10 @@ const _EmptyState = (props: EmptyStateProps, ref) => {
       as="article"
       {...otherProps}
       className={cx(styles.emptyState, className)}
-      data-test-id={testId}
+      testId={testId}
     >
       <div className={styles.container}>
-        <div className={cx(styles.illustrationContainer, styles.element)}>
+        <div className={cx([styles.illustrationContainer, styles.element])}>
           {customImageElement
             ? customImageElement
             : imageProps && (
