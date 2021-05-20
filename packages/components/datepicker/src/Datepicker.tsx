@@ -3,11 +3,8 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import type { FocusEventHandler, FocusEvent } from 'react';
 import Pikaday from 'pikaday';
 import format from 'date-fns/format';
-import {
-  TextInput,
-  FormLabel,
-  ValidationMessage,
-} from '@contentful/f36-components';
+import { Label } from '@contentful/f36-forms';
+import { TextInput, ValidationMessage } from '@contentful/f36-components';
 
 const styles = {
   datePickerWrapper: css({
@@ -93,9 +90,9 @@ export function Datepicker({
   return (
     <div className={styles.datePickerWrapper}>
       {labelText && (
-        <FormLabel required={required} htmlFor={id}>
+        <Label required={required} htmlFor={id}>
           {labelText}
-        </FormLabel>
+        </Label>
       )}
       <TextInput
         disabled={disabled}

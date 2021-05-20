@@ -206,8 +206,8 @@ module.exports = {
                 link: '/components/form/',
               },
               {
-                name: 'FormLabel',
-                link: '/components/form-label/',
+                name: 'Label',
+                link: '/components/label/',
               },
               {
                 name: 'RadioButton',

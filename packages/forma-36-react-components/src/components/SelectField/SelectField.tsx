@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import type { ChangeEvent, FocusEventHandler, ChangeEventHandler } from 'react';
 import cn from 'classnames';
 import { ValidationMessage } from '@contentful/f36-validation-message';
-
-import { FormLabel } from '../FormLabel';
-import type { FormLabelProps } from '../FormLabel';
+import { Label } from '@contentful/f36-forms';
+import type { LabelProps } from '@contentful/f36-forms';
 import { HelpText } from '@contentful/f36-helptext';
+
 import { Select } from '../Select';
 import type { SelectProps } from '../Select';
 import { TextLink } from '../TextLink';
@@ -19,7 +19,7 @@ export interface SelectFieldProps {
   children: React.ReactNode;
   value?: string;
   validationMessage?: string;
-  formLabelProps?: Partial<FormLabelProps>;
+  formLabelProps?: Partial<LabelProps>;
   textLinkProps?: Partial<TextLinkProps>;
   selectProps?: Partial<SelectProps>;
   helpText?: string;
@@ -70,9 +70,9 @@ export const SelectField = ({
   return (
     <div className={classNames} {...otherProps} data-test-id={testId}>
       <div className={styles['SelectField__label-wrapper']}>
-        <FormLabel {...{ ...formLabelProps, htmlFor: id, required }}>
+        <Label {...formLabelProps} htmlFor={id} required={required}>
           {labelText}
-        </FormLabel>
+        </Label>
         {textLinkProps && (
           <TextLink
             className={styles['SelectField__label-link']}

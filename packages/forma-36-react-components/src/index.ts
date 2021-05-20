@@ -18,6 +18,8 @@ export type {
   PaddingProps,
   Spacing,
 } from '@contentful/f36-core';
+export { Label } from '@contentful/f36-forms';
+export type { LabelProps } from '@contentful/f36-forms';
 export { Spinner } from '@contentful/f36-spinner';
 export type { SpinnerProps } from '@contentful/f36-spinner';
 export {
@@ -59,7 +61,6 @@ export * from './components/Illustration';
 export * from './components/DateTime';
 export * from './components/EntityList';
 export * from './components/Form';
-export * from './components/FormLabel';
 export * from './components/IconButton';
 export * from './components/Modal';
 export * from './components/Notification';
