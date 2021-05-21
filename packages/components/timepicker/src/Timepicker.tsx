@@ -20,9 +20,9 @@ import {
   isBefore,
   isValid,
 } from 'date-fns';
+import { Label } from '@contentful/f36-forms';
 import {
   HelpText,
-  FormLabel,
   TextInput,
   ValidationMessage,
   Dropdown,
@@ -299,9 +299,9 @@ export const Timepicker: React.FC<TimepickerProps> = ({
   return (
     <div>
       {labelText && (
-        <FormLabel required={isRequired} htmlFor={inputId}>
+        <Label required={isRequired} htmlFor={inputId}>
           {labelText}
-        </FormLabel>
+        </Label>
       )}
       <div className={styles.inputWrapper} id="scheduleTimeForm">
         <Dropdown

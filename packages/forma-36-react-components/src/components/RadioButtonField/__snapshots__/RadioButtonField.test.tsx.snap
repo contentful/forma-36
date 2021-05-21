@@ -83,6 +83,16 @@ exports[`renders the component 1`] = `
   overflow: visible;
 }
 
+.emotion-3 {
+  display: inline-block;
+  color: #192532;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: calc(1rem * (8 / 16));
+}
+
 <div
   class="ControlledInputField"
   data-test-id="cf-ui-radio-button-field"
@@ -105,7 +115,7 @@ exports[`renders the component 1`] = `
   </div>
   <div>
     <label
-      class="FormLabel ControlledInputField__label"
+      class="ControlledInputField__label emotion-3"
       data-test-id="cf-ui-form-label"
       for="radio-button"
     >
@@ -198,6 +208,16 @@ exports[`renders the component with an additional class name 1`] = `
   overflow: visible;
 }
 
+.emotion-3 {
+  display: inline-block;
+  color: #192532;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: calc(1rem * (8 / 16));
+}
+
 <div
   class="ControlledInputField my-extra-class"
   data-test-id="cf-ui-radio-button-field"
@@ -220,7 +240,7 @@ exports[`renders the component with an additional class name 1`] = `
   </div>
   <div>
     <label
-      class="FormLabel ControlledInputField__label"
+      class="ControlledInputField__label emotion-3"
       data-test-id="cf-ui-form-label"
       for="radio-button"
     >

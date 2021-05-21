@@ -1,23 +1,27 @@
 ---
-title: 'FormLabel'
+title: 'Label'
 type: 'component'
 status: 'stable'
-slug: /components/form-label/
-github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/FormLabel'
-storybook: 'https://f36-storybook.contentful.com/?path=/story/components-formlabel--default'
+slug: /components/label/
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/forms/src/Label'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-label--default'
+typescript: './Label.tsx'
 ---
 
-`FormLabel` makes it possible to define input label components.
+import { Props } from '@contentful/f36-docs-utils';
+
+`Label` makes it possible to define input label components.
 
 ## Table of contents
 
-- [How to use FormLabel](#how-to-use-FormLabel)
+- [How to use Label](#how-to-use-Label)
 - [Component variations](#component-variations)
 - [Code examples](#code-examples)
 - [Content recommendations](#content-recommendations)
 - [Accessibility](#accessibility)
+- [Props](#props)
 
-## How to use FormLabel
+## How to use Label
 
 - Provide html for all properties of the input label
 
@@ -27,7 +31,7 @@ storybook: 'https://f36-storybook.contentful.com/?path=/story/components-formlab
 
 ```jsx
 <React.Fragment>
-  <FormLabel htmlFor="name">Full name</FormLabel>
+  <Label htmlFor="name">Full name</Label>
   <TextInput
     name="name"
     value="Claus Mitchell"
@@ -36,24 +40,24 @@ storybook: 'https://f36-storybook.contentful.com/?path=/story/components-formlab
 </React.Fragment>
 ```
 
-## FormLabel required properties (`required, requiredText`)
+## Label required properties (`required, requiredText`)
 
-To communicate that the corresponding input of the `FormLabel` is required, use the props `required` and `requiredText`.
+To communicate that the corresponding input of the `Label` is required, use the props `required` and `requiredText`.
 Use this guidance to determine the correct required properties to use based on the context.
 
 ```jsx
 <React.Fragment>
-  <FormLabel htmlFor="example1" required>
+  <Label htmlFor="example1" required>
     Name
-  </FormLabel>
+  </Label>
   <TextInput
     name="example1"
     value="Claus Mitchell"
     className="f36-margin-bottom--m"
   />
-  <FormLabel htmlFor="example2" required requiredText="required">
+  <Label htmlFor="example2" required requiredText="required">
     Email address
-  </FormLabel>
+  </Label>
   <TextInput value="claus.mitchell@contentful.com" name="example2" />
 </React.Fragment>
 ```
@@ -66,3 +70,7 @@ Use this guidance to determine the correct required properties to use based on t
 ## Accessibility
 
 Missing
+
+## Props
+
+<Props of="Label" />

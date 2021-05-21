@@ -3,6 +3,16 @@
 exports[`renders the component 1`] = `
 .emotion-0 {
   display: inline-block;
+  color: #192532;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: calc(1rem * (8 / 16));
+}
+
+.emotion-1 {
+  display: inline-block;
   fill: #606C7C;
   height: 18px;
   width: 18px;
@@ -16,7 +26,7 @@ exports[`renders the component 1`] = `
     class="SelectField__label-wrapper"
   >
     <label
-      class="FormLabel"
+      class="emotion-0"
       data-test-id="cf-ui-form-label"
       for="optionSelect"
     >
@@ -41,7 +51,7 @@ exports[`renders the component 1`] = `
       </option>
     </select>
     <svg
-      class="Select__icon emotion-0"
+      class="Select__icon emotion-1"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -58,6 +68,16 @@ exports[`renders the component 1`] = `
 exports[`renders the component as disabled 1`] = `
 .emotion-0 {
   display: inline-block;
+  color: #192532;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: calc(1rem * (8 / 16));
+}
+
+.emotion-1 {
+  display: inline-block;
   fill: #606C7C;
   height: 18px;
   width: 18px;
@@ -71,7 +91,7 @@ exports[`renders the component as disabled 1`] = `
     class="SelectField__label-wrapper"
   >
     <label
-      class="FormLabel"
+      class="emotion-0"
       data-test-id="cf-ui-form-label"
       for="optionSelect"
     >
@@ -97,7 +117,7 @@ exports[`renders the component as disabled 1`] = `
       </option>
     </select>
     <svg
-      class="Select__icon emotion-0"
+      class="Select__icon emotion-1"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -114,6 +134,16 @@ exports[`renders the component as disabled 1`] = `
 exports[`renders the component as required 1`] = `
 .emotion-0 {
   display: inline-block;
+  color: #192532;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: calc(1rem * (8 / 16));
+}
+
+.emotion-1 {
+  display: inline-block;
   fill: #606C7C;
   height: 18px;
   width: 18px;
@@ -127,7 +157,7 @@ exports[`renders the component as required 1`] = `
     class="SelectField__label-wrapper"
   >
     <label
-      class="FormLabel"
+      class="emotion-0"
       data-test-id="cf-ui-form-label"
       for="optionSelect"
     >
@@ -152,7 +182,7 @@ exports[`renders the component as required 1`] = `
       </option>
     </select>
     <svg
-      class="Select__icon emotion-0"
+      class="Select__icon emotion-1"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -169,12 +199,22 @@ exports[`renders the component as required 1`] = `
 exports[`renders the component with a help text 1`] = `
 .emotion-0 {
   display: inline-block;
+  color: #192532;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: calc(1rem * (8 / 16));
+}
+
+.emotion-1 {
+  display: inline-block;
   fill: #606C7C;
   height: 18px;
   width: 18px;
 }
 
-.emotion-1 {
+.emotion-2 {
   display: block;
   margin: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
@@ -192,7 +232,7 @@ exports[`renders the component with a help text 1`] = `
     class="SelectField__label-wrapper"
   >
     <label
-      class="FormLabel"
+      class="emotion-0"
       data-test-id="cf-ui-form-label"
       for="optionSelect"
     >
@@ -217,7 +257,7 @@ exports[`renders the component with a help text 1`] = `
       </option>
     </select>
     <svg
-      class="Select__icon emotion-0"
+      class="Select__icon emotion-1"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -232,7 +272,7 @@ exports[`renders the component with a help text 1`] = `
     class="SelectField__hints"
   >
     <p
-      class="SelectField__help-text emotion-1"
+      class="SelectField__help-text emotion-2"
       data-test-id="cf-ui-help-text"
     >
       please select an option
@@ -244,19 +284,29 @@ exports[`renders the component with a help text 1`] = `
 exports[`renders the component with a validation message 1`] = `
 .emotion-0 {
   display: inline-block;
+  color: #192532;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: calc(1rem * (8 / 16));
+}
+
+.emotion-1 {
+  display: inline-block;
   fill: #606C7C;
   height: 18px;
   width: 18px;
 }
 
-.emotion-3 {
+.emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.emotion-1 {
+.emotion-2 {
   display: inline-block;
   fill: #BF3045;
   height: 18px;
@@ -267,7 +317,7 @@ exports[`renders the component with a validation message 1`] = `
   min-width: 18px;
 }
 
-.emotion-2 {
+.emotion-3 {
   display: block;
   margin: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
@@ -292,7 +342,7 @@ exports[`renders the component with a validation message 1`] = `
     class="SelectField__label-wrapper"
   >
     <label
-      class="FormLabel"
+      class="emotion-0"
       data-test-id="cf-ui-form-label"
       for="optionSelect"
     >
@@ -317,7 +367,7 @@ exports[`renders the component with a validation message 1`] = `
       </option>
     </select>
     <svg
-      class="Select__icon emotion-0"
+      class="Select__icon emotion-1"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -329,11 +379,11 @@ exports[`renders the component with a validation message 1`] = `
     </svg>
   </div>
   <div
-    class="SelectField__validation-message emotion-3"
+    class="SelectField__validation-message emotion-4"
     data-test-id="cf-ui-validation-message"
   >
     <svg
-      class="emotion-1"
+      class="emotion-2"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"
@@ -348,7 +398,7 @@ exports[`renders the component with a validation message 1`] = `
       />
     </svg>
     <p
-      class="emotion-2"
+      class="emotion-3"
       data-test-id="cf-ui-paragraph"
     >
       not valid
@@ -359,6 +409,16 @@ exports[`renders the component with a validation message 1`] = `
 
 exports[`renders the component with a value 1`] = `
 .emotion-0 {
+  display: inline-block;
+  color: #192532;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: calc(1rem * (8 / 16));
+}
+
+.emotion-1 {
   display: inline-block;
   fill: #606C7C;
   height: 18px;
@@ -373,7 +433,7 @@ exports[`renders the component with a value 1`] = `
     class="SelectField__label-wrapper"
   >
     <label
-      class="FormLabel"
+      class="emotion-0"
       data-test-id="cf-ui-form-label"
       for="optionSelect"
     >
@@ -398,7 +458,7 @@ exports[`renders the component with a value 1`] = `
       </option>
     </select>
     <svg
-      class="Select__icon emotion-0"
+      class="Select__icon emotion-1"
       data-test-id="cf-ui-icon"
       height="1em"
       viewBox="0 0 24 24"

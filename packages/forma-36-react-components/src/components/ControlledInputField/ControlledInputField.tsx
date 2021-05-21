@@ -1,11 +1,10 @@
 import React, { ChangeEventHandler, ReactNode } from 'react';
 import cn from 'classnames';
 import { ValidationMessage } from '@contentful/f36-validation-message';
-
-import { FormLabel } from '../FormLabel';
-
+import { Label } from '@contentful/f36-forms';
 import { ControlledInput } from '@contentful/f36-inputs';
 import { HelpText } from '@contentful/f36-helptext';
+
 import styles from './ControlledInputField.css';
 
 export interface ControlledInputFieldProps {
@@ -70,7 +69,7 @@ export const ControlledInputField = ({
         {...inputProps}
       />
       <div>
-        <FormLabel
+        <Label
           className={cn(styles.ControlledInputField__label, {
             [styles['ControlledInputField__label--light']]: labelIsLight,
           })}
@@ -79,7 +78,7 @@ export const ControlledInputField = ({
           {...formLabelProps}
         >
           {labelText}
-        </FormLabel>
+        </Label>
         {validationMessage && (
           <ValidationMessage
             className={styles['ControlledInputField__validation-message']}

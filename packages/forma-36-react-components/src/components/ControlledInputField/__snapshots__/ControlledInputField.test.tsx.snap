@@ -97,6 +97,16 @@ exports[`renders the component 1`] = `
   width: 24px;
 }
 
+.emotion-4 {
+  display: inline-block;
+  color: #192532;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: calc(1rem * (8 / 16));
+}
+
 <div
   class="ControlledInputField"
   data-test-id="cf-ui-controlled-input-field"
@@ -131,7 +141,7 @@ exports[`renders the component 1`] = `
   </div>
   <div>
     <label
-      class="FormLabel ControlledInputField__label"
+      class="ControlledInputField__label emotion-4"
       data-test-id="cf-ui-form-label"
       for="checkbox"
     >
@@ -238,6 +248,16 @@ exports[`renders the component as checked 1`] = `
   width: 24px;
 }
 
+.emotion-4 {
+  display: inline-block;
+  color: #192532;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: calc(1rem * (8 / 16));
+}
+
 <div
   class="ControlledInputField my-extra-class"
   data-test-id="cf-ui-controlled-input-field"
@@ -273,7 +293,7 @@ exports[`renders the component as checked 1`] = `
   </div>
   <div>
     <label
-      class="FormLabel ControlledInputField__label"
+      class="ControlledInputField__label emotion-4"
       data-test-id="cf-ui-form-label"
       for="checkbox"
     >
@@ -380,6 +400,22 @@ exports[`renders the component as required 1`] = `
   width: 24px;
 }
 
+.emotion-5 {
+  display: inline-block;
+  color: #192532;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: calc(1rem * (8 / 16));
+}
+
+.emotion-4 {
+  color: #6B7888;
+  font-weight: 400;
+  margin-left: calc(1rem * (4 / 16));
+}
+
 <div
   class="ControlledInputField my-extra-class"
   data-test-id="cf-ui-controlled-input-field"
@@ -415,13 +451,13 @@ exports[`renders the component as required 1`] = `
   </div>
   <div>
     <label
-      class="FormLabel ControlledInputField__label"
+      class="ControlledInputField__label emotion-5"
       data-test-id="cf-ui-form-label"
       for="checkbox"
     >
       Label Text
       <span
-        class="FormLabel__required-text"
+        class="emotion-4"
       >
         (
         required
@@ -472,6 +508,16 @@ exports[`renders the component in a disabled state 1`] = `
   height: 1rem;
   min-height: 1rem;
   overflow: visible;
+}
+
+.emotion-4 {
+  display: inline-block;
+  color: #192532;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: calc(1rem * (8 / 16));
 }
 
 .emotion-0 {
@@ -565,7 +611,7 @@ exports[`renders the component in a disabled state 1`] = `
   </div>
   <div>
     <label
-      class="FormLabel ControlledInputField__label"
+      class="ControlledInputField__label emotion-4"
       data-test-id="cf-ui-form-label"
       for="checkbox"
     >
@@ -673,6 +719,16 @@ exports[`renders the component with a help text 1`] = `
 }
 
 .emotion-4 {
+  display: inline-block;
+  color: #192532;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: calc(1rem * (8 / 16));
+}
+
+.emotion-5 {
   display: block;
   margin: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
@@ -716,14 +772,14 @@ exports[`renders the component with a help text 1`] = `
   </div>
   <div>
     <label
-      class="FormLabel ControlledInputField__label"
+      class="ControlledInputField__label emotion-4"
       data-test-id="cf-ui-form-label"
       for="checkbox"
     >
       Label Text
     </label>
     <p
-      class="ControlledInputField__help-text emotion-4"
+      class="ControlledInputField__help-text emotion-5"
       data-test-id="cf-ui-help-text"
     >
       Help Text
@@ -829,14 +885,24 @@ exports[`renders the component with a light label variation 1`] = `
   width: 24px;
 }
 
-.emotion-6 {
+.emotion-4 {
+  display: inline-block;
+  color: #192532;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: calc(1rem * (8 / 16));
+}
+
+.emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.emotion-4 {
+.emotion-5 {
   display: inline-block;
   fill: #BF3045;
   height: 18px;
@@ -847,7 +913,7 @@ exports[`renders the component with a light label variation 1`] = `
   min-width: 18px;
 }
 
-.emotion-5 {
+.emotion-6 {
   display: block;
   margin: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
@@ -898,18 +964,18 @@ exports[`renders the component with a light label variation 1`] = `
   </div>
   <div>
     <label
-      class="FormLabel ControlledInputField__label ControlledInputField__label--light"
+      class="ControlledInputField__label ControlledInputField__label--light emotion-4"
       data-test-id="cf-ui-form-label"
       for="checkbox"
     >
       Label Text
     </label>
     <div
-      class="ControlledInputField__validation-message emotion-6"
+      class="ControlledInputField__validation-message emotion-7"
       data-test-id="cf-ui-validation-message"
     >
       <svg
-        class="emotion-4"
+        class="emotion-5"
         data-test-id="cf-ui-icon"
         height="1em"
         viewBox="0 0 24 24"
@@ -924,7 +990,7 @@ exports[`renders the component with a light label variation 1`] = `
         />
       </svg>
       <p
-        class="emotion-5"
+        class="emotion-6"
         data-test-id="cf-ui-paragraph"
       >
         Not valid!
@@ -1031,14 +1097,24 @@ exports[`renders the component with a validation message 1`] = `
   width: 24px;
 }
 
-.emotion-6 {
+.emotion-4 {
+  display: inline-block;
+  color: #192532;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: calc(1rem * (8 / 16));
+}
+
+.emotion-7 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
 
-.emotion-4 {
+.emotion-5 {
   display: inline-block;
   fill: #BF3045;
   height: 18px;
@@ -1049,7 +1125,7 @@ exports[`renders the component with a validation message 1`] = `
   min-width: 18px;
 }
 
-.emotion-5 {
+.emotion-6 {
   display: block;
   margin: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
@@ -1100,18 +1176,18 @@ exports[`renders the component with a validation message 1`] = `
   </div>
   <div>
     <label
-      class="FormLabel ControlledInputField__label"
+      class="ControlledInputField__label emotion-4"
       data-test-id="cf-ui-form-label"
       for="checkbox"
     >
       Label Text
     </label>
     <div
-      class="ControlledInputField__validation-message emotion-6"
+      class="ControlledInputField__validation-message emotion-7"
       data-test-id="cf-ui-validation-message"
     >
       <svg
-        class="emotion-4"
+        class="emotion-5"
         data-test-id="cf-ui-icon"
         height="1em"
         viewBox="0 0 24 24"
@@ -1126,7 +1202,7 @@ exports[`renders the component with a validation message 1`] = `
         />
       </svg>
       <p
-        class="emotion-5"
+        class="emotion-6"
         data-test-id="cf-ui-paragraph"
       >
         Not valid!
@@ -1233,6 +1309,16 @@ exports[`renders the component with a value 1`] = `
   width: 24px;
 }
 
+.emotion-4 {
+  display: inline-block;
+  color: #192532;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: calc(1rem * (8 / 16));
+}
+
 <div
   class="ControlledInputField my-extra-class"
   data-test-id="cf-ui-controlled-input-field"
@@ -1267,7 +1353,7 @@ exports[`renders the component with a value 1`] = `
   </div>
   <div>
     <label
-      class="FormLabel ControlledInputField__label"
+      class="ControlledInputField__label emotion-4"
       data-test-id="cf-ui-form-label"
       for="checkbox"
     >
@@ -1374,6 +1460,16 @@ exports[`renders the component with an additional class name 1`] = `
   width: 24px;
 }
 
+.emotion-4 {
+  display: inline-block;
+  color: #192532;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: calc(1rem * (8 / 16));
+}
+
 <div
   class="ControlledInputField my-extra-class"
   data-test-id="cf-ui-controlled-input-field"
@@ -1408,7 +1504,7 @@ exports[`renders the component with an additional class name 1`] = `
   </div>
   <div>
     <label
-      class="FormLabel ControlledInputField__label"
+      class="ControlledInputField__label emotion-4"
       data-test-id="cf-ui-form-label"
       for="checkbox"
     >
