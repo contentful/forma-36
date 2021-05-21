@@ -12,7 +12,7 @@
     ]
   },
   "scripts": {
-    "build": "NODE_OPTIONS=--trace-warnings lerna run build --stream",
+    "build": "NODE_OPTIONS=--trace-warnings lerna run build --concurrency 3 --stream",
     "chromatic": "chromatic --storybook-build-dir ./dist-storybook",
     "commit": "git-cz",
     "commitmsg": "validate-commit-msg",
