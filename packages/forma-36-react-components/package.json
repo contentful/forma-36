@@ -44,6 +44,8 @@
     "@contentful/forma-36-fcss": "^4.0.0",
     "@contentful/f36-utils": "^4.0.0",
     "@popperjs/core": "^2.4.4",
+    "@types/react": "16.14.2",
+    "@types/react-dom": "16.9.10",
     "classnames": "^2.2.6",
     "csstype": "^3.0.5",
     "dayjs": "^1.9.1",
@@ -57,7 +59,6 @@
   "devDependencies": {
     "@size-limit/preset-big-lib": "^4.5.5",
     "@types/classnames": "2.2.7",
-    "@types/react-color": "^3.0.1",
     "@types/react-copy-to-clipboard": "4.2.6",
     "@types/react-transition-group": "2.0.15",
     "file-loader": "^3.0.1",
