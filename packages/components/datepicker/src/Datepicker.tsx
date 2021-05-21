@@ -15,7 +15,8 @@ import type {
 } from '@contentful/f36-core';
 import Pikaday from 'pikaday';
 import dayjs from 'dayjs';
-import { TextInput, ValidationMessage } from '@contentful/f36-components';
+import { TextInput } from '@contentful/f36-components';
+import { ValidationMessage } from '@contentful/f36-validation-message';
 import { Label } from '@contentful/f36-forms';
 import tokens from '@contentful/f36-tokens';
 import 'pikaday/css/pikaday.css';

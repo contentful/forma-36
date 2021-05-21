@@ -14,6 +14,7 @@
     "@babel/runtime": "^7.6.2",
     "@contentful/f36-components": "^4.0.0",
     "@contentful/f36-core": "^4.0.0",
+    "@contentful/f36-validation-message": "^4.0.0",
     "@types/pikaday": "^1.7.4",
     "dayjs": "^1.9.1",
     "emotion": "^10.0.17",
