@@ -67,7 +67,7 @@ export const Label = forwardRef<HTMLLabelElement, LabelProps>(function Label(
       testId={testId}
     >
       {children}
-      {shouldShowRequiredText ? (
+      {shouldShowRequiredText && (
         <span
           className={css({
             color: tokens.colorTextLightest,
@@ -77,7 +77,7 @@ export const Label = forwardRef<HTMLLabelElement, LabelProps>(function Label(
         >
           ({requiredText})
         </span>
-      ) : null}
+      )}
     </Box>
   );
 });
