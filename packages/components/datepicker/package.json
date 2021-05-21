@@ -8,10 +8,11 @@
     "src"
   ],
   "scripts": {
-    "build": "parcel build src/index.ts"
+    "build": "parcel build index.ts"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",
+    "@contentful/f36-components": "^4.0.0",
     "@contentful/f36-core": "^4.0.0",
     "@types/pikaday": "^1.7.4",
     "dayjs": "^1.9.1",
