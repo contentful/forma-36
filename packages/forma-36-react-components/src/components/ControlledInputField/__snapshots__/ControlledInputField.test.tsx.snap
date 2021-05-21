@@ -400,7 +400,7 @@ exports[`renders the component as required 1`] = `
   width: 24px;
 }
 
-.emotion-4 {
+.emotion-5 {
   display: inline-block;
   color: #192532;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
@@ -408,6 +408,12 @@ exports[`renders the component as required 1`] = `
   font-weight: 500;
   line-height: 1.5;
   margin-bottom: calc(1rem * (8 / 16));
+}
+
+.emotion-4 {
+  color: #6B7888;
+  font-weight: 400;
+  margin-left: calc(1rem * (4 / 16));
 }
 
 <div
@@ -445,11 +451,18 @@ exports[`renders the component as required 1`] = `
   </div>
   <div>
     <label
-      class="ControlledInputField__label emotion-4"
+      class="ControlledInputField__label emotion-5"
       data-test-id="cf-ui-form-label"
       for="checkbox"
     >
       Label Text
+      <span
+        class="emotion-4"
+      >
+        (
+        required
+        )
+      </span>
     </label>
   </div>
 </div>
