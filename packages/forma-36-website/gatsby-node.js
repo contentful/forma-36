@@ -117,3 +117,21 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     });
   }
 };
+
+exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
+  if (stage === 'build-html' || stage === 'develop-html') {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            // Pikaday uses `window` without checking for undefined, which
+            // breaks on SSR, so we skip loading it completely
+            // See https://github.com/gatsbyjs/gatsby/blob/54d4721462b9303fed723fdcb15ac5d72e103778/docs/docs/debugging-html-builds.md#fixing-third-party-modules
+            test: /pikaday/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    });
+  }
+};

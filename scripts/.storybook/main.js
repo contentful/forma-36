@@ -59,10 +59,20 @@ module.exports = {
       ],
     });
 
+    config.module.rules.push({
+      test: /pikaday\/css\/pikaday.css$/,
+      loaders: ['style-loader', 'css-loader'],
+    });
+
     // CSS Modules
     config.module.rules.push({
       test: /\.css$/,
-      exclude: [/node_modules/, /\.global\.css$/, /forma-36-fcss/],
+      exclude: [
+        /node_modules/,
+        /pikaday\/css\/pikaday.css$/,
+        /\.global\.css$/,
+        /forma-36-fcss/,
+      ],
       loaders: [
         'style-loader',
         {

@@ -32,6 +32,7 @@
     "@babel/runtime": "^7.3.4",
     "@contentful/f36-badge": "^4.0.0",
     "@contentful/f36-core": "^4.0.0",
+    "@contentful/f36-datepicker": "^4.0.0",
     "@contentful/f36-forms": "^4.0.0",
     "@contentful/f36-icon": "^4.0.0",
     "@contentful/f36-icons": "^4.0.0",
