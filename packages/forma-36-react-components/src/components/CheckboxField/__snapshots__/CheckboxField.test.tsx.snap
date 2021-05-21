@@ -1,10 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
-.emotion-4 {
-  margin-bottom: 0;
-}
-
 .emotion-5 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -110,6 +106,17 @@ exports[`renders the component 1`] = `
   width: 24px;
 }
 
+.emotion-4 {
+  display: inline-block;
+  color: #192532;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: calc(1rem * (8 / 16));
+  margin-bottom: 0;
+}
+
 <div
   class="emotion-5"
   data-test-id="cf-ui-checkbox-field"
@@ -144,7 +151,7 @@ exports[`renders the component 1`] = `
   </div>
   <div>
     <label
-      class="FormLabel__FormLabel___3d6zQ emotion-4"
+      class="emotion-4"
       data-test-id="cf-ui-form-label"
       for="checkbox"
     >
