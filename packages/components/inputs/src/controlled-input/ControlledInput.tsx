@@ -31,6 +31,7 @@ export interface ControlledInputProps extends Omit<BoxProps<'div'>, 'ref'> {
   canBlurOnEsc?: boolean;
   isIndeterminate?: boolean;
   inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
+  labelProps?: React.InputHTMLAttributes<HTMLLabelElement>;
 }
 
 const _ControlledInput = (
@@ -51,6 +52,7 @@ const _ControlledInput = (
     canBlurOnEsc = true,
     isIndeterminate,
     inputProps,
+    labelProps,
     ...otherProps
   }: ControlledInputProps,
   ref: React.Ref<HTMLDivElement>,
@@ -68,6 +70,14 @@ const _ControlledInput = (
   );
 
   const wrapperClassnames = cx(styles.container, className);
+  const labelClassnames = cx(
+    styles.ghost,
+    {
+      [styles.ghostRadioButton]: type === 'radio',
+      [styles.ghostCheckbox]: type === 'checkbox',
+    },
+    labelProps?.className,
+  );
 
   const handleOnKeyDown = useCallback(
     (e: KeyboardEvent<HTMLInputElement>) => {
@@ -128,12 +138,9 @@ const _ControlledInput = (
       />
       {type === 'radio' ? (
         // eslint-disable-next-line jsx-a11y/label-has-associated-control
-        <label
-          className={cx(styles.ghost, styles.ghostRadioButton)}
-          htmlFor={id}
-        />
+        <label {...labelProps} className={labelClassnames} htmlFor={id} />
       ) : (
-        <label className={cx(styles.ghost, styles.ghostCheckbox)} htmlFor={id}>
+        <label {...labelProps} className={labelClassnames} htmlFor={id}>
           {isIndeterminate ? <Minus {...iconProps} /> : <Done {...iconProps} />}
         </label>
       )}
