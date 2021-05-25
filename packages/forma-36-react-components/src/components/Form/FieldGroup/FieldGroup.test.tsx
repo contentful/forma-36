@@ -1,9 +1,9 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { axe } from '@/scripts/test/axeHelper';
+import { CheckboxField } from '@contentful/f36-forms';
 
 import { FieldGroup } from './FieldGroup';
-import { CheckboxField } from '../../CheckboxField';
 
 it('renders the component', () => {
   const { container } = render(

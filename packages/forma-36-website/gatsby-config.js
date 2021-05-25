@@ -203,7 +203,7 @@ module.exports = {
               },
               {
                 name: 'CheckboxField',
-                link: '/components/checkbox-field/',
+                link: '/components/inputs/src/checkbox-field/',
               },
               {
                 name: 'Form',

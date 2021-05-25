@@ -8,7 +8,7 @@ it('renders the component', () => {
   const { container } = render(
     <RadioButtonField
       id="radio-button"
-      inputProps={{ label: 'radio button field' }}
+      inputProps={{ inputProps: { style: { color: 'red' } } }}
       label="radio button field"
     />,
   );

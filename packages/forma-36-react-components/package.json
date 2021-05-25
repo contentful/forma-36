@@ -35,6 +35,7 @@
     "@contentful/f36-forms": "^4.0.0",
     "@contentful/f36-icon": "^4.0.0",
     "@contentful/f36-icons": "^4.0.0",
+    "@contentful/f36-inputs": "^4.0.0",
     "@contentful/f36-list": "^4.0.0",
     "@contentful/f36-spinner": "^4.0.0",
     "@contentful/f36-table": "^4.0.0",

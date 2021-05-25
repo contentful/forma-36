@@ -18,8 +18,6 @@ export type {
   PaddingProps,
   Spacing,
 } from '@contentful/f36-core';
-export { Label } from '@contentful/f36-forms';
-export type { LabelProps } from '@contentful/f36-forms';
 export { Spinner } from '@contentful/f36-spinner';
 export type { SpinnerProps } from '@contentful/f36-spinner';
 export {
@@ -47,14 +45,27 @@ export { Note } from '@contentful/f36-note';
 export type { NoteProps } from '@contentful/f36-note';
 export { EmptyState } from '@contentful/f36-empty-state';
 export type { EmptyStateProps } from '@contentful/f36-empty-state';
-export { ControlledInputField } from '@contentful/f36-forms';
-export type { ControlledInputFieldProps } from '@contentful/f36-forms';
+export {
+  ControlledInputField,
+  CheckboxField,
+  Label,
+} from '@contentful/f36-forms';
+export type {
+  ControlledInputFieldProps,
+  CheckboxFieldProps,
+  LabelProps,
+} from '@contentful/f36-forms';
+export { ControlledInput, Checkbox, RadioButton } from '@contentful/f36-inputs';
+export type {
+  ControlledInputProps,
+  CheckboxProps,
+  RadioButtonProps,
+} from '@contentful/f36-inputs';
 export * from './components/Accordion';
 export * from './components/Asset';
 export * from './components/Autocomplete';
 export * from './components/Button';
 export * from './components/Card';
-export * from './components/CheckboxField';
 export * from './components/CopyButton';
 export * from './components/Dropdown';
 export * from './components/EditorToolbar';
