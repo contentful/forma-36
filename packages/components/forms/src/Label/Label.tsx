@@ -1,6 +1,6 @@
 import { cx, css } from 'emotion';
 import React, { forwardRef } from 'react';
-import type { HTMLProps } from 'react';
+import type { HTMLProps, ReactNode } from 'react';
 import tokens from '@contentful/f36-tokens';
 import { Box } from '@contentful/f36-core';
 import type { BoxProps } from '@contentful/f36-core';
@@ -9,7 +9,7 @@ export type LabelInternalProps = {
   /**
    * Label value to show
    */
-  children: React.ReactText;
+  children: ReactNode;
   /**
    * ID of the input to associate the label with
    */
