@@ -34,7 +34,6 @@ exports[`renders the component 1`] = `
         class="TextInput TextInput--full"
       >
         <input
-          aria-label="nameInput"
           class="TextInput__input"
           data-test-id="cf-ui-text-input"
           id="nameInput"
@@ -92,7 +91,6 @@ exports[`renders the component with an additional class name 1`] = `
         class="TextInput TextInput--full"
       >
         <input
-          aria-label="nameInput"
           class="TextInput__input"
           data-test-id="cf-ui-text-input"
           id="nameInput"
@@ -150,7 +148,6 @@ exports[`renders the component with condensed spacing 1`] = `
         class="TextInput TextInput--full"
       >
         <input
-          aria-label="nameInput"
           class="TextInput__input"
           data-test-id="cf-ui-text-input"
           id="nameInput"
