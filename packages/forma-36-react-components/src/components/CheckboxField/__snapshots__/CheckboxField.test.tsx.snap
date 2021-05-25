@@ -76,6 +76,8 @@ exports[`renders the component 1`] = `
   justify-content: center;
   box-sizing: border-box;
   border-radius: 20%;
+  opacity: 0.7;
+  cursor: not-allowed;
 }
 
 .emotion-2 svg {

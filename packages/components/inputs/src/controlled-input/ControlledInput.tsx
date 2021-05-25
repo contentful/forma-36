@@ -10,8 +10,6 @@ import React, {
 import { cx } from 'emotion';
 import { Done, Minus } from '@contentful/f36-icons';
 import type { IconProps } from '@contentful/f36-icons';
-import { Label } from '@contentful/f36-forms';
-import type { LabelProps } from '@contentful/f36-forms';
 
 import { styles } from './ControlledInput.styles';
 import { Box, BoxProps } from '@contentful/f36-core';
@@ -32,8 +30,8 @@ export interface ControlledInputProps extends Omit<BoxProps<'div'>, 'ref'> {
   testId?: string;
   canBlurOnEsc?: boolean;
   isIndeterminate?: boolean;
-  inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
-  labelProps?: LabelProps;
+  inputProps?: Partial<React.InputHTMLAttributes<HTMLInputElement>>;
+  labelProps?: Partial<React.InputHTMLAttributes<HTMLLabelElement>>;
 }
 
 const _ControlledInput = (
@@ -138,12 +136,17 @@ const _ControlledInput = (
         disabled={isDisabled}
         onKeyDown={handleOnKeyDown}
       />
+
       {type === 'radio' ? (
-        <Label {...labelProps} className={labelClassnames} htmlFor={id} />
+        // We can't use Label from F36 since it causes a circular dependency
+        <label {...labelProps} className={labelClassnames} htmlFor={id}>
+          {/* A label should always have children, even ghost ones */}
+          <span />
+        </label>
       ) : (
-        <Label {...labelProps} className={labelClassnames} htmlFor={id}>
+        <label {...labelProps} className={labelClassnames} htmlFor={id}>
           {isIndeterminate ? <Minus {...iconProps} /> : <Done {...iconProps} />}
-        </Label>
+        </label>
       )}
     </Box>
   );
