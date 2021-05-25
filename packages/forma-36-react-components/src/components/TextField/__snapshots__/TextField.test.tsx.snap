@@ -20,7 +20,6 @@ exports[`renders the component 1`] = `
     class="TextInput TextInput--full"
   >
     <input
-      aria-label="someComponent"
       class="TextInput__input"
       data-test-id="cf-ui-text-input"
       id="someComponent"
@@ -51,7 +50,6 @@ exports[`renders the component with a copybutton 1`] = `
     class="TextInput TextInput--full TextInput--with-copy-button"
   >
     <input
-      aria-label="someComponent"
       class="TextInput__input"
       data-test-id="cf-ui-text-input"
       id="someComponent"
@@ -123,7 +121,6 @@ exports[`renders the component with a placeholder text 1`] = `
     class="TextInput TextInput--full"
   >
     <input
-      aria-label="someComponent"
       class="TextInput__input"
       data-test-id="cf-ui-text-input"
       id="someComponent"
@@ -155,7 +152,6 @@ exports[`renders the component with a rows defined 1`] = `
     class="TextInput TextInput--full"
   >
     <input
-      aria-label="someComponent"
       class="TextInput__input"
       data-test-id="cf-ui-text-input"
       id="someComponent"
@@ -218,7 +214,6 @@ exports[`renders the component with a textlink 1`] = `
     class="TextInput TextInput--full"
   >
     <input
-      aria-label="someComponent"
       class="TextInput__input"
       data-test-id="cf-ui-text-input"
       id="someComponent"
@@ -249,7 +244,6 @@ exports[`renders the component with a value 1`] = `
     class="TextInput TextInput--full"
   >
     <input
-      aria-label="someComponent"
       class="TextInput__input"
       data-test-id="cf-ui-text-input"
       id="someComponent"
@@ -280,7 +274,6 @@ exports[`renders the component with additional prop 1`] = `
     class="TextInput TextInput--full"
   >
     <input
-      aria-label="someComponent"
       class="TextInput__input"
       data-test-id="test"
       id="someComponent"
@@ -311,7 +304,6 @@ exports[`renders the component with an additional class name 1`] = `
     class="TextInput TextInput--full"
   >
     <input
-      aria-label="someComponent"
       class="TextInput__input"
       data-test-id="cf-ui-text-input"
       id="someComponent"
@@ -372,7 +364,6 @@ exports[`renders the component with characters count 1`] = `
     class="TextInput TextInput--full"
   >
     <input
-      aria-label="someComponent"
       class="TextInput__input"
       data-test-id="cf-ui-text-input"
       id="someComponent"
@@ -416,7 +407,6 @@ exports[`renders the component with help text 1`] = `
     class="TextInput TextInput--full"
   >
     <input
-      aria-label="someComponent"
       class="TextInput__input"
       data-test-id="cf-ui-text-input"
       id="someComponent"
@@ -457,7 +447,6 @@ exports[`renders the component with max length of characters 1`] = `
     class="TextInput TextInput--full"
   >
     <input
-      aria-label="someComponent"
       class="TextInput__input"
       data-test-id="cf-ui-text-input"
       id="someComponent"
@@ -489,7 +478,6 @@ exports[`renders the component with required text 1`] = `
     class="TextInput TextInput--full"
   >
     <input
-      aria-label="someComponent"
       class="TextInput__input"
       data-test-id="cf-ui-text-input"
       id="someComponent"
@@ -520,7 +508,6 @@ exports[`renders the component with small width 1`] = `
     class="TextInput TextInput--full"
   >
     <input
-      aria-label="someComponent"
       class="TextInput__input"
       data-test-id="cf-ui-text-input"
       id="someComponent"
@@ -551,7 +538,6 @@ exports[`renders the component with validation message 1`] = `
     class="TextInput TextInput--full TextInput--negative"
   >
     <input
-      aria-label="someComponent"
       class="TextInput__input"
       data-test-id="cf-ui-text-input"
       id="someComponent"
@@ -607,7 +593,6 @@ exports[`updates the value 1`] = `
     class="TextInput TextInput--full"
   >
     <input
-      aria-label="someComponent"
       class="TextInput__input"
       data-test-id="cf-ui-text-input"
       id="someComponent"
