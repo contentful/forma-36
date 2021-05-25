@@ -10,6 +10,8 @@ import React, {
 import { cx } from 'emotion';
 import { Done, Minus } from '@contentful/f36-icons';
 import type { IconProps } from '@contentful/f36-icons';
+import { Label } from '@contentful/f36-forms';
+import type { LabelProps } from '@contentful/f36-forms';
 
 import { styles } from './ControlledInput.styles';
 import { Box, BoxProps } from '@contentful/f36-core';
@@ -31,6 +33,7 @@ export interface ControlledInputProps extends Omit<BoxProps<'div'>, 'ref'> {
   canBlurOnEsc?: boolean;
   isIndeterminate?: boolean;
   inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
+  labelProps?: LabelProps;
 }
 
 const _ControlledInput = (
@@ -51,6 +54,7 @@ const _ControlledInput = (
     canBlurOnEsc = true,
     isIndeterminate,
     inputProps,
+    labelProps,
     ...otherProps
   }: ControlledInputProps,
   ref: React.Ref<HTMLDivElement>,
@@ -68,6 +72,14 @@ const _ControlledInput = (
   );
 
   const wrapperClassnames = cx(styles.container, className);
+  const labelClassnames = cx(
+    styles.ghost,
+    {
+      [styles.ghostRadioButton]: type === 'radio',
+      [styles.ghostCheckbox]: type === 'checkbox',
+    },
+    labelProps?.className,
+  );
 
   const handleOnKeyDown = useCallback(
     (e: KeyboardEvent<HTMLInputElement>) => {
@@ -127,15 +139,11 @@ const _ControlledInput = (
         onKeyDown={handleOnKeyDown}
       />
       {type === 'radio' ? (
-        // eslint-disable-next-line jsx-a11y/label-has-associated-control
-        <label
-          className={cx(styles.ghost, styles.ghostRadioButton)}
-          htmlFor={id}
-        />
+        <Label {...labelProps} className={labelClassnames} htmlFor={id} />
       ) : (
-        <label className={cx(styles.ghost, styles.ghostCheckbox)} htmlFor={id}>
+        <Label {...labelProps} className={labelClassnames} htmlFor={id}>
           {isIndeterminate ? <Minus {...iconProps} /> : <Done {...iconProps} />}
-        </label>
+        </Label>
       )}
     </Box>
   );
