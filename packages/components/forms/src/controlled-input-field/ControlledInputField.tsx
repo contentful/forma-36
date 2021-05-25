@@ -65,6 +65,7 @@ export const _ControlledInputField = (
     [styles.labelLight]: isLabelLight,
     [styles.rootOrLabelDisabled]: isDisabled,
   });
+  const inputLabelClassNames = cx(styles.rootOrLabelDisabled);
 
   return (
     <Box
@@ -85,6 +86,7 @@ export const _ControlledInputField = (
         isDisabled={isDisabled}
         value={value}
         onChange={onChange}
+        labelProps={{ className: inputLabelClassNames }}
         {...inputProps}
         className={inputClassNames}
       />
