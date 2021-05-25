@@ -68,8 +68,6 @@ exports[`renders the component 1`] = `
   justify-content: center;
   box-sizing: border-box;
   border-radius: 50%;
-  opacity: 0.7;
-  cursor: not-allowed;
 }
 
 .emotion-1:before {
@@ -208,8 +206,6 @@ exports[`renders the component with an additional class name 1`] = `
   justify-content: center;
   box-sizing: border-box;
   border-radius: 50%;
-  opacity: 0.7;
-  cursor: not-allowed;
 }
 
 .emotion-1:before {

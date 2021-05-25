@@ -76,8 +76,6 @@ exports[`renders the component 1`] = `
   justify-content: center;
   box-sizing: border-box;
   border-radius: 20%;
-  opacity: 0.7;
-  cursor: not-allowed;
 }
 
 .emotion-2 svg {
@@ -239,8 +237,6 @@ exports[`renders the component as checked 1`] = `
   justify-content: center;
   box-sizing: border-box;
   border-radius: 20%;
-  opacity: 0.7;
-  cursor: not-allowed;
 }
 
 .emotion-2 svg {
@@ -403,8 +399,6 @@ exports[`renders the component as required 1`] = `
   justify-content: center;
   box-sizing: border-box;
   border-radius: 20%;
-  opacity: 0.7;
-  cursor: not-allowed;
 }
 
 .emotion-2 svg {
@@ -505,37 +499,6 @@ exports[`renders the component as required 1`] = `
 `;
 
 exports[`renders the component in a disabled state 1`] = `
-.emotion-2 {
-  background: #ffffff;
-  width: 1rem;
-  height: 1rem;
-  border: 2px solid #c3cfd5;
-  fill: #ffffff;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  box-sizing: border-box;
-  border-radius: 20%;
-  opacity: 0.7;
-  cursor: not-allowed;
-}
-
-.emotion-2 svg {
-  width: 0.75rem;
-  min-width: 0.75rem;
-  min-height: 0.75rem;
-  height: 0.75rem;
-}
-
 .emotion-3 {
   display: inline-block;
   position: relative;
@@ -606,6 +569,37 @@ exports[`renders the component in a disabled state 1`] = `
 
 .emotion-0:disabled + label svg {
   fill: #c3cfd5;
+}
+
+.emotion-2 {
+  background: #ffffff;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid #c3cfd5;
+  fill: #ffffff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 20%;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.emotion-2 svg {
+  width: 0.75rem;
+  min-width: 0.75rem;
+  min-height: 0.75rem;
+  height: 0.75rem;
 }
 
 .emotion-1 {
@@ -749,8 +743,6 @@ exports[`renders the component with a help text 1`] = `
   justify-content: center;
   box-sizing: border-box;
   border-radius: 20%;
-  opacity: 0.7;
-  cursor: not-allowed;
 }
 
 .emotion-2 svg {
@@ -928,8 +920,6 @@ exports[`renders the component with a light label variation 1`] = `
   justify-content: center;
   box-sizing: border-box;
   border-radius: 20%;
-  opacity: 0.7;
-  cursor: not-allowed;
 }
 
 .emotion-2 svg {
@@ -1153,8 +1143,6 @@ exports[`renders the component with a validation message 1`] = `
   justify-content: center;
   box-sizing: border-box;
   border-radius: 20%;
-  opacity: 0.7;
-  cursor: not-allowed;
 }
 
 .emotion-2 svg {
@@ -1377,8 +1365,6 @@ exports[`renders the component with a value 1`] = `
   justify-content: center;
   box-sizing: border-box;
   border-radius: 20%;
-  opacity: 0.7;
-  cursor: not-allowed;
 }
 
 .emotion-2 svg {
@@ -1540,8 +1526,6 @@ exports[`renders the component with an additional class name 1`] = `
   justify-content: center;
   box-sizing: border-box;
   border-radius: 20%;
-  opacity: 0.7;
-  cursor: not-allowed;
 }
 
 .emotion-2 svg {
