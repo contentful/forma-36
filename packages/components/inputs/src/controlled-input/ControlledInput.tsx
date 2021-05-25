@@ -10,6 +10,8 @@ import React, {
 import { cx } from 'emotion';
 import { Done, Minus } from '@contentful/f36-icons';
 import type { IconProps } from '@contentful/f36-icons';
+import { Label } from '@contentful/f36-forms';
+import type { LabelProps } from '@contentful/f36-forms';
 
 import { styles } from './ControlledInput.styles';
 import { Box, BoxProps } from '@contentful/f36-core';
@@ -31,7 +33,7 @@ export interface ControlledInputProps extends Omit<BoxProps<'div'>, 'ref'> {
   canBlurOnEsc?: boolean;
   isIndeterminate?: boolean;
   inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
-  labelProps?: React.InputHTMLAttributes<HTMLLabelElement>;
+  labelProps?: LabelProps;
 }
 
 const _ControlledInput = (
@@ -137,12 +139,11 @@ const _ControlledInput = (
         onKeyDown={handleOnKeyDown}
       />
       {type === 'radio' ? (
-        // eslint-disable-next-line jsx-a11y/label-has-associated-control
-        <label {...labelProps} className={labelClassnames} htmlFor={id} />
+        <Label {...labelProps} className={labelClassnames} htmlFor={id} />
       ) : (
-        <label {...labelProps} className={labelClassnames} htmlFor={id}>
+        <Label {...labelProps} className={labelClassnames} htmlFor={id}>
           {isIndeterminate ? <Minus {...iconProps} /> : <Done {...iconProps} />}
-        </label>
+        </Label>
       )}
     </Box>
   );
