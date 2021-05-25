@@ -65,7 +65,9 @@ export const _ControlledInputField = (
     [styles.labelLight]: isLabelLight,
     [styles.rootOrLabelDisabled]: isDisabled,
   });
-  const inputLabelClassNames = cx(styles.rootOrLabelDisabled);
+  const inputLabelClassNames = cx({
+    [styles.rootOrLabelDisabled]: isDisabled,
+  });
 
   return (
     <Box
