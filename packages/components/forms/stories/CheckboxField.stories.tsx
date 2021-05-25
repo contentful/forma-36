@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
-import { FieldGroup } from '@contentful/f36-components/src/components/Form';
+import { FieldGroup } from '@contentful/f36-components';
 import { CheckboxField, CheckboxFieldProps } from '../src';
 
 export default {
