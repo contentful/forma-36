@@ -195,7 +195,7 @@ module.exports = {
               },
               {
                 name: 'ControlledInputField',
-                link: '/components/inputs/src/controlled-input-field/',
+                link: '/components/forms/src/controlled-input-field/',
               },
               {
                 name: 'Checkbox',
@@ -203,7 +203,7 @@ module.exports = {
               },
               {
                 name: 'CheckboxField',
-                link: '/components/inputs/src/checkbox-field/',
+                link: '/components/forms/src/checkbox-field/',
               },
               {
                 name: 'Form',
@@ -219,7 +219,7 @@ module.exports = {
               },
               {
                 name: 'RadioButtonField',
-                link: '/components/radio-button-field/',
+                link: '/components/forms/src/radio-button-field/',
               },
               {
                 name: 'Select',

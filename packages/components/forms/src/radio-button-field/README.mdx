@@ -1,0 +1,85 @@
+---
+title: 'RadioButtonField'
+type: 'component'
+status: 'stable'
+slug: /components/forms/src/radio-button-field/
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/forms/src/radio-button-field'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-radiobuttonfield--basic'
+typescript: ./RadioButtonField.tsx
+---
+
+Use RadioButtonField to give users the possibility to select only one option from a number of choices. It contains a radio input with its label. If needed the component can display an error message and hint message. For a multiple-choice, please consider using [CheckboxField component](https://f36.contentful.com/components/checkbox-field/).
+
+## Table of contents
+
+- [How to use RadioButtonField](#how-to-use-radiobuttonfield)
+- [Component variations](#component-variations)
+- [Content recommendations](#content-recommendations)
+- [Accessibility](#accessibility)
+- [Props](#props)
+
+## How to use RadioButtonField
+
+- RadioButtonField should be used in a group. Please include at least two or more choices for users
+- Options provided for users should be mutually exclusive.
+- Make sure choices don’t overlap. Avoid patterns like: 1990-2000, 2000-2010.
+- Be explicit about the action that will follow if the radio button is selected
+
+## Component variations
+
+- **Basic usage**
+
+```jsx
+// import {RadioButtonField} from '@contentful/f36-forms';
+
+<RadioButtonField id="randomId" label="Label text" />
+```
+
+- **With helper text** - Example with 2 options with helper text displayed
+
+```jsx
+// import {RadioButtonField} from '@contentful/f36-forms';
+function RadioButtonFieldExample() {
+  const [activeOption, setActiveOption] = React.useState('');
+
+  return (
+    <Flex flexDirection="column">
+      <RadioButtonField
+        id="pill-decision-1"
+        label="Take the blue pill"
+        name="pill-decision"
+        value="blue"
+        isChecked={activeOption === 'blue'}
+        onChange={(e) => {
+          setActiveOption(e.target.value);
+        }}
+      />
+      <RadioButtonField
+        id="pill-decision-2"
+        label="Take the red pill"
+        name="pill-decision"
+        value="red"
+        isChecked={activeOption === 'red'}
+        onChange={(e) => {
+          setActiveOption(e.target.value);
+        }}
+      />
+    </Flex>
+  );
+}
+```
+
+## Content recommendations
+
+- Labels should be concise and provide context.
+- Use sentence-style capitalization (only the first word in a phrase and any proper nouns capitalized)
+
+## Accessibility
+
+- Radio buttons should have a clear and concise label.
+
+## Props
+
+import { Props } from '@contentful/f36-docs-utils';
+
+<Props of="RadioButtonField" />

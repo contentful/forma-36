@@ -48,11 +48,13 @@ export type { EmptyStateProps } from '@contentful/f36-empty-state';
 export {
   ControlledInputField,
   CheckboxField,
+  RadioButtonField,
   Label,
 } from '@contentful/f36-forms';
 export type {
   ControlledInputFieldProps,
   CheckboxFieldProps,
+  RadioButtonFieldProps,
   LabelProps,
 } from '@contentful/f36-forms';
 export { ControlledInput, Checkbox, RadioButton } from '@contentful/f36-inputs';
@@ -77,7 +79,6 @@ export * from './components/IconButton';
 export * from './components/Modal';
 export * from './components/Notification';
 export * from './components/Pill';
-export * from './components/RadioButtonField';
 export * from './components/Select';
 export * from './components/SelectField';
 export * from './components/Skeleton';

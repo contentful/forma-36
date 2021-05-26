@@ -114,6 +114,7 @@ exports[`renders the component 1`] = `
   font-weight: 500;
   line-height: 1.5;
   margin-bottom: calc(1rem * (8 / 16));
+  font-weight: 500;
   margin-bottom: 0;
 }
 
@@ -352,6 +353,7 @@ exports[`renders the component children in a row 1`] = `
   font-weight: 500;
   line-height: 1.5;
   margin-bottom: calc(1rem * (8 / 16));
+  font-weight: 500;
   margin-bottom: 0;
 }
 
@@ -590,6 +592,7 @@ exports[`renders the component with an additional class name 1`] = `
   font-weight: 500;
   line-height: 1.5;
   margin-bottom: calc(1rem * (8 / 16));
+  font-weight: 500;
   margin-bottom: 0;
 }
 
