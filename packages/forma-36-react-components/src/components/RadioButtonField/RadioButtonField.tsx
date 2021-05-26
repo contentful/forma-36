@@ -1,23 +1,23 @@
 import React from 'react';
-import { ControlledInputField } from '../ControlledInputField';
-import type { ControlledInputFieldProps } from '../ControlledInputField';
+import { ControlledInputField } from '@contentful/f36-forms';
+import type { ControlledInputFieldProps } from '@contentful/f36-forms';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export type RadioButtonFieldProps = Omit<
   ControlledInputFieldProps,
-  'inputType'
+  'inputType' | 'ref'
 >;
 
 export const RadioButtonField = ({
-  checked = false,
-  labelIsLight = false,
+  isChecked = false,
+  isLabelLight = false,
   testId = 'cf-ui-radio-button-field',
   ...otherProps
 }: RadioButtonFieldProps) => {
   return (
     <ControlledInputField
-      checked={checked}
-      labelIsLight={labelIsLight}
+      isChecked={isChecked}
+      isLabelLight={isLabelLight}
       testId={testId}
       {...otherProps}
       inputType="radio"

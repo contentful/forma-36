@@ -5,6 +5,7 @@ status: 'stable'
 slug: /components/inputs/src/radio-button/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/components/inputs/src/radio-button'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-radiobutton--default'
+typescript: ./RadioButton.tsx
 ---
 
 RadioButton is used to show a radio button form element. Under the hood, it uses `ControlledInput` with `type='radio'` .
@@ -30,49 +31,53 @@ RadioButton is used to show a radio button form element. Under the hood, it uses
 - **default**
 
 ```jsx
-<>
-  <RadioButton label="Which pill?" name="pill-decision" value="Blue pill" />
-</>
+// import {RadioButton} from '@contentful/f36-inputs';
+
+<RadioButton
+  label="Take the blue pill"
+  name="pill-decision"
+  value="Blue pill"
+/>
 ```
 
 - **checked**
 
 ```jsx
-<>
-  <RadioButton
-    label="Which pill?"
-    name="pill-decision"
-    value="Blue pill"
-    isChecked
-  />
-</>
+// import {RadioButton} from '@contentful/f36-inputs';
+
+<RadioButton
+  label="Take the blue pill"
+  name="pill-decision"
+  value="blue"
+  isChecked
+/>
 ```
 
 - **disabled**
 
 ```jsx
-<>
-  <RadioButton
-    label="Which pill?"
-    name="pill-decision"
-    value="Blue pill"
-    isDisabled
-  />
-</>
+// import {RadioButton} from '@contentful/f36-inputs';
+
+<RadioButton
+  label="Take the blue pill"
+  name="pill-decision"
+  value="blue"
+  isDisabled
+/>
 ```
 
 - **disabled checked**
 
 ```jsx
-<>
-  <RadioButton
-    label="Which pill?"
-    name="pill-decision"
-    value="Blue pill"
-    isChecked
-    isDisabled
-  />
-</>
+// import {RadioButton} from '@contentful/f36-inputs';
+
+<RadioButton
+  label="Take the blue pill"
+  name="pill-decision"
+  value="blue"
+  isChecked
+  isDisabled
+/>
 ```
 
 ## Content recommendations
@@ -87,8 +92,6 @@ RadioButton is used to show a radio button form element. Under the hood, it uses
 
 ## Props
 
-```jsx
 import { Props } from '@contentful/f36-docs-utils';
 
-<Props of="RadioButton" />;
-```
+<Props of="RadioButton" />

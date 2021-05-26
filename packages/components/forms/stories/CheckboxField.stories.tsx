@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
-import { FieldGroup } from '../Form';
-import { CheckboxField, CheckboxFieldProps } from './CheckboxField';
+import { FieldGroup } from '@contentful/f36-components';
+import { CheckboxField, CheckboxFieldProps } from '../src';
 
 export default {
   title: 'Form Elements/CheckboxField',
@@ -25,7 +25,7 @@ export const Basic = (args: CheckboxFieldProps) => {
       <CheckboxField
         {...args}
         id="Checkbox1"
-        checked={optionOne}
+        isChecked={optionOne}
         value="yes"
         onChange={(e) => setOptionOne((e.target as HTMLInputElement).checked)}
       />
@@ -33,7 +33,7 @@ export const Basic = (args: CheckboxFieldProps) => {
         {...args}
         id="Checkbox2"
         value="yes"
-        checked={optionTwo}
+        isChecked={optionTwo}
         onChange={(e) => setOptionTwo((e.target as HTMLInputElement).checked)}
       />
     </FieldGroup>
@@ -41,7 +41,7 @@ export const Basic = (args: CheckboxFieldProps) => {
 };
 
 Basic.args = {
-  labelText: 'some label text',
+  label: 'some label text',
   name: 'some name',
   validationMessage: 'validation message',
   helpText: 'help text',
@@ -53,10 +53,10 @@ export const overview = () => (
       <SectionHeading as="h3">Checkbox Field default</SectionHeading>
     </Flex>
     <CheckboxField
-      labelText="Option 1"
+      label="Option 1"
       helpText="This is a helptext"
       name="someOption"
-      checked
+      isChecked
       value="yes"
       id="termsCheckbox"
     />
@@ -66,7 +66,7 @@ export const overview = () => (
       </SectionHeading>
     </Flex>
     <CheckboxField
-      labelText="Option 2"
+      label="Option 2"
       helpText="This is a helptext"
       validationMessage="validationMessage"
       name="someOption"
@@ -77,9 +77,9 @@ export const overview = () => (
       <SectionHeading as="h3">Checkbox Field diabled</SectionHeading>
     </Flex>
     <CheckboxField
-      labelText="Option 2"
+      label="Option 2"
       helpText="This is a helptext"
-      disabled
+      isDisabled
       name="someOption"
       value="no"
       id="termsCheckboxOption3"
@@ -88,10 +88,10 @@ export const overview = () => (
       <SectionHeading as="h3">Checkbox Field diabled checked</SectionHeading>
     </Flex>
     <CheckboxField
-      labelText="Option 2"
+      label="Option 2"
       helpText="This is a helptext"
-      disabled
-      checked
+      isDisabled
+      isChecked
       name="someOption"
       value="no"
       id="termsCheckboxOption4"

@@ -194,12 +194,16 @@ module.exports = {
                 link: '/components/inputs/src/controlled-input/',
               },
               {
+                name: 'ControlledInputField',
+                link: '/components/inputs/src/controlled-input-field/',
+              },
+              {
                 name: 'Checkbox',
                 link: '/components/inputs/src/checkbox/',
               },
               {
                 name: 'CheckboxField',
-                link: '/components/checkbox-field/',
+                link: '/components/inputs/src/checkbox-field/',
               },
               {
                 name: 'Form',

@@ -7,6 +7,7 @@ export type {
   PaddingProps,
   PickUnion,
   Simplify,
+  Spacing,
 } from './types';
 export * from './Flex';
 export * from './Grid';

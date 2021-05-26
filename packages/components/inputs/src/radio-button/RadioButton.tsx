@@ -1,9 +1,10 @@
 import React from 'react';
 import { ControlledInput, ControlledInputProps } from '..';
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-export interface RadioButtonProps
-  extends Omit<ControlledInputProps, 'isIndeterminate'> {}
+export type RadioButtonProps = Omit<
+  ControlledInputProps,
+  'isIndeterminate' | 'type'
+>;
 
 const _RadioButton = (
   { testId = 'cf-ui-radio-button', ...otherProps }: RadioButtonProps,

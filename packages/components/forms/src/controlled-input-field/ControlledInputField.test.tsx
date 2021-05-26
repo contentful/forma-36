@@ -6,7 +6,7 @@ import { ControlledInputField } from './ControlledInputField';
 
 it('renders the component', () => {
   const { container } = render(
-    <ControlledInputField id="checkbox" labelText="label text" />,
+    <ControlledInputField id="checkbox" label="label text" />,
   );
 
   expect(container.firstChild).toMatchSnapshot();
@@ -17,7 +17,7 @@ it('renders the component with an additional class name', () => {
     <ControlledInputField
       className="my-extra-class"
       id="checkbox"
-      labelText="Label Text"
+      label="Label Text"
     />,
   );
 
@@ -29,8 +29,8 @@ it('renders the component as required', () => {
     <ControlledInputField
       className="my-extra-class"
       id="checkbox"
-      labelText="Label Text"
-      required
+      label="Label Text"
+      isRequired
     />,
   );
 
@@ -42,7 +42,7 @@ it('renders the component with a help text', () => {
     <ControlledInputField
       className="my-extra-class"
       id="checkbox"
-      labelText="Label Text"
+      label="Label Text"
       helpText="Help Text"
     />,
   );
@@ -55,7 +55,7 @@ it('renders the component with a validation message', () => {
     <ControlledInputField
       className="my-extra-class"
       id="checkbox"
-      labelText="Label Text"
+      label="Label Text"
       validationMessage="Not valid!"
     />,
   );
@@ -68,8 +68,8 @@ it('renders the component in a disabled state', () => {
     <ControlledInputField
       className="my-extra-class"
       id="checkbox"
-      labelText="Label Text"
-      disabled
+      label="Label Text"
+      isDisabled
     />,
   );
 
@@ -81,9 +81,9 @@ it('renders the component with a light label variation', () => {
     <ControlledInputField
       className="my-extra-class"
       id="checkbox"
-      labelText="Label Text"
+      label="Label Text"
       validationMessage="Not valid!"
-      labelIsLight
+      isLabelLight
     />,
   );
 
@@ -95,8 +95,8 @@ it('renders the component as checked', () => {
     <ControlledInputField
       className="my-extra-class"
       id="checkbox"
-      labelText="Label Text"
-      checked
+      label="Label Text"
+      isChecked
     />,
   );
 
@@ -108,7 +108,7 @@ it('renders the component with a value', () => {
     <ControlledInputField
       className="my-extra-class"
       id="checkbox"
-      labelText="Label Text"
+      label="Label Text"
       value="someValue"
     />,
   );
@@ -118,7 +118,7 @@ it('renders the component with a value', () => {
 
 it('has no a11y issues', async () => {
   const { container } = render(
-    <ControlledInputField id="checkbox" labelText="label text" />,
+    <ControlledInputField id="checkbox" label="label text" />,
   );
   const results = await axe(container);
 

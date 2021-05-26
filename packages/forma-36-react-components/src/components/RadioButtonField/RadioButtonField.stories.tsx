@@ -23,7 +23,7 @@ export const Basic = (args: RadioButtonFieldProps) => {
       <RadioButtonField
         {...args}
         name="someOption1"
-        checked={activeOption === 'yes'}
+        isChecked={activeOption === 'yes'}
         value="yes"
         onChange={(e) => {
           setActiveOption((e.target as HTMLInputElement).value);
@@ -34,7 +34,7 @@ export const Basic = (args: RadioButtonFieldProps) => {
         {...args}
         name="someOption2"
         value="no"
-        checked={activeOption === 'no'}
+        isChecked={activeOption === 'no'}
         onChange={(e) => {
           setActiveOption((e.target as HTMLInputElement).value);
         }}
@@ -45,7 +45,7 @@ export const Basic = (args: RadioButtonFieldProps) => {
 };
 
 Basic.args = {
-  labelText: 'some label text',
+  label: 'some label text',
   validationMessage: 'validation message',
   helpText: 'help text',
 };
@@ -57,7 +57,7 @@ export const overview = () => (
     </Flex>
     <Flex marginBottom="spacingS">
       <RadioButtonField
-        labelText="Label text"
+        label="Label text"
         helpText="This is a helptext"
         name="someOption"
         value="no"
@@ -71,7 +71,7 @@ export const overview = () => (
     </Flex>
     <Flex marginBottom="spacingS">
       <RadioButtonField
-        labelText="Label text"
+        label="Label text"
         helpText="This is a helptext"
         validationMessage="validationMessage"
         name="someOption"
@@ -84,9 +84,9 @@ export const overview = () => (
     </Flex>
     <Flex marginBottom="spacingS">
       <RadioButtonField
-        labelText="Label text"
+        label="Label text"
         helpText="This is a helptext"
-        disabled
+        isDisabled
         name="someOption"
         value="no"
         id="radioButton3"
@@ -97,10 +97,10 @@ export const overview = () => (
     </Flex>
     <Flex marginBottom="spacingS">
       <RadioButtonField
-        labelText="Label text"
+        label="Label text"
         helpText="This is a helptext"
-        disabled
-        checked
+        isDisabled
+        isChecked
         name="someOption"
         value="no"
         id="radioButton3"
@@ -111,11 +111,11 @@ export const overview = () => (
     </Flex>
     <Flex marginBottom="spacingS">
       <RadioButtonField
-        labelText="Label text"
+        label="Label text"
         helpText="This is a helptext"
         name="someOption"
         value="no"
-        labelIsLight
+        isLabelLight
         id="radioButton4"
       />
     </Flex>
