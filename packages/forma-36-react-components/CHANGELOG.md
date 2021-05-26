@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.89.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.89.3...@contentful/forma-36-react-components@3.89.4) (2021-05-26)
+
+
+### Bug Fixes
+
+* add labelText prop support to TextInput component ([#979](https://github.com/contentful/forma-36/issues/979)) ([24548d5](https://github.com/contentful/forma-36/commit/24548d519e1933b03968b7dd8dda4ffd7946ab3d))
+
+
+
+
+
 ## [3.89.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.89.2...@contentful/forma-36-react-components@3.89.3) (2021-05-07)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
