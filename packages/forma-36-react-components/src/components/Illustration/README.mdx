@@ -24,9 +24,28 @@ It can be used as a standalone component or alongside text.
 ## Code examples
 
 ```jsx
-<React.Fragment>
+<>
   <Illustration illustration="Archive" />
-</React.Fragment>
+</>
+```
+
+### Illustration with accompanying text
+
+```jsx
+<>
+  <Flex
+    padding="spacingS"
+    marginRight="spacingM"
+    alignItems="center"
+    justifyContent="flex-start"
+    flexGrow={0}
+  >
+    <Flex marginRight="spacingS">
+      <Illustration illustration="Image" />
+    </Flex>
+    <Text>Image</Text>
+  </Flex>
+</>
 ```
 
 ## Props
