@@ -68,6 +68,27 @@ Be aware that the users will not see all the content at the same time. Make sure
 </Tabs>
 ```
 
+### used with TabPanel
+
+```jsx
+<>
+  <Tabs role="tablist">
+    <Tab id="first" selected={selected === 'first'}>
+      First
+    </Tab>
+    <Tab id="second" selected={selected === 'second'}>
+      Second
+    </Tab>
+  </Tabs>
+  {selected === 'first' && (
+    <TabPanel id="first">Content for the first tab</TabPanel>
+  )}
+  {selected === 'second' && (
+    <TabPanel id="second">Content for the second tab</TabPanel>
+  )}
+</>
+```
+
 ## Content recommendations
 
 - every Tab should have concise copy
