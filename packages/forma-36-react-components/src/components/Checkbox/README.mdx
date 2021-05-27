@@ -4,7 +4,32 @@ type: 'component'
 status: 'stable'
 slug: /components/checkbox/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/Checkbox'
-storybook: 'https://f36-storybook.contentful.com/?path=/story/components-checkbox--overview'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-checkbox--basic'
 ---
 
-Detailed documentation will be provided soon. For now, please have a look into the storybook for implementation details.
+Checkbox is a form element that gives users the possibility to select multiple elements, zero, one or more items.
+This is a stripped down version for custom made solutions - please consider using [RadioButtonField component](https://f36.contentful.com/components/checkbox-field/) for full-fledged `<input type='checkbox'>` experience.
+
+## Table of contents
+
+- [How to use Checkbox](#how-to-use-checkbox)
+- [Code examples](#code-examples)
+- [Accessibility](#accessibility)
+
+## How to use Checkbox
+
+- Checkboxes should work independently, checking one should not affect any other checkbox in the interface
+- Add a custom label to explain the context.
+
+## Code examples
+
+Basic usage
+
+```tsx
+// import { Checkbox } from '@contentful/forma-36-react-components';
+<Checkbox name="checkbox" id="checkbox" />
+```
+
+## Accessibility
+
+- Checkboxes should always have a clear and concise label and a `name` prop.
