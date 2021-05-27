@@ -23,7 +23,39 @@ Be aware that the users will not see all the content at the same time. Make sure
 ## Code examples
 
 ```jsx
-<Tabs role="navigation" withDivider>
+<Tabs role="tablist" withDivider>
+  <Tab id="first" href="https://contentful.com" selected>
+    First
+  </Tab>
+  <Tab id="second" href="https://contentful.com">
+    Second
+  </Tab>
+  <Tab id="third" href="https://contentful.com">
+    Third
+  </Tab>
+</Tabs>
+```
+
+### with vertical divider
+
+```jsx
+<Tabs role="tablist" withDivider dividerOrientation="vertical">
+  <Tab id="first" href="https://contentful.com" selected>
+    First
+  </Tab>
+  <Tab id="second" href="https://contentful.com">
+    Second
+  </Tab>
+  <Tab id="third" href="https://contentful.com">
+    Third
+  </Tab>
+</Tabs>
+```
+
+### as navigation
+
+```jsx
+<Tabs role="navigation">
   <Tab id="first" href="https://contentful.com" selected>
     First
   </Tab>
