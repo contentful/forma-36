@@ -9,6 +9,20 @@ storybook: 'https://f36-storybook.contentful.com/?path=/info/components-table--d
 
 Use tables to present large amounts of data, and data which has multiple properties attached to it.
 
+## Table of contents
+
+- [How to use Table](#how-to-use-table)
+- [Code examples](#code-examples)
+- [Content recommendations](#content-recommendations)
+
+## How to use Table
+
+- Make sure Tables span the full width of the container they're in
+- Make sure a table has a header describing the content of its respective columns
+- Ordered columns by relevance from left to right. Images, if present, have a higher priority, and should be placed in the first column. Checkboxes naturally have the highest priority.
+
+## Code examples
+
 ```jsx
 <Table>
   <TableHead>
@@ -42,12 +56,8 @@ Use tables to present large amounts of data, and data which has multiple propert
 </Table>
 ```
 
-## Table of contents
+## Content recommendations
 
-1. [Best practices](#best-practices)
-
-## Best practices <a name="best-practices" />
-
-- Make sure Tables span the full width of the container they're in
-- Make sure a table has a header describing the content of its respective columns
-- Ordered columns by relevance from left to right. Images, if present, have a higher priority, and should be placed in the first column. Checkboxes naturally have the highest priority.
+- Keep headers short
+- Headers should be informative and descriptive
+- content in the table should be concise and scannable
