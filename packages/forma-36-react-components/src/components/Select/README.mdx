@@ -53,6 +53,21 @@ Keep in mind that Select should not be used without the label. We provide [Selec
 </Select>
 ```
 
+### Select with placeholder
+
+```tsx
+// import { Select } from '@contentful/forma-36-react-components';
+
+<Select name="optionSelect" id="optionSelect">
+  <Option value="" disabled selected>
+    Please select an option...
+  </Option>
+  <Option value="optionOne">Option One</Option>
+  <Option value="optionTwo">Option Two</Option>
+  <Option value="optionThree">Option Three</Option>
+</Select>
+```
+
 ### Select with error
 
 ```tsx
