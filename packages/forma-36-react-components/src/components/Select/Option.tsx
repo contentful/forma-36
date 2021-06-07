@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { HTMLProps } from 'react';
 
-export interface OptionProps {
+export interface OptionProps extends HTMLProps<HTMLOptionElement> {
   value: string;
   children: React.ReactNode;
   testId?: string;
