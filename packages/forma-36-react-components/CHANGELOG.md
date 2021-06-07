@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.90.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.89.4...@contentful/forma-36-react-components@3.90.0) (2021-06-07)
+
+
+### Features
+
+* extend Options props to supported native props like disabled [] ([#987](https://github.com/contentful/forma-36/issues/987)) ([6a5451b](https://github.com/contentful/forma-36/commit/6a5451b424918018b4b63a6ceb285eb99321cb89))
+
+
+
+
+
 ## [3.89.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.89.3...@contentful/forma-36-react-components@3.89.4) (2021-05-26)
 
 
