@@ -58,9 +58,10 @@ export const DropdownContainer = forwardRef<
   });
 
   useEffect(() => {
+    dropdown.current?.focus();
+
     if (getRef && dropdown.current) {
       getRef(dropdown.current);
-      dropdown.current.focus();
     }
   }, [getRef]);
 

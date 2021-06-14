@@ -1317,6 +1317,7 @@ exports[`renders the component with dropdownListElements 1`] = `
             aria-expanded="false"
             aria-haspopup="menu"
             class="IconButton IconButton--secondary"
+            data-node-id="dropdown-trigger-835746736795.7258"
             data-test-id="cf-ui-icon-button"
             type="button"
           >
