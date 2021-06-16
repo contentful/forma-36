@@ -9,7 +9,7 @@ exports[`renders the component 1`] = `
     aria-expanded="false"
     aria-haspopup="menu"
     class="Button Button--primary Button--medium"
-    data-node-id="dropdown-trigger-419597958781.7941"
+    data-node-id="dropdown-trigger-61728000"
     data-test-id="cf-ui-button"
     type="button"
   >
@@ -36,7 +36,7 @@ exports[`renders the component as open 1`] = `
     aria-expanded="true"
     aria-haspopup="menu"
     class="Button Button--primary Button--medium"
-    data-node-id="dropdown-trigger-963772217587.9482"
+    data-node-id="dropdown-trigger-61728000"
     data-test-id="cf-ui-button"
     type="button"
   >
@@ -63,7 +63,7 @@ exports[`renders the component with a submenu 1`] = `
     aria-expanded="true"
     aria-haspopup="menu"
     class="Button Button--primary Button--medium"
-    data-node-id="dropdown-trigger-1055065286639.5449"
+    data-node-id="dropdown-trigger-61728000"
     data-test-id="cf-ui-button"
     type="button"
   >
@@ -90,7 +90,7 @@ exports[`renders the component with an additional class name 1`] = `
     aria-expanded="false"
     aria-haspopup="menu"
     class="Button Button--primary Button--medium"
-    data-node-id="dropdown-trigger-1225761812343.7603"
+    data-node-id="dropdown-trigger-61728000"
     data-test-id="cf-ui-button"
     type="button"
   >

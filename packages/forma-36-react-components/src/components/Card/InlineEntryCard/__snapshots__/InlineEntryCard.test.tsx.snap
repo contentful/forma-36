@@ -37,7 +37,7 @@ exports[`renders the component with a dropdown 1`] = `
       aria-expanded="false"
       aria-haspopup="menu"
       class="IconButton IconButton--secondary"
-      data-node-id="dropdown-trigger-651884820741.751"
+      data-node-id="dropdown-trigger-61728000"
       data-test-id="cf-ui-icon-button"
       type="button"
     >

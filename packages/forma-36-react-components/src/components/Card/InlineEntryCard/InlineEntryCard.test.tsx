@@ -34,6 +34,9 @@ it('renders the component with published status', () => {
 });
 
 it('renders the component with a dropdown', () => {
+  Date.now = jest.fn(() => 123456);
+  Math.random = jest.fn(() => 500);
+
   const { container } = render(
     <InlineEntryCard
       className="my-extra-class"
