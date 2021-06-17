@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.90.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.90.0...@contentful/forma-36-react-components@3.90.1) (2021-06-17)
+
+
+### Bug Fixes
+
+* add keyboard support to dropdown elements [SPA-262] ([#990](https://github.com/contentful/forma-36/issues/990)) ([9960917](https://github.com/contentful/forma-36/commit/99609176a0604fd0f6b62753cf45a246cdbb48b6))
+
+
+
+
+
 # [3.90.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.89.4...@contentful/forma-36-react-components@3.90.0) (2021-06-07)
 
 
