@@ -8,6 +8,11 @@ import { Button } from '../Button';
 import { DropdownListItem } from './DropdownListItem/DropdownListItem';
 import { DropdownList } from './DropdownList/DropdownList';
 
+beforeAll(() => {
+  Date.now = jest.fn(() => 123456);
+  Math.random = jest.fn(() => 500);
+});
+
 it('renders the component', () => {
   const { container } = render(
     <Dropdown toggleElement={<Button onClick={() => {}}>Toggle</Button>}>

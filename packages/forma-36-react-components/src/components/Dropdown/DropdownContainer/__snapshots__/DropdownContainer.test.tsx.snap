@@ -8,6 +8,7 @@ exports[`renders the component as a submenu 1`] = `
 <div
   class="extraClassName DropdownContainer"
   data-test-id="cf-ui-dropdown-portal"
+  tabindex="0"
 >
   DropdownContainer
 </div>

@@ -69,6 +69,9 @@ it('renders the component as an Asset with a lower-cased entityType', () => {
 });
 
 it('renders the component with dropdownListElements', () => {
+  Date.now = jest.fn(() => 123456);
+  Math.random = jest.fn(() => 500);
+
   const { container } = render(
     <EntityListItem
       title="Title"
