@@ -51,46 +51,12 @@ module.exports = {
             link: '',
             menuLinks: [
               {
-                name: 'Introduction',
-                link: '/guidelines/copy/introduction/',
+                name: 'UX writing principles',
+                link: '/guidelines/copy/ux-writing-principles/',
               },
               {
-                name: 'Grammar',
-                link: '',
-                menuLinks: [
-                  {
-                    name: 'Introduction',
-                    link: '/guidelines/copy/grammar/introduction/',
-                  },
-                  {
-                    name: 'Capitalization',
-                    link: '/guidelines/copy/grammar/capitalization/',
-                  },
-                  {
-                    name: 'Punctuation',
-                    link: '/guidelines/copy/grammar/punctuation/',
-                  },
-                  {
-                    name: 'Sentence structure',
-                    link: '/guidelines/copy/grammar/sentence-structure/',
-                  },
-                  {
-                    name: 'Tense',
-                    link: '/guidelines/copy/grammar/tense/',
-                  },
-                  {
-                    name: 'Word choice',
-                    link: '/guidelines/copy/grammar/word-choice/',
-                  },
-                ],
-              },
-              {
-                name: 'Tone of voice',
-                link: '/guidelines/copy/tone-of-voice/',
-              },
-              {
-                name: 'Frequently used verbs',
-                link: '/guidelines/copy/frequently-used-verbs/',
+                name: 'Grammar and rules',
+                link: '/guidelines/copy/grammar-and-rules/',
               },
             ],
           },
