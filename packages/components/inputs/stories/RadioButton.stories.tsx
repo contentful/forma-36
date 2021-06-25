@@ -28,7 +28,7 @@ export const overview = () => (
       <Flex marginBottom="spacingS">
         <SectionHeading as="h3">Radio button default</SectionHeading>
       </Flex>
-      <RadioButton id="Radio" labelText="some label text" name="option1" />
+      <RadioButton id="Radio" label="some label text" name="option1" />
     </Flex>
     <Flex flexDirection="column" marginBottom="spacingM">
       <Flex marginBottom="spacingS">
@@ -36,8 +36,8 @@ export const overview = () => (
       </Flex>
       <RadioButton
         id="Radio"
-        checked
-        labelText="some label text"
+        isChecked
+        label="some label text"
         name="option2"
       />
     </Flex>
@@ -47,8 +47,8 @@ export const overview = () => (
       </Flex>
       <RadioButton
         id="Radio"
-        labelText="some label text"
-        disabled
+        label="some label text"
+        isDisabled
         name="option3"
       />
     </Flex>
