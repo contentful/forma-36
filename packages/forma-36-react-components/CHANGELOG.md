@@ -3,6 +3,140 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.90.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.90.0...@contentful/forma-36-react-components@3.90.1) (2021-06-17)
+
+
+### Bug Fixes
+
+* add keyboard support to dropdown elements [SPA-262] ([#990](https://github.com/contentful/forma-36/issues/990)) ([9960917](https://github.com/contentful/forma-36/commit/99609176a0604fd0f6b62753cf45a246cdbb48b6))
+
+
+
+
+
+# [3.90.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.89.4...@contentful/forma-36-react-components@3.90.0) (2021-06-07)
+
+
+### Features
+
+* extend Options props to supported native props like disabled [] ([#987](https://github.com/contentful/forma-36/issues/987)) ([6a5451b](https://github.com/contentful/forma-36/commit/6a5451b424918018b4b63a6ceb285eb99321cb89))
+
+
+
+
+
+## [3.89.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.89.3...@contentful/forma-36-react-components@3.89.4) (2021-05-26)
+
+
+### Bug Fixes
+
+* add labelText prop support to TextInput component ([#979](https://github.com/contentful/forma-36/issues/979)) ([24548d5](https://github.com/contentful/forma-36/commit/24548d519e1933b03968b7dd8dda4ffd7946ab3d))
+
+
+
+
+
+## [3.89.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.89.2...@contentful/forma-36-react-components@3.89.3) (2021-05-07)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+## [3.89.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.89.1...@contentful/forma-36-react-components@3.89.2) (2021-05-06)
+
+
+### Bug Fixes
+
+* adding cloud upload icon ([#951](https://github.com/contentful/forma-36/issues/951)) ([782f11b](https://github.com/contentful/forma-36/commit/782f11bd5d7de01a46caae1318c55de3f7145c13))
+
+
+
+
+
+## [3.89.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.89.0...@contentful/forma-36-react-components@3.89.1) (2021-05-05)
+
+
+### Bug Fixes
+
+* allow target for IconButton ([#949](https://github.com/contentful/forma-36/issues/949)) ([6e1c5fd](https://github.com/contentful/forma-36/commit/6e1c5fd3c166dda7a5346ab75d5722c3c921e938))
+
+
+
+
+
+# [3.89.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.88.6...@contentful/forma-36-react-components@3.89.0) (2021-05-03)
+
+
+### Bug Fixes
+
+* fix inputs onChange, onBlur, onFocus types ([#946](https://github.com/contentful/forma-36/issues/946)) ([a6181d0](https://github.com/contentful/forma-36/commit/a6181d0d97c5293720910ac7f249f640375c8397))
+
+
+### Features
+
+* add global HTML element attributes to typography components ([#947](https://github.com/contentful/forma-36/issues/947)) ([453fc61](https://github.com/contentful/forma-36/commit/453fc61a48ac2e391242ac7b927db1f3c6676a86))
+
+
+
+
+
+## [3.88.6](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.88.5...@contentful/forma-36-react-components@3.88.6) (2021-04-28)
+
+
+### Bug Fixes
+
+* reorder exports ([#943](https://github.com/contentful/forma-36/issues/943)) ([16d69e9](https://github.com/contentful/forma-36/commit/16d69e99aa241c7ddf418ade34a41c62626431ac))
+
+
+
+
+
+## [3.88.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.88.4...@contentful/forma-36-react-components@3.88.5) (2021-04-28)
+
+
+### Bug Fixes
+
+* fix IconButton href ([#940](https://github.com/contentful/forma-36/issues/940)) ([6647018](https://github.com/contentful/forma-36/commit/66470180d6926adeb93b72a6322d9d4c82346d71))
+
+
+
+
+
+## [3.88.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.88.3...@contentful/forma-36-react-components@3.88.4) (2021-04-27)
+
+
+### Bug Fixes
+
+* restore margins on EmptyState by increasing selector specificity ([c61890c](https://github.com/contentful/forma-36/commit/c61890c5d69b1e80827173a7f9925684bfdfd930))
+
+
+
+
+
+## [3.88.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.88.2...@contentful/forma-36-react-components@3.88.3) (2021-04-22)
+
+
+### Bug Fixes
+
+* **autocomplete:** Disable chevron when autocomplete is disabled ([#935](https://github.com/contentful/forma-36/issues/935)) ([3ca71d2](https://github.com/contentful/forma-36/commit/3ca71d27c89a57bae7aa2dbbea3203e36a130289))
+
+
+
+
+
+## [3.88.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.88.1...@contentful/forma-36-react-components@3.88.2) (2021-04-22)
+
+
+### Bug Fixes
+
+* **autocomplete:** chevron position ([b27472b](https://github.com/contentful/forma-36/commit/b27472bdcb31e697b5e900daf7bfef1b9e4ca5b6))
+
+
+
+
+
 ## [3.88.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.88.0...@contentful/forma-36-react-components@3.88.1) (2021-04-21)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components

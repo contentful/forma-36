@@ -25,6 +25,7 @@ export const Basic = (args: TextInputProps) => <TextInput {...args} />;
 
 Basic.args = {
   name: 'text-input',
+  labelText: 'text-input-label-text',
   id: 'text-input',
 };
 
@@ -45,6 +46,7 @@ export const ControlledTextInput = (args: TextInputProps) => {
 
 ControlledTextInput.args = {
   name: 'text-input',
+  labelText: 'text-input-label-text',
   id: 'text-input',
 };
 

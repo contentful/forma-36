@@ -43,10 +43,6 @@ const Layout = (props) => {
               menuLinks {
                 name
                 link
-                menuLinks {
-                  name
-                  link
-                }
               }
             }
           }

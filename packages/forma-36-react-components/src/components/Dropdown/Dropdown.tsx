@@ -1,4 +1,10 @@
-import React, { RefObject, useCallback, useEffect, useState } from 'react';
+import React, {
+  RefObject,
+  useCallback,
+  useEffect,
+  useState,
+  useRef,
+} from 'react';
 import cn from 'classnames';
 import { usePopper } from 'react-popper';
 import { Modifier, Placement, State as PopperState } from '@popperjs/core';
@@ -196,6 +202,8 @@ export function Dropdown({
   );
   const classNames = cn(styles['Dropdown'], className);
   const containerTestId = testId ? `${testId}-container` : testId;
+  const toggleElementIdSuffix = useRef(Math.random() * Date.now());
+  const toggleElementId = `dropdown-trigger-${toggleElementIdSuffix.current}`;
 
   useEffect(() => {
     setIsOpen(isOpenProp);
@@ -213,19 +221,26 @@ export function Dropdown({
     }
   };
 
-  const close = useCallback(() => {
-    setIsOpen(false);
+  const handleOnClose = useCallback(() => {
+    const toggleElementNode = document.querySelector(
+      `[data-node-id="${toggleElementId}"]`,
+    ) as HTMLElement;
+    toggleElementNode.focus();
 
     if (onClose) {
       onClose();
     }
-  }, [onClose, setIsOpen]);
+  }, [toggleElementId, onClose]);
+
+  const close = useCallback(() => {
+    setIsOpen(false);
+    handleOnClose();
+  }, [handleOnClose, setIsOpen]);
 
   const handleEscapeKey = useCallback(
     (event: KeyboardEvent) => {
       if (event.code === 'Escape') {
         event.stopPropagation();
-
         close();
       }
     },
@@ -246,7 +261,9 @@ export function Dropdown({
       testId={testId}
       submenuToggleLabel={submenuToggleLabel}
       onEnter={() => setIsOpen(true)}
+      onClick={() => setIsOpen(true)}
       onLeave={() => setIsOpen(false)}
+      aria-expanded={isOpen}
       ref={setReferenceElement}
       {...otherProps}
     >
@@ -261,7 +278,7 @@ export function Dropdown({
           className={dropdownContainerClassName}
           getRef={getContainerRef}
           isOpen={isOpen}
-          onClose={onClose}
+          onClose={handleOnClose}
           openSubmenu={openSubmenu}
           ref={setPopperElement}
           style={popperStyles.popper}
@@ -284,6 +301,7 @@ export function Dropdown({
         React.cloneElement(toggleElement, {
           'aria-haspopup': 'menu',
           'aria-expanded': isOpen,
+          'data-node-id': toggleElementId,
         })}
 
       {isOpen && (
@@ -292,7 +310,7 @@ export function Dropdown({
           className={dropdownContainerClassName}
           getRef={getContainerRef}
           isOpen={isOpen}
-          onClose={onClose}
+          onClose={handleOnClose}
           openSubmenu={openSubmenu}
           ref={setPopperElement}
           style={popperStyles.popper}

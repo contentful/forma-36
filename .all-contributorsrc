@@ -501,7 +501,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/33579339?v=4",
       "profile": "https://github.com/damienxy",
       "contributions": [
-        "code"
+        "code",
+        "bug"
       ]
     },
     {
@@ -540,6 +541,25 @@
       "contributions": [
         "bug",
         "code"
+      ]
+    },
+    {
+      "login": "eltociear",
+      "name": "Ikko Ashimine",
+      "avatar_url": "https://avatars.githubusercontent.com/u/22633385?v=4",
+      "profile": "https://bandism.net/",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "anilkk",
+      "name": "Anil Kumar krishanshetty",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1124415?v=4",
+      "profile": "https://github.com/anilkk",
+      "contributions": [
+        "code",
+        "doc"
       ]
     }
   ],

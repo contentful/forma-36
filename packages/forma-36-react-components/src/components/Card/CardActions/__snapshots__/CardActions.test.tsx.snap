@@ -25,6 +25,7 @@ exports[`renders the component as disabled 1`] = `
     aria-expanded="false"
     aria-haspopup="menu"
     class="IconButton IconButton--disabled IconButton--secondary"
+    data-node-id="dropdown-trigger-61728000"
     data-test-id="cf-ui-icon-button"
     disabled=""
     type="button"
@@ -83,6 +84,7 @@ exports[`renders the component using a multiple dropdown lists 1`] = `
     aria-expanded="false"
     aria-haspopup="menu"
     class="IconButton IconButton--secondary"
+    data-node-id="dropdown-trigger-61728000"
     data-test-id="cf-ui-icon-button"
     type="button"
   >
@@ -140,6 +142,7 @@ exports[`renders the component using a single dropdown list 1`] = `
     aria-expanded="false"
     aria-haspopup="menu"
     class="IconButton IconButton--secondary"
+    data-node-id="dropdown-trigger-61728000"
     data-test-id="cf-ui-icon-button"
     type="button"
   >
@@ -197,6 +200,7 @@ exports[`renders the component with an additional class name 1`] = `
     aria-expanded="false"
     aria-haspopup="menu"
     class="IconButton IconButton--secondary"
+    data-node-id="dropdown-trigger-61728000"
     data-test-id="cf-ui-icon-button"
     type="button"
   >
@@ -254,6 +258,7 @@ exports[`renders the component with published status 1`] = `
     aria-expanded="false"
     aria-haspopup="menu"
     class="IconButton IconButton--secondary"
+    data-node-id="dropdown-trigger-61728000"
     data-test-id="cf-ui-icon-button"
     type="button"
   >

@@ -415,7 +415,31 @@ exports[`renders as a link 1`] = `
   data-test-id="cf-ui-icon-button"
   href="#"
 >
-  content
+  <span
+    class="TabFocusTrap IconButton__inner"
+    tabindex="-1"
+  >
+    <svg
+      class="Icon Icon--small Icon--primary IconButton__icon"
+      data-test-id="cf-ui-icon"
+      height="1em"
+      viewBox="0 0 24 24"
+      width="1em"
+    >
+      <path
+        d="M7 10l5 5 5-5z"
+      />
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+    </svg>
+    <span
+      class="IconButton__label"
+    >
+      My Icon
+    </span>
+  </span>
 </a>
 `;
 

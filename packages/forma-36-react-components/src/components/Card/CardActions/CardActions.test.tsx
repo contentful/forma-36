@@ -5,6 +5,11 @@ import { axe } from '@/scripts/test/axeHelper';
 import { CardActions } from './CardActions';
 import { DropdownList, DropdownListItem } from '../../Dropdown';
 
+beforeAll(() => {
+  Date.now = jest.fn(() => 123456);
+  Math.random = jest.fn(() => 500);
+});
+
 it('renders the component using a single dropdown list', () => {
   const { container } = render(
     <CardActions>

@@ -4,52 +4,65 @@
 [![All Contributors](https://img.shields.io/github/all-contributors/contentful/forma-36/master)](#contributors-)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lernajs.io/)
 
-This is the monorepo for the Forma 36 design system by [Contentful](https://www.contentful.com).
+[Forma 36](https://f36.contentful.com/) is an open-source design system by [Contentful](https://www.contentful.com) created with the intent to reduce the overhead of creating UI by providing tools and guidance for digital teams building and extending Contentful products
+
+## Table of contents
 
 <!-- TOC -->
 
+- [Table of contents](#table-of-contents)
 - [Packages](#packages)
-  - [Adding packages](#adding-packages)
+  - [Creating new packages](#creating-new-packages)
 - [Development](#development)
+  - [Storybook for forma-36-react-components](#storybook-for-forma-36-react-components)
 - [Commits & releases](#commits--releases)
-- [Testing changes locally](#testing-changes-locally)
+- [Testing with your own project locally](#testing-with-your-own-project-locally)
 - [Get involved](#get-involved)
 - [Reach out to us](#reach-out-to-us)
   - [You found a bug or want to propose a feature?](#you-found-a-bug-or-want-to-propose-a-feature)
 - [License](#license)
 - [Code of Conduct](#code-of-conduct)
 - [Contributors ✨](#contributors-)
-  <!-- /TOC -->
+
+<!-- /TOC -->
 
 ## Packages
 
-Forma 36 is a monorepo maintained using Lerna. Get started with Lerna by following this link: https://github.com/lerna/lerna
-
-The monorepo is currently structured into the following packages:
+Forma 36 is a monorepo structured into different packages and maintained using [Lerna](https://github.com/lerna/lerna).
+The packages available are:
 
 - [`forma-36-website`](https://github.com/contentful/forma-36/tree/master/packages/forma-36-website)
-  - This package includes the design system documentation which offers guidelines, best practices and examples.
-    See the README [here](./packages/forma-36-website/README.md)
+  This package includes the design system documentation which offers guidelines, best practices and examples.
+
 - [`forma-36-react-components`](https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components)
-  - A React component library built with Storybook. See the README [here](./packages/forma-36-react-components/README.md)
+  A React component library built with Storybook.
+
 - [`forma-36-fcss`](https://github.com/contentful/forma-36/tree/master/packages/forma-36-fcss)
-  - CSS utility classes for spacing, typography, colors and transitions. See the README [here](./packages/forma-36-fcss/README.md)
+  CSS utility classes for spacing, typography, colors and transitions.
+
 - [`forma-36-tokens`](https://github.com/contentful/forma-36/tree/master/packages/forma-36-tokens)
-  - Forma 36 design tokens. See the README [here](./packages/forma-36-tokens/README.md)
+  This package includes all the visual tokens (e.g. colors, margins, font sizes, etc) that used in the react library
 
-### Adding packages
+### Creating new packages
 
-You can use [Plop](https://plopjs.com/) to scaffold new component package. Run `yarn generate` and follow the steps in the CLI to create a component package. Using your input here, Plop will generate the relevant files and add the relevant imports/exports to the main `src/index.ts` file required to make the component available when publishing the library.
+We use use [Plop](https://plopjs.com/) to create scripts that help you to scaffold new packages. In the root of the repo, you can run `yarn generate`. Then follow the steps in the CLI. Plop will generate the relevant files and add the relevant imports and exports to the main `src/index.ts` file required to make the component available when publishing the library.
 
 ## Development
 
-For local development run `yarn` from the root of this repo to install all dependencies and build all packages.
+For local development, in the root of the repo run `yarn` to install all dependencies and then `yarn build` to build all packages. Now follow the instructions of the specific package you’re working on.
+You will find each package’s instructions in their README files, check the [Packages](#packages) section for a list of all packages.
+
+> In case you are having problems to install the dependencies, try using NVM to get the same node version we use by running `nvm use` in the root of the repo
+
+### Storybook for forma-36-react-components
+
+We use storybook with our react component library to develop components. You can start it from the root of the repo, just run `yarn storybook`
 
 ## Commits & releases
 
 Use `yarn commit`. This uses the [Commitzen](https://github.com/commitizen/cz-cli) CLI to create a conventional commit message based on your changes. CI is setup to release all new commits on the master branch.
 
-## Testing changes locally
+## Testing with your own project locally
 
 You can test changes to a package of this monorepo in your own project locally by taking the following steps:
 
@@ -61,8 +74,7 @@ You can test changes to a package of this monorepo in your own project locally b
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?maxAge=31557600)](http://makeapullrequest.com)
 
-We appreciate any help on our repositories. For more details about how to
-contribute to a package, see the README of the corresponding package.
+We appreciate any help on our repositories. For more details about how to contribute to a package, see the README of the corresponding package.
 
 ## Reach out to us
 
@@ -70,7 +82,8 @@ You can reach out to us using the [Contentful community Slack](https://www.conte
 
 ### You found a bug or want to propose a feature?
 
-- File an issue here on GitHub: [![File an issue](https://img.shields.io/badge/-Create%20Issue-6cc644.svg?logo=github&maxAge=31557600)](https://github.com/contentful/forma-36/issues/new). Make sure to remove any credential from your code before sharing it.
+Create an issue using one of the templates [![File an issue](https://img.shields.io/badge/-Create%20Issue-6cc644.svg?logo=github&maxAge=31557600)](https://github.com/contentful/forma-36/issues/new/choose).
+Make sure to remove any credential from your code before sharing it.
 
 ## License
 
@@ -158,13 +171,15 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://kamsar.net"><img src="https://avatars0.githubusercontent.com/u/103677?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Kam Figy</b></sub></a><br /><a href="https://github.com/contentful/forma-36/issues?q=author%3Akamsar" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/VaguelySerious"><img src="https://avatars0.githubusercontent.com/u/29887157?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Peter Wielander</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=VaguelySerious" title="Code">💻</a> <a href="https://github.com/contentful/forma-36/issues?q=author%3AVaguelySerious" title="Bug reports">🐛</a></td>
     <td align="center"><a href="http://felixboenke.dev"><img src="https://avatars.githubusercontent.com/u/4083285?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Felix Boenke</b></sub></a><br /><a href="https://github.com/contentful/forma-36/issues?q=author%3AFLoppix" title="Bug reports">🐛</a></td>
-    <td align="center"><a href="https://github.com/damienxy"><img src="https://avatars.githubusercontent.com/u/33579339?v=4?s=100" width="100px;" alt=""/><br /><sub><b>damienxy</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=damienxy" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/damienxy"><img src="https://avatars.githubusercontent.com/u/33579339?v=4?s=100" width="100px;" alt=""/><br /><sub><b>damienxy</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=damienxy" title="Code">💻</a> <a href="https://github.com/contentful/forma-36/issues?q=author%3Adamienxy" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://nikazawila.com"><img src="https://avatars.githubusercontent.com/u/9191638?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Nika Zawila</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=nikazawila" title="Code">💻</a> <a href="#maintenance-nikazawila" title="Maintenance">🚧</a></td>
     <td align="center"><a href="https://github.com/Sarah-Roediger"><img src="https://avatars.githubusercontent.com/u/67960996?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sarah</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=Sarah-Roediger" title="Documentation">📖</a></td>
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/th1nkgr33n"><img src="https://avatars.githubusercontent.com/u/7330927?v=4?s=100" width="100px;" alt=""/><br /><sub><b>th1nkgr33n</b></sub></a><br /><a href="https://github.com/contentful/forma-36/issues?q=author%3Ath1nkgr33n" title="Bug reports">🐛</a></td>
     <td align="center"><a href="http://chaoste.github.io"><img src="https://avatars.githubusercontent.com/u/9327071?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Thomas Kellermeier</b></sub></a><br /><a href="https://github.com/contentful/forma-36/issues?q=author%3AChaoste" title="Bug reports">🐛</a> <a href="https://github.com/contentful/forma-36/commits?author=Chaoste" title="Code">💻</a></td>
+    <td align="center"><a href="https://bandism.net/"><img src="https://avatars.githubusercontent.com/u/22633385?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Ikko Ashimine</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=eltociear" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/anilkk"><img src="https://avatars.githubusercontent.com/u/1124415?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Anil Kumar krishanshetty</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=anilkk" title="Code">💻</a> <a href="https://github.com/contentful/forma-36/commits?author=anilkk" title="Documentation">📖</a></td>
   </tr>
 </table>
 

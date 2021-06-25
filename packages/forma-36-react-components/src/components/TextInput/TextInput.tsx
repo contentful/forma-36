@@ -26,6 +26,7 @@ export type TextInputProps = {
     | 'date'
     | 'time';
   name?: string;
+  labelText?: string;
   id?: string;
   className?: string;
   withCopyButton?: boolean;
@@ -47,6 +48,7 @@ export const TextInput = ({
   isReadOnly = false,
   maxLength,
   name,
+  labelText,
   onBlur,
   onChange,
   onCopy,
@@ -113,7 +115,7 @@ export const TextInput = ({
     <div className={classNames}>
       <input
         onKeyDown={handleKeyDown}
-        aria-label={name}
+        aria-label={labelText}
         className={styles['TextInput__input']}
         id={id}
         name={name}

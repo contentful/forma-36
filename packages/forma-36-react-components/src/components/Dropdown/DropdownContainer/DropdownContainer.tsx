@@ -58,6 +58,8 @@ export const DropdownContainer = forwardRef<
   });
 
   useEffect(() => {
+    dropdown.current?.focus();
+
     if (getRef && dropdown.current) {
       getRef(dropdown.current);
     }
@@ -68,6 +70,9 @@ export const DropdownContainer = forwardRef<
       {...props}
       className={classNames}
       data-test-id={testId}
+      // tabIndex is Necessary to focus the container for keyboard accessibility
+      // eslint-disable-next-line
+      tabIndex={0}
       onMouseEnter={() => {
         if (openSubmenu) {
           openSubmenu(true);

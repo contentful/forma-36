@@ -235,3 +235,54 @@ exports[`renders the component with error 1`] = `
   </svg>
 </div>
 `;
+
+exports[`renders the component with placeholder 1`] = `
+<div
+  class="Select__wrapper Select--full"
+>
+  <select
+    aria-label="optionSelect"
+    class="Select"
+    data-test-id="cf-ui-select"
+    id="optionSelect"
+    name="optionSelect"
+  >
+    <option
+      data-test-id="cf-ui-select-option"
+      disabled=""
+      value=""
+    >
+      Please select an option...
+    </option>
+    <option
+      data-test-id="cf-ui-select-option"
+      value="optionOne"
+    >
+      Option One
+    </option>
+    <option
+      data-test-id="cf-ui-select-option"
+      value="optionTwo"
+    >
+      Option Two
+    </option>
+    <option
+      data-test-id="cf-ui-select-option"
+      value="optionThree"
+    >
+      Option Three
+    </option>
+  </select>
+  <svg
+    class="Icon Icon--small Icon--muted Select__icon"
+    data-test-id="cf-ui-icon"
+    height="1em"
+    viewBox="0 0 24 24"
+    width="1em"
+  >
+    <path
+      d="M5.29289 8.29289C5.68342 7.90237 6.31658 7.90237 6.70711 8.29289L12 13.5858L17.2929 8.29289C17.6834 7.90237 18.3166 7.90237 18.7071 8.29289C19.0976 8.68342 19.0976 9.31658 18.7071 9.70711L12.7071 15.7071C12.3166 16.0976 11.6834 16.0976 11.2929 15.7071L5.29289 9.70711C4.90237 9.31658 4.90237 8.68342 5.29289 8.29289Z"
+    />
+  </svg>
+</div>
+`;

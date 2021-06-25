@@ -39,6 +39,9 @@ it('renders the component with a thumbnail element', () => {
 });
 
 it('renders the component with dropdownListElements', () => {
+  Date.now = jest.fn(() => 123456);
+  Math.random = jest.fn(() => 500);
+
   const { container } = render(
     <EntryCard
       title="My Entry Card"

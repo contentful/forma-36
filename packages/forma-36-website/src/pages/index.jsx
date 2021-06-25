@@ -95,7 +95,7 @@ const IndexPage = () => (
         >
           We appreciate your contributions. For more details about how to
           contribute to a package, see the README of the corresponding package
-          on Github
+          on GitHub
         </Paragraph>
       </Typography>
       <Button

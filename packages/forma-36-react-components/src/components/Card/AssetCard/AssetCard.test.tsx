@@ -56,6 +56,9 @@ it('renders the component with status', () => {
 });
 
 it('renders the component with actions', () => {
+  Date.now = jest.fn(() => 123456);
+  Math.random = jest.fn(() => 500);
+
   const { container } = render(
     <AssetCard
       dropdownListElements={

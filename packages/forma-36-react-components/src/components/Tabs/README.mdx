@@ -7,10 +7,23 @@ github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-re
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-tabs--default'
 ---
 
-Detailed documentation will be provided soon. For now, please have a look into the storybook for implementation details.
+Tabs is a component that makes navigating between sections of related content possible, displaying one section at a time.
+
+## Table of contents
+
+- [How to use Tabs](#how-to-use-Tabs)
+- [Code examples](#code-examples)
+- [Content recommendations](#content-recommendations)
+
+## How to use Tabs
+
+Use Tabs if the content can be separated into sections that make sense as standalone pieces of information.
+Be aware that the users will not see all the content at the same time. Make sure the first section is the most relevant one.
+
+## Code examples
 
 ```jsx
-<Tabs role="navigation" withDivider>
+<Tabs role="tablist" withDivider>
   <Tab id="first" href="https://contentful.com" selected>
     First
   </Tab>
@@ -22,3 +35,62 @@ Detailed documentation will be provided soon. For now, please have a look into t
   </Tab>
 </Tabs>
 ```
+
+### with vertical divider
+
+```jsx
+<Tabs role="tablist" withDivider dividerOrientation="vertical">
+  <Tab id="first" href="https://contentful.com" selected>
+    First
+  </Tab>
+  <Tab id="second" href="https://contentful.com">
+    Second
+  </Tab>
+  <Tab id="third" href="https://contentful.com">
+    Third
+  </Tab>
+</Tabs>
+```
+
+### as navigation
+
+```jsx
+<Tabs role="navigation">
+  <Tab id="first" href="https://contentful.com" selected>
+    First
+  </Tab>
+  <Tab id="second" href="https://contentful.com">
+    Second
+  </Tab>
+  <Tab id="third" href="https://contentful.com">
+    Third
+  </Tab>
+</Tabs>
+```
+
+### used with TabPanel
+
+```jsx
+<>
+  <Tabs role="tablist">
+    <Tab id="first" selected={selected === 'first'}>
+      First
+    </Tab>
+    <Tab id="second" selected={selected === 'second'}>
+      Second
+    </Tab>
+  </Tabs>
+  {selected === 'first' && (
+    <TabPanel id="first">Content for the first tab</TabPanel>
+  )}
+  {selected === 'second' && (
+    <TabPanel id="second">Content for the second tab</TabPanel>
+  )}
+</>
+```
+
+## Content recommendations
+
+- every Tab should have concise copy
+- all content within a Tab should be related to it's label
+- to ensure an optimal cognitive load for users, do not use more than six (6) Tabs at any given time

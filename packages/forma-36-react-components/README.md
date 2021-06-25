@@ -1,21 +1,20 @@
 # Forma 36 React Components
 
-A React component library for [Contentful](https://www.contentful.com), powered by [Storybook](https://storybook.js.org/).
-
-[Forma 36 Homepage](https://f36.contentful.com/)
-[Forma 36 Storybook](https://f36-storybook.contentful.com/)
+A React component library for [Forma 36](https://f36.contentful.com/) design system created by [Contentful](https://www.contentful.com) and powered by [Storybook](https://storybook.js.org/).
+You can access a Storybook website with the latest changes of the library [here](https://f36-storybook.contentful.com/)
 
 ## Table of contents
 
+<!-- TOC -->
+
 - [Forma 36 React Components](#forma-36-react-components)
   - [Table of contents](#table-of-contents)
-  - [Library Usage](#library-usage)
-    - [Install package from NPM](#install-package-from-npm)
+  - [Installing package](#installing-package)
+  - [Usage](#usage)
     - [Import desired component into your project](#import-desired-component-into-your-project)
+    - [Import styles](#import-styles)
   - [Development](#development)
-    - [Switch to the correct version of Node (using NVM)](#switch-to-the-correct-version-of-node-using-nvm)
-    - [Install dependencies](#install-dependencies)
-    - [Run Storybook](#run-storybook)
+    - [Storybook](#storybook)
     - [Example component directory structure](#example-component-directory-structure)
     - [Styling](#styling)
     - [Component principles](#component-principles)
@@ -26,50 +25,54 @@ A React component library for [Contentful](https://www.contentful.com), powered 
     - [Create a build of the library](#create-a-build-of-the-library)
   - [Commits](#commits)
   - [Alpha components](#alpha-components)
+  <!-- /TOC -->
 
-## Library Usage
-
-### Install package from NPM
+## Installing package
 
 ```bash
 yarn add @contentful/forma-36-react-components
 ```
 
-Or for NPM
+Or
 
 ```bash
-npm i @contentful/forma-36-react-components
+npm install @contentful/forma-36-react-components
 ```
+
+## Usage
 
 ### Import desired component into your project
 
 ```js
-import { Input } from '@contentful/f36-components';
+import { Input } from '@contentful/forma-36-react-components';
+```
+
+> For components in alpha stage, check the instructions in [Alpha components](#alpha-components)
+
+### Import styles
+
+```js
+import '@contentful/forma-36-react-components/dist/styles.css';
+>>>>>>> master
 ```
 
 ## Development
 
-### Switch to the correct version of Node (using NVM)
+For local development, in the root of the repo run `yarn` to install all dependencies and then `yarn build` to build all packages.
+This package depends on several other Forma 36 packages so you will need to build all of them.
 
-```bash
-nvm use
-```
+### Storybook
 
-### Install dependencies
-
-For local development run `yarn` from the root of this repo to install all dependencies and build all packages.
-
-### Run Storybook
-
-[Storybook](https://storybook.js.org/) is a UI development environment we are using to power our component library. Using Storybook allows us to work on components in isolation.
+We use [Storybook](https://storybook.js.org/) to create a development environment for our component library. To start it locally run:
 
 ```bash
 yarn storybook
 ```
 
-Using Storybook requires you to wrap your component in a story. Look in the `src/components` directory for an example `.stories.js` file. Storybook has been configured to automatically include any files with the `.stories.js` file extension.
+To start working on your components in Storybook, you will need to create stories for them.
+Look in the `src/components` directory for any `.stories.js` file. Storybook will automatically include any files with the `.stories.js` file extension.
 
-Storybook is setup using its own Webpack configuration file located at [`tools/.storybook/webpack.config.js`](./tools/.storybook/webpack.config.js).
+Storybook is configured at [`scripts/.storybook/main.js`](./scripts/.storybook/main.js).
 
 ### Example component directory structure
 
@@ -83,6 +86,8 @@ YourComponent
 ├── YourComponent.stories.js // Storybook for the component
 └── YourComponent.test.js.   // Component tests
 ```
+
+> If you use `yarn generate` in the root of the repo, this structure will be created automatically for you
 
 ### Styling
 
