@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.90.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.90.2...@contentful/forma-36-react-components@3.90.3) (2021-06-28)
+
+
+### Bug Fixes
+
+* **modal-controls:** set full width with box-sizing border-box ([#996](https://github.com/contentful/forma-36/issues/996)) ([106833b](https://github.com/contentful/forma-36/commit/106833b751cfb41959f3e7ef45bdfa62e65f27fd))
+
+
+
+
+
 ## [3.90.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.90.1...@contentful/forma-36-react-components@3.90.2) (2021-06-28)
 
 
