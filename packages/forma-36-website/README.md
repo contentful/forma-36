@@ -12,7 +12,7 @@ The website is broken down into three main sections:
 
 ## Development
 
-For local development run `yarn` from the root of this repo to install all dependencies and build all packages.
+For local development run `yarn` from the root of this repo to install all dependencies and run `yarn build` from the root of this repo to build all packages.
 
 The documentation website is powered using [Gatsby v2](https://www.gatsbyjs.org). Use `yarn start` to launch the development server. This will create a live preview with hot module reloading at http://localhost:8000/.
 
