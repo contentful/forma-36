@@ -172,59 +172,63 @@ exports[`renders the component in loading state 1`] = `
     >
       Embed entry
     </span>
-    <svg
-      class="Spinner Button__spinner Spinner--default Spinner--white"
-      data-test-id="cf-ui-spinner"
-      style="height: 12px; width: 12px;"
-      viewBox="0 0 60 51"
-      xmlns="http://www.w3.org/2000/svg"
+    <div
+      class="Button--spinner-wrapper Button--spinner--enter Button--spinner--enter-active"
     >
-      <title>
-        Loading…
-      </title>
-      <g
-        class="circle1--translate"
-        transform="translate(10,33.528168)"
+      <svg
+        class="Spinner Spinner--default Spinner--white"
+        data-test-id="cf-ui-spinner"
+        style="height: 12px; width: 12px;"
+        viewBox="0 0 60 51"
+        xmlns="http://www.w3.org/2000/svg"
       >
+        <title>
+          Loading…
+        </title>
         <g
-          class="circle1--scale"
+          class="circle1--translate"
+          transform="translate(10,33.528168)"
         >
-          <circle
-            id="circle1"
-            r="6"
-            transform="translate(0,10.471832)"
-          />
+          <g
+            class="circle1--scale"
+          >
+            <circle
+              id="circle1"
+              r="6"
+              transform="translate(0,10.471832)"
+            />
+          </g>
         </g>
-      </g>
-      <g
-        class="circle2--translate"
-        transform="translate(30,33.528168)"
-      >
         <g
-          class="circle2--scale"
+          class="circle2--translate"
+          transform="translate(30,33.528168)"
         >
-          <circle
-            id="circle2"
-            r="6"
-            transform="translate(0,10.471832)"
-          />
+          <g
+            class="circle2--scale"
+          >
+            <circle
+              id="circle2"
+              r="6"
+              transform="translate(0,10.471832)"
+            />
+          </g>
         </g>
-      </g>
-      <g
-        class="circle3--translate"
-        transform="translate(50,33.528168)"
-      >
         <g
-          class="circle3--scale"
+          class="circle3--translate"
+          transform="translate(50,33.528168)"
         >
-          <circle
-            id="circle3"
-            r="6"
-            transform="translate(0,10.471832)"
-          />
+          <g
+            class="circle3--scale"
+          >
+            <circle
+              id="circle3"
+              r="6"
+              transform="translate(0,10.471832)"
+            />
+          </g>
         </g>
-      </g>
-    </svg>
+      </svg>
+    </div>
   </span>
 </button>
 `;
