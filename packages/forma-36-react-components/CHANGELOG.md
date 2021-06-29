@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.90.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.90.3...@contentful/forma-36-react-components@3.90.4) (2021-06-29)
+
+
+### Bug Fixes
+
+* **note:** remove anchor styling ([#994](https://github.com/contentful/forma-36/issues/994)) ([68400f8](https://github.com/contentful/forma-36/commit/68400f8a1bf17e68642c9ecd685276478c007487))
+
+
+
+
+
 ## [3.90.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.90.2...@contentful/forma-36-react-components@3.90.3) (2021-06-28)
 
 

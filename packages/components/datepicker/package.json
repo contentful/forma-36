@@ -1,7 +1,7 @@
 {
   "name": "@contentful/forma-36-react-datepicker",
   "description": "Forma 36: Test Component",
-  "version": "0.4.0-alpha.51",
+  "version": "0.4.0-alpha.52",
   "license": "MIT",
   "files": [
     "dist",
@@ -28,7 +28,7 @@
     "react": ">=16.8"
   },
   "devDependencies": {
-    "@contentful/forma-36-react-components": "^3.90.3",
+    "@contentful/forma-36-react-components": "^3.90.4",
     "@testing-library/jest-dom": "5.11.6",
     "@testing-library/react": "11.2.2",
     "@types/jest": "25.2.3",
