@@ -561,6 +561,15 @@
         "code",
         "doc"
       ]
+    },
+    {
+      "login": "massao",
+      "name": "Renato Massao Yonamine",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1071799?v=4",
+      "profile": "https://github.com/massao",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
