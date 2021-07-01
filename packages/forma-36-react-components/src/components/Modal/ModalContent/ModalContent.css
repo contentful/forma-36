@@ -4,7 +4,7 @@
 @import 'settings/transitions';
 
 .ModalContent {
-  padding: var(--spacing-m) var(--spacing-l) var(--spacing-l) var(--spacing-l);
+  padding: var(--spacing-m) var(--spacing-l);
   color: var(--color-text-mid);
   font-size: var(--font-size-m);
   font-family: var(--font-stack-primary);
