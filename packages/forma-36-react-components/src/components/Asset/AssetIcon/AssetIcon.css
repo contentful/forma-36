@@ -1,12 +1,10 @@
-@import 'settings/colors';
-
-.Illustration {
+.AssetIcon {
   display: inline-block;
   width: 39px;
   height: 39px;
 }
 
-.Illustration g,
-.Illustration path {
+.AssetIcon g,
+.AssetIcon path {
   stroke: var(--color-text-light);
 }
