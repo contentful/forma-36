@@ -512,7 +512,8 @@
       "profile": "https://nikazawila.com",
       "contributions": [
         "code",
-        "maintenance"
+        "maintenance",
+        "doc"
       ]
     },
     {
@@ -560,6 +561,24 @@
       "contributions": [
         "code",
         "doc"
+      ]
+    },
+    {
+      "login": "massao",
+      "name": "Renato Massao Yonamine",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1071799?v=4",
+      "profile": "https://github.com/massao",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "cachrisman",
+      "name": "Charlie Chrisman",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6521666?v=4",
+      "profile": "http://www.charliechrisman.com",
+      "contributions": [
+        "bug"
       ]
     }
   ],
