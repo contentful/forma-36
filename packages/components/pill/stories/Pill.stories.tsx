@@ -5,13 +5,24 @@ import { Pill } from '../src/Pill';
 import type { PillProps } from '../src/Pill';
 
 export default {
+  title: 'Components/Pill',
   component: Pill,
   parameters: {
     propTypes: Pill['__docgenInfo'],
   },
-  title: 'Components/Pill',
+  argTypes: {
+    label: { control: { type: 'text' } },
+    className: { control: { disable: true } },
+    testId: { control: { disable: true } },
+    onClose: { control: { disable: true } },
+    onDrag: { control: { disable: true } },
+    dragHandleComponent: { control: { disable: true } },
+    variant: { control: { disable: true } },
+  },
 } as Meta;
 
-export const Default: Story<PillProps> = (args) => {
-  return <Pill {...args}>Pill</Pill>;
-};
+export const Default: Story<PillProps> = (args: PillProps) => (
+  <Pill label={args.label} />
+);
+
+Default.args = { label: 'example.user@contentful.com' };

@@ -1,3 +1,63 @@
-# @contentful/f36-pill
+---
+title: 'Pill'
+type: 'component'
+status: 'stable'
+slug: /components/pill/
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/pill'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-pill--default'
+---
 
-This package is part of [Forma 36](https://github.com/contentful/forma-36). See the repo for more details.
+Pills represent a set of one or multiple objects which can be entered or changed by the user. By default, pills can be removed by the user. When necessary, the order of pills can be changed by the user using drag and drop. They are used to represent complex entities in small blocks such as contact details. Contentful Pills are are used to render transition locales and tag elements.
+
+## Table of contents
+
+- [How to use Pill](#how-to-use-pill)
+- [Code examples](#code-examples)
+- [Content recommendations](#content-recommendations)
+- [Accessibility](#accessibility)
+
+## How to use Pill
+
+- use Pill to represent data like contact details or tagging
+- it can be used for web content that needs to be labeled, categorized, or organized using keywords that describe them.
+
+## Code examples
+
+Example of usage with draggable option
+
+```jsx
+// import { Pill } from '@contentful/f36-components';
+
+<Pill
+  tabIndex={0}
+  testId="pill-item"
+  label="test label"
+  onClose={() => {}}
+  onDrag={() => {}}
+/>
+```
+
+Example of the Pill component with dragHandle, in that case Icon.
+
+```jsx
+// import { Pill, Icon } from '@contentful/f36-components';
+
+<Pill
+  label="example.user@contentful.com"
+  dragHandleComponent={
+    <Icon
+      icon="ArrowUp"
+      color="positive"
+      style={{ padding: '0.375rem 0.625rem' }}
+    />
+  }
+/>
+```
+
+## Content recommendations:
+
+- Be sure the pill text is clear and concise.
+
+## Accessibility
+
+- Label value is passed in the component as a aria-label and title in the span element, like follows `aria-label={label} title={label}`.
