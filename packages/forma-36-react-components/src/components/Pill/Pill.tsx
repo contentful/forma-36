@@ -14,6 +14,8 @@ export interface PillProps {
   style?: React.CSSProperties;
   dragHandleComponent?: React.ReactNode;
   variant?: 'idle' | 'active' | 'deleted';
+  // All other props
+  [key:string]: any;
 }
 
 export function Pill({
