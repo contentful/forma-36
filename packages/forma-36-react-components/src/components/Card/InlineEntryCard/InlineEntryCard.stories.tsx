@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { InlineEntryCard, InlineEntryCardPropTypes } from './InlineEntryCard';
-import { DropdownList, DropdownListItem } from '../../Dropdown';
+import { InlineEntryCard, InlineEntryCardProps } from './InlineEntryCard';
+import { DropdownListItem } from '../../Dropdown/DropdownListItem/DropdownListItem';
+import { DropdownList } from '../../Dropdown/DropdownList/DropdownList';
 
 export default {
   title: 'Components/Card/InlineEntryCard',
@@ -32,7 +33,7 @@ const dropdownElements = (
   </React.Fragment>
 );
 
-interface Args extends InlineEntryCardPropTypes {
+interface Args extends InlineEntryCardProps {
   entryText?: string;
 }
 

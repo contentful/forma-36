@@ -78,7 +78,7 @@ export class NotificationItemContainer extends Component<
   };
 
   render() {
-    const { duration, ...rest } = this.props;
+    const { duration, ...otherProps } = this.props;
     return (
       <AnimateHeight
         duration={200}
@@ -98,7 +98,7 @@ export class NotificationItemContainer extends Component<
           onMouseEnter={this.handleMouseEnter}
           onMouseLeave={this.handleMouseLeave}
         >
-          <NotificationItem {...rest} onClose={this.close} />
+          <NotificationItem {...otherProps} onClose={this.close} />
         </div>
       </AnimateHeight>
     );

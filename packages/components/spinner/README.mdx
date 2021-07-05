@@ -1,0 +1,42 @@
+---
+title: 'Spinner'
+type: 'component'
+status: 'stable'
+slug: /components/spinner/
+github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/Spinner'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-spinner--default'
+typescript: ./src/Spinner.tsx
+---
+
+# Spinner
+
+A Spinner is a graphic element that helps communicating to users that an action is in progress and it will take some time to be completed.
+
+## Table of contents
+
+- [Code examples](#code-examples)
+- [Props](#props)
+
+```jsx
+<Spinner />
+```
+
+## Code examples
+
+### With text
+
+It’s possible to use the Spinner with other elements. A very common pattern is using it together with text.
+
+```jsx
+<div>
+  Loading <Spinner />
+</div>
+```
+
+Another good example of the Spinner being used with other components is the loading state of [Forma 36’s button](https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/Button).
+
+## Props
+
+import { Props } from '@contentful/f36-docs-utils';
+
+<Props of="Spinner" />

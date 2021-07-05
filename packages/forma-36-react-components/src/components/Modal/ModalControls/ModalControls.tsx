@@ -16,11 +16,11 @@ export function ModalControls({
   position = 'left',
   className,
   children,
-  ...rest
+  ...otherProps
 }: ModalControlsProps): React.ReactElement {
   return (
     <div
-      {...rest}
+      {...otherProps}
       className={cn(
         styles.ModalControls,
         {

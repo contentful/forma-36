@@ -1,11 +1,11 @@
 import React, { useCallback, useRef, useState } from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
+import { Copy } from '@contentful/f36-icons';
 
 import cn from 'classnames';
-import { Icon } from '../Icon';
 import { Tooltip } from '../Tooltip';
 import type { TooltipPlace } from '../Tooltip';
-import { TabFocusTrap } from '../TabFocusTrap';
+import { TabFocusTrap } from '@contentful/f36-utils';
 import styles from './CopyButton.css';
 
 export interface CopyButtonProps {
@@ -84,7 +84,7 @@ export function CopyButton({
               <span className={styles['CopyButton__text']}>
                 Copy {copyValue} to clipboard
               </span>
-              <Icon icon="Copy" color="muted" />
+              <Copy variant="muted" />
             </TabFocusTrap>
           </button>
         </Tooltip>

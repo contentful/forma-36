@@ -12,8 +12,10 @@ import cn from 'classnames';
 import type * as CSS from 'csstype';
 
 import styles from './Tooltip.css';
-import tokens from '@contentful/forma-36-tokens';
-import { Portal } from '../Portal';
+
+import tokens from '@contentful/f36-tokens';
+
+import { Portal } from '@contentful/f36-utils';
 
 export type TooltipPlace = Placement;
 

@@ -1,50 +1,95 @@
-export * from './components/TextLink';
-export * from './components/Icon';
-export * from './components/Pill';
-export * from './components/HelpText';
-export * from './components/FormLabel';
-export * from './components/ValidationMessage';
-export * from './components/TextInput';
-export * from './components/TextField';
-export * from './components/Textarea';
-export * from './components/CopyButton';
-export * from './components/Card';
-export * from './components/DateTime';
-export * from './components/Tooltip';
-export * from './components/IconButton';
-export * from './components/CheckboxField';
-export * from './components/Checkbox';
-export * from './components/TabFocusTrap';
-export * from './components/Spinner';
-export * from './components/Button';
-export * from './components/EditorToolbar';
-export * from './components/Dropdown';
-export * from './components/SelectField';
-export * from './components/Select';
-export * from './components/Illustration';
-export * from './components/Table';
-export * from './components/ToggleButton';
-export * from './components/Asset';
-export * from './components/Tag';
-export * from './components/Typography';
-export { InViewport } from './components/InViewport/InViewport';
-export * from './components/Modal';
-export * from './components/Form';
-export * from './components/Note';
-export * from './components/Notification';
-export * from './components/ControlledInput';
-export * from './components/ControlledInputField';
-export * from './components/RadioButton';
-export * from './components/RadioButtonField';
-export * from './components/List';
-export * from './components/Skeleton';
-export * from './components/Tabs';
-export * from './components/EntityList';
-export * from './components/EmptyState';
-export * from './components/Switch';
-export * from './components/Workbench';
-export * from './components/Autocomplete';
-export * from './components/Grid';
-export * from './components/Flex';
+export * from '@contentful/f36-badge';
+export * from '@contentful/f36-inputs';
+export { Icon } from '@contentful/f36-icon';
+export type {
+  IconComponent,
+  IconProps,
+  IconSize,
+  IconVariant,
+} from '@contentful/f36-icon';
+export { Flex, Grid, GridItem, Box } from '@contentful/f36-core';
+export type {
+  FlexProps,
+  GridProps,
+  GridItemProps,
+  BoxProps,
+  CommonProps,
+  MarginProps,
+  PaddingProps,
+  Spacing,
+} from '@contentful/f36-core';
+export { Spinner } from '@contentful/f36-spinner';
+export type { SpinnerProps } from '@contentful/f36-spinner';
+export {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
+} from '@contentful/f36-table';
+export type {
+  TableBodyProps,
+  TableCellProps,
+  TableHeadProps,
+  TableProps,
+  TableRowProps,
+} from '@contentful/f36-table';
+export * from '@contentful/f36-typography';
+export { ValidationMessage } from '@contentful/f36-validation-message';
+export type { ValidationMessageProps } from '@contentful/f36-validation-message';
+export { List, ListItem } from '@contentful/f36-list';
+export type { ListProps, ListItemProps } from '@contentful/f36-list';
+export { HelpText } from '@contentful/f36-helptext';
+export type { HelpTextProps } from '@contentful/f36-helptext';
+export { Note } from '@contentful/f36-note';
+export type { NoteProps } from '@contentful/f36-note';
+export { EmptyState } from '@contentful/f36-empty-state';
+export type { EmptyStateProps } from '@contentful/f36-empty-state';
+export {
+  ControlledInputField,
+  CheckboxField,
+  RadioButtonField,
+  Label,
+} from '@contentful/f36-forms';
+export type {
+  ControlledInputFieldProps,
+  CheckboxFieldProps,
+  RadioButtonFieldProps,
+  LabelProps,
+} from '@contentful/f36-forms';
+export { ControlledInput, Checkbox, RadioButton } from '@contentful/f36-inputs';
+export type {
+  ControlledInputProps,
+  CheckboxProps,
+  RadioButtonProps,
+} from '@contentful/f36-inputs';
 export * from './components/Accordion';
+export * from './components/Asset';
+export * from './components/Autocomplete';
+export * from './components/Button';
+export * from './components/Card';
+export * from './components/CopyButton';
+export * from './components/Dropdown';
+export * from './components/EditorToolbar';
+export * from './components/Illustration';
+export * from './components/DateTime';
+export * from './components/EntityList';
+export * from './components/Form';
+export * from './components/IconButton';
+export * from './components/Modal';
+export * from './components/Notification';
+export * from './components/Pill';
+export * from './components/Select';
+export * from './components/SelectField';
+export * from './components/Skeleton';
+export * from './components/Switch';
+export * from './components/Tabs';
+export * from './components/Textarea';
+export * from './components/TextField';
+export * from './components/TextInput';
+export * from './components/TextLink';
+export * from './components/ToggleButton';
+export * from './components/Tooltip';
+export * from './components/Workbench';
+
 // -- Add imports above this line (required by plopfile.js) --

@@ -1,10 +1,10 @@
 import React from 'react';
+import { SectionHeading } from '@contentful/f36-typography';
 import { action } from '@storybook/addon-actions';
-import { Icon } from '../Icon';
+import { Flex } from '@contentful/f36-core';
+import { ThumbUp } from '@contentful/f36-icons';
 
 import { Pill, PillProps } from './Pill';
-import { SectionHeading } from '../Typography';
-import { Flex } from '../Flex';
 
 export default {
   title: 'Components/Pill',
@@ -46,11 +46,7 @@ export const CustomHandleComponent = (args: PillProps) => (
     label={args.label}
     onDrag={args.onDrag}
     dragHandleComponent={
-      <Icon
-        icon="ThumbUp"
-        color="primary"
-        style={{ padding: '0.375rem 0.625rem' }}
-      />
+      <ThumbUp variant="primary" style={{ padding: '0.375rem 0.625rem' }} />
     }
   />
 );
@@ -59,7 +55,7 @@ export const PillVariants = (args: PillProps) => (
   <>
     <div>
       <Flex marginBottom="spacingXs">
-        <SectionHeading element="h3">Idle</SectionHeading>
+        <SectionHeading as="h3">Idle</SectionHeading>
       </Flex>
       <Pill
         label={args.label}
@@ -70,7 +66,7 @@ export const PillVariants = (args: PillProps) => (
     </div>
     <div className="f36-margin-top--m">
       <Flex marginBottom="spacingXs">
-        <SectionHeading element="h3">Active</SectionHeading>
+        <SectionHeading as="h3">Active</SectionHeading>
       </Flex>
       <Pill
         label={args.label}
@@ -81,7 +77,7 @@ export const PillVariants = (args: PillProps) => (
     </div>
     <div className="f36-margin-top--m">
       <Flex marginBottom="spacingXs">
-        <SectionHeading element="h3">Deleted</SectionHeading>
+        <SectionHeading as="h3">Deleted</SectionHeading>
       </Flex>
       <Pill
         label={args.label}

@@ -6,7 +6,7 @@ import React, {
 } from 'react';
 import cn from 'classnames';
 
-import { TabFocusTrap } from '../../TabFocusTrap';
+import { TabFocusTrap } from '@contentful/f36-utils';
 import styles from './DropdownListItem.css';
 
 export interface DropdownListItemProps

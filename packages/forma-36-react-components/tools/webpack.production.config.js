@@ -4,7 +4,7 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const postcssOptions = require('./postcss.config.js');
 
 module.exports = {
-  entry: ['./src/index.ts', './src/alpha.ts'],
+  entry: ['./src/index.ts'],
 
   mode: 'production',
 

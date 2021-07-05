@@ -4,7 +4,7 @@ import cn from 'classnames';
 
 import { useOnClickOutside } from '../../../utils/useOnClickOutside';
 import styles from './DropdownContainer.css';
-import { Portal } from '../../Portal';
+import { Portal } from '@contentful/f36-utils';
 
 export interface DropdownContainerProps
   extends React.HTMLAttributes<HTMLElement> {

@@ -1,11 +1,11 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import { Calendar } from '@contentful/f36-icons';
+import { axe } from '@/scripts/test/axeHelper';
 
-import { axe } from '../../../utils/axeHelper';
 import { AssetCard } from './AssetCard';
 import { DropdownList, DropdownListItem } from '../../Dropdown';
 import { CardDragHandle } from '../CardDragHandle/CardDragHandle';
-import { Icon } from '../../Icon';
 
 it('renders the component', () => {
   const { container } = render(
@@ -143,20 +143,7 @@ it('renders a component with a status icon', async () => {
     <AssetCard
       src="https://via.placeholder.com/200x300"
       title="picture of a cat"
-      statusIcon="Clock"
-    />,
-  );
-  const results = await axe(container);
-
-  expect(results).toHaveNoViolations();
-});
-
-it('renders a component with a custom status icon', async () => {
-  const { container } = render(
-    <AssetCard
-      src="https://via.placeholder.com/200x300"
-      title="picture of a cat"
-      statusIcon={<Icon icon="Calendar" />}
+      statusIcon={Calendar}
     />,
   );
   const results = await axe(container);

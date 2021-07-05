@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
+import { axe } from '@/scripts/test/axeHelper';
 
-import { axe } from '../../../utils/axeHelper';
 import { ModalConfirm } from './ModalConfirm';
 import '@contentful/forma-36-fcss/dist/styles.css';
 

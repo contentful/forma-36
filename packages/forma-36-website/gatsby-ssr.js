@@ -1,7 +1,22 @@
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/ssr-apis/
- */
+import { CacheProvider } from '@emotion/core';
+import { cache } from 'emotion';
+import createEmotionServer from 'create-emotion-server';
+import { renderToString } from 'react-dom/server';
 
-// You can delete this file if you're not using it
+export const wrapRootElement = ({ element }) => {
+  return <CacheProvider value={cache}>{element}</CacheProvider>;
+};
+
+const { extractCritical } = createEmotionServer(cache);
+
+export const replaceRenderer = ({ bodyComponent, setHeadComponents }) => {
+  const { css, ids } = extractCritical(renderToString(bodyComponent));
+
+  setHeadComponents([
+    <style
+      key="app-styles"
+      data-emotion={`css ${ids.join(' ')}`}
+      dangerouslySetInnerHTML={{ __html: css }}
+    />,
+  ]);
+};

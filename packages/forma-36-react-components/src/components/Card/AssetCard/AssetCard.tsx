@@ -1,25 +1,18 @@
 import React, { useCallback } from 'react';
 import cn from 'classnames';
+import { EntityStatusBadge } from '@contentful/f36-badge';
+import type { IconComponent } from '@contentful/f36-icon';
 
 import { Card, BaseCardProps } from '../Card';
-import { Icon, IconType } from '../../Icon';
 import { CardActions } from '../CardActions/CardActions';
 import { Asset } from '../../Asset';
-import { AssetType } from '../../Asset';
-import { Tag, TagType } from '../../Tag';
+import type { AssetType, AssetProps } from '../../Asset';
 import { AssetCardSkeleton } from './AssetCardSkeleton';
 import {
   CardDragHandle,
-  CardDragHandlePropTypes,
+  CardDragHandleProps,
 } from '../CardDragHandle/CardDragHandle';
 import styles from './AssetCard.css';
-
-export type AssetState =
-  | 'deleted'
-  | 'archived'
-  | 'changed'
-  | 'draft'
-  | 'published';
 
 export interface AssetCardProps extends BaseCardProps {
   /**
@@ -41,11 +34,11 @@ export interface AssetCardProps extends BaseCardProps {
   /**
    * The publish status of the asset
    */
-  status?: AssetState;
+  status?: AssetProps['status'];
   /**
    * An icon for the status of the entry
    */
-  statusIcon?: React.ReactNode | IconType;
+  statusIcon?: IconComponent;
   /**
    * The type of asset being represented
    */
@@ -61,7 +54,7 @@ export interface AssetCardProps extends BaseCardProps {
   /**
    * Props to pass down to the default CardDragHandle component (does not work with cardDragHandleComponent prop)
    */
-  cardDragHandleProps?: Partial<CardDragHandlePropTypes>;
+  cardDragHandleProps?: Partial<CardDragHandleProps>;
   /**
    * Applies styling for when the component is actively being dragged by the user
    */
@@ -90,43 +83,13 @@ export function AssetCard({
   ...otherProps
 }: AssetCardProps): React.ReactElement {
   const renderStatus = useCallback(
-    (status: AssetState, statusIcon: React.ReactNode) => {
-      let label;
-      let type: TagType | null = null;
-
-      switch (status) {
-        case 'archived':
-          label = 'archived';
-          type = 'negative';
-          break;
-
-        case 'changed':
-          label = 'changed';
-          type = 'primary';
-          break;
-
-        case 'published':
-          label = 'published';
-          type = 'positive';
-          break;
-
-        default:
-          label = 'draft';
-          type = 'warning';
-      }
-
+    (status: AssetCardProps['status'], Icon: AssetCardProps['statusIcon']) => {
       return (
         <>
-          {statusIcon && typeof statusIcon === 'string' ? (
-            <Icon
-              icon={statusIcon as IconType}
-              color="muted"
-              className={styles['AssetCard__icon']}
-            />
-          ) : (
-            statusIcon
-          )}
-          <Tag tagType={type}>{label}</Tag>
+          {Icon ? (
+            <Icon className={styles['AssetCard__icon']} variant="muted" />
+          ) : null}
+          <EntityStatusBadge entityStatus={status} />
         </>
       );
     },
@@ -190,9 +153,9 @@ export function AssetCard({
               <Asset
                 className={styles['AssetCard__asset']}
                 src={src}
+                status={status}
                 title={title}
                 type={type}
-                status={status}
               />
             </div>
           </div>

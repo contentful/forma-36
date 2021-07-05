@@ -1,10 +1,10 @@
 import React from 'react';
 import cn from 'classnames';
+import { Drag } from '@contentful/f36-icons';
 
-import { Icon } from '../../Icon';
 import styles from './CardDragHandle.css';
 
-export interface CardDragHandlePropTypes {
+export interface CardDragHandleProps {
   /**
    * Label rendered as child in CardDragHandle - not visible on screen as
    * purpose is for screen readers only
@@ -30,7 +30,7 @@ export function CardDragHandle({
   children,
   isDragActive = false,
   ...otherProps
-}: CardDragHandlePropTypes): React.ReactElement {
+}: CardDragHandleProps): React.ReactElement {
   const classNames = cn(
     styles.CardDragHandle,
     { [styles['CardDragHandle--drag-active']]: isDragActive },
@@ -39,7 +39,7 @@ export function CardDragHandle({
 
   return (
     <div className={classNames} data-test-id={testId} {...otherProps}>
-      <Icon icon="Drag" color="muted" />
+      <Drag variant="muted" />
       <span className={styles['CardDragHandle__sr-label']}>{children}</span>
     </div>
   );

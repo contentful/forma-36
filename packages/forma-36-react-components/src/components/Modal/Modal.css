@@ -27,8 +27,7 @@
     var(--transition-easing-default);
   position: fixed;
   overflow-y: auto;
-  /* prettier-ignore */
-  background-color: var(--color-contrast-dark)bf;
+  background-color: rgba(12, 20, 28, 0.74902);
   text-align: center;
 }
 

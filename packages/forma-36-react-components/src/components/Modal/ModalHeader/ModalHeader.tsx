@@ -1,5 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
+import { Close } from '@contentful/f36-icons';
 
 import { IconButton } from '../../IconButton';
 import styles from './ModalHeader.css';
@@ -19,7 +20,7 @@ export function ModalHeader({
   testId = 'cf-ui-modal-header',
   isNotWrapped,
   className,
-  ...rest
+  ...otherProps
 }: ModalHeaderProps): React.ReactElement {
   const titleClassNames = cn(styles.ModalHeader__title, {
     [styles['ModalHeader__title--is-not-wrapped']]: isNotWrapped,
@@ -27,14 +28,14 @@ export function ModalHeader({
 
   return (
     <div
-      {...rest}
+      {...otherProps}
       className={cn(styles.ModalHeader, className)}
       data-test-id={testId}
     >
       <h1 className={titleClassNames}>{title}</h1>
       {onClose && (
         <IconButton
-          iconProps={{ icon: 'Close', size: 'small' }}
+          iconProps={{ as: Close, size: 'small' }}
           buttonType="muted"
           label="Close"
           onClick={() => onClose()}

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`\`as\` prop takes a string 1`] = `<p />`;
+
+exports[`\`as\` prop takes an element 1`] = `<p />`;
+
+exports[`renders the component as a div 1`] = `<div />`;
+
+exports[`takes a \`className\` prop 1`] = `
+<div
+  class="css"
+/>
+`;
+
+exports[`takes a \`testId\` prop 1`] = `
+<div
+  data-test-id="cf-ui-primitive"
+/>
+`;

@@ -1,27 +1,23 @@
 import React, { useCallback } from 'react';
 import cn from 'classnames';
 import type { MouseEventHandler } from 'react';
+import { EntityStatusBadge } from '@contentful/f36-badge';
+import type { EntityStatus, PickUnion } from '@contentful/f36-core';
+import { Asset, Entry, Release } from '@contentful/f36-icons';
 
-import { Tag, TagType } from '../../Tag';
-import { Icon } from '../../Icon';
-import {
-  CardActions,
-  CardDragHandle,
-  CardDragHandlePropTypes,
-} from '../../Card';
+import { CardActions, CardDragHandle, CardDragHandleProps } from '../../Card';
 import {
   SkeletonBodyText,
   SkeletonContainer,
   SkeletonImage,
 } from '../../Skeleton';
-import { TabFocusTrap } from '../../TabFocusTrap';
+import { TabFocusTrap } from '@contentful/f36-utils';
 import styles from './EntityListItem.css';
 
-export type EntityListItemStatus =
-  | 'archived'
-  | 'changed'
-  | 'draft'
-  | 'published';
+type EntityListItemStatus = PickUnion<
+  EntityStatus,
+  'archived' | 'changed' | 'draft' | 'published'
+>;
 
 export interface EntityListItemProps {
   /**
@@ -39,7 +35,7 @@ export interface EntityListItemProps {
   /**
    * The publish status of the entry
    */
-  status?: 'archived' | 'changed' | 'draft' | 'published';
+  status?: EntityListItemStatus;
   /**
    * A boolean used to render the Thumbnail or not
    */
@@ -71,7 +67,7 @@ export interface EntityListItemProps {
   /**
    * Props to pass down to the default CardDragHandle component (does not work with cardDragHandleComponent prop)
    */
-  cardDragHandleProps?: Partial<CardDragHandlePropTypes>;
+  cardDragHandleProps?: Partial<CardDragHandleProps>;
   /**
    * An entity can either be an Entry, an Asset or a Release. This prop will apply styling based on if the entity is an asset, a release or an entry
    *
@@ -128,13 +124,13 @@ export function EntityListItem({
 }: EntityListItemProps): React.ReactElement {
   const renderIcon = useCallback(() => {
     const iconMap = {
-      asset: 'Asset',
-      entry: 'Entry',
-      release: 'Release',
+      asset: Asset,
+      entry: Entry,
+      release: Release,
     };
-    const icon = entityType ? iconMap[entityType.toLowerCase()] : 'Entry';
+    const Icon = entityType ? iconMap[entityType.toLowerCase()] : 'Entry';
 
-    return <Icon icon={icon} color="muted" />;
+    return <Icon variant="muted" />;
   }, [entityType]);
 
   const renderThumbnail = useCallback(() => {
@@ -147,34 +143,10 @@ export function EntityListItem({
     );
   }, [thumbnailAltText, thumbnailUrl]);
 
-  const renderStatus = useCallback((status: EntityListItemStatus) => {
-    let label: string;
-    let type: TagType;
-
-    switch (status) {
-      case 'archived':
-        label = 'archived';
-        type = 'negative';
-        break;
-
-      case 'changed':
-        label = 'changed';
-        type = 'primary';
-        break;
-
-      case 'published':
-        label = 'published';
-        type = 'positive';
-        break;
-
-      default:
-        label = 'draft';
-        type = 'warning';
-    }
-
+  const renderStatus = useCallback((status: EntityListItemProps['status']) => {
     return (
       <div className={styles['EntityListItem__status']}>
-        <Tag tagType={type}>{label}</Tag>
+        <EntityStatusBadge entityStatus={status} />
       </div>
     );
   }, []);

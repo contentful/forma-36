@@ -1,12 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
+.emotion-0 {
+  display: inline-block;
+  fill: #606C7C;
+  height: 18px;
+  width: 18px;
+}
+
 <div
   class="CardDragHandle"
   data-test-id="cf-ui-card-drag-handle"
 >
   <svg
-    class="Icon Icon--small Icon--muted"
+    class="emotion-0"
     data-test-id="cf-ui-icon"
     height="1em"
     viewBox="0 0 24 24"
@@ -29,12 +36,19 @@ exports[`renders the component 1`] = `
 `;
 
 exports[`renders the component with an additional class name 1`] = `
+.emotion-0 {
+  display: inline-block;
+  fill: #606C7C;
+  height: 18px;
+  width: 18px;
+}
+
 <div
   class="CardDragHandle my-extra-class"
   data-test-id="cf-ui-card-drag-handle"
 >
   <svg
-    class="Icon Icon--small Icon--muted"
+    class="emotion-0"
     data-test-id="cf-ui-icon"
     height="1em"
     viewBox="0 0 24 24"
@@ -57,12 +71,19 @@ exports[`renders the component with an additional class name 1`] = `
 `;
 
 exports[`renders the component with isDragActive prop set to true 1`] = `
+.emotion-0 {
+  display: inline-block;
+  fill: #606C7C;
+  height: 18px;
+  width: 18px;
+}
+
 <div
   class="CardDragHandle CardDragHandle--drag-active"
   data-test-id="cf-ui-card-drag-handle"
 >
   <svg
-    class="Icon Icon--small Icon--muted"
+    class="emotion-0"
     data-test-id="cf-ui-icon"
     height="1em"
     viewBox="0 0 24 24"

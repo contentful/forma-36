@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
-import '@contentful/forma-36-react-components/dist/styles.css';
+import '@contentful/f36-components/dist/styles.css';
 import '@contentful/forma-36-fcss/dist/styles.css';
-import { css } from '@emotion/core';
+import { css } from 'emotion';
 import Header from './Header';
 import Promo from './Promo';
 import Container from './Container';
@@ -52,7 +52,7 @@ const Layout = (props) => {
   `);
 
   return (
-    <div css={styles.test}>
+    <div className={styles.test}>
       <Helmet
         title={data.site.siteMetadata.title}
         meta={[
@@ -80,7 +80,7 @@ const Layout = (props) => {
 
       <Header />
 
-      <div css={styles.main}>
+      <div className={styles.main}>
         <Navigation
           menuItems={data.site.siteMetadata && data.site.siteMetadata.menuLinks}
           currentPath={props && props.location && props.location.pathname}
@@ -88,6 +88,7 @@ const Layout = (props) => {
         <Container
           frontmatter={props.pageContext && props.pageContext.frontmatter}
           dataFromReadme={props.pageContext && props.pageContext.body}
+          propsMetadata={props.pageContext && props.pageContext.propsMetadata}
         >
           {props.children}
         </Container>

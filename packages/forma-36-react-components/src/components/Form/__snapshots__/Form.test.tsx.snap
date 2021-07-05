@@ -1,6 +1,32 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
+.emotion-0 {
+  color: #6B7888;
+  font-weight: 400;
+  margin-left: calc(1rem * (4 / 16));
+}
+
+.emotion-1 {
+  display: inline-block;
+  color: #192532;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: calc(1rem * (8 / 16));
+}
+
+.emotion-2 {
+  display: block;
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  color: #606C7C;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+}
+
 <form
   class="Form"
   data-test-id="cf-ui-form"
@@ -16,13 +42,13 @@ exports[`renders the component 1`] = `
         class="TextField__label-wrapper"
       >
         <label
-          class="FormLabel"
+          class="emotion-1"
           data-test-id="cf-ui-form-label"
           for="nameInput"
         >
           Name
           <span
-            class="FormLabel__required-text"
+            class="emotion-0"
           >
             (
             required
@@ -46,7 +72,7 @@ exports[`renders the component 1`] = `
         class="TextField__hints"
       >
         <p
-          class="HelpText TextField__help-text"
+          class="TextField__help-text emotion-2"
           data-test-id="cf-ui-help-text"
         >
           Please enter your name
@@ -58,6 +84,32 @@ exports[`renders the component 1`] = `
 `;
 
 exports[`renders the component with an additional class name 1`] = `
+.emotion-0 {
+  color: #6B7888;
+  font-weight: 400;
+  margin-left: calc(1rem * (4 / 16));
+}
+
+.emotion-1 {
+  display: inline-block;
+  color: #192532;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: calc(1rem * (8 / 16));
+}
+
+.emotion-2 {
+  display: block;
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  color: #606C7C;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+}
+
 <form
   class="Form my-extra-class"
   data-test-id="cf-ui-form"
@@ -73,13 +125,13 @@ exports[`renders the component with an additional class name 1`] = `
         class="TextField__label-wrapper"
       >
         <label
-          class="FormLabel"
+          class="emotion-1"
           data-test-id="cf-ui-form-label"
           for="nameInput"
         >
           Name
           <span
-            class="FormLabel__required-text"
+            class="emotion-0"
           >
             (
             required
@@ -103,7 +155,7 @@ exports[`renders the component with an additional class name 1`] = `
         class="TextField__hints"
       >
         <p
-          class="HelpText TextField__help-text"
+          class="TextField__help-text emotion-2"
           data-test-id="cf-ui-help-text"
         >
           Please enter your name
@@ -115,6 +167,32 @@ exports[`renders the component with an additional class name 1`] = `
 `;
 
 exports[`renders the component with condensed spacing 1`] = `
+.emotion-0 {
+  color: #6B7888;
+  font-weight: 400;
+  margin-left: calc(1rem * (4 / 16));
+}
+
+.emotion-1 {
+  display: inline-block;
+  color: #192532;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: calc(1rem * (8 / 16));
+}
+
+.emotion-2 {
+  display: block;
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  color: #606C7C;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+}
+
 <form
   class="Form my-extra-class"
   data-test-id="cf-ui-form"
@@ -130,13 +208,13 @@ exports[`renders the component with condensed spacing 1`] = `
         class="TextField__label-wrapper"
       >
         <label
-          class="FormLabel"
+          class="emotion-1"
           data-test-id="cf-ui-form-label"
           for="nameInput"
         >
           Name
           <span
-            class="FormLabel__required-text"
+            class="emotion-0"
           >
             (
             required
@@ -160,7 +238,7 @@ exports[`renders the component with condensed spacing 1`] = `
         class="TextField__hints"
       >
         <p
-          class="HelpText TextField__help-text"
+          class="TextField__help-text emotion-2"
           data-test-id="cf-ui-help-text"
         >
           Please enter your name

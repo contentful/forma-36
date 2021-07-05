@@ -1,9 +1,10 @@
 import React, { Component, MouseEvent as ReactMouseEvent } from 'react';
+import { MoreHorizontal } from '@contentful/f36-icons';
 
 import { Dropdown, DropdownList, DropdownProps } from '../../Dropdown';
 import { IconButton, IconButtonProps } from '../../IconButton';
 
-export interface CardActionsPropTypes extends DropdownProps {
+export interface CardActionsProps extends DropdownProps {
   /**
    * Class names to be appended to the className prop of the component
    */
@@ -32,15 +33,12 @@ export interface CardActionsState {
   isDropdownOpen: boolean;
 }
 
-const defaultProps: Partial<CardActionsPropTypes> = {
+const defaultProps: Partial<CardActionsProps> = {
   testId: 'cf-ui-card-actions',
   isDisabled: false,
 };
 
-export class CardActions extends Component<
-  CardActionsPropTypes,
-  CardActionsState
-> {
+export class CardActions extends Component<CardActionsProps, CardActionsState> {
   static defaultProps = defaultProps;
 
   state = { isDropdownOpen: false };
@@ -78,7 +76,7 @@ export class CardActions extends Component<
         testId={testId}
         toggleElement={
           <IconButton
-            iconProps={{ icon: 'MoreHorizontal' }}
+            iconProps={{ as: MoreHorizontal }}
             buttonType="secondary"
             disabled={isDisabled}
             label="Actions"

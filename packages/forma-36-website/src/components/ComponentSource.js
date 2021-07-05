@@ -1,10 +1,11 @@
 import React from 'react';
-import { css } from '@emotion/core';
-import tokens from '@contentful/forma-36-tokens';
+import { css } from 'emotion';
+import tokens from '@contentful/f36-tokens';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
-import * as f36Components from '@contentful/forma-36-react-components';
-import * as f36ComponentsAlpha from '@contentful/forma-36-react-components/dist/alpha';
-import { Card, Button } from '@contentful/forma-36-react-components';
+import * as f36Components from '@contentful/f36-components';
+import { Card, Button } from '@contentful/f36-components';
+import * as f36icons from '@contentful/f36-icons';
+import { Icon } from '@contentful/f36-icon';
 
 const styles = {
   preview: css`
@@ -26,7 +27,7 @@ const styles = {
 };
 
 class ComponentSource extends React.Component {
-  state = { isOpen: true };
+  state = { isOpen: false };
 
   handleToggle = () => {
     this.setState((prevState) => {
@@ -39,19 +40,24 @@ class ComponentSource extends React.Component {
       <div className="f36-margin-bottom--m">
         <LiveProvider
           code={this.props.children.trim()}
+          // The order is important here as `f36icons` and `f36Components` both
+          // export a component called `Heading`
           scope={{
+            ...f36icons,
+            HeadingIcon: f36icons.Heading,
             ...f36Components,
-            ...f36ComponentsAlpha,
+            tokens,
+            Icon,
           }}
         >
           <Card padding="none">
-            <div css={styles.preview}>
+            <div className={styles.preview}>
               <LivePreview />
             </div>
             {this.state.isOpen && (
               <React.Fragment>
-                <LiveError css={styles.error} />
-                <LiveEditor css={styles.editor} />
+                <LiveError className={styles.error} />
+                <LiveEditor className={styles.editor} />
               </React.Fragment>
             )}
             <Button isFullWidth buttonType="muted" onClick={this.handleToggle}>

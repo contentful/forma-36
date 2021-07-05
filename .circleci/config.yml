@@ -56,6 +56,7 @@ jobs:
       - check-changed-files-or-halt:
           pattern: ^(packages)|(.js|jsx|ts|tsx|css|scss)$
       - yarn_install
+      - run: yarn run build
       - run: yarn run storybook:build
       - run: yarn run chromatic --project-token=${CHROMATIC_PROJECT_TOKEN} --exit-zero-on-changes
 
@@ -75,7 +76,7 @@ jobs:
           command: yarn build
       - run:
           name: Deploy
-          command: yarn lerna publish --no-private --conventional-commits --conventional-prerelease=@contentful/forma-36-react-datepicker,@contentful/forma-36-react-timepicker --create-release github --yes
+          command: yarn lerna publish --no-private --exact --canary --no-git-tag-version --no-push --preid next-v4-$CIRCLE_BUILD_NUM --dist-tag next-v4 --force-publish --no-changelog --yes
 
 workflows:
   version: 2
@@ -94,6 +95,7 @@ workflows:
             branches:
               only:
                 - master
+                - forma-v4
           requires:
             - lint-and-test
             - chromatic-deployment

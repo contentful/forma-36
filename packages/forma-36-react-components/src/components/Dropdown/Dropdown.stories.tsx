@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
-
+import { Flex } from '@contentful/f36-core';
+import { SectionHeading } from '@contentful/f36-typography';
 import { Dropdown } from './Dropdown';
 import { DropdownListItem } from './DropdownListItem/DropdownListItem';
 import { Button } from '../Button';
 import { TextLink } from '../TextLink';
 import { DropdownList } from './DropdownList/DropdownList';
-import { Flex } from '../Flex';
-import { SectionHeading } from '../Typography';
 
 export default {
   argTypes: {
@@ -183,14 +182,14 @@ WithFullWidth.args = {
 export const Overview: Story = () => (
   <>
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Dropdown default</SectionHeading>
+      <SectionHeading as="h3">Dropdown default</SectionHeading>
     </Flex>
 
     <Default />
 
     <Flex flexDirection="column" style={{ marginBottom: '200px' }}>
       <Flex marginBottom="spacingS" marginTop="spacingM">
-        <SectionHeading element="h3">Dropdown default open</SectionHeading>
+        <SectionHeading as="h3">Dropdown default open</SectionHeading>
       </Flex>
 
       <Dropdown
@@ -231,7 +230,7 @@ export const Overview: Story = () => (
     </Flex>
 
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Dropdown with full width</SectionHeading>
+      <SectionHeading as="h3">Dropdown with full width</SectionHeading>
     </Flex>
 
     <Dropdown

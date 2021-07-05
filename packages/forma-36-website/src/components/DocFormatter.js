@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
-import { css } from '@emotion/core';
-import tokens from '@contentful/forma-36-tokens';
-import {
-  DisplayText,
-  Button,
-  Tag,
-} from '@contentful/forma-36-react-components';
+import { css } from 'emotion';
+import tokens from '@contentful/f36-tokens';
+import { DisplayText, Button, Badge } from '@contentful/f36-components';
 import storybookIcon from '../images/storybook.svg';
 import githubIcon from '../images/github.svg';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
@@ -33,7 +29,7 @@ const styles = {
     border-bottom-left-radius: 0;
     margin-right: ${tokens.spacingM};
   `,
-  tag: css`
+  badge: css`
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -81,16 +77,18 @@ const DocFormatter = ({ frontmatter, dataFromReadme, children }) => {
   return (
     <React.Fragment>
       {/* Remove styles condition once all docs follow the same structure */}
-      <header css={data.title ? styles.header : ''}>
-        {data.title && <DisplayText>{data.title}</DisplayText>}
-        <div css={styles.subheaderRow}>
-          <div css={styles.buttonList}>
+      <header className={data.title ? styles.header : ''}>
+        {data.title && (
+          <DisplayText marginBottom="spacingL">{data.title}</DisplayText>
+        )}
+        <div className={styles.subheaderRow}>
+          <div className={styles.buttonList}>
             {hasDevelopDocs && hasDesignDocs && (
               <>
                 <Button
                   size="small"
                   buttonType={activeSection === 'design' ? 'primary' : 'muted'}
-                  css={styles.buttonLeft}
+                  className={styles.buttonLeft}
                   icon={activeSection === 'design' && 'CheckCircleTrimmed'}
                   isActive={activeSection === 'design'}
                   onClick={() => setActiveSection('design')}
@@ -99,7 +97,7 @@ const DocFormatter = ({ frontmatter, dataFromReadme, children }) => {
                 </Button>
                 <Button
                   size="small"
-                  css={styles.buttonRight}
+                  className={styles.buttonRight}
                   buttonType={activeSection === 'develop' ? 'primary' : 'muted'}
                   icon={activeSection === 'develop' && 'CheckCircleTrimmed'}
                   isActive={activeSection === 'develop'}
@@ -111,7 +109,7 @@ const DocFormatter = ({ frontmatter, dataFromReadme, children }) => {
             )}
             {data.storybookUrl && (
               <a
-                css={styles.imageLink}
+                className={styles.imageLink}
                 href={data.storybookUrl}
                 title={`View ${data.title} in Storybook`}
               >
@@ -121,7 +119,7 @@ const DocFormatter = ({ frontmatter, dataFromReadme, children }) => {
             )}
             {data.githubUrl && (
               <a
-                css={styles.imageLink}
+                className={styles.imageLink}
                 href={data.githubUrl}
                 title={`View ${data.title} on GitHub`}
               >
@@ -132,10 +130,10 @@ const DocFormatter = ({ frontmatter, dataFromReadme, children }) => {
           </div>
 
           {data.status && (
-            <span css={styles.tag}>
-              <Tag tagType={data.status === 'alpha' ? 'warning' : 'positive'}>
+            <span className={styles.badge}>
+              <Badge variant={data.status === 'alpha' ? 'warning' : 'positive'}>
                 {data.status}
-              </Tag>
+              </Badge>
             </span>
           )}
         </div>

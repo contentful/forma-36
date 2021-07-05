@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders the component 1`] = `
+<body>
+  <div />
+  <div
+    data-cf-ui-portal=""
+  >
+    👋
+  </div>
+</body>
+`;
+
+exports[`renders the component in a separate container 1`] = `
+<body>
+  <span>
+    <div
+      data-cf-ui-portal=""
+    >
+      👋
+    </div>
+  </span>
+  <div />
+</body>
+`;

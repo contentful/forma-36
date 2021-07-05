@@ -1,7 +1,13 @@
 import React from 'react';
+import {
+  Table,
+  TableHead,
+  TableBody,
+  TableCell,
+  TableRow,
+} from '@contentful/f36-table';
 
 import { SkeletonRow, SkeletonRowProps } from './SkeletonRow';
-import { Table, TableHead, TableBody, TableCell, TableRow } from '../../Table';
 
 export default {
   title: 'Components/Skeleton/SkeletonRow',

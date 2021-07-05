@@ -1,8 +1,10 @@
 import React from 'react';
 import cn from 'classnames';
+import { TabFocusTrap } from '@contentful/f36-utils';
+import { Icon } from '@contentful/f36-icon';
+import type { IconProps } from '@contentful/f36-icon';
+import { ChevronDown } from '@contentful/f36-icons';
 
-import { Icon, IconProps } from '../Icon';
-import { TabFocusTrap } from '../TabFocusTrap';
 import styles from './IconButton.css';
 
 export interface IconButtonProps
@@ -91,10 +93,9 @@ export const IconButton = ({
       />
       {label && <span className={styles.IconButton__label}>{label}</span>}
       {withDropdown && (
-        <Icon
-          icon="ChevronDown"
-          color="secondary"
+        <ChevronDown
           className={styles.IconButton__dropdown}
+          variant="secondary"
         />
       )}
     </TabFocusTrap>

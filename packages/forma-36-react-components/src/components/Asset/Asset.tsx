@@ -1,9 +1,14 @@
 import React from 'react';
 import cn from 'classnames';
+import type { EntityStatus, PickUnion } from '@contentful/f36-core';
 
 import { AssetIcon } from './AssetIcon/AssetIcon';
-import type { AssetState } from '../Card/AssetCard/AssetCard';
 import styles from './Asset.css';
+
+export type AssetStatus = PickUnion<
+  EntityStatus,
+  'archived' | 'changed' | 'deleted' | 'draft' | 'published'
+>;
 
 export const types = {
   archive: 'archive',
@@ -37,7 +42,7 @@ export interface AssetProps {
   /**
    * The publish status of the asset
    */
-  status?: AssetState;
+  status?: AssetStatus;
   /**
    * An ID used for testing purposes applied as a data attribute (data-test-id)
    */

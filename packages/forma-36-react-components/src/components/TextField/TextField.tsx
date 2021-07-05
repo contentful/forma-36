@@ -7,10 +7,11 @@ import React, {
   ElementType,
 } from 'react';
 import cn from 'classnames';
+import { ValidationMessage } from '@contentful/f36-validation-message';
+import { Label } from '@contentful/f36-forms';
+import type { LabelProps } from '@contentful/f36-forms';
 
-import { ValidationMessage } from '../ValidationMessage';
-import { FormLabel, FormLabelProps } from '../FormLabel';
-import { HelpText } from '../HelpText';
+import { HelpText } from '@contentful/f36-helptext';
 import { TextInput, TextInputProps } from '../TextInput';
 import { TextLink, TextLinkProps } from '../TextLink';
 import { Textarea, TextareaProps } from '../Textarea';
@@ -25,7 +26,7 @@ export interface TextFieldProps {
   validationMessage?: string;
   testId?: string;
   className?: string;
-  formLabelProps?: Partial<FormLabelProps>;
+  formLabelProps?: Partial<LabelProps>;
   textLinkProps?: Partial<TextLinkProps>;
   textInputProps?: Partial<TextInputProps> | Partial<TextareaProps>;
   helpText?: string;
@@ -79,9 +80,9 @@ export const TextField = ({
   return (
     <div className={classNames} {...otherProps} data-test-id={testId}>
       <div className={styles['TextField__label-wrapper']}>
-        <FormLabel {...formLabelProps} htmlFor={id} required={required}>
+        <Label {...formLabelProps} htmlFor={id} required={required}>
           {labelText}
-        </FormLabel>
+        </Label>
         {textLinkProps && (
           <TextLink
             className={styles['TextField__label-link']}

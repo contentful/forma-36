@@ -85,6 +85,24 @@ module.exports = {
         link: '',
         menuLinks: [
           {
+            name: 'Layout Components',
+            link: '',
+            menuLinks: [
+              {
+                name: 'Box',
+                link: '/components/box/',
+              },
+              {
+                name: 'Flex',
+                link: '/components/flex/',
+              },
+              {
+                name: 'Grid',
+                link: '/components/grid/',
+              },
+            ],
+          },
+          {
             name: 'Accordion',
             link: '/components/accordion/',
           },
@@ -95,6 +113,10 @@ module.exports = {
           {
             name: 'Autocomplete',
             link: '/components/autocomplete/',
+          },
+          {
+            name: 'Badge',
+            link: '/components/badge/',
           },
           {
             name: 'Button',
@@ -128,37 +150,42 @@ module.exports = {
             name: 'EntityList',
             link: '/components/entity-list/',
           },
-          {
-            name: 'Flex',
-            link: '/components/flex/',
-          },
+
           {
             name: 'Form Elements',
             link: '',
             menuLinks: [
               {
+                name: 'ControlledInput',
+                link: '/components/inputs/src/controlled-input/',
+              },
+              {
+                name: 'ControlledInputField',
+                link: '/components/forms/src/controlled-input-field/',
+              },
+              {
                 name: 'Checkbox',
-                link: '/components/checkbox/',
+                link: '/components/inputs/src/checkbox/',
               },
               {
                 name: 'CheckboxField',
-                link: '/components/checkbox-field/',
+                link: '/components/forms/src/checkbox-field/',
               },
               {
                 name: 'Form',
                 link: '/components/form/',
               },
               {
-                name: 'FormLabel',
-                link: '/components/form-label/',
+                name: 'Label',
+                link: '/components/label/',
               },
               {
                 name: 'RadioButton',
-                link: '/components/radio-button/',
+                link: '/components/inputs/src/radio-button/',
               },
               {
                 name: 'RadioButtonField',
-                link: '/components/radio-button-field/',
+                link: '/components/forms/src/radio-button-field/',
               },
               {
                 name: 'Select',
@@ -186,10 +213,7 @@ module.exports = {
               },
             ],
           },
-          {
-            name: 'Grid',
-            link: '/components/grid/',
-          },
+
           {
             name: 'HelpText',
             link: '/components/help-text/',
@@ -269,10 +293,6 @@ module.exports = {
             link: '/components/tabs/',
           },
           {
-            name: 'Tag',
-            link: '/components/tag/',
-          },
-          {
             name: 'ToggleButton',
             link: '/components/toggle-button/',
           },
@@ -317,6 +337,22 @@ module.exports = {
         ignore: ['**/*.css', '**/*.js', '**/*.snap', '**/*.ts', '**/*.tsx'],
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'pages',
+        path: path.resolve(__dirname, '../components/'),
+        ignore: ['**/*.css', '**/*.js', '**/*.snap', '**/*.ts', '**/*.tsx'],
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'pages',
+        path: path.resolve(__dirname, '../core/'),
+        ignore: ['**/*.css', '**/*.js', '**/*.snap', '**/*.ts', '**/*.tsx'],
+      },
+    },
     'gatsby-transformer-javascript-frontmatter',
     'gatsby-transformer-sharp',
     {
@@ -325,6 +361,7 @@ module.exports = {
         defaultLayouts: {
           default: require.resolve('./src/components/Layout'),
         },
+        remarkPlugins: [require('remark-slug')],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,

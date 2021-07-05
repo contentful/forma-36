@@ -1,6 +1,6 @@
 import React from 'react';
+import { TableRow } from '@contentful/f36-table';
 
-import { TableRow } from '../../Table';
 import { SkeletonTableCell } from './SkeletonTableCell/SkeletonTableCell';
 
 export interface SkeletonRowProps {

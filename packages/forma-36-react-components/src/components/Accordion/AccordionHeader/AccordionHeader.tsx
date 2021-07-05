@@ -1,8 +1,9 @@
 import React, { FC } from 'react';
 import cn from 'classnames';
+import { Subheading } from '@contentful/f36-typography';
+import type { HeadingElement } from '@contentful/f36-typography';
+import { ChevronDownTrimmed } from '@contentful/f36-icons';
 
-import { Subheading } from '../../Typography';
-import { Icon } from '../../Icon';
 import styles from '../Accordion.css';
 
 export interface AccordionHeaderProps {
@@ -29,7 +30,7 @@ export interface AccordionHeaderProps {
   /**
    * The heading element that will be used by the Subheading component
    */
-  element?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  element?: HeadingElement;
 }
 
 export const AccordionHeader: FC<AccordionHeaderProps> = ({
@@ -44,7 +45,7 @@ export const AccordionHeader: FC<AccordionHeaderProps> = ({
   });
 
   return (
-    <Subheading element={element}>
+    <Subheading as={element}>
       <button
         type="button"
         aria-expanded={isExpanded}
@@ -53,10 +54,9 @@ export const AccordionHeader: FC<AccordionHeaderProps> = ({
         className={classNames}
         onClick={handleClick}
       >
-        <Icon
-          icon="ChevronDownTrimmed"
-          color="secondary"
+        <ChevronDownTrimmed
           className={styles.AccordionHeader__icon}
+          variant="secondary"
         />
         {children}
       </button>

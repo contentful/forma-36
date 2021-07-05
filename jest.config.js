@@ -72,6 +72,7 @@ module.exports = {
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
       '<rootDir>/scripts/test/__mocks__/fileMock.js',
     '\\.css': 'identity-obj-proxy',
+    '@/scripts/(.*)': '<rootDir>/scripts/$1',
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
@@ -120,7 +121,7 @@ module.exports = {
   setupFilesAfterEnv: ['<rootDir>/scripts/test/setupTests.js'],
 
   // A list of paths to snapshot serializer modules Jest should use for snapshot testing
-  // snapshotSerializers: [],
+  snapshotSerializers: ['jest-emotion'],
 
   // The test environment that will be used for testing
   testEnvironment: 'jsdom',
@@ -154,12 +155,13 @@ module.exports = {
 
   // A map from regular expressions to paths to transformers
   transform: {
-    '.(ts|tsx)$': require.resolve('ts-jest/dist'),
-    '.(js|jsx)$': require.resolve('babel-jest'), // jest's default
+    '\\.[jt]sx?$': 'babel-jest',
   },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
-  transformIgnorePatterns: ['[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$'],
+  transformIgnorePatterns: [
+    '[/\\\\]node_modules[/\\\\](?!lodash-es).+\\.(js|jsx|ts|tsx|mjs)$',
+  ],
 
   // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
   // unmockedModulePathPatterns: undefined,

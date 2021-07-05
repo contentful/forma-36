@@ -1,5 +1,6 @@
 import React, { useMemo, useReducer, useRef, ChangeEvent } from 'react';
 import cn from 'classnames';
+import { Close, ChevronDown } from '@contentful/f36-icons';
 
 import { TextInput } from '../TextInput';
 import {
@@ -216,7 +217,7 @@ export const Autocomplete = <T extends {}>({
           tabIndex={-1}
           disabled={toggleProps.disabled}
           buttonType="muted"
-          iconProps={{ icon: toggleProps.query ? 'Close' : 'ChevronDown' }}
+          iconProps={{ as: toggleProps.query ? Close : ChevronDown }}
           onClick={toggleProps.onToggle}
           label={toggleProps.query ? 'Clear' : 'Show list'}
         />

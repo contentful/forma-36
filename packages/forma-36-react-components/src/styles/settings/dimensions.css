@@ -1,5 +1,5 @@
 @import 'settings/typography';
-@import '@contentful/forma-36-tokens/dist/css/spacing.css';
+@import '@contentful/f36-tokens/dist/css/spacing.css';
 
 :root {
   /* Input Widths */

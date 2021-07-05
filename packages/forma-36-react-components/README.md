@@ -7,24 +7,25 @@ You can access a Storybook website with the latest changes of the library [here]
 
 <!-- TOC -->
 
-- [Table of contents](#table-of-contents)
-- [Installing package](#installing-package)
-- [Usage](#usage)
-  - [Import desired component into your project](#import-desired-component-into-your-project)
-  - [Import styles](#import-styles)
-- [Development](#development)
-  - [Storybook](#storybook)
-  - [Example component directory structure](#example-component-directory-structure)
-  - [Styling](#styling)
-  - [Component principles](#component-principles)
-  - [Adding documentation for component](#adding-documentation-for-component)
-- [Testing](#testing)
-  - [Run tests](#run-tests)
-- [Building](#building)
-  - [Create a build of the library](#create-a-build-of-the-library)
-- [Commits](#commits)
-- [Alpha components](#alpha-components)
-<!-- /TOC -->
+- [Forma 36 React Components](#forma-36-react-components)
+  - [Table of contents](#table-of-contents)
+  - [Installing package](#installing-package)
+  - [Usage](#usage)
+    - [Import desired component into your project](#import-desired-component-into-your-project)
+    - [Import styles](#import-styles)
+  - [Development](#development)
+    - [Storybook](#storybook)
+    - [Example component directory structure](#example-component-directory-structure)
+    - [Styling](#styling)
+    - [Component principles](#component-principles)
+    - [Adding documentation for component](#adding-documentation-for-component)
+  - [Testing](#testing)
+    - [Run tests](#run-tests)
+  - [Building](#building)
+    - [Create a build of the library](#create-a-build-of-the-library)
+  - [Commits](#commits)
+  - [Alpha components](#alpha-components)
+  <!-- /TOC -->
 
 ## Installing package
 
@@ -52,6 +53,7 @@ import { Input } from '@contentful/forma-36-react-components';
 
 ```js
 import '@contentful/forma-36-react-components/dist/styles.css';
+>>>>>>> master
 ```
 
 ## Development

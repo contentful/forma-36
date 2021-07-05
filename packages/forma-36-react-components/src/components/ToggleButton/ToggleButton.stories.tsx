@@ -1,10 +1,10 @@
 import React from 'react';
+import { SectionHeading } from '@contentful/f36-typography';
+import { Calendar } from '@contentful/f36-icons';
+import { Flex } from '@contentful/f36-core';
+import type { Meta } from '@storybook/react/types-6-0';
 
 import { ToggleButton, ToggleButtonProps } from './ToggleButton';
-import { SectionHeading } from '../Typography';
-import { Flex } from '../Flex';
-
-import type { Meta } from '@storybook/react/types-6-0';
 
 export default {
   title: 'Components/ToggleButton',
@@ -37,7 +37,7 @@ export const Grouped = () => (
     <ToggleButton isActive>Pears</ToggleButton>
     <ToggleButton>Peaches</ToggleButton>
     <ToggleButton>Mangos</ToggleButton>
-    <ToggleButton icon="Calendar" isActive>
+    <ToggleButton icon={Calendar} isActive>
       Kiwis
     </ToggleButton>
     <ToggleButton isDisabled>Bananas</ToggleButton>
@@ -47,33 +47,33 @@ export const Grouped = () => (
 export const Overview = () => (
   <>
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Toggle Button default</SectionHeading>
+      <SectionHeading as="h3">Toggle Button default</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingS">
       <ToggleButton>Embed Entry</ToggleButton>
     </Flex>
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Toggle Button with icon</SectionHeading>
+      <SectionHeading as="h3">Toggle Button with icon</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingS">
-      <ToggleButton icon="Calendar">Embed Entry</ToggleButton>
+      <ToggleButton icon={Calendar}>Embed Entry</ToggleButton>
     </Flex>
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Toggle Button active</SectionHeading>
+      <SectionHeading as="h3">Toggle Button active</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingS">
-      <ToggleButton isActive icon="Calendar">
+      <ToggleButton isActive icon={Calendar}>
         Embed Entry
       </ToggleButton>
     </Flex>
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Toggle Button disabled</SectionHeading>
+      <SectionHeading as="h3">Toggle Button disabled</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingS">
       <ToggleButton isDisabled>Embed Entry</ToggleButton>
     </Flex>
     <Flex marginBottom="spacingS">
-      <SectionHeading element="h3">Grouped</SectionHeading>
+      <SectionHeading as="h3">Grouped</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingS">
       <Grouped />

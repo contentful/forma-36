@@ -1,8 +1,8 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { axe } from '@/scripts/test/axeHelper';
 
-import { axe } from '../../utils/axeHelper';
 import { Accordion } from './Accordion';
 import { AccordionItem } from './AccordionItem/AccordionItem';
 

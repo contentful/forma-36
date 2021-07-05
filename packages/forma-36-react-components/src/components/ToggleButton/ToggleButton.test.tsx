@@ -1,8 +1,9 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { Entry } from '@contentful/f36-icons';
+import { axe } from '@/scripts/test/axeHelper';
 
-import { axe } from '../../utils/axeHelper';
 import { ToggleButton } from './ToggleButton';
 
 it('renders the component', () => {
@@ -31,7 +32,7 @@ it('renders the component active', () => {
 
 it('renders the component with icon', () => {
   const { container } = render(
-    <ToggleButton className="my-extra-class" icon="Entry">
+    <ToggleButton className="my-extra-class" icon={Entry}>
       Toggle
     </ToggleButton>,
   );
@@ -43,7 +44,7 @@ it('should not dispatch onClick if disabled', () => {
   const mockOnToggle = jest.fn();
 
   render(
-    <ToggleButton className="my-extra-class" icon="Entry" isDisabled>
+    <ToggleButton className="my-extra-class" icon={Entry} isDisabled>
       Toggle
     </ToggleButton>,
   );

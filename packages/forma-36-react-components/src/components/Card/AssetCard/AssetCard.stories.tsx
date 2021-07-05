@@ -1,11 +1,11 @@
 import React from 'react';
+import { Flex } from '@contentful/f36-core';
+import { SectionHeading } from '@contentful/f36-typography';
+import { Calendar, Clock } from '@contentful/f36-icons';
 
 import { AssetCard, AssetCardProps } from './AssetCard';
-import { Icon } from '../../Icon';
 import { DropdownList, DropdownListItem } from '../../Dropdown';
 import { CardDragHandle } from '../CardDragHandle/CardDragHandle';
-import { Flex } from '../../Flex';
-import { SectionHeading } from '../../Typography';
 
 export default {
   title: 'Components/Card/AssetCard',
@@ -70,11 +70,11 @@ export const WithStatusIcon = (args: AssetCardProps) => <AssetCard {...args} />;
 
 WithStatusIcon.args = {
   ...Basic.args,
-  statusIcon: 'Clock',
+  statusIcon: Clock,
 };
 
 export const WithACustomStatusIcon = (args: AssetCardProps) => (
-  <AssetCard {...args} statusIcon={<Icon icon="Calendar" />} />
+  <AssetCard {...args} statusIcon={Calendar} />
 );
 
 WithACustomStatusIcon.args = {
@@ -84,7 +84,7 @@ export const Overview = () => (
   <>
     <Flex flexDirection="column" marginBottom="spacingM">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">
+        <SectionHeading as="h3">
           Published card small and default with image
         </SectionHeading>
       </Flex>
@@ -107,7 +107,7 @@ export const Overview = () => (
     </Flex>
     <Flex flexDirection="column" marginBottom="spacingM">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">
+        <SectionHeading as="h3">
           Draft card small and default with image
         </SectionHeading>
       </Flex>
@@ -130,7 +130,7 @@ export const Overview = () => (
     </Flex>
     <Flex flexDirection="column" marginBottom="spacingM">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">
+        <SectionHeading as="h3">
           archived card small and default with image
         </SectionHeading>
       </Flex>
@@ -153,7 +153,7 @@ export const Overview = () => (
     </Flex>
     <Flex flexDirection="column" marginBottom="spacingM">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">
+        <SectionHeading as="h3">
           changed card small and default with image
         </SectionHeading>
       </Flex>
@@ -176,14 +176,14 @@ export const Overview = () => (
     </Flex>
     <Flex flexDirection="column" marginBottom="spacingM">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">
+        <SectionHeading as="h3">
           Published card, small and default, with custom icon
         </SectionHeading>
       </Flex>
       <Flex marginBottom="spacingS">
         <AssetCard
           status="published"
-          statusIcon={<Icon icon="Calendar" color="positive" />}
+          statusIcon={() => <Calendar variant="positive" />}
           type="image"
           src="https://via.placeholder.com/200x300'"
           title="Image of the cat"
@@ -191,7 +191,7 @@ export const Overview = () => (
         />
         <AssetCard
           status="published"
-          statusIcon={<Icon icon="Calendar" color="positive" />}
+          statusIcon={() => <Calendar variant="positive" />}
           type="image"
           src="https://via.placeholder.com/200x300'"
           title="Image of the cat"
@@ -201,7 +201,7 @@ export const Overview = () => (
     </Flex>
     <Flex flexDirection="column" marginBottom="spacingM">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">
+        <SectionHeading as="h3">
           card withDragHandle, small and default with image
         </SectionHeading>
       </Flex>
@@ -226,7 +226,7 @@ export const Overview = () => (
     </Flex>
     <Flex flexDirection="column" marginBottom="spacingM">
       <Flex marginBottom="spacingS">
-        <SectionHeading element="h3">
+        <SectionHeading as="h3">
           loading state of card, small and default
         </SectionHeading>
       </Flex>

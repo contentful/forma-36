@@ -1,7 +1,8 @@
 import React, { FunctionComponent, KeyboardEvent } from 'react';
 import classNames from 'classnames';
+import { Close, Done } from '@contentful/f36-icons';
+
 import styles from './Switch.css';
-import { Icon } from '../Icon';
 
 export interface SwitchProps {
   onToggle?: (isChecked: boolean) => void;
@@ -35,24 +36,22 @@ export const Switch: FunctionComponent<SwitchProps> = (props: SwitchProps) => {
         })}
         htmlFor={props.id}
       >
-        <Icon
-          icon="Done"
-          color="white"
-          size="tiny"
+        <Done
           className={classNames(
             styles['Switch__icon'],
             styles['Switch__icon--done'],
           )}
+          size="tiny"
+          variant="white"
         />
         {props.labelText}
-        <Icon
-          icon="Close"
-          color="white"
-          size="tiny"
+        <Close
           className={classNames(
             styles['Switch__icon'],
             styles['Switch__icon--close'],
           )}
+          size="tiny"
+          variant="white"
         />
       </label>
     </div>

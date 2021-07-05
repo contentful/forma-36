@@ -31,6 +31,9 @@
       "es2017.intl",
       "esnext.intl"
     ],
+    "paths": {
+      "@/scripts/*": ["./scripts/*"],
+    },
     "skipLibCheck": false,
     "typeRoots": ["node_modules/@types", "./types"]
   },

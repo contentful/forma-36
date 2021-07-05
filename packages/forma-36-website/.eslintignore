@@ -1,1 +1,7 @@
-../forma-36-react-components/dist
+node_modules
+dist-storybook
+dist
+esm
+*.css.d.ts
+public
+.cache

@@ -10,7 +10,7 @@ import React, {
   ChangeEvent,
 } from 'react';
 import isHotkey from 'is-hotkey';
-import orderBy from 'lodash.orderby';
+import { orderBy } from 'lodash-es';
 import {
   format,
   addHours,
@@ -20,17 +20,16 @@ import {
   isBefore,
   isValid,
 } from 'date-fns';
+import { Label } from '@contentful/f36-forms';
 import {
   HelpText,
-  FormLabel,
   TextInput,
   ValidationMessage,
   Dropdown,
   DropdownListItem,
   DropdownList,
-} from '@contentful/forma-36-react-components';
-
-import tokens from '@contentful/forma-36-tokens';
+} from '@contentful/f36-components';
+import tokens from '@contentful/f36-tokens';
 
 const styles = {
   selectedTime: css({
@@ -300,9 +299,9 @@ export const Timepicker: React.FC<TimepickerProps> = ({
   return (
     <div>
       {labelText && (
-        <FormLabel required={isRequired} htmlFor={inputId}>
+        <Label required={isRequired} htmlFor={inputId}>
           {labelText}
-        </FormLabel>
+        </Label>
       )}
       <div className={styles.inputWrapper} id="scheduleTimeForm">
         <Dropdown

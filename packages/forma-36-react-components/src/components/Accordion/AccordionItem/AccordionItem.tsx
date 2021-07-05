@@ -1,5 +1,5 @@
 import React, { FC, useState } from 'react';
-
+import type { HeadingElement } from '@contentful/f36-typography';
 import { useId } from '../../../utils/useId';
 import { AccordionHeader } from '../AccordionHeader/AccordionHeader';
 import { AccordionPanel } from '../AccordionPanel/AccordionPanel';
@@ -14,7 +14,7 @@ export interface AccordionItemProps {
   /**
    * The heading element that will be used by the AccordionHeader
    */
-  titleElement?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  titleElement?: HeadingElement;
   /**
    * The children of the AccordionItem are in fact the content of the accordion
    */
