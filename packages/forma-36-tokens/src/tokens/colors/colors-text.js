@@ -1,9 +1,11 @@
+const colorsGray = require('./colors-gray');
+
 const colorsText = {
-  'color-text-dark': '#192532',
-  'color-text-base': '#283848',
-  'color-text-mid': '#536171',
-  'color-text-light': '#606C7C',
-  'color-text-lightest': '#6B7888',
+  'color-text-dark': colorsGray['gray-900'],
+  'color-text-base': colorsGray['gray-800'],
+  'color-text-mid': colorsGray['gray-700'],
+  'color-text-light': colorsGray['gray-600'],
+  'color-text-lightest': colorsGray['gray-500'],
 };
 
 module.exports = colorsText;
