@@ -5,7 +5,7 @@ import { Drag, Close } from '@contentful/f36-icons';
 
 import styles from './Pill.css';
 
-export interface PillProps {
+export interface PillProps extends React.HTMLAttributes<HTMLElement> {
   label: string;
   onClose?: () => void;
   onDrag?: () => void;
