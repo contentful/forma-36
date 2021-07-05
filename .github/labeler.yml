@@ -1,0 +1,16 @@
+package:$1:
+  - packages/([^/]+)/.*
+
+component:$1:
+  - packages/components/([^/]+)/.*
+
+tools:
+  - .circleci/**/*
+  - .scripts/**/*
+  - .github/**/*
+
+styles:
+  - package/**/*.css
+
+tests:
+  - packages/**/*.spec.{js,tsx,ts}

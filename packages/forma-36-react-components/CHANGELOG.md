@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.90.6](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.90.5...@contentful/forma-36-react-components@3.90.6) (2021-07-02)
+
+
+### Bug Fixes
+
+* Include `...otherProps` in Pill types ([#1032](https://github.com/contentful/forma-36/issues/1032)) ([0f1d9ce](https://github.com/contentful/forma-36/commit/0f1d9ceea61b1188ad5d2f93e30e882d8c59cbc0))
+
+
+
+
+
 ## [3.90.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.90.4...@contentful/forma-36-react-components@3.90.5) (2021-07-01)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
