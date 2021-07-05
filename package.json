@@ -146,7 +146,7 @@
     "style-loader": "^2.0.0",
     "typescript": "4.2.3",
     "webpack": "^4.39.3",
-    "webpack-cli": "^3.3.5"
+    "webpack-cli": "^4.7.2"
   },
   "engines": {
     "node": ">=14.5.0",
