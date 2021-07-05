@@ -63,6 +63,8 @@ export type {
   CheckboxProps,
   RadioButtonProps,
 } from '@contentful/f36-inputs';
+export { Pill } from '@contentful/f36-pill';
+export type { PillProps } from '@contentful/f36-pill';
 export * from './components/Accordion';
 export * from './components/Asset';
 export * from './components/Autocomplete';
@@ -78,7 +80,6 @@ export * from './components/Form';
 export * from './components/IconButton';
 export * from './components/Modal';
 export * from './components/Notification';
-export * from './components/Pill';
 export * from './components/Select';
 export * from './components/SelectField';
 export * from './components/Skeleton';
