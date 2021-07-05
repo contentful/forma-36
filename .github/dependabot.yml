@@ -12,5 +12,3 @@ updates:
       - dependabot
     commit-message:
       prefix: chore
-    registries:
-      - npm-registry-registry-npmjs-org
