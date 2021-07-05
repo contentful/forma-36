@@ -182,6 +182,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/anilkk"><img src="https://avatars.githubusercontent.com/u/1124415?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Anil Kumar krishanshetty</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=anilkk" title="Code">💻</a> <a href="https://github.com/contentful/forma-36/commits?author=anilkk" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/massao"><img src="https://avatars.githubusercontent.com/u/1071799?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Renato Massao Yonamine</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=massao" title="Code">💻</a></td>
     <td align="center"><a href="http://www.charliechrisman.com"><img src="https://avatars.githubusercontent.com/u/6521666?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Charlie Chrisman</b></sub></a><br /><a href="https://github.com/contentful/forma-36/issues?q=author%3Acachrisman" title="Bug reports">🐛</a></td>
+    <td align="center"><a href="https://github.com/janvandenberg"><img src="https://avatars.githubusercontent.com/u/4704819?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jan van den Berg</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=janvandenberg" title="Code">💻</a></td>
   </tr>
 </table>
 

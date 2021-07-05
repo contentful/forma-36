@@ -5,7 +5,7 @@ import { Icon } from '../Icon';
 import { TabFocusTrap } from '../TabFocusTrap';
 import styles from './Pill.css';
 
-export interface PillProps {
+export interface PillProps extends React.HTMLAttributes<HTMLElement> {
   label: string;
   onClose?: () => void;
   onDrag?: () => void;
