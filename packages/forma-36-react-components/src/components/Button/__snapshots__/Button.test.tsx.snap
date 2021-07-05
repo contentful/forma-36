@@ -656,57 +656,61 @@ exports[`renders the component in loading state 1`] = `
       Embed entry
     </span>
     <div
-      class="Button__spinner emotion-7"
-      data-test-id="cf-ui-spinner"
+      class="Button--spinner-wrapper Button--spinner--enter Button--spinner--enter-active"
     >
-      <svg
-        class="emotion-6"
-        viewBox="0 0 60 51"
-        xmlns="http://www.w3.org/2000/svg"
+      <div
+        class="Button__spinner emotion-7"
+        data-test-id="cf-ui-spinner"
       >
-        <title>
-          Loading…
-        </title>
-        <g
-          class="emotion-1"
-          transform="translate(10,33.528168)"
+        <svg
+          class="emotion-6"
+          viewBox="0 0 60 51"
+          xmlns="http://www.w3.org/2000/svg"
         >
+          <title>
+            Loading…
+          </title>
           <g
-            class="emotion-0"
+            class="emotion-1"
+            transform="translate(10,33.528168)"
           >
-            <circle
-              r="6"
-              transform="translate(0,10.471832)"
-            />
+            <g
+              class="emotion-0"
+            >
+              <circle
+                r="6"
+                transform="translate(0,10.471832)"
+              />
+            </g>
           </g>
-        </g>
-        <g
-          class="emotion-3"
-          transform="translate(30,33.528168)"
-        >
           <g
-            class="emotion-2"
+            class="emotion-3"
+            transform="translate(30,33.528168)"
           >
-            <circle
-              r="6"
-              transform="translate(0,10.471832)"
-            />
+            <g
+              class="emotion-2"
+            >
+              <circle
+                r="6"
+                transform="translate(0,10.471832)"
+              />
+            </g>
           </g>
-        </g>
-        <g
-          class="emotion-5"
-          transform="translate(50,33.528168)"
-        >
           <g
-            class="emotion-4"
+            class="emotion-5"
+            transform="translate(50,33.528168)"
           >
-            <circle
-              r="6"
-              transform="translate(0,10.471832)"
-            />
+            <g
+              class="emotion-4"
+            >
+              <circle
+                r="6"
+                transform="translate(0,10.471832)"
+              />
+            </g>
           </g>
-        </g>
-      </svg>
+        </svg>
+      </div>
     </div>
   </span>
 </button>

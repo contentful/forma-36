@@ -3,6 +3,47 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.90.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.90.4...@contentful/forma-36-react-components@3.90.5) (2021-07-01)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+## [3.90.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.90.3...@contentful/forma-36-react-components@3.90.4) (2021-06-29)
+
+
+### Bug Fixes
+
+* **note:** remove anchor styling ([#994](https://github.com/contentful/forma-36/issues/994)) ([68400f8](https://github.com/contentful/forma-36/commit/68400f8a1bf17e68642c9ecd685276478c007487))
+
+
+
+
+
+## [3.90.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.90.2...@contentful/forma-36-react-components@3.90.3) (2021-06-28)
+
+
+### Bug Fixes
+
+* **modal-controls:** set full width with box-sizing border-box ([#996](https://github.com/contentful/forma-36/issues/996)) ([106833b](https://github.com/contentful/forma-36/commit/106833b751cfb41959f3e7ef45bdfa62e65f27fd))
+
+
+
+
+
+## [3.90.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.90.1...@contentful/forma-36-react-components@3.90.2) (2021-06-28)
+
+
+### Bug Fixes
+
+* **modal-controls:** remove negative margin-top and fix padding ([#1016](https://github.com/contentful/forma-36/issues/1016)) ([0ecb4b5](https://github.com/contentful/forma-36/commit/0ecb4b59c32cbf8ebacd45dc7612f8cd39aed22f))
+
+
+
+
+
 ## [3.90.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.90.0...@contentful/forma-36-react-components@3.90.1) (2021-06-17)
 
 

@@ -70,8 +70,7 @@ export const overview = () => (
     <Flex marginBottom="spacingM">
       <Note variant="warning" title="Short, yet succint title" hasCloseButton>
         A piece of information that is relevant to the context the user is
-        currently in. If you like it then you should put{' '}
-        <a href="https://contentful.com">a link</a> in it.
+        currently in.
       </Note>
     </Flex>
     <Flex marginBottom="spacingS">
