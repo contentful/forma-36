@@ -1,6 +1,8 @@
+const colorsGreen = require('./colors-green');
+
 const colorsMint = {
-  'color-mint-dark': '#b7ded0',
-  'color-mint-mid': '#f4fffb',
+  'color-mint-dark': colorsGreen['green-200'],
+  'color-mint-mid': colorsGreen['green-100'],
 };
 
 module.exports = colorsMint;

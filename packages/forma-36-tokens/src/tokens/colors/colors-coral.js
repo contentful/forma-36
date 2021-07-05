@@ -1,6 +1,8 @@
+const colorsRed = require('./colors-red');
+
 const colorsCoral = {
-  'color-coral-dark': '#d0a2a0',
-  'color-coral-mid': '#fbe3e2',
+  'color-coral-dark': colorsRed['red-200'],
+  'color-coral-mid': colorsRed['red-100'],
 };
 
 module.exports = colorsCoral;

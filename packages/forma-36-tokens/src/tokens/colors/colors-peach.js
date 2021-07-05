@@ -1,6 +1,8 @@
+const colorsOrange = require('./colors-orange');
+
 const colorsPeach = {
-  'color-peach-dark': '#d2ac79',
-  'color-peach-mid': '#ffe9cc',
+  'color-peach-dark': colorsOrange['orange-200'],
+  'color-peach-mid': colorsOrange['orange-100'],
 };
 
 module.exports = colorsPeach;
