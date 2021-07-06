@@ -1,7 +1,7 @@
 {
   "name": "@contentful/forma-36-react-components",
   "description": "Contentful UI Component Library",
-  "version": "3.90.6",
+  "version": "3.90.7",
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
   "style": "dist/styles.css",
@@ -50,7 +50,7 @@
     "@types/react-color": "^3.0.1",
     "@types/react-copy-to-clipboard": "4.2.6",
     "@types/react-transition-group": "4.4.1",
-    "file-loader": "^3.0.1",
+    "file-loader": "^6.2.0",
     "markdown-it": "^8.4.2",
     "mini-css-extract-plugin": "^0.7.0",
     "optimize-css-assets-webpack-plugin": "5.0.3",
