@@ -34,8 +34,6 @@ function _Pill(props: PillProps, ref: React.Ref<HTMLDivElement>) {
 
   const styles = getPillStyles(variant);
 
-  console.log(onDrag);
-
   return (
     <Box
       as="div"
