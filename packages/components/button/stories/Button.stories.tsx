@@ -36,18 +36,6 @@ basic.args = {
   children: 'Button CTA',
 };
 
-export const test: Story<any> = ({ icon, children, ...args }) => (
-  <Button icon={icons[icon]} {...args}>
-    {children}
-  </Button>
-);
-
-test.args = {
-  size: 'medium',
-  variant: 'transparent',
-  icon: 'Close',
-};
-
 export const Overview = (args) => {
   return (
     <>
