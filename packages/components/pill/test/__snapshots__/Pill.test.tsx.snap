@@ -37,7 +37,6 @@ exports[`renders no close button in "deleted" variant 1`] = `
   data-test-id="cf-ui-pill"
 >
   <span
-    aria-label="test"
     class="emotion-0"
     title="test"
   >
@@ -80,7 +79,6 @@ exports[`renders the component 1`] = `
   data-test-id="cf-ui-pill"
 >
   <span
-    aria-label="test"
     class="emotion-0"
     title="test"
   >
@@ -123,7 +121,6 @@ exports[`renders the component in "active" variant 1`] = `
   data-test-id="cf-ui-pill"
 >
   <span
-    aria-label="test"
     class="emotion-0"
     title="test"
   >
@@ -169,7 +166,6 @@ exports[`renders the component in "deleted" variant 1`] = `
   data-test-id="cf-ui-pill"
 >
   <span
-    aria-label="test"
     class="emotion-0"
     title="test"
   >
@@ -212,7 +208,6 @@ exports[`renders the component in "idle" variant by default 1`] = `
   data-test-id="cf-ui-pill"
 >
   <span
-    aria-label="test"
     class="emotion-0"
     title="test"
   >
@@ -286,7 +281,6 @@ exports[`renders the component with a close button 1`] = `
   data-test-id="cf-ui-pill"
 >
   <span
-    aria-label="test"
     class="emotion-0"
     title="test"
   >
@@ -366,6 +360,7 @@ exports[`renders the component with a dragging handle 1`] = `
   data-test-id="cf-ui-pill"
 >
   <span
+    aria-label="Drag handler"
     class="emotion-1"
   >
     <svg
@@ -385,7 +380,6 @@ exports[`renders the component with a dragging handle 1`] = `
     </svg>
   </span>
   <span
-    aria-label="test"
     class="emotion-2"
     title="test"
   >
@@ -428,7 +422,6 @@ exports[`renders the component with a test id 1`] = `
   data-test-id="test-id"
 >
   <span
-    aria-label="test"
     class="emotion-0"
     title="test"
   >
@@ -471,7 +464,6 @@ exports[`renders the component with an additional class name 1`] = `
   data-test-id="cf-ui-pill"
 >
   <span
-    aria-label="test"
     class="emotion-0"
     title="test"
   >
