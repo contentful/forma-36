@@ -5,7 +5,10 @@ status: 'stable'
 slug: /components/pill/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/components/pill'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-pill--basic'
+typescript: ./src/Pill.tsx
 ---
+
+import { Props } from '@contentful/f36-docs-utils';
 
 Pills represent a set of one or multiple objects which can be entered or changed by the user. By default, pills can be removed by the user. When necessary, the order of pills can be changed by the user using drag and drop. They are used to represent complex entities in small blocks such as contact details. Contentful Pills are are used to render transition locales and tag elements.
 
@@ -15,6 +18,7 @@ Pills represent a set of one or multiple objects which can be entered or changed
 - [Code examples](#code-examples)
 - [Content recommendations](#content-recommendations)
 - [Accessibility](#accessibility)
+- [Props](#props)
 
 ## How to use Pill
 
@@ -26,7 +30,7 @@ Pills represent a set of one or multiple objects which can be entered or changed
 Example of usage with draggable option
 
 ```jsx
-// import { Pill } from '@contentful/f36-components';
+// import { Pill } from '@contentful/f36-pill';
 
 <Pill
   tabIndex={0}
@@ -40,7 +44,7 @@ Example of usage with draggable option
 Example of the Pill component with dragHandle, in that case Icon.
 
 ```jsx
-// import { Pill, Icon } from '@contentful/f36-components';
+// import { Pill, Icon } from '@contentful/f36-pill';
 
 <Pill
   label="example.user@contentful.com"
@@ -60,4 +64,9 @@ Example of the Pill component with dragHandle, in that case Icon.
 
 ## Accessibility
 
-- Label value is passed in the component as a aria-label and title in the span element, like follows `aria-label={label} title={label}`.
+- Label value is passed in the component as a title in the span element, like follows `title={label}`.
+- The default drag component has a `aria-label="Drag handler"`, custom components should also include an `aria-label`
+
+## Props
+
+<Props of="Pill" />
