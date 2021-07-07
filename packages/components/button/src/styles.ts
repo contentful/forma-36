@@ -32,6 +32,13 @@ const variantActiveStyles = (variant: ButtonVariant): CSSObject => {
           borderColor: tokens.colorRedDark,
         },
       };
+    case 'transparent':
+      return {
+        ', &:hover': {
+          background: `none`,
+          borderColor: tokens.colorBlueLight,
+        },
+      };
     default:
       return {};
   }
@@ -97,6 +104,22 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
           boxShadow: tokens.glowNegative,
         },
       };
+    case 'transparent':
+      return {
+        color: tokens.colorTextBase,
+        background: `none`,
+        borderColor: `transparent`,
+        boxShadow: `none`,
+        '&:hover': {
+          backgroundColor: tokens.colorElementLightest,
+          color: tokens.colorTextDark,
+        },
+        '&:active': variantActiveStyles(variant),
+        '&:focus': {
+          background: `none`,
+          border: `1px solid ${tokens.colorBlueLight}`,
+        },
+      };
     default:
       return {};
   }
@@ -109,18 +132,21 @@ const sizeToStyles = (size: ButtonSize): CSSObject => {
         fontSize: tokens.fontSizeM,
         lineHeight: tokens.lineHeightCondensed,
         padding: `${tokens.spacing2Xs} ${tokens.spacingS}`,
+        minHeight: `32px`,
       };
     case 'medium':
       return {
         fontSize: tokens.fontSizeM,
         lineHeight: tokens.lineHeightCondensed,
         padding: `${tokens.spacingXs} ${tokens.spacingM}`,
+        minHeight: `40px`,
       };
     case 'large':
       return {
         fontSize: tokens.fontSizeXl,
         lineHeight: tokens.lineHeightXl,
         padding: `${tokens.spacingXs} ${tokens.spacingM}`,
+        minHeight: `48px`,
       };
     default:
       return {};

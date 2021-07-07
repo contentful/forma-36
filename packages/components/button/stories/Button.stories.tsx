@@ -36,6 +36,18 @@ basic.args = {
   children: 'Button CTA',
 };
 
+export const test: Story<any> = ({ icon, children, ...args }) => (
+  <Button icon={icons[icon]} {...args}>
+    {children}
+  </Button>
+);
+
+test.args = {
+  size: 'medium',
+  variant: 'transparent',
+  icon: 'Close',
+};
+
 export const Overview = (args) => {
   return (
     <>
@@ -78,17 +90,17 @@ export const Overview = (args) => {
         </Box>
         <Flex flexDirection="row" marginBottom="spacingM">
           <Box marginRight="spacingXs">
-            <Button variant="primary" size="small">
+            <Button variant="primary" size="small" icon={icons.Plus}>
               Small
             </Button>
           </Box>
           <Box marginRight="spacingXs">
-            <Button variant="primary" size="medium">
+            <Button variant="primary" size="medium" icon={icons.Plus}>
               Medium (default)
             </Button>
           </Box>
           <Box marginRight="spacingXs">
-            <Button variant="primary" size="large">
+            <Button variant="primary" size="large" icon={icons.Plus}>
               Large
             </Button>
           </Box>
@@ -214,6 +226,20 @@ export const Overview = (args) => {
         <Flex flexDirection="row" marginBottom="spacingM">
           <Box marginRight="spacingXs">
             <Button
+              variant="transparent"
+              icon={icons.Close}
+              aria-label="Close"
+            />
+          </Box>
+          <Box marginRight="spacingXs">
+            <Button
+              variant="transparent"
+              icon={icons.MoreHorizontal}
+              aria-label="More"
+            />
+          </Box>
+          <Box marginRight="spacingXs">
+            <Button
               variant="secondary"
               icon={icons.Download}
               aria-label="Download"
@@ -234,6 +260,32 @@ export const Overview = (args) => {
           </Box>
           <Box marginRight="spacingXs">
             <Button variant="primary" icon={icons.Plus} aria-label="Add" />
+          </Box>
+        </Flex>
+        <Flex flexDirection="row" marginBottom="spacingM">
+          <Box marginRight="spacingXs">
+            <Button
+              variant="primary"
+              icon={icons.Plus}
+              aria-label="Plus"
+              size="small"
+            />
+          </Box>
+          <Box marginRight="spacingXs">
+            <Button
+              variant="primary"
+              icon={icons.Plus}
+              aria-label="Plus"
+              size="medium"
+            />
+          </Box>
+          <Box marginRight="spacingXs">
+            <Button
+              variant="primary"
+              icon={icons.Plus}
+              aria-label="Plus"
+              size="large"
+            />
           </Box>
         </Flex>
       </Flex>
