@@ -47,7 +47,7 @@ const IndexPage = () => (
           title="Get started with our React components"
           description="Build your application or extension using the Forma 36 React component library"
           linkText="View all components in Storybook"
-          linkHref="https://f36.contentful.com/storybook"
+          linkHref="https://f36-storybook.contentful.com/"
           imageNode={
             <img
               src={componentsImg}
