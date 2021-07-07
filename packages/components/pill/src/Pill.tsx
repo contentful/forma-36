@@ -9,9 +9,21 @@ import getPillStyles from './styles';
 export interface PillProps
   extends React.HTMLAttributes<HTMLElement>,
     CommonProps {
+  /**
+   * Text that will be shown on the pill
+   */
   label: string;
+  /**
+   * Function that handles when the close icon is clicked. Close icon visibility also depends on if this is set
+   */
   onClose?: () => void;
+  /**
+   * Function that handles when the pill is dragged. Drag icon visibility also depends on if this is set
+   */
   onDrag?: () => void;
+  /**
+   * Custom component to be used as handler for the drag functionality.
+   */
   dragHandleComponent?: React.ReactNode;
   /**
    * Determines style variation of Pill component
@@ -47,11 +59,11 @@ function _Pill(props: PillProps, ref: React.Ref<HTMLDivElement>) {
         (dragHandleComponent ? (
           dragHandleComponent
         ) : (
-          <span className={styles.dragIcon}>
+          <span aria-label="Drag handler" className={styles.dragIcon}>
             <Drag className={styles.icon} variant="muted" />
           </span>
         ))}
-      <span aria-label={label} title={label} className={styles.label}>
+      <span title={label} className={styles.label}>
         {label}
       </span>
       {onClose && variant !== 'deleted' && (
@@ -70,7 +82,4 @@ function _Pill(props: PillProps, ref: React.Ref<HTMLDivElement>) {
   );
 }
 
-/**
- * TODO: Add description of component here.
- */
 export const Pill = React.forwardRef(_Pill);
