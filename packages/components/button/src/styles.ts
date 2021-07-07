@@ -36,7 +36,7 @@ const variantActiveStyles = (variant: ButtonVariant): CSSObject => {
       return {
         ', &:hover': {
           background: `none`,
-          borderColor: tokens.colorBlueLight,
+          borderColor: tokens.colorElementLight,
         },
       };
     default:
@@ -117,7 +117,7 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
         '&:active': variantActiveStyles(variant),
         '&:focus': {
           background: `none`,
-          border: `1px solid ${tokens.colorBlueLight}`,
+          border: `1px solid ${tokens.colorElementLight}`,
         },
       };
     default:
