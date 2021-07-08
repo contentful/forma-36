@@ -1,8 +1,3 @@
-const colorsOrange = require('./colors-orange');
-
-const colorsPeach = {
-  'color-peach-dark': colorsOrange['orange-200'],
-  'color-peach-mid': colorsOrange['orange-100'],
-};
+const colorsPeach = require('./colors-peach-deprecated');
 
 module.exports = colorsPeach;
