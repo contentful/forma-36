@@ -9,6 +9,7 @@ typescript: ./src/Pill.tsx
 ---
 
 import { Props } from '@contentful/f36-docs-utils';
+import { InfoCircle } from '@contentful/f36-icons';
 
 Pills represent a set of one or multiple objects which can be entered or changed by the user. By default, pills can be removed by the user. When necessary, the order of pills can be changed by the user using drag and drop. They are used to represent complex entities in small blocks such as contact details. Contentful Pills are are used to render transition locales and tag elements.
 
@@ -27,13 +28,12 @@ Pills represent a set of one or multiple objects which can be entered or changed
 
 ## Code examples
 
-Example of usage with draggable option
+Example of usage with draggable and close option
 
 ```jsx
 // import { Pill } from '@contentful/f36-pill';
 
 <Pill
-  tabIndex={0}
   testId="pill-item"
   label="test label"
   onClose={() => {}}
@@ -44,14 +44,16 @@ Example of usage with draggable option
 Example of the Pill component with dragHandle, in that case Icon.
 
 ```jsx
-// import { Pill, Icon } from '@contentful/f36-pill';
+// import { Pill } from '@contentful/f36-pill';
+// import { InfoCircle } from '@contentful/f36-icons';
 
 <Pill
   label="example.user@contentful.com"
+  onDrag={() => {}}
   dragHandleComponent={
-    <Icon
-      icon="ArrowUp"
-      color="positive"
+    <InfoCircle
+      aria-label="Drag handler"
+      variant="muted"
       style={{ padding: '0.375rem 0.625rem' }}
     />
   }
@@ -65,7 +67,7 @@ Example of the Pill component with dragHandle, in that case Icon.
 ## Accessibility
 
 - Label value is passed in the component as a title in the span element, like follows `title={label}`.
-- The default drag component has a `aria-label="Drag handler"`, custom components should also include an `aria-label`
+- The default drag component has a `aria-label="Drag handler"`, custom drag handle components should also include an `aria-label`, as shown on the example
 
 ## Props
 

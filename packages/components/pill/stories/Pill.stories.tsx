@@ -2,8 +2,8 @@ import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { SectionHeading } from '@contentful/f36-typography';
 import { action } from '@storybook/addon-actions';
-import { Flex } from '@contentful/f36-core';
-import { ThumbUp } from '@contentful/f36-icons';
+import { Box, Flex } from '@contentful/f36-core';
+import { InfoCircle } from '@contentful/f36-icons';
 
 import { Pill, PillProps } from '../src/Pill';
 
@@ -30,84 +30,164 @@ export const basic: Story<PillProps> = (args: PillProps) => (
 
 basic.args = { label: 'example.user@contentful.com' };
 
-export const onDragAndOnClose: Story<PillProps> = (args: PillProps) => (
+export const Overview: Story<PillProps> = (args: PillProps) => (
   <>
-    <div>
-      <Pill label={args.label} onClose={args.onClose} onDrag={args.onDrag} />
-    </div>
-    <div className="f36-margin-top--m">
-      <Pill
-        style={{ width: 200 }}
-        label={args.label}
-        onClose={args.onClose}
-        onDrag={args.onDrag}
-      />
-    </div>
+    <Flex flexDirection="column" marginBottom="spacingL">
+      <Box marginBottom="spacingS">
+        <SectionHeading as="h3">Pill variants</SectionHeading>
+      </Box>
+      <Flex flexDirection="row" marginBottom="spacingM">
+        <Box marginRight="spacingXs">
+          <Pill label="Idle" variant="idle" />
+        </Box>
+        <Box marginRight="spacingXs">
+          <Pill label="Active" variant="active" />
+        </Box>
+        <Box marginRight="spacingXs">
+          <Pill label="Deleted" variant="deleted" />
+        </Box>
+      </Flex>
+    </Flex>
+    <Flex flexDirection="column" marginBottom="spacingL">
+      <Box marginBottom="spacingS">
+        <SectionHeading as="h3">Close</SectionHeading>
+      </Box>
+      <Flex flexDirection="row" marginBottom="spacingM">
+        <Box marginRight="spacingXs">
+          <Pill label="Idle" variant="idle" onClose={args.onClose} />
+        </Box>
+        <Box marginRight="spacingXs">
+          <Pill label="Active" variant="active" onClose={args.onClose} />
+        </Box>
+        <Box marginRight="spacingXs">
+          <Pill label="Deleted" variant="deleted" onClose={args.onClose} />
+        </Box>
+      </Flex>
+    </Flex>
+    <Flex flexDirection="column" marginBottom="spacingL">
+      <Box marginBottom="spacingS">
+        <SectionHeading as="h3">Dragable</SectionHeading>
+      </Box>
+      <Flex flexDirection="row" marginBottom="spacingM">
+        <Box marginRight="spacingXs">
+          <Pill label="Idle" variant="idle" onDrag={args.onDrag} />
+        </Box>
+        <Box marginRight="spacingXs">
+          <Pill label="Active" variant="active" onDrag={args.onDrag} />
+        </Box>
+        <Box marginRight="spacingXs">
+          <Pill label="Deleted" variant="deleted" onDrag={args.onDrag} />
+        </Box>
+      </Flex>
+    </Flex>
+    <Flex flexDirection="column" marginBottom="spacingL">
+      <Box marginBottom="spacingS">
+        <SectionHeading as="h3">Dragable + close</SectionHeading>
+      </Box>
+      <Flex flexDirection="row" marginBottom="spacingM">
+        <Box marginRight="spacingXs">
+          <Pill
+            label="Idle"
+            variant="idle"
+            onDrag={args.onDrag}
+            onClose={args.onClose}
+          />
+        </Box>
+        <Box marginRight="spacingXs">
+          <Pill
+            label="Active"
+            variant="active"
+            onDrag={args.onDrag}
+            onClose={args.onClose}
+          />
+        </Box>
+        <Box marginRight="spacingXs">
+          <Pill
+            label="Deleted"
+            variant="deleted"
+            onDrag={args.onDrag}
+            onClose={args.onClose}
+          />
+        </Box>
+      </Flex>
+    </Flex>
+    <Flex flexDirection="column" marginBottom="spacingL">
+      <Box marginBottom="spacingS">
+        <SectionHeading as="h3">Custom drag handle component</SectionHeading>
+      </Box>
+      <Flex flexDirection="row" marginBottom="spacingM">
+        <Box marginRight="spacingXs">
+          <Pill
+            label="Idle"
+            variant="idle"
+            onDrag={args.onDrag}
+            dragHandleComponent={args.dragHandleComponent}
+          />
+        </Box>
+        <Box marginRight="spacingXs">
+          <Pill
+            label="Active"
+            variant="active"
+            onDrag={args.onDrag}
+            dragHandleComponent={args.dragHandleComponent}
+          />
+        </Box>
+        <Box marginRight="spacingXs">
+          <Pill
+            label="Deleted"
+            variant="deleted"
+            onDrag={args.onDrag}
+            dragHandleComponent={args.dragHandleComponent}
+          />
+        </Box>
+      </Flex>
+    </Flex>
+    <Flex flexDirection="column" marginBottom="spacingL">
+      <Box marginBottom="spacingS">
+        <SectionHeading as="h3">Custom drag handle + close</SectionHeading>
+      </Box>
+      <Flex flexDirection="row" marginBottom="spacingM">
+        <Box marginRight="spacingXs">
+          <Pill
+            label="Idle"
+            variant="idle"
+            onDrag={args.onDrag}
+            dragHandleComponent={args.dragHandleComponent}
+            onClose={args.onClose}
+          />
+        </Box>
+        <Box marginRight="spacingXs">
+          <Pill
+            label="Active"
+            variant="active"
+            onDrag={args.onDrag}
+            dragHandleComponent={args.dragHandleComponent}
+            onClose={args.onClose}
+          />
+        </Box>
+        <Box marginRight="spacingXs">
+          <Pill
+            label="Deleted"
+            variant="deleted"
+            onDrag={args.onDrag}
+            dragHandleComponent={args.dragHandleComponent}
+            onClose={args.onClose}
+          />
+        </Box>
+      </Flex>
+    </Flex>
   </>
 );
 
-onDragAndOnClose.args = {
-  label: 'example.user@contentful.com ',
-  onClose: action('clicked'),
-  onDrag: action('dragged'),
-};
-
-export const customHandleComponent: Story<PillProps> = (args: PillProps) => (
-  <Pill
-    label={args.label}
-    onDrag={args.onDrag}
-    dragHandleComponent={
-      <ThumbUp variant="primary" style={{ padding: '0.375rem 0.625rem' }} />
-    }
-  />
-);
-
-customHandleComponent.args = {
+Overview.args = {
   label: 'example.user@contentful.com',
   onClose: action('clicked'),
   onDrag: action('dragged'),
-};
-
-export const PillVariants: Story<PillProps> = (args: PillProps) => (
-  <>
-    <div>
-      <Flex marginBottom="spacingXs">
-        <SectionHeading as="h3">Idle</SectionHeading>
-      </Flex>
-      <Pill
-        label={args.label}
-        onClose={args.onClose}
-        onDrag={args.onDrag}
-        variant="idle"
-      />
-    </div>
-    <div className="f36-margin-top--m">
-      <Flex marginBottom="spacingXs">
-        <SectionHeading as="h3">Active</SectionHeading>
-      </Flex>
-      <Pill
-        label={args.label}
-        onClose={args.onClose}
-        onDrag={args.onDrag}
-        variant="active"
-      />
-    </div>
-    <div className="f36-margin-top--m">
-      <Flex marginBottom="spacingXs">
-        <SectionHeading as="h3">Deleted</SectionHeading>
-      </Flex>
-      <Pill
-        label={args.label}
-        onClose={args.onClose}
-        onDrag={args.onDrag}
-        variant="deleted"
-      />
-    </div>
-  </>
-);
-
-PillVariants.args = {
-  label: 'example.user@contentful.com',
-  onClose: action('clicked'),
-  onDrag: action('dragged'),
+  dragHandleComponent: (
+    <InfoCircle
+      aria-label="Drag handler"
+      variant="muted"
+      style={{ padding: '0.375rem 0.625rem', paddingRight: 0 }}
+    />
+  ),
 };
