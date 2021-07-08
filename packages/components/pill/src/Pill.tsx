@@ -6,19 +6,17 @@ import { Drag, Close } from '@contentful/f36-icons';
 import { PillVariants } from './types';
 import getPillStyles from './styles';
 
-export interface PillProps
-  extends React.HTMLAttributes<HTMLElement>,
-    CommonProps {
+export interface PillProps extends CommonProps {
   /**
    * Text that will be shown on the pill
    */
   label: string;
   /**
-   * Function that handles when the close icon is clicked. Close icon visibility also depends on if this is set
+   * Function that handles when the close icon is clicked. Close icon visibility depends on if this property is set.
    */
   onClose?: () => void;
   /**
-   * Function that handles when the pill is dragged. Drag icon visibility also depends on if this is set
+   * Function that handles when the pill is dragged. Drag icon visibility depends on if this property is set.
    */
   onDrag?: () => void;
   /**
@@ -66,7 +64,7 @@ function _Pill(props: PillProps, ref: React.Ref<HTMLDivElement>) {
       <span title={label} className={styles.label}>
         {label}
       </span>
-      {onClose && variant !== 'deleted' && (
+      {onClose && (
         <button
           type="button"
           aria-label="close"

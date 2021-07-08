@@ -29,7 +29,7 @@ const getCloseButtonStyle = (variant: PillVariants) => {
     border: 'none',
     borderTopRightRadius: tokens.borderRadiusSmall,
     borderBottomRightRadius: tokens.borderRadiusSmall,
-    padding: '0.375rem',
+    padding: tokens.spacingXs,
     background: 'transparent',
     transition: `background ${tokens.transitionDurationShort} ${tokens.transitionEasingDefault}`,
     ...variantStyle(variant),
@@ -51,8 +51,8 @@ const getLabelStyle = (variant: PillVariants) => {
   };
 
   return css({
-    lineHeight: tokens.lineHeightL,
-    padding: '0.375rem 0.625rem',
+    lineHeight: tokens.lineHeightM,
+    padding: tokens.spacingXs,
     fontSize: tokens.fontSizeM,
     flexGrow: 2,
     whiteSpace: 'nowrap',
@@ -62,24 +62,13 @@ const getLabelStyle = (variant: PillVariants) => {
   });
 };
 
-const getIconStyle = (variant: PillVariants) => {
-  switch (variant) {
-    case 'active':
-      return css({
-        fill: tokens.colorTextLightest,
-        verticalAlign: 'middle',
-      });
-    default:
-      return css({
-        fill: tokens.colorElementDarkest,
-        verticalAlign: 'middle',
-      });
-  }
+const icon = {
+  fill: tokens.colorTextLightest,
+  verticalAlign: 'middle',
 };
 
 const dragIcon = {
-  lineHeight: '1.3rem',
-  padding: '0.375rem 0.625rem',
+  padding: tokens.spacingXs,
   paddingRight: 0,
 };
 
@@ -106,6 +95,7 @@ const getPillStyle = (variant: PillVariants) => {
   return css({
     display: 'inline-flex',
     fontFamily: tokens.fontStackPrimary,
+    alignItems: 'center',
     borderRadius: tokens.borderRadiusSmall,
     border: 'none',
     padding: 0,
@@ -118,7 +108,7 @@ export default (variant: PillVariants) => {
   return {
     closeButton: getCloseButtonStyle(variant),
     label: getLabelStyle(variant),
-    icon: getIconStyle(variant),
+    icon: css(icon),
     dragIcon: css(dragIcon),
     pill: getPillStyle(variant),
   };
