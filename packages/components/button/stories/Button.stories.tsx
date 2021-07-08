@@ -65,13 +65,12 @@ export const Overview = (args) => {
             </Button>
           </Box>
           <Box marginRight="spacingXs">
-            <Button disabled variant="primary">
-              Disabled
+            <Button variant="transparent" icon={icons[args.icon]}>
+              Transparent
             </Button>
           </Box>
         </Flex>
       </Flex>
-
       <Flex flexDirection="column" marginBottom="spacingL">
         <Box marginBottom="spacingS">
           <SectionHeading as="h3">Button sizes</SectionHeading>
@@ -120,6 +119,11 @@ export const Overview = (args) => {
               Negative isActive
             </Button>
           </Box>
+          <Box marginRight="spacingXs">
+            <Button variant="transparent" isActive>
+              Transparent
+            </Button>
+          </Box>
         </Flex>
       </Flex>
 
@@ -146,6 +150,11 @@ export const Overview = (args) => {
           <Box marginRight="spacingXs">
             <Button variant="negative" disabled>
               Negative disabled
+            </Button>
+          </Box>
+          <Box marginRight="spacingXs">
+            <Button variant="transparent" disabled>
+              Transparent
             </Button>
           </Box>
         </Flex>
@@ -176,6 +185,11 @@ export const Overview = (args) => {
               Negative with dropdown
             </Button>
           </Box>
+          <Box marginRight="spacingXs">
+            <Button variant="transparent" isDropdown>
+              Transparent
+            </Button>
+          </Box>
         </Flex>
       </Flex>
 
@@ -202,6 +216,11 @@ export const Overview = (args) => {
           <Box marginRight="spacingXs">
             <Button variant="negative" isLoading>
               Negative isLoading
+            </Button>
+          </Box>
+          <Box marginRight="spacingXs">
+            <Button variant="transparent" isLoading>
+              Transparent
             </Button>
           </Box>
         </Flex>

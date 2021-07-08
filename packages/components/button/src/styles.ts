@@ -35,8 +35,8 @@ const variantActiveStyles = (variant: ButtonVariant): CSSObject => {
     case 'transparent':
       return {
         ', &:hover': {
-          background: `none`,
-          borderColor: tokens.colorElementLight,
+          backgroundColor: tokens.colorElementLightest,
+          borderColor: tokens.colorElementLightest,
         },
       };
     default:
@@ -116,8 +116,8 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
         },
         '&:active': variantActiveStyles(variant),
         '&:focus': {
-          background: `none`,
-          border: `1px solid ${tokens.colorElementLight}`,
+          backgroundColor: 'none',
+          boxShadow: tokens.glowMuted,
         },
       };
     default:
