@@ -1,17 +1,23 @@
 import React from 'react';
-
 import {
-  Illustration,
-  IllustrationProps,
-  IllustrationType,
-  isIllustrationType,
-} from '../../Illustration';
+  Archive,
+  Audio,
+  CodeIllustration,
+  Image,
+  Markup,
+  Pdf,
+  Plaintext,
+  Richtext,
+  Presentation,
+  Spreadsheet,
+  Video,
+} from '@contentful/f36-icons';
+import type { IconProps } from '@contentful/f36-icon';
 import { AssetType } from '../Asset';
+import styles from './AssetIcon.css';
+import cn from 'classnames';
 
-const DEFAULT_ILLUSTRATION_NAME: IllustrationType = 'Archive';
-
-export interface AssetIconProps
-  extends Omit<IllustrationProps, 'illustration'> {
+export interface AssetIconProps extends Omit<IconProps, 'illustration'> {
   type?: AssetType;
 }
 
@@ -20,19 +26,41 @@ export interface AssetIconProps
  */
 export function AssetIcon({
   type = 'archive',
-  testId = 'cf-ui-asset-icon',
+  className,
   ...otherProps
 }: AssetIconProps) {
-  let illustrationName = type!.charAt(0).toUpperCase() + type!.slice(1); // eslint-disable-line @typescript-eslint/no-non-null-assertion
-  if (!isIllustrationType(illustrationName)) {
-    illustrationName = DEFAULT_ILLUSTRATION_NAME;
-  }
+  const props = {
+    ...otherProps,
+    className: cn(className, styles['AssetIcon']),
+  };
 
-  return (
-    <Illustration
-      illustration={illustrationName as IllustrationType}
-      testId={testId}
-      {...otherProps}
-    />
-  );
+  switch (type) {
+    case 'audio':
+      return <Audio {...props} />;
+    case 'code':
+      return <CodeIllustration {...props} />;
+    case 'image':
+      return <Image {...props} />;
+    case 'markup':
+      return <Markup {...props} />;
+    case 'pdf':
+      return <Pdf {...props} />;
+    case 'plaintext':
+      return <Plaintext {...props} />;
+    case 'presentation':
+      return <Presentation {...props} />;
+    case 'richtext':
+      return <Richtext {...props} />;
+    case 'spreadsheet':
+      return <Spreadsheet {...props} />;
+    case 'video':
+      return <Video {...props} />;
+    case 'archive':
+    default:
+      return <Archive {...props} />;
+  }
 }
+
+AssetIcon.defaultProps = {
+  testId: 'cf-ui-asset-icon',
+};
