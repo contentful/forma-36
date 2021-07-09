@@ -65,30 +65,29 @@ export const Overview = (args) => {
             </Button>
           </Box>
           <Box marginRight="spacingXs">
-            <Button disabled variant="primary">
-              Disabled
+            <Button variant="transparent" icon={icons[args.icon]}>
+              Transparent
             </Button>
           </Box>
         </Flex>
       </Flex>
-
       <Flex flexDirection="column" marginBottom="spacingL">
         <Box marginBottom="spacingS">
           <SectionHeading as="h3">Button sizes</SectionHeading>
         </Box>
         <Flex flexDirection="row" marginBottom="spacingM">
           <Box marginRight="spacingXs">
-            <Button variant="primary" size="small">
+            <Button variant="primary" size="small" icon={icons.Plus}>
               Small
             </Button>
           </Box>
           <Box marginRight="spacingXs">
-            <Button variant="primary" size="medium">
+            <Button variant="primary" size="medium" icon={icons.Plus}>
               Medium (default)
             </Button>
           </Box>
           <Box marginRight="spacingXs">
-            <Button variant="primary" size="large">
+            <Button variant="primary" size="large" icon={icons.Plus}>
               Large
             </Button>
           </Box>
@@ -120,6 +119,11 @@ export const Overview = (args) => {
               Negative isActive
             </Button>
           </Box>
+          <Box marginRight="spacingXs">
+            <Button variant="transparent" isActive>
+              Transparent
+            </Button>
+          </Box>
         </Flex>
       </Flex>
 
@@ -146,6 +150,11 @@ export const Overview = (args) => {
           <Box marginRight="spacingXs">
             <Button variant="negative" disabled>
               Negative disabled
+            </Button>
+          </Box>
+          <Box marginRight="spacingXs">
+            <Button variant="transparent" disabled>
+              Transparent
             </Button>
           </Box>
         </Flex>
@@ -176,6 +185,11 @@ export const Overview = (args) => {
               Negative with dropdown
             </Button>
           </Box>
+          <Box marginRight="spacingXs">
+            <Button variant="transparent" isDropdown>
+              Transparent
+            </Button>
+          </Box>
         </Flex>
       </Flex>
 
@@ -204,6 +218,11 @@ export const Overview = (args) => {
               Negative isLoading
             </Button>
           </Box>
+          <Box marginRight="spacingXs">
+            <Button variant="transparent" isLoading>
+              Transparent
+            </Button>
+          </Box>
         </Flex>
       </Flex>
 
@@ -212,6 +231,20 @@ export const Overview = (args) => {
           <SectionHeading as="h3">Icon only button</SectionHeading>
         </Box>
         <Flex flexDirection="row" marginBottom="spacingM">
+          <Box marginRight="spacingXs">
+            <Button
+              variant="transparent"
+              icon={icons.Close}
+              aria-label="Close"
+            />
+          </Box>
+          <Box marginRight="spacingXs">
+            <Button
+              variant="transparent"
+              icon={icons.MoreHorizontal}
+              aria-label="More"
+            />
+          </Box>
           <Box marginRight="spacingXs">
             <Button
               variant="secondary"
@@ -234,6 +267,32 @@ export const Overview = (args) => {
           </Box>
           <Box marginRight="spacingXs">
             <Button variant="primary" icon={icons.Plus} aria-label="Add" />
+          </Box>
+        </Flex>
+        <Flex flexDirection="row" marginBottom="spacingM">
+          <Box marginRight="spacingXs">
+            <Button
+              variant="primary"
+              icon={icons.Plus}
+              aria-label="Plus"
+              size="small"
+            />
+          </Box>
+          <Box marginRight="spacingXs">
+            <Button
+              variant="primary"
+              icon={icons.Plus}
+              aria-label="Plus"
+              size="medium"
+            />
+          </Box>
+          <Box marginRight="spacingXs">
+            <Button
+              variant="primary"
+              icon={icons.Plus}
+              aria-label="Plus"
+              size="large"
+            />
           </Box>
         </Flex>
       </Flex>

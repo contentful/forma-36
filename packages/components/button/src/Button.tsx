@@ -97,7 +97,11 @@ const _Button = (props: ButtonProps, ref) => {
     >
       {icon && !isLoading && (
         <Flex as="span" marginRight={children ? 'spacing2Xs' : 'none'}>
-          <Icon className={styles.buttonIcon} as={icon} />
+          <Icon
+            className={styles.buttonIcon}
+            as={icon}
+            size={size === 'large' ? 'medium' : 'small'}
+          />
         </Flex>
       )}
       <span className={styles.buttonText}>{children}</span>
