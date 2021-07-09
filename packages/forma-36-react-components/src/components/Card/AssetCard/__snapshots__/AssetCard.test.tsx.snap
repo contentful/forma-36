@@ -502,6 +502,13 @@ exports[`renders the component with status 1`] = `
   max-height: 20px;
 }
 
+.emotion-1 {
+  display: inline-block;
+  fill: #2D64B3;
+  height: 18px;
+  width: 18px;
+}
+
 <div
   aria-label="picture of a cat"
   class="Card AssetCard AssetCard--size-default Card--padding-none"
@@ -535,31 +542,22 @@ exports[`renders the component with status 1`] = `
             class="Asset__illustration-container"
           >
             <svg
-              class="Illustration"
+              class="AssetIcon emotion-1"
               data-test-id="cf-ui-asset-icon"
               height="1em"
               viewBox="0 0 24 24"
               width="1em"
             >
-              <g
-                fill="none"
-                stroke="#000"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-miterlimit="10"
-              >
-                <path
-                  d="M19.5 23.5H.5V.5h13l6 6z"
-                />
-                <path
-                  d="M13.5.5v6h6M13 11l-3 5.5-2-2-2.5 5h10z"
-                />
-                <circle
-                  cx="7"
-                  cy="9"
-                  r="1.5"
-                />
-              </g>
+              <path
+                clip-rule="evenodd"
+                d="M.5 0a.5.5 0 00-.5.5v23a.5.5 0 00.5.5h19a.5.5 0 00.5-.5v-17a.5.5 0 00-.146-.354l-6-6A.5.5 0 0013.5 0H.5zM1 23V1h12v5.5a.5.5 0 00.5.5H19v16H1zM18.293 6L14 1.707V6h4.293z"
+                fill-rule="evenodd"
+              />
+              <path
+                clip-rule="evenodd"
+                d="M12.053 10.503a.5.5 0 01.427.356l2.5 8.5a.5.5 0 01-.48.641h-10a.5.5 0 01-.447-.724l2.5-5a.5.5 0 01.8-.13l1.528 1.528 2.68-4.913a.5.5 0 01.492-.258zm-.192 1.796l-2.422 4.44a.5.5 0 01-.793.114l-1.509-1.509L5.309 19h8.523l-1.971-6.7zM6 8a1 1 0 100 2 1 1 0 000-2zM4 9a2 2 0 114 0 2 2 0 01-4 0z"
+                fill-rule="evenodd"
+              />
             </svg>
           </div>
           <span

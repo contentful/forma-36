@@ -73,7 +73,6 @@ export * from './components/Card';
 export * from './components/CopyButton';
 export * from './components/Dropdown';
 export * from './components/EditorToolbar';
-export * from './components/Illustration';
 export * from './components/DateTime';
 export * from './components/EntityList';
 export * from './components/Form';
