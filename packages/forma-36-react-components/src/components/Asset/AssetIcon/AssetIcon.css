@@ -6,5 +6,5 @@
 
 .AssetIcon g,
 .AssetIcon path {
-  stroke: var(--color-text-light);
+  fill: var(--color-text-light);
 }
