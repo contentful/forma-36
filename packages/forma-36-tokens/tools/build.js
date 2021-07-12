@@ -55,7 +55,7 @@ const buildIndexJS = (srcPath, tokens) => {
   );
 };
 
-async function createInterfaceDefinition(tokens) {
+function createInterfaceDefinition(tokens) {
   const defs = _.mapValues(tokens, (value) => {
     return {
       value: value,
@@ -63,53 +63,25 @@ async function createInterfaceDefinition(tokens) {
     };
   });
 
-  let deprecatedTokens = {};
-  const deprecatedPaths = (await globby('./src/tokens')).filter((path) =>
-    path.includes('-deprecated'),
-  );
-  deprecatedPaths.forEach((srcPath) => {
-    const tokens = require(path.resolve(srcPath));
-    const camelCasedTokens = _.mapKeys(tokens, (value, key) =>
-      _.camelCase(key),
-    );
-    _.assign(deprecatedTokens, camelCasedTokens);
-  });
-
-  const filteredDefs = _.pickBy(defs, (_, key) => !deprecatedTokens[key]);
-
-  const deprecatedDefinition = _.map(
-    deprecatedTokens,
-    (value, deprecatedName) => {
-      const newTokenName = _.findKey(filteredDefs, (d) => d.value === value);
-      const def = filteredDefs[newTokenName];
-      return `
-      /**
-       * @description ${def.value}
-       * @deprecated use tokens.${newTokenName} instead
-       */
-      "${deprecatedName}": ${def.type}`;
-    },
-  ).join(',');
-
   const fields = _.map(
-    filteredDefs,
+    defs,
     (def, tokenName) => `
     /**
-     * @description ${def.value}
+     * ${def.value}
      */
     "${tokenName}": ${def.type}`,
   ).join(',');
 
   return `interface F36Tokens {
-    ${[fields, deprecatedDefinition].join(',')}
+    ${fields}
   }`;
 }
 
-const buildIndexDTS = async (srcPath, tokens) => {
+const buildIndexDTS = (srcPath, tokens) => {
   return fse.outputFile(
     srcPath,
     `declare module '@contentful/forma-36-tokens' {
-      ${await createInterfaceDefinition(tokens)}
+      ${createInterfaceDefinition(tokens)}
       const tokens: F36Tokens;
       export default tokens;
     }`,
