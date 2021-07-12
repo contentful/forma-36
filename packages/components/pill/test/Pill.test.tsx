@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { axe } from '@/scripts/test/axeHelper';
 
-import { Pill } from './Pill';
+import { Pill } from '../src/Pill';
 
 it('renders the component', () => {
   const { container } = render(<Pill label="test" />);
