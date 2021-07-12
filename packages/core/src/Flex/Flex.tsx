@@ -45,6 +45,9 @@ export interface FlexInternalProps extends MarginProps, PaddingProps {
    * Defines how much a flexbox item should grow if there's space available. */
   flexGrow?: CSS.Property.FlexGrow;
   /**
+   * Defines a gap between flexbox items. */
+  gap?: CSS.Property.Gap;
+  /**
    * Defines how flexbox/grid items are aligned according to the main axis, within a flexbox/grid container. */
   justifyContent?: CSS.Property.JustifyContent;
   /**
@@ -95,6 +98,7 @@ const _Flex: PolymorphicComponentWithRef<
     flexWrap,
     fullHeight,
     fullWidth,
+    gap,
     justifyContent,
     justifyItems,
     justifySelf,
@@ -117,6 +121,7 @@ const _Flex: PolymorphicComponentWithRef<
           flexBasis,
           flexShrink,
           flexDirection,
+          gap,
           justifyContent,
           justifyItems,
           justifySelf,
