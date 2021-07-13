@@ -589,6 +589,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "SirGavin",
+      "name": "SirGavin",
+      "avatar_url": "https://avatars.githubusercontent.com/u/11873876?v=4",
+      "profile": "https://github.com/SirGavin",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
