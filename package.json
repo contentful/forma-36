@@ -105,7 +105,7 @@
     "chromatic": "^5.7.0",
     "commitizen": "^4.2.1",
     "css-loader": "^3.6.0",
-    "cssnano": "4.1.10",
+    "cssnano": "5.0.2",
     "cz-conventional-changelog": "^2.1.0",
     "eslint": "^7.17.0",
     "eslint-config-dev": "^2.0.0",
