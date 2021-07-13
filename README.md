@@ -184,6 +184,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="http://www.charliechrisman.com"><img src="https://avatars.githubusercontent.com/u/6521666?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Charlie Chrisman</b></sub></a><br /><a href="https://github.com/contentful/forma-36/issues?q=author%3Acachrisman" title="Bug reports">🐛</a></td>
     <td align="center"><a href="https://github.com/janvandenberg"><img src="https://avatars.githubusercontent.com/u/4704819?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jan van den Berg</b></sub></a><br /><a href="https://github.com/contentful/forma-36/commits?author=janvandenberg" title="Code">💻</a></td>
   </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/SirGavin"><img src="https://avatars.githubusercontent.com/u/11873876?v=4?s=100" width="100px;" alt=""/><br /><sub><b>SirGavin</b></sub></a><br /><a href="https://github.com/contentful/forma-36/issues?q=author%3ASirGavin" title="Bug reports">🐛</a></td>
+  </tr>
 </table>
 
 <!-- markdownlint-restore -->
