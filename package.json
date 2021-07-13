@@ -131,7 +131,7 @@
     "plop": "^2.5.3",
     "postcss": "^8.2.2",
     "postcss-copy-assets": "^0.3.1",
-    "postcss-custom-properties": "^10.0.0",
+    "postcss-custom-properties": "^11.0.0",
     "postcss-import": "^14.0.0",
     "postcss-loader": "^4.1.0",
     "postcss-preset-env": "^6.7.0",
