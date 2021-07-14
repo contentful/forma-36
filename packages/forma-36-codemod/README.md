@@ -5,13 +5,13 @@ This repository contains a collection of codemod scripts for use with
 
 ### Usage
 
+Run this command to start an interactive wizard and then run the specified transform:
+
 `npx @contentful/forma-36-codemod <transform> <path> [...options]`
 
 - `transform` - name of transform, see available transforms below.
 - `path` - files or directory to transform
 - use the `--dry` option for a dry-run and use `--print` to print the output for comparison
-
-This will start an interactive wizard, and then run the specified transform.
 
 ### Included Transforms
 
