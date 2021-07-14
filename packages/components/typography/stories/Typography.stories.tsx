@@ -8,7 +8,7 @@ import {
   Heading,
   Subheading,
   SectionHeading,
-  Paragraph,
+  Text,
 } from '../src';
 
 export default {
@@ -29,121 +29,121 @@ magnam reiciendis ea ipsam!`;
 
 interface Arg extends TypographyProps {
   title?: string;
-  paragraph?: string;
+  text?: string;
 }
 
-export const WithDisplayHuge = ({ title, paragraph, ...args }: Arg) => {
+export const WithDisplayHuge = ({ title, text, ...args }: Arg) => {
   return (
     <ExampleContainer>
       <Typography {...args}>
         <DisplayText size="huge">{title}</DisplayText>
-        <Paragraph>{paragraph}</Paragraph>
-        <Paragraph>
+        <Text>{text}</Text>
+        <Text>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ut
           accusamus quia debitis expedita consectetur!
-        </Paragraph>
+        </Text>
       </Typography>
     </ExampleContainer>
   );
 };
 WithDisplayHuge.args = {
   title: 'My DisplayText',
-  paragraph: loremIpsum,
+  text: loremIpsum,
 };
 
-export const WithDisplayLarge = ({ title, paragraph, ...args }: Arg) => {
+export const WithDisplayLarge = ({ title, text, ...args }: Arg) => {
   return (
     <ExampleContainer>
       <Typography {...args}>
         <DisplayText size="large">{title}</DisplayText>
-        <Paragraph>{paragraph}</Paragraph>
-        <Paragraph>
+        <Text>{text}</Text>
+        <Text>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ut
           accusamus quia debitis expedita consectetur!
-        </Paragraph>
+        </Text>
       </Typography>
     </ExampleContainer>
   );
 };
 WithDisplayLarge.args = {
   title: 'My DisplayText',
-  paragraph: loremIpsum,
+  text: loremIpsum,
 };
 
-export const WithDisplayDefault = ({ title, paragraph, ...args }: Arg) => {
+export const WithDisplayDefault = ({ title, text, ...args }: Arg) => {
   return (
     <ExampleContainer>
       <Typography {...args}>
         <DisplayText>{title}</DisplayText>
-        <Paragraph>{paragraph}</Paragraph>
-        <Paragraph>
+        <Text>{text}</Text>
+        <Text>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ut
           accusamus quia debitis expedita consectetur!
-        </Paragraph>
+        </Text>
       </Typography>
     </ExampleContainer>
   );
 };
 WithDisplayDefault.args = {
   title: 'My DisplayText',
-  paragraph: loremIpsum,
+  text: loremIpsum,
 };
 
-export const WithHeading = ({ title, paragraph, ...args }: Arg) => {
+export const WithHeading = ({ title, text, ...args }: Arg) => {
   return (
     <ExampleContainer>
       <Typography {...args}>
         <Heading>{title}</Heading>
-        <Paragraph>{paragraph}</Paragraph>
-        <Paragraph>
+        <Text>{text}</Text>
+        <Text>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ut
           accusamus quia debitis expedita consectetur!
-        </Paragraph>
+        </Text>
       </Typography>
     </ExampleContainer>
   );
 };
 WithHeading.args = {
   title: 'My Heading',
-  paragraph: loremIpsum,
+  text: loremIpsum,
 };
 
-export const WithSubheading = ({ title, paragraph, ...args }: Arg) => {
+export const WithSubheading = ({ title, text, ...args }: Arg) => {
   return (
     <ExampleContainer>
       <Typography {...args}>
         <Subheading>{title}</Subheading>
-        <Paragraph>{paragraph}</Paragraph>
-        <Paragraph>
+        <Text>{text}</Text>
+        <Text>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ut
           accusamus quia debitis expedita consectetur!
-        </Paragraph>
+        </Text>
       </Typography>
     </ExampleContainer>
   );
 };
 WithSubheading.args = {
   title: 'My Subheading',
-  paragraph: loremIpsum,
+  text: loremIpsum,
 };
 
-export const WithSectionHeading = ({ title, paragraph, ...args }: Arg) => {
+export const WithSectionHeading = ({ title, text, ...args }: Arg) => {
   return (
     <ExampleContainer>
       <Typography {...args}>
         <SectionHeading>{title}</SectionHeading>
-        <Paragraph>{paragraph}</Paragraph>
-        <Paragraph>
+        <Text>{text}</Text>
+        <Text>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ut
           accusamus quia debitis expedita consectetur!
-        </Paragraph>
+        </Text>
       </Typography>
     </ExampleContainer>
   );
 };
 WithSectionHeading.args = {
   title: 'My SectionHeading',
-  paragraph: loremIpsum,
+  text: loremIpsum,
 };
 
 export const Overview = () => {
@@ -151,49 +151,49 @@ export const Overview = () => {
     <>
       <Flex alignItems="center" marginBottom="spacingM">
         <Flex marginRight="spacingS">
-          <Paragraph>48</Paragraph>
+          <Text>48</Text>
         </Flex>
         <DisplayText size="huge">Display Huge</DisplayText>
       </Flex>
       <Flex alignItems="center" marginBottom="spacingM">
         <Flex marginRight="spacingS">
-          <Paragraph>36</Paragraph>
+          <Text>36</Text>
         </Flex>
         <DisplayText size="large">Display Large</DisplayText>
       </Flex>
       <Flex alignItems="center" marginBottom="spacingM">
         <Flex marginRight="spacingS">
-          <Paragraph>28</Paragraph>
+          <Text>28</Text>
         </Flex>
         <DisplayText size="default">Display</DisplayText>
       </Flex>
 
       <Flex alignItems="center" marginBottom="spacingM">
         <Flex marginRight="spacingS">
-          <Paragraph>20</Paragraph>
+          <Text>20</Text>
         </Flex>
         <Heading>Heading</Heading>
       </Flex>
 
       <Flex alignItems="center" marginBottom="spacingM">
         <Flex marginRight="spacingS">
-          <Paragraph>16</Paragraph>
+          <Text>16</Text>
         </Flex>
         <Subheading>Subheading</Subheading>
       </Flex>
 
       <Flex alignItems="center" marginBottom="spacingM">
         <Flex marginRight="spacingS">
-          <Paragraph>12</Paragraph>
+          <Text>12</Text>
         </Flex>
         <SectionHeading>Section Heading</SectionHeading>
       </Flex>
 
       <Flex alignItems="center" marginBottom="spacingM">
         <Flex marginRight="spacingS">
-          <Paragraph>14</Paragraph>
+          <Text>14</Text>
         </Flex>
-        <Paragraph>Paragraph</Paragraph>
+        <Text>Text</Text>
       </Flex>
     </>
   );

@@ -31,11 +31,11 @@ The accordion has two variations that define the alignment of the chevron icon: 
 ```jsx
 <Accordion>
   <AccordionItem title="What payment methods do you accept?">
-    <Paragraph>
+    <Text>
       Customers on the Team tier can pay with a credit card (American Express,
       MasterCard or Visa). Enterprise customers have the choice of paying with a
       credit card or wire transfer.
-    </Paragraph>
+    </Text>
   </AccordionItem>
 </Accordion>
 ```
@@ -47,11 +47,11 @@ Other typographic components can be passed as the accordion's title and anything
   <AccordionItem
     title={<SectionHeading>What payment methods do you accept?</SectionHeading>}
   >
-    <Paragraph marginBottom="spacingS">
+    <Text marginBottom="spacingS">
       Customers on the Team tier can pay with a credit card (American Express,
       MasterCard or Visa). Enterprise customers have the choice of paying with a
       credit card or wire transfer.
-    </Paragraph>
+    </Text>
     <Button onClick={() => console.log('clicked!')}>Accordion’s button</Button>
   </AccordionItem>
 </Accordion>
@@ -60,5 +60,5 @@ Other typographic components can be passed as the accordion's title and anything
 ## Content recommendations
 
 - The title should be a short message that summarize the content of the accordion.
-- Anything can be passed as the content of the accordion, but often organizing it with Paragraphs and Tables would be enough.
+- Anything can be passed as the content of the accordion, but often organizing it with Texts and Tables would be enough.
 - When using headings, be mindful about the heading levels. The header is a Subheading with `h2` tag.

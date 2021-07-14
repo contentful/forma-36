@@ -399,7 +399,7 @@ exports[`renders the component with a validation message 1`] = `
     </svg>
     <p
       class="emotion-3"
-      data-test-id="cf-ui-paragraph"
+      data-test-id="cf-ui-text"
     >
       not valid
     </p>

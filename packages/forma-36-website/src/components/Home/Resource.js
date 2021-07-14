@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   Subheading,
-  Paragraph,
+  Text,
   TextLink,
   Typography,
 } from '@contentful/f36-components';
@@ -39,8 +39,8 @@ const Resource = ({ title, description, imageNode, linkHref, linkText }) => (
     <div className={styles.image}>{imageNode}</div>
     <Typography className={styles.text}>
       <Subheading>{title}</Subheading>
-      <Paragraph className={styles.paragraph}>{description}</Paragraph>
-      <Paragraph className={styles.paragraph}>
+      <Text className={styles.paragraph}>{description}</Text>
+      <Text className={styles.paragraph}>
         <TextLink
           className={styles.link}
           href={linkHref}
@@ -49,7 +49,7 @@ const Resource = ({ title, description, imageNode, linkHref, linkText }) => (
         >
           {linkText}
         </TextLink>
-      </Paragraph>
+      </Text>
     </Typography>
   </article>
 );

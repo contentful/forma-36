@@ -1,5 +1,5 @@
 import React from 'react';
-import { Paragraph } from '@contentful/f36-typography';
+import { Text } from '@contentful/f36-typography';
 import { Calendar, ChatBubble, Download } from '@contentful/f36-icons';
 import tokens from '@contentful/f36-tokens';
 import { Flex } from '@contentful/f36-core';
@@ -24,7 +24,7 @@ Default.args = {
 
 export const UsedWithText = () => {
   return (
-    <Paragraph>
+    <Text>
       Berlin (/bɜːrˈlɪn/; German: [bɛʁˈliːn] (About this soundlisten)) is the{' '}
       <TextLink href="https://www.wikiwand.com/en/Capital_city" target="_blank">
         capital
@@ -49,7 +49,7 @@ export const UsedWithText = () => {
       inhabitants and an area of more than 30,000 km2,[9] Germany’s
       third-largest metropolitan region after the Rhine-Ruhr and Rhine-Main
       regions.
-    </Paragraph>
+    </Text>
   );
 };
 
@@ -63,7 +63,7 @@ export const overview = () => (
     {textLinkColor.map((color, idx) => (
       <Flex marginBottom="spacingXl" alignItems="center" key={idx}>
         <Flex marginRight="spacing2Xl">
-          <Paragraph style={{ width: 100 }}>{color}</Paragraph>
+          <Text style={{ width: 100 }}>{color}</Text>
         </Flex>
         <Flex marginRight="spacingXl">
           <TextLink

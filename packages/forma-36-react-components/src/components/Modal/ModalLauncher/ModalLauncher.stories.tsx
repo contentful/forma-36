@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
-import { Paragraph } from '@contentful/f36-typography';
+import { Text } from '@contentful/f36-typography';
 
 import { ModalLauncher } from './ModalLauncher';
 import { Button } from '../../Button';
@@ -48,7 +48,7 @@ function DefaultStory() {
       >
         Trigger ModalLauncher
       </Button>
-      {hiddenText.length > 0 && <Paragraph>{hiddenText}</Paragraph>}
+      {hiddenText.length > 0 && <Text>{hiddenText}</Text>}
     </React.Fragment>
   );
 }
