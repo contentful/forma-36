@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from '@/scripts/test/axeHelper';
 
-import { Tooltip } from './Tooltip';
+import { Tooltip } from '../src/Tooltip';
 
 it('does not render the component if no mouseover event on child', () => {
   const { container } = render(
@@ -53,7 +53,7 @@ it('renders the component with a target wrapper classname', () => {
 
 it('renders the component with a place attribute', () => {
   const { container } = render(
-    <Tooltip content="Tooltip content" place="left">
+    <Tooltip content="Tooltip content" placement="left">
       <span id="test">Hover me</span>
     </Tooltip>,
   );
@@ -75,7 +75,7 @@ it('renders the component with a id attribute', () => {
 
 it('renders the component as span with a id attribute', () => {
   const { container } = render(
-    <Tooltip containerElement="span" content="Tooltip content">
+    <Tooltip as="span" content="Tooltip content">
       <span id="test">Hover me</span>
     </Tooltip>,
   );

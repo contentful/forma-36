@@ -1,10 +1,14 @@
+# @contentful/f36-tooltip
+
 ---
+
 title: 'Tooltip'
 type: 'component'
 status: 'stable'
 slug: /components/tooltip/
-github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/Tooltip'
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/tooltip'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-tooltip--default'
+
 ---
 
 Tooltips are very useful to communicate extra information related to an element on the screen. The information should be contextual, useful, and nonessential.
@@ -23,9 +27,9 @@ Tooltips are very useful to communicate extra information related to an element 
 ## Code examples
 
 ```jsx
-// import {Tooltip} from '@contentful/f36-components'
+// import { Tooltip } from '@contentful/f36-components';
 <Tooltip
-  place="top"
+  placement="top"
   id="tip1"
   targetWrapperClassName="targetWrapperClassName"
   content="Hi I am a Tooltip"
@@ -40,4 +44,18 @@ Tooltips are very useful to communicate extra information related to an element 
 
 ## Accessibility
 
-missing
+- Do not put essential information in `Tooltip` component
+- Add unique `id` property to the tooltip, so appropriate a11y attributes could be used.
+
+```jsx
+import { Tooltip } from '@contentful/f36-components';
+<Tooltip placement="top" id="tooltip" content="Hi I am a Tooltip">
+  <TextLink>Hover me</TextLink>
+</Tooltip>;
+```
+
+## Props
+
+import { Props } from '@contentful/f36-docs-utils';
+
+<Props of="Tooltip" />

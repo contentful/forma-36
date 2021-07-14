@@ -3,8 +3,8 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 import { Copy } from '@contentful/f36-icons';
 
 import cn from 'classnames';
-import { Tooltip } from '../Tooltip';
-import type { TooltipPlace } from '../Tooltip';
+import { Tooltip } from '@contentful/f36-tooltip';
+import type { TooltipPlace } from '@contentful/f36-tooltip';
 import { TabFocusTrap } from '@contentful/f36-utils';
 import styles from './CopyButton.css';
 
@@ -66,7 +66,7 @@ export function CopyButton({
     >
       <CopyToClipboard text={copyValue || ''} onCopy={handleCopy}>
         <Tooltip
-          place={tooltipPlace}
+          placement={tooltipPlace}
           content={
             copied ? (
               <span>{tooltipCopiedText}</span>

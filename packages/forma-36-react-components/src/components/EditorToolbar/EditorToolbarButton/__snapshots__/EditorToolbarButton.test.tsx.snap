@@ -58,6 +58,10 @@ exports[`renders the component as active 1`] = `
   outline: 0;
 }
 
+.emotion-2 > button[disabled] {
+  pointer-events: none;
+}
+
 .emotion-0 {
   display: inline-block;
   fill: #2D64B3;
@@ -70,9 +74,10 @@ exports[`renders the component as active 1`] = `
 }
 
 <span
-  class="TooltipContainer"
+  class="emotion-2"
 >
   <button
+    aria-describedby="cf-ui-tooltip"
     class="IconButton EditorToolbarButton EditorToolbarButton--is-active IconButton--secondary"
     data-test-id="cf-ui-editor-toolbar-button"
     type="button"
@@ -165,6 +170,10 @@ exports[`renders the component with a tooltip 1`] = `
   outline: 0;
 }
 
+.emotion-2 > button[disabled] {
+  pointer-events: none;
+}
+
 .emotion-0 {
   display: inline-block;
   fill: #2D64B3;
@@ -177,9 +186,10 @@ exports[`renders the component with a tooltip 1`] = `
 }
 
 <span
-  class="TooltipContainer"
+  class="emotion-2"
 >
   <button
+    aria-describedby="cf-ui-tooltip"
     class="IconButton EditorToolbarButton IconButton--secondary"
     data-test-id="cf-ui-editor-toolbar-button"
     type="button"
@@ -271,6 +281,10 @@ exports[`renders with a dropdown indicator 1`] = `
   outline: 0;
 }
 
+.emotion-3 > button[disabled] {
+  pointer-events: none;
+}
+
 .emotion-0 {
   display: inline-block;
   fill: #2D64B3;
@@ -290,9 +304,10 @@ exports[`renders with a dropdown indicator 1`] = `
 }
 
 <span
-  class="TooltipContainer"
+  class="emotion-3"
 >
   <button
+    aria-describedby="cf-ui-tooltip"
     class="IconButton EditorToolbarButton IconButton--secondary"
     data-test-id="cf-ui-editor-toolbar-button"
     type="button"

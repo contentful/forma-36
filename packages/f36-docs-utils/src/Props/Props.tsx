@@ -33,7 +33,7 @@ function LookupPropertyType({ type }: { type: PropType }) {
     return <EnumPropertyType type={type} />;
   }
   return (
-    <Tooltip place="top" content="Click to lookup">
+    <Tooltip placement="top" content="Click to lookup">
       <TextLink
         onClick={() => {
           setVisible(true);

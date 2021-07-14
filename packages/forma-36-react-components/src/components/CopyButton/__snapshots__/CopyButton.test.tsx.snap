@@ -6,6 +6,10 @@ exports[`renders the component 1`] = `
   outline: 0;
 }
 
+.emotion-2 > button[disabled] {
+  pointer-events: none;
+}
+
 .emotion-0 {
   display: inline-block;
   fill: #606C7C;
@@ -19,9 +23,10 @@ exports[`renders the component 1`] = `
   id="copyButton"
 >
   <span
-    class="TooltipContainer"
+    class="emotion-2"
   >
     <button
+      aria-describedby="cf-ui-tooltip"
       class="CopyButton__button"
       type="button"
     >
@@ -62,6 +67,10 @@ exports[`renders the component with a copy value 1`] = `
   outline: 0;
 }
 
+.emotion-2 > button[disabled] {
+  pointer-events: none;
+}
+
 .emotion-0 {
   display: inline-block;
   fill: #606C7C;
@@ -75,9 +84,10 @@ exports[`renders the component with a copy value 1`] = `
   id="copyButton"
 >
   <span
-    class="TooltipContainer"
+    class="emotion-2"
   >
     <button
+      aria-describedby="cf-ui-tooltip"
       class="CopyButton__button"
       type="button"
     >
@@ -119,6 +129,10 @@ exports[`renders the component with an additional class name 1`] = `
   outline: 0;
 }
 
+.emotion-2 > button[disabled] {
+  pointer-events: none;
+}
+
 .emotion-0 {
   display: inline-block;
   fill: #606C7C;
@@ -132,9 +146,10 @@ exports[`renders the component with an additional class name 1`] = `
   id="copyButton"
 >
   <span
-    class="TooltipContainer"
+    class="emotion-2"
   >
     <button
+      aria-describedby="cf-ui-tooltip"
       class="CopyButton__button"
       type="button"
     >

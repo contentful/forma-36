@@ -46,6 +46,10 @@ exports[`renders the component with a copybutton 1`] = `
   outline: 0;
 }
 
+.emotion-3 > button[disabled] {
+  pointer-events: none;
+}
+
 .emotion-0 {
   display: inline-block;
   color: #192532;
@@ -94,9 +98,10 @@ exports[`renders the component with a copybutton 1`] = `
       id="copyButton"
     >
       <span
-        class="TooltipContainer"
+        class="emotion-3"
       >
         <button
+          aria-describedby="cf-ui-tooltip"
           class="CopyButton__button"
           type="button"
         >

@@ -4,7 +4,7 @@ import type { MouseEventHandler } from 'react';
 import type { IconComponent } from '@contentful/f36-icon';
 
 import { IconButton } from '../../IconButton';
-import { Tooltip } from '../../Tooltip';
+import { Tooltip } from '@contentful/f36-tooltip';
 import styles from './EditorToolbarButton.css';
 import type { IconButtonProps } from '../../IconButton';
 
