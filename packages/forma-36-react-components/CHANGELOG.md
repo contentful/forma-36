@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.90.9](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.90.8...@contentful/forma-36-react-components@3.90.9) (2021-07-14)
+
+
+### Bug Fixes
+
+* **dropdown:** remove default value for getContainerRef ([#1063](https://github.com/contentful/forma-36/issues/1063)) ([81ad3b8](https://github.com/contentful/forma-36/commit/81ad3b8f605250ca94ba13e0ea5bdd85f3772474))
+
+
+
+
+
 ## [3.90.8](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.90.7...@contentful/forma-36-react-components@3.90.8) (2021-07-13)
 
 
