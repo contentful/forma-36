@@ -54,21 +54,45 @@ const mapping = {
 
 const allReplaceable = Object.keys(mapping);
 
+const getLocalImportName = (j, file) => {
+  let localImportName = '';
+
+  j(file.source)
+    .find(j.ImportDeclaration, {
+      source: { value: '@contentful/forma-36-tokens' },
+      specifiers: { 0: { type: 'ImportDefaultSpecifier' } },
+    })
+    .forEach((path) => {
+      localImportName = path.value.specifiers[0].local.name;
+    });
+
+  return localImportName;
+};
+
+const getLocalRequireName = (j, file) => {
+  let localRequireName = '';
+
+  j(file.source)
+    .find(j.CallExpression, {
+      callee: { name: 'require' },
+      arguments: { 0: { value: '@contentful/forma-36-tokens' } },
+    })
+    .forEach((path) => {
+      localRequireName = path.parent.value.id.name;
+    });
+
+  return localRequireName;
+};
+
 module.exports = function (file, api) {
   const j = api.jscodeshift;
 
-  let localImportName = 'tokens';
+  let localModuleName = getLocalImportName(j, file);
+  localModuleName = localModuleName || getLocalRequireName(j, file);
 
-  j(file.source)
-    .find(j.Identifier)
-    .filter(
-      (path) =>
-        path.parent.node.type === 'ImportDefaultSpecifier' &&
-        path.parent.parent.node.source.value === '@contentful/forma-36-tokens',
-    )
-    .forEach((path) => {
-      localImportName = path.parent.node.local.name;
-    });
+  if (!localModuleName) {
+    return j(file.source).toSource();
+  }
 
   return j(file.source)
     .find(j.Identifier)
@@ -76,7 +100,7 @@ module.exports = function (file, api) {
       (path) =>
         allReplaceable.includes(path.value.name) &&
         path.parent.node.object &&
-        path.parent.node.object.name === localImportName,
+        path.parent.node.object.name === localModuleName,
     )
     .forEach((path) => {
       j(path).replaceWith(j.identifier(mapping[path.node.name]));

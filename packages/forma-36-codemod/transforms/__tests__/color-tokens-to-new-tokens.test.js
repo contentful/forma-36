@@ -1,6 +1,11 @@
 'use strict';
 
-const tests = ['color-tokens-to-new-tokens', 'color-tokens-custom-import-name'];
+const tests = [
+  'color-tokens-to-new-tokens',
+  'color-tokens-custom-import-name',
+  'color-tokens-require',
+  'color-tokens-no-import',
+];
 
 const defineTest = require('jscodeshift/dist/testUtils').defineTest;
 
