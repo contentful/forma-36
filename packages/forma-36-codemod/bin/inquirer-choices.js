@@ -12,7 +12,7 @@ const PARSER_CHOICES = [
 const TRANSFORMS_CHOICES = [
   {
     name:
-      'color-tokens-to-new-tokens: Converts deprecated color tokens to the correct ones',
+      'color-tokens-to-new-tokens: Converts deprecated color tokens to the new ones',
     value: 'color-tokens-to-new-tokens',
   },
 ];
