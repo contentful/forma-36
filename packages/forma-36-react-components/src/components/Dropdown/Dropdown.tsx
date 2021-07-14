@@ -161,7 +161,7 @@ export function Dropdown({
   children,
   className,
   dropdownContainerClassName,
-  getContainerRef = () => {},
+  getContainerRef,
   isAutoalignmentEnabled = true,
   isFullWidth,
   isOpen: isOpenProp = false,
