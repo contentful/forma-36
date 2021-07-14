@@ -12,9 +12,7 @@ export default {
   parameters: {
     propTypes: [SkeletonDisplayText['__docgenInfo']],
   },
-  argTypes: {
-    className: { control: { disable: true } },
-  },
+  argTypes: {},
 };
 
 export const Basic = (args: SkeletonDisplayTextProps) => (
