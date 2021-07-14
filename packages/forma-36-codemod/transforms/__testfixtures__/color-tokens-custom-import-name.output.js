@@ -1,31 +1,31 @@
 import customName from '@contentful/forma-36-tokens';
 
-const styles = {
-  filterPill: css({
+export const styles = {
+  filterPill: {
     backgroundColor: customName.gray300,
-  }),
-  filterPillLabel: css({
+  },
+  filterPillLabel: {
     backgroundColor: customName.gray200,
     color: customName.gray700,
-  }),
-  filterSelectContainerActive: css({
+  },
+  filterSelectContainerActive: {
     backgroundColor: customName.blue500,
     color: customName.colorWhite,
-  }),
-  filterSelect: css({
+  },
+  filterSelect: {
     color: customName.gray700,
     backgroundColor: customName.gray300,
     '&:hover': {
       cursor: 'pointer',
       backgroundColor: customName.gray400,
     },
-  }),
-  filterSelectActive: css({
+  },
+  filterSelectActive: {
     backgroundColor: customName.blue500,
     color: customName.colorWhite,
     '&:hover': {
       backgroundColor: customName.blue600,
       color: customName.colorWhite,
     },
-  }),
+  },
 };
