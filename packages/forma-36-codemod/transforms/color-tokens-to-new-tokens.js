@@ -75,7 +75,8 @@ module.exports = function (file, api) {
     .filter(
       (path) =>
         allReplaceable.includes(path.value.name) &&
-        path.parent.node.object?.name === localImportName,
+        path.parent.node.object &&
+        path.parent.node.object.name === localImportName,
     )
     .forEach((path) => {
       j(path).replaceWith(j.identifier(mapping[path.node.name]));
