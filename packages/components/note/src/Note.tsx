@@ -4,7 +4,7 @@ import { Primitive } from '@contentful/f36-core';
 import type { CommonProps, ComponentVariant } from '@contentful/f36-core';
 import { styles } from './Note.styles';
 import { Button } from '@contentful/f36-button';
-import { Heading, Paragraph } from '@contentful/f36-typography';
+import { Heading, Text } from '@contentful/f36-typography';
 import {
   CheckCircle,
   Close,
@@ -80,7 +80,7 @@ const _Note = (props: NoteProps, ref) => {
             {title}
           </Heading>
         )}
-        <Paragraph className={styles.content}>{children}</Paragraph>
+        <Text className={styles.content}>{children}</Text>
       </div>
       {hasCloseButton && (
         <Button

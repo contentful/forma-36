@@ -10,18 +10,18 @@ type TypographyConfiguration = {
   displayText?: Spacing;
   displayTextLarge?: Spacing;
   heading?: Spacing;
-  paragraph?: Spacing;
   sectionHeading?: Spacing;
   subheading?: Spacing;
+  text?: Spacing;
 };
 
 const defaultConfiguration: TypographyConfiguration = {
   displayText: 'spacingL',
   displayTextLarge: 'spacingXl',
   heading: 'spacingM',
-  paragraph: 'spacingM',
   sectionHeading: 'spacingL',
   subheading: 'spacingM',
+  text: 'spacingM',
 };
 
 export const TypographyContext = createContext<TypographyConfiguration>({});

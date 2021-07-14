@@ -9,7 +9,7 @@ import type {
   PolymorphicComponentWithRef,
 } from '@contentful/f36-core';
 import { ErrorCircleOutline } from '@contentful/f36-icons';
-import { Paragraph } from '@contentful/f36-typography';
+import { Text } from '@contentful/f36-typography';
 
 const DEFAULT_TAG = 'div';
 
@@ -48,7 +48,7 @@ const _ValidationMessage: PolymorphicComponentWithRef<
       testId={testId}
     >
       <ErrorCircleOutline className={styles.icon} variant="negative" />
-      <Paragraph className={styles.text}>{children}</Paragraph>
+      <Text className={styles.text}>{children}</Text>
     </Flex>
   );
 };

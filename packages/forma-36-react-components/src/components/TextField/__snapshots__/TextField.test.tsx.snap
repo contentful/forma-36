@@ -795,7 +795,7 @@ exports[`renders the component with validation message 1`] = `
     </svg>
     <p
       class="emotion-2"
-      data-test-id="cf-ui-paragraph"
+      data-test-id="cf-ui-text"
     >
       Field is required
     </p>

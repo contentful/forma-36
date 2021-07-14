@@ -3,7 +3,7 @@ import React from 'react';
 import { styles } from './EmptyState.styles';
 import { Primitive } from '@contentful/f36-core';
 import type { HeadingElement } from '@contentful/f36-typography';
-import { Heading, Paragraph, Typography } from '@contentful/f36-typography';
+import { Heading, Text, Typography } from '@contentful/f36-typography';
 
 export interface EmptyStateProps {
   /**
@@ -109,14 +109,14 @@ const _EmptyState = (props: EmptyStateProps, ref) => {
           >
             {headingProps.text}
           </Heading>
-          <Paragraph
+          <Text
             as={
               descriptionProps.elementType ? descriptionProps.elementType : 'p'
             }
             className={styles.element}
           >
             {descriptionProps.text}
-          </Paragraph>
+          </Text>
         </Typography>
         {children}
       </div>

@@ -4,7 +4,7 @@ import { Flex } from '@contentful/f36-core';
 import {
   Heading,
   SectionHeading,
-  Paragraph,
+  Text,
   Typography,
 } from '@contentful/f36-typography';
 
@@ -22,7 +22,7 @@ export const Default: Story<CardProps> = ({ children, ...args }) => {
   return (
     <Card {...args}>
       <Typography>
-        <Paragraph>{children}</Paragraph>
+        <Text>{children}</Text>
       </Typography>
     </Card>
   );
@@ -89,12 +89,12 @@ export const WithLinkAndTarget: Story<CardProps> = (args) => {
     <Card {...args}>
       <Typography>
         <Heading>Forma36</Heading>
-        <Paragraph>
+        <Text>
           Forma 36 is an open-source design system by Contentful created with
           the intent to reduce the overhead of creating UI by providing tools
           and guidance for digital teams building and extending Contentful
           products.
-        </Paragraph>
+        </Text>
       </Typography>
     </Card>
   );
@@ -109,12 +109,12 @@ export const overview: Story<CardProps> = (args) => {
       <Card {...args}>
         <Typography>
           <Heading>Forma36</Heading>
-          <Paragraph>
+          <Text>
             Forma 36 is an open-source design system by Contentful created with
             the intent to reduce the overhead of creating UI by providing tools
             and guidance for digital teams building and extending Contentful
             products.
-          </Paragraph>
+          </Text>
         </Typography>
       </Card>
 
@@ -123,12 +123,12 @@ export const overview: Story<CardProps> = (args) => {
       </Flex>
       <Card selected>
         <Heading>Forma36</Heading>
-        <Paragraph>
+        <Text>
           Forma 36 is an open-source design system by Contentful created with
           the intent to reduce the overhead of creating UI by providing tools
           and guidance for digital teams building and extending Contentful
           products.
-        </Paragraph>
+        </Text>
       </Card>
 
       <Flex marginBottom="spacingS" marginTop="spacingM">
@@ -137,12 +137,12 @@ export const overview: Story<CardProps> = (args) => {
       <Card padding="default">
         <Typography>
           <Heading>Forma36</Heading>
-          <Paragraph>
+          <Text>
             Forma 36 is an open-source design system by Contentful created with
             the intent to reduce the overhead of creating UI by providing tools
             and guidance for digital teams building and extending Contentful
             products.
-          </Paragraph>
+          </Text>
         </Typography>
       </Card>
       <Flex marginBottom="spacingS" marginTop="spacingM">
@@ -151,12 +151,12 @@ export const overview: Story<CardProps> = (args) => {
       <Card padding="large">
         <Typography>
           <Heading>Forma36</Heading>
-          <Paragraph>
+          <Text>
             Forma 36 is an open-source design system by Contentful created with
             the intent to reduce the overhead of creating UI by providing tools
             and guidance for digital teams building and extending Contentful
             products.
-          </Paragraph>
+          </Text>
         </Typography>
       </Card>
 
@@ -166,12 +166,12 @@ export const overview: Story<CardProps> = (args) => {
       <Card padding="none">
         <Typography>
           <Heading>Forma36</Heading>
-          <Paragraph>
+          <Text>
             Forma 36 is an open-source design system by Contentful created with
             the intent to reduce the overhead of creating UI by providing tools
             and guidance for digital teams building and extending Contentful
             products.
-          </Paragraph>
+          </Text>
         </Typography>
       </Card>
     </>

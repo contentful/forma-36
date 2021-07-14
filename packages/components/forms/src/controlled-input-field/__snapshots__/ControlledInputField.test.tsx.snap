@@ -1064,7 +1064,7 @@ exports[`renders the component with a light label variation 1`] = `
       </svg>
       <p
         class="emotion-6"
-        data-test-id="cf-ui-paragraph"
+        data-test-id="cf-ui-text"
       >
         Not valid!
       </p>
@@ -1287,7 +1287,7 @@ exports[`renders the component with a validation message 1`] = `
       </svg>
       <p
         class="emotion-6"
-        data-test-id="cf-ui-paragraph"
+        data-test-id="cf-ui-text"
       >
         Not valid!
       </p>

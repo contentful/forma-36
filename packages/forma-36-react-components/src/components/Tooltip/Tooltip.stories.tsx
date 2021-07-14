@@ -1,5 +1,5 @@
 import React from 'react';
-import { SectionHeading, Paragraph } from '@contentful/f36-typography';
+import { SectionHeading, Text } from '@contentful/f36-typography';
 import { Tooltip } from './Tooltip';
 import { TextLink } from '../TextLink';
 import { Flex } from '@contentful/f36-core';
@@ -44,13 +44,13 @@ Basic.parameters = {
 
 export const WithHtml = (args: { content: string }) => {
   return (
-    <Paragraph>
+    <Text>
       Lorem Ipsum dolor sit amet&nbsp;
       <Tooltip {...args}>
         <TextLink>Hover me</TextLink>.
       </Tooltip>
       &nbsp; Lorem Ipsum dolor sit amet.
-    </Paragraph>
+    </Text>
   );
 };
 
@@ -130,13 +130,13 @@ AutoPlacement.parameters = {
 
 export const ContentHover = (args: { content: string }) => {
   return (
-    <Paragraph>
+    <Text>
       Lorem Ipsum dolor sit amet&nbsp;
       <Tooltip {...args}>
         <TextLink>Hover me</TextLink>.
       </Tooltip>
       &nbsp; Lorem Ipsum dolor sit amet.
-    </Paragraph>
+    </Text>
   );
 };
 
