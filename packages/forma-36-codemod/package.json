@@ -1,5 +1,5 @@
 {
-  "name": "@contentful/forma-36-codemod",
+  "name": "@contentful/f36-codemod",
   "description": "Forma 36 Codemod",
   "version": "0.0.1",
   "main": "bin/index.js",
@@ -10,7 +10,7 @@
     "transformers"
   ],
   "bin": {
-    "forma-36-codemod": "./bin/forma-36-codemod.js"
+    "f36-codemod": "./bin/f36-codemod.js"
   },
   "scripts": {
     "test": "jest",

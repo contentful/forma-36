@@ -1,4 +1,4 @@
-## forma-36-codemod
+## f36-codemod
 
 This repository contains a collection of codemod scripts for use with
 [JSCodeshift](https://github.com/facebook/jscodeshift) that help update Forma-36 usage.
@@ -7,7 +7,7 @@ This repository contains a collection of codemod scripts for use with
 
 Run this command to start an interactive wizard and then run the specified transform:
 
-`npx @contentful/forma-36-codemod <transform> <path> [...options]`
+`npx @contentful/f36-codemod <transform> <path> [...options]`
 
 - `transform` - name of transform, see available transforms below.
 - `path` - files or directory to transform
@@ -21,7 +21,7 @@ Converts usage of deprecated color tokens with the correct new token.
 eg. `tokens.colorElementMid` to `tokens.gray300`.
 
 ```sh
-npx @contentful/forma-36-codemod color-tokens-to-new-tokens <path>
+npx @contentful/f36-codemod color-tokens-to-new-tokens <path>
 ```
 
 Note: It will only work on tokens used on a code like the following one.

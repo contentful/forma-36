@@ -99,7 +99,7 @@ function run() {
       description: 'Codemods for updating Forma-36 codes',
       help: `
     Usage
-      $ npx @contentful/forma-36-codemod <transform> <path> <...options>
+      $ npx @contentful/f36-codemod <transform> <path> <...options>
         transform        Currently only color-tokens-to-new-tokens.
         path             Files or directory to transform. Can be a glob like src/**.test.js
     Options
