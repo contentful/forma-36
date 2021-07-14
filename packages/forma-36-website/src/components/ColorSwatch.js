@@ -8,7 +8,7 @@ const styles = {
     display: inline-block;
     box-sizing: border-box;
     margin: 8px;
-    width: calc(25% - 16px);
+    width: calc(20% - 16px);
     border-radius: 4px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
     position: relative;

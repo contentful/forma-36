@@ -4,18 +4,14 @@ title: 'Color'
 
 import ColorSwatchGroup from '../../../components/ColorSwatchGroup';
 import semanticColors from '@contentful/forma-36-tokens/src/tokens/colors/colors-semantic';
-import textColors from '@contentful/forma-36-tokens/src/tokens/colors/colors-text';
-import elementColors from '@contentful/forma-36-tokens/src/tokens/colors/colors-elements';
-import contrastColors from '@contentful/forma-36-tokens/src/tokens/colors/colors-contrast';
-import blueColors from '@contentful/forma-36-tokens/src/tokens/colors/colors-blue';
-import greenColors from '@contentful/forma-36-tokens/src/tokens/colors/colors-green';
-import redColors from '@contentful/forma-36-tokens/src/tokens/colors/colors-red';
-import orangeColors from '@contentful/forma-36-tokens/src/tokens/colors/colors-orange';
-import coralColors from '@contentful/forma-36-tokens/src/tokens/colors/colors-coral';
-import peachColors from '@contentful/forma-36-tokens/src/tokens/colors/colors-peach';
-import mintColors from '@contentful/forma-36-tokens/src/tokens/colors/colors-mint';
-import iceColors from '@contentful/forma-36-tokens/src/tokens/colors/colors-ice';
+import grayColors from '@contentful/forma-36-tokens/src/tokens/colors/scale-gray';
+import blueColors from '@contentful/forma-36-tokens/src/tokens/colors/scale-blue';
+import greenColors from '@contentful/forma-36-tokens/src/tokens/colors/scale-green';
+import redColors from '@contentful/forma-36-tokens/src/tokens/colors/scale-red';
+import orangeColors from '@contentful/forma-36-tokens/src/tokens/colors/scale-orange';
+import yellowColors from '@contentful/forma-36-tokens/src/tokens/colors/scale-yellow';
 import whiteColors from '@contentful/forma-36-tokens/src/tokens/colors/colors-white';
+import blackColors from '@contentful/forma-36-tokens/src/tokens/colors/colors-black';
 
 These are the colors we use at Contentful.
 
@@ -23,27 +19,11 @@ These are the colors we use at Contentful.
 
 <ColorSwatchGroup group={semanticColors} />
 
-## Text
+## Gray
 
-For use with text on light backgrounds. Use a lighter shade to
-de-emphasize text.
+Gray is our main color used for typography.
 
-<ColorSwatchGroup group={textColors} />
-
-## Element
-
-Element colors are used for the larger blocks of our UI - e.g.
-sidepanels, table headers, navigational elements.
-
-<ColorSwatchGroup group={elementColors} />
-
-## Contrast
-
-Contrast colors are used to contrast against our element colors and help
-establish hierarchy. Example usage are app headers or modal backgrounds
-(when used with transparency).
-
-<ColorSwatchGroup group={contrastColors} />
+<ColorSwatchGroup group={grayColors} />
 
 ## Blue
 
@@ -77,30 +57,13 @@ state, or showing a gentle warning message rather than an error message.
 
 <ColorSwatchGroup group={orangeColors} />
 
-## Coral
+## Yellow
 
-Coral is used for muted warnings and errors. E.g - a note warning the user
-of reaching a limit.
+<ColorSwatchGroup group={yellowColors} />
 
-<ColorSwatchGroup group={coralColors} />
+## Black
 
-## Peach
-
-Peach is used for muted warning messages. E.g - a warning note.
-
-<ColorSwatchGroup group={peachColors} />
-
-# Mint
-
-Mint is used for muted success messages. E.g - a confirmation note.
-
-<ColorSwatchGroup group={mintColors} />
-
-## Ice
-
-Ice is used for muted neutral or information messages. E.g - a general note.
-
-<ColorSwatchGroup group={iceColors} />
+<ColorSwatchGroup group={blackColors} />
 
 ## White
 
