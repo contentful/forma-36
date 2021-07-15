@@ -1,5 +1,5 @@
 const colorsBlack = {
-  'color-black': '#000000',
+  'color-black': '#0C141C',
 };
 
 module.exports = colorsBlack;
