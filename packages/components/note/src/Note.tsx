@@ -1,6 +1,6 @@
 import { cx } from 'emotion';
 import React from 'react';
-import { Primitive } from '@contentful/f36-core';
+import { Box } from '@contentful/f36-core';
 import type { CommonProps, ComponentVariant } from '@contentful/f36-core';
 import { styles } from './Note.styles';
 import { Button } from '@contentful/f36-button';
@@ -63,7 +63,7 @@ const _Note = (props: NoteProps, ref) => {
   }
 
   return (
-    <Primitive
+    <Box
       as="article"
       style={style}
       className={cx(styles.note({ variant, hasCloseButton }), className)}
@@ -96,7 +96,7 @@ const _Note = (props: NoteProps, ref) => {
           className={styles.close}
         />
       )}
-    </Primitive>
+    </Box>
   );
 };
 

@@ -9,26 +9,26 @@ exports[`renders the component 1`] = `
   background-color: #f7f9fa;
 }
 
-.emotion-6 {
+.emotion-7 {
   display: table;
   width: 100%;
   border-radius: 6px;
   box-shadow: 0 0 0 1px #e5ebed;
 }
 
-.emotion-6 th:first-child {
+.emotion-7 th:first-child {
   border-top-left-radius: 6px;
 }
 
-.emotion-6 th:last-child {
+.emotion-7 th:last-child {
   border-top-right-radius: 6px;
 }
 
-.emotion-6 tr:last-child td:first-child {
+.emotion-7 tr:last-child td:first-child {
   border-bottom-left-radius: 6px;
 }
 
-.emotion-6 tr:last-child td:last-child {
+.emotion-7 tr:last-child td:last-child {
   border-bottom-right-radius: 6px;
 }
 
@@ -47,10 +47,11 @@ exports[`renders the component 1`] = `
 <table
   cellpadding="0"
   cellspacing="0"
-  class="emotion-6"
+  class="emotion-7"
   data-test-id="cf-ui-table"
 >
   <tbody
+    class="emotion-6"
     data-test-id="cf-ui-table-body"
   >
     <tr
@@ -486,26 +487,26 @@ exports[`renders the component with 10 cells 1`] = `
   background-color: #f7f9fa;
 }
 
-.emotion-11 {
+.emotion-12 {
   display: table;
   width: 100%;
   border-radius: 6px;
   box-shadow: 0 0 0 1px #e5ebed;
 }
 
-.emotion-11 th:first-child {
+.emotion-12 th:first-child {
   border-top-left-radius: 6px;
 }
 
-.emotion-11 th:last-child {
+.emotion-12 th:last-child {
   border-top-right-radius: 6px;
 }
 
-.emotion-11 tr:last-child td:first-child {
+.emotion-12 tr:last-child td:first-child {
   border-bottom-left-radius: 6px;
 }
 
-.emotion-11 tr:last-child td:last-child {
+.emotion-12 tr:last-child td:last-child {
   border-bottom-right-radius: 6px;
 }
 
@@ -524,10 +525,11 @@ exports[`renders the component with 10 cells 1`] = `
 <table
   cellpadding="0"
   cellspacing="0"
-  class="emotion-11"
+  class="emotion-12"
   data-test-id="cf-ui-table"
 >
   <tbody
+    class="emotion-11"
     data-test-id="cf-ui-table-body"
   >
     <tr
@@ -1378,26 +1380,26 @@ exports[`renders the component with 10 rows 1`] = `
   background-color: #f7f9fa;
 }
 
-.emotion-60 {
+.emotion-61 {
   display: table;
   width: 100%;
   border-radius: 6px;
   box-shadow: 0 0 0 1px #e5ebed;
 }
 
-.emotion-60 th:first-child {
+.emotion-61 th:first-child {
   border-top-left-radius: 6px;
 }
 
-.emotion-60 th:last-child {
+.emotion-61 th:last-child {
   border-top-right-radius: 6px;
 }
 
-.emotion-60 tr:last-child td:first-child {
+.emotion-61 tr:last-child td:first-child {
   border-bottom-left-radius: 6px;
 }
 
-.emotion-60 tr:last-child td:last-child {
+.emotion-61 tr:last-child td:last-child {
   border-bottom-right-radius: 6px;
 }
 
@@ -1416,10 +1418,11 @@ exports[`renders the component with 10 rows 1`] = `
 <table
   cellpadding="0"
   cellspacing="0"
-  class="emotion-60"
+  class="emotion-61"
   data-test-id="cf-ui-table"
 >
   <tbody
+    class="emotion-60"
     data-test-id="cf-ui-table-body"
   >
     <tr

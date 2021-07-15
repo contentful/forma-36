@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import type { HTMLProps, ReactElement } from 'react';
-import { Primitive } from '@contentful/f36-core';
+import { Box } from '@contentful/f36-core';
 import type { CommonProps } from '@contentful/f36-core';
 
 export type TableBodyInternalProps = HTMLProps<HTMLTableSectionElement> &
@@ -16,7 +16,7 @@ export const TableBody = forwardRef<HTMLTableSectionElement, TableBodyProps>(
     forwardedRef,
   ) {
     return (
-      <Primitive
+      <Box
         {...otherProps}
         as="tbody"
         className={className}
@@ -24,7 +24,7 @@ export const TableBody = forwardRef<HTMLTableSectionElement, TableBodyProps>(
         testId={testId}
       >
         {children}
-      </Primitive>
+      </Box>
     );
   },
 );

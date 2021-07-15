@@ -1,7 +1,7 @@
 import { cx } from 'emotion';
 import React from 'react';
 import { styles } from './EmptyState.styles';
-import { Primitive } from '@contentful/f36-core';
+import { Box } from '@contentful/f36-core';
 import type { HeadingElement } from '@contentful/f36-typography';
 import { Heading, Text, Typography } from '@contentful/f36-typography';
 
@@ -79,7 +79,7 @@ const _EmptyState = (props: EmptyStateProps, ref) => {
   } = props;
 
   return (
-    <Primitive
+    <Box
       ref={ref}
       as="article"
       {...otherProps}
@@ -120,7 +120,7 @@ const _EmptyState = (props: EmptyStateProps, ref) => {
         </Typography>
         {children}
       </div>
-    </Primitive>
+    </Box>
   );
 };
 

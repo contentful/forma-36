@@ -5,13 +5,16 @@ import {
   PolymorphicComponentWithRef,
   PolymorphicComponent,
 } from '../../Primitive/Primitive';
-import { Box } from '../../Box';
-import type { MarginProps, PaddingProps } from '../../types';
+import { useBox } from '../../Box';
+import type { MarginProps, PaddingProps, CommonProps } from '../../types';
 import type * as CSS from 'csstype';
 
 const DEFAULT_TAG = 'div';
 
-export interface GridItemInternalProps extends MarginProps, PaddingProps {
+export interface GridItemInternalProps
+  extends CommonProps,
+    MarginProps,
+    PaddingProps {
   /**
    * Child nodes to be rendered in the component */
   children?: React.ReactNode;
@@ -51,7 +54,6 @@ const _GridItem: PolymorphicComponentWithRef<
     rowEnd,
     area,
     order,
-    className,
     ...otherProps
   },
   ref,
@@ -65,21 +67,23 @@ const _GridItem: PolymorphicComponentWithRef<
         columnEnd || 'auto',
       ].join(' / ');
 
+  const { boxProps, Element } = useBox(otherProps);
+
   return (
-    <Box
+    <Element
       as={DEFAULT_TAG}
+      {...boxProps}
       className={cx(
         css({
           gridArea: calculatedArea,
           order,
         }),
-        className,
+        boxProps.className,
       )}
-      {...otherProps}
       ref={ref}
     >
       {children}
-    </Box>
+    </Element>
   );
 };
 

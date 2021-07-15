@@ -1,6 +1,5 @@
-export { Primitive } from './Primitive';
+export { usePrimitive } from './Primitive';
 export type {
-  PrimitiveProps,
   PolymorphicComponentProps,
   PolymorphicComponent,
   PolymorphicComponentWithRef,
