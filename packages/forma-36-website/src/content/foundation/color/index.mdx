@@ -3,36 +3,40 @@ title: 'Color'
 ---
 
 import ColorSwatchGroup from '../../../components/ColorSwatchGroup';
+import ColorA11yGroup from '../../../components/ColorA11yGroup';
+import ColorBox from '../../../components/ColorBox';
 import semanticColors from '@contentful/forma-36-tokens/src/tokens/colors/colors-semantic';
 import grayColors from '@contentful/forma-36-tokens/src/tokens/colors/scale-gray';
 import blueColors from '@contentful/forma-36-tokens/src/tokens/colors/scale-blue';
 import greenColors from '@contentful/forma-36-tokens/src/tokens/colors/scale-green';
 import redColors from '@contentful/forma-36-tokens/src/tokens/colors/scale-red';
 import orangeColors from '@contentful/forma-36-tokens/src/tokens/colors/scale-orange';
+import purpleColors from '@contentful/forma-36-tokens/src/tokens/colors/scale-purple';
 import yellowColors from '@contentful/forma-36-tokens/src/tokens/colors/scale-yellow';
 import whiteColors from '@contentful/forma-36-tokens/src/tokens/colors/colors-white';
 import blackColors from '@contentful/forma-36-tokens/src/tokens/colors/colors-black';
 
 These are the colors we use at Contentful.
+## Colors overview
 
-## Semantic
+### Semantic
 
 <ColorSwatchGroup group={semanticColors} />
 
-## Gray
+### Gray
 
 Gray is our main color used for typography.
 
 <ColorSwatchGroup group={grayColors} />
 
-## Blue
+### Blue
 
 Blue is our primary color and should be used when you want to highlight
 a primary action.
 
 <ColorSwatchGroup group={blueColors} />
 
-## Green
+### Green
 
 Green is used to highlight positive actions or messages. E.g. when
 showing a success message, a save action, or a marking a step as
@@ -40,7 +44,7 @@ complete.
 
 <ColorSwatchGroup group={greenColors} />
 
-## Red
+### Red
 
 Red is used to highlight negative actions or messages. E.g. when performing
 a distructive action such as deleting content, for highlighting validation
@@ -49,7 +53,10 @@ context.
 
 <ColorSwatchGroup group={redColors} />
 
-## Orange
+### Purple
+<ColorSwatchGroup group={purpleColors} />
+
+### Orange
 
 Orange is used to highlight actions or messages which require attention but
 don't necessarily have a negative context. E.g. showing a draft/unpublished
@@ -57,14 +64,80 @@ state, or showing a gentle warning message rather than an error message.
 
 <ColorSwatchGroup group={orangeColors} />
 
-## Yellow
+### Yellow
 
 <ColorSwatchGroup group={yellowColors} />
 
-## Black
+### Black
 
 <ColorSwatchGroup group={blackColors} />
 
-## White
+### White
 
 <ColorSwatchGroup group={whiteColors} />
+
+## Accessibility
+
+Contentful palette contains 9 values from `100` to `900`. For most of the color groups, black text is WCAG AA accessible on colors ranging from `100` to `400`, white text is accessible on colors from `500` to `900`. The only outlier is the yellow group, where black is accessible on colors ranging from `100` to `700` and white on the `yellow-800` and `yellow-900`
+
+<ColorA11yGroup group={grayColors} />
+<ColorA11yGroup group={blueColors} />
+<ColorA11yGroup group={greenColors} />
+<ColorA11yGroup group={redColors} />
+<ColorA11yGroup group={purpleColors} />
+<ColorA11yGroup group={orangeColors} />
+<ColorA11yGroup group={yellowColors} />
+
+### A11y examples of blue color usage
+
+<ColorBox size={15} name="600 on 100" hex={blueColors['blue-100']} textColor={blueColors['blue-600']} />
+<ColorBox size={15} name="600 on 200" hex={blueColors['blue-200']} textColor={blueColors['blue-600']} />
+<ColorBox size={15} name="700 on 300" hex={blueColors['blue-300']} textColor={blueColors['blue-700']} />
+<ColorBox size={15} name="300 on 900" hex={blueColors['blue-900']} textColor={blueColors['blue-300']} />
+<ColorBox size={15} name="500 on white" hex={whiteColors['color-white']} textColor={blueColors['blue-500']} />
+<ColorBox size={15} name="500 on gray-100" hex={grayColors['gray-100']} textColor={blueColors['blue-500']} />
+
+### A11y examples of green color usage
+
+<ColorBox size={15} name="600 on 100" hex={greenColors['green-100']} textColor={greenColors['green-600']} />
+<ColorBox size={15} name="600 on 200" hex={greenColors['green-200']} textColor={greenColors['green-600']} />
+<ColorBox size={15} name="700 on 300" hex={greenColors['green-300']} textColor={greenColors['green-700']} />
+<ColorBox size={15} name="300 on 900" hex={greenColors['green-900']} textColor={greenColors['green-300']} />
+<ColorBox size={15} name="500 on white" hex={whiteColors['color-white']} textColor={greenColors['green-500']} />
+<ColorBox size={15} name="500 on gray-100" hex={grayColors['gray-100']} textColor={greenColors['green-500']} />
+
+### A11y examples of red color usage
+
+<ColorBox size={15} name="600 on 100" hex={redColors['red-100']} textColor={redColors['red-600']} />
+<ColorBox size={15} name="600 on 200" hex={redColors['red-200']} textColor={redColors['red-600']} />
+<ColorBox size={15} name="700 on 300" hex={redColors['red-300']} textColor={redColors['red-700']} />
+<ColorBox size={15} name="300 on 900" hex={redColors['red-900']} textColor={redColors['red-300']} />
+<ColorBox size={15} name="500 on white" hex={whiteColors['color-white']} textColor={redColors['red-500']} />
+<ColorBox size={15} name="500 on gray-100" hex={grayColors['gray-100']} textColor={redColors['red-500']} />
+
+### A11y examples of purple color usage
+
+<ColorBox size={15} name="600 on 100" hex={purpleColors['purple-100']} textColor={purpleColors['purple-600']} />
+<ColorBox size={15} name="600 on 200" hex={purpleColors['purple-200']} textColor={purpleColors['purple-600']} />
+<ColorBox size={15} name="700 on 300" hex={purpleColors['purple-300']} textColor={purpleColors['purple-700']} />
+<ColorBox size={15} name="300 on 900" hex={purpleColors['purple-900']} textColor={purpleColors['purple-300']} />
+<ColorBox size={15} name="500 on white" hex={whiteColors['color-white']} textColor={purpleColors['purple-500']} />
+<ColorBox size={15} name="500 on gray-100" hex={grayColors['gray-100']} textColor={purpleColors['purple-500']} />
+
+### A11y examples of orange color usage
+
+<ColorBox size={15} name="600 on 100" hex={orangeColors['orange-100']} textColor={orangeColors['orange-600']} />
+<ColorBox size={15} name="600 on 200" hex={orangeColors['orange-200']} textColor={orangeColors['orange-600']} />
+<ColorBox size={15} name="700 on 300" hex={orangeColors['orange-300']} textColor={orangeColors['orange-700']} />
+<ColorBox size={15} name="300 on 900" hex={orangeColors['orange-900']} textColor={orangeColors['orange-300']} />
+<ColorBox size={15} name="500 on white" hex={whiteColors['color-white']} textColor={orangeColors['orange-500']} />
+<ColorBox size={15} name="500 on gray-100" hex={grayColors['gray-100']} textColor={orangeColors['orange-500']} />
+
+### A11y examples of yellow color usage
+
+<ColorBox size={15} name="800 on 100" hex={yellowColors['yellow-100']} textColor={yellowColors['yellow-800']} />
+<ColorBox size={15} name="800 on 200" hex={yellowColors['yellow-200']} textColor={yellowColors['yellow-600']} />
+<ColorBox size={15} name="900 on 300" hex={yellowColors['yellow-300']} textColor={yellowColors['yellow-900']} />
+<ColorBox size={15} name="300 on 900" hex={yellowColors['yellow-900']} textColor={yellowColors['yellow-300']} />
+<ColorBox size={15} name="800 on white" hex={whiteColors['color-white']} textColor={yellowColors['yellow-800']} />
+<ColorBox size={15} name="800 on gray-100" hex={grayColors['gray-100']} textColor={yellowColors['yellow-800']} />
