@@ -93,7 +93,7 @@ export const Tooltip = ({
   as: HtmlTag = 'span',
   content,
   id = 'cf-ui-tooltip',
-  isVisible = false,
+  isVisible,
   hideDelay = 0,
   onBlur,
   onFocus,
@@ -107,7 +107,7 @@ export const Tooltip = ({
   usePortal = false,
   ...otherProps
 }: TooltipProps) => {
-  const [show, setShow] = useState(isVisible);
+  const [show, setShow] = useState(false);
 
   const elementRef = useRef(null);
   const popperRef = useRef(null);
@@ -148,6 +148,11 @@ export const Tooltip = ({
     setShow(isHoveringContent || isHoveringTarget);
   }, [isHoveringTarget, isHoveringContent]);
 
+  useEffect(() => {
+    if (isVisible) setShow(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const contentMaxWidth =
     typeof maxWidth === 'string' ? maxWidth : `${maxWidth}px`;
 
@@ -158,7 +163,11 @@ export const Tooltip = ({
   };
 
   if (!content) {
-    return <HtmlTag className={targetWrapperClassName}>{children}</HtmlTag>;
+    return (
+      <Primitive as={HtmlTag} className={targetWrapperClassName}>
+        {children}
+      </Primitive>
+    );
   }
 
   const tooltip = (
@@ -194,7 +203,8 @@ export const Tooltip = ({
   return (
     <>
       {show ? <>{usePortal ? <Portal>{tooltip}</Portal> : tooltip}</> : null}
-      <HtmlTag
+      <Primitive
+        as={HtmlTag}
         ref={elementRef}
         className={cx(styles.tooltipContainer, targetWrapperClassName)}
         onMouseEnter={(evt: MouseEvent) => {
@@ -231,7 +241,7 @@ export const Tooltip = ({
             }
           },
         )}
-      </HtmlTag>
+      </Primitive>
     </>
   );
 };

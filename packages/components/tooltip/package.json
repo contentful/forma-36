@@ -9,7 +9,16 @@
   "dependencies": {
     "@babel/runtime": "^7.6.2",
     "@contentful/f36-tokens": "^4.0.0",
-    "emotion": "^10.0.17"
+    "emotion": "^10.0.17",
+    "react-popper": "^2.2.3",
+    "@popperjs/core": "^2.4.4",
+    "csstype": "^3.0.5",
+    "@contentful/f36-utils": "^4.0.0",
+    "@contentful/f36-core": "^4.0.0"
+  },
+  "devDependencies": {
+    "@contentful/f36-typography": "^4.0.0",
+    "@contentful/f36-components": "^4.0.0"
   },
   "peerDependencies": {
     "react": ">=16.8"
