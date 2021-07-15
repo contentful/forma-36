@@ -30,9 +30,41 @@ export type BoxProps<E extends React.ElementType> = PolymorphicComponentProps<
 >;
 
 export function useBox(props: BoxInternalProps) {
-  const { display, children, className, ...otherProps } = props;
+  const {
+    display,
+    children,
+    className,
+    margin,
+    marginBottom,
+    marginLeft,
+    marginRight,
+    marginTop,
+    padding,
+    paddingBottom,
+    paddingLeft,
+    paddingRight,
+    paddingTop,
+    ...otherProps
+  } = props;
   const boxProps = {
-    className: cx(css({ display, ...getSpacingStyles(otherProps) }), className),
+    className: cx(
+      css({
+        display,
+        ...getSpacingStyles({
+          margin,
+          marginBottom,
+          marginLeft,
+          marginRight,
+          marginTop,
+          padding,
+          paddingBottom,
+          paddingLeft,
+          paddingRight,
+          paddingTop,
+        }),
+      }),
+      className,
+    ),
     ...otherProps,
   };
   const { Element, primitiveProps } = usePrimitive(boxProps);
