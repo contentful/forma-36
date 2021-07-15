@@ -17,7 +17,7 @@ import tokens from '@contentful/f36-tokens';
 
 import { Portal } from '@contentful/f36-utils';
 import type { CommonProps } from '@contentful/f36-core';
-import { Primitive } from '@contentful/f36-core';
+import { Primitive, useId } from '@contentful/f36-core';
 
 export type TooltipPlace = Placement;
 
@@ -92,7 +92,7 @@ export const Tooltip = ({
   className,
   as: HtmlTag = 'span',
   content,
-  id = 'cf-ui-tooltip',
+  id,
   isVisible,
   hideDelay = 0,
   onBlur,
@@ -108,7 +108,7 @@ export const Tooltip = ({
   ...otherProps
 }: TooltipProps) => {
   const [show, setShow] = useState(false);
-
+  const tooltipId = useId(id, 'tooltip');
   const elementRef = useRef(null);
   const popperRef = useRef(null);
   const [arrowRef, setArrowRef] = useState<HTMLSpanElement | null>(null);
@@ -173,7 +173,7 @@ export const Tooltip = ({
   const tooltip = (
     <Primitive
       as="span"
-      id={id}
+      id={tooltipId}
       ref={popperRef}
       role="tooltip"
       style={contentStyles}
@@ -236,7 +236,7 @@ export const Tooltip = ({
           (child) => {
             if (React.isValidElement(child)) {
               return React.cloneElement(child, {
-                'aria-describedby': id,
+                'aria-describedby': tooltipId,
               });
             }
           },
