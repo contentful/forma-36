@@ -35,10 +35,7 @@ export interface ControlledInputFieldProps extends BoxProps<'div'> {
   >;
   inputType?: 'radio' | 'checkbox';
   onChange?: EventHandler<ChangeEvent<HTMLInputElement>>;
-  className?: string;
-  testId?: string;
   children?: ReactNode;
-  ref: React.Ref<HTMLDivElement>;
 }
 
 export const _ControlledInputField = (
