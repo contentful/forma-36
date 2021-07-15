@@ -459,6 +459,15 @@ exports[`renders the component with as textarea 1`] = `
 `;
 
 exports[`renders the component with characters count 1`] = `
+.emotion-1 {
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  color: #606C7C;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+}
+
 .emotion-0 {
   display: inline-block;
   color: #192532;
@@ -467,16 +476,6 @@ exports[`renders the component with characters count 1`] = `
   font-weight: 500;
   line-height: 1.5;
   margin-bottom: calc(1rem * (8 / 16));
-}
-
-.emotion-1 {
-  display: block;
-  margin: 0;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  color: #606C7C;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  text-rendering: optimizeLegibility;
 }
 
 <div
@@ -522,6 +521,15 @@ exports[`renders the component with characters count 1`] = `
 `;
 
 exports[`renders the component with help text 1`] = `
+.emotion-1 {
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  color: #606C7C;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+}
+
 .emotion-0 {
   display: inline-block;
   color: #192532;
@@ -530,16 +538,6 @@ exports[`renders the component with help text 1`] = `
   font-weight: 500;
   line-height: 1.5;
   margin-bottom: calc(1rem * (8 / 16));
-}
-
-.emotion-1 {
-  display: block;
-  margin: 0;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  color: #606C7C;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  text-rendering: optimizeLegibility;
 }
 
 <div

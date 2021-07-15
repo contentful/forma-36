@@ -173,7 +173,7 @@ exports[`Note renders the component with an additional class name 1`] = `
 }
 
 <article
-  class="emotion-4 my-extra-class"
+  class="my-extra-class emotion-4"
   data-test-id="cf-ui-note"
 >
   <div

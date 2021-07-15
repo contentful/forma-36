@@ -2,7 +2,7 @@ import { css, cx } from 'emotion';
 import React, { forwardRef } from 'react';
 import type { HTMLProps } from 'react';
 import tokens from '@contentful/f36-tokens';
-import { Primitive } from '@contentful/f36-core';
+import { Box } from '@contentful/f36-core';
 import type { CommonProps } from '@contentful/f36-core';
 
 const styles = {
@@ -44,7 +44,7 @@ export const TableRow = forwardRef<HTMLTableRowElement, TableRowProps>(
     forwardedRef,
   ) {
     return (
-      <Primitive
+      <Box
         {...otherProps}
         as="tr"
         className={cx(
@@ -58,7 +58,7 @@ export const TableRow = forwardRef<HTMLTableRowElement, TableRowProps>(
         testId={testId}
       >
         {children}
-      </Primitive>
+      </Box>
     );
   },
 );

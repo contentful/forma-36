@@ -1,7 +1,7 @@
 import { css, cx } from 'emotion';
 import React, { forwardRef } from 'react';
 import type { HTMLProps } from 'react';
-import { Primitive } from '@contentful/f36-core';
+import { Box } from '@contentful/f36-core';
 import type { CommonProps } from '@contentful/f36-core';
 import tokens from '@contentful/f36-tokens';
 
@@ -47,7 +47,7 @@ export const TableHead = forwardRef<HTMLTableSectionElement, TableHeadProps>(
       <TableCellContext.Provider
         value={{ ...contextOptions.head, offsetTop: offsetTop || 0 }}
       >
-        <Primitive
+        <Box
           {...otherProps}
           as="thead"
           className={classNames}
@@ -55,7 +55,7 @@ export const TableHead = forwardRef<HTMLTableSectionElement, TableHeadProps>(
           testId={testId}
         >
           {children}
-        </Primitive>
+        </Box>
       </TableCellContext.Provider>
     );
   },

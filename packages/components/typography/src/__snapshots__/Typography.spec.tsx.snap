@@ -1,10 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders all typography components with the expected spacing classes 1`] = `
-.emotion-5 {
-  display: block;
-}
-
 .emotion-1 {
   display: block;
   margin: 0;
@@ -118,10 +114,6 @@ exports[`renders all typography components with the expected spacing classes 1`]
 `;
 
 exports[`renders the component 1`] = `
-.emotion-2 {
-  display: block;
-}
-
 .emotion-0 {
   display: block;
   margin: 0;
@@ -170,10 +162,6 @@ exports[`renders the component 1`] = `
 `;
 
 exports[`renders the component with an additional class name 1`] = `
-.emotion-2 {
-  display: block;
-}
-
 .emotion-0 {
   display: block;
   margin: 0;
