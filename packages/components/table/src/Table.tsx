@@ -1,6 +1,5 @@
 import { cx, css } from 'emotion';
 import React, { forwardRef } from 'react';
-import type { HTMLProps } from 'react';
 import { Box } from '@contentful/f36-core';
 import type { BoxProps } from '@contentful/f36-core';
 import tokens from '@contentful/f36-tokens';
@@ -27,10 +26,9 @@ const styles = {
   }),
 };
 
-export type TableInternalProps = HTMLProps<HTMLTableElement> &
-  Omit<BoxProps<'table'>, 'as'> & {
-    layout?: 'inline' | 'embedded';
-  };
+export type TableInternalProps = Omit<BoxProps<'table'>, 'as'> & {
+  layout?: 'inline' | 'embedded';
+};
 
 export type TableProps = TableInternalProps;
 

@@ -15,7 +15,7 @@ export interface BaseCardProps {
   /**
    * Used with href to specify target attribute value
    */
-  target?: React.AnchorHTMLAttributes<HTMLAnchorElement>['target'];
+  target?: JSX.IntrinsicElements['a']['target'];
   /**
    * Applies selected styles to the element
    */

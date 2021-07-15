@@ -1,6 +1,6 @@
 import { cx, css } from 'emotion';
 import React, { forwardRef } from 'react';
-import type { HTMLProps, ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import tokens from '@contentful/f36-tokens';
 import { Box } from '@contentful/f36-core';
 import type { BoxProps } from '@contentful/f36-core';
@@ -13,7 +13,7 @@ export type LabelInternalProps = {
   /**
    * ID of the input to associate the label with
    */
-  htmlFor: HTMLProps<HTMLLabelElement>['htmlFor'];
+  htmlFor: JSX.IntrinsicElements['label']['htmlFor'];
   /**
    * Whether or not the associated input element is required
    *
