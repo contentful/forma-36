@@ -2,7 +2,6 @@
 
 exports[`renders the component 1`] = `
 .emotion-0 {
-  display: block;
   grid-area: auto / auto / auto / auto;
 }
 
@@ -15,7 +14,6 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 .emotion-0 {
-  display: block;
   grid-area: auto / auto / auto / auto;
 }
 

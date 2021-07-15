@@ -30,6 +30,27 @@ export type PolymorphicComponentWithRef<
 
 const defaultElement = 'div';
 
+export function usePrimitive(props: PrimitiveOwnProps) {
+  const {
+    as: Element = defaultElement,
+    testId = undefined,
+    ...otherProps
+  } = props;
+  const validProps: Partial<PrimitiveOwnProps> = {};
+  for (const key in otherProps) {
+    if (isPropValid(key)) {
+      validProps[key] = otherProps[key];
+    } else {
+      console.warn('Invalid prop', key);
+    }
+  }
+
+  return {
+    primitiveProps: { ['data-test-id']: testId, ...validProps, as: undefined },
+    Element,
+  };
+}
+
 export const Primitive: <E extends React.ElementType = typeof defaultElement>(
   props: PrimitiveProps<E>,
 ) => React.ReactElement | null = React.forwardRef(function Primitive(
