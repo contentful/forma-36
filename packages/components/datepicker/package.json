@@ -24,7 +24,7 @@
     "build": "parcel build index.ts"
   },
   "peerDependencies": {
-    "@contentful/forma-36-react-components": "^3.72.11",
+    "@contentful/forma-36-react-components": "^3.91.0-alpha.0",
     "react": ">=16.8"
   },
   "devDependencies": {

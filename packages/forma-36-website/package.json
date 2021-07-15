@@ -4,9 +4,9 @@
   "private": true,
   "version": "0.11.5",
   "dependencies": {
-    "@contentful/forma-36-fcss": "^0.3.0",
-    "@contentful/forma-36-react-components": "^3.75.0",
-    "@contentful/forma-36-tokens": "^0.10.0",
+    "@contentful/forma-36-fcss": "^0.4.0-alpha.0",
+    "@contentful/forma-36-react-components": "^3.91.0-alpha.0",
+    "@contentful/forma-36-tokens": "^0.11.0-alpha.0",
     "@emotion/core": "^10.0.16",
     "@emotion/styled": "^10.0.15",
     "@mdx-js/mdx": "^1.6.18",
