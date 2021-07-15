@@ -20,7 +20,7 @@ const styles = {
   name: css({
     fontWeight: 'bold',
     color: tokens.gray700,
-    fontSize: tokens.fontSizeS
+    fontSize: tokens.fontSizeS,
   }),
 };
 
@@ -35,9 +35,20 @@ class ColorBox extends Component {
     const { name, hex, textColor, size, ...otherProps } = this.props;
     console.log(size);
     return (
-      <div css={styles.container} {...otherProps} style={{ width: `calc(${size}% - ${tokens.spacingS})`}}>
-        <Flex justifyContent="center" alignItems="center" css={styles.swatch} style={{ backgroundColor: hex }}>
-          <span css={styles.name} style={{ color: textColor}}>{name}</span>
+      <div
+        css={styles.container}
+        {...otherProps}
+        style={{ width: `calc(${size}% - ${tokens.spacingS})` }}
+      >
+        <Flex
+          justifyContent="center"
+          alignItems="center"
+          css={styles.swatch}
+          style={{ backgroundColor: hex }}
+        >
+          <span css={styles.name} style={{ color: textColor }}>
+            {name}
+          </span>
         </Flex>
       </div>
     );

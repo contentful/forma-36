@@ -12,10 +12,18 @@ class ColorA11yGroup extends Component {
         {Object.keys(group).map((item) => {
           const value = group[item];
           let textColor;
-          if (item.includes('100') || item.includes('200') || item.includes('300') || item.includes('400') || item.includes('yellow-500') || item.includes('yellow-600') || item.includes('yellow-700')) {
-            textColor = tokens.gray800
+          if (
+            item.includes('100') ||
+            item.includes('200') ||
+            item.includes('300') ||
+            item.includes('400') ||
+            item.includes('yellow-500') ||
+            item.includes('yellow-600') ||
+            item.includes('yellow-700')
+          ) {
+            textColor = tokens.gray800;
           } else {
-            textColor = tokens.colorWhite
+            textColor = tokens.colorWhite;
           }
 
           return (
