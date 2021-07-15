@@ -5,11 +5,14 @@ import {
   PolymorphicComponentWithRef,
   PolymorphicComponent,
 } from '../Primitive/Primitive';
-import { Box } from '../Box';
-import type { MarginProps, PaddingProps } from '../types';
+import { useBox } from '../Box';
+import type { MarginProps, PaddingProps, CommonProps } from '../types';
 import type * as CSS from 'csstype';
 
-export interface FlexInternalProps extends MarginProps, PaddingProps {
+export interface FlexInternalProps
+  extends CommonProps,
+    MarginProps,
+    PaddingProps {
   /**
    * Child nodes to be rendered in the component */
   children?: React.ReactNode;
@@ -103,18 +106,19 @@ const _Flex: PolymorphicComponentWithRef<
     justifyItems,
     justifySelf,
     order,
-    className,
     children,
     ...otherProps
   },
   ref,
 ) => {
+  const { boxProps, Element } = useBox(otherProps);
   return (
-    <Box
+    <Element
       as={DEFAULT_TAG}
-      display={isInline ? 'inline-flex' : 'flex'}
+      {...boxProps}
       className={cx(
         css({
+          display: isInline ? 'inline-flex' : 'flex',
           width: fullWidth ? '100%' : undefined,
           height: fullHeight ? '100%' : undefined,
           flex,
@@ -132,13 +136,12 @@ const _Flex: PolymorphicComponentWithRef<
           flexWrap,
           flexGrow,
         }),
-        className,
+        boxProps.className,
       )}
-      {...otherProps}
       ref={ref}
     >
       {children}
-    </Box>
+    </Element>
   );
 };
 
