@@ -47,7 +47,6 @@ exports[`renders no close button in "deleted" variant 1`] = `
 }
 
 .emotion-4 {
-  display: block;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -118,7 +117,6 @@ exports[`renders the component 1`] = `
 }
 
 .emotion-1 {
-  display: block;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -164,7 +162,6 @@ exports[`renders the component in "active" variant 1`] = `
 }
 
 .emotion-1 {
-  display: block;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -210,7 +207,6 @@ exports[`renders the component in "deleted" variant 1`] = `
 }
 
 .emotion-1 {
-  display: block;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -259,7 +255,6 @@ exports[`renders the component in "idle" variant by default 1`] = `
 }
 
 .emotion-1 {
-  display: block;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -327,7 +322,6 @@ exports[`renders the component with a close button 1`] = `
 }
 
 .emotion-4 {
-  display: block;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -409,7 +403,6 @@ exports[`renders the component with a dragging handle 1`] = `
 }
 
 .emotion-3 {
-  display: block;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -484,7 +477,6 @@ exports[`renders the component with a test id 1`] = `
 }
 
 .emotion-1 {
-  display: block;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -530,7 +522,6 @@ exports[`renders the component with an additional class name 1`] = `
 }
 
 .emotion-1 {
-  display: block;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;

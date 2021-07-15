@@ -2,7 +2,7 @@ import { css, cx } from 'emotion';
 import React, { forwardRef } from 'react';
 import type { HTMLProps } from 'react';
 import tokens from '@contentful/f36-tokens';
-import { Primitive } from '@contentful/f36-core';
+import { Box } from '@contentful/f36-core';
 import type { CommonProps } from '@contentful/f36-core';
 
 import { TableCellContext } from './';
@@ -41,7 +41,7 @@ export const TableCell = forwardRef<HTMLTableCellElement, TableCellProps>(
           const isTableHead = context === 'head';
 
           return (
-            <Primitive
+            <Box
               {...otherProps}
               as={as}
               className={cx(
@@ -71,7 +71,7 @@ export const TableCell = forwardRef<HTMLTableCellElement, TableCellProps>(
               testId={testId}
             >
               {children}
-            </Primitive>
+            </Box>
           );
         }}
       </TableCellContext.Consumer>

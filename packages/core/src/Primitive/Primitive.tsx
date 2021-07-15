@@ -6,7 +6,7 @@ type PrimitiveOwnProps<E extends React.ElementType = React.ElementType> = {
   as?: E;
 } & CommonProps;
 
-export type PrimitiveProps<E extends React.ElementType> = PrimitiveOwnProps<E> &
+type PrimitiveProps<E extends React.ElementType> = PrimitiveOwnProps<E> &
   Omit<React.ComponentProps<E>, keyof PrimitiveOwnProps>;
 
 export type PolymorphicComponentProps<E extends React.ElementType, P> = P &
@@ -30,12 +30,7 @@ export type PolymorphicComponentWithRef<
 
 const defaultElement = 'div';
 
-export const Primitive: <E extends React.ElementType = typeof defaultElement>(
-  props: PrimitiveProps<E>,
-) => React.ReactElement | null = React.forwardRef(function Primitive(
-  props: PrimitiveOwnProps,
-  ref: React.Ref<Element>,
-) {
+export function usePrimitive(props: PrimitiveOwnProps) {
   const {
     as: Element = defaultElement,
     testId = undefined,
@@ -49,7 +44,9 @@ export const Primitive: <E extends React.ElementType = typeof defaultElement>(
       console.warn('Invalid prop', key);
     }
   }
-  return (
-    <Element ref={ref} data-test-id={testId} {...validProps} as={undefined} />
-  );
-});
+
+  return {
+    primitiveProps: { ['data-test-id']: testId, ...validProps, as: undefined },
+    Element,
+  };
+}

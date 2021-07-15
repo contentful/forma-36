@@ -5,12 +5,15 @@ import {
   PolymorphicComponentWithRef,
   PolymorphicComponent,
 } from '../Primitive/Primitive';
-import { Box } from '../Box';
+import { useBox } from '../Box';
 import type * as CSS from 'csstype';
-import type { MarginProps, PaddingProps, Spacing } from '../types';
+import type { MarginProps, PaddingProps, CommonProps, Spacing } from '../types';
 import { convertSpacingToToken } from '../utils/getSpacingStyles';
 
-export interface GridInternalProps extends MarginProps, PaddingProps {
+export interface GridInternalProps
+  extends CommonProps,
+    MarginProps,
+    PaddingProps {
   /**
    * Child nodes to be rendered in the component */
   children?: React.ReactNode;
@@ -61,7 +64,6 @@ const _Grid: PolymorphicComponentWithRef<
     justifyContent,
     rowGap = 'none',
     rows = 'auto',
-    className,
     ...otherProps
   },
   ref,
@@ -73,12 +75,15 @@ const _Grid: PolymorphicComponentWithRef<
     return value;
   };
 
+  const { boxProps, Element } = useBox(otherProps);
+
   return (
-    <Box
+    <Element
       as={DEFAULT_TAG}
-      display={isInline ? 'inline-grid' : 'grid'}
+      {...boxProps}
       className={cx(
         css({
+          display: isInline ? 'inline-grid' : 'grid',
           gridTemplateColumns: handleGridTemplate(columns),
           gridTemplateRows: handleGridTemplate(rows),
           flow,
@@ -87,13 +92,12 @@ const _Grid: PolymorphicComponentWithRef<
           columnGap: convertSpacingToToken(columnGap) ?? 0,
           rowGap: convertSpacingToToken(rowGap) ?? 0,
         }),
-        className,
+        boxProps.className,
       )}
-      {...otherProps}
       ref={ref}
     >
       {children}
-    </Box>
+    </Element>
   );
 };
 
