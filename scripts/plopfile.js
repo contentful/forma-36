@@ -4,6 +4,9 @@ module.exports = function (plop) {
     let string = options.fn(this);
     return string.replace(match, replacement);
   });
+  plop.setHelper('toCamelCase', function (string) {
+    return string.replace(/^\w/, (match) => match.toLowerCase());
+  });
 
   plop.setHelper('includes', function (array, string) {
     return array.includes(string);

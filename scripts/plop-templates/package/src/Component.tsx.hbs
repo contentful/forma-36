@@ -1,8 +1,9 @@
-import { cx, css } from 'emotion';
+import { cx } from 'emotion';
 import React from 'react';
-import tokens from '@contentful/f36-tokens';
+import { CommonProps } from '@contentful/f36-core';
+import { styles } from './{{componentName}}.styles'
 
-export type {{componentName}}Props = {
+export interface {{componentName}}Props extends CommonProps {
   testId?: string;
   className?: string;
   children: React.ReactNode;
@@ -14,9 +15,7 @@ function {{componentName}}(props: {{componentName}}Props, ref: React.Ref<HTMLDiv
       data-test-id={props.testId}
       ref={ref}
       className={cx(
-        css({
-          color: tokens.colorRedBase,
-        }),
+        styles.{{toCamelCase componentName}},
         props.className,
       )}
     >
