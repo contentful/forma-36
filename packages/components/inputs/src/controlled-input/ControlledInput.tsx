@@ -30,8 +30,8 @@ export interface ControlledInputProps extends Omit<BoxProps<'div'>, 'ref'> {
   testId?: string;
   canBlurOnEsc?: boolean;
   isIndeterminate?: boolean;
-  inputProps?: Partial<React.InputHTMLAttributes<HTMLInputElement>>;
-  labelProps?: Partial<React.InputHTMLAttributes<HTMLLabelElement>>;
+  inputProps?: Partial<JSX.IntrinsicElements['input']>;
+  labelProps?: Partial<JSX.IntrinsicElements['label']>;
 }
 
 const _ControlledInput = (

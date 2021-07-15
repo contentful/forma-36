@@ -28,9 +28,9 @@ type IconPositionType = 'right' | 'left';
 export interface TextLinkProps {
   children?: React.ReactNode;
   linkType?: TextLinkType;
-  href?: React.AnchorHTMLAttributes<HTMLAnchorElement>['href'];
-  target?: React.AnchorHTMLAttributes<HTMLAnchorElement>['target'];
-  rel?: React.AnchorHTMLAttributes<HTMLInputElement>['rel'];
+  href?: JSX.IntrinsicElements['a']['href'];
+  target?: JSX.IntrinsicElements['a']['target'];
+  rel?: JSX.IntrinsicElements['a']['rel'];
   disabled?: boolean;
   testId?: string;
   onClick?: MouseEventHandler<HTMLAnchorElement | HTMLButtonElement>;
