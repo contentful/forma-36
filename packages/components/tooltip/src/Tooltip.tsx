@@ -17,7 +17,7 @@ import tokens from '@contentful/f36-tokens';
 
 import { Portal } from '@contentful/f36-utils';
 import type { CommonProps } from '@contentful/f36-core';
-import { Primitive, useId } from '@contentful/f36-core';
+import { Box, useId } from '@contentful/f36-core';
 
 export type TooltipPlace = Placement;
 
@@ -164,14 +164,14 @@ export const Tooltip = ({
 
   if (!content) {
     return (
-      <Primitive as={HtmlTag} className={targetWrapperClassName}>
+      <Box as={HtmlTag} className={targetWrapperClassName}>
         {children}
-      </Primitive>
+      </Box>
     );
   }
 
   const tooltip = (
-    <Primitive
+    <Box
       as="span"
       id={tooltipId}
       ref={popperRef}
@@ -187,9 +187,8 @@ export const Tooltip = ({
       }}
       {...attributes.popper}
     >
-      <Primitive as="span">{content}</Primitive>
-      <Primitive
-        as="span"
+      <span>{content}</span>
+      <span
         className={styles.tooltipArrow}
         data-placement={
           attributes.popper && attributes.popper['data-popper-placement']
@@ -197,13 +196,13 @@ export const Tooltip = ({
         ref={setArrowRef}
         style={popperStyles.arrow}
       />
-    </Primitive>
+    </Box>
   );
 
   return (
     <>
       {show ? <>{usePortal ? <Portal>{tooltip}</Portal> : tooltip}</> : null}
-      <Primitive
+      <Box
         as={HtmlTag}
         ref={elementRef}
         className={cx(styles.tooltipContainer, targetWrapperClassName)}
@@ -241,7 +240,7 @@ export const Tooltip = ({
             }
           },
         )}
-      </Primitive>
+      </Box>
     </>
   );
 };
