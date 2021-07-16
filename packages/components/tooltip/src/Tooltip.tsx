@@ -27,24 +27,27 @@ export interface TooltipProps extends CommonProps {
    */
   children: React.ReactNode;
   /**
-   * HTML element used to wrap the target of the Tooltip
+   * HTML element used to wrap the target of the tooltip
    */
   as?: React.ElementType;
   /**
-   * Content of the Tooltip
+   * Content of the tooltip
    */
   content?: React.ReactNode;
+  /**
+   * A unique id of the tooltip
+   */
   id?: string;
   /**
-   * It controls the initial visibility of the Tooltip
+   * It controls the initial visibility of the tooltip
    */
   isVisible?: boolean;
   /**
-   * It sets a max-width for the Tooltip
+   * It sets a max-width for the tooltip
    */
   maxWidth?: number | CSS.Property.MaxWidth;
   /**
-   * It sets a delay period for the Tooltip
+   * It sets a delay period for the tooltip
    */
   hideDelay?: number;
   /**
@@ -69,11 +72,11 @@ export interface TooltipProps extends CommonProps {
   onKeyDown?: (evt: KeyboardEvent) => void;
 
   /**
-   * It sets the "preferred" position of the Tooltip
+   * It sets the "preferred" position of the tooltip
    */
   placement?: TooltipPlace;
   /**
-   * Class names to be appended to the className prop of the Tooltip’s target
+   * Class names to be appended to the className prop of the tooltip’s target
    */
   targetWrapperClassName?: string;
   /**
