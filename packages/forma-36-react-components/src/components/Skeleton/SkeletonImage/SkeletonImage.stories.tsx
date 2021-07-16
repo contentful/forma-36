@@ -9,9 +9,7 @@ export default {
   parameters: {
     propTypes: [SkeletonImage['__docgenInfo']],
   },
-  argTypes: {
-    className: { control: { disable: true } },
-  },
+  argTypes: {},
 };
 
 export const Basic = (args: SkeletonImageProps) => (
