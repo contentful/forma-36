@@ -11,12 +11,12 @@ const styles = {
     width: `calc(15% - ${tokens.spacingS})`,
     border: `1px solid ${tokens.gray200}`,
     borderRadius: `4px`,
-    overflow: 'hidden'
+    overflow: 'hidden',
   }),
   swatch: css({
     height: '100px',
     position: 'relative',
-    zIndex: -1
+    zIndex: -1,
   }),
   name: css({
     fontWeight: 'bold',
@@ -33,7 +33,6 @@ class ColorBox extends Component {
   };
 
   render() {
-    console.log(tokens)
     const { name, hex, textColor, size, ...otherProps } = this.props;
     console.log(size);
     return (
