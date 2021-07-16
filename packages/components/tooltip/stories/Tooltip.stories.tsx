@@ -1,7 +1,7 @@
 import React from 'react';
 import { SectionHeading, Text } from '@contentful/f36-typography';
 import { Tooltip } from '../src/Tooltip';
-import { TextLink } from '@contentful/f36-components';
+import { TextLink } from '../../../forma-36-react-components/src/index';
 import { Flex } from '@contentful/f36-core';
 
 export default {
