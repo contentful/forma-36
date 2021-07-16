@@ -19,7 +19,7 @@ import { Portal } from '@contentful/f36-utils';
 import type { CommonProps } from '@contentful/f36-core';
 import { Box, useId } from '@contentful/f36-core';
 
-export type TooltipPlace = Placement;
+export type TooltipPlacement = Placement;
 
 export interface TooltipProps extends CommonProps {
   /**
@@ -74,7 +74,7 @@ export interface TooltipProps extends CommonProps {
   /**
    * It sets the "preferred" position of the tooltip
    */
-  placement?: TooltipPlace;
+  placement?: TooltipPlacement;
   /**
    * Class names to be appended to the className prop of the tooltip’s target
    */

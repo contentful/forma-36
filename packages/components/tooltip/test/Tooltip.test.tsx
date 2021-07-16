@@ -5,6 +5,13 @@ import { axe } from '@/scripts/test/axeHelper';
 
 import { Tooltip } from '../src/Tooltip';
 
+jest.mock('@contentful/f36-core', () => ({
+  ...jest.requireActual('@contentful/f36-core'),
+  useId: () => {
+    return 'id';
+  },
+}));
+
 it('does not render the component if no mouseover event on child', () => {
   const { container } = render(
     <Tooltip content="Tooltip content">

@@ -26,7 +26,7 @@ exports[`renders the component 1`] = `
     class="emotion-2"
   >
     <button
-      aria-describedby="cf-ui-tooltip"
+      aria-describedby="id"
       class="CopyButton__button"
       type="button"
     >
@@ -87,7 +87,7 @@ exports[`renders the component with a copy value 1`] = `
     class="emotion-2"
   >
     <button
-      aria-describedby="cf-ui-tooltip"
+      aria-describedby="id"
       class="CopyButton__button"
       type="button"
     >
@@ -149,7 +149,7 @@ exports[`renders the component with an additional class name 1`] = `
     class="emotion-2"
   >
     <button
-      aria-describedby="cf-ui-tooltip"
+      aria-describedby="id"
       class="CopyButton__button"
       type="button"
     >
