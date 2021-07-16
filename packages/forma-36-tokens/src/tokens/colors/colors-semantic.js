@@ -1,8 +1,13 @@
+const colorsOrange = require('./colors-orange');
+const colorsRed = require('./colors-red');
+const colorsGreen = require('./colors-green');
+const colorsBlue = require('./colors-blue');
+
 const colorsSemantic = {
-  'color-primary': '#2E75D4',
-  'color-positive': '#16875D',
-  'color-negative': '#BF3045',
-  'color-warning': '#F79B0C',
+  'color-primary': colorsBlue['blue-500'],
+  'color-positive': colorsGreen['green-500'],
+  'color-negative': colorsRed['red-500'],
+  'color-warning': colorsOrange['orange-400'],
 };
 
 module.exports = colorsSemantic;

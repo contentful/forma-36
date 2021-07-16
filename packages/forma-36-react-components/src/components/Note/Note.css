@@ -46,7 +46,7 @@
 
 .Note--warning {
   background: var(--color-orange-lightest);
-  border: 1px solid var(--color-orange-light);
+  border: 1px solid var(--orange-300);
 }
 
 .Note--hasCloseButton {

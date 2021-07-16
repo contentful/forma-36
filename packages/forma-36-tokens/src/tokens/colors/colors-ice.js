@@ -1,6 +1,3 @@
-const colorsIce = {
-  'color-ice-dark': '#c5d2d8',
-  'color-ice-mid': '#e8f7ff',
-};
+const colorsIce = require('./colors-ice-deprecated');
 
 module.exports = colorsIce;
