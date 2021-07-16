@@ -8,7 +8,7 @@ class ColorA11yGroup extends Component {
     const { group } = this.props;
 
     return (
-      <Flex marginBottom="spacingXs" flexWrap="wrap">
+      <Flex marginBottom="spacing2Xs" flexWrap="wrap">
         {Object.keys(group).map((item) => {
           const value = group[item];
           let textColor;

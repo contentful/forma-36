@@ -10,7 +10,7 @@ const styles = {
     margin: 8px;
     width: calc(20% - 16px);
     border-radius: 4px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--color-element-light);
     position: relative;
   `,
   swatch: css`

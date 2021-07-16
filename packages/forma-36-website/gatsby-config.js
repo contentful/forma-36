@@ -13,7 +13,7 @@ module.exports = {
         link: '',
         menuLinks: [
           {
-            name: 'Color',
+            name: 'Color system',
             link: '/foundation/color/',
           },
           {
