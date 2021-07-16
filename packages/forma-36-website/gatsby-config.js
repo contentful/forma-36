@@ -14,7 +14,7 @@ module.exports = {
         menuLinks: [
           {
             name: 'Color system',
-            link: '/foundation/color/',
+            link: '/foundation/color-system/',
           },
           {
             name: 'Typography',
