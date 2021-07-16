@@ -206,7 +206,7 @@ exports[`renders the component with the copy button 1`] = `
       class="emotion-2"
     >
       <button
-        aria-describedby="cf-ui-tooltip"
+        aria-describedby="id"
         class="CopyButton__button"
         type="button"
       >

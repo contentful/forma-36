@@ -17,7 +17,9 @@ exports[`renders the component 1`] = `
   width: 18px;
 }
 
-<span>
+<span
+  class="emotion-2"
+>
   <button
     class="IconButton EditorToolbarButton IconButton--secondary"
     data-test-id="cf-ui-editor-toolbar-button"
@@ -77,7 +79,7 @@ exports[`renders the component as active 1`] = `
   class="emotion-2"
 >
   <button
-    aria-describedby="cf-ui-tooltip"
+    aria-describedby="id"
     class="IconButton EditorToolbarButton EditorToolbarButton--is-active IconButton--secondary"
     data-test-id="cf-ui-editor-toolbar-button"
     type="button"
@@ -128,7 +130,9 @@ exports[`renders the component as disabled 1`] = `
   width: 18px;
 }
 
-<span>
+<span
+  class="emotion-2"
+>
   <button
     class="IconButton EditorToolbarButton IconButton--disabled IconButton--secondary"
     data-test-id="cf-ui-editor-toolbar-button"
@@ -189,7 +193,7 @@ exports[`renders the component with a tooltip 1`] = `
   class="emotion-2"
 >
   <button
-    aria-describedby="cf-ui-tooltip"
+    aria-describedby="id"
     class="IconButton EditorToolbarButton IconButton--secondary"
     data-test-id="cf-ui-editor-toolbar-button"
     type="button"
@@ -240,7 +244,9 @@ exports[`renders the component with an additional class name 1`] = `
   width: 18px;
 }
 
-<span>
+<span
+  class="emotion-2"
+>
   <button
     class="IconButton EditorToolbarButton my-extra-class IconButton--secondary"
     data-test-id="cf-ui-editor-toolbar-button"
@@ -307,7 +313,7 @@ exports[`renders with a dropdown indicator 1`] = `
   class="emotion-3"
 >
   <button
-    aria-describedby="cf-ui-tooltip"
+    aria-describedby="id"
     class="IconButton EditorToolbarButton IconButton--secondary"
     data-test-id="cf-ui-editor-toolbar-button"
     type="button"

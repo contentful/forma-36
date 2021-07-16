@@ -4,7 +4,7 @@ import { Copy } from '@contentful/f36-icons';
 
 import cn from 'classnames';
 import { Tooltip } from '@contentful/f36-tooltip';
-import type { TooltipPlace } from '@contentful/f36-tooltip';
+import type { TooltipPlacement } from '@contentful/f36-tooltip';
 import { TabFocusTrap } from '@contentful/f36-utils';
 import styles from './CopyButton.css';
 
@@ -13,7 +13,7 @@ export interface CopyButtonProps {
   onCopy?: (value: string) => void;
   className?: string;
   testId?: string;
-  tooltipPlace?: TooltipPlace;
+  tooltipPlace?: TooltipPlacement;
   tooltipText?: React.ReactNode;
   tooltipCopiedText?: React.ReactNode;
 }
