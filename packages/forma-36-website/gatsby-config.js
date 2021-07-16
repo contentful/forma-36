@@ -13,8 +13,8 @@ module.exports = {
         link: '',
         menuLinks: [
           {
-            name: 'Color',
-            link: '/foundation/color/',
+            name: 'Color system',
+            link: '/foundation/color-system/',
           },
           {
             name: 'Typography',
