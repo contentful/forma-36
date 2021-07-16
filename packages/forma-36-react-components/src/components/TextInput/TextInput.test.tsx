@@ -4,6 +4,13 @@ import { axe } from '@/scripts/test/axeHelper';
 
 import { TextInput } from './TextInput';
 
+jest.mock('@contentful/f36-core', () => ({
+  ...jest.requireActual('@contentful/f36-core'),
+  useId: () => {
+    return 'id';
+  },
+}));
+
 it('renders the component with all required props', () => {
   const { container } = render(
     <TextInput id="someInput" name="userEmail" labelText="userEmail" />,

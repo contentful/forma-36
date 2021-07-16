@@ -6,6 +6,13 @@ import { axe } from '@/scripts/test/axeHelper';
 
 import { TextField } from './TextField';
 
+jest.mock('@contentful/f36-core', () => ({
+  ...jest.requireActual('@contentful/f36-core'),
+  useId: () => {
+    return 'id';
+  },
+}));
+
 it('renders the component', () => {
   const { container } = render(
     <TextField labelText="test" name="someComponent" id="someComponent" />,
