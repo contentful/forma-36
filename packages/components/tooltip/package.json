@@ -16,10 +16,6 @@
     "@contentful/f36-utils": "^4.0.0",
     "@contentful/f36-core": "^4.0.0"
   },
-  "devDependencies": {
-    "@contentful/f36-typography": "^4.0.0",
-    "@contentful/f36-components": "^4.0.0"
-  },
   "peerDependencies": {
     "react": ">=16.8"
   },
