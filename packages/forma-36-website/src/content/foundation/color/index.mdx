@@ -16,13 +16,13 @@ import yellowColors from '@contentful/forma-36-tokens/src/tokens/colors/scale-ye
 import whiteColors from '@contentful/forma-36-tokens/src/tokens/colors/colors-white';
 import blackColors from '@contentful/forma-36-tokens/src/tokens/colors/colors-black';
 
-This is the color system we use at Contentful.
+This is the color system we use at Contentful. There are 6 base colors, along with gray and black/white. Each color consists of 9 shades, ranging from `100` to `900`.
 
 ## Colors overview
 
 ### Semantic
 
-In some cases, it's handy to use our base semantic colors. They are aliases for the respective `500` shade of each color and hold semantic meaning.
+In rare cases, it's handy to use our base semantic colors. They are aliases for the respective `500` shade of each color and hold semantic meaning.
 
 <ColorSwatchGroup group={semanticColors} />
 
@@ -72,7 +72,7 @@ state, or showing a gentle warning message rather than an error message.
 
 ### Yellow
 
-Yellow is used very sparingly. Use only when other colors (specifically Orange or Purple) aren't applicable.
+Yellow is used very sparingly. Use only when other colors aren't applicable or are already taken in a specific context.
 
 <ColorSwatchGroup group={yellowColors} />
 
@@ -86,7 +86,7 @@ Yellow is used very sparingly. Use only when other colors (specifically Orange o
 
 ## Accessibility
 
-Each color contains 9 shades, ranging from `100` to `900`. Black text (> `grey-800`) is WCAG AA accessible on shades ranging from `100` to `400`, white text is accessible on colors from `500` to `900`. Yellow is the only color following this pattern (black is accessible on colors ranging from `100` to `700` and white on the `yellow-800` and `yellow-900`).
+Black text (anything darker than `gray-800`) is WCAG AA accessible on shades ranging from `100` to `400`, white text is accessible on colors from `500` to `900`.
 
 <ColorA11yGroup group={grayColors} />
 <ColorA11yGroup group={blueColors} />
