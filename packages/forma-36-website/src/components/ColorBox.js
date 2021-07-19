@@ -34,7 +34,7 @@ class ColorBox extends Component {
 
   render() {
     const { name, hex, textColor, size, ...otherProps } = this.props;
-    console.log(size);
+
     return (
       <div
         css={styles.container}
