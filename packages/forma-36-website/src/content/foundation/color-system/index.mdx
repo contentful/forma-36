@@ -1,5 +1,5 @@
 ---
-title: 'Color'
+title: 'Color system'
 ---
 
 import ColorSwatchGroup from '../../../components/ColorSwatchGroup';
@@ -16,17 +16,19 @@ import yellowColors from '@contentful/forma-36-tokens/src/tokens/colors/scale-ye
 import whiteColors from '@contentful/forma-36-tokens/src/tokens/colors/colors-white';
 import blackColors from '@contentful/forma-36-tokens/src/tokens/colors/colors-black';
 
-These are the colors we use at Contentful.
+This is the color system we use at Contentful. There are 6 base colors, along with gray and black/white. Each color consists of 9 shades, ranging from `100` to `900`.
 
 ## Colors overview
 
 ### Semantic
 
+In rare cases, it's handy to use our base semantic colors. They are aliases for the respective `500` shade of each color and hold semantic meaning.
+
 <ColorSwatchGroup group={semanticColors} />
 
 ### Gray
 
-Gray is our main color used for typography.
+Gray is our main color used for typography, borders and element backgrounds.
 
 <ColorSwatchGroup group={grayColors} />
 
@@ -56,6 +58,8 @@ context.
 
 ### Purple
 
+Purple is used sparingly as a generic highlight color. E.g. when highlighting premium value or trials.
+
 <ColorSwatchGroup group={purpleColors} />
 
 ### Orange
@@ -67,6 +71,8 @@ state, or showing a gentle warning message rather than an error message.
 <ColorSwatchGroup group={orangeColors} />
 
 ### Yellow
+
+Yellow is used very sparingly. Use only when other colors aren't applicable or are already taken in a specific context.
 
 <ColorSwatchGroup group={yellowColors} />
 
@@ -80,7 +86,7 @@ state, or showing a gentle warning message rather than an error message.
 
 ## Accessibility
 
-Contentful palette contains 9 values from `100` to `900`. For most of the color groups, black text is WCAG AA accessible on colors ranging from `100` to `400`, white text is accessible on colors from `500` to `900`. The only outlier is the yellow group, where black is accessible on colors ranging from `100` to `700` and white on the `yellow-800` and `yellow-900`
+Black text (anything darker than `gray-800`) is WCAG AA accessible on shades ranging from `100` to `400`, white text is accessible on colors from `500` to `900`.
 
 <ColorA11yGroup group={grayColors} />
 <ColorA11yGroup group={blueColors} />
@@ -90,7 +96,9 @@ Contentful palette contains 9 values from `100` to `900`. For most of the color 
 <ColorA11yGroup group={orangeColors} />
 <ColorA11yGroup group={yellowColors} />
 
-### A11y examples of blue color usage
+### Combining shades
+
+When combining multiple shades of the same color, keep to the following accessible combinations. The same combinations are possible across colors (with yellow being the only exception).
 
 <ColorBox
   size={15}
@@ -129,8 +137,6 @@ Contentful palette contains 9 values from `100` to `900`. For most of the color 
   textColor={blueColors['blue-500']}
 />
 
-### A11y examples of green color usage
-
 <ColorBox
   size={15}
   name="600 on 100"
@@ -167,8 +173,6 @@ Contentful palette contains 9 values from `100` to `900`. For most of the color 
   hex={grayColors['gray-100']}
   textColor={greenColors['green-500']}
 />
-
-### A11y examples of red color usage
 
 <ColorBox
   size={15}
@@ -207,8 +211,6 @@ Contentful palette contains 9 values from `100` to `900`. For most of the color 
   textColor={redColors['red-500']}
 />
 
-### A11y examples of purple color usage
-
 <ColorBox
   size={15}
   name="600 on 100"
@@ -245,8 +247,6 @@ Contentful palette contains 9 values from `100` to `900`. For most of the color 
   hex={grayColors['gray-100']}
   textColor={purpleColors['purple-500']}
 />
-
-### A11y examples of orange color usage
 
 <ColorBox
   size={15}
@@ -285,8 +285,6 @@ Contentful palette contains 9 values from `100` to `900`. For most of the color 
   textColor={orangeColors['orange-500']}
 />
 
-### A11y examples of yellow color usage
-
 <ColorBox
   size={15}
   name="800 on 100"
@@ -297,7 +295,7 @@ Contentful palette contains 9 values from `100` to `900`. For most of the color 
   size={15}
   name="800 on 200"
   hex={yellowColors['yellow-200']}
-  textColor={yellowColors['yellow-600']}
+  textColor={yellowColors['yellow-800']}
 />
 <ColorBox
   size={15}

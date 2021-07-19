@@ -9,13 +9,14 @@ const styles = {
     boxSizing: 'border-box',
     margin: tokens.spacingXs,
     width: `calc(15% - ${tokens.spacingS})`,
+    border: `1px solid ${tokens.gray200}`,
     borderRadius: `4px`,
-    boxShadow: `0 1px 2px rgba(0, 0, 0, 0.25)`,
-    position: 'relative',
+    overflow: 'hidden',
   }),
   swatch: css({
     height: '100px',
-    borderRadius: `${tokens.spacing2Xs} ${tokens.spacing2Xs} 0 0`,
+    position: 'relative',
+    zIndex: -1,
   }),
   name: css({
     fontWeight: 'bold',
