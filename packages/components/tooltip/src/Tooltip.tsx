@@ -33,7 +33,7 @@ export interface TooltipProps extends CommonProps {
   /**
    * Content of the tooltip
    */
-  content?: React.ReactNode;
+  content?: string;
   /**
    * A unique id of the tooltip
    */

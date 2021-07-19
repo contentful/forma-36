@@ -1,5 +1,5 @@
 import React from 'react';
-import { SectionHeading, Text } from '@contentful/f36-typography';
+import { SectionHeading } from '@contentful/f36-typography';
 import { Tooltip } from '../src/Tooltip';
 import { TextLink } from '../../../forma-36-react-components/src/index';
 import { Flex } from '@contentful/f36-core';
@@ -38,42 +38,6 @@ Basic.parameters = {
   docs: {
     source: {
       code: BasicSourceCode,
-    },
-  },
-};
-
-export const WithHtml = (args: { content: string }) => {
-  return (
-    <Text>
-      Lorem Ipsum dolor sit amet&nbsp;
-      <Tooltip {...args}>
-        <TextLink>Hover me</TextLink>.
-      </Tooltip>
-      &nbsp; Lorem Ipsum dolor sit amet.
-    </Text>
-  );
-};
-
-WithHtml.args = {
-  content: (
-    <>
-      I have some <b style={{ color: 'red' }}>HTML</b> in me
-    </>
-  ),
-};
-
-const WithHtmlSourceCode = `<Tooltip content={(
-  <>
-    I have some <b style={{ color: 'red' }}>HTML</b> in me
-  </>
-)}>
-  <TextLink>Hover me</TextLink>
-</Tooltip>`;
-
-WithHtml.parameters = {
-  docs: {
-    source: {
-      code: WithHtmlSourceCode,
     },
   },
 };
