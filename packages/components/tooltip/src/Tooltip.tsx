@@ -8,45 +8,46 @@ import React, {
 } from 'react';
 import { usePopper } from 'react-popper';
 import { Placement } from '@popperjs/core';
-import cn from 'classnames';
+import { cx } from 'emotion';
 import type * as CSS from 'csstype';
 
-import styles from './Tooltip.css';
+import { styles } from './Tooltip.styles';
 
 import tokens from '@contentful/f36-tokens';
 
 import { Portal } from '@contentful/f36-utils';
+import type { CommonProps } from '@contentful/f36-core';
+import { Box, useId } from '@contentful/f36-core';
 
-export type TooltipPlace = Placement;
+export type TooltipPlacement = Placement;
 
-export interface TooltipProps {
+export interface TooltipProps extends CommonProps {
   /**
    * Child nodes to be rendered in the component and that will show the tooltip when they are hovered
    */
   children: React.ReactNode;
   /**
-   * Class names to be appended to the className prop of the Tooltip wrapper
+   * HTML element used to wrap the target of the tooltip
    */
-  className?: string;
+  as?: React.ElementType;
   /**
-   * HTML element used to wrap the target of the Tooltip
+   * Content of the tooltip
    */
-  containerElement?: React.ElementType;
+  content?: string;
   /**
-   * Content of the Tooltip
+   * A unique id of the tooltip
    */
-  content?: React.ReactNode;
   id?: string;
   /**
-   * It controls the initial visibility of the Tooltip
+   * It controls the initial visibility of the tooltip
    */
   isVisible?: boolean;
   /**
-   * It sets a max-width for the Tooltip
+   * It sets a max-width for the tooltip
    */
   maxWidth?: number | CSS.Property.MaxWidth;
   /**
-   * It sets a delay period for the Tooltip
+   * It sets a delay period for the tooltip
    */
   hideDelay?: number;
   /**
@@ -66,17 +67,18 @@ export interface TooltipProps {
    */
   onMouseOver?: (evt: MouseEvent) => void;
   /**
-   * It sets the "preferred" position of the Tooltip
+   * Function that will be called when the user uses a keyboard key on the target
    */
-  place?: TooltipPlace;
+  onKeyDown?: (evt: KeyboardEvent) => void;
+
   /**
-   * Class names to be appended to the className prop of the Tooltip’s target
+   * It sets the "preferred" position of the tooltip
+   */
+  placement?: TooltipPlacement;
+  /**
+   * Class names to be appended to the className prop of the tooltip’s target
    */
   targetWrapperClassName?: string;
-  /**
-   * An ID used for testing purposes applied as a data attribute (data-test-id)
-   */
-  testId?: string;
   /**
    * Boolean to control whether or not to render the tooltip in a React Portal.
    * Rendering content inside a Portal allows the tooltip to escape the bounds
@@ -91,24 +93,25 @@ export interface TooltipProps {
 export const Tooltip = ({
   children,
   className,
-  containerElement: ContainerElement = 'span',
+  as: HtmlTag = 'span',
   content,
   id,
-  isVisible = false,
+  isVisible,
   hideDelay = 0,
   onBlur,
   onFocus,
   onMouseLeave,
   onMouseOver,
+  onKeyDown,
   targetWrapperClassName,
   maxWidth = 360,
   testId = 'cf-ui-tooltip',
-  place = 'auto',
+  placement = 'auto',
   usePortal = false,
   ...otherProps
 }: TooltipProps) => {
   const [show, setShow] = useState(false);
-
+  const tooltipId = useId(id, 'tooltip');
   const elementRef = useRef(null);
   const popperRef = useRef(null);
   const [arrowRef, setArrowRef] = useState<HTMLSpanElement | null>(null);
@@ -116,7 +119,7 @@ export const Tooltip = ({
     elementRef.current,
     popperRef.current,
     {
-      placement: place,
+      placement: placement,
       modifiers: [
         {
           name: 'arrow',
@@ -164,20 +167,21 @@ export const Tooltip = ({
 
   if (!content) {
     return (
-      <ContainerElement className={targetWrapperClassName}>
+      <Box as={HtmlTag} className={targetWrapperClassName}>
         {children}
-      </ContainerElement>
+      </Box>
     );
   }
 
   const tooltip = (
-    <span
-      id={id}
+    <Box
+      as="span"
+      id={tooltipId}
       ref={popperRef}
       role="tooltip"
       style={contentStyles}
-      className={cn(styles.Tooltip, className)}
-      data-test-id={testId}
+      className={cx(styles.tooltip, className)}
+      testId={testId}
       onMouseEnter={() => {
         setIsHoveringContent(true);
       }}
@@ -188,21 +192,23 @@ export const Tooltip = ({
     >
       <span>{content}</span>
       <span
-        className={styles['Tooltip__arrow']}
+        className={styles.tooltipArrow}
         data-placement={
           attributes.popper && attributes.popper['data-popper-placement']
         }
         ref={setArrowRef}
         style={popperStyles.arrow}
       />
-    </span>
+    </Box>
   );
 
   return (
     <>
-      <ContainerElement
+      {show ? <>{usePortal ? <Portal>{tooltip}</Portal> : tooltip}</> : null}
+      <Box
+        as={HtmlTag}
         ref={elementRef}
-        className={cn(styles.TooltipContainer, targetWrapperClassName)}
+        className={cx(styles.tooltipContainer, targetWrapperClassName)}
         onMouseEnter={(evt: MouseEvent) => {
           setIsHoveringTarget(true);
           if (onMouseOver) onMouseOver(evt);
@@ -219,12 +225,25 @@ export const Tooltip = ({
           setTimeout(() => setIsHoveringTarget(false), hideDelay);
           if (onBlur) onBlur(evt);
         }}
+        onKeyDown={(evt: KeyboardEvent) => {
+          if (evt.key === 'Escape') {
+            setTimeout(() => setIsHoveringTarget(false), hideDelay);
+          }
+          if (onKeyDown) onKeyDown(evt);
+        }}
         {...otherProps}
       >
-        {children}
-      </ContainerElement>
-
-      {show ? <>{usePortal ? <Portal>{tooltip}</Portal> : tooltip}</> : null}
+        {React.Children.map<React.ReactNode, React.ReactNode>(
+          children,
+          (child) => {
+            if (React.isValidElement(child)) {
+              return React.cloneElement(child, {
+                'aria-describedby': tooltipId,
+              });
+            }
+          },
+        )}
+      </Box>
     </>
   );
 };

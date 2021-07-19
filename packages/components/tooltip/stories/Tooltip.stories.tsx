@@ -1,7 +1,7 @@
 import React from 'react';
-import { SectionHeading, Text } from '@contentful/f36-typography';
-import { Tooltip } from './Tooltip';
-import { TextLink } from '../TextLink';
+import { SectionHeading } from '@contentful/f36-typography';
+import { Tooltip } from '../src/Tooltip';
+import { TextLink } from '../../../forma-36-react-components/src/index';
 import { Flex } from '@contentful/f36-core';
 
 export default {
@@ -38,42 +38,6 @@ Basic.parameters = {
   docs: {
     source: {
       code: BasicSourceCode,
-    },
-  },
-};
-
-export const WithHtml = (args: { content: string }) => {
-  return (
-    <Text>
-      Lorem Ipsum dolor sit amet&nbsp;
-      <Tooltip {...args}>
-        <TextLink>Hover me</TextLink>.
-      </Tooltip>
-      &nbsp; Lorem Ipsum dolor sit amet.
-    </Text>
-  );
-};
-
-WithHtml.args = {
-  content: (
-    <>
-      I have some <b style={{ color: 'red' }}>HTML</b> in me
-    </>
-  ),
-};
-
-const WithHtmlSourceCode = `<Tooltip content={(
-  <>
-    I have some <b style={{ color: 'red' }}>HTML</b> in me
-  </>
-)}>
-  <TextLink>Hover me</TextLink>
-</Tooltip>`;
-
-WithHtml.parameters = {
-  docs: {
-    source: {
-      code: WithHtmlSourceCode,
     },
   },
 };
@@ -128,58 +92,6 @@ AutoPlacement.parameters = {
   },
 };
 
-export const ContentHover = (args: { content: string }) => {
-  return (
-    <Text>
-      Lorem Ipsum dolor sit amet&nbsp;
-      <Tooltip {...args}>
-        <TextLink>Hover me</TextLink>.
-      </Tooltip>
-      &nbsp; Lorem Ipsum dolor sit amet.
-    </Text>
-  );
-};
-
-ContentHover.args = {
-  hideDelay: 300,
-  content: (
-    <>
-      You can interact with the content in me
-      <br />
-      <button type="button">Button</button>
-      <br />
-      <a
-        style={{ color: 'white' }}
-        href="/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Click me!
-      </a>
-    </>
-  ),
-};
-
-const ContentHoverSourceCode = `<Tooltip hideDelay={300} content={(
-  <>
-    You can interact with the content in me
-    <br />
-    <button type="button">Button</button>
-    <br />
-    <a style={{ color: 'white' }} href="/" target="_blank" rel="noopener noreferrer">Click me!</a>
-  </>
-)}>
-  <TextLink>Hover me</TextLink>
-</Tooltip>`;
-
-ContentHover.parameters = {
-  docs: {
-    source: {
-      code: ContentHoverSourceCode,
-    },
-  },
-};
-
 export const Overview = () => {
   return (
     <>
@@ -187,7 +99,7 @@ export const Overview = () => {
         <SectionHeading as="h3">Tooltip disabled</SectionHeading>
       </Flex>
       <Flex marginBottom="spacingS">
-        <Tooltip content="I am a Tooltip 🙌" maxWidth={360} place="top">
+        <Tooltip content="I am a Tooltip 🙌" maxWidth={360} placement="top">
           <TextLink disabled iconPosition="left" linkType="primary">
             Hover me
           </TextLink>
@@ -201,7 +113,7 @@ export const Overview = () => {
         <Tooltip
           content="I am a Tooltip 🙌"
           maxWidth={360}
-          place="left"
+          placement="left"
           isVisible
         >
           <TextLink disabled={false} iconPosition="left" linkType="primary">
@@ -217,7 +129,7 @@ export const Overview = () => {
         <Tooltip
           content="I am a Tooltip 🙌"
           maxWidth={360}
-          place="right"
+          placement="right"
           isVisible
         >
           <TextLink disabled={false} iconPosition="left" linkType="primary">
@@ -232,7 +144,7 @@ export const Overview = () => {
         <Tooltip
           content="I am a Tooltip 🙌"
           maxWidth={360}
-          place="top"
+          placement="top"
           isVisible
         >
           <TextLink disabled={false} iconPosition="left" linkType="primary">
@@ -247,7 +159,7 @@ export const Overview = () => {
         <Tooltip
           content="I am a Tooltip 🙌"
           maxWidth={360}
-          place="bottom"
+          placement="bottom"
           isVisible
         >
           <TextLink disabled={false} iconPosition="left" linkType="primary">

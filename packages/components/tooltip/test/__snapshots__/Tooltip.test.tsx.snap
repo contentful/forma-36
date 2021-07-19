@@ -1,0 +1,443 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`does not render the component if no mouseover event on child 1`] = `
+.emotion-0 > button[disabled] {
+  pointer-events: none;
+}
+
+<span
+  class="emotion-0"
+>
+  <span
+    aria-describedby="id"
+  >
+    Hover me
+  </span>
+</span>
+`;
+
+exports[`renders the component 1`] = `
+.emotion-1 {
+  background: #192532;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.75rem;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.5;
+  padding: 0.5rem calc(1rem * (10 / 16));
+  border-radius: 6px;
+  white-space: normal;
+}
+
+.emotion-0 {
+  position: absolute;
+}
+
+.emotion-0[data-placement*="top"] {
+  bottom: 0;
+  left: 0;
+  margin-bottom: calc(-1 * ((1rem * (10 / 16)) / 2));
+}
+
+.emotion-0[data-placement*="right"] {
+  left: 0;
+  margin-left: calc(-1 * ((1rem * (10 / 16)) / 2));
+}
+
+.emotion-0[data-placement*="bottom"] {
+  left: 0;
+  top: 0;
+  margin-top: calc(-1 * ((1rem * (10 / 16)) / 2));
+}
+
+.emotion-0[data-placement*="left"] {
+  right: 0;
+  margin-right: calc(-1 * ((1rem * (10 / 16)) / 2));
+}
+
+.emotion-0::before {
+  content: "";
+  display: block;
+  height: calc(1rem * (10 / 16));
+  width: calc(1rem * (10 / 16));
+  background-color: #192532;
+  -webkit-transform: rotate3d(0,0,1,45deg);
+  -ms-transform: rotate3d(0,0,1,45deg);
+  transform: rotate3d(0,0,1,45deg);
+  z-index: -1;
+}
+
+<span
+  class="emotion-1"
+  data-test-id="cf-ui-tooltip"
+  id="id"
+  role="tooltip"
+  style="z-index: 10000; max-width: 360px; position: absolute; left: 0px; top: 0px;"
+>
+  <span>
+    Tooltip content
+  </span>
+  <span
+    class="emotion-0"
+  />
+</span>
+`;
+
+exports[`renders the component as span with a id attribute 1`] = `
+.emotion-1 {
+  background: #192532;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.75rem;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.5;
+  padding: 0.5rem calc(1rem * (10 / 16));
+  border-radius: 6px;
+  white-space: normal;
+}
+
+.emotion-0 {
+  position: absolute;
+}
+
+.emotion-0[data-placement*="top"] {
+  bottom: 0;
+  left: 0;
+  margin-bottom: calc(-1 * ((1rem * (10 / 16)) / 2));
+}
+
+.emotion-0[data-placement*="right"] {
+  left: 0;
+  margin-left: calc(-1 * ((1rem * (10 / 16)) / 2));
+}
+
+.emotion-0[data-placement*="bottom"] {
+  left: 0;
+  top: 0;
+  margin-top: calc(-1 * ((1rem * (10 / 16)) / 2));
+}
+
+.emotion-0[data-placement*="left"] {
+  right: 0;
+  margin-right: calc(-1 * ((1rem * (10 / 16)) / 2));
+}
+
+.emotion-0::before {
+  content: "";
+  display: block;
+  height: calc(1rem * (10 / 16));
+  width: calc(1rem * (10 / 16));
+  background-color: #192532;
+  -webkit-transform: rotate3d(0,0,1,45deg);
+  -ms-transform: rotate3d(0,0,1,45deg);
+  transform: rotate3d(0,0,1,45deg);
+  z-index: -1;
+}
+
+<span
+  class="emotion-1"
+  data-test-id="cf-ui-tooltip"
+  id="id"
+  role="tooltip"
+  style="z-index: 10000; max-width: 360px; position: absolute; left: 0px; top: 0px;"
+>
+  <span>
+    Tooltip content
+  </span>
+  <span
+    class="emotion-0"
+  />
+</span>
+`;
+
+exports[`renders the component with a id attribute 1`] = `
+.emotion-1 {
+  background: #192532;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.75rem;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.5;
+  padding: 0.5rem calc(1rem * (10 / 16));
+  border-radius: 6px;
+  white-space: normal;
+}
+
+.emotion-0 {
+  position: absolute;
+}
+
+.emotion-0[data-placement*="top"] {
+  bottom: 0;
+  left: 0;
+  margin-bottom: calc(-1 * ((1rem * (10 / 16)) / 2));
+}
+
+.emotion-0[data-placement*="right"] {
+  left: 0;
+  margin-left: calc(-1 * ((1rem * (10 / 16)) / 2));
+}
+
+.emotion-0[data-placement*="bottom"] {
+  left: 0;
+  top: 0;
+  margin-top: calc(-1 * ((1rem * (10 / 16)) / 2));
+}
+
+.emotion-0[data-placement*="left"] {
+  right: 0;
+  margin-right: calc(-1 * ((1rem * (10 / 16)) / 2));
+}
+
+.emotion-0::before {
+  content: "";
+  display: block;
+  height: calc(1rem * (10 / 16));
+  width: calc(1rem * (10 / 16));
+  background-color: #192532;
+  -webkit-transform: rotate3d(0,0,1,45deg);
+  -ms-transform: rotate3d(0,0,1,45deg);
+  transform: rotate3d(0,0,1,45deg);
+  z-index: -1;
+}
+
+<span
+  class="emotion-1"
+  data-test-id="cf-ui-tooltip"
+  id="id"
+  role="tooltip"
+  style="z-index: 10000; max-width: 360px; position: absolute; left: 0px; top: 0px;"
+>
+  <span>
+    Tooltip content
+  </span>
+  <span
+    class="emotion-0"
+  />
+</span>
+`;
+
+exports[`renders the component with a place attribute 1`] = `
+.emotion-1 {
+  background: #192532;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.75rem;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.5;
+  padding: 0.5rem calc(1rem * (10 / 16));
+  border-radius: 6px;
+  white-space: normal;
+}
+
+.emotion-0 {
+  position: absolute;
+}
+
+.emotion-0[data-placement*="top"] {
+  bottom: 0;
+  left: 0;
+  margin-bottom: calc(-1 * ((1rem * (10 / 16)) / 2));
+}
+
+.emotion-0[data-placement*="right"] {
+  left: 0;
+  margin-left: calc(-1 * ((1rem * (10 / 16)) / 2));
+}
+
+.emotion-0[data-placement*="bottom"] {
+  left: 0;
+  top: 0;
+  margin-top: calc(-1 * ((1rem * (10 / 16)) / 2));
+}
+
+.emotion-0[data-placement*="left"] {
+  right: 0;
+  margin-right: calc(-1 * ((1rem * (10 / 16)) / 2));
+}
+
+.emotion-0::before {
+  content: "";
+  display: block;
+  height: calc(1rem * (10 / 16));
+  width: calc(1rem * (10 / 16));
+  background-color: #192532;
+  -webkit-transform: rotate3d(0,0,1,45deg);
+  -ms-transform: rotate3d(0,0,1,45deg);
+  transform: rotate3d(0,0,1,45deg);
+  z-index: -1;
+}
+
+<span
+  class="emotion-1"
+  data-test-id="cf-ui-tooltip"
+  id="id"
+  role="tooltip"
+  style="z-index: 10000; max-width: 360px; position: absolute; left: 0px; top: 0px;"
+>
+  <span>
+    Tooltip content
+  </span>
+  <span
+    class="emotion-0"
+  />
+</span>
+`;
+
+exports[`renders the component with a target wrapper classname 1`] = `
+.emotion-1 {
+  background: #192532;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.75rem;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.5;
+  padding: 0.5rem calc(1rem * (10 / 16));
+  border-radius: 6px;
+  white-space: normal;
+}
+
+.emotion-0 {
+  position: absolute;
+}
+
+.emotion-0[data-placement*="top"] {
+  bottom: 0;
+  left: 0;
+  margin-bottom: calc(-1 * ((1rem * (10 / 16)) / 2));
+}
+
+.emotion-0[data-placement*="right"] {
+  left: 0;
+  margin-left: calc(-1 * ((1rem * (10 / 16)) / 2));
+}
+
+.emotion-0[data-placement*="bottom"] {
+  left: 0;
+  top: 0;
+  margin-top: calc(-1 * ((1rem * (10 / 16)) / 2));
+}
+
+.emotion-0[data-placement*="left"] {
+  right: 0;
+  margin-right: calc(-1 * ((1rem * (10 / 16)) / 2));
+}
+
+.emotion-0::before {
+  content: "";
+  display: block;
+  height: calc(1rem * (10 / 16));
+  width: calc(1rem * (10 / 16));
+  background-color: #192532;
+  -webkit-transform: rotate3d(0,0,1,45deg);
+  -ms-transform: rotate3d(0,0,1,45deg);
+  transform: rotate3d(0,0,1,45deg);
+  z-index: -1;
+}
+
+<span
+  class="emotion-1"
+  data-test-id="cf-ui-tooltip"
+  id="id"
+  role="tooltip"
+  style="z-index: 10000; max-width: 360px; position: absolute; left: 0px; top: 0px;"
+>
+  <span>
+    Tooltip content
+  </span>
+  <span
+    class="emotion-0"
+  />
+</span>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+.emotion-1 {
+  background: #192532;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.75rem;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  color: #ffffff;
+  text-align: center;
+  line-height: 1.5;
+  padding: 0.5rem calc(1rem * (10 / 16));
+  border-radius: 6px;
+  white-space: normal;
+}
+
+.emotion-0 {
+  position: absolute;
+}
+
+.emotion-0[data-placement*="top"] {
+  bottom: 0;
+  left: 0;
+  margin-bottom: calc(-1 * ((1rem * (10 / 16)) / 2));
+}
+
+.emotion-0[data-placement*="right"] {
+  left: 0;
+  margin-left: calc(-1 * ((1rem * (10 / 16)) / 2));
+}
+
+.emotion-0[data-placement*="bottom"] {
+  left: 0;
+  top: 0;
+  margin-top: calc(-1 * ((1rem * (10 / 16)) / 2));
+}
+
+.emotion-0[data-placement*="left"] {
+  right: 0;
+  margin-right: calc(-1 * ((1rem * (10 / 16)) / 2));
+}
+
+.emotion-0::before {
+  content: "";
+  display: block;
+  height: calc(1rem * (10 / 16));
+  width: calc(1rem * (10 / 16));
+  background-color: #192532;
+  -webkit-transform: rotate3d(0,0,1,45deg);
+  -ms-transform: rotate3d(0,0,1,45deg);
+  transform: rotate3d(0,0,1,45deg);
+  z-index: -1;
+}
+
+<span
+  class="extra-class-name emotion-1"
+  data-test-id="cf-ui-tooltip"
+  id="id"
+  role="tooltip"
+  style="z-index: 10000; max-width: 360px; position: absolute; left: 0px; top: 0px;"
+>
+  <span>
+    Tooltip content
+  </span>
+  <span
+    class="emotion-0"
+  />
+</span>
+`;

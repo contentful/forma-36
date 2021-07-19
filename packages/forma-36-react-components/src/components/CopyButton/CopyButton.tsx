@@ -3,8 +3,8 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 import { Copy } from '@contentful/f36-icons';
 
 import cn from 'classnames';
-import { Tooltip } from '../Tooltip';
-import type { TooltipPlace } from '../Tooltip';
+import { Tooltip } from '@contentful/f36-tooltip';
+import type { TooltipPlacement } from '@contentful/f36-tooltip';
 import { TabFocusTrap } from '@contentful/f36-utils';
 import styles from './CopyButton.css';
 
@@ -13,9 +13,9 @@ export interface CopyButtonProps {
   onCopy?: (value: string) => void;
   className?: string;
   testId?: string;
-  tooltipPlace?: TooltipPlace;
-  tooltipText?: React.ReactNode;
-  tooltipCopiedText?: React.ReactNode;
+  tooltipPlace?: TooltipPlacement;
+  tooltipText?: string;
+  tooltipCopiedText?: string;
 }
 
 export function CopyButton({
@@ -24,12 +24,8 @@ export function CopyButton({
   testId = 'cf-ui-copy-button',
   onCopy,
   tooltipPlace,
-  tooltipText = (
-    <React.Fragment>
-      Copy to <br /> clipboard
-    </React.Fragment>
-  ),
-  tooltipCopiedText = <React.Fragment>Copied!</React.Fragment>,
+  tooltipText = 'Copy to clipboard',
+  tooltipCopiedText = 'Copied!',
   ...otherProps
 }: CopyButtonProps) {
   const [copied, setCopied] = useState<boolean>(false);
@@ -66,14 +62,8 @@ export function CopyButton({
     >
       <CopyToClipboard text={copyValue || ''} onCopy={handleCopy}>
         <Tooltip
-          place={tooltipPlace}
-          content={
-            copied ? (
-              <span>{tooltipCopiedText}</span>
-            ) : (
-              <span>{tooltipText}</span>
-            )
-          }
+          placement={tooltipPlace}
+          content={copied ? tooltipCopiedText : tooltipText}
         >
           <button
             type="button"
