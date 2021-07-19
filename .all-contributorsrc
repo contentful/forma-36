@@ -293,7 +293,8 @@
       "avatar_url": "https://avatars0.githubusercontent.com/u/2056251?v=4",
       "profile": "https://github.com/OriginalEXE",
       "contributions": [
-        "code"
+        "code",
+        "bug"
       ]
     },
     {
@@ -365,7 +366,8 @@
       "avatar_url": "https://avatars0.githubusercontent.com/u/16481282?v=4",
       "profile": "https://github.com/heyitstowler",
       "contributions": [
-        "code"
+        "code",
+        "bug"
       ]
     },
     {
@@ -588,6 +590,15 @@
       "profile": "https://github.com/janvandenberg",
       "contributions": [
         "code"
+      ]
+    },
+    {
+      "login": "SirGavin",
+      "name": "SirGavin",
+      "avatar_url": "https://avatars.githubusercontent.com/u/11873876?v=4",
+      "profile": "https://github.com/SirGavin",
+      "contributions": [
+        "bug"
       ]
     }
   ],

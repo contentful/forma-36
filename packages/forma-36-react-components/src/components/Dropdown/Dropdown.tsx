@@ -148,13 +148,20 @@ export interface DropdownProps {
    * Autocomplete component for an actual example of this usage.
    */
   nonClosingRefs?: RefObject<HTMLElement>[];
+
+  /**
+   * Boolean to focus DropdownContainer on open
+   *
+   * Defaults to `true`
+   */
+  focusContainerOnOpen?: boolean;
 }
 
 export function Dropdown({
   children,
   className,
   dropdownContainerClassName,
-  getContainerRef = () => {},
+  getContainerRef,
   isAutoalignmentEnabled = true,
   isFullWidth,
   isOpen: isOpenProp = false,
@@ -165,6 +172,7 @@ export function Dropdown({
   toggleElement,
   usePortal,
   nonClosingRefs,
+  focusContainerOnOpen = true,
   ...otherProps
 }: DropdownProps) {
   const [referenceElement, setReferenceElement] = useState<HTMLElement | null>(
@@ -283,6 +291,7 @@ export function Dropdown({
           ref={setPopperElement}
           style={popperStyles.popper}
           submenu
+          focusContainerOnOpen={focusContainerOnOpen}
           usePortal={usePortal}
           {...attributes.popper}
         >
@@ -315,6 +324,7 @@ export function Dropdown({
           ref={setPopperElement}
           style={popperStyles.popper}
           submenu={false}
+          focusContainerOnOpen={focusContainerOnOpen}
           testId={containerTestId}
           usePortal={usePortal}
           {...attributes.popper}
