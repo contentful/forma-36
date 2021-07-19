@@ -60,12 +60,14 @@ export const DropdownContainer = forwardRef<
   });
 
   useEffect(() => {
-    if (focusContainerOnOpen) {
-      dropdown.current?.focus();
-    }
-
     if (getRef && dropdown.current) {
       getRef(dropdown.current);
+    }
+
+    if (focusContainerOnOpen) {
+      dropdown.current?.focus({
+        preventScroll: true,
+      });
     }
   }, [getRef, focusContainerOnOpen]);
 
