@@ -24,12 +24,8 @@ export function CopyButton({
   testId = 'cf-ui-copy-button',
   onCopy,
   tooltipPlace,
-  tooltipText = (
-    <React.Fragment>
-      Copy to <br /> clipboard
-    </React.Fragment>
-  ),
-  tooltipCopiedText = <React.Fragment>Copied!</React.Fragment>,
+  tooltipText = 'Copy to clipboard',
+  tooltipCopiedText = 'Copied!',
   ...otherProps
 }: CopyButtonProps) {
   const [copied, setCopied] = useState<boolean>(false);
