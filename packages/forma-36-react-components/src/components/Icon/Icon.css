@@ -46,7 +46,7 @@
 }
 
 .Icon--muted {
-  fill: var(--color-text-light);
+  fill: var(--gray-500);
 }
 
 .Icon--white {
