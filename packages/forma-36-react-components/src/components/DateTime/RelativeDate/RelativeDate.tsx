@@ -18,7 +18,7 @@ export interface RelativeDateProps {
 /**
  * Expresses a historical or upcoming date as a relative date/date time
  *
- * Forma36 usage guidelines: https://f36.contentful.com/guidelines/date-and-time/
+ * Forma 36 usage guidelines: https://f36.contentful.com/guidelines/date-and-time/
  */
 export const RelativeDate: React.FC<RelativeDateProps> = ({
   date,
