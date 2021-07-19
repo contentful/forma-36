@@ -67,13 +67,7 @@ export function CopyButton({
       <CopyToClipboard text={copyValue || ''} onCopy={handleCopy}>
         <Tooltip
           placement={tooltipPlace}
-          content={
-            copied ? (
-              <span>{tooltipCopiedText}</span>
-            ) : (
-              <span>{tooltipText}</span>
-            )
-          }
+          content={copied ? tooltipCopiedText : tooltipText}
         >
           <button
             type="button"
