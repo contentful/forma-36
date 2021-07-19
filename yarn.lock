@@ -3256,10 +3256,10 @@
     "@parcel/utils" "2.0.0-beta.2"
     astring "^1.6.2"
 
-"@parcel/babel-plugin-transform-runtime@2.0.0-beta.2":
-  version "2.0.0-beta.2"
-  resolved "https://registry.yarnpkg.com/@parcel/babel-plugin-transform-runtime/-/babel-plugin-transform-runtime-2.0.0-beta.2.tgz#cfd168ec438c2473e79a9d00ee10d07f9ed2d544"
-  integrity sha512-GzbO8p705uXDaysF/9SEdo8pcyZYCsILFcJwTs9r4FjYc8bdwAlyZuxBMgCulWaJxUMAjJnx/d72xNZJv2bA4A==
+"@parcel/babel-plugin-transform-runtime@2.0.0-nightly.1823":
+  version "2.0.0-nightly.1823"
+  resolved "https://registry.yarnpkg.com/@parcel/babel-plugin-transform-runtime/-/babel-plugin-transform-runtime-2.0.0-nightly.1823.tgz#d33fbee16a96d0ef3e6199bf7a09081506b14ca9"
+  integrity sha512-jKl+ARPhOWVQfber+s9zmdWli4xOx8lXGOKLRR2FxunGdIA6ZZZ1TmNgGCM0PB9Ui6iSDZ9SzJ4FAVsGjckJrg==
   dependencies:
     "@babel/plugin-transform-runtime" "^7.8.3"
     semver "^5.4.1"
