@@ -14,8 +14,8 @@ export interface CopyButtonProps {
   className?: string;
   testId?: string;
   tooltipPlace?: TooltipPlacement;
-  tooltipText?: React.ReactNode;
-  tooltipCopiedText?: React.ReactNode;
+  tooltipText?: string;
+  tooltipCopiedText?: string;
 }
 
 export function CopyButton({
