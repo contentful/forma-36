@@ -2507,7 +2507,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-- **LineChart:** LineChart removed from Forma36 ([8e9b74c](https://github.com/contentful/forma-36/commit/8e9b74c))
+- **LineChart:** LineChart removed from Forma 36 ([8e9b74c](https://github.com/contentful/forma-36/commit/8e9b74c))
 
 # [2.5.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@2.4.1...@contentful/forma-36-react-components@2.5.0) (2019-02-20)
 

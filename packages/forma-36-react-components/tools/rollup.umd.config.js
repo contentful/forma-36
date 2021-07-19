@@ -24,7 +24,7 @@ function getConfig(environment) {
           'react-dom': 'ReactDOM',
         },
         format: 'umd',
-        name: 'Forma36',
+        name: 'Forma 36',
         exports: 'named',
       },
     ],
