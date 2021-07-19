@@ -9,6 +9,5 @@ updates:
     target-branch: master
     labels:
       - dependencies
-      - dependabot
     commit-message:
       prefix: chore
