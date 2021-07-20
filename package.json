@@ -95,7 +95,6 @@
     "babel-plugin-add-react-displayname": "^0.0.5",
     "babel-plugin-css-modules-transform": "^1.6.2",
     "babel-plugin-external-helpers": "^6.22.0",
-    "babel-plugin-inline-react-svg": "^1.1.0",
     "babel-plugin-macros": "^2.5.0",
     "babel-plugin-react-remove-properties": "^0.3.0",
     "babel-plugin-transform-glob-import": "^1.0.1",
