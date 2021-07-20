@@ -8,6 +8,7 @@ import {
   FormLabel,
   ValidationMessage,
 } from '@contentful/forma-36-react-components';
+import 'pikaday/css/pikaday.css';
 
 const styles = {
   datePickerWrapper: css({

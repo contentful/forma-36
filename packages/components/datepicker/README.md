@@ -1,3 +1,37 @@
-# @contentful/forma-36-react-datepicker
+---
+title: 'Datepicker'
+type: 'component'
+status: 'stable'
+slug: /components/datepicker/
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/datepicker'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-datepicker--default'
+---
 
-This package is part of [forma-36](https://github.com/contentful/forma-36). See the repo for more details.
+`Datepicker` composes the `TextInput` component with a datepicker. It allows users to select dates through a recognizable calendar view.
+
+## Table of contents
+
+- [How to use Datepicker](#how-to-use-datepicker)
+- [Code examples](#code-examples)
+- [Component variations](#component-variations)
+- [Accessibility](#accessibility)
+
+## How to use Datepicker
+
+The TextField component can be configured in a number of different ways. Use this guidance to determine the correct variation based on the context.
+
+## Code examples
+
+```tsx
+<Datepicker />
+```
+
+### Formatting displayed dates
+
+```tsx
+<Datepicker dateFormat="YYYY-MM-DD" value={new Date(1990, 5, 15)} />
+```
+
+## Accessibility
+
+- To ensure `TextInput` meets accessibility standards, provide `labelText`, `name` and `id`
