@@ -30,7 +30,7 @@ const scaleBlue = {
   'blue-700': '#0041AB',
   'blue-800': '#003298',
   'blue-900': '#002A8E',
-}
+};
 ```
 
 Old tokens mapped to the new ones:
@@ -42,10 +42,11 @@ const colorsBlue = {
   'color-blue-mid': scaleBlue['blue-500'],
   'color-blue-base': scaleBlue['blue-600'],
   'color-blue-dark': scaleBlue['blue-700'],
-}
+};
 ```
 
 And the final result:
+
 ```js
 {
   "color-blue-lightest":"#E8F5FF",
