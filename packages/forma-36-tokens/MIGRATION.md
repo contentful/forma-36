@@ -33,7 +33,7 @@ const scaleBlue = {
 }
 ```
 
-Old tokens mapped to the new once:
+Old tokens mapped to the new ones:
 
 ```js
 const colorsBlue = {
