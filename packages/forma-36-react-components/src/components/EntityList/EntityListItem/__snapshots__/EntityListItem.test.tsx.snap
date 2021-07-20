@@ -1011,7 +1011,7 @@ exports[`renders the component with a drag handle 1`] = `
   data-test-id="cf-ui-entity-list-item"
 >
   <div
-    class="emotion-2"
+    class="emotion-2 EntityListItem__dragHandle"
     testid="cf-ui-drag-handle"
   >
     <svg

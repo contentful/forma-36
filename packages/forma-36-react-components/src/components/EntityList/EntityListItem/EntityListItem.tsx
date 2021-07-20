@@ -175,6 +175,7 @@ export function EntityListItem({
     } else if (withDragHandle) {
       return (
         <DragHandle
+          className={styles['EntityListItem__dragHandle']}
           isActive={isDragActive}
           label="Reorder entry"
           {...cardDragHandleProps}

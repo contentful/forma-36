@@ -112,3 +112,8 @@
   display: flex;
   align-items: center;
 }
+
+.EntityListItem__dragHandle {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}

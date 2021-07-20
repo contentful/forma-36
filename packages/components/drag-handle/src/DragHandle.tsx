@@ -42,6 +42,7 @@ export type DragHandleProps = CommonProps & DragHandleInternalProps;
 export const DragHandle = forwardRef<HTMLDivElement, DragHandleProps>(
   function DragHandle(
     {
+      className,
       isActive,
       isFocused: isFocusedProp,
       isHovered: isHoveredProp,
@@ -78,6 +79,7 @@ export const DragHandle = forwardRef<HTMLDivElement, DragHandleProps>(
         className={cx(
           styles.root,
           generateStyles({ isActive, isFocused, isHovered }),
+          className,
         )}
         onBlur={handleBlur}
         onFocus={handleFocus}
