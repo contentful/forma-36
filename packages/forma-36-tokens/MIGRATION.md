@@ -60,8 +60,7 @@ import tokens from '@contentful/forma-36-tokens';
 
 const styles = {
   background: tokens.colorElementLight,
-}
-
+};
 ```
 
 will be transformed to:
@@ -71,8 +70,7 @@ import tokens from '@contentful/forma-36-tokens';
 
 const styles = {
   background: tokens.gray200,
-}
-
+};
 ```
 
 We make sure that all the tokens are correctly migrated to the new namespaces for you. Just run the command, sit back, and relax 🙂
