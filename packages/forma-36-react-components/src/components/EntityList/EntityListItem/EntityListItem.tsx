@@ -1,11 +1,16 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState } from 'react';
 import cn from 'classnames';
 import type { MouseEventHandler } from 'react';
 import { EntityStatusBadge } from '@contentful/f36-badge';
 import type { EntityStatus, PickUnion } from '@contentful/f36-core';
 import { Asset, Entry, Release } from '@contentful/f36-icons';
+import { DragHandle } from '@contentful/f36-drag-handle';
+import type { DragHandleProps } from '@contentful/f36-drag-handle';
+import { Button } from '@contentful/f36-button';
+import { MoreHorizontal } from '@contentful/f36-icons';
 
-import { CardActions, CardDragHandle, CardDragHandleProps } from '../../Card';
+import { Dropdown } from '../../Dropdown';
+
 import {
   SkeletonBodyText,
   SkeletonContainer,
@@ -67,7 +72,7 @@ export interface EntityListItemProps {
   /**
    * Props to pass down to the default CardDragHandle component (does not work with cardDragHandleComponent prop)
    */
-  cardDragHandleProps?: Partial<CardDragHandleProps>;
+  cardDragHandleProps?: Partial<DragHandleProps>;
   /**
    * An entity can either be an Entry, an Asset or a Release. This prop will apply styling based on if the entity is an asset, a release or an entry
    *
@@ -122,6 +127,8 @@ export function EntityListItem({
   isActionsDisabled = false,
   ...otherProps
 }: EntityListItemProps): React.ReactElement {
+  const [isActionsDropdownOpen, setIsActionsDropdownOpen] = useState(false);
+
   const renderIcon = useCallback(() => {
     const iconMap = {
       asset: Asset,
@@ -167,9 +174,11 @@ export function EntityListItem({
       return cardDragHandleComponent;
     } else if (withDragHandle) {
       return (
-        <CardDragHandle isDragActive={isDragActive} {...cardDragHandleProps}>
-          Reorder entry
-        </CardDragHandle>
+        <DragHandle
+          isActive={isDragActive}
+          label="Reorder entry"
+          {...cardDragHandleProps}
+        />
       );
     }
   }, [
@@ -178,6 +187,14 @@ export function EntityListItem({
     isDragActive,
     withDragHandle,
   ]);
+
+  const handleActionClick = useCallback(
+    (event) => {
+      event.preventDefault();
+      setIsActionsDropdownOpen(!isActionsDropdownOpen);
+    },
+    [isActionsDropdownOpen, setIsActionsDropdownOpen],
+  );
 
   const classNames = cn(styles.EntityListItem, className, {
     [styles['EntityListItem--drag-active']]: isDragActive,
@@ -197,7 +214,11 @@ export function EntityListItem({
         renderLoadingCard()
       ) : (
         <Element
-          className={styles['EntityListItem__inner']}
+          className={cn(styles['EntityListItem__inner'], {
+            [styles[
+              'EntityListItem__inner--with-actions'
+            ]]: dropdownListElements,
+          })}
           onClick={onClick}
           href={href}
           tabIndex={onClick && 0}
@@ -231,15 +252,55 @@ export function EntityListItem({
               {status && renderStatus(status)}
 
               {dropdownListElements && (
-                <CardActions
+                <Dropdown
                   className={styles['EntityListItem__actions']}
-                  isDisabled={isActionsDisabled}
-                  iconButtonProps={{
-                    onClick: (e) => e.stopPropagation,
+                  isOpen={isActionsDropdownOpen}
+                  onClose={() => {
+                    setIsActionsDropdownOpen(false);
                   }}
+                  position="bottom-right"
+                  toggleElement={
+                    <Button
+                      disabled={isActionsDisabled}
+                      icon={MoreHorizontal}
+                      label="Actions"
+                      onClick={handleActionClick}
+                      variant="transparent"
+                    />
+                  }
+                  usePortal
                 >
-                  {dropdownListElements}
-                </CardActions>
+                  {React.Children.map(
+                    dropdownListElements,
+                    (listItems: React.ReactElement) => {
+                      return React.Children.map(
+                        listItems,
+                        (item: React.ReactElement) => {
+                          const resolvedChildren =
+                            item.type === React.Fragment
+                              ? item.props.children
+                              : item;
+
+                          const enhancedChildren = React.Children.map(
+                            resolvedChildren,
+                            (child: React.ReactElement) =>
+                              React.cloneElement(child, {
+                                onClick: (event) => {
+                                  if (child.props.onClick) {
+                                    child.props.onClick(event);
+                                  }
+                                  setIsActionsDropdownOpen(false);
+                                  event.stopPropagation();
+                                },
+                              }),
+                          );
+
+                          return enhancedChildren;
+                        },
+                      );
+                    },
+                  )}
+                </Dropdown>
               )}
             </div>
           </TabFocusTrap>

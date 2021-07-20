@@ -39,6 +39,10 @@
   text-decoration: none;
 }
 
+.EntityListItem__inner--with-actions {
+  padding-right: 0;
+}
+
 .EntityListItem__media {
   display: flex;
   align-items: center;
@@ -107,5 +111,4 @@
 .EntityListItem__actions {
   display: flex;
   align-items: center;
-  margin-left: var(--spacing-xs);
 }
