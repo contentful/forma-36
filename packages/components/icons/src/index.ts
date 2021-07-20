@@ -148,6 +148,7 @@ export { Subscript } from './Subscript';
 export { SubscriptTrimmed } from './SubscriptTrimmed';
 export { Superscript } from './Superscript';
 export { SuperscriptTrimmed } from './SuperscriptTrimmed';
+export { Table } from './Table';
 export { Tags } from './Tags';
 export { Text } from './Text';
 export { TextTrimmed } from './TextTrimmed';

@@ -3,6 +3,66 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.91.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.91.0...@contentful/forma-36-react-components@3.91.1) (2021-07-19)
+
+
+### Bug Fixes
+
+* **dropdown-container:** force window not to scroll on dropdown focus ([#1085](https://github.com/contentful/forma-36/issues/1085)) ([6b5bb72](https://github.com/contentful/forma-36/commit/6b5bb72b3274542c9722633dafffb0d8a6d87e0f)), closes [#1075](https://github.com/contentful/forma-36/issues/1075)
+
+
+
+
+
+# [3.91.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.90.10...@contentful/forma-36-react-components@3.91.0) (2021-07-19)
+
+
+### Features
+
+* **icon:** add table icon ([#1082](https://github.com/contentful/forma-36/issues/1082)) ([10a9a8f](https://github.com/contentful/forma-36/commit/10a9a8f7464a7402bdef8a34cfc15a083906440f))
+
+
+
+
+
+## [3.90.10](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.90.9...@contentful/forma-36-react-components@3.90.10) (2021-07-19)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+## [3.90.9](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.90.8...@contentful/forma-36-react-components@3.90.9) (2021-07-14)
+
+
+### Bug Fixes
+
+* **dropdown:** remove default value for getContainerRef ([#1063](https://github.com/contentful/forma-36/issues/1063)) ([81ad3b8](https://github.com/contentful/forma-36/commit/81ad3b8f605250ca94ba13e0ea5bdd85f3772474))
+
+
+
+
+
+## [3.90.8](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.90.7...@contentful/forma-36-react-components@3.90.8) (2021-07-13)
+
+
+### Bug Fixes
+
+* add focusContainerOnOpen prop on Dropdown ([#1057](https://github.com/contentful/forma-36/issues/1057)) ([9733240](https://github.com/contentful/forma-36/commit/9733240908319a9c40412e7e7e1c79f9d1649c47))
+
+
+
+
+
+## [3.90.7](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.90.6...@contentful/forma-36-react-components@3.90.7) (2021-07-06)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
 ## [3.90.6](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.90.5...@contentful/forma-36-react-components@3.90.6) (2021-07-02)
 
 
@@ -2479,7 +2539,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-- **LineChart:** LineChart removed from Forma36 ([8e9b74c](https://github.com/contentful/forma-36/commit/8e9b74c))
+- **LineChart:** LineChart removed from Forma 36 ([8e9b74c](https://github.com/contentful/forma-36/commit/8e9b74c))
 
 # [2.5.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@2.4.1...@contentful/forma-36-react-components@2.5.0) (2019-02-20)
 

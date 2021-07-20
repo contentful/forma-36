@@ -15,9 +15,7 @@ export default {
   parameters: {
     propTypes: [SkeletonRow['__docgenInfo']],
   },
-  argTypes: {
-    className: { control: { disable: true } },
-  },
+  argTypes: {},
 };
 
 export const Basic = (args: SkeletonRowProps) => (

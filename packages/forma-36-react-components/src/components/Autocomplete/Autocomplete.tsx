@@ -257,6 +257,7 @@ export const Autocomplete = <T extends {}>({
         dispatch({ type: TOGGLED_LIST, payload: false });
       }}
       toggleElement={renderToggleElementFunction(toggleProps)}
+      focusContainerOnOpen={false}
       {...dropdownProps}
       isOpen={isOpen}
     >

@@ -18,6 +18,7 @@ export interface DropdownContainerProps
   submenu?: boolean;
   testId?: string;
   usePortal?: boolean;
+  focusContainerOnOpen?: boolean;
 }
 
 export const DropdownContainer = forwardRef<
@@ -36,6 +37,7 @@ export const DropdownContainer = forwardRef<
     testId = 'cf-ui-dropdown-portal',
     usePortal = true,
     nonClosingRefs,
+    focusContainerOnOpen,
     ...props
   },
   refCallback,
@@ -58,12 +60,16 @@ export const DropdownContainer = forwardRef<
   });
 
   useEffect(() => {
-    dropdown.current?.focus();
-
     if (getRef && dropdown.current) {
       getRef(dropdown.current);
     }
-  }, [getRef]);
+
+    if (focusContainerOnOpen) {
+      dropdown.current?.focus({
+        preventScroll: true,
+      });
+    }
+  }, [getRef, focusContainerOnOpen]);
 
   const dropdownComponent = (
     <div
