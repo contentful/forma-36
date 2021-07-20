@@ -3,7 +3,7 @@
 In order to provide a better, more accessible experience for our customers, we decided to migrate our existing color palette into the new one.
 We are introducing a new color system that contains 6 base colors, along with gray and black/white. Each color consists of 9 shades, ranging from 100 to 900.
 
-The new approach allows us to meet all the a11y requirements. It also introduces a more consistent naming convention and the ability to scale the palette easily if needed.
+The new approach allows us to meet all accessibility requirements. It also introduces a more consistent naming convention and the ability to easily scale the palette in the future if needed.
 
 ## What's new
 
