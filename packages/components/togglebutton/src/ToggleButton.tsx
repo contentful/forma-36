@@ -21,7 +21,7 @@ export interface ToggleButtonProps extends CommonProps {
    */
   icon?: IconComponent;
   /**
-   * Function triggered when toggle button is clicked.
+   * Function triggered when the toggle button is clicked.
    */
   onToggle?: () => void;
   children: React.ReactNode;
