@@ -133,27 +133,27 @@ export const Overview = (args) => {
         </Box>
         <Flex flexDirection="row" marginBottom="spacingM">
           <Box marginRight="spacingXs">
-            <Button variant="primary" disabled>
+            <Button variant="primary" isDisabled>
               Primary disabled
             </Button>
           </Box>
           <Box marginRight="spacingXs">
-            <Button variant="secondary" disabled>
+            <Button variant="secondary" isDisabled>
               Secondary disabled
             </Button>
           </Box>
           <Box marginRight="spacingXs">
-            <Button variant="positive" disabled>
+            <Button variant="positive" isDisabled>
               Positive disabled
             </Button>
           </Box>
           <Box marginRight="spacingXs">
-            <Button variant="negative" disabled>
+            <Button variant="negative" isDisabled>
               Negative disabled
             </Button>
           </Box>
           <Box marginRight="spacingXs">
-            <Button variant="transparent" disabled>
+            <Button variant="transparent" isDisabled>
               Transparent
             </Button>
           </Box>
