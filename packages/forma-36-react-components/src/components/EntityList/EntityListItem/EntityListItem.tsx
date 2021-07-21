@@ -72,7 +72,7 @@ export interface EntityListItemProps {
   /**
    * Props to pass down to the default CardDragHandle component (does not work with cardDragHandleComponent prop)
    */
-  cardDragHandleProps?: Partial<DragHandleProps>;
+  cardDragHandleProps?: Partial<DragHandleProps<'button'>>;
   /**
    * An entity can either be an Entry, an Asset or a Release. This prop will apply styling based on if the entity is an asset, a release or an entry
    *

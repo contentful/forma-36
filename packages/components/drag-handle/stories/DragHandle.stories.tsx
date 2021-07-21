@@ -4,7 +4,7 @@ import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 
 import { DragHandle } from '../src/';
-import type { DragHandleProps } from '../src/';
+import type { DragHandleInternalProps } from '../src/';
 
 export default {
   component: DragHandle,
@@ -14,7 +14,7 @@ export default {
   title: 'Components/DragHandle',
 } as Meta;
 
-export const Default: Story<DragHandleProps> = (args) => {
+export const Default: Story<DragHandleInternalProps> = (args) => {
   return <DragHandle {...args}>DragHandle</DragHandle>;
 };
 
