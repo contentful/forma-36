@@ -39,7 +39,7 @@
 
 .TextLink--primary,
 .TextLink--primary:link {
-  color: var(--color-blue-mid);
+  color: var(--color-primary);
 }
 
 .TextLink--primary:hover,
@@ -81,15 +81,15 @@
 
 .TextLink--secondary,
 .TextLink--secondary:link {
-  color: var(--color-text-mid);
+  color: var(--gray-700);
 }
 
 .TextLink--secondary:hover,
 .TextLink--secondary:focus {
-  color: var(--color-text-dark);
+  color: var(--gray-900);
 
   & .TextLink__icon {
-    fill: var(--color-text-dark);
+    fill: var(--gray-900);
   }
 }
 
