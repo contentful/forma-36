@@ -68,7 +68,7 @@ And the final result:
 
 The same approach we took with all our color tokens, so now old and new tokens are available to you.
 
-**Note: We plan to remove the old, deprecated tokend in the next major version. But don't worry, we will help you to migrate your tokens to the new names right now.**
+**Note: We plan to remove the old, deprecated tokend in the next major version. But don't worry, we can provide you with tools to migrate to the new names.**
 
 ## How to migrate your code to the new tokens
 
