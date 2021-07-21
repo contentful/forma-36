@@ -20,6 +20,97 @@
   justify-content: center;
 }
 
+.IconButton--primary {
+  & .IconButton__icon {
+    fill: var(--blue-500);
+  }
+
+  &:hover,
+  &:focus {
+    & .IconButton__icon {
+      fill: var(--blue-700);
+    }
+  }
+}
+
+.IconButton--positive {
+  & .IconButton__icon {
+    fill: var(--green-500);
+  }
+
+  &:hover,
+  &:focus {
+    & .IconButton__icon {
+      fill: var(--green-700);
+    }
+  }
+}
+
+.IconButton--negative {
+  & .IconButton__icon {
+    fill: var(--red-500);
+  }
+
+  &:hover,
+  &:focus {
+    & .IconButton__icon {
+      fill: var(--red-700);
+    }
+  }
+}
+
+.IconButton--secondary {
+  & .IconButton__icon {
+    fill: var(--gray-700);
+  }
+
+  &:hover,
+  &:focus {
+    & .IconButton__icon {
+      fill: var(--gray-900);
+    }
+  }
+}
+
+.IconButton--secondary {
+  & .IconButton__icon {
+    fill: var(--gray-700);
+  }
+
+  &:hover,
+  &:focus {
+    & .IconButton__icon {
+      fill: var(--gray-900);
+    }
+  }
+}
+
+.IconButton--muted {
+  & .IconButton__icon {
+    fill: var(--gray-500);
+  }
+
+  &:hover,
+  &:focus {
+    & .IconButton__icon {
+      fill: var(--gray-700);
+    }
+  }
+}
+
+.IconButton--white {
+  & .IconButton__icon {
+    fill: var(--color-white);
+  }
+
+  &:hover,
+  &:focus {
+    & .IconButton__icon {
+      fill: var(--gray-200);
+    }
+  }
+}
+
 .IconButton--disabled {
   opacity: 0.5;
 
@@ -29,42 +120,42 @@
 
   &.IconButton--primary:hover {
     & .IconButton__icon {
-      fill: var(--color-blue-base);
+      fill: var(--blue-500);
     }
 
-    color: var(--color-blue-base);
+    color: var(--blue-500);
   }
 
-  &.IconButton--positive:hover {
+  &.IconButton--positive {
     & .IconButton__icon {
-      fill: var(--color-green-base);
+      fill: var(--green-500);
     }
 
-    color: var(--color-green-base);
+    color: var(--green-500);
   }
 
   &.IconButton--negative:hover {
     & .IconButton__icon {
-      fill: var(--color-red-base);
+      fill: var(--red-500);
     }
 
-    color: var(--color-red-base);
+    color: var(--red-500);
   }
 
   &.IconButton--secondary:hover {
     & .IconButton__icon {
-      fill: var(--color-text-mid);
+      fill: var(--gray-700);
     }
 
-    color: var(--color-text-mid);
+    color: var(--gray-700);;
   }
 
   &.IconButton--muted:hover {
     & .IconButton__icon {
-      fill: var(--color-text-light);
+      fill: var(--gray-500);
     }
 
-    color: var(--color-text-light);
+    color: var(--gray-500);
   }
 }
 
@@ -73,34 +164,6 @@
     var(--transition-easing-default);
 }
 
-.IconButton:hover .IconButton__icon,
-.IconButton:focus .IconButton__icon {
-  fill: var(--color-text-dark);
-}
-
-.IconButton--primary .IconButton__icon {
-  fill: var(--color-blue-base);
-}
-
-.IconButton--positive .IconButton__icon {
-  fill: var(--color-green-base);
-}
-
-.IconButton--negative .IconButton__icon {
-  fill: var(--color-red-base);
-}
-
-.IconButton--secondary .IconButton__icon {
-  fill: var(--color-text-mid);
-}
-
-.IconButton--muted .IconButton__icon {
-  fill: var(--color-text-light);
-}
-
-.IconButton--white .IconButton__icon {
-  fill: var(--color-white);
-}
 
 .IconButton__label {
   composes: sr-only from './../../styles/settings/helpers.css';
