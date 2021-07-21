@@ -22,7 +22,7 @@ export const Default: Story<CardProps> = ({ children, ...args }) => {
   return (
     <Card {...args}>
       <Typography>
-        <Text>{children}</Text>
+        <Text marginBottom="none">{children}</Text>
       </Typography>
     </Card>
   );
@@ -89,7 +89,7 @@ export const WithLinkAndTarget: Story<CardProps> = (args) => {
     <Card {...args}>
       <Typography>
         <Heading>Forma 36</Heading>
-        <Text>
+        <Text marginBottom="none">
           Forma 36 is an open-source design system by Contentful created with
           the intent to reduce the overhead of creating UI by providing tools
           and guidance for digital teams building and extending Contentful
@@ -109,7 +109,7 @@ export const overview: Story<CardProps> = (args) => {
       <Card {...args}>
         <Typography>
           <Heading>Forma 36</Heading>
-          <Text>
+          <Text marginBottom="none">
             Forma 36 is an open-source design system by Contentful created with
             the intent to reduce the overhead of creating UI by providing tools
             and guidance for digital teams building and extending Contentful
@@ -123,7 +123,7 @@ export const overview: Story<CardProps> = (args) => {
       </Flex>
       <Card selected>
         <Heading>Forma 36</Heading>
-        <Text>
+        <Text marginBottom="none">
           Forma 36 is an open-source design system by Contentful created with
           the intent to reduce the overhead of creating UI by providing tools
           and guidance for digital teams building and extending Contentful
@@ -137,7 +137,7 @@ export const overview: Story<CardProps> = (args) => {
       <Card padding="default">
         <Typography>
           <Heading>Forma 36</Heading>
-          <Text>
+          <Text marginBottom="none">
             Forma 36 is an open-source design system by Contentful created with
             the intent to reduce the overhead of creating UI by providing tools
             and guidance for digital teams building and extending Contentful
@@ -151,7 +151,7 @@ export const overview: Story<CardProps> = (args) => {
       <Card padding="large">
         <Typography>
           <Heading>Forma 36</Heading>
-          <Text>
+          <Text marginBottom="none">
             Forma 36 is an open-source design system by Contentful created with
             the intent to reduce the overhead of creating UI by providing tools
             and guidance for digital teams building and extending Contentful
@@ -166,7 +166,7 @@ export const overview: Story<CardProps> = (args) => {
       <Card padding="none">
         <Typography>
           <Heading>Forma 36</Heading>
-          <Text>
+          <Text marginBottom="none">
             Forma 36 is an open-source design system by Contentful created with
             the intent to reduce the overhead of creating UI by providing tools
             and guidance for digital teams building and extending Contentful
