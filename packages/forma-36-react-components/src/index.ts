@@ -93,7 +93,8 @@ export * from './components/Textarea';
 export * from './components/TextField';
 export * from './components/TextInput';
 export * from './components/TextLink';
-export * from './components/ToggleButton';
+export { ToggleButton } from '@contentful/f36-togglebutton';
+export type { ToggleButtonProps } from '@contentful/f36-togglebutton';
 export * from './components/Workbench';
 
 // -- Add imports above this line (required by plopfile.js) --
