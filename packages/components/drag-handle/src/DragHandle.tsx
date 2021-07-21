@@ -1,11 +1,24 @@
-import React, { forwardRef, useCallback, useState } from 'react';
+import React, {
+  forwardRef,
+  useCallback,
+  useState,
+  FocusEventHandler,
+  MouseEventHandler,
+} from 'react';
 import { css, cx } from 'emotion';
 import { usePrimitive } from '@contentful/f36-core';
+import type {
+  PolymorphicComponentProps,
+  PolymorphicComponentWithRef,
+  PolymorphicComponent,
+} from '@contentful/f36-core';
 import type { CommonProps } from '@contentful/f36-core';
 import { Drag } from '@contentful/f36-icons';
 import tokens from '@contentful/f36-tokens';
 
 import { styles } from './DragHandle.styles';
+
+const DEFAULT_TAG = 'button';
 
 const generateStyles = ({ isActive, isFocused, isHovered }) => {
   if (isActive || isFocused || isHovered) {
@@ -16,7 +29,7 @@ const generateStyles = ({ isActive, isFocused, isHovered }) => {
   }
 };
 
-export type DragHandleInternalProps = {
+export type DragHandleInternalProps = CommonProps & {
   /**
    * Applies styling for when the component is actively being dragged by
    * the user
@@ -35,62 +48,94 @@ export type DragHandleInternalProps = {
    * is for screen readers only
    */
   label: string;
+  onBlur?: FocusEventHandler;
+  onFocus?: FocusEventHandler;
+  onMouseEnter?: MouseEventHandler;
+  onMouseLeave?: MouseEventHandler;
 };
 
-export type DragHandleProps = CommonProps & DragHandleInternalProps;
+export type DragHandleProps<
+  E extends React.ElementType
+> = PolymorphicComponentProps<E, DragHandleInternalProps>;
 
-export const DragHandle = forwardRef<HTMLDivElement, DragHandleProps>(
-  function DragHandle(
-    {
-      className,
-      isActive,
-      isFocused: isFocusedProp,
-      isHovered: isHoveredProp,
-      label,
-      testId = 'cf-ui-drag-handle',
-      ...otherProps
-    },
-    forwardedRef,
-  ) {
-    const { primitiveProps: commonProps, Element } = usePrimitive(otherProps);
-    const [isFocused, setisFocused] = useState(isFocusedProp);
-    const [isHovered, setisHovered] = useState(isHoveredProp);
-
-    const handleFocus = useCallback(() => {
-      setisFocused(true);
-    }, []);
-
-    const handleBlur = useCallback(() => {
-      setisFocused(false);
-    }, []);
-
-    const handleMouseEnter = useCallback(() => {
-      setisHovered(true);
-    }, []);
-
-    const handleMouseLeave = useCallback(() => {
-      setisHovered(false);
-    }, []);
-
-    return (
-      <Element
-        as="div"
-        {...commonProps}
-        className={cx(
-          styles.root,
-          generateStyles({ isActive, isFocused, isHovered }),
-          className,
-        )}
-        onBlur={handleBlur}
-        onFocus={handleFocus}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        testId={testId}
-        ref={forwardedRef}
-      >
-        <Drag variant="muted" />
-        <span className={styles.label}>{label}</span>
-      </Element>
-    );
+const _DragHandle: PolymorphicComponentWithRef<
+  DragHandleInternalProps,
+  typeof DEFAULT_TAG
+> = (
+  {
+    className,
+    isActive,
+    isFocused: isFocusedProp,
+    isHovered: isHoveredProp,
+    label,
+    onBlur,
+    onFocus,
+    onMouseEnter,
+    onMouseLeave,
+    testId = 'cf-ui-drag-handle',
+    ...otherProps
   },
-);
+  forwardedRef,
+) => {
+  const { primitiveProps: commonProps, Element } = usePrimitive(otherProps);
+  const [isFocused, setisFocused] = useState(isFocusedProp);
+  const [isHovered, setisHovered] = useState(isHoveredProp);
+
+  const handleFocus = useCallback<FocusEventHandler>((event) => {
+    setisFocused(true);
+
+    if (onFocus) {
+      onFocus(event);
+    }
+  }, []);
+
+  const handleBlur = useCallback<FocusEventHandler>((event) => {
+    setisFocused(false);
+
+    if (onBlur) {
+      onBlur(event);
+    }
+  }, []);
+
+  const handleMouseEnter = useCallback<MouseEventHandler>((event) => {
+    setisHovered(true);
+
+    if (onMouseEnter) {
+      onMouseEnter(event);
+    }
+  }, []);
+
+  const handleMouseLeave = useCallback<MouseEventHandler>((event) => {
+    setisHovered(false);
+
+    if (onMouseLeave) {
+      onMouseLeave(event);
+    }
+  }, []);
+
+  return (
+    <Element
+      as={DEFAULT_TAG}
+      {...commonProps}
+      className={cx(
+        styles.root,
+        generateStyles({ isActive, isFocused, isHovered }),
+        className,
+      )}
+      onBlur={handleBlur}
+      onFocus={handleFocus}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      testId={testId}
+      ref={forwardedRef}
+    >
+      <Drag variant="muted" />
+      <span className={styles.label}>{label}</span>
+    </Element>
+  );
+};
+
+export const DragHandle: PolymorphicComponent<
+  DragHandleInternalProps,
+  typeof DEFAULT_TAG
+> = React.forwardRef(_DragHandle);
