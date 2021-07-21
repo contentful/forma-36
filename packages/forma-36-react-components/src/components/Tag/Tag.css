@@ -38,8 +38,8 @@
 }
 
 .Tag--secondary {
-  color: var(--color-text-base);
-  background-color: var(--color-element-light);
+  color: var(--gray-700);
+  background-color: var(--gray-200);
 }
 
 .Tag--muted {
@@ -53,8 +53,8 @@
 }
 
 .Tag--featured {
-  color: var(--color-purple-base);
-  background-color: var(--color-purple-lightest);
+  color: var(--purple-600);
+  background-color: var(--purple-200);
 }
 
 .Tag--small {
