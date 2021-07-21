@@ -138,4 +138,4 @@ const _DragHandle: PolymorphicComponentWithRef<
 export const DragHandle: PolymorphicComponent<
   DragHandleInternalProps,
   typeof DEFAULT_TAG
-> = React.forwardRef(_DragHandle);
+> = forwardRef(_DragHandle);
