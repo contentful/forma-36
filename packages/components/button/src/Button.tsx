@@ -3,10 +3,10 @@ import { cx } from 'emotion';
 import { Flex, CommonProps } from '@contentful/f36-core';
 import { ChevronDown } from '@contentful/f36-icons';
 import { Icon, IconComponent } from '@contentful/f36-icon';
+import { Spinner } from '@contentful/f36-spinner';
 
 import type { ButtonVariant, ButtonSize } from './types';
 import { styles } from './styles';
-import { Spinner } from '@contentful/f36-spinner';
 
 export interface ButtonProps
   extends Omit<HTMLProps<HTMLButtonElement & HTMLAnchorElement>, 'size'>,
@@ -31,7 +31,7 @@ export interface ButtonProps
    * Disabled interaction and applies disabled styles
    * @default false
    */
-  disabled?: boolean;
+  isDisabled?: boolean;
   /**
    * Button html type attribute
    */
@@ -62,10 +62,10 @@ const _Button = (props: ButtonProps, ref) => {
     variant = 'secondary',
     size = 'medium',
     href,
-    disabled,
     type = !href ? 'button' : undefined,
     icon,
     isActive,
+    isDisabled,
     isDropdown,
     isLoading,
     isFullWidth,
@@ -77,7 +77,7 @@ const _Button = (props: ButtonProps, ref) => {
       variant,
       size,
       isActive,
-      isDisabled: disabled,
+      isDisabled,
       isFullWidth,
     }),
     className,
@@ -91,7 +91,7 @@ const _Button = (props: ButtonProps, ref) => {
       type={type}
       className={rootClassNames}
       href={href}
-      disabled={disabled}
+      disabled={isDisabled}
       data-test-id={testId}
       {...otherProps}
     >
