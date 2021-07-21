@@ -4,7 +4,7 @@ import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 
 import { DragHandle } from '../src/';
-import type { DragHandleInternalProps } from '../src/';
+import type { DragHandleInternalProps } from '../src/DragHandle';
 
 export default {
   component: DragHandle,
