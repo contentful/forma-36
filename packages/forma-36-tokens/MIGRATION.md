@@ -68,7 +68,7 @@ And the final result:
 
 The same approach we took with all our color tokens, so now old and new tokens are available to you.
 
-**Note: We plan to remove the old, deprecated tokend in the next major version. But don't worry, we can provide you with tools to migrate to the new names.**
+**Note: We plan to remove the old, deprecated tokens in the the version5 of Forma 36, but don't worry, we provide you with tools to migrate to the new names.**
 
 ## How to migrate your code to the new tokens
 
