@@ -1,5 +1,6 @@
 import React, { FC, useLayoutEffect, useRef } from 'react';
 import cn from 'classnames';
+import tokens from '@contentful/forma-36-tokens';
 
 import styles from './AccordionPanel.css';
 
@@ -34,7 +35,7 @@ export const AccordionPanel: FC<AccordionPanelProps> = ({
       return '0px';
     }
 
-    return `${current.scrollHeight / 16}rem`; // converting height pixels into rem
+    return `${current.scrollHeight / parseInt(tokens.fontBaseDefault, 10)}rem`; // converting height pixels into rem
   };
 
   useLayoutEffect(() => {
