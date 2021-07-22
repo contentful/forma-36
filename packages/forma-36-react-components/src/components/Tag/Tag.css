@@ -18,28 +18,28 @@
 }
 
 .Tag--primary {
-  color: var(--color-blue-base);
-  background-color: var(--color-blue-lightest);
+  color: var(--blue-600);
+  background-color: var(--blue-200);
 }
 
 .Tag--positive {
-  color: var(--color-green-base);
-  background-color: var(--color-green-lightest);
+  color: var(--green-600);
+  background-color: var(--green-200);
 }
 
 .Tag--negative {
-  color: var(--color-red-base);
-  background-color: var(--color-red-lightest);
+  color: var(--red-600);
+  background-color: var(--red-200);
 }
 
 .Tag--warning {
-  color: var(--color-orange-dark);
-  background-color: #ffefd5; /* temporary hardcoded value until palette improvements */
+  color: var(--orange-600);
+  background-color: var(--orange-200);
 }
 
 .Tag--secondary {
-  color: var(--color-text-base);
-  background-color: var(--color-element-light);
+  color: var(--gray-700);
+  background-color: var(--gray-200);
 }
 
 .Tag--muted {
@@ -53,8 +53,8 @@
 }
 
 .Tag--featured {
-  color: var(--color-purple-base);
-  background-color: var(--color-purple-lightest);
+  color: var(--purple-600);
+  background-color: var(--purple-200);
 }
 
 .Tag--small {
