@@ -67,10 +67,13 @@ export type {
 } from '@contentful/f36-inputs';
 export { Pill } from '@contentful/f36-pill';
 export type { PillProps } from '@contentful/f36-pill';
+export { ButtonGroup } from '@contentful/f36-buttongroup';
+export type { ButtonGroupProps } from '@contentful/f36-buttongroup';
+export { Button } from '@contentful/f36-button';
+export type { ButtonProps } from '@contentful/f36-button';
 export * from './components/Accordion';
 export * from './components/Asset';
 export * from './components/Autocomplete';
-export * from './components/Button';
 export * from './components/Card';
 export * from './components/CopyButton';
 export * from './components/Dropdown';

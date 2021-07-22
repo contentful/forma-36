@@ -1,28 +1,41 @@
 import { cx } from 'emotion';
 import React from 'react';
-import { CommonProps } from '@contentful/f36-core';
-import { styles } from './ButtonGroup.styles';
+import { CommonProps, Box } from '@contentful/f36-core';
+import getStyles from './ButtonGroup.styles';
+import type { ButtonGroupVariants } from './types';
 
 export interface ButtonGroupProps extends CommonProps {
-  testId?: string;
-  className?: string;
-  children: React.ReactNode;
+  /**
+   * Determines how the Button Group will display the buttons
+   * @default collapse
+   */
+  variant?: ButtonGroupVariants;
+  children: React.ReactElement[];
 }
 
-function ButtonGroup(props: ButtonGroupProps, ref: React.Ref<HTMLDivElement>) {
+function _ButtonGroup(props: ButtonGroupProps, ref: React.Ref<HTMLDivElement>) {
+  const {
+    variant = 'collapse',
+    testId = 'cf-ui-button-group',
+    children,
+    className,
+  } = props;
+  const styles = getStyles(variant);
+
   return (
-    <div
-      data-test-id={props.testId}
+    <Box
+      as="div"
+      data-test-id={testId}
       ref={ref}
-      className={cx(styles.buttonGroup, props.className)}
+      className={cx(styles.buttonGroup, className)}
     >
-      {props.children}
-    </div>
+      {children.map((child) =>
+        React.cloneElement(child, {
+          className: cx(styles.groupContent, child.props.className),
+        }),
+      )}
+    </Box>
   );
 }
 
-/**
- * TODO: Add description of component here.
- */
-const _ButtonGroup = React.forwardRef(ButtonGroup);
-export { _ButtonGroup as ButtonGroup };
+export const ButtonGroup = React.forwardRef(_ButtonGroup);

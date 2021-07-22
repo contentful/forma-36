@@ -1,3 +1,68 @@
-# @contentful/f36-buttongroup
+---
+title: 'ButtonGroup'
+type: 'component'
+status: 'stable'
+slug: /components/button-group/
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/buttongroup'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-buttongroup--basic'
+typescript: ./src/ButtonGroup.tsx
+---
 
-This package is part of [Forma 36](https://github.com/contentful/forma-36). See the repo for more details.
+import { Props } from '@contentful/f36-docs-utils';
+import { Button } from '@contentful/f36-button';
+import { ChevronDown, Plus } from '@contentful/f36-icons';
+
+## Table of contents
+
+- [Code examples](#code-examples)
+- [Accessibility](#accessibility)
+- [Props](#props)
+
+## Code examples
+
+Example of usage:
+
+```jsx
+// import { ButtonGroup } from '@contentful/f36-buttongroup';
+// import { Button } from '@contentful/f36-button';
+
+<ButtonGroup testId="group-button">
+  <Button variant="secondary">Button</Button>
+  <Button variant="secondary">Button</Button>
+  <Button variant="secondary">Button</Button>
+</ButtonGroup>
+```
+
+The buttons can also have icons if necessary:
+
+```jsx
+// import { ButtonGroup } from '@contentful/f36-buttongroup';
+// import { Button } from '@contentful/f36-button';
+
+<ButtonGroup testId="group-button">
+  <Button icon={Plus} variant="positive">
+    Button
+  </Button>
+  <Button icon={ChevronDown} variant="positive" icon={ChevronDown} />
+</ButtonGroup>
+```
+
+Example of Group Button with separate vairant
+
+```jsx
+// import { ButtonGroup } from '@contentful/f36-buttongroup';
+// import { Button } from '@contentful/f36-button';
+
+<ButtonGroup variant="separate" testId="group-button">
+  <Button variant="primary">Button</Button>
+  <Button variant="negative">Button</Button>
+</ButtonGroup>
+```
+
+## Accessibility
+
+- If using a button that won't have text be sure to provide an aria-label
+
+## Props
+
+<Props of="ButtonGroup" />

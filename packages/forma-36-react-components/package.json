@@ -44,6 +44,7 @@
     "@contentful/f36-typography": "^4.0.0",
     "@contentful/f36-validation-message": "^4.0.0",
     "@contentful/f36-tooltip": "^4.0.0",
+    "@contentful/f36-buttongroup": "^4.0.0",
     "@contentful/forma-36-fcss": "^4.0.0",
     "@contentful/f36-utils": "^4.0.0",
     "@popperjs/core": "^2.4.4",
