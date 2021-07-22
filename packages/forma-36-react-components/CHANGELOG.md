@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.93.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.92.0...@contentful/forma-36-react-components@3.93.0) (2021-07-22)
+
+
+### Features
+
+* puzzle icon ([#1103](https://github.com/contentful/forma-36/issues/1103)) ([0b2cc1f](https://github.com/contentful/forma-36/commit/0b2cc1fb75e72f6672226eb16865086d1dd00db9))
+
+
+
+
+
 # [3.92.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.91.1...@contentful/forma-36-react-components@3.92.0) (2021-07-22)
 
 
