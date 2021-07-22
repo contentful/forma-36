@@ -127,6 +127,7 @@ export { PlusCircleTrimmed } from './PlusCircleTrimmed';
 export { PlusTrimmed } from './PlusTrimmed';
 export { Presentation } from './Presentation';
 export { Preview } from './Preview';
+export { Puzzle } from './Puzzle';
 export { Quote } from './Quote';
 export { QuoteTrimmed } from './QuoteTrimmed';
 export { Receipt } from './Receipt';

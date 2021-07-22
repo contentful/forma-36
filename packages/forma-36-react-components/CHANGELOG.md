@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.93.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.93.0...@contentful/forma-36-react-components@3.93.1) (2021-07-22)
+
+
+### Bug Fixes
+
+* **accordion:** make AccordionPanel height adjustable to content ([#1101](https://github.com/contentful/forma-36/issues/1101)) ([ee8ff3b](https://github.com/contentful/forma-36/commit/ee8ff3b73ad969029ce23b433f47685954928aca)), closes [#962](https://github.com/contentful/forma-36/issues/962)
+
+
+
+
+
+# [3.93.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.92.0...@contentful/forma-36-react-components@3.93.0) (2021-07-22)
+
+
+### Features
+
+* puzzle icon ([#1103](https://github.com/contentful/forma-36/issues/1103)) ([0b2cc1f](https://github.com/contentful/forma-36/commit/0b2cc1fb75e72f6672226eb16865086d1dd00db9))
+
+
+
+
+
+# [3.92.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.91.1...@contentful/forma-36-react-components@3.92.0) (2021-07-22)
+
+
+### Features
+
+* new colors tokens update ([#1041](https://github.com/contentful/forma-36/issues/1041)) ([fc0beba](https://github.com/contentful/forma-36/commit/fc0beba32310d2ab31e59006f6701f6ab7c0f79f))
+
+
+
+
+
 ## [3.91.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.91.0...@contentful/forma-36-react-components@3.91.1) (2021-07-19)
 
 
