@@ -9,7 +9,7 @@ module.exports = {
       },
     ],
     '@parcel/babel-preset-env',
-    '@babel/preset-typescript',
+    ['@babel/preset-typescript', { allExtensions: true, isTSX: true }],
   ],
   plugins: [
     [
