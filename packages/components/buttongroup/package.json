@@ -12,6 +12,10 @@
     "@contentful/f36-tokens": "^4.0.0",
     "emotion": "^10.0.17"
   },
+  "devDependencies": {
+    "@contnetful/f36-button": "^4.0.0",
+    "@contnetful/f36-icons": "^4.0.0"
+  },
   "peerDependencies": {
     "react": ">=16.8"
   },
