@@ -8,7 +8,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ### Features
 
-* new colors tokens update ([#1041](https://github.com/contentful/forma-36/issues/1041)) ([fc0beba](https://github.com/contentful/forma-36/commit/fc0beba32310d2ab31e59006f6701f6ab7c0f79f))
+* Updated color system that contains new set of tokens with new namespaces and codemod to improve the experience of the migration ([#1041](https://github.com/contentful/forma-36/issues/1041)) ([fc0beba](https://github.com/contentful/forma-36/commit/fc0beba32310d2ab31e59006f6701f6ab7c0f79f))
 
 
 
