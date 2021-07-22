@@ -2,6 +2,23 @@
   "name": "@contentful/f36-forms",
   "version": "4.0.0",
   "description": "Forma 36: Form React Components",
+  "scripts": {
+    "build": "parcel build index.ts"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.6.2",
+    "@contentful/f36-components": "^4.0.0",
+    "@contentful/f36-core": "^4.0.0",
+    "@contentful/f36-helptext": "^4.0.0",
+    "@contentful/f36-inputs": "^4.0.0",
+    "@contentful/f36-tokens": "^4.0.0",
+    "@contentful/f36-validation-message": "^4.0.0",
+    "emotion": "^10.0.17"
+  },
+  "peerDependencies": {
+    "@contentful/f36-components": "^4.0.0",
+    "react": ">=16.8"
+  },
   "license": "MIT",
   "files": [
     "dist",
@@ -16,22 +33,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/contentful/forma-36"
-  },
-  "scripts": {
-    "build": "parcel build index.ts"
-  },
-  "dependencies": {
-    "@babel/runtime": "^7.6.2",
-    "emotion": "^10.0.17",
-    "@contentful/f36-core": "^4.0.0",
-    "@contentful/f36-validation-message": "^4.0.0",
-    "@contentful/f36-tokens": "^4.0.0",
-    "@contentful/f36-inputs": "^4.0.0",
-    "@contentful/f36-components": "^4.0.0"
-  },
-  "peerDependencies": {
-    "@contentful/f36-components": "^4.0.0",
-    "react": ">=16.8"
   },
   "publishConfig": {
     "access": "public"
