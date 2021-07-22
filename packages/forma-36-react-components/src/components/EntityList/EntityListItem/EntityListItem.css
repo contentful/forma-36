@@ -39,6 +39,10 @@
   text-decoration: none;
 }
 
+.EntityListItem__inner--with-actions {
+  padding-right: 0;
+}
+
 .EntityListItem__media {
   display: flex;
   align-items: center;
@@ -107,5 +111,9 @@
 .EntityListItem__actions {
   display: flex;
   align-items: center;
-  margin-left: var(--spacing-xs);
+}
+
+.EntityListItem__dragHandle {
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
 }
