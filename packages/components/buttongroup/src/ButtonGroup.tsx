@@ -10,17 +10,23 @@ export interface ButtonGroupProps extends CommonProps {
    * @default collapse
    */
   variant?: ButtonGroupVariants;
+  /**
+   * Determines if the divider should be rendered between collapsed buttons
+   * @default false
+   */
+  withDivider?: boolean;
   children: React.ReactElement[];
 }
 
 function _ButtonGroup(props: ButtonGroupProps, ref: React.Ref<HTMLDivElement>) {
   const {
     variant = 'collapse',
+    withDivider,
     testId = 'cf-ui-button-group',
     children,
     className,
   } = props;
-  const styles = getStyles(variant);
+  const styles = getStyles(variant, withDivider);
 
   return (
     <Box
@@ -29,9 +35,14 @@ function _ButtonGroup(props: ButtonGroupProps, ref: React.Ref<HTMLDivElement>) {
       ref={ref}
       className={cx(styles.buttonGroup, className)}
     >
-      {children.map((child) =>
+      {children.map((child, key) =>
         React.cloneElement(child, {
-          className: cx(styles.groupContent, child.props.className),
+          key,
+          className: cx(
+            styles.groupContent,
+            styles.withDivider,
+            child.props.className,
+          ),
         }),
       )}
     </Box>

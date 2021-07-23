@@ -56,7 +56,7 @@ export const overview: Story<ButtonGroupProps> = () => {
             </ButtonGroup>
           </Box>
           <Box marginBottom="spacingS">
-            <ButtonGroup variant="collapse">
+            <ButtonGroup variant="collapse" withDivider>
               <Button onClick={onClick} variant="positive">
                 Button
               </Button>
@@ -64,7 +64,7 @@ export const overview: Story<ButtonGroupProps> = () => {
             </ButtonGroup>
           </Box>
           <Box marginBottom="spacingS">
-            <ButtonGroup variant="collapse">
+            <ButtonGroup variant="collapse" withDivider>
               <Button onClick={onClick} variant="primary" icon={Plus}>
                 Button
               </Button>

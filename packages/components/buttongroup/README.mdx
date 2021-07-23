@@ -29,17 +29,17 @@ Example of usage:
 <ButtonGroup testId="group-button">
   <Button variant="secondary">Button</Button>
   <Button variant="secondary">Button</Button>
-  <Button variant="secondary">Button</Button>
+  <Button icon={ChevronDown} variant="positive" icon={ChevronDown} />
 </ButtonGroup>
 ```
 
-The buttons can also have icons if necessary:
+It's possible to add a divider for buttons that don't have border:
 
 ```jsx
 // import { ButtonGroup } from '@contentful/f36-buttongroup';
 // import { Button } from '@contentful/f36-button';
 
-<ButtonGroup testId="group-button">
+<ButtonGroup testId="group-button" withDivider>
   <Button icon={Plus} variant="positive">
     Button
   </Button>

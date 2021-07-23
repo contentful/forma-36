@@ -36,9 +36,36 @@ const getGroupContentStyle = (variant: ButtonGroupVariants) => {
   };
 };
 
-export default (variant: ButtonGroupVariants) => ({
+const getDividerStyle = (withDivider: boolean) => {
+  if (!withDivider) return {};
+  return css({
+    position: 'relative',
+    '&:before': {
+      content: '""',
+      width: '1px',
+      opacity: '20%',
+      backgroundColor: tokens.colorWhite,
+      height: '60%',
+      left: '-1px',
+      position: 'absolute',
+    },
+    '&:first-child, &:focus': {
+      '&:before': {
+        display: 'none',
+      },
+    },
+    '&:hover, &:hover + &': {
+      '&:before': {
+        height: '100%',
+      },
+    },
+  });
+};
+
+export default (variant: ButtonGroupVariants, withDivider: boolean) => ({
   buttonGroup: css({
     display: 'inline-flex',
   }),
+  withDivider: css(getDividerStyle(withDivider)),
   groupContent: css(getGroupContentStyle(variant)),
 });
