@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.93.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.93.1...@contentful/forma-36-react-components@3.93.2) (2021-07-23)
+
+
+### Bug Fixes
+
+* **dropdown-container:** check for ref before calling focus ([#1112](https://github.com/contentful/forma-36/issues/1112)) ([a881c27](https://github.com/contentful/forma-36/commit/a881c2789bde4d45c1714f4e0b411dcfd6772697))
+
+
+
+
+
 ## [3.93.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.93.0...@contentful/forma-36-react-components@3.93.1) (2021-07-22)
 
 
