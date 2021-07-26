@@ -38,8 +38,7 @@ export const MyComponent: React.FC<{ date: Date }> = ({ date }) => {
 or with a different format
 
 ```ts
-import React from 'react';
-import { DateTime } from '@contentful/forma-36-react-components';
+// import { DateTime } from '@contentful/forma-36-react-components';
 
 export const ScheduledForWeekdate: React.FC<{ date: Date }> = ({ date }) => {
   return <DateTime date={date} format="WEEKDAY_DATE" />;
@@ -55,8 +54,7 @@ Provides a relative date string for resolutions ranging from seconds up through 
 **Example Usage**
 
 ```ts
-import React from 'react';
-import { RelativeDate } from '@contentful/forma-36-react-components';
+// import { RelativeDate } from '@contentful/forma-36-react-components';
 
 export const EntryPublishedRelative: React.FC<{ publishedAt: Date }> = ({
   publishedAt,
@@ -68,8 +66,7 @@ export const EntryPublishedRelative: React.FC<{ publishedAt: Date }> = ({
 With a different `baseDate`
 
 ```ts
-import React from 'react';
-import { RelativeDate } from '@contentful/forma-36-react-components';
+// import { RelativeDate } from '@contentful/forma-36-react-components';
 
 export const EntryLifetime: React.FC<{
   createdAt: Date;
