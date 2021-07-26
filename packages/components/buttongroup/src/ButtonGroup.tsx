@@ -38,11 +38,7 @@ function _ButtonGroup(props: ButtonGroupProps, ref: React.Ref<HTMLDivElement>) {
       {children.map((child, key) =>
         React.cloneElement(child, {
           key,
-          className: cx(
-            styles.groupContent,
-            styles.withDivider,
-            child.props.className,
-          ),
+          className: cx(styles.groupContent, child.props.className),
         }),
       )}
     </Box>

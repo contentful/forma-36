@@ -1,44 +1,50 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import type { ButtonGroupVariants } from './types';
+import { CSSObject } from '@storybook/theming';
 
-const getGroupContentStyle = (variant: ButtonGroupVariants) => {
-  switch (variant) {
-    case 'separate':
-      return {
-        marginLeft: tokens.spacingS,
-        marginRight: tokens.spacingS,
-        '&:first-child': {
-          marginLeft: 0,
-        },
-        '&:last-child': {
-          marginRight: 0,
-        },
-      };
+const getGroupContentStyle = (
+  variant: ButtonGroupVariants,
+  withDivider: boolean,
+) => {
+  if (variant === 'separate') {
+    return {
+      marginLeft: tokens.spacingS,
+      marginRight: tokens.spacingS,
+      '&:first-child': {
+        marginLeft: 0,
+      },
+      '&:last-child': {
+        marginRight: 0,
+      },
+    };
   }
 
+  const dividerStyle = getDividerStyle(withDivider);
+
   return {
-    borderRadius: '0 !important',
+    borderRadius: '0',
     marginRight: '-1px',
     zIndex: tokens.zIndexDefault,
     '&:first-child': {
-      borderBottomLeftRadius: `${tokens.borderRadiusMedium} !important`,
-      borderTopLeftRadius: `${tokens.borderRadiusMedium} !important`,
+      borderBottomLeftRadius: `${tokens.borderRadiusMedium}`,
+      borderTopLeftRadius: `${tokens.borderRadiusMedium}`,
     },
     '&:last-child': {
-      borderBottomRightRadius: `${tokens.borderRadiusMedium} !important`,
-      borderTopRightRadius: `${tokens.borderRadiusMedium} !important`,
+      borderBottomRightRadius: `${tokens.borderRadiusMedium}`,
+      borderTopRightRadius: `${tokens.borderRadiusMedium}`,
       marginRight: 0,
     },
     '&:focus': {
       zIndex: tokens.zIndexDefault + 1,
     },
+    ...dividerStyle,
   };
 };
 
-const getDividerStyle = (withDivider: boolean) => {
+const getDividerStyle = (withDivider: boolean): CSSObject => {
   if (!withDivider) return {};
-  return css({
+  return {
     position: 'relative',
     '&:before': {
       content: '""',
@@ -59,13 +65,12 @@ const getDividerStyle = (withDivider: boolean) => {
         height: '100%',
       },
     },
-  });
+  };
 };
 
 export default (variant: ButtonGroupVariants, withDivider: boolean) => ({
   buttonGroup: css({
     display: 'inline-flex',
   }),
-  withDivider: css(getDividerStyle(withDivider)),
-  groupContent: css(getGroupContentStyle(variant)),
+  groupContent: css(getGroupContentStyle(variant, withDivider)),
 });
