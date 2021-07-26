@@ -45,7 +45,7 @@ exports[`ButtonGroup renders additional class name 1`] = `
   line-height: 1.25;
   padding: 0.5rem 1rem;
   min-height: 40px;
-  border-radius: 0 !important;
+  border-radius: 0;
   margin-right: -1px;
   z-index: 1;
 }
@@ -64,13 +64,13 @@ exports[`ButtonGroup renders additional class name 1`] = `
 }
 
 .emotion-1:first-child {
-  border-bottom-left-radius: 6px !important;
-  border-top-left-radius: 6px !important;
+  border-bottom-left-radius: 6px;
+  border-top-left-radius: 6px;
 }
 
 .emotion-1:last-child {
-  border-bottom-right-radius: 6px !important;
-  border-top-right-radius: 6px !important;
+  border-bottom-right-radius: 6px;
+  border-top-right-radius: 6px;
   margin-right: 0;
 }
 
@@ -183,7 +183,7 @@ exports[`ButtonGroup renders collapsed buttons 1`] = `
   line-height: 1.25;
   padding: 0.5rem 1rem;
   min-height: 40px;
-  border-radius: 0 !important;
+  border-radius: 0;
   margin-right: -1px;
   z-index: 1;
 }
@@ -202,13 +202,13 @@ exports[`ButtonGroup renders collapsed buttons 1`] = `
 }
 
 .emotion-1:first-child {
-  border-bottom-left-radius: 6px !important;
-  border-top-left-radius: 6px !important;
+  border-bottom-left-radius: 6px;
+  border-top-left-radius: 6px;
 }
 
 .emotion-1:last-child {
-  border-bottom-right-radius: 6px !important;
-  border-top-right-radius: 6px !important;
+  border-bottom-right-radius: 6px;
+  border-top-right-radius: 6px;
   margin-right: 0;
 }
 
