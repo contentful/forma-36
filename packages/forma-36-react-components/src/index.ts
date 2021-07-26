@@ -18,6 +18,8 @@ export type {
   PaddingProps,
   Spacing,
 } from '@contentful/f36-core';
+export { DragHandle } from '@contentful/f36-drag-handle';
+export type { DragHandleProps } from '@contentful/f36-drag-handle';
 export { Spinner } from '@contentful/f36-spinner';
 export type { SpinnerProps } from '@contentful/f36-spinner';
 export {

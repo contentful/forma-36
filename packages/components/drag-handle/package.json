@@ -1,22 +1,19 @@
 {
-  "name": "@contentful/f36-forms",
+  "name": "@contentful/f36-drag-handle",
   "version": "4.0.0",
-  "description": "Forma 36: Form React Components",
+  "private": true,
+  "description": "Forma 36: DragHandle component",
   "scripts": {
     "build": "parcel build index.ts"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",
-    "@contentful/f36-components": "^4.0.0",
     "@contentful/f36-core": "^4.0.0",
-    "@contentful/f36-helptext": "^4.0.0",
-    "@contentful/f36-inputs": "^4.0.0",
+    "@contentful/f36-icons": "^4.0.0",
     "@contentful/f36-tokens": "^4.0.0",
-    "@contentful/f36-validation-message": "^4.0.0",
     "emotion": "^10.0.17"
   },
   "peerDependencies": {
-    "@contentful/f36-components": "^4.0.0",
     "react": ">=16.8"
   },
   "license": "MIT",

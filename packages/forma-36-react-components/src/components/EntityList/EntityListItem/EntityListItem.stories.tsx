@@ -1,8 +1,8 @@
 import React from 'react';
+import { DragHandle } from '@contentful/f36-drag-handle';
 
 import { EntityListItem, EntityListItemProps } from './EntityListItem';
 import { DropdownList, DropdownListItem } from '../../Dropdown';
-import { CardDragHandle } from './../../Card';
 
 export default {
   title: 'Components/EntityList/EntityListItem',
@@ -41,7 +41,7 @@ Basic.args = {
   status: 'published',
 };
 
-export const withCustomCardDragHandle = (args: EntityListItemProps) => (
+export const withCustomDragHandle = (args: EntityListItemProps) => (
   <EntityListItem
     {...args}
     dropdownListElements={
@@ -52,10 +52,10 @@ export const withCustomCardDragHandle = (args: EntityListItemProps) => (
         <DropdownListItem>Remove</DropdownListItem>
       </DropdownList>
     }
-    cardDragHandleComponent={<CardDragHandle>Reorder card</CardDragHandle>}
+    cardDragHandleComponent={<DragHandle label="Reorder card" />}
   />
 );
 
-withCustomCardDragHandle.args = {
+withCustomDragHandle.args = {
   ...Basic.args,
 };

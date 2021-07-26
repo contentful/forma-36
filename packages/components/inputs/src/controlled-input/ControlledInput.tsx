@@ -10,9 +10,9 @@ import React, {
 import { cx } from 'emotion';
 import { Done, Minus } from '@contentful/f36-icons';
 import type { IconProps } from '@contentful/f36-icons';
+import { Box, BoxProps } from '@contentful/f36-core';
 
 import { styles } from './ControlledInput.styles';
-import { Box, BoxProps } from '@contentful/f36-core';
 
 export interface ControlledInputProps extends Omit<BoxProps<'div'>, 'ref'> {
   id?: string;

@@ -2,7 +2,6 @@ import { cx } from 'emotion';
 import React from 'react';
 import { Box } from '@contentful/f36-core';
 import type { CommonProps, ComponentVariant } from '@contentful/f36-core';
-import { styles } from './Note.styles';
 import { Button } from '@contentful/f36-button';
 import { Heading, Text } from '@contentful/f36-typography';
 import {
@@ -12,6 +11,8 @@ import {
   InfoCircle,
   Warning,
 } from '@contentful/f36-icons';
+
+import { styles } from './Note.styles';
 
 const icons = {
   primary: InfoCircle,

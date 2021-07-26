@@ -8,12 +8,7 @@ module.exports = {
         },
       },
     ],
-    [
-      '@parcel/babel-preset-env',
-      {
-        loose: true,
-      },
-    ],
+    '@parcel/babel-preset-env',
     ['@babel/preset-typescript', { allExtensions: true, isTSX: true }],
   ],
   plugins: [
@@ -39,12 +34,7 @@ module.exports = {
         legacy: true,
       },
     ],
-    [
-      '@babel/plugin-proposal-class-properties',
-      {
-        loose: true,
-      },
-    ],
+    '@babel/plugin-proposal-class-properties',
     '@babel/plugin-proposal-export-default-from',
     '@babel/plugin-proposal-export-namespace-from',
     '@babel/plugin-syntax-class-properties',
