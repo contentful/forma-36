@@ -23,16 +23,16 @@ const getGroupContentStyle = (
   const dividerStyle = getDividerStyle(withDivider);
 
   return {
-    borderRadius: '0',
+    borderRadius: '0 !important',
     marginRight: '-1px',
     zIndex: tokens.zIndexDefault,
     '&:first-child': {
-      borderBottomLeftRadius: `${tokens.borderRadiusMedium}`,
-      borderTopLeftRadius: `${tokens.borderRadiusMedium}`,
+      borderBottomLeftRadius: `${tokens.borderRadiusMedium} !important`,
+      borderTopLeftRadius: `${tokens.borderRadiusMedium} !important`,
     },
     '&:last-child': {
-      borderBottomRightRadius: `${tokens.borderRadiusMedium}`,
-      borderTopRightRadius: `${tokens.borderRadiusMedium}`,
+      borderBottomRightRadius: `${tokens.borderRadiusMedium} !important`,
+      borderTopRightRadius: `${tokens.borderRadiusMedium} !important`,
       marginRight: 0,
     },
     '&:focus': {
