@@ -1,7 +1,7 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import type { GetStyleArguments } from './types';
-import { CSSObject } from '@storybook/theming';
+import type { CSSObject } from '@emotion/serialize';
 
 const getGroupContentStyle = ({
   variant,
