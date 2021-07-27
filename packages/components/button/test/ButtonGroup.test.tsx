@@ -1,7 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { ButtonGroup } from '../src/ButtonGroup';
-import { Button } from '@contentful/f36-button';
+import { ButtonGroup, Button } from '../src';
 import { ChevronDown } from '@contentful/f36-icons';
 
 describe('ButtonGroup', function () {

@@ -1,12 +1,11 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
-import { Button } from '@contentful/f36-button';
 import { ChevronDown, Plus } from '@contentful/f36-icons';
 import { SectionHeading } from '@contentful/f36-typography';
 import { action } from '@storybook/addon-actions';
 import { Box, Flex } from '@contentful/f36-core';
-import { ButtonGroup } from '../src/ButtonGroup';
-import type { ButtonGroupProps } from '../src/ButtonGroup';
+import { ButtonGroup, Button } from '../src';
+import type { ButtonGroupProps } from '../src';
 import tokens from '@contentful/f36-tokens';
 
 export default {
@@ -14,7 +13,7 @@ export default {
   parameters: {
     propTypes: ButtonGroup['__docgenInfo'],
   },
-  title: 'Components/ButtonGroup',
+  title: 'Components/Button/ButtonGroup',
   argTypes: {
     variant: {
       control: {

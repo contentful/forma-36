@@ -3,9 +3,9 @@ title: 'ButtonGroup'
 type: 'component'
 status: 'stable'
 slug: /components/button-group/
-github: 'https://github.com/contentful/forma-36/tree/master/packages/components/buttongroup'
-storybook: 'https://f36-storybook.contentful.com/?path=/story/components-buttongroup--basic'
-typescript: ./src/ButtonGroup.tsx
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/button/src/ButtonGroup'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-button-buttongroup--basic'
+typescript: ./ButtonGroup.tsx
 ---
 
 import { Props } from '@contentful/f36-docs-utils';
@@ -23,8 +23,7 @@ import { ChevronDown, Plus } from '@contentful/f36-icons';
 Example of usage:
 
 ```jsx
-// import { ButtonGroup } from '@contentful/f36-buttongroup';
-// import { Button } from '@contentful/f36-button';
+// import { ButtonGroup, Button } from '@contentful/f36-button';
 
 <ButtonGroup testId="group-button">
   <Button variant="secondary">Button</Button>
@@ -36,8 +35,8 @@ Example of usage:
 It's possible to add a divider for buttons that don't have border:
 
 ```jsx
-// import { ButtonGroup } from '@contentful/f36-buttongroup';
-// import { Button } from '@contentful/f36-button';
+// import { ButtonGroup, Button } from '@contentful/f36-button';
+// import { ChevronDown, Plus } from '@contentful/f36-icons';
 
 <ButtonGroup testId="group-button" withDivider>
   <Button icon={Plus} variant="positive">
@@ -50,8 +49,7 @@ It's possible to add a divider for buttons that don't have border:
 Example of Group Button with separate vairant
 
 ```jsx
-// import { ButtonGroup } from '@contentful/f36-buttongroup';
-// import { Button } from '@contentful/f36-button';
+// import { ButtonGroup, Button } from '@contentful/f36-button';
 
 <ButtonGroup variant="separate" testId="group-button">
   <Button variant="primary">Button</Button>
