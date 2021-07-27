@@ -1,0 +1,37 @@
+{
+  "name": "@contentful/f36-accordion",
+  "version": "4.0.0",
+  "description": "Forma 36: Accordion React Component",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "main": "dist/main.js",
+  "module": "dist/module.js",
+  "types": "dist/types.d.ts",
+  "source": "src/index.ts",
+  "sideEffects": false,
+  "browserslist": "extends @contentful/browserslist-config",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/contentful/forma-36"
+  },
+  "scripts": {
+    "build": "parcel build index.ts"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.6.2",
+    "emotion": "^10.0.17",
+    "@contentful/f36-core": "^4.0.0",
+    "@contentful/f36-tokens": "^4.0.0",
+    "@contentful/f36-typography": "^4.0.0",
+    "@contentful/f36-icons": "^4.0.0"
+  },
+  "peerDependencies": {
+    "react": ">=16.8"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

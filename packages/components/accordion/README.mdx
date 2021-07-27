@@ -1,0 +1,72 @@
+---
+title: 'Accordion'
+type: 'component'
+status: 'alpha'
+slug: /components/accordion/
+github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/Accordion'
+storybook: 'https://forma-36-react-components.netlify.app/?path=/story/components-accordion--basic'
+---
+
+## Accordion
+
+Accordions are a good way to deliver a large amount of information. An accordion is a list of headers that after being clicked reveal or hide more content related to them.
+The header gives the user a summary of the content and the user decides if they need to see the extended content or not.
+
+## Table of contents
+
+- [How to use Accordions](#how-to-use-accordions)
+- [Component variations](#component-variations)
+- [Code examples](#code-examples)
+- [Content recommendations](#content-recommendations)
+
+## How to use Accordions
+
+- The title prop accepts React nodes, but we recommend that only Typography components are used.
+- Since the whole header is a button, do not use Buttons or Links in the title prop. The only click event that should exist is the header's event.
+
+## Component variations
+
+The accordion has two variations that define the alignment of the chevron icon: left or right.
+
+## Code examples
+
+```jsx
+<Accordion>
+  <AccordionItem title="What payment methods do you accept?">
+    <Text>
+      Customers on the Team tier can pay with a credit card (American Express,
+      MasterCard or Visa). Enterprise customers have the choice of paying with a
+      credit card or wire transfer.
+    </Text>
+  </AccordionItem>
+</Accordion>
+```
+
+Other typographic components can be passed as the accordion's title and anything can be used as the accordion's content. For example:
+
+```jsx
+<Accordion>
+  <AccordionItem
+    title={<SectionHeading>What payment methods do you accept?</SectionHeading>}
+  >
+    <Text marginBottom="spacingS">
+      Customers on the Team tier can pay with a credit card (American Express,
+      MasterCard or Visa). Enterprise customers have the choice of paying with a
+      credit card or wire transfer.
+    </Text>
+    <Button onClick={() => console.log('clicked!')}>Accordion’s button</Button>
+  </AccordionItem>
+</Accordion>
+```
+
+## Content recommendations
+
+- The title should be a short message that summarize the content of the accordion.
+- Anything can be passed as the content of the accordion, but often organizing it with Texts and Tables would be enough.
+- When using headings, be mindful about the heading levels. The header is a Subheading with `h2` tag.
+
+## Props
+
+import { Props } from '@contentful/f36-docs-utils';
+
+<Props of="Accordion" />

@@ -41,6 +41,7 @@
     "@contentful/f36-note": "^4.0.0",
     "@contentful/f36-pill": "^4.0.0",
     "@contentful/f36-skeleton": "^4.0.0",
+    "@contentful/f36-accordion": "^4.0.0",
     "@contentful/f36-spinner": "^4.0.0",
     "@contentful/f36-table": "^4.0.0",
     "@contentful/f36-tokens": "^4.0.0",
