@@ -8,7 +8,7 @@ const getGroupContentStyle = ({
   withDivider,
   spacing,
 }: GetStyleArguments) => {
-  if (variant === 'separate') {
+  if (variant === 'spaced') {
     return {
       marginLeft: tokens[spacing],
       marginRight: tokens[spacing],

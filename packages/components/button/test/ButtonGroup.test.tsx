@@ -17,7 +17,7 @@ describe('ButtonGroup', function () {
 
   it('renders separated buttons', () => {
     const { container } = render(
-      <ButtonGroup variant="separate">
+      <ButtonGroup variant="spaced">
         <Button>Button</Button>
         <Button icon={ChevronDown} />
       </ButtonGroup>,

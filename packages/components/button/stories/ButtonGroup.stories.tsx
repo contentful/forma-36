@@ -17,7 +17,7 @@ export default {
   argTypes: {
     variant: {
       control: {
-        options: ['collapse', 'separate'],
+        options: ['collapsed', 'spaced'],
         type: 'select',
       },
     },
@@ -41,7 +41,7 @@ export const basic: Story<ButtonGroupProps> = (args) => {
   );
 };
 
-export const separate: Story<ButtonGroupProps> = (args) => {
+export const spaced: Story<ButtonGroupProps> = (args) => {
   return (
     <ButtonGroup {...args}>
       <Button variant="secondary">Button</Button>
@@ -52,8 +52,8 @@ export const separate: Story<ButtonGroupProps> = (args) => {
   );
 };
 
-separate.args = {
-  variant: 'separate',
+spaced.args = {
+  variant: 'spaced',
 };
 
 export const overview: Story<ButtonGroupProps> = () => {
@@ -67,7 +67,7 @@ export const overview: Story<ButtonGroupProps> = () => {
         </Box>
         <Flex flexDirection="column" marginBottom="spacingM">
           <Box marginBottom="spacingS">
-            <ButtonGroup variant="collapse">
+            <ButtonGroup variant="collapsed">
               <Button onClick={onClick} variant="secondary">
                 Button
               </Button>
@@ -85,7 +85,7 @@ export const overview: Story<ButtonGroupProps> = () => {
             </ButtonGroup>
           </Box>
           <Box marginBottom="spacingS">
-            <ButtonGroup variant="collapse" withDivider>
+            <ButtonGroup variant="collapsed" withDivider>
               <Button onClick={onClick} variant="positive">
                 Button
               </Button>
@@ -93,7 +93,7 @@ export const overview: Story<ButtonGroupProps> = () => {
             </ButtonGroup>
           </Box>
           <Box marginBottom="spacingS">
-            <ButtonGroup variant="collapse" withDivider>
+            <ButtonGroup variant="collapsed" withDivider>
               <Button onClick={onClick} variant="primary" icon={Plus}>
                 Button
               </Button>
@@ -102,11 +102,11 @@ export const overview: Story<ButtonGroupProps> = () => {
           </Box>
         </Flex>
         <Box marginBottom="spacingS">
-          <SectionHeading as="h3">Button Group Separate</SectionHeading>
+          <SectionHeading as="h3">Button Group Spaced</SectionHeading>
         </Box>
         <Flex flexDirection="column" marginBottom="spacingM">
           <Box marginBottom="spacingS">
-            <ButtonGroup variant="separate">
+            <ButtonGroup variant="spaced">
               <Button onClick={onClick} variant="primary">
                 Button
               </Button>
