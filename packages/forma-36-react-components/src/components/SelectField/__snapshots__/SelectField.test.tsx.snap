@@ -3,7 +3,7 @@
 exports[`renders the component 1`] = `
 .emotion-0 {
   display: inline-block;
-  color: #192532;
+  color: #111B2B;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 0.875rem;
   font-weight: 500;
@@ -13,7 +13,7 @@ exports[`renders the component 1`] = `
 
 .emotion-1 {
   display: inline-block;
-  fill: #606C7C;
+  fill: #5A657C;
   height: 18px;
   width: 18px;
 }
@@ -68,7 +68,7 @@ exports[`renders the component 1`] = `
 exports[`renders the component as disabled 1`] = `
 .emotion-0 {
   display: inline-block;
-  color: #192532;
+  color: #111B2B;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 0.875rem;
   font-weight: 500;
@@ -78,7 +78,7 @@ exports[`renders the component as disabled 1`] = `
 
 .emotion-1 {
   display: inline-block;
-  fill: #606C7C;
+  fill: #5A657C;
   height: 18px;
   width: 18px;
 }
@@ -134,7 +134,7 @@ exports[`renders the component as disabled 1`] = `
 exports[`renders the component as required 1`] = `
 .emotion-0 {
   display: inline-block;
-  color: #192532;
+  color: #111B2B;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 0.875rem;
   font-weight: 500;
@@ -144,7 +144,7 @@ exports[`renders the component as required 1`] = `
 
 .emotion-1 {
   display: inline-block;
-  fill: #606C7C;
+  fill: #5A657C;
   height: 18px;
   width: 18px;
 }
@@ -200,7 +200,7 @@ exports[`renders the component with a help text 1`] = `
 .emotion-2 {
   margin: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  color: #606C7C;
+  color: #5A657C;
   font-size: 0.875rem;
   line-height: 1.5;
   text-rendering: optimizeLegibility;
@@ -208,7 +208,7 @@ exports[`renders the component with a help text 1`] = `
 
 .emotion-0 {
   display: inline-block;
-  color: #192532;
+  color: #111B2B;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 0.875rem;
   font-weight: 500;
@@ -218,7 +218,7 @@ exports[`renders the component with a help text 1`] = `
 
 .emotion-1 {
   display: inline-block;
-  fill: #606C7C;
+  fill: #5A657C;
   height: 18px;
   width: 18px;
 }
@@ -283,7 +283,7 @@ exports[`renders the component with a help text 1`] = `
 exports[`renders the component with a validation message 1`] = `
 .emotion-0 {
   display: inline-block;
-  color: #192532;
+  color: #111B2B;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 0.875rem;
   font-weight: 500;
@@ -293,7 +293,7 @@ exports[`renders the component with a validation message 1`] = `
 
 .emotion-1 {
   display: inline-block;
-  fill: #606C7C;
+  fill: #5A657C;
   height: 18px;
   width: 18px;
 }
@@ -307,7 +307,7 @@ exports[`renders the component with a validation message 1`] = `
 
 .emotion-2 {
   display: inline-block;
-  fill: #BF3045;
+  fill: #DA294A;
   height: 18px;
   width: 18px;
   margin-right: 0.25rem;
@@ -321,15 +321,15 @@ exports[`renders the component with a validation message 1`] = `
   margin: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
-  color: #192532;
+  color: #111B2B;
   font-size: 1.25rem;
   line-height: 2rem;
   text-rendering: optimizeLegibility;
   font-weight: 400;
-  color: #536171;
+  color: #414D63;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  color: #BF3045;
+  color: #DA294A;
   margin: 0;
 }
 
@@ -409,7 +409,7 @@ exports[`renders the component with a validation message 1`] = `
 exports[`renders the component with a value 1`] = `
 .emotion-0 {
   display: inline-block;
-  color: #192532;
+  color: #111B2B;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 0.875rem;
   font-weight: 500;
@@ -419,7 +419,7 @@ exports[`renders the component with a value 1`] = `
 
 .emotion-1 {
   display: inline-block;
-  fill: #606C7C;
+  fill: #5A657C;
   height: 18px;
   width: 18px;
 }

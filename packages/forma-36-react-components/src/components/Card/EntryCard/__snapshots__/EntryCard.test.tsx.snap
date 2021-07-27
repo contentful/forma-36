@@ -11,8 +11,8 @@ exports[`renders a small sized variant of the component 1`] = `
   -ms-letter-spacing: 0.06rem;
   letter-spacing: 0.06rem;
   border-radius: 4px;
-  color: #1A6848;
-  background-color: #D9F2E4;
+  color: #006D23;
+  background-color: #EAF9E8;
   padding: 0 0.5rem;
   font-size: calc(1rem * (12 / 16));
   line-height: 20px;
@@ -72,8 +72,8 @@ exports[`renders the component 1`] = `
   -ms-letter-spacing: 0.06rem;
   letter-spacing: 0.06rem;
   border-radius: 4px;
-  color: #1A6848;
-  background-color: #D9F2E4;
+  color: #006D23;
+  background-color: #EAF9E8;
   padding: 0 0.5rem;
   font-size: calc(1rem * (12 / 16));
   line-height: 20px;
@@ -138,8 +138,8 @@ exports[`renders the component with a custom drag handle 1`] = `
   -ms-letter-spacing: 0.06rem;
   letter-spacing: 0.06rem;
   border-radius: 4px;
-  color: #1A6848;
-  background-color: #D9F2E4;
+  color: #006D23;
+  background-color: #EAF9E8;
   padding: 0 0.5rem;
   font-size: calc(1rem * (12 / 16));
   line-height: 20px;
@@ -148,7 +148,7 @@ exports[`renders the component with a custom drag handle 1`] = `
 
 .emotion-0 {
   display: inline-block;
-  fill: #606C7C;
+  fill: #5A657C;
   height: 18px;
   width: 18px;
 }
@@ -236,8 +236,8 @@ exports[`renders the component with a drag handle 1`] = `
   -ms-letter-spacing: 0.06rem;
   letter-spacing: 0.06rem;
   border-radius: 4px;
-  color: #1A6848;
-  background-color: #D9F2E4;
+  color: #006D23;
+  background-color: #EAF9E8;
   padding: 0 0.5rem;
   font-size: calc(1rem * (12 / 16));
   line-height: 20px;
@@ -246,7 +246,7 @@ exports[`renders the component with a drag handle 1`] = `
 
 .emotion-0 {
   display: inline-block;
-  fill: #606C7C;
+  fill: #5A657C;
   height: 18px;
   width: 18px;
 }
@@ -334,8 +334,8 @@ exports[`renders the component with a thumbnail element 1`] = `
   -ms-letter-spacing: 0.06rem;
   letter-spacing: 0.06rem;
   border-radius: 4px;
-  color: #1A6848;
-  background-color: #D9F2E4;
+  color: #006D23;
+  background-color: #EAF9E8;
   padding: 0 0.5rem;
   font-size: calc(1rem * (12 / 16));
   line-height: 20px;
@@ -408,8 +408,8 @@ exports[`renders the component with an additional class name 1`] = `
   -ms-letter-spacing: 0.06rem;
   letter-spacing: 0.06rem;
   border-radius: 4px;
-  color: #1A6848;
-  background-color: #D9F2E4;
+  color: #006D23;
+  background-color: #EAF9E8;
   padding: 0 0.5rem;
   font-size: calc(1rem * (12 / 16));
   line-height: 20px;
@@ -479,8 +479,8 @@ exports[`renders the component with dropdownListElements 1`] = `
   -ms-letter-spacing: 0.06rem;
   letter-spacing: 0.06rem;
   border-radius: 4px;
-  color: #1A6848;
-  background-color: #D9F2E4;
+  color: #006D23;
+  background-color: #EAF9E8;
   padding: 0 0.5rem;
   font-size: calc(1rem * (12 / 16));
   line-height: 20px;
@@ -489,11 +489,11 @@ exports[`renders the component with dropdownListElements 1`] = `
 
 .emotion-1 {
   display: inline-block;
-  fill: #2D64B3;
+  fill: #0059C8;
   height: 18px;
   width: 18px;
   display: inline-block;
-  fill: #2D64B3;
+  fill: #0059C8;
   height: 18px;
   width: 18px;
 }

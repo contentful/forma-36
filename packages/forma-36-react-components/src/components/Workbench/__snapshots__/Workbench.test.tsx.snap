@@ -8,7 +8,7 @@ exports[`renders the component (complex) 1`] = `
 
 .emotion-0 {
   display: inline-block;
-  fill: #2D64B3;
+  fill: #0059C8;
   height: 18px;
   width: 18px;
 }
@@ -18,7 +18,7 @@ exports[`renders the component (complex) 1`] = `
   margin: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
-  color: #192532;
+  color: #111B2B;
   font-size: 1.25rem;
   line-height: 2rem;
   text-rendering: optimizeLegibility;
@@ -121,7 +121,7 @@ exports[`renders the component (simple) 1`] = `
 
 .emotion-0 {
   display: inline-block;
-  fill: #2D64B3;
+  fill: #0059C8;
   height: 18px;
   width: 18px;
 }
@@ -131,7 +131,7 @@ exports[`renders the component (simple) 1`] = `
   margin: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
-  color: #192532;
+  color: #111B2B;
   font-size: 1.25rem;
   line-height: 2rem;
   text-rendering: optimizeLegibility;

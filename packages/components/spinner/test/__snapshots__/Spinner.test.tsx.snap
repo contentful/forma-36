@@ -429,7 +429,7 @@ exports[`Spinner renders the component 1`] = `
 
 .emotion-6 {
   display: block;
-  fill: #536171;
+  fill: #414D63;
 }
 
 .emotion-7 {
@@ -922,7 +922,7 @@ exports[`Spinner renders the component with a custom size 1`] = `
 
 .emotion-6 {
   display: block;
-  fill: #536171;
+  fill: #414D63;
 }
 
 .emotion-7 {
@@ -1416,7 +1416,7 @@ exports[`Spinner renders the component with an additional class name 1`] = `
 
 .emotion-6 {
   display: block;
-  fill: #536171;
+  fill: #414D63;
 }
 
 .emotion-7 {
@@ -1909,7 +1909,7 @@ exports[`Spinner renders the component with the size "large" 1`] = `
 
 .emotion-6 {
   display: block;
-  fill: #536171;
+  fill: #414D63;
 }
 
 .emotion-7 {
@@ -2402,7 +2402,7 @@ exports[`Spinner renders the component with the size "small" 1`] = `
 
 .emotion-6 {
   display: block;
-  fill: #536171;
+  fill: #414D63;
 }
 
 .emotion-7 {

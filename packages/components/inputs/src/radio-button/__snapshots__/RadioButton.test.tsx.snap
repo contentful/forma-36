@@ -15,18 +15,18 @@ exports[`renders the component 1`] = `
 
 .emotion-0:focus + label {
   outline: none;
-  border: 2px solid #2E75D4;
-  box-shadow: 0px 0px 0px 3px #84B9F5;
+  border: 2px solid #036FE3;
+  box-shadow: 0px 0px 0px 3px #98CBFF;
 }
 
 .emotion-0:checked + label {
-  border-color: #2E75D4;
-  background: #2E75D4;
+  border-color: #036FE3;
+  background: #036FE3;
 }
 
 .emotion-0:disabled + label {
-  border-color: #c3cfd5;
-  background: #c3cfd5;
+  border-color: #AEC1CC;
+  background: #AEC1CC;
 }
 
 .emotion-0:checked + label::before {
@@ -34,18 +34,18 @@ exports[`renders the component 1`] = `
 }
 
 .emotion-0:checked:disabled + label::before {
-  background: #6B7888;
+  background: #67728A;
 }
 
 .emotion-0:disabled + label::before {
-  background: #b4c3ca;
+  background: #67728A;
 }
 
 .emotion-1 {
   background: #ffffff;
   width: 1rem;
   height: 1rem;
-  border: 2px solid #c3cfd5;
+  border: 2px solid #AEC1CC;
   fill: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
@@ -116,18 +116,18 @@ exports[`renders the component with an additional class name 1`] = `
 
 .emotion-0:focus + label {
   outline: none;
-  border: 2px solid #2E75D4;
-  box-shadow: 0px 0px 0px 3px #84B9F5;
+  border: 2px solid #036FE3;
+  box-shadow: 0px 0px 0px 3px #98CBFF;
 }
 
 .emotion-0:checked + label {
-  border-color: #2E75D4;
-  background: #2E75D4;
+  border-color: #036FE3;
+  background: #036FE3;
 }
 
 .emotion-0:disabled + label {
-  border-color: #c3cfd5;
-  background: #c3cfd5;
+  border-color: #AEC1CC;
+  background: #AEC1CC;
 }
 
 .emotion-0:checked + label::before {
@@ -135,18 +135,18 @@ exports[`renders the component with an additional class name 1`] = `
 }
 
 .emotion-0:checked:disabled + label::before {
-  background: #6B7888;
+  background: #67728A;
 }
 
 .emotion-0:disabled + label::before {
-  background: #b4c3ca;
+  background: #67728A;
 }
 
 .emotion-1 {
   background: #ffffff;
   width: 1rem;
   height: 1rem;
-  border: 2px solid #c3cfd5;
+  border: 2px solid #AEC1CC;
   fill: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;

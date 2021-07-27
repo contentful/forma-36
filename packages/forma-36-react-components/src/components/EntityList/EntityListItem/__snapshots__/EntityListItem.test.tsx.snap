@@ -8,7 +8,7 @@ exports[`can call an onClick callback 1`] = `
 
 .emotion-0 {
   display: inline-block;
-  fill: #606C7C;
+  fill: #5A657C;
   height: 18px;
   width: 18px;
 }
@@ -81,7 +81,7 @@ exports[`renders the component 1`] = `
 
 .emotion-0 {
   display: inline-block;
-  fill: #606C7C;
+  fill: #5A657C;
   height: 18px;
   width: 18px;
 }
@@ -155,7 +155,7 @@ exports[`renders the component as an \`a\` element if passed a href prop 1`] = `
 
 .emotion-0 {
   display: inline-block;
-  fill: #606C7C;
+  fill: #5A657C;
   height: 18px;
   width: 18px;
 }
@@ -228,7 +228,7 @@ exports[`renders the component as an Asset with a lower-cased entityType 1`] = `
 
 .emotion-0 {
   display: inline-block;
-  fill: #606C7C;
+  fill: #5A657C;
   height: 18px;
   width: 18px;
 }
@@ -243,8 +243,8 @@ exports[`renders the component as an Asset with a lower-cased entityType 1`] = `
   -ms-letter-spacing: 0.06rem;
   letter-spacing: 0.06rem;
   border-radius: 4px;
-  color: #1A6848;
-  background-color: #D9F2E4;
+  color: #006D23;
+  background-color: #EAF9E8;
   padding: 0 0.5rem;
   font-size: calc(1rem * (12 / 16));
   line-height: 20px;
@@ -338,7 +338,7 @@ exports[`renders the component as an Asset with a title-cased entityType 1`] = `
 
 .emotion-0 {
   display: inline-block;
-  fill: #606C7C;
+  fill: #5A657C;
   height: 18px;
   width: 18px;
 }
@@ -353,8 +353,8 @@ exports[`renders the component as an Asset with a title-cased entityType 1`] = `
   -ms-letter-spacing: 0.06rem;
   letter-spacing: 0.06rem;
   border-radius: 4px;
-  color: #1A6848;
-  background-color: #D9F2E4;
+  color: #006D23;
+  background-color: #EAF9E8;
   padding: 0 0.5rem;
   font-size: calc(1rem * (12 / 16));
   line-height: 20px;
@@ -448,7 +448,7 @@ exports[`renders the component as an asset entityType icon with an archived stat
 
 .emotion-0 {
   display: inline-block;
-  fill: #606C7C;
+  fill: #5A657C;
   height: 18px;
   width: 18px;
 }
@@ -463,8 +463,8 @@ exports[`renders the component as an asset entityType icon with an archived stat
   -ms-letter-spacing: 0.06rem;
   letter-spacing: 0.06rem;
   border-radius: 4px;
-  color: #A82D3E;
-  background-color: #FCE9E8;
+  color: #BD002A;
+  background-color: #FFF2F2;
   padding: 0 0.5rem;
   font-size: calc(1rem * (12 / 16));
   line-height: 20px;
@@ -558,7 +558,7 @@ exports[`renders the component as an asset entityType variant 1`] = `
 
 .emotion-0 {
   display: inline-block;
-  fill: #606C7C;
+  fill: #5A657C;
   height: 18px;
   width: 18px;
 }
@@ -573,8 +573,8 @@ exports[`renders the component as an asset entityType variant 1`] = `
   -ms-letter-spacing: 0.06rem;
   letter-spacing: 0.06rem;
   border-radius: 4px;
-  color: #1A6848;
-  background-color: #D9F2E4;
+  color: #006D23;
+  background-color: #EAF9E8;
   padding: 0 0.5rem;
   font-size: calc(1rem * (12 / 16));
   line-height: 20px;
@@ -676,8 +676,8 @@ exports[`renders the component as an asset thumbnail preview 1`] = `
   -ms-letter-spacing: 0.06rem;
   letter-spacing: 0.06rem;
   border-radius: 4px;
-  color: #1A6848;
-  background-color: #D9F2E4;
+  color: #006D23;
+  background-color: #EAF9E8;
   padding: 0 0.5rem;
   font-size: calc(1rem * (12 / 16));
   line-height: 20px;
@@ -861,7 +861,7 @@ exports[`renders the component with a description 1`] = `
 
 .emotion-0 {
   display: inline-block;
-  fill: #606C7C;
+  fill: #5A657C;
   height: 18px;
   width: 18px;
 }
@@ -950,10 +950,10 @@ exports[`renders the component with a drag handle 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  background-color: #f7f9fa;
+  background-color: #F7F9FA;
   border: 0;
   border-bottom-left-radius: 6px;
-  border-right: 1px solid #d3dce0;
+  border-right: 1px solid #CFD9E0;
   border-top-left-radius: 6px;
   box-sizing: border-box;
   display: -webkit-box;
@@ -973,7 +973,7 @@ exports[`renders the component with a drag handle 1`] = `
 
 .emotion-2:hover,
 .emotion-2:focus {
-  background-color: #e5ebed;
+  background-color: #E7EBEE;
 }
 
 .emotion-5 {
@@ -983,7 +983,7 @@ exports[`renders the component with a drag handle 1`] = `
 
 .emotion-0 {
   display: inline-block;
-  fill: #606C7C;
+  fill: #5A657C;
   height: 18px;
   width: 18px;
 }
@@ -998,8 +998,8 @@ exports[`renders the component with a drag handle 1`] = `
   -ms-letter-spacing: 0.06rem;
   letter-spacing: 0.06rem;
   border-radius: 4px;
-  color: #1A6848;
-  background-color: #D9F2E4;
+  color: #006D23;
+  background-color: #EAF9E8;
   padding: 0 0.5rem;
   font-size: calc(1rem * (12 / 16));
   line-height: 20px;
@@ -1116,7 +1116,7 @@ exports[`renders the component with a status 1`] = `
 
 .emotion-0 {
   display: inline-block;
-  fill: #606C7C;
+  fill: #5A657C;
   height: 18px;
   width: 18px;
 }
@@ -1131,8 +1131,8 @@ exports[`renders the component with a status 1`] = `
   -ms-letter-spacing: 0.06rem;
   letter-spacing: 0.06rem;
   border-radius: 4px;
-  color: #1A6848;
-  background-color: #D9F2E4;
+  color: #006D23;
+  background-color: #EAF9E8;
   padding: 0 0.5rem;
   font-size: calc(1rem * (12 / 16));
   line-height: 20px;
@@ -1224,7 +1224,7 @@ exports[`renders the component with active drag state 1`] = `
 
 .emotion-0 {
   display: inline-block;
-  fill: #606C7C;
+  fill: #5A657C;
   height: 18px;
   width: 18px;
 }
@@ -1239,8 +1239,8 @@ exports[`renders the component with active drag state 1`] = `
   -ms-letter-spacing: 0.06rem;
   letter-spacing: 0.06rem;
   border-radius: 4px;
-  color: #1A6848;
-  background-color: #D9F2E4;
+  color: #006D23;
+  background-color: #EAF9E8;
   padding: 0 0.5rem;
   font-size: calc(1rem * (12 / 16));
   line-height: 20px;
@@ -1332,7 +1332,7 @@ exports[`renders the component with an additional class name 1`] = `
 
 .emotion-0 {
   display: inline-block;
-  fill: #606C7C;
+  fill: #5A657C;
   height: 18px;
   width: 18px;
 }
@@ -1411,7 +1411,7 @@ exports[`renders the component with custom drag handle 1`] = `
 
 .emotion-0 {
   display: inline-block;
-  fill: #606C7C;
+  fill: #5A657C;
   height: 18px;
   width: 18px;
 }
@@ -1426,8 +1426,8 @@ exports[`renders the component with custom drag handle 1`] = `
   -ms-letter-spacing: 0.06rem;
   letter-spacing: 0.06rem;
   border-radius: 4px;
-  color: #1A6848;
-  background-color: #D9F2E4;
+  color: #006D23;
+  background-color: #EAF9E8;
   padding: 0 0.5rem;
   font-size: calc(1rem * (12 / 16));
   line-height: 20px;
@@ -1544,7 +1544,7 @@ exports[`renders the component with disabled actions 1`] = `
 
 .emotion-0 {
   display: inline-block;
-  fill: #606C7C;
+  fill: #5A657C;
   height: 18px;
   width: 18px;
 }
@@ -1627,7 +1627,7 @@ exports[`renders the component with dropdownListElements 1`] = `
 
 .emotion-0 {
   display: inline-block;
-  fill: #606C7C;
+  fill: #5A657C;
   height: 18px;
   width: 18px;
 }
@@ -1642,8 +1642,8 @@ exports[`renders the component with dropdownListElements 1`] = `
   -ms-letter-spacing: 0.06rem;
   letter-spacing: 0.06rem;
   border-radius: 4px;
-  color: #1A6848;
-  background-color: #D9F2E4;
+  color: #006D23;
+  background-color: #EAF9E8;
   padding: 0 0.5rem;
   font-size: calc(1rem * (12 / 16));
   line-height: 20px;
@@ -1676,7 +1676,7 @@ exports[`renders the component with dropdownListElements 1`] = `
   text-decoration: none;
   -webkit-transition: background-color 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out;
-  color: #283848;
+  color: #1B273A;
   background: none;
   border-color: transparent;
   font-size: 0.875rem;
@@ -1686,19 +1686,19 @@ exports[`renders the component with dropdownListElements 1`] = `
 }
 
 .emotion-5:hover {
-  background-color: #f7f9fa;
-  color: #192532;
+  background-color: #F7F9FA;
+  color: #111B2B;
 }
 
 .emotion-5:active,
 .emotion-5:active:hover {
-  background-color: #f7f9fa;
-  border-color: #f7f9fa;
+  background-color: #F7F9FA;
+  border-color: #F7F9FA;
 }
 
 .emotion-5:focus {
   background-color: none;
-  box-shadow: 0px 0px 0px 3px #e5ebed;
+  box-shadow: 0px 0px 0px 3px #E7EBEE;
 }
 
 .emotion-3 {
@@ -1711,11 +1711,11 @@ exports[`renders the component with dropdownListElements 1`] = `
 
 .emotion-2 {
   display: inline-block;
-  fill: #2D64B3;
+  fill: #0059C8;
   height: 18px;
   width: 18px;
   display: inline-block;
-  fill: #2D64B3;
+  fill: #0059C8;
   height: 18px;
   width: 18px;
   fill: currentColor;

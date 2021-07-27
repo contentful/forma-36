@@ -22,45 +22,45 @@ exports[`renders the component 1`] = `
 
 .emotion-0:focus + label {
   outline: none;
-  border: 2px solid #2E75D4;
-  box-shadow: 0px 0px 0px 3px #84B9F5;
+  border: 2px solid #036FE3;
+  box-shadow: 0px 0px 0px 3px #98CBFF;
 }
 
 .emotion-0:checked + label {
-  border-color: #2E75D4;
-  background: #2E75D4;
+  border-color: #036FE3;
+  background: #036FE3;
 }
 
 .emotion-0:disabled + label {
-  border-color: #c3cfd5;
-  background: #c3cfd5;
+  border-color: #AEC1CC;
+  background: #AEC1CC;
 }
 
 .emotion-0:checked + label,
 .emotion-0:indeterminate + label {
-  border-color: #2E75D4;
-  background: #2E75D4;
+  border-color: #036FE3;
+  background: #036FE3;
 }
 
 .emotion-0:checked:disabled + label svg,
 .emotion-0:indeterminate:disabled + label svg {
-  fill: #6B7888;
+  fill: #67728A;
 }
 
 .emotion-0:disabled + label {
-  border-color: #c3cfd5;
-  background: #c3cfd5;
+  border-color: #AEC1CC;
+  background: #AEC1CC;
 }
 
 .emotion-0:disabled + label svg {
-  fill: #c3cfd5;
+  fill: #AEC1CC;
 }
 
 .emotion-2 {
   background: #ffffff;
   width: 1rem;
   height: 1rem;
-  border: 2px solid #c3cfd5;
+  border: 2px solid #AEC1CC;
   fill: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
@@ -108,7 +108,7 @@ exports[`renders the component 1`] = `
 
 .emotion-4 {
   display: inline-block;
-  color: #192532;
+  color: #111B2B;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 0.875rem;
   font-weight: 500;
@@ -184,45 +184,45 @@ exports[`renders the component as checked 1`] = `
 
 .emotion-0:focus + label {
   outline: none;
-  border: 2px solid #2E75D4;
-  box-shadow: 0px 0px 0px 3px #84B9F5;
+  border: 2px solid #036FE3;
+  box-shadow: 0px 0px 0px 3px #98CBFF;
 }
 
 .emotion-0:checked + label {
-  border-color: #2E75D4;
-  background: #2E75D4;
+  border-color: #036FE3;
+  background: #036FE3;
 }
 
 .emotion-0:disabled + label {
-  border-color: #c3cfd5;
-  background: #c3cfd5;
+  border-color: #AEC1CC;
+  background: #AEC1CC;
 }
 
 .emotion-0:checked + label,
 .emotion-0:indeterminate + label {
-  border-color: #2E75D4;
-  background: #2E75D4;
+  border-color: #036FE3;
+  background: #036FE3;
 }
 
 .emotion-0:checked:disabled + label svg,
 .emotion-0:indeterminate:disabled + label svg {
-  fill: #6B7888;
+  fill: #67728A;
 }
 
 .emotion-0:disabled + label {
-  border-color: #c3cfd5;
-  background: #c3cfd5;
+  border-color: #AEC1CC;
+  background: #AEC1CC;
 }
 
 .emotion-0:disabled + label svg {
-  fill: #c3cfd5;
+  fill: #AEC1CC;
 }
 
 .emotion-2 {
   background: #ffffff;
   width: 1rem;
   height: 1rem;
-  border: 2px solid #c3cfd5;
+  border: 2px solid #AEC1CC;
   fill: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
@@ -270,7 +270,7 @@ exports[`renders the component as checked 1`] = `
 
 .emotion-4 {
   display: inline-block;
-  color: #192532;
+  color: #111B2B;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 0.875rem;
   font-weight: 500;
@@ -347,45 +347,45 @@ exports[`renders the component as required 1`] = `
 
 .emotion-0:focus + label {
   outline: none;
-  border: 2px solid #2E75D4;
-  box-shadow: 0px 0px 0px 3px #84B9F5;
+  border: 2px solid #036FE3;
+  box-shadow: 0px 0px 0px 3px #98CBFF;
 }
 
 .emotion-0:checked + label {
-  border-color: #2E75D4;
-  background: #2E75D4;
+  border-color: #036FE3;
+  background: #036FE3;
 }
 
 .emotion-0:disabled + label {
-  border-color: #c3cfd5;
-  background: #c3cfd5;
+  border-color: #AEC1CC;
+  background: #AEC1CC;
 }
 
 .emotion-0:checked + label,
 .emotion-0:indeterminate + label {
-  border-color: #2E75D4;
-  background: #2E75D4;
+  border-color: #036FE3;
+  background: #036FE3;
 }
 
 .emotion-0:checked:disabled + label svg,
 .emotion-0:indeterminate:disabled + label svg {
-  fill: #6B7888;
+  fill: #67728A;
 }
 
 .emotion-0:disabled + label {
-  border-color: #c3cfd5;
-  background: #c3cfd5;
+  border-color: #AEC1CC;
+  background: #AEC1CC;
 }
 
 .emotion-0:disabled + label svg {
-  fill: #c3cfd5;
+  fill: #AEC1CC;
 }
 
 .emotion-2 {
   background: #ffffff;
   width: 1rem;
   height: 1rem;
-  border: 2px solid #c3cfd5;
+  border: 2px solid #AEC1CC;
   fill: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
@@ -433,7 +433,7 @@ exports[`renders the component as required 1`] = `
 
 .emotion-5 {
   display: inline-block;
-  color: #192532;
+  color: #111B2B;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 0.875rem;
   font-weight: 500;
@@ -444,7 +444,7 @@ exports[`renders the component as required 1`] = `
 }
 
 .emotion-4 {
-  color: #6B7888;
+  color: #67728A;
   font-weight: 400;
   margin-left: calc(1rem * (4 / 16));
 }
@@ -540,45 +540,45 @@ exports[`renders the component in a disabled state 1`] = `
 
 .emotion-0:focus + label {
   outline: none;
-  border: 2px solid #2E75D4;
-  box-shadow: 0px 0px 0px 3px #84B9F5;
+  border: 2px solid #036FE3;
+  box-shadow: 0px 0px 0px 3px #98CBFF;
 }
 
 .emotion-0:checked + label {
-  border-color: #2E75D4;
-  background: #2E75D4;
+  border-color: #036FE3;
+  background: #036FE3;
 }
 
 .emotion-0:disabled + label {
-  border-color: #c3cfd5;
-  background: #c3cfd5;
+  border-color: #AEC1CC;
+  background: #AEC1CC;
 }
 
 .emotion-0:checked + label,
 .emotion-0:indeterminate + label {
-  border-color: #2E75D4;
-  background: #2E75D4;
+  border-color: #036FE3;
+  background: #036FE3;
 }
 
 .emotion-0:checked:disabled + label svg,
 .emotion-0:indeterminate:disabled + label svg {
-  fill: #6B7888;
+  fill: #67728A;
 }
 
 .emotion-0:disabled + label {
-  border-color: #c3cfd5;
-  background: #c3cfd5;
+  border-color: #AEC1CC;
+  background: #AEC1CC;
 }
 
 .emotion-0:disabled + label svg {
-  fill: #c3cfd5;
+  fill: #AEC1CC;
 }
 
 .emotion-2 {
   background: #ffffff;
   width: 1rem;
   height: 1rem;
-  border: 2px solid #c3cfd5;
+  border: 2px solid #AEC1CC;
   fill: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
@@ -607,14 +607,14 @@ exports[`renders the component in a disabled state 1`] = `
 
 .emotion-1 {
   display: inline-block;
-  fill: #192532;
+  fill: #111B2B;
   height: 24px;
   width: 24px;
 }
 
 .emotion-4 {
   display: inline-block;
-  color: #192532;
+  color: #111B2B;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 0.875rem;
   font-weight: 500;
@@ -675,7 +675,7 @@ exports[`renders the component with a help text 1`] = `
 .emotion-5 {
   margin: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  color: #606C7C;
+  color: #5A657C;
   font-size: 0.875rem;
   line-height: 1.5;
   text-rendering: optimizeLegibility;
@@ -702,45 +702,45 @@ exports[`renders the component with a help text 1`] = `
 
 .emotion-0:focus + label {
   outline: none;
-  border: 2px solid #2E75D4;
-  box-shadow: 0px 0px 0px 3px #84B9F5;
+  border: 2px solid #036FE3;
+  box-shadow: 0px 0px 0px 3px #98CBFF;
 }
 
 .emotion-0:checked + label {
-  border-color: #2E75D4;
-  background: #2E75D4;
+  border-color: #036FE3;
+  background: #036FE3;
 }
 
 .emotion-0:disabled + label {
-  border-color: #c3cfd5;
-  background: #c3cfd5;
+  border-color: #AEC1CC;
+  background: #AEC1CC;
 }
 
 .emotion-0:checked + label,
 .emotion-0:indeterminate + label {
-  border-color: #2E75D4;
-  background: #2E75D4;
+  border-color: #036FE3;
+  background: #036FE3;
 }
 
 .emotion-0:checked:disabled + label svg,
 .emotion-0:indeterminate:disabled + label svg {
-  fill: #6B7888;
+  fill: #67728A;
 }
 
 .emotion-0:disabled + label {
-  border-color: #c3cfd5;
-  background: #c3cfd5;
+  border-color: #AEC1CC;
+  background: #AEC1CC;
 }
 
 .emotion-0:disabled + label svg {
-  fill: #c3cfd5;
+  fill: #AEC1CC;
 }
 
 .emotion-2 {
   background: #ffffff;
   width: 1rem;
   height: 1rem;
-  border: 2px solid #c3cfd5;
+  border: 2px solid #AEC1CC;
   fill: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
@@ -788,7 +788,7 @@ exports[`renders the component with a help text 1`] = `
 
 .emotion-4 {
   display: inline-block;
-  color: #192532;
+  color: #111B2B;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 0.875rem;
   font-weight: 500;
@@ -870,45 +870,45 @@ exports[`renders the component with a light label variation 1`] = `
 
 .emotion-0:focus + label {
   outline: none;
-  border: 2px solid #2E75D4;
-  box-shadow: 0px 0px 0px 3px #84B9F5;
+  border: 2px solid #036FE3;
+  box-shadow: 0px 0px 0px 3px #98CBFF;
 }
 
 .emotion-0:checked + label {
-  border-color: #2E75D4;
-  background: #2E75D4;
+  border-color: #036FE3;
+  background: #036FE3;
 }
 
 .emotion-0:disabled + label {
-  border-color: #c3cfd5;
-  background: #c3cfd5;
+  border-color: #AEC1CC;
+  background: #AEC1CC;
 }
 
 .emotion-0:checked + label,
 .emotion-0:indeterminate + label {
-  border-color: #2E75D4;
-  background: #2E75D4;
+  border-color: #036FE3;
+  background: #036FE3;
 }
 
 .emotion-0:checked:disabled + label svg,
 .emotion-0:indeterminate:disabled + label svg {
-  fill: #6B7888;
+  fill: #67728A;
 }
 
 .emotion-0:disabled + label {
-  border-color: #c3cfd5;
-  background: #c3cfd5;
+  border-color: #AEC1CC;
+  background: #AEC1CC;
 }
 
 .emotion-0:disabled + label svg {
-  fill: #c3cfd5;
+  fill: #AEC1CC;
 }
 
 .emotion-2 {
   background: #ffffff;
   width: 1rem;
   height: 1rem;
-  border: 2px solid #c3cfd5;
+  border: 2px solid #AEC1CC;
   fill: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
@@ -963,7 +963,7 @@ exports[`renders the component with a light label variation 1`] = `
 
 .emotion-5 {
   display: inline-block;
-  fill: #BF3045;
+  fill: #DA294A;
   height: 18px;
   width: 18px;
   margin-right: 0.25rem;
@@ -977,21 +977,21 @@ exports[`renders the component with a light label variation 1`] = `
   margin: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
-  color: #192532;
+  color: #111B2B;
   font-size: 1.25rem;
   line-height: 2rem;
   text-rendering: optimizeLegibility;
   font-weight: 400;
-  color: #536171;
+  color: #414D63;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  color: #BF3045;
+  color: #DA294A;
   margin: 0;
 }
 
 .emotion-4 {
   display: inline-block;
-  color: #192532;
+  color: #111B2B;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 0.875rem;
   font-weight: 500;
@@ -1094,45 +1094,45 @@ exports[`renders the component with a validation message 1`] = `
 
 .emotion-0:focus + label {
   outline: none;
-  border: 2px solid #2E75D4;
-  box-shadow: 0px 0px 0px 3px #84B9F5;
+  border: 2px solid #036FE3;
+  box-shadow: 0px 0px 0px 3px #98CBFF;
 }
 
 .emotion-0:checked + label {
-  border-color: #2E75D4;
-  background: #2E75D4;
+  border-color: #036FE3;
+  background: #036FE3;
 }
 
 .emotion-0:disabled + label {
-  border-color: #c3cfd5;
-  background: #c3cfd5;
+  border-color: #AEC1CC;
+  background: #AEC1CC;
 }
 
 .emotion-0:checked + label,
 .emotion-0:indeterminate + label {
-  border-color: #2E75D4;
-  background: #2E75D4;
+  border-color: #036FE3;
+  background: #036FE3;
 }
 
 .emotion-0:checked:disabled + label svg,
 .emotion-0:indeterminate:disabled + label svg {
-  fill: #6B7888;
+  fill: #67728A;
 }
 
 .emotion-0:disabled + label {
-  border-color: #c3cfd5;
-  background: #c3cfd5;
+  border-color: #AEC1CC;
+  background: #AEC1CC;
 }
 
 .emotion-0:disabled + label svg {
-  fill: #c3cfd5;
+  fill: #AEC1CC;
 }
 
 .emotion-2 {
   background: #ffffff;
   width: 1rem;
   height: 1rem;
-  border: 2px solid #c3cfd5;
+  border: 2px solid #AEC1CC;
   fill: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1180,7 +1180,7 @@ exports[`renders the component with a validation message 1`] = `
 
 .emotion-4 {
   display: inline-block;
-  color: #192532;
+  color: #111B2B;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 0.875rem;
   font-weight: 500;
@@ -1199,7 +1199,7 @@ exports[`renders the component with a validation message 1`] = `
 
 .emotion-5 {
   display: inline-block;
-  fill: #BF3045;
+  fill: #DA294A;
   height: 18px;
   width: 18px;
   margin-right: 0.25rem;
@@ -1213,15 +1213,15 @@ exports[`renders the component with a validation message 1`] = `
   margin: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
-  color: #192532;
+  color: #111B2B;
   font-size: 1.25rem;
   line-height: 2rem;
   text-rendering: optimizeLegibility;
   font-weight: 400;
-  color: #536171;
+  color: #414D63;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  color: #BF3045;
+  color: #DA294A;
   margin: 0;
 }
 
@@ -1317,45 +1317,45 @@ exports[`renders the component with a value 1`] = `
 
 .emotion-0:focus + label {
   outline: none;
-  border: 2px solid #2E75D4;
-  box-shadow: 0px 0px 0px 3px #84B9F5;
+  border: 2px solid #036FE3;
+  box-shadow: 0px 0px 0px 3px #98CBFF;
 }
 
 .emotion-0:checked + label {
-  border-color: #2E75D4;
-  background: #2E75D4;
+  border-color: #036FE3;
+  background: #036FE3;
 }
 
 .emotion-0:disabled + label {
-  border-color: #c3cfd5;
-  background: #c3cfd5;
+  border-color: #AEC1CC;
+  background: #AEC1CC;
 }
 
 .emotion-0:checked + label,
 .emotion-0:indeterminate + label {
-  border-color: #2E75D4;
-  background: #2E75D4;
+  border-color: #036FE3;
+  background: #036FE3;
 }
 
 .emotion-0:checked:disabled + label svg,
 .emotion-0:indeterminate:disabled + label svg {
-  fill: #6B7888;
+  fill: #67728A;
 }
 
 .emotion-0:disabled + label {
-  border-color: #c3cfd5;
-  background: #c3cfd5;
+  border-color: #AEC1CC;
+  background: #AEC1CC;
 }
 
 .emotion-0:disabled + label svg {
-  fill: #c3cfd5;
+  fill: #AEC1CC;
 }
 
 .emotion-2 {
   background: #ffffff;
   width: 1rem;
   height: 1rem;
-  border: 2px solid #c3cfd5;
+  border: 2px solid #AEC1CC;
   fill: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1403,7 +1403,7 @@ exports[`renders the component with a value 1`] = `
 
 .emotion-4 {
   display: inline-block;
-  color: #192532;
+  color: #111B2B;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 0.875rem;
   font-weight: 500;
@@ -1479,45 +1479,45 @@ exports[`renders the component with an additional class name 1`] = `
 
 .emotion-0:focus + label {
   outline: none;
-  border: 2px solid #2E75D4;
-  box-shadow: 0px 0px 0px 3px #84B9F5;
+  border: 2px solid #036FE3;
+  box-shadow: 0px 0px 0px 3px #98CBFF;
 }
 
 .emotion-0:checked + label {
-  border-color: #2E75D4;
-  background: #2E75D4;
+  border-color: #036FE3;
+  background: #036FE3;
 }
 
 .emotion-0:disabled + label {
-  border-color: #c3cfd5;
-  background: #c3cfd5;
+  border-color: #AEC1CC;
+  background: #AEC1CC;
 }
 
 .emotion-0:checked + label,
 .emotion-0:indeterminate + label {
-  border-color: #2E75D4;
-  background: #2E75D4;
+  border-color: #036FE3;
+  background: #036FE3;
 }
 
 .emotion-0:checked:disabled + label svg,
 .emotion-0:indeterminate:disabled + label svg {
-  fill: #6B7888;
+  fill: #67728A;
 }
 
 .emotion-0:disabled + label {
-  border-color: #c3cfd5;
-  background: #c3cfd5;
+  border-color: #AEC1CC;
+  background: #AEC1CC;
 }
 
 .emotion-0:disabled + label svg {
-  fill: #c3cfd5;
+  fill: #AEC1CC;
 }
 
 .emotion-2 {
   background: #ffffff;
   width: 1rem;
   height: 1rem;
-  border: 2px solid #c3cfd5;
+  border: 2px solid #AEC1CC;
   fill: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1565,7 +1565,7 @@ exports[`renders the component with an additional class name 1`] = `
 
 .emotion-4 {
   display: inline-block;
-  color: #192532;
+  color: #111B2B;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 0.875rem;
   font-weight: 500;
