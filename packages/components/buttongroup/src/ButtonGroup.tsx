@@ -2,7 +2,7 @@ import { cx } from 'emotion';
 import React from 'react';
 import { CommonProps, Box } from '@contentful/f36-core';
 import getStyles from './ButtonGroup.styles';
-import type { ButtonGroupVariants } from './types';
+import type { ButtonGroupVariants, ButtonGroupSpacing } from './types';
 
 export interface ButtonGroupProps extends CommonProps {
   /**
@@ -15,6 +15,11 @@ export interface ButtonGroupProps extends CommonProps {
    * @default false
    */
   withDivider?: boolean;
+  /**
+   * Sets the spacing of the buttons if variant is separate.
+   * @default spacingS
+   */
+  spacing?: ButtonGroupSpacing;
   children: React.ReactElement[];
 }
 
@@ -25,8 +30,9 @@ function _ButtonGroup(props: ButtonGroupProps, ref: React.Ref<HTMLDivElement>) {
     testId = 'cf-ui-button-group',
     children,
     className,
+    spacing,
   } = props;
-  const styles = getStyles(variant, withDivider);
+  const styles = getStyles({ variant, withDivider, spacing });
 
   return (
     <Box

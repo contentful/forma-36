@@ -1,16 +1,17 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
-import type { ButtonGroupVariants } from './types';
+import type { GetStyleArguments } from './types';
 import { CSSObject } from '@storybook/theming';
 
-const getGroupContentStyle = (
-  variant: ButtonGroupVariants,
-  withDivider: boolean,
-) => {
+const getGroupContentStyle = ({
+  variant,
+  withDivider,
+  spacing,
+}: GetStyleArguments) => {
   if (variant === 'separate') {
     return {
-      marginLeft: tokens.spacingS,
-      marginRight: tokens.spacingS,
+      marginLeft: tokens[spacing],
+      marginRight: tokens[spacing],
       '&:first-child': {
         marginLeft: 0,
       },
@@ -68,9 +69,13 @@ const getDividerStyle = (withDivider: boolean): CSSObject => {
   };
 };
 
-export default (variant: ButtonGroupVariants, withDivider: boolean) => ({
+export default ({
+  variant,
+  withDivider,
+  spacing = 'spacingS',
+}: GetStyleArguments) => ({
   buttonGroup: css({
     display: 'inline-flex',
   }),
-  groupContent: css(getGroupContentStyle(variant, withDivider)),
+  groupContent: css(getGroupContentStyle({ variant, withDivider, spacing })),
 });

@@ -7,6 +7,7 @@ import { action } from '@storybook/addon-actions';
 import { Box, Flex } from '@contentful/f36-core';
 import { ButtonGroup } from '../src/ButtonGroup';
 import type { ButtonGroupProps } from '../src/ButtonGroup';
+import tokens from '@contentful/f36-tokens';
 
 export default {
   component: ButtonGroup,
@@ -14,6 +15,20 @@ export default {
     propTypes: ButtonGroup['__docgenInfo'],
   },
   title: 'Components/ButtonGroup',
+  argTypes: {
+    variant: {
+      control: {
+        options: ['collapse', 'separate'],
+        type: 'select',
+      },
+    },
+    spacing: {
+      control: {
+        options: Object.keys(tokens).filter((key) => key.startsWith('spacing')),
+        type: 'select',
+      },
+    },
+  },
 } as Meta;
 
 export const basic: Story<ButtonGroupProps> = (args) => {
@@ -25,6 +40,21 @@ export const basic: Story<ButtonGroupProps> = (args) => {
       <Button variant="secondary" icon={ChevronDown} />
     </ButtonGroup>
   );
+};
+
+export const separate: Story<ButtonGroupProps> = (args) => {
+  return (
+    <ButtonGroup {...args}>
+      <Button variant="secondary">Button</Button>
+      <Button variant="secondary">Button</Button>
+      <Button variant="secondary">Button</Button>
+      <Button variant="secondary" icon={ChevronDown} />
+    </ButtonGroup>
+  );
+};
+
+separate.args = {
+  variant: 'separate',
 };
 
 export const overview: Story<ButtonGroupProps> = () => {
