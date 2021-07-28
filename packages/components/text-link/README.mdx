@@ -1,3 +1,90 @@
-# @contentful/f36-text-link
+---
+title: 'TextLink'
+type: 'component'
+status: 'stable'
+slug: /components/text-link/
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/text-link'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-textlink--basic'
+typescript: ./src/TextLink.tsx
+---
 
-This package is part of [Forma 36](https://github.com/contentful/forma-36). See the repo for more details.
+import { Props } from '@contentful/f36-docs-utils';
+
+TextLinks communicate actions and linked resources to users.
+
+## Table of contents
+
+- [How to use TextLinks](#how-to-use-TextLinks)
+- [Component variations](#component-variations)
+- [Code examples](#code-examples)
+- [Content recommendations](#content-recommendations)
+- [Accessibility](#accessibility)
+
+## How to use TextLinks
+
+- TextLinks are used to display actions that have a lower priority compared to actions that are accessible via a button.
+- They should also be used when linking to URLs, and are preferred over using buttons when used for this purpose.
+- Use clear, succinct, and accurate labels
+- Start TextLink labels with verbs, for example "Add field", not "New field"
+- Reduce complexity by using a small number of actions. Too many actions can create confusion when having to decide
+
+## Component variations
+
+There are a number of variations of TextLink styles, here is a guide for when to use them:
+
+- **Primary** - Used for primary actions, or the default for links to URLs.
+- **Positive** - Used for a positive actions, such as creating or publishing a new entity.
+- **Negative** - Used for destructive actions - when something can't be undone. For example, deleting entities.
+- **Secondary** - For actions that should be emphasized less than the default primary style.
+- **Muted** - For actions that should be emphasized less than the secondary style.
+- **White** - For actions appearing on a dark background.
+
+```jsx
+<React.Fragment>
+  <TextLink variant="primary">Primary</TextLink>
+  <br />
+  <TextLink variant="positive">Positive</TextLink>
+  <br />
+  <TextLink variant="negative">Negative</TextLink>
+  <br />
+  <TextLink variant="muted">Muted</TextLink>
+  <br />
+  <TextLink variant="secondary">Secondary</TextLink>
+  <br />
+</React.Fragment>
+```
+
+## Code examples
+
+Text links communicate actions and highlight linked resources to users.
+
+```jsx
+<React.Fragment>
+  <TextLink variant="primary">Text link</TextLink>
+</React.Fragment>
+```
+
+### TextLink with icon (`icon`)
+
+```jsx
+<React.Fragment>
+  <TextLink icon="ExternalLink">Primary</TextLink>
+  <br />
+  <TextLink icon="ExternalLink" alignIcon="end">
+    Primary
+  </TextLink>
+</React.Fragment>
+```
+
+## Content recommendations
+
+- To make `TextLink` action-oriented, use a verb. For example, "Add field", not "New field"
+- If a `TextLink` is used to navigate to a new page, clearly communicate what the user will see when they click on the link. For example, “View teams documentation” vs “Learn about teams”. Avoid generic descriptions like "click here" or "go to".
+- Don't use the page's URL as the link description unless you have a good reason to do so, such as referencing a site's new address.
+- Use clear and succinct copy. Aim for a few words or a short phrase.
+- If a `TextLink` is at the end of a sentence, don’t add period after the TextLink
+
+## Accessibility
+
+- Avoid using extra styling that that make link looks just like regular text.
+- If you use `TextLink` for linking to third party content and use `target="_blank"` prop, it is recommended to set `rel="noreferrer noopener"`. [More details about external links security](https://web.dev/external-anchors-use-rel-noopener/)

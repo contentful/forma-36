@@ -99,8 +99,5 @@ function TextLink(
   );
 }
 
-/**
- * TODO: Add description of component here.
- */
 const _TextLink = React.forwardRef(TextLink);
 export { _TextLink as TextLink };
