@@ -83,7 +83,7 @@ it('renders the component with a textlink', () => {
       id="someComponent"
       textLinkProps={{
         icon: Lock,
-        text: 'Unlock to edit',
+        children: 'Unlock to edit',
         onClick: () => {},
       }}
     />,

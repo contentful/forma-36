@@ -13,7 +13,7 @@ import type { LabelProps } from '@contentful/f36-forms';
 
 import { HelpText } from '@contentful/f36-helptext';
 import { TextInput, TextInputProps } from '../TextInput';
-import { TextLink, TextLinkProps } from '../TextLink';
+import { TextLink, TextLinkProps } from '@contentful/f36-text-link';
 import { Textarea, TextareaProps } from '../Textarea';
 import styles from './TextField.css';
 
@@ -88,7 +88,7 @@ export const TextField = ({
             className={styles['TextField__label-link']}
             {...textLinkProps}
           >
-            {textLinkProps.text}
+            {textLinkProps.children}
           </TextLink>
         )}
       </div>

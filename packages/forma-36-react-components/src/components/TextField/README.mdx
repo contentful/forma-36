@@ -46,7 +46,7 @@ For this purpose, the TextField exposes the following properties:
     labelText="E-mail address"
     helpText="Please enter your email address"
     textInputProps={{ withCopyButton: true }}
-    textLinkProps={{ text: 'privacy' }}
+    textLinkProps={{ children: 'privacy' }}
     formLabelProps={{ requiredText: 'required' }}
     required
   />
@@ -101,7 +101,7 @@ The TextField can be configured to display an additional TextLink in the label.
     labelText="User Name"
     textLinkProps={{
       icon: 'Lock',
-      text: 'Unlock to edit',
+      children: 'Unlock to edit',
       onClick: (e) => {
         console.log('textLinkClick', e);
       },

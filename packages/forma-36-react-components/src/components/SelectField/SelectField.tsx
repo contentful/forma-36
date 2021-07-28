@@ -8,8 +8,7 @@ import { HelpText } from '@contentful/f36-helptext';
 
 import { Select } from '../Select';
 import type { SelectProps } from '../Select';
-import { TextLink } from '../TextLink';
-import type { TextLinkProps } from '../TextLink';
+import { TextLink, TextLinkProps } from '@contentful/f36-text-link';
 import styles from './SelectField.css';
 
 export interface SelectFieldProps {
@@ -78,7 +77,7 @@ export const SelectField = ({
             className={styles['SelectField__label-link']}
             {...textLinkProps}
           >
-            {textLinkProps.text}
+            {textLinkProps.children}
           </TextLink>
         )}
       </div>

@@ -6,7 +6,7 @@ import { SectionHeading } from '@contentful/f36-typography';
 import { Dropdown } from './Dropdown';
 import { DropdownListItem } from './DropdownListItem/DropdownListItem';
 import { Button } from '../Button';
-import { TextLink } from '../TextLink';
+import { TextLink } from '@contentful/f36-text-link';
 import { DropdownList } from './DropdownList/DropdownList';
 
 export default {

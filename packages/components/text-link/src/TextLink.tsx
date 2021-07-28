@@ -8,7 +8,7 @@ import { Icon, IconComponent } from '@contentful/f36-icon';
 export interface TextLinkProps
   extends Omit<
       HTMLProps<HTMLButtonElement & HTMLAnchorElement>,
-      'type' | 'disabled'
+      'type' | 'disabled' | 'ref'
     >,
     CommonProps {
   children?: React.ReactNode;
