@@ -8,45 +8,44 @@ const variantToStyles = (variant: TextLinkVariant): CSSObject => {
   switch (variant) {
     case 'primary':
       return {
-        color: tokens.colorBlueMid,
+        color: tokens.blue600,
         '&:hover, &:focus': {
-          color: tokens.colorBlueDark,
+          color: tokens.blue700,
         },
       };
     case 'secondary':
       return {
-        color: tokens.colorTextMid,
+        color: tokens.gray600,
         '&:hover, &:focus': {
-          color: tokens.colorTextDark,
+          color: tokens.gray700,
         },
       };
     case 'positive':
       return {
-        color: tokens.colorGreenBase,
+        color: tokens.green600,
         '&:hover, &:focus': {
-          color: tokens.colorGreenDark,
+          color: tokens.green700,
         },
       };
     case 'negative':
       return {
-        color: tokens.colorRedBase,
+        color: tokens.red600,
         '&:hover, &:focus': {
-          color: tokens.colorRedDark,
+          color: tokens.red700,
         },
       };
     case 'muted':
       return {
-        color: tokens.colorTextLight,
+        color: tokens.gray400,
         '&:hover, &:focus': {
-          color: tokens.colorTextMid,
+          color: tokens.gray500,
         },
       };
     case 'white':
       return {
         color: tokens.colorWhite,
         '&:hover, &:focus': {
-          color: tokens.colorWhite,
-          opacity: 0.75,
+          color: tokens.gray100,
         },
       };
     default:
