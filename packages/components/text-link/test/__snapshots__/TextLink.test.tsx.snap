@@ -1,0 +1,1029 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextLink allows passing a test id 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  white-space: normal;
+  text-align: left;
+  cursor: pointer;
+  opacity: 1;
+  color: #2E75D4;
+}
+
+.emotion-0:hover,
+.emotion-0:focus {
+  color: #174E8C;
+}
+
+.emotion-0:focus,
+.emotion-0:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-0:focus {
+  box-shadow: 0px 0px 0px 3px #84B9F5;
+  outline: none;
+  border-radius: 4px;
+}
+
+<button
+  class="emotion-0"
+  data-test-id="test-id"
+  type="button"
+>
+  <span>
+    Text Link
+  </span>
+</button>
+`;
+
+exports[`TextLink allows passing additional class names to component 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  white-space: normal;
+  text-align: left;
+  cursor: pointer;
+  opacity: 1;
+  color: #2E75D4;
+}
+
+.emotion-0:hover,
+.emotion-0:focus {
+  color: #174E8C;
+}
+
+.emotion-0:focus,
+.emotion-0:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-0:focus {
+  box-shadow: 0px 0px 0px 3px #84B9F5;
+  outline: none;
+  border-radius: 4px;
+}
+
+<button
+  class="emotion-0 testing"
+  type="button"
+>
+  <span>
+    Text Link
+  </span>
+</button>
+`;
+
+exports[`TextLink allows passing additional props not consumed by component 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  white-space: normal;
+  text-align: left;
+  cursor: pointer;
+  opacity: 1;
+  color: #2E75D4;
+}
+
+.emotion-0:hover,
+.emotion-0:focus {
+  color: #174E8C;
+}
+
+.emotion-0:focus,
+.emotion-0:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-0:focus {
+  box-shadow: 0px 0px 0px 3px #84B9F5;
+  outline: none;
+  border-radius: 4px;
+}
+
+<button
+  class="emotion-0"
+  data-test-id="Testing Id"
+  type="button"
+>
+  <span>
+    Text Link
+  </span>
+</button>
+`;
+
+exports[`TextLink calls an onClick function 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  white-space: normal;
+  text-align: left;
+  cursor: pointer;
+  opacity: 1;
+  color: #2E75D4;
+}
+
+.emotion-0:hover,
+.emotion-0:focus {
+  color: #174E8C;
+}
+
+.emotion-0:focus,
+.emotion-0:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-0:focus {
+  box-shadow: 0px 0px 0px 3px #84B9F5;
+  outline: none;
+  border-radius: 4px;
+}
+
+<button
+  class="emotion-0"
+  type="button"
+>
+  <span>
+    Text Link
+  </span>
+</button>
+`;
+
+exports[`TextLink prevents onClick function from being called when disabled 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  white-space: normal;
+  text-align: left;
+  cursor: not-allowed;
+  opacity: 0.5;
+  color: #2E75D4;
+}
+
+.emotion-0:hover,
+.emotion-0:focus {
+  color: #174E8C;
+}
+
+.emotion-0:focus,
+.emotion-0:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-0:focus {
+  box-shadow: 0px 0px 0px 3px #84B9F5;
+  outline: none;
+  border-radius: 4px;
+}
+
+<button
+  class="emotion-0"
+  disabled=""
+  type="button"
+>
+  <span>
+    Text Link
+  </span>
+</button>
+`;
+
+exports[`TextLink renders as a "muted" link type 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  white-space: normal;
+  text-align: left;
+  cursor: pointer;
+  opacity: 1;
+  color: #606C7C;
+}
+
+.emotion-0:hover,
+.emotion-0:focus {
+  color: #536171;
+}
+
+.emotion-0:focus,
+.emotion-0:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-0:focus {
+  box-shadow: 0px 0px 0px 3px #84B9F5;
+  outline: none;
+  border-radius: 4px;
+}
+
+<button
+  class="emotion-0"
+  type="button"
+>
+  <span>
+    Text Link
+  </span>
+</button>
+`;
+
+exports[`TextLink renders as a "negative" link type 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  white-space: normal;
+  text-align: left;
+  cursor: pointer;
+  opacity: 1;
+  color: #A82D3E;
+}
+
+.emotion-0:hover,
+.emotion-0:focus {
+  color: #7C262F;
+}
+
+.emotion-0:focus,
+.emotion-0:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-0:focus {
+  box-shadow: 0px 0px 0px 3px #84B9F5;
+  outline: none;
+  border-radius: 4px;
+}
+
+<button
+  class="emotion-0"
+  type="button"
+>
+  <span>
+    Text Link
+  </span>
+</button>
+`;
+
+exports[`TextLink renders as a "positive" link type 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  white-space: normal;
+  text-align: left;
+  cursor: pointer;
+  opacity: 1;
+  color: #1A6848;
+}
+
+.emotion-0:hover,
+.emotion-0:focus {
+  color: #1A593E;
+}
+
+.emotion-0:focus,
+.emotion-0:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-0:focus {
+  box-shadow: 0px 0px 0px 3px #84B9F5;
+  outline: none;
+  border-radius: 4px;
+}
+
+<button
+  class="emotion-0"
+  type="button"
+>
+  <span>
+    Text Link
+  </span>
+</button>
+`;
+
+exports[`TextLink renders as a "primary" link type 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  white-space: normal;
+  text-align: left;
+  cursor: pointer;
+  opacity: 1;
+  color: #2E75D4;
+}
+
+.emotion-0:hover,
+.emotion-0:focus {
+  color: #174E8C;
+}
+
+.emotion-0:focus,
+.emotion-0:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-0:focus {
+  box-shadow: 0px 0px 0px 3px #84B9F5;
+  outline: none;
+  border-radius: 4px;
+}
+
+<button
+  class="emotion-0"
+  type="button"
+>
+  <span>
+    Text Link
+  </span>
+</button>
+`;
+
+exports[`TextLink renders as a "secondary" link type 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  white-space: normal;
+  text-align: left;
+  cursor: pointer;
+  opacity: 1;
+  color: #536171;
+}
+
+.emotion-0:hover,
+.emotion-0:focus {
+  color: #192532;
+}
+
+.emotion-0:focus,
+.emotion-0:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-0:focus {
+  box-shadow: 0px 0px 0px 3px #84B9F5;
+  outline: none;
+  border-radius: 4px;
+}
+
+<button
+  class="emotion-0"
+  type="button"
+>
+  <span>
+    Text Link
+  </span>
+</button>
+`;
+
+exports[`TextLink renders as a "white" link type 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  white-space: normal;
+  text-align: left;
+  cursor: pointer;
+  opacity: 1;
+  color: #ffffff;
+}
+
+.emotion-0:hover,
+.emotion-0:focus {
+  color: #ffffff;
+  opacity: 0.75;
+}
+
+.emotion-0:focus,
+.emotion-0:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-0:focus {
+  box-shadow: 0px 0px 0px 3px #84B9F5;
+  outline: none;
+  border-radius: 4px;
+}
+
+<button
+  class="emotion-0"
+  type="button"
+>
+  <span>
+    Text Link
+  </span>
+</button>
+`;
+
+exports[`TextLink renders as a button 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  white-space: normal;
+  text-align: left;
+  cursor: pointer;
+  opacity: 1;
+  color: #2E75D4;
+}
+
+.emotion-0:hover,
+.emotion-0:focus {
+  color: #174E8C;
+}
+
+.emotion-0:focus,
+.emotion-0:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-0:focus {
+  box-shadow: 0px 0px 0px 3px #84B9F5;
+  outline: none;
+  border-radius: 4px;
+}
+
+<button
+  class="emotion-0"
+  type="button"
+>
+  <span>
+    Text Link
+  </span>
+</button>
+`;
+
+exports[`TextLink renders as a link 1`] = `
+.emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  white-space: normal;
+  text-align: left;
+  cursor: pointer;
+  opacity: 1;
+  color: #2E75D4;
+}
+
+.emotion-0:hover,
+.emotion-0:focus {
+  color: #174E8C;
+}
+
+.emotion-0:focus,
+.emotion-0:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-0:focus {
+  box-shadow: 0px 0px 0px 3px #84B9F5;
+  outline: none;
+  border-radius: 4px;
+}
+
+<a
+  class="emotion-0"
+  href="#"
+>
+  <span>
+    Text Link
+  </span>
+</a>
+`;
+
+exports[`TextLink renders with an icon 1`] = `
+.emotion-3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  white-space: normal;
+  text-align: left;
+  cursor: pointer;
+  opacity: 1;
+  color: #2E75D4;
+}
+
+.emotion-3:hover,
+.emotion-3:focus {
+  color: #174E8C;
+}
+
+.emotion-3:focus,
+.emotion-3:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-3:focus {
+  box-shadow: 0px 0px 0px 3px #84B9F5;
+  outline: none;
+  border-radius: 4px;
+}
+
+.emotion-2 {
+  margin-left: 0.125rem;
+}
+
+.emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-0 {
+  display: inline-block;
+  fill: #2D64B3;
+  height: 18px;
+  width: 18px;
+  display: inline-block;
+  fill: #2D64B3;
+  height: 16px;
+  width: 16px;
+  fill: currentColor;
+  -webkit-transition: fill 0.1s ease-in-out;
+  transition: fill 0.1s ease-in-out;
+}
+
+<button
+  class="emotion-3"
+  type="button"
+>
+  <span
+    class="emotion-1"
+  >
+    <svg
+      class="emotion-0"
+      data-test-id="cf-ui-icon"
+      height="1em"
+      viewBox="0 0 24 24"
+      width="1em"
+    >
+      <path
+        d="M7 10l5 5 5-5z"
+      />
+      ,
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+    </svg>
+  </span>
+  <span
+    class="emotion-2"
+  >
+    Text Link
+  </span>
+</button>
+`;
+
+exports[`TextLink renders with an icon aligned right to the text 1`] = `
+.emotion-3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  white-space: normal;
+  text-align: left;
+  cursor: pointer;
+  opacity: 1;
+  color: #2E75D4;
+}
+
+.emotion-3:hover,
+.emotion-3:focus {
+  color: #174E8C;
+}
+
+.emotion-3:focus,
+.emotion-3:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-3:focus {
+  box-shadow: 0px 0px 0px 3px #84B9F5;
+  outline: none;
+  border-radius: 4px;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-1 {
+  display: inline-block;
+  fill: #2D64B3;
+  height: 18px;
+  width: 18px;
+  display: inline-block;
+  fill: #2D64B3;
+  height: 16px;
+  width: 16px;
+  fill: currentColor;
+  -webkit-transition: fill 0.1s ease-in-out;
+  transition: fill 0.1s ease-in-out;
+}
+
+.emotion-0 {
+  margin-right: 0.125rem;
+}
+
+<button
+  class="emotion-3"
+  type="button"
+>
+  <span
+    class="emotion-0"
+  >
+    Text Link
+  </span>
+  <span
+    class="emotion-2"
+  >
+    <svg
+      class="emotion-1"
+      data-test-id="cf-ui-icon"
+      height="1em"
+      viewBox="0 0 24 24"
+      width="1em"
+    >
+      <path
+        d="M7 10l5 5 5-5z"
+      />
+      ,
+      <path
+        d="M0 0h24v24H0z"
+        fill="none"
+      />
+    </svg>
+  </span>
+</button>
+`;
