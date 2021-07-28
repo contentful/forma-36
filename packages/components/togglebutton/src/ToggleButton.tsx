@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { cx } from 'emotion';
 import { CommonProps } from '@contentful/f36-core';
 import { Button } from '@contentful/f36-button';
@@ -40,16 +40,27 @@ function _ToggleButton(
     icon,
     onToggle,
   } = props;
-  const styles = getStyles({ isActive, isDisabled });
+
+  const [active, setActive] = useState(isActive);
+
+  const styles = getStyles({ isActive: active, isDisabled });
+
+  const handleToggle = () => {
+    if (!isDisabled && onToggle) {
+      setActive(!active);
+      onToggle();
+    }
+  };
+
   return (
     <Button
       testId={testId}
       type="button"
       ref={ref}
-      onClick={!isDisabled && onToggle}
+      onClick={handleToggle}
       className={cx(styles.toggleButton, className)}
       icon={icon}
-      disabled={isDisabled}
+      isDisabled={isDisabled}
     >
       {children}
     </Button>

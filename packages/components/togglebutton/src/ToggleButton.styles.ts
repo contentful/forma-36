@@ -9,10 +9,10 @@ const getToggleButtonStyle = ({
   isDisabled: boolean;
 }) => {
   const activeStyle = {
-    background: tokens.colorBlueLightest,
-    borderColor: tokens.colorBlueMid,
+    background: tokens.blue100,
+    borderColor: tokens.blue600,
     '&:hover': {
-      background: tokens.colorBlueLightest,
+      background: tokens.blue100,
     },
   };
 
@@ -20,7 +20,7 @@ const getToggleButtonStyle = ({
     background: tokens.colorWhite,
     '&:hover': {
       background: tokens.colorWhite,
-      borderColor: isDisabled ? tokens.colorElementDark : tokens.colorBlueMid,
+      borderColor: isDisabled ? tokens.gray300 : tokens.blue600,
     },
     '&:focus': {
       boxShadow: tokens.glowPrimary,
