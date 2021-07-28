@@ -5,12 +5,15 @@ export const styles = {
   accordionPanel: css({
     boxSizing: 'border-box',
     overflow: 'hidden',
-    padding: `0 ${tokens.spacingM}`,
     height: '0',
     transition: `height ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}, padding ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
   }),
   accordionPanelExtended: css({
     padding: `${tokens.spacingXs} ${tokens.spacingM} ${tokens.spacingM}`,
     height: 'auto',
+  }),
+  accordionPanelContent: css({
+    width: '100%',
+    padding: `${tokens.spacingXs} ${tokens.spacingM} ${tokens.spacingM}`,
   }),
 };

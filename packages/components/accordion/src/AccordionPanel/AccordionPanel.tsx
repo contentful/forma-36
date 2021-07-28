@@ -26,29 +26,54 @@ export const AccordionPanel: FC<AccordionPanelProps> = ({
 }: AccordionPanelProps) => {
   const panelEl = useRef<HTMLDivElement>(null);
 
+  const getPanelContentHeight = () => {
+    const { current } = panelEl;
+
+    if (!current) {
+      // to keep the function return type as string only and
+      // not overcomplicate things with non-nullable checks
+      return '0px';
+    }
+
+    return `${current.scrollHeight / parseInt(tokens.fontBaseDefault, 10)}rem`; // converting height pixels into rem
+  };
+
   useLayoutEffect(() => {
     const { current } = panelEl;
 
-    if (current) {
-      // height + padding-top + padding-bottom of the accordion’s panel final state
-      // we need this math because the height will depend on the accordion’s content
-      const panelHeight = `${current.scrollHeight / 16}rem`; // converting height pixels into rem
-      const finalHeight = `calc(${panelHeight} + ${tokens.spacingXs} + ${tokens.spacingM})`;
+    const handleTransitionEnd = () => {
+      if (current) {
+        current.style.height = 'auto';
+      }
+    };
 
+    if (current) {
       if (isExpanded) {
+        current.addEventListener('transitionend', handleTransitionEnd);
+
         requestAnimationFrame(function () {
           current.style.height = '0px';
 
           requestAnimationFrame(function () {
-            current.style.height = finalHeight;
+            current.style.height = getPanelContentHeight();
           });
         });
       } else {
         requestAnimationFrame(function () {
-          current.style.height = '0px';
+          current.style.height = getPanelContentHeight();
+
+          requestAnimationFrame(function () {
+            current.style.height = '0px';
+          });
         });
       }
     }
+
+    return () => {
+      if (current) {
+        current.removeEventListener('transitionend', handleTransitionEnd);
+      }
+    };
   }, [isExpanded]);
 
   return (
@@ -62,7 +87,7 @@ export const AccordionPanel: FC<AccordionPanelProps> = ({
       })}
       ref={panelEl}
     >
-      {children}
+      <div className={styles.accordionPanelContent}>{children}</div>
     </div>
   );
 };

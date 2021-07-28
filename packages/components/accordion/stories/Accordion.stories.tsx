@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading, Text, Typography } from '@contentful/f36-typography';
-
+import { Button } from '@contentful/f36-button';
 import { Accordion, AccordionProps } from '../src/Accordion';
 import { AccordionItem } from '../src/AccordionItem/AccordionItem';
+
 export default {
   title: 'Components/Accordion',
   component: Accordion,
@@ -96,6 +97,31 @@ export const overview = ({ align, ...args }: AccordionProps) => (
     </Flex>
   </>
 );
+
+export const DynamicContent = ({ align, ...args }: AccordionProps) => {
+  const [content, updateContent] = useState(defaultText);
+
+  const addContent = () => {
+    updateContent(content + defaultText);
+  };
+
+  return (
+    <Flex flexDirection="column" fullWidth>
+      <Flex marginBottom="spacingS">
+        <Button onClick={addContent}>Add content</Button>
+      </Flex>
+      <Flex>
+        <Accordion align={align}>
+          <AccordionItem title={args['AccordionItem Title #1']}>
+            <Typography>
+              <Text>{content}</Text>
+            </Typography>
+          </AccordionItem>
+        </Accordion>
+      </Flex>
+    </Flex>
+  );
+};
 
 basic.args = {
   align: 'end',

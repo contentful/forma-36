@@ -11,12 +11,4 @@ export const styles = {
       borderTop: `1px solid ${tokens.colorElementMid}`,
     },
   }),
-  accordionItem: css({
-    padding: '0',
-    margin: '0',
-    borderBottom: `1px solid ${tokens.colorElementMid}`,
-    '&:first-child': {
-      borderTop: `1px solid ${tokens.colorElementMid}`,
-    },
-  }),
 };

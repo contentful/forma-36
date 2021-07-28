@@ -31,7 +31,9 @@ export const Accordion = ({
     <ul className={styles.accordion} data-test-id={testId} {...otherProps}>
       {React.Children.map(children, (child) => {
         if (React.isValidElement(child)) {
-          return React.cloneElement(child, { align });
+          return React.cloneElement(child, {
+            align,
+          });
         }
         return child;
       })}
