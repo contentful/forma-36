@@ -14,16 +14,17 @@ exports[`renders no close button in "deleted" variant 1`] = `
   background: transparent;
   -webkit-transition: background 0.1s ease-in-out;
   transition: background 0.1s ease-in-out;
-  border-left: 1px solid #b4c3ca;
+  border-left: 1px solid #AEC1CC;
 }
 
 .emotion-3:hover,
 .emotion-3:focus {
-  background: #d3dce0;
+  background: #CFD9E0;
   cursor: pointer;
 }
 
 .emotion-0 {
+  color: #414D63;
   line-height: 1.25rem;
   padding: 0.5rem;
   font-size: 0.875rem;
@@ -34,15 +35,14 @@ exports[`renders no close button in "deleted" variant 1`] = `
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  color: #283848;
 }
 
 .emotion-1 {
   display: inline-block;
-  fill: #606C7C;
+  fill: #5A657C;
   height: 18px;
   width: 18px;
-  fill: #6B7888;
+  fill: #5A657C;
   vertical-align: middle;
 }
 
@@ -60,7 +60,7 @@ exports[`renders no close button in "deleted" variant 1`] = `
   border: none;
   padding: 0;
   max-width: 100%;
-  background: #e5ebed;
+  background: #E7EBEE;
   -webkit-text-decoration: line-through;
   text-decoration: line-through;
   opacity: 0.5;
@@ -103,6 +103,7 @@ exports[`renders no close button in "deleted" variant 1`] = `
 
 exports[`renders the component 1`] = `
 .emotion-0 {
+  color: #414D63;
   line-height: 1.25rem;
   padding: 0.5rem;
   font-size: 0.875rem;
@@ -113,7 +114,6 @@ exports[`renders the component 1`] = `
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  color: #283848;
 }
 
 .emotion-1 {
@@ -130,7 +130,7 @@ exports[`renders the component 1`] = `
   border: none;
   padding: 0;
   max-width: 100%;
-  background: #e5ebed;
+  background: #E7EBEE;
 }
 
 <div
@@ -148,6 +148,7 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component in "active" variant 1`] = `
 .emotion-0 {
+  color: #414D63;
   line-height: 1.25rem;
   padding: 0.5rem;
   font-size: 0.875rem;
@@ -158,7 +159,6 @@ exports[`renders the component in "active" variant 1`] = `
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  color: #192532;
 }
 
 .emotion-1 {
@@ -175,7 +175,7 @@ exports[`renders the component in "active" variant 1`] = `
   border: none;
   padding: 0;
   max-width: 100%;
-  background: #c3cfd5;
+  background: #CFD9E0;
 }
 
 <div
@@ -193,6 +193,7 @@ exports[`renders the component in "active" variant 1`] = `
 
 exports[`renders the component in "deleted" variant 1`] = `
 .emotion-0 {
+  color: #414D63;
   line-height: 1.25rem;
   padding: 0.5rem;
   font-size: 0.875rem;
@@ -203,7 +204,6 @@ exports[`renders the component in "deleted" variant 1`] = `
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  color: #283848;
 }
 
 .emotion-1 {
@@ -220,7 +220,7 @@ exports[`renders the component in "deleted" variant 1`] = `
   border: none;
   padding: 0;
   max-width: 100%;
-  background: #e5ebed;
+  background: #E7EBEE;
   -webkit-text-decoration: line-through;
   text-decoration: line-through;
   opacity: 0.5;
@@ -241,6 +241,7 @@ exports[`renders the component in "deleted" variant 1`] = `
 
 exports[`renders the component in "idle" variant by default 1`] = `
 .emotion-0 {
+  color: #414D63;
   line-height: 1.25rem;
   padding: 0.5rem;
   font-size: 0.875rem;
@@ -251,7 +252,6 @@ exports[`renders the component in "idle" variant by default 1`] = `
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  color: #283848;
 }
 
 .emotion-1 {
@@ -268,7 +268,7 @@ exports[`renders the component in "idle" variant by default 1`] = `
   border: none;
   padding: 0;
   max-width: 100%;
-  background: #e5ebed;
+  background: #E7EBEE;
 }
 
 <div
@@ -298,16 +298,17 @@ exports[`renders the component with a close button 1`] = `
   background: transparent;
   -webkit-transition: background 0.1s ease-in-out;
   transition: background 0.1s ease-in-out;
-  border-left: 1px solid #b4c3ca;
+  border-left: 1px solid #AEC1CC;
 }
 
 .emotion-3:hover,
 .emotion-3:focus {
-  background: #d3dce0;
+  background: #CFD9E0;
   cursor: pointer;
 }
 
 .emotion-0 {
+  color: #414D63;
   line-height: 1.25rem;
   padding: 0.5rem;
   font-size: 0.875rem;
@@ -318,7 +319,6 @@ exports[`renders the component with a close button 1`] = `
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  color: #283848;
 }
 
 .emotion-4 {
@@ -335,15 +335,15 @@ exports[`renders the component with a close button 1`] = `
   border: none;
   padding: 0;
   max-width: 100%;
-  background: #e5ebed;
+  background: #E7EBEE;
 }
 
 .emotion-1 {
   display: inline-block;
-  fill: #606C7C;
+  fill: #5A657C;
   height: 18px;
   width: 18px;
-  fill: #6B7888;
+  fill: #5A657C;
   vertical-align: middle;
 }
 
@@ -384,6 +384,7 @@ exports[`renders the component with a close button 1`] = `
 
 exports[`renders the component with a dragging handle 1`] = `
 .emotion-2 {
+  color: #414D63;
   line-height: 1.25rem;
   padding: 0.5rem;
   font-size: 0.875rem;
@@ -394,7 +395,6 @@ exports[`renders the component with a dragging handle 1`] = `
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  color: #283848;
 }
 
 .emotion-1 {
@@ -416,15 +416,15 @@ exports[`renders the component with a dragging handle 1`] = `
   border: none;
   padding: 0;
   max-width: 100%;
-  background: #e5ebed;
+  background: #E7EBEE;
 }
 
 .emotion-0 {
   display: inline-block;
-  fill: #606C7C;
+  fill: #5A657C;
   height: 18px;
   width: 18px;
-  fill: #6B7888;
+  fill: #5A657C;
   vertical-align: middle;
 }
 
@@ -463,6 +463,7 @@ exports[`renders the component with a dragging handle 1`] = `
 
 exports[`renders the component with a test id 1`] = `
 .emotion-0 {
+  color: #414D63;
   line-height: 1.25rem;
   padding: 0.5rem;
   font-size: 0.875rem;
@@ -473,7 +474,6 @@ exports[`renders the component with a test id 1`] = `
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  color: #283848;
 }
 
 .emotion-1 {
@@ -490,7 +490,7 @@ exports[`renders the component with a test id 1`] = `
   border: none;
   padding: 0;
   max-width: 100%;
-  background: #e5ebed;
+  background: #E7EBEE;
 }
 
 <div
@@ -508,6 +508,7 @@ exports[`renders the component with a test id 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 .emotion-0 {
+  color: #414D63;
   line-height: 1.25rem;
   padding: 0.5rem;
   font-size: 0.875rem;
@@ -518,7 +519,6 @@ exports[`renders the component with an additional class name 1`] = `
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
-  color: #283848;
 }
 
 .emotion-1 {
@@ -535,7 +535,7 @@ exports[`renders the component with an additional class name 1`] = `
   border: none;
   padding: 0;
   max-width: 100%;
-  background: #e5ebed;
+  background: #E7EBEE;
 }
 
 <div

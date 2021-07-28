@@ -18,7 +18,7 @@ exports[`does not render the component if no mouseover event on child 1`] = `
 
 exports[`renders the component 1`] = `
 .emotion-1 {
-  background: #192532;
+  background: #111B2B;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 0.75rem;
   font-weight: 400;
@@ -64,7 +64,7 @@ exports[`renders the component 1`] = `
   display: block;
   height: calc(1rem * (10 / 16));
   width: calc(1rem * (10 / 16));
-  background-color: #192532;
+  background-color: #111B2B;
   -webkit-transform: rotate3d(0,0,1,45deg);
   -ms-transform: rotate3d(0,0,1,45deg);
   transform: rotate3d(0,0,1,45deg);
@@ -89,7 +89,7 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component as span with a id attribute 1`] = `
 .emotion-1 {
-  background: #192532;
+  background: #111B2B;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 0.75rem;
   font-weight: 400;
@@ -135,7 +135,7 @@ exports[`renders the component as span with a id attribute 1`] = `
   display: block;
   height: calc(1rem * (10 / 16));
   width: calc(1rem * (10 / 16));
-  background-color: #192532;
+  background-color: #111B2B;
   -webkit-transform: rotate3d(0,0,1,45deg);
   -ms-transform: rotate3d(0,0,1,45deg);
   transform: rotate3d(0,0,1,45deg);
@@ -160,7 +160,7 @@ exports[`renders the component as span with a id attribute 1`] = `
 
 exports[`renders the component with a id attribute 1`] = `
 .emotion-1 {
-  background: #192532;
+  background: #111B2B;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 0.75rem;
   font-weight: 400;
@@ -206,7 +206,7 @@ exports[`renders the component with a id attribute 1`] = `
   display: block;
   height: calc(1rem * (10 / 16));
   width: calc(1rem * (10 / 16));
-  background-color: #192532;
+  background-color: #111B2B;
   -webkit-transform: rotate3d(0,0,1,45deg);
   -ms-transform: rotate3d(0,0,1,45deg);
   transform: rotate3d(0,0,1,45deg);
@@ -231,7 +231,7 @@ exports[`renders the component with a id attribute 1`] = `
 
 exports[`renders the component with a place attribute 1`] = `
 .emotion-1 {
-  background: #192532;
+  background: #111B2B;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 0.75rem;
   font-weight: 400;
@@ -277,7 +277,7 @@ exports[`renders the component with a place attribute 1`] = `
   display: block;
   height: calc(1rem * (10 / 16));
   width: calc(1rem * (10 / 16));
-  background-color: #192532;
+  background-color: #111B2B;
   -webkit-transform: rotate3d(0,0,1,45deg);
   -ms-transform: rotate3d(0,0,1,45deg);
   transform: rotate3d(0,0,1,45deg);
@@ -302,7 +302,7 @@ exports[`renders the component with a place attribute 1`] = `
 
 exports[`renders the component with a target wrapper classname 1`] = `
 .emotion-1 {
-  background: #192532;
+  background: #111B2B;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 0.75rem;
   font-weight: 400;
@@ -348,7 +348,7 @@ exports[`renders the component with a target wrapper classname 1`] = `
   display: block;
   height: calc(1rem * (10 / 16));
   width: calc(1rem * (10 / 16));
-  background-color: #192532;
+  background-color: #111B2B;
   -webkit-transform: rotate3d(0,0,1,45deg);
   -ms-transform: rotate3d(0,0,1,45deg);
   transform: rotate3d(0,0,1,45deg);
@@ -373,7 +373,7 @@ exports[`renders the component with a target wrapper classname 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 .emotion-1 {
-  background: #192532;
+  background: #111B2B;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 0.75rem;
   font-weight: 400;
@@ -419,7 +419,7 @@ exports[`renders the component with an additional class name 1`] = `
   display: block;
   height: calc(1rem * (10 / 16));
   width: calc(1rem * (10 / 16));
-  background-color: #192532;
+  background-color: #111B2B;
   -webkit-transform: rotate3d(0,0,1,45deg);
   -ms-transform: rotate3d(0,0,1,45deg);
   transform: rotate3d(0,0,1,45deg);

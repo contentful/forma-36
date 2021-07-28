@@ -5,7 +5,7 @@ export const styles = {
   helpText: css({
     margin: 0,
     fontFamily: tokens.fontStackPrimary,
-    color: tokens.colorTextLight,
+    color: tokens.gray500,
     fontSize: tokens.fontSizeM,
     lineHeight: tokens.lineHeightDefault,
     textRendering: 'optimizeLegibility',

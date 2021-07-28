@@ -3,7 +3,7 @@
 exports[`renders the component 1`] = `
 .emotion-0 {
   display: inline-block;
-  fill: #2D64B3;
+  fill: #0059C8;
   height: 18px;
   width: 18px;
 }
@@ -31,7 +31,7 @@ exports[`renders the component 1`] = `
 exports[`renders the component with an additional class name 1`] = `
 .emotion-0 {
   display: inline-block;
-  fill: #2D64B3;
+  fill: #0059C8;
   height: 18px;
   width: 18px;
 }
@@ -69,7 +69,7 @@ exports[`renders the component with an additional class name 1`] = `
 exports[`renders the component with type pdf 1`] = `
 .emotion-0 {
   display: inline-block;
-  fill: #2D64B3;
+  fill: #0059C8;
   height: 18px;
   width: 18px;
 }

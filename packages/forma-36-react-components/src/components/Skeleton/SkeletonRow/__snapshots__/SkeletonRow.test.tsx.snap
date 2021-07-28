@@ -6,14 +6,14 @@ exports[`renders the component 1`] = `
 }
 
 .emotion-5:hover td {
-  background-color: #f7f9fa;
+  background-color: #F7F9FA;
 }
 
 .emotion-7 {
   display: table;
   width: 100%;
   border-radius: 6px;
-  box-shadow: 0 0 0 1px #e5ebed;
+  box-shadow: 0 0 0 1px #E7EBEE;
 }
 
 .emotion-7 th:first-child {
@@ -33,8 +33,8 @@ exports[`renders the component 1`] = `
 }
 
 .emotion-0 {
-  border-bottom: 1px solid #e5ebed;
-  color: #536171;
+  border-bottom: 1px solid #E7EBEE;
+  color: #414D63;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 0.875rem;
   font-weight: 400;
@@ -484,14 +484,14 @@ exports[`renders the component with 10 cells 1`] = `
 }
 
 .emotion-10:hover td {
-  background-color: #f7f9fa;
+  background-color: #F7F9FA;
 }
 
 .emotion-12 {
   display: table;
   width: 100%;
   border-radius: 6px;
-  box-shadow: 0 0 0 1px #e5ebed;
+  box-shadow: 0 0 0 1px #E7EBEE;
 }
 
 .emotion-12 th:first-child {
@@ -511,8 +511,8 @@ exports[`renders the component with 10 cells 1`] = `
 }
 
 .emotion-0 {
-  border-bottom: 1px solid #e5ebed;
-  color: #536171;
+  border-bottom: 1px solid #E7EBEE;
+  color: #414D63;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 0.875rem;
   font-weight: 400;
@@ -1377,14 +1377,14 @@ exports[`renders the component with 10 rows 1`] = `
 }
 
 .emotion-5:hover td {
-  background-color: #f7f9fa;
+  background-color: #F7F9FA;
 }
 
 .emotion-61 {
   display: table;
   width: 100%;
   border-radius: 6px;
-  box-shadow: 0 0 0 1px #e5ebed;
+  box-shadow: 0 0 0 1px #E7EBEE;
 }
 
 .emotion-61 th:first-child {
@@ -1404,8 +1404,8 @@ exports[`renders the component with 10 rows 1`] = `
 }
 
 .emotion-0 {
-  border-bottom: 1px solid #e5ebed;
-  color: #536171;
+  border-bottom: 1px solid #E7EBEE;
+  color: #414D63;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 0.875rem;
   font-weight: 400;

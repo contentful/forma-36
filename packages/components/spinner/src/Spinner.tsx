@@ -27,9 +27,9 @@ const sizes: { [key in SpinnerSize]: string } = {
 };
 
 const variants: { [key in SpinnerVariant]: string } = {
-  default: tokens.colorTextMid,
-  primary: tokens.colorBlueMid,
-  white: tokens.colorElementLightest,
+  default: tokens.gray700,
+  primary: tokens.colorPrimary,
+  white: tokens.colorWhite,
 };
 
 const animations = {

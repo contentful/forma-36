@@ -10,7 +10,7 @@ exports[`ValidationMessage renders the component with all required props 1`] = `
 
 .emotion-0 {
   display: inline-block;
-  fill: #BF3045;
+  fill: #DA294A;
   height: 18px;
   width: 18px;
   margin-right: 0.25rem;
@@ -24,15 +24,15 @@ exports[`ValidationMessage renders the component with all required props 1`] = `
   margin: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
-  color: #192532;
+  color: #111B2B;
   font-size: 1.25rem;
   line-height: 2rem;
   text-rendering: optimizeLegibility;
   font-weight: 400;
-  color: #536171;
+  color: #414D63;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  color: #BF3045;
+  color: #DA294A;
   margin: 0;
 }
 
@@ -74,7 +74,7 @@ exports[`ValidationMessage renders the component with an additional class name 1
 
 .emotion-0 {
   display: inline-block;
-  fill: #BF3045;
+  fill: #DA294A;
   height: 18px;
   width: 18px;
   margin-right: 0.25rem;
@@ -88,15 +88,15 @@ exports[`ValidationMessage renders the component with an additional class name 1
   margin: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
-  color: #192532;
+  color: #111B2B;
   font-size: 1.25rem;
   line-height: 2rem;
   text-rendering: optimizeLegibility;
   font-weight: 400;
-  color: #536171;
+  color: #414D63;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  color: #BF3045;
+  color: #DA294A;
   margin: 0;
 }
 

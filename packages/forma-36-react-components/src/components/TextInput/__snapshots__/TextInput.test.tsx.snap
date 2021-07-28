@@ -181,7 +181,7 @@ exports[`renders the component with the copy button 1`] = `
 
 .emotion-0 {
   display: inline-block;
-  fill: #606C7C;
+  fill: #5A657C;
   height: 18px;
   width: 18px;
 }

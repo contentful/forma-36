@@ -6,44 +6,43 @@ const variantToStyles = ({ variant }: { variant: BadgeVariant }) => {
   switch (variant) {
     case 'positive':
       return {
-        color: tokens.colorGreenBase,
-        backgroundColor: tokens.colorGreenLightest,
+        color: tokens.green600,
+        backgroundColor: tokens.green200,
       };
     case 'primary':
       return {
-        color: tokens.colorBlueBase,
-        backgroundColor: tokens.colorBlueLightest,
+        color: tokens.blue600,
+        backgroundColor: tokens.blue200,
       };
     case 'negative':
       return {
-        color: tokens.colorRedBase,
-        backgroundColor: tokens.colorRedLightest,
+        color: tokens.red600,
+        backgroundColor: tokens.red200,
       };
     case 'warning':
       return {
-        color: tokens.colorOrangeDark,
-        backgroundColor:
-          '#ffefd5' /* temporary hardcoded value until palette improvements */,
+        color: tokens.orange600,
+        backgroundColor: tokens.orange200,
       };
     case 'secondary':
       return {
-        color: tokens.colorTextBase,
-        backgroundColor: tokens.colorElementLight,
+        color: tokens.gray700,
+        backgroundColor: tokens.gray200,
       };
     case 'muted':
       return {
-        color: tokens.colorTextMid,
-        backgroundColor: tokens.colorElementLightest,
+        color: tokens.gray600,
+        backgroundColor: tokens.gray200,
       };
     case 'primary-filled':
       return {
         color: tokens.colorWhite,
-        backgroundColor: tokens.colorPrimary,
+        backgroundColor: tokens.blue600,
       };
     case 'featured':
       return {
-        color: tokens.colorPurpleBase,
-        backgroundColor: tokens.colorPurpleLightest,
+        color: tokens.purple600,
+        backgroundColor: tokens.purple200,
       };
     default:
       return {};

@@ -85,7 +85,7 @@ const _Note = (props: NoteProps, ref) => {
       </div>
       {hasCloseButton && (
         <Button
-          variant="secondary"
+          variant="transparent"
           icon={Close}
           onClick={() => {
             if (onClose) {

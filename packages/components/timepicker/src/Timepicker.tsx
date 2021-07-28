@@ -33,7 +33,7 @@ import tokens from '@contentful/f36-tokens';
 
 const styles = {
   selectedTime: css({
-    background: tokens.colorElementLightest,
+    background: tokens.gray100,
   }),
   dropdown: css({
     width: '100%',

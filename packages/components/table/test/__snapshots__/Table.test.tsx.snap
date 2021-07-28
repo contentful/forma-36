@@ -6,7 +6,7 @@ exports[`TableHead renders the component as sticky 1`] = `
 }
 
 .emotion-1:hover td {
-  background-color: #f7f9fa;
+  background-color: #F7F9FA;
 }
 
 .emotion-2 th {
@@ -17,9 +17,9 @@ exports[`TableHead renders the component as sticky 1`] = `
 }
 
 .emotion-0 {
-  background-color: #f7f9fa;
-  border-bottom: 1px solid #e5ebed;
-  color: #536171;
+  background-color: #F7F9FA;
+  border-bottom: 1px solid #E7EBEE;
+  color: #414D63;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 0.875rem;
   font-weight: 500;
@@ -53,7 +53,7 @@ exports[`TableHead renders the component as sticky and with an offset Top 1`] = 
 }
 
 .emotion-1:hover td {
-  background-color: #f7f9fa;
+  background-color: #F7F9FA;
 }
 
 .emotion-2 th {
@@ -64,9 +64,9 @@ exports[`TableHead renders the component as sticky and with an offset Top 1`] = 
 }
 
 .emotion-0 {
-  background-color: #f7f9fa;
-  border-bottom: 1px solid #e5ebed;
-  color: #536171;
+  background-color: #F7F9FA;
+  border-bottom: 1px solid #E7EBEE;
+  color: #414D63;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 0.875rem;
   font-weight: 500;

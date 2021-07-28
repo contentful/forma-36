@@ -60,7 +60,7 @@ function createUnionFromKeys(keys, typename) {
   return `export type ${typename} = | ${concatanated};`;
 }
 
-function createInterfaceDefinition(tokens) {
+async function createInterfaceDefinition(tokens) {
   const defs = _.mapValues(tokens, (value) => {
     return {
       value: value,
@@ -68,21 +68,49 @@ function createInterfaceDefinition(tokens) {
     };
   });
 
+  let deprecatedTokens = {};
+  const deprecatedPaths = (await globby('./src/tokens')).filter((path) =>
+    path.includes('-deprecated'),
+  );
+  deprecatedPaths.forEach((srcPath) => {
+    const tokens = require(path.resolve(srcPath));
+    const camelCasedTokens = _.mapKeys(tokens, (value, key) =>
+      _.camelCase(key),
+    );
+    _.assign(deprecatedTokens, camelCasedTokens);
+  });
+
+  const filteredDefs = _.pickBy(defs, (_, key) => !deprecatedTokens[key]);
+
+  const deprecatedDefinition = _.map(
+    deprecatedTokens,
+    (value, deprecatedName) => {
+      const newTokenName = _.findKey(filteredDefs, (d) => d.value === value);
+      const def = filteredDefs[newTokenName];
+      return `
+      /**
+       * @description ${def.value}
+       * @deprecated use tokens.${newTokenName} instead
+       */
+      "${deprecatedName}": ${def.type}`;
+    },
+  ).join(',');
+
   const fields = _.map(
-    defs,
+    filteredDefs,
     (def, tokenName) => `
     /**
-     * ${def.value}
+     * @description ${def.value}
      */
     "${tokenName}": ${def.type}`,
   ).join(',');
 
   return `export type F36Tokens = {
-    ${fields}
+    ${[fields, deprecatedDefinition].join(',')}
   };`;
 }
 
-const buildIndexDTS = (srcPath, tokens) => {
+const buildIndexDTS = async (srcPath, tokens) => {
   const createUnionThatStarts = (startsWith, name) => {
     return createUnionFromKeys(
       Object.keys(tokens).filter((name) => name.startsWith(startsWith)),
@@ -93,7 +121,7 @@ const buildIndexDTS = (srcPath, tokens) => {
   return fse.outputFile(
     srcPath,
     `declare module '@contentful/f36-tokens' {
-      ${createInterfaceDefinition(tokens)}
+      ${await createInterfaceDefinition(tokens)}
       ${createUnionThatStarts('color', 'ColorTokens')}
       ${createUnionThatStarts('spacing', 'SpacingTokens')}
       ${createUnionThatStarts('fontSize', 'FontSizeTokens')}

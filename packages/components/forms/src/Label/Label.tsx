@@ -52,7 +52,7 @@ export const Label = forwardRef<HTMLLabelElement, LabelProps>(function Label(
       {...otherProps}
       className={cx(
         css({
-          color: tokens.colorTextDark,
+          color: tokens.gray900,
           fontFamily: tokens.fontStackPrimary,
           fontSize: tokens.fontSizeM,
           fontWeight: tokens.fontWeightMedium,
@@ -70,7 +70,7 @@ export const Label = forwardRef<HTMLLabelElement, LabelProps>(function Label(
       {shouldShowRequiredText && (
         <span
           className={css({
-            color: tokens.colorTextLightest,
+            color: tokens.gray500,
             fontWeight: tokens.fontWeightNormal,
             marginLeft: `calc(1rem * (4 / ${tokens.fontBaseDefault}))`,
           })}

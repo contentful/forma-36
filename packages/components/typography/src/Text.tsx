@@ -26,7 +26,7 @@ const _Text: PolymorphicComponentWithRef<
       className={cx(
         css({
           fontWeight: tokens.fontWeightNormal,
-          color: tokens.colorTextMid,
+          color: tokens.gray700,
           fontSize: tokens.fontSizeM,
           lineHeight: tokens.lineHeightM,
         }),

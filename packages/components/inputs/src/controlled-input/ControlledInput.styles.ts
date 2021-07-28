@@ -24,16 +24,15 @@ export const styles = {
     cursor: 'pointer',
     '&:focus + label': {
       outline: 'none',
-      border: `2px solid ${tokens.colorPrimary}`,
       boxShadow: tokens.glowPrimary,
     },
     '&:checked + label': {
-      borderColor: tokens.colorBlueMid,
-      background: tokens.colorBlueMid,
+      borderColor: tokens.blue600,
+      background: tokens.blue600,
     },
     '&:disabled + label': {
-      borderColor: tokens.colorElementDark,
-      background: tokens.colorElementDark,
+      borderColor: tokens.gray300,
+      background: tokens.gray300,
     },
   }),
   inputDisabled: css({
@@ -45,29 +44,29 @@ export const styles = {
         background: tokens.colorWhite,
       },
       '&:disabled + label::before': {
-        background: tokens.colorTextLightest,
+        background: tokens.gray600,
       },
     },
     '&:disabled + label::before': {
-      background: tokens.colorElementDarkest,
+      background: tokens.gray300,
     },
   }),
   inputCheckbox: css({
     '&:checked, &:indeterminate': {
       '& + label': {
-        borderColor: tokens.colorBlueMid,
-        background: tokens.colorBlueMid,
+        borderColor: tokens.blue600,
+        background: tokens.blue600,
       },
       '&:disabled + label svg': {
-        fill: tokens.colorTextLightest,
+        fill: tokens.gray600,
       },
     },
     '&:disabled': {
       '& + label': {
-        borderColor: tokens.colorElementDark,
-        background: tokens.colorElementDark,
+        borderColor: tokens.gray300,
+        background: tokens.gray300,
         '& svg': {
-          fill: tokens.colorElementDark,
+          fill: tokens.gray300,
         },
       },
     },
@@ -76,7 +75,7 @@ export const styles = {
     background: tokens.colorWhite,
     width: tokens.spacingM,
     height: tokens.spacingM,
-    border: `2px solid ${tokens.colorElementDark}`,
+    border: `2px solid ${tokens.gray300}`,
     fill: tokens.colorWhite,
     display: 'flex',
     alignItems: 'center',

@@ -8,35 +8,35 @@ const variantActiveStyles = (variant: ButtonVariant): CSSObject => {
     case 'primary':
       return {
         ', &:hover': {
-          backgroundColor: tokens.colorBlueDark,
-          borderColor: tokens.colorBlueDark,
+          backgroundColor: tokens.blue700,
+          borderColor: tokens.blue700,
         },
       };
     case 'secondary':
       return {
         ', &:hover': {
-          backgroundColor: tokens.colorElementLight,
+          backgroundColor: tokens.gray200,
         },
       };
     case 'positive':
       return {
         ', &:hover': {
-          backgroundColor: tokens.colorGreenDark,
-          borderColor: tokens.colorGreenDark,
+          backgroundColor: tokens.green700,
+          borderColor: tokens.green700,
         },
       };
     case 'negative':
       return {
         ', &:hover': {
-          backgroundColor: tokens.colorRedDark,
-          borderColor: tokens.colorRedDark,
+          backgroundColor: tokens.red800,
+          borderColor: tokens.red800,
         },
       };
     case 'transparent':
       return {
         ', &:hover': {
-          backgroundColor: tokens.colorElementLightest,
-          borderColor: tokens.colorElementLightest,
+          backgroundColor: tokens.gray100,
+          borderColor: tokens.gray100,
         },
       };
     default:
@@ -49,25 +49,25 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
     case 'primary':
       return {
         color: tokens.colorWhite,
-        backgroundColor: tokens.colorPrimary,
-        borderColor: tokens.colorPrimary,
+        backgroundColor: tokens.blue500,
+        borderColor: tokens.blue500,
         '&:hover': {
-          backgroundColor: tokens.colorBlueBase,
-          borderColor: tokens.colorBlueBase,
+          backgroundColor: tokens.blue600,
+          borderColor: tokens.blue600,
         },
         '&:active': variantActiveStyles(variant),
         '&:focus': {
-          borderColor: tokens.colorBlueDark,
+          borderColor: tokens.blue600,
           boxShadow: tokens.glowPrimary,
         },
       };
     case 'secondary':
       return {
-        color: tokens.colorTextBase,
+        color: tokens.gray900,
         backgroundColor: tokens.colorWhite,
-        borderColor: tokens.colorElementDark,
+        borderColor: tokens.gray300,
         '&:hover': {
-          backgroundColor: tokens.colorElementLightest,
+          backgroundColor: tokens.gray100,
         },
         '&:active': variantActiveStyles(variant),
         '&:focus': {
@@ -80,39 +80,39 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
         backgroundColor: tokens.colorPositive,
         borderColor: tokens.colorPositive,
         '&:hover': {
-          backgroundColor: tokens.colorGreenBase,
-          borderColor: tokens.colorGreenBase,
+          backgroundColor: tokens.green600,
+          borderColor: tokens.green600,
         },
         '&:active': variantActiveStyles(variant),
         '&:focus': {
-          borderColor: tokens.colorGreenDark,
+          borderColor: tokens.green600,
           boxShadow: tokens.glowPositive,
         },
       };
     case 'negative':
       return {
         color: tokens.colorWhite,
-        backgroundColor: tokens.colorNegative,
-        borderColor: tokens.colorNegative,
+        backgroundColor: tokens.red600,
+        borderColor: tokens.red600,
         '&:hover': {
-          backgroundColor: tokens.colorRedBase,
-          borderColor: tokens.colorRedBase,
+          backgroundColor: tokens.red700,
+          borderColor: tokens.red700,
         },
         '&:active': variantActiveStyles(variant),
         '&:focus': {
-          borderColor: tokens.colorRedDark,
+          borderColor: tokens.red700,
           boxShadow: tokens.glowNegative,
         },
       };
     case 'transparent':
       return {
-        color: tokens.colorTextBase,
+        color: tokens.gray800,
         background: `none`,
         borderColor: `transparent`,
         boxShadow: `none`,
         '&:hover': {
-          backgroundColor: tokens.colorElementLightest,
-          color: tokens.colorTextDark,
+          backgroundColor: tokens.gray100,
+          color: tokens.gray900,
         },
         '&:active': variantActiveStyles(variant),
         '&:focus': {

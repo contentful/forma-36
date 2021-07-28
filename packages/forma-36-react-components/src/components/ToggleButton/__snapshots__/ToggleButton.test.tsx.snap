@@ -98,7 +98,7 @@ exports[`renders the component with icon 1`] = `
 
 .emotion-0 {
   display: inline-block;
-  fill: #192532;
+  fill: #111B2B;
   height: 18px;
   width: 18px;
 }

@@ -7,7 +7,7 @@ const tooltipChevronSize = `calc(1rem * (10 / ${tokens.fontBaseDefault}))`;
 export const styles = {
   tooltipTargetWrapper: css({ display: 'inline-block', position: 'relative' }),
   tooltip: css({
-    background: tokens.colorContrastMid,
+    background: tokens.gray900,
     fontFamily: tokens.fontStackPrimary,
     fontSize: tokens.fontSizeS,
     fontWeight: tokens.fontWeightNormal,
@@ -53,7 +53,7 @@ export const styles = {
       display: 'block',
       height: tooltipChevronSize,
       width: tooltipChevronSize,
-      backgroundColor: tokens.colorContrastMid,
+      backgroundColor: tokens.gray900,
       transform: 'rotate3d(0, 0, 1, 45deg)',
       zIndex: tokens.zIndexNegative,
     },

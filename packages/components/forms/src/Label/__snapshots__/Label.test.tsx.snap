@@ -3,7 +3,7 @@
 exports[`renders the component with all required props 1`] = `
 .emotion-0 {
   display: inline-block;
-  color: #192532;
+  color: #111B2B;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 0.875rem;
   font-weight: 500;
@@ -23,7 +23,7 @@ exports[`renders the component with all required props 1`] = `
 exports[`renders the component with an additional class name 1`] = `
 .emotion-0 {
   display: inline-block;
-  color: #192532;
+  color: #111B2B;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 0.875rem;
   font-weight: 500;
@@ -43,7 +43,7 @@ exports[`renders the component with an additional class name 1`] = `
 exports[`renders the component with an required flag 1`] = `
 .emotion-1 {
   display: inline-block;
-  color: #192532;
+  color: #111B2B;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 0.875rem;
   font-weight: 500;
@@ -52,7 +52,7 @@ exports[`renders the component with an required flag 1`] = `
 }
 
 .emotion-0 {
-  color: #6B7888;
+  color: #67728A;
   font-weight: 400;
   margin-left: calc(1rem * (4 / 16));
 }
@@ -76,7 +76,7 @@ exports[`renders the component with an required flag 1`] = `
 exports[`renders the component with required text 1`] = `
 .emotion-1 {
   display: inline-block;
-  color: #192532;
+  color: #111B2B;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-size: 0.875rem;
   font-weight: 500;
@@ -85,7 +85,7 @@ exports[`renders the component with required text 1`] = `
 }
 
 .emotion-0 {
-  color: #6B7888;
+  color: #67728A;
   font-weight: 400;
   margin-left: calc(1rem * (4 / 16));
 }

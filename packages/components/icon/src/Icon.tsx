@@ -46,11 +46,11 @@ const sizes: { [key in IconSize]: { [key in 'height' | 'width']: string } } = {
 };
 
 const fills: { [key in IconVariant]: string } = {
-  muted: tokens.colorTextLight,
+  muted: tokens.gray600,
   negative: tokens.colorNegative,
   positive: tokens.colorPositive,
-  primary: tokens.colorBlueBase,
-  secondary: tokens.colorContrastMid,
+  primary: tokens.blue600,
+  secondary: tokens.gray900,
   warning: tokens.colorWarning,
   white: tokens.colorWhite,
 };

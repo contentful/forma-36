@@ -1,9 +1,7 @@
-const colorsGreen = {
-  'color-green-dark': '#1A593E',
-  'color-green-base': '#1A6848',
-  'color-green-mid': '#16875D',
-  'color-green-light': '#8AD6B1',
-  'color-green-lightest': '#D9F2E4',
-};
+const scaleGreen = require('./scale-green');
+const colorsGreen = require('./colors-green-deprecated');
 
-module.exports = colorsGreen;
+module.exports = {
+  ...colorsGreen,
+  ...scaleGreen,
+};
