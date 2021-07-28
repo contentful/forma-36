@@ -13,18 +13,15 @@ import { Preview } from '@contentful/f36-icons';
 
 ## Table of contents
 
-- [How to use Toggle Button](#how-to-use-toggle-button)
 - [Code examples](#code-examples)
 - [Props](#props)
-
-## How to use Toggle Button
 
 ## Code examples
 
 Example of simple usage:
 
 ```jsx
-// import { ToggleButton } from '@contentful/f36-togglebutton';
+// import { ToggleButton } from '@contentful/f36-button';
 
 <ToggleButton testId="toggle-button" onToggle={() => {}} icon={Preview}>
   Toggle Button
@@ -34,13 +31,13 @@ Example of simple usage:
 Example of active and disabled toggle buttons:
 
 ```jsx
-// import { ToggleButton } from '@contentful/f36-togglebutton';
+// import { ToggleButton } from '@contentful/f36-button';
 
 <>
   <ToggleButton testId="toggle-button" isActive onToggle={() => {}}>
     Active Toggle Button
   </ToggleButton>
-
+  <br />
   <ToggleButton testId="toggle-button" isDisabled onToggle={() => {}}>
     Disabled Toggle Button
   </ToggleButton>
