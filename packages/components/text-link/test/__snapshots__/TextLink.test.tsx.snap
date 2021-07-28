@@ -32,12 +32,12 @@ exports[`TextLink allows passing a test id 1`] = `
   text-align: left;
   cursor: pointer;
   opacity: 1;
-  color: #2E75D4;
+  color: #0059C8;
 }
 
 .emotion-0:hover,
 .emotion-0:focus {
-  color: #174E8C;
+  color: #0041AB;
 }
 
 .emotion-0:focus,
@@ -47,7 +47,7 @@ exports[`TextLink allows passing a test id 1`] = `
 }
 
 .emotion-0:focus {
-  box-shadow: 0px 0px 0px 3px #84B9F5;
+  box-shadow: 0px 0px 0px 3px #98CBFF;
   outline: none;
   border-radius: 4px;
 }
@@ -95,12 +95,12 @@ exports[`TextLink allows passing additional class names to component 1`] = `
   text-align: left;
   cursor: pointer;
   opacity: 1;
-  color: #2E75D4;
+  color: #0059C8;
 }
 
 .emotion-0:hover,
 .emotion-0:focus {
-  color: #174E8C;
+  color: #0041AB;
 }
 
 .emotion-0:focus,
@@ -110,7 +110,7 @@ exports[`TextLink allows passing additional class names to component 1`] = `
 }
 
 .emotion-0:focus {
-  box-shadow: 0px 0px 0px 3px #84B9F5;
+  box-shadow: 0px 0px 0px 3px #98CBFF;
   outline: none;
   border-radius: 4px;
 }
@@ -157,12 +157,12 @@ exports[`TextLink allows passing additional props not consumed by component 1`] 
   text-align: left;
   cursor: pointer;
   opacity: 1;
-  color: #2E75D4;
+  color: #0059C8;
 }
 
 .emotion-0:hover,
 .emotion-0:focus {
-  color: #174E8C;
+  color: #0041AB;
 }
 
 .emotion-0:focus,
@@ -172,7 +172,7 @@ exports[`TextLink allows passing additional props not consumed by component 1`] 
 }
 
 .emotion-0:focus {
-  box-shadow: 0px 0px 0px 3px #84B9F5;
+  box-shadow: 0px 0px 0px 3px #98CBFF;
   outline: none;
   border-radius: 4px;
 }
@@ -220,12 +220,12 @@ exports[`TextLink calls an onClick function 1`] = `
   text-align: left;
   cursor: pointer;
   opacity: 1;
-  color: #2E75D4;
+  color: #0059C8;
 }
 
 .emotion-0:hover,
 .emotion-0:focus {
-  color: #174E8C;
+  color: #0041AB;
 }
 
 .emotion-0:focus,
@@ -235,7 +235,7 @@ exports[`TextLink calls an onClick function 1`] = `
 }
 
 .emotion-0:focus {
-  box-shadow: 0px 0px 0px 3px #84B9F5;
+  box-shadow: 0px 0px 0px 3px #98CBFF;
   outline: none;
   border-radius: 4px;
 }
@@ -282,12 +282,12 @@ exports[`TextLink prevents onClick function from being called when disabled 1`] 
   text-align: left;
   cursor: not-allowed;
   opacity: 0.5;
-  color: #2E75D4;
+  color: #0059C8;
 }
 
 .emotion-0:hover,
 .emotion-0:focus {
-  color: #174E8C;
+  color: #0041AB;
 }
 
 .emotion-0:focus,
@@ -297,7 +297,7 @@ exports[`TextLink prevents onClick function from being called when disabled 1`] 
 }
 
 .emotion-0:focus {
-  box-shadow: 0px 0px 0px 3px #84B9F5;
+  box-shadow: 0px 0px 0px 3px #98CBFF;
   outline: none;
   border-radius: 4px;
 }
@@ -345,12 +345,12 @@ exports[`TextLink renders as a "muted" link type 1`] = `
   text-align: left;
   cursor: pointer;
   opacity: 1;
-  color: #606C7C;
+  color: #AEC1CC;
 }
 
 .emotion-0:hover,
 .emotion-0:focus {
-  color: #536171;
+  color: #67728A;
 }
 
 .emotion-0:focus,
@@ -360,7 +360,7 @@ exports[`TextLink renders as a "muted" link type 1`] = `
 }
 
 .emotion-0:focus {
-  box-shadow: 0px 0px 0px 3px #84B9F5;
+  box-shadow: 0px 0px 0px 3px #98CBFF;
   outline: none;
   border-radius: 4px;
 }
@@ -407,12 +407,12 @@ exports[`TextLink renders as a "negative" link type 1`] = `
   text-align: left;
   cursor: pointer;
   opacity: 1;
-  color: #A82D3E;
+  color: #BD002A;
 }
 
 .emotion-0:hover,
 .emotion-0:focus {
-  color: #7C262F;
+  color: #990017;
 }
 
 .emotion-0:focus,
@@ -422,7 +422,7 @@ exports[`TextLink renders as a "negative" link type 1`] = `
 }
 
 .emotion-0:focus {
-  box-shadow: 0px 0px 0px 3px #84B9F5;
+  box-shadow: 0px 0px 0px 3px #98CBFF;
   outline: none;
   border-radius: 4px;
 }
@@ -469,12 +469,12 @@ exports[`TextLink renders as a "positive" link type 1`] = `
   text-align: left;
   cursor: pointer;
   opacity: 1;
-  color: #1A6848;
+  color: #006D23;
 }
 
 .emotion-0:hover,
 .emotion-0:focus {
-  color: #1A593E;
+  color: #00550C;
 }
 
 .emotion-0:focus,
@@ -484,7 +484,7 @@ exports[`TextLink renders as a "positive" link type 1`] = `
 }
 
 .emotion-0:focus {
-  box-shadow: 0px 0px 0px 3px #84B9F5;
+  box-shadow: 0px 0px 0px 3px #98CBFF;
   outline: none;
   border-radius: 4px;
 }
@@ -531,12 +531,12 @@ exports[`TextLink renders as a "primary" link type 1`] = `
   text-align: left;
   cursor: pointer;
   opacity: 1;
-  color: #2E75D4;
+  color: #0059C8;
 }
 
 .emotion-0:hover,
 .emotion-0:focus {
-  color: #174E8C;
+  color: #0041AB;
 }
 
 .emotion-0:focus,
@@ -546,7 +546,7 @@ exports[`TextLink renders as a "primary" link type 1`] = `
 }
 
 .emotion-0:focus {
-  box-shadow: 0px 0px 0px 3px #84B9F5;
+  box-shadow: 0px 0px 0px 3px #98CBFF;
   outline: none;
   border-radius: 4px;
 }
@@ -593,12 +593,12 @@ exports[`TextLink renders as a "secondary" link type 1`] = `
   text-align: left;
   cursor: pointer;
   opacity: 1;
-  color: #536171;
+  color: #5A657C;
 }
 
 .emotion-0:hover,
 .emotion-0:focus {
-  color: #192532;
+  color: #414D63;
 }
 
 .emotion-0:focus,
@@ -608,7 +608,7 @@ exports[`TextLink renders as a "secondary" link type 1`] = `
 }
 
 .emotion-0:focus {
-  box-shadow: 0px 0px 0px 3px #84B9F5;
+  box-shadow: 0px 0px 0px 3px #98CBFF;
   outline: none;
   border-radius: 4px;
 }
@@ -660,8 +660,7 @@ exports[`TextLink renders as a "white" link type 1`] = `
 
 .emotion-0:hover,
 .emotion-0:focus {
-  color: #ffffff;
-  opacity: 0.75;
+  color: #F7F9FA;
 }
 
 .emotion-0:focus,
@@ -671,7 +670,7 @@ exports[`TextLink renders as a "white" link type 1`] = `
 }
 
 .emotion-0:focus {
-  box-shadow: 0px 0px 0px 3px #84B9F5;
+  box-shadow: 0px 0px 0px 3px #98CBFF;
   outline: none;
   border-radius: 4px;
 }
@@ -718,12 +717,12 @@ exports[`TextLink renders as a button 1`] = `
   text-align: left;
   cursor: pointer;
   opacity: 1;
-  color: #2E75D4;
+  color: #0059C8;
 }
 
 .emotion-0:hover,
 .emotion-0:focus {
-  color: #174E8C;
+  color: #0041AB;
 }
 
 .emotion-0:focus,
@@ -733,7 +732,7 @@ exports[`TextLink renders as a button 1`] = `
 }
 
 .emotion-0:focus {
-  box-shadow: 0px 0px 0px 3px #84B9F5;
+  box-shadow: 0px 0px 0px 3px #98CBFF;
   outline: none;
   border-radius: 4px;
 }
@@ -780,12 +779,12 @@ exports[`TextLink renders as a link 1`] = `
   text-align: left;
   cursor: pointer;
   opacity: 1;
-  color: #2E75D4;
+  color: #0059C8;
 }
 
 .emotion-0:hover,
 .emotion-0:focus {
-  color: #174E8C;
+  color: #0041AB;
 }
 
 .emotion-0:focus,
@@ -795,7 +794,7 @@ exports[`TextLink renders as a link 1`] = `
 }
 
 .emotion-0:focus {
-  box-shadow: 0px 0px 0px 3px #84B9F5;
+  box-shadow: 0px 0px 0px 3px #98CBFF;
   outline: none;
   border-radius: 4px;
 }
@@ -842,12 +841,12 @@ exports[`TextLink renders with an icon 1`] = `
   text-align: left;
   cursor: pointer;
   opacity: 1;
-  color: #2E75D4;
+  color: #0059C8;
 }
 
 .emotion-3:hover,
 .emotion-3:focus {
-  color: #174E8C;
+  color: #0041AB;
 }
 
 .emotion-3:focus,
@@ -857,7 +856,7 @@ exports[`TextLink renders with an icon 1`] = `
 }
 
 .emotion-3:focus {
-  box-shadow: 0px 0px 0px 3px #84B9F5;
+  box-shadow: 0px 0px 0px 3px #98CBFF;
   outline: none;
   border-radius: 4px;
 }
@@ -875,11 +874,11 @@ exports[`TextLink renders with an icon 1`] = `
 
 .emotion-0 {
   display: inline-block;
-  fill: #2D64B3;
+  fill: #0059C8;
   height: 18px;
   width: 18px;
   display: inline-block;
-  fill: #2D64B3;
+  fill: #0059C8;
   height: 16px;
   width: 16px;
   fill: currentColor;
@@ -951,12 +950,12 @@ exports[`TextLink renders with an icon aligned right to the text 1`] = `
   text-align: left;
   cursor: pointer;
   opacity: 1;
-  color: #2E75D4;
+  color: #0059C8;
 }
 
 .emotion-3:hover,
 .emotion-3:focus {
-  color: #174E8C;
+  color: #0041AB;
 }
 
 .emotion-3:focus,
@@ -966,7 +965,7 @@ exports[`TextLink renders with an icon aligned right to the text 1`] = `
 }
 
 .emotion-3:focus {
-  box-shadow: 0px 0px 0px 3px #84B9F5;
+  box-shadow: 0px 0px 0px 3px #98CBFF;
   outline: none;
   border-radius: 4px;
 }
@@ -980,11 +979,11 @@ exports[`TextLink renders with an icon aligned right to the text 1`] = `
 
 .emotion-1 {
   display: inline-block;
-  fill: #2D64B3;
+  fill: #0059C8;
   height: 18px;
   width: 18px;
   display: inline-block;
-  fill: #2D64B3;
+  fill: #0059C8;
   height: 16px;
   width: 16px;
   fill: currentColor;

@@ -221,11 +221,6 @@ exports[`renders the component with a rows defined 1`] = `
 `;
 
 exports[`renders the component with a textlink 1`] = `
-.emotion-2 {
-  display: inherit;
-  outline: 0;
-}
-
 .emotion-0 {
   display: inline-block;
   color: #111B2B;
@@ -236,11 +231,80 @@ exports[`renders the component with a textlink 1`] = `
   margin-bottom: calc(1rem * (8 / 16));
 }
 
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  white-space: normal;
+  text-align: left;
+  cursor: pointer;
+  opacity: 1;
+  color: #0059C8;
+}
+
+.emotion-4:hover,
+.emotion-4:focus {
+  color: #0041AB;
+}
+
+.emotion-4:focus,
+.emotion-4:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-4:focus {
+  box-shadow: 0px 0px 0px 3px #98CBFF;
+  outline: none;
+  border-radius: 4px;
+}
+
+.emotion-3 {
+  margin-left: 0.125rem;
+}
+
 .emotion-1 {
   display: inline-block;
   fill: #0059C8;
   height: 18px;
   width: 18px;
+  display: inline-block;
+  fill: #0059C8;
+  height: 16px;
+  width: 16px;
+  fill: currentColor;
+  -webkit-transition: fill 0.1s ease-in-out;
+  transition: fill 0.1s ease-in-out;
 }
 
 <div
@@ -258,33 +322,31 @@ exports[`renders the component with a textlink 1`] = `
       test
     </label>
     <button
-      class="TextLink TextField__label-link TextLink--primary"
-      data-test-id="cf-ui-text-link"
+      class="emotion-4 TextField__label-link"
       type="button"
     >
       <span
         class="emotion-2"
-        tabindex="-1"
       >
-        <div
-          class="TextLink__icon-wrapper"
+        <svg
+          class="emotion-1"
+          data-test-id="cf-ui-icon"
+          height="1em"
+          viewBox="0 0 24 24"
+          width="1em"
         >
-          <svg
-            class="TextLink__icon emotion-1"
-            data-test-id="cf-ui-icon"
-            height="1em"
-            viewBox="0 0 24 24"
-            width="1em"
-          >
-            <path
-              d="M0 0h24v24H0z"
-              fill="none"
-            />
-            <path
-              d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"
-            />
-          </svg>
-        </div>
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"
+          />
+        </svg>
+      </span>
+      <span
+        class="emotion-3"
+      >
         Unlock to edit
       </span>
     </button>
