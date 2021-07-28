@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { css } from '@emotion/core';
-import tokens from '@contentful/forma-36-tokens';
-import { Flex } from '@contentful/forma-36-react-components';
+import tokens from '@contentful/f36-tokens';
+import { Flex } from '@contentful/f36-components';
 
 const styles = {
   container: css({

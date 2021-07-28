@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ColorSwatch from './ColorSwatch';
-import { Flex } from '@contentful/forma-36-react-components';
+import { Flex } from '@contentful/f36-components';
 
 class ColorSwatchGroup extends Component {
   render() {
