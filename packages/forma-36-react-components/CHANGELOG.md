@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.93.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.93.3...@contentful/forma-36-react-components@3.93.4) (2021-07-28)
+
+
+### Bug Fixes
+
+* **button:** update color to increase color contrast between positive and negative buttons ([#1126](https://github.com/contentful/forma-36/issues/1126)) ([698cc3a](https://github.com/contentful/forma-36/commit/698cc3a2cf43357202d89d09aba2f58fe72611db))
+
+
+
+
+
 ## [3.93.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.93.2...@contentful/forma-36-react-components@3.93.3) (2021-07-28)
 
 
