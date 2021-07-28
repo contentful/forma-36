@@ -123,6 +123,10 @@ module.exports = {
             link: '/components/button/',
           },
           {
+            name: 'ButtonGroup',
+            link: '/components/button-group',
+          },
+          {
             name: 'Card',
             link: '/components/card/',
           },

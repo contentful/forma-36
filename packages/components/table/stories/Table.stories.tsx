@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { SectionHeading } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
-import { Button, SkeletonRow } from '@contentful/f36-components';
+import { Button } from '@contentful/f36-button';
+import { SkeletonRow } from '@contentful/f36-components';
 
 import { Table, TableBody, TableCell, TableHead, TableRow } from '../src/';
 
@@ -94,7 +95,7 @@ export const WithLoadingState: Story = () => {
       <br />
       <Button
         size="small"
-        buttonType="muted"
+        variant="secondary"
         onClick={() => setIsLoading((state) => !state)}
       >
         isLoading toggle button
