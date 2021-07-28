@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.93.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.93.2...@contentful/forma-36-react-components@3.93.3) (2021-07-28)
+
+
+### Bug Fixes
+
+* **dropdown:** fix "`focus` of `null`" error in Dropdown component ([#1124](https://github.com/contentful/forma-36/issues/1124)) ([faa58d8](https://github.com/contentful/forma-36/commit/faa58d8345851c91200b3a1550da233371544732))
+
+
+
+
+
 ## [3.93.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.93.1...@contentful/forma-36-react-components@3.93.2) (2021-07-23)
 
 
