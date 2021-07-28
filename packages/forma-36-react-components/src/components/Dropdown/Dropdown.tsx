@@ -233,7 +233,7 @@ export function Dropdown({
     const toggleElementNode = document.querySelector(
       `[data-node-id="${toggleElementId}"]`,
     ) as HTMLElement;
-    toggleElementNode.focus();
+    toggleElementNode?.focus();
 
     if (onClose) {
       onClose();
