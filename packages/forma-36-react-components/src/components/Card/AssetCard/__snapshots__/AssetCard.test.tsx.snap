@@ -495,7 +495,7 @@ exports[`renders the component with status 1`] = `
   letter-spacing: 0.06rem;
   border-radius: 4px;
   color: #BD002A;
-  background-color: #FFF2F2;
+  background-color: #FFE0E0;
   padding: 0 0.5rem;
   font-size: calc(1rem * (12 / 16));
   line-height: 20px;

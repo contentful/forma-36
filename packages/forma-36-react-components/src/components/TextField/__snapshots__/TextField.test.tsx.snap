@@ -467,7 +467,7 @@ exports[`renders the component with characters count 1`] = `
 .emotion-1 {
   margin: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  color: #5A657C;
+  color: #67728A;
   font-size: 0.875rem;
   line-height: 1.5;
   text-rendering: optimizeLegibility;
@@ -529,7 +529,7 @@ exports[`renders the component with help text 1`] = `
 .emotion-1 {
   margin: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  color: #5A657C;
+  color: #67728A;
   font-size: 0.875rem;
   line-height: 1.5;
   text-rendering: optimizeLegibility;

@@ -631,7 +631,7 @@ exports[`renders the component in loading state 1`] = `
 
 .emotion-6 {
   display: block;
-  fill: #F7F9FA;
+  fill: #ffffff;
 }
 
 .emotion-7 {

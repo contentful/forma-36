@@ -244,7 +244,7 @@ exports[`renders the component as an Asset with a lower-cased entityType 1`] = `
   letter-spacing: 0.06rem;
   border-radius: 4px;
   color: #006D23;
-  background-color: #EAF9E8;
+  background-color: #CDF3C6;
   padding: 0 0.5rem;
   font-size: calc(1rem * (12 / 16));
   line-height: 20px;
@@ -354,7 +354,7 @@ exports[`renders the component as an Asset with a title-cased entityType 1`] = `
   letter-spacing: 0.06rem;
   border-radius: 4px;
   color: #006D23;
-  background-color: #EAF9E8;
+  background-color: #CDF3C6;
   padding: 0 0.5rem;
   font-size: calc(1rem * (12 / 16));
   line-height: 20px;
@@ -464,7 +464,7 @@ exports[`renders the component as an asset entityType icon with an archived stat
   letter-spacing: 0.06rem;
   border-radius: 4px;
   color: #BD002A;
-  background-color: #FFF2F2;
+  background-color: #FFE0E0;
   padding: 0 0.5rem;
   font-size: calc(1rem * (12 / 16));
   line-height: 20px;
@@ -574,7 +574,7 @@ exports[`renders the component as an asset entityType variant 1`] = `
   letter-spacing: 0.06rem;
   border-radius: 4px;
   color: #006D23;
-  background-color: #EAF9E8;
+  background-color: #CDF3C6;
   padding: 0 0.5rem;
   font-size: calc(1rem * (12 / 16));
   line-height: 20px;
@@ -677,7 +677,7 @@ exports[`renders the component as an asset thumbnail preview 1`] = `
   letter-spacing: 0.06rem;
   border-radius: 4px;
   color: #006D23;
-  background-color: #EAF9E8;
+  background-color: #CDF3C6;
   padding: 0 0.5rem;
   font-size: calc(1rem * (12 / 16));
   line-height: 20px;
@@ -999,7 +999,7 @@ exports[`renders the component with a drag handle 1`] = `
   letter-spacing: 0.06rem;
   border-radius: 4px;
   color: #006D23;
-  background-color: #EAF9E8;
+  background-color: #CDF3C6;
   padding: 0 0.5rem;
   font-size: calc(1rem * (12 / 16));
   line-height: 20px;
@@ -1132,7 +1132,7 @@ exports[`renders the component with a status 1`] = `
   letter-spacing: 0.06rem;
   border-radius: 4px;
   color: #006D23;
-  background-color: #EAF9E8;
+  background-color: #CDF3C6;
   padding: 0 0.5rem;
   font-size: calc(1rem * (12 / 16));
   line-height: 20px;
@@ -1240,7 +1240,7 @@ exports[`renders the component with active drag state 1`] = `
   letter-spacing: 0.06rem;
   border-radius: 4px;
   color: #006D23;
-  background-color: #EAF9E8;
+  background-color: #CDF3C6;
   padding: 0 0.5rem;
   font-size: calc(1rem * (12 / 16));
   line-height: 20px;
@@ -1427,7 +1427,7 @@ exports[`renders the component with custom drag handle 1`] = `
   letter-spacing: 0.06rem;
   border-radius: 4px;
   color: #006D23;
-  background-color: #EAF9E8;
+  background-color: #CDF3C6;
   padding: 0 0.5rem;
   font-size: calc(1rem * (12 / 16));
   line-height: 20px;
@@ -1643,7 +1643,7 @@ exports[`renders the component with dropdownListElements 1`] = `
   letter-spacing: 0.06rem;
   border-radius: 4px;
   color: #006D23;
-  background-color: #EAF9E8;
+  background-color: #CDF3C6;
   padding: 0 0.5rem;
   font-size: calc(1rem * (12 / 16));
   line-height: 20px;

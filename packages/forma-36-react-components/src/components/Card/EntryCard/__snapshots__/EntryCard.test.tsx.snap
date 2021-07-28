@@ -12,7 +12,7 @@ exports[`renders a small sized variant of the component 1`] = `
   letter-spacing: 0.06rem;
   border-radius: 4px;
   color: #006D23;
-  background-color: #EAF9E8;
+  background-color: #CDF3C6;
   padding: 0 0.5rem;
   font-size: calc(1rem * (12 / 16));
   line-height: 20px;
@@ -73,7 +73,7 @@ exports[`renders the component 1`] = `
   letter-spacing: 0.06rem;
   border-radius: 4px;
   color: #006D23;
-  background-color: #EAF9E8;
+  background-color: #CDF3C6;
   padding: 0 0.5rem;
   font-size: calc(1rem * (12 / 16));
   line-height: 20px;
@@ -139,7 +139,7 @@ exports[`renders the component with a custom drag handle 1`] = `
   letter-spacing: 0.06rem;
   border-radius: 4px;
   color: #006D23;
-  background-color: #EAF9E8;
+  background-color: #CDF3C6;
   padding: 0 0.5rem;
   font-size: calc(1rem * (12 / 16));
   line-height: 20px;
@@ -237,7 +237,7 @@ exports[`renders the component with a drag handle 1`] = `
   letter-spacing: 0.06rem;
   border-radius: 4px;
   color: #006D23;
-  background-color: #EAF9E8;
+  background-color: #CDF3C6;
   padding: 0 0.5rem;
   font-size: calc(1rem * (12 / 16));
   line-height: 20px;
@@ -335,7 +335,7 @@ exports[`renders the component with a thumbnail element 1`] = `
   letter-spacing: 0.06rem;
   border-radius: 4px;
   color: #006D23;
-  background-color: #EAF9E8;
+  background-color: #CDF3C6;
   padding: 0 0.5rem;
   font-size: calc(1rem * (12 / 16));
   line-height: 20px;
@@ -409,7 +409,7 @@ exports[`renders the component with an additional class name 1`] = `
   letter-spacing: 0.06rem;
   border-radius: 4px;
   color: #006D23;
-  background-color: #EAF9E8;
+  background-color: #CDF3C6;
   padding: 0 0.5rem;
   font-size: calc(1rem * (12 / 16));
   line-height: 20px;
@@ -480,7 +480,7 @@ exports[`renders the component with dropdownListElements 1`] = `
   letter-spacing: 0.06rem;
   border-radius: 4px;
   color: #006D23;
-  background-color: #EAF9E8;
+  background-color: #CDF3C6;
   padding: 0 0.5rem;
   font-size: calc(1rem * (12 / 16));
   line-height: 20px;

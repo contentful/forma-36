@@ -15,45 +15,44 @@ exports[`renders the component with a value 1`] = `
 
 .emotion-0:focus + label {
   outline: none;
-  border: 2px solid #036FE3;
   box-shadow: 0px 0px 0px 3px #98CBFF;
 }
 
 .emotion-0:checked + label {
-  border-color: #036FE3;
-  background: #036FE3;
+  border-color: #0059C8;
+  background: #0059C8;
 }
 
 .emotion-0:disabled + label {
-  border-color: #AEC1CC;
-  background: #AEC1CC;
+  border-color: #CFD9E0;
+  background: #CFD9E0;
 }
 
 .emotion-0:checked + label,
 .emotion-0:indeterminate + label {
-  border-color: #036FE3;
-  background: #036FE3;
+  border-color: #0059C8;
+  background: #0059C8;
 }
 
 .emotion-0:checked:disabled + label svg,
 .emotion-0:indeterminate:disabled + label svg {
-  fill: #67728A;
+  fill: #5A657C;
 }
 
 .emotion-0:disabled + label {
-  border-color: #AEC1CC;
-  background: #AEC1CC;
+  border-color: #CFD9E0;
+  background: #CFD9E0;
 }
 
 .emotion-0:disabled + label svg {
-  fill: #AEC1CC;
+  fill: #CFD9E0;
 }
 
 .emotion-2 {
   background: #ffffff;
   width: 1rem;
   height: 1rem;
-  border: 2px solid #AEC1CC;
+  border: 2px solid #CFD9E0;
   fill: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
@@ -142,45 +141,44 @@ exports[`renders the component with all required props 1`] = `
 
 .emotion-0:focus + label {
   outline: none;
-  border: 2px solid #036FE3;
   box-shadow: 0px 0px 0px 3px #98CBFF;
 }
 
 .emotion-0:checked + label {
-  border-color: #036FE3;
-  background: #036FE3;
+  border-color: #0059C8;
+  background: #0059C8;
 }
 
 .emotion-0:disabled + label {
-  border-color: #AEC1CC;
-  background: #AEC1CC;
+  border-color: #CFD9E0;
+  background: #CFD9E0;
 }
 
 .emotion-0:checked + label,
 .emotion-0:indeterminate + label {
-  border-color: #036FE3;
-  background: #036FE3;
+  border-color: #0059C8;
+  background: #0059C8;
 }
 
 .emotion-0:checked:disabled + label svg,
 .emotion-0:indeterminate:disabled + label svg {
-  fill: #67728A;
+  fill: #5A657C;
 }
 
 .emotion-0:disabled + label {
-  border-color: #AEC1CC;
-  background: #AEC1CC;
+  border-color: #CFD9E0;
+  background: #CFD9E0;
 }
 
 .emotion-0:disabled + label svg {
-  fill: #AEC1CC;
+  fill: #CFD9E0;
 }
 
 .emotion-2 {
   background: #ffffff;
   width: 1rem;
   height: 1rem;
-  border: 2px solid #AEC1CC;
+  border: 2px solid #CFD9E0;
   fill: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
@@ -269,45 +267,44 @@ exports[`renders the component with an additional class name 1`] = `
 
 .emotion-0:focus + label {
   outline: none;
-  border: 2px solid #036FE3;
   box-shadow: 0px 0px 0px 3px #98CBFF;
 }
 
 .emotion-0:checked + label {
-  border-color: #036FE3;
-  background: #036FE3;
+  border-color: #0059C8;
+  background: #0059C8;
 }
 
 .emotion-0:disabled + label {
-  border-color: #AEC1CC;
-  background: #AEC1CC;
+  border-color: #CFD9E0;
+  background: #CFD9E0;
 }
 
 .emotion-0:checked + label,
 .emotion-0:indeterminate + label {
-  border-color: #036FE3;
-  background: #036FE3;
+  border-color: #0059C8;
+  background: #0059C8;
 }
 
 .emotion-0:checked:disabled + label svg,
 .emotion-0:indeterminate:disabled + label svg {
-  fill: #67728A;
+  fill: #5A657C;
 }
 
 .emotion-0:disabled + label {
-  border-color: #AEC1CC;
-  background: #AEC1CC;
+  border-color: #CFD9E0;
+  background: #CFD9E0;
 }
 
 .emotion-0:disabled + label svg {
-  fill: #AEC1CC;
+  fill: #CFD9E0;
 }
 
 .emotion-2 {
   background: #ffffff;
   width: 1rem;
   height: 1rem;
-  border: 2px solid #AEC1CC;
+  border: 2px solid #CFD9E0;
   fill: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
@@ -396,45 +393,44 @@ exports[`renders the component with as checked 1`] = `
 
 .emotion-0:focus + label {
   outline: none;
-  border: 2px solid #036FE3;
   box-shadow: 0px 0px 0px 3px #98CBFF;
 }
 
 .emotion-0:checked + label {
-  border-color: #036FE3;
-  background: #036FE3;
+  border-color: #0059C8;
+  background: #0059C8;
 }
 
 .emotion-0:disabled + label {
-  border-color: #AEC1CC;
-  background: #AEC1CC;
+  border-color: #CFD9E0;
+  background: #CFD9E0;
 }
 
 .emotion-0:checked + label,
 .emotion-0:indeterminate + label {
-  border-color: #036FE3;
-  background: #036FE3;
+  border-color: #0059C8;
+  background: #0059C8;
 }
 
 .emotion-0:checked:disabled + label svg,
 .emotion-0:indeterminate:disabled + label svg {
-  fill: #67728A;
+  fill: #5A657C;
 }
 
 .emotion-0:disabled + label {
-  border-color: #AEC1CC;
-  background: #AEC1CC;
+  border-color: #CFD9E0;
+  background: #CFD9E0;
 }
 
 .emotion-0:disabled + label svg {
-  fill: #AEC1CC;
+  fill: #CFD9E0;
 }
 
 .emotion-2 {
   background: #ffffff;
   width: 1rem;
   height: 1rem;
-  border: 2px solid #AEC1CC;
+  border: 2px solid #CFD9E0;
   fill: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
@@ -514,7 +510,7 @@ exports[`renders the component with disabled prop 1`] = `
   background: #ffffff;
   width: 1rem;
   height: 1rem;
-  border: 2px solid #AEC1CC;
+  border: 2px solid #CFD9E0;
   fill: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
@@ -566,38 +562,37 @@ exports[`renders the component with disabled prop 1`] = `
 
 .emotion-0:focus + label {
   outline: none;
-  border: 2px solid #036FE3;
   box-shadow: 0px 0px 0px 3px #98CBFF;
 }
 
 .emotion-0:checked + label {
-  border-color: #036FE3;
-  background: #036FE3;
+  border-color: #0059C8;
+  background: #0059C8;
 }
 
 .emotion-0:disabled + label {
-  border-color: #AEC1CC;
-  background: #AEC1CC;
+  border-color: #CFD9E0;
+  background: #CFD9E0;
 }
 
 .emotion-0:checked + label,
 .emotion-0:indeterminate + label {
-  border-color: #036FE3;
-  background: #036FE3;
+  border-color: #0059C8;
+  background: #0059C8;
 }
 
 .emotion-0:checked:disabled + label svg,
 .emotion-0:indeterminate:disabled + label svg {
-  fill: #67728A;
+  fill: #5A657C;
 }
 
 .emotion-0:disabled + label {
-  border-color: #AEC1CC;
-  background: #AEC1CC;
+  border-color: #CFD9E0;
+  background: #CFD9E0;
 }
 
 .emotion-0:disabled + label svg {
-  fill: #AEC1CC;
+  fill: #CFD9E0;
 }
 
 .emotion-1 {
@@ -653,45 +648,44 @@ exports[`renders the component with required prop 1`] = `
 
 .emotion-0:focus + label {
   outline: none;
-  border: 2px solid #036FE3;
   box-shadow: 0px 0px 0px 3px #98CBFF;
 }
 
 .emotion-0:checked + label {
-  border-color: #036FE3;
-  background: #036FE3;
+  border-color: #0059C8;
+  background: #0059C8;
 }
 
 .emotion-0:disabled + label {
-  border-color: #AEC1CC;
-  background: #AEC1CC;
+  border-color: #CFD9E0;
+  background: #CFD9E0;
 }
 
 .emotion-0:checked + label,
 .emotion-0:indeterminate + label {
-  border-color: #036FE3;
-  background: #036FE3;
+  border-color: #0059C8;
+  background: #0059C8;
 }
 
 .emotion-0:checked:disabled + label svg,
 .emotion-0:indeterminate:disabled + label svg {
-  fill: #67728A;
+  fill: #5A657C;
 }
 
 .emotion-0:disabled + label {
-  border-color: #AEC1CC;
-  background: #AEC1CC;
+  border-color: #CFD9E0;
+  background: #CFD9E0;
 }
 
 .emotion-0:disabled + label svg {
-  fill: #AEC1CC;
+  fill: #CFD9E0;
 }
 
 .emotion-2 {
   background: #ffffff;
   width: 1rem;
   height: 1rem;
-  border: 2px solid #AEC1CC;
+  border: 2px solid #CFD9E0;
   fill: #ffffff;
   display: -webkit-box;
   display: -webkit-flex;
