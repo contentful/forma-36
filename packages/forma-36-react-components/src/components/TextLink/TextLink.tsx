@@ -40,6 +40,10 @@ export interface TextLinkProps {
   iconPosition?: IconPositionType;
 }
 
+/**
+ *
+ * @deprecated This component is deprecated, please use TextLink from '@contentful/f36-text-link'
+ */
 export function TextLink({
   children,
   className,

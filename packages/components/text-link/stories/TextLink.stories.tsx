@@ -13,7 +13,7 @@ export default {
   parameters: {
     propTypes: TextLink['__docgenInfo'],
   },
-  title: 'Components/TextLinkV4',
+  title: 'Components/TextLink',
   argTypes: {
     classNames: { control: { disable: true } },
     testId: { control: { disable: true } },
@@ -28,7 +28,7 @@ export default {
   },
 } as Meta;
 
-export const Default: Story<any> = ({ icon, children, ...args }) => {
+export const Basic: Story<any> = ({ icon, children, ...args }) => {
   return (
     <TextLink icon={icons[icon]} {...args}>
       {children}

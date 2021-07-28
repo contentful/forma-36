@@ -8,7 +8,7 @@ import '@contentful/forma-36-fcss/dist/styles.css';
 import { TextLink, textLinkColor } from './TextLink';
 
 export default {
-  title: 'Components/TextLink',
+  title: 'Components/TextLink(Deprecated)',
   component: TextLink,
   parameters: {
     propTypes: TextLink['__docgenInfo'],
