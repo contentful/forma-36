@@ -8,38 +8,38 @@ const variantToStyles = (variant: NoteVariant): CSSObject => {
   switch (variant) {
     case 'primary':
       return {
-        backgroundColor: tokens.colorBlueLightest,
-        borderColor: tokens.colorBlueLight,
+        backgroundColor: tokens.blue100,
+        borderColor: tokens.blue300,
 
         a: {
-          color: tokens.colorBlueDark,
+          color: tokens.blue700,
         },
       };
     case 'positive':
       return {
-        backgroundColor: tokens.colorGreenLightest,
-        borderColor: tokens.colorGreenLight,
+        backgroundColor: tokens.green100,
+        borderColor: tokens.green300,
 
         a: {
-          color: tokens.colorGreenDark,
+          color: tokens.green700,
         },
       };
     case 'negative':
       return {
-        backgroundColor: tokens.colorRedLightest,
-        borderColor: tokens.colorRedLight,
+        backgroundColor: tokens.red100,
+        borderColor: tokens.red300,
 
         a: {
-          color: tokens.colorRedDark,
+          color: tokens.red700,
         },
       };
     case 'warning':
       return {
-        backgroundColor: tokens.colorOrangeLightest,
-        borderColor: tokens.colorOrangeLight,
+        backgroundColor: tokens.orange100,
+        borderColor: tokens.orange300,
 
         a: {
-          color: tokens.colorOrangeDark,
+          color: tokens.orange700,
         },
       };
     default:
@@ -56,7 +56,6 @@ export const styles = {
       fontWeight: tokens.fontWeightNormal,
       lineHeight: tokens.lineHeightDefault,
       fontSize: tokens.fontSizeM,
-      color: tokens.colorTextBase,
       display: 'flex',
       flexDirection: 'row',
       alignItems: 'flex-start',
@@ -66,6 +65,7 @@ export const styles = {
       ...variantToStyles(variant),
     }),
   title: css({
+    color: tokens.gray800,
     fontWeight: tokens.fontWeightMedium,
     fontSize: tokens.fontSizeL,
     marginBottom: tokens.spacingXs,
@@ -81,11 +81,12 @@ export const styles = {
       marginRight: hasCloseButton ? tokens.spacingS : 'unset',
     }),
   content: css({
+    color: tokens.gray700,
     width: '100%',
   }),
   close: css({
-    border: 0,
-    background: 'transparent',
-    boxShadow: 'unset',
+    '&:hover': {
+      backgroundColor: 'transparent',
+    },
   }),
 };

@@ -8,17 +8,17 @@ const getCloseButtonStyle = (variant: PillVariants) => {
     switch (variant) {
       case 'active':
         return {
-          borderLeft: `1px solid ${tokens.colorTextLightest}`,
+          borderLeft: `1px solid ${tokens.gray400}`,
           '&:hover, &:focus': {
-            background: tokens.colorElementDarkest,
+            background: tokens.gray300,
             cursor: 'pointer',
           },
         };
       default:
         return {
-          borderLeft: `1px solid ${tokens.colorElementDarkest}`,
+          borderLeft: `1px solid ${tokens.gray400}`,
           '&:hover, &:focus': {
-            background: tokens.colorElementMid,
+            background: tokens.gray300,
             cursor: 'pointer',
           },
         };
@@ -36,21 +36,9 @@ const getCloseButtonStyle = (variant: PillVariants) => {
   });
 };
 
-const getLabelStyle = (variant: PillVariants) => {
-  const variantStyle = (variant: PillVariants): CSSObject => {
-    switch (variant) {
-      case 'active':
-        return {
-          color: tokens.colorTextDark,
-        };
-      default:
-        return {
-          color: tokens.colorTextBase,
-        };
-    }
-  };
-
+const getLabelStyle = () => {
   return css({
+    color: tokens.gray700,
     lineHeight: tokens.lineHeightM,
     padding: tokens.spacingXs,
     fontSize: tokens.fontSizeM,
@@ -58,12 +46,11 @@ const getLabelStyle = (variant: PillVariants) => {
     whiteSpace: 'nowrap',
     textOverflow: 'ellipsis',
     overflow: 'hidden',
-    ...variantStyle(variant),
   });
 };
 
 const icon = {
-  fill: tokens.colorTextLightest,
+  fill: tokens.gray600,
   verticalAlign: 'middle',
 };
 
@@ -77,17 +64,17 @@ const getPillStyle = (variant: PillVariants) => {
     switch (variant) {
       case 'active':
         return {
-          background: tokens.colorElementDark,
+          background: tokens.gray300,
         };
       case 'deleted':
         return {
-          background: tokens.colorElementLight,
+          background: tokens.gray200,
           textDecoration: 'line-through',
           opacity: '0.5',
         };
       default:
         return {
-          background: tokens.colorElementLight,
+          background: tokens.gray200,
         };
     }
   };
@@ -107,7 +94,7 @@ const getPillStyle = (variant: PillVariants) => {
 export default (variant: PillVariants) => {
   return {
     closeButton: getCloseButtonStyle(variant),
-    label: getLabelStyle(variant),
+    label: getLabelStyle(),
     icon: css(icon),
     dragIcon: css(dragIcon),
     pill: getPillStyle(variant),

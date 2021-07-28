@@ -46,11 +46,9 @@ export const TableCell = forwardRef<HTMLTableCellElement, TableCellProps>(
               as={as}
               className={cx(
                 css({
-                  backgroundColor: isTableHead
-                    ? tokens.colorElementLightest
-                    : undefined,
-                  borderBottom: `1px solid ${tokens.colorElementLight}`,
-                  color: sorting ? tokens.colorTextDark : tokens.colorTextMid,
+                  backgroundColor: isTableHead ? tokens.gray100 : undefined,
+                  borderBottom: `1px solid ${tokens.gray200}`,
+                  color: sorting ? tokens.gray900 : tokens.gray700,
                   fontFamily: tokens.fontStackPrimary,
                   fontSize: tokens.fontSizeM,
                   fontWeight: isTableHead

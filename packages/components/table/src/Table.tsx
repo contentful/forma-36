@@ -7,7 +7,7 @@ import tokens from '@contentful/f36-tokens';
 const styles = {
   inline: css({
     borderRadius: tokens.borderRadiusMedium,
-    boxShadow: `0 0 0 1px ${tokens.colorElementLight}`,
+    boxShadow: `0 0 0 1px ${tokens.gray200}`,
     'th:first-child': {
       borderTopLeftRadius: tokens.borderRadiusMedium,
     },

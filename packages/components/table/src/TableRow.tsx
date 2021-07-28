@@ -11,15 +11,15 @@ const styles = {
       borderBottom: 'none',
     },
     '&:hover td': {
-      backgroundColor: tokens.colorElementLightest,
+      backgroundColor: tokens.gray100,
     },
   }),
   selected: css({
     'td, th': {
-      backgroundColor: tokens.colorBlueLightest,
+      backgroundColor: tokens.blue100,
     },
     'td:last-child': {
-      boxShadow: `inset -2px 0 0 ${tokens.colorBlueMid}`,
+      boxShadow: `inset -2px 0 0 ${tokens.blue500}`,
     },
   }),
 };
