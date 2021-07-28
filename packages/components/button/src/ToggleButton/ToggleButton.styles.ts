@@ -1,16 +1,14 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
+import { GetStyleArguments } from './types';
 
-const getToggleButtonStyle = ({
-  isActive,
-  isDisabled,
-}: {
-  isActive: boolean;
-  isDisabled: boolean;
-}) => {
+const getToggleButtonStyle = ({ isActive, isDisabled }: GetStyleArguments) => {
   const activeStyle = {
     background: tokens.blue100,
     borderColor: tokens.blue600,
+    '&': {
+      zIndex: tokens.zIndexDefault + 1,
+    },
     '&:hover': {
       background: tokens.blue100,
     },
@@ -22,8 +20,9 @@ const getToggleButtonStyle = ({
       background: tokens.colorWhite,
       borderColor: isDisabled ? tokens.gray300 : tokens.blue600,
     },
-    '&:focus': {
+    '&&:focus': {
       boxShadow: tokens.glowPrimary,
+      zIndex: tokens.zIndexDefault + 2,
     },
     '&:active': activeStyle,
   };
@@ -38,6 +37,6 @@ const getToggleButtonStyle = ({
   return baseStyle;
 };
 
-export default ({ isActive, isDisabled }) => ({
+export default ({ isActive, isDisabled }: GetStyleArguments) => ({
   toggleButton: css(getToggleButtonStyle({ isActive, isDisabled })),
 });

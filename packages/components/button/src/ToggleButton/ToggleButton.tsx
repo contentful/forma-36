@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { cx } from 'emotion';
 import { CommonProps } from '@contentful/f36-core';
-import { Button } from '@contentful/f36-button';
 import { IconComponent } from '@contentful/f36-icon';
+import { Button } from '../Button';
 import getStyles from './ToggleButton.styles';
 
 export interface ToggleButtonProps extends CommonProps {
