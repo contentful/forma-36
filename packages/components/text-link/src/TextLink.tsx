@@ -6,7 +6,10 @@ import { TextLinkVariant } from './types';
 import { Icon, IconComponent } from '@contentful/f36-icon';
 
 export interface TextLinkProps
-  extends Omit<HTMLProps<HTMLButtonElement & HTMLAnchorElement>, 'type'>,
+  extends Omit<
+      HTMLProps<HTMLButtonElement & HTMLAnchorElement>,
+      'type' | 'disabled'
+    >,
     CommonProps {
   children?: React.ReactNode;
   /**
@@ -41,7 +44,7 @@ function TextLink(
     variant = 'primary',
     href,
     icon,
-    alignIcon,
+    alignIcon = 'start',
     isDisabled,
     ...otherProps
   } = props;
@@ -61,7 +64,7 @@ function TextLink(
 
   const iconContent = icon ? (
     <Flex as="span">
-      <Icon className={styles.textLinkIcon} as={icon} />
+      <Icon className={styles.textLinkIcon} as={icon} size="tiny" />
     </Flex>
   ) : null;
 
