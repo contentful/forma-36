@@ -3,6 +3,39 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.93.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.93.3...@contentful/forma-36-react-components@3.93.4) (2021-07-28)
+
+
+### Bug Fixes
+
+* **button:** update color to increase color contrast between positive and negative buttons ([#1126](https://github.com/contentful/forma-36/issues/1126)) ([698cc3a](https://github.com/contentful/forma-36/commit/698cc3a2cf43357202d89d09aba2f58fe72611db))
+
+
+
+
+
+## [3.93.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.93.2...@contentful/forma-36-react-components@3.93.3) (2021-07-28)
+
+
+### Bug Fixes
+
+* **dropdown:** fix "`focus` of `null`" error in Dropdown component ([#1124](https://github.com/contentful/forma-36/issues/1124)) ([faa58d8](https://github.com/contentful/forma-36/commit/faa58d8345851c91200b3a1550da233371544732))
+
+
+
+
+
+## [3.93.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.93.1...@contentful/forma-36-react-components@3.93.2) (2021-07-23)
+
+
+### Bug Fixes
+
+* **dropdown-container:** check for ref before calling focus ([#1112](https://github.com/contentful/forma-36/issues/1112)) ([a881c27](https://github.com/contentful/forma-36/commit/a881c2789bde4d45c1714f4e0b411dcfd6772697))
+
+
+
+
+
 ## [3.93.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.93.0...@contentful/forma-36-react-components@3.93.1) (2021-07-22)
 
 
@@ -361,8 +394,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 **Note:** Version bump only for package @contentful/forma-36-react-components
 
 # [3.84.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.83.1...@contentful/forma-36-react-components@3.84.0) (2021-03-12)
-
-=======
 
 ### Features
 

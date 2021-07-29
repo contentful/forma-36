@@ -64,8 +64,8 @@ export const DropdownContainer = forwardRef<
       getRef(dropdown.current);
     }
 
-    if (focusContainerOnOpen) {
-      dropdown.current?.focus({
+    if (focusContainerOnOpen && dropdown.current) {
+      dropdown.current.focus({
         preventScroll: true,
       });
     }

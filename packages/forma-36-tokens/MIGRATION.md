@@ -1,4 +1,4 @@
-# Forma 36 tokens - colors update in version 0.10.3
+# Forma 36 tokens - colors update in version 0.11.0
 
 In order to provide a better, more accessible experience for our customers, we decided to migrate our existing color palette into the new one.
 We are introducing a new color system that contains 6 base colors, along with gray and black/white. Each color consists of 9 shades, ranging from 100 to 900.

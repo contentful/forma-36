@@ -3,10 +3,11 @@ const path = require('path');
 module.exports = {
   siteMetadata: {
     title: 'Forma 36 - The Contentful Design System',
-    promoText: '',
-    promoLink: '',
-    promoLinkText: '',
-    promoTagText: '',
+    promoText: `Updated color system with new tokens.`,
+    promoLink:
+      'https://github.com/contentful/forma-36/blob/master/packages/forma-36-tokens/MIGRATION.md',
+    promoLinkText: 'Migration notes',
+    promoTagText: 'New colors',
     menuLinks: [
       {
         name: 'Foundation',
