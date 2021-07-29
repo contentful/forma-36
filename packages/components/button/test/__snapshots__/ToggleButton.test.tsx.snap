@@ -64,17 +64,10 @@ exports[`ToggleButton renders the component 1`] = `
   z-index: 3;
 }
 
-.emotion-1:active {
-  background: #E8F5FF;
-  border-color: #0059C8;
-}
-
-.emotion-1:active {
-  z-index: 2;
-}
-
+.emotion-1:active,
 .emotion-1:active:hover {
   background: #E8F5FF;
+  border-color: #0059C8;
 }
 
 <button
@@ -154,17 +147,10 @@ exports[`ToggleButton renders the component active 1`] = `
   z-index: 3;
 }
 
-.emotion-1:active {
-  background: #E8F5FF;
-  border-color: #0059C8;
-}
-
-.emotion-1:active {
-  z-index: 2;
-}
-
+.emotion-1:active,
 .emotion-1:active:hover {
   background: #E8F5FF;
+  border-color: #0059C8;
 }
 
 .emotion-1 {
@@ -248,17 +234,10 @@ exports[`ToggleButton renders the component with an additional class name 1`] = 
   z-index: 3;
 }
 
-.emotion-1:active {
-  background: #E8F5FF;
-  border-color: #0059C8;
-}
-
-.emotion-1:active {
-  z-index: 2;
-}
-
+.emotion-1:active,
 .emotion-1:active:hover {
   background: #E8F5FF;
+  border-color: #0059C8;
 }
 
 <button
@@ -338,17 +317,10 @@ exports[`ToggleButton renders the component with icon 1`] = `
   z-index: 3;
 }
 
-.emotion-3:active {
-  background: #E8F5FF;
-  border-color: #0059C8;
-}
-
-.emotion-3:active {
-  z-index: 2;
-}
-
+.emotion-3:active,
 .emotion-3:active:hover {
   background: #E8F5FF;
+  border-color: #0059C8;
 }
 
 .emotion-1 {
