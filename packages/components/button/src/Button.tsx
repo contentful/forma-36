@@ -1,4 +1,4 @@
-import React, { ElementType, HTMLProps } from 'react';
+import React, { ElementType } from 'react';
 import { cx } from 'emotion';
 import { Flex, CommonProps } from '@contentful/f36-core';
 import { ChevronDown } from '@contentful/f36-icons';
@@ -8,9 +8,7 @@ import { Spinner } from '@contentful/f36-spinner';
 import type { ButtonVariant, ButtonSize } from './types';
 import { styles } from './styles';
 
-export interface ButtonProps
-  extends Omit<HTMLProps<HTMLButtonElement & HTMLAnchorElement>, 'size'>,
-    CommonProps {
+export interface ButtonProps extends CommonProps {
   children?: React.ReactNode;
   /**
    * Determines style variation of Button component

@@ -1,25 +1,14 @@
 import React, { useState } from 'react';
 import { cx } from 'emotion';
-import { CommonProps } from '@contentful/f36-core';
-import { IconComponent } from '@contentful/f36-icon';
-import { Button } from '../Button';
+import { Button, ButtonProps } from '../Button';
 import getStyles from './ToggleButton.styles';
 
-export interface ToggleButtonProps extends CommonProps {
+export interface ToggleButtonProps extends ButtonProps {
   /**
    * Applies active styles
    * @default false
    */
   isActive?: boolean;
-  /**
-   * Disabled interaction and applies disabled styles
-   * @default false
-   */
-  isDisabled?: boolean;
-  /**
-   * Expects any of the icon components
-   */
-  icon?: IconComponent;
   /**
    * Function triggered when the toggle button is clicked.
    */
@@ -27,10 +16,7 @@ export interface ToggleButtonProps extends CommonProps {
   children: React.ReactNode;
 }
 
-function _ToggleButton(
-  props: ToggleButtonProps,
-  ref: React.Ref<HTMLDivElement>,
-) {
+function _ToggleButton(props: ToggleButtonProps, ref) {
   const {
     testId = 'cf-ui-toggle-button',
     children,
@@ -39,6 +25,7 @@ function _ToggleButton(
     isActive,
     icon,
     onToggle,
+    ...otherProps
   } = props;
 
   const [active, setActive] = useState(isActive);
@@ -61,6 +48,9 @@ function _ToggleButton(
       className={cx(styles.toggleButton, className)}
       icon={icon}
       isDisabled={isDisabled}
+      aria-pressed={active}
+      data-state={active ? 'on' : 'off'}
+      {...otherProps}
     >
       {children}
     </Button>
