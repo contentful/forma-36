@@ -1,11 +1,14 @@
-import React, { FC, useState } from 'react';
+import React, { useState } from 'react';
 import type { HeadingElement } from '@contentful/f36-typography';
-import { useId } from '@contentful/f36-core';
+import { useId, Box } from '@contentful/f36-core';
+
 import { AccordionHeader } from '../AccordionHeader/AccordionHeader';
 import { AccordionPanel } from '../AccordionPanel/AccordionPanel';
-import { styles } from './AccordionItem.styles';
+import type { CommonProps } from '@contentful/f36-core';
 
-export interface AccordionItemProps {
+import getStyles from '../Accordion.styles';
+
+export interface AccordionItemProps extends CommonProps {
   /**
    * The accordion title
    */
@@ -18,10 +21,6 @@ export interface AccordionItemProps {
    * The children of the AccordionItem are in fact the content of the accordion
    */
   children?: React.ReactNode;
-  /**
-   * An ID used for testing purposes applied as a data attribute (data-test-id)
-   */
-  testId?: string;
   /**
    * A function to be called when the accordion item is opened
    */
@@ -36,19 +35,24 @@ export interface AccordionItemProps {
   align?: 'start' | 'end';
 }
 
-export const AccordionItem: FC<AccordionItemProps> = ({
-  title = 'Accordion Title',
-  titleElement = 'h2',
-  testId = 'cf-ui-accordion-item',
-  onExpand,
-  onCollapse,
-  children,
-  align = 'end',
-}: AccordionItemProps) => {
+const _AccordionItem = (
+  props: AccordionItemProps,
+  ref: React.Ref<HTMLDivElement>,
+) => {
+  const styles = getStyles();
+  const {
+    title = 'Accordion Title',
+    titleElement = 'h2',
+    testId = 'cf-ui-accordion-item',
+    onExpand,
+    onCollapse,
+    children,
+    align = 'end',
+  } = props;
   const id = useId();
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const onClick = () => {
+  const handleOnClick = () => {
     if (!isExpanded && onExpand) {
       onExpand();
     }
@@ -59,12 +63,15 @@ export const AccordionItem: FC<AccordionItemProps> = ({
     setIsExpanded(!isExpanded);
   };
 
-  console.log({ title, children });
-
   return (
-    <li className={styles.accordionItem} data-test-id={`${testId}-${id}`}>
+    <Box
+      as="li"
+      ref={ref}
+      className={styles.accordionItem}
+      testId={`${testId}-${id}`}
+    >
       <AccordionHeader
-        handleClick={onClick}
+        handleOnClick={handleOnClick}
         isExpanded={isExpanded}
         element={titleElement}
         ariaId={id}
@@ -76,6 +83,8 @@ export const AccordionItem: FC<AccordionItemProps> = ({
       <AccordionPanel ariaId={id} isExpanded={isExpanded}>
         {children}
       </AccordionPanel>
-    </li>
+    </Box>
   );
 };
+
+export const AccordionItem = React.forwardRef(_AccordionItem);

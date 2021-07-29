@@ -1,10 +1,11 @@
 import React, { FC, useLayoutEffect, useRef } from 'react';
 import { cx } from 'emotion';
 import tokens from '@contentful/f36-tokens';
+import type { CommonProps } from '@contentful/f36-core';
 
-import { styles } from './AccordionPanel.styles';
+import getStyles from '../Accordion.styles';
 
-export interface AccordionPanelProps {
+export interface AccordionPanelProps extends CommonProps {
   /**
    * Child nodes to be rendered in the component
    */
@@ -24,6 +25,7 @@ export const AccordionPanel: FC<AccordionPanelProps> = ({
   isExpanded = false,
   ariaId,
 }: AccordionPanelProps) => {
+  const styles = getStyles();
   const panelEl = useRef<HTMLDivElement>(null);
 
   const getPanelContentHeight = () => {

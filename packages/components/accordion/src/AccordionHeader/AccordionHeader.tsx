@@ -3,22 +3,19 @@ import { cx } from 'emotion';
 import { Subheading } from '@contentful/f36-typography';
 import type { HeadingElement } from '@contentful/f36-typography';
 import { ChevronDownTrimmed } from '@contentful/f36-icons';
+import type { CommonProps } from '@contentful/f36-core';
 
-import { styles } from './AccordionHeader.styles';
+import getStyles from '../Accordion.styles';
 
-export interface AccordionHeaderProps {
+export interface AccordionHeaderProps extends CommonProps {
   /**
    * Child nodes to be rendered in the component
    */
   children?: React.ReactNode;
   /**
-   * An ID used for testing purposes applied as a data attribute (data-test-id)
-   */
-  testId?: string;
-  /**
    * The function that will be called once the user clicks on the accordion title
    */
-  handleClick: VoidFunction;
+  handleOnClick: VoidFunction;
   /**
    * A boolean that tells if the accordion should be expanded or collapsed
    */
@@ -39,12 +36,13 @@ export interface AccordionHeaderProps {
 
 export const AccordionHeader: FC<AccordionHeaderProps> = ({
   children,
-  handleClick,
+  handleOnClick,
   isExpanded = false,
   ariaId,
   element = 'h2',
   align = 'end',
 }: AccordionHeaderProps) => {
+  const styles = getStyles();
   const chevronStyles = cx(styles.accordionHeaderIcon, {
     [styles.accordionHeaderIconExpanded]: isExpanded,
   });
@@ -61,7 +59,7 @@ export const AccordionHeader: FC<AccordionHeaderProps> = ({
         aria-controls={`accordion-panel--${ariaId}`}
         id={`accordion--${ariaId}`}
         className={headerStyles}
-        onClick={handleClick}
+        onClick={handleOnClick}
       >
         <ChevronDownTrimmed className={chevronStyles} variant="secondary" />
         {children}

@@ -1,5 +1,6 @@
 import React from 'react';
-import { styles } from './Accordion.styles';
+import { Box } from '@contentful/f36-core';
+import getStyles from './Accordion.styles';
 
 export interface AccordionProps {
   /**
@@ -20,15 +21,25 @@ export interface AccordionProps {
   testId?: string;
 }
 
-export const Accordion = ({
-  align = 'end',
-  children,
-  className,
-  testId = 'cf-ui-accordion',
-  ...otherProps
-}: AccordionProps) => {
+const _Accordion = (
+  {
+    align = 'end',
+    children,
+    className,
+    testId = 'cf-ui-accordion',
+    ...otherProps
+  }: AccordionProps,
+  ref: React.Ref<HTMLDivElement>,
+) => {
+  const styles = getStyles();
   return (
-    <ul className={styles.accordion} data-test-id={testId} {...otherProps}>
+    <Box
+      as="ul"
+      className={styles.accordion}
+      testId={testId}
+      {...otherProps}
+      ref={ref}
+    >
       {React.Children.map(children, (child) => {
         if (React.isValidElement(child)) {
           return React.cloneElement(child, {
@@ -37,6 +48,8 @@ export const Accordion = ({
         }
         return child;
       })}
-    </ul>
+    </Box>
   );
 };
+
+export const Accordion = React.forwardRef(_Accordion);
