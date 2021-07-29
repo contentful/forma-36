@@ -13,26 +13,32 @@ describe('ToggleButton', function () {
   });
 
   it('renders the component with an additional class name', () => {
+    const additionalClassName = 'my-extra-class';
     const { container } = render(
-      <ToggleButton className="my-extra-class">Toggle</ToggleButton>,
+      <ToggleButton className={additionalClassName}>Toggle</ToggleButton>,
     );
 
+    const button = screen.getByRole('button');
+    expect(button.classList.contains(additionalClassName)).toBeTruthy();
     expect(container.firstChild).toMatchSnapshot();
   });
 
   it('renders the component active', () => {
     const { container } = render(<ToggleButton isActive>Toggle</ToggleButton>);
 
+    const button = screen.getByRole('button');
+    expect(button.getAttribute('aria-pressed')).toBe('true');
+    expect(button.getAttribute('data-state')).toBe('on');
     expect(container.firstChild).toMatchSnapshot();
   });
 
   it('renders the component with icon', () => {
     const { container } = render(
-      <ToggleButton className="my-extra-class" icon={Preview}>
-        Toggle
-      </ToggleButton>,
+      <ToggleButton icon={Preview}>Toggle</ToggleButton>,
     );
 
+    const button = screen.getByRole('button');
+    expect(button.getElementsByTagName('svg')).toHaveLength(1);
     expect(container.firstChild).toMatchSnapshot();
   });
 
@@ -40,12 +46,12 @@ describe('ToggleButton', function () {
     const mockOnToggle = jest.fn();
 
     render(
-      <ToggleButton className="my-extra-class" icon={Preview} isDisabled>
+      <ToggleButton icon={Preview} isDisabled>
         Toggle
       </ToggleButton>,
     );
 
-    const button = screen.getByText('Toggle');
+    const button = screen.getByRole('button');
     userEvent.click(button);
     expect(mockOnToggle).not.toHaveBeenCalled();
   });

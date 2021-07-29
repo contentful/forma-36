@@ -348,7 +348,7 @@ exports[`ToggleButton renders the component with icon 1`] = `
 }
 
 <button
-  class="my-extra-class emotion-3"
+  class="emotion-3"
   data-state="off"
   data-test-id="cf-ui-toggle-button"
   type="button"
