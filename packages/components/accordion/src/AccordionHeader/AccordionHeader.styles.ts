@@ -16,8 +16,7 @@ export const styles = {
     color: tokens.colorTextBase,
     width: '100%',
     cursor: 'pointer',
-    transition: `background-color ${tokens.transitionDurationDefault}
-      ${tokens.transitionEasingDefault}})`,
+    transition: `background-color ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
     '&:hover': {
       backgroundColor: tokens.colorElementLightest,
     },
@@ -27,7 +26,7 @@ export const styles = {
     },
   }),
   alignHeaderStart: css({
-    minWidth: '9px' /* necessary to align the chevron properly */,
+    minWidth: '9px',
     marginRight: tokens.spacingXs,
   }),
   alignHeaderEnd: css({
@@ -36,8 +35,7 @@ export const styles = {
   }),
   accordionHeaderIcon: css({
     transform: 'rotate(0deg)',
-    transition: `transform ${tokens.transitionDurationDefault}
-      ${tokens.transitionEasingDefault}`,
+    transition: `transform ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
   }),
   accordionHeaderIconExpanded: css({ transform: 'rotate(180deg)' }),
 };
