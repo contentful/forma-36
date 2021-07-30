@@ -8,8 +8,6 @@ storybook: 'https://f36-storybook.contentful.com/?path=/story/components-textlin
 typescript: ./src/TextLink.tsx
 ---
 
-import { Props } from '@contentful/f36-docs-utils';
-
 TextLinks communicate actions and linked resources to users.
 
 ## Table of contents
@@ -68,9 +66,9 @@ Text links communicate actions and highlight linked resources to users.
 
 ```jsx
 <React.Fragment>
-  <TextLink icon="ExternalLink">Primary</TextLink>
+  <TextLink icon={<ExternalLink />}>Primary</TextLink>
   <br />
-  <TextLink icon="ExternalLink" alignIcon="end">
+  <TextLink icon={<ExternalLink />} alignIcon="end">
     Primary
   </TextLink>
 </React.Fragment>
