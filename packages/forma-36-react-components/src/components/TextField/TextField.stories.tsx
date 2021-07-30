@@ -75,8 +75,8 @@ export const WithTextLink = ({
 
 WithTextLink.args = {
   textLinkProps: {
-    icon: Lock,
-    text: 'Unlock to edit',
+    icon: <Lock />,
+    children: 'Unlock to edit',
   },
   ...Basic.args,
 };

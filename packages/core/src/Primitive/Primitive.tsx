@@ -6,16 +6,24 @@ type PrimitiveOwnProps<E extends React.ElementType = React.ElementType> = {
   as?: E;
 } & CommonProps;
 
-type PrimitiveProps<E extends React.ElementType> = PrimitiveOwnProps<E> &
-  Omit<React.ComponentProps<E>, keyof PrimitiveOwnProps>;
+type PrimitiveProps<
+  E extends React.ElementType,
+  PropsToOmit extends keyof React.ComponentProps<any> = undefined
+> = PrimitiveOwnProps<E> &
+  Omit<React.ComponentProps<E>, keyof PrimitiveOwnProps | PropsToOmit>;
 
-export type PolymorphicComponentProps<E extends React.ElementType, P> = P &
-  PrimitiveProps<E>;
+export type PolymorphicComponentProps<
+  E extends React.ElementType,
+  P,
+  PropsToOmit extends keyof React.ComponentProps<any> = undefined
+> = P & PrimitiveProps<E, PropsToOmit>;
 
-export type PolymorphicComponent<P, D extends React.ElementType = 'div'> = (<
-  E extends React.ElementType = D
->(
-  props: PolymorphicComponentProps<E, P>,
+export type PolymorphicComponent<
+  P,
+  D extends React.ElementType = 'div',
+  PropsToOmit extends keyof React.ComponentProps<any> = undefined
+> = (<E extends React.ElementType = D>(
+  props: PolymorphicComponentProps<E, P, PropsToOmit>,
 ) => React.ReactElement | null) & {
   displayName?: string;
 };

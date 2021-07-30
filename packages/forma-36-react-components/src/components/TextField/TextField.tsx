@@ -13,7 +13,7 @@ import type { LabelProps } from '@contentful/f36-forms';
 
 import { HelpText } from '@contentful/f36-helptext';
 import { TextInput, TextInputProps } from '../TextInput';
-import { TextLink, TextLinkProps } from '../TextLink';
+import { TextLink, TextLinkProps } from '@contentful/f36-text-link';
 import { Textarea, TextareaProps } from '../Textarea';
 import styles from './TextField.css';
 
@@ -27,7 +27,7 @@ export interface TextFieldProps {
   testId?: string;
   className?: string;
   formLabelProps?: Partial<LabelProps>;
-  textLinkProps?: Partial<TextLinkProps>;
+  textLinkProps?: Partial<TextLinkProps<'button'>>;
   textInputProps?: Partial<TextInputProps> | Partial<TextareaProps>;
   helpText?: string;
   required?: boolean;
@@ -85,10 +85,11 @@ export const TextField = ({
         </Label>
         {textLinkProps && (
           <TextLink
-            className={styles['TextField__label-link']}
             {...textLinkProps}
+            className={styles['TextField__label-link']}
+            as={textLinkProps.as || 'button'}
           >
-            {textLinkProps.text}
+            {textLinkProps.children}
           </TextLink>
         )}
       </div>
