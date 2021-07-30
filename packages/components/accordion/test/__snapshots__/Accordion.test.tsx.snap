@@ -12,6 +12,16 @@ exports[`renders the component 1`] = `
   border-top: 1px solid #CFD9E0;
 }
 
+.emotion-5 {
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid #CFD9E0;
+}
+
+.emotion-5:first-child {
+  border-top: 1px solid #CFD9E0;
+}
+
 .emotion-4 {
   box-sizing: border-box;
   overflow: hidden;
@@ -23,16 +33,6 @@ exports[`renders the component 1`] = `
 .emotion-3 {
   width: 100%;
   padding: 0.5rem 1rem 1rem;
-}
-
-.emotion-5 {
-  padding: 0;
-  margin: 0;
-  border-bottom: 1px solid #CFD9E0;
-}
-
-.emotion-5:first-child {
-  border-top: 1px solid #CFD9E0;
 }
 
 .emotion-1 {
@@ -169,6 +169,16 @@ exports[`renders the component with an additional class name 1`] = `
   border-top: 1px solid #CFD9E0;
 }
 
+.emotion-5 {
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid #CFD9E0;
+}
+
+.emotion-5:first-child {
+  border-top: 1px solid #CFD9E0;
+}
+
 .emotion-4 {
   box-sizing: border-box;
   overflow: hidden;
@@ -180,16 +190,6 @@ exports[`renders the component with an additional class name 1`] = `
 .emotion-3 {
   width: 100%;
   padding: 0.5rem 1rem 1rem;
-}
-
-.emotion-5 {
-  padding: 0;
-  margin: 0;
-  border-bottom: 1px solid #CFD9E0;
-}
-
-.emotion-5:first-child {
-  border-top: 1px solid #CFD9E0;
 }
 
 .emotion-1 {
@@ -326,6 +326,16 @@ exports[`renders the component with chevron on the left 1`] = `
   border-top: 1px solid #CFD9E0;
 }
 
+.emotion-5 {
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid #CFD9E0;
+}
+
+.emotion-5:first-child {
+  border-top: 1px solid #CFD9E0;
+}
+
 .emotion-4 {
   box-sizing: border-box;
   overflow: hidden;
@@ -337,16 +347,6 @@ exports[`renders the component with chevron on the left 1`] = `
 .emotion-3 {
   width: 100%;
   padding: 0.5rem 1rem 1rem;
-}
-
-.emotion-5 {
-  padding: 0;
-  margin: 0;
-  border-bottom: 1px solid #CFD9E0;
-}
-
-.emotion-5:first-child {
-  border-top: 1px solid #CFD9E0;
 }
 
 .emotion-2 {
