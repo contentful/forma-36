@@ -307,7 +307,7 @@ exports[`renders the component with "warning" intent 1`] = `
 `;
 
 exports[`renders the component with a cta 1`] = `
-.emotion-1 {
+.emotion-3 {
   display: inherit;
   outline: 0;
 }
@@ -328,6 +328,57 @@ exports[`renders the component with a cta 1`] = `
   fill: #F07F23;
   height: 18px;
   width: 18px;
+}
+
+.emotion-1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  border: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-size: 0.875rem;
+  font-weight: 500;
+  -webkit-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  background: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  white-space: normal;
+  text-align: left;
+  cursor: pointer;
+  opacity: 1;
+  color: #0059C8;
+}
+
+.emotion-1:hover,
+.emotion-1:focus {
+  color: #0041AB;
+}
+
+.emotion-1:focus,
+.emotion-1:hover {
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+
+.emotion-1:focus {
+  box-shadow: 0px 0px 0px 3px #98CBFF;
+  outline: none;
+  border-radius: 4px;
 }
 
 <div
@@ -378,14 +429,10 @@ exports[`renders the component with a cta 1`] = `
       />
       <div>
         <button
-          class="TextLink TextLink--primary"
-          data-test-id="cf-ui-text-link"
+          class="emotion-1"
           type="button"
         >
-          <span
-            class="emotion-1"
-            tabindex="-1"
-          >
+          <span>
             This is some label text
           </span>
         </button>
@@ -397,7 +444,7 @@ exports[`renders the component with a cta 1`] = `
       type="button"
     >
       <span
-        class="emotion-1 IconButton__inner"
+        class="emotion-3 IconButton__inner"
         tabindex="-1"
       >
         <svg

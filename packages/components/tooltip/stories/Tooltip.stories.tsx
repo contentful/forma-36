@@ -1,7 +1,7 @@
 import React from 'react';
 import { SectionHeading } from '@contentful/f36-typography';
 import { Tooltip } from '../src/Tooltip';
-import { TextLink } from '../../../forma-36-react-components/src/index';
+import { TextLink } from '@contentful/f36-text-link';
 import { Flex } from '@contentful/f36-core';
 
 export default {
@@ -100,9 +100,7 @@ export const Overview = () => {
       </Flex>
       <Flex marginBottom="spacingS">
         <Tooltip content="I am a Tooltip 🙌" maxWidth={360} placement="top">
-          <TextLink disabled iconPosition="left" linkType="primary">
-            Hover me
-          </TextLink>
+          <TextLink isDisabled>Hover me</TextLink>
         </Tooltip>
       </Flex>
 
@@ -116,9 +114,7 @@ export const Overview = () => {
           placement="left"
           isVisible
         >
-          <TextLink disabled={false} iconPosition="left" linkType="primary">
-            Hover me
-          </TextLink>
+          <TextLink isDisabled={false}>Hover me</TextLink>
         </Tooltip>
       </Flex>
 
@@ -132,9 +128,7 @@ export const Overview = () => {
           placement="right"
           isVisible
         >
-          <TextLink disabled={false} iconPosition="left" linkType="primary">
-            Hover me
-          </TextLink>
+          <TextLink isDisabled={false}>Hover me</TextLink>
         </Tooltip>
       </Flex>
       <Flex marginBottom="spacingS">
@@ -147,9 +141,7 @@ export const Overview = () => {
           placement="top"
           isVisible
         >
-          <TextLink disabled={false} iconPosition="left" linkType="primary">
-            Hover me
-          </TextLink>
+          <TextLink isDisabled={false}>Hover me</TextLink>
         </Tooltip>
       </Flex>
       <Flex marginBottom="spacingS">
@@ -162,9 +154,7 @@ export const Overview = () => {
           placement="bottom"
           isVisible
         >
-          <TextLink disabled={false} iconPosition="left" linkType="primary">
-            Hover me
-          </TextLink>
+          <TextLink isDisabled={false}>Hover me</TextLink>
         </Tooltip>
       </Flex>
     </>

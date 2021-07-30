@@ -1,25 +1,43 @@
 import React from 'react';
-import { Text } from '@contentful/f36-typography';
-import { Calendar, ChatBubble, Download } from '@contentful/f36-icons';
-import tokens from '@contentful/f36-tokens';
-import { Flex } from '@contentful/f36-core';
-import '@contentful/forma-36-fcss/dist/styles.css';
+import type { Meta, Story } from '@storybook/react/types-6-0';
 
-import { TextLink, textLinkColor } from './TextLink';
+import { TextLink } from '../src/TextLink';
+import * as icons from '@contentful/f36-icons';
+import { Icon } from '@contentful/f36-icon';
+import { Text } from '@contentful/f36-typography';
+import { Flex } from '@contentful/f36-core';
+import tokens from '@contentful/f36-tokens';
+import { TextLinkVariant } from '../src/types';
 
 export default {
-  title: 'Components/TextLink',
   component: TextLink,
   parameters: {
     propTypes: TextLink['__docgenInfo'],
   },
-};
+  title: 'Components/TextLink',
+  argTypes: {
+    classNames: { control: { disable: true } },
+    testId: { control: { disable: true } },
+    icon: {
+      control: {
+        options: Object.keys(icons),
+        type: 'select',
+      },
+    },
+    alignIcon: {
+      defaultValue: 'start',
+      control: { options: ['start', 'end'], type: 'select' },
+    },
+    children: { defaultValue: 'This is a text link' },
+  },
+} as Meta;
 
-export const Default = ({ linkLabel, ...args }) => {
-  return <TextLink {...args}>{linkLabel}</TextLink>;
-};
-Default.args = {
-  linkLabel: 'This is a text link',
+export const Basic: Story<any> = ({ icon, children, ...args }) => {
+  return (
+    <TextLink icon={icon ? <Icon as={icons[icon]} /> : null} {...args}>
+      {children}
+    </TextLink>
+  );
 };
 
 export const UsedWithText = () => {
@@ -30,7 +48,12 @@ export const UsedWithText = () => {
         capital
       </TextLink>{' '}
       and largest city of{' '}
-      <TextLink href="https://www.wikiwand.com/en/Germany" target="_blank">
+      <TextLink
+        href="https://www.wikiwand.com/en/Germany"
+        icon={<Icon as={icons['ExternalLink']} />}
+        alignIcon="end"
+        target="_blank"
+      >
         Germany
       </TextLink>{' '}
       by both area and population. Its 3,769,495 inhabitants as of 31 December
@@ -53,6 +76,15 @@ export const UsedWithText = () => {
   );
 };
 
+const textLinkVariants = [
+  'primary',
+  'positive',
+  'negative',
+  'secondary',
+  'muted',
+  'white',
+];
+
 export const overview = () => (
   <div
     style={{
@@ -60,48 +92,48 @@ export const overview = () => (
       padding: tokens.spacingM,
     }}
   >
-    {textLinkColor.map((color, idx) => (
+    {textLinkVariants.map((variant, idx) => (
       <Flex marginBottom="spacingXl" alignItems="center" key={idx}>
         <Flex marginRight="spacing2Xl">
-          <Text style={{ width: 100 }}>{color}</Text>
+          <Text style={{ width: 100 }}>{variant}</Text>
         </Flex>
         <Flex marginRight="spacingXl">
           <TextLink
             href="https://www.wikiwand.com/en/Potsdam"
-            target="_blanck"
-            linkType={color as any}
+            target="_blank"
+            variant={variant as TextLinkVariant}
           >
             Potsdam
           </TextLink>
         </Flex>
         <Flex marginRight="spacingXl">
           <TextLink
-            icon={Calendar}
+            icon={<Icon as={icons['Calendar']} />}
             href="https://www.wikiwand.com/en/Potsdam"
-            target="_blanck"
-            linkType={color as any}
+            target="_blank"
+            variant={variant as TextLinkVariant}
           >
             Potsdam
           </TextLink>
         </Flex>
         <Flex marginRight="spacingXl">
           <TextLink
-            icon={Download}
-            iconPosition="right"
+            icon={<Icon as={icons['ExternalLink']} />}
+            alignIcon="end"
             href="https://www.wikiwand.com/en/Potsdam"
-            target="_blanck"
-            linkType={color as any}
+            target="_blank"
+            variant={variant as TextLinkVariant}
           >
             Potsdam
           </TextLink>
         </Flex>
         <Flex marginRight="spacingXl">
           <TextLink
-            icon={ChatBubble}
+            icon={<Icon as={icons['Download']} />}
             href="https://www.wikiwand.com/en/Potsdam"
-            target="_blanck"
-            linkType={color as any}
-            disabled
+            target="_blank"
+            variant={variant as TextLinkVariant}
+            isDisabled
           >
             Potsdam (disabled)
           </TextLink>

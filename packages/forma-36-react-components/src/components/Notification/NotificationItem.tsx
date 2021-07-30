@@ -4,14 +4,14 @@ import { CheckCircle, ErrorCircle, Warning } from '@contentful/f36-icons';
 import { Close } from '@contentful/f36-icons';
 
 import { IconButton } from '../IconButton';
-import { TextLink, TextLinkProps } from '../TextLink';
+import { TextLink, TextLinkProps } from '@contentful/f36-text-link';
 import styles from './NotificationItem.css';
 
 export type NotificationIntent = 'success' | 'error' | 'warning';
 
 export interface NotificationCtaProps {
   label: string;
-  textLinkProps: Partial<TextLinkProps>;
+  textLinkProps: Partial<TextLinkProps<'button'>>;
 }
 
 export interface NotificationItemProps {
@@ -53,7 +53,12 @@ export function NotificationItem({
     if (cta && cta.label)
       return (
         <div>
-          <TextLink {...cta.textLinkProps}>{cta.label}</TextLink>
+          <TextLink
+            {...cta.textLinkProps}
+            as={cta.textLinkProps?.as || 'button'}
+          >
+            {cta.label}
+          </TextLink>
         </div>
       );
   }, [cta]);

@@ -1,5 +1,6 @@
 import React from 'react';
-import { TextLink, Flex } from '@contentful/f36-components';
+import { Flex } from '@contentful/f36-components';
+import { TextLink } from '@contentful/f36-text-link';
 import tokens from '@contentful/f36-tokens';
 import { css } from 'emotion';
 
