@@ -866,10 +866,6 @@ exports[`TextLink renders with an icon 1`] = `
 .emotion-0 {
   display: inline-block;
   fill: #0059C8;
-  height: 18px;
-  width: 18px;
-  display: inline-block;
-  fill: #0059C8;
   height: 16px;
   width: 16px;
   fill: currentColor;
@@ -968,10 +964,6 @@ exports[`TextLink renders with an icon aligned right to the text 1`] = `
 }
 
 .emotion-1 {
-  display: inline-block;
-  fill: #0059C8;
-  height: 18px;
-  width: 18px;
   display: inline-block;
   fill: #0059C8;
   height: 16px;

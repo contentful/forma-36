@@ -134,7 +134,7 @@ describe('TextLink', function () {
 
   it('renders with an icon', () => {
     const { container } = render(
-      <TextLink icon={ArrowDown}>Text Link</TextLink>,
+      <TextLink icon={<ArrowDown />}>Text Link</TextLink>,
     );
 
     expect(container.firstChild).toMatchSnapshot();
@@ -142,7 +142,7 @@ describe('TextLink', function () {
 
   it('renders with an icon aligned right to the text', () => {
     const { container } = render(
-      <TextLink alignIcon="end" icon={ArrowDown}>
+      <TextLink alignIcon="end" icon={<ArrowDown />}>
         Text Link
       </TextLink>,
     );

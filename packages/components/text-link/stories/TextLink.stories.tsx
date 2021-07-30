@@ -3,6 +3,7 @@ import type { Meta, Story } from '@storybook/react/types-6-0';
 
 import { TextLink } from '../src/TextLink';
 import * as icons from '@contentful/f36-icons';
+import { Icon } from '@contentful/f36-icon';
 import { Text } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
 import tokens from '@contentful/f36-tokens';
@@ -23,14 +24,17 @@ export default {
         type: 'select',
       },
     },
-    alignIcon: { defaultValue: 'start' },
+    alignIcon: {
+      defaultValue: 'start',
+      control: { options: ['start', 'end'], type: 'select' },
+    },
     children: { defaultValue: 'This is a text link' },
   },
 } as Meta;
 
 export const Basic: Story<any> = ({ icon, children, ...args }) => {
   return (
-    <TextLink icon={icons[icon]} {...args}>
+    <TextLink icon={icon ? <Icon as={icons[icon]} /> : null} {...args}>
       {children}
     </TextLink>
   );
@@ -46,7 +50,7 @@ export const UsedWithText = () => {
       and largest city of{' '}
       <TextLink
         href="https://www.wikiwand.com/en/Germany"
-        icon={icons['ExternalLink']}
+        icon={<Icon as={icons['ExternalLink']} />}
         alignIcon="end"
         target="_blank"
       >
@@ -104,7 +108,7 @@ export const overview = () => (
         </Flex>
         <Flex marginRight="spacingXl">
           <TextLink
-            icon={icons['Calendar']}
+            icon={<Icon as={icons['Calendar']} />}
             href="https://www.wikiwand.com/en/Potsdam"
             target="_blank"
             variant={variant as TextLinkVariant}
@@ -114,7 +118,7 @@ export const overview = () => (
         </Flex>
         <Flex marginRight="spacingXl">
           <TextLink
-            icon={icons['ExternalLink']}
+            icon={<Icon as={icons['ExternalLink']} />}
             alignIcon="end"
             href="https://www.wikiwand.com/en/Potsdam"
             target="_blank"
@@ -125,7 +129,7 @@ export const overview = () => (
         </Flex>
         <Flex marginRight="spacingXl">
           <TextLink
-            icon={icons['Download']}
+            icon={<Icon as={icons['Download']} />}
             href="https://www.wikiwand.com/en/Potsdam"
             target="_blank"
             variant={variant as TextLinkVariant}

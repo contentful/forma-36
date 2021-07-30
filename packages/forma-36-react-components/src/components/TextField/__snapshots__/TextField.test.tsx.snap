@@ -296,10 +296,6 @@ exports[`renders the component with a textlink 1`] = `
 .emotion-1 {
   display: inline-block;
   fill: #0059C8;
-  height: 18px;
-  width: 18px;
-  display: inline-block;
-  fill: #0059C8;
   height: 16px;
   width: 16px;
   fill: currentColor;

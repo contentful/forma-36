@@ -9,7 +9,6 @@ import {
 } from '@contentful/f36-core';
 import { styles } from './TextLink.styles';
 import { TextLinkVariant } from './types';
-import { Icon, IconComponent } from '@contentful/f36-icon';
 
 const DEFAULT_TAG = 'a';
 
@@ -28,7 +27,7 @@ interface TextLinkInternalProps extends CommonProps {
   /**
    * Expects any of the icon components
    */
-  icon?: IconComponent;
+  icon?: React.ReactElement;
   /**
    * Determines the icon position regarding the link text
    * @default start
@@ -78,7 +77,10 @@ const TextLink: PolymorphicComponentWithRef<
 
   const iconContent = icon ? (
     <Flex as="span">
-      <Icon className={styles.textLinkIcon} as={icon} size="tiny" />
+      {React.cloneElement(icon, {
+        className: cx(icon.props.className, styles.textLinkIcon),
+        size: 'tiny',
+      })}
     </Flex>
   ) : null;
 
