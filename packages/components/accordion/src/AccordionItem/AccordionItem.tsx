@@ -37,7 +37,7 @@ export interface AccordionItemProps extends CommonProps {
 
 const _AccordionItem = (
   props: AccordionItemProps,
-  ref: React.Ref<HTMLDivElement>,
+  ref: React.Ref<HTMLLIElement>,
 ) => {
   const styles = getStyles();
   const {

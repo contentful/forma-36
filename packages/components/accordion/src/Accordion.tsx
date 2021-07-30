@@ -29,7 +29,7 @@ const _Accordion = (
     testId = 'cf-ui-accordion',
     ...otherProps
   }: AccordionProps,
-  ref: React.Ref<HTMLDivElement>,
+  ref: React.Ref<HTMLUListElement>,
 ) => {
   const styles = getStyles();
   return (
