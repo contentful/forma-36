@@ -1,14 +1,25 @@
 import React, { useState } from 'react';
 import { cx } from 'emotion';
-import { Button, ButtonProps } from '../Button';
+import { CommonProps } from '@contentful/f36-core';
+import { IconComponent } from '@contentful/f36-icon';
+import { Button } from '../Button';
 import getStyles from './ToggleButton.styles';
 
-export interface ToggleButtonProps extends ButtonProps {
+export interface ToggleButtonProps extends CommonProps {
   /**
    * Applies active styles
    * @default false
    */
   isActive?: boolean;
+  /**
+   * Disabled interaction and applies disabled styles
+   * @default false
+   */
+  isDisabled?: boolean;
+  /**
+   * Expects any of the icon components
+   */
+  icon?: IconComponent;
   /**
    * Function triggered when the toggle button is clicked.
    */
