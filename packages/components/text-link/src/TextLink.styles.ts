@@ -1,10 +1,9 @@
 import { css } from 'emotion';
-import type { CSSObject } from '@emotion/serialize';
 import tokens from '@contentful/f36-tokens';
 import { TextLinkProps } from './TextLink';
 import { TextLinkVariant } from './types';
 
-const variantToStyles = (variant: TextLinkVariant): CSSObject => {
+const variantToStyles = (variant: TextLinkVariant) => {
   switch (variant) {
     case 'primary':
       return {

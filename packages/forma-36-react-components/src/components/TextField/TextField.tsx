@@ -27,7 +27,7 @@ export interface TextFieldProps {
   testId?: string;
   className?: string;
   formLabelProps?: Partial<LabelProps>;
-  textLinkProps?: Partial<TextLinkProps>;
+  textLinkProps?: Partial<TextLinkProps<'button'>>;
   textInputProps?: Partial<TextInputProps> | Partial<TextareaProps>;
   helpText?: string;
   required?: boolean;
@@ -85,8 +85,9 @@ export const TextField = ({
         </Label>
         {textLinkProps && (
           <TextLink
-            className={styles['TextField__label-link']}
             {...textLinkProps}
+            className={styles['TextField__label-link']}
+            as={textLinkProps.as || 'button'}
           >
             {textLinkProps.children}
           </TextLink>

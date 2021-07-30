@@ -52,15 +52,14 @@ exports[`TextLink allows passing a test id 1`] = `
   border-radius: 4px;
 }
 
-<button
+<a
   class="emotion-0"
   data-test-id="test-id"
-  type="button"
 >
   <span>
     Text Link
   </span>
-</button>
+</a>
 `;
 
 exports[`TextLink allows passing additional class names to component 1`] = `
@@ -115,14 +114,13 @@ exports[`TextLink allows passing additional class names to component 1`] = `
   border-radius: 4px;
 }
 
-<button
+<a
   class="emotion-0 testing"
-  type="button"
 >
   <span>
     Text Link
   </span>
-</button>
+</a>
 `;
 
 exports[`TextLink allows passing additional props not consumed by component 1`] = `
@@ -177,15 +175,14 @@ exports[`TextLink allows passing additional props not consumed by component 1`] 
   border-radius: 4px;
 }
 
-<button
+<a
   class="emotion-0"
   data-test-id="Testing Id"
-  type="button"
 >
   <span>
     Text Link
   </span>
-</button>
+</a>
 `;
 
 exports[`TextLink calls an onClick function 1`] = `
@@ -365,14 +362,13 @@ exports[`TextLink renders as a "muted" link type 1`] = `
   border-radius: 4px;
 }
 
-<button
+<a
   class="emotion-0"
-  type="button"
 >
   <span>
     Text Link
   </span>
-</button>
+</a>
 `;
 
 exports[`TextLink renders as a "negative" link type 1`] = `
@@ -427,14 +423,13 @@ exports[`TextLink renders as a "negative" link type 1`] = `
   border-radius: 4px;
 }
 
-<button
+<a
   class="emotion-0"
-  type="button"
 >
   <span>
     Text Link
   </span>
-</button>
+</a>
 `;
 
 exports[`TextLink renders as a "positive" link type 1`] = `
@@ -489,14 +484,13 @@ exports[`TextLink renders as a "positive" link type 1`] = `
   border-radius: 4px;
 }
 
-<button
+<a
   class="emotion-0"
-  type="button"
 >
   <span>
     Text Link
   </span>
-</button>
+</a>
 `;
 
 exports[`TextLink renders as a "primary" link type 1`] = `
@@ -551,14 +545,13 @@ exports[`TextLink renders as a "primary" link type 1`] = `
   border-radius: 4px;
 }
 
-<button
+<a
   class="emotion-0"
-  type="button"
 >
   <span>
     Text Link
   </span>
-</button>
+</a>
 `;
 
 exports[`TextLink renders as a "secondary" link type 1`] = `
@@ -613,14 +606,13 @@ exports[`TextLink renders as a "secondary" link type 1`] = `
   border-radius: 4px;
 }
 
-<button
+<a
   class="emotion-0"
-  type="button"
 >
   <span>
     Text Link
   </span>
-</button>
+</a>
 `;
 
 exports[`TextLink renders as a "white" link type 1`] = `
@@ -675,14 +667,13 @@ exports[`TextLink renders as a "white" link type 1`] = `
   border-radius: 4px;
 }
 
-<button
+<a
   class="emotion-0"
-  type="button"
 >
   <span>
     Text Link
   </span>
-</button>
+</a>
 `;
 
 exports[`TextLink renders as a button 1`] = `
@@ -886,9 +877,8 @@ exports[`TextLink renders with an icon 1`] = `
   transition: fill 0.1s ease-in-out;
 }
 
-<button
+<a
   class="emotion-3"
-  type="button"
 >
   <span
     class="emotion-1"
@@ -915,7 +905,7 @@ exports[`TextLink renders with an icon 1`] = `
   >
     Text Link
   </span>
-</button>
+</a>
 `;
 
 exports[`TextLink renders with an icon aligned right to the text 1`] = `
@@ -995,9 +985,8 @@ exports[`TextLink renders with an icon aligned right to the text 1`] = `
   margin-right: 0.125rem;
 }
 
-<button
+<a
   class="emotion-3"
-  type="button"
 >
   <span
     class="emotion-0"
@@ -1024,5 +1013,5 @@ exports[`TextLink renders with an icon aligned right to the text 1`] = `
       />
     </svg>
   </span>
-</button>
+</a>
 `;

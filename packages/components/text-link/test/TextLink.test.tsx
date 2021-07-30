@@ -7,7 +7,7 @@ import { TextLink } from '../src/TextLink';
 
 describe('TextLink', function () {
   it('renders as a button', () => {
-    const { container } = render(<TextLink>Text Link</TextLink>);
+    const { container } = render(<TextLink as="button">Text Link</TextLink>);
 
     expect(container.firstChild).toMatchSnapshot();
   });
@@ -69,7 +69,9 @@ describe('TextLink', function () {
   it('calls an onClick function', () => {
     const onClickFunc = jest.fn();
     const { container } = render(
-      <TextLink onClick={onClickFunc}>Text Link</TextLink>,
+      <TextLink onClick={onClickFunc} as="button">
+        Text Link
+      </TextLink>,
     );
 
     userEvent.click(screen.getByText('Text Link'));
@@ -81,7 +83,7 @@ describe('TextLink', function () {
   it('prevents onClick function from being called when disabled', () => {
     const onClickFunc = jest.fn();
     const { container } = render(
-      <TextLink isDisabled onClick={onClickFunc}>
+      <TextLink isDisabled onClick={onClickFunc} as="button">
         Text Link
       </TextLink>,
     );

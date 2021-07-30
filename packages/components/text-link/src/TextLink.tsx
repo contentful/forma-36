@@ -1,16 +1,19 @@
-import React, { HTMLProps } from 'react';
+import React from 'react';
 import { cx } from 'emotion';
-import { Flex, CommonProps } from '@contentful/f36-core';
+import {
+  Flex,
+  CommonProps,
+  PolymorphicComponentWithRef,
+  PolymorphicComponentProps,
+  PolymorphicComponent,
+} from '@contentful/f36-core';
 import { styles } from './TextLink.styles';
 import { TextLinkVariant } from './types';
 import { Icon, IconComponent } from '@contentful/f36-icon';
 
-export interface TextLinkProps
-  extends Omit<
-      HTMLProps<HTMLButtonElement & HTMLAnchorElement>,
-      'type' | 'disabled' | 'ref'
-    >,
-    CommonProps {
+const DEFAULT_TAG = 'a';
+
+interface TextLinkInternalProps extends CommonProps {
   children?: React.ReactNode;
   /**
    * Determines style variation of TextLink component
@@ -31,12 +34,22 @@ export interface TextLinkProps
    * @default start
    */
   alignIcon?: 'start' | 'end';
+  /**
+   * The element used for the root node.
+   * @default a
+   */
+  as?: 'a' | 'button';
 }
 
-function TextLink(
-  props: TextLinkProps,
-  ref: React.Ref<HTMLButtonElement & HTMLAnchorElement>,
-) {
+type ElementPropsToOmit = 'type' | 'disabled';
+export type TextLinkProps<
+  E extends React.ElementType = typeof DEFAULT_TAG
+> = PolymorphicComponentProps<E, TextLinkInternalProps, ElementPropsToOmit>;
+
+const TextLink: PolymorphicComponentWithRef<
+  TextLinkInternalProps,
+  typeof DEFAULT_TAG
+> = (props, ref) => {
   const {
     children,
     className,
@@ -46,6 +59,7 @@ function TextLink(
     icon,
     alignIcon = 'start',
     isDisabled,
+    as = DEFAULT_TAG,
     ...otherProps
   } = props;
 
@@ -84,20 +98,24 @@ function TextLink(
     </>
   );
 
-  if (href) {
+  if (as === 'button') {
     return (
-      <a {...commonProps} href={href}>
+      <button {...commonProps} disabled={isDisabled} type="button">
         {commonContent}
-      </a>
+      </button>
     );
   }
 
   return (
-    <button {...commonProps} disabled={isDisabled} type="button">
+    <a {...commonProps} href={href}>
       {commonContent}
-    </button>
+    </a>
   );
-}
+};
 
-const _TextLink = React.forwardRef(TextLink);
+const _TextLink: PolymorphicComponent<
+  TextLinkInternalProps,
+  typeof DEFAULT_TAG,
+  'disabled'
+> = React.forwardRef(TextLink);
 export { _TextLink as TextLink };

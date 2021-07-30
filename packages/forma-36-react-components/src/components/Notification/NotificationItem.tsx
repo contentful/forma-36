@@ -11,7 +11,7 @@ export type NotificationIntent = 'success' | 'error' | 'warning';
 
 export interface NotificationCtaProps {
   label: string;
-  textLinkProps: Partial<TextLinkProps>;
+  textLinkProps: Partial<TextLinkProps<'button'>>;
 }
 
 export interface NotificationItemProps {
@@ -53,7 +53,12 @@ export function NotificationItem({
     if (cta && cta.label)
       return (
         <div>
-          <TextLink {...cta.textLinkProps}>{cta.label}</TextLink>
+          <TextLink
+            {...cta.textLinkProps}
+            as={cta.textLinkProps?.as || 'button'}
+          >
+            {cta.label}
+          </TextLink>
         </div>
       );
   }, [cta]);
