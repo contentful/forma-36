@@ -1,0 +1,49 @@
+---
+title: 'ToggleButton'
+type: 'component'
+status: 'stable'
+slug: /components/toggle-button/
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/button/src/togglebutton'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-button-togglebutton--basic'
+typescript: ./ToggleButton.tsx
+---
+
+import { Props } from '@contentful/f36-docs-utils';
+import { Preview } from '@contentful/f36-icons';
+
+## Table of contents
+
+- [Code examples](#code-examples)
+- [Props](#props)
+
+## Code examples
+
+Example of simple usage:
+
+```jsx
+// import { ToggleButton } from '@contentful/f36-button';
+
+<ToggleButton testId="toggle-button" onToggle={() => {}} icon={Preview}>
+  Toggle Button
+</ToggleButton>
+```
+
+Example of active and disabled toggle buttons:
+
+```jsx
+// import { ToggleButton } from '@contentful/f36-button';
+
+<>
+  <ToggleButton testId="toggle-button" isActive onToggle={() => {}}>
+    Active Toggle Button
+  </ToggleButton>
+  <br />
+  <ToggleButton testId="toggle-button" isDisabled onToggle={() => {}}>
+    Disabled Toggle Button
+  </ToggleButton>
+</>
+```
+
+## Props
+
+<Props of="ToggleButton" />

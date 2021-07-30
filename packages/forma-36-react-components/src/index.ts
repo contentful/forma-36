@@ -69,8 +69,12 @@ export type {
 } from '@contentful/f36-inputs';
 export { Pill } from '@contentful/f36-pill';
 export type { PillProps } from '@contentful/f36-pill';
-export { Button, ButtonGroup } from '@contentful/f36-button';
-export type { ButtonProps, ButtonGroupProps } from '@contentful/f36-button';
+export { Button, ButtonGroup, ToggleButton } from '@contentful/f36-button';
+export type {
+  ButtonProps,
+  ButtonGroupProps,
+  ToggleButtonProps,
+} from '@contentful/f36-button';
 export { TextLink } from '@contentful/f36-text-link';
 export type { TextLinkProps } from '@contentful/f36-text-link';
 export * from './components/Accordion';
@@ -94,7 +98,6 @@ export * from './components/Tabs';
 export * from './components/Textarea';
 export * from './components/TextField';
 export * from './components/TextInput';
-export * from './components/ToggleButton';
 export * from './components/Workbench';
 
 // -- Add imports above this line (required by plopfile.js) --
