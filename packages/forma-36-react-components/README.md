@@ -17,6 +17,7 @@ You can access a Storybook website with the latest changes of the library [here]
     - [Storybook](#storybook)
     - [Example component directory structure](#example-component-directory-structure)
     - [Styling](#styling)
+    - [Code Style Guide](#code-style-guide)
     - [Component principles](#component-principles)
     - [Adding documentation for component](#adding-documentation-for-component)
   - [Testing](#testing)
@@ -93,25 +94,17 @@ YourComponent
 
 We are using [postcss-preset-env](https://preset-env.cssdb.org/) for styling our components. Using postcss-preset-env allows us to use the latest CSS syntax without having to wait for browser support. `tools/postcss.config.js` is used for adding plugins and configuration.
 
+### Code Style Guide
+
+(Our code style guide)[https://github.com/contentful/forma-36/blob/forma-v4/docs/code-style-guide.md]
+
 ### Component principles
 
 We follow a number of principles when creating our components:
 
 1.  **A component is responsible for only its internal spacing**
 
-We follow the principle that a component should only be responsible for its own internal spacing - never external spacing. This means that we're flexible in where our components can be used without having to override margins.
-
-2.  **Use descriptive PropTypes**
-
-We recommend the following naming convention for PropTypes to make them as clear as possible:
-
-- Number - use a prefix or suffix to imply that the prop accepts a number. E.g. `numItems`, `itemCount`, `itemIndex`
-- Boolean - use the prefix 'is'/'can'/'has'. E.g. `isVisible`, `canExpand`, `hasImage`
-- Array - use a plural noun. E.g. `items`
-- Object - use a noun. E.g. `item`
-- Node - use the suffix 'Node'. E.g. `containerNode`
-- Element - use the suffix 'Element'. E.g. `triggerElement`
-- Event handler functions - use the prefix 'on'. E.g. `onOpen`, `onClick`
+Component should only be responsible for its own internal spacing - never external spacing. This means that we're flexible in where our components can be used without having to override margins.
 
 ### Adding documentation for component
 
