@@ -5,7 +5,6 @@ export type {
   MarginProps,
   PaddingProps,
   PickUnion,
-  Simplify,
   Spacing,
 } from './types';
 export * from './Flex';

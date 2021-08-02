@@ -7,7 +7,6 @@ import type {
   PolymorphicComponent,
   PolymorphicComponentProps,
   PolymorphicComponentWithRef,
-  Simplify,
 } from '@contentful/f36-core';
 import type {
   ComponentType,
@@ -23,15 +22,14 @@ export type IconComponent = ExoticComponent<any> | ComponentType<any>;
 
 export type IconSize = 'large' | 'medium' | 'small' | 'tiny';
 
-export type IconVariant = Simplify<
+export type IconVariant =
   | 'negative'
   | 'positive'
   | 'primary'
   | 'secondary'
   | 'warning'
   | 'muted'
-  | 'white'
->;
+  | 'white';
 
 const sizes: { [key in IconSize]: { [key in 'height' | 'width']: string } } = {
   large: {
