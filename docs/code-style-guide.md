@@ -37,23 +37,23 @@ function MyComponent() {
 
 ## Commonly used Props
 
-| **Name**      | **Type**            | **Description**                                                      |
-| ------------- | ------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- | ------------------------- |
-| className     | `string`            | Pass and process class names                                         |
-| variant       | `primary            | warning`                                                             | Design variants                                                                                                                                                                                                                                                            |
-| type          |                     | HTML `type` attribute                                                |
-| as            | `React.ElementType` | HTML tag elements                                                    |
-| children      | `React.ReactNode`   | React children                                                       |
-| style         | `object`            | Inline styles                                                        |
-| isVisible     | `boolean`           | Show/Hide element                                                    |
-| isActive      | `boolean`           | Set/Unset active state                                               |
-| isDisabled    | `boolean`           | Disable/Enable interactive elements                                  |
-| spacing       | `SpacingTokens`     | Spacing, one of F36 spacing values or css flex justifyContent values |
-| testId        | `string`            | Pass to `data-test-id` to html elements                              |
-| ...otherProps | `object`            | Spread the rest of the props on the root element                     |
-| size          | `large              | medium                                                               | small                                                                                                                                                                                                                                                                      | tiny` | Size variants of elements |
-| label         | `string`            | Aria-label attribute                                                 |
-| align         | `start              | end`                                                                 | Element alignment. Can be both X or Y axis. But not at the same time. If you need both axis alignment for the same element consider using `placement` prop instead. If you need to align specific element, add element name to the end of the prop name (e.g. `alignIcon`) |
+| **Name**      | **Type**                     | **Description**                                                                                                                                                                                                                                                            |
+| ------------- | ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| className     | `string`                     | Pass and process class names                                                                                                                                                                                                                                               |
+| variant       | `primary, warning`           | Design variants                                                                                                                                                                                                                                                            |
+| type          |                              | HTML `type` attribute                                                                                                                                                                                                                                                      |
+| as            | `React.ElementType`          | HTML tag elements                                                                                                                                                                                                                                                          |
+| children      | `React.ReactNode`            | React children                                                                                                                                                                                                                                                             |
+| style         | `object`                     | Inline styles                                                                                                                                                                                                                                                              |
+| isVisible     | `boolean`                    | Show/Hide element                                                                                                                                                                                                                                                          |
+| isActive      | `boolean`                    | Set/Unset active state                                                                                                                                                                                                                                                     |
+| isDisabled    | `boolean`                    | Disable/Enable interactive elements                                                                                                                                                                                                                                        |
+| spacing       | `SpacingTokens`              | Spacing, one of F36 spacing values or css flex justifyContent values                                                                                                                                                                                                       |
+| testId        | `string`                     | Pass to `data-test-id` to html elements                                                                                                                                                                                                                                    |
+| ...otherProps | `object`                     | Spread the rest of the props on the root element                                                                                                                                                                                                                           |
+| size          | `large, medium, small, tiny` | Size variants of elements                                                                                                                                                                                                                                                  |
+| label         | `string`                     | Aria-label attribute                                                                                                                                                                                                                                                       |
+| align         | `start, end`                 | Element alignment. Can be both X or Y axis. But not at the same time. If you need both axis alignment for the same element consider using `placement` prop instead. If you need to align specific element, add element name to the end of the prop name (e.g. `alignIcon`) |
 
 ## Callback Props
 
@@ -73,7 +73,3 @@ To expose nested elements events add element name between `on..Click`, e.g. `onC
 | ------------ | --------------------- |
 | handleClick  | Process click events  |
 | handleChange | Process change events |
-
-## Other examples
-
-[Airbnb React Style Guide](https://airbnb.io/javascript/react/#props)
