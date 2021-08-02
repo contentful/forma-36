@@ -89,6 +89,10 @@ exports[`renders the component 1`] = `
 `;
 
 exports[`renders the component in loading state 1`] = `
+.emotion-0 {
+  display: block;
+}
+
 <div
   aria-label="picture of a cat"
   class="Card AssetCard AssetCard--size-default Card--padding-none"
@@ -97,7 +101,7 @@ exports[`renders the component in loading state 1`] = `
 >
   <svg
     aria-label="Loading component..."
-    class="SkeletonContainer"
+    class="emotion-0"
     data-test-id="cf-ui-skeleton-form"
     height="100%"
     preserveAspectRatio="xMidYMid meet"

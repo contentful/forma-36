@@ -5,16 +5,6 @@ import { axe } from '@/scripts/test/axeHelper';
 import { SkeletonContainer } from '../src/SkeletonContainer/SkeletonContainer';
 import { SkeletonDisplayText } from '../src/SkeletonDisplayText/SkeletonDisplayText';
 
-it('renders the component', () => {
-  const { container } = render(
-    <SkeletonContainer>
-      <SkeletonDisplayText />
-    </SkeletonContainer>,
-  );
-
-  throw new Error('not implemented');
-});
-
 it('has no a11y issues', async () => {
   const { container } = render(
     <SkeletonContainer>

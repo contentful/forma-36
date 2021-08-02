@@ -5,42 +5,6 @@ import { axe } from '@/scripts/test/axeHelper';
 
 import { SkeletonRow } from '../src/SkeletonRow/SkeletonRow';
 
-it('renders the component', () => {
-  const { container } = render(
-    <Table>
-      <TableBody>
-        <SkeletonRow />
-      </TableBody>
-    </Table>,
-  );
-
-  throw new Error('not implemented');
-});
-
-it('renders the component with 10 rows', () => {
-  const { container } = render(
-    <Table>
-      <TableBody>
-        <SkeletonRow rowCount={10} />
-      </TableBody>
-    </Table>,
-  );
-
-  throw new Error('not implemented');
-});
-
-it('renders the component with 10 cells', () => {
-  const { container } = render(
-    <Table>
-      <TableBody>
-        <SkeletonRow columnCount={10} />
-      </TableBody>
-    </Table>,
-  );
-
-  throw new Error('not implemented');
-});
-
 it('has no a11y issues', async () => {
   const { container } = render(
     <Table>

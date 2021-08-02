@@ -749,6 +749,10 @@ exports[`renders the component as an asset thumbnail preview 1`] = `
 `;
 
 exports[`renders the component as isLoading 1`] = `
+.emotion-0 {
+  display: block;
+}
+
 <li
   class="EntityListItem"
   data-test-id="cf-ui-entity-list-item"
@@ -758,7 +762,7 @@ exports[`renders the component as isLoading 1`] = `
   >
     <svg
       aria-label="Loading component..."
-      class="SkeletonContainer"
+      class="emotion-0"
       data-test-id="cf-ui-skeleton-form"
       height="100%"
       preserveAspectRatio="xMidYMid meet"
