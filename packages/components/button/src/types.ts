@@ -5,7 +5,6 @@ export type ButtonVariant =
   | 'positive'
   | 'primary'
   | 'secondary'
-  | 'warning'
   | 'transparent';
 
 export type ButtonStylesProps = {
