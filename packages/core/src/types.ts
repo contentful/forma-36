@@ -15,16 +15,6 @@ export type CommonProps = {
 };
 
 /**
- * Forma 36 component variants
- */
-export type ComponentVariant =
-  | 'negative'
-  | 'positive'
-  | 'primary'
-  | 'secondary'
-  | 'warning';
-
-/**
  * Contentful entity status
  */
 export type EntityStatus =
@@ -81,5 +71,3 @@ export type PickUnion<UnionType, Keys> = Exclude<
   UnionType,
   Exclude<UnionType, Keys>
 >;
-
-export type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };

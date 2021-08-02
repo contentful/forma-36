@@ -4,19 +4,14 @@ import tokens from '@contentful/f36-tokens';
 import { Box } from '@contentful/f36-core';
 import type {
   BoxInternalProps,
-  ComponentVariant,
-  PickUnion,
   PolymorphicComponent,
   PolymorphicComponentProps,
   PolymorphicComponentWithRef,
-  Simplify,
 } from '@contentful/f36-core';
 
 const DEFAULT_TAG = 'div';
 
-export type SpinnerVariant = Simplify<
-  PickUnion<ComponentVariant, 'primary'> | 'default' | 'white'
->;
+export type SpinnerVariant = 'primary' | 'default' | 'white';
 
 export type SpinnerSize = 'large' | 'medium' | 'small';
 

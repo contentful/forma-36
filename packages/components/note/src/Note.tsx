@@ -1,7 +1,7 @@
 import { cx } from 'emotion';
 import React from 'react';
 import { Box } from '@contentful/f36-core';
-import type { CommonProps, ComponentVariant } from '@contentful/f36-core';
+import type { CommonProps } from '@contentful/f36-core';
 import { Button } from '@contentful/f36-button';
 import { Heading, Text } from '@contentful/f36-typography';
 import {
@@ -21,7 +21,7 @@ const icons = {
   warning: Warning,
 };
 
-export type NoteVariant = Exclude<ComponentVariant, 'secondary'>;
+export type NoteVariant = 'negative' | 'positive' | 'primary' | 'warning';
 export interface NoteProps extends CommonProps {
   /**
    * Determines style variation of Note component
