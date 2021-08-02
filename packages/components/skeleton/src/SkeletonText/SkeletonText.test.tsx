@@ -12,7 +12,7 @@ it('renders the component', () => {
     </SkeletonContainer>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
 
 it('renders 3 lines of skeleton text', () => {
@@ -22,7 +22,7 @@ it('renders 3 lines of skeleton text', () => {
     </SkeletonContainer>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
 
 it('has no a11y issues', async () => {

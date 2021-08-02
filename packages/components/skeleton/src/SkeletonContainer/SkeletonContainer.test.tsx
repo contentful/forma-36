@@ -12,7 +12,7 @@ it('renders the component', () => {
     </SkeletonContainer>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
 
 it('renders the component with an additional class name', () => {
@@ -22,7 +22,7 @@ it('renders the component with an additional class name', () => {
     </SkeletonContainer>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
 
 it('renders with unique default ids', () => {
@@ -37,7 +37,7 @@ it('renders with unique default ids', () => {
     </div>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
 
 it('renders the component with a custom testId', () => {
@@ -47,7 +47,7 @@ it('renders the component with a custom testId', () => {
     </SkeletonContainer>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
 
 it('renders the component with a custom aria label', () => {
@@ -57,7 +57,7 @@ it('renders the component with a custom aria label', () => {
     </SkeletonContainer>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
 
 it('renders the component with a custom width', () => {
@@ -67,7 +67,7 @@ it('renders the component with a custom width', () => {
     </SkeletonContainer>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
 
 it('renders the component with a custom height', () => {
@@ -77,7 +77,7 @@ it('renders the component with a custom height', () => {
     </SkeletonContainer>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
 
 it('renders the component with a custom aspect ratio', () => {
@@ -87,7 +87,7 @@ it('renders the component with a custom aspect ratio', () => {
     </SkeletonContainer>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
 
 it('renders the component with a custom clip id', () => {
@@ -97,7 +97,7 @@ it('renders the component with a custom clip id', () => {
     </SkeletonContainer>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
 
 it('renders the component with a custom gradient id', () => {
@@ -107,7 +107,7 @@ it('renders the component with a custom gradient id', () => {
     </SkeletonContainer>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
 
 it('renders the component with a custom primary color', () => {
@@ -117,7 +117,7 @@ it('renders the component with a custom primary color', () => {
     </SkeletonContainer>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
 
 it('renders the component with a custom primary opacity', () => {
@@ -127,7 +127,7 @@ it('renders the component with a custom primary opacity', () => {
     </SkeletonContainer>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
 
 it('renders the component with a custom secondary color', () => {
@@ -137,7 +137,7 @@ it('renders the component with a custom secondary color', () => {
     </SkeletonContainer>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
 
 it('renders the component with a custom secondary opacity', () => {
@@ -147,7 +147,7 @@ it('renders the component with a custom secondary opacity', () => {
     </SkeletonContainer>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
 
 it('renders the component without animation', () => {
@@ -157,7 +157,7 @@ it('renders the component without animation', () => {
     </SkeletonContainer>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
 
 it('renders the component with a custom animation speed', () => {
@@ -167,7 +167,7 @@ it('renders the component with a custom animation speed', () => {
     </SkeletonContainer>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
 
 it('renders the svg with a custom height', () => {
@@ -177,7 +177,7 @@ it('renders the svg with a custom height', () => {
     </SkeletonContainer>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
 
 it('renders the svg with a custom width', () => {
@@ -187,7 +187,7 @@ it('renders the svg with a custom width', () => {
     </SkeletonContainer>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
 
 it('has no a11y issues', async () => {

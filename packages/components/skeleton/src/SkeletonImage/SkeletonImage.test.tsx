@@ -12,7 +12,7 @@ it('renders the component', () => {
     </SkeletonContainer>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
 
 it('renders the component with a custom height', () => {
@@ -22,7 +22,7 @@ it('renders the component with a custom height', () => {
     </SkeletonContainer>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
 
 it('renders the component with a custom width', () => {
@@ -32,7 +32,7 @@ it('renders the component with a custom width', () => {
     </SkeletonContainer>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
 
 it('renders the component with an offset top', () => {
@@ -42,7 +42,7 @@ it('renders the component with an offset top', () => {
     </SkeletonContainer>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
 
 it('renders the component with an offset left', () => {
@@ -52,7 +52,7 @@ it('renders the component with an offset left', () => {
     </SkeletonContainer>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
 
 it('renders the component with a radius x', () => {
@@ -62,7 +62,7 @@ it('renders the component with a radius x', () => {
     </SkeletonContainer>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
 
 it('renders the component with a radius y', () => {
@@ -72,7 +72,7 @@ it('renders the component with a radius y', () => {
     </SkeletonContainer>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
 
 it('has no a11y issues', async () => {

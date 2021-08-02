@@ -1,6 +1,5 @@
 import React from 'react';
-import cn from 'classnames';
-import styles from './SkeletonContainer.css';
+import { Box } from '@contentful/f36-core';
 
 export interface SkeletonContainerProps {
   width?: number | string;
@@ -47,12 +46,12 @@ export function SkeletonContainer({
   svgHeight = '100%',
   ...otherProps
 }: SkeletonContainerProps): React.ReactElement {
-  const classNames = cn(styles['SkeletonContainer'], className);
-
   return (
-    <svg
+    <Box
+      as="svg"
+      display="block"
       role="img"
-      className={classNames}
+      className={className}
       aria-label={ariaLabel}
       preserveAspectRatio={preserveAspectRatio}
       width={svgWidth}
@@ -121,6 +120,6 @@ export function SkeletonContainer({
           </stop>
         </linearGradient>
       </defs>
-    </svg>
+    </Box>
   );
 }

@@ -14,7 +14,7 @@ it('renders the component', () => {
     </Table>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
 
 it('renders the component with 10 rows', () => {
@@ -26,7 +26,7 @@ it('renders the component with 10 rows', () => {
     </Table>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
 
 it('renders the component with 10 cells', () => {
@@ -38,7 +38,7 @@ it('renders the component with 10 cells', () => {
     </Table>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
 
 it('has no a11y issues', async () => {

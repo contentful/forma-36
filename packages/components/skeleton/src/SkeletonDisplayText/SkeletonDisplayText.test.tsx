@@ -12,7 +12,7 @@ it('renders the component', () => {
     </SkeletonContainer>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
 
 it('has no a11y issues', async () => {
