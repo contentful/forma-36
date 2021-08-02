@@ -5,16 +5,6 @@ import { axe } from '@/scripts/test/axeHelper';
 import { SkeletonContainer } from '../src/SkeletonContainer/SkeletonContainer';
 import { SkeletonBodyText } from '../src/SkeletonBodyText/SkeletonBodyText';
 
-it('renders the component', () => {
-  const { container } = render(
-    <SkeletonContainer>
-      <SkeletonBodyText />
-    </SkeletonContainer>,
-  );
-
-  throw new Error('not implemented');
-});
-
 it('renders the component with an additional class name', () => {
   const { container } = render(
     <SkeletonContainer className="className">
