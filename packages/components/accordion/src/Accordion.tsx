@@ -1,24 +1,19 @@
 import React from 'react';
 import { Box } from '@contentful/f36-core';
+import type { CommonProps } from '@contentful/f36-core';
+
 import getStyles from './Accordion.styles';
 
-export interface AccordionProps {
+export interface AccordionProps extends CommonProps {
   /**
    * Specify the alignment of the chevron inside the accordion header
+   * @default end
    */
   align?: 'start' | 'end';
-  /**
-   * Class names to be appended to the className prop of the Accordion wrapper
-   */
-  className?: string;
   /**
    * Child nodes to be rendered in the component
    */
   children?: React.ReactNode;
-  /**
-   * An ID used for testing purposes applied as a data attribute (data-test-id)
-   */
-  testId?: string;
 }
 
 const _Accordion = (

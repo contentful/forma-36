@@ -1,11 +1,10 @@
 import React, { FC } from 'react';
-import { cx } from 'emotion';
 import { Subheading } from '@contentful/f36-typography';
 import type { HeadingElement } from '@contentful/f36-typography';
 import { ChevronDownTrimmed } from '@contentful/f36-icons';
 import type { CommonProps } from '@contentful/f36-core';
 
-import getStyles from '../Accordion.styles';
+import getStyles from './AccordionHeader.styles';
 
 export interface AccordionHeaderProps extends CommonProps {
   /**
@@ -15,7 +14,7 @@ export interface AccordionHeaderProps extends CommonProps {
   /**
    * The function that will be called once the user clicks on the accordion title
    */
-  handleOnClick: VoidFunction;
+  onClick: VoidFunction;
   /**
    * A boolean that tells if the accordion should be expanded or collapsed
    */
@@ -36,20 +35,13 @@ export interface AccordionHeaderProps extends CommonProps {
 
 export const AccordionHeader: FC<AccordionHeaderProps> = ({
   children,
-  handleOnClick,
+  onClick,
   isExpanded = false,
   ariaId,
   element = 'h2',
   align = 'end',
 }: AccordionHeaderProps) => {
-  const styles = getStyles();
-  const chevronStyles = cx(styles.accordionHeaderIcon, {
-    [styles.accordionHeaderIconExpanded]: isExpanded,
-  });
-  const headerStyles = cx(styles.accordionHeader, {
-    [styles.alignHeaderEnd]: align === 'end',
-    [styles.alignHeaderStart]: align === 'start',
-  });
+  const styles = getStyles({ align, isExpanded });
 
   return (
     <Subheading as={element}>
@@ -58,10 +50,13 @@ export const AccordionHeader: FC<AccordionHeaderProps> = ({
         aria-expanded={isExpanded}
         aria-controls={`accordion-panel--${ariaId}`}
         id={`accordion--${ariaId}`}
-        className={headerStyles}
-        onClick={handleOnClick}
+        className={styles.accordionHeader}
+        onClick={onClick}
       >
-        <ChevronDownTrimmed className={chevronStyles} variant="secondary" />
+        <ChevronDownTrimmed
+          className={styles.accordionHeaderIcon}
+          variant="secondary"
+        />
         {children}
       </button>
     </Subheading>

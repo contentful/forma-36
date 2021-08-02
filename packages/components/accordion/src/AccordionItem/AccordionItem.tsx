@@ -6,7 +6,7 @@ import { AccordionHeader } from '../AccordionHeader/AccordionHeader';
 import { AccordionPanel } from '../AccordionPanel/AccordionPanel';
 import type { CommonProps } from '@contentful/f36-core';
 
-import getStyles from '../Accordion.styles';
+import getStyles from './AccordionItem.styles';
 
 export interface AccordionItemProps extends CommonProps {
   /**
@@ -36,11 +36,7 @@ export interface AccordionItemProps extends CommonProps {
 }
 
 const _AccordionItem = (
-  props: AccordionItemProps,
-  ref: React.Ref<HTMLLIElement>,
-) => {
-  const styles = getStyles();
-  const {
+  {
     title = 'Accordion Title',
     titleElement = 'h2',
     testId = 'cf-ui-accordion-item',
@@ -48,7 +44,10 @@ const _AccordionItem = (
     onCollapse,
     children,
     align = 'end',
-  } = props;
+  }: AccordionItemProps,
+  ref: React.Ref<HTMLLIElement>,
+) => {
+  const styles = getStyles();
   const id = useId();
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -71,7 +70,7 @@ const _AccordionItem = (
       testId={`${testId}-${id}`}
     >
       <AccordionHeader
-        handleOnClick={handleOnClick}
+        onClick={handleOnClick}
         isExpanded={isExpanded}
         element={titleElement}
         ariaId={id}

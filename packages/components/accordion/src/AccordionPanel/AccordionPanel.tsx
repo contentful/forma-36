@@ -1,9 +1,8 @@
 import React, { FC, useLayoutEffect, useRef } from 'react';
-import { cx } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import type { CommonProps } from '@contentful/f36-core';
 
-import getStyles from '../Accordion.styles';
+import getStyles from './AccordionPanel.styles';
 
 export interface AccordionPanelProps extends CommonProps {
   /**
@@ -84,9 +83,7 @@ export const AccordionPanel: FC<AccordionPanelProps> = ({
       role="region"
       aria-labelledby={`accordion--${ariaId}`}
       aria-hidden={!isExpanded}
-      className={cx(styles.accordionPanel, {
-        [styles.accordionPanelExtended]: isExpanded,
-      })}
+      className={styles.accordionPanel}
       ref={panelEl}
     >
       <div className={styles.accordionPanelContent}>{children}</div>

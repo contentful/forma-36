@@ -13,38 +13,6 @@ jest.mock('@contentful/f36-core', () => ({
   },
 }));
 
-it('renders the component', () => {
-  const { container } = render(
-    <Accordion>
-      <AccordionItem title="Accordion Title">Accordion content</AccordionItem>
-    </Accordion>,
-  );
-
-  expect(container.firstChild).toMatchSnapshot();
-});
-
-it('renders the component with an additional class name', () => {
-  const { container } = render(
-    <Accordion className="my-extra-class">
-      <AccordionItem title="Accordion Title">Accordion content</AccordionItem>
-    </Accordion>,
-  );
-
-  expect(container.firstChild).toMatchSnapshot();
-});
-
-it('renders the component with chevron on the left', () => {
-  const { container } = render(
-    <Accordion align="start">
-      <AccordionItem data-testid="panel" title="Accordion Title">
-        Accordion content
-      </AccordionItem>
-    </Accordion>,
-  );
-
-  expect(container.firstChild).toMatchSnapshot();
-});
-
 it('opens the accordion panel when the header is clicked', () => {
   render(
     <Accordion>
