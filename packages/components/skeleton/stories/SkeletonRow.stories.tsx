@@ -7,7 +7,7 @@ import {
   TableRow,
 } from '@contentful/f36-table';
 
-import { SkeletonRow, SkeletonRowProps } from './SkeletonRow';
+import { SkeletonRow, SkeletonRowProps } from '../src/SkeletonRow/SkeletonRow';
 
 export default {
   title: 'Components/Skeleton/SkeletonRow',

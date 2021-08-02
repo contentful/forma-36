@@ -1,7 +1,10 @@
 import React from 'react';
 
-import { SkeletonImage, SkeletonImageProps } from './SkeletonImage';
-import { SkeletonContainer } from '../SkeletonContainer/SkeletonContainer';
+import {
+  SkeletonImage,
+  SkeletonImageProps,
+} from '../src/SkeletonImage/SkeletonImage';
+import { SkeletonContainer } from '../src/SkeletonContainer/SkeletonContainer';
 
 export default {
   title: 'Components/Skeleton/SkeletonImage',
