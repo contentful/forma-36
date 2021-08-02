@@ -5801,9 +5801,9 @@
   integrity sha512-kUNnecmtkunAoQ3CnjmMkzNU/gtxG8guhi+Fk2U/kOpIKjIMKnXGp4IJCgQJrXSgMsWYimYG4TGjz/UzbGEBTw==
 
 "@types/pikaday@^1.7.4":
-  version "1.7.4"
-  resolved "https://registry.yarnpkg.com/@types/pikaday/-/pikaday-1.7.4.tgz#aa41f928f0f5af31a4a656f471a78177a9260abf"
-  integrity sha512-0KsHVyw5pTG829nqG4IRu7m+BFQlFEBdbE/1i3S5182HeKUKv1uEW0gyEmkJVp5i4IV+9pyh23O83+KpRkSQbw==
+  version "1.7.5"
+  resolved "https://registry.yarnpkg.com/@types/pikaday/-/pikaday-1.7.5.tgz#6e211052ad9e3d2fbbcebfccb2e6a15df1c48b26"
+  integrity sha512-9PKz1nIcly1jfwUmSQIoNSrf0IQdXIo7EU+nk3nXmlMvZmsCTJP1PP8hr8q1GO6wn0wIA0ait7fkq9ZTT/SyQQ==
   dependencies:
     moment ">=2.14.0"
 
