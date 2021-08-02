@@ -1,7 +1,6 @@
 export * from './Primitive';
 export type {
   CommonProps,
-  ComponentVariant,
   EntityStatus,
   MarginProps,
   PaddingProps,

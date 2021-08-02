@@ -15,16 +15,6 @@ export type CommonProps = {
 };
 
 /**
- * Forma 36 component variants
- */
-export type ComponentVariant =
-  | 'negative'
-  | 'positive'
-  | 'primary'
-  | 'secondary'
-  | 'warning';
-
-/**
  * Contentful entity status
  */
 export type EntityStatus =

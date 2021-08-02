@@ -4,7 +4,6 @@ import tokens from '@contentful/f36-tokens';
 import { Box } from '@contentful/f36-core';
 import type {
   BoxProps,
-  ComponentVariant,
   PolymorphicComponent,
   PolymorphicComponentProps,
   PolymorphicComponentWithRef,
@@ -24,7 +23,15 @@ export type IconComponent = ExoticComponent<any> | ComponentType<any>;
 
 export type IconSize = 'large' | 'medium' | 'small' | 'tiny';
 
-export type IconVariant = Simplify<ComponentVariant | 'muted' | 'white'>;
+export type IconVariant = Simplify<
+  | 'negative'
+  | 'positive'
+  | 'primary'
+  | 'secondary'
+  | 'warning'
+  | 'muted'
+  | 'white'
+>;
 
 const sizes: { [key in IconSize]: { [key in 'height' | 'width']: string } } = {
   large: {
