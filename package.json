@@ -72,7 +72,7 @@
     "@parcel/babel-plugin-transform-runtime": "2.0.0-beta.2",
     "@parcel/babel-preset-env": "2.0.0-beta.2",
     "@parcel/packager-ts": "2.0.0-beta.2",
-    "@parcel/transformer-typescript-types": "2.0.0-beta.2",
+    "@parcel/transformer-typescript-types": "2.0.0-nightly.794",
     "@storybook/addon-a11y": "^6.1.21",
     "@storybook/addon-essentials": "^6.1.21",
     "@storybook/addon-storysource": "^6.1.21",
