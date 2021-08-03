@@ -63,7 +63,7 @@ export function WorkbenchHeader({
         >
           {typeof title === 'string' ? (
             <Heading
-              element="h1"
+              as="h1"
               className={styles['Workbench__header-title__heading']}
             >
               {title}
