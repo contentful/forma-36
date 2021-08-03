@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.94.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.93.5...@contentful/forma-36-react-components@3.94.0) (2021-08-03)
+
+
+### Features
+
+* improve Workbench a11y support ([#1137](https://github.com/contentful/forma-36/issues/1137)) ([645b023](https://github.com/contentful/forma-36/commit/645b023a18a47d33ec59f7a261ef6cd43fca825d))
+
+
+
+
+
 ## [3.93.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.93.4...@contentful/forma-36-react-components@3.93.5) (2021-07-29)
 
 

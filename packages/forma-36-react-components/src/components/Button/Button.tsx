@@ -134,6 +134,7 @@ export const Button = ({
             exitActive: styles['Button--spinner--exit-active'],
           }}
           mountOnEnter
+          unmountOnExit
         >
           <div className={styles['Button--spinner-wrapper']}>
             <Spinner
