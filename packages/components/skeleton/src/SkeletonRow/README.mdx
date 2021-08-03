@@ -5,6 +5,7 @@ status: 'stable'
 slug: /components/skeleton/skeleton-row/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/Skeleton/SkeletonRow'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-skeleton-skeletonrow--default'
+typescript: ./SkeletonRow.tsx
 ---
 
 Use the SkeletonRow component to create a better loading state for your tables whenever they use asynchronous data.
@@ -31,3 +32,7 @@ Use the SkeletonRow component to create a better loading state for your tables w
 - Pass a value to the `columnCount` prop equal to the number of columns in your table (default value is 5)
 - Pass a value to the `rowCount` prop equal to the number of rows you need. We think that for a better experience this value should match the number of rows that this table usually has when it's first loaded.
 - Only use this component as a child of the TableBody component. The SkeletonRow component renders `<tr>` tags, and this HTML tag should always be a child of a `<tbody>` tag
+
+## Props
+
+<Props of="SkeletonRow" />
