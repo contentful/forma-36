@@ -3,7 +3,7 @@ import {
   SkeletonBodyText,
   SkeletonContainer,
   SkeletonDisplayText,
-} from '../../Skeleton';
+} from '@contentful/f36-skeleton';
 
 export const EntryCardSkeleton = () => (
   <SkeletonContainer width="100%">

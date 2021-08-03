@@ -77,6 +77,22 @@ export type {
 } from '@contentful/f36-button';
 export { TextLink } from '@contentful/f36-text-link';
 export type { TextLinkProps } from '@contentful/f36-text-link';
+export type {
+  SkeletonBodyTextProps,
+  SkeletonContainerProps,
+  SkeletonDisplayTextProps,
+  SkeletonImageProps,
+  SkeletonRowProps,
+  SkeletonTextProps,
+} from '@contentful/f36-skeleton';
+export {
+  SkeletonBodyText,
+  SkeletonContainer,
+  SkeletonDisplayText,
+  SkeletonImage,
+  SkeletonText,
+  SkeletonRow,
+} from '@contentful/f36-skeleton';
 export * from './components/Accordion';
 export * from './components/Asset';
 export * from './components/Autocomplete';
@@ -92,7 +108,6 @@ export * from './components/Modal';
 export * from './components/Notification';
 export * from './components/Select';
 export * from './components/SelectField';
-export * from './components/Skeleton';
 export * from './components/Switch';
 export * from './components/Tabs';
 export * from './components/Textarea';

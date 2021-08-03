@@ -1,0 +1,38 @@
+---
+title: 'SkeletonDisplayText'
+type: 'component'
+status: 'stable'
+slug: /components/skeleton/skeleton-display-text/
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/skeleton'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-skeleton-skeletondisplaytext--default'
+typescript: ./SkeletonDisplayText.tsx
+---
+
+## How to use SkeletonDisplayText
+
+Use the `SkeletonDisplayText` component to simiulate headings, subheadings or titles whenever loading asynchronous data.
+
+### Import
+
+```js static=true
+import { SkeletonDisplayText } from '@contentful/f36-components';
+// or
+import { SkeletonDisplayText } from '@contentful/f36-skeleton';
+```
+
+## Code examples
+
+```jsx
+<SkeletonContainer>
+  <SkeletonDisplayText />
+</SkeletonContainer>
+```
+
+## Best practices
+
+- Each `SkeletonDisplayText` needs to be wrapped by a `SkeletonContainer` component
+- Only use it to mimic headings and titles, for normal text we recommend using SkeletonBodyText.
+
+## Props
+
+<Props of="SkeletonDisplayText" />

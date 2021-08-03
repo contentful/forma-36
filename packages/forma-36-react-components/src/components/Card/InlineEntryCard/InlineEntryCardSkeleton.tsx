@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { SkeletonBodyText, SkeletonContainer } from '../../Skeleton';
+import { SkeletonBodyText, SkeletonContainer } from '@contentful/f36-skeleton';
 
 export const InlineEntryCardSkeleton = () => (
   <SkeletonContainer

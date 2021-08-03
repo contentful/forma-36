@@ -9,7 +9,7 @@ import {
   DropdownListItem,
   DropdownProps,
 } from '../Dropdown';
-import { SkeletonBodyText, SkeletonContainer } from '../Skeleton';
+import { SkeletonBodyText, SkeletonContainer } from '@contentful/f36-skeleton';
 import { IconButton } from '../IconButton';
 import { KEY_CODE } from './utils';
 import styles from './Autocomplete.css';
