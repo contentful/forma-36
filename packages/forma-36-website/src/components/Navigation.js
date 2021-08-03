@@ -10,12 +10,11 @@ import { Icon, SectionHeading } from '@contentful/forma-36-react-components';
 
 import DocSearch from './DocSearch';
 
-export const heightOfHeader = 56;
-const heightOfDocSearch = 72;
-
 const styles = {
   sidemenu: css`
-    flex-basis: 380px;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
     padding-top: ${tokens.spacingM};
     border-right: 1px solid ${tokens.colorElementMid};
   `,
@@ -25,7 +24,6 @@ const styles = {
     flex-direction: column;
     border-top: 1px solid ${tokens.colorElementMid};
     padding: ${tokens.spacingM} 0;
-    height: calc(100vh - ${heightOfHeader + heightOfDocSearch}px);
     overflow-y: auto;
     color: ${tokens.colorTextMid};
   `,
