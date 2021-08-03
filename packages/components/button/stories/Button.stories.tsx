@@ -336,7 +336,7 @@ export const Overview = ({ icon }) => {
           <Button isFullWidth>Full width button</Button>
         </Flex>
         <Flex flexDirection="row" marginBottom="spacingS">
-          <Button href="https://contentful.com" isFullWidth>
+          <Button as="a" href="https://contentful.com" isFullWidth>
             Full width link button
           </Button>
         </Flex>
