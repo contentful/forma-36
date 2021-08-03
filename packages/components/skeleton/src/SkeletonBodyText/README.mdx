@@ -1,16 +1,28 @@
 ---
-title: 'Skeleton Body Text'
+title: 'SkeletonBodyText'
 type: 'component'
 status: 'stable'
 slug: /components/skeleton/skeleton-body-text/
-github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/Skeleton/SkeletonBodyText'
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/skeleton'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-skeleton-skeletonbodytext--default'
 typescript: ./SkeletonBodyText.tsx
 ---
 
 import { Props } from '@contentful/f36-docs-utils';
 
+## How to use SkeletonBodyText
+
 Use the SkeletonBodyText component to simiulate bodies of text with multiple lines whenever loading asynchronous data.
+
+### Import
+
+```js static=true
+import { SkeletonBodyText } from '@contentful/f36-components';
+// or
+import { SkeletonBodyText } from '@contentful/f36-skeleton';
+```
+
+## Code examples
 
 ```jsx
 <SkeletonContainer>
@@ -18,7 +30,7 @@ Use the SkeletonBodyText component to simiulate bodies of text with multiple lin
 </SkeletonContainer>
 ```
 
-## Best practices <a name="best-practices" />
+## Best practices
 
 - Each SkeletonBodyText needs to be wrapped by a SkeletonContainer component
 - Use the `numberOfLines` prop to determine how many lines you want to render. We advise using a value that matches the number of lines the text will have after loading.
