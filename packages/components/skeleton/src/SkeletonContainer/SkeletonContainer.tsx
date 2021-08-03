@@ -1,7 +1,8 @@
 import React from 'react';
 import { Box } from '@contentful/f36-core';
+import type { CommonProps } from '@contentful/f36-core';
 
-export interface SkeletonContainerProps {
+export interface SkeletonContainerProps extends CommonProps {
   width?: number | string;
   height?: number | string;
   preserveAspectRatio?: string;
@@ -16,10 +17,7 @@ export interface SkeletonContainerProps {
   foregroundOpacity?: number;
   svgWidth?: string | number;
   svgHeight?: string | number;
-
   ariaLabel?: string;
-  className?: string;
-  testId?: string;
   children: React.ReactNode;
 }
 

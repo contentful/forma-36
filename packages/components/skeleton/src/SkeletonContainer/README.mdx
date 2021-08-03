@@ -12,7 +12,9 @@ import { Props } from '@contentful/f36-docs-utils';
 
 ## How to use SkeletonContainer
 
-TBD
+The `SkeletonContainer` component is a wrapper component of the all other skeleton components: `SkeletonBodyText`, `SkeletonDisplayText`, `SkeletonImage`, `SkeletonRow`
+
+Use can use properties of `SkeletonContainer` to control color, background color, animation, opacity of the skeleton elements that are used inside.
 
 ### Import
 
@@ -30,9 +32,13 @@ import { SkeletonContainer } from '@contentful/f36-skeleton';
 </SkeletonContainer>
 ```
 
-## Best practices
+An example with a different color and an increased speed.
 
-TBD
+```jsx
+<SkeletonContainer backgroundColor="red" speed={4}>
+  <SkeletonBodyText numberOfLines={2} />
+</SkeletonContainer>
+```
 
 ## Props
 
