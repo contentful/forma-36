@@ -52,7 +52,13 @@ const getIconStyles = (isExpanded) =>
     [css(styles.accordionHeaderIconExpanded)]: isExpanded,
   });
 
-export const getAccordionHeaderStyles = ({ align, isExpanded }) => ({
+export const getAccordionHeaderStyles = ({
+  align,
+  isExpanded,
+}: {
+  align: 'start' | 'end';
+  isExpanded: boolean;
+}) => ({
   accordionHeader: getHeaderStyles(align),
   accordionHeaderIcon: getIconStyles(isExpanded),
 });

@@ -11,6 +11,10 @@ const accordionItem = {
   },
 } as CSSObject;
 
-export const getAccordionItemStyles = (className) => ({
+export const getAccordionItemStyles = ({
+  className,
+}: {
+  className?: string;
+}) => ({
   accordionItem: cx(css(accordionItem), className),
 });

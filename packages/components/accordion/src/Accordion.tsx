@@ -26,7 +26,7 @@ const _Accordion = (
   }: AccordionProps,
   ref: React.Ref<HTMLUListElement>,
 ) => {
-  const styles = getAccordionStyles(className);
+  const styles = getAccordionStyles({ className });
   return (
     <Box
       as="ul"

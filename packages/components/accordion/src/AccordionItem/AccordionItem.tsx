@@ -49,7 +49,7 @@ const _AccordionItem = (
   }: AccordionItemProps,
   ref: React.Ref<HTMLLIElement>,
 ) => {
-  const styles = getAccordionItemStyles(className);
+  const styles = getAccordionItemStyles({ className });
   const id = useId();
   const [isExpanded, setIsExpanded] = useState(false);
 
