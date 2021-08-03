@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.94.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.94.0...@contentful/forma-36-react-components@3.94.1) (2021-08-03)
+
+
+### Bug Fixes
+
+* **button:** unmount spinner on exit ([#1140](https://github.com/contentful/forma-36/issues/1140)) ([8071061](https://github.com/contentful/forma-36/commit/8071061ad6e129476b1f3148352177337f4a4807))
+
+
+
+
+
 # [3.94.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.93.5...@contentful/forma-36-react-components@3.94.0) (2021-08-03)
 
 
