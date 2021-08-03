@@ -1,60 +1,88 @@
 import React from 'react';
-import { Box } from '@contentful/f36-core';
+import { Box, useId } from '@contentful/f36-core';
 import type { CommonProps } from '@contentful/f36-core';
 
 export interface SkeletonContainerProps extends CommonProps {
+  /**
+   * Background color of the skeleton
+   */
+  backgroundColor?: string;
+  /**
+   * Background opacity of the skeleton
+   */
+  backgroundOpacity?: number;
+  /**
+   * Whether skeleton has animation or not
+   */
+  isAnimated?: boolean;
+  /**
+   * Speed of the animation
+   */
+  speed?: number | string;
+  /**
+   * Color of the foreground skeleton items
+   */
+  foregroundColor?: string;
+  /**
+   * Opacity of the foreground skeleton items
+   */
+  foregroundOpacity?: number;
+  /**
+   * Width of the SVG element
+   */
+  svgWidth?: string | number;
+  /**
+   * Height of the SVG element
+   */
+  svgHeight?: string | number;
+  /**
+   * Label attribute
+   */
+  ariaLabel?: string;
   width?: number | string;
   height?: number | string;
-  preserveAspectRatio?: string;
   clipId?: string;
   gradientId?: string;
   animateId?: string;
-  backgroundColor?: string;
-  backgroundOpacity?: number;
-  animate?: boolean;
-  speed?: number | string;
-  foregroundColor?: string;
-  foregroundOpacity?: number;
-  svgWidth?: string | number;
-  svgHeight?: string | number;
-  ariaLabel?: string;
+  preserveAspectRatio?: string;
   children: React.ReactNode;
 }
 
-let idCounter = 0;
-
 export function SkeletonContainer({
-  className,
   children,
   testId = 'cf-ui-skeleton-form',
   ariaLabel = 'Loading component...',
   width = '100%',
   height = '100%',
-  preserveAspectRatio = 'xMidYMid meet',
-  clipId = `cf-ui-skeleton-clip-${idCounter++}`,
-  gradientId = `cf-ui-skeleton-clip-gradient-${idCounter++}`,
-  animateId = `animation-${idCounter++}`,
+  preserveAspectRatio,
   backgroundColor = '#e5ebed',
   backgroundOpacity = 1,
-  animate = true,
+  isAnimated = true,
   speed = 2,
   foregroundColor = '#f7f9fa',
   foregroundOpacity = 1,
   svgWidth = '100%',
   svgHeight = '100%',
+  clipId,
+  gradientId,
+  animateId,
   ...otherProps
 }: SkeletonContainerProps): React.ReactElement {
+  const uniqueClipId = useId(clipId, 'cf-ui-skeleton-clip');
+  const uniqueGradientId = useId(gradientId, 'cf-ui-skeleton-clip-gradient');
+  const randomAnimateId = useId(undefined, 'animation');
+  const uniqueAnimateId = animateId || randomAnimateId;
+
   return (
     <Box
       as="svg"
       display="block"
       role="img"
-      className={className}
       aria-label={ariaLabel}
       preserveAspectRatio={preserveAspectRatio}
       width={svgWidth}
       height={svgHeight}
-      data-test-id={testId}
+      testId={testId}
       {...otherProps}
     >
       {ariaLabel ? <title>{ariaLabel}</title> : null}
@@ -63,22 +91,22 @@ export function SkeletonContainer({
         y="0"
         width={width}
         height={height}
-        clipPath={`url(#${clipId})`}
-        style={{ fill: `url(#${gradientId})` }}
+        clipPath={`url(#${uniqueClipId})`}
+        style={{ fill: `url(#${uniqueGradientId})` }}
       />
 
       <defs>
-        <clipPath id={clipId}>{children}</clipPath>
+        <clipPath id={uniqueClipId}>{children}</clipPath>
 
-        <linearGradient id={gradientId}>
+        <linearGradient id={uniqueGradientId}>
           <stop
             offset="0%"
             stopColor={backgroundColor}
             stopOpacity={backgroundOpacity}
           >
-            {animate && (
+            {isAnimated && (
               <animate
-                id={animateId}
+                id={uniqueAnimateId}
                 attributeName="stop-color"
                 values={`${backgroundColor}; ${foregroundColor}; ${backgroundColor}`}
                 dur={`${speed}s`}
@@ -91,11 +119,11 @@ export function SkeletonContainer({
             stopColor={foregroundColor}
             stopOpacity={foregroundOpacity}
           >
-            {animate && (
+            {isAnimated && (
               <animate
                 attributeName="stop-color"
                 values={`${backgroundColor}; ${foregroundColor}; ${backgroundColor}`}
-                begin={`${animateId}.begin+0.25s`}
+                begin={`${uniqueAnimateId}.begin+0.25s`}
                 dur={`${speed}s`}
                 repeatCount="indefinite"
               />
@@ -106,10 +134,10 @@ export function SkeletonContainer({
             stopColor={backgroundColor}
             stopOpacity={backgroundOpacity}
           >
-            {animate && (
+            {isAnimated && (
               <animate
                 attributeName="stop-color"
-                begin={`${animateId}.begin+0.5s`}
+                begin={`${uniqueAnimateId}.begin+0.5s`}
                 values={`${backgroundColor}; ${foregroundColor}; ${backgroundColor}`}
                 dur={`${speed}s`}
                 repeatCount="indefinite"
