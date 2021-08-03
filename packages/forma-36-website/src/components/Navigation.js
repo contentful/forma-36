@@ -147,7 +147,7 @@ const MenuListItem = ({ item, currentPath, isActive, hierarchyLevel }) => {
 MenuListItem.propTypes = {
   item: PropTypes.shape({ link: PropTypes.string, name: PropTypes.string })
     .isRequired,
-  currentPath: PropTypes.string.isRequired,
+  currentPath: PropTypes.string,
   isActive: PropTypes.bool,
   hierarchyLevel: PropTypes.number,
 };
@@ -176,7 +176,7 @@ const MenuList = ({ menuItems, currentPath, hierarchyLevel }) => {
 };
 
 const MenuListProps = {
-  currentPath: PropTypes.string.isRequired,
+  currentPath: PropTypes.string,
   menuItems: PropTypes.arrayOf(
     PropTypes.shape({ link: PropTypes.string, name: PropTypes.string }),
   ),
