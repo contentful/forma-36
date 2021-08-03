@@ -4,7 +4,7 @@ type: 'component'
 status: 'stable'
 slug: /components/button/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/components/components/button'
-storybook: 'https://f36-storybook.contentful.com/?path=/story/components-button--button'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-button--basic'
 typescript: ./src/Button.tsx
 ---
 
@@ -34,6 +34,7 @@ Buttons communicate the action that will occur when the user clicks them. They c
 - **Secondary** - Used for a secondary actions, the most commonly used button type.
 - **Positive** - For use when the action has a positive connotation such as creating or publishing a new entity.
 - **Negative** - For destructive actions - when something can't be undone. For example, deleting entities.
+- **Trasnparent** - For having an unestylized button.
 
 ```jsx
 <>
@@ -41,10 +42,11 @@ Buttons communicate the action that will occur when the user clicks them. They c
   <Button variant="secondary">Secondary</Button>
   <Button variant="negative">Negative</Button>
   <Button variant="positive">Positive</Button>
+  <Button variant="transparent">Transparent</Button>
 </>
 ```
 
-Buttons can be used in couple of different variations, like active, disabled or loading. Worth mentioning is `indicateDropdown` property in the component, which enables chevron icon on the right side of the button. Using `icon` property in the Button on the other hand, enables choosen icon on the left side of the button.
+Buttons can be used in couple of different variations, like active, disabled or loading. Worth mentioning is `isDropdown` property in the component, which enables chevron icon on the right side of the button. Using `icon` property in the Button on the other hand, enables choosen icon on the left side of the button.
 
 Contentful buttons are available in 3 different sizes:
 
@@ -76,7 +78,7 @@ Usage of the button with icon
 import { Button } from '@contentful/f36-button';
 import { Download } from '@contentful/f36-icons';
 
-<Button variant="primary" icon={Download}>
+<Button variant="primary" icon={<Download />}>
   Primary star
 </Button>;
 ```
@@ -87,7 +89,7 @@ Icon Button
 import { Button } from '@contentful/f36-button';
 import { Download } from '@contentful/f36-icons';
 
-<Button variant="primary" aria-label="Download Asset" icon={Download} />;
+<Button variant="primary" aria-label="Download Asset" icon={<Download />} />;
 ```
 
 ## Content recommendations:
