@@ -263,7 +263,7 @@ export function EntityListItem({
                   toggleElement={
                     <Button
                       disabled={isActionsDisabled}
-                      icon={MoreHorizontal}
+                      icon={<MoreHorizontal />}
                       label="Actions"
                       onClick={handleActionClick}
                       variant="transparent"

@@ -1714,10 +1714,6 @@ exports[`renders the component with dropdownListElements 1`] = `
   fill: #0059C8;
   height: 18px;
   width: 18px;
-  display: inline-block;
-  fill: #0059C8;
-  height: 18px;
-  width: 18px;
   fill: currentColor;
 }
 

@@ -36,7 +36,7 @@ export const basic: Story<ButtonGroupProps> = (args) => {
       <Button variant="secondary">Button</Button>
       <Button variant="secondary">Button</Button>
       <Button variant="secondary">Button</Button>
-      <Button variant="secondary" icon={ChevronDown} />
+      <Button variant="secondary" icon={<ChevronDown />} />
     </ButtonGroup>
   );
 };
@@ -47,7 +47,7 @@ export const spaced: Story<ButtonGroupProps> = (args) => {
       <Button variant="secondary">Button</Button>
       <Button variant="secondary">Button</Button>
       <Button variant="secondary">Button</Button>
-      <Button variant="secondary" icon={ChevronDown} />
+      <Button variant="secondary" icon={<ChevronDown />} />
     </ButtonGroup>
   );
 };
@@ -80,7 +80,7 @@ export const overview: Story<ButtonGroupProps> = () => {
               <Button
                 onClick={onClick}
                 variant="secondary"
-                icon={ChevronDown}
+                icon={<ChevronDown />}
               />
             </ButtonGroup>
           </Box>
@@ -89,15 +89,23 @@ export const overview: Story<ButtonGroupProps> = () => {
               <Button onClick={onClick} variant="positive">
                 Button
               </Button>
-              <Button onClick={onClick} variant="positive" icon={ChevronDown} />
+              <Button
+                onClick={onClick}
+                variant="positive"
+                icon={<ChevronDown />}
+              />
             </ButtonGroup>
           </Box>
           <Box marginBottom="spacingS">
             <ButtonGroup variant="collapsed" withDivider>
-              <Button onClick={onClick} variant="primary" icon={Plus}>
+              <Button onClick={onClick} variant="primary" icon={<Plus />}>
                 Button
               </Button>
-              <Button onClick={onClick} variant="primary" icon={ChevronDown} />
+              <Button
+                onClick={onClick}
+                variant="primary"
+                icon={<ChevronDown />}
+              />
             </ButtonGroup>
           </Box>
         </Flex>

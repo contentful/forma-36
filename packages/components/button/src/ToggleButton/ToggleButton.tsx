@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { cx } from 'emotion';
 import { CommonProps } from '@contentful/f36-core';
-import { IconComponent } from '@contentful/f36-icon';
 import { Button } from '../Button';
 import getStyles from './ToggleButton.styles';
 
@@ -19,7 +18,7 @@ export interface ToggleButtonProps extends CommonProps {
   /**
    * Expects any of the icon components
    */
-  icon?: IconComponent;
+  icon?: React.ReactElement;
   /**
    * Function triggered when the toggle button is clicked.
    */

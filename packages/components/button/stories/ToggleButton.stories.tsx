@@ -1,12 +1,13 @@
 import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { Meta } from '@storybook/react/types-6-0';
 import { SectionHeading } from '@contentful/f36-typography';
 import { action } from '@storybook/addon-actions';
 import { Box, Flex } from '@contentful/f36-core';
-import { Preview } from '@contentful/f36-icons';
+import { Icon } from '@contentful/f36-icon';
+import * as icons from '@contentful/f36-icons';
 import { ButtonGroup } from '../src';
 
-import { ToggleButton, ToggleButtonProps } from '../src/ToggleButton';
+import { ToggleButton } from '../src/ToggleButton';
 
 export default {
   title: 'Components/Button/ToggleButton',
@@ -17,12 +18,20 @@ export default {
   argTypes: {
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
+    icon: {
+      control: {
+        options: ['', ...Object.keys(icons)],
+        type: 'select',
+      },
+    },
   },
 } as Meta;
 
-export const basic: Story<ToggleButtonProps> = (props: ToggleButtonProps) => (
+export const basic = ({ icon, children, ...props }) => (
   <div>
-    <ToggleButton {...props} />
+    <ToggleButton icon={icon && <Icon as={icons[icon]} />} {...props}>
+      {children}
+    </ToggleButton>
   </div>
 );
 
@@ -34,14 +43,14 @@ basic.args = {
   onToggle: action('toggled'),
 };
 
-export const grouped = () => (
+export const grouped = ({ icon }) => (
   <div>
     <ButtonGroup>
       <ToggleButton>Apples</ToggleButton>
       <ToggleButton isActive>Pears</ToggleButton>
       <ToggleButton>Peaches</ToggleButton>
       <ToggleButton>Mangos</ToggleButton>
-      <ToggleButton isActive icon={Preview}>
+      <ToggleButton isActive icon={icon && <Icon as={icons[icon]} />}>
         Kiwis
       </ToggleButton>
       <ToggleButton isDisabled>Bananas</ToggleButton>
@@ -49,9 +58,11 @@ export const grouped = () => (
   </div>
 );
 
-export const Overview: Story<ToggleButtonProps> = (
-  props: ToggleButtonProps,
-) => (
+grouped.args = {
+  icon: 'Preview',
+};
+
+export const Overview = ({ icon, ...props }) => (
   <>
     <Flex flexDirection="column" marginBottom="spacingL">
       <Box marginBottom="spacingS">
@@ -79,17 +90,28 @@ export const Overview: Story<ToggleButtonProps> = (
       </Box>
       <Flex flexDirection="row" marginBottom="spacingM">
         <Box marginRight="spacingXs">
-          <ToggleButton onToggle={props.onToggle} icon={Preview}>
+          <ToggleButton
+            onToggle={props.onToggle}
+            icon={icon && <Icon as={icons[icon]} />}
+          >
             Default
           </ToggleButton>
         </Box>
         <Box marginRight="spacingXs">
-          <ToggleButton onToggle={props.onToggle} isActive icon={Preview}>
+          <ToggleButton
+            onToggle={props.onToggle}
+            isActive
+            icon={icon && <Icon as={icons[icon]} />}
+          >
             Active
           </ToggleButton>
         </Box>
         <Box marginRight="spacingXs">
-          <ToggleButton onToggle={props.onToggle} isDisabled icon={Preview}>
+          <ToggleButton
+            onToggle={props.onToggle}
+            isDisabled
+            icon={icon && <Icon as={icons[icon]} />}
+          >
             Disabled
           </ToggleButton>
         </Box>
@@ -100,4 +122,5 @@ export const Overview: Story<ToggleButtonProps> = (
 
 Overview.args = {
   onToggle: action('toggled'),
+  icon: 'Preview',
 };

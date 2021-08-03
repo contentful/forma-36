@@ -28,7 +28,11 @@ Example of usage:
 <ButtonGroup testId="group-button">
   <Button variant="secondary">Button</Button>
   <Button variant="secondary">Button</Button>
-  <Button icon={ChevronDown} variant="positive" icon={ChevronDown} />
+  <Button
+    variant="positive"
+    aria-label="Open dropdown"
+    icon={<ChevronDown />}
+  />
 </ButtonGroup>
 ```
 
@@ -39,10 +43,10 @@ It's possible to add a divider for buttons that don't have border:
 // import { ChevronDown, Plus } from '@contentful/f36-icons';
 
 <ButtonGroup testId="group-button" withDivider>
-  <Button icon={Plus} variant="positive">
+  <Button icon={<Plus />} variant="positive">
     Button
   </Button>
-  <Button icon={ChevronDown} variant="positive" icon={ChevronDown} />
+  <Button variant="positive" icon={<ChevronDown />} />
 </ButtonGroup>
 ```
 
