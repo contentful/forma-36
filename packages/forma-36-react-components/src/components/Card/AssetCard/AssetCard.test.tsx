@@ -7,6 +7,13 @@ import { AssetCard } from './AssetCard';
 import { DropdownList, DropdownListItem } from '../../Dropdown';
 import { CardDragHandle } from '../CardDragHandle/CardDragHandle';
 
+jest.mock('@contentful/f36-core', () => ({
+  ...jest.requireActual('@contentful/f36-core'),
+  useId: () => {
+    return 'id';
+  },
+}));
+
 it('renders the component', () => {
   const { container } = render(
     <AssetCard

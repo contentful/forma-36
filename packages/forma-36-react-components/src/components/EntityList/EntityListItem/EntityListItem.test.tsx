@@ -7,6 +7,13 @@ import { EntityListItem } from './EntityListItem';
 import { DropdownList, DropdownListItem } from '../../Dropdown';
 import { CardDragHandle } from './../../Card';
 
+jest.mock('@contentful/f36-core', () => ({
+  ...jest.requireActual('@contentful/f36-core'),
+  useId: () => {
+    return 'id';
+  },
+}));
+
 it('renders the component', () => {
   const { container } = render(
     <EntityListItem title="Title" contentType="Content type" />,

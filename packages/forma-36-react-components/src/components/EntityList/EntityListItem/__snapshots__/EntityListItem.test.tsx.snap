@@ -765,7 +765,6 @@ exports[`renders the component as isLoading 1`] = `
       class="emotion-0"
       data-test-id="cf-ui-skeleton-form"
       height="100%"
-      preserveAspectRatio="xMidYMid meet"
       role="img"
       width="100%"
     >
@@ -773,16 +772,16 @@ exports[`renders the component as isLoading 1`] = `
         Loading component...
       </title>
       <rect
-        clip-path="url(#f36-entity-list-item-skeleton)"
+        clip-path="url(#id)"
         height="100%"
-        style="fill: url(#cf-ui-skeleton-clip-gradient-0);"
+        style="fill: url(#id);"
         width="100%"
         x="0"
         y="0"
       />
       <defs>
         <clippath
-          id="f36-entity-list-item-skeleton"
+          id="id"
         >
           <rect
             data-test-id="cf-ui-skeleton-image"
@@ -809,7 +808,7 @@ exports[`renders the component as isLoading 1`] = `
           />
         </clippath>
         <lineargradient
-          id="cf-ui-skeleton-clip-gradient-0"
+          id="id"
         >
           <stop
             offset="0%"
@@ -819,7 +818,7 @@ exports[`renders the component as isLoading 1`] = `
             <animate
               attributeName="stop-color"
               dur="2s"
-              id="animation-1"
+              id="id"
               repeatCount="indefinite"
               values="#e5ebed; #f7f9fa; #e5ebed"
             />
@@ -831,7 +830,7 @@ exports[`renders the component as isLoading 1`] = `
           >
             <animate
               attributeName="stop-color"
-              begin="animation-1.begin+0.25s"
+              begin="id.begin+0.25s"
               dur="2s"
               repeatCount="indefinite"
               values="#e5ebed; #f7f9fa; #e5ebed"
@@ -844,7 +843,7 @@ exports[`renders the component as isLoading 1`] = `
           >
             <animate
               attributeName="stop-color"
-              begin="animation-1.begin+0.5s"
+              begin="id.begin+0.5s"
               dur="2s"
               repeatCount="indefinite"
               values="#e5ebed; #f7f9fa; #e5ebed"
