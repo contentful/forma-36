@@ -14,7 +14,7 @@ const styles = {
     fontSize: tokens.fontSizeL,
     fontWeight: tokens.fontWeightDemiBold,
     lineHeight: tokens.lineHeightDefault,
-    color: tokens.colorTextBase,
+    color: tokens.gray800,
     width: '100%',
     cursor: 'pointer',
     transition: `background-color ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
@@ -52,7 +52,7 @@ const getIconStyles = (isExpanded) =>
     [css(styles.accordionHeaderIconExpanded)]: isExpanded,
   });
 
-export default ({ align, isExpanded }) => ({
+export const getAccordionHeaderStyles = ({ align, isExpanded }) => ({
   accordionHeader: getHeaderStyles(align),
   accordionHeaderIcon: getIconStyles(isExpanded),
 });

@@ -15,7 +15,7 @@ const styles = {
   } as CSSObject,
 };
 
-export default () => {
+export const getAccordionPanelStyles = () => {
   return {
     accordionPanel: css(styles.accordionPanel),
     accordionPanelContent: css(styles.accordionPanelContent),

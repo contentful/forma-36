@@ -4,7 +4,7 @@ import type { HeadingElement } from '@contentful/f36-typography';
 import { ChevronDownTrimmed } from '@contentful/f36-icons';
 import type { CommonProps } from '@contentful/f36-core';
 
-import getStyles from './AccordionHeader.styles';
+import { getAccordionHeaderStyles } from './AccordionHeader.styles';
 
 export interface AccordionHeaderProps extends CommonProps {
   /**
@@ -41,7 +41,7 @@ export const AccordionHeader: FC<AccordionHeaderProps> = ({
   element = 'h2',
   align = 'end',
 }: AccordionHeaderProps) => {
-  const styles = getStyles({ align, isExpanded });
+  const styles = getAccordionHeaderStyles({ align, isExpanded });
 
   return (
     <Subheading as={element}>

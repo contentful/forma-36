@@ -11,6 +11,6 @@ const accordionItem = {
   },
 } as CSSObject;
 
-export default () => ({
+export const getAccordionItem = () => ({
   accordionItem: css(accordionItem),
 });

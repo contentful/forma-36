@@ -6,7 +6,7 @@ import { AccordionHeader } from '../AccordionHeader/AccordionHeader';
 import { AccordionPanel } from '../AccordionPanel/AccordionPanel';
 import type { CommonProps } from '@contentful/f36-core';
 
-import getStyles from './AccordionItem.styles';
+import { getAccordionItem } from './AccordionItem.styles';
 
 export interface AccordionItemProps extends CommonProps {
   /**
@@ -44,10 +44,11 @@ const _AccordionItem = (
     onCollapse,
     children,
     align = 'end',
+    ...otherProps
   }: AccordionItemProps,
   ref: React.Ref<HTMLLIElement>,
 ) => {
-  const styles = getStyles();
+  const styles = getAccordionItem();
   const id = useId();
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -65,9 +66,10 @@ const _AccordionItem = (
   return (
     <Box
       as="li"
-      ref={ref}
       className={styles.accordionItem}
       testId={`${testId}-${id}`}
+      {...otherProps}
+      ref={ref}
     >
       <AccordionHeader
         onClick={handleOnClick}

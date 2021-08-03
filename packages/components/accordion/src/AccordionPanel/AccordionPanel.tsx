@@ -2,7 +2,7 @@ import React, { FC, useLayoutEffect, useRef } from 'react';
 import tokens from '@contentful/f36-tokens';
 import type { CommonProps } from '@contentful/f36-core';
 
-import getStyles from './AccordionPanel.styles';
+import { getAccordionPanelStyles } from './AccordionPanel.styles';
 
 export interface AccordionPanelProps extends CommonProps {
   /**
@@ -24,7 +24,7 @@ export const AccordionPanel: FC<AccordionPanelProps> = ({
   isExpanded = false,
   ariaId,
 }: AccordionPanelProps) => {
-  const styles = getStyles();
+  const styles = getAccordionPanelStyles();
   const panelEl = useRef<HTMLDivElement>(null);
 
   const getPanelContentHeight = () => {
