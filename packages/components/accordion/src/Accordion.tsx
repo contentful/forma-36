@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from '@contentful/f36-core';
 import type { CommonProps } from '@contentful/f36-core';
 
-import getStyles from './Accordion.styles';
+import { getAccordionStyles } from './Accordion.styles';
 
 export interface AccordionProps extends CommonProps {
   /**
@@ -26,7 +26,7 @@ const _Accordion = (
   }: AccordionProps,
   ref: React.Ref<HTMLUListElement>,
 ) => {
-  const styles = getStyles();
+  const styles = getAccordionStyles(className);
   return (
     <Box
       as="ul"

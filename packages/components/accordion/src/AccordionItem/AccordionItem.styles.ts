@@ -1,4 +1,4 @@
-import { css } from 'emotion';
+import { css, cx } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import type { CSSObject } from '@emotion/serialize';
 
@@ -11,6 +11,6 @@ const accordionItem = {
   },
 } as CSSObject;
 
-export const getAccordionItem = () => ({
-  accordionItem: css(accordionItem),
+export const getAccordionItemStyles = (className) => ({
+  accordionItem: cx(css(accordionItem), className),
 });
