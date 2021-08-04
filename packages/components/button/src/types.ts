@@ -17,7 +17,7 @@ export type ButtonStylesProps = {
   isFullWidth: boolean;
 };
 
-interface BaseButtonProps extends CommonProps {
+export interface ButtonInternalProps extends CommonProps {
   children?: React.ReactNode;
   /**
    * Determines style variation of Button component
@@ -60,25 +60,4 @@ interface BaseButtonProps extends CommonProps {
    * @default button
    */
   as?: 'a' | 'button';
-  /**
-   * Button html type attribute
-   * @default button
-   */
-  type?: 'submit' | 'button' | 'reset';
-  /**
-   * URL if the button should be rendered as an anchor tag
-   */
-  href?: string;
 }
-
-interface ButtonElementProps extends BaseButtonProps {
-  as?: 'button';
-  href?: never;
-}
-
-interface AnchorElementProps extends BaseButtonProps {
-  as: 'a';
-  href: string;
-}
-
-export type ButtonInternalProps = ButtonElementProps | AnchorElementProps;

@@ -7,6 +7,7 @@ const variantActiveStyles = (variant: ButtonVariant): CSSObject => {
   switch (variant) {
     case 'primary':
       return {
+        transition: 'none',
         ', &:hover': {
           backgroundColor: tokens.blue700,
           borderColor: tokens.blue700,
@@ -14,12 +15,14 @@ const variantActiveStyles = (variant: ButtonVariant): CSSObject => {
       };
     case 'secondary':
       return {
+        transition: 'none',
         ', &:hover': {
           backgroundColor: tokens.gray200,
         },
       };
     case 'positive':
       return {
+        transition: 'none',
         ', &:hover': {
           backgroundColor: tokens.green700,
           borderColor: tokens.green700,
@@ -27,6 +30,7 @@ const variantActiveStyles = (variant: ButtonVariant): CSSObject => {
       };
     case 'negative':
       return {
+        transition: 'none',
         ', &:hover': {
           backgroundColor: tokens.red800,
           borderColor: tokens.red800,
@@ -34,6 +38,7 @@ const variantActiveStyles = (variant: ButtonVariant): CSSObject => {
       };
     case 'transparent':
       return {
+        transition: 'none',
         ', &:hover': {
           backgroundColor: tokens.gray100,
           borderColor: tokens.gray100,
@@ -175,7 +180,9 @@ export const styles = {
       fontWeight: tokens.fontWeightMedium,
       outline: 'none',
       textDecoration: 'none',
-      transition: `background-color ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
+      transition: `background ${tokens.transitionDurationShort} ${tokens.transitionEasingDefault},
+        opacity ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault},
+        border-color ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
       ...variantToStyles(variant),
       ...sizeToStyles(size),
       ...(isActive ? variantActiveStyles(variant) : {}),
