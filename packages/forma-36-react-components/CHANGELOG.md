@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.94.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.94.1...@contentful/forma-36-react-components@3.94.2) (2021-08-04)
+
+
+### Bug Fixes
+
+* workbench sidebar label ([#1148](https://github.com/contentful/forma-36/issues/1148)) ([a2a72bb](https://github.com/contentful/forma-36/commit/a2a72bbcf2ca3c48945284c7838ebbf348f3a182))
+
+
+
+
+
 ## [3.94.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.94.0...@contentful/forma-36-react-components@3.94.1) (2021-08-03)
 
 
