@@ -93,7 +93,11 @@ export {
   SkeletonText,
   SkeletonRow,
 } from '@contentful/f36-skeleton';
-export * from './components/Accordion';
+export { Accordion, AccordionItem } from '@contentful/f36-accordion';
+export type {
+  AccordionProps,
+  AccordionItemProps,
+} from '@contentful/f36-accordion';
 export * from './components/Asset';
 export * from './components/Autocomplete';
 export * from './components/Card';

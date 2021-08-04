@@ -1,12 +1,14 @@
-import React, { FC, useState } from 'react';
+import React, { useState } from 'react';
 import type { HeadingElement } from '@contentful/f36-typography';
-import { useId } from '../../../utils/useId';
+import { useId, Box } from '@contentful/f36-core';
+
 import { AccordionHeader } from '../AccordionHeader/AccordionHeader';
 import { AccordionPanel } from '../AccordionPanel/AccordionPanel';
+import type { CommonProps } from '@contentful/f36-core';
 
-import styles from '../Accordion.css';
+import { getAccordionItemStyles } from './AccordionItem.styles';
 
-export interface AccordionItemProps {
+export interface AccordionItemProps extends CommonProps {
   /**
    * The accordion title
    */
@@ -20,10 +22,6 @@ export interface AccordionItemProps {
    */
   children?: React.ReactNode;
   /**
-   * An ID used for testing purposes applied as a data attribute (data-test-id)
-   */
-  testId?: string;
-  /**
    * A function to be called when the accordion item is opened
    */
   onExpand?: Function;
@@ -31,20 +29,31 @@ export interface AccordionItemProps {
    * A function to be called when the accordion item is closed
    */
   onCollapse?: Function;
+  /**
+   * Specify the alignment of the chevron inside the accordion header
+   */
+  align?: 'start' | 'end';
 }
 
-export const AccordionItem: FC<AccordionItemProps> = ({
-  title = 'Accordion Title',
-  titleElement = 'h2',
-  testId = 'cf-ui-accordion-item',
-  onExpand,
-  onCollapse,
-  children,
-}: AccordionItemProps) => {
+const _AccordionItem = (
+  {
+    title = 'Accordion Title',
+    titleElement = 'h2',
+    testId = 'cf-ui-accordion-item',
+    onExpand,
+    onCollapse,
+    children,
+    align = 'end',
+    className,
+    ...otherProps
+  }: AccordionItemProps,
+  ref: React.Ref<HTMLLIElement>,
+) => {
+  const styles = getAccordionItemStyles({ className });
   const id = useId();
   const [isExpanded, setIsExpanded] = useState(false);
 
-  const onClick = () => {
+  const handleOnClick = () => {
     if (!isExpanded && onExpand) {
       onExpand();
     }
@@ -56,12 +65,19 @@ export const AccordionItem: FC<AccordionItemProps> = ({
   };
 
   return (
-    <li className={styles.AccordionItem} data-test-id={`${testId}-${id}`}>
+    <Box
+      as="li"
+      className={styles.accordionItem}
+      testId={`${testId}-${id}`}
+      {...otherProps}
+      ref={ref}
+    >
       <AccordionHeader
-        handleClick={onClick}
+        onClick={handleOnClick}
         isExpanded={isExpanded}
         element={titleElement}
         ariaId={id}
+        align={align}
       >
         {title}
       </AccordionHeader>
@@ -69,6 +85,8 @@ export const AccordionItem: FC<AccordionItemProps> = ({
       <AccordionPanel ariaId={id} isExpanded={isExpanded}>
         {children}
       </AccordionPanel>
-    </li>
+    </Box>
   );
 };
+
+export const AccordionItem = React.forwardRef(_AccordionItem);

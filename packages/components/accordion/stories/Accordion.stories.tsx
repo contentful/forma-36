@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading, Text, Typography } from '@contentful/f36-typography';
 import { Button } from '@contentful/f36-button';
-import { Accordion, AccordionProps } from './Accordion';
-import { AccordionItem } from './AccordionItem/AccordionItem';
+import { Accordion, AccordionProps } from '../src/Accordion';
+import { AccordionItem } from '../src/AccordionItem/AccordionItem';
 
 export default {
   title: 'Components/Accordion',

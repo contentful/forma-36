@@ -1,24 +1,20 @@
 import React, { FC } from 'react';
-import cn from 'classnames';
 import { Subheading } from '@contentful/f36-typography';
 import type { HeadingElement } from '@contentful/f36-typography';
 import { ChevronDownTrimmed } from '@contentful/f36-icons';
+import type { CommonProps } from '@contentful/f36-core';
 
-import styles from '../Accordion.css';
+import { getAccordionHeaderStyles } from './AccordionHeader.styles';
 
-export interface AccordionHeaderProps {
+export interface AccordionHeaderProps extends CommonProps {
   /**
    * Child nodes to be rendered in the component
    */
   children?: React.ReactNode;
   /**
-   * An ID used for testing purposes applied as a data attribute (data-test-id)
-   */
-  testId?: string;
-  /**
    * The function that will be called once the user clicks on the accordion title
    */
-  handleClick: VoidFunction;
+  onClick: VoidFunction;
   /**
    * A boolean that tells if the accordion should be expanded or collapsed
    */
@@ -26,23 +22,26 @@ export interface AccordionHeaderProps {
   /**
    * An unique id that is necessary for the aria roles and properties
    */
-  ariaId: number | null;
+  ariaId: string;
   /**
    * The heading element that will be used by the Subheading component
    */
   element?: HeadingElement;
+  /**
+   * Specify the alignment of the chevron inside the accordion header
+   */
+  align?: 'start' | 'end';
 }
 
 export const AccordionHeader: FC<AccordionHeaderProps> = ({
   children,
-  handleClick,
+  onClick,
   isExpanded = false,
   ariaId,
   element = 'h2',
+  align = 'end',
 }: AccordionHeaderProps) => {
-  const classNames = cn(styles.AccordionHeader, {
-    [styles['AccordionHeader--expanded']]: isExpanded,
-  });
+  const styles = getAccordionHeaderStyles({ align, isExpanded });
 
   return (
     <Subheading as={element}>
@@ -51,11 +50,11 @@ export const AccordionHeader: FC<AccordionHeaderProps> = ({
         aria-expanded={isExpanded}
         aria-controls={`accordion-panel--${ariaId}`}
         id={`accordion--${ariaId}`}
-        className={classNames}
-        onClick={handleClick}
+        className={styles.accordionHeader}
+        onClick={onClick}
       >
         <ChevronDownTrimmed
-          className={styles.AccordionHeader__icon}
+          className={styles.accordionHeaderIcon}
           variant="secondary"
         />
         {children}

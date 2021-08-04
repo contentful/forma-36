@@ -1,10 +1,10 @@
 import React, { FC, useLayoutEffect, useRef } from 'react';
-import cn from 'classnames';
 import tokens from '@contentful/f36-tokens';
+import type { CommonProps } from '@contentful/f36-core';
 
-import styles from './AccordionPanel.css';
+import { getAccordionPanelStyles } from './AccordionPanel.styles';
 
-export interface AccordionPanelProps {
+export interface AccordionPanelProps extends CommonProps {
   /**
    * Child nodes to be rendered in the component
    */
@@ -16,7 +16,7 @@ export interface AccordionPanelProps {
   /**
    * An unique id that is necessary for the aria roles and properties
    */
-  ariaId: number;
+  ariaId: string;
 }
 
 export const AccordionPanel: FC<AccordionPanelProps> = ({
@@ -24,6 +24,7 @@ export const AccordionPanel: FC<AccordionPanelProps> = ({
   isExpanded = false,
   ariaId,
 }: AccordionPanelProps) => {
+  const styles = getAccordionPanelStyles();
   const panelEl = useRef<HTMLDivElement>(null);
 
   const getPanelContentHeight = () => {
@@ -82,12 +83,10 @@ export const AccordionPanel: FC<AccordionPanelProps> = ({
       role="region"
       aria-labelledby={`accordion--${ariaId}`}
       aria-hidden={!isExpanded}
-      className={cn(styles.AccordionPanel, {
-        [styles['AccordionPanel--expanded']]: isExpanded,
-      })}
+      className={styles.accordionPanel}
       ref={panelEl}
     >
-      <div className={cn(styles['AccordionPanel__content'])}>{children}</div>
+      <div className={styles.accordionPanelContent}>{children}</div>
     </div>
   );
 };
