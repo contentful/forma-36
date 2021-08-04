@@ -6,7 +6,7 @@ const handleConsent = (newConsentOptions) => {
 };
 
 const initOsano = () => {
-  const osanoScriptUrl = `https://cmp.osano.com/16BcqiRsJId123ATa/${process.env.OSANO_KEY}/osano.js`;
+  const osanoScriptUrl = `https://cmp.osano.com/${process.env.OSANO_KEY}/${process.env.OSANO_F36_WEBSITE_KEY}/osano.js`;
   const script = document.createElement('script');
   const head = document.getElementsByTagName('head')[0];
 

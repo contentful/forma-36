@@ -23,6 +23,7 @@ but to use them in development you will need to create a file named `.env.develo
 
 ```
 OSANO_KEY={{This value can be found at Contentful’s Osano dashboard}}
+OSANO_F36_WEBSITE_KEY={{This value can be found at Contentful’s Osano dashboard}}
 ```
 
 ## Overview of project structure
