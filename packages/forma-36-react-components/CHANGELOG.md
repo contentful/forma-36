@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.95.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.95.0...@contentful/forma-36-react-components@3.95.1) (2021-08-04)
+
+
+### Bug Fixes
+
+* **Icon:** add types for otherProps ([#1150](https://github.com/contentful/forma-36/issues/1150)) ([eb8ddb5](https://github.com/contentful/forma-36/commit/eb8ddb5d96eb5d59f6fce527eb9c1ce09d9b0fca))
+
+
+
+
+
 # [3.95.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.94.2...@contentful/forma-36-react-components@3.95.0) (2021-08-04)
 
 
