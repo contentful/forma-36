@@ -12,6 +12,7 @@
     "@mdx-js/mdx": "^1.6.18",
     "@mdx-js/react": "^1.6.18",
     "@svgr/webpack": "^4.3.2",
+    "dotenv": "^10.0.0",
     "gatsby": "^2.24.73",
     "gatsby-image": "^2.2.14",
     "gatsby-plugin-algolia-docsearch": "^1.0.5",
