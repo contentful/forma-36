@@ -12,7 +12,7 @@ import { Done, Minus } from '@contentful/f36-icons';
 import type { IconProps } from '@contentful/f36-icons';
 import { Box, BoxProps } from '@contentful/f36-core';
 
-import { styles } from './ControlledInput.styles';
+import { getStyles } from './ControlledInput.styles';
 
 export interface ControlledInputProps extends Omit<BoxProps<'div'>, 'ref'> {
   id?: string;
@@ -58,6 +58,7 @@ const _ControlledInput = (
   ref: React.Ref<HTMLDivElement>,
 ) => {
   const inputRef = useRef(null);
+  const styles = getStyles();
 
   const inputClassnames = cx(
     styles.input,

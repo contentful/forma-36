@@ -12,7 +12,7 @@ import {
   Warning,
 } from '@contentful/f36-icons';
 
-import { styles } from './Note.styles';
+import { getStyles } from './Note.styles';
 
 const icons = {
   primary: InfoCircle,
@@ -57,6 +57,8 @@ const _Note = (props: NoteProps, ref) => {
     title,
     ...otherProps
   } = props;
+
+  const styles = getStyles();
 
   const Icon = icons[variant!]; // eslint-disable-line @typescript-eslint/no-non-null-assertion
   if (!Icon) {

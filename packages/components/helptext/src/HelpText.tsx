@@ -1,6 +1,6 @@
 import { cx } from 'emotion';
 import React from 'react';
-import { styles } from './HelpText.styles';
+import { getStyles } from './HelpText.styles';
 import {
   Box,
   CommonProps,
@@ -27,12 +27,13 @@ const _HelpText: PolymorphicComponentWithRef<
   { children, className, testId = 'cf-ui-help-text', ...otherProps },
   ref,
 ) => {
+  const styles = getStyles();
   return (
     <Box
       as={DEFAULT_TAG}
       testId={testId}
       ref={ref}
-      className={cx(styles.helpText, className)}
+      className={cx(styles.root, className)}
       {...otherProps}
     >
       {children}
