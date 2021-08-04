@@ -26,6 +26,7 @@ const _Badge = (props: BadgeProps, ref: React.Ref<HTMLDivElement>) => {
     children,
     variant = 'primary',
     size = 'default',
+    testId = 'cf-ui-badge',
     className,
     ...otherProps
   } = props;
@@ -33,7 +34,7 @@ const _Badge = (props: BadgeProps, ref: React.Ref<HTMLDivElement>) => {
   return (
     <Box
       as="div"
-      testId="cf-ui-badge"
+      testId={testId}
       display="inline-block"
       className={cx(getBadgeStyles({ variant, size }), className)}
       {...otherProps}

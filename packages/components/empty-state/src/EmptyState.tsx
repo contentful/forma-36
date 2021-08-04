@@ -2,22 +2,15 @@ import { cx } from 'emotion';
 import React from 'react';
 import { styles } from './EmptyState.styles';
 import { Box } from '@contentful/f36-core';
+import type { CommonProps } from '@contentful/f36-core';
 import type { HeadingElement } from '@contentful/f36-typography';
 import { Heading, Text, Typography } from '@contentful/f36-typography';
 
-export interface EmptyStateProps {
-  /**
-   * Class names to be appended to the className prop of the component
-   */
-  className?: string;
+export interface EmptyStateProps extends CommonProps {
   /**
    * Child nodes to be rendered in the component
    */
   children?: React.ReactNode;
-  /**
-   * An ID used for testing purposes applied as a data attribute (data-test-id)
-   */
-  testId?: string;
   /**
    * Props for imageProps block
    */
@@ -82,9 +75,9 @@ const _EmptyState = (props: EmptyStateProps, ref) => {
     <Box
       ref={ref}
       as="article"
-      {...otherProps}
-      className={cx(styles.emptyState, className)}
       testId={testId}
+      className={cx(styles.emptyState, className)}
+      {...otherProps}
     >
       <div className={styles.container}>
         <div className={cx([styles.illustrationContainer, styles.element])}>
