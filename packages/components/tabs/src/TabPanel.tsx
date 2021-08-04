@@ -1,10 +1,8 @@
 import React from 'react';
+import type { CommonProps } from '@contentful/f36-core';
 
-export interface TabPanelProps {
+export interface TabPanelProps extends CommonProps {
   id: string;
-  className?: string;
-  testId?: string;
-  style?: React.CSSProperties;
   children: React.ReactNode;
 }
 

@@ -1,10 +1,10 @@
 import React, { useCallback } from 'react';
-import classNames from 'classnames';
-import type { CSSProperties, KeyboardEvent, MouseEvent } from 'react';
+import type { KeyboardEvent, MouseEvent } from 'react';
+import type { CommonProps } from '@contentful/f36-core';
 
-import styles from './Tabs.css';
+import { getTabStyles } from './Tabs.styles';
 
-export interface TabProps {
+export interface TabProps extends CommonProps {
   id: string;
   onSelect?: (id: string, e: React.SyntheticEvent) => void;
   selected?: boolean;
@@ -12,9 +12,6 @@ export interface TabProps {
   target?: string;
   disabled?: boolean;
   tabIndex?: number;
-  style?: CSSProperties;
-  className?: string;
-  testId?: string;
   children: React.ReactNode;
 }
 
@@ -30,6 +27,7 @@ export function Tab({
   tabIndex = 0,
   testId = 'cf-ui-tab',
 }: TabProps): React.ReactElement {
+  const styles = getTabStyles({ className, selected, disabled });
   const handleClick = useCallback(
     (e: MouseEvent<HTMLElement>) => {
       if (onSelect && !disabled) {
@@ -50,14 +48,7 @@ export function Tab({
   );
 
   const elementProps = {
-    className: classNames(
-      styles.Tab,
-      {
-        [styles['Tab__selected']]: selected,
-        [styles['Tab__disabled']]: disabled,
-      },
-      className,
-    ),
+    className: styles.tab,
     onClick: handleClick,
     onKeyPress: handleKeyPress,
     style: style,

@@ -98,6 +98,8 @@ export type {
   AccordionProps,
   AccordionItemProps,
 } from '@contentful/f36-accordion';
+export { Tabs, Tab, TabPanel } from '@contentful/f36-tabs';
+export type { TabsProps, TabProps, TabPanelProps } from '@contentful/f36-tabs';
 export * from './components/Asset';
 export * from './components/Autocomplete';
 export * from './components/Card';
@@ -113,7 +115,6 @@ export * from './components/Notification';
 export * from './components/Select';
 export * from './components/SelectField';
 export * from './components/Switch';
-export * from './components/Tabs';
 export * from './components/Textarea';
 export * from './components/TextField';
 export * from './components/TextInput';
