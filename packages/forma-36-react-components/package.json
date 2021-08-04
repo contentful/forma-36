@@ -1,7 +1,7 @@
 {
   "name": "@contentful/forma-36-react-components",
   "description": "Contentful UI Component Library",
-  "version": "3.89.4",
+  "version": "3.94.2",
   "main": "dist/index.js",
   "module": "dist/esm/index.js",
   "style": "dist/styles.css",
@@ -31,8 +31,8 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.3.4",
-    "@contentful/forma-36-fcss": "^0.3.2",
-    "@contentful/forma-36-tokens": "^0.10.2",
+    "@contentful/forma-36-fcss": "^0.3.3",
+    "@contentful/forma-36-tokens": "^0.11.0",
     "@popperjs/core": "^2.4.4",
     "classnames": "^2.2.6",
     "csstype": "^3.0.5",
@@ -41,7 +41,7 @@
     "react-copy-to-clipboard": "^5.0.1",
     "react-modal": "^3.11.2",
     "react-popper": "^2.2.3",
-    "react-transition-group": "^2.4.0",
+    "react-transition-group": "^4.4.2",
     "truncate": "^2.0.1"
   },
   "devDependencies": {
@@ -49,8 +49,8 @@
     "@types/classnames": "2.2.7",
     "@types/react-color": "^3.0.1",
     "@types/react-copy-to-clipboard": "4.2.6",
-    "@types/react-transition-group": "2.0.15",
-    "file-loader": "^3.0.1",
+    "@types/react-transition-group": "4.4.1",
+    "file-loader": "^6.2.0",
     "markdown-it": "^8.4.2",
     "mini-css-extract-plugin": "^0.7.0",
     "optimize-css-assets-webpack-plugin": "5.0.3",

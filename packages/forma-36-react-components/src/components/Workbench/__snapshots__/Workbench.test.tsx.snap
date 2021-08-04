@@ -5,7 +5,7 @@ exports[`renders the component (complex) 1`] = `
   class="Workbench"
   data-test-id="cf-ui-workbench"
 >
-  <div
+  <header
     class="Workbench__header"
     data-test-id="cf-ui-workbench-header"
   >
@@ -59,17 +59,19 @@ exports[`renders the component (complex) 1`] = `
         </span>
       </button>
     </div>
-  </div>
+  </header>
   <div
     class="Workbench__content-wrapper"
   >
-    <div
+    <aside
+      aria-label="Secondary sidebar"
       class="Workbench__sidebar Workbench__sidebar--left"
       data-test-id="cf-ui-workbench-sidebar-left"
     >
       Left sidebar
-    </div>
-    <div
+    </aside>
+    <main
+      aria-label="Main content"
       class="Workbench__content"
       data-test-id="cf-ui-workbench-content"
     >
@@ -78,13 +80,14 @@ exports[`renders the component (complex) 1`] = `
       >
         Workbench
       </div>
-    </div>
-    <div
+    </main>
+    <aside
+      aria-label="Primary sidebar"
       class="Workbench__sidebar Workbench__sidebar--right"
       data-test-id="cf-ui-workbench-sidebar-right"
     >
       Right sidebar
-    </div>
+    </aside>
   </div>
 </div>
 `;
@@ -94,7 +97,7 @@ exports[`renders the component (simple) 1`] = `
   class="Workbench"
   data-test-id="cf-ui-workbench"
 >
-  <div
+  <header
     class="Workbench__header"
     data-test-id="cf-ui-workbench-header"
   >
@@ -148,11 +151,12 @@ exports[`renders the component (simple) 1`] = `
         </span>
       </button>
     </div>
-  </div>
+  </header>
   <div
     class="Workbench__content-wrapper"
   >
-    <div
+    <main
+      aria-label="Main content"
       class="Workbench__content"
       data-test-id="cf-ui-workbench-content"
     >
@@ -161,7 +165,7 @@ exports[`renders the component (simple) 1`] = `
       >
         Workbench
       </div>
-    </div>
+    </main>
   </div>
 </div>
 `;

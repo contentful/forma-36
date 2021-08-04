@@ -33,6 +33,20 @@ it('renders the component in disabled state', () => {
   expect(container.firstChild).toMatchSnapshot();
 });
 
+it('renders the component with placeholder', () => {
+  const { container } = render(
+    <Select name="optionSelect" id="optionSelect">
+      <Option value="" disabled selected>
+        Please select an option...
+      </Option>
+      <Option value="optionOne">Option One</Option>
+      <Option value="optionTwo">Option Two</Option>
+      <Option value="optionThree">Option Three</Option>
+    </Select>,
+  );
+  expect(container.firstChild).toMatchSnapshot();
+});
+
 it('renders the component with error', () => {
   const { container } = render(
     <Select hasError name="optionSelect" id="optionSelect">

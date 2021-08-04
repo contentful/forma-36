@@ -155,26 +155,26 @@
 }
 
 .Button--negative {
-  border-color: var(--color-red-mid);
-  background-color: var(--color-red-mid);
+  border-color: var(--red-600);
+  background-color: var(--red-600);
   background-size: 100% 200%;
 
   &:hover:not(.Button--disabled) {
     background-position: 0 100%;
-    border-color: var(--color-red-base);
-    background-color: var(--color-red-base);
+    border-color: var(--red-700);
+    background-color: var(--red-700);
   }
 
   &.Button--is-active:not(.Button--disabled),
   &:active:not(.Button--disabled) {
     transition: none;
     background-position: 0 100%;
-    border-color: var(--color-red-dark);
-    background-color: var(--color-red-dark);
+    border-color: var(--red-800);
+    background-color: var(--red-800);
   }
 
   &:focus:not(.Button--disabled) {
-    border-color: var(--color-red-dark);
+    border-color: var(--red-800);
     box-shadow: var(--glow-negative);
   }
 
@@ -183,7 +183,7 @@
   }
 
   &.Button:link {
-    border-color: var(--color-red-mid);
+    border-color: var(--red-600);
   }
 }
 
@@ -259,8 +259,9 @@
   }
 }
 
-.Button__spinner {
-  transition: opacity,
+.Button--spinner-wrapper {
+  transition: opacity var(--transition-duration-default)
+      var(--transition-easing-default),
     width var(--transition-duration-default) var(--transition-easing-default);
 }
 
@@ -269,17 +270,17 @@
   width: 0px;
 }
 
-.Button--spinner-active {
+.Button--spinner--enter-active {
   opacity: 1;
-  width: 14px;
+  width: 12px;
 }
 
 .Button--spinner--exit {
   opacity: 1;
-  width: 14px;
+  width: 12px;
 }
 
-.Button--spinner-exit-active {
+.Button--spinner--exit-active {
   opacity: 0;
   width: 0px;
 }

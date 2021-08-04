@@ -1,4 +1,10 @@
-import React, { RefObject, useCallback, useEffect, useState } from 'react';
+import React, {
+  RefObject,
+  useCallback,
+  useEffect,
+  useState,
+  useRef,
+} from 'react';
 import cn from 'classnames';
 import { usePopper } from 'react-popper';
 import { Modifier, Placement, State as PopperState } from '@popperjs/core';
@@ -142,13 +148,20 @@ export interface DropdownProps {
    * Autocomplete component for an actual example of this usage.
    */
   nonClosingRefs?: RefObject<HTMLElement>[];
+
+  /**
+   * Boolean to focus DropdownContainer on open
+   *
+   * Defaults to `true`
+   */
+  focusContainerOnOpen?: boolean;
 }
 
 export function Dropdown({
   children,
   className,
   dropdownContainerClassName,
-  getContainerRef = () => {},
+  getContainerRef,
   isAutoalignmentEnabled = true,
   isFullWidth,
   isOpen: isOpenProp = false,
@@ -159,6 +172,7 @@ export function Dropdown({
   toggleElement,
   usePortal,
   nonClosingRefs,
+  focusContainerOnOpen = true,
   ...otherProps
 }: DropdownProps) {
   const [referenceElement, setReferenceElement] = useState<HTMLElement | null>(
@@ -196,6 +210,8 @@ export function Dropdown({
   );
   const classNames = cn(styles['Dropdown'], className);
   const containerTestId = testId ? `${testId}-container` : testId;
+  const toggleElementIdSuffix = useRef(Math.random() * Date.now());
+  const toggleElementId = `dropdown-trigger-${toggleElementIdSuffix.current}`;
 
   useEffect(() => {
     setIsOpen(isOpenProp);
@@ -213,19 +229,26 @@ export function Dropdown({
     }
   };
 
-  const close = useCallback(() => {
-    setIsOpen(false);
+  const handleOnClose = useCallback(() => {
+    const toggleElementNode = document.querySelector(
+      `[data-node-id="${toggleElementId}"]`,
+    ) as HTMLElement;
+    toggleElementNode?.focus();
 
     if (onClose) {
       onClose();
     }
-  }, [onClose, setIsOpen]);
+  }, [toggleElementId, onClose]);
+
+  const close = useCallback(() => {
+    setIsOpen(false);
+    handleOnClose();
+  }, [handleOnClose, setIsOpen]);
 
   const handleEscapeKey = useCallback(
     (event: KeyboardEvent) => {
       if (event.code === 'Escape') {
         event.stopPropagation();
-
         close();
       }
     },
@@ -246,7 +269,9 @@ export function Dropdown({
       testId={testId}
       submenuToggleLabel={submenuToggleLabel}
       onEnter={() => setIsOpen(true)}
+      onClick={() => setIsOpen(true)}
       onLeave={() => setIsOpen(false)}
+      aria-expanded={isOpen}
       ref={setReferenceElement}
       {...otherProps}
     >
@@ -261,11 +286,12 @@ export function Dropdown({
           className={dropdownContainerClassName}
           getRef={getContainerRef}
           isOpen={isOpen}
-          onClose={onClose}
+          onClose={handleOnClose}
           openSubmenu={openSubmenu}
           ref={setPopperElement}
           style={popperStyles.popper}
           submenu
+          focusContainerOnOpen={focusContainerOnOpen}
           usePortal={usePortal}
           {...attributes.popper}
         >
@@ -284,6 +310,7 @@ export function Dropdown({
         React.cloneElement(toggleElement, {
           'aria-haspopup': 'menu',
           'aria-expanded': isOpen,
+          'data-node-id': toggleElementId,
         })}
 
       {isOpen && (
@@ -292,11 +319,12 @@ export function Dropdown({
           className={dropdownContainerClassName}
           getRef={getContainerRef}
           isOpen={isOpen}
-          onClose={onClose}
+          onClose={handleOnClose}
           openSubmenu={openSubmenu}
           ref={setPopperElement}
           style={popperStyles.popper}
           submenu={false}
+          focusContainerOnOpen={focusContainerOnOpen}
           testId={containerTestId}
           usePortal={usePortal}
           {...attributes.popper}

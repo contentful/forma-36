@@ -18,6 +18,7 @@ export interface DropdownContainerProps
   submenu?: boolean;
   testId?: string;
   usePortal?: boolean;
+  focusContainerOnOpen?: boolean;
 }
 
 export const DropdownContainer = forwardRef<
@@ -36,6 +37,7 @@ export const DropdownContainer = forwardRef<
     testId = 'cf-ui-dropdown-portal',
     usePortal = true,
     nonClosingRefs,
+    focusContainerOnOpen,
     ...props
   },
   refCallback,
@@ -61,13 +63,22 @@ export const DropdownContainer = forwardRef<
     if (getRef && dropdown.current) {
       getRef(dropdown.current);
     }
-  }, [getRef]);
+
+    if (focusContainerOnOpen && dropdown.current) {
+      dropdown.current.focus({
+        preventScroll: true,
+      });
+    }
+  }, [getRef, focusContainerOnOpen]);
 
   const dropdownComponent = (
     <div
       {...props}
       className={classNames}
       data-test-id={testId}
+      // tabIndex is Necessary to focus the container for keyboard accessibility
+      // eslint-disable-next-line
+      tabIndex={0}
       onMouseEnter={() => {
         if (openSubmenu) {
           openSubmenu(true);

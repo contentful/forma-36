@@ -2,7 +2,7 @@
 
 .Icon {
   display: inline-block;
-  fill: var(--color-blue-base);
+  fill: var(--color-primary);
 }
 
 .Icon--tiny {
@@ -29,6 +29,10 @@
   width: auto;
 }
 
+.Icon--primary {
+  fill: var(--color-primary);
+}
+
 .Icon--positive {
   fill: var(--color-positive);
 }
@@ -42,11 +46,11 @@
 }
 
 .Icon--secondary {
-  fill: var(--color-contrast-mid);
+  fill: var(--gray-700);
 }
 
 .Icon--muted {
-  fill: var(--color-text-light);
+  fill: var(--gray-500);
 }
 
 .Icon--white {

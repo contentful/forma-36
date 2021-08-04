@@ -3,18 +3,19 @@ const path = require('path');
 module.exports = {
   siteMetadata: {
     title: 'Forma 36 - The Contentful Design System',
-    promoText: '',
-    promoLink: '',
-    promoLinkText: '',
-    promoTagText: '',
+    promoText: `Updated color system with new tokens.`,
+    promoLink:
+      'https://github.com/contentful/forma-36/blob/master/packages/forma-36-tokens/MIGRATION.md',
+    promoLinkText: 'Migration notes',
+    promoTagText: 'New colors',
     menuLinks: [
       {
         name: 'Foundation',
         link: '',
         menuLinks: [
           {
-            name: 'Color',
-            link: '/foundation/color/',
+            name: 'Color system',
+            link: '/foundation/color-system/',
           },
           {
             name: 'Typography',
@@ -51,46 +52,12 @@ module.exports = {
             link: '',
             menuLinks: [
               {
-                name: 'Introduction',
-                link: '/guidelines/copy/introduction/',
+                name: 'UX writing principles',
+                link: '/guidelines/copy/ux-writing-principles/',
               },
               {
-                name: 'Grammar',
-                link: '',
-                menuLinks: [
-                  {
-                    name: 'Introduction',
-                    link: '/guidelines/copy/grammar/introduction/',
-                  },
-                  {
-                    name: 'Capitalization',
-                    link: '/guidelines/copy/grammar/capitalization/',
-                  },
-                  {
-                    name: 'Punctuation',
-                    link: '/guidelines/copy/grammar/punctuation/',
-                  },
-                  {
-                    name: 'Sentence structure',
-                    link: '/guidelines/copy/grammar/sentence-structure/',
-                  },
-                  {
-                    name: 'Tense',
-                    link: '/guidelines/copy/grammar/tense/',
-                  },
-                  {
-                    name: 'Word choice',
-                    link: '/guidelines/copy/grammar/word-choice/',
-                  },
-                ],
-              },
-              {
-                name: 'Tone of voice',
-                link: '/guidelines/copy/tone-of-voice/',
-              },
-              {
-                name: 'Frequently used verbs',
-                link: '/guidelines/copy/frequently-used-verbs/',
+                name: 'Grammar and rules',
+                link: '/guidelines/copy/grammar-and-rules/',
               },
             ],
           },
@@ -395,7 +362,7 @@ module.exports = {
       resolve: `gatsby-plugin-algolia-docsearch`,
       options: {
         // The key is added here only give access to searching the public content of the website https://docsearch.algolia.com/docs/what-is-docsearch
-        // You can even check Forma36's configuration in DocSearch's repo https://github.com/algolia/docsearch-configs/blob/master/configs/contentful_forma-36.json
+        // You can even check Forma 36's configuration in DocSearch's repo https://github.com/algolia/docsearch-configs/blob/master/configs/contentful_forma-36.json
         apiKey: 'b7d2cac8e38b0903385db259b042c66c',
         indexName: 'contentful_forma-36',
         inputSelector: '#search',

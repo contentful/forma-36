@@ -293,7 +293,8 @@
       "avatar_url": "https://avatars0.githubusercontent.com/u/2056251?v=4",
       "profile": "https://github.com/OriginalEXE",
       "contributions": [
-        "code"
+        "code",
+        "bug"
       ]
     },
     {
@@ -365,7 +366,8 @@
       "avatar_url": "https://avatars0.githubusercontent.com/u/16481282?v=4",
       "profile": "https://github.com/heyitstowler",
       "contributions": [
-        "code"
+        "code",
+        "bug"
       ]
     },
     {
@@ -512,7 +514,8 @@
       "profile": "https://nikazawila.com",
       "contributions": [
         "code",
-        "maintenance"
+        "maintenance",
+        "doc"
       ]
     },
     {
@@ -558,7 +561,44 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/1124415?v=4",
       "profile": "https://github.com/anilkk",
       "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "massao",
+      "name": "Renato Massao Yonamine",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1071799?v=4",
+      "profile": "https://github.com/massao",
+      "contributions": [
         "code"
+      ]
+    },
+    {
+      "login": "cachrisman",
+      "name": "Charlie Chrisman",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6521666?v=4",
+      "profile": "http://www.charliechrisman.com",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "janvandenberg",
+      "name": "Jan van den Berg",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4704819?v=4",
+      "profile": "https://github.com/janvandenberg",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "SirGavin",
+      "name": "SirGavin",
+      "avatar_url": "https://avatars.githubusercontent.com/u/11873876?v=4",
+      "profile": "https://github.com/SirGavin",
+      "contributions": [
+        "bug"
       ]
     }
   ],

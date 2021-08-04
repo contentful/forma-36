@@ -124,28 +124,30 @@ export const Button = ({
         )}
         {children && <span className={styles.Button__label}>{children}</span>}
         <CSSTransition
+          appear
           in={loading}
           timeout={1000}
           classNames={{
-            enter: styles['Button--spinner--enter'],
-            enterActive: styles['Button--spinner-active'],
+            appear: styles['Button--spinner--enter'],
+            appearActive: styles['Button--spinner--enter-active'],
             exit: styles['Button--spinner--exit'],
-            exitActive: styles['Button--spinner-exit-active'],
+            exitActive: styles['Button--spinner--exit-active'],
           }}
           mountOnEnter
           unmountOnExit
         >
-          <Spinner
-            className={styles.Button__spinner}
-            customSize={12}
-            color={
-              buttonType === 'muted' ||
-              buttonType === 'warning' ||
-              buttonType === 'naked'
-                ? 'default'
-                : 'white'
-            }
-          />
+          <div className={styles['Button--spinner-wrapper']}>
+            <Spinner
+              customSize={12}
+              color={
+                buttonType === 'muted' ||
+                buttonType === 'warning' ||
+                buttonType === 'naked'
+                  ? 'default'
+                  : 'white'
+              }
+            />
+          </div>
         </CSSTransition>
         {indicateDropdown && (
           <Icon
