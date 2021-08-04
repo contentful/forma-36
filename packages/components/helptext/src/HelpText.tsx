@@ -32,6 +32,8 @@ const _HelpText: PolymorphicComponentWithRef<
       testId={testId}
       ref={ref}
       className={cx(styles.root, className)}
+      marginTop="none"
+      marginBottom="none"
       {...otherProps}
     >
       {children}

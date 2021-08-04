@@ -11,7 +11,6 @@ export function getStyles() {
     }),
     text: css({
       color: tokens.colorNegative,
-      margin: 0,
     }),
   };
 }

@@ -23,19 +23,16 @@ const _ValidationMessage: PolymorphicComponentWithRef<
   ValidationMessageInternalProps,
   typeof DEFAULT_TAG
 > = (
-  { className, children, testId = 'cf-ui-validation-message', ...otherProps },
+  { children, testId = 'cf-ui-validation-message', ...otherProps },
   forwardedRef,
 ) => {
   const styles = getStyles();
   return (
-    <Flex
-      {...otherProps}
-      className={className}
-      ref={forwardedRef}
-      testId={testId}
-    >
+    <Flex {...otherProps} ref={forwardedRef} testId={testId}>
       <ErrorCircleOutline className={styles.icon} variant="negative" />
-      <Text className={styles.text}>{children}</Text>
+      <Text className={styles.text} marginBottom="none">
+        {children}
+      </Text>
     </Flex>
   );
 };
