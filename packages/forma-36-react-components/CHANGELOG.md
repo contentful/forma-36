@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.95.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.94.2...@contentful/forma-36-react-components@3.95.0) (2021-08-04)
+
+
+### Features
+
+* **Puzzle:** use web app version of puzzle icon ([#1146](https://github.com/contentful/forma-36/issues/1146)) ([b76cd56](https://github.com/contentful/forma-36/commit/b76cd563e73ef0731d250c6acb2c0b4df357963f))
+
+
+
+
+
 ## [3.94.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.94.1...@contentful/forma-36-react-components@3.94.2) (2021-08-04)
 
 
