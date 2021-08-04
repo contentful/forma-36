@@ -118,12 +118,14 @@ exports[`renders the component 1`] = `
 }
 
 .emotion-5 {
-  margin: 0;
+  margin-bottom: 0;
+  margin-top: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   color: #67728A;
   font-size: 0.875rem;
   line-height: 1.5;
   text-rendering: optimizeLegibility;
+  margin-top: 0.5rem;
 }
 
 <div
@@ -355,12 +357,14 @@ exports[`renders the component children in a row 1`] = `
 }
 
 .emotion-5 {
-  margin: 0;
+  margin-bottom: 0;
+  margin-top: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   color: #67728A;
   font-size: 0.875rem;
   line-height: 1.5;
   text-rendering: optimizeLegibility;
+  margin-top: 0.5rem;
 }
 
 <div
@@ -592,12 +596,14 @@ exports[`renders the component with an additional class name 1`] = `
 }
 
 .emotion-5 {
-  margin: 0;
+  margin-bottom: 0;
+  margin-top: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   color: #67728A;
   font-size: 0.875rem;
   line-height: 1.5;
   text-rendering: optimizeLegibility;
+  margin-top: 0.5rem;
 }
 
 <div

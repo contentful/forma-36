@@ -60,8 +60,9 @@
 
 .Switch__icon {
   position: absolute;
-  width: 12px;
-  height: 12px;
+  /* todo: maybe we need to introduce a custom icon size instead */
+  width: 12px !important;
+  height: 12px !important;
   cursor: pointer;
   pointer-events: none;
 }

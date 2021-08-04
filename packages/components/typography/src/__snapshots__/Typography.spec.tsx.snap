@@ -3,20 +3,18 @@
 exports[`renders all typography components with the expected spacing classes 1`] = `
 .emotion-1 {
   display: block;
-  margin: 0;
-  margin-bottom: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #111B2B;
   font-size: 1.25rem;
   line-height: 2rem;
   text-rendering: optimizeLegibility;
+  margin: 0;
+  margin-bottom: 1rem;
 }
 
 .emotion-2 {
   display: block;
-  margin: 0;
-  margin-bottom: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #111B2B;
@@ -27,12 +25,12 @@ exports[`renders all typography components with the expected spacing classes 1`]
   color: #414D63;
   font-size: 0.875rem;
   line-height: 1.25rem;
+  margin: 0;
+  margin-bottom: 1rem;
 }
 
 .emotion-0 {
   display: block;
-  margin: 0;
-  margin-bottom: 1.5rem;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #111B2B;
@@ -41,12 +39,12 @@ exports[`renders all typography components with the expected spacing classes 1`]
   text-rendering: optimizeLegibility;
   font-size: 1.75rem;
   line-height: 2.25rem;
+  margin: 0;
+  margin-bottom: 1.5rem;
 }
 
 .emotion-3 {
   display: block;
-  margin: 0;
-  margin-bottom: 1.5rem;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #111B2B;
@@ -60,12 +58,12 @@ exports[`renders all typography components with the expected spacing classes 1`]
   -ms-letter-spacing: 0.1rem;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
+  margin: 0;
+  margin-bottom: 1.5rem;
 }
 
 .emotion-4 {
   display: block;
-  margin: 0;
-  margin-bottom: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #111B2B;
@@ -74,6 +72,8 @@ exports[`renders all typography components with the expected spacing classes 1`]
   text-rendering: optimizeLegibility;
   font-size: 1rem;
   line-height: 1.5rem;
+  margin: 0;
+  margin-bottom: 1rem;
 }
 
 <div
@@ -116,20 +116,18 @@ exports[`renders all typography components with the expected spacing classes 1`]
 exports[`renders the component 1`] = `
 .emotion-0 {
   display: block;
-  margin: 0;
-  margin-bottom: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #111B2B;
   font-size: 1.25rem;
   line-height: 2rem;
   text-rendering: optimizeLegibility;
+  margin: 0;
+  margin-bottom: 1rem;
 }
 
 .emotion-1 {
   display: block;
-  margin: 0;
-  margin-bottom: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #111B2B;
@@ -140,6 +138,8 @@ exports[`renders the component 1`] = `
   color: #414D63;
   font-size: 0.875rem;
   line-height: 1.25rem;
+  margin: 0;
+  margin-bottom: 1rem;
 }
 
 <div
@@ -164,20 +164,18 @@ exports[`renders the component 1`] = `
 exports[`renders the component with an additional class name 1`] = `
 .emotion-0 {
   display: block;
-  margin: 0;
-  margin-bottom: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #111B2B;
   font-size: 1.25rem;
   line-height: 2rem;
   text-rendering: optimizeLegibility;
+  margin: 0;
+  margin-bottom: 1rem;
 }
 
 .emotion-1 {
   display: block;
-  margin: 0;
-  margin-bottom: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #111B2B;
@@ -188,10 +186,12 @@ exports[`renders the component with an additional class name 1`] = `
   color: #414D63;
   font-size: 0.875rem;
   line-height: 1.25rem;
+  margin: 0;
+  margin-bottom: 1rem;
 }
 
 <div
-  class="emotion-2 my-extra-class"
+  class="my-extra-class emotion-2"
   data-test-id="cf-ui-text-container"
 >
   <h1

@@ -3,7 +3,6 @@
 exports[`renders the component 1`] = `
 .emotion-0 {
   display: block;
-  margin: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #111B2B;
@@ -17,6 +16,7 @@ exports[`renders the component 1`] = `
   -ms-letter-spacing: 0.1rem;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
+  margin: 0;
 }
 
 <h3
@@ -30,7 +30,6 @@ exports[`renders the component 1`] = `
 exports[`renders the component h3 1`] = `
 .emotion-0 {
   display: block;
-  margin: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #111B2B;
@@ -44,6 +43,7 @@ exports[`renders the component h3 1`] = `
   -ms-letter-spacing: 0.1rem;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
+  margin: 0;
 }
 
 <h3
@@ -57,7 +57,6 @@ exports[`renders the component h3 1`] = `
 exports[`renders the component with an additional class name 1`] = `
 .emotion-0 {
   display: block;
-  margin: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #111B2B;
@@ -71,6 +70,7 @@ exports[`renders the component with an additional class name 1`] = `
   -ms-letter-spacing: 0.1rem;
   letter-spacing: 0.1rem;
   text-transform: uppercase;
+  margin: 0;
 }
 
 <h3

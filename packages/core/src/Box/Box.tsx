@@ -50,6 +50,9 @@ export function useBox(props: BoxInternalProps) {
     className: cx(
       css({
         display,
+      }),
+      className,
+      css({
         ...getSpacingStyles({
           margin,
           marginBottom,
@@ -63,7 +66,6 @@ export function useBox(props: BoxInternalProps) {
           paddingTop,
         }),
       }),
-      className,
     ),
     ...otherProps,
   };

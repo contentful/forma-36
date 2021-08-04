@@ -56,8 +56,8 @@ exports[`renders the component with type pdf 1`] = `
 .emotion-0 {
   display: inline-block;
   fill: #0059C8;
-  height: 18px;
-  width: 18px;
+  height: 32px;
+  width: 32px;
 }
 
 <div

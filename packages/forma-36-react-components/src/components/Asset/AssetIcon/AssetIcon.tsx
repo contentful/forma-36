@@ -31,6 +31,7 @@ export function AssetIcon({
 }: AssetIconProps) {
   const props = {
     ...otherProps,
+    size: 'large',
     className: cn(className, styles['AssetIcon']),
   };
 

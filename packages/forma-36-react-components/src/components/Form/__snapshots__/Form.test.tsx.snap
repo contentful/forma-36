@@ -17,13 +17,26 @@ exports[`renders the component 1`] = `
   margin-bottom: calc(1rem * (8 / 16));
 }
 
+.emotion-3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
 .emotion-2 {
-  margin: 0;
+  margin-bottom: 0;
+  margin-top: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   color: #67728A;
   font-size: 0.875rem;
   line-height: 1.5;
   text-rendering: optimizeLegibility;
+  margin-top: 0.5rem;
 }
 
 <form
@@ -68,10 +81,10 @@ exports[`renders the component 1`] = `
         />
       </div>
       <div
-        class="TextField__hints"
+        class="emotion-3"
       >
         <p
-          class="TextField__help-text emotion-2"
+          class="emotion-2"
           data-test-id="cf-ui-help-text"
         >
           Please enter your name
@@ -99,13 +112,26 @@ exports[`renders the component with an additional class name 1`] = `
   margin-bottom: calc(1rem * (8 / 16));
 }
 
+.emotion-3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
 .emotion-2 {
-  margin: 0;
+  margin-bottom: 0;
+  margin-top: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   color: #67728A;
   font-size: 0.875rem;
   line-height: 1.5;
   text-rendering: optimizeLegibility;
+  margin-top: 0.5rem;
 }
 
 <form
@@ -150,10 +176,10 @@ exports[`renders the component with an additional class name 1`] = `
         />
       </div>
       <div
-        class="TextField__hints"
+        class="emotion-3"
       >
         <p
-          class="TextField__help-text emotion-2"
+          class="emotion-2"
           data-test-id="cf-ui-help-text"
         >
           Please enter your name
@@ -181,13 +207,26 @@ exports[`renders the component with condensed spacing 1`] = `
   margin-bottom: calc(1rem * (8 / 16));
 }
 
+.emotion-3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
 .emotion-2 {
-  margin: 0;
+  margin-bottom: 0;
+  margin-top: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   color: #67728A;
   font-size: 0.875rem;
   line-height: 1.5;
   text-rendering: optimizeLegibility;
+  margin-top: 0.5rem;
 }
 
 <form
@@ -232,10 +271,10 @@ exports[`renders the component with condensed spacing 1`] = `
         />
       </div>
       <div
-        class="TextField__hints"
+        class="emotion-3"
       >
         <p
-          class="TextField__help-text emotion-2"
+          class="emotion-2"
           data-test-id="cf-ui-help-text"
         >
           Please enter your name

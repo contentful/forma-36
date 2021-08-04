@@ -40,8 +40,6 @@ exports[`EmptyState renders component with custom image element 1`] = `
 
 .emotion-1 {
   display: block;
-  margin: 0;
-  margin-bottom: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #111B2B;
@@ -49,12 +47,12 @@ exports[`EmptyState renders component with custom image element 1`] = `
   line-height: 2rem;
   text-rendering: optimizeLegibility;
   max-width: 32rem;
+  margin: 0;
+  margin-bottom: 1rem;
 }
 
 .emotion-2 {
   display: block;
-  margin: 0;
-  margin-bottom: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #111B2B;
@@ -66,6 +64,8 @@ exports[`EmptyState renders component with custom image element 1`] = `
   font-size: 0.875rem;
   line-height: 1.25rem;
   max-width: 32rem;
+  margin: 0;
+  margin-bottom: 1rem;
 }
 
 <article
@@ -150,8 +150,6 @@ exports[`EmptyState renders component with image 1`] = `
 
 .emotion-2 {
   display: block;
-  margin: 0;
-  margin-bottom: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #111B2B;
@@ -159,12 +157,12 @@ exports[`EmptyState renders component with image 1`] = `
   line-height: 2rem;
   text-rendering: optimizeLegibility;
   max-width: 32rem;
+  margin: 0;
+  margin-bottom: 1rem;
 }
 
 .emotion-3 {
   display: block;
-  margin: 0;
-  margin-bottom: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #111B2B;
@@ -176,6 +174,8 @@ exports[`EmptyState renders component with image 1`] = `
   font-size: 0.875rem;
   line-height: 1.25rem;
   max-width: 32rem;
+  margin: 0;
+  margin-bottom: 1rem;
 }
 
 <article
@@ -256,8 +256,6 @@ exports[`EmptyState renders the component 1`] = `
 
 .emotion-1 {
   display: block;
-  margin: 0;
-  margin-bottom: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #111B2B;
@@ -265,12 +263,12 @@ exports[`EmptyState renders the component 1`] = `
   line-height: 2rem;
   text-rendering: optimizeLegibility;
   max-width: 32rem;
+  margin: 0;
+  margin-bottom: 1rem;
 }
 
 .emotion-2 {
   display: block;
-  margin: 0;
-  margin-bottom: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #111B2B;
@@ -282,6 +280,8 @@ exports[`EmptyState renders the component 1`] = `
   font-size: 0.875rem;
   line-height: 1.25rem;
   max-width: 32rem;
+  margin: 0;
+  margin-bottom: 1rem;
 }
 
 <article
@@ -355,8 +355,6 @@ exports[`EmptyState renders the component with an additional class name 1`] = `
 
 .emotion-1 {
   display: block;
-  margin: 0;
-  margin-bottom: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #111B2B;
@@ -364,12 +362,12 @@ exports[`EmptyState renders the component with an additional class name 1`] = `
   line-height: 2rem;
   text-rendering: optimizeLegibility;
   max-width: 32rem;
+  margin: 0;
+  margin-bottom: 1rem;
 }
 
 .emotion-2 {
   display: block;
-  margin: 0;
-  margin-bottom: 1rem;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #111B2B;
@@ -381,6 +379,8 @@ exports[`EmptyState renders the component with an additional class name 1`] = `
   font-size: 0.875rem;
   line-height: 1.25rem;
   max-width: 32rem;
+  margin: 0;
+  margin-bottom: 1rem;
 }
 
 <article

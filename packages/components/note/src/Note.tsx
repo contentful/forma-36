@@ -1,7 +1,7 @@
 import { cx } from 'emotion';
 import React from 'react';
 import { Box } from '@contentful/f36-core';
-import type { CommonProps } from '@contentful/f36-core';
+import type { CommonProps, MarginProps } from '@contentful/f36-core';
 import { Button } from '@contentful/f36-button';
 import { Heading, Text } from '@contentful/f36-typography';
 import {
@@ -22,7 +22,7 @@ const icons = {
 };
 
 export type NoteVariant = 'negative' | 'positive' | 'primary' | 'warning';
-export interface NoteProps extends CommonProps {
+export interface NoteProps extends CommonProps, MarginProps {
   /**
    * Determines style variation of Note component
    */
@@ -45,7 +45,7 @@ export interface NoteProps extends CommonProps {
   onClose?: Function;
 }
 
-const _Note = (props: NoteProps, ref) => {
+const _Note = (props: NoteProps, ref: React.Ref<HTMLElement>) => {
   const {
     children,
     className,

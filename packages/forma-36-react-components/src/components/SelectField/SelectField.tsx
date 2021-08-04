@@ -5,6 +5,7 @@ import { ValidationMessage } from '@contentful/f36-validation-message';
 import { Label } from '@contentful/f36-forms';
 import type { LabelProps } from '@contentful/f36-forms';
 import { HelpText } from '@contentful/f36-helptext';
+import { Flex } from '@contentful/f36-core';
 
 import { Select } from '../Select';
 import type { SelectProps } from '../Select';
@@ -94,12 +95,12 @@ export const SelectField = ({
         {children}
       </Select>
       {helpText && (
-        <div className={styles['SelectField__hints']}>
-          {helpText && <HelpText marginTop="spacingS">{helpText}</HelpText>}
-        </div>
+        <Flex>
+          <HelpText marginTop="spacingXs">{helpText}</HelpText>
+        </Flex>
       )}
       {validationMessage && (
-        <ValidationMessage marginTop="spacingS">
+        <ValidationMessage marginTop="spacingXs">
           {validationMessage}
         </ValidationMessage>
       )}
