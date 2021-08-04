@@ -6,7 +6,7 @@ import format from 'date-fns/format';
 import { Label } from '@contentful/f36-forms';
 import { TextInput, ValidationMessage } from '@contentful/f36-components';
 
-const styles = {
+const getStyles = () => ({
   datePickerWrapper: css({
     maxHeight: 70,
   }),
@@ -17,7 +17,7 @@ const styles = {
       display: 'none',
     },
   }),
-};
+});
 
 export interface DatePickerProps {
   disabled: boolean;
@@ -45,6 +45,7 @@ export function Datepicker({
   disabled,
   ...otherProps
 }: DatePickerProps): React.ReactElement {
+  const styles = getStyles();
   const [validationError] = useState<string>();
   const pikaday = useRef<Pikaday>();
   const datePickerNode = useRef<HTMLInputElement | null>(null);
@@ -66,7 +67,7 @@ export function Datepicker({
         pikaday.current.destroy();
       }
     };
-  }, [otherProps]);
+  }, [otherProps, styles.datePicker]);
 
   const handleOpen = useCallback(() => {
     if (pikaday.current) {

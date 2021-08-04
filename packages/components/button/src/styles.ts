@@ -153,7 +153,7 @@ const sizeToStyles = (size: ButtonSize): CSSObject => {
   }
 };
 
-export const styles = {
+export const getStyles = () => ({
   button: ({
     variant,
     size,
@@ -190,4 +190,4 @@ export const styles = {
     marginLeft: tokens.spacingXs,
     fill: 'currentColor',
   }),
-};
+});

@@ -6,7 +6,7 @@ import { Icon, IconComponent } from '@contentful/f36-icon';
 import { Spinner } from '@contentful/f36-spinner';
 
 import type { ButtonVariant, ButtonSize } from './types';
-import { styles } from './styles';
+import { getStyles } from './styles';
 
 export interface ButtonProps
   extends Omit<HTMLProps<HTMLButtonElement & HTMLAnchorElement>, 'size'>,
@@ -55,6 +55,7 @@ export interface ButtonProps
 }
 
 const _Button = (props: ButtonProps, ref) => {
+  const styles = getStyles();
   const {
     children,
     className,
