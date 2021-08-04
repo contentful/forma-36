@@ -5,6 +5,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import '@contentful/forma-36-react-components/dist/styles.css';
 import '@contentful/forma-36-fcss/dist/styles.css';
 import { css } from '@emotion/core';
+
 import Header from './Header';
 import Promo from './Promo';
 import Container from './Container';
@@ -14,13 +15,10 @@ import './Layout.css';
 const styles = {
   main: css`
     display: flex;
-    flex: 2;
+    height: calc(100vh - 70px);
   `,
-  test: css`
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    overflow-y: hidden;
+  withPromo: css`
+    height: calc(100vh - 107px);
   `,
 };
 
@@ -51,8 +49,10 @@ const Layout = (props) => {
     }
   `);
 
+  const withPromo = !!data.site.siteMetadata.promoText;
+
   return (
-    <div css={styles.test}>
+    <>
       <Helmet
         title={data.site.siteMetadata.title}
         meta={[
@@ -69,7 +69,7 @@ const Layout = (props) => {
         <html lang="en" />
       </Helmet>
 
-      {data.site.siteMetadata.promoText && (
+      {withPromo && (
         <Promo
           text={data.site.siteMetadata.promoText}
           linkHref={data.site.siteMetadata.promoLink}
@@ -80,7 +80,7 @@ const Layout = (props) => {
 
       <Header />
 
-      <div css={styles.main}>
+      <div css={[styles.main, withPromo && styles.withPromo]}>
         <Navigation
           menuItems={data.site.siteMetadata && data.site.siteMetadata.menuLinks}
           currentPath={props && props.location && props.location.pathname}
@@ -92,13 +92,13 @@ const Layout = (props) => {
           {props.children}
         </Container>
       </div>
-    </div>
+    </>
   );
 };
 
 Layout.propTypes = {
   children: PropTypes.node,
-  location: PropTypes.object.isRequired,
+  location: PropTypes.object,
 };
 
 export default Layout;
