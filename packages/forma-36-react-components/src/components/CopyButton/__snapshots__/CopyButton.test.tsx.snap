@@ -1,13 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
+.emotion-2 > button[disabled] {
+  pointer-events: none;
+}
+
 .emotion-1 {
   display: inherit;
   outline: 0;
-}
-
-.emotion-2 > button[disabled] {
-  pointer-events: none;
 }
 
 .emotion-0 {
@@ -62,13 +62,13 @@ exports[`renders the component 1`] = `
 `;
 
 exports[`renders the component with a copy value 1`] = `
+.emotion-2 > button[disabled] {
+  pointer-events: none;
+}
+
 .emotion-1 {
   display: inherit;
   outline: 0;
-}
-
-.emotion-2 > button[disabled] {
-  pointer-events: none;
 }
 
 .emotion-0 {
@@ -124,13 +124,13 @@ exports[`renders the component with a copy value 1`] = `
 `;
 
 exports[`renders the component with an additional class name 1`] = `
+.emotion-2 > button[disabled] {
+  pointer-events: none;
+}
+
 .emotion-1 {
   display: inherit;
   outline: 0;
-}
-
-.emotion-2 > button[disabled] {
-  pointer-events: none;
 }
 
 .emotion-0 {

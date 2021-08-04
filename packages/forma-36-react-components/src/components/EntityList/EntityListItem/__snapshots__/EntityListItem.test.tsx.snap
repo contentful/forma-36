@@ -936,6 +936,36 @@ exports[`renders the component with a description 1`] = `
 `;
 
 exports[`renders the component with a drag handle 1`] = `
+.emotion-5 {
+  display: inherit;
+  outline: 0;
+}
+
+.emotion-0 {
+  display: inline-block;
+  fill: #5A657C;
+  height: 18px;
+  width: 18px;
+}
+
+.emotion-4 {
+  display: inline-block;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-weight: 600;
+  text-transform: uppercase;
+  -webkit-letter-spacing: 0.06rem;
+  -moz-letter-spacing: 0.06rem;
+  -ms-letter-spacing: 0.06rem;
+  letter-spacing: 0.06rem;
+  border-radius: 4px;
+  color: #006D23;
+  background-color: #CDF3C6;
+  padding: 0 0.5rem;
+  font-size: calc(1rem * (12 / 16));
+  line-height: 20px;
+  max-height: 20px;
+}
+
 .emotion-1 {
   position: absolute;
   width: 1px;
@@ -977,36 +1007,6 @@ exports[`renders the component with a drag handle 1`] = `
 .emotion-2:hover,
 .emotion-2:focus {
   background-color: #E7EBEE;
-}
-
-.emotion-5 {
-  display: inherit;
-  outline: 0;
-}
-
-.emotion-0 {
-  display: inline-block;
-  fill: #5A657C;
-  height: 18px;
-  width: 18px;
-}
-
-.emotion-4 {
-  display: inline-block;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  font-weight: 600;
-  text-transform: uppercase;
-  -webkit-letter-spacing: 0.06rem;
-  -moz-letter-spacing: 0.06rem;
-  -ms-letter-spacing: 0.06rem;
-  letter-spacing: 0.06rem;
-  border-radius: 4px;
-  color: #006D23;
-  background-color: #CDF3C6;
-  padding: 0 0.5rem;
-  font-size: calc(1rem * (12 / 16));
-  line-height: 20px;
-  max-height: 20px;
 }
 
 <li
@@ -1619,13 +1619,13 @@ exports[`renders the component with disabled actions 1`] = `
 `;
 
 exports[`renders the component with dropdownListElements 1`] = `
-.emotion-4 {
-  display: inline-block;
-}
-
 .emotion-6 {
   display: inherit;
   outline: 0;
+}
+
+.emotion-4 {
+  display: inline-block;
 }
 
 .emotion-0 {

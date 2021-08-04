@@ -41,15 +41,6 @@ exports[`renders the component 1`] = `
 `;
 
 exports[`renders the component with a copybutton 1`] = `
-.emotion-2 {
-  display: inherit;
-  outline: 0;
-}
-
-.emotion-3 > button[disabled] {
-  pointer-events: none;
-}
-
 .emotion-0 {
   display: inline-block;
   color: #111B2B;
@@ -58,6 +49,15 @@ exports[`renders the component with a copybutton 1`] = `
   font-weight: 500;
   line-height: 1.5;
   margin-bottom: calc(1rem * (8 / 16));
+}
+
+.emotion-3 > button[disabled] {
+  pointer-events: none;
+}
+
+.emotion-2 {
+  display: inherit;
+  outline: 0;
 }
 
 .emotion-1 {
@@ -522,15 +522,6 @@ exports[`renders the component with as textarea 1`] = `
 `;
 
 exports[`renders the component with characters count 1`] = `
-.emotion-1 {
-  margin: 0;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  color: #67728A;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  text-rendering: optimizeLegibility;
-}
-
 .emotion-0 {
   display: inline-block;
   color: #111B2B;
@@ -539,6 +530,15 @@ exports[`renders the component with characters count 1`] = `
   font-weight: 500;
   line-height: 1.5;
   margin-bottom: calc(1rem * (8 / 16));
+}
+
+.emotion-1 {
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  color: #67728A;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
 }
 
 <div
@@ -584,15 +584,6 @@ exports[`renders the component with characters count 1`] = `
 `;
 
 exports[`renders the component with help text 1`] = `
-.emotion-1 {
-  margin: 0;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  color: #67728A;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  text-rendering: optimizeLegibility;
-}
-
 .emotion-0 {
   display: inline-block;
   color: #111B2B;
@@ -601,6 +592,15 @@ exports[`renders the component with help text 1`] = `
   font-weight: 500;
   line-height: 1.5;
   margin-bottom: calc(1rem * (8 / 16));
+}
+
+.emotion-1 {
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  color: #67728A;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
 }
 
 <div

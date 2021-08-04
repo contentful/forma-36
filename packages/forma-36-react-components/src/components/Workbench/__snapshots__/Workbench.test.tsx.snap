@@ -1,11 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component (complex) 1`] = `
-.emotion-2 {
-  display: inherit;
-  outline: 0;
-}
-
 .emotion-0 {
   display: inline-block;
   fill: #0059C8;
@@ -22,6 +17,11 @@ exports[`renders the component (complex) 1`] = `
   font-size: 1.25rem;
   line-height: 2rem;
   text-rendering: optimizeLegibility;
+}
+
+.emotion-2 {
+  display: inherit;
+  outline: 0;
 }
 
 <div
@@ -117,11 +117,6 @@ exports[`renders the component (complex) 1`] = `
 `;
 
 exports[`renders the component (simple) 1`] = `
-.emotion-2 {
-  display: inherit;
-  outline: 0;
-}
-
 .emotion-0 {
   display: inline-block;
   fill: #0059C8;
@@ -138,6 +133,11 @@ exports[`renders the component (simple) 1`] = `
   font-size: 1.25rem;
   line-height: 2rem;
   text-rendering: optimizeLegibility;
+}
+
+.emotion-2 {
+  display: inherit;
+  outline: 0;
 }
 
 <div

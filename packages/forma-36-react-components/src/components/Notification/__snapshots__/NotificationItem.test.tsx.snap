@@ -1,16 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
-.emotion-2 {
-  display: inherit;
-  outline: 0;
-}
-
 .emotion-0 {
   display: inline-block;
   fill: #008539;
   height: 18px;
   width: 18px;
+}
+
+.emotion-2 {
+  display: inherit;
+  outline: 0;
 }
 
 .emotion-1 {
@@ -470,16 +470,16 @@ exports[`renders the component with a cta 1`] = `
 `;
 
 exports[`renders the component with a title and a body 1`] = `
-.emotion-2 {
-  display: inherit;
-  outline: 0;
-}
-
 .emotion-0 {
   display: inline-block;
   fill: #008539;
   height: 18px;
   width: 18px;
+}
+
+.emotion-2 {
+  display: inherit;
+  outline: 0;
 }
 
 .emotion-1 {
