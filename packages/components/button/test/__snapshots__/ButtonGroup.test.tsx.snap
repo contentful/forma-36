@@ -104,6 +104,7 @@ exports[`ButtonGroup renders additional class name 1`] = `
 >
   <button
     class="emotion-1"
+    data-test-id="cf-ui-button"
     type="button"
   >
     <span
@@ -114,6 +115,7 @@ exports[`ButtonGroup renders additional class name 1`] = `
   </button>
   <button
     class="emotion-1"
+    data-test-id="cf-ui-button"
     type="button"
   >
     <span
@@ -242,6 +244,7 @@ exports[`ButtonGroup renders collapsed buttons 1`] = `
 >
   <button
     class="emotion-1"
+    data-test-id="cf-ui-button"
     type="button"
   >
     <span
@@ -252,6 +255,7 @@ exports[`ButtonGroup renders collapsed buttons 1`] = `
   </button>
   <button
     class="emotion-1"
+    data-test-id="cf-ui-button"
     type="button"
   >
     <span
@@ -372,6 +376,7 @@ exports[`ButtonGroup renders separated buttons 1`] = `
 >
   <button
     class="emotion-1"
+    data-test-id="cf-ui-button"
     type="button"
   >
     <span
@@ -382,6 +387,7 @@ exports[`ButtonGroup renders separated buttons 1`] = `
   </button>
   <button
     class="emotion-1"
+    data-test-id="cf-ui-button"
     type="button"
   >
     <span

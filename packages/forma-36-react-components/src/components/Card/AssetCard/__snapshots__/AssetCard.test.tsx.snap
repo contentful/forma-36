@@ -508,8 +508,8 @@ exports[`renders the component with status 1`] = `
 .emotion-1 {
   display: inline-block;
   fill: #0059C8;
-  height: 32px;
-  width: 32px;
+  height: 18px;
+  width: 18px;
 }
 
 <div

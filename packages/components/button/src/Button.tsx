@@ -59,7 +59,7 @@ const _Button = (props: ButtonProps, ref) => {
   const {
     children,
     className,
-    testId,
+    testId = 'cf-ui-button',
     variant = 'secondary',
     size = 'medium',
     href,

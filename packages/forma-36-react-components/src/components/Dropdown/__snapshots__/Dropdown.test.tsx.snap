@@ -62,6 +62,7 @@ exports[`renders the component 1`] = `
     aria-haspopup="menu"
     class="emotion-1"
     data-node-id="dropdown-trigger-61728000"
+    data-test-id="cf-ui-button"
     type="button"
   >
     <span
@@ -135,6 +136,7 @@ exports[`renders the component as open 1`] = `
     aria-haspopup="menu"
     class="emotion-1"
     data-node-id="dropdown-trigger-61728000"
+    data-test-id="cf-ui-button"
     type="button"
   >
     <span
@@ -208,6 +210,7 @@ exports[`renders the component with a submenu 1`] = `
     aria-haspopup="menu"
     class="emotion-1"
     data-node-id="dropdown-trigger-61728000"
+    data-test-id="cf-ui-button"
     type="button"
   >
     <span
@@ -281,6 +284,7 @@ exports[`renders the component with an additional class name 1`] = `
     aria-haspopup="menu"
     class="emotion-1"
     data-node-id="dropdown-trigger-61728000"
+    data-test-id="cf-ui-button"
     type="button"
   >
     <span

@@ -118,6 +118,7 @@ exports[`renders the component (complex) 1`] = `
     >
       <button
         class="emotion-3"
+        data-test-id="cf-ui-button"
         type="button"
       >
         <span
@@ -278,6 +279,7 @@ exports[`renders the component (simple) 1`] = `
     >
       <button
         class="emotion-3"
+        data-test-id="cf-ui-button"
         type="button"
       >
         <span

@@ -1,6 +1,6 @@
 import React from 'react';
 import { SectionHeading } from '@contentful/f36-typography';
-import { Button } from '@contentful/f36-button';
+import { Button, ButtonGroup } from '@contentful/f36-button';
 import { Notification, NotificationsAPI } from './Notification';
 import { NotificationItem } from './NotificationItem';
 import { Flex } from '@contentful/f36-core';
@@ -50,7 +50,7 @@ export const withButtons = ({
   duration,
   ...args
 }: WithButtonArgs) => (
-  <div>
+  <ButtonGroup variant="spaced" spacing="spacingM">
     <Button
       variant="positive"
       onClick={() =>
@@ -62,7 +62,6 @@ export const withButtons = ({
       show success
     </Button>
     <Button
-      style={{ marginLeft: 20 }}
       variant="negative"
       onClick={() =>
         Notification.error(`${notificationText} ${getUniqueNumber()}`, {
@@ -73,7 +72,6 @@ export const withButtons = ({
       show error
     </Button>
     <Button
-      style={{ marginLeft: 20 }}
       variant="transparent"
       onClick={() =>
         Notification.warning(`${notificationText} ${getUniqueNumber()}`, {
@@ -84,7 +82,6 @@ export const withButtons = ({
       show warning
     </Button>
     <Button
-      style={{ marginLeft: 20 }}
       variant="transparent"
       onClick={() =>
         Notification.warning('Notification that should not be repeated', {
@@ -96,7 +93,6 @@ export const withButtons = ({
       show notification with the same id
     </Button>
     <Button
-      style={{ marginLeft: 20 }}
       variant="positive"
       onClick={() =>
         Notification.success(`${notificationText} ${getUniqueNumber()}`, {
@@ -107,7 +103,7 @@ export const withButtons = ({
     >
       show notification with title and CTA
     </Button>
-  </div>
+  </ButtonGroup>
 );
 
 withButtons.args = {

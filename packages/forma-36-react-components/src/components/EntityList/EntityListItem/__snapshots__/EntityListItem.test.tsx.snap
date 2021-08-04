@@ -1804,6 +1804,7 @@ exports[`renders the component with dropdownListElements 1`] = `
             aria-haspopup="menu"
             class="emotion-5"
             data-node-id="dropdown-trigger-61728000"
+            data-test-id="cf-ui-button"
             label="Actions"
             type="button"
           >
