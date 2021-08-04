@@ -4,12 +4,13 @@ import { getStyles } from './HelpText.styles';
 import {
   Box,
   CommonProps,
+  MarginProps,
   PolymorphicComponent,
   PolymorphicComponentProps,
   PolymorphicComponentWithRef,
 } from '@contentful/f36-core';
 
-export interface HelpTextInternalProps extends CommonProps {
+export interface HelpTextInternalProps extends CommonProps, MarginProps {
   children: React.ReactNode;
 }
 

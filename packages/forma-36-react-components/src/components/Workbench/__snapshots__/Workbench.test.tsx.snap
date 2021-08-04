@@ -1,6 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component (complex) 1`] = `
+.emotion-2 {
+  display: inline-block;
+}
+
 .emotion-0 {
   display: inline-block;
   fill: #0059C8;
@@ -19,9 +23,55 @@ exports[`renders the component (complex) 1`] = `
   text-rendering: optimizeLegibility;
 }
 
-.emotion-2 {
-  display: inherit;
-  outline: 0;
+.emotion-3 {
+  box-sizing: border-box;
+  border: 1px solid;
+  box-shadow: none;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 1;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  min-width: auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: 500;
+  outline: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+  color: #1B273A;
+  background: none;
+  border-color: transparent;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  padding: 0.5rem 1rem;
+  min-height: 40px;
+}
+
+.emotion-3:hover {
+  background-color: #F7F9FA;
+  color: #111B2B;
+}
+
+.emotion-3:active,
+.emotion-3:active:hover {
+  background-color: #F7F9FA;
+  border-color: #F7F9FA;
+}
+
+.emotion-3:focus {
+  background-color: none;
+  box-shadow: 0px 0px 0px 3px #E7EBEE;
 }
 
 <div
@@ -67,19 +117,13 @@ exports[`renders the component (complex) 1`] = `
       class="Workbench__header-actions"
     >
       <button
-        class="Button Button--muted Button--medium"
-        data-test-id="cf-ui-button"
+        class="emotion-3"
         type="button"
       >
         <span
-          class="emotion-2 Button__inner-wrapper"
-          tabindex="-1"
+          class="emotion-2"
         >
-          <span
-            class="Button__label"
-          >
-            Click
-          </span>
+          Click
         </span>
       </button>
     </div>
@@ -117,6 +161,10 @@ exports[`renders the component (complex) 1`] = `
 `;
 
 exports[`renders the component (simple) 1`] = `
+.emotion-2 {
+  display: inline-block;
+}
+
 .emotion-0 {
   display: inline-block;
   fill: #0059C8;
@@ -135,9 +183,55 @@ exports[`renders the component (simple) 1`] = `
   text-rendering: optimizeLegibility;
 }
 
-.emotion-2 {
-  display: inherit;
-  outline: 0;
+.emotion-3 {
+  box-sizing: border-box;
+  border: 1px solid;
+  box-shadow: none;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 1;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  min-width: auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: 500;
+  outline: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+  color: #1B273A;
+  background: none;
+  border-color: transparent;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  padding: 0.5rem 1rem;
+  min-height: 40px;
+}
+
+.emotion-3:hover {
+  background-color: #F7F9FA;
+  color: #111B2B;
+}
+
+.emotion-3:active,
+.emotion-3:active:hover {
+  background-color: #F7F9FA;
+  border-color: #F7F9FA;
+}
+
+.emotion-3:focus {
+  background-color: none;
+  box-shadow: 0px 0px 0px 3px #E7EBEE;
 }
 
 <div
@@ -183,19 +277,13 @@ exports[`renders the component (simple) 1`] = `
       class="Workbench__header-actions"
     >
       <button
-        class="Button Button--muted Button--medium"
-        data-test-id="cf-ui-button"
+        class="emotion-3"
         type="button"
       >
         <span
-          class="emotion-2 Button__inner-wrapper"
-          tabindex="-1"
+          class="emotion-2"
         >
-          <span
-            class="Button__label"
-          >
-            Click
-          </span>
+          Click
         </span>
       </button>
     </div>

@@ -4,7 +4,7 @@ import { ArrowDown } from '@contentful/f36-icons';
 import { axe } from '@/scripts/test/axeHelper';
 
 import { Workbench } from './Workbench';
-import { Button } from '../Button';
+import { Button } from '@contentful/f36-button';
 
 function TestWorkbench() {
   return (
@@ -12,7 +12,7 @@ function TestWorkbench() {
       <Workbench.Header
         title={'Page title'}
         icon={ArrowDown}
-        actions={<Button buttonType="muted">Click</Button>}
+        actions={<Button variant="transparent">Click</Button>}
       />
       <Workbench.Content>Workbench</Workbench.Content>
     </Workbench>
@@ -25,7 +25,7 @@ function TestComplextWorkbench() {
       <Workbench.Header
         title={'Page title'}
         icon={ArrowDown}
-        actions={<Button buttonType="muted">Click</Button>}
+        actions={<Button variant="transparent">Click</Button>}
       />
       <Workbench.Sidebar position="left">Left sidebar</Workbench.Sidebar>
       <Workbench.Content>Workbench</Workbench.Content>

@@ -5,7 +5,7 @@ import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 import { Dropdown } from './Dropdown';
 import { DropdownListItem } from './DropdownListItem/DropdownListItem';
-import { Button } from '../Button';
+import { Button } from '@contentful/f36-button';
 import { TextLink } from '@contentful/f36-text-link';
 import { DropdownList } from './DropdownList/DropdownList';
 
@@ -35,8 +35,8 @@ export const Default: Story = ({ submenuToggleLabel, ...args }) => {
       toggleElement={
         <Button
           size="small"
-          buttonType="muted"
-          indicateDropdown
+          variant="transparent"
+          isDropdown
           onClick={() => setOpen(!isOpen)}
         >
           Choose more options and settings
@@ -83,8 +83,8 @@ export const Scrollable: Story = (args) => {
       toggleElement={
         <Button
           size="small"
-          buttonType="muted"
-          indicateDropdown
+          variant="transparent"
+          isDropdown
           onClick={() => setOpen(!isOpen)}
         >
           toggle
@@ -128,12 +128,7 @@ export const DynamicContent: Story = (args) => {
       isOpen={isOpen}
       onClose={onClose}
       toggleElement={
-        <Button
-          size="small"
-          buttonType="muted"
-          onClick={onClick}
-          indicateDropdown
-        >
+        <Button size="small" variant="transparent" onClick={onClick} isDropdown>
           Choose more options and settings
         </Button>
       }
@@ -156,8 +151,8 @@ export const WithFullWidth: Story = (args) => {
       toggleElement={
         <Button
           size="small"
-          buttonType="muted"
-          indicateDropdown
+          variant="transparent"
+          isDropdown
           onClick={() => setOpen(!isOpen)}
         >
           Open dropdown
@@ -197,7 +192,7 @@ export const Overview: Story = () => (
         usePortal
         position="bottom-left"
         toggleElement={
-          <Button size="small" buttonType="muted" indicateDropdown>
+          <Button size="small" variant="transparent" isDropdown>
             Choose more options and settings
           </Button>
         }
@@ -237,7 +232,7 @@ export const Overview: Story = () => (
       isOpen
       isFullWidth
       toggleElement={
-        <Button size="small" buttonType="muted" indicateDropdown>
+        <Button size="small" variant="transparent" isDropdown>
           Open dropdown
         </Button>
       }

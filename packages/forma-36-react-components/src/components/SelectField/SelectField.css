@@ -16,8 +16,3 @@
   margin-left: auto;
   margin-bottom: calc(1rem * (8 / var(--font-base-default)));
 }
-
-.SelectField__validation-message,
-.SelectField__help-text {
-  margin-top: calc(1rem * (8 / var(--font-base-default)));
-}

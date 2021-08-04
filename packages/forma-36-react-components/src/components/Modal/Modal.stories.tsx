@@ -2,7 +2,7 @@ import React, { useState, MouseEventHandler } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 
 import { Modal, ModalProps } from './Modal';
-import { Button } from '../Button';
+import { Button } from '@contentful/f36-button';
 
 function fillArray(value: string, len: number) {
   if (len === 0) return [];
@@ -117,10 +117,10 @@ export const ControllerModal: Story<ModalProps> = (props) => {
             <Modal.Header title={title} onClose={onClose} />
             <Modal.Content>Hello from controlled modal window</Modal.Content>
             <Modal.Controls position="right">
-              <Button onClick={onClose} buttonType="muted">
+              <Button onClick={onClose} variant="transparent">
                 Close
               </Button>
-              <Button onClick={onClose} buttonType="positive">
+              <Button onClick={onClose} variant="positive">
                 Confirm
               </Button>
             </Modal.Controls>

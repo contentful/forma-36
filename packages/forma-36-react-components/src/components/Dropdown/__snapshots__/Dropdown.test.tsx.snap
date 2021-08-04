@@ -2,8 +2,55 @@
 
 exports[`renders the component 1`] = `
 .emotion-0 {
-  display: inherit;
-  outline: 0;
+  display: inline-block;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  border: 1px solid;
+  box-shadow: 0px 1px 0px rgb(25,37,50,0.08);
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 1;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  min-width: auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: 500;
+  outline: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+  color: #111B2B;
+  background-color: #ffffff;
+  border-color: #CFD9E0;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  padding: 0.5rem 1rem;
+  min-height: 40px;
+}
+
+.emotion-1:hover {
+  background-color: #F7F9FA;
+}
+
+.emotion-1:active,
+.emotion-1:active:hover {
+  background-color: #E7EBEE;
+}
+
+.emotion-1:focus {
+  box-shadow: 0px 0px 0px 3px #E7EBEE;
 }
 
 <div
@@ -13,20 +60,14 @@ exports[`renders the component 1`] = `
   <button
     aria-expanded="false"
     aria-haspopup="menu"
-    class="Button Button--primary Button--medium"
+    class="emotion-1"
     data-node-id="dropdown-trigger-61728000"
-    data-test-id="cf-ui-button"
     type="button"
   >
     <span
-      class="emotion-0 Button__inner-wrapper"
-      tabindex="-1"
+      class="emotion-0"
     >
-      <span
-        class="Button__label"
-      >
-        Toggle
-      </span>
+      Toggle
     </span>
   </button>
 </div>
@@ -34,8 +75,55 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component as open 1`] = `
 .emotion-0 {
-  display: inherit;
-  outline: 0;
+  display: inline-block;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  border: 1px solid;
+  box-shadow: 0px 1px 0px rgb(25,37,50,0.08);
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 1;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  min-width: auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: 500;
+  outline: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+  color: #111B2B;
+  background-color: #ffffff;
+  border-color: #CFD9E0;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  padding: 0.5rem 1rem;
+  min-height: 40px;
+}
+
+.emotion-1:hover {
+  background-color: #F7F9FA;
+}
+
+.emotion-1:active,
+.emotion-1:active:hover {
+  background-color: #E7EBEE;
+}
+
+.emotion-1:focus {
+  box-shadow: 0px 0px 0px 3px #E7EBEE;
 }
 
 <div
@@ -45,20 +133,14 @@ exports[`renders the component as open 1`] = `
   <button
     aria-expanded="true"
     aria-haspopup="menu"
-    class="Button Button--primary Button--medium"
+    class="emotion-1"
     data-node-id="dropdown-trigger-61728000"
-    data-test-id="cf-ui-button"
     type="button"
   >
     <span
-      class="emotion-0 Button__inner-wrapper"
-      tabindex="-1"
+      class="emotion-0"
     >
-      <span
-        class="Button__label"
-      >
-        Toggle
-      </span>
+      Toggle
     </span>
   </button>
 </div>
@@ -66,8 +148,55 @@ exports[`renders the component as open 1`] = `
 
 exports[`renders the component with a submenu 1`] = `
 .emotion-0 {
-  display: inherit;
-  outline: 0;
+  display: inline-block;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  border: 1px solid;
+  box-shadow: 0px 1px 0px rgb(25,37,50,0.08);
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 1;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  min-width: auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: 500;
+  outline: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+  color: #111B2B;
+  background-color: #ffffff;
+  border-color: #CFD9E0;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  padding: 0.5rem 1rem;
+  min-height: 40px;
+}
+
+.emotion-1:hover {
+  background-color: #F7F9FA;
+}
+
+.emotion-1:active,
+.emotion-1:active:hover {
+  background-color: #E7EBEE;
+}
+
+.emotion-1:focus {
+  box-shadow: 0px 0px 0px 3px #E7EBEE;
 }
 
 <div
@@ -77,20 +206,14 @@ exports[`renders the component with a submenu 1`] = `
   <button
     aria-expanded="true"
     aria-haspopup="menu"
-    class="Button Button--primary Button--medium"
+    class="emotion-1"
     data-node-id="dropdown-trigger-61728000"
-    data-test-id="cf-ui-button"
     type="button"
   >
     <span
-      class="emotion-0 Button__inner-wrapper"
-      tabindex="-1"
+      class="emotion-0"
     >
-      <span
-        class="Button__label"
-      >
-        Toggle
-      </span>
+      Toggle
     </span>
   </button>
 </div>
@@ -98,8 +221,55 @@ exports[`renders the component with a submenu 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 .emotion-0 {
-  display: inherit;
-  outline: 0;
+  display: inline-block;
+}
+
+.emotion-1 {
+  box-sizing: border-box;
+  border: 1px solid;
+  box-shadow: 0px 1px 0px rgb(25,37,50,0.08);
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 1;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  min-width: auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-weight: 500;
+  outline: none;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+  color: #111B2B;
+  background-color: #ffffff;
+  border-color: #CFD9E0;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  padding: 0.5rem 1rem;
+  min-height: 40px;
+}
+
+.emotion-1:hover {
+  background-color: #F7F9FA;
+}
+
+.emotion-1:active,
+.emotion-1:active:hover {
+  background-color: #E7EBEE;
+}
+
+.emotion-1:focus {
+  box-shadow: 0px 0px 0px 3px #E7EBEE;
 }
 
 <div
@@ -109,20 +279,14 @@ exports[`renders the component with an additional class name 1`] = `
   <button
     aria-expanded="false"
     aria-haspopup="menu"
-    class="Button Button--primary Button--medium"
+    class="emotion-1"
     data-node-id="dropdown-trigger-61728000"
-    data-test-id="cf-ui-button"
     type="button"
   >
     <span
-      class="emotion-0 Button__inner-wrapper"
-      tabindex="-1"
+      class="emotion-0"
     >
-      <span
-        class="Button__label"
-      >
-        Toggle
-      </span>
+      Toggle
     </span>
   </button>
 </div>

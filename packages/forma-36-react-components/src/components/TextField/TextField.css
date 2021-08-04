@@ -34,15 +34,11 @@
   margin-bottom: calc(1rem * (8 / var(--font-base-default)));
 }
 
-.TextField__validation-message,
-.TextField__help-text {
-  margin-top: calc(1rem * (8 / var(--font-base-default)));
-}
-
 .TextField__hints {
   display: flex;
   justify-content: space-between;
 }
+
 .TextField__count {
   margin-left: calc(1rem * (10 / var(--font-base-default)));
   flex-grow: 1;

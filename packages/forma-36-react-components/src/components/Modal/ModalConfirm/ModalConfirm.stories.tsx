@@ -3,7 +3,7 @@ import type { Meta, Story } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
 import { Text } from '@contentful/f36-typography';
 import { ModalConfirm, ModalConfirmProps } from './ModalConfirm';
-import { Button } from '../../Button';
+import { Button } from '@contentful/f36-button';
 
 import { TextInput } from '../../TextInput';
 
@@ -48,7 +48,7 @@ function SimpleDemo(props: ModalConfirmProps) {
   const [isShown, setShown] = useState(false);
   return (
     <div>
-      <Button buttonType="negative" onClick={() => setShown(true)}>
+      <Button variant="negative" onClick={() => setShown(true)}>
         Delete something
       </Button>
       <ModalConfirm
@@ -94,7 +94,7 @@ export function ComplexStory(props: ModalConfirmProps) {
 
   return (
     <div>
-      <Button buttonType="negative" onClick={() => setShown(true)}>
+      <Button variant="negative" onClick={() => setShown(true)}>
         Delete something
       </Button>
       <ModalConfirm

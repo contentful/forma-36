@@ -533,6 +533,7 @@ exports[`renders the component with characters count 1`] = `
 }
 
 .emotion-1 {
+  margin-top: 0.75rem;
   margin: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   color: #67728A;
@@ -572,7 +573,7 @@ exports[`renders the component with characters count 1`] = `
     class="TextField__hints"
   >
     <p
-      class="TextField__help-text TextField__count emotion-1"
+      class="TextField__count emotion-1"
       data-test-id="cf-ui-help-text"
     >
       0
@@ -779,6 +780,7 @@ exports[`renders the component with validation message 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  margin-top: 0.75rem;
 }
 
 .emotion-1 {
@@ -836,7 +838,7 @@ exports[`renders the component with validation message 1`] = `
     />
   </div>
   <div
-    class="TextField__validation-message emotion-3"
+    class="emotion-3"
     data-test-id="cf-ui-validation-message"
   >
     <svg

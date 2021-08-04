@@ -114,10 +114,8 @@ export const TextField = ({
           )}
           {countCharacters && textInputProps && textInputProps.maxLength && (
             <HelpText
-              className={cn(
-                styles['TextField__help-text'],
-                styles['TextField__count'],
-              )}
+              marginTop="spacingS"
+              className={cn(styles['TextField__count'])}
             >
               {valueState ? valueState.length : 0}/{textInputProps.maxLength}
             </HelpText>
@@ -125,7 +123,7 @@ export const TextField = ({
         </div>
       )}
       {validationMessage && (
-        <ValidationMessage className={styles['TextField__validation-message']}>
+        <ValidationMessage marginTop="spacingS">
           {validationMessage}
         </ValidationMessage>
       )}

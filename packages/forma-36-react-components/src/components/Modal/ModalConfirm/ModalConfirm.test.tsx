@@ -14,7 +14,7 @@ jest.mock(
     },
 );
 
-jest.mock('../../Button', () => ({
+jest.mock('@contentful/f36-button', () => ({
   Button: () => {
     return null;
   },

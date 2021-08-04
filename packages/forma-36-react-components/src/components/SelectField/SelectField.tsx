@@ -95,17 +95,11 @@ export const SelectField = ({
       </Select>
       {helpText && (
         <div className={styles['SelectField__hints']}>
-          {helpText && (
-            <HelpText className={styles['SelectField__help-text']}>
-              {helpText}
-            </HelpText>
-          )}
+          {helpText && <HelpText marginTop="spacingS">{helpText}</HelpText>}
         </div>
       )}
       {validationMessage && (
-        <ValidationMessage
-          className={styles['SelectField__validation-message']}
-        >
+        <ValidationMessage marginTop="spacingS">
           {validationMessage}
         </ValidationMessage>
       )}
