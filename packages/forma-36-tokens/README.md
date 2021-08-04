@@ -2,7 +2,7 @@
 
 The design tokens for Forma 36, available as JSON, CSS, and SCSS.
 
-These tokens are a key part of our design system and power both [`forma-36-react-components`](https://github.com/contentful/forma-36/tree/master/packages/form-36-react-components) and [`forma-36-fcss`](https://github.com/contentful/forma-36/tree/master/packages/form-36-fcss).
+These tokens are a key part of our design system and power both [`forma-36-react-components`](https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components) and [`forma-36-fcss`](https://github.com/contentful/forma-36/tree/master/packages/forma-36-fcss).
 
 ## Library usage
 

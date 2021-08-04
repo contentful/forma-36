@@ -64,7 +64,7 @@ exports[`renders the component (complex) 1`] = `
     class="Workbench__content-wrapper"
   >
     <aside
-      aria-label="Primary sidebar"
+      aria-label="Secondary sidebar"
       class="Workbench__sidebar Workbench__sidebar--left"
       data-test-id="cf-ui-workbench-sidebar-left"
     >
@@ -82,7 +82,7 @@ exports[`renders the component (complex) 1`] = `
       </div>
     </main>
     <aside
-      aria-label="Secondary sidebar"
+      aria-label="Primary sidebar"
       class="Workbench__sidebar Workbench__sidebar--right"
       data-test-id="cf-ui-workbench-sidebar-right"
     >

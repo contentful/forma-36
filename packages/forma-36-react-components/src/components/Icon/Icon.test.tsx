@@ -85,6 +85,18 @@ it('renders as a "white" icon', () => {
   expect(container.firstChild).toMatchSnapshot();
 });
 
+it('renders aria properties', () => {
+  const { container } = render(
+    <Icon
+      icon={'ArrowDown'}
+      aria-label="my label"
+      aria-labelledby="another label"
+    />,
+  );
+
+  expect(container.firstChild).toMatchSnapshot();
+});
+
 Object.keys(iconName).forEach((icon) => {
   it(`${icon} has no a11y issues`, async () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
