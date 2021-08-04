@@ -34,7 +34,7 @@
     "react-dom": "16.14.0",
     "react-helmet": "^5.2.1",
     "react-live": "^2.2.0",
-    "webpack-dev-server": "3.8.0"
+    "webpack-dev-server": "3.11.2"
   },
   "license": "MIT",
   "resolutions": {
