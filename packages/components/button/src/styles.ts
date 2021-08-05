@@ -158,6 +158,19 @@ const sizeToStyles = (size: ButtonSize): CSSObject => {
   }
 };
 
+const getButtonIconStyle = ({ alignIcon, hasChildren }) => {
+  const align = {
+    start: { marginRight: tokens.spacing2Xs },
+    end: { marginLeft: tokens.spacing2Xs },
+  };
+  const margin = hasChildren ? align[alignIcon] : {};
+
+  return css({
+    fill: 'currentColor',
+    ...margin,
+  });
+};
+
 export const styles = {
   button: ({
     variant,
@@ -190,9 +203,7 @@ export const styles = {
   buttonText: css({
     display: 'inline-block',
   }),
-  buttonIcon: css({
-    fill: 'currentColor',
-  }),
+  buttonIcon: getButtonIconStyle,
   dropdownIcon: css({
     marginLeft: tokens.spacingXs,
     fill: 'currentColor',

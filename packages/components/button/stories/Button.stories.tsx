@@ -181,31 +181,53 @@ export const Overview = ({ icon }) => {
 
       <Flex flexDirection="column" marginBottom="spacingL">
         <Box marginBottom="spacingS">
-          <SectionHeading as="h3">Button with dropdown</SectionHeading>
+          <SectionHeading as="h3">
+            Button with icon on right side
+          </SectionHeading>
         </Box>
         <Flex flexDirection="row" marginBottom="spacingM">
           <Box marginRight="spacingXs">
-            <Button variant="primary" isDropdown>
-              Primary with dropdown
+            <Button
+              variant="primary"
+              icon={<Icon as={icons.ChevronDown} />}
+              alignIcon="end"
+            >
+              Primary
             </Button>
           </Box>
           <Box marginRight="spacingXs">
-            <Button variant="secondary" isDropdown>
-              Secondary with dropdown
+            <Button
+              variant="secondary"
+              icon={<Icon as={icons.ChevronDown} />}
+              alignIcon="end"
+            >
+              Secondary
             </Button>
           </Box>
           <Box marginRight="spacingXs">
-            <Button variant="positive" isDropdown>
-              Positive with dropdown
+            <Button
+              variant="positive"
+              icon={<Icon as={icons.ChevronDown} />}
+              alignIcon="end"
+            >
+              Positive
             </Button>
           </Box>
           <Box marginRight="spacingXs">
-            <Button variant="negative" isDropdown>
-              Negative with dropdown
+            <Button
+              variant="negative"
+              icon={<Icon as={icons.ChevronDown} />}
+              alignIcon="end"
+            >
+              Negative
             </Button>
           </Box>
           <Box marginRight="spacingXs">
-            <Button variant="transparent" isDropdown>
+            <Button
+              variant="transparent"
+              icon={<Icon as={icons.ChevronDown} />}
+              alignIcon="end"
+            >
               Transparent
             </Button>
           </Box>
@@ -346,7 +368,7 @@ export const Overview = ({ icon }) => {
           </Button>
         </Flex>
         <Flex flexDirection="row" marginBottom="spacingS">
-          <Button icon={<Icon as={icons.Download} />} isDropdown isFullWidth>
+          <Button icon={<Icon as={icons.Download} />} isFullWidth>
             Full width button
           </Button>
         </Flex>

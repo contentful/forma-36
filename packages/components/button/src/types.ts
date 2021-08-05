@@ -40,13 +40,14 @@ export interface ButtonInternalProps extends CommonProps {
    */
   isDisabled?: boolean;
   /**
-   * Adds dropdown indicator icon
-   */
-  isDropdown?: boolean;
-  /**
    * Expects any of the icon components
    */
   icon?: React.ReactElement;
+  /**
+   * Determines the icon position
+   * @default start
+   */
+  alignIcon?: 'start' | 'end';
   /**
    * Adds loading indicator icon and disables interactions
    */

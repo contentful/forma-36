@@ -6,7 +6,6 @@ import {
   PolymorphicComponentProps,
   PolymorphicComponent,
 } from '@contentful/f36-core';
-import { ChevronDown } from '@contentful/f36-icons';
 import { Spinner } from '@contentful/f36-spinner';
 
 import type { ButtonInternalProps } from './types';
@@ -34,9 +33,9 @@ const _Button: PolymorphicComponentWithRef<
     icon,
     isActive,
     isDisabled,
-    isDropdown,
     isLoading,
     isFullWidth,
+    alignIcon = 'start',
     ...otherProps
   } = props;
 
@@ -51,17 +50,20 @@ const _Button: PolymorphicComponentWithRef<
     className,
   );
 
+  const iconContent = icon && !isLoading && (
+    <Flex as="span">
+      {React.cloneElement(icon, {
+        className: styles.buttonIcon({ alignIcon, hasChildren: !!children }),
+        size: `${size === 'large' ? 'medium' : 'small'}`,
+      })}
+    </Flex>
+  );
+
   const commonContent = (
     <>
-      {icon && !isLoading && (
-        <Flex as="span" marginRight={children ? 'spacing2Xs' : 'none'}>
-          {React.cloneElement(icon, {
-            className: styles.buttonIcon,
-            size: `${size === 'large' ? 'medium' : 'small'}`,
-          })}
-        </Flex>
-      )}
+      {icon && alignIcon === 'start' && iconContent}
       <span className={styles.buttonText}>{children}</span>
+      {icon && alignIcon === 'end' && iconContent}
       {isLoading && (
         <Spinner
           marginLeft={children || !isLoading ? 'spacingXs' : 'none'}
@@ -69,7 +71,6 @@ const _Button: PolymorphicComponentWithRef<
           variant={variant === 'secondary' ? 'default' : 'white'}
         />
       )}
-      {isDropdown && <ChevronDown className={styles.dropdownIcon} />}
     </>
   );
 
