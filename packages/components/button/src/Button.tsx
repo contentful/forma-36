@@ -1,6 +1,7 @@
 import React, { ElementType } from 'react';
 import { cx } from 'emotion';
 import {
+  usePrimitive,
   Flex,
   PolymorphicComponentWithRef,
   PolymorphicComponentProps,
@@ -29,16 +30,22 @@ const _Button: PolymorphicComponentWithRef<
     testId = 'cf-ui-button',
     variant = 'secondary',
     size = 'medium',
-    href,
-    type = 'button',
     icon,
     isActive,
     isDisabled,
     isLoading,
     isFullWidth,
     alignIcon = 'start',
+    style,
     ...otherProps
   } = props;
+
+  const { Element, primitiveProps } = usePrimitive({
+    testId,
+    as,
+    className,
+    style,
+  });
 
   const rootClassNames = cx(
     styles.button({
@@ -77,29 +84,28 @@ const _Button: PolymorphicComponentWithRef<
 
   if (as === 'a') {
     return (
-      <a
-        className={rootClassNames}
-        href={href}
-        data-test-id={testId}
+      <Element
         {...otherProps}
+        {...primitiveProps}
+        className={rootClassNames}
         ref={ref}
       >
         {commonContent}
-      </a>
+      </Element>
     );
   }
 
   return (
-    <DEFAULT_TAG
-      type={type}
-      className={rootClassNames}
-      disabled={isDisabled}
-      data-test-id={testId}
+    <Element
+      type="button"
       {...otherProps}
+      {...primitiveProps}
+      disabled={isDisabled}
+      className={rootClassNames}
       ref={ref}
     >
       {commonContent}
-    </DEFAULT_TAG>
+    </Element>
   );
 };
 
