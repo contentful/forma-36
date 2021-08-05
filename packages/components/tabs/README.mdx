@@ -8,6 +8,8 @@ storybook: 'https://f36-storybook.contentful.com/?path=/story/components-tabs--d
 typescript: ./src/TextLink.tsx
 ---
 
+import { Props } from '@contentful/f36-docs-utils';
+
 Tabs is a component that makes navigating between sections of related content possible, displaying one section at a time.
 
 ## Table of contents
@@ -24,7 +26,7 @@ Be aware that the users will not see all the content at the same time. Make sure
 ## Code examples
 
 ```jsx
-<Tabs role="tablist" withDivider>
+<Tabs role="tablist">
   <Tab id="first" href="https://contentful.com" selected>
     First
   </Tab>
@@ -40,7 +42,7 @@ Be aware that the users will not see all the content at the same time. Make sure
 ### with vertical divider
 
 ```jsx
-<Tabs role="tablist" withDivider dividerOrientation="vertical">
+<Tabs role="tablist" variant="vertical">
   <Tab id="first" href="https://contentful.com" selected>
     First
   </Tab>
@@ -72,7 +74,7 @@ Be aware that the users will not see all the content at the same time. Make sure
 ### used with TabPanel
 
 ```jsx
-<>
+<div>
   <Tabs role="tablist">
     <Tab id="first" selected={selected === 'first'}>
       First
@@ -87,7 +89,7 @@ Be aware that the users will not see all the content at the same time. Make sure
   {selected === 'second' && (
     <TabPanel id="second">Content for the second tab</TabPanel>
   )}
-</>
+</div>
 ```
 
 ## Content recommendations
@@ -95,3 +97,17 @@ Be aware that the users will not see all the content at the same time. Make sure
 - every Tab should have concise copy
 - all content within a Tab should be related to it's label
 - to ensure an optimal cognitive load for users, do not use more than six (6) Tabs at any given time
+
+## Props
+
+### Tabs
+
+<Props of="Tabs" />
+
+### Tab
+
+<Props of="Tab" />
+
+### TabPanel
+
+<Props of="Tab" />

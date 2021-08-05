@@ -17,8 +17,6 @@ export function Tabs({
   style,
 }: TabsProps): React.ReactElement {
   const styles = getTabsStyles({ className, variant });
-  console.log('variant', variant);
-  console.log('styles', styles);
 
   const elementProps = {
     'data-test-id': testId,
