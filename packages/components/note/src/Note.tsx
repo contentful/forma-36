@@ -1,7 +1,10 @@
 import { cx } from 'emotion';
 import React from 'react';
-import { Box } from '@contentful/f36-core';
-import type { CommonProps, MarginProps } from '@contentful/f36-core';
+import { Box, Flex } from '@contentful/f36-core';
+import type {
+  CommonProps,
+  PolymorphicComponentProps,
+} from '@contentful/f36-core';
 import { Button } from '@contentful/f36-button';
 import { Heading, Text } from '@contentful/f36-typography';
 import {
@@ -22,7 +25,8 @@ const icons = {
 };
 
 export type NoteVariant = 'negative' | 'positive' | 'primary' | 'warning';
-export interface NoteProps extends CommonProps, MarginProps {
+
+export type NoteOwnProps = CommonProps & {
   /**
    * Determines style variation of Note component
    */
@@ -43,16 +47,20 @@ export interface NoteProps extends CommonProps, MarginProps {
    * Callback for handling closing
    */
   onClose?: Function;
-}
+};
 
-const _Note = (props: NoteProps, ref: React.Ref<HTMLElement>) => {
+export type NoteProps = PolymorphicComponentProps<'article', NoteOwnProps>;
+
+/**
+ * @description: Note provides context and information about a situation or action.
+ */
+export const Note = React.forwardRef<HTMLElement, NoteProps>((props, ref) => {
   const {
     children,
     className,
     hasCloseButton,
     variant = 'primary',
     onClose,
-    style,
     testId = 'cf-ui-note',
     title,
     ...otherProps
@@ -68,15 +76,14 @@ const _Note = (props: NoteProps, ref: React.Ref<HTMLElement>) => {
   return (
     <Box
       as="article"
-      style={style}
       className={cx(styles.note({ variant, hasCloseButton }), className)}
       testId={testId}
-      ref={ref}
       {...otherProps}
+      ref={ref}
     >
-      <div className={styles.icon}>
+      <Flex marginRight="spacingS">
         <Icon variant={variant} size={title ? 'medium' : 'small'} />
-      </div>
+      </Flex>
       <div className={styles.info({ hasCloseButton })}>
         {title && (
           <Heading as="h2" className={styles.title}>
@@ -101,9 +108,6 @@ const _Note = (props: NoteProps, ref: React.Ref<HTMLElement>) => {
       )}
     </Box>
   );
-};
+});
 
-/**
- * @description: Note provides context and information about a situation or action.
- */
-export const Note = React.forwardRef(_Note);
+Note.displayName = 'Note';
