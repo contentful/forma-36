@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, Story } from '@storybook/react/types-6-0';
+import type { Meta } from '@storybook/react/types-6-0';
 
 import { ValidationMessage } from '../src/ValidationMessage';
 import type { ValidationMessageProps } from '../src/ValidationMessage';
@@ -19,10 +19,9 @@ export default {
   },
 } as Meta;
 
-export const Default: Story<ValidationMessageProps> = ({
-  children,
-  ...args
-}) => <ValidationMessage {...args}>{children}</ValidationMessage>;
+export const Default = ({ children, ref, ...args }: ValidationMessageProps) => (
+  <ValidationMessage {...args}>{children}</ValidationMessage>
+);
 
 Default.args = {
   children: 'Validation message',

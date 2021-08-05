@@ -16,13 +16,10 @@ export default {
   },
 } as Meta;
 
-interface Args extends HelpTextProps {
-  helpText: string;
-}
-export const Default = ({ helpText, ...args }: Args) => (
-  <HelpText {...args}>{helpText}</HelpText>
-);
+export const Default = ({ ref, children, ...args }: HelpTextProps) => {
+  return <HelpText {...args}>{children}</HelpText>;
+};
 
 Default.args = {
-  helpText: 'Lorem Ipsum dolor sit amet',
+  children: 'Lorem Ipsum dolor sit amet',
 };
