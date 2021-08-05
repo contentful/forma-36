@@ -19,6 +19,9 @@ const styles = {
   `,
 };
 
+// Check if it is in the browser or in the server.
+const isBrowser = typeof window !== 'undefined';
+
 const Footer = () => (
   <footer css={styles.footer}>
     <Flex>
@@ -52,7 +55,7 @@ const Footer = () => (
         </TextLink>
       </Flex>
 
-      {window.Osano && (
+      {isBrowser && window.Osano && (
         <Flex>
           <TextLink
             onClick={(e) => {

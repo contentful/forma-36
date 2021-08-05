@@ -75,7 +75,7 @@ pre {
   box-shadow: var(--glow-muted);
 }
 .osano-cm-dialog .osano-cm-button.osano-cm-save:hover {
-  background-color: var(--color-element-lightest);
+  background-color: var(--gray-100);
 }
 
 .osano-cm-dialog .osano-cm-button.osano-cm-accept-all {
