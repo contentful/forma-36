@@ -191,7 +191,7 @@ exports[`renders the component with an additional class name 1`] = `
 }
 
 <div
-  class="emotion-2 my-extra-class"
+  class="my-extra-class emotion-2"
   data-test-id="cf-ui-text-container"
 >
   <h1

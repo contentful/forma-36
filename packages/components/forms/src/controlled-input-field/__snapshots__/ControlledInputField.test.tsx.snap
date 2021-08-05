@@ -279,7 +279,7 @@ exports[`renders the component as checked 1`] = `
 }
 
 <div
-  class="emotion-5 my-extra-class"
+  class="my-extra-class emotion-5"
   data-test-id="cf-ui-controlled-input-field"
 >
   <div
@@ -447,7 +447,7 @@ exports[`renders the component as required 1`] = `
 }
 
 <div
-  class="emotion-6 my-extra-class"
+  class="my-extra-class emotion-6"
   data-test-id="cf-ui-controlled-input-field"
 >
   <div
@@ -668,15 +668,6 @@ exports[`renders the component in a disabled state 1`] = `
 `;
 
 exports[`renders the component with a help text 1`] = `
-.emotion-5 {
-  margin: 0;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  color: #67728A;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  text-rendering: optimizeLegibility;
-}
-
 .emotion-6 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -793,8 +784,18 @@ exports[`renders the component with a help text 1`] = `
   margin-bottom: 0;
 }
 
+.emotion-5 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  color: #67728A;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+}
+
 <div
-  class="emotion-6 my-extra-class"
+  class="my-extra-class emotion-6"
   data-test-id="cf-ui-controlled-input-field"
 >
   <div
@@ -969,6 +970,7 @@ exports[`renders the component with a light label variation 1`] = `
 .emotion-6 {
   display: block;
   margin: 0;
+  margin-bottom: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #111B2B;
@@ -980,7 +982,6 @@ exports[`renders the component with a light label variation 1`] = `
   font-size: 0.875rem;
   line-height: 1.25rem;
   color: #DA294A;
-  margin: 0;
 }
 
 .emotion-4 {
@@ -997,7 +998,7 @@ exports[`renders the component with a light label variation 1`] = `
 }
 
 <div
-  class="emotion-8 my-extra-class"
+  class="my-extra-class emotion-8"
   data-test-id="cf-ui-controlled-input-field"
 >
   <div
@@ -1204,6 +1205,7 @@ exports[`renders the component with a validation message 1`] = `
 .emotion-6 {
   display: block;
   margin: 0;
+  margin-bottom: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #111B2B;
@@ -1215,11 +1217,10 @@ exports[`renders the component with a validation message 1`] = `
   font-size: 0.875rem;
   line-height: 1.25rem;
   color: #DA294A;
-  margin: 0;
 }
 
 <div
-  class="emotion-8 my-extra-class"
+  class="my-extra-class emotion-8"
   data-test-id="cf-ui-controlled-input-field"
 >
   <div
@@ -1406,7 +1407,7 @@ exports[`renders the component with a value 1`] = `
 }
 
 <div
-  class="emotion-5 my-extra-class"
+  class="my-extra-class emotion-5"
   data-test-id="cf-ui-controlled-input-field"
 >
   <div
@@ -1567,7 +1568,7 @@ exports[`renders the component with an additional class name 1`] = `
 }
 
 <div
-  class="emotion-5 my-extra-class"
+  class="my-extra-class emotion-5"
   data-test-id="cf-ui-controlled-input-field"
 >
   <div

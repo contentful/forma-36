@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ButtonGroup renders additional class name 1`] = `
-.emotion-0 {
-  display: inline-block;
-}
-
 .emotion-6 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+}
+
+.emotion-0 {
+  display: inline-block;
 }
 
 .emotion-1 {
@@ -104,6 +104,7 @@ exports[`ButtonGroup renders additional class name 1`] = `
 >
   <button
     class="emotion-1"
+    data-test-id="cf-ui-button"
     type="button"
   >
     <span
@@ -114,6 +115,7 @@ exports[`ButtonGroup renders additional class name 1`] = `
   </button>
   <button
     class="emotion-1"
+    data-test-id="cf-ui-button"
     type="button"
   >
     <span
@@ -139,15 +141,15 @@ exports[`ButtonGroup renders additional class name 1`] = `
 `;
 
 exports[`ButtonGroup renders collapsed buttons 1`] = `
-.emotion-0 {
-  display: inline-block;
-}
-
 .emotion-6 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+}
+
+.emotion-0 {
+  display: inline-block;
 }
 
 .emotion-1 {
@@ -242,6 +244,7 @@ exports[`ButtonGroup renders collapsed buttons 1`] = `
 >
   <button
     class="emotion-1"
+    data-test-id="cf-ui-button"
     type="button"
   >
     <span
@@ -252,6 +255,7 @@ exports[`ButtonGroup renders collapsed buttons 1`] = `
   </button>
   <button
     class="emotion-1"
+    data-test-id="cf-ui-button"
     type="button"
   >
     <span
@@ -277,15 +281,15 @@ exports[`ButtonGroup renders collapsed buttons 1`] = `
 `;
 
 exports[`ButtonGroup renders separated buttons 1`] = `
-.emotion-0 {
-  display: inline-block;
-}
-
 .emotion-6 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
+}
+
+.emotion-0 {
+  display: inline-block;
 }
 
 .emotion-3 {
@@ -372,6 +376,7 @@ exports[`ButtonGroup renders separated buttons 1`] = `
 >
   <button
     class="emotion-1"
+    data-test-id="cf-ui-button"
     type="button"
   >
     <span
@@ -382,6 +387,7 @@ exports[`ButtonGroup renders separated buttons 1`] = `
   </button>
   <button
     class="emotion-1"
+    data-test-id="cf-ui-button"
     type="button"
   >
     <span

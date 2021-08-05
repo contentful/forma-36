@@ -8,7 +8,7 @@ import {
 
 import { EditorToolbar } from './EditorToolbar';
 import type { EditorToolbarProps } from './EditorToolbar';
-import { Button } from '../Button';
+import { Button } from '@contentful/f36-button';
 import { EditorToolbarButton } from './EditorToolbarButton/EditorToolbarButton';
 
 export default {
@@ -50,7 +50,7 @@ export const Default: Story<EditorToolbarProps> = (args) => (
       />
     </div>
     <div>
-      <Button size="small" buttonType="muted">
+      <Button size="small" variant="transparent">
         Example button
       </Button>
     </div>

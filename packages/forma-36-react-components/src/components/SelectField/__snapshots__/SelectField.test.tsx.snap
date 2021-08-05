@@ -197,15 +197,6 @@ exports[`renders the component as required 1`] = `
 `;
 
 exports[`renders the component with a help text 1`] = `
-.emotion-2 {
-  margin: 0;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  color: #67728A;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  text-rendering: optimizeLegibility;
-}
-
 .emotion-0 {
   display: inline-block;
   color: #111B2B;
@@ -221,6 +212,23 @@ exports[`renders the component with a help text 1`] = `
   fill: #5A657C;
   height: 18px;
   width: 18px;
+}
+
+.emotion-3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.emotion-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  color: #67728A;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
 }
 
 <div
@@ -268,10 +276,10 @@ exports[`renders the component with a help text 1`] = `
     </svg>
   </div>
   <div
-    class="SelectField__hints"
+    class="emotion-3"
   >
     <p
-      class="SelectField__help-text emotion-2"
+      class="emotion-2"
       data-test-id="cf-ui-help-text"
     >
       please select an option
@@ -303,6 +311,7 @@ exports[`renders the component with a validation message 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  margin-top: 0.5rem;
 }
 
 .emotion-2 {
@@ -319,6 +328,7 @@ exports[`renders the component with a validation message 1`] = `
 .emotion-3 {
   display: block;
   margin: 0;
+  margin-bottom: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #111B2B;
@@ -330,7 +340,6 @@ exports[`renders the component with a validation message 1`] = `
   font-size: 0.875rem;
   line-height: 1.25rem;
   color: #DA294A;
-  margin: 0;
 }
 
 <div
@@ -378,7 +387,7 @@ exports[`renders the component with a validation message 1`] = `
     </svg>
   </div>
   <div
-    class="SelectField__validation-message emotion-4"
+    class="emotion-4"
     data-test-id="cf-ui-validation-message"
   >
     <svg

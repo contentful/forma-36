@@ -78,7 +78,7 @@ const TextLink: PolymorphicComponentWithRef<
   const iconContent = icon ? (
     <Flex as="span">
       {React.cloneElement(icon, {
-        className: cx(icon.props.className, styles.textLinkIcon),
+        className: cx(icon.props.className, styles.textLinkIcon()),
         size: 'tiny',
       })}
     </Flex>

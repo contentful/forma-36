@@ -1,17 +1,15 @@
 import { cx } from 'emotion';
 import React from 'react';
-import { styles } from './HelpText.styles';
+import { getStyles } from './HelpText.styles';
 import {
   Box,
-  CommonProps,
+  FlexInternalProps,
   PolymorphicComponent,
   PolymorphicComponentProps,
   PolymorphicComponentWithRef,
 } from '@contentful/f36-core';
 
-export interface HelpTextInternalProps extends CommonProps {
-  children: React.ReactNode;
-}
+export type HelpTextInternalProps = FlexInternalProps;
 
 export type HelpTextProps = PolymorphicComponentProps<
   React.ElementType,
@@ -27,12 +25,15 @@ const _HelpText: PolymorphicComponentWithRef<
   { children, className, testId = 'cf-ui-help-text', ...otherProps },
   ref,
 ) => {
+  const styles = getStyles();
   return (
     <Box
       as={DEFAULT_TAG}
       testId={testId}
       ref={ref}
-      className={cx(styles.helpText, className)}
+      className={cx(styles.root, className)}
+      marginTop="none"
+      marginBottom="none"
       {...otherProps}
     >
       {children}

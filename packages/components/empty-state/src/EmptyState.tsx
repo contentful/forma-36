@@ -1,6 +1,6 @@
 import { cx } from 'emotion';
 import React from 'react';
-import { styles } from './EmptyState.styles';
+import { getStyles } from './EmptyState.styles';
 import { Box } from '@contentful/f36-core';
 import type { CommonProps } from '@contentful/f36-core';
 import type { HeadingElement } from '@contentful/f36-typography';
@@ -70,6 +70,8 @@ const _EmptyState = (props: EmptyStateProps, ref) => {
     descriptionProps,
     ...otherProps
   } = props;
+
+  const styles = getStyles();
 
   return (
     <Box

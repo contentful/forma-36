@@ -1,6 +1,4 @@
-import { css } from 'emotion';
 import React, { forwardRef } from 'react';
-import tokens from '@contentful/f36-tokens';
 import { Flex } from '@contentful/f36-core';
 import type {
   FlexInternalProps,
@@ -10,21 +8,9 @@ import type {
 } from '@contentful/f36-core';
 import { ErrorCircleOutline } from '@contentful/f36-icons';
 import { Text } from '@contentful/f36-typography';
+import { getStyles } from './ValidationMessage.styles';
 
 const DEFAULT_TAG = 'div';
-
-const styles = {
-  icon: css({
-    marginRight: tokens.spacing2Xs,
-    marginTop: `calc(${tokens.spacing2Xs} / 2)`,
-    minHeight: '18px',
-    minWidth: '18px',
-  }),
-  text: css({
-    color: tokens.colorNegative,
-    margin: 0,
-  }),
-};
 
 export type ValidationMessageInternalProps = FlexInternalProps;
 
@@ -37,18 +23,16 @@ const _ValidationMessage: PolymorphicComponentWithRef<
   ValidationMessageInternalProps,
   typeof DEFAULT_TAG
 > = (
-  { className, children, testId = 'cf-ui-validation-message', ...otherProps },
+  { children, testId = 'cf-ui-validation-message', ...otherProps },
   forwardedRef,
 ) => {
+  const styles = getStyles();
   return (
-    <Flex
-      {...otherProps}
-      className={className}
-      ref={forwardedRef}
-      testId={testId}
-    >
+    <Flex {...otherProps} ref={forwardedRef} testId={testId}>
       <ErrorCircleOutline className={styles.icon} variant="negative" />
-      <Text className={styles.text}>{children}</Text>
+      <Text className={styles.text} marginBottom="none">
+        {children}
+      </Text>
     </Flex>
   );
 };

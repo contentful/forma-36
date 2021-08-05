@@ -1,7 +1,7 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 
-export const styles = {
+export const getStyles = () => ({
   emptyState: css({
     display: 'flex',
     justifyContent: 'center',
@@ -26,4 +26,4 @@ export const styles = {
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   }),
-};
+});

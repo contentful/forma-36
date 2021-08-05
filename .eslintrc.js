@@ -1,16 +1,18 @@
+const rulesDirPlugin = require('eslint-plugin-rulesdir');
+rulesDirPlugin.RULES_DIR = './scripts/eslint-rules/custom';
+
 module.exports = {
   parser: '@typescript-eslint/parser',
   extends: [
     'eslint:recommended',
+    'prettier',
     'plugin:@typescript-eslint/recommended',
-    'prettier/@typescript-eslint',
     'plugin:react/recommended',
     'plugin:jsx-a11y/recommended',
-    'prettier/react',
     'plugin:jest/recommended',
     'plugin:jest/style',
   ],
-  plugins: ['import', 'react-hooks', 'jest-dom', 'testing-library'],
+  plugins: ['import', 'react-hooks', 'jest-dom', 'testing-library', 'rulesdir'],
   parserOptions: {
     ecmaVersion: 7,
     project: './tsconfig.json',
@@ -62,6 +64,7 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'warn',
     'import/named': 'error',
     'import/no-default-export': 'error',
+    'rulesdir/emotion-in-function': 'error',
   },
   overrides: [
     {
@@ -97,6 +100,12 @@ module.exports = {
       ],
       rules: {
         'import/no-default-export': 'off',
+      },
+    },
+    {
+      files: ['**/forma-36-website/**/*'],
+      rules: {
+        'rulesdir/emotion-in-function': 'off',
       },
     },
   ],

@@ -3,7 +3,7 @@ import tokens from '@contentful/f36-tokens';
 import { ArrowDown } from '@contentful/f36-icons';
 
 import { Workbench, WorkbenchProps } from './Workbench';
-import { Button } from '../Button';
+import { Button } from '@contentful/f36-button';
 
 export default {
   title: 'components/Workbench',
@@ -25,7 +25,7 @@ export const basic = (args: WorkbenchProps) => (
         title={args['header title']}
         description={args['header description']}
         icon={ArrowDown}
-        actions={<Button buttonType="muted">Click</Button>}
+        actions={<Button variant="transparent">Click</Button>}
       />
       <Workbench.Content type="default">
         <div
@@ -43,7 +43,7 @@ export const withLeftSidebar = (args: WorkbenchProps) => (
     <Workbench.Header
       title={args['header title']}
       icon={ArrowDown}
-      actions={<Button buttonType="muted">Click</Button>}
+      actions={<Button variant="transparent">Click</Button>}
     />
     <Workbench.Sidebar position="left">
       <div style={{ height: '2000px', backgroundColor: tokens.colorRedBase }}>
@@ -63,7 +63,7 @@ export const withRightSidebar = (args: WorkbenchProps) => (
     <Workbench.Header
       title={'Page title'}
       icon={ArrowDown}
-      actions={<Button buttonType="muted">Click</Button>}
+      actions={<Button variant="transparent">Click</Button>}
     />
     <Workbench.Content type="default">
       <div style={{ height: '2000px', backgroundColor: tokens.colorBlueBase }}>
@@ -83,7 +83,7 @@ export const withLeftAndRightSidebar = (args: WorkbenchProps) => (
     <Workbench.Header
       title={'Page title'}
       icon={ArrowDown}
-      actions={<Button buttonType="muted">Click</Button>}
+      actions={<Button variant="transparent">Click</Button>}
     />
     <Workbench.Sidebar position="left">
       <div style={{ height: '2000px', backgroundColor: tokens.colorRedBase }}>
@@ -109,7 +109,7 @@ export const withBackButton = (args: WorkbenchProps) => (
       onBack={() => {}}
       title={'Page title'}
       icon={ArrowDown}
-      actions={<Button buttonType="muted">Click</Button>}
+      actions={<Button variant="transparent">Click</Button>}
     />
     <Workbench.Content type="default">
       <div style={{ height: '2000px', backgroundColor: tokens.colorBlueBase }}>

@@ -85,10 +85,11 @@ const textLink = ({
     },
   });
 
-const textLinkIcon = css({
-  fill: 'currentColor',
-  transition: `fill ${tokens.transitionDurationShort} ${tokens.transitionEasingDefault}`,
-});
+const textLinkIcon = () =>
+  css({
+    fill: 'currentColor',
+    transition: `fill ${tokens.transitionDurationShort} ${tokens.transitionEasingDefault}`,
+  });
 
 const textLinkText = ({ alignIcon }: Pick<TextLinkProps, 'alignIcon'>) => {
   if (alignIcon === 'start') {

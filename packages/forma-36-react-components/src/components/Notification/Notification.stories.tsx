@@ -1,6 +1,6 @@
 import React from 'react';
 import { SectionHeading } from '@contentful/f36-typography';
-import { Button } from '../Button';
+import { Button, ButtonGroup } from '@contentful/f36-button';
 import { Notification, NotificationsAPI } from './Notification';
 import { NotificationItem } from './NotificationItem';
 import { Flex } from '@contentful/f36-core';
@@ -50,9 +50,9 @@ export const withButtons = ({
   duration,
   ...args
 }: WithButtonArgs) => (
-  <div>
+  <ButtonGroup variant="spaced" spacing="spacingM">
     <Button
-      buttonType="positive"
+      variant="positive"
       onClick={() =>
         Notification.success(`${notificationText} ${getUniqueNumber()}`, {
           duration: duration,
@@ -62,8 +62,7 @@ export const withButtons = ({
       show success
     </Button>
     <Button
-      style={{ marginLeft: 20 }}
-      buttonType="negative"
+      variant="negative"
       onClick={() =>
         Notification.error(`${notificationText} ${getUniqueNumber()}`, {
           duration: duration,
@@ -73,8 +72,7 @@ export const withButtons = ({
       show error
     </Button>
     <Button
-      style={{ marginLeft: 20 }}
-      buttonType="muted"
+      variant="transparent"
       onClick={() =>
         Notification.warning(`${notificationText} ${getUniqueNumber()}`, {
           duration: duration,
@@ -84,8 +82,7 @@ export const withButtons = ({
       show warning
     </Button>
     <Button
-      style={{ marginLeft: 20 }}
-      buttonType="muted"
+      variant="transparent"
       onClick={() =>
         Notification.warning('Notification that should not be repeated', {
           duration: duration,
@@ -96,8 +93,7 @@ export const withButtons = ({
       show notification with the same id
     </Button>
     <Button
-      style={{ marginLeft: 20 }}
-      buttonType="positive"
+      variant="positive"
       onClick={() =>
         Notification.success(`${notificationText} ${getUniqueNumber()}`, {
           duration: duration,
@@ -107,7 +103,7 @@ export const withButtons = ({
     >
       show notification with title and CTA
     </Button>
-  </div>
+  </ButtonGroup>
 );
 
 withButtons.args = {

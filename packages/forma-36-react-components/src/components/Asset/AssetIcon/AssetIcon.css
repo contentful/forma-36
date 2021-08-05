@@ -1,7 +1,8 @@
 .AssetIcon {
   display: inline-block;
-  width: 39px;
-  height: 39px;
+  /* todo: should we just create a custom size property for Icon component */
+  width: 39px !important;
+  height: 39px !important;
 }
 
 .AssetIcon g,

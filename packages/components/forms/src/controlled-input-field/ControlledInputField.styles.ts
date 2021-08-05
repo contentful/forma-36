@@ -1,7 +1,7 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 
-export const styles = {
+export const getStyles = () => ({
   rootOrLabelDisabled: css({
     opacity: 0.7,
     cursor: 'not-allowed',
@@ -17,4 +17,4 @@ export const styles = {
   labelLight: css({
     fontWeight: tokens.fontWeightNormal,
   }),
-};
+});

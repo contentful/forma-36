@@ -2,7 +2,7 @@
 
 exports[`renders the component 1`] = `
 <div
-  class="css-vzailh-className"
+  class="css-1ajnpvg-className-className"
 >
   Box
 </div>
@@ -10,7 +10,7 @@ exports[`renders the component 1`] = `
 
 exports[`renders the component with an additional class name 1`] = `
 <div
-  class="css-vzailh-className my-extra-class"
+  class="my-extra-class css-1ajnpvg-className-className"
 >
   Box
 </div>

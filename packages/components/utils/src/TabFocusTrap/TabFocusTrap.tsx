@@ -6,20 +6,23 @@ export interface TabFocusTrapProps {
   children: React.ReactNode;
 }
 
-const styles = {
-  root: css({
-    display: 'inherit',
-    outline: 0,
-  }),
-};
-
 export function TabFocusTrap({
   className,
   children,
   ...otherProps
 }: TabFocusTrapProps): React.ReactElement {
   return (
-    <span tabIndex={-1} className={cx(styles.root, className)} {...otherProps}>
+    <span
+      tabIndex={-1}
+      className={cx(
+        css({
+          display: 'inherit',
+          outline: 0,
+        }),
+        className,
+      )}
+      {...otherProps}
+    >
       {children}
     </span>
   );

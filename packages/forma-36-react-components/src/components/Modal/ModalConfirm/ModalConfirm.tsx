@@ -5,7 +5,7 @@ import type { ModalSizeType } from '../Modal';
 import type { ModalHeaderProps } from '../ModalHeader/ModalHeader';
 import type { ModalContentProps } from '../ModalContent/ModalContent';
 import type { ModalControlsProps } from '../ModalControls/ModalControls';
-import { Button } from '../../Button';
+import { Button } from '@contentful/f36-button';
 
 export interface ModalConfirmProps {
   /**
@@ -47,7 +47,7 @@ export interface ModalConfirmProps {
   /**
    * The intent of the ModalConfirm. Used for the secondary Button.
    */
-  secondaryIntent?: 'primary' | 'positive' | 'negative' | 'muted';
+  secondaryIntent?: 'primary' | 'positive' | 'negative' | 'transparent';
   /**
       Size of the modal window
     */
@@ -134,9 +134,9 @@ export function ModalConfirm({
   const confirmButton = confirmLabel ? (
     <Button
       testId={confirmTestId}
-      disabled={isConfirmDisabled}
-      loading={isConfirmLoading}
-      buttonType={intent}
+      isDisabled={isConfirmDisabled}
+      isLoading={isConfirmLoading}
+      variant={intent}
       onClick={() => onConfirm()}
     >
       {confirmLabel}
@@ -146,9 +146,9 @@ export function ModalConfirm({
   const secondaryButton = secondaryLabel ? (
     <Button
       testId={secondaryTestId}
-      disabled={isSecondaryDisabled}
-      loading={isSecondaryLoading}
-      buttonType={secondaryIntent}
+      isDisabled={isSecondaryDisabled}
+      isLoading={isSecondaryLoading}
+      variant={secondaryIntent}
       onClick={() => onSecondary && onSecondary()}
     >
       {secondaryLabel}
@@ -156,7 +156,11 @@ export function ModalConfirm({
   ) : null;
 
   const cancelButton = cancelLabel ? (
-    <Button testId={cancelTestId} buttonType="muted" onClick={() => onCancel()}>
+    <Button
+      testId={cancelTestId}
+      variant="transparent"
+      onClick={() => onCancel()}
+    >
       {cancelLabel}
     </Button>
   ) : null;

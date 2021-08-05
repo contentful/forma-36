@@ -55,13 +55,13 @@ exports[`renders the component 1`] = `
 `;
 
 exports[`renders the component as active 1`] = `
+.emotion-2 > button[disabled] {
+  pointer-events: none;
+}
+
 .emotion-1 {
   display: inherit;
   outline: 0;
-}
-
-.emotion-2 > button[disabled] {
-  pointer-events: none;
 }
 
 .emotion-0 {
@@ -169,13 +169,13 @@ exports[`renders the component as disabled 1`] = `
 `;
 
 exports[`renders the component with a tooltip 1`] = `
+.emotion-2 > button[disabled] {
+  pointer-events: none;
+}
+
 .emotion-1 {
   display: inherit;
   outline: 0;
-}
-
-.emotion-2 > button[disabled] {
-  pointer-events: none;
 }
 
 .emotion-0 {
@@ -282,13 +282,13 @@ exports[`renders the component with an additional class name 1`] = `
 `;
 
 exports[`renders with a dropdown indicator 1`] = `
+.emotion-3 > button[disabled] {
+  pointer-events: none;
+}
+
 .emotion-2 {
   display: inherit;
   outline: 0;
-}
-
-.emotion-3 > button[disabled] {
-  pointer-events: none;
 }
 
 .emotion-0 {
