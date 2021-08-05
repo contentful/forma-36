@@ -60,17 +60,8 @@ const fills: { [key in IconVariant]: string } = {
   white: tokens.colorWhite,
 };
 
-type AsOrChildren =
-  | {
-      as: IconComponent;
-      children?: never;
-    }
-  | {
-      as?: never;
-      children: ReactElement | ReactElement[];
-    };
-
 export type IconInternalProps = CommonProps & {
+  children?: ReactElement | ReactElement[];
   /**
    * Determines the size of the icon
    */
@@ -89,15 +80,16 @@ export type IconInternalProps = CommonProps & {
   viewBox?: SVGAttributes<SVGSVGElement>['viewBox'];
 };
 
-export type IconProps = PolymorphicComponentProps<
-  typeof DEFAULT_TAG,
+export type IconProps<
+  E extends React.ElementType = IconComponent
+> = PolymorphicComponentProps<
+  E,
   IconInternalProps,
   'as' | 'children' | 'width' | 'height'
-> &
-  AsOrChildren;
+>;
 
 const useAriaHidden = (
-  props: Pick<IconProps, 'aria-label' | 'aria-labelledby'>,
+  props: Pick<IconProps<typeof DEFAULT_TAG>, 'aria-label' | 'aria-labelledby'>,
 ) => {
   const ariaLabel = props['aria-label'];
   const ariaLabelBy = props['aria-labelledby'];

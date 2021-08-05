@@ -12,12 +12,13 @@ import {
   Spreadsheet,
   Video,
 } from '@contentful/f36-icons';
-import type { IconProps } from '@contentful/f36-icon';
+import type { GeneratedIconProps } from '@contentful/f36-icon';
 import { AssetType } from '../Asset';
 import styles from './AssetIcon.css';
 import cn from 'classnames';
 
-export interface AssetIconProps extends Omit<IconProps, 'illustration'> {
+export interface AssetIconProps
+  extends Omit<GeneratedIconProps, 'illustration' | 'ref'> {
   type?: AssetType;
 }
 
