@@ -47,8 +47,8 @@ exports[`renders the component (complex) 1`] = `
   outline: none;
   -webkit-text-decoration: none;
   text-decoration: none;
-  -webkit-transition: background-color 0.2s ease-in-out;
-  transition: background-color 0.2s ease-in-out;
+  -webkit-transition: background 0.1s ease-in-out, opacity 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  transition: background 0.1s ease-in-out, opacity 0.2s ease-in-out, border-color 0.2s ease-in-out;
   color: #1B273A;
   background: none;
   border-color: transparent;
@@ -61,6 +61,11 @@ exports[`renders the component (complex) 1`] = `
 .emotion-3:hover {
   background-color: #F7F9FA;
   color: #111B2B;
+}
+
+.emotion-3:active {
+  -webkit-transition: none;
+  transition: none;
 }
 
 .emotion-3:active,
@@ -208,8 +213,8 @@ exports[`renders the component (simple) 1`] = `
   outline: none;
   -webkit-text-decoration: none;
   text-decoration: none;
-  -webkit-transition: background-color 0.2s ease-in-out;
-  transition: background-color 0.2s ease-in-out;
+  -webkit-transition: background 0.1s ease-in-out, opacity 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  transition: background 0.1s ease-in-out, opacity 0.2s ease-in-out, border-color 0.2s ease-in-out;
   color: #1B273A;
   background: none;
   border-color: transparent;
@@ -222,6 +227,11 @@ exports[`renders the component (simple) 1`] = `
 .emotion-3:hover {
   background-color: #F7F9FA;
   color: #111B2B;
+}
+
+.emotion-3:active {
+  -webkit-transition: none;
+  transition: none;
 }
 
 .emotion-3:active,

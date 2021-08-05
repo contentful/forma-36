@@ -29,8 +29,8 @@ exports[`renders the component 1`] = `
   outline: none;
   -webkit-text-decoration: none;
   text-decoration: none;
-  -webkit-transition: background-color 0.2s ease-in-out;
-  transition: background-color 0.2s ease-in-out;
+  -webkit-transition: background 0.1s ease-in-out, opacity 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  transition: background 0.1s ease-in-out, opacity 0.2s ease-in-out, border-color 0.2s ease-in-out;
   color: #111B2B;
   background-color: #ffffff;
   border-color: #CFD9E0;
@@ -42,6 +42,11 @@ exports[`renders the component 1`] = `
 
 .emotion-1:hover {
   background-color: #F7F9FA;
+}
+
+.emotion-1:active {
+  -webkit-transition: none;
+  transition: none;
 }
 
 .emotion-1:active,
@@ -103,8 +108,8 @@ exports[`renders the component as open 1`] = `
   outline: none;
   -webkit-text-decoration: none;
   text-decoration: none;
-  -webkit-transition: background-color 0.2s ease-in-out;
-  transition: background-color 0.2s ease-in-out;
+  -webkit-transition: background 0.1s ease-in-out, opacity 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  transition: background 0.1s ease-in-out, opacity 0.2s ease-in-out, border-color 0.2s ease-in-out;
   color: #111B2B;
   background-color: #ffffff;
   border-color: #CFD9E0;
@@ -116,6 +121,11 @@ exports[`renders the component as open 1`] = `
 
 .emotion-1:hover {
   background-color: #F7F9FA;
+}
+
+.emotion-1:active {
+  -webkit-transition: none;
+  transition: none;
 }
 
 .emotion-1:active,
@@ -177,8 +187,8 @@ exports[`renders the component with a submenu 1`] = `
   outline: none;
   -webkit-text-decoration: none;
   text-decoration: none;
-  -webkit-transition: background-color 0.2s ease-in-out;
-  transition: background-color 0.2s ease-in-out;
+  -webkit-transition: background 0.1s ease-in-out, opacity 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  transition: background 0.1s ease-in-out, opacity 0.2s ease-in-out, border-color 0.2s ease-in-out;
   color: #111B2B;
   background-color: #ffffff;
   border-color: #CFD9E0;
@@ -190,6 +200,11 @@ exports[`renders the component with a submenu 1`] = `
 
 .emotion-1:hover {
   background-color: #F7F9FA;
+}
+
+.emotion-1:active {
+  -webkit-transition: none;
+  transition: none;
 }
 
 .emotion-1:active,
@@ -251,8 +266,8 @@ exports[`renders the component with an additional class name 1`] = `
   outline: none;
   -webkit-text-decoration: none;
   text-decoration: none;
-  -webkit-transition: background-color 0.2s ease-in-out;
-  transition: background-color 0.2s ease-in-out;
+  -webkit-transition: background 0.1s ease-in-out, opacity 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  transition: background 0.1s ease-in-out, opacity 0.2s ease-in-out, border-color 0.2s ease-in-out;
   color: #111B2B;
   background-color: #ffffff;
   border-color: #CFD9E0;
@@ -264,6 +279,11 @@ exports[`renders the component with an additional class name 1`] = `
 
 .emotion-1:hover {
   background-color: #F7F9FA;
+}
+
+.emotion-1:active {
+  -webkit-transition: none;
+  transition: none;
 }
 
 .emotion-1:active,
