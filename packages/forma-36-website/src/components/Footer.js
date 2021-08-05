@@ -52,16 +52,18 @@ const Footer = () => (
         </TextLink>
       </Flex>
 
-      <Flex marginRight="spacingL">
-        <TextLink
-          onClick={(e) => {
-            e.preventDefault();
-            window.Osano.cm.showDrawer();
-          }}
-        >
-          Cookie Preferences
-        </TextLink>
-      </Flex>
+      {window.Osano && (
+        <Flex>
+          <TextLink
+            onClick={(e) => {
+              e.preventDefault();
+              window.Osano.cm.showDrawer();
+            }}
+          >
+            Cookie Preferences
+          </TextLink>
+        </Flex>
+      )}
     </Flex>
 
     <a

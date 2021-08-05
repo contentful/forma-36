@@ -46,5 +46,9 @@ const initOsano = () => {
 };
 
 export const onClientEntry = () => {
-  initOsano();
+  if (process.env.OSANO_KEY && process.env.OSANO_F36_WEBSITE_KEY) {
+    initOsano();
+  } else {
+    console.warn('Analytics services won’t initialize');
+  }
 };
