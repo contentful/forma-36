@@ -114,12 +114,10 @@ export const _ControlledInputField = (
         >
           {label}
         </Label>
-        {helpText && <HelpText {...helpTextProps}>{helpText}</HelpText>}
         {validationMessage && (
-          <ValidationMessage marginTop="spacingXs">
-            {validationMessage}
-          </ValidationMessage>
+          <ValidationMessage>{validationMessage}</ValidationMessage>
         )}
+        {helpText && <HelpText {...helpTextProps}>{helpText}</HelpText>}
       </div>
     </Box>
   );

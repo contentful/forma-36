@@ -954,7 +954,6 @@ exports[`renders the component with a light label variation 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 0.5rem;
 }
 
 .emotion-5 {
@@ -1190,7 +1189,6 @@ exports[`renders the component with a validation message 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 0.5rem;
 }
 
 .emotion-5 {
