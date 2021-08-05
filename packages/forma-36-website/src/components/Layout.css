@@ -45,7 +45,7 @@ pre {
 .osano-cm-dialog {
   box-shadow: none;
   box-sizing: border-box;
-  border-top: 1px solid var(--color-element-light);
+  border-top: 1px solid var(--gray-200);
   background: var(--color-white);
 }
 
@@ -62,11 +62,11 @@ pre {
   font-weight: normal;
   text-decoration: none;
   vertical-align: middle;
-  color: var(--color-text-base);
+  color: var(--gray-800);
   font-size: var(--font-size-m);
   font-family: var(--font-stack-primary);
   background-color: var(--color-white);
-  border: 2px solid var(--color-element-mid);
+  border: 2px solid var(--gray-300);
   border-radius: var(--border-radius-medium);
   line-height: var(--line-height-default);
 }
@@ -87,13 +87,13 @@ pre {
   box-shadow: var(--glow-primary);
 }
 .osano-cm-dialog .osano-cm-button.osano-cm-accept-all:hover {
-  border-color: var(--color-blue-base);
-  background-color: var(--color-blue-base);
+  border-color: var(--blue-600);
+  background-color: var(--blue-600);
 }
 
 .osano-cm-dialog .osano-cm-dialog__content {
   font-size: var(--font-size-m);
-  color: var(--color-text-mid);
+  color: var(--gray-600);
 }
 
 /* Toggle */
@@ -103,7 +103,7 @@ pre {
 }
 
 .osano-cm-toggle .osano-cm-label {
-  color: var(--color-text-base);
+  color: var(--gray-800);
   font-weight: var(--font-weight-demi-bold);
   margin-left: var(--spacing-xs);
 }
@@ -117,7 +117,7 @@ pre {
   border-radius: 20%;
   transition: none;
   box-sizing: border-box;
-  border: 2px solid var(--color-element-dark);
+  border: 2px solid var(--gray-400);
   background-size: contain;
   background-repeat: no-repeat;
   background-color: var(--color-white);
@@ -140,14 +140,14 @@ pre {
   padding: 0;
 }
 .osano-cm-toggle .osano-cm-toggle__input:hover + .osano-cm-toggle__switch {
-  border-color: var(--color-element-dark);
+  border-color: var(--gray-400);
   background-color: var(--color-white);
 }
 
 .osano-cm-toggle .osano-cm-toggle__input:focus + .osano-cm-toggle__switch {
   outline: none;
   box-shadow: var(--glow-primary);
-  border-color: var(--color-blue-mid);
+  border-color: var(--blue-500);
   background-color: var(--color-white);
 }
 
@@ -158,13 +158,13 @@ pre {
 .osano-cm-toggle
   .osano-cm-toggle__input:hover:checked
   + .osano-cm-toggle__switch {
-  border-color: var(--color-blue-mid);
-  background-color: var(--color-blue-mid);
+  border-color: var(--blue-500);
+  background-color: var(--blue-500);
 }
 
 .osano-cm-toggle .osano-cm-toggle__input:disabled + .osano-cm-toggle__switch {
-  border-color: var(--color-element-dark);
-  background-color: var(--color-element-dark);
+  border-color: var(--gray-400);
+  background-color: var(--gray-400);
 }
 
 .osano-cm-toggle
@@ -173,19 +173,19 @@ pre {
 .osano-cm-toggle
   .osano-cm-toggle__input:checked:hover:disabled
   + .osano-cm-toggle__switch {
-  border-color: var(--color-element-dark);
-  background-color: var(--color-element-dark);
+  border-color: var(--gray-400);
+  background-color: var(--gray-400);
   background-image: url('../../static/icons//checkmark-disabled.svg');
 }
 
 /* Drawer */
 .osano-cm-info-dialog .osano-cm-header {
-  color: var(--color-text-base);
+  color: var(--gray-800);
 }
 
 .osano-cm-info-dialog .osano-cm-description {
   font-size: var(--font-size-m);
-  color: var(--color-text-mid);
+  color: var(--gray-600);
 }
 
 .osano-cm-info-dialog .osano-cm-close {
@@ -217,8 +217,8 @@ pre {
   box-shadow: var(--glow-primary);
 }
 .osano-cm-info-dialog .osano-cm-save:hover {
-  border-color: var(--color-blue-base);
-  background-color: var(--color-blue-base);
+  border-color: var(--blue-600);
+  background-color: var(--blue-600);
 }
 
 .osano-cm-info-dialog .osano-cm-info-views {
