@@ -7,46 +7,39 @@ import { axe } from '@/scripts/test/axeHelper';
 import { ToggleButton } from '../src/ToggleButton';
 describe('ToggleButton', function () {
   it('renders the component', () => {
-    const { container } = render(<ToggleButton>Toggle</ToggleButton>);
+    render(<ToggleButton>Toggle</ToggleButton>);
 
-    expect(container.firstChild).toMatchSnapshot();
+    expect(screen.getByRole('button')).toBeTruthy();
   });
 
   it('renders the component with an additional class name', () => {
     const additionalClassName = 'my-extra-class';
-    const { container } = render(
-      <ToggleButton className={additionalClassName}>Toggle</ToggleButton>,
-    );
+    render(<ToggleButton className={additionalClassName}>Toggle</ToggleButton>);
 
     const button = screen.getByRole('button');
     expect(button.classList.contains(additionalClassName)).toBeTruthy();
-    expect(container.firstChild).toMatchSnapshot();
   });
 
   it('renders the component active', () => {
-    const { container } = render(<ToggleButton isActive>Toggle</ToggleButton>);
+    render(<ToggleButton isActive>Toggle</ToggleButton>);
 
     const button = screen.getByRole('button');
     expect(button.getAttribute('aria-pressed')).toBe('true');
     expect(button.getAttribute('data-state')).toBe('on');
-    expect(container.firstChild).toMatchSnapshot();
   });
 
   it('renders the component with icon', () => {
-    const { container } = render(
-      <ToggleButton icon={Preview}>Toggle</ToggleButton>,
-    );
+    render(<ToggleButton icon={<Preview />}>Toggle</ToggleButton>);
 
     const button = screen.getByRole('button');
     expect(button.getElementsByTagName('svg')).toHaveLength(1);
-    expect(container.firstChild).toMatchSnapshot();
   });
 
   it('should not dispatch onClick if disabled', () => {
     const mockOnToggle = jest.fn();
 
     render(
-      <ToggleButton icon={Preview} isDisabled>
+      <ToggleButton onToggle={mockOnToggle} icon={<Preview />} isDisabled>
         Toggle
       </ToggleButton>,
     );

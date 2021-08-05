@@ -9,11 +9,13 @@
   "dependencies": {
     "@babel/runtime": "^7.6.2",
     "@contentful/f36-core": "^4.0.0",
-    "@contentful/f36-icon": "^4.0.0",
-    "@contentful/f36-icons": "^4.0.0",
     "@contentful/f36-spinner": "^4.0.0",
     "@contentful/f36-tokens": "^4.0.0",
     "emotion": "^10.0.17"
+  },
+  "devDependencies": {
+    "@contentful/f36-icon": "^4.0.0",
+    "@contentful/f36-icons": "^4.0.0"
   },
   "peerDependencies": {
     "react": ">=16.8"

@@ -88,7 +88,7 @@ const _Note = (props: NoteProps, ref: React.Ref<HTMLElement>) => {
       {hasCloseButton && (
         <Button
           variant="transparent"
-          icon={Close}
+          icon={<Close />}
           onClick={() => {
             if (onClose) {
               onClose();
