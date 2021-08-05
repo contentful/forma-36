@@ -16,7 +16,7 @@ const DEFAULT_TAG: ElementType = 'button';
 
 export type ButtonProps<
   E extends React.ElementType
-> = PolymorphicComponentProps<E, ButtonInternalProps>;
+> = PolymorphicComponentProps<E, ButtonInternalProps, 'disabled'>;
 
 const _Button: PolymorphicComponentWithRef<
   ButtonInternalProps,
@@ -114,5 +114,6 @@ const _Button: PolymorphicComponentWithRef<
  */
 export const Button: PolymorphicComponent<
   ButtonInternalProps,
-  typeof DEFAULT_TAG
+  typeof DEFAULT_TAG,
+  'disabled'
 > = React.forwardRef(_Button);
