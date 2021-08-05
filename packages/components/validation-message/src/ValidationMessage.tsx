@@ -8,9 +8,13 @@ import { ErrorCircleOutline } from '@contentful/f36-icons';
 import { Text } from '@contentful/f36-typography';
 import { getStyles } from './ValidationMessage.styles';
 
+export type ValidationMessageInternalProps = CommonProps & {
+  children: React.ReactNode;
+};
+
 export type ValidationMessageProps = PolymorphicComponentProps<
   'div',
-  CommonProps
+  ValidationMessageInternalProps
 >;
 
 export const ValidationMessage = forwardRef<

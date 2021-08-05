@@ -3,6 +3,7 @@ import { cx } from 'emotion';
 import {
   usePrimitive,
   Flex,
+  Box,
   PolymorphicComponentWithRef,
   PolymorphicComponentProps,
   PolymorphicComponent,
@@ -73,11 +74,15 @@ const _Button: PolymorphicComponentWithRef<
       <span className={styles.buttonText}>{children}</span>
       {icon && alignIcon === 'end' && iconContent}
       {isLoading && (
-        <Spinner
+        <Box
+          as="span"
           marginLeft={children || !isLoading ? 'spacingXs' : 'none'}
-          customSize={18}
-          variant={variant === 'secondary' ? 'default' : 'white'}
-        />
+        >
+          <Spinner
+            customSize={18}
+            variant={variant === 'secondary' ? 'default' : 'white'}
+          />
+        </Box>
       )}
     </>
   );

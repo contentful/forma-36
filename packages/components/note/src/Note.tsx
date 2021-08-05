@@ -26,7 +26,7 @@ const icons = {
 
 export type NoteVariant = 'negative' | 'positive' | 'primary' | 'warning';
 
-export type NoteOwnProps = CommonProps & {
+export type NoteInternalProps = CommonProps & {
   /**
    * Determines style variation of Note component
    */
@@ -49,7 +49,7 @@ export type NoteOwnProps = CommonProps & {
   onClose?: Function;
 };
 
-export type NoteProps = PolymorphicComponentProps<'article', NoteOwnProps>;
+export type NoteProps = PolymorphicComponentProps<'article', NoteInternalProps>;
 
 /**
  * @description: Note provides context and information about a situation or action.

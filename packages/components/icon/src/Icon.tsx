@@ -3,7 +3,7 @@ import React, { forwardRef } from 'react';
 import tokens from '@contentful/f36-tokens';
 import { Box } from '@contentful/f36-core';
 import type {
-  BoxProps,
+  CommonProps,
   PolymorphicComponent,
   PolymorphicComponentProps,
   PolymorphicComponentWithRef,
@@ -70,7 +70,7 @@ type AsOrChildren =
       children: ReactElement | ReactElement[];
     };
 
-type IconInternalProps = {
+type IconInternalProps = CommonProps & {
   /**
    * Determines the size of the icon
    */
@@ -87,8 +87,7 @@ type IconInternalProps = {
    * Custom SVG viewBox attribute to use
    */
   viewBox?: SVGAttributes<SVGSVGElement>['viewBox'];
-} & Omit<BoxProps<'svg'>, 'as' | 'children' | 'display' | 'ref'> &
-  SVGAttributes<SVGSVGElement>;
+};
 
 export type IconProps = Omit<
   PolymorphicComponentProps<IconComponent, IconInternalProps>,

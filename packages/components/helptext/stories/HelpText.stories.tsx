@@ -1,8 +1,8 @@
 import React from 'react';
-import type { Meta } from '@storybook/react/types-6-0';
+import type { Meta, Story } from '@storybook/react/types-6-0';
 
 import { HelpText } from '../src/HelpText';
-import type { HelpTextProps } from '../src/HelpText';
+import type { HelpTextInternalProps } from '../src/HelpText';
 
 export default {
   title: 'Components/HelpText',
@@ -16,8 +16,8 @@ export default {
   },
 } as Meta;
 
-export const Default = ({ ref, children, ...args }: HelpTextProps) => {
-  return <HelpText {...args}>{children}</HelpText>;
+export const Default: Story<HelpTextInternalProps> = (args) => {
+  return <HelpText {...args} />;
 };
 
 Default.args = {

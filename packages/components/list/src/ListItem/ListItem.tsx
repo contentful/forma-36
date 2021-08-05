@@ -1,13 +1,19 @@
 import { cx, css } from 'emotion';
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
-import { CommonProps } from '@contentful/f36-core';
+import type {
+  CommonProps,
+  PolymorphicComponentProps,
+} from '@contentful/f36-core';
 
 import { List } from '../List';
 
-export interface ListItemProps extends CommonProps {
-  children?: React.ReactNode;
-}
+export type ListItemProps = PolymorphicComponentProps<
+  'li',
+  CommonProps & {
+    children?: React.ReactNode;
+  }
+>;
 
 export function ListItem({
   className,

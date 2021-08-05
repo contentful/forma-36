@@ -7,7 +7,14 @@ import {
   PolymorphicComponentProps,
 } from '@contentful/f36-core';
 
-export type HelpTextProps = PolymorphicComponentProps<'p', CommonProps>;
+export type HelpTextInternalProps = CommonProps & {
+  children: React.ReactNode;
+};
+
+export type HelpTextProps = PolymorphicComponentProps<
+  'p',
+  HelpTextInternalProps
+>;
 
 /**
  * `HelpText` is a styled copy block with guidance, placed in the context of form components.

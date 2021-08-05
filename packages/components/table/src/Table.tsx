@@ -1,7 +1,7 @@
 import { cx, css } from 'emotion';
 import React, { forwardRef } from 'react';
-import { Box } from '@contentful/f36-core';
-import type { BoxProps } from '@contentful/f36-core';
+import { Box, CommonProps } from '@contentful/f36-core';
+import type { PolymorphicComponentProps } from '@contentful/f36-core';
 import tokens from '@contentful/f36-tokens';
 
 const getStyles = () => {
@@ -28,14 +28,14 @@ const getStyles = () => {
   };
 };
 
-export type TableInternalProps = Omit<BoxProps<'table'>, 'as'> & {
+export type TableInternalProps = CommonProps & {
   layout?: 'inline' | 'embedded';
 };
 
-export type TableProps = TableInternalProps;
+export type TableProps = PolymorphicComponentProps<'table', TableInternalProps>;
 
-export const Table = forwardRef<HTMLTableElement, TableInternalProps>(
-  function Table(
+export const Table = forwardRef<HTMLTableElement, TableProps>(
+  (
     {
       children,
       className,
@@ -44,7 +44,7 @@ export const Table = forwardRef<HTMLTableElement, TableInternalProps>(
       ...otherProps
     },
     forwardedRef,
-  ) {
+  ) => {
     const styles = getStyles();
     return (
       <Box
@@ -68,3 +68,5 @@ export const Table = forwardRef<HTMLTableElement, TableInternalProps>(
     );
   },
 );
+
+Table.displayName = 'Table';

@@ -1,11 +1,13 @@
 import { css, cx } from 'emotion';
 import React, { forwardRef } from 'react';
-import type { HTMLProps } from 'react';
 import tokens from '@contentful/f36-tokens';
 import { Box } from '@contentful/f36-core';
-import type { CommonProps } from '@contentful/f36-core';
+import type {
+  CommonProps,
+  PolymorphicComponentProps,
+} from '@contentful/f36-core';
 
-import { TableCellContext } from './';
+import { TableCellContext } from './tableCellContext';
 
 export const sortingDirections = {
   asc: 'asc',
@@ -14,17 +16,20 @@ export const sortingDirections = {
 
 export type TableCellSorting = keyof typeof sortingDirections | boolean;
 
-export type TableCellInternalProps = CommonProps &
-  HTMLProps<HTMLTableCellElement> & {
-    align?: 'center' | 'left' | 'right';
-    sorting?: TableCellSorting;
-    children?: React.ReactNode;
-  };
+export type TableCellInternalProps = CommonProps & {
+  align?: 'center' | 'left' | 'right';
+  sorting?: TableCellSorting;
+  width?: string | number;
+  children?: React.ReactNode;
+};
 
-export type TableCellProps = TableCellInternalProps;
+export type TableCellProps = PolymorphicComponentProps<
+  'th' | 'td',
+  TableCellInternalProps
+>;
 
 export const TableCell = forwardRef<HTMLTableCellElement, TableCellProps>(
-  function TableCell(
+  (
     {
       align = 'left',
       children,
@@ -34,7 +39,7 @@ export const TableCell = forwardRef<HTMLTableCellElement, TableCellProps>(
       ...otherProps
     },
     forwardedRef,
-  ) {
+  ) => {
     return (
       <TableCellContext.Consumer>
         {({ as, name: context, offsetTop }) => {
@@ -76,3 +81,5 @@ export const TableCell = forwardRef<HTMLTableCellElement, TableCellProps>(
     );
   },
 );
+
+TableCell.displayName = 'TableCell';

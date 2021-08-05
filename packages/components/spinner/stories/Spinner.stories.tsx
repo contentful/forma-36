@@ -18,7 +18,7 @@ export default {
   title: 'Components/Spinner',
 } as Meta;
 
-export const Default: Story<SpinnerProps> = (args) => {
+export const Default: Story<SpinnerProps> = ({ ref, ...args }) => {
   return <Spinner {...args} />;
 };
 
@@ -27,7 +27,7 @@ Default.args = {
   variant: 'primary',
 };
 
-export const WithText: Story<SpinnerProps> = (args) => {
+export const WithText: Story<SpinnerProps> = ({ ref, ...args }) => {
   return (
     <>
       Loading <Spinner {...args} />
