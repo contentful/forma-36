@@ -3,49 +3,38 @@ import React from 'react';
 import { getStyles } from './HelpText.styles';
 import {
   Box,
-  FlexInternalProps,
-  PolymorphicComponent,
+  CommonProps,
   PolymorphicComponentProps,
-  PolymorphicComponentWithRef,
 } from '@contentful/f36-core';
 
-export type HelpTextInternalProps = FlexInternalProps;
+export type HelpTextInternalProps = CommonProps & {
+  children: React.ReactNode;
+};
 
 export type HelpTextProps = PolymorphicComponentProps<
-  React.ElementType,
+  'p',
   HelpTextInternalProps
 >;
-
-const DEFAULT_TAG = 'p';
-
-const _HelpText: PolymorphicComponentWithRef<
-  HelpTextInternalProps,
-  typeof DEFAULT_TAG
-> = (
-  { children, className, testId = 'cf-ui-help-text', ...otherProps },
-  ref,
-) => {
-  const styles = getStyles();
-  return (
-    <Box
-      as={DEFAULT_TAG}
-      testId={testId}
-      ref={ref}
-      className={cx(styles.root, className)}
-      marginTop="none"
-      marginBottom="none"
-      {...otherProps}
-    >
-      {children}
-    </Box>
-  );
-};
 
 /**
  * `HelpText` is a styled copy block with guidance, placed in the context of form components.
  */
 
-export const HelpText: PolymorphicComponent<
-  HelpTextInternalProps,
-  typeof DEFAULT_TAG
-> = React.forwardRef(_HelpText);
+export const HelpText = React.forwardRef<HTMLParagraphElement, HelpTextProps>(
+  ({ children, className, testId = 'cf-ui-help-text', ...otherProps }, ref) => {
+    const styles = getStyles();
+    return (
+      <Box
+        as="p"
+        testId={testId}
+        className={cx(styles.root, className)}
+        {...otherProps}
+        ref={ref}
+      >
+        {children}
+      </Box>
+    );
+  },
+);
+
+HelpText.displayName = 'HelpText';

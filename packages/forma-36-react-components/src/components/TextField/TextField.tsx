@@ -10,7 +10,7 @@ import cn from 'classnames';
 import { ValidationMessage } from '@contentful/f36-validation-message';
 import { Label } from '@contentful/f36-forms';
 import type { LabelProps } from '@contentful/f36-forms';
-import { Flex } from '@contentful/f36-core';
+import { Flex, Box } from '@contentful/f36-core';
 import { HelpText } from '@contentful/f36-helptext';
 import { TextInput, TextInputProps } from '../TextInput';
 import { TextLink, TextLinkProps } from '@contentful/f36-text-link';
@@ -107,21 +107,28 @@ export const TextField = ({
       />
       {(helpText || countCharacters) && (
         <Flex justifyContent="space-between">
-          {helpText && <HelpText marginTop="spacingXs">{helpText}</HelpText>}
+          {helpText && (
+            <Box marginTop="spacingXs">
+              <HelpText>{helpText}</HelpText>
+            </Box>
+          )}
           {countCharacters && textInputProps && textInputProps.maxLength && (
-            <HelpText
+            <Box
               marginTop="spacingXs"
+              marginLeft="spacingM"
               className={cn(styles['TextField__count'])}
             >
-              {valueState ? valueState.length : 0}/{textInputProps.maxLength}
-            </HelpText>
+              <HelpText>
+                {valueState ? valueState.length : 0}/{textInputProps.maxLength}
+              </HelpText>
+            </Box>
           )}
         </Flex>
       )}
       {validationMessage && (
-        <ValidationMessage marginTop="spacingXs">
-          {validationMessage}
-        </ValidationMessage>
+        <Box marginTop="spacingXs">
+          <ValidationMessage>{validationMessage}</ValidationMessage>
+        </Box>
       )}
     </div>
   );

@@ -1,12 +1,15 @@
 import { cx } from 'emotion';
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { getStyles } from './EmptyState.styles';
 import { Box } from '@contentful/f36-core';
-import type { CommonProps } from '@contentful/f36-core';
+import type {
+  CommonProps,
+  PolymorphicComponentProps,
+} from '@contentful/f36-core';
 import type { HeadingElement } from '@contentful/f36-typography';
 import { Heading, Text, Typography } from '@contentful/f36-typography';
 
-export interface EmptyStateProps extends CommonProps {
+export interface EmptyStateInternalProps extends CommonProps {
   /**
    * Child nodes to be rendered in the component
    */
@@ -28,6 +31,11 @@ export interface EmptyStateProps extends CommonProps {
    */
   descriptionProps?: TextElementProps;
 }
+
+export type EmptyStateProps = PolymorphicComponentProps<
+  'article',
+  EmptyStateInternalProps
+>;
 
 interface TextElementProps {
   text: React.ReactNode;
@@ -59,67 +67,72 @@ interface ImageProps {
   className?: string;
 }
 
-const _EmptyState = (props: EmptyStateProps, ref) => {
-  const {
-    className,
-    children,
-    testId = 'cf-ui-empty-state',
-    customImageElement,
-    imageProps,
-    headingProps,
-    descriptionProps,
-    ...otherProps
-  } = props;
-
-  const styles = getStyles();
-
-  return (
-    <Box
-      ref={ref}
-      as="article"
-      testId={testId}
-      className={cx(styles.emptyState, className)}
-      {...otherProps}
-    >
-      <div className={styles.container}>
-        <div className={cx([styles.illustrationContainer, styles.element])}>
-          {customImageElement
-            ? customImageElement
-            : imageProps && (
-                <img
-                  src={imageProps.url}
-                  alt={imageProps.description}
-                  className={styles.illustration}
-                  style={{
-                    height: imageProps.height,
-                    width: imageProps.width,
-                  }}
-                />
-              )}
-        </div>
-        <Typography>
-          <Heading
-            as={headingProps.elementType ? headingProps.elementType : 'h1'}
-            className={styles.element}
-          >
-            {headingProps.text}
-          </Heading>
-          <Text
-            as={
-              descriptionProps.elementType ? descriptionProps.elementType : 'p'
-            }
-            className={styles.element}
-          >
-            {descriptionProps.text}
-          </Text>
-        </Typography>
-        {children}
-      </div>
-    </Box>
-  );
-};
-
 /**
  * @description: EmptyState is a component that helps communicate a interim state in the interface where there is nothing to display.
  */
-export const EmptyState = React.forwardRef(_EmptyState);
+
+export const EmptyState = forwardRef<HTMLElement, EmptyStateProps>(
+  (props, ref) => {
+    const {
+      className,
+      children,
+      testId = 'cf-ui-empty-state',
+      customImageElement,
+      imageProps,
+      headingProps,
+      descriptionProps,
+      ...otherProps
+    } = props;
+
+    const styles = getStyles();
+
+    return (
+      <Box
+        ref={ref}
+        as="article"
+        testId={testId}
+        className={cx(styles.emptyState, className)}
+        {...otherProps}
+      >
+        <div className={styles.container}>
+          <div className={cx([styles.illustrationContainer, styles.element])}>
+            {customImageElement
+              ? customImageElement
+              : imageProps && (
+                  <img
+                    src={imageProps.url}
+                    alt={imageProps.description}
+                    className={styles.illustration}
+                    style={{
+                      height: imageProps.height,
+                      width: imageProps.width,
+                    }}
+                  />
+                )}
+          </div>
+          <Typography>
+            <Heading
+              as={headingProps.elementType ? headingProps.elementType : 'h1'}
+              className={styles.element}
+            >
+              {headingProps.text}
+            </Heading>
+            <Text
+              as={
+                descriptionProps.elementType
+                  ? descriptionProps.elementType
+                  : 'p'
+              }
+              className={styles.element}
+            >
+              {descriptionProps.text}
+            </Text>
+          </Typography>
+          {children}
+        </div>
+      </Box>
+    );
+  },
+);
+
+EmptyState.displayName = 'EmptyState';

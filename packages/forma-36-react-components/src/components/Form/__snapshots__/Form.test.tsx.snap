@@ -17,7 +17,7 @@ exports[`renders the component 1`] = `
   margin-bottom: calc(1rem * (8 / 16));
 }
 
-.emotion-3 {
+.emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -28,9 +28,13 @@ exports[`renders the component 1`] = `
   justify-content: space-between;
 }
 
-.emotion-2 {
+.emotion-3 {
   margin-top: 0.5rem;
+}
+
+.emotion-2 {
   margin-bottom: 0;
+  margin-top: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   color: #67728A;
   font-size: 0.875rem;
@@ -80,14 +84,18 @@ exports[`renders the component 1`] = `
         />
       </div>
       <div
-        class="emotion-3"
+        class="emotion-4"
       >
-        <p
-          class="emotion-2"
-          data-test-id="cf-ui-help-text"
+        <div
+          class="emotion-3"
         >
-          Please enter your name
-        </p>
+          <p
+            class="emotion-2"
+            data-test-id="cf-ui-help-text"
+          >
+            Please enter your name
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -111,7 +119,7 @@ exports[`renders the component with an additional class name 1`] = `
   margin-bottom: calc(1rem * (8 / 16));
 }
 
-.emotion-3 {
+.emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -122,9 +130,13 @@ exports[`renders the component with an additional class name 1`] = `
   justify-content: space-between;
 }
 
-.emotion-2 {
+.emotion-3 {
   margin-top: 0.5rem;
+}
+
+.emotion-2 {
   margin-bottom: 0;
+  margin-top: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   color: #67728A;
   font-size: 0.875rem;
@@ -174,14 +186,18 @@ exports[`renders the component with an additional class name 1`] = `
         />
       </div>
       <div
-        class="emotion-3"
+        class="emotion-4"
       >
-        <p
-          class="emotion-2"
-          data-test-id="cf-ui-help-text"
+        <div
+          class="emotion-3"
         >
-          Please enter your name
-        </p>
+          <p
+            class="emotion-2"
+            data-test-id="cf-ui-help-text"
+          >
+            Please enter your name
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -205,7 +221,7 @@ exports[`renders the component with condensed spacing 1`] = `
   margin-bottom: calc(1rem * (8 / 16));
 }
 
-.emotion-3 {
+.emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -216,9 +232,13 @@ exports[`renders the component with condensed spacing 1`] = `
   justify-content: space-between;
 }
 
-.emotion-2 {
+.emotion-3 {
   margin-top: 0.5rem;
+}
+
+.emotion-2 {
   margin-bottom: 0;
+  margin-top: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   color: #67728A;
   font-size: 0.875rem;
@@ -268,14 +288,18 @@ exports[`renders the component with condensed spacing 1`] = `
         />
       </div>
       <div
-        class="emotion-3"
+        class="emotion-4"
       >
-        <p
-          class="emotion-2"
-          data-test-id="cf-ui-help-text"
+        <div
+          class="emotion-3"
         >
-          Please enter your name
-        </p>
+          <p
+            class="emotion-2"
+            data-test-id="cf-ui-help-text"
+          >
+            Please enter your name
+          </p>
+        </div>
       </div>
     </div>
   </div>

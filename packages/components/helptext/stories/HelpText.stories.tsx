@@ -1,8 +1,8 @@
 import React from 'react';
-import type { Meta } from '@storybook/react/types-6-0';
+import type { Meta, Story } from '@storybook/react/types-6-0';
 
 import { HelpText } from '../src/HelpText';
-import type { HelpTextProps } from '../src/HelpText';
+import type { HelpTextInternalProps } from '../src/HelpText';
 
 export default {
   title: 'Components/HelpText',
@@ -16,13 +16,10 @@ export default {
   },
 } as Meta;
 
-interface Args extends HelpTextProps {
-  helpText: string;
-}
-export const Default = ({ helpText, ...args }: Args) => (
-  <HelpText {...args}>{helpText}</HelpText>
-);
+export const Default: Story<HelpTextInternalProps> = (args) => {
+  return <HelpText {...args} />;
+};
 
 Default.args = {
-  helpText: 'Lorem Ipsum dolor sit amet',
+  children: 'Lorem Ipsum dolor sit amet',
 };

@@ -71,10 +71,6 @@ export const getStyles = () => {
       fontSize: tokens.fontSizeL,
       marginBottom: tokens.spacingXs,
     }),
-    icon: css({
-      marginRight: tokens.spacingS,
-      display: 'flex',
-    }),
     info: ({ hasCloseButton }: NoteProps) =>
       css({
         marginLeft: tokens.spacingXs,

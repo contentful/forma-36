@@ -532,7 +532,7 @@ exports[`renders the component with characters count 1`] = `
   margin-bottom: calc(1rem * (8 / 16));
 }
 
-.emotion-2 {
+.emotion-3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -544,13 +544,18 @@ exports[`renders the component with characters count 1`] = `
 }
 
 .emotion-1 {
-  margin-top: 0.5rem;
   margin-bottom: 0;
+  margin-top: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   color: #67728A;
   font-size: 0.875rem;
   line-height: 1.5;
   text-rendering: optimizeLegibility;
+}
+
+.emotion-2 {
+  margin-left: 1rem;
+  margin-top: 0.5rem;
 }
 
 <div
@@ -581,16 +586,20 @@ exports[`renders the component with characters count 1`] = `
     />
   </div>
   <div
-    class="emotion-2"
+    class="emotion-3"
   >
-    <p
-      class="TextField__count emotion-1"
-      data-test-id="cf-ui-help-text"
+    <div
+      class="TextField__count emotion-2"
     >
-      0
-      /
-      20
-    </p>
+      <p
+        class="emotion-1"
+        data-test-id="cf-ui-help-text"
+      >
+        0
+        /
+        20
+      </p>
+    </div>
   </div>
 </div>
 `;
@@ -607,6 +616,10 @@ exports[`renders the component with help text 1`] = `
 }
 
 .emotion-2 {
+  margin-top: 0.5rem;
+}
+
+.emotion-3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -618,8 +631,8 @@ exports[`renders the component with help text 1`] = `
 }
 
 .emotion-1 {
-  margin-top: 0.5rem;
   margin-bottom: 0;
+  margin-top: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   color: #67728A;
   font-size: 0.875rem;
@@ -654,14 +667,18 @@ exports[`renders the component with help text 1`] = `
     />
   </div>
   <div
-    class="emotion-2"
+    class="emotion-3"
   >
-    <p
-      class="emotion-1"
-      data-test-id="cf-ui-help-text"
+    <div
+      class="emotion-2"
     >
-      You need to fill out this field
-    </p>
+      <p
+        class="emotion-1"
+        data-test-id="cf-ui-help-text"
+      >
+        You need to fill out this field
+      </p>
+    </div>
   </div>
 </div>
 `;
@@ -798,12 +815,15 @@ exports[`renders the component with validation message 1`] = `
   margin-bottom: calc(1rem * (8 / 16));
 }
 
+.emotion-4 {
+  margin-top: 0.5rem;
+}
+
 .emotion-3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 0.5rem;
 }
 
 .emotion-1 {
@@ -861,30 +881,34 @@ exports[`renders the component with validation message 1`] = `
     />
   </div>
   <div
-    class="emotion-3"
-    data-test-id="cf-ui-validation-message"
+    class="emotion-4"
   >
-    <svg
-      class="emotion-1"
-      data-test-id="cf-ui-icon"
-      height="1em"
-      viewBox="0 0 24 24"
-      width="1em"
+    <div
+      class="emotion-3"
+      data-test-id="cf-ui-validation-message"
     >
-      <path
-        d="M0 0h24v24H0V0z"
-        fill="none"
-      />
-      <path
-        d="M11 15h2v2h-2zm0-8h2v6h-2zm.99-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
-      />
-    </svg>
-    <p
-      class="emotion-2"
-      data-test-id="cf-ui-text"
-    >
-      Field is required
-    </p>
+      <svg
+        class="emotion-1"
+        data-test-id="cf-ui-icon"
+        height="1em"
+        viewBox="0 0 24 24"
+        width="1em"
+      >
+        <path
+          d="M0 0h24v24H0V0z"
+          fill="none"
+        />
+        <path
+          d="M11 15h2v2h-2zm0-8h2v6h-2zm.99-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+        />
+      </svg>
+      <p
+        class="emotion-2"
+        data-test-id="cf-ui-text"
+      >
+        Field is required
+      </p>
+    </div>
   </div>
 </div>
 `;

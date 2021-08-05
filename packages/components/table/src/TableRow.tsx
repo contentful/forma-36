@@ -1,9 +1,11 @@
 import { css, cx } from 'emotion';
 import React, { forwardRef } from 'react';
-import type { HTMLProps } from 'react';
 import tokens from '@contentful/f36-tokens';
 import { Box } from '@contentful/f36-core';
-import type { CommonProps } from '@contentful/f36-core';
+import type {
+  CommonProps,
+  PolymorphicComponentProps,
+} from '@contentful/f36-core';
 
 const getStyles = () => {
   return {
@@ -26,16 +28,18 @@ const getStyles = () => {
   };
 };
 
-export type TableRowInternalProps = HTMLProps<HTMLTableRowElement> &
-  CommonProps & {
-    selected?: boolean;
-    children: React.ReactNode;
-  };
+export type TableRowInternalProps = CommonProps & {
+  selected?: boolean;
+  children: React.ReactNode;
+};
 
-export type TableRowProps = TableRowInternalProps;
+export type TableRowProps = PolymorphicComponentProps<
+  'tr',
+  TableRowInternalProps
+>;
 
 export const TableRow = forwardRef<HTMLTableRowElement, TableRowProps>(
-  function TableRow(
+  (
     {
       className,
       children,
@@ -44,7 +48,7 @@ export const TableRow = forwardRef<HTMLTableRowElement, TableRowProps>(
       ...otherProps
     },
     forwardedRef,
-  ) {
+  ) => {
     const styles = getStyles();
     return (
       <Box
@@ -65,3 +69,5 @@ export const TableRow = forwardRef<HTMLTableRowElement, TableRowProps>(
     );
   },
 );
+
+TableRow.displayName = 'TableRow';

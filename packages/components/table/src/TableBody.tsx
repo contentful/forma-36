@@ -1,14 +1,19 @@
 import React, { forwardRef } from 'react';
-import type { HTMLProps, ReactElement } from 'react';
+import type { ReactElement } from 'react';
 import { Box } from '@contentful/f36-core';
-import type { CommonProps } from '@contentful/f36-core';
+import type {
+  CommonProps,
+  PolymorphicComponentProps,
+} from '@contentful/f36-core';
 
-export type TableBodyInternalProps = HTMLProps<HTMLTableSectionElement> &
-  CommonProps & {
-    children: ReactElement | ReactElement[];
-  };
+export type TableBodyInternalProps = CommonProps & {
+  children: ReactElement | ReactElement[];
+};
 
-export type TableBodyProps = TableBodyInternalProps;
+export type TableBodyProps = PolymorphicComponentProps<
+  'tbody',
+  TableBodyInternalProps
+>;
 
 export const TableBody = forwardRef<HTMLTableSectionElement, TableBodyProps>(
   function TableBody(

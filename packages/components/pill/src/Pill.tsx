@@ -1,12 +1,16 @@
 import React from 'react';
 import { cx } from 'emotion';
-import { CommonProps, Box } from '@contentful/f36-core';
+import type {
+  CommonProps,
+  PolymorphicComponentProps,
+} from '@contentful/f36-core';
+import { Box } from '@contentful/f36-core';
 import { TabFocusTrap } from '@contentful/f36-utils';
 import { Drag, Close } from '@contentful/f36-icons';
 import { PillVariants } from './types';
 import getPillStyles from './styles';
 
-export interface PillProps extends CommonProps {
+export type PillInternalProps = CommonProps & {
   /**
    * Text that will be shown on the pill
    */
@@ -28,56 +32,60 @@ export interface PillProps extends CommonProps {
    * @default idle
    */
   variant?: PillVariants;
-}
+};
 
-function _Pill(props: PillProps, ref: React.Ref<HTMLDivElement>) {
-  const {
-    label,
-    onClose,
-    testId = 'cf-ui-pill',
-    onDrag,
-    className,
-    dragHandleComponent,
-    variant = 'idle',
-    ...otherProps
-  } = props;
+export type PillProps = PolymorphicComponentProps<'div', PillInternalProps>;
 
-  const styles = getPillStyles(variant);
+export const Pill = React.forwardRef<HTMLDivElement, PillProps>(
+  (props, ref) => {
+    const {
+      label,
+      onClose,
+      testId = 'cf-ui-pill',
+      onDrag,
+      className,
+      dragHandleComponent,
+      variant = 'idle',
+      ...otherProps
+    } = props;
 
-  return (
-    <Box
-      as="div"
-      className={cx(styles.pill, className)}
-      data-test-id={testId}
-      onDrag={onDrag}
-      ref={ref}
-      {...otherProps}
-    >
-      {onDrag &&
-        (dragHandleComponent ? (
-          dragHandleComponent
-        ) : (
-          <span aria-label="Drag handler" className={styles.dragIcon}>
-            <Drag className={styles.icon} variant="muted" />
-          </span>
-        ))}
-      <span title={label} className={styles.label}>
-        {label}
-      </span>
-      {onClose && (
-        <button
-          type="button"
-          aria-label="close"
-          onClick={onClose}
-          className={styles.closeButton}
-        >
-          <TabFocusTrap>
-            <Close className={styles.icon} variant="muted" />
-          </TabFocusTrap>
-        </button>
-      )}
-    </Box>
-  );
-}
+    const styles = getPillStyles(variant);
 
-export const Pill = React.forwardRef(_Pill);
+    return (
+      <Box
+        as="div"
+        className={cx(styles.pill, className)}
+        data-test-id={testId}
+        onDrag={onDrag}
+        ref={ref}
+        {...otherProps}
+      >
+        {onDrag &&
+          (dragHandleComponent ? (
+            dragHandleComponent
+          ) : (
+            <span aria-label="Drag handler" className={styles.dragIcon}>
+              <Drag className={styles.icon} variant="muted" />
+            </span>
+          ))}
+        <span title={label} className={styles.label}>
+          {label}
+        </span>
+        {onClose && (
+          <button
+            type="button"
+            aria-label="close"
+            onClick={onClose}
+            className={styles.closeButton}
+          >
+            <TabFocusTrap>
+              <Close className={styles.icon} variant="muted" />
+            </TabFocusTrap>
+          </button>
+        )}
+      </Box>
+    );
+  },
+);
+
+Pill.displayName = 'Pill';

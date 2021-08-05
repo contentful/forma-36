@@ -1,7 +1,9 @@
 import React, { ElementType } from 'react';
 import { cx } from 'emotion';
 import {
+  usePrimitive,
   Flex,
+  Box,
   PolymorphicComponentWithRef,
   PolymorphicComponentProps,
   PolymorphicComponent,
@@ -15,7 +17,7 @@ const DEFAULT_TAG: ElementType = 'button';
 
 export type ButtonProps<
   E extends React.ElementType
-> = PolymorphicComponentProps<E, ButtonInternalProps>;
+> = PolymorphicComponentProps<E, ButtonInternalProps, 'disabled'>;
 
 const _Button: PolymorphicComponentWithRef<
   ButtonInternalProps,
@@ -29,16 +31,22 @@ const _Button: PolymorphicComponentWithRef<
     testId = 'cf-ui-button',
     variant = 'secondary',
     size = 'medium',
-    href,
-    type = 'button',
     icon,
     isActive,
     isDisabled,
     isLoading,
     isFullWidth,
     alignIcon = 'start',
+    style,
     ...otherProps
   } = props;
+
+  const { Element, primitiveProps } = usePrimitive({
+    testId,
+    as,
+    className,
+    style,
+  });
 
   const rootClassNames = cx(
     styles.button({
@@ -66,40 +74,43 @@ const _Button: PolymorphicComponentWithRef<
       <span className={styles.buttonText}>{children}</span>
       {icon && alignIcon === 'end' && iconContent}
       {isLoading && (
-        <Spinner
+        <Box
+          as="span"
           marginLeft={children || !isLoading ? 'spacingXs' : 'none'}
-          customSize={18}
-          variant={variant === 'secondary' ? 'default' : 'white'}
-        />
+        >
+          <Spinner
+            customSize={18}
+            variant={variant === 'secondary' ? 'default' : 'white'}
+          />
+        </Box>
       )}
     </>
   );
 
   if (as === 'a') {
     return (
-      <a
-        className={rootClassNames}
-        href={href}
-        data-test-id={testId}
+      <Element
         {...otherProps}
+        {...primitiveProps}
+        className={rootClassNames}
         ref={ref}
       >
         {commonContent}
-      </a>
+      </Element>
     );
   }
 
   return (
-    <DEFAULT_TAG
-      type={type}
-      className={rootClassNames}
-      disabled={isDisabled}
-      data-test-id={testId}
+    <Element
+      type="button"
       {...otherProps}
+      {...primitiveProps}
+      disabled={isDisabled}
+      className={rootClassNames}
       ref={ref}
     >
       {commonContent}
-    </DEFAULT_TAG>
+    </Element>
   );
 };
 
@@ -108,5 +119,6 @@ const _Button: PolymorphicComponentWithRef<
  */
 export const Button: PolymorphicComponent<
   ButtonInternalProps,
-  typeof DEFAULT_TAG
+  typeof DEFAULT_TAG,
+  'disabled'
 > = React.forwardRef(_Button);

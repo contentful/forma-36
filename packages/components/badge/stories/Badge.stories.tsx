@@ -4,7 +4,7 @@ import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 
 import { Badge } from '../src/Badge';
-import { BadgeProps } from '../src/Badge';
+import { BadgeInternalProps } from '../src/Badge';
 
 export default {
   title: 'Components/Badge',
@@ -19,7 +19,7 @@ export default {
   },
 };
 
-export const basic = (args: BadgeProps) => <Badge {...args} />;
+export const basic = (args: BadgeInternalProps) => <Badge {...args} />;
 
 basic.args = {
   size: 'default',

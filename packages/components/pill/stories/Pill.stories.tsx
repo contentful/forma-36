@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions';
 import { Box, Flex } from '@contentful/f36-core';
 import { InfoCircle } from '@contentful/f36-icons';
 
-import { Pill, PillProps } from '../src/Pill';
+import { Pill, PillInternalProps } from '../src/Pill';
 
 export default {
   title: 'Components/Pill',
@@ -24,13 +24,13 @@ export default {
   },
 } as Meta;
 
-export const basic: Story<PillProps> = (args: PillProps) => (
+export const basic: Story<PillInternalProps> = (args) => (
   <Pill label={args.label} />
 );
 
 basic.args = { label: 'example.user@contentful.com' };
 
-export const Overview: Story<PillProps> = (args: PillProps) => (
+export const Overview: Story<PillInternalProps> = (args) => (
   <>
     <Flex flexDirection="column" marginBottom="spacingL">
       <Box marginBottom="spacingS">

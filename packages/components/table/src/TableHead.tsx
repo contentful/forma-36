@@ -1,23 +1,27 @@
 import { css, cx } from 'emotion';
 import React, { forwardRef } from 'react';
-import type { HTMLProps } from 'react';
 import { Box } from '@contentful/f36-core';
-import type { CommonProps } from '@contentful/f36-core';
+import type {
+  CommonProps,
+  PolymorphicComponentProps,
+} from '@contentful/f36-core';
 import tokens from '@contentful/f36-tokens';
 
 import { TableCellContext, contextOptions } from './';
 
-export type TableHeadInternalProps = CommonProps &
-  HTMLProps<HTMLTableSectionElement> & {
-    isSticky?: boolean;
-    offsetTop?: number | string;
-    children: React.ReactNode;
-  };
+export type TableHeadInternalProps = CommonProps & {
+  isSticky?: boolean;
+  offsetTop?: number | string;
+  children: React.ReactNode;
+};
 
-export type TableHeadProps = TableHeadInternalProps;
+export type TableHeadProps = PolymorphicComponentProps<
+  'thead',
+  TableHeadInternalProps
+>;
 
 export const TableHead = forwardRef<HTMLTableSectionElement, TableHeadProps>(
-  function TableHead(
+  (
     {
       children,
       className,
@@ -27,7 +31,7 @@ export const TableHead = forwardRef<HTMLTableSectionElement, TableHeadProps>(
       ...otherProps
     },
     forwardedRef,
-  ) {
+  ) => {
     const classNames = cx(
       // For some reason Parcel doesn't build properly if we extract this to
       // a variable 🤷
@@ -60,3 +64,5 @@ export const TableHead = forwardRef<HTMLTableSectionElement, TableHeadProps>(
     );
   },
 );
+
+TableHead.displayName = 'TableHead';
