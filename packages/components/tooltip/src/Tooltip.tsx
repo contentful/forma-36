@@ -11,7 +11,7 @@ import { Placement } from '@popperjs/core';
 import { cx } from 'emotion';
 import type * as CSS from 'csstype';
 
-import { styles } from './Tooltip.styles';
+import { getStyles } from './Tooltip.styles';
 
 import tokens from '@contentful/f36-tokens';
 
@@ -110,6 +110,7 @@ export const Tooltip = ({
   usePortal = false,
   ...otherProps
 }: TooltipProps) => {
+  const styles = getStyles();
   const [show, setShow] = useState(false);
   const tooltipId = useId(id, 'tooltip');
   const elementRef = useRef(null);

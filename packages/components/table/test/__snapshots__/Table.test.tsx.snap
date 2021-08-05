@@ -1,19 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`TableHead renders the component as sticky 1`] = `
+.emotion-2 th {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
 .emotion-1:last-child td {
   border-bottom: none;
 }
 
 .emotion-1:hover td {
   background-color: #F7F9FA;
-}
-
-.emotion-2 th {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  z-index: 1;
 }
 
 .emotion-0 {
@@ -48,19 +48,19 @@ exports[`TableHead renders the component as sticky 1`] = `
 `;
 
 exports[`TableHead renders the component as sticky and with an offset Top 1`] = `
+.emotion-2 th {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
 .emotion-1:last-child td {
   border-bottom: none;
 }
 
 .emotion-1:hover td {
   background-color: #F7F9FA;
-}
-
-.emotion-2 th {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  z-index: 1;
 }
 
 .emotion-0 {

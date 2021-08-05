@@ -41,15 +41,6 @@ exports[`renders the component 1`] = `
 `;
 
 exports[`renders the component with a copybutton 1`] = `
-.emotion-2 {
-  display: inherit;
-  outline: 0;
-}
-
-.emotion-3 > button[disabled] {
-  pointer-events: none;
-}
-
 .emotion-0 {
   display: inline-block;
   color: #111B2B;
@@ -58,6 +49,15 @@ exports[`renders the component with a copybutton 1`] = `
   font-weight: 500;
   line-height: 1.5;
   margin-bottom: calc(1rem * (8 / 16));
+}
+
+.emotion-3 > button[disabled] {
+  pointer-events: none;
+}
+
+.emotion-2 {
+  display: inherit;
+  outline: 0;
 }
 
 .emotion-1 {
@@ -522,15 +522,6 @@ exports[`renders the component with as textarea 1`] = `
 `;
 
 exports[`renders the component with characters count 1`] = `
-.emotion-1 {
-  margin: 0;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  color: #67728A;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  text-rendering: optimizeLegibility;
-}
-
 .emotion-0 {
   display: inline-block;
   color: #111B2B;
@@ -539,6 +530,27 @@ exports[`renders the component with characters count 1`] = `
   font-weight: 500;
   line-height: 1.5;
   margin-bottom: calc(1rem * (8 / 16));
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.emotion-1 {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  color: #67728A;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
 }
 
 <div
@@ -569,10 +581,10 @@ exports[`renders the component with characters count 1`] = `
     />
   </div>
   <div
-    class="TextField__hints"
+    class="emotion-2"
   >
     <p
-      class="TextField__help-text TextField__count emotion-1"
+      class="TextField__count emotion-1"
       data-test-id="cf-ui-help-text"
     >
       0
@@ -584,15 +596,6 @@ exports[`renders the component with characters count 1`] = `
 `;
 
 exports[`renders the component with help text 1`] = `
-.emotion-1 {
-  margin: 0;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  color: #67728A;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  text-rendering: optimizeLegibility;
-}
-
 .emotion-0 {
   display: inline-block;
   color: #111B2B;
@@ -601,6 +604,27 @@ exports[`renders the component with help text 1`] = `
   font-weight: 500;
   line-height: 1.5;
   margin-bottom: calc(1rem * (8 / 16));
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.emotion-1 {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  color: #67728A;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
 }
 
 <div
@@ -630,10 +654,10 @@ exports[`renders the component with help text 1`] = `
     />
   </div>
   <div
-    class="TextField__hints"
+    class="emotion-2"
   >
     <p
-      class="TextField__help-text emotion-1"
+      class="emotion-1"
       data-test-id="cf-ui-help-text"
     >
       You need to fill out this field
@@ -779,6 +803,7 @@ exports[`renders the component with validation message 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  margin-top: 0.5rem;
 }
 
 .emotion-1 {
@@ -795,6 +820,7 @@ exports[`renders the component with validation message 1`] = `
 .emotion-2 {
   display: block;
   margin: 0;
+  margin-bottom: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #111B2B;
@@ -806,7 +832,6 @@ exports[`renders the component with validation message 1`] = `
   font-size: 0.875rem;
   line-height: 1.25rem;
   color: #DA294A;
-  margin: 0;
 }
 
 <div
@@ -836,7 +861,7 @@ exports[`renders the component with validation message 1`] = `
     />
   </div>
   <div
-    class="TextField__validation-message emotion-3"
+    class="emotion-3"
     data-test-id="cf-ui-validation-message"
   >
     <svg

@@ -1,11 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders no close button in "deleted" variant 1`] = `
-.emotion-2 {
-  display: inherit;
-  outline: 0;
-}
-
 .emotion-3 {
   border: none;
   border-top-right-radius: 4px;
@@ -44,6 +39,11 @@ exports[`renders no close button in "deleted" variant 1`] = `
   width: 18px;
   fill: #5A657C;
   vertical-align: middle;
+}
+
+.emotion-2 {
+  display: inherit;
+  outline: 0;
 }
 
 .emotion-4 {
@@ -285,11 +285,6 @@ exports[`renders the component in "idle" variant by default 1`] = `
 `;
 
 exports[`renders the component with a close button 1`] = `
-.emotion-2 {
-  display: inherit;
-  outline: 0;
-}
-
 .emotion-3 {
   border: none;
   border-top-right-radius: 4px;
@@ -345,6 +340,11 @@ exports[`renders the component with a close button 1`] = `
   width: 18px;
   fill: #5A657C;
   vertical-align: middle;
+}
+
+.emotion-2 {
+  display: inherit;
+  outline: 0;
 }
 
 <div

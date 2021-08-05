@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { Text } from '@contentful/f36-typography';
 
 import { ModalLauncher } from './ModalLauncher';
-import { Button } from '../../Button';
+import { Button } from '@contentful/f36-button';
 import { Modal } from '../Modal';
 
 function DefaultStory() {
@@ -27,14 +27,14 @@ function DefaultStory() {
                   </Modal.Content>
                   <Modal.Controls>
                     <Button
-                      buttonType="positive"
+                      variant="positive"
                       onClick={() => {
                         onClose('The text is revealed!');
                       }}
                     >
                       Show text
                     </Button>
-                    <Button buttonType="muted" onClick={() => onClose('')}>
+                    <Button variant="transparent" onClick={() => onClose('')}>
                       Hide text
                     </Button>
                   </Modal.Controls>

@@ -5,7 +5,7 @@ import { Label, LabelProps } from '../Label';
 import { ControlledInput } from '@contentful/f36-inputs';
 import { HelpText } from '@contentful/f36-helptext';
 import type { ControlledInputProps } from '@contentful/f36-inputs';
-import { styles } from './ControlledInputField.styles';
+import { getStyles } from './ControlledInputField.styles';
 import { Box, BoxProps } from '@contentful/f36-core';
 
 export interface ControlledInputFieldProps extends BoxProps<'div'> {
@@ -65,6 +65,8 @@ export const _ControlledInputField = (
   }: ControlledInputFieldProps,
   ref: React.Ref<HTMLDivElement>,
 ) => {
+  const styles = getStyles();
+
   const rootClassNames = cx(
     {
       [styles.rootOrLabelDisabled]: isDisabled,

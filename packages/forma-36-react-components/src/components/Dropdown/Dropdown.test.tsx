@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { axe } from '@/scripts/test/axeHelper';
 
 import { Dropdown } from './Dropdown';
-import { Button } from '../Button';
+import { Button } from '@contentful/f36-button';
 import { DropdownListItem } from './DropdownListItem/DropdownListItem';
 import { DropdownList } from './DropdownList/DropdownList';
 

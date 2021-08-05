@@ -1,7 +1,7 @@
 import React from 'react';
 import { SectionHeading } from '@contentful/f36-typography';
 import { Textarea, TextareaProps } from './Textarea';
-import { Button } from './../Button';
+import { Button } from '@contentful/f36-button';
 
 import { Flex } from '@contentful/f36-core';
 

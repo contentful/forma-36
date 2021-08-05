@@ -1,5 +1,3 @@
-import { css } from 'emotion';
-
 import React, {
   useState,
   useCallback,
@@ -29,43 +27,7 @@ import {
   DropdownListItem,
   DropdownList,
 } from '@contentful/f36-components';
-import tokens from '@contentful/f36-tokens';
-
-const styles = {
-  selectedTime: css({
-    background: tokens.gray100,
-  }),
-  dropdown: css({
-    width: '100%',
-  }),
-  dropdownContainer: css({
-    zIndex: 1001,
-    width: '165px',
-    '& > div': {
-      width: '100%',
-      button: {
-        width: '100%',
-        textAlign: 'center',
-      },
-    },
-  }),
-  inputWrapper: css({
-    display: 'flex',
-    marginBottom: tokens.spacingXs,
-    'div:not(:last-child)': {
-      marginRight: tokens.spacingXs,
-    },
-  }),
-  daytimeSelect: css({
-    flexBasis: '100%',
-    '> select': {
-      paddingRight: tokens.spacingXl,
-    },
-  }),
-  timeZonePicker: css({
-    marginLeft: tokens.spacingS,
-  }),
-};
+import { getStyles } from './Timepicker.styles';
 
 const DATE_NOW_FORMAT = 'dd/MM/yyyy';
 const DATE_NOW = format(new Date(), DATE_NOW_FORMAT);
@@ -172,6 +134,7 @@ export const Timepicker: React.FC<TimepickerProps> = ({
   labelText,
   disabled,
 }) => {
+  const styles = getStyles();
   const [isTimeSuggestionOpen, setTimeSuggestionOpen] = useState(false);
   const [filteredHours, setFilteredHours] = useState(
     getSuggestionList(value, date),

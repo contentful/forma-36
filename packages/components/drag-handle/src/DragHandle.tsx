@@ -5,7 +5,7 @@ import React, {
   FocusEventHandler,
   MouseEventHandler,
 } from 'react';
-import { css, cx } from 'emotion';
+import { cx } from 'emotion';
 import { usePrimitive } from '@contentful/f36-core';
 import type {
   PolymorphicComponentProps,
@@ -14,20 +14,9 @@ import type {
 } from '@contentful/f36-core';
 import type { CommonProps } from '@contentful/f36-core';
 import { Drag } from '@contentful/f36-icons';
-import tokens from '@contentful/f36-tokens';
-
-import { styles } from './DragHandle.styles';
+import { getStyles } from './DragHandle.styles';
 
 const DEFAULT_TAG = 'button';
-
-const generateStyles = ({ isActive, isFocused, isHovered }) => {
-  if (isActive || isFocused || isHovered) {
-    return css({
-      backgroundColor: tokens.gray200,
-      cursor: isActive ? 'grabbing' : 'grab',
-    });
-  }
-};
 
 export type DragHandleInternalProps = CommonProps & {
   /**
@@ -73,6 +62,7 @@ const _DragHandle: PolymorphicComponentWithRef<
   },
   forwardedRef,
 ) => {
+  const styles = getStyles();
   const { primitiveProps: commonProps, Element } = usePrimitive(otherProps);
   const [isFocused, setisFocused] = useState(isFocusedProp);
   const [isHovered, setisHovered] = useState(isHoveredProp);
@@ -125,11 +115,7 @@ const _DragHandle: PolymorphicComponentWithRef<
     <Element
       as={DEFAULT_TAG}
       {...commonProps}
-      className={cx(
-        styles.root,
-        generateStyles({ isActive, isFocused, isHovered }),
-        className,
-      )}
+      className={cx(styles.root({ isActive, isFocused, isHovered }), className)}
       onBlur={handleBlur}
       onFocus={handleFocus}
       onMouseEnter={handleMouseEnter}

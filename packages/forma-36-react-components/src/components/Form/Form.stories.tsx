@@ -3,7 +3,7 @@ import { CheckboxField } from '@contentful/f36-forms';
 
 import { Form, FormProps } from './Form';
 import { FieldGroup } from './FieldGroup/FieldGroup';
-import { Button } from '../Button';
+import { Button } from '@contentful/f36-button';
 import { TextField } from '../TextField';
 
 export default {

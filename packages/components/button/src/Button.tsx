@@ -9,7 +9,7 @@ import {
 import { Spinner } from '@contentful/f36-spinner';
 
 import type { ButtonInternalProps } from './types';
-import { styles } from './styles';
+import { getStyles } from './styles';
 
 const DEFAULT_TAG: ElementType = 'button';
 
@@ -21,11 +21,12 @@ const _Button: PolymorphicComponentWithRef<
   ButtonInternalProps,
   typeof DEFAULT_TAG
 > = (props, ref) => {
+  const styles = getStyles();
   const {
     as = DEFAULT_TAG,
     children,
     className,
-    testId,
+    testId = 'cf-ui-button',
     variant = 'secondary',
     size = 'medium',
     href,
