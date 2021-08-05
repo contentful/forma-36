@@ -37,9 +37,7 @@ exports[`renders the component as disabled 1`] = `
       <svg
         class="IconButton__icon emotion-0"
         data-test-id="cf-ui-icon"
-        height="1em"
         viewBox="0 0 24 24"
-        width="1em"
       >
         <path
           d="M0 0h24v24H0z"
@@ -95,9 +93,7 @@ exports[`renders the component using a multiple dropdown lists 1`] = `
       <svg
         class="IconButton__icon emotion-0"
         data-test-id="cf-ui-icon"
-        height="1em"
         viewBox="0 0 24 24"
-        width="1em"
       >
         <path
           d="M0 0h24v24H0z"
@@ -153,9 +149,7 @@ exports[`renders the component using a single dropdown list 1`] = `
       <svg
         class="IconButton__icon emotion-0"
         data-test-id="cf-ui-icon"
-        height="1em"
         viewBox="0 0 24 24"
-        width="1em"
       >
         <path
           d="M0 0h24v24H0z"
@@ -211,9 +205,7 @@ exports[`renders the component with an additional class name 1`] = `
       <svg
         class="IconButton__icon emotion-0"
         data-test-id="cf-ui-icon"
-        height="1em"
         viewBox="0 0 24 24"
-        width="1em"
       >
         <path
           d="M0 0h24v24H0z"
@@ -269,9 +261,7 @@ exports[`renders the component with published status 1`] = `
       <svg
         class="IconButton__icon emotion-0"
         data-test-id="cf-ui-icon"
-        height="1em"
         viewBox="0 0 24 24"
-        width="1em"
       >
         <path
           d="M0 0h24v24H0z"

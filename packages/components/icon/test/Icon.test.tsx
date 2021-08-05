@@ -28,4 +28,15 @@ describe('Icon', () => {
       expect(baseElement).toMatchSnapshot();
     });
   });
+
+  describe('expect omitted properties', () => {
+    it('component has no width and height properties', () => {
+      // @ts-expect-error expect width to be missing
+      render(<Icon width="100" />);
+      // @ts-expect-error expect height to be missing
+      render(<Icon height="100" />);
+
+      expect(1).toBe(1);
+    });
+  });
 });

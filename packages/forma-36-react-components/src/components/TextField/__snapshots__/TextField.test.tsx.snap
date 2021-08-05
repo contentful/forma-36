@@ -118,9 +118,7 @@ exports[`renders the component with a copybutton 1`] = `
             <svg
               class="emotion-1"
               data-test-id="cf-ui-icon"
-              height="1em"
               viewBox="0 0 24 24"
-              width="1em"
             >
               <path
                 d="M0 0h24v24H0z"
@@ -327,9 +325,7 @@ exports[`renders the component with a textlink 1`] = `
         <svg
           class="emotion-1"
           data-test-id="cf-ui-icon"
-          height="1em"
           viewBox="0 0 24 24"
-          width="1em"
         >
           <path
             d="M0 0h24v24H0z"
@@ -890,9 +886,7 @@ exports[`renders the component with validation message 1`] = `
       <svg
         class="emotion-1"
         data-test-id="cf-ui-icon"
-        height="1em"
         viewBox="0 0 24 24"
-        width="1em"
       >
         <path
           d="M0 0h24v24H0V0z"

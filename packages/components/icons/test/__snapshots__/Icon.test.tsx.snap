@@ -13,9 +13,7 @@ exports[`Separate components renders 1`] = `
     <svg
       class="emotion-0"
       data-test-id="cf-ui-icon"
-      height="1em"
       viewBox="0 0 24 24"
-      width="1em"
     >
       <path
         d="M7 10l5 5 5-5z"

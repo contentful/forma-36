@@ -64,9 +64,7 @@ exports[`renders the component with a dropdown 1`] = `
         <svg
           class="IconButton__icon emotion-0"
           data-test-id="cf-ui-icon"
-          height="1em"
           viewBox="0 0 24 24"
-          width="1em"
         >
           <path
             d="M0 0h24v24H0z"

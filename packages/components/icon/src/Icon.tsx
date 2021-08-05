@@ -70,7 +70,7 @@ type AsOrChildren =
       children: ReactElement | ReactElement[];
     };
 
-type IconInternalProps = CommonProps & {
+export type IconInternalProps = CommonProps & {
   /**
    * Determines the size of the icon
    */
@@ -89,9 +89,10 @@ type IconInternalProps = CommonProps & {
   viewBox?: SVGAttributes<SVGSVGElement>['viewBox'];
 };
 
-export type IconProps = Omit<
-  PolymorphicComponentProps<IconComponent, IconInternalProps>,
-  'as' | 'children'
+export type IconProps = PolymorphicComponentProps<
+  typeof DEFAULT_TAG,
+  IconInternalProps,
+  'as' | 'children' | 'width' | 'height'
 > &
   AsOrChildren;
 
@@ -132,9 +133,7 @@ export const _Icon: PolymorphicComponentWithRef<
 
   return (
     <Box
-      height="1em"
       viewBox={viewBox}
-      width="1em"
       display="inline-block"
       {...otherProps}
       as={DEFAULT_TAG}
@@ -147,5 +146,6 @@ export const _Icon: PolymorphicComponentWithRef<
 
 export const Icon: PolymorphicComponent<
   IconInternalProps,
-  IconComponent
+  typeof DEFAULT_TAG,
+  'width' | 'height'
 > = forwardRef(_Icon);
