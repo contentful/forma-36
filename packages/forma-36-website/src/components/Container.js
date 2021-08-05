@@ -24,7 +24,6 @@ import {
 import ComponentSource from './ComponentSource';
 import DocFormatter from './DocFormatter';
 import Footer from './Footer';
-import { heightOfHeader } from './Navigation';
 import { StaticSource } from './StaticSource';
 
 const styles = {
@@ -32,7 +31,7 @@ const styles = {
     width: 100%;
     display: flex;
     flex-direction: column;
-    height: calc(100vh - ${heightOfHeader}px);
+    height: 100%;
     overflow-y: auto;
   `,
 

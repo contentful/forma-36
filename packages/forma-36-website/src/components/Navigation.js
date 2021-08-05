@@ -11,12 +11,11 @@ import { ChevronDown, ChevronRight } from '@contentful/f36-icons';
 
 import DocSearch from './DocSearch';
 
-export const heightOfHeader = 56;
-const heightOfDocSearch = 72;
-
 const styles = {
   sidemenu: css`
-    flex-basis: 380px;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
     padding-top: ${tokens.spacingM};
     border-right: 1px solid ${tokens.colorElementMid};
   `,
@@ -26,7 +25,6 @@ const styles = {
     flex-direction: column;
     border-top: 1px solid ${tokens.colorElementMid};
     padding: ${tokens.spacingM} 0;
-    height: calc(100vh - ${heightOfHeader + heightOfDocSearch}px);
     overflow-y: auto;
     color: ${tokens.colorTextMid};
   `,
@@ -158,7 +156,7 @@ const MenuListItem = ({ item, currentPath, isActive, hierarchyLevel }) => {
 MenuListItem.propTypes = {
   item: PropTypes.shape({ link: PropTypes.string, name: PropTypes.string })
     .isRequired,
-  currentPath: PropTypes.string.isRequired,
+  currentPath: PropTypes.string,
   isActive: PropTypes.bool,
   hierarchyLevel: PropTypes.number,
 };
@@ -187,7 +185,7 @@ const MenuList = ({ menuItems, currentPath, hierarchyLevel }) => {
 };
 
 const MenuListProps = {
-  currentPath: PropTypes.string.isRequired,
+  currentPath: PropTypes.string,
   menuItems: PropTypes.arrayOf(
     PropTypes.shape({ link: PropTypes.string, name: PropTypes.string }),
   ),

@@ -109,7 +109,7 @@ export function WorkbenchSidebar({
   className,
   position,
   testId = 'cf-ui-workbench-sidebar',
-  labelText = position === 'left' ? 'Primary sidebar' : 'Secondary sidebar',
+  labelText = position === 'right' ? 'Primary sidebar' : 'Secondary sidebar',
   ...otherProps
 }: WorkbenchSidebarProps) {
   return (
