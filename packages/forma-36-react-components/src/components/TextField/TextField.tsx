@@ -113,8 +113,12 @@ export const TextField = ({
             </Box>
           )}
           {countCharacters && textInputProps && textInputProps.maxLength && (
-            <Box marginTop="spacingXs">
-              <HelpText className={cn(styles['TextField__count'])}>
+            <Box
+              marginTop="spacingXs"
+              marginLeft="spacingM"
+              className={cn(styles['TextField__count'])}
+            >
+              <HelpText>
                 {valueState ? valueState.length : 0}/{textInputProps.maxLength}
               </HelpText>
             </Box>

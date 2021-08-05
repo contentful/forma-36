@@ -35,7 +35,6 @@
 }
 
 .TextField__count {
-  margin-left: calc(1rem * (10 / var(--font-base-default)));
   flex-grow: 1;
   text-align: right;
 }

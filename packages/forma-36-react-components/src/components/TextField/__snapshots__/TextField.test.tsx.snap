@@ -532,10 +532,6 @@ exports[`renders the component with characters count 1`] = `
   margin-bottom: calc(1rem * (8 / 16));
 }
 
-.emotion-2 {
-  margin-top: 0.5rem;
-}
-
 .emotion-3 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -555,6 +551,11 @@ exports[`renders the component with characters count 1`] = `
   font-size: 0.875rem;
   line-height: 1.5;
   text-rendering: optimizeLegibility;
+}
+
+.emotion-2 {
+  margin-left: 1rem;
+  margin-top: 0.5rem;
 }
 
 <div
@@ -588,10 +589,10 @@ exports[`renders the component with characters count 1`] = `
     class="emotion-3"
   >
     <div
-      class="emotion-2"
+      class="TextField__count emotion-2"
     >
       <p
-        class="TextField__count emotion-1"
+        class="emotion-1"
         data-test-id="cf-ui-help-text"
       >
         0
