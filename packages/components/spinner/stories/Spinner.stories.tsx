@@ -5,7 +5,7 @@ import { Flex } from '@contentful/f36-core';
 import tokens from '@contentful/f36-tokens';
 
 import { Spinner } from '../src/';
-import type { SpinnerProps } from '../src/';
+import type { SpinnerInternalProps } from '../src/Spinner';
 
 export default {
   argTypes: {
@@ -18,7 +18,7 @@ export default {
   title: 'Components/Spinner',
 } as Meta;
 
-export const Default: Story<SpinnerProps> = ({ ref, ...args }) => {
+export const Default: Story<SpinnerInternalProps> = (args) => {
   return <Spinner {...args} />;
 };
 
@@ -27,7 +27,7 @@ Default.args = {
   variant: 'primary',
 };
 
-export const WithText: Story<SpinnerProps> = ({ ref, ...args }) => {
+export const WithText: Story<SpinnerInternalProps> = (args) => {
   return (
     <>
       Loading <Spinner {...args} />
