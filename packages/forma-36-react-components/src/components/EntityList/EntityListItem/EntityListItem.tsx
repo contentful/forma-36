@@ -15,7 +15,7 @@ import {
   SkeletonBodyText,
   SkeletonContainer,
   SkeletonImage,
-} from '../../Skeleton';
+} from '@contentful/f36-skeleton';
 import { TabFocusTrap } from '@contentful/f36-utils';
 import styles from './EntityListItem.css';
 

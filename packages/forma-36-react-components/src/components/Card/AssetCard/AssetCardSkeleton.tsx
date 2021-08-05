@@ -4,7 +4,7 @@ import {
   SkeletonBodyText,
   SkeletonContainer,
   SkeletonImage,
-} from '../../Skeleton';
+} from '@contentful/f36-skeleton';
 
 export interface AssetCardSkeletonProps {
   size?: 'small' | 'default';

@@ -264,6 +264,10 @@ module.exports = {
             link: '',
             menuLinks: [
               {
+                name: 'SkeletonContainer',
+                link: '/components/skeleton/skeleton-container/',
+              },
+              {
                 name: 'SkeletonBodyText',
                 link: '/components/skeleton/skeleton-body-text/',
               },

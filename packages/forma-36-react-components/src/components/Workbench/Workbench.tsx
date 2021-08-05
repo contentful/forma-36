@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { HTMLProps } from 'react';
 import cn from 'classnames';
 import type { ReactElement } from 'react';
 import { Heading } from '@contentful/f36-typography';
@@ -30,7 +30,7 @@ export function WorkbenchHeader({
   const Icon = icon ?? null;
 
   return (
-    <div
+    <header
       className={cn(styles['Workbench__header'], className)}
       data-test-id={testId}
     >
@@ -62,7 +62,10 @@ export function WorkbenchHeader({
           className={styles['Workbench__header-title']}
         >
           {typeof title === 'string' ? (
-            <Heading className={styles['Workbench__header-title__heading']}>
+            <Heading
+              as="h1"
+              className={styles['Workbench__header-title__heading']}
+            >
               {title}
             </Heading>
           ) : (
@@ -76,9 +79,9 @@ export function WorkbenchHeader({
           className={styles['Workbench__header-description']}
         >
           {typeof description === 'string' ? (
-            <span className={styles['Workbench__header-description__text']}>
+            <p className={styles['Workbench__header-description__text']}>
               {description}
-            </span>
+            </p>
           ) : (
             description
           )}
@@ -87,17 +90,18 @@ export function WorkbenchHeader({
       {actions ? (
         <div className={styles['Workbench__header-actions']}>{actions}</div>
       ) : null}
-    </div>
+    </header>
   );
 }
 
 WorkbenchHeader.displayName = 'Workbench.Header';
 
-export interface WorkbenchSidebarProps {
+export interface WorkbenchSidebarProps extends HTMLProps<HTMLElement> {
   children?: React.ReactNode;
   className?: string;
   position?: 'left' | 'right';
   testId?: string;
+  labelText?: string;
 }
 
 export function WorkbenchSidebar({
@@ -105,9 +109,11 @@ export function WorkbenchSidebar({
   className,
   position,
   testId = 'cf-ui-workbench-sidebar',
+  labelText = position === 'left' ? 'Primary sidebar' : 'Secondary sidebar',
+  ...otherProps
 }: WorkbenchSidebarProps) {
   return (
-    <div
+    <aside
       data-test-id={`${testId}${position ? `-${position}` : ''}`}
       className={cn(
         styles['Workbench__sidebar'],
@@ -117,17 +123,20 @@ export function WorkbenchSidebar({
         },
         className,
       )}
+      aria-label={labelText}
+      {...otherProps}
     >
       {children}
-    </div>
+    </aside>
   );
 }
 
-export interface WorkbenchContentProps {
+export interface WorkbenchContentProps extends HTMLProps<HTMLElement> {
   children?: React.ReactNode;
   type?: 'default' | 'text' | 'full';
   className?: string;
   testId?: string;
+  labelText?: string;
 }
 
 export function WorkbenchContent({
@@ -135,11 +144,13 @@ export function WorkbenchContent({
   className,
   testId = 'cf-ui-workbench-content',
   type = 'default',
+  labelText = 'Main content',
 }: WorkbenchContentProps) {
   return (
-    <div
+    <main
       className={cn(styles['Workbench__content'], className)}
       data-test-id={testId}
+      aria-label={labelText}
     >
       <div
         className={cn(styles['Workbench__content-inner'], {
@@ -150,7 +161,7 @@ export function WorkbenchContent({
       >
         {children}
       </div>
-    </div>
+    </main>
   );
 }
 
