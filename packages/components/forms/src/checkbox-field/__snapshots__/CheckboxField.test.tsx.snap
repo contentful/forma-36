@@ -137,6 +137,7 @@ exports[`renders the component 1`] = `
       for="checkbox"
     >
       <svg
+        aria-hidden="true"
         class="emotion-1"
         data-test-id="cf-ui-icon"
         viewBox="0 0 24 24"

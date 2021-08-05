@@ -9,6 +9,7 @@ exports[`renders the component 1`] = `
 }
 
 <svg
+  aria-hidden="true"
   class="AssetIcon emotion-0"
   data-test-id="cf-ui-asset-icon"
   viewBox="0 0 24 24"
@@ -35,6 +36,7 @@ exports[`renders the component with an additional class name 1`] = `
 }
 
 <svg
+  aria-hidden="true"
   class="extra-class-name AssetIcon emotion-0"
   data-test-id="cf-ui-asset-icon"
   viewBox="0 0 24 24"
@@ -71,6 +73,7 @@ exports[`renders the component with type pdf 1`] = `
 }
 
 <svg
+  aria-hidden="true"
   class="extra-class-name AssetIcon emotion-0"
   data-test-id="cf-ui-asset-icon"
   viewBox="0 0 24 24"

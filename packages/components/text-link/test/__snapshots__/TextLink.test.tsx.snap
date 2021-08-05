@@ -880,6 +880,7 @@ exports[`TextLink renders with an icon 1`] = `
     class="emotion-1"
   >
     <svg
+      aria-hidden="true"
       class="emotion-0"
       data-test-id="cf-ui-icon"
       viewBox="0 0 24 24"
@@ -987,6 +988,7 @@ exports[`TextLink renders with an icon aligned right to the text 1`] = `
     class="emotion-2"
   >
     <svg
+      aria-hidden="true"
       class="emotion-1"
       data-test-id="cf-ui-icon"
       viewBox="0 0 24 24"

@@ -62,6 +62,7 @@ exports[`renders the component with a dropdown 1`] = `
         tabindex="-1"
       >
         <svg
+          aria-hidden="true"
           class="IconButton__icon emotion-0"
           data-test-id="cf-ui-icon"
           viewBox="0 0 24 24"

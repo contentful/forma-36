@@ -221,6 +221,7 @@ exports[`renders the component with the copy button 1`] = `
              to clipboard
           </span>
           <svg
+            aria-hidden="true"
             class="emotion-0"
             data-test-id="cf-ui-icon"
             viewBox="0 0 24 24"

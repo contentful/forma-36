@@ -29,6 +29,7 @@ exports[`can call an onClick callback 1`] = `
         class="EntityListItem__media"
       >
         <svg
+          aria-hidden="true"
           class="emotion-0"
           data-test-id="cf-ui-icon"
           viewBox="0 0 24 24"
@@ -99,6 +100,7 @@ exports[`renders the component 1`] = `
         class="EntityListItem__media"
       >
         <svg
+          aria-hidden="true"
           class="emotion-0"
           data-test-id="cf-ui-icon"
           viewBox="0 0 24 24"
@@ -172,6 +174,7 @@ exports[`renders the component as an \`a\` element if passed a href prop 1`] = `
         class="EntityListItem__media"
       >
         <svg
+          aria-hidden="true"
           class="emotion-0"
           data-test-id="cf-ui-icon"
           viewBox="0 0 24 24"
@@ -260,6 +263,7 @@ exports[`renders the component as an Asset with a lower-cased entityType 1`] = `
         class="EntityListItem__media"
       >
         <svg
+          aria-hidden="true"
           class="emotion-0"
           data-test-id="cf-ui-icon"
           viewBox="0 0 24 24"
@@ -368,6 +372,7 @@ exports[`renders the component as an Asset with a title-cased entityType 1`] = `
         class="EntityListItem__media"
       >
         <svg
+          aria-hidden="true"
           class="emotion-0"
           data-test-id="cf-ui-icon"
           viewBox="0 0 24 24"
@@ -476,6 +481,7 @@ exports[`renders the component as an asset entityType icon with an archived stat
         class="EntityListItem__media"
       >
         <svg
+          aria-hidden="true"
           class="emotion-0"
           data-test-id="cf-ui-icon"
           viewBox="0 0 24 24"
@@ -584,6 +590,7 @@ exports[`renders the component as an asset entityType variant 1`] = `
         class="EntityListItem__media"
       >
         <svg
+          aria-hidden="true"
           class="emotion-0"
           data-test-id="cf-ui-icon"
           viewBox="0 0 24 24"
@@ -870,6 +877,7 @@ exports[`renders the component with a description 1`] = `
         class="EntityListItem__media"
       >
         <svg
+          aria-hidden="true"
           class="emotion-0"
           data-test-id="cf-ui-icon"
           viewBox="0 0 24 24"
@@ -1002,6 +1010,7 @@ exports[`renders the component with a drag handle 1`] = `
     testid="cf-ui-drag-handle"
   >
     <svg
+      aria-hidden="true"
       class="emotion-0"
       data-test-id="cf-ui-icon"
       viewBox="0 0 24 24"
@@ -1031,6 +1040,7 @@ exports[`renders the component with a drag handle 1`] = `
         class="EntityListItem__media"
       >
         <svg
+          aria-hidden="true"
           class="emotion-0"
           data-test-id="cf-ui-icon"
           viewBox="0 0 24 24"
@@ -1137,6 +1147,7 @@ exports[`renders the component with a status 1`] = `
         class="EntityListItem__media"
       >
         <svg
+          aria-hidden="true"
           class="emotion-0"
           data-test-id="cf-ui-icon"
           viewBox="0 0 24 24"
@@ -1243,6 +1254,7 @@ exports[`renders the component with active drag state 1`] = `
         class="EntityListItem__media"
       >
         <svg
+          aria-hidden="true"
           class="emotion-0"
           data-test-id="cf-ui-icon"
           viewBox="0 0 24 24"
@@ -1331,6 +1343,7 @@ exports[`renders the component with an additional class name 1`] = `
         class="EntityListItem__media"
       >
         <svg
+          aria-hidden="true"
           class="emotion-0"
           data-test-id="cf-ui-icon"
           viewBox="0 0 24 24"
@@ -1420,6 +1433,7 @@ exports[`renders the component with custom drag handle 1`] = `
     data-test-id="cf-ui-card-drag-handle"
   >
     <svg
+      aria-hidden="true"
       class="emotion-0"
       data-test-id="cf-ui-icon"
       viewBox="0 0 24 24"
@@ -1449,6 +1463,7 @@ exports[`renders the component with custom drag handle 1`] = `
         class="EntityListItem__media"
       >
         <svg
+          aria-hidden="true"
           class="emotion-0"
           data-test-id="cf-ui-icon"
           viewBox="0 0 24 24"
@@ -1537,6 +1552,7 @@ exports[`renders the component with disabled actions 1`] = `
         class="EntityListItem__media"
       >
         <svg
+          aria-hidden="true"
           class="emotion-0"
           data-test-id="cf-ui-icon"
           viewBox="0 0 24 24"
@@ -1707,6 +1723,7 @@ exports[`renders the component with dropdownListElements 1`] = `
         class="EntityListItem__media"
       >
         <svg
+          aria-hidden="true"
           class="emotion-0"
           data-test-id="cf-ui-icon"
           viewBox="0 0 24 24"
@@ -1778,6 +1795,7 @@ exports[`renders the component with dropdownListElements 1`] = `
               class="emotion-3"
             >
               <svg
+                aria-hidden="true"
                 class="emotion-2"
                 data-test-id="cf-ui-icon"
                 viewBox="0 0 24 24"

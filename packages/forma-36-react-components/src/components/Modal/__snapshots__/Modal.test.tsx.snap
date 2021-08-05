@@ -44,6 +44,7 @@ exports[`can be controlled 1`] = `
           tabindex="-1"
         >
           <svg
+            aria-hidden="true"
             class="IconButton__icon emotion-0"
             data-test-id="cf-ui-icon"
             viewBox="0 0 24 24"
@@ -124,6 +125,7 @@ exports[`can override header and content properties 1`] = `
           tabindex="-1"
         >
           <svg
+            aria-hidden="true"
             class="IconButton__icon emotion-0"
             data-test-id="cf-ui-icon"
             viewBox="0 0 24 24"
@@ -194,6 +196,7 @@ exports[`renders the component 1`] = `
           tabindex="-1"
         >
           <svg
+            aria-hidden="true"
             class="IconButton__icon emotion-0"
             data-test-id="cf-ui-icon"
             viewBox="0 0 24 24"

@@ -11,6 +11,7 @@ exports[`Separate components renders 1`] = `
 <body>
   <div>
     <svg
+      aria-hidden="true"
       class="emotion-0"
       data-test-id="cf-ui-icon"
       viewBox="0 0 24 24"

@@ -35,6 +35,7 @@ exports[`renders the component as disabled 1`] = `
       tabindex="-1"
     >
       <svg
+        aria-hidden="true"
         class="IconButton__icon emotion-0"
         data-test-id="cf-ui-icon"
         viewBox="0 0 24 24"
@@ -91,6 +92,7 @@ exports[`renders the component using a multiple dropdown lists 1`] = `
       tabindex="-1"
     >
       <svg
+        aria-hidden="true"
         class="IconButton__icon emotion-0"
         data-test-id="cf-ui-icon"
         viewBox="0 0 24 24"
@@ -147,6 +149,7 @@ exports[`renders the component using a single dropdown list 1`] = `
       tabindex="-1"
     >
       <svg
+        aria-hidden="true"
         class="IconButton__icon emotion-0"
         data-test-id="cf-ui-icon"
         viewBox="0 0 24 24"
@@ -203,6 +206,7 @@ exports[`renders the component with an additional class name 1`] = `
       tabindex="-1"
     >
       <svg
+        aria-hidden="true"
         class="IconButton__icon emotion-0"
         data-test-id="cf-ui-icon"
         viewBox="0 0 24 24"
@@ -259,6 +263,7 @@ exports[`renders the component with published status 1`] = `
       tabindex="-1"
     >
       <svg
+        aria-hidden="true"
         class="IconButton__icon emotion-0"
         data-test-id="cf-ui-icon"
         viewBox="0 0 24 24"

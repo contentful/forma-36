@@ -112,6 +112,7 @@ exports[`renders the component with a value 1`] = `
     for="ControlledInput"
   >
     <svg
+      aria-hidden="true"
       class="emotion-1"
       data-test-id="cf-ui-icon"
       viewBox="0 0 24 24"
@@ -236,6 +237,7 @@ exports[`renders the component with all required props 1`] = `
     for="ControlledInput"
   >
     <svg
+      aria-hidden="true"
       class="emotion-1"
       data-test-id="cf-ui-icon"
       viewBox="0 0 24 24"
@@ -360,6 +362,7 @@ exports[`renders the component with an additional class name 1`] = `
     for="ControlledInput"
   >
     <svg
+      aria-hidden="true"
       class="emotion-1"
       data-test-id="cf-ui-icon"
       viewBox="0 0 24 24"
@@ -485,6 +488,7 @@ exports[`renders the component with as checked 1`] = `
     for="ControlledInput"
   >
     <svg
+      aria-hidden="true"
       class="emotion-1"
       data-test-id="cf-ui-icon"
       viewBox="0 0 24 24"
@@ -611,6 +615,7 @@ exports[`renders the component with disabled prop 1`] = `
     for="ControlledInput"
   >
     <svg
+      aria-hidden="true"
       class="emotion-1"
       data-test-id="cf-ui-icon"
       viewBox="0 0 24 24"
@@ -736,6 +741,7 @@ exports[`renders the component with required prop 1`] = `
     for="ControlledInput"
   >
     <svg
+      aria-hidden="true"
       class="emotion-1"
       data-test-id="cf-ui-icon"
       viewBox="0 0 24 24"

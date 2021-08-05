@@ -39,6 +39,7 @@ exports[`renders the component with EntityListItems as children 1`] = `
           class="EntityListItem__media"
         >
           <svg
+            aria-hidden="true"
             class="emotion-0"
             data-test-id="cf-ui-icon"
             viewBox="0 0 24 24"
@@ -101,6 +102,7 @@ exports[`renders the component with EntityListItems as children 1`] = `
           class="EntityListItem__media"
         >
           <svg
+            aria-hidden="true"
             class="emotion-0"
             data-test-id="cf-ui-icon"
             viewBox="0 0 24 24"
@@ -163,6 +165,7 @@ exports[`renders the component with EntityListItems as children 1`] = `
           class="EntityListItem__media"
         >
           <svg
+            aria-hidden="true"
             class="emotion-0"
             data-test-id="cf-ui-icon"
             viewBox="0 0 24 24"

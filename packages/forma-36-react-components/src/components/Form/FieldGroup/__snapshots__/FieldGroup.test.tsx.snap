@@ -154,6 +154,7 @@ exports[`renders the component 1`] = `
           for="agree"
         >
           <svg
+            aria-hidden="true"
             class="emotion-1"
             data-test-id="cf-ui-icon"
             viewBox="0 0 24 24"
@@ -204,6 +205,7 @@ exports[`renders the component 1`] = `
           for="reallyAgree"
         >
           <svg
+            aria-hidden="true"
             class="emotion-1"
             data-test-id="cf-ui-icon"
             viewBox="0 0 24 24"
@@ -388,6 +390,7 @@ exports[`renders the component children in a row 1`] = `
           for="agree"
         >
           <svg
+            aria-hidden="true"
             class="emotion-1"
             data-test-id="cf-ui-icon"
             viewBox="0 0 24 24"
@@ -438,6 +441,7 @@ exports[`renders the component children in a row 1`] = `
           for="reallyAgree"
         >
           <svg
+            aria-hidden="true"
             class="emotion-1"
             data-test-id="cf-ui-icon"
             viewBox="0 0 24 24"
@@ -622,6 +626,7 @@ exports[`renders the component with an additional class name 1`] = `
           for="agree"
         >
           <svg
+            aria-hidden="true"
             class="emotion-1"
             data-test-id="cf-ui-icon"
             viewBox="0 0 24 24"
@@ -672,6 +677,7 @@ exports[`renders the component with an additional class name 1`] = `
           for="reallyAgree"
         >
           <svg
+            aria-hidden="true"
             class="emotion-1"
             data-test-id="cf-ui-icon"
             viewBox="0 0 24 24"

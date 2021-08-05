@@ -96,9 +96,24 @@ export type IconProps = PolymorphicComponentProps<
 > &
   AsOrChildren;
 
+const useAriaHidden = (
+  props: Pick<IconProps, 'aria-label' | 'aria-labelledby'>,
+) => {
+  const ariaLabel = props['aria-label'];
+  const ariaLabelBy = props['aria-labelledby'];
+
+  if (ariaLabel || ariaLabelBy) {
+    return {};
+  }
+
+  return {
+    'aria-hidden': true,
+  };
+};
+
 export const _Icon: PolymorphicComponentWithRef<
   IconInternalProps,
-  IconComponent
+  typeof DEFAULT_TAG
 > = (
   {
     as,
@@ -126,15 +141,26 @@ export const _Icon: PolymorphicComponentWithRef<
     testId,
   };
 
+  const ariaHiddenProps = useAriaHidden(otherProps);
+
   if (as) {
-    // @ts-expect-error mute polymorphic error
-    return <Box display="inline-block" {...otherProps} {...shared} as={as} />;
+    return (
+      // @ts-expect-error mute polymorphic error
+      <Box
+        display="inline-block"
+        {...ariaHiddenProps}
+        {...otherProps}
+        {...shared}
+        as={as}
+      />
+    );
   }
 
   return (
     <Box
       viewBox={viewBox}
       display="inline-block"
+      {...ariaHiddenProps}
       {...otherProps}
       as={DEFAULT_TAG}
       {...shared}

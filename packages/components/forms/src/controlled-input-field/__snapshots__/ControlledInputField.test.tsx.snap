@@ -137,6 +137,7 @@ exports[`renders the component 1`] = `
       for="checkbox"
     >
       <svg
+        aria-hidden="true"
         class="emotion-1"
         data-test-id="cf-ui-icon"
         viewBox="0 0 24 24"
@@ -297,6 +298,7 @@ exports[`renders the component as checked 1`] = `
       for="checkbox"
     >
       <svg
+        aria-hidden="true"
         class="emotion-1"
         data-test-id="cf-ui-icon"
         viewBox="0 0 24 24"
@@ -463,6 +465,7 @@ exports[`renders the component as required 1`] = `
       for="checkbox"
     >
       <svg
+        aria-hidden="true"
         class="emotion-1"
         data-test-id="cf-ui-icon"
         viewBox="0 0 24 24"
@@ -637,6 +640,7 @@ exports[`renders the component in a disabled state 1`] = `
       for="checkbox"
     >
       <svg
+        aria-hidden="true"
         class="emotion-1"
         data-test-id="cf-ui-icon"
         viewBox="0 0 24 24"
@@ -806,6 +810,7 @@ exports[`renders the component with a help text 1`] = `
       for="checkbox"
     >
       <svg
+        aria-hidden="true"
         class="emotion-1"
         data-test-id="cf-ui-icon"
         viewBox="0 0 24 24"
@@ -1007,6 +1012,7 @@ exports[`renders the component with a light label variation 1`] = `
       for="checkbox"
     >
       <svg
+        aria-hidden="true"
         class="emotion-1"
         data-test-id="cf-ui-icon"
         viewBox="0 0 24 24"
@@ -1030,6 +1036,7 @@ exports[`renders the component with a light label variation 1`] = `
       data-test-id="cf-ui-validation-message"
     >
       <svg
+        aria-hidden="true"
         class="emotion-5"
         data-test-id="cf-ui-icon"
         viewBox="0 0 24 24"
@@ -1225,6 +1232,7 @@ exports[`renders the component with a validation message 1`] = `
       for="checkbox"
     >
       <svg
+        aria-hidden="true"
         class="emotion-1"
         data-test-id="cf-ui-icon"
         viewBox="0 0 24 24"
@@ -1248,6 +1256,7 @@ exports[`renders the component with a validation message 1`] = `
       data-test-id="cf-ui-validation-message"
     >
       <svg
+        aria-hidden="true"
         class="emotion-5"
         data-test-id="cf-ui-icon"
         viewBox="0 0 24 24"
@@ -1408,6 +1417,7 @@ exports[`renders the component with a value 1`] = `
       for="checkbox"
     >
       <svg
+        aria-hidden="true"
         class="emotion-1"
         data-test-id="cf-ui-icon"
         viewBox="0 0 24 24"
@@ -1567,6 +1577,7 @@ exports[`renders the component with an additional class name 1`] = `
       for="checkbox"
     >
       <svg
+        aria-hidden="true"
         class="emotion-1"
         data-test-id="cf-ui-icon"
         viewBox="0 0 24 24"

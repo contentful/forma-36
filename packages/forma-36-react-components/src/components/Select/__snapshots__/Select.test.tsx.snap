@@ -26,6 +26,7 @@ exports[`renders the component 1`] = `
     </option>
   </select>
   <svg
+    aria-hidden="true"
     class="Select__icon emotion-0"
     data-test-id="cf-ui-icon"
     viewBox="0 0 24 24"
@@ -64,6 +65,7 @@ exports[`renders the component as required 1`] = `
     </option>
   </select>
   <svg
+    aria-hidden="true"
     class="Select__icon emotion-0"
     data-test-id="cf-ui-icon"
     viewBox="0 0 24 24"
@@ -102,6 +104,7 @@ exports[`renders the component in disabled state 1`] = `
     </option>
   </select>
   <svg
+    aria-hidden="true"
     class="Select__icon emotion-0"
     data-test-id="cf-ui-icon"
     viewBox="0 0 24 24"
@@ -139,6 +142,7 @@ exports[`renders the component with a value 1`] = `
     </option>
   </select>
   <svg
+    aria-hidden="true"
     class="Select__icon emotion-0"
     data-test-id="cf-ui-icon"
     viewBox="0 0 24 24"
@@ -176,6 +180,7 @@ exports[`renders the component with an extra class name 1`] = `
     </option>
   </select>
   <svg
+    aria-hidden="true"
     class="Select__icon emotion-0"
     data-test-id="cf-ui-icon"
     viewBox="0 0 24 24"
@@ -213,6 +218,7 @@ exports[`renders the component with error 1`] = `
     </option>
   </select>
   <svg
+    aria-hidden="true"
     class="Select__icon emotion-0"
     data-test-id="cf-ui-icon"
     viewBox="0 0 24 24"
@@ -269,6 +275,7 @@ exports[`renders the component with placeholder 1`] = `
     </option>
   </select>
   <svg
+    aria-hidden="true"
     class="Select__icon emotion-0"
     data-test-id="cf-ui-icon"
     viewBox="0 0 24 24"

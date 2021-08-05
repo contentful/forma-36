@@ -91,6 +91,7 @@ exports[`renders the component (complex) 1`] = `
       class="Workbench__header-icon"
     >
       <svg
+        aria-hidden="true"
         class="emotion-0"
         data-test-id="cf-ui-icon"
         viewBox="0 0 24 24"
@@ -255,6 +256,7 @@ exports[`renders the component (simple) 1`] = `
       class="Workbench__header-icon"
     >
       <svg
+        aria-hidden="true"
         class="emotion-0"
         data-test-id="cf-ui-icon"
         viewBox="0 0 24 24"

@@ -86,6 +86,7 @@ exports[`renders no close button in "deleted" variant 1`] = `
       tabindex="-1"
     >
       <svg
+        aria-hidden="true"
         class="emotion-1"
         data-test-id="cf-ui-icon"
         viewBox="0 0 24 24"
@@ -365,6 +366,7 @@ exports[`renders the component with a close button 1`] = `
       tabindex="-1"
     >
       <svg
+        aria-hidden="true"
         class="emotion-1"
         data-test-id="cf-ui-icon"
         viewBox="0 0 24 24"
@@ -433,6 +435,7 @@ exports[`renders the component with a dragging handle 1`] = `
     class="emotion-1"
   >
     <svg
+      aria-hidden="true"
       class="emotion-0"
       data-test-id="cf-ui-icon"
       viewBox="0 0 24 24"

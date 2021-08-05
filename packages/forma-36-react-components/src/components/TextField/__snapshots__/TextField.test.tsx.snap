@@ -116,6 +116,7 @@ exports[`renders the component with a copybutton 1`] = `
                to clipboard
             </span>
             <svg
+              aria-hidden="true"
               class="emotion-1"
               data-test-id="cf-ui-icon"
               viewBox="0 0 24 24"
@@ -323,6 +324,7 @@ exports[`renders the component with a textlink 1`] = `
         class="emotion-2"
       >
         <svg
+          aria-hidden="true"
           class="emotion-1"
           data-test-id="cf-ui-icon"
           viewBox="0 0 24 24"
@@ -884,6 +886,7 @@ exports[`renders the component with validation message 1`] = `
       data-test-id="cf-ui-validation-message"
     >
       <svg
+        aria-hidden="true"
         class="emotion-1"
         data-test-id="cf-ui-icon"
         viewBox="0 0 24 24"

@@ -110,6 +110,7 @@ exports[`renders the component 1`] = `
     class="emotion-2"
   >
     <svg
+      aria-hidden="true"
       class="emotion-1"
       data-test-id="cf-ui-icon"
       viewBox="0 0 24 24"
@@ -232,6 +233,7 @@ exports[`renders the component with an additional class name 1`] = `
     class="emotion-2"
   >
     <svg
+      aria-hidden="true"
       class="emotion-1"
       data-test-id="cf-ui-icon"
       viewBox="0 0 24 24"

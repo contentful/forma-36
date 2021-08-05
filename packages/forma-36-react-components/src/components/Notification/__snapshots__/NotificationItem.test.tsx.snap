@@ -41,6 +41,7 @@ exports[`renders the component 1`] = `
     class="NotificationItem__icon NotificationItem__icon--success"
   >
     <svg
+      aria-hidden="true"
       class="emotion-0"
       data-test-id="cf-ui-icon"
       viewBox="0 0 24 24"
@@ -79,6 +80,7 @@ exports[`renders the component 1`] = `
         tabindex="-1"
       >
         <svg
+          aria-hidden="true"
           class="IconButton__icon emotion-1"
           data-test-id="cf-ui-icon"
           viewBox="0 0 24 24"
@@ -139,6 +141,7 @@ exports[`renders the component with "error" intent 1`] = `
     class="NotificationItem__icon NotificationItem__icon--error"
   >
     <svg
+      aria-hidden="true"
       class="emotion-0"
       data-test-id="cf-ui-icon"
       viewBox="0 0 24 24"
@@ -177,6 +180,7 @@ exports[`renders the component with "error" intent 1`] = `
         tabindex="-1"
       >
         <svg
+          aria-hidden="true"
           class="IconButton__icon emotion-1"
           data-test-id="cf-ui-icon"
           viewBox="0 0 24 24"
@@ -237,6 +241,7 @@ exports[`renders the component with "warning" intent 1`] = `
     class="NotificationItem__icon NotificationItem__icon--warning"
   >
     <svg
+      aria-hidden="true"
       class="emotion-0"
       data-test-id="cf-ui-icon"
       viewBox="0 0 24 24"
@@ -275,6 +280,7 @@ exports[`renders the component with "warning" intent 1`] = `
         tabindex="-1"
       >
         <svg
+          aria-hidden="true"
           class="IconButton__icon emotion-1"
           data-test-id="cf-ui-icon"
           viewBox="0 0 24 24"
@@ -386,6 +392,7 @@ exports[`renders the component with a cta 1`] = `
     class="NotificationItem__icon NotificationItem__icon--warning"
   >
     <svg
+      aria-hidden="true"
       class="emotion-0"
       data-test-id="cf-ui-icon"
       viewBox="0 0 24 24"
@@ -434,6 +441,7 @@ exports[`renders the component with a cta 1`] = `
         tabindex="-1"
       >
         <svg
+          aria-hidden="true"
           class="IconButton__icon emotion-2"
           data-test-id="cf-ui-icon"
           viewBox="0 0 24 24"
@@ -494,6 +502,7 @@ exports[`renders the component with a title and a body 1`] = `
     class="NotificationItem__icon NotificationItem__icon--success"
   >
     <svg
+      aria-hidden="true"
       class="emotion-0"
       data-test-id="cf-ui-icon"
       viewBox="0 0 24 24"
@@ -534,6 +543,7 @@ exports[`renders the component with a title and a body 1`] = `
         tabindex="-1"
       >
         <svg
+          aria-hidden="true"
           class="IconButton__icon emotion-1"
           data-test-id="cf-ui-icon"
           viewBox="0 0 24 24"

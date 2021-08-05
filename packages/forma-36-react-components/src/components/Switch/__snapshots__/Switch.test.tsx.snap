@@ -21,6 +21,7 @@ exports[`renders the component 1`] = `
     for="testCheckbox"
   >
     <svg
+      aria-hidden="true"
       class="Switch__icon Switch__icon--done emotion-0"
       data-test-id="cf-ui-icon"
       viewBox="0 0 24 24"
@@ -31,6 +32,7 @@ exports[`renders the component 1`] = `
     </svg>
     foobar
     <svg
+      aria-hidden="true"
       class="Switch__icon Switch__icon--close emotion-0"
       data-test-id="cf-ui-icon"
       viewBox="0 0 24 24"
@@ -65,6 +67,7 @@ exports[`renders the component as checked 1`] = `
     for="testCheckbox"
   >
     <svg
+      aria-hidden="true"
       class="Switch__icon Switch__icon--done emotion-0"
       data-test-id="cf-ui-icon"
       viewBox="0 0 24 24"
@@ -75,6 +78,7 @@ exports[`renders the component as checked 1`] = `
     </svg>
     foobar
     <svg
+      aria-hidden="true"
       class="Switch__icon Switch__icon--close emotion-0"
       data-test-id="cf-ui-icon"
       viewBox="0 0 24 24"
@@ -109,6 +113,7 @@ exports[`renders the component as disabled 1`] = `
     for="testCheckbox"
   >
     <svg
+      aria-hidden="true"
       class="Switch__icon Switch__icon--done emotion-0"
       data-test-id="cf-ui-icon"
       viewBox="0 0 24 24"
@@ -119,6 +124,7 @@ exports[`renders the component as disabled 1`] = `
     </svg>
     foobar
     <svg
+      aria-hidden="true"
       class="Switch__icon Switch__icon--close emotion-0"
       data-test-id="cf-ui-icon"
       viewBox="0 0 24 24"
@@ -154,6 +160,7 @@ exports[`renders the component as disabled and checked 1`] = `
     for="testCheckbox"
   >
     <svg
+      aria-hidden="true"
       class="Switch__icon Switch__icon--done emotion-0"
       data-test-id="cf-ui-icon"
       viewBox="0 0 24 24"
@@ -164,6 +171,7 @@ exports[`renders the component as disabled and checked 1`] = `
     </svg>
     foobar
     <svg
+      aria-hidden="true"
       class="Switch__icon Switch__icon--close emotion-0"
       data-test-id="cf-ui-icon"
       viewBox="0 0 24 24"
@@ -197,6 +205,7 @@ exports[`renders the component with an additional class name 1`] = `
     for="testCheckbox"
   >
     <svg
+      aria-hidden="true"
       class="Switch__icon Switch__icon--done emotion-0"
       data-test-id="cf-ui-icon"
       viewBox="0 0 24 24"
@@ -207,6 +216,7 @@ exports[`renders the component with an additional class name 1`] = `
     </svg>
     foobar
     <svg
+      aria-hidden="true"
       class="Switch__icon Switch__icon--close emotion-0"
       data-test-id="cf-ui-icon"
       viewBox="0 0 24 24"
