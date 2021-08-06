@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Flex } from '@contentful/f36-core';
-import { SectionHeading, Paragraph } from '@contentful/f36-typography';
+import { SectionHeading, Text } from '@contentful/f36-typography';
 import { Asset, types } from './Asset';
 
 import type { AssetProps } from './Asset';
@@ -66,19 +66,19 @@ export const overview: Story<AssetProps> = () => (
 
       <Flex marginBottom="spacingS">
         <Flex flexDirection="column" marginRight="spacingS">
-          <Paragraph>published</Paragraph>
+          <Text as="p">published</Text>
           <Asset status="published" src="https://via.placeholder.com/200x300" />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
-          <Paragraph>draft</Paragraph>
+          <Text as="p">draft</Text>
           <Asset status="draft" src="https://via.placeholder.com/200x300" />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
-          <Paragraph>changed</Paragraph>
+          <Text as="p">changed</Text>
           <Asset status="changed" src="https://via.placeholder.com/200x300" />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
-          <Paragraph>archived</Paragraph>
+          <Text as="p">archived</Text>
           <Asset status="archived" src="https://via.placeholder.com/200x300" />
         </Flex>
       </Flex>
@@ -90,46 +90,46 @@ export const overview: Story<AssetProps> = () => (
 
       <Flex marginBottom="spacingS">
         <Flex flexDirection="column" marginRight="spacingS">
-          <Paragraph>image</Paragraph>
+          <Text as="p">image</Text>
           <Asset type="image" src="https://via.placeholder.com/200x300" />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
-          <Paragraph>archive</Paragraph>
+          <Text as="p">archive</Text>
           <Asset type="archive" src="https://via.placeholder.com/200x300" />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
-          <Paragraph>audio</Paragraph>
+          <Text as="p">audio</Text>
           <Asset type="audio" src="https://via.placeholder.com/200x300" />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
-          <Paragraph>code</Paragraph>
+          <Text as="p">code</Text>
           <Asset type="code" src="https://via.placeholder.com/200x300" />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
-          <Paragraph>markup</Paragraph>
+          <Text as="p">markup</Text>
           <Asset type="markup" src="https://via.placeholder.com/200x300" />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
-          <Paragraph>pdf</Paragraph>
+          <Text as="p">pdf</Text>
           <Asset type="pdf" src="https://via.placeholder.com/200x300" />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
-          <Paragraph>plaintext</Paragraph>
+          <Text as="p">plaintext</Text>
           <Asset type="plaintext" src="https://via.placeholder.com/200x300" />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
-          <Paragraph>presentation</Paragraph>
+          <Text as="p">presentation</Text>
           <Asset
             type="presentation"
             src="https://via.placeholder.com/200x300"
           />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
-          <Paragraph>spreadsheet</Paragraph>
+          <Text as="p">spreadsheet</Text>
           <Asset type="spreadsheet" src="https://via.placeholder.com/200x300" />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
-          <Paragraph>video</Paragraph>
+          <Text as="p">video</Text>
           <Asset type="video" src="https://via.placeholder.com/200x300" />
         </Flex>
       </Flex>

@@ -36,7 +36,7 @@ const _SectionHeading: PolymorphicComponentWithRef<
       fontWeight="fontWeightDemiBold"
       fontColor="gray900"
       fontSize="fontSizeS"
-      lineHeight="lineHeightL"
+      lineHeight="lineHeightS"
       className={cx(
         css({
           letterSpacing: tokens.letterSpacingWide,
