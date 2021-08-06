@@ -8,8 +8,6 @@ storybook: 'https://f36-storybook.contentful.com/?path=/story/components-tabs--b
 typescript: ./src/Tabs.tsx,./src/Tab.tsx,./src/TabPanel.tsx
 ---
 
-import { Props } from '@contentful/f36-docs-utils';
-
 Tabs is a component that makes navigating between sections of related content possible, displaying one section at a time.
 
 ## Table of contents
@@ -26,6 +24,8 @@ Be aware that the users will not see all the content at the same time. Make sure
 ## Code examples
 
 ```jsx
+// import {Tabs, Tab} from '@contentful/f36-tabs';
+
 <Tabs role="tablist">
   <Tab id="first" href="https://contentful.com" selected>
     First
@@ -42,6 +42,8 @@ Be aware that the users will not see all the content at the same time. Make sure
 ### with vertical divider
 
 ```jsx
+// import {Tabs, Tab} from '@contentful/f36-tabs';
+
 <Tabs role="tablist" variant="vertical-divider">
   <Tab id="first" href="https://contentful.com" selected>
     First
@@ -58,6 +60,8 @@ Be aware that the users will not see all the content at the same time. Make sure
 ### as navigation
 
 ```jsx
+// import {Tabs, Tab} from '@contentful/f36-tabs';
+
 <Tabs role="navigation">
   <Tab id="first" href="https://contentful.com" selected>
     First
@@ -74,22 +78,30 @@ Be aware that the users will not see all the content at the same time. Make sure
 ### used with TabPanel
 
 ```jsx
-<div>
-  <Tabs role="tablist">
-    <Tab id="first" selected={selected === 'first'}>
-      First
-    </Tab>
-    <Tab id="second" selected={selected === 'second'}>
-      Second
-    </Tab>
-  </Tabs>
-  {selected === 'first' && (
-    <TabPanel id="first">Content for the first tab</TabPanel>
-  )}
-  {selected === 'second' && (
-    <TabPanel id="second">Content for the second tab</TabPanel>
-  )}
-</div>
+// import {Tabs, Tab, TabPanel} from '@contentful/f36-tabs';
+
+() => {
+  const [selected, setSelected] = React.useState('first');
+
+  return (
+    <>
+      <Tabs role="tablist">
+        <Tab id="first" selected={selected === 'first'}>
+          First
+        </Tab>
+        <Tab id="second" selected={selected === 'second'}>
+          Second
+        </Tab>
+      </Tabs>
+      {selected === 'first' && (
+        <TabPanel id="first">Content for the first tab</TabPanel>
+      )}
+      {selected === 'second' && (
+        <TabPanel id="second">Content for the second tab</TabPanel>
+      )}
+    </>
+  );
+};
 ```
 
 ## Content recommendations
@@ -99,6 +111,8 @@ Be aware that the users will not see all the content at the same time. Make sure
 - to ensure an optimal cognitive load for users, do not use more than six (6) Tabs at any given time
 
 ## Props
+
+import { Props } from '@contentful/f36-docs-utils';
 
 ### Tabs
 
