@@ -27,7 +27,7 @@ Be aware that the users will not see all the content at the same time. Make sure
 // import {Tabs, Tab} from '@contentful/f36-tabs';
 
 <Tabs role="tablist">
-  <Tab id="first" href="https://contentful.com" selected>
+  <Tab id="first" href="https://contentful.com" isSelected>
     First
   </Tab>
   <Tab id="second" href="https://contentful.com">
@@ -45,7 +45,7 @@ Be aware that the users will not see all the content at the same time. Make sure
 // import {Tabs, Tab} from '@contentful/f36-tabs';
 
 <Tabs role="tablist" variant="vertical-divider">
-  <Tab id="first" href="https://contentful.com" selected>
+  <Tab id="first" href="https://contentful.com" isSelected>
     First
   </Tab>
   <Tab id="second" href="https://contentful.com">
@@ -63,7 +63,7 @@ Be aware that the users will not see all the content at the same time. Make sure
 // import {Tabs, Tab} from '@contentful/f36-tabs';
 
 <Tabs role="navigation">
-  <Tab id="first" href="https://contentful.com" selected>
+  <Tab id="first" href="https://contentful.com" isSelected>
     First
   </Tab>
   <Tab id="second" href="https://contentful.com">
@@ -86,10 +86,10 @@ Be aware that the users will not see all the content at the same time. Make sure
   return (
     <>
       <Tabs role="tablist">
-        <Tab id="first" selected={selected === 'first'}>
+        <Tab id="first" isSelected={selected === 'first'}>
           First
         </Tab>
-        <Tab id="second" selected={selected === 'second'}>
+        <Tab id="second" isSelected={selected === 'second'}>
           Second
         </Tab>
       </Tabs>

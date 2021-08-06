@@ -31,7 +31,7 @@ export const Basic: Story = (args) => {
       <Tabs {...args}>
         <Tab
           id="first"
-          selected={selected === 'first'}
+          isSelected={selected === 'first'}
           onSelect={(id: string) => {
             action('onSelect')(id);
             setSelected(id);
@@ -41,7 +41,7 @@ export const Basic: Story = (args) => {
         </Tab>
         <Tab
           id="second"
-          selected={selected === 'second'}
+          isSelected={selected === 'second'}
           onSelect={(id: string) => {
             action('onSelect')(id);
             setSelected(id);
@@ -51,8 +51,8 @@ export const Basic: Story = (args) => {
         </Tab>
         <Tab
           id="third"
-          disabled
-          selected={selected === 'third'}
+          isDisabled
+          isSelected={selected === 'third'}
           onSelect={(id: string) => {
             action('onSelect')(id);
             setSelected(id);
@@ -81,7 +81,7 @@ export const Overview: Story = () => (
     </Flex>
     <Flex marginBottom="spacingS">
       <Tabs role="navigation">
-        <Tab id="first" href="https://contentful.com" selected>
+        <Tab id="first" href="https://contentful.com" isSelected>
           First
         </Tab>
         <Tab id="second" href="https://contentful.com">
@@ -97,7 +97,7 @@ export const Overview: Story = () => (
     </Flex>
     <Flex marginBottom="spacingS">
       <Tabs role="navigation" variant="horizontal-divider">
-        <Tab id="first" href="https://contentful.com" selected>
+        <Tab id="first" href="https://contentful.com" isSelected>
           First
         </Tab>
         <Tab id="second" href="https://contentful.com">
@@ -113,7 +113,7 @@ export const Overview: Story = () => (
     </Flex>
     <Flex marginBottom="spacingS">
       <Tabs role="navigation" variant="vertical-divider">
-        <Tab id="first" href="https://contentful.com" selected>
+        <Tab id="first" href="https://contentful.com" isSelected>
           First
         </Tab>
         <Tab id="second" href="https://contentful.com">
