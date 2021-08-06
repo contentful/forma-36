@@ -85,7 +85,7 @@ const IndexPage = () => (
     <Section isSecondary>
       <Typography>
         <DisplayText>Forma 36 is open-source</DisplayText>
-        <Text
+        <Paragraph
           style={{
             fontSize: tokens.fontSizeL,
             maxWidth: '28rem',
@@ -96,7 +96,7 @@ const IndexPage = () => (
           We appreciate your contributions. For more details about how to
           contribute to a package, see the README of the corresponding package
           on GitHub
-        </Text>
+        </Paragraph>
       </Typography>
       <Button
         href="https://github.com/contentful/forma-36"
