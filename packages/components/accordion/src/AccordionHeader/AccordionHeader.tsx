@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 import { Subheading } from '@contentful/f36-typography';
 import type { HeadingElement } from '@contentful/f36-typography';
 import { ChevronDownTrimmed } from '@contentful/f36-icons';
@@ -33,18 +33,20 @@ export interface AccordionHeaderProps extends CommonProps {
   align?: 'start' | 'end';
 }
 
-export const AccordionHeader: FC<AccordionHeaderProps> = ({
+export const AccordionHeader = ({
   children,
   onClick,
   isExpanded = false,
   ariaId,
   element = 'h2',
   align = 'end',
+  testId = 'cf-ui-accordion-header',
+  ...rest
 }: AccordionHeaderProps) => {
   const styles = getAccordionHeaderStyles({ align, isExpanded });
 
   return (
-    <Subheading as={element}>
+    <Subheading {...rest} testId={testId} marginBottom="none" as={element}>
       <button
         type="button"
         aria-expanded={isExpanded}
