@@ -11,18 +11,21 @@ import { TypographyContext } from './Typography';
 
 const DEFAULT_TAG = 'p';
 
-export type TextProps<E extends React.ElementType> = HeadingProps<E>;
+export type ParagraphProps<E extends React.ElementType> = HeadingProps<E>;
 
-const _Text: PolymorphicComponentWithRef<
+const _Paragraph: PolymorphicComponentWithRef<
   HeadingInternalProps,
   typeof DEFAULT_TAG
-> = ({ children, className, ...otherProps }, ref) => {
+> = (
+  { children, className, testId = 'cf-ui-paragraph', ...otherProps },
+  ref,
+) => {
   const configuration = useContext(TypographyContext);
   return (
     <Heading
       as={DEFAULT_TAG}
-      testId="cf-ui-text"
-      marginBottom={configuration.text}
+      testId={testId}
+      marginBottom={configuration.paragraph}
       className={cx(
         css({
           fontWeight: tokens.fontWeightNormal,
@@ -40,7 +43,7 @@ const _Text: PolymorphicComponentWithRef<
   );
 };
 
-export const Text: PolymorphicComponent<
+export const Paragraph: PolymorphicComponent<
   HeadingInternalProps,
   typeof DEFAULT_TAG
-> = React.forwardRef(_Text);
+> = React.forwardRef(_Paragraph);

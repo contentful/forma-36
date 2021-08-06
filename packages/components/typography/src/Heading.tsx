@@ -50,7 +50,7 @@ const _Heading: PolymorphicComponentWithRef<
         css({
           fontFamily: tokens.fontStackPrimary,
           fontWeight: tokens.fontWeightDemiBold,
-          color: tokens.colorTextDark,
+          color: tokens.gray900,
           fontSize: tokens.fontSizeXl,
           lineHeight: tokens.lineHeightXl,
           textRendering: 'optimizeLegibility',

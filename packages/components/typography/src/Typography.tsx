@@ -12,7 +12,7 @@ type TypographyConfiguration = {
   heading?: Spacing;
   sectionHeading?: Spacing;
   subheading?: Spacing;
-  text?: Spacing;
+  paragraph?: Spacing;
 };
 
 const defaultConfiguration: TypographyConfiguration = {
@@ -21,7 +21,7 @@ const defaultConfiguration: TypographyConfiguration = {
   heading: 'spacingM',
   sectionHeading: 'spacingL',
   subheading: 'spacingM',
-  text: 'spacingM',
+  paragraph: 'spacingM',
 };
 
 export const TypographyContext = createContext<TypographyConfiguration>({});
