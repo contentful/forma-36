@@ -19,7 +19,7 @@ exports[`renders the component 1`] = `
 <div>
   <p
     class="emotion-0"
-    data-test-id="cf-ui-text"
+    data-test-id="cf-ui-paragraph"
   >
     Text
   </p>
@@ -45,7 +45,7 @@ exports[`renders the component h3 1`] = `
 <div>
   <h3
     class="emotion-0"
-    data-test-id="cf-ui-text"
+    data-test-id="cf-ui-paragraph"
   >
     Text
   </h3>
@@ -71,7 +71,7 @@ exports[`renders the component with an additional class name 1`] = `
 <div>
   <p
     class="my-extra-class emotion-0"
-    data-test-id="cf-ui-text"
+    data-test-id="cf-ui-paragraph"
   >
     Text
   </p>

@@ -8,5 +8,5 @@ export { DisplayText } from './DisplayText';
 export type { DisplayTextProps } from './DisplayText';
 export { SectionHeading } from './SectionHeading';
 export type { SectionHeadingProps } from './SectionHeading';
-export { Text } from './Text';
-export type { TextProps } from './Text';
+export { Paragraph } from './Paragraph';
+export type { ParagraphProps } from './Paragraph';

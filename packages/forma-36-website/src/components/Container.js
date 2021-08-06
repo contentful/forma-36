@@ -9,7 +9,7 @@ import {
   DisplayText,
   Heading,
   Subheading,
-  Text,
+  Paragraph,
   TextLink,
   List,
   ListItem,
@@ -95,7 +95,7 @@ const markToComponentMap = {
       {...props}
     />
   ),
-  p: (props) => <Text marginBottom="spacingS" {...props} />,
+  p: (props) => <Paragraph marginBottom="spacingS" {...props} />,
   a: (props) => <TextLink {...props} />,
   ul: (props) => <List className="f36-margin-bottom--m" {...props} />,
   li: (props) => <ListItem className="f36-color--text-mid" {...props} />,

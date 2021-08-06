@@ -1,5 +1,5 @@
 import React from 'react';
-import { Subheading, Text, Typography } from '@contentful/f36-components';
+import { Subheading, Paragraph, Typography } from '@contentful/f36-components';
 import { TextLink } from '@contentful/f36-text-link';
 import tokens from '@contentful/f36-tokens';
 import { css } from 'emotion';
@@ -35,8 +35,8 @@ const Resource = ({ title, description, imageNode, linkHref, linkText }) => (
     <div className={styles.image}>{imageNode}</div>
     <Typography className={styles.text}>
       <Subheading>{title}</Subheading>
-      <Text className={styles.paragraph}>{description}</Text>
-      <Text className={styles.paragraph}>
+      <Paragraph className={styles.paragraph}>{description}</Paragraph>
+      <Paragraph className={styles.paragraph}>
         <TextLink
           className={styles.link}
           href={linkHref}
@@ -45,7 +45,7 @@ const Resource = ({ title, description, imageNode, linkHref, linkText }) => (
         >
           {linkText}
         </TextLink>
-      </Text>
+      </Paragraph>
     </Typography>
   </article>
 );

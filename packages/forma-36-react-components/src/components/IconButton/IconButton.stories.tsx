@@ -1,5 +1,5 @@
 import React from 'react';
-import { SectionHeading, Text } from '@contentful/f36-typography';
+import { SectionHeading, Paragraph } from '@contentful/f36-typography';
 import * as icons from '@contentful/f36-icons';
 import { Flex } from '@contentful/f36-core';
 import type { Story } from '@storybook/react/types-6-0';
@@ -80,9 +80,9 @@ export const Overview: Story<Args> = (args) => {
               label="Add New Element"
             />
           </Flex>
-          <Text style={{ color: color === 'white' ? 'white' : 'initial' }}>
+          <Paragraph style={{ color: color === 'white' ? 'white' : 'initial' }}>
             {color}
-          </Text>
+          </Paragraph>
         </Flex>
       ))}
       <Flex marginTop="spacingL" marginBottom="spacingS">

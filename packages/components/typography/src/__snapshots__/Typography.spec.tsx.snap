@@ -94,7 +94,7 @@ exports[`renders all typography components with the expected spacing classes 1`]
   </h1>
   <p
     class="emotion-2"
-    data-test-id="cf-ui-text"
+    data-test-id="cf-ui-paragraph"
   >
     My Text
   </p>
@@ -154,7 +154,7 @@ exports[`renders the component 1`] = `
   </h1>
   <p
     class="emotion-1"
-    data-test-id="cf-ui-text"
+    data-test-id="cf-ui-paragraph"
   >
     My Text
   </p>
@@ -202,7 +202,7 @@ exports[`renders the component with an additional class name 1`] = `
   </h1>
   <p
     class="emotion-1"
-    data-test-id="cf-ui-text"
+    data-test-id="cf-ui-paragraph"
   >
     My Text
   </p>

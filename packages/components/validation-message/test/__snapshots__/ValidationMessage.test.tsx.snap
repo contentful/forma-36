@@ -56,7 +56,7 @@ exports[`ValidationMessage renders the component with all required props 1`] = `
   </svg>
   <p
     class="emotion-1"
-    data-test-id="cf-ui-text"
+    data-test-id="cf-ui-paragraph"
   >
     This field is required
   </p>
@@ -119,7 +119,7 @@ exports[`ValidationMessage renders the component with an additional class name 1
   </svg>
   <p
     class="emotion-1"
-    data-test-id="cf-ui-text"
+    data-test-id="cf-ui-paragraph"
   >
     This field is required
   </p>

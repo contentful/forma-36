@@ -6,7 +6,7 @@ import type {
   PolymorphicComponentProps,
 } from '@contentful/f36-core';
 import { Button } from '@contentful/f36-button';
-import { Heading, Text } from '@contentful/f36-typography';
+import { Heading, Paragraph } from '@contentful/f36-typography';
 import {
   CheckCircle,
   Close,
@@ -90,7 +90,7 @@ export const Note = React.forwardRef<HTMLElement, NoteProps>((props, ref) => {
             {title}
           </Heading>
         )}
-        <Text className={styles.content}>{children}</Text>
+        <Paragraph className={styles.content}>{children}</Paragraph>
       </div>
       {hasCloseButton && (
         <Button

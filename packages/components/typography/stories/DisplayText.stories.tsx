@@ -1,7 +1,7 @@
 import React from 'react';
 import { Flex } from '@contentful/f36-core';
 import { DisplayText, DisplayTextInternalProps } from '../src/DisplayText';
-import { Text } from '../src/Text';
+import { Paragraph } from '../src/Paragraph';
 
 export default {
   title: 'Typography/DisplayText',
@@ -27,21 +27,21 @@ export const Overview = (props: DisplayTextInternalProps) => (
   <>
     <Flex alignItems="center" marginBottom="spacingL">
       <Flex marginRight="spacingS">
-        <Text>48</Text>
+        <Paragraph>48</Paragraph>
       </Flex>
       <DisplayText {...props} size="huge" />
     </Flex>
 
     <Flex alignItems="center" marginBottom="spacingL">
       <Flex marginRight="spacingS">
-        <Text>36</Text>
+        <Paragraph>36</Paragraph>
       </Flex>
       <DisplayText {...props} size="large" />
     </Flex>
 
     <Flex alignItems="center">
       <Flex marginRight="spacingS">
-        <Text>28</Text>
+        <Paragraph>28</Paragraph>
       </Flex>
       <DisplayText {...props} size="default" />
     </Flex>
