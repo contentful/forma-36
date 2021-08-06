@@ -21,6 +21,5 @@ export const HelpCircleInverted = generateIcon({
       />
     </Fragment>
   ),
-  props: { height: '22', width: '22' },
   viewBox: '0 0 22 22',
 });

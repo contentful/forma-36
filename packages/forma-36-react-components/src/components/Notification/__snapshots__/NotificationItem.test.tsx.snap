@@ -41,11 +41,10 @@ exports[`renders the component 1`] = `
     class="NotificationItem__icon NotificationItem__icon--success"
   >
     <svg
+      aria-hidden="true"
       class="emotion-0"
       data-test-id="cf-ui-icon"
-      height="1em"
       viewBox="0 0 24 24"
-      width="1em"
     >
       <path
         d="M0 0h24v24H0z"
@@ -81,11 +80,10 @@ exports[`renders the component 1`] = `
         tabindex="-1"
       >
         <svg
+          aria-hidden="true"
           class="IconButton__icon emotion-1"
           data-test-id="cf-ui-icon"
-          height="1em"
           viewBox="0 0 24 24"
-          width="1em"
         >
           <path
             d="M18.7071 6.70711C19.0976 6.31658 19.0976 5.68342 18.7071 5.29289C18.3166 4.90237 17.6834 4.90237 17.2929 5.29289L12 10.5858L6.70711 5.29289C6.31658 4.90237 5.68342 4.90237 5.29289 5.29289C4.90237 5.68342 4.90237 6.31658 5.29289 6.70711L10.5858 12L5.29289 17.2929C4.90237 17.6834 4.90237 18.3166 5.29289 18.7071C5.68342 19.0976 6.31658 19.0976 6.70711 18.7071L12 13.4142L17.2929 18.7071C17.6834 19.0976 18.3166 19.0976 18.7071 18.7071C19.0976 18.3166 19.0976 17.6834 18.7071 17.2929L13.4142 12L18.7071 6.70711Z"
@@ -143,11 +141,10 @@ exports[`renders the component with "error" intent 1`] = `
     class="NotificationItem__icon NotificationItem__icon--error"
   >
     <svg
+      aria-hidden="true"
       class="emotion-0"
       data-test-id="cf-ui-icon"
-      height="1em"
       viewBox="0 0 24 24"
-      width="1em"
     >
       <path
         d="M0 0h24v24H0z"
@@ -183,11 +180,10 @@ exports[`renders the component with "error" intent 1`] = `
         tabindex="-1"
       >
         <svg
+          aria-hidden="true"
           class="IconButton__icon emotion-1"
           data-test-id="cf-ui-icon"
-          height="1em"
           viewBox="0 0 24 24"
-          width="1em"
         >
           <path
             d="M18.7071 6.70711C19.0976 6.31658 19.0976 5.68342 18.7071 5.29289C18.3166 4.90237 17.6834 4.90237 17.2929 5.29289L12 10.5858L6.70711 5.29289C6.31658 4.90237 5.68342 4.90237 5.29289 5.29289C4.90237 5.68342 4.90237 6.31658 5.29289 6.70711L10.5858 12L5.29289 17.2929C4.90237 17.6834 4.90237 18.3166 5.29289 18.7071C5.68342 19.0976 6.31658 19.0976 6.70711 18.7071L12 13.4142L17.2929 18.7071C17.6834 19.0976 18.3166 19.0976 18.7071 18.7071C19.0976 18.3166 19.0976 17.6834 18.7071 17.2929L13.4142 12L18.7071 6.70711Z"
@@ -245,11 +241,10 @@ exports[`renders the component with "warning" intent 1`] = `
     class="NotificationItem__icon NotificationItem__icon--warning"
   >
     <svg
+      aria-hidden="true"
       class="emotion-0"
       data-test-id="cf-ui-icon"
-      height="1em"
       viewBox="0 0 24 24"
-      width="1em"
     >
       <path
         d="M0 0h24v24H0z"
@@ -285,11 +280,10 @@ exports[`renders the component with "warning" intent 1`] = `
         tabindex="-1"
       >
         <svg
+          aria-hidden="true"
           class="IconButton__icon emotion-1"
           data-test-id="cf-ui-icon"
-          height="1em"
           viewBox="0 0 24 24"
-          width="1em"
         >
           <path
             d="M18.7071 6.70711C19.0976 6.31658 19.0976 5.68342 18.7071 5.29289C18.3166 4.90237 17.6834 4.90237 17.2929 5.29289L12 10.5858L6.70711 5.29289C6.31658 4.90237 5.68342 4.90237 5.29289 5.29289C4.90237 5.68342 4.90237 6.31658 5.29289 6.70711L10.5858 12L5.29289 17.2929C4.90237 17.6834 4.90237 18.3166 5.29289 18.7071C5.68342 19.0976 6.31658 19.0976 6.70711 18.7071L12 13.4142L17.2929 18.7071C17.6834 19.0976 18.3166 19.0976 18.7071 18.7071C19.0976 18.3166 19.0976 17.6834 18.7071 17.2929L13.4142 12L18.7071 6.70711Z"
@@ -398,11 +392,10 @@ exports[`renders the component with a cta 1`] = `
     class="NotificationItem__icon NotificationItem__icon--warning"
   >
     <svg
+      aria-hidden="true"
       class="emotion-0"
       data-test-id="cf-ui-icon"
-      height="1em"
       viewBox="0 0 24 24"
-      width="1em"
     >
       <path
         d="M0 0h24v24H0z"
@@ -448,11 +441,10 @@ exports[`renders the component with a cta 1`] = `
         tabindex="-1"
       >
         <svg
+          aria-hidden="true"
           class="IconButton__icon emotion-2"
           data-test-id="cf-ui-icon"
-          height="1em"
           viewBox="0 0 24 24"
-          width="1em"
         >
           <path
             d="M18.7071 6.70711C19.0976 6.31658 19.0976 5.68342 18.7071 5.29289C18.3166 4.90237 17.6834 4.90237 17.2929 5.29289L12 10.5858L6.70711 5.29289C6.31658 4.90237 5.68342 4.90237 5.29289 5.29289C4.90237 5.68342 4.90237 6.31658 5.29289 6.70711L10.5858 12L5.29289 17.2929C4.90237 17.6834 4.90237 18.3166 5.29289 18.7071C5.68342 19.0976 6.31658 19.0976 6.70711 18.7071L12 13.4142L17.2929 18.7071C17.6834 19.0976 18.3166 19.0976 18.7071 18.7071C19.0976 18.3166 19.0976 17.6834 18.7071 17.2929L13.4142 12L18.7071 6.70711Z"
@@ -510,11 +502,10 @@ exports[`renders the component with a title and a body 1`] = `
     class="NotificationItem__icon NotificationItem__icon--success"
   >
     <svg
+      aria-hidden="true"
       class="emotion-0"
       data-test-id="cf-ui-icon"
-      height="1em"
       viewBox="0 0 24 24"
-      width="1em"
     >
       <path
         d="M0 0h24v24H0z"
@@ -552,11 +543,10 @@ exports[`renders the component with a title and a body 1`] = `
         tabindex="-1"
       >
         <svg
+          aria-hidden="true"
           class="IconButton__icon emotion-1"
           data-test-id="cf-ui-icon"
-          height="1em"
           viewBox="0 0 24 24"
-          width="1em"
         >
           <path
             d="M18.7071 6.70711C19.0976 6.31658 19.0976 5.68342 18.7071 5.29289C18.3166 4.90237 17.6834 4.90237 17.2929 5.29289L12 10.5858L6.70711 5.29289C6.31658 4.90237 5.68342 4.90237 5.29289 5.29289C4.90237 5.68342 4.90237 6.31658 5.29289 6.70711L10.5858 12L5.29289 17.2929C4.90237 17.6834 4.90237 18.3166 5.29289 18.7071C5.68342 19.0976 6.31658 19.0976 6.70711 18.7071L12 13.4142L17.2929 18.7071C17.6834 19.0976 18.3166 19.0976 18.7071 18.7071C19.0976 18.3166 19.0976 17.6834 18.7071 17.2929L13.4142 12L18.7071 6.70711Z"

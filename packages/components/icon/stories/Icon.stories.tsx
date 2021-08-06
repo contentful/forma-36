@@ -5,7 +5,7 @@ import type { Meta, Story } from '@storybook/react/types-6-0';
 import { MdAcUnit as ExternalIcon } from 'react-icons/md';
 
 import { Icon } from '../src/';
-import type { IconProps } from '../src/';
+import type { IconInternalProps } from '../src/Icon';
 
 export default {
   argTypes: {
@@ -21,7 +21,7 @@ export default {
   title: 'Components/Icon',
 } as Meta;
 
-export const WithSVGPath: Story<IconProps> = (args) => (
+export const WithSVGPath: Story<IconInternalProps> = (args) => (
   <Fragment>
     <SectionHeading as="h3" marginBottom="spacingS">
       Icon component with SVG paths
@@ -37,9 +37,9 @@ export const WithSVGPath: Story<IconProps> = (args) => (
   </Fragment>
 );
 
-export const WithExternalIcon: Story<IconProps & { children?: never }> = (
-  args,
-) => (
+export const WithExternalIcon: Story<
+  IconInternalProps & { children?: never }
+> = (args) => (
   <Fragment>
     <SectionHeading as="h3" marginBottom="spacingS">
       Icon component with third-party libraries
@@ -48,7 +48,7 @@ export const WithExternalIcon: Story<IconProps & { children?: never }> = (
     <Icon {...args} as={ExternalIcon} />
   </Fragment>
 );
-const CustomIcon = (props: Omit<IconProps, 'as' | 'children'>) => (
+const CustomIcon = (props: IconInternalProps) => (
   <Icon {...props}>
     <path d="M8 0a1 1 0 011 1v1h6V1a1 1 0 112 0v1h2.778A3.222 3.222 0 0123 5.222v15.556A3.222 3.222 0 0119.778 24H4.222A3.222 3.222 0 011 20.778V5.222A3.222 3.222 0 014.222 2H7V1a1 1 0 011-1zM7 4H4.222C3.547 4 3 4.547 3 5.222V9h18V5.222C21 4.547 20.453 4 19.778 4H17v1a1 1 0 11-2 0V4H9v1a1 1 0 01-2 0V4zm14 7H3v9.778C3 21.453 3.547 22 4.222 22h15.556c.675 0 1.222-.547 1.222-1.222V11z" />
   </Icon>
@@ -64,7 +64,7 @@ export const Overview: Story = () => {
       </SectionHeading>
 
       {sizes.map((sizeKey) => {
-        const size = sizeKey as IconProps['size'];
+        const size = sizeKey as IconInternalProps['size'];
         return (
           <Flex marginBottom="spacingM" alignItems="center" key={size}>
             <Flex marginRight="spacingS">

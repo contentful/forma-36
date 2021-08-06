@@ -71,11 +71,10 @@ exports[`renders the component with type pdf 1`] = `
       class="Asset__illustration-container"
     >
       <svg
+        aria-hidden="true"
         class="AssetIcon emotion-0"
         data-test-id="cf-ui-asset-icon"
-        height="1em"
         viewBox="0 0 24 24"
-        width="1em"
       >
         <path
           clip-rule="evenodd"

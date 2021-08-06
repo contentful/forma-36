@@ -60,17 +60,8 @@ const fills: { [key in IconVariant]: string } = {
   white: tokens.colorWhite,
 };
 
-type AsOrChildren =
-  | {
-      as: IconComponent;
-      children?: never;
-    }
-  | {
-      as?: never;
-      children: ReactElement | ReactElement[];
-    };
-
-type IconInternalProps = CommonProps & {
+export type IconInternalProps = CommonProps & {
+  children?: ReactElement | ReactElement[];
   /**
    * Determines the size of the icon
    */
@@ -89,15 +80,32 @@ type IconInternalProps = CommonProps & {
   viewBox?: SVGAttributes<SVGSVGElement>['viewBox'];
 };
 
-export type IconProps = Omit<
-  PolymorphicComponentProps<IconComponent, IconInternalProps>,
-  'as' | 'children'
-> &
-  AsOrChildren;
+export type IconProps<
+  E extends React.ElementType = IconComponent
+> = PolymorphicComponentProps<
+  E,
+  IconInternalProps,
+  'as' | 'children' | 'width' | 'height'
+>;
+
+const useAriaHidden = (
+  props: Pick<IconProps<typeof DEFAULT_TAG>, 'aria-label' | 'aria-labelledby'>,
+) => {
+  const ariaLabel = props['aria-label'];
+  const ariaLabelBy = props['aria-labelledby'];
+
+  if (ariaLabel || ariaLabelBy) {
+    return {};
+  }
+
+  return {
+    'aria-hidden': true,
+  };
+};
 
 export const _Icon: PolymorphicComponentWithRef<
   IconInternalProps,
-  IconComponent
+  typeof DEFAULT_TAG
 > = (
   {
     as,
@@ -125,17 +133,26 @@ export const _Icon: PolymorphicComponentWithRef<
     testId,
   };
 
+  const ariaHiddenProps = useAriaHidden(otherProps);
+
   if (as) {
-    // @ts-expect-error mute polymorphic error
-    return <Box display="inline-block" {...otherProps} {...shared} as={as} />;
+    return (
+      // @ts-expect-error mute polymorphic error
+      <Box
+        display="inline-block"
+        {...ariaHiddenProps}
+        {...otherProps}
+        {...shared}
+        as={as}
+      />
+    );
   }
 
   return (
     <Box
-      height="1em"
       viewBox={viewBox}
-      width="1em"
       display="inline-block"
+      {...ariaHiddenProps}
       {...otherProps}
       as={DEFAULT_TAG}
       {...shared}
@@ -147,5 +164,6 @@ export const _Icon: PolymorphicComponentWithRef<
 
 export const Icon: PolymorphicComponent<
   IconInternalProps,
-  IconComponent
+  typeof DEFAULT_TAG,
+  'width' | 'height'
 > = forwardRef(_Icon);

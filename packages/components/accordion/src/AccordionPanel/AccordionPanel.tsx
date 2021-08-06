@@ -1,6 +1,7 @@
 import React, { FC, useLayoutEffect, useRef } from 'react';
 import tokens from '@contentful/f36-tokens';
 import type { CommonProps } from '@contentful/f36-core';
+import { Box } from '@contentful/f36-core';
 
 import { getAccordionPanelStyles } from './AccordionPanel.styles';
 
@@ -23,6 +24,8 @@ export const AccordionPanel: FC<AccordionPanelProps> = ({
   children,
   isExpanded = false,
   ariaId,
+  testId = 'cf-ui-accordion-panel',
+  ...rest
 }: AccordionPanelProps) => {
   const styles = getAccordionPanelStyles();
   const panelEl = useRef<HTMLDivElement>(null);
@@ -78,7 +81,9 @@ export const AccordionPanel: FC<AccordionPanelProps> = ({
   }, [isExpanded]);
 
   return (
-    <div
+    <Box
+      {...rest}
+      testId={testId}
       id={`accordion-panel--${ariaId}`}
       role="region"
       aria-labelledby={`accordion--${ariaId}`}
@@ -87,6 +92,6 @@ export const AccordionPanel: FC<AccordionPanelProps> = ({
       ref={panelEl}
     >
       <div className={styles.accordionPanelContent}>{children}</div>
-    </div>
+    </Box>
   );
 };

@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React from 'react';
 import type { ReactElement } from 'react';
 
 import { Icon } from './Icon';
@@ -39,22 +39,13 @@ export function generateIcon({
   trimmed,
   viewBox,
 }: GenerateIconParameters) {
-  const Component = forwardRef<SVGSVGElement, GeneratedIconProps>(function (
-    props,
-    forwardedRef,
-  ) {
+  const Component = function (props: IconProps) {
     return (
-      <Icon
-        viewBox={viewBox}
-        {...defaultProps}
-        {...props}
-        ref={forwardedRef}
-        trimmed={trimmed}
-      >
+      <Icon viewBox={viewBox} {...defaultProps} {...props} trimmed={trimmed}>
         {path}
       </Icon>
     );
-  });
+  };
 
   if (name) {
     Component.displayName = name;

@@ -207,11 +207,10 @@ exports[`renders the component with a custom drag handle 1`] = `
     data-test-id="cf-ui-card-drag-handle"
   >
     <svg
+      aria-hidden="true"
       class="emotion-0"
       data-test-id="cf-ui-icon"
-      height="1em"
       viewBox="0 0 24 24"
-      width="1em"
     >
       <path
         d="M0 0h24v24H0V0z"
@@ -284,11 +283,10 @@ exports[`renders the component with a drag handle 1`] = `
       data-test-id="cf-ui-card-drag-handle"
     >
       <svg
+        aria-hidden="true"
         class="emotion-0"
         data-test-id="cf-ui-icon"
-        height="1em"
         viewBox="0 0 24 24"
-        width="1em"
       >
         <path
           d="M0 0h24v24H0V0z"
@@ -388,11 +386,10 @@ exports[`renders the component with actions 1`] = `
             tabindex="-1"
           >
             <svg
+              aria-hidden="true"
               class="IconButton__icon emotion-0"
               data-test-id="cf-ui-icon"
-              height="1em"
               viewBox="0 0 24 24"
-              width="1em"
             >
               <path
                 d="M0 0h24v24H0z"
@@ -545,11 +542,10 @@ exports[`renders the component with status 1`] = `
             class="Asset__illustration-container"
           >
             <svg
+              aria-hidden="true"
               class="AssetIcon emotion-1"
               data-test-id="cf-ui-asset-icon"
-              height="1em"
               viewBox="0 0 24 24"
-              width="1em"
             >
               <path
                 clip-rule="evenodd"
