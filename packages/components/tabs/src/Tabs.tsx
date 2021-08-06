@@ -17,6 +17,7 @@ function _Tabs(
     testId = 'cf-ui-tabs',
     role = 'tablist',
     style,
+    ...otherProps
   }: TabsProps,
   ref: React.Ref<HTMLDivElement>,
 ): React.ReactElement {
@@ -26,6 +27,7 @@ function _Tabs(
     testId,
     className: styles.tabs,
     style,
+    ...otherProps,
   };
 
   if (role === 'navigation') {

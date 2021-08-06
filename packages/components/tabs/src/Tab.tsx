@@ -8,10 +8,10 @@ import { getTabStyles } from './Tabs.styles';
 export interface TabProps extends CommonProps {
   id: string;
   onSelect?: (id: string, e: React.SyntheticEvent) => void;
-  selected?: boolean;
+  isSelected?: boolean;
   href?: string;
   target?: string;
-  disabled?: boolean;
+  isDisabled?: boolean;
   tabIndex?: number;
   children: React.ReactNode;
 }
@@ -20,25 +20,26 @@ function _Tab(
   {
     children,
     className,
-    disabled = false,
+    isDisabled = false,
     href,
     id,
     onSelect,
-    selected = false,
+    isSelected = false,
     style,
     tabIndex = 0,
     testId = 'cf-ui-tab',
+    ...otherProps
   }: TabProps,
   ref: React.Ref<HTMLAnchorElement> | React.Ref<HTMLDivElement>,
 ): React.ReactElement {
-  const styles = getTabStyles({ className, selected, disabled });
+  const styles = getTabStyles({ className, isSelected, isDisabled });
   const handleClick = useCallback(
     (e: MouseEvent<HTMLElement>) => {
-      if (onSelect && !disabled) {
+      if (onSelect && !isDisabled) {
         onSelect(id, e);
       }
     },
-    [disabled, id, onSelect],
+    [isDisabled, id, onSelect],
   );
 
   const handleKeyPress = useCallback(
@@ -60,25 +61,35 @@ function _Tab(
     tabIndex,
   };
 
-  if (disabled) {
+  if (isDisabled) {
     elementProps['aria-disabled'] = true;
   }
   if (href) {
     elementProps['href'] = href;
-    if (selected) {
+    if (isSelected) {
       elementProps['aria-current'] = 'page';
     }
     return (
-      <Box as="a" {...elementProps} ref={ref as React.Ref<HTMLAnchorElement>}>
+      <Box
+        as="a"
+        {...elementProps}
+        {...otherProps}
+        ref={ref as React.Ref<HTMLAnchorElement>}
+      >
         {children}
       </Box>
     );
   } else {
-    elementProps['aria-selected'] = selected;
+    elementProps['aria-selected'] = isSelected;
     elementProps['role'] = 'tab';
     elementProps['aria-controls'] = id;
     return (
-      <Box as="div" {...elementProps} ref={ref as React.Ref<HTMLDivElement>}>
+      <Box
+        as="div"
+        {...elementProps}
+        {...otherProps}
+        ref={ref as React.Ref<HTMLDivElement>}
+      >
         {children}
       </Box>
     );

@@ -59,10 +59,10 @@ const styles = {
   },
 };
 
-export const getTabStyles = ({ className, selected, disabled }) => ({
+export const getTabStyles = ({ className, isSelected, isDisabled }) => ({
   tab: cx(css(styles.tab), className, {
-    [css(styles.tabSelected)]: selected,
-    [css(styles.tabDisabled)]: disabled,
+    [css(styles.tabSelected)]: isSelected,
+    [css(styles.tabDisabled)]: isDisabled,
   }),
 });
 
