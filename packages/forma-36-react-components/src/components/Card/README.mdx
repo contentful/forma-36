@@ -24,9 +24,7 @@ A Card is a component to group information or content of a particular subject in
 
 ```jsx
 <Card title="Title">
-  <Typography>
-    <Paragraph>This is the Card’s content</Paragraph>
-  </Typography>
+  <Text as="p">This is the Card’s content</Text>
 </Card>
 ```
 
@@ -100,12 +98,10 @@ Optionally, the user can pass a `target` prop to control how the link should be 
 
 ```jsx
 <Card href="http://f36.contentful.com" target="_blank">
-  <Typography>
-    <Paragraph>
-      Forma 36 is an open-source design system by Contentful created with the
-      intent to reduce the overhead of creating UI by providing tools and
-      guidance for digital teams building and extending Contentful products.
-    </Paragraph>
-  </Typography>
+  <Text as="p">
+    Forma 36 is an open-source design system by Contentful created with the
+    intent to reduce the overhead of creating UI by providing tools and guidance
+    for digital teams building and extending Contentful products.
+  </Text>
 </Card>
 ```

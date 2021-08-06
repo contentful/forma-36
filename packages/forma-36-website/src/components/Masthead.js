@@ -53,14 +53,12 @@ const Masthead = ({ title, description, hasLogo }) => (
   <div className={styles.masthead}>
     <div className={styles.content}>
       {hasLogo && <Logo />}
-      <Typography>
-        <DisplayText size="large" className={styles.title}>
-          {title}
-        </DisplayText>
-        {description && (
-          <Paragraph className={styles.description}>{description}</Paragraph>
-        )}
-      </Typography>
+      <DisplayText size="large" className={styles.title}>
+        {title}
+      </DisplayText>
+      {description && (
+        <Paragraph className={styles.description}>{description}</Paragraph>
+      )}
     </div>
   </div>
 );
