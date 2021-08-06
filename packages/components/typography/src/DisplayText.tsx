@@ -46,7 +46,7 @@ const _DisplayText: PolymorphicComponentWithRef<
       marginBottom={size === 'default' ? 'spacingL' : 'spacingXl'}
       fontSize={fontSize}
       lineHeight={lineHeight}
-      color="gray900"
+      fontColor="gray900"
       fontWeight="fontWeightDemiBold"
       {...otherProps}
       ref={ref}

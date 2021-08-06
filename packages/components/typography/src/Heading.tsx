@@ -31,7 +31,7 @@ const _Heading: PolymorphicComponentWithRef<
       testId={testId}
       marginBottom="spacingM"
       fontWeight="fontWeightDemiBold"
-      color="gray900"
+      fontColor="gray900"
       fontSize="fontSizeXl"
       lineHeight="lineHeightXl"
       {...otherProps}

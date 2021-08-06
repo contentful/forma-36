@@ -22,7 +22,7 @@ export interface TextInternalProps extends CommonProps, MarginProps {
   lineHeight?: LineHeightTokens;
   fontStack?: FontStackTokens;
   fontWeight?: FontWeightTokens;
-  color?: ColorTokens;
+  fontColor?: ColorTokens;
 }
 
 const DEFAULT_TAG = 'span';
@@ -37,12 +37,12 @@ const _Text: PolymorphicComponentWithRef<
   typeof DEFAULT_TAG
 > = (
   {
-    testId = 'cf-ui-text',
     fontSize = 'fontSizeM',
     lineHeight = 'lineHeightM',
     fontStack = 'fontStackPrimary',
     fontWeight = 'fontWeightNormal',
-    color = 'gray700',
+    fontColor = 'gray700',
+    children,
     ...otherProps
   },
   ref,
@@ -51,20 +51,22 @@ const _Text: PolymorphicComponentWithRef<
   return (
     <Element
       {...boxProps}
-      testId={testId}
       className={cx(
         css({
+          margin: 0,
+          padding: 0,
           fontFamily: tokens[fontStack],
           fontWeight: tokens[fontWeight],
-          color: tokens[color],
+          color: tokens[fontColor],
           fontSize: tokens[fontSize],
           lineHeight: tokens[lineHeight],
-          textRendering: 'optimizeLegibility',
         }),
         boxProps.className,
       )}
       ref={ref}
-    />
+    >
+      {children}
+    </Element>
   );
 };
 

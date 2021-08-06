@@ -33,6 +33,8 @@ const _SectionHeading: PolymorphicComponentWithRef<
       as={DEFAULT_TAG}
       testId={testId}
       marginBottom="spacingL"
+      fontWeight="fontWeightDemiBold"
+      fontColor="gray900"
       fontSize="fontSizeS"
       lineHeight="lineHeightS"
       className={cx(

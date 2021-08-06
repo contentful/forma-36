@@ -13,14 +13,14 @@ exports[`renders the component (complex) 1`] = `
 }
 
 .emotion-1 {
-  display: block;
   margin: 0;
+  padding: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #111B2B;
   font-size: 1.25rem;
   line-height: 2rem;
-  text-rendering: optimizeLegibility;
+  margin-bottom: 0;
 }
 
 .emotion-3 {
@@ -111,7 +111,7 @@ exports[`renders the component (complex) 1`] = `
       data-test-id="workbench-title"
     >
       <h1
-        class="Workbench__header-title__heading emotion-1"
+        class="emotion-1"
         data-test-id="cf-ui-heading"
       >
         Page title
@@ -178,14 +178,14 @@ exports[`renders the component (simple) 1`] = `
 }
 
 .emotion-1 {
-  display: block;
   margin: 0;
+  padding: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #111B2B;
   font-size: 1.25rem;
   line-height: 2rem;
-  text-rendering: optimizeLegibility;
+  margin-bottom: 0;
 }
 
 .emotion-3 {
@@ -276,7 +276,7 @@ exports[`renders the component (simple) 1`] = `
       data-test-id="workbench-title"
     >
       <h1
-        class="Workbench__header-title__heading emotion-1"
+        class="emotion-1"
         data-test-id="cf-ui-heading"
       >
         Page title

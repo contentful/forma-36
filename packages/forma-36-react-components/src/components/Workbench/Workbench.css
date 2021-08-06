@@ -80,12 +80,6 @@
   flex: 0 2 auto;
 }
 
-.Workbench__header-description__text {
-  font-family: var(--font-stack-primary);
-  color: var(--content-width-text);
-  white-space: nowrap;
-}
-
 .Workbench__header-actions {
   flex-grow: 1;
   margin-left: var(--spacing-l);

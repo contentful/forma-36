@@ -30,6 +30,8 @@ const _Subheading: PolymorphicComponentWithRef<
       marginBottom="spacingM"
       fontSize="fontSizeL"
       lineHeight="lineHeightL"
+      fontWeight="fontWeightDemiBold"
+      fontColor="gray900"
       {...otherProps}
       ref={ref}
     >

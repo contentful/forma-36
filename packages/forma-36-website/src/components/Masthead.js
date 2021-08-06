@@ -1,5 +1,5 @@
 import React from 'react';
-import { DisplayText, Paragraph, Typography } from '@contentful/f36-components';
+import { DisplayText, Paragraph } from '@contentful/f36-components';
 import tokens from '@contentful/f36-tokens';
 import { css } from 'emotion';
 import bg from '../images/dot-bg.png';
