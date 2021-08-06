@@ -16,6 +16,16 @@ For local development run `yarn` from the root of this repo to install all depen
 
 The documentation website is powered using [Gatsby v2](https://www.gatsbyjs.org). Use `yarn start` to launch the development server. This will create a live preview with hot module reloading at http://localhost:8000/.
 
+### Environment variables
+
+We don’t have many environment variables in Netlify currently,
+but to use them in development you will need to create a file named `.env.development` in `/forma-36-website` directory with the following values:
+
+```
+OSANO_KEY={{This value can be found at Contentful’s Osano dashboard}}
+OSANO_F36_WEBSITE_KEY={{This value can be found at Contentful’s Osano dashboard}}
+```
+
 ## Overview of project structure
 
 ```
