@@ -41,9 +41,10 @@ export const Overview = ({ icon }) => {
   return (
     <>
       <Flex flexDirection="column" marginBottom="spacingL">
-        <Box marginBottom="spacingS">
-          <SectionHeading as="h3">Button variants</SectionHeading>
-        </Box>
+        <SectionHeading as="h3" marginBottom="spacingS">
+          Button variants
+        </SectionHeading>
+
         <Flex flexDirection="row" marginBottom="spacingM">
           <Box marginRight="spacingXs">
             <Button variant="primary" icon={icon && <Icon as={icons[icon]} />}>
@@ -79,9 +80,10 @@ export const Overview = ({ icon }) => {
         </Flex>
       </Flex>
       <Flex flexDirection="column" marginBottom="spacingL">
-        <Box marginBottom="spacingS">
-          <SectionHeading as="h3">Button sizes</SectionHeading>
-        </Box>
+        <SectionHeading as="h3" marginBottom="spacingS">
+          Button sizes
+        </SectionHeading>
+
         <Flex flexDirection="row" marginBottom="spacingM">
           <Box marginRight="spacingXs">
             <Button
@@ -114,9 +116,10 @@ export const Overview = ({ icon }) => {
       </Flex>
 
       <Flex flexDirection="column" marginBottom="spacingL">
-        <Box marginBottom="spacingS">
-          <SectionHeading as="h3">Button active state</SectionHeading>
-        </Box>
+        <SectionHeading as="h3" marginBottom="spacingS">
+          Button active state
+        </SectionHeading>
+
         <Flex flexDirection="row" marginBottom="spacingM">
           <Box marginRight="spacingXs">
             <Button variant="primary" isActive>
@@ -147,9 +150,10 @@ export const Overview = ({ icon }) => {
       </Flex>
 
       <Flex flexDirection="column" marginBottom="spacingL">
-        <Box marginBottom="spacingS">
-          <SectionHeading as="h3">Button disabled</SectionHeading>
-        </Box>
+        <SectionHeading as="h3" marginBottom="spacingS">
+          Button disabled
+        </SectionHeading>
+
         <Flex flexDirection="row" marginBottom="spacingM">
           <Box marginRight="spacingXs">
             <Button variant="primary" isDisabled>
@@ -180,11 +184,10 @@ export const Overview = ({ icon }) => {
       </Flex>
 
       <Flex flexDirection="column" marginBottom="spacingL">
-        <Box marginBottom="spacingS">
-          <SectionHeading as="h3">
-            Button with icon on right side
-          </SectionHeading>
-        </Box>
+        <SectionHeading as="h3" marginBottom="spacingS">
+          Button with icon on right side
+        </SectionHeading>
+
         <Flex flexDirection="row" marginBottom="spacingM">
           <Box marginRight="spacingXs">
             <Button
@@ -235,9 +238,10 @@ export const Overview = ({ icon }) => {
       </Flex>
 
       <Flex flexDirection="column" marginBottom="spacingL">
-        <Box marginBottom="spacingS">
-          <SectionHeading as="h3">Button loading</SectionHeading>
-        </Box>
+        <SectionHeading as="h3" marginBottom="spacingS">
+          Button loading
+        </SectionHeading>
+
         <Flex flexDirection="row" marginBottom="spacingM">
           <Box marginRight="spacingXs">
             <Button variant="primary" isLoading>
@@ -268,9 +272,10 @@ export const Overview = ({ icon }) => {
       </Flex>
 
       <Flex flexDirection="column" marginBottom="spacingL">
-        <Box marginBottom="spacingS">
-          <SectionHeading as="h3">Icon only button</SectionHeading>
-        </Box>
+        <SectionHeading as="h3" marginBottom="spacingS">
+          Icon only button
+        </SectionHeading>
+
         <Flex flexDirection="row" marginBottom="spacingM">
           <Box marginRight="spacingXs">
             <Button
@@ -351,9 +356,10 @@ export const Overview = ({ icon }) => {
       </Flex>
 
       <Flex flexDirection="column" marginBottom="spacingL">
-        <Box marginBottom="spacingS">
-          <SectionHeading as="h3">Full width button</SectionHeading>
-        </Box>
+        <SectionHeading as="h3" marginBottom="spacingS">
+          Full width button
+        </SectionHeading>
+
         <Flex flexDirection="row" marginBottom="spacingS">
           <Button isFullWidth>Full width button</Button>
         </Flex>

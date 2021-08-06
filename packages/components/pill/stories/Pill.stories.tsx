@@ -33,9 +33,10 @@ basic.args = { label: 'example.user@contentful.com' };
 export const Overview: Story<PillInternalProps> = (args) => (
   <>
     <Flex flexDirection="column" marginBottom="spacingL">
-      <Box marginBottom="spacingS">
-        <SectionHeading as="h3">Pill variants</SectionHeading>
-      </Box>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Pill variants
+      </SectionHeading>
+
       <Flex flexDirection="row" marginBottom="spacingM">
         <Box marginRight="spacingXs">
           <Pill label="Idle" variant="idle" />
@@ -49,9 +50,10 @@ export const Overview: Story<PillInternalProps> = (args) => (
       </Flex>
     </Flex>
     <Flex flexDirection="column" marginBottom="spacingL">
-      <Box marginBottom="spacingS">
-        <SectionHeading as="h3">Close</SectionHeading>
-      </Box>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Close
+      </SectionHeading>
+
       <Flex flexDirection="row" marginBottom="spacingM">
         <Box marginRight="spacingXs">
           <Pill label="Idle" variant="idle" onClose={args.onClose} />
@@ -65,9 +67,10 @@ export const Overview: Story<PillInternalProps> = (args) => (
       </Flex>
     </Flex>
     <Flex flexDirection="column" marginBottom="spacingL">
-      <Box marginBottom="spacingS">
-        <SectionHeading as="h3">Dragable</SectionHeading>
-      </Box>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Dragable
+      </SectionHeading>
+
       <Flex flexDirection="row" marginBottom="spacingM">
         <Box marginRight="spacingXs">
           <Pill label="Idle" variant="idle" onDrag={args.onDrag} />
@@ -81,9 +84,10 @@ export const Overview: Story<PillInternalProps> = (args) => (
       </Flex>
     </Flex>
     <Flex flexDirection="column" marginBottom="spacingL">
-      <Box marginBottom="spacingS">
-        <SectionHeading as="h3">Dragable + close</SectionHeading>
-      </Box>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Dragable + close
+      </SectionHeading>
+
       <Flex flexDirection="row" marginBottom="spacingM">
         <Box marginRight="spacingXs">
           <Pill
@@ -112,9 +116,10 @@ export const Overview: Story<PillInternalProps> = (args) => (
       </Flex>
     </Flex>
     <Flex flexDirection="column" marginBottom="spacingL">
-      <Box marginBottom="spacingS">
-        <SectionHeading as="h3">Custom drag handle component</SectionHeading>
-      </Box>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Custom drag handle component
+      </SectionHeading>
+
       <Flex flexDirection="row" marginBottom="spacingM">
         <Box marginRight="spacingXs">
           <Pill
@@ -143,9 +148,10 @@ export const Overview: Story<PillInternalProps> = (args) => (
       </Flex>
     </Flex>
     <Flex flexDirection="column" marginBottom="spacingL">
-      <Box marginBottom="spacingS">
-        <SectionHeading as="h3">Custom drag handle + close</SectionHeading>
-      </Box>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Custom drag handle + close
+      </SectionHeading>
+
       <Flex flexDirection="row" marginBottom="spacingM">
         <Box marginRight="spacingXs">
           <Pill

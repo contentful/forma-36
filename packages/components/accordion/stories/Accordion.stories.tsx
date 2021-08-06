@@ -42,9 +42,10 @@ export const basic = ({ align, ...args }: AccordionProps) => (
 export const overview = ({ align, ...args }: AccordionProps) => (
   <>
     <Flex flexDirection="column" marginBottom="spacingM" fullWidth>
-      <Flex marginBottom="spacingS">
-        <SectionHeading>Accordion alignment start</SectionHeading>
-      </Flex>
+      <SectionHeading marginBottom="spacingS">
+        Accordion alignment start
+      </SectionHeading>
+
       <Flex>
         <Accordion align="start">
           <AccordionItem title={args['AccordionItem Title #1']}>
@@ -60,9 +61,10 @@ export const overview = ({ align, ...args }: AccordionProps) => (
       </Flex>
     </Flex>
     <Flex flexDirection="column">
-      <Flex marginBottom="spacingS">
-        <SectionHeading>Accordion alignment end</SectionHeading>
-      </Flex>
+      <SectionHeading marginBottom="spacingS">
+        Accordion alignment end
+      </SectionHeading>
+
       <Flex>
         <Accordion align="end">
           <AccordionItem title={args['AccordionItem Title #1']}>

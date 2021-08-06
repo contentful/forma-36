@@ -43,9 +43,8 @@ export const Default: Story<ListProps> = (args) => {
 export const overview = ({ ...args }: ListProps) => (
   <>
     <Flex flexDirection="column" marginBottom="spacingM" fullWidth>
-      <Flex marginBottom="spacingS">
-        <SectionHeading>Unordered List</SectionHeading>
-      </Flex>
+      <SectionHeading marginBottom="spacingS">Unordered List</SectionHeading>
+
       <Flex>
         <List {...args}>
           <ListItem>List Item 1</ListItem>
@@ -60,9 +59,8 @@ export const overview = ({ ...args }: ListProps) => (
       </Flex>
     </Flex>
     <Flex flexDirection="column">
-      <Flex marginBottom="spacingS">
-        <SectionHeading>Ordered List</SectionHeading>
-      </Flex>
+      <SectionHeading marginBottom="spacingS">Ordered List</SectionHeading>
+
       <Flex>
         <List as="ol" {...args}>
           <ListItem>List Item 1</ListItem>

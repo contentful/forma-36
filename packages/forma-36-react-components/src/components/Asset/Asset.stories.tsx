@@ -60,9 +60,10 @@ WithAnArchivedImage.args = {
 export const overview: Story<AssetProps> = () => (
   <>
     <Flex flexDirection="column" marginBottom="spacingM">
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">Asset status overview</SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Asset status overview
+      </SectionHeading>
+
       <Flex marginBottom="spacingS">
         <Flex flexDirection="column" marginRight="spacingS">
           <Paragraph>published</Paragraph>
@@ -83,9 +84,10 @@ export const overview: Story<AssetProps> = () => (
       </Flex>
     </Flex>
     <Flex flexDirection="column">
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">Asset types overview</SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Asset types overview
+      </SectionHeading>
+
       <Flex marginBottom="spacingS">
         <Flex flexDirection="column" marginRight="spacingS">
           <Paragraph>image</Paragraph>

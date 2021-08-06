@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
-import { Flex } from '@contentful/f36-core';
 import { Heading, SectionHeading, Paragraph } from '@contentful/f36-typography';
 
 import { Card, CardProps } from './Card';
@@ -93,9 +92,10 @@ export const WithLinkAndTarget: Story<CardProps> = (args) => {
 export const overview: Story<CardProps> = (args) => {
   return (
     <>
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">Card with link and target</SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Card with link and target
+      </SectionHeading>
+
       <Card {...args}>
         <Heading>Forma 36</Heading>
         <Paragraph marginBottom="none">
@@ -106,9 +106,10 @@ export const overview: Story<CardProps> = (args) => {
         </Paragraph>
       </Card>
 
-      <Flex marginBottom="spacingS" marginTop="spacingM">
-        <SectionHeading as="h3">Card selected</SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
+        Card selected
+      </SectionHeading>
+
       <Card selected>
         <Heading>Forma 36</Heading>
         <Paragraph marginBottom="none">
@@ -119,9 +120,10 @@ export const overview: Story<CardProps> = (args) => {
         </Paragraph>
       </Card>
 
-      <Flex marginBottom="spacingS" marginTop="spacingM">
-        <SectionHeading as="h3">Card with default padding</SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
+        Card with default padding
+      </SectionHeading>
+
       <Card padding="default">
         <Heading>Forma 36</Heading>
         <Paragraph marginBottom="none">
@@ -131,9 +133,11 @@ export const overview: Story<CardProps> = (args) => {
           products.
         </Paragraph>
       </Card>
-      <Flex marginBottom="spacingS" marginTop="spacingM">
-        <SectionHeading as="h3">Card with large padding</SectionHeading>
-      </Flex>
+
+      <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
+        Card with large padding
+      </SectionHeading>
+
       <Card padding="large">
         <Heading>Forma 36</Heading>
         <Paragraph marginBottom="none">
@@ -144,9 +148,10 @@ export const overview: Story<CardProps> = (args) => {
         </Paragraph>
       </Card>
 
-      <Flex marginBottom="spacingS" marginTop="spacingM">
-        <SectionHeading as="h3">Card without padding</SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
+        Card without padding
+      </SectionHeading>
+
       <Card padding="none">
         <Heading>Forma 36</Heading>
         <Paragraph marginBottom="none">

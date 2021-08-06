@@ -55,9 +55,10 @@ Basic.args = {
 
 export const overview = () => (
   <>
-    <Flex marginBottom="spacingS">
-      <SectionHeading as="h3">Radio button field default</SectionHeading>
-    </Flex>
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Radio button field default
+    </SectionHeading>
+
     <Flex marginBottom="spacingS">
       <RadioButtonField
         label="Label text"
@@ -67,11 +68,11 @@ export const overview = () => (
         id="radioButton1"
       />
     </Flex>
-    <Flex marginBottom="spacingS">
-      <SectionHeading as="h3">
-        Radio button field with validation message
-      </SectionHeading>
-    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Radio button field with validation message
+    </SectionHeading>
+
     <Flex marginBottom="spacingS">
       <RadioButtonField
         label="Label text"
@@ -82,9 +83,11 @@ export const overview = () => (
         id="radioButton2"
       />
     </Flex>
-    <Flex marginBottom="spacingS">
-      <SectionHeading as="h3">Radio button disabled</SectionHeading>
-    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Radio button disabled
+    </SectionHeading>
+
     <Flex marginBottom="spacingS">
       <RadioButtonField
         label="Label text"
@@ -95,9 +98,11 @@ export const overview = () => (
         id="radioButton3"
       />
     </Flex>
-    <Flex marginBottom="spacingS">
-      <SectionHeading as="h3">Radio button disabled checked</SectionHeading>
-    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Radio button disabled checked
+    </SectionHeading>
+
     <Flex marginBottom="spacingS">
       <RadioButtonField
         label="Label text"
@@ -109,9 +114,11 @@ export const overview = () => (
         id="radioButton3"
       />
     </Flex>
-    <Flex marginBottom="spacingS">
-      <SectionHeading as="h3">Radio button with light label</SectionHeading>
-    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Radio button with light label
+    </SectionHeading>
+
     <Flex marginBottom="spacingS">
       <RadioButtonField
         label="Label text"
