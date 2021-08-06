@@ -94,8 +94,8 @@ export function Modal({
   testId,
   topOffset,
   ...otherProps
-}: ModalProps): React.ReactElement {
-  const allProps = {
+}: ModalProps) {
+  const props = {
     ...otherProps,
     allowHeightOverflow,
     position,
@@ -112,7 +112,7 @@ export function Modal({
         {otherProps.title && (
           <ModalHeader
             title={otherProps.title}
-            onClose={otherProps.onClose}
+            onClose={props.onClose}
             {...otherProps.modalHeaderProps}
           />
         )}
@@ -126,9 +126,9 @@ export function Modal({
   return (
     <ReactModal
       ariaHideApp={false}
-      onRequestClose={otherProps.onClose}
+      onRequestClose={props.onClose}
       isOpen={otherProps.isShown}
-      onAfterOpen={otherProps.onAfterOpen}
+      onAfterOpen={props.onAfterOpen}
       shouldCloseOnEsc={shouldCloseOnEscapePress}
       shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
       portalClassName={styles.Modal__portal}
@@ -167,7 +167,7 @@ export function Modal({
         })}
       >
         {typeof otherProps.children === 'function'
-          ? otherProps.children(allProps)
+          ? otherProps.children(props)
           : renderDefault()}
       </div>
     </ReactModal>
