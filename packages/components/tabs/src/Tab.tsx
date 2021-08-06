@@ -1,7 +1,6 @@
 import React, { useCallback } from 'react';
 import type { KeyboardEvent, MouseEvent } from 'react';
 import type { CommonProps } from '@contentful/f36-core';
-import { Button } from '@contentful/f36-button';
 
 import { getTabStyles } from './Tabs.styles';
 
