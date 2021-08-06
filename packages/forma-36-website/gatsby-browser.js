@@ -1,6 +1,5 @@
-const OSANO_KEY = process.env.OSANO_KEY || process.env.GATSBY_OSANO_KEY;
-const OSANO_F36_WEBSITE_KEY =
-  process.env.OSANO_F36_WEBSITE_KEY || process.env.GATSBY_OSANO_F36_WEBSITE_KEY;
+const OSANO_KEY = process.env.GATSBY_OSANO_KEY;
+const OSANO_F36_WEBSITE_KEY = process.env.GATSBY_OSANO_F36_WEBSITE_KEY;
 
 const handleConsent = (newConsentOptions) => {
   // Save consent in localStorage for later
