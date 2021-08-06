@@ -8,7 +8,7 @@ import {
   Heading,
   Subheading,
   SectionHeading,
-  Text,
+  Paragraph,
 } from '../src';
 
 export default {
@@ -37,11 +37,11 @@ export const WithDisplayHuge = ({ title, text, ...args }: Arg) => {
     <ExampleContainer>
       <Typography {...args}>
         <DisplayText size="huge">{title}</DisplayText>
-        <Text>{text}</Text>
-        <Text>
+        <Paragraph>{text}</Paragraph>
+        <Paragraph>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ut
           accusamus quia debitis expedita consectetur!
-        </Text>
+        </Paragraph>
       </Typography>
     </ExampleContainer>
   );
@@ -56,11 +56,11 @@ export const WithDisplayLarge = ({ title, text, ...args }: Arg) => {
     <ExampleContainer>
       <Typography {...args}>
         <DisplayText size="large">{title}</DisplayText>
-        <Text>{text}</Text>
-        <Text>
+        <Paragraph>{text}</Paragraph>
+        <Paragraph>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ut
           accusamus quia debitis expedita consectetur!
-        </Text>
+        </Paragraph>
       </Typography>
     </ExampleContainer>
   );
@@ -75,11 +75,11 @@ export const WithDisplayDefault = ({ title, text, ...args }: Arg) => {
     <ExampleContainer>
       <Typography {...args}>
         <DisplayText>{title}</DisplayText>
-        <Text>{text}</Text>
-        <Text>
+        <Paragraph>{text}</Paragraph>
+        <Paragraph>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ut
           accusamus quia debitis expedita consectetur!
-        </Text>
+        </Paragraph>
       </Typography>
     </ExampleContainer>
   );
@@ -94,11 +94,11 @@ export const WithHeading = ({ title, text, ...args }: Arg) => {
     <ExampleContainer>
       <Typography {...args}>
         <Heading>{title}</Heading>
-        <Text>{text}</Text>
-        <Text>
+        <Paragraph>{text}</Paragraph>
+        <Paragraph>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ut
           accusamus quia debitis expedita consectetur!
-        </Text>
+        </Paragraph>
       </Typography>
     </ExampleContainer>
   );
@@ -113,11 +113,11 @@ export const WithSubheading = ({ title, text, ...args }: Arg) => {
     <ExampleContainer>
       <Typography {...args}>
         <Subheading>{title}</Subheading>
-        <Text>{text}</Text>
-        <Text>
+        <Paragraph>{text}</Paragraph>
+        <Paragraph>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ut
           accusamus quia debitis expedita consectetur!
-        </Text>
+        </Paragraph>
       </Typography>
     </ExampleContainer>
   );
@@ -132,11 +132,11 @@ export const WithSectionHeading = ({ title, text, ...args }: Arg) => {
     <ExampleContainer>
       <Typography {...args}>
         <SectionHeading>{title}</SectionHeading>
-        <Text>{text}</Text>
-        <Text>
+        <Paragraph>{text}</Paragraph>
+        <Paragraph>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non ut
           accusamus quia debitis expedita consectetur!
-        </Text>
+        </Paragraph>
       </Typography>
     </ExampleContainer>
   );
@@ -151,49 +151,49 @@ export const Overview = () => {
     <>
       <Flex alignItems="center" marginBottom="spacingM">
         <Flex marginRight="spacingS">
-          <Text>48</Text>
+          <Paragraph>48</Paragraph>
         </Flex>
         <DisplayText size="huge">Display Huge</DisplayText>
       </Flex>
       <Flex alignItems="center" marginBottom="spacingM">
         <Flex marginRight="spacingS">
-          <Text>36</Text>
+          <Paragraph>36</Paragraph>
         </Flex>
         <DisplayText size="large">Display Large</DisplayText>
       </Flex>
       <Flex alignItems="center" marginBottom="spacingM">
         <Flex marginRight="spacingS">
-          <Text>28</Text>
+          <Paragraph>28</Paragraph>
         </Flex>
         <DisplayText size="default">Display</DisplayText>
       </Flex>
 
       <Flex alignItems="center" marginBottom="spacingM">
         <Flex marginRight="spacingS">
-          <Text>20</Text>
+          <Paragraph>20</Paragraph>
         </Flex>
         <Heading>Heading</Heading>
       </Flex>
 
       <Flex alignItems="center" marginBottom="spacingM">
         <Flex marginRight="spacingS">
-          <Text>16</Text>
+          <Paragraph>16</Paragraph>
         </Flex>
         <Subheading>Subheading</Subheading>
       </Flex>
 
       <Flex alignItems="center" marginBottom="spacingM">
         <Flex marginRight="spacingS">
-          <Text>12</Text>
+          <Paragraph>12</Paragraph>
         </Flex>
         <SectionHeading>Section Heading</SectionHeading>
       </Flex>
 
       <Flex alignItems="center" marginBottom="spacingM">
         <Flex marginRight="spacingS">
-          <Text>14</Text>
+          <Paragraph>14</Paragraph>
         </Flex>
-        <Text>Text</Text>
+        <Paragraph>Text</Paragraph>
       </Flex>
     </>
   );

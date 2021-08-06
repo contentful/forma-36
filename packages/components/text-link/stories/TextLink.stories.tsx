@@ -4,7 +4,7 @@ import type { Meta, Story } from '@storybook/react/types-6-0';
 import { TextLink } from '../src/TextLink';
 import * as icons from '@contentful/f36-icons';
 import { Icon } from '@contentful/f36-icon';
-import { Text } from '@contentful/f36-typography';
+import { Paragraph } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
 import tokens from '@contentful/f36-tokens';
 import { TextLinkVariant } from '../src/types';
@@ -42,7 +42,7 @@ export const Basic: Story<any> = ({ icon, children, ...args }) => {
 
 export const UsedWithText = () => {
   return (
-    <Text>
+    <Paragraph>
       Berlin (/bɜːrˈlɪn/; German: [bɛʁˈliːn] (About this soundlisten)) is the{' '}
       <TextLink href="https://www.wikiwand.com/en/Capital_city" target="_blank">
         capital
@@ -72,7 +72,7 @@ export const UsedWithText = () => {
       inhabitants and an area of more than 30,000 km2,[9] Germany’s
       third-largest metropolitan region after the Rhine-Ruhr and Rhine-Main
       regions.
-    </Text>
+    </Paragraph>
   );
 };
 
@@ -95,7 +95,7 @@ export const overview = () => (
     {textLinkVariants.map((variant, idx) => (
       <Flex marginBottom="spacingXl" alignItems="center" key={idx}>
         <Flex marginRight="spacing2Xl">
-          <Text style={{ width: 100 }}>{variant}</Text>
+          <Paragraph style={{ width: 100 }}>{variant}</Paragraph>
         </Flex>
         <Flex marginRight="spacingXl">
           <TextLink

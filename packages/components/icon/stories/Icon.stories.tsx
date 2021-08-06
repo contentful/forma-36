@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { Flex } from '@contentful/f36-core';
-import { SectionHeading, Text } from '@contentful/f36-typography';
+import { SectionHeading, Paragraph } from '@contentful/f36-typography';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { MdAcUnit as ExternalIcon } from 'react-icons/md';
 
@@ -70,7 +70,7 @@ export const Overview: Story = () => {
             <Flex marginRight="spacingS">
               <CustomIcon variant="primary" size={size} />
             </Flex>
-            <Text>{size}</Text>
+            <Paragraph>{size}</Paragraph>
           </Flex>
         );
       })}
@@ -83,49 +83,49 @@ export const Overview: Story = () => {
         <Flex marginRight="spacingS">
           <CustomIcon variant="primary" />
         </Flex>
-        <Text>primary</Text>
+        <Paragraph>primary</Paragraph>
       </Flex>
 
       <Flex marginBottom="spacingM" alignItems="center">
         <Flex marginRight="spacingS">
           <CustomIcon variant="positive" />
         </Flex>
-        <Text>positive</Text>
+        <Paragraph>positive</Paragraph>
       </Flex>
 
       <Flex marginBottom="spacingM" alignItems="center">
         <Flex marginRight="spacingS">
           <CustomIcon variant="negative" />
         </Flex>
-        <Text>negative</Text>
+        <Paragraph>negative</Paragraph>
       </Flex>
 
       <Flex marginBottom="spacingM" alignItems="center">
         <Flex marginRight="spacingS">
           <CustomIcon variant="warning" />
         </Flex>
-        <Text>warning</Text>
+        <Paragraph>warning</Paragraph>
       </Flex>
 
       <Flex marginBottom="spacingM" alignItems="center">
         <Flex marginRight="spacingS">
           <CustomIcon variant="secondary" />
         </Flex>
-        <Text>secondary</Text>
+        <Paragraph>secondary</Paragraph>
       </Flex>
 
       <Flex marginBottom="spacingM" alignItems="center">
         <Flex marginRight="spacingS">
           <CustomIcon variant="muted" />
         </Flex>
-        <Text>muted</Text>
+        <Paragraph>muted</Paragraph>
       </Flex>
 
       <Flex marginBottom="spacingM" alignItems="center">
         <Flex marginRight="spacingS">
           <CustomIcon variant="white" />
         </Flex>
-        <Text>white</Text>
+        <Paragraph>white</Paragraph>
       </Flex>
     </Fragment>
   );

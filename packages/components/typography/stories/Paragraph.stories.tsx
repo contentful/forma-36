@@ -1,20 +1,20 @@
 import React from 'react';
 
-import { Text, TextProps } from '../src/Text';
+import { Paragraph, ParagraphProps } from '../src/Paragraph';
 
 export default {
-  title: 'Typography/Text',
-  component: Text,
+  title: 'Typography/Paragraph',
+  component: Paragraph,
   parameters: {
-    propTypes: [Text['__docgenInfo']],
+    propTypes: [Paragraph['__docgenInfo']],
   },
   argTypes: {
     className: { control: { disable: true } },
   },
 };
 
-export const Basic = (props: TextProps<'p'>) => <Text {...props} />;
+export const Basic = (props: ParagraphProps<'p'>) => <Paragraph {...props} />;
 
 Basic.args = {
-  children: 'Text',
+  children: 'Paragraph',
 };

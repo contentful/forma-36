@@ -5,7 +5,7 @@ import type {
   PolymorphicComponentProps,
 } from '@contentful/f36-core';
 import { ErrorCircleOutline } from '@contentful/f36-icons';
-import { Text } from '@contentful/f36-typography';
+import { Paragraph } from '@contentful/f36-typography';
 import { getStyles } from './ValidationMessage.styles';
 
 export type ValidationMessageInternalProps = CommonProps & {
@@ -25,9 +25,9 @@ export const ValidationMessage = forwardRef<
   return (
     <Flex {...otherProps} ref={ref} testId={testId}>
       <ErrorCircleOutline className={styles.icon} variant="negative" />
-      <Text className={styles.text} marginBottom="none">
+      <Paragraph className={styles.text} marginBottom="none">
         {children}
-      </Text>
+      </Paragraph>
     </Flex>
   );
 });

@@ -3,7 +3,7 @@ import React from 'react';
 import tokens from '@contentful/f36-tokens';
 import {
   DisplayText,
-  Text,
+  Paragraph,
   Button,
   Typography,
 } from '@contentful/f36-components';
@@ -30,14 +30,14 @@ const IndexPage = () => (
     <Section>
       <Typography>
         <DisplayText>Resources for designers and developers</DisplayText>
-        <Text
+        <Paragraph
           style={{
             fontSize: tokens.fontSizeL,
             marginBottom: tokens.spacing3Xl,
           }}
         >
           Everything you need to get started building for Contentful
-        </Text>
+        </Paragraph>
       </Typography>
       <Resources>
         <Resource
