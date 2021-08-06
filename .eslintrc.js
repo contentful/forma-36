@@ -65,6 +65,7 @@ module.exports = {
     'import/named': 'error',
     'import/no-default-export': 'error',
     'rulesdir/emotion-in-function': 'error',
+    'react/jsx-handler-names': 'error',
   },
   overrides: [
     {
@@ -72,6 +73,7 @@ module.exports = {
       rules: {
         '@typescript-eslint/no-object-literal-type-assertion': 'off',
         'import/no-default-export': 'off',
+        'react/jsx-handler-names': 'off',
       },
     },
     {

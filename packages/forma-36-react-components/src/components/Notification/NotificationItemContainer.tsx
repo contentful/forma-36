@@ -50,7 +50,7 @@ export class NotificationItemContainer extends Component<
       if (this.props.duration === 0) return;
 
       this.timer = window.setTimeout(() => {
-        this.close();
+        this.handleClose();
       }, this.props.duration);
     }
   };
@@ -64,7 +64,7 @@ export class NotificationItemContainer extends Component<
     }
   };
 
-  close = () => {
+  handleClose = () => {
     this.stopTimer();
     this.setState({ isShown: false });
   };
@@ -98,7 +98,7 @@ export class NotificationItemContainer extends Component<
           onMouseEnter={this.handleMouseEnter}
           onMouseLeave={this.handleMouseLeave}
         >
-          <NotificationItem {...otherProps} onClose={this.close} />
+          <NotificationItem {...otherProps} onClose={this.handleClose} />
         </div>
       </AnimateHeight>
     );

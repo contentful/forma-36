@@ -193,33 +193,33 @@ export const Autocomplete = <T extends {}>({
 
   const dropdownClassNames = cn(styles.autocompleteDropdown, className);
 
-  function renderDefaultToggleElement(toggleProps: RenderToggleElementProps) {
+  function renderDefaultToggleElement(props: RenderToggleElementProps) {
     return (
       <div className={styles.autocompleteInput}>
         <TextInput
-          value={toggleProps.query}
+          value={props.query}
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
-            toggleProps.onChange(e.target.value)
+            props.onChange(e.target.value)
           }
-          onFocus={toggleProps.onFocus}
-          onKeyDown={toggleProps.onKeyDown}
-          disabled={toggleProps.disabled}
-          placeholder={toggleProps.placeholder}
-          width={toggleProps.width}
-          inputRef={toggleProps.inputRef}
+          onFocus={props.onFocus}
+          onKeyDown={props.onKeyDown}
+          disabled={props.disabled}
+          placeholder={props.placeholder}
+          width={props.width}
+          inputRef={props.inputRef}
           testId="autocomplete.input"
           type="search"
           autoComplete="off"
-          aria-label={toggleProps.name}
+          aria-label={props.name}
         />
         <IconButton
           className={styles.inputIconButton}
           tabIndex={-1}
-          disabled={toggleProps.disabled}
+          disabled={props.disabled}
           buttonType="muted"
-          iconProps={{ as: toggleProps.query ? Close : ChevronDown }}
-          onClick={toggleProps.onToggle}
-          label={toggleProps.query ? 'Clear' : 'Show list'}
+          iconProps={{ as: props.query ? Close : ChevronDown }}
+          onClick={props.onToggle}
+          label={props.query ? 'Clear' : 'Show list'}
         />
       </div>
     );

@@ -177,6 +177,7 @@ export function NotificationsManager({
             duration={item.duration}
             key={item.id}
             hasCloseButton={item.canClose}
+            // eslint-disable-next-line react/jsx-handler-names
             onClose={item.close}
             isShown={item.isShown}
             title={item.title}
