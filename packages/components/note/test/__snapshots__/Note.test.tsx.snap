@@ -95,7 +95,7 @@ exports[`Note renders the component 1`] = `
   >
     <p
       class="emotion-2"
-      data-test-id="cf-ui-text"
+      data-test-id="cf-ui-paragraph"
     >
       A piece of information that is relevant to the context the user is currently in.
     </p>
@@ -198,7 +198,7 @@ exports[`Note renders the component with an additional class name 1`] = `
   >
     <p
       class="emotion-2"
-      data-test-id="cf-ui-text"
+      data-test-id="cf-ui-paragraph"
     >
       A piece of information that is relevant to the context the user is currently in.
     </p>
@@ -322,7 +322,7 @@ exports[`Note renders the component with title 1`] = `
     </h2>
     <p
       class="emotion-3"
-      data-test-id="cf-ui-text"
+      data-test-id="cf-ui-paragraph"
     >
       A piece of information that is relevant to the context the user is currently in.
     </p>
