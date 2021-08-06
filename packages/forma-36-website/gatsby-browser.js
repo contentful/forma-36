@@ -1,3 +1,7 @@
+const OSANO_KEY = process.env.OSANO_KEY || process.env.GATSBY_OSANO_KEY;
+const OSANO_F36_WEBSITE_KEY =
+  process.env.OSANO_F36_WEBSITE_KEY || process.env.GATSBY_OSANO_F36_WEBSITE_KEY;
+
 const handleConsent = (newConsentOptions) => {
   // Save consent in localStorage for later
   window.localStorage.setItem('consent', JSON.stringify(newConsentOptions));
@@ -6,7 +10,7 @@ const handleConsent = (newConsentOptions) => {
 };
 
 const initOsano = () => {
-  const osanoScriptUrl = `https://cmp.osano.com/${process.env.OSANO_KEY}/${process.env.OSANO_F36_WEBSITE_KEY}/osano.js`;
+  const osanoScriptUrl = `https://cmp.osano.com/${OSANO_KEY}/${OSANO_F36_WEBSITE_KEY}/osano.js`;
   const script = document.createElement('script');
   const head = document.getElementsByTagName('head')[0];
 
@@ -46,7 +50,7 @@ const initOsano = () => {
 };
 
 export const onClientEntry = () => {
-  if (process.env.OSANO_KEY && process.env.OSANO_F36_WEBSITE_KEY) {
+  if (OSANO_KEY && OSANO_F36_WEBSITE_KEY) {
     initOsano();
   } else {
     console.warn('Analytics services won’t initialize');
