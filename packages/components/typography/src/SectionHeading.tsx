@@ -1,32 +1,42 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import tokens from '@contentful/f36-tokens';
 import { css, cx } from 'emotion';
 import {
+  CommonProps,
+  MarginProps,
   PolymorphicComponent,
   PolymorphicComponentWithRef,
+  PolymorphicComponentProps,
 } from '@contentful/f36-core';
-import type { HeadingInternalProps, HeadingProps } from './Heading';
-import { Heading } from './Heading';
-import { TypographyContext } from './Typography';
+import type { HeadingElement } from './Heading';
+import { Text } from './Text';
 
 const DEFAULT_TAG = 'h3';
 
-export type SectionHeadingProps<E extends React.ElementType> = HeadingProps<E>;
+export interface SectionHeadingInternalProps extends CommonProps, MarginProps {
+  as?: HeadingElement;
+}
+
+export type SectionHeadingProps<
+  E extends React.ElementType
+> = PolymorphicComponentProps<E, SectionHeadingInternalProps>;
 
 const _SectionHeading: PolymorphicComponentWithRef<
-  HeadingInternalProps,
+  SectionHeadingInternalProps,
   typeof DEFAULT_TAG
-> = ({ children, className, ...otherProps }, ref) => {
-  const configuration = useContext(TypographyContext);
+> = (
+  { children, className, testId = 'cf-ui-section-heading', ...otherProps },
+  ref,
+) => {
   return (
-    <Heading
+    <Text
       as={DEFAULT_TAG}
-      testId="cf-ui-section-heading"
-      marginBottom={configuration.sectionHeading}
+      testId={testId}
+      marginBottom="spacingL"
+      fontSize="fontSizeS"
+      lineHeight="lineHeightS"
       className={cx(
         css({
-          fontSize: tokens.fontSizeS,
-          lineHeight: tokens.lineHeightS,
           letterSpacing: tokens.letterSpacingWide,
           textTransform: 'uppercase',
         }),
@@ -36,11 +46,11 @@ const _SectionHeading: PolymorphicComponentWithRef<
       ref={ref}
     >
       {children}
-    </Heading>
+    </Text>
   );
 };
 
 export const SectionHeading: PolymorphicComponent<
-  HeadingInternalProps,
+  SectionHeadingInternalProps,
   typeof DEFAULT_TAG
 > = React.forwardRef(_SectionHeading);

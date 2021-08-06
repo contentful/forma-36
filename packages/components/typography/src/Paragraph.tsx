@@ -1,49 +1,44 @@
-import React, { useContext } from 'react';
-import tokens from '@contentful/f36-tokens';
-import { css, cx } from 'emotion';
+import React from 'react';
 import {
   PolymorphicComponent,
   PolymorphicComponentWithRef,
+  PolymorphicComponentProps,
+  CommonProps,
+  MarginProps,
 } from '@contentful/f36-core';
-import type { HeadingInternalProps, HeadingProps } from './Heading';
-import { Heading } from './Heading';
-import { TypographyContext } from './Typography';
+import { Text } from './Text';
 
 const DEFAULT_TAG = 'p';
 
-export type ParagraphProps<E extends React.ElementType> = HeadingProps<E>;
+export type ParagraphInternalProps = CommonProps &
+  MarginProps & {
+    children: React.ReactNode;
+    as?: typeof DEFAULT_TAG;
+  };
+
+export type ParagraphProps = PolymorphicComponentProps<
+  'p',
+  ParagraphInternalProps
+>;
 
 const _Paragraph: PolymorphicComponentWithRef<
-  HeadingInternalProps,
+  ParagraphInternalProps,
   typeof DEFAULT_TAG
-> = (
-  { children, className, testId = 'cf-ui-paragraph', ...otherProps },
-  ref,
-) => {
-  const configuration = useContext(TypographyContext);
+> = ({ children, testId = 'cf-ui-paragraph', ...otherProps }, ref) => {
   return (
-    <Heading
+    <Text
       as={DEFAULT_TAG}
       testId={testId}
-      marginBottom={configuration.paragraph}
-      className={cx(
-        css({
-          fontWeight: tokens.fontWeightNormal,
-          color: tokens.gray700,
-          fontSize: tokens.fontSizeM,
-          lineHeight: tokens.lineHeightM,
-        }),
-        className,
-      )}
+      marginBottom="spacingM"
       {...otherProps}
       ref={ref}
     >
       {children}
-    </Heading>
+    </Text>
   );
 };
 
 export const Paragraph: PolymorphicComponent<
-  HeadingInternalProps,
+  ParagraphInternalProps,
   typeof DEFAULT_TAG
 > = React.forwardRef(_Paragraph);
