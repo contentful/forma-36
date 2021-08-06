@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
 import type { KeyboardEvent, MouseEvent } from 'react';
 import type { CommonProps } from '@contentful/f36-core';
+import { Box } from '@contentful/f36-core';
 
 import { getTabStyles } from './Tabs.styles';
 
@@ -15,18 +16,21 @@ export interface TabProps extends CommonProps {
   children: React.ReactNode;
 }
 
-export function Tab({
-  children,
-  className,
-  disabled = false,
-  href,
-  id,
-  onSelect,
-  selected = false,
-  style,
-  tabIndex = 0,
-  testId = 'cf-ui-tab',
-}: TabProps): React.ReactElement {
+function _Tab(
+  {
+    children,
+    className,
+    disabled = false,
+    href,
+    id,
+    onSelect,
+    selected = false,
+    style,
+    tabIndex = 0,
+    testId = 'cf-ui-tab',
+  }: TabProps,
+  ref: React.Ref<HTMLAnchorElement> | React.Ref<HTMLDivElement>,
+): React.ReactElement {
   const styles = getTabStyles({ className, selected, disabled });
   const handleClick = useCallback(
     (e: MouseEvent<HTMLElement>) => {
@@ -51,8 +55,8 @@ export function Tab({
     className: styles.tab,
     onClick: handleClick,
     onKeyPress: handleKeyPress,
-    style: style,
-    'data-test-id': testId,
+    style,
+    testId,
     tabIndex,
   };
 
@@ -64,11 +68,21 @@ export function Tab({
     if (selected) {
       elementProps['aria-current'] = 'page';
     }
-    return <a {...elementProps}>{children}</a>;
+    return (
+      <Box as="a" {...elementProps} ref={ref as React.Ref<HTMLAnchorElement>}>
+        {children}
+      </Box>
+    );
   } else {
     elementProps['aria-selected'] = selected;
     elementProps['role'] = 'tab';
     elementProps['aria-controls'] = id;
-    return <div {...elementProps}>{children}</div>;
+    return (
+      <Box as="div" {...elementProps} ref={ref as React.Ref<HTMLDivElement>}>
+        {children}
+      </Box>
+    );
   }
 }
+
+export const Tab = React.forwardRef(_Tab);

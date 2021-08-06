@@ -4,8 +4,8 @@ type: 'component'
 status: 'stable'
 slug: /components/tabs/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/components/tabs'
-storybook: 'https://f36-storybook.contentful.com/?path=/story/components-tabs--default'
-typescript: ./src/TextLink.tsx
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-tabs--basic'
+typescript: ./src/Tabs.tsx,./src/Tab.tsx,./src/TabPanel.tsx
 ---
 
 import { Props } from '@contentful/f36-docs-utils';
@@ -42,7 +42,7 @@ Be aware that the users will not see all the content at the same time. Make sure
 ### with vertical divider
 
 ```jsx
-<Tabs role="tablist" variant="vertical">
+<Tabs role="tablist" variant="vertical-divider">
   <Tab id="first" href="https://contentful.com" selected>
     First
   </Tab>
@@ -110,4 +110,4 @@ Be aware that the users will not see all the content at the same time. Make sure
 
 ### TabPanel
 
-<Props of="Tab" />
+<Props of="TabPanel" />

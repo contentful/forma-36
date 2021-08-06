@@ -1,27 +1,35 @@
 import React from 'react';
 import type { CommonProps } from '@contentful/f36-core';
+import { Box } from '@contentful/f36-core';
 
 export interface TabPanelProps extends CommonProps {
   id: string;
   children: React.ReactNode;
 }
 
-export function TabPanel({
-  testId = 'cf-ui-tab-panel',
-  className,
-  children,
-  id,
-  ...otherProps
-}: TabPanelProps): React.ReactElement {
+function _TabPanel(
+  {
+    testId = 'cf-ui-tab-panel',
+    className,
+    children,
+    id,
+    ...otherProps
+  }: TabPanelProps,
+  ref: React.Ref<HTMLDivElement>,
+): React.ReactElement {
   return (
-    <div
+    <Box
+      as="div"
       {...otherProps}
       id={id}
       role="tabpanel"
-      data-test-id={testId}
+      testId={testId}
       className={className}
+      ref={ref}
     >
       {children}
-    </div>
+    </Box>
   );
 }
+
+export const TabPanel = React.forwardRef(_TabPanel);

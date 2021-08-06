@@ -68,7 +68,7 @@ export const getTabStyles = ({ className, selected, disabled }) => ({
 
 export const getTabsStyles = ({ className, variant }) => ({
   tabs: cx(css(styles.tabs), className, {
-    [css(styles.tabDividerHorizontal)]: variant === 'horizontal',
-    [css(styles.tabDividerVertical)]: variant === 'vertical',
+    [css(styles.tabDividerHorizontal)]: variant === 'horizontal-divider',
+    [css(styles.tabDividerVertical)]: variant === 'vertical-divider',
   }),
 });

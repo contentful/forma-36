@@ -96,7 +96,7 @@ export const Overview: Story = () => (
       <SectionHeading as="h3">Tabs with horizontal divider</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingS">
-      <Tabs role="navigation" variant="horizontal">
+      <Tabs role="navigation" variant="horizontal-divider">
         <Tab id="first" href="https://contentful.com" selected>
           First
         </Tab>
@@ -112,7 +112,7 @@ export const Overview: Story = () => (
       <SectionHeading as="h3">Tabs with vertical divider</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingS">
-      <Tabs role="navigation" variant="vertical">
+      <Tabs role="navigation" variant="vertical-divider">
         <Tab id="first" href="https://contentful.com" selected>
           First
         </Tab>
