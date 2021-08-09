@@ -49,26 +49,29 @@ export interface SkeletonContainerProps extends CommonProps {
 }
 
 export const SkeletonContainer = forwardRef<SVGElement, SkeletonContainerProps>(
-  ({
-    children,
-    testId = 'cf-ui-skeleton-form',
-    ariaLabel = 'Loading component...',
-    width = '100%',
-    height = '100%',
-    preserveAspectRatio,
-    backgroundColor = '#e5ebed',
-    backgroundOpacity = 1,
-    isAnimated = true,
-    speed = 2,
-    foregroundColor = '#f7f9fa',
-    foregroundOpacity = 1,
-    svgWidth = '100%',
-    svgHeight = '100%',
-    clipId,
-    gradientId,
-    animateId,
-    ...otherProps
-  }) => {
+  (
+    {
+      children,
+      testId = 'cf-ui-skeleton-form',
+      ariaLabel = 'Loading component...',
+      width = '100%',
+      height = '100%',
+      preserveAspectRatio,
+      backgroundColor = '#e5ebed',
+      backgroundOpacity = 1,
+      isAnimated = true,
+      speed = 2,
+      foregroundColor = '#f7f9fa',
+      foregroundOpacity = 1,
+      svgWidth = '100%',
+      svgHeight = '100%',
+      clipId,
+      gradientId,
+      animateId,
+      ...otherProps
+    },
+    ref,
+  ) => {
     const uniqueClipId = useId(clipId, 'cf-ui-skeleton-clip');
     const uniqueGradientId = useId(gradientId, 'cf-ui-skeleton-clip-gradient');
     const randomAnimateId = useId(undefined, 'animation');
@@ -84,6 +87,7 @@ export const SkeletonContainer = forwardRef<SVGElement, SkeletonContainerProps>(
         width={svgWidth}
         height={svgHeight}
         testId={testId}
+        ref={ref}
         {...otherProps}
       >
         {ariaLabel ? <title>{ariaLabel}</title> : null}
