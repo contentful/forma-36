@@ -1,16 +1,6 @@
 
-@import '../../packages/forma-36-tokens/dist/css/colors/scale-blue.css';
-@import '../../packages/forma-36-tokens/dist/css/colors/scale-gray.css';
-@import '../../packages/forma-36-tokens/dist/css/colors/colors-white.css';
-@import '../../packages/forma-36-tokens/dist/css/colors/colors-semantic.css';
-@import '../../packages/forma-36-tokens/dist/css/border-radius/border-radius.css';
-@import '../../packages/forma-36-tokens/dist/css/box-shadows/glows.css';
-@import '../../packages/forma-36-tokens/dist/css/typography/font-base.css';
-@import '../../packages/forma-36-tokens/dist/css/typography/font-size.css';
-@import '../../packages/forma-36-tokens/dist/css/typography/font-stack.css';
-@import '../../packages/forma-36-tokens/dist/css/typography/font-weight.css';
-@import '../../packages/forma-36-tokens/dist/css/typography/line-height.css';
-@import '../../packages/forma-36-tokens/dist/css/spacing.css';
+@import '~@contentful/forma-36-tokens/dist/css/index.css';
+
 
 /* OSANO STYLES BEGIN */
 
