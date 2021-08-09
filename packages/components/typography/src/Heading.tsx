@@ -13,6 +13,7 @@ export type HeadingElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 export interface HeadingInternalProps extends CommonProps, MarginProps {
   as?: HeadingElement;
   children?: React.ReactNode;
+  isTruncated?: boolean;
 }
 
 export type HeadingProps<

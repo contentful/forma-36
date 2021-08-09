@@ -77,6 +77,27 @@ To increase the font color of the text, you can pass the `fontColor` prop.
 </Flex>
 ```
 
+### Override the element
+
+To override the element that gets rendered, pass the as prop.
+
+```jsx
+<Flex flexDirection="column">
+  <Text marginBottom="spacingM" as="i">
+    Italic
+  </Text>
+  <Text marginBottom="spacingM" as="u">
+    Unterline
+  </Text>
+  <Text marginBottom="spacingM" as="del">
+    Deleted
+  </Text>
+  <Text marginBottom="spacingM" as="s">
+    Strikethrough
+  </Text>
+</Flex>
+```
+
 ### Other properties
 
 The same way you can control the other font related properties. Please refer to the table below to see all possible properties and their values.

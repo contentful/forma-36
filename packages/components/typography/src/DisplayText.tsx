@@ -15,6 +15,7 @@ const DEFAULT_TAG = 'h1';
 export interface DisplayTextInternalProps extends CommonProps, MarginProps {
   size?: 'default' | 'large' | 'huge';
   as?: HeadingElement;
+  isTruncated?: boolean;
 }
 
 export type DisplayTextProps<

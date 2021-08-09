@@ -23,9 +23,18 @@ export interface TextInternalProps extends CommonProps, MarginProps {
   fontStack?: FontStackTokens;
   fontWeight?: FontWeightTokens;
   fontColor?: ColorTokens;
+  isTruncated?: boolean;
 }
 
 const DEFAULT_TAG = 'span';
+
+function truncatedStyle() {
+  return css({
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
+  });
+}
 
 export type TextProps<E extends React.ElementType> = PolymorphicComponentProps<
   E,
@@ -43,6 +52,7 @@ const _Text: PolymorphicComponentWithRef<
     fontColor = 'gray700',
     lineHeight,
     children,
+    isTruncated,
     as = DEFAULT_TAG,
     ...otherProps
   },
@@ -65,6 +75,7 @@ const _Text: PolymorphicComponentWithRef<
           fontSize: tokens[fontSize],
           lineHeight: tokens[lineHeight],
         }),
+        isTruncated ? truncatedStyle() : null,
         boxProps.className,
       )}
       ref={ref}

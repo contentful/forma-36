@@ -13,6 +13,7 @@ const DEFAULT_TAG = 'h2';
 
 export interface SubheadingInternalProps extends CommonProps, MarginProps {
   as?: HeadingElement;
+  isTruncated?: boolean;
 }
 
 export type SubheadingProps<

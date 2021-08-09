@@ -14,6 +14,7 @@ export type ParagraphInternalProps = CommonProps &
   MarginProps & {
     children: React.ReactNode;
     as?: typeof DEFAULT_TAG;
+    isTruncated?: boolean;
   };
 
 export type ParagraphProps = PolymorphicComponentProps<

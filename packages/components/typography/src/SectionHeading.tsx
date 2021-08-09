@@ -15,6 +15,7 @@ const DEFAULT_TAG = 'h3';
 
 export interface SectionHeadingInternalProps extends CommonProps, MarginProps {
   as?: HeadingElement;
+  isTruncated?: boolean;
 }
 
 export type SectionHeadingProps<
