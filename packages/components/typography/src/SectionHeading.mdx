@@ -1,0 +1,47 @@
+---
+title: 'SectionHeading'
+type: 'component'
+status: 'stable'
+slug: /components/section-heading/
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/typography/src'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/typography-section-heading--basic'
+typescript: ./SectionHeading.tsx
+---
+
+`SectionHeading` is intended to be used as a title for a widget, and is most commonly used in the sidebar.
+
+### Import
+
+```js static=true
+import { SectionHeading } from '@contentful/f36-components';
+// or
+import { SectionHeading } from '@contentful/f36-typography';
+```
+
+## Code examples
+
+```jsx
+<SectionHeading>I love Forma 36 design system.</SectionHeading>
+```
+
+You can override the default margin bottom by specifying it explicitly.
+
+```jsx
+<Flex flexDirection="column">
+  <SectionHeading marginBottom="none">
+    I love Forma 36 design system.
+  </SectionHeading>
+  <SectionHeading marginBottom="spacingXl">
+    I love Forma 36 design system.
+  </SectionHeading>
+  <SectionHeading marginTop="spacingS">
+    I love Forma 36 design system.
+  </SectionHeading>
+</Flex>
+```
+
+## Props
+
+import { Props } from '@contentful/f36-docs-utils';
+
+<Props of="SectionHeading" />

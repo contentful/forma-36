@@ -112,8 +112,24 @@ module.exports = {
                 link: '/components/text/',
               },
               {
-                name: 'Typography',
-                link: '/components/typography/',
+                name: 'Paragraph',
+                link: '/components/paragraph/',
+              },
+              {
+                name: 'Heading',
+                link: '/components/heading/',
+              },
+              {
+                name: 'SectionHeading',
+                link: '/components/section-heading/',
+              },
+              {
+                name: 'Subheading',
+                link: '/components/subheading/',
+              },
+              {
+                name: 'DisplayText',
+                link: '/components/display-text/',
               },
             ],
           },

@@ -3,7 +3,7 @@ title: 'Text'
 type: 'component'
 status: 'stable'
 slug: /components/text/
-github: 'https://github.com/contentful/forma-36/tree/master/packages/components/typography/src/Text'
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/typography/src'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/typography-text--basic'
 typescript: ./Text.tsx
 ---
@@ -96,6 +96,15 @@ To override the element that gets rendered, pass the as prop.
     Strikethrough
   </Text>
 </Flex>
+```
+
+### Truncate text
+
+```jsx
+<Text isTruncated as="div">
+  Lorem ipsum is placeholder text commonly used in the graphic, print, and
+  publishing industries for previewing layouts and visual mockups.
+</Text>
 ```
 
 ### Other properties
