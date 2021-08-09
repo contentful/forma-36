@@ -1,4 +1,5 @@
 import { fontStackPrimary } from '@contentful/forma-36-tokens';
+import '!style-loader!css-loader!./osano.css'
 
 // Setup Decorators
 export const decorators = [
