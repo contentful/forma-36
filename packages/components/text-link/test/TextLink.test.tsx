@@ -2,20 +2,23 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { ArrowDown } from '@contentful/f36-icons';
+import tokens from '@contentful/f36-tokens';
 import { axe } from '@/scripts/test/axeHelper';
 import { TextLink } from '../src/TextLink';
 
 describe('TextLink', function () {
   it('renders as a button', () => {
-    const { container } = render(<TextLink as="button">Text Link</TextLink>);
+    const { getByRole } = render(<TextLink as="button">Text Link</TextLink>);
 
-    expect(container.firstChild).toMatchSnapshot();
+    expect(getByRole('button')).toBeTruthy();
   });
 
   it('renders as a link', () => {
-    const { container } = render(<TextLink href="#">Text Link</TextLink>);
+    const { getByRole } = render(<TextLink href="#">Text Link</TextLink>);
 
-    expect(container.firstChild).toMatchSnapshot();
+    const anchor = getByRole('link');
+    expect(anchor).toBeTruthy();
+    expect(anchor.getAttribute('href')).toEqual('#');
   });
 
   it('renders as a "primary" link type', () => {
@@ -23,7 +26,9 @@ describe('TextLink', function () {
       <TextLink variant="primary">Text Link</TextLink>,
     );
 
-    expect(container.firstChild).toMatchSnapshot();
+    expect(container.firstChild).toHaveStyle({
+      color: tokens.blue600,
+    });
   });
 
   it('renders as a "positive" link type', () => {
@@ -31,7 +36,9 @@ describe('TextLink', function () {
       <TextLink variant="positive">Text Link</TextLink>,
     );
 
-    expect(container.firstChild).toMatchSnapshot();
+    expect(container.firstChild).toHaveStyle({
+      color: tokens.green600,
+    });
   });
 
   it('renders as a "negative" link type', () => {
@@ -39,7 +46,9 @@ describe('TextLink', function () {
       <TextLink variant="negative">Text Link</TextLink>,
     );
 
-    expect(container.firstChild).toMatchSnapshot();
+    expect(container.firstChild).toHaveStyle({
+      color: tokens.red600,
+    });
   });
 
   it('renders as a "secondary" link type', () => {
@@ -47,7 +56,9 @@ describe('TextLink', function () {
       <TextLink variant="secondary">Text Link</TextLink>,
     );
 
-    expect(container.firstChild).toMatchSnapshot();
+    expect(container.firstChild).toHaveStyle({
+      color: tokens.gray600,
+    });
   });
 
   it('renders as a "muted" link type', () => {
@@ -55,7 +66,9 @@ describe('TextLink', function () {
       <TextLink variant="muted">Text Link</TextLink>,
     );
 
-    expect(container.firstChild).toMatchSnapshot();
+    expect(container.firstChild).toHaveStyle({
+      color: tokens.gray400,
+    });
   });
 
   it('renders as a "white" link type', () => {
@@ -63,12 +76,14 @@ describe('TextLink', function () {
       <TextLink variant="white">Text Link</TextLink>,
     );
 
-    expect(container.firstChild).toMatchSnapshot();
+    expect(container.firstChild).toHaveStyle({
+      color: tokens.colorWhite,
+    });
   });
 
   it('calls an onClick function', () => {
     const onClickFunc = jest.fn();
-    const { container } = render(
+    render(
       <TextLink onClick={onClickFunc} as="button">
         Text Link
       </TextLink>,
@@ -77,29 +92,26 @@ describe('TextLink', function () {
     userEvent.click(screen.getByText('Text Link'));
 
     expect(onClickFunc).toHaveBeenCalled();
-    expect(container.firstChild).toMatchSnapshot();
   });
 
   it('prevents onClick function from being called when disabled', () => {
     const onClickFunc = jest.fn();
-    const { container } = render(
+    render(
       <TextLink isDisabled onClick={onClickFunc} as="button">
         Text Link
       </TextLink>,
     );
 
     userEvent.click(screen.getByText('Text Link'));
-
-    expect(container.firstChild).toMatchSnapshot();
     expect(onClickFunc).not.toHaveBeenCalled();
   });
 
   it('allows passing additional props not consumed by component', () => {
-    const { container } = render(
+    const { getByTestId } = render(
       <TextLink data-test-id="Testing Id">Text Link</TextLink>,
     );
 
-    expect(container.firstChild).toMatchSnapshot();
+    expect(getByTestId('Testing Id')).toBeTruthy();
   });
 
   it('allows passing additional class names to component', () => {
@@ -107,15 +119,15 @@ describe('TextLink', function () {
       <TextLink className="testing">Text Link</TextLink>,
     );
 
-    expect(container.firstChild).toMatchSnapshot();
+    expect(container.firstChild).toHaveClass('testing');
   });
 
   it('allows passing a test id', () => {
-    const { container } = render(
+    const { getByTestId } = render(
       <TextLink testId="test-id">Text Link</TextLink>,
     );
 
-    expect(container.firstChild).toMatchSnapshot();
+    expect(getByTestId('test-id')).toBeTruthy();
   });
 
   it('has no a11y issues', async () => {
@@ -133,20 +145,25 @@ describe('TextLink', function () {
   });
 
   it('renders with an icon', () => {
-    const { container } = render(
-      <TextLink icon={<ArrowDown />}>Text Link</TextLink>,
+    const { container, getByTestId, getByText } = render(
+      <TextLink icon={<ArrowDown data-test-id="icon" />}>Text Link</TextLink>,
     );
 
-    expect(container.firstChild).toMatchSnapshot();
+    expect(container.firstChild).toContainElement(getByTestId('icon'));
+    expect(getByTestId('icon').parentElement.nextSibling).toEqual(
+      getByText('Text Link'),
+    );
   });
 
   it('renders with an icon aligned right to the text', () => {
-    const { container } = render(
-      <TextLink alignIcon="end" icon={<ArrowDown />}>
+    const { getByTestId, getByText } = render(
+      <TextLink alignIcon="end" icon={<ArrowDown data-test-id="icon" />}>
         Text Link
       </TextLink>,
     );
 
-    expect(container.firstChild).toMatchSnapshot();
+    expect(getByTestId('icon').parentElement.previousSibling).toEqual(
+      getByText('Text Link'),
+    );
   });
 });
