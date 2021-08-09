@@ -97,7 +97,7 @@ export const overview: Story<CardProps> = (args) => {
       </SectionHeading>
 
       <Card {...args}>
-        <Heading>Forma 36</Heading>
+        <Heading marginBottom="none">Forma 36</Heading>
         <Paragraph marginBottom="none">
           Forma 36 is an open-source design system by Contentful created with
           the intent to reduce the overhead of creating UI by providing tools
@@ -111,7 +111,7 @@ export const overview: Story<CardProps> = (args) => {
       </SectionHeading>
 
       <Card selected>
-        <Heading>Forma 36</Heading>
+        <Heading marginBottom="none">Forma 36</Heading>
         <Paragraph marginBottom="none">
           Forma 36 is an open-source design system by Contentful created with
           the intent to reduce the overhead of creating UI by providing tools
@@ -125,7 +125,7 @@ export const overview: Story<CardProps> = (args) => {
       </SectionHeading>
 
       <Card padding="default">
-        <Heading>Forma 36</Heading>
+        <Heading marginBottom="none">Forma 36</Heading>
         <Paragraph marginBottom="none">
           Forma 36 is an open-source design system by Contentful created with
           the intent to reduce the overhead of creating UI by providing tools
@@ -139,7 +139,7 @@ export const overview: Story<CardProps> = (args) => {
       </SectionHeading>
 
       <Card padding="large">
-        <Heading>Forma 36</Heading>
+        <Heading marginBottom="none">Forma 36</Heading>
         <Paragraph marginBottom="none">
           Forma 36 is an open-source design system by Contentful created with
           the intent to reduce the overhead of creating UI by providing tools
@@ -153,7 +153,7 @@ export const overview: Story<CardProps> = (args) => {
       </SectionHeading>
 
       <Card padding="none">
-        <Heading>Forma 36</Heading>
+        <Heading marginBottom="none">Forma 36</Heading>
         <Paragraph marginBottom="none">
           Forma 36 is an open-source design system by Contentful created with
           the intent to reduce the overhead of creating UI by providing tools

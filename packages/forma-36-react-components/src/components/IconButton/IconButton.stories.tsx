@@ -59,9 +59,9 @@ Basic.args = {
 export const Overview: Story<Args> = (args) => {
   return (
     <>
-      <Flex marginBottom="spacingXs">
-        <SectionHeading as="h3">IconButton colors</SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingXs">
+        IconButton colors
+      </SectionHeading>
       {Object.keys(IconButtonTypes).map((color, idx) => (
         <Flex
           padding="spacingXs"
@@ -85,9 +85,10 @@ export const Overview: Story<Args> = (args) => {
           </Text>
         </Flex>
       ))}
-      <Flex marginTop="spacingL" marginBottom="spacingS">
-        <SectionHeading as="h3">IconButton sizes</SectionHeading>
-      </Flex>
+
+      <SectionHeading as="h3" marginTop="spacingL" marginBottom="spacingS">
+        IconButton sizes
+      </SectionHeading>
       <Flex flexDirection="row">
         <Flex marginRight="spacingS">
           <IconButton
@@ -122,9 +123,11 @@ export const Overview: Story<Args> = (args) => {
           />
         </Flex>
       </Flex>
-      <Flex marginTop="spacingL" marginBottom="spacingS">
-        <SectionHeading as="h3">IconButton disabled</SectionHeading>
-      </Flex>
+
+      <SectionHeading as="h3" marginTop="spacingL" marginBottom="spacingS">
+        IconButton disabled
+      </SectionHeading>
+
       <IconButton
         iconProps={{
           as: icons[args.icon],
@@ -134,9 +137,11 @@ export const Overview: Story<Args> = (args) => {
         disabled
       />
       {/* Not sure what how this option should look like and where it is used */}
-      <Flex marginTop="spacingL" marginBottom="spacingS">
-        <SectionHeading as="h3">IconButton with dropdown</SectionHeading>
-      </Flex>
+
+      <SectionHeading as="h3" marginTop="spacingL" marginBottom="spacingS">
+        IconButton with dropdown
+      </SectionHeading>
+
       <IconButton
         iconProps={{
           as: icons[args.icon],

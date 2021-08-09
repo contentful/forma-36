@@ -36,9 +36,10 @@ Basic.args = {
 
 export const Overview = () => (
   <>
-    <Flex marginBottom="spacingS">
-      <SectionHeading as="h3">Switch default</SectionHeading>
-    </Flex>
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Switch default
+    </SectionHeading>
+
     <Flex marginBottom="spacingS">
       <Switch id="testSwitch" labelText="My label text" />
     </Flex>
@@ -55,15 +56,17 @@ export const Overview = () => (
       <Switch id="testSwitch" isDisabled labelText="My label text" />
     </Flex>
 
-    <Flex marginBottom="spacingS">
-      <SectionHeading as="h3">Switch small</SectionHeading>
-    </Flex>
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Switch small
+    </SectionHeading>
     <Flex marginBottom="spacingS">
       <Switch size="small" id="testSwitch" labelText="My label text" />
     </Flex>
-    <Flex marginBottom="spacingS">
-      <SectionHeading as="h3">Switch small checked</SectionHeading>
-    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Switch small checked
+    </SectionHeading>
+
     <Flex marginBottom="spacingS">
       <Switch
         size="small"
@@ -72,9 +75,11 @@ export const Overview = () => (
         labelText="My label text"
       />
     </Flex>
-    <Flex marginBottom="spacingS">
-      <SectionHeading as="h3">Switch small checked disabled</SectionHeading>
-    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Switch small checked disabled
+    </SectionHeading>
+
     <Flex marginBottom="spacingS">
       <Switch
         size="small"
@@ -84,9 +89,10 @@ export const Overview = () => (
         labelText="My label text"
       />
     </Flex>
-    <Flex marginBottom="spacingS">
-      <SectionHeading as="h3">Switch small disabled</SectionHeading>
-    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Switch small disabled
+    </SectionHeading>
     <Flex marginBottom="spacingS">
       <Switch
         size="small"

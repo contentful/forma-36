@@ -13,6 +13,10 @@ exports[`ValidationMessage renders the component with all required props 1`] = `
 }
 
 .emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   margin-right: 0.25rem;
 }
 
@@ -76,6 +80,10 @@ exports[`ValidationMessage renders the component with an additional class name 1
 }
 
 .emotion-1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   margin-right: 0.25rem;
 }
 

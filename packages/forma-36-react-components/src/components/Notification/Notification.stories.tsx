@@ -122,35 +122,39 @@ interface OverviewArgs extends NotificationsAPI {
 
 export const overview = ({ notificationText, ...args }: OverviewArgs) => (
   <Flex fullWidth flexDirection="column">
-    <Flex marginBottom="spacingS">
-      <SectionHeading as="h3">Notifiaction success</SectionHeading>
-    </Flex>
+    <SectionHeading marginBottom="spacingS" as="h3">
+      Notifiaction success
+    </SectionHeading>
+
     <Flex marginBottom="spacingS">
       <NotificationItem {...args} intent="success">
         {notificationText}
       </NotificationItem>
     </Flex>
-    <Flex marginBottom="spacingS">
-      <SectionHeading as="h3">Notifiaction error</SectionHeading>
-    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Notifiaction error
+    </SectionHeading>
+
     <Flex marginBottom="spacingS">
       <NotificationItem {...args} intent="error">
         {notificationText}
       </NotificationItem>
     </Flex>
-    <Flex marginBottom="spacingS">
-      <SectionHeading as="h3">Notifiaction warning</SectionHeading>
-    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Notifiaction warning
+    </SectionHeading>
+
     <Flex marginBottom="spacingS">
       <NotificationItem {...args} intent="warning">
         {notificationText}
       </NotificationItem>
     </Flex>
-    <Flex marginBottom="spacingS">
-      <SectionHeading as="h3">
-        Notifiaction warning only with body
-      </SectionHeading>
-    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Notifiaction warning only with body
+    </SectionHeading>
     <Flex marginBottom="spacingS">
       <NotificationItem intent="warning">{notificationText}</NotificationItem>
     </Flex>
