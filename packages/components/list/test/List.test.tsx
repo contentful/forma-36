@@ -8,4 +8,12 @@ describe('List', function () {
 
     expect(tree).toBeTruthy();
   });
+
+  it('renders the component with an additional class name', () => {
+    const { container } = render(
+      <List className="my-extra-class">List children</List>,
+    );
+
+    expect(container.firstChild).toHaveClass('my-extra-class');
+  });
 });
