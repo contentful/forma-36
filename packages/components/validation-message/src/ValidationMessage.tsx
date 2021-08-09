@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react';
-import { Flex, Box } from '@contentful/f36-core';
+import { Flex } from '@contentful/f36-core';
 import type {
   CommonProps,
   PolymorphicComponentProps,
