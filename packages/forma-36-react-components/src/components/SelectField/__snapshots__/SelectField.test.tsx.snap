@@ -315,6 +315,10 @@ exports[`renders the component with a validation message 1`] = `
 }
 
 .emotion-3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   margin-right: 0.25rem;
 }
 

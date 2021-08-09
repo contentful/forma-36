@@ -230,6 +230,13 @@ exports[`renders the component with a textlink 1`] = `
   margin-bottom: calc(1rem * (8 / 16));
 }
 
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .emotion-4 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
@@ -283,13 +290,6 @@ exports[`renders the component with a textlink 1`] = `
 
 .emotion-3 {
   margin-left: 0.125rem;
-}
-
-.emotion-2 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .emotion-1 {
@@ -829,6 +829,10 @@ exports[`renders the component with validation message 1`] = `
 }
 
 .emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   margin-right: 0.25rem;
 }
 
