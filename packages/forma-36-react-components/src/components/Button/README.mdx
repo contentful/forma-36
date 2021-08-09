@@ -36,34 +36,12 @@ Buttons communicate the action that will occur when the user clicks them. They c
 - **Naked** - (deprecated)
 
 ```jsx
-<>
-  <Flex flexDirection="row" marginBottom="spacingM">
-    <Grid
-      columnGap="spacingXs"
-      columns="repeat(4, auto)"
-      justifyContent="start"
-    >
-      <Button buttonType="primary">Primary</Button>
-      <Button buttonType="muted">Muted</Button>
-      <Button buttonType="positive">Positive</Button>
-      <Button buttonType="negative">Negative</Button>
-    </Grid>
-  </Flex>
-
-  <Grid
-    columnGap="spacingXs"
-    rowGap="spacingXs"
-    columns="repeat(2, auto)"
-    justifyContent="start"
-  >
-    <GridItem columnStart={1} columnEnd={53}>
-      <Tag tagType="warning">(deprecated)</Tag>
-    </GridItem>
-
-    <Button buttonType="warning">Warning</Button>
-    <Button buttonType="naked">Naked</Button>
-  </Grid>
-</>
+<Grid rowGap="spacingXs" rows="repeat(4, auto)" justifyContent="start">
+  <Button buttonType="primary">Primary</Button>
+  <Button buttonType="muted">Muted</Button>
+  <Button buttonType="positive">Positive</Button>
+  <Button buttonType="negative">Negative</Button>
+</Grid>
 ```
 
 Buttons can be used in couple of different variations, like active, disabled or loading. It's worthy mentioning is `indicateDropdown` property in the component,
@@ -77,13 +55,9 @@ Contentful buttons are available in 3 different sizes:
 
 ```jsx
 <Grid columnGap="spacingXs" columns="repeat(3, auto)" justifyContent="start">
-  <Button buttonType="positive" size="large">
-    Large
-  </Button>
-  <Button buttonType="positive">Default</Button>
-  <Button buttonType="positive" size="small">
-    Small
-  </Button>
+  <Button size="large">Large</Button>
+  <Button size="medium">Medium</Button>
+  <Button size="small">Small</Button>
 </Grid>
 ```
 
