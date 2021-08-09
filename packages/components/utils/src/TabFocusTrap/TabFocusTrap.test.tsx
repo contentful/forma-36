@@ -5,9 +5,9 @@ import { axe } from '@/scripts/test/axeHelper';
 import { TabFocusTrap } from './TabFocusTrap';
 
 it('renders the component', () => {
-  const { container } = render(<TabFocusTrap>TabFocusTrap</TabFocusTrap>);
+  const { getByText } = render(<TabFocusTrap>TabFocusTrap</TabFocusTrap>);
 
-  expect(container.firstChild).toMatchSnapshot();
+  expect(getByText('TabFocusTrap')).toBeTruthy();
 });
 
 it('renders the component with an additional class name', () => {
@@ -15,7 +15,7 @@ it('renders the component with an additional class name', () => {
     <TabFocusTrap className="my-extra-class">TabFocusTrap</TabFocusTrap>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  expect(container.firstChild).toHaveClass('my-extra-class');
 });
 
 it('has no a11y issues', async () => {

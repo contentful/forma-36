@@ -5,24 +5,25 @@ import { render } from '@testing-library/react';
 import { Portal } from './Portal';
 
 it('renders the component', () => {
-  const { baseElement } = render(
+  const { getByText } = render(
     <Portal>
       <React.Fragment>👋</React.Fragment>
     </Portal>,
   );
 
-  expect(baseElement).toMatchSnapshot();
+  expect(getByText('👋')).toBeTruthy();
 });
 
 it('renders the component in a separate container', () => {
   const containerElement = document.createElement('span');
+  containerElement.setAttribute('data-test-id', 'test-container');
   document.body.appendChild(containerElement);
 
-  const { baseElement } = render(
+  const { getByText, getByTestId } = render(
     <Portal container={containerElement}>
       <React.Fragment>👋</React.Fragment>
     </Portal>,
   );
 
-  expect(baseElement).toMatchSnapshot();
+  expect(getByTestId('test-container')).toContainElement(getByText('👋'));
 });
