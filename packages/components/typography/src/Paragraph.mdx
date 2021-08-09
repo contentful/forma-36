@@ -1,0 +1,41 @@
+---
+title: 'Paragraph'
+type: 'component'
+status: 'stable'
+slug: /components/paragraph/
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/typography/src'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/typography-paragraph--basic'
+typescript: ./Paragraph.tsx
+---
+
+`Paragraph` is essentially as `Text` component rendered as `p` and with default bottom margin applied. It is intended to be used as paragraph copy.
+
+### Import
+
+```js static=true
+import { Paragraph } from '@contentful/f36-components';
+// or
+import { Paragraph } from '@contentful/f36-typography';
+```
+
+## Code examples
+
+```jsx
+<Paragraph>I love Forma 36 design system.</Paragraph>
+```
+
+You can override the default margin bottom by specifying it explicitly.
+
+```jsx
+<Flex flexDirection="column">
+  <Paragraph marginBottom="none">I love Forma 36 design system.</Paragraph>
+  <Paragraph marginBottom="spacingXl">I love Forma 36 design system.</Paragraph>
+  <Paragraph marginTop="spacingS">I love Forma 36 design system.</Paragraph>
+</Flex>
+```
+
+## Props
+
+import { Props } from '@contentful/f36-docs-utils';
+
+<Props of="Paragraph" />

@@ -1,30 +1,19 @@
-import React, { useContext } from 'react';
-import tokens from '@contentful/f36-tokens';
-import { css, cx } from 'emotion';
+import React from 'react';
 import {
-  Box,
   CommonProps,
   MarginProps,
   PolymorphicComponent,
   PolymorphicComponentProps,
   PolymorphicComponentWithRef,
 } from '@contentful/f36-core';
-import { TypographyContext } from './Typography';
+import { Text } from './Text';
 
-export type HeadingElement =
-  | 'h1'
-  | 'h2'
-  | 'h3'
-  | 'h4'
-  | 'h5'
-  | 'h6'
-  | 'p'
-  | 'div'
-  | 'span';
+export type HeadingElement = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
 export interface HeadingInternalProps extends CommonProps, MarginProps {
   as?: HeadingElement;
   children?: React.ReactNode;
+  isTruncated?: boolean;
 }
 
 export type HeadingProps<
@@ -36,32 +25,21 @@ const DEFAULT_TAG = 'h1';
 const _Heading: PolymorphicComponentWithRef<
   HeadingInternalProps,
   typeof DEFAULT_TAG
-> = ({ children, className, ...otherProps }, ref) => {
-  const configuration = useContext(TypographyContext);
-
+> = ({ children, testId = 'cf-ui-heading', ...otherProps }, ref) => {
   return (
-    <Box
+    <Text
       as={DEFAULT_TAG}
-      display="block"
-      margin="none"
-      marginBottom={configuration.heading}
-      testId="cf-ui-heading"
-      className={cx(
-        css({
-          fontFamily: tokens.fontStackPrimary,
-          fontWeight: tokens.fontWeightDemiBold,
-          color: tokens.gray900,
-          fontSize: tokens.fontSizeXl,
-          lineHeight: tokens.lineHeightXl,
-          textRendering: 'optimizeLegibility',
-        }),
-        className,
-      )}
+      testId={testId}
+      marginBottom="spacingM"
+      fontWeight="fontWeightDemiBold"
+      fontColor="gray900"
+      fontSize="fontSizeXl"
+      lineHeight="lineHeightXl"
       {...otherProps}
       ref={ref}
     >
       {children}
-    </Box>
+    </Text>
   );
 };
 

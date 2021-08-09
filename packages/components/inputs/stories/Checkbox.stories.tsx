@@ -1,5 +1,4 @@
 import React from 'react';
-import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 import { Checkbox, CheckboxProps } from '../src';
 
@@ -24,40 +23,44 @@ basic.args = {
 
 export const overview = () => (
   <>
-    <Flex marginBottom="spacingS" marginTop="spacingM">
-      <SectionHeading as="h3">Checkbox default</SectionHeading>
-    </Flex>
+    <SectionHeading marginTop="spacingM" marginBottom="spacingS" as="h3">
+      Checkbox default
+    </SectionHeading>
     <Checkbox id="Checkbox" label="some label text" name="some-name" />
-    <Flex marginBottom="spacingS" marginTop="spacingM">
-      <SectionHeading as="h3">Checkbox checked</SectionHeading>
-    </Flex>
+
+    <SectionHeading as="h3" marginTop="spacingM" marginBottom="spacingS">
+      Checkbox checked
+    </SectionHeading>
     <Checkbox
       id="Checkbox"
       isChecked
       label="some label text"
       name="some-name"
     />
-    <Flex marginBottom="spacingS" marginTop="spacingM">
-      <SectionHeading as="h3">Checkbox indeterminate</SectionHeading>
-    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
+      Checkbox indeterminate
+    </SectionHeading>
     <Checkbox
       id="Checkbox"
       isIndeterminate
       label="multiple selection"
       name="some-name"
     />
-    <Flex marginBottom="spacingS" marginTop="spacingM">
-      <SectionHeading as="h3">Checkbox disabled</SectionHeading>
-    </Flex>
+
+    <SectionHeading marginBottom="spacingS" marginTop="spacingM" as="h3">
+      Checkbox disabled
+    </SectionHeading>
     <Checkbox
       id="Checkbox"
       isDisabled
       label="some label text"
       name="some-name"
     />
-    <Flex marginBottom="spacingS" marginTop="spacingM">
-      <SectionHeading as="h3">Checkbox disabled indeterminate</SectionHeading>
-    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
+      Checkbox disabled indeterminate
+    </SectionHeading>
     <Checkbox
       id="Checkbox"
       isDisabled
@@ -65,9 +68,10 @@ export const overview = () => (
       label="multiple selection"
       name="some-name"
     />
-    <Flex marginBottom="spacingS" marginTop="spacingM">
-      <SectionHeading as="h3">Checkbox disabled checked</SectionHeading>
-    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
+      Checkbox disabled checked
+    </SectionHeading>
     <Checkbox
       id="Checkbox"
       isDisabled

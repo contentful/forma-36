@@ -28,9 +28,10 @@ basic.args = {
 
 export const overview = () => (
   <Flex fullWidth flexDirection="column">
-    <Flex marginBottom="spacingS">
-      <SectionHeading as="h3">Note primary</SectionHeading>
-    </Flex>
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Note primary
+    </SectionHeading>
+
     <Flex marginBottom="spacingM">
       <Note>
         A piece of information that is relevant to the context the user is
@@ -44,9 +45,11 @@ export const overview = () => (
         <a href="https://contentful.com">a link</a> in it.
       </Note>
     </Flex>
-    <Flex marginBottom="spacingS">
-      <SectionHeading as="h3">Note negative</SectionHeading>
-    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Note negative
+    </SectionHeading>
+
     <Flex marginBottom="spacingM">
       <Note variant="negative">
         A piece of information that is relevant to the context the user is
@@ -58,9 +61,11 @@ export const overview = () => (
         Something went wrong, apparently. Please try again.{' '}
       </Note>
     </Flex>
-    <Flex marginBottom="spacingS">
-      <SectionHeading as="h3">Note warning</SectionHeading>
-    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Note warning
+    </SectionHeading>
+
     <Flex marginBottom="spacingM">
       <Note variant="warning">
         A piece of information that is relevant to the context the user is
@@ -73,9 +78,11 @@ export const overview = () => (
         currently in.
       </Note>
     </Flex>
-    <Flex marginBottom="spacingS">
-      <SectionHeading as="h3">Note positive</SectionHeading>
-    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Note positive
+    </SectionHeading>
+
     <Flex marginBottom="spacingM">
       <Note variant="positive">
         A piece of information that is relevant to the context the user is

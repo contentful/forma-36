@@ -1,0 +1,42 @@
+---
+title: 'Heading'
+type: 'component'
+status: 'stable'
+slug: /components/heading/
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/typography/src'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/typography-heading--basic'
+typescript: ./Heading.tsx
+---
+
+`Heading` is intended to be used to define a section. Headings are very important for accessibility, as it helps to make copy more easily scannable and guides a user through your content.
+
+Another accessibility consideration screen readers. Visually impaired people often use screen readers, which find sections in your copy based on your heading hierarchy.
+
+### Import
+
+```js static=true
+import { Heading } from '@contentful/f36-components';
+// or
+import { Heading } from '@contentful/f36-typography';
+```
+
+## Code examples
+
+```jsx
+<Heading>I love Forma 36 design system</Heading>
+```
+
+You can override the default margin bottom by specifying it explicitly.
+
+```jsx
+<Flex flexDirection="column">
+  <Heading marginBottom="none">I love Forma 36 design system.</Heading>
+  <Heading marginTop="spacingS">I love Forma 36 design system.</Heading>
+</Flex>
+```
+
+## Props
+
+import { Props } from '@contentful/f36-docs-utils';
+
+<Props of="Heading" />

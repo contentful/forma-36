@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`EmptyState renders component with custom image element 1`] = `
-.emotion-5 {
+.emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -18,7 +18,7 @@ exports[`EmptyState renders component with custom image element 1`] = `
   width: 100%;
 }
 
-.emotion-4 {
+.emotion-3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -39,41 +39,35 @@ exports[`EmptyState renders component with custom image element 1`] = `
 }
 
 .emotion-1 {
-  display: block;
   margin: 0;
-  margin-bottom: 1rem;
+  padding: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #111B2B;
   font-size: 1.25rem;
   line-height: 2rem;
-  text-rendering: optimizeLegibility;
+  margin-bottom: 1rem;
   max-width: 32rem;
 }
 
 .emotion-2 {
-  display: block;
   margin: 0;
-  margin-bottom: 1rem;
+  padding: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  font-weight: 600;
-  color: #111B2B;
-  font-size: 1.25rem;
-  line-height: 2rem;
-  text-rendering: optimizeLegibility;
   font-weight: 400;
   color: #414D63;
   font-size: 0.875rem;
   line-height: 1.25rem;
+  margin-bottom: 1rem;
   max-width: 32rem;
 }
 
 <article
-  class="emotion-5"
+  class="emotion-4"
   data-test-id="cf-ui-empty-state"
 >
   <div
-    class="emotion-4"
+    class="emotion-3"
   >
     <div
       class="emotion-0"
@@ -83,29 +77,24 @@ exports[`EmptyState renders component with custom image element 1`] = `
         src="/url"
       />
     </div>
-    <div
-      class="emotion-3"
-      data-test-id="cf-ui-text-container"
+    <h1
+      class="emotion-1"
+      data-test-id="cf-ui-heading"
     >
-      <h1
-        class="emotion-1"
-        data-test-id="cf-ui-heading"
-      >
-        Heading
-      </h1>
-      <p
-        class="emotion-2"
-        data-test-id="cf-ui-paragraph"
-      >
-        This is a description for the empty state. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate, sem a porttitor porttitor, velit nulla lacinia dolor, sit amet interdum ligula lectus hendrerit sem. Aliquam ultricies viverra tincidunt.
-      </p>
-    </div>
+      Heading
+    </h1>
+    <p
+      class="emotion-2"
+      data-test-id="cf-ui-paragraph"
+    >
+      This is a description for the empty state. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate, sem a porttitor porttitor, velit nulla lacinia dolor, sit amet interdum ligula lectus hendrerit sem. Aliquam ultricies viverra tincidunt.
+    </p>
   </div>
 </article>
 `;
 
 exports[`EmptyState renders component with image 1`] = `
-.emotion-6 {
+.emotion-5 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -122,7 +111,7 @@ exports[`EmptyState renders component with image 1`] = `
   width: 100%;
 }
 
-.emotion-5 {
+.emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -149,138 +138,26 @@ exports[`EmptyState renders component with image 1`] = `
 }
 
 .emotion-2 {
-  display: block;
   margin: 0;
-  margin-bottom: 1rem;
+  padding: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #111B2B;
   font-size: 1.25rem;
   line-height: 2rem;
-  text-rendering: optimizeLegibility;
+  margin-bottom: 1rem;
   max-width: 32rem;
 }
 
 .emotion-3 {
-  display: block;
   margin: 0;
-  margin-bottom: 1rem;
+  padding: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  font-weight: 600;
-  color: #111B2B;
-  font-size: 1.25rem;
-  line-height: 2rem;
-  text-rendering: optimizeLegibility;
   font-weight: 400;
   color: #414D63;
   font-size: 0.875rem;
   line-height: 1.25rem;
-  max-width: 32rem;
-}
-
-<article
-  class="emotion-6"
-  data-test-id="cf-ui-empty-state"
->
-  <div
-    class="emotion-5"
-  >
-    <div
-      class="emotion-1"
-    >
-      <img
-        alt="Image description"
-        class="emotion-0"
-        src="url"
-        style="height: 250px; width: 340px;"
-      />
-    </div>
-    <div
-      class="emotion-4"
-      data-test-id="cf-ui-text-container"
-    >
-      <h1
-        class="emotion-2"
-        data-test-id="cf-ui-heading"
-      >
-        Heading
-      </h1>
-      <p
-        class="emotion-3"
-        data-test-id="cf-ui-paragraph"
-      >
-        This is a description for the empty state. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate, sem a porttitor porttitor, velit nulla lacinia dolor, sit amet interdum ligula lectus hendrerit sem. Aliquam ultricies viverra tincidunt.
-      </p>
-    </div>
-  </div>
-</article>
-`;
-
-exports[`EmptyState renders the component 1`] = `
-.emotion-5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-}
-
-.emotion-4 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  text-align: center;
-}
-
-.emotion-0 {
   margin-bottom: 1rem;
-  max-width: 32rem;
-}
-
-.emotion-1 {
-  display: block;
-  margin: 0;
-  margin-bottom: 1rem;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  font-weight: 600;
-  color: #111B2B;
-  font-size: 1.25rem;
-  line-height: 2rem;
-  text-rendering: optimizeLegibility;
-  max-width: 32rem;
-}
-
-.emotion-2 {
-  display: block;
-  margin: 0;
-  margin-bottom: 1rem;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  font-weight: 600;
-  color: #111B2B;
-  font-size: 1.25rem;
-  line-height: 2rem;
-  text-rendering: optimizeLegibility;
-  font-weight: 400;
-  color: #414D63;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
   max-width: 32rem;
 }
 
@@ -292,31 +169,33 @@ exports[`EmptyState renders the component 1`] = `
     class="emotion-4"
   >
     <div
-      class="emotion-0"
-    />
-    <div
-      class="emotion-3"
-      data-test-id="cf-ui-text-container"
+      class="emotion-1"
     >
-      <h1
-        class="emotion-1"
-        data-test-id="cf-ui-heading"
-      >
-        Heading
-      </h1>
-      <p
-        class="emotion-2"
-        data-test-id="cf-ui-paragraph"
-      >
-        This is a description for the empty state.
-      </p>
+      <img
+        alt="Image description"
+        class="emotion-0"
+        src="url"
+        style="height: 250px; width: 340px;"
+      />
     </div>
+    <h1
+      class="emotion-2"
+      data-test-id="cf-ui-heading"
+    >
+      Heading
+    </h1>
+    <p
+      class="emotion-3"
+      data-test-id="cf-ui-paragraph"
+    >
+      This is a description for the empty state. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vulputate, sem a porttitor porttitor, velit nulla lacinia dolor, sit amet interdum ligula lectus hendrerit sem. Aliquam ultricies viverra tincidunt.
+    </p>
   </div>
 </article>
 `;
 
-exports[`EmptyState renders the component with an additional class name 1`] = `
-.emotion-5 {
+exports[`EmptyState renders the component 1`] = `
+.emotion-4 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -333,7 +212,7 @@ exports[`EmptyState renders the component with an additional class name 1`] = `
   width: 100%;
 }
 
-.emotion-4 {
+.emotion-3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -354,62 +233,139 @@ exports[`EmptyState renders the component with an additional class name 1`] = `
 }
 
 .emotion-1 {
-  display: block;
   margin: 0;
-  margin-bottom: 1rem;
+  padding: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #111B2B;
   font-size: 1.25rem;
   line-height: 2rem;
-  text-rendering: optimizeLegibility;
+  margin-bottom: 1rem;
   max-width: 32rem;
 }
 
 .emotion-2 {
-  display: block;
   margin: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-weight: 400;
+  color: #414D63;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
   margin-bottom: 1rem;
+  max-width: 32rem;
+}
+
+<article
+  class="emotion-4"
+  data-test-id="cf-ui-empty-state"
+>
+  <div
+    class="emotion-3"
+  >
+    <div
+      class="emotion-0"
+    />
+    <h1
+      class="emotion-1"
+      data-test-id="cf-ui-heading"
+    >
+      Heading
+    </h1>
+    <p
+      class="emotion-2"
+      data-test-id="cf-ui-paragraph"
+    >
+      This is a description for the empty state.
+    </p>
+  </div>
+</article>
+`;
+
+exports[`EmptyState renders the component with an additional class name 1`] = `
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.emotion-3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+}
+
+.emotion-0 {
+  margin-bottom: 1rem;
+  max-width: 32rem;
+}
+
+.emotion-1 {
+  margin: 0;
+  padding: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #111B2B;
   font-size: 1.25rem;
   line-height: 2rem;
-  text-rendering: optimizeLegibility;
+  margin-bottom: 1rem;
+  max-width: 32rem;
+}
+
+.emotion-2 {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 400;
   color: #414D63;
   font-size: 0.875rem;
   line-height: 1.25rem;
+  margin-bottom: 1rem;
   max-width: 32rem;
 }
 
 <article
-  class="my-extra-class emotion-5"
+  class="my-extra-class emotion-4"
   data-test-id="cf-ui-empty-state"
 >
   <div
-    class="emotion-4"
+    class="emotion-3"
   >
     <div
       class="emotion-0"
     />
-    <div
-      class="emotion-3"
-      data-test-id="cf-ui-text-container"
+    <h1
+      class="emotion-1"
+      data-test-id="cf-ui-heading"
     >
-      <h1
-        class="emotion-1"
-        data-test-id="cf-ui-heading"
-      >
-        Heading
-      </h1>
-      <p
-        class="emotion-2"
-        data-test-id="cf-ui-paragraph"
-      >
-        This is a description for the empty state.
-      </p>
-    </div>
+      Heading
+    </h1>
+    <p
+      class="emotion-2"
+      data-test-id="cf-ui-paragraph"
+    >
+      This is a description for the empty state.
+    </p>
   </div>
 </article>
 `;

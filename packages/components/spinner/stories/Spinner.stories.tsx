@@ -55,7 +55,9 @@ export const Overview: Story = () => {
         padding="spacingL"
         style={{ backgroundColor: tokens.colorContrastDark }}
       >
-        <Subheading style={{ color: tokens.colorWhite }}>Loading</Subheading>{' '}
+        <Subheading style={{ color: tokens.colorWhite }} marginBottom="none">
+          Loading
+        </Subheading>{' '}
         <Spinner variant="white" />
       </Flex>
     </>

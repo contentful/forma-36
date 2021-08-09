@@ -65,9 +65,10 @@ grouped.args = {
 export const Overview = ({ icon, ...props }) => (
   <>
     <Flex flexDirection="column" marginBottom="spacingL">
-      <Box marginBottom="spacingS">
-        <SectionHeading as="h3">Pill variants</SectionHeading>
-      </Box>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Toggle variants
+      </SectionHeading>
+
       <Flex flexDirection="row" marginBottom="spacingM">
         <Box marginRight="spacingXs">
           <ToggleButton onToggle={props.onToggle}>Default</ToggleButton>
@@ -85,9 +86,10 @@ export const Overview = ({ icon, ...props }) => (
       </Flex>
     </Flex>
     <Flex flexDirection="column" marginBottom="spacingL">
-      <Box marginBottom="spacingS">
-        <SectionHeading as="h3">Toggle Button with icon</SectionHeading>
-      </Box>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Toggle Button with icon
+      </SectionHeading>
+
       <Flex flexDirection="row" marginBottom="spacingM">
         <Box marginRight="spacingXs">
           <ToggleButton

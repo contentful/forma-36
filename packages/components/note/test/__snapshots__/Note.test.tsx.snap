@@ -52,18 +52,12 @@ exports[`Note renders the component 1`] = `
 }
 
 .emotion-2 {
-  display: block;
   margin: 0;
+  padding: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  font-weight: 600;
-  color: #111B2B;
-  font-size: 1.25rem;
-  line-height: 2rem;
-  text-rendering: optimizeLegibility;
   font-weight: 400;
   color: #414D63;
   font-size: 0.875rem;
-  line-height: 1.25rem;
   color: #414D63;
   width: 100%;
 }
@@ -95,7 +89,6 @@ exports[`Note renders the component 1`] = `
   >
     <p
       class="emotion-2"
-      data-test-id="cf-ui-paragraph"
     >
       A piece of information that is relevant to the context the user is currently in.
     </p>
@@ -155,18 +148,12 @@ exports[`Note renders the component with an additional class name 1`] = `
 }
 
 .emotion-2 {
-  display: block;
   margin: 0;
+  padding: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  font-weight: 600;
-  color: #111B2B;
-  font-size: 1.25rem;
-  line-height: 2rem;
-  text-rendering: optimizeLegibility;
   font-weight: 400;
   color: #414D63;
   font-size: 0.875rem;
-  line-height: 1.25rem;
   color: #414D63;
   width: 100%;
 }
@@ -198,7 +185,6 @@ exports[`Note renders the component with an additional class name 1`] = `
   >
     <p
       class="emotion-2"
-      data-test-id="cf-ui-paragraph"
     >
       A piece of information that is relevant to the context the user is currently in.
     </p>
@@ -222,18 +208,12 @@ exports[`Note renders the component with title 1`] = `
 }
 
 .emotion-3 {
-  display: block;
   margin: 0;
+  padding: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  font-weight: 600;
-  color: #111B2B;
-  font-size: 1.25rem;
-  line-height: 2rem;
-  text-rendering: optimizeLegibility;
   font-weight: 400;
   color: #414D63;
   font-size: 0.875rem;
-  line-height: 1.25rem;
   color: #414D63;
   width: 100%;
 }
@@ -275,14 +255,14 @@ exports[`Note renders the component with title 1`] = `
 }
 
 .emotion-2 {
-  display: block;
   margin: 0;
+  padding: 0;
   font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
   font-weight: 600;
   color: #111B2B;
   font-size: 1.25rem;
   line-height: 2rem;
-  text-rendering: optimizeLegibility;
+  margin-bottom: 1rem;
   color: #1B273A;
   font-weight: 500;
   font-size: 1rem;
@@ -322,7 +302,6 @@ exports[`Note renders the component with title 1`] = `
     </h2>
     <p
       class="emotion-3"
-      data-test-id="cf-ui-paragraph"
     >
       A piece of information that is relevant to the context the user is currently in.
     </p>

@@ -46,9 +46,10 @@ export const ControlFocusViaRef = (args: TextareaProps) => {
 export const Overview = () => (
   <>
     <Flex flexDirection="column" marginBottom="spacingXl">
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">Textarea default</SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Textarea default
+      </SectionHeading>
+
       <Textarea
         name="someInput"
         id="someInput"
@@ -58,16 +59,18 @@ export const Overview = () => (
     </Flex>
 
     <Flex flexDirection="column" marginBottom="spacingXl">
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">Textarea default with value</SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Textarea default with value
+      </SectionHeading>
+
       <Textarea name="someInput" id="someInput" value="123456" rows={2} />
     </Flex>
 
     <Flex flexDirection="column" marginBottom="spacingXl">
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">Textarea small width</SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Textarea small width
+      </SectionHeading>
+
       <Textarea
         name="someInput"
         id="someInput"
@@ -78,9 +81,10 @@ export const Overview = () => (
     </Flex>
 
     <Flex flexDirection="column" marginBottom="spacingXl">
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">Textarea medium width</SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Textarea medium width
+      </SectionHeading>
+
       <Textarea
         name="someInput"
         id="someInput"
@@ -91,9 +95,10 @@ export const Overview = () => (
     </Flex>
 
     <Flex flexDirection="column" marginBottom="spacingXl">
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">Textarea large width</SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Textarea large width
+      </SectionHeading>
+
       <Textarea
         name="someInput"
         id="someInput"
@@ -104,16 +109,18 @@ export const Overview = () => (
     </Flex>
 
     <Flex flexDirection="column" marginBottom="spacingXl">
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">Textarea with error</SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Textarea with error
+      </SectionHeading>
+
       <Textarea name="someInput" id="someInput" error value="123456" rows={2} />
     </Flex>
 
     <Flex flexDirection="column" marginBottom="spacingXl">
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">Textarea disabled</SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Textarea disabled
+      </SectionHeading>
+
       <Textarea
         name="someInput"
         id="someInput"

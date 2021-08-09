@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex } from '@contentful/f36-core';
+
 import { SectionHeading } from '@contentful/f36-typography';
 import { Clock } from '@contentful/f36-icons';
 
@@ -78,9 +78,10 @@ WithThumbnailElement.args = {
 
 export const Overview = () => (
   <div>
-    <Flex marginBottom="spacingS" marginTop="spacingM">
-      <SectionHeading as="h3">Entry Card published</SectionHeading>
-    </Flex>
+    <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
+      Entry Card published
+    </SectionHeading>
+
     <EntryCard
       size="auto"
       title="Title"
@@ -95,9 +96,11 @@ export const Overview = () => (
       }
       dropdownListElements={dropdownElements}
     />
-    <Flex marginBottom="spacingS" marginTop="spacingM">
-      <SectionHeading as="h3">Entry Card draft</SectionHeading>
-    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
+      Entry Card draft
+    </SectionHeading>
+
     <EntryCard
       size="auto"
       title="Title"
@@ -112,9 +115,11 @@ export const Overview = () => (
       }
       dropdownListElements={dropdownElements}
     />
-    <Flex marginBottom="spacingS" marginTop="spacingM">
-      <SectionHeading as="h3">Entry Card changed</SectionHeading>
-    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
+      Entry Card changed
+    </SectionHeading>
+
     <EntryCard
       size="auto"
       title="Title"
@@ -129,9 +134,11 @@ export const Overview = () => (
       }
       dropdownListElements={dropdownElements}
     />
-    <Flex marginBottom="spacingS" marginTop="spacingM">
-      <SectionHeading as="h3">Entry Card changed</SectionHeading>
-    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
+      Entry Card changed
+    </SectionHeading>
+
     <EntryCard
       size="auto"
       title="Title"
@@ -146,9 +153,11 @@ export const Overview = () => (
       }
       dropdownListElements={dropdownElements}
     />
-    <Flex marginBottom="spacingS" marginTop="spacingM">
-      <SectionHeading as="h3">Entry Card changed</SectionHeading>
-    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
+      Entry Card changed
+    </SectionHeading>
+
     <EntryCard
       title="Closer"
       description="Closer is the second and final studio album by English rock band Joy Division. It was released on 18 July 1980 on Factory Records, following the May 1980 suicide of lead singer Ian Curtis. The album was produced by Martin Hannett."
@@ -164,9 +173,11 @@ export const Overview = () => (
       isDragActive
       dropdownListElements={dropdownElements}
     />
-    <Flex marginBottom="spacingS" marginTop="spacingM">
-      <SectionHeading as="h3">With Status icon</SectionHeading>
-    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
+      With Status icon
+    </SectionHeading>
+
     <EntryCard
       title="Closer"
       description="Closer is the second and final studio album by English rock band Joy Division. It was released on 18 July 1980 on Factory Records, following the May 1980 suicide of lead singer Ian Curtis. The album was produced by Martin Hannett.',"
@@ -175,9 +186,10 @@ export const Overview = () => (
       contentType="Album"
       dropdownListElements={dropdownElements}
     />
-    <Flex marginBottom="spacingS" marginTop="spacingM">
-      <SectionHeading as="h3">Entry Card loading</SectionHeading>
-    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
+      Entry Card loading
+    </SectionHeading>
     <EntryCard
       title="Closer"
       description="Closer is the second and final studio album by English rock band Joy Division. It was released on 18 July 1980 on Factory Records, following the May 1980 suicide of lead singer Ian Curtis. The album was produced by Martin Hannett."

@@ -176,16 +176,16 @@ WithFullWidth.args = {
 
 export const Overview: Story = () => (
   <>
-    <Flex marginBottom="spacingS">
-      <SectionHeading as="h3">Dropdown default</SectionHeading>
-    </Flex>
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Dropdown default
+    </SectionHeading>
 
     <Default />
 
     <Flex flexDirection="column" style={{ marginBottom: '200px' }}>
-      <Flex marginBottom="spacingS" marginTop="spacingM">
-        <SectionHeading as="h3">Dropdown default open</SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
+        Dropdown default open
+      </SectionHeading>
 
       <Dropdown
         isOpen
@@ -224,9 +224,9 @@ export const Overview: Story = () => (
       </Dropdown>
     </Flex>
 
-    <Flex marginBottom="spacingS">
-      <SectionHeading as="h3">Dropdown with full width</SectionHeading>
-    </Flex>
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Dropdown with full width
+    </SectionHeading>
 
     <Dropdown
       isOpen

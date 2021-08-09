@@ -5,8 +5,7 @@ import type {
   PolymorphicComponentProps,
 } from '@contentful/f36-core';
 import { ErrorCircleOutline } from '@contentful/f36-icons';
-import { Paragraph } from '@contentful/f36-typography';
-import { getStyles } from './ValidationMessage.styles';
+import { Text } from '@contentful/f36-typography';
 
 export type ValidationMessageInternalProps = CommonProps & {
   children: React.ReactNode;
@@ -21,13 +20,18 @@ export const ValidationMessage = forwardRef<
   HTMLDivElement,
   ValidationMessageProps
 >(({ children, testId = 'cf-ui-validation-message', ...otherProps }, ref) => {
-  const styles = getStyles();
   return (
-    <Flex {...otherProps} ref={ref} testId={testId}>
-      <ErrorCircleOutline className={styles.icon} variant="negative" />
-      <Paragraph className={styles.text} marginBottom="none">
+    <Flex {...otherProps} ref={ref} testId={testId} alignItems="center">
+      <Flex marginRight="spacing2Xs">
+        <ErrorCircleOutline
+          size="small"
+          variant="negative"
+          aria-label="Validation message"
+        />
+      </Flex>
+      <Text as="p" fontColor="colorNegative">
         {children}
-      </Paragraph>
+      </Text>
     </Flex>
   );
 });

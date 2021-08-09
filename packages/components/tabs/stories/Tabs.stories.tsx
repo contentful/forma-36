@@ -76,9 +76,10 @@ export const Basic: Story = (args) => {
 
 export const Overview: Story = () => (
   <>
-    <Flex marginBottom="spacingS">
-      <SectionHeading as="h3">Tabs default</SectionHeading>
-    </Flex>
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Tabs default
+    </SectionHeading>
+
     <Flex marginBottom="spacingS">
       <Tabs role="navigation">
         <Tab id="first" href="https://contentful.com" isSelected>
@@ -92,9 +93,11 @@ export const Overview: Story = () => (
         </Tab>
       </Tabs>
     </Flex>
-    <Flex marginBottom="spacingS">
-      <SectionHeading as="h3">Tabs with horizontal divider</SectionHeading>
-    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Tabs with horizontal divider
+    </SectionHeading>
+
     <Flex marginBottom="spacingS">
       <Tabs role="navigation" variant="horizontal-divider">
         <Tab id="first" href="https://contentful.com" isSelected>
@@ -108,9 +111,11 @@ export const Overview: Story = () => (
         </Tab>
       </Tabs>
     </Flex>
-    <Flex marginBottom="spacingS">
-      <SectionHeading as="h3">Tabs with vertical divider</SectionHeading>
-    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Tabs with vertical divider
+    </SectionHeading>
+
     <Flex marginBottom="spacingS">
       <Tabs role="navigation" variant="vertical-divider">
         <Tab id="first" href="https://contentful.com" isSelected>

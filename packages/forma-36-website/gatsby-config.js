@@ -104,6 +104,36 @@ module.exports = {
             ],
           },
           {
+            name: 'Typography Components',
+            link: '',
+            menuLinks: [
+              {
+                name: 'Text',
+                link: '/components/text/',
+              },
+              {
+                name: 'Paragraph',
+                link: '/components/paragraph/',
+              },
+              {
+                name: 'Heading',
+                link: '/components/heading/',
+              },
+              {
+                name: 'SectionHeading',
+                link: '/components/section-heading/',
+              },
+              {
+                name: 'Subheading',
+                link: '/components/subheading/',
+              },
+              {
+                name: 'DisplayText',
+                link: '/components/display-text/',
+              },
+            ],
+          },
+          {
             name: 'Accordion',
             link: '/components/accordion/',
           },
@@ -308,10 +338,6 @@ module.exports = {
           {
             name: 'Tooltip',
             link: '/components/tooltip/',
-          },
-          {
-            name: 'Typography',
-            link: '/components/typography/',
           },
           {
             name: 'ValidationMessage',

@@ -84,9 +84,10 @@ WithTextLink.args = {
 export const Overview = (args: TextFieldProps) => (
   <Flex style={{ minWidth: '800px' }} flexDirection="column">
     <Flex flexDirection="column" marginBottom="spacingXl">
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">TextField default</SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        TextField default
+      </SectionHeading>
+
       <Grid columns="1fr 1fr" columnGap="spacingXl">
         <TextField {...args} />
         <TextField {...args} textarea />
@@ -94,9 +95,10 @@ export const Overview = (args: TextFieldProps) => (
     </Flex>
 
     <Flex flexDirection="column" marginBottom="spacingXl">
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">TextField with countCharacters</SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        TextField with countCharacters
+      </SectionHeading>
+
       <Grid columns="1fr 1fr" columnGap="spacingXl">
         <TextField
           {...args}
@@ -113,9 +115,10 @@ export const Overview = (args: TextFieldProps) => (
     </Flex>
 
     <Flex flexDirection="column" marginBottom="spacingXl">
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">TextField with default value</SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        TextField with default value
+      </SectionHeading>
+
       <Grid columns="1fr 1fr" columnGap="spacingXl">
         <TextField value="Example value" {...args} />
         <TextField value="Example value" {...args} textarea />
@@ -123,9 +126,10 @@ export const Overview = (args: TextFieldProps) => (
     </Flex>
 
     <Flex flexDirection="column" marginBottom="spacingXl">
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">TextField with help text</SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        TextField with help text
+      </SectionHeading>
+
       <Grid columns="1fr 1fr" columnGap="spacingXl">
         <TextField {...args} helpText="help text" />
         <TextField {...args} helpText="help text" textarea />
@@ -133,11 +137,10 @@ export const Overview = (args: TextFieldProps) => (
     </Flex>
 
     <Flex flexDirection="column" marginBottom="spacingXl">
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">
-          TextField with validation message
-        </SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        TextField with validation message
+      </SectionHeading>
+
       <Grid columns="1fr 1fr" columnGap="spacingXl">
         <TextField {...args} validationMessage="Validation message" />
         <TextField {...args} validationMessage="Validation message" textarea />
@@ -145,9 +148,10 @@ export const Overview = (args: TextFieldProps) => (
     </Flex>
 
     <Flex flexDirection="column">
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">TextField disabled</SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        TextField disabled
+      </SectionHeading>
+
       <Grid columns="1fr 1fr" columnGap="spacingXl">
         <TextField
           {...args}

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 import { FieldGroup } from '@contentful/f36-components';
 import { CheckboxField, CheckboxFieldProps } from '../src';
@@ -49,9 +48,10 @@ Basic.args = {
 
 export const overview = () => (
   <>
-    <Flex marginBottom="spacingS" marginTop="spacingM">
-      <SectionHeading as="h3">Checkbox Field default</SectionHeading>
-    </Flex>
+    <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
+      Checkbox Field default
+    </SectionHeading>
+
     <CheckboxField
       label="Option 1"
       helpText="This is a helptext"
@@ -60,11 +60,11 @@ export const overview = () => (
       value="yes"
       id="termsCheckbox"
     />
-    <Flex marginBottom="spacingS" marginTop="spacingM">
-      <SectionHeading as="h3">
-        Checkbox Field with validation message
-      </SectionHeading>
-    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
+      Checkbox Field with validation message
+    </SectionHeading>
+
     <CheckboxField
       label="Option 2"
       helpText="This is a helptext"
@@ -73,9 +73,11 @@ export const overview = () => (
       value="no"
       id="termsCheckboxOption2"
     />
-    <Flex marginBottom="spacingS" marginTop="spacingM">
-      <SectionHeading as="h3">Checkbox Field diabled</SectionHeading>
-    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
+      Checkbox Field diabled
+    </SectionHeading>
+
     <CheckboxField
       label="Option 2"
       helpText="This is a helptext"
@@ -84,9 +86,11 @@ export const overview = () => (
       value="no"
       id="termsCheckboxOption3"
     />
-    <Flex marginBottom="spacingS" marginTop="spacingM">
-      <SectionHeading as="h3">Checkbox Field diabled checked</SectionHeading>
-    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
+      Checkbox Field diabled checked
+    </SectionHeading>
+
     <CheckboxField
       label="Option 2"
       helpText="This is a helptext"

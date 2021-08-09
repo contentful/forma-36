@@ -113,16 +113,53 @@ async function createInterfaceDefinition(tokens) {
 const buildIndexDTS = async (srcPath, tokens) => {
   const createUnionThatStarts = (startsWith, name) => {
     return createUnionFromKeys(
-      Object.keys(tokens).filter((name) => name.startsWith(startsWith)),
+      Object.keys(tokens).filter((name) => {
+        const options = Array.isArray(startsWith) ? startsWith : [startsWith];
+        return options.reduce((prev, item) => {
+          return prev || name.startsWith(item);
+        }, false);
+      }),
       name,
     );
+  };
+
+  const generatePaletteNames = (colors) => {
+    const numbers = [];
+    const result = [];
+    for (let i = 1; i <= 9; i++) {
+      numbers.push((i * 100).toString());
+    }
+    colors.map((color) => {
+      numbers.map((number) => {
+        result.push(color + number);
+      });
+    });
+    return result;
   };
 
   return fse.outputFile(
     srcPath,
     `declare module '@contentful/f36-tokens' {
       ${await createInterfaceDefinition(tokens)}
-      ${createUnionThatStarts('color', 'ColorTokens')}
+      ${createUnionThatStarts(
+        [
+          'colorPrimary',
+          'colorWarning',
+          'colorNegative',
+          'colorPositive',
+        ].concat(
+          generatePaletteNames([
+            'gray',
+            'blue',
+            'green',
+            'orange',
+            'purple',
+            'red',
+            'yellow',
+          ]),
+        ),
+        'ColorTokens',
+      )}
       ${createUnionThatStarts('spacing', 'SpacingTokens')}
       ${createUnionThatStarts('fontSize', 'FontSizeTokens')}
       ${createUnionThatStarts('lineHeight', 'LineHeightTokens')}
