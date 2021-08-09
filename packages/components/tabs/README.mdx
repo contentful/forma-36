@@ -3,8 +3,9 @@ title: 'Tabs'
 type: 'component'
 status: 'stable'
 slug: /components/tabs/
-github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/Tabs'
-storybook: 'https://f36-storybook.contentful.com/?path=/story/components-tabs--default'
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/tabs'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-tabs--basic'
+typescript: ./src/Tabs.tsx,./src/Tab.tsx,./src/TabPanel.tsx
 ---
 
 Tabs is a component that makes navigating between sections of related content possible, displaying one section at a time.
@@ -23,8 +24,10 @@ Be aware that the users will not see all the content at the same time. Make sure
 ## Code examples
 
 ```jsx
-<Tabs role="tablist" withDivider>
-  <Tab id="first" href="https://contentful.com" selected>
+// import {Tabs, Tab} from '@contentful/f36-tabs';
+
+<Tabs role="tablist">
+  <Tab id="first" href="https://contentful.com" isSelected>
     First
   </Tab>
   <Tab id="second" href="https://contentful.com">
@@ -39,8 +42,10 @@ Be aware that the users will not see all the content at the same time. Make sure
 ### with vertical divider
 
 ```jsx
-<Tabs role="tablist" withDivider dividerOrientation="vertical">
-  <Tab id="first" href="https://contentful.com" selected>
+// import {Tabs, Tab} from '@contentful/f36-tabs';
+
+<Tabs role="tablist" variant="vertical-divider">
+  <Tab id="first" href="https://contentful.com" isSelected>
     First
   </Tab>
   <Tab id="second" href="https://contentful.com">
@@ -55,8 +60,10 @@ Be aware that the users will not see all the content at the same time. Make sure
 ### as navigation
 
 ```jsx
+// import {Tabs, Tab} from '@contentful/f36-tabs';
+
 <Tabs role="navigation">
-  <Tab id="first" href="https://contentful.com" selected>
+  <Tab id="first" href="https://contentful.com" isSelected>
     First
   </Tab>
   <Tab id="second" href="https://contentful.com">
@@ -71,22 +78,30 @@ Be aware that the users will not see all the content at the same time. Make sure
 ### used with TabPanel
 
 ```jsx
-<>
-  <Tabs role="tablist">
-    <Tab id="first" selected={selected === 'first'}>
-      First
-    </Tab>
-    <Tab id="second" selected={selected === 'second'}>
-      Second
-    </Tab>
-  </Tabs>
-  {selected === 'first' && (
-    <TabPanel id="first">Content for the first tab</TabPanel>
-  )}
-  {selected === 'second' && (
-    <TabPanel id="second">Content for the second tab</TabPanel>
-  )}
-</>
+// import {Tabs, Tab, TabPanel} from '@contentful/f36-tabs';
+
+() => {
+  const [selected, setSelected] = React.useState('first');
+
+  return (
+    <>
+      <Tabs role="tablist">
+        <Tab id="first" isSelected={selected === 'first'}>
+          First
+        </Tab>
+        <Tab id="second" isSelected={selected === 'second'}>
+          Second
+        </Tab>
+      </Tabs>
+      {selected === 'first' && (
+        <TabPanel id="first">Content for the first tab</TabPanel>
+      )}
+      {selected === 'second' && (
+        <TabPanel id="second">Content for the second tab</TabPanel>
+      )}
+    </>
+  );
+};
 ```
 
 ## Content recommendations
@@ -94,3 +109,19 @@ Be aware that the users will not see all the content at the same time. Make sure
 - every Tab should have concise copy
 - all content within a Tab should be related to it's label
 - to ensure an optimal cognitive load for users, do not use more than six (6) Tabs at any given time
+
+## Props
+
+import { Props } from '@contentful/f36-docs-utils';
+
+### Tabs
+
+<Props of="Tabs" />
+
+### Tab
+
+<Props of="Tab" />
+
+### TabPanel
+
+<Props of="TabPanel" />

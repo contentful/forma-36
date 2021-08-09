@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
 import { SectionHeading } from '@contentful/f36-typography';
-import { Tabs } from './Tabs';
-import { Tab } from './Tab';
-import { TabPanel } from './TabPanel';
+import { Tabs } from '../src/Tabs';
+import { Tab } from '../src/Tab';
+import { TabPanel } from '../src/TabPanel';
 import { Flex } from '@contentful/f36-core';
 
 export default {
@@ -23,7 +23,7 @@ export default {
   title: 'Components/Tabs',
 } as Meta;
 
-export const Default: Story = (args) => {
+export const Basic: Story = (args) => {
   const [selected, setSelected] = useState('first');
 
   return (
@@ -31,7 +31,7 @@ export const Default: Story = (args) => {
       <Tabs {...args}>
         <Tab
           id="first"
-          selected={selected === 'first'}
+          isSelected={selected === 'first'}
           onSelect={(id: string) => {
             action('onSelect')(id);
             setSelected(id);
@@ -41,7 +41,7 @@ export const Default: Story = (args) => {
         </Tab>
         <Tab
           id="second"
-          selected={selected === 'second'}
+          isSelected={selected === 'second'}
           onSelect={(id: string) => {
             action('onSelect')(id);
             setSelected(id);
@@ -51,8 +51,8 @@ export const Default: Story = (args) => {
         </Tab>
         <Tab
           id="third"
-          disabled
-          selected={selected === 'third'}
+          isDisabled
+          isSelected={selected === 'third'}
           onSelect={(id: string) => {
             action('onSelect')(id);
             setSelected(id);
@@ -81,7 +81,7 @@ export const Overview: Story = () => (
     </Flex>
     <Flex marginBottom="spacingS">
       <Tabs role="navigation">
-        <Tab id="first" href="https://contentful.com" selected>
+        <Tab id="first" href="https://contentful.com" isSelected>
           First
         </Tab>
         <Tab id="second" href="https://contentful.com">
@@ -96,8 +96,8 @@ export const Overview: Story = () => (
       <SectionHeading as="h3">Tabs with horizontal divider</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingS">
-      <Tabs role="navigation" withDivider>
-        <Tab id="first" href="https://contentful.com" selected>
+      <Tabs role="navigation" variant="horizontal-divider">
+        <Tab id="first" href="https://contentful.com" isSelected>
           First
         </Tab>
         <Tab id="second" href="https://contentful.com">
@@ -112,8 +112,8 @@ export const Overview: Story = () => (
       <SectionHeading as="h3">Tabs with vertical divider</SectionHeading>
     </Flex>
     <Flex marginBottom="spacingS">
-      <Tabs role="navigation" withDivider dividerOrientation="vertical">
-        <Tab id="first" href="https://contentful.com" selected>
+      <Tabs role="navigation" variant="vertical-divider">
+        <Tab id="first" href="https://contentful.com" isSelected>
           First
         </Tab>
         <Tab id="second" href="https://contentful.com">
