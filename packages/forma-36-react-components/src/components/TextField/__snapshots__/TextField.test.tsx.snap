@@ -850,7 +850,6 @@ exports[`renders the component with validation message 1`] = `
   font-weight: 400;
   color: #DA294A;
   font-size: 0.875rem;
-  line-height: 1.25rem;
 }
 
 <div

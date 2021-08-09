@@ -38,16 +38,20 @@ const _Text: PolymorphicComponentWithRef<
 > = (
   {
     fontSize = 'fontSizeM',
-    lineHeight = 'lineHeightM',
     fontStack = 'fontStackPrimary',
     fontWeight = 'fontWeightNormal',
     fontColor = 'gray700',
+    lineHeight,
     children,
+    as = DEFAULT_TAG,
     ...otherProps
   },
   ref,
 ) => {
-  const { boxProps, Element } = useBox(otherProps);
+  const { boxProps, Element } = useBox({
+    ...otherProps,
+    as,
+  });
   return (
     <Element
       {...boxProps}

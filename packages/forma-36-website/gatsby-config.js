@@ -104,6 +104,20 @@ module.exports = {
             ],
           },
           {
+            name: 'Typography Components',
+            link: '',
+            menuLinks: [
+              {
+                name: 'Text',
+                link: '/components/text/',
+              },
+              {
+                name: 'Typography',
+                link: '/components/typography/',
+              },
+            ],
+          },
+          {
             name: 'Accordion',
             link: '/components/accordion/',
           },
@@ -308,10 +322,6 @@ module.exports = {
           {
             name: 'Tooltip',
             link: '/components/tooltip/',
-          },
-          {
-            name: 'Typography',
-            link: '/components/typography/',
           },
           {
             name: 'ValidationMessage',

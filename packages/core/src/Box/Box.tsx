@@ -29,7 +29,8 @@ export type BoxProps<E extends React.ElementType> = PolymorphicComponentProps<
   BoxInternalProps
 >;
 
-export function useBox(props: BoxInternalProps) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function useBox(props: BoxInternalProps & { as?: any }) {
   const {
     display,
     children,

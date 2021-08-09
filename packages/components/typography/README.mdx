@@ -7,13 +7,33 @@ github: 'https://github.com/contentful/forma-36/tree/master/packages/components/
 storybook: 'https://f36-storybook.contentful.com/?path=/info/components-typography-typography--displaytext-large'
 ---
 
+import { Props } from '@contentful/f36-docs-utils';
+
 Forma 36 includes a number of typography components, including a wrapper to automatically add spacing to typography elements.
 
-Typography components are not tied to specific semantic elements - it's possible to render any typography component as a `h1`, `h2`, `h3`, `h4`, `h5`, `h6` or `p` element.
+Typography components are not tied to specific semantic elements - it's possible to render any typography component as a `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `p`, `span`, or `div` element.
 
 Forma 36 uses system UI fonts. System UI fonts refer to the fonts used to render text in the UI of an operating system. When used on the web they offer familiarity, load with zero-latency, and support a wide number of character sets.
 
-## Component variations
+## Components
+
+### Text
+
+_Text_ is a basic typography component. Basically, it's a span element with a default font family, font color, font size and letter spacing.
+
+```jsx
+<Text>I love Forma 36 design system.</Text>
+```
+
+You can pass all basic font related parameters as properties of the component.
+
+### Paragraph
+
+_Paragraph_ is essentially as `Text` component rendered as `p` and with default bottom margin applied. It is intended to be used as paragraph copy.
+
+```jsx
+<Paragraph>I love Forma 36 design system.</Paragraph>
+```
 
 ### Heading
 
@@ -21,40 +41,24 @@ _Heading_ is intended to be used to define a section. Headings are very importan
 
 Another accessibility consideration screen readers. Visually impaired people often use screen readers, which find sections in your copy based on your heading hierarchy.
 
-Font size: **21px** = **1.313rem** - Line Height: **31px** = **1.938rem** - Weight: **700**
-
 ```jsx
-<Heading>Heading</Heading>
+<Heading>I love Forma 36 design system</Heading>
 ```
 
 ### Subheading
 
 _Subheadings_ are intended to be used as headings for copy nested within a section. EX: a subheading under Contact may be Address or Phone number.
 
-Font size: **16px** = **1rem** - Line Height: **24px** = **1.5rem** - Weight: **700**
-
 ```jsx
-<Subheading>Subheading</Subheading>
+<Subheading>I love Forma 36 design system</Subheading>
 ```
 
 ### SectionHeading
 
 _Section Heading_ is intended to be used as a title for a widget, and is most commonly used in the sidebar.
 
-Font size: **12px** = **0.75rem** - Line Height: **18px** = **1.125rem** - Weight: **600**
-
 ```jsx
-<SectionHeading>SectionHeading</SectionHeading>
-```
-
-### Paragraph
-
-_Paragraph_ is essentially as `Text` component rendered as `p` and with default bottom margin applied. It is intended to be used as paragraph copy.
-
-Font size: **14px**=**0.875rem** - Line Height: **21px**=**1.313rem** - Weight: **500**
-
-```jsx
-<Paragraph>Text</Paragraph>
+<SectionHeading>I love Forma 36 design system</SectionHeading>
 ```
 
 ### DisplayText
@@ -65,7 +69,7 @@ DisplayText should **not** be used as a replacement for headings/page titles (us
 
 ```jsx
 <React.Fragment>
-  <DisplayText size="large">DisplayText (large)</DisplayText>
-  <DisplayText>DisplayText</DisplayText>
+  <DisplayText size="large">I love Forma 36 design system (large)</DisplayText>
+  <DisplayText>I love Forma 36 design system</DisplayText>
 </React.Fragment>
 ```

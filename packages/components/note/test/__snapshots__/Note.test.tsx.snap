@@ -58,7 +58,6 @@ exports[`Note renders the component 1`] = `
   font-weight: 400;
   color: #414D63;
   font-size: 0.875rem;
-  line-height: 1.25rem;
   color: #414D63;
   width: 100%;
 }
@@ -155,7 +154,6 @@ exports[`Note renders the component with an additional class name 1`] = `
   font-weight: 400;
   color: #414D63;
   font-size: 0.875rem;
-  line-height: 1.25rem;
   color: #414D63;
   width: 100%;
 }
@@ -216,7 +214,6 @@ exports[`Note renders the component with title 1`] = `
   font-weight: 400;
   color: #414D63;
   font-size: 0.875rem;
-  line-height: 1.25rem;
   color: #414D63;
   width: 100%;
 }

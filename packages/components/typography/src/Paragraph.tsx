@@ -30,6 +30,7 @@ const _Paragraph: PolymorphicComponentWithRef<
       as={DEFAULT_TAG}
       testId={testId}
       marginBottom="spacingM"
+      lineHeight="lineHeightM"
       {...otherProps}
       ref={ref}
     >
