@@ -22,13 +22,13 @@ export const ValidationMessage = forwardRef<
 >(({ children, testId = 'cf-ui-validation-message', ...otherProps }, ref) => {
   return (
     <Flex {...otherProps} ref={ref} testId={testId} alignItems="center">
-      <Box marginRight="spacing2Xs">
+      <Flex marginRight="spacing2Xs">
         <ErrorCircleOutline
           size="small"
           variant="negative"
           aria-label="Validation message"
         />
-      </Box>
+      </Flex>
       <Text as="p" fontColor="colorNegative">
         {children}
       </Text>
