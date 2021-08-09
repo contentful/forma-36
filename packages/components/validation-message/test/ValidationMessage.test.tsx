@@ -6,11 +6,13 @@ import { ValidationMessage } from '../src/ValidationMessage';
 
 describe('ValidationMessage', function () {
   it('renders the component with all required props', () => {
-    const { container } = render(
+    const { getByText } = render(
       <ValidationMessage>This field is required</ValidationMessage>,
     );
 
-    expect(container.firstChild).toMatchSnapshot();
+    const text = getByText('This field is required');
+    expect(text).toBeTruthy();
+    expect(text.previousSibling.nodeName).toMatch(/svg/i);
   });
 
   it('renders the component with an additional class name', () => {
@@ -20,7 +22,7 @@ describe('ValidationMessage', function () {
       </ValidationMessage>,
     );
 
-    expect(container.firstChild).toMatchSnapshot();
+    expect(container.firstChild).toHaveClass('my-extra-class');
   });
 
   it('has no a11y issues', async () => {
