@@ -1,5 +1,6 @@
+import React from 'react';
 import { fontStackPrimary } from '@contentful/forma-36-tokens';
-import '!style-loader!css-loader!./osano.css';
+import { GlobalStyle } from './global';
 
 // Setup Decorators
 export const decorators = [
@@ -10,6 +11,7 @@ export const decorators = [
         minWidth: '340px',
       }}
     >
+      <GlobalStyle />
       <Story />
     </div>
   ),
