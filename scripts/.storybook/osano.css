@@ -1,0 +1,220 @@
+@import '~@contentful/forma-36-tokens/dist/css/index.css';
+
+/* OSANO STYLES BEGIN */
+
+.osano-cm-window {
+  font-family: var(--font-stack-primary);
+  z-index: 101;
+}
+
+/* Widget */
+.osano-cm-widget {
+  cursor: pointer;
+  border-radius: 20%;
+  transition: none;
+  box-sizing: border-box;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: var(--color-white);
+  background-image: url('./public/DonutVelCookie.png');
+}
+
+.osano-cm-widget svg {
+  display: none;
+}
+.osano-cm-link {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+.osano-cm-link:focus {
+  box-shadow: var(--glow-primary);
+}
+.osano-cm-link:hover {
+  text-decoration: underline;
+}
+
+/* Dialog */
+.osano-cm-dialog {
+  box-shadow: none;
+  box-sizing: border-box;
+  border-top: 1px solid var(--gray-200);
+  background: var(--color-white);
+}
+
+.osano-cm-dialog .osano-cm-dialog__list {
+  margin-top: var(--spacing-m);
+}
+
+.osano-cm-dialog .osano-cm-list-item__toggle {
+  margin-right: var(--spacing-m);
+}
+
+.osano-cm-dialog .osano-cm-button {
+  cursor: pointer;
+  font-weight: normal;
+  text-decoration: none;
+  vertical-align: middle;
+  color: var(--gray-800);
+  font-size: var(--font-size-m);
+  font-family: var(--font-stack-primary);
+  background-color: var(--color-white);
+  border: 2px solid var(--gray-300);
+  border-radius: var(--border-radius-medium);
+  line-height: var(--line-height-default);
+}
+
+.osano-cm-dialog .osano-cm-button.osano-cm-save:focus {
+  box-shadow: var(--glow-muted);
+}
+.osano-cm-dialog .osano-cm-button.osano-cm-save:hover {
+  background-color: var(--gray-100);
+}
+
+.osano-cm-dialog .osano-cm-button.osano-cm-accept-all {
+  color: var(--color-white);
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+}
+.osano-cm-dialog .osano-cm-button.osano-cm-accept-all:focus {
+  box-shadow: var(--glow-primary);
+}
+.osano-cm-dialog .osano-cm-button.osano-cm-accept-all:hover {
+  border-color: var(--blue-600);
+  background-color: var(--blue-600);
+}
+
+.osano-cm-dialog .osano-cm-dialog__content {
+  font-size: var(--font-size-m);
+  color: var(--gray-600);
+}
+
+/* Toggle */
+.osano-cm-toggle {
+  transition: none;
+  flex-direction: row;
+}
+
+.osano-cm-toggle .osano-cm-label {
+  color: var(--gray-800);
+  font-weight: var(--font-weight-demi-bold);
+  margin-left: var(--spacing-xs);
+}
+
+.osano-cm-toggle .osano-cm-toggle__switch {
+  padding: 0;
+  margin: 0;
+  height: 1rem;
+  width: 1rem;
+  cursor: pointer;
+  border-radius: 20%;
+  transition: none;
+  box-sizing: border-box;
+  border: 2px solid var(--gray-400);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: var(--color-white);
+  background-image: url('./public/checkmark.svg');
+}
+.osano-cm-toggle .osano-cm-toggle__switch:before,
+.osano-cm-toggle .osano-cm-toggle__switch:after {
+  display: none;
+}
+
+.osano-cm-toggle .osano-cm-toggle__input {
+  width: 1rem;
+  height: 1rem;
+  line-height: var(--line-height-default);
+  opacity: 0;
+  position: absolute;
+  cursor: pointer;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.osano-cm-toggle .osano-cm-toggle__input:hover + .osano-cm-toggle__switch {
+  border-color: var(--gray-400);
+  background-color: var(--color-white);
+}
+
+.osano-cm-toggle .osano-cm-toggle__input:focus + .osano-cm-toggle__switch {
+  outline: none;
+  box-shadow: var(--glow-primary);
+  border-color: var(--blue-500);
+  background-color: var(--color-white);
+}
+
+.osano-cm-toggle .osano-cm-toggle__input:checked + .osano-cm-toggle__switch,
+.osano-cm-toggle
+  .osano-cm-toggle__input:focus:checked
+  + .osano-cm-toggle__switch,
+.osano-cm-toggle
+  .osano-cm-toggle__input:hover:checked
+  + .osano-cm-toggle__switch {
+  border-color: var(--blue-500);
+  background-color: var(--blue-500);
+}
+
+.osano-cm-toggle .osano-cm-toggle__input:disabled + .osano-cm-toggle__switch {
+  border-color: var(--gray-400);
+  background-color: var(--gray-400);
+}
+
+.osano-cm-toggle
+  .osano-cm-toggle__input:checked:disabled
+  + .osano-cm-toggle__switch,
+.osano-cm-toggle
+  .osano-cm-toggle__input:checked:hover:disabled
+  + .osano-cm-toggle__switch {
+  border-color: var(--gray-400);
+  background-color: var(--gray-400);
+  background-image: url('./public/checkmark-disabled.svg');
+}
+
+/* Drawer */
+.osano-cm-info-dialog .osano-cm-header {
+  color: var(--gray-800);
+}
+
+.osano-cm-info-dialog .osano-cm-description {
+  font-size: var(--font-size-m);
+  color: var(--gray-600);
+}
+
+.osano-cm-info-dialog .osano-cm-close {
+  display: none;
+}
+
+.osano-cm-info-dialog .osano-cm-disclosure__toggle {
+  color: var(--color-primary);
+}
+.osano-cm-info-dialog .osano-cm-disclosure__toggle:focus,
+.osano-cm-info-dialog .osano-cm-disclosure__toggle:active {
+  outline: auto;
+}
+
+.osano-cm-info-dialog .osano-cm-save {
+  cursor: pointer;
+  font-weight: normal;
+  text-decoration: none;
+  vertical-align: middle;
+  color: var(--color-white);
+  font-size: var(--font-size-m);
+  font-family: var(--font-stack-primary);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--border-radius-medium);
+  line-height: var(--line-height-default);
+  background-color: var(--color-primary);
+}
+.osano-cm-info-dialog .osano-cm-save:focus {
+  box-shadow: var(--glow-primary);
+}
+.osano-cm-info-dialog .osano-cm-save:hover {
+  border-color: var(--blue-600);
+  background-color: var(--blue-600);
+}
+
+.osano-cm-info-dialog .osano-cm-info-views {
+  height: auto;
+}
+
+/* OSANO STYLES END */
