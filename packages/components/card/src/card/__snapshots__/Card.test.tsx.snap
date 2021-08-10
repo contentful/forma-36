@@ -1,0 +1,369 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`calls an onClick function 1`] = `
+.emotion-0 {
+  grid-column: content;
+  grid-row: content;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.emotion-1 {
+  background-color: #ffffff;
+  border-color: #CFD9E0;
+  border-radius: 6px;
+  border-style: solid;
+  border-width: 1px;
+  color: #111B2B;
+  display: grid;
+  grid-template-columns: [dragHandle] auto [content] 1fr;
+  grid-template-rows: [header] auto [content] 1fr;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+  position: relative;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: border-color 0.2s ease-in-out, box-shadow 0.1s ease-in-out;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.1s ease-in-out;
+  padding-top: 1rem;
+  border-color: #036FE3;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px 3px #98CBFF;
+  outline: 0;
+}
+
+<article
+  aria-pressed="false"
+  class="emotion-1"
+  data-test-id="cf-ui-card"
+  role="button"
+  tabindex="0"
+>
+  <div
+    class="emotion-0"
+  >
+    Card
+  </div>
+</article>
+`;
+
+exports[`can be selected 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": .emotion-0 {
+  grid-column: content;
+  grid-row: content;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.emotion-1 {
+  background-color: #ffffff;
+  border-color: #CFD9E0;
+  border-radius: 6px;
+  border-style: solid;
+  border-width: 1px;
+  color: #111B2B;
+  display: grid;
+  grid-template-columns: [dragHandle] auto [content] 1fr;
+  grid-template-rows: [header] auto [content] 1fr;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+  position: relative;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: border-color 0.2s ease-in-out, box-shadow 0.1s ease-in-out;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.1s ease-in-out;
+  padding-top: 1rem;
+  background-color: #E8F5FF;
+  border-color: #036FE3;
+  box-shadow: 0px 0px 0px 3px #98CBFF;
+}
+
+<body>
+    <div>
+      <article
+        class="emotion-1"
+        data-test-id="cf-ui-card"
+      >
+        <div
+          class="emotion-0"
+        >
+          Card
+        </div>
+      </article>
+    </div>
+  </body>,
+  "container": .emotion-0 {
+  grid-column: content;
+  grid-row: content;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.emotion-1 {
+  background-color: #ffffff;
+  border-color: #CFD9E0;
+  border-radius: 6px;
+  border-style: solid;
+  border-width: 1px;
+  color: #111B2B;
+  display: grid;
+  grid-template-columns: [dragHandle] auto [content] 1fr;
+  grid-template-rows: [header] auto [content] 1fr;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+  position: relative;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: border-color 0.2s ease-in-out, box-shadow 0.1s ease-in-out;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.1s ease-in-out;
+  padding-top: 1rem;
+  background-color: #E8F5FF;
+  border-color: #036FE3;
+  box-shadow: 0px 0px 0px 3px #98CBFF;
+}
+
+<div>
+    <article
+      class="emotion-1"
+      data-test-id="cf-ui-card"
+    >
+      <div
+        class="emotion-0"
+      >
+        Card
+      </div>
+    </article>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`has an "is-interactive" class if has an onClick prop 1`] = `
+.emotion-0 {
+  grid-column: content;
+  grid-row: content;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.emotion-1 {
+  background-color: #ffffff;
+  border-color: #CFD9E0;
+  border-radius: 6px;
+  border-style: solid;
+  border-width: 1px;
+  color: #111B2B;
+  display: grid;
+  grid-template-columns: [dragHandle] auto [content] 1fr;
+  grid-template-rows: [header] auto [content] 1fr;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+  position: relative;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: border-color 0.2s ease-in-out, box-shadow 0.1s ease-in-out;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.1s ease-in-out;
+  padding-top: 1rem;
+}
+
+<article
+  class="emotion-1"
+  data-test-id="cf-ui-card"
+  href="/"
+  rel="noreferrer"
+>
+  <div
+    class="emotion-0"
+  >
+    Card
+  </div>
+</article>
+`;
+
+exports[`renders as a link if passed a href prop 1`] = `
+.emotion-0 {
+  grid-column: content;
+  grid-row: content;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.emotion-1 {
+  background-color: #ffffff;
+  border-color: #CFD9E0;
+  border-radius: 6px;
+  border-style: solid;
+  border-width: 1px;
+  color: #111B2B;
+  display: grid;
+  grid-template-columns: [dragHandle] auto [content] 1fr;
+  grid-template-rows: [header] auto [content] 1fr;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+  position: relative;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: border-color 0.2s ease-in-out, box-shadow 0.1s ease-in-out;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.1s ease-in-out;
+  padding-top: 1rem;
+}
+
+<article
+  class="emotion-1"
+  data-test-id="cf-ui-card"
+  href="/"
+  rel="noreferrer"
+>
+  <div
+    class="emotion-0"
+  >
+    Card
+  </div>
+</article>
+`;
+
+exports[`renders the component 1`] = `
+.emotion-0 {
+  grid-column: content;
+  grid-row: content;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.emotion-1 {
+  background-color: #ffffff;
+  border-color: #CFD9E0;
+  border-radius: 6px;
+  border-style: solid;
+  border-width: 1px;
+  color: #111B2B;
+  display: grid;
+  grid-template-columns: [dragHandle] auto [content] 1fr;
+  grid-template-rows: [header] auto [content] 1fr;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+  position: relative;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: border-color 0.2s ease-in-out, box-shadow 0.1s ease-in-out;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.1s ease-in-out;
+  padding-top: 1rem;
+}
+
+<article
+  class="emotion-1"
+  data-test-id="cf-ui-card"
+>
+  <div
+    class="emotion-0"
+  >
+    Card
+  </div>
+</article>
+`;
+
+exports[`renders the component with an additional class name 1`] = `
+.emotion-0 {
+  grid-column: content;
+  grid-row: content;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.emotion-1 {
+  background-color: #ffffff;
+  border-color: #CFD9E0;
+  border-radius: 6px;
+  border-style: solid;
+  border-width: 1px;
+  color: #111B2B;
+  display: grid;
+  grid-template-columns: [dragHandle] auto [content] 1fr;
+  grid-template-rows: [header] auto [content] 1fr;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+  position: relative;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  -webkit-transition: border-color 0.2s ease-in-out, box-shadow 0.1s ease-in-out;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.1s ease-in-out;
+  padding-top: 1rem;
+}
+
+<article
+  class="emotion-1"
+  data-test-id="cf-ui-card"
+>
+  <div
+    class="emotion-0"
+  >
+    Card
+  </div>
+</article>
+`;
