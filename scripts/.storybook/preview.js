@@ -1,4 +1,3 @@
-import React from 'react';
 import { fontStackPrimary } from '@contentful/forma-36-tokens';
 
 // Setup Decorators
