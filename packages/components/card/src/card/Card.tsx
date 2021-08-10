@@ -14,8 +14,8 @@ import tokens from '@contentful/f36-tokens';
 import { BaseCard } from '../base-card/BaseCard';
 import type { BaseCardInternalProps } from '../base-card/BaseCard';
 import { CardActions } from '../base-card/CardActions';
-import { styles } from './Card.styles';
-import { styles as baseStyles } from '../base-card/BaseCard.styles';
+import { getCardStyles } from './Card.styles';
+import { getBaseCardStyles } from '../base-card/BaseCard.styles';
 
 const DEFAULT_TAG = 'article';
 
@@ -62,6 +62,8 @@ export const _Card: PolymorphicComponentWithRef<
   },
   forwardedRef,
 ) => {
+  const styles = getCardStyles();
+  const baseStyles = getBaseCardStyles();
   const hasHeader = title || icon || badge || actions;
   const header = (
     <Flex

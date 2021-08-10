@@ -10,7 +10,7 @@ import { Icon } from '@contentful/f36-icon';
 import { BaseCard } from '../base-card/BaseCard';
 import type { BaseCardInternalProps } from '../base-card/BaseCard';
 import { CardActions } from '../base-card/CardActions';
-import { styles } from './AssetCard.styles';
+import { getAssetCardStyles } from './AssetCard.styles';
 
 const generateSizeStyles = ({
   size,
@@ -66,6 +66,7 @@ export const AssetCard = ({
   withDragHandle = true,
   ...otherProps
 }: AssetCardInternalProps) => {
+  const styles = getAssetCardStyles();
   const badge = status ? <EntityStatusBadge entityStatus={status} /> : null;
   const header =
     type || icon || badge || actions ? (

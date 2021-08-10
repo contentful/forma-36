@@ -13,7 +13,7 @@ import { Heading, Typography } from '@contentful/f36-typography';
 
 import { BaseCard } from '../base-card/BaseCard';
 import type { BaseCardInternalProps } from '../base-card/BaseCard';
-import { styles } from './EntryCard.styles';
+import { getEntryCardStyles } from './EntryCard.styles';
 
 const DEFAULT_TAG = 'article';
 
@@ -53,6 +53,7 @@ export const _EntryCard: PolymorphicComponentWithRef<
   },
   forwardedRef,
 ) => {
+  const styles = getEntryCardStyles();
   const badge = status ? <EntityStatusBadge entityStatus={status} /> : null;
 
   return (

@@ -6,7 +6,7 @@ import { Text } from '@contentful/f36-typography';
 
 import { BaseCard } from '../base-card/BaseCard';
 import type { EntryCardInternalProps } from '../entry-card/EntryCard';
-import { styles } from './InlineEntryCard.styles';
+import { getInlineEntryCardStyles } from './InlineEntryCard.styles';
 import { CardActions } from '../base-card/CardActions';
 
 const generateStyles = ({
@@ -44,6 +44,7 @@ export const InlineEntryCard = ({
   title,
   ...otherProps
 }: InlineEntryCardInternalProps) => {
+  const styles = getInlineEntryCardStyles();
   const header = (
     <CardActions buttonProps={{ className: styles.actions }}>
       {actions}

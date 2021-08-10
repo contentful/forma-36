@@ -21,7 +21,7 @@ import type { ButtonProps } from '@contentful/f36-button';
 import { DragHandle } from '@contentful/f36-drag-handle';
 import type { ObjectInterpolation } from '@emotion/serialize';
 
-import { styles } from './BaseCard.styles';
+import { getBaseCardStyles } from './BaseCard.styles';
 import { CardActions } from './CardActions';
 
 export const DEFAULT_TAG = 'article';
@@ -114,12 +114,10 @@ export type BaseCardInternalProps = Omit<
      * Props to pass to the drag handle component
      */
     dragHandleProps?: { className?: string };
-    header?: ReactElement;
     /**
-     * Props to pass to the header element
+     * Custom header element to render
      */
-    // headerProps?: { as?: ElementType; className?: string };
-    // headerItemProps?: { className?: string };
+    header?: ReactElement;
     /**
      * Icon to show in the Card header
      */
@@ -197,6 +195,7 @@ export const _BaseCard: PolymorphicComponentWithRef<
   },
   forwardedRef,
 ) => {
+  const styles = getBaseCardStyles();
   const [isFocused, setisFocused] = useState(isFocusedProp ?? false);
   const [isHovered, setisHovered] = useState(isHoveredProp ?? false);
   const isInteractive = Boolean(onClick || href || withDragHandle);
