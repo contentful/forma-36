@@ -1,0 +1,118 @@
+---
+title: 'Text'
+type: 'component'
+status: 'stable'
+slug: /components/text/
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/typography/src'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/typography-text--basic'
+typescript: ./Text.tsx
+---
+
+`Text` is a basic typography component. Basically, it's a `span` element with a default font family, font color, font size and letter spacing.
+
+`Text` is not tied to specific semantic elements - it's possible to render it component as a `h1`, `h2`, `h3`, `h4`, `h5`, `h6`, `p`, `span`, or `div` element.
+By default, `<Text />` renders itself as a `span`.
+
+### Import
+
+```js static=true
+import { Text } from '@contentful/f36-components';
+// or
+import { Text } from '@contentful/f36-typography';
+```
+
+## Code examples
+
+```jsx
+<Text>I love Forma 36 design system.</Text>
+```
+
+You can pass all basic font related parameters as properties of the component.
+
+### Changing the font size
+
+To increase the font size of the text, you can pass the `fontSize` prop.
+
+```jsx
+<Flex flexDirection="column">
+  <Text fontSize="fontSize4Xl" marginBottom="spacingM">
+    (4xl) I love Forma 36 design system.
+  </Text>
+  <Text fontSize="fontSize3Xl" marginBottom="spacingM">
+    (3xl) I love Forma 36 design system.
+  </Text>
+  <Text fontSize="fontSize2Xl" marginBottom="spacingM">
+    (2xl) I love Forma 36 design system.
+  </Text>
+  <Text fontSize="fontSizeXl" marginBottom="spacingM">
+    (xl) I love Forma 36 design system.
+  </Text>
+  <Text fontSize="fontSizeL" marginBottom="spacingM">
+    (l) I love Forma 36 design system.
+  </Text>
+  <Text fontSize="fontSizeM" marginBottom="spacingM">
+    (m) I love Forma 36 design system.
+  </Text>
+  <Text fontSize="fontSizeS" marginBottom="spacingM">
+    (s) I love Forma 36 design system.
+  </Text>
+</Flex>
+```
+
+### Changing the font color
+
+To increase the font color of the text, you can pass the `fontColor` prop.
+
+```jsx
+<Flex flexDirection="column">
+  <Text fontColor="blue500" marginBottom="spacingM">
+    I love Forma 36 design system.
+  </Text>
+  <Text fontColor="red500" marginBottom="spacingM">
+    I love Forma 36 design system.
+  </Text>
+  <Text fontColor="gray900" marginBottom="spacingM">
+    I love Forma 36 design system.
+  </Text>
+</Flex>
+```
+
+### Override the element
+
+To override the element that gets rendered, pass the as prop.
+
+```jsx
+<Flex flexDirection="column">
+  <Text marginBottom="spacingM" as="i">
+    Italic
+  </Text>
+  <Text marginBottom="spacingM" as="u">
+    Unterline
+  </Text>
+  <Text marginBottom="spacingM" as="del">
+    Deleted
+  </Text>
+  <Text marginBottom="spacingM" as="s">
+    Strikethrough
+  </Text>
+</Flex>
+```
+
+### Truncate text
+
+```jsx
+<Text isTruncated as="div">
+  Lorem ipsum is placeholder text commonly used in the graphic, print, and
+  publishing industries for previewing layouts and visual mockups.
+</Text>
+```
+
+### Other properties
+
+The same way you can control the other font related properties. Please refer to the table below to see all possible properties and their values.
+
+## Props
+
+import { Props } from '@contentful/f36-docs-utils';
+
+<Props of="Text" />

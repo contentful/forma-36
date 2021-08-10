@@ -1,7 +1,7 @@
 import React, { HTMLProps } from 'react';
 import cn from 'classnames';
 import type { ReactElement } from 'react';
-import { Heading } from '@contentful/f36-typography';
+import { Heading, Paragraph } from '@contentful/f36-typography';
 import { ChevronLeft } from '@contentful/f36-icons';
 import type { IconComponent } from '@contentful/f36-icon';
 
@@ -62,10 +62,7 @@ export function WorkbenchHeader({
           className={styles['Workbench__header-title']}
         >
           {typeof title === 'string' ? (
-            <Heading
-              as="h1"
-              className={styles['Workbench__header-title__heading']}
-            >
+            <Heading as="h1" marginBottom="none">
               {title}
             </Heading>
           ) : (
@@ -79,9 +76,7 @@ export function WorkbenchHeader({
           className={styles['Workbench__header-description']}
         >
           {typeof description === 'string' ? (
-            <p className={styles['Workbench__header-description__text']}>
-              {description}
-            </p>
+            <Paragraph marginBottom="none">{description}</Paragraph>
           ) : (
             description
           )}

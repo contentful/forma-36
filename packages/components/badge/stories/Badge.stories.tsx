@@ -29,9 +29,10 @@ basic.args = {
 
 export const overview = () => (
   <>
-    <Flex marginBottom="spacingS">
-      <SectionHeading as="h3">Badge variants & sizes</SectionHeading>
-    </Flex>
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Badge variants & sizes
+    </SectionHeading>
+
     <Flex marginBottom="spacingM" alignItems="center">
       <Flex marginRight="spacingS">
         <Badge variant="primary">primary</Badge>

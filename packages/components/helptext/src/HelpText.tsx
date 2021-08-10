@@ -1,11 +1,6 @@
-import { cx } from 'emotion';
 import React from 'react';
-import { getStyles } from './HelpText.styles';
-import {
-  Box,
-  CommonProps,
-  PolymorphicComponentProps,
-} from '@contentful/f36-core';
+import { CommonProps, PolymorphicComponentProps } from '@contentful/f36-core';
+import { Text } from '@contentful/f36-typography';
 
 export type HelpTextInternalProps = CommonProps & {
   children: React.ReactNode;
@@ -21,18 +16,17 @@ export type HelpTextProps = PolymorphicComponentProps<
  */
 
 export const HelpText = React.forwardRef<HTMLParagraphElement, HelpTextProps>(
-  ({ children, className, testId = 'cf-ui-help-text', ...otherProps }, ref) => {
-    const styles = getStyles();
+  ({ testId = 'cf-ui-help-text', ...otherProps }, ref) => {
     return (
-      <Box
+      <Text
         as="p"
+        fontColor="gray500"
+        fontSize="fontSizeM"
+        lineHeight="lineHeightDefault"
         testId={testId}
-        className={cx(styles.root, className)}
         {...otherProps}
         ref={ref}
-      >
-        {children}
-      </Box>
+      />
     );
   },
 );

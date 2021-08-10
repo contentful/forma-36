@@ -95,18 +95,19 @@ AutoPlacement.parameters = {
 export const Overview = () => {
   return (
     <>
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">Tooltip disabled</SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Tooltip disabled
+      </SectionHeading>
       <Flex marginBottom="spacingS">
         <Tooltip content="I am a Tooltip 🙌" maxWidth={360} placement="top">
           <TextLink isDisabled>Hover me</TextLink>
         </Tooltip>
       </Flex>
 
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">Tooltip left</SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Tooltip left
+      </SectionHeading>
+
       <Flex marginBottom="spacingS">
         <Tooltip
           content="I am a Tooltip 🙌"
@@ -118,9 +119,10 @@ export const Overview = () => {
         </Tooltip>
       </Flex>
 
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">Tooltip right</SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Tooltip right
+      </SectionHeading>
+
       <Flex marginBottom="spacingS">
         <Tooltip
           content="I am a Tooltip 🙌"
@@ -131,9 +133,11 @@ export const Overview = () => {
           <TextLink isDisabled={false}>Hover me</TextLink>
         </Tooltip>
       </Flex>
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">Tooltip top</SectionHeading>
-      </Flex>
+
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Tooltip top
+      </SectionHeading>
+
       <Flex marginBottom="spacingS">
         <Tooltip
           content="I am a Tooltip 🙌"
@@ -144,9 +148,11 @@ export const Overview = () => {
           <TextLink isDisabled={false}>Hover me</TextLink>
         </Tooltip>
       </Flex>
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">Tooltip bottom</SectionHeading>
-      </Flex>
+
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Tooltip bottom
+      </SectionHeading>
+
       <Flex marginBottom="spacingS">
         <Tooltip
           content="I am a Tooltip 🙌"

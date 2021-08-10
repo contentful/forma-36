@@ -1,44 +1,47 @@
-import React, { useContext } from 'react';
-import tokens from '@contentful/f36-tokens';
-import { css, cx } from 'emotion';
+import React from 'react';
 import {
+  CommonProps,
+  MarginProps,
   PolymorphicComponent,
+  PolymorphicComponentProps,
   PolymorphicComponentWithRef,
 } from '@contentful/f36-core';
-import type { HeadingInternalProps, HeadingProps } from './Heading';
-import { Heading } from './Heading';
-import { TypographyContext } from './Typography';
+import type { HeadingElement } from './Heading';
+import { Text } from './Text';
 
 const DEFAULT_TAG = 'h2';
 
-export type SubheadingProps<E extends React.ElementType> = HeadingProps<E>;
+export interface SubheadingInternalProps extends CommonProps, MarginProps {
+  as?: HeadingElement;
+  isTruncated?: boolean;
+}
+
+export type SubheadingProps<
+  E extends React.ElementType
+> = PolymorphicComponentProps<E, SubheadingInternalProps>;
 
 const _Subheading: PolymorphicComponentWithRef<
-  HeadingInternalProps,
+  SubheadingInternalProps,
   typeof DEFAULT_TAG
-> = ({ children, className, ...otherProps }, ref) => {
-  const configuration = useContext(TypographyContext);
+> = ({ children, testId = 'cf-ui-subheading', ...otherProps }, ref) => {
   return (
-    <Heading
+    <Text
       as={DEFAULT_TAG}
-      testId="cf-ui-subheading"
-      marginBottom={configuration.subheading}
-      className={cx(
-        css({
-          fontSize: tokens.fontSizeL,
-          lineHeight: tokens.lineHeightL,
-        }),
-        className,
-      )}
+      testId={testId}
+      marginBottom="spacingM"
+      fontSize="fontSizeL"
+      lineHeight="lineHeightL"
+      fontWeight="fontWeightDemiBold"
+      fontColor="gray900"
       {...otherProps}
       ref={ref}
     >
       {children}
-    </Heading>
+    </Text>
   );
 };
 
 export const Subheading: PolymorphicComponent<
-  HeadingInternalProps,
+  SubheadingInternalProps,
   typeof DEFAULT_TAG
 > = React.forwardRef(_Subheading);

@@ -13,7 +13,7 @@ export default {
   },
 };
 
-export const Basic = (props: ParagraphProps<'p'>) => <Paragraph {...props} />;
+export const Basic = (props: ParagraphProps) => <Paragraph {...props} />;
 
 Basic.args = {
   children: 'Paragraph',

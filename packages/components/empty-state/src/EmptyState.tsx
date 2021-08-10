@@ -7,7 +7,7 @@ import type {
   PolymorphicComponentProps,
 } from '@contentful/f36-core';
 import type { HeadingElement } from '@contentful/f36-typography';
-import { Heading, Paragraph, Typography } from '@contentful/f36-typography';
+import { Heading, Paragraph } from '@contentful/f36-typography';
 
 export interface EmptyStateInternalProps extends CommonProps {
   /**
@@ -110,24 +110,16 @@ export const EmptyState = forwardRef<HTMLElement, EmptyStateProps>(
                   />
                 )}
           </div>
-          <Typography>
-            <Heading
-              as={headingProps.elementType ? headingProps.elementType : 'h1'}
-              className={styles.element}
-            >
-              {headingProps.text}
-            </Heading>
-            <Paragraph
-              as={
-                descriptionProps.elementType
-                  ? descriptionProps.elementType
-                  : 'p'
-              }
-              className={styles.element}
-            >
-              {descriptionProps.text}
-            </Paragraph>
-          </Typography>
+
+          <Heading
+            as={headingProps.elementType ? headingProps.elementType : 'h1'}
+            className={styles.element}
+          >
+            {headingProps.text}
+          </Heading>
+          <Paragraph className={styles.element}>
+            {descriptionProps.text}
+          </Paragraph>
           {children}
         </div>
       </Box>

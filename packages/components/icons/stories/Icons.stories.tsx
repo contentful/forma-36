@@ -25,7 +25,7 @@ export const Default: Story<IconProps> = (args) => {
 
   return (
     <Fragment>
-      <SectionHeading as="h3" marginRight="spacingS">
+      <SectionHeading as="h3" marginRight="spacingS" marginBottom="spacingS">
         Built-in icons
       </SectionHeading>
 

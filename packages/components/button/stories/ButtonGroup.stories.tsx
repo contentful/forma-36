@@ -62,9 +62,10 @@ export const overview: Story<ButtonGroupProps> = () => {
   return (
     <>
       <Flex flexDirection="column" marginBottom="spacingL">
-        <Box marginBottom="spacingS">
-          <SectionHeading as="h3">Button Group Collapse</SectionHeading>
-        </Box>
+        <SectionHeading as="h3" marginBottom="spacingS">
+          Button Group Collapse
+        </SectionHeading>
+
         <Flex flexDirection="column" marginBottom="spacingM">
           <Box marginBottom="spacingS">
             <ButtonGroup variant="collapsed">
@@ -109,9 +110,11 @@ export const overview: Story<ButtonGroupProps> = () => {
             </ButtonGroup>
           </Box>
         </Flex>
-        <Box marginBottom="spacingS">
-          <SectionHeading as="h3">Button Group Spaced</SectionHeading>
-        </Box>
+
+        <SectionHeading as="h3" marginBottom="spacingS">
+          Button Group Spaced
+        </SectionHeading>
+
         <Flex flexDirection="column" marginBottom="spacingM">
           <Box marginBottom="spacingS">
             <ButtonGroup variant="spaced">

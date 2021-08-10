@@ -53,11 +53,9 @@ ControlledTextInput.args = {
 export const Overview = () => (
   <>
     <Flex flexDirection="column" marginBottom="spacingXl">
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">
-          Text input default with placeholder
-        </SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Text input default with placeholder
+      </SectionHeading>
       <TextInput
         value=""
         maxLength={50}
@@ -68,9 +66,10 @@ export const Overview = () => (
     </Flex>
 
     <Flex flexDirection="column" marginBottom="spacingXl">
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">Text input default</SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Text input default
+      </SectionHeading>
+
       <TextInput
         value="123456"
         maxLength={50}
@@ -80,9 +79,10 @@ export const Overview = () => (
     </Flex>
 
     <Flex flexDirection="column" marginBottom="spacingXl">
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">Text input width small</SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Text input width small
+      </SectionHeading>
+
       <TextInput
         value="123456"
         maxLength={50}
@@ -93,9 +93,10 @@ export const Overview = () => (
     </Flex>
 
     <Flex flexDirection="column" marginBottom="spacingXl">
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">Text input width medium</SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Text input width medium
+      </SectionHeading>
+
       <TextInput
         value="123456"
         maxLength={50}
@@ -106,9 +107,10 @@ export const Overview = () => (
     </Flex>
 
     <Flex flexDirection="column" marginBottom="spacingXl">
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">Text input width large</SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Text input width large
+      </SectionHeading>
+
       <TextInput
         value="123456"
         maxLength={50}
@@ -119,9 +121,9 @@ export const Overview = () => (
     </Flex>
 
     <Flex flexDirection="column" marginBottom="spacingXl">
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">Text input with error</SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Text input with error
+      </SectionHeading>
       <TextInput
         error
         value="123456"
@@ -133,9 +135,9 @@ export const Overview = () => (
     </Flex>
 
     <Flex flexDirection="column" marginBottom="spacingXl">
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">Text input disabled</SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Text input disabled
+      </SectionHeading>
       <TextInput
         disabled
         value="123456"
@@ -147,9 +149,10 @@ export const Overview = () => (
     </Flex>
 
     <Flex flexDirection="column" marginBottom="spacingXl">
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">Text input with copy button</SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Text input with copy button
+      </SectionHeading>
+
       <TextInput
         withCopyButton
         value="123456"

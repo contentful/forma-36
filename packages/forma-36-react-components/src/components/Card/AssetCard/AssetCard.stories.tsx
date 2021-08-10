@@ -83,11 +83,10 @@ WithACustomStatusIcon.args = {
 export const Overview = () => (
   <>
     <Flex flexDirection="column" marginBottom="spacingM">
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">
-          Published card small and default with image
-        </SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Published card small and default with image
+      </SectionHeading>
+
       <Flex marginBottom="spacingS">
         <AssetCard
           status="published"
@@ -106,11 +105,10 @@ export const Overview = () => (
       </Flex>
     </Flex>
     <Flex flexDirection="column" marginBottom="spacingM">
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">
-          Draft card small and default with image
-        </SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Draft card small and default with image
+      </SectionHeading>
+
       <Flex marginBottom="spacingS">
         <AssetCard
           status="draft"
@@ -129,11 +127,10 @@ export const Overview = () => (
       </Flex>
     </Flex>
     <Flex flexDirection="column" marginBottom="spacingM">
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">
-          archived card small and default with image
-        </SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        archived card small and default with image
+      </SectionHeading>
+
       <Flex marginBottom="spacingS">
         <AssetCard
           status="archived"
@@ -152,11 +149,10 @@ export const Overview = () => (
       </Flex>
     </Flex>
     <Flex flexDirection="column" marginBottom="spacingM">
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">
-          changed card small and default with image
-        </SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        changed card small and default with image
+      </SectionHeading>
+
       <Flex marginBottom="spacingS">
         <AssetCard
           status="changed"
@@ -175,11 +171,10 @@ export const Overview = () => (
       </Flex>
     </Flex>
     <Flex flexDirection="column" marginBottom="spacingM">
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">
-          Published card, small and default, with custom icon
-        </SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Published card, small and default, with custom icon
+      </SectionHeading>
+
       <Flex marginBottom="spacingS">
         <AssetCard
           status="published"
@@ -200,11 +195,10 @@ export const Overview = () => (
       </Flex>
     </Flex>
     <Flex flexDirection="column" marginBottom="spacingM">
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">
-          card withDragHandle, small and default with image
-        </SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        card withDragHandle, small and default with image
+      </SectionHeading>
+
       <Flex marginBottom="spacingS">
         <AssetCard
           status="published"
@@ -225,11 +219,10 @@ export const Overview = () => (
       </Flex>
     </Flex>
     <Flex flexDirection="column" marginBottom="spacingM">
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">
-          loading state of card, small and default
-        </SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        loading state of card, small and default
+      </SectionHeading>
+
       <Flex marginBottom="spacingS">
         <AssetCard
           status="published"

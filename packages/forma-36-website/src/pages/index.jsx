@@ -1,12 +1,7 @@
 import React from 'react';
 
 import tokens from '@contentful/f36-tokens';
-import {
-  DisplayText,
-  Paragraph,
-  Button,
-  Typography,
-} from '@contentful/f36-components';
+import { DisplayText, Paragraph, Button } from '@contentful/f36-components';
 
 import componentsImg from './components.png';
 import fcssImg from './fcss.png';
@@ -28,17 +23,15 @@ const IndexPage = () => (
       hasLogo
     />
     <Section>
-      <Typography>
-        <DisplayText>Resources for designers and developers</DisplayText>
-        <Paragraph
-          style={{
-            fontSize: tokens.fontSizeL,
-            marginBottom: tokens.spacing3Xl,
-          }}
-        >
-          Everything you need to get started building for Contentful
-        </Paragraph>
-      </Typography>
+      <DisplayText>Resources for designers and developers</DisplayText>
+      <Paragraph
+        style={{
+          fontSize: tokens.fontSizeL,
+          marginBottom: tokens.spacing3Xl,
+        }}
+      >
+        Everything you need to get started building for Contentful
+      </Paragraph>
       <Resources>
         <Resource
           title="Prototype in Figma with Forma 36 components"
@@ -83,21 +76,19 @@ const IndexPage = () => (
     </Section>
 
     <Section isSecondary>
-      <Typography>
-        <DisplayText>Forma 36 is open-source</DisplayText>
-        <Paragraph
-          style={{
-            fontSize: tokens.fontSizeL,
-            maxWidth: '28rem',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-          }}
-        >
-          We appreciate your contributions. For more details about how to
-          contribute to a package, see the README of the corresponding package
-          on GitHub
-        </Paragraph>
-      </Typography>
+      <DisplayText>Forma 36 is open-source</DisplayText>
+      <Paragraph
+        style={{
+          fontSize: tokens.fontSizeL,
+          maxWidth: '28rem',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+        }}
+      >
+        We appreciate your contributions. For more details about how to
+        contribute to a package, see the README of the corresponding package on
+        GitHub
+      </Paragraph>
       <Button
         href="https://github.com/contentful/forma-36"
         target="_blank"

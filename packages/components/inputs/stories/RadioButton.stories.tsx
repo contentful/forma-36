@@ -25,15 +25,17 @@ basic.args = {
 export const overview = () => (
   <>
     <Flex flexDirection="column" marginBottom="spacingM">
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">Radio button default</SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Radio button default
+      </SectionHeading>
+
       <RadioButton id="Radio" label="some label text" name="option1" />
     </Flex>
     <Flex flexDirection="column" marginBottom="spacingM">
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">Radio button checked</SectionHeading>
-      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Radio button checked
+      </SectionHeading>
+
       <RadioButton
         id="Radio"
         isChecked
@@ -42,9 +44,10 @@ export const overview = () => (
       />
     </Flex>
     <Flex flexDirection="column" marginBottom="spacingM">
-      <Flex marginBottom="spacingS">
-        <SectionHeading as="h3">Radio button disabled</SectionHeading>
-      </Flex>
+      <SectionHeading marginBottom="spacingS" as="h3">
+        Radio button disabled
+      </SectionHeading>
+
       <RadioButton
         id="Radio"
         label="some label text"

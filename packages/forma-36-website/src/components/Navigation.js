@@ -110,7 +110,7 @@ const MenuListItem = ({ item, currentPath, isActive, hierarchyLevel }) => {
             onClick={handleToggle}
           >
             {isCategory ? (
-              <SectionHeading>{item.name}</SectionHeading>
+              <SectionHeading marginBottom="none">{item.name}</SectionHeading>
             ) : (
               <span>{item.name}</span>
             )}
