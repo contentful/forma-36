@@ -210,6 +210,6 @@ const bodyStyles = css`
   }
 
   /* OSANO STYLES END */
-`
+`;
 
 export const GlobalStyle = () => <Global styles={bodyStyles} />;
