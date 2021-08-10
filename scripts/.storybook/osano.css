@@ -1,4 +1,3 @@
-@import '~@contentful/forma-36-tokens/dist/css/index.css';
 @import '~@contentful/experience-consent-manager/dist/style.css';
 
 /* Additional OSANO styles */
@@ -12,7 +11,7 @@
   box-sizing: border-box;
   background-size: contain;
   background-repeat: no-repeat;
-  background-color: var(--color-white);
+  background-color: #FFFFFF;
   background-image: url('./public/CookieVelDonut.png');
 }
 
