@@ -6,13 +6,14 @@ import { ValidationMessage } from '../src/ValidationMessage';
 
 describe('ValidationMessage', function () {
   it('renders the component with all required props', () => {
-    const { getByText } = render(
+    const { getByText, getByTestId } = render(
       <ValidationMessage>This field is required</ValidationMessage>,
     );
 
-    const text = getByText('This field is required');
-    expect(text).toBeTruthy();
-    expect(text.previousSibling.nodeName).toMatch(/svg/i);
+    const textElement = getByText('This field is required');
+    const iconElement = getByTestId('cf-ui-icon');
+    expect(textElement).toBeTruthy();
+    expect(textElement.previousSibling).toContainElement(iconElement);
   });
 
   it('renders the component with an additional class name', () => {
