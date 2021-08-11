@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
 import { Paragraph } from '@contentful/f36-typography';
-import { ModalConfirm, ModalConfirmProps } from './ModalConfirm';
+import {
+  ModalConfirm,
+  ModalConfirmProps,
+} from '../src/ModalConfirm/ModalConfirm';
 import { Button } from '@contentful/f36-button';
-
-import { TextInput } from '../../TextInput';
 
 export default {
   title: 'Components/Modal/ModalConfirm',
@@ -119,7 +120,7 @@ export function ComplexStory(props: ModalConfirmProps) {
         <Paragraph marginBottom="spacingM">
           Type <strong>unlock</strong> to allow confirming this modal
         </Paragraph>
-        <TextInput
+        <input
           value={repeat}
           onChange={(e) => setRepeat((e.target as HTMLInputElement).value)}
         />
