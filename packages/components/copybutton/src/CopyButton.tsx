@@ -1,14 +1,11 @@
 import { cx } from 'emotion';
 import React, { useState, useCallback, useRef } from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
-import { CommonProps } from '@contentful/f36-core';
 import { Copy } from '@contentful/f36-icons';
+import type { CommonProps } from '@contentful/f36-core';
 import { Tooltip } from '@contentful/f36-tooltip';
-import { Box } from '@contentful/f36-core';
 import type { TooltipProps } from '@contentful/f36-tooltip';
 import { getStyles } from './CopyButton.styles';
-
-const DEFAULT_TAG = 'div';
 
 export interface CopyButtonProps extends CommonProps {
   /**
@@ -30,11 +27,6 @@ export interface CopyButtonProps extends CommonProps {
    */
   tooltipProps?: Omit<TooltipProps, 'content' | 'children'>;
   /**
-   * HTML element used to wrap the CopyButton
-   * @default div
-   */
-  as?: React.ElementType;
-  /**
    * Value that will be copied to clipboard when the button is clicked
    */
   value: string;
@@ -45,9 +37,8 @@ export interface CopyButtonProps extends CommonProps {
   label?: string;
 }
 
-function _CopyButton(props: CopyButtonProps, ref: React.Ref<HTMLElement>) {
+function _CopyButton(props: CopyButtonProps, ref: React.Ref<HTMLDivElement>) {
   const {
-    as = DEFAULT_TAG,
     onCopy,
     value,
     className,
@@ -80,8 +71,7 @@ function _CopyButton(props: CopyButtonProps, ref: React.Ref<HTMLElement>) {
   );
 
   return (
-    <Box
-      as={as}
+    <div
       ref={ref}
       data-test-id={testId}
       className={cx(styles.wrapper, className)}
@@ -102,7 +92,7 @@ function _CopyButton(props: CopyButtonProps, ref: React.Ref<HTMLElement>) {
           </button>
         </Tooltip>
       </CopyToClipboard>
-    </Box>
+    </div>
   );
 }
 
