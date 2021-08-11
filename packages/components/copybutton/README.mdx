@@ -9,6 +9,7 @@ typescript: ./src/CopyButton.tsx
 ---
 
 import { Props } from '@contentful/f36-docs-utils';
+import { CopyButton } from '@contentful/f36-copybutton';
 
 The CopyButton is a styled button that copies text into the user's clipboard. This is useful in combination with for example tables or inputs that show values that the user is likely to use elsewhere, such as automatically generated passwords.
 
@@ -26,27 +27,27 @@ CopyButton can be used in combination with text inputs where the input value sho
 ## Code examples
 
 ```jsx
-import { CopyButton } from '@contentful/f36-copybutton';
+// import { CopyButton } from '@contentful/f36-copybutton';
 
-<CopyButton value="Lorem Ipsum" />;
+<CopyButton value="Lorem Ipsum" />
 ```
 
 An example with a custom tooltip:
 
 ```jsx
-import { CopyButton } from '@contentful/f36-copybutton';
+// import { CopyButton } from '@contentful/f36-copybutton';
 
 <CopyButton
   value="Lorem Ipsum"
   tooltipCopiedText="The text has been copied"
   tooltipText="Copy this text to clipboard"
-/>;
+/>
 ```
 
 An example with custom tooltip placement and custom aria-label.
 
 ```jsx
-import { CopyButton } from '@contentful/f36-copybutton';
+// import { CopyButton } from '@contentful/f36-copybutton';
 
 <CopyButton
   value="Lorem Ipsum"
@@ -54,7 +55,7 @@ import { CopyButton } from '@contentful/f36-copybutton';
   tooltipText="Copy this text to clipboard"
   label="Copy 'Lorem Ipsum'."
   tooltipProps={{ placement: 'bottom', usePortal: true }}
-/>;
+/>
 ```
 
 ## Accessibility
