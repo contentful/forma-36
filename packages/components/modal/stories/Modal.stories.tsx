@@ -116,7 +116,7 @@ export const ControllerModal: Story<ModalProps> = (props) => {
           <React.Fragment>
             <Modal.Header title={title} onClose={onClose} />
             <Modal.Content>Hello from controlled modal window</Modal.Content>
-            <Modal.Controls position="right">
+            <Modal.Controls>
               <Button onClick={onClose} variant="transparent">
                 Close
               </Button>

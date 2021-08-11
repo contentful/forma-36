@@ -78,16 +78,6 @@ export const Default: Story<ModalConfirmProps> = (props) => {
   return <SimpleDemo {...props} />;
 };
 
-export const RightButtons: Story<ModalConfirmProps> = (props) => {
-  return <SimpleDemo {...props} />;
-};
-
-RightButtons.args = {
-  modalControlsProps: {
-    position: 'right',
-  },
-};
-
 export function ComplexStory(props: ModalConfirmProps) {
   const [isShown, setShown] = useState(false);
   const [isLoading, setLoading] = useState(false);

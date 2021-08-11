@@ -8,7 +8,8 @@ import type { CommonProps } from '@contentful/f36-core';
 import { ModalHeader, ModalHeaderProps } from './ModalHeader/ModalHeader';
 import { ModalContent, ModalContentProps } from './ModalContent/ModalContent';
 import { ModalControls } from './ModalControls/ModalControls';
-import styles from './Modal.css';
+import { getModalStyles } from './Modal.styles';
+import type { ModalSizeType, ModalPositionType } from './types';
 
 const ModalSizesMapper = {
   medium: '520px',
@@ -17,15 +18,6 @@ const ModalSizesMapper = {
   fullWidth: '100vw',
   zen: '100vw',
 };
-
-export type ModalSizeType =
-  | 'small'
-  | 'medium'
-  | 'large'
-  | 'fullWidth'
-  | 'zen'
-  | string
-  | number;
 
 export interface ModalProps extends CommonProps {
   /**
@@ -53,7 +45,7 @@ export interface ModalProps extends CommonProps {
   /**
    * Indicating if modal is centered or linked to the top
    */
-  position?: 'center' | 'top';
+  position?: ModalPositionType;
   /**
       Top offset if position is 'top'
     */
@@ -107,6 +99,8 @@ export function Modal({
     topOffset,
   };
 
+  const styles = getModalStyles({ position, size, allowHeightOverflow });
+
   const renderDefault = () => {
     return (
       <React.Fragment>
@@ -132,13 +126,11 @@ export function Modal({
       onAfterOpen={props.onAfterOpen}
       shouldCloseOnEsc={shouldCloseOnEscapePress}
       shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
-      portalClassName={styles.Modal__portal}
+      portalClassName={styles.portal}
       className={{
-        base: cx(styles.Modal__wrap, {
-          [styles['Modal__wrap--zen']]: size === 'zen',
-        }),
-        afterOpen: styles['Modal__wrap--after-open'],
-        beforeClose: styles['Modal__wrap--before-close'],
+        base: styles.base.root,
+        afterOpen: styles.base.afterOpen,
+        beforeClose: styles.base.beforeClose,
       }}
       style={{
         content: {
@@ -146,15 +138,10 @@ export function Modal({
         },
       }}
       overlayClassName={{
-        base: cx({
-          [styles.Modal__overlay]: true,
-          [styles['Modal__overlay--centered']]: position === 'center',
-        }),
-        afterOpen: styles['Modal__overlay--after-open'],
-        beforeClose: styles['Modal__overlay--before-close'],
+        base: styles.modalOverlay.root,
+        afterOpen: styles.modalOverlay.afterOpen,
+        beforeClose: styles.modalOverlay.beforeClose,
       }}
-      htmlOpenClassName="Modal__html--open"
-      bodyOpenClassName="Modal__body--open"
       closeTimeoutMS={300}
     >
       <Box
@@ -162,10 +149,7 @@ export function Modal({
         style={{
           width: ModalSizesMapper[size] || size,
         }}
-        className={cx(styles.Modal, otherProps.className, {
-          [styles['Modal--overflow']]: allowHeightOverflow,
-          [styles['Modal--zen']]: size === 'zen',
-        })}
+        className={cx(styles.modal, otherProps.className)}
       >
         {typeof otherProps.children === 'function'
           ? otherProps.children(props)

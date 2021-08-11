@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Modal } from '../Modal';
-import type { ModalSizeType } from '../Modal';
+import type { ModalSizeType } from '../types';
 import type { ModalHeaderProps } from '../ModalHeader/ModalHeader';
 import type { ModalContentProps } from '../ModalContent/ModalContent';
 import type { ModalControlsProps } from '../ModalControls/ModalControls';
