@@ -1,5 +1,5 @@
 import { createTracking } from '@contentful/experience-tracking';
-import * as events from './src/analytics/generated';
+import * as trackingPlan from './src/analytics/generated';
 
 const OSANO_KEY = process.env.GATSBY_OSANO_KEY;
 const OSANO_F36_WEBSITE_KEY = process.env.GATSBY_OSANO_F36_WEBSITE_KEY;
@@ -61,12 +61,15 @@ function initOsano() {
 /**
  * Function that handles what should happen when a user changes their consent options
  *
- * @param {object} newConsentOptions
+ * @param {Object} newConsentOptions - return value of `cm.getConsent()` from Osano’s client
  */
 function handleConsent(newConsentOptions) {
-  const previousConsent = window.localStorage.getItem('consent');
+  const savedConsent = window.localStorage.getItem('consent');
+  // storing saved consent in an objet for later use
+  const previousConsent = JSON.parse(savedConsent);
+
   const consentOptionsChanged =
-    JSON.stringify(newConsentOptions) !== previousConsent;
+    JSON.stringify(newConsentOptions) !== savedConsent;
 
   if (consentOptionsChanged) {
     // Save consent in localStorage for later
@@ -79,16 +82,22 @@ function handleConsent(newConsentOptions) {
     marketing: newConsentOptions.MARKETING === 'ACCEPT',
   };
 
+  // if user consent to analytics, but segmentClient is still not in window.tracking
+  // initialize Segment
   if (consent.analytics && !window.tracking) {
     initSegment(consent);
   }
 
-  // If ANALYTICS was changed to "DENY"
+  // If any option was changed to "DENY"
   // we need to reload the page to remove segment
-  if (
-    JSON.parse(previousConsent).ANALYTICS === 'ACCEPT' &&
-    !consent.analytics
-  ) {
+  const analyticsDenied =
+    previousConsent.ANALYTICS === 'ACCEPT' && !consent.analytics;
+  const marketingDenied =
+    previousConsent.MARKETING === 'ACCEPT' && !consent.marketing;
+  const personalizationDenied =
+    previousConsent.PERSONALIZATION === 'ACCEPT' && !consent.personalization;
+
+  if (analyticsDenied || marketingDenied || personalizationDenied) {
     window.location.reload();
   }
 }
@@ -97,14 +106,17 @@ function handleConsent(newConsentOptions) {
  * Funtion that will set up Segment, initialize its client
  * and save it to the window object to make it available for the rest of the application
  *
- * @param {object} consent - object that will be used in segmentClient.initialize()
+ * @param {Object} consent - object that will be used in segmentClient.initialize()
+ * @param {boolean} consent.analytics - it tells if analytics was accepted
+ * @param {boolean} consent.marketing - it tells if marketing was accepted
+ * @param {boolean} consent.personalization - it tells if personalization was accepted
  */
 function initSegment(consent) {
   // initialize Segment client
   const segmentClient = createTracking({
     segment: {
       key: SEGMENT_KEY,
-      plan: events,
+      plan: trackingPlan,
     },
   });
 

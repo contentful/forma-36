@@ -14,11 +14,7 @@
 						},
 						"properties": {
 							"properties": {
-								"from": {
-									"description": "",
-									"type": "string"
-								},
-								"to": {
+								"path": {
 									"description": "",
 									"type": "string"
 								},
@@ -28,9 +24,8 @@
 								}
 							},
 							"required": [
-								"to",
-								"from",
-								"user_key"
+								"user_key",
+								"path"
 							],
 							"type": "object"
 						},
@@ -51,5 +46,5 @@
 		"identify_traits": [
 		]
 	},
-	"update_time": "2021-08-10T15:11:29.000Z"
+	"update_time": "2021-08-11T16:02:22.000Z"
 }

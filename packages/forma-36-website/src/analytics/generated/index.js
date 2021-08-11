@@ -81,8 +81,7 @@ function withTypewriterContext(message = {}) {
 }
 /**
  * @typedef PageView
- * @property {string} from -
- * @property {string} to -
+ * @property {string} path -
  * @property {string} user_key -
  */
 /**
@@ -101,11 +100,7 @@ export function pageView(props, options, callback) {
 			context: {},
 			properties: {
 				properties: {
-					from: {
-						description: '',
-						type: 'string',
-					},
-					to: {
+					path: {
 						description: '',
 						type: 'string',
 					},
@@ -114,7 +109,7 @@ export function pageView(props, options, callback) {
 						type: 'string',
 					},
 				},
-				required: ['to', 'from', 'user_key'],
+				required: ['user_key', 'path'],
 				type: 'object',
 			},
 			traits: {
