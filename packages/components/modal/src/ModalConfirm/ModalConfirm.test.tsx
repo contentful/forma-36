@@ -27,7 +27,7 @@ it('renders the component', () => {
     </ModalConfirm>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
 
 it('renders the component with override header, content and controls', () => {
@@ -52,7 +52,7 @@ it('renders the component with override header, content and controls', () => {
     </ModalConfirm>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
 
 it('can accept custom labels', () => {
@@ -71,7 +71,7 @@ it('can accept custom labels', () => {
     </ModalConfirm>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
 
 it('has no a11y issues', async () => {

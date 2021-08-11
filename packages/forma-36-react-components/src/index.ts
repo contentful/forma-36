@@ -111,7 +111,6 @@ export * from './components/DateTime';
 export * from './components/EntityList';
 export * from './components/Form';
 export * from './components/IconButton';
-export * from './components/Modal';
 export * from './components/Notification';
 export * from './components/Select';
 export * from './components/SelectField';

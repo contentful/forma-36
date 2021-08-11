@@ -13,16 +13,6 @@ jest.mock(
     },
 );
 
-it('renders the component', () => {
-  const { container } = render(
-    <Modal title="Title" isShown onClose={() => {}}>
-      Content
-    </Modal>,
-  );
-
-  expect(container.firstChild).toMatchSnapshot();
-});
-
 it('has no a11y issues', async () => {
   const { container } = render(
     <Modal
@@ -45,7 +35,7 @@ it('renders the component without title', () => {
     </Modal>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
 
 it('can override header and content properties', () => {
@@ -66,7 +56,7 @@ it('can override header and content properties', () => {
     </Modal>,
   );
 
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
 
 it('can be controlled', () => {
@@ -83,5 +73,5 @@ it('can be controlled', () => {
       )}
     </Modal>,
   );
-  expect(container.firstChild).toMatchSnapshot();
+  throw new Error('not implemented');
 });
