@@ -94,14 +94,6 @@
     border-left: none;
     height: 100%;
     border-radius: 0 var(--border-radius-medium) var(--border-radius-medium) 0;
-
-    &:hover {
-      background-color: var(--color-element-lightest);
-    }
-
-    &:focus {
-      box-shadow: var(--glow-primary);
-    }
   }
 
   &:focus-within {

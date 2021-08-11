@@ -10,7 +10,7 @@ import React, {
 } from 'react';
 import cn from 'classnames';
 
-import { CopyButton } from '../CopyButton';
+import { CopyButton } from '@contentful/f36-copybutton';
 import styles from './TextInput.css';
 
 export type TextInputProps = {
@@ -135,7 +135,7 @@ export const TextInput = ({
       {withCopyButton && (
         <CopyButton
           onCopy={onCopy}
-          copyValue={valueState}
+          value={valueState}
           className={styles['TextInput__copy-button']}
         />
       )}
