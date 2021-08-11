@@ -45,7 +45,7 @@ export interface CopyButtonProps extends CommonProps {
   label?: string;
 }
 
-function CopyButton(props: CopyButtonProps, ref: React.Ref<HTMLElement>) {
+function _CopyButton(props: CopyButtonProps, ref: React.Ref<HTMLElement>) {
   const {
     as = DEFAULT_TAG,
     onCopy,
@@ -106,5 +106,4 @@ function CopyButton(props: CopyButtonProps, ref: React.Ref<HTMLElement>) {
   );
 }
 
-const _CopyButton = React.forwardRef(CopyButton);
-export { _CopyButton as CopyButton };
+export const CopyButton = React.forwardRef(_CopyButton);
