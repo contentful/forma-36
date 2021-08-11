@@ -9,24 +9,21 @@ export interface ModalContentProps extends PrimitiveProps<'div'> {
   as?: 'div';
 }
 
-export const ModalContent = React.forwardRef<HTMLDivElement, ModalContentProps>(
-  (
-    { testId = 'cf-ui-modal-content', className, children, ...otherProps },
-    ref,
-  ) => {
-    const styles = getModalContentStyles();
-    return (
-      <Box
-        {...otherProps}
-        as="div"
-        className={cx(styles.root, className)}
-        testId={testId}
-        ref={ref}
-      >
-        {children}
-      </Box>
-    );
-  },
-);
-
-ModalContent.displayName = 'ModalContent';
+export function ModalContent({
+  testId = 'cf-ui-modal-content',
+  className,
+  children,
+  ...otherProps
+}: ModalContentProps) {
+  const styles = getModalContentStyles();
+  return (
+    <Box
+      {...otherProps}
+      as="div"
+      className={cx(styles.root, className)}
+      testId={testId}
+    >
+      {children}
+    </Box>
+  );
+}

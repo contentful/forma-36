@@ -60,7 +60,6 @@
     "dayjs": "^1.9.1",
     "react-animate-height": "^2.0.7",
     "react-copy-to-clipboard": "^5.0.1",
-    "react-modal": "^3.11.2",
     "react-popper": "^2.2.3",
     "react-transition-group": "^4.4.2",
     "truncate": "^2.0.1"

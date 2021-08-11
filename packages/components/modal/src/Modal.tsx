@@ -1,6 +1,9 @@
 import React from 'react';
-import cn from 'classnames';
+import { cx } from 'emotion';
 import ReactModal from 'react-modal';
+
+import { Box } from '@contentful/f36-core';
+import type { CommonProps } from '@contentful/f36-core';
 
 import { ModalHeader, ModalHeaderProps } from './ModalHeader/ModalHeader';
 import { ModalContent, ModalContentProps } from './ModalContent/ModalContent';
@@ -24,7 +27,7 @@ export type ModalSizeType =
   | string
   | number;
 
-export interface ModalProps {
+export interface ModalProps extends CommonProps {
   /**
    * When true, the dialog is shown.
    */
@@ -78,12 +81,10 @@ export interface ModalProps {
    */
   modalContentProps?: Partial<ModalContentProps>;
 
-  className?: string;
-  testId?: string;
-
-  // eslint-disable-next-line
-  children: any;
+  children: React.ReactNode | RenderModal;
 }
+
+type RenderModal = (modalProps: ModalProps) => React.ReactNode;
 
 export function Modal({
   allowHeightOverflow,
@@ -133,7 +134,7 @@ export function Modal({
       shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
       portalClassName={styles.Modal__portal}
       className={{
-        base: cn(styles.Modal__wrap, {
+        base: cx(styles.Modal__wrap, {
           [styles['Modal__wrap--zen']]: size === 'zen',
         }),
         afterOpen: styles['Modal__wrap--after-open'],
@@ -145,7 +146,7 @@ export function Modal({
         },
       }}
       overlayClassName={{
-        base: cn({
+        base: cx({
           [styles.Modal__overlay]: true,
           [styles['Modal__overlay--centered']]: position === 'center',
         }),
@@ -156,12 +157,12 @@ export function Modal({
       bodyOpenClassName="Modal__body--open"
       closeTimeoutMS={300}
     >
-      <div
-        data-test-id={testId}
+      <Box
+        testId={testId}
         style={{
           width: ModalSizesMapper[size] || size,
         }}
-        className={cn(styles.Modal, otherProps.className, {
+        className={cx(styles.Modal, otherProps.className, {
           [styles['Modal--overflow']]: allowHeightOverflow,
           [styles['Modal--zen']]: size === 'zen',
         })}
@@ -169,7 +170,7 @@ export function Modal({
         {typeof otherProps.children === 'function'
           ? otherProps.children(props)
           : renderDefault()}
-      </div>
+      </Box>
     </ReactModal>
   );
 }

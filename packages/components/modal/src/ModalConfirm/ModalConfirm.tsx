@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
 import { Modal } from '../Modal';
 import type { ModalSizeType } from '../Modal';
@@ -181,19 +181,9 @@ export function ModalConfirm({
             <Modal.Header title={title || ''} {...modalHeaderProps} />
             <Modal.Content {...modalContentProps}>{children}</Modal.Content>
             <Modal.Controls {...modalControlsProps}>
-              {modalControlsProps?.position === 'right' ? (
-                <Fragment>
-                  {cancelButton}
-                  {secondaryButton}
-                  {confirmButton}
-                </Fragment>
-              ) : (
-                <Fragment>
-                  {confirmButton}
-                  {secondaryButton}
-                  {cancelButton}
-                </Fragment>
-              )}
+              {cancelButton}
+              {secondaryButton}
+              {confirmButton}
             </Modal.Controls>
           </div>
         );
