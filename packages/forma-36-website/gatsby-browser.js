@@ -1,11 +1,64 @@
+import { createTracking } from '@contentful/experience-tracking';
+import * as events from './src/analytics/generated';
+
 const OSANO_KEY = process.env.GATSBY_OSANO_KEY;
 const OSANO_F36_WEBSITE_KEY = process.env.GATSBY_OSANO_F36_WEBSITE_KEY;
+const SEGMENT_KEY = process.env.GATSBY_SEGMENT_KEY;
+
+/**
+ * Funtion that will set up Segment, initialize its client
+ * and save it to the window object to make it available for the rest of the application
+ *
+ * @param {object} consent - object that will be used in segmentClient.initialize()
+ */
+function initSegment(consent) {
+  // initialize Segment client
+  const segmentClient = createTracking({
+    segment: {
+      key: SEGMENT_KEY,
+      plan: events,
+    },
+  });
+
+  segmentClient.initialize('userId', {
+    consent,
+    integrations: ['Google Analytics'],
+  });
+
+  // save segmentClient in the window
+  // to be used for tracking in the rest of the application
+  window.tracking = segmentClient;
+}
 
 const handleConsent = (newConsentOptions) => {
-  // Save consent in localStorage for later
-  window.localStorage.setItem('consent', JSON.stringify(newConsentOptions));
+  const previousConsent = window.localStorage.getItem('consent');
+  const consentOptionsChanged =
+    JSON.stringify(newConsentOptions) !== previousConsent;
 
-  // TODO: handle initialization of any analytics service here
+  if (consentOptionsChanged) {
+    console.log('OPTIONS CHANGED');
+    // Save consent in localStorage for later
+    window.localStorage.setItem('consent', JSON.stringify(newConsentOptions));
+  }
+
+  const consent = {
+    analytics: newConsentOptions.ANALYTICS === 'ACCEPT',
+    personalization: newConsentOptions.PERSONALIZATION === 'ACCEPT',
+    marketing: newConsentOptions.MARKETING === 'ACCEPT',
+  };
+
+  if (consent.analytics && !window.tracking) {
+    initSegment(consent);
+  }
+
+  // If ANALYTICS was changed to "DENY"
+  // we need to reload the page to reove segment
+  if (
+    JSON.parse(previousConsent).ANALYTICS === 'ACCEPT' &&
+    !consent.analytics
+  ) {
+    window.location.reload();
+  }
 };
 
 const initOsano = () => {
@@ -32,6 +85,7 @@ const initOsano = () => {
          * The init function for Osano should run only once,
          * either from Osano or when Osano script is loaded
          * */
+        console.log('initialized: ', consentOptions);
         if (!window.consentInitialized) {
           handleConsent(consentOptions);
           window.consentInitialized = true;
@@ -39,6 +93,7 @@ const initOsano = () => {
       });
       cm.on('osano-cm-consent-saved', function (newConsentOptions) {
         // This event is called everytime the user saves their consent options
+        console.log('osano-cm-consent-saved: ', newConsentOptions);
         handleConsent(newConsentOptions);
       });
     },
