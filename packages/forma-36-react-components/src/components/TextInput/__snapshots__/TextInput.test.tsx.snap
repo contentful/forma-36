@@ -237,7 +237,7 @@ exports[`renders the component with the copy button 1`] = `
     value=""
   />
   <div
-    class="TextInput__copy-button emotion-3"
+    class="emotion-3 TextInput__copy-button"
     data-test-id="cf-ui-copy-button"
   >
     <span
