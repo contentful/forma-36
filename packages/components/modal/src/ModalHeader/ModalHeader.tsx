@@ -1,46 +1,44 @@
 import React from 'react';
-import cn from 'classnames';
+import { cx } from 'emotion';
 import { Close } from '@contentful/f36-icons';
+import { Flex } from '@contentful/f36-core';
+import type { PrimitiveProps } from '@contentful/f36-core';
+import { Button } from '@contentful/f36-button';
+import { Heading } from '@contentful/f36-typography';
 
-import { IconButton } from '../../IconButton';
-import styles from './ModalHeader.css';
+import { getModalHeaderStyles } from './ModalHeader.styles';
 
-export interface ModalHeaderProps {
+export interface ModalHeaderProps extends PrimitiveProps<'div'> {
   title: string;
   onClose?: Function;
-  testId?: string;
-  className?: string;
-  isNotWrapped?: boolean;
-  style?: React.CSSProperties;
+  as?: 'div';
 }
 
 export function ModalHeader({
   onClose,
   title,
   testId = 'cf-ui-modal-header',
-  isNotWrapped,
   className,
   ...otherProps
 }: ModalHeaderProps): React.ReactElement {
-  const titleClassNames = cn(styles.ModalHeader__title, {
-    [styles['ModalHeader__title--is-not-wrapped']]: isNotWrapped,
-  });
+  const styles = getModalHeaderStyles();
 
   return (
-    <div
+    <Flex
       {...otherProps}
-      className={cn(styles.ModalHeader, className)}
-      data-test-id={testId}
+      className={cx(styles.root, className)}
+      testId={testId}
+      alignItems="center"
+      flexShrink={0}
     >
-      <h1 className={titleClassNames}>{title}</h1>
+      <Heading as="h1" isTruncated>
+        {title}
+      </Heading>
       {onClose && (
-        <IconButton
-          iconProps={{ as: Close, size: 'small' }}
-          buttonType="muted"
-          label="Close"
-          onClick={() => onClose()}
-        />
+        <Button variant="transparent" onClick={onClose}>
+          <Close size="small" />
+        </Button>
       )}
-    </div>
+    </Flex>
   );
 }

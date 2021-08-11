@@ -11,6 +11,8 @@
     "@contentful/f36-core": "^4.0.0",
     "@contentful/f36-tokens": "^4.0.0",
     "@contentful/f36-button": "^4.0.0",
+    "@contentful/f36-icons": "^4.0.0",
+    "@contentful/f36-typography": "^4.0.0",
     "emotion": "^10.0.17"
   },
   "peerDependencies": {
