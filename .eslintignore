@@ -5,3 +5,4 @@ esm
 *.css.d.ts
 public
 .cache
+**/generated
