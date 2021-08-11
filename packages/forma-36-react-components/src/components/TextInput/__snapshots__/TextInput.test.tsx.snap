@@ -170,13 +170,52 @@ exports[`renders the component with small width 1`] = `
 `;
 
 exports[`renders the component with the copy button 1`] = `
-.emotion-2 > button[disabled] {
-  pointer-events: none;
+.emotion-3 {
+  display: inline-block;
+  height: calc(1rem * (40 / 16));
+  position: relative;
+  width: calc(1rem * (40 / 16));
 }
 
 .emotion-1 {
-  display: inherit;
-  outline: 0;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #CFD9E0;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  height: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  outline: none;
+  padding: 0;
+  -webkit-transition: background 0.1s ease-in-out;
+  transition: background 0.1s ease-in-out;
+  width: 100%;
+}
+
+.emotion-1:hover {
+  background-color: #F7F9FA;
+  cursor: pointer;
+}
+
+.emotion-1:active {
+  background-color: #E7EBEE;
+  cursor: pointer;
+}
+
+.emotion-1:focus {
+  box-shadow: 0px 0px 0px 3px #E7EBEE;
+}
+
+.emotion-2 > button[disabled] {
+  pointer-events: none;
 }
 
 .emotion-0 {
@@ -198,43 +237,32 @@ exports[`renders the component with the copy button 1`] = `
     value=""
   />
   <div
-    class="CopyButton TextInput__copy-button"
+    class="TextInput__copy-button emotion-3"
     data-test-id="cf-ui-copy-button"
-    id="copyButton"
   >
     <span
       class="emotion-2"
     >
       <button
         aria-describedby="id"
-        class="CopyButton__button"
+        aria-label="Copy undefined to clipboard"
+        class="emotion-1"
         type="button"
       >
-        <span
-          class="emotion-1 CopyButton__TabFocusTrap"
-          tabindex="-1"
+        <svg
+          aria-hidden="true"
+          class="emotion-0"
+          data-test-id="cf-ui-icon"
+          viewBox="0 0 24 24"
         >
-          <span
-            class="CopyButton__text"
-          >
-            Copy 
-             to clipboard
-          </span>
-          <svg
-            aria-hidden="true"
-            class="emotion-0"
-            data-test-id="cf-ui-icon"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M0 0h24v24H0z"
-              fill="none"
-            />
-            <path
-              d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"
-            />
-          </svg>
-        </span>
+          <path
+            d="M0 0h24v24H0z"
+            fill="none"
+          />
+          <path
+            d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"
+          />
+        </svg>
       </button>
     </span>
   </div>
