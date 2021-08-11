@@ -1,28 +1,32 @@
 import React from 'react';
-import cn from 'classnames';
+import { cx } from 'emotion';
+import type { PrimitiveProps } from '@contentful/f36-core';
+import { Box } from '@contentful/f36-core';
+import { getModalContentStyles } from './ModalContent.styles';
 
-import styles from './ModalContent.css';
-
-export interface ModalContentProps {
-  testId?: string;
-  className?: string;
+export interface ModalContentProps extends PrimitiveProps<'div'> {
   children: React.ReactNode;
-  style?: React.CSSProperties;
+  as?: 'div';
 }
 
-export function ModalContent({
-  testId = 'cf-ui-modal-content',
-  className,
-  children,
-  ...otherProps
-}: ModalContentProps): React.ReactElement {
-  return (
-    <div
-      {...otherProps}
-      className={cn(styles.ModalContent, className)}
-      data-test-id={testId}
-    >
-      {children}
-    </div>
-  );
-}
+export const ModalContent = React.forwardRef<HTMLDivElement, ModalContentProps>(
+  (
+    { testId = 'cf-ui-modal-content', className, children, ...otherProps },
+    ref,
+  ) => {
+    const styles = getModalContentStyles();
+    return (
+      <Box
+        {...otherProps}
+        as="div"
+        className={cx(styles.root, className)}
+        testId={testId}
+        ref={ref}
+      >
+        {children}
+      </Box>
+    );
+  },
+);
+
+ModalContent.displayName = 'ModalContent';
