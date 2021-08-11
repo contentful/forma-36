@@ -3,10 +3,13 @@ import { render } from '@testing-library/react';
 
 import { ArrowDown } from '../src/';
 
-describe('Separate components', () => {
+describe('Separate icon components', () => {
   it('renders', () => {
-    const { baseElement } = render(<ArrowDown />);
+    const { getByTestId } = render(<ArrowDown />);
 
-    expect(baseElement).toMatchSnapshot();
+    const icon = getByTestId('cf-ui-icon');
+
+    expect(icon.getAttribute('aria-hidden')).toEqual('true');
+    expect(icon.getAttribute('viewBox')).toEqual('0 0 24 24');
   });
 });

@@ -1,126 +1,157 @@
 import React from 'react';
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { axe } from '@/scripts/test/axeHelper';
+import tokens from '@contentful/f36-tokens';
 
 import { ControlledInputField } from './ControlledInputField';
 
-it('renders the component', () => {
-  const { container } = render(
-    <ControlledInputField id="checkbox" label="label text" />,
-  );
+describe('ControlledInputField', function () {
+  const labelText = 'Label Text';
 
-  expect(container.firstChild).toMatchSnapshot();
-});
+  it('renders the component', () => {
+    const { getByLabelText } = render(
+      <ControlledInputField id="checkbox" label={labelText} />,
+    );
 
-it('renders the component with an additional class name', () => {
-  const { container } = render(
-    <ControlledInputField
-      className="my-extra-class"
-      id="checkbox"
-      label="Label Text"
-    />,
-  );
+    const input = getByLabelText(labelText);
+    expect(input).toBeTruthy();
+    expect(input.id).toEqual('checkbox');
+  });
 
-  expect(container.firstChild).toMatchSnapshot();
-});
+  it('should trigger the onChange function when clicked', () => {
+    const mockOnChange = jest.fn();
+    const { getByLabelText } = render(
+      <ControlledInputField
+        id="checkbox"
+        label={labelText}
+        onChange={mockOnChange}
+      />,
+    );
 
-it('renders the component as required', () => {
-  const { container } = render(
-    <ControlledInputField
-      className="my-extra-class"
-      id="checkbox"
-      label="Label Text"
-      isRequired
-    />,
-  );
+    const input = getByLabelText(labelText);
+    const label = input.nextSibling;
+    fireEvent.click(label);
+    expect(mockOnChange).toHaveBeenCalled();
+  });
 
-  expect(container.firstChild).toMatchSnapshot();
-});
+  it('renders the component with an additional class name', () => {
+    const { container } = render(
+      <ControlledInputField
+        className="my-extra-class"
+        id="checkbox"
+        label={labelText}
+      />,
+    );
 
-it('renders the component with a help text', () => {
-  const { container } = render(
-    <ControlledInputField
-      className="my-extra-class"
-      id="checkbox"
-      label="Label Text"
-      helpText="Help Text"
-    />,
-  );
+    expect(container.firstChild).toHaveClass('my-extra-class');
+  });
 
-  expect(container.firstChild).toMatchSnapshot();
-});
+  it('renders the component as required', () => {
+    const { getByLabelText, getByText } = render(
+      <ControlledInputField
+        className="my-extra-class"
+        id="checkbox"
+        label={labelText}
+        isRequired
+      />,
+    );
 
-it('renders the component with a validation message', () => {
-  const { container } = render(
-    <ControlledInputField
-      className="my-extra-class"
-      id="checkbox"
-      label="Label Text"
-      validationMessage="Not valid!"
-    />,
-  );
+    const input = getByLabelText(/required/);
+    expect(input).toBeTruthy();
+    expect(input.id).toEqual('checkbox');
+    const label = getByText(labelText);
+    expect(label.textContent).toContain('required');
+  });
 
-  expect(container.firstChild).toMatchSnapshot();
-});
+  it('renders the component with a help text', () => {
+    const { getByText } = render(
+      <ControlledInputField
+        className="my-extra-class"
+        id="checkbox"
+        label={labelText}
+        helpText="Help Text"
+      />,
+    );
 
-it('renders the component in a disabled state', () => {
-  const { container } = render(
-    <ControlledInputField
-      className="my-extra-class"
-      id="checkbox"
-      label="Label Text"
-      isDisabled
-    />,
-  );
+    expect(getByText('Help Text')).toBeTruthy();
+  });
 
-  expect(container.firstChild).toMatchSnapshot();
-});
+  it('renders the component with a validation message', () => {
+    const { getByText } = render(
+      <ControlledInputField
+        className="my-extra-class"
+        id="checkbox"
+        label={labelText}
+        validationMessage="Not valid!"
+      />,
+    );
 
-it('renders the component with a light label variation', () => {
-  const { container } = render(
-    <ControlledInputField
-      className="my-extra-class"
-      id="checkbox"
-      label="Label Text"
-      validationMessage="Not valid!"
-      isLabelLight
-    />,
-  );
+    expect(getByText('Not valid!')).toBeTruthy();
+  });
 
-  expect(container.firstChild).toMatchSnapshot();
-});
+  it('renders the component in a disabled state', () => {
+    const { getByLabelText } = render(
+      <ControlledInputField
+        className="my-extra-class"
+        id="checkbox"
+        label={labelText}
+        isDisabled
+      />,
+    );
 
-it('renders the component as checked', () => {
-  const { container } = render(
-    <ControlledInputField
-      className="my-extra-class"
-      id="checkbox"
-      label="Label Text"
-      isChecked
-    />,
-  );
+    const input = getByLabelText(labelText);
+    expect(input).toBeDisabled();
+  });
 
-  expect(container.firstChild).toMatchSnapshot();
-});
+  it('renders the component with a light label variation', () => {
+    const { getByText } = render(
+      <ControlledInputField
+        className="my-extra-class"
+        id="checkbox"
+        label={labelText}
+        validationMessage="Not valid!"
+        isLabelLight
+      />,
+    );
 
-it('renders the component with a value', () => {
-  const { container } = render(
-    <ControlledInputField
-      className="my-extra-class"
-      id="checkbox"
-      label="Label Text"
-      value="someValue"
-    />,
-  );
+    expect(getByText(labelText)).toHaveStyle({
+      fontWeight: tokens.fontWeightNormal,
+    });
+  });
 
-  expect(container.firstChild).toMatchSnapshot();
-});
+  it('renders the component as checked', () => {
+    const { getByLabelText } = render(
+      <ControlledInputField
+        className="my-extra-class"
+        id="checkbox"
+        label={labelText}
+        isChecked
+      />,
+    );
 
-it('has no a11y issues', async () => {
-  const { container } = render(
-    <ControlledInputField id="checkbox" label="label text" />,
-  );
-  const results = await axe(container);
+    expect(getByLabelText(labelText)).toBeChecked();
+  });
 
-  expect(results).toHaveNoViolations();
+  it('renders the component with a value', () => {
+    const { getByLabelText } = render(
+      <ControlledInputField
+        className="my-extra-class"
+        id="checkbox"
+        label={labelText}
+        value="someValue"
+      />,
+    );
+
+    const input = getByLabelText(labelText);
+    expect(input.getAttribute('value')).toEqual('someValue');
+  });
+
+  it('has no a11y issues', async () => {
+    const { container } = render(
+      <ControlledInputField id="checkbox" label={labelText} />,
+    );
+    const results = await axe(container);
+
+    expect(results).toHaveNoViolations();
+  });
 });

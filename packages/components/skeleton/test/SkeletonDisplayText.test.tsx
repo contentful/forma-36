@@ -5,13 +5,15 @@ import { axe } from '@/scripts/test/axeHelper';
 import { SkeletonContainer } from '../src/SkeletonContainer/SkeletonContainer';
 import { SkeletonDisplayText } from '../src/SkeletonDisplayText/SkeletonDisplayText';
 
-it('has no a11y issues', async () => {
-  const { container } = render(
-    <SkeletonContainer>
-      <SkeletonDisplayText />
-    </SkeletonContainer>,
-  );
-  const results = await axe(container);
+describe('SkeletonDisplayText', () => {
+  it('has no a11y issues', async () => {
+    const { container } = render(
+      <SkeletonContainer>
+        <SkeletonDisplayText />
+      </SkeletonContainer>,
+    );
+    const results = await axe(container);
 
-  expect(results).toHaveNoViolations();
+    expect(results).toHaveNoViolations();
+  });
 });

@@ -4,19 +4,23 @@ import { axe } from '@/scripts/test/axeHelper';
 
 import { CheckboxField } from './CheckboxField';
 
-it('renders the component', () => {
-  const { container } = render(
-    <CheckboxField id="checkbox" label="label text" />,
-  );
+describe('CheckboxField', function () {
+  it('renders the component', () => {
+    const { getByLabelText } = render(
+      <CheckboxField id="checkbox" label="label text" />,
+    );
 
-  expect(container.firstChild).toMatchSnapshot();
-});
+    const checkbox = getByLabelText('label text');
+    expect(checkbox).toBeInTheDocument();
+    expect(checkbox.id).toEqual('checkbox');
+  });
 
-it('has no a11y issues', async () => {
-  const { container } = render(
-    <CheckboxField id="checkbox" label="label text" />,
-  );
-  const results = await axe(container);
+  it('has no a11y issues', async () => {
+    const { container } = render(
+      <CheckboxField id="checkbox" label="label text" />,
+    );
+    const results = await axe(container);
 
-  expect(results).toHaveNoViolations();
+    expect(results).toHaveNoViolations();
+  });
 });
