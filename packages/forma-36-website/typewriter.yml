@@ -1,0 +1,15 @@
+# Segment Typewriter Configuration (https://segment.com/docs/protocols/typewriter)
+# Just run `npx typewriter@next` to re-generate a client with the latest versions of these events.
+
+# You can find more documentation on configuring this client in the Segment docs.
+# See: https://segment.com/docs/protocols/typewriter
+client:
+  sdk: analytics.js
+  language: javascript
+
+trackingPlans:
+  # Tracking Plan: F36 Website
+  # https://app.segment.com/contentful-staging/protocols/tracking-plans/rs_1wXbbPmtuRitFQRa8wJZVQWbyfv
+  - id: rs_1wXbbPmtuRitFQRa8wJZVQWbyfv
+    workspaceSlug: contentful-staging
+    path: src/analytics/generated

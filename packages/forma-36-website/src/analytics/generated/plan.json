@@ -1,0 +1,55 @@
+{
+	"create_time": "2021-08-10T15:05:50.000Z",
+	"display_name": "F36 Website",
+	"name": "workspaces/contentful-staging/tracking-plans/rs_1wXbbPmtuRitFQRa8wJZVQWbyfv",
+	"rules": {
+		"events": [
+			{
+				"description": "it tracks every visit to any page of Forma 36’s website",
+				"name": "page_view",
+				"rules": {
+					"$schema": "http://json-schema.org/draft-07/schema#",
+					"properties": {
+						"context": {
+						},
+						"properties": {
+							"properties": {
+								"from": {
+									"description": "",
+									"type": "string"
+								},
+								"to": {
+									"description": "",
+									"type": "string"
+								},
+								"user_key": {
+									"description": "",
+									"type": "string"
+								}
+							},
+							"required": [
+								"to",
+								"from",
+								"user_key"
+							],
+							"type": "object"
+						},
+						"traits": {
+							"type": "object"
+						}
+					},
+					"required": [
+						"properties"
+					],
+					"type": "object"
+				},
+				"version": 1
+			}
+		],
+		"group_traits": [
+		],
+		"identify_traits": [
+		]
+	},
+	"update_time": "2021-08-10T15:11:29.000Z"
+}

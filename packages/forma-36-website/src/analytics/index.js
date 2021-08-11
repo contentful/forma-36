@@ -1,0 +1,1 @@
+export { pageView } from './generated';
