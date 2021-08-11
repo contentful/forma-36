@@ -1,36 +1,33 @@
 import React from 'react';
-import cn from 'classnames';
+import { cx } from 'emotion';
 
-import styles from './ModalControls.css';
+import type { PrimitiveProps } from '@contentful/f36-core';
+import { Flex } from '@contentful/f36-core';
+import { ButtonGroup } from '@contentful/f36-button';
 
-export interface ModalControlsProps {
-  testId?: string;
-  className?: string;
-  children: React.ReactNode;
-  style?: React.CSSProperties;
-  position?: 'left' | 'right';
+import { getModalControlsStyles } from './ModalControls.styles';
+
+export interface ModalControlsProps extends PrimitiveProps<'div'> {
+  as?: 'div';
+  children: React.ReactElement[];
 }
 
 export function ModalControls({
   testId = 'cf-ui-modal-controls',
-  position = 'left',
   className,
   children,
   ...otherProps
 }: ModalControlsProps): React.ReactElement {
+  const styles = getModalControlsStyles();
   return (
-    <div
+    <Flex
       {...otherProps}
-      className={cn(
-        styles.ModalControls,
-        {
-          [styles['ModalControls--right']]: position === 'right',
-        },
-        className,
-      )}
-      data-test-id={testId}
+      className={cx(styles.root, className)}
+      testId={testId}
+      flexDirection="row"
+      justifyContent="flex-end"
     >
-      {children}
-    </div>
+      <ButtonGroup variant="spaced">{children}</ButtonGroup>
+    </Flex>
   );
 }
