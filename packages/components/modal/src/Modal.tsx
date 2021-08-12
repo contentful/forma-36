@@ -143,7 +143,7 @@ export function Modal({
         } else if (contentRef.current) {
           focusFirstWithinNode(contentRef.current);
         }
-      }, 200);
+      }, 100);
     }
   }, [props.isShown, props.initialFocusRef]);
 

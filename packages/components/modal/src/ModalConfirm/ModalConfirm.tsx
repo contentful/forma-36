@@ -96,6 +96,11 @@ export interface ModalConfirmProps {
    */
   modalControlsProps?: Partial<ModalControlsProps>;
 
+  /**
+   * Optional property to set initial focus
+   */
+  initialFocusRef?: React.RefObject<HTMLElement>;
+
   testId?: string;
   confirmTestId?: string;
   secondaryTestId?: string;
@@ -130,11 +135,9 @@ export function ModalConfirm({
   size = 'medium',
   testId = 'cf-ui-modal-confirm',
   title = 'Are you sure?',
+  initialFocusRef,
 }: ModalConfirmProps) {
-  console.log({
-    Modal,
-    ModalControls: Modal.Controls,
-  });
+  const cancelRef = React.useRef(null);
 
   const confirmButton = confirmLabel ? (
     <Button
@@ -161,7 +164,12 @@ export function ModalConfirm({
   ) : null;
 
   const cancelButton = cancelLabel ? (
-    <Button testId={cancelTestId} variant="transparent" onClick={onCancel}>
+    <Button
+      testId={cancelTestId}
+      variant="transparent"
+      onClick={onCancel}
+      ref={initialFocusRef || cancelRef}
+    >
       {cancelLabel}
     </Button>
   ) : null;
@@ -175,6 +183,7 @@ export function ModalConfirm({
       shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
       shouldCloseOnEscapePress={shouldCloseOnEscapePress}
       allowHeightOverflow={allowHeightOverflow}
+      initialFocusRef={cancelRef}
     >
       {() => {
         return (
