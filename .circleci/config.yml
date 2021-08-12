@@ -94,6 +94,7 @@ workflows:
             branches:
               only:
                 - master
+                - forma-v4
           requires:
             - lint-and-test
             - chromatic-deployment
