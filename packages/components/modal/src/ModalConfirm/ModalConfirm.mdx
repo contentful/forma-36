@@ -10,11 +10,7 @@ typescript: ./ModalConfirm.tsx
 
 import { Props } from '@contentful/f36-docs-utils';
 
-## Table of contents
-
-## How to use ModalConfirm
-
-TBD
+`ModalConfirm` is a convenience wrapper on top of `Modal`. It is intended to use for showing confirmation dialogs.
 
 ### Import
 
@@ -26,7 +22,32 @@ import { ModalConfirm } from '@contentful/f36-modal';
 
 ## Code examples
 
-TBD
+```jsx
+function ModalConfirmExample() {
+  const [isShown, setShown] = React.useState(false);
+  return (
+    <div>
+      <Button variant="negative" onClick={() => setShown(true)}>
+        Delete something
+      </Button>
+      <ModalConfirm
+        isShown={isShown}
+        onCancel={() => {
+          setShown(false);
+        }}
+        onConfirm={() => {
+          setShown(false);
+        }}
+        onSecondary={() => {
+          setShown(false);
+        }}
+      >
+        <Text>Do you want to confirm your action?</Text>
+      </ModalConfirm>
+    </div>
+  );
+}
+```
 
 ## Props
 
