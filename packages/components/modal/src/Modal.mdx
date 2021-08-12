@@ -53,10 +53,18 @@ function ModalExample() {
             <Modal.Header title="Title" />
             <Modal.Content>Hello from controlled modal window</Modal.Content>
             <Modal.Controls>
-              <Button variant="transparent" onClick={() => setShown(false)}>
+              <Button
+                size="small"
+                variant="transparent"
+                onClick={() => setShown(false)}
+              >
                 Close
               </Button>
-              <Button variant="positive" onClick={() => setShown(false)}>
+              <Button
+                size="small"
+                variant="positive"
+                onClick={() => setShown(false)}
+              >
                 Confirm
               </Button>
             </Modal.Controls>

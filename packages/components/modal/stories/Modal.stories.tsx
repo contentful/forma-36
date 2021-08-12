@@ -123,10 +123,15 @@ export const ControllerModal: Story<ModalProps> = (props) => {
             <Modal.Header title={title} onClose={onClose} />
             <Modal.Content>Hello from controlled modal window</Modal.Content>
             <Modal.Controls>
-              <Button onClick={onClose} variant="transparent">
+              <Button size="small" onClick={onClose} variant="secondary">
                 Close
               </Button>
-              <Button onClick={onClose} variant="positive" ref={confirmRef}>
+              <Button
+                size="small"
+                onClick={onClose}
+                variant="positive"
+                ref={confirmRef}
+              >
                 Confirm
               </Button>
             </Modal.Controls>

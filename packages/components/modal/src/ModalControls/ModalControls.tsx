@@ -25,7 +25,9 @@ export function ModalControls({
       margin="spacingL"
       marginTop="none"
     >
-      <ButtonGroup variant="spaced">{children}</ButtonGroup>
+      <ButtonGroup variant="spaced" spacing="spacingXs">
+        {children}
+      </ButtonGroup>
     </Flex>
   );
 }

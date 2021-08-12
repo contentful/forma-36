@@ -47,7 +47,12 @@ export interface ModalConfirmProps {
   /**
    * The intent of the ModalConfirm. Used for the secondary Button.
    */
-  secondaryIntent?: 'primary' | 'positive' | 'negative' | 'transparent';
+  secondaryIntent?:
+    | 'primary'
+    | 'positive'
+    | 'negative'
+    | 'transparent'
+    | 'secondary';
   /**
       Size of the modal window
     */
@@ -116,6 +121,7 @@ export function ModalConfirm({
   confirmLabel = 'Confirm',
   confirmTestId = 'cf-ui-modal-confirm-confirm-button',
   intent = 'positive',
+  secondaryIntent = 'secondary',
   isConfirmDisabled = false,
   isConfirmLoading = false,
   isSecondaryDisabled,
@@ -127,7 +133,6 @@ export function ModalConfirm({
   onCancel,
   onConfirm,
   onSecondary,
-  secondaryIntent,
   secondaryLabel,
   secondaryTestId = 'cf-ui-modal-confirm-secondary-button',
   shouldCloseOnEscapePress = true,
@@ -145,6 +150,7 @@ export function ModalConfirm({
       isDisabled={isConfirmDisabled}
       isLoading={isConfirmLoading}
       variant={intent}
+      size="small"
       onClick={() => onConfirm()}
     >
       {confirmLabel}
@@ -157,6 +163,7 @@ export function ModalConfirm({
       isDisabled={isSecondaryDisabled}
       isLoading={isSecondaryLoading}
       variant={secondaryIntent}
+      size="small"
       onClick={() => onSecondary && onSecondary()}
     >
       {secondaryLabel}
@@ -166,8 +173,9 @@ export function ModalConfirm({
   const cancelButton = cancelLabel ? (
     <Button
       testId={cancelTestId}
-      variant="transparent"
+      variant="secondary"
       onClick={onCancel}
+      size="small"
       ref={initialFocusRef || cancelRef}
     >
       {cancelLabel}

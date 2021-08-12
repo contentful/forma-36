@@ -40,7 +40,13 @@ export default {
     secondaryIntent: {
       control: {
         type: 'select',
-        options: ['negative', 'positive', 'primary', 'muted'],
+        options: [
+          'negative',
+          'positive',
+          'primary',
+          'transparent',
+          'secondary',
+        ],
       },
     },
   },
