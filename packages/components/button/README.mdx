@@ -30,6 +30,8 @@ Buttons communicate the action that will occur when the user clicks them. They c
 
 ## Component variations
 
+### Types
+
 - **Primary** - Used for the most important actions in any scenario. Don’t use more than one primary button in a section or screen to avoid overwhelming users.
 - **Secondary** - Used for a secondary actions, the most commonly used button type.
 - **Positive** - For use when the action has a positive connotation such as creating or publishing a new entity.
@@ -38,33 +40,37 @@ Buttons communicate the action that will occur when the user clicks them. They c
 
 ```jsx
 <>
+<Grid rowGap="spacingXs" rows="repeat(4, auto)" justifyContent="start">
   <Button variant="primary">Primary</Button>
   <Button variant="secondary">Secondary</Button>
   <Button variant="negative">Negative</Button>
   <Button variant="positive">Positive</Button>
   <Button variant="transparent">Transparent</Button>
-</>
+</Grid>
 ```
 
-Buttons can be used in couple of different variations, like active, disabled or loading.
+Buttons can be used in couple of different variations, like active, disabled or loading. It's worthy mentioning is `indicateDropdown` property in the component,
+which enables the chevron icon on the right side of the button.
+
+Using `icon` property in the Button on the other hand, enables choosen icon on the left side of the button.
+
+### Sizes
+
+> > > > > > > master:packages/forma-36-react-components/src/components/Button/README.mdx
 
 Contentful buttons are available in 3 different sizes:
 
 ```jsx
-<>
-  <Button variant="positive" size="large">
-    Large
-  </Button>
-  <Button variant="positive">Medium (Default)</Button>
-  <Button variant="positive" size="small">
-    Small
-  </Button>
-</>
+<Grid columnGap="spacingXs" columns="repeat(3, auto)" justifyContent="start">
+  <Button size="large">Large</Button>
+  <Button size="medium">Medium</Button>
+  <Button size="small">Small</Button>
+</Grid>
 ```
 
 ## Code examples
 
-```tsx static=true
+````tsx static=true
 import { Button } from '@contentful/f36-button';
 
 <Button variant="primary" testId="create-content-type-empty-state">
@@ -72,7 +78,7 @@ import { Button } from '@contentful/f36-button';
 </Button>;
 ```
 
-Usage of the button with icon
+Usage of the button with dropdown indication
 
 ```tsx static=true
 import { Button } from '@contentful/f36-button';
@@ -112,3 +118,4 @@ Icon buttons must always have `aria-label` that describes it's purpose when no t
 ## Props
 
 <Props of="Button" />
+````

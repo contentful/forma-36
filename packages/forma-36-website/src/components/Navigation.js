@@ -16,6 +16,7 @@ const styles = {
     display: flex;
     flex-direction: column;
     width: 30%;
+    max-width: 380px;
     padding-top: ${tokens.spacingM};
     border-right: 1px solid ${tokens.colorElementMid};
   `,

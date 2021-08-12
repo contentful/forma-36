@@ -1,17 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { css } from '@emotion/core';
 import { useStaticQuery, graphql } from 'gatsby';
 import '@contentful/f36-components/dist/styles.css';
 import '@contentful/forma-36-fcss/dist/styles.css';
-
-import { css } from '@emotion/core';
+import './Layout.css';
 
 import Header from './Header';
 import Promo from './Promo';
 import Container from './Container';
 import Navigation from './Navigation';
-import './Layout.css';
 
 const styles = {
   main: css`
