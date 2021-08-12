@@ -19,60 +19,6 @@ jest.mock('@contentful/f36-button', () => ({
   },
 }));
 
-it('renders the component', () => {
-  const { container } = render(
-    <ModalConfirm isShown onConfirm={() => {}} onCancel={() => {}}>
-      ModalConfirm
-    </ModalConfirm>,
-  );
-
-  throw new Error('not implemented');
-});
-
-it('renders the component with override header, content and controls', () => {
-  const { container } = render(
-    <ModalConfirm
-      isShown
-      onConfirm={() => {}}
-      onCancel={() => {}}
-      modalHeaderProps={{
-        isNotWrapped: true,
-        className: 'additional header class',
-      }}
-      modalContentProps={{
-        className: 'additional content class',
-      }}
-      modalControlsProps={{
-        className: 'additional controls class',
-      }}
-      data-testid="modal-confirm"
-    >
-      ModalConfirm
-    </ModalConfirm>,
-  );
-
-  throw new Error('not implemented');
-});
-
-it('can accept custom labels', () => {
-  const { container } = render(
-    <ModalConfirm
-      isShown
-      intent="negative"
-      confirmLabel="Yes, delete"
-      secondaryLabel="Disable, instead"
-      cancelLabel="No, I changed my mind"
-      onConfirm={() => {}}
-      onSecondary={() => {}}
-      onCancel={() => {}}
-    >
-      ModalConfirm
-    </ModalConfirm>,
-  );
-
-  throw new Error('not implemented');
-});
-
 it('has no a11y issues', async () => {
   const { container } = render(
     <ModalConfirm isShown onConfirm={() => {}} onCancel={() => {}}>
