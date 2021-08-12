@@ -40,7 +40,7 @@ const getRoot = (rootElId: string): HTMLElement => {
   return rootDom;
 };
 
-let openModalsIds: Map<string, CloseModalData> = new Map();
+const openModalsIds: Map<string, CloseModalData> = new Map();
 function closeAll() {
   openModalsIds.forEach(async ({ render, currentConfig, delay }, rootElId) => {
     const config = { ...currentConfig, isShown: false };
