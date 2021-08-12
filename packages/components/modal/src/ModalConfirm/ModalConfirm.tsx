@@ -130,7 +130,12 @@ export function ModalConfirm({
   size = 'medium',
   testId = 'cf-ui-modal-confirm',
   title = 'Are you sure?',
-}: ModalConfirmProps): React.ReactElement {
+}: ModalConfirmProps) {
+  console.log({
+    Modal,
+    ModalControls: Modal.Controls,
+  });
+
   const confirmButton = confirmLabel ? (
     <Button
       testId={confirmTestId}
@@ -177,7 +182,7 @@ export function ModalConfirm({
     >
       {() => {
         return (
-          <div>
+          <>
             <Modal.Header title={title || ''} {...modalHeaderProps} />
             <Modal.Content {...modalContentProps}>{children}</Modal.Content>
             <Modal.Controls {...modalControlsProps}>
@@ -185,7 +190,7 @@ export function ModalConfirm({
               {secondaryButton}
               {confirmButton}
             </Modal.Controls>
-          </div>
+          </>
         );
       }}
     </Modal>

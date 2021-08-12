@@ -1,5 +1,4 @@
 import React from 'react';
-import { cx } from 'emotion';
 import ReactModal from 'react-modal';
 
 import { Box } from '@contentful/f36-core';
@@ -99,7 +98,12 @@ export function Modal({
     topOffset,
   };
 
-  const styles = getModalStyles({ position, size, allowHeightOverflow });
+  const styles = getModalStyles({
+    position,
+    size,
+    allowHeightOverflow,
+    className: otherProps.className,
+  });
 
   const renderDefault = () => {
     return (
@@ -149,7 +153,8 @@ export function Modal({
         style={{
           width: ModalSizesMapper[size] || size,
         }}
-        className={cx(styles.modal, otherProps.className)}
+        className={styles.modal}
+        data-modal-root
       >
         {typeof otherProps.children === 'function'
           ? otherProps.children(props)

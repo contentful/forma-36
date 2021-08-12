@@ -6,6 +6,7 @@ export function getModalStyles(props: {
   size: ModalSizeType;
   position: ModalPositionType;
   allowHeightOverflow?: boolean;
+  className?: string;
 }) {
   const modal = cx(
     css({
@@ -37,6 +38,7 @@ export function getModalStyles(props: {
           width: '100%',
         })
       : null,
+    props.className,
   );
 
   return {
@@ -62,13 +64,13 @@ export function getModalStyles(props: {
           : null,
       ),
       afterOpen: css({
-        [modal]: {
+        '[data-modal-root]': {
           transform: 'scale(1)',
-          opacity: 1,
+          opacity: '1',
         },
       }),
       beforeClose: css({
-        [modal]: {
+        '[data-modal-root]': {
           opacity: '0.5',
           transform: 'scale(0.85)',
         },

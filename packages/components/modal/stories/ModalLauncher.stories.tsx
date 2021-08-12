@@ -2,9 +2,9 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Paragraph } from '@contentful/f36-typography';
 
-import { ModalLauncher } from './ModalLauncher';
+import { ModalLauncher } from '../src/ModalLauncher/ModalLauncher';
 import { Button } from '@contentful/f36-button';
-import { Modal } from '../Modal';
+import { Modal } from '../src/Modal';
 
 function DefaultStory() {
   const [hiddenText, setHiddenText] = useState('');
@@ -26,6 +26,9 @@ function DefaultStory() {
                     Are you want to reveal the hidden text?
                   </Modal.Content>
                   <Modal.Controls>
+                    <Button variant="transparent" onClick={() => onClose('')}>
+                      Hide text
+                    </Button>
                     <Button
                       variant="positive"
                       onClick={() => {
@@ -33,9 +36,6 @@ function DefaultStory() {
                       }}
                     >
                       Show text
-                    </Button>
-                    <Button variant="transparent" onClick={() => onClose('')}>
-                      Hide text
                     </Button>
                   </Modal.Controls>
                 </React.Fragment>

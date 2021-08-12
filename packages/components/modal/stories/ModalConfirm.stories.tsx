@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
-import { Paragraph } from '@contentful/f36-typography';
+import { Paragraph, Text } from '@contentful/f36-typography';
 import {
   ModalConfirm,
   ModalConfirmProps,
 } from '../src/ModalConfirm/ModalConfirm';
 import { Button } from '@contentful/f36-button';
+import { TextInput } from '../../../forma-36-react-components/src/components/TextInput';
 
 export default {
   title: 'Components/Modal/ModalConfirm',
@@ -46,7 +47,7 @@ export default {
 } as Meta;
 
 function SimpleDemo(props: ModalConfirmProps) {
-  const [isShown, setShown] = useState(false);
+  const [isShown, setShown] = useState(true);
   return (
     <div>
       <Button variant="negative" onClick={() => setShown(true)}>
@@ -68,7 +69,7 @@ function SimpleDemo(props: ModalConfirmProps) {
           action('onSecondary')();
         }}
       >
-        <div>You are about to delete SOMETHING. Think twice!</div>
+        <Text>You are about to delete SOMETHING. Think twice!</Text>
       </ModalConfirm>
     </div>
   );
@@ -79,7 +80,7 @@ export const Default: Story<ModalConfirmProps> = (props) => {
 };
 
 export function ComplexStory(props: ModalConfirmProps) {
-  const [isShown, setShown] = useState(false);
+  const [isShown, setShown] = useState(true);
   const [isLoading, setLoading] = useState(false);
   const [repeat, setRepeat] = useState('');
 
@@ -107,10 +108,10 @@ export function ComplexStory(props: ModalConfirmProps) {
           action('onConfirm')();
         }}
       >
-        <Paragraph marginBottom="spacingM">
+        <Paragraph>
           Type <strong>unlock</strong> to allow confirming this modal
         </Paragraph>
-        <input
+        <TextInput
           value={repeat}
           onChange={(e) => setRepeat((e.target as HTMLInputElement).value)}
         />

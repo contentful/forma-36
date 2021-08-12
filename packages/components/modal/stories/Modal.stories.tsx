@@ -47,7 +47,7 @@ export default {
 } as Meta;
 
 export const Default: Story<ModalProps> = (props) => {
-  const [isShown, setShown] = useState(false);
+  const [isShown, setShown] = useState(true);
 
   return (
     <div>
@@ -74,7 +74,7 @@ Default.args = {
 };
 
 export const LongModal: Story<ModalProps> = (props) => {
-  const [isShown, setShown] = useState(false);
+  const [isShown, setShown] = useState(true);
 
   return (
     <div>
@@ -100,7 +100,7 @@ LongModal.args = {
 };
 
 export const ControllerModal: Story<ModalProps> = (props) => {
-  const [isShown, setShown] = useState(false);
+  const [isShown, setShown] = useState(true);
 
   return (
     <div>

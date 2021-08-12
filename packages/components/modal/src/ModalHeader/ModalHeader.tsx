@@ -4,7 +4,7 @@ import { Close } from '@contentful/f36-icons';
 import { Flex } from '@contentful/f36-core';
 import type { PrimitiveProps } from '@contentful/f36-core';
 import { Button } from '@contentful/f36-button';
-import { Heading } from '@contentful/f36-typography';
+import { Subheading } from '@contentful/f36-typography';
 
 import { getModalHeaderStyles } from './ModalHeader.styles';
 
@@ -31,13 +31,23 @@ export function ModalHeader({
       alignItems="center"
       flexShrink={0}
     >
-      <Heading as="h1" isTruncated>
+      <Subheading
+        as="h1"
+        isTruncated
+        marginBottom="none"
+        className={styles.heading}
+      >
         {title}
-      </Heading>
+      </Subheading>
       {onClose && (
-        <Button variant="transparent" onClick={onClose}>
-          <Close size="small" />
-        </Button>
+        <Button
+          variant="transparent"
+          icon={<Close size="small" />}
+          onClick={() => {
+            onClose();
+          }}
+          size="small"
+        />
       )}
     </Flex>
   );

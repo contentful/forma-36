@@ -21,7 +21,7 @@ interface BaseButtonGroupProps extends CommonProps {
    * @default spacingS
    */
   spacing?: ButtonGroupSpacing;
-  children: React.ReactElement[];
+  children: React.ReactElement[] | React.ReactElement;
 }
 
 interface SpacedButtonGroupProps extends BaseButtonGroupProps {
