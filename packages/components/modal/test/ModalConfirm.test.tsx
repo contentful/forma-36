@@ -13,12 +13,6 @@ jest.mock(
     },
 );
 
-jest.mock('@contentful/f36-button', () => ({
-  Button: () => {
-    return null;
-  },
-}));
-
 it('has no a11y issues', async () => {
   const { container } = render(
     <ModalConfirm isShown onConfirm={() => {}} onCancel={() => {}}>

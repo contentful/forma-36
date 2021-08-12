@@ -42,6 +42,7 @@ export function ModalHeader({
       {onClose && (
         <Button
           variant="transparent"
+          aria-label="Close"
           icon={<Close size="small" />}
           onClick={() => {
             onClose();
