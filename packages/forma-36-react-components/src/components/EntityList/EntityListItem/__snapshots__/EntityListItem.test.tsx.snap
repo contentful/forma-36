@@ -1608,10 +1608,6 @@ exports[`renders the component with dropdownListElements 1`] = `
   outline: 0;
 }
 
-.emotion-4 {
-  display: inline-block;
-}
-
 .emotion-0 {
   display: inline-block;
   fill: #5A657C;
@@ -1672,6 +1668,10 @@ exports[`renders the component with dropdownListElements 1`] = `
   min-height: 40px;
 }
 
+.emotion-5 svg {
+  fill: currentColor;
+}
+
 .emotion-5:hover {
   background-color: #F7F9FA;
   color: #111B2B;
@@ -1705,7 +1705,6 @@ exports[`renders the component with dropdownListElements 1`] = `
   fill: #0059C8;
   height: 18px;
   width: 18px;
-  fill: currentColor;
 }
 
 <li
@@ -1810,7 +1809,7 @@ exports[`renders the component with dropdownListElements 1`] = `
               </svg>
             </span>
             <span
-              class="emotion-4"
+              class="emotion-3"
             />
           </button>
         </div>

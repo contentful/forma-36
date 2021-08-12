@@ -1,10 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
-.emotion-0 {
-  display: inline-block;
-}
-
 .emotion-1 {
   box-sizing: border-box;
   border: 1px solid;
@@ -40,6 +36,10 @@ exports[`renders the component 1`] = `
   min-height: 40px;
 }
 
+.emotion-1 svg {
+  fill: currentColor;
+}
+
 .emotion-1:hover {
   background-color: #F7F9FA;
 }
@@ -56,6 +56,13 @@ exports[`renders the component 1`] = `
 
 .emotion-1:focus {
   box-shadow: 0px 0px 0px 3px #E7EBEE;
+}
+
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 <div
@@ -80,10 +87,6 @@ exports[`renders the component 1`] = `
 `;
 
 exports[`renders the component as open 1`] = `
-.emotion-0 {
-  display: inline-block;
-}
-
 .emotion-1 {
   box-sizing: border-box;
   border: 1px solid;
@@ -119,6 +122,10 @@ exports[`renders the component as open 1`] = `
   min-height: 40px;
 }
 
+.emotion-1 svg {
+  fill: currentColor;
+}
+
 .emotion-1:hover {
   background-color: #F7F9FA;
 }
@@ -135,6 +142,13 @@ exports[`renders the component as open 1`] = `
 
 .emotion-1:focus {
   box-shadow: 0px 0px 0px 3px #E7EBEE;
+}
+
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 <div
@@ -159,10 +173,6 @@ exports[`renders the component as open 1`] = `
 `;
 
 exports[`renders the component with a submenu 1`] = `
-.emotion-0 {
-  display: inline-block;
-}
-
 .emotion-1 {
   box-sizing: border-box;
   border: 1px solid;
@@ -198,6 +208,10 @@ exports[`renders the component with a submenu 1`] = `
   min-height: 40px;
 }
 
+.emotion-1 svg {
+  fill: currentColor;
+}
+
 .emotion-1:hover {
   background-color: #F7F9FA;
 }
@@ -214,6 +228,13 @@ exports[`renders the component with a submenu 1`] = `
 
 .emotion-1:focus {
   box-shadow: 0px 0px 0px 3px #E7EBEE;
+}
+
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 <div
@@ -238,10 +259,6 @@ exports[`renders the component with a submenu 1`] = `
 `;
 
 exports[`renders the component with an additional class name 1`] = `
-.emotion-0 {
-  display: inline-block;
-}
-
 .emotion-1 {
   box-sizing: border-box;
   border: 1px solid;
@@ -277,6 +294,10 @@ exports[`renders the component with an additional class name 1`] = `
   min-height: 40px;
 }
 
+.emotion-1 svg {
+  fill: currentColor;
+}
+
 .emotion-1:hover {
   background-color: #F7F9FA;
 }
@@ -293,6 +314,13 @@ exports[`renders the component with an additional class name 1`] = `
 
 .emotion-1:focus {
   box-shadow: 0px 0px 0px 3px #E7EBEE;
+}
+
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 <div
