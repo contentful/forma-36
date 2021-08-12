@@ -138,6 +138,8 @@ export function Modal({
       onAfterOpen={props.onAfterOpen}
       shouldCloseOnEsc={shouldCloseOnEscapePress}
       shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
+      shouldFocusAfterRender
+      shouldReturnFocusAfterClose
       portalClassName={styles.portal}
       className={{
         base: styles.base.root,
