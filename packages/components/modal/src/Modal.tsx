@@ -78,10 +78,29 @@ export interface ModalProps extends CommonProps {
    */
   modalContentProps?: Partial<ModalContentProps>;
 
+  /**
+   * Optional property to set initial focus
+   */
+  initialFocusRef?: React.RefObject<HTMLElement>;
+
   children: React.ReactNode | RenderModal;
 }
 
 type RenderModal = (modalProps: ModalProps) => React.ReactNode;
+
+function focusFirstWithinNode(node: HTMLElement) {
+  if (node && node.querySelectorAll) {
+    const elements = node.querySelectorAll('input, button');
+    if (elements.length > 0) {
+      const firstElement = elements[0];
+      // @ts-expect-error focus might be missing
+      if (typeof firstElement.focus === 'function') {
+        // @ts-expect-error focus might be missing
+        firstElement.focus();
+      }
+    }
+  }
+}
 
 export function Modal({
   allowHeightOverflow,
@@ -94,6 +113,8 @@ export function Modal({
   aria,
   ...otherProps
 }: ModalProps) {
+  const contentRef = React.useRef<HTMLDivElement>(null);
+
   const props = {
     ...otherProps,
     allowHeightOverflow,
@@ -111,6 +132,20 @@ export function Modal({
     allowHeightOverflow,
     className: otherProps.className,
   });
+
+  React.useEffect(() => {
+    if (props.isShown) {
+      setTimeout(() => {
+        if (props.initialFocusRef && props.initialFocusRef.current) {
+          if (props.initialFocusRef.current.focus) {
+            props.initialFocusRef.current.focus();
+          }
+        } else if (contentRef.current) {
+          focusFirstWithinNode(contentRef.current);
+        }
+      }, 200);
+    }
+  }, [props.isShown, props.initialFocusRef]);
 
   const renderDefault = () => {
     return (
@@ -157,6 +192,9 @@ export function Modal({
         beforeClose: styles.modalOverlay.beforeClose,
       }}
       closeTimeoutMS={300}
+      contentRef={(ref) => {
+        contentRef.current = ref;
+      }}
     >
       <Box
         testId={testId}

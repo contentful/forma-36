@@ -1,4 +1,4 @@
-import React, { useState, MouseEventHandler } from 'react';
+import React, { useState, MouseEventHandler, useRef } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 
 import { Modal, ModalProps } from '../src/Modal';
@@ -101,11 +101,17 @@ LongModal.args = {
 
 export const ControllerModal: Story<ModalProps> = (props) => {
   const [isShown, setShown] = useState(true);
+  const confirmRef = useRef(null);
 
   return (
     <div>
       <Button onClick={() => setShown(true)}>Show centered modal</Button>
-      <Modal {...props} isShown={isShown} onClose={() => setShown(false)}>
+      <Modal
+        {...props}
+        isShown={isShown}
+        onClose={() => setShown(false)}
+        initialFocusRef={confirmRef}
+      >
         {({
           title,
           onClose,
@@ -120,7 +126,7 @@ export const ControllerModal: Story<ModalProps> = (props) => {
               <Button onClick={onClose} variant="transparent">
                 Close
               </Button>
-              <Button onClick={onClose} variant="positive">
+              <Button onClick={onClose} variant="positive" ref={confirmRef}>
                 Confirm
               </Button>
             </Modal.Controls>
