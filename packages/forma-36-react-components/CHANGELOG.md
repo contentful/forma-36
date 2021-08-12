@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.96.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.95.2...@contentful/forma-36-react-components@3.96.0) (2021-08-12)
+
+
+### Features
+
+* **modallauncher:** add closeAll method to ModalLauncher ([#1176](https://github.com/contentful/forma-36/issues/1176)) ([3a669ae](https://github.com/contentful/forma-36/commit/3a669aeb9ba3ba910da42cc08cdbf8a419da0aec))
+
+
+
+
+
 ## [3.95.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.95.1...@contentful/forma-36-react-components@3.95.2) (2021-08-06)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
