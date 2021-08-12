@@ -281,6 +281,14 @@ module.exports = {
                 name: 'Modal',
                 link: '/components/modal/',
               },
+              {
+                name: 'ModalConfirm',
+                link: '/components/modal-confirm/',
+              },
+              {
+                name: 'ModalLauncher',
+                link: '/components/modal-launcher/',
+              },
             ],
           },
           {

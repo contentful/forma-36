@@ -1,12 +1,12 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { storiesOf } from '@storybook/react';
+
 import { Paragraph } from '@contentful/f36-typography';
 
 import { ModalLauncher } from '../src/ModalLauncher/ModalLauncher';
 import { Button } from '@contentful/f36-button';
 import { Modal } from '../src/Modal';
 
-function DefaultStory() {
+export const Basic = () => {
   const [hiddenText, setHiddenText] = useState('');
 
   return (
@@ -51,9 +51,9 @@ function DefaultStory() {
       {hiddenText.length > 0 && <Paragraph>{hiddenText}</Paragraph>}
     </React.Fragment>
   );
-}
+};
 
-function CloseAllStory() {
+export const CloseAllStory = () => {
   const openModal = useCallback((content) => {
     ModalLauncher.open(({ isShown, onClose }) => (
       <Modal title={content} isShown={isShown} onClose={() => onClose()}>
@@ -87,12 +87,4 @@ function CloseAllStory() {
       <Button onClick={() => openModal(`New modal`)}>Open modal</Button>
     </React.Fragment>
   );
-}
-
-storiesOf('Components/Modal/ModalLauncher', module)
-  .addParameters({
-    propTypes: ModalLauncher['__docgenInfo'],
-    component: ModalLauncher,
-  })
-  .add('default', () => <DefaultStory />)
-  .add('closeAll method', () => <CloseAllStory />);
+};

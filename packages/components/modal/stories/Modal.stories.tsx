@@ -46,7 +46,7 @@ export default {
   },
 } as Meta;
 
-export const Default: Story<ModalProps> = (props) => {
+export const Basic: Story<ModalProps> = (props) => {
   const [isShown, setShown] = useState(true);
 
   return (
@@ -69,7 +69,7 @@ export const Default: Story<ModalProps> = (props) => {
   );
 };
 
-Default.args = {
+Basic.args = {
   title: 'Default modal',
 };
 

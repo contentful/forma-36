@@ -75,7 +75,7 @@ function SimpleDemo(props: ModalConfirmProps) {
   );
 }
 
-export const Default: Story<ModalConfirmProps> = (props) => {
+export const Basic: Story<ModalConfirmProps> = (props) => {
   return <SimpleDemo {...props} />;
 };
 
