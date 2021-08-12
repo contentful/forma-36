@@ -13,7 +13,8 @@
     "@contentful/f36-button": "^4.0.0",
     "@contentful/f36-icons": "^4.0.0",
     "@contentful/f36-typography": "^4.0.0",
-    "react-modal": "^3.11.2",
+    "react-modal": "^3.14.3",
+    "@types/react-modal": "^3.12.1",
     "emotion": "^10.0.17"
   },
   "peerDependencies": {

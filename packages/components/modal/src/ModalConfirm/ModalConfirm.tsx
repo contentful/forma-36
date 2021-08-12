@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Modal } from '../Modal';
+import { Modal, ModalProps } from '../Modal';
 import type { ModalSizeType } from '../types';
 import type { ModalHeaderProps } from '../ModalHeader/ModalHeader';
 import type { ModalContentProps } from '../ModalContent/ModalContent';
@@ -15,15 +15,15 @@ export interface ModalConfirmProps {
   /**
    * Function that will be called when the confirm button is clicked. This does not close the ModalConfirm.
    */
-  onConfirm: Function;
+  onConfirm(): void;
   /**
    * Function that will be called when the secondary button is clicked. This does not close the ModalConfirm.
    */
-  onSecondary?: Function;
+  onSecondary?(): void;
   /**
    * Function that will be called when the cancel button is clicked. This does not close the ModalConfirm.
    */
-  onCancel: Function;
+  onCancel: ModalProps['onClose'];
   /**
       Modal title that is used in header
     */
@@ -161,11 +161,7 @@ export function ModalConfirm({
   ) : null;
 
   const cancelButton = cancelLabel ? (
-    <Button
-      testId={cancelTestId}
-      variant="transparent"
-      onClick={() => onCancel()}
-    >
+    <Button testId={cancelTestId} variant="transparent" onClick={onCancel}>
       {cancelLabel}
     </Button>
   ) : null;

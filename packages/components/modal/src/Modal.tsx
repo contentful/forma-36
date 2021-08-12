@@ -25,14 +25,20 @@ export interface ModalProps extends CommonProps {
   isShown: boolean;
 
   /**
-   * Function that will be called when the exit is complete.
+   * Function that will be run when the modal is requested to be closed, prior to actually closing.
    */
-  onClose: Function;
+  onClose: ReactModal.Props['onRequestClose'];
 
   /**
-   * Function that will be called when the enter is complete.
+   * Function that will be run after the modal has opened.
    */
-  onAfterOpen?: Function;
+  onAfterOpen?: ReactModal.Props['onAfterOpen'];
+
+  /**
+   * Additional aria attributes
+   */
+  aria?: ReactModal.Props['aria'];
+
   /**
    * Boolean indicating if clicking the overlay should close the overlay.
    */
@@ -85,6 +91,7 @@ export function Modal({
   size,
   testId,
   topOffset,
+  aria,
   ...otherProps
 }: ModalProps) {
   const props = {
@@ -125,6 +132,7 @@ export function Modal({
   return (
     <ReactModal
       ariaHideApp={false}
+      aria={aria}
       onRequestClose={props.onClose}
       isOpen={otherProps.isShown}
       onAfterOpen={props.onAfterOpen}
