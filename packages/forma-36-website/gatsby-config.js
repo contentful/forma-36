@@ -274,8 +274,14 @@ module.exports = {
             link: '/components/list/',
           },
           {
-            name: 'Modal',
-            link: '/components/modal/',
+            name: 'Modals',
+            link: '',
+            menuLinks: [
+              {
+                name: 'Modal',
+                link: '/components/modal/',
+              },
+            ],
           },
           {
             name: 'Note',
