@@ -100,10 +100,11 @@ export type {
 } from '@contentful/f36-accordion';
 export { Tabs, Tab, TabPanel } from '@contentful/f36-tabs';
 export type { TabsProps, TabProps, TabPanelProps } from '@contentful/f36-tabs';
+export { CopyButton } from '@contentful/f36-copybutton';
+export type { CopyButtonProps } from '@contentful/f36-copybutton';
 export * from './components/Asset';
 export * from './components/Autocomplete';
 export * from './components/Card';
-export * from './components/CopyButton';
 export * from './components/Dropdown';
 export * from './components/EditorToolbar';
 export * from './components/DateTime';
