@@ -29,8 +29,6 @@ export default function Layout({ location, pageContext, children }) {
     if (window.tracking) {
       window.tracking.pageView({
         path: location?.pathname ?? '/',
-        // eslint-disable-next-line @typescript-eslint/camelcase
-        user_key: 'random id stored in local storage',
       });
     }
   }, [location]);

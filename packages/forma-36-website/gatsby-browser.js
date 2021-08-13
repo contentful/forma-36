@@ -65,8 +65,6 @@ function initOsano() {
  */
 function handleConsent(newConsentOptions) {
   const savedConsent = window.localStorage.getItem('consent');
-  // storing saved consent in an objet for later use
-  const previousConsent = JSON.parse(savedConsent);
 
   const consentOptionsChanged =
     JSON.stringify(newConsentOptions) !== savedConsent;
@@ -90,6 +88,7 @@ function handleConsent(newConsentOptions) {
 
   // If any option was changed to "DENY"
   // we need to reload the page to remove segment
+  const previousConsent = JSON.parse(savedConsent) ?? {};
   const analyticsDenied =
     previousConsent.ANALYTICS === 'ACCEPT' && !consent.analytics;
   const marketingDenied =
@@ -121,6 +120,10 @@ function initSegment(consent) {
   });
 
   segmentClient.initialize('userId', {
+    shared: {
+      // eslint-disable-next-line @typescript-eslint/camelcase
+      user_key: 'random user id',
+    },
     consent,
     integrations: ['Google Analytics'],
   });
@@ -128,4 +131,9 @@ function initSegment(consent) {
   // save segmentClient in the window
   // to be used for tracking in the rest of the application
   window.tracking = segmentClient;
+
+  // track first page view after the consent was accepted
+  window.tracking.pageView({
+    path: window.location.pathname,
+  });
 }
