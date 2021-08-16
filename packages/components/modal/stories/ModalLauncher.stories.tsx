@@ -69,7 +69,7 @@ export const CloseAllStory = () => {
             Open modal
           </Button>
           <Button
-            buttonType="muted"
+            variant="secondary"
             onClick={() => {
               onClose();
             }}
