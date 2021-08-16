@@ -32,7 +32,7 @@ export const Basic: Story = () => {
                     Are you want to reveal the hidden text?
                   </Modal.Content>
                   <Modal.Controls>
-                    <Button variant="transparent" onClick={() => onClose('')}>
+                    <Button variant="secondary" onClick={() => onClose('')}>
                       Hide text
                     </Button>
                     <Button
