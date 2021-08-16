@@ -1,16 +1,8 @@
+const { getProperty } = require('./getProperty');
+
 module.exports.hasProperty = function hasProperty(
   attributes,
   { propertyName },
 ) {
-  let found = false;
-
-  attributes.forEach((attribute) => {
-    if (found === false) {
-      if (attribute.name.name === propertyName) {
-        found = true;
-      }
-    }
-  });
-
-  return found;
+  return Boolean(getProperty(attributes, { propertyName }));
 };

@@ -4,6 +4,7 @@ const {
   hasProperty,
   addProperty,
   changeProperties,
+  updatePropertyValue,
 } = require('../utils');
 
 module.exports = function (file, api) {
@@ -25,6 +26,25 @@ module.exports = function (file, api) {
         renameMap: {
           linkType: 'variant',
           disabled: 'isDisabled',
+          iconPosition: 'alignIcon',
+          text: 'children',
+        },
+      });
+
+      modifiedAttributes = updatePropertyValue(modifiedAttributes, {
+        j,
+        propertyName: 'alignIcon',
+        propertyValue: (value) => {
+          if (value.value === 'left') {
+            return j.literal('start');
+          } else if (value.value === 'right') {
+            return j.literal('end');
+          } else {
+            console.warn(
+              "TextLink: Couldn't automatically update alignIcon value",
+            );
+            return value;
+          }
         },
       });
 
@@ -41,10 +61,6 @@ module.exports = function (file, api) {
   });
 
   // todo: create a function that replaces icons with inlined icons
-
-  // todo: rename iconPosition to alignIcon and update values / console.warn if update cannot be done
-
-  // todo: move text to children if it's specified
 
   // todo: question: do we need to update imports somehow?
 

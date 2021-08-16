@@ -4,6 +4,8 @@ const { deleteProperty } = require('./deleteProperty');
 const { hasProperty } = require('./hasProperty');
 const { addProperty } = require('./addProperty');
 const { changeProperties } = require('./changeProperties');
+const { updatePropertyValue } = require('./updatePropertyValue');
+const { getProperty } = require('./getProperty');
 
 module.exports = {
   getComponentLocalName,
@@ -12,4 +14,6 @@ module.exports = {
   deleteProperty,
   addProperty,
   changeProperties,
+  updatePropertyValue,
+  getProperty,
 };
