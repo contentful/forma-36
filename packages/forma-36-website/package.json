@@ -5,7 +5,6 @@
   "version": "0.11.5",
   "license": "MIT",
   "dependencies": {
-    "@contentful/experience-tracking": "^1.1.1",
     "@contentful/forma-36-fcss": "^0.3.0",
     "@contentful/forma-36-react-components": "^3.75.0",
     "@contentful/forma-36-tokens": "^0.11.0",
@@ -39,9 +38,7 @@
     "react-live": "^2.2.0",
     "webpack-dev-server": "3.11.2"
   },
-  "devDependencies": {
-    "typewriter": "^7.4.1"
-  },
+  "devDependencies": {},
   "resolutions": {
     "js-yaml": "3.13.1",
     "webpack-dev-server": "3.1.11"
