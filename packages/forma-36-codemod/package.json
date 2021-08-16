@@ -7,13 +7,15 @@
   "files": [
     "package.json",
     "bin",
-    "transforms"
+    "transforms",
+    "utils"
   ],
   "bin": {
     "f36-codemod": "./bin/f36-codemod.js"
   },
   "scripts": {
     "test": "jest",
+    "test:watch": "jest --watchAll",
     "lint": "eslint ."
   },
   "devDependencies": {
@@ -39,6 +41,7 @@
     "testEnvironment": "node",
     "roots": [
       "transforms",
+      "utils",
       "bin"
     ]
   }
