@@ -6,7 +6,7 @@ module.exports = function (file, api) {
 
   const localName = getComponentLocalName(j, file.source, {
     componentName: 'TextLink',
-    from: '@contentful/forma-36-react-components',
+    importName: '@contentful/forma-36-react-components',
   });
 
   return renameProperties(j, file.source, {
