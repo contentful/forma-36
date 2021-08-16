@@ -95,8 +95,8 @@ export default function Layout({ location, pageContext, children }) {
           currentPath={location?.pathname}
         />
         <Container
-          frontmatter={pageContext.frontmatter}
-          dataFromReadme={pageContext.body}
+          frontmatter={pageContext?.frontmatter}
+          dataFromReadme={pageContext?.body}
         >
           {children}
         </Container>
