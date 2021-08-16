@@ -1,4 +1,5 @@
 const { getComponentLocalName } = require('../utils/getComponentLocalName');
+const { renameProperties } = require('../utils/renameProperties');
 
 module.exports = function (file, api) {
   const j = api.jscodeshift;
@@ -8,7 +9,11 @@ module.exports = function (file, api) {
     from: '@contentful/forma-36-react-components',
   });
 
-  console.log(localName);
-
-  return j(file.source).toSource();
+  return renameProperties(j, file.source, {
+    componentName: localName,
+    renameMap: {
+      linkType: 'variant',
+      disabled: 'isDisabled',
+    },
+  });
 };
