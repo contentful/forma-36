@@ -8,8 +8,5 @@ export function getModalHeaderStyles() {
       borderRadius: `${tokens.borderRadiusMedium} ${tokens.borderRadiusMedium} 0 0`,
       borderBottom: `1px solid ${tokens.gray300}`,
     }),
-    heading: css({
-      flexGrow: 1,
-    }),
   };
 }

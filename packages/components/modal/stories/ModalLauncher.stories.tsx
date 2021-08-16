@@ -1,12 +1,18 @@
 import React, { useState, useEffect, useCallback } from 'react';
-
+import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Paragraph } from '@contentful/f36-typography';
 
 import { ModalLauncher } from '../src/ModalLauncher/ModalLauncher';
 import { Button } from '@contentful/f36-button';
 import { Modal } from '../src/Modal';
 
-export const Basic = () => {
+// @ts-expect-error don't complain about ModalLauncher being not a React component
+export default {
+  title: 'Utilities/ModalLauncher',
+  component: ModalLauncher,
+} as Meta;
+
+export const Basic: Story = () => {
   const [hiddenText, setHiddenText] = useState('');
 
   return (

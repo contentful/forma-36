@@ -12,7 +12,7 @@ export function getModalStyles(props: {
     css({
       transition: `opacity ${tokens.transitionDurationLong} ${tokens.transitionEasingDefault}, transform ${tokens.transitionDurationDefault} ${tokens.transitionEasingCubicBezier}`,
       opacity: '0.5',
-      margin: '50px',
+      margin: tokens.spacing2Xl,
       transform: 'scale(0.85)',
       backgroundColor: tokens.colorWhite,
       borderRadius: tokens.borderRadiusMedium,

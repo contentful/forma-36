@@ -29,14 +29,9 @@ export function ModalHeader({
       className={cx(styles.root, className)}
       testId={testId}
       alignItems="center"
-      flexShrink={0}
+      justifyContent="space-between"
     >
-      <Subheading
-        as="h1"
-        isTruncated
-        marginBottom="none"
-        className={styles.heading}
-      >
+      <Subheading as="h1" isTruncated marginBottom="none">
         {title}
       </Subheading>
       {onClose && (
