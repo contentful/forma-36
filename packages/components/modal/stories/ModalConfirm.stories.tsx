@@ -70,10 +70,6 @@ function SimpleDemo(props: ModalConfirmProps) {
           setShown(false);
           action('onConfirm')();
         }}
-        onSecondary={() => {
-          setShown(false);
-          action('onSecondary')();
-        }}
       >
         <Text>You are about to delete SOMETHING. Think twice!</Text>
       </ModalConfirm>

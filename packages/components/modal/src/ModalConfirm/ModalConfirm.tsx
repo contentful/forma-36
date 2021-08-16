@@ -17,10 +17,6 @@ export interface ModalConfirmProps {
    */
   onConfirm(): void;
   /**
-   * Function that will be called when the secondary button is clicked. This does not close the ModalConfirm.
-   */
-  onSecondary?(): void;
-  /**
    * Function that will be called when the cancel button is clicked. This does not close the ModalConfirm.
    */
   onCancel: ModalProps['onClose'];
@@ -33,10 +29,6 @@ export interface ModalConfirmProps {
    */
   confirmLabel?: string | false;
   /**
-   * Label of the secondary button
-   */
-  secondaryLabel?: string | false;
-  /**
    * Label of the cancel button
    */
   cancelLabel?: string | false;
@@ -44,15 +36,6 @@ export interface ModalConfirmProps {
    * The intent of the ModalConfirm. Used for the Button.
    */
   intent?: 'primary' | 'positive' | 'negative';
-  /**
-   * The intent of the ModalConfirm. Used for the secondary Button.
-   */
-  secondaryIntent?:
-    | 'primary'
-    | 'positive'
-    | 'negative'
-    | 'transparent'
-    | 'secondary';
   /**
       Size of the modal window
     */
@@ -70,17 +53,9 @@ export interface ModalConfirmProps {
    */
   isConfirmDisabled?: boolean;
   /**
-   * When true, the secondary button is set to disabled.
-   */
-  isSecondaryDisabled?: boolean;
-  /**
    * When true, the confirm button is set to loading.
    */
   isConfirmLoading?: boolean;
-  /**
-   * When true, the secondary button is set to loading.
-   */
-  isSecondaryLoading?: boolean;
   /**
    * Are modals higher than viewport allowed
    */
@@ -108,7 +83,6 @@ export interface ModalConfirmProps {
 
   testId?: string;
   confirmTestId?: string;
-  secondaryTestId?: string;
   cancelTestId?: string;
   children: React.ReactNode;
 }
@@ -121,20 +95,14 @@ export function ModalConfirm({
   confirmLabel = 'Confirm',
   confirmTestId = 'cf-ui-modal-confirm-confirm-button',
   intent = 'positive',
-  secondaryIntent = 'secondary',
   isConfirmDisabled = false,
   isConfirmLoading = false,
-  isSecondaryDisabled,
-  isSecondaryLoading,
   isShown,
   modalContentProps,
   modalControlsProps,
   modalHeaderProps,
   onCancel,
   onConfirm,
-  onSecondary,
-  secondaryLabel,
-  secondaryTestId = 'cf-ui-modal-confirm-secondary-button',
   shouldCloseOnEscapePress = true,
   shouldCloseOnOverlayClick = true,
   size = 'medium',
@@ -154,19 +122,6 @@ export function ModalConfirm({
       onClick={() => onConfirm()}
     >
       {confirmLabel}
-    </Button>
-  ) : null;
-
-  const secondaryButton = secondaryLabel ? (
-    <Button
-      testId={secondaryTestId}
-      isDisabled={isSecondaryDisabled}
-      isLoading={isSecondaryLoading}
-      variant={secondaryIntent}
-      size="small"
-      onClick={() => onSecondary && onSecondary()}
-    >
-      {secondaryLabel}
     </Button>
   ) : null;
 
@@ -200,7 +155,6 @@ export function ModalConfirm({
             <Modal.Content {...modalContentProps}>{children}</Modal.Content>
             <Modal.Controls {...modalControlsProps}>
               {cancelButton}
-              {secondaryButton}
               {confirmButton}
             </Modal.Controls>
           </>
