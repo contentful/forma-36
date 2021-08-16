@@ -1,6 +1,3 @@
-import { createTracking } from '@contentful/experience-tracking';
-import * as trackingPlan from './src/analytics/generated';
-
 const OSANO_KEY = process.env.GATSBY_OSANO_KEY;
 const OSANO_F36_WEBSITE_KEY = process.env.GATSBY_OSANO_F36_WEBSITE_KEY;
 const SEGMENT_KEY = process.env.GATSBY_SEGMENT_KEY;
@@ -82,8 +79,8 @@ function handleConsent(newConsentOptions) {
 
   // if user consent to analytics, but segmentClient is still not in window.tracking
   // initialize Segment
-  if (consent.analytics && !window.tracking) {
-    initSegment(consent);
+  if (consent.analytics && !window.analytics) {
+    initSegment();
   }
 
   // If any option was changed to "DENY"
@@ -102,38 +99,30 @@ function handleConsent(newConsentOptions) {
 }
 
 /**
- * Funtion that will set up Segment, initialize its client
- * and save it to the window object to make it available for the rest of the application
- *
- * @param {Object} consent - object that will be used in segmentClient.initialize()
- * @param {boolean} consent.analytics - it tells if analytics was accepted
- * @param {boolean} consent.marketing - it tells if marketing was accepted
- * @param {boolean} consent.personalization - it tells if personalization was accepted
+ * Function to append Segment’ script to the head of the website and track the first page view
  */
-function initSegment(consent) {
-  // initialize Segment client
-  const segmentClient = createTracking({
-    segment: {
-      key: SEGMENT_KEY,
-      plan: trackingPlan,
-    },
-  });
+function initSegment() {
+  const segmentSnippet = `!function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics._writeKey="4cYEEHVWGSFHTetV5XLulQLVpk9WjmvY";analytics.SNIPPET_VERSION="4.13.2";}}();`;
 
-  segmentClient.initialize('userId', {
-    shared: {
-      // eslint-disable-next-line @typescript-eslint/camelcase
-      user_key: 'random user id',
-    },
-    consent,
-    integrations: ['Google Analytics'],
+  const script = document.createElement('script');
+  script.addEventListener('error', () => {
+    // eslint-disable-next-line no-console
+    console.error('Segment script error');
   });
+  script.innerHTML = segmentSnippet;
+  script.async = true;
+  document.getElementsByTagName('head')[0].appendChild(script);
 
-  // save segmentClient in the window
-  // to be used for tracking in the rest of the application
-  window.tracking = segmentClient;
+  if (typeof window.analytics.load === 'function') {
+    window.analytics.load(SEGMENT_KEY, {
+      integrations: {
+        all: false,
+        'Google Analytics': true,
+        'Segment.io': true,
+      },
+    });
+  }
 
-  // track first page view after the consent was accepted
-  window.tracking.pageView({
-    path: window.location.pathname,
-  });
+  // tracks the first page view
+  window.analytics.page();
 }

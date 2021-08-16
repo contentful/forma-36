@@ -26,12 +26,10 @@ const styles = {
 export default function Layout({ location, pageContext, children }) {
   useEffect(() => {
     // track page visit only when the page is mounted
-    if (window.tracking) {
-      window.tracking.pageView({
-        path: location?.pathname ?? '/',
-      });
+    if (window.analytics) {
+      window.analytics.page();
     }
-  }, [location]);
+  }, []);
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
