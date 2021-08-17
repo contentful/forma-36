@@ -1,7 +1,7 @@
 import React from 'react';
 import { SectionHeading } from '@contentful/f36-typography';
 import { Flex, Grid } from '@contentful/f36-core';
-import { Lock } from '@contentful/f36-icons';
+import { LockIcon } from '@contentful/f36-icons';
 
 import { TextField, TextFieldProps } from './TextField';
 
@@ -75,7 +75,7 @@ export const WithTextLink = ({
 
 WithTextLink.args = {
   textLinkProps: {
-    icon: <Lock />,
+    icon: <LockIcon />,
     children: 'Unlock to edit',
   },
   ...Basic.args,

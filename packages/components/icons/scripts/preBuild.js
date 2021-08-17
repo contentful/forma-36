@@ -24,7 +24,8 @@ export type {
       .map((file) => file.replace('.tsx', ''));
 
     for (const icon of icons) {
-      template = template + `export { ${icon} } from './${icon}';\n`;
+      template =
+        template + `export { ${icon} as ${icon}Icon } from './${icon}';\n`;
     }
 
     fs.writeFile(

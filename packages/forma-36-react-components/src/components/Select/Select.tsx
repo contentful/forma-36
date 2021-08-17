@@ -9,7 +9,7 @@ import React, {
   ReactNode,
 } from 'react';
 import cn from 'classnames';
-import { ChevronDown } from '@contentful/f36-icons';
+import { ChevronDownIcon } from '@contentful/f36-icons';
 
 import styles from './Select.css';
 
@@ -103,7 +103,7 @@ export const Select = ({
       >
         {children}
       </select>
-      <ChevronDown className={styles['Select__icon']} variant="muted" />
+      <ChevronDownIcon className={styles['Select__icon']} variant="muted" />
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
-import { Drag } from '@contentful/f36-icons';
+import { DragIcon } from '@contentful/f36-icons';
 
 import styles from './CardDragHandle.css';
 
@@ -39,7 +39,7 @@ export function CardDragHandle({
 
   return (
     <div className={classNames} data-test-id={testId} {...otherProps}>
-      <Drag variant="muted" />
+      <DragIcon variant="muted" />
       <span className={styles['CardDragHandle__sr-label']}>{children}</span>
     </div>
   );

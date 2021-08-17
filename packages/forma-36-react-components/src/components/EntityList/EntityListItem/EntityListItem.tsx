@@ -3,11 +3,15 @@ import cn from 'classnames';
 import type { MouseEventHandler } from 'react';
 import { EntityStatusBadge } from '@contentful/f36-badge';
 import type { EntityStatus, PickUnion } from '@contentful/f36-core';
-import { Asset, Entry, Release } from '@contentful/f36-icons';
+import {
+  AssetIcon,
+  EntryIcon,
+  ReleaseIcon,
+  MoreHorizontalIcon,
+} from '@contentful/f36-icons';
 import { DragHandle } from '@contentful/f36-drag-handle';
 import type { DragHandleProps } from '@contentful/f36-drag-handle';
 import { Button } from '@contentful/f36-button';
-import { MoreHorizontal } from '@contentful/f36-icons';
 
 import { Dropdown } from '../../Dropdown';
 
@@ -131,9 +135,9 @@ export function EntityListItem({
 
   const renderIcon = useCallback(() => {
     const iconMap = {
-      asset: Asset,
-      entry: Entry,
-      release: Release,
+      asset: AssetIcon,
+      entry: EntryIcon,
+      release: ReleaseIcon,
     };
     const Icon = entityType ? iconMap[entityType.toLowerCase()] : 'Entry';
 
@@ -263,7 +267,7 @@ export function EntityListItem({
                   toggleElement={
                     <Button
                       disabled={isActionsDisabled}
-                      icon={<MoreHorizontal />}
+                      icon={<MoreHorizontalIcon />}
                       label="Actions"
                       onClick={handleActionClick}
                       variant="transparent"

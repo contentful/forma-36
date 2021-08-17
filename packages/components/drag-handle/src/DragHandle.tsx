@@ -13,7 +13,7 @@ import type {
   PolymorphicComponent,
 } from '@contentful/f36-core';
 import type { CommonProps } from '@contentful/f36-core';
-import { Drag } from '@contentful/f36-icons';
+import { DragIcon } from '@contentful/f36-icons';
 import { getStyles } from './DragHandle.styles';
 
 const DEFAULT_TAG = 'button';
@@ -123,7 +123,7 @@ const _DragHandle: PolymorphicComponentWithRef<
       testId={testId}
       ref={forwardedRef}
     >
-      <Drag variant="muted" />
+      <DragIcon variant="muted" />
       <span className={styles.label}>{label}</span>
     </Element>
   );

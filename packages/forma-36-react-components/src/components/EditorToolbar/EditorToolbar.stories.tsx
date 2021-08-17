@@ -1,9 +1,9 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import {
-  FormatBold,
-  FormatItalic,
-  FormatUnderlined,
+  FormatBoldIcon,
+  FormatItalicIcon,
+  FormatUnderlinedIcon,
 } from '@contentful/f36-icons';
 
 import { EditorToolbar } from './EditorToolbar';
@@ -31,19 +31,19 @@ export const Default: Story<EditorToolbarProps> = (args) => (
   <EditorToolbar style={{ justifyContent: 'space-between' }} {...args}>
     <div>
       <EditorToolbarButton
-        icon={FormatBold}
+        icon={FormatBoldIcon}
         tooltip="Bold"
         label="Bold"
         isActive={false}
       />
       <EditorToolbarButton
-        icon={FormatItalic}
+        icon={FormatItalicIcon}
         tooltip="Italic"
         label="Italic"
         isActive={false}
       />
       <EditorToolbarButton
-        icon={FormatUnderlined}
+        icon={FormatUnderlinedIcon}
         tooltip="Underlined"
         label="Underlined"
         isActive={false}

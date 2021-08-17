@@ -8,6 +8,7 @@ typescript: ./src/Icon.tsx,../icons/src/ArrowDown.tsx
 ---
 
 import { Props } from '@contentful/f36-docs-utils';
+import * as icons from '@contentful/f36-icons';
 
 Icons are used to indicate actions, statuses and navigation. The icon components can be used in `Button`, `TextLink`, `Note` and other components.
 
@@ -33,9 +34,9 @@ Icons are used to indicate actions, statuses and navigation. The icon components
 Forma 36 provides a list of built-in icons that can be used as regular React components:
 
 ```jsx static=true
-import { ArrowDown } from '@contentful/f36-icons';
+import { ArrowDownIcon } from '@contentful/f36-icons';
 
-<ArrowDown />;
+<ArrowDownIcon />;
 ```
 
 ## Component variations
@@ -47,22 +48,22 @@ The icon components can be configured in different ways using variations in colo
 ```jsx
 <React.Fragment>
   <div>
-    <Calendar variant="primary" /> Primary
+    <CalendarIcon variant="primary" /> Primary
   </div>
   <div>
-    <Calendar variant="positive" /> Positive
+    <CalendarIcon variant="positive" /> Positive
   </div>
   <div>
-    <Calendar variant="negative" /> Negative
+    <CalendarIcon variant="negative" /> Negative
   </div>
   <div>
-    <Calendar variant="warning" /> Warning
+    <CalendarIcon variant="warning" /> Warning
   </div>
   <div>
-    <Calendar variant="secondary" /> Secondary
+    <CalendarIcon variant="secondary" /> Secondary
   </div>
   <div style={{ backgroundColor: '#8091a5' }}>
-    <Calendar variant="white" /> White
+    <CalendarIcon variant="white" /> White
   </div>
 </React.Fragment>
 ```
@@ -72,16 +73,16 @@ The icon components can be configured in different ways using variations in colo
 ```jsx
 <React.Fragment>
   <div>
-    <Calendar size="tiny" /> Tiny
+    <CalendarIcon size="tiny" /> Tiny
   </div>
   <div>
-    <Calendar size="small" /> Small
+    <CalendarIcon size="small" /> Small
   </div>
   <div>
-    <Calendar size="medium" /> Medium
+    <CalendarIcon size="medium" /> Medium
   </div>
   <div>
-    <Calendar size="large" /> Large
+    <CalendarIcon size="large" /> Large
   </div>
 </React.Fragment>
 ```
@@ -90,158 +91,8 @@ The icon components can be configured in different ways using variations in colo
 
 ```tsx
 <Grid columns={'repeat(3, 1fr)'}>
-  {Object.entries({
-    ArrowDown,
-    ArrowDownTrimmed,
-    ArrowUp,
-    ArrowUpTrimmed,
-    Asset,
-    AssetTrimmed,
-    Calendar,
-    ChatBubble,
-    ChatBubbleTrimmed,
-    CheckCircle,
-    CheckCircleTrimmed,
-    ChevronDown,
-    ChevronDownTrimmed,
-    ChevronLeft,
-    ChevronLeftTrimmed,
-    ChevronRight,
-    ChevronRightTrimmed,
-    ChevronUp,
-    ChevronUpTrimmed,
-    Clock,
-    ClockTrimmed,
-    Close,
-    CloseTrimmed,
-    CloudUpload,
-    Code,
-    CodeTrimmed,
-    Copy,
-    CopyTrimmed,
-    Cycle,
-    CycleTrimmed,
-    Delete,
-    DeleteTrimmed,
-    Done,
-    DoubleArrow,
-    Download,
-    DownloadTrimmed,
-    Drag,
-    DragTrimmed,
-    Edit,
-    EditTrimmed,
-    EmbeddedEntryBlock,
-    EmbeddedEntryBlockTrimmed,
-    EmbeddedEntryInline,
-    EmbeddedEntryInlineTrimmed,
-    Entry,
-    EntryTrimmed,
-    Environment,
-    EnvironmentAlias,
-    ErrorCircle,
-    ErrorCircleOutline,
-    ErrorCircleTrimmed,
-    ExternalLink,
-    ExternalLinkTrimmed,
-    FaceHappy,
-    FaceHappyTrimmed,
-    Filter,
-    FilterTrimmed,
-    Folder,
-    FolderCreate,
-    FolderCreateTrimmed,
-    FolderOpen,
-    FolderOpenTrimmed,
-    FolderTrimmed,
-    FormatBold,
-    FormatBoldTrimmed,
-    FormatItalic,
-    FormatItalicTrimmed,
-    FormatUnderlined,
-    FormatUnderlinedTrimmed,
-    Gift,
-    HeadingIcon,
-    HeadingOne,
-    HeadingOneTrimmed,
-    HeadingTrimmed,
-    HeadingTwo,
-    HeadingTwoTrimmed,
-    HelpCircle,
-    HelpCircleInverted,
-    HelpCircleTrimmed,
-    HorizontalRule,
-    HorizontalRuleTrimmed,
-    InfoCircle,
-    InfoCircleTrimmed,
-    Language,
-    Link,
-    LinkAlternate,
-    LinkTrimmed,
-    ListBulleted,
-    ListBulletedTrimmed,
-    ListNumbered,
-    ListNumberedTrimmed,
-    Lock,
-    LockTrimmed,
-    Logout,
-    LooksOne,
-    LooksOneTrimmed,
-    LooksTwo,
-    LooksTwoTrimmed,
-    Menu,
-    MenuTrimmed,
-    Minus,
-    MoreHorizontal,
-    MoreHorizontalTrimmed,
-    MoreVertical,
-    MoreVerticalTrimmed,
-    Person,
-    Plus,
-    PlusCircle,
-    PlusCircleTrimmed,
-    PlusTrimmed,
-    Preview,
-    Quote,
-    QuoteTrimmed,
-    Receipt,
-    ReceiptTrimmed,
-    References,
-    Release,
-    ReleaseTrimmed,
-    Search,
-    SearchTrimmed,
-    Settings,
-    SettingsTrimmed,
-    ShoppingCart,
-    ShoppingCartTrimmed,
-    Star,
-    StarTrimmed,
-    Subscript,
-    SubscriptTrimmed,
-    Superscript,
-    SuperscriptTrimmed,
-    Table,
-    Tags,
-    Text,
-    TextTrimmed,
-    ThumbDown,
-    ThumbDownTrimmed,
-    ThumbUp,
-    ThumbUpTrimmed,
-    Users,
-    UsersTrimmed,
-    Warning,
-    WarningTrimmed,
-    Workflows,
-  }).map(([name, icon]) => {
+  {Object.entries(icons).map(([name, icon]) => {
     const Component = icon;
-
-    // `Heading` is exposed as `HeadingIcon` to avoid a clash with the
-    // typography component of the same name
-    if (name === 'HeadingIcon') {
-      name = 'Heading';
-    }
 
     return (
       <Flex
@@ -308,7 +159,7 @@ const CustomIcon = (props) => {
 
 ### Built-in icons
 
-<Props of="ArrowDown" />
+<Props of="ArrowDownIcon" />
 
 ### Custom icons
 

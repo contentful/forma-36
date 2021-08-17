@@ -1,7 +1,7 @@
 import { cx } from 'emotion';
 import React, { useState, useCallback, useRef } from 'react';
 import CopyToClipboard from 'react-copy-to-clipboard';
-import { Copy } from '@contentful/f36-icons';
+import { CopyIcon } from '@contentful/f36-icons';
 import type { CommonProps } from '@contentful/f36-core';
 import { Tooltip } from '@contentful/f36-tooltip';
 import type { TooltipProps } from '@contentful/f36-tooltip';
@@ -88,7 +88,7 @@ function _CopyButton(props: CopyButtonProps, ref: React.Ref<HTMLDivElement>) {
             className={cx(styles.copyButton)}
             aria-label={`Copy ${value} to clipboard`}
           >
-            <Copy variant="muted" />
+            <CopyIcon variant="muted" />
           </button>
         </Tooltip>
       </CopyToClipboard>

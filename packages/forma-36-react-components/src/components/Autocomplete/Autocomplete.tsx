@@ -1,6 +1,6 @@
 import React, { useMemo, useReducer, useRef, ChangeEvent } from 'react';
 import cn from 'classnames';
-import { Close, ChevronDown } from '@contentful/f36-icons';
+import { CloseIcon, ChevronDownIcon } from '@contentful/f36-icons';
 
 import { TextInput } from '../TextInput';
 import {
@@ -217,7 +217,7 @@ export const Autocomplete = <T extends {}>({
           tabIndex={-1}
           disabled={props.disabled}
           buttonType="muted"
-          iconProps={{ as: props.query ? Close : ChevronDown }}
+          iconProps={{ as: props.query ? CloseIcon : ChevronDownIcon }}
           onClick={props.onToggle}
           label={props.query ? 'Clear' : 'Show list'}
         />

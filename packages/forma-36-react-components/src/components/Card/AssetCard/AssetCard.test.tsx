@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { Calendar } from '@contentful/f36-icons';
+import { CalendarIcon } from '@contentful/f36-icons';
 import { axe } from '@/scripts/test/axeHelper';
 
 import { AssetCard } from './AssetCard';
@@ -150,7 +150,7 @@ it('renders a component with a status icon', async () => {
     <AssetCard
       src="https://via.placeholder.com/200x300"
       title="picture of a cat"
-      statusIcon={Calendar}
+      statusIcon={CalendarIcon}
     />,
   );
   const results = await axe(container);

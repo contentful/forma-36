@@ -7,7 +7,7 @@ import { Link } from 'gatsby';
 import { css, cx } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { SectionHeading } from '@contentful/f36-components';
-import { ChevronDown, ChevronRight } from '@contentful/f36-icons';
+import { ChevronDownIcon, ChevronRightIcon } from '@contentful/f36-icons';
 
 import DocSearch from './DocSearch';
 
@@ -116,13 +116,13 @@ const MenuListItem = ({ item, currentPath, isActive, hierarchyLevel }) => {
               <span>{item.name}</span>
             )}
             {isExpanded ? (
-              <ChevronDown
+              <ChevronDownIcon
                 className={styles.linkIcon}
                 size="medium"
                 variant="secondary"
               />
             ) : (
-              <ChevronRight
+              <ChevronRightIcon
                 className={styles.linkIcon}
                 size="medium"
                 variant="secondary"
