@@ -46,9 +46,10 @@ module.exports = function (file, api) {
           if (value.value === 'right') {
             return j.literal('end');
           }
-          console.warn("TextLink: Couldn't automatically update alignIcon value");
+          console.warn(
+            "TextLink: Couldn't automatically update alignIcon value",
+          );
           return value;
-          }
         },
       });
 
