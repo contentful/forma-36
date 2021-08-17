@@ -9,6 +9,7 @@ const {
   addIconImports,
   changeImport,
 } = require('../utils');
+const { getFormaImport, shouldSkipUpdateImport } = require('../utils/config');
 
 module.exports = function (file, api) {
   const j = api.jscodeshift;
@@ -17,7 +18,7 @@ module.exports = function (file, api) {
 
   const componentName = getComponentLocalName(j, source, {
     componentName: 'TextLink',
-    importName: '@contentful/forma-36-react-components',
+    importName: getFormaImport(),
   });
 
   const usedIcons = [];
@@ -72,11 +73,13 @@ module.exports = function (file, api) {
     },
   });
 
-  source = changeImport(j, source, {
-    componentName,
-    from: '@contentful/forma-36-react-components',
-    to: '@contentful/f36-components',
-  });
+  if (!shouldSkipUpdateImport()) {
+    source = changeImport(j, source, {
+      componentName,
+      from: getFormaImport(),
+      to: '@contentful/f36-components',
+    });
+  }
 
   source = addIconImports({ j, source, icons: usedIcons });
 
