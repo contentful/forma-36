@@ -45,6 +45,7 @@ class ComponentSource extends React.Component {
           scope={{
             ...f36icons,
             ...f36Components,
+            f36icons,
             tokens,
             Icon,
           }}

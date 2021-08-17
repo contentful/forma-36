@@ -47,24 +47,24 @@ The icon components can be configured in different ways using variations in colo
 
 ```jsx
 <React.Fragment>
-  <div>
-    <CalendarIcon variant="primary" /> Primary
-  </div>
-  <div>
-    <CalendarIcon variant="positive" /> Positive
-  </div>
-  <div>
-    <CalendarIcon variant="negative" /> Negative
-  </div>
-  <div>
-    <CalendarIcon variant="warning" /> Warning
-  </div>
-  <div>
-    <CalendarIcon variant="secondary" /> Secondary
-  </div>
-  <div style={{ backgroundColor: '#8091a5' }}>
-    <CalendarIcon variant="white" /> White
-  </div>
+  <Flex alignItems="center">
+    <CalendarIcon variant="primary" /> <Text>Primary</Text>
+  </Flex>
+  <Flex alignItems="center">
+    <CalendarIcon variant="positive" /> <Text>Positive</Text>
+  </Flex>
+  <Flex alignItems="center">
+    <CalendarIcon variant="negative" /> <Text>Negative</Text>
+  </Flex>
+  <Flex alignItems="center">
+    <CalendarIcon variant="warning" /> <Text>Warning</Text>
+  </Flex>
+  <Flex alignItems="center">
+    <CalendarIcon variant="secondary" /> <Text>Secondary</Text>
+  </Flex>
+  <Flex style={{ backgroundColor: '#8091a5' }} alignItems="center">
+    <CalendarIcon variant="white" /> <Text>White</Text>
+  </Flex>
 </React.Fragment>
 ```
 
@@ -72,26 +72,28 @@ The icon components can be configured in different ways using variations in colo
 
 ```jsx
 <React.Fragment>
-  <div>
-    <CalendarIcon size="tiny" /> Tiny
-  </div>
-  <div>
-    <CalendarIcon size="small" /> Small
-  </div>
-  <div>
-    <CalendarIcon size="medium" /> Medium
-  </div>
-  <div>
-    <CalendarIcon size="large" /> Large
-  </div>
+  <Flex alignItems="center">
+    <CalendarIcon size="tiny" /> <Text>Tiny</Text>
+  </Flex>
+  <Flex alignItems="center">
+    <CalendarIcon size="small" /> <Text>Small</Text>
+  </Flex>
+  <Flex alignItems="center">
+    <CalendarIcon size="medium" /> <Text>Medium</Text>
+  </Flex>
+  <Flex alignItems="center">
+    <CalendarIcon size="large" /> <Text>Large</Text>
+  </Flex>
 </React.Fragment>
 ```
 
 ### Icons
 
 ```tsx
+// import * as f36icons from "@contentful/f36-icons";
+
 <Grid columns={'repeat(3, 1fr)'}>
-  {Object.entries(icons).map(([name, icon]) => {
+  {Object.entries(f36icons).map(([name, icon]) => {
     const Component = icon;
 
     return (
@@ -104,9 +106,9 @@ The icon components can be configured in different ways using variations in colo
         flexGrow={0}
       >
         <Flex marginRight="spacingS">
-          <Component key={name} size="large" />
+          <Component key={name} size="medium" />
         </Flex>
-        {name}
+        <Text>{name}</Text>
       </Flex>
     );
   })}
