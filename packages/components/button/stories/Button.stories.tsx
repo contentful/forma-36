@@ -89,7 +89,7 @@ export const Overview = ({ icon }) => {
             <Button
               variant="primary"
               size="small"
-              icon={<Icon as={icons.Plus} />}
+              icon={<Icon as={icons.PlusIcon} />}
             >
               Small
             </Button>
@@ -98,7 +98,7 @@ export const Overview = ({ icon }) => {
             <Button
               variant="primary"
               size="medium"
-              icon={<Icon as={icons.Plus} />}
+              icon={<Icon as={icons.PlusIcon} />}
             >
               Medium (default)
             </Button>
@@ -107,7 +107,7 @@ export const Overview = ({ icon }) => {
             <Button
               variant="primary"
               size="large"
-              icon={<Icon as={icons.Plus} />}
+              icon={<Icon as={icons.PlusIcon} />}
             >
               Large
             </Button>
@@ -192,7 +192,7 @@ export const Overview = ({ icon }) => {
           <Box marginRight="spacingXs">
             <Button
               variant="primary"
-              icon={<Icon as={icons.ChevronDown} />}
+              icon={<Icon as={icons.ChevronDownIcon} />}
               alignIcon="end"
             >
               Primary
@@ -201,7 +201,7 @@ export const Overview = ({ icon }) => {
           <Box marginRight="spacingXs">
             <Button
               variant="secondary"
-              icon={<Icon as={icons.ChevronDown} />}
+              icon={<Icon as={icons.ChevronDownIcon} />}
               alignIcon="end"
             >
               Secondary
@@ -210,7 +210,7 @@ export const Overview = ({ icon }) => {
           <Box marginRight="spacingXs">
             <Button
               variant="positive"
-              icon={<Icon as={icons.ChevronDown} />}
+              icon={<Icon as={icons.ChevronDownIcon} />}
               alignIcon="end"
             >
               Positive
@@ -219,7 +219,7 @@ export const Overview = ({ icon }) => {
           <Box marginRight="spacingXs">
             <Button
               variant="negative"
-              icon={<Icon as={icons.ChevronDown} />}
+              icon={<Icon as={icons.ChevronDownIcon} />}
               alignIcon="end"
             >
               Negative
@@ -228,7 +228,7 @@ export const Overview = ({ icon }) => {
           <Box marginRight="spacingXs">
             <Button
               variant="transparent"
-              icon={<Icon as={icons.ChevronDown} />}
+              icon={<Icon as={icons.ChevronDownIcon} />}
               alignIcon="end"
             >
               Transparent
@@ -280,49 +280,49 @@ export const Overview = ({ icon }) => {
           <Box marginRight="spacingXs">
             <Button
               variant="transparent"
-              icon={<Icon as={icons.Close} />}
+              icon={<Icon as={icons.CloseIcon} />}
               aria-label="Close"
             />
           </Box>
           <Box marginRight="spacingXs">
             <Button
               variant="transparent"
-              icon={<Icon as={icons.MoreHorizontal} />}
+              icon={<Icon as={icons.MoreHorizontalIcon} />}
               aria-label="More"
             />
           </Box>
           <Box marginRight="spacingXs">
             <Button
               variant="secondary"
-              icon={<Icon as={icons.Download} />}
+              icon={<Icon as={icons.DownloadIcon} />}
               aria-label="Download"
             />
           </Box>
           <Box marginRight="spacingXs">
             <Button
               variant="secondary"
-              icon={<Icon as={icons.Download} />}
+              icon={<Icon as={icons.DownloadIcon} />}
               isLoading
             />
           </Box>
           <Box marginRight="spacingXs">
             <Button
               variant="positive"
-              icon={<Icon as={icons.Drag} />}
+              icon={<Icon as={icons.DragIcon} />}
               aria-label="Resize"
             />
           </Box>
           <Box marginRight="spacingXs">
             <Button
               variant="negative"
-              icon={<Icon as={icons.Delete} />}
+              icon={<Icon as={icons.DeleteIcon} />}
               aria-label="Delete"
             />
           </Box>
           <Box marginRight="spacingXs">
             <Button
               variant="primary"
-              icon={<Icon as={icons.Plus} />}
+              icon={<Icon as={icons.PlusIcon} />}
               aria-label="Add"
             />
           </Box>
@@ -331,7 +331,7 @@ export const Overview = ({ icon }) => {
           <Box marginRight="spacingXs">
             <Button
               variant="primary"
-              icon={<Icon as={icons.Plus} />}
+              icon={<Icon as={icons.PlusIcon} />}
               aria-label="Plus"
               size="small"
             />
@@ -339,7 +339,7 @@ export const Overview = ({ icon }) => {
           <Box marginRight="spacingXs">
             <Button
               variant="primary"
-              icon={<Icon as={icons.Plus} />}
+              icon={<Icon as={icons.PlusIcon} />}
               aria-label="Plus"
               size="medium"
             />
@@ -347,7 +347,7 @@ export const Overview = ({ icon }) => {
           <Box marginRight="spacingXs">
             <Button
               variant="primary"
-              icon={<Icon as={icons.Plus} />}
+              icon={<Icon as={icons.PlusIcon} />}
               aria-label="Plus"
               size="large"
             />
@@ -369,12 +369,12 @@ export const Overview = ({ icon }) => {
           </Button>
         </Flex>
         <Flex flexDirection="row" marginBottom="spacingS">
-          <Button icon={<Icon as={icons.Download} />} isFullWidth>
+          <Button icon={<Icon as={icons.DownloadIcon} />} isFullWidth>
             Full width button
           </Button>
         </Flex>
         <Flex flexDirection="row" marginBottom="spacingS">
-          <Button icon={<Icon as={icons.Download} />} isFullWidth>
+          <Button icon={<Icon as={icons.DownloadIcon} />} isFullWidth>
             Full width button
           </Button>
         </Flex>
