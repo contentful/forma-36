@@ -36,6 +36,7 @@ exports.onPostBuild = () => {
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
+
   const layout = path.resolve(`./src/components/Layout.js`);
   return graphql(
     `
