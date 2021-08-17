@@ -17,17 +17,9 @@ Run this command to start an interactive wizard and then run the specified trans
 
 #### `color-tokens-to-new-tokens`
 
-Converts usage of deprecated color tokens with the correct new token.  
+Converts usage of deprecated color tokens with the correct new token.
 eg. `tokens.colorElementMid` to `tokens.gray300`.
 
-```sh
-npx @contentful/f36-codemod color-tokens-to-new-tokens <path>
-```
+#### `v4-text-link`
 
-Note: It will only work on tokens used on a code like the following one.
-
-```js
-import tokens from '@contentful/forma-36-tokens';
-
-const color = tokens.colorElementMid;
-```
+Migrates `TextLink` component from Forma@v3 to Forma@v4

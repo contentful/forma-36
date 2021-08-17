@@ -9,3 +9,4 @@ build
 public
 .cache
 packages/**/CHANGELOG.md
+**/__testfixtures__/**
