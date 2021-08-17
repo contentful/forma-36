@@ -8,7 +8,9 @@ const [PropsProvider, usePropsContext] = constate(
   },
 );
 
-function useProps(props: { of: string }): PropDefinition[] {
+function useProps(props: {
+  of: string;
+}): { main: PropDefinition[]; additional: PropDefinition[] } {
   const metadata = usePropsContext();
 
   const componentMetadata = metadata[props.of] as
@@ -16,13 +18,22 @@ function useProps(props: { of: string }): PropDefinition[] {
     | undefined;
 
   if (!componentMetadata) {
-    return [];
+    return {
+      main: [],
+      additional: [],
+    };
   }
 
   const values = Object.values(componentMetadata.props);
 
   let core: PropDefinition[] = [];
   let component: PropDefinition[] = [];
+  const additional = values.filter((value) => {
+    const hasPolymorphicParent =
+      Boolean(value.parent) &&
+      value.parent?.fileName.includes('@types/react/index.d.ts');
+    return hasPolymorphicParent;
+  });
   values
     .filter((value) => {
       const hasPolymorphicParent =
@@ -45,7 +56,10 @@ function useProps(props: { of: string }): PropDefinition[] {
   core = orderBy(core, ['required', 'name'], ['desc', 'asc']);
   component = orderBy(component, ['required', 'name'], ['desc', 'asc']);
 
-  return [...component, ...core];
+  return {
+    main: [...component, ...core],
+    additional,
+  };
 }
 
 export { PropsProvider, useProps };
