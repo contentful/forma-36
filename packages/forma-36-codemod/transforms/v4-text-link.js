@@ -7,8 +7,7 @@ const {
   updatePropertyValue,
   updateIcons,
   addIconImports,
-  removeComponentImport,
-  addImport,
+  changeImport,
 } = require('../utils');
 
 module.exports = function (file, api) {
@@ -17,11 +16,6 @@ module.exports = function (file, api) {
   let source = file.source;
 
   const componentName = getComponentLocalName(j, source, {
-    componentName: 'TextLink',
-    importName: '@contentful/forma-36-react-components',
-  });
-
-  source = removeComponentImport(j, source, {
     componentName: 'TextLink',
     importName: '@contentful/forma-36-react-components',
   });
@@ -78,10 +72,12 @@ module.exports = function (file, api) {
     },
   });
 
-  const importResult = addImport(j, source, [
-    j.template.statement`import { TextLink } from "@contentful/f36-components"`,
-  ]);
-  source = importResult.source;
+  source = changeImport(j, source, {
+    componentName,
+    from: '@contentful/forma-36-react-components',
+    to: '@contentful/f36-components',
+  });
+
   source = addIconImports({ j, source, icons: usedIcons });
 
   return source;
