@@ -317,14 +317,14 @@ exports[`renders the component with a textlink 1`] = `
 }
 
 .emotion-3 {
-  margin-left: 0.125rem;
+  margin-left: 0.25rem;
 }
 
 .emotion-1 {
   display: inline-block;
   fill: #0059C8;
-  height: 16px;
-  width: 16px;
+  height: 18px;
+  width: 18px;
   fill: currentColor;
   -webkit-transition: fill 0.1s ease-in-out;
   transition: fill 0.1s ease-in-out;
