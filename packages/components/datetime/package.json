@@ -13,6 +13,7 @@
     "emotion": "^10.0.17"
   },
   "peerDependencies": {
+    "dayjs": "^1.10.6",
     "react": ">=16.8"
   },
   "license": "MIT",

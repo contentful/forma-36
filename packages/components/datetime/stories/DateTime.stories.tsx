@@ -5,13 +5,19 @@ import { DateTime } from '../src/DateTime';
 import type { DateTimeProps } from '../src/DateTime';
 
 export default {
+  title: 'Components/DateTime',
   component: DateTime,
   parameters: {
     propTypes: DateTime['__docgenInfo'],
+    controls: {
+      matchers: {
+        date: /date$/,
+      },
+    },
   },
-  title: 'Components/DateTime',
 } as Meta;
 
-export const Default: Story<DateTimeProps> = (args) => {
-  return <DateTime {...args}>DateTime</DateTime>;
+export const Default: Story<DateTimeProps> = (args) => <DateTime {...args} />;
+Default.args = {
+  date: '2020-08-17T15:45:00',
 };
