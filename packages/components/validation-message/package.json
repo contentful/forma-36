@@ -1,7 +1,6 @@
 {
   "name": "@contentful/f36-validation-message",
   "version": "4.0.0",
-  "private": true,
   "description": "Forma 36: ValidationMessage component",
   "license": "MIT",
   "scripts": {

@@ -1,7 +1,6 @@
 {
   "name": "@contentful/f36-helptext",
   "version": "4.0.0",
-  "private": true,
   "description": "Forma 36: HelpText component",
   "scripts": {
     "build": "parcel build index.ts"

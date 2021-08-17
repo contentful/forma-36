@@ -1,7 +1,6 @@
 {
   "name": "@contentful/f36-table",
   "version": "4.0.0",
-  "private": true,
   "description": "Forma 36: Table component",
   "scripts": {
     "build": "parcel build src/index.ts"
