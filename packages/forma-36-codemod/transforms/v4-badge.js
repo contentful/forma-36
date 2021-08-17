@@ -41,6 +41,8 @@ module.exports = function (file, api) {
     outputComponentName: 'Badge',
   });
 
+  // TODO: add and option to migrate <Tag entityStatusType="draft">Draft</Tag>; to <EntityStatusBadge entityStatus="draft" />;
+
   if (!shouldSkipUpdateImport()) {
     source = changeImportWithComponentName(j, source, {
       componentName,
