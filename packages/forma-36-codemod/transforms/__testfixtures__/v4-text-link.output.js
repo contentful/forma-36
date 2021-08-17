@@ -1,5 +1,6 @@
 import React from "react";
-import { TextLink } from "@contentful/forma-36-react-components";
+
+import { TextLink } from "@contentful/f36-components";
 
 import { ArrowDown, Asset } from "@contentful/f36-icons";
 

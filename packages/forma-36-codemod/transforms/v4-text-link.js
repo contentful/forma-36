@@ -7,6 +7,8 @@ const {
   updatePropertyValue,
   updateIcons,
   addIconImports,
+  removeComponentImport,
+  addImport,
 } = require('../utils');
 
 module.exports = function (file, api) {
@@ -18,6 +20,12 @@ module.exports = function (file, api) {
     componentName: 'TextLink',
     importName: '@contentful/forma-36-react-components',
   });
+
+  source = removeComponentImport(j, source, {
+    componentName: 'TextLink',
+    importName: '@contentful/forma-36-react-components',
+  });
+
   const usedIcons = [];
 
   source = changeProperties(j, source, {
@@ -70,15 +78,11 @@ module.exports = function (file, api) {
     },
   });
 
+  const importResult = addImport(j, source, [
+    j.template.statement`import { TextLink } from "@contentful/f36-components"`,
+  ]);
+  source = importResult.source;
   source = addIconImports({ j, source, icons: usedIcons });
-
-  // todo: create a function that replaces icons with inlined icons
-
-  // todo: add imports
-  // const importResult = addImport(j, source, [
-  //   j.template.statement`import { TextLink } from "@contentful/f36-components"`,
-  // ]);
-  // source = importResult.source;
 
   return source;
 };

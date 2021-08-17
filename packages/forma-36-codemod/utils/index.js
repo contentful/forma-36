@@ -8,6 +8,7 @@ const { updatePropertyValue } = require('./updatePropertyValue');
 const { getProperty } = require('./getProperty');
 const { addImport } = require('./addImport');
 const { updateIcons, addIconImports } = require('./updateIcons');
+const { removeComponentImport } = require('./removeComponentImport');
 
 module.exports = {
   getComponentLocalName,
@@ -21,4 +22,5 @@ module.exports = {
   addImport,
   updateIcons,
   addIconImports,
+  removeComponentImport,
 };
