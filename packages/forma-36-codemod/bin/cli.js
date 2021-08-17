@@ -58,7 +58,7 @@ function runTransform({ files, flags, parser, transformer }) {
 
   args.push('--verbose=2');
 
-  args.push('--ignore-pattern=**/node_modules/**');
+  args.push('--ignore-pattern=**/node_modules/**,**/dist/**');
 
   args.push('--parser', parser);
 

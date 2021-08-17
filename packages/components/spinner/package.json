@@ -1,7 +1,6 @@
 {
   "name": "@contentful/f36-spinner",
   "version": "4.0.0",
-  "private": true,
   "description": "Forma 36: Spinner Component",
   "scripts": {
     "build": "parcel build src/index.ts"

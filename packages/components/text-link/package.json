@@ -1,7 +1,6 @@
 {
   "name": "@contentful/f36-text-link",
   "version": "4.0.0",
-  "private": true,
   "description": "Forma 36: TextLink component",
   "scripts": {
     "build": "parcel build index.ts"

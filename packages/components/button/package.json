@@ -1,7 +1,6 @@
 {
   "name": "@contentful/f36-button",
   "version": "4.0.0",
-  "private": true,
   "description": "Forma 36: Button component",
   "scripts": {
     "build": "parcel build index.ts"
