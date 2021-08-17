@@ -346,6 +346,7 @@ exports[`renders the component with a textlink 1`] = `
     </label>
     <button
       class="emotion-4 TextField__label-link"
+      data-test-id="cf-ui-text-link"
       type="button"
     >
       <span

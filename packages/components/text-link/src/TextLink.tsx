@@ -52,7 +52,7 @@ const TextLink: PolymorphicComponentWithRef<
   const {
     children,
     className,
-    testId,
+    testId = 'cf-ui-text-link',
     variant = 'primary',
     href,
     icon,

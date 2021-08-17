@@ -423,6 +423,7 @@ exports[`renders the component with a cta 1`] = `
       <div>
         <button
           class="emotion-1"
+          data-test-id="cf-ui-text-link"
           type="button"
         >
           <span>
