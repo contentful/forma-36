@@ -44,7 +44,7 @@ export function formatDateAndTime(
 }
 
 function DateTime(
-  { date, format = 'full', className, testId = 'f36-datetime' }: DateTimeProps,
+  { date, format = 'full', className, testId = 'f36-date-time' }: DateTimeProps,
   ref: React.Ref<HTMLTimeElement>,
 ) {
   return (

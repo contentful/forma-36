@@ -8,7 +8,6 @@ export default {
   title: 'Components/DateTime',
   component: DateTime,
   parameters: {
-    propTypes: DateTime['__docgenInfo'],
     controls: {
       matchers: {
         date: /date$/,
