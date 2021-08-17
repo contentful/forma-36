@@ -21,6 +21,10 @@ module.exports = function (file, api) {
     importName: getFormaImport(),
   });
 
+  if (!componentName) {
+    return source;
+  }
+
   const usedIcons = [];
 
   source = changeProperties(j, source, {
