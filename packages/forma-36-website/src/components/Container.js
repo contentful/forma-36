@@ -35,7 +35,6 @@ const styles = {
 
   main: css`
     flex: 1 1 0;
-    padding: '40px';
   `,
 
   inner: css`
