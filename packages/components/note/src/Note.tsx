@@ -18,7 +18,7 @@ import {
 import { getStyles } from './Note.styles';
 
 const icons = {
-  primary: ErrorCircleIcon,
+  primary: InfoCircleIcon,
   positive: CheckCircleIcon,
   negative: ErrorCircleIcon,
   warning: WarningIcon,
