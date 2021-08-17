@@ -4,18 +4,18 @@ import { TextLink } from "@contentful/f36-components";
 
 import { ArrowDown, Asset } from "@contentful/f36-icons";
 
-<TextLink isDisabled={false} variant="muted" />;
+<TextLink as="button" isDisabled={false} variant="muted" />;
 
-<TextLink isDisabled variant="secondary" />;
+<TextLink as="button" isDisabled variant="secondary" />;
 
-<TextLink as="a" href="https://contentful.com" />;
+<TextLink href="https://contentful.com" />;
 
-<TextLink children="hello" />;
+<TextLink as="button" children="hello" />;
 
-<TextLink icon={<ArrowDown />} alignIcon="start">
+<TextLink as="button" icon={<ArrowDown />} alignIcon="start">
   text
 </TextLink>;
 
-<TextLink icon={<Asset />} alignIcon="end">
+<TextLink as="button" icon={<Asset />} alignIcon="end">
   text
 </TextLink>;

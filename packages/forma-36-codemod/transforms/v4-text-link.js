@@ -53,11 +53,11 @@ module.exports = function (file, api) {
         },
       });
 
-      if (hasProperty(modifiedAttributes, { propertyName: 'href' })) {
+      if (!hasProperty(modifiedAttributes, { propertyName: 'href' })) {
         modifiedAttributes = addProperty(modifiedAttributes, {
           j,
           propertyName: 'as',
-          propertyValue: j.literal('a'),
+          propertyValue: j.literal('button'),
         });
       }
 
