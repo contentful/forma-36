@@ -1,7 +1,11 @@
 import React, { useCallback } from 'react';
 import classNames from 'classnames';
-import { CheckCircle, ErrorCircle, Warning } from '@contentful/f36-icons';
-import { Close } from '@contentful/f36-icons';
+import {
+  CheckCircleIcon,
+  ErrorCircleIcon,
+  WarningIcon,
+  CloseIcon,
+} from '@contentful/f36-icons';
 
 import { IconButton } from '../IconButton';
 import { TextLink, TextLinkProps } from '@contentful/f36-text-link';
@@ -68,27 +72,27 @@ export function NotificationItem({
       [styles[`NotificationItem__icon--${intent}`]]: true,
     });
 
-    let Icon: typeof CheckCircle;
+    let Icon: typeof CheckCircleIcon;
     let variant;
 
     switch (intent) {
       case 'success':
-        Icon = CheckCircle;
+        Icon = CheckCircleIcon;
         variant = 'positive';
         break;
 
       case 'warning':
-        Icon = Warning;
+        Icon = WarningIcon;
         variant = 'warning';
         break;
 
       case 'error':
-        Icon = ErrorCircle;
+        Icon = ErrorCircleIcon;
         variant = 'negative';
         break;
 
       default:
-        Icon = ErrorCircle;
+        Icon = ErrorCircleIcon;
     }
 
     return (
@@ -121,7 +125,7 @@ export function NotificationItem({
         {hasCloseButton && (
           <IconButton
             buttonType="secondary"
-            iconProps={{ as: Close }}
+            iconProps={{ as: CloseIcon }}
             onClick={() => {
               if (onClose) {
                 onClose();

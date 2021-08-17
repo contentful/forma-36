@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { ArrowDown } from '@contentful/f36-icons';
+import { ArrowDownIcon } from '@contentful/f36-icons';
 import { axe } from '@/scripts/test/axeHelper';
 
 import { Workbench } from './Workbench';
@@ -11,7 +11,7 @@ function TestWorkbench() {
     <Workbench>
       <Workbench.Header
         title={'Page title'}
-        icon={ArrowDown}
+        icon={ArrowDownIcon}
         actions={<Button variant="transparent">Click</Button>}
       />
       <Workbench.Content>Workbench</Workbench.Content>
@@ -24,7 +24,7 @@ function TestComplextWorkbench() {
     <Workbench>
       <Workbench.Header
         title={'Page title'}
-        icon={ArrowDown}
+        icon={ArrowDownIcon}
         actions={<Button variant="transparent">Click</Button>}
       />
       <Workbench.Sidebar position="left">Left sidebar</Workbench.Sidebar>

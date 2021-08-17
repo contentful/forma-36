@@ -6,7 +6,7 @@ module.exports.updateIcons = function updateIcons(attributes, { j, icons }) {
     j,
     propertyName: 'icon',
     propertyValue: (value) => {
-      const iconName = value.value;
+      const iconName = `${value.value}Icon`;
       if (!icons.includes(iconName)) {
         icons.push(iconName);
       }

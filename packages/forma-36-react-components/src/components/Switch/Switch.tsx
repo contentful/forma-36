@@ -1,6 +1,6 @@
 import React, { FunctionComponent, KeyboardEvent } from 'react';
 import classNames from 'classnames';
-import { Close, Done } from '@contentful/f36-icons';
+import { CloseIcon, DoneIcon } from '@contentful/f36-icons';
 
 import styles from './Switch.css';
 
@@ -36,7 +36,7 @@ export const Switch: FunctionComponent<SwitchProps> = (props: SwitchProps) => {
         })}
         htmlFor={props.id}
       >
-        <Done
+        <DoneIcon
           className={classNames(
             styles['Switch__icon'],
             styles['Switch__icon--done'],
@@ -45,7 +45,7 @@ export const Switch: FunctionComponent<SwitchProps> = (props: SwitchProps) => {
           variant="white"
         />
         {props.labelText}
-        <Close
+        <CloseIcon
           className={classNames(
             styles['Switch__icon'],
             styles['Switch__icon--close'],

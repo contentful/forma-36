@@ -9,7 +9,7 @@ typescript: ./src/Pill.tsx
 ---
 
 import { Props } from '@contentful/f36-docs-utils';
-import { InfoCircle } from '@contentful/f36-icons';
+import { InfoCircleIcon } from '@contentful/f36-icons';
 
 Pills represent a set of one or multiple objects which can be entered or changed by the user. By default, pills can be removed by the user. When necessary, the order of pills can be changed by the user using drag and drop. They are used to represent complex entities in small blocks such as contact details. Contentful Pills are are used to render transition locales and tag elements.
 
@@ -45,13 +45,13 @@ Example of the Pill component with dragHandle, in that case Icon.
 
 ```jsx
 // import { Pill } from '@contentful/f36-pill';
-// import { InfoCircle } from '@contentful/f36-icons';
+// import { InfoCircleIcon } from '@contentful/f36-icons';
 
 <Pill
   label="example.user@contentful.com"
   onDrag={() => {}}
   dragHandleComponent={
-    <InfoCircle
+    <InfoCircleIcon
       aria-label="Drag handler"
       variant="muted"
       style={{ padding: '0.375rem 0.625rem' }}

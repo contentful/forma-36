@@ -10,7 +10,7 @@ typescript: ./ButtonGroup.tsx
 
 import { Props } from '@contentful/f36-docs-utils';
 import { Button } from '@contentful/f36-button';
-import { ChevronDown, Plus } from '@contentful/f36-icons';
+import { ChevronDownIcon, PlusIcon } from '@contentful/f36-icons';
 
 ## Table of contents
 
@@ -31,7 +31,7 @@ Example of usage:
   <Button
     variant="positive"
     aria-label="Open dropdown"
-    icon={<ChevronDown />}
+    icon={<ChevronDownIcon />}
   />
 </ButtonGroup>
 ```
@@ -40,13 +40,13 @@ It's possible to add a divider for buttons that don't have border:
 
 ```jsx
 // import { ButtonGroup, Button } from '@contentful/f36-button';
-// import { ChevronDown, Plus } from '@contentful/f36-icons';
+// import { ChevronDownIcon, PlusIcon } from '@contentful/f36-icons';
 
 <ButtonGroup testId="group-button" withDivider>
-  <Button icon={<Plus />} variant="positive">
+  <Button icon={<PlusIcon />} variant="positive">
     Button
   </Button>
-  <Button variant="positive" icon={<ChevronDown />} />
+  <Button variant="positive" icon={<ChevronDownIcon />} />
 </ButtonGroup>
 ```
 

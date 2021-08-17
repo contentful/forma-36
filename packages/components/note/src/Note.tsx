@@ -8,20 +8,20 @@ import type {
 import { Button } from '@contentful/f36-button';
 import { Heading, Text } from '@contentful/f36-typography';
 import {
-  CheckCircle,
-  Close,
-  ErrorCircle,
-  InfoCircle,
-  Warning,
+  CheckCircleIcon,
+  CloseIcon,
+  ErrorCircleIcon,
+  InfoCircleIcon,
+  WarningIcon,
 } from '@contentful/f36-icons';
 
 import { getStyles } from './Note.styles';
 
 const icons = {
-  primary: InfoCircle,
-  positive: CheckCircle,
-  negative: ErrorCircle,
-  warning: Warning,
+  primary: InfoCircleIcon,
+  positive: CheckCircleIcon,
+  negative: ErrorCircleIcon,
+  warning: WarningIcon,
 };
 
 export type NoteVariant = 'negative' | 'positive' | 'primary' | 'warning';
@@ -97,7 +97,7 @@ export const Note = React.forwardRef<HTMLElement, NoteProps>((props, ref) => {
       {hasCloseButton && (
         <Button
           variant="transparent"
-          icon={<Close />}
+          icon={<CloseIcon />}
           onClick={() => {
             if (onClose) {
               onClose();

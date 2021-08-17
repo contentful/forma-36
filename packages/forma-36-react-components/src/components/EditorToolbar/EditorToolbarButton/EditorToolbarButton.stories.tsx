@@ -13,7 +13,7 @@ export default {
         options: Object.keys(icons),
         type: 'select',
       },
-      defaultValue: 'HeadingOne',
+      defaultValue: 'HeadingOneIcon',
     },
     label: {
       control: 'text',

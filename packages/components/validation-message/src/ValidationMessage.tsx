@@ -4,7 +4,7 @@ import type {
   CommonProps,
   PolymorphicComponentProps,
 } from '@contentful/f36-core';
-import { ErrorCircleOutline } from '@contentful/f36-icons';
+import { ErrorCircleOutlineIcon } from '@contentful/f36-icons';
 import { Text } from '@contentful/f36-typography';
 
 export type ValidationMessageInternalProps = CommonProps & {
@@ -23,7 +23,7 @@ export const ValidationMessage = forwardRef<
   return (
     <Flex {...otherProps} ref={ref} testId={testId} alignItems="center">
       <Flex marginRight="spacing2Xs">
-        <ErrorCircleOutline
+        <ErrorCircleOutlineIcon
           size="small"
           variant="negative"
           aria-label="Validation message"

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { ArrowDown } from '@contentful/f36-icons';
+import { ArrowDownIcon } from '@contentful/f36-icons';
 import tokens from '@contentful/f36-tokens';
 import { axe } from '@/scripts/test/axeHelper';
 import { TextLink } from '../src/TextLink';
@@ -146,7 +146,9 @@ describe('TextLink', function () {
 
   it('renders with an icon', () => {
     const { container, getByTestId, getByText } = render(
-      <TextLink icon={<ArrowDown data-test-id="icon" />}>Text Link</TextLink>,
+      <TextLink icon={<ArrowDownIcon data-test-id="icon" />}>
+        Text Link
+      </TextLink>,
     );
 
     expect(container.firstChild).toContainElement(getByTestId('icon'));
@@ -157,7 +159,7 @@ describe('TextLink', function () {
 
   it('renders with an icon aligned right to the text', () => {
     const { getByTestId, getByText } = render(
-      <TextLink alignIcon="end" icon={<ArrowDown data-test-id="icon" />}>
+      <TextLink alignIcon="end" icon={<ArrowDownIcon data-test-id="icon" />}>
         Text Link
       </TextLink>,
     );

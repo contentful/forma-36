@@ -44,8 +44,8 @@ class ComponentSource extends React.Component {
           // export a component called `Heading`
           scope={{
             ...f36icons,
-            HeadingIcon: f36icons.Heading,
             ...f36Components,
+            f36icons,
             tokens,
             Icon,
           }}

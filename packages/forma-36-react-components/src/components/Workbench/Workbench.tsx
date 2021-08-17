@@ -2,7 +2,7 @@ import React, { HTMLProps } from 'react';
 import cn from 'classnames';
 import type { ReactElement } from 'react';
 import { Heading, Paragraph } from '@contentful/f36-typography';
-import { ChevronLeft } from '@contentful/f36-icons';
+import { ChevronLeftIcon } from '@contentful/f36-icons';
 import type { IconComponent } from '@contentful/f36-icon';
 
 import { IconButton } from '../IconButton';
@@ -47,7 +47,7 @@ export function WorkbenchHeader({
             label="Back"
             buttonType="muted"
             iconProps={{
-              as: ChevronLeft,
+              as: ChevronLeftIcon,
               size: 'large',
             }}
           />

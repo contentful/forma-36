@@ -1,11 +1,11 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import { ArrowDown } from '../src/';
+import { ArrowDownIcon } from '../src/';
 
 describe('Separate icon components', () => {
   it('renders', () => {
-    const { getByTestId } = render(<ArrowDown />);
+    const { getByTestId } = render(<ArrowDownIcon />);
 
     const icon = getByTestId('cf-ui-icon');
 

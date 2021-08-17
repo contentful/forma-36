@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
-import { ChevronDown, Plus } from '@contentful/f36-icons';
+import { ChevronDownIcon, PlusIcon } from '@contentful/f36-icons';
 import { SectionHeading } from '@contentful/f36-typography';
 import { action } from '@storybook/addon-actions';
 import { Box, Flex } from '@contentful/f36-core';
@@ -36,7 +36,7 @@ export const basic: Story<ButtonGroupProps> = (args) => {
       <Button variant="secondary">Button</Button>
       <Button variant="secondary">Button</Button>
       <Button variant="secondary">Button</Button>
-      <Button variant="secondary" icon={<ChevronDown />} />
+      <Button variant="secondary" icon={<ChevronDownIcon />} />
     </ButtonGroup>
   );
 };
@@ -47,7 +47,7 @@ export const spaced: Story<ButtonGroupProps> = (args) => {
       <Button variant="secondary">Button</Button>
       <Button variant="secondary">Button</Button>
       <Button variant="secondary">Button</Button>
-      <Button variant="secondary" icon={<ChevronDown />} />
+      <Button variant="secondary" icon={<ChevronDownIcon />} />
     </ButtonGroup>
   );
 };
@@ -81,7 +81,7 @@ export const overview: Story<ButtonGroupProps> = () => {
               <Button
                 onClick={onClick}
                 variant="secondary"
-                icon={<ChevronDown />}
+                icon={<ChevronDownIcon />}
               />
             </ButtonGroup>
           </Box>
@@ -93,19 +93,19 @@ export const overview: Story<ButtonGroupProps> = () => {
               <Button
                 onClick={onClick}
                 variant="positive"
-                icon={<ChevronDown />}
+                icon={<ChevronDownIcon />}
               />
             </ButtonGroup>
           </Box>
           <Box marginBottom="spacingS">
             <ButtonGroup variant="collapsed" withDivider>
-              <Button onClick={onClick} variant="primary" icon={<Plus />}>
+              <Button onClick={onClick} variant="primary" icon={<PlusIcon />}>
                 Button
               </Button>
               <Button
                 onClick={onClick}
                 variant="primary"
-                icon={<ChevronDown />}
+                icon={<ChevronDownIcon />}
               />
             </ButtonGroup>
           </Box>

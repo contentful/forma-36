@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { Preview } from '@contentful/f36-icons';
+import { PreviewIcon } from '@contentful/f36-icons';
 import { axe } from '@/scripts/test/axeHelper';
 
 import { ToggleButton } from '../src/ToggleButton';
@@ -29,7 +29,7 @@ describe('ToggleButton', function () {
   });
 
   it('renders the component with icon', () => {
-    render(<ToggleButton icon={<Preview />}>Toggle</ToggleButton>);
+    render(<ToggleButton icon={<PreviewIcon />}>Toggle</ToggleButton>);
 
     const button = screen.getByRole('button');
     expect(button.getElementsByTagName('svg')).toHaveLength(1);
@@ -39,7 +39,7 @@ describe('ToggleButton', function () {
     const mockOnToggle = jest.fn();
 
     render(
-      <ToggleButton onToggle={mockOnToggle} icon={<Preview />} isDisabled>
+      <ToggleButton onToggle={mockOnToggle} icon={<PreviewIcon />} isDisabled>
         Toggle
       </ToggleButton>,
     );

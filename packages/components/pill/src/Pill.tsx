@@ -6,7 +6,7 @@ import type {
 } from '@contentful/f36-core';
 import { Box } from '@contentful/f36-core';
 import { TabFocusTrap } from '@contentful/f36-utils';
-import { Drag, Close } from '@contentful/f36-icons';
+import { DragIcon, CloseIcon } from '@contentful/f36-icons';
 import { PillVariants } from './types';
 import getPillStyles from './styles';
 
@@ -65,7 +65,7 @@ export const Pill = React.forwardRef<HTMLDivElement, PillProps>(
             dragHandleComponent
           ) : (
             <span aria-label="Drag handler" className={styles.dragIcon}>
-              <Drag className={styles.icon} variant="muted" />
+              <DragIcon className={styles.icon} variant="muted" />
             </span>
           ))}
         <span title={label} className={styles.label}>
@@ -79,7 +79,7 @@ export const Pill = React.forwardRef<HTMLDivElement, PillProps>(
             className={styles.closeButton}
           >
             <TabFocusTrap>
-              <Close className={styles.icon} variant="muted" />
+              <CloseIcon className={styles.icon} variant="muted" />
             </TabFocusTrap>
           </button>
         )}

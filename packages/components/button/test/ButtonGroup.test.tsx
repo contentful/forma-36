@@ -1,14 +1,14 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { ButtonGroup, Button } from '../src';
-import { ChevronDown } from '@contentful/f36-icons';
+import { ChevronDownIcon } from '@contentful/f36-icons';
 
 describe('ButtonGroup', function () {
   it('renders button group', () => {
     const { container } = render(
       <ButtonGroup>
         <Button>Button</Button>
-        <Button icon={<ChevronDown />} />
+        <Button icon={<ChevronDownIcon />} />
       </ButtonGroup>,
     );
 
@@ -21,7 +21,7 @@ describe('ButtonGroup', function () {
     const { container } = render(
       <ButtonGroup className={additionalClassName}>
         <Button>Button</Button>
-        <Button icon={<ChevronDown />} />
+        <Button icon={<ChevronDownIcon />} />
       </ButtonGroup>,
     );
 

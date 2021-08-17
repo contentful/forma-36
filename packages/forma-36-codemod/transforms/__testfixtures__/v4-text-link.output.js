@@ -2,7 +2,7 @@ import React from "react";
 
 import { TextLink } from "@contentful/f36-components";
 
-import { ArrowDown, Asset } from "@contentful/f36-icons";
+import { ArrowDownIcon, AssetIcon } from "@contentful/f36-icons";
 
 <TextLink as="button" isDisabled={false} variant="muted" />;
 
@@ -12,10 +12,10 @@ import { ArrowDown, Asset } from "@contentful/f36-icons";
 
 <TextLink as="button" children="hello" />;
 
-<TextLink as="button" icon={<ArrowDown />} alignIcon="start">
+<TextLink as="button" icon={<ArrowDownIcon />} alignIcon="start">
   text
 </TextLink>;
 
-<TextLink as="button" icon={<Asset />} alignIcon="end">
+<TextLink as="button" icon={<AssetIcon />} alignIcon="end">
   text
 </TextLink>;

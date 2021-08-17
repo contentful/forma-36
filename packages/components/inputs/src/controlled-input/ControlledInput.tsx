@@ -8,7 +8,7 @@ import React, {
   useEffect,
 } from 'react';
 import { cx } from 'emotion';
-import { Done, Minus } from '@contentful/f36-icons';
+import { DoneIcon, MinusIcon } from '@contentful/f36-icons';
 import type { IconProps } from '@contentful/f36-icons';
 import { Box, BoxProps } from '@contentful/f36-core';
 
@@ -146,7 +146,11 @@ const _ControlledInput = (
         </label>
       ) : (
         <label {...labelProps} className={labelClassnames} htmlFor={id}>
-          {isIndeterminate ? <Minus {...iconProps} /> : <Done {...iconProps} />}
+          {isIndeterminate ? (
+            <MinusIcon {...iconProps} />
+          ) : (
+            <DoneIcon {...iconProps} />
+          )}
         </label>
       )}
     </Box>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { cx } from 'emotion';
-import { Close } from '@contentful/f36-icons';
+import { CloseIcon } from '@contentful/f36-icons';
 import { Flex } from '@contentful/f36-core';
 import type { PrimitiveProps } from '@contentful/f36-core';
 import { Button } from '@contentful/f36-button';
@@ -38,7 +38,7 @@ export function ModalHeader({
         <Button
           variant="transparent"
           aria-label="Close"
-          icon={<Close size="small" />}
+          icon={<CloseIcon size="small" />}
           onClick={() => {
             onClose();
           }}

@@ -58,12 +58,12 @@ function runTransform({ files, flags, parser, transformer }) {
 
   args.push('--verbose=2');
 
-  args.push('--ignore-pattern=**/node_modules/**,**/dist/**');
+  args.push('--ignore-pattern=**/{node_modules,dist}/**');
 
   args.push('--parser', parser);
 
   if (parser === 'tsx') {
-    args.push('--extensions=tsx,ts,jsx,js');
+    args.push('--extensions=tsx,ts');
   } else {
     args.push('--extensions=jsx,js');
   }

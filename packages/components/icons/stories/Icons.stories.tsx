@@ -13,15 +13,15 @@ export default {
     style: { control: { disable: true } },
     testId: { control: { disable: true } },
   },
-  component: icons.ArrowDown,
+  component: icons.ArrowDownIcon,
   parameters: {
-    propTypes: [icons.ArrowDown['__docgenInfo']],
+    propTypes: [icons.ArrowDownIcon['__docgenInfo']],
   },
   title: 'Components/Icons',
 } as Meta;
 
 export const Default: Story<IconProps> = (args) => {
-  const Component = icons.ArrowDown;
+  const Component = icons.ArrowDownIcon;
 
   return (
     <Fragment>

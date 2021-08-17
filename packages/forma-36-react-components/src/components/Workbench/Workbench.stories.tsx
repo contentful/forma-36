@@ -1,6 +1,6 @@
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
-import { ArrowDown } from '@contentful/f36-icons';
+import { ArrowDownIcon } from '@contentful/f36-icons';
 
 import { Workbench, WorkbenchProps } from './Workbench';
 import { Button } from '@contentful/f36-button';
@@ -24,7 +24,7 @@ export const basic = (args: WorkbenchProps) => (
       <Workbench.Header
         title={args['header title']}
         description={args['header description']}
-        icon={ArrowDown}
+        icon={ArrowDownIcon}
         actions={<Button variant="transparent">Click</Button>}
       />
       <Workbench.Content type="default">
@@ -42,7 +42,7 @@ export const withLeftSidebar = (args: WorkbenchProps) => (
   <Workbench>
     <Workbench.Header
       title={args['header title']}
-      icon={ArrowDown}
+      icon={ArrowDownIcon}
       actions={<Button variant="transparent">Click</Button>}
     />
     <Workbench.Sidebar position="left">
@@ -62,7 +62,7 @@ export const withRightSidebar = (args: WorkbenchProps) => (
   <Workbench>
     <Workbench.Header
       title={'Page title'}
-      icon={ArrowDown}
+      icon={ArrowDownIcon}
       actions={<Button variant="transparent">Click</Button>}
     />
     <Workbench.Content type="default">
@@ -82,7 +82,7 @@ export const withLeftAndRightSidebar = (args: WorkbenchProps) => (
   <Workbench>
     <Workbench.Header
       title={'Page title'}
-      icon={ArrowDown}
+      icon={ArrowDownIcon}
       actions={<Button variant="transparent">Click</Button>}
     />
     <Workbench.Sidebar position="left">
@@ -108,7 +108,7 @@ export const withBackButton = (args: WorkbenchProps) => (
     <Workbench.Header
       onBack={() => {}}
       title={'Page title'}
-      icon={ArrowDown}
+      icon={ArrowDownIcon}
       actions={<Button variant="transparent">Click</Button>}
     />
     <Workbench.Content type="default">

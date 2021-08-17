@@ -1,7 +1,7 @@
 import React from 'react';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
-import { Calendar, Clock } from '@contentful/f36-icons';
+import { CalendarIcon, ClockIcon } from '@contentful/f36-icons';
 
 import { AssetCard, AssetCardProps } from './AssetCard';
 import { DropdownList, DropdownListItem } from '../../Dropdown';
@@ -70,11 +70,11 @@ export const WithStatusIcon = (args: AssetCardProps) => <AssetCard {...args} />;
 
 WithStatusIcon.args = {
   ...Basic.args,
-  statusIcon: Clock,
+  statusIcon: ClockIcon,
 };
 
 export const WithACustomStatusIcon = (args: AssetCardProps) => (
-  <AssetCard {...args} statusIcon={Calendar} />
+  <AssetCard {...args} statusIcon={CalendarIcon} />
 );
 
 WithACustomStatusIcon.args = {
@@ -178,7 +178,7 @@ export const Overview = () => (
       <Flex marginBottom="spacingS">
         <AssetCard
           status="published"
-          statusIcon={() => <Calendar variant="positive" />}
+          statusIcon={() => <CalendarIcon variant="positive" />}
           type="image"
           src="https://via.placeholder.com/200x300'"
           title="Image of the cat"
@@ -186,7 +186,7 @@ export const Overview = () => (
         />
         <AssetCard
           status="published"
-          statusIcon={() => <Calendar variant="positive" />}
+          statusIcon={() => <CalendarIcon variant="positive" />}
           type="image"
           src="https://via.placeholder.com/200x300'"
           title="Image of the cat"
