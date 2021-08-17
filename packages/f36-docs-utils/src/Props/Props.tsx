@@ -10,7 +10,7 @@ import {
   TextLink,
   Tooltip,
 } from '@contentful/f36-components';
-import type { PropType } from './types';
+import type { PropDefinition, PropType } from './types';
 import { useProps } from './PropsProvider';
 
 function EnumPropertyType({ type }: { type: PropType }) {
@@ -66,41 +66,93 @@ function PropertyType({ type, name }: { type: PropType; name: string }) {
   return <>{type.name}</>;
 }
 
+function PropRow(props: { definition: PropDefinition }) {
+  const item = props.definition;
+  return (
+    <TableRow key={item.name}>
+      <TableCell>
+        <code>{item.name}</code>
+      </TableCell>
+      <TableCell>{item.required ? 'required' : ''}</TableCell>
+      <TableCell>
+        {item.defaultValue ? <>{item.defaultValue.value}</> : ''}
+      </TableCell>
+      <TableCell>
+        <PropertyType name={item.name} type={item.type} />
+      </TableCell>
+      <TableCell>{item.description}</TableCell>
+    </TableRow>
+  );
+}
+
 export function Props(props: { of: string }) {
+  const [view, setView] = React.useState<'main' | 'all'>('main');
   const metadata = useProps({ of: props.of });
 
-  if (metadata.length === 0) {
+  if (metadata.main.length === 0) {
     return null;
   }
 
+  const switcher = (
+    <Flex
+      flexDirection="row"
+      alignItems="center"
+      justifyContent="flex-end"
+      marginBottom="spacingM"
+    >
+      {view === 'main' && (
+        <TextLink
+          as="button"
+          onClick={() => {
+            setView('all');
+          }}
+        >
+          Show all props
+        </TextLink>
+      )}
+      {view === 'all' && (
+        <TextLink
+          as="button"
+          onClick={() => {
+            setView('main');
+          }}
+        >
+          Show main props
+        </TextLink>
+      )}
+    </Flex>
+  );
+
   return (
-    <Table layout="embedded">
-      <TableHead>
-        <TableRow>
-          <TableCell width="150px">Name</TableCell>
-          <TableCell width="30px">Required</TableCell>
-          <TableCell width="70px">Default</TableCell>
-          <TableCell width="30%">Type</TableCell>
-          <TableCell>Description</TableCell>
-        </TableRow>
-      </TableHead>
-      <TableBody>
-        {metadata.map((item) => (
-          <TableRow key={item.name}>
-            <TableCell>
-              <code>{item.name}</code>
-            </TableCell>
-            <TableCell>{item.required ? 'required' : ''}</TableCell>
-            <TableCell>
-              {item.defaultValue ? <>{item.defaultValue.value}</> : ''}
-            </TableCell>
-            <TableCell>
-              <PropertyType name={item.name} type={item.type} />
-            </TableCell>
-            <TableCell>{item.description}</TableCell>
+    <Flex flexDirection="column">
+      {metadata.additional.length > 0 && switcher}
+      <Table layout="embedded">
+        <TableHead>
+          <TableRow>
+            <TableCell width="150px">Name</TableCell>
+            <TableCell width="30px">Required</TableCell>
+            <TableCell width="70px">Default</TableCell>
+            <TableCell width="30%">Type</TableCell>
+            <TableCell>Description</TableCell>
           </TableRow>
-        ))}
-      </TableBody>
-    </Table>
+        </TableHead>
+        <TableBody>
+          {view === 'main' && (
+            <>
+              {metadata.main.map((item) => (
+                <PropRow definition={item} key={item.name} />
+              ))}
+            </>
+          )}
+          {view === 'all' && (
+            <>
+              {[...metadata.main, ...metadata.additional].map((item) => (
+                <PropRow definition={item} key={item.name} />
+              ))}
+            </>
+          )}
+        </TableBody>
+      </Table>
+    </Flex>
   );
 }

@@ -32,7 +32,7 @@ Icons are used to indicate actions, statuses and navigation. The icon components
 
 Forma 36 provides a list of built-in icons that can be used as regular React components:
 
-```tsx static=true
+```jsx static=true
 import { ArrowDown } from '@contentful/f36-icons';
 
 <ArrowDown />;
@@ -44,7 +44,7 @@ The icon components can be configured in different ways using variations in colo
 
 ### Icon variants
 
-```tsx
+```jsx
 <React.Fragment>
   <div>
     <Calendar variant="primary" /> Primary
@@ -69,7 +69,7 @@ The icon components can be configured in different ways using variations in colo
 
 ### Icon sizes
 
-```tsx
+```jsx
 <React.Fragment>
   <div>
     <Calendar size="tiny" /> Tiny
@@ -276,7 +276,7 @@ Custom icons can be used in two ways:
 
 Passing a React component with an SVG icon to the `as` prop on `Icon` makes it render that SVG. This works both with your own icons and with icons from third-party icon libraries such as [`react-icons`](https://react-icons.github.io/react-icons):
 
-```tsx static=true
+```jsx static=true
 import { Icon } from '@contentful/f36-icons';
 import { MdAccessAlarm } from 'react-icons/md';
 
@@ -291,7 +291,7 @@ Using a loader like [SVGR](https://react-svgr.com/) makes it easier to use your 
 
 Another way to render custom icons is to wrapping SVG paths in the `Icon` component directly:
 
-```tsx static=true
+```jsx static=true
 import { Icon } from '@contentful/f36-icon';
 
 const CustomIcon = (props) => {

@@ -10,6 +10,9 @@ export interface PropDefinition {
   name: string;
   required: boolean;
   type: PropType;
+  parent?: {
+    fileName: string;
+  };
 }
 
 export interface PropComponentDefinition {
