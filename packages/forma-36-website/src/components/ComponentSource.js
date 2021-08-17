@@ -60,7 +60,7 @@ class ComponentSource extends React.Component {
                 <LiveEditor className={styles.editor} />
               </React.Fragment>
             )}
-            <Button isFullWidth buttonType="muted" onClick={this.handleToggle}>
+            <Button isFullWidth variant="secondary" onClick={this.handleToggle}>
               {this.state.isOpen ? 'Hide source' : 'Show source'}
             </Button>
           </Card>

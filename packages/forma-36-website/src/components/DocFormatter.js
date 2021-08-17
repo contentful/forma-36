@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { DisplayText, Button, Badge } from '@contentful/f36-components';
+import { CheckCircleTrimmed } from '@contentful/f36-icons';
 import storybookIcon from '../images/storybook.svg';
 import githubIcon from '../images/github.svg';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
@@ -87,9 +88,15 @@ const DocFormatter = ({ frontmatter, dataFromReadme, children }) => {
               <>
                 <Button
                   size="small"
-                  buttonType={activeSection === 'design' ? 'primary' : 'muted'}
+                  variant={
+                    activeSection === 'design' ? 'primary' : 'transparent'
+                  }
                   className={styles.buttonLeft}
-                  icon={activeSection === 'design' && 'CheckCircleTrimmed'}
+                  icon={
+                    activeSection === 'design' ? (
+                      <CheckCircleTrimmed />
+                    ) : undefined
+                  }
                   isActive={activeSection === 'design'}
                   onClick={() => setActiveSection('design')}
                 >
@@ -98,8 +105,14 @@ const DocFormatter = ({ frontmatter, dataFromReadme, children }) => {
                 <Button
                   size="small"
                   className={styles.buttonRight}
-                  buttonType={activeSection === 'develop' ? 'primary' : 'muted'}
-                  icon={activeSection === 'develop' && 'CheckCircleTrimmed'}
+                  variant={
+                    activeSection === 'develop' ? 'primary' : 'transparent'
+                  }
+                  icon={
+                    activeSection === 'develop' ? (
+                      <CheckCircleTrimmed />
+                    ) : undefined
+                  }
                   isActive={activeSection === 'develop'}
                   onClick={() => setActiveSection('develop')}
                 >

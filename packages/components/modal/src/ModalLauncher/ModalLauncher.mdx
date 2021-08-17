@@ -1,0 +1,52 @@
+---
+title: 'ModalLauncher'
+type: 'component'
+status: 'stable'
+slug: /components/modal-launcher/
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/modal/src'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-modal-modallauncher--basic'
+---
+
+`ModalLaucher` is a utility that allows calling `Modal` and `ModalConfirm` in an imperative code, in functions.
+
+## How to use ModalLauncher
+
+### Import
+
+```js static=true
+import { ModalLauncher } from '@contentful/f36-components';
+// or
+import { ModalLauncher } from '@contentful/f36-modal';
+```
+
+## Code examples
+
+```jsx
+function ModalLauncherExample() {
+  return (
+    <React.Fragment>
+      <Button
+        onClick={() => {
+          ModalLauncher.open(({ isShown, onClose }) => (
+            <ModalConfirm
+              isShown={isShown}
+              onCancel={() => {
+                onClose('canceled');
+              }}
+              onConfirm={() => {
+                onClose('confirmed');
+              }}
+            >
+              <Text>Do you want to confirm your action?</Text>
+            </ModalConfirm>
+          )).then((text) => {
+            window.alert(text);
+          });
+        }}
+      >
+        Trigger ModalLauncher
+      </Button>
+    </React.Fragment>
+  );
+}
+```

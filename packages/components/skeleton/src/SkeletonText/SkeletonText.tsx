@@ -36,7 +36,7 @@ export function SkeletonText({
   lineHeight = 21,
   marginBottom = 20,
   width,
-}: SkeletonTextProps): React.ReactElement {
+}: SkeletonTextProps) {
   const getLineWidth = useCallback(
     (lastLine: boolean) => {
       if (width) {

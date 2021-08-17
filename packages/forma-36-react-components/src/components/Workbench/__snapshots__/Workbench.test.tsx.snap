@@ -1,10 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component (complex) 1`] = `
-.emotion-2 {
-  display: inline-block;
-}
-
 .emotion-0 {
   display: inline-block;
   fill: #0059C8;
@@ -58,6 +54,10 @@ exports[`renders the component (complex) 1`] = `
   min-height: 40px;
 }
 
+.emotion-3 svg {
+  fill: currentColor;
+}
+
 .emotion-3:hover {
   background-color: #F7F9FA;
   color: #111B2B;
@@ -77,6 +77,13 @@ exports[`renders the component (complex) 1`] = `
 .emotion-3:focus {
   background-color: none;
   box-shadow: 0px 0px 0px 3px #E7EBEE;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 <div
@@ -166,10 +173,6 @@ exports[`renders the component (complex) 1`] = `
 `;
 
 exports[`renders the component (simple) 1`] = `
-.emotion-2 {
-  display: inline-block;
-}
-
 .emotion-0 {
   display: inline-block;
   fill: #0059C8;
@@ -223,6 +226,10 @@ exports[`renders the component (simple) 1`] = `
   min-height: 40px;
 }
 
+.emotion-3 svg {
+  fill: currentColor;
+}
+
 .emotion-3:hover {
   background-color: #F7F9FA;
   color: #111B2B;
@@ -242,6 +249,13 @@ exports[`renders the component (simple) 1`] = `
 .emotion-3:focus {
   background-color: none;
   box-shadow: 0px 0px 0px 3px #E7EBEE;
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 <div

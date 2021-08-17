@@ -22,12 +22,15 @@ function _ButtonGroup(props: ButtonGroupProps, ref: React.Ref<HTMLDivElement>) {
       ref={ref}
       className={cx(styles.buttonGroup, className)}
     >
-      {children.map((child, key) =>
-        React.cloneElement(child, {
+      {React.Children.map(children, (child, key) => {
+        if (!child) {
+          return null;
+        }
+        return React.cloneElement(child, {
           key,
           className: cx(styles.groupContent, child.props.className),
-        }),
-      )}
+        });
+      })}
     </Box>
   );
 }

@@ -165,10 +165,7 @@ const getButtonIconStyle = ({ alignIcon, hasChildren }) => {
   };
   const margin = hasChildren ? align[alignIcon] : {};
 
-  return css({
-    fill: 'currentColor',
-    ...margin,
-  });
+  return css(margin);
 };
 
 export const getStyles = () => ({
@@ -196,13 +193,13 @@ export const getStyles = () => ({
       transition: `background ${tokens.transitionDurationShort} ${tokens.transitionEasingDefault},
         opacity ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault},
         border-color ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
+      svg: {
+        fill: 'currentColor',
+      },
       ...variantToStyles(variant),
       ...sizeToStyles(size),
       ...(isActive ? variantActiveStyles(variant) : {}),
     }),
-  buttonText: css({
-    display: 'inline-block',
-  }),
   buttonIcon: getButtonIconStyle,
   dropdownIcon: css({
     marginLeft: tokens.spacingXs,

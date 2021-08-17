@@ -3,9 +3,12 @@ title: 'Modal'
 type: 'component'
 status: 'stable'
 slug: /components/modal/
-github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/Modal'
-storybook: 'https://f36-storybook.contentful.com/?path=/story/components-modal--default'
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/modal/src'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-modal--basic'
+typescript: ./Modal.tsx
 ---
+
+import { Props } from '@contentful/f36-docs-utils';
 
 Modal dialogs interrupt a user by isolating information that needs to be acted upon. They are often triggered by an action a user took, and should be used to inform, confirm or complete a task.
 
@@ -23,6 +26,14 @@ Modal dialogs interrupt a user by isolating information that needs to be acted u
 - Use modal dialogs consistently across use cases
 - Do not use modal dialogs for nonessential information that is not related to the current user flow
 - Avoid modal dialogs that interrupt high-stake processes such as checkout flows
+
+### Import
+
+```js static=true
+import { Modal } from '@contentful/f36-components';
+// or
+import { Modal } from '@contentful/f36-modal';
+```
 
 ## Code examples
 
@@ -42,11 +53,19 @@ function ModalExample() {
             <Modal.Header title="Title" />
             <Modal.Content>Hello from controlled modal window</Modal.Content>
             <Modal.Controls>
-              <Button buttonType="positive" onClick={() => setShown(false)}>
-                Confirm
-              </Button>
-              <Button buttonType="muted" onClick={() => setShown(false)}>
+              <Button
+                size="small"
+                variant="transparent"
+                onClick={() => setShown(false)}
+              >
                 Close
+              </Button>
+              <Button
+                size="small"
+                variant="positive"
+                onClick={() => setShown(false)}
+              >
+                Confirm
               </Button>
             </Modal.Controls>
           </React.Fragment>
@@ -57,7 +76,7 @@ function ModalExample() {
 }
 ```
 
-### Modal position (`position`)
+### Modal position
 
 ```jsx
 function ModalExample() {
@@ -68,7 +87,7 @@ function ModalExample() {
       <Form>
         <FieldGroup row>
           <Button
-            buttonType="positive"
+            variant="positive"
             onClick={() => {
               setPosition('top');
               setShown(true);
@@ -92,11 +111,11 @@ function ModalExample() {
             <Modal.Header title="Title" />
             <Modal.Content>Hello from controlled modal window</Modal.Content>
             <Modal.Controls>
-              <Button buttonType="positive" onClick={() => setShown(false)}>
-                Confirm
-              </Button>
-              <Button buttonType="muted" onClick={() => setShown(false)}>
+              <Button variant="transparent" onClick={() => setShown(false)}>
                 Close
+              </Button>
+              <Button variant="positive" onClick={() => setShown(false)}>
+                Confirm
               </Button>
             </Modal.Controls>
           </React.Fragment>
@@ -107,7 +126,7 @@ function ModalExample() {
 }
 ```
 
-### Modal sizes (`size`)
+### Modal sizes
 
 ```jsx
 function ModalExample() {
@@ -126,7 +145,7 @@ function ModalExample() {
           <Option value="medium">medium</Option>
           <Option value="large">large</Option>
           <Option value="fullWidth">full width</Option>
-          <Option value="200px">200px (specific width value)</Option>
+          <Option value="333px">333px (specific width value)</Option>
         </SelectField>
         <Button
           onClick={() => {
@@ -142,11 +161,11 @@ function ModalExample() {
             <Modal.Header title="Title" />
             <Modal.Content>Hello from controlled modal window</Modal.Content>
             <Modal.Controls>
-              <Button buttonType="positive" onClick={() => setShown(false)}>
-                Confirm
-              </Button>
-              <Button buttonType="muted" onClick={() => setShown(false)}>
+              <Button variant="transparent" onClick={() => setShown(false)}>
                 Close
+              </Button>
+              <Button variant="positive" onClick={() => setShown(false)}>
+                Confirm
               </Button>
             </Modal.Controls>
           </React.Fragment>
@@ -170,4 +189,13 @@ function ModalExample() {
 
 ## Accessibility
 
-Missing
+- When the modal opens, focus is trapped within it.
+- When the modal opens, focus is automatically set to the close button, or the element from initialFocusRef.
+- When the modal closes, focus returns to the element that was focused before the modal activated, or the element from finalFocusRef.
+- Clicking on the overlay closes the `Modal`.
+- Pressing Esc closes the `Modal`.
+- Scrolling is blocked on the elements behind the modal.
+
+## Props
+
+<Props of="Modal" />

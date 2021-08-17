@@ -1,7 +1,7 @@
-import React, { useState, MouseEventHandler } from 'react';
+import React, { useState, MouseEventHandler, useRef } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 
-import { Modal, ModalProps } from './Modal';
+import { Modal, ModalProps } from '../src/Modal';
 import { Button } from '@contentful/f36-button';
 
 function fillArray(value: string, len: number) {
@@ -46,8 +46,8 @@ export default {
   },
 } as Meta;
 
-export const Default: Story<ModalProps> = (props) => {
-  const [isShown, setShown] = useState(false);
+export const Basic: Story<ModalProps> = (props) => {
+  const [isShown, setShown] = useState(true);
 
   return (
     <div>
@@ -69,12 +69,12 @@ export const Default: Story<ModalProps> = (props) => {
   );
 };
 
-Default.args = {
+Basic.args = {
   title: 'Default modal',
 };
 
 export const LongModal: Story<ModalProps> = (props) => {
-  const [isShown, setShown] = useState(false);
+  const [isShown, setShown] = useState(true);
 
   return (
     <div>
@@ -100,12 +100,18 @@ LongModal.args = {
 };
 
 export const ControllerModal: Story<ModalProps> = (props) => {
-  const [isShown, setShown] = useState(false);
+  const [isShown, setShown] = useState(true);
+  const confirmRef = useRef(null);
 
   return (
     <div>
       <Button onClick={() => setShown(true)}>Show centered modal</Button>
-      <Modal {...props} isShown={isShown} onClose={() => setShown(false)}>
+      <Modal
+        {...props}
+        isShown={isShown}
+        onClose={() => setShown(false)}
+        initialFocusRef={confirmRef}
+      >
         {({
           title,
           onClose,
@@ -116,11 +122,16 @@ export const ControllerModal: Story<ModalProps> = (props) => {
           <React.Fragment>
             <Modal.Header title={title} onClose={onClose} />
             <Modal.Content>Hello from controlled modal window</Modal.Content>
-            <Modal.Controls position="right">
-              <Button onClick={onClose} variant="transparent">
+            <Modal.Controls>
+              <Button size="small" onClick={onClose} variant="secondary">
                 Close
               </Button>
-              <Button onClick={onClose} variant="positive">
+              <Button
+                size="small"
+                onClick={onClose}
+                variant="positive"
+                ref={confirmRef}
+              >
                 Confirm
               </Button>
             </Modal.Controls>

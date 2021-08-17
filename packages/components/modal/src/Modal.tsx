@@ -1,11 +1,14 @@
 import React from 'react';
-import cn from 'classnames';
 import ReactModal from 'react-modal';
+
+import { Box } from '@contentful/f36-core';
+import type { CommonProps } from '@contentful/f36-core';
 
 import { ModalHeader, ModalHeaderProps } from './ModalHeader/ModalHeader';
 import { ModalContent, ModalContentProps } from './ModalContent/ModalContent';
 import { ModalControls } from './ModalControls/ModalControls';
-import styles from './Modal.css';
+import { getModalStyles } from './Modal.styles';
+import type { ModalSizeType, ModalPositionType } from './types';
 
 const ModalSizesMapper = {
   medium: '520px',
@@ -15,30 +18,27 @@ const ModalSizesMapper = {
   zen: '100vw',
 };
 
-export type ModalSizeType =
-  | 'small'
-  | 'medium'
-  | 'large'
-  | 'fullWidth'
-  | 'zen'
-  | string
-  | number;
-
-export interface ModalProps {
+export interface ModalProps extends CommonProps {
   /**
    * When true, the dialog is shown.
    */
   isShown: boolean;
 
   /**
-   * Function that will be called when the exit is complete.
+   * Function that will be run when the modal is requested to be closed, prior to actually closing.
    */
-  onClose: Function;
+  onClose: ReactModal.Props['onRequestClose'];
 
   /**
-   * Function that will be called when the enter is complete.
+   * Function that will be run after the modal has opened.
    */
-  onAfterOpen?: Function;
+  onAfterOpen?: ReactModal.Props['onAfterOpen'];
+
+  /**
+   * Additional aria attributes
+   */
+  aria?: ReactModal.Props['aria'];
+
   /**
    * Boolean indicating if clicking the overlay should close the overlay.
    */
@@ -50,7 +50,7 @@ export interface ModalProps {
   /**
    * Indicating if modal is centered or linked to the top
    */
-  position?: 'center' | 'top';
+  position?: ModalPositionType;
   /**
       Top offset if position is 'top'
     */
@@ -78,11 +78,28 @@ export interface ModalProps {
    */
   modalContentProps?: Partial<ModalContentProps>;
 
-  className?: string;
-  testId?: string;
+  /**
+   * Optional property to set initial focus
+   */
+  initialFocusRef?: React.RefObject<HTMLElement>;
 
-  // eslint-disable-next-line
-  children: any;
+  children: React.ReactNode | RenderModal;
+}
+
+type RenderModal = (modalProps: ModalProps) => React.ReactNode;
+
+function focusFirstWithinNode(node: HTMLElement) {
+  if (node && node.querySelectorAll) {
+    const elements = node.querySelectorAll('input, button');
+    if (elements.length > 0) {
+      const firstElement = elements[0];
+      // @ts-expect-error focus might be missing
+      if (typeof firstElement.focus === 'function') {
+        // @ts-expect-error focus might be missing
+        firstElement.focus();
+      }
+    }
+  }
 }
 
 export function Modal({
@@ -93,8 +110,11 @@ export function Modal({
   size,
   testId,
   topOffset,
+  aria,
   ...otherProps
 }: ModalProps) {
+  const contentRef = React.useRef<HTMLDivElement>(null);
+
   const props = {
     ...otherProps,
     allowHeightOverflow,
@@ -105,6 +125,27 @@ export function Modal({
     testId,
     topOffset,
   };
+
+  const styles = getModalStyles({
+    position,
+    size,
+    allowHeightOverflow,
+    className: otherProps.className,
+  });
+
+  React.useEffect(() => {
+    if (props.isShown) {
+      setTimeout(() => {
+        if (props.initialFocusRef && props.initialFocusRef.current) {
+          if (props.initialFocusRef.current.focus) {
+            props.initialFocusRef.current.focus();
+          }
+        } else if (contentRef.current) {
+          focusFirstWithinNode(contentRef.current);
+        }
+      }, 100);
+    }
+  }, [props.isShown, props.initialFocusRef]);
 
   const renderDefault = () => {
     return (
@@ -126,18 +167,19 @@ export function Modal({
   return (
     <ReactModal
       ariaHideApp={false}
+      aria={aria}
       onRequestClose={props.onClose}
       isOpen={otherProps.isShown}
       onAfterOpen={props.onAfterOpen}
       shouldCloseOnEsc={shouldCloseOnEscapePress}
       shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
-      portalClassName={styles.Modal__portal}
+      shouldFocusAfterRender
+      shouldReturnFocusAfterClose
+      portalClassName={styles.portal}
       className={{
-        base: cn(styles.Modal__wrap, {
-          [styles['Modal__wrap--zen']]: size === 'zen',
-        }),
-        afterOpen: styles['Modal__wrap--after-open'],
-        beforeClose: styles['Modal__wrap--before-close'],
+        base: styles.base.root,
+        afterOpen: styles.base.afterOpen,
+        beforeClose: styles.base.beforeClose,
       }}
       style={{
         content: {
@@ -145,31 +187,27 @@ export function Modal({
         },
       }}
       overlayClassName={{
-        base: cn({
-          [styles.Modal__overlay]: true,
-          [styles['Modal__overlay--centered']]: position === 'center',
-        }),
-        afterOpen: styles['Modal__overlay--after-open'],
-        beforeClose: styles['Modal__overlay--before-close'],
+        base: styles.modalOverlay.root,
+        afterOpen: styles.modalOverlay.afterOpen,
+        beforeClose: styles.modalOverlay.beforeClose,
       }}
-      htmlOpenClassName="Modal__html--open"
-      bodyOpenClassName="Modal__body--open"
       closeTimeoutMS={300}
+      contentRef={(ref) => {
+        contentRef.current = ref;
+      }}
     >
-      <div
-        data-test-id={testId}
+      <Box
+        testId={testId}
         style={{
           width: ModalSizesMapper[size] || size,
         }}
-        className={cn(styles.Modal, otherProps.className, {
-          [styles['Modal--overflow']]: allowHeightOverflow,
-          [styles['Modal--zen']]: size === 'zen',
-        })}
+        className={styles.modal}
+        data-modal-root
       >
         {typeof otherProps.children === 'function'
           ? otherProps.children(props)
           : renderDefault()}
-      </div>
+      </Box>
     </ReactModal>
   );
 }
