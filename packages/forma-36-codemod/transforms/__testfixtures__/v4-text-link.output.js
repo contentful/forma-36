@@ -1,5 +1,7 @@
-import React from 'react';
-import { TextLink } from '@contentful/forma-36-react-components';
+import React from "react";
+import { TextLink } from "@contentful/forma-36-react-components";
+
+import { ArrowDown, Asset } from "@contentful/f36-icons";
 
 <TextLink isDisabled={false} variant="muted" />;
 
@@ -9,10 +11,10 @@ import { TextLink } from '@contentful/forma-36-react-components';
 
 <TextLink children="hello" />;
 
-<TextLink icon="ArrowDown" alignIcon="start">
+<TextLink icon={<ArrowDown />} alignIcon="start">
   text
 </TextLink>;
 
-<TextLink icon="Asset" alignIcon="end">
+<TextLink icon={<Asset />} alignIcon="end">
   text
 </TextLink>;

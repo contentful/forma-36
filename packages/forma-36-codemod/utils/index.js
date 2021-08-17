@@ -6,6 +6,8 @@ const { addProperty } = require('./addProperty');
 const { changeProperties } = require('./changeProperties');
 const { updatePropertyValue } = require('./updatePropertyValue');
 const { getProperty } = require('./getProperty');
+const { addImport } = require('./addImport');
+const { updateIcons, addIconImports } = require('./updateIcons');
 
 module.exports = {
   getComponentLocalName,
@@ -16,4 +18,7 @@ module.exports = {
   changeProperties,
   updatePropertyValue,
   getProperty,
+  addImport,
+  updateIcons,
+  addIconImports,
 };

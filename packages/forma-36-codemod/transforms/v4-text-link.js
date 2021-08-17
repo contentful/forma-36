@@ -5,6 +5,8 @@ const {
   addProperty,
   changeProperties,
   updatePropertyValue,
+  updateIcons,
+  addIconImports,
 } = require('../utils');
 
 module.exports = function (file, api) {
@@ -16,6 +18,7 @@ module.exports = function (file, api) {
     componentName: 'TextLink',
     importName: '@contentful/forma-36-react-components',
   });
+  const usedIcons = [];
 
   source = changeProperties(j, source, {
     componentName,
@@ -56,13 +59,26 @@ module.exports = function (file, api) {
         });
       }
 
+      if (hasProperty(modifiedAttributes, { propertyName: 'icon' })) {
+        modifiedAttributes = updateIcons(modifiedAttributes, {
+          j,
+          icons: usedIcons,
+        });
+      }
+
       return modifiedAttributes;
     },
   });
 
+  source = addIconImports({ j, source, icons: usedIcons });
+
   // todo: create a function that replaces icons with inlined icons
 
-  // todo: question: do we need to update imports somehow?
+  // todo: add imports
+  // const importResult = addImport(j, source, [
+  //   j.template.statement`import { TextLink } from "@contentful/f36-components"`,
+  // ]);
+  // source = importResult.source;
 
   return source;
 };
