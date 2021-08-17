@@ -31,7 +31,7 @@ export default {
         options: Object.keys(icons),
         type: 'select',
       },
-      defaultValue: 'Star',
+      defaultValue: 'StarIcon',
     },
     iconProps: { control: { disable: true } },
     iconSize: {
@@ -52,7 +52,7 @@ export const Basic: Story<Args> = ({ icon, iconSize, ...args }) => (
   <IconButton iconProps={{ as: icons[icon], size: iconSize }} {...args} />
 );
 Basic.args = {
-  icon: 'Star',
+  icon: 'StarIcon',
   iconSize: 'medium',
 };
 

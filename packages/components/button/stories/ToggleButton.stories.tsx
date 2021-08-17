@@ -59,7 +59,7 @@ export const grouped = ({ icon }) => (
 );
 
 grouped.args = {
-  icon: 'Preview',
+  icon: 'PreviewIcon',
 };
 
 export const Overview = ({ icon, ...props }) => (
@@ -124,5 +124,5 @@ export const Overview = ({ icon, ...props }) => (
 
 Overview.args = {
   onToggle: action('toggled'),
-  icon: 'Preview',
+  icon: 'PreviewIcon',
 };

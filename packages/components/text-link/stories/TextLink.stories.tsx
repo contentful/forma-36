@@ -50,7 +50,7 @@ export const UsedWithText = () => {
       and largest city of{' '}
       <TextLink
         href="https://www.wikiwand.com/en/Germany"
-        icon={<Icon as={icons['ExternalLink']} />}
+        icon={<Icon as={icons.ExternalLinkIcon} />}
         alignIcon="end"
         target="_blank"
       >
@@ -108,7 +108,7 @@ export const overview = () => (
         </Flex>
         <Flex marginRight="spacingXl">
           <TextLink
-            icon={<Icon as={icons['Calendar']} />}
+            icon={<Icon as={icons.CalendarIcon} />}
             href="https://www.wikiwand.com/en/Potsdam"
             target="_blank"
             variant={variant as TextLinkVariant}
@@ -118,7 +118,7 @@ export const overview = () => (
         </Flex>
         <Flex marginRight="spacingXl">
           <TextLink
-            icon={<Icon as={icons['ExternalLink']} />}
+            icon={<Icon as={icons.ExternalLinkIcon} />}
             alignIcon="end"
             href="https://www.wikiwand.com/en/Potsdam"
             target="_blank"
@@ -129,7 +129,7 @@ export const overview = () => (
         </Flex>
         <Flex marginRight="spacingXl">
           <TextLink
-            icon={<Icon as={icons['Download']} />}
+            icon={<Icon as={icons.DownloadIcon} />}
             href="https://www.wikiwand.com/en/Potsdam"
             target="_blank"
             variant={variant as TextLinkVariant}
