@@ -37,28 +37,28 @@ export function AssetIcon({
 
   switch (type) {
     case 'audio':
-      return <AudioCode {...props} />;
+      return <AudioIcon {...props} />;
     case 'code':
-      return <CodeIllustrationCode {...props} />;
+      return <CodeIllustrationIcon {...props} />;
     case 'image':
-      return <ImageCode {...props} />;
+      return <ImageIcon {...props} />;
     case 'markup':
-      return <MarkupCode {...props} />;
+      return <MarkupIcon {...props} />;
     case 'pdf':
-      return <PdfCode {...props} />;
+      return <PdfIcon {...props} />;
     case 'plaintext':
-      return <PlaintextCode {...props} />;
+      return <PlaintextIcon {...props} />;
     case 'presentation':
-      return <PresentationCode {...props} />;
+      return <PresentationIcon {...props} />;
     case 'richtext':
-      return <RichtextCode {...props} />;
+      return <RichtextIcon {...props} />;
     case 'spreadsheet':
-      return <SpreadsheetCode {...props} />;
+      return <SpreadsheetIcon {...props} />;
     case 'video':
-      return <VideoCode {...props} />;
+      return <VideoIcon {...props} />;
     case 'archive':
     default:
-      return <ArchiveCode {...props} />;
+      return <ArchiveIcon {...props} />;
   }
 }
 
