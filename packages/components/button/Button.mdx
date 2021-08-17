@@ -1,0 +1,118 @@
+---
+title: 'Button'
+type: 'component'
+status: 'stable'
+slug: /components/button/
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/components/button'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-button--basic'
+typescript: ./src/Button.tsx
+---
+
+import { Props } from '@contentful/f36-docs-utils';
+
+Buttons communicate the action that will occur when the user clicks them. They communicate calls to action to the user and allow users to interact with pages in a variety of ways. They contain a text label to describe the action, and an icon if appropriate.
+
+## Table of contents
+
+- [How to use Buttons](#how-to-use-buttons)
+- [Component variations](#component-variations)
+- [Code examples](#code-examples)
+- [Content recommendations](#content-recommendations)
+- [Accessibility](#accessibility)
+- [Props](#props)
+
+## How to use Buttons
+
+- Position buttons in consistent places in the interface
+- Use the right button for the primary action, if the button group is right-aligned
+- Use the left button for the primary action, if the button group is left- or center-aligned
+- Reduce complexity by using a small number of actions. Too many actions can create confusion when having to decide
+
+## Component variations
+
+### Types
+
+- **Primary** - Used for the most important actions in any scenario. Don’t use more than one primary button in a section or screen to avoid overwhelming users.
+- **Secondary** - Used for a secondary actions, the most commonly used button type.
+- **Positive** - For use when the action has a positive connotation such as creating or publishing a new entity.
+- **Negative** - For destructive actions - when something can't be undone. For example, deleting entities.
+- **Transparent** - For having an unestylized button.
+
+```jsx
+<>
+<Grid rowGap="spacingXs" rows="repeat(4, auto)" justifyContent="start">
+  <Button variant="primary">Primary</Button>
+  <Button variant="secondary">Secondary</Button>
+  <Button variant="negative">Negative</Button>
+  <Button variant="positive">Positive</Button>
+  <Button variant="transparent">Transparent</Button>
+</Grid>
+```
+
+Buttons can be used in couple of different variations, like active, disabled or loading. It's worthy mentioning is `indicateDropdown` property in the component,
+which enables the chevron icon on the right side of the button.
+
+Using `icon` property in the Button on the other hand, enables choosen icon on the left side of the button.
+
+### Sizes
+
+Contentful buttons are available in 3 different sizes:
+
+```jsx
+<Grid columnGap="spacingXs" columns="repeat(3, auto)" justifyContent="start">
+  <Button size="large">Large</Button>
+  <Button size="medium">Medium</Button>
+  <Button size="small">Small</Button>
+</Grid>
+```
+
+## Code examples
+
+```jsx
+// import { Button } from '@contentful/f36-button';
+
+<Button variant="primary" testId="create-content-type-empty-state">
+  Add content type
+</Button>
+```
+
+Usage of the button with dropdown indication
+
+```jsx
+// import { Button } from '@contentful/f36-button';
+// import { Download } from '@contentful/f36-icons';
+
+<Button variant="primary" icon={<Download />}>
+  Primary star
+</Button>
+```
+
+Icon Button
+
+```jsx
+// import { Button } from '@contentful/f36-button';
+// import { Download } from '@contentful/f36-icons';
+
+<Button variant="primary" aria-label="Download Asset" icon={<Download />} />
+```
+
+## Content recommendations:
+
+- UI usage - Button labels should be no longer than 3 words
+- Webpage usage - Button labels should be no longer than 5 words
+- Start labels with action verbs. If the button is part of an action dialog, make sure it matches the dialog header.
+- Use specific words, ideally ones that align with preceding content.
+- For buttons that are used to cancel destructive actions: label them "Never mind" or similar, instead of cancel. It makes things much easier for users to understand.
+
+## Accessibility
+
+Button component is used to trigger an action or event. By default button is implemented using the native `<button>` element with the proper type="button" provided. If the href element is provided, then the element would be rendered as `<a>` element in the document.
+When a button has focus, both the Space and Enter keys will activate the button. If the button is disabled, then the disabled attribute is provided.
+Contentful buttons are checked in terms of color contrast and pass all the requirements.
+Buttons have a focus state when using keyboard navigation.
+
+Icon buttons must always have `aria-label` that describes it's purpose when no text is provided
+
+## Props
+
+<Props of="Button" />
