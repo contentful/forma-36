@@ -22,7 +22,7 @@ const TRANSFORMS_CHOICES = [
   {
     name:
       'v4-badge: Converts Tag component from Forma v3 to Badge component from v4',
-    value: 'v4-text-link',
+    value: 'v4-badge',
   },
 ];
 
