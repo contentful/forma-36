@@ -10,6 +10,10 @@ const { addImport } = require('./addImport');
 const { updateIcons, addIconImports } = require('./updateIcons');
 const { removeComponentImport } = require('./removeComponentImport');
 const { changeImport } = require('./changeImport');
+const { changeComponentName } = require('./changeComponentName');
+const {
+  changeImportWithComponentName,
+} = require('./changeImportWithComponentName');
 
 module.exports = {
   getComponentLocalName,
@@ -25,4 +29,6 @@ module.exports = {
   addIconImports,
   removeComponentImport,
   changeImport,
+  changeComponentName,
+  changeImportWithComponentName,
 };
