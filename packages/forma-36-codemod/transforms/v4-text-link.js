@@ -42,13 +42,12 @@ module.exports = function (file, api) {
         propertyValue: (value) => {
           if (value.value === 'left') {
             return j.literal('start');
-          } else if (value.value === 'right') {
+          }
+          if (value.value === 'right') {
             return j.literal('end');
-          } else {
-            console.warn(
-              "TextLink: Couldn't automatically update alignIcon value",
-            );
-            return value;
+          }
+          console.warn("TextLink: Couldn't automatically update alignIcon value");
+          return value;
           }
         },
       });
