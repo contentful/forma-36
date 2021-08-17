@@ -274,8 +274,22 @@ module.exports = {
             link: '/components/list/',
           },
           {
-            name: 'Modal',
-            link: '/components/modal/',
+            name: 'Modals',
+            link: '',
+            menuLinks: [
+              {
+                name: 'Modal',
+                link: '/components/modal/',
+              },
+              {
+                name: 'ModalConfirm',
+                link: '/components/modal-confirm/',
+              },
+              {
+                name: 'ModalLauncher',
+                link: '/components/modal-launcher/',
+              },
+            ],
           },
           {
             name: 'Note',

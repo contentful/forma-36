@@ -1,7 +1,7 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
-import { Modal } from '../Modal';
-import type { ModalSizeType } from '../Modal';
+import { Modal, ModalProps } from '../Modal';
+import type { ModalSizeType } from '../types';
 import type { ModalHeaderProps } from '../ModalHeader/ModalHeader';
 import type { ModalContentProps } from '../ModalContent/ModalContent';
 import type { ModalControlsProps } from '../ModalControls/ModalControls';
@@ -15,15 +15,11 @@ export interface ModalConfirmProps {
   /**
    * Function that will be called when the confirm button is clicked. This does not close the ModalConfirm.
    */
-  onConfirm: Function;
-  /**
-   * Function that will be called when the secondary button is clicked. This does not close the ModalConfirm.
-   */
-  onSecondary?: Function;
+  onConfirm(): void;
   /**
    * Function that will be called when the cancel button is clicked. This does not close the ModalConfirm.
    */
-  onCancel: Function;
+  onCancel: ModalProps['onClose'];
   /**
       Modal title that is used in header
     */
@@ -33,10 +29,6 @@ export interface ModalConfirmProps {
    */
   confirmLabel?: string | false;
   /**
-   * Label of the secondary button
-   */
-  secondaryLabel?: string | false;
-  /**
    * Label of the cancel button
    */
   cancelLabel?: string | false;
@@ -44,10 +36,6 @@ export interface ModalConfirmProps {
    * The intent of the ModalConfirm. Used for the Button.
    */
   intent?: 'primary' | 'positive' | 'negative';
-  /**
-   * The intent of the ModalConfirm. Used for the secondary Button.
-   */
-  secondaryIntent?: 'primary' | 'positive' | 'negative' | 'transparent';
   /**
       Size of the modal window
     */
@@ -65,17 +53,9 @@ export interface ModalConfirmProps {
    */
   isConfirmDisabled?: boolean;
   /**
-   * When true, the secondary button is set to disabled.
-   */
-  isSecondaryDisabled?: boolean;
-  /**
    * When true, the confirm button is set to loading.
    */
   isConfirmLoading?: boolean;
-  /**
-   * When true, the secondary button is set to loading.
-   */
-  isSecondaryLoading?: boolean;
   /**
    * Are modals higher than viewport allowed
    */
@@ -96,9 +76,13 @@ export interface ModalConfirmProps {
    */
   modalControlsProps?: Partial<ModalControlsProps>;
 
+  /**
+   * Optional property to set initial focus
+   */
+  initialFocusRef?: React.RefObject<HTMLElement>;
+
   testId?: string;
   confirmTestId?: string;
-  secondaryTestId?: string;
   cancelTestId?: string;
   children: React.ReactNode;
 }
@@ -113,53 +97,41 @@ export function ModalConfirm({
   intent = 'positive',
   isConfirmDisabled = false,
   isConfirmLoading = false,
-  isSecondaryDisabled,
-  isSecondaryLoading,
   isShown,
   modalContentProps,
   modalControlsProps,
   modalHeaderProps,
   onCancel,
   onConfirm,
-  onSecondary,
-  secondaryIntent,
-  secondaryLabel,
-  secondaryTestId = 'cf-ui-modal-confirm-secondary-button',
   shouldCloseOnEscapePress = true,
   shouldCloseOnOverlayClick = true,
   size = 'medium',
   testId = 'cf-ui-modal-confirm',
   title = 'Are you sure?',
-}: ModalConfirmProps): React.ReactElement {
+  initialFocusRef,
+}: ModalConfirmProps) {
+  const cancelRef = React.useRef(null);
+
   const confirmButton = confirmLabel ? (
     <Button
       testId={confirmTestId}
       isDisabled={isConfirmDisabled}
       isLoading={isConfirmLoading}
       variant={intent}
+      size="small"
       onClick={() => onConfirm()}
     >
       {confirmLabel}
     </Button>
   ) : null;
 
-  const secondaryButton = secondaryLabel ? (
-    <Button
-      testId={secondaryTestId}
-      isDisabled={isSecondaryDisabled}
-      isLoading={isSecondaryLoading}
-      variant={secondaryIntent}
-      onClick={() => onSecondary && onSecondary()}
-    >
-      {secondaryLabel}
-    </Button>
-  ) : null;
-
   const cancelButton = cancelLabel ? (
     <Button
       testId={cancelTestId}
-      variant="transparent"
-      onClick={() => onCancel()}
+      variant="secondary"
+      onClick={onCancel}
+      size="small"
+      ref={initialFocusRef || cancelRef}
     >
       {cancelLabel}
     </Button>
@@ -174,28 +146,18 @@ export function ModalConfirm({
       shouldCloseOnOverlayClick={shouldCloseOnOverlayClick}
       shouldCloseOnEscapePress={shouldCloseOnEscapePress}
       allowHeightOverflow={allowHeightOverflow}
+      initialFocusRef={cancelRef}
     >
       {() => {
         return (
-          <div>
+          <>
             <Modal.Header title={title || ''} {...modalHeaderProps} />
             <Modal.Content {...modalContentProps}>{children}</Modal.Content>
             <Modal.Controls {...modalControlsProps}>
-              {modalControlsProps?.position === 'right' ? (
-                <Fragment>
-                  {cancelButton}
-                  {secondaryButton}
-                  {confirmButton}
-                </Fragment>
-              ) : (
-                <Fragment>
-                  {confirmButton}
-                  {secondaryButton}
-                  {cancelButton}
-                </Fragment>
-              )}
+              {cancelButton}
+              {confirmButton}
             </Modal.Controls>
-          </div>
+          </>
         );
       }}
     </Modal>
