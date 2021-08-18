@@ -1,5 +1,4 @@
 import React from 'react';
-import tokens from '@contentful/f36-tokens';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 
