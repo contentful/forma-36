@@ -6,6 +6,10 @@ Typography components are not tied to specific semantic elements - it's possible
 
 Forma 36 uses system UI fonts. System UI fonts refer to the fonts used to render text in the UI of an operating system. When used on the web they offer familiarity, load with zero-latency, and support a wide number of character sets.
 
+### Note: This package is part of the pre-release. This means it is unsupported and subject to breaking changes without warning.
+
+Please use official, supported version of the library [forma-36](https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components), [NPM](https://www.npmjs.com/package/@contentful/forma-36-react-components)
+
 ## Components
 
 - [Text](./src/Text.mdx)
