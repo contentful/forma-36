@@ -159,7 +159,7 @@ export const overview = (args) => {
       </Flex>
 
       <SectionHeading as="h3" marginBottom="spacingS">
-        Notification warning only with body
+        Notification only with body
       </SectionHeading>
       <Flex marginBottom="spacingL">
         <NotificationItem variant="positive">{args.children}</NotificationItem>

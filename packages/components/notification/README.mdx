@@ -1,3 +1,131 @@
-# @contentful/f36-notification
+---
+title: 'Notification'
+type: 'component'
+status: 'stable'
+slug: /components/notification/
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/notification'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-notification--basic'
+typescript: ./src/Notification.tsx,./src/NotificationItem/NotificationItem.tsx,./src/NotificationItem/NotificationItemContainer.tsx,./src/NotificationsManager/NotificationsManager.tsx
+---
 
-This package is part of [Forma 36](https://github.com/contentful/forma-36). See the repo for more details.
+import { Button } from '@contentful/f36-button';
+import { Notification } from './src';
+
+Notifications give immediate feedback about an action triggered or experienced by an user. They will dismiss after 6 seconds, or after being clicked.
+
+## Table of contents
+
+- [How to use Notifiaction](#how-to-use-notifiaction)
+- [Component variations](#component-variations)
+- [Content recommendations](#content-recommendations)
+
+## How to use Notifiaction
+
+- Consider where the notification will be placed and which variation is most appropriate
+- Don't confuse notifications with notes, which persist in the UI and do not dismiss
+- The notifications will close themselves when the close button is clicked, or after a timeout — the default is 6 seconds.
+- In some situations toasts might become outdated before they expire. In those situations you can use `Notification.closeAll()` to close all open toasts.
+- When the use hovers (mouse overs) the toast it will stop the countdown timer and the toast will stay alive as long as the toast is being hovered.
+
+## Code examples
+
+### Basic example
+
+```jsx
+// import { Button } from '@contentful/f36-button';
+// import { Notification } from '@contentful/f36-notification';
+
+<Button
+  variant="secondary"
+  onClick={() => Notification.success('An example notification')}
+>
+  Show notification
+</Button>
+```
+
+The `Notification` component can be configured in a number of different ways. Here is a guide to when to use certain variations.
+
+### Intent
+
+```jsx
+// import { Button } from '@contentful/f36-button';
+// import { Notification } from '@contentful/f36-notification';
+
+<React.Fragment>
+  <Button
+    variant="positive"
+    onClick={() => Notification.success('This is a success notification')}
+  >
+    Show success notification
+  </Button>
+  <Button
+    variant="negative"
+    onClick={() => Notification.error('This is an error notification')}
+  >
+    Show error notification
+  </Button>
+  <Button
+    variant="secondary"
+    onClick={() => Notification.warning('This is a warning notification')}
+  >
+    Show warning notification
+  </Button>
+</React.Fragment>
+```
+
+### Placement
+
+```jsx
+// import { Button } from '@contentful/f36-button';
+// import { Notification } from '@contentful/f36-notification';
+
+<React.Fragment>
+  <Button
+    variant="secondary"
+    onClick={() => {
+      Notification.setPlacement('top');
+      Notification.success('Notification message at top');
+    }}
+  >
+    Show notification at top of viewport
+  </Button>
+  <Button
+    variant="secondary"
+    onClick={() => {
+      Notification.setPlacement('bottom');
+      Notification.success('Notification message at bottom');
+    }}
+  >
+    Show notification at bottom of viewport
+  </Button>
+</React.Fragment>
+```
+
+### API
+
+```jsx static=true
+Notification.success('text of notification');
+Notification.error('text of notification');
+Notification.warning('text of notification');
+
+// closing one notification
+const notification = await Notification.success('hello');
+Notification.close(notification.id);
+
+// closing all
+Notification.closeAll();
+
+// change placement (default is bottom and offset is 20)
+Notification.setPlacement('top', { offset: 100 });
+Notification.setPlacement('bottom', { offset: 0 });
+
+// change duration of expiration (default is 6000ms)
+Notification.setDuration(1000); // 1 second
+Notification.setDuration(100000); // 100 seconds
+```
+
+## Content recommendations
+
+- Use clear and succinct copy, since the notification will only be available for 6 seconds
+- Use active voice, present tense, and consider tone of voice depending on the circumstance
+- Use sentence style caps (in which only the first word of a sentence or term is capitalized)
