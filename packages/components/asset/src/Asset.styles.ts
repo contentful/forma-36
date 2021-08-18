@@ -1,45 +1,6 @@
 import tokens from '@contentful/f36-tokens';
 import { css } from 'emotion';
 
-/*
-
-
-.Asset__asset-container {
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.Asset__asset-container__title {
-  color: var(--color-text-light);
-  font-size: var(--font-size-m);
-  font-family: var(--font-stack-primary);
-  padding-left: var(--spacing-s);
-  padding-right: var(--spacing-s);
-  max-height: calc(1rem * (40 / var(--font-base-default)));
-  max-width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-bottom: calc(1rem * calc(20 / var(--font-base-default)));
-}
-
-.Asset__illustration-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-bottom: calc(1rem * calc(20 / var(--font-base-default)));
-  margin-top: calc(1rem * calc(20 / var(--font-base-default)));
-}
-
-
-
-
-
-*/
-
 export function getAssetStyles() {
   return {
     root: css({
