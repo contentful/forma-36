@@ -3,11 +3,12 @@ title: 'Asset'
 type: 'component'
 status: 'stable'
 slug: /components/asset/
-github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/Asset'
-storybook: 'https://f36-storybook.contentful.com/?path=/story/components-asset--default'
+github: 'https://github.com/contentful/forma-36/tree/master/packages/asset'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-asset--basic'
+typescript: ./Asset.tsx
 ---
 
-# Asset
+import { Props } from '@contentful/f36-docs-utils';
 
 The Asset component is a visual representation of an asset file such as a video or a PDF document. Use it when assets need to be presented to the user in a visual way but without necessarily showing the actual asset, for instance in a file selector, a drag-and-drop component, or when listing files. The Asset component composes the AssetIcon component.
 
@@ -18,8 +19,6 @@ The Asset component is a visual representation of an asset file such as a video 
 ## Code examples
 
 ```jsx
-// import { Asset } from '@contentful/f36-components';
-
 <Asset
   src="https://via.placeholder.com/200x300"
   title="An archive asset"
@@ -32,8 +31,6 @@ The Asset component is a visual representation of an asset file such as a video 
 By default an asset with the `type` `image` will render the `src` attribute directly, like a HTML `<img />` element. If asset `status` is set to `archived`, an image icon is displayed instead of the actual image.
 
 ```jsx
-// import { Asset } from '@contentful/f36-components';
-
 <Asset
   src="https://via.placeholder.com/200x300"
   title="An image asset"
@@ -42,8 +39,6 @@ By default an asset with the `type` `image` will render the `src` attribute dire
 ```
 
 ```jsx
-// import { Asset } from '@contentful/f36-components';
-
 <Asset
   src="https://via.placeholder.com/200x300"
   status="archived"
@@ -51,3 +46,7 @@ By default an asset with the `type` `image` will render the `src` attribute dire
   type="image"
 />
 ```
+
+## Props
+
+<Props of="Asset" />

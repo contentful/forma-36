@@ -2,9 +2,10 @@ import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading, Text } from '@contentful/f36-typography';
-import { Asset, types } from './Asset';
+import { Asset } from '../src/Asset';
+import { types } from '../src/types';
 
-import type { AssetProps } from './Asset';
+import type { AssetProps } from '../src/Asset';
 
 export default {
   argTypes: {
@@ -36,7 +37,7 @@ export default {
   title: 'Components/Asset',
 } as Meta;
 
-export const Default: Story<AssetProps> = (args) => {
+export const Basic: Story<AssetProps> = (args) => {
   return <Asset {...args} />;
 };
 
@@ -57,7 +58,7 @@ WithAnArchivedImage.args = {
   type: 'image',
 };
 
-export const overview: Story<AssetProps> = () => (
+export const Overview: Story<AssetProps> = () => (
   <>
     <Flex flexDirection="column" marginBottom="spacingM">
       <SectionHeading as="h3" marginBottom="spacingS">

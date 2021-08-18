@@ -1,9 +1,13 @@
 import React from 'react';
-import cn from 'classnames';
-import type { EntityStatus, PickUnion } from '@contentful/f36-core';
+import { cx } from 'emotion';
+import type {
+  EntityStatus,
+  PickUnion,
+  CommonProps,
+} from '@contentful/f36-core';
 
 import { AssetIcon } from './AssetIcon/AssetIcon';
-import styles from './Asset.css';
+import { getAssetStyles } from './Asset.styles';
 import type { AssetType } from './types';
 
 export type AssetStatus = PickUnion<
@@ -11,11 +15,7 @@ export type AssetStatus = PickUnion<
   'archived' | 'changed' | 'deleted' | 'draft' | 'published'
 >;
 
-export interface AssetProps {
-  /**
-   * Class names to be appended to the className prop of the Dropdown wrapper
-   */
-  className?: string;
+export interface AssetProps extends CommonProps {
   /**
    * A `src` attribute to use for image assets
    */
@@ -24,10 +24,6 @@ export interface AssetProps {
    * The publish status of the asset
    */
   status?: AssetStatus;
-  /**
-   * An ID used for testing purposes applied as a data attribute (data-test-id)
-   */
-  testId?: string;
   /**
    * The title of the asset
    */
@@ -46,8 +42,9 @@ export function Asset({
   title,
   type = 'image',
   ...otherProps
-}: AssetProps): React.ReactElement {
-  const classNames = cn(styles.Asset, className);
+}: AssetProps) {
+  const styles = getAssetStyles();
+  const classNames = cx(styles.root, className);
   const isImage = type === 'image' && src !== undefined && src !== '';
 
   // Do not show image previews when publish status is archived
@@ -57,31 +54,21 @@ export function Asset({
     <div className={classNames} data-test-id={testId} {...otherProps}>
       {showPreview ? (
         <React.Fragment>
-          <div className={styles['Asset__image-container']}>
-            <img
-              className={styles['Asset__image-container__image']}
-              src={src}
-              alt={title}
-            />
+          <div className={styles.imageContainer}>
+            <img className={styles.image} src={src} alt={title} />
           </div>
           {title && (
-            <div className={styles['Asset__title-container']}>
-              <span className={styles['Asset__title-container__title']}>
-                {title}
-              </span>
+            <div className={styles.titleContainer}>
+              <span className={styles.title}>{title}</span>
             </div>
           )}
         </React.Fragment>
       ) : (
-        <div className={styles['Asset__asset-container']}>
-          <div className={styles['Asset__illustration-container']}>
+        <div className={styles.assetContainer}>
+          <div className={styles.assetIllustrationContainer}>
             <AssetIcon type={type} />
           </div>
-          {title && (
-            <span className={styles['Asset__asset-container__title']}>
-              {title}
-            </span>
-          )}
+          {title && <span className={styles.assetTitle}>{title}</span>}
         </div>
       )}
     </div>

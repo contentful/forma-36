@@ -103,7 +103,7 @@ export type { TabsProps, TabProps, TabPanelProps } from '@contentful/f36-tabs';
 export { CopyButton } from '@contentful/f36-copybutton';
 export type { CopyButtonProps } from '@contentful/f36-copybutton';
 export * from '@contentful/f36-modal';
-export * from './components/Asset';
+export * from '@contentful/f36-asset';
 export * from './components/Autocomplete';
 export * from './components/Card';
 export * from './components/Dropdown';
