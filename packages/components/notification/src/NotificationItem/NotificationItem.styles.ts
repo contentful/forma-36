@@ -1,7 +1,7 @@
 import { css } from 'emotion';
 import type { CSSObject } from '@emotion/serialize';
 import tokens from '@contentful/f36-tokens';
-import { NotificationVariant } from './types';
+import { NotificationVariant } from '../types';
 
 const variantColors = {
   positive: tokens.green600,
@@ -14,6 +14,7 @@ const getWrapperStyle = ({ variant }) =>
     background: tokens.colorWhite,
     borderRadius: tokens.borderRadiusMedium,
     boxShadow: tokens.boxShadowHeavy,
+    boxSizing: 'border-box',
     display: 'flex',
     overflow: 'hidden',
     position: 'relative',

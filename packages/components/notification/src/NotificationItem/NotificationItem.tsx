@@ -12,7 +12,7 @@ import { TextLink } from '@contentful/f36-text-link';
 import { CommonProps, Flex, Box } from '@contentful/f36-core';
 import { Heading, Paragraph } from '@contentful/f36-typography';
 
-import { NotificationVariant, NotificationCta } from './types';
+import { NotificationVariant, NotificationCta } from '../types';
 import { getStyles } from './NotificationItem.styles';
 
 export interface NotificationItemProps extends CommonProps {
