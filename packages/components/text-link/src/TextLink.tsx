@@ -109,7 +109,18 @@ const TextLink: PolymorphicComponentWithRef<
   }
 
   return (
-    <a {...commonProps} href={href}>
+    <a
+      {...commonProps}
+      onClick={
+        isDisabled
+          ? (e) => {
+              e.preventDefault();
+            }
+          : commonProps.onClick
+      }
+      href={href}
+      {...(isDisabled ? { tabIndex: -1 } : {})}
+    >
       {commonContent}
     </a>
   );

@@ -79,7 +79,7 @@ const textLink = ({
       textDecoration: isDisabled ? 'none' : 'underline',
     },
     '&:focus': {
-      boxShadow: tokens.glowPrimary,
+      boxShadow: isDisabled ? 'none' : tokens.glowPrimary,
       outline: 'none',
       borderRadius: tokens.borderRadiusSmall,
     },
