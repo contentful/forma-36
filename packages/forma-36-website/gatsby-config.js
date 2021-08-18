@@ -350,6 +350,10 @@ module.exports = {
             link: '/components/tabs/',
           },
           {
+            name: 'TextLink',
+            link: '/components/text-link/',
+          },
+          {
             name: 'ToggleButton',
             link: '/components/toggle-button/',
           },

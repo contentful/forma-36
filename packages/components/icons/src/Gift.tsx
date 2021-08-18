@@ -3,6 +3,7 @@ import { generateIcon } from '@contentful/f36-icon';
 
 export const Gift = generateIcon({
   name: 'Gift',
+  viewBox: '0 0 18 18',
   path: (
     <Fragment>
       <g clipPath="url(#prefix__clip0)" fillRule="evenodd" clipRule="evenodd">

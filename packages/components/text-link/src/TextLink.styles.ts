@@ -79,7 +79,7 @@ const textLink = ({
       textDecoration: isDisabled ? 'none' : 'underline',
     },
     '&:focus': {
-      boxShadow: tokens.glowPrimary,
+      boxShadow: isDisabled ? 'none' : tokens.glowPrimary,
       outline: 'none',
       borderRadius: tokens.borderRadiusSmall,
     },
@@ -94,13 +94,13 @@ const textLinkIcon = () =>
 const textLinkText = ({ alignIcon }: Pick<TextLinkProps, 'alignIcon'>) => {
   if (alignIcon === 'start') {
     return css({
-      marginLeft: '0.125rem',
+      marginLeft: tokens.spacing2Xs,
     });
   }
 
   if (alignIcon === 'end') {
     return css({
-      marginRight: '0.125rem',
+      marginRight: tokens.spacing2Xs,
     });
   }
 };

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { DisplayText, Button, Badge } from '@contentful/f36-components';
-import { CheckCircleTrimmed } from '@contentful/f36-icons';
+import { CheckCircleTrimmedIcon } from '@contentful/f36-icons';
 import storybookIcon from '../images/storybook.svg';
 import githubIcon from '../images/github.svg';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
@@ -94,7 +94,7 @@ const DocFormatter = ({ frontmatter, dataFromReadme, children }) => {
                   className={styles.buttonLeft}
                   icon={
                     activeSection === 'design' ? (
-                      <CheckCircleTrimmed />
+                      <CheckCircleTrimmedIcon />
                     ) : undefined
                   }
                   isActive={activeSection === 'design'}
@@ -110,7 +110,7 @@ const DocFormatter = ({ frontmatter, dataFromReadme, children }) => {
                   }
                   icon={
                     activeSection === 'develop' ? (
-                      <CheckCircleTrimmed />
+                      <CheckCircleTrimmedIcon />
                     ) : undefined
                   }
                   isActive={activeSection === 'develop'}
