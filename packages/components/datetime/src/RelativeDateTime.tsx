@@ -3,8 +3,12 @@ import React from 'react';
 import dayjs from 'dayjs';
 import utcPlugin from 'dayjs/plugin/utc';
 import relativeTime from 'dayjs/plugin/relativeTime';
+import calendarPlugin from 'dayjs/plugin/calendar';
+import isTodayPlugin from 'dayjs/plugin/isToday';
 dayjs.extend(utcPlugin);
 dayjs.extend(relativeTime);
+dayjs.extend(calendarPlugin);
+dayjs.extend(isTodayPlugin);
 
 export interface RelativeDateTimeProps {
   /**
@@ -18,23 +22,41 @@ export interface RelativeDateTimeProps {
    * @default "Now"
    */
   baseDate?: Date | string | number;
+  /**
+   * Sets the date to be relative only if it is in the current week
+   */
+  isRelativeToCurrentWeek?: boolean;
   className?: string;
   testId?: string;
 }
 
-const now = dayjs().format();
+const now = new Date();
 
 function _RelativeDateTime(
   {
     date,
     baseDate = now,
+    isRelativeToCurrentWeek = false,
     className,
     testId = 'f36-relative-date-time',
   }: RelativeDateTimeProps,
   ref: React.Ref<HTMLTimeElement>,
 ) {
-  const machineReadableDate = dayjs(date).utc().format();
-  const relativeDate = dayjs(date).from(baseDate);
+  const dayjsDate = dayjs(date);
+  const machineReadableDate = dayjsDate.format();
+
+  let relativeDate: string;
+
+  if (isRelativeToCurrentWeek && !dayjsDate.isToday()) {
+    // if isRelativeToCurrentWeek is true and the date is not today, we display the date with Yesterday, Tomorrow, etc.
+    // but if the date is not in the current week then it will display "17 Aug 2021"
+    relativeDate = dayjsDate.calendar(null, {
+      sameElse: 'DD MMM YYYY',
+    });
+  } else {
+    // otherwise we display it with "X days ago" or "in X days"
+    relativeDate = dayjsDate.from(baseDate);
+  }
 
   return (
     <time
