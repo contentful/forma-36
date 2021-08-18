@@ -1,8 +1,10 @@
 import React from 'react';
 
-import dayjs, { extend } from 'dayjs';
+import dayjs from 'dayjs';
 import utcPlugin from 'dayjs/plugin/utc';
-extend(utcPlugin);
+import relativeTime from 'dayjs/plugin/relativeTime';
+dayjs.extend(utcPlugin);
+dayjs.extend(relativeTime);
 
 export interface RelativeDateTimeProps {
   /**
