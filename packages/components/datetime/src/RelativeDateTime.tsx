@@ -24,7 +24,7 @@ export interface RelativeDateTimeProps {
 
 const now = dayjs().format();
 
-function RelativeDateTime(
+function _RelativeDateTime(
   {
     date,
     baseDate = now,
@@ -52,5 +52,4 @@ function RelativeDateTime(
  * The RelativeDateTime will show a `date` relative to "now" or to the `baseDate`
  * (e.g. in a day, in one month, one month ago, etc).
  */
-const _RelativeDateTime = React.forwardRef(RelativeDateTime);
-export { _RelativeDateTime as RelativeDateTime };
+export const RelativeDateTime = React.forwardRef(_RelativeDateTime);

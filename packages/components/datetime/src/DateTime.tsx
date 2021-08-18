@@ -20,7 +20,7 @@ export interface DateTimeProps extends CommonProps {
   className?: string;
 }
 
-export function formatDateAndTime(
+function formatDateAndTime(
   date: DateTimeProps['date'],
   format: DateTimeProps['format'],
 ): string {
@@ -43,7 +43,7 @@ export function formatDateAndTime(
   return dayjs(date).format(template);
 }
 
-function DateTime(
+function _DateTime(
   { date, format = 'full', className, testId = 'f36-date-time' }: DateTimeProps,
   ref: React.Ref<HTMLTimeElement>,
 ) {
@@ -57,5 +57,4 @@ function DateTime(
 /**
  * The DateTime component will format a date to a human friendly format and wrap it in a `<time>` tag
  */
-const _DateTime = React.forwardRef(DateTime);
-export { _DateTime as DateTime };
+export const DateTime = React.forwardRef(_DateTime);
