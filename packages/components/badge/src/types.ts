@@ -6,6 +6,5 @@ export type BadgeVariant =
   | 'primary'
   | 'secondary'
   | 'warning'
-  | 'muted'
   | 'primary-filled'
   | 'featured';
