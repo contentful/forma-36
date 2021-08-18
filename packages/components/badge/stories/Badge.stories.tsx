@@ -1,5 +1,4 @@
 import React from 'react';
-import tokens from '@contentful/f36-tokens';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 
@@ -102,21 +101,6 @@ export const overview = () => (
           featured
         </Badge>
       </Flex>
-    </Flex>
-    <Flex marginBottom="spacingM" alignItems="center">
-      <Flex marginRight="spacingS">
-        <Badge variant="muted">muted</Badge>
-      </Flex>
-      <Flex marginRight="spacingS">
-        <Badge variant="muted" size="small">
-          muted
-        </Badge>
-      </Flex>
-      <div style={{ color: tokens.colorRedBase, fontSize: tokens.fontSizeM }}>
-        {' '}
-        - this tagType is deprecated, please use <strong>secondary</strong>{' '}
-        instead
-      </div>
     </Flex>
   </>
 );

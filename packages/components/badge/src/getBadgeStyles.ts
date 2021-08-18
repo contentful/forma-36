@@ -30,11 +30,6 @@ const variantToStyles = ({ variant }: { variant: BadgeVariant }): CSSObject => {
         color: tokens.gray700,
         backgroundColor: tokens.gray200,
       };
-    case 'muted':
-      return {
-        color: tokens.gray600,
-        backgroundColor: tokens.gray200,
-      };
     case 'primary-filled':
       return {
         color: tokens.colorWhite,
