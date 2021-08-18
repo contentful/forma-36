@@ -22,10 +22,12 @@ export interface RelativeDateTimeProps {
   testId?: string;
 }
 
+const now = dayjs().format();
+
 function RelativeDateTime(
   {
     date,
-    baseDate = new Date(),
+    baseDate = now,
     className,
     testId = 'f36-relative-date-time',
   }: RelativeDateTimeProps,
