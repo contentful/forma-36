@@ -5,6 +5,7 @@ import type {
   PickUnion,
   CommonProps,
 } from '@contentful/f36-core';
+import { Box } from '@contentful/f36-core';
 
 import { AssetIcon } from './AssetIcon/AssetIcon';
 import { getAssetStyles } from './Asset.styles';
@@ -44,16 +45,15 @@ export function Asset({
   ...otherProps
 }: AssetProps) {
   const styles = getAssetStyles();
-  const classNames = cx(styles.root, className);
   const isImage = type === 'image' && src !== undefined && src !== '';
 
   // Do not show image previews when publish status is archived
   const showPreview = isImage && status !== 'archived';
 
   return (
-    <div className={classNames} data-test-id={testId} {...otherProps}>
+    <Box className={cx(styles.root, className)} testId={testId} {...otherProps}>
       {showPreview ? (
-        <React.Fragment>
+        <>
           <div className={styles.imageContainer}>
             <img className={styles.image} src={src} alt={title} />
           </div>
@@ -62,7 +62,7 @@ export function Asset({
               <span className={styles.title}>{title}</span>
             </div>
           )}
-        </React.Fragment>
+        </>
       ) : (
         <div className={styles.assetContainer}>
           <div className={styles.assetIllustrationContainer}>
@@ -71,6 +71,6 @@ export function Asset({
           {title && <span className={styles.assetTitle}>{title}</span>}
         </div>
       )}
-    </div>
+    </Box>
   );
 }
