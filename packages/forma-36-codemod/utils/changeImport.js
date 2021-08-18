@@ -4,7 +4,7 @@ const { removeComponentImport } = require('./removeComponentImport');
 module.exports.changeImport = function changeImport(
   j,
   source,
-  { from, to, componentName },
+  { from, to, componentName, outputComponentName },
 ) {
   let result = removeComponentImport(j, source, {
     componentName,
@@ -12,7 +12,12 @@ module.exports.changeImport = function changeImport(
   });
 
   const importResult = addImport(j, result, [
-    j.template.statement([`import { ${componentName} } from "${to}"`]),
+    j.template.statement([
+      `import { ${
+        outputComponentName ? outputComponentName : componentName
+      } } from "${to}"`,
+    ]),
   ]);
+
   return importResult.source;
 };
