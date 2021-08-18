@@ -4,6 +4,7 @@ const {
   changeProperties,
   changeImport,
   changeComponentName,
+  updatePropertyValue,
 } = require('../utils');
 const { getFormaImport, shouldSkipUpdateImport } = require('../utils/config');
 
@@ -29,6 +30,17 @@ module.exports = function (file, api) {
       modifiedAttributes = renameProperties(modifiedAttributes, {
         renameMap: {
           tagType: 'variant',
+        },
+      });
+
+      modifiedAttributes = updatePropertyValue(modifiedAttributes, {
+        j,
+        propertyName: 'variant',
+        propertyValue: (value) => {
+          if (value.value === 'muted') {
+            return j.literal('secondary');
+          }
+          return value;
         },
       });
 

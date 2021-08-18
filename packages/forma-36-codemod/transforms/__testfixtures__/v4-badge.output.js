@@ -1,9 +1,10 @@
 import React from "react";
-import { Heading, Button } from "@contentful/forma-36-react-components";
-
-import { Badge } from "@contentful/f36-components";
+import { Heading } from "@contentful/forma-36-react-components";
+import { Button, Badge } from "@contentful/f36-components";
 
 <Badge variant="primary">primary</Badge>;
+
+<Badge variant="secondary">primary</Badge>;
 
 <Badge size="small">primary</Badge>;
 
