@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { css } from '@emotion/core';
@@ -23,7 +23,14 @@ const styles = {
   `,
 };
 
-const Layout = (props) => {
+export default function Layout({ location, pageContext, children }) {
+  useEffect(() => {
+    // track page visit only when the page is mounted
+    if (window.analytics) {
+      window.analytics.page();
+    }
+  }, []);
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -50,12 +57,13 @@ const Layout = (props) => {
     }
   `);
 
-  const withPromo = !!data.site.siteMetadata.promoText;
+  const { siteMetadata } = data.site;
+  const withPromo = !!siteMetadata.promoText;
 
   return (
     <>
       <Helmet
-        title={data.site.siteMetadata.title}
+        title={siteMetadata.title}
         meta={[
           {
             name: 'description',
@@ -72,10 +80,10 @@ const Layout = (props) => {
 
       {withPromo && (
         <Promo
-          text={data.site.siteMetadata.promoText}
-          linkHref={data.site.siteMetadata.promoLink}
-          linkText={data.site.siteMetadata.promoLinkText}
-          tagText={data.site.siteMetadata.promoTagText}
+          text={siteMetadata.promoText}
+          linkHref={siteMetadata.promoLink}
+          linkText={siteMetadata.promoLinkText}
+          tagText={siteMetadata.promoTagText}
         />
       )}
 
@@ -83,23 +91,22 @@ const Layout = (props) => {
 
       <div css={[styles.main, withPromo && styles.withPromo]}>
         <Navigation
-          menuItems={data.site.siteMetadata && data.site.siteMetadata.menuLinks}
-          currentPath={props && props.location && props.location.pathname}
+          menuItems={siteMetadata?.menuLinks}
+          currentPath={location?.pathname}
         />
         <Container
-          frontmatter={props.pageContext && props.pageContext.frontmatter}
-          dataFromReadme={props.pageContext && props.pageContext.body}
+          frontmatter={pageContext?.frontmatter}
+          dataFromReadme={pageContext?.body}
         >
-          {props.children}
+          {children}
         </Container>
       </div>
     </>
   );
-};
+}
 
 Layout.propTypes = {
   children: PropTypes.node,
   location: PropTypes.object,
+  pageContext: PropTypes.object,
 };
-
-export default Layout;
