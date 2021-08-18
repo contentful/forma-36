@@ -128,7 +128,7 @@ export function NotificationsManager({
       const notification = {
         id: notificationId,
         text,
-        close: () => closeAndDelete(notificationId),
+        onClose: () => closeAndDelete(notificationId),
         duration: itemDuration,
         withClose,
         isShown: true,
@@ -175,7 +175,7 @@ export function NotificationsManager({
             key={item.id}
             withCloseButton={item.withClose}
             // eslint-disable-next-line react/jsx-handler-names
-            onClose={item.close}
+            onClose={item.onClose}
             isShown={item.isShown}
             title={item.title}
             cta={item.cta}
