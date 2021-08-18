@@ -4,31 +4,12 @@ import type { EntityStatus, PickUnion } from '@contentful/f36-core';
 
 import { AssetIcon } from './AssetIcon/AssetIcon';
 import styles from './Asset.css';
+import type { AssetType } from './types';
 
 export type AssetStatus = PickUnion<
   EntityStatus,
   'archived' | 'changed' | 'deleted' | 'draft' | 'published'
 >;
-
-export const types = {
-  archive: 'archive',
-  audio: 'audio',
-  code: 'code',
-  image: 'image',
-  markup: 'markup',
-  pdf: 'pdf',
-  plaintext: 'plaintext',
-  presentation: 'presentation',
-  richtext: 'richtext',
-  spreadsheet: 'spreadsheet',
-  video: 'video',
-};
-
-export function isAssetType(type: string): type is AssetType {
-  return Object.keys(types).includes(type);
-}
-
-export type AssetType = keyof typeof types;
 
 export interface AssetProps {
   /**
