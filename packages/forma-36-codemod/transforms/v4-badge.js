@@ -2,7 +2,7 @@ const {
   getComponentLocalName,
   renameProperties,
   changeProperties,
-  changeImportWithComponentName,
+  changeImport,
   changeComponentName,
 } = require('../utils');
 const { getFormaImport, shouldSkipUpdateImport } = require('../utils/config');
@@ -44,7 +44,7 @@ module.exports = function (file, api) {
   // TODO: add and option to migrate <Tag entityStatusType="draft">Draft</Tag>; to <EntityStatusBadge entityStatus="draft" />;
 
   if (!shouldSkipUpdateImport()) {
-    source = changeImportWithComponentName(j, source, {
+    source = changeImport(j, source, {
       componentName,
       from: getFormaImport(),
       to: '@contentful/f36-components',
