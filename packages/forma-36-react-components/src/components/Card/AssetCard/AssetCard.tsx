@@ -2,11 +2,11 @@ import React, { useCallback } from 'react';
 import cn from 'classnames';
 import { EntityStatusBadge } from '@contentful/f36-badge';
 import type { IconComponent } from '@contentful/f36-icon';
+import { Asset } from '@contentful/f36-asset';
+import type { AssetType, AssetProps } from '@contentful/f36-asset';
 
 import { Card, BaseCardProps } from '../Card';
 import { CardActions } from '../CardActions/CardActions';
-import { Asset } from '../../Asset';
-import type { AssetType, AssetProps } from '../../Asset';
 import { AssetCardSkeleton } from './AssetCardSkeleton';
 import {
   CardDragHandle,

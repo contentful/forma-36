@@ -13,9 +13,10 @@ import {
   VideoIcon,
 } from '@contentful/f36-icons';
 import type { GeneratedIconProps } from '@contentful/f36-icon';
-import { AssetType } from '../Asset';
-import styles from './AssetIcon.css';
-import cn from 'classnames';
+import type { AssetType } from '../types';
+
+import { cx } from 'emotion';
+import { getAssetIconStyles } from './AssetIcon.styles';
 
 export interface AssetIconProps
   extends Omit<GeneratedIconProps, 'illustration' | 'ref'> {
@@ -28,11 +29,14 @@ export interface AssetIconProps
 export function AssetIcon({
   type = 'archive',
   className,
+  testId = 'cf-ui-asset-icon',
   ...otherProps
 }: AssetIconProps) {
+  const styles = getAssetIconStyles();
   const props = {
     ...otherProps,
-    className: cn(className, styles['AssetIcon']),
+    testId,
+    className: cx(styles.root, className),
   };
 
   switch (type) {
@@ -61,7 +65,3 @@ export function AssetIcon({
       return <ArchiveIcon {...props} />;
   }
 }
-
-AssetIcon.defaultProps = {
-  testId: 'cf-ui-asset-icon',
-};
