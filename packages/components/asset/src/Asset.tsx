@@ -5,7 +5,8 @@ import type {
   PickUnion,
   CommonProps,
 } from '@contentful/f36-core';
-import { Box } from '@contentful/f36-core';
+import { Box, Flex } from '@contentful/f36-core';
+import { Text } from '@contentful/f36-typography';
 
 import { AssetIcon } from './AssetIcon/AssetIcon';
 import { getAssetStyles } from './Asset.styles';
@@ -51,25 +52,53 @@ export function Asset({
   const showPreview = isImage && status !== 'archived';
 
   return (
-    <Box className={cx(styles.root, className)} testId={testId} {...otherProps}>
+    <Box
+      className={cx(styles.relative, className)}
+      testId={testId}
+      {...otherProps}
+    >
       {showPreview ? (
         <>
-          <div className={styles.imageContainer}>
+          <Flex
+            alignItems="center"
+            justifyContent="center"
+            className={styles.height100}
+          >
             <img className={styles.image} src={src} alt={title} />
-          </div>
+          </Flex>
           {title && (
             <div className={styles.titleContainer}>
-              <span className={styles.title}>{title}</span>
+              <Text
+                className={styles.title}
+                fontColor="colorWhite"
+                margin="spacingS"
+                isTruncated
+              >
+                {title}
+              </Text>
             </div>
           )}
         </>
       ) : (
-        <div className={styles.assetContainer}>
-          <div className={styles.assetIllustrationContainer}>
+        <Flex
+          flexDirection="column"
+          alignItems="center"
+          justifyContent="center"
+          paddingLeft="spacingS"
+          paddingRight="spacingS"
+          className={styles.height100}
+        >
+          <Flex
+            marginBottom="spacingM"
+            marginTop="spacingM"
+            justifyContent="center"
+          >
             <AssetIcon type={type} />
-          </div>
-          {title && <span className={styles.assetTitle}>{title}</span>}
-        </div>
+          </Flex>
+          <Text isTruncated marginBottom="spacingM" fontColor="gray600">
+            {title}
+          </Text>
+        </Flex>
       )}
     </Box>
   );

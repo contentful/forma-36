@@ -49,15 +49,6 @@ WithAnImage.args = {
   type: 'image',
 };
 
-export const WithAnArchivedImage: Story<AssetProps> = (args) => {
-  return <Asset {...args} />;
-};
-
-WithAnArchivedImage.args = {
-  status: 'archived',
-  type: 'image',
-};
-
 export const Overview: Story<AssetProps> = () => (
   <>
     <Flex flexDirection="column" marginBottom="spacingM">
@@ -79,7 +70,7 @@ export const Overview: Story<AssetProps> = () => (
           <Asset status="changed" src="https://via.placeholder.com/200x300" />
         </Flex>
         <Flex flexDirection="column" marginRight="spacingS">
-          <Text as="p">archived</Text>
+          <Text as="p">archived (should not show image)</Text>
           <Asset status="archived" src="https://via.placeholder.com/200x300" />
         </Flex>
       </Flex>
