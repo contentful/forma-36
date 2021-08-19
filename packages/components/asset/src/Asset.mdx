@@ -17,14 +17,14 @@ The Asset component is a visual representation of an asset file such as a video 
 ```jsx
 <Asset
   src="https://placeimg.com/200/300/animals"
-  title="An archive asset"
-  type="archive"
+  title="An PDF asset"
+  type="pdf"
 />
 ```
 
 ### An image asset and an archived image asset
 
-By default an asset with the `type` `image` will render the `src` attribute directly, like a HTML `<img />` element. If asset `status` is set to `archived`, an image icon is displayed instead of the actual image.
+By default an asset with the `type` `image` will render the `src` attribute directly, like a HTML `<img />` element.
 
 ```jsx
 <Asset
@@ -33,6 +33,8 @@ By default an asset with the `type` `image` will render the `src` attribute dire
   type="image"
 />
 ```
+
+If asset `status` is set to `archived`, an image icon is displayed instead of the actual image.
 
 ```jsx
 <Asset
