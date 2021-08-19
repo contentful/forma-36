@@ -10,6 +10,8 @@ import { Button } from "@contentful/f36-components";
 
 <Tag tagType="primary-filled" size="small">primary filled</Tag>;
 
+<Tag entityStatusType="draft">Draft</Tag>;
+
 <Heading>heading</Heading>;
 
 <Button buttonType="primary">primary button</Button>;
