@@ -23,3 +23,7 @@ eg. `tokens.colorElementMid` to `tokens.gray300`.
 #### `v4-text-link`
 
 Migrates `TextLink` component from Forma@v3 to Forma@v4
+
+#### `v4-badge`
+
+Migrates `Tag` component from Forma@v3 to `Badge` component from Forma@v4
