@@ -24,6 +24,10 @@ const TRANSFORMS_CHOICES = [
       'v4-badge: Converts Tag component from Forma v3 to Badge component from v4',
     value: 'v4-badge',
   },
+  {
+    name: 'v4-pill: Converts Pill component from Forma v3 to v4',
+    value: 'v4-pill',
+  },
 ];
 
 module.exports = {
