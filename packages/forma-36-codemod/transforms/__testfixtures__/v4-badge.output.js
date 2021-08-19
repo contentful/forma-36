@@ -1,14 +1,16 @@
 import React from "react";
 import { Heading } from "@contentful/forma-36-react-components";
-import { Button, Badge } from "@contentful/f36-components";
+import { Button, Badge, EntityStatusBadge } from "@contentful/f36-components";
 
-<Badge variant="primary">primary</Badge>;
+<Badge variant="primary" className="className">primary</Badge>;
 
-<Badge variant="secondary">primary</Badge>;
+<Badge variant="secondary" className="className">primary</Badge>;
 
-<Badge size="small">primary</Badge>;
+<Badge size="small" className="className">primary</Badge>;
 
-<Badge variant="primary-filled" size="small">primary filled</Badge>;
+<Badge variant="primary-filled" size="small" className="className">primary filled</Badge>;
+
+<EntityStatusBadge entityStatusType="draft" className="className" />;
 
 <Heading>heading</Heading>;
 
