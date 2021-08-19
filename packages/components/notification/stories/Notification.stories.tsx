@@ -15,9 +15,6 @@ const getUniqueNumber = () => {
 
 export default {
   component: NotificationItem,
-  parameters: {
-    propTypes: NotificationItem['__docgenInfo'],
-  },
   title: 'Components/Notification',
 };
 

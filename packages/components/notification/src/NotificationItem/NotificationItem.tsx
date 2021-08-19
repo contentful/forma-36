@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { cx } from 'emotion';
 import {
   CheckCircleIcon,
@@ -59,39 +59,12 @@ const _NotificationItem = (props: NotificationItemProps, ref) => {
 
   const styles = getStyles({ variant });
 
-  const renderIcon = useCallback(() => {
-    const size = title ? 'medium' : 'small';
-    const iconVariants = {
-      positive: <CheckCircleIcon variant={variant} size={size} />,
-      warning: <WarningIcon variant={variant} size={size} />,
-      negative: <ErrorCircleIcon variant={variant} size={size} />,
-    };
-
-    return <Box className={cx(styles.icon)}>{iconVariants[variant]}</Box>;
-  }, [variant, styles.icon, title]);
-
-  const renderContent = () => (
-    <>
-      {title && (
-        <Heading as="h2" className={cx(styles.title)} marginBottom="spacingXs">
-          {title}
-        </Heading>
-      )}
-      {children && (
-        <Paragraph className={styles.content} marginBottom="spacingXs">
-          {children}
-        </Paragraph>
-      )}
-      {cta?.label && (
-        <TextLink
-          {...cta?.textLinkProps}
-          as={cta?.textLinkProps?.as || 'button'}
-        >
-          {cta.label}
-        </TextLink>
-      )}
-    </>
-  );
+  const iconSize = title ? 'medium' : 'small';
+  const iconVariants = {
+    positive: <CheckCircleIcon variant={variant} size={iconSize} />,
+    warning: <WarningIcon variant={variant} size={iconSize} />,
+    negative: <ErrorCircleIcon variant={variant} size={iconSize} />,
+  };
 
   const intents = {
     positive: 'success',
@@ -109,8 +82,31 @@ const _NotificationItem = (props: NotificationItemProps, ref) => {
       {...otherProps}
       ref={ref}
     >
-      {renderIcon()}
-      <Box className={cx(styles.notification)}>{renderContent()}</Box>
+      <Box className={cx(styles.icon)}>{iconVariants[variant]}</Box>
+      <Box className={cx(styles.notification)}>
+        {title && (
+          <Heading
+            as="h2"
+            className={cx(styles.title)}
+            marginBottom="spacingXs"
+          >
+            {title}
+          </Heading>
+        )}
+        {children && (
+          <Paragraph className={styles.content} marginBottom="spacingXs">
+            {children}
+          </Paragraph>
+        )}
+        {cta?.label && (
+          <TextLink
+            {...cta?.textLinkProps}
+            as={cta?.textLinkProps?.as || 'button'}
+          >
+            {cta.label}
+          </TextLink>
+        )}
+      </Box>
       {withCloseButton && (
         <Box>
           <Button

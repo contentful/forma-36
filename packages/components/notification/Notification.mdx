@@ -45,7 +45,7 @@ The `Notification` component can be configured in a number of different ways. He
 ### Intent
 
 ```jsx
-<React.Fragment>
+<Grid rowGap="spacingXs" rows="repeat(4, auto)" justifyContent="start">
   <Button
     variant="positive"
     onClick={() => Notification.success('This is a success notification')}
@@ -64,13 +64,13 @@ The `Notification` component can be configured in a number of different ways. He
   >
     Show warning notification
   </Button>
-</React.Fragment>
+</Grid>
 ```
 
 ### Placement
 
 ```jsx
-<React.Fragment>
+<Grid rowGap="spacingXs" rows="repeat(4, auto)" justifyContent="start">
   <Button
     variant="secondary"
     onClick={() => {
@@ -89,7 +89,7 @@ The `Notification` component can be configured in a number of different ways. He
   >
     Show notification at bottom of viewport
   </Button>
-</React.Fragment>
+</Grid>
 ```
 
 ### API
