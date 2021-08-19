@@ -16,7 +16,7 @@ export default {
   },
 } as Meta;
 
-export const Default: Story<DateTimeProps> = (args) => <DateTime {...args} />;
-Default.args = {
+export const Basic: Story<DateTimeProps> = (args) => <DateTime {...args} />;
+Basic.args = {
   date: '2020-08-17T15:45:00',
 };
