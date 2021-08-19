@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Box } from '@contentful/f36-core';
 import AnimateHeight from 'react-animate-height';
 
 import { NotificationItem, NotificationItemProps } from './NotificationItem';
