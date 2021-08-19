@@ -1,4 +1,5 @@
 import React from 'react';
+import { CommonProps } from '@contentful/f36-core';
 
 import dayjs from 'dayjs';
 import utcPlugin from 'dayjs/plugin/utc';
@@ -10,7 +11,7 @@ dayjs.extend(relativeTime);
 dayjs.extend(calendarPlugin);
 dayjs.extend(isTodayPlugin);
 
-export interface RelativeDateTimeProps {
+export interface RelativeDateTimeProps extends CommonProps {
   /**
    * The date that will be displayed. It accepts a JS Date, an ISO8601 Timestamp string, or Unix Epoch Milliseconds number
    */
@@ -26,22 +27,20 @@ export interface RelativeDateTimeProps {
    * Sets the date to be relative only if it is in the current week
    */
   isRelativeToCurrentWeek?: boolean;
-  className?: string;
-  testId?: string;
 }
 
-const now = new Date();
-
-function _RelativeDateTime(
+const _RelativeDateTime = (
   {
     date,
-    baseDate = now,
+    baseDate,
     isRelativeToCurrentWeek = false,
     className,
-    testId = 'f36-relative-date-time',
+    testId = 'cf-ui-relative-date-time',
+    ...otherProps
   }: RelativeDateTimeProps,
   ref: React.Ref<HTMLTimeElement>,
-) {
+) => {
+  const now = new Date();
   const dayjsDate = dayjs(date);
   const machineReadableDate = dayjsDate.format();
 
@@ -55,11 +54,12 @@ function _RelativeDateTime(
     });
   } else {
     // otherwise we display it with "X days ago" or "in X days"
-    relativeDate = dayjsDate.from(baseDate);
+    relativeDate = dayjsDate.from(baseDate ?? now);
   }
 
   return (
     <time
+      {...otherProps}
       className={className}
       dateTime={machineReadableDate}
       data-test-id={testId}
@@ -68,7 +68,7 @@ function _RelativeDateTime(
       {relativeDate}
     </time>
   );
-}
+};
 
 /**
  * The RelativeDateTime will show a `date` relative to "now" or to the `baseDate`

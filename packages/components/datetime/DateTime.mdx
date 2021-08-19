@@ -5,6 +5,7 @@ status: 'stable'
 slug: /components/datetime/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/components/datetime'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-datetime--basic'
+typescript: ./src/DateTime.tsx,.RelativeDateTime.tsx
 ---
 
 In this package, there are two components (`DateTime` and `RelativeDateTime`) that will return a date following [Forma 36 guidelines](https://f36.contentful.com/guidelines/date-and-time/).
@@ -23,7 +24,7 @@ It allows four different forms of display that can be controlled by changing the
 
 ### Examples
 
-```tsx static=true
+```tsx
 import { DateTime } from '@contentful/f36-datetime';
 
 <DateTime date="2021-08-17T15:45" />; // passing a Timestamp as an ISOString
@@ -41,7 +42,7 @@ Provides a relative date string for resolutions ranging from seconds up through 
 
 If we consider today as August 18th of 2021 and we use pass the following values to the Component
 
-```tsx static=true
+```tsx
 import { RelativeDateTime } from '@contentful/f36-datetime';
 
 <RelativeDateTime date="2021-08-17T15:45" />; // passing a Timestamp as an ISOString
@@ -56,7 +57,7 @@ The component will display `a day ago`
 Normally, the component compare your `date` with today’s date. But maybe you need to render a relative date
 that is compared with some other day that is not today. You can do that by using `baseDate`:
 
-```tsx static=true
+```tsx
 import { RelativeDateTime } from '@contentful/f36-datetime';
 
 <RelativeDateTime baseDate="2021-08-17T15:45" date="2021-08-18T15:45" />;
@@ -69,7 +70,7 @@ The component will display `in a day`
 Still using the last example. If you only need a relative date if the given date is within the current week,
 that is possible by using the boolean `isRelativeToCurrentWeek`
 
-```tsx static=true
+```tsx
 import { RelativeDateTime } from '@contentful/f36-datetime';
 
 <RelativeDateTime date="2021-08-17T15:45" isRelativeToCurrentWeek />; // It will display "Yesterday at 3:45 PM"

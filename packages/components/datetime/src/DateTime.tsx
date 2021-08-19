@@ -13,11 +13,9 @@ export interface DateTimeProps extends CommonProps {
   /**
    * The format in which the date will be presented
    *
-   * @default 'full'
+   * @default full
    **/
   format?: 'full' | 'time' | 'weekday' | 'day';
-  testId?: string;
-  className?: string;
 }
 
 function formatDateAndTime(
@@ -43,16 +41,30 @@ function formatDateAndTime(
   return dayjs(date).format(template);
 }
 
-function _DateTime(
-  { date, format = 'full', className, testId = 'f36-date-time' }: DateTimeProps,
+const _DateTime = (
+  {
+    className,
+    date,
+    format = 'full',
+    testId = 'cf-ui-date-time',
+    ...otherProps
+  }: DateTimeProps,
   ref: React.Ref<HTMLTimeElement>,
-) {
+) => {
+  const machineReadableDate = dayjs(date).format();
+
   return (
-    <time className={className} data-test-id={testId} ref={ref}>
+    <time
+      {...otherProps}
+      className={className}
+      data-test-id={testId}
+      dateTime={machineReadableDate}
+      ref={ref}
+    >
       {formatDateAndTime(date, format)}
     </time>
   );
-}
+};
 
 /**
  * The DateTime component will format a date to a human friendly format and wrap it in a `<time>` tag
