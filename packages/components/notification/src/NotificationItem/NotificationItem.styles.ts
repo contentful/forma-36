@@ -48,12 +48,10 @@ const titleStyle: CSSObject = {
   color: tokens.gray800,
   fontSize: tokens.fontSizeL,
   lineHeight: tokens.lineHeightL,
-  marginBottom: tokens.spacingXs,
 };
 
 const contentStyle: CSSObject = {
   color: tokens.gray700,
-  marginBottom: tokens.spacingXs,
   '&:last-child': {
     marginBottom: 0,
   },

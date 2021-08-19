@@ -95,13 +95,13 @@ export class NotificationItemContainer extends Component<
           }
         }}
       >
-        <Box
+        <div
           className={cx(css({ pointerEvents: 'all' }))}
           onMouseEnter={this.handleMouseEnter}
           onMouseLeave={this.handleMouseLeave}
         >
           <NotificationItem {...otherProps} onClose={this.handleClose} />
-        </Box>
+        </div>
       </AnimateHeight>
     );
   }

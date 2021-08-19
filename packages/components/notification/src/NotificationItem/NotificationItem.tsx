@@ -16,12 +16,31 @@ import { NotificationVariant, NotificationCta } from '../types';
 import { getStyles } from './NotificationItem.styles';
 
 export interface NotificationItemProps extends CommonProps {
+  /**
+   * Defines the styling of notification
+   * @default positive
+   */
   variant?: NotificationVariant;
+  /**
+   * Defines if the close button should be rendered
+   * @default true
+   */
   withCloseButton?: boolean;
+  /**
+   * Function that will be triggered when close button is clicked
+   */
   onClose?: Function;
-  testId?: string;
-  children: React.ReactNode;
+  /**
+   * Title of the notification
+   */
   title?: string;
+  /**
+   * Content of the notificaiton
+   */
+  children: React.ReactNode;
+  /**
+   * Label and text-link props of the CTA
+   */
   cta?: Partial<NotificationCta>;
 }
 
@@ -54,11 +73,15 @@ const _NotificationItem = (props: NotificationItemProps, ref) => {
   const renderContent = () => (
     <>
       {title && (
-        <Heading as="h2" className={cx(styles.title)}>
+        <Heading as="h2" className={cx(styles.title)} marginBottom="spacingXs">
           {title}
         </Heading>
       )}
-      {children && <Paragraph className={styles.content}>{children}</Paragraph>}
+      {children && (
+        <Paragraph className={styles.content} marginBottom="spacingXs">
+          {children}
+        </Paragraph>
+      )}
       {cta?.label && (
         <TextLink
           {...cta?.textLinkProps}
