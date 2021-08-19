@@ -12,15 +12,11 @@ import { Props } from '@contentful/f36-docs-utils';
 
 The Asset component is a visual representation of an asset file such as a video or a PDF document. Use it when assets need to be presented to the user in a visual way but without necessarily showing the actual asset, for instance in a file selector, a drag-and-drop component, or when listing files. The Asset component composes the AssetIcon component.
 
-## Table of contents
-
-- [Code examples](#code-examples)
-
 ## Code examples
 
 ```jsx
 <Asset
-  src="https://via.placeholder.com/200x300"
+  src="https://placeimg.com/200/300/animals"
   title="An archive asset"
   type="archive"
 />
@@ -32,7 +28,7 @@ By default an asset with the `type` `image` will render the `src` attribute dire
 
 ```jsx
 <Asset
-  src="https://via.placeholder.com/200x300"
+  src="https://placeimg.com/200/300/animals"
   title="An image asset"
   type="image"
 />
@@ -40,7 +36,7 @@ By default an asset with the `type` `image` will render the `src` attribute dire
 
 ```jsx
 <Asset
-  src="https://via.placeholder.com/200x300"
+  src="https://placeimg.com/200/300/animals"
   status="archived"
   title="An archived image asset"
   type="image"

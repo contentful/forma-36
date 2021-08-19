@@ -29,11 +29,13 @@ export interface AssetIconProps
 export function AssetIcon({
   type = 'archive',
   className,
+  testId = 'cf-ui-asset-icon',
   ...otherProps
 }: AssetIconProps) {
   const styles = getAssetIconStyles();
   const props = {
     ...otherProps,
+    testId,
     className: cx(styles.root, className),
   };
 
@@ -63,7 +65,3 @@ export function AssetIcon({
       return <ArchiveIcon {...props} />;
   }
 }
-
-AssetIcon.defaultProps = {
-  testId: 'cf-ui-asset-icon',
-};

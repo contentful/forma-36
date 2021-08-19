@@ -45,7 +45,7 @@ export function Asset({
   ...otherProps
 }: AssetProps) {
   const styles = getAssetStyles();
-  const isImage = type === 'image' && src !== undefined && src !== '';
+  const isImage = src && src !== '' && type === 'image';
 
   // Do not show image previews when publish status is archived
   const showPreview = isImage && status !== 'archived';
