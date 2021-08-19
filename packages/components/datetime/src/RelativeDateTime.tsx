@@ -1,5 +1,11 @@
 import React from 'react';
-import { CommonProps } from '@contentful/f36-core';
+import {
+  Box,
+  CommonProps,
+  PolymorphicComponent,
+  PolymorphicComponentWithRef,
+  PolymorphicComponentProps,
+} from '@contentful/f36-core';
 
 import dayjs from 'dayjs';
 import utcPlugin from 'dayjs/plugin/utc';
@@ -11,7 +17,7 @@ dayjs.extend(relativeTime);
 dayjs.extend(calendarPlugin);
 dayjs.extend(isTodayPlugin);
 
-export interface RelativeDateTimeProps extends CommonProps {
+interface RelativeDateTimeInternalProps extends CommonProps {
   /**
    * The date that will be displayed. It accepts a JS Date, an ISO8601 Timestamp string, or Unix Epoch Milliseconds number
    */
@@ -29,7 +35,15 @@ export interface RelativeDateTimeProps extends CommonProps {
   isRelativeToCurrentWeek?: boolean;
 }
 
-const _RelativeDateTime = (
+export type RelativeDateTimeProps = PolymorphicComponentProps<
+  'time',
+  RelativeDateTimeInternalProps
+>;
+
+const _RelativeDateTime: PolymorphicComponentWithRef<
+  RelativeDateTimeInternalProps,
+  'time'
+> = (
   {
     date,
     baseDate,
@@ -37,7 +51,7 @@ const _RelativeDateTime = (
     className,
     testId = 'cf-ui-relative-date-time',
     ...otherProps
-  }: RelativeDateTimeProps,
+  }: RelativeDateTimeInternalProps,
   ref: React.Ref<HTMLTimeElement>,
 ) => {
   const now = new Date();
@@ -58,15 +72,16 @@ const _RelativeDateTime = (
   }
 
   return (
-    <time
+    <Box
       {...otherProps}
+      as="time"
       className={className}
       dateTime={machineReadableDate}
       data-test-id={testId}
       ref={ref}
     >
       {relativeDate}
-    </time>
+    </Box>
   );
 };
 
@@ -74,4 +89,7 @@ const _RelativeDateTime = (
  * The RelativeDateTime will show a `date` relative to "now" or to the `baseDate`
  * (e.g. in a day, in one month, one month ago, etc).
  */
-export const RelativeDateTime = React.forwardRef(_RelativeDateTime);
+export const RelativeDateTime: PolymorphicComponent<
+  RelativeDateTimeInternalProps,
+  'time'
+> = React.forwardRef(_RelativeDateTime);

@@ -1,11 +1,17 @@
 import React from 'react';
-import { CommonProps } from '@contentful/f36-core';
+import {
+  Box,
+  CommonProps,
+  PolymorphicComponent,
+  PolymorphicComponentWithRef,
+  PolymorphicComponentProps,
+} from '@contentful/f36-core';
 
 import dayjs, { extend } from 'dayjs';
 import utcPlugin from 'dayjs/plugin/utc';
 extend(utcPlugin);
 
-export interface DateTimeProps extends CommonProps {
+interface DateTimeInternalProps extends CommonProps {
   /**
    * The date that will be displayed. It accepts a JS Date, an ISO8601 Timestamp string, or Unix Epoch Milliseconds number
    */
@@ -18,9 +24,14 @@ export interface DateTimeProps extends CommonProps {
   format?: 'full' | 'time' | 'weekday' | 'day';
 }
 
+export type DateTimeProps = PolymorphicComponentProps<
+  'time',
+  DateTimeInternalProps
+>;
+
 function formatDateAndTime(
-  date: DateTimeProps['date'],
-  format: DateTimeProps['format'],
+  date: DateTimeInternalProps['date'],
+  format: DateTimeInternalProps['format'],
 ): string {
   let template: string;
 
@@ -41,32 +52,36 @@ function formatDateAndTime(
   return dayjs(date).format(template);
 }
 
-const _DateTime = (
+const _DateTime: PolymorphicComponentWithRef<DateTimeInternalProps, 'time'> = (
   {
     className,
     date,
     format = 'full',
     testId = 'cf-ui-date-time',
     ...otherProps
-  }: DateTimeProps,
-  ref: React.Ref<HTMLTimeElement>,
+  },
+  ref,
 ) => {
   const machineReadableDate = dayjs(date).format();
 
   return (
-    <time
+    <Box
       {...otherProps}
+      as="time"
       className={className}
       data-test-id={testId}
       dateTime={machineReadableDate}
       ref={ref}
     >
       {formatDateAndTime(date, format)}
-    </time>
+    </Box>
   );
 };
 
 /**
  * The DateTime component will format a date to a human friendly format and wrap it in a `<time>` tag
  */
-export const DateTime = React.forwardRef(_DateTime);
+export const DateTime: PolymorphicComponent<
+  DateTimeInternalProps,
+  'time'
+> = React.forwardRef(_DateTime);

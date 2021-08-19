@@ -8,6 +8,8 @@ storybook: 'https://f36-storybook.contentful.com/?path=/story/components-datetim
 typescript: ./src/DateTime.tsx,./src/RelativeDateTime.tsx
 ---
 
+import { Props } from '@contentful/f36-docs-utils';
+
 In this package, there are two components (`DateTime` and `RelativeDateTime`) that will return a date following [Forma 36 guidelines](https://f36.contentful.com/guidelines/date-and-time/).
 
 ## DateTime
@@ -79,3 +81,11 @@ import { RelativeDateTime } from '@contentful/f36-datetime';
 
 <RelativeDateTime date="2021-08-18T15:45" isRelativeToCurrentWeek />; // It will display "Tomorrow at 3:45 PM"
 ```
+
+## Props of DateTime
+
+<Props of="DateTime" />
+
+## Props of RelativeDateTime
+
+<Props of="RelativeDateTime" />
