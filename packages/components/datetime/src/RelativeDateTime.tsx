@@ -27,6 +27,7 @@ export interface RelativeDateTimeProps
   baseDate?: Date | string | number;
   /**
    * Sets the date to be relative only if it is in the current week
+   * @default false
    */
   isRelativeToCurrentWeek?: boolean;
 }
