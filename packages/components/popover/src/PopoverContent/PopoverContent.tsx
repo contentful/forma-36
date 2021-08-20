@@ -1,4 +1,4 @@
-import React, { HTMLProps } from 'react';
+import React, { AllHTMLAttributes } from 'react';
 import { cx } from 'emotion';
 import { CommonProps } from '@contentful/f36-core';
 import { usePopoverContext } from '../PopoverContext';
@@ -6,7 +6,7 @@ import { Portal } from '@contentful/f36-utils';
 import { getPopoverContentStyles } from './PopoverContent.styles';
 
 interface PopoverContentProps
-  extends Omit<HTMLProps<HTMLDivElement>, 'ref'>,
+  extends AllHTMLAttributes<HTMLDivElement>,
     CommonProps {}
 
 const PopoverContent = (props: PopoverContentProps, ref) => {
