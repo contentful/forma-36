@@ -45,7 +45,6 @@ function formatDateAndTime(
 
 const _DateTime = (
   {
-    className,
     date,
     format = 'full',
     testId = 'cf-ui-date-time',
@@ -58,7 +57,6 @@ const _DateTime = (
   return (
     <time
       dateTime={machineReadableDate}
-      className={className}
       data-test-id={testId}
       {...otherProps}
       ref={ref}

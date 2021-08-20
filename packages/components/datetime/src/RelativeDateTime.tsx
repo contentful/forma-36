@@ -37,32 +37,31 @@ const _RelativeDateTime = (
     date,
     baseDate,
     isRelativeToCurrentWeek = false,
-    className,
     testId = 'cf-ui-relative-date-time',
     ...otherProps
   }: RelativeDateTimeProps,
   ref: React.Ref<HTMLTimeElement>,
 ) => {
   const now = new Date();
+  const referenceDate = baseDate ?? now;
   const dayjsDate = dayjs(date);
   const machineReadableDate = dayjsDate.format();
 
   let relativeDate: string;
 
-  if (isRelativeToCurrentWeek && !dayjsDate.isToday()) {
+  if (isRelativeToCurrentWeek && !dayjsDate.isSame(referenceDate, 'day')) {
     // if isRelativeToCurrentWeek is true and the date is not today, we display the date with Yesterday, Tomorrow, etc.
     // but if the date is not in the current week then it will display "17 Aug 2021"
-    relativeDate = dayjsDate.calendar(null, {
+    relativeDate = dayjsDate.calendar(referenceDate, {
       sameElse: 'DD MMM YYYY',
     });
   } else {
     // otherwise we display it with "X days ago" or "in X days"
-    relativeDate = dayjsDate.from(baseDate ?? now);
+    relativeDate = dayjsDate.from(referenceDate);
   }
 
   return (
     <time
-      className={className}
       dateTime={machineReadableDate}
       data-test-id={testId}
       {...otherProps}
