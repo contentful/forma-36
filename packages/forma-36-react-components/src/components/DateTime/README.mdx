@@ -26,24 +26,24 @@ Displays an absolute date and/or time in a variety of formats that conforms to F
 
 **Example Usage**
 
-```ts
+```ts static=true
 import React from 'react';
 import { DateTime } from '@contentful/forma-36-react-components';
 
-export const MyComponent: React.FC<{ date: Date }> = ({ date }) => {
-  return <DateTime date={date} />;
-};
+export const MyComponent: React.FC<{ date: Date }> = ({ date }) => (
+  <DateTime date={date} />
+);
 ```
 
 or with a different format
 
-```ts
+```tsx static=true
 import React from 'react';
 import { DateTime } from '@contentful/forma-36-react-components';
 
-export const ScheduledForWeekdate: React.FC<{ date: Date }> = ({ date }) => {
-  return <DateTime date={date} format="WEEKDAY_DATE" />;
-};
+export const ScheduledForWeekdate: React.FC<{ date: Date }> = ({ date }) => (
+  <DateTime date={date} format="WEEKDAY_DATE" />
+);
 ```
 
 ### RelativeDate
@@ -54,29 +54,27 @@ Provides a relative date string for resolutions ranging from seconds up through 
 
 **Example Usage**
 
-```ts
+```ts static=true
 import React from 'react';
 import { RelativeDate } from '@contentful/forma-36-react-components';
 
 export const EntryPublishedRelative: React.FC<{ publishedAt: Date }> = ({
   publishedAt,
-}) => {
-  return <RelativeDate date={publishedAt} />;
-};
+}) => <RelativeDate date={publishedAt} />;
 ```
 
 With a different `baseDate`
 
-```ts
+```ts static=true
 import React from 'react';
 import { RelativeDate } from '@contentful/forma-36-react-components';
 
 export const EntryLifetime: React.FC<{
   createdAt: Date;
   publishedAt: Date;
-}> = ({ createdAt, publishedAt }) => {
-  return <RelativeDate date={publishedAt} baseDate={createdAt} />;
-};
+}> = ({ createdAt, publishedAt }) => (
+  <RelativeDate date={publishedAt} baseDate={createdAt} />
+);
 ```
 
 ## Utility Functions
@@ -95,7 +93,7 @@ Additional functions are available for strings in cases when the date and/or tim
 
 **Example**
 
-```ts
+```ts static=true
 import { datetime } from '@contentful/forma-36-react-components';
 
 const publishedTime = datetime.formatTime(date);

@@ -79,7 +79,7 @@ const TextLink: PolymorphicComponentWithRef<
     <Flex as="span">
       {React.cloneElement(icon, {
         className: cx(icon.props.className, styles.textLinkIcon()),
-        size: 'tiny',
+        size: 'small',
       })}
     </Flex>
   ) : null;
@@ -109,7 +109,18 @@ const TextLink: PolymorphicComponentWithRef<
   }
 
   return (
-    <a {...commonProps} href={href}>
+    <a
+      {...commonProps}
+      onClick={
+        isDisabled
+          ? (e) => {
+              e.preventDefault();
+            }
+          : commonProps.onClick
+      }
+      href={href}
+      {...(isDisabled ? { tabIndex: -1 } : {})}
+    >
       {commonContent}
     </a>
   );

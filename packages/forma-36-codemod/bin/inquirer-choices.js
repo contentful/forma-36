@@ -19,6 +19,15 @@ const TRANSFORMS_CHOICES = [
     name: 'v4-text-link: Converts TextLink component from Forma v3 to v4',
     value: 'v4-text-link',
   },
+  {
+    name:
+      'v4-badge: Converts Tag component from Forma v3 to Badge component from v4',
+    value: 'v4-badge',
+  },
+  {
+    name: 'v4-pill: Converts Pill component from Forma v3 to v4',
+    value: 'v4-pill',
+  },
 ];
 
 module.exports = {

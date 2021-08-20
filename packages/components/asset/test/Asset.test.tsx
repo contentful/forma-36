@@ -2,40 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { axe } from '@/scripts/test/axeHelper';
 
-import { Asset } from './Asset';
-
-it('renders the component', () => {
-  const { container } = render(
-    <Asset src="https://via.placeholder.com/200x300" title="Image of a cat" />,
-  );
-
-  expect(container.firstChild).toMatchSnapshot();
-});
-
-it('renders the component with an additional class name', () => {
-  const { container } = render(
-    <Asset
-      src="https://via.placeholder.com/200x300"
-      title="Image of a cat"
-      className="extra-class-name"
-    />,
-  );
-
-  expect(container.firstChild).toMatchSnapshot();
-});
-
-it('renders the component with type pdf', () => {
-  const { container } = render(
-    <Asset
-      src="https://via.placeholder.com/200x300"
-      title="Image of a cat"
-      className="extra-class-name"
-      type="pdf"
-    />,
-  );
-
-  expect(container.firstChild).toMatchSnapshot();
-});
+import { Asset } from '../src/Asset';
 
 describe('with type=image', () => {
   it('renders the component as a preview', () => {

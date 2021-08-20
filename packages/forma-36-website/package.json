@@ -3,6 +3,7 @@
   "description": "Forma 36 Doc App",
   "private": true,
   "version": "4.0.0",
+  "license": "MIT",
   "dependencies": {
     "@contentful/forma-36-fcss": "^4.0.0",
     "@contentful/f36-components": "^4.0.0",
@@ -39,7 +40,7 @@
     "react-live": "^2.2.0",
     "webpack-dev-server": "3.11.2"
   },
-  "license": "MIT",
+  "devDependencies": {},
   "resolutions": {
     "js-yaml": "3.13.1",
     "webpack-dev-server": "3.1.11"
