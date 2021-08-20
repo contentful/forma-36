@@ -1,0 +1,59 @@
+---
+title: 'Popover'
+type: 'component'
+status: 'stable'
+slug: /components/popover/
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/popover'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-popover--basic'
+typescript: ./src/Popover.tsx
+---
+
+Popover is used to display some content on top of another, and should be paired with a clickable trigger element.
+It is a base for other more specific component, like `Menu`, `Autocomplete` and `Multiselect`. Please, consider using these specific componenets to cover your needs.
+
+## Table of contents
+
+- [How to use Popover](#how-to-use-Popover)
+- [Code examples](#code-examples)
+- [Content recommendations](#content-recommendations)
+- [Accessibility](#accessibility)
+
+## How to use Popover
+
+- If `Menu`, `Autocomplete` and `Multiselect` components are not covering your use cases, only then you can use `Popover`.
+- Double check with designers before using this component. Probably you can just use one of the more specific components, like `Menu`, `Autocomplete` and `Multiselect`
+- Keep in mind that everything related to accessibility for the popover content you have to develop on your own.
+
+## Code examples
+
+- Pass trigger component as a child for `PopoverTrigger`.
+- Pass popover content as a child for `PopoverContent`
+
+```jsx
+<React.Fragment>
+  <TextLink variant="primary">Text link</TextLink>
+</React.Fragment>
+```
+
+### TextLink with icon (`icon`)
+
+```jsx
+<React.Fragment>
+  <TextLink icon={<ExternalLink />}>Primary</TextLink>
+  <br />
+  <TextLink icon={<ExternalLink />} alignIcon="end">
+    Primary
+  </TextLink>
+</React.Fragment>
+```
+
+## Content recommendations
+
+- Use an interactive element such as `button` for `PopoverTrigger`
+
+## Accessibility
+
+- When the popover is opened, focus is moved to the `PopoverContent`. If you set `autoFocus`to `false`, it will not move the focus.
+- When the popover is open and focus is within the `PopoverContent`, click on `Esc` key will close the popover. If you set `closeOnEsc` to `false`, it will not close.
+- When the popover is open and focus is within the `PopoverContent`, click outside popover or blurring out will close the it. If you set `closeOnBlur` to `false`, it will not close.
+- All the necessery a11y attributes for `PopoverContent` and `PopoverTrigger` are provided.

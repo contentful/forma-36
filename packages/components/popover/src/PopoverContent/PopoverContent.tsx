@@ -3,7 +3,7 @@ import { cx } from 'emotion';
 import { CommonProps } from '@contentful/f36-core';
 import { usePopoverContext } from '../PopoverContext';
 import { Portal } from '@contentful/f36-utils';
-import { styles } from './PopoverContent.styles';
+import { getPopoverContentStyles } from './PopoverContent.styles';
 
 interface PopoverContentProps
   extends Omit<HTMLProps<HTMLDivElement>, 'ref'>,
@@ -17,12 +17,14 @@ const PopoverContent = (props: PopoverContentProps, ref) => {
     ...otherProps
   } = props;
 
+  const styles = getPopoverContentStyles();
+
   const { isOpen, getPopoverProps, usePortal } = usePopoverContext();
 
   const content = (
     <div
       {...getPopoverProps(otherProps, ref)}
-      className={cx(styles.container(), className)}
+      className={cx(styles.container, className)}
       data-test-id={testId}
       tabIndex={-1}
       role="dialog"
