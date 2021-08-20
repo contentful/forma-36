@@ -1,17 +1,13 @@
 import React from 'react';
-import {
-  Box,
-  CommonProps,
-  PolymorphicComponent,
-  PolymorphicComponentWithRef,
-  PolymorphicComponentProps,
-} from '@contentful/f36-core';
+import { CommonProps } from '@contentful/f36-core';
 
 import dayjs, { extend } from 'dayjs';
 import utcPlugin from 'dayjs/plugin/utc';
 extend(utcPlugin);
 
-interface DateTimeInternalProps extends CommonProps {
+export interface DateTimeProps
+  extends CommonProps,
+    React.AllHTMLAttributes<HTMLTimeElement> {
   /**
    * The date that will be displayed. It accepts a JS Date, an ISO8601 Timestamp string, or Unix Epoch Milliseconds number
    */
@@ -24,14 +20,9 @@ interface DateTimeInternalProps extends CommonProps {
   format?: 'full' | 'time' | 'weekday' | 'day';
 }
 
-export type DateTimeProps = PolymorphicComponentProps<
-  'time',
-  DateTimeInternalProps
->;
-
 function formatDateAndTime(
-  date: DateTimeInternalProps['date'],
-  format: DateTimeInternalProps['format'],
+  date: DateTimeProps['date'],
+  format: DateTimeProps['format'],
 ): string {
   let template: string;
 
@@ -52,36 +43,32 @@ function formatDateAndTime(
   return dayjs(date).format(template);
 }
 
-const _DateTime: PolymorphicComponentWithRef<DateTimeInternalProps, 'time'> = (
+const _DateTime = (
   {
     className,
     date,
     format = 'full',
     testId = 'cf-ui-date-time',
     ...otherProps
-  },
-  ref,
+  }: DateTimeProps,
+  ref: React.Ref<HTMLTimeElement>,
 ) => {
   const machineReadableDate = dayjs(date).format();
 
   return (
-    <Box
-      {...otherProps}
-      as="time"
+    <time
+      dateTime={machineReadableDate}
       className={className}
       data-test-id={testId}
-      dateTime={machineReadableDate}
+      {...otherProps}
       ref={ref}
     >
       {formatDateAndTime(date, format)}
-    </Box>
+    </time>
   );
 };
 
 /**
  * The DateTime component will format a date to a human friendly format and wrap it in a `<time>` tag
  */
-export const DateTime: PolymorphicComponent<
-  DateTimeInternalProps,
-  'time'
-> = React.forwardRef(_DateTime);
+export const DateTime = React.forwardRef(_DateTime);

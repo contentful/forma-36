@@ -16,10 +16,10 @@ export default {
   },
 } as Meta;
 
-export const Default: Story<RelativeDateTimeProps> = (args) => (
+export const Basic: Story<RelativeDateTimeProps> = (args) => (
   <RelativeDateTime {...args} />
 );
-Default.args = {
+Basic.args = {
   date: '2021-08-17T15:45:00+02:00',
 };
 

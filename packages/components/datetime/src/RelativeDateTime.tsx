@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  Box,
-  CommonProps,
-  PolymorphicComponent,
-  PolymorphicComponentWithRef,
-  PolymorphicComponentProps,
-} from '@contentful/f36-core';
+import { CommonProps } from '@contentful/f36-core';
 
 import dayjs from 'dayjs';
 import utcPlugin from 'dayjs/plugin/utc';
@@ -17,7 +11,9 @@ dayjs.extend(relativeTime);
 dayjs.extend(calendarPlugin);
 dayjs.extend(isTodayPlugin);
 
-interface RelativeDateTimeInternalProps extends CommonProps {
+export interface RelativeDateTimeProps
+  extends CommonProps,
+    React.AllHTMLAttributes<HTMLTimeElement> {
   /**
    * The date that will be displayed. It accepts a JS Date, an ISO8601 Timestamp string, or Unix Epoch Milliseconds number
    */
@@ -35,15 +31,7 @@ interface RelativeDateTimeInternalProps extends CommonProps {
   isRelativeToCurrentWeek?: boolean;
 }
 
-export type RelativeDateTimeProps = PolymorphicComponentProps<
-  'time',
-  RelativeDateTimeInternalProps
->;
-
-const _RelativeDateTime: PolymorphicComponentWithRef<
-  RelativeDateTimeInternalProps,
-  'time'
-> = (
+const _RelativeDateTime = (
   {
     date,
     baseDate,
@@ -51,7 +39,7 @@ const _RelativeDateTime: PolymorphicComponentWithRef<
     className,
     testId = 'cf-ui-relative-date-time',
     ...otherProps
-  }: RelativeDateTimeInternalProps,
+  }: RelativeDateTimeProps,
   ref: React.Ref<HTMLTimeElement>,
 ) => {
   const now = new Date();
@@ -72,16 +60,15 @@ const _RelativeDateTime: PolymorphicComponentWithRef<
   }
 
   return (
-    <Box
-      {...otherProps}
-      as="time"
+    <time
       className={className}
       dateTime={machineReadableDate}
       data-test-id={testId}
+      {...otherProps}
       ref={ref}
     >
       {relativeDate}
-    </Box>
+    </time>
   );
 };
 
@@ -89,7 +76,4 @@ const _RelativeDateTime: PolymorphicComponentWithRef<
  * The RelativeDateTime will show a `date` relative to "now" or to the `baseDate`
  * (e.g. in a day, in one month, one month ago, etc).
  */
-export const RelativeDateTime: PolymorphicComponent<
-  RelativeDateTimeInternalProps,
-  'time'
-> = React.forwardRef(_RelativeDateTime);
+export const RelativeDateTime = React.forwardRef(_RelativeDateTime);
