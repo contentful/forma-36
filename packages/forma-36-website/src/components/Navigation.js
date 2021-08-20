@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 
@@ -90,58 +90,63 @@ const checkActive = (item, currentPath) => {
 const checkCategory = (name) =>
   name === 'Foundation' || name === 'Guidelines' || name === 'Components';
 
-const MenuListItem = ({ item, currentPath, isActive, hierarchyLevel }) => {
-  const isCategory = checkCategory(item.name);
-  const [isExpanded, setIsExpanded] = useState(isActive || isCategory);
+const MenuListItem = React.forwardRef(
+  ({ item, currentPath, isActive, hierarchyLevel }, ref) => {
+    const isCategory = checkCategory(item.name);
+    const [isExpanded, setIsExpanded] = useState(isActive || isCategory);
 
-  const handleToggle = (event) => {
-    event.preventDefault();
-    setIsExpanded(!isExpanded);
-  };
+    const handleToggle = (event) => {
+      event.preventDefault();
+      setIsExpanded(!isExpanded);
+    };
 
-  const itemOffset = { paddingLeft: `${1 + hierarchyLevel}rem` };
+    const itemOffset = { paddingLeft: `${1 + hierarchyLevel}rem` };
 
-  return (
-    <li css={[isCategory && styles.category]}>
-      {item.menuLinks ? (
-        <>
-          <div
-            css={[styles.link, styles.linkGroup, itemOffset]}
-            onClick={handleToggle}
-          >
-            {isCategory ? (
-              <SectionHeading>{item.name}</SectionHeading>
-            ) : (
-              <span>{item.name}</span>
+    return (
+      <li css={[isCategory && styles.category]}>
+        {item.menuLinks ? (
+          <>
+            <div
+              css={[styles.link, styles.linkGroup, itemOffset]}
+              onClick={handleToggle}
+            >
+              {isCategory ? (
+                <SectionHeading>{item.name}</SectionHeading>
+              ) : (
+                <span>{item.name}</span>
+              )}
+
+              <Icon
+                css={styles.linkIcon}
+                color="secondary"
+                size="medium"
+                icon={isExpanded ? 'ChevronDown' : 'ChevronRight'}
+              />
+            </div>
+            {isExpanded && (
+              <MenuList
+                menuItems={item.menuLinks}
+                currentPath={currentPath}
+                hierarchyLevel={hierarchyLevel + 1}
+              />
             )}
+          </>
+        ) : (
+          <Link
+            ref={ref}
+            css={[styles.link, isActive && styles.linkActive, itemOffset]}
+            to={item.link}
+            href={item.link}
+          >
+            {item.name}
+          </Link>
+        )}
+      </li>
+    );
+  },
+);
 
-            <Icon
-              css={styles.linkIcon}
-              color="secondary"
-              size="medium"
-              icon={isExpanded ? 'ChevronDown' : 'ChevronRight'}
-            />
-          </div>
-          {isExpanded && (
-            <MenuList
-              menuItems={item.menuLinks}
-              currentPath={currentPath}
-              hierarchyLevel={hierarchyLevel + 1}
-            />
-          )}
-        </>
-      ) : (
-        <Link
-          css={[styles.link, isActive && styles.linkActive, itemOffset]}
-          to={item.link}
-          href={item.link}
-        >
-          {item.name}
-        </Link>
-      )}
-    </li>
-  );
-};
+MenuListItem.displayName = 'MenuListItem';
 
 MenuListItem.propTypes = {
   item: PropTypes.shape({ link: PropTypes.string, name: PropTypes.string })
@@ -157,15 +162,23 @@ MenuListItem.defaultProps = {
 };
 
 const MenuList = ({ menuItems, currentPath, hierarchyLevel }) => {
+  const activeRef = useRef(null);
+  useEffect(() => {
+    if (activeRef.current) {
+      activeRef.current.scrollIntoView({ block: 'center' });
+    }
+  }, []);
   return (
     <ul css={styles.list}>
       {menuItems.map((item, index) => {
+        const active = checkActive(item, currentPath);
         return (
           <MenuListItem
             key={index}
+            ref={active ? activeRef : undefined}
             item={item}
             currentPath={currentPath}
-            isActive={checkActive(item, currentPath)}
+            isActive={active}
             hierarchyLevel={hierarchyLevel}
           />
         );
