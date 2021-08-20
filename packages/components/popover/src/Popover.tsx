@@ -155,7 +155,7 @@ export function Popover(props: PopoverProps) {
       usePortal,
       getTriggerProps: (_ref = null) => ({
         ref: mergeRefs(setTriggerElement, _ref),
-        ['aria-expanded']: isOpen,
+        ['aria-expanded']: Boolean(isOpen),
         ['aria-controls']: popoverId,
       }),
       getPopoverProps: (_props = {}, _ref = null) => ({
