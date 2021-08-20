@@ -1,15 +1,13 @@
-import { cx } from 'emotion';
 import React from 'react';
+import { cx } from 'emotion';
 import { CommonProps } from '@contentful/f36-core';
 import { styles } from './{{componentName}}.styles'
 
 export interface {{componentName}}Props extends CommonProps {
-  testId?: string;
-  className?: string;
   children: React.ReactNode;
 };
 
-function {{componentName}}(props: {{componentName}}Props, ref: React.Ref<HTMLDivElement>) {
+function _{{componentName}}(props: {{componentName}}Props, ref: React.Ref<HTMLDivElement>) {
   return (
     <div
       data-test-id={props.testId}
@@ -27,5 +25,4 @@ function {{componentName}}(props: {{componentName}}Props, ref: React.Ref<HTMLDiv
 /**
  * TODO: Add description of component here.
  */
-const _{{componentName}} = React.forwardRef({{componentName}});
-export { _{{componentName}} as {{componentName~}} };
+export const {{componentName}} = React.forwardRef(_{{componentName}});
