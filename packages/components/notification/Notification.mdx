@@ -3,9 +3,13 @@ title: 'Notification'
 type: 'component'
 status: 'stable'
 slug: /components/notification/
-github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/Notification'
-storybook: 'https://f36-storybook.contentful.com/?path=/story/components-notification--default'
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/notification'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-notification--basic'
+typescript: ./src/Notification.tsx,./src/NotificationItem/NotificationItem.tsx,./src/NotificationItem/NotificationItemContainer.tsx,./src/NotificationsManager/NotificationsManager.tsx
 ---
+
+import { Button } from '@contentful/f36-button';
+import { Notification } from './src';
 
 Notifications give immediate feedback about an action triggered or experienced by an user. They will dismiss after 6 seconds, or after being clicked.
 
@@ -14,7 +18,6 @@ Notifications give immediate feedback about an action triggered or experienced b
 - [How to use Notifiaction](#how-to-use-notifiaction)
 - [Component variations](#component-variations)
 - [Content recommendations](#content-recommendations)
-- [Accessibility](#accessibility)
 
 ## How to use Notifiaction
 
@@ -30,7 +33,7 @@ Notifications give immediate feedback about an action triggered or experienced b
 
 ```jsx
 <Button
-  buttonType="muted"
+  variant="secondary"
   onClick={() => Notification.success('An example notification')}
 >
   Show notification
@@ -42,56 +45,56 @@ The `Notification` component can be configured in a number of different ways. He
 ### Intent
 
 ```jsx
-<React.Fragment>
+<Grid rowGap="spacingXs" rows="repeat(4, auto)" justifyContent="start">
   <Button
-    buttonType="positive"
+    variant="positive"
     onClick={() => Notification.success('This is a success notification')}
   >
     Show success notification
   </Button>
   <Button
-    buttonType="negative"
+    variant="negative"
     onClick={() => Notification.error('This is an error notification')}
   >
     Show error notification
   </Button>
   <Button
-    buttonType="warning"
+    variant="secondary"
     onClick={() => Notification.warning('This is a warning notification')}
   >
     Show warning notification
   </Button>
-</React.Fragment>
+</Grid>
 ```
 
-### Position
+### Placement
 
 ```jsx
-<React.Fragment>
+<Grid rowGap="spacingXs" rows="repeat(4, auto)" justifyContent="start">
   <Button
-    buttonType="muted"
+    variant="secondary"
     onClick={() => {
-      Notification.setPosition('top');
+      Notification.setPlacement('top');
       Notification.success('Notification message at top');
     }}
   >
     Show notification at top of viewport
   </Button>
   <Button
-    buttonType="muted"
+    variant="secondary"
     onClick={() => {
-      Notification.setPosition('bottom');
+      Notification.setPlacement('bottom');
       Notification.success('Notification message at bottom');
     }}
   >
     Show notification at bottom of viewport
   </Button>
-</React.Fragment>
+</Grid>
 ```
 
 ### API
 
-```js
+```jsx static=true
 Notification.success('text of notification');
 Notification.error('text of notification');
 Notification.warning('text of notification');
@@ -103,9 +106,9 @@ Notification.close(notification.id);
 // closing all
 Notification.closeAll();
 
-// change position (default is bottom and offset is 20)
-Notification.setPosition('top', { offset: 100 });
-Notification.setPosition('bottom', { offset: 0 });
+// change placement (default is bottom and offset is 20)
+Notification.setPlacement('top', { offset: 100 });
+Notification.setPlacement('bottom', { offset: 0 });
 
 // change duration of expiration (default is 6000ms)
 Notification.setDuration(1000); // 1 second
@@ -117,7 +120,3 @@ Notification.setDuration(100000); // 100 seconds
 - Use clear and succinct copy, since the notification will only be available for 6 seconds
 - Use active voice, present tense, and consider tone of voice depending on the circumstance
 - Use sentence style caps (in which only the first word of a sentence or term is capitalized)
-
-## Accessibility
-
-Missing

@@ -7,12 +7,12 @@ import {
   ShowAction,
   CloseAction,
   CloseAllAction,
-  SetPositionAction,
+  SetPlacementAction,
   SetDurationAction,
   NotificationProps,
-  Position,
+  Placement,
 } from './NotificationsManager';
-import { NotificationIntent, NotificationCtaProps } from './NotificationItem';
+import { NotificationVariant, NotificationCta } from './types';
 
 export interface NotificationsAPI {
   success: ShowAction<Notification>;
@@ -20,7 +20,7 @@ export interface NotificationsAPI {
   show: ShowAction<Notification>;
   close: CloseAction<void>;
   closeAll: CloseAllAction<void>;
-  setPosition: SetPositionAction<void>;
+  setPlacement: SetPlacementAction<void>;
   setDuration: SetDurationAction<void>;
 }
 
@@ -54,20 +54,20 @@ function afterInit<PromiseValueType>(fn: Function) {
   };
 }
 
-const show = (intent: NotificationIntent) => (
+const show = (variant: NotificationVariant) => (
   text: string,
   settings?: {
     duration?: number;
-    canClose?: boolean;
+    withClose?: boolean;
     id?: string;
     title?: string;
-    cta?: Partial<NotificationCtaProps>;
+    cta?: Partial<NotificationCta>;
   },
 ) => {
   if (internalAPI.show) {
     return internalAPI.show(text, {
       ...(settings || {}),
-      intent,
+      variant,
     });
   }
 };
@@ -76,10 +76,10 @@ type ExternalShowAction<T> = (
   text: string,
   settings?: {
     duration?: number;
-    canClose?: boolean;
+    withClose?: boolean;
     id?: string;
     title?: string;
-    cta?: Partial<NotificationCtaProps>;
+    cta?: Partial<NotificationCta>;
   },
 ) => T;
 
@@ -89,11 +89,11 @@ export const Notification: {
   warning: ExternalShowAction<Promise<NotificationProps>>;
   close: CloseAction<Promise<void>>;
   closeAll: CloseAllAction<Promise<void>>;
-  setPosition: SetPositionAction<Promise<void>>;
+  setPlacement: SetPlacementAction<Promise<void>>;
   setDuration: SetDurationAction<Promise<void>>;
 } = {
-  success: afterInit<NotificationProps>(show('success')),
-  error: afterInit<NotificationProps>(show('error')),
+  success: afterInit<NotificationProps>(show('positive')),
+  error: afterInit<NotificationProps>(show('negative')),
   warning: afterInit<NotificationProps>(show('warning')),
   close: afterInit<void>((id: string | number) => {
     if (internalAPI.close) {
@@ -105,10 +105,10 @@ export const Notification: {
       return internalAPI.closeAll();
     }
   }),
-  setPosition: afterInit<void>(
-    (position: Position, params?: { offset: number }) => {
-      if (internalAPI.setPosition) {
-        return internalAPI.setPosition(position, params);
+  setPlacement: afterInit<void>(
+    (placement: Placement, params?: { offset: number }) => {
+      if (internalAPI.setPlacement) {
+        return internalAPI.setPlacement(placement, params);
       }
     },
   ),

@@ -1,41 +1,34 @@
 import React, { useCallback, useState } from 'react';
-import classNames from 'classnames';
+import { cx } from 'emotion';
 
-import { NotificationIntent, NotificationCtaProps } from './NotificationItem';
-import { NotificationItemContainer } from './NotificationItemContainer';
-import styles from './NotificationsManager.css';
-import { useAsyncState } from '../../utils/useAsyncState';
+import { useAsyncState } from '@contentful/f36-core';
+import { NotificationCta, NotificationVariant } from '../types';
+import { NotificationItemContainer } from '../NotificationItem';
+import { getStyles } from './NotificationsManager.styles';
 
-let uniqueId = 0;
-
-const getUniqueId = (): number => {
-  uniqueId += 1;
-  return uniqueId;
-};
-
-export type Position = 'top' | 'bottom';
+export type Placement = 'top' | 'bottom';
 
 export interface NotificationProps {
   id: string | number;
   text: string;
-  close: Function;
+  onClose: Function;
   duration?: number;
-  canClose: boolean;
+  withClose: boolean;
   isShown: boolean;
-  intent: NotificationIntent;
+  variant: NotificationVariant;
   title?: string;
-  cta?: Partial<NotificationCtaProps>;
+  cta?: Partial<NotificationCta>;
 }
 
 export type ShowAction<T> = (
   text: string,
   setting?: {
-    intent: NotificationIntent;
+    variant: NotificationVariant;
     id?: string;
     duration?: number;
-    canClose?: boolean;
+    withClose?: boolean;
     title?: string;
-    cta?: Partial<NotificationCtaProps>;
+    cta?: Partial<NotificationCta>;
   },
 ) => T;
 
@@ -45,8 +38,8 @@ export type CloseAllAction<T> = () => T;
 
 export type SetDurationAction<T> = (duration: number) => T;
 
-export type SetPositionAction<T> = (
-  position: Position,
+export type SetPlacementAction<T> = (
+  placement: Placement,
   params?: { offset: number },
 ) => T;
 
@@ -54,20 +47,28 @@ export interface NotificationsManagerProps {
   register: (name: string, callback: Function) => void;
 }
 
+let uniqueId = 0;
+
+const getUniqueId = (): number => {
+  uniqueId += 1;
+  return uniqueId;
+};
+
 export function NotificationsManager({
   register,
 }: NotificationsManagerProps): React.ReactElement {
   const [items, setItems] = useAsyncState<NotificationProps[]>([]);
-  const [position, setPositionState] = useState('bottom');
-  const [positionOffset, setPositionOffset] = useState(20);
+  const [placement, setPlacementState] = useState('bottom');
+  const [placementOffset, setPlacementOffset] = useState(20);
   const [duration, setDuration] = useState(6000);
+  const styles = getStyles(placement, placementOffset);
 
-  const setPosition: SetPositionAction<void> = useCallback(
-    (position, params?: { offset: number }) => {
-      if (position === 'bottom' || position === 'top') {
-        const positionOffset = params && params.offset ? params.offset : 20;
-        setPositionState(position);
-        setPositionOffset(positionOffset);
+  const setPlacement: SetPlacementAction<void> = useCallback(
+    (placement, params?: { offset: number }) => {
+      if (placement === 'bottom' || placement === 'top') {
+        const placementOffset = params && params.offset ? params.offset : 20;
+        setPlacementState(placement);
+        setPlacementOffset(placementOffset);
       }
     },
     [],
@@ -115,26 +116,25 @@ export function NotificationsManager({
         settings && typeof settings.duration !== 'undefined' // Needed as 0 is falsy but 0 is valid to disable auto-closing a notification
           ? settings.duration
           : duration;
-      const intent = settings && settings.intent ? settings.intent : 'success';
+      const variant = settings?.variant ? settings.variant : 'positive';
 
-      const canClose =
-        settings && typeof settings.canClose !== 'undefined'
-          ? settings.canClose
+      const withClose =
+        settings && typeof settings.withClose !== 'undefined'
+          ? settings.withClose
           : true;
 
-      const notificationId =
-        settings && settings.id ? settings.id : getUniqueId();
+      const notificationId = settings?.id ? settings.id : getUniqueId();
 
       const notification = {
         id: notificationId,
         text,
-        close: () => closeAndDelete(notificationId),
+        onClose: () => closeAndDelete(notificationId),
         duration: itemDuration,
-        canClose,
+        withClose,
         isShown: true,
-        intent,
-        title: settings && settings.title,
-        cta: settings && settings.cta,
+        variant,
+        title: settings?.title,
+        cta: settings?.cta,
       };
 
       const alreadyThere = items.current.find(
@@ -145,7 +145,7 @@ export function NotificationsManager({
         return alreadyThere;
       }
 
-      if (position === 'top') {
+      if (placement === 'top') {
         setItems([notification, ...items.current]);
       } else {
         setItems([...items.current, notification]);
@@ -153,32 +153,29 @@ export function NotificationsManager({
 
       return notification;
     },
-    [closeAndDelete, duration, items, position, setItems],
+    [closeAndDelete, duration, items, placement, setItems],
   );
 
   register('close', close);
   register('show', show);
   register('closeAll', closeAll);
-  register('setPosition', setPosition);
+  register('setPlacement', setPlacement);
   register('setDuration', setDuration);
 
   return (
     <div
       data-test-id="cf-notification-container"
-      className={classNames(styles.NotificationsManager, {
-        [styles[`NotificationsManager--top`]]: position === 'top',
-      })}
-      style={{ [position]: positionOffset }}
+      className={cx(styles.manager)}
     >
-      <div className={styles.NotificationsManager__container}>
+      <div className={cx(styles.container)}>
         {items.current.map((item) => (
           <NotificationItemContainer
-            intent={item.intent}
+            variant={item.variant}
             duration={item.duration}
             key={item.id}
-            hasCloseButton={item.canClose}
+            withCloseButton={item.withClose}
             // eslint-disable-next-line react/jsx-handler-names
-            onClose={item.close}
+            onClose={item.onClose}
             isShown={item.isShown}
             title={item.title}
             cta={item.cta}

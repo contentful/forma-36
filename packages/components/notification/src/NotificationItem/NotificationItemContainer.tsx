@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import AnimateHeight from 'react-animate-height';
 
 import { NotificationItem, NotificationItemProps } from './NotificationItem';
+import { cx, css } from 'emotion';
 
 export interface NotificationItemContainerProps extends NotificationItemProps {
   duration?: number;
@@ -78,7 +79,7 @@ export class NotificationItemContainer extends Component<
   };
 
   render() {
-    const { duration, ...otherProps } = this.props;
+    const { isShown, duration, ...otherProps } = this.props;
     return (
       <AnimateHeight
         duration={200}
@@ -94,7 +95,7 @@ export class NotificationItemContainer extends Component<
         }}
       >
         <div
-          style={{ pointerEvents: 'all' }}
+          className={cx(css({ pointerEvents: 'all' }))}
           onMouseEnter={this.handleMouseEnter}
           onMouseLeave={this.handleMouseLeave}
         >
