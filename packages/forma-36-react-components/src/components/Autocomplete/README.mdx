@@ -26,40 +26,50 @@ Keep in mind that this component is still in alpha state, which means it's unsup
 
 ```jsx
 // import { Autocomplete } from '@contentful/forma-36-react-components';
-<Autocomplete
-  items={[
-    {
-      label: 'entry foo',
-      value: 1,
+function AutocompleteExample() {
+  const items = [
+    { value: 1, label: 'Ananas' },
+    { value: 2, label: 'Apple' },
+    { value: 3, label: 'Banana' },
+    { value: 4, label: 'Lemon' },
+    { value: 5, label: 'Avocado' },
+  ];
+
+  const [filteredItems, setFilteredItems] = React.useState(items);
+  const [selectedItem, setSelectedItem] = React.useState({});
+
+  const handleQueryChange = React.useCallback(
+    (query) => {
+      setFilteredItems(
+        query ? items.filter((item) => item.label.includes(query)) : items,
+      );
     },
-    {
-      label: 'entry bar',
-      value: 2,
-    },
-    {
-      label: 'entry baz',
-      value: 3,
-    },
-    {
-      label: 'entry fooBar',
-      value: 4,
-    },
-    {
-      label: 'entry out of viewport',
-      value: 5,
-    },
-  ]}
-  width={'full'}
-  placeholder={'search'}
-  emptyListMessage={'no result found'}
-  noMatchesMessage={'no matches'}
-  dropdownProps={{ isFullWidth: true }}
-  disabled={false}
->
-  {(options) =>
-    options.map((option) => <span key={option.value}>{option.label}</span>)
-  }
-</Autocomplete>
+    [setFilteredItems],
+  );
+
+  const handleOnChange = (item) => {
+    setSelectedItem(item);
+  };
+
+  return (
+    <Autocomplete
+      items={filteredItems}
+      onQueryChange={handleQueryChange}
+      width={'full'}
+      placeholder={'search'}
+      emptyListMessage={'no result found'}
+      noMatchesMessage={'no matches'}
+      dropdownProps={{ isFullWidth: true }}
+      disabled={false}
+      onChange={handleOnChange}
+      value={selectedItem}
+    >
+      {(options) =>
+        options.map((option) => <span key={option.value}>{option.label}</span>)
+      }
+    </Autocomplete>
+  );
+}
 ```
 
 ## Content recommendations
