@@ -1,0 +1,64 @@
+---
+title: 'RelativeDateTime'
+type: 'component'
+status: 'stable'
+slug: /components/relative-datetime/
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/datetime'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-datetime-relativedatetime--basic'
+typescript: ./src/RelativeDateTime.tsx
+---
+
+import { Props } from '@contentful/f36-docs-utils';
+
+In `@contentful/f36-datetime`, there are two components (`DateTime` and `RelativeDateTime`) that will return a date following [Forma 36 guidelines](https://f36.contentful.com/guidelines/date-and-time/).
+
+## RelativeDateTime
+
+Provides a relative date string for resolutions ranging from seconds up through years. Should be used when absolute date and time is unnecessarily specific.
+
+### Examples
+
+If we consider today as August 18th of 2021 and we use pass the following values to the Component
+
+```tsx
+<Grid rowGap="spacingXs" rows="repeat(3, auto)" justifyContent="start">
+  {/* passing a Timestamp as an ISOString */}
+  <RelativeDateTime date="2021-08-17T15:45" />
+  {/* passing a JS Date */}
+  <RelativeDateTime date={new Date()} />
+  {/* passing a Unix Epoch in milliseconds */}
+  <RelativeDateTime date={1629240300000} />
+</Grid>
+```
+
+The component will display `a day ago`
+
+### Passing a `baseDate`
+
+Normally, the component compare your `date` with today’s date. But if you want to compare it to some specific date provide `baseDate` prop.
+
+```tsx
+<RelativeDateTime baseDate="2021-08-17T15:45" date="2021-08-18T15:45" />
+```
+
+The component will display `in a day`
+
+### Using `isRelativeToCurrentWeek`
+
+Still using the last example. If you only need a relative date if the given date is within the current week,
+that is possible by using the boolean `isRelativeToCurrentWeek`
+
+```tsx
+<Grid rowGap="spacingXs" rows="repeat(3, auto)" justifyContent="start">
+  {/* It will display "Yesterday at 3:45 PM" */}
+  <RelativeDateTime date="2021-08-17T15:45" isRelativeToCurrentWeek />
+  {/* It willdisplay "5 hours ago" */}
+  <RelativeDateTime date="2021-08-18T10:45" isRelativeToCurrentWeek />
+  {/* It will display "Tomorrow at 3:45 PM" */}
+  <RelativeDateTime date="2021-08-18T15:45" isRelativeToCurrentWeek />
+</Grid>
+```
+
+## Props of RelativeDateTime
+
+<Props of="RelativeDateTime" />
