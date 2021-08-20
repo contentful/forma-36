@@ -9,9 +9,6 @@ import { Box } from '@contentful/f36-core';
 
 export default {
   component: Popover,
-  parameters: {
-    propTypes: Popover['__docgenInfo'],
-  },
   title: 'Components/Popover',
   argTypes: {
     isOpen: { control: { disable: true } },
