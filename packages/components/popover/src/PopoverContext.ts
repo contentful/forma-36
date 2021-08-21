@@ -18,7 +18,9 @@ export const usePopoverContext = () => {
   const context = React.useContext(PopoverContext);
 
   if (context === undefined) {
-    throw new Error('useCount must be used within a CountProvider');
+    throw new Error(
+      'usePopoverContext must be used within a PopoverContextProvider',
+    );
   }
 
   return context;

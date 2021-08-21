@@ -4,7 +4,7 @@ import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Popover, PopoverTrigger, PopoverContent } from '../src/.';
 import type { PopoverProps } from '../src/.';
 import { Button } from '@contentful/f36-button';
-import { Text } from '@contentful/f36-typography';
+import { Paragraph } from '@contentful/f36-typography';
 import { Box } from '@contentful/f36-core';
 
 export default {
@@ -25,9 +25,7 @@ export const Basic: Story<PopoverProps> = (args) => {
       </PopoverTrigger>
       <PopoverContent>
         <Box padding="spacingM">
-          <Text as="p" marginBottom="spacingM">
-            This is the content.
-          </Text>
+          <Paragraph>This is the content.</Paragraph>
           <Button>Some action</Button>
         </Box>
       </PopoverContent>

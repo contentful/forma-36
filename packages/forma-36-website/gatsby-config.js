@@ -178,6 +178,10 @@ module.exports = {
             link: '/components/dropdown/',
           },
           {
+            name: 'Popover',
+            link: '/components/popover/',
+          },
+          {
             name: 'EditorToolbar',
             link: '/components/editor-toolbar/',
           },

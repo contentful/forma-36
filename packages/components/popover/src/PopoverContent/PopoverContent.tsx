@@ -5,11 +5,11 @@ import { usePopoverContext } from '../PopoverContext';
 import { Portal } from '@contentful/f36-utils';
 import { getPopoverContentStyles } from './PopoverContent.styles';
 
-interface PopoverContentProps
+export interface PopoverContentProps
   extends AllHTMLAttributes<HTMLDivElement>,
     CommonProps {}
 
-const PopoverContent = (props: PopoverContentProps, ref) => {
+const _PopoverContent = (props: PopoverContentProps, ref) => {
   const {
     children,
     className,
@@ -43,5 +43,4 @@ const PopoverContent = (props: PopoverContentProps, ref) => {
   return usePortal ? <Portal>{content}</Portal> : content;
 };
 
-const _PopoverContent = React.forwardRef(PopoverContent);
-export { _PopoverContent as PopoverContent };
+export const PopoverContent = React.forwardRef(_PopoverContent);

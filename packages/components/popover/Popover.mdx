@@ -23,28 +23,40 @@ It is a base for other more specific component, like `Menu`, `Autocomplete` and 
 - If `Menu`, `Autocomplete` and `Multiselect` components are not covering your use cases, only then you can use `Popover`.
 - Double check with designers before using this component. Probably you can just use one of the more specific components, like `Menu`, `Autocomplete` and `Multiselect`
 - Keep in mind that everything related to accessibility for the popover content you have to develop on your own.
+- Component is controllable, so don't forget to pass `onClose` callback prop. Otherwise `closeOnEsc` and `closeOnBlur` will not work properly.
 
 ## Code examples
 
 - Pass trigger component as a child for `PopoverTrigger`.
 - Pass popover content as a child for `PopoverContent`
 
-```jsx
-<React.Fragment>
-  <TextLink variant="primary">Text link</TextLink>
-</React.Fragment>
-```
+```tsx
+// import {
+//   Popover,
+//   PopoverTrigger,
+//   PopoverContent,
+// } from '@contentful/f36-popover';
 
-### TextLink with icon (`icon`)
+// import { Button } from '@contentful/f36-button';
+// import { Paragraph } from '@contentful/f36-typography';
+// import { Box } from '@contentful/f36-core';
 
-```jsx
-<React.Fragment>
-  <TextLink icon={<ExternalLink />}>Primary</TextLink>
-  <br />
-  <TextLink icon={<ExternalLink />} alignIcon="end">
-    Primary
-  </TextLink>
-</React.Fragment>
+function PopoverExample() {
+  const [isOpen, setIsOpen] = React.useState(false);
+  return (
+    <Popover isOpen={isOpen} onClose={() => setIsOpen(false)}>
+      <PopoverTrigger>
+        <Button onClick={() => setIsOpen(!isOpen)}>Toggle</Button>
+      </PopoverTrigger>
+      <PopoverContent>
+        <Box padding="spacingM">
+          <Paragraph>This is the content.</Paragraph>
+          <Button>Some action</Button>
+        </Box>
+      </PopoverContent>
+    </Popover>
+  );
+}
 ```
 
 ## Content recommendations
@@ -57,3 +69,9 @@ It is a base for other more specific component, like `Menu`, `Autocomplete` and 
 - When the popover is open and focus is within the `PopoverContent`, click on `Esc` key will close the popover. If you set `closeOnEsc` to `false`, it will not close.
 - When the popover is open and focus is within the `PopoverContent`, click outside popover or blurring out will close the it. If you set `closeOnBlur` to `false`, it will not close.
 - All the necessery a11y attributes for `PopoverContent` and `PopoverTrigger` are provided.
+
+## Props
+
+import { Props } from '@contentful/f36-docs-utils';
+
+<Props of="Popover" />

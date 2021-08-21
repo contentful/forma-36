@@ -1,9 +1,8 @@
 import React, { useMemo, useState, useEffect, useCallback } from 'react';
 import { CommonProps, useId, mergeRefs } from '@contentful/f36-core';
-import { Placement } from '@popperjs/core';
+import { Placement, Modifier } from '@popperjs/core';
 import { PopoverContextProvider, PopoverContextType } from './PopoverContext';
 import { usePopper } from 'react-popper';
-import { sameWidth } from './popperModifiers';
 
 export interface PopoverProps extends CommonProps {
   children: React.ReactNode;
@@ -222,3 +221,20 @@ export function Popover(props: PopoverProps) {
     </PopoverContextProvider>
   );
 }
+
+/**
+ * Sets the popover width to the size of the trigger element.
+ */
+const sameWidth: Modifier<'sameWidth', any> = {
+  name: 'sameWidth',
+  enabled: true,
+  phase: 'beforeWrite',
+  requires: ['computeStyles'],
+  fn: ({ state }) => {
+    state.styles.popper.width = `${state.rects.reference.width}px`;
+  },
+  effect: ({ state }) => () => {
+    const reference = state.elements.reference as HTMLElement;
+    state.elements.popper.style.width = `${reference.offsetWidth}px`;
+  },
+};
