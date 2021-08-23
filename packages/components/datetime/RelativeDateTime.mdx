@@ -46,8 +46,9 @@ The component will display `in a day`
 
 ### Using `isRelativeToCurrentWeek`
 
-If you need a relative date if the given date is within the current week, that is possible by using the boolean `isRelativeToCurrentWeek`
-that is possible by using the boolean `isRelativeToCurrentWeek`
+You can set isRelativeToCurrentWeek to true if you want to indicate that the date is relative only within a week.
+And if the difference is more than one week, just show the date without relativeness.
+It will compare the date to today or baseDate if provided.
 
 ```tsx
 <Grid rowGap="spacingXs" rows="repeat(3, auto)" justifyContent="start">
@@ -56,7 +57,9 @@ that is possible by using the boolean `isRelativeToCurrentWeek`
   {/* It willdisplay "5 hours ago" */}
   <RelativeDateTime date="2021-08-18T10:45" isRelativeToCurrentWeek />
   {/* It will display "Tomorrow at 3:45 PM" */}
-  <RelativeDateTime date="2021-08-18T15:45" isRelativeToCurrentWeek />
+  <RelativeDateTime date="2021-08-19T15:45" isRelativeToCurrentWeek />
+  {/* It will display "1 Aug 2021" */}
+  <RelativeDateTime date="2021-08-01T15:45" isRelativeToCurrentWeek />
 </Grid>
 ```
 
