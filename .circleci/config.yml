@@ -47,7 +47,7 @@ jobs:
           name: Test
           command: yarn test
 
-  chromatic-deployment:
+  build-storybook:
     docker:
       - image: circleci/node:14.15.0-browsers
     resource_class: xlarge
@@ -57,7 +57,6 @@ jobs:
           pattern: ^(packages)|(.js|jsx|ts|tsx|css|scss)$
       - yarn_install
       - run: yarn run storybook:build
-      - run: yarn run chromatic --project-token=${CHROMATIC_PROJECT_TOKEN} --exit-zero-on-changes
 
   release:
     docker:
@@ -82,7 +81,7 @@ workflows:
   commit-check:
     jobs:
       - lint-and-test
-      - chromatic-deployment:
+      - build-storybook:
           requires:
             - lint-and-test
           filters:
@@ -96,4 +95,4 @@ workflows:
                 - master
           requires:
             - lint-and-test
-            - chromatic-deployment
+            - build-storybook
