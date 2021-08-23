@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 
 import { Autocomplete, AutocompleteProps } from './Autocomplete';
 
@@ -31,21 +31,15 @@ export const Basic = (args: AutocompleteProps<{}>) => {
   const [filteredItems, setFilteredItems] = useState(items);
   const [selectedItem, setSelectedItem] = useState('');
 
-  const handleQueryChange = useCallback(
-    (query: string) => {
-      setFilteredItems(
-        query ? items.filter((item) => item.label.includes(query)) : items,
-      );
-    },
-    [setFilteredItems],
-  );
+  const handleQueryChange = (query: string) => {
+    setFilteredItems(
+      query ? items.filter((item) => item.label.includes(query)) : items,
+    );
+  };
 
-  const handleChange = useCallback(
-    (item: Item) => {
-      setSelectedItem(item.label);
-    },
-    [setSelectedItem],
-  );
+  const handleChange = (item: Item) => {
+    setSelectedItem(item.label);
+  };
 
   return (
     <Autocomplete<Item>
@@ -74,21 +68,15 @@ export const MultiSelect = (args: AutocompleteProps<{}>) => {
   const [filteredItems, setFilteredItems] = useState(items);
   const [tagElements, setTagElements] = useState([]);
 
-  const handleQueryChange = useCallback(
-    (query: string) => {
-      setFilteredItems(
-        query ? items.filter((item) => item.label.includes(query)) : items,
-      );
-    },
-    [setFilteredItems],
-  );
+  const handleQueryChange = (query: string) => {
+    setFilteredItems(
+      query ? items.filter((item) => item.label.includes(query)) : items,
+    );
+  };
 
-  const handleChange = useCallback(
-    (item: Item) => {
-      setTagElements((tagElements) => [...tagElements, item.label]);
-    },
-    [setTagElements],
-  );
+  const handleChange = (item: Item) => {
+    setTagElements((tagElements) => [...tagElements, item.label]);
+  };
 
   return (
     <>
