@@ -110,6 +110,7 @@ export const iconName = {
   PlusCircleTrimmed: 'PlusCircleTrimmed',
   PlusTrimmed: 'PlusTrimmed',
   Preview: 'Preview',
+  Puzzle: 'Puzzle',
   Quote: 'Quote',
   QuoteTrimmed: 'QuoteTrimmed',
   Receipt: 'Receipt',

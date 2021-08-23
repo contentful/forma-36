@@ -4,14 +4,13 @@
 .AccordionPanel {
   box-sizing: border-box;
   overflow: hidden;
-  padding: 0 var(--spacing-m);
   height: 0;
   transition: height var(--transition-duration-default)
       var(--transition-easing-default),
     padding var(--transition-duration-default) var(--transition-easing-default);
 }
 
-.AccordionPanel--expanded {
+.AccordionPanel__content {
+  width: 100%;
   padding: var(--spacing-xs) var(--spacing-m) var(--spacing-m);
-  height: auto;
 }

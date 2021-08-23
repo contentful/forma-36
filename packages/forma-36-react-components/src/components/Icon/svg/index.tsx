@@ -109,6 +109,7 @@ export { default as PlusCircle } from './PlusCircle';
 export { default as PlusCircleTrimmed } from './PlusCircleTrimmed';
 export { default as PlusTrimmed } from './PlusTrimmed';
 export { default as Preview } from './Preview';
+export { default as Puzzle } from './Puzzle';
 export { default as Quote } from './Quote';
 export { default as QuoteTrimmed } from './QuoteTrimmed';
 export { default as Receipt } from './Receipt';

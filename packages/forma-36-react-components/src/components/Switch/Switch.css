@@ -51,6 +51,7 @@
 }
 
 .Switch__label {
+  font-family: var(--font-stack-primary);
   color: var(--color-text-dark);
   display: flex;
   align-items: center;

@@ -1,6 +1,3 @@
-const colorsPeach = {
-  'color-peach-dark': '#d2ac79',
-  'color-peach-mid': '#ffe9cc',
-};
+const colorsPeach = require('./colors-peach-deprecated');
 
 module.exports = colorsPeach;

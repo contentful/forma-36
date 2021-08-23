@@ -3,15 +3,17 @@
   "description": "Forma 36 Doc App",
   "private": true,
   "version": "0.11.5",
+  "license": "MIT",
   "dependencies": {
     "@contentful/forma-36-fcss": "^0.3.0",
     "@contentful/forma-36-react-components": "^3.75.0",
-    "@contentful/forma-36-tokens": "^0.10.0",
+    "@contentful/forma-36-tokens": "^0.11.0",
     "@emotion/core": "^10.0.16",
     "@emotion/styled": "^10.0.15",
     "@mdx-js/mdx": "^1.6.18",
     "@mdx-js/react": "^1.6.18",
     "@svgr/webpack": "^4.3.2",
+    "dotenv": "^10.0.0",
     "gatsby": "^2.24.73",
     "gatsby-image": "^2.2.14",
     "gatsby-plugin-algolia-docsearch": "^1.0.5",
@@ -32,11 +34,11 @@
     "react": "16.14.0",
     "react-copy-to-clipboard": "^5.0.1",
     "react-dom": "16.14.0",
-    "react-helmet": "^5.2.1",
+    "react-helmet": "^6.1.0",
     "react-live": "^2.2.0",
-    "webpack-dev-server": "3.8.0"
+    "webpack-dev-server": "3.11.2"
   },
-  "license": "MIT",
+  "devDependencies": {},
   "resolutions": {
     "js-yaml": "3.13.1",
     "webpack-dev-server": "3.1.11"

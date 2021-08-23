@@ -1,0 +1,24 @@
+@import '~@contentful/experience-consent-manager/dist/style.css';
+
+/* Additional OSANO styles */
+
+/* Widget */
+.osano-cm-widget {
+  display: block !important; /* experience-consent-manager is doing display: block !important, so we need to overwrite it here */
+  cursor: pointer;
+  border-radius: 20%;
+  transition: none;
+  box-sizing: border-box;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #FFFFFF;
+  background-image: url('./public/CookieVelDonut.png');
+}
+
+.osano-cm-widget svg {
+  display: none;
+}
+/* Overwrite the custom position to the standard on the right */
+.osano-cm-info-dialog__info {
+  left: auto;
+}

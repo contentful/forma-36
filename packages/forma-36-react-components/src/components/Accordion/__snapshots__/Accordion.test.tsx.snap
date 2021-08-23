@@ -45,7 +45,11 @@ exports[`renders the component 1`] = `
       id="accordion-panel--1"
       role="region"
     >
-      Accordion content
+      <div
+        class="AccordionPanel__content"
+      >
+        Accordion content
+      </div>
     </div>
   </li>
 </ul>
@@ -96,7 +100,11 @@ exports[`renders the component with an additional class name 1`] = `
       id="accordion-panel--2"
       role="region"
     >
-      Accordion content
+      <div
+        class="AccordionPanel__content"
+      >
+        Accordion content
+      </div>
     </div>
   </li>
 </ul>
@@ -147,7 +155,11 @@ exports[`renders the component with chevron on the left 1`] = `
       id="accordion-panel--3"
       role="region"
     >
-      Accordion content
+      <div
+        class="AccordionPanel__content"
+      >
+        Accordion content
+      </div>
     </div>
   </li>
 </ul>

@@ -116,6 +116,7 @@ import {
   PlusCircleTrimmed,
   PlusTrimmed,
   Preview,
+  Puzzle,
   Quote,
   QuoteTrimmed,
   Receipt,
@@ -262,6 +263,7 @@ const iconComponents = {
   PlusCircleTrimmed,
   PlusTrimmed,
   Preview,
+  Puzzle,
   Quote,
   QuoteTrimmed,
   Receipt,
@@ -298,7 +300,7 @@ const iconComponents = {
 
 export type IconType = keyof typeof iconName;
 
-export interface IconProps {
+export interface IconProps extends React.SVGProps<SVGSVGElement> {
   size?: 'tiny' | 'small' | 'medium' | 'large';
   color?:
     | 'primary'
@@ -332,7 +334,8 @@ export function Icon({
     className,
   );
 
-  const Element = iconComponents[icon];
+  const Element: (props: React.SVGProps<SVGSVGElement>) => JSX.Element =
+    iconComponents[icon];
 
   return (
     <Element data-test-id={testId} className={classNames} {...otherProps} />

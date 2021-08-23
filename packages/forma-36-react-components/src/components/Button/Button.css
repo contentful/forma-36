@@ -155,26 +155,26 @@
 }
 
 .Button--negative {
-  border-color: var(--color-red-mid);
-  background-color: var(--color-red-mid);
+  border-color: var(--red-600);
+  background-color: var(--red-600);
   background-size: 100% 200%;
 
   &:hover:not(.Button--disabled) {
     background-position: 0 100%;
-    border-color: var(--color-red-base);
-    background-color: var(--color-red-base);
+    border-color: var(--red-700);
+    background-color: var(--red-700);
   }
 
   &.Button--is-active:not(.Button--disabled),
   &:active:not(.Button--disabled) {
     transition: none;
     background-position: 0 100%;
-    border-color: var(--color-red-dark);
-    background-color: var(--color-red-dark);
+    border-color: var(--red-800);
+    background-color: var(--red-800);
   }
 
   &:focus:not(.Button--disabled) {
-    border-color: var(--color-red-dark);
+    border-color: var(--red-800);
     box-shadow: var(--glow-negative);
   }
 
@@ -183,7 +183,7 @@
   }
 
   &.Button:link {
-    border-color: var(--color-red-mid);
+    border-color: var(--red-600);
   }
 }
 

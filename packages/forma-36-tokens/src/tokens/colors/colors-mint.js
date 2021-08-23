@@ -1,6 +1,3 @@
-const colorsMint = {
-  'color-mint-dark': '#b7ded0',
-  'color-mint-mid': '#f4fffb',
-};
+const colorsMint = require('./colors-mint-deprecated');
 
 module.exports = colorsMint;

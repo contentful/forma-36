@@ -4,7 +4,7 @@ type: 'component'
 status: 'stable'
 slug: /components/button/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/Button'
-storybook: 'https://f36-storybook.contentful.com/?path=/story/components-button--button'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-button--basic'
 ---
 
 Buttons communicate the action that will occur when the user clicks them. They communicate calls to action to the user and allow users to interact with pages in a variety of ways. They contain a text label to describe the action, and an icon if appropriate.
@@ -26,46 +26,47 @@ Buttons communicate the action that will occur when the user clicks them. They c
 
 ## Component variations
 
+### Types
+
 - **Primary** - Used for the most important actions in any scenario. Don’t use more than one primary button in a section or screen to avoid overwhelming users.
 - **Muted** - Used for a secondary actions, the most commonly used button type.
 - **Positive** - For use when the action has a positive connotation such as creating or publishing a new entity.
 - **Negative** - For destructive actions - when something can't be undone. For example, deleting entities.
-- **Naked** - Link button
+- **Warning** - (deprecated)
+- **Naked** - (deprecated)
 
 ```jsx
-<>
+<Grid rowGap="spacingXs" rows="repeat(4, auto)" justifyContent="start">
   <Button buttonType="primary">Primary</Button>
-  <Button buttonType="negative">Negative</Button>
-  <Button buttonType="positive">Positive</Button>
   <Button buttonType="muted">Muted</Button>
-  <Button buttonType="naked">Naked</Button>
-</>
+  <Button buttonType="positive">Positive</Button>
+  <Button buttonType="negative">Negative</Button>
+</Grid>
 ```
 
-Buttons can be used in couple of different variations, like active, disabled or loading. Worth mentioning is `indicateDropdown` property in the component, which enables chevron icon on the right side of the button. Using `icon` property in the Button on the other hand, enables choosen icon on the left side of the button.
+Buttons can be used in couple of different variations, like active, disabled or loading. It's worthy mentioning is `indicateDropdown` property in the component,
+which enables the chevron icon on the right side of the button.
+
+Using `icon` property in the Button on the other hand, enables choosen icon on the left side of the button.
+
+### Sizes
 
 Contentful buttons are available in 3 different sizes:
 
 ```jsx
-<>
-  <Button buttonType="positive" size="large">
-    Large
-  </Button>
-  <Button buttonType="positive">Default</Button>
-  <Button buttonType="positive" size="small">
-    Small
-  </Button>
-</>
+<Grid columnGap="spacingXs" columns="repeat(3, auto)" justifyContent="start">
+  <Button size="large">Large</Button>
+  <Button size="medium">Medium</Button>
+  <Button size="small">Small</Button>
+</Grid>
 ```
 
 ## Code examples
 
 ```jsx
-// import {Button} from '@contentful/forma-36-react-components';
+// import { Button } from '@contentful/forma-36-react-components';
 
-<Button buttonType="primary" data-test-id="create-content-type-empty-state">
-  Add content type
-</Button>
+<Button onClick={() => console.log('clicked!')}>Add content type</Button>
 ```
 
 Usage of the button with icon
@@ -73,8 +74,18 @@ Usage of the button with icon
 ```jsx
 // import {Button} from '@contentful/forma-36-react-components';
 
-<Button buttonType="primary" icon="Star">
-  Primary star
+<Button buttonType="muted" icon="Plus" onClick={() => console.log('clicked!')}>
+  Add content
+</Button>
+```
+
+Usage of the button with dropdown indication
+
+```jsx
+// import {Button} from '@contentful/forma-36-react-components';
+
+<Button indicateDropdown onClick={() => console.log('clicked!')}>
+  Add content
 </Button>
 ```
 
