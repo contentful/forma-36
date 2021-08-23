@@ -606,6 +606,16 @@
       "name": "Kathrin Holzmann",
       "avatar_url": "https://avatars.githubusercontent.com/u/1789174?v=4",
       "profile": "https://github.com/Lelith",
+       "contributions": [
+        "code",
+        "maintenance"
+      ]
+    },
+    {
+      "login": "bgutsol",
+      "name": "Bohdan Hutsol",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10744462?v=4",
+      "profile": "https://bgutsol.com/",
       "contributions": [
         "code",
         "maintenance"
