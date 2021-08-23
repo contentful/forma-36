@@ -58,7 +58,7 @@ export function TextLink({
       if (!icon) return undefined;
 
       return (
-        <div
+        <span
           className={
             iconPosition === 'right'
               ? styles['TextLink__icon-wrapper--right']
@@ -70,7 +70,7 @@ export function TextLink({
             color={linkType}
             className={styles.TextLink__icon}
           />
-        </div>
+        </span>
       );
     },
     [iconPosition],

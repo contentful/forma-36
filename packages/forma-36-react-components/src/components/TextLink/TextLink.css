@@ -9,7 +9,7 @@
 
 .TextLink,
 .TextLink:link {
-  display: inline;
+  display: inline-flex;
   align-items: center;
   box-sizing: border-box;
   border: 0;
@@ -29,6 +29,7 @@
   & > span {
     outline: 0;
     display: inherit;
+    align-items: inherit;
   }
 
   &:hover,
