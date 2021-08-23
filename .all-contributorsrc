@@ -600,6 +600,16 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "Lelith",
+      "name": "Kathrin Holzmann",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1789174?v=4",
+      "profile": "https://github.com/Lelith",
+      "contributions": [
+        "code",
+        "maintenance"
+      ]
     }
   ],
   "contributorsPerLine": 7,
