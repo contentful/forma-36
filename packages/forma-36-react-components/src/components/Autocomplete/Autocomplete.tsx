@@ -104,7 +104,7 @@ export const Autocomplete = <T extends {}>({
   onChange,
   onQueryChange,
   placeholder = 'Search',
-  selectedItem,
+  selectedItem = '',
   name = 'Search',
   width,
   className,
@@ -199,11 +199,7 @@ export const Autocomplete = <T extends {}>({
     return (
       <div className={styles.autocompleteInput}>
         <TextInput
-          value={
-            toggleProps.selectedItem
-              ? toggleProps.selectedItem
-              : toggleProps.query
-          }
+          value={toggleProps.selectedItem || toggleProps.query}
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
             toggleProps.onChange(e.target.value)
           }
