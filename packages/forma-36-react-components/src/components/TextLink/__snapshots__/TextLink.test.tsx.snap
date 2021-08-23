@@ -206,7 +206,7 @@ exports[`renders with an icon 1`] = `
     class="TabFocusTrap"
     tabindex="-1"
   >
-    <div
+    <span
       class="TextLink__icon-wrapper"
     >
       <svg
@@ -224,7 +224,7 @@ exports[`renders with an icon 1`] = `
           fill="none"
         />
       </svg>
-    </div>
+    </span>
     Text Link
   </span>
 </button>
@@ -241,7 +241,7 @@ exports[`renders with an icon aligned right to the text 1`] = `
     tabindex="-1"
   >
     Text Link
-    <div
+    <span
       class="TextLink__icon-wrapper--right"
     >
       <svg
@@ -259,7 +259,7 @@ exports[`renders with an icon aligned right to the text 1`] = `
           fill="none"
         />
       </svg>
-    </div>
+    </span>
   </span>
 </button>
 `;
