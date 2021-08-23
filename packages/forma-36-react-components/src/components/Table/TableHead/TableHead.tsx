@@ -28,10 +28,12 @@ export const TableHead = ({
     [styles[`TableHead--sticky`]]: isSticky,
   });
 
+  if (isSticky) {
+    contextOptions.head.offsetTop = offsetTop || 0;
+  }
+
   return (
-    <TableCellContext.Provider
-      value={{ ...contextOptions.head, offsetTop: offsetTop || 0 }}
-    >
+    <TableCellContext.Provider value={contextOptions.head}>
       <thead className={classNames} data-test-id={testId} {...otherProps}>
         {children}
       </thead>

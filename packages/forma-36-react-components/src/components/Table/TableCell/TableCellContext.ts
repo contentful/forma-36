@@ -1,8 +1,25 @@
 import React from 'react';
 
-export const contextOptions = {
-  body: { name: 'body', element: 'td', offsetTop: 0 as number | string },
-  head: { name: 'head', element: 'th', offsetTop: 0 as number | string },
+type TableCellContextOption = {
+  name: 'body' | 'head';
+  element: 'td' | 'th';
+  offsetTop?: number | string;
+};
+
+type TableCellContextOptions = {
+  body: TableCellContextOption;
+  head: TableCellContextOption;
+};
+
+export const contextOptions: TableCellContextOptions = {
+  body: {
+    name: 'body',
+    element: 'td',
+  },
+  head: {
+    name: 'head',
+    element: 'th',
+  },
 };
 
 export const TableCellContext = React.createContext(contextOptions.body);
