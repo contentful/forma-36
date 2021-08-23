@@ -4,7 +4,7 @@ type: 'component'
 status: 'alpha'
 slug: /components/autocomplete
 github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/Autocomplete'
-storybook: 'https://f36-storybook.contentful.com/?path=/story/components-autocomplete--default'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-autocomplete--basic'
 ---
 
 The autocomplete component is an input field that provides selectable suggestions as a user types into it. It allows users to quickly search through and select from large collections of options.
@@ -16,6 +16,16 @@ Keep in mind that this component is still in alpha state, which means it's unsup
 - [Code examples](#code-examples)
 - [Content recommendations](#content-recommendations)
 - [Accessibility](#accessibility)
+
+## How to use autocomplete
+
+Autocomplete expects two callback Functions.
+
+- `handleQueryChange` called while a user types. This function should take care of filtering and refetching your items.
+- `onChange` called when a user selects one of the Options.
+
+You can use Autocomplete either for a single or a multi selection,
+by either saving all selected items in an array of items or forwarding only the last selected Item in the `onChange` callback..
 
 ## Best practices
 
