@@ -73,7 +73,13 @@ describe('Autocomplete', () => {
       expect(input).toHaveAttribute('placeholder', 'Search');
     });
 
-    it('shows the dropdown', () => {
+    it('displays the selectedItem text', () => {
+      const { getByTestId } = build({ selectedItem: 'Coriander' });
+      const input = getByTestId('autocomplete.input');
+      expect(input).toHaveAttribute('value', 'Coriander');
+    });
+
+    it('shows the dropdown', async () => {
       const { getByTestId } = build({});
       const input = getByTestId('autocomplete.input');
       fireEvent.keyDown(input, { keyCode: KEY_CODE.ARROW_DOWN });
