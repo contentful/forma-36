@@ -170,8 +170,18 @@ module.exports = {
             link: '/components/copy-button/',
           },
           {
-            name: 'DateTime',
-            link: '/components/date-time/',
+            name: 'DateTime Components',
+            link: '',
+            menuLinks: [
+              {
+                name: 'DateTime',
+                link: '/components/datetime/',
+              },
+              {
+                name: 'RelativeDateTime',
+                link: '/components/relative-datetime/',
+              },
+            ],
           },
           {
             name: 'Dropdown',
