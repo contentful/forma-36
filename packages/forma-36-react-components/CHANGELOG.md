@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.96.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.96.0...@contentful/forma-36-react-components@3.96.1) (2021-08-23)
+
+
+### Bug Fixes
+
+* text link semantics and alignment ([#1213](https://github.com/contentful/forma-36/issues/1213)) ([80db752](https://github.com/contentful/forma-36/commit/80db752c56ada2e047cbb191c2c106c6e6d81d85))
+
+
+
+
+
 # [3.96.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.95.2...@contentful/forma-36-react-components@3.96.0) (2021-08-12)
 
 
