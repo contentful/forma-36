@@ -36,7 +36,7 @@ function AutocompleteExample() {
   ];
 
   const [filteredItems, setFilteredItems] = React.useState(items);
-  const [selectedItem, setSelectedItem] = React.useState({});
+  const [selectedItem, setSelectedItem] = React.useState();
 
   const handleQueryChange = React.useCallback(
     (query) => {
@@ -48,7 +48,7 @@ function AutocompleteExample() {
   );
 
   const handleOnChange = (item) => {
-    setSelectedItem(item);
+    setSelectedItem(item.label);
   };
 
   return (
@@ -62,7 +62,7 @@ function AutocompleteExample() {
       dropdownProps={{ isFullWidth: true }}
       disabled={false}
       onChange={handleOnChange}
-      value={selectedItem}
+      selectedItem={selectedItem}
     >
       {(options) =>
         options.map((option) => <span key={option.value}>{option.label}</span>)
