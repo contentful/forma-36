@@ -31,14 +31,19 @@ export interface PopoverProps extends CommonProps {
    * Determines the preferred position of the Popover. This position is not
    * guaranteed, as the Popover might be moved to fit the viewport
    *
-   * @default bottom
+   * @default bottom-start
    */
   placement?: Placement;
 
   /**
-   * Boolean to disable automatic positioning of the element to fit the
-   * available viewport. Instead this forces the element to follow the given
-   * value of the `placement` prop.
+   * Boolean to control if popover is allowed to change its placement automatically
+   * based on available space in the viewport.
+   *
+   * For example:
+   * If you set placement prop to bottom, but there isn't enough space to position the popover in that direction,
+   * it will change the popper placement to top. As soon as enough space is detected, the placement will be reverted to the defined one.
+   *
+   * If you want the popover to strictly follow the placement prop you should set this prop to false.
    *
    * @default true
    */
@@ -80,7 +85,7 @@ export function Popover(props: PopoverProps) {
   const {
     children,
     isOpen,
-    placement,
+    placement = 'bottom-start',
     isFullWidth = false,
     isAutoalignmentEnabled = true,
     usePortal = true,
