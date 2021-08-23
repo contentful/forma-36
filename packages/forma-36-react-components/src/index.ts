@@ -102,6 +102,16 @@ export { Tabs, Tab, TabPanel } from '@contentful/f36-tabs';
 export type { TabsProps, TabProps, TabPanelProps } from '@contentful/f36-tabs';
 export { CopyButton } from '@contentful/f36-copybutton';
 export type { CopyButtonProps } from '@contentful/f36-copybutton';
+export {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+} from '@contentful/f36-popover';
+export type {
+  PopoverProps,
+  PopoverContentProps,
+  PopoverTriggerProps,
+} from '@contentful/f36-popover';
 export * from '@contentful/f36-modal';
 export * from '@contentful/f36-notification';
 export * from '@contentful/f36-asset';
