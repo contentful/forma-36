@@ -18,7 +18,7 @@ Provides a relative date string for resolutions ranging from seconds up through 
 
 ### Examples
 
-If we consider today as August 18th of 2021 and we use pass the following values to the Component
+If we consider today as of August 18th of 2021 and we pass the following values to the `<RelativeDateTime />` component
 
 ```tsx
 <Grid rowGap="spacingXs" rows="repeat(3, auto)" justifyContent="start">
@@ -35,7 +35,8 @@ The component will display `a day ago`
 
 ### Passing a `baseDate`
 
-Normally, the component compare your `date` with today’s date. But if you want to compare it to some specific date provide `baseDate` prop.
+Normally, the component compares your `date` with today’s date. If you want to compare it to some specific date
+you need to provide `baseDate` prop.
 
 ```tsx
 <RelativeDateTime baseDate="2021-08-17T15:45" date="2021-08-18T15:45" />
@@ -45,7 +46,7 @@ The component will display `in a day`
 
 ### Using `isRelativeToCurrentWeek`
 
-Still using the last example. If you only need a relative date if the given date is within the current week,
+If you need a relative date if the given date is within the current week, that is possible by using the boolean `isRelativeToCurrentWeek`
 that is possible by using the boolean `isRelativeToCurrentWeek`
 
 ```tsx
