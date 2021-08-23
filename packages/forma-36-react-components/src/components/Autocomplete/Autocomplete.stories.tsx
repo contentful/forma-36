@@ -29,7 +29,7 @@ const items: Item[] = [
 
 export const Basic = (args: AutocompleteProps<{}>) => {
   const [filteredItems, setFilteredItems] = useState(items);
-  const [selectedItem, setSelectedItem] = useState();
+  const [selectedItem, setSelectedItem] = useState('');
 
   const handleQueryChange = useCallback(
     (query: string) => {
@@ -41,7 +41,7 @@ export const Basic = (args: AutocompleteProps<{}>) => {
   );
 
   const handleChange = useCallback(
-    (item: object) => {
+    (item: Item) => {
       setSelectedItem(item.label);
     },
     [setSelectedItem],
@@ -84,8 +84,7 @@ export const MultiSelect = (args: AutocompleteProps<{}>) => {
   );
 
   const handleChange = useCallback(
-    (item: object) => {
-      console.log(item);
+    (item: Item) => {
       setTagElements((tagElements) => [...tagElements, item.label]);
     },
     [setTagElements],
@@ -108,7 +107,7 @@ export const MultiSelect = (args: AutocompleteProps<{}>) => {
       Shopping List:
       <ul>
         {tagElements.map((tag: string) => (
-          <li>{tag}</li>
+          <li key={`element-${tag}`}>{tag}</li>
         ))}
       </ul>
     </>
