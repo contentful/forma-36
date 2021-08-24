@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.97.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.96.2...@contentful/forma-36-react-components@3.97.0) (2021-08-24)
+
+
+### Features
+
+* **EditorToolbarButton:** custom Tooltip placement ([#1225](https://github.com/contentful/forma-36/issues/1225)) ([b030831](https://github.com/contentful/forma-36/commit/b030831febb195cbbda2496db97c1b3d694b2e74))
+
+
+
+
+
 ## [3.96.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.96.1...@contentful/forma-36-react-components@3.96.2) (2021-08-23)
 
 
