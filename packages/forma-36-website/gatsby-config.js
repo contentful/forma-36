@@ -181,6 +181,10 @@ module.exports = {
                 name: 'RelativeDateTime',
                 link: '/components/relative-datetime/',
               },
+              {
+                name: 'Utility functions',
+                link: '/components/datetime-functions/',
+              },
             ],
           },
           {

@@ -1,0 +1,52 @@
+---
+title: 'Utility functions'
+type: 'component'
+status: 'stable'
+slug: /components/datetime-functions/
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/datetime/src/utils'
+typescript: ./src/utils/index.ts
+---
+
+The `@contentful/f36-datetime` package provides a couple of funtions to format a date following [Forma 36 guidelines](https://f36.contentful.com/guidelines/date-and-time/).
+
+## formatDateAndTime
+
+This function will return a formatted astring of any date that is passed as the first argument to the function.
+It allows four different formats that can be chosen by passing one of the `format` options as a second argument to the function:
+
+| `format` option | Result                 |
+| --------------- | ---------------------- |
+| `full`          | 12 Aug 2020 at 8:00 AM |
+| `day`           | 12 Aug 2020            |
+| `time`          | 8:00 AM                |
+| `weekday`       | Wed, 12 Aug            |
+
+If no format is passed to the function, it will return a string with the `full` format
+
+> Forma 36’s DateTime component is using this function to format the value of the `date` prop
+
+### Examples
+
+```ts static=true
+// passing a Timestamp as an ISOString
+formatDateAndTime('2021-08-17T15:45');
+
+// passing a JS Date
+formatDateAndTime(new Date());
+
+// passing a Unix Epoch in milliseconds
+formatDateAndTime(1629240300000);
+```
+
+### Different formats
+
+```ts static=true
+// it will return "17 Aug 2021"
+formatDateAndTime('2021-08-17T15:45', 'day');
+
+// it will return "3:45 PM"
+formatDateAndTime('2021-08-17T15:45', 'time');
+
+// it will return "Tue, 17 Aug"
+formatDateAndTime('2021-08-17T15:45', 'weekday');
+```
