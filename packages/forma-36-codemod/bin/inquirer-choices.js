@@ -28,6 +28,10 @@ const TRANSFORMS_CHOICES = [
     name: 'v4-pill: Converts Pill component from Forma v3 to v4',
     value: 'v4-pill',
   },
+  {
+    name: 'v4-list: Converts List component from Forma v3 to v4',
+    value: 'v4-list',
+  },
 ];
 
 module.exports = {
