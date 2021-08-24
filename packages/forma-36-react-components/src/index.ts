@@ -118,7 +118,7 @@ export * from '@contentful/f36-asset';
 export * from './components/Autocomplete';
 export * from './components/Card';
 export * from './components/Dropdown';
-export * from './components/EditorToolbar';
+export * from '@contentful/f36-editor-toolbar';
 export { DateTime, RelativeDateTime } from '@contentful/f36-datetime';
 export type {
   DateTimeProps,
