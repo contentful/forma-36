@@ -1,12 +1,8 @@
 import React from 'react';
 import { CommonProps } from '@contentful/f36-core';
 
-import dayjs, { extend } from 'dayjs';
-import utcPlugin from 'dayjs/plugin/utc';
-extend(utcPlugin);
-
 import type { DateType, DateFormat } from '../types';
-import { formatDateAndTime } from './utils';
+import { formatDateAndTime, formatMachineReadableDateTime } from './utils';
 
 export interface DateTimeProps
   extends CommonProps,
@@ -32,7 +28,7 @@ const _DateTime = (
   }: DateTimeProps,
   ref: React.Ref<HTMLTimeElement>,
 ) => {
-  const machineReadableDate = dayjs(date).format();
+  const machineReadableDate = formatMachineReadableDateTime(date);
 
   return (
     <time

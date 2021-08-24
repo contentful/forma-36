@@ -11,20 +11,23 @@ dayjs.extend(relativeTime);
 dayjs.extend(calendarPlugin);
 dayjs.extend(isTodayPlugin);
 
+import type { DateType } from '../types';
+import { formatMachineReadableDateTime } from './utils';
+
 export interface RelativeDateTimeProps
   extends CommonProps,
     React.AllHTMLAttributes<HTMLTimeElement> {
   /**
    * The date that will be displayed. It accepts a JS Date, an ISO8601 Timestamp string, or Unix Epoch Milliseconds number
    */
-  date: Date | string | number;
+  date: DateType;
   /**
    * If a value is passed to baseDate, then the component will compare both dates and return the time between them.
    * If no value is passed then the date will be compared to "now"
    *
    * @default "Now"
    */
-  baseDate?: Date | string | number;
+  baseDate?: DateType;
   /**
    * Sets the date to be relative only if it is in the current week
    * @default false
@@ -45,7 +48,7 @@ const _RelativeDateTime = (
   const now = new Date();
   const referenceDate = baseDate ?? now;
   const dayjsDate = dayjs(date);
-  const machineReadableDate = dayjsDate.format();
+  const machineReadableDate = formatMachineReadableDateTime(date);
 
   let relativeDate: string;
 
