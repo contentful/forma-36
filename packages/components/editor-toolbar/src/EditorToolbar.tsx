@@ -1,28 +1,26 @@
 import React from 'react';
-import { cx } from 'emotion';
-import { CommonProps } from '@contentful/f36-core';
-import { styles } from './EditorToolbar.styles';
+import cn from 'classnames';
 
-export interface EditorToolbarProps extends CommonProps {
+import styles from './EditorToolbar.css';
+
+export interface EditorToolbarProps {
+  className?: string;
   children: React.ReactNode;
+  testId?: string;
+  style?: React.CSSProperties;
 }
 
-function _EditorToolbar(
-  props: EditorToolbarProps,
-  ref: React.Ref<HTMLDivElement>,
-) {
+export function EditorToolbar({
+  className,
+  children,
+  testId = 'cf-ui-editor-toolbar',
+  ...otherProps
+}: EditorToolbarProps): React.ReactElement {
+  const classNames = cn(styles['EditorToolbar'], className);
+
   return (
-    <div
-      data-test-id={props.testId}
-      ref={ref}
-      className={cx(styles.editorToolbar, props.className)}
-    >
-      {props.children}
+    <div className={classNames} {...otherProps} data-test-id={testId}>
+      {children}
     </div>
   );
 }
-
-/**
- * TODO: Add description of component here.
- */
-export const EditorToolbar = React.forwardRef(_EditorToolbar);

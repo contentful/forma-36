@@ -1,11 +1,26 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import { EditorToolbar } from '../src/EditorToolbar';
+import { axe } from '@/scripts/test/axeHelper';
 
-describe('EditorToolbar', function () {
-  it('renders', () => {
-    const tree = render(<EditorToolbar>hello world</EditorToolbar>);
+import { EditorToolbar } from './EditorToolbar';
 
-    expect(tree).toBeTruthy();
-  });
+it('renders the component', () => {
+  const { container } = render(<EditorToolbar>EditorToolbar</EditorToolbar>);
+
+  expect(container.firstChild).toMatchSnapshot();
+});
+
+it('renders the component with an additional class name', () => {
+  const { container } = render(
+    <EditorToolbar className="my-extra-class">EditorToolbar</EditorToolbar>,
+  );
+
+  expect(container.firstChild).toMatchSnapshot();
+});
+
+it('has no a11y issues', async () => {
+  const { container } = render(<EditorToolbar>EditorToolbar</EditorToolbar>);
+  const results = await axe(container);
+
+  expect(results).toHaveNoViolations();
 });
