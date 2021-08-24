@@ -56,8 +56,12 @@ jobs:
       - check-changed-files-or-halt:
           pattern: ^(packages)|(.js|jsx|ts|tsx|css|scss)$
       - yarn_install
-      - run: yarn run storybook:build
-      - run: yarn run chromatic --project-token=${CHROMATIC_PROJECT_TOKEN} --exit-zero-on-changes
+      - run:
+          name: Storybook
+          command: yarn run storybook:build
+      - run:
+          name: Chromatic
+          command: yarn run chromatic
 
   release:
     docker:
@@ -79,7 +83,7 @@ jobs:
 
 workflows:
   version: 2
-  commit-check:
+  f36-build:
     jobs:
       - lint-and-test
       - chromatic-deployment:
@@ -96,4 +100,3 @@ workflows:
                 - master
           requires:
             - lint-and-test
-            - chromatic-deployment
