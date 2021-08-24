@@ -6,10 +6,10 @@ import {
   FormatUnderlinedIcon,
 } from '@contentful/f36-icons';
 
-import { EditorToolbar } from './EditorToolbar';
-import type { EditorToolbarProps } from './EditorToolbar';
+import { EditorToolbar } from '../src/EditorToolbar';
+import type { EditorToolbarProps } from '../src/EditorToolbar';
 import { Button } from '@contentful/f36-button';
-import { EditorToolbarButton } from './EditorToolbarButton/EditorToolbarButton';
+import { EditorToolbarButton } from '../src/EditorToolbarButton/EditorToolbarButton';
 
 export default {
   argTypes: {

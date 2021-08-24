@@ -2,8 +2,8 @@ import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import * as icons from '@contentful/f36-icons';
 
-import { EditorToolbarButton } from './EditorToolbarButton';
-import type { EditorToolbarButtonProps } from './EditorToolbarButton';
+import { EditorToolbarButton } from '../src/EditorToolbarButton/EditorToolbarButton';
+import type { EditorToolbarButtonProps } from '../src/EditorToolbarButton/EditorToolbarButton';
 
 export default {
   argTypes: {

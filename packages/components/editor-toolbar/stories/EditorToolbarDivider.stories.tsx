@@ -1,8 +1,8 @@
 import React from 'react';
 import type { Meta } from '@storybook/react/types-6-0';
 
-import { EditorToolbarDivider } from './EditorToolbarDivider';
-import type { EditorToolbarDividerProps } from './EditorToolbarDivider';
+import { EditorToolbarDivider } from '../src/EditorToolbarDivider/EditorToolbarDivider';
+import type { EditorToolbarDividerProps } from '../src/EditorToolbarDivider/EditorToolbarDivider';
 
 export default {
   argTypes: {
