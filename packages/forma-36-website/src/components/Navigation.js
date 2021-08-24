@@ -3,8 +3,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
-
 import { css, cx } from 'emotion';
+
 import tokens from '@contentful/f36-tokens';
 import { SectionHeading } from '@contentful/f36-components';
 import { ChevronDownIcon, ChevronRightIcon } from '@contentful/f36-icons';
@@ -18,16 +18,16 @@ const styles = {
     width: 30%;
     max-width: 380px;
     padding-top: ${tokens.spacingM};
-    border-right: 1px solid ${tokens.colorElementMid};
+    border-right: 1px solid ${tokens.gray300};
   `,
 
   navList: css`
     display: flex;
     flex-direction: column;
-    border-top: 1px solid ${tokens.colorElementMid};
+    border-top: 1px solid ${tokens.gray300};
     padding: ${tokens.spacingM} 0;
     overflow-y: auto;
-    color: ${tokens.colorTextMid};
+    color: ${tokens.gray700};
   `,
 
   list: css`
@@ -41,13 +41,13 @@ const styles = {
     display: flex;
     justify-content: space-between;
     padding: ${tokens.spacingXs} ${tokens.spacingM};
-    color: ${tokens.colorTextMid};
+    color: ${tokens.gray700};
     text-decoration: none;
     transition: background-color ${tokens.transitionDurationDefault}
       ${tokens.transitionEasingDefault};
 
     &:hover {
-      background-color: ${tokens.colorElementLight};
+      background-color: ${tokens.gray200};
     }
   `,
 
@@ -60,11 +60,8 @@ const styles = {
     }
   `,
 
-  linkIcon: css`
-    align-self: center;
-  `,
-
   linkGroup: css`
+    align-items: center;
     cursor: pointer;
   `,
 
@@ -101,28 +98,29 @@ const MenuListItem = React.forwardRef(
       setIsExpanded(!isExpanded);
     };
 
-    const itemOffset = { paddingLeft: `${1 + hierarchyLevel}rem` };
+    const itemOffset = css`
+      padding-left: ${1 + hierarchyLevel}rem;
+    `;
 
     return (
-      <li css={[isCategory && styles.category]}>
+      <li css={isCategory && styles.category}>
         {item.menuLinks ? (
           <>
             <div
-              css={[styles.link, styles.linkGroup, itemOffset]}
+              css={cx([styles.link, styles.linkGroup, itemOffset])}
               onClick={handleToggle}
             >
               {isCategory ? (
-                <SectionHeading>{item.name}</SectionHeading>
+                <SectionHeading marginBottom={0}>{item.name}</SectionHeading>
               ) : (
-                <span>{item.name}</span>
+                item.name
               )}
 
-              <Icon
-                css={styles.linkIcon}
-                color="secondary"
-                size="medium"
-                icon={isExpanded ? 'ChevronDown' : 'ChevronRight'}
-              />
+              {isExpanded ? (
+                <ChevronDownIcon variant="secondary" />
+              ) : (
+                <ChevronRightIcon variant="secondary" />
+              )}
             </div>
             {isExpanded && (
               <MenuList
@@ -135,7 +133,7 @@ const MenuListItem = React.forwardRef(
         ) : (
           <Link
             ref={ref}
-            css={[styles.link, isActive && styles.linkActive, itemOffset]}
+            css={cx([styles.link, itemOffset, isActive && styles.linkActive])}
             to={item.link}
             href={item.link}
           >
@@ -206,7 +204,6 @@ const Navigation = ({ menuItems, currentPath }) => {
   return (
     <div className={styles.sidemenu}>
       <DocSearch />
-
       <nav className={styles.navList} aria-label="Main Navigation">
         <MenuList
           menuItems={menuItems}
