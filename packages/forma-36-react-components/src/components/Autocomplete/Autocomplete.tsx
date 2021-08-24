@@ -27,6 +27,7 @@ interface RenderToggleElementProps {
   onToggle: () => void;
   disabled?: boolean;
   placeholder?: string;
+  selectedItem?: string;
   width?: 'small' | 'medium' | 'large' | 'full';
   inputRef: React.RefObject<HTMLInputElement>;
   name?: string;
@@ -39,6 +40,7 @@ export interface AutocompleteProps<T extends {}> {
   onQueryChange: (query: string) => void;
   disabled?: boolean;
   placeholder?: string;
+  selectedItem?: string;
   name?: string;
   width?: 'small' | 'medium' | 'large' | 'full';
   className?: string;
@@ -103,6 +105,7 @@ export const Autocomplete = <T extends {}>({
   onChange,
   onQueryChange,
   placeholder = 'Search',
+  selectedItem = '',
   name = 'Search',
   width,
   className,
@@ -197,7 +200,7 @@ export const Autocomplete = <T extends {}>({
     return (
       <div className={styles.autocompleteInput}>
         <TextInput
-          value={props.query}
+          value={toggleProps.selectedItem || toggleProps.query}
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
             props.onChange(e.target.value)
           }
@@ -228,6 +231,7 @@ export const Autocomplete = <T extends {}>({
   const toggleProps = {
     name,
     query,
+    selectedItem,
     disabled,
     placeholder,
     width,

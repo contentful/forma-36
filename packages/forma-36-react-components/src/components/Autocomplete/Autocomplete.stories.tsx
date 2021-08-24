@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 
 import { Autocomplete, AutocompleteProps } from './Autocomplete';
 
@@ -20,31 +20,34 @@ interface Item {
 }
 
 const items: Item[] = [
-  { value: 1, label: 'entry foo' },
-  { value: 2, label: 'entry bar' },
-  { value: 3, label: 'entry baz' },
-  { value: 4, label: 'entry fooBar' },
-  { value: 5, label: 'entry out of viewport' },
+  { value: 1, label: 'Apple' },
+  { value: 2, label: 'Ananas' },
+  { value: 3, label: 'Banana' },
+  { value: 4, label: 'Lemon Curd' },
+  { value: 5, label: 'Avocado' },
 ];
 
 export const Basic = (args: AutocompleteProps<{}>) => {
   const [filteredItems, setFilteredItems] = useState(items);
+  const [selectedItem, setSelectedItem] = useState('');
 
-  const handleQueryChange = useCallback(
-    (query: string) => {
-      setFilteredItems(
-        query ? items.filter((item) => item.label.includes(query)) : items,
-      );
-    },
-    [setFilteredItems],
-  );
+  const handleQueryChange = (query: string) => {
+    setFilteredItems(
+      query ? items.filter((item) => item.label.includes(query)) : items,
+    );
+  };
+
+  const handleChange = (item: Item) => {
+    setSelectedItem(item.label);
+  };
 
   return (
     <Autocomplete<Item>
       {...args}
       onQueryChange={handleQueryChange}
       items={filteredItems}
-      onChange={() => {}}
+      onChange={handleChange}
+      selectedItem={selectedItem}
     >
       {(options: Item[]) =>
         options.map((option: Item) => (
@@ -56,7 +59,51 @@ export const Basic = (args: AutocompleteProps<{}>) => {
 };
 
 Basic.args = {
-  placeholder: 'Choose from spaces in your organization',
+  placeholder: 'Find fruit',
+  width: 'full',
+  emptyListMessage: 'There are no items to choose from',
+  noMatchesMessage: 'No matches',
+};
+export const MultiSelect = (args: AutocompleteProps<{}>) => {
+  const [filteredItems, setFilteredItems] = useState(items);
+  const [tagElements, setTagElements] = useState([]);
+
+  const handleQueryChange = (query: string) => {
+    setFilteredItems(
+      query ? items.filter((item) => item.label.includes(query)) : items,
+    );
+  };
+
+  const handleChange = (item: Item) => {
+    setTagElements((tagElements) => [...tagElements, item.label]);
+  };
+
+  return (
+    <>
+      <Autocomplete<Item>
+        {...args}
+        onQueryChange={handleQueryChange}
+        items={filteredItems}
+        onChange={handleChange}
+      >
+        {(options: Item[]) =>
+          options.map((option: Item) => (
+            <span key={option.value}>{option.label}</span>
+          ))
+        }
+      </Autocomplete>
+      Shopping List:
+      <ul>
+        {tagElements.map((tag: string) => (
+          <li key={`element-${tag}`}>{tag}</li>
+        ))}
+      </ul>
+    </>
+  );
+};
+
+MultiSelect.args = {
+  placeholder: 'Choose fruit to buy',
   width: 'full',
   emptyListMessage: 'There are no items to choose from',
   noMatchesMessage: 'No matches',

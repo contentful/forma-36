@@ -1,5 +1,11 @@
 import React from 'react';
-import { render, fireEvent, within, screen } from '@testing-library/react';
+import {
+  render,
+  fireEvent,
+  within,
+  screen,
+  waitFor,
+} from '@testing-library/react';
 
 import { KEY_CODE } from './utils';
 import { Autocomplete, AutocompleteProps } from '../Autocomplete';
@@ -24,6 +30,7 @@ describe('Autocomplete', () => {
   const build = ({
     placeholder = '',
     width = 'large',
+    selectedItem = '',
     dropdownProps = {
       isOpen: false,
       children: null,
@@ -39,6 +46,7 @@ describe('Autocomplete', () => {
         onChange={onChangeFn}
         onQueryChange={onQueryChangeFn}
         placeholder={placeholder}
+        selectedItem={selectedItem}
         width={width}
         dropdownProps={dropdownProps}
       >
@@ -60,11 +68,13 @@ describe('Autocomplete', () => {
       expect(input).toBeInTheDocument();
     });
 
-    it('calls the onQueryChange callback', () => {
+    it('calls the onQueryChange callback', async () => {
       const { getByTestId } = build({});
       const input = getByTestId('autocomplete.input');
       fireEvent.change(input, { target: { value: 'foo' } });
-      expect(onQueryChangeFn).toHaveBeenCalledWith('foo');
+      await waitFor(() => {
+        expect(onQueryChangeFn).toHaveBeenCalledWith('foo');
+      });
     });
 
     it('displays the placeholder text', () => {
@@ -73,12 +83,20 @@ describe('Autocomplete', () => {
       expect(input).toHaveAttribute('placeholder', 'Search');
     });
 
-    it('shows the dropdown', () => {
+    it('displays the selectedItem text', () => {
+      const { getByTestId } = build({ selectedItem: 'Coriander' });
+      const input = getByTestId('autocomplete.input');
+      expect(input).toHaveAttribute('value', 'Coriander');
+    });
+
+    it('shows the dropdown', async () => {
       const { getByTestId } = build({});
       const input = getByTestId('autocomplete.input');
       fireEvent.keyDown(input, { keyCode: KEY_CODE.ARROW_DOWN });
       const dropdown = getByTestId('autocomplete.dropdown-list');
-      expect(dropdown).toBeVisible();
+      await waitFor(() => {
+        expect(dropdown).toBeVisible();
+      });
     });
   });
 
@@ -89,14 +107,16 @@ describe('Autocomplete', () => {
       expect(dropdown).not.toBeInTheDocument();
     });
 
-    it('opens when the isOpen prop is set to true', () => {
+    it('opens when the isOpen prop is set to true', async () => {
       const dropdownProps = {
         usePortal: false,
         isOpen: true,
         children: null,
         position: 'top' as positionType,
       };
-      build({ dropdownProps });
+      await waitFor(() => {
+        build({ dropdownProps });
+      });
       const dropdown = screen.getByTestId('autocomplete.dropdown-list');
       expect(dropdown).toBeInTheDocument();
     });
@@ -108,9 +128,11 @@ describe('Autocomplete', () => {
         screen.queryByTestId('autocomplete.dropdown-list'),
       ).not.toBeInTheDocument();
       fireEvent.keyDown(input, { keyCode: KEY_CODE.ARROW_DOWN });
+
       expect(
         screen.getByTestId('autocomplete.dropdown-list'),
       ).toBeInTheDocument();
+
       const firstItem = screen.getAllByTestId(
         'cf-ui-dropdown-list-item-button',
       )[0];
@@ -120,14 +142,16 @@ describe('Autocomplete', () => {
       ).not.toBeInTheDocument();
     });
 
-    it('keeps the dropdown open when an item is clicked [isOpen = true]', () => {
+    it('keeps the dropdown open when an item is clicked [isOpen = true]', async () => {
       const dropdownProps = {
         usePortal: false,
         isOpen: true,
         children: null,
         position: 'top' as positionType,
       };
-      build({ dropdownProps });
+      await waitFor(() => {
+        build({ dropdownProps });
+      });
       expect(
         screen.getByTestId('autocomplete.dropdown-list'),
       ).toBeInTheDocument();
@@ -146,14 +170,16 @@ describe('Autocomplete', () => {
     let dropdown: HTMLElement;
     let options: HTMLElement[];
 
-    beforeEach(() => {
+    beforeEach(async () => {
       const { getByTestId } = build({});
       input = getByTestId('autocomplete.input');
       fireEvent.keyDown(input, { keyCode: KEY_CODE.ARROW_DOWN });
-      dropdown = getByTestId('autocomplete.dropdown-list');
-      options = within(dropdown).getAllByTestId(
-        'autocomplete.dropdown-list-item',
-      );
+      await waitFor(() => {
+        dropdown = getByTestId('autocomplete.dropdown-list');
+        options = within(dropdown).getAllByTestId(
+          'autocomplete.dropdown-list-item',
+        );
+      });
     });
 
     it('displays the list of items', () => {
