@@ -42,10 +42,7 @@ export function EditorToolbarButton({
 
   return (
     <React.Fragment>
-      <Tooltip
-        content={!disabled ? tooltip : undefined}
-        place={tooltipPlace || 'bottom'}
-      >
+      <Tooltip content={!disabled ? tooltip : undefined} place={tooltipPlace}>
         <IconButton
           {...{ iconProps: { icon } }}
           testId={testId}
