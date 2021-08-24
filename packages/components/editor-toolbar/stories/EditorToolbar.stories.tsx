@@ -46,11 +46,11 @@ export const Default: Story<EditorToolbarProps> = (args) => (
         icon={FormatUnderlinedIcon}
         tooltip="Underlined"
         label="Underlined"
-        isActive={false}
+        isActive={true}
       />
     </div>
     <div>
-      <Button size="small" variant="transparent">
+      <Button size="small" variant="secondary">
         Example button
       </Button>
     </div>

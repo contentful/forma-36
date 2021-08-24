@@ -1,9 +1,12 @@
 import React from 'react';
+import { cx } from 'emotion';
 import type { IconComponent } from '@contentful/f36-icon';
 import { Icon } from '@contentful/f36-icon';
 import { Tooltip, TooltipProps } from '@contentful/f36-tooltip';
 import { Button } from '@contentful/f36-button';
 import type { ButtonProps } from '@contentful/f36-button';
+
+import { getButtonStyles } from './EditorToolbarButton.styles';
 
 export interface EditorToolbarButtonProps
   extends Omit<ButtonProps<'button'>, 'icon'> {
@@ -26,6 +29,7 @@ export function EditorToolbarButton({
   isDisabled = false,
   ...otherProps
 }: EditorToolbarButtonProps): React.ReactElement {
+  const styles = getButtonStyles();
   return (
     <>
       <Tooltip
@@ -37,7 +41,11 @@ export function EditorToolbarButton({
           testId={testId}
           size="small"
           variant="transparent"
-          className={className}
+          className={cx(
+            styles.root,
+            isActive ? styles.active : styles.notActive,
+            className,
+          )}
           isDisabled={isDisabled}
           {...otherProps}
         >
