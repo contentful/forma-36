@@ -1,25 +1,18 @@
 import React from 'react';
-import cn from 'classnames';
-import type { MouseEventHandler } from 'react';
 import type { IconComponent } from '@contentful/f36-icon';
+import { Icon } from '@contentful/f36-icon';
 import { Tooltip, TooltipProps } from '@contentful/f36-tooltip';
+import { Button } from '@contentful/f36-button';
+import type { ButtonProps } from '@contentful/f36-button';
 
-import { IconButton } from '../../IconButton';
-import styles from './EditorToolbarButton.css';
-import type { IconButtonProps } from '../../IconButton';
-
-export interface EditorToolbarButtonProps {
+export interface EditorToolbarButtonProps
+  extends Omit<ButtonProps<'button'>, 'icon'> {
   label: string;
   icon: IconComponent;
   tooltip?: string;
-  tooltipPlace?: TooltipProps['placement'];
-  iconButtonProps?: Partial<IconButtonProps>;
+  tooltipPlacement?: TooltipProps['placement'];
   isActive?: boolean;
-  disabled?: boolean;
-  onClick?: MouseEventHandler;
-  withDropdown?: boolean;
-  className?: string;
-  testId?: string;
+  isDisabled?: boolean;
 }
 
 export function EditorToolbarButton({
@@ -28,37 +21,29 @@ export function EditorToolbarButton({
   testId = 'cf-ui-editor-toolbar-button',
   icon,
   tooltip,
-  tooltipPlace,
-  iconButtonProps,
+  tooltipPlacement,
   isActive = false,
-  disabled = false,
-  onClick,
-  withDropdown = false,
+  isDisabled = false,
   ...otherProps
 }: EditorToolbarButtonProps): React.ReactElement {
-  const classNames = cn(styles['EditorToolbarButton'], className, {
-    [styles['EditorToolbarButton--is-active']]: isActive,
-  });
-
   return (
-    <React.Fragment>
+    <>
       <Tooltip
-        content={!disabled ? tooltip : undefined}
-        placement={tooltipPlace}
+        content={!isDisabled ? tooltip : undefined}
+        placement={tooltipPlacement}
       >
-        <IconButton
-          iconProps={{ as: icon }}
+        <Button
+          as="button"
           testId={testId}
-          buttonType="secondary"
-          label={label}
-          className={classNames}
-          onClick={!disabled ? onClick : () => {}}
-          disabled={disabled}
-          withDropdown={withDropdown}
-          {...iconButtonProps}
+          size="small"
+          variant="transparent"
+          className={className}
+          isDisabled={isDisabled}
           {...otherProps}
-        />
+        >
+          <Icon aria-label={label} as={icon} />
+        </Button>
       </Tooltip>
-    </React.Fragment>
+    </>
   );
 }

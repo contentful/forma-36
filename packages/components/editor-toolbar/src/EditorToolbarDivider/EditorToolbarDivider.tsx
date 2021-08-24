@@ -1,20 +1,28 @@
 import React from 'react';
-import cn from 'classnames';
+import tokens from '@contentful/f36-tokens';
+import { Box } from '@contentful/f36-core';
+import type { CommonProps } from '@contentful/f36-core';
+import { css, cx } from 'emotion';
 
-import styles from './EditorToolbarDivider.css';
-
-export interface EditorToolbarDividerProps {
-  children?: React.ReactNode | React.ReactNode[];
-  className?: string;
-  testId?: string;
+function getStyles() {
+  return {
+    root: css({
+      width: `calc(1rem * (21 / ${tokens.fontBaseDefault}))`,
+      height: `calc(1rem * (1 / ${tokens.fontBaseDefault}))`,
+      background: tokens.gray300,
+      margin: `0 ${tokens.spacing2Xs}`,
+    }),
+  };
 }
 
 export function EditorToolbarDivider({
   className,
   testId = 'cf-editor-toolbar-divider',
   ...otherProps
-}: EditorToolbarDividerProps): React.ReactElement {
-  const classNames = cn(styles['EditorToolbarDivider'], className);
-
-  return <span data-test-id={testId} className={classNames} {...otherProps} />;
+}: CommonProps): React.ReactElement {
+  const styles = getStyles();
+  const classNames = cx(styles.root, className);
+  return (
+    <Box as="span" testId={testId} className={classNames} {...otherProps} />
+  );
 }
