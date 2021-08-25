@@ -51,6 +51,8 @@ const _BaseInput: PolymorphicComponentWithRef<
     icon,
     ...otherProps
   } = props;
+  const [valueState, setValueState] = useState<string | undefined>(value);
+  const styles = getInputStyles({ isDisabled, isInvalid });
 
   const { Element, primitiveProps } = usePrimitive({
     testId,
@@ -58,20 +60,6 @@ const _BaseInput: PolymorphicComponentWithRef<
     className,
     style,
   });
-
-  const [valueState, setValueState] = useState<string | undefined>(value);
-
-  const styles = getInputStyles({ isDisabled, isInvalid });
-
-  const iconContent = icon && (
-    <Box as="span" className={styles.iconPlaceholder}>
-      {React.cloneElement(icon, {
-        size: 'small',
-        variant: 'muted',
-        ariaHiden: true,
-      })}
-    </Box>
-  );
 
   const handleFocus = (e: FocusEvent) => {
     e.persist();
@@ -111,6 +99,16 @@ const _BaseInput: PolymorphicComponentWithRef<
   useEffect(() => {
     setValueState(value);
   }, [value]);
+
+  const iconContent = icon && (
+    <Box as="span" className={styles.iconPlaceholder}>
+      {React.cloneElement(icon, {
+        size: 'small',
+        variant: 'muted',
+        ariaHiden: true,
+      })}
+    </Box>
+  );
 
   const inputContent = (iconClassName?: string) => (
     <Element
