@@ -192,10 +192,6 @@ module.exports = {
             link: '/components/popover/',
           },
           {
-            name: 'EditorToolbar',
-            link: '/components/editor-toolbar/',
-          },
-          {
             name: 'EmptyState',
             link: '/components/empty-state/',
           },
