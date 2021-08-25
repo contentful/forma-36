@@ -14,6 +14,7 @@ import {
   PolymorphicComponentWithRef,
   PolymorphicComponentProps,
   PolymorphicComponent,
+  Box,
 } from '@contentful/f36-core';
 import getInputStyles from './BaseInput.styles';
 import { BaseInputInternalProps } from './types';
@@ -29,7 +30,7 @@ const _BaseInput: PolymorphicComponentWithRef<
   typeof DEFAULT_TAG
 > = (props, ref) => {
   const {
-    as,
+    as = DEFAULT_TAG,
     className,
     isDisabled,
     isReadOnly,
@@ -47,6 +48,7 @@ const _BaseInput: PolymorphicComponentWithRef<
     placeholder,
     willBlurOnEsc = true,
     style,
+    icon,
     ...otherProps
   } = props;
 
@@ -60,6 +62,16 @@ const _BaseInput: PolymorphicComponentWithRef<
   const [valueState, setValueState] = useState<string | undefined>(value);
 
   const styles = getInputStyles({ isDisabled, isInvalid });
+
+  const iconContent = icon && (
+    <Box as="span" className={styles.iconPlaceholder}>
+      {React.cloneElement(icon, {
+        size: 'small',
+        variant: 'muted',
+        ariaHiden: true,
+      })}
+    </Box>
+  );
 
   const handleFocus = (e: FocusEvent) => {
     e.persist();
@@ -100,36 +112,13 @@ const _BaseInput: PolymorphicComponentWithRef<
     setValueState(value);
   }, [value]);
 
-  if (as === 'textarea') {
-    return (
-      <Element
-        {...otherProps}
-        {...primitiveProps}
-        data-test-id={testId}
-        placeholder={placeholder}
-        className={cx(styles.input, className)}
-        value={valueState}
-        name={name}
-        type={type}
-        ref={ref}
-        aria-label={label}
-        id={id}
-        disabled={isDisabled}
-        onChange={handleChange}
-        onBlur={onBlur}
-        onKeyDown={handleKeyDown}
-        onFocus={handleFocus}
-      />
-    );
-  }
-
-  return (
+  const inputContent = (iconClassName?: string) => (
     <Element
       {...otherProps}
       {...primitiveProps}
       data-test-id={testId}
       placeholder={placeholder}
-      className={cx(styles.input, className)}
+      className={cx(styles.input, iconClassName, className)}
       value={valueState}
       name={name}
       type={type}
@@ -143,6 +132,21 @@ const _BaseInput: PolymorphicComponentWithRef<
       onFocus={handleFocus}
     />
   );
+
+  if (as === 'textarea') {
+    return inputContent();
+  }
+
+  if (icon) {
+    return (
+      <Box as="div" className={styles.rootComponentWithIcon}>
+        {inputContent(styles.inputWithIcon)}
+        {iconContent}
+      </Box>
+    );
+  }
+
+  return inputContent();
 };
 
 export const BaseInput: PolymorphicComponent<

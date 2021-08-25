@@ -2,6 +2,8 @@ import React from 'react';
 
 import { BaseInput } from '../src';
 import { Flex } from '@contentful/f36-core';
+import { Icon } from '@contentful/f36-icon';
+import * as icons from '@contentful/f36-icons';
 
 export default {
   title: 'Form Elements/BaseInput',
@@ -66,6 +68,29 @@ export const Basic = () => {
           type="text"
           as="input"
           isDisabled
+        />
+      </Flex>
+      <Flex marginBottom="spacingM">
+        <BaseInput
+          name="someOtherOption"
+          label="this is my label"
+          placeholder="placeholder"
+          id="1"
+          type="text"
+          as="input"
+          icon={<Icon as={icons.SearchIcon} />}
+        />
+      </Flex>
+      <Flex marginBottom="spacingM">
+        <BaseInput
+          name="someOtherOption"
+          label="this is my label"
+          placeholder="placeholder"
+          id="1"
+          type="text"
+          as="input"
+          isDisabled
+          icon={<Icon as={icons.SearchIcon} />}
         />
       </Flex>
     </Flex>

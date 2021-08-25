@@ -59,6 +59,10 @@ export interface BaseInputInternalProps extends CommonProps {
    */
   willBlurOnEsc?: boolean;
   /**
+   * Expects any of the icon components
+   */
+  icon?: React.ReactElement;
+  /**
    * Allows to listen to an input’s change in value
    */
   onChange?: ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement>;
