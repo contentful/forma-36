@@ -20,7 +20,6 @@ describe('Note', function () {
     );
 
     const title = getByText('Positive title');
-    expect(title).toBeTruthy();
     expect(container.firstChild).toContainElement(title);
   });
 
@@ -35,7 +34,7 @@ describe('Note', function () {
   it('renders the component with a close button', () => {
     const mockOnClose = jest.fn();
     const { container, getByRole } = render(
-      <Note hasCloseButton onClose={mockOnClose}>
+      <Note withCloseButton onClose={mockOnClose}>
         {noteText}
       </Note>,
     );
