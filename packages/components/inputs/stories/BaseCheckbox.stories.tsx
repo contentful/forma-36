@@ -21,6 +21,7 @@ export default {
 export const basic = (args: BaseCheckboxProps) => <BaseCheckbox {...args} />;
 
 basic.args = {
+  name: 'field-name',
   label: 'Label',
   type: 'switch',
   onChange: action('onChange'),
@@ -38,7 +39,7 @@ export const overview = (args: BaseCheckboxProps) => (
       </SectionHeading>
 
       <Flex flexDirection="row" marginBottom="spacingM">
-        <BaseCheckbox {...args} type="checkbox" />
+        <BaseCheckbox {...args} type="checkbox" name="checkbox" />
       </Flex>
     </Flex>
     <Flex flexDirection="column" marginBottom="spacingL">
@@ -47,7 +48,7 @@ export const overview = (args: BaseCheckboxProps) => (
       </SectionHeading>
 
       <Flex flexDirection="row" marginBottom="spacingM">
-        <BaseCheckbox {...args} type="radio" />
+        <BaseCheckbox {...args} type="radio" name="radio" />
       </Flex>
     </Flex>
     <Flex flexDirection="column" marginBottom="spacingL">
@@ -56,7 +57,7 @@ export const overview = (args: BaseCheckboxProps) => (
       </SectionHeading>
 
       <Flex flexDirection="row" marginBottom="spacingM">
-        <BaseCheckbox {...args} type="switch" />
+        <BaseCheckbox {...args} type="switch" name="switch" />
       </Flex>
     </Flex>
   </>

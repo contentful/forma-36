@@ -34,6 +34,7 @@ export interface BaseCheckboxProps extends CommonProps, AdditionalTextProps {
   id?: string;
   blurOnEsc?: boolean;
   inputProps?: Partial<JSX.IntrinsicElements['input']>;
+  name: string;
 }
 
 function _BaseCheckbox(
@@ -59,6 +60,7 @@ function _BaseCheckbox(
     testId = 'cf-ui-base-checkbox',
     className = '',
     inputProps,
+    name,
     ...otherProps
   } = props;
 
@@ -144,6 +146,8 @@ function _BaseCheckbox(
         ref={inputRef}
         required={isRequired}
         id={inputId}
+        name={name}
+        aria-label={label}
       />
       <GhostCheckbox
         type={type}
