@@ -5,6 +5,9 @@ import { set as mockDateSet, reset as mockDateReset } from 'mockdate';
 
 import { RelativeDateTime } from '../src/RelativeDateTime';
 
+// eslint-disable-next-line jest/no-mocks-import
+import * as TestCases from './__mocks__/dates';
+
 describe('RelativeDateTime', function () {
   const today = dayjs();
   const tomorrow = today.add(1, 'day');
@@ -24,7 +27,7 @@ describe('RelativeDateTime', function () {
     expect(tree).toBeTruthy();
   });
 
-  it('renders in how much time the date will be relative to TODAY (date is BEFORE today)', () => {
+  it('renders how much time the date will be relative to TODAY (date is BEFORE today)', () => {
     const { container } = render(
       <RelativeDateTime date={yesterday.format()} />,
     );
@@ -32,7 +35,7 @@ describe('RelativeDateTime', function () {
     expect(container.textContent).toBe('a day ago');
   });
 
-  it('renders how long ago the date happened relative to TODAY (date is AFTER today)', () => {
+  it('renders how much time the date will be relative to TODAY (date is AFTER today)', () => {
     const { container } = render(<RelativeDateTime date={tomorrow.format()} />);
 
     expect(container.textContent).toBe('in a day');
@@ -61,16 +64,7 @@ describe('RelativeDateTime', function () {
 
   describe('with relativeToCurrentWeek true', () => {
     it('returns "... ago" notation if the date is today', () => {
-      const mocks = [
-        {
-          test: dayjs(today).subtract(1, 'minute').format(),
-          expected: 'a minute ago',
-        },
-        {
-          test: dayjs(today).subtract(50, 'minute').format(),
-          expected: 'an hour ago',
-        },
-      ];
+      const mocks = TestCases.dateIsToday(today);
 
       mocks.forEach(({ test, expected }) => {
         const { container } = render(
@@ -81,41 +75,7 @@ describe('RelativeDateTime', function () {
     });
 
     it('returns "Yesterdy at ...", "Tomorrow at ...", etc. if the date is NOT today', () => {
-      const mockTwoDaysAgo = dayjs(today).subtract(2, 'day');
-      const mockInTwoDays = dayjs(today).add(2, 'day');
-      const mockLastMonth = dayjs(today).subtract(1, 'month');
-      const mockNextMonth = dayjs(today).add(1, 'month');
-
-      const mocks = [
-        {
-          test: yesterday.format(),
-          expected: `Yesterday at ${yesterday.format('h:mm A')}`,
-        },
-        {
-          test: mockTwoDaysAgo.format(),
-          expected: `Last ${mockTwoDaysAgo.format(
-            'dddd',
-          )} at ${mockTwoDaysAgo.format('h:mm A')}`,
-        },
-        {
-          test: tomorrow.format(),
-          expected: `Tomorrow at ${tomorrow.format('h:mm A')}`,
-        },
-        {
-          test: mockInTwoDays.format(),
-          expected: `${mockInTwoDays.format('dddd')} at ${mockInTwoDays.format(
-            'h:mm A',
-          )}`,
-        },
-        {
-          test: mockLastMonth.format(),
-          expected: `${mockLastMonth.format('DD MMM YYYY')}`,
-        },
-        {
-          test: mockNextMonth.format(),
-          expected: `${mockNextMonth.format('DD MMM YYYY')}`,
-        },
-      ];
+      const mocks = TestCases.dateIsNotToday(today);
 
       mocks.forEach(({ test, expected }) => {
         const { container } = render(
@@ -130,16 +90,7 @@ describe('RelativeDateTime', function () {
     const baseDate = today.subtract(1, 'week');
 
     it('returns "... ago" notation if the date is in the same day as baseDate', () => {
-      const mocks = [
-        {
-          test: dayjs(baseDate).subtract(1, 'minute').format(),
-          expected: 'a minute ago',
-        },
-        {
-          test: dayjs(baseDate).subtract(50, 'minute').format(),
-          expected: 'an hour ago',
-        },
-      ];
+      const mocks = TestCases.dateIsToday(baseDate);
 
       mocks.forEach(({ test, expected }) => {
         const { container } = render(
@@ -154,43 +105,7 @@ describe('RelativeDateTime', function () {
     });
 
     it('returns "Yesterdy at ...", "Tomorrow at ...", etc. if the date is NOT in the same day as baseDate', () => {
-      const mockOneDayAgo = dayjs(baseDate).subtract(1, 'day');
-      const mockTwoDaysAgo = dayjs(baseDate).subtract(2, 'day');
-      const mockNextDay = dayjs(baseDate).add(1, 'day');
-      const mockInTwoDays = dayjs(baseDate).add(2, 'day');
-      const mockLastMonth = dayjs(baseDate).subtract(1, 'month');
-      const mockNextMonth = dayjs(baseDate).add(1, 'month');
-
-      const mocks = [
-        {
-          test: mockOneDayAgo.format(),
-          expected: `Yesterday at ${mockOneDayAgo.format('h:mm A')}`,
-        },
-        {
-          test: mockTwoDaysAgo.format(),
-          expected: `Last ${mockTwoDaysAgo.format(
-            'dddd',
-          )} at ${mockTwoDaysAgo.format('h:mm A')}`,
-        },
-        {
-          test: mockNextDay.format(),
-          expected: `Tomorrow at ${mockNextDay.format('h:mm A')}`,
-        },
-        {
-          test: mockInTwoDays.format(),
-          expected: `${mockInTwoDays.format('dddd')} at ${mockInTwoDays.format(
-            'h:mm A',
-          )}`,
-        },
-        {
-          test: mockLastMonth.format(),
-          expected: `${mockLastMonth.format('DD MMM YYYY')}`,
-        },
-        {
-          test: mockNextMonth.format(),
-          expected: `${mockNextMonth.format('DD MMM YYYY')}`,
-        },
-      ];
+      const mocks = TestCases.dateIsNotToday(baseDate);
 
       mocks.forEach(({ test, expected }) => {
         const { container } = render(

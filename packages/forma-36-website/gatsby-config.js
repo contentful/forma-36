@@ -181,6 +181,10 @@ module.exports = {
                 name: 'RelativeDateTime',
                 link: '/components/relative-datetime/',
               },
+              {
+                name: 'Utility functions',
+                link: '/components/datetime-functions/',
+              },
             ],
           },
           {
@@ -190,10 +194,6 @@ module.exports = {
           {
             name: 'Popover',
             link: '/components/popover/',
-          },
-          {
-            name: 'EditorToolbar',
-            link: '/components/editor-toolbar/',
           },
           {
             name: 'EmptyState',
