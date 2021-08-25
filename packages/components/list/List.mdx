@@ -32,14 +32,14 @@ The List component can be configured in two different ways: to display bulleted 
 ```tsx
 // import { List, ListItem } from '@contentful/f36-components';
 
-<List element="ul">
+<List as="ul">
   <ListItem>List Item 1</ListItem>
   <ListItem>List Item 2</ListItem>
   <ListItem>
     List Item with <TextLink>text link</TextLink>
   </ListItem>
   <ListItem>
-    <List element="ol">
+    <List as="ol">
       <ListItem>Sublist Item 1</ListItem>
       <ListItem>Sublist Item 2</ListItem>
     </List>
