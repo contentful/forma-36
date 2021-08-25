@@ -4,6 +4,8 @@ import tokens from '@contentful/f36-tokens';
 const getStyles = ({ isDisabled, isInvalid }) => ({
   rootComponentWithIcon: css({
     position: 'relative',
+    display: 'flex',
+    width: '100%',
   }),
   input: css({
     outline: 'none',
@@ -20,6 +22,7 @@ const getStyles = ({ isDisabled, isInvalid }) => ({
     padding: '10px 12px',
     margin: 0,
     cursor: isDisabled ? 'not-allowed' : 'auto',
+    width: '100%',
 
     '&::placeholder': {
       color: tokens.gray500,
