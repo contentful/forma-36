@@ -70,10 +70,6 @@ describe('RelativeDateTime', function () {
           test: dayjs(today).subtract(50, 'minute').format(),
           expected: 'an hour ago',
         },
-        {
-          test: dayjs(today).subtract(3, 'hour').format(),
-          expected: '3 hours ago',
-        },
       ];
 
       mocks.forEach(({ test, expected }) => {
@@ -142,10 +138,6 @@ describe('RelativeDateTime', function () {
         {
           test: dayjs(baseDate).subtract(50, 'minute').format(),
           expected: 'an hour ago',
-        },
-        {
-          test: dayjs(baseDate).subtract(3, 'hour').format(),
-          expected: '3 hours ago',
         },
       ];
 
