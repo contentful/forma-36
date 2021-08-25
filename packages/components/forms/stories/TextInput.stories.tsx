@@ -3,6 +3,9 @@ import React from 'react';
 import { TextInput, TextInputProps } from '../src';
 import { TextLink } from '@contentful/f36-text-link';
 import { LockIcon } from '@contentful/f36-icons';
+import { SectionHeading } from '@contentful/f36-typography';
+import { Flex } from '@contentful/f36-core';
+import { SearchIcon } from '@contentful/f36-icons';
 
 export default {
   title: 'Form Elements/TextInput',
@@ -39,8 +42,113 @@ export const Basic = (args: TextInputProps) => {
 };
 
 Basic.args = {
-  label: 'some label text???',
+  label: 'some label text',
   validationMessage: 'validation message',
   helpText: 'help text',
   placeholder: 'this is my placeholder',
 };
+
+export const overview = () => (
+  <Flex flexDirection="column">
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Text Input default
+    </SectionHeading>
+
+    <Flex marginBottom="spacingL">
+      <TextInput
+        label="My amazing label"
+        name="someOtherOption"
+        value="someOtherValue"
+        id="myField"
+        placeholder="This is such a great input"
+      />
+    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Text Input field with validation message
+    </SectionHeading>
+
+    <Flex marginBottom="spacingL">
+      <TextInput
+        label="My amazing label"
+        name="someOtherOption"
+        value="someOtherValue"
+        id="myField"
+        isInvalid
+        validationMessage="Great validation message"
+        placeholder="This is such a great input"
+      />
+    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Text Input field with validation message and help text
+    </SectionHeading>
+
+    <Flex marginBottom="spacingL">
+      <TextInput
+        label="My amazing label"
+        name="someOtherOption"
+        value="someOtherValue"
+        id="myField"
+        isInvalid
+        validationMessage="Great validation message"
+        helpText="Very helpful addition information"
+        placeholder="This is such a great input"
+      />
+    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Text Input disabled
+    </SectionHeading>
+
+    <Flex marginBottom="spacingL">
+      <TextInput
+        label="My amazing label"
+        name="someOtherOption"
+        value="someOtherValue"
+        id="myField"
+        placeholder="This is such a great input"
+        isDisabled
+      />
+    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Text Input with link
+    </SectionHeading>
+
+    <Flex marginBottom="spacingL">
+      <TextInput
+        label="My amazing label"
+        name="someOtherOption"
+        value="someOtherValue"
+        id="myField"
+        placeholder="This is such a great input"
+        link={
+          <TextLink icon={<LockIcon />} href="https://f36.contentful.com/">
+            go to link
+          </TextLink>
+        }
+      />
+    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Text Input with link and with icon
+    </SectionHeading>
+
+    <Flex marginBottom="spacingL">
+      <TextInput
+        label="My amazing label"
+        name="someOtherOption"
+        value="someOtherValue"
+        id="myField"
+        placeholder="This is such a great input"
+        icon={<SearchIcon />}
+        link={
+          <TextLink icon={<LockIcon />} href="https://f36.contentful.com/">
+            go to link
+          </TextLink>
+        }
+      />
+    </Flex>
+  </Flex>
+);

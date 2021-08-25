@@ -17,13 +17,9 @@ export const getStyles = () => ({
     fontSize: tokens.fontSizeM,
     padding: `calc(1rem * (10.5 / ${tokens.fontBaseDefault}))`,
     margin: 0,
-    width: '100%',
   }),
   label: css({
     fontWeight: tokens.fontWeightMedium,
     marginBottom: 0,
-  }),
-  labelLight: css({
-    fontWeight: tokens.fontWeightNormal,
   }),
 });

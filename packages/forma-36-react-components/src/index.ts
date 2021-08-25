@@ -59,6 +59,7 @@ export {
   Switch,
   BaseInput,
   BaseCheckbox,
+  TextInput,
 } from '@contentful/f36-forms';
 export type {
   ControlledInputFieldProps,
@@ -71,6 +72,7 @@ export type {
   SwitchProps,
   BaseInputProps,
   BaseCheckboxProps,
+  TextInputProps,
 } from '@contentful/f36-forms';
 export { Pill } from '@contentful/f36-pill';
 export type { PillProps } from '@contentful/f36-pill';

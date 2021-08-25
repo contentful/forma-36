@@ -26,7 +26,10 @@ export interface TextInputProps extends CommonProps {
   placeholder?: string;
   name?: string;
   id?: string;
+  isInvalid?: boolean;
+  isDisabled?: boolean;
   onChange?: ChangeEventHandler<HTMLInputElement>;
+  icon?: React.ReactElement;
 }
 
 export const _TextInput = (
@@ -45,7 +48,10 @@ export const _TextInput = (
     onChange,
     placeholder,
     maxLength,
+    isInvalid,
+    isDisabled,
     name,
+    icon,
     ...otherProps
   }: TextInputProps,
   ref: React.Ref<HTMLInputElement>,
@@ -64,7 +70,7 @@ export const _TextInput = (
   );
 
   return (
-    <Flex flexDirection="column">
+    <Flex flexDirection="column" fullWidth>
       {!isStandalone && (
         <Flex justifyContent="space-between" alignItems="center" fullWidth>
           <Label htmlFor={id} required={isRequired}>
@@ -84,6 +90,9 @@ export const _TextInput = (
         placeholder={placeholder}
         as="input"
         name={name}
+        isInvalid={isInvalid}
+        isDisabled={isDisabled}
+        icon={icon}
       />
       {!isStandalone && (
         <>
