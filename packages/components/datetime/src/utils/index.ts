@@ -1,6 +1,6 @@
-import dayjs, { extend } from 'dayjs';
+import dayjs from 'dayjs';
 import utcPlugin from 'dayjs/plugin/utc';
-extend(utcPlugin);
+dayjs.extend(utcPlugin);
 
 import type { DateType, DateFormat } from '../../types';
 
@@ -78,3 +78,8 @@ export function formatMachineReadableDateTime(
 
   return dayjs(date).utc().format(template);
 }
+
+export {
+  formatRelativeDateTime,
+  formatRelativeToCurrentWeekDateTime,
+} from './relativeDateTimeUtils';

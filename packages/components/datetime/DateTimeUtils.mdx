@@ -88,3 +88,51 @@ formatMachineReadableDateTime('2021-08-17T15:45', 'time');
 // it will return "08-17"
 formatMachineReadableDateTime('2021-08-17T15:45', 'weekday');
 ```
+
+## formatRelativeDateTime
+
+This function will return a string with how far a given date is in the past or future,
+using a baseDate as reference. If the baseDate is not passed, the function will use today as reference.
+
+### Examples
+
+```ts static=true
+// If today is 18.08.2021, it will return "a day ago"
+formatRelativeDateTime('2021-08-17T15:45');
+
+// If today is 18.08.2021, it will return "in a day"
+formatRelativeDateTime('2021-08-19T15:45');
+
+// it will return "in one week"
+formatRelativeDateTime('2021-08-19T15:45', '2021-08-12T15:45');
+
+// it will return "5 hours ago"
+formatRelativeDateTime('2021-08-19T15:45', '2021-08-19T10:45');
+```
+
+## formatRelativeToCurrentWeekDateTime
+
+This function that formats a date relative to Today or to the `baseDate` if passed.
+
+- If the date is not today, it will return a string with "Yesterday ...", "Tomorrow ...", etc
+- If the date is not in the current week, it return a string with "DD MMM YYYY" format
+- If the date is today, it will return a string with "... ago" or "in ..."
+
+### Examples
+
+```ts static=true
+// If today is 18.08.2021, it will return "Yesterday at 3:45 PM"
+formatRelativeToCurrentWeekDateTime('2021-08-17T15:45');
+
+// If today is 18.08.2021, it will return "Tomorrow at 3:45 PM"
+formatRelativeToCurrentWeekDateTime('2021-08-19T15:45');
+
+// If today is 18.08.2021 at 12 PM, it will return "2 hours ago"
+formatRelativeToCurrentWeekDateTime('2021-08-18T10:00');
+
+// If today is 18.08.2021 at 12 PM, it will return "in 2 hours"
+formatRelativeToCurrentWeekDateTime('2021-08-18T14:00');
+
+// it will return "19 Jul 2021"
+formatRelativeDateTime('2021-08-19T15:45', '2021-07-19T15:45');
+```

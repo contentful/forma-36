@@ -24,7 +24,7 @@ describe('RelativeDateTime', function () {
     expect(tree).toBeTruthy();
   });
 
-  it('renders in how much time the date will be relative to TODAY (date is BEFORE today)', () => {
+  it('renders how much time the date will be relative to TODAY (date is BEFORE today)', () => {
     const { container } = render(
       <RelativeDateTime date={yesterday.format()} />,
     );
@@ -32,7 +32,7 @@ describe('RelativeDateTime', function () {
     expect(container.textContent).toBe('a day ago');
   });
 
-  it('renders how long ago the date happened relative to TODAY (date is AFTER today)', () => {
+  it('renders how much time the date will be relative to TODAY (date is AFTER today)', () => {
     const { container } = render(<RelativeDateTime date={tomorrow.format()} />);
 
     expect(container.textContent).toBe('in a day');
