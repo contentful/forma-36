@@ -1,12 +1,12 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 
-export type GetStyleArguments = {
+export type StylesArguments = {
   isDisabled: boolean;
   isInvalid: boolean;
 };
 
-const getInputStyles = ({ isDisabled, isInvalid }: GetStyleArguments) => {
+const getInputStyles = ({ isDisabled, isInvalid }: StylesArguments) => {
   const invalidStyle = {
     borderColor: tokens.red600,
 
@@ -37,7 +37,6 @@ const getInputStyles = ({ isDisabled, isInvalid }: GetStyleArguments) => {
   const baseStyle = {
     outline: 'none',
     boxShadow: tokens.insetBoxShadowDefault,
-    boxSizing: 'border-box',
     backgroundColor: tokens.colorWhite,
     border: `1px solid ${tokens.gray300}`,
     borderRadius: tokens.borderRadiusMedium,
@@ -82,6 +81,6 @@ const getInputStyles = ({ isDisabled, isInvalid }: GetStyleArguments) => {
   return baseStyle;
 };
 
-export default ({ isDisabled, isInvalid }: GetStyleArguments) => ({
+export default ({ isDisabled, isInvalid }: StylesArguments) => ({
   input: css(getInputStyles({ isDisabled, isInvalid })),
 });
