@@ -119,8 +119,6 @@ function _BaseCheckbox(
     [blurOnEsc, onKeyDown],
   );
 
-  const role = type === 'switch' ? 'checkbox' : type;
-
   return (
     <Flex
       as="label"
@@ -133,7 +131,7 @@ function _BaseCheckbox(
       <input
         {...inputProps}
         className={cx(styles.input, inputProps?.className)}
-        type={role}
+        type={type === 'switch' ? 'checkbox' : type}
         onChange={handleChange}
         onFocus={handleFocus}
         onBlur={handleBlur}
@@ -141,7 +139,7 @@ function _BaseCheckbox(
         value={value}
         disabled={isDisabled}
         checked={checked}
-        role={role}
+        role={type}
         aria-checked={checked}
         ref={inputRef}
         required={isRequired}
