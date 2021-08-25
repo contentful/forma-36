@@ -1,44 +1,16 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 
-export type StylesArguments = {
-  isDisabled: boolean;
-  isInvalid: boolean;
-};
-
-const getInputStyles = ({ isDisabled, isInvalid }: StylesArguments) => {
-  const invalidStyle = {
-    borderColor: tokens.red600,
-
-    '&:focus': {
-      boxShadow: tokens.glowNegative,
-    },
-
-    '&:active, &:active:hover': {
-      boxShadow: tokens.glowNegative,
-    },
-  };
-
-  const disabledStyle = {
-    cursor: 'not-allowed',
-    background: tokens.gray100,
-
-    '&:focus': {
-      borderColor: tokens.gray300,
-      boxShadow: 'none',
-    },
-
-    '&:active, &:active:hover': {
-      borderColor: tokens.gray300,
-      boxShadow: 'none',
-    },
-  };
-
-  const baseStyle = {
+const getStyles = ({ isDisabled, isInvalid }) => ({
+  rootComponentWithIcon: css({
+    position: 'relative',
+  }),
+  input: css({
     outline: 'none',
     boxShadow: tokens.insetBoxShadowDefault,
-    backgroundColor: tokens.colorWhite,
-    border: `1px solid ${tokens.gray300}`,
+    boxSizing: 'border-box',
+    backgroundColor: isDisabled ? tokens.gray100 : tokens.colorWhite,
+    border: `1px solid ${isInvalid ? tokens.red600 : tokens.gray300}`,
     borderRadius: tokens.borderRadiusMedium,
     maxHeight: `calc(1rem * (40 / ${tokens.fontBaseDefault}))`,
     color: tokens.gray700,
@@ -47,40 +19,53 @@ const getInputStyles = ({ isDisabled, isInvalid }: StylesArguments) => {
     lineHeight: tokens.lineHeightM,
     padding: '10px 12px',
     margin: 0,
+    cursor: isDisabled ? 'not-allowed' : 'auto',
 
     '&::placeholder': {
       color: tokens.gray500,
     },
 
     '&:active, &:active:hover': {
-      borderColor: tokens.blue600,
-      boxShadow: tokens.glowPrimary,
+      borderColor: isInvalid
+        ? tokens.red600
+        : isDisabled
+        ? tokens.gray300
+        : tokens.blue600,
+      boxShadow: isInvalid
+        ? tokens.glowNegative
+        : isDisabled
+        ? 'none'
+        : tokens.glowPrimary,
     },
 
     '&:focus': {
       zIndex: tokens.zIndexDefault,
-      borderColor: tokens.blue600,
-      boxShadow: tokens.glowPrimary,
+      borderColor: isInvalid
+        ? tokens.red600
+        : isDisabled
+        ? tokens.gray300
+        : tokens.blue600,
+      boxShadow: isInvalid
+        ? tokens.glowNegative
+        : isDisabled
+        ? 'none'
+        : tokens.glowPrimary,
     },
-  };
+  }),
 
-  if (isDisabled) {
-    return {
-      ...baseStyle,
-      ...disabledStyle,
-    };
-  }
+  inputWithIcon: css({
+    paddingLeft: '40px',
+  }),
 
-  if (isInvalid) {
-    return {
-      ...baseStyle,
-      ...invalidStyle,
-    };
-  }
-
-  return baseStyle;
-};
-
-export default ({ isDisabled, isInvalid }: StylesArguments) => ({
-  input: css(getInputStyles({ isDisabled, isInvalid })),
+  iconPlaceholder: css({
+    position: 'absolute',
+    pointerEvents: 'none',
+    top: 0,
+    bottom: 0,
+    left: '12px',
+    display: 'flex',
+    alignItems: 'center',
+  }),
 });
+
+export default getStyles;
