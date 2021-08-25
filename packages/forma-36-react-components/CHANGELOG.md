@@ -3,6 +3,40 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.97.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.96.2...@contentful/forma-36-react-components@3.97.0) (2021-08-24)
+
+
+### Features
+
+* **EditorToolbarButton:** custom Tooltip placement ([#1225](https://github.com/contentful/forma-36/issues/1225)) ([b030831](https://github.com/contentful/forma-36/commit/b030831febb195cbbda2496db97c1b3d694b2e74))
+
+
+
+
+
+## [3.96.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.96.1...@contentful/forma-36-react-components@3.96.2) (2021-08-23)
+
+
+### Bug Fixes
+
+* **table-head:** only set offsetTop for th when isSticky is true ([#1223](https://github.com/contentful/forma-36/issues/1223)) ([de7e2af](https://github.com/contentful/forma-36/commit/de7e2af37f884dd65b25fc253d26553249396e73))
+* Autocomplete [1203] ([#1212](https://github.com/contentful/forma-36/issues/1212)) ([77b19da](https://github.com/contentful/forma-36/commit/77b19da14a17528bad89fe88f74b1ef58fb44ea2))
+
+
+
+
+
+## [3.96.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.96.0...@contentful/forma-36-react-components@3.96.1) (2021-08-23)
+
+
+### Bug Fixes
+
+* text link semantics and alignment ([#1213](https://github.com/contentful/forma-36/issues/1213)) ([80db752](https://github.com/contentful/forma-36/commit/80db752c56ada2e047cbb191c2c106c6e6d81d85))
+
+
+
+
+
 # [3.96.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.95.2...@contentful/forma-36-react-components@3.96.0) (2021-08-12)
 
 

@@ -102,6 +102,16 @@ export { Tabs, Tab, TabPanel } from '@contentful/f36-tabs';
 export type { TabsProps, TabProps, TabPanelProps } from '@contentful/f36-tabs';
 export { CopyButton } from '@contentful/f36-copybutton';
 export type { CopyButtonProps } from '@contentful/f36-copybutton';
+export {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+} from '@contentful/f36-popover';
+export type {
+  PopoverProps,
+  PopoverContentProps,
+  PopoverTriggerProps,
+} from '@contentful/f36-popover';
 export * from '@contentful/f36-modal';
 export * from '@contentful/f36-notification';
 export * from '@contentful/f36-asset';
@@ -109,7 +119,11 @@ export * from './components/Autocomplete';
 export * from './components/Card';
 export * from './components/Dropdown';
 export * from './components/EditorToolbar';
-export * from './components/DateTime';
+export { DateTime, RelativeDateTime } from '@contentful/f36-datetime';
+export type {
+  DateTimeProps,
+  RelativeDateTimeProps,
+} from '@contentful/f36-datetime';
 export * from './components/EntityList';
 export * from './components/Form';
 export * from './components/IconButton';

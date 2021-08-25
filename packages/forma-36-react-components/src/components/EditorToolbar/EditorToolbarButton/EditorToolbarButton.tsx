@@ -2,9 +2,9 @@ import React from 'react';
 import cn from 'classnames';
 import type { MouseEventHandler } from 'react';
 import type { IconComponent } from '@contentful/f36-icon';
+import { Tooltip, TooltipProps } from '@contentful/f36-tooltip';
 
 import { IconButton } from '../../IconButton';
-import { Tooltip } from '@contentful/f36-tooltip';
 import styles from './EditorToolbarButton.css';
 import type { IconButtonProps } from '../../IconButton';
 
@@ -12,6 +12,7 @@ export interface EditorToolbarButtonProps {
   label: string;
   icon: IconComponent;
   tooltip?: string;
+  tooltipPlace?: TooltipProps['placement'];
   iconButtonProps?: Partial<IconButtonProps>;
   isActive?: boolean;
   disabled?: boolean;
@@ -27,6 +28,7 @@ export function EditorToolbarButton({
   testId = 'cf-ui-editor-toolbar-button',
   icon,
   tooltip,
+  tooltipPlace,
   iconButtonProps,
   isActive = false,
   disabled = false,
@@ -40,7 +42,10 @@ export function EditorToolbarButton({
 
   return (
     <React.Fragment>
-      <Tooltip content={!disabled ? tooltip : undefined}>
+      <Tooltip
+        content={!disabled ? tooltip : undefined}
+        placement={tooltipPlace}
+      >
         <IconButton
           iconProps={{ as: icon }}
           testId={testId}

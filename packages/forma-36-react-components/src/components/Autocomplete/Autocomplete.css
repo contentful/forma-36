@@ -17,6 +17,7 @@
 }
 
 .autocompleteInput .inputIconButton {
+  display: flex;
   position: relative;
   margin-left: calc(-1 * var(--spacing-xl));
 }
