@@ -1,6 +1,9 @@
 export {
   formatDateAndTime,
   formatMachineReadableDateTime,
+  formatDate,
+  formatTime,
+  formatWeekdayDate,
 } from './formatDateTimeUtils';
 
 export {

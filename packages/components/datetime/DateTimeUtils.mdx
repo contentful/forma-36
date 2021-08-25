@@ -49,6 +49,21 @@ formatDateAndTime('2021-08-17T15:45', 'time');
 formatDateAndTime('2021-08-17T15:45', 'weekday');
 ```
 
+### Functions based on formatDateAndTime
+
+They are functions that use `formatDateAndTime` under the hood and return one of the formatted options.
+
+```ts static=true
+// it will return "17 Aug 2021"
+formatDate('2021-08-17T15:45');
+
+// it will return "3:45 PM"
+formatTime('2021-08-17T15:45');
+
+// it will return "Tue, 17 Aug"
+formatWeekdayDate('2021-08-17T15:45');
+```
+
 ## formatMachineReadableDateTime
 
 This function will return a machine-readable date string that should be passed to the `datetime` attribute of a `<time>` tag.

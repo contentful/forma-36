@@ -78,3 +78,30 @@ export function formatMachineReadableDateTime(
 
   return dayjs(date).utc().format(template);
 }
+
+/**
+ * @example
+ * > formatDate(date)
+ * 13 Aug 2019
+ */
+export const formatDate = (date: DateType): string => {
+  return formatDateAndTime(date, 'day');
+};
+
+/**
+ * @example
+ * > formatTime(date)
+ * 8:00 AM
+ */
+export const formatTime = (date: DateType): string => {
+  return formatDateAndTime(date, 'time');
+};
+
+/**
+ * @example
+ * > formatWeekdayDate(date)
+ * Mon, 12 Aug
+ */
+export const formatWeekdayDate = (date: DateType): string => {
+  return formatDateAndTime(date, 'weekday');
+};
