@@ -25,10 +25,20 @@ export type ListProps = PolymorphicComponentProps<
 const _List: PolymorphicComponentWithRef<
   ListInternalProps,
   typeof DEFAULT_TAG
-> = ({ as: Tag = DEFAULT_TAG, className, children, ...otherProps }, ref) => {
+> = (
+  {
+    as: Tag = DEFAULT_TAG,
+    className,
+    children,
+    testId = 'cf-ui-list',
+    ...otherProps
+  },
+  ref,
+) => {
   return (
     <Box
       as={DEFAULT_TAG}
+      testId={testId}
       className={cx(
         css({
           margin: 0,
