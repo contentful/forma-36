@@ -1,5 +1,4 @@
 export * from '@contentful/f36-badge';
-export * from '@contentful/f36-inputs';
 export { Icon } from '@contentful/f36-icon';
 export type {
   IconComponent,
@@ -61,11 +60,17 @@ export type {
   RadioButtonFieldProps,
   LabelProps,
 } from '@contentful/f36-forms';
-export { ControlledInput, Checkbox, RadioButton } from '@contentful/f36-inputs';
+export {
+  ControlledInput,
+  Checkbox,
+  RadioButton,
+  BaseInput,
+} from '@contentful/f36-inputs';
 export type {
   ControlledInputProps,
   CheckboxProps,
   RadioButtonProps,
+  BaseInputProps,
 } from '@contentful/f36-inputs';
 export { Pill } from '@contentful/f36-pill';
 export type { PillProps } from '@contentful/f36-pill';
