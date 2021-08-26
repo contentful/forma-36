@@ -40,6 +40,10 @@ const TRANSFORMS_CHOICES = [
     name: 'v4-note: Converts Note component from Forma v3 to v4',
     value: 'v4-note',
   },
+  {
+    name: 'v4-spinner: Converts Spinner component from Forma v3 to v4',
+    value: 'v4-spinner',
+  },
 ];
 
 module.exports = {

@@ -16,5 +16,4 @@ import { Pill } from "@contentful/forma-36-react-components";
       variant="muted"
       style={{ padding: '0.375rem 0.625rem' }}
     />
-  }
-/>;
+  } />;
