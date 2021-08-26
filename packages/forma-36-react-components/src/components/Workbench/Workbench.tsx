@@ -1,5 +1,6 @@
 import React, { HTMLProps } from 'react';
 import cn from 'classnames';
+import { css } from 'emotion';
 import type { ReactElement } from 'react';
 import { Heading, Paragraph } from '@contentful/f36-typography';
 import { ChevronLeftIcon } from '@contentful/f36-icons';
@@ -7,6 +8,7 @@ import type { IconComponent } from '@contentful/f36-icon';
 import { Button } from '@contentful/f36-button';
 
 import styles from './Workbench.css';
+import tokens from '@contentful/f36-tokens';
 
 export interface WorkbenchHeaderProps {
   title?: ReactElement | string;
@@ -18,24 +20,21 @@ export interface WorkbenchHeaderProps {
   testId?: string;
 }
 
-/*
-
-.Workbench__header-back-button {
-  margin: 0;
-  width: 50px;
-  height: 69px;
-}
-
-.Workbench .Workbench__header-back-button svg {
-  fill: var(--color-element-dark);
-}
-
-.Workbench .Workbench__header-back-button:hover svg,
-.Workbench .Workbench__header-back-button:focus svg {
-  fill: var(--color-element-darkest);
-}
-
-*/
+const getBackButtonStyles = () => {
+  return css({
+    margin: 0,
+    width: '50px',
+    height: '69px',
+    svg: {
+      fill: tokens.gray400,
+    },
+    '&:hover, &:focus': {
+      svg: {
+        fill: tokens.gray500,
+      },
+    },
+  });
+};
 
 export function WorkbenchHeader({
   actions,
@@ -58,6 +57,7 @@ export function WorkbenchHeader({
           <Button
             variant="transparent"
             testId="workbench-back-btn"
+            className={getBackButtonStyles()}
             onClick={() => {
               if (typeof onBack === 'function') {
                 onBack();
