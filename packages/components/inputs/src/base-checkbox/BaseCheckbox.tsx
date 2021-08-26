@@ -27,11 +27,11 @@ export interface BaseCheckboxProps extends CommonProps, AdditionalTextProps {
   onFocus?: FocusEventHandler<'input'>;
   onBlur?: FocusEventHandler<'input'>;
   onKeyDown?: KeyboardEventHandler<'input'>;
-  label?: string;
+  label: string;
   isDisabled?: boolean;
   isIndeterminate?: boolean;
   isRequired?: boolean;
-  id?: string;
+  id: string;
   blurOnEsc?: boolean;
   inputProps?: Partial<JSX.IntrinsicElements['input']>;
   name: string;
