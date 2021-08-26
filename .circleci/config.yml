@@ -24,7 +24,7 @@ commands:
       - run: git show -m HEAD --name-only --pretty="" | egrep -q '<< parameters.pattern >>' || circleci step halt
 
 jobs:
-  lint-and-test:
+  analyze_code:
     docker:
       - image: circleci/node:14.15.0-browsers
     resource_class: xlarge
@@ -35,19 +35,24 @@ jobs:
           name: Prettier
           command: yarn prettier:check
       - run:
-          name: Build
-          command: yarn build
-      - run:
           name: Lint
           command: yarn lint
       - run:
-          name: Check Types
+          name: Check types
           command: yarn tsc
+
+  test:
+    docker:
+      - image: circleci/node:14.15.0-browsers
+    resource_class: xlarge
+    steps:
+      - checkout
+      - yarn_install
       - run:
           name: Test
           command: yarn test
 
-  chromatic-deployment:
+  deploy_chromatic:
     docker:
       - image: circleci/node:14.15.0-browsers
     resource_class: xlarge
@@ -58,10 +63,10 @@ jobs:
       - yarn_install
       - run:
           name: Storybook
-          command: yarn run storybook:build
+          command: yarn storybook:build
       - run:
           name: Chromatic
-          command: yarn run chromatic
+          command: yarn chromatic
 
   release:
     docker:
@@ -85,18 +90,21 @@ workflows:
   version: 2
   f36-build:
     jobs:
-      - lint-and-test
-      - chromatic-deployment:
+      - analyze_code
+      - test
+      - deploy_chromatic:
           requires:
-            - lint-and-test
+            - analyze_code
+            - test
           filters:
             branches:
               # Forked pull requests have CIRCLE_BRANCH set to pull/XXX
               ignore: /pull\/[0-9]+/
       - release:
+          requires:
+            - analyze_code
+            - test
           filters:
             branches:
               only:
                 - master
-          requires:
-            - lint-and-test
