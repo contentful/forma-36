@@ -24,12 +24,39 @@ commands:
       - run: git show -m HEAD --name-only --pretty="" | egrep -q '<< parameters.pattern >>' || circleci step halt
 
 jobs:
+  build:
+    docker:
+      - image: circleci/node:14.15.0-browsers
+    resource_class: xlarge
+    working_directory: ~/circleci-f36-build
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/circleci-f36-build
+      - yarn_install
+      - run:
+          name: Lerna build
+          command: yarn build
+      - persist_to_workspace:
+          root: .
+          paths:
+            - packages/components/**/dist
+            - packages/core/dist
+            - packages/f36-docs-utils/dist
+            - packages/forma-36-fcss/dist
+            - packages/forma-36-react-components/dist
+            - packages/forma-36-tokens/dist
+            - packages/forma-36-website/public
+
   analyze_code:
     docker:
       - image: circleci/node:14.15.0-browsers
     resource_class: xlarge
+    working_directory: ~/circleci-f36-build
     steps:
       - checkout
+      - attach_workspace:
+          at: ~/circleci-f36-build
       - yarn_install
       - run:
           name: Prettier
@@ -45,8 +72,11 @@ jobs:
     docker:
       - image: circleci/node:14.15.0-browsers
     resource_class: xlarge
+    working_directory: ~/circleci-f36-build
     steps:
       - checkout
+      - attach_workspace:
+          at: ~/circleci-f36-build
       - yarn_install
       - run:
           name: Test
@@ -56,8 +86,11 @@ jobs:
     docker:
       - image: circleci/node:14.15.0-browsers
     resource_class: xlarge
+    working_directory: ~/circleci-f36-build
     steps:
       - checkout
+      - attach_workspace:
+          at: ~/circleci-f36-build
       - check-changed-files-or-halt:
           pattern: ^(packages)|(.js|jsx|ts|tsx|css|scss)$
       - yarn_install
@@ -71,8 +104,11 @@ jobs:
   release:
     docker:
       - image: circleci/node:14.15.0-browsers
+    working_directory: ~/circleci-f36-build
     steps:
       - checkout
+      - attach_workspace:
+          at: ~/circleci-f36-build
       - yarn_install
       - add_ssh_keys:
           fingerprints:
@@ -90,10 +126,16 @@ workflows:
   version: 2
   f36-build:
     jobs:
-      - analyze_code
-      - test
+      - build
+      - analyze_code:
+          requires:
+            - build
+      - test:
+          requires:
+            - build
       - deploy_chromatic:
           requires:
+            - build
             - analyze_code
             - test
           filters:
@@ -102,6 +144,7 @@ workflows:
               ignore: /pull\/[0-9]+/
       - release:
           requires:
+            - build
             - analyze_code
             - test
           filters:
