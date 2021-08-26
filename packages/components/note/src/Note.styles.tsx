@@ -49,7 +49,7 @@ const variantToStyles = (variant: NoteVariant): CSSObject => {
 
 export const getStyles = () => {
   return {
-    note: ({ variant, hasCloseButton }: NoteProps) =>
+    note: ({ variant, withCloseButton }: NoteProps) =>
       css({
         padding: tokens.spacingM,
         margin: 0,
@@ -61,7 +61,7 @@ export const getStyles = () => {
         flexDirection: 'row',
         alignItems: 'flex-start',
         borderRadius: tokens.borderRadiusMedium,
-        paddingRight: hasCloseButton ? tokens.spacingS : tokens.spacingM,
+        paddingRight: withCloseButton ? tokens.spacingS : tokens.spacingM,
         border: '1px solid',
         ...variantToStyles(variant),
       }),
@@ -71,11 +71,11 @@ export const getStyles = () => {
       fontSize: tokens.fontSizeL,
       marginBottom: tokens.spacingXs,
     }),
-    info: ({ hasCloseButton }: NoteProps) =>
+    info: ({ withCloseButton }: NoteProps) =>
       css({
         marginLeft: tokens.spacingXs,
         fill: 'currentColor',
-        marginRight: hasCloseButton ? tokens.spacingS : 'unset',
+        marginRight: withCloseButton ? tokens.spacingS : 'unset',
       }),
     content: css({
       color: tokens.gray700,
