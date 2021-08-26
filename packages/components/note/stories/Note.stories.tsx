@@ -39,7 +39,7 @@ export const overview = () => (
       </Note>
     </Flex>
     <Flex marginBottom="spacingM">
-      <Note title="Short, yet succint title" hasCloseButton>
+      <Note title="Short, yet succint title" withCloseButton>
         A piece of information that is relevant to the context the user is
         currently in. If you like it then you should put{' '}
         <a href="https://contentful.com">a link</a> in it.
@@ -57,7 +57,7 @@ export const overview = () => (
       </Note>
     </Flex>
     <Flex marginBottom="spacingM">
-      <Note variant="negative" title="Short, yet succint title" hasCloseButton>
+      <Note variant="negative" title="Short, yet succint title" withCloseButton>
         Something went wrong, apparently. Please try again.{' '}
       </Note>
     </Flex>
@@ -73,7 +73,7 @@ export const overview = () => (
       </Note>
     </Flex>
     <Flex marginBottom="spacingM">
-      <Note variant="warning" title="Short, yet succint title" hasCloseButton>
+      <Note variant="warning" title="Short, yet succint title" withCloseButton>
         A piece of information that is relevant to the context the user is
         currently in.
       </Note>
@@ -90,7 +90,7 @@ export const overview = () => (
       </Note>
     </Flex>
     <Flex marginBottom="spacingM">
-      <Note variant="positive" title="Short, yet succint title" hasCloseButton>
+      <Note variant="positive" title="Short, yet succint title" withCloseButton>
         Make sure to immediately copy your new signing secret. You will not be
         able to see it again.
       </Note>

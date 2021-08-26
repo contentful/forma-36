@@ -36,6 +36,10 @@ const TRANSFORMS_CHOICES = [
     name: 'v4-flex: Converts Flex component from Forma v3 to v4',
     value: 'v4-flex',
   },
+  {
+    name: 'v4-note: Converts Note component from Forma v3 to v4',
+    value: 'v4-note',
+  },
 ];
 
 module.exports = {

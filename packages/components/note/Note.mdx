@@ -3,7 +3,7 @@ title: 'Note'
 type: 'component'
 status: 'stable'
 slug: /components/note/
-github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/Note'
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/note'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-note--default'
 typescript: ./src/Note.tsx
 ---
@@ -24,10 +24,6 @@ Notes provide context and information about a situation or action. Notes draw th
 - Place the note visually closer to the action or real estate it relates to
 - Unlike notifications, notes don't show up as feedback only after a user has performed an action
 
-## Component variations
-
-Give couple of clear examples of the usage of the components, that includes import
-
 ## Code examples
 
 The Note component can be configured in a number of different ways. Learn when to use certain variations with this guide.
@@ -35,21 +31,19 @@ The Note component can be configured in a number of different ways. Learn when t
 ### Basic example
 
 ```jsx
-<React.Fragment>
-  <Note>
-    Information that is relevant to the context the user is currently in.
-  </Note>
-</React.Fragment>
+<Note>
+  Information that is relevant to the context the user is currently in.
+</Note>
 ```
 
-### Note type (`noteType`)
+### Component variations
 
 ```jsx
 <React.Fragment>
   <Note>Primary (default)</Note>
-  <Note noteType="positive">Positive</Note>
-  <Note noteType="warning">Warning</Note>
-  <Note noteType="negative">Negative</Note>
+  <Note variant="positive">Positive</Note>
+  <Note variant="warning">Warning</Note>
+  <Note variant="negative">Negative</Note>
 </React.Fragment>
 ```
 
@@ -58,13 +52,13 @@ The Note component can be configured in a number of different ways. Learn when t
 ```jsx
 <React.Fragment>
   <Note title="Primary title">Primary (default)</Note>
-  <Note title="Positive title" noteType="positive">
+  <Note title="Positive title" variant="positive">
     Positive
   </Note>
-  <Note title="Warning title" noteType="warning">
+  <Note title="Warning title" variant="warning">
     Warning
   </Note>
-  <Note title="Negative title" noteType="negative">
+  <Note title="Negative title" variant="negative">
     Negative
   </Note>
 </React.Fragment>

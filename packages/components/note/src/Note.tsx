@@ -14,6 +14,7 @@ import {
   InfoCircleIcon,
   WarningIcon,
 } from '@contentful/f36-icons';
+import { Icon } from '@contentful/f36-icon';
 
 import { getStyles } from './Note.styles';
 
@@ -40,15 +41,15 @@ export type NoteInternalProps = CommonProps & {
    */
   children?: React.ReactNode;
   /**
-   * Flag for showing close button
+   * Defines if the close button should be rendered
+   * @default false
    */
-  hasCloseButton?: boolean;
+  withCloseButton?: boolean;
   /**
    * Callback for handling closing
    */
   onClose?: Function;
 };
-
 export type NoteProps = PolymorphicComponentProps<'article', NoteInternalProps>;
 
 /**
@@ -58,7 +59,7 @@ export const Note = React.forwardRef<HTMLElement, NoteProps>((props, ref) => {
   const {
     children,
     className,
-    hasCloseButton,
+    withCloseButton = false,
     variant = 'primary',
     onClose,
     testId = 'cf-ui-note',
@@ -68,23 +69,22 @@ export const Note = React.forwardRef<HTMLElement, NoteProps>((props, ref) => {
 
   const styles = getStyles();
 
-  const Icon = icons[variant!]; // eslint-disable-line @typescript-eslint/no-non-null-assertion
-  if (!Icon) {
-    throw new Error(`Intent ${variant} is not supported in Note component.`);
-  }
-
   return (
     <Box
-      as="article"
-      className={cx(styles.note({ variant, hasCloseButton }), className)}
-      testId={testId}
       {...otherProps}
+      as="article"
+      className={cx(styles.note({ variant, withCloseButton }), className)}
+      testId={testId}
       ref={ref}
     >
       <Flex marginRight="spacingS">
-        <Icon variant={variant} size={title ? 'medium' : 'small'} />
+        <Icon
+          as={icons[variant]}
+          variant={variant}
+          size={title ? 'medium' : 'small'}
+        />
       </Flex>
-      <div className={styles.info({ hasCloseButton })}>
+      <div className={styles.info({ withCloseButton })}>
         {title && (
           <Heading as="h2" className={styles.title}>
             {title}
@@ -94,15 +94,11 @@ export const Note = React.forwardRef<HTMLElement, NoteProps>((props, ref) => {
           {children}
         </Text>
       </div>
-      {hasCloseButton && (
+      {withCloseButton && (
         <Button
           variant="transparent"
           icon={<CloseIcon />}
-          onClick={() => {
-            if (onClose) {
-              onClose();
-            }
-          }}
+          onClick={onClose}
           testId={`${testId}-close`}
           label="Dismiss"
           className={styles.close}
