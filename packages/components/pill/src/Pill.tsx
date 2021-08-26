@@ -5,7 +5,6 @@ import type {
   PolymorphicComponentProps,
 } from '@contentful/f36-core';
 import { Box } from '@contentful/f36-core';
-import { TabFocusTrap } from '@contentful/f36-utils';
 import { DragIcon, CloseIcon } from '@contentful/f36-icons';
 import { PillVariants } from './types';
 import getPillStyles from './styles';
@@ -78,9 +77,7 @@ export const Pill = React.forwardRef<HTMLDivElement, PillProps>(
             onClick={onClose}
             className={styles.closeButton}
           >
-            <TabFocusTrap>
-              <CloseIcon className={styles.icon} variant="muted" />
-            </TabFocusTrap>
+            <CloseIcon tabIndex={-1} className={styles.icon} variant="muted" />
           </button>
         )}
       </Box>

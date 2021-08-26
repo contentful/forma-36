@@ -8,18 +8,29 @@ const getCloseButtonStyle = (variant: PillVariants) => {
     switch (variant) {
       case 'active':
         return {
+          outline: 'none',
           borderLeft: `1px solid ${tokens.gray400}`,
           '&:hover, &:focus': {
             background: tokens.gray300,
             cursor: 'pointer',
           },
+          '&:focus': {
+            boxShadow: tokens.glowMuted,
+            borderLeftColor: tokens.gray300,
+          },
         };
       default:
         return {
+          outline: 'none',
+
           borderLeft: `1px solid ${tokens.gray400}`,
           '&:hover, &:focus': {
             background: tokens.gray300,
             cursor: 'pointer',
+          },
+          '&:focus': {
+            boxShadow: tokens.glowMuted,
+            borderLeftColor: tokens.gray300,
           },
         };
     }
@@ -52,6 +63,7 @@ const getLabelStyle = () => {
 const icon = {
   fill: tokens.gray600,
   verticalAlign: 'middle',
+  outline: 'none',
 };
 
 const dragIcon = {
