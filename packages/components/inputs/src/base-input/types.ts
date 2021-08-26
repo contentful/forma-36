@@ -50,6 +50,11 @@ export interface BaseInputInternalProps extends CommonProps {
    */
   isInvalid?: boolean;
   /**
+   * Validate the input
+   * @default false
+   */
+  isRequired?: boolean;
+  /**
    * Property that set the placeholder value for input
    */
   placeholder?: string;
