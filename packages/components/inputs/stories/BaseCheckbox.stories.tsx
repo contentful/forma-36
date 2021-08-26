@@ -6,7 +6,7 @@ import { Flex } from '@contentful/f36-core';
 import { BaseCheckbox, BaseCheckboxProps } from '../src/base-checkbox';
 
 export default {
-  title: 'Components/BaseCheckbox',
+  title: 'Form Elements/BaseCheckbox',
   component: BaseCheckbox,
   args: {
     type: 'checkbox',
@@ -23,12 +23,10 @@ export const basic = (args: BaseCheckboxProps) => <BaseCheckbox {...args} />;
 basic.args = {
   name: 'field-name',
   label: 'Label',
-  type: 'switch',
+  type: 'checkbox',
   onChange: action('onChange'),
   onFocus: action('onFocus'),
   onBlur: action('onBlur'),
-  validationMessage: 'Validation message',
-  helpText: 'help text',
 };
 
 export const overview = (args: BaseCheckboxProps) => (
@@ -68,6 +66,4 @@ overview.args = {
   onChange: action('onChange'),
   onFocus: action('onFocus'),
   onBlur: action('onBlur'),
-  validationMessage: 'Validation message',
-  helpText: 'help text',
 };

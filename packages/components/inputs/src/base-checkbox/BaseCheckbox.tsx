@@ -1,41 +1,9 @@
-import React, {
-  KeyboardEventHandler,
-  ChangeEventHandler,
-  FocusEventHandler,
-  useCallback,
-  useState,
-  useEffect,
-  useRef,
-} from 'react';
+import React, { useCallback, useState, useEffect, useRef } from 'react';
 import { cx } from 'emotion';
-import { Flex, CommonProps, useId } from '@contentful/f36-core';
-import { Text } from '@contentful/f36-typography';
-import type { checkboxTypes } from './types';
+import { Flex, useId } from '@contentful/f36-core';
+import type { BaseCheckboxProps } from './types';
 import { GhostCheckbox } from './GhostCheckbox';
 import getStyles from './BaseCheckbox.styles';
-import { AdditionalText, AdditionalTextProps } from '../additional-text/';
-
-export interface BaseCheckboxProps extends CommonProps, AdditionalTextProps {
-  /**
-   * Defines the type of the input to be rendered
-   * @default checkbox
-   */
-  type?: checkboxTypes;
-  value?: string;
-  isChecked?: boolean;
-  onChange?: ChangeEventHandler<'input'>;
-  onFocus?: FocusEventHandler<'input'>;
-  onBlur?: FocusEventHandler<'input'>;
-  onKeyDown?: KeyboardEventHandler<'input'>;
-  label: string;
-  isDisabled?: boolean;
-  isIndeterminate?: boolean;
-  isRequired?: boolean;
-  id: string;
-  blurOnEsc?: boolean;
-  inputProps?: Partial<JSX.IntrinsicElements['input']>;
-  name: string;
-}
 
 function _BaseCheckbox(
   props: BaseCheckboxProps,
@@ -49,14 +17,12 @@ function _BaseCheckbox(
     onKeyDown,
     type = 'checkbox',
     value,
-    label = '',
+    label,
     isDisabled,
     isIndeterminate,
     isRequired = false,
     id,
-    blurOnEsc = false,
-    validationMessage = '',
-    helpText = '',
+    willBlurOnEsc = true,
     testId = 'cf-ui-base-checkbox',
     className = '',
     inputProps,
@@ -79,17 +45,19 @@ function _BaseCheckbox(
   const styles = getStyles({ isDisabled, type });
   const handleChange = useCallback(
     (e) => {
+      e.persist();
       if (isDisabled) return;
-      setChecked((checked) => !checked);
       if (onChange) {
         onChange(e);
       }
+      setChecked((checked) => !checked);
     },
     [onChange, isDisabled],
   );
 
   const handleFocus = useCallback(
     (e) => {
+      e.persist();
       if (onFocus) {
         onFocus(e);
       }
@@ -99,6 +67,7 @@ function _BaseCheckbox(
 
   const handleBlur = useCallback(
     (e) => {
+      e.persist();
       if (onBlur) {
         onBlur(e);
       }
@@ -109,14 +78,14 @@ function _BaseCheckbox(
   const handleKeyDown = useCallback(
     (e) => {
       e.persist();
-      if (blurOnEsc && e.key === 'Escape') {
+      if (willBlurOnEsc && e.key === 'Escape') {
         inputRef?.current?.blur();
       }
       if (onKeyDown) {
         onKeyDown(e);
       }
     },
-    [blurOnEsc, onKeyDown],
+    [willBlurOnEsc, onKeyDown],
   );
 
   return (
@@ -153,17 +122,6 @@ function _BaseCheckbox(
         isDisabled={isDisabled}
         isIndeterminate={isIndeterminate}
       />
-      <Flex flexDirection="column">
-        <Text as="span" className={styles.label}>
-          {label}
-        </Text>
-        <Flex flexDirection="column-reverse">
-          <AdditionalText
-            helpText={helpText}
-            validationMessage={validationMessage}
-          />
-        </Flex>
-      </Flex>
     </Flex>
   );
 }

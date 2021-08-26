@@ -62,7 +62,7 @@ describe('BaseCheckbox', function () {
   it('can blur when clicking escape', () => {
     const mockOnBlur = jest.fn();
     const { getByLabelText } = render(
-      <BaseCheckbox {...commonProps} onBlur={mockOnBlur} blurOnEsc />,
+      <BaseCheckbox {...commonProps} onBlur={mockOnBlur} willBlurOnEsc />,
     );
     const input = getByLabelText(commonProps.label);
     fireEvent.keyDown(input, {
