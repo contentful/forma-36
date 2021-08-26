@@ -94,6 +94,8 @@ export const overview = () => (
         validationMessage="Great validation message"
         helpText="Very helpful addition information"
         placeholder="This is such a great input"
+        countCharacters
+        maxLength={20}
       />
     </Flex>
 
@@ -143,6 +145,48 @@ export const overview = () => (
         id="myField"
         placeholder="This is such a great input"
         icon={<SearchIcon />}
+        link={
+          <TextLink icon={<LockIcon />} href="https://f36.contentful.com/">
+            go to link
+          </TextLink>
+        }
+      />
+    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Text Input with countCharacters and validation message
+    </SectionHeading>
+
+    <Flex marginBottom="spacingL">
+      <TextInput
+        label="My amazing label"
+        name="someOtherOption"
+        value="someOtherValue"
+        id="myField"
+        placeholder="This is such a great input"
+        countCharacters
+        maxLength={20}
+        validationMessage="It's great but you need to fix something"
+        link={
+          <TextLink icon={<LockIcon />} href="https://f36.contentful.com/">
+            go to link
+          </TextLink>
+        }
+      />
+    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Text Input standalone - no label - think twice before you use it
+    </SectionHeading>
+
+    <Flex marginBottom="spacingL">
+      <TextInput
+        label="My amazing label"
+        name="someOtherOption"
+        value="someOtherValue"
+        id="myField"
+        placeholder="This is such a great input"
+        isStandalone
         link={
           <TextLink icon={<LockIcon />} href="https://f36.contentful.com/">
             go to link

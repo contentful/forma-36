@@ -76,7 +76,7 @@ export const _TextInput = (
           <Label htmlFor={id} required={isRequired}>
             {label}
           </Label>
-          {link && <TextLink as="button">{link}</TextLink>}
+          {link && link}
         </Flex>
       )}
 
@@ -93,16 +93,25 @@ export const _TextInput = (
         isInvalid={isInvalid}
         isDisabled={isDisabled}
         icon={icon}
+        maxLength={maxLength}
       />
       {!isStandalone && (
         <>
-          {(helpText || countCharacters) && (
+          {(helpText || countCharacters || validationMessage) && (
             <Flex justifyContent="space-between">
-              {helpText && (
-                <Box marginTop="spacingXs">
-                  <HelpText>{helpText}</HelpText>
-                </Box>
-              )}
+              <Flex flexDirection="column">
+                {helpText && (
+                  <Box marginTop="spacingXs">
+                    <HelpText>{helpText}</HelpText>
+                  </Box>
+                )}
+                {validationMessage && (
+                  <Box marginTop="spacingXs">
+                    <ValidationMessage>{validationMessage}</ValidationMessage>
+                  </Box>
+                )}
+              </Flex>
+
               {countCharacters && maxLength && (
                 <Box marginTop="spacingXs" marginLeft="spacingM">
                   <HelpText>
@@ -111,11 +120,6 @@ export const _TextInput = (
                 </Box>
               )}
             </Flex>
-          )}
-          {validationMessage && (
-            <Box marginTop="spacingXs">
-              <ValidationMessage>{validationMessage}</ValidationMessage>
-            </Box>
           )}
         </>
       )}
