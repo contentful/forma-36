@@ -34,6 +34,8 @@ by either saving all selected items in an array of items or forwarding only the 
 
 ## Code examples
 
+Default Usage, set the selected item as value of the text input.
+
 ```jsx
 // import { Autocomplete } from '@contentful/forma-36-react-components';
 function AutocompleteExample() {
@@ -48,14 +50,11 @@ function AutocompleteExample() {
   const [filteredItems, setFilteredItems] = React.useState(items);
   const [selectedItem, setSelectedItem] = React.useState();
 
-  const handleQueryChange = React.useCallback(
-    (query) => {
-      setFilteredItems(
-        query ? items.filter((item) => item.label.includes(query)) : items,
-      );
-    },
-    [setFilteredItems],
-  );
+  const handleQueryChange = (query) => {
+    setFilteredItems(
+      query ? items.filter((item) => item.label.includes(query)) : items,
+    );
+  };
 
   const handleOnChange = (item) => {
     setSelectedItem(item.label);
@@ -78,6 +77,119 @@ function AutocompleteExample() {
         options.map((option) => <span key={option.value}>{option.label}</span>)
       }
     </Autocomplete>
+  );
+}
+```
+
+Usage for filling in a list of items.
+
+```jsx
+// import { Autocomplete } from '@contentful/forma-36-react-components';
+function AutocompleteExample() {
+  const items = [
+    { value: 1, label: 'Ananas' },
+    { value: 2, label: 'Apple' },
+    { value: 3, label: 'Banana' },
+    { value: 4, label: 'Lemon' },
+    { value: 5, label: 'Avocado' },
+  ];
+
+  const [filteredItems, setFilteredItems] = React.useState(items);
+  const [selectedItems, setSelectedItems] = React.useState([]);
+
+  const handleQueryChange = (query) => {
+    setFilteredItems(
+      query ? items.filter((item) => item.label.includes(query)) : items,
+    );
+  };
+
+  const handleOnChange = (item) => {
+    setSelectedItems((tagElements) => [...tagElements, item.label]);
+  };
+
+  return (
+    <>
+      <Autocomplete
+        items={filteredItems}
+        onQueryChange={handleQueryChange}
+        width={'full'}
+        placeholder={'search'}
+        emptyListMessage={'no result found'}
+        noMatchesMessage={'no matches'}
+        dropdownProps={{ isFullWidth: true }}
+        disabled={false}
+        onChange={handleOnChange}
+        maxHeight={100}
+      >
+        {(options) =>
+          options.map((option) => (
+            <span key={option.value}>{option.label}</span>
+          ))
+        }
+      </Autocomplete>
+      <h3>Shopping List</h3>
+      <ul>
+        {selectedItems.map((item, index) => (
+          <li key={`element-${item}-${index}`}>{item}</li>
+        ))}
+      </ul>
+    </>
+  );
+}
+```
+
+Example for showing error messages
+
+```jsx
+// import { Autocomplete } from '@contentful/forma-36-react-components';
+function AutocompleteExample() {
+  const items = [
+    { value: 1, label: 'Ananas' },
+    { value: 2, label: 'Apple' },
+    { value: 3, label: 'Banana' },
+    { value: 4, label: 'Lemon' },
+    { value: 5, label: 'Avocado' },
+  ];
+
+  const [filteredItems, setFilteredItems] = React.useState(items);
+  const [selectedItem, setSelectedItem] = React.useState();
+
+  const handleQueryChange = (query) => {
+    setFilteredItems(
+      query ? items.filter((item) => item.label.includes(query)) : items,
+    );
+  };
+
+  const handleOnChange = (item) => {
+    setSelectedItem(item.label);
+  };
+
+  return (
+    <div>
+      <span>Favorit Fruit *</span>
+      <Autocomplete
+        id="autocomplete"
+        items={filteredItems}
+        onQueryChange={handleQueryChange}
+        width={'full'}
+        placeholder={'search'}
+        emptyListMessage={'no result found'}
+        noMatchesMessage={'no matches'}
+        dropdownProps={{ isFullWidth: true }}
+        disabled={false}
+        onChange={handleOnChange}
+        selectedItem={selectedItem}
+        error={true}
+        validationMessage="This item is required"
+      >
+        {(options) =>
+          options.map((option) => (
+            <span key={option.value}>{option.label}</span>
+          ))
+        }
+      </Autocomplete>
+      <p style={{ marginTop: '45px' }}>* Required fields</p>
+    </div>
   );
 }
 ```

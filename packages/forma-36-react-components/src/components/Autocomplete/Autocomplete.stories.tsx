@@ -64,6 +64,47 @@ Basic.args = {
   emptyListMessage: 'There are no items to choose from',
   noMatchesMessage: 'No matches',
 };
+
+export const ErrorHandling = (args: AutocompleteProps<{}>) => {
+  const [filteredItems, setFilteredItems] = useState(items);
+  const [selectedItem, setSelectedItem] = useState('');
+
+  const handleQueryChange = (query: string) => {
+    setFilteredItems(
+      query ? items.filter((item) => item.label.includes(query)) : items,
+    );
+  };
+
+  const handleChange = (item: Item) => {
+    setSelectedItem(item.label);
+  };
+
+  return (
+    <Autocomplete<Item>
+      {...args}
+      onQueryChange={handleQueryChange}
+      items={filteredItems}
+      onChange={handleChange}
+      selectedItem={selectedItem}
+      error={true}
+      validationMessage="This field is required"
+    >
+      {(options: Item[]) =>
+        options.map((option: Item) => (
+          <span key={option.value}>{option.label}</span>
+        ))
+      }
+    </Autocomplete>
+  );
+};
+
+ErrorHandling.args = {
+  placeholder: 'Find fruit',
+  width: 'full',
+  emptyListMessage: 'There are no items to choose from',
+  noMatchesMessage: 'No matches',
+};
+
 export const MultiSelect = (args: AutocompleteProps<{}>) => {
   const [filteredItems, setFilteredItems] = useState(items);
   const [tagElements, setTagElements] = useState([]);
@@ -92,10 +133,10 @@ export const MultiSelect = (args: AutocompleteProps<{}>) => {
           ))
         }
       </Autocomplete>
-      Shopping List:
+      <h3>Shopping List:</h3>
       <ul>
-        {tagElements.map((tag: string) => (
-          <li key={`element-${tag}`}>{tag}</li>
+        {tagElements.map((tag: string, idx: number) => (
+          <li key={`element-${tag}-${idx}`}>{tag}</li>
         ))}
       </ul>
     </>

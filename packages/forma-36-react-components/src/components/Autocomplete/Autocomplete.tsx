@@ -10,6 +10,7 @@ import {
 } from '../Dropdown';
 import { SkeletonBodyText, SkeletonContainer } from '../Skeleton';
 import { IconButton } from '../IconButton';
+import { ValidationMessage } from '../ValidationMessage';
 import { KEY_CODE } from './utils';
 import styles from './Autocomplete.css';
 
@@ -50,6 +51,8 @@ export interface AutocompleteProps<T extends {}> {
   willClearQueryOnClose?: boolean;
   dropdownProps?: DropdownProps;
   renderToggleElement?: (props: RenderToggleElementProps) => React.ReactElement;
+  error?: boolean;
+  validationMessage?: string;
 }
 
 interface State {
@@ -115,6 +118,8 @@ export const Autocomplete = <T extends {}>({
   willClearQueryOnClose,
   dropdownProps,
   renderToggleElement,
+  error,
+  validationMessage,
 }: AutocompleteProps<T>) => {
   const listRef = useRef<HTMLDivElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -194,36 +199,46 @@ export const Autocomplete = <T extends {}>({
   );
 
   const dropdownClassNames = cn(styles.autocompleteDropdown, className);
+  const autocompleteClassNames = cn(styles.autocompleteInput, {
+    [styles.autocompleteInputNegative]: error,
+  });
 
   function renderDefaultToggleElement(toggleProps: RenderToggleElementProps) {
     return (
-      <div className={styles.autocompleteInput}>
-        <TextInput
-          value={toggleProps.selectedItem || toggleProps.query}
-          onChange={(e: ChangeEvent<HTMLInputElement>) =>
-            toggleProps.onChange(e.target.value)
-          }
-          onFocus={toggleProps.onFocus}
-          onKeyDown={toggleProps.onKeyDown}
-          disabled={toggleProps.disabled}
-          placeholder={toggleProps.placeholder}
-          width={toggleProps.width}
-          inputRef={toggleProps.inputRef}
-          testId="autocomplete.input"
-          type="search"
-          autoComplete="off"
-          aria-label={toggleProps.name}
-        />
-        <IconButton
-          className={styles.inputIconButton}
-          tabIndex={-1}
-          disabled={toggleProps.disabled}
-          buttonType="muted"
-          iconProps={{ icon: toggleProps.query ? 'Close' : 'ChevronDown' }}
-          onClick={toggleProps.onToggle}
-          label={toggleProps.query ? 'Clear' : 'Show list'}
-        />
-      </div>
+      <>
+        <div className={autocompleteClassNames}>
+          <TextInput
+            value={toggleProps.selectedItem || toggleProps.query}
+            onChange={(e: ChangeEvent<HTMLInputElement>) =>
+              toggleProps.onChange(e.target.value)
+            }
+            onFocus={toggleProps.onFocus}
+            onKeyDown={toggleProps.onKeyDown}
+            disabled={toggleProps.disabled}
+            placeholder={toggleProps.placeholder}
+            width={toggleProps.width}
+            inputRef={toggleProps.inputRef}
+            testId="autocomplete.input"
+            type="search"
+            autoComplete="off"
+            aria-label={toggleProps.name}
+          />
+          <IconButton
+            className={styles.inputIconButton}
+            tabIndex={-1}
+            disabled={toggleProps.disabled}
+            buttonType="muted"
+            iconProps={{ icon: toggleProps.query ? 'Close' : 'ChevronDown' }}
+            onClick={toggleProps.onToggle}
+            label={toggleProps.query ? 'Clear' : 'Show list'}
+          />
+        </div>
+        {validationMessage && (
+          <ValidationMessage className={styles.validationMessage}>
+            {validationMessage}
+          </ValidationMessage>
+        )}
+      </>
     );
   }
 
