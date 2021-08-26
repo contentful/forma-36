@@ -78,9 +78,7 @@
 }
 
 .InlineEntryCard__actions {
-  display: inline-flex;
-  position: static;
-  margin-left: calc(1rem * (6 / var(--font-base-default)));
+  margin-left: var(--spacing-2xs);
 }
 
 .InlineEntryCard__spinner--enter {

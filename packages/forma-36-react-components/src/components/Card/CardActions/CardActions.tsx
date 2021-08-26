@@ -1,6 +1,6 @@
 import React, { Component, MouseEvent as ReactMouseEvent } from 'react';
 import { MoreHorizontalIcon } from '@contentful/f36-icons';
-
+import { css, cx } from 'emotion';
 import { Dropdown, DropdownList, DropdownProps } from '../../Dropdown';
 import { ButtonProps, Button } from '@contentful/f36-button';
 
@@ -71,14 +71,26 @@ export class CardActions extends Component<CardActionsProps, CardActionsState> {
           });
         }}
         position="bottom-right"
-        className={className}
+        className={css({ display: 'inline-flex' })}
         isOpen={this.state.isDropdownOpen}
         testId={testId}
         toggleElement={
           <Button
             variant="transparent"
+            size="small"
             isDisabled={isDisabled}
             {...iconButtonProps}
+            className={cx(
+              css({
+                paddingTop: 0,
+                paddingBottom: 0,
+                height: '20px',
+                minHeight: '20px',
+                border: 'none',
+              }),
+              className,
+              iconButtonProps?.className,
+            )}
             onClick={(event) => {
               event.preventDefault();
               this.handleClick(event);

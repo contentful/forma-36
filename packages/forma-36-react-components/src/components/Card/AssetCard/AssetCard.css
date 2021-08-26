@@ -64,4 +64,5 @@
 
 .AssetCard__actions {
   margin-left: var(--spacing-xs);
+  margin-right: calc(-1 * var(--spacing-xs));
 }
