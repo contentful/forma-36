@@ -13,8 +13,6 @@ module.exports = function (file, api) {
     },
   })(file, api);
 
-  file.source = source;
-
   return justRenamePropsCodemod({
     componentName: 'ListItem',
     renameMap: {},
