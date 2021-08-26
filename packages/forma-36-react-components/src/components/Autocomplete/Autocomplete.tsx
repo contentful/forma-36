@@ -10,7 +10,7 @@ import {
   DropdownProps,
 } from '../Dropdown';
 import { SkeletonBodyText, SkeletonContainer } from '@contentful/f36-skeleton';
-import { IconButton } from '../IconButton';
+import { Button } from '@contentful/f36-button';
 import { KEY_CODE } from './utils';
 import styles from './Autocomplete.css';
 
@@ -215,15 +215,18 @@ export const Autocomplete = <T extends {}>({
           autoComplete="off"
           aria-label={props.name}
         />
-        <IconButton
-          className={styles.inputIconButton}
+        <Button
+          variant="transparent"
           tabIndex={-1}
-          disabled={props.disabled}
-          buttonType="muted"
-          iconProps={{ as: props.query ? CloseIcon : ChevronDownIcon }}
+          isDisabled={props.disabled}
           onClick={props.onToggle}
-          label={props.query ? 'Clear' : 'Show list'}
-        />
+        >
+          {props.query ? (
+            <CloseIcon aria-label="Cleaer" />
+          ) : (
+            <ChevronDownIcon aria-label="Show list" />
+          )}
+        </Button>
       </div>
     );
   }
