@@ -63,7 +63,7 @@ const _BaseInput: PolymorphicComponentWithRef<
 
   const handleFocus = (e: FocusEvent) => {
     e.persist();
-    if (isDisabled) {
+    if (isDisabled || isReadOnly) {
       (e.target as HTMLInputElement).select();
     }
   };

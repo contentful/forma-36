@@ -36,7 +36,7 @@ describe('InputBase', function () {
   });
 
   it('renders the component with a value', () => {
-    const { getByLabelText } = render(
+    const { getByDisplayValue } = render(
       <BaseInput
         className="my-extra-class"
         id="InputBase"
@@ -45,9 +45,7 @@ describe('InputBase', function () {
       />,
     );
 
-    expect(getByLabelText('InputBase').getAttribute('value')).toEqual(
-      'someValue',
-    );
+    expect(getByDisplayValue('someValue')).toBeInTheDocument();
   });
 
   it('renders textarea when as property is set in the component', () => {
