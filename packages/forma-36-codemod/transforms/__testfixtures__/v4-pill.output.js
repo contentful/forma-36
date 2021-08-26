@@ -17,5 +17,4 @@ import { Pill } from "@contentful/f36-components";
       variant="muted"
       style={{ padding: '0.375rem 0.625rem' }}
     />
-  }
-/>;
+  } />;

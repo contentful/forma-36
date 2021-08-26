@@ -1,9 +1,6 @@
 const { justRenamePropsCodemod } = require('./common/just-rename-props');
 
 module.exports = justRenamePropsCodemod({
-  componentName: 'Note',
-  renameMap: {
-    noteType: 'variant',
-    hasCloseButton: 'withCloseButton',
-  },
+  componentName: 'Spinner',
+  renameMap: {},
 });
