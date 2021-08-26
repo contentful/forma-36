@@ -130,7 +130,6 @@ export type {
 } from '@contentful/f36-datetime';
 export * from './components/EntityList';
 export * from './components/Form';
-export * from './components/IconButton';
 export * from './components/Select';
 export * from './components/SelectField';
 export * from './components/Switch';

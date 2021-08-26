@@ -2,6 +2,7 @@
 
 .autocompleteDropdown {
   display: block;
+  position: relative;
 }
 
 .autocompleteInput {
@@ -17,7 +18,8 @@
 }
 
 .autocompleteInput .inputIconButton {
-  display: flex;
-  position: relative;
-  margin-left: calc(-1 * var(--spacing-xl));
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  z-index: 2;
 }

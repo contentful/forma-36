@@ -1,12 +1,14 @@
 import React, { HTMLProps } from 'react';
 import cn from 'classnames';
+import { css } from 'emotion';
 import type { ReactElement } from 'react';
 import { Heading, Paragraph } from '@contentful/f36-typography';
 import { ChevronLeftIcon } from '@contentful/f36-icons';
 import type { IconComponent } from '@contentful/f36-icon';
+import { Button } from '@contentful/f36-button';
 
-import { IconButton } from '../IconButton';
 import styles from './Workbench.css';
+import tokens from '@contentful/f36-tokens';
 
 export interface WorkbenchHeaderProps {
   title?: ReactElement | string;
@@ -17,6 +19,22 @@ export interface WorkbenchHeaderProps {
   className?: string;
   testId?: string;
 }
+
+const getBackButtonStyles = () => {
+  return css({
+    margin: 0,
+    width: '50px',
+    height: '69px',
+    svg: {
+      fill: tokens.gray400,
+    },
+    '&:hover, &:focus': {
+      svg: {
+        fill: tokens.gray500,
+      },
+    },
+  });
+};
 
 export function WorkbenchHeader({
   actions,
@@ -36,21 +54,18 @@ export function WorkbenchHeader({
     >
       {onBack ? (
         <div className={styles['Workbench__header-back']}>
-          <IconButton
+          <Button
+            variant="transparent"
+            testId="workbench-back-btn"
+            className={getBackButtonStyles()}
             onClick={() => {
               if (typeof onBack === 'function') {
                 onBack();
               }
             }}
-            testId="workbench-back-btn"
-            className={styles['Workbench__header-back-button']}
-            label="Back"
-            buttonType="muted"
-            iconProps={{
-              as: ChevronLeftIcon,
-              size: 'large',
-            }}
-          />
+          >
+            <ChevronLeftIcon aria-label="Back" size="large" />
+          </Button>
         </div>
       ) : null}
       {Icon ? (
