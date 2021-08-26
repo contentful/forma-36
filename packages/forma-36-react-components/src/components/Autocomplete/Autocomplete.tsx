@@ -215,18 +215,21 @@ export const Autocomplete = <T extends {}>({
           autoComplete="off"
           aria-label={props.name}
         />
-        <Button
-          variant="transparent"
-          tabIndex={-1}
-          isDisabled={props.disabled}
-          onClick={props.onToggle}
-        >
-          {props.query ? (
-            <CloseIcon aria-label="Cleaer" />
-          ) : (
-            <ChevronDownIcon aria-label="Show list" />
-          )}
-        </Button>
+        <div className={styles.inputIconButton}>
+          <Button
+            variant="transparent"
+            tabIndex={-1}
+            isDisabled={props.disabled}
+            onClick={props.onToggle}
+            size="small"
+          >
+            {props.query ? (
+              <CloseIcon aria-label="Clear" variant="muted" />
+            ) : (
+              <ChevronDownIcon aria-label="Show list" variant="muted" />
+            )}
+          </Button>
+        </div>
       </div>
     );
   }
