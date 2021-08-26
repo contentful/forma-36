@@ -19,7 +19,7 @@ const getStyles = ({ isDisabled, isInvalid }) => ({
     fontFamily: tokens.fontStackPrimary,
     fontSize: tokens.fontSizeM,
     lineHeight: tokens.lineHeightM,
-    padding: '10px 12px',
+    padding: `10px ${tokens.spacingS}`,
     margin: 0,
     cursor: isDisabled ? 'not-allowed' : 'auto',
     width: '100%',
@@ -57,7 +57,7 @@ const getStyles = ({ isDisabled, isInvalid }) => ({
   }),
 
   inputWithIcon: css({
-    paddingLeft: '40px',
+    paddingLeft: '38px',
   }),
 
   iconPlaceholder: css({
@@ -65,7 +65,7 @@ const getStyles = ({ isDisabled, isInvalid }) => ({
     pointerEvents: 'none',
     top: 0,
     bottom: 0,
-    left: '12px',
+    left: tokens.spacingS,
     display: 'flex',
     alignItems: 'center',
     zIndex: tokens.zIndexDefault,
