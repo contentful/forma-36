@@ -1,6 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component as disabled 1`] = `
+.emotion-3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
 .emotion-1 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -46,8 +53,13 @@ exports[`renders the component as disabled 1`] = `
   border-color: transparent;
   font-size: 0.875rem;
   line-height: 1.25;
-  padding: 0.5rem 1rem;
-  min-height: 40px;
+  padding: 0.25rem 0.75rem;
+  min-height: 32px;
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 20px;
+  min-height: 20px;
+  border: none;
 }
 
 .emotion-2 svg {
@@ -76,7 +88,7 @@ exports[`renders the component as disabled 1`] = `
 }
 
 <div
-  class="Dropdown"
+  class="Dropdown emotion-3"
   data-test-id="cf-ui-card-actions"
 >
   <button
@@ -111,6 +123,13 @@ exports[`renders the component as disabled 1`] = `
 `;
 
 exports[`renders the component using a multiple dropdown lists 1`] = `
+.emotion-3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
 .emotion-2 {
   box-sizing: border-box;
   border: 1px solid;
@@ -142,8 +161,13 @@ exports[`renders the component using a multiple dropdown lists 1`] = `
   border-color: transparent;
   font-size: 0.875rem;
   line-height: 1.25;
-  padding: 0.5rem 1rem;
-  min-height: 40px;
+  padding: 0.25rem 0.75rem;
+  min-height: 32px;
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 20px;
+  min-height: 20px;
+  border: none;
 }
 
 .emotion-2 svg {
@@ -186,7 +210,7 @@ exports[`renders the component using a multiple dropdown lists 1`] = `
 }
 
 <div
-  class="Dropdown"
+  class="Dropdown emotion-3"
   data-test-id="cf-ui-card-actions"
 >
   <button
@@ -220,6 +244,13 @@ exports[`renders the component using a multiple dropdown lists 1`] = `
 `;
 
 exports[`renders the component using a single dropdown list 1`] = `
+.emotion-3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
 .emotion-2 {
   box-sizing: border-box;
   border: 1px solid;
@@ -251,8 +282,13 @@ exports[`renders the component using a single dropdown list 1`] = `
   border-color: transparent;
   font-size: 0.875rem;
   line-height: 1.25;
-  padding: 0.5rem 1rem;
-  min-height: 40px;
+  padding: 0.25rem 0.75rem;
+  min-height: 32px;
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 20px;
+  min-height: 20px;
+  border: none;
 }
 
 .emotion-2 svg {
@@ -295,7 +331,7 @@ exports[`renders the component using a single dropdown list 1`] = `
 }
 
 <div
-  class="Dropdown"
+  class="Dropdown emotion-3"
   data-test-id="cf-ui-card-actions"
 >
   <button
@@ -329,6 +365,13 @@ exports[`renders the component using a single dropdown list 1`] = `
 `;
 
 exports[`renders the component with an additional class name 1`] = `
+.emotion-3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
 .emotion-2 {
   box-sizing: border-box;
   border: 1px solid;
@@ -360,8 +403,13 @@ exports[`renders the component with an additional class name 1`] = `
   border-color: transparent;
   font-size: 0.875rem;
   line-height: 1.25;
-  padding: 0.5rem 1rem;
-  min-height: 40px;
+  padding: 0.25rem 0.75rem;
+  min-height: 32px;
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 20px;
+  min-height: 20px;
+  border: none;
 }
 
 .emotion-2 svg {
@@ -404,13 +452,13 @@ exports[`renders the component with an additional class name 1`] = `
 }
 
 <div
-  class="Dropdown my-extra-class"
+  class="Dropdown emotion-3"
   data-test-id="cf-ui-card-actions"
 >
   <button
     aria-expanded="false"
     aria-haspopup="menu"
-    class="emotion-2"
+    class="my-extra-class emotion-2"
     data-node-id="dropdown-trigger-61728000"
     data-test-id="cf-ui-button"
     type="button"
@@ -438,6 +486,13 @@ exports[`renders the component with an additional class name 1`] = `
 `;
 
 exports[`renders the component with published status 1`] = `
+.emotion-3 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
 .emotion-2 {
   box-sizing: border-box;
   border: 1px solid;
@@ -469,8 +524,13 @@ exports[`renders the component with published status 1`] = `
   border-color: transparent;
   font-size: 0.875rem;
   line-height: 1.25;
-  padding: 0.5rem 1rem;
-  min-height: 40px;
+  padding: 0.25rem 0.75rem;
+  min-height: 32px;
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 20px;
+  min-height: 20px;
+  border: none;
 }
 
 .emotion-2 svg {
@@ -513,7 +573,7 @@ exports[`renders the component with published status 1`] = `
 }
 
 <div
-  class="Dropdown"
+  class="Dropdown emotion-3"
   data-test-id="cf-ui-card-actions"
 >
   <button
