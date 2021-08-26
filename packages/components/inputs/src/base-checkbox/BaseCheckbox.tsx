@@ -109,7 +109,7 @@ function _BaseCheckbox(
         disabled={isDisabled}
         checked={checked}
         role={type}
-        aria-checked={checked}
+        aria-checked={isIndeterminate ? 'mixed' : checked}
         ref={inputRef}
         required={isRequired}
         id={inputId}
