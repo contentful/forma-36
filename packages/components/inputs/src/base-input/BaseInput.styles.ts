@@ -68,6 +68,7 @@ const getStyles = ({ isDisabled, isInvalid }) => ({
     left: '12px',
     display: 'flex',
     alignItems: 'center',
+    zIndex: tokens.zIndexDefault,
   }),
 });
 
