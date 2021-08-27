@@ -2,36 +2,21 @@ import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { PillVariants } from './types';
 
-const getCloseButtonStyle = (variant: PillVariants) => {
-  const variantStyle = (variant: PillVariants) => {
-    switch (variant) {
-      case 'active':
-        return {
-          borderLeft: `1px solid ${tokens.gray400}`,
-          '&:hover, &:focus, &:active': {
-            backgroundColor: tokens.gray300,
-          },
-        };
-      default:
-        return {
-          borderLeft: `1px solid ${tokens.gray400}`,
-          '&:hover, &:focus, &:active': {
-            backgroundColor: tokens.gray300,
-          },
-        };
-    }
-  };
-
+const getCloseButtonStyle = () => {
   return css({
+    borderLeft: `1px solid ${tokens.gray400}`,
     borderTopLeftRadius: 0,
     borderBottomLeftRadius: 0,
     padding: tokens.spacingXs,
+    minHeight: 'auto',
     transition: `background ${tokens.transitionDurationShort} ${tokens.transitionEasingDefault},
     opacity ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
-    ...variantStyle(variant),
     '&:focus': {
       boxShadow: tokens.glowMuted,
       borderLeftColor: tokens.gray300,
+    },
+    '&:hover, &:focus, &:active': {
+      backgroundColor: tokens.gray300,
     },
   });
 };
@@ -47,17 +32,6 @@ const getLabelStyle = () => {
     textOverflow: 'ellipsis',
     overflow: 'hidden',
   });
-};
-
-const icon = {
-  fill: tokens.gray600,
-  verticalAlign: 'middle',
-  outline: 'none',
-};
-
-const dragIcon = {
-  padding: tokens.spacingXs,
-  paddingRight: 0,
 };
 
 const getPillStyle = (variant: PillVariants) => {
@@ -94,10 +68,18 @@ const getPillStyle = (variant: PillVariants) => {
 
 export function getPillStyles(variant: PillVariants) {
   return {
-    closeButton: getCloseButtonStyle(variant),
+    closeButton: getCloseButtonStyle(),
     label: getLabelStyle(),
-    icon: css(icon),
-    dragIcon: css(dragIcon),
+    icon: css({
+      fill: tokens.gray600,
+      verticalAlign: 'middle',
+      outline: 'none',
+    }),
+    dragIcon: css({
+      padding: tokens.spacingXs,
+      paddingRight: 0,
+      cursor: 'move',
+    }),
     pill: getPillStyle(variant),
   };
 }
