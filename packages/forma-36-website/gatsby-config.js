@@ -213,6 +213,10 @@ module.exports = {
                 link: '/components/inputs/src/base-checkbox/',
               },
               {
+                name: 'BaseInput',
+                link: '/components/inputs/src/base-input/',
+              },
+              {
                 name: 'ControlledInput',
                 link: '/components/inputs/src/controlled-input/',
               },
