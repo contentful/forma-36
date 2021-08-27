@@ -62,7 +62,10 @@ const _Button: PolymorphicComponentWithRef<
   const iconContent = icon && !isLoading && (
     <Flex as="span">
       {React.cloneElement(icon, {
-        className: styles.buttonIcon({ alignIcon, hasChildren: !!children }),
+        className: cx(
+          styles.buttonIcon({ alignIcon, hasChildren: !!children }),
+          icon.props.className,
+        ),
         size: `${size === 'large' ? 'medium' : 'small'}`,
       })}
     </Flex>
