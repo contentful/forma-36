@@ -1,39 +1,12 @@
-import React, {
-  useCallback,
-  useState,
-  ChangeEvent,
-  ChangeEventHandler,
-} from 'react';
+import React, { useCallback, useState, ChangeEvent } from 'react';
 import { BaseInput } from '@contentful/f36-inputs';
-import { Box, Flex, CommonProps } from '@contentful/f36-core';
+import { Box, Flex } from '@contentful/f36-core';
 import { Label } from '@contentful/f36-forms';
 import { ValidationMessage } from '@contentful/f36-validation-message';
 import { HelpText } from '@contentful/f36-helptext';
 import { CopyButton } from '@contentful/f36-copybutton';
 import getStyles from './TextInput.styles';
-
-export interface TextInputProps extends CommonProps {
-  isStandalone?: boolean;
-  isRequired?: boolean;
-  validationMessage?: string;
-  helpText?: string;
-  countCharacters?: boolean;
-  className?: string;
-  testId?: string;
-  link?: React.ReactElement;
-  label: string;
-  maxLength?: number;
-  value?: string;
-  placeholder?: string;
-  name?: string;
-  id?: string;
-  isInvalid?: boolean;
-  isDisabled?: boolean;
-  withCopyButton?: boolean;
-  onCopy?: (value: string) => void;
-  onChange?: ChangeEventHandler<HTMLInputElement>;
-  icon?: React.ReactElement;
-}
+import { TextInputProps } from './types';
 
 export const _TextInput = (
   {
