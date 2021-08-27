@@ -253,6 +253,10 @@ module.exports = {
                 link: '/components/select-field/',
               },
               {
+                name: 'Switch',
+                link: '/components/inputs/src/switch/',
+              },
+              {
                 name: 'TextField',
                 link: '/components/text-field/',
               },
