@@ -9,7 +9,7 @@ const {
   shouldSkipUpdateImport,
 } = require('../../utils/config');
 
-module.exports.renamePropsCodemod = function (props) {
+module.exports.modifyPropsCodemod = function (props) {
   return function (file, api) {
     const j = api.jscodeshift;
 
@@ -40,6 +40,10 @@ module.exports.renamePropsCodemod = function (props) {
         modifiedAttributes = renameProperties(modifiedAttributes, {
           renameMap: props.renameMap,
         });
+
+        if (props.modifyFn) {
+          modifiedAttributes = props.modifyFn(modifiedAttributes, j);
+        }
 
         return modifiedAttributes;
       },
