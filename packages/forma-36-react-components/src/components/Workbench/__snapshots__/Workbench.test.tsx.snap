@@ -64,12 +64,18 @@ exports[`renders the component (complex) 1`] = `
 }
 
 .emotion-3:active {
+  -webkit-transition: none;
+  transition: none;
+}
+
+.emotion-3:active,
+.emotion-3:active:hover {
   background-color: #F7F9FA;
   border-color: #F7F9FA;
 }
 
 .emotion-3:focus {
-  background-color: transparent;
+  background-color: none;
   box-shadow: 0px 0px 0px 3px #E7EBEE;
 }
 
@@ -230,12 +236,18 @@ exports[`renders the component (simple) 1`] = `
 }
 
 .emotion-3:active {
+  -webkit-transition: none;
+  transition: none;
+}
+
+.emotion-3:active,
+.emotion-3:active:hover {
   background-color: #F7F9FA;
   border-color: #F7F9FA;
 }
 
 .emotion-3:focus {
-  background-color: transparent;
+  background-color: none;
   box-shadow: 0px 0px 0px 3px #E7EBEE;
 }
 

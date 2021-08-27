@@ -72,12 +72,18 @@ exports[`renders the component as disabled 1`] = `
 }
 
 .emotion-2:active {
+  -webkit-transition: none;
+  transition: none;
+}
+
+.emotion-2:active,
+.emotion-2:active:hover {
   background-color: #F7F9FA;
   border-color: #F7F9FA;
 }
 
 .emotion-2:focus {
-  background-color: transparent;
+  background-color: none;
   box-shadow: 0px 0px 0px 3px #E7EBEE;
 }
 
@@ -174,12 +180,18 @@ exports[`renders the component using a multiple dropdown lists 1`] = `
 }
 
 .emotion-2:active {
+  -webkit-transition: none;
+  transition: none;
+}
+
+.emotion-2:active,
+.emotion-2:active:hover {
   background-color: #F7F9FA;
   border-color: #F7F9FA;
 }
 
 .emotion-2:focus {
-  background-color: transparent;
+  background-color: none;
   box-shadow: 0px 0px 0px 3px #E7EBEE;
 }
 
@@ -289,12 +301,18 @@ exports[`renders the component using a single dropdown list 1`] = `
 }
 
 .emotion-2:active {
+  -webkit-transition: none;
+  transition: none;
+}
+
+.emotion-2:active,
+.emotion-2:active:hover {
   background-color: #F7F9FA;
   border-color: #F7F9FA;
 }
 
 .emotion-2:focus {
-  background-color: transparent;
+  background-color: none;
   box-shadow: 0px 0px 0px 3px #E7EBEE;
 }
 
@@ -404,12 +422,18 @@ exports[`renders the component with an additional class name 1`] = `
 }
 
 .emotion-2:active {
+  -webkit-transition: none;
+  transition: none;
+}
+
+.emotion-2:active,
+.emotion-2:active:hover {
   background-color: #F7F9FA;
   border-color: #F7F9FA;
 }
 
 .emotion-2:focus {
-  background-color: transparent;
+  background-color: none;
   box-shadow: 0px 0px 0px 3px #E7EBEE;
 }
 
@@ -519,12 +543,18 @@ exports[`renders the component with published status 1`] = `
 }
 
 .emotion-2:active {
+  -webkit-transition: none;
+  transition: none;
+}
+
+.emotion-2:active,
+.emotion-2:active:hover {
   background-color: #F7F9FA;
   border-color: #F7F9FA;
 }
 
 .emotion-2:focus {
-  background-color: transparent;
+  background-color: none;
   box-shadow: 0px 0px 0px 3px #E7EBEE;
 }
 
