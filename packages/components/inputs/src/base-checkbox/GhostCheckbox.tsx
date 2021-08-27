@@ -1,14 +1,12 @@
 import React from 'react';
 import { DoneIcon, MinusIcon, CloseIcon } from '@contentful/f36-icons';
-import { checkboxTypes } from './types';
+import { BaseCheckboxProps } from './types';
 import getStyles from './GhostCheckbox.styles';
 
-export interface GhostCheckboxProps {
-  type: checkboxTypes;
-  isChecked?: boolean;
-  isIndeterminate?: boolean;
-  isDisabled?: boolean;
-}
+export type GhostCheckboxProps = Pick<
+  BaseCheckboxProps,
+  'type' | 'isIndeterminate' | 'isChecked' | 'isDisabled'
+>;
 
 export const GhostCheckbox = (props: GhostCheckboxProps) => {
   const { type, isIndeterminate, isChecked, isDisabled } = props;

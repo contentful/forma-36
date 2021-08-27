@@ -1,17 +1,13 @@
+import type { ComponentProps } from 'react';
 import type { BaseInputInternalProps } from '../base-input/types';
 
 export type checkboxTypes = 'checkbox' | 'radio' | 'switch';
 
-type ommitedProps =
-  | 'type'
-  | 'as'
-  | 'placeholder'
-  | 'isReadOnly'
-  | 'icon'
-  | 'isInvalid';
-
 export interface BaseCheckboxProps
-  extends Omit<BaseInputInternalProps, ommitedProps> {
+  extends Omit<
+    BaseInputInternalProps,
+    'type' | 'as' | 'placeholder' | 'isReadOnly' | 'icon' | 'isInvalid'
+  > {
   /**
    * Defines the type of the input to be rendered
    * @default checkbox
@@ -35,5 +31,11 @@ export interface BaseCheckboxProps
   /**
    * Additional props that are passed to the input element
    */
-  inputProps?: Partial<JSX.IntrinsicElements['input']>;
+  inputProps?: Partial<ComponentProps<'input'>>;
 }
+
+export type CheckboxProps = Omit<BaseCheckboxProps, 'type'>;
+export type RadioButtonProps = Omit<
+  BaseCheckboxProps,
+  'type' | 'isIndeterminate'
+>;
