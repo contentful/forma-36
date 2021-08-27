@@ -21,7 +21,6 @@ function _Tab(
     children,
     className,
     isDisabled = false,
-    href,
     id,
     onSelect,
     isSelected = false,
@@ -64,36 +63,20 @@ function _Tab(
   if (isDisabled) {
     elementProps['aria-disabled'] = true;
   }
-  if (href) {
-    elementProps['href'] = href;
-    if (isSelected) {
-      elementProps['aria-current'] = 'page';
-    }
-    return (
-      <Box
-        as="a"
-        {...elementProps}
-        {...otherProps}
-        ref={ref as React.Ref<HTMLAnchorElement>}
-      >
-        {children}
-      </Box>
-    );
-  } else {
-    elementProps['aria-selected'] = isSelected;
-    elementProps['role'] = 'tab';
-    elementProps['aria-controls'] = id;
-    return (
-      <Box
-        as="div"
-        {...elementProps}
-        {...otherProps}
-        ref={ref as React.Ref<HTMLDivElement>}
-      >
-        {children}
-      </Box>
-    );
-  }
+
+  elementProps['aria-selected'] = isSelected;
+  elementProps['role'] = 'tab';
+  elementProps['aria-controls'] = id;
+  return (
+    <Box
+      as="div"
+      {...elementProps}
+      {...otherProps}
+      ref={ref as React.Ref<HTMLDivElement>}
+    >
+      {children}
+    </Box>
+  );
 }
 
 export const Tab = React.forwardRef(_Tab);

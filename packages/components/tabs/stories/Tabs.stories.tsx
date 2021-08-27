@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
 import { SectionHeading } from '@contentful/f36-typography';
-import { Tabs } from '../src/Tabs';
+import { Tabs } from '../src';
 import { Tab } from '../src/Tab';
 import { TabPanel } from '../src/TabPanel';
 import { Flex } from '@contentful/f36-core';
@@ -29,7 +29,7 @@ export const Basic: Story = (args) => {
   return (
     <div>
       <Tabs {...args}>
-        <Tab
+        <Tabs.Tab
           id="first"
           isSelected={selected === 'first'}
           onSelect={(id: string) => {
@@ -38,8 +38,8 @@ export const Basic: Story = (args) => {
           }}
         >
           First
-        </Tab>
-        <Tab
+        </Tabs.Tab>
+        <Tabs.Tab
           id="second"
           isSelected={selected === 'second'}
           onSelect={(id: string) => {
@@ -48,8 +48,8 @@ export const Basic: Story = (args) => {
           }}
         >
           Second
-        </Tab>
-        <Tab
+        </Tabs.Tab>
+        <Tabs.Tab
           id="third"
           isDisabled
           isSelected={selected === 'third'}
@@ -59,75 +59,156 @@ export const Basic: Story = (args) => {
           }}
         >
           Third (disabled)
-        </Tab>
+        </Tabs.Tab>
       </Tabs>
       {selected === 'first' && (
-        <TabPanel id="first">content first tab</TabPanel>
+        <Tabs.Panel id="first">content first tab</Tabs.Panel>
       )}
       {selected === 'second' && (
-        <TabPanel id="second">content second tab</TabPanel>
+        <Tabs.Panel id="second">content second tab</Tabs.Panel>
       )}
       {selected === 'third' && (
-        <TabPanel id="third">content third tab</TabPanel>
+        <Tabs.Panel id="third">content third tab</Tabs.Panel>
       )}
     </div>
   );
 };
 
-export const Overview: Story = () => (
-  <>
-    <SectionHeading as="h3" marginBottom="spacingS">
-      Tabs default
-    </SectionHeading>
+export const Overview: Story = () => {
+  const [selectedDefault, setSelectedDefault] = useState('first');
+  const onSelectDefault = (id: string) => {
+    action('onSelect')(id);
+    setSelectedDefault(id);
+  };
+  const [selectedHorisontal, setSelectedHorisontal] = useState('first');
+  const onSelectHorisontal = (id: string) => {
+    action('onSelect')(id);
+    setSelectedHorisontal(id);
+  };
+  const [selectedVertical, setSelectedVertical] = useState('first');
+  const onSelectVertical = (id: string) => {
+    action('onSelect')(id);
+    setSelectedVertical(id);
+  };
 
-    <Flex marginBottom="spacingS">
-      <Tabs role="navigation">
-        <Tab id="first" href="https://contentful.com" isSelected>
-          First
-        </Tab>
-        <Tab id="second" href="https://contentful.com">
-          Second
-        </Tab>
-        <Tab id="third" href="https://contentful.com">
-          Third
-        </Tab>
-      </Tabs>
-    </Flex>
+  return (
+    <>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Tabs default
+      </SectionHeading>
 
-    <SectionHeading as="h3" marginBottom="spacingS">
-      Tabs with horizontal divider
-    </SectionHeading>
+      <Flex marginBottom="spacingS" flexDirection="column">
+        <Tabs>
+          <Tab
+            id="first"
+            onSelect={onSelectDefault}
+            isSelected={selectedDefault === 'first'}
+          >
+            First
+          </Tab>
+          <Tab
+            id="second"
+            onSelect={onSelectDefault}
+            isSelected={selectedDefault === 'second'}
+          >
+            Second
+          </Tab>
+          <Tab
+            id="third"
+            onSelect={onSelectDefault}
+            isSelected={selectedDefault === 'third'}
+          >
+            Third
+          </Tab>
+        </Tabs>
+        {selectedDefault === 'first' && (
+          <TabPanel id="first">content first tab</TabPanel>
+        )}
+        {selectedDefault === 'second' && (
+          <TabPanel id="second">content second tab</TabPanel>
+        )}
+        {selectedDefault === 'third' && (
+          <TabPanel id="third">content third tab</TabPanel>
+        )}
+      </Flex>
 
-    <Flex marginBottom="spacingS">
-      <Tabs role="navigation" variant="horizontal-divider">
-        <Tab id="first" href="https://contentful.com" isSelected>
-          First
-        </Tab>
-        <Tab id="second" href="https://contentful.com">
-          Second
-        </Tab>
-        <Tab id="third" href="https://contentful.com">
-          Third
-        </Tab>
-      </Tabs>
-    </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Tabs with horizontal divider
+      </SectionHeading>
 
-    <SectionHeading as="h3" marginBottom="spacingS">
-      Tabs with vertical divider
-    </SectionHeading>
+      <Flex marginBottom="spacingS" flexDirection="column">
+        <Tabs variant="horizontal-divider">
+          <Tab
+            id="first"
+            onSelect={onSelectHorisontal}
+            isSelected={selectedHorisontal === 'first'}
+          >
+            First
+          </Tab>
+          <Tab
+            id="second"
+            onSelect={onSelectHorisontal}
+            isSelected={selectedHorisontal === 'second'}
+          >
+            Second
+          </Tab>
+          <Tab
+            id="third"
+            onSelect={onSelectHorisontal}
+            isSelected={selectedHorisontal === 'third'}
+          >
+            Third
+          </Tab>
+        </Tabs>
+        {selectedHorisontal === 'first' && (
+          <TabPanel id="first">content first tab</TabPanel>
+        )}
+        {selectedHorisontal === 'second' && (
+          <TabPanel id="second">content second tab</TabPanel>
+        )}
+        {selectedHorisontal === 'third' && (
+          <TabPanel id="third">content third tab</TabPanel>
+        )}
+      </Flex>
 
-    <Flex marginBottom="spacingS">
-      <Tabs role="navigation" variant="vertical-divider">
-        <Tab id="first" href="https://contentful.com" isSelected>
-          First
-        </Tab>
-        <Tab id="second" href="https://contentful.com">
-          Second
-        </Tab>
-        <Tab id="third" href="https://contentful.com">
-          Third
-        </Tab>
-      </Tabs>
-    </Flex>
-  </>
-);
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Tabs with vertical divider
+      </SectionHeading>
+
+      <Flex marginBottom="spacingS" flexDirection="column">
+        <Tabs variant="vertical-divider">
+          <Tab
+            id="first"
+            onSelect={onSelectVertical}
+            isSelected={selectedVertical === 'first'}
+          >
+            First
+          </Tab>
+          <Tab
+            id="second"
+            onSelect={onSelectVertical}
+            isSelected={selectedVertical === 'second'}
+          >
+            Second
+          </Tab>
+          <Tab
+            id="third"
+            onSelect={onSelectVertical}
+            isSelected={selectedVertical === 'third'}
+          >
+            Third
+          </Tab>
+        </Tabs>
+        {selectedVertical === 'first' && (
+          <TabPanel id="first">content first tab</TabPanel>
+        )}
+        {selectedVertical === 'second' && (
+          <TabPanel id="second">content second tab</TabPanel>
+        )}
+        {selectedVertical === 'third' && (
+          <TabPanel id="third">content third tab</TabPanel>
+        )}
+      </Flex>
+    </>
+  );
+};
