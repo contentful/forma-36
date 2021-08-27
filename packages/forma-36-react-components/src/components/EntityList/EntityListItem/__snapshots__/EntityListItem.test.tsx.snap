@@ -1678,18 +1678,12 @@ exports[`renders the component with dropdownListElements 1`] = `
 }
 
 .emotion-5:active {
-  -webkit-transition: none;
-  transition: none;
-}
-
-.emotion-5:active,
-.emotion-5:active:hover {
   background-color: #F7F9FA;
   border-color: #F7F9FA;
 }
 
 .emotion-5:focus {
-  background-color: none;
+  background-color: transparent;
   box-shadow: 0px 0px 0px 3px #E7EBEE;
 }
 

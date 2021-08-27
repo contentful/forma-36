@@ -45,12 +45,6 @@ exports[`renders the component 1`] = `
 }
 
 .emotion-1:active {
-  -webkit-transition: none;
-  transition: none;
-}
-
-.emotion-1:active,
-.emotion-1:active:hover {
   background-color: #E7EBEE;
 }
 
@@ -131,12 +125,6 @@ exports[`renders the component as open 1`] = `
 }
 
 .emotion-1:active {
-  -webkit-transition: none;
-  transition: none;
-}
-
-.emotion-1:active,
-.emotion-1:active:hover {
   background-color: #E7EBEE;
 }
 
@@ -217,12 +205,6 @@ exports[`renders the component with a submenu 1`] = `
 }
 
 .emotion-1:active {
-  -webkit-transition: none;
-  transition: none;
-}
-
-.emotion-1:active,
-.emotion-1:active:hover {
   background-color: #E7EBEE;
 }
 
@@ -303,12 +285,6 @@ exports[`renders the component with an additional class name 1`] = `
 }
 
 .emotion-1:active {
-  -webkit-transition: none;
-  transition: none;
-}
-
-.emotion-1:active,
-.emotion-1:active:hover {
   background-color: #E7EBEE;
 }
 
