@@ -26,6 +26,7 @@ export const _TextInput = (
     maxLength,
     isInvalid,
     isDisabled,
+    isReadOnly,
     withCopyButton,
     onCopy,
     name,
@@ -62,6 +63,7 @@ export const _TextInput = (
         name={name}
         isInvalid={isInvalid}
         isDisabled={isDisabled}
+        isReadOnly={isReadOnly}
         icon={icon}
         maxLength={maxLength}
         className={styles.inputWithCopyButton}
@@ -98,6 +100,7 @@ export const _TextInput = (
           name={name}
           isInvalid={isInvalid}
           isDisabled={isDisabled}
+          isReadOnly={isReadOnly}
           icon={icon}
           maxLength={maxLength}
         />

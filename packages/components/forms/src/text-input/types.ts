@@ -65,6 +65,11 @@ export interface TextInputProps extends CommonProps {
    */
   isDisabled?: boolean;
   /**
+   * Applies read-only styles
+   * @default false
+   */
+  isReadOnly?: boolean;
+  /**
    * Displays the copy button after the input
    * @default false
    */
