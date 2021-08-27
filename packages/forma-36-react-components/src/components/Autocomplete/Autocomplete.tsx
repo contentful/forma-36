@@ -219,16 +219,17 @@ export const Autocomplete = <T extends {}>({
           <Button
             variant="transparent"
             tabIndex={-1}
+            icon={
+              props.query ? (
+                <CloseIcon aria-label="Clear" />
+              ) : (
+                <ChevronDownIcon aria-label="Show list" />
+              )
+            }
             isDisabled={props.disabled}
             onClick={props.onToggle}
             size="small"
-          >
-            {props.query ? (
-              <CloseIcon aria-label="Clear" variant="muted" />
-            ) : (
-              <ChevronDownIcon aria-label="Show list" variant="muted" />
-            )}
-          </Button>
+          />
         </div>
       </div>
     );
