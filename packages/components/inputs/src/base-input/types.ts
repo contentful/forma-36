@@ -1,7 +1,6 @@
 import { CommonProps } from '@contentful/f36-core';
 import {
-  EventHandler,
-  FocusEvent,
+  FocusEventHandler,
   ChangeEventHandler,
   KeyboardEventHandler,
 } from 'react';
@@ -78,9 +77,9 @@ export interface BaseInputInternalProps extends CommonProps {
   /**
    * Allows to listen to an event when an element loses focus
    */
-  onBlur?: EventHandler<FocusEvent<HTMLTextAreaElement | HTMLInputElement>>;
+  onBlur?: FocusEventHandler<HTMLTextAreaElement | HTMLInputElement>;
   /**
    * Allows to listen to an event when an element get focused
    */
-  onFocus?: EventHandler<FocusEvent<HTMLTextAreaElement | HTMLInputElement>>;
+  onFocus?: FocusEventHandler<HTMLTextAreaElement | HTMLInputElement>;
 }
