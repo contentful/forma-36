@@ -1,9 +1,9 @@
-/* eslint-disable react/display-name */
 import React from 'react';
 import PropTypes from 'prop-types';
-import tokens from '@contentful/f36-tokens';
 import { css } from 'emotion';
 import { MDXProvider } from '@mdx-js/react';
+
+import tokens from '@contentful/f36-tokens';
 import { PropsProvider } from '@contentful/f36-docs-utils';
 import {
   DisplayText,
@@ -27,7 +27,7 @@ import Footer from './Footer';
 import { StaticSource } from './StaticSource';
 
 const styles = {
-  container: css`
+  contentContainer: css`
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -35,22 +35,18 @@ const styles = {
     overflow-y: auto;
   `,
 
-  main: css`
-    flex: 1 1 0;
-  `,
-
-  inner: css`
+  pageContent: css`
     width: 960px;
     margin: 0 auto;
-    padding: ${tokens.spacing2Xl} ${tokens.spacingL} ${tokens.spacingL};
+    padding-top: ${tokens.spacing2Xl};
   `,
 
-  innerHomePage: css`
+  homePageContent: css`
     width: auto;
-    text-align: center;
   `,
 };
 
+/* eslint-disable react/display-name */
 const markToComponentMap = {
   h1: (props) => (
     <DisplayText marginBottom="spacingL" marginTop="spacingXl" {...props} />
@@ -112,32 +108,34 @@ const markToComponentMap = {
   th: (props) => <TableCell style={{ textAlign: 'left' }} {...props} />,
   td: (props) => <TableCell {...props} />,
 };
+/* eslint-enable react/display-name */
 
-const Container = (data) => {
+export default function Container(data) {
   const { frontmatter, children, dataFromReadme, propsMetadata } = data;
-  const isHomePage = frontmatter && frontmatter.type === 'home';
+
+  const contentClassName =
+    frontmatter?.type === 'home' ? styles.homePageContent : styles.pageContent;
 
   return (
-    <div className={styles.container}>
-      <div className={styles.main}>
-        <PropsProvider metadata={propsMetadata}>
-          <Box className={isHomePage ? styles.innerHomePage : styles.inner}>
-            <MDXProvider components={markToComponentMap}>
-              <DocFormatter
-                frontmatter={frontmatter}
-                dataFromReadme={dataFromReadme}
-              >
-                {children}
-              </DocFormatter>
-            </MDXProvider>
-          </Box>
-        </PropsProvider>
-      </div>
+    <div className={styles.contentContainer}>
+      <PropsProvider metadata={propsMetadata}>
+        <Box className={contentClassName}>
+          <MDXProvider components={markToComponentMap}>
+            <DocFormatter
+              frontmatter={frontmatter}
+              dataFromReadme={dataFromReadme}
+            >
+              {children}
+            </DocFormatter>
+          </MDXProvider>
+        </Box>
+      </PropsProvider>
+
       <Footer />
     </div>
   );
-};
+}
+
 Container.propTypes = {
   children: PropTypes.node,
 };
-export default Container;
