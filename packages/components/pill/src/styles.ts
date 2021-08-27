@@ -1,49 +1,38 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { PillVariants } from './types';
-import type { CSSObject } from '@emotion/serialize';
 
 const getCloseButtonStyle = (variant: PillVariants) => {
-  const variantStyle = (variant: PillVariants): CSSObject => {
+  const variantStyle = (variant: PillVariants) => {
     switch (variant) {
       case 'active':
         return {
-          outline: 'none',
           borderLeft: `1px solid ${tokens.gray400}`,
-          '&:hover, &:focus': {
-            background: tokens.gray300,
-            cursor: 'pointer',
-          },
-          '&:focus': {
-            boxShadow: tokens.glowMuted,
-            borderLeftColor: tokens.gray300,
+          '&:hover, &:focus, &:active': {
+            backgroundColor: tokens.gray300,
           },
         };
       default:
         return {
-          outline: 'none',
-
           borderLeft: `1px solid ${tokens.gray400}`,
-          '&:hover, &:focus': {
-            background: tokens.gray300,
-            cursor: 'pointer',
-          },
-          '&:focus': {
-            boxShadow: tokens.glowMuted,
-            borderLeftColor: tokens.gray300,
+          '&:hover, &:focus, &:active': {
+            backgroundColor: tokens.gray300,
           },
         };
     }
   };
 
   return css({
-    border: 'none',
-    borderTopRightRadius: tokens.borderRadiusSmall,
-    borderBottomRightRadius: tokens.borderRadiusSmall,
+    borderTopLeftRadius: 0,
+    borderBottomLeftRadius: 0,
     padding: tokens.spacingXs,
-    background: 'transparent',
-    transition: `background ${tokens.transitionDurationShort} ${tokens.transitionEasingDefault}`,
+    transition: `background ${tokens.transitionDurationShort} ${tokens.transitionEasingDefault},
+    opacity ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
     ...variantStyle(variant),
+    '&:focus': {
+      boxShadow: tokens.glowMuted,
+      borderLeftColor: tokens.gray300,
+    },
   });
 };
 
@@ -103,7 +92,7 @@ const getPillStyle = (variant: PillVariants) => {
   });
 };
 
-export default (variant: PillVariants) => {
+export function getPillStyles(variant: PillVariants) {
   return {
     closeButton: getCloseButtonStyle(variant),
     label: getLabelStyle(),
@@ -111,4 +100,4 @@ export default (variant: PillVariants) => {
     dragIcon: css(dragIcon),
     pill: getPillStyle(variant),
   };
-};
+}

@@ -6,8 +6,9 @@ import type {
 } from '@contentful/f36-core';
 import { Box } from '@contentful/f36-core';
 import { DragIcon, CloseIcon } from '@contentful/f36-icons';
+import { Button } from '@contentful/f36-button';
 import { PillVariants } from './types';
-import getPillStyles from './styles';
+import { getPillStyles } from './styles';
 
 export type PillInternalProps = CommonProps & {
   /**
@@ -71,14 +72,14 @@ export const Pill = React.forwardRef<HTMLDivElement, PillProps>(
           {label}
         </span>
         {onClose && (
-          <button
+          <Button
             type="button"
-            aria-label="close"
+            variant="transparent"
+            icon={<CloseIcon aria-label="Close" />}
+            aria-label="Close"
             onClick={onClose}
             className={styles.closeButton}
-          >
-            <CloseIcon tabIndex={-1} className={styles.icon} variant="muted" />
-          </button>
+          />
         )}
       </Box>
     );
