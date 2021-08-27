@@ -213,6 +213,10 @@ module.exports = {
                 link: '/components/inputs/src/base-checkbox/',
               },
               {
+                name: 'BaseCheckboxField',
+                link: '/components/forms/src/base-checkbox-field/',
+              },
+              {
                 name: 'BaseInput',
                 link: '/components/inputs/src/base-input/',
               },

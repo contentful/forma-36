@@ -53,12 +53,14 @@ export {
   CheckboxField,
   RadioButtonField,
   Label,
+  BaseCheckboxField,
 } from '@contentful/f36-forms';
 export type {
   ControlledInputFieldProps,
   CheckboxFieldProps,
   RadioButtonFieldProps,
   LabelProps,
+  BaseCheckboxFieldProps,
 } from '@contentful/f36-forms';
 export {
   ControlledInput,
