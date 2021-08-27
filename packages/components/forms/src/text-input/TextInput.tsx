@@ -75,7 +75,7 @@ export const _TextInput = (
     [onChange],
   );
 
-  const inputWithCopyButton = ({ isDisabled }) => (
+  const inputWithCopyButton = (
     <Flex>
       <BaseInput
         testId={testId}
