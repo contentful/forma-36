@@ -265,6 +265,10 @@ module.exports = {
                 link: '/components/inputs/src/switch/',
               },
               {
+                name: 'SwitchField',
+                link: '/components/forms/src/switch-field/',
+              },
+              {
                 name: 'TextField',
                 link: '/components/text-field/',
               },
@@ -362,10 +366,6 @@ module.exports = {
           {
             name: 'Spinner',
             link: '/components/spinner/',
-          },
-          {
-            name: 'Switch',
-            link: '/components/switch/',
           },
           {
             name: 'Table',

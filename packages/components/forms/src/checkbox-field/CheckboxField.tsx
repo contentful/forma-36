@@ -1,19 +1,19 @@
 import React from 'react';
-import { ControlledInputField } from '../controlled-input-field';
-import type { ControlledInputFieldProps } from '../controlled-input-field';
+import { BaseCheckboxField } from '../base-checkbox-field';
+import type { CheckboxFieldProps as _CheckboxFieldProps } from '../base-checkbox-field/types';
 
-export type CheckboxFieldProps = Omit<ControlledInputFieldProps, 'inputType'>;
+export type CheckboxFieldProps = _CheckboxFieldProps;
 
 export const _CheckboxField = (
   { testId = 'cf-ui-checkbox-field', ...otherProps }: CheckboxFieldProps,
   ref: React.Ref<HTMLDivElement>,
 ) => {
   return (
-    <ControlledInputField
+    <BaseCheckboxField
       testId={testId}
       {...otherProps}
       ref={ref}
-      inputType="checkbox"
+      type="checkbox"
     />
   );
 };

@@ -3,7 +3,7 @@ import type { BaseCheckboxProps } from '@contentful/f36-inputs';
 import { HelpTextProps } from '@contentful/f36-helptext';
 import { LabelProps } from '../Label';
 
-type BaseCheckboxExtendedProps =
+type ExposedBaseCheckboxProps =
   | 'label'
   | 'id'
   | 'isRequired'
@@ -15,22 +15,22 @@ type BaseCheckboxExtendedProps =
   | 'type'
   | 'name';
 
-interface CommonBaseFieldProps
+export interface BaseCheckboxFieldProps
   extends CommonProps,
-    Pick<BaseCheckboxProps, BaseCheckboxExtendedProps> {
+    Pick<BaseCheckboxProps, ExposedBaseCheckboxProps> {
   helpText?: string;
   helpTextProps?: Omit<HelpTextProps, 'ref'>;
   formLabelProps?: LabelProps;
   validationMessage?: string;
-  inputProps?: Omit<BaseCheckboxProps, BaseCheckboxExtendedProps>;
+  inputProps?: Omit<BaseCheckboxProps, ExposedBaseCheckboxProps>;
 }
 
-interface CheckboxFieldProps extends Omit<CommonBaseFieldProps, 'type'> {
-  type?: 'checkbox';
-}
-interface RadioButtonFieldProps
-  extends Omit<CommonBaseFieldProps, 'type' | 'isIndeterminate'> {
-  type: Exclude<BaseCheckboxProps['type'], 'checkbox'>;
-}
-
-export type BaseCheckboxFieldProps = CheckboxFieldProps | RadioButtonFieldProps;
+export type CheckboxFieldProps = Omit<BaseCheckboxFieldProps, 'type'>;
+export type RadioButtonFieldProps = Omit<
+  BaseCheckboxFieldProps,
+  'type' | 'isIndeterminate'
+>;
+export type SwitchFieldProps = Omit<
+  BaseCheckboxFieldProps,
+  'type' | 'isIndeterminate'
+>;

@@ -54,6 +54,7 @@ export {
   RadioButtonField,
   Label,
   BaseCheckboxField,
+  SwitchField,
 } from '@contentful/f36-forms';
 export type {
   ControlledInputFieldProps,
@@ -61,6 +62,7 @@ export type {
   RadioButtonFieldProps,
   LabelProps,
   BaseCheckboxFieldProps,
+  SwitchFieldProps,
 } from '@contentful/f36-forms';
 export {
   ControlledInput,

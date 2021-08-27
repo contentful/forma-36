@@ -1,23 +1,15 @@
 import React from 'react';
-import { ControlledInputField } from '../controlled-input-field';
-import type { ControlledInputFieldProps } from '../controlled-input-field';
+import { BaseCheckboxField } from '../base-checkbox-field';
+import type { RadioButtonFieldProps as _RadioButtonFieldProps } from '../base-checkbox-field/types';
 
-export type RadioButtonFieldProps = Omit<
-  ControlledInputFieldProps,
-  'inputType'
->;
+export type RadioButtonFieldProps = _RadioButtonFieldProps;
 
 export const _RadioButtonField = (
   { testId = 'cf-ui-radio-button-field', ...otherProps }: RadioButtonFieldProps,
   ref: React.Ref<HTMLDivElement>,
 ) => {
   return (
-    <ControlledInputField
-      testId={testId}
-      {...otherProps}
-      ref={ref}
-      inputType="radio"
-    />
+    <BaseCheckboxField testId={testId} {...otherProps} ref={ref} type="radio" />
   );
 };
 

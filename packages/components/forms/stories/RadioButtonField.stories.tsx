@@ -114,20 +114,5 @@ export const overview = () => (
         id="radioButton3"
       />
     </Flex>
-
-    <SectionHeading as="h3" marginBottom="spacingS">
-      Radio button with light label
-    </SectionHeading>
-
-    <Flex marginBottom="spacingS">
-      <RadioButtonField
-        label="Label text"
-        helpText="This is a helptext"
-        name="someOption"
-        value="no"
-        isLabelLight
-        id="radioButton4"
-      />
-    </Flex>
   </>
 );

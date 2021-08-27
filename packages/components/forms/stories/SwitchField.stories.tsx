@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { SectionHeading } from '@contentful/f36-typography';
 import { FieldGroup } from '@contentful/f36-components';
-import { CheckboxField, CheckboxFieldProps } from '../src';
+import { SwitchField, SwitchFieldProps } from '../src';
 
 export default {
-  title: 'Form Elements/CheckboxField',
-  component: CheckboxField,
+  title: 'Form Elements/SwitchField',
+  component: SwitchField,
   parameters: {
-    propTypes: [CheckboxField['__docgenInfo']],
+    propTypes: [SwitchField['__docgenInfo']],
   },
   argTypes: {
     className: { control: { disable: true } },
@@ -15,22 +15,22 @@ export default {
   },
 };
 
-export const Basic = (args: CheckboxFieldProps) => {
+export const Basic = (args: SwitchFieldProps) => {
   const [optionOne, setOptionOne] = useState(false);
   const [optionTwo, setOptionTwo] = useState(false);
 
   return (
     <FieldGroup>
-      <CheckboxField
+      <SwitchField
         {...args}
-        id="Checkbox1"
+        id="switch1"
         isChecked={optionOne}
         value="yes"
         onChange={(e) => setOptionOne((e.target as HTMLInputElement).checked)}
       />
-      <CheckboxField
+      <SwitchField
         {...args}
-        id="Checkbox2"
+        id="switch2"
         value="yes"
         isChecked={optionTwo}
         onChange={(e) => setOptionTwo((e.target as HTMLInputElement).checked)}
@@ -40,7 +40,7 @@ export const Basic = (args: CheckboxFieldProps) => {
 };
 
 Basic.args = {
-  label: 'some label text',
+  label: 'Some label text',
   name: 'some name',
   validationMessage: 'validation message',
   helpText: 'help text',
@@ -49,56 +49,56 @@ Basic.args = {
 export const overview = () => (
   <>
     <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
-      Checkbox Field default
+      Switch Field default
     </SectionHeading>
 
-    <CheckboxField
+    <SwitchField
       label="Option 1"
       helpText="This is a helptext"
       name="someOption"
       isChecked
       value="yes"
-      id="termsCheckbox"
+      id="termsSwitch"
     />
 
     <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
-      Checkbox Field with validation message
+      Switch Field with validation message
     </SectionHeading>
 
-    <CheckboxField
+    <SwitchField
       label="Option 2"
       helpText="This is a helptext"
       validationMessage="validationMessage"
       name="someOption"
       value="no"
-      id="termsCheckboxOption2"
+      id="termsSwitch2"
     />
 
     <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
-      Checkbox Field disabled
+      Switch Field disabled
     </SectionHeading>
 
-    <CheckboxField
-      label="Option 2"
+    <SwitchField
+      label="Option 3"
       helpText="This is a helptext"
       isDisabled
       name="someOption"
       value="no"
-      id="termsCheckboxOption3"
+      id="termsSwitch3"
     />
 
     <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
-      Checkbox Field disabled checked
+      Switch Field disabled checked
     </SectionHeading>
 
-    <CheckboxField
-      label="Option 2"
+    <SwitchField
+      label="Option 4"
       helpText="This is a helptext"
       isDisabled
       isChecked
       name="someOption"
       value="no"
-      id="termsCheckboxOption4"
+      id="termsSwitch4"
     />
   </>
 );

@@ -23,43 +23,23 @@ Use CheckboxField to give users the possibility to select multiple elements, zer
 - Checkboxes should work independently, checking one should not affect any other checkbox in the interface
 - Checkbox should always have a label
 - Listing options for a user should have some order. Some sort of system is most likely expected by the user when working with lists (numerical, time based)
-- For the label, 2 different styles can be used, depending on the context and importance one wants to give to the checkbox. The default is the medium weight label. You can change it to a regular weight label by using `isLabelLight` property
-
-NOTE: When attaching a help text to a checkbox, the medium label has to be used to ensure that there's enough contrast.
 
 ## Component variations
 
 - **Basic usage**
 
 ```jsx
-// import {CheckboxField} from '@contentful/f36-forms';
-
 <CheckboxField id="randomId" label="Label text" />
 ```
 
 - **With helper text** - Helper text will be displayed below the label.
 
 ```jsx
-// import {CheckboxField} from '@contentful/f36-forms';
-
 <CheckboxField
   name="checkbox name"
   id="randomId"
   label="Label text"
   helpText="Helper text displayed below"
-/>
-```
-
-- **With light label** - `isLabelLight` changes label font weight to regular. Please keep in mind to not use it with helper text. For that case the medium label has to be used to ensure that there's enough contrast.
-
-```jsx
-// import {CheckboxField} from '@contentful/f36-forms';
-
-<CheckboxField
-  name="checkbox name"
-  id="randomId"
-  label="Label text"
-  isLabelLight
 />
 ```
 
