@@ -19,11 +19,6 @@ export interface BaseCheckboxProps
    */
   isChecked?: boolean;
   /**
-   * Defines if the element is required
-   * @default false
-   */
-  isRequired?: boolean;
-  /**
    * Defines if the state is indeterminate
    * @default false
    */
