@@ -1,25 +1,25 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import { Table, TableCell, TableHead, TableRow, TableBody } from '../src/';
+import { Table } from '../src';
 
 describe('Table', () => {
   it('renders the component', () => {
     const { container, getByRole, getByText, getAllByRole } = render(
       <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell>Table heading</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          <TableRow>
-            <TableCell>Cell 1</TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell>Cell 2</TableCell>
-          </TableRow>
-        </TableBody>
+        <Table.Head>
+          <Table.Row>
+            <Table.Cell>Table heading</Table.Cell>
+          </Table.Row>
+        </Table.Head>
+        <Table.Body>
+          <Table.Row>
+            <Table.Cell>Cell 1</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>Cell 2</Table.Cell>
+          </Table.Row>
+        </Table.Body>
       </Table>,
     );
 
@@ -30,15 +30,15 @@ describe('Table', () => {
     expect(th).toEqual(getByText('Table heading'));
   });
 
-  describe('TableHead', () => {
+  describe('Table.Head', () => {
     it('renders the component as sticky', () => {
       const { container, getByRole } = render(
         <Table>
-          <TableHead isSticky>
-            <TableRow>
-              <TableCell>test</TableCell>
-            </TableRow>
-          </TableHead>
+          <Table.Head isSticky>
+            <Table.Row>
+              <Table.Cell>test</Table.Cell>
+            </Table.Row>
+          </Table.Head>
         </Table>,
       );
 
@@ -52,11 +52,11 @@ describe('Table', () => {
     it('renders the component as sticky and with an offset Top', () => {
       const { container, getByRole } = render(
         <Table>
-          <TableHead isSticky offsetTop="20px">
-            <TableRow>
-              <TableCell>test</TableCell>
-            </TableRow>
-          </TableHead>
+          <Table.Head isSticky offsetTop="20px">
+            <Table.Row>
+              <Table.Cell>test</Table.Cell>
+            </Table.Row>
+          </Table.Head>
         </Table>,
       );
 
