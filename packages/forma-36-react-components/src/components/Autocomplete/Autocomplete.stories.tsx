@@ -86,7 +86,6 @@ export const ErrorHandling = (args: AutocompleteProps<{}>) => {
       items={filteredItems}
       onChange={handleChange}
       selectedItem={selectedItem}
-      error={true}
       validationMessage="This field is required"
     >
       {(options: Item[]) =>

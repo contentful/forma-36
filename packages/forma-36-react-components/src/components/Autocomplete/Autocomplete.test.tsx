@@ -31,7 +31,6 @@ describe('Autocomplete', () => {
     placeholder = '',
     width = 'large',
     selectedItem = '',
-    error = false,
     validationMessage = '',
     dropdownProps = {
       isOpen: false,
@@ -51,7 +50,6 @@ describe('Autocomplete', () => {
         selectedItem={selectedItem}
         width={width}
         dropdownProps={dropdownProps}
-        error={error}
         validationMessage={validationMessage}
       >
         {(options: Item[]) =>
@@ -95,7 +93,6 @@ describe('Autocomplete', () => {
 
     it('shows an error state', () => {
       const { getByTestId } = build({
-        error: true,
         validationMessage: 'This field is required',
       });
       const validationMessageComponent = getByTestId(

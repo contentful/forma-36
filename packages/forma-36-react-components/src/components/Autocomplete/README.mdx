@@ -69,7 +69,6 @@ function AutocompleteExample() {
       emptyListMessage={'no result found'}
       noMatchesMessage={'no matches'}
       dropdownProps={{ isFullWidth: true }}
-      disabled={false}
       onChange={handleOnChange}
       selectedItem={selectedItem}
     >
@@ -117,7 +116,6 @@ function AutocompleteExample() {
         emptyListMessage={'no result found'}
         noMatchesMessage={'no matches'}
         dropdownProps={{ isFullWidth: true }}
-        disabled={false}
         onChange={handleOnChange}
         maxHeight={100}
       >
@@ -176,10 +174,8 @@ function AutocompleteExample() {
         emptyListMessage={'no result found'}
         noMatchesMessage={'no matches'}
         dropdownProps={{ isFullWidth: true }}
-        disabled={false}
         onChange={handleOnChange}
         selectedItem={selectedItem}
-        error={true}
         validationMessage="This item is required"
       >
         {(options) =>

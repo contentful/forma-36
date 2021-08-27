@@ -1,5 +1,5 @@
 import React, { useMemo, useReducer, useRef, ChangeEvent } from 'react';
-import cn from 'classnames';
+import cx from 'classnames';
 
 import { TextInput } from '../TextInput';
 import {
@@ -51,7 +51,6 @@ export interface AutocompleteProps<T extends {}> {
   willClearQueryOnClose?: boolean;
   dropdownProps?: DropdownProps;
   renderToggleElement?: (props: RenderToggleElementProps) => React.ReactElement;
-  error?: boolean;
   validationMessage?: string;
 }
 
@@ -118,7 +117,6 @@ export const Autocomplete = <T extends {}>({
   willClearQueryOnClose,
   dropdownProps,
   renderToggleElement,
-  error,
   validationMessage,
 }: AutocompleteProps<T>) => {
   const listRef = useRef<HTMLDivElement | null>(null);
@@ -198,9 +196,9 @@ export const Autocomplete = <T extends {}>({
     [children, items],
   );
 
-  const dropdownClassNames = cn(styles.autocompleteDropdown, className);
-  const autocompleteClassNames = cn(styles.autocompleteInput, {
-    [styles.autocompleteInputNegative]: error,
+  const dropdownClassNames = cx(styles.autocompleteDropdown, className);
+  const autocompleteClassNames = cx(styles.autocompleteInput, {
+    [styles.autocompleteInputNegative]: validationMessage,
   });
 
   function renderDefaultToggleElement(toggleProps: RenderToggleElementProps) {
