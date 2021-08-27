@@ -1,4 +1,3 @@
-export * from './controlled-input';
 export * from './checkbox';
 export * from './switch';
 export * from './radio-button';
