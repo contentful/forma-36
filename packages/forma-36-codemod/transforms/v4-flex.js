@@ -4,18 +4,18 @@ const { modifyPropsCodemod } = require('./common/modify-props-codemod');
 
 module.exports = modifyPropsCodemod({
   componentName: 'Flex',
-  renameMap: {
-    htmlTag: 'as',
-    inlineFlex: 'isInline',
-    noShrink: 'flexShrink',
-  },
-  modifyFn: (attributes, j) => {
+  beforeRename: (attributes, j) => {
     return updatePropertyValue(attributes, {
       j,
-      propertyName: 'flexShrink',
+      propertyName: 'noShrink',
       propertyValue: () => {
         return j.jsxExpressionContainer(j.literal(0));
       },
     });
+  },
+  renameMap: {
+    htmlTag: 'as',
+    inlineFlex: 'isInline',
+    noShrink: 'flexShrink',
   },
 });

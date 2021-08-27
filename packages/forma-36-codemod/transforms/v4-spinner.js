@@ -3,10 +3,7 @@ const { updatePropertyValue } = require('../utils');
 
 module.exports = modifyPropsCodemod({
   componentName: 'Spinner',
-  renameMap: {
-    color: 'variant',
-  },
-  modifyFn: (attributes, j) => {
+  beforeRename: (attributes, j) => {
     return updatePropertyValue(attributes, {
       j,
       propertyName: 'size',
@@ -17,5 +14,8 @@ module.exports = modifyPropsCodemod({
         return value;
       },
     });
+  },
+  renameMap: {
+    color: 'variant',
   },
 });

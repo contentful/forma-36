@@ -37,12 +37,16 @@ module.exports.modifyPropsCodemod = function (props) {
       fn(attributes) {
         let modifiedAttributes = attributes;
 
+        if (props.beforeRename) {
+          modifiedAttributes = props.beforeRename(modifiedAttributes, j);
+        }
+
         modifiedAttributes = renameProperties(modifiedAttributes, {
           renameMap: props.renameMap,
         });
 
-        if (props.modifyFn) {
-          modifiedAttributes = props.modifyFn(modifiedAttributes, j);
+        if (props.afterRename) {
+          modifiedAttributes = props.afterRename(modifiedAttributes, j);
         }
 
         return modifiedAttributes;
