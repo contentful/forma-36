@@ -47,44 +47,33 @@ const variantToStyles = (variant: NoteVariant): CSSObject => {
   }
 };
 
-export const getStyles = () => {
+export const getNoteStyles = () => {
   return {
-    note: ({ variant, withCloseButton }: NoteProps) =>
+    container: ({ variant }: NoteProps) =>
       css({
-        padding: tokens.spacingM,
-        margin: 0,
-        fontFamily: tokens.fontStackPrimary,
-        fontWeight: tokens.fontWeightNormal,
-        lineHeight: tokens.lineHeightDefault,
-        fontSize: tokens.fontSizeM,
-        display: 'flex',
-        flexDirection: 'row',
-        alignItems: 'flex-start',
         borderRadius: tokens.borderRadiusMedium,
-        paddingRight: withCloseButton ? tokens.spacingS : tokens.spacingM,
         border: '1px solid',
         ...variantToStyles(variant),
       }),
     title: css({
       color: tokens.gray800,
-      fontWeight: tokens.fontWeightMedium,
       fontSize: tokens.fontSizeL,
+      lineHeight: tokens.lineHeightL,
       marginBottom: tokens.spacingXs,
     }),
-    info: ({ withCloseButton }: NoteProps) =>
-      css({
-        marginLeft: tokens.spacingXs,
-        fill: 'currentColor',
-        marginRight: withCloseButton ? tokens.spacingS : 'unset',
-      }),
-    content: css({
+    description: css({
       color: tokens.gray700,
-      width: '100%',
     }),
     close: css({
-      '&:hover': {
+      padding: tokens.spacingXs,
+      marginTop: `-${tokens.spacingXs}`,
+      marginRight: `-${tokens.spacingXs}`,
+      '&:hover, &:active': {
         backgroundColor: 'transparent',
       },
+    }),
+    closeIcon: css({
+      color: tokens.gray600,
     }),
   };
 };
