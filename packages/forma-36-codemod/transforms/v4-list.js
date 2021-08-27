@@ -1,14 +1,14 @@
-const { renamePropsCodemod } = require('./common/rename-props-codemod');
+const { modifyPropsCodemod } = require('./common/modify-props-codemod');
 
 module.exports = function (file, api) {
-  const source = renamePropsCodemod({
+  const source = modifyPropsCodemod({
     componentName: 'List',
     renameMap: {
       element: 'as',
     },
   })(file, api);
 
-  return renamePropsCodemod({
+  return modifyPropsCodemod({
     componentName: 'ListItem',
     renameMap: {},
   })(
