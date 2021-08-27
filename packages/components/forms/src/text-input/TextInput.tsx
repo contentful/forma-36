@@ -9,7 +9,8 @@ import { Box, Flex, CommonProps } from '@contentful/f36-core';
 import { Label } from '@contentful/f36-forms';
 import { ValidationMessage } from '@contentful/f36-validation-message';
 import { HelpText } from '@contentful/f36-helptext';
-import { TextLink } from '@contentful/f36-text-link';
+import { CopyButton } from '@contentful/f36-copybutton';
+import getStyles from './TextInput.styles';
 
 export interface TextInputProps extends CommonProps {
   isStandalone?: boolean;
@@ -28,6 +29,8 @@ export interface TextInputProps extends CommonProps {
   id?: string;
   isInvalid?: boolean;
   isDisabled?: boolean;
+  withCopyButton?: boolean;
+  onCopy?: (value: string) => void;
   onChange?: ChangeEventHandler<HTMLInputElement>;
   icon?: React.ReactElement;
 }
@@ -50,6 +53,8 @@ export const _TextInput = (
     maxLength,
     isInvalid,
     isDisabled,
+    withCopyButton,
+    onCopy,
     name,
     icon,
     ...otherProps
@@ -57,6 +62,7 @@ export const _TextInput = (
   ref: React.Ref<HTMLInputElement>,
 ) => {
   const [valueState, setValueState] = useState<string | undefined>(value);
+  const styles = getStyles({ isInvalid, isDisabled });
 
   // Store a copy of the value in state.
   // This is used by this component when the `countCharacters`
@@ -69,17 +75,8 @@ export const _TextInput = (
     [onChange],
   );
 
-  return (
-    <Flex flexDirection="column" fullWidth>
-      {!isStandalone && (
-        <Flex justifyContent="space-between" alignItems="center" fullWidth>
-          <Label htmlFor={id} required={isRequired}>
-            {label}
-          </Label>
-          {link && link}
-        </Flex>
-      )}
-
+  const inputWithCopyButton = ({ isDisabled }) => (
+    <Flex>
       <BaseInput
         testId={testId}
         {...otherProps}
@@ -94,7 +91,45 @@ export const _TextInput = (
         isDisabled={isDisabled}
         icon={icon}
         maxLength={maxLength}
+        className={styles.inputWithCopyButton}
       />
+      <CopyButton
+        value={valueState}
+        onCopy={onCopy}
+        className={styles.copyButton}
+      />
+    </Flex>
+  );
+  return (
+    <Flex flexDirection="column" fullWidth>
+      {!isStandalone && (
+        <Flex justifyContent="space-between" alignItems="center" fullWidth>
+          <Label htmlFor={id} required={isRequired}>
+            {label}
+          </Label>
+          {link && link}
+        </Flex>
+      )}
+      {withCopyButton ? (
+        inputWithCopyButton
+      ) : (
+        <BaseInput
+          testId={testId}
+          {...otherProps}
+          ref={ref}
+          label={label}
+          type="text"
+          onChange={handleOnChange}
+          placeholder={placeholder}
+          as="input"
+          name={name}
+          isInvalid={isInvalid}
+          isDisabled={isDisabled}
+          icon={icon}
+          maxLength={maxLength}
+        />
+      )}
+
       {!isStandalone && (
         <>
           {(helpText || countCharacters || validationMessage) && (

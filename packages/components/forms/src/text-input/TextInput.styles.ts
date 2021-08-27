@@ -1,25 +1,31 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 
-export const getStyles = () => ({
-  textInput: css({
-    display: 'flex',
+const getStyles = ({ isInvalid, isDisabled }) => ({
+  inputWithCopyButton: css({
+    borderRadius: `${tokens.borderRadiusMedium} 0 0 ${tokens.borderRadiusMedium}`,
   }),
-  input: css({
-    outline: 'none',
-    boxShadow: tokens.boxShadowDefault,
-    backgroundColor: tokens.colorWhite,
-    border: `1px solid ${tokens.gray500}`,
-    borderRadius: tokens.borderRadiusMedium,
-    maxHeight: `calc(1rem * (40 / var(--font-base-default)))`,
-    color: tokens.gray800,
-    fontFamily: tokens.fontStackPrimary,
-    fontSize: tokens.fontSizeM,
-    padding: `calc(1rem * (10.5 / ${tokens.fontBaseDefault}))`,
-    margin: 0,
-  }),
-  label: css({
-    fontWeight: tokens.fontWeightMedium,
-    marginBottom: 0,
+  copyButton: css({
+    button: css({
+      borderLeft: 'none',
+      height: '100%',
+      borderRadius: `0 ${tokens.borderRadiusMedium} ${tokens.borderRadiusMedium} 0`,
+
+      '&:focus': {
+        zIndex: tokens.zIndexDefault,
+        borderColor: isInvalid
+          ? tokens.red600
+          : isDisabled
+          ? tokens.gray300
+          : tokens.blue600,
+        boxShadow: isInvalid
+          ? tokens.glowNegative
+          : isDisabled
+          ? 'none'
+          : tokens.glowPrimary,
+      },
+    }),
   }),
 });
+
+export default getStyles;

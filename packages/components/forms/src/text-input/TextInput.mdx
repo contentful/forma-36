@@ -1,0 +1,161 @@
+---
+title: 'TextInput'
+type: 'component'
+status: 'stable'
+slug: /components/forms/src/text-input/
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/forms/src/radio-button-field'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-textinput--basic'
+typescript: ./TextInput.tsx
+---
+
+Use TextInput to give users the possibility to select only one option from a number of choices. It contains a radio input with its label. If needed the component can display an error message and hint message. For a multiple-choice, please consider using [CheckboxField component](https://f36.contentful.com/components/checkbox-field/).
+
+`TextInput` is a form component, that allows users to input text or numbers and should be used in a form context.
+
+## Table of contents
+
+- [How to use TextInput](#how-to-use-TextInput)
+- [Component variations](#component-variations)
+- [Content recommendations](#content-recommendations)
+- [Accessibility](#accessibility)
+- [Props](#props)
+
+## How to use TextInput
+
+The TextInput component can be configured in a number of different ways. Use this guidance to determine the correct variation based on the context.
+
+TextInput is supporting different types of inputs, like `'text' | 'email' | 'file' | 'number' | 'password' | 'search' | 'url'`, where `text` is a default.
+
+## Code examples
+
+```jsx
+<React.Fragment>
+  <TextInput
+    type="email"
+    labelText="Email address"
+    helpText="Please enter your email address"
+    isRequired
+  />
+</React.Fragment>
+```
+
+## TextInput variations
+
+### Help text and validation message
+
+TextInput is able to display additional information for users like `helpText` or `validationMessage`
+
+```jsx
+<React.Fragment>
+  <TextInput
+    type="email"
+    labelText="E-mail address"
+    helpText="Enter your email address"
+    validationMessage="Enter email in the correct format xxx@xxxx.xxx"
+    isRequired
+  />
+</React.Fragment>
+```
+
+### Additional TextLink (`link`)
+
+The TextInput can be configured to display an additional TextLink in the label.
+
+```jsx
+<TextInput
+  type="password"
+  label="Set a password"
+  name="password"
+  id="password-field"
+  placeholder="Password"
+  link={
+    <TextLink icon={<LockIcon />} href="https://f36.contentful.com/">
+      go to link
+    </TextLink>
+  }
+/>
+```
+
+### Character count (`countCharacters`)
+
+The TextInput can be configured to display a character count. This is useful when an input field has a character limit.<br/>
+**Note**: The `maxLength` property must be also provided.
+
+```jsx
+<TextInput
+  type="text"
+  label="Name"
+  name="name"
+  id="name-field"
+  placeholder="Name"
+  countCharacters
+  maxLength={150}
+  link={
+    <TextLink icon={<LockIcon />} href="https://f36.contentful.com/">
+      go to link
+    </TextLink>
+  }
+/>
+```
+
+### TextInput with copy button (`withCopyButton`)
+
+We provide a variant of the TextInput that is a composed with CopyButton. In order to use it add `withCopyButton` property to your implementation.
+
+```jsx
+<TextInput
+  label="My amazing label"
+  name="someOtherOption"
+  value="someOtherValue"
+  id="myField"
+  placeholder="This is such a great input"
+  countCharacters
+  maxLength={20}
+  validationMessage="It's great but you need to fix something"
+  withCopyButton
+  link={
+    <TextLink icon={<LockIcon />} href="https://f36.contentful.com/">
+      go to link
+    </TextLink>
+  }
+/>
+```
+
+### TextInput standalone (`isStandalone`)
+
+You might need to use TextInput without our label to meet some of your design requirements. In that case, use the property `isStandalone`. The property `label` will be still required, but we would pass it as `aria-label` so it meets the accessibility requirements.
+
+```jsx
+<TextInput
+  type="text"
+  label="Name"
+  name="name"
+  id="name-field"
+  placeholder="Name"
+  countCharacters
+  maxLength={150}
+  link={
+    <TextLink icon={<LockIcon />} href="https://f36.contentful.com/">
+      go to link
+    </TextLink>
+  }
+  isStandalone
+/>
+```
+
+## Content recommendations
+
+- Use direct, succinct copy that helps the user to successfully complete the form
+- Do not preface the instructions with introductory text, such as "please"
+- To add additional context, link out to documentation
+- In cases where additional context is unnecessary, help text can be substituted for text in the label
+- Do not use punctuation for labels, help text and links
+- Use sentence style caps (in which only the first word of a sentence or term is capitalized)
+
+## Accessibility
+
+- To ensure `TextInput` meets accessibility standards, provide `name` and `id`
+
+import { Props } from '@contentful/f36-docs-utils';
+
+<Props of="TextInput" />

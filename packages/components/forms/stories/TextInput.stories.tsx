@@ -176,6 +176,53 @@ export const overview = () => (
     </Flex>
 
     <SectionHeading as="h3" marginBottom="spacingS">
+      Text Input with copybutton
+    </SectionHeading>
+
+    <Flex marginBottom="spacingL">
+      <TextInput
+        label="My amazing label"
+        name="someOtherOption"
+        value="someOtherValue"
+        id="myField"
+        placeholder="This is such a great input"
+        countCharacters
+        maxLength={20}
+        validationMessage="It's great but you need to fix something"
+        withCopyButton
+        link={
+          <TextLink icon={<LockIcon />} href="https://f36.contentful.com/">
+            go to link
+          </TextLink>
+        }
+      />
+    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Text Input with copybutton that is disabled
+    </SectionHeading>
+
+    <Flex marginBottom="spacingL">
+      <TextInput
+        label="My amazing label"
+        name="someOtherOption"
+        value="someOtherValue"
+        id="myField"
+        placeholder="This is such a great input"
+        countCharacters
+        maxLength={20}
+        validationMessage="It's great but you need to fix something"
+        withCopyButton
+        isDisabled
+        link={
+          <TextLink icon={<LockIcon />} href="https://f36.contentful.com/">
+            go to link
+          </TextLink>
+        }
+      />
+    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
       Text Input standalone - no label - think twice before you use it
     </SectionHeading>
 
