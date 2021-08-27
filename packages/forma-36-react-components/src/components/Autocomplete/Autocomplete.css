@@ -32,6 +32,5 @@
 }
 
 .validationMessage {
-  position: absolute;
-  top: calc(40px + var(--spacing-s));
+  margin-top: var(--spacing-xs);
 }

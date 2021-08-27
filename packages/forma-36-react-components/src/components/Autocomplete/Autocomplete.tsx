@@ -203,40 +203,33 @@ export const Autocomplete = <T extends {}>({
 
   function renderDefaultToggleElement(toggleProps: RenderToggleElementProps) {
     return (
-      <>
-        <div className={autocompleteClassNames}>
-          <TextInput
-            value={toggleProps.selectedItem || toggleProps.query}
-            onChange={(e: ChangeEvent<HTMLInputElement>) =>
-              toggleProps.onChange(e.target.value)
-            }
-            onFocus={toggleProps.onFocus}
-            onKeyDown={toggleProps.onKeyDown}
-            disabled={toggleProps.disabled}
-            placeholder={toggleProps.placeholder}
-            width={toggleProps.width}
-            inputRef={toggleProps.inputRef}
-            testId="autocomplete.input"
-            type="search"
-            autoComplete="off"
-            aria-label={toggleProps.name}
-          />
-          <IconButton
-            className={styles.inputIconButton}
-            tabIndex={-1}
-            disabled={toggleProps.disabled}
-            buttonType="muted"
-            iconProps={{ icon: toggleProps.query ? 'Close' : 'ChevronDown' }}
-            onClick={toggleProps.onToggle}
-            label={toggleProps.query ? 'Clear' : 'Show list'}
-          />
-        </div>
-        {validationMessage && (
-          <ValidationMessage className={styles.validationMessage}>
-            {validationMessage}
-          </ValidationMessage>
-        )}
-      </>
+      <div className={autocompleteClassNames}>
+        <TextInput
+          value={toggleProps.selectedItem || toggleProps.query}
+          onChange={(e: ChangeEvent<HTMLInputElement>) =>
+            toggleProps.onChange(e.target.value)
+          }
+          onFocus={toggleProps.onFocus}
+          onKeyDown={toggleProps.onKeyDown}
+          disabled={toggleProps.disabled}
+          placeholder={toggleProps.placeholder}
+          width={toggleProps.width}
+          inputRef={toggleProps.inputRef}
+          testId="autocomplete.input"
+          type="search"
+          autoComplete="off"
+          aria-label={toggleProps.name}
+        />
+        <IconButton
+          className={styles.inputIconButton}
+          tabIndex={-1}
+          disabled={toggleProps.disabled}
+          buttonType="muted"
+          iconProps={{ icon: toggleProps.query ? 'Close' : 'ChevronDown' }}
+          onClick={toggleProps.onToggle}
+          label={toggleProps.query ? 'Clear' : 'Show list'}
+        />
+      </div>
     );
   }
 
@@ -265,49 +258,56 @@ export const Autocomplete = <T extends {}>({
     renderToggleElement || renderDefaultToggleElement;
 
   return (
-    <Dropdown
-      nonClosingRefs={[inputRef, ...nonClosingRefs]}
-      className={dropdownClassNames}
-      onClose={() => {
-        willClearQueryOnClose && updateQuery('');
-        dispatch({ type: TOGGLED_LIST, payload: false });
-      }}
-      toggleElement={renderToggleElementFunction(toggleProps)}
-      focusContainerOnOpen={false}
-      {...dropdownProps}
-      isOpen={isOpen}
-    >
-      <DropdownList testId="autocomplete.dropdown-list" maxHeight={maxHeight}>
-        <div ref={listRef as React.RefObject<HTMLDivElement>}>
-          {!options.length && !isLoading && (
-            <DropdownListItem
-              isDisabled
-              testId="autocomplete.empty-list-message"
-            >
-              {query ? noMatchesMessage : emptyListMessage}
-            </DropdownListItem>
-          )}
-          {isLoading ? (
-            <OptionSkeleton />
-          ) : (
-            options.map(({ child, option }, index) => {
-              const isActive = index === highlightedItemIndex;
-              return (
-                <DropdownListItem
-                  key={index}
-                  isActive={isActive}
-                  data-selected={isActive} // this should be coming from the component library
-                  onClick={() => selectItem(option)}
-                  testId="autocomplete.dropdown-list-item"
-                >
-                  {child}
-                </DropdownListItem>
-              );
-            })
-          )}
-        </div>
-      </DropdownList>
-    </Dropdown>
+    <>
+      <Dropdown
+        nonClosingRefs={[inputRef, ...nonClosingRefs]}
+        className={dropdownClassNames}
+        onClose={() => {
+          willClearQueryOnClose && updateQuery('');
+          dispatch({ type: TOGGLED_LIST, payload: false });
+        }}
+        toggleElement={renderToggleElementFunction(toggleProps)}
+        focusContainerOnOpen={false}
+        {...dropdownProps}
+        isOpen={isOpen}
+      >
+        <DropdownList testId="autocomplete.dropdown-list" maxHeight={maxHeight}>
+          <div ref={listRef as React.RefObject<HTMLDivElement>}>
+            {!options.length && !isLoading && (
+              <DropdownListItem
+                isDisabled
+                testId="autocomplete.empty-list-message"
+              >
+                {query ? noMatchesMessage : emptyListMessage}
+              </DropdownListItem>
+            )}
+            {isLoading ? (
+              <OptionSkeleton />
+            ) : (
+              options.map(({ child, option }, index) => {
+                const isActive = index === highlightedItemIndex;
+                return (
+                  <DropdownListItem
+                    key={index}
+                    isActive={isActive}
+                    data-selected={isActive} // this should be coming from the component library
+                    onClick={() => selectItem(option)}
+                    testId="autocomplete.dropdown-list-item"
+                  >
+                    {child}
+                  </DropdownListItem>
+                );
+              })
+            )}
+          </div>
+        </DropdownList>
+      </Dropdown>
+      {validationMessage && (
+        <ValidationMessage className={styles.validationMessage}>
+          {validationMessage}
+        </ValidationMessage>
+      )}
+    </>
   );
 };
 
