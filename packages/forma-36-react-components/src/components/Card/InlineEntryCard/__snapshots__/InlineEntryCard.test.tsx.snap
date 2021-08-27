@@ -74,18 +74,12 @@ exports[`renders the component with a dropdown 1`] = `
 }
 
 .emotion-2:active {
-  -webkit-transition: none;
-  transition: none;
-}
-
-.emotion-2:active,
-.emotion-2:active:hover {
   background-color: #F7F9FA;
   border-color: #F7F9FA;
 }
 
 .emotion-2:focus {
-  background-color: none;
+  background-color: transparent;
   box-shadow: 0px 0px 0px 3px #E7EBEE;
 }
 

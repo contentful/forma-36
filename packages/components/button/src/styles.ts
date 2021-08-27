@@ -6,44 +6,15 @@ import { ButtonSize, ButtonVariant, ButtonStylesProps } from './types';
 const variantActiveStyles = (variant: ButtonVariant): CSSObject => {
   switch (variant) {
     case 'primary':
-      return {
-        transition: 'none',
-        ', &:hover': {
-          backgroundColor: tokens.blue700,
-          borderColor: tokens.blue700,
-        },
-      };
+      return { backgroundColor: tokens.blue700, borderColor: tokens.blue700 };
     case 'secondary':
-      return {
-        transition: 'none',
-        ', &:hover': {
-          backgroundColor: tokens.gray200,
-        },
-      };
+      return { backgroundColor: tokens.gray200 };
     case 'positive':
-      return {
-        transition: 'none',
-        ', &:hover': {
-          backgroundColor: tokens.green700,
-          borderColor: tokens.green700,
-        },
-      };
+      return { backgroundColor: tokens.green700, borderColor: tokens.green700 };
     case 'negative':
-      return {
-        transition: 'none',
-        ', &:hover': {
-          backgroundColor: tokens.red800,
-          borderColor: tokens.red800,
-        },
-      };
+      return { backgroundColor: tokens.red800, borderColor: tokens.red800 };
     case 'transparent':
-      return {
-        transition: 'none',
-        ', &:hover': {
-          backgroundColor: tokens.gray100,
-          borderColor: tokens.gray100,
-        },
-      };
+      return { backgroundColor: tokens.gray100, borderColor: tokens.gray100 };
     default:
       return {};
   }
@@ -121,7 +92,7 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
         },
         '&:active': variantActiveStyles(variant),
         '&:focus': {
-          backgroundColor: 'none',
+          backgroundColor: 'transparent',
           boxShadow: tokens.glowMuted,
         },
       };
@@ -198,7 +169,12 @@ export const getStyles = () => ({
       },
       ...variantToStyles(variant),
       ...sizeToStyles(size),
-      ...(isActive ? variantActiveStyles(variant) : {}),
+      ...(isActive
+        ? {
+            transition: 'none',
+            '&, &:hover': variantActiveStyles(variant),
+          }
+        : {}),
     }),
   buttonIcon: getButtonIconStyle,
   dropdownIcon: css({
