@@ -1,6 +1,6 @@
 import { cx } from 'emotion';
 import React from 'react';
-import { Box, Flex } from '@contentful/f36-core';
+import { Flex } from '@contentful/f36-core';
 import type {
   CommonProps,
   PolymorphicComponentProps,
@@ -16,7 +16,7 @@ import {
 } from '@contentful/f36-icons';
 import { Icon } from '@contentful/f36-icon';
 
-import { getStyles } from './Note.styles';
+import { getNoteStyles } from './Note.styles';
 
 const icons = {
   primary: InfoCircleIcon,
@@ -67,15 +67,17 @@ export const Note = React.forwardRef<HTMLElement, NoteProps>((props, ref) => {
     ...otherProps
   } = props;
 
-  const styles = getStyles();
+  const styles = getNoteStyles();
 
   return (
-    <Box
+    <Flex
       {...otherProps}
       as="article"
-      className={cx(styles.note({ variant, withCloseButton }), className)}
+      className={cx(styles.container({ variant, withCloseButton }), className)}
       testId={testId}
       ref={ref}
+      padding="spacingM"
+      alignItems="flex-start"
     >
       <Flex marginRight="spacingS">
         <Icon
@@ -84,27 +86,27 @@ export const Note = React.forwardRef<HTMLElement, NoteProps>((props, ref) => {
           size={title ? 'medium' : 'small'}
         />
       </Flex>
-      <div className={styles.info({ withCloseButton })}>
+      <div>
         {title && (
           <Heading as="h2" className={styles.title}>
             {title}
           </Heading>
         )}
-        <Text as="p" className={styles.content}>
+        <Text as="p" lineHeight="lineHeightM" className={styles.description}>
           {children}
         </Text>
       </div>
       {withCloseButton && (
         <Button
           variant="transparent"
-          icon={<CloseIcon />}
+          icon={<CloseIcon className={styles.closeIcon} />}
           onClick={onClose}
           testId={`${testId}-close`}
           label="Dismiss"
           className={styles.close}
         />
       )}
-    </Box>
+    </Flex>
   );
 });
 
