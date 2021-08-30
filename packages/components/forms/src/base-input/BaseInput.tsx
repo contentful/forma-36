@@ -52,7 +52,7 @@ const _BaseInput: PolymorphicComponentWithRef<
     ...otherProps
   } = props;
   const [valueState, setValueState] = useState<string | undefined>(value);
-  const styles = getInputStyles({ isDisabled, isInvalid });
+  const styles = getInputStyles({ as, isDisabled, isInvalid });
 
   const { Element, primitiveProps } = usePrimitive({
     testId,
