@@ -13,7 +13,7 @@ import Container from './Container';
 import Navigation from './Navigation';
 
 const styles = {
-  main: css`
+  navAndContentWrapper: css`
     display: flex;
     height: calc(100vh - 70px);
   `,
@@ -87,7 +87,8 @@ export default function Layout({ location, pageContext, children }) {
       )}
 
       <Header />
-      <div css={[styles.main, withPromo && styles.withPromo]}>
+
+      <div css={[styles.navAndContentWrapper, withPromo && styles.withPromo]}>
         <Navigation
           menuItems={siteMetadata?.menuLinks}
           currentPath={location?.pathname}
