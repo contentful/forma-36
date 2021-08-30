@@ -209,40 +209,16 @@ module.exports = {
             link: '',
             menuLinks: [
               {
-                name: 'BaseCheckbox',
-                link: '/components/inputs/src/base-checkbox/',
-              },
-              {
-                name: 'BaseCheckboxField',
-                link: '/components/forms/src/base-checkbox-field/',
-              },
-              {
-                name: 'BaseInput',
-                link: '/components/inputs/src/base-input/',
-              },
-              {
                 name: 'Checkbox',
                 link: '/components/inputs/src/checkbox/',
-              },
-              {
-                name: 'CheckboxField',
-                link: '/components/forms/src/checkbox-field/',
               },
               {
                 name: 'Form',
                 link: '/components/form/',
               },
               {
-                name: 'Label',
-                link: '/components/label/',
-              },
-              {
-                name: 'RadioButton',
-                link: '/components/inputs/src/radio-button/',
-              },
-              {
-                name: 'RadioButtonField',
-                link: '/components/forms/src/radio-button-field/',
+                name: 'Radio',
+                link: '/components/inputs/src/radio/',
               },
               {
                 name: 'Select',
@@ -255,10 +231,6 @@ module.exports = {
               {
                 name: 'Switch',
                 link: '/components/inputs/src/switch/',
-              },
-              {
-                name: 'SwitchField',
-                link: '/components/forms/src/switch-field/',
               },
               {
                 name: 'TextField',
