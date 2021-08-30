@@ -53,29 +53,25 @@ export {
   CheckboxField,
   RadioButtonField,
   Label,
-} from '@contentful/f36-forms';
-export type {
-  ControlledInputFieldProps,
-  CheckboxFieldProps,
-  RadioButtonFieldProps,
-  LabelProps,
-} from '@contentful/f36-forms';
-export {
   ControlledInput,
   Checkbox,
   RadioButton,
   Switch,
   BaseInput,
   BaseCheckbox,
-} from '@contentful/f36-inputs';
+} from '@contentful/f36-forms';
 export type {
+  ControlledInputFieldProps,
+  CheckboxFieldProps,
+  RadioButtonFieldProps,
+  LabelProps,
   ControlledInputProps,
   CheckboxProps,
   RadioButtonProps,
   SwitchProps,
   BaseInputProps,
   BaseCheckboxProps,
-} from '@contentful/f36-inputs';
+} from '@contentful/f36-forms';
 export { Pill } from '@contentful/f36-pill';
 export type { PillProps } from '@contentful/f36-pill';
 export { Button, ButtonGroup, ToggleButton } from '@contentful/f36-button';
