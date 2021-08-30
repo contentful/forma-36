@@ -11,7 +11,7 @@ import { TextInputProps } from './types';
 export const _TextInput = (
   {
     className,
-    testId = 'cf-ui-text-field',
+    testId = 'cf-ui-text-input',
     countCharacters = false,
     isStandalone = false,
     isRequired = false,
