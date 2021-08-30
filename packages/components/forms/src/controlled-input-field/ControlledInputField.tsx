@@ -2,9 +2,9 @@ import React, { EventHandler, ChangeEvent, ReactNode } from 'react';
 import { cx } from 'emotion';
 import { ValidationMessage } from '@contentful/f36-validation-message';
 import { Label, LabelProps } from '../Label';
-import { ControlledInput } from '@contentful/f36-inputs';
+import { ControlledInput } from '../controlled-input';
 import { HelpText } from '@contentful/f36-helptext';
-import type { ControlledInputProps } from '@contentful/f36-inputs';
+import type { ControlledInputProps } from '../controlled-input';
 import { getStyles } from './ControlledInputField.styles';
 import { Box, BoxProps } from '@contentful/f36-core';
 
