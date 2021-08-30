@@ -2,15 +2,15 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { axe } from '@/scripts/test/axeHelper';
 
-import { Tabs, Tab, TabPanel } from '../src';
+import { Tabs } from '../src';
 
 describe('Tabs', () => {
   it('renders the component with role tablist', () => {
     const { getByRole, getAllByRole } = render(
       <Tabs>
-        <Tab id="first">First</Tab>
-        <Tab id="second">Second</Tab>
-        <Tab id="third">Third</Tab>
+        <Tabs.Tab id="first">First</Tabs.Tab>
+        <Tabs.Tab id="second">Second</Tabs.Tab>
+        <Tabs.Tab id="third">Third</Tabs.Tab>
       </Tabs>,
     );
 
@@ -21,15 +21,15 @@ describe('Tabs', () => {
   it('renders the component with role navigation', () => {
     const { getByRole } = render(
       <Tabs role="navigation">
-        <Tab href="/first-link" id="first">
+        <Tabs.Tab href="/first-link" id="first">
           First
-        </Tab>
-        <Tab href="/second-link" id="second">
+        </Tabs.Tab>
+        <Tabs.Tab href="/second-link" id="second">
           Second
-        </Tab>
-        <Tab href="/third-link" id="third">
+        </Tabs.Tab>
+        <Tabs.Tab href="/third-link" id="third">
           Third
-        </Tab>
+        </Tabs.Tab>
       </Tabs>,
     );
 
@@ -39,9 +39,9 @@ describe('Tabs', () => {
   it('renders the component with extra className', () => {
     const { container } = render(
       <Tabs className="my-extra-class">
-        <Tab id="first">First</Tab>
-        <Tab id="second">Second</Tab>
-        <Tab id="third">Third</Tab>
+        <Tabs.Tab id="first">First</Tabs.Tab>
+        <Tabs.Tab id="second">Second</Tabs.Tab>
+        <Tabs.Tab id="third">Third</Tabs.Tab>
       </Tabs>,
     );
     expect(container.firstChild).toHaveClass('my-extra-class');
@@ -51,27 +51,27 @@ describe('Tabs', () => {
     const { container } = render(
       <div>
         <Tabs>
-          <Tab id="first">First</Tab>
-          <Tab id="second">Second</Tab>
-          <Tab id="third">Third</Tab>
+          <Tabs.Tab id="first">First</Tabs.Tab>
+          <Tabs.Tab id="second">Second</Tabs.Tab>
+          <Tabs.Tab id="third">Third</Tabs.Tab>
         </Tabs>
-        <TabPanel id="first">content first panel</TabPanel>
-        <TabPanel id="second">content second panel</TabPanel>
-        <TabPanel id="third">content third panel</TabPanel>
+        <Tabs.Panel id="first">content first panel</Tabs.Panel>
+        <Tabs.Panel id="second">content second panel</Tabs.Panel>
+        <Tabs.Panel id="third">content third panel</Tabs.Panel>
       </div>,
     );
 
     const { container: container2 } = render(
       <Tabs role="navigation">
-        <Tab href="/first-link" id="first">
+        <Tabs.Tab href="/first-link" id="first">
           First
-        </Tab>
-        <Tab href="/second-link" id="second">
+        </Tabs.Tab>
+        <Tabs.Tab href="/second-link" id="second">
           Second
-        </Tab>
-        <Tab href="/third-link" id="third">
+        </Tabs.Tab>
+        <Tabs.Tab href="/third-link" id="third">
           Third
-        </Tab>
+        </Tabs.Tab>
       </Tabs>,
     );
     expect(await axe(container)).toHaveNoViolations();

@@ -1,8 +1,8 @@
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
 
-import { Grid, GridInternalProps } from '../src/Grid/Grid';
-import { GridItem } from '../src/Grid/GridItem/GridItem';
+import { GridInternalProps } from '../src/Grid/Grid';
+import { Grid } from '../src';
 
 const styles = {
   demoBox: {
@@ -16,9 +16,9 @@ const styles = {
 export default {
   title: 'Layout/Grid',
   component: Grid,
-  subcomponents: { GridItem },
+  subcomponents: { GridItem: Grid.Item },
   parameters: {
-    propTypes: [Grid['__docgenInfo'], GridItem['__docgenInfo']],
+    propTypes: [Grid['__docgenInfo'], Grid.Item['__docgenInfo']],
   },
 };
 
@@ -26,11 +26,11 @@ const DemoBox = ({ times, id }: { times?: number; id?: string }) => {
   if (times) {
     const result = [];
     for (let i = 0; i < times; i++) {
-      result.push(<GridItem key={`${id}-${i}`} style={styles.demoBox} />);
+      result.push(<Grid.Item key={`${id}-${i}`} style={styles.demoBox} />);
     }
     return <>{result}</>;
   }
-  return <GridItem style={styles.demoBox}></GridItem>;
+  return <Grid.Item style={styles.demoBox}></Grid.Item>;
 };
 
 interface Args extends GridInternalProps {

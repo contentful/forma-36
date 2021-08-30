@@ -5,7 +5,7 @@ status: 'stable'
 slug: /components/tabs/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/components/tabs'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-tabs--basic'
-typescript: ./src/Tabs.tsx,./src/Tab.tsx,./src/TabPanel.tsx
+typescript: ./Tabs.tsx,./Tab.tsx,./TabPanel.tsx
 ---
 
 Tabs is a component that makes navigating between sections of related content possible, displaying one section at a time.
@@ -24,61 +24,61 @@ Be aware that the users will not see all the content at the same time. Make sure
 ## Code examples
 
 ```jsx
-// import {Tabs, Tab} from '@contentful/f36-tabs';
+// import { Tabs } from '@contentful/f36-tabs';
 
 <Tabs role="tablist">
-  <Tab id="first" href="https://contentful.com" isSelected>
+  <Tabs.Tab id="first" href="https://contentful.com" isSelected>
     First
-  </Tab>
-  <Tab id="second" href="https://contentful.com">
+  </Tabs.Tab>
+  <Tabs.Tab id="second" href="https://contentful.com">
     Second
-  </Tab>
-  <Tab id="third" href="https://contentful.com">
+  </Tabs.Tab>
+  <Tabs.Tab id="third" href="https://contentful.com">
     Third
-  </Tab>
+  </Tabs.Tab>
 </Tabs>
 ```
 
 ### with vertical divider
 
 ```jsx
-// import {Tabs, Tab} from '@contentful/f36-tabs';
+// import { Tabs } from '@contentful/f36-tabs';
 
 <Tabs role="tablist" variant="vertical-divider">
-  <Tab id="first" href="https://contentful.com" isSelected>
+  <Tabs.Tab id="first" href="https://contentful.com" isSelected>
     First
-  </Tab>
-  <Tab id="second" href="https://contentful.com">
+  </Tabs.Tab>
+  <Tabs.Tab id="second" href="https://contentful.com">
     Second
-  </Tab>
-  <Tab id="third" href="https://contentful.com">
+  </Tabs.Tab>
+  <Tabs.Tab id="third" href="https://contentful.com">
     Third
-  </Tab>
+  </Tabs.Tab>
 </Tabs>
 ```
 
 ### as navigation
 
 ```jsx
-// import {Tabs, Tab} from '@contentful/f36-tabs';
+// import { Tabs } from '@contentful/f36-tabs';
 
 <Tabs role="navigation">
-  <Tab id="first" href="https://contentful.com" isSelected>
+  <Tabs.Tab id="first" href="https://contentful.com" isSelected>
     First
-  </Tab>
-  <Tab id="second" href="https://contentful.com">
+  </Tabs.Tab>
+  <Tabs.Tab id="second" href="https://contentful.com">
     Second
-  </Tab>
-  <Tab id="third" href="https://contentful.com">
+  </Tabs.Tab>
+  <Tabs.Tab id="third" href="https://contentful.com">
     Third
-  </Tab>
+  </Tabs.Tab>
 </Tabs>
 ```
 
 ### used with TabPanel
 
 ```jsx
-// import {Tabs, Tab, TabPanel} from '@contentful/f36-tabs';
+// import { Tabs } from '@contentful/f36-tabs';
 
 () => {
   const [selected, setSelected] = React.useState('first');
@@ -86,18 +86,18 @@ Be aware that the users will not see all the content at the same time. Make sure
   return (
     <>
       <Tabs role="tablist">
-        <Tab id="first" isSelected={selected === 'first'}>
+        <Tabs.Tab id="first" isSelected={selected === 'first'}>
           First
-        </Tab>
-        <Tab id="second" isSelected={selected === 'second'}>
+        </Tabs.Tab>
+        <Tabs.Tab id="second" isSelected={selected === 'second'}>
           Second
-        </Tab>
+        </Tabs.Tab>
       </Tabs>
       {selected === 'first' && (
-        <TabPanel id="first">Content for the first tab</TabPanel>
+        <Tabs.Panel id="first">Content for the first tab</Tabs.Panel>
       )}
       {selected === 'second' && (
-        <TabPanel id="second">Content for the second tab</TabPanel>
+        <Tabs.Panel id="second">Content for the second tab</Tabs.Panel>
       )}
     </>
   );

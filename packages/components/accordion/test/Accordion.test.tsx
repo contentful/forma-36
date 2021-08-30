@@ -3,8 +3,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from '@/scripts/test/axeHelper';
 
-import { Accordion } from '../src/Accordion';
-import { AccordionItem } from '../src/AccordionItem/AccordionItem';
+import { Accordion } from '../src';
 
 jest.mock('@contentful/f36-core', () => ({
   ...jest.requireActual('@contentful/f36-core'),
@@ -17,7 +16,9 @@ describe('Accordion', () => {
   it('opens the accordion panel when the header is clicked', () => {
     render(
       <Accordion>
-        <AccordionItem title="Accordion Title">Accordion content</AccordionItem>
+        <Accordion.Item title="Accordion Title">
+          Accordion content
+        </Accordion.Item>
       </Accordion>,
     );
 
@@ -34,13 +35,13 @@ describe('Accordion', () => {
     const onCollapse = jest.fn();
     render(
       <Accordion>
-        <AccordionItem
+        <Accordion.Item
           title="Accordion Title"
           onExpand={onExpand}
           onCollapse={onCollapse}
         >
           Accordion content
-        </AccordionItem>
+        </Accordion.Item>
       </Accordion>,
     );
 
@@ -56,7 +57,9 @@ describe('Accordion', () => {
   it('has no a11y issues', async () => {
     const { container } = render(
       <Accordion>
-        <AccordionItem title="Accordion Title">Accordion content</AccordionItem>
+        <Accordion.Item title="Accordion Title">
+          Accordion content
+        </Accordion.Item>
       </Accordion>,
     );
     const results = await axe(container);

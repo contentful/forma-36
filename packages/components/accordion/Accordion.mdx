@@ -34,13 +34,13 @@ The accordion has two variations that define the alignment of the chevron icon: 
 
 ```jsx
 <Accordion>
-  <AccordionItem title="What payment methods do you accept?">
+  <Accordion.Item title="What payment methods do you accept?">
     <Text>
       Customers on the Team tier can pay with a credit card (American Express,
       MasterCard or Visa). Enterprise customers have the choice of paying with a
       credit card or wire transfer.
     </Text>
-  </AccordionItem>
+  </Accordion.Item>
 </Accordion>
 ```
 
@@ -48,7 +48,7 @@ Other typographic components can be passed as the accordion's title and anything
 
 ```jsx
 <Accordion>
-  <AccordionItem
+  <Accordion.Item
     title={<SectionHeading>What payment methods do you accept?</SectionHeading>}
   >
     <Text marginBottom="spacingS">
@@ -57,7 +57,7 @@ Other typographic components can be passed as the accordion's title and anything
       credit card or wire transfer.
     </Text>
     <Button onClick={() => console.log('clicked!')}>Accordion’s button</Button>
-  </AccordionItem>
+  </Accordion.Item>
 </Accordion>
 ```
 
