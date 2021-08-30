@@ -1,17 +1,20 @@
-import { ChangeEventHandler, FocusEvent, EventHandler } from 'react';
+import {
+  ChangeEventHandler,
+  FocusEvent,
+  EventHandler,
+  KeyboardEventHandler,
+} from 'react';
 import { CommonProps } from '@contentful/f36-core';
+import { BaseInputInternalProps } from '@contentful/f36-inputs';
 
-export interface TextInputProps extends CommonProps {
+export interface TextInputProps
+  extends CommonProps,
+    Omit<BaseInputInternalProps, 'as'> {
   /**
    * Allows to render input without visual label
    *  @default false
    */
   isStandalone?: boolean;
-  /**
-   * Validate the input
-   * @default false
-   */
-  isRequired?: boolean;
   /**
    * Displays the validation message for the input
    */
@@ -33,42 +36,6 @@ export interface TextInputProps extends CommonProps {
    * Expects Link component
    */
   link?: React.ReactElement;
-  /**
-   * Displays the label for the input
-   * Label value is set as aria-label attribute in the input, is isStandalone prop is set
-   */
-  label: string;
-  /**
-   * Set the value of the input
-   */
-  value?: string;
-  /**
-   * Property that set the placeholder value for input
-   */
-  placeholder?: string;
-  /**
-   * Set the name of the input
-   */
-  name?: string;
-  /**
-   * Sets the id of the input
-   */
-  id?: string;
-  /**
-   * Applies invalid styles
-   * @default false
-   */
-  isInvalid?: boolean;
-  /**
-   * Applies disabled styles
-   * @default false
-   */
-  isDisabled?: boolean;
-  /**
-   * Applies read-only styles
-   * @default false
-   */
-  isReadOnly?: boolean;
   /**
    * Displays the copy button after the input
    * @default false
@@ -95,4 +62,8 @@ export interface TextInputProps extends CommonProps {
    * Allows to listen to an event when an element loses focus
    */
   onBlur?: EventHandler<FocusEvent<HTMLInputElement>>;
+  /**
+   * Allows to listen to an event when a key is pressed
+   */
+  onKeyDown?: KeyboardEventHandler<HTMLInputElement>;
 }
