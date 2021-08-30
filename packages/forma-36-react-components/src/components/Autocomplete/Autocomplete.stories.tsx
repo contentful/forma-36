@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { Autocomplete, AutocompleteProps } from './Autocomplete';
+import { Subheading } from './../Typography/Subheading/Subheading';
 
 export default {
   title: 'Components/Autocomplete',
@@ -132,7 +133,7 @@ export const MultiSelect = (args: AutocompleteProps<{}>) => {
           ))
         }
       </Autocomplete>
-      <h3>Shopping List:</h3>
+      <Subheading>Shopping List:</Subheading>
       <ul>
         {tagElements.map((tag: string, idx: number) => (
           <li key={`element-${tag}-${idx}`}>{tag}</li>
