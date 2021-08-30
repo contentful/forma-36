@@ -49,33 +49,27 @@ export type { TooltipProps } from '@contentful/f36-tooltip';
 export { EmptyState } from '@contentful/f36-empty-state';
 export type { EmptyStateProps } from '@contentful/f36-empty-state';
 export {
-  CheckboxField,
-  RadioButtonField,
-  Label,
-  BaseCheckboxField,
-  SwitchField,
-} from '@contentful/f36-forms';
-export type {
-  CheckboxFieldProps,
-  RadioButtonFieldProps,
-  LabelProps,
-  BaseCheckboxFieldProps,
-  SwitchFieldProps,
-} from '@contentful/f36-forms';
-export {
+  ControlledInput,
   Checkbox,
   RadioButton,
   Switch,
   BaseInput,
   BaseCheckbox,
-} from '@contentful/f36-inputs';
+  BaseCheckboxField,
+  SwitchField,
+} from '@contentful/f36-forms';
 export type {
+  ControlledInputFieldProps,
+  CheckboxFieldProps,
+  RadioButtonFieldProps,
+  LabelProps,
+  ControlledInputProps,
   CheckboxProps,
   RadioButtonProps,
   SwitchProps,
   BaseInputProps,
   BaseCheckboxProps,
-} from '@contentful/f36-inputs';
+} from '@contentful/f36-forms';
 export { Pill } from '@contentful/f36-pill';
 export type { PillProps } from '@contentful/f36-pill';
 export { Button, ButtonGroup, ToggleButton } from '@contentful/f36-button';
