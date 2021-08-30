@@ -1,4 +1,4 @@
-import { ChangeEventHandler } from 'react';
+import { ChangeEventHandler, FocusEvent, EventHandler } from 'react';
 import { CommonProps } from '@contentful/f36-core';
 
 export interface TextInputProps extends CommonProps {
@@ -87,4 +87,12 @@ export interface TextInputProps extends CommonProps {
    * Allows to listen to an input’s change in value
    */
   onChange?: ChangeEventHandler<HTMLInputElement>;
+  /**
+   * Allows to listen to an event when an element get focused
+   */
+  onFocus?: EventHandler<FocusEvent<HTMLInputElement>>;
+  /**
+   * Allows to listen to an event when an element loses focus
+   */
+  onBlur?: EventHandler<FocusEvent<HTMLInputElement>>;
 }
