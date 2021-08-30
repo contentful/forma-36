@@ -4,12 +4,9 @@ import {
   EventHandler,
   KeyboardEventHandler,
 } from 'react';
-import { CommonProps } from '@contentful/f36-core';
 import { BaseInputInternalProps } from '@contentful/f36-inputs';
 
-export interface TextInputProps
-  extends CommonProps,
-    Omit<BaseInputInternalProps, 'as'> {
+export interface TextInputProps extends Omit<BaseInputInternalProps, 'as'> {
   /**
    * Allows to render input without visual label
    *  @default false
