@@ -24,53 +24,91 @@ commands:
       - run: git show -m HEAD --name-only --pretty="" | egrep -q '<< parameters.pattern >>' || circleci step halt
 
 jobs:
-  lint-and-test:
+  build:
     docker:
       - image: circleci/node:14.15.0-browsers
     resource_class: xlarge
+    working_directory: ~/circleci-f36-build
     steps:
       - checkout
+      - attach_workspace:
+          at: ~/circleci-f36-build
+      - yarn_install
+      - run:
+          name: Lerna build
+          command: yarn build
+      - persist_to_workspace:
+          root: .
+          paths:
+            - packages/components/**/dist
+            - packages/core/dist
+            - packages/f36-docs-utils/dist
+            - packages/forma-36-fcss/dist
+            - packages/forma-36-react-components/dist
+            - packages/forma-36-tokens/dist
+            - packages/forma-36-website/public
+
+  analyze_code:
+    docker:
+      - image: circleci/node:14.15.0-browsers
+    resource_class: xlarge
+    working_directory: ~/circleci-f36-build
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/circleci-f36-build
       - yarn_install
       - run:
           name: Prettier
           command: yarn prettier:check
       - run:
-          name: Build
-          command: yarn build
-      - run:
           name: Lint
           command: yarn lint
       - run:
-          name: Check Types
+          name: Check types
           command: yarn tsc
+
+  test:
+    docker:
+      - image: circleci/node:14.15.0-browsers
+    resource_class: xlarge
+    working_directory: ~/circleci-f36-build
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/circleci-f36-build
+      - yarn_install
       - run:
           name: Test
           command: yarn test
 
-  chromatic-deployment:
+  deploy_chromatic:
     docker:
       - image: circleci/node:14.15.0-browsers
     resource_class: xlarge
+    working_directory: ~/circleci-f36-build
     steps:
       - checkout
+      - attach_workspace:
+          at: ~/circleci-f36-build
       - check-changed-files-or-halt:
           pattern: ^(packages)|(.js|jsx|ts|tsx|css|scss)$
       - yarn_install
       - run:
-          name: Lerna build
-          command: yarn run build
-      - run:
           name: Storybook
-          command: yarn run storybook:build
+          command: yarn storybook:build
       - run:
           name: Chromatic
-          command: yarn run chromatic
+          command: yarn chromatic
 
   release:
     docker:
       - image: circleci/node:14.15.0-browsers
+    working_directory: ~/circleci-f36-build
     steps:
       - checkout
+      - attach_workspace:
+          at: ~/circleci-f36-build
       - yarn_install
       - add_ssh_keys:
           fingerprints:
@@ -82,25 +120,34 @@ jobs:
           command: yarn build
       - run:
           name: Deploy
-          command: yarn lerna publish --no-private --exact --canary --no-git-tag-version --no-push --preid next-v4-$CIRCLE_BUILD_NUM --dist-tag next-v4 --force-publish --no-changelog --yes
+          command: yarn lerna publish --no-private --conventional-commits --conventional-prerelease=@contentful/forma-36-react-datepicker,@contentful/forma-36-react-timepicker --create-release github --yes
 
 workflows:
   version: 2
   f36-build:
     jobs:
-      - lint-and-test
-      - chromatic-deployment:
+      - build
+      - analyze_code:
           requires:
-            - lint-and-test
+            - build
+      - test:
+          requires:
+            - build
+      - deploy_chromatic:
+          requires:
+            - build
+            - analyze_code
+            - test
           filters:
             branches:
               # Forked pull requests have CIRCLE_BRANCH set to pull/XXX
               ignore: /pull\/[0-9]+/
       - release:
+          requires:
+            - build
+            - analyze_code
+            - test
           filters:
             branches:
               only:
                 - master
-                - forma-v4
-          requires:
-            - lint-and-test

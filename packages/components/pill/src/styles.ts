@@ -1,38 +1,23 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { PillVariants } from './types';
-import type { CSSObject } from '@emotion/serialize';
 
-const getCloseButtonStyle = (variant: PillVariants) => {
-  const variantStyle = (variant: PillVariants): CSSObject => {
-    switch (variant) {
-      case 'active':
-        return {
-          borderLeft: `1px solid ${tokens.gray400}`,
-          '&:hover, &:focus': {
-            background: tokens.gray300,
-            cursor: 'pointer',
-          },
-        };
-      default:
-        return {
-          borderLeft: `1px solid ${tokens.gray400}`,
-          '&:hover, &:focus': {
-            background: tokens.gray300,
-            cursor: 'pointer',
-          },
-        };
-    }
-  };
-
+const getCloseButtonStyle = () => {
   return css({
-    border: 'none',
-    borderTopRightRadius: tokens.borderRadiusSmall,
-    borderBottomRightRadius: tokens.borderRadiusSmall,
+    borderLeft: `1px solid ${tokens.gray400}`,
+    borderTopLeftRadius: 0,
+    borderBottomLeftRadius: 0,
     padding: tokens.spacingXs,
-    background: 'transparent',
-    transition: `background ${tokens.transitionDurationShort} ${tokens.transitionEasingDefault}`,
-    ...variantStyle(variant),
+    minHeight: 'auto',
+    transition: `background ${tokens.transitionDurationShort} ${tokens.transitionEasingDefault},
+    opacity ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
+    '&:focus': {
+      boxShadow: tokens.glowMuted,
+      borderLeftColor: tokens.gray300,
+    },
+    '&:hover, &:focus, &:active': {
+      backgroundColor: tokens.gray300,
+    },
   });
 };
 
@@ -47,16 +32,6 @@ const getLabelStyle = () => {
     textOverflow: 'ellipsis',
     overflow: 'hidden',
   });
-};
-
-const icon = {
-  fill: tokens.gray600,
-  verticalAlign: 'middle',
-};
-
-const dragIcon = {
-  padding: tokens.spacingXs,
-  paddingRight: 0,
 };
 
 const getPillStyle = (variant: PillVariants) => {
@@ -91,12 +66,20 @@ const getPillStyle = (variant: PillVariants) => {
   });
 };
 
-export default (variant: PillVariants) => {
+export function getPillStyles(variant: PillVariants) {
   return {
-    closeButton: getCloseButtonStyle(variant),
+    closeButton: getCloseButtonStyle(),
     label: getLabelStyle(),
-    icon: css(icon),
-    dragIcon: css(dragIcon),
+    icon: css({
+      fill: tokens.gray600,
+      verticalAlign: 'middle',
+      outline: 'none',
+    }),
+    dragIcon: css({
+      padding: tokens.spacingXs,
+      paddingRight: 0,
+      cursor: 'move',
+    }),
     pill: getPillStyle(variant),
   };
-};
+}

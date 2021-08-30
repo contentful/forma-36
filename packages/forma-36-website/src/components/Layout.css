@@ -33,12 +33,14 @@ pre.prism-code {
 
 code {
   font-family: var(--font-stack-monospace);
-  color: var(--color-blue-base);
-  font-size: var(--font-size-m);
   white-space: nowrap;
-  padding-top: 2px;
-  padding-bottom: 2px;
   font-weight: var(--font-weight-medium);
+  background-color: var(--gray-200);
+  border-radius: 6px;
+  font-size: 85%;
+  margin: 0;
+  padding: 0.2em 0.4em;
+  border-radius: var(--border-radius-small);
 }
 
 /* OSANO STYLES BEGIN */

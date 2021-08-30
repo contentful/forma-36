@@ -24,6 +24,7 @@ function getTypescriptMetaInformation(sourcePath) {
 
     return result;
   } catch (e) {
+    // eslint-disable-next-line no-console
     console.log('Problem with parsing Typescript props for  ' + sourcePath);
     return {};
   }
