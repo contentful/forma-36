@@ -1,4 +1,6 @@
 @import 'settings/dimensions';
+@import 'settings/colors';
+@import 'settings/shadows';
 
 .autocompleteDropdown {
   display: block;
@@ -6,6 +8,14 @@
 
 .autocompleteInput {
   display: flex;
+}
+
+.autocompleteInputNegative input {
+  border-color: var(--color-negative);
+}
+
+.autocompleteInputNegative input:focus {
+  box-shadow: var(--glow-negative);
 }
 
 .autocompleteInput input::-webkit-search-cancel-button {
@@ -19,4 +29,8 @@
 .autocompleteInput .inputIconButton {
   position: relative;
   margin-left: calc(-1 * var(--spacing-xl));
+}
+
+.validationMessage {
+  margin-top: var(--spacing-xs);
 }
