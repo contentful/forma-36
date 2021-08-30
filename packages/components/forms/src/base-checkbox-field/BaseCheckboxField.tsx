@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Flex } from '@contentful/f36-core';
-import { BaseCheckbox } from '@contentful/f36-inputs';
+import { BaseCheckbox } from '../base-checkbox';
 import { ValidationMessage } from '@contentful/f36-validation-message';
 import { HelpText } from '@contentful/f36-helptext';
 import { getStyles } from './BaseCheckboxField.styles';

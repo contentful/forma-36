@@ -49,7 +49,6 @@ export type { TooltipProps } from '@contentful/f36-tooltip';
 export { EmptyState } from '@contentful/f36-empty-state';
 export type { EmptyStateProps } from '@contentful/f36-empty-state';
 export {
-  ControlledInput,
   Checkbox,
   RadioButton,
   Switch,
@@ -59,11 +58,9 @@ export {
   SwitchField,
 } from '@contentful/f36-forms';
 export type {
-  ControlledInputFieldProps,
   CheckboxFieldProps,
   RadioButtonFieldProps,
   LabelProps,
-  ControlledInputProps,
   CheckboxProps,
   RadioButtonProps,
   SwitchProps,

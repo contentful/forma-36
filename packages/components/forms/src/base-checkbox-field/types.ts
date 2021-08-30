@@ -1,5 +1,5 @@
 import type { CommonProps } from '@contentful/f36-core';
-import type { BaseCheckboxProps } from '@contentful/f36-inputs';
+import type { BaseCheckboxProps } from '../base-checkbox';
 import { HelpTextProps } from '@contentful/f36-helptext';
 import { LabelProps } from '../Label';
 
