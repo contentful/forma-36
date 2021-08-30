@@ -1,17 +1,15 @@
 import React from 'react';
-import { ControlledInput, ControlledInputProps } from '..';
+import { BaseCheckbox } from '../base-checkbox';
+import type { RadioButtonProps as _RadioBuuttonProps } from '../base-checkbox/types';
 
-export type RadioButtonProps = Omit<
-  ControlledInputProps,
-  'isIndeterminate' | 'type'
->;
+export type RadioButtonProps = _RadioBuuttonProps;
 
 const _RadioButton = (
   { testId = 'cf-ui-radio-button', ...otherProps }: RadioButtonProps,
-  ref: React.Ref<HTMLDivElement>,
+  ref: React.Ref<HTMLLabelElement>,
 ) => {
   return (
-    <ControlledInput testId={testId} type="radio" ref={ref} {...otherProps} />
+    <BaseCheckbox testId={testId} type="radio" ref={ref} {...otherProps} />
   );
 };
 

@@ -209,6 +209,14 @@ module.exports = {
             link: '',
             menuLinks: [
               {
+                name: 'BaseCheckbox',
+                link: '/components/inputs/src/base-checkbox/',
+              },
+              {
+                name: 'BaseInput',
+                link: '/components/inputs/src/base-input/',
+              },
+              {
                 name: 'ControlledInput',
                 link: '/components/inputs/src/controlled-input/',
               },
@@ -247,6 +255,10 @@ module.exports = {
               {
                 name: 'SelectField',
                 link: '/components/select-field/',
+              },
+              {
+                name: 'Switch',
+                link: '/components/inputs/src/switch/',
               },
               {
                 name: 'TextField',

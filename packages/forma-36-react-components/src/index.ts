@@ -64,13 +64,17 @@ export {
   ControlledInput,
   Checkbox,
   RadioButton,
+  Switch,
   BaseInput,
+  BaseCheckbox,
 } from '@contentful/f36-inputs';
 export type {
   ControlledInputProps,
   CheckboxProps,
   RadioButtonProps,
+  SwitchProps,
   BaseInputProps,
+  BaseCheckboxProps,
 } from '@contentful/f36-inputs';
 export { Pill } from '@contentful/f36-pill';
 export type { PillProps } from '@contentful/f36-pill';
