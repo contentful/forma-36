@@ -29,9 +29,9 @@ export const Basic = (args: TextInputProps) => {
   return (
     <TextInput
       {...args}
-      name="someOtherOption"
-      value="someOtherValue"
-      id="myField"
+      name="Example name"
+      value="Example value"
+      id="input-1"
       link={
         <TextLink icon={<LockIcon />} href="https://f36.contentful.com/">
           go to link
@@ -42,7 +42,7 @@ export const Basic = (args: TextInputProps) => {
 };
 
 Basic.args = {
-  label: 'some label text',
+  label: 'Example label for input',
   validationMessage: 'validation message',
   helpText: 'help text',
   placeholder: 'this is my placeholder',
@@ -56,11 +56,11 @@ export const overview = () => (
 
     <Flex marginBottom="spacingL">
       <TextInput
-        label="My amazing label"
-        name="someOtherOption"
-        value="someOtherValue"
-        id="myField"
-        placeholder="This is such a great input"
+        label="Example label for input"
+        name="Input name"
+        value="Example value"
+        id="input-1"
+        placeholder="My great input"
       />
     </Flex>
 
@@ -70,13 +70,13 @@ export const overview = () => (
 
     <Flex marginBottom="spacingL">
       <TextInput
-        label="My amazing label"
-        name="someOtherOption"
-        value="someOtherValue"
-        id="myField"
+        label="Example label for input"
+        name="Input name"
+        value="Example value"
+        id="input-1"
         isInvalid
         validationMessage="Great validation message"
-        placeholder="This is such a great input"
+        placeholder="My great input"
       />
     </Flex>
 
@@ -86,14 +86,14 @@ export const overview = () => (
 
     <Flex marginBottom="spacingL">
       <TextInput
-        label="My amazing label"
-        name="someOtherOption"
-        value="someOtherValue"
-        id="myField"
+        label="Example label for input"
+        name="Example name"
+        value="Example value"
+        id="input-1"
         isInvalid
         validationMessage="Great validation message"
-        helpText="Very helpful addition information"
-        placeholder="This is such a great input"
+        helpText="Very helpful additional information"
+        placeholder="My great input"
         countCharacters
         maxLength={20}
       />
@@ -105,11 +105,11 @@ export const overview = () => (
 
     <Flex marginBottom="spacingL">
       <TextInput
-        label="My amazing label"
-        name="someOtherOption"
-        value="someOtherValue"
-        id="myField"
-        placeholder="This is such a great input"
+        label="Example label for input"
+        name="Example name"
+        value="Example value"
+        id="input-1"
+        placeholder="My great input"
         isDisabled
       />
     </Flex>
@@ -120,11 +120,11 @@ export const overview = () => (
 
     <Flex marginBottom="spacingL">
       <TextInput
-        label="My amazing label"
-        name="someOtherOption"
-        value="someOtherValue"
-        id="myField"
-        placeholder="This is such a great input"
+        label="Example label for input"
+        name="Example name"
+        value="Example value"
+        id="input-1"
+        placeholder="My great input"
         link={
           <TextLink icon={<LockIcon />} href="https://f36.contentful.com/">
             go to link
@@ -139,11 +139,11 @@ export const overview = () => (
 
     <Flex marginBottom="spacingL">
       <TextInput
-        label="My amazing label"
-        name="someOtherOption"
-        value="someOtherValue"
-        id="myField"
-        placeholder="This is such a great input"
+        label="Example label for input"
+        name="Example name"
+        value="Example value"
+        id="input-1"
+        placeholder="My great input"
         icon={<SearchIcon />}
         link={
           <TextLink icon={<LockIcon />} href="https://f36.contentful.com/">
@@ -159,11 +159,11 @@ export const overview = () => (
 
     <Flex marginBottom="spacingL">
       <TextInput
-        label="My amazing label"
-        name="someOtherOption"
-        value="someOtherValue"
-        id="myField"
-        placeholder="This is such a great input"
+        label="Example label for input"
+        name="Example name"
+        value="Example value"
+        id="input-1"
+        placeholder="My great input"
         countCharacters
         maxLength={20}
         validationMessage="It's great but you need to fix something"
@@ -181,11 +181,11 @@ export const overview = () => (
 
     <Flex marginBottom="spacingL">
       <TextInput
-        label="My amazing label"
-        name="someOtherOption"
-        value="someOtherValue"
-        id="myField"
-        placeholder="This is such a great input"
+        label="Example label for input"
+        name="Example name"
+        value="Example value"
+        id="input-1"
+        placeholder="My great input"
         countCharacters
         maxLength={20}
         validationMessage="It's great but you need to fix something"
@@ -204,11 +204,11 @@ export const overview = () => (
 
     <Flex marginBottom="spacingL">
       <TextInput
-        label="My amazing label"
-        name="someOtherOption"
-        value="someOtherValue"
-        id="myField"
-        placeholder="This is such a great input"
+        label="Example label for input"
+        name="Example name"
+        value="Example value"
+        id="input-1"
+        placeholder="My great input"
         countCharacters
         maxLength={20}
         validationMessage="It's great but you need to fix something"
@@ -228,11 +228,11 @@ export const overview = () => (
 
     <Flex marginBottom="spacingL">
       <TextInput
-        label="My amazing label"
-        name="someOtherOption"
-        value="someOtherValue"
-        id="myField"
-        placeholder="This is such a great input"
+        label="Example label for input"
+        name="Example name"
+        value="Example value"
+        id="input-1"
+        placeholder="My great input"
         isStandalone
         link={
           <TextLink icon={<LockIcon />} href="https://f36.contentful.com/">
