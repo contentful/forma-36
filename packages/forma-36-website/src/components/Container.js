@@ -12,7 +12,6 @@ import {
   Paragraph,
   TextLink,
   List,
-  ListItem,
   Table,
   TableHead,
   TableBody,
@@ -94,7 +93,7 @@ const markToComponentMap = {
   p: (props) => <Paragraph marginBottom="spacingS" {...props} />,
   a: (props) => <TextLink {...props} />,
   ul: (props) => <List className="f36-margin-bottom--m" {...props} />,
-  li: (props) => <ListItem className="f36-color--text-mid" {...props} />,
+  li: (props) => <List.Item className="f36-color--text-mid" {...props} />,
   code: (props) => {
     if (props.static) {
       return <StaticSource {...props} />;
