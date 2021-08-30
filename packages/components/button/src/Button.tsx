@@ -74,7 +74,7 @@ const _Button: PolymorphicComponentWithRef<
   const commonContent = (
     <>
       {icon && alignIcon === 'start' && iconContent}
-      <Flex as="span">{children}</Flex>
+      {children && <Flex as="span">{children}</Flex>}
       {icon && alignIcon === 'end' && iconContent}
       {isLoading && (
         <Box
