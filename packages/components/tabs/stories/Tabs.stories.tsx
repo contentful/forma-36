@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
 import { SectionHeading } from '@contentful/f36-typography';
-import { Tabs } from '../src/Tabs';
-import { Tab } from '../src/Tab';
-import { TabPanel } from '../src/TabPanel';
+import { Tabs } from '../src';
 import { Flex } from '@contentful/f36-core';
 
 export default {
@@ -15,9 +13,9 @@ export default {
   component: Tabs,
   parameters: {
     propTypes: [
-      Tab['__docgenInfo'],
+      Tabs.Tab['__docgenInfo'],
       Tabs['__docgenInfo'],
-      TabPanel['__docgenInfo'],
+      Tabs.Panel['__docgenInfo'],
     ],
   },
   title: 'Components/Tabs',
@@ -29,7 +27,7 @@ export const Basic: Story = (args) => {
   return (
     <div>
       <Tabs {...args}>
-        <Tab
+        <Tabs.Tab
           id="first"
           isSelected={selected === 'first'}
           onSelect={(id: string) => {
@@ -38,8 +36,8 @@ export const Basic: Story = (args) => {
           }}
         >
           First
-        </Tab>
-        <Tab
+        </Tabs.Tab>
+        <Tabs.Tab
           id="second"
           isSelected={selected === 'second'}
           onSelect={(id: string) => {
@@ -48,8 +46,8 @@ export const Basic: Story = (args) => {
           }}
         >
           Second
-        </Tab>
-        <Tab
+        </Tabs.Tab>
+        <Tabs.Tab
           id="third"
           isDisabled
           isSelected={selected === 'third'}
@@ -59,16 +57,16 @@ export const Basic: Story = (args) => {
           }}
         >
           Third (disabled)
-        </Tab>
+        </Tabs.Tab>
       </Tabs>
       {selected === 'first' && (
-        <TabPanel id="first">content first tab</TabPanel>
+        <Tabs.Panel id="first">content first tab</Tabs.Panel>
       )}
       {selected === 'second' && (
-        <TabPanel id="second">content second tab</TabPanel>
+        <Tabs.Panel id="second">content second tab</Tabs.Panel>
       )}
       {selected === 'third' && (
-        <TabPanel id="third">content third tab</TabPanel>
+        <Tabs.Panel id="third">content third tab</Tabs.Panel>
       )}
     </div>
   );
@@ -82,15 +80,15 @@ export const Overview: Story = () => (
 
     <Flex marginBottom="spacingS">
       <Tabs role="navigation">
-        <Tab id="first" href="https://contentful.com" isSelected>
+        <Tabs.Tab id="first" href="https://contentful.com" isSelected>
           First
-        </Tab>
-        <Tab id="second" href="https://contentful.com">
+        </Tabs.Tab>
+        <Tabs.Tab id="second" href="https://contentful.com">
           Second
-        </Tab>
-        <Tab id="third" href="https://contentful.com">
+        </Tabs.Tab>
+        <Tabs.Tab id="third" href="https://contentful.com">
           Third
-        </Tab>
+        </Tabs.Tab>
       </Tabs>
     </Flex>
 
@@ -100,15 +98,15 @@ export const Overview: Story = () => (
 
     <Flex marginBottom="spacingS">
       <Tabs role="navigation" variant="horizontal-divider">
-        <Tab id="first" href="https://contentful.com" isSelected>
+        <Tabs.Tab id="first" href="https://contentful.com" isSelected>
           First
-        </Tab>
-        <Tab id="second" href="https://contentful.com">
+        </Tabs.Tab>
+        <Tabs.Tab id="second" href="https://contentful.com">
           Second
-        </Tab>
-        <Tab id="third" href="https://contentful.com">
+        </Tabs.Tab>
+        <Tabs.Tab id="third" href="https://contentful.com">
           Third
-        </Tab>
+        </Tabs.Tab>
       </Tabs>
     </Flex>
 
@@ -118,15 +116,15 @@ export const Overview: Story = () => (
 
     <Flex marginBottom="spacingS">
       <Tabs role="navigation" variant="vertical-divider">
-        <Tab id="first" href="https://contentful.com" isSelected>
+        <Tabs.Tab id="first" href="https://contentful.com" isSelected>
           First
-        </Tab>
-        <Tab id="second" href="https://contentful.com">
+        </Tabs.Tab>
+        <Tabs.Tab id="second" href="https://contentful.com">
           Second
-        </Tab>
-        <Tab id="third" href="https://contentful.com">
+        </Tabs.Tab>
+        <Tabs.Tab id="third" href="https://contentful.com">
           Third
-        </Tab>
+        </Tabs.Tab>
       </Tabs>
     </Flex>
   </>
