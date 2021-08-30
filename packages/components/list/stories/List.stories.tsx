@@ -3,16 +3,14 @@ import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 
-import { List } from '../src/List';
-import type { ListProps } from '../src/List';
-import { ListItem } from '../src/ListItem/ListItem';
+import { List, ListProps } from '../src';
 
 export default {
   title: 'Components/List',
   component: List,
-  subcomponents: { ListItem },
+  subcomponents: { ListItem: List.Item },
   parameters: {
-    propTypes: [List['__docgenInfo'], ListItem['__docgenInfo']],
+    propTypes: [List['__docgenInfo'], List.Item['__docgenInfo']],
   },
   argTypes: {
     as: {
@@ -28,14 +26,14 @@ export default {
 export const Default: Story<ListProps> = (args) => {
   return (
     <List {...args}>
-      <ListItem>List Item 1</ListItem>
-      <ListItem>List Item 2</ListItem>
-      <ListItem>
+      <List.Item>List Item 1</List.Item>
+      <List.Item>List Item 2</List.Item>
+      <List.Item>
         <List>
-          <ListItem>Sublist Item 1</ListItem>
-          <ListItem>Sublist Item 2</ListItem>
+          <List.Item>Sublist Item 1</List.Item>
+          <List.Item>Sublist Item 2</List.Item>
         </List>
-      </ListItem>
+      </List.Item>
     </List>
   );
 };
@@ -47,14 +45,14 @@ export const overview = ({ ...args }: ListProps) => (
 
       <Flex>
         <List {...args}>
-          <ListItem>List Item 1</ListItem>
-          <ListItem>List Item 2</ListItem>
-          <ListItem>
+          <List.Item>List Item 1</List.Item>
+          <List.Item>List Item 2</List.Item>
+          <List.Item>
             <List>
-              <ListItem>Sublist Item 1</ListItem>
-              <ListItem>Sublist Item 2</ListItem>
+              <List.Item>Sublist Item 1</List.Item>
+              <List.Item>Sublist Item 2</List.Item>
             </List>
-          </ListItem>
+          </List.Item>
         </List>
       </Flex>
     </Flex>
@@ -63,14 +61,14 @@ export const overview = ({ ...args }: ListProps) => (
 
       <Flex>
         <List as="ol" {...args}>
-          <ListItem>List Item 1</ListItem>
-          <ListItem>List Item 2</ListItem>
-          <ListItem>
+          <List.Item>List Item 1</List.Item>
+          <List.Item>List Item 2</List.Item>
+          <List.Item>
             <List as="ol">
-              <ListItem>Sublist Item 1</ListItem>
-              <ListItem>Sublist Item 2</ListItem>
+              <List.Item>Sublist Item 1</List.Item>
+              <List.Item>Sublist Item 2</List.Item>
             </List>
-          </ListItem>
+          </List.Item>
         </List>
       </Flex>
     </Flex>

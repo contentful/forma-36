@@ -1,4 +1,4 @@
-export { Accordion } from './Accordion';
+export { Accordion } from './CompoundAccordion';
 export type { AccordionProps } from './Accordion';
 export { AccordionHeader } from './AccordionHeader/AccordionHeader';
 export type { AccordionHeaderProps } from './AccordionHeader/AccordionHeader';
