@@ -1,23 +1,24 @@
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
 
-import { Grid, GridInternalProps } from '../src/Grid/Grid';
-import { GridItem, GridItemInternalProps } from '../src/Grid/GridItem/GridItem';
+import { GridInternalProps } from '../src/Grid/Grid';
+import { GridItemInternalProps } from '../src/Grid/GridItem/GridItem';
+import { Grid } from '../src';
 
 const styles = {
   demoBox: {
-    backgroundColor: tokens.colorContrastLight,
+    backgroundColor: tokens.gray800,
   },
   demoBoxDark: {
-    backgroundColor: tokens.colorContrastDark,
+    backgroundColor: tokens.colorBlack,
   },
 };
 
 export default {
   title: 'Layout/Grid/GridItem',
-  component: GridItem,
+  component: Grid.Item,
   parameters: {
-    propTypes: [GridItem['__docgenInfo']],
+    propTypes: [Grid.Item['__docgenInfo']],
   },
   argTypes: {
     children: { control: { disable: true } },
@@ -32,11 +33,11 @@ const DemoBox = ({ times, id }: { times?: number; id?: string }) => {
   if (times) {
     const result = [];
     for (let i = 0; i < times; i++) {
-      result.push(<GridItem key={`${id}-${i}`} style={styles.demoBox} />);
+      result.push(<Grid.Item key={`${id}-${i}`} style={styles.demoBox} />);
     }
     return <>{result}</>;
   }
-  return <GridItem style={styles.demoBox}></GridItem>;
+  return <Grid.Item style={styles.demoBox}></Grid.Item>;
 };
 
 interface GridItemArgs extends GridItemInternalProps {
@@ -59,7 +60,7 @@ export const Basic = ({
     rowGap={args.rowGap}
     style={{ height: exampleGridHeight }}
   >
-    <GridItem
+    <Grid.Item
       style={styles.demoBoxDark}
       columnStart={args.columnStart}
       columnEnd={args.columnEnd}

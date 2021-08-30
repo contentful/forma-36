@@ -4,7 +4,7 @@ type: 'component'
 slug: /components/grid/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/core/src/Grid'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-grid--default'
-typescript: ./Grid.tsx,./GridItem/GridItem.tsx
+typescript: ./Grid.tsx,./Grid.Item/Grid.Item.tsx
 ---
 
 [CSS Grid](https://developer.mozilla.org/en-US/docs/Glossary/Grid) based React component, comes with predefined values to ensure design consistency, and ease of use.
@@ -20,14 +20,14 @@ typescript: ./Grid.tsx,./GridItem/GridItem.tsx
 The Grid consists of two components:
 
 - Grid: Used as a container for GridItems
-- GridItem: Elements within the Grid
+- Grid.Item: Elements within the Grid
 
 ### Import
 
 ```js static=true
-import { Grid, GridItem } from '@contentful/f36-components';
+import { Grid } from '@contentful/f36-components';
 // or
-import { Grid, GridItem } from '@contentful/f36-core';
+import { Grid } from '@contentful/f36-core';
 ```
 
 ## Code examples
@@ -94,14 +94,14 @@ The grid layout consists of different components that helps defining your layout
 
 ```jsx
 <Grid columns="1fr 2fr" rowGap="spacingM" columnGap="spacingM">
-  <GridItem style={{ backgroundColor: '#263545', height: '100px' }} />
-  <GridItem style={{ backgroundColor: '#263545', height: '100px' }} />
-  <GridItem style={{ backgroundColor: '#263545', height: '100px' }} />
-  <GridItem style={{ backgroundColor: '#263545', height: '100px' }} />
-  <GridItem style={{ backgroundColor: '#263545', height: '100px' }} />
-  <GridItem style={{ backgroundColor: '#263545', height: '100px' }} />
-  <GridItem style={{ backgroundColor: '#263545', height: '100px' }} />
-  <GridItem style={{ backgroundColor: '#263545', height: '100px' }} />
+  <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
+  <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
+  <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
+  <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
+  <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
+  <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
+  <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
+  <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
 </Grid>
 ```
 
@@ -116,12 +116,12 @@ The grid layout consists of different components that helps defining your layout
 ```jsx
 <div>
   <Grid columns="1fr 2fr 1fr 2fr 1fr 2fr" columnGap="spacingM">
-    <GridItem style={{ backgroundColor: '#263545', height: '100px' }} />
-    <GridItem style={{ backgroundColor: '#263545', height: '100px' }} />
-    <GridItem style={{ backgroundColor: '#263545', height: '100px' }} />
-    <GridItem style={{ backgroundColor: '#263545', height: '100px' }} />
-    <GridItem style={{ backgroundColor: '#263545', height: '100px' }} />
-    <GridItem style={{ backgroundColor: '#263545', height: '100px' }} />
+    <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
+    <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
+    <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
+    <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
+    <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
+    <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
   </Grid>
 
   <Grid
@@ -129,12 +129,12 @@ The grid layout consists of different components that helps defining your layout
     columnGap="spacingM"
     style={{ marginTop: '24px' }}
   >
-    <GridItem style={{ backgroundColor: '#0C141C', height: '100px' }} />
-    <GridItem style={{ backgroundColor: '#0C141C', height: '100px' }} />
-    <GridItem style={{ backgroundColor: '#0C141C', height: '100px' }} />
-    <GridItem style={{ backgroundColor: '#0C141C', height: '100px' }} />
-    <GridItem style={{ backgroundColor: '#0C141C', height: '100px' }} />
-    <GridItem style={{ backgroundColor: '#0C141C', height: '100px' }} />
+    <Grid.Item style={{ backgroundColor: '#0C141C', height: '100px' }} />
+    <Grid.Item style={{ backgroundColor: '#0C141C', height: '100px' }} />
+    <Grid.Item style={{ backgroundColor: '#0C141C', height: '100px' }} />
+    <Grid.Item style={{ backgroundColor: '#0C141C', height: '100px' }} />
+    <Grid.Item style={{ backgroundColor: '#0C141C', height: '100px' }} />
+    <Grid.Item style={{ backgroundColor: '#0C141C', height: '100px' }} />
   </Grid>
 </div>
 ```
@@ -172,8 +172,8 @@ i.e. instead of specifying `columnStart` and `columnEnd` you can use span to mak
 
 ```jsx
 <Grid columns={6}>
-  <GridItem style={{ backgroundColor: '#263545', height: '100px' }} />
-  <GridItem
+  <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
+  <Grid.Item
     area={'span 4 / span 4'}
     style={{ backgroundColor: '#263545', height: '100px' }}
   />
@@ -188,8 +188,8 @@ Just like flexbox the grid comes with `justifyContent`, `justifyItems`, `alignIt
 
 ```jsx
 <Grid columns={'250px 250px'} justifyContent={'space-between'}>
-  <GridItem style={{ backgroundColor: '#263545', height: '100px' }} />
-  <GridItem style={{ backgroundColor: '#263545', height: '100px' }} />
+  <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
+  <Grid.Item style={{ backgroundColor: '#263545', height: '100px' }} />
 </Grid>
 ```
 
@@ -221,6 +221,6 @@ import { Props } from '@contentful/f36-docs-utils';
 
 <Props of="Grid" />
 
-### GridItem
+### Grid.Item
 
 <Props of="GridItem" />
