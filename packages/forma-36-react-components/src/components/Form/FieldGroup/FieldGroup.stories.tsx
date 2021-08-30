@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CheckboxField } from '@contentful/f36-forms';
+import { Checkbox } from '@contentful/f36-forms';
 
 import { FieldGroup } from './FieldGroup';
 
@@ -20,7 +20,7 @@ export const Basic = () => {
 
   return (
     <FieldGroup>
-      <CheckboxField
+      <Checkbox
         label="I agree"
         value="yes"
         helpText="Click if you agree"
@@ -28,7 +28,7 @@ export const Basic = () => {
         isChecked={agreeTerms === 'yes'}
         id="termsCheckboxYes"
       />
-      <CheckboxField
+      <Checkbox
         label="I don't agree"
         value="no"
         onChange={(e) => setTerms((e.target as HTMLInputElement).value)}

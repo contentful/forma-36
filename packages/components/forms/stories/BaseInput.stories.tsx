@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BaseInput } from '../src';
+import { BaseInput } from '../src/base-input';
 import { Flex } from '@contentful/f36-core';
 import { Icon } from '@contentful/f36-icon';
 import * as icons from '@contentful/f36-icons';
