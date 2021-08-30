@@ -20,7 +20,13 @@ export interface BoxInternalProps
   as?: React.ElementType<any>;
 }
 
-export function useBox(props: Omit<BoxInternalProps, 'children'>) {
+export type BoxProps<
+  E extends React.ElementType = typeof DEFAULT_TAG
+> = PolymorphicProps<BoxInternalProps, E>;
+
+export function useBox<E extends React.ElementType = typeof DEFAULT_TAG>(
+  props: BoxProps<E>,
+) {
   const {
     display,
     className,
@@ -36,7 +42,7 @@ export function useBox(props: Omit<BoxInternalProps, 'children'>) {
     paddingTop,
     testId,
     as: Element = DEFAULT_TAG,
-    style,
+    ...otherProps
   } = props;
   const boxProps = {
     className: cx(
@@ -60,7 +66,7 @@ export function useBox(props: Omit<BoxInternalProps, 'children'>) {
       className,
     ),
     ['data-test-id']: testId,
-    style,
+    ...otherProps,
   };
 
   return {
@@ -69,15 +75,11 @@ export function useBox(props: Omit<BoxInternalProps, 'children'>) {
   };
 }
 
-export type BoxProps<
-  E extends React.ElementType = typeof DEFAULT_TAG
-> = PolymorphicProps<BoxInternalProps, E>;
-
 function _Box<E extends React.ElementType = typeof DEFAULT_TAG>(
   props: BoxProps<E>,
   ref: React.Ref<any>,
 ) {
-  const { boxProps, Element } = useBox(props);
+  const { boxProps, Element } = useBox<E>(props);
 
   return (
     <Element {...boxProps} ref={ref}>
