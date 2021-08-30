@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  Table,
-  TableHead,
-  TableBody,
-  TableCell,
-  TableRow,
-} from '@contentful/f36-table';
+import { Table } from '@contentful/f36-table';
 
 import { SkeletonRow, SkeletonRowProps } from '../src/SkeletonRow/SkeletonRow';
 
@@ -20,18 +14,18 @@ export default {
 
 export const Basic = (args: SkeletonRowProps) => (
   <Table>
-    <TableHead>
-      <TableRow>
-        <TableCell>Name</TableCell>
-        <TableCell>Email</TableCell>
-        <TableCell>Address</TableCell>
-        <TableCell>Postal Code</TableCell>
-        <TableCell>City</TableCell>
-      </TableRow>
-    </TableHead>
-    <TableBody>
+    <Table.Head>
+      <Table.Row>
+        <Table.Cell>Name</Table.Cell>
+        <Table.Cell>Email</Table.Cell>
+        <Table.Cell>Address</Table.Cell>
+        <Table.Cell>Postal Code</Table.Cell>
+        <Table.Cell>City</Table.Cell>
+      </Table.Row>
+    </Table.Head>
+    <Table.Body>
       <SkeletonRow {...args} />
-    </TableBody>
+    </Table.Body>
   </Table>
 );
 

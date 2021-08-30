@@ -5,7 +5,10 @@ status: 'stable'
 slug: /components/table/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/Table'
 storybook: 'https://f36-storybook.contentful.com/?path=/info/components-table--default'
+typescript: ./src/Table.tsx,./src/TableCell.tsx,./src/TableRow.tsx,./src/TableBody.tsx,./src/TableHead.tsx
 ---
+
+import { Props } from '@contentful/f36-docs-utils';
 
 Use tables to present large amounts of data, and data which has multiple properties attached to it.
 
@@ -25,34 +28,34 @@ Use tables to present large amounts of data, and data which has multiple propert
 
 ```jsx
 <Table>
-  <TableHead>
-    <TableRow>
-      <TableCell>Name</TableCell>
-      <TableCell>Email</TableCell>
-      <TableCell>Organization role</TableCell>
-      <TableCell>Last activity</TableCell>
-    </TableRow>
-  </TableHead>
-  <TableBody>
-    <TableRow>
-      <TableCell>Claus Mitchell</TableCell>
-      <TableCell>claus.mitchell@contentful.com</TableCell>
-      <TableCell>CEO</TableCell>
-      <TableCell>August 29, 2018</TableCell>
-    </TableRow>
-    <TableRow>
-      <TableCell>Johannes Ramos</TableCell>
-      <TableCell>johannes.ramos@contentful.com</TableCell>
-      <TableCell>CTO</TableCell>
-      <TableCell>July 27, 2019</TableCell>
-    </TableRow>
-    <TableRow>
-      <TableCell>Alex Kalinoski</TableCell>
-      <TableCell>alex.kalinoski@contentful.com</TableCell>
-      <TableCell>CDO</TableCell>
-      <TableCell>June 13, 2019</TableCell>
-    </TableRow>
-  </TableBody>
+  <Table.Head>
+    <Table.Row>
+      <Table.Cell>Name</Table.Cell>
+      <Table.Cell>Email</Table.Cell>
+      <Table.Cell>Organization role</Table.Cell>
+      <Table.Cell>Last activity</Table.Cell>
+    </Table.Row>
+  </Table.Head>
+  <Table.Body>
+    <Table.Row>
+      <Table.Cell>Claus Mitchell</Table.Cell>
+      <Table.Cell>claus.mitchell@contentful.com</Table.Cell>
+      <Table.Cell>CEO</Table.Cell>
+      <Table.Cell>August 29, 2018</Table.Cell>
+    </Table.Row>
+    <Table.Row>
+      <Table.Cell>Johannes Ramos</Table.Cell>
+      <Table.Cell>johannes.ramos@contentful.com</Table.Cell>
+      <Table.Cell>CTO</Table.Cell>
+      <Table.Cell>July 27, 2019</Table.Cell>
+    </Table.Row>
+    <Table.Row>
+      <Table.Cell>Alex Kalinoski</Table.Cell>
+      <Table.Cell>alex.kalinoski@contentful.com</Table.Cell>
+      <Table.Cell>CDO</Table.Cell>
+      <Table.Cell>June 13, 2019</Table.Cell>
+    </Table.Row>
+  </Table.Body>
 </Table>
 ```
 
@@ -61,3 +64,25 @@ Use tables to present large amounts of data, and data which has multiple propert
 - Keep headers short
 - Headers should be informative and descriptive
 - Content in the table should be concise and scannable
+
+## Props
+
+### Table
+
+<Props of="Table" />
+
+### Table.Head
+
+<Props of="TableHead" />
+
+### Table.Body
+
+<Props of="TableBody" />
+
+### Table.Row
+
+<Props of="TableRow" />
+
+### Table.Cell
+
+<Props of="TableCell" />

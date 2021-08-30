@@ -1,10 +1,6 @@
 import React from 'react';
 import {
   Table,
-  TableHead,
-  TableBody,
-  TableRow,
-  TableCell,
   Flex,
   Box,
   TextLink,
@@ -69,19 +65,19 @@ function PropertyType({ type, name }: { type: PropType; name: string }) {
 function PropRow(props: { definition: PropDefinition }) {
   const item = props.definition;
   return (
-    <TableRow key={item.name}>
-      <TableCell>
+    <Table.Row key={item.name}>
+      <Table.Cell>
         <code>{item.name}</code>
-      </TableCell>
-      <TableCell>{item.required ? 'required' : ''}</TableCell>
-      <TableCell>
+      </Table.Cell>
+      <Table.Cell>{item.required ? 'required' : ''}</Table.Cell>
+      <Table.Cell>
         {item.defaultValue ? <>{item.defaultValue.value}</> : ''}
-      </TableCell>
-      <TableCell>
+      </Table.Cell>
+      <Table.Cell>
         <PropertyType name={item.name} type={item.type} />
-      </TableCell>
-      <TableCell>{item.description}</TableCell>
-    </TableRow>
+      </Table.Cell>
+      <Table.Cell>{item.description}</Table.Cell>
+    </Table.Row>
   );
 }
 
@@ -127,16 +123,16 @@ export function Props(props: { of: string }) {
     <Flex flexDirection="column">
       {metadata.additional.length > 0 && switcher}
       <Table layout="embedded">
-        <TableHead>
-          <TableRow>
-            <TableCell width="150px">Name</TableCell>
-            <TableCell width="30px">Required</TableCell>
-            <TableCell width="70px">Default</TableCell>
-            <TableCell width="30%">Type</TableCell>
-            <TableCell>Description</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
+        <Table.Head>
+          <Table.Row>
+            <Table.Cell width="150px">Name</Table.Cell>
+            <Table.Cell width="30px">Required</Table.Cell>
+            <Table.Cell width="70px">Default</Table.Cell>
+            <Table.Cell width="30%">Type</Table.Cell>
+            <Table.Cell>Description</Table.Cell>
+          </Table.Row>
+        </Table.Head>
+        <Table.Body>
           {view === 'main' && (
             <>
               {metadata.main.map((item) => (
@@ -151,7 +147,7 @@ export function Props(props: { of: string }) {
               ))}
             </>
           )}
-        </TableBody>
+        </Table.Body>
       </Table>
     </Flex>
   );

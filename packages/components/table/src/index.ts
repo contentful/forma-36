@@ -1,4 +1,4 @@
-export { Table } from './Table';
+export { Table } from './CompoundTable';
 export type { TableProps } from './Table';
 export { TableBody } from './TableBody';
 export type { TableBodyProps } from './TableBody';
