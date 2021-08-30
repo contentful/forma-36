@@ -1,29 +1,23 @@
 import React, { useState } from 'react';
 import { SectionHeading } from '@contentful/f36-typography';
-import {
-  RadioButtonField,
-  RadioButtonFieldProps,
-} from '../src/radio-button-field';
+import { Radio, RadioProps } from '../src';
 import { FieldGroup } from '@contentful/f36-components';
 import { Flex } from '@contentful/f36-core';
 
 export default {
-  title: 'Form Elements/RadioButtonField',
-  component: RadioButtonField,
-  parameters: {
-    propTypes: [RadioButtonField['__docgenInfo']],
-  },
+  title: 'Form Elements/Radio',
+  component: Radio,
   argTypes: {
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
   },
 };
 
-export const Basic = (args: RadioButtonFieldProps) => {
+export const Basic = (args: RadioProps) => {
   const [activeOption, setActiveOption] = useState('yes');
   return (
     <FieldGroup>
-      <RadioButtonField
+      <Radio
         {...args}
         name="someOption1"
         value="yes"
@@ -33,7 +27,7 @@ export const Basic = (args: RadioButtonFieldProps) => {
         }}
         id="termsCheckbox"
       />
-      <RadioButtonField
+      <Radio
         {...args}
         name="someOption2"
         value="no"
@@ -60,7 +54,7 @@ export const overview = () => (
     </SectionHeading>
 
     <Flex marginBottom="spacingS">
-      <RadioButtonField
+      <Radio
         label="Label text"
         helpText="This is a helptext"
         name="someOption"
@@ -74,7 +68,7 @@ export const overview = () => (
     </SectionHeading>
 
     <Flex marginBottom="spacingS">
-      <RadioButtonField
+      <Radio
         label="Label text"
         helpText="This is a helptext"
         validationMessage="validationMessage"
@@ -89,7 +83,7 @@ export const overview = () => (
     </SectionHeading>
 
     <Flex marginBottom="spacingS">
-      <RadioButtonField
+      <Radio
         label="Label text"
         helpText="This is a helptext"
         isDisabled
@@ -104,7 +98,7 @@ export const overview = () => (
     </SectionHeading>
 
     <Flex marginBottom="spacingS">
-      <RadioButtonField
+      <Radio
         label="Label text"
         helpText="This is a helptext"
         isDisabled

@@ -1,34 +1,31 @@
 import React, { useState } from 'react';
 import { SectionHeading } from '@contentful/f36-typography';
 import { FieldGroup } from '@contentful/f36-components';
-import { CheckboxField, CheckboxFieldProps } from '../src';
+import { Checkbox, CheckboxProps } from '../src';
 
 export default {
-  title: 'Form Elements/CheckboxField',
-  component: CheckboxField,
-  parameters: {
-    propTypes: [CheckboxField['__docgenInfo']],
-  },
+  title: 'Form Elements/Checkbox',
+  component: Checkbox,
   argTypes: {
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
   },
 };
 
-export const Basic = (args: CheckboxFieldProps) => {
+export const Basic = (args: CheckboxProps) => {
   const [optionOne, setOptionOne] = useState(false);
   const [optionTwo, setOptionTwo] = useState(false);
 
   return (
     <FieldGroup>
-      <CheckboxField
+      <Checkbox
         {...args}
         id="Checkbox1"
         isChecked={optionOne}
         value="yes"
         onChange={(e) => setOptionOne((e.target as HTMLInputElement).checked)}
       />
-      <CheckboxField
+      <Checkbox
         {...args}
         id="Checkbox2"
         value="yes"
@@ -52,7 +49,7 @@ export const overview = () => (
       Checkbox Field default
     </SectionHeading>
 
-    <CheckboxField
+    <Checkbox
       label="Option 1"
       helpText="This is a helptext"
       name="someOption"
@@ -65,7 +62,7 @@ export const overview = () => (
       Checkbox Field with validation message
     </SectionHeading>
 
-    <CheckboxField
+    <Checkbox
       label="Option 2"
       helpText="This is a helptext"
       validationMessage="validationMessage"
@@ -78,7 +75,7 @@ export const overview = () => (
       Checkbox Field disabled
     </SectionHeading>
 
-    <CheckboxField
+    <Checkbox
       label="Option 2"
       helpText="This is a helptext"
       isDisabled
@@ -91,7 +88,7 @@ export const overview = () => (
       Checkbox Field disabled checked
     </SectionHeading>
 
-    <CheckboxField
+    <Checkbox
       label="Option 2"
       helpText="This is a helptext"
       isDisabled

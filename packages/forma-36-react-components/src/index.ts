@@ -48,25 +48,8 @@ export { Tooltip } from '@contentful/f36-tooltip';
 export type { TooltipProps } from '@contentful/f36-tooltip';
 export { EmptyState } from '@contentful/f36-empty-state';
 export type { EmptyStateProps } from '@contentful/f36-empty-state';
-export {
-  Checkbox,
-  RadioButton,
-  Switch,
-  BaseInput,
-  BaseCheckbox,
-  BaseCheckboxField,
-  SwitchField,
-} from '@contentful/f36-forms';
-export type {
-  CheckboxFieldProps,
-  RadioButtonFieldProps,
-  LabelProps,
-  CheckboxProps,
-  RadioButtonProps,
-  SwitchProps,
-  BaseInputProps,
-  BaseCheckboxProps,
-} from '@contentful/f36-forms';
+export { Checkbox, Radio } from '@contentful/f36-forms';
+export type { CheckboxProps, RadioProps } from '@contentful/f36-forms';
 export { Pill } from '@contentful/f36-pill';
 export type { PillProps } from '@contentful/f36-pill';
 export { Button, ButtonGroup, ToggleButton } from '@contentful/f36-button';
