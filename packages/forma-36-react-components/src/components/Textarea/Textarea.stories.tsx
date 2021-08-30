@@ -6,7 +6,7 @@ import { Button } from '@contentful/f36-button';
 import { Flex } from '@contentful/f36-core';
 
 export default {
-  title: 'Form Elements/TextArea',
+  title: 'Form Elements/OLD_TextArea',
   component: Textarea,
   parameters: {
     propTypes: [Textarea['__docgenInfo']],
