@@ -1603,7 +1603,7 @@ exports[`renders the component with disabled actions 1`] = `
 `;
 
 exports[`renders the component with dropdownListElements 1`] = `
-.emotion-6 {
+.emotion-5 {
   display: inherit;
   outline: 0;
 }
@@ -1633,7 +1633,7 @@ exports[`renders the component with dropdownListElements 1`] = `
   max-height: 20px;
 }
 
-.emotion-5 {
+.emotion-4 {
   box-sizing: border-box;
   border: 1px solid;
   box-shadow: none;
@@ -1668,21 +1668,21 @@ exports[`renders the component with dropdownListElements 1`] = `
   min-height: 40px;
 }
 
-.emotion-5 svg {
+.emotion-4 svg {
   fill: currentColor;
 }
 
-.emotion-5:hover {
+.emotion-4:hover {
   background-color: #F7F9FA;
   color: #111B2B;
 }
 
-.emotion-5:active {
+.emotion-4:active {
   background-color: #F7F9FA;
   border-color: #F7F9FA;
 }
 
-.emotion-5:focus {
+.emotion-4:focus {
   background-color: transparent;
   box-shadow: 0px 0px 0px 3px #E7EBEE;
 }
@@ -1709,7 +1709,7 @@ exports[`renders the component with dropdownListElements 1`] = `
     class="EntityListItem__inner EntityListItem__inner--with-actions"
   >
     <span
-      class="emotion-6 EntityListItem__focus-trap"
+      class="emotion-5 EntityListItem__focus-trap"
       tabindex="-1"
     >
       <figure
@@ -1778,7 +1778,7 @@ exports[`renders the component with dropdownListElements 1`] = `
           <button
             aria-expanded="false"
             aria-haspopup="menu"
-            class="emotion-5"
+            class="emotion-4"
             data-node-id="dropdown-trigger-61728000"
             data-test-id="cf-ui-button"
             label="Actions"
@@ -1802,9 +1802,6 @@ exports[`renders the component with dropdownListElements 1`] = `
                 />
               </svg>
             </span>
-            <span
-              class="emotion-3"
-            />
           </button>
         </div>
       </div>

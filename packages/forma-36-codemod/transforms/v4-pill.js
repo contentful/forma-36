@@ -1,6 +1,6 @@
-const { renamePropsCodemod } = require('./common/rename-props-codemod');
+const { modifyPropsCodemod } = require('./common/modify-props-codemod');
 
-module.exports = renamePropsCodemod({
+module.exports = modifyPropsCodemod({
   componentName: 'Pill',
   renameMap: {},
 });
