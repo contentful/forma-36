@@ -6,7 +6,6 @@ import React, {
   MouseEventHandler,
 } from 'react';
 import { cx } from 'emotion';
-import { usePrimitive } from '@contentful/f36-core';
 import type {
   PolymorphicComponentProps,
   PolymorphicComponentWithRef,
@@ -16,7 +15,7 @@ import type { CommonProps } from '@contentful/f36-core';
 import { DragIcon } from '@contentful/f36-icons';
 import { getStyles } from './DragHandle.styles';
 
-const DEFAULT_TAG = 'button';
+const DEFAULT_TAG: React.ElementType = 'button';
 
 export type DragHandleInternalProps = CommonProps & {
   /**
@@ -58,12 +57,13 @@ const _DragHandle: PolymorphicComponentWithRef<
     onMouseEnter,
     onMouseLeave,
     testId = 'cf-ui-drag-handle',
+    style,
+    as: Element = DEFAULT_TAG,
     ...otherProps
   },
   forwardedRef,
 ) => {
   const styles = getStyles();
-  const { primitiveProps: commonProps, Element } = usePrimitive(otherProps);
   const [isFocused, setisFocused] = useState(isFocusedProp);
   const [isHovered, setisHovered] = useState(isHoveredProp);
 
@@ -113,15 +113,15 @@ const _DragHandle: PolymorphicComponentWithRef<
 
   return (
     <Element
-      as={DEFAULT_TAG}
-      {...commonProps}
+      {...otherProps}
       className={cx(styles.root({ isActive, isFocused, isHovered }), className)}
       onBlur={handleBlur}
       onFocus={handleFocus}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      testId={testId}
+      data-test-id={testId}
       ref={forwardedRef}
+      style={style}
     >
       <DragIcon variant="muted" />
       <span className={styles.label}>{label}</span>

@@ -71,7 +71,6 @@ const _GridItem: PolymorphicComponentWithRef<
 
   return (
     <Element
-      as={DEFAULT_TAG}
       {...boxProps}
       className={cx(
         css({

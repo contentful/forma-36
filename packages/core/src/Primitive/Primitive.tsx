@@ -1,6 +1,5 @@
 import React from 'react';
 import type { CommonProps } from '../types';
-import isPropValid from '@emotion/is-prop-valid';
 
 type PrimitiveOwnProps<E extends React.ElementType = React.ElementType> = {
   as?: E;
@@ -35,29 +34,6 @@ export type PolymorphicComponentWithRef<
   props: PolymorphicComponentProps<E, P>,
   ref: typeof props.ref,
 ) => React.ReactElement | null;
-
-const defaultElement = 'div';
-
-export function usePrimitive(props: PrimitiveOwnProps) {
-  const {
-    as: Element = defaultElement,
-    testId = undefined,
-    ...otherProps
-  } = props;
-  const validProps: Partial<PrimitiveOwnProps> = {};
-  for (const key in otherProps) {
-    if (isPropValid(key)) {
-      validProps[key] = otherProps[key];
-    } else {
-      console.warn('Invalid prop', key);
-    }
-  }
-
-  return {
-    primitiveProps: { ['data-test-id']: testId, ...validProps, as: undefined },
-    Element,
-  };
-}
 
 // -----------------------------------------------------------------
 

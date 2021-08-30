@@ -4,14 +4,9 @@ import { css, cx } from 'emotion';
 import type { MarginProps, PaddingProps, CommonProps } from '../types';
 import { getSpacingStyles } from '../utils/getSpacingStyles';
 
-const DEFAULT_TAG = 'div';
+const DEFAULT_TAG: React.ElementType = 'div';
 
-import {
-  usePrimitive,
-  PolymorphicComponentProps,
-  PolymorphicComponentWithRef,
-  PolymorphicComponent,
-} from '../Primitive/Primitive';
+import { PolymorphicProps, PolymorphicComponent } from '../Primitive/Primitive';
 
 export interface BoxInternalProps
   extends CommonProps,
@@ -22,18 +17,12 @@ export interface BoxInternalProps
    */
   display?: CSS.Property.Display;
   children?: React.ReactNode;
+  as?: React.ElementType<any>;
 }
 
-export type BoxProps<E extends React.ElementType> = PolymorphicComponentProps<
-  E,
-  BoxInternalProps
->;
-
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function useBox(props: BoxInternalProps & { as?: any }) {
+export function useBox(props: Omit<BoxInternalProps, 'children'>) {
   const {
     display,
-    children,
     className,
     margin,
     marginBottom,
@@ -45,7 +34,9 @@ export function useBox(props: BoxInternalProps & { as?: any }) {
     paddingLeft,
     paddingRight,
     paddingTop,
-    ...otherProps
+    testId,
+    as: Element = DEFAULT_TAG,
+    style,
   } = props;
   const boxProps = {
     className: cx(
@@ -68,19 +59,24 @@ export function useBox(props: BoxInternalProps & { as?: any }) {
       }),
       className,
     ),
-    ...otherProps,
+    ['data-test-id']: testId,
+    style,
   };
-  const { Element, primitiveProps } = usePrimitive(boxProps);
+
   return {
-    boxProps: primitiveProps,
+    boxProps: boxProps,
     Element,
   };
 }
 
-const _Box: PolymorphicComponentWithRef<
-  BoxInternalProps,
-  typeof DEFAULT_TAG
-> = (props, ref) => {
+export type BoxProps<
+  E extends React.ElementType = typeof DEFAULT_TAG
+> = PolymorphicProps<BoxInternalProps, E>;
+
+function _Box<E extends React.ElementType = typeof DEFAULT_TAG>(
+  props: BoxProps<E>,
+  ref: React.Ref<any>,
+) {
   const { boxProps, Element } = useBox(props);
 
   return (
@@ -88,7 +84,7 @@ const _Box: PolymorphicComponentWithRef<
       {props.children}
     </Element>
   );
-};
+}
 
 export const Box: PolymorphicComponent<
   BoxInternalProps,

@@ -1,4 +1,3 @@
-export { usePrimitive } from './Primitive';
 export type {
   PolymorphicComponentProps,
   PolymorphicComponent,

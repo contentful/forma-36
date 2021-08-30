@@ -26,7 +26,7 @@ export interface TextInternalProps extends CommonProps, MarginProps {
   isTruncated?: boolean;
 }
 
-const DEFAULT_TAG = 'span';
+const DEFAULT_TAG: React.ElementType = 'span';
 
 function truncatedStyle() {
   return css({

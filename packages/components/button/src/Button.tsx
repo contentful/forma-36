@@ -1,7 +1,6 @@
-import React, { ElementType } from 'react';
+import React from 'react';
 import { cx } from 'emotion';
 import {
-  usePrimitive,
   Flex,
   Box,
   PolymorphicComponentWithRef,
@@ -13,7 +12,7 @@ import { Spinner } from '@contentful/f36-spinner';
 import type { ButtonInternalProps } from './types';
 import { getStyles } from './styles';
 
-const DEFAULT_TAG: ElementType = 'button';
+const DEFAULT_TAG: React.ElementType = 'button';
 
 export type ButtonProps<
   E extends React.ElementType
@@ -40,13 +39,6 @@ const _Button: PolymorphicComponentWithRef<
     style,
     ...otherProps
   } = props;
-
-  const { Element, primitiveProps } = usePrimitive({
-    testId,
-    as,
-    className,
-    style,
-  });
 
   const rootClassNames = cx(
     styles.button({
@@ -90,30 +82,30 @@ const _Button: PolymorphicComponentWithRef<
     </>
   );
 
+  const commonProps = {
+    ['data-test-id']: testId,
+    className: rootClassNames,
+    ref: ref,
+    style,
+  };
+
   if (as === 'a') {
     return (
-      <Element
-        {...otherProps}
-        {...primitiveProps}
-        className={rootClassNames}
-        ref={ref}
-      >
+      <a {...otherProps} {...commonProps}>
         {commonContent}
-      </Element>
+      </a>
     );
   }
 
   return (
-    <Element
+    <button
       type="button"
       {...otherProps}
-      {...primitiveProps}
+      {...commonProps}
       disabled={isDisabled}
-      className={rootClassNames}
-      ref={ref}
     >
       {commonContent}
-    </Element>
+    </button>
   );
 };
 
