@@ -1,6 +1,7 @@
 import { createContext, useContext } from 'react';
 
 export interface FormControlProps {
+  id?: string;
   /**
    * If `true` set the form control to the invalid state.
    */
@@ -36,10 +37,12 @@ export const useFormControl = (
   const keys = Object.keys(context) as Array<keyof FormControlProps>;
   return keys.reduce<FormControlProps>((acc, prop) => {
     /** Giving precedence to `props` over `context` */
+    // @ts-expect-error ignore
     acc[prop] = props[prop];
 
     if (context) {
       if (props[prop] == null) {
+        // @ts-expect-error ignore
         acc[prop] = context[prop];
       }
     }

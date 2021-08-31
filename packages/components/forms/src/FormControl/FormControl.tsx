@@ -1,39 +1,39 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { useId, Box } from '@contentful/f36-core';
+import type { CommonProps } from '@contentful/f36-core';
 
 import { FormControlProps, FormControlContext } from './FormControlContext';
 
-export class FormControl extends Component<
-  FormControlProps & {
+export function FormControl({
+  isInvalid,
+  isRequired,
+  isDisabled,
+  isReadOnly,
+  children,
+  id,
+  testId = 'cf-ui-form-control',
+  ...otherProps
+}: FormControlProps &
+  CommonProps & {
     children?: React.ReactNode;
-    className?: string;
-  }
-> {
-  render() {
-    const {
-      isInvalid,
-      isRequired,
-      isDisabled,
-      isReadOnly,
-      className,
-      children,
-    } = this.props;
+  }) {
+  const generatedId = useId(id, 'field-');
 
-    const context = {
-      isRequired,
-      isDisabled,
-      isInvalid,
-      isReadOnly,
-    };
+  const context = {
+    id: generatedId,
+    isRequired,
+    isDisabled,
+    isInvalid,
+    isReadOnly,
+  };
 
-    // todo: make this component polymorphic allow to override div with as="fieldset" and so on
-    // todo: pass optional `id` to FormControl
+  // todo: make this component polymorphic allow to override div with as="fieldset" and so on
 
-    return (
-      <FormControlContext.Provider value={context}>
-        <div role="group" className={className}>
-          {children}
-        </div>
-      </FormControlContext.Provider>
-    );
-  }
+  return (
+    <FormControlContext.Provider value={context}>
+      <Box as="div" role="group" testId={testId} {...otherProps}>
+        {children}
+      </Box>
+    </FormControlContext.Provider>
+  );
 }
