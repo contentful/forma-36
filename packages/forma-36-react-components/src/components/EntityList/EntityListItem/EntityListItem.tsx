@@ -270,9 +270,8 @@ export function EntityListItem({
                       icon={<MoreHorizontalIcon />}
                       onClick={handleActionClick}
                       variant="transparent"
-                    >
-                      Actions
-                    </Button>
+                      aria-label="Actions"
+                    />
                   }
                   usePortal
                 >

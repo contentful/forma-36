@@ -105,7 +105,7 @@ function _Flex<E extends React.ElementType = typeof DEFAULT_TAG>(
   ref: React.Ref<any>,
 ) {
   const { boxProps, Element } = useBox<React.ElementType>({
-    otherProps,
+    ...otherProps,
     as: as || DEFAULT_TAG,
   });
   return (
