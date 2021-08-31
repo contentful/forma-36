@@ -15,6 +15,7 @@ const getStyles = () => ({
         zIndex: tokens.zIndexDefault,
         borderColor: tokens.blue600,
         boxShadow: tokens.glowPrimary,
+        borderLeft: `1px solid ${tokens.blue600}`,
       },
     }),
   }),
