@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Flex } from '@contentful/f36-core';
 import { Heading, SectionHeading, Text } from '@contentful/f36-typography';
-import { Clock } from '@contentful/f36-icons';
+import { ClockIcon } from '@contentful/f36-icons';
 import { DropdownList, DropdownListItem } from '@contentful/f36-components';
 import { EntityStatusBadge } from '@contentful/f36-badge';
 
@@ -122,7 +122,7 @@ export const Overview: Story<CardProps> = () => {
             Default
           </SectionHeading>
 
-          <Card icon={Clock} title="Forma 36">
+          <Card icon={ClockIcon} title="Forma 36">
             <Text>
               Forma 36 is an open-source design system by Contentful created
               with the intent to reduce the overhead of creating UI by providing

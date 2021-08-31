@@ -18,7 +18,7 @@ export default {
         options: Object.keys(icons),
         type: 'select',
       },
-      defaultValue: icons.Clock,
+      defaultValue: icons.ClockIcon,
     },
     rel: { control: { disable: true } },
     style: { control: { disable: true } },
@@ -66,7 +66,7 @@ export const Overview: Story<Args> = () => {
           </SectionHeading>
 
           <AssetCard
-            icon={icons.Clock}
+            icon={icons.ClockIcon}
             src="https://via.placeholder.com/100x100"
             title="Asset title"
             type="image"
@@ -126,7 +126,7 @@ export const Overview: Story<Args> = () => {
           </SectionHeading>
 
           <AssetCard
-            icon={icons.Clock}
+            icon={icons.ClockIcon}
             size="small"
             src="https://via.placeholder.com/100x100"
             title="Asset title"

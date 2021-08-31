@@ -56,7 +56,7 @@ export const Overview: Story<EntryCardProps> = () => {
           </SectionHeading>
 
           <EntryCard
-            icon={icons.Clock}
+            icon={icons.ClockIcon}
             thumbnail={thumbnail}
             title="Forma 36"
             type="Design system"
