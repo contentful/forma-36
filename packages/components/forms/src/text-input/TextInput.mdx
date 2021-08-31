@@ -29,7 +29,7 @@ Label property is always required and passed to the `<input />` as `aria-label`.
 
 ```jsx
 <React.Fragment>
-  <TextInput type="email" label="Email address" isRequired />
+  <TextInput type="email" name="email" label="Email address" />
 </React.Fragment>
 ```
 
@@ -43,17 +43,12 @@ The TextInput can be configured to display a character count. This is useful whe
 ```jsx
 <TextInput
   type="text"
-  label="Name"
+  label="name"
   name="name"
-  id="name-field"
-  placeholder="Name"
+  id="input-1"
+  placeholder="Type your name"
   countCharacters
   maxLength={150}
-  link={
-    <TextLink icon={<LockIcon />} href="https://f36.contentful.com/">
-      go to link
-    </TextLink>
-  }
 />
 ```
 
@@ -62,22 +57,7 @@ The TextInput can be configured to display a character count. This is useful whe
 We provide a variant of the TextInput that is a composed with CopyButton. In order to use it add `withCopyButton` property to your implementation.
 
 ```jsx
-<TextInput
-  label="My amazing label"
-  name="someOtherOption"
-  value="someOtherValue"
-  id="myField"
-  placeholder="This is such a great input"
-  countCharacters
-  maxLength={20}
-  validationMessage="It's great but you need to fix something"
-  withCopyButton
-  link={
-    <TextLink icon={<LockIcon />} href="https://f36.contentful.com/">
-      go to link
-    </TextLink>
-  }
-/>
+<TextInput label="Token" name="token" id="input-2" withCopyButton />
 ```
 
 ## Content recommendations
