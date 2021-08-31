@@ -1,37 +1,57 @@
 import { cx, css } from 'emotion';
 import React from 'react';
 
-import { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
+import {
+  CommonProps,
+  PolymorphicProps,
+  PolymorphicComponent,
+} from '@contentful/f36-core';
+
+const DEFAULT_TAG = 'ul';
+
 export interface ListInternalProps extends CommonProps {
   as?: 'ul' | 'ol';
   children?: React.ReactNode;
 }
 
-export type ListProps = PropsWithHTMLElement<ListInternalProps, 'ul'>;
+export type ListProps<
+  E extends React.ElementType = typeof DEFAULT_TAG
+> = PolymorphicProps<ListInternalProps, E>;
 
 /**
  * List is component that helps with vertical indexing of content.
  * Every list item begins with a bullet or a number.
  */
-export const List = React.forwardRef<HTMLUListElement, ListProps>(
-  ({ as, className, children, testId = 'cf-ui-list', ...otherProps }, ref) => {
-    return (
-      <ul
-        data-test-id={testId}
-        className={cx(
-          css({
-            margin: 0,
-            listStyleType: as === 'ul' ? 'disc' : 'decimal',
-          }),
-          className,
-        )}
-        ref={ref}
-        {...otherProps}
-      >
-        {children}
-      </ul>
-    );
-  },
-);
+function _List<E extends React.ElementType = typeof DEFAULT_TAG>(
+  {
+    as,
+    className,
+    children,
+    testId = 'cf-ui-list',
+    ...otherProps
+  }: ListProps<E>,
+  ref: React.Ref<any>,
+) {
+  const Element: React.ElementType = as || DEFAULT_TAG;
 
-List.displayName = 'List';
+  return (
+    <Element
+      data-test-id={testId}
+      className={cx(
+        css({
+          margin: 0,
+        }),
+        className,
+      )}
+      ref={ref}
+      {...otherProps}
+    >
+      {children}
+    </Element>
+  );
+}
+
+export const List: PolymorphicComponent<
+  ListInternalProps,
+  typeof DEFAULT_TAG
+> = React.forwardRef(_List);
