@@ -52,7 +52,7 @@ export const _TextInput = (
   });
 
   const inputWithCopyButton = (
-    <Flex>
+    <Flex className={className}>
       <BaseInput
         {...otherProps}
         testId={testId}
