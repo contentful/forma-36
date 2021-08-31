@@ -52,6 +52,7 @@ export const _TextInput = (
         className={styles.inputWithCopyButton}
         isDisabled={isDisabled}
         isInvalid={isInvalid}
+        value={valueState}
       />
       <CopyButton
         value={valueState}
