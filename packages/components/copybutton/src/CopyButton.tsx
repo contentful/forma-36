@@ -35,6 +35,11 @@ export interface CopyButtonProps extends CommonProps {
    * @default Copy {value} to clipboard
    */
   label?: string;
+  /**
+   * Allows to disbale the copy button, when true, tooltip would not be shown
+   * @default false
+   */
+  isDisabled?: boolean;
 }
 
 function _CopyButton(props: CopyButtonProps, ref: React.Ref<HTMLDivElement>) {
@@ -46,6 +51,7 @@ function _CopyButton(props: CopyButtonProps, ref: React.Ref<HTMLDivElement>) {
     tooltipText = 'Copy to clipboard',
     tooltipCopiedText = 'Copied!',
     tooltipProps,
+    isDisabled = false,
     ...otherProps
   } = props;
   const styles = getStyles();
@@ -77,21 +83,33 @@ function _CopyButton(props: CopyButtonProps, ref: React.Ref<HTMLDivElement>) {
       className={cx(styles.wrapper, className)}
       {...otherProps}
     >
-      <CopyToClipboard text={value} onCopy={handleOnCopy}>
-        <Tooltip
-          content={copied ? tooltipCopiedText : tooltipText}
-          {...tooltipProps}
+      {isDisabled ? (
+        <button
+          type="button"
+          ref={button}
+          className={cx(styles.copyButton, styles.copyButtonDisbaled)}
+          aria-label={`Copy ${value} to clipboard`}
+          disabled={isDisabled}
         >
-          <button
-            type="button"
-            ref={button}
-            className={cx(styles.copyButton)}
-            aria-label={`Copy ${value} to clipboard`}
+          <CopyIcon variant="muted" />
+        </button>
+      ) : (
+        <CopyToClipboard text={value} onCopy={handleOnCopy}>
+          <Tooltip
+            content={copied ? tooltipCopiedText : tooltipText}
+            {...tooltipProps}
           >
-            <CopyIcon variant="muted" />
-          </button>
-        </Tooltip>
-      </CopyToClipboard>
+            <button
+              type="button"
+              ref={button}
+              className={cx(styles.copyButton)}
+              aria-label={`Copy ${value} to clipboard`}
+            >
+              <CopyIcon variant="muted" />
+            </button>
+          </Tooltip>
+        </CopyToClipboard>
+      )}
     </div>
   );
 }
