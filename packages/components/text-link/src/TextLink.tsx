@@ -4,7 +4,7 @@ import {
   Flex,
   CommonProps,
   PolymorphicProps,
-  PolymorphicComponentI,
+  PolymorphicComponent,
 } from '@contentful/f36-core';
 import { styles } from './TextLink.styles';
 import { TextLinkVariant } from './types';
@@ -45,7 +45,7 @@ export type TextLinkProps<
 
 function _TextLink<E extends React.ElementType = typeof DEFAULT_TAG>(
   props: TextLinkProps<E>,
-  ref,
+  ref: React.Ref<any>,
 ) {
   const {
     children,
@@ -124,7 +124,7 @@ function _TextLink<E extends React.ElementType = typeof DEFAULT_TAG>(
   );
 }
 
-export const TextLink: PolymorphicComponentI<
+export const TextLink: PolymorphicComponent<
   TextLinkInternalProps,
   typeof DEFAULT_TAG,
   'disabled'

@@ -9,11 +9,10 @@ import tokens, {
 import { css, cx } from 'emotion';
 import {
   PolymorphicComponent,
-  PolymorphicComponentWithRef,
   CommonProps,
   MarginProps,
-  PolymorphicComponentProps,
-  useBox,
+  PolymorphicProps,
+  Box,
 } from '@contentful/f36-core';
 
 export interface TextInternalProps extends CommonProps, MarginProps {
@@ -26,7 +25,7 @@ export interface TextInternalProps extends CommonProps, MarginProps {
   isTruncated?: boolean;
 }
 
-const DEFAULT_TAG: React.ElementType = 'span';
+const DEFAULT_TAG = 'span';
 
 function truncatedStyle() {
   return css({
@@ -36,15 +35,11 @@ function truncatedStyle() {
   });
 }
 
-export type TextProps<E extends React.ElementType> = PolymorphicComponentProps<
-  E,
-  TextInternalProps
->;
+export type TextProps<
+  E extends React.ElementType = typeof DEFAULT_TAG
+> = PolymorphicProps<TextInternalProps, E>;
 
-const _Text: PolymorphicComponentWithRef<
-  TextInternalProps,
-  typeof DEFAULT_TAG
-> = (
+function _Text<E extends React.ElementType = typeof DEFAULT_TAG>(
   {
     fontSize = 'fontSizeM',
     fontStack = 'fontStackPrimary',
@@ -53,18 +48,18 @@ const _Text: PolymorphicComponentWithRef<
     lineHeight,
     children,
     isTruncated,
-    as = DEFAULT_TAG,
-    ...otherProps
-  },
-  ref,
-) => {
-  const { boxProps, Element } = useBox({
-    ...otherProps,
     as,
-  });
+    className,
+    ...otherProps
+  }: TextProps<E>,
+  ref: React.Ref<any>,
+) {
+  const Element: React.ElementType = as || DEFAULT_TAG;
+
   return (
-    <Element
-      {...boxProps}
+    <Box
+      {...otherProps}
+      as={Element}
       className={cx(
         css({
           margin: 0,
@@ -76,14 +71,14 @@ const _Text: PolymorphicComponentWithRef<
           lineHeight: tokens[lineHeight],
         }),
         isTruncated ? truncatedStyle() : null,
-        boxProps.className,
+        className,
       )}
       ref={ref}
     >
       {children}
-    </Element>
+    </Box>
   );
-};
+}
 
 export const Text: PolymorphicComponent<
   TextInternalProps,

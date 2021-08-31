@@ -1,41 +1,4 @@
 import React from 'react';
-import type { CommonProps } from '../types';
-
-type PrimitiveOwnProps<E extends React.ElementType = React.ElementType> = {
-  as?: E;
-} & CommonProps;
-
-type PrimitiveProps<
-  E extends React.ElementType,
-  PropsToOmit extends keyof React.ComponentProps<any> = undefined
-> = PrimitiveOwnProps<E> &
-  Omit<React.ComponentProps<E>, keyof PrimitiveOwnProps | PropsToOmit>;
-
-export type PolymorphicComponentProps<
-  E extends React.ElementType,
-  P,
-  PropsToOmit extends keyof React.ComponentProps<any> = undefined
-> = P & PrimitiveProps<E, PropsToOmit>;
-
-export type PolymorphicComponent<
-  P,
-  D extends React.ElementType = 'div',
-  PropsToOmit extends keyof React.ComponentProps<any> = undefined
-> = (<E extends React.ElementType = D>(
-  props: PolymorphicComponentProps<E, P, PropsToOmit>,
-) => React.ReactElement | null) & {
-  displayName?: string;
-};
-
-export type PolymorphicComponentWithRef<
-  P,
-  D extends React.ElementType = 'div'
-> = <E extends React.ElementType = D>(
-  props: PolymorphicComponentProps<E, P>,
-  ref: typeof props.ref,
-) => React.ReactElement | null;
-
-// -----------------------------------------------------------------
 
 type Overwrite<T, U> = Omit<T, keyof U> & U;
 
@@ -78,7 +41,7 @@ type PolymorphicPropsWithRef<
   E
 >;
 
-export type PolymorphicComponentI<
+export type PolymorphicComponent<
   P,
   D extends React.ElementType,
   OmitAdditionalProps extends keyof any = never

@@ -2,17 +2,21 @@ import React from 'react';
 import { cx } from 'emotion';
 import { CloseIcon } from '@contentful/f36-icons';
 import { Flex } from '@contentful/f36-core';
-import type { PrimitiveProps } from '@contentful/f36-core';
+import type { PropsWithHTMLElement, CommonProps } from '@contentful/f36-core';
 import { Button } from '@contentful/f36-button';
 import { Subheading } from '@contentful/f36-typography';
 
 import { getModalHeaderStyles } from './ModalHeader.styles';
 
-export interface ModalHeaderProps extends PrimitiveProps<'div'> {
+interface ModalHeaderInternalProps extends CommonProps {
   title: string;
   onClose?: Function;
-  as?: 'div';
 }
+
+export type ModalHeaderProps = PropsWithHTMLElement<
+  ModalHeaderInternalProps,
+  'div'
+>;
 
 export function ModalHeader({
   onClose,

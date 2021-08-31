@@ -3,8 +3,7 @@ import {
   CommonProps,
   MarginProps,
   PolymorphicComponent,
-  PolymorphicComponentProps,
-  PolymorphicComponentWithRef,
+  PolymorphicProps,
 } from '@contentful/f36-core';
 import type { HeadingElement } from './Heading';
 import { Text } from './Text';
@@ -17,13 +16,13 @@ export interface SubheadingInternalProps extends CommonProps, MarginProps {
 }
 
 export type SubheadingProps<
-  E extends React.ElementType
-> = PolymorphicComponentProps<E, SubheadingInternalProps>;
+  E extends React.ElementType = typeof DEFAULT_TAG
+> = PolymorphicProps<SubheadingInternalProps, E>;
 
-const _Subheading: PolymorphicComponentWithRef<
-  SubheadingInternalProps,
-  typeof DEFAULT_TAG
-> = ({ children, testId = 'cf-ui-subheading', ...otherProps }, ref) => {
+function _Subheading<E extends React.ElementType = typeof DEFAULT_TAG>(
+  { children, testId = 'cf-ui-subheading', ...otherProps }: SubheadingProps<E>,
+  ref: React.Ref<any>,
+) {
   return (
     <Text
       as={DEFAULT_TAG}
@@ -39,7 +38,7 @@ const _Subheading: PolymorphicComponentWithRef<
       {children}
     </Text>
   );
-};
+}
 
 export const Subheading: PolymorphicComponent<
   SubheadingInternalProps,

@@ -5,8 +5,7 @@ import { Box } from '@contentful/f36-core';
 import type {
   CommonProps,
   PolymorphicComponent,
-  PolymorphicComponentProps,
-  PolymorphicComponentWithRef,
+  PolymorphicProps,
 } from '@contentful/f36-core';
 import type {
   ComponentType,
@@ -82,9 +81,9 @@ export type IconInternalProps = CommonProps & {
 
 export type IconProps<
   E extends React.ElementType = IconComponent
-> = PolymorphicComponentProps<
-  E,
+> = PolymorphicProps<
   IconInternalProps,
+  E,
   'as' | 'children' | 'width' | 'height'
 >;
 
@@ -103,10 +102,7 @@ const useAriaHidden = (
   };
 };
 
-export const _Icon: PolymorphicComponentWithRef<
-  IconInternalProps,
-  typeof DEFAULT_TAG
-> = (
+export function _Icon<E extends React.ElementType = IconComponent>(
   {
     as,
     children,
@@ -117,9 +113,9 @@ export const _Icon: PolymorphicComponentWithRef<
     trimmed,
     viewBox = '0 0 24 24',
     ...otherProps
-  },
-  forwardedRef,
-) => {
+  }: IconProps<E>,
+  forwardedRef: React.Ref<any>,
+) {
   const shared = {
     className: cx(
       css({
@@ -137,13 +133,12 @@ export const _Icon: PolymorphicComponentWithRef<
 
   if (as) {
     return (
-      // @ts-expect-error mute polymorphic error
       <Box
         display="inline-block"
         {...ariaHiddenProps}
         {...otherProps}
         {...shared}
-        as={as}
+        as={as as React.ElementType}
       />
     );
   }
@@ -160,7 +155,7 @@ export const _Icon: PolymorphicComponentWithRef<
       {children}
     </Box>
   );
-};
+}
 
 export const Icon: PolymorphicComponent<
   IconInternalProps,

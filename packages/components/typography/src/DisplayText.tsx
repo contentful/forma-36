@@ -4,8 +4,7 @@ import {
   CommonProps,
   MarginProps,
   PolymorphicComponent,
-  PolymorphicComponentProps,
-  PolymorphicComponentWithRef,
+  PolymorphicProps,
 } from '@contentful/f36-core';
 import { Text } from './Text';
 import type { HeadingElement } from './Heading';
@@ -19,16 +18,19 @@ export interface DisplayTextInternalProps extends CommonProps, MarginProps {
 }
 
 export type DisplayTextProps<
-  E extends React.ElementType
-> = PolymorphicComponentProps<E, DisplayTextInternalProps>;
+  E extends React.ElementType = typeof DEFAULT_TAG
+> = PolymorphicProps<DisplayTextInternalProps, E>;
 
-const _DisplayText: PolymorphicComponentWithRef<
-  DisplayTextInternalProps,
-  typeof DEFAULT_TAG
-> = (
-  { children, size = 'default', testId = 'cf-ui-display-text', ...otherProps },
-  ref,
-) => {
+function _DisplayText<E extends React.ElementType = typeof DEFAULT_TAG>(
+  {
+    children,
+    size = 'default',
+    testId = 'cf-ui-display-text',
+    as,
+    ...otherProps
+  }: DisplayTextProps<E>,
+  ref: React.Ref<any>,
+) {
   let fontSize: FontSizeTokens = 'fontSize2Xl';
   let lineHeight: LineHeightTokens = 'lineHeight2Xl';
 
@@ -55,7 +57,7 @@ const _DisplayText: PolymorphicComponentWithRef<
       {children}
     </Text>
   );
-};
+}
 
 export const DisplayText: PolymorphicComponent<
   DisplayTextInternalProps,

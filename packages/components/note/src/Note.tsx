@@ -99,7 +99,7 @@ export const Note = React.forwardRef<HTMLElement, NoteProps>((props, ref) => {
           icon={<CloseIcon className={styles.closeIcon} />}
           onClick={onClose}
           testId={`${testId}-close`}
-          label="Dismiss"
+          aria-label="Dismiss"
           className={styles.close}
         />
       )}
