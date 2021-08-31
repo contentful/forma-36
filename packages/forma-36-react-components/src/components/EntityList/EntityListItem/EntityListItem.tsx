@@ -76,7 +76,7 @@ export interface EntityListItemProps {
   /**
    * Props to pass down to the default CardDragHandle component (does not work with cardDragHandleComponent prop)
    */
-  cardDragHandleProps?: Partial<DragHandleProps<'button'>>;
+  cardDragHandleProps?: Partial<DragHandleProps>;
   /**
    * An entity can either be an Entry, an Asset or a Release. This prop will apply styling based on if the entity is an asset, a release or an entry
    *
@@ -266,12 +266,13 @@ export function EntityListItem({
                   position="bottom-right"
                   toggleElement={
                     <Button
-                      disabled={isActionsDisabled}
+                      isDisabled={isActionsDisabled}
                       icon={<MoreHorizontalIcon />}
-                      label="Actions"
                       onClick={handleActionClick}
                       variant="transparent"
-                    />
+                    >
+                      Actions
+                    </Button>
                   }
                   usePortal
                 >

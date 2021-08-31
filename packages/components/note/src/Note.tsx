@@ -1,10 +1,7 @@
 import { cx } from 'emotion';
 import React from 'react';
 import { Flex } from '@contentful/f36-core';
-import type {
-  CommonProps,
-  PolymorphicComponentProps,
-} from '@contentful/f36-core';
+import type { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
 import { Button } from '@contentful/f36-button';
 import { Heading, Text } from '@contentful/f36-typography';
 import {
@@ -48,9 +45,9 @@ export type NoteInternalProps = CommonProps & {
   /**
    * Callback for handling closing
    */
-  onClose?: Function;
+  onClose?: React.MouseEventHandler<HTMLButtonElement>;
 };
-export type NoteProps = PolymorphicComponentProps<'article', NoteInternalProps>;
+export type NoteProps = PropsWithHTMLElement<NoteInternalProps, 'article'>;
 
 /**
  * @description: Note provides context and information about a situation or action.

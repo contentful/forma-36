@@ -1,10 +1,7 @@
 import { css, cx } from 'emotion';
 import React, { forwardRef } from 'react';
 import { Box } from '@contentful/f36-core';
-import type {
-  CommonProps,
-  PolymorphicComponentProps,
-} from '@contentful/f36-core';
+import type { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
 import tokens from '@contentful/f36-tokens';
 
 import { TableCellContext, contextOptions } from './';
@@ -15,9 +12,9 @@ export type TableHeadInternalProps = CommonProps & {
   children: React.ReactNode;
 };
 
-export type TableHeadProps = PolymorphicComponentProps<
-  'thead',
-  TableHeadInternalProps
+export type TableHeadProps = PropsWithHTMLElement<
+  TableHeadInternalProps,
+  'thead'
 >;
 
 export const TableHead = forwardRef<HTMLTableSectionElement, TableHeadProps>(

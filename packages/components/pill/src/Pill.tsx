@@ -1,10 +1,6 @@
 import React from 'react';
 import { cx } from 'emotion';
-import type {
-  CommonProps,
-  PolymorphicComponentProps,
-} from '@contentful/f36-core';
-import { Box } from '@contentful/f36-core';
+import type { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
 import { DragIcon, CloseIcon } from '@contentful/f36-icons';
 import { Button } from '@contentful/f36-button';
 import { PillVariants } from './types';
@@ -34,7 +30,7 @@ export type PillInternalProps = CommonProps & {
   variant?: PillVariants;
 };
 
-export type PillProps = PolymorphicComponentProps<'div', PillInternalProps>;
+export type PillProps = PropsWithHTMLElement<PillInternalProps, 'div'>;
 
 export const Pill = React.forwardRef<HTMLDivElement, PillProps>(
   (props, ref) => {
@@ -52,8 +48,7 @@ export const Pill = React.forwardRef<HTMLDivElement, PillProps>(
     const styles = getPillStyles(variant);
 
     return (
-      <Box
-        as="div"
+      <div
         className={cx(styles.pill, className)}
         data-test-id={testId}
         onDrag={onDrag}
@@ -81,7 +76,7 @@ export const Pill = React.forwardRef<HTMLDivElement, PillProps>(
             className={styles.closeButton}
           />
         )}
-      </Box>
+      </div>
     );
   },
 );

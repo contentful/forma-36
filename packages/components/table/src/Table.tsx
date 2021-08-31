@@ -1,7 +1,7 @@
 import { cx, css } from 'emotion';
 import React, { forwardRef } from 'react';
 import { Box, CommonProps } from '@contentful/f36-core';
-import type { PolymorphicComponentProps } from '@contentful/f36-core';
+import type { PropsWithHTMLElement } from '@contentful/f36-core';
 import tokens from '@contentful/f36-tokens';
 
 const getStyles = () => {
@@ -32,7 +32,7 @@ export type TableInternalProps = CommonProps & {
   layout?: 'inline' | 'embedded';
 };
 
-export type TableProps = PolymorphicComponentProps<'table', TableInternalProps>;
+export type TableProps = PropsWithHTMLElement<TableInternalProps, 'table'>;
 
 export const Table = forwardRef<HTMLTableElement, TableProps>(
   (

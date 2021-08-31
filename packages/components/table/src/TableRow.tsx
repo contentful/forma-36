@@ -2,10 +2,7 @@ import { css, cx } from 'emotion';
 import React, { forwardRef } from 'react';
 import tokens from '@contentful/f36-tokens';
 import { Box } from '@contentful/f36-core';
-import type {
-  CommonProps,
-  PolymorphicComponentProps,
-} from '@contentful/f36-core';
+import type { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
 
 const getStyles = () => {
   return {
@@ -33,10 +30,7 @@ export type TableRowInternalProps = CommonProps & {
   children: React.ReactNode;
 };
 
-export type TableRowProps = PolymorphicComponentProps<
-  'tr',
-  TableRowInternalProps
->;
+export type TableRowProps = PropsWithHTMLElement<TableRowInternalProps, 'tr'>;
 
 export const TableRow = forwardRef<HTMLTableRowElement, TableRowProps>(
   (
