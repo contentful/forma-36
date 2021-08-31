@@ -2,7 +2,12 @@ import React from 'react';
 import { useId, Box } from '@contentful/f36-core';
 import type { CommonProps } from '@contentful/f36-core';
 
-import { FormControlProps, FormControlContext } from './FormControlContext';
+import { FormControlContext } from './FormControlContext';
+import type { FormControlContextProps } from './types';
+
+export interface FormControlProps extends FormControlContextProps, CommonProps {
+  children: React.ReactNode;
+}
 
 export function FormControl({
   isInvalid,
@@ -13,10 +18,7 @@ export function FormControl({
   id,
   testId = 'cf-ui-form-control',
   ...otherProps
-}: FormControlProps &
-  CommonProps & {
-    children?: React.ReactNode;
-  }) {
+}: FormControlProps) {
   const generatedId = useId(id, 'field-');
 
   const context = {
