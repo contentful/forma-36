@@ -1,15 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
-.emotion-7 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .emotion-0 {
@@ -46,7 +46,6 @@ exports[`renders the component 1`] = `
   position: relative;
   margin: 0;
   margin-right: 0.5rem;
-  margin-top: 0.25rem;
 }
 
 .emotion-2 {
@@ -82,16 +81,6 @@ exports[`renders the component 1`] = `
   width: 16px;
 }
 
-.emotion-6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .emotion-4 {
   display: inline-block;
   color: #111B2B;
@@ -100,17 +89,7 @@ exports[`renders the component 1`] = `
   font-weight: 500;
   line-height: 1.5;
   margin-bottom: calc(1rem * (8 / 16));
-  color: #111B2B;
-}
-
-.emotion-5 {
   margin: 0;
-  padding: 0;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  font-weight: 400;
-  color: #67728A;
-  font-size: 0.875rem;
-  line-height: 1.5;
 }
 
 <div
@@ -121,8 +100,8 @@ exports[`renders the component 1`] = `
     class="FieldGroup__item"
   >
     <div
-      class="emotion-7"
-      data-test-id="cf-ui-checkbox-field"
+      class="emotion-5"
+      data-test-id="cf-ui-checkbox"
     >
       <label
         class="emotion-3"
@@ -153,31 +132,21 @@ exports[`renders the component 1`] = `
           </svg>
         </span>
       </label>
-      <div
-        class="emotion-6"
+      <label
+        class="emotion-4"
+        data-test-id="cf-ui-form-label"
+        for="agree"
       >
-        <label
-          class="emotion-4"
-          data-test-id="cf-ui-form-label"
-          for="agree"
-        >
-          Do you agree?
-        </label>
-        <p
-          class="emotion-5"
-          data-test-id="cf-ui-help-text"
-        >
-          Click if you agree
-        </p>
-      </div>
+        Do you agree?
+      </label>
     </div>
   </div>
   <div
     class="FieldGroup__item"
   >
     <div
-      class="emotion-7"
-      data-test-id="cf-ui-checkbox-field"
+      class="emotion-5"
+      data-test-id="cf-ui-checkbox"
     >
       <label
         class="emotion-3"
@@ -208,38 +177,28 @@ exports[`renders the component 1`] = `
           </svg>
         </span>
       </label>
-      <div
-        class="emotion-6"
+      <label
+        class="emotion-4"
+        data-test-id="cf-ui-form-label"
+        for="reallyAgree"
       >
-        <label
-          class="emotion-4"
-          data-test-id="cf-ui-form-label"
-          for="reallyAgree"
-        >
-          Do you really agree?
-        </label>
-        <p
-          class="emotion-5"
-          data-test-id="cf-ui-help-text"
-        >
-          Click if you really agree
-        </p>
-      </div>
+        Do you really agree?
+      </label>
     </div>
   </div>
 </div>
 `;
 
 exports[`renders the component children in a row 1`] = `
-.emotion-7 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .emotion-0 {
@@ -276,7 +235,6 @@ exports[`renders the component children in a row 1`] = `
   position: relative;
   margin: 0;
   margin-right: 0.5rem;
-  margin-top: 0.25rem;
 }
 
 .emotion-2 {
@@ -312,16 +270,6 @@ exports[`renders the component children in a row 1`] = `
   width: 16px;
 }
 
-.emotion-6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .emotion-4 {
   display: inline-block;
   color: #111B2B;
@@ -330,17 +278,7 @@ exports[`renders the component children in a row 1`] = `
   font-weight: 500;
   line-height: 1.5;
   margin-bottom: calc(1rem * (8 / 16));
-  color: #111B2B;
-}
-
-.emotion-5 {
   margin: 0;
-  padding: 0;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  font-weight: 400;
-  color: #67728A;
-  font-size: 0.875rem;
-  line-height: 1.5;
 }
 
 <div
@@ -351,8 +289,8 @@ exports[`renders the component children in a row 1`] = `
     class="FieldGroup__item"
   >
     <div
-      class="emotion-7"
-      data-test-id="cf-ui-checkbox-field"
+      class="emotion-5"
+      data-test-id="cf-ui-checkbox"
     >
       <label
         class="emotion-3"
@@ -383,31 +321,21 @@ exports[`renders the component children in a row 1`] = `
           </svg>
         </span>
       </label>
-      <div
-        class="emotion-6"
+      <label
+        class="emotion-4"
+        data-test-id="cf-ui-form-label"
+        for="agree"
       >
-        <label
-          class="emotion-4"
-          data-test-id="cf-ui-form-label"
-          for="agree"
-        >
-          Do you agree?
-        </label>
-        <p
-          class="emotion-5"
-          data-test-id="cf-ui-help-text"
-        >
-          Click if you agree
-        </p>
-      </div>
+        Do you agree?
+      </label>
     </div>
   </div>
   <div
     class="FieldGroup__item"
   >
     <div
-      class="emotion-7"
-      data-test-id="cf-ui-checkbox-field"
+      class="emotion-5"
+      data-test-id="cf-ui-checkbox"
     >
       <label
         class="emotion-3"
@@ -438,38 +366,28 @@ exports[`renders the component children in a row 1`] = `
           </svg>
         </span>
       </label>
-      <div
-        class="emotion-6"
+      <label
+        class="emotion-4"
+        data-test-id="cf-ui-form-label"
+        for="reallyAgree"
       >
-        <label
-          class="emotion-4"
-          data-test-id="cf-ui-form-label"
-          for="reallyAgree"
-        >
-          Do you really agree?
-        </label>
-        <p
-          class="emotion-5"
-          data-test-id="cf-ui-help-text"
-        >
-          Click if you really agree
-        </p>
-      </div>
+        Do you really agree?
+      </label>
     </div>
   </div>
 </div>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
-.emotion-7 {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-align-items: flex-start;
-  -webkit-box-align: flex-start;
-  -ms-flex-align: flex-start;
-  align-items: flex-start;
+.emotion-5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .emotion-0 {
@@ -506,7 +424,6 @@ exports[`renders the component with an additional class name 1`] = `
   position: relative;
   margin: 0;
   margin-right: 0.5rem;
-  margin-top: 0.25rem;
 }
 
 .emotion-2 {
@@ -542,16 +459,6 @@ exports[`renders the component with an additional class name 1`] = `
   width: 16px;
 }
 
-.emotion-6 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 .emotion-4 {
   display: inline-block;
   color: #111B2B;
@@ -560,17 +467,7 @@ exports[`renders the component with an additional class name 1`] = `
   font-weight: 500;
   line-height: 1.5;
   margin-bottom: calc(1rem * (8 / 16));
-  color: #111B2B;
-}
-
-.emotion-5 {
   margin: 0;
-  padding: 0;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  font-weight: 400;
-  color: #67728A;
-  font-size: 0.875rem;
-  line-height: 1.5;
 }
 
 <div
@@ -581,8 +478,8 @@ exports[`renders the component with an additional class name 1`] = `
     class="FieldGroup__item"
   >
     <div
-      class="emotion-7"
-      data-test-id="cf-ui-checkbox-field"
+      class="emotion-5"
+      data-test-id="cf-ui-checkbox"
     >
       <label
         class="emotion-3"
@@ -613,31 +510,21 @@ exports[`renders the component with an additional class name 1`] = `
           </svg>
         </span>
       </label>
-      <div
-        class="emotion-6"
+      <label
+        class="emotion-4"
+        data-test-id="cf-ui-form-label"
+        for="agree"
       >
-        <label
-          class="emotion-4"
-          data-test-id="cf-ui-form-label"
-          for="agree"
-        >
-          Do you agree?
-        </label>
-        <p
-          class="emotion-5"
-          data-test-id="cf-ui-help-text"
-        >
-          Click if you agree
-        </p>
-      </div>
+        Do you agree?
+      </label>
     </div>
   </div>
   <div
     class="FieldGroup__item"
   >
     <div
-      class="emotion-7"
-      data-test-id="cf-ui-checkbox-field"
+      class="emotion-5"
+      data-test-id="cf-ui-checkbox"
     >
       <label
         class="emotion-3"
@@ -668,23 +555,13 @@ exports[`renders the component with an additional class name 1`] = `
           </svg>
         </span>
       </label>
-      <div
-        class="emotion-6"
+      <label
+        class="emotion-4"
+        data-test-id="cf-ui-form-label"
+        for="reallyAgree"
       >
-        <label
-          class="emotion-4"
-          data-test-id="cf-ui-form-label"
-          for="reallyAgree"
-        >
-          Do you really agree?
-        </label>
-        <p
-          class="emotion-5"
-          data-test-id="cf-ui-help-text"
-        >
-          Click if you really agree
-        </p>
-      </div>
+        Do you really agree?
+      </label>
     </div>
   </div>
 </div>
