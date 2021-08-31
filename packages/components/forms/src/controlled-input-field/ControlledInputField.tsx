@@ -1,7 +1,7 @@
 import React, { EventHandler, ChangeEvent, ReactNode } from 'react';
 import { cx } from 'emotion';
 import { ValidationMessage } from '@contentful/f36-validation-message';
-import { Label, LabelProps } from '../Label';
+import { FormLabel, FormLabelProps } from '../FormLabel';
 import { ControlledInput } from '../controlled-input';
 import { HelpText } from '@contentful/f36-helptext';
 import type { ControlledInputProps } from '../controlled-input';
@@ -14,7 +14,7 @@ export interface ControlledInputFieldProps extends BoxProps<'div'> {
   isLabelLight?: boolean;
   isRequired?: boolean;
   helpText?: string;
-  formLabelProps?: LabelProps;
+  formLabelProps?: FormLabelProps;
   isDisabled?: boolean;
   helpTextProps?: object;
   validationMessage?: string;
@@ -106,14 +106,14 @@ export const _ControlledInputField = (
         className={inputClassNames}
       />
       <div>
-        <Label
+        <FormLabel
           className={labelClassNames}
-          required={isRequired}
+          isRequired={isRequired}
           htmlFor={id}
           {...formLabelProps}
         >
           {label}
-        </Label>
+        </FormLabel>
         {validationMessage && (
           <ValidationMessage>{validationMessage}</ValidationMessage>
         )}

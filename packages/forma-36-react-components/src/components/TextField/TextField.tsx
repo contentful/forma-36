@@ -8,8 +8,8 @@ import React, {
 } from 'react';
 import cn from 'classnames';
 import { ValidationMessage } from '@contentful/f36-validation-message';
-import { Label } from '@contentful/f36-forms';
-import type { LabelProps } from '@contentful/f36-forms';
+import { FormLabel } from '@contentful/f36-forms';
+import type { FormLabelProps } from '@contentful/f36-forms';
 import { Flex, Box } from '@contentful/f36-core';
 import { HelpText } from '@contentful/f36-helptext';
 import { TextInput, TextInputProps } from '../TextInput';
@@ -26,7 +26,7 @@ export interface TextFieldProps {
   validationMessage?: string;
   testId?: string;
   className?: string;
-  formLabelProps?: Partial<LabelProps>;
+  formLabelProps?: Partial<FormLabelProps>;
   textLinkProps?: Partial<TextLinkProps<'button'>>;
   textInputProps?: Partial<TextInputProps> | Partial<TextareaProps>;
   helpText?: string;
@@ -80,9 +80,9 @@ export const TextField = ({
   return (
     <div className={classNames} {...otherProps} data-test-id={testId}>
       <div className={styles['TextField__label-wrapper']}>
-        <Label {...formLabelProps} htmlFor={id} required={required}>
+        <FormLabel {...formLabelProps} htmlFor={id} isRequired={required}>
           {labelText}
-        </Label>
+        </FormLabel>
         {textLinkProps && (
           <TextLink
             {...textLinkProps}

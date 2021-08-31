@@ -1,8 +1,8 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 
-import { Label } from '../src';
-import type { LabelInternalProps } from '../src';
+import { FormLabel } from '../src';
+import type { FormLabelInternalProps } from '../src';
 
 export default {
   argTypes: {
@@ -11,15 +11,15 @@ export default {
     style: { control: { disable: true } },
     testId: { control: { disable: true } },
   },
-  component: Label,
+  component: FormLabel,
   parameters: {
-    propTypes: Label['__docgenInfo'],
+    propTypes: FormLabel['__docgenInfo'],
   },
-  title: 'Form Elements/Label',
+  title: 'Form Elements/FormLabel',
 } as Meta;
 
-export const Default: Story<LabelInternalProps> = (args) => {
-  return <Label {...args} />;
+export const Default: Story<FormLabelInternalProps> = (args) => {
+  return <FormLabel {...args} />;
 };
 
 Default.args = {
