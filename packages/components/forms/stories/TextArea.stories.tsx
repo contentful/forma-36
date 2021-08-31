@@ -1,5 +1,6 @@
 import React from 'react';
 import { Flex } from '@contentful/f36-core';
+import { Button } from '@contentful/f36-button';
 import { SectionHeading } from '@contentful/f36-typography';
 
 import { Textarea, TextareaProps } from '../src/textarea';
@@ -11,9 +12,30 @@ export default {
 
 export const Basic = (args: TextareaProps) => <Textarea {...args} />;
 Basic.args = {
-  label: 'My textarea',
-  placeholder: 'Placeholder',
   id: 'textarea',
+  placeholder: 'Placeholder',
+  label: 'My textarea',
+};
+
+export const UsingRef = () => {
+  const textareaRef = React.createRef<HTMLTextAreaElement>();
+
+  return (
+    <>
+      <Textarea
+        id="textarea"
+        name="textarea"
+        label="My textarea"
+        placeholder="Placeholder"
+        ref={textareaRef}
+      />
+      <Flex marginTop="spacingL">
+        <Button onClick={() => textareaRef.current.focus()}>
+          Focus Textarea with ref
+        </Button>
+      </Flex>
+    </>
+  );
 };
 
 export const Overview = () => {
@@ -33,7 +55,7 @@ export const Overview = () => {
         id="textarea-with-error"
         name="textarea-with-error"
         label="My textarea with error"
-        validationMessage="This field must have a value"
+        isInvalid
       />
 
       <SectionHeading as="h3" marginTop="spacingL" marginBottom="spacingS">
