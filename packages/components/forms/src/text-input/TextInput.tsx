@@ -38,13 +38,10 @@ export const _TextInput = (
   // Store a copy of the value in state.
   // This is used by this component when the `countCharacters`
   // option is on
-  const handleOnChange = useCallback(
-    (e: ChangeEvent<HTMLInputElement>) => {
-      setValueState(e.target.value);
-      if (onChange) onChange(e);
-    },
-    [onChange],
-  );
+  const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setValueState(e.target.value);
+    if (onChange) onChange(e);
+  };
 
   const copyButtonStyles = cx(styles.copyButton, {
     [styles.disabled]: Boolean(isDisabled),
