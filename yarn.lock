@@ -6392,6 +6392,11 @@
   resolved "https://registry.yarnpkg.com/@types/is-function/-/is-function-1.0.0.tgz#1b0b819b1636c7baf0d6785d030d12edf70c3e83"
   integrity sha512-iTs9HReBu7evG77Q4EC8hZnqRt57irBDkK9nvmHroiOIVwYMQc4IvYvdRgwKfYepunIY7Oh/dBuuld+Gj9uo6w==
 
+"@types/is-hotkey@^0.1.1":
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/@types/is-hotkey/-/is-hotkey-0.1.4.tgz#4aa47254a4b5139b6af6ce9567ff0ea6ea490471"
+  integrity sha512-WkDPhxo2k20zHl4zeR/5MHew+O7kfkQLXjRuD2fjH1s0eYPxxMdXWw5Y6lTqmJFbcMkOm1wKLgRzAf+hNcJVSw==
+
 "@types/istanbul-lib-coverage@*", "@types/istanbul-lib-coverage@^2.0.0", "@types/istanbul-lib-coverage@^2.0.1":
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.3.tgz#4ba8ddb720221f432e443bd5f9117fd22cfd4762"
@@ -6434,6 +6439,14 @@
   dependencies:
     jest-diff "^26.0.0"
     pretty-format "^26.0.0"
+
+"@types/jest@25.2.3":
+  version "25.2.3"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-25.2.3.tgz#33d27e4c4716caae4eced355097a47ad363fdcaf"
+  integrity sha512-JXc1nK/tXHiDhV55dvfzqtmP4S3sy3T3ouV2tkViZgxY/zeUkcpQcQPGRlgF4KmWzWW5oiWYSZwtCB+2RsE4Fw==
+  dependencies:
+    jest-diff "^25.2.1"
+    pretty-format "^25.2.1"
 
 "@types/jest@^23.0.2":
   version "23.3.14"
@@ -6482,6 +6495,18 @@
     "@types/fined" "*"
     "@types/interpret" "*"
     "@types/node" "*"
+
+"@types/lodash-es@^4.17.4":
+  version "4.17.4"
+  resolved "https://registry.yarnpkg.com/@types/lodash-es/-/lodash-es-4.17.4.tgz#b2e440d2bf8a93584a9fd798452ec497986c9b97"
+  integrity sha512-BBz79DCJbD2CVYZH67MBeHZRX++HF+5p8Mo5MzjZi64Wac39S3diedJYHZtScbRVf4DjZyN6LzA0SB0zy+HSSQ==
+  dependencies:
+    "@types/lodash" "*"
+
+"@types/lodash@*":
+  version "4.14.172"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.172.tgz#aad774c28e7bfd7a67de25408e03ee5a8c3d028a"
+  integrity sha512-/BHF5HAx3em7/KkzVKm3LrsD6HZAXuXO1AJZQ3cRRBZj4oHZDviWPYu0aEplAqDFNHZPW6d3G7KN+ONcCCC7pw==
 
 "@types/lodash@^4.14.92":
   version "4.14.167"
@@ -6591,6 +6616,13 @@
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/@types/parse5/-/parse5-5.0.3.tgz#e7b5aebbac150f8b5fdd4a46e7f0bd8e65e19109"
   integrity sha512-kUNnecmtkunAoQ3CnjmMkzNU/gtxG8guhi+Fk2U/kOpIKjIMKnXGp4IJCgQJrXSgMsWYimYG4TGjz/UzbGEBTw==
+
+"@types/pikaday@^1.7.4":
+  version "1.7.5"
+  resolved "https://registry.yarnpkg.com/@types/pikaday/-/pikaday-1.7.5.tgz#6e211052ad9e3d2fbbcebfccb2e6a15df1c48b26"
+  integrity sha512-9PKz1nIcly1jfwUmSQIoNSrf0IQdXIo7EU+nk3nXmlMvZmsCTJP1PP8hr8q1GO6wn0wIA0ait7fkq9ZTT/SyQQ==
+  dependencies:
+    moment ">=2.14.0"
 
 "@types/prettier@^2.0.0":
   version "2.1.6"
@@ -11422,6 +11454,11 @@ date-fns@^2.14.0:
   version "2.16.1"
   resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.16.1.tgz#05775792c3f3331da812af253e1a935851d3834b"
   integrity sha512-sAJVKx/FqrLYHAQeN7VpJrPhagZc9R4ImZIWYRFZaaohR3KzmuK88touwsSwSVT8Qcbd4zoDsnGfX4GFB4imyQ==
+
+date-fns@^2.6.0, date-fns@^2.9.0:
+  version "2.23.0"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.23.0.tgz#4e886c941659af0cf7b30fafdd1eaa37e88788a9"
+  integrity sha512-5ycpauovVyAk0kXNZz6ZoB9AYMZB4DObse7P3BPWmyEjXNORTI8EJ6X0uaSAq4sCHzM1uajzrkr6HnsLQpxGXA==
 
 date-format@0.0.2:
   version "0.0.2"
@@ -17341,6 +17378,11 @@ is-hexadecimal@^1.0.0:
   resolved "https://registry.yarnpkg.com/is-hexadecimal/-/is-hexadecimal-1.0.4.tgz#cc35c97588da4bd49a8eedd6bc4082d44dcb23a7"
   integrity sha512-gyPJuv83bHMpocVYoqof5VDiZveEoGoFL8m3BXNb2VW8Xs+rz9kqO8LOQ5DH6EsuvilT1ApazU0pyl+ytbPtlw==
 
+is-hotkey@^0.1.6:
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/is-hotkey/-/is-hotkey-0.1.8.tgz#6b1f4b2d0e5639934e20c05ed24d623a21d36d25"
+  integrity sha512-qs3NZ1INIS+H+yeo7cD9pDfwYV/jqRh1JG9S9zYrNudkoUQg7OL7ziXqRKu+InFjUIDoP2o6HIkLYMh1pcWgyQ==
+
 is-html@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/is-html/-/is-html-1.1.0.tgz#e04f1c18d39485111396f9a0273eab51af218464"
@@ -18072,7 +18114,7 @@ jest-diff@^24.3.0:
     jest-get-type "^24.9.0"
     pretty-format "^24.9.0"
 
-jest-diff@^25.5.0:
+jest-diff@^25.2.1, jest-diff@^25.5.0:
   version "25.5.0"
   resolved "https://registry.yarnpkg.com/jest-diff/-/jest-diff-25.5.0.tgz#1dd26ed64f96667c068cef026b677dfa01afcfa9"
   integrity sha512-z1kygetuPiREYdNIumRpAHY6RXiGmp70YHptjdaxTWGmA085W3iCnXNx0DhflK3vwrKmrRWyY1wUpkPMVxMK7A==
@@ -20869,7 +20911,7 @@ modify-values@^1.0.0:
   resolved "https://registry.yarnpkg.com/modify-values/-/modify-values-1.0.1.tgz#b3939fa605546474e3e3e3c63d64bd43b4ee6022"
   integrity sha512-xV2bxeN6F7oYjZWTe/YPAy6MN2M+sL4u/Rlm2AHCIVGfo2p1yGmBHQ6vHehl4bRTZBdHu3TSkWdYgkwpYzAGSw==
 
-moment@^2.18.1, moment@^2.27.0:
+moment@>=2.14.0, moment@^2.18.1, moment@^2.27.0:
   version "2.29.1"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.1.tgz#b2be769fa31940be9eeea6469c075e35006fa3d3"
   integrity sha512-kHmoybcPV8Sqy59DwNDY3Jefr64lK/by/da0ViFcuA4DH0vQg5Q6Ze5VimxkfQNSC+Mls/Kx53s7TjP1RhFEDQ==
@@ -22937,6 +22979,11 @@ pify@^5.0.0:
   resolved "https://registry.yarnpkg.com/pify/-/pify-5.0.0.tgz#1f5eca3f5e87ebec28cc6d54a0e4aaf00acc127f"
   integrity sha512-eW/gHNMlxdSP6dmG6uJip6FXN0EQBwm2clYYd8Wul42Cwu/DK8HEftzsapcNdYe2MfLiIwZqsDk2RDEsTE79hA==
 
+pikaday@^1.8.0:
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/pikaday/-/pikaday-1.8.2.tgz#72cc73fab7ccc068cbdf7dcaa1ce400fcfd894e3"
+  integrity sha512-TNtsE+34BIax3WtkB/qqu5uepV1McKYEgvL3kWzU7aqPCpMEN6rBF3AOwu4WCwAealWlBGobXny/9kJb49C1ew==
+
 pinkie-promise@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/pinkie-promise/-/pinkie-promise-2.0.1.tgz#2135d6dfa7a358c069ac9b178776288228450ffa"
@@ -24326,7 +24373,7 @@ pretty-format@^24.9.0:
     ansi-styles "^3.2.0"
     react-is "^16.8.4"
 
-pretty-format@^25.5.0:
+pretty-format@^25.2.1, pretty-format@^25.5.0:
   version "25.5.0"
   resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-25.5.0.tgz#7873c1d774f682c34b8d48b6743a2bf2ac55791a"
   integrity sha512-kbo/kq2LQ/A/is0PQwsEHM7Ca6//bGPPvU6UnsdDRSKTWxT/ru/xb88v4BJf6a69H+uTytOEsTusT9ksd/1iWQ==
@@ -24814,7 +24861,7 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.2.7, rc@^1.2.8:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-animate-height@^2.0.23, react-animate-height@^2.0.7:
+react-animate-height@^2.0.7:
   version "2.0.23"
   resolved "https://registry.yarnpkg.com/react-animate-height/-/react-animate-height-2.0.23.tgz#2e14ac707b20ae67b87766ccfd581e693e0e7ec7"
   integrity sha512-DucSC/1QuxWEFzR9IsHMzrf2nrcZ6qAmLIFoENa2kLK7h72XybcMA9o073z7aHccFzdMEW0/fhAdnQG7a4rDow==
@@ -24844,14 +24891,6 @@ react-copy-to-clipboard@^5.0.1:
   version "5.0.2"
   resolved "https://registry.yarnpkg.com/react-copy-to-clipboard/-/react-copy-to-clipboard-5.0.2.tgz#d82a437e081e68dfca3761fbd57dbf2abdda1316"
   integrity sha512-/2t5mLMMPuN5GmdXo6TebFa8IoFxZ+KTDDqYhcDm0PhkgEzSxVvIX26G20s1EB02A4h2UZgwtfymZ3lGJm0OLg==
-  dependencies:
-    copy-to-clipboard "^3"
-    prop-types "^15.5.8"
-
-react-copy-to-clipboard@^5.0.3:
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/react-copy-to-clipboard/-/react-copy-to-clipboard-5.0.3.tgz#2a0623b1115a1d8c84144e9434d3342b5af41ab4"
-  integrity sha512-9S3j+m+UxDZOM0Qb8mhnT/rMR0NGSrj9A/073yz2DSxPMYhmYFBMYIdI2X4o8AjOjyFsSNxDRnCX6s/gRxpriw==
   dependencies:
     copy-to-clipboard "^3"
     prop-types "^15.5.8"

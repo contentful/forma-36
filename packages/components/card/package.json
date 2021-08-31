@@ -19,7 +19,6 @@
     "emotion": "^10.0.17"
   },
   "peerDependencies": {
-    "@contentful/f36-components": "^4.0.0",
     "react": ">=16.8"
   },
   "license": "MIT",

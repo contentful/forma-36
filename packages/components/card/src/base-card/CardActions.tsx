@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 import type { MouseEventHandler, ReactElement } from 'react';
 import { Button } from '@contentful/f36-button';
 import type { ButtonProps } from '@contentful/f36-button';
-import { MoreHorizontal } from '@contentful/f36-icons';
+import { MoreHorizontalIcon } from '@contentful/f36-icons';
 import { Dropdown } from '@contentful/f36-components';
 
 export type CardActionsProps = {
@@ -37,7 +37,7 @@ export const CardActions = ({
       toggleElement={
         <Button
           aria-label="Actions"
-          icon={<MoreHorizontal />}
+          icon={<MoreHorizontalIcon />}
           {...buttonProps}
           onClick={handleActionClick}
           variant="transparent"
