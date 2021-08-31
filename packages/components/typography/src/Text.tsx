@@ -50,6 +50,7 @@ function _Text<E extends React.ElementType = typeof DEFAULT_TAG>(
     isTruncated,
     as,
     className,
+    margin = 'none',
     ...otherProps
   }: TextProps<E>,
   ref: React.Ref<any>,
@@ -62,7 +63,6 @@ function _Text<E extends React.ElementType = typeof DEFAULT_TAG>(
       as={Element}
       className={cx(
         css({
-          margin: 0,
           padding: 0,
           fontFamily: tokens[fontStack],
           fontWeight: tokens[fontWeight],
@@ -73,6 +73,7 @@ function _Text<E extends React.ElementType = typeof DEFAULT_TAG>(
         isTruncated ? truncatedStyle() : null,
         className,
       )}
+      margin={margin}
       ref={ref}
     >
       {children}
