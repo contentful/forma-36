@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import { TextInput, TextInputProps } from '../src';
 import { TextLink } from '@contentful/f36-text-link';
@@ -6,13 +6,11 @@ import { LockIcon } from '@contentful/f36-icons';
 import { SectionHeading } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
 import { SearchIcon } from '@contentful/f36-icons';
+import { Button } from '@contentful/f36-button';
 
 export default {
   title: 'Form Elements/TextInput',
   component: TextInput,
-  parameters: {
-    propTypes: [TextInput['__docgenInfo']],
-  },
   args: {
     onBlur: undefined,
     onChange: undefined,
@@ -26,26 +24,48 @@ export default {
 };
 
 export const Basic = (args: TextInputProps) => {
-  return (
-    <TextInput
-      {...args}
-      name="Example name"
-      value="Example value"
-      id="input-1"
-      link={
-        <TextLink icon={<LockIcon />} href="https://f36.contentful.com/">
-          go to link
-        </TextLink>
-      }
-    />
-  );
+  return <TextInput {...args} name="Example name" id="input-1" />;
 };
 
 Basic.args = {
   label: 'Example label for input',
-  validationMessage: 'validation message',
-  helpText: 'help text',
   placeholder: 'this is my placeholder',
+};
+
+export const InvalidTextInputWithValidationMessage = (args: TextInputProps) => {
+  const [isInvalid, setIsInvalid] = useState(false);
+
+  return (
+    <Flex flexDirection="column">
+      <TextInput
+        {...args}
+        name="Example name"
+        id="input-1"
+        isInvalid={isInvalid}
+        validationMessage={isInvalid && 'this is my validation message'}
+      />
+      <Flex marginTop="spacingL">
+        <Button variant="primary" onClick={() => setIsInvalid(true)}>
+          click me to show validation message
+        </Button>
+      </Flex>
+    </Flex>
+  );
+};
+
+InvalidTextInputWithValidationMessage.args = {
+  label: 'Example label for input',
+  placeholder: 'this is my placeholder',
+};
+
+export const TextInputWithHelpText = (args: TextInputProps) => {
+  return <TextInput {...args} name="Example name" id="input-1" />;
+};
+
+TextInputWithHelpText.args = {
+  label: 'Example label for input',
+  placeholder: 'this is my placeholder',
+  helpText: 'Additional information about the input',
 };
 
 export const overview = () => (
@@ -61,6 +81,7 @@ export const overview = () => (
         value="Example value"
         id="input-1"
         placeholder="My great input"
+        isInvalid
       />
     </Flex>
 

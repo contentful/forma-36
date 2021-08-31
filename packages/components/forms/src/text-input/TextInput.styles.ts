@@ -1,7 +1,7 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 
-const getStyles = ({ isInvalid, isDisabled }) => ({
+const getStyles = () => ({
   inputWithCopyButton: css({
     borderRadius: `${tokens.borderRadiusMedium} 0 0 ${tokens.borderRadiusMedium}`,
   }),
@@ -13,16 +13,24 @@ const getStyles = ({ isInvalid, isDisabled }) => ({
 
       '&:focus': {
         zIndex: tokens.zIndexDefault,
-        borderColor: isInvalid
-          ? tokens.red600
-          : isDisabled
-          ? tokens.gray300
-          : tokens.blue600,
-        boxShadow: isInvalid
-          ? tokens.glowNegative
-          : isDisabled
-          ? 'none'
-          : tokens.glowPrimary,
+        borderColor: tokens.blue600,
+        boxShadow: tokens.glowPrimary,
+      },
+    }),
+  }),
+  invalid: css({
+    button: css({
+      '&:focus': {
+        borderColor: tokens.red600,
+        boxShadow: tokens.glowNegative,
+      },
+    }),
+  }),
+  disabled: css({
+    button: css({
+      '&:focus': {
+        borderColor: tokens.gray300,
+        boxShadow: 'none',
       },
     }),
   }),

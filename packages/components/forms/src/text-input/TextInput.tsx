@@ -1,5 +1,5 @@
 import React, { useCallback, useState, ChangeEvent } from 'react';
-import { BaseInput } from '@contentful/f36-inputs';
+import { BaseInput } from '../base-input';
 import { Box, Flex } from '@contentful/f36-core';
 import { Label } from '@contentful/f36-forms';
 import { ValidationMessage } from '@contentful/f36-validation-message';
@@ -7,10 +7,10 @@ import { HelpText } from '@contentful/f36-helptext';
 import { CopyButton } from '@contentful/f36-copybutton';
 import getStyles from './TextInput.styles';
 import { TextInputProps } from './types';
+import { cx } from 'emotion';
 
 export const _TextInput = (
   {
-    className,
     testId = 'cf-ui-text-input',
     countCharacters = false,
     isStandalone = false,
@@ -22,21 +22,17 @@ export const _TextInput = (
     validationMessage,
     value,
     onChange,
-    placeholder,
     maxLength,
     isInvalid,
     isDisabled,
-    isReadOnly,
     withCopyButton,
     onCopy,
-    name,
-    icon,
     ...otherProps
   }: TextInputProps,
   ref: React.Ref<HTMLInputElement>,
 ) => {
   const [valueState, setValueState] = useState<string | undefined>(value);
-  const styles = getStyles({ isInvalid, isDisabled });
+  const styles = getStyles();
 
   // Store a copy of the value in state.
   // This is used by this component when the `countCharacters`
@@ -49,90 +45,87 @@ export const _TextInput = (
     [onChange],
   );
 
+  const copyButtonStyles = cx(styles.copyButton, {
+    [styles.disabled]: Boolean(isDisabled),
+    [styles.invalid]: Boolean(isInvalid),
+  });
+
   const inputWithCopyButton = (
     <Flex>
       <BaseInput
-        testId={testId}
         {...otherProps}
+        testId={testId}
         ref={ref}
         label={label}
         type="text"
         onChange={handleOnChange}
-        placeholder={placeholder}
         as="input"
-        name={name}
-        isInvalid={isInvalid}
-        isDisabled={isDisabled}
-        isReadOnly={isReadOnly}
-        icon={icon}
         maxLength={maxLength}
         className={styles.inputWithCopyButton}
       />
       <CopyButton
         value={valueState}
         onCopy={onCopy}
-        className={styles.copyButton}
+        className={copyButtonStyles}
       />
     </Flex>
   );
+
   return (
     <Flex flexDirection="column" fullWidth>
-      {!isStandalone && (
-        <Flex justifyContent="space-between" alignItems="center" fullWidth>
+      {!isStandalone &&
+        (link ? (
+          <Flex justifyContent="space-between" alignItems="center" fullWidth>
+            <Label htmlFor={id} required={isRequired}>
+              {label}
+            </Label>
+            {link && link}
+          </Flex>
+        ) : (
           <Label htmlFor={id} required={isRequired}>
             {label}
           </Label>
-          {link && link}
-        </Flex>
-      )}
+        ))}
       {withCopyButton ? (
         inputWithCopyButton
       ) : (
         <BaseInput
           testId={testId}
-          {...otherProps}
           ref={ref}
           label={label}
           type="text"
           onChange={handleOnChange}
-          placeholder={placeholder}
           as="input"
-          name={name}
           isInvalid={isInvalid}
           isDisabled={isDisabled}
-          isReadOnly={isReadOnly}
-          icon={icon}
           maxLength={maxLength}
+          {...otherProps}
         />
       )}
 
-      {!isStandalone && (
-        <>
-          {(helpText || countCharacters || validationMessage) && (
-            <Flex justifyContent="space-between">
-              <Flex flexDirection="column">
-                {helpText && (
-                  <Box marginTop="spacingXs">
-                    <HelpText>{helpText}</HelpText>
-                  </Box>
-                )}
-                {validationMessage && (
-                  <Box marginTop="spacingXs">
-                    <ValidationMessage>{validationMessage}</ValidationMessage>
-                  </Box>
-                )}
-              </Flex>
+      {!isStandalone && (helpText || countCharacters || validationMessage) && (
+        <Flex justifyContent="space-between">
+          <Flex flexDirection="column">
+            {helpText && (
+              <Box marginTop="spacingXs">
+                <HelpText>{helpText}</HelpText>
+              </Box>
+            )}
+            {validationMessage && (
+              <Box marginTop="spacingXs">
+                <ValidationMessage>{validationMessage}</ValidationMessage>
+              </Box>
+            )}
+          </Flex>
 
-              {countCharacters && maxLength && (
-                <Box marginTop="spacingXs" marginLeft="spacingM">
-                  <HelpText>
-                    {valueState ? valueState.length : 0}/{maxLength}
-                  </HelpText>
-                </Box>
-              )}
-            </Flex>
+          {countCharacters && maxLength && (
+            <Box marginTop="spacingXs" marginLeft="spacingM">
+              <HelpText>
+                {valueState ? valueState.length : 0}/{maxLength}
+              </HelpText>
+            </Box>
           )}
-        </>
+        </Flex>
       )}
     </Flex>
   );

@@ -1,10 +1,4 @@
-import {
-  ChangeEventHandler,
-  FocusEvent,
-  EventHandler,
-  KeyboardEventHandler,
-} from 'react';
-import { BaseInputInternalProps } from '@contentful/f36-inputs';
+import { BaseInputInternalProps } from '../base-input';
 
 export interface TextInputProps extends Omit<BaseInputInternalProps, 'as'> {
   /**
@@ -47,20 +41,4 @@ export interface TextInputProps extends Omit<BaseInputInternalProps, 'as'> {
    * Allows to listen to an copy button
    */
   onCopy?: (value: string) => void;
-  /**
-   * Allows to listen to an input’s change in value
-   */
-  onChange?: ChangeEventHandler<HTMLInputElement>;
-  /**
-   * Allows to listen to an event when an element get focused
-   */
-  onFocus?: EventHandler<FocusEvent<HTMLInputElement>>;
-  /**
-   * Allows to listen to an event when an element loses focus
-   */
-  onBlur?: EventHandler<FocusEvent<HTMLInputElement>>;
-  /**
-   * Allows to listen to an event when a key is pressed
-   */
-  onKeyDown?: KeyboardEventHandler<HTMLInputElement>;
 }
