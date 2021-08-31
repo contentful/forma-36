@@ -11,6 +11,7 @@ import { cx } from 'emotion';
 
 export const _TextInput = (
   {
+    className,
     testId = 'cf-ui-text-input',
     countCharacters = false,
     isStandalone = false,
@@ -72,7 +73,7 @@ export const _TextInput = (
   );
 
   return (
-    <Flex flexDirection="column" fullWidth>
+    <Flex flexDirection="column" fullWidth className={className}>
       {!isStandalone &&
         (link ? (
           <Flex justifyContent="space-between" alignItems="center" fullWidth>
