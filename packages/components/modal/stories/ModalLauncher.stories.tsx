@@ -65,7 +65,7 @@ export const CloseAllStory = () => {
       <Modal title={content} isShown={isShown} onClose={() => onClose()}>
         <Modal.Content>{content}</Modal.Content>
         <Modal.Controls>
-          <Button buttonType="primary" onClick={() => openModal(`New modal`)}>
+          <Button variant="primary" onClick={() => openModal(`New modal`)}>
             Open modal
           </Button>
           <Button
@@ -76,7 +76,7 @@ export const CloseAllStory = () => {
           >
             Close one modal
           </Button>
-          <Button buttonType="muted" onClick={ModalLauncher.closeAll}>
+          <Button variant="secondary" onClick={ModalLauncher.closeAll}>
             Close all
           </Button>
         </Modal.Controls>
