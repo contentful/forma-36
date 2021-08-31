@@ -8,59 +8,86 @@ storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-text
 typescript: './TextArea.tsx'
 ---
 
-`Textarea` is a form element that allows the user to enter a sizeable amount of multi-line plain text.
+`Textarea` is a form component that allows the user to enter a sizeable amount of multi-line plain text.
 
 ## Table of contents
 
-- [How to use Textarea](#how-to-use-Textarea)
-- [Code examples](#code-examples)
+- [How to use Textarea](#how-to-use-textarea)
+- [Examples](#examples)
+  - [isRequired](#isrequired)
+  - [isDisabled](#isdisabled)
+  - [isInvalid](#isinvalid)
 - [Accessibility](#accessibility)
 
 ## How to use Textarea
 
-Textarea is a form element, it should be used within the context of `<Form>`
-It can be configured in a number of different ways; use this guide to determine the best configuration based on the context.
+Textarea can be imported from `@contentful/f36-components` or `@contentful/f36-forms`.
+This component is renders a form element, therefore it should be used within the context of a `<Form>`.
 
-## Code examples
+## Examples
 
 ```tsx
-// import { Textarea } from '@contentful/forma-36-react-components';
-
-<Textarea
-  name="description"
-  id="textarea"
-  width="large"
-  value="Example text in the textarea"
-  rows={2}
-/>
+<Textarea id="textarea" name="description" label="description" />
 ```
 
-### Textarea state (`disabled`)
+### `isRequired`
 
 ```tsx
-<Textarea name="description" id="textarea" disabled value="123456" rows={2} />
+<Textarea id="textarea" name="description" label="description" isRequired />
 ```
 
-### Textarea can be controlled by passing a `textareaRef` prop
+By using the `isRequired` prop, it’s possible to control the required state of the `textarea`.
+This prop will set `disabled` attribute of the HTML tag to `true`.
+
+### `isDisabled`
 
 ```tsx
-function TextareaRef() {
-  const textareaRef = React.createRef();
+<Textarea id="textarea" name="description" label="description" isDisabled />
+```
+
+By using the `isDisabled` prop, it’s possible to control the disabled state of the `textarea`.
+This prop will handle the disabled styles and set `disabled` attribute of the HTML tag to `true`.
+
+### `isInvalid`
+
+```tsx
+<Textarea id="textarea" name="description" label="description" isInvalid />
+```
+
+By using the `isInvalid` prop, it’s possible to control the error state of the `textarea`.
+This prop will handle the error styles.
+
+### Using ref to control `textarea` tag directly
+
+```tsx
+const UsingRef = () => {
+  const textareaRef = React.createRef<HTMLTextAreaElement>();
 
   return (
-    <Textarea
-      name="description"
-      id="textarea"
-      disabled
-      value="123456"
-      rows={2}
-      textareaRef={textareaRef}
-    />
+    <>
+      <Textarea
+        id="textarea"
+        name="textarea"
+        label="My textarea"
+        placeholder="Placeholder"
+        ref={textareaRef}
+      />
+      <Flex marginTop="spacingL">
+        <Button onClick={() => textareaRef.current.focus()}>
+          Focus Textarea with ref
+        </Button>
+      </Flex>
+    </>
   );
-}
+};
 ```
+
+The `Textarea` is exposing the ref of the `textarea` tag as a prop,
+which means that you can pass a ref created with `React.createRef()` to it and it will work as expected.
 
 ## Accessibility
 
 - To ensure accessibility, provide a `name` prop
-- Always feedback the user if the Textarea is a required field
+- In case the input is required, use `isRequired` prop
+- Provide validation to the input and use `isInvalid` to control the error state of `Textarea`. Also show meaninful error messages with the `ValidationMessage` component.
+- Provide instructions of how to fill the field with `HelpText` component

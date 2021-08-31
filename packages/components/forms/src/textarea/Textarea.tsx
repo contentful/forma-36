@@ -34,4 +34,7 @@ const _Textarea = (
   );
 };
 
+/**
+ * Textarea is a form component that allows the user to enter a sizeable amount of multi-line plain text.
+ */
 export const Textarea = React.forwardRef(_Textarea);
