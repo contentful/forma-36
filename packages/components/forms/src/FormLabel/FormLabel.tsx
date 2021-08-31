@@ -3,6 +3,7 @@ import React, { forwardRef } from 'react';
 import type { ReactNode } from 'react';
 import type { PolymorphicComponentProps } from '@contentful/f36-core';
 import { getFormLabelStyles } from './FormLabel.styles';
+import { useFormControl } from '../FormControl/FormControlContext';
 
 export type FormLabelInternalProps = {
   /**
@@ -42,15 +43,24 @@ export const FormLabel = forwardRef<HTMLLabelElement, FormLabelProps>(function (
   forwardedRef,
 ) {
   const styles = getFormLabelStyles();
+  const formControlProps = useFormControl({ isRequired });
+
+  const id = formControlProps.id ? formControlProps.id + '-label' : undefined;
+  const htmlFor = otherProps['htmlFor'] || formControlProps.id;
+
   return (
     <label
       {...otherProps}
+      id={id}
+      htmlFor={htmlFor}
       className={cx(styles.root, className)}
       ref={forwardedRef}
       data-test-id={testId}
     >
       {children}
-      {isRequired && <span className={styles.indicator}>({requiredText})</span>}
+      {formControlProps.isRequired && (
+        <span className={styles.indicator}>({requiredText})</span>
+      )}
     </label>
   );
 });

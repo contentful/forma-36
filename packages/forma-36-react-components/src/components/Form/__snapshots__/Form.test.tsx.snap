@@ -1,12 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
-.emotion-0 {
-  color: #67728A;
-  font-weight: 400;
-  margin-left: calc(1rem * (4 / 16));
-}
-
 .emotion-1 {
   display: inline-block;
   color: #111B2B;
@@ -15,6 +9,12 @@ exports[`renders the component 1`] = `
   font-weight: 500;
   line-height: 1.5;
   margin-bottom: calc(1rem * (8 / 16));
+}
+
+.emotion-0 {
+  color: #67728A;
+  font-weight: 400;
+  margin-left: calc(1rem * (4 / 16));
 }
 
 .emotion-4 {
@@ -103,12 +103,6 @@ exports[`renders the component 1`] = `
 `;
 
 exports[`renders the component with an additional class name 1`] = `
-.emotion-0 {
-  color: #67728A;
-  font-weight: 400;
-  margin-left: calc(1rem * (4 / 16));
-}
-
 .emotion-1 {
   display: inline-block;
   color: #111B2B;
@@ -117,6 +111,12 @@ exports[`renders the component with an additional class name 1`] = `
   font-weight: 500;
   line-height: 1.5;
   margin-bottom: calc(1rem * (8 / 16));
+}
+
+.emotion-0 {
+  color: #67728A;
+  font-weight: 400;
+  margin-left: calc(1rem * (4 / 16));
 }
 
 .emotion-4 {
@@ -205,12 +205,6 @@ exports[`renders the component with an additional class name 1`] = `
 `;
 
 exports[`renders the component with condensed spacing 1`] = `
-.emotion-0 {
-  color: #67728A;
-  font-weight: 400;
-  margin-left: calc(1rem * (4 / 16));
-}
-
 .emotion-1 {
   display: inline-block;
   color: #111B2B;
@@ -219,6 +213,12 @@ exports[`renders the component with condensed spacing 1`] = `
   font-weight: 500;
   line-height: 1.5;
   margin-bottom: calc(1rem * (8 / 16));
+}
+
+.emotion-0 {
+  color: #67728A;
+  font-weight: 400;
+  margin-left: calc(1rem * (4 / 16));
 }
 
 .emotion-4 {
