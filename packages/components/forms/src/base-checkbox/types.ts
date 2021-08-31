@@ -30,8 +30,5 @@ export interface BaseCheckboxProps
 }
 
 export type CheckboxProps = Omit<BaseCheckboxProps, 'type'>;
-export type RadioButtonProps = Omit<
-  BaseCheckboxProps,
-  'type' | 'isIndeterminate'
->;
+export type RadioProps = Omit<BaseCheckboxProps, 'type' | 'isIndeterminate'>;
 export type SwitchProps = Omit<BaseCheckboxProps, 'type' | 'isIndeterminate'>;

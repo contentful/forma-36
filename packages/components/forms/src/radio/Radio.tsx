@@ -1,10 +1,11 @@
 import React from 'react';
 import { Flex } from '@contentful/f36-core';
-import { BaseCheckbox, BaseCheckboxProps } from '../base-checkbox';
+import { BaseCheckbox } from '../base-checkbox';
+import type { RadioProps as _RadioProps } from '../base-checkbox/types';
 import { Label } from '../Label';
 import { getStyles } from './Radio.styles';
 
-export type RadioProps = Omit<BaseCheckboxProps, 'type' | 'isIndeterminate'>;
+export type RadioProps = _RadioProps;
 
 const _Radio = (
   { testId = 'cf-ui-radio-button', label, id, className, ...otherProps },
