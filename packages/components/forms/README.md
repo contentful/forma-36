@@ -10,5 +10,5 @@ Please use official, supported version of the library [forma-36](https://github.
 - CheckboxField
 - RadioField
 - TextField
-- TextArea
+- Textarea
 - SelectField
