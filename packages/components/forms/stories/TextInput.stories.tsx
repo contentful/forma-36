@@ -29,7 +29,7 @@ Basic.args = {
   placeholder: 'this is my placeholder',
 };
 
-export const overview = () => (
+export const Overview = () => (
   <Flex flexDirection="column">
     <SectionHeading as="h3" marginBottom="spacingS">
       Text Input default
@@ -59,6 +59,20 @@ export const overview = () => (
     </Flex>
 
     <SectionHeading as="h3" marginBottom="spacingS">
+      Text Input invalid
+    </SectionHeading>
+
+    <Flex marginBottom="spacingL">
+      <TextInput
+        label="Example label for input"
+        name="Example name"
+        id="input-1"
+        placeholder="My great input"
+        isInvalid
+      />
+    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
       Text Input with icon as a placeholder
     </SectionHeading>
 
@@ -70,21 +84,6 @@ export const overview = () => (
         id="input-1"
         placeholder="My great input"
         icon={<SearchIcon />}
-      />
-    </Flex>
-
-    <SectionHeading as="h3" marginBottom="spacingS">
-      Text Input with countCharacters
-    </SectionHeading>
-
-    <Flex marginBottom="spacingL">
-      <TextInput
-        label="Example label for input"
-        name="Example name"
-        id="input-1"
-        placeholder="My great input"
-        countCharacters
-        maxLength={20}
       />
     </Flex>
 

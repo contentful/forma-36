@@ -1,22 +1,21 @@
 import React, { useState, ChangeEvent } from 'react';
 import { BaseInput } from '../base-input';
-import { Box, Flex } from '@contentful/f36-core';
-import { HelpText } from '@contentful/f36-helptext';
+import { Flex } from '@contentful/f36-core';
 import { CopyButton } from '@contentful/f36-copybutton';
 import getStyles from './TextInput.styles';
 import { TextInputProps } from './types';
 import { cx } from 'emotion';
 
+const styles = getStyles();
+
 export const _TextInput = (
   {
     className,
     testId = 'cf-ui-text-input',
-    countCharacters = false,
     label,
     id,
     value,
     onChange,
-    maxLength,
     isInvalid,
     isDisabled,
     withCopyButton,
@@ -26,7 +25,6 @@ export const _TextInput = (
   ref: React.Ref<HTMLInputElement>,
 ) => {
   const [valueState, setValueState] = useState<string | undefined>(value);
-  const styles = getStyles();
 
   // Store a copy of the value in state.
   // This is used by this component when the `countCharacters`
@@ -51,8 +49,9 @@ export const _TextInput = (
         type="text"
         onChange={handleOnChange}
         as="input"
-        maxLength={maxLength}
         className={styles.inputWithCopyButton}
+        isDisabled={isDisabled}
+        isInvalid={isInvalid}
       />
       <CopyButton
         value={valueState}
@@ -74,21 +73,10 @@ export const _TextInput = (
           type="text"
           onChange={handleOnChange}
           as="input"
-          isInvalid={isInvalid}
           isDisabled={isDisabled}
-          maxLength={maxLength}
+          isInvalid={isInvalid}
           {...otherProps}
         />
-      )}
-
-      {countCharacters && maxLength && (
-        <Flex justifyContent="flex-end">
-          <Box marginTop="spacingXs" marginLeft="spacingM">
-            <HelpText>
-              {valueState ? valueState.length : 0}/{maxLength}
-            </HelpText>
-          </Box>
-        </Flex>
       )}
     </Flex>
   );

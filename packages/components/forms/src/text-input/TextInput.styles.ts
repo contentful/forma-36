@@ -20,19 +20,15 @@ const getStyles = () => ({
     },
   }),
   invalid: css({
-    button: {
-      '&:focus': {
-        borderColor: tokens.red600,
-        boxShadow: tokens.glowNegative,
-      },
+    '& button:focus': {
+      borderColor: tokens.red600,
+      boxShadow: tokens.glowNegative,
     },
   }),
   disabled: css({
-    button: {
-      '&:focus': {
-        borderColor: tokens.gray300,
-        boxShadow: 'none',
-      },
+    '& button:focus': {
+      borderColor: tokens.gray300,
+      boxShadow: 'none',
     },
   }),
 });

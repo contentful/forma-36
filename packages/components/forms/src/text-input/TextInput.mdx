@@ -22,15 +22,13 @@ typescript: ./TextInput.tsx
 
 The TextInput component can be configured in a number of different ways. Use this guidance to determine the correct variation based on the context.
 
-TextInput is supporting different types of inputs, like `'text' | 'email' | 'file' | 'number' | 'password' | 'search' | 'url'`, where `text` is a default.
+TextInput is supporting different types of inputs, like `'text' | 'email' | 'file' | 'number' | 'password' | 'search' | 'url'`, where `text` is the default.
 Label property is always required and passed to the `<input />` as `aria-label`.
 
 ## Code examples
 
 ```jsx
-<React.Fragment>
-  <TextInput type="email" name="email" label="Email address" />
-</React.Fragment>
+<TextInput type="email" name="email" label="Email address" />
 ```
 
 ## TextInput variations
@@ -42,7 +40,6 @@ The TextInput can be configured to display a character count. This is useful whe
 
 ```jsx
 <TextInput
-  type="text"
   label="name"
   name="name"
   id="input-1"
@@ -62,16 +59,14 @@ We provide a variant of the TextInput that is a composed with CopyButton. In ord
 
 ## Content recommendations
 
-- Use direct, succinct copy that helps the user to successfully complete the form
+- Use direct and succinct copy that helps the user to successfully complete the form
 - Do not preface the instructions with introductory text, such as "please"
-- To add additional context, link out to documentation
-- In cases where additional context is unnecessary, help text can be substituted for text in the label
-- Do not use punctuation for labels, help text and links
 - Use sentence style caps (in which only the first word of a sentence or term is capitalized)
 
 ## Accessibility
 
 - To ensure `TextInput` meets accessibility standards, provide `name` and `id`
+- Keep in mind that to provide that accessibile inputs, you need to use labels.
 
 import { Props } from '@contentful/f36-docs-utils';
 
