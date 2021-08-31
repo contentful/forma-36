@@ -43,20 +43,17 @@ export const Basic = (args: RadioProps) => {
 
 Basic.args = {
   label: 'some label text',
-  validationMessage: 'validation message',
-  helpText: 'help text',
 };
 
 export const overview = () => (
   <>
     <SectionHeading as="h3" marginBottom="spacingS">
-      Radio button field default
+      Radio default
     </SectionHeading>
 
     <Flex marginBottom="spacingS">
       <Radio
         label="Label text"
-        helpText="This is a helptext"
         name="someOption"
         value="no"
         id="radioButton1"
@@ -64,28 +61,12 @@ export const overview = () => (
     </Flex>
 
     <SectionHeading as="h3" marginBottom="spacingS">
-      Radio button field with validation message
+      Radio disabled
     </SectionHeading>
 
     <Flex marginBottom="spacingS">
       <Radio
         label="Label text"
-        helpText="This is a helptext"
-        validationMessage="validationMessage"
-        name="someOption"
-        value="no"
-        id="radioButton2"
-      />
-    </Flex>
-
-    <SectionHeading as="h3" marginBottom="spacingS">
-      Radio button disabled
-    </SectionHeading>
-
-    <Flex marginBottom="spacingS">
-      <Radio
-        label="Label text"
-        helpText="This is a helptext"
         isDisabled
         name="someOption"
         value="no"
@@ -94,13 +75,12 @@ export const overview = () => (
     </Flex>
 
     <SectionHeading as="h3" marginBottom="spacingS">
-      Radio button disabled checked
+      Radio disabled checked
     </SectionHeading>
 
     <Flex marginBottom="spacingS">
       <Radio
         label="Label text"
-        helpText="This is a helptext"
         isDisabled
         isChecked
         name="someOption"

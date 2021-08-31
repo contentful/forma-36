@@ -39,19 +39,27 @@ export const Basic = (args: CheckboxProps) => {
 Basic.args = {
   label: 'some label text',
   name: 'some name',
-  validationMessage: 'validation message',
-  helpText: 'help text',
 };
 
 export const overview = () => (
   <>
     <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
-      Checkbox Field default
+      Checkbox default
     </SectionHeading>
 
     <Checkbox
       label="Option 1"
-      helpText="This is a helptext"
+      name="someOption"
+      value="yes"
+      id="termsCheckbox"
+    />
+
+    <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
+      Checkbox checked
+    </SectionHeading>
+
+    <Checkbox
+      label="Option 1"
       name="someOption"
       isChecked
       value="yes"
@@ -59,25 +67,23 @@ export const overview = () => (
     />
 
     <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
-      Checkbox Field with validation message
+      Checkbox indeterminate
     </SectionHeading>
 
     <Checkbox
-      label="Option 2"
-      helpText="This is a helptext"
-      validationMessage="validationMessage"
+      label="Option 1"
       name="someOption"
-      value="no"
-      id="termsCheckboxOption2"
+      isIndeterminate
+      value="yes"
+      id="termsCheckbox"
     />
 
     <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
-      Checkbox Field disabled
+      Checkbox disabled
     </SectionHeading>
 
     <Checkbox
       label="Option 2"
-      helpText="This is a helptext"
       isDisabled
       name="someOption"
       value="no"
@@ -85,17 +91,29 @@ export const overview = () => (
     />
 
     <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
-      Checkbox Field disabled checked
+      Checkbox disabled checked
     </SectionHeading>
 
     <Checkbox
       label="Option 2"
-      helpText="This is a helptext"
       isDisabled
       isChecked
       name="someOption"
       value="no"
       id="termsCheckboxOption4"
+    />
+
+    <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
+      Checkbox disabled indeterminate
+    </SectionHeading>
+
+    <Checkbox
+      label="Option 1"
+      name="someOption"
+      isIndeterminate
+      isDisabled
+      value="yes"
+      id="termsCheckbox"
     />
   </>
 );

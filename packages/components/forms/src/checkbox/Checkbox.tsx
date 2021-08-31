@@ -1,20 +1,36 @@
 import React from 'react';
-import { BaseCheckboxField } from '../base-checkbox-field';
-import type { CheckboxFieldProps as _CheckboxFieldProps } from '../base-checkbox-field/types';
+import { Flex } from '@contentful/f36-core';
+import { BaseCheckbox, BaseCheckboxProps } from '../base-checkbox';
+import { Label } from '../Label';
+import { getStyles } from './Checkbox.styles';
 
-export type CheckboxProps = _CheckboxFieldProps;
+export type CheckboxProps = Omit<BaseCheckboxProps, 'type'>;
 
-export const _Checkbox = (
-  { testId = 'cf-ui-checkbox', ...otherProps }: CheckboxProps,
+const _Checkbox = (
+  { testId = 'cf-ui-checkbox', label, id, className, ...otherProps },
   ref: React.Ref<HTMLDivElement>,
 ) => {
+  const styles = getStyles();
+
   return (
-    <BaseCheckboxField
-      testId={testId}
-      {...otherProps}
+    <Flex
+      as="div"
+      alignItems="center"
       ref={ref}
-      type="checkbox"
-    />
+      testId={testId}
+      className={className}
+    >
+      <BaseCheckbox
+        id={id}
+        label={label}
+        type="checkbox"
+        className={styles.input}
+        {...otherProps}
+      />
+      <Label className={styles.label} htmlFor={id}>
+        {label}
+      </Label>
+    </Flex>
   );
 };
 

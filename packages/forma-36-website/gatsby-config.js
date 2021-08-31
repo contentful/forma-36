@@ -210,7 +210,7 @@ module.exports = {
             menuLinks: [
               {
                 name: 'Checkbox',
-                link: '/components/inputs/src/checkbox/',
+                link: '/components/forms/src/checkbox/',
               },
               {
                 name: 'Form',

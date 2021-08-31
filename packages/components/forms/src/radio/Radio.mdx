@@ -1,0 +1,78 @@
+---
+title: 'Radio'
+type: 'component'
+status: 'stable'
+slug: /components/forms/src/radio/
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/forms/src/radio'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-radio--basic'
+typescript: ./Radio.tsx
+---
+
+`Radio` is a form component, that shows a checkbox with it's label, if you want to let the user select multiple options, use the `Checkbox` component.
+
+## Table of contents
+
+- [How to use Radio](#how-to-use-radio)
+- [Component variations](#component-variations)
+- [Content recommendations](#content-recommendations)
+- [Accessibility](#accessibility)
+- [Props](#props)
+
+## How to use Radio
+
+Name should be the same on all `Radio` on the same Group.  
+Label property is always required and passed to the `<input />` as `aria-label`, and also rendered on the right side of the checkbox
+
+## Code examples
+
+```jsx
+const [value, setValue] = useState(null)
+<React.Fragment>
+  <Radio
+    id="radio1"
+    label="Yes"
+    name="radio"
+    value="yes"
+    isChecked={value==='yes'}
+    onChange={(e) => setValue('yes')}
+  />
+  <Radio
+    id="radio2"
+    label="No"
+    name="radio"
+    value="no"
+    isChecked={value==='no'}
+    onChange={(e) => setValue('no')}
+  />
+</React.Fragment>
+```
+
+## Component variations
+
+### Checked or indeterminate
+
+The Radio can be rendered as checked, with the `isChecked` property.
+
+```jsx
+<Radio id="radio3" label="Yes" name="radio3" isChecked />
+```
+
+The Radio can be rendered as disabled with the `isDisabled` property.
+
+```jsx
+<Radio id="radio4" label="Yes" name="radio4" isDisabled />
+```
+
+## Content recommendations
+
+- Use direct, succinct copy that helps the user to successfully complete the form
+- Do not use punctuation for labels
+- Use sentence style caps (in which only the first word of a sentence or term is capitalized)
+
+## Accessibility
+
+- To ensure `Radio` meets accessibility standards, provide `name` and `id`
+
+import { Props } from '@contentful/f36-docs-utils';
+
+<Props of="Radio" />
