@@ -2,14 +2,14 @@ import React from 'react';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 
-import { TextArea, TextAreaProps } from '../src/textarea';
+import { Textarea, TextareaProps } from '../src/textarea';
 
 export default {
-  title: 'Form Elements/TextArea',
-  component: TextArea,
+  title: 'Form Elements/Textarea',
+  component: Textarea,
 };
 
-export const Basic = (args: TextAreaProps) => <TextArea {...args} />;
+export const Basic = (args: TextareaProps) => <Textarea {...args} />;
 Basic.args = {
   label: 'My textarea',
   placeholder: 'Placeholder',
@@ -23,13 +23,13 @@ export const Overview = () => {
         Textarea
       </SectionHeading>
 
-      <TextArea id="textarea" name="textarea" label="My textarea" />
+      <Textarea id="textarea" name="textarea" label="My textarea" />
 
       <SectionHeading as="h3" marginTop="spacingL" marginBottom="spacingS">
         Textarea with error
       </SectionHeading>
 
-      <TextArea
+      <Textarea
         id="textarea-with-error"
         name="textarea-with-error"
         label="My textarea with error"
@@ -40,7 +40,7 @@ export const Overview = () => {
         Textarea disabled
       </SectionHeading>
 
-      <TextArea
+      <Textarea
         id="textarea-disabled"
         name="textarea-disabled"
         label="My disabled textarea"

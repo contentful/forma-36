@@ -1,17 +1,17 @@
 import React from 'react';
 import { cx } from 'emotion';
 import { Flex } from '@contentful/f36-core';
-import { BaseInput, BaseInputInternalProps } from '@contentful/f36-inputs';
+import { BaseInput, BaseInputInternalProps } from '../base-input';
 import { ValidationMessage } from '@contentful/f36-validation-message';
 
 import { Label } from '../Label';
-import { getStyles } from './TextArea.styles';
+import { getStyles } from './Textarea.styles';
 
-type BaseInputAndTextAreaElementProps = BaseInputInternalProps &
+type BaseInputAndTextareaElementProps = BaseInputInternalProps &
   React.AllHTMLAttributes<HTMLTextAreaElement>;
 
-export interface TextAreaProps
-  extends Omit<BaseInputAndTextAreaElementProps, 'as' | 'isInvalid'> {
+export interface TextareaProps
+  extends Omit<BaseInputAndTextareaElementProps, 'as' | 'isInvalid'> {
   /** The id will be passed to both the id of the textarea tag and to the `htmlFor` prop of the Label component */
   id: string;
   /** This label will be the content of the label tag and the value of aria-label attribute */
@@ -20,7 +20,7 @@ export interface TextAreaProps
   validationMessage?: string;
 }
 
-const _TextArea = (
+const _Textarea = (
   {
     className,
     id,
@@ -28,7 +28,7 @@ const _TextArea = (
     validationMessage,
     isDisabled,
     ...otherProps
-  }: TextAreaProps,
+  }: TextareaProps,
   ref: React.Ref<HTMLTextAreaElement>,
 ) => {
   const styles = getStyles();
@@ -61,4 +61,4 @@ const _TextArea = (
   );
 };
 
-export const TextArea = React.forwardRef(_TextArea);
+export const Textarea = React.forwardRef(_Textarea);
