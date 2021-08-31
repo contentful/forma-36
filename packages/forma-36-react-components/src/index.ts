@@ -131,10 +131,8 @@ export type {
 export * from './components/EntityList';
 export * from './components/Form';
 export * from './components/Select';
-export * from './components/SelectField';
 export * from './components/Switch';
 export * from './components/Textarea';
-export * from './components/TextField';
 export * from './components/TextInput';
 export * from './components/Workbench';
 
