@@ -60,6 +60,7 @@ export const _TextInput = (
         value={textInputRef?.current?.value}
         onCopy={handleCopy}
         className={copyButtonStyles}
+        isDisabled={isDisabled}
       />
     </Flex>
   );

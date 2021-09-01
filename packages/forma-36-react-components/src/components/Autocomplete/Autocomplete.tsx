@@ -2,7 +2,7 @@ import React, { useMemo, useReducer, useRef, ChangeEvent } from 'react';
 import { CloseIcon, ChevronDownIcon } from '@contentful/f36-icons';
 import cx from 'classnames';
 
-import { TextInput } from '../TextInput';
+import { TextInput } from '@contentful/f36-forms';
 import {
   Dropdown,
   DropdownList,
@@ -212,14 +212,12 @@ export const Autocomplete = <T extends {}>({
           }
           onFocus={props.onFocus}
           onKeyDown={props.onKeyDown}
-          disabled={props.disabled}
+          isDisabled={props.disabled}
           placeholder={props.placeholder}
-          width={props.width}
-          inputRef={props.inputRef}
+          ref={props.inputRef}
           testId="autocomplete.input"
           type="search"
-          autoComplete="off"
-          aria-label={props.name}
+          ariaLabel={props.name}
         />
         <div className={styles.inputIconButton}>
           <Button

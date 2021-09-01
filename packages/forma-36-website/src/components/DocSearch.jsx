@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { SearchIcon } from '@contentful/f36-icons';
-import { TextInput } from '@contentful/f36-components';
+import { TextInput } from '@contentful/f36-forms';
 
 const styles = {
   container: css`
@@ -56,6 +56,7 @@ const DocSearch = () => {
         type="text"
         placeholder="Search the docs"
         value=""
+        ariaLabel="search"
       />
     </div>
   );

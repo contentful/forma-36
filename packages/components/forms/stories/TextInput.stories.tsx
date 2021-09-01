@@ -101,5 +101,20 @@ export const Overview = () => (
         withCopyButton
       />
     </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Text Input with copybutton disabled
+    </SectionHeading>
+
+    <Flex marginBottom="spacingL">
+      <TextInput
+        label="Example label for input"
+        name="Example name"
+        id="input-1"
+        placeholder="My great input"
+        withCopyButton
+        isDisabled
+      />
+    </Flex>
   </Flex>
 );
