@@ -1,11 +1,12 @@
 import { cx } from 'emotion';
 import React, { forwardRef } from 'react';
 import type { ReactNode } from 'react';
-import type { PolymorphicComponentProps } from '@contentful/f36-core';
+import type { PropsWithHTMLElement } from '@contentful/f36-core';
 import { getFormLabelStyles } from './FormLabel.styles';
 import { useFormControl } from '../FormControl/FormControlContext';
+import { CommonProps } from '@contentful/f36-core';
 
-export type FormLabelInternalProps = {
+export interface FormLabelInternalProps extends CommonProps {
   /**
    * Label value to show
    */
@@ -23,12 +24,11 @@ export type FormLabelInternalProps = {
    * @default "required"
    */
   requiredText?: string;
-};
+}
 
-export type FormLabelProps = PolymorphicComponentProps<
-  'label',
+export type FormLabelProps = PropsWithHTMLElement<
   FormLabelInternalProps,
-  'as' | 'ref'
+  'label'
 >;
 
 export const FormLabel = forwardRef<HTMLLabelElement, FormLabelProps>(function (
