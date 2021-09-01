@@ -6,7 +6,7 @@ const getStyles = () => ({
     borderRadius: `${tokens.borderRadiusMedium} 0 0 ${tokens.borderRadiusMedium}`,
   }),
   copyButton: css({
-    button: {
+    '& button': {
       borderLeft: 'none',
       height: '100%',
       borderRadius: `0 ${tokens.borderRadiusMedium} ${tokens.borderRadiusMedium} 0`,
