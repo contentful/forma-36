@@ -31,7 +31,7 @@ export type FormLabelProps = PropsWithHTMLElement<
   'label'
 >;
 
-export const FormLabel = forwardRef<HTMLLabelElement, FormLabelProps>(function (
+function _FormLabel(
   {
     children,
     className,
@@ -39,8 +39,8 @@ export const FormLabel = forwardRef<HTMLLabelElement, FormLabelProps>(function (
     requiredText = 'required',
     testId = 'cf-ui-form-label',
     ...otherProps
-  },
-  forwardedRef,
+  }: FormLabelProps,
+  forwardedRef: React.Ref<HTMLLabelElement>,
 ) {
   const styles = getFormLabelStyles();
   const formControlProps = useFormControl({ isRequired });
@@ -63,6 +63,6 @@ export const FormLabel = forwardRef<HTMLLabelElement, FormLabelProps>(function (
       )}
     </label>
   );
-});
+}
 
-FormLabel.displayName = 'FormLabel';
+export const FormLabel = forwardRef(_FormLabel);

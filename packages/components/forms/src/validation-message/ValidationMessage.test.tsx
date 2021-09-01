@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { axe } from '@/scripts/test/axeHelper';
 
-import { ValidationMessage } from '../src/ValidationMessage';
+import { ValidationMessage } from './ValidationMessage';
 
 describe('ValidationMessage', function () {
   it('renders the component with all required props', () => {
