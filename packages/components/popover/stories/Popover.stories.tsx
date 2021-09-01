@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 
-import { Popover, PopoverTrigger, PopoverContent } from '../src/.';
+import { Popover } from '../src/.';
 import type { PopoverProps } from '../src/.';
 import { Button } from '@contentful/f36-button';
 import { Paragraph } from '@contentful/f36-typography';
@@ -20,15 +20,15 @@ export const Basic: Story<PopoverProps> = (args) => {
 
   return (
     <Popover {...args} isOpen={isOpen} onClose={() => setIsOpen(false)}>
-      <PopoverTrigger>
+      <Popover.Trigger>
         <Button onClick={() => setIsOpen(!isOpen)}>Toggle</Button>
-      </PopoverTrigger>
-      <PopoverContent>
+      </Popover.Trigger>
+      <Popover.Content>
         <Box padding="spacingM">
           <Paragraph>This is the content.</Paragraph>
           <Button>Some action</Button>
         </Box>
-      </PopoverContent>
+      </Popover.Content>
     </Popover>
   );
 };

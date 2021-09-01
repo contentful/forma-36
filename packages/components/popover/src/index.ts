@@ -1,4 +1,4 @@
-export { Popover } from './Popover';
+export { Popover } from './CompoundPopover';
 export type { PopoverProps } from './Popover';
 export { PopoverTrigger } from './PopoverTrigger/PopoverTrigger';
 export type { PopoverTriggerProps } from './PopoverTrigger/PopoverTrigger';
