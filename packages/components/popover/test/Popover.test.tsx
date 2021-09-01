@@ -3,17 +3,17 @@ import { render, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { axe } from '@/scripts/test/axeHelper';
 
-import { Popover, PopoverTrigger, PopoverContent } from '../src/.';
+import { Popover } from '../src/.';
 import { Button } from '@contentful/f36-button';
 
 describe('Popover', function () {
   it('renders the component', () => {
     const { getByRole } = render(
       <Popover>
-        <PopoverTrigger>
+        <Popover.Trigger>
           <Button>Toggle</Button>
-        </PopoverTrigger>
-        <PopoverContent>This is the content.</PopoverContent>
+        </Popover.Trigger>
+        <Popover.Content>This is the content.</Popover.Content>
       </Popover>,
     );
 
@@ -25,10 +25,10 @@ describe('Popover', function () {
   it('renders the components as open', () => {
     const { getByRole } = render(
       <Popover isOpen={true}>
-        <PopoverTrigger>
+        <Popover.Trigger>
           <Button>Toggle</Button>
-        </PopoverTrigger>
-        <PopoverContent>This is the content.</PopoverContent>
+        </Popover.Trigger>
+        <Popover.Content>This is the content.</Popover.Content>
       </Popover>,
     );
 
@@ -41,12 +41,12 @@ describe('Popover', function () {
   it('renders the components with an additional class names', () => {
     const { getByRole } = render(
       <Popover isOpen={true}>
-        <PopoverTrigger>
+        <Popover.Trigger>
           <Button className="trigger">Toggle</Button>
-        </PopoverTrigger>
-        <PopoverContent className="popover">
+        </Popover.Trigger>
+        <Popover.Content className="popover">
           This is the content.
-        </PopoverContent>
+        </Popover.Content>
       </Popover>,
     );
 
@@ -62,10 +62,10 @@ describe('Popover', function () {
 
     render(
       <Popover isOpen={true} onClose={handleClose}>
-        <PopoverTrigger>
+        <Popover.Trigger>
           <Button>Toggle</Button>
-        </PopoverTrigger>
-        <PopoverContent>This is the content.</PopoverContent>
+        </Popover.Trigger>
+        <Popover.Content>This is the content.</Popover.Content>
       </Popover>,
     );
 
@@ -80,10 +80,10 @@ describe('Popover', function () {
 
     render(
       <Popover isOpen={true} onClose={handleClose} closeOnEsc={false}>
-        <PopoverTrigger>
+        <Popover.Trigger>
           <Button>Toggle</Button>
-        </PopoverTrigger>
-        <PopoverContent>This is the content.</PopoverContent>
+        </Popover.Trigger>
+        <Popover.Content>This is the content.</Popover.Content>
       </Popover>,
     );
 
@@ -98,10 +98,10 @@ describe('Popover', function () {
 
     render(
       <Popover isOpen={true} onClose={handleClose}>
-        <PopoverTrigger>
+        <Popover.Trigger>
           <Button>Toggle</Button>
-        </PopoverTrigger>
-        <PopoverContent>This is the content.</PopoverContent>
+        </Popover.Trigger>
+        <Popover.Content>This is the content.</Popover.Content>
       </Popover>,
     );
 
@@ -114,10 +114,10 @@ describe('Popover', function () {
 
     const { getByRole } = render(
       <Popover isOpen={true} onClose={handleClose}>
-        <PopoverTrigger>
+        <Popover.Trigger>
           <Button>Toggle</Button>
-        </PopoverTrigger>
-        <PopoverContent>This is the content.</PopoverContent>
+        </Popover.Trigger>
+        <Popover.Content>This is the content.</Popover.Content>
       </Popover>,
     );
 
@@ -130,10 +130,10 @@ describe('Popover', function () {
 
     render(
       <Popover isOpen={true} onClose={handleClose} closeOnBlur={false}>
-        <PopoverTrigger>
+        <Popover.Trigger>
           <Button>Toggle</Button>
-        </PopoverTrigger>
-        <PopoverContent>This is the content.</PopoverContent>
+        </Popover.Trigger>
+        <Popover.Content>This is the content.</Popover.Content>
       </Popover>,
     );
 
@@ -144,10 +144,10 @@ describe('Popover', function () {
   it('popover should receive focus when open', () => {
     const { getByRole } = render(
       <Popover isOpen={true}>
-        <PopoverTrigger>
+        <Popover.Trigger>
           <Button>Toggle</Button>
-        </PopoverTrigger>
-        <PopoverContent>This is the content.</PopoverContent>
+        </Popover.Trigger>
+        <Popover.Content>This is the content.</Popover.Content>
       </Popover>,
     );
 
@@ -158,10 +158,10 @@ describe('Popover', function () {
     const { getByRole } = render(
       // eslint-disable-next-line jsx-a11y/no-autofocus
       <Popover isOpen={true} autoFocus={false}>
-        <PopoverTrigger>
+        <Popover.Trigger>
           <Button>Toggle</Button>
-        </PopoverTrigger>
-        <PopoverContent>This is the content.</PopoverContent>
+        </Popover.Trigger>
+        <Popover.Content>This is the content.</Popover.Content>
       </Popover>,
     );
 
@@ -171,10 +171,10 @@ describe('Popover', function () {
   it('has no a11y issues', async () => {
     const { container } = render(
       <Popover isOpen={true}>
-        <PopoverTrigger>
+        <Popover.Trigger>
           <Button>Toggle</Button>
-        </PopoverTrigger>
-        <PopoverContent>This is the content.</PopoverContent>
+        </Popover.Trigger>
+        <Popover.Content>This is the content.</Popover.Content>
       </Popover>,
     );
 
