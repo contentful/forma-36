@@ -93,7 +93,7 @@ function _CopyButton(props: CopyButtonProps, ref: React.Ref<HTMLDivElement>) {
             type="button"
             ref={button}
             className={cx(styles.copyButton, {
-              [styles.copyButtonDisbaled]: isDisabled,
+              [styles.copyButtonDisabled]: isDisabled,
             })}
             aria-label={`Copy ${value} to clipboard`}
             disabled={isDisabled}
