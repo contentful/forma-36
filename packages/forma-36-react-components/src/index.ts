@@ -48,11 +48,12 @@ export { Tooltip } from '@contentful/f36-tooltip';
 export type { TooltipProps } from '@contentful/f36-tooltip';
 export { EmptyState } from '@contentful/f36-empty-state';
 export type { EmptyStateProps } from '@contentful/f36-empty-state';
-export { Checkbox, Radio, TextInput } from '@contentful/f36-forms';
+export { Checkbox, Radio, TextInput, Label } from '@contentful/f36-forms';
 export type {
   CheckboxProps,
   RadioProps,
   TextInputProps,
+  LabelProps,
 } from '@contentful/f36-forms';
 export { Pill } from '@contentful/f36-pill';
 export type { PillProps } from '@contentful/f36-pill';
