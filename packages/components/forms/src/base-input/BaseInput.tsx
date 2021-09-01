@@ -49,7 +49,7 @@ function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
     ...otherProps
   } = props;
   const [valueState, setValueState] = useState<string | undefined>(value);
-  const styles = getInputStyles({ isDisabled, isInvalid });
+  const styles = getInputStyles({ as, isDisabled, isInvalid });
 
   const handleFocus = (e: FocusEvent) => {
     e.persist();

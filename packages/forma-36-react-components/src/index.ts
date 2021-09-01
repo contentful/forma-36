@@ -52,6 +52,7 @@ export {
   Checkbox,
   Radio,
   TextInput,
+  Textarea,
   FormLabel,
   FormControl,
 } from '@contentful/f36-forms';
@@ -59,6 +60,7 @@ export type {
   CheckboxProps,
   RadioProps,
   TextInputProps,
+  TextareaProps,
   FormLabelProps,
   FormControlProps,
 } from '@contentful/f36-forms';
@@ -122,7 +124,6 @@ export * from './components/EntityList';
 export * from './components/Form';
 export * from './components/Select';
 export * from './components/Switch';
-export * from './components/Textarea';
 export * from './components/TextInput';
 export * from './components/Workbench';
 
