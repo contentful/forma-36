@@ -29,7 +29,7 @@ export const Default: Story<ListProps> = (args) => {
       <List.Item>List Item 1</List.Item>
       <List.Item>List Item 2</List.Item>
       <List.Item>
-        <List>
+        <List {...args}>
           <List.Item>Sublist Item 1</List.Item>
           <List.Item>Sublist Item 2</List.Item>
         </List>
@@ -44,11 +44,11 @@ export const overview = ({ ...args }: ListProps) => (
       <SectionHeading marginBottom="spacingS">Unordered List</SectionHeading>
 
       <Flex>
-        <List {...args}>
+        <List {...args} as="ul">
           <List.Item>List Item 1</List.Item>
           <List.Item>List Item 2</List.Item>
           <List.Item>
-            <List>
+            <List {...args} as="ul">
               <List.Item>Sublist Item 1</List.Item>
               <List.Item>Sublist Item 2</List.Item>
             </List>
@@ -60,11 +60,11 @@ export const overview = ({ ...args }: ListProps) => (
       <SectionHeading marginBottom="spacingS">Ordered List</SectionHeading>
 
       <Flex>
-        <List as="ol" {...args}>
+        <List {...args} as="ol">
           <List.Item>List Item 1</List.Item>
           <List.Item>List Item 2</List.Item>
           <List.Item>
-            <List as="ol">
+            <List {...args} as="ol">
               <List.Item>Sublist Item 1</List.Item>
               <List.Item>Sublist Item 2</List.Item>
             </List>

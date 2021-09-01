@@ -2,10 +2,7 @@ import { cx, css } from 'emotion';
 import React, { forwardRef } from 'react';
 import tokens from '@contentful/f36-tokens';
 import { Box } from '@contentful/f36-core';
-import type {
-  CommonProps,
-  PolymorphicComponentProps,
-} from '@contentful/f36-core';
+import type { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
 import type { SpinnerSize, SpinnerVariant } from './types';
 import { getStyles } from './Spinner.styles';
 
@@ -33,10 +30,7 @@ export type SpinnerInternalProps = CommonProps & {
   size?: SpinnerSize;
 };
 
-export type SpinnerProps = PolymorphicComponentProps<
-  'div',
-  SpinnerInternalProps
->;
+export type SpinnerProps = PropsWithHTMLElement<SpinnerInternalProps, 'div'>;
 
 export const Spinner = forwardRef<HTMLDivElement, SpinnerProps>(
   (

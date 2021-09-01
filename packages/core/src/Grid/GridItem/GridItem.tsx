@@ -1,8 +1,7 @@
 import * as React from 'react';
 import { css, cx } from 'emotion';
 import {
-  PolymorphicComponentProps,
-  PolymorphicComponentWithRef,
+  PolymorphicProps,
   PolymorphicComponent,
 } from '../../Primitive/Primitive';
 import { useBox } from '../../Box';
@@ -39,13 +38,10 @@ export interface GridItemInternalProps
 }
 
 export type GridItemProps<
-  E extends React.ElementType
-> = PolymorphicComponentProps<E, GridItemInternalProps>;
+  E extends React.ElementType = typeof DEFAULT_TAG
+> = PolymorphicProps<GridItemInternalProps, E>;
 
-const _GridItem: PolymorphicComponentWithRef<
-  GridItemInternalProps,
-  typeof DEFAULT_TAG
-> = (
+function _GridItem<E extends React.ElementType = typeof DEFAULT_TAG>(
   {
     children,
     columnStart,
@@ -55,9 +51,9 @@ const _GridItem: PolymorphicComponentWithRef<
     area,
     order,
     ...otherProps
-  },
-  ref,
-) => {
+  }: GridItemProps<E>,
+  ref: React.Ref<any>,
+) {
   const calculatedArea = area
     ? area
     : [
@@ -71,7 +67,6 @@ const _GridItem: PolymorphicComponentWithRef<
 
   return (
     <Element
-      as={DEFAULT_TAG}
       {...boxProps}
       className={cx(
         css({
@@ -85,7 +80,7 @@ const _GridItem: PolymorphicComponentWithRef<
       {children}
     </Element>
   );
-};
+}
 
 export const GridItem: PolymorphicComponent<
   GridItemInternalProps,

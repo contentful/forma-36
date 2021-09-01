@@ -1,9 +1,6 @@
 import React, { forwardRef } from 'react';
 import { Flex } from '@contentful/f36-core';
-import type {
-  CommonProps,
-  PolymorphicComponentProps,
-} from '@contentful/f36-core';
+import type { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
 import { ErrorCircleOutlineIcon } from '@contentful/f36-icons';
 import { Text } from '@contentful/f36-typography';
 
@@ -11,9 +8,9 @@ export type ValidationMessageInternalProps = CommonProps & {
   children: React.ReactNode;
 };
 
-export type ValidationMessageProps = PolymorphicComponentProps<
-  'div',
-  ValidationMessageInternalProps
+export type ValidationMessageProps = PropsWithHTMLElement<
+  ValidationMessageInternalProps,
+  'div'
 >;
 
 export const ValidationMessage = forwardRef<

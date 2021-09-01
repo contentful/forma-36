@@ -36,7 +36,6 @@ export const Default: Story = ({ submenuToggleLabel, ...args }) => {
         <Button
           size="small"
           variant="transparent"
-          isDropdown
           onClick={() => setOpen(!isOpen)}
         >
           Choose more options and settings
@@ -84,7 +83,6 @@ export const Scrollable: Story = (args) => {
         <Button
           size="small"
           variant="transparent"
-          isDropdown
           onClick={() => setOpen(!isOpen)}
         >
           toggle
@@ -128,7 +126,7 @@ export const DynamicContent: Story = (args) => {
       isOpen={isOpen}
       onClose={onClose}
       toggleElement={
-        <Button size="small" variant="transparent" onClick={onClick} isDropdown>
+        <Button size="small" variant="transparent" onClick={onClick}>
           Choose more options and settings
         </Button>
       }
@@ -152,7 +150,6 @@ export const WithFullWidth: Story = (args) => {
         <Button
           size="small"
           variant="transparent"
-          isDropdown
           onClick={() => setOpen(!isOpen)}
         >
           Open dropdown
@@ -192,7 +189,7 @@ export const Overview: Story = () => (
         usePortal
         position="bottom-left"
         toggleElement={
-          <Button size="small" variant="transparent" isDropdown>
+          <Button size="small" variant="transparent">
             Choose more options and settings
           </Button>
         }
@@ -232,7 +229,7 @@ export const Overview: Story = () => (
       isOpen
       isFullWidth
       toggleElement={
-        <Button size="small" variant="transparent" isDropdown>
+        <Button size="small" variant="transparent">
           Open dropdown
         </Button>
       }

@@ -1,13 +1,17 @@
 import React from 'react';
 
-import type { PrimitiveProps } from '@contentful/f36-core';
+import type { PropsWithHTMLElement, CommonProps } from '@contentful/f36-core';
 import { Flex } from '@contentful/f36-core';
 import { ButtonGroup } from '@contentful/f36-button';
 
-export interface ModalControlsProps extends PrimitiveProps<'div'> {
-  as?: 'div';
+interface ModalControlsInternalProps extends CommonProps {
   children: React.ReactElement[] | React.ReactElement;
 }
+
+export type ModalControlsProps = PropsWithHTMLElement<
+  ModalControlsInternalProps,
+  'div'
+>;
 
 export function ModalControls({
   testId = 'cf-ui-modal-controls',

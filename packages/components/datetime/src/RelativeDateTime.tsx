@@ -1,5 +1,5 @@
 import React from 'react';
-import { CommonProps } from '@contentful/f36-core';
+import { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
 
 import dayjs from 'dayjs';
 import utcPlugin from 'dayjs/plugin/utc';
@@ -16,9 +16,7 @@ import {
   formatRelativeToCurrentWeekDateTime,
 } from './utils';
 
-export interface RelativeDateTimeProps
-  extends CommonProps,
-    React.AllHTMLAttributes<HTMLTimeElement> {
+interface RelativeDateTimeInternalProps extends CommonProps {
   /**
    * The date that will be displayed. It accepts a JS Date, an ISO8601 Timestamp string, or Unix Epoch Milliseconds number
    */
@@ -36,6 +34,11 @@ export interface RelativeDateTimeProps
    */
   isRelativeToCurrentWeek?: boolean;
 }
+
+export type RelativeDateTimeProps = PropsWithHTMLElement<
+  RelativeDateTimeInternalProps,
+  'time'
+>;
 
 const _RelativeDateTime = (
   {

@@ -1,15 +1,12 @@
 import React from 'react';
-import { CommonProps, PolymorphicComponentProps } from '@contentful/f36-core';
+import { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
 import { Text } from '@contentful/f36-typography';
 
 export type HelpTextInternalProps = CommonProps & {
   children: React.ReactNode;
 };
 
-export type HelpTextProps = PolymorphicComponentProps<
-  'p',
-  HelpTextInternalProps
->;
+export type HelpTextProps = PropsWithHTMLElement<HelpTextInternalProps, 'p'>;
 
 /**
  * `HelpText` is a styled copy block with guidance, placed in the context of form components.
