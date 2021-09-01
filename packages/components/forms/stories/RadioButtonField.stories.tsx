@@ -4,7 +4,6 @@ import {
   RadioButtonField,
   RadioButtonFieldProps,
 } from '../src/radio-button-field';
-import { FieldGroup } from '@contentful/f36-components';
 import { Flex } from '@contentful/f36-core';
 
 export default {
@@ -22,7 +21,7 @@ export default {
 export const Basic = (args: RadioButtonFieldProps) => {
   const [activeOption, setActiveOption] = useState('yes');
   return (
-    <FieldGroup>
+    <Flex flexDirection="column">
       <RadioButtonField
         {...args}
         name="someOption1"
@@ -43,7 +42,7 @@ export const Basic = (args: RadioButtonFieldProps) => {
         }}
         id="termsCheckboxOption2"
       />
-    </FieldGroup>
+    </Flex>
   );
 };
 
