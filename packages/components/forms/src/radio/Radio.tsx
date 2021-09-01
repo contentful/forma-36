@@ -1,17 +1,20 @@
 import React from 'react';
 import { Flex } from '@contentful/f36-core';
-import { BaseCheckbox } from '../base-checkbox';
-import type { RadioProps as _RadioProps } from '../base-checkbox/types';
+import { BaseCheckbox, BaseCheckboxProps } from '../base-checkbox';
 import { Label } from '../Label';
 import { getStyles } from './Radio.styles';
 
-export type RadioProps = _RadioProps;
+export type RadioProps = Omit<BaseCheckboxProps, 'type' | 'isIndeterminate'>;
 
-const _Radio = (
-  { testId = 'cf-ui-radio-button', label, id, className, ...otherProps },
-  ref: React.Ref<HTMLInputElement>,
-) => {
+const _Radio = (props: RadioProps, ref: React.Ref<HTMLInputElement>) => {
   const styles = getStyles();
+  const {
+    testId = 'cf-ui-radio-button',
+    label,
+    id,
+    className,
+    ...otherProps
+  } = props;
 
   return (
     <Flex as="div" alignItems="center" testId={testId} className={className}>

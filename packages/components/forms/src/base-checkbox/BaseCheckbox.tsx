@@ -1,9 +1,20 @@
 import React, { useCallback, useState, useEffect } from 'react';
 import { cx } from 'emotion';
-import { Flex, useId, useForwardedRef } from '@contentful/f36-core';
-import type { BaseCheckboxProps } from './types';
+import {
+  Flex,
+  useId,
+  useForwardedRef,
+  PropsWithHTMLElement,
+} from '@contentful/f36-core';
+import type { BaseCheckboxInternalProps } from './types';
 import { GhostCheckbox } from './GhostCheckbox';
 import getStyles from './BaseCheckbox.styles';
+
+export type BaseCheckboxProps = PropsWithHTMLElement<
+  BaseCheckboxInternalProps,
+  'label',
+  'htmlFor'
+>;
 
 function _BaseCheckbox(
   props: BaseCheckboxProps,
