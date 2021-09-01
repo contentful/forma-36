@@ -107,7 +107,6 @@ exports[`renders the component 1`] = `
         class="emotion-3"
         data-test-id="cf-ui-base-checkbox"
         for="agree"
-        helptext="Click if you agree"
       >
         <input
           aria-checked="false"
@@ -153,7 +152,6 @@ exports[`renders the component 1`] = `
         class="emotion-3"
         data-test-id="cf-ui-base-checkbox"
         for="reallyAgree"
-        helptext="Click if you really agree"
       >
         <input
           aria-checked="false"
@@ -298,7 +296,6 @@ exports[`renders the component children in a row 1`] = `
         class="emotion-3"
         data-test-id="cf-ui-base-checkbox"
         for="agree"
-        helptext="Click if you agree"
       >
         <input
           aria-checked="false"
@@ -344,7 +341,6 @@ exports[`renders the component children in a row 1`] = `
         class="emotion-3"
         data-test-id="cf-ui-base-checkbox"
         for="reallyAgree"
-        helptext="Click if you really agree"
       >
         <input
           aria-checked="false"
@@ -489,7 +485,6 @@ exports[`renders the component with an additional class name 1`] = `
         class="emotion-3"
         data-test-id="cf-ui-base-checkbox"
         for="agree"
-        helptext="Click if you agree"
       >
         <input
           aria-checked="false"
@@ -535,7 +530,6 @@ exports[`renders the component with an additional class name 1`] = `
         class="emotion-3"
         data-test-id="cf-ui-base-checkbox"
         for="reallyAgree"
-        helptext="Click if you really agree"
       >
         <input
           aria-checked="false"
