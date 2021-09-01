@@ -4,7 +4,7 @@ import { axe } from '@/scripts/test/axeHelper';
 
 import { FormLabel } from './FormLabel';
 
-describe('FormLabel', function () {
+describe('FormControl.Label', function () {
   const labelText = 'Label Text';
   it('renders the component with all required props', () => {
     const { getByText } = render(

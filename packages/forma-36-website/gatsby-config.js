@@ -237,10 +237,6 @@ module.exports = {
                 link: '/components/form/',
               },
               {
-                name: 'FormLabel',
-                link: '/components/form-label/',
-              },
-              {
                 name: 'RadioButton',
                 link: '/components/inputs/src/radio-button/',
               },
