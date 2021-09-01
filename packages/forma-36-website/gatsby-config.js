@@ -209,60 +209,24 @@ module.exports = {
             link: '',
             menuLinks: [
               {
-                name: 'BaseCheckbox',
-                link: '/components/inputs/src/base-checkbox/',
-              },
-              {
-                name: 'BaseInput',
-                link: '/components/inputs/src/base-input/',
-              },
-              {
-                name: 'ControlledInput',
-                link: '/components/inputs/src/controlled-input/',
-              },
-              {
-                name: 'ControlledInputField',
-                link: '/components/forms/src/controlled-input-field/',
-              },
-              {
                 name: 'Checkbox',
-                link: '/components/inputs/src/checkbox/',
-              },
-              {
-                name: 'CheckboxField',
-                link: '/components/forms/src/checkbox-field/',
+                link: '/components/forms/src/checkbox/',
               },
               {
                 name: 'Form',
                 link: '/components/form/',
               },
               {
-                name: 'Label',
-                link: '/components/label/',
-              },
-              {
-                name: 'RadioButton',
-                link: '/components/inputs/src/radio-button/',
-              },
-              {
-                name: 'RadioButtonField',
-                link: '/components/forms/src/radio-button-field/',
+                name: 'Radio',
+                link: '/components/inputs/src/radio/',
               },
               {
                 name: 'Select',
                 link: '/components/select/',
               },
               {
-                name: 'SelectField',
-                link: '/components/select-field/',
-              },
-              {
                 name: 'Switch',
                 link: '/components/inputs/src/switch/',
-              },
-              {
-                name: 'TextField',
-                link: '/components/text-field/',
               },
               {
                 name: 'TextInput',
@@ -358,10 +322,6 @@ module.exports = {
           {
             name: 'Spinner',
             link: '/components/spinner/',
-          },
-          {
-            name: 'Switch',
-            link: '/components/switch/',
           },
           {
             name: 'Table',
