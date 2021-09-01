@@ -89,7 +89,7 @@ export interface TooltipProps extends CommonProps {
    */
   usePortal?: boolean;
   /**
-   * Prevents from showing the tooltip
+   * Prevents showing the tooltip
    * @default false
    */
   isDisabled?: boolean;
