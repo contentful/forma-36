@@ -5,7 +5,7 @@ import { HelpText } from '../src/HelpText';
 import type { HelpTextInternalProps } from '../src/HelpText/HelpText';
 
 export default {
-  title: 'Components/HelpText',
+  title: 'Form Elements/HelpText',
   component: HelpText,
   parameters: {
     propTypes: [HelpText['__docgenInfo']],
