@@ -31,4 +31,18 @@ export const getStyles = () => ({
       boxShadow: tokens.glowMuted,
     },
   }),
+  copyButtonDisabled: css({
+    cursor: 'not-allowed',
+    backgroundColor: tokens.gray100,
+
+    '&:focus': {
+      borderColor: tokens.gray300,
+      boxShadow: 'none',
+    },
+
+    '&:active, &:active:hover': {
+      borderColor: tokens.gray300,
+      boxShadow: 'none',
+    },
+  }),
 });

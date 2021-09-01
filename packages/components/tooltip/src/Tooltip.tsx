@@ -88,6 +88,11 @@ export interface TooltipProps extends CommonProps {
    * Defaults to `false`
    */
   usePortal?: boolean;
+  /**
+   * Prevents showing the tooltip
+   * @default false
+   */
+  isDisabled?: boolean;
 }
 
 export const Tooltip = ({
@@ -108,6 +113,7 @@ export const Tooltip = ({
   testId = 'cf-ui-tooltip',
   placement = 'auto',
   usePortal = false,
+  isDisabled = false,
   ...otherProps
 }: TooltipProps) => {
   const styles = getStyles();
@@ -166,7 +172,7 @@ export const Tooltip = ({
     ...popperStyles.popper,
   };
 
-  if (!content) {
+  if (!content || isDisabled) {
     return (
       <Box as={HtmlTag} className={targetWrapperClassName}>
         {children}
