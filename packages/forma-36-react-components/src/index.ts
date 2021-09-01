@@ -54,6 +54,8 @@ export {
   TextInput,
   Label,
   Switch,
+  FormLabel,
+  FormControl,
 } from '@contentful/f36-forms';
 export type {
   CheckboxProps,
@@ -61,6 +63,8 @@ export type {
   TextInputProps,
   LabelProps,
   SwitchProps,
+  FormLabelProps,
+  FormControlProps,
 } from '@contentful/f36-forms';
 export { Pill } from '@contentful/f36-pill';
 export type { PillProps } from '@contentful/f36-pill';
@@ -121,9 +125,7 @@ export type {
 export * from './components/EntityList';
 export * from './components/Form';
 export * from './components/Select';
-export * from './components/SelectField';
 export * from './components/Textarea';
-export * from './components/TextField';
 export * from './components/TextInput';
 export * from './components/Workbench';
 

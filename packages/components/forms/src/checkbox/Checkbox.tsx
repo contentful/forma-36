@@ -1,7 +1,7 @@
 import React from 'react';
 import { Flex } from '@contentful/f36-core';
 import { BaseCheckbox, BaseCheckboxProps } from '../base-checkbox';
-import { Label } from '../Label';
+import { FormLabel } from '../form-label';
 import { getStyles } from './Checkbox.styles';
 
 export type CheckboxProps = Omit<BaseCheckboxProps, 'type'>;
@@ -26,9 +26,9 @@ const _Checkbox = (props: CheckboxProps, ref: React.Ref<HTMLInputElement>) => {
         {...otherProps}
         ref={ref}
       />
-      <Label className={styles.label} htmlFor={id}>
+      <FormLabel className={styles.label} htmlFor={id}>
         {label}
-      </Label>
+      </FormLabel>
     </Flex>
   );
 };

@@ -2,13 +2,13 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { axe } from '@/scripts/test/axeHelper';
 
-import { Label } from '.';
+import { FormLabel } from './FormLabel';
 
-describe('Label', function () {
+describe('FormControl.Label', function () {
   const labelText = 'Label Text';
   it('renders the component with all required props', () => {
     const { getByText } = render(
-      <Label htmlFor="someInput">{labelText}</Label>,
+      <FormLabel htmlFor="someInput">{labelText}</FormLabel>,
     );
 
     expect(getByText(labelText)).toBeTruthy();
@@ -16,9 +16,9 @@ describe('Label', function () {
 
   it('renders the component with an additional class name', () => {
     const { getByText } = render(
-      <Label htmlFor="someInput" className="my-extra-class">
+      <FormLabel htmlFor="someInput" className="my-extra-class">
         {labelText}
-      </Label>,
+      </FormLabel>,
     );
 
     const label = getByText(labelText);
@@ -27,9 +27,9 @@ describe('Label', function () {
 
   it('renders the component with an required flag', () => {
     const { getByText } = render(
-      <Label htmlFor="someInput" required>
+      <FormLabel htmlFor="someInput" isRequired>
         {labelText}
-      </Label>,
+      </FormLabel>,
     );
 
     const label = getByText(labelText);
@@ -40,9 +40,9 @@ describe('Label', function () {
   it('renders the component with required text', () => {
     const requiredText = 'pflichtfeld';
     const { getByText } = render(
-      <Label htmlFor="someInput" requiredText={requiredText} required>
+      <FormLabel htmlFor="someInput" requiredText={requiredText} isRequired>
         {labelText}
-      </Label>,
+      </FormLabel>,
     );
 
     const label = getByText(labelText);
@@ -52,7 +52,7 @@ describe('Label', function () {
 
   it('has no a11y issues', async () => {
     const { container } = render(
-      <Label htmlFor="someInput">{labelText}</Label>,
+      <FormLabel htmlFor="someInput">{labelText}</FormLabel>,
     );
     const results = await axe(container);
 
