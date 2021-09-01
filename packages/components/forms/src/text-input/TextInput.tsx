@@ -24,7 +24,7 @@ export const _TextInput = (
   }: TextInputProps,
   ref: React.Ref<HTMLInputElement>,
 ) => {
-  const [valueState, setValueState] = useState<string | undefined>(value);
+  const [valueState, setValueState] = useState(value);
 
   // Store a copy of the value in state.
   // This is used by this component when the `countCharacters`
