@@ -2,10 +2,10 @@ import React from 'react';
 import { cx } from 'emotion';
 
 import { BaseInput } from '../base-input';
-import type { BaseInputInternalProps } from '../base-input/types';
+import type { BaseInputProps } from '../base-input';
 import { getStyles } from './Textarea.styles';
 
-export type TextareaProps = Omit<BaseInputInternalProps, 'as'>;
+export type TextareaProps = Omit<BaseInputProps<'textarea'>, 'as' | 'type'>;
 
 const _Textarea = (
   { className, isDisabled, isInvalid, ...otherProps }: TextareaProps,
