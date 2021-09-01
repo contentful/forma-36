@@ -35,6 +35,11 @@ export interface CopyButtonProps extends CommonProps {
    * @default Copy {value} to clipboard
    */
   label?: string;
+  /**
+   * Allows to disable the copy button, when true the tooltip would not be shown
+   * @default false
+   */
+  isDisabled?: boolean;
 }
 
 function _CopyButton(props: CopyButtonProps, ref: React.Ref<HTMLDivElement>) {
@@ -46,6 +51,7 @@ function _CopyButton(props: CopyButtonProps, ref: React.Ref<HTMLDivElement>) {
     tooltipText = 'Copy to clipboard',
     tooltipCopiedText = 'Copied!',
     tooltipProps,
+    isDisabled = false,
     ...otherProps
   } = props;
   const styles = getStyles();
@@ -81,12 +87,16 @@ function _CopyButton(props: CopyButtonProps, ref: React.Ref<HTMLDivElement>) {
         <Tooltip
           content={copied ? tooltipCopiedText : tooltipText}
           {...tooltipProps}
+          isDisabled={isDisabled}
         >
           <button
             type="button"
             ref={button}
-            className={cx(styles.copyButton)}
+            className={cx(styles.copyButton, {
+              [styles.copyButtonDisabled]: isDisabled,
+            })}
             aria-label={`Copy ${value} to clipboard`}
+            disabled={isDisabled}
           >
             <CopyIcon variant="muted" />
           </button>
