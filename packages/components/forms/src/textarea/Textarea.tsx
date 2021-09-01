@@ -1,7 +1,8 @@
 import React from 'react';
 import { cx } from 'emotion';
 
-import { BaseInput, BaseInputInternalProps } from '../base-input';
+import { BaseInput } from '../base-input';
+import type { BaseInputInternalProps } from '../base-input';
 import { getStyles } from './Textarea.styles';
 
 const styles = getStyles();

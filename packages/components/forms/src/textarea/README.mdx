@@ -17,6 +17,7 @@ typescript: './TextArea.tsx'
   - [isRequired](#isrequired)
   - [isDisabled](#isdisabled)
   - [isInvalid](#isinvalid)
+  - [Using ref](#using-ref)
 - [Accessibility](#accessibility)
 
 ## How to use Textarea
@@ -30,7 +31,7 @@ This component is renders a form element, therefore it should be used within the
 <Textarea id="textarea" name="description" label="description" />
 ```
 
-### `isRequired`
+### isRequired
 
 ```tsx
 <Textarea id="textarea" name="description" label="description" isRequired />
@@ -39,7 +40,7 @@ This component is renders a form element, therefore it should be used within the
 By using the `isRequired` prop, it’s possible to control the required state of the `textarea`.
 This prop will set `disabled` attribute of the HTML tag to `true`.
 
-### `isDisabled`
+### isDisabled
 
 ```tsx
 <Textarea id="textarea" name="description" label="description" isDisabled />
@@ -48,7 +49,7 @@ This prop will set `disabled` attribute of the HTML tag to `true`.
 By using the `isDisabled` prop, it’s possible to control the disabled state of the `textarea`.
 This prop will handle the disabled styles and set `disabled` attribute of the HTML tag to `true`.
 
-### `isInvalid`
+### isInvalid
 
 ```tsx
 <Textarea id="textarea" name="description" label="description" isInvalid />
@@ -57,29 +58,22 @@ This prop will handle the disabled styles and set `disabled` attribute of the HT
 By using the `isInvalid` prop, it’s possible to control the error state of the `textarea`.
 This prop will handle the error styles.
 
-### Using ref to control `textarea` tag directly
+### Using ref
 
-```tsx
-const UsingRef = () => {
-  const textareaRef = React.createRef<HTMLTextAreaElement>();
+```jsx static=true
+const textareaRef = React.createRef()
 
-  return (
-    <>
-      <Textarea
-        id="textarea"
-        name="textarea"
-        label="My textarea"
-        placeholder="Placeholder"
-        ref={textareaRef}
-      />
-      <Flex marginTop="spacingL">
-        <Button onClick={() => textareaRef.current.focus()}>
-          Focus Textarea with ref
-        </Button>
-      </Flex>
-    </>
-  );
-};
+<Textarea
+  id="textarea"
+  name="textarea"
+  label="My textarea"
+  placeholder="Placeholder"
+  ref={textareaRef}
+/>
+
+<Button onClick={() => textareaRef.current.focus()}>
+  Focus Textarea with ref
+</Button>
 ```
 
 The `Textarea` is exposing the ref of the `textarea` tag as a prop,
