@@ -210,7 +210,7 @@ module.exports = {
             menuLinks: [
               {
                 name: 'Checkbox',
-                link: '/components/forms/src/checkbox/',
+                link: '/components/checkbox/',
               },
               {
                 name: 'Form',
@@ -218,7 +218,7 @@ module.exports = {
               },
               {
                 name: 'Radio',
-                link: '/components/inputs/src/radio/',
+                link: '/components/radio/',
               },
               {
                 name: 'Select',
@@ -230,7 +230,7 @@ module.exports = {
               },
               {
                 name: 'Switch',
-                link: '/components/inputs/src/switch/',
+                link: '/components/switch/',
               },
               {
                 name: 'TextField',
