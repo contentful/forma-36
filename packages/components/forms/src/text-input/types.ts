@@ -1,4 +1,4 @@
-import { BaseInputInternalProps } from '../base-input';
+import { BaseInputInternalProps } from '../base-input/types';
 
 export interface TextInputProps extends Omit<BaseInputInternalProps, 'as'> {
   /**
