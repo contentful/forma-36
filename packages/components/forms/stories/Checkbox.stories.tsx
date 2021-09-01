@@ -49,9 +49,9 @@ export const overview = () => (
 
     <Checkbox
       label="Option 1"
-      name="someOption"
+      name="someOption1"
       value="yes"
-      id="termsCheckbox"
+      id="termsCheckbox1"
     />
 
     <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
@@ -60,10 +60,10 @@ export const overview = () => (
 
     <Checkbox
       label="Option 1"
-      name="someOption"
+      name="someOption2"
       isChecked
       value="yes"
-      id="termsCheckbox"
+      id="termsCheckbox2"
     />
 
     <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
@@ -72,10 +72,10 @@ export const overview = () => (
 
     <Checkbox
       label="Option 1"
-      name="someOption"
+      name="someOption3"
       isIndeterminate
       value="yes"
-      id="termsCheckbox"
+      id="termsCheckbox3"
     />
 
     <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
@@ -85,9 +85,9 @@ export const overview = () => (
     <Checkbox
       label="Option 2"
       isDisabled
-      name="someOption"
+      name="someOption4"
       value="no"
-      id="termsCheckboxOption3"
+      id="termsCheckbox4"
     />
 
     <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
@@ -98,9 +98,9 @@ export const overview = () => (
       label="Option 2"
       isDisabled
       isChecked
-      name="someOption"
+      name="someOption5"
       value="no"
-      id="termsCheckboxOption4"
+      id="termsCheckbox5"
     />
 
     <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
@@ -109,11 +109,11 @@ export const overview = () => (
 
     <Checkbox
       label="Option 1"
-      name="someOption"
+      name="someOption6"
       isIndeterminate
       isDisabled
       value="yes"
-      id="termsCheckbox"
+      id="termsCheckbox6"
     />
   </>
 );

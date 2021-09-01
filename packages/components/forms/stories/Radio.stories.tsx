@@ -19,17 +19,17 @@ export const Basic = (args: RadioProps) => {
     <FieldGroup>
       <Radio
         {...args}
-        name="someOption1"
+        name="basic"
         value="yes"
         isChecked={activeOption === 'yes'}
         onChange={(e) => {
           setActiveOption((e.target as HTMLInputElement).value);
         }}
-        id="termsCheckbox"
+        id="termsCheckboxOption1"
       />
       <Radio
         {...args}
-        name="someOption2"
+        name="basic"
         value="no"
         isChecked={activeOption === 'no'}
         onChange={(e) => {
@@ -54,7 +54,7 @@ export const overview = () => (
     <Flex marginBottom="spacingS">
       <Radio
         label="Label text"
-        name="someOption"
+        name="radioButton1"
         value="no"
         id="radioButton1"
       />
@@ -68,9 +68,9 @@ export const overview = () => (
       <Radio
         label="Label text"
         isDisabled
-        name="someOption"
+        name="radioButton2"
         value="no"
-        id="radioButton3"
+        id="radioButton2"
       />
     </Flex>
 
@@ -83,7 +83,7 @@ export const overview = () => (
         label="Label text"
         isDisabled
         isChecked
-        name="someOption"
+        name="radioButton3"
         value="no"
         id="radioButton3"
       />
