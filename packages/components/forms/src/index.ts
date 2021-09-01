@@ -1,5 +1,5 @@
-export * from './FormLabel';
-export * from './FormControl';
+export * from './form-label';
+export * from './form-control';
 export * from './controlled-input-field';
 export * from './checkbox-field';
 export * from './radio-button-field';

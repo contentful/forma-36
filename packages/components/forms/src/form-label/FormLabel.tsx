@@ -3,7 +3,7 @@ import React, { forwardRef } from 'react';
 import type { ReactNode } from 'react';
 import type { PropsWithHTMLElement } from '@contentful/f36-core';
 import { getFormLabelStyles } from './FormLabel.styles';
-import { useFormControl } from '../FormControl/FormControlContext';
+import { useFormControl } from '../form-control/FormControlContext';
 import { CommonProps } from '@contentful/f36-core';
 
 export interface FormLabelInternalProps extends CommonProps {

@@ -1,7 +1,7 @@
 import React, { EventHandler, ChangeEvent, ReactNode } from 'react';
 import { cx } from 'emotion';
 import { ValidationMessage } from '@contentful/f36-validation-message';
-import { FormLabel, FormLabelProps } from '../FormLabel';
+import { FormLabel, FormLabelProps } from '../form-label';
 import { ControlledInput } from '../controlled-input';
 import { HelpText } from '@contentful/f36-helptext';
 import type { ControlledInputProps } from '../controlled-input';

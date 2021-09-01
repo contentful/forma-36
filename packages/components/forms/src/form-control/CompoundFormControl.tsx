@@ -1,5 +1,5 @@
 import { FormControl as OriginalFormControl } from './FormControl';
-import { FormLabel } from '../FormLabel';
+import { FormLabel } from '../form-label';
 
 type CompoundFormControl = typeof OriginalFormControl & {
   Label: typeof FormLabel;
