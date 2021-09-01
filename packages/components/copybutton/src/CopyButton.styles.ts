@@ -31,7 +31,7 @@ export const getStyles = () => ({
       boxShadow: tokens.glowMuted,
     },
   }),
-  copyButtonDisbaled: css({
+  copyButtonDisabled: css({
     cursor: 'not-allowed',
     backgroundColor: tokens.gray100,
 
