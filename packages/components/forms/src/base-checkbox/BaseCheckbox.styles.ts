@@ -1,11 +1,11 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
-import type { BaseCheckboxProps } from './types';
+import type { BaseCheckboxInternalProps } from './types';
 
 const getStyles = ({
   isDisabled,
   type,
-}: Pick<BaseCheckboxProps, 'isDisabled' | 'type'>) => ({
+}: Pick<BaseCheckboxInternalProps, 'isDisabled' | 'type'>) => ({
   wrapper: css({
     alignItems: 'center',
     display: 'inline-flex',

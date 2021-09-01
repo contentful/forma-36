@@ -1,13 +1,24 @@
-import React, { useCallback, useState, useEffect, useRef } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import { cx } from 'emotion';
-import { Flex, useId } from '@contentful/f36-core';
-import type { BaseCheckboxProps } from './types';
+import {
+  Flex,
+  useId,
+  useForwardedRef,
+  PropsWithHTMLElement,
+} from '@contentful/f36-core';
+import type { BaseCheckboxInternalProps } from './types';
 import { GhostCheckbox } from './GhostCheckbox';
 import getStyles from './BaseCheckbox.styles';
 
+export type BaseCheckboxProps = PropsWithHTMLElement<
+  BaseCheckboxInternalProps,
+  'label',
+  'htmlFor'
+>;
+
 function _BaseCheckbox(
   props: BaseCheckboxProps,
-  ref: React.Ref<HTMLLabelElement>,
+  ref: React.Ref<HTMLInputElement>,
 ) {
   const {
     isChecked = false,
@@ -31,7 +42,7 @@ function _BaseCheckbox(
   } = props;
 
   const [checked, setChecked] = useState<boolean>(isChecked);
-  const inputRef = useRef(null);
+  const inputRef = useForwardedRef<HTMLInputElement>(ref);
   const inputId = useId(id, type);
 
   useEffect(() => {
@@ -40,7 +51,7 @@ function _BaseCheckbox(
 
   useEffect(() => {
     inputRef.current.indeterminate = isIndeterminate;
-  }, [isIndeterminate]);
+  }, [isIndeterminate, inputRef]);
 
   const styles = getStyles({ isDisabled, type });
   const handleChange = useCallback(
@@ -85,14 +96,13 @@ function _BaseCheckbox(
         onKeyDown(e);
       }
     },
-    [willBlurOnEsc, onKeyDown],
+    [willBlurOnEsc, onKeyDown, inputRef],
   );
 
   return (
     <Flex
       as="label"
       className={cx(styles.wrapper, className)}
-      ref={ref}
       htmlFor={inputId}
       testId={testId}
       {...otherProps}

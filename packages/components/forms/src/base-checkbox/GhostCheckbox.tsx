@@ -1,10 +1,10 @@
 import React from 'react';
 import { DoneIcon, MinusIcon, CloseIcon } from '@contentful/f36-icons';
-import { BaseCheckboxProps } from './types';
+import { BaseCheckboxInternalProps } from './types';
 import getStyles from './GhostCheckbox.styles';
 
 export type GhostCheckboxProps = Pick<
-  BaseCheckboxProps,
+  BaseCheckboxInternalProps,
   'type' | 'isIndeterminate' | 'isChecked' | 'isDisabled'
 >;
 

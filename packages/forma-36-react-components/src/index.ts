@@ -49,30 +49,19 @@ export type { TooltipProps } from '@contentful/f36-tooltip';
 export { EmptyState } from '@contentful/f36-empty-state';
 export type { EmptyStateProps } from '@contentful/f36-empty-state';
 export {
-  ControlledInputField,
-  CheckboxField,
-  RadioButtonField,
-  FormLabel,
-  ControlledInput,
   Checkbox,
-  RadioButton,
-  Switch,
-  BaseInput,
-  BaseCheckbox,
+  Radio,
   TextInput,
+  FormLabel,
+  FormControl,
 } from '@contentful/f36-forms';
 export type {
-  ControlledInputFieldProps,
-  CheckboxFieldProps,
-  RadioButtonFieldProps,
-  FormLabelProps,
-  ControlledInputProps,
   CheckboxProps,
-  RadioButtonProps,
-  SwitchProps,
-  BaseInputProps,
-  BaseCheckboxProps,
+  RadioProps,
   TextInputProps,
+  LabelProps,
+  FormLabelProps,
+  FormControlProps,
 } from '@contentful/f36-forms';
 export { Pill } from '@contentful/f36-pill';
 export type { PillProps } from '@contentful/f36-pill';

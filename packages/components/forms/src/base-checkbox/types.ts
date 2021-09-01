@@ -3,7 +3,7 @@ import type { BaseInputInternalProps } from '../base-input/types';
 
 export type checkboxTypes = 'checkbox' | 'radio' | 'switch';
 
-export interface BaseCheckboxProps
+export interface BaseCheckboxInternalProps
   extends Omit<
     BaseInputInternalProps,
     'type' | 'as' | 'placeholder' | 'isReadOnly' | 'icon' | 'isInvalid'
@@ -28,10 +28,3 @@ export interface BaseCheckboxProps
    */
   inputProps?: Partial<ComponentProps<'input'>>;
 }
-
-export type CheckboxProps = Omit<BaseCheckboxProps, 'type'>;
-export type RadioButtonProps = Omit<
-  BaseCheckboxProps,
-  'type' | 'isIndeterminate'
->;
-export type SwitchProps = Omit<BaseCheckboxProps, 'type' | 'isIndeterminate'>;
