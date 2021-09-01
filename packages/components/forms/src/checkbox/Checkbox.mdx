@@ -1,0 +1,97 @@
+---
+title: 'Checkbox'
+type: 'component'
+status: 'stable'
+slug: /components/forms/src/checkbox/
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/forms/src/checkbox'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-checkbox--basic'
+typescript: ./Checkbox.tsx
+---
+
+`Checkbox` is a form component, that shows a checkbox with it's label.
+
+## Table of contents
+
+- [How to use Checkbox](#how-to-use-checkbox)
+- [Component variations](#component-variations)
+- [Content recommendations](#content-recommendations)
+- [Accessibility](#accessibility)
+- [Props](#props)
+
+## How to use Checkbox
+
+Label property is always required and passed to the `<input />` as `aria-label`, and also rendered on the right side of the checkbox
+
+## Code examples
+
+```jsx
+<Checkbox
+  id="checkbox"
+  label="Subscribe to newsletter"
+  name="newsletter-subscribe"
+/>
+```
+
+## Component variations
+
+### Checked or indeterminate
+
+The Checkbox can be rendered as indeterminate or checked, with the `isIndeterminate` and `isChecked` properties.
+
+```jsx
+<React.Fragment>
+  <Checkbox
+    id="checkbox1"
+    label="Subscribe to newsletter (checked)"
+    name="newsletter-subscribe1"
+    isChecked
+  />
+  <Checkbox
+    id="checkbox2"
+    label="Subscribe to newsletter (indeterminate)"
+    name="newsletter-subscribe2"
+    isIndeterminate
+  />
+</React.Fragment>
+```
+
+The Checkbox can be rendered as disabled with the `isDisabled` property.
+
+```jsx
+<React.Fragment>
+  <Checkbox
+    id="checkbox3"
+    label="Subscribe to newsletter"
+    name="newsletter-subscribe3"
+    isDisabled
+  />
+  <Checkbox
+    id="checkbox4"
+    label="Subscribe to newsletter (checked)"
+    name="newsletter-subscribe4"
+    isChecked
+    isDisabled
+  />
+  <Checkbox
+    id="checkbox5"
+    label="Subscribe to newsletter (indeterminate)"
+    name="newsletter-subscribe5"
+    isIndeterminate
+    isDisabled
+  />
+</React.Fragment>
+```
+
+## Content recommendations
+
+- Use direct, succinct copy that helps the user to successfully complete the form
+- Do not use punctuation for labels
+- Use sentence style caps (in which only the first word of a sentence or term is capitalized)
+
+## Accessibility
+
+- To ensure `Checkbox` meets accessibility standards, provide `name` and `id`
+
+import { Props } from '@contentful/f36-docs-utils';
+
+<Props of="Checkbox" />

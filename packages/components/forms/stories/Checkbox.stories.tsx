@@ -1,83 +1,119 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { SectionHeading } from '@contentful/f36-typography';
+import { FieldGroup } from '@contentful/f36-components';
 import { Checkbox, CheckboxProps } from '../src';
 
 export default {
   title: 'Form Elements/Checkbox',
   component: Checkbox,
-  parameters: {
-    propTypes: [Checkbox['__docgenInfo']],
-  },
   argTypes: {
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
   },
 };
 
-export const basic = (args: CheckboxProps) => <Checkbox {...args} />;
+export const Basic = (args: CheckboxProps) => {
+  const [optionOne, setOptionOne] = useState(false);
+  const [optionTwo, setOptionTwo] = useState(false);
 
-basic.args = {
-  id: 'Checkbox',
+  return (
+    <FieldGroup>
+      <Checkbox
+        {...args}
+        id="Checkbox1"
+        isChecked={optionOne}
+        value="yes"
+        onChange={(e) => setOptionOne((e.target as HTMLInputElement).checked)}
+      />
+      <Checkbox
+        {...args}
+        id="Checkbox2"
+        value="yes"
+        isChecked={optionTwo}
+        onChange={(e) => setOptionTwo((e.target as HTMLInputElement).checked)}
+      />
+    </FieldGroup>
+  );
+};
+
+Basic.args = {
+  label: 'some label text',
   name: 'some name',
 };
 
 export const overview = () => (
   <>
-    <SectionHeading marginTop="spacingM" marginBottom="spacingS" as="h3">
+    <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
       Checkbox default
     </SectionHeading>
-    <Checkbox id="Checkbox" label="some label text" name="some-name" />
 
-    <SectionHeading as="h3" marginTop="spacingM" marginBottom="spacingS">
+    <Checkbox
+      label="Option 1"
+      name="someOption1"
+      value="yes"
+      id="termsCheckbox1"
+    />
+
+    <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
       Checkbox checked
     </SectionHeading>
+
     <Checkbox
-      id="Checkbox"
+      label="Option 1"
+      name="someOption2"
       isChecked
-      label="some label text"
-      name="some-name"
+      value="yes"
+      id="termsCheckbox2"
     />
 
     <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
       Checkbox indeterminate
     </SectionHeading>
-    <Checkbox
-      id="Checkbox"
-      isIndeterminate
-      label="multiple selection"
-      name="some-name"
-    />
 
-    <SectionHeading marginBottom="spacingS" marginTop="spacingM" as="h3">
-      Checkbox disabled
-    </SectionHeading>
     <Checkbox
-      id="Checkbox"
-      isDisabled
-      label="some label text"
-      name="some-name"
+      label="Option 1"
+      name="someOption3"
+      isIndeterminate
+      value="yes"
+      id="termsCheckbox3"
     />
 
     <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
-      Checkbox disabled indeterminate
+      Checkbox disabled
     </SectionHeading>
+
     <Checkbox
-      id="Checkbox"
+      label="Option 2"
       isDisabled
-      isIndeterminate
-      label="multiple selection"
-      name="some-name"
+      name="someOption4"
+      value="no"
+      id="termsCheckbox4"
     />
 
     <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
       Checkbox disabled checked
     </SectionHeading>
+
     <Checkbox
-      id="Checkbox"
+      label="Option 2"
       isDisabled
       isChecked
-      label="some label text"
-      name="some-name"
+      name="someOption5"
+      value="no"
+      id="termsCheckbox5"
+    />
+
+    <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
+      Checkbox disabled indeterminate
+    </SectionHeading>
+
+    <Checkbox
+      label="Option 1"
+      name="someOption6"
+      isIndeterminate
+      isDisabled
+      value="yes"
+      id="termsCheckbox6"
     />
   </>
 );
