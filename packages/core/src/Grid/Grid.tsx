@@ -1,10 +1,6 @@
 import * as React from 'react';
 import { css, cx } from 'emotion';
-import {
-  PolymorphicComponentProps,
-  PolymorphicComponentWithRef,
-  PolymorphicComponent,
-} from '../Primitive/Primitive';
+import { PolymorphicProps, PolymorphicComponent } from '../Primitive/Primitive';
 import { useBox } from '../Box';
 import type * as CSS from 'csstype';
 import type { MarginProps, PaddingProps, CommonProps, Spacing } from '../types';
@@ -43,17 +39,13 @@ export interface GridInternalProps
   alignContent?: CSS.Property.AlignContent;
 }
 
-export type GridProps<E extends React.ElementType> = PolymorphicComponentProps<
-  E,
-  GridInternalProps
->;
-
 const DEFAULT_TAG = 'div';
 
-const _Grid: PolymorphicComponentWithRef<
-  GridInternalProps,
-  typeof DEFAULT_TAG
-> = (
+export type GridProps<
+  E extends React.ElementType = typeof DEFAULT_TAG
+> = PolymorphicProps<GridInternalProps, E>;
+
+function _Grid<E extends React.ElementType = typeof DEFAULT_TAG>(
   {
     alignContent,
     children,
@@ -64,10 +56,11 @@ const _Grid: PolymorphicComponentWithRef<
     justifyContent,
     rowGap = 'none',
     rows = 'auto',
+    as,
     ...otherProps
-  },
-  ref,
-) => {
+  }: GridProps<E>,
+  ref: React.Ref<any>,
+) {
   const handleGridTemplate = (value?: string | number) => {
     if (typeof value === 'number') {
       return `repeat(${value}, minmax(0, 1fr))`;
@@ -75,11 +68,13 @@ const _Grid: PolymorphicComponentWithRef<
     return value;
   };
 
-  const { boxProps, Element } = useBox(otherProps);
+  const { boxProps, Element } = useBox<React.ElementType>({
+    ...otherProps,
+    as: as || DEFAULT_TAG,
+  });
 
   return (
     <Element
-      as={DEFAULT_TAG}
       {...boxProps}
       className={cx(
         css({
@@ -99,7 +94,7 @@ const _Grid: PolymorphicComponentWithRef<
       {children}
     </Element>
   );
-};
+}
 
 export const Grid: PolymorphicComponent<
   GridInternalProps,

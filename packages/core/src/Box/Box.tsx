@@ -4,14 +4,9 @@ import { css, cx } from 'emotion';
 import type { MarginProps, PaddingProps, CommonProps } from '../types';
 import { getSpacingStyles } from '../utils/getSpacingStyles';
 
-const DEFAULT_TAG = 'div';
+const DEFAULT_TAG: React.ElementType = 'div';
 
-import {
-  usePrimitive,
-  PolymorphicComponentProps,
-  PolymorphicComponentWithRef,
-  PolymorphicComponent,
-} from '../Primitive/Primitive';
+import { PolymorphicProps, PolymorphicComponent } from '../Primitive/Primitive';
 
 export interface BoxInternalProps
   extends CommonProps,
@@ -22,18 +17,18 @@ export interface BoxInternalProps
    */
   display?: CSS.Property.Display;
   children?: React.ReactNode;
+  as?: React.ElementType<any>;
 }
 
-export type BoxProps<E extends React.ElementType> = PolymorphicComponentProps<
-  E,
-  BoxInternalProps
->;
+export type BoxProps<
+  E extends React.ElementType = typeof DEFAULT_TAG
+> = PolymorphicProps<BoxInternalProps, E>;
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export function useBox(props: BoxInternalProps & { as?: any }) {
+export function useBox<E extends React.ElementType = typeof DEFAULT_TAG>(
+  props: BoxProps<E>,
+) {
   const {
     display,
-    children,
     className,
     margin,
     marginBottom,
@@ -45,6 +40,8 @@ export function useBox(props: BoxInternalProps & { as?: any }) {
     paddingLeft,
     paddingRight,
     paddingTop,
+    testId,
+    as: Element = DEFAULT_TAG,
     ...otherProps
   } = props;
   const boxProps = {
@@ -68,27 +65,28 @@ export function useBox(props: BoxInternalProps & { as?: any }) {
       }),
       className,
     ),
+    ['data-test-id']: testId,
     ...otherProps,
   };
-  const { Element, primitiveProps } = usePrimitive(boxProps);
+
   return {
-    boxProps: primitiveProps,
+    boxProps: boxProps,
     Element,
   };
 }
 
-const _Box: PolymorphicComponentWithRef<
-  BoxInternalProps,
-  typeof DEFAULT_TAG
-> = (props, ref) => {
-  const { boxProps, Element } = useBox(props);
+function _Box<E extends React.ElementType = typeof DEFAULT_TAG>(
+  props: BoxProps<E>,
+  ref: React.Ref<any>,
+) {
+  const { boxProps, Element } = useBox<E>(props);
 
   return (
     <Element {...boxProps} ref={ref}>
       {props.children}
     </Element>
   );
-};
+}
 
 export const Box: PolymorphicComponent<
   BoxInternalProps,

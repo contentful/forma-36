@@ -1,13 +1,18 @@
-import React, { AllHTMLAttributes } from 'react';
+import React from 'react';
 import { cx } from 'emotion';
-import { CommonProps } from '@contentful/f36-core';
+import { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
 import { usePopoverContext } from '../PopoverContext';
 import { Portal } from '@contentful/f36-utils';
 import { getPopoverContentStyles } from './PopoverContent.styles';
 
-export interface PopoverContentProps
-  extends AllHTMLAttributes<HTMLDivElement>,
-    CommonProps {}
+interface PopoverContentInternalProps extends CommonProps {
+  children?: React.ReactNode;
+}
+
+export type PopoverContentProps = PropsWithHTMLElement<
+  PopoverContentInternalProps,
+  'div'
+>;
 
 const _PopoverContent = (props: PopoverContentProps, ref) => {
   const {

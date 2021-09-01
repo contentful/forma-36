@@ -1,10 +1,6 @@
 import * as React from 'react';
 import { css, cx } from 'emotion';
-import {
-  PolymorphicComponentProps,
-  PolymorphicComponentWithRef,
-  PolymorphicComponent,
-} from '../Primitive/Primitive';
+import { PolymorphicProps, PolymorphicComponent } from '../Primitive/Primitive';
 import { useBox } from '../Box';
 import type { MarginProps, PaddingProps, CommonProps } from '../types';
 import type * as CSS from 'csstype';
@@ -77,17 +73,13 @@ export interface FlexInternalProps
   order?: CSS.Property.Order;
 }
 
-export type FlexProps<E extends React.ElementType> = PolymorphicComponentProps<
-  E,
-  FlexInternalProps
->;
+export type FlexProps<
+  E extends React.ElementType = typeof DEFAULT_TAG
+> = PolymorphicProps<FlexInternalProps, E>;
 
 const DEFAULT_TAG = 'div';
 
-const _Flex: PolymorphicComponentWithRef<
-  FlexInternalProps,
-  typeof DEFAULT_TAG
-> = (
+function _Flex<E extends React.ElementType = typeof DEFAULT_TAG>(
   {
     isInline,
     alignItems,
@@ -107,14 +99,17 @@ const _Flex: PolymorphicComponentWithRef<
     justifySelf,
     order,
     children,
+    as,
     ...otherProps
-  },
-  ref,
-) => {
-  const { boxProps, Element } = useBox(otherProps);
+  }: FlexProps<E>,
+  ref: React.Ref<any>,
+) {
+  const { boxProps, Element } = useBox<React.ElementType>({
+    ...otherProps,
+    as: as || DEFAULT_TAG,
+  });
   return (
     <Element
-      as={DEFAULT_TAG}
       {...boxProps}
       className={cx(
         css({
@@ -143,7 +138,7 @@ const _Flex: PolymorphicComponentWithRef<
       {children}
     </Element>
   );
-};
+}
 
 export const Flex: PolymorphicComponent<
   FlexInternalProps,

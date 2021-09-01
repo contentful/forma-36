@@ -5,8 +5,7 @@ import {
   CommonProps,
   MarginProps,
   PolymorphicComponent,
-  PolymorphicComponentWithRef,
-  PolymorphicComponentProps,
+  PolymorphicProps,
 } from '@contentful/f36-core';
 import type { HeadingElement } from './Heading';
 import { Text } from './Text';
@@ -19,16 +18,18 @@ export interface SectionHeadingInternalProps extends CommonProps, MarginProps {
 }
 
 export type SectionHeadingProps<
-  E extends React.ElementType
-> = PolymorphicComponentProps<E, SectionHeadingInternalProps>;
+  E extends React.ElementType = typeof DEFAULT_TAG
+> = PolymorphicProps<SectionHeadingInternalProps, E>;
 
-const _SectionHeading: PolymorphicComponentWithRef<
-  SectionHeadingInternalProps,
-  typeof DEFAULT_TAG
-> = (
-  { children, className, testId = 'cf-ui-section-heading', ...otherProps },
-  ref,
-) => {
+function _SectionHeading<E extends React.ElementType = typeof DEFAULT_TAG>(
+  {
+    children,
+    className,
+    testId = 'cf-ui-section-heading',
+    ...otherProps
+  }: SectionHeadingProps<E>,
+  ref: React.Ref<any>,
+) {
   return (
     <Text
       as={DEFAULT_TAG}
@@ -51,7 +52,7 @@ const _SectionHeading: PolymorphicComponentWithRef<
       {children}
     </Text>
   );
-};
+}
 
 export const SectionHeading: PolymorphicComponent<
   SectionHeadingInternalProps,

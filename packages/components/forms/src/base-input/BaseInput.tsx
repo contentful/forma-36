@@ -5,30 +5,27 @@ import React, {
   KeyboardEvent,
   ChangeEvent,
   useState,
-  ElementType,
 } from 'react';
 import { cx } from 'emotion';
 
 import {
-  usePrimitive,
-  PolymorphicComponentWithRef,
-  PolymorphicComponentProps,
+  PolymorphicProps,
   PolymorphicComponent,
   Box,
 } from '@contentful/f36-core';
 import getInputStyles from './BaseInput.styles';
 import { BaseInputInternalProps } from './types';
 
-const DEFAULT_TAG: ElementType = 'input';
+const DEFAULT_TAG = 'input';
 
 export type BaseInputProps<
-  E extends React.ElementType
-> = PolymorphicComponentProps<E, BaseInputInternalProps, 'disabled'>;
+  E extends React.ElementType = typeof DEFAULT_TAG
+> = PolymorphicProps<BaseInputInternalProps, E, 'disabled'>;
 
-const _BaseInput: PolymorphicComponentWithRef<
-  BaseInputInternalProps,
-  typeof DEFAULT_TAG
-> = (props, ref) => {
+function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
+  props: BaseInputProps<E>,
+  ref: React.Ref<any>,
+) {
   const {
     as = DEFAULT_TAG,
     className,
@@ -53,13 +50,6 @@ const _BaseInput: PolymorphicComponentWithRef<
   } = props;
   const [valueState, setValueState] = useState<string | undefined>(value);
   const styles = getInputStyles({ isDisabled, isInvalid });
-
-  const { Element, primitiveProps } = usePrimitive({
-    testId,
-    as,
-    className,
-    style,
-  });
 
   const handleFocus = (e: FocusEvent) => {
     e.persist();
@@ -110,11 +100,13 @@ const _BaseInput: PolymorphicComponentWithRef<
     </Box>
   );
 
+  const Element = as as React.ElementType;
+
   const inputContent = (iconClassName?: string) => (
     <Element
       {...otherProps}
-      {...primitiveProps}
       data-test-id={testId}
+      style={style}
       placeholder={placeholder}
       className={cx(styles.input, iconClassName, className)}
       value={valueState}
@@ -145,7 +137,7 @@ const _BaseInput: PolymorphicComponentWithRef<
   }
 
   return inputContent();
-};
+}
 
 export const BaseInput: PolymorphicComponent<
   BaseInputInternalProps,
