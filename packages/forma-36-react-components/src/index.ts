@@ -59,7 +59,6 @@ export type {
   CheckboxProps,
   RadioProps,
   TextInputProps,
-  LabelProps,
   FormLabelProps,
   FormControlProps,
 } from '@contentful/f36-forms';

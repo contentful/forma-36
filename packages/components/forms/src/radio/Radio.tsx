@@ -1,7 +1,7 @@
 import React from 'react';
 import { Flex } from '@contentful/f36-core';
 import { BaseCheckbox, BaseCheckboxProps } from '../base-checkbox';
-import { Label } from '../Label';
+import { FormLabel } from '../form-label';
 import { getStyles } from './Radio.styles';
 
 export type RadioProps = Omit<BaseCheckboxProps, 'type' | 'isIndeterminate'>;
@@ -26,9 +26,9 @@ const _Radio = (props: RadioProps, ref: React.Ref<HTMLInputElement>) => {
         {...otherProps}
         ref={ref}
       />
-      <Label className={styles.label} htmlFor={id}>
+      <FormLabel className={styles.label} htmlFor={id}>
         {label}
-      </Label>
+      </FormLabel>
     </Flex>
   );
 };
