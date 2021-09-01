@@ -2,10 +2,7 @@ import { cx } from 'emotion';
 import React, { forwardRef } from 'react';
 import { getStyles } from './EmptyState.styles';
 import { Box } from '@contentful/f36-core';
-import type {
-  CommonProps,
-  PolymorphicComponentProps,
-} from '@contentful/f36-core';
+import type { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
 import type { HeadingElement } from '@contentful/f36-typography';
 import { Heading, Paragraph } from '@contentful/f36-typography';
 
@@ -32,9 +29,9 @@ export interface EmptyStateInternalProps extends CommonProps {
   descriptionProps?: TextElementProps;
 }
 
-export type EmptyStateProps = PolymorphicComponentProps<
-  'article',
-  EmptyStateInternalProps
+export type EmptyStateProps = PropsWithHTMLElement<
+  EmptyStateInternalProps,
+  'article'
 >;
 
 interface TextElementProps {

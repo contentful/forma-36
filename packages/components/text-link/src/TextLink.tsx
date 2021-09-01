@@ -3,8 +3,7 @@ import { cx } from 'emotion';
 import {
   Flex,
   CommonProps,
-  PolymorphicComponentWithRef,
-  PolymorphicComponentProps,
+  PolymorphicProps,
   PolymorphicComponent,
 } from '@contentful/f36-core';
 import { styles } from './TextLink.styles';
@@ -40,15 +39,14 @@ interface TextLinkInternalProps extends CommonProps {
   as?: 'a' | 'button';
 }
 
-type ElementPropsToOmit = 'type' | 'disabled';
 export type TextLinkProps<
   E extends React.ElementType = typeof DEFAULT_TAG
-> = PolymorphicComponentProps<E, TextLinkInternalProps, ElementPropsToOmit>;
+> = PolymorphicProps<TextLinkInternalProps, E, 'disabled'>;
 
-const TextLink: PolymorphicComponentWithRef<
-  TextLinkInternalProps,
-  typeof DEFAULT_TAG
-> = (props, ref) => {
+function _TextLink<E extends React.ElementType = typeof DEFAULT_TAG>(
+  props: TextLinkProps<E>,
+  ref: React.Ref<any>,
+) {
   const {
     children,
     className,
@@ -124,11 +122,10 @@ const TextLink: PolymorphicComponentWithRef<
       {commonContent}
     </a>
   );
-};
+}
 
-const _TextLink: PolymorphicComponent<
+export const TextLink: PolymorphicComponent<
   TextLinkInternalProps,
   typeof DEFAULT_TAG,
   'disabled'
-> = React.forwardRef(TextLink);
-export { _TextLink as TextLink };
+> = React.forwardRef(_TextLink);

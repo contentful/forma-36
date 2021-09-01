@@ -1,13 +1,17 @@
 import React from 'react';
 import { cx } from 'emotion';
-import type { PrimitiveProps } from '@contentful/f36-core';
+import type { PropsWithHTMLElement, CommonProps } from '@contentful/f36-core';
 import { Box } from '@contentful/f36-core';
 import { getModalContentStyles } from './ModalContent.styles';
 
-export interface ModalContentProps extends PrimitiveProps<'div'> {
+interface ModalContentInternalProps extends CommonProps {
   children: React.ReactNode;
-  as?: 'div';
 }
+
+export type ModalContentProps = PropsWithHTMLElement<
+  ModalContentInternalProps,
+  'div'
+>;
 
 export function ModalContent({
   testId = 'cf-ui-modal-content',

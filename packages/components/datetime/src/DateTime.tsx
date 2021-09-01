@@ -1,12 +1,10 @@
 import React from 'react';
-import { CommonProps } from '@contentful/f36-core';
+import { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
 
 import type { DateType, DateFormat } from '../types';
 import { formatDateAndTime, formatMachineReadableDateTime } from './utils';
 
-export interface DateTimeProps
-  extends CommonProps,
-    React.AllHTMLAttributes<HTMLTimeElement> {
+interface DateTimeOwnProps extends CommonProps {
   /**
    * The date that will be displayed. It accepts a JS Date, an ISO8601 Timestamp string, or Unix Epoch Milliseconds number
    */
@@ -18,6 +16,8 @@ export interface DateTimeProps
    **/
   format?: DateFormat;
 }
+
+export type DateTimeProps = PropsWithHTMLElement<DateTimeOwnProps, 'time'>;
 
 const _DateTime = (
   {
