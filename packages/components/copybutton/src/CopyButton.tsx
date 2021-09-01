@@ -83,33 +83,25 @@ function _CopyButton(props: CopyButtonProps, ref: React.Ref<HTMLDivElement>) {
       className={cx(styles.wrapper, className)}
       {...otherProps}
     >
-      {isDisabled ? (
-        <button
-          type="button"
-          ref={button}
-          className={cx(styles.copyButton, styles.copyButtonDisbaled)}
-          aria-label={`Copy ${value} to clipboard`}
-          disabled={isDisabled}
+      <CopyToClipboard text={value} onCopy={handleOnCopy}>
+        <Tooltip
+          content={copied ? tooltipCopiedText : tooltipText}
+          {...tooltipProps}
+          isDisabled={isDisabled}
         >
-          <CopyIcon variant="muted" />
-        </button>
-      ) : (
-        <CopyToClipboard text={value} onCopy={handleOnCopy}>
-          <Tooltip
-            content={copied ? tooltipCopiedText : tooltipText}
-            {...tooltipProps}
+          <button
+            type="button"
+            ref={button}
+            className={cx(styles.copyButton, {
+              [styles.copyButtonDisbaled]: isDisabled,
+            })}
+            aria-label={`Copy ${value} to clipboard`}
+            disabled={isDisabled}
           >
-            <button
-              type="button"
-              ref={button}
-              className={cx(styles.copyButton)}
-              aria-label={`Copy ${value} to clipboard`}
-            >
-              <CopyIcon variant="muted" />
-            </button>
-          </Tooltip>
-        </CopyToClipboard>
-      )}
+            <CopyIcon variant="muted" />
+          </button>
+        </Tooltip>
+      </CopyToClipboard>
     </div>
   );
 }
