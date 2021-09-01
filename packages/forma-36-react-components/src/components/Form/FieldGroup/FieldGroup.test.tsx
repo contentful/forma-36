@@ -8,16 +8,8 @@ import { FieldGroup } from './FieldGroup';
 it('renders the component', () => {
   const { container } = render(
     <FieldGroup>
-      <Checkbox
-        label="Do you agree?"
-        helpText="Click if you agree"
-        id="agree"
-      />
-      <Checkbox
-        label="Do you really agree?"
-        helpText="Click if you really agree"
-        id="reallyAgree"
-      />
+      <Checkbox label="Do you agree?" id="agree" />
+      <Checkbox label="Do you really agree?" id="reallyAgree" />
     </FieldGroup>,
   );
 
@@ -27,16 +19,8 @@ it('renders the component', () => {
 it('renders the component with an additional class name', () => {
   const { container } = render(
     <FieldGroup className="my-extra-class">
-      <Checkbox
-        label="Do you agree?"
-        helpText="Click if you agree"
-        id="agree"
-      />
-      <Checkbox
-        label="Do you really agree?"
-        helpText="Click if you really agree"
-        id="reallyAgree"
-      />
+      <Checkbox label="Do you agree?" id="agree" />
+      <Checkbox label="Do you really agree?" id="reallyAgree" />
     </FieldGroup>,
   );
 
@@ -46,16 +30,8 @@ it('renders the component with an additional class name', () => {
 it('renders the component children in a row', () => {
   const { container } = render(
     <FieldGroup className="my-extra-class" row>
-      <Checkbox
-        label="Do you agree?"
-        helpText="Click if you agree"
-        id="agree"
-      />
-      <Checkbox
-        label="Do you really agree?"
-        helpText="Click if you really agree"
-        id="reallyAgree"
-      />
+      <Checkbox label="Do you agree?" id="agree" />
+      <Checkbox label="Do you really agree?" id="reallyAgree" />
     </FieldGroup>,
   );
 
@@ -65,16 +41,8 @@ it('renders the component children in a row', () => {
 it('has no a11y issues', async () => {
   const { container } = render(
     <FieldGroup>
-      <Checkbox
-        label="Do you agree?"
-        helpText="Click if you agree"
-        id="agree"
-      />
-      <Checkbox
-        label="Do you really agree?"
-        helpText="Click if you really agree"
-        id="reallyAgree"
-      />
+      <Checkbox label="Do you agree?" id="agree" />
+      <Checkbox label="Do you really agree?" id="reallyAgree" />
     </FieldGroup>,
   );
   const results = await axe(container);
