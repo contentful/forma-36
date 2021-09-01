@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { axe } from '@/scripts/test/axeHelper';
-import { HelpText } from '../src/HelpText';
+import { HelpText } from './HelpText';
 
 describe('HelpText', function () {
   const helpText = 'Lorem Ipsum dolor sit amet';

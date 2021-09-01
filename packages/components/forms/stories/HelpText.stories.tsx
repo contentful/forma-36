@@ -2,7 +2,7 @@ import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 
 import { HelpText } from '../src/HelpText';
-import type { HelpTextInternalProps } from '../src/HelpText';
+import type { HelpTextInternalProps } from '../src/HelpText/HelpText';
 
 export default {
   title: 'Components/HelpText',

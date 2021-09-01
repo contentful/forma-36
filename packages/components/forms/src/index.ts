@@ -1,3 +1,5 @@
+export * from './help-text';
+export * from './validation-message';
 export * from './base-checkbox';
 export * from './base-input';
 export * from './checkbox';

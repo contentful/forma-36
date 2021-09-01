@@ -36,12 +36,8 @@ export type {
   TableRowProps,
 } from '@contentful/f36-table';
 export * from '@contentful/f36-typography';
-export { ValidationMessage } from '@contentful/f36-validation-message';
-export type { ValidationMessageProps } from '@contentful/f36-validation-message';
 export { List, ListItem } from '@contentful/f36-list';
 export type { ListProps, ListItemProps } from '@contentful/f36-list';
-export { HelpText } from '@contentful/f36-helptext';
-export type { HelpTextProps } from '@contentful/f36-helptext';
 export { Note } from '@contentful/f36-note';
 export type { NoteProps } from '@contentful/f36-note';
 export { Tooltip } from '@contentful/f36-tooltip';
@@ -55,6 +51,8 @@ export {
   Textarea,
   FormLabel,
   FormControl,
+  HelpText,
+  ValidationMessage,
 } from '@contentful/f36-forms';
 export type {
   CheckboxProps,
@@ -63,6 +61,8 @@ export type {
   TextareaProps,
   FormLabelProps,
   FormControlProps,
+  ValidationMessageProps,
+  HelpTextProps,
 } from '@contentful/f36-forms';
 export { Pill } from '@contentful/f36-pill';
 export type { PillProps } from '@contentful/f36-pill';
