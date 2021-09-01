@@ -36,7 +36,7 @@ export interface CopyButtonProps extends CommonProps {
    */
   label?: string;
   /**
-   * Allows to disbale the copy button, when true, tooltip would not be shown
+   * Allows to disable the copy button, when true the tooltip would not be shown
    * @default false
    */
   isDisabled?: boolean;
