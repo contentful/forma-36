@@ -2,24 +2,17 @@ import React from 'react';
 import { cx } from 'emotion';
 
 import { BaseInput } from '../base-input';
-import type { BaseInputInternalProps } from '../base-input';
+import type { BaseInputInternalProps } from '../base-input/types';
 import { getStyles } from './Textarea.styles';
 
-const styles = getStyles();
-
-type BaseInputAndTextareaElementProps = BaseInputInternalProps &
-  React.AllHTMLAttributes<HTMLTextAreaElement>;
-
-export interface TextareaProps
-  extends Omit<BaseInputAndTextareaElementProps, 'as'> {
-  /** The id will be passed to both the id of the textarea tag and to the `htmlFor` prop of the Label component */
-  id: string;
-}
+export type TextareaProps = Omit<BaseInputInternalProps, 'as'>;
 
 const _Textarea = (
   { className, isDisabled, isInvalid, ...otherProps }: TextareaProps,
   ref: React.Ref<HTMLTextAreaElement>,
 ) => {
+  const styles = getStyles();
+
   return (
     <BaseInput
       {...otherProps}
