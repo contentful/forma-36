@@ -9,24 +9,19 @@ export type RadioProps = _RadioProps;
 
 const _Radio = (
   { testId = 'cf-ui-radio-button', label, id, className, ...otherProps },
-  ref: React.Ref<HTMLDivElement>,
+  ref: React.Ref<HTMLInputElement>,
 ) => {
   const styles = getStyles();
 
   return (
-    <Flex
-      as="div"
-      alignItems="center"
-      ref={ref}
-      testId={testId}
-      className={className}
-    >
+    <Flex as="div" alignItems="center" testId={testId} className={className}>
       <BaseCheckbox
         id={id}
         label={label}
         type="radio"
         className={styles.input}
         {...otherProps}
+        ref={ref}
       />
       <Label className={styles.label} htmlFor={id}>
         {label}

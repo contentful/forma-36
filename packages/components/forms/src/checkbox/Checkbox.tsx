@@ -9,24 +9,19 @@ export type CheckboxProps = _CheckboxProps;
 
 const _Checkbox = (
   { testId = 'cf-ui-checkbox', label, id, className, ...otherProps },
-  ref: React.Ref<HTMLDivElement>,
+  ref: React.Ref<HTMLInputElement>,
 ) => {
   const styles = getStyles();
 
   return (
-    <Flex
-      as="div"
-      alignItems="center"
-      ref={ref}
-      testId={testId}
-      className={className}
-    >
+    <Flex as="div" alignItems="center" testId={testId} className={className}>
       <BaseCheckbox
         id={id}
         label={label}
         type="checkbox"
         className={styles.input}
         {...otherProps}
+        ref={ref}
       />
       <Label className={styles.label} htmlFor={id}>
         {label}
