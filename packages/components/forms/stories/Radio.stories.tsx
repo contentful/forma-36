@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { SectionHeading } from '@contentful/f36-typography';
 import { Radio, RadioProps } from '../src';
-import { FieldGroup } from '@contentful/f36-components';
 import { Flex } from '@contentful/f36-core';
 
 export default {
@@ -16,7 +15,7 @@ export default {
 export const Basic = (args: RadioProps) => {
   const [activeOption, setActiveOption] = useState('yes');
   return (
-    <FieldGroup>
+    <Flex>
       <Radio
         {...args}
         name="basic"
@@ -37,7 +36,7 @@ export const Basic = (args: RadioProps) => {
         }}
         id="termsCheckboxOption2"
       />
-    </FieldGroup>
+    </Flex>
   );
 };
 

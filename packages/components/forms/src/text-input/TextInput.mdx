@@ -1,0 +1,73 @@
+---
+title: 'TextInput'
+type: 'component'
+status: 'stable'
+slug: /components/forms/src/text-input/
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/forms/src/text-input'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-textinput--basic'
+typescript: ./TextInput.tsx
+---
+
+`TextInput` is a form component, that allows users to input text or numbers and should be used in a form context.
+
+## Table of contents
+
+- [How to use TextInput](#how-to-use-TextInput)
+- [Component variations](#component-variations)
+- [Content recommendations](#content-recommendations)
+- [Accessibility](#accessibility)
+- [Props](#props)
+
+## How to use TextInput
+
+The TextInput component can be configured in a number of different ways. Use this guidance to determine the correct variation based on the context.
+
+TextInput is supporting different types of inputs, like `'text' | 'email' | 'file' | 'number' | 'password' | 'search' | 'url'`, where `text` is the default.
+Label property is always required and passed to the `<input />` as `aria-label`.
+
+## Code examples
+
+```jsx
+<TextInput type="email" name="email" label="Email address" />
+```
+
+## TextInput variations
+
+### Character count (`countCharacters`)
+
+The TextInput can be configured to display a character count. This is useful when an input field has a character limit.<br/>
+**Note**: The `maxLength` property must be also provided.
+
+```jsx
+<TextInput
+  label="name"
+  name="name"
+  id="input-1"
+  placeholder="Type your name"
+  countCharacters
+  maxLength={150}
+/>
+```
+
+### TextInput with copy button (`withCopyButton`)
+
+We provide a variant of the TextInput that is a composed with CopyButton. In order to use it add `withCopyButton` property to your implementation.
+
+```jsx
+<TextInput label="Token" name="token" id="input-2" withCopyButton />
+```
+
+## Content recommendations
+
+- Use direct and succinct copy that helps the user to successfully complete the form
+- Do not preface the instructions with introductory text, such as "please"
+- Use sentence style caps (in which only the first word of a sentence or term is capitalized)
+
+## Accessibility
+
+- To ensure `TextInput` meets accessibility standards, provide `name` and `id`
+- Keep in mind that to provide that accessibile inputs, you need to use labels.
+
+import { Props } from '@contentful/f36-docs-utils';
+
+<Props of="TextInput" />
