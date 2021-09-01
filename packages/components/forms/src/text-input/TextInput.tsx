@@ -6,8 +6,6 @@ import getStyles from './TextInput.styles';
 import { TextInputProps } from './types';
 import { cx } from 'emotion';
 
-const styles = getStyles();
-
 export const _TextInput = (
   {
     className,
@@ -25,6 +23,7 @@ export const _TextInput = (
   ref: React.Ref<HTMLInputElement>,
 ) => {
   const [valueState, setValueState] = useState(value);
+  const styles = getStyles();
 
   // Store a copy of the value in state.
   // This is used by this component when the `countCharacters`
