@@ -8,7 +8,7 @@ describe('BaseCheckbox', function () {
   const commonProps = {
     name: 'BaseCheckbox',
     id: 'BaseCheckbox',
-    label: 'BaseCheckbox',
+    children: 'BaseCheckbox',
   };
 
   it('renders the component with all required props', () => {
@@ -16,7 +16,7 @@ describe('BaseCheckbox', function () {
       <BaseCheckbox {...commonProps} />,
     );
 
-    const input = getByLabelText(commonProps.label);
+    const input = getByLabelText(commonProps.children);
     expect(input).toBeTruthy();
     expect(input).toStrictEqual(getByRole('checkbox'));
   });
@@ -64,7 +64,7 @@ describe('BaseCheckbox', function () {
     const { getByLabelText } = render(
       <BaseCheckbox {...commonProps} onBlur={mockOnBlur} willBlurOnEsc />,
     );
-    const input = getByLabelText(commonProps.label);
+    const input = getByLabelText(commonProps.children);
     fireEvent.keyDown(input, {
       key: 'Escape',
       target: { blur: mockOnBlur },

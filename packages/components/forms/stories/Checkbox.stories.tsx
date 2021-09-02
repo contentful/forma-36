@@ -36,7 +36,7 @@ export const Basic = (args: CheckboxProps) => {
 };
 
 Basic.args = {
-  label: 'some label text',
+  children: 'some label text',
   name: 'some name',
 };
 
@@ -46,73 +46,65 @@ export const overview = () => (
       Checkbox default
     </SectionHeading>
 
-    <Checkbox
-      label="Option 1"
-      name="someOption1"
-      value="yes"
-      id="termsCheckbox1"
-    />
+    <Checkbox name="someOption1" value="yes" id="termsCheckbox1">
+      Option 1
+    </Checkbox>
 
     <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
       Checkbox checked
     </SectionHeading>
 
-    <Checkbox
-      label="Option 1"
-      name="someOption2"
-      isChecked
-      value="yes"
-      id="termsCheckbox2"
-    />
+    <Checkbox name="someOption2" isChecked value="yes" id="termsCheckbox2">
+      Option 1
+    </Checkbox>
 
     <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
       Checkbox indeterminate
     </SectionHeading>
 
     <Checkbox
-      label="Option 1"
       name="someOption3"
       isIndeterminate
       value="yes"
       id="termsCheckbox3"
-    />
+    >
+      Option 1
+    </Checkbox>
 
     <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
       Checkbox disabled
     </SectionHeading>
 
-    <Checkbox
-      label="Option 2"
-      isDisabled
-      name="someOption4"
-      value="no"
-      id="termsCheckbox4"
-    />
+    <Checkbox isDisabled name="someOption4" value="no" id="termsCheckbox4">
+      Option 2
+    </Checkbox>
 
     <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
       Checkbox disabled checked
     </SectionHeading>
 
     <Checkbox
-      label="Option 2"
       isDisabled
       isChecked
       name="someOption5"
       value="no"
       id="termsCheckbox5"
-    />
+    >
+      Option 2
+    </Checkbox>
 
     <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
       Checkbox disabled indeterminate
     </SectionHeading>
 
     <Checkbox
-      label="Option 1"
       name="someOption6"
       isIndeterminate
       isDisabled
       value="yes"
       id="termsCheckbox6"
-    />
+    >
+      Option 1
+    </Checkbox>
   </>
 );

@@ -28,7 +28,6 @@ function _BaseCheckbox(
     onKeyDown,
     type = 'checkbox',
     value,
-    label,
     isDisabled,
     isIndeterminate,
     isRequired = false,
@@ -40,6 +39,7 @@ function _BaseCheckbox(
     name,
     inputProps = {},
     children,
+    'aria-label': ariaLabel,
     ...otherProps
   } = props;
   const inputRef = useForwardedRef<HTMLInputElement>(ref);
@@ -84,6 +84,9 @@ function _BaseCheckbox(
     [willBlurOnEsc, onKeyDown, inputRef],
   );
 
+  const ariaChecked =
+    typeof isChecked !== undefined ? isChecked : defaultChecked;
+
   return (
     <FormLabel
       className={cx(styles.wrapper, className)}
@@ -93,18 +96,19 @@ function _BaseCheckbox(
     >
       <input
         {...inputProps}
+        aria-label={ariaLabel}
         checked={isChecked}
         defaultChecked={defaultChecked}
         className={styles.input}
         type={type === 'switch' ? 'checkbox' : type}
         onChange={onChange}
-        onFocus={onFocus && handleFocus}
-        onBlur={onBlur && handleBlur}
-        onKeyDown={onKeyDown && handleKeyDown}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+        onKeyDown={handleKeyDown}
         value={value}
         disabled={isDisabled}
         role={type}
-        aria-checked={isIndeterminate ? 'mixed' : defaultChecked || isChecked}
+        aria-checked={isIndeterminate ? 'mixed' : ariaChecked}
         ref={inputRef}
         required={isRequired}
         id={inputId}

@@ -74,6 +74,17 @@ exports[`renders the component 1`] = `
   fill: #ffffff;
 }
 
+input:indeterminate + .emotion-2,
+input:checked + .emotion-2 {
+  background-color: #0059C8;
+  border-color: #0059C8;
+}
+
+input:indeterminate + .emotion-2 svg,
+input:checked + .emotion-2 svg {
+  fill: #ffffff;
+}
+
 .emotion-1 {
   display: inline-block;
   fill: #ffffff;
@@ -109,7 +120,6 @@ exports[`renders the component 1`] = `
         for="agree"
       >
         <input
-          aria-checked="false"
           aria-label="Do you agree?"
           class="emotion-0"
           id="agree"
@@ -154,7 +164,6 @@ exports[`renders the component 1`] = `
         for="reallyAgree"
       >
         <input
-          aria-checked="false"
           aria-label="Do you really agree?"
           class="emotion-0"
           id="reallyAgree"
@@ -263,6 +272,17 @@ exports[`renders the component children in a row 1`] = `
   fill: #ffffff;
 }
 
+input:indeterminate + .emotion-2,
+input:checked + .emotion-2 {
+  background-color: #0059C8;
+  border-color: #0059C8;
+}
+
+input:indeterminate + .emotion-2 svg,
+input:checked + .emotion-2 svg {
+  fill: #ffffff;
+}
+
 .emotion-1 {
   display: inline-block;
   fill: #ffffff;
@@ -298,7 +318,6 @@ exports[`renders the component children in a row 1`] = `
         for="agree"
       >
         <input
-          aria-checked="false"
           aria-label="Do you agree?"
           class="emotion-0"
           id="agree"
@@ -343,7 +362,6 @@ exports[`renders the component children in a row 1`] = `
         for="reallyAgree"
       >
         <input
-          aria-checked="false"
           aria-label="Do you really agree?"
           class="emotion-0"
           id="reallyAgree"
@@ -452,6 +470,17 @@ exports[`renders the component with an additional class name 1`] = `
   fill: #ffffff;
 }
 
+input:indeterminate + .emotion-2,
+input:checked + .emotion-2 {
+  background-color: #0059C8;
+  border-color: #0059C8;
+}
+
+input:indeterminate + .emotion-2 svg,
+input:checked + .emotion-2 svg {
+  fill: #ffffff;
+}
+
 .emotion-1 {
   display: inline-block;
   fill: #ffffff;
@@ -487,7 +516,6 @@ exports[`renders the component with an additional class name 1`] = `
         for="agree"
       >
         <input
-          aria-checked="false"
           aria-label="Do you agree?"
           class="emotion-0"
           id="agree"
@@ -532,7 +560,6 @@ exports[`renders the component with an additional class name 1`] = `
         for="reallyAgree"
       >
         <input
-          aria-checked="false"
           aria-label="Do you really agree?"
           class="emotion-0"
           id="reallyAgree"

@@ -13,6 +13,7 @@ const getBaseGhostStyles = ({ isDisabled }): CSSObject => ({
   display: 'inline-flex',
   height: tokens.spacingM,
   justifyContent: 'center',
+  marginRight: tokens.spacingXs,
   width: tokens.spacingM,
 });
 
@@ -49,11 +50,13 @@ const getRadioStyles = ({ isDisabled }) => {
     ...getBaseGhostStyles({ isDisabled }),
     backgroundColor: !isDisabled ? tokens.colorWhite : tokens.gray300,
     borderRadius: '50%',
+    '&:before': {
+      ...baseBefore,
+    },
     'input:checked + &': {
       backgroundColor: !isDisabled ? tokens.blue600 : tokens.gray300,
       borderColor: !isDisabled ? tokens.blue600 : tokens.gray300,
       '&:before': {
-        ...baseBefore,
         backgroundColor: !isDisabled ? tokens.colorWhite : tokens.gray600,
       },
     },
