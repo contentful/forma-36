@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
 import { Autocomplete, AutocompleteProps } from './Autocomplete';
-import { Subheading } from './../Typography/Subheading/Subheading';
+import { Subheading } from '@contentful/f36-typography';
+import { List } from '@contentful/f36-list';
 
 export default {
   title: 'Components/Autocomplete',
@@ -133,12 +134,12 @@ export const MultiSelect = (args: AutocompleteProps<{}>) => {
           ))
         }
       </Autocomplete>
-      <Subheading>Shopping List:</Subheading>
-      <ul>
+      <Subheading marginBottom="spacingS">Shopping List:</Subheading>
+      <List>
         {tagElements.map((tag: string, idx: number) => (
-          <li key={`element-${tag}-${idx}`}>{tag}</li>
+          <List.Item key={`element-${tag}-${idx}`}>{tag}</List.Item>
         ))}
-      </ul>
+      </List>
     </>
   );
 };
