@@ -31,14 +31,14 @@ export const _TextInput = (
     [styles.invalid]: Boolean(isInvalid),
   });
 
-  function handleCopy(e) {
+  const handleCopy = (e) => {
     if (onCopy) {
       onCopy(e);
     }
 
     textInputRef.current.select();
     document.execCommand('copy');
-  }
+  };
 
   const inputWithCopyButton = (
     <Flex className={className}>
