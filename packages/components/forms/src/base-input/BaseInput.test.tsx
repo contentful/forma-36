@@ -6,47 +6,38 @@ import { BaseInput } from './BaseInput';
 
 describe('InputBase', function () {
   it('renders the component with all required props', () => {
-    const { getByLabelText } = render(
-      <BaseInput id="InputBase" ariaLabel="InputBase" />,
+    const { getByTestId } = render(
+      <BaseInput id="InputBase" testId="InputBase" />,
     );
 
-    const input = getByLabelText('InputBase');
+    const input = getByTestId('InputBase');
     expect(input).toBeTruthy();
   });
 
   it('renders the component with an additional class name', () => {
     const { container } = render(
-      <BaseInput
-        className="my-extra-class"
-        id="InputBase"
-        ariaLabel="InputBase"
-      />,
+      <BaseInput className="my-extra-class" id="InputBase" />,
     );
 
     expect(container.firstChild).toHaveClass('my-extra-class');
   });
 
   it('renders the component with disabled prop', () => {
-    const { getByLabelText } = render(
+    const { getByTestId } = render(
       <BaseInput
         className="my-extra-class"
         id="InputBase"
-        ariaLabel="InputBase"
         isDisabled
+        testId="InputBase"
       />,
     );
 
-    expect(getByLabelText('InputBase')).toBeDisabled();
+    expect(getByTestId('InputBase')).toBeDisabled();
   });
 
   it('renders the component with a value', () => {
     const { getByDisplayValue } = render(
-      <BaseInput
-        className="my-extra-class"
-        id="InputBase"
-        ariaLabel="InputBase"
-        value="someValue"
-      />,
+      <BaseInput className="my-extra-class" id="InputBase" value="someValue" />,
     );
 
     expect(getByDisplayValue('someValue')).toBeInTheDocument();
@@ -57,7 +48,6 @@ describe('InputBase', function () {
       <BaseInput
         className="my-extra-class"
         id="InputBase"
-        ariaLabel="InputBase"
         value="someValue"
         as="textarea"
       />,
@@ -69,15 +59,15 @@ describe('InputBase', function () {
 
   it('can blur when clicking escape', () => {
     const onBlur = jest.fn();
-    const { getByLabelText } = render(
+    const { getByTestId } = render(
       <BaseInput
         id="InputBase"
-        ariaLabel="InputBase"
         onBlur={onBlur}
         type="text"
+        testId="InputBase"
       />,
     );
-    const input = getByLabelText('InputBase');
+    const input = getByTestId('InputBase');
     fireEvent.keyDown(input, {
       code: 'Escape',
       target: { blur: onBlur },
@@ -87,7 +77,7 @@ describe('InputBase', function () {
 
   it('has no a11y issues', async () => {
     const { container } = render(
-      <BaseInput id="InputBase" ariaLabel="InputBase" />,
+      <BaseInput id="InputBase" aria-label="Input base" />,
     );
     const results = await axe(container);
 

@@ -29,7 +29,6 @@ export const Basic = () => {
       <Flex marginBottom="spacingM">
         <BaseInput
           name="someOtherOption"
-          label="this is my label"
           placeholder="placeholder"
           id="4"
           type="text"
@@ -39,7 +38,6 @@ export const Basic = () => {
       <Flex marginBottom="spacingM">
         <BaseInput
           name="someOtherOption"
-          label="this is my label"
           placeholder="placeholder"
           id="3"
           type="text"
@@ -50,7 +48,6 @@ export const Basic = () => {
       <Flex marginBottom="spacingM">
         <BaseInput
           name="someOtherOption"
-          label="this is my label"
           placeholder="placeholder"
           id="2"
           type="text"
@@ -62,7 +59,6 @@ export const Basic = () => {
       <Flex marginBottom="spacingM">
         <BaseInput
           name="someOtherOption"
-          label="this is my label"
           placeholder="placeholder"
           id="1"
           type="text"
@@ -73,7 +69,6 @@ export const Basic = () => {
       <Flex marginBottom="spacingM">
         <BaseInput
           name="someOtherOption"
-          label="this is my label"
           placeholder="placeholder"
           id="1"
           type="text"
@@ -84,7 +79,6 @@ export const Basic = () => {
       <Flex marginBottom="spacingM">
         <BaseInput
           name="someOtherOption"
-          label="this is my label"
           placeholder="placeholder"
           id="1"
           type="text"

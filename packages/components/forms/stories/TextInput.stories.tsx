@@ -21,12 +21,13 @@ export default {
 };
 
 export const Basic = (args: TextInputProps) => {
-  return <TextInput {...args} name="Example name" id="input-1" />;
+  return <TextInput {...args} />;
 };
 
 Basic.args = {
-  label: 'Example label for input',
   placeholder: 'this is my placeholder',
+  name: 'Example name',
+  id: 'input-1',
 };
 
 export const Overview = () => (
@@ -37,7 +38,6 @@ export const Overview = () => (
 
     <Flex marginBottom="spacingL">
       <TextInput
-        label="Example label for input"
         name="Input name"
         id="input-1"
         placeholder="My great input"
@@ -51,7 +51,6 @@ export const Overview = () => (
 
     <Flex marginBottom="spacingL">
       <TextInput
-        label="Example label for input"
         name="Example name"
         id="input-1"
         placeholder="My great input"
@@ -65,7 +64,6 @@ export const Overview = () => (
 
     <Flex marginBottom="spacingL">
       <TextInput
-        label="Example label for input"
         name="Example name"
         id="input-1"
         placeholder="My great input"
@@ -79,7 +77,6 @@ export const Overview = () => (
 
     <Flex marginBottom="spacingL">
       <TextInput
-        label="Example label for input"
         name="Example name"
         value="Example value"
         id="input-1"
@@ -94,7 +91,6 @@ export const Overview = () => (
 
     <Flex marginBottom="spacingL">
       <TextInput
-        label="Example label for input"
         name="Example name"
         id="input-1"
         placeholder="My great input"
@@ -108,7 +104,6 @@ export const Overview = () => (
 
     <Flex marginBottom="spacingL">
       <TextInput
-        label="Example label for input"
         name="Example name"
         id="input-1"
         placeholder="My great input"

@@ -8,7 +8,7 @@ describe('Textarea', function () {
   const labelText = 'My textarea';
 
   it('renders the component', () => {
-    const { container } = render(<Textarea id="textarea" label={labelText} />);
+    const { container } = render(<Textarea id="textarea" />);
 
     const textarea = container.querySelector('textarea');
     expect(textarea).toBeVisible();
@@ -16,14 +16,16 @@ describe('Textarea', function () {
 
   it('renders the component with an additional class name', () => {
     const { container } = render(
-      <Textarea id="textarea" className="my-extra-class" label={labelText} />,
+      <Textarea id="textarea" className="my-extra-class" />,
     );
 
     expect(container.firstChild).toHaveClass('my-extra-class');
   });
 
   it('has no a11y issues', async () => {
-    const { container } = render(<Textarea id="textarea" label={labelText} />);
+    const { container } = render(
+      <Textarea id="textarea" aria-label={labelText} />,
+    );
     const results = await axe(container);
 
     expect(results).toHaveNoViolations();

@@ -27,4 +27,8 @@ export interface BaseCheckboxInternalProps
    * Additional props that are passed to the input element
    */
   inputProps?: Partial<ComponentProps<'input'>>;
+  /**
+   * Set label for checkbox components
+   */
+  label: string;
 }

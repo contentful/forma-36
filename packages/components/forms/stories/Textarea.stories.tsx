@@ -25,7 +25,6 @@ export const UsingRef = () => {
       <Textarea
         id="textarea"
         name="textarea"
-        label="My textarea"
         placeholder="Placeholder"
         ref={textareaRef}
       />
@@ -45,12 +44,7 @@ export const Overview = () => {
         Textarea
       </SectionHeading>
 
-      <Textarea
-        id="textarea"
-        name="textarea"
-        label="My textarea"
-        placeholder="Placeholder"
-      />
+      <Textarea id="textarea" name="textarea" placeholder="Placeholder" />
 
       <SectionHeading as="h3" marginTop="spacingL" marginBottom="spacingS">
         Textarea with error
@@ -59,7 +53,6 @@ export const Overview = () => {
       <Textarea
         id="textarea-with-error"
         name="textarea-with-error"
-        label="My textarea with error"
         placeholder="Placeholder"
         isInvalid
       />
@@ -71,7 +64,6 @@ export const Overview = () => {
       <Textarea
         id="textarea-disabled"
         name="textarea-disabled"
-        label="My disabled textarea"
         placeholder="Placeholder"
         isDisabled
       />

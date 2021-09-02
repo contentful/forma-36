@@ -114,7 +114,6 @@ export function ComplexStory(props: ModalConfirmProps) {
           Type <strong>unlock</strong> to allow confirming this modal
         </Paragraph>
         <TextInput
-          ariaLabel="Input"
           value={repeat}
           onChange={(e) => setRepeat((e.target as HTMLInputElement).value)}
         />

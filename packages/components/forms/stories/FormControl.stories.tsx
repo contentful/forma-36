@@ -15,7 +15,7 @@ export const Basic = (args: FormControlInternalProps) => {
   return (
     <FormControl {...args}>
       <FormControl.Label isRequired>Name</FormControl.Label>
-      <TextInput label="input" />
+      <TextInput />
       <FormControl.HelpText>Please enter your first name</FormControl.HelpText>
     </FormControl>
   );
