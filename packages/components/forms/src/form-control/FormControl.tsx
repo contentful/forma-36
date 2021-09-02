@@ -2,9 +2,11 @@ import React from 'react';
 import { useId } from '@contentful/f36-core';
 import type {
   CommonProps,
+  MarginProps,
   PolymorphicProps,
   PolymorphicComponent,
 } from '@contentful/f36-core';
+import { Box } from '@contentful/f36-core';
 
 import { FormControlContext } from './FormControlContext';
 import type { FormControlContextProps } from './types';
@@ -13,7 +15,8 @@ const DEFAULT_TAG = 'div';
 
 export interface FormControlInternalProps
   extends FormControlContextProps,
-    CommonProps {
+    CommonProps,
+    MarginProps {
   as?: 'div' | 'fieldset';
   children: React.ReactNode;
 }
@@ -30,14 +33,11 @@ function _FormControl<E extends React.ElementType = typeof DEFAULT_TAG>(
     isReadOnly,
     children,
     id,
-    as,
     testId = 'cf-ui-form-control',
     ...otherProps
   }: FormControlProps<E>,
   ref: React.Ref<any>,
 ) {
-  const Element: React.ElementType = as || DEFAULT_TAG;
-
   const generatedId = useId(id, 'field-');
 
   const context = {
@@ -50,9 +50,16 @@ function _FormControl<E extends React.ElementType = typeof DEFAULT_TAG>(
 
   return (
     <FormControlContext.Provider value={context}>
-      <Element ref={ref} role="group" data-test-id={testId} {...otherProps}>
+      <Box
+        as={DEFAULT_TAG}
+        ref={ref}
+        role="group"
+        testId={testId}
+        marginBottom="spacingL"
+        {...otherProps}
+      >
         {children}
-      </Element>
+      </Box>
     </FormControlContext.Provider>
   );
 }
