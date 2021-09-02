@@ -60,16 +60,15 @@ export const WithCustomLogic = (args: FormControlInternalProps) => {
       <Flex justifyContent="space-between" alignItems="center">
         <FormControl.Label isRequired>Name</FormControl.Label>
         <Box marginBottom="spacingS">
-            <TextLink
-              as="button"
-              icon={<LockIcon />}
-              onClick={() => {
-                setIsDisabled(prevState => !prevState);
-              }}
-            >
-              {isDisabled ? 'Unlock to edit' : 'Lock'}
-            </TextLink>
-          )}
+          <TextLink
+            as="button"
+            icon={<LockIcon />}
+            onClick={() => {
+              setIsDisabled((prevState) => !prevState);
+            }}
+          >
+            {isDisabled ? 'Unlock to edit' : 'Lock'}
+          </TextLink>
         </Box>
       </Flex>
       <TextInput label="input" isDisabled={isDisabled} />
