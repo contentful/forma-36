@@ -242,11 +242,6 @@ module.exports = {
               },
             ],
           },
-
-          {
-            name: 'HelpText',
-            link: '/components/help-text/',
-          },
           {
             name: 'Icon',
             link: '/components/icon/',
@@ -342,10 +337,6 @@ module.exports = {
           {
             name: 'Tooltip',
             link: '/components/tooltip/',
-          },
-          {
-            name: 'ValidationMessage',
-            link: '/components/validation-message/',
           },
           {
             name: 'Workbench',

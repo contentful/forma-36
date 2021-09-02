@@ -1,11 +1,11 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 
-import { ValidationMessage } from '../src/ValidationMessage';
-import type { ValidationMessageInternalProps } from '../src/ValidationMessage';
+import { ValidationMessage } from '../src/validation-message';
+import type { ValidationMessageInternalProps } from '../src/validation-message/ValidationMessage';
 
 export default {
-  title: 'Components/ValidationMessage',
+  title: 'Form Elements/ValidationMessage',
   component: ValidationMessage,
   parameters: {
     propTypes: [ValidationMessage['__docgenInfo']],
