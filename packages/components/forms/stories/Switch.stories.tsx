@@ -17,7 +17,7 @@ export const Basic = (args: SwitchProps) => (
 );
 
 Basic.args = {
-  label: 'Some label text',
+  children: 'Some label text',
 };
 
 export const overview = () => (
@@ -27,7 +27,9 @@ export const overview = () => (
     </SectionHeading>
 
     <Flex marginBottom="spacingS">
-      <Switch label="Label text" name="switch1" value="no" id="switch1" />
+      <Switch name="switch1" value="no" id="switch1">
+        Label text
+      </Switch>
     </Flex>
 
     <SectionHeading as="h3" marginBottom="spacingS">
@@ -35,13 +37,9 @@ export const overview = () => (
     </SectionHeading>
 
     <Flex marginBottom="spacingS">
-      <Switch
-        label="Label text"
-        isDisabled
-        name="switch2"
-        value="no"
-        id="switch2"
-      />
+      <Switch isDisabled name="switch2" value="no" id="switch2">
+        Label text
+      </Switch>
     </Flex>
 
     <SectionHeading as="h3" marginBottom="spacingS">
@@ -49,14 +47,9 @@ export const overview = () => (
     </SectionHeading>
 
     <Flex marginBottom="spacingS">
-      <Switch
-        label="Label text"
-        isDisabled
-        isChecked
-        name="switch3"
-        value="no"
-        id="switch3"
-      />
+      <Switch isDisabled isChecked name="switch3" value="no" id="switch3">
+        Label text
+      </Switch>
     </Flex>
   </>
 );
