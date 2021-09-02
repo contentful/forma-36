@@ -74,6 +74,7 @@ exports[`renders the component (complex) 1`] = `
       aria-label="Main content"
       class="Workbench__content"
       data-test-id="cf-ui-workbench-content"
+      id="main-content"
     >
       <div
         class="Workbench__content-inner Workbench__content-inner--default"
@@ -159,6 +160,7 @@ exports[`renders the component (simple) 1`] = `
       aria-label="Main content"
       class="Workbench__content"
       data-test-id="cf-ui-workbench-content"
+      id="main-content"
     >
       <div
         class="Workbench__content-inner Workbench__content-inner--default"

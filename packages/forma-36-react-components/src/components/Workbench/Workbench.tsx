@@ -141,12 +141,14 @@ export function WorkbenchContent({
   testId = 'cf-ui-workbench-content',
   type = 'default',
   labelText = 'Main content',
+  id = 'main-content',
 }: WorkbenchContentProps) {
   return (
     <main
       className={cn(styles['Workbench__content'], className)}
       data-test-id={testId}
       aria-label={labelText}
+      id={id}
     >
       <div
         className={cn(styles['Workbench__content-inner'], {
