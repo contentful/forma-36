@@ -1,29 +1,17 @@
 import React from 'react';
 import { SectionHeading } from '@contentful/f36-typography';
-import { Select, SelectProps } from './Select';
-import { Option } from './Option';
+import { Select, SelectProps } from '../src';
 import { Flex } from '@contentful/f36-core';
 
 export default {
   title: 'Form Elements/Select',
   component: Select,
-  parameters: {
-    propTypes: [Select['__docgenInfo']],
-  },
-  argTypes: {
-    className: { control: { disable: true } },
-    testId: { control: { disable: true } },
-    onFocus: { control: { disable: true } },
-    onBlur: { control: { disable: true } },
-    isDisabled: { control: { disable: true } },
-    hasError: { control: { disable: true } },
-  },
 };
 
 export const basic = (args: SelectProps) => (
   <Select id="optionSelect" name="optionSelect" width={args.width}>
-    <Option value="optionOne">Option 1</Option>
-    <Option value="optionTwo">Long Option 2</Option>
+    <Select.Option value="optionOne">Option 1</Select.Option>
+    <Select.Option value="optionTwo">Long Option 2</Select.Option>
   </Select>
 );
 
@@ -35,8 +23,8 @@ export const overview = () => (
 
     <Flex marginBottom="spacingS">
       <Select id="optionSelect" name="optionSelect">
-        <Option value="optionOne">Option 1</Option>
-        <Option value="optionTwo">Long Option 2</Option>
+        <Select.Option value="optionOne">Option 1</Select.Option>
+        <Select.Option value="optionTwo">Long Option 2</Select.Option>
       </Select>
     </Flex>
 
@@ -46,8 +34,8 @@ export const overview = () => (
 
     <Flex marginBottom="spacingS">
       <Select id="optionSelect" name="optionSelect" width="full">
-        <Option value="optionOne">Option 1</Option>
-        <Option value="optionTwo">Long Option 2</Option>
+        <Select.Option value="optionOne">Option 1</Select.Option>
+        <Select.Option value="optionTwo">Long Option 2</Select.Option>
       </Select>
     </Flex>
 
@@ -57,8 +45,8 @@ export const overview = () => (
 
     <Flex marginBottom="spacingS">
       <Select id="optionSelect" name="optionSelect" width="large">
-        <Option value="optionOne">Option 1</Option>
-        <Option value="optionTwo">Long Option 2</Option>
+        <Select.Option value="optionOne">Option 1</Select.Option>
+        <Select.Option value="optionTwo">Long Option 2</Select.Option>
       </Select>
     </Flex>
 
@@ -67,8 +55,8 @@ export const overview = () => (
     </SectionHeading>
     <Flex marginBottom="spacingS">
       <Select id="optionSelect" name="optionSelect" width="small">
-        <Option value="optionOne">Option 1</Option>
-        <Option value="optionTwo">Long Option 2</Option>
+        <Select.Option value="optionOne">Option 1</Select.Option>
+        <Select.Option value="optionTwo">Long Option 2</Select.Option>
       </Select>
     </Flex>
 
@@ -78,8 +66,8 @@ export const overview = () => (
 
     <Flex marginBottom="spacingS">
       <Select id="optionSelect" name="optionSelect" width="auto">
-        <Option value="optionOne">Option 1</Option>
-        <Option value="optionTwo">Long Option 2</Option>
+        <Select.Option value="optionOne">Option 1</Select.Option>
+        <Select.Option value="optionTwo">Long Option 2</Select.Option>
       </Select>
     </Flex>
 
@@ -89,8 +77,8 @@ export const overview = () => (
 
     <Flex marginBottom="spacingS">
       <Select id="optionSelect" name="optionSelect" isDisabled>
-        <Option value="optionOne">Option 1</Option>
-        <Option value="optionTwo">Long Option 2</Option>
+        <Select.Option value="optionOne">Option 1</Select.Option>
+        <Select.Option value="optionTwo">Long Option 2</Select.Option>
       </Select>
     </Flex>
 
@@ -99,9 +87,9 @@ export const overview = () => (
     </SectionHeading>
 
     <Flex marginBottom="spacingS">
-      <Select id="optionSelect" name="optionSelect" hasError>
-        <Option value="optionOne">Option 1</Option>
-        <Option value="optionTwo">Long Option 2</Option>
+      <Select id="optionSelect" name="optionSelect" isInvalid>
+        <Select.Option value="optionOne">Option 1</Select.Option>
+        <Select.Option value="optionTwo">Long Option 2</Select.Option>
       </Select>
     </Flex>
   </>
