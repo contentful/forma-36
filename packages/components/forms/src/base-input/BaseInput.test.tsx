@@ -7,7 +7,7 @@ import { BaseInput } from './BaseInput';
 describe('InputBase', function () {
   it('renders the component with all required props', () => {
     const { getByTestId } = render(
-      <BaseInput id="InputBase" testId="InputBase" />,
+      <BaseInput id="InputBase" testId="InputBase" aria-label="InputBase" />,
     );
 
     const input = getByTestId('InputBase');
@@ -16,7 +16,11 @@ describe('InputBase', function () {
 
   it('renders the component with an additional class name', () => {
     const { container } = render(
-      <BaseInput className="my-extra-class" id="InputBase" />,
+      <BaseInput
+        className="my-extra-class"
+        id="InputBase"
+        aria-label="InputBase"
+      />,
     );
 
     expect(container.firstChild).toHaveClass('my-extra-class');
@@ -27,6 +31,7 @@ describe('InputBase', function () {
       <BaseInput
         className="my-extra-class"
         id="InputBase"
+        aria-label="InputBase"
         isDisabled
         testId="InputBase"
       />,
@@ -37,7 +42,12 @@ describe('InputBase', function () {
 
   it('renders the component with a value', () => {
     const { getByDisplayValue } = render(
-      <BaseInput className="my-extra-class" id="InputBase" value="someValue" />,
+      <BaseInput
+        className="my-extra-class"
+        id="InputBase"
+        aria-label="InputBase"
+        value="someValue"
+      />,
     );
 
     expect(getByDisplayValue('someValue')).toBeInTheDocument();
@@ -48,6 +58,7 @@ describe('InputBase', function () {
       <BaseInput
         className="my-extra-class"
         id="InputBase"
+        aria-label="InputBase"
         value="someValue"
         as="textarea"
       />,
@@ -62,6 +73,7 @@ describe('InputBase', function () {
     const { getByTestId } = render(
       <BaseInput
         id="InputBase"
+        aria-label="InputBase"
         onBlur={onBlur}
         type="text"
         testId="InputBase"
@@ -77,7 +89,7 @@ describe('InputBase', function () {
 
   it('has no a11y issues', async () => {
     const { container } = render(
-      <BaseInput id="InputBase" aria-label="Input base" />,
+      <BaseInput id="InputBase" aria-label="InputBase" />,
     );
     const results = await axe(container);
 

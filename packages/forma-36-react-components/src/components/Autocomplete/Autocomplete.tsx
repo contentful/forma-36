@@ -217,7 +217,7 @@ export const Autocomplete = <T extends {}>({
           ref={props.inputRef}
           testId="autocomplete.input"
           type="search"
-          label={props.name}
+          aria-label={props.name}
         />
         <div className={styles.inputIconButton}>
           <Button

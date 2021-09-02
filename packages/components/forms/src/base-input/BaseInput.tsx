@@ -18,7 +18,11 @@ const DEFAULT_TAG = 'input';
 
 export type BaseInputProps<
   E extends React.ElementType = typeof DEFAULT_TAG
-> = PolymorphicProps<BaseInputInternalProps, E, 'disabled'>;
+> = PolymorphicProps<
+  BaseInputInternalProps,
+  E,
+  'disabled' | 'required' | 'readOnly'
+>;
 
 function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
   props: BaseInputProps<E>,
@@ -29,6 +33,7 @@ function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
     className,
     isDisabled,
     isReadOnly,
+    isRequired,
     isInvalid,
     id,
     name,
@@ -107,17 +112,15 @@ function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
       type={type}
       ref={ref}
       id={id}
+      readOnly={isReadOnly}
       disabled={isDisabled}
+      required={isRequired}
       onChange={handleChange}
       onBlur={onBlur}
       onKeyDown={handleKeyDown}
       onFocus={handleFocus}
     />
   );
-
-  if (as === 'textarea') {
-    return inputContent();
-  }
 
   if (icon) {
     return (

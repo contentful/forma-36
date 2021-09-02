@@ -5,6 +5,7 @@ import { CopyButton } from '@contentful/f36-copybutton';
 import getStyles from './TextInput.styles';
 import { cx } from 'emotion';
 import { TextInputProps } from './types';
+import { useFormControl } from '../form-control/FormControlContext';
 
 export const _TextInput = (
   {
@@ -16,12 +17,22 @@ export const _TextInput = (
     onChange,
     isInvalid,
     isDisabled,
+    isRequired,
+    isReadOnly,
     withCopyButton,
     onCopy,
     ...otherProps
   }: TextInputProps,
   ref: React.Ref<HTMLInputElement>,
 ) => {
+  const formProps = useFormControl({
+    id,
+    isInvalid,
+    isDisabled,
+    isRequired,
+    isReadOnly,
+  });
+
   const textInputRef = useForwardedRef<HTMLInputElement>(ref);
   const styles = getStyles();
 
@@ -30,30 +41,38 @@ export const _TextInput = (
     [styles.invalid]: Boolean(isInvalid),
   });
 
-  const handleCopy = (e) => {
-    if (onCopy) {
-      onCopy(e);
-    }
+  const handleCopy = React.useCallback(
+    (e) => {
+      if (onCopy) {
+        onCopy(e);
+      }
 
-    textInputRef.current.select();
-    document.execCommand('copy');
-  };
+      textInputRef.current.select();
+      document.execCommand('copy');
+    },
+    [onCopy, textInputRef],
+  );
 
-  const inputWithCopyButton = (
-    <Flex className={className}>
+  const input = (inputClass?: string) => {
+    return (
       <BaseInput
         {...otherProps}
+        {...formProps}
         testId={testId}
         ref={textInputRef}
         type="text"
         onChange={onChange}
         as="input"
-        className={styles.inputWithCopyButton}
-        isDisabled={isDisabled}
-        isInvalid={isInvalid}
+        className={inputClass}
         value={value}
         defaultValue={defaultValue}
       />
+    );
+  };
+
+  const inputWithCopyButton = (
+    <Flex className={className}>
+      {input(styles.inputWithCopyButton)}
       <CopyButton
         value={textInputRef?.current?.value}
         onCopy={handleCopy}
@@ -65,22 +84,7 @@ export const _TextInput = (
 
   return (
     <Flex flexDirection="column" fullWidth className={className}>
-      {withCopyButton ? (
-        inputWithCopyButton
-      ) : (
-        <BaseInput
-          {...otherProps}
-          testId={testId}
-          ref={textInputRef}
-          type="text"
-          onChange={onChange}
-          as="input"
-          isDisabled={isDisabled}
-          isInvalid={isInvalid}
-          value={value}
-          defaultValue={defaultValue}
-        />
-      )}
+      {withCopyButton ? inputWithCopyButton : input()}
     </Flex>
   );
 };
