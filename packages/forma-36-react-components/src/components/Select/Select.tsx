@@ -8,7 +8,7 @@ import React, {
   ChangeEvent,
   ReactNode,
 } from 'react';
-import cn from 'classnames';
+import { cx } from 'emotion';
 import { ChevronDownIcon } from '@contentful/f36-icons';
 
 import styles from './Select.css';
@@ -73,12 +73,12 @@ export const Select = ({
   }, [value]);
 
   const widthClass = `Select--${width}`;
-  const classNames = cn(styles['Select'], {
+  const classNames = cx(styles['Select'], {
     [styles['Select--disabled']]: isDisabled,
     [styles['Select--negative']]: hasError,
   });
 
-  const wrapperClassNames = cn(
+  const wrapperClassNames = cx(
     styles['Select__wrapper'],
     styles[widthClass],
     className,

@@ -1,16 +1,10 @@
-import React, {
-  useCallback,
-  useEffect,
-  useState,
-  KeyboardEvent,
-  ChangeEvent,
-  ReactNode,
-} from 'react';
+import React, { useCallback, KeyboardEvent, ReactNode } from 'react';
 import cn from 'classnames';
 import { ChevronDownIcon } from '@contentful/f36-icons';
 
 import styles from './Select.css';
 import { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
+import { useFormControl } from '../form-control/FormControlContext';
 
 export type SelectInternalProps = CommonProps & {
   isRequired?: boolean;
@@ -30,46 +24,36 @@ export type SelectProps = PropsWithHTMLElement<
 >;
 
 export const Select = ({
+  id,
   children,
   className,
   isInvalid,
-  id,
   isDisabled,
-  name,
-  onBlur,
-  onChange,
-  onFocus,
   isRequired,
   testId = 'cf-ui-select',
-  value,
   width = 'full',
   willBlurOnEsc = true,
+  onKeyDown,
   ...otherProps
 }: SelectProps) => {
-  const [valueState, setValueState] = useState<string | undefined>(value);
+  const formProps = useFormControl({
+    isDisabled,
+    isInvalid,
+    isRequired,
+    id,
+  });
 
-  const handleKeyDown = (e: KeyboardEvent<HTMLSelectElement>) => {
-    if (e.nativeEvent.code === 'Escape' && willBlurOnEsc) {
-      e.currentTarget.blur();
-    }
-  };
-
-  const handleChange = useCallback(
-    (e: ChangeEvent<HTMLSelectElement>) => {
-      if (!isDisabled) {
-        setValueState(e.target.value);
-
-        if (onChange) {
-          onChange(e);
-        }
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent<HTMLSelectElement>) => {
+      if (e.nativeEvent.code === 'Escape' && willBlurOnEsc) {
+        e.currentTarget.blur();
+      }
+      if (onKeyDown) {
+        onKeyDown(e);
       }
     },
-    [onChange, isDisabled],
+    [onKeyDown],
   );
-
-  useEffect(() => {
-    setValueState(value);
-  }, [value]);
 
   const widthClass = `Select--${width}`;
   const classNames = cn(styles['Select'], {
@@ -86,19 +70,13 @@ export const Select = ({
   return (
     <div className={wrapperClassNames}>
       <select
-        id={id}
-        required={isRequired}
-        name={name}
-        aria-label={name}
+        {...otherProps}
+        {...formProps}
         data-test-id={testId}
         className={classNames}
-        value={valueState}
-        disabled={isDisabled}
-        onFocus={onFocus}
-        onChange={handleChange}
-        onBlur={onBlur}
         onKeyDown={handleKeyDown}
-        {...otherProps}
+        required={isRequired}
+        disabled={isDisabled}
       >
         {children}
       </select>
