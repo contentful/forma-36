@@ -37,7 +37,7 @@ export const Overview = () => (
 
     <Flex marginBottom="spacingL">
       <TextInput
-        label="Example label for input"
+        aria-label="Example label for input"
         name="Input name"
         id="input-1"
         placeholder="My great input"
@@ -51,7 +51,7 @@ export const Overview = () => (
 
     <Flex marginBottom="spacingL">
       <TextInput
-        label="Example label for input"
+        aria-label="Example label for input"
         name="Example name"
         id="input-1"
         placeholder="My great input"
@@ -65,7 +65,7 @@ export const Overview = () => (
 
     <Flex marginBottom="spacingL">
       <TextInput
-        label="Example label for input"
+        aria-label="Example label for input"
         name="Example name"
         id="input-1"
         placeholder="My great input"
@@ -79,7 +79,7 @@ export const Overview = () => (
 
     <Flex marginBottom="spacingL">
       <TextInput
-        label="Example label for input"
+        aria-label="Example label for input"
         name="Example name"
         value="Example value"
         id="input-1"
@@ -94,7 +94,7 @@ export const Overview = () => (
 
     <Flex marginBottom="spacingL">
       <TextInput
-        label="Example label for input"
+        aria-label="Example label for input"
         name="Example name"
         id="input-1"
         placeholder="My great input"

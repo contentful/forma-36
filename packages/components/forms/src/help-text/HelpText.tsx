@@ -1,10 +1,14 @@
 import React from 'react';
-import { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
+import {
+  CommonProps,
+  MarginProps,
+  PropsWithHTMLElement,
+} from '@contentful/f36-core';
 import { Text } from '@contentful/f36-typography';
 
-export type HelpTextInternalProps = CommonProps & {
+export interface HelpTextInternalProps extends CommonProps, MarginProps {
   children: React.ReactNode;
-};
+}
 
 export type HelpTextProps = PropsWithHTMLElement<HelpTextInternalProps, 'p'>;
 
@@ -21,6 +25,7 @@ export const HelpText = React.forwardRef<HTMLParagraphElement, HelpTextProps>(
         fontSize="fontSizeM"
         lineHeight="lineHeightDefault"
         testId={testId}
+        marginTop="spacingXs"
         {...otherProps}
         ref={ref}
       />
