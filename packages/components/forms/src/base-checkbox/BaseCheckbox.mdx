@@ -22,8 +22,46 @@ BaseCheckbox is used to show a controlled checkbox or radio button.
 - You only need to define a suitable `label` to get a basic controlled input.
 - Create a checkbox, switch or radio button by defining the `type`.
 - All common states (disabled, required, checked, indeterminate) are functionally and visually supported.
-- Control the current input value by setting `isChecked`.
 - Listen to native element events via `onChange`, `onBlur`, `onFocus`, `onKeyDown`. More event handlers can be attached by defining them via `inputProps`.
+
+### Using as a controlled input
+
+You can use the BaseCheckbox as a controlled input, for that you need to:
+
+- Pass the `isChecked` property, with this property it will already be a controlled component;
+- Pass a `onChange` handler, so you can use it to update the value of `isChecked`;
+
+Setting the `isChecked` will already define it as a controlled input.
+
+```jsx
+const [checkboxState, setCheckboxState] = useState(false);
+
+<BaseCheckbox
+  type="checkbox"
+  label="Subscribe to newsletter"
+  name="newsletter-subscribe-controlled"
+  id="newsletter-subscribe-controlled"
+  isChecked={checkboxState}
+  onChange={() => setCheckboxState(!checkboxState)}
+/>;
+```
+
+### Using as an uncontrolled input
+
+You can use the BaseCheckbox as an uncontrolled input, for that you can:
+
+- Set the `defaultChecked` property, it will ensure that the checked state can be altered normaly.
+- Don't set the `isChecked` as it will make the input controlled.
+
+```jsx
+<BaseCheckbox
+  type="checkbox"
+  label="Subscribe to newsletter"
+  name="newsletter-subscribe-uncontrolled"
+  id="newsletter-subscribe-uncontrolled"
+  defaultChecked={true}
+/>
+```
 
 ## Component variations
 

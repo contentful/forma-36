@@ -14,10 +14,15 @@ export interface BaseCheckboxInternalProps
    */
   type?: checkboxTypes;
   /**
-   * Defines if the element is checked
-   * @default false
+   * Defines if the element is checked, onChange will be required
+   * @default undefined
    */
   isChecked?: boolean;
+  /**
+   * Defines initial checked state for an uncontrolled component
+   * @default false
+   */
+  defaultChecked?: boolean;
   /**
    * Defines if the state is indeterminate
    * @default false
