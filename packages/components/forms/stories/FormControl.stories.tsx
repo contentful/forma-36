@@ -24,7 +24,7 @@ export const Basic = (args: FormControlInternalProps) => {
     <>
       <FormControl {...args}>
         <FormControl.Label isRequired>Name</FormControl.Label>
-        <TextInput label="input" />
+        <TextInput arial-label="input" />
         <FormControl.HelpText>
           Please enter your first name
         </FormControl.HelpText>
@@ -35,7 +35,7 @@ export const Basic = (args: FormControlInternalProps) => {
 
       <FormControl {...args}>
         <FormControl.Label>Description</FormControl.Label>
-        <Textarea label="input" />
+        <Textarea arial-label="input" />
         <FormControl.HelpText>Tell me about youself</FormControl.HelpText>
         {args.isInvalid && (
           <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
@@ -71,7 +71,7 @@ export const WithCustomLogic = (args: FormControlInternalProps) => {
           </TextLink>
         </Box>
       </Flex>
-      <TextInput label="input" isDisabled={isDisabled} />
+      <TextInput aria-label="input" isDisabled={isDisabled} />
       <FormControl.HelpText>Please enter your first name</FormControl.HelpText>
       {args.isInvalid && (
         <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>

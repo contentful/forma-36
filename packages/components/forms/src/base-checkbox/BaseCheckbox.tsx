@@ -11,7 +11,7 @@ import { GhostCheckbox } from './GhostCheckbox';
 import getStyles from './BaseCheckbox.styles';
 
 export type BaseCheckboxProps = PropsWithHTMLElement<
-  BaseCheckboxInternalProps,
+  BaseCheckboxInternalProps & { label?: string },
   'label',
   'htmlFor'
 >;

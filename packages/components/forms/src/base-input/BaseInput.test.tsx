@@ -7,7 +7,7 @@ import { BaseInput } from './BaseInput';
 describe('InputBase', function () {
   it('renders the component with all required props', () => {
     const { getByLabelText } = render(
-      <BaseInput id="InputBase" label="InputBase" />,
+      <BaseInput id="InputBase" aria-label="InputBase" />,
     );
 
     const input = getByLabelText('InputBase');
@@ -16,7 +16,11 @@ describe('InputBase', function () {
 
   it('renders the component with an additional class name', () => {
     const { container } = render(
-      <BaseInput className="my-extra-class" id="InputBase" label="InputBase" />,
+      <BaseInput
+        className="my-extra-class"
+        id="InputBase"
+        aria-label="InputBase"
+      />,
     );
 
     expect(container.firstChild).toHaveClass('my-extra-class');
@@ -27,7 +31,7 @@ describe('InputBase', function () {
       <BaseInput
         className="my-extra-class"
         id="InputBase"
-        label="InputBase"
+        aria-label="InputBase"
         isDisabled
       />,
     );
@@ -40,7 +44,7 @@ describe('InputBase', function () {
       <BaseInput
         className="my-extra-class"
         id="InputBase"
-        label="InputBase"
+        aria-label="InputBase"
         value="someValue"
       />,
     );
@@ -53,7 +57,7 @@ describe('InputBase', function () {
       <BaseInput
         className="my-extra-class"
         id="InputBase"
-        label="InputBase"
+        aria-label="InputBase"
         value="someValue"
         as="textarea"
       />,
@@ -68,7 +72,7 @@ describe('InputBase', function () {
     const { getByLabelText } = render(
       <BaseInput
         id="InputBase"
-        label="InputBase"
+        aria-label="InputBase"
         onBlur={onBlur}
         type="text"
       />,
@@ -83,7 +87,7 @@ describe('InputBase', function () {
 
   it('has no a11y issues', async () => {
     const { container } = render(
-      <BaseInput id="InputBase" label="InputBase" />,
+      <BaseInput id="InputBase" aria-label="InputBase" />,
     );
     const results = await axe(container);
 
