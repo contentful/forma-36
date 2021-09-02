@@ -56,7 +56,6 @@ const DocSearch = () => {
         type="text"
         placeholder="Search the docs"
         value=""
-        ariaLabel="search"
       />
     </div>
   );
