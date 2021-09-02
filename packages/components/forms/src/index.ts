@@ -7,4 +7,5 @@ export * from './form-control';
 export * from './form-label';
 export * from './radio';
 export * from './text-input';
+export * from './switch';
 export * from './textarea';

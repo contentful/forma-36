@@ -48,6 +48,7 @@ export {
   Checkbox,
   Radio,
   TextInput,
+  Switch,
   Textarea,
   FormLabel,
   FormControl,
@@ -58,6 +59,7 @@ export type {
   CheckboxProps,
   RadioProps,
   TextInputProps,
+  SwitchProps,
   TextareaProps,
   FormLabelProps,
   FormControlProps,
@@ -123,7 +125,6 @@ export type {
 export * from './components/EntityList';
 export * from './components/Form';
 export * from './components/Select';
-export * from './components/Switch';
 export * from './components/TextInput';
 export * from './components/Workbench';
 
