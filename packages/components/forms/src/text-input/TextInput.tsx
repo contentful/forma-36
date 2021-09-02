@@ -1,6 +1,6 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { BaseInput } from '../base-input';
-import { Flex } from '@contentful/f36-core';
+import { Flex, useForwardedRef } from '@contentful/f36-core';
 import { CopyButton } from '@contentful/f36-copybutton';
 import getStyles from './TextInput.styles';
 import { cx } from 'emotion';
@@ -23,7 +23,7 @@ export const _TextInput = (
   }: TextInputProps,
   ref: React.Ref<HTMLInputElement>,
 ) => {
-  const textInputRef = useRef(null);
+  const textInputRef = useForwardedRef<HTMLInputElement>(ref);
   const styles = getStyles();
 
   const copyButtonStyles = cx(styles.copyButton, {
@@ -57,7 +57,7 @@ export const _TextInput = (
         defaultValue={defaultValue}
       />
       <CopyButton
-        value={value || defaultValue || ''}
+        value={textInputRef?.current?.value}
         onCopy={handleCopy}
         className={copyButtonStyles}
       />
@@ -72,7 +72,7 @@ export const _TextInput = (
         <BaseInput
           {...otherProps}
           testId={testId}
-          ref={ref}
+          ref={textInputRef}
           label={label}
           type="text"
           onChange={onChange}

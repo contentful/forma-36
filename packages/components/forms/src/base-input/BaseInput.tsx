@@ -49,6 +49,11 @@ function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
   } = props;
   const styles = getInputStyles({ as, isDisabled, isInvalid });
 
+  const normalizedValueProps = {
+    ...(typeof value !== undefined ? { value } : {}),
+    ...(typeof defaultValue !== undefined ? { defaultValue } : {}),
+  };
+
   const handleFocus = (e: FocusEvent) => {
     e.persist();
     if (isDisabled || isReadOnly) {
@@ -98,12 +103,11 @@ function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
   const inputContent = (iconClassName?: string) => (
     <Element
       {...otherProps}
+      {...normalizedValueProps}
       data-test-id={testId}
       style={style}
       placeholder={placeholder}
       className={cx(styles.input, iconClassName, className)}
-      value={value}
-      defaultValue={defaultValue}
       name={name}
       type={type}
       ref={ref}
