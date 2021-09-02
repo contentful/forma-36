@@ -13,7 +13,6 @@ export interface TextInputProps
   onCopy?: (value: string) => void;
   /**
    * Set's default value for text input
-   * @default false
    */
   defaultValue?: string;
 }
