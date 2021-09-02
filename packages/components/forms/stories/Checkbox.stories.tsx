@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { SectionHeading } from '@contentful/f36-typography';
-import { FieldGroup } from '@contentful/f36-components';
 import { Checkbox, CheckboxProps } from '../src';
 
 export default {
@@ -17,7 +16,7 @@ export const Basic = (args: CheckboxProps) => {
   const [optionTwo, setOptionTwo] = useState(false);
 
   return (
-    <FieldGroup>
+    <>
       <Checkbox
         {...args}
         id="Checkbox1"
@@ -28,11 +27,11 @@ export const Basic = (args: CheckboxProps) => {
       <Checkbox
         {...args}
         id="Checkbox2"
-        value="yes"
+        value="no"
         isChecked={optionTwo}
         onChange={(e) => setOptionTwo((e.target as HTMLInputElement).checked)}
       />
-    </FieldGroup>
+    </>
   );
 };
 
