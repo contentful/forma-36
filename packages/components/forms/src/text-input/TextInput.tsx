@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, useCallback } from 'react';
+import React, { useRef } from 'react';
 import { BaseInput } from '../base-input';
 import { Flex } from '@contentful/f36-core';
 import { CopyButton } from '@contentful/f36-copybutton';
@@ -13,6 +13,7 @@ export const _TextInput = (
     label,
     id,
     value,
+    defaultValue,
     onChange,
     isInvalid,
     isDisabled,
@@ -22,43 +23,42 @@ export const _TextInput = (
   }: TextInputProps,
   ref: React.Ref<HTMLInputElement>,
 ) => {
-  const [valueState, setValueState] = useState(value);
+  const textInputRef = useRef(null);
   const styles = getStyles();
-
-  // Store a copy of the value in state.
-  // This is used by this component when the `countCharacters`
-  // option is on
-  const handleOnChange = useCallback(
-    (e: ChangeEvent<HTMLInputElement>) => {
-      setValueState(e.target.value);
-      if (onChange) onChange(e);
-    },
-    [onChange],
-  );
 
   const copyButtonStyles = cx(styles.copyButton, {
     [styles.disabled]: Boolean(isDisabled),
     [styles.invalid]: Boolean(isInvalid),
   });
 
+  function copyToClipboard(e) {
+    if (onCopy) {
+      onCopy(e);
+    }
+
+    textInputRef.current.select();
+    document.execCommand('copy');
+  }
+
   const inputWithCopyButton = (
     <Flex className={className}>
       <BaseInput
         {...otherProps}
         testId={testId}
-        ref={ref}
+        ref={textInputRef}
         label={label}
         type="text"
-        onChange={handleOnChange}
+        onChange={onChange}
         as="input"
         className={styles.inputWithCopyButton}
         isDisabled={isDisabled}
         isInvalid={isInvalid}
-        value={valueState}
+        value={value}
+        defaultValue={defaultValue}
       />
       <CopyButton
-        value={valueState}
-        onCopy={onCopy}
+        value={value || defaultValue || ''}
+        onCopy={copyToClipboard}
         className={copyButtonStyles}
       />
     </Flex>
@@ -70,15 +70,17 @@ export const _TextInput = (
         inputWithCopyButton
       ) : (
         <BaseInput
+          {...otherProps}
           testId={testId}
           ref={ref}
           label={label}
           type="text"
-          onChange={handleOnChange}
+          onChange={onChange}
           as="input"
           isDisabled={isDisabled}
           isInvalid={isInvalid}
-          {...otherProps}
+          value={value}
+          defaultValue={defaultValue}
         />
       )}
     </Flex>

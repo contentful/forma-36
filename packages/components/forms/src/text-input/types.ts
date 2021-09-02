@@ -11,4 +11,9 @@ export interface TextInputProps
    * Allows to listen to an copy button
    */
   onCopy?: (value: string) => void;
+  /**
+   * Set's default value for text input
+   * @default false
+   */
+  defaultValue?: string;
 }

@@ -1,10 +1,8 @@
 import React, {
-  useEffect,
   useCallback,
   FocusEvent,
   KeyboardEvent,
   ChangeEvent,
-  useState,
 } from 'react';
 import { cx } from 'emotion';
 
@@ -46,9 +44,9 @@ function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
     willBlurOnEsc = true,
     style,
     icon,
+    defaultValue,
     ...otherProps
   } = props;
-  const [valueState, setValueState] = useState<string | undefined>(value);
   const styles = getInputStyles({ as, isDisabled, isInvalid });
 
   const handleFocus = (e: FocusEvent) => {
@@ -66,7 +64,6 @@ function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
       if (onChange) {
         onChange(e);
       }
-      setValueState(e.currentTarget.value);
     },
     [onChange, isDisabled, isReadOnly],
   );
@@ -86,16 +83,12 @@ function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
     [willBlurOnEsc, onKeyDown],
   );
 
-  useEffect(() => {
-    setValueState(value);
-  }, [value]);
-
   const iconContent = icon && (
     <Box as="span" className={styles.iconPlaceholder}>
       {React.cloneElement(icon, {
         size: 'small',
         variant: 'muted',
-        ariaHiden: true,
+        'aria-hidden': true,
       })}
     </Box>
   );
@@ -109,7 +102,8 @@ function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
       style={style}
       placeholder={placeholder}
       className={cx(styles.input, iconClassName, className)}
-      value={valueState}
+      value={value}
+      defaultValue={defaultValue}
       name={name}
       type={type}
       ref={ref}
