@@ -31,7 +31,7 @@ export const _TextInput = (
     [styles.invalid]: Boolean(isInvalid),
   });
 
-  function copyToClipboard(e) {
+  function handleCopy(e) {
     if (onCopy) {
       onCopy(e);
     }
@@ -58,7 +58,7 @@ export const _TextInput = (
       />
       <CopyButton
         value={value || defaultValue || ''}
-        onCopy={copyToClipboard}
+        onCopy={handleCopy}
         className={copyButtonStyles}
       />
     </Flex>
