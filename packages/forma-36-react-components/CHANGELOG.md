@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.98.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.97.1...@contentful/forma-36-react-components@3.98.0) (2021-09-02)
+
+
+### Features
+
+* add default id to watch ([a90902e](https://github.com/contentful/forma-36/commit/a90902e46679be7430de866677028aa7cbe48b4a))
+* add default id to watch fixed test ([fc329c8](https://github.com/contentful/forma-36/commit/fc329c884bb93b53caa01fd384c72cffd00fa34d))
+
+
+
+
+
 ## [3.97.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.97.0...@contentful/forma-36-react-components@3.97.1) (2021-08-30)
 
 
