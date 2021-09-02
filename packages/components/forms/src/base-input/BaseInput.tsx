@@ -39,7 +39,7 @@ function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
     onKeyDown,
     testId = 'cf-ui-base-input',
     type = 'text',
-    value,
+    value = undefined,
     placeholder,
     willBlurOnEsc = true,
     style,
@@ -48,11 +48,6 @@ function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
     ...otherProps
   } = props;
   const styles = getInputStyles({ as, isDisabled, isInvalid });
-
-  const normalizedValueProps = {
-    ...(typeof value !== undefined ? { value } : {}),
-    ...(typeof defaultValue !== undefined ? { defaultValue } : {}),
-  };
 
   const handleFocus = (e: FocusEvent) => {
     e.persist();
@@ -103,7 +98,8 @@ function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
   const inputContent = (iconClassName?: string) => (
     <Element
       {...otherProps}
-      {...normalizedValueProps}
+      value={value}
+      defaultValue={defaultValue}
       data-test-id={testId}
       style={style}
       placeholder={placeholder}
