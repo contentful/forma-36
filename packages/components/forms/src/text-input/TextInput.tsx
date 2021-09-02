@@ -10,7 +10,6 @@ export const _TextInput = (
   {
     className,
     testId = 'cf-ui-text-input',
-    label,
     id,
     value,
     defaultValue,
@@ -46,7 +45,6 @@ export const _TextInput = (
         {...otherProps}
         testId={testId}
         ref={textInputRef}
-        label={label}
         type="text"
         onChange={onChange}
         as="input"
@@ -74,7 +72,6 @@ export const _TextInput = (
           {...otherProps}
           testId={testId}
           ref={textInputRef}
-          label={label}
           type="text"
           onChange={onChange}
           as="input"

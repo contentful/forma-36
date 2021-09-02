@@ -31,7 +31,6 @@ function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
     isReadOnly,
     isInvalid,
     id,
-    ariaLabel,
     name,
     onBlur,
     onChange,
@@ -107,7 +106,6 @@ function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
       name={name}
       type={type}
       ref={ref}
-      aria-label={ariaLabel}
       id={id}
       disabled={isDisabled}
       onChange={handleChange}
