@@ -3,27 +3,42 @@ import { cx } from 'emotion';
 
 import { BaseInput } from '../base-input';
 import type { BaseInputProps } from '../base-input';
+import { useFormControl } from '../form-control/FormControlContext';
 import { getStyles } from './Textarea.styles';
 
 export type TextareaProps = Omit<BaseInputProps<'textarea'>, 'as' | 'type'>;
 
 const _Textarea = (
-  { className, isDisabled, isInvalid, ...otherProps }: TextareaProps,
+  {
+    className,
+    isDisabled,
+    isInvalid,
+    isRequired,
+    isReadOnly,
+    id,
+    ...otherProps
+  }: TextareaProps,
   ref: React.Ref<HTMLTextAreaElement>,
 ) => {
+  const formProps = useFormControl({
+    id,
+    isInvalid,
+    isDisabled,
+    isRequired,
+    isReadOnly,
+  });
   const styles = getStyles();
 
   return (
     <BaseInput
       {...otherProps}
+      {...formProps}
       as="textarea"
       ref={ref}
       className={cx(className, {
         [styles.disabled]: isDisabled,
         [styles.error]: isInvalid,
       })}
-      isInvalid={isInvalid}
-      isDisabled={isDisabled}
     />
   );
 };

@@ -5,6 +5,7 @@ import { CopyButton } from '@contentful/f36-copybutton';
 import getStyles from './TextInput.styles';
 import { cx } from 'emotion';
 import { TextInputProps } from './types';
+import { useFormControl } from '../form-control/FormControlContext';
 
 export const _TextInput = (
   {
@@ -16,12 +17,22 @@ export const _TextInput = (
     onChange,
     isInvalid,
     isDisabled,
+    isRequired,
+    isReadOnly,
     withCopyButton,
     onCopy,
     ...otherProps
   }: TextInputProps,
   ref: React.Ref<HTMLInputElement>,
 ) => {
+  const formProps = useFormControl({
+    id,
+    isInvalid,
+    isDisabled,
+    isRequired,
+    isReadOnly,
+  });
+
   const [valueState, setValueState] = useState(value);
   const styles = getStyles();
 
@@ -45,6 +56,7 @@ export const _TextInput = (
     <Flex className={className}>
       <BaseInput
         {...otherProps}
+        {...formProps}
         testId={testId}
         ref={ref}
         label={label}
@@ -52,8 +64,6 @@ export const _TextInput = (
         onChange={handleOnChange}
         as="input"
         className={styles.inputWithCopyButton}
-        isDisabled={isDisabled}
-        isInvalid={isInvalid}
         value={valueState}
       />
       <CopyButton
@@ -76,9 +86,8 @@ export const _TextInput = (
           type="text"
           onChange={handleOnChange}
           as="input"
-          isDisabled={isDisabled}
-          isInvalid={isInvalid}
           {...otherProps}
+          {...formProps}
         />
       )}
     </Flex>
