@@ -1,10 +1,8 @@
 import React, {
-  useEffect,
   useCallback,
   FocusEvent,
   KeyboardEvent,
   ChangeEvent,
-  useState,
 } from 'react';
 import { cx } from 'emotion';
 
@@ -20,7 +18,11 @@ const DEFAULT_TAG = 'input';
 
 export type BaseInputProps<
   E extends React.ElementType = typeof DEFAULT_TAG
-> = PolymorphicProps<BaseInputInternalProps, E, 'disabled'>;
+> = PolymorphicProps<
+  BaseInputInternalProps,
+  E,
+  'disabled' | 'required' | 'readOnly'
+>;
 
 function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
   props: BaseInputProps<E>,
@@ -31,9 +33,9 @@ function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
     className,
     isDisabled,
     isReadOnly,
+    isRequired,
     isInvalid,
     id,
-    label,
     name,
     onBlur,
     onChange,
@@ -41,14 +43,14 @@ function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
     onKeyDown,
     testId = 'cf-ui-base-input',
     type = 'text',
-    value,
+    value = undefined,
     placeholder,
     willBlurOnEsc = true,
     style,
     icon,
+    defaultValue,
     ...otherProps
   } = props;
-  const [valueState, setValueState] = useState<string | undefined>(value);
   const styles = getInputStyles({ as, isDisabled, isInvalid });
 
   const handleFocus = (e: FocusEvent) => {
@@ -66,7 +68,6 @@ function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
       if (onChange) {
         onChange(e);
       }
-      setValueState(e.currentTarget.value);
     },
     [onChange, isDisabled, isReadOnly],
   );
@@ -86,16 +87,12 @@ function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
     [willBlurOnEsc, onKeyDown],
   );
 
-  useEffect(() => {
-    setValueState(value);
-  }, [value]);
-
   const iconContent = icon && (
     <Box as="span" className={styles.iconPlaceholder}>
       {React.cloneElement(icon, {
         size: 'small',
         variant: 'muted',
-        ariaHiden: true,
+        'aria-hidden': true,
       })}
     </Box>
   );
@@ -105,27 +102,25 @@ function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
   const inputContent = (iconClassName?: string) => (
     <Element
       {...otherProps}
+      value={value}
+      defaultValue={defaultValue}
       data-test-id={testId}
       style={style}
       placeholder={placeholder}
       className={cx(styles.input, iconClassName, className)}
-      value={valueState}
       name={name}
       type={type}
       ref={ref}
-      aria-label={label}
       id={id}
+      readOnly={isReadOnly}
       disabled={isDisabled}
+      required={isRequired}
       onChange={handleChange}
       onBlur={onBlur}
       onKeyDown={handleKeyDown}
       onFocus={handleFocus}
     />
   );
-
-  if (as === 'textarea') {
-    return inputContent();
-  }
 
   if (icon) {
     return (

@@ -11,7 +11,7 @@ import getStyles from './BaseCheckbox.styles';
 import { FormLabel } from '../form-label';
 
 export type BaseCheckboxProps = PropsWithHTMLElement<
-  BaseCheckboxInternalProps,
+  BaseCheckboxInternalProps & { label?: string },
   'label',
   'htmlFor'
 >;

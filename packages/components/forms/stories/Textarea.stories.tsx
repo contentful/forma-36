@@ -25,7 +25,7 @@ export const UsingRef = () => {
       <Textarea
         id="textarea"
         name="textarea"
-        label="My textarea"
+        aria-label="My textarea"
         placeholder="Placeholder"
         ref={textareaRef}
       />
@@ -48,7 +48,7 @@ export const Overview = () => {
       <Textarea
         id="textarea"
         name="textarea"
-        label="My textarea"
+        aria-label="My textarea"
         placeholder="Placeholder"
       />
 
@@ -59,7 +59,7 @@ export const Overview = () => {
       <Textarea
         id="textarea-with-error"
         name="textarea-with-error"
-        label="My textarea with error"
+        aria-label="My textarea with error"
         placeholder="Placeholder"
         isInvalid
       />
@@ -71,7 +71,7 @@ export const Overview = () => {
       <Textarea
         id="textarea-disabled"
         name="textarea-disabled"
-        label="My disabled textarea"
+        aria-label="My disabled textarea"
         placeholder="Placeholder"
         isDisabled
       />
