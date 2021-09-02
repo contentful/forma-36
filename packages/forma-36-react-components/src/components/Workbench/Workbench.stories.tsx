@@ -6,7 +6,7 @@ import { Workbench, WorkbenchProps } from './Workbench';
 import { Button } from '@contentful/f36-button';
 
 export default {
-  title: 'components/Workbench',
+  title: 'components/Workbench_OLD',
   component: Workbench,
   parameters: {
     propTypes: Workbench['__docgenInfo'],

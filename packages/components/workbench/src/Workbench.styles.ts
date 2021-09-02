@@ -1,8 +1,16 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 
-export const styles = {
+export const getWorkbenchStyles = () => ({
   workbench: css({
-    color: tokens.colorRedBase,
+    // display: flex;
+    // flexDirection: 'column',
+    position: 'absolute',
+    top: 0,
+    right: 0,
+    left: 0,
+    bottom: 0,
+    zIndex: tokens.zIndexWorkbench,
+    overflowX: 'hidden',
   }),
-};
+});

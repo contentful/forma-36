@@ -1,25 +1,55 @@
 import React from 'react';
 import { cx } from 'emotion';
 import { CommonProps } from '@contentful/f36-core';
-import { styles } from './Workbench.styles';
+import { getWorkbenchStyles } from './Workbench.styles';
+
+import { WorkbenchHeader } from './WorkbenchHeader';
 
 export interface WorkbenchProps extends CommonProps {
   children: React.ReactNode;
 }
 
-function _Workbench(props: WorkbenchProps, ref: React.Ref<HTMLDivElement>) {
+function _Workbench(
+  { children, className, testId = 'cf-ui-workbench' }: WorkbenchProps,
+  ref: React.Ref<HTMLDivElement>,
+) {
+  const styles = getWorkbenchStyles();
+
+  const header: React.ReactNode[] = [];
+  const content: React.ReactNode[] = [];
+
+  React.Children.map(
+    children,
+    // eslint-disable-next-line
+    (child: any) => {
+      if (child.type?.name === 'WorkbenchHeader') {
+        header.push(child);
+      } else {
+        content.push(child);
+      }
+    },
+  );
+
   return (
     <div
-      data-test-id={props.testId}
+      data-test-id={testId}
       ref={ref}
-      className={cx(styles.workbench, props.className)}
+      className={cx(styles.workbench, className)}
     >
-      {props.children}
+      {header}
+      {content}
     </div>
   );
 }
 
+const ForwardRefWorkbench = React.forwardRef(_Workbench);
+
+type CompoundWorkbench = typeof ForwardRefWorkbench & {
+  Header?: typeof WorkbenchHeader;
+};
+
 /**
  * TODO: Add description of component here.
  */
-export const Workbench = React.forwardRef(_Workbench);
+export const Workbench: CompoundWorkbench = ForwardRefWorkbench;
+Workbench.Header = WorkbenchHeader;
