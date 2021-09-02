@@ -7,7 +7,7 @@ import {
   ModalConfirmProps,
 } from '../src/ModalConfirm/ModalConfirm';
 import { Button } from '@contentful/f36-button';
-import { TextInput } from '../../../forma-36-react-components/src/components/TextInput';
+import { TextInput } from '@contentful/f36-forms';
 
 export default {
   title: 'Components/Modal/ModalConfirm',

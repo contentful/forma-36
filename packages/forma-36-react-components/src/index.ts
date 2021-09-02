@@ -125,7 +125,6 @@ export type {
 export * from './components/EntityList';
 export * from './components/Form';
 export * from './components/Select';
-export * from './components/TextInput';
 export * from './components/Workbench';
 
 // -- Add imports above this line (required by plopfile.js) --
