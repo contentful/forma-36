@@ -6,11 +6,11 @@ import { BaseInput } from './BaseInput';
 
 describe('InputBase', function () {
   it('renders the component with all required props', () => {
-    const { getByTestId } = render(
-      <BaseInput id="InputBase" testId="InputBase" aria-label="InputBase" />,
+    const { getByLabelText } = render(
+      <BaseInput id="InputBase" aria-label="InputBase" />,
     );
 
-    const input = getByTestId('InputBase');
+    const input = getByLabelText('InputBase');
     expect(input).toBeTruthy();
   });
 
@@ -27,17 +27,16 @@ describe('InputBase', function () {
   });
 
   it('renders the component with disabled prop', () => {
-    const { getByTestId } = render(
+    const { getByLabelText } = render(
       <BaseInput
         className="my-extra-class"
         id="InputBase"
         aria-label="InputBase"
         isDisabled
-        testId="InputBase"
       />,
     );
 
-    expect(getByTestId('InputBase')).toBeDisabled();
+    expect(getByLabelText('InputBase')).toBeDisabled();
   });
 
   it('renders the component with a value', () => {
@@ -70,16 +69,15 @@ describe('InputBase', function () {
 
   it('can blur when clicking escape', () => {
     const onBlur = jest.fn();
-    const { getByTestId } = render(
+    const { getByLabelText } = render(
       <BaseInput
         id="InputBase"
         aria-label="InputBase"
         onBlur={onBlur}
         type="text"
-        testId="InputBase"
       />,
     );
-    const input = getByTestId('InputBase');
+    const input = getByLabelText('InputBase');
     fireEvent.keyDown(input, {
       code: 'Escape',
       target: { blur: onBlur },
