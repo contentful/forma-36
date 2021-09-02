@@ -9,7 +9,7 @@ export default {
 };
 
 export const basic = (args: SelectProps) => (
-  <Select id="optionSelect" name="optionSelect" width={args.width}>
+  <Select id="optionSelect" name="optionSelect" {...args}>
     <Select.Option value="optionOne">Option 1</Select.Option>
     <Select.Option value="optionTwo">Long Option 2</Select.Option>
   </Select>

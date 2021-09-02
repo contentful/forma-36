@@ -1,10 +1,11 @@
 import React, { useCallback, KeyboardEvent, ReactNode } from 'react';
-import cn from 'classnames';
+import { cx } from 'emotion';
 import { ChevronDownIcon } from '@contentful/f36-icons';
 
-import styles from './Select.css';
 import { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
 import { useFormControl } from '../form-control/FormControlContext';
+import { getSelectStyles } from './Select.styles';
+import type { SelectWidth } from './types';
 
 export type SelectInternalProps = CommonProps & {
   isRequired?: boolean;
@@ -12,7 +13,7 @@ export type SelectInternalProps = CommonProps & {
   isDisabled?: boolean;
   value?: string;
   defaultValue?: string;
-  width?: 'auto' | 'small' | 'medium' | 'large' | 'full';
+  width?: SelectWidth;
   children: ReactNode;
   willBlurOnEsc?: boolean;
 };
@@ -43,6 +44,11 @@ export const Select = ({
     id,
   });
 
+  const styles = getSelectStyles({
+    ...formProps,
+    width,
+  });
+
   const handleKeyDown = useCallback(
     (e: KeyboardEvent<HTMLSelectElement>) => {
       if (e.nativeEvent.code === 'Escape' && willBlurOnEsc) {
@@ -52,35 +58,23 @@ export const Select = ({
         onKeyDown(e);
       }
     },
-    [onKeyDown],
-  );
-
-  const widthClass = `Select--${width}`;
-  const classNames = cn(styles['Select'], {
-    [styles['Select--disabled']]: isDisabled,
-    [styles['Select--negative']]: isInvalid,
-  });
-
-  const wrapperClassNames = cn(
-    styles['Select__wrapper'],
-    styles[widthClass],
-    className,
+    [onKeyDown, willBlurOnEsc],
   );
 
   return (
-    <div className={wrapperClassNames}>
+    <div className={cx(styles.wrapper, className)}>
       <select
         {...otherProps}
         {...formProps}
         data-test-id={testId}
-        className={classNames}
+        className={styles.select}
         onKeyDown={handleKeyDown}
         required={isRequired}
         disabled={isDisabled}
       >
         {children}
       </select>
-      <ChevronDownIcon className={styles['Select__icon']} variant="muted" />
+      <ChevronDownIcon className={styles.icon} variant="muted" />
     </div>
   );
 };
