@@ -12,6 +12,9 @@
     "emotion": "^10.0.17",
     "dayjs": "^1.10.6"
   },
+  "devDependencies": {
+    "mockdate": "^3.0.5"
+  },
   "peerDependencies": {
     "react": ">=16.8"
   },
@@ -32,8 +35,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "devDependencies": {
-    "mockdate": "^3.0.5"
   }
 }

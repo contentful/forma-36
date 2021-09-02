@@ -31,6 +31,7 @@ describe('Autocomplete', () => {
     placeholder = '',
     width = 'large',
     selectedItem = '',
+    validationMessage = '',
     dropdownProps = {
       isOpen: false,
       children: null,
@@ -49,6 +50,7 @@ describe('Autocomplete', () => {
         selectedItem={selectedItem}
         width={width}
         dropdownProps={dropdownProps}
+        validationMessage={validationMessage}
       >
         {(options: Item[]) =>
           options.map((option) => (
@@ -87,6 +89,20 @@ describe('Autocomplete', () => {
       const { getByTestId } = build({ selectedItem: 'Coriander' });
       const input = getByTestId('autocomplete.input');
       expect(input).toHaveAttribute('value', 'Coriander');
+    });
+
+    it('shows an error state', () => {
+      const { getByTestId } = build({
+        validationMessage: 'This field is required',
+      });
+      const validationMessageComponent = getByTestId(
+        'cf-ui-validation-message',
+      );
+      const autocompleteComp = getByTestId('cf-ui-dropdown');
+      expect(autocompleteComp.firstChild).toHaveClass(
+        'autocompleteInputNegative',
+      );
+      expect(validationMessageComponent).toBeDefined();
     });
 
     it('shows the dropdown', async () => {

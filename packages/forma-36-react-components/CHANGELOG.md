@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.97.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.97.0...@contentful/forma-36-react-components@3.97.1) (2021-08-30)
+
+
+### Bug Fixes
+
+* **Autocomplete:** add error handling possibility ([#1245](https://github.com/contentful/forma-36/issues/1245)) ([10f968d](https://github.com/contentful/forma-36/commit/10f968d734d2cff9ad7d1449aa44bbb392713ea8))
+
+
+
+
+
 # [3.97.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.96.2...@contentful/forma-36-react-components@3.97.0) (2021-08-24)
 
 
