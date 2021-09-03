@@ -37,13 +37,13 @@ Keep in mind that Select should not be used without the label. We provide [Selec
 ```tsx
 // import { Select } from '@contentful/f36-components';
 
-<Select id="optionSelect" name="optionSelect" width="large">
+<Select id="optionSelect" name="optionSelect">
   <Select.Option value="optionOne">Option 1</Select.Option>
   <Select.Option value="optionTwo">Long Option 2</Select.Option>
 </Select>
 ```
 
-### Select state (`disabled`)
+### Select state (`isDisabled`)
 
 ```tsx
 // import { Select } from '@contentful/f36-components';
@@ -60,7 +60,7 @@ Keep in mind that Select should not be used without the label. We provide [Selec
 // import { Select } from '@contentful/f36-components';
 
 <Select name="optionSelect" id="optionSelect">
-  <Select.Option value="" disabled selected>
+  <Select.Option value="" isDisabled isSelected>
     Please select an option...
   </Select.Option>
   <Select.Option value="optionOne">Option One</Select.Option>
@@ -74,7 +74,7 @@ Keep in mind that Select should not be used without the label. We provide [Selec
 ```tsx
 // import { Select } from '@contentful/f36-components';
 
-<Select id="optionSelect" name="optionSelect" hasError>
+<Select id="optionSelect" name="optionSelect" isInvalid>
   <Select.Option value="optionOne">Option 1</Select.Option>
   <Select.Option value="optionTwo">Long Option 2</Select.Option>
 </Select>

@@ -36,8 +36,14 @@ it('should dispatch onChange', () => {
 
 it('has no a11y issues', async () => {
   const { container } = render(
-    <Select id="optionSelect" name="optionSelect">
+    <Select id="optionSelect" name="optionSelect" aria-label="Select">
       <Select.Option value="optionOne">Option 1</Select.Option>
+      <Select.Option value="optionTwo" isDisabled>
+        Disabled option
+      </Select.Option>
+      <Select.Option value="optionThree" isSelected>
+        Selected option
+      </Select.Option>
     </Select>,
   );
   const results = await axe(container);

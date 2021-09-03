@@ -1,4 +1,9 @@
-import React, { useCallback, KeyboardEvent, ReactNode } from 'react';
+import React, {
+  useCallback,
+  KeyboardEvent,
+  ReactNode,
+  ChangeEventHandler,
+} from 'react';
 import { cx } from 'emotion';
 import { ChevronDownIcon } from '@contentful/f36-icons';
 
@@ -10,8 +15,7 @@ export type SelectInternalProps = CommonProps & {
   isRequired?: boolean;
   isInvalid?: boolean;
   isDisabled?: boolean;
-  value?: string;
-  defaultValue?: string;
+  onChange?: ChangeEventHandler<HTMLSelectElement>;
   children: ReactNode;
   willBlurOnEsc?: boolean;
 };
@@ -22,18 +26,21 @@ export type SelectProps = PropsWithHTMLElement<
   'disabled' | 'required'
 >;
 
-export const Select = ({
-  id,
-  children,
-  className,
-  isInvalid,
-  isDisabled,
-  isRequired,
-  testId = 'cf-ui-select',
-  willBlurOnEsc = true,
-  onKeyDown,
-  ...otherProps
-}: SelectProps) => {
+const _Select = (
+  {
+    id,
+    children,
+    className,
+    isInvalid,
+    isDisabled,
+    isRequired,
+    testId = 'cf-ui-select',
+    willBlurOnEsc = true,
+    onKeyDown,
+    ...otherProps
+  }: SelectProps,
+  ref: React.Ref<HTMLSelectElement>,
+) => {
   const formProps = useFormControl({
     isDisabled,
     isInvalid,
@@ -59,12 +66,15 @@ export const Select = ({
     <div className={cx(styles.wrapper, className)}>
       <select
         {...otherProps}
-        {...formProps}
+        id={formProps.id}
         data-test-id={testId}
         className={styles.select}
         onKeyDown={handleKeyDown}
-        required={isRequired}
-        disabled={isDisabled}
+        required={formProps.isRequired}
+        aria-required={formProps.isRequired ? 'true' : undefined}
+        aria-invalid={formProps.isInvalid ? true : undefined}
+        disabled={formProps.isDisabled}
+        ref={ref}
       >
         {children}
       </select>
@@ -72,3 +82,5 @@ export const Select = ({
     </div>
   );
 };
+
+export const Select = React.forwardRef(_Select);
