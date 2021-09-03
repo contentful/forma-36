@@ -1,7 +1,7 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 
-export const getWorkbenchHeaderStyles = () => ({
+export const getWorkbenchHeaderStyles = (hasBackButton = false) => ({
   workbenchHeader: css({
     display: 'flex',
     alignItems: 'center',
@@ -12,14 +12,16 @@ export const getWorkbenchHeaderStyles = () => ({
     backgroundColor: tokens.gray100,
     zIndex: tokens.zIndexWorkbenchHeader,
     boxSizing: 'border-box',
+    ...(hasBackButton && { paddingLeft: 0 }),
   }),
-  hasBackButton: css({
-    paddingLeft: 0,
+  flexGrow: css({
+    flexGrow: 1,
   }),
   description: css({
     textOverflow: 'ellipsis',
+    whiteSpace: 'nowrap',
     overflow: 'hidden',
-    flex: 1,
+    flexGrow: 1,
   }),
   backButton: css({
     borderRight: `1px solid ${tokens.gray200}`,
