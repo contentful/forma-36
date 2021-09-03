@@ -26,7 +26,7 @@ export const Basic = (args: FormControlInternalProps) => {
     <Form onSubmit={() => onSubmit()}>
       <FormControl {...args}>
         <FormControl.Label>Name</FormControl.Label>
-        <TextInput aria-label="input" />
+        <TextInput />
         <FormControl.HelpText>
           Please enter your first name
         </FormControl.HelpText>
@@ -34,7 +34,7 @@ export const Basic = (args: FormControlInternalProps) => {
 
       <FormControl {...args}>
         <FormControl.Label>Description</FormControl.Label>
-        <Textarea aria-label="input" />
+        <Textarea />
         <FormControl.HelpText>Tell me about youself</FormControl.HelpText>
       </FormControl>
       <Button variant="primary" type="submit" isDisabled={submited}>
