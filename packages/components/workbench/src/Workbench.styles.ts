@@ -3,8 +3,8 @@ import tokens from '@contentful/f36-tokens';
 
 export const getWorkbenchStyles = () => ({
   workbench: css({
-    // display: flex;
-    // flexDirection: 'column',
+    display: 'flex',
+    flexDirection: 'column',
     position: 'absolute',
     top: 0,
     right: 0,

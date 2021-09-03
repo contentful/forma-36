@@ -4,6 +4,7 @@ import { CommonProps } from '@contentful/f36-core';
 import { getWorkbenchStyles } from './Workbench.styles';
 
 import { WorkbenchHeader } from './WorkbenchHeader';
+import { WorkbenchContent } from './WorkbenchContent';
 
 export interface WorkbenchProps extends CommonProps {
   children: React.ReactNode;
@@ -46,6 +47,7 @@ const ForwardRefWorkbench = React.forwardRef(_Workbench);
 
 type CompoundWorkbench = typeof ForwardRefWorkbench & {
   Header?: typeof WorkbenchHeader;
+  Content?: typeof WorkbenchContent;
 };
 
 /**
@@ -53,3 +55,4 @@ type CompoundWorkbench = typeof ForwardRefWorkbench & {
  */
 export const Workbench: CompoundWorkbench = ForwardRefWorkbench;
 Workbench.Header = WorkbenchHeader;
+Workbench.Content = WorkbenchContent;

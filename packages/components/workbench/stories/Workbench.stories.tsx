@@ -1,21 +1,36 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
+import tokens from '@contentful/f36-tokens';
 import { Flex, Grid } from '@contentful/f36-core';
-import { SectionHeading } from '@contentful/f36-typography';
+import {
+  Subheading,
+  Paragraph,
+  SectionHeading,
+} from '@contentful/f36-typography';
 import { Button } from '@contentful/f36-button';
 import { StarIcon } from '@contentful/f36-icons';
 
 import { Workbench } from '../src/Workbench';
-// import type { WorkbenchProps } from '../src/Workbench';
+import type { WorkbenchContentProps } from '../src/WorkbenchContent';
 
 export default {
-  component: Workbench,
   title: 'Components/Workbench',
+  component: Workbench,
+  subcomponents: { WorkbenchContent: Workbench.Content },
+  argTypes: {
+    ['Content Type']: {
+      control: {
+        options: ['default', 'text', 'full'],
+        type: 'select',
+      },
+    },
+  },
 } as Meta;
 
 interface Args {
-  headerTitle: string;
-  headerDescription: string;
+  ['Header Title']: string;
+  ['Header Description']: string;
+  ['Content Type']: WorkbenchContentProps['type'];
 }
 
 export const Basic: Story<Args> = (args) => {
@@ -23,8 +38,8 @@ export const Basic: Story<Args> = (args) => {
   return (
     <Workbench {...args}>
       <Workbench.Header
-        title={args.headerTitle}
-        description={args.headerDescription}
+        title={args['Header Title']}
+        description={args['Header Description']}
         icon={StarIcon}
         onBack={() => console.log('back button clicked!')}
         actions={
@@ -36,14 +51,23 @@ export const Basic: Story<Args> = (args) => {
           </Button>
         }
       />
-      Workbench Content
+      <Workbench.Content type={args['Content Type']}>
+        <Subheading>Page Content</Subheading>
+        <Paragraph>This is where all the content of your page goes</Paragraph>
+        <Paragraph>
+          It’s possible to use any combination of Forma 36 Component and HTML
+          element in here
+        </Paragraph>
+        <div style={{ height: '1000px', backgroundColor: tokens.blue400 }} />
+      </Workbench.Content>
     </Workbench>
   );
   /* eslint-enable no-console */
 };
 Basic.args = {
-  headerTitle: 'Page title',
-  headerDescription: 'Page description',
+  ['Header Title']: 'Page title',
+  ['Header Description']: 'Page description',
+  ['Content Type']: 'default',
 };
 
 export const HeaderOverview = () => {
