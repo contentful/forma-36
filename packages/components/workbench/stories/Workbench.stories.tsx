@@ -25,6 +25,13 @@ export default {
       },
     },
   },
+  decorators: [
+    (Story) => (
+      <div style={{ minHeight: '200px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 } as Meta;
 
 interface Args {
