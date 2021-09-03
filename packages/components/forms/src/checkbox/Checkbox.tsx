@@ -1,6 +1,7 @@
 import React from 'react';
 import { BaseCheckbox, BaseCheckboxProps } from '../base-checkbox';
 import { useFormControl } from '../form-control/FormControlContext';
+import { useCheckboxGroup } from './CheckboxGroupContext';
 
 export type CheckboxProps = Omit<BaseCheckboxProps, 'type'>;
 
@@ -12,8 +13,21 @@ const _Checkbox = (props: CheckboxProps, ref: React.Ref<HTMLInputElement>) => {
     isRequired,
     isInvalid,
     children,
+    onChange,
+    defaultChecked,
+    isChecked,
+    value,
+    name,
     ...otherProps
   } = props;
+
+  const groupProps = useCheckboxGroup({
+    onChange,
+    value,
+    defaultChecked,
+    isChecked,
+    name,
+  });
 
   const formProps = useFormControl({
     id,
@@ -25,6 +39,7 @@ const _Checkbox = (props: CheckboxProps, ref: React.Ref<HTMLInputElement>) => {
   return (
     <BaseCheckbox
       {...formProps}
+      {...groupProps}
       {...otherProps}
       type="checkbox"
       testId={testId}

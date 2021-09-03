@@ -46,6 +46,7 @@ export { EmptyState } from '@contentful/f36-empty-state';
 export type { EmptyStateProps } from '@contentful/f36-empty-state';
 export {
   Checkbox,
+  CheckboxGroup,
   Radio,
   TextInput,
   Switch,
@@ -58,6 +59,7 @@ export {
 } from '@contentful/f36-forms';
 export type {
   CheckboxProps,
+  CheckboxGroupProps,
   RadioProps,
   TextInputProps,
   SwitchProps,
