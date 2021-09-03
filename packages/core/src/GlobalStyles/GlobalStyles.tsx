@@ -21,7 +21,6 @@ export const GlobalStyles = ({
           min-height: 100%;
           font-size: 16px;
           font-family: ${tokens.fontStackPrimary};
-          line-height: ${tokens.lineHeightDefault};
           vertical-align: baseline;
         }
 
