@@ -16,6 +16,7 @@ export const Basic: Story<WorkbenchProps> = (args) => {
       <Workbench.Header
         title="Page title"
         description="Page description"
+        onBack={() => console.log('back button clicked!')}
         actions={
           <Button
             size="small"
