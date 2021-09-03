@@ -1,34 +1,25 @@
-import React, { ChangeEventHandler } from 'react';
-import { RadioGroupContext } from './RadioGroupContext';
+import React from 'react';
+import {
+  BaseCheckboxGroup,
+  BaseCheckboxGroupProps,
+} from '../base-checkbox/BaseCheckboxGroup';
 
-export interface RadioGroupProps {
+export interface RadioGroupProps extends Omit<BaseCheckboxGroupProps, 'type'> {
   /**
-   * Handler that will be triggered when any Radio inside the group has their checked state changed
+   * Value of the radio that should be checked for uncontrolled inputs
    */
-  onChange?: ChangeEventHandler<HTMLInputElement>;
+  defaultValue?: string;
   /**
-   * Array of values of the Radioes that should start as checked for uncontrolled inputs
+   * Value of the radio that should be checked for controlled inputs
    */
-  defaultValue?: string | number;
-  /**
-   * Array of values of the Radioes that should be checked for controlled inputs
-   */
-  value?: string | number;
-  /**
-   * Name that will be assigned to all Radioes inside the group, unless a different name is passed to the Radio
-   */
-  name?: string;
-  /**
-   * Radioes that should be in the group
-   */
-  children: React.ReactNode;
+  value?: string;
 }
 
 export const RadioGroup = (props: RadioGroupProps) => {
-  const { children, ...contextProps } = props;
+  const { children, ...groupProps } = props;
   return (
-    <RadioGroupContext.Provider value={contextProps}>
+    <BaseCheckboxGroup type="radio" {...groupProps}>
       {children}
-    </RadioGroupContext.Provider>
+    </BaseCheckboxGroup>
   );
 };

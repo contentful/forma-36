@@ -1,34 +1,26 @@
-import React, { ChangeEventHandler } from 'react';
-import { CheckboxGroupContext } from './CheckboxGroupContext';
+import React from 'react';
+import {
+  BaseCheckboxGroup,
+  BaseCheckboxGroupProps,
+} from '../base-checkbox/BaseCheckboxGroup';
 
-export interface CheckboxGroupProps {
+export interface CheckboxGroupProps
+  extends Omit<BaseCheckboxGroupProps, 'type'> {
   /**
-   * Handler that will be triggered when any checkbox inside the group has their checked state changed
+   * Array of values of the checkboxes that should be checked for uncontrolled inputs
    */
-  onChange?: ChangeEventHandler<HTMLInputElement>;
-  /**
-   * Array of values of the checkboxes that should start as checked for uncontrolled inputs
-   */
-  defaultValue?: Array<string | number>;
+  defaultValue?: Array<string>;
   /**
    * Array of values of the checkboxes that should be checked for controlled inputs
    */
-  value?: Array<string | number>;
-  /**
-   * Name that will be assigned to all checkboxes inside the group, unless a different name is passed to the checkbox
-   */
-  name?: string;
-  /**
-   * Checkboxes that should be in the group
-   */
-  children: React.ReactNode;
+  value?: Array<string>;
 }
 
 export const CheckboxGroup = (props: CheckboxGroupProps) => {
-  const { children, ...contextProps } = props;
+  const { children, ...groupProps } = props;
   return (
-    <CheckboxGroupContext.Provider value={contextProps}>
+    <BaseCheckboxGroup type="checkbox" {...groupProps}>
       {children}
-    </CheckboxGroupContext.Provider>
+    </BaseCheckboxGroup>
   );
 };
