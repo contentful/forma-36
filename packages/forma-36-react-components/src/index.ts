@@ -126,6 +126,5 @@ export type {
 } from '@contentful/f36-datetime';
 export * from './components/EntityList';
 export * from './components/Form';
-export * from './components/Workbench';
 
 // -- Add imports above this line (required by plopfile.js) --
