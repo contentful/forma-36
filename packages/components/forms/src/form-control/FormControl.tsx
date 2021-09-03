@@ -32,6 +32,7 @@ function _FormControl<E extends React.ElementType = typeof DEFAULT_TAG>(
     isDisabled,
     isReadOnly,
     children,
+    marginBottom = 'spacingL',
     id,
     testId = 'cf-ui-form-control',
     ...otherProps
@@ -55,7 +56,7 @@ function _FormControl<E extends React.ElementType = typeof DEFAULT_TAG>(
         ref={ref}
         role="group"
         testId={testId}
-        marginBottom="spacingL"
+        marginBottom={marginBottom}
         {...otherProps}
       >
         {children}

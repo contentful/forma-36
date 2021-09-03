@@ -8,7 +8,7 @@ import {
 import type { BaseCheckboxInternalProps } from './types';
 import { GhostCheckbox } from './GhostCheckbox';
 import getStyles from './BaseCheckbox.styles';
-import { FormLabel } from '../form-label';
+import { Text } from '@contentful/f36-typography';
 
 export type BaseCheckboxProps = PropsWithHTMLElement<
   BaseCheckboxInternalProps & { label?: string },
@@ -89,7 +89,9 @@ function _BaseCheckbox(
     typeof isChecked !== undefined ? isChecked : defaultChecked;
 
   return (
-    <FormLabel
+    <Text
+      as="label"
+      fontColor="gray900"
       className={cx(styles.wrapper, className)}
       htmlFor={inputId}
       testId={testId}
@@ -123,7 +125,7 @@ function _BaseCheckbox(
         isIndeterminate={isIndeterminate}
       />
       {children}
-    </FormLabel>
+    </Text>
   );
 }
 

@@ -36,7 +36,7 @@ function _FormLabel(
   {
     children,
     className,
-    isRequired = false,
+    isRequired,
     requiredText = 'required',
     testId = 'cf-ui-form-label',
     ...otherProps
