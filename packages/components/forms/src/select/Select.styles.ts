@@ -12,12 +12,17 @@ export function getSelectStyles(props: {
     padding: `10px ${tokens.spacingL} 10px ${tokens.spacingS}`,
     backgroundColor: tokens.colorWhite,
     color: tokens.gray700,
+
     fontSize: tokens.fontSizeM,
     lineHeight: tokens.lineHeightM,
     fontFamily: tokens.fontStackPrimary,
     borderRadius: tokens.borderRadiusMedium,
     boxShadow: tokens.insetBoxShadowDefault,
     height: '40px',
+
+    '&::placeholder': {
+      color: tokens.gray500,
+    },
     '&:focus': {
       outline: 'none',
       boxShadow: tokens.glowPrimary,
