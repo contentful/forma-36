@@ -49,10 +49,11 @@ function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
     style,
     icon,
     defaultValue,
+    size,
     ...otherProps
   } = props;
-  const styles = getInputStyles({ as, isDisabled, isInvalid });
-
+  const styles = getInputStyles({ as, isDisabled, isInvalid, size });
+  console.log('size', styles);
   const handleFocus = (e: FocusEvent) => {
     e.persist();
     if (isDisabled || isReadOnly) {
@@ -90,7 +91,7 @@ function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
   const iconContent = icon && (
     <Box as="span" className={styles.iconPlaceholder}>
       {React.cloneElement(icon, {
-        size: 'small',
+        size: size === 'small' ? 'tiny' : 'small',
         variant: 'muted',
         'aria-hidden': true,
       })}
@@ -122,6 +123,7 @@ function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
       onBlur={onBlur}
       onKeyDown={handleKeyDown}
       onFocus={handleFocus}
+      size={size}
     />
   );
 

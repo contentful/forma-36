@@ -1,7 +1,26 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
+import type { CSSObject } from '@emotion/serialize';
 
-const getStyles = ({ as, isDisabled, isInvalid }) => ({
+const sizeToStyles = ({ size }): CSSObject => {
+  switch (size) {
+    case 'small':
+      return {
+        fontSize: tokens.fontSizeM,
+        lineHeight: tokens.lineHeightM,
+        padding: `${tokens.spacing2Xs} ${tokens.spacingXs}`,
+        minHeight: `32px`,
+      };
+    default:
+      return {
+        fontSize: tokens.fontSizeM,
+        lineHeight: tokens.lineHeightM,
+        minHeight: `40px`,
+      };
+  }
+};
+
+const getStyles = ({ as, isDisabled, isInvalid, size }) => ({
   rootComponentWithIcon: css({
     position: 'relative',
     display: 'flex',
@@ -56,10 +75,11 @@ const getStyles = ({ as, isDisabled, isInvalid }) => ({
         ? 'none'
         : tokens.glowPrimary,
     },
+    ...sizeToStyles({ size }),
   }),
 
   inputWithIcon: css({
-    paddingLeft: '38px',
+    paddingLeft: size === 'small' ? '32px' : '38px',
   }),
 
   iconPlaceholder: css({
@@ -67,7 +87,7 @@ const getStyles = ({ as, isDisabled, isInvalid }) => ({
     pointerEvents: 'none',
     top: 0,
     bottom: 0,
-    left: tokens.spacingS,
+    left: size === 'small' ? tokens.spacingXs : tokens.spacingS,
     display: 'flex',
     alignItems: 'center',
     zIndex: tokens.zIndexDefault,
