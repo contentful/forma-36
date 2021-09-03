@@ -45,7 +45,7 @@ function _Text<E extends React.ElementType = typeof DEFAULT_TAG>(
     fontStack = 'fontStackPrimary',
     fontWeight = 'fontWeightNormal',
     fontColor = 'gray700',
-    lineHeight,
+    lineHeight = 'lineHeightDefault',
     children,
     isTruncated,
     as,
