@@ -5,6 +5,8 @@ import {
   FormControlInternalProps,
   TextInput,
   Textarea,
+  Select,
+  Checkbox,
 } from '../src';
 import { Flex, Box } from '@contentful/f36-core';
 import { TextLink } from '@contentful/f36-text-link';
@@ -24,7 +26,7 @@ export const Basic = (args: FormControlInternalProps) => {
     <>
       <FormControl {...args}>
         <FormControl.Label isRequired>Name</FormControl.Label>
-        <TextInput arial-label="input" />
+        <TextInput />
         <FormControl.HelpText>
           Please enter your first name
         </FormControl.HelpText>
@@ -35,8 +37,28 @@ export const Basic = (args: FormControlInternalProps) => {
 
       <FormControl {...args}>
         <FormControl.Label>Description</FormControl.Label>
-        <Textarea arial-label="input" />
+        <Textarea />
         <FormControl.HelpText>Tell me about youself</FormControl.HelpText>
+        {args.isInvalid && (
+          <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
+        )}
+      </FormControl>
+
+      <FormControl {...args}>
+        <FormControl.Label>City</FormControl.Label>
+        <Select>
+          <Select.Option value="" isDisabled isSelected>
+            Please, select your city
+          </Select.Option>
+          <Select.Option value="berlin">Berlin</Select.Option>
+          <Select.Option value="san-francisco">San Francisco</Select.Option>
+        </Select>
+      </FormControl>
+
+      <FormControl {...args}>
+        <Checkbox defaultChecked={false}>
+          I confirm everything that said above is true
+        </Checkbox>
         {args.isInvalid && (
           <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
         )}
