@@ -13,4 +13,9 @@ export const getWorkbenchStyles = () => ({
     zIndex: tokens.zIndexWorkbench,
     overflowX: 'hidden',
   }),
+  contentWrapper: css({
+    height: '100%',
+    width: '100%',
+    overflow: 'hidden',
+  }),
 });

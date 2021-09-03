@@ -5,6 +5,7 @@ export const getWorkbenchHeaderStyles = (hasBackButton = false) => ({
   workbenchHeader: css({
     display: 'flex',
     alignItems: 'center',
+    flexShrink: 0,
     width: '100%',
     height: '70px',
     padding: `0 ${tokens.spacingL}`,

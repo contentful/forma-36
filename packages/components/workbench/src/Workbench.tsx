@@ -1,10 +1,11 @@
 import React from 'react';
 import { cx } from 'emotion';
-import { CommonProps } from '@contentful/f36-core';
+import { CommonProps, Flex } from '@contentful/f36-core';
 import { getWorkbenchStyles } from './Workbench.styles';
 
 import { WorkbenchHeader } from './WorkbenchHeader';
 import { WorkbenchContent } from './WorkbenchContent';
+import { WorkbenchSidebar } from './WorkbenchSidebar';
 
 export interface WorkbenchProps extends CommonProps {
   children: React.ReactNode;
@@ -38,7 +39,7 @@ function _Workbench(
       className={cx(styles.workbench, className)}
     >
       {header}
-      {content}
+      <Flex className={styles.contentWrapper}>{content}</Flex>
     </div>
   );
 }
@@ -48,6 +49,7 @@ const ForwardRefWorkbench = React.forwardRef(_Workbench);
 type CompoundWorkbench = typeof ForwardRefWorkbench & {
   Header?: typeof WorkbenchHeader;
   Content?: typeof WorkbenchContent;
+  Sidebar?: typeof WorkbenchSidebar;
 };
 
 /**
@@ -56,3 +58,4 @@ type CompoundWorkbench = typeof ForwardRefWorkbench & {
 export const Workbench: CompoundWorkbench = ForwardRefWorkbench;
 Workbench.Header = WorkbenchHeader;
 Workbench.Content = WorkbenchContent;
+Workbench.Sidebar = WorkbenchSidebar;

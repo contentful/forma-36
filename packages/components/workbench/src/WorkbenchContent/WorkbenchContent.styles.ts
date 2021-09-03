@@ -20,10 +20,10 @@ export const getWorkbenchContentStyles = (
 
   return {
     workbenchContent: css({
-      backgroundColor: tokens.blue100, // TODO: remove this before push
       padding: tokens.spacingL,
       overflowY: 'auto',
       overflowX: 'hidden',
+      flexGrow: 1,
     }),
     innerContent: css({
       margin: '0 auto',

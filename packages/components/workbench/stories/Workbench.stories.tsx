@@ -53,7 +53,9 @@ export const Basic: Story<Args> = (args) => {
       />
       <Workbench.Content type={args['Content Type']}>
         <Subheading>Page Content</Subheading>
-        <Paragraph>This is where all the content of your page goes</Paragraph>
+        <Paragraph>
+          This is where all the main content of your page goes
+        </Paragraph>
         <Paragraph>
           It’s possible to use any combination of Forma 36 Component and HTML
           element in here
@@ -65,6 +67,50 @@ export const Basic: Story<Args> = (args) => {
   /* eslint-enable no-console */
 };
 Basic.args = {
+  ['Header Title']: 'Page title',
+  ['Header Description']: 'Page description',
+  ['Content Type']: 'default',
+};
+
+export const WithSidebars: Story<Args> = (args) => {
+  /* eslint-disable no-console */
+  return (
+    <Workbench {...args}>
+      <Workbench.Header
+        title={args['Header Title']}
+        description={args['Header Description']}
+      />
+      <Workbench.Sidebar position="left">
+        <Subheading>Left Sidebar Content</Subheading>
+        <Paragraph>
+          It’s possible to use any combination of Forma 36 Component and HTML
+          element in here
+        </Paragraph>
+      </Workbench.Sidebar>
+
+      <Workbench.Content type={args['Content Type']}>
+        <Subheading>Page Content</Subheading>
+        <Paragraph>
+          This is where all the main content of your page goes
+        </Paragraph>
+        <Paragraph>
+          It’s possible to use any combination of Forma 36 Component and HTML
+          element in here
+        </Paragraph>
+      </Workbench.Content>
+
+      <Workbench.Sidebar position="right">
+        <Subheading>Right Sidebar Content</Subheading>
+        <Paragraph>
+          It’s possible to use any combination of Forma 36 Component and HTML
+          element in here
+        </Paragraph>
+      </Workbench.Sidebar>
+    </Workbench>
+  );
+  /* eslint-enable no-console */
+};
+WithSidebars.args = {
   ['Header Title']: 'Page title',
   ['Header Description']: 'Page description',
   ['Content Type']: 'default',
