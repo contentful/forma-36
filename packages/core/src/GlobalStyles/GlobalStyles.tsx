@@ -1,7 +1,5 @@
 import * as React from 'react';
-import { Global } from '@emotion/core';
-import { css } from 'emotion';
-// @ts-expect-error mute missing types
+import { Global, css } from '@emotion/core';
 import emotionNormalize from 'emotion-normalize';
 import tokens from '@contentful/f36-tokens';
 
@@ -21,9 +19,14 @@ export const GlobalStyles = ({
           padding: 0;
           border: 0;
           min-height: 100%;
-          font-size: ${tokens.fontSizeM};
+          font-size: 16px;
           font-family: ${tokens.fontStackPrimary};
+          line-height: ${tokens.lineHeightDefault};
           vertical-align: baseline;
+        }
+
+        code {
+          font-family: ${tokens.fontStackMonospace};
         }
 
         *,

@@ -1,15 +1,6 @@
 @import '~@contentful/f36-tokens/dist/css/index.css';
 
-* {
-  box-sizing: border-box;
-}
-
 body {
-  font-family: var(--font-stack-primary);
-  font-weight: var(--font-weight-normal);
-  font-size: 16px;
-  line-height: var(--line-height-default);
-  margin: 0;
   min-width: 1280px;
 }
 
@@ -32,7 +23,6 @@ pre.prism-code {
 }
 
 code {
-  font-family: var(--font-stack-monospace);
   white-space: nowrap;
   font-weight: var(--font-weight-medium);
   background-color: var(--gray-200);
