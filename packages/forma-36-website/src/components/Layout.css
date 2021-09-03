@@ -7,11 +7,11 @@ body {
 pre {
   margin: 0;
   white-space: normal;
-  font-family: var(--font-stack-primary);
+  font-family: var(--font-stack-primary) !important;
 }
 
 pre.prism-code {
-  font-family: var(--font-stack-monospace);
+  font-family: var(--font-stack-monospace) !important;
 }
 
 .prism-code {
