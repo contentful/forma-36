@@ -42,7 +42,7 @@ export const useCheckboxGroup = (
     defaultChecked,
     isChecked,
     onChange,
-    name: props.name ?? context.name,
+    name: context.name ?? props.name,
     value: props.value,
   };
 };

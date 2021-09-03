@@ -25,9 +25,9 @@ export interface CheckboxGroupProps {
 }
 
 export const CheckboxGroup = (props: CheckboxGroupProps) => {
-  const { children, defaultValue, value, onChange } = props;
+  const { children, ...contextProps } = props;
   return (
-    <CheckboxGroupContext.Provider value={{ defaultValue, value, onChange }}>
+    <CheckboxGroupContext.Provider value={contextProps}>
       {children}
     </CheckboxGroupContext.Provider>
   );
