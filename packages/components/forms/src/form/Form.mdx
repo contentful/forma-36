@@ -17,13 +17,12 @@ storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-form
 
 - The `Form` component should wrap form elements into `<form />`
 - Provide an `onSubmit` handler for form validation and submission
-
-## Component variations
+- state of the validation of the form should be maniputated from outside
 
 ### Basic example
 
-```jsx static=true
-<Form onSubmit={() => onSubmit()}>
+```jsx
+<Form onSubmit={() => console.log('handler for submit')}>
   <FormControl {...args}>
     <FormControl.Label isRequired>Name</FormControl.Label>
     <TextInput aria-label="input" />
@@ -39,4 +38,54 @@ storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-form
     {submited ? 'Sumbited' : 'Click me to submit'}
   </Button>
 </Form>
+```
+
+### Example using solution like Formik
+
+```jsx static=true
+import { Formik, Field } from 'formik';
+import { Form, FormControl, TextInput } from '@contentful/f36-forms';
+import { Button } from '@contentful/f36-button';
+
+function ExampleUsingFormik() {
+  function validateName(value) {
+    let error;
+    if (!value) {
+      error = 'Name is required';
+    }
+    return error;
+  }
+
+  return (
+    <Formik
+      onSubmit={(values, actions) => {
+        setTimeout(() => {
+          alert(JSON.stringify(values, null, 2));
+          actions.setSubmitting(false);
+        }, 1000);
+      }}
+    >
+      {(props) => (
+        <Form>
+          <Field name="name" validate={validateName}>
+            {({ field, form }) => (
+              <FormControl isInvalid={form.errors.name}>
+                <FormControl.Label>First name</FormControl.Label>
+                <TextInput {...field} id="name" placeholder="name" />
+                {form.errors.name && (
+                  <FormControl.ValidationMessage>
+                    {form.errors.name}
+                  </FormControl.ValidationMessage>
+                )}
+              </FormControl>
+            )}
+          </Field>
+          <Button variant="primary" type="submit">
+            Sumbit
+          </Button>
+        </Form>
+      )}
+    </Formik>
+  );
+}
 ```
