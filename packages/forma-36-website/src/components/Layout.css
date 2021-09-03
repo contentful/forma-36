@@ -15,7 +15,6 @@ body {
 
 pre {
   margin: 0;
-  white-space: normal;
   font-family: var(--font-stack-primary);
 }
 
