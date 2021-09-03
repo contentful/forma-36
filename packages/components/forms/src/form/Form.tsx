@@ -8,13 +8,10 @@ import React, {
 import type { ReactNode } from 'react';
 import { CommonProps } from '@contentful/f36-core';
 
-export interface FormProps extends CommonProps {
-  onSubmit?: FormEventHandler;
-  /**
-   * Label value to show
-   */
-  children: ReactNode | ReactNodeArray;
-}
+export type FormProps = PropsWithHTMLElement<
+  CommonProps,
+  'form'
+>;
 
 function _Form(
   { children, onSubmit, testId = 'cf-ui-form-label', ...otherProps }: FormProps,
