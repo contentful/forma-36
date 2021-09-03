@@ -16,7 +16,11 @@ import type { WorkbenchContentProps } from '../src/WorkbenchContent';
 export default {
   title: 'Components/Workbench',
   component: Workbench,
-  subcomponents: { WorkbenchContent: Workbench.Content },
+  subcomponents: {
+    WorkbenchHeader: Workbench.Header,
+    WorkbenchContent: Workbench.Content,
+    WorkbenchSidebar: Workbench.Sidebar,
+  },
   argTypes: {
     ['Content Type']: {
       control: {
@@ -41,6 +45,36 @@ interface Args {
 }
 
 export const Basic: Story<Args> = (args) => {
+  /* eslint-disable no-console */
+  return (
+    <Workbench {...args}>
+      <Workbench.Header
+        title={args['Header Title']}
+        description={args['Header Description']}
+        icon={StarIcon}
+      />
+      <Workbench.Content type={args['Content Type']}>
+        <Subheading>Page Content</Subheading>
+        <Paragraph>
+          This is where all the main content of your page goes
+        </Paragraph>
+        <Paragraph>
+          It’s possible to use any combination of Forma 36 Component and HTML
+          element in here
+        </Paragraph>
+        <div style={{ height: '1000px', backgroundColor: tokens.blue400 }} />
+      </Workbench.Content>
+    </Workbench>
+  );
+  /* eslint-enable no-console */
+};
+Basic.args = {
+  ['Header Title']: 'Page title',
+  ['Header Description']: 'Page description',
+  ['Content Type']: 'default',
+};
+
+export const WithAllHeaderFeatures: Story<Args> = (args) => {
   /* eslint-disable no-console */
   return (
     <Workbench {...args}>
@@ -73,19 +107,94 @@ export const Basic: Story<Args> = (args) => {
   );
   /* eslint-enable no-console */
 };
-Basic.args = {
+WithAllHeaderFeatures.args = {
   ['Header Title']: 'Page title',
   ['Header Description']: 'Page description',
   ['Content Type']: 'default',
 };
 
-export const WithSidebars: Story<Args> = (args) => {
+export const WithLeftSidebar: Story<Args> = (args) => {
   /* eslint-disable no-console */
   return (
     <Workbench {...args}>
       <Workbench.Header
         title={args['Header Title']}
         description={args['Header Description']}
+        icon={StarIcon}
+      />
+      <Workbench.Sidebar position="left">
+        <Subheading>Left Sidebar Content</Subheading>
+        <Paragraph>
+          It’s possible to use any combination of Forma 36 Component and HTML
+          element in here
+        </Paragraph>
+      </Workbench.Sidebar>
+
+      <Workbench.Content type={args['Content Type']}>
+        <Subheading>Page Content</Subheading>
+        <Paragraph>
+          This is where all the main content of your page goes
+        </Paragraph>
+        <Paragraph>
+          It’s possible to use any combination of Forma 36 Component and HTML
+          element in here
+        </Paragraph>
+      </Workbench.Content>
+    </Workbench>
+  );
+  /* eslint-enable no-console */
+};
+WithLeftSidebar.args = {
+  ['Header Title']: 'Page title',
+  ['Header Description']: 'Page description',
+  ['Content Type']: 'default',
+};
+
+export const WithRightSidebar: Story<Args> = (args) => {
+  /* eslint-disable no-console */
+  return (
+    <Workbench {...args}>
+      <Workbench.Header
+        title={args['Header Title']}
+        description={args['Header Description']}
+        icon={StarIcon}
+      />
+      <Workbench.Content type={args['Content Type']}>
+        <Subheading>Page Content</Subheading>
+        <Paragraph>
+          This is where all the main content of your page goes
+        </Paragraph>
+        <Paragraph>
+          It’s possible to use any combination of Forma 36 Component and HTML
+          element in here
+        </Paragraph>
+      </Workbench.Content>
+
+      <Workbench.Sidebar position="right">
+        <Subheading>Left Sidebar Content</Subheading>
+        <Paragraph>
+          It’s possible to use any combination of Forma 36 Component and HTML
+          element in here
+        </Paragraph>
+      </Workbench.Sidebar>
+    </Workbench>
+  );
+  /* eslint-enable no-console */
+};
+WithRightSidebar.args = {
+  ['Header Title']: 'Page title',
+  ['Header Description']: 'Page description',
+  ['Content Type']: 'default',
+};
+
+export const WithBothSidebars: Story<Args> = (args) => {
+  /* eslint-disable no-console */
+  return (
+    <Workbench {...args}>
+      <Workbench.Header
+        title={args['Header Title']}
+        description={args['Header Description']}
+        icon={StarIcon}
       />
       <Workbench.Sidebar position="left">
         <Subheading>Left Sidebar Content</Subheading>
@@ -117,7 +226,7 @@ export const WithSidebars: Story<Args> = (args) => {
   );
   /* eslint-enable no-console */
 };
-WithSidebars.args = {
+WithBothSidebars.args = {
   ['Header Title']: 'Page title',
   ['Header Description']: 'Page description',
   ['Content Type']: 'default',

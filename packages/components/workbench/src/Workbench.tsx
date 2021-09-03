@@ -53,7 +53,7 @@ type CompoundWorkbench = typeof ForwardRefWorkbench & {
 };
 
 /**
- * TODO: Add description of component here.
+ * The Workbench assembles the outer app shell which defines regions to structure content and interactions
  */
 export const Workbench: CompoundWorkbench = ForwardRefWorkbench;
 Workbench.Header = WorkbenchHeader;
