@@ -1,24 +1,15 @@
-import React, {
-  forwardRef,
-  useCallback,
-  FormEventHandler,
-  ReactNodeArray,
-  FormEvent,
-} from 'react';
-import type { ReactNode } from 'react';
-import { CommonProps } from '@contentful/f36-core';
+import React, { forwardRef, useCallback, FormEvent } from 'react';
 
-export type FormProps = PropsWithHTMLElement<
-  CommonProps,
-  'form'
->;
+import { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
+
+export type FormProps = PropsWithHTMLElement<CommonProps, 'form'>;
 
 function _Form(
   { children, onSubmit, testId = 'cf-ui-form-label', ...otherProps }: FormProps,
   ref: React.Ref<HTMLFormElement>,
 ) {
   const handleSubmit = useCallback(
-    (event: FormEvent) => {
+    (event: FormEvent<HTMLFormElement>) => {
       event.preventDefault();
       if (onSubmit) {
         onSubmit(event);
