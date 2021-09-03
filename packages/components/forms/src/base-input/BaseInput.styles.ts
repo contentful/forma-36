@@ -24,9 +24,7 @@ const getStyles = ({ as, isDisabled, isInvalid }) => ({
     width: '100%',
 
     // if the input is a textarea, the height is resizeble
-    ...(as === 'textarea'
-      ? { resize: 'vertical' }
-      : { maxHeight: `calc(1rem * (40 / ${tokens.fontBaseDefault}))` }),
+    ...(as === 'textarea' ? { resize: 'vertical' } : { maxHeight: '40px' }),
 
     '&::placeholder': {
       color: tokens.gray500,

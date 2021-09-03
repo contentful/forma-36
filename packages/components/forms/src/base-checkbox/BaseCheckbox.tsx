@@ -30,6 +30,7 @@ function _BaseCheckbox(
     value,
     isDisabled,
     isIndeterminate,
+    isInvalid,
     isRequired = false,
     id,
     willBlurOnEsc = true,
@@ -111,6 +112,8 @@ function _BaseCheckbox(
         aria-checked={isIndeterminate ? 'mixed' : ariaChecked}
         ref={inputRef}
         required={isRequired}
+        aria-required={isRequired ? 'true' : undefined}
+        aria-invalid={isInvalid ? 'true' : undefined}
         id={inputId}
         name={name}
       />

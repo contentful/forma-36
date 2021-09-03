@@ -6,13 +6,7 @@ export type checkboxTypes = 'checkbox' | 'radio' | 'switch';
 export interface BaseCheckboxInternalProps
   extends Omit<
     BaseInputInternalProps,
-    | 'type'
-    | 'as'
-    | 'placeholder'
-    | 'isReadOnly'
-    | 'icon'
-    | 'isInvalid'
-    | 'label'
+    'type' | 'as' | 'placeholder' | 'isReadOnly' | 'icon' | 'label'
   > {
   /**
    * Defines the type of the input to be rendered
