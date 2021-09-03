@@ -43,6 +43,7 @@ export const Overview = () => (
         id="input-1"
         placeholder="My great input"
         defaultValue="defaultValue"
+        size="small"
       />
     </Flex>
 

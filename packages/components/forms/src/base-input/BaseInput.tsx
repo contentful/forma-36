@@ -53,7 +53,7 @@ function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
     ...otherProps
   } = props;
   const styles = getInputStyles({ as, isDisabled, isInvalid, size });
-  console.log('size', styles);
+
   const handleFocus = (e: FocusEvent) => {
     e.persist();
     if (isDisabled || isReadOnly) {
