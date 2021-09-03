@@ -5,7 +5,6 @@ import { ChevronDownIcon } from '@contentful/f36-icons';
 import { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
 import { useFormControl } from '../form-control/FormControlContext';
 import { getSelectStyles } from './Select.styles';
-import type { SelectWidth } from './types';
 
 export type SelectInternalProps = CommonProps & {
   isRequired?: boolean;
@@ -13,7 +12,6 @@ export type SelectInternalProps = CommonProps & {
   isDisabled?: boolean;
   value?: string;
   defaultValue?: string;
-  width?: SelectWidth;
   children: ReactNode;
   willBlurOnEsc?: boolean;
 };
@@ -32,7 +30,6 @@ export const Select = ({
   isDisabled,
   isRequired,
   testId = 'cf-ui-select',
-  width = 'full',
   willBlurOnEsc = true,
   onKeyDown,
   ...otherProps
@@ -44,10 +41,7 @@ export const Select = ({
     id,
   });
 
-  const styles = getSelectStyles({
-    ...formProps,
-    width,
-  });
+  const styles = getSelectStyles(formProps);
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent<HTMLSelectElement>) => {
