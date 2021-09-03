@@ -23,13 +23,13 @@ storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-form
 
 ```jsx
 <Form onSubmit={() => console.log('handler for submit')}>
-  <FormControl {...args}>
+  <FormControl>
     <FormControl.Label isRequired>Name</FormControl.Label>
     <TextInput aria-label="input" />
     <FormControl.HelpText>Please enter your first name</FormControl.HelpText>
   </FormControl>
 
-  <FormControl {...args}>
+  <FormControl>
     <FormControl.Label>Description</FormControl.Label>
     <Textarea aria-label="input" />
     <FormControl.HelpText>Tell me about youself</FormControl.HelpText>
