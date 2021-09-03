@@ -19,8 +19,9 @@ export const GlobalStyles = ({
           padding: 0;
           border: 0;
           min-height: 100%;
-          font-size: 16px;
+          font-size: ${tokens.fontBaseDefault}px;
           font-family: ${tokens.fontStackPrimary};
+          color: ${tokens.gray800};
           line-height: ${tokens.lineHeightDefault};
           vertical-align: baseline;
         }
