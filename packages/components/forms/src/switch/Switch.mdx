@@ -23,6 +23,50 @@ Switch is a control that is used to quickly switch between two possible states. 
 - use when user needs to perform instantaneous actions that do not need a review or confirmation
 - use when user is toggling independent features or behaviors
 
+### Using as a controlled input
+
+For using the Switch as a controlled input, you need to:
+
+- Pass the `isChecked` property, with this property it will already be a controlled component;
+- Pass a `onChange` handler, so you can use it to update the value of `isChecked`;
+
+Setting the `isChecked` will already define it as a controlled input.
+
+```jsx static=true
+const ExampleControlled = () => {
+  const [switchState, setSwitchState] = useState(false);
+
+  return (
+    <Switch
+      name="allow-cookies-controlled"
+      id="allow-cookies-controlled"
+      isChecked={switchState}
+      onChange={() => setSwitchState((prevState) => !prevState)}
+    >
+      Allow cookies
+    </Switch>
+  );
+};
+```
+
+### Using as an uncontrolled input
+
+You can use the Switch as an uncontrolled input, for that you can:
+
+- Set the `defaultChecked` property, it will ensure that the checked state can be altered normaly.
+- Don't set the `isChecked` as it will make the input controlled.
+
+```jsx static=true
+<Switch
+  type="checkbox"
+  name="allow-cookies-uncontrolled"
+  id="allow-cookies-uncontrolled"
+  defaultChecked={true}
+>
+  Allow cookies
+</Switch>
+```
+
 ### Switch vs Checkbox
 
 Switch is a two-step action: selection and execution, whereas checkbox is just selection of an option and its execution usually requires another control.
@@ -30,18 +74,17 @@ Switch is a two-step action: selection and execution, whereas checkbox is just s
 ## Code examples
 
 ```jsx
-<Switch id="testSwitch1" name="testSwitch1" label="label for switch" />
+<Switch id="testSwitch1" name="testSwitch1">
+  label for switch
+</Switch>
 ```
 
 ### Switch disabled
 
 ```jsx
-<Switch
-  id="testSwitch2"
-  name="testSwitch2"
-  label="label for switch"
-  isDisabled
-/>
+<Switch id="testSwitch2" name="testSwitch2" isDisabled>
+  label for switch
+</Switch>
 ```
 
 ## Accessibility

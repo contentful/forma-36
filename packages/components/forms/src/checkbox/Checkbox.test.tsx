@@ -7,7 +7,7 @@ import { Checkbox } from './Checkbox';
 describe('Checkbox', function () {
   it('renders the component', () => {
     const { getByLabelText } = render(
-      <Checkbox id="checkbox" label="label text" />,
+      <Checkbox id="checkbox">label text</Checkbox>,
     );
 
     const checkbox = getByLabelText('label text');
@@ -16,7 +16,7 @@ describe('Checkbox', function () {
   });
 
   it('has no a11y issues', async () => {
-    const { container } = render(<Checkbox id="checkbox" label="label text" />);
+    const { container } = render(<Checkbox id="checkbox">label text</Checkbox>);
     const results = await axe(container);
 
     expect(results).toHaveNoViolations();

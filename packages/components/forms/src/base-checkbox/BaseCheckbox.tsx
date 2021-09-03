@@ -1,7 +1,6 @@
-import React, { useCallback, useState, useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { cx } from 'emotion';
 import {
-  Flex,
   useId,
   useForwardedRef,
   PropsWithHTMLElement,
@@ -9,6 +8,7 @@ import {
 import type { BaseCheckboxInternalProps } from './types';
 import { GhostCheckbox } from './GhostCheckbox';
 import getStyles from './BaseCheckbox.styles';
+import { FormLabel } from '../form-label';
 
 export type BaseCheckboxProps = PropsWithHTMLElement<
   BaseCheckboxInternalProps & { label?: string },
@@ -21,14 +21,13 @@ function _BaseCheckbox(
   ref: React.Ref<HTMLInputElement>,
 ) {
   const {
-    isChecked = false,
+    isChecked = undefined,
     onChange,
     onFocus,
     onBlur,
     onKeyDown,
     type = 'checkbox',
     value,
-    label,
     isDisabled,
     isIndeterminate,
     isRequired = false,
@@ -36,35 +35,21 @@ function _BaseCheckbox(
     willBlurOnEsc = true,
     testId = 'cf-ui-base-checkbox',
     className = '',
-    inputProps,
+    defaultChecked = false,
     name,
+    inputProps = {},
+    children,
+    'aria-label': ariaLabel,
     ...otherProps
   } = props;
-
-  const [checked, setChecked] = useState<boolean>(isChecked);
   const inputRef = useForwardedRef<HTMLInputElement>(ref);
   const inputId = useId(id, type);
-
-  useEffect(() => {
-    setChecked((checked) => (isChecked !== checked ? isChecked : checked));
-  }, [isChecked]);
 
   useEffect(() => {
     inputRef.current.indeterminate = isIndeterminate;
   }, [isIndeterminate, inputRef]);
 
   const styles = getStyles({ isDisabled, type });
-  const handleChange = useCallback(
-    (e) => {
-      e.persist();
-      if (isDisabled) return;
-      if (onChange) {
-        onChange(e);
-      }
-      setChecked((checked) => !checked);
-    },
-    [onChange, isDisabled],
-  );
 
   const handleFocus = useCallback(
     (e) => {
@@ -99,9 +84,11 @@ function _BaseCheckbox(
     [willBlurOnEsc, onKeyDown, inputRef],
   );
 
+  const ariaChecked =
+    typeof isChecked !== undefined ? isChecked : defaultChecked;
+
   return (
-    <Flex
-      as="label"
+    <FormLabel
       className={cx(styles.wrapper, className)}
       htmlFor={inputId}
       testId={testId}
@@ -109,30 +96,31 @@ function _BaseCheckbox(
     >
       <input
         {...inputProps}
-        className={cx(styles.input, inputProps?.className)}
+        aria-label={ariaLabel}
+        checked={isChecked}
+        defaultChecked={defaultChecked}
+        className={styles.input}
         type={type === 'switch' ? 'checkbox' : type}
-        onChange={handleChange}
+        onChange={onChange}
         onFocus={handleFocus}
         onBlur={handleBlur}
         onKeyDown={handleKeyDown}
         value={value}
         disabled={isDisabled}
-        checked={checked}
         role={type}
-        aria-checked={isIndeterminate ? 'mixed' : checked}
+        aria-checked={isIndeterminate ? 'mixed' : ariaChecked}
         ref={inputRef}
         required={isRequired}
         id={inputId}
         name={name}
-        aria-label={label}
       />
       <GhostCheckbox
         type={type}
-        isChecked={checked}
         isDisabled={isDisabled}
         isIndeterminate={isIndeterminate}
       />
-    </Flex>
+      {children}
+    </FormLabel>
   );
 }
 

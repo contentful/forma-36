@@ -1,17 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders the component 1`] = `
-.emotion-5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
 .emotion-0 {
   cursor: pointer;
   height: 1rem;
@@ -31,10 +20,14 @@ exports[`renders the component 1`] = `
 }
 
 .emotion-3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  margin: 0;
+  margin-bottom: 0.75rem;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-weight: 400;
+  color: #111B2B;
+  font-size: 0.875rem;
+  display: inline-block;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -45,7 +38,6 @@ exports[`renders the component 1`] = `
   display: inline-flex;
   position: relative;
   margin: 0;
-  margin-right: 0.5rem;
 }
 
 .emotion-2 {
@@ -65,6 +57,7 @@ exports[`renders the component 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin-right: 0.5rem;
   width: 1rem;
   background-color: #ffffff;
   border-radius: 4px;
@@ -74,23 +67,22 @@ exports[`renders the component 1`] = `
   fill: #ffffff;
 }
 
+input:indeterminate + .emotion-2,
+input:checked + .emotion-2 {
+  background-color: #0059C8;
+  border-color: #0059C8;
+}
+
+input:indeterminate + .emotion-2 svg,
+input:checked + .emotion-2 svg {
+  fill: #ffffff;
+}
+
 .emotion-1 {
   display: inline-block;
   fill: #ffffff;
   height: 16px;
   width: 16px;
-}
-
-.emotion-4 {
-  margin: 0;
-  margin-bottom: 0.75rem;
-  padding: 0;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  font-weight: 400;
-  color: #111B2B;
-  font-size: 0.875rem;
-  display: inline-block;
-  margin: 0;
 }
 
 <div
@@ -100,108 +92,71 @@ exports[`renders the component 1`] = `
   <div
     class="FieldGroup__item"
   >
-    <div
-      class="emotion-5"
+    <label
+      class="emotion-3"
       data-test-id="cf-ui-checkbox"
+      for="agree"
     >
-      <label
-        class="emotion-3"
-        data-test-id="cf-ui-base-checkbox"
-        for="agree"
+      <input
+        class="emotion-0"
+        id="agree"
+        role="checkbox"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="emotion-2"
       >
-        <input
-          aria-checked="false"
-          aria-label="Do you agree?"
-          class="emotion-0"
-          id="agree"
-          role="checkbox"
-          type="checkbox"
-          value=""
-        />
-        <span
-          class="emotion-2"
+        <svg
+          aria-hidden="true"
+          class="emotion-1"
+          data-test-id="cf-ui-icon"
+          viewBox="0 0 24 24"
         >
-          <svg
-            aria-hidden="true"
-            class="emotion-1"
-            data-test-id="cf-ui-icon"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M20.7071 5.29289C21.0976 5.68342 21.0976 6.31658 20.7071 6.70711L9.70711 17.7071C9.51957 17.8946 9.26522 18 9 18C8.73478 18 8.48043 17.8946 8.29289 17.7071L3.29289 12.7071C2.90237 12.3166 2.90237 11.6834 3.29289 11.2929C3.68342 10.9024 4.31658 10.9024 4.70711 11.2929L9 15.5858L19.2929 5.29289C19.6834 4.90237 20.3166 4.90237 20.7071 5.29289Z"
-            />
-          </svg>
-        </span>
-      </label>
-      <label
-        class="emotion-4"
-        data-test-id="cf-ui-form-label"
-        for="agree"
-      >
-        Do you agree?
-      </label>
-    </div>
+          <path
+            d="M20.7071 5.29289C21.0976 5.68342 21.0976 6.31658 20.7071 6.70711L9.70711 17.7071C9.51957 17.8946 9.26522 18 9 18C8.73478 18 8.48043 17.8946 8.29289 17.7071L3.29289 12.7071C2.90237 12.3166 2.90237 11.6834 3.29289 11.2929C3.68342 10.9024 4.31658 10.9024 4.70711 11.2929L9 15.5858L19.2929 5.29289C19.6834 4.90237 20.3166 4.90237 20.7071 5.29289Z"
+          />
+        </svg>
+      </span>
+      Do you agree?
+    </label>
   </div>
   <div
     class="FieldGroup__item"
   >
-    <div
-      class="emotion-5"
+    <label
+      class="emotion-3"
       data-test-id="cf-ui-checkbox"
+      for="reallyAgree"
     >
-      <label
-        class="emotion-3"
-        data-test-id="cf-ui-base-checkbox"
-        for="reallyAgree"
+      <input
+        class="emotion-0"
+        id="reallyAgree"
+        role="checkbox"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="emotion-2"
       >
-        <input
-          aria-checked="false"
-          aria-label="Do you really agree?"
-          class="emotion-0"
-          id="reallyAgree"
-          role="checkbox"
-          type="checkbox"
-          value=""
-        />
-        <span
-          class="emotion-2"
+        <svg
+          aria-hidden="true"
+          class="emotion-1"
+          data-test-id="cf-ui-icon"
+          viewBox="0 0 24 24"
         >
-          <svg
-            aria-hidden="true"
-            class="emotion-1"
-            data-test-id="cf-ui-icon"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M20.7071 5.29289C21.0976 5.68342 21.0976 6.31658 20.7071 6.70711L9.70711 17.7071C9.51957 17.8946 9.26522 18 9 18C8.73478 18 8.48043 17.8946 8.29289 17.7071L3.29289 12.7071C2.90237 12.3166 2.90237 11.6834 3.29289 11.2929C3.68342 10.9024 4.31658 10.9024 4.70711 11.2929L9 15.5858L19.2929 5.29289C19.6834 4.90237 20.3166 4.90237 20.7071 5.29289Z"
-            />
-          </svg>
-        </span>
-      </label>
-      <label
-        class="emotion-4"
-        data-test-id="cf-ui-form-label"
-        for="reallyAgree"
-      >
-        Do you really agree?
-      </label>
-    </div>
+          <path
+            d="M20.7071 5.29289C21.0976 5.68342 21.0976 6.31658 20.7071 6.70711L9.70711 17.7071C9.51957 17.8946 9.26522 18 9 18C8.73478 18 8.48043 17.8946 8.29289 17.7071L3.29289 12.7071C2.90237 12.3166 2.90237 11.6834 3.29289 11.2929C3.68342 10.9024 4.31658 10.9024 4.70711 11.2929L9 15.5858L19.2929 5.29289C19.6834 4.90237 20.3166 4.90237 20.7071 5.29289Z"
+          />
+        </svg>
+      </span>
+      Do you really agree?
+    </label>
   </div>
 </div>
 `;
 
 exports[`renders the component children in a row 1`] = `
-.emotion-5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
 .emotion-0 {
   cursor: pointer;
   height: 1rem;
@@ -221,10 +176,14 @@ exports[`renders the component children in a row 1`] = `
 }
 
 .emotion-3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  margin: 0;
+  margin-bottom: 0.75rem;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-weight: 400;
+  color: #111B2B;
+  font-size: 0.875rem;
+  display: inline-block;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -235,7 +194,6 @@ exports[`renders the component children in a row 1`] = `
   display: inline-flex;
   position: relative;
   margin: 0;
-  margin-right: 0.5rem;
 }
 
 .emotion-2 {
@@ -255,6 +213,7 @@ exports[`renders the component children in a row 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin-right: 0.5rem;
   width: 1rem;
   background-color: #ffffff;
   border-radius: 4px;
@@ -264,23 +223,22 @@ exports[`renders the component children in a row 1`] = `
   fill: #ffffff;
 }
 
+input:indeterminate + .emotion-2,
+input:checked + .emotion-2 {
+  background-color: #0059C8;
+  border-color: #0059C8;
+}
+
+input:indeterminate + .emotion-2 svg,
+input:checked + .emotion-2 svg {
+  fill: #ffffff;
+}
+
 .emotion-1 {
   display: inline-block;
   fill: #ffffff;
   height: 16px;
   width: 16px;
-}
-
-.emotion-4 {
-  margin: 0;
-  margin-bottom: 0.75rem;
-  padding: 0;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  font-weight: 400;
-  color: #111B2B;
-  font-size: 0.875rem;
-  display: inline-block;
-  margin: 0;
 }
 
 <div
@@ -290,108 +248,71 @@ exports[`renders the component children in a row 1`] = `
   <div
     class="FieldGroup__item"
   >
-    <div
-      class="emotion-5"
+    <label
+      class="emotion-3"
       data-test-id="cf-ui-checkbox"
+      for="agree"
     >
-      <label
-        class="emotion-3"
-        data-test-id="cf-ui-base-checkbox"
-        for="agree"
+      <input
+        class="emotion-0"
+        id="agree"
+        role="checkbox"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="emotion-2"
       >
-        <input
-          aria-checked="false"
-          aria-label="Do you agree?"
-          class="emotion-0"
-          id="agree"
-          role="checkbox"
-          type="checkbox"
-          value=""
-        />
-        <span
-          class="emotion-2"
+        <svg
+          aria-hidden="true"
+          class="emotion-1"
+          data-test-id="cf-ui-icon"
+          viewBox="0 0 24 24"
         >
-          <svg
-            aria-hidden="true"
-            class="emotion-1"
-            data-test-id="cf-ui-icon"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M20.7071 5.29289C21.0976 5.68342 21.0976 6.31658 20.7071 6.70711L9.70711 17.7071C9.51957 17.8946 9.26522 18 9 18C8.73478 18 8.48043 17.8946 8.29289 17.7071L3.29289 12.7071C2.90237 12.3166 2.90237 11.6834 3.29289 11.2929C3.68342 10.9024 4.31658 10.9024 4.70711 11.2929L9 15.5858L19.2929 5.29289C19.6834 4.90237 20.3166 4.90237 20.7071 5.29289Z"
-            />
-          </svg>
-        </span>
-      </label>
-      <label
-        class="emotion-4"
-        data-test-id="cf-ui-form-label"
-        for="agree"
-      >
-        Do you agree?
-      </label>
-    </div>
+          <path
+            d="M20.7071 5.29289C21.0976 5.68342 21.0976 6.31658 20.7071 6.70711L9.70711 17.7071C9.51957 17.8946 9.26522 18 9 18C8.73478 18 8.48043 17.8946 8.29289 17.7071L3.29289 12.7071C2.90237 12.3166 2.90237 11.6834 3.29289 11.2929C3.68342 10.9024 4.31658 10.9024 4.70711 11.2929L9 15.5858L19.2929 5.29289C19.6834 4.90237 20.3166 4.90237 20.7071 5.29289Z"
+          />
+        </svg>
+      </span>
+      Do you agree?
+    </label>
   </div>
   <div
     class="FieldGroup__item"
   >
-    <div
-      class="emotion-5"
+    <label
+      class="emotion-3"
       data-test-id="cf-ui-checkbox"
+      for="reallyAgree"
     >
-      <label
-        class="emotion-3"
-        data-test-id="cf-ui-base-checkbox"
-        for="reallyAgree"
+      <input
+        class="emotion-0"
+        id="reallyAgree"
+        role="checkbox"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="emotion-2"
       >
-        <input
-          aria-checked="false"
-          aria-label="Do you really agree?"
-          class="emotion-0"
-          id="reallyAgree"
-          role="checkbox"
-          type="checkbox"
-          value=""
-        />
-        <span
-          class="emotion-2"
+        <svg
+          aria-hidden="true"
+          class="emotion-1"
+          data-test-id="cf-ui-icon"
+          viewBox="0 0 24 24"
         >
-          <svg
-            aria-hidden="true"
-            class="emotion-1"
-            data-test-id="cf-ui-icon"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M20.7071 5.29289C21.0976 5.68342 21.0976 6.31658 20.7071 6.70711L9.70711 17.7071C9.51957 17.8946 9.26522 18 9 18C8.73478 18 8.48043 17.8946 8.29289 17.7071L3.29289 12.7071C2.90237 12.3166 2.90237 11.6834 3.29289 11.2929C3.68342 10.9024 4.31658 10.9024 4.70711 11.2929L9 15.5858L19.2929 5.29289C19.6834 4.90237 20.3166 4.90237 20.7071 5.29289Z"
-            />
-          </svg>
-        </span>
-      </label>
-      <label
-        class="emotion-4"
-        data-test-id="cf-ui-form-label"
-        for="reallyAgree"
-      >
-        Do you really agree?
-      </label>
-    </div>
+          <path
+            d="M20.7071 5.29289C21.0976 5.68342 21.0976 6.31658 20.7071 6.70711L9.70711 17.7071C9.51957 17.8946 9.26522 18 9 18C8.73478 18 8.48043 17.8946 8.29289 17.7071L3.29289 12.7071C2.90237 12.3166 2.90237 11.6834 3.29289 11.2929C3.68342 10.9024 4.31658 10.9024 4.70711 11.2929L9 15.5858L19.2929 5.29289C19.6834 4.90237 20.3166 4.90237 20.7071 5.29289Z"
+          />
+        </svg>
+      </span>
+      Do you really agree?
+    </label>
   </div>
 </div>
 `;
 
 exports[`renders the component with an additional class name 1`] = `
-.emotion-5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
 .emotion-0 {
   cursor: pointer;
   height: 1rem;
@@ -411,10 +332,14 @@ exports[`renders the component with an additional class name 1`] = `
 }
 
 .emotion-3 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+  margin: 0;
+  margin-bottom: 0.75rem;
+  padding: 0;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+  font-weight: 400;
+  color: #111B2B;
+  font-size: 0.875rem;
+  display: inline-block;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -425,7 +350,6 @@ exports[`renders the component with an additional class name 1`] = `
   display: inline-flex;
   position: relative;
   margin: 0;
-  margin-right: 0.5rem;
 }
 
 .emotion-2 {
@@ -445,12 +369,24 @@ exports[`renders the component with an additional class name 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
+  margin-right: 0.5rem;
   width: 1rem;
   background-color: #ffffff;
   border-radius: 4px;
 }
 
 .emotion-2 svg {
+  fill: #ffffff;
+}
+
+input:indeterminate + .emotion-2,
+input:checked + .emotion-2 {
+  background-color: #0059C8;
+  border-color: #0059C8;
+}
+
+input:indeterminate + .emotion-2 svg,
+input:checked + .emotion-2 svg {
   fill: #ffffff;
 }
 
@@ -461,18 +397,6 @@ exports[`renders the component with an additional class name 1`] = `
   width: 16px;
 }
 
-.emotion-4 {
-  margin: 0;
-  margin-bottom: 0.75rem;
-  padding: 0;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
-  font-weight: 400;
-  color: #111B2B;
-  font-size: 0.875rem;
-  display: inline-block;
-  margin: 0;
-}
-
 <div
   class="FieldGroup my-extra-class"
   data-test-id="cf-ui-field-group"
@@ -480,92 +404,66 @@ exports[`renders the component with an additional class name 1`] = `
   <div
     class="FieldGroup__item"
   >
-    <div
-      class="emotion-5"
+    <label
+      class="emotion-3"
       data-test-id="cf-ui-checkbox"
+      for="agree"
     >
-      <label
-        class="emotion-3"
-        data-test-id="cf-ui-base-checkbox"
-        for="agree"
+      <input
+        class="emotion-0"
+        id="agree"
+        role="checkbox"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="emotion-2"
       >
-        <input
-          aria-checked="false"
-          aria-label="Do you agree?"
-          class="emotion-0"
-          id="agree"
-          role="checkbox"
-          type="checkbox"
-          value=""
-        />
-        <span
-          class="emotion-2"
+        <svg
+          aria-hidden="true"
+          class="emotion-1"
+          data-test-id="cf-ui-icon"
+          viewBox="0 0 24 24"
         >
-          <svg
-            aria-hidden="true"
-            class="emotion-1"
-            data-test-id="cf-ui-icon"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M20.7071 5.29289C21.0976 5.68342 21.0976 6.31658 20.7071 6.70711L9.70711 17.7071C9.51957 17.8946 9.26522 18 9 18C8.73478 18 8.48043 17.8946 8.29289 17.7071L3.29289 12.7071C2.90237 12.3166 2.90237 11.6834 3.29289 11.2929C3.68342 10.9024 4.31658 10.9024 4.70711 11.2929L9 15.5858L19.2929 5.29289C19.6834 4.90237 20.3166 4.90237 20.7071 5.29289Z"
-            />
-          </svg>
-        </span>
-      </label>
-      <label
-        class="emotion-4"
-        data-test-id="cf-ui-form-label"
-        for="agree"
-      >
-        Do you agree?
-      </label>
-    </div>
+          <path
+            d="M20.7071 5.29289C21.0976 5.68342 21.0976 6.31658 20.7071 6.70711L9.70711 17.7071C9.51957 17.8946 9.26522 18 9 18C8.73478 18 8.48043 17.8946 8.29289 17.7071L3.29289 12.7071C2.90237 12.3166 2.90237 11.6834 3.29289 11.2929C3.68342 10.9024 4.31658 10.9024 4.70711 11.2929L9 15.5858L19.2929 5.29289C19.6834 4.90237 20.3166 4.90237 20.7071 5.29289Z"
+          />
+        </svg>
+      </span>
+      Do you agree?
+    </label>
   </div>
   <div
     class="FieldGroup__item"
   >
-    <div
-      class="emotion-5"
+    <label
+      class="emotion-3"
       data-test-id="cf-ui-checkbox"
+      for="reallyAgree"
     >
-      <label
-        class="emotion-3"
-        data-test-id="cf-ui-base-checkbox"
-        for="reallyAgree"
+      <input
+        class="emotion-0"
+        id="reallyAgree"
+        role="checkbox"
+        type="checkbox"
+        value=""
+      />
+      <span
+        class="emotion-2"
       >
-        <input
-          aria-checked="false"
-          aria-label="Do you really agree?"
-          class="emotion-0"
-          id="reallyAgree"
-          role="checkbox"
-          type="checkbox"
-          value=""
-        />
-        <span
-          class="emotion-2"
+        <svg
+          aria-hidden="true"
+          class="emotion-1"
+          data-test-id="cf-ui-icon"
+          viewBox="0 0 24 24"
         >
-          <svg
-            aria-hidden="true"
-            class="emotion-1"
-            data-test-id="cf-ui-icon"
-            viewBox="0 0 24 24"
-          >
-            <path
-              d="M20.7071 5.29289C21.0976 5.68342 21.0976 6.31658 20.7071 6.70711L9.70711 17.7071C9.51957 17.8946 9.26522 18 9 18C8.73478 18 8.48043 17.8946 8.29289 17.7071L3.29289 12.7071C2.90237 12.3166 2.90237 11.6834 3.29289 11.2929C3.68342 10.9024 4.31658 10.9024 4.70711 11.2929L9 15.5858L19.2929 5.29289C19.6834 4.90237 20.3166 4.90237 20.7071 5.29289Z"
-            />
-          </svg>
-        </span>
-      </label>
-      <label
-        class="emotion-4"
-        data-test-id="cf-ui-form-label"
-        for="reallyAgree"
-      >
-        Do you really agree?
-      </label>
-    </div>
+          <path
+            d="M20.7071 5.29289C21.0976 5.68342 21.0976 6.31658 20.7071 6.70711L9.70711 17.7071C9.51957 17.8946 9.26522 18 9 18C8.73478 18 8.48043 17.8946 8.29289 17.7071L3.29289 12.7071C2.90237 12.3166 2.90237 11.6834 3.29289 11.2929C3.68342 10.9024 4.31658 10.9024 4.70711 11.2929L9 15.5858L19.2929 5.29289C19.6834 4.90237 20.3166 4.90237 20.7071 5.29289Z"
+          />
+        </svg>
+      </span>
+      Do you really agree?
+    </label>
   </div>
 </div>
 `;

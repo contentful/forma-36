@@ -3,7 +3,7 @@ import type { CSSObject } from '@emotion/serialize';
 import type { GhostCheckboxProps } from './GhostCheckbox';
 import tokens from '@contentful/f36-tokens';
 
-type stylesArgs = Omit<GhostCheckboxProps, 'type'>;
+type stylesArgs = Pick<GhostCheckboxProps, 'isDisabled'>;
 
 const getBaseGhostStyles = ({ isDisabled }): CSSObject => ({
   alignItems: 'center',
@@ -13,10 +13,11 @@ const getBaseGhostStyles = ({ isDisabled }): CSSObject => ({
   display: 'inline-flex',
   height: tokens.spacingM,
   justifyContent: 'center',
+  marginRight: tokens.spacingXs,
   width: tokens.spacingM,
 });
 
-const getCheckboxStyles = ({ isChecked, isDisabled, isIndeterminate }) => {
+const getCheckboxStyles = ({ isDisabled }) => {
   const baseStyle = {
     ...getBaseGhostStyles({ isDisabled }),
     backgroundColor: !isDisabled ? tokens.colorWhite : tokens.gray300,
@@ -24,20 +25,19 @@ const getCheckboxStyles = ({ isChecked, isDisabled, isIndeterminate }) => {
     '& svg': {
       fill: !isDisabled ? tokens.colorWhite : tokens.gray300,
     },
-  };
-
-  const checkedStyle = {
-    backgroundColor: !isDisabled ? tokens.blue600 : tokens.gray300,
-    borderColor: !isDisabled ? tokens.blue600 : tokens.gray300,
-    '& svg': {
-      fill: !isDisabled ? tokens.colorWhite : tokens.gray600,
+    'input:indeterminate + &, input:checked + &': {
+      backgroundColor: !isDisabled ? tokens.blue600 : tokens.gray300,
+      borderColor: !isDisabled ? tokens.blue600 : tokens.gray300,
+      '& svg': {
+        fill: !isDisabled ? tokens.colorWhite : tokens.gray600,
+      },
     },
   };
 
-  return css([baseStyle, (isIndeterminate || isChecked) && checkedStyle]);
+  return css(baseStyle);
 };
 
-const getRadioStyles = ({ isChecked, isDisabled }) => {
+const getRadioStyles = ({ isDisabled }) => {
   const baseBefore = {
     content: '""',
     borderRadius: '50%',
@@ -50,21 +50,22 @@ const getRadioStyles = ({ isChecked, isDisabled }) => {
     ...getBaseGhostStyles({ isDisabled }),
     backgroundColor: !isDisabled ? tokens.colorWhite : tokens.gray300,
     borderRadius: '50%',
-  };
-
-  const checkedStyle = {
-    backgroundColor: !isDisabled ? tokens.blue600 : tokens.gray300,
-    borderColor: !isDisabled ? tokens.blue600 : tokens.gray300,
     '&:before': {
       ...baseBefore,
-      backgroundColor: !isDisabled ? tokens.colorWhite : tokens.gray600,
+    },
+    'input:checked + &': {
+      backgroundColor: !isDisabled ? tokens.blue600 : tokens.gray300,
+      borderColor: !isDisabled ? tokens.blue600 : tokens.gray300,
+      '&:before': {
+        backgroundColor: !isDisabled ? tokens.colorWhite : tokens.gray600,
+      },
     },
   };
 
-  return css([baseStyle, isChecked && checkedStyle]);
+  return css(baseStyle);
 };
 
-const getSwitchStyles = ({ isChecked, isDisabled }) => {
+const getSwitchStyles = ({ isDisabled }) => {
   const baseStyle: CSSObject = {
     ...getBaseGhostStyles({ isDisabled }),
     background: tokens.gray600,
@@ -82,13 +83,12 @@ const getSwitchStyles = ({ isChecked, isDisabled }) => {
       transition: `transform ${tokens.transitionEasingDefault} ${tokens.transitionDurationDefault}`,
       width: tokens.spacingS,
     },
-  };
-
-  const checkedStyle: CSSObject = {
-    background: tokens.blue600,
-    borderColor: tokens.blue600,
-    '&:before': {
-      transform: `translateX(${tokens.spacingM})`,
+    'input:checked + &': {
+      background: tokens.blue600,
+      borderColor: tokens.blue600,
+      '&:before': {
+        transform: `translateX(${tokens.spacingM})`,
+      },
     },
   };
 
@@ -103,19 +103,15 @@ const getSwitchStyles = ({ isChecked, isDisabled }) => {
     },
   };
 
-  return css([
-    baseStyle,
-    isChecked && checkedStyle,
-    isDisabled && disabledStyle,
-  ]);
+  return css([baseStyle, isDisabled && disabledStyle]);
 };
 
 const getStyles = (args: stylesArgs) => {
-  const { isChecked, isDisabled, isIndeterminate } = args;
+  const { isDisabled } = args;
   return {
-    radio: getRadioStyles({ isChecked, isDisabled }),
-    checkbox: getCheckboxStyles({ isChecked, isDisabled, isIndeterminate }),
-    switch: getSwitchStyles({ isChecked, isDisabled }),
+    radio: getRadioStyles({ isDisabled }),
+    checkbox: getCheckboxStyles({ isDisabled }),
+    switch: getSwitchStyles({ isDisabled }),
   };
 };
 

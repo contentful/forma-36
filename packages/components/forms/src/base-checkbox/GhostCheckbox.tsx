@@ -5,12 +5,12 @@ import getStyles from './GhostCheckbox.styles';
 
 export type GhostCheckboxProps = Pick<
   BaseCheckboxInternalProps,
-  'type' | 'isIndeterminate' | 'isChecked' | 'isDisabled'
+  'type' | 'isIndeterminate' | 'isDisabled'
 >;
 
 export const GhostCheckbox = (props: GhostCheckboxProps) => {
-  const { type, isIndeterminate, isChecked, isDisabled } = props;
-  const styles = getStyles({ isChecked, isDisabled, isIndeterminate });
+  const { type, isIndeterminate, isDisabled } = props;
+  const styles = getStyles({ isDisabled });
 
   if (type === 'switch') {
     return (
