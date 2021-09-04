@@ -85,25 +85,23 @@ function ModalExample() {
   return (
     <React.Fragment>
       <Form>
-        <FieldGroup row>
-          <Button
-            variant="positive"
-            onClick={() => {
-              setPosition('top');
-              setShown(true);
-            }}
-          >
-            Show top modal
-          </Button>
-          <Button
-            onClick={() => {
-              setPosition('center');
-              setShown(true);
-            }}
-          >
-            Show center modal
-          </Button>
-        </FieldGroup>
+        <Button
+          variant="positive"
+          onClick={() => {
+            setPosition('top');
+            setShown(true);
+          }}
+        >
+          Show top modal
+        </Button>
+        <Button
+          onClick={() => {
+            setPosition('center');
+            setShown(true);
+          }}
+        >
+          Show center modal
+        </Button>
       </Form>
       <Modal title="Centered modal" isShown={isShown} position={position}>
         {() => (

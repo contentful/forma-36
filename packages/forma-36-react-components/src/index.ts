@@ -55,6 +55,7 @@ export {
   HelpText,
   ValidationMessage,
   Select,
+  Form,
 } from '@contentful/f36-forms';
 export type {
   CheckboxProps,
@@ -67,6 +68,7 @@ export type {
   ValidationMessageProps,
   HelpTextProps,
   SelectProps,
+  FormProps,
 } from '@contentful/f36-forms';
 export { Pill } from '@contentful/f36-pill';
 export type { PillProps } from '@contentful/f36-pill';
@@ -125,7 +127,6 @@ export type {
   RelativeDateTimeProps,
 } from '@contentful/f36-datetime';
 export * from './components/EntityList';
-export * from './components/Form';
 export * from './components/Workbench';
 
 // -- Add imports above this line (required by plopfile.js) --
