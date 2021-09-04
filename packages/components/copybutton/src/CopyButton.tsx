@@ -44,7 +44,7 @@ export interface CopyButtonProps extends CommonProps {
    * Allows setting size of the copy button to small
    * @default 'default'
    */
-  size: 'small' | 'default';
+  size?: 'small' | 'default';
 }
 
 function _CopyButton(props: CopyButtonProps, ref: React.Ref<HTMLDivElement>) {
