@@ -9,6 +9,8 @@ import { CommonProps, mergeRefs } from '@contentful/f36-core';
 import { Popover, PopoverProps } from '@contentful/f36-popover';
 import { MenuContextProvider, MenuContextType } from './MenuContext';
 
+const MENU_ITEMS_SELECTOR = '[role="menuitem"]:not(:disabled)';
+
 export interface MenuProps
   extends CommonProps,
     Omit<PopoverProps, 'autoFocus'> {
@@ -51,18 +53,21 @@ export function Menu(props: MenuProps) {
 
   const { focusedIndex, handleArrowsKeyDown } = useArrowKeyNavigation({
     itemsContainerRef: menuListRef,
-    itemsSelector: '[role="menuitem"]',
+    itemsSelector: MENU_ITEMS_SELECTOR,
   });
 
   useEffect(() => {
     if (isOpen && menuListRef.current) {
       const availableElements = menuListRef.current.querySelectorAll(
-        '[role="menuitem"]',
+        MENU_ITEMS_SELECTOR,
       );
 
-      if (availableElements.length > 0) {
+      if (
+        availableElements.length > 0 &&
+        focusedIndex < availableElements.length
+      ) {
         (availableElements[focusedIndex] as HTMLElement).focus({
-          preventScroll: true,
+          preventScroll: false,
         });
       }
     }
