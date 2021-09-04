@@ -79,7 +79,7 @@ const getStyles = ({ as, isDisabled, isInvalid, size }) => ({
   }),
 
   inputWithIcon: css({
-    paddingLeft: size === 'small' ? '32px' : '38px',
+    paddingLeft: size === 'small' ? tokens.spacingXl : '38px',
   }),
 
   iconPlaceholder: css({
