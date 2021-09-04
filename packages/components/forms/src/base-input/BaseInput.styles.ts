@@ -9,13 +9,13 @@ const sizeToStyles = ({ size }): CSSObject => {
         fontSize: tokens.fontSizeM,
         lineHeight: tokens.lineHeightM,
         padding: `${tokens.spacing2Xs} ${tokens.spacingXs}`,
-        minHeight: `32px`,
+        height: `32px`,
       };
     default:
       return {
         fontSize: tokens.fontSizeM,
         lineHeight: tokens.lineHeightM,
-        minHeight: `40px`,
+        height: `40px`,
       };
   }
 };

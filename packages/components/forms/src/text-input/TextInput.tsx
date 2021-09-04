@@ -21,6 +21,7 @@ export const _TextInput = (
     isReadOnly,
     withCopyButton,
     onCopy,
+    size,
     ...otherProps
   }: TextInputProps,
   ref: React.Ref<HTMLInputElement>,
@@ -66,6 +67,7 @@ export const _TextInput = (
         className={inputClass}
         value={value}
         defaultValue={defaultValue}
+        size={size}
       />
     );
   };
@@ -78,6 +80,7 @@ export const _TextInput = (
         onCopy={handleCopy}
         className={copyButtonStyles}
         isDisabled={isDisabled}
+        size={size}
       />
     </Flex>
   );

@@ -43,6 +43,20 @@ export const Overview = () => (
         id="input-1"
         placeholder="My great input"
         defaultValue="defaultValue"
+      />
+    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Text Input default small
+    </SectionHeading>
+
+    <Flex marginBottom="spacingL">
+      <TextInput
+        aria-label="Example label for input"
+        name="Input name"
+        id="input-1"
+        placeholder="My great input"
+        defaultValue="defaultValue"
         size="small"
       />
     </Flex>
@@ -62,6 +76,21 @@ export const Overview = () => (
     </Flex>
 
     <SectionHeading as="h3" marginBottom="spacingS">
+      Text Input disabled small
+    </SectionHeading>
+
+    <Flex marginBottom="spacingL">
+      <TextInput
+        aria-label="Example label for input"
+        name="Example name"
+        id="input-1"
+        placeholder="My great input"
+        isDisabled
+        size="small"
+      />
+    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
       Text Input invalid
     </SectionHeading>
 
@@ -72,6 +101,21 @@ export const Overview = () => (
         id="input-1"
         placeholder="My great input"
         isInvalid
+      />
+    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Text Input invalid
+    </SectionHeading>
+
+    <Flex marginBottom="spacingL">
+      <TextInput
+        aria-label="Example label for input"
+        name="Example name"
+        id="input-1"
+        placeholder="My great input"
+        isInvalid
+        size="small"
       />
     </Flex>
 
@@ -91,6 +135,22 @@ export const Overview = () => (
     </Flex>
 
     <SectionHeading as="h3" marginBottom="spacingS">
+      Text Input with icon as a placeholder small
+    </SectionHeading>
+
+    <Flex marginBottom="spacingL">
+      <TextInput
+        aria-label="Example label for input"
+        name="Example name"
+        value="Example value"
+        id="input-1"
+        placeholder="My great input"
+        icon={<SearchIcon />}
+        size="small"
+      />
+    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
       Text Input with copybutton
     </SectionHeading>
 
@@ -105,6 +165,21 @@ export const Overview = () => (
     </Flex>
 
     <SectionHeading as="h3" marginBottom="spacingS">
+      Text Input with copybutton small
+    </SectionHeading>
+
+    <Flex marginBottom="spacingL">
+      <TextInput
+        aria-label="Example label for input"
+        name="Example name"
+        id="input-1"
+        placeholder="My great input"
+        withCopyButton
+        size="small"
+      />
+    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
       Text Input with copybutton disabled
     </SectionHeading>
 
@@ -115,6 +190,21 @@ export const Overview = () => (
         placeholder="My great input"
         withCopyButton
         isDisabled
+      />
+    </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Text Input with copybutton disabled small
+    </SectionHeading>
+
+    <Flex marginBottom="spacingL">
+      <TextInput
+        name="Example name"
+        id="input-1"
+        placeholder="My great input"
+        withCopyButton
+        isDisabled
+        size="small"
       />
     </Flex>
   </Flex>

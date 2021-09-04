@@ -1,12 +1,27 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
+import type { CSSObject } from '@emotion/serialize';
 
-export const getStyles = () => ({
+const sizeToStyles = ({ size }): CSSObject => {
+  switch (size) {
+    case 'small':
+      return {
+        height: `32px`,
+        width: `32px`,
+      };
+    default:
+      return {
+        height: `40px`,
+        width: `40px`,
+      };
+  }
+};
+
+export const getStyles = ({ size }) => ({
   wrapper: css({
     display: 'inline-block',
-    height: `calc(1rem * (40 / ${tokens.fontBaseDefault}))`,
     position: 'relative',
-    width: `calc(1rem * (40 / ${tokens.fontBaseDefault}))`,
+    ...sizeToStyles({ size }),
   }),
   copyButton: css({
     alignItems: 'center',
