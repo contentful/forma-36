@@ -11,6 +11,8 @@ import { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
 import { useFormControl } from '../form-control/FormControlContext';
 import { getSelectStyles } from './Select.styles';
 
+export type SelectSize = 'small' | 'default';
+
 export type SelectInternalProps = CommonProps & {
   isRequired?: boolean;
   isInvalid?: boolean;
@@ -18,6 +20,7 @@ export type SelectInternalProps = CommonProps & {
   onChange?: ChangeEventHandler<HTMLSelectElement>;
   children: ReactNode;
   willBlurOnEsc?: boolean;
+  size?: SelectSize;
 };
 
 export type SelectProps = PropsWithHTMLElement<
@@ -37,6 +40,7 @@ const _Select = (
     testId = 'cf-ui-select',
     willBlurOnEsc = true,
     onKeyDown,
+    size = 'default',
     ...otherProps
   }: SelectProps,
   ref: React.Ref<HTMLSelectElement>,
@@ -48,7 +52,7 @@ const _Select = (
     id,
   });
 
-  const styles = getSelectStyles(formProps);
+  const styles = getSelectStyles({ isDisabled, isInvalid, size });
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent<HTMLSelectElement>) => {

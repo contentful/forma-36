@@ -1,10 +1,26 @@
 import tokens from '@contentful/f36-tokens';
 import { css, cx } from 'emotion';
+import type { CSSObject } from '@emotion/serialize';
 
-export function getSelectStyles(props: {
-  isInvalid?: boolean;
-  isDisabled?: boolean;
-}) {
+const sizeToStyles = ({ size }): CSSObject => {
+  switch (size) {
+    case 'small':
+      return {
+        fontSize: tokens.fontSizeM,
+        lineHeight: tokens.lineHeightM,
+        padding: `${tokens.spacing2Xs} ${tokens.spacingXs}`,
+        height: `32px`,
+      };
+    default:
+      return {
+        fontSize: tokens.fontSizeM,
+        lineHeight: tokens.lineHeightM,
+        height: `40px`,
+      };
+  }
+};
+
+export function getSelectStyles({ isInvalid, isDisabled, size }) {
   const select = css({
     width: '100%',
     display: 'block',
@@ -33,6 +49,7 @@ export function getSelectStyles(props: {
     cursor: 'pointer',
     '&:-moz-focusring': { color: 'transparent', textShadow: '0 0 0 #000' },
     '&::-ms-expand': { display: 'none' },
+    ...sizeToStyles({ size }),
   });
 
   const disabled = css({
@@ -43,7 +60,7 @@ export function getSelectStyles(props: {
   });
 
   const invalid = css({
-    borderColor: props.isDisabled ? tokens.red300 : tokens.red600,
+    borderColor: isDisabled ? tokens.red300 : tokens.red600,
     '&:focus': {
       borderColor: tokens.red600,
       boxShadow: tokens.glowNegative,
@@ -60,8 +77,8 @@ export function getSelectStyles(props: {
     ),
     select: cx(
       select,
-      props.isDisabled ? disabled : null,
-      props.isInvalid ? invalid : null,
+      isDisabled ? disabled : null,
+      isInvalid ? invalid : null,
     ),
     icon: css({
       position: 'absolute',
