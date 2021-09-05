@@ -17,11 +17,13 @@ export const Default: Story<MenuProps> = (args) => {
         <Button>Toggle</Button>
       </Menu.Trigger>
       <Menu.List>
-        {[...Array(5)].map((_, index) => (
+        {[...Array(3)].map((_, index) => (
           <Menu.Item key={index}>Item {index}</Menu.Item>
         ))}
-        {/* <Menu.Divider />
-        <Menu.Subheading >Some title</Menu.Subheading> */}
+        <Menu.Divider />
+        <Menu.Subheading>Some title</Menu.Subheading>
+        <Menu.Item>Item 3</Menu.Item>
+        <Menu.Item>Item 4</Menu.Item>
       </Menu.List>
     </Menu>
   );
@@ -54,7 +56,7 @@ export const WithMaxHeight: Story<MenuProps> = (args) => {
         <Button>Toggle</Button>
       </Menu.Trigger>
       <Menu.List
-        // You can pass a classname with maxHeight style or a style object itself
+        // You can pass a classname with maxHeight style or a style object directly
         style={{ maxHeight: '100px' }}
       >
         {[...Array(10)].map((_, index) => (

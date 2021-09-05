@@ -11,11 +11,13 @@ export const getMenuListStyles = () => ({
     top: 0,
     left: 0,
     backgroundColor: tokens.colorWhite,
+    borderBottom: `1px solid ${tokens.gray200}`,
   }),
   footerItem: css({
     position: 'sticky',
     bottom: 0,
     left: 0,
     backgroundColor: tokens.colorWhite,
+    borderTop: `1px solid ${tokens.gray200}`,
   }),
 });
