@@ -113,7 +113,7 @@ export function Menu(props: MenuProps) {
           _props.onKeyDown?.(event);
         },
       }),
-      getMenuListItemProps: (_props = {}) => ({
+      getMenuItemProps: (_props = {}) => ({
         ..._props,
         onClick: (event) => {
           _props.onClick?.(event);

@@ -1,7 +1,7 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 
-export const getMenuListItemStyles = () =>
+export const getMenuItemStyles = () =>
   css({
     display: 'block',
     width: '100%',

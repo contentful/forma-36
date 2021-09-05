@@ -18,10 +18,10 @@ export const Default: Story<MenuProps> = (args) => {
       </Menu.Trigger>
       <Menu.List>
         {[...Array(5)].map((_, index) => (
-          <Menu.ListItem key={index}>Item {index}</Menu.ListItem>
+          <Menu.Item key={index}>Item {index}</Menu.Item>
         ))}
-        {/* <Menu.ListSeparator />
-        <Menu.ListTitle >Some title</Menu.ListHeader> */}
+        {/* <Menu.Divider />
+        <Menu.Subheading >Some title</Menu.Subheading> */}
       </Menu.List>
     </Menu>
   );
@@ -34,14 +34,14 @@ export const WithDisabledItems: Story<MenuProps> = (args) => {
         <Button>Toggle</Button>
       </Menu.Trigger>
       <Menu.List>
-        <Menu.ListItem>Item 1</Menu.ListItem>
-        <Menu.ListItem>Item 2</Menu.ListItem>
-        <Menu.ListItem>Item 3</Menu.ListItem>
-        <Menu.ListItem disabled>Disabled item</Menu.ListItem>
-        <Menu.ListItem>Item 4</Menu.ListItem>
-        <Menu.ListItem>Item 5</Menu.ListItem>
-        <Menu.ListItem disabled>Disabled item</Menu.ListItem>
-        <Menu.ListItem>Item 6</Menu.ListItem>
+        <Menu.Item>Item 1</Menu.Item>
+        <Menu.Item>Item 2</Menu.Item>
+        <Menu.Item>Item 3</Menu.Item>
+        <Menu.Item disabled>Disabled item</Menu.Item>
+        <Menu.Item>Item 4</Menu.Item>
+        <Menu.Item>Item 5</Menu.Item>
+        <Menu.Item disabled>Disabled item</Menu.Item>
+        <Menu.Item>Item 6</Menu.Item>
       </Menu.List>
     </Menu>
   );
@@ -58,7 +58,7 @@ export const WithMaxHeight: Story<MenuProps> = (args) => {
         style={{ maxHeight: '100px' }}
       >
         {[...Array(10)].map((_, index) => (
-          <Menu.ListItem key={index}>Item {index}</Menu.ListItem>
+          <Menu.Item key={index}>Item {index}</Menu.Item>
         ))}
       </Menu.List>
     </Menu>
@@ -72,12 +72,12 @@ export const WithStickyHeaderAndFooter: Story<MenuProps> = (args) => {
         <Button>Toggle</Button>
       </Menu.Trigger>
       <Menu.List
-        headerItem={<Menu.ListItem>Item header</Menu.ListItem>}
-        footerItem={<Menu.ListItem>Item footer</Menu.ListItem>}
+        headerItem={<Menu.Item>Item header</Menu.Item>}
+        footerItem={<Menu.Item>Item footer</Menu.Item>}
         style={{ maxHeight: '200px' }}
       >
         {[...Array(10)].map((_, index) => (
-          <Menu.ListItem key={index}>Item {index}</Menu.ListItem>
+          <Menu.Item key={index}>Item {index}</Menu.Item>
         ))}
       </Menu.List>
     </Menu>

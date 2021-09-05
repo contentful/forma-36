@@ -1,15 +1,15 @@
 import { Menu as OriginalMenu } from './Menu';
 import { MenuList } from './MenuList/MenuList';
-import { MenuListItem } from './MenuListItem/MenuListItem';
+import { MenuItem } from './MenuItem/MenuItem';
 import { MenuTrigger } from './MenuTrigger/MenuTrigger';
 
 type CompoundMenu = typeof OriginalMenu & {
   List: typeof MenuList;
-  ListItem: typeof MenuListItem;
+  Item: typeof MenuItem;
   Trigger: typeof MenuTrigger;
 };
 
 export const Menu = OriginalMenu as CompoundMenu;
 Menu.List = MenuList;
-Menu.ListItem = MenuListItem;
+Menu.Item = MenuItem;
 Menu.Trigger = MenuTrigger;

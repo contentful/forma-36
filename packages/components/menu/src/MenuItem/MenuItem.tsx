@@ -7,33 +7,33 @@ import {
 } from '@contentful/f36-core';
 import { useMenuContext } from '../MenuContext';
 import { useId } from '@contentful/f36-core';
-import { getMenuListItemStyles } from './MenuListItem.styles';
+import { getMenuItemStyles } from './MenuItem.styles';
 
 const DEFAULT_TAG = 'button';
 
-interface MenuListItemInternalProps extends CommonProps {
+interface MenuItemInternalProps extends CommonProps {
   children?: React.ReactNode;
   as?: 'a' | 'button';
 }
 
-export type MenuListItemProps<
+export type MenuItemProps<
   E extends React.ElementType = typeof DEFAULT_TAG
-> = PolymorphicProps<MenuListItemInternalProps, E>;
+> = PolymorphicProps<MenuItemInternalProps, E>;
 
-function _MenuListItem<E extends React.ElementType = typeof DEFAULT_TAG>(
-  props: MenuListItemProps<E>,
+function _MenuItem<E extends React.ElementType = typeof DEFAULT_TAG>(
+  props: MenuItemProps<E>,
   ref: React.Ref<any>,
 ) {
-  const id = useId(null, 'menu-list-item');
+  const id = useId(null, 'menu-item');
   const testId = props.testId || `cf-ui-${id}`;
-  const styles = getMenuListItemStyles();
+  const styles = getMenuItemStyles();
 
-  const { getMenuListItemProps } = useMenuContext();
+  const { getMenuItemProps } = useMenuContext();
 
   const Element: React.ElementType = props.as ?? DEFAULT_TAG;
   return (
     <Element
-      {...getMenuListItemProps(props)}
+      {...getMenuItemProps(props)}
       className={cx(styles, props.className)}
       data-test-id={testId}
       ref={ref}
@@ -45,7 +45,7 @@ function _MenuListItem<E extends React.ElementType = typeof DEFAULT_TAG>(
   );
 }
 
-export const MenuListItem: PolymorphicComponent<
-  MenuListItemInternalProps,
+export const MenuItem: PolymorphicComponent<
+  MenuItemInternalProps,
   typeof DEFAULT_TAG
-> = React.forwardRef(_MenuListItem);
+> = React.forwardRef(_MenuItem);

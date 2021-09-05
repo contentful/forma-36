@@ -9,7 +9,7 @@ export type MenuContextType = {
     _props: ComponentPropsWithRef<'div'>,
     _ref: React.Ref<HTMLDivElement>,
   ) => ComponentPropsWithRef<'div'>;
-  getMenuListItemProps: (
+  getMenuItemProps: (
     _props: ComponentPropsWithRef<any>,
   ) => ComponentPropsWithRef<any>;
 };
