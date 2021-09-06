@@ -12,7 +12,7 @@ export default {
 
 export const Default: Story<MenuProps> = (args) => {
   return (
-    <Menu {...args}>
+    <Menu defaultIsOpen {...args}>
       <Menu.Trigger>
         <Button>Toggle</Button>
       </Menu.Trigger>
@@ -31,7 +31,7 @@ export const Default: Story<MenuProps> = (args) => {
 
 export const WithDisabledItems: Story<MenuProps> = (args) => {
   return (
-    <Menu {...args}>
+    <Menu defaultIsOpen {...args}>
       <Menu.Trigger>
         <Button>Toggle</Button>
       </Menu.Trigger>
@@ -51,7 +51,7 @@ export const WithDisabledItems: Story<MenuProps> = (args) => {
 
 export const WithMaxHeight: Story<MenuProps> = (args) => {
   return (
-    <Menu {...args}>
+    <Menu defaultIsOpen {...args}>
       <Menu.Trigger>
         <Button>Toggle</Button>
       </Menu.Trigger>
@@ -69,7 +69,7 @@ export const WithMaxHeight: Story<MenuProps> = (args) => {
 
 export const WithStickyHeaderAndFooter: Story<MenuProps> = (args) => {
   return (
-    <Menu {...args}>
+    <Menu defaultIsOpen {...args}>
       <Menu.Trigger>
         <Button>Toggle</Button>
       </Menu.Trigger>
