@@ -123,7 +123,7 @@ export {
   MenuDivider,
   MenuList,
   MenuTrigger,
-  MenuSubheading,
+  MenuSectionTitle,
   MenuItem,
 } from '@contentful/f36-menu';
 export type {
@@ -131,7 +131,7 @@ export type {
   MenuDividerProps,
   MenuListProps,
   MenuTriggerProps,
-  MenuSubheadingProps,
+  MenuSectionTitleProps,
   MenuItemProps,
 } from '@contentful/f36-menu';
 export * from './components/Autocomplete';

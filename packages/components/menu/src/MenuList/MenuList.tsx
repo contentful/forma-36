@@ -6,7 +6,7 @@ import { cx } from 'emotion';
 import { getMenuListStyles } from './MenuList.styles';
 
 interface MenuListInternalProps extends CommonProps {
-  children?: React.ReactNode;
+  children?: React.ReactElement[];
 
   /**
    * The item will be sticked to the top of MenuList
@@ -33,7 +33,10 @@ const _MenuList = (props: MenuListProps, ref: React.Ref<HTMLDivElement>) => {
 
   const { getMenuListProps } = useMenuContext();
 
-  const styles = getMenuListStyles();
+  const styles = getMenuListStyles({
+    hasStickyHeader: Boolean(headerItem),
+    hasStickyFooter: Boolean(footerItem),
+  });
 
   return (
     <Popover.Content

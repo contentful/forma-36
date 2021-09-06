@@ -6,6 +6,7 @@ import {
   PolymorphicProps,
 } from '@contentful/f36-core';
 import { useMenuContext } from '../MenuContext';
+import { TextLink } from '@contentful/f36-text-link';
 import { useId } from '@contentful/f36-core';
 import { getMenuItemStyles } from './MenuItem.styles';
 
@@ -30,15 +31,23 @@ function _MenuItem<E extends React.ElementType = typeof DEFAULT_TAG>(
 
   const { getMenuItemProps } = useMenuContext();
 
-  const Element: React.ElementType = props.as ?? DEFAULT_TAG;
+  let Element: React.ElementType = props.as ?? DEFAULT_TAG;
+  let className = cx(styles.root, styles.asButton, props.className);
+
+  if (Element === 'a') {
+    Element = TextLink;
+    className = cx(styles.root, props.className);
+  }
+
   return (
     <Element
       {...getMenuItemProps(props)}
-      className={cx(styles, props.className)}
+      className={className}
       data-test-id={testId}
       ref={ref}
       role="menuitem"
       tabIndex={-1}
+      as={undefined}
     >
       {props.children}
     </Element>

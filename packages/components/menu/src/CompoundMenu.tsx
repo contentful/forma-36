@@ -3,14 +3,14 @@ import { MenuList } from './MenuList/MenuList';
 import { MenuItem } from './MenuItem/MenuItem';
 import { MenuTrigger } from './MenuTrigger/MenuTrigger';
 import { MenuDivider } from './MenuDivider/MenuDivider';
-import { MenuSubheading } from './MenuSubheading/MenuSubheading';
+import { MenuSectionTitle } from './MenuSectionTitle/MenuSectionTitle';
 
 type CompoundMenu = typeof OriginalMenu & {
   List: typeof MenuList;
   Item: typeof MenuItem;
   Trigger: typeof MenuTrigger;
   Divider: typeof MenuDivider;
-  Subheading: typeof MenuSubheading;
+  SectionTitle: typeof MenuSectionTitle;
 };
 
 export const Menu = OriginalMenu as CompoundMenu;
@@ -18,4 +18,4 @@ Menu.List = MenuList;
 Menu.Item = MenuItem;
 Menu.Trigger = MenuTrigger;
 Menu.Divider = MenuDivider;
-Menu.Subheading = MenuSubheading;
+Menu.SectionTitle = MenuSectionTitle;

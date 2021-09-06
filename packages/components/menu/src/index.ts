@@ -8,5 +8,5 @@ export { MenuTrigger } from './MenuTrigger/MenuTrigger';
 export type { MenuTriggerProps } from './MenuTrigger/MenuTrigger';
 export { MenuDivider } from './MenuDivider/MenuDivider';
 export type { MenuDividerProps } from './MenuDivider/MenuDivider';
-export { MenuSubheading } from './MenuSubheading/MenuSubheading';
-export type { MenuSubheadingProps } from './MenuSubheading/MenuSubheading';
+export { MenuSectionTitle } from './MenuSectionTitle/MenuSectionTitle';
+export type { MenuSectionTitleProps } from './MenuSectionTitle/MenuSectionTitle';

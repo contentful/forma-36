@@ -4,6 +4,7 @@ import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Menu } from '../src';
 import type { MenuProps } from '../src';
 import { Button } from '@contentful/f36-button';
+import {} from '@contentful/f36-text-link';
 
 export default {
   component: Menu,
@@ -11,27 +12,47 @@ export default {
 } as Meta;
 
 export const Default: Story<MenuProps> = (args) => {
+  const [isOpen, setIsOpen] = React.useState(true);
   return (
-    <Menu defaultIsOpen {...args}>
+    <Menu
+      {...args}
+      isOpen={isOpen}
+      onOpen={() => {
+        setIsOpen(true);
+      }}
+      onClose={() => {
+        setIsOpen(false);
+      }}
+    >
       <Menu.Trigger>
         <Button>Toggle</Button>
       </Menu.Trigger>
       <Menu.List>
-        {[...Array(3)].map((_, index) => (
-          <Menu.Item key={index}>Item {index}</Menu.Item>
-        ))}
+        <Menu.SectionTitle>Entry Title</Menu.SectionTitle>
+        <Menu.Item>Embed exising entry</Menu.Item>
+        <Menu.Item>Create and embed exising entry</Menu.Item>
         <Menu.Divider />
-        <Menu.Subheading>Some title</Menu.Subheading>
-        <Menu.Item>Item 3</Menu.Item>
-        <Menu.Item>Item 4</Menu.Item>
+        <Menu.Item as="a" href="https://contentful.com" target="_blank">
+          About Contentful
+        </Menu.Item>
       </Menu.List>
     </Menu>
   );
 };
 
 export const WithDisabledItems: Story<MenuProps> = (args) => {
+  const [isOpen, setIsOpen] = React.useState(true);
   return (
-    <Menu defaultIsOpen {...args}>
+    <Menu
+      {...args}
+      isOpen={isOpen}
+      onOpen={() => {
+        setIsOpen(true);
+      }}
+      onClose={() => {
+        setIsOpen(false);
+      }}
+    >
       <Menu.Trigger>
         <Button>Toggle</Button>
       </Menu.Trigger>
@@ -50,8 +71,18 @@ export const WithDisabledItems: Story<MenuProps> = (args) => {
 };
 
 export const WithMaxHeight: Story<MenuProps> = (args) => {
+  const [isOpen, setIsOpen] = React.useState(true);
   return (
-    <Menu defaultIsOpen {...args}>
+    <Menu
+      {...args}
+      isOpen={isOpen}
+      onOpen={() => {
+        setIsOpen(true);
+      }}
+      onClose={() => {
+        setIsOpen(false);
+      }}
+    >
       <Menu.Trigger>
         <Button>Toggle</Button>
       </Menu.Trigger>
@@ -68,8 +99,18 @@ export const WithMaxHeight: Story<MenuProps> = (args) => {
 };
 
 export const WithStickyHeaderAndFooter: Story<MenuProps> = (args) => {
+  const [isOpen, setIsOpen] = React.useState(true);
   return (
-    <Menu defaultIsOpen {...args}>
+    <Menu
+      {...args}
+      isOpen={isOpen}
+      onOpen={() => {
+        setIsOpen(true);
+      }}
+      onClose={() => {
+        setIsOpen(false);
+      }}
+    >
       <Menu.Trigger>
         <Button>Toggle</Button>
       </Menu.Trigger>

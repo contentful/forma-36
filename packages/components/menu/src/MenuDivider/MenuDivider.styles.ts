@@ -6,6 +6,6 @@ export const getMenuDividerStyles = () =>
     border: 'none',
     width: '100%',
     height: '1px',
-    background: tokens.gray200,
-    margin: '8px 0',
+    background: tokens.gray300,
+    margin: `${tokens.spacingXs} 0`,
   });
