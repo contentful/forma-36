@@ -46,7 +46,9 @@ export { EmptyState } from '@contentful/f36-empty-state';
 export type { EmptyStateProps } from '@contentful/f36-empty-state';
 export {
   Checkbox,
+  CheckboxGroup,
   Radio,
+  RadioGroup,
   TextInput,
   Switch,
   Textarea,
@@ -55,10 +57,13 @@ export {
   HelpText,
   ValidationMessage,
   Select,
+  Form,
 } from '@contentful/f36-forms';
 export type {
   CheckboxProps,
+  CheckboxGroupProps,
   RadioProps,
+  RadioGroupProps,
   TextInputProps,
   SwitchProps,
   TextareaProps,
@@ -67,6 +72,7 @@ export type {
   ValidationMessageProps,
   HelpTextProps,
   SelectProps,
+  FormProps,
 } from '@contentful/f36-forms';
 export { Pill } from '@contentful/f36-pill';
 export type { PillProps } from '@contentful/f36-pill';
@@ -125,6 +131,5 @@ export type {
   RelativeDateTimeProps,
 } from '@contentful/f36-datetime';
 export * from './components/EntityList';
-export * from './components/Form';
 
 // -- Add imports above this line (required by plopfile.js) --

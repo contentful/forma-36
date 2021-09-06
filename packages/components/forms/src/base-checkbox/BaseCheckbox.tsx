@@ -36,7 +36,7 @@ function _BaseCheckbox(
     willBlurOnEsc = true,
     testId = 'cf-ui-base-checkbox',
     className = '',
-    defaultChecked = false,
+    defaultChecked = undefined,
     name,
     inputProps = {},
     children,
