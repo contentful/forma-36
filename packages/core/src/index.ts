@@ -1,3 +1,4 @@
+export * from './GlobalStyles';
 export * from './Primitive';
 export type {
   CommonProps,

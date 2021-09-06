@@ -23,7 +23,6 @@ export const HelpText = React.forwardRef<HTMLParagraphElement, HelpTextProps>(
         as="p"
         fontColor="gray500"
         fontSize="fontSizeM"
-        lineHeight="lineHeightDefault"
         testId={testId}
         marginTop="spacingXs"
         {...otherProps}

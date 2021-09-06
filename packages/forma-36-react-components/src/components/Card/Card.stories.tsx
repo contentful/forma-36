@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
-import { Heading, SectionHeading, Paragraph } from '@contentful/f36-typography';
+import {
+  Heading,
+  SectionHeading,
+  Paragraph,
+  Text,
+} from '@contentful/f36-typography';
 
 import { Card, CardProps } from './Card';
 
@@ -30,7 +35,7 @@ export const WithOnClick = (args: CardProps) => {
         onClick={() => setShow(!show)}
         style={{ textAlign: 'center' }}
       >
-        Click on this card
+        <Text>Click on this card</Text>
         <br />
         {show && (
           <span role="img" aria-label="sparkles">

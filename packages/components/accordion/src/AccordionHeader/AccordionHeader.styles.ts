@@ -18,7 +18,7 @@ const getHeaderStyles = ({ align }: StyleProps) =>
       fontFamily: tokens.fontStackPrimary,
       fontSize: tokens.fontSizeL,
       fontWeight: tokens.fontWeightDemiBold,
-      lineHeight: tokens.lineHeightDefault,
+      lineHeight: tokens.lineHeightL,
       color: tokens.gray800,
       width: '100%',
       minWidth: '9px',

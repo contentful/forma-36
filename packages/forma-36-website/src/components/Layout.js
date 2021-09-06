@@ -5,6 +5,7 @@ import { css } from '@emotion/core';
 import { useStaticQuery, graphql } from 'gatsby';
 import '@contentful/f36-components/dist/styles.css';
 import '@contentful/forma-36-fcss/dist/styles.css';
+import { GlobalStyles } from '@contentful/f36-core';
 import './Layout.css';
 
 import Header from './Header';
@@ -61,6 +62,7 @@ export default function Layout({ location, pageContext, children }) {
 
   return (
     <>
+      <GlobalStyles />
       <Helmet
         title={siteMetadata.title}
         meta={[

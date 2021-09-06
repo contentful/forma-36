@@ -24,7 +24,7 @@ export function ListItem({
         css({
           fontSize: tokens.fontSizeM,
           fontFamily: tokens.fontStackPrimary,
-          lineHeight: tokens.lineHeightDefault,
+          lineHeight: tokens.lineHeightL,
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           listStyle: (children as any).type === List ? 'none' : '',
         }),
