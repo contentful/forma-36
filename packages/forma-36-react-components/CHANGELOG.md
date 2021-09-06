@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.98.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.98.0...@contentful/forma-36-react-components@3.98.1) (2021-09-06)
+
+
+### Bug Fixes
+
+* **Modal:** story improvement & allow scrolling in ModalCofirm [] ([#1291](https://github.com/contentful/forma-36/issues/1291)) ([7285a0b](https://github.com/contentful/forma-36/commit/7285a0b0ba7abc16d4b81b6576babd2bed09e00a))
+
+
+
+
+
 # [3.98.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.97.1...@contentful/forma-36-react-components@3.98.0) (2021-09-02)
 
 
