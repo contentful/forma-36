@@ -32,9 +32,5 @@ export const getMenuItemStyles = () => {
         cursor: 'auto',
       },
     }),
-    asButton: css({
-      color: tokens.gray600,
-      textDecoration: 'none',
-    }),
   };
 };

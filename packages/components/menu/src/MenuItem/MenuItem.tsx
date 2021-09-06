@@ -32,17 +32,15 @@ function _MenuItem<E extends React.ElementType = typeof DEFAULT_TAG>(
   const { getMenuItemProps } = useMenuContext();
 
   let Element: React.ElementType = props.as ?? DEFAULT_TAG;
-  let className = cx(styles.root, styles.asButton, props.className);
 
   if (Element === 'a') {
     Element = TextLink;
-    className = cx(styles.root, props.className);
   }
 
   return (
     <Element
       {...getMenuItemProps(props)}
-      className={className}
+      className={cx(styles.root, props.className)}
       data-test-id={testId}
       ref={ref}
       role="menuitem"
