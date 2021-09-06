@@ -1,6 +1,5 @@
 import React from 'react';
 import tokens from '@contentful/f36-tokens';
-
 import { GridInternalProps } from '../src/Grid/Grid';
 import { Grid } from '../src';
 

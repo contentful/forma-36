@@ -26,7 +26,7 @@ export type BaseInputProps<
 
 function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
   props: BaseInputProps<E>,
-  ref: React.Ref<any>,
+  ref: React.Ref<HTMLInputElement | HTMLTextAreaElement>,
 ) {
   const {
     as = DEFAULT_TAG,
@@ -49,9 +49,10 @@ function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
     style,
     icon,
     defaultValue,
+    size = 'medium',
     ...otherProps
   } = props;
-  const styles = getInputStyles({ as, isDisabled, isInvalid });
+  const styles = getInputStyles({ as, isDisabled, isInvalid, size });
 
   const handleFocus = (e: FocusEvent) => {
     e.persist();
@@ -90,7 +91,7 @@ function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
   const iconContent = icon && (
     <Box as="span" className={styles.iconPlaceholder}>
       {React.cloneElement(icon, {
-        size: 'small',
+        size: size === 'small' ? 'tiny' : 'small',
         variant: 'muted',
         'aria-hidden': true,
       })}
@@ -122,6 +123,7 @@ function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
       onBlur={onBlur}
       onKeyDown={handleKeyDown}
       onFocus={handleFocus}
+      size={size}
     />
   );
 

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import tokens from '@contentful/f36-tokens';
+import { Text } from '@contentful/f36-typography';
 import { Flex, FlexInternalProps } from '../src/Flex/Flex';
 
 const styles = {
@@ -41,7 +42,7 @@ const DemoBox = ({ times }: { times?: number }) => {
           padding="spacingM"
           margin="spacingXs"
         >
-          Example element {i}
+          <Text fontColor="colorWhite">Example element {i}</Text>
         </Flex>,
       );
     }

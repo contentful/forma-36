@@ -1,15 +1,15 @@
 import React from 'react';
-import { fontStackPrimary } from '@contentful/f36-tokens';
+import { GlobalStyles } from '@contentful/f36-core';
 
 // Setup Decorators
 export const decorators = [
   (Story) => (
     <div
       style={{
-        fontFamily: fontStackPrimary,
         minWidth: '340px',
       }}
     >
+      <GlobalStyles />
       <Story />
     </div>
   ),

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import tokens from '@contentful/f36-tokens';
+import { Text } from '@contentful/f36-typography';
 import { Box, BoxInternalProps } from '../src/Box/Box';
 
 const styles = {
@@ -35,13 +36,17 @@ const DemoBox = ({ times }: { times?: number }) => {
     for (let i = 0; i < times; i++) {
       result.push(
         <Box style={styles.demoBox} padding="spacingM" margin="spacingXs">
-          Example element {i}
+          <Text fontColor="colorWhite">Example element {i}</Text>
         </Box>,
       );
     }
     return <>{result}</>;
   }
-  return <Box style={styles.demoBox}>Example element</Box>;
+  return (
+    <Box style={styles.demoBox}>
+      <Text fontColor="colorWhite">Example element</Text>
+    </Box>
+  );
 };
 
 interface Args extends BoxInternalProps {

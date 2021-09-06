@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { SectionHeading } from '@contentful/f36-typography';
-import { Checkbox, CheckboxProps } from '../src';
+import { Flex } from '@contentful/f36-core';
+import { Checkbox, CheckboxProps } from '../src/checkbox';
 
 export default {
   title: 'Form Elements/Checkbox',
@@ -16,7 +17,7 @@ export const Basic = (args: CheckboxProps) => {
   const [optionTwo, setOptionTwo] = useState(false);
 
   return (
-    <>
+    <Flex flexDirection="column">
       <Checkbox
         {...args}
         id="Checkbox1"
@@ -31,13 +32,46 @@ export const Basic = (args: CheckboxProps) => {
         isChecked={optionTwo}
         onChange={(e) => setOptionTwo((e.target as HTMLInputElement).checked)}
       />
-    </>
+    </Flex>
   );
 };
 
 Basic.args = {
   children: 'some label text',
   name: 'some name',
+};
+
+export const Indeterminate = () => {
+  const [checkedItems, setCheckedItems] = React.useState([false, false]);
+
+  const allChecked = checkedItems.every(Boolean);
+  const isIndeterminate = checkedItems.some(Boolean) && !allChecked;
+
+  return (
+    <>
+      <Checkbox
+        isChecked={allChecked}
+        isIndeterminate={isIndeterminate}
+        onChange={(e) => setCheckedItems([e.target.checked, e.target.checked])}
+      >
+        Parent Checkbox
+      </Checkbox>
+      <Flex flexDirection="column" paddingLeft="spacingL">
+        <Checkbox
+          isChecked={checkedItems[0]}
+          onChange={(e) => setCheckedItems([e.target.checked, checkedItems[1]])}
+        >
+          Child Checkbox 1
+        </Checkbox>
+        <Checkbox
+          isChecked={checkedItems[1]}
+          onChange={(e) => setCheckedItems([checkedItems[0], e.target.checked])}
+        >
+          Child Checkbox 2
+        </Checkbox>
+      </Flex>
+    </>
+  );
 };
 
 export const overview = () => (

@@ -93,6 +93,56 @@ export const Basic = () => {
           icon={<Icon as={icons.SearchIcon} />}
         />
       </Flex>
+
+      <Flex marginBottom="spacingM">
+        <BaseInput
+          name="someOtherOption"
+          aria-label="this is my label"
+          placeholder="placeholder"
+          id="3"
+          type="text"
+          as="input"
+          size="small"
+        />
+      </Flex>
+
+      <Flex marginBottom="spacingM">
+        <BaseInput
+          name="someOtherOption"
+          aria-label="this is my label"
+          placeholder="placeholder"
+          id="2"
+          type="text"
+          as="input"
+          isInvalid
+          size="small"
+        />
+      </Flex>
+
+      <Flex marginBottom="spacingM">
+        <BaseInput
+          name="someOtherOption"
+          aria-label="this is my label"
+          placeholder="placeholder"
+          id="1"
+          type="text"
+          as="input"
+          isDisabled
+          size="small"
+        />
+      </Flex>
+      <Flex marginBottom="spacingM">
+        <BaseInput
+          name="someOtherOption"
+          aria-label="this is my label"
+          placeholder="placeholder"
+          id="1"
+          type="text"
+          as="input"
+          icon={<Icon as={icons.SearchIcon} />}
+          size="small"
+        />
+      </Flex>
     </Flex>
   );
 };

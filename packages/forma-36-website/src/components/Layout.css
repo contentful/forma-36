@@ -1,26 +1,16 @@
 @import '~@contentful/f36-tokens/dist/css/index.css';
 
-* {
-  box-sizing: border-box;
-}
-
 body {
-  font-family: var(--font-stack-primary);
-  font-weight: var(--font-weight-normal);
-  font-size: 16px;
-  line-height: var(--line-height-default);
-  margin: 0;
   min-width: 1280px;
 }
 
 pre {
   margin: 0;
-  white-space: normal;
-  font-family: var(--font-stack-primary);
+  font-family: var(--font-stack-primary) !important;
 }
 
 pre.prism-code {
-  font-family: var(--font-stack-monospace);
+  font-family: var(--font-stack-monospace) !important;
 }
 
 .prism-code {
@@ -32,7 +22,6 @@ pre.prism-code {
 }
 
 code {
-  font-family: var(--font-stack-monospace);
   white-space: nowrap;
   font-weight: var(--font-weight-medium);
   background-color: var(--gray-200);

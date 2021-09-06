@@ -19,7 +19,7 @@ export function getStyles() {
       textDecoration: 'none',
       color: tokens.colorWhite,
       textAlign: 'center',
-      lineHeight: tokens.lineHeightDefault,
+      lineHeight: tokens.lineHeightM,
       padding: `${tokens.spacingXs} calc(1rem * (10 / ${tokens.fontBaseDefault}))`,
       borderRadius: tokens.borderRadiusMedium,
       whiteSpace: 'normal',
