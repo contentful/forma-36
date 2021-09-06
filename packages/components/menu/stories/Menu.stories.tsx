@@ -126,3 +126,16 @@ export const WithStickyHeaderAndFooter: Story<MenuProps> = (args) => {
     </Menu>
   );
 };
+
+Default.parameters = {
+  chromatic: { delay: 300 },
+};
+WithMaxHeight.parameters = {
+  chromatic: { delay: 300 },
+};
+WithStickyHeaderAndFooter.parameters = {
+  chromatic: { delay: 300 },
+};
+WithDisabledItems.parameters = {
+  chromatic: { delay: 300 },
+};
