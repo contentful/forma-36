@@ -1,7 +1,6 @@
 import { BaseInputProps } from '../base-input';
 
-export interface TextInputProps
-  extends Omit<BaseInputProps, 'as' | 'onCopy' | 'type'> {
+export interface TextInputProps extends Omit<BaseInputProps, 'as' | 'onCopy'> {
   /**
    * Displays the copy button after the input
    * @default false
@@ -11,4 +10,8 @@ export interface TextInputProps
    * Allows to listen to an copy button
    */
   onCopy?: (value: string) => void;
+  /**
+   * Set's default value for text input
+   */
+  defaultValue?: string;
 }

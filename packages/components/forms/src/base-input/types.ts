@@ -13,11 +13,7 @@ export interface BaseInputInternalProps extends CommonProps {
   /**
    * Allows to render input | textarea tag
    */
-  as?: 'input' | 'textarea'; // TODO: we can extend to select
-  /**
-   * Label value is set as aria-label attribute in the input
-   */
-  label: string;
+  as?: 'input' | 'textarea';
   /**
    * Set the value of the input
    */
@@ -31,8 +27,6 @@ export interface BaseInputInternalProps extends CommonProps {
    * @default text
    */
   type?: 'text' | 'email' | 'file' | 'number' | 'password' | 'search' | 'url';
-  // we need to answer the question if we would need the sizes matching sizes of the buttons
-  // variant?: string;
   /**
    * Applies disabled styles
    * @default false
@@ -53,10 +47,6 @@ export interface BaseInputInternalProps extends CommonProps {
    * @default false
    */
   isRequired?: boolean;
-  /**
-   * Property that set the placeholder value for input
-   */
-  placeholder?: string;
   /**
    * Boolean property that allows to blur on escape
    * @default true

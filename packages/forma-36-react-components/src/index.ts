@@ -36,24 +36,39 @@ export type {
   TableRowProps,
 } from '@contentful/f36-table';
 export * from '@contentful/f36-typography';
-export { ValidationMessage } from '@contentful/f36-validation-message';
-export type { ValidationMessageProps } from '@contentful/f36-validation-message';
 export { List, ListItem } from '@contentful/f36-list';
 export type { ListProps, ListItemProps } from '@contentful/f36-list';
-export { HelpText } from '@contentful/f36-helptext';
-export type { HelpTextProps } from '@contentful/f36-helptext';
 export { Note } from '@contentful/f36-note';
 export type { NoteProps } from '@contentful/f36-note';
 export { Tooltip } from '@contentful/f36-tooltip';
 export type { TooltipProps } from '@contentful/f36-tooltip';
 export { EmptyState } from '@contentful/f36-empty-state';
 export type { EmptyStateProps } from '@contentful/f36-empty-state';
-export { Checkbox, Radio, TextInput, Label } from '@contentful/f36-forms';
+export {
+  Checkbox,
+  Radio,
+  TextInput,
+  Switch,
+  Textarea,
+  FormLabel,
+  FormControl,
+  HelpText,
+  ValidationMessage,
+  Select,
+  Form,
+} from '@contentful/f36-forms';
 export type {
   CheckboxProps,
   RadioProps,
   TextInputProps,
-  LabelProps,
+  SwitchProps,
+  TextareaProps,
+  FormLabelProps,
+  FormControlProps,
+  ValidationMessageProps,
+  HelpTextProps,
+  SelectProps,
+  FormProps,
 } from '@contentful/f36-forms';
 export { Pill } from '@contentful/f36-pill';
 export type { PillProps } from '@contentful/f36-pill';
@@ -112,13 +127,6 @@ export type {
   RelativeDateTimeProps,
 } from '@contentful/f36-datetime';
 export * from './components/EntityList';
-export * from './components/Form';
-export * from './components/Select';
-export * from './components/SelectField';
-export * from './components/Switch';
-export * from './components/Textarea';
-export * from './components/TextField';
-export * from './components/TextInput';
 export * from './components/Workbench';
 
 // -- Add imports above this line (required by plopfile.js) --

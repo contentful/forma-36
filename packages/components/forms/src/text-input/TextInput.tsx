@@ -1,86 +1,90 @@
-import React, { useState, ChangeEvent, useCallback } from 'react';
+import React from 'react';
 import { BaseInput } from '../base-input';
-import { Flex } from '@contentful/f36-core';
+import { Flex, useForwardedRef } from '@contentful/f36-core';
 import { CopyButton } from '@contentful/f36-copybutton';
 import getStyles from './TextInput.styles';
 import { cx } from 'emotion';
 import { TextInputProps } from './types';
+import { useFormControl } from '../form-control/FormControlContext';
 
 export const _TextInput = (
   {
     className,
     testId = 'cf-ui-text-input',
-    label,
     id,
     value,
+    defaultValue,
     onChange,
     isInvalid,
     isDisabled,
+    isRequired,
+    isReadOnly,
     withCopyButton,
     onCopy,
     ...otherProps
   }: TextInputProps,
   ref: React.Ref<HTMLInputElement>,
 ) => {
-  const [valueState, setValueState] = useState(value);
-  const styles = getStyles();
+  const formProps = useFormControl({
+    id,
+    isInvalid,
+    isDisabled,
+    isRequired,
+    isReadOnly,
+  });
 
-  // Store a copy of the value in state.
-  // This is used by this component when the `countCharacters`
-  // option is on
-  const handleOnChange = useCallback(
-    (e: ChangeEvent<HTMLInputElement>) => {
-      setValueState(e.target.value);
-      if (onChange) onChange(e);
-    },
-    [onChange],
-  );
+  const textInputRef = useForwardedRef<HTMLInputElement>(ref);
+  const styles = getStyles();
 
   const copyButtonStyles = cx(styles.copyButton, {
     [styles.disabled]: Boolean(isDisabled),
     [styles.invalid]: Boolean(isInvalid),
   });
 
-  const inputWithCopyButton = (
-    <Flex className={className}>
+  const handleCopy = React.useCallback(
+    (e) => {
+      if (onCopy) {
+        onCopy(e);
+      }
+
+      textInputRef.current.select();
+      document.execCommand('copy');
+    },
+    [onCopy, textInputRef],
+  );
+
+  const input = (inputClass?: string) => {
+    return (
       <BaseInput
         {...otherProps}
+        {...formProps}
         testId={testId}
-        ref={ref}
-        label={label}
+        ref={textInputRef}
         type="text"
-        onChange={handleOnChange}
+        onChange={onChange}
         as="input"
-        className={styles.inputWithCopyButton}
-        isDisabled={isDisabled}
-        isInvalid={isInvalid}
-        value={valueState}
+        className={inputClass}
+        value={value}
+        defaultValue={defaultValue}
       />
+    );
+  };
+
+  const inputWithCopyButton = (
+    <Flex className={className}>
+      {input(styles.inputWithCopyButton)}
       <CopyButton
-        value={valueState}
-        onCopy={onCopy}
+        value={textInputRef?.current?.value}
+        onCopy={handleCopy}
         className={copyButtonStyles}
+        isDisabled={isDisabled}
       />
     </Flex>
   );
 
   return (
     <Flex flexDirection="column" fullWidth className={className}>
-      {withCopyButton ? (
-        inputWithCopyButton
-      ) : (
-        <BaseInput
-          testId={testId}
-          ref={ref}
-          label={label}
-          type="text"
-          onChange={handleOnChange}
-          as="input"
-          isDisabled={isDisabled}
-          isInvalid={isInvalid}
-          {...otherProps}
-        />
-      )}
+      {withCopyButton ? inputWithCopyButton : input()}
     </Flex>
   );
 };

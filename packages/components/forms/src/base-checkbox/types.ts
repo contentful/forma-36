@@ -6,7 +6,7 @@ export type checkboxTypes = 'checkbox' | 'radio' | 'switch';
 export interface BaseCheckboxInternalProps
   extends Omit<
     BaseInputInternalProps,
-    'type' | 'as' | 'placeholder' | 'isReadOnly' | 'icon' | 'isInvalid'
+    'type' | 'as' | 'placeholder' | 'isReadOnly' | 'icon' | 'label'
   > {
   /**
    * Defines the type of the input to be rendered
@@ -14,10 +14,15 @@ export interface BaseCheckboxInternalProps
    */
   type?: checkboxTypes;
   /**
-   * Defines if the element is checked
-   * @default false
+   * Defines if the element is checked, onChange will be required
+   * @default undefined
    */
   isChecked?: boolean;
+  /**
+   * Defines initial checked state for an uncontrolled component
+   * @default false
+   */
+  defaultChecked?: boolean;
   /**
    * Defines if the state is indeterminate
    * @default false
@@ -27,4 +32,8 @@ export interface BaseCheckboxInternalProps
    * Additional props that are passed to the input element
    */
   inputProps?: Partial<ComponentProps<'input'>>;
+  /**
+   * Value to be set as aria-label if not passing a children
+   */
+  'aria-label'?: string;
 }

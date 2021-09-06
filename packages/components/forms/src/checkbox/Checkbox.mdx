@@ -2,7 +2,7 @@
 title: 'Checkbox'
 type: 'component'
 status: 'stable'
-slug: /components/forms/src/checkbox/
+slug: /components/checkbox/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/components/forms/src/checkbox'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-checkbox--basic'
 typescript: ./Checkbox.tsx
@@ -20,16 +20,57 @@ typescript: ./Checkbox.tsx
 
 ## How to use Checkbox
 
-Label property is always required and passed to the `<input />` as `aria-label`, and also rendered on the right side of the checkbox
+You can use the Checkbox as a controlled or uncontrolled input.
+
+### Using as a controlled input
+
+For using the Checkbox as a controlled input, you need to:
+
+- Pass the `isChecked` property, with this property it will already be a controlled component;
+- Pass a `onChange` handler, so you can use it to update the value of `isChecked`;
+
+Setting the `isChecked` will already define it as a controlled input.
+
+```jsx static=true
+const ExampleControlled = () => {
+  const [checkboxState, setCheckboxState] = useState(false);
+
+  return (
+    <Checkbox
+      name="newsletter-subscribe-controlled"
+      id="newsletter-subscribe-controlled"
+      isChecked={checkboxState}
+      onChange={() => setCheckboxState(!checkboxState)}
+    >
+      Subscribe to newsletter
+    </Checkbox>
+  );
+};
+```
+
+### Using as an uncontrolled input
+
+You can use the Checkbox as an uncontrolled input, for that you can:
+
+- Set the `defaultChecked` property, it will ensure that the checked state can be altered normaly.
+- Don't set the `isChecked` as it will make the input controlled.
+
+```jsx static=true
+<Checkbox
+  name="newsletter-subscribe-uncontrolled"
+  id="newsletter-subscribe-uncontrolled"
+  defaultChecked={true}
+>
+  Subscribe to newsletter
+</Checkbox>
+```
 
 ## Code examples
 
 ```jsx
-<Checkbox
-  id="checkbox"
-  label="Subscribe to newsletter"
-  name="newsletter-subscribe"
-/>
+<Checkbox id="checkbox" name="newsletter-subscribe">
+  Subscribe to newsletter
+</Checkbox>
 ```
 
 ## Component variations
@@ -40,18 +81,12 @@ The Checkbox can be rendered as indeterminate or checked, with the `isIndetermin
 
 ```jsx
 <React.Fragment>
-  <Checkbox
-    id="checkbox1"
-    label="Subscribe to newsletter (checked)"
-    name="newsletter-subscribe1"
-    isChecked
-  />
-  <Checkbox
-    id="checkbox2"
-    label="Subscribe to newsletter (indeterminate)"
-    name="newsletter-subscribe2"
-    isIndeterminate
-  />
+  <Checkbox id="checkbox1" name="newsletter-subscribe1" isChecked>
+    Subscribe to newsletter (checked)
+  </Checkbox>
+  <Checkbox id="checkbox2" name="newsletter-subscribe2" isIndeterminate>
+    Subscribe to newsletter (indeterminate)
+  </Checkbox>
 </React.Fragment>
 ```
 
@@ -61,24 +96,27 @@ The Checkbox can be rendered as disabled with the `isDisabled` property.
 <React.Fragment>
   <Checkbox
     id="checkbox3"
-    label="Subscribe to newsletter"
     name="newsletter-subscribe3"
     isDisabled
   />
+    Subscribe to newsletter
+  </Checkbox>
   <Checkbox
     id="checkbox4"
-    label="Subscribe to newsletter (checked)"
     name="newsletter-subscribe4"
     isChecked
     isDisabled
-  />
+  >
+    Subscribe to newsletter (checked)
+  </Checkbox>
   <Checkbox
     id="checkbox5"
-    label="Subscribe to newsletter (indeterminate)"
     name="newsletter-subscribe5"
     isIndeterminate
     isDisabled
-  />
+  >
+    Subscribe to newsletter (indeterminate)
+  </Checkbox>
 </React.Fragment>
 ```
 

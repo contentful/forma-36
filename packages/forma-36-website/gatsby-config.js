@@ -210,7 +210,7 @@ module.exports = {
             menuLinks: [
               {
                 name: 'Checkbox',
-                link: '/components/forms/src/checkbox/',
+                link: '/components/checkbox/',
               },
               {
                 name: 'Form',
@@ -218,23 +218,15 @@ module.exports = {
               },
               {
                 name: 'Radio',
-                link: '/components/inputs/src/radio/',
+                link: '/components/radio/',
               },
               {
                 name: 'Select',
                 link: '/components/select/',
               },
               {
-                name: 'SelectField',
-                link: '/components/select-field/',
-              },
-              {
                 name: 'Switch',
-                link: '/components/inputs/src/switch/',
-              },
-              {
-                name: 'TextField',
-                link: '/components/text-field/',
+                link: '/components/switch/',
               },
               {
                 name: 'TextInput',
@@ -249,11 +241,6 @@ module.exports = {
                 link: '/components/textarea/',
               },
             ],
-          },
-
-          {
-            name: 'HelpText',
-            link: '/components/help-text/',
           },
           {
             name: 'Icon',
@@ -350,10 +337,6 @@ module.exports = {
           {
             name: 'Tooltip',
             link: '/components/tooltip/',
-          },
-          {
-            name: 'ValidationMessage',
-            link: '/components/validation-message/',
           },
           {
             name: 'Workbench',

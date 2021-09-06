@@ -2,7 +2,7 @@
 title: 'Radio'
 type: 'component'
 status: 'stable'
-slug: /components/forms/src/radio/
+slug: /components/radio/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/components/forms/src/radio'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-radio--basic'
 typescript: ./Radio.tsx
@@ -20,47 +20,112 @@ typescript: ./Radio.tsx
 
 ## How to use Radio
 
-Name should be the same on all `Radio` on the same Group.  
-Label property is always required and passed to the `<input />` as `aria-label`, and also rendered on the right side of the checkbox
+- Name should be the same on all `Radio` on the same Group.
+- You can use the Radio as a controlled or uncontrolled input.
+
+### Using as a controlled input
+
+For using the Radio as a controlled input, you need to:
+
+- Pass the `isChecked` property, with this property it will already be a controlled component;
+- Pass a `onChange` handler, so you can use it to update the value of `isChecked`;
+
+Setting the `isChecked` will already define it as a controlled input.
+
+```jsx static=true
+const ExampleControlled = () => {
+  const [value, setValue] = useState(null);
+  return (
+    <React.Fragment>
+      <Radio
+        id="radio1"
+        name="radio-controlled"
+        value="yes"
+        isChecked={value === 'yes'}
+        onChange={(e) => setValue('yes')}
+      >
+        Yes
+      </Radio>
+      <Radio
+        id="radio2"
+        name="radio-controlled"
+        value="no"
+        isChecked={value === 'no'}
+        onChange={(e) => setValue('no')}
+      >
+        No
+      </Radio>
+    </React.Fragment>
+  );
+};
+```
+
+### Using as an uncontrolled input
+
+You can use the Radio as an uncontrolled input, for that you can:
+
+- Set the `defaultChecked` property, it will ensure that the checked state can be altered normaly.
+- Don't set the `isChecked` as it will make the input controlled.
+
+```jsx static=true
+<React.Fragment>
+  <Radio id="radio1" name="radio-controlled" value="yes" defaultChecked={true}>
+    Yes
+  </Radio>
+  <Radio id="radio2" name="radio-controlled" value="no">
+    No
+  </Radio>
+</React.Fragment>
+```
 
 ## Code examples
 
-```jsx
-const [value, setValue] = useState(null)
-<React.Fragment>
-  <Radio
-    id="radio1"
-    label="Yes"
-    name="radio"
-    value="yes"
-    isChecked={value==='yes'}
-    onChange={(e) => setValue('yes')}
-  />
-  <Radio
-    id="radio2"
-    label="No"
-    name="radio"
-    value="no"
-    isChecked={value==='no'}
-    onChange={(e) => setValue('no')}
-  />
-</React.Fragment>
+```jsx static=true
+const ExampleRadio = () => {
+  const [value, setValue] = useState(null);
+  return (
+    <React.Fragment>
+      <Radio
+        id="radio1"
+        name="radio"
+        value="yes"
+        isChecked={value === 'yes'}
+        onChange={(e) => setValue('yes')}
+      >
+        Yes
+      </Radio>
+      <Radio
+        id="radio2"
+        name="radio"
+        value="no"
+        isChecked={value === 'no'}
+        onChange={(e) => setValue('no')}
+      >
+        No
+      </Radio>
+    </React.Fragment>
+  );
+};
 ```
 
 ## Component variations
 
-### Checked or indeterminate
+### Checked or disabled
 
 The Radio can be rendered as checked, with the `isChecked` property.
 
 ```jsx
-<Radio id="radio3" label="Yes" name="radio3" isChecked />
+<Radio id="radio3" name="radio3" isChecked>
+  Yes
+</Radio>
 ```
 
 The Radio can be rendered as disabled with the `isDisabled` property.
 
 ```jsx
-<Radio id="radio4" label="Yes" name="radio4" isDisabled />
+<Radio id="radio4" name="radio4" isDisabled>
+  Yes
+</Radio>
 ```
 
 ## Content recommendations

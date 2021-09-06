@@ -1,35 +1,37 @@
 import React from 'react';
-import { Flex } from '@contentful/f36-core';
 import { BaseCheckbox, BaseCheckboxProps } from '../base-checkbox';
-import { Label } from '../Label';
-import { getStyles } from './Checkbox.styles';
+import { useFormControl } from '../form-control/FormControlContext';
 
 export type CheckboxProps = Omit<BaseCheckboxProps, 'type'>;
 
 const _Checkbox = (props: CheckboxProps, ref: React.Ref<HTMLInputElement>) => {
-  const styles = getStyles();
   const {
     testId = 'cf-ui-checkbox',
-    label,
     id,
-    className,
+    isDisabled,
+    isRequired,
+    isInvalid,
+    children,
     ...otherProps
   } = props;
 
+  const formProps = useFormControl({
+    id,
+    isDisabled,
+    isInvalid,
+    isRequired,
+  });
+
   return (
-    <Flex as="div" alignItems="center" testId={testId} className={className}>
-      <BaseCheckbox
-        id={id}
-        label={label}
-        type="checkbox"
-        className={styles.input}
-        {...otherProps}
-        ref={ref}
-      />
-      <Label className={styles.label} htmlFor={id}>
-        {label}
-      </Label>
-    </Flex>
+    <BaseCheckbox
+      {...formProps}
+      {...otherProps}
+      type="checkbox"
+      testId={testId}
+      ref={ref}
+    >
+      {children}
+    </BaseCheckbox>
   );
 };
 

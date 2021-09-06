@@ -1,7 +1,7 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 
-const getStyles = ({ isDisabled, isInvalid }) => ({
+const getStyles = ({ as, isDisabled, isInvalid }) => ({
   rootComponentWithIcon: css({
     position: 'relative',
     display: 'flex',
@@ -14,7 +14,6 @@ const getStyles = ({ isDisabled, isInvalid }) => ({
     backgroundColor: isDisabled ? tokens.gray100 : tokens.colorWhite,
     border: `1px solid ${isInvalid ? tokens.red600 : tokens.gray300}`,
     borderRadius: tokens.borderRadiusMedium,
-    maxHeight: `calc(1rem * (40 / ${tokens.fontBaseDefault}))`,
     color: tokens.gray700,
     fontFamily: tokens.fontStackPrimary,
     fontSize: tokens.fontSizeM,
@@ -23,6 +22,9 @@ const getStyles = ({ isDisabled, isInvalid }) => ({
     margin: 0,
     cursor: isDisabled ? 'not-allowed' : 'auto',
     width: '100%',
+
+    // if the input is a textarea, the height is resizeble
+    ...(as === 'textarea' ? { resize: 'vertical' } : { maxHeight: '40px' }),
 
     '&::placeholder': {
       color: tokens.gray500,
