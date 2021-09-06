@@ -21,7 +21,7 @@ export const _TextInput = (
     isReadOnly,
     withCopyButton,
     onCopy,
-    size,
+    size = 'medium',
     ...otherProps
   }: TextInputProps,
   ref: React.Ref<HTMLInputElement>,

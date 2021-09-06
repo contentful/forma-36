@@ -28,6 +28,7 @@ Basic.args = {
   placeholder: 'this is my placeholder',
   name: 'Example name',
   id: 'input-1',
+  size: 'medium',
 };
 
 export const Overview = () => (
@@ -39,7 +40,7 @@ export const Overview = () => (
     <Flex marginBottom="spacingL">
       <TextInput
         aria-label="Example label for input"
-        name="Input name"
+        name="Input name 1"
         id="input-1"
         placeholder="My great input"
         defaultValue="defaultValue"
@@ -53,8 +54,8 @@ export const Overview = () => (
     <Flex marginBottom="spacingL">
       <TextInput
         aria-label="Example label for input"
-        name="Input name"
-        id="input-1"
+        name="Input name 2"
+        id="input-2"
         placeholder="My great input"
         defaultValue="defaultValue"
         size="small"
@@ -68,8 +69,8 @@ export const Overview = () => (
     <Flex marginBottom="spacingL">
       <TextInput
         aria-label="Example label for input"
-        name="Example name"
-        id="input-1"
+        name="Example name 3"
+        id="input-3"
         placeholder="My great input"
         isDisabled
       />
@@ -82,8 +83,8 @@ export const Overview = () => (
     <Flex marginBottom="spacingL">
       <TextInput
         aria-label="Example label for input"
-        name="Example name"
-        id="input-1"
+        name="Example name 4"
+        id="input-4"
         placeholder="My great input"
         isDisabled
         size="small"
@@ -97,8 +98,8 @@ export const Overview = () => (
     <Flex marginBottom="spacingL">
       <TextInput
         aria-label="Example label for input"
-        name="Example name"
-        id="input-1"
+        name="Example name 5"
+        id="input-5"
         placeholder="My great input"
         isInvalid
       />
@@ -111,8 +112,8 @@ export const Overview = () => (
     <Flex marginBottom="spacingL">
       <TextInput
         aria-label="Example label for input"
-        name="Example name"
-        id="input-1"
+        name="Example name 6"
+        id="input-6"
         placeholder="My great input"
         isInvalid
         size="small"
@@ -126,9 +127,9 @@ export const Overview = () => (
     <Flex marginBottom="spacingL">
       <TextInput
         aria-label="Example label for input"
-        name="Example name"
+        name="Example name 7"
         value="Example value"
-        id="input-1"
+        id="input-7"
         placeholder="My great input"
         icon={<SearchIcon />}
       />
@@ -141,9 +142,9 @@ export const Overview = () => (
     <Flex marginBottom="spacingL">
       <TextInput
         aria-label="Example label for input"
-        name="Example name"
+        name="Example name 8"
         value="Example value"
-        id="input-1"
+        id="input-8"
         placeholder="My great input"
         icon={<SearchIcon />}
         size="small"
@@ -157,8 +158,8 @@ export const Overview = () => (
     <Flex marginBottom="spacingL">
       <TextInput
         aria-label="Example label for input"
-        name="Example name"
-        id="input-1"
+        name="Example name 9"
+        id="input-9"
         placeholder="My great input"
         withCopyButton
       />
@@ -171,8 +172,8 @@ export const Overview = () => (
     <Flex marginBottom="spacingL">
       <TextInput
         aria-label="Example label for input"
-        name="Example name"
-        id="input-1"
+        name="Example name 10"
+        id="input-10"
         placeholder="My great input"
         withCopyButton
         size="small"
@@ -185,8 +186,8 @@ export const Overview = () => (
 
     <Flex marginBottom="spacingL">
       <TextInput
-        name="Example name"
-        id="input-1"
+        name="Example name 11"
+        id="input-11"
         placeholder="My great input"
         withCopyButton
         isDisabled
@@ -199,8 +200,8 @@ export const Overview = () => (
 
     <Flex marginBottom="spacingL">
       <TextInput
-        name="Example name"
-        id="input-1"
+        name="Example name 12"
+        id="input-12"
         placeholder="My great input"
         withCopyButton
         isDisabled

@@ -42,9 +42,9 @@ export interface CopyButtonProps extends CommonProps {
   isDisabled?: boolean;
   /**
    * Allows setting size of the copy button to small
-   * @default 'default'
+   * @default medium
    */
-  size?: 'small' | 'default';
+  size?: 'small' | 'medium';
 }
 
 function _CopyButton(props: CopyButtonProps, ref: React.Ref<HTMLDivElement>) {
@@ -57,7 +57,7 @@ function _CopyButton(props: CopyButtonProps, ref: React.Ref<HTMLDivElement>) {
     tooltipCopiedText = 'Copied!',
     tooltipProps,
     isDisabled = false,
-    size = 'default',
+    size = 'medium',
     ...otherProps
   } = props;
   const styles = getStyles({ size });

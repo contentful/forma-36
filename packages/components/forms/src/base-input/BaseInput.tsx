@@ -26,7 +26,7 @@ export type BaseInputProps<
 
 function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
   props: BaseInputProps<E>,
-  ref: React.Ref<any>,
+  ref: React.Ref<HTMLInputElement | HTMLTextAreaElement>,
 ) {
   const {
     as = DEFAULT_TAG,
@@ -49,7 +49,7 @@ function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
     style,
     icon,
     defaultValue,
-    size,
+    size = 'medium',
     ...otherProps
   } = props;
   const styles = getInputStyles({ as, isDisabled, isInvalid, size });

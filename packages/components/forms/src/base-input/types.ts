@@ -73,7 +73,8 @@ export interface BaseInputInternalProps extends CommonProps {
    */
   onFocus?: FocusEventHandler<HTMLTextAreaElement | HTMLInputElement>;
   /**
-   * Allows setting size small to the input
+   * Defines which size of the input should be rendered
+   * @default medium
    */
-  size?: 'small' | 'default';
+  size?: 'small' | 'medium';
 }

@@ -2,22 +2,19 @@ import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import type { CSSObject } from '@emotion/serialize';
 
-const sizeToStyles = ({ size }): CSSObject => {
-  switch (size) {
-    case 'small':
-      return {
-        fontSize: tokens.fontSizeM,
-        lineHeight: tokens.lineHeightM,
-        padding: `${tokens.spacing2Xs} ${tokens.spacingXs}`,
-        height: `32px`,
-      };
-    default:
-      return {
-        fontSize: tokens.fontSizeM,
-        lineHeight: tokens.lineHeightM,
-        height: `40px`,
-      };
+const getSizeStyles = ({ size }): CSSObject => {
+  if (size === 'small') {
+    return {
+      padding: `${tokens.spacing2Xs} ${tokens.spacingXs}`,
+      height: '32px',
+      maxHeight: '32px',
+    };
   }
+
+  return {
+    height: '40px',
+    maxHeight: '40px',
+  };
 };
 
 const getStyles = ({ as, isDisabled, isInvalid, size }) => ({
@@ -42,8 +39,8 @@ const getStyles = ({ as, isDisabled, isInvalid, size }) => ({
     cursor: isDisabled ? 'not-allowed' : 'auto',
     width: '100%',
 
-    // if the input is a textarea, the height is resizeble
-    ...(as === 'textarea' ? { resize: 'vertical' } : { maxHeight: '40px' }),
+    // if the input is a textarea, the height is resizeble and size should be ignored
+    ...(as === 'textarea' ? { resize: 'vertical' } : getSizeStyles({ size })),
 
     '&::placeholder': {
       color: tokens.gray500,
@@ -75,7 +72,6 @@ const getStyles = ({ as, isDisabled, isInvalid, size }) => ({
         ? 'none'
         : tokens.glowPrimary,
     },
-    ...sizeToStyles({ size }),
   }),
 
   inputWithIcon: css({

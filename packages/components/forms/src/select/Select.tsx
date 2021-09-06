@@ -11,7 +11,7 @@ import { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
 import { useFormControl } from '../form-control/FormControlContext';
 import { getSelectStyles } from './Select.styles';
 
-export type SelectSize = 'small' | 'default';
+export type SelectSize = 'small' | 'medium';
 
 export type SelectInternalProps = CommonProps & {
   isRequired?: boolean;
@@ -40,7 +40,7 @@ const _Select = (
     testId = 'cf-ui-select',
     willBlurOnEsc = true,
     onKeyDown,
-    size = 'default',
+    size = 'medium',
     ...otherProps
   }: SelectProps,
   ref: React.Ref<HTMLSelectElement>,
