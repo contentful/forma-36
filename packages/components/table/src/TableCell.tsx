@@ -56,7 +56,7 @@ export const TableCell = forwardRef<HTMLTableCellElement, TableCellProps>(
                   fontWeight: isTableHead
                     ? tokens.fontWeightMedium
                     : tokens.fontWeightNormal,
-                  lineHeight: tokens.lineHeightDefault,
+                  lineHeight: tokens.lineHeightL,
                   padding: `${tokens.spacingS} ${tokens.spacingM}`,
                   textAlign: align,
                   verticalAlign: 'top',

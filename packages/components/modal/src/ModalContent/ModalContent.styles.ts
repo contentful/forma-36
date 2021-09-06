@@ -8,7 +8,7 @@ export function getModalContentStyles() {
       color: tokens.gray700,
       fontSize: tokens.fontSizeM,
       fontFamily: tokens.fontStackPrimary,
-      lineHeight: tokens.lineHeightDefault,
+      lineHeight: tokens.lineHeightM,
       overflowY: 'auto',
       overflowX: 'hidden',
     }),
