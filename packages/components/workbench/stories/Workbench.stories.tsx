@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
+import { action } from '@storybook/addon-actions';
 import tokens from '@contentful/f36-tokens';
 import { Flex, Grid } from '@contentful/f36-core';
 import {
@@ -45,7 +46,6 @@ interface Args {
 }
 
 export const Basic: Story<Args> = (args) => {
-  /* eslint-disable no-console */
   return (
     <Workbench {...args}>
       <Workbench.Header
@@ -66,7 +66,6 @@ export const Basic: Story<Args> = (args) => {
       </Workbench.Content>
     </Workbench>
   );
-  /* eslint-enable no-console */
 };
 Basic.args = {
   ['Header Title']: 'Page title',
@@ -75,19 +74,15 @@ Basic.args = {
 };
 
 export const WithAllHeaderFeatures: Story<Args> = (args) => {
-  /* eslint-disable no-console */
   return (
     <Workbench {...args}>
       <Workbench.Header
         title={args['Header Title']}
         description={args['Header Description']}
         icon={StarIcon}
-        onBack={() => console.log('back button clicked!')}
+        onBack={action('back button clicked!')}
         actions={
-          <Button
-            size="small"
-            onClick={() => console.log('Workbench action clicked')}
-          >
+          <Button size="small" onClick={action('Workbench action clicked')}>
             Action
           </Button>
         }
@@ -105,7 +100,6 @@ export const WithAllHeaderFeatures: Story<Args> = (args) => {
       </Workbench.Content>
     </Workbench>
   );
-  /* eslint-enable no-console */
 };
 WithAllHeaderFeatures.args = {
   ['Header Title']: 'Page title',
@@ -114,7 +108,6 @@ WithAllHeaderFeatures.args = {
 };
 
 export const WithLeftSidebar: Story<Args> = (args) => {
-  /* eslint-disable no-console */
   return (
     <Workbench {...args}>
       <Workbench.Header
@@ -142,7 +135,6 @@ export const WithLeftSidebar: Story<Args> = (args) => {
       </Workbench.Content>
     </Workbench>
   );
-  /* eslint-enable no-console */
 };
 WithLeftSidebar.args = {
   ['Header Title']: 'Page title',
@@ -151,7 +143,6 @@ WithLeftSidebar.args = {
 };
 
 export const WithRightSidebar: Story<Args> = (args) => {
-  /* eslint-disable no-console */
   return (
     <Workbench {...args}>
       <Workbench.Header
@@ -179,7 +170,6 @@ export const WithRightSidebar: Story<Args> = (args) => {
       </Workbench.Sidebar>
     </Workbench>
   );
-  /* eslint-enable no-console */
 };
 WithRightSidebar.args = {
   ['Header Title']: 'Page title',
@@ -188,7 +178,6 @@ WithRightSidebar.args = {
 };
 
 export const WithBothSidebars: Story<Args> = (args) => {
-  /* eslint-disable no-console */
   return (
     <Workbench {...args}>
       <Workbench.Header
@@ -224,7 +213,6 @@ export const WithBothSidebars: Story<Args> = (args) => {
       </Workbench.Sidebar>
     </Workbench>
   );
-  /* eslint-enable no-console */
 };
 WithBothSidebars.args = {
   ['Header Title']: 'Page title',
@@ -233,7 +221,6 @@ WithBothSidebars.args = {
 };
 
 export const HeaderOverview = () => {
-  /* eslint-disable no-console */
   return (
     <Flex style={{ minWidth: '960px' }} flexDirection="column">
       <Grid rowGap="spacingL" rows="repeat(2, auto)">
@@ -268,7 +255,7 @@ export const HeaderOverview = () => {
 
           <Workbench.Header
             title="Page title"
-            onBack={() => console.log('back button clicked!')}
+            onBack={action('back button clicked!')}
           />
         </span>
 
@@ -280,10 +267,7 @@ export const HeaderOverview = () => {
           <Workbench.Header
             title="Page title"
             actions={
-              <Button
-                size="small"
-                onClick={() => console.log('Workbench action clicked')}
-              >
+              <Button size="small" onClick={action('Workbench action clicked')}>
                 Action
               </Button>
             }
@@ -299,12 +283,9 @@ export const HeaderOverview = () => {
             title="Page title"
             description="Page description"
             icon={StarIcon}
-            onBack={() => console.log('back button clicked!')}
+            onBack={action('back button clicked!')}
             actions={
-              <Button
-                size="small"
-                onClick={() => console.log('Workbench action clicked')}
-              >
+              <Button size="small" onClick={action('Workbench action clicked')}>
                 Action
               </Button>
             }
@@ -313,5 +294,4 @@ export const HeaderOverview = () => {
       </Grid>
     </Flex>
   );
-  /* eslint-enable no-console */
 };

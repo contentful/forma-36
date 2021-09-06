@@ -2,19 +2,21 @@ import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 
 export const getWorkbenchHeaderStyles = (hasBackButton = false) => ({
-  workbenchHeader: css({
-    display: 'flex',
-    alignItems: 'center',
-    flexShrink: 0,
-    width: '100%',
-    height: '70px',
-    padding: `0 ${tokens.spacingL}`,
-    borderBottom: `1px solid ${tokens.gray300}`,
-    backgroundColor: tokens.gray100,
-    zIndex: tokens.zIndexWorkbenchHeader,
-    boxSizing: 'border-box',
-    ...(hasBackButton && { paddingLeft: 0 }),
-  }),
+  workbenchHeader: css([
+    {
+      display: 'flex',
+      alignItems: 'center',
+      flexShrink: 0,
+      width: '100%',
+      height: '70px',
+      padding: `0 ${tokens.spacingL}`,
+      borderBottom: `1px solid ${tokens.gray300}`,
+      backgroundColor: tokens.gray100,
+      zIndex: tokens.zIndexWorkbenchHeader,
+      boxSizing: 'border-box',
+    },
+    hasBackButton && { paddingLeft: 0 },
+  ]),
   flexGrow: css({
     flexGrow: 1,
   }),

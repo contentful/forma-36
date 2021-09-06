@@ -20,7 +20,7 @@ function _Workbench(
   const header: React.ReactNode[] = [];
   const content: React.ReactNode[] = [];
 
-  React.Children.map(
+  React.Children.forEach(
     children,
     // eslint-disable-next-line
     (child: any) => {
