@@ -45,15 +45,9 @@ const _MenuList = (props: MenuListProps, ref: React.Ref<HTMLDivElement>) => {
       role="menu"
       className={cx(styles.container, className)}
     >
-      {headerItem &&
-        React.cloneElement(headerItem, {
-          className: cx(styles.headerItem, headerItem.props.className),
-        })}
+      {headerItem && <div className={styles.headerItem}>{headerItem}</div>}
       {children}
-      {footerItem &&
-        React.cloneElement(footerItem, {
-          className: cx(styles.footerItem, footerItem.props.className),
-        })}
+      {footerItem && <div className={styles.footerItem}>{footerItem}</div>}
     </Popover.Content>
   );
 };
