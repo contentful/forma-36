@@ -29,7 +29,7 @@ const _Checkbox = (props: CheckboxProps, ref: React.Ref<HTMLInputElement>) => {
     name,
   });
 
-  const formProps = useFormControl({
+  const { isReadOnly, ...formProps } = useFormControl({
     id,
     isDisabled,
     isInvalid,

@@ -29,7 +29,7 @@ const _Radio = (props: RadioProps, ref: React.Ref<HTMLInputElement>) => {
     name,
   });
 
-  const formProps = useFormControl({
+  const { isReadOnly, ...formProps } = useFormControl({
     id,
     isDisabled,
     isInvalid,

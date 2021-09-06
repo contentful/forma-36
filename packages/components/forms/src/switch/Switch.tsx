@@ -15,7 +15,7 @@ const _Switch = (props: SwitchProps, ref: React.Ref<HTMLInputElement>) => {
     ...otherProps
   } = props;
 
-  const formProps = useFormControl({
+  const { isReadOnly, ...formProps } = useFormControl({
     id,
     isDisabled,
     isInvalid,
