@@ -13,13 +13,16 @@ export const GlobalStyles = ({
       styles={css`
         ${withNormalize ? emotionNormalize : undefined};
 
-        html,
-        body {
+        html {
+          margin: 0;
           margin: 0;
           padding: 0;
           border: 0;
           min-height: 100%;
-          font-size: ${tokens.fontBaseDefault}px;
+        }
+
+        body {
+          font-size: ${tokens.fontSizeM};
           font-family: ${tokens.fontStackPrimary};
           color: ${tokens.gray800};
           line-height: ${tokens.lineHeightDefault};
