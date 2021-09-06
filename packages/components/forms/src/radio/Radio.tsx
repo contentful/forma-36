@@ -29,6 +29,7 @@ const _Radio = (props: RadioProps, ref: React.Ref<HTMLInputElement>) => {
     name,
   });
 
+  // Removes the isReadOnly property that comes from FormControl context.
   const { isReadOnly, ...formProps } = useFormControl({
     id,
     isDisabled,
