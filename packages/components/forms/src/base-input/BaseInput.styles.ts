@@ -1,7 +1,23 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
+import type { CSSObject } from '@emotion/serialize';
 
-const getStyles = ({ as, isDisabled, isInvalid }) => ({
+const getSizeStyles = ({ size }): CSSObject => {
+  if (size === 'small') {
+    return {
+      padding: `${tokens.spacing2Xs} ${tokens.spacingXs}`,
+      height: '32px',
+      maxHeight: '32px',
+    };
+  }
+
+  return {
+    height: '40px',
+    maxHeight: '40px',
+  };
+};
+
+const getStyles = ({ as, isDisabled, isInvalid, size }) => ({
   rootComponentWithIcon: css({
     position: 'relative',
     display: 'flex',
@@ -23,8 +39,8 @@ const getStyles = ({ as, isDisabled, isInvalid }) => ({
     cursor: isDisabled ? 'not-allowed' : 'auto',
     width: '100%',
 
-    // if the input is a textarea, the height is resizeble
-    ...(as === 'textarea' ? { resize: 'vertical' } : { maxHeight: '40px' }),
+    // if the input is a textarea, the height is resizeble and size should be ignored
+    ...(as === 'textarea' ? { resize: 'vertical' } : getSizeStyles({ size })),
 
     '&::placeholder': {
       color: tokens.gray500,
@@ -59,7 +75,7 @@ const getStyles = ({ as, isDisabled, isInvalid }) => ({
   }),
 
   inputWithIcon: css({
-    paddingLeft: '38px',
+    paddingLeft: size === 'small' ? tokens.spacingXl : '38px',
   }),
 
   iconPlaceholder: css({
@@ -67,7 +83,7 @@ const getStyles = ({ as, isDisabled, isInvalid }) => ({
     pointerEvents: 'none',
     top: 0,
     bottom: 0,
-    left: tokens.spacingS,
+    left: size === 'small' ? tokens.spacingXs : tokens.spacingS,
     display: 'flex',
     alignItems: 'center',
     zIndex: tokens.zIndexDefault,

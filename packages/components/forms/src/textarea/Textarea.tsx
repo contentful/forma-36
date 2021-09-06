@@ -6,7 +6,10 @@ import type { BaseInputProps } from '../base-input';
 import { useFormControl } from '../form-control/FormControlContext';
 import { getStyles } from './Textarea.styles';
 
-export type TextareaProps = Omit<BaseInputProps<'textarea'>, 'as' | 'type'>;
+export type TextareaProps = Omit<
+  BaseInputProps<'textarea'>,
+  'as' | 'type' | 'size'
+>;
 
 const _Textarea = (
   {

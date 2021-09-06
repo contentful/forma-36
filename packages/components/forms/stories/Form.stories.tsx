@@ -5,9 +5,11 @@ import {
   FormControlInternalProps,
   TextInput,
   Textarea,
+  Select,
   Form,
 } from '../src';
 import { Button } from '@contentful/f36-button';
+import { Flex } from '../../../forma-36-react-components/src';
 
 export default {
   title: 'Form Elements/Form',
@@ -40,6 +42,49 @@ export const Basic = (args: FormControlInternalProps) => {
       <Button variant="primary" type="submit" isDisabled={submited}>
         {submited ? 'Sumbited' : 'Click me to submit'}
       </Button>
+    </Form>
+  );
+};
+
+export const OverviewWithSmallInputs = (args: FormControlInternalProps) => {
+  return (
+    <Form>
+      <FormControl {...args} marginBottom="spacingM">
+        <FormControl.Label isRequired>Name</FormControl.Label>
+        <TextInput size="small" />
+        <FormControl.HelpText>Enter your first name</FormControl.HelpText>
+      </FormControl>
+      <FormControl {...args} marginBottom="spacingM">
+        <FormControl.Label isRequired>Last name</FormControl.Label>
+        <TextInput size="small" />
+        <FormControl.HelpText>Enter your last name</FormControl.HelpText>
+      </FormControl>
+      <FormControl {...args}>
+        <FormControl.Label>Choose your favorite fruit</FormControl.Label>
+        <Select id="optionSelect" name="optionSelect" {...args} size="small">
+          <Select.Option value="optionOne" isSelected>
+            Apple
+          </Select.Option>
+          <Select.Option value="optionOne">Peach</Select.Option>
+          <Select.Option value="optionOne">Pineapple</Select.Option>
+          <Select.Option value="optionTwo">Banana</Select.Option>
+          <Select.Option value="optionThree" isDisabled>
+            Cherry
+          </Select.Option>
+        </Select>
+      </FormControl>
+      <Flex justifyContent="flex-end">
+        <Flex marginRight="spacingS">
+          <Button variant="secondary" size="small">
+            Cancel
+          </Button>
+        </Flex>
+        <Flex>
+          <Button variant="primary" type="submit" size="small">
+            Submit
+          </Button>
+        </Flex>
+      </Flex>
     </Form>
   );
 };
