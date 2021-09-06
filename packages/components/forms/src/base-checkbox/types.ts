@@ -1,4 +1,4 @@
-import type { ComponentProps } from 'react';
+import type { ChangeEventHandler, ComponentProps } from 'react';
 import type { BaseInputInternalProps } from '../base-input/types';
 
 export type checkboxTypes = 'checkbox' | 'radio' | 'switch';
@@ -41,4 +41,5 @@ export interface BaseCheckboxInternalProps
    * @default medium
    */
   size?: 'small' | 'medium';
+  onChange?: ChangeEventHandler<HTMLInputElement>;
 }

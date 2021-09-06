@@ -5,18 +5,24 @@ status: 'stable'
 slug: /components/checkbox/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/components/forms/src/checkbox'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-checkbox--basic'
-typescript: ./Checkbox.tsx
+typescript: ./Checkbox.tsx,./CheckboxGroup.tsx
 ---
 
-`Checkbox` is a form component, that shows a checkbox with it's label.
+`Checkbox` is a form component that shows a checkbox with it's label.  
+`CheckboxGroup` is a component that makes it easier to handle group of checkboxes.
 
 ## Table of contents
 
 - [How to use Checkbox](#how-to-use-checkbox)
+  - [Using as a controlled input](#using-as-a-controlled-input)
+  - [Using as an uncontrolled input](#using-as-an-uncontrolled-input)
+  - [Using with CheckboxGroup](#using-with-checkboxgroup)
 - [Component variations](#component-variations)
 - [Content recommendations](#content-recommendations)
 - [Accessibility](#accessibility)
 - [Props](#props)
+  - [Checkbox](#props-checkbox)
+  - [CheckboxGroup](#props-checkboxgroup)
 
 ## How to use Checkbox
 
@@ -59,10 +65,33 @@ You can use the Checkbox as an uncontrolled input, for that you can:
 <Checkbox
   name="newsletter-subscribe-uncontrolled"
   id="newsletter-subscribe-uncontrolled"
-  defaultChecked={true}
+  defaultChecked
 >
   Subscribe to newsletter
 </Checkbox>
+```
+
+### Using with CheckboxGroup
+
+We also provide the `CheckboxGroup` component that helps when using multiple checkboxes, you can pass some common properties to be replicated to the checkboxes.  
+This only set the context for the checkboxes, it doesn't handle any styling.
+
+- `name`: This will set all checkboxes with this name;
+- `defaultValue`: This accepts an array that set the `defaultChecked` property for checkboxes which the value exists in the array;
+- `value`: Same as `defaultValue` but this one sets the `isChecked` property, making the checkbox group controlled;
+- `onChange`: Handler that will be executed when any checkbox inside the group receives the event of change.
+
+```jsx
+<CheckboxGroup name="checkbox-options" defaultValue={['option 1']}>
+  <Flex flexDirection="column">
+    <Checkbox value="option 1" id="option-1">
+      Option 1
+    </Checkbox>
+    <Checkbox value="option 2" id="option-2">
+      Option 2
+    </Checkbox>
+  </Flex>
+</CheckboxGroup>
 ```
 
 ## Code examples
@@ -77,36 +106,36 @@ You can use the Checkbox as an uncontrolled input, for that you can:
 
 ### Checked or indeterminate
 
-The Checkbox can be rendered as indeterminate or checked, with the `isIndeterminate` and `isChecked` properties.
+The Checkbox can be rendered as indeterminate or checked, with the `isIndeterminate`, and `isChecked` or `defaultChecked` properties.  
+Note that providing the `isChecked` makes it a controlled input, requiring an `onChange` handler.
 
 ```jsx
-<React.Fragment>
-  <Checkbox id="checkbox1" name="newsletter-subscribe1" isChecked>
-    Subscribe to newsletter (checked)
+<Flex flexDirection="column">
+  <Checkbox id="checkbox1" name="newsletter-subscribe1" defaultChecked>
+    Subscribe to newsletter (uncontrolled checked)
+  </Checkbox>
+  <Checkbox
+    id="checkbox1"
+    name="newsletter-subscribe1"
+    isChecked
+    onChange={() => {}}
+  >
+    Subscribe to newsletter (controlled checked)
   </Checkbox>
   <Checkbox id="checkbox2" name="newsletter-subscribe2" isIndeterminate>
     Subscribe to newsletter (indeterminate)
   </Checkbox>
-</React.Fragment>
+</Flex>
 ```
 
 The Checkbox can be rendered as disabled with the `isDisabled` property.
 
 ```jsx
-<React.Fragment>
-  <Checkbox
-    id="checkbox3"
-    name="newsletter-subscribe3"
-    isDisabled
-  />
+<Flex flexDirection="column">
+  <Checkbox id="checkbox3" name="newsletter-subscribe3" isDisabled>
     Subscribe to newsletter
   </Checkbox>
-  <Checkbox
-    id="checkbox4"
-    name="newsletter-subscribe4"
-    isChecked
-    isDisabled
-  >
+  <Checkbox id="checkbox4" name="newsletter-subscribe4" isChecked isDisabled>
     Subscribe to newsletter (checked)
   </Checkbox>
   <Checkbox
@@ -117,7 +146,7 @@ The Checkbox can be rendered as disabled with the `isDisabled` property.
   >
     Subscribe to newsletter (indeterminate)
   </Checkbox>
-</React.Fragment>
+</Flex>
 ```
 
 ## Content recommendations
@@ -130,6 +159,14 @@ The Checkbox can be rendered as disabled with the `isDisabled` property.
 
 - To ensure `Checkbox` meets accessibility standards, provide `name` and `id`
 
+## Props
+
 import { Props } from '@contentful/f36-docs-utils';
 
+### Props Checkbox
+
 <Props of="Checkbox" />
+
+### Props CheckboxGroup
+
+<Props of="CheckboxGroup" />

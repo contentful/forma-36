@@ -1,6 +1,7 @@
 import React from 'react';
 import { BaseCheckbox, BaseCheckboxProps } from '../base-checkbox';
 import { useFormControl } from '../form-control/FormControlContext';
+import { useBaseCheckboxGroup } from '../base-checkbox/BaseCheckboxGroupContext';
 
 export type RadioProps = Omit<
   BaseCheckboxProps,
@@ -15,8 +16,21 @@ const _Radio = (props: RadioProps, ref: React.Ref<HTMLInputElement>) => {
     isInvalid,
     isRequired,
     children,
+    onChange,
+    defaultChecked,
+    isChecked,
+    value,
+    name,
     ...otherProps
   } = props;
+
+  const groupProps = useBaseCheckboxGroup({
+    onChange,
+    value,
+    defaultChecked,
+    isChecked,
+    name,
+  });
 
   const formProps = useFormControl({
     id,
@@ -29,6 +43,7 @@ const _Radio = (props: RadioProps, ref: React.Ref<HTMLInputElement>) => {
     <BaseCheckbox
       {...formProps}
       {...otherProps}
+      {...groupProps}
       type="radio"
       testId={testId}
       ref={ref}

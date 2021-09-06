@@ -5,18 +5,24 @@ status: 'stable'
 slug: /components/radio/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/components/forms/src/radio'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-radio--basic'
-typescript: ./Radio.tsx
+typescript: ./Radio.tsx, ./RadioGroup.tsx
 ---
 
-`Radio` is a form component, that shows a radio input with its label. It is used to allow users to choose single option from the list. If you want to let the user select multiple options, use the `Checkbox` component.
+`Radio` is a form component, that shows a radio input with its label. It is used to allow users to choose single option from the list. If you want to let the user select multiple options, use the `Checkbox` component.  
+`RadioGroup` is a component that makes it easier to handle group of radios.
 
 ## Table of contents
 
 - [How to use Radio](#how-to-use-radio)
+  - [Using as a controlled input](#using-as-a-controlled-input)
+  - [Using as an uncontrolled input](#using-as-an-uncontrolled-input)
+  - [Using with RadioGroup](#using-with-radio)
 - [Component variations](#component-variations)
 - [Content recommendations](#content-recommendations)
 - [Accessibility](#accessibility)
 - [Props](#props)
+  - [Radio](#props-radio)
+  - [RadioGroup](#props-radiogroup)
 
 ## How to use Radio
 
@@ -78,6 +84,29 @@ You can use the Radio as an uncontrolled input, for that you can:
 </React.Fragment>
 ```
 
+### Using with RadioGroup
+
+We also provide the `RadioGroup` component that helps when using multiple radio, you can pass some common properties to be replicated to the radios.  
+This only set the context for the radio, it doesn't handle any styling.
+
+- `name`: This will set all radios with this name;
+- `defaultValue`: This accepts a value that set the `defaultChecked` property for the radio that have the same value.
+- `value`: Same as `defaultValue` but this one sets the `isChecked` property, making the radio group controlled;
+- `onChange`: Handler that will be executed when any radio inside the group receives the event of change.
+
+```jsx
+<RadioGroup name="radio-options" defaultValue={'option 1'}>
+  <Flex flexDirection="column">
+    <Radio value="option 1" id="option-1">
+      Option 1
+    </Radio>
+    <Radio value="option 2" id="option-2">
+      Option 2
+    </Radio>
+  </Flex>
+</RadioGroup>
+```
+
 ## Code examples
 
 ```jsx static=true
@@ -115,7 +144,7 @@ const ExampleRadio = () => {
 The Radio can be rendered as checked, with the `isChecked` property.
 
 ```jsx
-<Radio id="radio3" name="radio3" isChecked>
+<Radio id="radio3" name="radio3" isChecked onChange={() => {}}>
   Yes
 </Radio>
 ```
@@ -138,6 +167,14 @@ The Radio can be rendered as disabled with the `isDisabled` property.
 
 - To ensure `Radio` meets accessibility standards, provide `name` and `id`
 
+## Props
+
 import { Props } from '@contentful/f36-docs-utils';
 
+### Props Radio
+
 <Props of="Radio" />
+
+### Props RadioGroup
+
+<Props of="RadioGroup" />
