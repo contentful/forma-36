@@ -173,7 +173,7 @@ export function ModalConfirm({
     >
       {() => {
         return (
-          <div>
+          <React.Fragment>
             <Modal.Header title={title || ''} {...modalHeaderProps} />
             <Modal.Content {...modalContentProps}>{children}</Modal.Content>
             <Modal.Controls {...modalControlsProps}>
@@ -191,7 +191,7 @@ export function ModalConfirm({
                 </Fragment>
               )}
             </Modal.Controls>
-          </div>
+          </React.Fragment>
         );
       }}
     </Modal>

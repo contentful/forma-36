@@ -9,28 +9,26 @@ exports[`can accept custom labels 1`] = `
     data-test-id="cf-ui-modal-confirm"
     style="width: 520px;"
   >
-    <div>
-      <div
-        class="ModalHeader"
-        data-test-id="cf-ui-modal-header"
+    <div
+      class="ModalHeader"
+      data-test-id="cf-ui-modal-header"
+    >
+      <h1
+        class="ModalHeader__title"
       >
-        <h1
-          class="ModalHeader__title"
-        >
-          Are you sure?
-        </h1>
-      </div>
-      <div
-        class="ModalContent"
-        data-test-id="cf-ui-modal-content"
-      >
-        ModalConfirm
-      </div>
-      <div
-        class="ModalControls"
-        data-test-id="cf-ui-modal-controls"
-      />
+        Are you sure?
+      </h1>
     </div>
+    <div
+      class="ModalContent"
+      data-test-id="cf-ui-modal-content"
+    >
+      ModalConfirm
+    </div>
+    <div
+      class="ModalControls"
+      data-test-id="cf-ui-modal-controls"
+    />
   </div>
 </div>
 `;
@@ -44,28 +42,26 @@ exports[`renders the component 1`] = `
     data-test-id="cf-ui-modal-confirm"
     style="width: 520px;"
   >
-    <div>
-      <div
-        class="ModalHeader"
-        data-test-id="cf-ui-modal-header"
+    <div
+      class="ModalHeader"
+      data-test-id="cf-ui-modal-header"
+    >
+      <h1
+        class="ModalHeader__title"
       >
-        <h1
-          class="ModalHeader__title"
-        >
-          Are you sure?
-        </h1>
-      </div>
-      <div
-        class="ModalContent"
-        data-test-id="cf-ui-modal-content"
-      >
-        ModalConfirm
-      </div>
-      <div
-        class="ModalControls"
-        data-test-id="cf-ui-modal-controls"
-      />
+        Are you sure?
+      </h1>
     </div>
+    <div
+      class="ModalContent"
+      data-test-id="cf-ui-modal-content"
+    >
+      ModalConfirm
+    </div>
+    <div
+      class="ModalControls"
+      data-test-id="cf-ui-modal-controls"
+    />
   </div>
 </div>
 `;
@@ -79,28 +75,26 @@ exports[`renders the component with override header, content and controls 1`] = 
     data-test-id="cf-ui-modal-confirm"
     style="width: 520px;"
   >
-    <div>
-      <div
-        class="ModalHeader additional header class"
-        data-test-id="cf-ui-modal-header"
+    <div
+      class="ModalHeader additional header class"
+      data-test-id="cf-ui-modal-header"
+    >
+      <h1
+        class="ModalHeader__title ModalHeader__title--is-not-wrapped"
       >
-        <h1
-          class="ModalHeader__title ModalHeader__title--is-not-wrapped"
-        >
-          Are you sure?
-        </h1>
-      </div>
-      <div
-        class="ModalContent additional content class"
-        data-test-id="cf-ui-modal-content"
-      >
-        ModalConfirm
-      </div>
-      <div
-        class="ModalControls additional controls class"
-        data-test-id="cf-ui-modal-controls"
-      />
+        Are you sure?
+      </h1>
     </div>
+    <div
+      class="ModalContent additional content class"
+      data-test-id="cf-ui-modal-content"
+    >
+      ModalConfirm
+    </div>
+    <div
+      class="ModalControls additional controls class"
+      data-test-id="cf-ui-modal-controls"
+    />
   </div>
 </div>
 `;
