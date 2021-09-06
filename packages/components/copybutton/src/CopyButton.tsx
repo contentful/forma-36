@@ -40,6 +40,11 @@ export interface CopyButtonProps extends CommonProps {
    * @default false
    */
   isDisabled?: boolean;
+  /**
+   * Allows setting size of the copy button to small
+   * @default medium
+   */
+  size?: 'small' | 'medium';
 }
 
 function _CopyButton(props: CopyButtonProps, ref: React.Ref<HTMLDivElement>) {
@@ -52,9 +57,10 @@ function _CopyButton(props: CopyButtonProps, ref: React.Ref<HTMLDivElement>) {
     tooltipCopiedText = 'Copied!',
     tooltipProps,
     isDisabled = false,
+    size = 'medium',
     ...otherProps
   } = props;
-  const styles = getStyles();
+  const styles = getStyles({ size });
 
   const [copied, setCopied] = useState(false);
   const button = useRef<HTMLButtonElement | null>(null);
@@ -98,7 +104,10 @@ function _CopyButton(props: CopyButtonProps, ref: React.Ref<HTMLDivElement>) {
             aria-label={`Copy ${value} to clipboard`}
             disabled={isDisabled}
           >
-            <CopyIcon variant="muted" />
+            <CopyIcon
+              variant="muted"
+              size={size === 'small' ? 'tiny' : 'small'}
+            />
           </button>
         </Tooltip>
       </CopyToClipboard>
