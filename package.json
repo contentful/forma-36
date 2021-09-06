@@ -106,7 +106,7 @@
     "commitizen": "^4.2.1",
     "css-loader": "^3.6.0",
     "cssnano": "5.0.2",
-    "cz-conventional-changelog": "^2.1.0",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^7.17.0",
     "eslint-config-dev": "^2.0.0",
     "eslint-config-prettier": "^7.1.0",
