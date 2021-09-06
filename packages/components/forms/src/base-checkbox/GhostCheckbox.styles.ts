@@ -3,7 +3,7 @@ import type { CSSObject } from '@emotion/serialize';
 import type { GhostCheckboxProps } from './GhostCheckbox';
 import tokens from '@contentful/f36-tokens';
 
-type stylesArgs = Pick<GhostCheckboxProps, 'isDisabled'>;
+type stylesArgs = Pick<GhostCheckboxProps, 'isDisabled' | 'size'>;
 
 const getBaseGhostStyles = ({ isDisabled }): CSSObject => ({
   alignItems: 'center',
@@ -65,36 +65,58 @@ const getRadioStyles = ({ isDisabled }) => {
   return css(baseStyle);
 };
 
-const getSwitchStyles = ({ isDisabled }) => {
+const getSwitchStyles = ({ isDisabled, size }) => {
+  const sizeStyle =
+    size === 'small'
+      ? {
+          height: tokens.spacingM,
+          width: tokens.spacingXl,
+          '&:before': {
+            height: tokens.spacingS,
+            width: tokens.spacingS,
+          },
+          'input:checked + &:before': {
+            transform: `translateX(${tokens.spacingM})`,
+          },
+        }
+      : {
+          height: '20px',
+          width: '40px',
+          '&:before': {
+            height: tokens.spacingM,
+            width: tokens.spacingM,
+          },
+          'input:checked + &:before': {
+            transform: `translateX(20px)`,
+          },
+        };
+
   const baseStyle: CSSObject = {
     ...getBaseGhostStyles({ isDisabled }),
     background: tokens.gray600,
     borderColor: tokens.gray600,
     borderRadius: tokens.borderRadiusSmall,
+    justifyContent: 'space-around',
     position: 'relative',
-    width: tokens.spacingXl,
     '&:before': {
       background: tokens.colorWhite,
       borderRadius: `calc(${tokens.borderRadiusSmall}/2)`,
       content: '""',
-      height: tokens.spacingS,
       left: 0,
       position: 'absolute',
       transition: `transform ${tokens.transitionEasingDefault} ${tokens.transitionDurationDefault}`,
-      width: tokens.spacingS,
     },
     'input:checked + &': {
       background: tokens.blue600,
       borderColor: tokens.blue600,
-      '&:before': {
-        transform: `translateX(${tokens.spacingM})`,
-      },
     },
   };
 
   const disabledStyle: CSSObject = {
-    background: tokens.gray200,
-    borderColor: tokens.gray200,
+    '&, input:checked + &': {
+      background: tokens.gray200,
+      borderColor: tokens.gray200,
+    },
     '&:before': {
       background: tokens.gray400,
     },
@@ -103,15 +125,15 @@ const getSwitchStyles = ({ isDisabled }) => {
     },
   };
 
-  return css([baseStyle, isDisabled && disabledStyle]);
+  return css([baseStyle, sizeStyle, isDisabled && disabledStyle]);
 };
 
 const getStyles = (args: stylesArgs) => {
-  const { isDisabled } = args;
+  const { isDisabled, size } = args;
   return {
     radio: getRadioStyles({ isDisabled }),
     checkbox: getCheckboxStyles({ isDisabled }),
-    switch: getSwitchStyles({ isDisabled }),
+    switch: getSwitchStyles({ isDisabled, size }),
   };
 };
 

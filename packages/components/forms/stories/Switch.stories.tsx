@@ -1,7 +1,7 @@
 import React from 'react';
 import { SectionHeading } from '@contentful/f36-typography';
 import { Switch, SwitchProps } from '../src';
-import { Flex } from '@contentful/f36-core';
+import { Flex, Box } from '@contentful/f36-core';
 
 export default {
   title: 'Form Elements/Switch',
@@ -18,38 +18,73 @@ export const Basic = (args: SwitchProps) => (
 
 Basic.args = {
   children: 'Some label text',
+  size: 'medium',
 };
 
 export const overview = () => (
   <>
-    <SectionHeading as="h3" marginBottom="spacingS">
+    <SectionHeading as="h3" marginBottom="spacingM">
       Switch default
     </SectionHeading>
 
-    <Flex marginBottom="spacingS">
-      <Switch name="switch1" value="no" id="switch1">
-        Label text
-      </Switch>
+    <Flex flexDirection="column" marginBottom="spacingS">
+      <Box marginBottom="spacingS">
+        <Switch size="small" name="small-switch1" value="no" id="small-switch1">
+          Label text
+        </Switch>
+      </Box>
+      <Box marginBottom="spacingS">
+        <Switch name="switch1" value="no" id="switch1">
+          Label text
+        </Switch>
+      </Box>
     </Flex>
 
-    <SectionHeading as="h3" marginBottom="spacingS">
+    <SectionHeading as="h3" marginBottom="spacingM">
       Switch disabled
     </SectionHeading>
 
-    <Flex marginBottom="spacingS">
-      <Switch isDisabled name="switch2" value="no" id="switch2">
-        Label text
-      </Switch>
+    <Flex flexDirection="column" marginBottom="spacingS">
+      <Box marginBottom="spacingS">
+        <Switch
+          size="small"
+          isDisabled
+          name="small-switch2"
+          value="no"
+          id="small-switch2"
+        >
+          Label text
+        </Switch>
+      </Box>
+      <Box marginBottom="spacingS">
+        <Switch isDisabled name="switch2" value="no" id="switch2">
+          Label text
+        </Switch>
+      </Box>
     </Flex>
 
-    <SectionHeading as="h3" marginBottom="spacingS">
+    <SectionHeading as="h3" marginBottom="spacingM">
       Switch disabled checked
     </SectionHeading>
 
-    <Flex marginBottom="spacingS">
-      <Switch isDisabled isChecked name="switch3" value="no" id="switch3">
-        Label text
-      </Switch>
+    <Flex flexDirection="column" marginBottom="spacingS">
+      <Box marginBottom="spacingS">
+        <Switch
+          size="small"
+          isDisabled
+          isChecked
+          name="small-switch3"
+          value="no"
+          id="small-switch3"
+        >
+          Label text
+        </Switch>
+      </Box>
+      <Box marginBottom="spacingS">
+        <Switch isDisabled isChecked name="switch3" value="no" id="switch3">
+          Label text
+        </Switch>
+      </Box>
     </Flex>
   </>
 );

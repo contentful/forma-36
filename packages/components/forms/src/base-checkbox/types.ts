@@ -36,4 +36,9 @@ export interface BaseCheckboxInternalProps
    * Value to be set as aria-label if not passing a children
    */
   'aria-label'?: string;
+  /**
+   * Size of the input, only valid for switch input
+   * @default medium
+   */
+  size?: 'small' | 'medium';
 }

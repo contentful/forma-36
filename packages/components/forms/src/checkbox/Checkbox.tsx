@@ -2,7 +2,7 @@ import React from 'react';
 import { BaseCheckbox, BaseCheckboxProps } from '../base-checkbox';
 import { useFormControl } from '../form-control/FormControlContext';
 
-export type CheckboxProps = Omit<BaseCheckboxProps, 'type'>;
+export type CheckboxProps = Omit<BaseCheckboxProps, 'type' | 'size'>;
 
 const _Checkbox = (props: CheckboxProps, ref: React.Ref<HTMLInputElement>) => {
   const {
