@@ -6,6 +6,10 @@ import { getWorkbenchContentStyles } from './WorkbenchContent.styles';
 
 export interface WorkbenchContentOwnProps extends CommonProps {
   children: React.ReactNode;
+  /**
+   * This props define the max-width of the content container
+   * The default value is "default" which translates to `max-width: 1200px` in the browser
+   * */
   type?: 'default' | 'text' | 'full';
 }
 

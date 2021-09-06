@@ -6,6 +6,7 @@ import { getWorkbenchSidebarStyles } from './WorkbenchSidebar.styles';
 
 export interface WorkbenchSidebarOwnProps extends CommonProps {
   children: React.ReactNode;
+  /** It sets the correct border style for the Sidebar */
   position?: 'left' | 'right';
 }
 
