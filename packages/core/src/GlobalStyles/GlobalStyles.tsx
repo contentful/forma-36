@@ -14,6 +14,7 @@ export const GlobalStyles = ({
         ${withNormalize ? emotionNormalize : undefined};
 
         html {
+          box-sizing: border-box;
           margin: 0;
           margin: 0;
           padding: 0;
@@ -38,6 +39,7 @@ export const GlobalStyles = ({
         *::before {
           -moz-osx-font-smoothing: grayscale;
           -webkit-font-smoothing: antialiased;
+          box-sizing: inherit;
         }
       `}
     />
