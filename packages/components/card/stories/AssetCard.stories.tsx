@@ -2,7 +2,7 @@ import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
-import { DropdownList, DropdownListItem } from '@contentful/f36-components';
+import { MenuItem } from '@contentful/f36-menu';
 import * as icons from '@contentful/f36-icons';
 
 import { AssetCard } from '../src';
@@ -45,12 +45,10 @@ Default.args = {
   title: 'Asset title',
 };
 
-const actions = (
-  <DropdownList>
-    <DropdownListItem>Copy</DropdownListItem>
-    <DropdownListItem>Delete</DropdownListItem>
-  </DropdownList>
-);
+const actions: React.ReactNodeArray = [
+  <MenuItem key="copy">Copy</MenuItem>,
+  <MenuItem key="delete">Delete</MenuItem>,
+];
 
 export const Overview: Story<Args> = () => {
   return (

@@ -3,7 +3,7 @@ import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Flex } from '@contentful/f36-core';
 import { Heading, SectionHeading, Text } from '@contentful/f36-typography';
 import { ClockIcon } from '@contentful/f36-icons';
-import { DropdownList, DropdownListItem } from '@contentful/f36-components';
+import { MenuItem } from '@contentful/f36-menu';
 import { EntityStatusBadge } from '@contentful/f36-badge';
 
 import { Card } from '../src';
@@ -142,13 +142,11 @@ export const Overview: Story<CardProps> = () => {
           </SectionHeading>
 
           <Card
-            actions={
-              <DropdownList>
-                <DropdownListItem onClick={() => {}}>Edit</DropdownListItem>
-                <DropdownListItem onClick={() => {}}>Download</DropdownListItem>
-                <DropdownListItem onClick={() => {}}>Remove</DropdownListItem>
-              </DropdownList>
-            }
+            actions={[
+              <MenuItem key="edit">Edit</MenuItem>,
+              <MenuItem key="download">Download</MenuItem>,
+              <MenuItem key="remove">Remove</MenuItem>,
+            ]}
             isHovered
             title="Forma 36"
           >
@@ -237,13 +235,11 @@ export const Overview: Story<CardProps> = () => {
           </SectionHeading>
 
           <Card
-            actions={
-              <DropdownList>
-                <DropdownListItem onClick={() => {}}>Edit</DropdownListItem>
-                <DropdownListItem onClick={() => {}}>Download</DropdownListItem>
-                <DropdownListItem onClick={() => {}}>Remove</DropdownListItem>
-              </DropdownList>
-            }
+            actions={[
+              <MenuItem key="edit">Edit</MenuItem>,
+              <MenuItem key="download">Download</MenuItem>,
+              <MenuItem key="remove">Remove</MenuItem>,
+            ]}
             isHovered
             padding="large"
             title="Forma 36"

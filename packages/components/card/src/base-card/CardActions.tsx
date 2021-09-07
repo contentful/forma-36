@@ -1,16 +1,16 @@
 import React, { useCallback, useState } from 'react';
-import type { MouseEventHandler, ReactElement } from 'react';
+import type { MouseEventHandler } from 'react';
 import { Button } from '@contentful/f36-button';
 import type { ButtonProps } from '@contentful/f36-button';
 import { MoreHorizontalIcon } from '@contentful/f36-icons';
-import { Dropdown } from '@contentful/f36-components';
+import { Menu } from '@contentful/f36-menu';
 
 export type CardActionsProps = {
   buttonProps?: Partial<Omit<ButtonProps<'button'>, 'ref'>>;
   /**
    * Child elements to be rendered in the component
    */
-  children: ReactElement | ReactElement[];
+  children: React.ReactNodeArray;
 };
 
 export const CardActions = ({
@@ -28,13 +28,16 @@ export const CardActions = ({
   );
 
   return (
-    <Dropdown
+    <Menu
       isOpen={isActionsDropdownOpen}
+      onOpen={() => {
+        setIsActionsDropdownOpen(true);
+      }}
       onClose={() => {
         setIsActionsDropdownOpen(false);
       }}
-      position="bottom-right"
-      toggleElement={
+    >
+      <Menu.Trigger>
         <Button
           aria-label="Actions"
           icon={<MoreHorizontalIcon />}
@@ -42,31 +45,8 @@ export const CardActions = ({
           onClick={handleActionClick}
           variant="transparent"
         />
-      }
-      usePortal={false}
-    >
-      {React.Children.map(children, (listItems: ReactElement) => {
-        return React.Children.map(listItems, (item: ReactElement) => {
-          const resolvedChildren =
-            item.type === React.Fragment ? item.props.children : item;
-
-          const enhancedChildren = React.Children.map(
-            resolvedChildren,
-            (child: ReactElement) =>
-              React.cloneElement(child, {
-                onClick: (event: MouseEvent) => {
-                  if (child.props.onClick) {
-                    child.props.onClick(event);
-                  }
-                  setIsActionsDropdownOpen(false);
-                  event.stopPropagation();
-                },
-              }),
-          );
-
-          return enhancedChildren;
-        });
-      })}
-    </Dropdown>
+      </Menu.Trigger>
+      <Menu.List>{children}</Menu.List>
+    </Menu>
   );
 };

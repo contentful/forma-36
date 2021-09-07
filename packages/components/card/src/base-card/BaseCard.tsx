@@ -86,9 +86,9 @@ export type BaseCardInternalProps = Omit<
 > &
   AnchorProps & {
     /**
-     * The DropdownList elements used to render an actions dropdown
+     * An array of Menu elements used to render an actions menu
      */
-    actions?: ReactElement | ReactElement[];
+    actions?: React.ReactNodeArray;
     as?: CardElement;
     /**
      * If the card is selectable and has no title, it will need a aria-label to help screen readers identify it

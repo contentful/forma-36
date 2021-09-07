@@ -2,7 +2,7 @@ import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading, Text } from '@contentful/f36-typography';
-import { DropdownList, DropdownListItem } from '@contentful/f36-components';
+import { MenuItem } from '@contentful/f36-menu';
 
 import { InlineEntryCard } from '../src';
 import type { InlineEntryCardProps } from '../src';
@@ -42,12 +42,10 @@ export const Default: Story<InlineEntryCardProps> = (args) => {
 };
 
 Default.args = {
-  actions: (
-    <DropdownList>
-      <DropdownListItem>Copy</DropdownListItem>
-      <DropdownListItem>Delete</DropdownListItem>
-    </DropdownList>
-  ),
+  actions: [
+    <MenuItem key="copy">Copy</MenuItem>,
+    <MenuItem key="delete">Delete</MenuItem>,
+  ],
   status: 'published',
   title: 'Closer',
 };
@@ -89,12 +87,10 @@ export const Overview: Story<InlineEntryCardProps> = () => {
             Focus
           </SectionHeading>
           <InlineEntryCard
-            actions={
-              <DropdownList>
-                <DropdownListItem>Copy</DropdownListItem>
-                <DropdownListItem>Delete</DropdownListItem>
-              </DropdownList>
-            }
+            actions={[
+              <MenuItem key="copy">Copy</MenuItem>,
+              <MenuItem key="delete">Delete</MenuItem>,
+            ]}
             isFocused
             status="changed"
             title="Forma 36"
