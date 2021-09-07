@@ -11,11 +11,7 @@ import type {
 } from 'react';
 import tokens from '@contentful/f36-tokens';
 import { Box, Flex } from '@contentful/f36-core';
-import type {
-  BoxProps,
-  PolymorphicComponent,
-  PolymorphicComponentWithRef,
-} from '@contentful/f36-core';
+import type { BoxProps, PolymorphicComponent } from '@contentful/f36-core';
 import { Icon, IconComponent } from '@contentful/f36-icon';
 import type { ButtonProps } from '@contentful/f36-button';
 import { DragHandle } from '@contentful/f36-drag-handle';
@@ -156,13 +152,11 @@ export type BaseCardInternalProps = Omit<
     withDragHandle?: boolean;
   };
 
-export type BaseCardProps = BaseCardInternalProps &
-  Omit<BoxProps<typeof DEFAULT_TAG>, 'as' | 'ref'>;
+export type BaseCardProps<
+  E extends React.ElementType = typeof DEFAULT_TAG
+> = BaseCardInternalProps & Omit<BoxProps<E>, 'as' | 'ref'>;
 
-export const _BaseCard: PolymorphicComponentWithRef<
-  BaseCardInternalProps,
-  typeof DEFAULT_TAG
-> = (
+function _BaseCard<E extends React.ElementType = typeof DEFAULT_TAG>(
   {
     actions,
     actionsButtonProps,
@@ -192,9 +186,9 @@ export const _BaseCard: PolymorphicComponentWithRef<
     type,
     withDragHandle,
     ...otherProps
-  },
-  forwardedRef,
-) => {
+  }: BaseCardProps<E>,
+  forwardedRef: React.Ref<any>,
+) {
   const styles = getBaseCardStyles();
   const [isFocused, setisFocused] = useState(isFocusedProp ?? false);
   const [isHovered, setisHovered] = useState(isHoveredProp ?? false);
@@ -350,7 +344,7 @@ export const _BaseCard: PolymorphicComponentWithRef<
       </div>
     </Box>
   );
-};
+}
 
 export const BaseCard: PolymorphicComponent<
   BaseCardInternalProps,

@@ -1,11 +1,7 @@
 import React, { forwardRef } from 'react';
 import { css, cx } from 'emotion';
 import type { ObjectInterpolation } from 'emotion';
-import {
-  PolymorphicComponent,
-  PolymorphicComponentProps,
-  PolymorphicComponentWithRef,
-} from '@contentful/f36-core';
+import { PolymorphicComponent, PolymorphicProps } from '@contentful/f36-core';
 import { Heading } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
 import { Icon } from '@contentful/f36-icon';
@@ -42,15 +38,11 @@ export type CardInternalProps = Omit<
   padding?: 'default' | 'large';
 };
 
-export type CardProps = PolymorphicComponentProps<
-  typeof DEFAULT_TAG,
-  CardInternalProps
->;
+export type CardProps<
+  E extends React.ElementType = typeof DEFAULT_TAG
+> = PolymorphicProps<CardInternalProps, E>;
 
-export const _Card: PolymorphicComponentWithRef<
-  CardInternalProps,
-  typeof DEFAULT_TAG
-> = (
+function _Card<E extends React.ElementType = typeof DEFAULT_TAG>(
   {
     actions,
     badge,
@@ -59,9 +51,9 @@ export const _Card: PolymorphicComponentWithRef<
     padding = 'default',
     title,
     ...otherProps
-  },
-  forwardedRef,
-) => {
+  }: CardProps<E>,
+  forwardedRef: React.Ref<any>,
+) {
   const styles = getCardStyles();
   const baseStyles = getBaseCardStyles();
   const hasHeader = title || icon || badge || actions;
@@ -102,7 +94,7 @@ export const _Card: PolymorphicComponentWithRef<
       ref={forwardedRef}
     />
   );
-};
+}
 
 export const Card: PolymorphicComponent<
   CardInternalProps,

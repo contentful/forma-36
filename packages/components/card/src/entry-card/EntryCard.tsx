@@ -5,11 +5,10 @@ import { Flex } from '@contentful/f36-core';
 import type {
   EntityStatus,
   PolymorphicComponent,
-  PolymorphicComponentProps,
-  PolymorphicComponentWithRef,
+  PolymorphicProps,
 } from '@contentful/f36-core';
 import { EntityStatusBadge } from '@contentful/f36-badge';
-import { Heading, Typography } from '@contentful/f36-typography';
+import { Heading } from '@contentful/f36-typography';
 
 import { BaseCard } from '../base-card/BaseCard';
 import type { BaseCardInternalProps } from '../base-card/BaseCard';
@@ -31,15 +30,11 @@ export type EntryCardInternalProps = Omit<
   thumbnail?: ReactElement;
 };
 
-export type EntryCardProps = PolymorphicComponentProps<
-  typeof DEFAULT_TAG,
-  EntryCardInternalProps
->;
+export type EntryCardProps<
+  E extends React.ElementType = typeof DEFAULT_TAG
+> = PolymorphicProps<EntryCardInternalProps, E>;
 
-export const _EntryCard: PolymorphicComponentWithRef<
-  EntryCardInternalProps,
-  typeof DEFAULT_TAG
-> = (
+function _EntryCard<E extends React.ElementType = typeof DEFAULT_TAG>(
   {
     actions,
     children,
@@ -50,9 +45,9 @@ export const _EntryCard: PolymorphicComponentWithRef<
     title,
     type,
     ...otherProps
-  },
-  forwardedRef,
-) => {
+  }: EntryCardProps<E>,
+  forwardedRef: React.Ref<any>,
+) {
   const styles = getEntryCardStyles();
   const badge = status ? <EntityStatusBadge entityStatus={status} /> : null;
 
@@ -72,11 +67,7 @@ export const _EntryCard: PolymorphicComponentWithRef<
         flexDirection="row"
       >
         <Flex flexDirection="column" flexGrow={1}>
-          {title && (
-            <Typography>
-              <Heading>{title}</Heading>
-            </Typography>
-          )}
+          {title && <Heading>{title}</Heading>}
 
           {children}
         </Flex>
@@ -85,7 +76,7 @@ export const _EntryCard: PolymorphicComponentWithRef<
       </Flex>
     </BaseCard>
   );
-};
+}
 
 export const EntryCard: PolymorphicComponent<
   EntryCardInternalProps,
