@@ -8,8 +8,8 @@ storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-sele
 typescript: ./Select.tsx,./SelectOption.tsx
 ---
 
-Select allows users to make a single selection from an options menu.
-Keep in mind that Select should not be used without the label. We provide [SelectField](https://f36.contentful.com/components/select-field/) component, which contains label, help or error message if needed.
+Select allows users to make a single selection from an options menu.  
+Keep in mind that Select should not be used without the label.
 
 ## Table of contents
 
@@ -26,6 +26,43 @@ Keep in mind that Select should not be used without the label. We provide [Selec
 - Order the list of options in a logical way, so it make sense for the user
 - Don't use Select for a very long list of options, instead for those cases use [Autocomplete](https://f36.contentful.com/components/autocomplete/)
 - if you use Select component add your custom label to it or use our [SelectField](https://f36.contentful.com/components/select-field/) instead
+
+### Using as a controlled select
+
+To use the Select as controlled, you need to provide the value of one of the options as the value prop for the Select, and the onChange handler.
+
+```tsx static=true
+const ExampleControlled = () => {
+  const [selectValue, setSelectValue] = useState("optionOne");
+  const handleOnChange = (event) => setSelectedValue(event.target.value);
+
+  return (
+<Select
+  id="optionSelect-controlled"
+  name="optionSelect-controlled"
+  value={selectValue}
+  onChange={handleOnChange}
+>
+  <Select.Option value="optionOne">Option 1</Select.Option>
+  <Select.Option value="optionTwo">Long Option 2</Select.Option>
+</Select>
+```
+
+### Using as an uncontrolled select
+
+To use the Select as uncontrolled, you shouldn't pass the value prop, if you want to have an option selected by default, you can instead use the defaultValue prop.
+
+```tsx static=true
+<Select
+  id="optionSelect-controlled"
+  name="optionSelect-controlled"
+  defaultValue={'optionOne'}
+>
+  <Select.Option value="optionOne">Option 1</Select.Option> // This option would
+  be selected by default
+  <Select.Option value="optionTwo">Long Option 2</Select.Option>
+</Select>
+```
 
 ### Select vs dropdown
 
@@ -59,14 +96,12 @@ Keep in mind that Select should not be used without the label. We provide [Selec
 ```tsx
 // import { Select } from '@contentful/f36-components';
 
-<Select name="optionSelect" id="optionSelect">
-  <Select.Option value="" isDisabled isSelected>
+<Select name="optionSelect" id="optionSelect" defaultValue="">
+  <Select.Option value="" isDisabled>
     Please select an option...
   </Select.Option>
   <Select.Option value="optionOne">Option One</Select.Option>
-  <Select.Option value="optionTwo" isSelected>
-    Option Two
-  </Select.Option>
+  <Select.Option value="optionTwo">Option Two</Select.Option>
   <Select.Option value="optionThree" isDisabled>
     Option Three
   </Select.Option>

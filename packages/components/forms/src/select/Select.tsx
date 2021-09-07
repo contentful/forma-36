@@ -21,6 +21,8 @@ export type SelectInternalProps = CommonProps & {
   children: ReactNode;
   willBlurOnEsc?: boolean;
   size?: SelectSize;
+  value?: string;
+  defaultValue?: string;
 };
 
 export type SelectProps = PropsWithHTMLElement<
@@ -41,6 +43,8 @@ const _Select = (
     willBlurOnEsc = true,
     onKeyDown,
     size = 'medium',
+    value = undefined,
+    defaultValue = undefined,
     ...otherProps
   }: SelectProps,
   ref: React.Ref<HTMLSelectElement>,
@@ -52,7 +56,11 @@ const _Select = (
     id,
   });
 
-  const styles = getSelectStyles({ isDisabled, isInvalid, size });
+  const styles = getSelectStyles({
+    isDisabled: formProps.isDisabled,
+    isInvalid: formProps.isInvalid,
+    size,
+  });
 
   const handleKeyDown = useCallback(
     (e: KeyboardEvent<HTMLSelectElement>) => {
@@ -78,6 +86,8 @@ const _Select = (
         aria-required={formProps.isRequired ? 'true' : undefined}
         aria-invalid={formProps.isInvalid ? true : undefined}
         disabled={formProps.isDisabled}
+        defaultValue={defaultValue}
+        value={value}
         ref={ref}
       >
         {children}

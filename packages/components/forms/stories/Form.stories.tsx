@@ -61,10 +61,14 @@ export const OverviewWithSmallInputs = (args: FormControlInternalProps) => {
       </FormControl>
       <FormControl {...args}>
         <FormControl.Label>Choose your favorite fruit</FormControl.Label>
-        <Select id="optionSelect" name="optionSelect" {...args} size="small">
-          <Select.Option value="optionOne" isSelected>
-            Apple
-          </Select.Option>
+        <Select
+          id="optionSelect"
+          name="optionSelect"
+          {...args}
+          size="small"
+          defaultValue="optionOne"
+        >
+          <Select.Option value="optionOne">Apple</Select.Option>
           <Select.Option value="optionOne">Peach</Select.Option>
           <Select.Option value="optionOne">Pineapple</Select.Option>
           <Select.Option value="optionTwo">Banana</Select.Option>
