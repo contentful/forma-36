@@ -122,6 +122,22 @@ export type {
 export * from '@contentful/f36-modal';
 export * from '@contentful/f36-notification';
 export * from '@contentful/f36-asset';
+export {
+  Menu,
+  MenuDivider,
+  MenuList,
+  MenuTrigger,
+  MenuSectionTitle,
+  MenuItem,
+} from '@contentful/f36-menu';
+export type {
+  MenuProps,
+  MenuDividerProps,
+  MenuListProps,
+  MenuTriggerProps,
+  MenuSectionTitleProps,
+  MenuItemProps,
+} from '@contentful/f36-menu';
 export * from './components/Autocomplete';
 export * from './components/Card';
 export * from './components/Dropdown';
