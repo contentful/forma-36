@@ -3,10 +3,6 @@ import { cx } from 'emotion';
 import { CommonProps, Flex } from '@contentful/f36-core';
 import { getWorkbenchStyles } from './Workbench.styles';
 
-import { WorkbenchHeader } from './WorkbenchHeader';
-import { WorkbenchContent } from './WorkbenchContent';
-import { WorkbenchSidebar } from './WorkbenchSidebar';
-
 export interface WorkbenchProps extends CommonProps {
   children: React.ReactNode;
 }
@@ -44,18 +40,7 @@ function _Workbench(
   );
 }
 
-const ForwardRefWorkbench = React.forwardRef(_Workbench);
-
-type CompoundWorkbench = typeof ForwardRefWorkbench & {
-  Header?: typeof WorkbenchHeader;
-  Content?: typeof WorkbenchContent;
-  Sidebar?: typeof WorkbenchSidebar;
-};
-
 /**
  * The Workbench assembles the outer app shell which defines regions to structure content and interactions
  */
-export const Workbench: CompoundWorkbench = ForwardRefWorkbench;
-Workbench.Header = WorkbenchHeader;
-Workbench.Content = WorkbenchContent;
-Workbench.Sidebar = WorkbenchSidebar;
+export const Workbench = React.forwardRef(_Workbench);

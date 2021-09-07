@@ -11,7 +11,7 @@ import {
 import { Button } from '@contentful/f36-button';
 import { StarIcon } from '@contentful/f36-icons';
 
-import { Workbench } from '../src/Workbench';
+import { Workbench } from '../src/CompoundWorkbench';
 import type { WorkbenchContentProps } from '../src/WorkbenchContent';
 
 export default {
