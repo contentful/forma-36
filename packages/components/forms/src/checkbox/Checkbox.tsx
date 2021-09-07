@@ -3,7 +3,7 @@ import { BaseCheckbox, BaseCheckboxProps } from '../base-checkbox';
 import { useFormControl } from '../form-control/FormControlContext';
 import { useBaseCheckboxGroup } from '../base-checkbox/BaseCheckboxGroupContext';
 
-export type CheckboxProps = Omit<BaseCheckboxProps, 'type'>;
+export type CheckboxProps = Omit<BaseCheckboxProps, 'type' | 'size'>;
 
 const _Checkbox = (props: CheckboxProps, ref: React.Ref<HTMLInputElement>) => {
   const {
@@ -29,7 +29,8 @@ const _Checkbox = (props: CheckboxProps, ref: React.Ref<HTMLInputElement>) => {
     name,
   });
 
-  const formProps = useFormControl({
+  // Removes the isReadOnly property that comes from FormControl context.
+  const { isReadOnly, ...formProps } = useFormControl({
     id,
     isDisabled,
     isInvalid,

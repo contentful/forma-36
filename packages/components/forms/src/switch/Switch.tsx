@@ -15,7 +15,8 @@ const _Switch = (props: SwitchProps, ref: React.Ref<HTMLInputElement>) => {
     ...otherProps
   } = props;
 
-  const formProps = useFormControl({
+  // Removes the isReadOnly property that comes from FormControl context.
+  const { isReadOnly, ...formProps } = useFormControl({
     id,
     isDisabled,
     isInvalid,

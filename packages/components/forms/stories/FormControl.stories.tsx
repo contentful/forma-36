@@ -46,8 +46,8 @@ export const Basic = (args: FormControlInternalProps) => {
 
       <FormControl {...args}>
         <FormControl.Label>City</FormControl.Label>
-        <Select>
-          <Select.Option value="" isDisabled isSelected>
+        <Select defaultValue="">
+          <Select.Option value="" isDisabled>
             Please, select your city
           </Select.Option>
           <Select.Option value="berlin">Berlin</Select.Option>
