@@ -100,6 +100,7 @@ export const WithMaxHeight: Story<MenuProps> = (args) => {
 
 export const WithStickyHeaderAndFooter: Story<MenuProps> = (args) => {
   const [isOpen, setIsOpen] = React.useState(true);
+
   return (
     <Menu
       {...args}
@@ -114,14 +115,17 @@ export const WithStickyHeaderAndFooter: Story<MenuProps> = (args) => {
       <Menu.Trigger>
         <Button>Toggle</Button>
       </Menu.Trigger>
-      <Menu.List
-        headerItem={<Menu.Item>Item header</Menu.Item>}
-        footerItem={<Menu.Item>Item footer</Menu.Item>}
-        style={{ maxHeight: '200px' }}
-      >
+      <Menu.List style={{ maxHeight: '200px' }}>
+        <Menu.ListHeader>
+          <Menu.Item>Item header</Menu.Item>
+        </Menu.ListHeader>
+        {/* @ts-expert-error ignore */}
         {[...Array(10)].map((_, index) => (
           <Menu.Item key={index}>Item {index}</Menu.Item>
         ))}
+        <Menu.ListFooter>
+          <Menu.Item>Item footer</Menu.Item>
+        </Menu.ListFooter>
       </Menu.List>
     </Menu>
   );

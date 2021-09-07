@@ -4,19 +4,15 @@ import { useMenuContext } from '../MenuContext';
 import { Popover } from '@contentful/f36-popover';
 import { cx } from 'emotion';
 import { getMenuListStyles } from './MenuList.styles';
+import { MenuListHeader } from './MenuListHeader';
+import { MenuListFooter } from './MenuListFooter';
 
 interface MenuListInternalProps extends CommonProps {
-  children?: React.ReactElement[];
+  children?: React.ReactNodeArray;
+}
 
-  /**
-   * The item will be sticked to the top of MenuList
-   */
-  headerItem?: React.ReactElement;
-
-  /**
-   * The item will be sticked to the bottom of MenuList
-   */
-  footerItem?: React.ReactElement;
+function assertChild(child: any): child is { type: { displayName: string } } {
+  return Boolean(child?.type?.displayName);
 }
 
 export type MenuListProps = PropsWithHTMLElement<MenuListInternalProps, 'div'>;
@@ -26,16 +22,34 @@ const _MenuList = (props: MenuListProps, ref: React.Ref<HTMLDivElement>) => {
     children,
     testId = 'cf-ui-menu-list',
     className,
-    headerItem,
-    footerItem,
     ...otherProps
   } = props;
 
   const { getMenuListProps } = useMenuContext();
 
+  let header: React.ReactElement | null = null;
+  let footer: React.ReactElement | null = null;
+  const items: React.ReactElement[] = [];
+
+  React.Children.forEach(children, (child) => {
+    let appendChild = true;
+    if (assertChild(child)) {
+      if (child.type.displayName === MenuListHeader.displayName) {
+        header = (child as unknown) as React.ReactElement;
+        appendChild = false;
+      } else if (child.type.displayName === MenuListFooter.displayName) {
+        footer = (child as unknown) as React.ReactElement;
+        appendChild = false;
+      }
+    }
+    if (appendChild) {
+      items.push((child as unknown) as React.ReactElement);
+    }
+  });
+
   const styles = getMenuListStyles({
-    hasStickyHeader: Boolean(headerItem),
-    hasStickyFooter: Boolean(footerItem),
+    hasStickyHeader: Boolean(header),
+    hasStickyFooter: Boolean(footer),
   });
 
   return (
@@ -45,9 +59,9 @@ const _MenuList = (props: MenuListProps, ref: React.Ref<HTMLDivElement>) => {
       role="menu"
       className={cx(styles.container, className)}
     >
-      {headerItem && <div className={styles.headerItem}>{headerItem}</div>}
-      {children}
-      {footerItem && <div className={styles.footerItem}>{footerItem}</div>}
+      {header}
+      {items}
+      {footer}
     </Popover.Content>
   );
 };
