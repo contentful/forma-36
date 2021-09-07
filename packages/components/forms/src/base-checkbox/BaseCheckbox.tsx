@@ -41,6 +41,7 @@ function _BaseCheckbox(
     inputProps = {},
     children,
     'aria-label': ariaLabel,
+    size = 'medium',
     ...otherProps
   } = props;
   const inputRef = useForwardedRef<HTMLInputElement>(ref);
@@ -50,7 +51,7 @@ function _BaseCheckbox(
     inputRef.current.indeterminate = isIndeterminate;
   }, [isIndeterminate, inputRef]);
 
-  const styles = getStyles({ isDisabled, type });
+  const styles = getStyles({ isDisabled, type, size });
 
   const handleFocus = useCallback(
     (e) => {
@@ -123,6 +124,7 @@ function _BaseCheckbox(
         type={type}
         isDisabled={isDisabled}
         isIndeterminate={isIndeterminate}
+        size={size}
       />
       {children}
     </Text>

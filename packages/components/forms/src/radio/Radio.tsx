@@ -3,7 +3,10 @@ import { BaseCheckbox, BaseCheckboxProps } from '../base-checkbox';
 import { useFormControl } from '../form-control/FormControlContext';
 import { useBaseCheckboxGroup } from '../base-checkbox/BaseCheckboxGroupContext';
 
-export type RadioProps = Omit<BaseCheckboxProps, 'type' | 'isIndeterminate'>;
+export type RadioProps = Omit<
+  BaseCheckboxProps,
+  'type' | 'isIndeterminate' | 'size'
+>;
 
 const _Radio = (props: RadioProps, ref: React.Ref<HTMLInputElement>) => {
   const {
