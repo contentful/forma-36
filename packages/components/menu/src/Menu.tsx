@@ -28,12 +28,12 @@ export interface MenuProps
   /**
    * Callback fired when the Menu opens
    */
-  onOpen?: Function;
+  onOpen?: () => void;
 
   /**
    * Callback fired when the Menu closes
    */
-  onClose?: Function;
+  onClose?: () => void;
 
   /**
    * If `true`, the Menu will close when a menu item is
