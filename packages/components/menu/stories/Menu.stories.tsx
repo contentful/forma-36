@@ -60,11 +60,11 @@ export const WithDisabledItems: Story<MenuProps> = (args) => {
         <Menu.Item>Item 1</Menu.Item>
         <Menu.Item>Item 2</Menu.Item>
         <Menu.Item>Item 3</Menu.Item>
-        <Menu.Item disabled>Disabled item</Menu.Item>
-        <Menu.Item>Item 4</Menu.Item>
+        <Menu.Item disabled>Item 4 (disabled)</Menu.Item>
         <Menu.Item>Item 5</Menu.Item>
-        <Menu.Item disabled>Disabled item</Menu.Item>
         <Menu.Item>Item 6</Menu.Item>
+        <Menu.Item disabled>Item 7 (disabled)</Menu.Item>
+        <Menu.Item>Item 8</Menu.Item>
       </Menu.List>
     </Menu>
   );
@@ -88,9 +88,9 @@ export const WithMaxHeight: Story<MenuProps> = (args) => {
       </Menu.Trigger>
       <Menu.List
         // You can pass a classname with maxHeight style or a style object directly
-        style={{ maxHeight: '100px' }}
+        style={{ maxHeight: '200px' }}
       >
-        {[...Array(10)].map((_, index) => (
+        {[...Array(20)].map((_, index) => (
           <Menu.Item key={index}>Item {index}</Menu.Item>
         ))}
       </Menu.List>
@@ -115,7 +115,7 @@ export const WithStickyHeaderAndFooter: Story<MenuProps> = (args) => {
       <Menu.Trigger>
         <Button>Toggle</Button>
       </Menu.Trigger>
-      <Menu.List style={{ maxHeight: '200px' }}>
+      <Menu.List style={{ maxHeight: '300px' }}>
         <Menu.ListHeader>
           <Menu.Item>Item header</Menu.Item>
         </Menu.ListHeader>

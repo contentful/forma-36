@@ -20,6 +20,7 @@ export const getMenuItemStyles = () => {
       whiteSpace: 'break-spaces',
       cursor: 'pointer',
       hyphens: 'auto',
+      minWidth: '150px',
 
       '&:focus, &:hover': {
         backgroundColor: tokens.gray100,
