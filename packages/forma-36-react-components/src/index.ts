@@ -131,6 +131,5 @@ export type {
   RelativeDateTimeProps,
 } from '@contentful/f36-datetime';
 export * from './components/EntityList';
-export * from './components/Workbench';
 
 // -- Add imports above this line (required by plopfile.js) --
