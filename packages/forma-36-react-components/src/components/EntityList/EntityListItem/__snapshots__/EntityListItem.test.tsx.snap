@@ -1665,8 +1665,8 @@ exports[`renders the component with dropdownListElements 1`] = `
   border-color: transparent;
   font-size: 0.875rem;
   line-height: 1.25;
-  padding: 0.5rem 1rem;
-  min-height: 40px;
+  padding: 0.25rem 0.75rem;
+  min-height: 32px;
 }
 
 .emotion-4 svg {
@@ -1772,39 +1772,34 @@ exports[`renders the component with dropdownListElements 1`] = `
             published
           </div>
         </div>
-        <div
-          class="Dropdown EntityListItem__actions"
-          data-test-id="cf-ui-dropdown"
+        <button
+          aria-controls="id"
+          aria-expanded="false"
+          aria-haspopup="dialog"
+          aria-label="Actions"
+          class="emotion-4"
+          data-test-id="cf-ui-button"
+          type="button"
         >
-          <button
-            aria-expanded="false"
-            aria-haspopup="menu"
-            aria-label="Actions"
-            class="emotion-4"
-            data-node-id="dropdown-trigger-61728000"
-            data-test-id="cf-ui-button"
-            type="button"
+          <span
+            class="emotion-3"
           >
-            <span
-              class="emotion-3"
+            <svg
+              aria-hidden="true"
+              class="emotion-2"
+              data-test-id="cf-ui-icon"
+              viewBox="0 0 24 24"
             >
-              <svg
-                aria-hidden="true"
-                class="emotion-2"
-                data-test-id="cf-ui-icon"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M0 0h24v24H0z"
-                  fill="none"
-                />
-                <path
-                  d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
-                />
-              </svg>
-            </span>
-          </button>
-        </div>
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+              />
+              <path
+                d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"
+              />
+            </svg>
+          </span>
+        </button>
       </div>
     </span>
   </article>

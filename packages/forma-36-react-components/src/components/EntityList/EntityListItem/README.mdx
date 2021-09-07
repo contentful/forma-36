@@ -18,13 +18,11 @@ This component should be used in combination with the EntryList component which 
   contentType="My content type"
   status="draft"
   entityType="entry"
-  dropdownListElements={
-    <DropdownList>
-      <DropdownListItem isTitle>Actions</DropdownListItem>
-      <DropdownListItem>Edit</DropdownListItem>
-      <DropdownListItem>Download</DropdownListItem>
-      <DropdownListItem>Remove</DropdownListItem>
-    </DropdownList>
-  }
+  actions={[
+    <MenuSectionTitle key="title">Actions</MenuSectionTitle>,
+    <MenuItem key="edit">Edit</MenuItem>,
+    <MenuItem key="download">Download</MenuItem>,
+    <MenuItem key="remove">Remove</MenuItem>,
+  ]}
 />
 ```

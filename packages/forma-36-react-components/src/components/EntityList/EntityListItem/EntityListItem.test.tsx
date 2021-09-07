@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import { axe } from '@/scripts/test/axeHelper';
 
 import { EntityListItem } from './EntityListItem';
-import { DropdownList, DropdownListItem } from '../../Dropdown';
+import { MenuItem, MenuSectionTitle } from '@contentful/f36-menu';
 import { CardDragHandle } from './../../Card';
 
 jest.mock('@contentful/f36-core', () => ({
@@ -85,14 +85,12 @@ it('renders the component with dropdownListElements', () => {
       description="Description"
       contentType="Content type"
       status="published"
-      dropdownListElements={
-        <DropdownList>
-          <DropdownListItem isTitle>Actions</DropdownListItem>
-          <DropdownListItem onClick={() => {}}>Edit</DropdownListItem>
-          <DropdownListItem onClick={() => {}}>Download</DropdownListItem>
-          <DropdownListItem onClick={() => {}}>Remove</DropdownListItem>
-        </DropdownList>
-      }
+      actions={[
+        <MenuSectionTitle key="title">Actions</MenuSectionTitle>,
+        <MenuItem key="edit">Edit</MenuItem>,
+        <MenuItem key="download">Download</MenuItem>,
+        <MenuItem key="remove">Remove</MenuItem>,
+      ]}
     />,
   );
 
