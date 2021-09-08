@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 
 import { Button, ButtonProps } from './Button';
 import { Flex } from '../Flex';
@@ -318,3 +318,39 @@ export const Overview = (args: ButtonProps) => (
     </Flex>
   </>
 );
+
+export const SubmitButton = (args: ButtonProps) => {
+  const [isLoading, setLoading] = React.useState(false);
+
+  const submitForm = useCallback(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, []);
+
+  return (
+    <>
+      <Flex flexDirection="column" marginBottom="spacingL">
+        <Flex marginBottom="spacingS">
+          <SectionHeading element="h3">
+            Submit button with loading state
+          </SectionHeading>
+        </Flex>
+        <Flex flexDirection="row" marginBottom="spacingM">
+          <Flex marginRight="spacingXs">
+            <Button
+              icon={args.icon}
+              buttonType={args.buttonType}
+              loading={isLoading}
+              disabled={isLoading}
+              onClick={submitForm}
+            >
+              Submit me
+            </Button>
+          </Flex>
+        </Flex>
+      </Flex>
+    </>
+  );
+};
