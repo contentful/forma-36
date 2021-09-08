@@ -16,11 +16,16 @@ export interface CheckboxGroupProps
   value?: Array<string>;
 }
 
-export const CheckboxGroup = (props: CheckboxGroupProps) => {
+const _CheckboxGroup = (
+  props: CheckboxGroupProps,
+  ref: React.Ref<HTMLDivElement>,
+) => {
   const { children, ...groupProps } = props;
   return (
-    <BaseCheckboxGroup type="checkbox" {...groupProps}>
+    <BaseCheckboxGroup ref={ref} type="checkbox" {...groupProps}>
       {children}
     </BaseCheckboxGroup>
   );
 };
+
+export const CheckboxGroup = React.forwardRef(_CheckboxGroup);

@@ -1,43 +1,44 @@
 import React from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import { action } from '@storybook/addon-actions';
 
 import { Button } from '@contentful/f36-button';
 import { Flex } from '@contentful/f36-core';
 
-import { Checkbox, Form, FormControl, Textarea, TextInput } from '../src';
+import {
+  Checkbox,
+  CheckboxGroup,
+  Form,
+  FormControl,
+  RadioGroup,
+  Radio,
+  Textarea,
+  TextInput,
+} from '../src';
 
 export default {
   title: 'Form Elements/Integrations/react-hook-form',
   component: Form,
   argTypes: {
-    ['useForm mode']: {
-      description:
-        'It tells react-hook-validation when to trigger the validation of the form',
-      control: {
-        options: ['onSubmit', 'onChange', 'onBlur', 'onTouched'],
-        type: 'select',
-      },
-    },
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
     style: { control: { disable: true } },
   },
 };
 
-export const Basic = (args) => {
+export const Basic = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({ mode: args['useForm mode'] });
+  } = useForm();
 
   const onSubmit = (data) => action('submitted data')(data);
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      <FormControl isRequired isInvalid={Boolean(errors.name)}>
-        <FormControl.Label>Name</FormControl.Label>
+      <FormControl isInvalid={Boolean(errors.name)}>
+        <FormControl.Label isRequired>Name</FormControl.Label>
         <TextInput {...register('name', { required: true })} />
         <FormControl.HelpText>
           Please enter your first name
@@ -77,14 +78,148 @@ export const Basic = (args) => {
         )}
       </FormControl>
 
-      <Flex justifyContent="flex-end">
-        <Button variant="primary" type="submit">
-          Submit
-        </Button>
-      </Flex>
+      <Button variant="primary" type="submit">
+        Submit
+      </Button>
     </Form>
   );
 };
-Basic.args = {
-  ['useForm mode']: 'onSubmit',
+
+export const WithRadioGroup = () => {
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => action('submitted data')(data);
+
+  return (
+    <Form onSubmit={handleSubmit(onSubmit)}>
+      <Controller
+        name="fruits"
+        control={control}
+        defaultValue={'apples'}
+        rules={{ required: true }}
+        render={({ field }) => (
+          <FormControl isInvalid={errors.fruits}>
+            <FormControl.Label>Fruits</FormControl.Label>
+            <RadioGroup {...field}>
+              <Radio id="apples" value="apples">
+                Apples
+              </Radio>
+              <Radio id="pears" value="pears">
+                Pears
+              </Radio>
+              <Radio id="peaches" value="peaches">
+                Peaches
+              </Radio>
+            </RadioGroup>
+          </FormControl>
+        )}
+      />
+
+      <Button variant="primary" type="submit">
+        Submit
+      </Button>
+    </Form>
+  );
+};
+
+export const WithCheckboxGroup = () => {
+  const {
+    control,
+    register,
+    handleSubmit,
+    // formState: { errors },
+  } = useForm({ mode: 'onChange' });
+
+  const onSubmit = (data) => action('submitted data')(data);
+
+  // const [groupState, setGroupState] = React.useState(['apples']);
+
+  // const handleOnChange = (e) => {
+  //   e.persist();
+  //   const value = e.target.value;
+  //   setGroupState((prevState) =>
+  //     prevState.includes(value)
+  //       ? prevState.filter((v) => v !== value)
+  //       : [...prevState, value],
+  //   );
+  //   action('onChange')(e);
+  // };
+
+  return (
+    <Form onSubmit={handleSubmit(onSubmit)}>
+      <Controller
+        name="fruits"
+        control={control}
+        defaultValue={'c-apples'}
+        render={(args) => {
+          const { field, fieldState, formState } = args;
+          console.log({ field, fieldState, formState });
+          return (
+            <FormControl>
+              <FormControl.Label>
+                Controlled CheckboxGroup with react-hook-form (with Controller)
+              </FormControl.Label>
+              <CheckboxGroup
+                ref={field.ref}
+                value={[field.value]}
+                onChange={field.onChange}
+              >
+                <Checkbox id="c-apples" value="c-apples">
+                  Apples
+                </Checkbox>
+                <Checkbox id="c-pears" value="c-pears">
+                  Pears
+                </Checkbox>
+                <Checkbox id="c-peaches" value="c-peaches">
+                  Peaches
+                </Checkbox>
+              </CheckboxGroup>
+            </FormControl>
+          );
+        }}
+      />
+
+      <FormControl>
+        <FormControl.Label>
+          Controlled CheckboxGroup with react-hook-form
+        </FormControl.Label>
+        <CheckboxGroup defaultValue={['apples']}>
+          <Checkbox id="apples" value="apples" {...register('apples')}>
+            Apples
+          </Checkbox>
+          <Checkbox id="pears" value="pears" {...register('pears')}>
+            Pears
+          </Checkbox>
+          <Checkbox id="peaches" value="peaches" {...register('peaches')}>
+            Peaches
+          </Checkbox>
+        </CheckboxGroup>
+      </FormControl>
+
+      <FormControl>
+        <FormControl.Label>
+          Uncontrolled CheckboxGroup with react-hook-form
+        </FormControl.Label>
+        <CheckboxGroup defaultValue={['u-apples']}>
+          <Checkbox id="u-apples" value="u-apples" {...register('u-apples')}>
+            Apples
+          </Checkbox>
+          <Checkbox id="u-pears" value="u-pears" {...register('u-pears')}>
+            Pears
+          </Checkbox>
+          <Checkbox id="u-peaches" value="u-peaches" {...register('u-peaches')}>
+            Peaches
+          </Checkbox>
+        </CheckboxGroup>
+      </FormControl>
+
+      <Button variant="primary" type="submit">
+        Submit
+      </Button>
+    </Form>
+  );
 };

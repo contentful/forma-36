@@ -13,6 +13,7 @@ const _Checkbox = (props: CheckboxProps, ref: React.Ref<HTMLInputElement>) => {
     isRequired,
     isInvalid,
     children,
+    onBlur,
     onChange,
     defaultChecked,
     isChecked,
@@ -22,6 +23,7 @@ const _Checkbox = (props: CheckboxProps, ref: React.Ref<HTMLInputElement>) => {
   } = props;
 
   const groupProps = useBaseCheckboxGroup({
+    onBlur,
     onChange,
     value,
     defaultChecked,

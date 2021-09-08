@@ -16,6 +16,7 @@ const _Radio = (props: RadioProps, ref: React.Ref<HTMLInputElement>) => {
     isInvalid,
     isRequired,
     children,
+    onBlur,
     onChange,
     defaultChecked,
     isChecked,
@@ -25,6 +26,7 @@ const _Radio = (props: RadioProps, ref: React.Ref<HTMLInputElement>) => {
   } = props;
 
   const groupProps = useBaseCheckboxGroup({
+    onBlur,
     onChange,
     value,
     defaultChecked,
