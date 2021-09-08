@@ -16,6 +16,18 @@ const sizeToStyle = (size) => {
   };
 };
 
+const getHelpTextStyle = ({ size, type }) => {
+  let inputWidth = tokens.spacingM;
+  if (type === 'switch') {
+    inputWidth = sizeToStyle(size).width;
+  }
+
+  return {
+    marginLeft: `calc(${inputWidth} + ${tokens.spacingXs})`,
+    marginTop: 0,
+  };
+};
+
 const getStyles = ({
   isDisabled,
   type,
@@ -46,6 +58,7 @@ const getStyles = ({
     },
     type === 'switch' && sizeToStyle(size),
   ]),
+  helpText: css(getHelpTextStyle({ size, type })),
 });
 
 export default getStyles;

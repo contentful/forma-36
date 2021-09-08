@@ -1,10 +1,14 @@
 import React, { useCallback, useEffect } from 'react';
-import { cx } from 'emotion';
-import { useForwardedRef, PropsWithHTMLElement } from '@contentful/f36-core';
+import {
+  Box,
+  useForwardedRef,
+  PropsWithHTMLElement,
+} from '@contentful/f36-core';
 import type { BaseCheckboxInternalProps } from './types';
 import { GhostCheckbox } from './GhostCheckbox';
 import getStyles from './BaseCheckbox.styles';
 import { Text } from '@contentful/f36-typography';
+import { HelpText } from '../help-text';
 
 export type BaseCheckboxProps = PropsWithHTMLElement<
   BaseCheckboxInternalProps & { label?: string },
@@ -38,6 +42,7 @@ function _BaseCheckbox(
     children,
     'aria-label': ariaLabel,
     size = 'medium',
+    helpText,
     ...otherProps
   } = props;
   const inputRef = useForwardedRef<HTMLInputElement>(ref);
@@ -85,44 +90,47 @@ function _BaseCheckbox(
     typeof isChecked !== undefined ? isChecked : defaultChecked;
 
   return (
-    <Text
-      as="label"
-      fontColor="gray900"
-      className={cx(styles.wrapper, className)}
-      htmlFor={id}
-      testId={testId}
-      {...otherProps}
-    >
-      <input
-        {...inputProps}
-        aria-label={ariaLabel}
-        checked={isChecked}
-        defaultChecked={defaultChecked}
-        className={styles.input}
-        type={type === 'switch' ? 'checkbox' : type}
-        onChange={onChange}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
-        onKeyDown={handleKeyDown}
-        value={value}
-        disabled={isDisabled}
-        role={type}
-        aria-checked={isIndeterminate ? 'mixed' : ariaChecked}
-        ref={inputRef}
-        required={isRequired}
-        aria-required={isRequired ? 'true' : undefined}
-        aria-invalid={isInvalid ? 'true' : undefined}
-        id={id}
-        name={name}
-      />
-      <GhostCheckbox
-        type={type}
-        isDisabled={isDisabled}
-        isIndeterminate={isIndeterminate}
-        size={size}
-      />
-      <span>{children}</span>
-    </Text>
+    <Box className={className}>
+      <Text
+        as="label"
+        fontColor="gray900"
+        className={styles.wrapper}
+        htmlFor={id}
+        testId={testId}
+        {...otherProps}
+      >
+        <input
+          {...inputProps}
+          aria-label={ariaLabel}
+          checked={isChecked}
+          defaultChecked={defaultChecked}
+          className={styles.input}
+          type={type === 'switch' ? 'checkbox' : type}
+          onChange={onChange}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          onKeyDown={handleKeyDown}
+          value={value}
+          disabled={isDisabled}
+          role={type}
+          aria-checked={isIndeterminate ? 'mixed' : ariaChecked}
+          ref={inputRef}
+          required={isRequired}
+          aria-required={isRequired ? 'true' : undefined}
+          aria-invalid={isInvalid ? 'true' : undefined}
+          id={id}
+          name={name}
+        />
+        <GhostCheckbox
+          type={type}
+          isDisabled={isDisabled}
+          isIndeterminate={isIndeterminate}
+          size={size}
+        />
+        {children}
+      </Text>
+      {helpText && <HelpText className={styles.helpText}>{helpText}</HelpText>}
+    </Box>
   );
 }
 
