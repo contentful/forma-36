@@ -102,6 +102,10 @@ module.exports = {
                 link: '/components/flex/',
               },
               {
+                name: 'Stack',
+                link: '/components/stack/',
+              },
+              {
                 name: 'Grid',
                 link: '/components/grid/',
               },
@@ -233,10 +237,6 @@ module.exports = {
                 link: '/components/text-input/',
               },
               {
-                name: 'TextLink',
-                link: '/components/text-link/',
-              },
-              {
                 name: 'Textarea',
                 link: '/components/textarea/',
               },
@@ -283,10 +283,6 @@ module.exports = {
           {
             name: 'Pill',
             link: '/components/pill/',
-          },
-          {
-            name: 'ProductIcon',
-            link: '/components/product-icon/',
           },
           {
             name: 'Skeletons',
