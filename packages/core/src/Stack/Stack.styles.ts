@@ -11,7 +11,7 @@ export const getStackStyles = ({
 }) => {
   if (flexDirection === 'column') {
     return css({
-      '> :not(style) ~ :not(style)': {
+      '> * ~ *': {
         marginTop: tokens[spacing],
         marginInline: 0,
         marginBottom: 0,
@@ -19,7 +19,7 @@ export const getStackStyles = ({
     });
   }
   return css({
-    '> :not(style) ~ :not(style)': {
+    '> * ~ *': {
       marginTop: 0,
       marginBottom: 0,
       marginInline: `${tokens[spacing]} 0`,
