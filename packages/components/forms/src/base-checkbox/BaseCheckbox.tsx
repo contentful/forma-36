@@ -91,6 +91,7 @@ function _BaseCheckbox(
       <Text
         as="label"
         fontColor="gray900"
+        fontWeight="fontWeightMedium"
         className={cx(styles.wrapper, className)}
         htmlFor={id}
         testId={testId}
