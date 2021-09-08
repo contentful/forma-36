@@ -2,7 +2,7 @@ import React from 'react';
 import { DragHandle } from '@contentful/f36-drag-handle';
 
 import { EntityListItem, EntityListItemProps } from './EntityListItem';
-import { DropdownList, DropdownListItem } from '../../Dropdown';
+import { MenuItem, MenuSectionTitle } from '@contentful/f36-menu';
 
 export default {
   title: 'Components/EntityList/EntityListItem',
@@ -19,14 +19,12 @@ export default {
 export const Basic = (args: EntityListItemProps) => (
   <EntityListItem
     {...args}
-    dropdownListElements={
-      <DropdownList>
-        <DropdownListItem isTitle>Actions</DropdownListItem>
-        <DropdownListItem>Edit</DropdownListItem>
-        <DropdownListItem>Download</DropdownListItem>
-        <DropdownListItem>Remove</DropdownListItem>
-      </DropdownList>
-    }
+    actions={[
+      <MenuSectionTitle key="title">Actions</MenuSectionTitle>,
+      <MenuItem key="edit">Edit</MenuItem>,
+      <MenuItem key="download">Download</MenuItem>,
+      <MenuItem key="remove">Remove</MenuItem>,
+    ]}
   />
 );
 
@@ -44,14 +42,12 @@ Basic.args = {
 export const withCustomDragHandle = (args: EntityListItemProps) => (
   <EntityListItem
     {...args}
-    dropdownListElements={
-      <DropdownList>
-        <DropdownListItem isTitle>Actions</DropdownListItem>
-        <DropdownListItem>Edit</DropdownListItem>
-        <DropdownListItem>Download</DropdownListItem>
-        <DropdownListItem>Remove</DropdownListItem>
-      </DropdownList>
-    }
+    actions={[
+      <MenuSectionTitle key="title">Actions</MenuSectionTitle>,
+      <MenuItem key="edit">Edit</MenuItem>,
+      <MenuItem key="download">Download</MenuItem>,
+      <MenuItem key="remove">Remove</MenuItem>,
+    ]}
     cardDragHandleComponent={<DragHandle label="Reorder card" />}
   />
 );

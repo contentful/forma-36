@@ -13,7 +13,7 @@ import { DragHandle } from '@contentful/f36-drag-handle';
 import type { DragHandleProps } from '@contentful/f36-drag-handle';
 import { Button } from '@contentful/f36-button';
 
-import { Dropdown } from '../../Dropdown';
+import { Menu } from '@contentful/f36-menu';
 
 import {
   SkeletonBodyText,
@@ -58,9 +58,9 @@ export interface EntityListItemProps {
    */
   thumbnailAltText?: string;
   /**
-   * The DropdownList elements used to render actions for the component
+   * Menu elements rendered as actions in Menu
    */
-  dropdownListElements?: React.ReactElement;
+  actions?: React.ReactNodeArray;
   /**
    * Renders a drag handle for the component for use in drag and drop contexts
    */
@@ -120,7 +120,7 @@ export function EntityListItem({
   thumbnailUrl,
   thumbnailAltText,
   status,
-  dropdownListElements,
+  actions,
   withDragHandle,
   isDragActive,
   isLoading,
@@ -193,14 +193,6 @@ export function EntityListItem({
     withDragHandle,
   ]);
 
-  const handleActionClick = useCallback(
-    (event) => {
-      event.preventDefault();
-      setIsActionsDropdownOpen(!isActionsDropdownOpen);
-    },
-    [isActionsDropdownOpen, setIsActionsDropdownOpen],
-  );
-
   const classNames = cn(styles.EntityListItem, className, {
     [styles['EntityListItem--drag-active']]: isDragActive,
     [styles['EntityListItem--is-interactive']]: onClick || href,
@@ -220,9 +212,7 @@ export function EntityListItem({
       ) : (
         <Element
           className={cn(styles['EntityListItem__inner'], {
-            [styles[
-              'EntityListItem__inner--with-actions'
-            ]]: dropdownListElements,
+            [styles['EntityListItem__inner--with-actions']]: Boolean(actions),
           })}
           onClick={onClick}
           href={href}
@@ -256,56 +246,27 @@ export function EntityListItem({
             <div className={styles['EntityListItem__meta']}>
               {status && renderStatus(status)}
 
-              {dropdownListElements && (
-                <Dropdown
-                  className={styles['EntityListItem__actions']}
+              {actions && (
+                <Menu
                   isOpen={isActionsDropdownOpen}
                   onClose={() => {
                     setIsActionsDropdownOpen(false);
                   }}
-                  position="bottom-right"
-                  toggleElement={
+                  onOpen={() => {
+                    setIsActionsDropdownOpen(true);
+                  }}
+                >
+                  <Menu.Trigger>
                     <Button
                       isDisabled={isActionsDisabled}
                       icon={<MoreHorizontalIcon />}
-                      onClick={handleActionClick}
                       variant="transparent"
                       aria-label="Actions"
+                      size="small"
                     />
-                  }
-                  usePortal
-                >
-                  {React.Children.map(
-                    dropdownListElements,
-                    (listItems: React.ReactElement) => {
-                      return React.Children.map(
-                        listItems,
-                        (item: React.ReactElement) => {
-                          const resolvedChildren =
-                            item.type === React.Fragment
-                              ? item.props.children
-                              : item;
-
-                          const enhancedChildren = React.Children.map(
-                            resolvedChildren,
-                            (child: React.ReactElement) =>
-                              React.cloneElement(child, {
-                                onClick: (event) => {
-                                  if (child.props.onClick) {
-                                    child.props.onClick(event);
-                                  }
-                                  setIsActionsDropdownOpen(false);
-                                  event.stopPropagation();
-                                },
-                              }),
-                          );
-
-                          return enhancedChildren;
-                        },
-                      );
-                    },
-                  )}
-                </Dropdown>
+                  </Menu.Trigger>
+                  <Menu.List>{actions}</Menu.List>
+                </Menu>
               )}
             </div>
           </TabFocusTrap>
