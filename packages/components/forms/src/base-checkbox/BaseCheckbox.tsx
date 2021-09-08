@@ -1,10 +1,6 @@
 import React, { useCallback, useEffect } from 'react';
 import { cx } from 'emotion';
-import {
-  useId,
-  useForwardedRef,
-  PropsWithHTMLElement,
-} from '@contentful/f36-core';
+import { useForwardedRef, PropsWithHTMLElement } from '@contentful/f36-core';
 import type { BaseCheckboxInternalProps } from './types';
 import { GhostCheckbox } from './GhostCheckbox';
 import getStyles from './BaseCheckbox.styles';
@@ -45,7 +41,6 @@ function _BaseCheckbox(
     ...otherProps
   } = props;
   const inputRef = useForwardedRef<HTMLInputElement>(ref);
-  const inputId = useId(id, type);
 
   useEffect(() => {
     inputRef.current.indeterminate = isIndeterminate;
@@ -94,7 +89,7 @@ function _BaseCheckbox(
       as="label"
       fontColor="gray900"
       className={cx(styles.wrapper, className)}
-      htmlFor={inputId}
+      htmlFor={id}
       testId={testId}
       {...otherProps}
     >
@@ -117,7 +112,7 @@ function _BaseCheckbox(
         required={isRequired}
         aria-required={isRequired ? 'true' : undefined}
         aria-invalid={isInvalid ? 'true' : undefined}
-        id={inputId}
+        id={id}
         name={name}
       />
       <GhostCheckbox
