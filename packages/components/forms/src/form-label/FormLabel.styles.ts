@@ -5,6 +5,7 @@ export function getFormLabelStyles() {
   return {
     root: css({
       display: 'inline-block',
+      fontWeight: tokens.fontWeightMedium,
     }),
     indicator: css({
       color: tokens.gray500,
