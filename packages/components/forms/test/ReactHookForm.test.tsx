@@ -24,7 +24,6 @@ const MockRequiredMessage = () => (
 
 const MockForm = ({ handleData }) => {
   const {
-    control,
     register,
     handleSubmit,
     formState: { errors },
@@ -61,27 +60,17 @@ const MockForm = ({ handleData }) => {
         </Select>
       </FormControl>
 
-      {/* Jest is triggerring a warning that this component is switching from controlled to uncontrolled */}
-      <Controller
-        name="radioGroup"
-        control={control}
-        defaultValue={'apples'}
-        render={({ field }) => (
-          <FormControl>
-            <RadioGroup {...field}>
-              <Radio id="apples" value="apples">
-                Apples
-              </Radio>
-              <Radio id="pears" value="pears">
-                Pears
-              </Radio>
-              <Radio id="peaches" value="peaches">
-                Peaches
-              </Radio>
-            </RadioGroup>
-          </FormControl>
-        )}
-      />
+      <RadioGroup name="radioGroup" defaultValue="apples">
+        <Radio id="apples" value="apples" {...register('radioGroup')}>
+          Apples
+        </Radio>
+        <Radio id="pears" value="pears" {...register('radioGroup')}>
+          Pears
+        </Radio>
+        <Radio id="peaches" value="peaches" {...register('radioGroup')}>
+          Peaches
+        </Radio>
+      </RadioGroup>
 
       <FormControl isInvalid={Boolean(errors.checbox)}>
         <Checkbox
