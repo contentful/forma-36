@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Button } from '../src/Button';
 import { Icon } from '@contentful/f36-icon';
-import { Box, Flex } from '@contentful/f36-core';
+import { Box, Flex, Stack } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 import * as icons from '@contentful/f36-icons';
 
@@ -45,74 +45,61 @@ export const Overview = ({ icon }) => {
           Button variants
         </SectionHeading>
 
-        <Flex flexDirection="row" marginBottom="spacingM">
-          <Box marginRight="spacingXs">
-            <Button variant="primary" icon={icon && <Icon as={icons[icon]} />}>
-              Primary
-            </Button>
-          </Box>
-          <Box marginRight="spacingXs">
-            <Button
-              variant="secondary"
-              icon={icon && <Icon as={icons[icon]} />}
-            >
-              Secondary
-            </Button>
-          </Box>
-          <Box marginRight="spacingXs">
-            <Button variant="positive" icon={icon && <Icon as={icons[icon]} />}>
-              Positive
-            </Button>
-          </Box>
-          <Box marginRight="spacingXs">
-            <Button variant="negative" icon={icon && <Icon as={icons[icon]} />}>
-              Negative
-            </Button>
-          </Box>
-          <Box marginRight="spacingXs">
-            <Button
-              variant="transparent"
-              icon={icon && <Icon as={icons[icon]} />}
-            >
-              Transparent
-            </Button>
-          </Box>
-        </Flex>
+        <Stack flexDirection="row" marginBottom="spacingM" spacing="spacingXs">
+          <Button variant="primary" icon={icon && <Icon as={icons[icon]} />}>
+            Primary
+          </Button>
+
+          <Button variant="secondary" icon={icon && <Icon as={icons[icon]} />}>
+            Secondary
+          </Button>
+
+          <Button variant="positive" icon={icon && <Icon as={icons[icon]} />}>
+            Positive
+          </Button>
+
+          <Button variant="negative" icon={icon && <Icon as={icons[icon]} />}>
+            Negative
+          </Button>
+
+          <Button
+            variant="transparent"
+            icon={icon && <Icon as={icons[icon]} />}
+          >
+            Transparent
+          </Button>
+        </Stack>
       </Flex>
       <Flex flexDirection="column" marginBottom="spacingL">
         <SectionHeading as="h3" marginBottom="spacingS">
           Button sizes
         </SectionHeading>
 
-        <Flex flexDirection="row" marginBottom="spacingM">
-          <Box marginRight="spacingXs">
-            <Button
-              variant="primary"
-              size="small"
-              icon={<Icon as={icons.PlusIcon} />}
-            >
-              Small
-            </Button>
-          </Box>
-          <Box marginRight="spacingXs">
-            <Button
-              variant="primary"
-              size="medium"
-              icon={<Icon as={icons.PlusIcon} />}
-            >
-              Medium (default)
-            </Button>
-          </Box>
-          <Box marginRight="spacingXs">
-            <Button
-              variant="primary"
-              size="large"
-              icon={<Icon as={icons.PlusIcon} />}
-            >
-              Large
-            </Button>
-          </Box>
-        </Flex>
+        <Stack flexDirection="row" marginBottom="spacingM" spacing="spacingXs">
+          <Button
+            variant="primary"
+            size="small"
+            icon={<Icon as={icons.PlusIcon} />}
+          >
+            Small
+          </Button>
+
+          <Button
+            variant="primary"
+            size="medium"
+            icon={<Icon as={icons.PlusIcon} />}
+          >
+            Medium (default)
+          </Button>
+
+          <Button
+            variant="primary"
+            size="large"
+            icon={<Icon as={icons.PlusIcon} />}
+          >
+            Large
+          </Button>
+        </Stack>
       </Flex>
 
       <Flex flexDirection="column" marginBottom="spacingL">
