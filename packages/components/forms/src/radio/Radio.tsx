@@ -1,5 +1,4 @@
 import React from 'react';
-import { cx } from 'emotion';
 import { useId } from '@contentful/f36-core';
 import { BaseCheckbox, BaseCheckboxProps } from '../base-checkbox';
 import { useFormControl } from '../form-control/FormControlContext';
@@ -44,14 +43,11 @@ const _Radio = (props: RadioProps, ref: React.Ref<HTMLInputElement>) => {
     isRequired,
   });
 
-  const rootClassName = cx(otherProps?.className, groupProps?.className);
-
   return (
     <BaseCheckbox
       {...formProps}
       {...otherProps}
       {...groupProps}
-      className={rootClassName}
       type="radio"
       testId={testId}
       ref={ref}

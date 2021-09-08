@@ -1,6 +1,4 @@
 import { createContext, useContext } from 'react';
-import { css } from 'emotion';
-import tokens from '@contentful/f36-tokens';
 import { BaseCheckboxProps } from './BaseCheckbox';
 import { BaseCheckboxGroupProps } from './BaseCheckboxGroup';
 
@@ -10,7 +8,7 @@ export type BaseCheckboxGroupContextProps = Omit<
 >;
 export type BaseCheckboxGroupContextValue = Pick<
   BaseCheckboxProps,
-  'isChecked' | 'defaultChecked' | 'onChange' | 'name' | 'value' | 'className'
+  'isChecked' | 'defaultChecked' | 'onChange' | 'name' | 'value'
 >;
 
 export const BaseCheckboxGroupContext = createContext<
@@ -29,12 +27,6 @@ export const useBaseCheckboxGroup = (
   if (!context) {
     return props;
   }
-
-  const className = css({
-    '&:not(:last-child)': {
-      marginBottom: tokens.spacingXs,
-    },
-  });
 
   let isChecked, defaultChecked;
 
@@ -69,6 +61,5 @@ export const useBaseCheckboxGroup = (
     onChange,
     name: context.name ?? props.name,
     value: props.value,
-    className,
   };
 };

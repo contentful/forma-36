@@ -1,9 +1,6 @@
 import React, { useCallback, useEffect } from 'react';
-import {
-  Box,
-  useForwardedRef,
-  PropsWithHTMLElement,
-} from '@contentful/f36-core';
+import { cx } from 'emotion';
+import { useForwardedRef, PropsWithHTMLElement } from '@contentful/f36-core';
 import type { BaseCheckboxInternalProps } from './types';
 import { GhostCheckbox } from './GhostCheckbox';
 import getStyles from './BaseCheckbox.styles';
@@ -90,11 +87,11 @@ function _BaseCheckbox(
     typeof isChecked !== undefined ? isChecked : defaultChecked;
 
   return (
-    <Box className={className}>
+    <div>
       <Text
         as="label"
         fontColor="gray900"
-        className={styles.wrapper}
+        className={cx(styles.wrapper, className)}
         htmlFor={id}
         testId={testId}
         {...otherProps}
@@ -130,7 +127,7 @@ function _BaseCheckbox(
         {children}
       </Text>
       {helpText && <HelpText className={styles.helpText}>{helpText}</HelpText>}
-    </Box>
+    </div>
   );
 }
 

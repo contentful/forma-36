@@ -1,5 +1,5 @@
 import React, { ChangeEventHandler } from 'react';
-import { Flex } from '@contentful/f36-core';
+import { Stack } from '@contentful/f36-core';
 import { BaseCheckboxGroupContext } from './BaseCheckboxGroupContext';
 
 export interface BaseCheckboxGroupProps {
@@ -33,7 +33,9 @@ export const BaseCheckboxGroup = (props: BaseCheckboxGroupProps) => {
   const { children, ...contextProps } = props;
   return (
     <BaseCheckboxGroupContext.Provider value={contextProps}>
-      <Flex flexDirection="column">{children}</Flex>
+      <Stack flexDirection="column" alignItems="flex-start" spacing="spacingXs">
+        {children}
+      </Stack>
     </BaseCheckboxGroupContext.Provider>
   );
 };
