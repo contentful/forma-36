@@ -11,5 +11,6 @@ export type {
 export * from './Flex';
 export * from './Grid';
 export * from './Box';
+export * from './Stack';
 export * from './hooks';
 export * from './utils';
