@@ -3,7 +3,6 @@ import { useForm, Controller } from 'react-hook-form';
 import { action } from '@storybook/addon-actions';
 
 import { Button } from '@contentful/f36-button';
-import { Flex } from '@contentful/f36-core';
 
 import {
   Checkbox,
@@ -12,6 +11,7 @@ import {
   FormControl,
   RadioGroup,
   Radio,
+  Select,
   Textarea,
   TextInput,
 } from '../src';
@@ -77,6 +77,59 @@ export const Basic = () => {
           </FormControl.ValidationMessage>
         )}
       </FormControl>
+
+      <Button variant="primary" type="submit">
+        Submit
+      </Button>
+    </Form>
+  );
+};
+
+export const WithSelect = () => {
+  const { register, control, handleSubmit } = useForm();
+
+  const onSubmit = (data) => action('submitted data')(data);
+
+  return (
+    <Form onSubmit={handleSubmit(onSubmit)}>
+      <FormControl>
+        <FormControl.Label>City</FormControl.Label>
+
+        <Select defaultValue="Mumbai" {...register('uncontrolled-cities')}>
+          <Select.Option value="Cape Town">Cape Town</Select.Option>
+          <Select.Option value="Mumbai">Mumbai</Select.Option>
+          <Select.Option value="Rio de Janeiro">Rio de Janeiro</Select.Option>
+        </Select>
+
+        <FormControl.HelpText>
+          This is an uncontrolled Select with react-hook-form
+        </FormControl.HelpText>
+      </FormControl>
+
+      <Controller
+        name="controlled-cities"
+        control={control}
+        defaultValue="Mumbai"
+        render={({ field }) => {
+          return (
+            <FormControl>
+              <FormControl.Label>City</FormControl.Label>
+
+              <Select {...field}>
+                <Select.Option value="Cape Town">Cape Town</Select.Option>
+                <Select.Option value="Mumbai">Mumbai</Select.Option>
+                <Select.Option value="Rio de Janeiro">
+                  Rio de Janeiro
+                </Select.Option>
+              </Select>
+
+              <FormControl.HelpText>
+                This is a controlled Select with react-hook-form
+              </FormControl.HelpText>
+            </FormControl>
+          );
+        }}
+      />
 
       <Button variant="primary" type="submit">
         Submit

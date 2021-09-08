@@ -11,6 +11,7 @@ import {
   FormControl,
   RadioGroup,
   Radio,
+  Select,
   Textarea,
   TextInput,
 } from '../src';
@@ -37,24 +38,32 @@ const MockForm = ({ handleData }) => {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      <FormControl isInvalid={Boolean(errors.requiredTextInput)}>
-        <TextInput {...register('requiredTextInput', { required: true })} />
+      <FormControl isInvalid={Boolean(errors.textInput)}>
+        <TextInput {...register('textInput', { required: true })} />
 
-        {errors.requiredTextInput && <MockRequiredMessage />}
+        {errors.textInput && <MockRequiredMessage />}
       </FormControl>
 
-      <FormControl isInvalid={Boolean(errors.requiredTextarea)}>
+      <FormControl isInvalid={Boolean(errors.textarea)}>
         <Textarea
-          {...register('requiredTextarea', { required: true })}
+          {...register('textarea', { required: true })}
           testId="cf-ui-textarea"
         />
 
-        {errors.requiredTextarea && <MockRequiredMessage />}
+        {errors.textarea && <MockRequiredMessage />}
+      </FormControl>
+
+      <FormControl>
+        <Select defaultValue="Mumbai" {...register('select')}>
+          <Select.Option value="Cape Town">Cape Town</Select.Option>
+          <Select.Option value="Mumbai">Mumbai</Select.Option>
+          <Select.Option value="Rio de Janeiro">Rio de Janeiro</Select.Option>
+        </Select>
       </FormControl>
 
       {/* Jest is triggerring a warning that this component is switching from controlled to uncontrolled */}
       <Controller
-        name="radioWithController"
+        name="radioGroup"
         control={control}
         defaultValue={'apples'}
         render={({ field }) => (
@@ -74,15 +83,15 @@ const MockForm = ({ handleData }) => {
         )}
       />
 
-      <FormControl isInvalid={Boolean(errors.requiredCheckbox)}>
+      <FormControl isInvalid={Boolean(errors.checbox)}>
         <Checkbox
           defaultChecked={false}
-          {...register('requiredCheckbox', { required: true })}
+          {...register('checbox', { required: true })}
         >
           This checkbox is required
         </Checkbox>
 
-        {errors.requiredCheckbox && <MockRequiredMessage />}
+        {errors.checbox && <MockRequiredMessage />}
       </FormControl>
 
       <Flex justifyContent="flex-end">
@@ -131,6 +140,11 @@ describe('React Hook Form integration', function () {
       },
     });
 
+    // Change Select
+    fireEvent.change(screen.getByRole('combobox'), {
+      target: { value: 'Rio de Janeiro' },
+    });
+
     // Change Radio option
     fireEvent.click(screen.getByRole('radio', { name: /pears/i }));
 
@@ -144,10 +158,11 @@ describe('React Hook Form integration', function () {
     });
 
     expect(mockHandleData).toHaveBeenCalledWith({
-      requiredTextInput: 'Rihanna',
-      requiredTextarea: 'Very long text in textarea',
-      requiredCheckbox: true,
-      radioWithController: 'pears',
+      textInput: 'Rihanna',
+      textarea: 'Very long text in textarea',
+      select: 'Rio de Janeiro',
+      radioGroup: 'pears',
+      checbox: true,
     });
   });
 });
