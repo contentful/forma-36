@@ -1,19 +1,14 @@
 import * as React from 'react';
-import { cx } from 'emotion';
 import { PolymorphicProps, PolymorphicComponent } from '../Primitive/Primitive';
 import { useBox } from '../Box';
 import type { MarginProps, PaddingProps, CommonProps, Spacing } from '../types';
 import { Flex, FlexInternalProps } from '../Flex/Flex';
-import { getStackStyles } from './Stack.styles';
 
 export interface StackInternalProps
   extends CommonProps,
     MarginProps,
     PaddingProps,
-    Pick<
-      FlexInternalProps,
-      'isInline' | 'alignItems' | 'justifyContent' | 'flexWrap'
-    > {
+    Pick<FlexInternalProps, 'isInline' | 'alignItems'> {
   /**
    * Defines how flexbox items are ordered within a flexbox container. */
   flexDirection?: 'row' | 'column';
@@ -38,15 +33,12 @@ function _Stack<E extends React.ElementType = typeof DEFAULT_TAG>(
     alignItems = 'center',
     isInline = false,
     spacing = 'spacingM',
-    justifyContent,
-    flexWrap,
     children,
     as,
     ...otherProps
   }: StackProps<E>,
   ref: React.Ref<any>,
 ) {
-  const styles = getStackStyles({ spacing, flexDirection });
   const { boxProps, Element } = useBox<React.ElementType>({
     ...otherProps,
     as: as || DEFAULT_TAG,
@@ -58,9 +50,8 @@ function _Stack<E extends React.ElementType = typeof DEFAULT_TAG>(
       flexDirection={flexDirection}
       alignItems={alignItems}
       isInline={isInline}
-      justifyContent={justifyContent}
-      flexWrap={flexWrap}
-      className={cx(boxProps.className, styles)}
+      className={boxProps.className}
+      gap={spacing}
       ref={ref}
     >
       {children}
