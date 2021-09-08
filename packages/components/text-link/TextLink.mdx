@@ -38,18 +38,13 @@ There are a number of variations of TextLink styles, here is a guide for when to
 - **White** - For actions appearing on a dark background.
 
 ```jsx
-<React.Fragment>
+<Stack flexDirection="column">
   <TextLink variant="primary">Primary</TextLink>
-  <br />
   <TextLink variant="positive">Positive</TextLink>
-  <br />
   <TextLink variant="negative">Negative</TextLink>
-  <br />
   <TextLink variant="muted">Muted</TextLink>
-  <br />
   <TextLink variant="secondary">Secondary</TextLink>
-  <br />
-</React.Fragment>
+</Stack>
 ```
 
 ## Code examples
@@ -57,21 +52,18 @@ There are a number of variations of TextLink styles, here is a guide for when to
 Text links communicate actions and highlight linked resources to users.
 
 ```jsx
-<React.Fragment>
-  <TextLink variant="primary">Text link</TextLink>
-</React.Fragment>
+<TextLink variant="primary">Text link</TextLink>
 ```
 
 ### TextLink with icon (`icon`)
 
 ```jsx
-<React.Fragment>
+<Stack flexDirection="column">
   <TextLink icon={<ExternalLinkIcon />}>Primary</TextLink>
-  <br />
   <TextLink icon={<ExternalLinkIcon />} alignIcon="end">
     Primary
   </TextLink>
-</React.Fragment>
+</Stack>
 ```
 
 ## Content recommendations
