@@ -1,4 +1,5 @@
 import React from 'react';
+import { cx } from 'emotion';
 import { useId } from '@contentful/f36-core';
 import { BaseCheckbox, BaseCheckboxProps } from '../base-checkbox';
 import { useFormControl } from '../form-control/FormControlContext';
@@ -40,11 +41,14 @@ const _Checkbox = (props: CheckboxProps, ref: React.Ref<HTMLInputElement>) => {
     isRequired,
   });
 
+  const rootClassName = cx(otherProps?.className, groupProps?.className);
+
   return (
     <BaseCheckbox
       {...formProps}
       {...groupProps}
       {...otherProps}
+      className={rootClassName}
       type="checkbox"
       testId={testId}
       ref={ref}

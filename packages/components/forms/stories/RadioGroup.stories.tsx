@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { action } from '@storybook/addon-actions';
-import { Flex } from '@contentful/f36-core';
 import { Radio, RadioGroup, RadioGroupProps } from '../src/radio';
 
 export default {
@@ -9,6 +8,8 @@ export default {
   argTypes: {
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
+    children: { control: { disable: true } },
+    onChange: { control: { disable: true } },
   },
 };
 
@@ -20,36 +21,56 @@ export const Basic = (args: RadioGroupProps) => {
     action('onChange')(e);
   };
 
+  const { value } = args;
+  useEffect(() => {
+    setGroupState(value);
+  }, [value]);
+
   return (
     <RadioGroup {...args} value={groupState} onChange={handleOnChange}>
-      <Flex flexDirection="column">
-        <Radio value="apples">Apples</Radio>
-        <Radio value="pears">Pears</Radio>
-        <Radio value="peaches">Peaches</Radio>
-        <Radio value="mangos">Mangos</Radio>
-        <Radio value="kiwis">Kiwis</Radio>
-        <Radio value="bananas">Bananas</Radio>
-      </Flex>
+      <Radio value="apples">Apples</Radio>
+      <Radio value="pears">Pears</Radio>
+      <Radio value="peaches">Peaches</Radio>
+      <Radio value="mangos">Mangos</Radio>
+      <Radio value="kiwis">Kiwis</Radio>
+      <Radio value="bananas">Bananas</Radio>
     </RadioGroup>
   );
+};
+
+Basic.argTypes = {
+  defaultValue: { control: { disable: true } },
+  value: {
+    options: ['apples', 'pears', 'peaches', 'mangos', 'kiwis', 'bananas'],
+    control: { type: 'select' },
+  },
 };
 
 Basic.args = {
-  defaultValue: 'apples',
+  defaultValue: 'peaches',
   name: 'fruits',
+  direction: 'column',
 };
 
-export const Uncontrolled = () => {
+export const Uncontrolled = (args: RadioGroupProps) => {
   return (
-    <RadioGroup name="fruits" defaultValue={'kiwis'}>
-      <Flex flexDirection="column">
-        <Radio value="apples">Apples</Radio>
-        <Radio value="pears">Pears</Radio>
-        <Radio value="peaches">Peaches</Radio>
-        <Radio value="mangos">Mangos</Radio>
-        <Radio value="kiwis">Kiwis</Radio>
-        <Radio value="bananas">Bananas</Radio>
-      </Flex>
+    <RadioGroup {...args}>
+      <Radio value="apples">Apples</Radio>
+      <Radio value="pears">Pears</Radio>
+      <Radio value="peaches">Peaches</Radio>
+      <Radio value="mangos">Mangos</Radio>
+      <Radio value="kiwis">Kiwis</Radio>
+      <Radio value="bananas">Bananas</Radio>
     </RadioGroup>
   );
+};
+
+Uncontrolled.argTypes = {
+  value: { control: { disable: true } },
+};
+
+Uncontrolled.args = {
+  direction: 'column',
+  defaultValue: 'kiwis',
+  name: 'fruits',
 };

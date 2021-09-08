@@ -7,6 +7,9 @@ import {
   Textarea,
   Select,
   Checkbox,
+  CheckboxGroup,
+  Radio,
+  RadioGroup,
 } from '../src';
 import { Flex, Box } from '@contentful/f36-core';
 import { TextLink } from '@contentful/f36-text-link';
@@ -72,6 +75,56 @@ export const Invalid = (args: FormControlInternalProps) => {
     <Basic {...args} isInvalid>
       {args.children}
     </Basic>
+  );
+};
+
+export const WithCheckboxGroup = (args: FormControlInternalProps) => {
+  return (
+    <>
+      <FormControl {...args}>
+        <FormControl.Label>Select your ingredients:</FormControl.Label>
+        <FormControl.HelpText>No extra costs</FormControl.HelpText>
+
+        <CheckboxGroup name="ingredients">
+          <Checkbox value="pickled-onions">
+            Pickled onions
+            <FormControl.HelpText>
+              Red onion sliced paper-thin, pickled in lime and gentle sea salt
+            </FormControl.HelpText>
+          </Checkbox>
+          <Checkbox value="pepper-jam">
+            Pepper jam
+            <FormControl.HelpText>
+              Slow roasted red bell peppers with olive oil, garlic and sumac
+            </FormControl.HelpText>
+          </Checkbox>
+          <Checkbox value="double-fried-fries">
+            Double-fried fries
+            <FormControl.HelpText>
+              Local grown organic potatoes fried in peanut oil
+            </FormControl.HelpText>
+          </Checkbox>
+        </CheckboxGroup>
+      </FormControl>
+
+      <FormControl {...args}>
+        <FormControl.Label>Burger patty:</FormControl.Label>
+        <RadioGroup name="burger-patty">
+          <Radio value="beef">
+            Beef
+            <FormControl.HelpText>
+              Grass-fed cows from Erdhof Hohenzollerdamm
+            </FormControl.HelpText>
+          </Radio>
+          <Radio value="beyound-meat">
+            Beyound meat (vegan)
+            <FormControl.HelpText>
+              Pea protein, beetroot and magic
+            </FormControl.HelpText>
+          </Radio>
+        </RadioGroup>
+      </FormControl>
+    </>
   );
 };
 

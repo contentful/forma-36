@@ -121,7 +121,7 @@ function _BaseCheckbox(
         isIndeterminate={isIndeterminate}
         size={size}
       />
-      {children}
+      <span>{children}</span>
     </Text>
   );
 }
