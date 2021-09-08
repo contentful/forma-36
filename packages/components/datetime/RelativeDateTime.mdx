@@ -21,14 +21,14 @@ Provides a relative date string for resolutions ranging from seconds up through 
 If we consider today as of August 18th of 2021 and we pass the following values to the `<RelativeDateTime />` component
 
 ```tsx
-<Grid rowGap="spacingXs" rows="repeat(3, auto)" justifyContent="start">
+<Stack flexDirection="column">
   {/* passing a Timestamp as an ISOString */}
   <RelativeDateTime date="2021-08-17T15:45" />
   {/* passing a JS Date */}
   <RelativeDateTime date={new Date()} />
   {/* passing a Unix Epoch in milliseconds */}
   <RelativeDateTime date={1629240300000} />
-</Grid>
+</Stack>
 ```
 
 The component will display `a day ago`
@@ -51,7 +51,7 @@ And if the difference is more than one week, just show the date without relative
 It will compare the date to today or baseDate if provided.
 
 ```tsx
-<Grid rowGap="spacingXs" rows="repeat(3, auto)" justifyContent="start">
+<Stack flexDirection="column">
   {/* It will display "Yesterday at 3:45 PM" */}
   <RelativeDateTime date="2021-08-17T15:45" isRelativeToCurrentWeek />
   {/* It willdisplay "5 hours ago" */}
@@ -60,7 +60,7 @@ It will compare the date to today or baseDate if provided.
   <RelativeDateTime date="2021-08-19T15:45" isRelativeToCurrentWeek />
   {/* It will display "1 Aug 2021" */}
   <RelativeDateTime date="2021-08-01T15:45" isRelativeToCurrentWeek />
-</Grid>
+</Stack>
 ```
 
 ## Props of RelativeDateTime

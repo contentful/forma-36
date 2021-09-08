@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Button } from '../src/Button';
 import { Icon } from '@contentful/f36-icon';
-import { Box, Flex } from '@contentful/f36-core';
+import { Flex, Stack } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 import * as icons from '@contentful/f36-icons';
 
@@ -45,74 +45,61 @@ export const Overview = ({ icon }) => {
           Button variants
         </SectionHeading>
 
-        <Flex flexDirection="row" marginBottom="spacingM">
-          <Box marginRight="spacingXs">
-            <Button variant="primary" icon={icon && <Icon as={icons[icon]} />}>
-              Primary
-            </Button>
-          </Box>
-          <Box marginRight="spacingXs">
-            <Button
-              variant="secondary"
-              icon={icon && <Icon as={icons[icon]} />}
-            >
-              Secondary
-            </Button>
-          </Box>
-          <Box marginRight="spacingXs">
-            <Button variant="positive" icon={icon && <Icon as={icons[icon]} />}>
-              Positive
-            </Button>
-          </Box>
-          <Box marginRight="spacingXs">
-            <Button variant="negative" icon={icon && <Icon as={icons[icon]} />}>
-              Negative
-            </Button>
-          </Box>
-          <Box marginRight="spacingXs">
-            <Button
-              variant="transparent"
-              icon={icon && <Icon as={icons[icon]} />}
-            >
-              Transparent
-            </Button>
-          </Box>
-        </Flex>
+        <Stack flexDirection="row" marginBottom="spacingM" spacing="spacingXs">
+          <Button variant="primary" icon={icon && <Icon as={icons[icon]} />}>
+            Primary
+          </Button>
+
+          <Button variant="secondary" icon={icon && <Icon as={icons[icon]} />}>
+            Secondary
+          </Button>
+
+          <Button variant="positive" icon={icon && <Icon as={icons[icon]} />}>
+            Positive
+          </Button>
+
+          <Button variant="negative" icon={icon && <Icon as={icons[icon]} />}>
+            Negative
+          </Button>
+
+          <Button
+            variant="transparent"
+            icon={icon && <Icon as={icons[icon]} />}
+          >
+            Transparent
+          </Button>
+        </Stack>
       </Flex>
       <Flex flexDirection="column" marginBottom="spacingL">
         <SectionHeading as="h3" marginBottom="spacingS">
           Button sizes
         </SectionHeading>
 
-        <Flex flexDirection="row" marginBottom="spacingM">
-          <Box marginRight="spacingXs">
-            <Button
-              variant="primary"
-              size="small"
-              icon={<Icon as={icons.PlusIcon} />}
-            >
-              Small
-            </Button>
-          </Box>
-          <Box marginRight="spacingXs">
-            <Button
-              variant="primary"
-              size="medium"
-              icon={<Icon as={icons.PlusIcon} />}
-            >
-              Medium (default)
-            </Button>
-          </Box>
-          <Box marginRight="spacingXs">
-            <Button
-              variant="primary"
-              size="large"
-              icon={<Icon as={icons.PlusIcon} />}
-            >
-              Large
-            </Button>
-          </Box>
-        </Flex>
+        <Stack flexDirection="row" marginBottom="spacingM" spacing="spacingXs">
+          <Button
+            variant="primary"
+            size="small"
+            icon={<Icon as={icons.PlusIcon} />}
+          >
+            Small
+          </Button>
+
+          <Button
+            variant="primary"
+            size="medium"
+            icon={<Icon as={icons.PlusIcon} />}
+          >
+            Medium (default)
+          </Button>
+
+          <Button
+            variant="primary"
+            size="large"
+            icon={<Icon as={icons.PlusIcon} />}
+          >
+            Large
+          </Button>
+        </Stack>
       </Flex>
 
       <Flex flexDirection="column" marginBottom="spacingL">
@@ -120,33 +107,27 @@ export const Overview = ({ icon }) => {
           Button active state
         </SectionHeading>
 
-        <Flex flexDirection="row" marginBottom="spacingM">
-          <Box marginRight="spacingXs">
-            <Button variant="primary" isActive>
-              Primary isActive
-            </Button>
-          </Box>
-          <Box marginRight="spacingXs">
-            <Button variant="secondary" isActive>
-              Secondary isActive
-            </Button>
-          </Box>
-          <Box marginRight="spacingXs">
-            <Button variant="positive" isActive>
-              Positive isActive
-            </Button>
-          </Box>
-          <Box marginRight="spacingXs">
-            <Button variant="negative" isActive>
-              Negative isActive
-            </Button>
-          </Box>
-          <Box marginRight="spacingXs">
-            <Button variant="transparent" isActive>
-              Transparent
-            </Button>
-          </Box>
-        </Flex>
+        <Stack marginBottom="spacingM" spacing="spacingXs">
+          <Button variant="primary" isActive>
+            Primary isActive
+          </Button>
+
+          <Button variant="secondary" isActive>
+            Secondary isActive
+          </Button>
+
+          <Button variant="positive" isActive>
+            Positive isActive
+          </Button>
+
+          <Button variant="negative" isActive>
+            Negative isActive
+          </Button>
+
+          <Button variant="transparent" isActive>
+            Transparent
+          </Button>
+        </Stack>
       </Flex>
 
       <Flex flexDirection="column" marginBottom="spacingL">
@@ -154,33 +135,27 @@ export const Overview = ({ icon }) => {
           Button disabled
         </SectionHeading>
 
-        <Flex flexDirection="row" marginBottom="spacingM">
-          <Box marginRight="spacingXs">
-            <Button variant="primary" isDisabled>
-              Primary disabled
-            </Button>
-          </Box>
-          <Box marginRight="spacingXs">
-            <Button variant="secondary" isDisabled>
-              Secondary disabled
-            </Button>
-          </Box>
-          <Box marginRight="spacingXs">
-            <Button variant="positive" isDisabled>
-              Positive disabled
-            </Button>
-          </Box>
-          <Box marginRight="spacingXs">
-            <Button variant="negative" isDisabled>
-              Negative disabled
-            </Button>
-          </Box>
-          <Box marginRight="spacingXs">
-            <Button variant="transparent" isDisabled>
-              Transparent
-            </Button>
-          </Box>
-        </Flex>
+        <Stack spacing="spacingXs" marginBottom="spacingM">
+          <Button variant="primary" isDisabled>
+            Primary disabled
+          </Button>
+
+          <Button variant="secondary" isDisabled>
+            Secondary disabled
+          </Button>
+
+          <Button variant="positive" isDisabled>
+            Positive disabled
+          </Button>
+
+          <Button variant="negative" isDisabled>
+            Negative disabled
+          </Button>
+
+          <Button variant="transparent" isDisabled>
+            Transparent
+          </Button>
+        </Stack>
       </Flex>
 
       <Flex flexDirection="column" marginBottom="spacingL">
@@ -188,53 +163,47 @@ export const Overview = ({ icon }) => {
           Button with icon on right side
         </SectionHeading>
 
-        <Flex flexDirection="row" marginBottom="spacingM">
-          <Box marginRight="spacingXs">
-            <Button
-              variant="primary"
-              icon={<Icon as={icons.ChevronDownIcon} />}
-              alignIcon="end"
-            >
-              Primary
-            </Button>
-          </Box>
-          <Box marginRight="spacingXs">
-            <Button
-              variant="secondary"
-              icon={<Icon as={icons.ChevronDownIcon} />}
-              alignIcon="end"
-            >
-              Secondary
-            </Button>
-          </Box>
-          <Box marginRight="spacingXs">
-            <Button
-              variant="positive"
-              icon={<Icon as={icons.ChevronDownIcon} />}
-              alignIcon="end"
-            >
-              Positive
-            </Button>
-          </Box>
-          <Box marginRight="spacingXs">
-            <Button
-              variant="negative"
-              icon={<Icon as={icons.ChevronDownIcon} />}
-              alignIcon="end"
-            >
-              Negative
-            </Button>
-          </Box>
-          <Box marginRight="spacingXs">
-            <Button
-              variant="transparent"
-              icon={<Icon as={icons.ChevronDownIcon} />}
-              alignIcon="end"
-            >
-              Transparent
-            </Button>
-          </Box>
-        </Flex>
+        <Stack spacing="spacingXs" marginBottom="spacingM">
+          <Button
+            variant="primary"
+            icon={<Icon as={icons.ChevronDownIcon} />}
+            alignIcon="end"
+          >
+            Primary
+          </Button>
+
+          <Button
+            variant="secondary"
+            icon={<Icon as={icons.ChevronDownIcon} />}
+            alignIcon="end"
+          >
+            Secondary
+          </Button>
+
+          <Button
+            variant="positive"
+            icon={<Icon as={icons.ChevronDownIcon} />}
+            alignIcon="end"
+          >
+            Positive
+          </Button>
+
+          <Button
+            variant="negative"
+            icon={<Icon as={icons.ChevronDownIcon} />}
+            alignIcon="end"
+          >
+            Negative
+          </Button>
+
+          <Button
+            variant="transparent"
+            icon={<Icon as={icons.ChevronDownIcon} />}
+            alignIcon="end"
+          >
+            Transparent
+          </Button>
+        </Stack>
       </Flex>
 
       <Flex flexDirection="column" marginBottom="spacingL">
@@ -242,117 +211,98 @@ export const Overview = ({ icon }) => {
           Button loading
         </SectionHeading>
 
-        <Flex flexDirection="row" marginBottom="spacingM">
-          <Box marginRight="spacingXs">
-            <Button variant="primary" isLoading>
-              Primary isLoading
-            </Button>
-          </Box>
-          <Box marginRight="spacingXs">
-            <Button variant="secondary" isLoading>
-              Muted isLoading
-            </Button>
-          </Box>
-          <Box marginRight="spacingXs">
-            <Button variant="positive" isLoading>
-              Positive isLoading
-            </Button>
-          </Box>
-          <Box marginRight="spacingXs">
-            <Button variant="negative" isLoading>
-              Negative isLoading
-            </Button>
-          </Box>
-          <Box marginRight="spacingXs">
-            <Button variant="transparent" isLoading>
-              Transparent
-            </Button>
-          </Box>
-        </Flex>
+        <Stack spacing="spacingXs" marginBottom="spacingM">
+          <Button variant="primary" isLoading>
+            Primary isLoading
+          </Button>
+
+          <Button variant="secondary" isLoading>
+            Muted isLoading
+          </Button>
+
+          <Button variant="positive" isLoading>
+            Positive isLoading
+          </Button>
+
+          <Button variant="negative" isLoading>
+            Negative isLoading
+          </Button>
+
+          <Button variant="transparent" isLoading>
+            Transparent
+          </Button>
+        </Stack>
       </Flex>
 
       <Flex flexDirection="column" marginBottom="spacingL">
         <SectionHeading as="h3" marginBottom="spacingS">
           Icon only button
         </SectionHeading>
+        <Stack spacing="spacingXs" marginBottom="spacingM">
+          <Button
+            variant="transparent"
+            icon={<Icon as={icons.CloseIcon} />}
+            aria-label="Close"
+          />
 
-        <Flex flexDirection="row" marginBottom="spacingM">
-          <Box marginRight="spacingXs">
-            <Button
-              variant="transparent"
-              icon={<Icon as={icons.CloseIcon} />}
-              aria-label="Close"
-            />
-          </Box>
-          <Box marginRight="spacingXs">
-            <Button
-              variant="transparent"
-              icon={<Icon as={icons.MoreHorizontalIcon} />}
-              aria-label="More"
-            />
-          </Box>
-          <Box marginRight="spacingXs">
-            <Button
-              variant="secondary"
-              icon={<Icon as={icons.DownloadIcon} />}
-              aria-label="Download"
-            />
-          </Box>
-          <Box marginRight="spacingXs">
-            <Button
-              variant="secondary"
-              icon={<Icon as={icons.DownloadIcon} />}
-              isLoading
-            />
-          </Box>
-          <Box marginRight="spacingXs">
-            <Button
-              variant="positive"
-              icon={<Icon as={icons.DragIcon} />}
-              aria-label="Resize"
-            />
-          </Box>
-          <Box marginRight="spacingXs">
-            <Button
-              variant="negative"
-              icon={<Icon as={icons.DeleteIcon} />}
-              aria-label="Delete"
-            />
-          </Box>
-          <Box marginRight="spacingXs">
-            <Button
-              variant="primary"
-              icon={<Icon as={icons.PlusIcon} />}
-              aria-label="Add"
-            />
-          </Box>
-        </Flex>
-        <Flex flexDirection="row" marginBottom="spacingM">
-          <Box marginRight="spacingXs">
-            <Button
-              variant="primary"
-              icon={<Icon as={icons.PlusIcon} />}
-              aria-label="Plus"
-              size="small"
-            />
-          </Box>
-          <Box marginRight="spacingXs">
-            <Button
-              variant="primary"
-              icon={<Icon as={icons.PlusIcon} />}
-              aria-label="Plus"
-              size="medium"
-            />
-          </Box>
-          <Box marginRight="spacingXs">
-            <Button
-              variant="primary"
-              icon={<Icon as={icons.PlusIcon} />}
-              aria-label="Plus"
-              size="large"
-            />
-          </Box>
-        </Flex>
+          <Button
+            variant="transparent"
+            icon={<Icon as={icons.MoreHorizontalIcon} />}
+            aria-label="More"
+          />
+
+          <Button
+            variant="secondary"
+            icon={<Icon as={icons.DownloadIcon} />}
+            aria-label="Download"
+          />
+
+          <Button
+            variant="secondary"
+            icon={<Icon as={icons.DownloadIcon} />}
+            isLoading
+          />
+
+          <Button
+            variant="positive"
+            icon={<Icon as={icons.DragIcon} />}
+            aria-label="Resize"
+          />
+
+          <Button
+            variant="negative"
+            icon={<Icon as={icons.DeleteIcon} />}
+            aria-label="Delete"
+          />
+
+          <Button
+            variant="primary"
+            icon={<Icon as={icons.PlusIcon} />}
+            aria-label="Add"
+          />
+        </Stack>
+        <Stack spacing="spacingXs" marginBottom="spacingM">
+          <Button
+            variant="primary"
+            icon={<Icon as={icons.PlusIcon} />}
+            aria-label="Plus"
+            size="small"
+          />
+
+          <Button
+            variant="primary"
+            icon={<Icon as={icons.PlusIcon} />}
+            aria-label="Plus"
+            size="medium"
+          />
+
+          <Button
+            variant="primary"
+            icon={<Icon as={icons.PlusIcon} />}
+            aria-label="Plus"
+            size="large"
+          />
+        </Stack>
       </Flex>
 
       <Flex flexDirection="column" marginBottom="spacingL">

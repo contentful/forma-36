@@ -6,7 +6,7 @@ import { Flex, FlexInternalProps } from '../src/Flex/Flex';
 
 const styles = {
   demoBox: {
-    backgroundColor: tokens.colorContrastLight,
+    backgroundColor: tokens.gray800,
     width: '150px',
     height: '80px',
     color: tokens.colorWhite,

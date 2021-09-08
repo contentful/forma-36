@@ -27,14 +27,14 @@ It allows four different forms of display that can be controlled by changing the
 ### Examples
 
 ```tsx
-<Grid rowGap="spacingX" rows="repeat(3, auto)">
+<Stack flexDirection="column">
   {/* passing a Timestamp as an ISOString */}
   <DateTime date="2021-08-17T15:45" />
   {/* passing a JS Date */}
   <DateTime date={new Date()} />
   {/* passing a Unix Epoch in milliseconds */}
   <DateTime date={1629240300000} />
-</Grid>
+</Stack>
 ```
 
 All the usages above will result in 'Tue, 17 Aug 2021 at 3:45 PM'

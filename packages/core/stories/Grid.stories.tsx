@@ -5,10 +5,10 @@ import { Grid } from '../src';
 
 const styles = {
   demoBox: {
-    backgroundColor: tokens.colorContrastLight,
+    backgroundColor: tokens.gray800,
   },
   demoBoxDark: {
-    backgroundColor: tokens.colorContrastDark,
+    backgroundColor: tokens.gray800,
   },
 };
 

@@ -6,7 +6,7 @@ export type {
   IconSize,
   IconVariant,
 } from '@contentful/f36-icon';
-export { Flex, Grid, GridItem, Box } from '@contentful/f36-core';
+export { Flex, Grid, GridItem, Box, Stack } from '@contentful/f36-core';
 export type {
   FlexProps,
   GridProps,
@@ -15,6 +15,7 @@ export type {
   CommonProps,
   MarginProps,
   PaddingProps,
+  StackProps,
   Spacing,
 } from '@contentful/f36-core';
 export { DragHandle } from '@contentful/f36-drag-handle';

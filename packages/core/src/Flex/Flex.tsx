@@ -2,8 +2,9 @@ import * as React from 'react';
 import { css, cx } from 'emotion';
 import { PolymorphicProps, PolymorphicComponent } from '../Primitive/Primitive';
 import { useBox } from '../Box';
-import type { MarginProps, PaddingProps, CommonProps } from '../types';
+import type { MarginProps, PaddingProps, CommonProps, Spacing } from '../types';
 import type * as CSS from 'csstype';
+import tokens from '@contentful/f36-tokens';
 
 export interface FlexInternalProps
   extends CommonProps,
@@ -45,7 +46,7 @@ export interface FlexInternalProps
   flexGrow?: CSS.Property.FlexGrow;
   /**
    * Defines a gap between flexbox items. */
-  gap?: CSS.Property.Gap;
+  gap?: Spacing | string;
   /**
    * Defines how flexbox/grid items are aligned according to the main axis, within a flexbox/grid container. */
   justifyContent?: CSS.Property.JustifyContent;
@@ -120,7 +121,7 @@ function _Flex<E extends React.ElementType = typeof DEFAULT_TAG>(
           flexBasis,
           flexShrink,
           flexDirection,
-          gap,
+          gap: tokens[gap] ?? gap,
           justifyContent,
           justifyItems,
           justifySelf,
