@@ -7,10 +7,14 @@ import {
   Textarea,
   Select,
   Checkbox,
+  CheckboxGroup,
+  Radio,
+  RadioGroup,
 } from '../src';
 import { Flex, Box } from '@contentful/f36-core';
 import { TextLink } from '@contentful/f36-text-link';
 import { LockIcon } from '@contentful/f36-icons';
+import { Paragraph } from '@contentful/f36-typography';
 
 export default {
   title: 'Form Elements/FormControl',
@@ -72,6 +76,76 @@ export const Invalid = (args: FormControlInternalProps) => {
     <Basic {...args} isInvalid>
       {args.children}
     </Basic>
+  );
+};
+
+export const WithCheckboxGroup = (args: FormControlInternalProps) => {
+  return (
+    <>
+      <FormControl {...args}>
+        <FormControl.Label marginBottom="none">
+          Select your ingredients
+        </FormControl.Label>
+        <Paragraph>No extra costs</Paragraph>
+
+        <CheckboxGroup name="ingredients">
+          <Checkbox
+            value="pickled-onions"
+            helpText="Red onion sliced paper-thin, pickled in lime and gentle sea salt"
+          >
+            Pickled onions
+          </Checkbox>
+          <Checkbox
+            value="pepper-jam"
+            helpText="Slow roasted red bell peppers with olive oil, garlic and sumac"
+          >
+            Pepper jam
+          </Checkbox>
+          <Checkbox
+            value="double-fried-fries"
+            helpText="Local grown organic potatoes fried in peanut oil"
+          >
+            Double-fried fries
+          </Checkbox>
+        </CheckboxGroup>
+        {args.isInvalid && (
+          <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
+        )}
+      </FormControl>
+
+      <FormControl {...args}>
+        <FormControl.Label>Burger patty</FormControl.Label>
+        <RadioGroup name="burger-patty">
+          <Radio
+            value="beef"
+            helpText="Grass-fed cows from Erdhof Hohenzollerdamm"
+          >
+            Beef
+          </Radio>
+          <Radio
+            value="beyound-meat"
+            helpText="Pea protein, beetroot and magic"
+          >
+            Beyound meat (vegan)
+          </Radio>
+        </RadioGroup>
+        {args.isInvalid && (
+          <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
+        )}
+      </FormControl>
+
+      <FormControl {...args}>
+        <FormControl.Label>Condiments</FormControl.Label>
+        <CheckboxGroup name="condiments">
+          <Checkbox value="ketchup">Ketchup</Checkbox>
+          <Checkbox value="mustard">Mustard</Checkbox>
+          <Checkbox value="mayo">Mayo</Checkbox>
+        </CheckboxGroup>
+        {args.isInvalid && (
+          <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
+        )}
+      </FormControl>
+    </>
   );
 };
 

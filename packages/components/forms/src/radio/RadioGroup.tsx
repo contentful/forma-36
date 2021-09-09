@@ -16,9 +16,9 @@ export interface RadioGroupProps extends Omit<BaseCheckboxGroupProps, 'type'> {
 }
 
 export const RadioGroup = (props: RadioGroupProps) => {
-  const { children, ...groupProps } = props;
+  const { children, testId = 'cf-ui-radio-group', ...groupProps } = props;
   return (
-    <BaseCheckboxGroup type="radio" {...groupProps}>
+    <BaseCheckboxGroup testId={testId} type="radio" {...groupProps}>
       {children}
     </BaseCheckboxGroup>
   );

@@ -41,5 +41,9 @@ export interface BaseCheckboxInternalProps
    * @default medium
    */
   size?: 'small' | 'medium';
+  /**
+   * Optional text to be added as help text bellow the label
+   */
+  helpText?: string;
   onChange?: ChangeEventHandler<HTMLInputElement>;
 }
