@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect } from 'react';
-import { cx } from 'emotion';
 import { useForwardedRef, PropsWithHTMLElement } from '@contentful/f36-core';
 import type { BaseCheckboxInternalProps } from './types';
 import { GhostCheckbox } from './GhostCheckbox';
