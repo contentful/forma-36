@@ -44,7 +44,6 @@ export const Basic = (args: CheckboxGroupProps) => {
 };
 
 Basic.args = {
-  direction: 'column',
   defaultValue: ['apples', 'kiwis'],
 };
 
@@ -62,6 +61,5 @@ export const Uncontrolled = (args: CheckboxGroupProps) => {
 };
 
 Uncontrolled.args = {
-  direction: 'column',
   defaultValue: ['apples', 'kiwis'],
 };

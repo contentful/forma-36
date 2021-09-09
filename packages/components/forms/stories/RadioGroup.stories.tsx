@@ -49,7 +49,6 @@ Basic.argTypes = {
 Basic.args = {
   defaultValue: 'peaches',
   name: 'fruits',
-  direction: 'column',
 };
 
 export const Uncontrolled = (args: RadioGroupProps) => {
@@ -70,7 +69,6 @@ Uncontrolled.argTypes = {
 };
 
 Uncontrolled.args = {
-  direction: 'column',
   defaultValue: 'kiwis',
   name: 'fruits',
 };
