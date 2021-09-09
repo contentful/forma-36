@@ -6,7 +6,6 @@ import type { CommonProps } from '@contentful/f36-core';
 
 import { ModalHeader, ModalHeaderProps } from './ModalHeader/ModalHeader';
 import { ModalContent, ModalContentProps } from './ModalContent/ModalContent';
-import { ModalControls } from './ModalControls/ModalControls';
 import { getModalStyles } from './Modal.styles';
 import type { ModalSizeType, ModalPositionType } from './types';
 
@@ -211,10 +210,6 @@ export function Modal({
     </ReactModal>
   );
 }
-
-Modal.Header = ModalHeader;
-Modal.Content = ModalContent;
-Modal.Controls = ModalControls;
 
 // Use defaultProps instead of default values in the function to allow the
 // Storybook to import and use these values

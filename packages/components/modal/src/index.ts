@@ -1,4 +1,4 @@
-export { Modal } from './Modal';
+export { Modal } from './CompoundModal';
 export type { ModalProps } from './Modal';
 export { ModalConfirm } from './ModalConfirm/ModalConfirm';
 export type { ModalConfirmProps } from './ModalConfirm/ModalConfirm';
