@@ -1,21 +1,15 @@
 const { modifyPropsCodemod } = require('./common/modify-props-codemod');
+const { pipe } = require('./common/pipe');
 
-module.exports = function (file, api) {
-  const source = modifyPropsCodemod({
+module.exports = pipe([
+  modifyPropsCodemod({
     componentName: 'List',
     renameMap: {
       element: 'as',
     },
-  })(file, api);
-
-  return modifyPropsCodemod({
+  }),
+  modifyPropsCodemod({
     componentName: 'ListItem',
     renameMap: {},
-  })(
-    {
-      ...file,
-      source,
-    },
-    api,
-  );
-};
+  }),
+]);
