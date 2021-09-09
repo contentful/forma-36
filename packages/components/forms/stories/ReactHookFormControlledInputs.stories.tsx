@@ -230,17 +230,17 @@ function useReactHookFormController(props) {
 }
 
 function ControlledTextInput(props) {
-  const { ref, ...inputProps } = useReactHookFormController(props);
+  const { ref, inputProps } = useReactHookFormController(props);
   return <TextInput {...inputProps} ref={ref} />;
 }
 
 function ControlledTextarea(props) {
-  const { ref, ...inputProps } = useReactHookFormController(props);
+  const { ref, inputProps } = useReactHookFormController(props);
   return <Textarea {...inputProps} ref={ref} />;
 }
 
 function ControlledCheckbox(props) {
-  const { ref, ...inputProps } = useReactHookFormController(props);
+  const { ref, inputProps } = useReactHookFormController(props);
   return (
     <Checkbox {...inputProps} id={props.id} ref={ref}>
       {props.children}
@@ -249,7 +249,7 @@ function ControlledCheckbox(props) {
 }
 
 function ControlledSelect(props) {
-  const { ref, ...inputProps } = useReactHookFormController(props);
+  const { ref, inputProps } = useReactHookFormController(props);
   return (
     <Select {...inputProps} ref={ref}>
       {props.children}
@@ -258,7 +258,7 @@ function ControlledSelect(props) {
 }
 
 function ControlledRadioGroup(props) {
-  const { ref, ...inputProps } = useReactHookFormController(props);
+  const { ref, inputProps } = useReactHookFormController(props);
   return (
     <RadioGroup {...inputProps} ref={ref}>
       {props.children}
