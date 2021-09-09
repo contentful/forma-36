@@ -12,6 +12,7 @@ describe('v4 codemods', () => {
     'v4-pill',
     'v4-text-link',
     'v4-spinner',
+    'v4-modal',
   ];
 
   tests.forEach((test) => defineTest(__dirname, test, null, test));
