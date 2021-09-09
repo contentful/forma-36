@@ -52,7 +52,7 @@ function _FormLabel(
   return (
     <Text
       as="label"
-      marginBottom="spacingS"
+      marginBottom="spacingXs"
       {...otherProps}
       fontColor="gray900"
       id={id}

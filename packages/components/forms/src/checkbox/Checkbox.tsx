@@ -1,4 +1,5 @@
 import React from 'react';
+import { useId } from '@contentful/f36-core';
 import { BaseCheckbox, BaseCheckboxProps } from '../base-checkbox';
 import { useFormControl } from '../form-control/FormControlContext';
 import { useBaseCheckboxGroup } from '../base-checkbox/BaseCheckboxGroupContext';
@@ -22,6 +23,8 @@ const _Checkbox = (props: CheckboxProps, ref: React.Ref<HTMLInputElement>) => {
     ...otherProps
   } = props;
 
+  const inputId = useId(id, 'checkbox');
+
   const groupProps = useBaseCheckboxGroup({
     onBlur,
     onChange,
@@ -33,7 +36,7 @@ const _Checkbox = (props: CheckboxProps, ref: React.Ref<HTMLInputElement>) => {
 
   // Removes the isReadOnly property that comes from FormControl context.
   const { isReadOnly, ...formProps } = useFormControl({
-    id,
+    id: inputId,
     isDisabled,
     isInvalid,
     isRequired,

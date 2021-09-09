@@ -16,13 +16,18 @@ export interface CheckboxGroupProps
   value?: Array<string>;
 }
 
-const _CheckboxGroup = (
+export const _CheckboxGroup = (
   props: CheckboxGroupProps,
   ref: React.Ref<HTMLDivElement>,
 ) => {
-  const { children, ...groupProps } = props;
+  const { children, testId = 'cf-ui-checkbox-group', ...otherProps } = props;
   return (
-    <BaseCheckboxGroup ref={ref} type="checkbox" {...groupProps}>
+    <BaseCheckboxGroup
+      ref={ref}
+      testId={testId}
+      type="checkbox"
+      {...otherProps}
+    >
       {children}
     </BaseCheckboxGroup>
   );
