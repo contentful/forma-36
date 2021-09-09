@@ -17,9 +17,9 @@ export interface CheckboxGroupProps
 }
 
 export const CheckboxGroup = (props: CheckboxGroupProps) => {
-  const { children, ...groupProps } = props;
+  const { children, testId = 'cf-ui-checkbox-group', ...otherProps } = props;
   return (
-    <BaseCheckboxGroup type="checkbox" {...groupProps}>
+    <BaseCheckboxGroup testId={testId} type="checkbox" {...otherProps}>
       {children}
     </BaseCheckboxGroup>
   );

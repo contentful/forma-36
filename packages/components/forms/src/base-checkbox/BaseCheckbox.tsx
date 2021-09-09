@@ -87,12 +87,12 @@ function _BaseCheckbox(
     typeof isChecked !== undefined ? isChecked : defaultChecked;
 
   return (
-    <div>
+    <div className={className}>
       <Text
         as="label"
         fontColor="gray900"
         fontWeight="fontWeightMedium"
-        className={cx(styles.wrapper, className)}
+        className={styles.wrapper}
         htmlFor={id}
         testId={testId}
         {...otherProps}
