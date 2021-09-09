@@ -1,7 +1,8 @@
 import React, { useState, MouseEventHandler, useRef } from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 
-import { Modal, ModalProps } from '../src/Modal';
+import { ModalProps } from '../src/Modal';
+import { Modal } from '../src';
 import { Button } from '@contentful/f36-button';
 
 function fillArray(value: string, len: number) {

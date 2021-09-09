@@ -4,7 +4,7 @@ import { Paragraph } from '@contentful/f36-typography';
 
 import { ModalLauncher } from '../src/ModalLauncher/ModalLauncher';
 import { Button } from '@contentful/f36-button';
-import { Modal } from '../src/Modal';
+import { Modal } from '../src';
 
 // @ts-expect-error don't complain about ModalLauncher being not a React component
 export default {
