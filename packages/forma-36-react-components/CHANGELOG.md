@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.98.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.98.1...@contentful/forma-36-react-components@3.98.2) (2021-09-09)
+
+
+### Bug Fixes
+
+* **Button:** hide spinner when loading is false ([#1295](https://github.com/contentful/forma-36/issues/1295)) ([cafbd50](https://github.com/contentful/forma-36/commit/cafbd503f34429064b8d661be11f6475faa60c69))
+
+
+
+
+
 ## [3.98.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.98.0...@contentful/forma-36-react-components@3.98.1) (2021-09-06)
 
 
