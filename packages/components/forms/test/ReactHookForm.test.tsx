@@ -1,5 +1,5 @@
 import React from 'react';
-import { useForm, Controller } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { render, fireEvent, screen, waitFor } from '@testing-library/react';
 
 import { Button } from '@contentful/f36-button';

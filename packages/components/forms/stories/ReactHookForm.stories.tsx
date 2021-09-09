@@ -1,5 +1,5 @@
 import React from 'react';
-import { useForm, Controller } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { action } from '@storybook/addon-actions';
 
 import { Button } from '@contentful/f36-button';
@@ -86,7 +86,7 @@ export const Basic = () => {
 };
 
 export const WithSelect = () => {
-  const { register, control, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => action('submitted data')(data);
 
@@ -100,36 +100,7 @@ export const WithSelect = () => {
           <Select.Option value="Mumbai">Mumbai</Select.Option>
           <Select.Option value="Rio de Janeiro">Rio de Janeiro</Select.Option>
         </Select>
-
-        <FormControl.HelpText>
-          This is an uncontrolled Select with react-hook-form
-        </FormControl.HelpText>
       </FormControl>
-
-      <Controller
-        name="controlled-cities"
-        control={control}
-        defaultValue="Mumbai"
-        render={({ field }) => {
-          return (
-            <FormControl>
-              <FormControl.Label>City</FormControl.Label>
-
-              <Select {...field}>
-                <Select.Option value="Cape Town">Cape Town</Select.Option>
-                <Select.Option value="Mumbai">Mumbai</Select.Option>
-                <Select.Option value="Rio de Janeiro">
-                  Rio de Janeiro
-                </Select.Option>
-              </Select>
-
-              <FormControl.HelpText>
-                This is a controlled Select with react-hook-form
-              </FormControl.HelpText>
-            </FormControl>
-          );
-        }}
-      />
 
       <Button variant="primary" type="submit">
         Submit
@@ -139,7 +110,7 @@ export const WithSelect = () => {
 };
 
 export const WithRadioGroup = () => {
-  const { control, register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const onSubmit = (data) => action('submitted data')(data);
 
@@ -171,39 +142,7 @@ export const WithRadioGroup = () => {
             Peaches
           </Radio>
         </RadioGroup>
-
-        <FormControl.HelpText>
-          This is an uncontrolled RadioGroup with react-hook-form
-        </FormControl.HelpText>
       </FormControl>
-
-      <Controller
-        name="controlled-fruits"
-        control={control}
-        defaultValue={'apples'}
-        rules={{ required: true }}
-        render={({ field }) => (
-          <FormControl>
-            <FormControl.Label>Fruits</FormControl.Label>
-
-            <RadioGroup {...field}>
-              <Radio id="apples" value="apples">
-                Apples
-              </Radio>
-              <Radio id="pears" value="pears">
-                Pears
-              </Radio>
-              <Radio id="peaches" value="peaches">
-                Peaches
-              </Radio>
-            </RadioGroup>
-
-            <FormControl.HelpText>
-              This is a controlled RadioGroup with react-hook-form
-            </FormControl.HelpText>
-          </FormControl>
-        )}
-      />
 
       <Button variant="primary" type="submit">
         Submit
@@ -213,7 +152,7 @@ export const WithRadioGroup = () => {
 };
 
 export const WithCheckboxGroup = () => {
-  const { control, register, handleSubmit } = useForm({ mode: 'onChange' });
+  const { register, handleSubmit } = useForm({ mode: 'onChange' });
 
   const onSubmit = (data) => action('submitted data')(data);
 
@@ -245,40 +184,7 @@ export const WithCheckboxGroup = () => {
             Peaches
           </Checkbox>
         </CheckboxGroup>
-
-        <FormControl.HelpText>
-          This is an uncontrolled CheckboxGroup with react-hook-form
-        </FormControl.HelpText>
       </FormControl>
-
-      <Controller
-        name="controlled-fruits"
-        control={control}
-        defaultValue={['apples']}
-        render={({ field }) => {
-          return (
-            <FormControl>
-              <FormControl.Label>Fruits</FormControl.Label>
-
-              <CheckboxGroup {...field}>
-                <Checkbox id="controlled-apples" value="apples">
-                  Apples
-                </Checkbox>
-                <Checkbox id="controlled-pears" value="pears">
-                  Pears
-                </Checkbox>
-                <Checkbox id="controlled-peaches" value="peaches">
-                  Peaches
-                </Checkbox>
-              </CheckboxGroup>
-
-              <FormControl.HelpText>
-                This is a controlled CheckboxGroup with react-hook-form
-              </FormControl.HelpText>
-            </FormControl>
-          );
-        }}
-      />
 
       <Button variant="primary" type="submit">
         Submit
