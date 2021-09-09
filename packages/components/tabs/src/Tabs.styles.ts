@@ -22,6 +22,8 @@ const styles = {
     fontWeight: tokens.fontWeightMedium,
     outline: 'none',
     textDecoration: 'none',
+    backgroundColor: 'transparent',
+    border: 'none',
     '&:before': {
       content: '""',
       position: 'absolute',
@@ -67,7 +69,7 @@ export const getTabStyles = ({ className, isSelected, isDisabled }) => ({
 });
 
 export const getTabsStyles = ({ className, variant }) => ({
-  tabs: cx(css(styles.tabs), className, {
+  tabList: cx(css(styles.tabs), className, {
     [css(styles.tabDividerHorizontal)]: variant === 'horizontal-divider',
     [css(styles.tabDividerVertical)]: variant === 'vertical-divider',
   }),

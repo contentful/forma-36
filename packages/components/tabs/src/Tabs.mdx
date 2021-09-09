@@ -5,7 +5,7 @@ status: 'stable'
 slug: /components/tabs/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/components/tabs'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/components-tabs--basic'
-typescript: ./Tabs.tsx,./Tab.tsx,./TabPanel.tsx
+typescript: ./Tabs.tsx,./Tab.tsx,./TabPanel.tsx, ./TabList.tsx
 ---
 
 Tabs is a component that makes navigating between sections of related content possible, displaying one section at a time.
@@ -26,16 +26,21 @@ Be aware that the users will not see all the content at the same time. Make sure
 ```jsx
 // import { Tabs } from '@contentful/f36-tabs';
 
-<Tabs role="tablist">
-  <Tabs.Tab id="first" href="https://contentful.com" isSelected>
-    First
-  </Tabs.Tab>
-  <Tabs.Tab id="second" href="https://contentful.com">
-    Second
-  </Tabs.Tab>
-  <Tabs.Tab id="third" href="https://contentful.com">
-    Third
-  </Tabs.Tab>
+<Tabs defaultTab="first">
+  <Tabs.List variant="vertical-divider">
+    <Tabs.Tab id="first" href="https://contentful.com" isSelected>
+      First
+    </Tabs.Tab>
+    <Tabs.Tab id="second" href="https://contentful.com">
+      Second
+    </Tabs.Tab>
+    <Tabs.Tab id="third" href="https://contentful.com">
+      Third
+    </Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel id="first">Content for the first tab</Tabs.Panel>
+  <Tabs.Panel id="second">Content for the second tab</Tabs.Panel>
+  <Tabs.Panel id="third">Content for the second tab</Tabs.Panel>
 </Tabs>
 ```
 
@@ -43,65 +48,22 @@ Be aware that the users will not see all the content at the same time. Make sure
 
 ```jsx
 // import { Tabs } from '@contentful/f36-tabs';
-
-<Tabs role="tablist" variant="vertical-divider">
-  <Tabs.Tab id="first" href="https://contentful.com" isSelected>
-    First
-  </Tabs.Tab>
-  <Tabs.Tab id="second" href="https://contentful.com">
-    Second
-  </Tabs.Tab>
-  <Tabs.Tab id="third" href="https://contentful.com">
-    Third
-  </Tabs.Tab>
+<Tabs defaultTab="first">
+  <Tabs.List variant="vertical-divider">
+    <Tabs.Tab id="first" href="https://contentful.com" isSelected>
+      First
+    </Tabs.Tab>
+    <Tabs.Tab id="second" href="https://contentful.com">
+      Second
+    </Tabs.Tab>
+    <Tabs.Tab id="third" href="https://contentful.com">
+      Third
+    </Tabs.Tab>
+  </Tabs.List>
+  <Tabs.Panel id="first">Content for the first tab</Tabs.Panel>
+  <Tabs.Panel id="second">Content for the second tab</Tabs.Panel>
+  <Tabs.Panel id="third">Content for the second tab</Tabs.Panel>
 </Tabs>
-```
-
-### as navigation
-
-```jsx
-// import { Tabs } from '@contentful/f36-tabs';
-
-<Tabs role="navigation">
-  <Tabs.Tab id="first" href="https://contentful.com" isSelected>
-    First
-  </Tabs.Tab>
-  <Tabs.Tab id="second" href="https://contentful.com">
-    Second
-  </Tabs.Tab>
-  <Tabs.Tab id="third" href="https://contentful.com">
-    Third
-  </Tabs.Tab>
-</Tabs>
-```
-
-### used with TabPanel
-
-```jsx
-// import { Tabs } from '@contentful/f36-tabs';
-
-() => {
-  const [selected, setSelected] = React.useState('first');
-
-  return (
-    <>
-      <Tabs role="tablist">
-        <Tabs.Tab id="first" isSelected={selected === 'first'}>
-          First
-        </Tabs.Tab>
-        <Tabs.Tab id="second" isSelected={selected === 'second'}>
-          Second
-        </Tabs.Tab>
-      </Tabs>
-      {selected === 'first' && (
-        <Tabs.Panel id="first">Content for the first tab</Tabs.Panel>
-      )}
-      {selected === 'second' && (
-        <Tabs.Panel id="second">Content for the second tab</Tabs.Panel>
-      )}
-    </>
-  );
-};
 ```
 
 ## Content recommendations
@@ -125,3 +87,7 @@ import { Props } from '@contentful/f36-docs-utils';
 ### TabPanel
 
 <Props of="TabPanel" />
+
+### TabList
+
+<Props of="TabList" />
