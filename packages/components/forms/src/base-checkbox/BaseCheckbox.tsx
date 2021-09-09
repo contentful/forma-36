@@ -115,6 +115,7 @@ function _BaseCheckbox(
           required={isRequired}
           aria-required={isRequired ? 'true' : undefined}
           aria-invalid={isInvalid ? 'true' : undefined}
+          aria-describedby={helpText && `${id}-helptext`}
           id={id}
           name={name}
         />
@@ -126,7 +127,11 @@ function _BaseCheckbox(
         />
         {children}
       </Text>
-      {helpText && <HelpText className={styles.helpText}>{helpText}</HelpText>}
+      {helpText && (
+        <HelpText id={`${id}-helptext`} className={styles.helpText}>
+          {helpText}
+        </HelpText>
+      )}
     </div>
   );
 }
