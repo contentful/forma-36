@@ -44,6 +44,11 @@ const TRANSFORMS_CHOICES = [
     name: 'v4-spinner: Converts Spinner component from Forma v3 to v4',
     value: 'v4-spinner',
   },
+  {
+    name:
+      'v4-modal: Converts Modal, ModalConfirm and ModalLauncher components from Forma v3 to v4',
+    value: 'v4-modal',
+  },
 ];
 
 module.exports = {
