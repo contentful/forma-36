@@ -1,6 +1,6 @@
 import React, { ChangeEventHandler } from 'react';
 import { Stack } from '@contentful/f36-core';
-import type { Spacing, CommonProps } from '@contentful/f36-core';
+import type { CommonProps } from '@contentful/f36-core';
 import { BaseCheckboxGroupContext } from './BaseCheckboxGroupContext';
 
 export interface BaseCheckboxGroupProps extends CommonProps {
@@ -28,16 +28,11 @@ export interface BaseCheckboxGroupProps extends CommonProps {
    * Array of values for checkboxes or single value for radio, that should be checked for controlled inputs
    */
   value?: Array<string> | string;
-  /**
-   * Defines the spacing between elements on the group
-   */
-  spacing?: Spacing;
 }
 
 export const BaseCheckboxGroup = (props: BaseCheckboxGroupProps) => {
   const {
     children,
-    spacing = 'spacingXs',
     className,
     testId = 'cf-ui-base-checkbox-group',
     ...contextProps
@@ -49,7 +44,7 @@ export const BaseCheckboxGroup = (props: BaseCheckboxGroupProps) => {
         className={className}
         flexDirection="column"
         alignItems="flex-start"
-        spacing={spacing}
+        spacing="spacingXs"
       >
         {children}
       </Stack>

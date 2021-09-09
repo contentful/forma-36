@@ -95,14 +95,18 @@ We also provide the `RadioGroup` component that helps when using multiple radio,
 - `onChange`: Handler that will be executed when any radio inside the group receives the event of change.
 
 ```jsx
-<RadioGroup name="radio-options" defaultValue={'option 1'}>
-  <Radio value="option 1" id="option-1" helpText="Help text for option 1">
-    Option 1
-  </Radio>
-  <Radio value="option 2" id="option-2" helpText="Help text for option 2">
-    Option 2
-  </Radio>
-</RadioGroup>
+<React.Fragment>
+  <Form.Label marginBottom="none">Radio group options</Form.Label>
+  <Paragraph>Subtitle with more information if needed</Paragraph>
+  <RadioGroup name="radio-options" defaultValue={'option 1'}>
+    <Radio value="option 1" id="option-1" helpText="Help text for option 1">
+      Option 1
+    </Radio>
+    <Radio value="option 2" id="option-2" helpText="Help text for option 2">
+      Option 2
+    </Radio>
+  </RadioGroup>
+</React.Fragment>
 ```
 
 ## Code examples

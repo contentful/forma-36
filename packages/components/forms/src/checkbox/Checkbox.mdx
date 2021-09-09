@@ -82,14 +82,18 @@ We also provide the `CheckboxGroup` component that helps when using multiple che
 - `onChange`: Handler that will be executed when any checkbox inside the group receives the event of change.
 
 ```jsx
-<CheckboxGroup name="checkbox-options" defaultValue={['option 1']}>
-  <Checkbox value="option 1" id="option-1" helpText="Some help text">
-    Option 1
-  </Checkbox>
-  <Checkbox value="option 2" id="option-2" helpText="Another help text">
-    Option 2
-  </Checkbox>
-</CheckboxGroup>
+<React.Fragment>
+  <Form.Label marginBottom="none">Checkbox group options</Form.Label>
+  <Paragraph>Subtitle with more information if needed</Paragraph>
+  <CheckboxGroup name="checkbox-options" defaultValue={['option 1']}>
+    <Checkbox value="option 1" id="option-1" helpText="Some help text">
+      Option 1
+    </Checkbox>
+    <Checkbox value="option 2" id="option-2" helpText="Another help text">
+      Option 2
+    </Checkbox>
+  </CheckboxGroup>
+</React.Fragment>
 ```
 
 ## Code examples

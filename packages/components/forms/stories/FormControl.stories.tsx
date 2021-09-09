@@ -14,7 +14,7 @@ import {
 import { Flex, Box } from '@contentful/f36-core';
 import { TextLink } from '@contentful/f36-text-link';
 import { LockIcon } from '@contentful/f36-icons';
-import { Subheading, Paragraph } from '@contentful/f36-typography';
+import { Paragraph } from '@contentful/f36-typography';
 
 export default {
   title: 'Form Elements/FormControl',
@@ -83,7 +83,9 @@ export const WithCheckboxGroup = (args: FormControlInternalProps) => {
   return (
     <>
       <FormControl {...args}>
-        <Subheading marginBottom="none">Select your ingredients:</Subheading>
+        <FormControl.Label marginBottom="none">
+          Select your ingredients
+        </FormControl.Label>
         <Paragraph>No extra costs</Paragraph>
 
         <CheckboxGroup name="ingredients">
@@ -106,10 +108,13 @@ export const WithCheckboxGroup = (args: FormControlInternalProps) => {
             Double-fried fries
           </Checkbox>
         </CheckboxGroup>
+        {args.isInvalid && (
+          <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
+        )}
       </FormControl>
 
       <FormControl {...args}>
-        <Subheading>Burger patty:</Subheading>
+        <FormControl.Label>Burger patty</FormControl.Label>
         <RadioGroup name="burger-patty">
           <Radio
             value="beef"
@@ -124,15 +129,21 @@ export const WithCheckboxGroup = (args: FormControlInternalProps) => {
             Beyound meat (vegan)
           </Radio>
         </RadioGroup>
+        {args.isInvalid && (
+          <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
+        )}
       </FormControl>
 
-      <FormControl>
-        <Subheading>Condiments:</Subheading>
+      <FormControl {...args}>
+        <FormControl.Label>Condiments</FormControl.Label>
         <CheckboxGroup name="condiments">
           <Checkbox value="ketchup">Ketchup</Checkbox>
           <Checkbox value="mustard">Mustard</Checkbox>
           <Checkbox value="mayo">Mayo</Checkbox>
         </CheckboxGroup>
+        {args.isInvalid && (
+          <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
+        )}
       </FormControl>
     </>
   );
