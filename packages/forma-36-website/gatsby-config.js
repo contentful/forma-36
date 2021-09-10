@@ -4,6 +4,18 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
+const listOfIgnoredFiles = [
+  '**/dist/**',
+  '**/*.css',
+  '**/*.js',
+  '**/*.snap',
+  '**/*.ts',
+  '**/*.tsx',
+  '**/*.md',
+  '**/*.log',
+  '**/*.json',
+];
+
 module.exports = {
   siteMetadata: {
     title: 'Forma 36 - The Contentful Design System',
@@ -82,6 +94,16 @@ module.exports = {
           {
             name: 'Keyboard shortcuts',
             link: '/guidelines/keyboard-shortcuts/',
+          },
+        ],
+      },
+      {
+        name: 'Integrations',
+        link: '',
+        menuLinks: [
+          {
+            name: 'React Hook Form',
+            link: '/integrations/react-hook-form/',
           },
         ],
       },
@@ -360,7 +382,7 @@ module.exports = {
           __dirname,
           '../forma-36-react-components/src/components/',
         ),
-        ignore: ['**/*.css', '**/*.js', '**/*.snap', '**/*.ts', '**/*.tsx'],
+        ignore: listOfIgnoredFiles,
       },
     },
     {
@@ -368,7 +390,7 @@ module.exports = {
       options: {
         name: 'pages',
         path: path.resolve(__dirname, '../components/'),
-        ignore: ['**/*.css', '**/*.js', '**/*.snap', '**/*.ts', '**/*.tsx'],
+        ignore: listOfIgnoredFiles,
       },
     },
     {
@@ -376,7 +398,7 @@ module.exports = {
       options: {
         name: 'pages',
         path: path.resolve(__dirname, '../core/'),
-        ignore: ['**/*.css', '**/*.js', '**/*.snap', '**/*.ts', '**/*.tsx'],
+        ignore: listOfIgnoredFiles,
       },
     },
     'gatsby-transformer-javascript-frontmatter',
