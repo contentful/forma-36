@@ -47,9 +47,6 @@ const styles = {
   tabDisabled: {
     opacity: '0.5',
     cursor: 'not-allowed',
-    '&:before, &:hover:before, &:hover:focus': {
-      opacity: '0',
-    },
   } as CSSObject,
   tabDividerVertical: {
     '& > *:not(:first-child)': {
