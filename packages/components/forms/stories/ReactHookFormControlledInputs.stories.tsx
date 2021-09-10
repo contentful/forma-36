@@ -182,31 +182,16 @@ export const WithCheckboxGroup = () => {
       <FormControl>
         <FormControl.Label>Favorite fruits</FormControl.Label>
 
-        <CheckboxGroup>
-          <ControlledCheckbox
-            control={control}
-            id="apples"
-            name="apples"
-            value="apples"
-          >
+        <CheckboxGroup name="favorite-fruits">
+          <ControlledCheckbox control={control} id="apples" value="apples">
             Apples
           </ControlledCheckbox>
 
-          <ControlledCheckbox
-            control={control}
-            id="pears"
-            name="pears"
-            value="pears"
-          >
+          <ControlledCheckbox control={control} id="pears" value="pears">
             Pears
           </ControlledCheckbox>
 
-          <ControlledCheckbox
-            control={control}
-            id="peaches"
-            name="peaches"
-            value="peaches"
-          >
+          <ControlledCheckbox control={control} id="peaches" value="peaches">
             Peaches
           </ControlledCheckbox>
         </CheckboxGroup>

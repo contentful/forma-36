@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler } from 'react';
+import React, { ChangeEventHandler, FocusEventHandler } from 'react';
 import { Stack } from '@contentful/f36-core';
 import type { CommonProps } from '@contentful/f36-core';
 import { BaseCheckboxGroupContext } from './BaseCheckboxGroupContext';
@@ -7,7 +7,7 @@ export interface BaseCheckboxGroupProps extends CommonProps {
   /**
    * Handler that will be triggered when any checkbox inside the group loses focus
    */
-  onBlur?: ChangeEventHandler<HTMLInputElement>;
+  onBlur?: FocusEventHandler<HTMLInputElement>;
   /**
    * Handler that will be triggered when any checkbox inside the group has their checked state changed
    */
