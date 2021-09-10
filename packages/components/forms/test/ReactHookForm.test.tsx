@@ -72,15 +72,15 @@ const MockForm = ({ handleData }) => {
         </Radio>
       </RadioGroup>
 
-      <FormControl isInvalid={Boolean(errors.checbox)}>
+      <FormControl isInvalid={Boolean(errors.checkbox)}>
         <Checkbox
           defaultChecked={false}
-          {...register('checbox', { required: true })}
+          {...register('checkbox', { required: true })}
         >
           This checkbox is required
         </Checkbox>
 
-        {errors.checbox && <MockRequiredMessage />}
+        {errors.checkbox && <MockRequiredMessage />}
       </FormControl>
 
       <Flex justifyContent="flex-end">
@@ -151,7 +151,7 @@ describe('React Hook Form integration', function () {
       textarea: 'Very long text in textarea',
       select: 'Rio de Janeiro',
       radioGroup: 'pears',
-      checbox: true,
+      checkbox: true,
     });
   });
 });
