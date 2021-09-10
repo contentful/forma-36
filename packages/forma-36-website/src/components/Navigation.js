@@ -86,7 +86,10 @@ const checkActive = (item, currentPath) => {
 };
 
 const checkCategory = (name) =>
-  name === 'Foundation' || name === 'Guidelines' || name === 'Components';
+  name === 'Foundation' ||
+  name === 'Guidelines' ||
+  name === 'Components' ||
+  name === 'Integrations';
 
 const MenuListItem = React.forwardRef(
   ({ item, currentPath, isActive, hierarchyLevel }, ref) => {

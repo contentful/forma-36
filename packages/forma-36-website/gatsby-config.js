@@ -98,6 +98,16 @@ module.exports = {
         ],
       },
       {
+        name: 'Integrations',
+        link: '',
+        menuLinks: [
+          {
+            name: 'React Hook Form',
+            link: '/integrations/react-hook-form/',
+          },
+        ],
+      },
+      {
         name: 'Components',
         link: '',
         menuLinks: [
