@@ -73,7 +73,7 @@ function _Tab(
 
   elementProps['aria-selected'] = isSelected;
   elementProps['role'] = 'tab';
-  elementProps['aria-panelId'] = panelId;
+  elementProps['aria-controls'] = panelId;
   return (
     <Box
       as="button"
