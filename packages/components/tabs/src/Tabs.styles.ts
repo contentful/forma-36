@@ -34,7 +34,7 @@ const styles = {
       right: '0',
       height: '2px',
     },
-    '&:hover:before, &:hover:focus, &:last-child': {
+    '&:hover:before, &:hover:focus': {
       opacity: '0.5',
     },
   } as CSSObject,

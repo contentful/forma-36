@@ -7,9 +7,9 @@ import { getTabStyles } from './Tabs.styles';
 import { useTabsContext } from './tabsContext';
 export interface TabProps extends CommonProps {
   /**
-   * Takes id of the TabPanel it controls
+   * Takes id of the TabPanel it panelId
    */
-  controls: string;
+  panelId: string;
   /**
    * onSelect is run when the Tab is selected
    */
@@ -24,7 +24,7 @@ function _Tab(
     children,
     className,
     isDisabled = false,
-    controls,
+    panelId,
     onSelect,
     style,
     tabIndex = 0,
@@ -34,28 +34,28 @@ function _Tab(
   ref: React.Ref<HTMLButtonElement>,
 ): React.ReactElement {
   const { selectedTab, setSelectedTab } = useTabsContext();
-  const isSelected = controls === selectedTab;
+  const isSelected = panelId === selectedTab;
   const styles = getTabStyles({ className, isSelected, isDisabled });
 
   const handleClick = useCallback(
     (e: MouseEvent<HTMLElement>) => {
       if (onSelect && !isDisabled) {
-        setSelectedTab(controls);
-        onSelect(controls, e);
+        setSelectedTab(panelId);
+        onSelect(panelId, e);
       }
     },
-    [isDisabled, controls, onSelect],
+    [isDisabled, panelId, onSelect],
   );
 
   const handleKeyPress = useCallback(
     (e: KeyboardEvent<HTMLElement>) => {
       if (onSelect && e.key === 'Enter') {
-        setSelectedTab(controls);
-        onSelect(controls, e);
+        setSelectedTab(panelId);
+        onSelect(panelId, e);
         e.preventDefault();
       }
     },
-    [controls, onSelect],
+    [panelId, onSelect],
   );
 
   const elementProps = {
@@ -73,13 +73,13 @@ function _Tab(
 
   elementProps['aria-selected'] = isSelected;
   elementProps['role'] = 'tab';
-  elementProps['aria-controls'] = controls;
+  elementProps['aria-panelId'] = panelId;
   return (
     <Box
       as="button"
       {...elementProps}
       {...otherProps}
-      id={`${controls}-control-tab`}
+      id={`${panelId}-control-tab`}
       ref={ref}
     >
       {children}

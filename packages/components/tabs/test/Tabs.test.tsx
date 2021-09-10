@@ -11,11 +11,11 @@ describe('Tabs', () => {
       <div>
         <Tabs defaultTab="first">
           <Tabs.List>
-            <Tabs.Tab controls="first">First</Tabs.Tab>
-            <Tabs.Tab controls="second" onSelect={mockOnSelect}>
+            <Tabs.Tab panelId="first">First</Tabs.Tab>
+            <Tabs.Tab panelId="second" onSelect={mockOnSelect}>
               Second
             </Tabs.Tab>
-            <Tabs.Tab controls="third">Third</Tabs.Tab>
+            <Tabs.Tab panelId="third">Third</Tabs.Tab>
           </Tabs.List>
           <Tabs.Panel id="first">content first panel</Tabs.Panel>
           <Tabs.Panel id="second">content second panel</Tabs.Panel>
@@ -37,9 +37,9 @@ describe('Tabs', () => {
       <div>
         <Tabs defaultTab="first">
           <Tabs.List>
-            <Tabs.Tab controls="first">First</Tabs.Tab>
-            <Tabs.Tab controls="second">Second</Tabs.Tab>
-            <Tabs.Tab controls="third">Third</Tabs.Tab>
+            <Tabs.Tab panelId="first">First</Tabs.Tab>
+            <Tabs.Tab panelId="second">Second</Tabs.Tab>
+            <Tabs.Tab panelId="third">Third</Tabs.Tab>
           </Tabs.List>
           <Tabs.Panel id="first">content first panel</Tabs.Panel>
           <Tabs.Panel id="second">content second panel</Tabs.Panel>
