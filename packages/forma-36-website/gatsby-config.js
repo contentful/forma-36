@@ -105,6 +105,10 @@ module.exports = {
             name: 'React Hook Form',
             link: '/integrations/react-hook-form/',
           },
+          {
+            name: 'Formik',
+            link: '/integrations/formik/',
+          },
         ],
       },
       {
