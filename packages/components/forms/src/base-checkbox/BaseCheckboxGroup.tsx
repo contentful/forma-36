@@ -1,9 +1,13 @@
-import React, { ChangeEventHandler } from 'react';
+import React, { ChangeEventHandler, FocusEventHandler } from 'react';
 import { Stack } from '@contentful/f36-core';
 import type { CommonProps } from '@contentful/f36-core';
 import { BaseCheckboxGroupContext } from './BaseCheckboxGroupContext';
 
 export interface BaseCheckboxGroupProps extends CommonProps {
+  /**
+   * Handler that will be triggered when any checkbox inside the group loses focus
+   */
+  onBlur?: FocusEventHandler<HTMLInputElement>;
   /**
    * Handler that will be triggered when any checkbox inside the group has their checked state changed
    */
@@ -30,7 +34,10 @@ export interface BaseCheckboxGroupProps extends CommonProps {
   value?: Array<string> | string;
 }
 
-export const BaseCheckboxGroup = (props: BaseCheckboxGroupProps) => {
+export const _BaseCheckboxGroup = (
+  props: BaseCheckboxGroupProps,
+  ref: React.Ref<HTMLDivElement>,
+) => {
   const {
     children,
     className,
@@ -40,6 +47,7 @@ export const BaseCheckboxGroup = (props: BaseCheckboxGroupProps) => {
   return (
     <BaseCheckboxGroupContext.Provider value={contextProps}>
       <Stack
+        ref={ref}
         testId={testId}
         className={className}
         flexDirection="column"
@@ -51,3 +59,5 @@ export const BaseCheckboxGroup = (props: BaseCheckboxGroupProps) => {
     </BaseCheckboxGroupContext.Provider>
   );
 };
+
+export const BaseCheckboxGroup = React.forwardRef(_BaseCheckboxGroup);

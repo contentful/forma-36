@@ -7,11 +7,11 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",
-    "@contentful/f36-core": "^4.0.0",
-    "@contentful/f36-tokens": "^4.0.0",
-    "@contentful/f36-icons": "^4.0.0",
-    "@contentful/f36-typography": "^4.0.0",
     "@contentful/f36-copybutton": "^4.0.0",
+    "@contentful/f36-core": "^4.0.0",
+    "@contentful/f36-icons": "^4.0.0",
+    "@contentful/f36-tokens": "^4.0.0",
+    "@contentful/f36-typography": "^4.0.0",
     "emotion": "^10.0.17"
   },
   "peerDependencies": {
@@ -34,5 +34,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "devDependencies": {
+    "react-hook-form": "^7.15.0"
   }
 }

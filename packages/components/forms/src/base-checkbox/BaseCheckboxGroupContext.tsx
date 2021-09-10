@@ -8,7 +8,7 @@ export type BaseCheckboxGroupContextProps = Omit<
 >;
 export type BaseCheckboxGroupContextValue = Pick<
   BaseCheckboxProps,
-  'isChecked' | 'defaultChecked' | 'onChange' | 'name' | 'value'
+  'isChecked' | 'defaultChecked' | 'onChange' | 'onBlur' | 'name' | 'value'
 >;
 
 export const BaseCheckboxGroupContext = createContext<
@@ -55,9 +55,15 @@ export const useBaseCheckboxGroup = (
     context.onChange && context.onChange(event);
   };
 
+  const onBlur = (event) => {
+    props.onBlur && props.onBlur(event);
+    context.onBlur && context.onBlur(event);
+  };
+
   return {
     defaultChecked,
     isChecked,
+    onBlur,
     onChange,
     name: context.name ?? props.name,
     value: props.value,
