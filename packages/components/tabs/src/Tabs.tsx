@@ -4,6 +4,9 @@ import { Box } from '@contentful/f36-core';
 import { TabsContextProvider } from './tabsContext';
 export interface TabsProps extends CommonProps {
   children?: React.ReactNode;
+  /**
+   * default active Tab
+   */
   defaultTab: string;
 }
 

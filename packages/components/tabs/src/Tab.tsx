@@ -10,9 +10,10 @@ export interface TabProps extends CommonProps {
    * Takes id of the TabPanel it controls
    */
   controls: string;
+  /**
+   * onSelect is run when the Tab is selected
+   */
   onSelect?: (id: string, e: React.SyntheticEvent) => void;
-  href?: string;
-  target?: string;
   isDisabled?: boolean;
   tabIndex?: number;
   children: React.ReactNode;

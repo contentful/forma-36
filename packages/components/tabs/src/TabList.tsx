@@ -3,6 +3,9 @@ import type { CommonProps } from '@contentful/f36-core';
 import { Box } from '@contentful/f36-core';
 import { getTabsStyles } from './Tabs.styles';
 export interface TabListProps extends CommonProps {
+  /**
+   * visual variant of TabList
+   */
   variant?: 'default' | 'horizontal-divider' | 'vertical-divider';
   children?: React.ReactNode;
 }
