@@ -3,8 +3,8 @@ import { css, cx } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { Flex } from '@contentful/f36-core';
 import { EntityStatusBadge } from '@contentful/f36-badge';
-import { Asset } from '@contentful/f36-components';
-import type { AssetStatus, AssetType } from '@contentful/f36-components';
+import { Asset } from '@contentful/f36-asset';
+import type { AssetStatus, AssetType } from '@contentful/f36-asset';
 import { Icon } from '@contentful/f36-icon';
 
 import { BaseCard } from '../base-card/BaseCard';
