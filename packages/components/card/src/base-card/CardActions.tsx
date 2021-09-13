@@ -17,24 +17,24 @@ export const CardActions = ({
   buttonProps,
   children,
 }: CardActionsProps): React.ReactElement => {
-  const [isActionsDropdownOpen, setIsActionsDropdownOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleActionClick = useCallback<MouseEventHandler>(
     (event) => {
       event.preventDefault();
-      setIsActionsDropdownOpen(!isActionsDropdownOpen);
+      setIsOpen(!isOpen);
     },
-    [isActionsDropdownOpen, setIsActionsDropdownOpen],
+    [isOpen, setIsOpen],
   );
 
   return (
     <Menu
-      isOpen={isActionsDropdownOpen}
+      isOpen={isOpen}
       onOpen={() => {
-        setIsActionsDropdownOpen(true);
+        setIsOpen(true);
       }}
       onClose={() => {
-        setIsActionsDropdownOpen(false);
+        setIsOpen(false);
       }}
     >
       <Menu.Trigger>
