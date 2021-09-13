@@ -5,7 +5,11 @@ import React, {
   useRef,
   useEffect,
 } from 'react';
-import { CommonProps, mergeRefs } from '@contentful/f36-core';
+import {
+  CommonProps,
+  mergeRefs,
+  useArrowKeyNavigation,
+} from '@contentful/f36-core';
 import { Popover, PopoverProps } from '@contentful/f36-popover';
 import { MenuContextProvider, MenuContextType } from './MenuContext';
 
@@ -170,57 +174,57 @@ const useMenuOpenState = (props: UseMenuOpenStateProps) => {
   return { isOpen: isOpenValue, isControlled, handleClose, handleOpen };
 };
 
-interface UseArrowKeyNavigationProps {
-  itemsContainerRef: React.MutableRefObject<HTMLElement>;
-  itemsSelector: string;
-}
+// interface UseArrowKeyNavigationProps {
+//   itemsContainerRef: React.MutableRefObject<HTMLElement>;
+//   itemsSelector: string;
+// }
 
-const useArrowKeyNavigation = ({
-  itemsContainerRef,
-  itemsSelector,
-}: UseArrowKeyNavigationProps) => {
-  const [focusedIndex, setFocusedIndex] = useState(0);
+// const useArrowKeyNavigation = ({
+//   itemsContainerRef,
+//   itemsSelector,
+// }: UseArrowKeyNavigationProps) => {
+//   const [focusedIndex, setFocusedIndex] = useState(0);
 
-  const handleArrowsKeyDown = useCallback(
-    (event: React.KeyboardEvent) => {
-      const container = itemsContainerRef.current;
-      if (!container) return;
+//   const handleArrowsKeyDown = useCallback(
+//     (event: React.KeyboardEvent) => {
+//       const container = itemsContainerRef.current;
+//       if (!container) return;
 
-      const items = container.querySelectorAll(itemsSelector);
-      if (items.length === 0) return;
+//       const items = container.querySelectorAll(itemsSelector);
+//       if (items.length === 0) return;
 
-      const lastItemIndex = items.length - 1;
+//       const lastItemIndex = items.length - 1;
 
-      const focusFirstItem = () => setFocusedIndex(0);
-      const focusLastItem = () => setFocusedIndex(lastItemIndex);
-      const focusNextItem = () => {
-        if (focusedIndex === lastItemIndex) {
-          focusFirstItem();
-        } else {
-          setFocusedIndex(focusedIndex + 1);
-        }
-      };
-      const focusPrevItem = () => {
-        if (focusedIndex === 0) {
-          focusLastItem();
-        } else {
-          setFocusedIndex(focusedIndex - 1);
-        }
-      };
+//       const focusFirstItem = () => setFocusedIndex(0);
+//       const focusLastItem = () => setFocusedIndex(lastItemIndex);
+//       const focusNextItem = () => {
+//         if (focusedIndex === lastItemIndex) {
+//           focusFirstItem();
+//         } else {
+//           setFocusedIndex(focusedIndex + 1);
+//         }
+//       };
+//       const focusPrevItem = () => {
+//         if (focusedIndex === 0) {
+//           focusLastItem();
+//         } else {
+//           setFocusedIndex(focusedIndex - 1);
+//         }
+//       };
 
-      const keyToFnMap = {
-        ArrowDown: focusNextItem,
-        ArrowUp: focusPrevItem,
-      };
+//       const keyToFnMap = {
+//         ArrowDown: focusNextItem,
+//         ArrowUp: focusPrevItem,
+//       };
 
-      const fn = keyToFnMap[event.key];
-      if (fn) {
-        event.preventDefault();
-        fn();
-      }
-    },
-    [focusedIndex, itemsSelector, itemsContainerRef],
-  );
+//       const fn = keyToFnMap[event.key];
+//       if (fn) {
+//         event.preventDefault();
+//         fn();
+//       }
+//     },
+//     [focusedIndex, itemsSelector, itemsContainerRef],
+//   );
 
-  return { focusedIndex, handleArrowsKeyDown };
-};
+//   return { focusedIndex, handleArrowsKeyDown };
+// };
