@@ -67,7 +67,7 @@ function _Card<E extends React.ElementType = typeof DEFAULT_TAG>(
     >
       {title && (
         <Flex as="header" flexGrow={1}>
-          <Heading>{title}</Heading>
+          <Heading marginBottom="none">{title}</Heading>
         </Flex>
       )}
 
