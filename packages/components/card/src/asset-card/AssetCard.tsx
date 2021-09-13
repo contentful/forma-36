@@ -33,8 +33,8 @@ const generateStateStyles = ({
   if (isSelected) {
     return css({
       backgroundColor: tokens.colorWhite,
-      borderColor: tokens.colorBlueMid,
-      boxShadow: `0 0 0 1px ${tokens.colorElementMid}`,
+      borderColor: tokens.blue500,
+      boxShadow: `0 0 0 1px ${tokens.gray300}`,
     });
   }
 };

@@ -42,7 +42,6 @@ const generateCardStyles = ({
   if (isHovered) {
     styles.borderColor = tokens.colorPrimary;
     styles.cursor = 'pointer';
-    // outline: 'none',
   }
 
   if (isFocused) {
@@ -52,7 +51,7 @@ const generateCardStyles = ({
   }
 
   if (isSelected) {
-    styles.backgroundColor = tokens.colorBlueLightest;
+    styles.backgroundColor = tokens.blue100;
     styles.borderColor = tokens.colorPrimary;
     styles.boxShadow = tokens.glowPrimary;
   }
