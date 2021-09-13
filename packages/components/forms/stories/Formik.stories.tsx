@@ -39,6 +39,9 @@ export const Basic = () => {
       initialValues={{
         name: '',
         description: '',
+        cities: 'Mumbai',
+        favoritFruit: 'apples',
+        fruits: ['apples'],
         checkbox: false,
       }}
       onSubmit={onSubmit}
@@ -81,43 +84,6 @@ export const Basic = () => {
             )}
           </Field>
 
-          <Field name="checkbox" validate={validate.checkbox}>
-            {({ field, meta }) => (
-              <FormControl isInvalid={Boolean(meta.touched && meta.error)}>
-                <Checkbox {...field}>
-                  I confirm everything that said above is true
-                </Checkbox>
-
-                {meta.touched && meta.error && (
-                  <FormControl.ValidationMessage>
-                    You must confirm that everything is true
-                  </FormControl.ValidationMessage>
-                )}
-              </FormControl>
-            )}
-          </Field>
-
-          <Button variant="primary" type="submit">
-            Submit
-          </Button>
-        </Form>
-      )}
-    </Formik>
-  );
-};
-
-export const WithSelect = () => {
-  const onSubmit = (data) => action('submitted data')(data);
-
-  return (
-    <Formik
-      initialValues={{
-        cities: 'Mumbai',
-      }}
-      onSubmit={onSubmit}
-    >
-      {({ handleSubmit }) => (
-        <Form onSubmit={handleSubmit}>
           <Field name="cities">
             {({ field }) => (
               <FormControl>
@@ -134,31 +100,10 @@ export const WithSelect = () => {
             )}
           </Field>
 
-          <Button variant="primary" type="submit">
-            Submit
-          </Button>
-        </Form>
-      )}
-    </Formik>
-  );
-};
-
-export const WithRadioGroup = () => {
-  const onSubmit = (data) => action('submitted data')(data);
-
-  return (
-    <Formik
-      initialValues={{
-        fruit: 'apples',
-      }}
-      onSubmit={onSubmit}
-    >
-      {({ handleSubmit }) => (
-        <Form onSubmit={handleSubmit}>
-          <Field name="fruit">
+          <Field name="favoritFruit">
             {({ field }) => (
               <FormControl>
-                <FormControl.Label>Fruits</FormControl.Label>
+                <FormControl.Label>Favorite fruit</FormControl.Label>
 
                 <RadioGroup {...field}>
                   <Radio id="apples" value="apples">
@@ -175,27 +120,6 @@ export const WithRadioGroup = () => {
             )}
           </Field>
 
-          <Button variant="primary" type="submit">
-            Submit
-          </Button>
-        </Form>
-      )}
-    </Formik>
-  );
-};
-
-export const WithCheckboxGroup = () => {
-  const onSubmit = (data) => action('submitted data')(data);
-
-  return (
-    <Formik
-      initialValues={{
-        fruits: ['apples'],
-      }}
-      onSubmit={onSubmit}
-    >
-      {({ handleSubmit }) => (
-        <Form onSubmit={handleSubmit}>
           <Field name="fruits">
             {({ field }) => (
               <FormControl>
@@ -212,6 +136,22 @@ export const WithCheckboxGroup = () => {
                     Peaches
                   </Checkbox>
                 </CheckboxGroup>
+              </FormControl>
+            )}
+          </Field>
+
+          <Field name="checkbox" validate={validate.checkbox}>
+            {({ field, meta }) => (
+              <FormControl isInvalid={Boolean(meta.touched && meta.error)}>
+                <Checkbox {...field}>
+                  I confirm everything that said above is true
+                </Checkbox>
+
+                {meta.touched && meta.error && (
+                  <FormControl.ValidationMessage>
+                    You must confirm that everything is true
+                  </FormControl.ValidationMessage>
+                )}
               </FormControl>
             )}
           </Field>
