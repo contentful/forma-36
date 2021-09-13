@@ -7,7 +7,7 @@ import { getTabStyles } from './Tabs.styles';
 import { useTabsContext } from './tabsContext';
 export interface TabProps extends CommonProps {
   /**
-   * Takes id of the TabPanel it panelId
+   * Takes id of the TabPanel it controls
    */
   panelId: string;
   /**
