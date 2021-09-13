@@ -73,6 +73,8 @@ You can use the Checkbox as an uncontrolled input, for that you can:
 
 ### Using with CheckboxGroup
 
+import { FormControl } from '@contentful/f36-forms';
+
 We also provide the `CheckboxGroup` component that helps when using multiple checkboxes, you can pass the spacing value and some common properties to be replicated to the checkboxes.
 
 - `spacing`: This will set how much space should be between the inputs;
@@ -83,7 +85,9 @@ We also provide the `CheckboxGroup` component that helps when using multiple che
 
 ```jsx
 <React.Fragment>
-  <Form.Label marginBottom="none">Checkbox group options</Form.Label>
+  <FormControl.Label marginBottom="none">
+    Checkbox group options
+  </FormControl.Label>
   <Paragraph>Subtitle with more information if needed</Paragraph>
   <CheckboxGroup name="checkbox-options" defaultValue={['option 1']}>
     <Checkbox value="option 1" id="option-1" helpText="Some help text">

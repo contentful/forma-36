@@ -36,6 +36,7 @@
     "access": "public"
   },
   "devDependencies": {
-    "react-hook-form": "^7.15.0"
+    "react-hook-form": "^7.15.0",
+    "formik": "^2.2.9"
   }
 }
