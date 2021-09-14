@@ -76,3 +76,7 @@ Migrates `List` component from Forma@v3 to Forma@v4
 #### `v4-pill`
 
 Migrates `Pill` component from Forma@v3 to Forma@v4
+
+#### `v4-button`
+
+Migrates `Button` component from Forma@v3 to Forma@v4

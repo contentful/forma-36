@@ -15,6 +15,12 @@ describe('v4 codemods', () => {
     'v4-modal',
   ];
 
+  beforeEach(() => {
+    // Silence warnings we show on the transforms for cleaner tests
+    // Comment this out if you want to check the warning messages
+    console.warn = jest.fn();
+  });
+
   tests.forEach((test) => defineTest(__dirname, test, null, test));
 
   describe('TextLink', () => {
