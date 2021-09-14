@@ -34,7 +34,7 @@ exports[`calls an onClick function 1`] = `
   outline: 0;
 }
 
-<article
+<button
   aria-pressed="false"
   class="emotion-1"
   data-test-id="cf-ui-card"
@@ -46,7 +46,7 @@ exports[`calls an onClick function 1`] = `
   >
     Card
   </div>
-</article>
+</button>
 `;
 
 exports[`can be selected 1`] = `
@@ -194,50 +194,6 @@ Object {
   "rerender": [Function],
   "unmount": [Function],
 }
-`;
-
-exports[`renders as a link if passed a href prop 1`] = `
-.emotion-0 {
-  grid-column: content;
-  grid-row: content;
-  padding-bottom: 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-.emotion-1 {
-  background-color: #ffffff;
-  border-color: #CFD9E0;
-  border-radius: 6px;
-  border-style: solid;
-  border-width: 1px;
-  color: #111B2B;
-  display: grid;
-  grid-template-columns: [dragHandle] auto [content] 1fr;
-  grid-template-rows: [header] auto [content] 1fr;
-  font-size: 0.875rem;
-  font-weight: 400;
-  line-height: 1.25rem;
-  position: relative;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: border-color 0.2s ease-in-out, box-shadow 0.1s ease-in-out;
-  transition: border-color 0.2s ease-in-out, box-shadow 0.1s ease-in-out;
-  padding-top: 1rem;
-}
-
-<article
-  class="emotion-1"
-  data-test-id="cf-ui-card"
-  href="/"
-  rel="noreferrer"
->
-  <div
-    class="emotion-0"
-  >
-    Card
-  </div>
-</article>
 `;
 
 exports[`renders the component 1`] = `

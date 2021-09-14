@@ -35,7 +35,6 @@ export type CardInternalProps = Omit<
   BaseCardInternalProps,
   'header' | 'ref' | 'type'
 > & {
-  as?: CardElement;
   /**
    * Padding size to apply to the component
    */
