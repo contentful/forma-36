@@ -12,7 +12,6 @@ import type {
 import tokens from '@contentful/f36-tokens';
 import { Box, Flex } from '@contentful/f36-core';
 import type {
-  BoxProps,
   CommonProps,
   MarginProps,
   PolymorphicComponent,

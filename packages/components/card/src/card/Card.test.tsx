@@ -24,13 +24,13 @@ it('has no a11y issues', async () => {
   expect(results).toHaveNoViolations();
 });
 
-it.only('renders as an article by default', () => {
+it('renders as an article by default', () => {
   const { container } = render(<Card>Card</Card>);
 
   expect(container.firstChild.nodeName).toBe('ARTICLE');
 });
 
-it.only('can be rendered as a div', () => {
+it('can be rendered as a div', () => {
   const { container } = render(<Card as="div">Card</Card>);
 
   expect(container.firstChild.nodeName).toBe('DIV');
