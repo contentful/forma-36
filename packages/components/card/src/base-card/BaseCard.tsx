@@ -11,7 +11,13 @@ import type {
 } from 'react';
 import tokens from '@contentful/f36-tokens';
 import { Box, Flex } from '@contentful/f36-core';
-import type { BoxProps, PolymorphicComponent } from '@contentful/f36-core';
+import type {
+  BoxProps,
+  CommonProps,
+  MarginProps,
+  PolymorphicComponent,
+  PolymorphicProps,
+} from '@contentful/f36-core';
 import { Icon, IconComponent } from '@contentful/f36-icon';
 import type { ButtonProps } from '@contentful/f36-button';
 import { DragHandle } from '@contentful/f36-drag-handle';
@@ -20,7 +26,7 @@ import type { ObjectInterpolation } from '@emotion/serialize';
 import { getBaseCardStyles } from './BaseCard.styles';
 import { CardActions } from './CardActions';
 
-export const DEFAULT_TAG = 'article';
+export const DEFAULT_TAG: React.ElementType = 'article';
 
 const generateCardStyles = ({
   hasHeader,
@@ -79,81 +85,84 @@ type AnchorProps =
       target?: AnchorHTMLAttributes<HTMLAnchorElement>['target'];
     };
 
-export type BaseCardInternalProps = Omit<
-  BoxProps<typeof DEFAULT_TAG>,
-  'ref' | 'padding'
-> &
-  AnchorProps & {
-    /**
-     * An array of Menu elements used to render an actions menu
-     */
-    actions?: React.ReactNodeArray;
-    as?: CardElement;
-    /**
-     * If the card is selectable and has no title, it will need a aria-label to help screen readers identify it
-     */
-    ariaLabel?: string;
-    /**
-     * Badge component to show in Card header
-     */
-    badge?: ReactElement;
-    /**
-     * Child nodes to be rendered in the component
-     */
-    children?: ReactNode;
-    /**
-     * Props to pass to the content body div
-     */
-    contentBodyProps?: { className?: string };
-    /**
-     * Props to pass to the drag handle component
-     */
-    dragHandleProps?: { className?: string };
-    /**
-     * Custom header element to render
-     */
-    header?: ReactElement;
-    /**
-     * Icon to show in the Card header
-     */
-    icon?: IconComponent;
-    /**
-     * Props to pass to the action menu button
-     */
-    actionsButtonProps?: Partial<ButtonProps<'button'>>;
-    /**
-     * Applies dragging styles to the card and drag handle
-     */
-    isDragging?: boolean;
-    /**
-     * Applies focus styles to the card
-     */
-    isFocused?: boolean;
-    /**
-     * Applies hover styles to the card
-     */
-    isHovered?: boolean;
-    /**
-     * Applies selected styles to the element
-     */
-    isSelected?: boolean;
-    /**
-     * The title of the entry. It will also be used as aria-label
-     */
-    title?: string;
-    /**
-     * Type of the entity represented by the card. Shown in the header of the card
-     */
-    type?: string;
-    /**
-     * Render the component with a drag handle
-     */
-    withDragHandle?: boolean;
-  };
+export type BaseCardInternalProps =
+  // Omit<
+  //   BoxProps<typeof DEFAULT_TAG>,
+  //   'ref' | 'padding'
+  // > &
+  CommonProps &
+    MarginProps &
+    AnchorProps & {
+      /**
+       * An array of Menu elements used to render an actions menu
+       */
+      actions?: React.ReactNodeArray;
+      as?: CardElement;
+      /**
+       * If the card is selectable and has no title, it will need a aria-label to help screen readers identify it
+       */
+      ariaLabel?: string;
+      /**
+       * Badge component to show in Card header
+       */
+      badge?: ReactElement;
+      /**
+       * Child nodes to be rendered in the component
+       */
+      children?: ReactNode;
+      /**
+       * Props to pass to the content body div
+       */
+      contentBodyProps?: { className?: string };
+      /**
+       * Props to pass to the drag handle component
+       */
+      dragHandleProps?: { className?: string };
+      /**
+       * Custom header element to render
+       */
+      header?: ReactElement;
+      /**
+       * Icon to show in the Card header
+       */
+      icon?: IconComponent;
+      /**
+       * Props to pass to the action menu button
+       */
+      actionsButtonProps?: Partial<ButtonProps<'button'>>;
+      /**
+       * Applies dragging styles to the card and drag handle
+       */
+      isDragging?: boolean;
+      /**
+       * Applies focus styles to the card
+       */
+      isFocused?: boolean;
+      /**
+       * Applies hover styles to the card
+       */
+      isHovered?: boolean;
+      /**
+       * Applies selected styles to the element
+       */
+      isSelected?: boolean;
+      /**
+       * The title of the entry. It will also be used as aria-label
+       */
+      title?: string;
+      /**
+       * Type of the entity represented by the card. Shown in the header of the card
+       */
+      type?: string;
+      /**
+       * Render the component with a drag handle
+       */
+      withDragHandle?: boolean;
+    };
 
 export type BaseCardProps<
   E extends React.ElementType = typeof DEFAULT_TAG
-> = BaseCardInternalProps & Omit<BoxProps<E>, 'as' | 'ref'>;
+> = PolymorphicProps<BaseCardInternalProps, E>;
 
 function _BaseCard<E extends React.ElementType = typeof DEFAULT_TAG>(
   {
@@ -284,7 +293,7 @@ function _BaseCard<E extends React.ElementType = typeof DEFAULT_TAG>(
     <Box
       aria-label={title || ariaLabel}
       aria-pressed={onClick ? (isSelected ? 'true' : 'false') : undefined}
-      as={href ? 'a' : DEFAULT_TAG}
+      as={DEFAULT_TAG}
       className={cx(
         styles.root,
         generateCardStyles({

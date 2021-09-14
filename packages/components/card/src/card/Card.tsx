@@ -1,14 +1,17 @@
 import React, { forwardRef } from 'react';
 import { css, cx } from 'emotion';
 import type { ObjectInterpolation } from 'emotion';
-import { PolymorphicComponent, PolymorphicProps } from '@contentful/f36-core';
+import type {
+  PolymorphicComponent,
+  PolymorphicProps,
+} from '@contentful/f36-core';
 import { Heading } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
 import { Icon } from '@contentful/f36-icon';
 import tokens from '@contentful/f36-tokens';
 
 import { BaseCard } from '../base-card/BaseCard';
-import type { BaseCardInternalProps } from '../base-card/BaseCard';
+import type { BaseCardInternalProps, CardElement } from '../base-card/BaseCard';
 import { CardActions } from '../base-card/CardActions';
 import { getCardStyles } from './Card.styles';
 import { getBaseCardStyles } from '../base-card/BaseCard.styles';
@@ -32,6 +35,7 @@ export type CardInternalProps = Omit<
   BaseCardInternalProps,
   'header' | 'ref' | 'type'
 > & {
+  as?: CardElement;
   /**
    * Padding size to apply to the component
    */
@@ -45,6 +49,7 @@ export type CardProps<
 function _Card<E extends React.ElementType = typeof DEFAULT_TAG>(
   {
     actions,
+    as,
     badge,
     className,
     icon,
@@ -81,9 +86,18 @@ function _Card<E extends React.ElementType = typeof DEFAULT_TAG>(
     </Flex>
   );
 
+  let element: React.ElementType = DEFAULT_TAG;
+
+  if (otherProps.onClick) {
+    element = 'button';
+  }
+  if (otherProps.href) {
+    element = 'a';
+  }
+
   return (
     <BaseCard
-      as={DEFAULT_TAG}
+      as={as ?? element}
       contentBodyProps={
         padding === 'large' && {
           className: styles.contentWithLargePadding,
