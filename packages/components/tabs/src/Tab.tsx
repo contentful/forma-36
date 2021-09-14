@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import type { KeyboardEvent, MouseEvent } from 'react';
+import type { MouseEvent } from 'react';
 import type { CommonProps } from '@contentful/f36-core';
 import { Button } from '@contentful/f36-button';
 
@@ -45,21 +45,9 @@ function _Tab(
     [isDisabled, panelId, onSelect, setSelectedTab],
   );
 
-  const handleKeyPress = useCallback(
-    (e: KeyboardEvent<HTMLElement>) => {
-      if (onSelect && e.key === 'Enter') {
-        setSelectedTab(panelId);
-        onSelect(panelId, e);
-        e.preventDefault();
-      }
-    },
-    [panelId, onSelect, setSelectedTab],
-  );
-
   const elementProps = {
     className: styles.tab,
     onClick: handleClick,
-    onKeyPress: handleKeyPress,
     style,
     testId,
     tabIndex: isSelected ? 0 : -1,
@@ -70,7 +58,6 @@ function _Tab(
   elementProps['aria-controls'] = panelId;
   return (
     <Button
-      variant="primary"
       isDisabled={isDisabled}
       {...elementProps}
       {...otherProps}
