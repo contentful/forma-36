@@ -5,7 +5,7 @@ import { axe } from '@/scripts/test/axeHelper';
 import { Tabs } from '../src';
 
 describe('Tabs', () => {
-  it('should trigger the onSelect when clicked or "enter" is pressed', () => {
+  it('should trigger the onSelect when clicked', () => {
     const mockOnSelect = jest.fn();
     const { getByText } = render(
       <div>
@@ -28,8 +28,6 @@ describe('Tabs', () => {
     fireEvent.click(secondTab);
 
     expect(mockOnSelect).toHaveBeenCalledTimes(1);
-    fireEvent.keyPress(secondTab, { key: 'Enter', keyCode: 13, code: 'Enter' });
-    expect(mockOnSelect).toHaveBeenCalledTimes(2);
   });
 
   it('has no a11y issues', async () => {
