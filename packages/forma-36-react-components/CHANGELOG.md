@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.98.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.98.2...@contentful/forma-36-react-components@3.98.3) (2021-09-14)
+
+
+### Bug Fixes
+
+* **radiobutton:** wrong style on disabled radiobutton ([#1312](https://github.com/contentful/forma-36/issues/1312)) ([c0fd1c8](https://github.com/contentful/forma-36/commit/c0fd1c83369c8e68c6f86c53e963ed6b12de3d72))
+
+
+
+
+
 ## [3.98.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.98.1...@contentful/forma-36-react-components@3.98.2) (2021-09-09)
 
 
