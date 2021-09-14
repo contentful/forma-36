@@ -4,13 +4,16 @@ import type { CommonProps } from '@contentful/f36-core';
 import { Box } from '@contentful/f36-core';
 
 import { getTabStyles } from './Tabs.styles';
-
+import { useTabsContext } from './tabsContext';
 export interface TabProps extends CommonProps {
-  id: string;
+  /**
+   * Takes id of the TabPanel it controls
+   */
+  panelId: string;
+  /**
+   * onSelect is run when the Tab is selected
+   */
   onSelect?: (id: string, e: React.SyntheticEvent) => void;
-  isSelected?: boolean;
-  href?: string;
-  target?: string;
   isDisabled?: boolean;
   tabIndex?: number;
   children: React.ReactNode;
@@ -21,35 +24,38 @@ function _Tab(
     children,
     className,
     isDisabled = false,
-    href,
-    id,
+    panelId,
     onSelect,
-    isSelected = false,
     style,
     tabIndex = 0,
     testId = 'cf-ui-tab',
     ...otherProps
   }: TabProps,
-  ref: React.Ref<HTMLAnchorElement> | React.Ref<HTMLDivElement>,
+  ref: React.Ref<HTMLButtonElement>,
 ): React.ReactElement {
+  const { selectedTab, setSelectedTab } = useTabsContext();
+  const isSelected = panelId === selectedTab;
   const styles = getTabStyles({ className, isSelected, isDisabled });
+
   const handleClick = useCallback(
     (e: MouseEvent<HTMLElement>) => {
       if (onSelect && !isDisabled) {
-        onSelect(id, e);
+        setSelectedTab(panelId);
+        onSelect(panelId, e);
       }
     },
-    [isDisabled, id, onSelect],
+    [isDisabled, panelId, onSelect],
   );
 
   const handleKeyPress = useCallback(
     (e: KeyboardEvent<HTMLElement>) => {
       if (onSelect && e.key === 'Enter') {
-        onSelect(id, e);
+        setSelectedTab(panelId);
+        onSelect(panelId, e);
         e.preventDefault();
       }
     },
-    [id, onSelect],
+    [panelId, onSelect],
   );
 
   const elementProps = {
@@ -64,36 +70,21 @@ function _Tab(
   if (isDisabled) {
     elementProps['aria-disabled'] = true;
   }
-  if (href) {
-    elementProps['href'] = href;
-    if (isSelected) {
-      elementProps['aria-current'] = 'page';
-    }
-    return (
-      <Box
-        as="a"
-        {...elementProps}
-        {...otherProps}
-        ref={ref as React.Ref<HTMLAnchorElement>}
-      >
-        {children}
-      </Box>
-    );
-  } else {
-    elementProps['aria-selected'] = isSelected;
-    elementProps['role'] = 'tab';
-    elementProps['aria-controls'] = id;
-    return (
-      <Box
-        as="div"
-        {...elementProps}
-        {...otherProps}
-        ref={ref as React.Ref<HTMLDivElement>}
-      >
-        {children}
-      </Box>
-    );
-  }
+
+  elementProps['aria-selected'] = isSelected;
+  elementProps['role'] = 'tab';
+  elementProps['aria-controls'] = panelId;
+  return (
+    <Box
+      as="button"
+      {...elementProps}
+      {...otherProps}
+      id={`${panelId}-control-tab`}
+      ref={ref}
+    >
+      {children}
+    </Box>
+  );
 }
 
 export const Tab = React.forwardRef(_Tab);

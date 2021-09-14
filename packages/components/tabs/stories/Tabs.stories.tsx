@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 import { action } from '@storybook/addon-actions';
 import { SectionHeading } from '@contentful/f36-typography';
@@ -22,110 +22,119 @@ export default {
 } as Meta;
 
 export const Basic: Story = (args) => {
-  const [selected, setSelected] = useState('first');
-
   return (
     <div>
-      <Tabs {...args}>
-        <Tabs.Tab
-          id="first"
-          isSelected={selected === 'first'}
-          onSelect={(id: string) => {
-            action('onSelect')(id);
-            setSelected(id);
-          }}
-        >
-          First
-        </Tabs.Tab>
-        <Tabs.Tab
-          id="second"
-          isSelected={selected === 'second'}
-          onSelect={(id: string) => {
-            action('onSelect')(id);
-            setSelected(id);
-          }}
-        >
-          Second
-        </Tabs.Tab>
-        <Tabs.Tab
-          id="third"
-          isDisabled
-          isSelected={selected === 'third'}
-          onSelect={(id: string) => {
-            action('onSelect')(id);
-            setSelected(id);
-          }}
-        >
-          Third (disabled)
-        </Tabs.Tab>
-      </Tabs>
-      {selected === 'first' && (
+      <Tabs defaultTab="first" {...args}>
+        <Tabs.List>
+          <Tabs.Tab
+            panelId="first"
+            onSelect={(id: string) => {
+              action('onSelect')(id);
+            }}
+          >
+            First
+          </Tabs.Tab>
+          <Tabs.Tab
+            panelId="second"
+            onSelect={(id: string) => {
+              action('onSelect')(id);
+            }}
+          >
+            Second
+          </Tabs.Tab>
+          <Tabs.Tab
+            panelId="third"
+            isDisabled
+            onSelect={(id: string) => {
+              action('onSelect')(id);
+            }}
+          >
+            Third (disabled)
+          </Tabs.Tab>
+        </Tabs.List>
         <Tabs.Panel id="first">content first tab</Tabs.Panel>
-      )}
-      {selected === 'second' && (
         <Tabs.Panel id="second">content second tab</Tabs.Panel>
-      )}
-      {selected === 'third' && (
         <Tabs.Panel id="third">content third tab</Tabs.Panel>
-      )}
+      </Tabs>
     </div>
   );
 };
 
-export const Overview: Story = () => (
-  <>
-    <SectionHeading as="h3" marginBottom="spacingS">
-      Tabs default
-    </SectionHeading>
+export const Overview: Story = () => {
+  const onSelect = (id: string) => {
+    action('onSelect')(id);
+  };
 
-    <Flex marginBottom="spacingS">
-      <Tabs role="navigation">
-        <Tabs.Tab id="first" href="https://contentful.com" isSelected>
-          First
-        </Tabs.Tab>
-        <Tabs.Tab id="second" href="https://contentful.com">
-          Second
-        </Tabs.Tab>
-        <Tabs.Tab id="third" href="https://contentful.com">
-          Third
-        </Tabs.Tab>
-      </Tabs>
-    </Flex>
+  return (
+    <>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Tabs default
+      </SectionHeading>
 
-    <SectionHeading as="h3" marginBottom="spacingS">
-      Tabs with horizontal divider
-    </SectionHeading>
+      <Flex marginBottom="spacingS" flexDirection="column">
+        <Tabs defaultTab="first">
+          <Tabs.List>
+            <Tabs.Tab panelId="first" onSelect={onSelect}>
+              First
+            </Tabs.Tab>
+            <Tabs.Tab panelId="second" onSelect={onSelect}>
+              Second
+            </Tabs.Tab>
+            <Tabs.Tab panelId="third" onSelect={onSelect}>
+              Third
+            </Tabs.Tab>
+          </Tabs.List>
+          <Tabs.Panel id="first">content first tab</Tabs.Panel>
+          <Tabs.Panel id="second">content second tab</Tabs.Panel>
+          <Tabs.Panel id="third">content third tab</Tabs.Panel>
+        </Tabs>
+      </Flex>
 
-    <Flex marginBottom="spacingS">
-      <Tabs role="navigation" variant="horizontal-divider">
-        <Tabs.Tab id="first" href="https://contentful.com" isSelected>
-          First
-        </Tabs.Tab>
-        <Tabs.Tab id="second" href="https://contentful.com">
-          Second
-        </Tabs.Tab>
-        <Tabs.Tab id="third" href="https://contentful.com">
-          Third
-        </Tabs.Tab>
-      </Tabs>
-    </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Tabs with horizontal divider
+      </SectionHeading>
 
-    <SectionHeading as="h3" marginBottom="spacingS">
-      Tabs with vertical divider
-    </SectionHeading>
+      <Flex marginBottom="spacingS" flexDirection="column">
+        <Tabs defaultTab="first">
+          <Tabs.List variant="horizontal-divider">
+            <Tabs.Tab panelId="first" onSelect={onSelect}>
+              First
+            </Tabs.Tab>
+            <Tabs.Tab panelId="second" onSelect={onSelect}>
+              Second
+            </Tabs.Tab>
+            <Tabs.Tab panelId="third" onSelect={onSelect}>
+              Third
+            </Tabs.Tab>
+          </Tabs.List>
+          <Tabs.Panel id="first">content first tab</Tabs.Panel>
+          <Tabs.Panel id="second">content second tab</Tabs.Panel>
+          <Tabs.Panel id="third">content third tab</Tabs.Panel>
+        </Tabs>
+      </Flex>
 
-    <Flex marginBottom="spacingS">
-      <Tabs role="navigation" variant="vertical-divider">
-        <Tabs.Tab id="first" href="https://contentful.com" isSelected>
-          First
-        </Tabs.Tab>
-        <Tabs.Tab id="second" href="https://contentful.com">
-          Second
-        </Tabs.Tab>
-        <Tabs.Tab id="third" href="https://contentful.com">
-          Third
-        </Tabs.Tab>
-      </Tabs>
-    </Flex>
-  </>
-);
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Tabs with vertical divider
+      </SectionHeading>
+
+      <Flex marginBottom="spacingS" flexDirection="column">
+        <Tabs defaultTab="first">
+          <Tabs.List variant="vertical-divider">
+            <Tabs.Tab panelId="first" onSelect={onSelect}>
+              First
+            </Tabs.Tab>
+            <Tabs.Tab panelId="second" onSelect={onSelect}>
+              Second
+            </Tabs.Tab>
+            <Tabs.Tab panelId="third" onSelect={onSelect}>
+              Third
+            </Tabs.Tab>
+          </Tabs.List>
+          <Tabs.Panel id="first">content first tab</Tabs.Panel>
+          <Tabs.Panel id="second">content second tab</Tabs.Panel>
+          <Tabs.Panel id="third">content third tab</Tabs.Panel>
+        </Tabs>
+      </Flex>
+    </>
+  );
+};

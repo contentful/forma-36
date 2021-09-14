@@ -1,47 +1,38 @@
 import React from 'react';
 import type { CommonProps } from '@contentful/f36-core';
 import { Box } from '@contentful/f36-core';
-
-import { getTabsStyles } from './Tabs.styles';
+import { TabsContextProvider } from './tabsContext';
 export interface TabsProps extends CommonProps {
-  variant?: 'default' | 'horizontal-divider' | 'vertical-divider';
-  role?: 'navigation' | 'tablist';
   children?: React.ReactNode;
+  /**
+   * default active Tab
+   */
+  defaultTab: string;
 }
 
 function _Tabs(
   {
     className,
     children,
-    variant = 'default',
     testId = 'cf-ui-tabs',
-    role = 'tablist',
     style,
+    defaultTab,
     ...otherProps
   }: TabsProps,
   ref: React.Ref<HTMLDivElement>,
 ): React.ReactElement {
-  const styles = getTabsStyles({ className, variant });
-
   const elementProps = {
     testId,
-    className: styles.tabs,
     style,
     ...otherProps,
   };
 
-  if (role === 'navigation') {
-    return (
-      <Box as="nav" {...elementProps} role="navigation" ref={ref}>
+  return (
+    <TabsContextProvider defaultTab={defaultTab}>
+      <Box as="div" {...elementProps} ref={ref}>
         {children}
       </Box>
-    );
-  }
-
-  return (
-    <Box as="div" {...elementProps} role="tablist" ref={ref}>
-      {children}
-    </Box>
+    </TabsContextProvider>
   );
 }
 
