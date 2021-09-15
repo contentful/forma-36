@@ -12,7 +12,7 @@ import { Button } from '@contentful/forma-36-react-components';
 <Button buttonType="naked">Embed entry</Button>;
 
 const isLocked = false;
-<Button buttonType={isLocked ? undefined : 'muted'}>Conditional</Button>;
+<Button buttonType={isLocked ? undefined : 'muted'} icon={isLocked ? 'Lock' : undefined}>Conditional</Button>;
 <Button buttonType={isLocked ? !isLocked ? 'naked' : undefined : 'muted'}>Conditional</Button>;
 
 <Button indicateDropdown>Embed Entry</Button>;

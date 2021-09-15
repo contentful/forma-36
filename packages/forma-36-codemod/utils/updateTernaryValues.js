@@ -29,3 +29,4 @@ function updateTernaryValues(value, { j, valueMap }) {
 }
 
 module.exports.updateTernaryValues = updateTernaryValues;
+module.exports.isConditionalExpression = isConditionalExpression;
