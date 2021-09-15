@@ -56,7 +56,7 @@ module.exports = function (file, api) {
           if (value.value !== undefined && valueMap[value.value]) {
             if (value.value === 'warning') {
               warningMessage(
-                'warning variant was deprecated, we updated the value to primary please manualy change this value if needed',
+                'warning variant was deprecated, we updated the value to secondary please change this value if needed',
                 { file, value },
               );
             }
