@@ -87,7 +87,7 @@ module.exports = function (file, api) {
         modifiedAttributes = addProperty(modifiedAttributes, {
           j,
           propertyName: 'icon',
-          propertyValue: j.literal('ChevronDownIcon'),
+          propertyValue: j.literal('ChevronDown'),
         });
 
         modifiedAttributes = deleteProperty(modifiedAttributes, {
