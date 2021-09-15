@@ -3,32 +3,43 @@ import { Typography } from "@contentful/forma-36-react-components";
 
 import { Heading, DisplayText, Paragraph, Subheading, SectionHeading } from "@contentful/f36-components";
 
-<Heading as="h4" className="className" testId='testId'></Heading>;
+<Heading marginBottom="none" as="h4" className="className"></Heading>;
 
-<Subheading as="h2" className="className" testId='testId'></Subheading>;
+<Subheading marginBottom="none" as="h2" className="className"></Subheading>;
 
-<SectionHeading as="h4" className="className" testId='testId'></SectionHeading>;
+<SectionHeading marginBottom="none" as="h4" className="className"></SectionHeading>;
 
-<Paragraph as="p" className="className" testId='testId'></Paragraph>;
+<Paragraph marginBottom="none" as="p" className="className"></Paragraph>;
 
-<DisplayText size="huge" as="h4" className="className" testId='testId'></DisplayText>;
+<DisplayText marginBottom="none" size="huge" as="h4" className="className"></DisplayText>;
 
 <Typography>
-  <Heading as="h4" className="className" testId='testId'></Heading>
+  <Heading as="h4" className="className"></Heading>
 </Typography>;
 
 <Typography>
-  <Subheading as="h2" className="className" testId='testId'></Subheading>
+  <Subheading as="h2" className="className"></Subheading>
 </Typography>;
 
 <Typography>
-  <SectionHeading as="h4" className="className" testId='testId'></SectionHeading>
+  <SectionHeading as="h4" className="className"></SectionHeading>
 </Typography>;
 
 <Typography>
-  <Paragraph as="p" className="className" testId='testId'></Paragraph>
+  <Paragraph as="p" className="className"></Paragraph>
 </Typography>;
 
 <Typography>
-  <DisplayText size="huge" as="h4" className="className" testId='testId'></DisplayText>
+  <DisplayText size="huge" as="h4" className="className"></DisplayText>
+</Typography>;
+
+<Typography>
+  <div>
+    <div>
+      <div>
+        <Paragraph as="p" className="className"></Paragraph>
+      </div>
+      <Subheading as="h2" className="className"></Subheading>
+    </div>
+  </div>
 </Typography>;

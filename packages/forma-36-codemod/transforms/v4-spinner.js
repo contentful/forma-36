@@ -3,7 +3,7 @@ const { updatePropertyValue } = require('../utils');
 
 module.exports = modifyPropsCodemod({
   componentName: 'Spinner',
-  beforeRename: (attributes, j) => {
+  beforeRename: (attributes, { j }) => {
     return updatePropertyValue(attributes, {
       j,
       propertyName: 'size',

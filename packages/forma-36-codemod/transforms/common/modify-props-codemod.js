@@ -34,11 +34,14 @@ module.exports.modifyPropsCodemod = function (props) {
 
     source = changeProperties(j, source, {
       componentName,
-      fn(attributes) {
+      fn(attributes, element) {
         let modifiedAttributes = attributes;
 
         if (props.beforeRename) {
-          modifiedAttributes = props.beforeRename(modifiedAttributes, j);
+          modifiedAttributes = props.beforeRename(modifiedAttributes, {
+            j,
+            element,
+          });
         }
 
         modifiedAttributes = renameProperties(modifiedAttributes, {
@@ -46,7 +49,10 @@ module.exports.modifyPropsCodemod = function (props) {
         });
 
         if (props.afterRename) {
-          modifiedAttributes = props.afterRename(modifiedAttributes, j);
+          modifiedAttributes = props.afterRename(modifiedAttributes, {
+            j,
+            element,
+          });
         }
 
         return modifiedAttributes;
