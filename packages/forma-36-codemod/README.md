@@ -80,3 +80,6 @@ Migrates `Pill` component from Forma@v3 to Forma@v4
 #### `v4-button`
 
 Migrates `Button` component from Forma@v3 to Forma@v4
+#### `v4-tooltip`
+
+Migrates `Tooltip` component from Forma@v3 to Forma@v4

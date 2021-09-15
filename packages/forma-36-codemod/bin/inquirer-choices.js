@@ -70,6 +70,10 @@ const TRANSFORMS_CHOICES = [
     name: 'v4-skeleton: Converts Skeleton components from Forma v3 to v4',
     value: 'v4-skeleton',
   },
+  {
+    name: 'v4-tooltip: Converts Tooltip component from Forma v3 to v4',
+    value: 'v4-tooltip',
+  },
 ];
 
 module.exports = {
