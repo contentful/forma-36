@@ -1,5 +1,10 @@
 const { modifyPropsCodemod } = require('./common/modify-props-codemod');
-const { addProperty } = require('../utils/addProperty');
+const {
+  addProperty,
+  removeComponentImport,
+  getComponentLocalName,
+} = require('../utils');
+const { getFormaImport } = require('../utils/config');
 const { pipe } = require('./common/pipe');
 const _ = require('lodash');
 
@@ -64,11 +69,30 @@ module.exports = pipe([
   (file, api) => {
     const j = api.jscodeshift;
 
-    // replace Typography with React.Fragment
-
-    // remove Typography import
-
     let source = file.source;
+
+    const from = getFormaImport();
+
+    const componentName = getComponentLocalName(j, source, {
+      componentName: 'Typography',
+      importName: from,
+    });
+
+    if (!componentName) {
+      return source;
+    }
+
+    source = removeComponentImport(j, source, {
+      componentName,
+      importName: from,
+    });
+
+    source = j(source)
+      .find(j.JSXIdentifier, { name: componentName })
+      .forEach((element) => {
+        j(element).replaceWith(j.jsxIdentifier('React.Fragment'));
+      })
+      .toSource();
 
     return source;
   },

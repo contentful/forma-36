@@ -1,5 +1,4 @@
 import React from "react";
-import { Typography } from "@contentful/forma-36-react-components";
 
 import { Heading, DisplayText, Paragraph, Subheading, SectionHeading } from "@contentful/f36-components";
 
@@ -13,27 +12,27 @@ import { Heading, DisplayText, Paragraph, Subheading, SectionHeading } from "@co
 
 <DisplayText marginBottom="none" size="huge" as="h4" className="className"></DisplayText>;
 
-<Typography>
+<React.Fragment>
   <Heading as="h4" className="className"></Heading>
-</Typography>;
+</React.Fragment>;
 
-<Typography>
+<React.Fragment>
   <Subheading as="h2" className="className"></Subheading>
-</Typography>;
+</React.Fragment>;
 
-<Typography>
+<React.Fragment>
   <SectionHeading as="h4" className="className"></SectionHeading>
-</Typography>;
+</React.Fragment>;
 
-<Typography>
+<React.Fragment>
   <Paragraph as="p" className="className"></Paragraph>
-</Typography>;
+</React.Fragment>;
 
-<Typography>
+<React.Fragment>
   <DisplayText size="huge" as="h4" className="className"></DisplayText>
-</Typography>;
+</React.Fragment>;
 
-<Typography>
+<React.Fragment>
   <div>
     <div>
       <div>
@@ -42,4 +41,4 @@ import { Heading, DisplayText, Paragraph, Subheading, SectionHeading } from "@co
       <Subheading as="h2" className="className"></Subheading>
     </div>
   </div>
-</Typography>;
+</React.Fragment>;
