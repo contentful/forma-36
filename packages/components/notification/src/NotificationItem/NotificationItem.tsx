@@ -112,7 +112,7 @@ const _NotificationItem = (props: NotificationItemProps, ref) => {
           <Button
             className={cx(styles.closeButton)}
             variant="transparent"
-            icon={<CloseIcon />}
+            startIcon={<CloseIcon />}
             onClick={() => {
               onClose && onClose();
             }}

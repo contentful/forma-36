@@ -79,7 +79,7 @@ export class CardActions extends Component<CardActionsProps, CardActionsState> {
             variant="transparent"
             size="small"
             isDisabled={isDisabled}
-            icon={<MoreHorizontalIcon aria-label="Actions" />}
+            startIcon={<MoreHorizontalIcon aria-label="Actions" />}
             {...iconButtonProps}
             className={cx(
               css({

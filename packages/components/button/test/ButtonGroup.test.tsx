@@ -8,7 +8,7 @@ describe('ButtonGroup', function () {
     const { container } = render(
       <ButtonGroup>
         <Button>Button</Button>
-        <Button icon={<ChevronDownIcon />} />
+        <Button startIcon={<ChevronDownIcon />} />
       </ButtonGroup>,
     );
 
@@ -21,7 +21,7 @@ describe('ButtonGroup', function () {
     const { container } = render(
       <ButtonGroup className={additionalClassName}>
         <Button>Button</Button>
-        <Button icon={<ChevronDownIcon />} />
+        <Button startIcon={<ChevronDownIcon />} />
       </ButtonGroup>,
     );
 
