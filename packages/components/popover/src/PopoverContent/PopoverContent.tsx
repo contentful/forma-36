@@ -19,6 +19,7 @@ const _PopoverContent = (props: PopoverContentProps, ref) => {
     children,
     className,
     testId = 'cf-ui-popover-content',
+    role = 'dialog',
     ...otherProps
   } = props;
 
@@ -32,7 +33,7 @@ const _PopoverContent = (props: PopoverContentProps, ref) => {
       className={cx(styles.container, className)}
       data-test-id={testId}
       tabIndex={-1}
-      role="dialog"
+      role={role}
       // specific attribute to mark that this element is absolute positioned
       // for internal contentful apps usage
       data-position-absolute

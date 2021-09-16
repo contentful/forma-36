@@ -5,7 +5,7 @@ import { CommonProps } from '@contentful/f36-core';
 import { getEntityListStyles } from './EntityList.styles';
 
 export interface EntityListProps extends CommonProps {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 function _EntityList(props: EntityListProps, ref: React.Ref<HTMLUListElement>) {
@@ -13,7 +13,7 @@ function _EntityList(props: EntityListProps, ref: React.Ref<HTMLUListElement>) {
 
   return (
     <ul
-      data-test-id={props.testId}
+      data-test-id={props.testId || 'cf-ui-entity-list'}
       ref={ref}
       className={cx(styles.root, props.className)}
     >

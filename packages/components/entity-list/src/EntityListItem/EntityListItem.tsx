@@ -153,7 +153,10 @@ export function EntityListItem({
     }
   };
 
-  const Element = onClick ? 'a' : 'article';
+  let Element: React.ElementType = 'article';
+  if (href || onClick) {
+    Element = href ? 'a' : 'button';
+  }
 
   // archived assets will not be available on the CDN, resulting in a broken image src
   const isArchived = status === 'archived';
@@ -182,8 +185,8 @@ export function EntityListItem({
           className={styles.card}
           onClick={onClick}
           href={href}
-          tabIndex={onClick && 0}
-          target={onClick && href ? '_blank' : undefined}
+          type={Element === 'button' ? 'button' : undefined}
+          target={href ? '_blank' : undefined}
         >
           {withThumbnail && (
             <figure className={styles.media}>
