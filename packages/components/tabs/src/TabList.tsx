@@ -1,6 +1,7 @@
 import React from 'react';
 import type { CommonProps } from '@contentful/f36-core';
-import { useArrowKeyNavigation, mergeRefs } from '@contentful/f36-core';
+import { mergeRefs } from '@contentful/f36-core';
+import { useArrowKeyNavigation } from '@contentful/f36-utils';
 import { getTabsStyles } from './Tabs.styles';
 import { useTabsContext } from './tabsContext';
 

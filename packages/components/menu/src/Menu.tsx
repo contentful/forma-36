@@ -5,11 +5,8 @@ import React, {
   useRef,
   useEffect,
 } from 'react';
-import {
-  CommonProps,
-  mergeRefs,
-  useArrowKeyNavigation,
-} from '@contentful/f36-core';
+import { CommonProps, mergeRefs } from '@contentful/f36-core';
+import { useArrowKeyNavigation } from '@contentful/f36-utils';
 import { Popover, PopoverProps } from '@contentful/f36-popover';
 import { MenuContextProvider, MenuContextType } from './MenuContext';
 
