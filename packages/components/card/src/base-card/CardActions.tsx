@@ -40,7 +40,7 @@ export const CardActions = ({
       <Menu.Trigger>
         <Button
           aria-label="Actions"
-          icon={<MoreHorizontalIcon />}
+          startIcon={<MoreHorizontalIcon />}
           {...buttonProps}
           onClick={handleActionClick}
           variant="transparent"
