@@ -15,7 +15,13 @@ export default {
   argTypes: {
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
-    icon: {
+    startIcon: {
+      control: {
+        options: ['', ...Object.keys(icons)],
+        type: 'select',
+      },
+    },
+    endIcon: {
       control: {
         options: ['', ...Object.keys(icons)],
         type: 'select',
@@ -24,8 +30,12 @@ export default {
   },
 };
 
-export const basic = ({ icon, children, ...args }) => (
-  <Button icon={icon && <Icon as={icons[icon]} />} {...args}>
+export const basic = ({ startIcon, endIcon, children, ...args }) => (
+  <Button
+    {...args}
+    startIcon={startIcon && <Icon as={icons[startIcon]} />}
+    endIcon={endIcon && <Icon as={icons[endIcon]} />}
+  >
     {children}
   </Button>
 );
@@ -34,10 +44,9 @@ basic.args = {
   size: 'medium',
   variant: 'primary',
   children: 'Button CTA',
-  icon: '',
 };
 
-export const Overview = ({ icon }) => {
+export const Overview = ({ startIcon, endIcon }) => {
   return (
     <>
       <Flex flexDirection="column" marginBottom="spacingL">
@@ -46,25 +55,42 @@ export const Overview = ({ icon }) => {
         </SectionHeading>
 
         <Stack flexDirection="row" marginBottom="spacingM" spacing="spacingXs">
-          <Button variant="primary" icon={icon && <Icon as={icons[icon]} />}>
+          <Button
+            variant="primary"
+            startIcon={startIcon && <Icon as={icons[startIcon]} />}
+            endIcon={endIcon && <Icon as={icons[endIcon]} />}
+          >
             Primary
           </Button>
 
-          <Button variant="secondary" icon={icon && <Icon as={icons[icon]} />}>
+          <Button
+            variant="secondary"
+            startIcon={startIcon && <Icon as={icons[startIcon]} />}
+            endIcon={endIcon && <Icon as={icons[endIcon]} />}
+          >
             Secondary
           </Button>
 
-          <Button variant="positive" icon={icon && <Icon as={icons[icon]} />}>
+          <Button
+            variant="positive"
+            startIcon={startIcon && <Icon as={icons[startIcon]} />}
+            endIcon={endIcon && <Icon as={icons[endIcon]} />}
+          >
             Positive
           </Button>
 
-          <Button variant="negative" icon={icon && <Icon as={icons[icon]} />}>
+          <Button
+            variant="negative"
+            startIcon={startIcon && <Icon as={icons[startIcon]} />}
+            endIcon={endIcon && <Icon as={icons[endIcon]} />}
+          >
             Negative
           </Button>
 
           <Button
             variant="transparent"
-            icon={icon && <Icon as={icons[icon]} />}
+            startIcon={startIcon && <Icon as={icons[startIcon]} />}
+            endIcon={endIcon && <Icon as={icons[endIcon]} />}
           >
             Transparent
           </Button>
@@ -79,7 +105,7 @@ export const Overview = ({ icon }) => {
           <Button
             variant="primary"
             size="small"
-            icon={<Icon as={icons.PlusIcon} />}
+            startIcon={<Icon as={icons.PlusIcon} />}
           >
             Small
           </Button>
@@ -87,7 +113,7 @@ export const Overview = ({ icon }) => {
           <Button
             variant="primary"
             size="medium"
-            icon={<Icon as={icons.PlusIcon} />}
+            startIcon={<Icon as={icons.PlusIcon} />}
           >
             Medium (default)
           </Button>
@@ -95,7 +121,7 @@ export const Overview = ({ icon }) => {
           <Button
             variant="primary"
             size="large"
-            icon={<Icon as={icons.PlusIcon} />}
+            startIcon={<Icon as={icons.PlusIcon} />}
           >
             Large
           </Button>
@@ -166,40 +192,35 @@ export const Overview = ({ icon }) => {
         <Stack spacing="spacingXs" marginBottom="spacingM">
           <Button
             variant="primary"
-            icon={<Icon as={icons.ChevronDownIcon} />}
-            alignIcon="end"
+            endIcon={<Icon as={icons.ChevronDownIcon} />}
           >
             Primary
           </Button>
 
           <Button
             variant="secondary"
-            icon={<Icon as={icons.ChevronDownIcon} />}
-            alignIcon="end"
+            endIcon={<Icon as={icons.ChevronDownIcon} />}
           >
             Secondary
           </Button>
 
           <Button
             variant="positive"
-            icon={<Icon as={icons.ChevronDownIcon} />}
-            alignIcon="end"
+            endIcon={<Icon as={icons.ChevronDownIcon} />}
           >
             Positive
           </Button>
 
           <Button
             variant="negative"
-            icon={<Icon as={icons.ChevronDownIcon} />}
-            alignIcon="end"
+            endIcon={<Icon as={icons.ChevronDownIcon} />}
           >
             Negative
           </Button>
 
           <Button
             variant="transparent"
-            icon={<Icon as={icons.ChevronDownIcon} />}
-            alignIcon="end"
+            endIcon={<Icon as={icons.ChevronDownIcon} />}
           >
             Transparent
           </Button>
@@ -217,7 +238,7 @@ export const Overview = ({ icon }) => {
           </Button>
 
           <Button variant="secondary" isLoading>
-            Muted isLoading
+            Secondary isLoading
           </Button>
 
           <Button variant="positive" isLoading>
@@ -241,64 +262,64 @@ export const Overview = ({ icon }) => {
         <Stack spacing="spacingXs" marginBottom="spacingM">
           <Button
             variant="transparent"
-            icon={<Icon as={icons.CloseIcon} />}
+            startIcon={<Icon as={icons.CloseIcon} />}
             aria-label="Close"
           />
 
           <Button
             variant="transparent"
-            icon={<Icon as={icons.MoreHorizontalIcon} />}
+            startIcon={<Icon as={icons.MoreHorizontalIcon} />}
             aria-label="More"
           />
 
           <Button
             variant="secondary"
-            icon={<Icon as={icons.DownloadIcon} />}
+            startIcon={<Icon as={icons.DownloadIcon} />}
             aria-label="Download"
           />
 
           <Button
             variant="secondary"
-            icon={<Icon as={icons.DownloadIcon} />}
+            startIcon={<Icon as={icons.DownloadIcon} />}
             isLoading
           />
 
           <Button
             variant="positive"
-            icon={<Icon as={icons.DragIcon} />}
+            startIcon={<Icon as={icons.DragIcon} />}
             aria-label="Resize"
           />
 
           <Button
             variant="negative"
-            icon={<Icon as={icons.DeleteIcon} />}
+            startIcon={<Icon as={icons.DeleteIcon} />}
             aria-label="Delete"
           />
 
           <Button
             variant="primary"
-            icon={<Icon as={icons.PlusIcon} />}
+            startIcon={<Icon as={icons.PlusIcon} />}
             aria-label="Add"
           />
         </Stack>
         <Stack spacing="spacingXs" marginBottom="spacingM">
           <Button
             variant="primary"
-            icon={<Icon as={icons.PlusIcon} />}
+            startIcon={<Icon as={icons.PlusIcon} />}
             aria-label="Plus"
             size="small"
           />
 
           <Button
             variant="primary"
-            icon={<Icon as={icons.PlusIcon} />}
+            startIcon={<Icon as={icons.PlusIcon} />}
             aria-label="Plus"
             size="medium"
           />
 
           <Button
             variant="primary"
-            icon={<Icon as={icons.PlusIcon} />}
+            startIcon={<Icon as={icons.PlusIcon} />}
             aria-label="Plus"
             size="large"
           />
@@ -319,12 +340,12 @@ export const Overview = ({ icon }) => {
           </Button>
         </Flex>
         <Flex flexDirection="row" marginBottom="spacingS">
-          <Button icon={<Icon as={icons.DownloadIcon} />} isFullWidth>
+          <Button startIcon={<Icon as={icons.DownloadIcon} />} isFullWidth>
             Full width button
           </Button>
         </Flex>
         <Flex flexDirection="row" marginBottom="spacingS">
-          <Button icon={<Icon as={icons.DownloadIcon} />} isFullWidth>
+          <Button startIcon={<Icon as={icons.DownloadIcon} />} isFullWidth>
             Full width button
           </Button>
         </Flex>

@@ -36,7 +36,7 @@ export const basic: Story<ButtonGroupProps> = (args) => {
       <Button variant="secondary">Button</Button>
       <Button variant="secondary">Button</Button>
       <Button variant="secondary">Button</Button>
-      <Button variant="secondary" icon={<ChevronDownIcon />} />
+      <Button variant="secondary" startIcon={<ChevronDownIcon />} />
     </ButtonGroup>
   );
 };
@@ -47,7 +47,7 @@ export const spaced: Story<ButtonGroupProps> = (args) => {
       <Button variant="secondary">Button</Button>
       <Button variant="secondary">Button</Button>
       <Button variant="secondary">Button</Button>
-      <Button variant="secondary" icon={<ChevronDownIcon />} />
+      <Button variant="secondary" startIcon={<ChevronDownIcon />} />
     </ButtonGroup>
   );
 };
@@ -81,7 +81,7 @@ export const overview: Story<ButtonGroupProps> = () => {
               <Button
                 onClick={onClick}
                 variant="secondary"
-                icon={<ChevronDownIcon />}
+                startIcon={<ChevronDownIcon />}
               />
             </ButtonGroup>
           </Box>
@@ -93,19 +93,23 @@ export const overview: Story<ButtonGroupProps> = () => {
               <Button
                 onClick={onClick}
                 variant="positive"
-                icon={<ChevronDownIcon />}
+                startIcon={<ChevronDownIcon />}
               />
             </ButtonGroup>
           </Box>
           <Box marginBottom="spacingS">
             <ButtonGroup variant="collapsed" withDivider>
-              <Button onClick={onClick} variant="primary" icon={<PlusIcon />}>
+              <Button
+                onClick={onClick}
+                variant="primary"
+                startIcon={<PlusIcon />}
+              >
                 Button
               </Button>
               <Button
                 onClick={onClick}
                 variant="primary"
-                icon={<ChevronDownIcon />}
+                startIcon={<ChevronDownIcon />}
               />
             </ButtonGroup>
           </Box>
