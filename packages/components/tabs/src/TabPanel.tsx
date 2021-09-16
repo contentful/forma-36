@@ -1,6 +1,5 @@
 import React from 'react';
 import type { CommonProps } from '@contentful/f36-core';
-import { Box } from '@contentful/f36-core';
 import { useTabsContext } from './tabsContext';
 
 export interface TabPanelProps extends CommonProps {
@@ -23,18 +22,17 @@ function _TabPanel(
     'aria-labelledby': `${id}-control-tab`,
   };
   return selectedTab === id ? (
-    <Box
-      as="div"
+    <div
       {...elementProps}
       {...otherProps}
       id={id}
       role="tabpanel"
-      testId={testId}
+      data-test-id={testId}
       className={className}
       ref={ref}
     >
       {children}
-    </Box>
+    </div>
   ) : null;
 }
 

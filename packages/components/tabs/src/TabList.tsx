@@ -1,7 +1,11 @@
 import React from 'react';
 import type { CommonProps } from '@contentful/f36-core';
-import { Box } from '@contentful/f36-core';
+import { mergeRefs } from '@contentful/f36-core';
+import { useArrowKeyNavigation } from '@contentful/f36-utils';
 import { getTabsStyles } from './Tabs.styles';
+import { useTabsContext } from './tabsContext';
+
+const TABLIST_ITEMS_SELECTOR = '[role="tab"]:not(:disabled)';
 export interface TabListProps extends CommonProps {
   /**
    * visual variant of TabList
@@ -22,18 +26,47 @@ function _TabList(
   ref: React.Ref<HTMLDivElement>,
 ): React.ReactElement {
   const styles = getTabsStyles({ className, variant });
+  const listRef = React.useRef(null);
+
+  const { setSelectedTab } = useTabsContext();
+  const { focusedIndex, handleArrowsKeyDown } = useArrowKeyNavigation({
+    itemsContainerRef: listRef,
+    itemsSelector: TABLIST_ITEMS_SELECTOR,
+    keyType: 'horizontal',
+  });
+
+  React.useEffect(() => {
+    if (listRef.current) {
+      const availableElements = listRef.current.querySelectorAll(
+        TABLIST_ITEMS_SELECTOR,
+      );
+
+      if (
+        availableElements.length > 0 &&
+        focusedIndex < availableElements.length
+      ) {
+        const focusedElement = availableElements[focusedIndex] as HTMLElement;
+        focusedElement.focus({
+          preventScroll: true,
+        });
+        setSelectedTab(focusedElement.getAttribute('aria-controls'));
+      }
+    }
+  }, [focusedIndex, setSelectedTab]);
 
   const elementProps = {
     testId,
     className: styles.tabList,
     style,
+    role: 'tablist',
+    onKeyDown: handleArrowsKeyDown,
     ...otherProps,
   };
 
   return (
-    <Box as="div" {...elementProps} role="tablist" ref={ref}>
+    <div {...elementProps} ref={mergeRefs(listRef, ref)}>
       {children}
-    </Box>
+    </div>
   );
 }
 

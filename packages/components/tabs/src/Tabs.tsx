@@ -1,6 +1,5 @@
 import React from 'react';
 import type { CommonProps } from '@contentful/f36-core';
-import { Box } from '@contentful/f36-core';
 import { TabsContextProvider } from './tabsContext';
 export interface TabsProps extends CommonProps {
   children?: React.ReactNode;
@@ -29,9 +28,9 @@ function _Tabs(
 
   return (
     <TabsContextProvider defaultTab={defaultTab}>
-      <Box as="div" {...elementProps} ref={ref}>
+      <div {...elementProps} ref={ref}>
         {children}
-      </Box>
+      </div>
     </TabsContextProvider>
   );
 }
