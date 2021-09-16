@@ -3,14 +3,6 @@ const { pipe } = require('./common/pipe');
 const { getComponentLocalName } = require('../utils');
 const { getFormaImport } = require('../utils/config');
 
-module.exports = modifyPropsCodemod({
-  componentName: 'Tooltip',
-  renameMap: {
-    place: 'placement',
-    containerElement: 'as',
-  },
-});
-
 module.exports = pipe([
   (file, api) => {
     const j = api.jscodeshift;
