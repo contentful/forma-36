@@ -226,10 +226,6 @@ module.exports = {
             link: '/components/popover/',
           },
           {
-            name: 'EmptyState',
-            link: '/components/empty-state/',
-          },
-          {
             name: 'EntityList',
             link: '/components/entity-list/',
           },

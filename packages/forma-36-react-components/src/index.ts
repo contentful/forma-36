@@ -43,8 +43,6 @@ export { Note } from '@contentful/f36-note';
 export type { NoteProps } from '@contentful/f36-note';
 export { Tooltip } from '@contentful/f36-tooltip';
 export type { TooltipProps } from '@contentful/f36-tooltip';
-export { EmptyState } from '@contentful/f36-empty-state';
-export type { EmptyStateProps } from '@contentful/f36-empty-state';
 export {
   Checkbox,
   CheckboxGroup,
