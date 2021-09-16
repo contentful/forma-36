@@ -6,6 +6,7 @@ const defineInlineTest = require('jscodeshift/dist/testUtils').defineInlineTest;
 describe('v4 codemods', () => {
   const tests = [
     'v4-badge',
+    'v4-button',
     'v4-flex',
     'v4-list',
     'v4-note',
@@ -15,6 +16,12 @@ describe('v4 codemods', () => {
     'v4-modal',
     'v4-typography',
   ];
+
+  beforeEach(() => {
+    // Silence warnings we show on the transforms for cleaner tests
+    // Comment this out if you want to check the warning messages
+    console.warn = jest.fn();
+  });
 
   tests.forEach((test) => defineTest(__dirname, test, null, test));
 

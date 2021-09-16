@@ -31,7 +31,7 @@ Example of usage:
   <Button
     variant="positive"
     aria-label="Open dropdown"
-    icon={<ChevronDownIcon />}
+    startIcon={<ChevronDownIcon />}
   />
 </ButtonGroup>
 ```
@@ -43,10 +43,10 @@ It's possible to add a divider for buttons that don't have border:
 // import { ChevronDownIcon, PlusIcon } from '@contentful/f36-icons';
 
 <ButtonGroup testId="group-button" withDivider>
-  <Button icon={<PlusIcon />} variant="positive">
+  <Button startIcon={<PlusIcon />} variant="positive">
     Button
   </Button>
-  <Button variant="positive" icon={<ChevronDownIcon />} />
+  <Button variant="positive" startIcon={<ChevronDownIcon />} />
 </ButtonGroup>
 ```
 

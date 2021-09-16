@@ -56,7 +56,7 @@ function _ToggleButton(props: ToggleButtonProps, ref) {
       ref={ref}
       onClick={handleToggle}
       className={cx(styles.toggleButton, className)}
-      icon={icon}
+      startIcon={icon}
       isDisabled={isDisabled}
       aria-pressed={active}
       data-state={active ? 'on' : 'off'}

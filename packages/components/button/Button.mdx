@@ -48,10 +48,7 @@ Buttons communicate the action that will occur when the user clicks them. They c
 </Stack>
 ```
 
-Buttons can be used in couple of different variations, like active, disabled or loading. It's worthy mentioning is `indicateDropdown` property in the component,
-which enables the chevron icon on the right side of the button.
-
-Using `icon` property in the Button on the other hand, enables choosen icon on the left side of the button.
+Buttons can be used in couple of different variations, like active, disabled or loading.
 
 ### Sizes
 
@@ -81,7 +78,7 @@ Usage of the button with dropdown indication
 // import { Button } from '@contentful/f36-button';
 // import { DownloadIcon } from '@contentful/f36-icons';
 
-<Button variant="primary" icon={<DownloadIcon />}>
+<Button variant="primary" startIcon={<DownloadIcon />}>
   Primary star
 </Button>
 ```
@@ -92,7 +89,11 @@ Icon Button
 // import { Button } from '@contentful/f36-button';
 // import { DownloadIcon } from '@contentful/f36-icons';
 
-<Button variant="primary" aria-label="Download Asset" icon={<DownloadIcon />} />
+<Button
+  variant="primary"
+  aria-label="Download Asset"
+  startIcon={<DownloadIcon />}
+/>
 ```
 
 ## Content recommendations:

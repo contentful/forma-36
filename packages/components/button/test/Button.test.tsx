@@ -23,7 +23,7 @@ describe('Button', function () {
   });
 
   it('renders the component with icon', () => {
-    render(<Button icon={<PreviewIcon />}>Button</Button>);
+    render(<Button startIcon={<PreviewIcon />}>Button</Button>);
 
     const button = screen.getByRole('button');
     expect(button.getElementsByTagName('svg')).toHaveLength(1);
@@ -33,7 +33,7 @@ describe('Button', function () {
     const mockOnClick = jest.fn();
 
     render(
-      <Button onClick={mockOnClick} icon={<PreviewIcon />} isDisabled>
+      <Button onClick={mockOnClick} startIcon={<PreviewIcon />} isDisabled>
         Toggle
       </Button>,
     );

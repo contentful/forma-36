@@ -80,7 +80,7 @@ exports[`renders the component with a dropdown 1`] = `
 
 .emotion-2:focus {
   background-color: transparent;
-  box-shadow: 0px 0px 0px 3px #E7EBEE;
+  box-shadow: 0px 0px 0px 3px #98CBFF;
 }
 
 .emotion-1 {

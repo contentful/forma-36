@@ -29,12 +29,12 @@ function _Button<E extends React.ElementType = typeof DEFAULT_TAG>(
     testId = 'cf-ui-button',
     variant = 'secondary',
     size = 'medium',
-    icon,
+    startIcon,
+    endIcon,
     isActive,
     isDisabled,
     isLoading,
     isFullWidth,
-    alignIcon = 'start',
     style,
     ...otherProps
   } = props;
@@ -50,23 +50,23 @@ function _Button<E extends React.ElementType = typeof DEFAULT_TAG>(
     className,
   );
 
-  const iconContent = icon && !isLoading && (
-    <Flex as="span">
-      {React.cloneElement(icon, {
-        className: cx(
-          styles.buttonIcon({ alignIcon, hasChildren: !!children }),
-          icon.props.className,
-        ),
-        size: `${size === 'large' ? 'medium' : 'small'}`,
-      })}
-    </Flex>
-  );
+  const iconContent = (icon) =>
+    !isLoading && (
+      <Flex
+        as="span"
+        className={styles.buttonIcon({ hasChildren: !!children })}
+      >
+        {React.cloneElement(icon, {
+          size: `${size === 'large' ? 'medium' : 'small'}`,
+        })}
+      </Flex>
+    );
 
   const commonContent = (
     <>
-      {icon && alignIcon === 'start' && iconContent}
+      {startIcon && iconContent(startIcon)}
       {children && <Flex as="span">{children}</Flex>}
-      {icon && alignIcon === 'end' && iconContent}
+      {endIcon && iconContent(endIcon)}
       {isLoading && (
         <Box
           as="span"

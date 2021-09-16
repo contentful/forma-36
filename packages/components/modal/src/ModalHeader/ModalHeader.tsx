@@ -42,7 +42,7 @@ export function ModalHeader({
         <Button
           variant="transparent"
           aria-label="Close"
-          icon={<CloseIcon size="small" />}
+          startIcon={<CloseIcon size="small" />}
           onClick={() => {
             onClose();
           }}

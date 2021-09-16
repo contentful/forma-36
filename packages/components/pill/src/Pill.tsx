@@ -70,7 +70,7 @@ export const Pill = React.forwardRef<HTMLDivElement, PillProps>(
           <Button
             type="button"
             variant="transparent"
-            icon={<CloseIcon aria-label="Close" />}
+            startIcon={<CloseIcon aria-label="Close" />}
             aria-label="Close"
             onClick={onClose}
             className={styles.closeButton}

@@ -3,7 +3,7 @@ module.exports.renameProperties = function renameProperties(
   { renameMap },
 ) {
   return attributes.map((attribute) => {
-    const match = renameMap[attribute.name.name];
+    const match = renameMap[attribute.name?.name];
 
     if (match) {
       return {

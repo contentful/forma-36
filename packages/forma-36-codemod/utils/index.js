@@ -11,6 +11,8 @@ const { updateIcons, addIconImports } = require('./updateIcons');
 const { removeComponentImport } = require('./removeComponentImport');
 const { changeImport } = require('./changeImport');
 const { changeComponentName } = require('./changeComponentName');
+const { updateTernaryValues } = require('./updateTernaryValues');
+const { warningMessage } = require('./warningMessage');
 
 module.exports = {
   getComponentLocalName,
@@ -27,4 +29,6 @@ module.exports = {
   removeComponentImport,
   changeImport,
   changeComponentName,
+  updateTernaryValues,
+  warningMessage,
 };

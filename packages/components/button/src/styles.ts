@@ -47,7 +47,7 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
         },
         '&:active': variantActiveStyles(variant),
         '&:focus': {
-          boxShadow: tokens.glowMuted,
+          boxShadow: tokens.glowPrimary,
         },
       };
     case 'positive':
@@ -93,7 +93,7 @@ const variantToStyles = (variant: ButtonVariant): CSSObject => {
         '&:active': variantActiveStyles(variant),
         '&:focus': {
           backgroundColor: 'transparent',
-          boxShadow: tokens.glowMuted,
+          boxShadow: tokens.glowPrimary,
         },
       };
     default:
@@ -129,12 +129,13 @@ const sizeToStyles = (size: ButtonSize): CSSObject => {
   }
 };
 
-const getButtonIconStyle = ({ alignIcon, hasChildren }) => {
+const getButtonIconStyle = ({ hasChildren }) => {
   const align = {
-    start: { marginRight: tokens.spacing2Xs },
-    end: { marginLeft: tokens.spacing2Xs },
+    '&:first-child': { marginRight: tokens.spacing2Xs },
+    '&:last-child': { marginLeft: tokens.spacing2Xs },
   };
-  const margin = hasChildren ? align[alignIcon] : {};
+
+  const margin = hasChildren ? align : {};
 
   return css(margin);
 };

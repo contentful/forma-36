@@ -96,7 +96,7 @@ export const Note = React.forwardRef<HTMLElement, NoteProps>((props, ref) => {
       {withCloseButton && (
         <Button
           variant="transparent"
-          icon={<CloseIcon className={styles.closeIcon} />}
+          startIcon={<CloseIcon className={styles.closeIcon} />}
           onClick={onClose}
           testId={`${testId}-close`}
           aria-label="Dismiss"

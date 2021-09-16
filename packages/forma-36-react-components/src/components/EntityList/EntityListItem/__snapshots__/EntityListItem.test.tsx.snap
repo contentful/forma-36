@@ -1685,7 +1685,7 @@ exports[`renders the component with dropdownListElements 1`] = `
 
 .emotion-4:focus {
   background-color: transparent;
-  box-shadow: 0px 0px 0px 3px #E7EBEE;
+  box-shadow: 0px 0px 0px 3px #98CBFF;
 }
 
 .emotion-3 {

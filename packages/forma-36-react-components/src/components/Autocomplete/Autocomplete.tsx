@@ -223,7 +223,7 @@ export const Autocomplete = <T extends {}>({
           <Button
             variant="transparent"
             tabIndex={-1}
-            icon={
+            startIcon={
               props.query ? (
                 <CloseIcon aria-label="Clear" />
               ) : (

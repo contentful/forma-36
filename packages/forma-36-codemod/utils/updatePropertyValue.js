@@ -3,7 +3,7 @@ module.exports.updatePropertyValue = function updatePropertyValue(
   { propertyName, propertyValue },
 ) {
   return attributes.map((attribute) => {
-    if (attribute.name.name === propertyName) {
+    if (attribute.name?.name === propertyName) {
       return {
         ...attribute,
         value: propertyValue(attribute.value),
