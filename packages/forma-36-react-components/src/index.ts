@@ -145,6 +145,10 @@ export type {
   DateTimeProps,
   RelativeDateTimeProps,
 } from '@contentful/f36-datetime';
-export * from './components/EntityList';
+export { EntityList, EntityListItem } from '@contentful/f36-entity-list';
+export type {
+  EntityListProps,
+  EntityListItemProps,
+} from '@contentful/f36-entity-list';
 
 // -- Add imports above this line (required by plopfile.js) --

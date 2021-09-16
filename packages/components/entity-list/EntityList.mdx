@@ -1,0 +1,107 @@
+---
+title: 'EntityList'
+type: 'component'
+status: 'stable'
+slug: /components/entity-list/
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/entity-list'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-entity-list--default'
+typescript: ./src/EntityList.tsx
+---
+
+# EntityList
+
+The EntityList is used to represent lists of entities (entries and assets).
+
+## Table of contents
+
+- [How to use EntityList](#how-to-use-entityList)
+- [Code examples](#code-examples)
+
+## How to use EntityList
+
+This component should be used in combination with the EntityList.Item component, and should be used to entries or assets when in a list context, for example, a multiple entry reference field. It differs from existing EntryCard/AssetCard components as it's intended use is for lists of entities, not individual ones.
+
+## Code examples
+
+```jsx
+<EntityList>
+  <EntityList.Item
+    title="Entry 1"
+    description="Description"
+    contentType="My content type"
+    status="published"
+  />
+  <EntityList.Item
+    title="Entry 2"
+    description="Description"
+    contentType="My content type"
+    status="draft"
+  />
+  <EntityList.Item
+    title="Entry 3"
+    description="Description"
+    contentType="My content type"
+    status="archived"
+  />
+</EntityList>
+```
+
+### With actions menu
+
+```jsx
+<EntityList>
+  <EntityList.Item
+    title="Entry title"
+    description="Description"
+    contentType="My content type"
+    status="draft"
+    entityType="entry"
+    actions={[
+      <MenuSectionTitle key="title">Actions</MenuSectionTitle>,
+      <MenuItem key="edit">Edit</MenuItem>,
+      <MenuItem key="download">Download</MenuItem>,
+      <MenuItem key="remove">Remove</MenuItem>,
+    ]}
+  />
+  <EntityList.Item
+    title="Other entry title"
+    description="Description"
+    contentType="My content type"
+    status="published"
+    entityType="entry"
+    actions={[
+      <MenuSectionTitle key="title">Actions</MenuSectionTitle>,
+      <MenuItem key="edit">Edit</MenuItem>,
+      <MenuItem key="download">Download</MenuItem>,
+      <MenuItem key="remove">Remove</MenuItem>,
+    ]}
+  />
+</EntityList>
+```
+
+### With drag handle
+
+```jsx
+<EntityList>
+  <EntityList.Item
+    title="Entry 1"
+    description="Description"
+    contentType="My content type"
+    status="published"
+    withDragHandle
+  />
+  <EntityList.Item
+    title="Entry 2"
+    description="Description"
+    contentType="My content type"
+    status="draft"
+    withDragHandle
+  />
+</EntityList>
+```
+
+## Props of EntityList
+
+import { Props } from '@contentful/f36-docs-utils';
+
+<Props of="EntityListItem" />
