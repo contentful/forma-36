@@ -125,6 +125,7 @@ function initSegment() {
         all: false,
         'Google Analytics': true,
         'Segment.io': true,
+        Hotjar: process.env.NODE_ENV === 'production',
       },
     });
   }
