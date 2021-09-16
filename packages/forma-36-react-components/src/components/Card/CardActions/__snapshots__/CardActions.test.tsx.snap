@@ -78,7 +78,7 @@ exports[`renders the component as disabled 1`] = `
 
 .emotion-2:focus {
   background-color: transparent;
-  box-shadow: 0px 0px 0px 3px #E7EBEE;
+  box-shadow: 0px 0px 0px 3px #98CBFF;
 }
 
 <div
@@ -180,7 +180,7 @@ exports[`renders the component using a multiple dropdown lists 1`] = `
 
 .emotion-2:focus {
   background-color: transparent;
-  box-shadow: 0px 0px 0px 3px #E7EBEE;
+  box-shadow: 0px 0px 0px 3px #98CBFF;
 }
 
 .emotion-1 {
@@ -295,7 +295,7 @@ exports[`renders the component using a single dropdown list 1`] = `
 
 .emotion-2:focus {
   background-color: transparent;
-  box-shadow: 0px 0px 0px 3px #E7EBEE;
+  box-shadow: 0px 0px 0px 3px #98CBFF;
 }
 
 .emotion-1 {
@@ -410,7 +410,7 @@ exports[`renders the component with an additional class name 1`] = `
 
 .emotion-2:focus {
   background-color: transparent;
-  box-shadow: 0px 0px 0px 3px #E7EBEE;
+  box-shadow: 0px 0px 0px 3px #98CBFF;
 }
 
 .emotion-1 {
@@ -525,7 +525,7 @@ exports[`renders the component with published status 1`] = `
 
 .emotion-2:focus {
   background-color: transparent;
-  box-shadow: 0px 0px 0px 3px #E7EBEE;
+  box-shadow: 0px 0px 0px 3px #98CBFF;
 }
 
 .emotion-1 {
