@@ -25,7 +25,7 @@
 
   &:focus {
     outline: none;
-    box-shadow: var(--glow-muted), var(--box-shadow-default);
+    box-shadow: var(--glow-primary), var(--box-shadow-default);
   }
 }
 
