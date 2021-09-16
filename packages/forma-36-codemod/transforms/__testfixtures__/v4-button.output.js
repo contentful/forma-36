@@ -14,12 +14,13 @@ import { LockIcon, ChevronDownIcon, ChevronUpIcon } from "@contentful/f36-icons"
 const isLocked = false;
 <Button
   variant={isLocked ? 'primary' : 'secondary'}
-  icon={isLocked ? <LockIcon /> : undefined}>Conditional</Button>;
+  startIcon={isLocked ? <LockIcon /> : undefined}>Conditional</Button>;
 <Button variant={isLocked ? !isLocked ? 'transparent' : 'primary' : 'secondary'}>Conditional</Button>;
 
-<Button icon={<ChevronDownIcon />} alignIcon="end" variant="primary">Embed Entry</Button>;
+<Button endIcon={<ChevronDownIcon />} variant="primary">Embed Entry</Button>;
+<Button endIcon={<ChevronDownIcon />} variant="primary" startIcon={<LockIcon />}>Embed Entry</Button>;
 
-<Button variant="primary" icon={<ChevronUpIcon />}>Embed entry</Button>;
+<Button variant="primary" startIcon={<ChevronUpIcon />}>Embed entry</Button>;
 
 <Button variant="primary" isFullWidth>Embed entry</Button>;
 

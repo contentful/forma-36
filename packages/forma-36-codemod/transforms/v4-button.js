@@ -40,6 +40,7 @@ module.exports = function (file, api) {
           buttonType: 'variant',
           disabled: 'isDisabled',
           loading: 'isLoading',
+          icon: 'startIcon',
         },
       });
 
@@ -81,12 +82,7 @@ module.exports = function (file, api) {
       ) {
         modifiedAttributes = addProperty(modifiedAttributes, {
           j,
-          propertyName: 'alignIcon',
-          propertyValue: j.literal('end'),
-        });
-        modifiedAttributes = addProperty(modifiedAttributes, {
-          j,
-          propertyName: 'icon',
+          propertyName: 'endIcon',
           propertyValue: j.literal('ChevronDown'),
         });
 
@@ -103,10 +99,19 @@ module.exports = function (file, api) {
         });
       }
 
-      if (hasProperty(modifiedAttributes, { propertyName: 'icon' })) {
+      if (hasProperty(modifiedAttributes, { propertyName: 'startIcon' })) {
         modifiedAttributes = updateIcons(modifiedAttributes, {
           j,
           icons: usedIcons,
+          propertyName: 'startIcon',
+        });
+      }
+
+      if (hasProperty(modifiedAttributes, { propertyName: 'endIcon' })) {
+        modifiedAttributes = updateIcons(modifiedAttributes, {
+          j,
+          icons: usedIcons,
+          propertyName: 'endIcon',
         });
       }
 

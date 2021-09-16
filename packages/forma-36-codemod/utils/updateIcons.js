@@ -2,10 +2,13 @@ const { updatePropertyValue } = require('./updatePropertyValue');
 const { isConditionalExpression } = require('./updateTernaryValues');
 const { addImport } = require('./addImport');
 
-module.exports.updateIcons = function updateIcons(attributes, { j, icons }) {
+module.exports.updateIcons = function updateIcons(
+  attributes,
+  { j, icons, propertyName = 'icon' },
+) {
   return updatePropertyValue(attributes, {
     j,
-    propertyName: 'icon',
+    propertyName,
     propertyValue: (value) => {
       if (isConditionalExpression(value, j)) {
         const iconNames = [

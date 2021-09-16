@@ -16,6 +16,7 @@ const isLocked = false;
 <Button buttonType={isLocked ? !isLocked ? 'naked' : undefined : 'muted'}>Conditional</Button>;
 
 <Button indicateDropdown>Embed Entry</Button>;
+<Button icon="Lock" indicateDropdown>Embed Entry</Button>;
 
 <Button icon="ChevronUp">Embed entry</Button>;
 
