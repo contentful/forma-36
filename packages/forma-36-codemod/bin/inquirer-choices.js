@@ -62,6 +62,10 @@ const TRANSFORMS_CHOICES = [
     name: 'v4-grid: Converts Grid components from Forma v3 to v4',
     value: 'v4-grid',
   },
+  {
+    name: 'v4-skeleton: Converts Skeleton components from Forma v3 to v4',
+    value: 'v4-skeleton',
+  },
 ];
 
 module.exports = {
