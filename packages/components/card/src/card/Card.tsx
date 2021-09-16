@@ -11,7 +11,7 @@ import { Icon } from '@contentful/f36-icon';
 import tokens from '@contentful/f36-tokens';
 
 import { BaseCard } from '../base-card/BaseCard';
-import type { BaseCardInternalProps, CardElement } from '../base-card/BaseCard';
+import type { BaseCardInternalProps } from '../base-card/BaseCard';
 import { CardActions } from '../base-card/CardActions';
 import { getCardStyles } from './Card.styles';
 import { getBaseCardStyles } from '../base-card/BaseCard.styles';
