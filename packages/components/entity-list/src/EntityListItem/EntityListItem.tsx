@@ -255,7 +255,7 @@ export function EntityListItem({
                 <Menu.Trigger>
                   <Button
                     isDisabled={isActionsDisabled}
-                    icon={<MoreHorizontalIcon />}
+                    startIcon={<MoreHorizontalIcon />}
                     variant="transparent"
                     aria-label="Actions"
                     size="small"
