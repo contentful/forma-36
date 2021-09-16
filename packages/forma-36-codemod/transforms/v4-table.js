@@ -21,7 +21,7 @@ module.exports = pipe([
     renameMap: {},
   }),
   modifyPropsCodemod({
-    componentName: 'TableBody',
+    componentName: 'TableHead',
     renameMap: {},
   }),
 ]);

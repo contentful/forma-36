@@ -54,6 +54,10 @@ const TRANSFORMS_CHOICES = [
       'v4-typography: Converts all typography components from Forma v3 to v4',
     value: 'v4-typography',
   },
+  {
+    name: 'v4-table: Converts Table components from Forma v3 to v4',
+    value: 'v4-table',
+  },
 ];
 
 module.exports = {
