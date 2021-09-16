@@ -16,6 +16,7 @@ function _EntityList(props: EntityListProps, ref: React.Ref<HTMLUListElement>) {
       data-test-id={props.testId || 'cf-ui-entity-list'}
       ref={ref}
       className={cx(styles.root, props.className)}
+      style={props.style}
     >
       {props.children}
     </ul>
