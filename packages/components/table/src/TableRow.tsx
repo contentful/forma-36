@@ -26,7 +26,7 @@ const getStyles = () => {
 };
 
 export type TableRowInternalProps = CommonProps & {
-  selected?: boolean;
+  isSelected?: boolean;
   children: React.ReactNode;
 };
 
@@ -37,7 +37,7 @@ export const TableRow = forwardRef<HTMLTableRowElement, TableRowProps>(
     {
       className,
       children,
-      selected = false,
+      isSelected = false,
       testId = 'cf-ui-table-row',
       ...otherProps
     },
@@ -51,7 +51,7 @@ export const TableRow = forwardRef<HTMLTableRowElement, TableRowProps>(
         className={cx(
           styles.root,
           {
-            [styles.selected]: selected,
+            [styles.selected]: isSelected,
           },
           className,
         )}

@@ -15,6 +15,9 @@ describe('v4 codemods', () => {
     'v4-spinner',
     'v4-modal',
     'v4-typography',
+    'v4-table',
+    'v4-grid',
+    'v4-skeleton',
   ];
 
   beforeEach(() => {

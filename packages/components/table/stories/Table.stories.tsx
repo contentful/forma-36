@@ -126,7 +126,7 @@ export const Overview: Story = () => (
           </Table.Row>
         </Table.Head>
         <Table.Body>
-          <Table.Row selected>
+          <Table.Row isSelected>
             <Table.Cell>Jane Roe</Table.Cell>
             <Table.Cell>jane@roe.com</Table.Cell>
             <Table.Cell>CEO</Table.Cell>
@@ -163,7 +163,7 @@ export const Overview: Story = () => (
           </Table.Row>
         </Table.Head>
         <Table.Body>
-          <Table.Row selected>
+          <Table.Row isSelected>
             <Table.Cell>Jane Roe</Table.Cell>
             <Table.Cell>jane@roe.com</Table.Cell>
             <Table.Cell>CEO</Table.Cell>
