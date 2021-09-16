@@ -116,9 +116,10 @@ exports[`renders the component with a dropdown 1`] = `
     <button
       aria-expanded="false"
       aria-haspopup="menu"
+      aria-label="Actions"
       class="InlineEntryCard__actions emotion-2"
       data-node-id="dropdown-trigger-61728000"
-      data-test-id="cf-ui-button"
+      data-test-id="cf-ui-icon-button"
       type="button"
     >
       <span
