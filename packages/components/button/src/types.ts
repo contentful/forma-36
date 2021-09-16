@@ -44,7 +44,7 @@ export interface ButtonInternalProps extends CommonProps {
    */
   startIcon?: React.ReactElement;
   /**
-   * Expects any of the icon components. Renders the icon aligned to the start
+   * Expects any of the icon components. Renders the icon aligned to the end
    */
   endIcon?: React.ReactElement;
   /**
