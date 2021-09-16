@@ -10,6 +10,7 @@ export const getEntityListItemStyles = () => ({
       position: 'relative',
       transition: `${tokens.transitionDurationShort} ${tokens.transitionEasingDefault}`,
       transitionProperty: 'box-shadow, background-color',
+      backgroundColor: tokens.colorWhite,
       ...(props.isDragActive
         ? {
             boxShadow: tokens.boxShadowHeavy,
@@ -26,6 +27,9 @@ export const getEntityListItemStyles = () => ({
     width: '100%',
     minHeight: '3.75rem',
     padding: tokens.spacingXs,
+    border: 'none',
+    background: 'none',
+    textAlign: 'left',
   }),
   content: css({
     flexGrow: 1,
