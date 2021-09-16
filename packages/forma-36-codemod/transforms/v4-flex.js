@@ -4,7 +4,7 @@ const { modifyPropsCodemod } = require('./common/modify-props-codemod');
 
 module.exports = modifyPropsCodemod({
   componentName: 'Flex',
-  beforeRename: (attributes, j) => {
+  beforeRename: (attributes, { j }) => {
     return updatePropertyValue(attributes, {
       j,
       propertyName: 'noShrink',

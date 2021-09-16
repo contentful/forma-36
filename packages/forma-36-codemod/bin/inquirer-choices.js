@@ -49,6 +49,11 @@ const TRANSFORMS_CHOICES = [
       'v4-modal: Converts Modal, ModalConfirm and ModalLauncher components from Forma v3 to v4',
     value: 'v4-modal',
   },
+  {
+    name:
+      'v4-typography: Converts all typography components from Forma v3 to v4',
+    value: 'v4-typography',
+  },
 ];
 
 module.exports = {

@@ -7,7 +7,7 @@ module.exports.changeProperties = function changeProperties(
     .find(j.JSXOpeningElement, { name: { name: componentName } })
     .forEach((p) => {
       const { name, attributes, selfClosing } = p.value;
-      const newAttributes = fn(attributes);
+      const newAttributes = fn(attributes, p);
       j(p).replaceWith(j.jsxOpeningElement(name, newAttributes, selfClosing));
     })
     .toSource();
