@@ -12,9 +12,11 @@ import { LockIcon, ChevronDownIcon, ChevronUpIcon } from "@contentful/f36-icons"
 <Button variant="transparent">Embed entry</Button>;
 
 const isLocked = false;
+const otherProps = { testId: 'cf-ui-button' };
 <Button
   variant={isLocked ? 'primary' : 'secondary'}
-  startIcon={isLocked ? <LockIcon /> : undefined}>Conditional</Button>;
+  startIcon={isLocked ? <LockIcon /> : undefined}
+  {...otherProps}>Conditional</Button>;
 <Button variant={isLocked ? !isLocked ? 'transparent' : 'primary' : 'secondary'}>Conditional</Button>;
 
 <Button endIcon={<ChevronDownIcon />} variant="primary">Embed Entry</Button>;

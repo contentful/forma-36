@@ -17,8 +17,9 @@ module.exports.updateIcons = function updateIcons(
         ]
           .filter((name) => name)
           .map((iconName) => {
-            !icons.includes(iconName) && icons.push(`${iconName}Icon`);
-            return `${iconName}Icon`;
+            const name = `${iconName}Icon`;
+            !icons.includes(`${iconName}Icon`) && icons.push(`${iconName}Icon`);
+            return name;
           });
 
         const getValueFor = (key) => {
