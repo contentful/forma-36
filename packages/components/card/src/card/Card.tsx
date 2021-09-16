@@ -10,13 +10,11 @@ import { Flex } from '@contentful/f36-core';
 import { Icon } from '@contentful/f36-icon';
 import tokens from '@contentful/f36-tokens';
 
-import { BaseCard } from '../base-card/BaseCard';
+import { BaseCard, DEFAULT_TAG } from '../base-card/BaseCard';
 import type { BaseCardInternalProps } from '../base-card/BaseCard';
 import { CardActions } from '../base-card/CardActions';
 import { getCardStyles } from './Card.styles';
 import { getBaseCardStyles } from '../base-card/BaseCard.styles';
-
-const DEFAULT_TAG = 'article';
 
 const generateHeaderPaddingStyles = ({ actions, padding }) => {
   const styles: ObjectInterpolation<undefined> = {
@@ -48,7 +46,6 @@ export type CardProps<
 function _Card<E extends React.ElementType = typeof DEFAULT_TAG>(
   {
     actions,
-    as,
     badge,
     className,
     icon,
@@ -56,7 +53,7 @@ function _Card<E extends React.ElementType = typeof DEFAULT_TAG>(
     title,
     ...otherProps
   }: CardProps<E>,
-  forwardedRef: React.Ref<any>,
+  forwardedRef: React.Ref<HTMLElement>,
 ) {
   const styles = getCardStyles();
   const baseStyles = getBaseCardStyles();
@@ -85,18 +82,8 @@ function _Card<E extends React.ElementType = typeof DEFAULT_TAG>(
     </Flex>
   );
 
-  let element: React.ElementType = DEFAULT_TAG;
-
-  if (otherProps.onClick) {
-    element = 'button';
-  }
-  if (otherProps.href) {
-    element = 'a';
-  }
-
   return (
     <BaseCard
-      as={as ?? element}
       contentBodyProps={
         padding === 'large' && {
           className: styles.contentWithLargePadding,

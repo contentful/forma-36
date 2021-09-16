@@ -25,7 +25,7 @@ import type { ObjectInterpolation } from '@emotion/serialize';
 import { getBaseCardStyles } from './BaseCard.styles';
 import { CardActions } from './CardActions';
 
-export const DEFAULT_TAG: React.ElementType = 'article';
+export const DEFAULT_TAG = 'article';
 
 const generateCardStyles = ({
   hasHeader,
@@ -189,7 +189,7 @@ function _BaseCard<E extends React.ElementType = typeof DEFAULT_TAG>(
     withDragHandle,
     ...otherProps
   }: BaseCardProps<E>,
-  forwardedRef: React.Ref<any>,
+  forwardedRef: React.Ref<HTMLElement>,
 ) {
   const styles = getBaseCardStyles();
   const [isFocused, setisFocused] = useState(isFocusedProp ?? false);
