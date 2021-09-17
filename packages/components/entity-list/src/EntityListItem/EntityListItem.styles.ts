@@ -41,8 +41,8 @@ export const getEntityListItemStyles = () => ({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: tokens.gray200,
-    width: '2.5rem',
-    height: '2.5rem',
+    width: '2.875rem',
+    height: '2.875rem',
     margin: '0',
     marginRight: tokens.spacingXs,
   }),
@@ -53,7 +53,7 @@ export const getEntityListItemStyles = () => ({
     objectFit: 'cover',
   }),
   contentType: css({
-    marginLeft: '0.25rem',
+    marginLeft: tokens.spacingXs,
   }),
   description: css({
     marginTop: '0.25rem',
