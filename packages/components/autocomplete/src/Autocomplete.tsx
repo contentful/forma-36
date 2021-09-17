@@ -4,6 +4,8 @@ import { useCombobox } from 'downshift';
 
 import type { CommonProps } from '@contentful/f36-core';
 import { TextInput } from '@contentful/f36-forms';
+import { Button } from '@contentful/f36-button';
+import { CloseIcon, ChevronDownIcon } from '@contentful/f36-icons';
 import { Popover } from '@contentful/f36-popover';
 
 import { getAutocompleteStyles } from './Autocomplete.styles';
@@ -38,6 +40,10 @@ export interface AutocompleteProps<ItemType = any> extends CommonProps {
    * @default "No matches"
    */
   noMatchesMessage?: string;
+  /**
+   * Sets the Autocomplete to disabled state
+   */
+  isDisabled?: boolean;
 }
 
 function _Autocomplete<ItemTtype>(
@@ -46,6 +52,7 @@ function _Autocomplete<ItemTtype>(
 ) {
   const {
     className,
+    isDisabled = false,
     items,
     onFilter,
     onSelectItem,
@@ -61,41 +68,58 @@ function _Autocomplete<ItemTtype>(
     getComboboxProps,
     getInputProps,
     getItemProps,
-    getLabelProps,
     getMenuProps,
     getToggleButtonProps,
     highlightedIndex,
     isOpen,
     setInputValue,
+    inputValue,
+    toggleMenu,
   } = useCombobox({
     items: inputItems,
     onInputValueChange: ({ inputValue }) => {
       setInputItems(items.filter((item) => onFilter(item, inputValue)));
     },
-    onSelectedItemChange: (changes) => {
-      const inputValue = onSelectItem(changes.selectedItem);
+    onSelectedItemChange: ({ selectedItem }) => {
+      const inputValue = onSelectItem(selectedItem);
       setInputValue(inputValue);
     },
   });
 
   const comboboxProps = getComboboxProps();
   const inputProps = getInputProps();
+  const toggleProps = getToggleButtonProps();
   const menuProps = getMenuProps();
 
   return (
-    <div
-      data-test-id={testId}
-      className={cx(styles.autocomplete, className)}
-      {...comboboxProps}
-    >
+    <div data-test-id={testId} className={cx(styles.autocomplete, className)}>
       {/* eslint-disable-next-line jsx-a11y/no-autofocus */}
       <Popover usePortal={false} autoFocus={false} isOpen={isOpen}>
         <Popover.Trigger>
-          <TextInput
-            {...inputProps}
-            testId="cf-autocomplete-input"
-            placeholder={placeholder}
-          />
+          <div {...comboboxProps} className={styles.combobox}>
+            <TextInput
+              {...inputProps}
+              testId="cf-autocomplete-input"
+              placeholder={placeholder}
+              isDisabled={isDisabled}
+            />
+            <Button
+              {...toggleProps}
+              aria-label="toggle menu"
+              className={styles.toggleButton}
+              variant="transparent"
+              icon={
+                inputValue ? (
+                  <CloseIcon aria-label="Clear" />
+                ) : (
+                  <ChevronDownIcon aria-label="Show list" />
+                )
+              }
+              onClick={() => (inputValue ? setInputValue('') : toggleMenu())}
+              isDisabled={isDisabled}
+              size="small"
+            />
+          </div>
         </Popover.Trigger>
 
         <Popover.Content>

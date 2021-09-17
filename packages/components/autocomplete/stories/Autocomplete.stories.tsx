@@ -26,7 +26,7 @@ const fruits: Fruit[] = [
 ];
 
 export const Basic = (args: AutocompleteProps<Fruit>) => {
-  const [selectedFruit, setSelectedFruit] = React.useState<Fruit['label']>();
+  const [selectedFruit, setSelectedFruit] = React.useState<Fruit['label']>('');
 
   const handleFilter = (item: Fruit, inputValue: string) =>
     item.label.includes(inputValue);
