@@ -4,6 +4,7 @@ import tokens from '@contentful/f36-tokens';
 export const getAutocompleteStyles = () => ({
   autocomplete: css({
     position: 'relative',
+    width: '100%',
   }),
   list: css({
     overflowY: 'auto',
@@ -24,5 +25,12 @@ export const getAutocompleteStyles = () => ({
     '&:active': {
       backgroundColor: tokens.gray200,
     },
+  }),
+  disabled: css({
+    opacity: 0.5,
+    pointerEvents: 'none',
+  }),
+  highlighted: css({
+    backgroundColor: tokens.gray100,
   }),
 });

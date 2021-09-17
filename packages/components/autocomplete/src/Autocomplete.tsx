@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { cx } from 'emotion';
+import { useCombobox } from 'downshift';
+
 import type { CommonProps } from '@contentful/f36-core';
-import { Box } from '@contentful/f36-core';
 import { TextInput } from '@contentful/f36-forms';
 import { Popover } from '@contentful/f36-popover';
 
@@ -9,31 +10,34 @@ import { getAutocompleteStyles } from './Autocomplete.styles';
 
 export interface AutocompleteProps<ItemType = any> extends CommonProps {
   /**
-   * The children prop is a function that receives the value of the `items` prop as argument and returns on ReactNode for each item
-   */
-  children: (items: ItemType[]) => React.ReactNode[];
-  /**
-   * This is the function that will be called for each "item" passed in the `items` prop.
-   * It receives the "item" as an argument and returns a ReactNode
-   */
-  renderItem: (item: ItemType) => React.ReactElement;
-  /**
-   * It’s an array of data to be used as "options" by the autocomplete component
+   * It’s an array of data to be used as "options" by the autocomplete component.
    */
   items: ItemType[];
   /**
-   * This is the function that will be called every time the value of the input changes
+   * This is the function that will tell the component how the `items` should be filtered when the input value changes.
+   * It will be used in the `filter()` method of the array passed in the `items` prop and it needs two arguments: an item and the inputValue.
    */
-  onQueryChange: (query: string) => void;
+  onFilter: (item: ItemType, inputValue: string) => void;
   /**
-   * This is the function that will be called when the user selects one of the "options" in the list
+   * This is the function that will be called when the user selects one of the "options" in the list.
+   * It receives the selected item as an argument and it needs to return a string that will be set as the value of `TextInput`.
    */
-  onSelectItem: (item: ItemType) => void;
+  onSelectItem: (item: ItemType) => string;
   /**
-   * This is the value will be passed to the `placeholder` prop of the input
+   * This is the function that will be called for each "item" passed in the `items` prop.
+   * It receives the "item" as an argument and returns a ReactNode.
+   */
+  renderItem: (item: ItemType) => React.ReactElement;
+  /**
+   * This is the value will be passed to the `placeholder` prop of the input.
    * @default "Search"
    */
   placeholder?: string;
+  /**
+   * A message that will be shown when it is not possible to find any option that matches the input value
+   * @default "No matches"
+   */
+  noMatchesMessage?: string;
 }
 
 function _Autocomplete<ItemTtype>(
@@ -41,102 +45,88 @@ function _Autocomplete<ItemTtype>(
   ref: React.Ref<HTMLDivElement>,
 ) {
   const {
-    // children,
+    className,
     items,
+    onFilter,
     onSelectItem,
-    onQueryChange,
     renderItem,
+    noMatchesMessage = 'No Matches',
     placeholder = 'Search',
+    testId = 'cf-autocomplete',
   } = props;
   const styles = getAutocompleteStyles();
 
-  const [value, setValue] = React.useState('');
-  const [showSuggestions, setShowSuggestions] = React.useState(false);
+  const [inputItems, setInputItems] = useState(items);
+  const {
+    getComboboxProps,
+    getInputProps,
+    getItemProps,
+    getLabelProps,
+    getMenuProps,
+    getToggleButtonProps,
+    highlightedIndex,
+    isOpen,
+    setInputValue,
+  } = useCombobox({
+    items: inputItems,
+    onInputValueChange: ({ inputValue }) => {
+      setInputItems(items.filter((item) => onFilter(item, inputValue)));
+    },
+    onSelectedItemChange: (changes) => {
+      const inputValue = onSelectItem(changes.selectedItem);
+      setInputValue(inputValue);
+    },
+  });
 
-  // Generates a new array where each item has the child its associated data passed in "items" prop
-  // const options = React.useMemo(
-  //   () =>
-  //     children(items).map((child, index) => ({
-  //       child,
-  //       data: items[index],
-  //     })),
-  //   [children, items],
-  // );
-
-  // console.log({ showSuggestions, value, items, options });
+  const comboboxProps = getComboboxProps();
+  const inputProps = getInputProps();
+  const menuProps = getMenuProps();
 
   return (
     <div
-      data-test-id={props.testId}
-      ref={ref}
-      className={cx(styles.autocomplete, props.className)}
+      data-test-id={testId}
+      className={cx(styles.autocomplete, className)}
+      {...comboboxProps}
     >
       {/* eslint-disable-next-line jsx-a11y/no-autofocus */}
-      <Popover autoFocus={false} isOpen={showSuggestions}>
+      <Popover usePortal={false} autoFocus={false} isOpen={isOpen}>
         <Popover.Trigger>
           <TextInput
+            {...inputProps}
             testId="cf-autocomplete-input"
-            aria-autocomplete="list"
-            aria-controls="autocomplete-list"
             placeholder={placeholder}
-            value={value}
-            onFocus={() => setShowSuggestions(true)}
-            // onBlur={() => setShowSuggestions(false)}
-            onChange={(e) => {
-              setValue(e.target.value);
-              onQueryChange(e.target.value);
-            }}
           />
         </Popover.Trigger>
 
         <Popover.Content>
-          <Box
-            as="ul"
-            id="autocomplete-list"
-            role="listbox"
+          <ul
+            {...menuProps}
             className={styles.list}
+            data-test-id="cf-autocomplete-list"
           >
-            {items.length === 0 && (
-              <li className={styles.item}>No matching options</li>
+            {inputItems.length === 0 && (
+              <li className={cx(styles.item, styles.disabled)}>
+                {noMatchesMessage}
+              </li>
             )}
 
-            {items.map((item, index) => {
+            {inputItems.map((item, index) => {
+              const itemProps = getItemProps({ item, index });
               return (
                 <li
+                  {...itemProps}
                   key={index}
-                  className={styles.item}
-                  role="option"
-                  aria-selected={false}
-                  onClick={() => {
-                    onSelectItem(item);
-                    setShowSuggestions(false);
-                  }}
-                  onKeyDown={() => {}}
+                  className={cx([
+                    styles.item,
+                    highlightedIndex === index && styles.highlighted,
+                  ])}
                   data-test-id="cf-autocomplete-list-item"
                 >
                   {renderItem(item)}
                 </li>
               );
             })}
-
-            {/* {options.map(({ child, data }, index) => {
-              console.log('data: ', data);
-              return (
-                <li
-                  key={index}
-                  className={styles.item}
-                  role="option"
-                  onClick={() => {
-                    onSelectItem(data);
-                    setShowSuggestions(false);
-                  }}
-                  data-test-id="cf-autocomplete-list-item"
-                >
-                  {child}
-                </li>
-              );
-            })} */}
-          </Box>
+          </ul>
         </Popover.Content>
       </Popover>
     </div>
