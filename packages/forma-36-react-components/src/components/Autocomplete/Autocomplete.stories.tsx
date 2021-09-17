@@ -5,7 +5,7 @@ import { Subheading } from '@contentful/f36-typography';
 import { List } from '@contentful/f36-list';
 
 export default {
-  title: 'Components/Autocomplete',
+  title: 'Components/Autocomplete V3',
   component: Autocomplete,
   parameters: {
     propTypes: [Autocomplete['__docgenInfo']],
