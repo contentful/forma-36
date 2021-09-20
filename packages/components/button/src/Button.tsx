@@ -90,7 +90,7 @@ function _Button<E extends React.ElementType = typeof DEFAULT_TAG>(
 
   if (as === 'a') {
     return (
-      <a {...otherProps} {...commonProps}>
+      <a {...otherProps} {...commonProps} disabled={isDisabled}>
         {commonContent}
       </a>
     );
