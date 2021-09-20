@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { cx } from 'emotion';
 import { useCombobox } from 'downshift';
 
-import type { CommonProps } from '@contentful/f36-core';
+import { CommonProps, mergeRefs } from '@contentful/f36-core';
 import {
   TextInput,
   TextInputProps,
@@ -60,6 +60,18 @@ export interface AutocompleteProps<ItemType = any>
    * @default "No matches"
    */
   noMatchesMessage?: string;
+  /**
+   * Use this prop to get a ref to the input element of the component
+   */
+  inputRef?: React.Ref<HTMLInputElement>;
+  /**
+   * Use this prop to get a ref to the toggle button of the component
+   */
+  toggleRef?: React.Ref<HTMLButtonElement>;
+  /**
+   * Use this prop to get a ref to the list of items of the component
+   */
+  listRef?: React.Ref<HTMLUListElement>;
 }
 
 function _Autocomplete<ItemType>(
@@ -81,6 +93,9 @@ function _Autocomplete<ItemType>(
     isReadOnly = false,
     noMatchesMessage = 'No Matches',
     placeholder = 'Search',
+    inputRef,
+    toggleRef,
+    listRef,
     testId = 'cf-autocomplete',
   } = props;
 
@@ -154,11 +169,13 @@ function _Autocomplete<ItemType>(
             <TextInput
               {...inputProps}
               {...formProps}
+              ref={mergeRefs(inputProps.ref, inputRef)}
               testId="cf-autocomplete-input"
               placeholder={placeholder}
             />
             <Button
               {...toggleProps}
+              ref={mergeRefs(toggleProps.ref, toggleRef)}
               aria-label="toggle menu"
               className={styles.toggleButton}
               variant="transparent"
@@ -179,6 +196,7 @@ function _Autocomplete<ItemType>(
         <Popover.Content>
           <ul
             {...menuProps}
+            ref={mergeRefs(menuProps.ref, listRef)}
             className={styles.list}
             data-test-id="cf-autocomplete-list"
           >
