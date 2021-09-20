@@ -56,7 +56,7 @@ export const getEntityListItemStyles = () => ({
     marginLeft: tokens.spacingXs,
   }),
   description: css({
-    marginTop: '0.25rem',
+    marginTop: tokens.spacing2Xs,
   }),
   meta: css({
     marginLeft: 'auto',
