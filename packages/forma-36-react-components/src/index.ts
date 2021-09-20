@@ -137,7 +137,8 @@ export type {
   MenuSectionTitleProps,
   MenuItemProps,
 } from '@contentful/f36-menu';
-export * from './components/Autocomplete';
+export { Autocomplete } from '@contentful/f36-autocomplete';
+export type { AutocompleteProps } from '@contentful/f36-autocomplete';
 export * from './components/Card';
 export * from './components/Dropdown';
 export { DateTime, RelativeDateTime } from '@contentful/f36-datetime';
