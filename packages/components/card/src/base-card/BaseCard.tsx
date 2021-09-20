@@ -66,27 +66,8 @@ const generateCardStyles = ({
 
 export type CardElement = 'a' | 'article' | 'button' | 'div';
 
-type AnchorProps =
-  | {
-      href?: undefined;
-      rel?: never;
-      target?: never;
-    }
-  | {
-      /**
-       * Used to make the decision of either rendering the card as an anchor or as an article
-       */
-      href?: string;
-      rel?: AnchorHTMLAttributes<HTMLAnchorElement>['rel'];
-      /**
-       * Used with href to specify target attribute value
-       */
-      target?: AnchorHTMLAttributes<HTMLAnchorElement>['target'];
-    };
-
 export type BaseCardInternalProps = CommonProps &
-  MarginProps &
-  AnchorProps & {
+  MarginProps & {
     /**
      * An array of Menu elements used to render an actions menu
      */
