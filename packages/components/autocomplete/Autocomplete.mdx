@@ -4,11 +4,14 @@ type: 'component'
 status: 'stable'
 slug: /components/autocomplete/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/components/autocomplete'
-storybook: 'https://f36-storybook.contentful.com/?path=/story/components-autocomplete--default'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-autocomplete--basic'
 typescript: ./src/Autocomplete.tsx
 ---
 
-The autocomplete component is an input field that provides selectable suggestions as a user types into it. It allows users to quickly search through and select from large collections of options.
+import { Props } from '@contentful/f36-docs-utils';
+
+The autocomplete component is an input field that provides selectable options as a user types into it.
+It allows users to quickly search through and select from large collections of options.
 
 ## Table of contents
 
@@ -17,175 +20,209 @@ The autocomplete component is an input field that provides selectable suggestion
 - [Content recommendations](#content-recommendations)
 - [Accessibility](#accessibility)
 
-## How to use autocomplete
+## How to use Autocomplete
 
-Autocomplete expects two callback Functions.
+The Autocomplete requires 3 props to work:
 
-- `handleQueryChange` called while a user types. This function should take care of filtering and refetching your items.
-- `onChange` called when a user selects one of the Options.
+- `items`: It’s an array containing the items that will be shown as selectable options when the user types something in the `TextInput`.
+- `onFilter`: This function will be used by the `Autocomplete` in the `filter()` method to filter the `items` prop and only show the options that match what the user is typing.
+  The component will pass the `item` which the filter method is currently interating and `inputValue` of the `Textinput`.
+- `onSelectItem`: This function is called when the user selects one of the options of the list. The component will pass the selected item as an argument to the function.
 
-You can use Autocomplete either for a single or a multi selection,
-by either saving all selected items in an array of items or forwarding only the last selected Item in the `onChange` callback..
+An `Autocomplete` with a list of fruits will look like this:
+
+```jsx
+function AutocompleteExample() {
+  const fruits = [
+    'Apple 🍎',
+    'Ananas 🍍',
+    'Avocado 🥑',
+    'Banana 🍌',
+    'Coconut 🥥',
+  ];
+
+  // This `useState` is going to store the selected fruit so we can show it in the UI
+  const [selectedFruit, setSelectedFruit] = React.useState();
+
+  // This is the function that will be used by the `filter()` method to filter the "fruits" array
+  // we use 'toLowerCase()' to make the search case insentiive
+  const handleFilter = (item, inputValue) => {
+    item.toLowerCase().includes(inputValue.toLowerCase());
+  };
+
+  // This function will be called once the user selects an item in the list of options
+  const handleSelectItem = (item) => {
+    setSelectedFruit(item);
+  };
+
+  return (
+    <Stack flexDirection="column" alignItems="start">
+      <Autocomplete
+        items={fruits}
+        onFilter={handleFilter}
+        onSelectItem={handleSelectItem}
+      />
+
+      <Paragraph>Selected fruit: {selectedFruit}</Paragraph>
+    </Stack>
+  );
+}
+```
 
 ## Best practices
 
 - Autocomplete should have a clear label so user understands what type of action is possible
-- Consider using autocomplete over selects if user will be will be choosing from a very long list, like for example country list.
+- Consider using autocomplete over selects if user will be will be choosing from a very long list, for example a country list.
 
 ## Code examples
 
-Default Usage, set the selected item as value of the text input.
+### Using objects as `items`
+
+On the example in the ["How to use Autocomplete" section](#how-to-use-autocomplete), we showed how to create an Autocomplete with an array of string
+but it’s also possible to use other types of data as `items`. A very common way of using the Autocomplete is with objects and for that, with a few changes
+to the Fruit’s example this can be done:
 
 ```jsx
-// import { Autocomplete } from '@contentful/forma-36-react-components';
 function AutocompleteExample() {
-  const items = [
-    { value: 1, label: 'Ananas' },
-    { value: 2, label: 'Apple' },
-    { value: 3, label: 'Banana' },
-    { value: 4, label: 'Lemon' },
-    { value: 5, label: 'Avocado' },
+  // This is our new array of fruits, each one is an object with an id and a name
+  const fruits = [
+    { id: 1, name: 'Apple 🍎' },
+    { id: 2, name: 'Ananas 🍍' },
+    { id: 3, name: 'Avocado 🥑' },
+    { id: 4, name: 'Banana 🍌' },
+    { id: 5, name: 'Coconut 🥥' },
   ];
 
-  const [filteredItems, setFilteredItems] = React.useState(items);
-  const [selectedItem, setSelectedItem] = React.useState();
+  const [selectedFruit, setSelectedFruit] = React.useState();
 
-  const handleQueryChange = (query) => {
-    setFilteredItems(
-      query ? items.filter((item) => item.label.includes(query)) : items,
-    );
+  const handleFilter = (item, inputValue) => {
+    // This time, we need to tell the component to compare the property "name" of an item to the inputValue
+    item.name.toLowerCase().includes(inputValue.toLowerCase());
   };
 
-  const handleOnChange = (item) => {
-    setSelectedItem(item.label);
+  const handleSelectItem = (item) => {
+    setSelectedFruit(item);
   };
 
   return (
-    <Autocomplete
-      items={filteredItems}
-      onQueryChange={handleQueryChange}
-      width={'full'}
-      placeholder={'search'}
-      emptyListMessage={'no result found'}
-      noMatchesMessage={'no matches'}
-      dropdownProps={{ isFullWidth: true }}
-      onChange={handleOnChange}
-      selectedItem={selectedItem}
-    >
-      {(options) =>
-        options.map((option) => <span key={option.value}>{option.label}</span>)
-      }
-    </Autocomplete>
+    <Stack flexDirection="column" alignItems="start">
+      <Autocomplete
+        items={fruits}
+        onFilter={handleFilter}
+        onSelectItem={handleSelectItem}
+        // This prop is the function that will tell the component how to extract a string that will be used as inputValue
+        itemToString={(item) => item.name}
+        // This prop is the function that will tell the component how to render each item in the options list
+        renderItem={(item) => <>{item.name}</>}
+      />
+
+      <Paragraph>Selected fruit: {selectedFruit}</Paragraph>
+    </Stack>
   );
 }
 ```
 
-Usage for filling in a list of items.
+Both `itemToString` and `renderItem` are necessary when passing objects as items and they both will receive an "item" as an argument.
+
+> If you are using Typescript, you can tell the Autocomplete complete what is the type of your items to make this functions strongly typed.
+> You can do that by writing the component like this:
+>
+> `<Autocomplete<ItemType> {...props}/>`
+
+### Filling in a list of items.
 
 ```jsx
-// import { Autocomplete } from '@contentful/forma-36-react-components';
 function AutocompleteExample() {
-  const items = [
-    { value: 1, label: 'Ananas' },
-    { value: 2, label: 'Apple' },
-    { value: 3, label: 'Banana' },
-    { value: 4, label: 'Lemon' },
-    { value: 5, label: 'Avocado' },
+  const fruits = [
+    { id: 1, name: 'Apple 🍎' },
+    { id: 2, name: 'Ananas 🍍' },
+    { id: 3, name: 'Avocado 🥑' },
+    { id: 4, name: 'Banana 🍌' },
+    { id: 5, name: 'Coconut 🥥' },
   ];
 
-  const [filteredItems, setFilteredItems] = React.useState(items);
-  const [selectedItems, setSelectedItems] = React.useState([]);
+  // The state now stores an array of selected fruits, not just a string
+  const [selectedFruits, setSelectedFruits] = React.useState([]);
 
-  const handleQueryChange = (query) => {
-    setFilteredItems(
-      query ? items.filter((item) => item.label.includes(query)) : items,
-    );
+  const handleFilter = (item, inputValue) => {
+    item.name.toLowerCase().includes(inputValue.toLowerCase());
   };
 
-  const handleOnChange = (item) => {
-    setSelectedItems((tagElements) => [...tagElements, item.label]);
+  const handleSelectItem = (item) => {
+    // Every time an item is selected, the component will add the name of the fruit to the selectedFruits array
+    setSelectedFruits((prevState) => [...prevState, item.name]);
   };
 
   return (
-    <>
+    <Stack flexDirection="column" alignItems="start">
       <Autocomplete
-        items={filteredItems}
-        onQueryChange={handleQueryChange}
-        width={'full'}
-        placeholder={'search'}
-        emptyListMessage={'no result found'}
-        noMatchesMessage={'no matches'}
-        dropdownProps={{ isFullWidth: true }}
-        onChange={handleOnChange}
-        maxHeight={100}
-      >
-        {(options) =>
-          options.map((option) => (
-            <span key={option.value}>{option.label}</span>
-          ))
-        }
-      </Autocomplete>
-      <h3>Shopping List</h3>
-      <ul>
-        {selectedItems.map((item, index) => (
-          <li key={`element-${item}-${index}`}>{item}</li>
-        ))}
-      </ul>
-    </>
+        items={fruits}
+        onFilter={handleFilter}
+        onSelectItem={handleSelectItem}
+        itemToString={(item) => item.name}
+        renderItem={(item) => <>{item.name}</>}
+        // When this prop is `true`, it will clean the TextInput after an option is selected
+        clearAfterSelect
+      />
+
+      <span>
+        <Paragraph>Selected fruits:</Paragraph>
+        <ul>
+          {selectedFruits.map((fruit, index) => (
+            <li key={index}>{fruit}</li>
+          ))}
+        </ul>
+      </span>
+    </Stack>
   );
 }
 ```
 
-Example for showing error messages
+### Error validation with FormControl
 
 ```jsx
-// import { Autocomplete } from '@contentful/forma-36-react-components';
 function AutocompleteExample() {
-  const items = [
-    { value: 1, label: 'Ananas' },
-    { value: 2, label: 'Apple' },
-    { value: 3, label: 'Banana' },
-    { value: 4, label: 'Lemon' },
-    { value: 5, label: 'Avocado' },
+  const fruits = [
+    'Apple 🍎',
+    'Ananas 🍍',
+    'Avocado 🥑',
+    'Banana 🍌',
+    'Coconut 🥥',
   ];
 
-  const [filteredItems, setFilteredItems] = React.useState(items);
-  const [selectedItem, setSelectedItem] = React.useState();
+  const [selectedFruit, setSelectedFruit] = React.useState();
+  const [isInvalid, setIsInvalid] = React.useState(false);
 
-  const handleQueryChange = (query) => {
-    setFilteredItems(
-      query ? items.filter((item) => item.label.includes(query)) : items,
-    );
+  const handleFilter = (item, inputValue) => {
+    item.toLowerCase().includes(inputValue.toLowerCase());
   };
 
-  const handleOnChange = (item) => {
-    setSelectedItem(item.label);
+  const handleSelectItem = (item) => {
+    setSelectedFruit(item);
   };
 
   return (
-    <div>
-      <span>Favorit Fruit *</span>
-      <Autocomplete
-        id="autocomplete"
-        items={filteredItems}
-        onQueryChange={handleQueryChange}
-        width={'full'}
-        placeholder={'search'}
-        emptyListMessage={'no result found'}
-        noMatchesMessage={'no matches'}
-        dropdownProps={{ isFullWidth: true }}
-        onChange={handleOnChange}
-        selectedItem={selectedItem}
-        validationMessage="This item is required"
-      >
-        {(options) =>
-          options.map((option) => (
-            <span key={option.value}>{option.label}</span>
-          ))
-        }
-      </Autocomplete>
-      <p style={{ marginTop: '45px' }}>* Required fields</p>
-    </div>
+    <Stack flexDirection="column" alignItems="start">
+      <FormControl isInvalid={isInvalid}>
+        <FormControl.Label>Favorite fruit:</FormControl.Label>
+
+        <Autocomplete
+          items={fruits}
+          onFilter={handleFilter}
+          onSelectItem={handleSelectItem}
+        />
+
+        {isInvalid && (
+          <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
+        )}
+      </FormControl>
+
+      <Button onClick={() => setIsInvalid((prevState) => !prevState)}>
+        Toggle error message
+      </Button>
+
+      <Paragraph>Selected fruit: {selectedFruit}</Paragraph>
+    </Stack>
   );
 }
 ```
@@ -198,3 +235,7 @@ function AutocompleteExample() {
 ## Accessibility
 
 - dismisses the dropdown when selecting with the enter key
+
+## Props
+
+<Props of="Autocomplete" />

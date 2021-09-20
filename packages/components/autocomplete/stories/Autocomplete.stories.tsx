@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import type { Meta } from '@storybook/react/types-6-0';
 
 import { Stack } from '@contentful/f36-core';
@@ -15,22 +15,57 @@ export default {
 
 interface Fruit {
   id: number;
-  label: string;
+  name: string;
 }
 
 const fruits: Fruit[] = [
-  { id: 1, label: 'Apple 🍎' },
-  { id: 2, label: 'Ananas 🍍' },
-  { id: 3, label: 'Avocado 🥑' },
-  { id: 4, label: 'Banana 🍌' },
-  { id: 5, label: 'Coconut 🥥' },
+  { id: 1, name: 'Apple 🍎' },
+  { id: 2, name: 'Ananas 🍍' },
+  { id: 3, name: 'Avocado 🥑' },
+  { id: 4, name: 'Banana 🍌' },
+  { id: 5, name: 'Coconut 🥥' },
 ];
 
-export const Basic = (args: AutocompleteProps<Fruit>) => {
-  const [selectedFruit, setSelectedFruit] = React.useState<Fruit>();
+const fruitStrings = fruits.reduce((acc, fruit) => [...acc, fruit.name], []);
+
+export const Basic = (args: AutocompleteProps<string>) => {
+  const [selectedFruit, setSelectedFruit] = useState<string>('');
+
+  const handleFilter = (item: string, inputValue: string) =>
+    item.toLowerCase().includes(inputValue.toLowerCase());
+
+  const handleSelectItem = (item: string) => {
+    setSelectedFruit(item);
+  };
+
+  return (
+    <Stack
+      style={{ minWidth: '300px' }}
+      flexDirection="column"
+      spacing="spacingM"
+      alignItems="start"
+    >
+      {/* It’s not necessary to pass "Fruit" (type of one item)  */}
+      <Autocomplete<string>
+        {...args}
+        items={fruitStrings}
+        onFilter={handleFilter}
+        onSelectItem={handleSelectItem}
+      />
+
+      <Paragraph>Selected fruit: {selectedFruit}</Paragraph>
+    </Stack>
+  );
+};
+Basic.args = {
+  placeholder: 'Search your favorite fruit',
+};
+
+export const UsingObjectsAsItems = (args: AutocompleteProps<Fruit>) => {
+  const [selectedFruit, setSelectedFruit] = useState<Fruit>();
 
   const handleFilter = (item: Fruit, inputValue: string) =>
-    item.label.toLocaleLowerCase().includes(inputValue.toLocaleLowerCase());
+    item.name.toLowerCase().includes(inputValue.toLowerCase());
 
   const handleSelectItem = (item: Fruit) => {
     setSelectedFruit(item);
@@ -49,29 +84,26 @@ export const Basic = (args: AutocompleteProps<Fruit>) => {
         items={fruits}
         onFilter={handleFilter}
         onSelectItem={handleSelectItem}
-        itemToString={(item) => item.label}
-        renderItem={(item) => <>{item.label}</>}
+        itemToString={(item) => item.name}
+        renderItem={(item) => <>{item.name}</>}
       />
 
-      <Paragraph>Selected fruit: {selectedFruit?.label}</Paragraph>
+      <Paragraph>Selected fruit: {selectedFruit?.name}</Paragraph>
     </Stack>
   );
 };
-
-Basic.args = {
+UsingObjectsAsItems.args = {
   placeholder: 'Search your favorite fruit',
 };
 
 export const MultipleSelection = (args: AutocompleteProps<Fruit>) => {
-  const [selectedFruits, setSelectedFruits] = React.useState<Fruit['label'][]>(
-    [],
-  );
+  const [selectedFruits, setSelectedFruits] = useState<Fruit['name'][]>([]);
 
   const handleFilter = (item: Fruit, inputValue: string) =>
-    item.label.toLocaleLowerCase().includes(inputValue.toLocaleLowerCase());
+    item.name.toLowerCase().includes(inputValue.toLowerCase());
 
   const handleSelectItem = (item: Fruit) => {
-    setSelectedFruits((prevState) => [...prevState, item.label]);
+    setSelectedFruits((prevState) => [...prevState, item.name]);
   };
 
   return (
@@ -87,8 +119,8 @@ export const MultipleSelection = (args: AutocompleteProps<Fruit>) => {
         items={fruits}
         onFilter={handleFilter}
         onSelectItem={handleSelectItem}
-        itemToString={(item) => item.label}
-        renderItem={(item) => <>{item.label}</>}
+        itemToString={(item) => item.name}
+        renderItem={(item) => <>{item.name}</>}
         clearAfterSelect
       />
 
@@ -105,10 +137,10 @@ export const MultipleSelection = (args: AutocompleteProps<Fruit>) => {
 };
 
 export const WithFormControl = () => {
-  const [selectedFruit, setSelectedFruit] = React.useState<Fruit>();
+  const [selectedFruit, setSelectedFruit] = useState<Fruit>();
 
   const handleFilter = (item: Fruit, inputValue: string) =>
-    item.label.toLocaleLowerCase().includes(inputValue.toLocaleLowerCase());
+    item.name.toLowerCase().includes(inputValue.toLowerCase());
 
   const handleSelectItem = (item: Fruit) => {
     setSelectedFruit(item);
@@ -124,12 +156,12 @@ export const WithFormControl = () => {
           items={fruits}
           onFilter={handleFilter}
           onSelectItem={handleSelectItem}
-          itemToString={(item) => item.label}
-          renderItem={(item) => <>{item.label}</>}
+          itemToString={(item) => item.name}
+          renderItem={(item) => <>{item.name}</>}
         />
       </FormControl>
 
-      <Paragraph>Selected fruit: {selectedFruit?.label}</Paragraph>
+      <Paragraph>Selected fruit: {selectedFruit?.name}</Paragraph>
     </>
   );
 };

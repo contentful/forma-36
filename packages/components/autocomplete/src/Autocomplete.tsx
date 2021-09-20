@@ -39,7 +39,7 @@ export interface AutocompleteProps<ItemType = any>
    * This is the function that will be called for each "item" passed in the `items` prop.
    * It receives the "item" as an argument and returns a ReactNode.
    */
-  renderItem: (item: ItemType) => React.ReactElement;
+  renderItem?: (item: ItemType) => React.ReactElement;
   /**
    * When using objects as `items`, we recommend passing a function that tells Downshift how to extract a string
    * from those objetcs to be used as inputValue
@@ -86,7 +86,7 @@ function _Autocomplete<ItemType>(
     onFilter,
     onSelectItem,
     renderItem,
-    itemToString,
+    itemToString = (item: ItemType) => (item as unknown) as string,
     isInvalid = false,
     isDisabled = false,
     isRequired = false,
@@ -218,7 +218,7 @@ function _Autocomplete<ItemType>(
                   ])}
                   data-test-id="cf-autocomplete-list-item"
                 >
-                  {renderItem(item)}
+                  {renderItem ? renderItem(item) : item}
                 </li>
               );
             })}
