@@ -6637,10 +6637,10 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jest-axe@3.5.1":
-  version "3.5.1"
-  resolved "https://registry.yarnpkg.com/@types/jest-axe/-/jest-axe-3.5.1.tgz#122c3864e361c8d699e60814a6a7f6851101d263"
-  integrity sha512-yelGgELc6iJEPShJ3/XEu6uUr5rCGi/Md0QzMuoo53y0WpR2lyFM3mjdpo8Q+PPd3onHOpIw6BBzEAIU65ZFSA==
+"@types/jest-axe@3.5.2":
+  version "3.5.2"
+  resolved "https://registry.yarnpkg.com/@types/jest-axe/-/jest-axe-3.5.2.tgz#00924237586f49a1a8660ab849d1a6f34dcae1ce"
+  integrity sha512-5esefQ7hTfZ7i5H2ra8n4oiHeI0Uo7ZUI+71R4qosm+ZLabmlHj6sf20KPcM8bgz9xJV4oUwzA+koE/1lkupQQ==
   dependencies:
     "@types/jest" "*"
     axe-core "^3.5.5"
@@ -8248,12 +8248,7 @@ axe-core@^3.5.5:
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-3.5.5.tgz#84315073b53fa3c0c51676c588d59da09a192227"
   integrity sha512-5P0QZ6J5xGikH780pghEdbEKijCTrruK9KxtPZCFWUpef0f6GipO+xEZ5GKCb020mmqgbiNO6TcA55CriL784Q==
 
-axe-core@^4.0.1, axe-core@^4.0.2:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.1.1.tgz#70a7855888e287f7add66002211a423937063eaf"
-  integrity sha512-5Kgy8Cz6LPC9DJcNb3yjAXTu3XihQgEdnIg50c//zOC/MyLP0Clg+Y8Sh9ZjjnvBrDZU4DgXS9C3T9r4/scGZQ==
-
-axe-core@^4.2.0:
+axe-core@^4.0.1, axe-core@^4.0.2, axe-core@^4.2.0:
   version "4.3.2"
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.3.2.tgz#fcf8777b82c62cfc69c7e9f32c0d2226287680e7"
   integrity sha512-5LMaDRWm8ZFPAEdzTYmgjjEdj1YnQcpfrVajO/sn/LhbpGp0Y0H64c2hLZI1gRMxfA+w1S71Uc/nHaOXgcCvGg==
