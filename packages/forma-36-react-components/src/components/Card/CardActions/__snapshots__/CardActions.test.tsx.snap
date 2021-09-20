@@ -88,9 +88,10 @@ exports[`renders the component as disabled 1`] = `
   <button
     aria-expanded="false"
     aria-haspopup="menu"
+    aria-label="Actions"
     class="emotion-2"
     data-node-id="dropdown-trigger-61728000"
-    data-test-id="cf-ui-button"
+    data-test-id="cf-ui-icon-button"
     disabled=""
     type="button"
   >
@@ -204,9 +205,10 @@ exports[`renders the component using a multiple dropdown lists 1`] = `
   <button
     aria-expanded="false"
     aria-haspopup="menu"
+    aria-label="Actions"
     class="emotion-2"
     data-node-id="dropdown-trigger-61728000"
-    data-test-id="cf-ui-button"
+    data-test-id="cf-ui-icon-button"
     type="button"
   >
     <span
@@ -319,9 +321,10 @@ exports[`renders the component using a single dropdown list 1`] = `
   <button
     aria-expanded="false"
     aria-haspopup="menu"
+    aria-label="Actions"
     class="emotion-2"
     data-node-id="dropdown-trigger-61728000"
-    data-test-id="cf-ui-button"
+    data-test-id="cf-ui-icon-button"
     type="button"
   >
     <span
@@ -434,9 +437,10 @@ exports[`renders the component with an additional class name 1`] = `
   <button
     aria-expanded="false"
     aria-haspopup="menu"
+    aria-label="Actions"
     class="my-extra-class emotion-2"
     data-node-id="dropdown-trigger-61728000"
-    data-test-id="cf-ui-button"
+    data-test-id="cf-ui-icon-button"
     type="button"
   >
     <span
@@ -549,9 +553,10 @@ exports[`renders the component with published status 1`] = `
   <button
     aria-expanded="false"
     aria-haspopup="menu"
+    aria-label="Actions"
     class="emotion-2"
     data-node-id="dropdown-trigger-61728000"
-    data-test-id="cf-ui-button"
+    data-test-id="cf-ui-icon-button"
     type="button"
   >
     <span

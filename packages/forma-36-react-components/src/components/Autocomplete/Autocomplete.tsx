@@ -10,7 +10,7 @@ import {
   DropdownProps,
 } from '../Dropdown';
 import { SkeletonBodyText, SkeletonContainer } from '@contentful/f36-skeleton';
-import { Button } from '@contentful/f36-button';
+import { IconButton } from '@contentful/f36-button';
 import { ValidationMessage } from '@contentful/f36-forms';
 import { KEY_CODE } from './utils';
 import styles from './Autocomplete.css';
@@ -220,10 +220,11 @@ export const Autocomplete = <T extends {}>({
           aria-label={props.name}
         />
         <div className={styles.inputIconButton}>
-          <Button
+          <IconButton
             variant="transparent"
             tabIndex={-1}
-            startIcon={
+            aria-label={props.query ? 'Clear' : 'Show list'}
+            icon={
               props.query ? (
                 <CloseIcon aria-label="Clear" />
               ) : (
@@ -270,7 +271,10 @@ export const Autocomplete = <T extends {}>({
         className={dropdownClassNames}
         onClose={() => {
           willClearQueryOnClose && updateQuery('');
-          dispatch({ type: TOGGLED_LIST, payload: false });
+          dispatch({
+            type: TOGGLED_LIST,
+            payload: false,
+          });
         }}
         toggleElement={renderToggleElementFunction(toggleProps)}
         focusContainerOnOpen={false}

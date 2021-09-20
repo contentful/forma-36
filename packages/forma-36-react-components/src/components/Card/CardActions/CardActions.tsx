@@ -2,7 +2,7 @@ import React, { Component, MouseEvent as ReactMouseEvent } from 'react';
 import { MoreHorizontalIcon } from '@contentful/f36-icons';
 import { css, cx } from 'emotion';
 import { Dropdown, DropdownList, DropdownProps } from '../../Dropdown';
-import { ButtonProps, Button } from '@contentful/f36-button';
+import { IconButtonProps, IconButton } from '@contentful/f36-button';
 
 export interface CardActionsProps extends DropdownProps {
   /**
@@ -12,7 +12,7 @@ export interface CardActionsProps extends DropdownProps {
   /**
    * Props to pass down to the IconButton component
    */
-  iconButtonProps?: Partial<ButtonProps<'button'>>;
+  iconButtonProps?: Partial<IconButtonProps>;
   /**
    * A boolean used to disable the actions
    */
@@ -75,11 +75,12 @@ export class CardActions extends Component<CardActionsProps, CardActionsState> {
         isOpen={this.state.isDropdownOpen}
         testId={testId}
         toggleElement={
-          <Button
+          <IconButton
             variant="transparent"
             size="small"
             isDisabled={isDisabled}
-            startIcon={<MoreHorizontalIcon aria-label="Actions" />}
+            aria-label="Actions"
+            icon={<MoreHorizontalIcon aria-label="Actions" />}
             {...iconButtonProps}
             className={cx(
               css({

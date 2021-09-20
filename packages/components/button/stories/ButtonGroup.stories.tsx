@@ -4,7 +4,7 @@ import { ChevronDownIcon, PlusIcon } from '@contentful/f36-icons';
 import { SectionHeading } from '@contentful/f36-typography';
 import { action } from '@storybook/addon-actions';
 import { Box, Flex } from '@contentful/f36-core';
-import { ButtonGroup, Button } from '../src';
+import { ButtonGroup, Button, IconButton } from '../src';
 import type { ButtonGroupProps } from '../src';
 import tokens from '@contentful/f36-tokens';
 
@@ -36,7 +36,11 @@ export const basic: Story<ButtonGroupProps> = (args) => {
       <Button variant="secondary">Button</Button>
       <Button variant="secondary">Button</Button>
       <Button variant="secondary">Button</Button>
-      <Button variant="secondary" startIcon={<ChevronDownIcon />} />
+      <IconButton
+        variant="secondary"
+        icon={<ChevronDownIcon />}
+        aria-label="Open dropdown"
+      />
     </ButtonGroup>
   );
 };
@@ -47,7 +51,11 @@ export const spaced: Story<ButtonGroupProps> = (args) => {
       <Button variant="secondary">Button</Button>
       <Button variant="secondary">Button</Button>
       <Button variant="secondary">Button</Button>
-      <Button variant="secondary" startIcon={<ChevronDownIcon />} />
+      <IconButton
+        variant="secondary"
+        icon={<ChevronDownIcon />}
+        aria-label="Open dropdown"
+      />
     </ButtonGroup>
   );
 };
@@ -78,10 +86,11 @@ export const overview: Story<ButtonGroupProps> = () => {
               <Button onClick={onClick} variant="secondary">
                 Button
               </Button>
-              <Button
+              <IconButton
                 onClick={onClick}
                 variant="secondary"
-                startIcon={<ChevronDownIcon />}
+                icon={<ChevronDownIcon />}
+                aria-label="Open dropdown"
               />
             </ButtonGroup>
           </Box>
@@ -90,10 +99,11 @@ export const overview: Story<ButtonGroupProps> = () => {
               <Button onClick={onClick} variant="positive">
                 Button
               </Button>
-              <Button
+              <IconButton
                 onClick={onClick}
                 variant="positive"
-                startIcon={<ChevronDownIcon />}
+                icon={<ChevronDownIcon />}
+                aria-label="Open dropdown"
               />
             </ButtonGroup>
           </Box>
@@ -106,10 +116,11 @@ export const overview: Story<ButtonGroupProps> = () => {
               >
                 Button
               </Button>
-              <Button
+              <IconButton
                 onClick={onClick}
                 variant="primary"
-                startIcon={<ChevronDownIcon />}
+                icon={<ChevronDownIcon />}
+                aria-label="Open dropdown"
               />
             </ButtonGroup>
           </Box>
