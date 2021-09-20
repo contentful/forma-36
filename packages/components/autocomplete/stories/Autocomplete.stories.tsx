@@ -2,6 +2,7 @@ import React from 'react';
 import type { Meta } from '@storybook/react/types-6-0';
 
 import { Stack } from '@contentful/f36-core';
+import { FormControl } from '@contentful/f36-forms';
 import { Paragraph } from '@contentful/f36-typography';
 
 import { Autocomplete } from '../src/Autocomplete';
@@ -100,5 +101,35 @@ export const MultipleSelection = (args: AutocompleteProps<Fruit>) => {
         </ul>
       </span>
     </Stack>
+  );
+};
+
+export const WithFormControl = () => {
+  const [selectedFruit, setSelectedFruit] = React.useState<Fruit>();
+
+  const handleFilter = (item: Fruit, inputValue: string) =>
+    item.label.toLocaleLowerCase().includes(inputValue.toLocaleLowerCase());
+
+  const handleSelectItem = (item: Fruit) => {
+    setSelectedFruit(item);
+  };
+
+  return (
+    <>
+      <FormControl>
+        <FormControl.Label>Favorite fruit:</FormControl.Label>
+
+        {/* It’s not necessary to pass "Fruit" (type of one item)  */}
+        <Autocomplete<Fruit>
+          items={fruits}
+          onFilter={handleFilter}
+          onSelectItem={handleSelectItem}
+          itemToString={(item) => item.label}
+          renderItem={(item) => <>{item.label}</>}
+        />
+      </FormControl>
+
+      <Paragraph>Selected fruit: {selectedFruit?.label}</Paragraph>
+    </>
   );
 };

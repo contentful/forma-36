@@ -3,14 +3,24 @@ import { cx } from 'emotion';
 import { useCombobox } from 'downshift';
 
 import type { CommonProps } from '@contentful/f36-core';
-import { TextInput } from '@contentful/f36-forms';
+import {
+  TextInput,
+  TextInputProps,
+  useFormControl,
+} from '@contentful/f36-forms';
 import { Button } from '@contentful/f36-button';
 import { CloseIcon, ChevronDownIcon } from '@contentful/f36-icons';
 import { Popover } from '@contentful/f36-popover';
 
 import { getAutocompleteStyles } from './Autocomplete.styles';
 
-export interface AutocompleteProps<ItemType = any> extends CommonProps {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export interface AutocompleteProps<ItemType = any>
+  extends CommonProps,
+    Pick<
+      TextInputProps,
+      'isDisabled' | 'isInvalid' | 'isReadOnly' | 'isRequired' | 'id'
+    > {
   /**
    * It’s an array of data to be used as "options" by the autocomplete component.
    */
@@ -50,10 +60,6 @@ export interface AutocompleteProps<ItemType = any> extends CommonProps {
    * @default "No matches"
    */
   noMatchesMessage?: string;
-  /**
-   * Sets the Autocomplete to disabled state
-   */
-  isDisabled?: boolean;
 }
 
 function _Autocomplete<ItemType>(
@@ -61,18 +67,31 @@ function _Autocomplete<ItemType>(
   ref: React.Ref<HTMLDivElement>,
 ) {
   const {
+    id,
     className,
-    isDisabled = false,
     clearAfterSelect = false,
     items,
     onFilter,
     onSelectItem,
     renderItem,
     itemToString,
+    isInvalid = false,
+    isDisabled = false,
+    isRequired = false,
+    isReadOnly = false,
     noMatchesMessage = 'No Matches',
     placeholder = 'Search',
     testId = 'cf-autocomplete',
   } = props;
+
+  const formProps = useFormControl({
+    id,
+    isInvalid,
+    isDisabled,
+    isRequired,
+    isReadOnly,
+  });
+
   const styles = getAutocompleteStyles();
 
   const [filteredItems, setFilteredItems] = useState(items);
@@ -92,7 +111,6 @@ function _Autocomplete<ItemType>(
     items,
     itemToString,
     onStateChange: ({ inputValue, type, selectedItem }) => {
-      console.log({ type, inputValue, selectedItem });
       switch (type) {
         case useCombobox.stateChangeTypes.InputChange: {
           const newFilteredItems = items.filter((item) =>
@@ -135,9 +153,9 @@ function _Autocomplete<ItemType>(
           <div {...comboboxProps} className={styles.combobox}>
             <TextInput
               {...inputProps}
+              {...formProps}
               testId="cf-autocomplete-input"
               placeholder={placeholder}
-              isDisabled={isDisabled}
             />
             <Button
               {...toggleProps}
