@@ -24,12 +24,22 @@ export interface AutocompleteProps<ItemType = any> extends CommonProps {
    * This is the function that will be called when the user selects one of the "options" in the list.
    * It receives the selected item as an argument and it needs to return a string that will be set as the value of `TextInput`.
    */
-  onSelectItem: (item: ItemType) => string;
+  onSelectItem: (item: ItemType) => void;
   /**
    * This is the function that will be called for each "item" passed in the `items` prop.
    * It receives the "item" as an argument and returns a ReactNode.
    */
   renderItem: (item: ItemType) => React.ReactElement;
+  /**
+   * When using objects as `items`, we recommend passing a function that tells Downshift how to extract a string
+   * from those objetcs to be used as inputValue
+   */
+  itemToString?: (item: ItemType) => string;
+  /**
+   * If this is set to `true` the text input will be cleared after an item is selected
+   * @default false
+   */
+  clearAfterSelect?: boolean;
   /**
    * This is the value will be passed to the `placeholder` prop of the input.
    * @default "Search"
@@ -46,24 +56,27 @@ export interface AutocompleteProps<ItemType = any> extends CommonProps {
   isDisabled?: boolean;
 }
 
-function _Autocomplete<ItemTtype>(
-  props: AutocompleteProps<ItemTtype>,
+function _Autocomplete<ItemType>(
+  props: AutocompleteProps<ItemType>,
   ref: React.Ref<HTMLDivElement>,
 ) {
   const {
     className,
     isDisabled = false,
+    clearAfterSelect = false,
     items,
     onFilter,
     onSelectItem,
     renderItem,
+    itemToString,
     noMatchesMessage = 'No Matches',
     placeholder = 'Search',
     testId = 'cf-autocomplete',
   } = props;
   const styles = getAutocompleteStyles();
 
-  const [inputItems, setInputItems] = useState(items);
+  const [filteredItems, setFilteredItems] = useState(items);
+
   const {
     getComboboxProps,
     getInputProps,
@@ -76,13 +89,32 @@ function _Autocomplete<ItemTtype>(
     inputValue,
     toggleMenu,
   } = useCombobox({
-    items: inputItems,
-    onInputValueChange: ({ inputValue }) => {
-      setInputItems(items.filter((item) => onFilter(item, inputValue)));
-    },
-    onSelectedItemChange: ({ selectedItem }) => {
-      const inputValue = onSelectItem(selectedItem);
-      setInputValue(inputValue);
+    items,
+    itemToString,
+    onStateChange: ({ inputValue, type, selectedItem }) => {
+      console.log({ type, inputValue, selectedItem });
+      switch (type) {
+        case useCombobox.stateChangeTypes.InputChange: {
+          const newFilteredItems = items.filter((item) =>
+            onFilter(item, inputValue),
+          );
+          setFilteredItems(newFilteredItems);
+          break;
+        }
+        case useCombobox.stateChangeTypes.InputKeyDownEnter:
+        case useCombobox.stateChangeTypes.ItemClick:
+          if (selectedItem) {
+            onSelectItem(selectedItem);
+          }
+
+          if (clearAfterSelect) {
+            setInputValue('');
+          }
+
+          break;
+        default:
+          break;
+      }
     },
   });
 
@@ -92,7 +124,11 @@ function _Autocomplete<ItemTtype>(
   const menuProps = getMenuProps();
 
   return (
-    <div data-test-id={testId} className={cx(styles.autocomplete, className)}>
+    <div
+      data-test-id={testId}
+      className={cx(styles.autocomplete, className)}
+      ref={ref}
+    >
       {/* eslint-disable-next-line jsx-a11y/no-autofocus */}
       <Popover usePortal={false} autoFocus={false} isOpen={isOpen}>
         <Popover.Trigger>
@@ -128,13 +164,13 @@ function _Autocomplete<ItemTtype>(
             className={styles.list}
             data-test-id="cf-autocomplete-list"
           >
-            {inputItems.length === 0 && (
+            {filteredItems.length === 0 && (
               <li className={cx(styles.item, styles.disabled)}>
                 {noMatchesMessage}
               </li>
             )}
 
-            {inputItems.map((item, index) => {
+            {filteredItems.map((item, index) => {
               const itemProps = getItemProps({ item, index });
               return (
                 <li
