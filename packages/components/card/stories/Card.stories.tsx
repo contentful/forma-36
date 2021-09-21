@@ -87,7 +87,7 @@ export const SelectableCards: Story<CardProps> = () => {
   );
 };
 
-export const WithLinkAndTarget: Story<CardProps> = (args) => {
+export const WithLinkAndTarget: Story<CardProps<'a'>> = (args) => {
   return (
     <Card {...args}>
       <Text>
@@ -100,6 +100,7 @@ export const WithLinkAndTarget: Story<CardProps> = (args) => {
 };
 
 WithLinkAndTarget.args = {
+  as: 'a',
   href: 'https://f36.contentful.com/',
   target: '_blank',
   title: 'Forma 36',
