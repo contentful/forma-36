@@ -6,7 +6,7 @@ export const getEntityListItemStyles = () => ({
   root: (props: Pick<EntityListItemProps, 'isDragActive'>) =>
     css({
       display: 'flex',
-      borderBottom: `1px solid ${tokens.gray200}`,
+      boxShadow: `inset 0 -1px 0 ${tokens.gray200}`,
       position: 'relative',
       transition: `${tokens.transitionDurationShort} ${tokens.transitionEasingDefault}`,
       transitionProperty: 'box-shadow, background-color',
@@ -65,6 +65,7 @@ export const getEntityListItemStyles = () => ({
   dragHandle: css({
     borderBottomLeftRadius: '0',
     borderTopLeftRadius: '0',
+    boxShadow: `inset 0 -1px 0 ${tokens.gray200}`,
   }),
   menuTrigger: css({
     padding: '0 0.125rem',
