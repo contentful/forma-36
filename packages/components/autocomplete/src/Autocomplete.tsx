@@ -186,7 +186,14 @@ function _Autocomplete<ItemType>(
                   <ChevronDownIcon aria-label="Show list" />
                 )
               }
-              onClick={() => (inputValue ? setInputValue('') : toggleMenu())}
+              onClick={() => {
+                if (inputValue) {
+                  setInputValue('');
+                  setFilteredItems(items);
+                } else {
+                  toggleMenu();
+                }
+              }}
               isDisabled={isDisabled}
               size="small"
             />
