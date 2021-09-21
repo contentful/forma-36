@@ -4,7 +4,14 @@ const { addImport } = require('./addImport');
 
 module.exports.updateIcons = function updateIcons(
   attributes,
-  { j, icons, propertyName = 'icon' },
+  {
+    j,
+    icons,
+    propertyName = 'icon',
+    replaceElement = (j, name) => {
+      return j.jsxElement(j.jsxOpeningElement(j.jsxIdentifier(name), [], true));
+    },
+  },
 ) {
   return updatePropertyValue(attributes, {
     j,
@@ -25,13 +32,7 @@ module.exports.updateIcons = function updateIcons(
         const getValueFor = (key) => {
           const index = key === 'consequent' ? 0 : 1;
           return iconNames[index] !== undefined
-            ? j.jsxElement(
-                j.jsxOpeningElement(
-                  j.jsxIdentifier(iconNames[index]),
-                  [],
-                  true,
-                ),
-              )
+            ? replaceElement(j, iconNames[index])
             : value.expression[key];
         };
         const consequent = getValueFor('consequent');
