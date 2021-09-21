@@ -6,7 +6,7 @@ export const getInlineEntryCardStyles = () => {
     actions: css({
       display: 'flex',
       padding: 0,
-      marginLeft: `calc(1rem * (6 / ${tokens.fontBaseDefault}))`,
+      marginLeft: tokens.spacingXs,
       minHeight: 'auto',
     }),
     root: css({
@@ -16,8 +16,8 @@ export const getInlineEntryCardStyles = () => {
       flexDirection: 'row-reverse',
       paddingBottom: 0,
       paddingTop: 0,
-      paddingLeft: `calc(1rem * (12 / ${tokens.fontBaseDefault}))`,
-      paddingRight: `calc(1rem * (4 / ${tokens.fontBaseDefault}))`,
+      paddingLeft: tokens.spacingS,
+      paddingRight: tokens.spacing2Xs,
     }),
   };
 };

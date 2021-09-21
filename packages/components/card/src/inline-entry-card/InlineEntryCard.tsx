@@ -25,7 +25,7 @@ const generateStyles = ({
       left: 0,
       position: 'absolute',
       top: 0,
-      width: `calc(1rem * (4 / ${tokens.fontBaseDefault}))`,
+      width: tokens.spacing2Xs,
     },
   });
 };
