@@ -113,7 +113,7 @@ export const WithCheckboxGroup = (args: FormControlInternalProps) => {
         )}
       </FormControl>
 
-      <FormControl {...args}>
+      <FormControl as="fieldset" {...args}>
         <FormControl.Label>Burger patty</FormControl.Label>
         <RadioGroup name="burger-patty">
           <Radio
