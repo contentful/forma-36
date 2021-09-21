@@ -6,7 +6,7 @@ export interface UseKeyboardProps {
    * value is a callback function to be called when key matches
    */
   keys: {
-    [key: KeyboardEvent['key']]: (e: KeyboardEvent) => void;
+    [key: string]: (e: KeyboardEvent) => void;
   };
   /**
    * @description defines the attached event type

@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { render, fireEvent, getByText } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 
 import { useKeyboard } from './useKeyboard';
 
@@ -51,14 +51,14 @@ describe('useKeyboard', () => {
   });
 
   it('should trigger handlers correctly', () => {
-    const { container } = render(<ComponentWithRef />);
+    render(<ComponentWithRef />);
 
-    fireEvent.keyDown(getByText(container as HTMLElement, 'Button'), {
+    fireEvent.keyDown(screen.getByRole('button'), {
       key: 'Enter',
     });
     expect(handleEnter).toHaveBeenCalled();
 
-    fireEvent.keyDown(getByText(container as HTMLElement, 'Button'), {
+    fireEvent.keyDown(screen.getByRole('button'), {
       key: 'ArrowUp',
     });
     expect(handleArrowUp).toHaveBeenCalled();
