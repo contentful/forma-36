@@ -1,55 +1,60 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useEffect, useCallback, MutableRefObject } from 'react';
 
 export interface UseKeyboardProps {
   /**
-   * @description defines which element is the event attached to
-   * @default document
+   * @description object of key names and handlers defines which key to look for i.e. `ArrowUp`, `Escape`, `Shift`
+   * value is a callback function to be called when key matches
    */
-  ref?: Document | Window | HTMLElement;
-  /**
-   * @description defines which key to look for i.e. `ArrowUp`, `Escape`, `Shift`
-   */
-  key: KeyboardEvent['key'];
+  keys: {
+    [key: KeyboardEvent['key']]: (e: KeyboardEvent) => void;
+  };
   /**
    * @description defines the attached event type
-   * @default 'keyup'
+   * @default 'keydown'
    */
   event?: 'keyup' | 'keypress' | 'keydown';
+
   /**
-   * @description callback function to be called when key is matched
+   * @description React reference to attach the event to its current element
    */
-  handler?: (e: KeyboardEvent) => void;
+  ref?: MutableRefObject<HTMLElement>;
 }
 
 /**
  *
- * @description hook to attach a handler keyboard event listener with garbage collection
- * @example useKeyboard({key: 'ArrowUp', ref: document, handler: yourHandlerFunction})
- * @returns boolean
+ * @description hook to attach a handler keyboard event listener to `document` or `HTMLElements` with garbage collection
+ * @example
+ * useKeyboard({
+ *  event: 'keydown', // Optional, default is `keydown`
+ *  ref: yourReactRef, // Optional, by default event is attached to document
+ *  keys: {
+ *    ArrowUp: (e) => handleArrowUp(e),
+ *    Tab: (e) => handleTab(e)
+ *  }
+ * })
  */
 export const useKeyboard = (props: UseKeyboardProps) => {
-  const { ref = document, key, event = 'keyup', handler } = props;
-  const [isKey, setIsKey] = useState(false);
+  const { ref, keys, event = 'keydown' } = props;
+  let element: HTMLElement | Document = document;
 
   const handleKeyEvent = useCallback(
     (e) => {
-      if (e.key === key) {
-        setIsKey(true);
-        if (handler) {
-          handler(e);
-        }
+      const isKey = Object.prototype.hasOwnProperty.call(keys, e.key);
+      if (isKey) {
+        keys[e.key](e);
       }
-      setIsKey(false);
     },
-    [key, handler],
+    [keys],
   );
 
   useEffect(() => {
-    ref.addEventListener(event, handleKeyEvent);
-    return () => {
-      ref.removeEventListener(event, handleKeyEvent);
-    };
-  }, [ref, event, handleKeyEvent]);
+    if (ref) {
+      element = ref.current;
+    }
 
-  return isKey;
+    element.addEventListener(event, handleKeyEvent);
+    return () => {
+      element.removeEventListener(event, handleKeyEvent);
+    };
+  }, [element, ref, event, handleKeyEvent]);
 };
