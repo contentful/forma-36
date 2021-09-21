@@ -25,5 +25,5 @@ import {
 const isCondition = true;
 
 <div>
-  <Icon color="primary" as={isCondition ? EditIcon : ChevronUpIcon} />
+  <Icon variant="primary" as={isCondition ? EditIcon : ChevronUpIcon} />
 </div>;

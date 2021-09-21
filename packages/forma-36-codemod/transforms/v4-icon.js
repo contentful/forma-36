@@ -36,6 +36,10 @@ module.exports = function (file, api) {
         },
       });
 
+      // if property icon is static = then remove the property and replace Icon with IconName
+
+      // if property is not static = rename icon={condition ? "Edit" : "Download"} to as={condition ? EditIcon : DownloadIcon}
+
       if (hasProperty(modifiedAttributes, { propertyName: 'icon' })) {
         modifiedAttributes = updateIcons(modifiedAttributes, {
           j,
