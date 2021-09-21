@@ -44,7 +44,10 @@ module.exports = function (file, api) {
         });
 
         // if property icon is static => then remove the property and replace Icon with IconName
-        if (property.value.type === 'Literal') {
+        if (
+          property.value.type === 'Literal' ||
+          property.value.type === 'StringLiteral'
+        ) {
           const icon = property.value.value + 'Icon';
           usedIcons.push(icon);
 
