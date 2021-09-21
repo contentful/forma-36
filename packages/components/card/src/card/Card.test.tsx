@@ -30,20 +30,6 @@ it('renders as an article by default', () => {
   expect(container.firstChild.nodeName).toBe('ARTICLE');
 });
 
-it('calls an onClick function', () => {
-  const onClickFunc = jest.fn();
-  const { container } = render(
-    <Card as="button" onClick={onClickFunc}>
-      Card
-    </Card>,
-  );
-  const element = container.firstChild as Element;
-  userEvent.click(element);
-
-  expect(container.firstChild).toMatchSnapshot();
-  expect(onClickFunc).toHaveBeenCalled();
-});
-
 it('can be selected', () => {
   const output = render(<Card isSelected>Card</Card>);
 

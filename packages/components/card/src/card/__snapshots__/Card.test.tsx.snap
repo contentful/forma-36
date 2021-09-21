@@ -1,54 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`calls an onClick function 1`] = `
-.emotion-0 {
-  grid-column: content;
-  grid-row: content;
-  padding-bottom: 1rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-.emotion-1 {
-  background-color: #ffffff;
-  border-color: #CFD9E0;
-  border-radius: 6px;
-  border-style: solid;
-  border-width: 1px;
-  color: #111B2B;
-  display: grid;
-  grid-template-columns: [dragHandle] auto [content] 1fr;
-  grid-template-rows: [header] auto [content] 1fr;
-  font-size: 0.875rem;
-  font-weight: 400;
-  line-height: 1.25rem;
-  position: relative;
-  -webkit-text-decoration: none;
-  text-decoration: none;
-  -webkit-transition: border-color 0.2s ease-in-out, box-shadow 0.1s ease-in-out;
-  transition: border-color 0.2s ease-in-out, box-shadow 0.1s ease-in-out;
-  padding-top: 1rem;
-  border-color: #036FE3;
-  cursor: pointer;
-  box-shadow: 0px 0px 0px 3px #98CBFF;
-  outline: 0;
-}
-
-<button
-  aria-pressed="false"
-  class="emotion-1"
-  data-test-id="cf-ui-card"
-  role="button"
-  tabindex="0"
->
-  <div
-    class="emotion-0"
-  >
-    Card
-  </div>
-</button>
-`;
-
 exports[`can be selected 1`] = `
 Object {
   "asFragment": [Function],
