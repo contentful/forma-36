@@ -34,6 +34,7 @@
     "@contentful/f36-core": "^4.0.0",
     "@contentful/f36-datetime": "^4.0.0",
     "@contentful/f36-drag-handle": "^4.0.0",
+    "@contentful/f36-entity-list": "^4.0.0",
     "@contentful/f36-forms": "^4.0.0",
     "@contentful/f36-icon": "^4.0.0",
     "@contentful/f36-icons": "^4.0.0",
