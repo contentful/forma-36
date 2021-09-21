@@ -34,6 +34,8 @@ export const Default: Story<IconProps> = (args) => {
 };
 
 export const Overview: Story = () => {
+  const ApisIcon = icons.ApisIcon;
+
   return (
     <>
       <SectionHeading as="h3" marginBottom="spacingS">
@@ -59,6 +61,65 @@ export const Overview: Story = () => {
           );
         })}
       </Grid>
+
+      <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
+        Product icons sizes overview
+      </SectionHeading>
+
+      <Flex
+        padding="spacingS"
+        marginRight="spacingM"
+        alignItems="center"
+        justifyContent="flex-start"
+        flexGrow={0}
+      >
+        <Flex marginRight="spacingM">
+          <ApisIcon size="large" />
+        </Flex>
+        <Flex marginRight="spacingM">
+          <ApisIcon size="medium" />
+        </Flex>
+        <Flex marginRight="spacingM">
+          <ApisIcon size="small" />
+        </Flex>
+        <Flex marginRight="spacingM">
+          <ApisIcon size="tiny" />
+        </Flex>
+      </Flex>
+
+      <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingM">
+        Product icons variants overview
+      </SectionHeading>
+
+      <Flex
+        padding="spacingS"
+        marginRight="spacingM"
+        alignItems="center"
+        justifyContent="flex-start"
+        flexGrow={0}
+      >
+        <Flex marginRight="spacingM">
+          <ApisIcon size="large" variant="positive" />
+        </Flex>
+        <Flex marginRight="spacingM">
+          <ApisIcon size="large" variant="primary" />
+        </Flex>
+        <Flex marginRight="spacingM">
+          <ApisIcon size="large" variant="negative" />
+        </Flex>
+        <Flex marginRight="spacingM">
+          <ApisIcon size="large" variant="warning" />
+        </Flex>
+        <Flex marginRight="spacingM">
+          <ApisIcon size="large" variant="secondary" />
+        </Flex>
+        <Flex marginRight="spacingM">
+          <ApisIcon size="large" variant="muted" />
+        </Flex>
+        <Flex marginRight="spacingM" style={{ backgroundColor: '#000000' }}>
+          <ApisIcon size="large" variant="white" />
+        </Flex>
+      </Flex>
     </>
   );
 };
