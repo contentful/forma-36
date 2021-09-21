@@ -74,6 +74,10 @@ const TRANSFORMS_CHOICES = [
     name: 'v4-tooltip: Converts Tooltip component from Forma v3 to v4',
     value: 'v4-tooltip',
   },
+  {
+    name: 'v4-icon: Converts Icon component from Forma v3 to v4',
+    value: 'v4-icon',
+  },
 ];
 
 module.exports = {
