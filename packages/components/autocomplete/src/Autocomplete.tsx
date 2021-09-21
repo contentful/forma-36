@@ -123,7 +123,7 @@ function _Autocomplete<ItemType>(
     inputValue,
     toggleMenu,
   } = useCombobox({
-    items,
+    items: filteredItems,
     itemToString,
     onStateChange: ({ inputValue, type, selectedItem }) => {
       switch (type) {
