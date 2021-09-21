@@ -11,3 +11,9 @@ import { Icon } from "@contentful/forma-36-react-components";
   <Icon color="muted" icon="Download" />
   <Icon color="white" icon="FolderTrimmed" size="large" />
 </div>;
+
+const isCondition = true;
+
+<div>
+  <Icon color="primary" icon={isCondition ? "Edit" : "ChevronUp"} />
+</div>;

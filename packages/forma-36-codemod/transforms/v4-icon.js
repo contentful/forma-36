@@ -2,6 +2,8 @@ const {
   getComponentLocalName,
   renameProperties,
   hasProperty,
+  getProperty,
+  deleteProperty,
   changeProperties,
   updateIcons,
   addIconImports,
@@ -27,7 +29,7 @@ module.exports = function (file, api) {
 
   source = changeProperties(j, source, {
     componentName,
-    fn(attributes) {
+    fn(attributes, element) {
       let modifiedAttributes = attributes;
 
       modifiedAttributes = renameProperties(modifiedAttributes, {
@@ -37,11 +39,36 @@ module.exports = function (file, api) {
       });
 
       if (hasProperty(modifiedAttributes, { propertyName: 'icon' })) {
-        modifiedAttributes = updateIcons(modifiedAttributes, {
-          j,
-          icons: usedIcons,
+        const property = getProperty(modifiedAttributes, {
           propertyName: 'icon',
         });
+
+        // if property icon is static => then remove the property and replace Icon with IconName
+        if (property.value.type === 'Literal') {
+          const icon = property.value.value + 'Icon';
+          usedIcons.push(icon);
+
+          modifiedAttributes = deleteProperty(modifiedAttributes, {
+            propertyName: 'icon',
+          });
+          element.value.name.name = icon;
+        }
+        // if property icon is dynamic => use "as" property
+        else {
+          modifiedAttributes = updateIcons(modifiedAttributes, {
+            j,
+            icons: usedIcons,
+            propertyName: 'icon',
+            replaceElement: (j, name) => {
+              return j.jsxIdentifier(name);
+            },
+          });
+          modifiedAttributes = renameProperties(modifiedAttributes, {
+            renameMap: {
+              icon: 'as',
+            },
+          });
+        }
       }
 
       return modifiedAttributes;
