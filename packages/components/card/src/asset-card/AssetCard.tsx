@@ -18,10 +18,10 @@ const generateSizeStyles = ({
   size: AssetCardInternalProps['size'];
 }): string => {
   return css({
-    padding:
+    height:
       size === 'small'
-        ? tokens.spacingL
-        : `calc(1rem * (56 / ${tokens.fontBaseDefault}))`,
+        ? `calc(9px * ${tokens.fontBaseDefault})`
+        : `calc(13px * ${tokens.fontBaseDefault})`,
   });
 };
 
@@ -106,7 +106,13 @@ export const AssetCard = ({
         className={generateSizeStyles({ size })}
         justifyContent="center"
       >
-        <Asset src={src} status={status} title={title} type={type} />
+        <Asset
+          className={styles.asset}
+          src={src}
+          status={status}
+          title={title}
+          type={type}
+        />
       </Flex>
     </BaseCard>
   );

@@ -41,7 +41,7 @@ export const Default: Story<Args> = (args) => {
 Default.args = {
   status: 'published',
   type: 'image',
-  src: 'https://via.placeholder.com/100x100',
+  src: 'https://via.placeholder.com/400x400',
   title: 'Asset title',
 };
 
@@ -65,7 +65,7 @@ export const Overview: Story<Args> = () => {
 
           <AssetCard
             icon={icons.ClockIcon}
-            src="https://via.placeholder.com/100x100"
+            src="https://via.placeholder.com/400x400"
             title="Asset title"
             type="image"
           />
@@ -79,7 +79,7 @@ export const Overview: Story<Args> = () => {
           <AssetCard
             actions={actions}
             isHovered
-            src="https://via.placeholder.com/100x100"
+            src="https://via.placeholder.com/400x400"
             title="Asset title"
             type="image"
           />
@@ -92,7 +92,7 @@ export const Overview: Story<Args> = () => {
 
           <AssetCard
             isFocused
-            src="https://via.placeholder.com/100x100"
+            src="https://via.placeholder.com/400x400"
             status="published"
             title="Asset title"
             type="image"
@@ -106,7 +106,7 @@ export const Overview: Story<Args> = () => {
 
           <AssetCard
             isSelected
-            src="https://via.placeholder.com/100x100"
+            src="https://via.placeholder.com/400x400"
             title="Asset title"
             type="image"
           />
@@ -126,7 +126,7 @@ export const Overview: Story<Args> = () => {
           <AssetCard
             icon={icons.ClockIcon}
             size="small"
-            src="https://via.placeholder.com/100x100"
+            src="https://via.placeholder.com/400x400"
             title="Asset title"
             type="image"
           />
@@ -141,7 +141,7 @@ export const Overview: Story<Args> = () => {
             actions={actions}
             isHovered
             size="small"
-            src="https://via.placeholder.com/100x100"
+            src="https://via.placeholder.com/400x400"
             title="Asset title"
             type="image"
           />
@@ -155,7 +155,7 @@ export const Overview: Story<Args> = () => {
           <AssetCard
             isFocused
             size="small"
-            src="https://via.placeholder.com/100x100"
+            src="https://via.placeholder.com/400x400"
             status="published"
             title="Asset title"
             type="image"
@@ -170,7 +170,7 @@ export const Overview: Story<Args> = () => {
           <AssetCard
             isSelected
             size="small"
-            src="https://via.placeholder.com/100x100"
+            src="https://via.placeholder.com/400x400"
             title="Asset title"
             type="image"
           />

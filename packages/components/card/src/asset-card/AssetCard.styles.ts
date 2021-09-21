@@ -3,6 +3,9 @@ import tokens from '@contentful/f36-tokens';
 
 export const getAssetCardStyles = () => {
   return {
+    asset: css({
+      height: '100%',
+    }),
     contentBody: css({
       padding: 0,
     }),
