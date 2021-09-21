@@ -27,7 +27,7 @@ export const getStyles = () => ({
         backgroundColor: tokens.gray100,
         border: 0,
         borderBottomLeftRadius: tokens.borderRadiusMedium,
-        borderRight: `1px solid ${tokens.gray300}`,
+        borderRight: `1px solid ${tokens.gray200}`,
         borderTopLeftRadius: tokens.borderRadiusMedium,
         boxSizing: 'border-box',
         display: 'flex',

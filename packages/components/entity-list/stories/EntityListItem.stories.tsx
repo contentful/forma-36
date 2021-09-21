@@ -1,23 +1,22 @@
 import React from 'react';
-import { DragHandle } from '@contentful/f36-drag-handle';
+import type { Meta, Story } from '@storybook/react/types-6-0';
 
-import { EntityListItem, EntityListItemProps } from './EntityListItem';
+import { EntityList } from '../src';
+import type { EntityListItemProps } from '../src';
+import { DragHandle } from '@contentful/f36-drag-handle';
 import { MenuItem, MenuSectionTitle } from '@contentful/f36-menu';
 
 export default {
   title: 'Components/EntityList/EntityListItem',
-  component: EntityListItem,
-  parameters: {
-    propTypes: [EntityListItem['__docgenInfo']],
-  },
+  component: EntityList.Item,
   argTypes: {
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
   },
-};
+} as Meta;
 
-export const Basic = (args: EntityListItemProps) => (
-  <EntityListItem
+export const Basic: Story<EntityListItemProps> = (args) => (
+  <EntityList.Item
     {...args}
     actions={[
       <MenuSectionTitle key="title">Actions</MenuSectionTitle>,
@@ -39,8 +38,25 @@ Basic.args = {
   status: 'published',
 };
 
-export const withCustomDragHandle = (args: EntityListItemProps) => (
-  <EntityListItem
+export const withDragHandle: Story<EntityListItemProps> = (args) => (
+  <EntityList.Item
+    {...args}
+    actions={[
+      <MenuSectionTitle key="title">Actions</MenuSectionTitle>,
+      <MenuItem key="edit">Edit</MenuItem>,
+      <MenuItem key="download">Download</MenuItem>,
+      <MenuItem key="remove">Remove</MenuItem>,
+    ]}
+    withDragHandle
+  />
+);
+
+withDragHandle.args = {
+  ...Basic.args,
+};
+
+export const withCustomDragHandle: Story<EntityListItemProps> = (args) => (
+  <EntityList.Item
     {...args}
     actions={[
       <MenuSectionTitle key="title">Actions</MenuSectionTitle>,

@@ -3,11 +3,14 @@ title: 'EntityList'
 type: 'component'
 status: 'stable'
 slug: /components/entity-list/
-github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/EntityList'
-storybook: 'https://f36-storybook.contentful.com/?path=/story/components-entitylist-entitylist--default'
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/entity-list'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-entity-list--default'
+typescript: ./src/EntityList.tsx
 ---
 
-The EntityList component is used to wrap EntityListItem components. The EntityListItem component is used to represent lists of entities (entries and assets).
+# EntityList
+
+The EntityList is used to represent lists of entities (entries and assets).
 
 ## Table of contents
 
@@ -16,25 +19,25 @@ The EntityList component is used to wrap EntityListItem components. The EntityLi
 
 ## How to use EntityList
 
-This component should be used in combination with the EntryListItem components, and should be used to entries or assets when in a list context, for example, a multiple entry reference field. It differs from existing EntryCard/AssetCard components as it's intended use is for lists of entities, not individual ones.
+This component should be used in combination with the EntityList.Item component. Its main purpose is to be used to entries or assets when in a list context, for example, a multiple entry reference field. It differs from existing EntryCard/AssetCard components as its intended use is for lists of entities, not individual ones.
 
 ## Code examples
 
 ```jsx
 <EntityList>
-  <EntityListItem
+  <EntityList.Item
     title="Entry 1"
     description="Description"
     contentType="My content type"
     status="published"
   />
-  <EntityListItem
+  <EntityList.Item
     title="Entry 2"
     description="Description"
     contentType="My content type"
     status="draft"
   />
-  <EntityListItem
+  <EntityList.Item
     title="Entry 3"
     description="Description"
     contentType="My content type"
@@ -43,9 +46,11 @@ This component should be used in combination with the EntryListItem components, 
 </EntityList>
 ```
 
+### With actions menu
+
 ```jsx
 <EntityList>
-  <EntityListItem
+  <EntityList.Item
     title="Entry title"
     description="Description"
     contentType="My content type"
@@ -58,7 +63,7 @@ This component should be used in combination with the EntryListItem components, 
       <MenuItem key="remove">Remove</MenuItem>,
     ]}
   />
-  <EntityListItem
+  <EntityList.Item
     title="Other entry title"
     description="Description"
     contentType="My content type"
@@ -73,3 +78,30 @@ This component should be used in combination with the EntryListItem components, 
   />
 </EntityList>
 ```
+
+### With drag handle
+
+```jsx
+<EntityList>
+  <EntityList.Item
+    title="Entry 1"
+    description="Description"
+    contentType="My content type"
+    status="published"
+    withDragHandle
+  />
+  <EntityList.Item
+    title="Entry 2"
+    description="Description"
+    contentType="My content type"
+    status="draft"
+    withDragHandle
+  />
+</EntityList>
+```
+
+## Props of EntityList
+
+import { Props } from '@contentful/f36-docs-utils';
+
+<Props of="EntityListItem" />
