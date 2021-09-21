@@ -148,7 +148,7 @@ export const WithFormControl = () => {
 
   return (
     <>
-      <FormControl>
+      <FormControl isInvalid>
         <FormControl.Label>Favorite fruit:</FormControl.Label>
 
         {/* It’s not necessary to pass "Fruit" (type of one item)  */}
@@ -159,6 +159,10 @@ export const WithFormControl = () => {
           itemToString={(item) => item.name}
           renderItem={(item) => <>{item.name}</>}
         />
+
+        <FormControl.ValidationMessage>
+          Error message
+        </FormControl.ValidationMessage>
       </FormControl>
 
       <Paragraph>Selected fruit: {selectedFruit?.name}</Paragraph>

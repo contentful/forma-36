@@ -8,7 +8,7 @@ import {
   TextInputProps,
   useFormControl,
 } from '@contentful/f36-forms';
-import { Button } from '@contentful/f36-button';
+import { IconButton } from '@contentful/f36-button';
 import { CloseIcon, ChevronDownIcon } from '@contentful/f36-icons';
 import { Popover } from '@contentful/f36-popover';
 
@@ -87,10 +87,10 @@ function _Autocomplete<ItemType>(
     onSelectItem,
     renderItem,
     itemToString = (item: ItemType) => (item as unknown) as string,
-    isInvalid = false,
-    isDisabled = false,
-    isRequired = false,
-    isReadOnly = false,
+    isInvalid,
+    isDisabled,
+    isRequired,
+    isReadOnly,
     noMatchesMessage = 'No Matches',
     placeholder = 'Search',
     inputRef,
@@ -173,7 +173,7 @@ function _Autocomplete<ItemType>(
               testId="cf-autocomplete-input"
               placeholder={placeholder}
             />
-            <Button
+            <IconButton
               {...toggleProps}
               ref={mergeRefs(toggleProps.ref, toggleRef)}
               aria-label="toggle menu"
