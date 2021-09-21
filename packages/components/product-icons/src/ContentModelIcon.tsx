@@ -2,7 +2,7 @@ import React from 'react';
 import { generateIcon } from '@contentful/f36-icon';
 
 export const ContentModelIcon = generateIcon({
-  name: 'Apps',
+  name: 'ContentModelIcon',
   viewBox: '0 0 24 24',
   path: (
     <>

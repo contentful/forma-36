@@ -2,7 +2,7 @@ import React from 'react';
 import { generateIcon } from '@contentful/f36-icon';
 
 export const OrganizationsIcon = generateIcon({
-  name: 'OauthIcon',
+  name: 'OrganizationsIcon',
   viewBox: '0 0 24 24',
   path: (
     <>
