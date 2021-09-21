@@ -1,7 +1,6 @@
 import { cx, css } from 'emotion';
 import React, { forwardRef, useCallback, useState } from 'react';
 import type {
-  AnchorHTMLAttributes,
   FocusEventHandler,
   KeyboardEventHandler,
   MouseEvent,
