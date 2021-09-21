@@ -14,23 +14,28 @@ export const GlobalStyles = ({
         ${withNormalize ? emotionNormalize : undefined};
 
         html {
+          border: 0;
           box-sizing: border-box;
           margin: 0;
-          margin: 0;
-          padding: 0;
-          border: 0;
           min-height: 100%;
+          padding: 0;
         }
 
         body {
-          font-size: ${tokens.fontSizeM};
-          font-family: ${tokens.fontStackPrimary};
           color: ${tokens.gray800};
+          font-family: ${tokens.fontStackPrimary};
+          font-size: ${tokens.fontSizeM};
           line-height: ${tokens.lineHeightM};
         }
 
         code {
           font-family: ${tokens.fontStackMonospace};
+        }
+
+        fieldset {
+          border: 0;
+          margin: 0;
+          padding: 0;
         }
 
         *,
