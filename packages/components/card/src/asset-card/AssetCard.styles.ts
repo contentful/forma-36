@@ -23,17 +23,17 @@ export const getAssetCardStyles = () => {
       gridColumn: 'content',
       gridRow: 'header',
       lineHeight: tokens.lineHeightM,
-      paddingBottom: `calc(1rem * (10 / ${tokens.fontBaseDefault}))`,
+      paddingBottom: tokens.spacingXs,
       paddingLeft: tokens.spacingM,
       paddingRight: tokens.spacingM,
-      paddingTop: `calc(1rem * (10 / ${tokens.fontBaseDefault}))`,
+      paddingTop: tokens.spacingXs,
     }),
     headerItem: css({
-      marginLeft: `calc(1rem * (10 / ${tokens.fontBaseDefault}))`,
+      marginLeft: tokens.spacingXs,
     }),
     headerWithActions: css({
       paddingBottom: 0,
-      paddingRight: 0,
+      paddingRight: tokens.spacingXs,
       paddingTop: 0,
     }),
     root: css({

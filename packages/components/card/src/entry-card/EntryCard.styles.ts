@@ -21,9 +21,9 @@ export const getEntryCardStyles = () => {
       borderBottomColor: tokens.gray200,
       borderBottomStyle: 'solid',
       minHeight: 'auto',
-      paddingBottom: `calc(1rem * (10 / ${tokens.fontBaseDefault}))`,
+      paddingBottom: tokens.spacingXs,
       paddingLeft: tokens.spacingM,
-      paddingRight: `calc(1rem * (10 / ${tokens.fontBaseDefault}))`,
+      paddingRight: tokens.spacingXs,
     }),
     thumbnail: css({
       height: `calc(1rem * (40 / ${tokens.fontBaseDefault}))`,

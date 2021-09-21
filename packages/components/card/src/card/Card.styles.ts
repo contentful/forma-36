@@ -14,7 +14,7 @@ export const getCardStyles = () => {
     }),
     headerWithActions: css({
       alignItems: 'flex-end',
-      paddingRight: 0,
+      paddingRight: tokens.spacingXs,
       paddingTop: tokens.spacingXs,
     }),
   };
