@@ -32,7 +32,7 @@ export const getEntityStatusStyles = ({ status }: { status: EntityStatus }) => {
         backgroundColor: tokens.colorPrimary,
       };
     default:
-      console.log(`Unknown EntityStatus: ${status}`);
+      console.warn(`Unknown EntityStatus: ${status}`);
       return {};
   }
 };
