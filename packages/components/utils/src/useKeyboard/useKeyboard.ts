@@ -48,7 +48,7 @@ export const useKeyboard = (props: UseKeyboardProps) => {
   );
 
   useEffect(() => {
-    if (ref) {
+    if (ref && ref.current) {
       element = ref.current;
     }
 
@@ -56,5 +56,5 @@ export const useKeyboard = (props: UseKeyboardProps) => {
     return () => {
       element.removeEventListener(event, handleKeyEvent);
     };
-  }, [ref, event, handleKeyEvent]);
+  }, [event, handleKeyEvent]);
 };
