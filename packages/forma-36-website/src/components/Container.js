@@ -109,9 +109,12 @@ const markToComponentMap = {
 };
 /* eslint-enable react/display-name */
 
-export default function Container(data) {
-  const { frontmatter, children, dataFromReadme, propsMetadata } = data;
-
+export default function Container({
+  children,
+  dataFromReadme,
+  frontmatter,
+  propsMetadata,
+}) {
   const contentClassName =
     frontmatter?.type === 'home' ? styles.homePageContent : styles.pageContent;
 
@@ -137,4 +140,7 @@ export default function Container(data) {
 
 Container.propTypes = {
   children: PropTypes.node,
+  dataFromReadme: PropTypes.string,
+  frontmatter: PropTypes.object,
+  propsMetadata: PropTypes.object,
 };
