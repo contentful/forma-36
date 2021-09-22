@@ -227,7 +227,9 @@ function _BaseCard<E extends React.ElementType = typeof DEFAULT_TAG>(
   return (
     <Box
       aria-label={title || ariaLabel}
-      aria-pressed={onClick ? (isSelected ? 'true' : 'false') : undefined}
+      aria-pressed={
+        otherProps.as === 'button' ? (isSelected ? 'true' : 'false') : undefined
+      }
       as={DEFAULT_TAG}
       className={cx(
         styles.root({

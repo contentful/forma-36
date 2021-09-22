@@ -32,7 +32,6 @@ function _Card<E extends React.ElementType = typeof DEFAULT_TAG>(
   {
     actions,
     badge,
-    className,
     icon,
     padding = 'default',
     title,
