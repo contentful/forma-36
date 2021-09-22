@@ -11,6 +11,7 @@ module.exports = pipe([
       required: 'isRequired',
       labelText: 'aria-label',
       readOnly: 'isReadOnly',
+      width: null,
     },
   }),
   modifyPropsCodemod({
@@ -22,6 +23,7 @@ module.exports = pipe([
       required: 'isRequired',
       labelText: 'aria-label',
       readOnly: 'isReadOnly',
+      width: null,
     },
   }),
 ]);
