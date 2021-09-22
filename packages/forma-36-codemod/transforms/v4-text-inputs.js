@@ -1,6 +1,5 @@
 const { modifyPropsCodemod } = require('./common/modify-props-codemod');
 const { pipe } = require('./common/pipe');
-const _ = require('lodash');
 const { renameProperties, hasProperty } = require('../utils');
 
 const checkControlledOrUncontrolled = (attributes) => {
