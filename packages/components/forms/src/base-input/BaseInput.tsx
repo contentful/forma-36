@@ -54,12 +54,18 @@ function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
   } = props;
   const styles = getInputStyles({ as, isDisabled, isInvalid, size });
 
-  const handleFocus = (e: FocusEvent) => {
-    e.persist();
-    if (isDisabled || isReadOnly) {
-      (e.target as HTMLInputElement).select();
-    }
-  };
+  const handleFocus = useCallback(
+    (e: FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      e.persist();
+      if (isDisabled || isReadOnly) {
+        (e.target as HTMLInputElement).select();
+      }
+      if (onFocus) {
+        onFocus(e);
+      }
+    },
+    [isDisabled, isReadOnly, onFocus],
+  );
 
   const handleChange = useCallback(
     (e: ChangeEvent<HTMLInputElement>) => {
