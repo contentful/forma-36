@@ -57,11 +57,11 @@ export const _TextInput = (
   const input = (inputClass?: string) => {
     return (
       <BaseInput
+        type="text"
         {...otherProps}
         {...formProps}
         testId={testId}
         ref={textInputRef}
-        type="text"
         onChange={onChange}
         as="input"
         className={inputClass}
