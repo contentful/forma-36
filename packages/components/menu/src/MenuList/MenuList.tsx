@@ -8,7 +8,7 @@ import { MenuListHeader } from './MenuListHeader';
 import { MenuListFooter } from './MenuListFooter';
 
 interface MenuListInternalProps extends CommonProps {
-  children?: React.ReactNodeArray;
+  children?: React.ReactNodeArray | React.ReactNode;
 }
 
 function assertChild(child: any): child is { type: { displayName: string } } {
