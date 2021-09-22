@@ -208,5 +208,19 @@ export const Overview = () => (
         size="small"
       />
     </Flex>
+
+    <SectionHeading as="h3" marginBottom="spacingS">
+      Number input
+    </SectionHeading>
+
+    <Flex marginBottom="spacingL">
+      <TextInput
+        name="Example name 12"
+        id="input-12"
+        type="number"
+        placeholder="Number input"
+        size="small"
+      />
+    </Flex>
   </Flex>
 );

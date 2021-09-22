@@ -78,6 +78,11 @@ const TRANSFORMS_CHOICES = [
     name: 'v4-icon: Converts Icon component from Forma v3 to v4',
     value: 'v4-icon',
   },
+  {
+    name:
+      'v4-text-inputs: Converts TextInput and Textarea components from Forma v3 to v4',
+    value: 'v4-text-inputs',
+  },
 ];
 
 module.exports = {
