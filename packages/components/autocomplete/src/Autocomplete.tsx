@@ -39,7 +39,7 @@ export interface AutocompleteProps<ItemType = any>
    * This is the function that will be called for each "item" passed in the `items` prop.
    * It receives the "item" as an argument and returns a ReactNode.
    */
-  renderItem?: (item: ItemType) => React.ReactElement;
+  renderItem?: (item: ItemType) => React.ReactNode;
   /**
    * When using objects as `items`, we recommend passing a function that tells Downshift how to extract a string
    * from those objetcs to be used as inputValue
