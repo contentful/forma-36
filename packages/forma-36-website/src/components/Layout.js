@@ -96,9 +96,9 @@ export default function Layout({ location, pageContext, children }) {
           currentPath={location?.pathname}
         />
         <Container
-          frontmatter={pageContext && pageContext.frontmatter}
-          dataFromReadme={pageContext && pageContext.body}
-          propsMetadata={pageContext && pageContext.propsMetadata}
+          frontmatter={pageContext.frontmatter}
+          dataFromReadme={pageContext.body}
+          propsMetadata={pageContext.propsMetadata}
         >
           {children}
         </Container>

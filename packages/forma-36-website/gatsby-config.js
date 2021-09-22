@@ -272,10 +272,6 @@ module.exports = {
             link: '/components/icon-button/',
           },
           {
-            name: 'Illustration',
-            link: '/components/illustration/',
-          },
-          {
             name: 'List',
             link: '/components/list/',
           },
