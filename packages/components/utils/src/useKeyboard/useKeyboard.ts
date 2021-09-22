@@ -56,5 +56,5 @@ export const useKeyboard = (props: UseKeyboardProps) => {
     return () => {
       element.removeEventListener(event, handleKeyEvent);
     };
-  }, [element, ref, event, handleKeyEvent]);
+  }, [ref, event, handleKeyEvent]);
 };
