@@ -3,11 +3,7 @@ import { cx } from 'emotion';
 import { useCombobox } from 'downshift';
 
 import { CommonProps, mergeRefs } from '@contentful/f36-core';
-import {
-  TextInput,
-  TextInputProps,
-  useFormControl,
-} from '@contentful/f36-forms';
+import { TextInput, TextInputProps } from '@contentful/f36-forms';
 import { IconButton } from '@contentful/f36-button';
 import { CloseIcon, ChevronDownIcon } from '@contentful/f36-icons';
 import { Popover } from '@contentful/f36-popover';
@@ -99,14 +95,6 @@ function _Autocomplete<ItemType>(
     testId = 'cf-autocomplete',
   } = props;
 
-  const formProps = useFormControl({
-    id,
-    isInvalid,
-    isDisabled,
-    isRequired,
-    isReadOnly,
-  });
-
   const styles = getAutocompleteStyles();
 
   const [filteredItems, setFilteredItems] = useState(items);
@@ -152,7 +140,11 @@ function _Autocomplete<ItemType>(
   });
 
   const comboboxProps = getComboboxProps();
-  const inputProps = getInputProps();
+  const {
+    'aria-labelledby': _labelledby,
+    id: _inputId,
+    ...inputProps
+  } = getInputProps();
   const toggleProps = getToggleButtonProps();
   const menuProps = getMenuProps();
 
@@ -168,7 +160,11 @@ function _Autocomplete<ItemType>(
           <div {...comboboxProps} className={styles.combobox}>
             <TextInput
               {...inputProps}
-              {...formProps}
+              id={id}
+              isInvalid={isInvalid}
+              isDisabled={isDisabled}
+              isRequired={isRequired}
+              isReadOnly={isReadOnly}
               ref={mergeRefs(inputProps.ref, inputRef)}
               testId="cf-autocomplete-input"
               placeholder={placeholder}
