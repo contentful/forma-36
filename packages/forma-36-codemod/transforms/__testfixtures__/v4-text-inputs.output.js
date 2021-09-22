@@ -6,24 +6,39 @@ import { TextInput, Textarea } from "@contentful/f36-components";
   id="someInput"
   name="userEmail"
   aria-label="userEmail"
-  className="my-extra-class" />;
+  className="my-extra-class"
+  defaultValue="some value" />;
 
 <TextInput
   id="someInput"
   name="userEmail"
   aria-label="userEmail"
   isDisabled
-  isRequired />;
+  isRequired
+  value="some value"
+  onChange={() => {}} />;
 
 <TextInput
   id="someInput"
   name="userEmail"
   aria-label="userEmail"
   isInvalid
-  isReadOnly />;
+  isReadOnly
+  onChange={() => {}} />;
 
 <TextInput id="someInput" name="userEmail" aria-label="userEmail" withCopyButton />;
 
-<Textarea id="someInput" name="userEmail" className="my-extra-class" isDisabled />;
+<Textarea
+  id="someInput"
+  name="userEmail"
+  className="my-extra-class"
+  isDisabled
+  defaultValue="some value" />;
 
-<Textarea id="someInput" name="userEmail" className="my-extra-class" isInvalid />;
+<Textarea
+  id="someInput"
+  name="userEmail"
+  className="my-extra-class"
+  isInvalid
+  value="some value"
+  onChange={() => {}} />;

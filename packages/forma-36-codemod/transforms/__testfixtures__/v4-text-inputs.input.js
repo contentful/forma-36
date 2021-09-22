@@ -6,6 +6,7 @@ import { TextInput, Textarea } from '@contentful/forma-36-react-components';
   name="userEmail"
   labelText="userEmail"
   className="my-extra-class"
+  value="some value"
 />;
 
 <TextInput
@@ -14,6 +15,8 @@ import { TextInput, Textarea } from '@contentful/forma-36-react-components';
   labelText="userEmail"
   disabled
   required
+  value="some value"
+  onChange={() => {}}
 />;
 
 <TextInput
@@ -23,6 +26,7 @@ import { TextInput, Textarea } from '@contentful/forma-36-react-components';
   error
   readOnly
   width="large"
+  onChange={() => {}}
 />;
 
 <TextInput
@@ -38,6 +42,7 @@ import { TextInput, Textarea } from '@contentful/forma-36-react-components';
   name="userEmail"
   className="my-extra-class"
   disabled
+  value="some value"
 />;
 
 <Textarea
@@ -46,4 +51,6 @@ import { TextInput, Textarea } from '@contentful/forma-36-react-components';
   className="my-extra-class"
   error
   width="large"
+  value="some value"
+  onChange={() => {}}
 />;
