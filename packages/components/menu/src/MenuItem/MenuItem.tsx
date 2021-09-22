@@ -6,7 +6,6 @@ import {
   PolymorphicProps,
 } from '@contentful/f36-core';
 import { useMenuContext } from '../MenuContext';
-import { TextLink } from '@contentful/f36-text-link';
 import { useId } from '@contentful/f36-core';
 import { getMenuItemStyles } from './MenuItem.styles';
 
@@ -31,11 +30,7 @@ function _MenuItem<E extends React.ElementType = typeof DEFAULT_TAG>(
 
   const { getMenuItemProps } = useMenuContext();
 
-  let Element: React.ElementType = props.as ?? DEFAULT_TAG;
-
-  if (Element === 'a') {
-    Element = TextLink;
-  }
+  const Element: React.ElementType = props.as ?? DEFAULT_TAG;
 
   return (
     <Element
