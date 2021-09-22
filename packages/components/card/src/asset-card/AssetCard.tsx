@@ -1,6 +1,5 @@
 import React from 'react';
-import { css, cx } from 'emotion';
-import tokens from '@contentful/f36-tokens';
+import { cx } from 'emotion';
 import { Flex } from '@contentful/f36-core';
 import { EntityStatusBadge } from '@contentful/f36-badge';
 import { Asset } from '@contentful/f36-asset';
@@ -11,33 +10,6 @@ import { BaseCard } from '../base-card/BaseCard';
 import type { BaseCardInternalProps } from '../base-card/BaseCard';
 import { CardActions } from '../base-card/CardActions';
 import { getAssetCardStyles } from './AssetCard.styles';
-
-const generateSizeStyles = ({
-  size,
-}: {
-  size: AssetCardInternalProps['size'];
-}): string => {
-  return css({
-    height:
-      size === 'small'
-        ? `calc(9px * ${tokens.fontBaseDefault})`
-        : `calc(13px * ${tokens.fontBaseDefault})`,
-  });
-};
-
-const generateStateStyles = ({
-  isSelected,
-}: {
-  isSelected: AssetCardInternalProps['isSelected'];
-}): string => {
-  if (isSelected) {
-    return css({
-      backgroundColor: tokens.colorWhite,
-      borderColor: tokens.blue500,
-      boxShadow: `0 0 0 1px ${tokens.gray300}`,
-    });
-  }
-};
 
 export interface AssetCardInternalProps
   extends Omit<BaseCardInternalProps, 'badge' | 'header' | 'padding' | 'ref'> {
@@ -90,11 +62,7 @@ export const AssetCard = ({
     <BaseCard
       {...otherProps}
       badge={badge}
-      className={cx(
-        styles.root,
-        className,
-        generateStateStyles({ isSelected }),
-      )}
+      className={cx(styles.root({ isSelected }), className)}
       header={header}
       isSelected={isSelected}
       contentBodyProps={{ className: styles.contentBody }}
@@ -103,7 +71,7 @@ export const AssetCard = ({
     >
       <Flex
         alignItems="center"
-        className={generateSizeStyles({ size })}
+        className={styles.sizeWrapper({ size })}
         justifyContent="center"
       >
         <Asset

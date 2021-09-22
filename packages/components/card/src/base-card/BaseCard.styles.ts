@@ -1,4 +1,5 @@
 import { css } from 'emotion';
+import type { ObjectInterpolation } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 
 export const getBaseCardStyles = () => {
@@ -44,23 +45,48 @@ export const getBaseCardStyles = () => {
       paddingRight: tokens.spacingXs,
       paddingTop: 0,
     }),
-    root: css({
-      backgroundColor: tokens.colorWhite,
-      borderColor: tokens.gray300,
-      borderRadius: tokens.borderRadiusMedium,
-      borderStyle: 'solid',
-      borderWidth: 1,
-      color: tokens.gray900,
-      display: 'grid',
-      gridTemplateColumns: '[dragHandle] auto [content] 1fr',
-      gridTemplateRows: '[header] auto [content] 1fr',
-      fontSize: tokens.fontSizeM,
-      fontWeight: tokens.fontWeightNormal,
-      lineHeight: tokens.lineHeightM,
-      position: 'relative',
-      textDecoration: 'none',
-      transition: `border-color ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault},
+    root: ({ hasHeader, isFocused, isHovered, isSelected }) => {
+      const styles: ObjectInterpolation<undefined> = {
+        backgroundColor: tokens.colorWhite,
+        borderColor: tokens.gray300,
+        borderRadius: tokens.borderRadiusMedium,
+        borderStyle: 'solid',
+        borderWidth: 1,
+        color: tokens.gray900,
+        display: 'grid',
+        gridTemplateColumns: '[dragHandle] auto [content] 1fr',
+        gridTemplateRows: '[header] auto [content] 1fr',
+        fontSize: tokens.fontSizeM,
+        fontWeight: tokens.fontWeightNormal,
+        lineHeight: tokens.lineHeightM,
+        position: 'relative',
+        textDecoration: 'none',
+        transition: `border-color ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault},
     box-shadow ${tokens.transitionDurationShort} ${tokens.transitionEasingDefault}`,
-    }),
+      };
+
+      if (!hasHeader) {
+        styles.paddingTop = tokens.spacingM;
+      }
+
+      if (isHovered) {
+        styles.borderColor = tokens.colorPrimary;
+        styles.cursor = 'pointer';
+      }
+
+      if (isFocused) {
+        styles.borderColor = tokens.colorPrimary;
+        styles.boxShadow = tokens.glowPrimary;
+        styles.outline = 0;
+      }
+
+      if (isSelected) {
+        styles.backgroundColor = tokens.blue100;
+        styles.borderColor = tokens.colorPrimary;
+        styles.boxShadow = tokens.glowPrimary;
+      }
+
+      return css(styles);
+    },
   };
 };

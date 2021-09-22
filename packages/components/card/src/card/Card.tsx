@@ -1,6 +1,5 @@
 import React, { forwardRef } from 'react';
-import { css, cx } from 'emotion';
-import type { ObjectInterpolation } from 'emotion';
+import { cx } from 'emotion';
 import type {
   PolymorphicComponent,
   PolymorphicProps,
@@ -8,26 +7,12 @@ import type {
 import { Heading } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
 import { Icon } from '@contentful/f36-icon';
-import tokens from '@contentful/f36-tokens';
 
 import { BaseCard, DEFAULT_TAG } from '../base-card/BaseCard';
 import type { BaseCardInternalProps } from '../base-card/BaseCard';
 import { CardActions } from '../base-card/CardActions';
 import { getCardStyles } from './Card.styles';
 import { getBaseCardStyles } from '../base-card/BaseCard.styles';
-
-const generateHeaderPaddingStyles = ({ actions, padding }) => {
-  const styles: ObjectInterpolation<undefined> = {
-    padding: padding === 'large' ? tokens.spacingL : tokens.spacingM,
-  };
-
-  if (actions) {
-    styles.paddingTop =
-      padding === 'large' ? tokens.spacingM : tokens.spacingXs;
-  }
-
-  return css(styles);
-};
 
 export type CardInternalProps = Omit<
   BaseCardInternalProps,
@@ -61,9 +46,8 @@ function _Card<E extends React.ElementType = typeof DEFAULT_TAG>(
   const header = (
     <Flex
       className={cx(
-        styles.header,
-        actions && styles.headerWithActions,
-        generateHeaderPaddingStyles({ actions, padding }),
+        styles.header({ padding }),
+        actions && styles.headerWithActions({ padding }),
       )}
     >
       {title && (

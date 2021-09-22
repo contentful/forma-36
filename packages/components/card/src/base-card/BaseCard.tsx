@@ -1,4 +1,4 @@
-import { cx, css } from 'emotion';
+import { cx } from 'emotion';
 import React, { forwardRef, useCallback, useState } from 'react';
 import type {
   FocusEventHandler,
@@ -8,7 +8,6 @@ import type {
   ReactElement,
   ReactNode,
 } from 'react';
-import tokens from '@contentful/f36-tokens';
 import { Box, Flex } from '@contentful/f36-core';
 import type {
   CommonProps,
@@ -19,49 +18,11 @@ import type {
 import { Icon, IconComponent } from '@contentful/f36-icon';
 import type { ButtonProps } from '@contentful/f36-button';
 import { DragHandle } from '@contentful/f36-drag-handle';
-import type { ObjectInterpolation } from '@emotion/serialize';
 
 import { getBaseCardStyles } from './BaseCard.styles';
 import { CardActions } from './CardActions';
 
 export const DEFAULT_TAG = 'article';
-
-const generateCardStyles = ({
-  hasHeader,
-  isFocused,
-  isHovered,
-  isSelected,
-}: {
-  hasHeader: boolean;
-  isFocused: boolean;
-  isHovered: boolean;
-  isSelected: boolean;
-}) => {
-  const styles: ObjectInterpolation<undefined> = {};
-
-  if (!hasHeader) {
-    styles.paddingTop = tokens.spacingM;
-  }
-
-  if (isHovered) {
-    styles.borderColor = tokens.colorPrimary;
-    styles.cursor = 'pointer';
-  }
-
-  if (isFocused) {
-    styles.borderColor = tokens.colorPrimary;
-    styles.boxShadow = tokens.glowPrimary;
-    styles.outline = 0;
-  }
-
-  if (isSelected) {
-    styles.backgroundColor = tokens.blue100;
-    styles.borderColor = tokens.colorPrimary;
-    styles.boxShadow = tokens.glowPrimary;
-  }
-
-  return css(styles);
-};
 
 export type CardElement = 'a' | 'article' | 'button' | 'div';
 
@@ -269,8 +230,7 @@ function _BaseCard<E extends React.ElementType = typeof DEFAULT_TAG>(
       aria-pressed={onClick ? (isSelected ? 'true' : 'false') : undefined}
       as={DEFAULT_TAG}
       className={cx(
-        styles.root,
-        generateCardStyles({
+        styles.root({
           hasHeader,
           isFocused,
           isHovered,
