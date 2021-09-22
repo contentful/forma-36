@@ -51,7 +51,7 @@ export const useKeyboard = (props: UseKeyboardProps) => {
     if (ref && ref.current) {
       element = ref.current;
     }
-
+    console.log(element);
     element.addEventListener(event, handleKeyEvent);
     return () => {
       element.removeEventListener(event, handleKeyEvent);
