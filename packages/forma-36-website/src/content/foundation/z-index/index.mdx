@@ -6,6 +6,7 @@ import zIndexTokens from '@contentful/f36-tokens/src/tokens/z-index';
 
 import {
   Table,
+  Box,
   TableHead,
   TableBody,
   TableCell,
@@ -16,30 +17,32 @@ import {
 
 Z-index tokens are used to set the z order layering of elements.
 
-<Table className="f36-margin-bottom--l">
-  <TableHead>
-    <TableRow>
-      <TableCell>Token</TableCell>
-      <TableCell>CSS Variable</TableCell>
-      <TableCell>Value</TableCell>
-    </TableRow>
-  </TableHead>
-  <TableBody>
-    {Object.keys(zIndexTokens).map((token) => {
-      const value = zIndexTokens[token];
-      return (
-        <TableRow key={token}>
-          <TableCell>
-            <span>{token}</span>
-          </TableCell>
-          <TableCell>
-            <pre>--{token}</pre>
-          </TableCell>
-          <TableCell>
-            <pre>{value}</pre>
-          </TableCell>
-        </TableRow>
-      );
-    })}
-  </TableBody>
-</Table>
+<Box marginBottom="spacingL">
+  <Table>
+    <TableHead>
+      <TableRow>
+        <TableCell>Token</TableCell>
+        <TableCell>CSS Variable</TableCell>
+        <TableCell>Value</TableCell>
+      </TableRow>
+    </TableHead>
+    <TableBody>
+      {Object.keys(zIndexTokens).map((token) => {
+        const value = zIndexTokens[token];
+        return (
+          <TableRow key={token}>
+            <TableCell>
+              <span>{token}</span>
+            </TableCell>
+            <TableCell>
+              <pre>--{token}</pre>
+            </TableCell>
+            <TableCell>
+              <pre>{value}</pre>
+            </TableCell>
+          </TableRow>
+        );
+      })}
+    </TableBody>
+  </Table>
+</Box>

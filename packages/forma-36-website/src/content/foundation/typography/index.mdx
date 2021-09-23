@@ -12,6 +12,7 @@ import fontStackTokens from '@contentful/f36-tokens/src/tokens/typography/font-s
 import letterSpacingTokens from '@contentful/f36-tokens/src/tokens/typography/letter-spacing';
 
 import {
+  Box,
   Card,
   Typography,
   Text,
@@ -44,39 +45,41 @@ Forma 36 uses system UI fonts. System UI fonts refer to the fonts used to render
 
 ### Tokens
 
-<Table className="f36-margin-bottom--l">
-  <TableHead>
-    <TableRow>
-      <TableCell>Token</TableCell>
-      <TableCell>Example</TableCell>
-      <TableCell>CSS Variable</TableCell>
-      <TableCell>Value</TableCell>
-    </TableRow>
-  </TableHead>
-  <TableBody>
-    {Object.keys(fontStackTokens).map((token) => {
-      const value = fontStackTokens[token];
-      return (
-        <TableRow key={token}>
-          <TableCell>{token}</TableCell>
-          <TableCell>
-            <div style={{ fontFamily: value }}>
-              Manage content better with infrastructure. It’s the cure for the
-              common CMS. Update once and publish everywhere, so teams build
-              digital products faster.
-            </div>
-          </TableCell>
-          <TableCell>
-            <pre>--{token}</pre>
-          </TableCell>
-          <TableCell>
-            <pre>{value}</pre>
-          </TableCell>
-        </TableRow>
-      );
-    })}
-  </TableBody>
-</Table>
+<Box marginBottom="spacingL">
+  <Table>
+    <TableHead>
+      <TableRow>
+        <TableCell>Token</TableCell>
+        <TableCell>Example</TableCell>
+        <TableCell>CSS Variable</TableCell>
+        <TableCell>Value</TableCell>
+      </TableRow>
+    </TableHead>
+    <TableBody>
+      {Object.keys(fontStackTokens).map((token) => {
+        const value = fontStackTokens[token];
+        return (
+          <TableRow key={token}>
+            <TableCell>{token}</TableCell>
+            <TableCell>
+              <div style={{ fontFamily: value }}>
+                Manage content better with infrastructure. It’s the cure for the
+                common CMS. Update once and publish everywhere, so teams build
+                digital products faster.
+              </div>
+            </TableCell>
+            <TableCell>
+              <pre>--{token}</pre>
+            </TableCell>
+            <TableCell>
+              <pre>{value}</pre>
+            </TableCell>
+          </TableRow>
+        );
+      })}
+    </TableBody>
+  </Table>
+</Box>
 
 <br />
 
@@ -152,68 +155,72 @@ Font size: **35px** = **2.188rem** - Line Height: **44px** = **2.75rem** - Weigh
 
 #### Font base
 
-<Table className="f36-margin-bottom--l">
-  <TableHead>
-    <TableRow>
-      <TableCell>Token</TableCell>
-      <TableCell>CSS Variable</TableCell>
-      <TableCell>Value</TableCell>
-    </TableRow>
-  </TableHead>
-  <TableBody>
-    {Object.keys(fontBaseTokens).map((token) => {
-      const value = fontBaseTokens[token];
-      return (
-        <TableRow key={token}>
-          <TableCell>
-            <span style={{ fontSize: value }}>{token}</span>
-          </TableCell>
-          <TableCell>
-            <pre>--{token}</pre>
-          </TableCell>
-          <TableCell>
-            <pre>{value}</pre>
-          </TableCell>
-        </TableRow>
-      );
-    })}
-  </TableBody>
-</Table>
+<Box marginBottom="spacingL">
+  <Table>
+    <TableHead>
+      <TableRow>
+        <TableCell>Token</TableCell>
+        <TableCell>CSS Variable</TableCell>
+        <TableCell>Value</TableCell>
+      </TableRow>
+    </TableHead>
+    <TableBody>
+      {Object.keys(fontBaseTokens).map((token) => {
+        const value = fontBaseTokens[token];
+        return (
+          <TableRow key={token}>
+            <TableCell>
+              <span style={{ fontSize: value }}>{token}</span>
+            </TableCell>
+            <TableCell>
+              <pre>--{token}</pre>
+            </TableCell>
+            <TableCell>
+              <pre>{value}</pre>
+            </TableCell>
+          </TableRow>
+        );
+      })}
+    </TableBody>
+  </Table>
+</Box>
 
 #### Font sizes
 
-<Table className="f36-margin-bottom--l">
-  <TableHead>
-    <TableRow>
-      <TableCell>Token</TableCell>
-      <TableCell>CSS Variable</TableCell>
-      <TableCell>Value (rem)</TableCell>
-      <TableCell>Value (px)</TableCell>
-    </TableRow>
-  </TableHead>
-  <TableBody>
-    {Object.keys(fontSizeTokens).map((token) => {
-      const value = fontSizeTokens[token];
-      const valuePx = 1 * parseFloat(value) * 16; // 16 = REM base
-      return (
-        <TableRow key={token}>
-          <TableCell>
-            <span style={{ fontSize: value }}>{token}</span>
-          </TableCell>
-          <TableCell>
-            <pre>--{token}</pre>
-          </TableCell>
-          <TableCell>
-            <pre>{value}</pre>
-          </TableCell>
-          <TableCell>
-            <pre>{valuePx}px</pre>
-          </TableCell>
-        </TableRow>
-      );
-    })}
-  </TableBody>
-</Table>
+<Box marginBottom="spacingL">
+  <Table>
+    <TableHead>
+      <TableRow>
+        <TableCell>Token</TableCell>
+        <TableCell>CSS Variable</TableCell>
+        <TableCell>Value (rem)</TableCell>
+        <TableCell>Value (px)</TableCell>
+      </TableRow>
+    </TableHead>
+    <TableBody>
+      {Object.keys(fontSizeTokens).map((token) => {
+        const value = fontSizeTokens[token];
+        const valuePx = 1 * parseFloat(value) * 16; // 16 = REM base
+        return (
+          <TableRow key={token}>
+            <TableCell>
+              <span style={{ fontSize: value }}>{token}</span>
+            </TableCell>
+            <TableCell>
+              <pre>--{token}</pre>
+            </TableCell>
+            <TableCell>
+              <pre>{value}</pre>
+            </TableCell>
+            <TableCell>
+              <pre>{valuePx}px</pre>
+            </TableCell>
+          </TableRow>
+        );
+      })}
+    </TableBody>
+  </Table>
+</Box>
 
 <br />
 
@@ -225,39 +232,41 @@ The Forma 36 line height is defined by rem, which forces the line height to corr
 
 ### Tokens
 
-<Table className="f36-margin-bottom--l">
-  <TableHead>
-    <TableRow>
-      <TableCell>Token</TableCell>
-      <TableCell>Example</TableCell>
-      <TableCell>CSS Variable</TableCell>
-      <TableCell>Value</TableCell>
-    </TableRow>
-  </TableHead>
-  <TableBody>
-    {Object.keys(lineHeightTokens).map((token) => {
-      const value = lineHeightTokens[token];
-      return (
-        <TableRow key={token}>
-          <TableCell>{token}</TableCell>
-          <TableCell>
-            <div style={{ lineHeight: value }}>
-              Manage content better with infrastructure. It’s the cure for the
-              common CMS. Update once and publish everywhere, so teams build
-              digital products faster.
-            </div>
-          </TableCell>
-          <TableCell>
-            <pre>--{token}</pre>
-          </TableCell>
-          <TableCell>
-            <pre>{value}</pre>
-          </TableCell>
-        </TableRow>
-      );
-    })}
-  </TableBody>
-</Table>
+<Box marginBottom="spacingL">
+  <Table>
+    <TableHead>
+      <TableRow>
+        <TableCell>Token</TableCell>
+        <TableCell>Example</TableCell>
+        <TableCell>CSS Variable</TableCell>
+        <TableCell>Value</TableCell>
+      </TableRow>
+    </TableHead>
+    <TableBody>
+      {Object.keys(lineHeightTokens).map((token) => {
+        const value = lineHeightTokens[token];
+        return (
+          <TableRow key={token}>
+            <TableCell>{token}</TableCell>
+            <TableCell>
+              <div style={{ lineHeight: value }}>
+                Manage content better with infrastructure. It’s the cure for the
+                common CMS. Update once and publish everywhere, so teams build
+                digital products faster.
+              </div>
+            </TableCell>
+            <TableCell>
+              <pre>--{token}</pre>
+            </TableCell>
+            <TableCell>
+              <pre>{value}</pre>
+            </TableCell>
+          </TableRow>
+        );
+      })}
+    </TableBody>
+  </Table>
+</Box>
 
 ### Consistency
 
@@ -271,67 +280,71 @@ The base line grid assures that the Forma 36 typography system adapts flawlessly
 
 ## Font weights
 
-<Table className="f36-margin-bottom--l">
-  <TableHead>
-    <TableRow>
-      <TableCell>Token</TableCell>
-      <TableCell>CSS Variable</TableCell>
-      <TableCell>Value</TableCell>
-    </TableRow>
-  </TableHead>
-  <TableBody>
-    {Object.keys(fontWeightTokens).map((token) => {
-      const value = fontWeightTokens[token];
-      return (
-        <TableRow key={token}>
-          <TableCell>
-            <span style={{ fontWeight: value }}>{token}</span>
-          </TableCell>
-          <TableCell>
-            <pre>--{token}</pre>
-          </TableCell>
-          <TableCell>
-            <pre>{value}</pre>
-          </TableCell>
-        </TableRow>
-      );
-    })}
-  </TableBody>
-</Table>
+<Box marginBottom="spacingL">
+  <Table>
+    <TableHead>
+      <TableRow>
+        <TableCell>Token</TableCell>
+        <TableCell>CSS Variable</TableCell>
+        <TableCell>Value</TableCell>
+      </TableRow>
+    </TableHead>
+    <TableBody>
+      {Object.keys(fontWeightTokens).map((token) => {
+        const value = fontWeightTokens[token];
+        return (
+          <TableRow key={token}>
+            <TableCell>
+              <span style={{ fontWeight: value }}>{token}</span>
+            </TableCell>
+            <TableCell>
+              <pre>--{token}</pre>
+            </TableCell>
+            <TableCell>
+              <pre>{value}</pre>
+            </TableCell>
+          </TableRow>
+        );
+      })}
+    </TableBody>
+  </Table>
+</Box>
 
 <br />
 
 ## Letter-spacing
 
-<Table className="f36-margin-bottom--l">
-  <TableHead>
-    <TableRow>
-      <TableCell>Token</TableCell>
-      <TableCell>Example</TableCell>
-      <TableCell>CSS Variable</TableCell>
-      <TableCell>Value</TableCell>
-    </TableRow>
-  </TableHead>
-  <TableBody>
-    {Object.keys(letterSpacingTokens).map((token) => {
-      const value = letterSpacingTokens[token];
-      return (
-        <TableRow key={token}>
-          <TableCell>{token}</TableCell>
-          <TableCell>
-            <div style={{ letterSpacing: value }}>Contentful</div>
-          </TableCell>
-          <TableCell>
-            <pre>--{token}</pre>
-          </TableCell>
-          <TableCell>
-            <pre>{value}</pre>
-          </TableCell>
-        </TableRow>
-      );
-    })}
-  </TableBody>
-</Table>
+<Box marginBottom="spacingL">
+  <Table>
+    <TableHead>
+      <TableRow>
+        <TableCell>Token</TableCell>
+        <TableCell>Example</TableCell>
+        <TableCell>CSS Variable</TableCell>
+        <TableCell>Value</TableCell>
+      </TableRow>
+    </TableHead>
+    <TableBody>
+      {Object.keys(letterSpacingTokens).map((token) => {
+        const value = letterSpacingTokens[token];
+        return (
+          <TableRow key={token}>
+            <TableCell>{token}</TableCell>
+            <TableCell>
+              <div style={{ letterSpacing: value }}>Contentful</div>
+            </TableCell>
+            <TableCell>
+              <pre>--{token}</pre>
+            </TableCell>
+            <TableCell>
+              <pre>{value}</pre>
+            </TableCell>
+          </TableRow>
+        );
+      })}
+    </TableBody>
+  </Table>
+</Box>
 
 <br />
 

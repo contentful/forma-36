@@ -37,9 +37,6 @@ The packages available are:
 - [`forma-36-react-components`](https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components)
   A React component library built with Storybook.
 
-- [`forma-36-fcss`](https://github.com/contentful/forma-36/tree/master/packages/forma-36-fcss)
-  CSS utility classes for spacing, typography, colors and transitions.
-
 - [`forma-36-tokens`](https://github.com/contentful/forma-36/tree/master/packages/forma-36-tokens)
   This package includes all the visual tokens (e.g. colors, margins, font sizes, etc) that used in the react library
 

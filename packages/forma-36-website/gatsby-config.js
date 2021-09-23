@@ -217,10 +217,6 @@ module.exports = {
             ],
           },
           {
-            name: 'Dropdown',
-            link: '/components/dropdown/',
-          },
-          {
             name: 'Popover',
             link: '/components/popover/',
           },

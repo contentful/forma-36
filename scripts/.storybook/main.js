@@ -45,24 +45,10 @@ module.exports = {
       ],
     });
 
-    config.module.rules.push({
-      test: /forma-36-fcss\/dist\/styles.css$/,
-      loaders: [
-        'style-loader',
-        'css-loader',
-        {
-          loader: 'postcss-loader',
-          options: {
-            postcssOptions,
-          },
-        },
-      ],
-    });
-
     // CSS Modules
     config.module.rules.push({
       test: /\.css$/,
-      exclude: [/node_modules/, /\.global\.css$/, /forma-36-fcss/],
+      exclude: [/node_modules/, /\.global\.css$/],
       loaders: [
         'style-loader',
         {

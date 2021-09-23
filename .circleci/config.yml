@@ -43,7 +43,6 @@ jobs:
             - packages/components/**/dist
             - packages/core/dist
             - packages/f36-docs-utils/dist
-            - packages/forma-36-fcss/dist
             - packages/forma-36-react-components/dist
             - packages/forma-36-tokens/dist
             - packages/forma-36-website/public

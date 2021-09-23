@@ -63,15 +63,6 @@ const IndexPage = () => (
             <img src={tokensImg} alt="Illustration for design tokens" />
           }
         />
-        <Resource
-          title="Forma 36 FCSS"
-          description="CSS utlity classes for spacing, colors, and more"
-          linkText="Get FCSS"
-          linkHref="https://github.com/contentful/forma-36/tree/master/packages/forma-36-fcss"
-          imageNode={
-            <img src={fcssImg} alt="Illustration for CSS utility classes" />
-          }
-        />
       </Resources>
     </Section>
 

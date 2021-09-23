@@ -5,7 +5,6 @@
   "version": "4.0.0",
   "license": "MIT",
   "dependencies": {
-    "@contentful/forma-36-fcss": "^4.0.0",
     "@contentful/f36-components": "^4.0.0",
     "@contentful/f36-tokens": "^4.0.0",
     "@contentful/f36-docs-utils": "^4.0.0",

@@ -92,15 +92,23 @@ const markToComponentMap = {
   ),
   p: (props) => <Paragraph marginBottom="spacingS" {...props} />,
   a: (props) => <TextLink {...props} />,
-  ul: (props) => <List className="f36-margin-bottom--m" {...props} />,
-  li: (props) => <List.Item className="f36-color--text-mid" {...props} />,
+  ul: (props) => (
+    <Box marginBottom="spacingM">
+      <List {...props} />
+    </Box>
+  ),
+  li: (props) => <List.Item {...props} />,
   code: (props) => {
     if (props.static) {
       return <StaticSource {...props} />;
     }
     return <ComponentSource>{props.children}</ComponentSource>;
   },
-  table: (props) => <Table className="f36-margin-bottom--m" {...props} />,
+  table: (props) => (
+    <Box marginBottom="spacingM">
+      <Table {...props} />
+    </Box>
+  ),
   thead: (props) => <TableHead {...props} />,
   tbody: (props) => <TableBody {...props} />,
   tr: (props) => <TableRow {...props} />,
