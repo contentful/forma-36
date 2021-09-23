@@ -57,14 +57,11 @@ function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
   const handleFocus = useCallback(
     (e: FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       e.persist();
-      if (isDisabled || isReadOnly) {
-        (e.target as HTMLInputElement).select();
-      }
       if (onFocus) {
         onFocus(e);
       }
     },
-    [isDisabled, isReadOnly, onFocus],
+    [onFocus],
   );
 
   const handleChange = useCallback(
