@@ -3,9 +3,10 @@ import { cx } from 'emotion';
 import { useCombobox } from 'downshift';
 
 import { CommonProps, mergeRefs } from '@contentful/f36-core';
-import { TextInput, TextInputProps } from '@contentful/f36-forms';
 import { IconButton } from '@contentful/f36-button';
+import { TextInput, TextInputProps } from '@contentful/f36-forms';
 import { CloseIcon, ChevronDownIcon } from '@contentful/f36-icons';
+import { SkeletonContainer, SkeletonBodyText } from '@contentful/f36-skeleton';
 import { Popover } from '@contentful/f36-popover';
 
 import { getAutocompleteStyles } from './Autocomplete.styles';
@@ -79,6 +80,11 @@ export interface AutocompleteProps<ItemType = any>
    * @default 180
    */
   listMaxHeight?: number;
+  /**
+   * Sets the list to show its loading state
+   * @default false
+   */
+  isLoading?: boolean;
 }
 
 function _Autocomplete<ItemType>(
@@ -105,6 +111,7 @@ function _Autocomplete<ItemType>(
     listRef,
     listWidth = 'auto',
     listMaxHeight = 180,
+    isLoading = false,
     testId = 'cf-autocomplete',
   } = props;
 
@@ -221,32 +228,48 @@ function _Autocomplete<ItemType>(
             className={styles.list}
             data-test-id="cf-autocomplete-list"
           >
-            {filteredItems.length === 0 && (
+            {isLoading &&
+              [...Array(3)].map((_, index) => (
+                <li key={index} className={cx(styles.item, styles.disabled)}>
+                  <ListItemLoadingState />
+                </li>
+              ))}
+
+            {!isLoading && filteredItems.length === 0 && (
               <li className={cx(styles.item, styles.disabled)}>
                 {noMatchesMessage}
               </li>
             )}
 
-            {filteredItems.map((item, index) => {
-              const itemProps = getItemProps({ item, index });
-              return (
-                <li
-                  {...itemProps}
-                  key={index}
-                  className={cx([
-                    styles.item,
-                    highlightedIndex === index && styles.highlighted,
-                  ])}
-                  data-test-id="cf-autocomplete-list-item"
-                >
-                  {renderItem ? renderItem(item) : item}
-                </li>
-              );
-            })}
+            {!isLoading &&
+              filteredItems.map((item, index) => {
+                const itemProps = getItemProps({ item, index });
+                return (
+                  <li
+                    {...itemProps}
+                    key={index}
+                    className={cx([
+                      styles.item,
+                      highlightedIndex === index && styles.highlighted,
+                    ])}
+                    data-test-id="cf-autocomplete-list-item"
+                  >
+                    {renderItem ? renderItem(item) : item}
+                  </li>
+                );
+              })}
           </ul>
         </Popover.Content>
       </Popover>
     </div>
+  );
+}
+
+function ListItemLoadingState() {
+  return (
+    <SkeletonContainer svgHeight={16}>
+      <SkeletonBodyText numberOfLines={1} />
+    </SkeletonContainer>
   );
 }
 

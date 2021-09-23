@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import type { Meta } from '@storybook/react/types-6-0';
 
 import { Stack } from '@contentful/f36-core';
@@ -175,4 +175,48 @@ export const WithFormControl = () => {
       <Paragraph>Selected fruit: {selectedFruit?.name}</Paragraph>
     </>
   );
+};
+
+export const WithAsyncData = () => {
+  const [isLoading, setIsLoading] = useState(true);
+  const [selectedFruit, setSelectedFruit] = useState<Fruit>();
+
+  const handleFilter = (item: Fruit, inputValue: string) =>
+    item.name.toLowerCase().includes(inputValue.toLowerCase());
+
+  const handleSelectItem = (item: Fruit) => {
+    setSelectedFruit(item);
+  };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 10000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <Stack
+      style={{ minWidth: '300px' }}
+      flexDirection="column"
+      spacing="spacingM"
+      alignItems="start"
+    >
+      {/* It’s not necessary to pass "Fruit" (type of one item)  */}
+      <Autocomplete<Fruit>
+        items={fruits}
+        onFilter={handleFilter}
+        onSelectItem={handleSelectItem}
+        itemToString={(item) => item.name}
+        renderItem={(item) => item.name}
+        isLoading={isLoading}
+      />
+
+      <Paragraph>Selected fruit: {selectedFruit?.name}</Paragraph>
+    </Stack>
+  );
+};
+WithAsyncData.args = {
+  placeholder: 'Search your favorite fruit',
 };
