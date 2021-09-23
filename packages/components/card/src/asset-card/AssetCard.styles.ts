@@ -42,8 +42,10 @@ export const getAssetCardStyles = () => {
         borderRadius: tokens.borderRadiusMedium,
         height:
           size === 'small'
-            ? `calc(12px * ${tokens.fontBaseDefault})`
-            : `calc(19px * ${tokens.fontBaseDefault})`,
+            ? // 192px
+              `calc(12px * ${tokens.fontBaseDefault})`
+            : // 304px
+              `calc(19px * ${tokens.fontBaseDefault})`,
         padding: 0,
         textAlign: 'center',
       };
