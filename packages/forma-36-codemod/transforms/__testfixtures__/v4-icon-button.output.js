@@ -13,6 +13,6 @@ const isCollapsed = true;
 
 <IconButton
   variant="transparent"
-  icon={<CloseIcon variant="primary" />}
+  icon={<CloseIcon variant={isCollapsed ? 'muted' : 'primary'} />}
   aria-label="Delete"
   onClick={() => {}} />;

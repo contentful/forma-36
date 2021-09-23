@@ -14,7 +14,7 @@ const isCollapsed = true;
 />;
 
 <IconButton
-  buttonType="primary"
+  buttonType={isCollapsed ? "muted" : "primary"}
   label="Delete"
   iconProps={{ icon: 'Close' }}
   onClick={() => {}}
