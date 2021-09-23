@@ -38,7 +38,6 @@ exports.onPostBuild = () => {
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  const layout = path.resolve(`./src/components/Layout.js`);
   return graphql(
     `
       {
@@ -73,32 +72,38 @@ exports.createPages = ({ graphql, actions }) => {
     const pages = result.data.allMdx.edges;
 
     pages.forEach((page) => {
-      const slug = page.node.frontmatter.slug || page.node.fields.slug;
-      const typescriptSources = (page.node.frontmatter.typescript || '')
-        .trim()
-        .split(',');
-
+      const { frontmatter, fields, body } = page.node;
+      /**
+       * "fields.slug" is generated automatically based on the relative path of the file which is perfect for the pages in the website project,
+       * but for pages generated from the components’ MDX files, we should use the slug defined in their frontmatter
+       */
+      const slug = frontmatter.slug || fields.slug;
       const propsMetadata = {};
 
-      typescriptSources.forEach((source) => {
-        const sourcePath = source
-          ? path.resolve(path.dirname(page.node.fileAbsolutePath), source)
-          : null;
-        if (sourcePath) {
+      // Extract props information for PropsTable and assign it to propsMetadata
+      if (frontmatter.typescript) {
+        const typescriptSources = frontmatter.typescript.trim().split(',');
+
+        typescriptSources.forEach((source) => {
+          const sourcePath = path.resolve(
+            path.dirname(page.node.fileAbsolutePath),
+            source,
+          );
+
           Object.assign(
             propsMetadata,
             getTypescriptMetaInformation(sourcePath),
           );
-        }
-      });
+        });
+      }
 
       createPage({
         path: slug,
-        component: layout,
+        component: path.resolve(`./src/components/Layout.js`),
         context: {
-          slug: slug,
-          frontmatter: page.node.frontmatter,
-          body: page.node.body,
+          slug,
+          frontmatter,
+          body,
           propsMetadata,
         },
       });

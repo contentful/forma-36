@@ -19,7 +19,7 @@ const listOfIgnoredFiles = [
 module.exports = {
   siteMetadata: {
     title: 'Forma 36 - The Contentful Design System',
-    promoText: ``,
+    promoText: '',
     promoLink: '',
     promoLinkText: '',
     promoTagText: '',
@@ -270,10 +270,6 @@ module.exports = {
           {
             name: 'IconButton',
             link: '/components/icon-button/',
-          },
-          {
-            name: 'Illustration',
-            link: '/components/illustration/',
           },
           {
             name: 'List',
