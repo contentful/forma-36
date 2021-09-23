@@ -152,12 +152,12 @@ function _Autocomplete<ItemType>(
     },
   });
 
-  const comboboxProps = getComboboxProps();
   const {
     'aria-labelledby': _labelledby,
     id: _inputId,
     ...inputProps
   } = getInputProps();
+  const comboboxProps = getComboboxProps();
   const toggleProps = getToggleButtonProps();
   const menuProps = getMenuProps();
 
