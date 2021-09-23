@@ -36,10 +36,6 @@ exports[`renders the component 1`] = `
   min-height: 40px;
 }
 
-.emotion-1 svg {
-  fill: currentColor;
-}
-
 .emotion-1:hover {
   background-color: #F7F9FA;
 }
@@ -114,10 +110,6 @@ exports[`renders the component as open 1`] = `
   line-height: 1.25;
   padding: 0.5rem 1rem;
   min-height: 40px;
-}
-
-.emotion-1 svg {
-  fill: currentColor;
 }
 
 .emotion-1:hover {
@@ -196,10 +188,6 @@ exports[`renders the component with a submenu 1`] = `
   min-height: 40px;
 }
 
-.emotion-1 svg {
-  fill: currentColor;
-}
-
 .emotion-1:hover {
   background-color: #F7F9FA;
 }
@@ -274,10 +262,6 @@ exports[`renders the component with an additional class name 1`] = `
   line-height: 1.25;
   padding: 0.5rem 1rem;
   min-height: 40px;
-}
-
-.emotion-1 svg {
-  fill: currentColor;
 }
 
 .emotion-1:hover {

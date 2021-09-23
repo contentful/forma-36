@@ -62,10 +62,6 @@ exports[`renders the component as disabled 1`] = `
   border: none;
 }
 
-.emotion-2 svg {
-  fill: currentColor;
-}
-
 .emotion-2:hover {
   background-color: #F7F9FA;
   color: #111B2B;
@@ -163,10 +159,6 @@ exports[`renders the component using a multiple dropdown lists 1`] = `
   height: 20px;
   min-height: 20px;
   border: none;
-}
-
-.emotion-2 svg {
-  fill: currentColor;
 }
 
 .emotion-2:hover {
@@ -281,10 +273,6 @@ exports[`renders the component using a single dropdown list 1`] = `
   border: none;
 }
 
-.emotion-2 svg {
-  fill: currentColor;
-}
-
 .emotion-2:hover {
   background-color: #F7F9FA;
   color: #111B2B;
@@ -397,10 +385,6 @@ exports[`renders the component with an additional class name 1`] = `
   border: none;
 }
 
-.emotion-2 svg {
-  fill: currentColor;
-}
-
 .emotion-2:hover {
   background-color: #F7F9FA;
   color: #111B2B;
@@ -511,10 +495,6 @@ exports[`renders the component with published status 1`] = `
   height: 20px;
   min-height: 20px;
   border: none;
-}
-
-.emotion-2 svg {
-  fill: currentColor;
 }
 
 .emotion-2:hover {

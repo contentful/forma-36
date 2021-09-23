@@ -527,10 +527,6 @@ exports[`renders the component with dropdownListElements 1`] = `
   border: none;
 }
 
-.emotion-3 svg {
-  fill: currentColor;
-}
-
 .emotion-3:hover {
   background-color: #F7F9FA;
   color: #111B2B;
