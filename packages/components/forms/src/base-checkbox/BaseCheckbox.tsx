@@ -46,7 +46,9 @@ function _BaseCheckbox(
   const finalRef = ref || inputRef;
 
   useEffect(() => {
-    finalRef.current.indeterminate = isIndeterminate;
+    if (finalRef.current) {
+      finalRef.current.indeterminate = isIndeterminate;
+    }
   }, [isIndeterminate, finalRef]);
 
   const styles = getStyles({ isDisabled, type, size });
