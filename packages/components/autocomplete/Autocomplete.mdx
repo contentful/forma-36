@@ -86,11 +86,11 @@ to the Fruit’s example this can be done:
 function AutocompleteExample() {
   // This is our new array of fruits, each one is an object with an id and a name
   const fruits = [
-    { id: 1, name: 'Apple 🍎' },
-    { id: 2, name: 'Ananas 🍍' },
-    { id: 3, name: 'Avocado 🥑' },
-    { id: 4, name: 'Banana 🍌' },
-    { id: 5, name: 'Coconut 🥥' },
+    { id: 1, name: 'Apple', emoji: 🍎 },
+    { id: 2, name: 'Ananas', emoji: 🍍 },
+    { id: 3, name: 'Avocado', emoji: 🥑 },
+    { id: 4, name: 'Banana', emoji: 🍌 },
+    { id: 5, name: 'Coconut', emoji: 🥥 },
   ];
 
   const [selectedFruit, setSelectedFruit] = React.useState();
@@ -113,7 +113,8 @@ function AutocompleteExample() {
         // This prop is the function that will tell the component how to extract a string that will be used as inputValue
         itemToString={(item) => item.name}
         // This prop is the function that will tell the component how to render each item in the options list
-        renderItem={(item) => <>{item.name}</>}
+        // In this example the first item will render "Apple 🍎"
+        renderItem={(item) => `${item.name} ${item.emoji}`}
       />
 
       <Paragraph>Selected fruit: {selectedFruit}</Paragraph>
@@ -132,11 +133,11 @@ You can do that by writing the component like this `<Autocomplete<ItemType> {...
 ```jsx
 function AutocompleteExample() {
   const fruits = [
-    { id: 1, name: 'Apple 🍎' },
-    { id: 2, name: 'Ananas 🍍' },
-    { id: 3, name: 'Avocado 🥑' },
-    { id: 4, name: 'Banana 🍌' },
-    { id: 5, name: 'Coconut 🥥' },
+    { id: 1, name: 'Apple' },
+    { id: 2, name: 'Ananas' },
+    { id: 3, name: 'Avocado' },
+    { id: 4, name: 'Banana' },
+    { id: 5, name: 'Coconut' },
   ];
 
   // The state now stores an array of selected fruits, not just a string
@@ -158,7 +159,7 @@ function AutocompleteExample() {
         onFilter={handleFilter}
         onSelectItem={handleSelectItem}
         itemToString={(item) => item.name}
-        renderItem={(item) => <>{item.name}</>}
+        renderItem={(item) => item.name}
         // When this prop is `true`, it will clean the TextInput after an option is selected
         clearAfterSelect
       />
