@@ -22,6 +22,11 @@
   margin: 0;
 
   z-index: var(--z-index-dropdown);
+
+  &:focus {
+    outline: none;
+    box-shadow: var(--glow-primary), var(--box-shadow-default);
+  }
 }
 
 .DropdownContainer > div {

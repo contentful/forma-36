@@ -151,14 +151,14 @@ export function ModalConfirm({
     >
       {() => {
         return (
-          <>
+          <React.Fragment>
             <Modal.Header title={title || ''} {...modalHeaderProps} />
             <Modal.Content {...modalContentProps}>{children}</Modal.Content>
             <Modal.Controls {...modalControlsProps}>
               {cancelButton}
               {confirmButton}
             </Modal.Controls>
-          </>
+          </React.Fragment>
         );
       }}
     </Modal>
