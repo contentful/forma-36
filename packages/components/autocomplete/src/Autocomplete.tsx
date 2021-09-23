@@ -68,6 +68,17 @@ export interface AutocompleteProps<ItemType = any>
    * Use this prop to get a ref to the list of items of the component
    */
   listRef?: React.Ref<HTMLUListElement>;
+  /**
+   * It sets the width of the list
+   * @default "auto"
+   */
+  listWidth?: 'auto' | 'full';
+  /**
+   * It sets the max-height, in pixels, of the list
+   * The default value is the height of 5 single line items
+   * @default 180
+   */
+  listMaxHeight?: number;
 }
 
 function _Autocomplete<ItemType>(
@@ -92,10 +103,12 @@ function _Autocomplete<ItemType>(
     inputRef,
     toggleRef,
     listRef,
+    listWidth = 'auto',
+    listMaxHeight = 180,
     testId = 'cf-autocomplete',
   } = props;
 
-  const styles = getAutocompleteStyles();
+  const styles = getAutocompleteStyles(listMaxHeight);
 
   const [filteredItems, setFilteredItems] = useState(items);
 
@@ -154,8 +167,13 @@ function _Autocomplete<ItemType>(
       className={cx(styles.autocomplete, className)}
       ref={ref}
     >
-      {/* eslint-disable-next-line jsx-a11y/no-autofocus */}
-      <Popover usePortal={false} autoFocus={false} isOpen={isOpen}>
+      <Popover
+        // eslint-disable-next-line jsx-a11y/no-autofocus
+        autoFocus={false}
+        usePortal={false}
+        isOpen={isOpen}
+        isFullWidth={listWidth === 'full'}
+      >
         <Popover.Trigger>
           <div {...comboboxProps} className={styles.combobox}>
             <TextInput

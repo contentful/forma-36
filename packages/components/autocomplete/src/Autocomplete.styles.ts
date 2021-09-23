@@ -1,7 +1,7 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 
-export const getAutocompleteStyles = () => ({
+export const getAutocompleteStyles = (listMaxHeight: number) => ({
   autocomplete: css({
     position: 'relative',
     width: '100%',
@@ -20,7 +20,7 @@ export const getAutocompleteStyles = () => ({
     listStyle: 'none',
     padding: `${tokens.spacingXs} 0`,
     margin: 0,
-    maxHeight: '360px',
+    maxHeight: `${listMaxHeight}px`,
   }),
   item: css({
     display: 'block',
