@@ -125,7 +125,7 @@ describe('Menu', function () {
     expect(handleClose).not.toHaveBeenCalled();
   });
 
-  it('should focus FIRST item when menu open', async () => {
+  it('should focus FIRST item when menu is open', async () => {
     const { getByTestId, getByRole } = render(
       <Menu isOpen={true}>
         <Menu.Trigger>
