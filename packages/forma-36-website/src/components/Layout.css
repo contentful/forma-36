@@ -9,7 +9,8 @@ pre {
   font-family: var(--font-stack-primary);
 }
 
-.prism-code {
+pre.prism-code {
+  font-family: var(--font-stack-monospace);
   font-size: var(--font-size-m);
   padding: var(--spacing-m);
   border-radius: var(--border-radius-medium);
@@ -20,7 +21,6 @@ code {
   white-space: nowrap;
   font-weight: var(--font-weight-medium);
   background-color: var(--gray-200);
-  border-radius: 6px;
   font-size: 85%;
   margin: 0;
   padding: 0.2em 0.4em;

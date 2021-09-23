@@ -95,10 +95,11 @@ export default function Layout({ location, pageContext, children }) {
           menuItems={siteMetadata?.menuLinks}
           currentPath={location?.pathname}
         />
+        {/* pageContext is `undefined` during website build in Netlify */}
         <Container
-          frontmatter={pageContext.frontmatter}
-          dataFromReadme={pageContext.body}
-          propsMetadata={pageContext.propsMetadata}
+          frontmatter={pageContext && pageContext.frontmatter}
+          dataFromReadme={pageContext && pageContext.body}
+          propsMetadata={pageContext && pageContext.propsMetadata}
         >
           {children}
         </Container>
