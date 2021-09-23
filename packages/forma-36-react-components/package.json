@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.3.4",
+    "@contentful/f36-autocomplete": "^4.0.0",
     "@contentful/f36-badge": "^4.0.0",
     "@contentful/f36-card": "^4.0.0",
     "@contentful/f36-core": "^4.0.0",

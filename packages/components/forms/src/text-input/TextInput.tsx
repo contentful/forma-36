@@ -15,6 +15,7 @@ export const _TextInput = (
     value,
     defaultValue,
     onChange,
+    onFocus,
     isInvalid,
     isDisabled,
     isRequired,
@@ -64,6 +65,7 @@ export const _TextInput = (
         testId={testId}
         ref={finalRef}
         onChange={onChange}
+        onFocus={onFocus}
         as="input"
         className={inputClass}
         value={value}
