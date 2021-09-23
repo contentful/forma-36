@@ -24,23 +24,25 @@ function _MenuItem<E extends React.ElementType = typeof DEFAULT_TAG>(
   props: MenuItemProps<E>,
   ref: React.Ref<any>,
 ) {
+  const { testId, className, as, ...otherProps } = props;
+
   const id = useId(null, 'menu-item');
-  const testId = props.testId || `cf-ui-${id}`;
+  const itemTestId = testId || `cf-ui-${id}`;
   const styles = getMenuItemStyles();
 
   const { getMenuItemProps } = useMenuContext();
 
-  const Element: React.ElementType = props.as ?? DEFAULT_TAG;
+  const Element: React.ElementType = as ?? DEFAULT_TAG;
 
   return (
     <Element
-      {...getMenuItemProps(props)}
-      className={cx(styles.root, props.className)}
-      data-test-id={testId}
-      ref={ref}
       role="menuitem"
+      {...otherProps}
+      {...getMenuItemProps(otherProps)}
+      className={cx(styles.root, className)}
+      data-test-id={itemTestId}
+      ref={ref}
       tabIndex={-1}
-      as={undefined}
     >
       {props.children}
     </Element>
