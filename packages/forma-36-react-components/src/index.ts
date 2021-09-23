@@ -75,11 +75,17 @@ export type {
 } from '@contentful/f36-forms';
 export { Pill } from '@contentful/f36-pill';
 export type { PillProps } from '@contentful/f36-pill';
-export { Button, ButtonGroup, ToggleButton } from '@contentful/f36-button';
+export {
+  Button,
+  ButtonGroup,
+  ToggleButton,
+  IconButton,
+} from '@contentful/f36-button';
 export type {
   ButtonProps,
   ButtonGroupProps,
   ToggleButtonProps,
+  IconButtonProps,
 } from '@contentful/f36-button';
 export { TextLink } from '@contentful/f36-text-link';
 export type { TextLinkProps } from '@contentful/f36-text-link';

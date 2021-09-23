@@ -13,7 +13,7 @@ export default {
   title: 'Components/Menu',
 } as Meta;
 
-export const Default: Story<MenuProps> = (args) => {
+export const Basic: Story<MenuProps> = (args) => {
   return (
     <Menu defaultIsOpen {...args}>
       <Menu.Trigger>
@@ -143,7 +143,7 @@ export const WithReactRouterLinks: Story<MenuProps> = (args) => {
   );
 };
 
-Default.parameters = {
+Basic.parameters = {
   chromatic: { delay: 300 },
 };
 Controlled.parameters = {
