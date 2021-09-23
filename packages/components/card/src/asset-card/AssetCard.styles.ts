@@ -37,9 +37,13 @@ export const getAssetCardStyles = () => {
       paddingRight: tokens.spacingXs,
       paddingTop: 0,
     }),
-    root: ({ isSelected }) => {
+    root: ({ isSelected, size }) => {
       const styles: ObjectInterpolation<undefined> = {
         borderRadius: tokens.borderRadiusMedium,
+        height:
+          size === 'small'
+            ? `calc(12px * ${tokens.fontBaseDefault})`
+            : `calc(19px * ${tokens.fontBaseDefault})`,
         padding: 0,
         textAlign: 'center',
       };
@@ -52,12 +56,5 @@ export const getAssetCardStyles = () => {
 
       return css(styles);
     },
-    sizeWrapper: ({ size }) =>
-      css({
-        height:
-          size === 'small'
-            ? `calc(9px * ${tokens.fontBaseDefault})`
-            : `calc(13px * ${tokens.fontBaseDefault})`,
-      }),
   };
 };

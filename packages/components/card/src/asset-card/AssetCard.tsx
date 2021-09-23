@@ -62,18 +62,14 @@ export const AssetCard = ({
     <BaseCard
       {...otherProps}
       badge={badge}
-      className={cx(styles.root({ isSelected }), className)}
+      className={cx(styles.root({ isSelected, size }), className)}
       header={header}
       isSelected={isSelected}
       contentBodyProps={{ className: styles.contentBody }}
       title={title}
       withDragHandle={withDragHandle}
     >
-      <Flex
-        alignItems="center"
-        className={styles.sizeWrapper({ size })}
-        justifyContent="center"
-      >
+      <Flex alignItems="center" fullHeight justifyContent="center">
         <Asset
           className={styles.asset}
           src={src}
