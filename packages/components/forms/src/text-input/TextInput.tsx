@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { BaseInput } from '../base-input';
-import { Flex, useForwardedRef } from '@contentful/f36-core';
+import { Flex } from '@contentful/f36-core';
 import { CopyButton } from '@contentful/f36-copybutton';
 import getStyles from './TextInput.styles';
 import { cx } from 'emotion';
@@ -25,7 +25,7 @@ export const _TextInput = (
     size = 'medium',
     ...otherProps
   }: TextInputProps,
-  ref: React.Ref<HTMLInputElement>,
+  ref: React.RefObject<HTMLInputElement>,
 ) => {
   const formProps = useFormControl({
     id,
@@ -35,7 +35,8 @@ export const _TextInput = (
     isReadOnly,
   });
 
-  const textInputRef = useForwardedRef<HTMLInputElement>(ref);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const finalRef = ref || inputRef;
   const styles = getStyles();
 
   const copyButtonStyles = cx(styles.copyButton, {
@@ -49,10 +50,10 @@ export const _TextInput = (
         onCopy(e);
       }
 
-      textInputRef.current.select();
+      finalRef.current.select();
       document.execCommand('copy');
     },
-    [onCopy, textInputRef],
+    [onCopy, finalRef],
   );
 
   const input = (inputClass?: string) => {
@@ -62,7 +63,7 @@ export const _TextInput = (
         {...otherProps}
         {...formProps}
         testId={testId}
-        ref={textInputRef}
+        ref={finalRef}
         onChange={onChange}
         onFocus={onFocus}
         as="input"
@@ -78,7 +79,7 @@ export const _TextInput = (
     <Flex className={className}>
       {input(styles.inputWithCopyButton)}
       <CopyButton
-        value={textInputRef?.current?.value}
+        value={finalRef?.current?.value}
         onCopy={handleCopy}
         className={copyButtonStyles}
         isDisabled={isDisabled}
