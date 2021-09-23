@@ -1,5 +1,5 @@
-import React, { useCallback, useEffect } from 'react';
-import { useForwardedRef, PropsWithHTMLElement } from '@contentful/f36-core';
+import React, { useCallback, useEffect, useRef } from 'react';
+import { PropsWithHTMLElement } from '@contentful/f36-core';
 import type { BaseCheckboxInternalProps } from './types';
 import { GhostCheckbox } from './GhostCheckbox';
 import getStyles from './BaseCheckbox.styles';
@@ -14,7 +14,7 @@ export type BaseCheckboxProps = PropsWithHTMLElement<
 
 function _BaseCheckbox(
   props: BaseCheckboxProps,
-  ref: React.Ref<HTMLInputElement>,
+  ref: React.RefObject<HTMLInputElement>,
 ) {
   const {
     isChecked = undefined,
@@ -41,11 +41,15 @@ function _BaseCheckbox(
     helpText,
     ...otherProps
   } = props;
-  const inputRef = useForwardedRef<HTMLInputElement>(ref);
+
+  const inputRef = useRef<HTMLInputElement>(null);
+  const finalRef = ref || inputRef;
 
   useEffect(() => {
-    inputRef.current.indeterminate = isIndeterminate;
-  }, [isIndeterminate, inputRef]);
+    if (finalRef.current) {
+      finalRef.current.indeterminate = isIndeterminate;
+    }
+  }, [isIndeterminate, finalRef]);
 
   const styles = getStyles({ isDisabled, type, size });
 
@@ -73,13 +77,13 @@ function _BaseCheckbox(
     (e) => {
       e.persist();
       if (willBlurOnEsc && e.key === 'Escape') {
-        inputRef?.current?.blur();
+        finalRef?.current?.blur();
       }
       if (onKeyDown) {
         onKeyDown(e);
       }
     },
-    [willBlurOnEsc, onKeyDown, inputRef],
+    [willBlurOnEsc, onKeyDown, finalRef],
   );
 
   const ariaChecked =
@@ -111,7 +115,7 @@ function _BaseCheckbox(
           disabled={isDisabled}
           role={type}
           aria-checked={isIndeterminate ? 'mixed' : ariaChecked}
-          ref={inputRef}
+          ref={finalRef}
           required={isRequired}
           aria-required={isRequired ? 'true' : undefined}
           aria-invalid={isInvalid ? 'true' : undefined}
