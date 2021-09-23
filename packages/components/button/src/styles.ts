@@ -137,7 +137,12 @@ const getButtonIconStyle = ({ hasChildren }) => {
 
   const margin = hasChildren ? align : {};
 
-  return css(margin);
+  return css({
+    ...margin,
+    '& svg': {
+      fill: 'currentColor',
+    },
+  });
 };
 
 export const getStyles = () => ({
@@ -165,9 +170,6 @@ export const getStyles = () => ({
       transition: `background ${tokens.transitionDurationShort} ${tokens.transitionEasingDefault},
         opacity ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault},
         border-color ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault}`,
-      svg: {
-        fill: 'currentColor',
-      },
       ...variantToStyles(variant),
       ...sizeToStyles(size),
       ...(isActive

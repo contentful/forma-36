@@ -22,17 +22,45 @@ export default {
   },
 } as Meta;
 
-export const basic = ({ icon, 'aria-label': ariaLabel, ...props }) => (
+export const basic = ({
+  icon,
+  'aria-label': ariaLabel,
+  iconProps,
+  ...props
+}) => (
   <IconButton
-    icon={icon && <Icon as={icons[icon]} />}
+    icon={icon && <Icon as={icons[icon]} {...iconProps} />}
     aria-label={ariaLabel}
     {...props}
   />
 );
 
+basic.argTypes = {
+  iconVariant: {
+    control: {
+      options: [
+        '',
+        'primary',
+        'secondary',
+        'positive',
+        'negative',
+        'warning',
+        'muted',
+        'white',
+      ],
+      type: 'select',
+    },
+  },
+};
+
 basic.args = {
-  icon: 'PlusIcon',
+  icon: 'StarIcon',
   'aria-label': 'Label',
+  iconProps: {
+    variant: 'primary',
+    size: 'medium',
+  },
+  variant: 'transparent',
 };
 
 export const Overview = () => (
@@ -45,65 +73,65 @@ export const Overview = () => (
       <Stack spacing="spacingXs" marginBottom="spacingM">
         <IconButton
           variant="transparent"
-          icon={<Icon as={icons.CloseIcon} />}
+          icon={<Icon as={icons.CloseIcon} variant="secondary" />}
           aria-label="Close"
         />
 
         <IconButton
           variant="transparent"
-          icon={<Icon as={icons.MoreHorizontalIcon} />}
+          icon={<Icon as={icons.MoreHorizontalIcon} variant="secondary" />}
           aria-label="More"
         />
 
         <IconButton
           variant="secondary"
-          icon={<Icon as={icons.DownloadIcon} />}
+          icon={<Icon as={icons.DownloadIcon} variant="secondary" />}
           aria-label="Download"
         />
 
         <IconButton
           variant="secondary"
-          icon={<Icon as={icons.DownloadIcon} />}
+          icon={<Icon as={icons.DownloadIcon} variant="secondary" />}
           aria-label="Loading"
           isLoading
         />
 
         <IconButton
           variant="positive"
-          icon={<Icon as={icons.DragIcon} />}
+          icon={<Icon as={icons.DragIcon} variant="white" />}
           aria-label="Resize"
         />
 
         <IconButton
           variant="negative"
-          icon={<Icon as={icons.DeleteIcon} />}
+          icon={<Icon as={icons.DeleteIcon} variant="white" />}
           aria-label="Delete"
         />
 
         <IconButton
           variant="primary"
-          icon={<Icon as={icons.PlusIcon} />}
+          icon={<Icon as={icons.PlusIcon} variant="white" />}
           aria-label="Add"
         />
       </Stack>
       <Stack spacing="spacingXs" marginBottom="spacingM">
         <IconButton
           variant="primary"
-          icon={<Icon as={icons.PlusIcon} />}
+          icon={<Icon as={icons.PlusIcon} variant="white" />}
           aria-label="Plus"
           size="small"
         />
 
         <IconButton
           variant="primary"
-          icon={<Icon as={icons.PlusIcon} />}
+          icon={<Icon as={icons.PlusIcon} variant="white" />}
           aria-label="Plus"
           size="medium"
         />
 
         <IconButton
           variant="primary"
-          icon={<Icon as={icons.PlusIcon} />}
+          icon={<Icon as={icons.PlusIcon} variant="white" />}
           aria-label="Plus"
           size="large"
         />

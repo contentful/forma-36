@@ -27,7 +27,11 @@ function _IconButton<E extends React.ElementType = typeof DEFAULT_TAG>(
 ) {
   const { testId = 'cf-ui-icon-button', icon, ...otherProps } = props;
 
-  return <Button testId={testId} ref={ref} startIcon={icon} {...otherProps} />;
+  return (
+    <Button testId={testId} ref={ref} {...otherProps}>
+      {icon}
+    </Button>
+  );
 }
 
 export const IconButton: PolymorphicComponent<
