@@ -3,6 +3,62 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.98.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.98.3...@contentful/forma-36-react-components@3.98.4) (2021-09-20)
+
+
+### Bug Fixes
+
+* dropdown container focus styles ([#1313](https://github.com/contentful/forma-36/issues/1313)) ([4c0506c](https://github.com/contentful/forma-36/commit/4c0506cecf0a10258c66f4e60e8f2dd4ad463b88))
+
+
+
+
+
+## [3.98.3](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.98.2...@contentful/forma-36-react-components@3.98.3) (2021-09-14)
+
+
+### Bug Fixes
+
+* **radiobutton:** wrong style on disabled radiobutton ([#1312](https://github.com/contentful/forma-36/issues/1312)) ([c0fd1c8](https://github.com/contentful/forma-36/commit/c0fd1c83369c8e68c6f86c53e963ed6b12de3d72))
+
+
+
+
+
+## [3.98.2](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.98.1...@contentful/forma-36-react-components@3.98.2) (2021-09-09)
+
+
+### Bug Fixes
+
+* **Button:** hide spinner when loading is false ([#1295](https://github.com/contentful/forma-36/issues/1295)) ([cafbd50](https://github.com/contentful/forma-36/commit/cafbd503f34429064b8d661be11f6475faa60c69))
+
+
+
+
+
+## [3.98.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.98.0...@contentful/forma-36-react-components@3.98.1) (2021-09-06)
+
+
+### Bug Fixes
+
+* **Modal:** story improvement & allow scrolling in ModalCofirm [] ([#1291](https://github.com/contentful/forma-36/issues/1291)) ([7285a0b](https://github.com/contentful/forma-36/commit/7285a0b0ba7abc16d4b81b6576babd2bed09e00a))
+
+
+
+
+
+# [3.98.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.97.1...@contentful/forma-36-react-components@3.98.0) (2021-09-02)
+
+
+### Features
+
+* add default id to watch ([a90902e](https://github.com/contentful/forma-36/commit/a90902e46679be7430de866677028aa7cbe48b4a))
+* add default id to watch fixed test ([fc329c8](https://github.com/contentful/forma-36/commit/fc329c884bb93b53caa01fd384c72cffd00fa34d))
+
+
+
+
+
 ## [3.97.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.97.0...@contentful/forma-36-react-components@3.97.1) (2021-08-30)
 
 

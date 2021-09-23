@@ -18,6 +18,7 @@ const _Textarea = (
     isInvalid,
     isRequired,
     isReadOnly,
+    testId = 'cf-ui-textarea',
     id,
     ...otherProps
   }: TextareaProps,
@@ -36,6 +37,7 @@ const _Textarea = (
     <BaseInput
       {...otherProps}
       {...formProps}
+      testId={testId}
       as="textarea"
       ref={ref}
       className={cx(className, {
