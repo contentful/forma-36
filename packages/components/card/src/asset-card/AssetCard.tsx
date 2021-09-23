@@ -26,7 +26,6 @@ export type AssetCardProps = AssetCardInternalProps;
 
 export const AssetCard = ({
   actions,
-  actionsButtonProps,
   className,
   icon,
   isSelected,
@@ -52,9 +51,7 @@ export const AssetCard = ({
             {badge}
           </Flex>
         )}
-        {actions && (
-          <CardActions buttonProps={actionsButtonProps}>{actions}</CardActions>
-        )}
+        {actions && <CardActions>{actions}</CardActions>}
       </Flex>
     ) : null;
 
