@@ -225,6 +225,10 @@ module.exports = {
             link: '/components/popover/',
           },
           {
+            name: 'Menu',
+            link: '/components/menu/',
+          },
+          {
             name: 'EntityList',
             link: '/components/entity-list/',
           },

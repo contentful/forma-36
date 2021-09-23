@@ -8,4 +8,233 @@ storybook: 'https://f36-storybook.contentful.com/?path=/story/components-menu--d
 typescript: ./src/Menu.tsx
 ---
 
-# Menu
+import { Props } from '@contentful/f36-docs-utils';
+
+Menu is a component that offers a list of choices to the user, such as a set of actions or links.
+Menu uses Popover component as a base.
+
+## Table of contents
+
+- [How to use Menu](#how-to-use-menu)
+- [Code examples](#code-examples)
+- [Content recommendations](#content-recommendations)
+- [Accessibility](#accessibility)
+
+## How to use Menu
+
+You can use following components to build a menu:
+
+1. `<Menu>`: The main wrapper that provides nested components with all the context and state.
+1. `<Menu.Trigger>` The wrapper for the menu list trigger. Must be a direct child of `<Menu>`.
+1. `<Menu.List>`: The wrapper for the menu items. Must be a direct child of `<Menu>`.
+1. `<Menu.Item>` The trigger that handles menu selection. Must be a direct child of `<Menu.List>`.
+1. `<Menu.Divider>` A visual separator for menu items.
+1. `<Menu.SectionTitle>` A title that you can use in the menu list.
+1. `<Menu.ListHeader>` The wrapper for one menu item that will be sticked to the top of the menu list. `<Menu.Item>` must be provided as a child.
+1. `<Menu.ListFooter>` The wrapper for one menu item that will be sticked to the bottom of the menu list. `<Menu.Item>` must be provided as a child.
+
+## Code examples
+
+### Basic
+
+```jsx
+<Menu>
+  <Menu.Trigger>
+    <IconButton icon={<MenuIcon />} aria-label="toggle menu" />
+  </Menu.Trigger>
+  <Menu.List>
+    <Menu.Item>Create an entry</Menu.Item>
+    <Menu.Item>Remove an entry</Menu.Item>
+    <Menu.Item>Embed existing entry</Menu.Item>
+  </Menu.List>
+</Menu>
+```
+
+### With Button as a trigger
+
+```jsx
+<Menu>
+  <Menu.Trigger>
+    <Button>toggle menu</Button>
+  </Menu.Trigger>
+  <Menu.List>
+    <Menu.Item>Create an entry</Menu.Item>
+    <Menu.Item>Remove an entry</Menu.Item>
+    <Menu.Item>Embed existing entry</Menu.Item>
+  </Menu.List>
+</Menu>
+```
+
+### With Menu.SectionTitle and Menu.Divider
+
+```jsx
+<Menu>
+  <Menu.Trigger>
+    <IconButton icon={<MenuIcon />} aria-label="toggle menu" />
+  </Menu.Trigger>
+  <Menu.List>
+    <Menu.SectionTitle>Entry</Menu.SectionTitle>
+    <Menu.Item>Create an entry</Menu.Item>
+    <Menu.Item>Remove an entry</Menu.Item>
+    <Menu.Item>Embed existing entry</Menu.Item>
+    <Menu.Divider />
+    <Menu.Item as="a" href="https://contentful.com" target="_blank">
+      About Contentful
+    </Menu.Item>
+  </Menu.List>
+</Menu>
+```
+
+### Open by default
+
+```jsx
+<Menu defaultIsOpen>
+  <Menu.Trigger>
+    <IconButton icon={<MenuIcon />} aria-label="toggle menu" />
+  </Menu.Trigger>
+  <Menu.List>
+    <Menu.Item>Create an entry</Menu.Item>
+    <Menu.Item>Remove an entry</Menu.Item>
+    <Menu.Item>Embed existing entry</Menu.Item>
+  </Menu.List>
+</Menu>
+```
+
+### Controlled Menu
+
+By default the Menu component is uncontroled. So when user clicks on the trigger, the menu opens/closes.
+But you can control it by passing `isOpen` prop and `onClose`, `onOpen` callbacks.
+
+```jsx
+function ControlledMenu() {
+  const [isOpen, setIsOpen] = React.useState(false);
+  return (
+    <Menu
+      isOpen={isOpen}
+      onOpen={() => setIsOpen(true)}
+      onClose={() => setIsOpen(false)}
+    >
+      <Menu.Trigger>
+        <IconButton icon={<MenuIcon />} aria-label="toggle menu" />
+      </Menu.Trigger>
+      <Menu.List>
+        <Menu.Item>Create an entry</Menu.Item>
+        <Menu.Item>Remove an entry</Menu.Item>
+        <Menu.Item>Embed existing entry</Menu.Item>
+      </Menu.List>
+    </Menu>
+  );
+}
+```
+
+### With Menu list maximum height
+
+```jsx
+<Menu>
+  <Menu.Trigger>
+    <IconButton icon={<MenuIcon />} aria-label="toggle menu" />
+  </Menu.Trigger>
+  <Menu.List style={{ maxHeight: '200px' }}>
+    <Menu.Item>Item 1</Menu.Item>
+    <Menu.Item>Item 2</Menu.Item>
+    <Menu.Item>Item 3</Menu.Item>
+    <Menu.Item>Item 4</Menu.Item>
+    <Menu.Item>Item 5</Menu.Item>
+    <Menu.Item>Item 6</Menu.Item>
+    <Menu.Item>Item 7</Menu.Item>
+    <Menu.Item>Item 8</Menu.Item>
+    <Menu.Item>Item 9</Menu.Item>
+    <Menu.Item>Item 10</Menu.Item>
+    <Menu.Item>Item 11</Menu.Item>
+    <Menu.Item>Item 12</Menu.Item>
+  </Menu.List>
+</Menu>
+```
+
+### With disabled items
+
+```jsx
+<Menu>
+  <Menu.Trigger>
+    <IconButton icon={<MenuIcon />} aria-label="toggle menu" />
+  </Menu.Trigger>
+  <Menu.List>
+    <Menu.Item>Item 1</Menu.Item>
+    <Menu.Item>Item 2</Menu.Item>
+    <Menu.Item>Item 3</Menu.Item>
+    <Menu.Item disabled>Item 4 (disabled)</Menu.Item>
+    <Menu.Item>Item 5</Menu.Item>
+    <Menu.Item>Item 6</Menu.Item>
+    <Menu.Item disabled>Item 7 (disabled)</Menu.Item>
+    <Menu.Item>Item 8</Menu.Item>
+  </Menu.List>
+</Menu>
+```
+
+### With sticky header and footer
+
+```jsx
+<Menu>
+  <Menu.Trigger>
+    <IconButton icon={<MenuIcon />} aria-label="toggle menu" />
+  </Menu.Trigger>
+  <Menu.List style={{ maxHeight: '300px' }}>
+    <Menu.ListHeader>
+      <Menu.Item>Item header</Menu.Item>
+    </Menu.ListHeader>
+    <Menu.Item>Item 1</Menu.Item>
+    <Menu.Item>Item 2</Menu.Item>
+    <Menu.Item>Item 3</Menu.Item>
+    <Menu.Item>Item 4</Menu.Item>
+    <Menu.Item>Item 5</Menu.Item>
+    <Menu.Item>Item 6</Menu.Item>
+    <Menu.Item>Item 7</Menu.Item>
+    <Menu.Item>Item 8</Menu.Item>
+    <Menu.Item>Item 9</Menu.Item>
+    <Menu.Item>Item 10</Menu.Item>
+    <Menu.ListFooter>
+      <Menu.Item>Item footer</Menu.Item>
+    </Menu.ListFooter>
+  </Menu.List>
+</Menu>
+```
+
+### With React Router links
+
+```jsx static=true
+<Router>
+  <Menu defaultIsOpen {...args}>
+    <Menu.Trigger>
+      <IconButton icon={<MenuIcon />} aria-label="toggle menu" />
+    </Menu.Trigger>
+    <Menu.List>
+      <Link to="/" component={Menu.Item} as="a">
+        Home
+      </Link>
+      <Link to="/about" component={Menu.Item} as="a">
+        About
+      </Link>
+      <Link to="/other" component={Menu.Item} as="a">
+        Other
+      </Link>
+    </Menu.List>
+  </Menu>
+</Router>
+```
+
+## Content recommendations
+
+- Use an interactive element such as `button` for `Menu.Trigger`
+
+## Accessibility
+
+- When the menu is opened, focus is moved to the first menu item. If you set `autoFocus`to `false`, it will not move the focus.
+- When the menu is closed, focus returned back to the trigger element.
+- You can use arrow keys (`ArrowUp` and `ArrowDown`) to navigate through menu items.
+- When the menu is open, click on `Esc` key will close the popover. If you set `closeOnEsc` to `false`, it will not close.
+- When the menu is open, click outside menu or blurring out will close the menu. If you set `closeOnBlur` to `false`, it will not close.
+- All the necessery a11y attributes for `Menu.List`, `Menu.Trigger` and `Menu.Item` are provided.
+
+## Props
+
+<Props of="Menu" />

@@ -54,10 +54,11 @@ const _MenuList = (props: MenuListProps, ref: React.Ref<HTMLDivElement>) => {
 
   return (
     <Popover.Content
-      {...getMenuListProps(otherProps, ref)}
-      data-test-id={testId}
       role="menu"
+      {...otherProps}
+      {...getMenuListProps(otherProps, ref)}
       className={cx(styles.container, className)}
+      testId={testId}
     >
       {header}
       {items}

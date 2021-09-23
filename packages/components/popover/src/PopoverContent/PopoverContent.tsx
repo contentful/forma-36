@@ -29,6 +29,7 @@ const _PopoverContent = (props: PopoverContentProps, ref) => {
 
   const content = (
     <div
+      {...otherProps}
       {...getPopoverProps(otherProps, ref)}
       className={cx(styles.container, className)}
       data-test-id={testId}

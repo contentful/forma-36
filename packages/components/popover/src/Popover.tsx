@@ -163,7 +163,6 @@ export function Popover(props: PopoverProps) {
         ['aria-controls']: popoverId,
       }),
       getPopoverProps: (_props = {}, _ref = null) => ({
-        ..._props,
         ...popperAttributes.popper,
         style: {
           ...(_props.style || {}),

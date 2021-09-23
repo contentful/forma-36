@@ -95,7 +95,6 @@ export function Menu(props: MenuProps) {
   const contextValue: MenuContextType = useMemo(
     () => ({
       getTriggerProps: (_props = {}, _ref = null) => ({
-        ..._props,
         onClick: (event) => {
           if (isOpen) {
             handleClose();
@@ -107,7 +106,6 @@ export function Menu(props: MenuProps) {
         ref: mergeRefs(triggerRef, _ref),
       }),
       getMenuListProps: (_props = {}, _ref = null) => ({
-        ..._props,
         ref: mergeRefs(menuListRef, _ref),
         onKeyDown: (event) => {
           handleMenuListKeyDown(event);
@@ -115,7 +113,6 @@ export function Menu(props: MenuProps) {
         },
       }),
       getMenuItemProps: (_props = {}) => ({
-        ..._props,
         onClick: (event) => {
           _props.onClick?.(event);
           if (closeOnSelect) {
