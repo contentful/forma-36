@@ -1,7 +1,6 @@
 {
   "name": "@contentful/f36-card",
   "version": "4.0.0",
-  "private": true,
   "description": "Forma 36: Card components",
   "scripts": {
     "build": "parcel build index.ts"
