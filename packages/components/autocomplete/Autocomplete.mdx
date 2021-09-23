@@ -45,7 +45,7 @@ function AutocompleteExample() {
   const [selectedFruit, setSelectedFruit] = React.useState();
 
   // This is the function that will be used by the `filter()` method to filter the "fruits" array
-  // we use 'toLowerCase()' to make the search case insentiive
+  // we use 'toLowerCase()' to make the search case insensitive
   const handleFilter = (item, inputValue) => {
     item.toLowerCase().includes(inputValue.toLowerCase());
   };
