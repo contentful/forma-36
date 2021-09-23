@@ -30,7 +30,7 @@ export const ValidationMessage = forwardRef<
       ref={ref}
       testId={testId}
       alignItems="center"
-      aria-live="polite"
+      aria-live="assertive"
     >
       <Flex marginRight="spacing2Xs">
         <ErrorCircleOutlineIcon
