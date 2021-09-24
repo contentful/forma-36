@@ -25,11 +25,28 @@ function _IconButton<E extends React.ElementType = typeof DEFAULT_TAG>(
   props: IconButtonProps<E>,
   ref: React.Ref<any>,
 ) {
-  const { testId = 'cf-ui-icon-button', icon, ...otherProps } = props;
+  const {
+    testId = 'cf-ui-icon-button',
+    variant = 'transparent',
+    icon,
+    ...otherProps
+  } = props;
+  const defaultIconColor: {
+    [Property in ButtonInternalProps['variant']]: string;
+  } = {
+    primary: 'white',
+    secondary: 'secondary',
+    positive: 'white',
+    negative: 'white',
+    transparent: 'secondary',
+  };
 
   return (
-    <Button testId={testId} ref={ref} {...otherProps}>
-      {icon}
+    <Button testId={testId} ref={ref} variant={variant} {...otherProps}>
+      {React.cloneElement(icon, {
+        variant: defaultIconColor[variant],
+        ...icon.props,
+      })}
     </Button>
   );
 }
