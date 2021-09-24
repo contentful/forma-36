@@ -11,6 +11,7 @@ const isCollapsed = true;
   label="Some label"
   buttonType="muted"
   iconProps={{ icon: isCollapsed ? 'ChevronDown' : 'ChevronUp', className: 'className' }}
+  disabled={isCollapsed}
 />;
 
 <IconButton

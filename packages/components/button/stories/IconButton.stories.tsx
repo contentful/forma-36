@@ -35,24 +35,6 @@ export const basic = ({
   />
 );
 
-basic.argTypes = {
-  iconVariant: {
-    control: {
-      options: [
-        '',
-        'primary',
-        'secondary',
-        'positive',
-        'negative',
-        'warning',
-        'muted',
-        'white',
-      ],
-      type: 'select',
-    },
-  },
-};
-
 basic.args = {
   icon: 'StarIcon',
   'aria-label': 'Label',

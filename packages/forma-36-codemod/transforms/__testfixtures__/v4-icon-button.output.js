@@ -9,7 +9,8 @@ const isCollapsed = true;
 <IconButton
   variant="transparent"
   icon={isCollapsed ? <ChevronDownIcon variant="muted" className="className" /> : <ChevronUpIcon variant="muted" className="className" />}
-  aria-label="Some label" />;
+  aria-label="Some label"
+  isDisabled={isCollapsed} />;
 
 <IconButton
   variant="transparent"

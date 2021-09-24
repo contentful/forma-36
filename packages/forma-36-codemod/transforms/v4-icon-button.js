@@ -103,6 +103,7 @@ module.exports = function (file, api) {
       modifiedAttributes = renameProperties(modifiedAttributes, {
         renameMap: {
           label: 'aria-label',
+          disabled: 'isDisabled',
         },
       });
 
