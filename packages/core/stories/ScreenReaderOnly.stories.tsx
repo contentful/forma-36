@@ -1,11 +1,11 @@
 import React from 'react';
-import { SectionHeading } from '@contentful/f36-typography';
-import { ScreenReaderOnly } from '../src/ScreenReaderOnly';
+import { SectionHeading, Paragraph } from '@contentful/f36-typography';
 import { TextLink } from '@contentful/f36-text-link';
-import { Stack } from '@contentful/f36-core';
+import { Stack } from '../src/Stack';
+import { ScreenReaderOnly } from '../src/ScreenReaderOnly';
 
 export default {
-  title: 'Components/ScreenReaderOnly',
+  title: 'Utilities/ScreenReaderOnly',
   component: ScreenReaderOnly,
   parameters: {
     propTypes: ScreenReaderOnly['__docgenInfo'],
@@ -39,16 +39,16 @@ export const Basic = () => {
       </nav>
       <div id="main-content">
         <SectionHeading as="h2">Main Content</SectionHeading>
-        <p>
+        <Paragraph>
           When using a screenreader you will get offered a skip to main content
           link.
-        </p>
-        <p>
+        </Paragraph>
+        <Paragraph>
           The navigation has a ScreenReaderOnly wrapped heading which it is
           labelled by, to help a screenreader user, to identify which kind of
           navigation they are on.
           <ScreenReaderOnly as="span">End of Main Content</ScreenReaderOnly>
-        </p>
+        </Paragraph>
       </div>
     </Stack>
   );
