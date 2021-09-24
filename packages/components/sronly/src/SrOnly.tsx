@@ -5,23 +5,27 @@ import type { CommonProps } from '@contentful/f36-core';
 
 export interface SrOnlyProps extends CommonProps {
   children?: React.ReactNode;
+  as?: 'div' | 'span';
 }
 
 export const SrOnly = ({
   children,
   className,
   testId = 'cf-ui-sronly',
+  as = 'div',
   ...otherProps
 }: SrOnlyProps) => {
   const styles = getStyles();
 
+  const Element: React.ElementType = as;
+
   return (
-    <div
+    <Element
       {...otherProps}
       data-testid={testId}
       className={cx(styles.srOnly, className)}
     >
       {children}
-    </div>
+    </Element>
   );
 };

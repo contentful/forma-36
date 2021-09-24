@@ -47,6 +47,7 @@ export const Basic = (args: { testId: string }) => {
           The navigation has a SrOnly wrapped heading which it is labelled by,
           to help a screenreader user, to identify which kind of navigation they
           are on.
+          <SrOnly as="span">End of Main Content</SrOnly>
         </p>
       </div>
     </Stack>
