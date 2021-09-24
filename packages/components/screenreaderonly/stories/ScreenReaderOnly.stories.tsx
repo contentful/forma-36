@@ -16,7 +16,7 @@ export default {
   },
 };
 
-export const Basic = (args: { testId: string }) => {
+export const Basic = () => {
   return (
     <Stack flexDirection="column" spacing="spacingM">
       <ScreenReaderOnly>
