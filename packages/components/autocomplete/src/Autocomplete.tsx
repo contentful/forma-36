@@ -252,7 +252,7 @@ function _Autocomplete<ItemType>(
                       styles.item,
                       highlightedIndex === index && styles.highlighted,
                     ])}
-                    data-test-id="cf-autocomplete-list-item"
+                    data-test-id={`cf-autocomplete-list-item-${index}`}
                   >
                     {renderItem ? renderItem(item) : item}
                   </li>
