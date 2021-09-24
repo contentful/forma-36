@@ -33,22 +33,6 @@ Label property is always required and passed to the `<input />` as `aria-label`.
 
 ## TextInput variations
 
-### Character count (`countCharacters`)
-
-The TextInput can be configured to display a character count. This is useful when an input field has a character limit.<br/>
-**Note**: The `maxLength` property must be also provided.
-
-```jsx
-<TextInput
-  label="name"
-  name="name"
-  id="input-1"
-  placeholder="Type your name"
-  countCharacters
-  maxLength={150}
-/>
-```
-
 ### TextInput with copy button (`withCopyButton`)
 
 We provide a variant of the TextInput that is a composed with CopyButton. In order to use it add `withCopyButton` property to your implementation.
