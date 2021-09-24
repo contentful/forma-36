@@ -1,14 +1,14 @@
 import React from 'react';
 import { SectionHeading } from '@contentful/f36-typography';
-import { SrOnly } from '../src/SrOnly';
+import { ScreenReaderOnly } from '../src/ScreenReaderOnly';
 import { TextLink } from '@contentful/f36-text-link';
 import { Stack } from '@contentful/f36-core';
 
 export default {
-  title: 'Components/SrOnly',
-  component: SrOnly,
+  title: 'Components/ScreenReaderOnly',
+  component: ScreenReaderOnly,
   parameters: {
-    propTypes: SrOnly['__docgenInfo'],
+    propTypes: ScreenReaderOnly['__docgenInfo'],
   },
   argTypes: {
     className: { control: { disable: true } },
@@ -19,16 +19,16 @@ export default {
 export const Basic = (args: { testId: string }) => {
   return (
     <Stack flexDirection="column" spacing="spacingM">
-      <SrOnly>
+      <ScreenReaderOnly>
         <TextLink href="#main-content">Skip to main content</TextLink>
-      </SrOnly>
+      </ScreenReaderOnly>
       <nav aria-labelledby="main-navigation">
         <Stack flexDirection="row" spacing="spacingS">
-          <SrOnly>
+          <ScreenReaderOnly>
             <SectionHeading as="h2" id="main-navigation">
               Main Navigation
             </SectionHeading>
-          </SrOnly>
+          </ScreenReaderOnly>
           <TextLink href="#">Menu Element</TextLink>
           <TextLink href="#">Menu Element</TextLink>
           <TextLink href="#">Menu Element</TextLink>
@@ -44,10 +44,10 @@ export const Basic = (args: { testId: string }) => {
           link.
         </p>
         <p>
-          The navigation has a SrOnly wrapped heading which it is labelled by,
-          to help a screenreader user, to identify which kind of navigation they
-          are on.
-          <SrOnly as="span">End of Main Content</SrOnly>
+          The navigation has a ScreenReaderOnly wrapped heading which it is
+          labelled by, to help a screenreader user, to identify which kind of
+          navigation they are on.
+          <ScreenReaderOnly as="span">End of Main Content</ScreenReaderOnly>
         </p>
       </div>
     </Stack>

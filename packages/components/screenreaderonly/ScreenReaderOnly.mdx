@@ -1,11 +1,11 @@
 ---
-title: 'SrOnly'
+title: 'ScreenReaderOnly'
 type: 'component'
 status: 'stable'
-slug: /components/sronly/
-github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/SrOnly'
-storybook: 'https://f36-storybook.contentful.com/?path=/info/components-sronly'
-typescript: ./src/SrOnly.tsx
+slug: /components/ScreenReaderOnly/
+github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/ScreenReaderOnly'
+storybook: 'https://f36-storybook.contentful.com/?path=/info/components-ScreenReaderOnly'
+typescript: ./src/ScreenReaderOnly.tsx
 ---
 
 import { Props } from '@contentful/f36-docs-utils';
@@ -14,29 +14,29 @@ This is a helper component to add content and components which is only visible f
 
 ## Table of contents
 
-- [How to use SrOnly](#how-to-use-sronly)
+- [How to use ScreenReaderOnly](#how-to-use-ScreenReaderOnly)
 - [Code examples](#code-examples)
 - [Content recommendations](#content-recommendations)
 
-## How to use SrOnly
+## How to use ScreenReaderOnly
 
-- The SrOnly wrapper will apply style to the element which moves it out of the viewport but not out of your pages context.
+- The ScreenReaderOnly wrapper will apply style to the element which moves it out of the viewport but not out of your pages context.
 - Make sure child elements don't have overwriting positioning
 
 ## Code examples
 
 ```jsx
 <Stack flexDirection="column" spacing="spacingM">
-  <SrOnly>
+  <ScreenReaderOnly>
     <TextLink href="#main-content">Skip to main content</TextLink>
-  </SrOnly>
+  </ScreenReaderOnly>
   <nav aria-labelledby="main-navigation">
     <Stack flexDirection="row" spacing="spacingS">
-      <SrOnly>
+      <ScreenReaderOnly>
         <SectionHeading as="h2" id="main-navigation">
           Main Navigation
         </SectionHeading>
-      </SrOnly>
+      </ScreenReaderOnly>
       <TextLink href="#">Menu Element</TextLink>
       <TextLink href="#">Menu Element</TextLink>
       <TextLink href="#">Menu Element</TextLink>
@@ -52,9 +52,9 @@ This is a helper component to add content and components which is only visible f
       link.
     </p>
     <p>
-      The navigation has a SrOnly wrapped heading which it is labelled by, to
-      help a screenreader user, to identify which kind of navigation they are
-      on.
+      The navigation has a ScreenReaderOnly wrapped heading which it is labelled
+      by, to help a screenreader user, to identify which kind of navigation they
+      are on.
     </p>
   </div>
 </Stack>
@@ -68,6 +68,6 @@ This is a helper component to add content and components which is only visible f
 
 ## Props
 
-### SrOnly
+### ScreenReaderOnly
 
-<Props of="SrOnly" />
+<Props of="ScreenReaderOnly" />

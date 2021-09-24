@@ -2,7 +2,7 @@ import { css } from 'emotion';
 
 export function getStyles() {
   return {
-    srOnly: css({
+    screenReaderOnly: css({
       position: 'absolute',
       width: '1px',
       height: '1px',

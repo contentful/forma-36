@@ -1,7 +1,7 @@
 {
-  "name": "@contentful/f36-sronly",
+  "name": "@contentful/f36-ScreenReaderOnly",
   "version": "4.0.0",
-  "description": "Forma 36: SrOnly component",
+  "description": "Forma 36: ScreenReaderOnly component",
   "scripts": {
     "build": "parcel build src/index.ts"
   },

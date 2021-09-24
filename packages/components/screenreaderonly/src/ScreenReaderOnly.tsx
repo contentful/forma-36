@@ -1,20 +1,20 @@
 import { cx } from 'emotion';
 import React from 'react';
-import { getStyles } from './SrOnly.styles';
+import { getStyles } from './ScreenReaderOnly.styles';
 import type { CommonProps } from '@contentful/f36-core';
 
-export interface SrOnlyProps extends CommonProps {
+export interface ScreenReaderOnlyProps extends CommonProps {
   children?: React.ReactNode;
   as?: 'div' | 'span';
 }
 
-export const SrOnly = ({
+export const ScreenReaderOnly = ({
   children,
   className,
-  testId = 'cf-ui-sronly',
+  testId = 'cf-ui-ScreenReaderOnly',
   as = 'div',
   ...otherProps
-}: SrOnlyProps) => {
+}: ScreenReaderOnlyProps) => {
   const styles = getStyles();
 
   const Element: React.ElementType = as;
@@ -22,8 +22,8 @@ export const SrOnly = ({
   return (
     <Element
       {...otherProps}
-      data-testid={testId}
-      className={cx(styles.srOnly, className)}
+      data-test-id={testId}
+      className={cx(styles.screenReaderOnly, className)}
     >
       {children}
     </Element>
