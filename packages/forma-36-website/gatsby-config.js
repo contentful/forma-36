@@ -61,7 +61,17 @@ module.exports = {
         menuLinks: [
           {
             name: 'Accessibility',
-            link: '/guidelines/accessibility/',
+            link: '',
+            menuLinks: [
+              {
+                name: 'Accessibility Principiles',
+                link: '/guidelines/accessibility/',
+              },
+              {
+                name: 'ScreenReaderOnly Helper Component',
+                link: '/components/ScreenReaderOnly/',
+              },
+            ],
           },
           {
             name: 'Copy',
