@@ -104,7 +104,7 @@ function _Autocomplete<ItemType>(
     isDisabled,
     isRequired,
     isReadOnly,
-    noMatchesMessage = 'No Matches',
+    noMatchesMessage = 'No matches',
     placeholder = 'Search',
     inputRef,
     toggleRef,
