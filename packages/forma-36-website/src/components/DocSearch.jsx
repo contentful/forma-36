@@ -55,7 +55,7 @@ const DocSearch = () => {
         name="search"
         type="text"
         placeholder="Search the docs"
-        value=""
+        defaultValue=""
       />
     </div>
   );
