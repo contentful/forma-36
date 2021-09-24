@@ -2,17 +2,16 @@ function isConditionalExpression(value, j) {
   return j(value).find(j.ConditionalExpression).length > 0;
 }
 
-const getValueFor = (key, { j, expression, valueMap }) => {
+const getValueFor = (key, { j, expression, valueMap = {} }) => {
   if (isConditionalExpression(expression.value[key], j)) {
     return updateTernaryValues(expression, { j, valueMap });
   }
-  return (
-    j.literal(valueMap[expression.value[key].value]) ||
-    expression.value[key].value
+  return j.literal(
+    valueMap[expression.value[key].value] || expression.value[key].value,
   );
 };
 
-function updateTernaryValues(value, { j, valueMap }) {
+function updateTernaryValues(value, { j, valueMap = {} }) {
   return j(value)
     .find(j.ConditionalExpression)
     .forEach((expression) => {

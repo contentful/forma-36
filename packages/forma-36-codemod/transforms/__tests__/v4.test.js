@@ -7,6 +7,7 @@ describe('v4 codemods', () => {
   const tests = [
     'v4-badge',
     'v4-button',
+    'v4-icon-button',
     'v4-flex',
     'v4-list',
     'v4-note',

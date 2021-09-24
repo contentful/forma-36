@@ -24,6 +24,10 @@ const TRANSFORMS_CHOICES = [
     value: 'v4-button',
   },
   {
+    name: 'v4-icon-button: Converts IconButton component from Forma v3 to v4',
+    value: 'v4-icon-button',
+  },
+  {
     name:
       'v4-badge: Converts Tag component from Forma v3 to Badge component from v4',
     value: 'v4-badge',

@@ -13,8 +13,14 @@ import { PreviewIcon } from '@contentful/f36-icons';
 
 ## Table of contents
 
+- [How to use IconButton](#how-to-use-iconbutton)
 - [Code examples](#code-examples)
 - [Props](#props)
+
+## How to use IconButton
+
+IconButton composes the Button component except that it renders only an icon.  
+You must pass the Icon component you want to render to the `icon` prop, you may also provide the variant and size to the Icon.
 
 ## Code examples
 
@@ -24,7 +30,11 @@ Example of simple usage:
 // import { IconButton } from '@contentful/f36-button';
 // import { PreviewIcon } from '@contentful/f36-icons';
 
-<IconButton aria-label="Preview" icon={<PreviewIcon />} />
+<IconButton
+  variant="transparent"
+  aria-label="Preview"
+  icon={<PreviewIcon variant="secondary" size="medium" />}
+/>
 ```
 
 ## Props

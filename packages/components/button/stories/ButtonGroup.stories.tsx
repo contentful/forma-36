@@ -38,7 +38,7 @@ export const basic: Story<ButtonGroupProps> = (args) => {
       <Button variant="secondary">Button</Button>
       <IconButton
         variant="secondary"
-        icon={<ChevronDownIcon />}
+        icon={<ChevronDownIcon variant="secondary" />}
         aria-label="Open dropdown"
       />
     </ButtonGroup>
@@ -53,7 +53,7 @@ export const spaced: Story<ButtonGroupProps> = (args) => {
       <Button variant="secondary">Button</Button>
       <IconButton
         variant="secondary"
-        icon={<ChevronDownIcon />}
+        icon={<ChevronDownIcon variant="secondary" />}
         aria-label="Open dropdown"
       />
     </ButtonGroup>
@@ -89,7 +89,7 @@ export const overview: Story<ButtonGroupProps> = () => {
               <IconButton
                 onClick={onClick}
                 variant="secondary"
-                icon={<ChevronDownIcon />}
+                icon={<ChevronDownIcon variant="secondary" />}
                 aria-label="Open dropdown"
               />
             </ButtonGroup>
@@ -102,7 +102,7 @@ export const overview: Story<ButtonGroupProps> = () => {
               <IconButton
                 onClick={onClick}
                 variant="positive"
-                icon={<ChevronDownIcon />}
+                icon={<ChevronDownIcon variant="white" />}
                 aria-label="Open dropdown"
               />
             </ButtonGroup>
@@ -119,7 +119,7 @@ export const overview: Story<ButtonGroupProps> = () => {
               <IconButton
                 onClick={onClick}
                 variant="primary"
-                icon={<ChevronDownIcon />}
+                icon={<ChevronDownIcon variant="white" />}
                 aria-label="Open dropdown"
               />
             </ButtonGroup>
