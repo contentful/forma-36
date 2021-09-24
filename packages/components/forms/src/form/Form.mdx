@@ -22,22 +22,31 @@ storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-form
 ### Basic example
 
 ```jsx
-<Form onSubmit={() => console.log('handler for submit')}>
-  <FormControl>
-    <FormControl.Label isRequired>Name</FormControl.Label>
-    <TextInput />
-    <FormControl.HelpText>Please enter your first name</FormControl.HelpText>
-  </FormControl>
+function FormaExample() {
+  const [submited, setSubmited] = React.useState(false);
+  return (
+    <Form onSubmit={() => setSubmited(true)}>
+      <FormControl>
+        <FormControl.Label isRequired>Name</FormControl.Label>
+        <TextInput />
+        <FormControl.HelpText>
+          Please enter your first name
+        </FormControl.HelpText>
+      </FormControl>
 
-  <FormControl>
-    <FormControl.Label>Description</FormControl.Label>
-    <Textarea />
-    <FormControl.HelpText>Tell me about youself</FormControl.HelpText>
-  </FormControl>
-  <Button variant={'primary'} type="submit" isDisabled={submited}>
-    {submited ? 'Sumbited' : 'Click me to submit'}
-  </Button>
-</Form>
+      <FormControl>
+        <FormControl.Label>Description</FormControl.Label>
+        <Box>
+          <Textarea />
+        </Box>
+        <FormControl.HelpText>Tell me about youself</FormControl.HelpText>
+      </FormControl>
+      <Button variant={'primary'} type="submit" isDisabled={submited}>
+        {submited ? 'Sumbited' : 'Click me to submit'}
+      </Button>
+    </Form>
+  );
+}
 ```
 
 ### Example using solution like Formik

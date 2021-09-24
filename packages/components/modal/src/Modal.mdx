@@ -133,18 +133,22 @@ function ModalExample() {
   return (
     <React.Fragment>
       <Form>
-        <SelectField
-          onChange={(e) => {
-            setSize(e.target.value);
-          }}
-          labelText="Select a width"
-        >
-          <Option value="small">small</Option>
-          <Option value="medium">medium</Option>
-          <Option value="large">large</Option>
-          <Option value="fullWidth">full width</Option>
-          <Option value="333px">333px (specific width value)</Option>
-        </SelectField>
+        <FormControl>
+          <FormControl.Label>Select a width</FormControl.Label>
+          <Select
+            onChange={(e) => {
+              setSize(e.target.value);
+            }}
+          >
+            <Select.Option value="small">small</Select.Option>
+            <Select.Option value="medium">medium</Select.Option>
+            <Select.Option value="large">large</Select.Option>
+            <Select.Option value="fullWidth">full width</Select.Option>
+            <Select.Option value="333px">
+              333px (specific width value)
+            </Select.Option>
+          </Select>
+        </FormControl>
         <Button
           onClick={() => {
             setShown(true);
