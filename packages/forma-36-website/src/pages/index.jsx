@@ -4,7 +4,6 @@ import tokens from '@contentful/f36-tokens';
 import { DisplayText, Paragraph, Button } from '@contentful/f36-components';
 
 import componentsImg from './components.png';
-import fcssImg from './fcss.png';
 import tokensImg from './tokens.png';
 import uiKitImg from './ui-kit.png';
 
