@@ -22,10 +22,9 @@ const _PopoverContent = (props: PopoverContentProps, ref) => {
     role = 'dialog',
     ...otherProps
   } = props;
-
-  const styles = getPopoverContentStyles();
-
   const { isOpen, getPopoverProps, usePortal } = usePopoverContext();
+
+  const styles = getPopoverContentStyles(isOpen);
 
   const content = (
     <div
@@ -42,10 +41,6 @@ const _PopoverContent = (props: PopoverContentProps, ref) => {
       {children}
     </div>
   );
-
-  if (!isOpen) {
-    return null;
-  }
 
   return usePortal ? <Portal>{content}</Portal> : content;
 };
