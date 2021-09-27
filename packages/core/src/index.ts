@@ -12,5 +12,6 @@ export * from './Flex';
 export * from './Grid';
 export * from './Box';
 export * from './Stack';
+export * from './ScreenReaderOnly';
 export * from './hooks';
 export * from './utils';
