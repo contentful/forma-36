@@ -377,17 +377,6 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'pages',
-        path: path.resolve(
-          __dirname,
-          '../forma-36-react-components/src/components/',
-        ),
-        ignore: listOfIgnoredFiles,
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'pages',
         path: path.resolve(__dirname, '../components/'),
         ignore: listOfIgnoredFiles,
       },

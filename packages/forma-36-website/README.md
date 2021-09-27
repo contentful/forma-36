@@ -109,10 +109,10 @@ Component documentation makes use of front matter to generate links to the compo
 
 ```mdx
 ---
-title: 'Typography'
+title: 'Button'
 type: 'component'
-github: 'https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components/src/components/Typography'
-storybook: 'https://f36-storybook.contentful.com/?path=/info/components-typography-typography--displaytext-large'
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/button'
+storybook: 'https://f36-storybook.contentful.com/?path=/info/components-button'
 ---
 ```
 
