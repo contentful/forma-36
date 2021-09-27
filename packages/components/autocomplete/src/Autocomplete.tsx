@@ -104,7 +104,7 @@ function _Autocomplete<ItemType>(
     isDisabled,
     isRequired,
     isReadOnly,
-    noMatchesMessage = 'No Matches',
+    noMatchesMessage = 'No matches',
     placeholder = 'Search',
     inputRef,
     toggleRef,
@@ -252,7 +252,7 @@ function _Autocomplete<ItemType>(
                       styles.item,
                       highlightedIndex === index && styles.highlighted,
                     ])}
-                    data-test-id="cf-autocomplete-list-item"
+                    data-test-id={`cf-autocomplete-list-item-${index}`}
                   >
                     {renderItem ? renderItem(item) : item}
                   </li>
