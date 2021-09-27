@@ -143,6 +143,23 @@ export const WithReactRouterLinks: Story<MenuProps> = (args) => {
   );
 };
 
+export const WithInitialFocusedItem: Story<MenuProps> = (args) => {
+  return (
+    <Router>
+      <Menu defaultIsOpen initialFocusedItemIndex={1} {...args}>
+        <Menu.Trigger>
+          <IconButton icon={<MenuIcon />} aria-label="toggle menu" />
+        </Menu.Trigger>
+        <Menu.List>
+          <Menu.Item>Create an entry</Menu.Item>
+          <Menu.Item>Remove an entry</Menu.Item>
+          <Menu.Item>Embed existing entry</Menu.Item>
+        </Menu.List>
+      </Menu>
+    </Router>
+  );
+};
+
 Basic.parameters = {
   chromatic: { delay: 300 },
 };
@@ -159,5 +176,8 @@ WithDisabledItems.parameters = {
   chromatic: { delay: 300 },
 };
 WithReactRouterLinks.parameters = {
+  chromatic: { delay: 300 },
+};
+WithInitialFocusedItem.parameters = {
   chromatic: { delay: 300 },
 };
