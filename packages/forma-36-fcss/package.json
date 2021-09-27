@@ -13,7 +13,7 @@
     "node-sass-import": "^2.0.1",
     "postcss": "^8.2.2",
     "postcss-calc": "^8.0.0",
-    "postcss-css-variables": "^0.17.0"
+    "postcss-css-variables": "^0.18.0"
   },
   "dependencies": {
     "@contentful/forma-36-tokens": "^0.11.1"
