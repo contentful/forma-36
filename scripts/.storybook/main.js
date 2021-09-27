@@ -1,5 +1,4 @@
 const path = require('path');
-const postcssOptions = require('../../packages/forma-36-react-components/tools/postcss.config.js');
 
 module.exports = {
   stories: ['./docs/**/*.stories.mdx', '../../packages/**/*.stories.@(ts|md)x'],
@@ -22,53 +21,6 @@ module.exports = {
     config.module.rules = config.module.rules.filter(
       (rule) => rule.test.toString() !== '/\\.css$/',
     );
-
-    // Global CSS
-    config.module.rules.push({
-      test: /\.global.css$/,
-      use: [
-        'style-loader',
-        {
-          loader: 'css-loader',
-          options: {
-            importLoaders: 1,
-            sourceMap: true,
-            // minimize: true,
-          },
-        },
-        {
-          loader: 'postcss-loader',
-          options: {
-            postcssOptions,
-          },
-        },
-      ],
-    });
-
-    // CSS Modules
-    config.module.rules.push({
-      test: /\.css$/,
-      exclude: [/node_modules/, /\.global\.css$/],
-      loaders: [
-        'style-loader',
-        {
-          loader: 'css-loader',
-          options: {
-            importLoaders: 1,
-            modules: {
-              localIdentName: '[name]__[local]___[hash:base64:5]',
-            },
-            sourceMap: true,
-          },
-        },
-        {
-          loader: 'postcss-loader',
-          options: {
-            postcssOptions,
-          },
-        },
-      ],
-    });
 
     // We need to split into chunks to avoid terser running out of memory
     // when trying to minify one huge JS file

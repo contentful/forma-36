@@ -16,7 +16,6 @@ You can access a Storybook website with the latest changes of the library [here]
   - [Development](#development)
     - [Storybook](#storybook)
     - [Example component directory structure](#example-component-directory-structure)
-    - [Styling](#styling)
     - [Code Style Guide](#code-style-guide)
     - [Component principles](#component-principles)
     - [Adding documentation for component](#adding-documentation-for-component)
@@ -88,10 +87,6 @@ YourComponent
 ```
 
 > If you use `yarn generate` in the root of the repo, this structure will be created automatically for you
-
-### Styling
-
-We are using [postcss-preset-env](https://preset-env.cssdb.org/) for styling our components. Using postcss-preset-env allows us to use the latest CSS syntax without having to wait for browser support. `tools/postcss.config.js` is used for adding plugins and configuration.
 
 ### Code Style Guide
 
