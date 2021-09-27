@@ -6,6 +6,7 @@ import boxShadowTokens from '@contentful/f36-tokens/src/tokens/box-shadows/box-s
 import glowTokens from '@contentful/f36-tokens/src/tokens/box-shadows/glows';
 
 import {
+  Box,
   Table,
   TableHead,
   TableBody,
@@ -21,31 +22,33 @@ communicate depth, and glows to communicate semantics.
 
 Box shadows are used to give depth to the user interface.
 
-<Table className="f36-margin-bottom--l">
-  <TableHead>
-    <TableRow>
-      <TableCell>Token</TableCell>
-      <TableCell>Value</TableCell>
-      <TableCell>Example</TableCell>
-    </TableRow>
-  </TableHead>
-  <TableBody>
-    {Object.keys(boxShadowTokens).map((token) => {
-      const value = boxShadowTokens[token];
-      return (
-        <TableRow key={token}>
-          <TableCell>{token}</TableCell>
-          <TableCell>
-            <pre>{value}</pre>
-          </TableCell>
-          <TableCell>
-            <Card>Box Shadow</Card>
-          </TableCell>
-        </TableRow>
-      );
-    })}
-  </TableBody>
-</Table>
+<Box marginBottom="spacingL">
+  <Table>
+    <TableHead>
+      <TableRow>
+        <TableCell>Token</TableCell>
+        <TableCell>Value</TableCell>
+        <TableCell>Example</TableCell>
+      </TableRow>
+    </TableHead>
+    <TableBody>
+      {Object.keys(boxShadowTokens).map((token) => {
+        const value = boxShadowTokens[token];
+        return (
+          <TableRow key={token}>
+            <TableCell>{token}</TableCell>
+            <TableCell>
+              <pre>{value}</pre>
+            </TableCell>
+            <TableCell>
+              <Card>Box Shadow</Card>
+            </TableCell>
+          </TableRow>
+        );
+      })}
+    </TableBody>
+  </Table>
+</Box>
 
 ## Glows
 

@@ -1,18 +1,12 @@
 [
   {
-    "path": "dist/index.js",
+    "path": "dist/main.js",
     "name": "gzipped js",
     "gzip": false,
-    "limit": "425 KB",
+    "limit": "320 KB",
     "ignore": [
       "react",
       "react-dom"
     ]
-  },
-  {
-    "path": "dist/styles.css",
-    "name": "gzipped css",
-    "limit": "105 KB",
-    "gzip": false
   }
 ]

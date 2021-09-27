@@ -1,8 +1,0 @@
-@import 'settings/colors';
-@import 'settings/typography';
-@import 'settings/shadows';
-
-.Dropdown {
-  display: inline-block;
-  position: relative;
-}

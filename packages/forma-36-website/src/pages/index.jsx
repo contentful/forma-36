@@ -4,7 +4,6 @@ import tokens from '@contentful/f36-tokens';
 import { DisplayText, Paragraph, Button } from '@contentful/f36-components';
 
 import componentsImg from './components.png';
-import fcssImg from './fcss.png';
 import tokensImg from './tokens.png';
 import uiKitImg from './ui-kit.png';
 
@@ -61,15 +60,6 @@ const IndexPage = () => (
           linkHref="https://github.com/contentful/forma-36/tree/master/packages/forma-36-tokens"
           imageNode={
             <img src={tokensImg} alt="Illustration for design tokens" />
-          }
-        />
-        <Resource
-          title="Forma 36 FCSS"
-          description="CSS utlity classes for spacing, colors, and more"
-          linkText="Get FCSS"
-          linkHref="https://github.com/contentful/forma-36/tree/master/packages/forma-36-fcss"
-          imageNode={
-            <img src={fcssImg} alt="Illustration for CSS utility classes" />
           }
         />
       </Resources>

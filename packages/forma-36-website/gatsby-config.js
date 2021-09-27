@@ -227,10 +227,6 @@ module.exports = {
             ],
           },
           {
-            name: 'Dropdown',
-            link: '/components/dropdown/',
-          },
-          {
             name: 'Popover',
             link: '/components/popover/',
           },
@@ -385,17 +381,6 @@ module.exports = {
       options: {
         name: 'pages',
         path: `${__dirname}/src/content/`,
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'pages',
-        path: path.resolve(
-          __dirname,
-          '../forma-36-react-components/src/components/',
-        ),
-        ignore: listOfIgnoredFiles,
       },
     },
     {

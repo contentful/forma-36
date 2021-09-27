@@ -1,4 +1,9 @@
-export * from '@contentful/f36-badge';
+export { Badge, EntityStatusBadge } from '@contentful/f36-badge';
+export type {
+  BadgeProps,
+  EntityStatusBadgeProps,
+  BadgeVariant,
+} from '@contentful/f36-badge';
 export { Icon } from '@contentful/f36-icon';
 export type {
   IconComponent,
@@ -48,7 +53,25 @@ export type {
   TableProps,
   TableRowProps,
 } from '@contentful/f36-table';
-export * from '@contentful/f36-typography';
+export {
+  Heading,
+  DisplayText,
+  Subheading,
+  SectionHeading,
+  Text,
+  Paragraph,
+  Typography,
+} from '@contentful/f36-typography';
+export type {
+  HeadingProps,
+  DisplayTextProps,
+  SubheadingProps,
+  SectionHeadingProps,
+  TextProps,
+  ParagraphProps,
+  TypographyProps,
+  HeadingElement,
+} from '@contentful/f36-typography';
 export { List, ListItem } from '@contentful/f36-list';
 export type { ListProps, ListItemProps } from '@contentful/f36-list';
 export { Note } from '@contentful/f36-note';
@@ -157,7 +180,6 @@ export type {
 } from '@contentful/f36-menu';
 export { Autocomplete } from '@contentful/f36-autocomplete';
 export type { AutocompleteProps } from '@contentful/f36-autocomplete';
-export * from './components/Dropdown';
 export { DateTime, RelativeDateTime } from '@contentful/f36-datetime';
 export type {
   DateTimeProps,
