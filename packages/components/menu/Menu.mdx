@@ -203,7 +203,7 @@ function ControlledMenu() {
 
 ```jsx static=true
 <Router>
-  <Menu defaultIsOpen {...args}>
+  <Menu>
     <Menu.Trigger>
       <IconButton icon={<MenuIcon />} aria-label="toggle menu" />
     </Menu.Trigger>
@@ -220,6 +220,21 @@ function ControlledMenu() {
     </Menu.List>
   </Menu>
 </Router>
+```
+
+### With predetermined focused menu item on initial open
+
+```jsx
+<Menu initialFocusedItemIndex={1}>
+  <Menu.Trigger>
+    <IconButton icon={<MenuIcon />} aria-label="toggle menu" />
+  </Menu.Trigger>
+  <Menu.List>
+    <Menu.Item>Create an entry</Menu.Item>
+    <Menu.Item>Remove an entry</Menu.Item>
+    <Menu.Item>Embed existing entry</Menu.Item>
+  </Menu.List>
+</Menu>
 ```
 
 ## Content recommendations
