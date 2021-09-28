@@ -106,6 +106,22 @@ WithLinkAndTarget.args = {
   title: 'Forma 36',
 };
 
+export const WithLoadingState: Story<CardProps> = (args) => {
+  return (
+    <Card {...args}>
+      <Text>
+        Forma 36 is an open-source design system by Contentful created with the
+        intent to reduce the overhead of creating UI by providing tools and
+        guidance for digital teams building and extending Contentful products.
+      </Text>
+    </Card>
+  );
+};
+
+WithLoadingState.args = {
+  isLoading: true,
+};
+
 export const Overview: Story<CardProps> = () => {
   return (
     <>
