@@ -11,6 +11,8 @@ import type { BaseCardInternalProps } from '../base-card/BaseCard';
 import { CardActions } from '../base-card/CardActions';
 import { getAssetCardStyles } from './AssetCard.styles';
 
+import { SkeletonContainer, SkeletonImage } from '@contentful/f36-skeleton';
+
 export interface AssetCardInternalProps
   extends Omit<BaseCardInternalProps, 'badge' | 'header' | 'padding' | 'ref'> {
   size?: 'small' | 'default';
@@ -35,6 +37,7 @@ export const AssetCard = ({
   title,
   type,
   withDragHandle = true,
+  isLoading,
   ...otherProps
 }: AssetCardInternalProps) => {
   const styles = getAssetCardStyles();
@@ -54,6 +57,18 @@ export const AssetCard = ({
         {actions && <CardActions>{actions}</CardActions>}
       </Flex>
     ) : null;
+
+  if (isLoading) {
+    return (
+      <SkeletonContainer
+        className={styles.skeleton}
+        svgWidth={size === 'default' ? '18rem' : '11rem'}
+        svgHeight={size === 'default' ? '18.75rem' : '12rem'}
+      >
+        <SkeletonImage width="100%" height="18.75rem" />
+      </SkeletonContainer>
+    );
+  }
 
   return (
     <BaseCard

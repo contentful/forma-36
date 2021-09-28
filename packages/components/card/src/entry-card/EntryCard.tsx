@@ -21,10 +21,6 @@ export type EntryCardInternalProps = Omit<
   'badge' | 'header' | 'padding' | 'ref'
 > & {
   children?: ReactElement | ReactNode;
-  /**
-   * Render the card in a loading state with skeleton components
-   */
-  isLoading?: boolean;
   src?: string;
   status?: EntityStatus;
   thumbnail?: ReactElement;

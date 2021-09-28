@@ -22,6 +22,12 @@ import { DragHandle } from '@contentful/f36-drag-handle';
 import { getBaseCardStyles } from './BaseCard.styles';
 import { CardActions } from './CardActions';
 
+import {
+  SkeletonBodyText,
+  SkeletonContainer,
+  SkeletonDisplayText,
+} from '@contentful/f36-skeleton';
+
 export const DEFAULT_TAG = 'article';
 
 export type CardElement = 'a' | 'article' | 'button' | 'div';
@@ -93,6 +99,10 @@ export type BaseCardInternalProps = CommonProps &
      * Render the component with a drag handle
      */
     withDragHandle?: boolean;
+    /**
+     * Loading state for the component - when true will display loading feedback to the user
+     */
+    isLoading?: boolean;
   };
 
 export type BaseCardProps<
@@ -128,6 +138,7 @@ function _BaseCard<E extends React.ElementType = typeof DEFAULT_TAG>(
     title,
     type,
     withDragHandle,
+    isLoading,
     ...otherProps
   }: BaseCardProps<E>,
   forwardedRef: React.Ref<HTMLElement>,
@@ -223,6 +234,15 @@ function _BaseCard<E extends React.ElementType = typeof DEFAULT_TAG>(
     },
     [onClick, onKeyDown],
   );
+
+  if (isLoading) {
+    return (
+      <SkeletonContainer className={styles.skeleton} svgHeight="5.6rem">
+        <SkeletonDisplayText numberOfLines={1} />
+        <SkeletonBodyText numberOfLines={1} offsetTop={35} />
+      </SkeletonContainer>
+    );
+  }
 
   return (
     <Box
