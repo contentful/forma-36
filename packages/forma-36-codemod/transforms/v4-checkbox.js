@@ -43,6 +43,7 @@ function selectFieldCodemod(file, api) {
       const id = getProperty(attributes, { propertyName: 'id' });
       const name = getProperty(attributes, { propertyName: 'name' });
       const labelText = getProperty(attributes, { propertyName: 'labelText' });
+      const value = getProperty(attributes, { propertyName: 'value' });
       const helpText = getProperty(attributes, { propertyName: 'helpText' });
       const validationMessage = getProperty(attributes, {
         propertyName: 'validationMessage',
@@ -62,6 +63,7 @@ function selectFieldCodemod(file, api) {
         helpText,
         disabled,
         name,
+        value,
         ...handlerProps,
         ...commonProps,
       ].filter((prop) => prop);
