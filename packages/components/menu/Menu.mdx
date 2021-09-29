@@ -40,7 +40,11 @@ You can use following components to build a menu:
 ```jsx
 <Menu>
   <Menu.Trigger>
-    <IconButton icon={<MenuIcon />} aria-label="toggle menu" />
+    <IconButton
+      variant="secondary"
+      icon={<MenuIcon />}
+      aria-label="toggle menu"
+    />
   </Menu.Trigger>
   <Menu.List>
     <Menu.Item>Create an entry</Menu.Item>
@@ -70,7 +74,11 @@ You can use following components to build a menu:
 ```jsx
 <Menu>
   <Menu.Trigger>
-    <IconButton icon={<MenuIcon />} aria-label="toggle menu" />
+    <IconButton
+      variant="secondary"
+      icon={<MenuIcon />}
+      aria-label="toggle menu"
+    />
   </Menu.Trigger>
   <Menu.List>
     <Menu.SectionTitle>Entry</Menu.SectionTitle>
@@ -90,7 +98,11 @@ You can use following components to build a menu:
 ```jsx
 <Menu defaultIsOpen>
   <Menu.Trigger>
-    <IconButton icon={<MenuIcon />} aria-label="toggle menu" />
+    <IconButton
+      variant="secondary"
+      icon={<MenuIcon />}
+      aria-label="toggle menu"
+    />
   </Menu.Trigger>
   <Menu.List>
     <Menu.Item>Create an entry</Menu.Item>
@@ -115,7 +127,11 @@ function ControlledMenu() {
       onClose={() => setIsOpen(false)}
     >
       <Menu.Trigger>
-        <IconButton icon={<MenuIcon />} aria-label="toggle menu" />
+        <IconButton
+          variant="secondary"
+          icon={<MenuIcon />}
+          aria-label="toggle menu"
+        />
       </Menu.Trigger>
       <Menu.List>
         <Menu.Item>Create an entry</Menu.Item>
@@ -132,7 +148,11 @@ function ControlledMenu() {
 ```jsx
 <Menu>
   <Menu.Trigger>
-    <IconButton icon={<MenuIcon />} aria-label="toggle menu" />
+    <IconButton
+      variant="secondary"
+      icon={<MenuIcon />}
+      aria-label="toggle menu"
+    />
   </Menu.Trigger>
   <Menu.List style={{ maxHeight: '200px' }}>
     <Menu.Item>Item 1</Menu.Item>
@@ -156,7 +176,11 @@ function ControlledMenu() {
 ```jsx
 <Menu>
   <Menu.Trigger>
-    <IconButton icon={<MenuIcon />} aria-label="toggle menu" />
+    <IconButton
+      variant="secondary"
+      icon={<MenuIcon />}
+      aria-label="toggle menu"
+    />
   </Menu.Trigger>
   <Menu.List>
     <Menu.Item>Item 1</Menu.Item>
@@ -176,7 +200,11 @@ function ControlledMenu() {
 ```jsx
 <Menu>
   <Menu.Trigger>
-    <IconButton icon={<MenuIcon />} aria-label="toggle menu" />
+    <IconButton
+      variant="secondary"
+      icon={<MenuIcon />}
+      aria-label="toggle menu"
+    />
   </Menu.Trigger>
   <Menu.List style={{ maxHeight: '300px' }}>
     <Menu.ListHeader>
@@ -203,9 +231,13 @@ function ControlledMenu() {
 
 ```jsx static=true
 <Router>
-  <Menu defaultIsOpen {...args}>
+  <Menu>
     <Menu.Trigger>
-      <IconButton icon={<MenuIcon />} aria-label="toggle menu" />
+      <IconButton
+        variant="secondary"
+        icon={<MenuIcon />}
+        aria-label="toggle menu"
+      />
     </Menu.Trigger>
     <Menu.List>
       <Link to="/" component={Menu.Item} as="a">
@@ -220,6 +252,25 @@ function ControlledMenu() {
     </Menu.List>
   </Menu>
 </Router>
+```
+
+### With predetermined focused menu item on initial open
+
+```jsx
+<Menu initialFocusedItemIndex={1}>
+  <Menu.Trigger>
+    <IconButton
+      variant="secondary"
+      icon={<MenuIcon />}
+      aria-label="toggle menu"
+    />
+  </Menu.Trigger>
+  <Menu.List>
+    <Menu.Item>Create an entry</Menu.Item>
+    <Menu.Item>Remove an entry</Menu.Item>
+    <Menu.Item>Embed existing entry</Menu.Item>
+  </Menu.List>
+</Menu>
 ```
 
 ## Content recommendations

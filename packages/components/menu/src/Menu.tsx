@@ -43,10 +43,18 @@ export interface MenuProps
    * @default true
    */
   closeOnSelect?: boolean;
+
+  /**
+   * Focus the menu item with provided index on initial open.
+   * Indexing starts from 0.
+   *
+   * @default 0
+   */
+  initialFocusedItemIndex?: number;
 }
 
 export function Menu(props: MenuProps) {
-  const { closeOnSelect = true } = props;
+  const { closeOnSelect = true, initialFocusedItemIndex = 0 } = props;
   const { isOpen, handleOpen, handleClose } = useMenuOpenState(props);
 
   const triggerRef = useRef<HTMLButtonElement>(null);
@@ -55,6 +63,7 @@ export function Menu(props: MenuProps) {
   const { focusedIndex, handleArrowsKeyDown } = useArrowKeyNavigation({
     itemsContainerRef: menuListRef,
     itemsSelector: MENU_ITEMS_SELECTOR,
+    initialFocusedIndex: initialFocusedItemIndex,
   });
 
   useEffect(() => {
@@ -70,6 +79,13 @@ export function Menu(props: MenuProps) {
         (availableElements[focusedIndex] as HTMLElement).focus({
           preventScroll: false,
         });
+      }
+
+      if (initialFocusedItemIndex >= availableElements.length) {
+        // eslint-disable-next-line no-console
+        console.error(
+          'initialFocusedItemIndex prop can not have a value bigger than the actual menu items number',
+        );
       }
     }
   }, [isOpen, focusedIndex]);

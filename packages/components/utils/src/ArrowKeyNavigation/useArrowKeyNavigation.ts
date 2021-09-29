@@ -4,6 +4,7 @@ interface UseArrowKeyNavigationProps {
   itemsContainerRef: React.MutableRefObject<HTMLElement>;
   itemsSelector: string;
   keyType?: 'vertical' | 'horizontal';
+  initialFocusedIndex?: number;
 }
 
 const ARROW_KEY_TYPES = {
@@ -21,8 +22,9 @@ export const useArrowKeyNavigation = ({
   itemsContainerRef,
   itemsSelector,
   keyType = 'vertical',
+  initialFocusedIndex = 0,
 }: UseArrowKeyNavigationProps) => {
-  const [focusedIndex, setFocusedIndex] = useState(0);
+  const [focusedIndex, setFocusedIndex] = useState<number>(initialFocusedIndex);
 
   const handleArrowsKeyDown = useCallback(
     (event: React.KeyboardEvent) => {

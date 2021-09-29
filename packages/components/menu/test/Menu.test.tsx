@@ -236,4 +236,25 @@ describe('Menu', function () {
     });
     expect(document.activeElement).toBe(getByTestId('third-item'));
   });
+
+  it('should focus predefined item based on initialFocusedItemIndex prop', async () => {
+    const { getByTestId, getByRole } = render(
+      <Menu isOpen={true} initialFocusedItemIndex={1}>
+        <Menu.Trigger>
+          <Button>Toggle</Button>
+        </Menu.Trigger>
+        <Menu.List>
+          <Menu.Item testId="first-item">Create an entry</Menu.Item>
+          <Menu.Item testId="second-item">Remove an entry</Menu.Item>
+          <Menu.Item testId="third-item">Embed existing entry</Menu.Item>
+        </Menu.List>
+      </Menu>,
+    );
+
+    await waitFor(() => {
+      expect(getByRole('menu')).toBeInTheDocument();
+    });
+
+    expect(document.activeElement).toBe(getByTestId('second-item'));
+  });
 });
