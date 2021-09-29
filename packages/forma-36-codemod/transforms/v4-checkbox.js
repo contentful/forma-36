@@ -21,6 +21,7 @@ function selectFieldCodemod(file, api) {
   if (!componentName) {
     return source;
   }
+  let needToImportFormControl = false;
 
   source = j(source)
     .find(j.JSXElement, { openingElement: { name: { name: componentName } } })
@@ -51,6 +52,7 @@ function selectFieldCodemod(file, api) {
       const required = getProperty(attributes, { propertyName: 'isRequired' });
       const disabled = getProperty(attributes, { propertyName: 'isDisabled' });
       const invalid = getProperty(attributes, { propertyName: 'isInvalid' });
+      const checked = getProperty(attributes, { propertyName: 'isChecked' });
       const handlerProps = attributes.filter((attribute) =>
         ['onChange', 'onBlur'].includes(attribute.name?.name),
       );
@@ -64,6 +66,7 @@ function selectFieldCodemod(file, api) {
         disabled,
         name,
         value,
+        checked,
         ...handlerProps,
         ...commonProps,
       ].filter((prop) => prop);
@@ -106,6 +109,7 @@ function selectFieldCodemod(file, api) {
       });
 
       if (validationMessage) {
+        needToImportFormControl = true;
         j(p).replaceWith(FormControl);
       } else {
         j(p).replaceWith(Checkbox);
@@ -114,11 +118,14 @@ function selectFieldCodemod(file, api) {
     .toSource();
 
   if (!shouldSkipUpdateImport()) {
-    source = addImport(j, source, [
-      j.template.statement([
-        'import { FormControl, Checkbox } from "@contentful/f36-components"',
-      ]),
-    ]).source;
+    if (needToImportFormControl) {
+      source = addImport(j, source, [
+        j.template.statement([
+          'import { FormControl } from "@contentful/f36-components"',
+        ]),
+      ]).source;
+    }
+
     source = changeImport(j, source, {
       componentName,
       from: getFormaImport(),

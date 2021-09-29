@@ -12,6 +12,14 @@ import { CheckboxField } from '@contentful/forma-36-react-components';
   labelText="test"
   id="some id"
   type="checkbox"
+  helpText="helpText"
+  value="value"
+/>;
+
+<CheckboxField
+  labelText="test"
+  id="some id"
+  type="checkbox"
   name="some name"
 />;
 
@@ -59,4 +67,13 @@ import { CheckboxField } from '@contentful/forma-36-react-components';
   helpText="helpText"
   validationMessage="validation message"
   invalid
+/>;
+
+<CheckboxField
+  labelText="test"
+  id="some id"
+  type="checkbox"
+  helpText="helpText"
+  validationMessage="validation message"
+  checked
 />;

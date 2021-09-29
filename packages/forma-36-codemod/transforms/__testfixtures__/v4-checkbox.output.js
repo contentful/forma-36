@@ -4,6 +4,8 @@ import { FormControl, Checkbox } from "@contentful/f36-components";
 
 <Checkbox id="some id" helpText="helpText">test</Checkbox>;
 
+<Checkbox id="some id" helpText="helpText" value="value">test</Checkbox>;
+
 <Checkbox id="some id" name="some name">test</Checkbox>;
 
 <Checkbox id="some id" helpText="helpText">test</Checkbox>;
@@ -25,5 +27,10 @@ import { FormControl, Checkbox } from "@contentful/f36-components";
 
 <FormControl id="some id" isInvalid>
   <Checkbox helpText="helpText">test</Checkbox>
+  <FormControl.ValidationMessage>validation message</FormControl.ValidationMessage>
+</FormControl>;
+
+<FormControl id="some id">
+  <Checkbox helpText="helpText" isChecked>test</Checkbox>
   <FormControl.ValidationMessage>validation message</FormControl.ValidationMessage>
 </FormControl>;
