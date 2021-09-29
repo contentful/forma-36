@@ -181,6 +181,10 @@ function selectFieldCodemod(file, api) {
   });
 
   if (!shouldSkipUpdateImport()) {
+    source = removeComponentImport(j, source, {
+      componentName: 'Option',
+      importName: getFormaImport(),
+    });
     source = addImport(j, source, [
       j.template.statement([
         'import { FormControl, Select } from "@contentful/f36-components"',
