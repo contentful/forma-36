@@ -58,5 +58,10 @@ export const getAssetCardStyles = () => {
 
       return css(styles);
     },
+    skeleton: css({
+      border: `1px solid ${tokens.gray300}`,
+      borderRadius: tokens.borderRadiusMedium,
+      padding: tokens.spacingM,
+    }),
   };
 };

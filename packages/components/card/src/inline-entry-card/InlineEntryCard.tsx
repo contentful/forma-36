@@ -7,6 +7,8 @@ import type { EntryCardInternalProps } from '../entry-card/EntryCard';
 import { getInlineEntryCardStyles } from './InlineEntryCard.styles';
 import { CardActions } from '../base-card/CardActions';
 
+import { SkeletonBodyText, SkeletonContainer } from '@contentful/f36-skeleton';
+
 export type InlineEntryCardInternalProps = Omit<
   EntryCardInternalProps,
   'children' | 'icon' | 'withDragHandle' | 'ref' | 'src' | 'type'
@@ -19,6 +21,7 @@ export const InlineEntryCard = ({
   className,
   status,
   title,
+  isLoading,
   ...otherProps
 }: InlineEntryCardInternalProps) => {
   const styles = getInlineEntryCardStyles();
@@ -27,6 +30,18 @@ export const InlineEntryCard = ({
       {actions}
     </CardActions>
   );
+
+  if (isLoading) {
+    return (
+      <SkeletonContainer
+        className={styles.skeleton}
+        svgHeight="1.25rem"
+        svgWidth="6rem"
+      >
+        <SkeletonBodyText numberOfLines={1} />
+      </SkeletonContainer>
+    );
+  }
 
   return (
     <BaseCard

@@ -33,6 +33,14 @@ Default.args = {
   title: 'Closer',
 };
 
+export const WithLoadingState: Story<EntryCardProps> = (args) => {
+  return <EntryCard {...args} />;
+};
+
+WithLoadingState.args = {
+  isLoading: true,
+};
+
 const thumbnail = (
   <img
     alt="Contentful logo"

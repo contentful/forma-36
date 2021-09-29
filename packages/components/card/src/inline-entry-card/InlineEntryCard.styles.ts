@@ -37,5 +37,12 @@ export const getInlineEntryCardStyles = () => {
         },
       });
     },
+    skeleton: css({
+      display: 'inline-flex',
+      border: `1px solid ${tokens.gray300}`,
+      borderTopRightRadius: tokens.borderRadiusMedium,
+      borderBottomRightRadius: tokens.borderRadiusMedium,
+      padding: tokens.spacingXs,
+    }),
   };
 };

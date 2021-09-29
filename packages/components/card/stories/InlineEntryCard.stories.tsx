@@ -50,6 +50,14 @@ Default.args = {
   title: 'Closer',
 };
 
+export const WithLoadingState: Story<InlineEntryCardProps> = (args) => {
+  return <InlineEntryCard {...args} />;
+};
+
+WithLoadingState.args = {
+  isLoading: true,
+};
+
 export const Overview: Story<InlineEntryCardProps> = () => {
   return (
     <>

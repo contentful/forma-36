@@ -50,6 +50,14 @@ const actions: React.ReactNodeArray = [
   <MenuItem key="delete">Delete</MenuItem>,
 ];
 
+export const WithLoadingState: Story<Args> = (args) => {
+  return <AssetCard icon={icons[args.icon]} {...args} />;
+};
+
+WithLoadingState.args = {
+  isLoading: true,
+};
+
 export const Overview: Story<Args> = () => {
   return (
     <>
