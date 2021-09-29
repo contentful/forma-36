@@ -58,6 +58,10 @@ const TRANSFORMS_CHOICES = [
     value: 'v4-modal',
   },
   {
+    name: 'v4-select: Converts Select components from Forma v3 to v4',
+    value: 'v4-select',
+  },
+  {
     name:
       'v4-typography: Converts all typography components from Forma v3 to v4',
     value: 'v4-typography',

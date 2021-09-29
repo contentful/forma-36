@@ -13,6 +13,7 @@ const { changeImport } = require('./changeImport');
 const { changeComponentName } = require('./changeComponentName');
 const { updateTernaryValues } = require('./updateTernaryValues');
 const { warningMessage } = require('./warningMessage');
+const { createComponent } = require('./createComponent');
 
 module.exports = {
   getComponentLocalName,
@@ -31,4 +32,5 @@ module.exports = {
   changeComponentName,
   updateTernaryValues,
   warningMessage,
+  createComponent,
 };
