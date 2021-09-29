@@ -91,6 +91,11 @@ const TRANSFORMS_CHOICES = [
       'v4-text-inputs: Converts TextInput and Textarea components from Forma v3 to v4',
     value: 'v4-text-inputs',
   },
+  {
+    name:
+      'v4-checkbox: Converts CheckboxField component from Forma v3 to v4 Checkbox',
+    value: 'v4-checkbox',
+  },
 ];
 
 module.exports = {
