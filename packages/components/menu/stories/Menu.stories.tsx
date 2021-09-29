@@ -17,7 +17,11 @@ export const Basic: Story<MenuProps> = (args) => {
   return (
     <Menu defaultIsOpen {...args}>
       <Menu.Trigger>
-        <IconButton icon={<MenuIcon />} aria-label="toggle menu" />
+        <IconButton
+          variant="secondary"
+          icon={<MenuIcon />}
+          aria-label="toggle menu"
+        />
       </Menu.Trigger>
       <Menu.List>
         <Menu.SectionTitle>Entry Title</Menu.SectionTitle>
@@ -46,7 +50,11 @@ export const Controlled: Story<MenuProps> = (args) => {
       }}
     >
       <Menu.Trigger>
-        <IconButton icon={<MenuIcon />} aria-label="toggle menu" />
+        <IconButton
+          variant="secondary"
+          icon={<MenuIcon />}
+          aria-label="toggle menu"
+        />
       </Menu.Trigger>
       <Menu.List>
         <Menu.SectionTitle>Entry Title</Menu.SectionTitle>
@@ -65,7 +73,11 @@ export const WithDisabledItems: Story<MenuProps> = (args) => {
   return (
     <Menu defaultIsOpen {...args}>
       <Menu.Trigger>
-        <IconButton icon={<MenuIcon />} aria-label="toggle menu" />
+        <IconButton
+          variant="secondary"
+          icon={<MenuIcon />}
+          aria-label="toggle menu"
+        />
       </Menu.Trigger>
       <Menu.List>
         <Menu.Item>Item 1</Menu.Item>
@@ -85,7 +97,11 @@ export const WithMaxHeight: Story<MenuProps> = (args) => {
   return (
     <Menu defaultIsOpen {...args}>
       <Menu.Trigger>
-        <IconButton icon={<MenuIcon />} aria-label="toggle menu" />
+        <IconButton
+          variant="secondary"
+          icon={<MenuIcon />}
+          aria-label="toggle menu"
+        />
       </Menu.Trigger>
       <Menu.List
         // You can pass a classname with maxHeight style or a style object directly
@@ -103,7 +119,11 @@ export const WithStickyHeaderAndFooter: Story<MenuProps> = (args) => {
   return (
     <Menu defaultIsOpen {...args}>
       <Menu.Trigger>
-        <IconButton icon={<MenuIcon />} aria-label="toggle menu" />
+        <IconButton
+          variant="secondary"
+          icon={<MenuIcon />}
+          aria-label="toggle menu"
+        />
       </Menu.Trigger>
       <Menu.List style={{ maxHeight: '300px' }}>
         <Menu.ListHeader>
@@ -125,7 +145,11 @@ export const WithReactRouterLinks: Story<MenuProps> = (args) => {
     <Router>
       <Menu defaultIsOpen {...args}>
         <Menu.Trigger>
-          <IconButton icon={<MenuIcon />} aria-label="toggle menu" />
+          <IconButton
+            variant="secondary"
+            icon={<MenuIcon />}
+            aria-label="toggle menu"
+          />
         </Menu.Trigger>
         <Menu.List>
           <Link to="/" component={Menu.Item} as="a">
@@ -148,7 +172,11 @@ export const WithInitialFocusedItem: Story<MenuProps> = (args) => {
     <Router>
       <Menu defaultIsOpen initialFocusedItemIndex={1} {...args}>
         <Menu.Trigger>
-          <IconButton icon={<MenuIcon />} aria-label="toggle menu" />
+          <IconButton
+            variant="secondary"
+            icon={<MenuIcon />}
+            aria-label="toggle menu"
+          />
         </Menu.Trigger>
         <Menu.List>
           <Menu.Item>Create an entry</Menu.Item>
