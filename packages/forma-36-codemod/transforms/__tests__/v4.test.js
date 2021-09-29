@@ -22,6 +22,7 @@ describe('v4 codemods', () => {
     'v4-tooltip',
     'v4-icon',
     'v4-text-inputs',
+    'v4-select',
   ];
 
   beforeEach(() => {
