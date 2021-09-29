@@ -4,9 +4,84 @@ const {
   getProperty,
   createComponent,
   addImport,
+  renameProperties,
+  removeComponentImport,
+  changeComponentName,
+  changeProperties,
+  updatePropertyValue,
+  updateTernaryValues,
 } = require('../utils');
 const { getFormaImport, shouldSkipUpdateImport } = require('../utils/config');
 const { pipe } = require('./common/pipe');
+
+function selectCodemod(file, api) {
+  const j = api.jscodeshift;
+  let source = file.source;
+
+  const componentName = getComponentLocalName(j, source, {
+    componentName: 'Select',
+    importName: getFormaImport(),
+  });
+
+  if (!componentName) {
+    return source;
+  }
+
+  source = changeProperties(j, source, {
+    componentName,
+    fn(attributes) {
+      let modifiedAttributes = attributes;
+
+      modifiedAttributes = renameProperties(modifiedAttributes, {
+        renameMap: {
+          required: 'isRequired',
+          hasError: 'isInvalid',
+          width: 'size',
+        },
+      });
+
+      modifiedAttributes = updatePropertyValue(modifiedAttributes, {
+        propertyName: 'size',
+        propertyValue: (value) => {
+          const valueMap = {
+            auto: 'medium',
+            small: 'small',
+            medium: 'medium',
+            large: 'medium',
+            full: 'medium',
+          };
+          if (value.value !== undefined) {
+            return j.literal(valueMap[value.value]);
+          }
+
+          return updateTernaryValues(value, { j, valueMap });
+        },
+      });
+
+      return modifiedAttributes;
+    },
+  });
+
+  source = changeComponentName(j, source, {
+    componentName: 'Option',
+    outputComponentName: 'Select.Option',
+  });
+
+  if (!shouldSkipUpdateImport()) {
+    source = removeComponentImport(j, source, {
+      componentName: 'Option',
+      importName: getFormaImport(),
+    });
+    source = changeImport(j, source, {
+      componentName,
+      from: getFormaImport(),
+      to: '@contentful/f36-components',
+      outputComponentName: 'Select',
+    });
+  }
+
+  return source;
+}
 
 function selectFieldCodemod(file, api) {
   const j = api.jscodeshift;
@@ -25,7 +100,13 @@ function selectFieldCodemod(file, api) {
     .find(j.JSXElement, { openingElement: { name: { name: componentName } } })
     .forEach((p) => {
       const options = p.value.children;
-      const attributes = p.value.openingElement.attributes;
+      let attributes = p.value.openingElement.attributes;
+
+      attributes = renameProperties(attributes, {
+        renameMap: {
+          required: 'isRequired',
+        },
+      });
 
       const id = getProperty(attributes, { propertyName: 'id' });
       const name = getProperty(attributes, { propertyName: 'name' });
@@ -35,6 +116,13 @@ function selectFieldCodemod(file, api) {
       const validationMessage = getProperty(attributes, {
         propertyName: 'validationMessage',
       });
+      const required = getProperty(attributes, { propertyName: 'isRequired' });
+      const handlerProps = attributes.filter((attribute) =>
+        ['onChange', 'onBlur'].includes(attribute.name?.name),
+      );
+      const commonProps = attributes.filter((attributes) =>
+        ['testId', 'className'].includes(attributes.name?.name),
+      );
 
       const Label = createComponent({
         j,
@@ -58,7 +146,7 @@ function selectFieldCodemod(file, api) {
           children: [j.jsxText(validationMessage.value.value)],
         });
 
-      const selectProps = [value].filter((prop) => prop);
+      const selectProps = [value, ...handlerProps].filter((prop) => prop);
       const Select = createComponent({
         j,
         componentName: 'Select',
@@ -73,10 +161,13 @@ function selectFieldCodemod(file, api) {
         [j.jsxText('\n')],
       );
 
+      const formControlProps = [id, name, required, ...commonProps].filter(
+        (p) => p,
+      );
       const FormControl = createComponent({
         j,
         componentName: 'FormControl',
-        props: [id, name],
+        props: formControlProps,
         children: content,
       });
 
@@ -84,10 +175,15 @@ function selectFieldCodemod(file, api) {
     })
     .toSource();
 
+  source = changeComponentName(j, source, {
+    componentName: 'Option',
+    outputComponentName: 'Select.Option',
+  });
+
   if (!shouldSkipUpdateImport()) {
     source = addImport(j, source, [
       j.template.statement([
-        'import { FormControl, Option, Select } from "@contentful/f36-components"',
+        'import { FormControl, Select } from "@contentful/f36-components"',
       ]),
     ]).source;
     source = changeImport(j, source, {
@@ -99,10 +195,6 @@ function selectFieldCodemod(file, api) {
   }
 
   return source;
-}
-
-function selectCodemod(file, api) {
-  return file.source;
 }
 
 module.exports = pipe([selectCodemod, selectFieldCodemod]);

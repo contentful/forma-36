@@ -1,12 +1,11 @@
-import { Select, Option } from '@contentful/forma-36-react-components';
-import { FormControl, Option, Select } from "@contentful/f36-components";
+import { Select, FormControl } from "@contentful/f36-components";
 
-<FormControl id="select-field" name="select-field">
+<FormControl id="select-field" name="select-field" isRequired>
   <FormControl.Label>Select label</FormControl.Label>
-  <Select>
-    <Option value='1'>Option 1</Option>
-    <Option value='2'>Option 2</Option>
-    <Option value='3'>Option 3</Option>
+  <Select onChange={() => {}}>
+    <Select.Option value='1'>Option 1</Select.Option>
+    <Select.Option value='2'>Option 2</Select.Option>
+    <Select.Option value='3'>Option 3</Select.Option>
   </Select>
   <FormControl.HelpText>Some help text</FormControl.HelpText>
   <FormControl.ValidationMessage>Validation Message</FormControl.ValidationMessage>
@@ -16,12 +15,12 @@ import { FormControl, Option, Select } from "@contentful/f36-components";
   aria-label="Select"
   testId="timezone-input"
   value="value"
-  width="medium"
+  size="medium"
   isDisabled={true}
   onChange={() => {}}>
-  <Option value='1'>Option 1</Option>
-  <Option value='2'>Option 2</Option>
-  <Option value='3'>Option 3</Option>
+  <Select.Option value='1'>Option 1</Select.Option>
+  <Select.Option value='2'>Option 2</Select.Option>
+  <Select.Option value='3'>Option 3</Select.Option>
 </Select>;
 
 const options = [{
@@ -38,10 +37,10 @@ const options = [{
   aria-label="Select"
   testId="timezone-input"
   value="value"
-  width="medium"
+  size="medium"
   isDisabled={true}
   onChange={() => {}}>
     {options.map(({value, label}) => {
-      <Option key={value} value={value}>{label}</Option>
+      <Select.Option key={value} value={value}>{label}</Select.Option>
     })}
 </Select>;

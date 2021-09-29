@@ -7,6 +7,7 @@ import { Select, SelectField, Option } from '@contentful/forma-36-react-componen
   onChange={() => {}}
   name="select-field"
   id="select-field"
+  required
   selectProps={{ testId: 'cf-ui-select-field' }}>
   <Option value='1'>Option 1</Option>
   <Option value='2'>Option 2</Option>
