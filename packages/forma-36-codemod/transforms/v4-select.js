@@ -8,8 +8,7 @@ const {
   removeComponentImport,
   changeComponentName,
   changeProperties,
-  updatePropertyValue,
-  updateTernaryValues,
+  deleteProperty,
 } = require('../utils');
 const { getFormaImport, shouldSkipUpdateImport } = require('../utils/config');
 const { pipe } = require('./common/pipe');
@@ -36,26 +35,11 @@ function selectCodemod(file, api) {
         renameMap: {
           required: 'isRequired',
           hasError: 'isInvalid',
-          width: 'size',
         },
       });
 
-      modifiedAttributes = updatePropertyValue(modifiedAttributes, {
-        propertyName: 'size',
-        propertyValue: (value) => {
-          const valueMap = {
-            auto: 'medium',
-            small: 'small',
-            medium: 'medium',
-            large: 'medium',
-            full: 'medium',
-          };
-          if (value.value !== undefined) {
-            return j.literal(valueMap[value.value]);
-          }
-
-          return updateTernaryValues(value, { j, valueMap });
-        },
+      modifiedAttributes = deleteProperty(modifiedAttributes, {
+        propertyName: 'width',
       });
 
       return modifiedAttributes;
