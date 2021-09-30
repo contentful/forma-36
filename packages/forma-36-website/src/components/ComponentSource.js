@@ -9,10 +9,6 @@ import { Icon } from '@contentful/f36-icon';
 import { Flex } from '@contentful/f36-core';
 
 const styles = {
-  preview: css`
-    padding: ${tokens.spacingM};
-  `,
-
   error: css`
     font-family: ${tokens.fontStackMonospace};
     font-size: ${tokens.fontSizeS};
@@ -29,10 +25,12 @@ const styles = {
 
   // !important was necessary because these styles are being applied after the Card component styles
   card: css`
+    font-family: ${tokens.fontStackPrimary};
     border-radius: ${tokens.borderRadiusMedium} ${tokens.borderRadiusMedium} 0 0 !important;
   `,
 
   toggle: css`
+    font-family: ${tokens.fontStackPrimary};
     border-radius: 0 0 ${tokens.borderRadiusMedium} ${tokens.borderRadiusMedium};
   `,
 };
@@ -58,15 +56,15 @@ export default function ComponentSource({ children }) {
           Icon,
         }}
       >
-        <Card className={styles.card} padding="none">
-          <LivePreview className={styles.preview} />
-          {showSource && (
-            <>
-              <LiveError className={styles.error} />
-              <LiveEditor className={styles.editor} />
-            </>
-          )}
+        <Card className={styles.card}>
+          <LivePreview />
         </Card>
+        {showSource && (
+          <>
+            <LiveError className={styles.error} />
+            <LiveEditor className={styles.editor} />
+          </>
+        )}
         <Button
           className={styles.toggle}
           variant="secondary"
