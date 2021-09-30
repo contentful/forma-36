@@ -15,7 +15,6 @@ import { Select, FormControl } from "@contentful/f36-components";
   aria-label="Select"
   testId="timezone-input"
   value="value"
-  size="medium"
   isDisabled={true}
   onChange={() => {}}>
   <Select.Option value='1'>Option 1</Select.Option>
@@ -37,7 +36,6 @@ const options = [{
   aria-label="Select"
   testId="timezone-input"
   value="value"
-  size="medium"
   isDisabled={true}
   onChange={() => {}}>
     {options.map(({value, label}) => {
