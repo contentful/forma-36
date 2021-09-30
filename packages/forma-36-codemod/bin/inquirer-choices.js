@@ -96,6 +96,10 @@ const TRANSFORMS_CHOICES = [
       'v4-checkbox: Converts CheckboxField component from Forma v3 to v4 Checkbox',
     value: 'v4-checkbox',
   },
+  {
+    name: 'v4-form: Converts Form component from Forma v3 to v4',
+    value: 'v4-form',
+  },
 ];
 
 module.exports = {
