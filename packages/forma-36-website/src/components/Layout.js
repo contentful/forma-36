@@ -8,7 +8,7 @@ import './Layout.css';
 
 import Header from './Header';
 import Promo from './Promo';
-import Container from './Container';
+import MDXPage from './MDXPage';
 import Navigation from './Navigation';
 import Footer from './Footer';
 
@@ -107,11 +107,11 @@ export default function Layout({ location, pageContext, children }) {
 
         <Flex flexDirection="column" className={styles.content}>
           {/**
-           * if pageContext is NOT undefined it means the page comes from a MDX file so we use the Container component
+           * if pageContext is NOT undefined it means the page comes from a MDX file so we use the MDXPage component
            * the pages with no pageContext come from "../pages" and do not have pageContext
            * */}
           {pageContext ? (
-            <Container
+            <MDXPage
               frontmatter={pageContext.frontmatter}
               mdxContent={pageContext.body}
               propsMetadata={pageContext.propsMetadata}

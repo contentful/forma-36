@@ -145,7 +145,7 @@ const markToComponentMap = {
 };
 /* eslint-enable react/display-name */
 
-export default function Container({
+export default function MDXPage({
   children,
   mdxContent,
   frontmatter,
@@ -210,7 +210,7 @@ export default function Container({
   );
 }
 
-Container.propTypes = {
+MDXPage.propTypes = {
   children: PropTypes.node,
   mdxContent: PropTypes.string,
   frontmatter: PropTypes.shape({
