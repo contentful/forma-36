@@ -2,46 +2,74 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { css } from 'emotion';
 import { MDXProvider } from '@mdx-js/react';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import tokens from '@contentful/f36-tokens';
 import { PropsProvider } from '@contentful/f36-docs-utils';
 import {
+  Badge,
+  Box,
   DisplayText,
   Heading,
-  Subheading,
-  Paragraph,
-  TextLink,
   List,
+  Paragraph,
+  Subheading,
   Table,
-  TableHead,
   TableBody,
-  TableRow,
   TableCell,
-  Box,
+  TableHead,
+  TableRow,
+  TextLink,
 } from '@contentful/f36-components';
 
 import ComponentSource from './ComponentSource';
-import DocFormatter from './DocFormatter';
-import Footer from './Footer';
 import { StaticSource } from './StaticSource';
 
-const styles = {
-  contentContainer: css`
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    overflow-y: auto;
-  `,
+import storybookIcon from '../images/storybook.svg';
+import githubIcon from '../images/github.svg';
 
+const styles = {
   pageContent: css`
     width: 960px;
     margin: 0 auto;
     padding-top: ${tokens.spacing2Xl};
   `,
+  header: css`
+    width: 960px;
+    margin: 0 auto;
+    padding-bottom: ${tokens.spacingXl};
+    margin-bottom: ${tokens.spacingXl};
+    border-bottom: 1px solid ${tokens.gray300};
+  `,
+  subheaderRow: css`
+    display: flex;
+    justify-content: space-between;
+  `,
+  badge: css`
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: ${tokens.spacingM};
+  `,
+  imageLink: css`
+    font-size: ${tokens.fontSizeM};
+    color: ${tokens.gray700};
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    padding: calc(${tokens.spacing2Xs} / 2) ${tokens.spacingXs};
+    border-radius: calc(${tokens.fontSizeS} / 5);
 
-  homePageContent: css`
-    width: auto;
+    &:hover {
+      background-color: ${tokens.gray200};
+    }
+
+    img {
+      margin-right: ${tokens.spacingXs};
+    }
+  `,
+  buttonList: css`
+    display: flex;
   `,
 };
 
@@ -119,36 +147,78 @@ const markToComponentMap = {
 
 export default function Container({
   children,
-  dataFromReadme,
+  mdxContent,
   frontmatter,
   propsMetadata,
 }) {
-  const contentClassName =
-    frontmatter?.type === 'home' ? styles.homePageContent : styles.pageContent;
-
   return (
-    <div className={styles.contentContainer}>
+    <Box className={styles.pageContent}>
       <PropsProvider metadata={propsMetadata}>
-        <Box className={contentClassName}>
-          <MDXProvider components={markToComponentMap}>
-            <DocFormatter
-              frontmatter={frontmatter}
-              dataFromReadme={dataFromReadme}
-            >
-              {children}
-            </DocFormatter>
-          </MDXProvider>
-        </Box>
-      </PropsProvider>
+        <MDXProvider components={markToComponentMap}>
+          <header className={styles.header}>
+            {frontmatter?.title && (
+              <DisplayText marginBottom="spacingL">
+                {frontmatter.title}
+              </DisplayText>
+            )}
 
-      <Footer />
-    </div>
+            <div className={styles.subheaderRow}>
+              <div className={styles.buttonList}>
+                {frontmatter?.storybook && (
+                  <a
+                    className={styles.imageLink}
+                    href={frontmatter.storybook}
+                    title={`View ${frontmatter?.title} in Storybook`}
+                  >
+                    <img src={storybookIcon} alt="" />
+                    <span>Storybook</span>
+                  </a>
+                )}
+                {frontmatter?.github && (
+                  <a
+                    className={styles.imageLink}
+                    href={frontmatter.github}
+                    title={`View ${frontmatter?.title} on GitHub`}
+                  >
+                    <img src={githubIcon} alt="" />
+                    <span>Github</span>
+                  </a>
+                )}
+              </div>
+
+              {frontmatter?.status && (
+                <span className={styles.badge}>
+                  <Badge
+                    variant={
+                      frontmatter.status === 'alpha' ? 'warning' : 'positive'
+                    }
+                  >
+                    {frontmatter.status}
+                  </Badge>
+                </span>
+              )}
+            </div>
+          </header>
+
+          <main>
+            {mdxContent && <MDXRenderer>{mdxContent}</MDXRenderer>}
+            {children}
+          </main>
+        </MDXProvider>
+      </PropsProvider>
+    </Box>
   );
 }
 
 Container.propTypes = {
   children: PropTypes.node,
-  dataFromReadme: PropTypes.string,
-  frontmatter: PropTypes.object,
+  mdxContent: PropTypes.string,
+  frontmatter: PropTypes.shape({
+    type: PropTypes.string,
+    title: PropTypes.string,
+    githubUrl: PropTypes.string,
+    storybookUrl: PropTypes.string,
+    status: PropTypes.string,
+  }),
   propsMetadata: PropTypes.object,
 };
