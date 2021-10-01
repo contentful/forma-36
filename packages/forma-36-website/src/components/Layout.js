@@ -1,15 +1,16 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { css } from '@emotion/core';
+import { css, cx } from 'emotion';
 import { useStaticQuery, graphql } from 'gatsby';
-import { GlobalStyles } from '@contentful/f36-core';
+import { GlobalStyles, Flex } from '@contentful/f36-core';
 import './Layout.css';
 
 import Header from './Header';
 import Promo from './Promo';
-import Container from './Container';
+import MDXPage from './MDXPage';
 import Navigation from './Navigation';
+import Footer from './Footer';
 
 const styles = {
   navAndContentWrapper: css`
@@ -18,6 +19,11 @@ const styles = {
   `,
   withPromo: css`
     height: calc(100vh - 107px);
+  `,
+  content: css`
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
   `,
 };
 
@@ -88,19 +94,34 @@ export default function Layout({ location, pageContext, children }) {
 
       <Header />
 
-      <div css={[styles.navAndContentWrapper, withPromo && styles.withPromo]}>
+      <div
+        className={cx([
+          styles.navAndContentWrapper,
+          withPromo && styles.withPromo,
+        ])}
+      >
         <Navigation
           menuItems={siteMetadata?.menuLinks}
           currentPath={location?.pathname}
         />
-        {/* pageContext is `undefined` during website build in Netlify */}
-        <Container
-          frontmatter={pageContext && pageContext.frontmatter}
-          dataFromReadme={pageContext && pageContext.body}
-          propsMetadata={pageContext && pageContext.propsMetadata}
-        >
-          {children}
-        </Container>
+
+        <Flex flexDirection="column" className={styles.content}>
+          {/**
+           * if pageContext is NOT undefined it means the page comes from a MDX file so we use the MDXPage component
+           * the pages with no pageContext come from "../pages" and do not have pageContext
+           * */}
+          {pageContext ? (
+            <MDXPage
+              frontmatter={pageContext.frontmatter}
+              mdxContent={pageContext.body}
+              propsMetadata={pageContext.propsMetadata}
+            />
+          ) : (
+            children
+          )}
+
+          <Footer />
+        </Flex>
       </div>
     </>
   );
