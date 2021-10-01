@@ -145,12 +145,7 @@ const markToComponentMap = {
 };
 /* eslint-enable react/display-name */
 
-export default function MDXPage({
-  children,
-  mdxContent,
-  frontmatter,
-  propsMetadata,
-}) {
+export default function MDXPage({ mdxContent, frontmatter, propsMetadata }) {
   return (
     <Box className={styles.pageContent}>
       <PropsProvider metadata={propsMetadata}>
@@ -201,8 +196,7 @@ export default function MDXPage({
           </header>
 
           <main>
-            {mdxContent && <MDXRenderer>{mdxContent}</MDXRenderer>}
-            {children}
+            <MDXRenderer>{mdxContent}</MDXRenderer>
           </main>
         </MDXProvider>
       </PropsProvider>
@@ -211,14 +205,13 @@ export default function MDXPage({
 }
 
 MDXPage.propTypes = {
-  children: PropTypes.node,
-  mdxContent: PropTypes.string,
+  mdxContent: PropTypes.string.isRequired,
   frontmatter: PropTypes.shape({
     type: PropTypes.string,
     title: PropTypes.string,
     githubUrl: PropTypes.string,
     storybookUrl: PropTypes.string,
     status: PropTypes.string,
-  }),
-  propsMetadata: PropTypes.object,
+  }).isRequired,
+  propsMetadata: PropTypes.object.isRequired,
 };
