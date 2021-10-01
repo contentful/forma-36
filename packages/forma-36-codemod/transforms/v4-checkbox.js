@@ -71,11 +71,18 @@ function selectFieldCodemod(file, api) {
         ...commonProps,
       ].filter((prop) => prop);
 
+      const getChildren = (prop) => {
+        if (!prop) return [];
+        return prop.value.type === 'JSXExpressionContainer'
+          ? [prop.value]
+          : [j.jsxText(prop.value.value)];
+      };
+
       const Checkbox = createComponent({
         j,
         componentName: 'Checkbox',
         props: checkboxProps,
-        children: [j.jsxText(labelText.value.value)],
+        children: getChildren(labelText),
       });
 
       const ValidationMesage =
@@ -83,7 +90,7 @@ function selectFieldCodemod(file, api) {
         createComponent({
           j,
           componentName: 'FormControl.ValidationMessage',
-          children: [j.jsxText(validationMessage.value.value)],
+          children: getChildren(validationMessage),
         });
 
       const FormControlContent = [Checkbox, ValidationMesage].reduce(

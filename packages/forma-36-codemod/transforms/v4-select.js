@@ -108,10 +108,17 @@ function selectFieldCodemod(file, api) {
         ['testId', 'className'].includes(attributes.name?.name),
       );
 
+      const getChildren = (prop) => {
+        if (!prop) return [];
+        return prop.value.type === 'JSXExpressionContainer'
+          ? [prop.value]
+          : [j.jsxText(prop.value.value)];
+      };
+
       const Label = createComponent({
         j,
         componentName: 'FormControl.Label',
-        children: [j.jsxText(labelText.value.value)],
+        children: getChildren(labelText),
       });
 
       const HelpText =
@@ -119,7 +126,7 @@ function selectFieldCodemod(file, api) {
         createComponent({
           j,
           componentName: 'FormControl.HelpText',
-          children: [j.jsxText(helpText.value.value)],
+          children: getChildren(helpText),
         });
 
       const ValidationMesage =
@@ -127,7 +134,7 @@ function selectFieldCodemod(file, api) {
         createComponent({
           j,
           componentName: 'FormControl.ValidationMessage',
-          children: [j.jsxText(validationMessage.value.value)],
+          children: getChildren(validationMessage),
         });
 
       const selectProps = [value, ...handlerProps].filter((prop) => prop);

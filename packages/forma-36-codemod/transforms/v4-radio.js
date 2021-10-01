@@ -114,10 +114,12 @@ function radioButtonFieldCodemod(file, api) {
         ['testId', 'className'].includes(attributes.name?.name),
       );
 
-      const label =
-        labelText.value.type === 'JSXExpressionContainer'
-          ? labelText.value
-          : j.jsxText(labelText.value.value);
+      const getChildren = (prop) => {
+        if (!prop) return [];
+        return prop.value.type === 'JSXExpressionContainer'
+          ? [prop.value]
+          : [j.jsxText(prop.value.value)];
+      };
 
       const radioProps = [
         !validationMessage ? id : null,
@@ -134,7 +136,7 @@ function radioButtonFieldCodemod(file, api) {
         j,
         componentName: 'Radio',
         props: radioProps,
-        children: [label],
+        children: getChildren(labelText),
       });
 
       const ValidationMesage =
@@ -142,7 +144,7 @@ function radioButtonFieldCodemod(file, api) {
         createComponent({
           j,
           componentName: 'FormControl.ValidationMessage',
-          children: [j.jsxText(validationMessage.value.value)],
+          children: getChildren(validationMessage),
         });
 
       const FormControlContent = [Radio, ValidationMesage].reduce(
