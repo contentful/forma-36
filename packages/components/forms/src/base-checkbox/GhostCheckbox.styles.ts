@@ -14,7 +14,6 @@ const getBaseGhostStyles = ({ isDisabled }): CSSObject => ({
   height: tokens.spacingM,
   justifyContent: 'center',
   marginRight: tokens.spacingXs,
-  marginTop: `calc(${tokens.spacing2Xs}/2)`,
   width: tokens.spacingM,
 });
 
