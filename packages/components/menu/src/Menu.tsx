@@ -43,52 +43,54 @@ export interface MenuProps
    * @default true
    */
   closeOnSelect?: boolean;
-
-  /**
-   * Focus the menu item with provided index on initial open.
-   * Indexing starts from 0.
-   *
-   * @default 0
-   */
-  initialFocusedItemIndex?: number;
 }
 
 export function Menu(props: MenuProps) {
-  const { closeOnSelect = true, initialFocusedItemIndex = 0 } = props;
+  const { closeOnSelect = true } = props;
   const { isOpen, handleOpen, handleClose } = useMenuOpenState(props);
 
   const triggerRef = useRef<HTMLButtonElement>(null);
   const menuListRef = useRef<HTMLDivElement>(null);
 
-  const { focusedIndex, handleArrowsKeyDown } = useArrowKeyNavigation({
+  const {
+    focusedIndex,
+    handleArrowsKeyDown,
+    setFocusedIndex,
+  } = useArrowKeyNavigation({
     itemsContainerRef: menuListRef,
     itemsSelector: MENU_ITEMS_SELECTOR,
-    initialFocusedIndex: initialFocusedItemIndex,
   });
 
   useEffect(() => {
     if (isOpen && menuListRef.current) {
-      const availableElements = menuListRef.current.querySelectorAll(
+      const menuItems = menuListRef.current.querySelectorAll(
         MENU_ITEMS_SELECTOR,
       );
 
-      if (
-        availableElements.length > 0 &&
-        focusedIndex < availableElements.length
-      ) {
-        (availableElements[focusedIndex] as HTMLElement).focus({
+      if (menuItems.length > 0 && focusedIndex < menuItems.length) {
+        (menuItems[focusedIndex] as HTMLElement).focus({
           preventScroll: false,
         });
       }
-
-      if (initialFocusedItemIndex >= availableElements.length) {
-        // eslint-disable-next-line no-console
-        console.error(
-          'initialFocusedItemIndex prop can not have a value bigger than the actual menu items number',
-        );
-      }
     }
   }, [isOpen, focusedIndex]);
+
+  const focusMenuItem = useCallback(
+    (item: HTMLElement) => {
+      const menuItems = menuListRef.current.querySelectorAll(
+        MENU_ITEMS_SELECTOR,
+      );
+
+      const itemIndex = [...menuItems].findIndex(
+        (menuItem) => item === menuItem,
+      );
+
+      if (itemIndex !== -1) {
+        setFocusedIndex(itemIndex);
+      }
+    },
+    [setFocusedIndex],
+  );
 
   const closeAndFocusTrigger = useCallback(() => {
     handleClose();
@@ -110,6 +112,7 @@ export function Menu(props: MenuProps) {
 
   const contextValue: MenuContextType = useMemo(
     () => ({
+      focusMenuItem,
       getTriggerProps: (_props = {}, _ref = null) => ({
         onClick: (event) => {
           if (isOpen) {
@@ -137,7 +140,14 @@ export function Menu(props: MenuProps) {
         },
       }),
     }),
-    [isOpen, handleMenuListKeyDown, closeOnSelect, handleClose, handleOpen],
+    [
+      isOpen,
+      handleMenuListKeyDown,
+      closeOnSelect,
+      handleClose,
+      handleOpen,
+      focusMenuItem,
+    ],
   );
 
   return (

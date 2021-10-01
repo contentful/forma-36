@@ -254,10 +254,10 @@ function ControlledMenu() {
 </Router>
 ```
 
-### With predetermined focused menu item on initial open
+### With predefined focused menu item
 
 ```jsx
-<Menu initialFocusedItemIndex={1}>
+<Menu>
   <Menu.Trigger>
     <IconButton
       variant="secondary"
@@ -267,7 +267,7 @@ function ControlledMenu() {
   </Menu.Trigger>
   <Menu.List>
     <Menu.Item>Create an entry</Menu.Item>
-    <Menu.Item>Remove an entry</Menu.Item>
+    <Menu.Item isInitiallyFocused>Remove an entry</Menu.Item>
     <Menu.Item>Embed existing entry</Menu.Item>
   </Menu.List>
 </Menu>
