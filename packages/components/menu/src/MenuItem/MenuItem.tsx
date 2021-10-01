@@ -19,7 +19,7 @@ interface MenuItemInternalProps extends CommonProps {
   /**
    * Sets focus on item
    */
-  isInitialFocused?: boolean;
+  isInitiallyFocused?: boolean;
 }
 
 export type MenuItemProps<
@@ -30,7 +30,7 @@ function _MenuItem<E extends React.ElementType = typeof DEFAULT_TAG>(
   props: MenuItemProps<E>,
   ref: React.Ref<any>,
 ) {
-  const { testId, className, as, isInitialFocused, ...otherProps } = props;
+  const { testId, className, as, isInitiallyFocused, ...otherProps } = props;
 
   const id = useId(null, 'menu-item');
   const itemTestId = testId || `cf-ui-${id}`;
@@ -40,10 +40,10 @@ function _MenuItem<E extends React.ElementType = typeof DEFAULT_TAG>(
 
   const itemRef = useRef<HTMLElement>(null);
   useEffect(() => {
-    if (isInitialFocused && itemRef.current) {
+    if (isInitiallyFocused && itemRef.current) {
       focusMenuItem(itemRef.current);
     }
-  }, [isInitialFocused, focusMenuItem]);
+  }, [isInitiallyFocused, focusMenuItem]);
 
   const Element: React.ElementType = as ?? DEFAULT_TAG;
 
