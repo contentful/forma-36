@@ -240,7 +240,7 @@ describe('Menu', function () {
     expect(document.activeElement).toBe(getByTestId('third-item'));
   });
 
-  it('should focus item if isInitialFocused prop passed', async () => {
+  it('should focus item if isInitiallyFocused prop passed', async () => {
     const { getByTestId, getByRole } = render(
       <Menu isOpen={true}>
         <Menu.Trigger>
@@ -248,7 +248,7 @@ describe('Menu', function () {
         </Menu.Trigger>
         <Menu.List>
           <Menu.Item testId="first-item">Create an entry</Menu.Item>
-          <Menu.Item testId="second-item" isInitialFocused>
+          <Menu.Item testId="second-item" isInitiallyFocused>
             Remove an entry
           </Menu.Item>
           <Menu.Item testId="third-item">Embed existing entry</Menu.Item>

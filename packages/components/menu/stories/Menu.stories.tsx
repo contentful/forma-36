@@ -180,7 +180,7 @@ export const WithInitialFocusedItem: Story<MenuProps> = (args) => {
         </Menu.Trigger>
         <Menu.List>
           <Menu.Item>Create an entry</Menu.Item>
-          <Menu.Item isInitialFocused>Remove an entry</Menu.Item>
+          <Menu.Item isInitiallyFocused>Remove an entry</Menu.Item>
           <Menu.Item>Embed existing entry</Menu.Item>
         </Menu.List>
       </Menu>
