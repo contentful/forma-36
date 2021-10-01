@@ -5,6 +5,7 @@ import { GhostCheckbox } from './GhostCheckbox';
 import getStyles from './BaseCheckbox.styles';
 import { Text } from '@contentful/f36-typography';
 import { HelpText } from '../help-text';
+import { Flex } from '@contentful/f36-core';
 
 export type BaseCheckboxProps = PropsWithHTMLElement<
   BaseCheckboxInternalProps & { label?: string },
@@ -90,7 +91,7 @@ function _BaseCheckbox(
     typeof isChecked !== undefined ? isChecked : defaultChecked;
 
   return (
-    <div className={className}>
+    <Flex className={className}>
       <Text
         as="label"
         fontColor="gray900"
@@ -136,7 +137,7 @@ function _BaseCheckbox(
           {helpText}
         </HelpText>
       )}
-    </div>
+    </Flex>
   );
 }
 

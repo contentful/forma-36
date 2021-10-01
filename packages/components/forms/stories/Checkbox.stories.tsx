@@ -41,6 +41,34 @@ Basic.args = {
   name: 'some name',
 };
 
+export const CheckboxWithCustomLabel = (args: CheckboxProps) => {
+  const [optionOne, setOptionOne] = useState(false);
+  const [optionTwo, setOptionTwo] = useState(false);
+
+  return (
+    <Flex flexDirection="column">
+      <Checkbox
+        {...args}
+        id="Checkbox1"
+        isChecked={optionOne}
+        value="yes"
+        onChange={(e) => setOptionOne((e.target as HTMLInputElement).checked)}
+      >
+        Forma 36 checkbox label
+      </Checkbox>
+      <Flex alignItems="center">
+        <Checkbox
+          {...args}
+          id="Checkbox2"
+          value="no"
+          isChecked={optionTwo}
+          onChange={(e) => setOptionTwo((e.target as HTMLInputElement).checked)}
+        />
+        <div>A custom label</div>
+      </Flex>
+    </Flex>
+  );
+};
 export const Indeterminate = () => {
   const [checkedItems, setCheckedItems] = React.useState([false, false]);
 
