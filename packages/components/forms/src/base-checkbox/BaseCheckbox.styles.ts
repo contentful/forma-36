@@ -34,7 +34,7 @@ const getStyles = ({
   size,
 }: Pick<BaseCheckboxInternalProps, 'isDisabled' | 'type' | 'size'>) => ({
   wrapper: css({
-    alignItems: 'flex-start',
+    alignItems: 'center',
     display: 'inline-flex',
     position: 'relative',
     margin: '0',
@@ -44,7 +44,6 @@ const getStyles = ({
       cursor: isDisabled ? 'not-allowed' : 'pointer',
       height: tokens.spacingM,
       margin: 0,
-      marginTop: `calc(${tokens.spacing2Xs}/2)`,
       opacity: 0,
       position: 'absolute',
       width: tokens.spacingM,
