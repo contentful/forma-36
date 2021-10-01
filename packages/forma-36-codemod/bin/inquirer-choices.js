@@ -101,7 +101,8 @@ const TRANSFORMS_CHOICES = [
     value: 'v4-form',
   },
   {
-    name: 'v4-radio: Converts RadioButton and RadioButtonField components from Forma v3 to v4',
+    name:
+      'v4-radio: Converts RadioButton and RadioButtonField components from Forma v3 to v4',
     value: 'v4-radio',
   },
 ];

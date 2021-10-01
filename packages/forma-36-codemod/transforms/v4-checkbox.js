@@ -7,9 +7,8 @@ const {
   renameProperties,
 } = require('../utils');
 const { getFormaImport, shouldSkipUpdateImport } = require('../utils/config');
-const { pipe } = require('./common/pipe');
 
-function selectFieldCodemod(file, api) {
+module.exports = function checkboxFieldCodemod(file, api) {
   const j = api.jscodeshift;
   let source = file.source;
 
@@ -142,6 +141,4 @@ function selectFieldCodemod(file, api) {
   }
 
   return source;
-}
-
-module.exports = pipe([selectFieldCodemod]);
+};
