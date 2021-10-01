@@ -1,6 +1,7 @@
 import React, { ComponentPropsWithRef } from 'react';
 
 export type MenuContextType = {
+  focusMenuItem: (item: HTMLElement) => void;
   getTriggerProps: (
     _props: ComponentPropsWithRef<'button'>,
     _ref: React.Ref<HTMLButtonElement>,

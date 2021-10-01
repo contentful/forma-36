@@ -6,11 +6,11 @@ import { Menu } from '../src';
 import { Button } from '@contentful/f36-button';
 
 describe('Menu', function () {
-  it('renders the component', () => {
+  it('renders the component', async () => {
     const { getByRole } = render(
       <Menu>
         <Menu.Trigger>
-          <Button>Toggle</Button>
+          <Button testId="trigger">Toggle</Button>
         </Menu.Trigger>
         <Menu.List>
           <Menu.Item>Create an entry</Menu.Item>
@@ -21,8 +21,11 @@ describe('Menu', function () {
     );
 
     const trigger = getByRole('button');
-    expect(trigger).toHaveAttribute('aria-expanded', 'false');
-    expect(trigger).toHaveAttribute('aria-haspopup', 'menu');
+
+    await waitFor(() => {
+      expect(trigger).toHaveAttribute('aria-expanded', 'false');
+      expect(trigger).toHaveAttribute('aria-haspopup', 'menu');
+    });
   });
 
   it('renders open by default', async () => {
@@ -237,15 +240,17 @@ describe('Menu', function () {
     expect(document.activeElement).toBe(getByTestId('third-item'));
   });
 
-  it('should focus predefined item based on initialFocusedItemIndex prop', async () => {
+  it('should focus item if isInitialFocused prop passed', async () => {
     const { getByTestId, getByRole } = render(
-      <Menu isOpen={true} initialFocusedItemIndex={1}>
+      <Menu isOpen={true}>
         <Menu.Trigger>
           <Button>Toggle</Button>
         </Menu.Trigger>
         <Menu.List>
           <Menu.Item testId="first-item">Create an entry</Menu.Item>
-          <Menu.Item testId="second-item">Remove an entry</Menu.Item>
+          <Menu.Item testId="second-item" isInitialFocused>
+            Remove an entry
+          </Menu.Item>
           <Menu.Item testId="third-item">Embed existing entry</Menu.Item>
         </Menu.List>
       </Menu>,

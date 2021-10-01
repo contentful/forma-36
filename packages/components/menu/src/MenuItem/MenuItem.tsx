@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { cx } from 'emotion';
 import {
   CommonProps,
+  mergeRefs,
   PolymorphicComponent,
   PolymorphicProps,
 } from '@contentful/f36-core';
@@ -14,6 +15,11 @@ const DEFAULT_TAG = 'button';
 interface MenuItemInternalProps extends CommonProps {
   children?: React.ReactNode;
   as?: 'a' | 'button';
+
+  /**
+   * Sets focus on item
+   */
+  isInitialFocused?: boolean;
 }
 
 export type MenuItemProps<
@@ -24,13 +30,20 @@ function _MenuItem<E extends React.ElementType = typeof DEFAULT_TAG>(
   props: MenuItemProps<E>,
   ref: React.Ref<any>,
 ) {
-  const { testId, className, as, ...otherProps } = props;
+  const { testId, className, as, isInitialFocused, ...otherProps } = props;
 
   const id = useId(null, 'menu-item');
   const itemTestId = testId || `cf-ui-${id}`;
   const styles = getMenuItemStyles();
 
-  const { getMenuItemProps } = useMenuContext();
+  const { getMenuItemProps, focusMenuItem } = useMenuContext();
+
+  const itemRef = useRef<HTMLElement>(null);
+  useEffect(() => {
+    if (isInitialFocused && itemRef.current) {
+      focusMenuItem(itemRef.current);
+    }
+  }, [isInitialFocused, focusMenuItem]);
 
   const Element: React.ElementType = as ?? DEFAULT_TAG;
 
@@ -41,7 +54,7 @@ function _MenuItem<E extends React.ElementType = typeof DEFAULT_TAG>(
       {...getMenuItemProps(otherProps)}
       className={cx(styles.root, className)}
       data-test-id={itemTestId}
-      ref={ref}
+      ref={mergeRefs(itemRef, ref)}
       tabIndex={-1}
     >
       {props.children}

@@ -170,7 +170,7 @@ export const WithReactRouterLinks: Story<MenuProps> = (args) => {
 export const WithInitialFocusedItem: Story<MenuProps> = (args) => {
   return (
     <Router>
-      <Menu defaultIsOpen initialFocusedItemIndex={1} {...args}>
+      <Menu defaultIsOpen {...args}>
         <Menu.Trigger>
           <IconButton
             variant="secondary"
@@ -180,7 +180,7 @@ export const WithInitialFocusedItem: Story<MenuProps> = (args) => {
         </Menu.Trigger>
         <Menu.List>
           <Menu.Item>Create an entry</Menu.Item>
-          <Menu.Item>Remove an entry</Menu.Item>
+          <Menu.Item isInitialFocused>Remove an entry</Menu.Item>
           <Menu.Item>Embed existing entry</Menu.Item>
         </Menu.List>
       </Menu>
