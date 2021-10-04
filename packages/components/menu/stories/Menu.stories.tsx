@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 
-import { Menu } from '../src';
+import { Menu, Submenu, SubmenuTrigger } from '../src';
 import type { MenuProps } from '../src';
 import { IconButton } from '@contentful/f36-button';
 import { MenuIcon } from '@contentful/f36-icons';
@@ -188,6 +188,32 @@ export const WithInitialFocusedItem: Story<MenuProps> = (args) => {
   );
 };
 
+export const WithSubmenu: Story<MenuProps> = (args) => {
+  return (
+    <Menu {...args} closeOnBlur={false}>
+      <Menu.Trigger>
+        <IconButton
+          variant="secondary"
+          icon={<MenuIcon />}
+          aria-label="toggle menu"
+        />
+      </Menu.Trigger>
+      <Menu.List>
+        <Menu.Item>Create an entry</Menu.Item>
+        <Submenu closeOnBlur={false} closeOnSelect={false}>
+          <SubmenuTrigger>Remove an entry</SubmenuTrigger>
+          <Menu.List>
+            <Menu.Item>Sub item 1</Menu.Item>
+            <Menu.Item>Sub item 2</Menu.Item>
+            <Menu.Item>Sub item 3</Menu.Item>
+          </Menu.List>
+        </Submenu>
+        <Menu.Item>Embed existing entry</Menu.Item>
+      </Menu.List>
+    </Menu>
+  );
+};
+
 Basic.parameters = {
   chromatic: { delay: 300 },
 };
@@ -207,5 +233,8 @@ WithReactRouterLinks.parameters = {
   chromatic: { delay: 300 },
 };
 WithInitialFocusedItem.parameters = {
+  chromatic: { delay: 300 },
+};
+WithSubmenu.parameters = {
   chromatic: { delay: 300 },
 };
