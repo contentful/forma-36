@@ -79,6 +79,14 @@ export interface PopoverProps extends CommonProps {
    * @default true
    */
   autoFocus?: boolean;
+
+  /**
+   * Popover id. Will be used as an `id` attribute on popover
+   * and as `aria-controls` attribute on trigger
+   *
+   * @default true
+   */
+  id?: string;
 }
 
 export function Popover(props: PopoverProps) {
@@ -93,6 +101,7 @@ export function Popover(props: PopoverProps) {
     closeOnEsc = true,
     onClose,
     autoFocus = true,
+    id,
   } = props;
 
   const [triggerElement, setTriggerElement] = useState<HTMLElement | null>(
@@ -141,12 +150,14 @@ export function Popover(props: PopoverProps) {
   }, [isOpen, popoverElement]);
 
   useEffect(() => {
-    if (forceUpdate) {
+    if (isOpen && forceUpdate) {
       forceUpdate();
     }
-  }, [children, forceUpdate]);
+  }, [isOpen, forceUpdate]);
 
-  const popoverId = useId(null, 'popover-content');
+  const popoverGeneratedId = useId(null, 'popover-content');
+  const popoverId = id || popoverGeneratedId;
+
   const handleClose = useCallback(() => {
     if (onClose) {
       onClose();
