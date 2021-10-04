@@ -5,7 +5,7 @@ import React, {
   useRef,
   useEffect,
 } from 'react';
-import { CommonProps, mergeRefs } from '@contentful/f36-core';
+import { CommonProps, mergeRefs, useId } from '@contentful/f36-core';
 import { useArrowKeyNavigation } from '@contentful/f36-utils';
 import { Popover, PopoverProps } from '@contentful/f36-popover';
 import { MenuContextProvider, MenuContextType } from './MenuContext';
@@ -14,7 +14,7 @@ const MENU_ITEMS_SELECTOR = '[role="menuitem"]:not(:disabled)';
 
 export interface MenuProps
   extends CommonProps,
-    Omit<PopoverProps, 'autoFocus'> {
+    Omit<PopoverProps, 'autoFocus' | 'id' | 'closeOnBlur'> {
   /**
    * If `true`, the Menu will be opened in controlled mode.
    * By default the Menu is uncontrolled
@@ -43,14 +43,23 @@ export interface MenuProps
    * @default true
    */
   closeOnSelect?: boolean;
+
+  /**
+   * If true, the menu will close when you blur out it by clicking outside
+   *
+   * @default true
+   */
+  closeOnBlur?: boolean;
 }
 
 export function Menu(props: MenuProps) {
-  const { closeOnSelect = true } = props;
+  const { closeOnSelect = true, closeOnBlur = true } = props;
   const { isOpen, handleOpen, handleClose } = useMenuOpenState(props);
 
   const triggerRef = useRef<HTMLButtonElement>(null);
   const menuListRef = useRef<HTMLDivElement>(null);
+
+  const menuId = useId(null, 'menu');
 
   const {
     focusedIndex,
@@ -105,6 +114,15 @@ export function Menu(props: MenuProps) {
         return;
       }
 
+      // we don't want to propagate other keydown events except `Tab`
+      event.stopPropagation();
+
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        closeAndFocusTrigger();
+        return;
+      }
+
       handleArrowsKeyDown(event);
     },
     [closeAndFocusTrigger, handleArrowsKeyDown],
@@ -112,6 +130,8 @@ export function Menu(props: MenuProps) {
 
   const contextValue: MenuContextType = useMemo(
     () => ({
+      isOpen,
+      menuId,
       focusMenuItem,
       getTriggerProps: (_props = {}, _ref = null) => ({
         onClick: (event) => {
@@ -130,23 +150,53 @@ export function Menu(props: MenuProps) {
           handleMenuListKeyDown(event);
           _props.onKeyDown?.(event);
         },
+        onBlur: (event) => {
+          _props.onBlur?.(event);
+
+          if (!closeOnBlur) {
+            return;
+          }
+
+          const relatedTarget = event.relatedTarget as Node;
+
+          const targetIsMenu =
+            menuListRef.current === relatedTarget ||
+            menuListRef.current?.contains(relatedTarget);
+          const targetIsTrigger =
+            triggerRef.current === relatedTarget ||
+            triggerRef.current?.contains(relatedTarget);
+          const targetIsSubmenu =
+            relatedTarget?.parentElement?.dataset.parentMenu === menuId;
+
+          if (targetIsMenu || targetIsTrigger || targetIsSubmenu) {
+            return;
+          }
+
+          handleClose();
+        },
       }),
       getMenuItemProps: (_props = {}) => ({
         onClick: (event) => {
           _props.onClick?.(event);
-          if (closeOnSelect) {
+
+          const isSubmenuTrigger = Boolean(
+            (event.target as HTMLElement).getAttribute('aria-haspopup'),
+          );
+          if (closeOnSelect && !isSubmenuTrigger) {
             handleClose();
           }
         },
       }),
     }),
     [
+      menuId,
       isOpen,
       handleMenuListKeyDown,
       closeOnSelect,
       handleClose,
       handleOpen,
       focusMenuItem,
+      closeOnBlur,
     ],
   );
 
@@ -158,6 +208,8 @@ export function Menu(props: MenuProps) {
         onClose={closeAndFocusTrigger}
         // eslint-disable-next-line jsx-a11y/no-autofocus
         autoFocus={false}
+        id={menuId}
+        closeOnBlur={false}
       >
         {props.children}
       </Popover>

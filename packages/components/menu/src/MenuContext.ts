@@ -1,6 +1,8 @@
 import React, { ComponentPropsWithRef } from 'react';
 
 export type MenuContextType = {
+  isOpen: boolean;
+  menuId: string;
   focusMenuItem: (item: HTMLElement) => void;
   getTriggerProps: (
     _props: ComponentPropsWithRef<'button'>,
@@ -11,8 +13,8 @@ export type MenuContextType = {
     _ref: React.Ref<HTMLDivElement>,
   ) => ComponentPropsWithRef<'div'>;
   getMenuItemProps: (
-    _props: ComponentPropsWithRef<any>,
-  ) => ComponentPropsWithRef<any>;
+    _props: ComponentPropsWithRef<'button'>,
+  ) => ComponentPropsWithRef<'button'>;
 };
 
 const MenuContext = React.createContext<MenuContextType | undefined>(undefined);
