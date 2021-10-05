@@ -1,7 +1,14 @@
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import { Menu, MenuProps } from '../Menu';
 import { useMenuContext } from '../MenuContext';
 import { SubmenuContextProvider, SubmenuContextType } from '../SubmenuContext';
+import { mergeRefs } from '@contentful/f36-core';
 
 const SUBMENU_OFFSET: [number, number] = [-8, 2];
 
@@ -24,17 +31,26 @@ export const Submenu = (props: SubmenuProps) => {
     propsToPropagateToSubmenus,
   } = useMenuContext();
 
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const mouseLeaveTimerRef = useRef(null);
+
   const [isOpen, setIsOpen] = useState(false);
   const handleOpen = useCallback(() => {
     setIsOpen(true);
+    window.clearTimeout(mouseLeaveTimerRef.current);
 
     onOpen?.();
   }, [onOpen]);
   const handleClose = useCallback(() => {
     setIsOpen(false);
+    window.clearTimeout(mouseLeaveTimerRef.current);
 
     onClose?.();
   }, [onClose]);
+  const closeAndFocusTrigger = useCallback(() => {
+    handleClose();
+    triggerRef.current?.focus({ preventScroll: true });
+  }, [handleClose]);
 
   useEffect(() => {
     // close when parent menu closed
@@ -54,12 +70,13 @@ export const Submenu = (props: SubmenuProps) => {
           _props.onMouseOver?.(event);
         },
         onMouseLeave: (event) => {
-          handleClose();
+          closeAndFocusTrigger();
 
           _props.onMouseLeave?.(event);
         },
       }),
-      getSubmenuTriggerProps: (_props) => ({
+      getSubmenuTriggerProps: (_props, _ref) => ({
+        ref: mergeRefs(triggerRef, _ref),
         onKeyDown: (event) => {
           if (event.key === 'ArrowRight') {
             event.preventDefault();
@@ -74,13 +91,16 @@ export const Submenu = (props: SubmenuProps) => {
           _props.onMouseOver?.(event);
         },
         onMouseLeave: (event) => {
-          handleClose();
+          mouseLeaveTimerRef.current = window.setTimeout(
+            closeAndFocusTrigger,
+            300,
+          );
 
           _props.onMouseLeave?.(event);
         },
       }),
     }),
-    [isOpen, menuId, handleOpen, handleClose],
+    [isOpen, menuId, handleOpen, closeAndFocusTrigger],
   );
 
   return (
@@ -93,6 +113,7 @@ export const Submenu = (props: SubmenuProps) => {
         onOpen={handleOpen}
         placement="right-start"
         offset={SUBMENU_OFFSET}
+        isAutoalignmentEnabled={false}
       />
     </SubmenuContextProvider>
   );

@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, Story } from '@storybook/react/types-6-0';
 
-import { Menu, Submenu, SubmenuTrigger } from '../src';
+import { Menu } from '../src';
 import type { MenuProps } from '../src';
 import { IconButton } from '@contentful/f36-button';
 import { MenuIcon } from '@contentful/f36-icons';
@@ -190,7 +190,7 @@ export const WithInitialFocusedItem: Story<MenuProps> = (args) => {
 
 export const WithSubmenu: Story<MenuProps> = (args) => {
   return (
-    <Menu {...args} closeOnBlur={false}>
+    <Menu {...args}>
       <Menu.Trigger>
         <IconButton
           variant="secondary"
@@ -200,15 +200,30 @@ export const WithSubmenu: Story<MenuProps> = (args) => {
       </Menu.Trigger>
       <Menu.List>
         <Menu.Item>Create an entry</Menu.Item>
-        <Submenu>
-          <SubmenuTrigger>Remove an entry</SubmenuTrigger>
+        <Menu.Submenu>
+          <Menu.SubmenuTrigger>Remove an entry</Menu.SubmenuTrigger>
+          <Menu.List>
+            <Menu.Item>Sub item 1</Menu.Item>
+            <Menu.Submenu>
+              <Menu.SubmenuTrigger>Submenu</Menu.SubmenuTrigger>
+              <Menu.List>
+                <Menu.Item>Sub item 1</Menu.Item>
+                <Menu.Item>Sub item 2</Menu.Item>
+                <Menu.Item>Sub item 3</Menu.Item>
+              </Menu.List>
+            </Menu.Submenu>
+            <Menu.Item>Sub item 3</Menu.Item>
+          </Menu.List>
+        </Menu.Submenu>
+        <Menu.Item>Embed existing entry</Menu.Item>
+        <Menu.Submenu>
+          <Menu.SubmenuTrigger>Second submenu</Menu.SubmenuTrigger>
           <Menu.List>
             <Menu.Item>Sub item 1</Menu.Item>
             <Menu.Item>Sub item 2</Menu.Item>
             <Menu.Item>Sub item 3</Menu.Item>
           </Menu.List>
-        </Submenu>
-        <Menu.Item>Embed existing entry</Menu.Item>
+        </Menu.Submenu>
       </Menu.List>
     </Menu>
   );

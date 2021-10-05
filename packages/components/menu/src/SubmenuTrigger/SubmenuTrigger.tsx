@@ -24,9 +24,8 @@ const _SubmenuTrigger = (
     <MenuTrigger>
       <MenuItem
         {...props}
-        {...getSubmenuTriggerProps(props)}
+        {...getSubmenuTriggerProps(props, ref)}
         className={cx(styles.root({ isActive: isOpen }), className)}
-        ref={ref}
       >
         <span className={styles.content}>{children}</span>
         <ChevronRightIcon className={styles.icon} />

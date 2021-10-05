@@ -191,6 +191,7 @@ export function Menu(props: MenuProps) {
             relatedTarget?.parentElement?.dataset.parentMenu === menuId;
 
           if (targetIsMenu || targetIsTrigger || targetIsSubmenu) {
+            event.stopPropagation();
             return;
           }
 
