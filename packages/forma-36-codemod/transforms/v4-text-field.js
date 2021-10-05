@@ -68,16 +68,30 @@ function textFieldCodemod(file, api) {
       // from textInputProps
       const textInputProps = getProperty(attributes, {
         propertyName: 'textInputProps',
-      });
+      }).value.expression.properties;
 
-      let isDisabled = textInputProps.value.expression.properties.find(
-        (prop) => prop.key.name === 'disabled',
+      let isDisabled = textInputProps.find(
+        ({ key }) => key.name === 'disabled',
       );
       if (isDisabled) {
+        const { value } = isDisabled;
+
+        let propertyValue = null; // passing "null" so the prop is added without a value because it's a boolean prop
+
+        if (value.type === 'ConditionalExpression') {
+          propertyValue = j.jsxExpressionContainer(
+            j.conditionalExpression(
+              value.test,
+              value.consequent,
+              value.alternate,
+            ),
+          );
+        }
+
         attributes = addProperty(attributes, {
           j,
           propertyName: 'isDisabled',
-          propertyValue: null, // passing "null" so the prop is added without a value because it's a boolean prop
+          propertyValue,
         });
 
         isDisabled = getProperty(attributes, {
@@ -88,7 +102,7 @@ function textFieldCodemod(file, api) {
       }
 
       // to be added to TextInput
-      let maxLength = textInputProps.value.expression.properties.find(
+      let maxLength = textInputProps.find(
         (prop) => prop.key.name === 'maxLength',
       );
       if (maxLength) {
@@ -105,7 +119,7 @@ function textFieldCodemod(file, api) {
         });
       }
 
-      let placeholder = textInputProps.value.expression.properties.find(
+      let placeholder = textInputProps.find(
         (prop) => prop.key.name === 'placeholder',
       );
       if (placeholder) {
