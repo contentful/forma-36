@@ -26,7 +26,6 @@ exports[`renders the button as an external link 1`] = `
   href="/"
   rel="noreferrer noopener"
   target="_blank"
-  type="button"
 >
   <span
     class="TabFocusTrap Button__inner-wrapper"
@@ -46,7 +45,6 @@ exports[`renders the button as link 1`] = `
   class="Button Button--primary Button--medium"
   data-test-id="cf-ui-button"
   href="/"
-  type="button"
 >
   <span
     class="TabFocusTrap Button__inner-wrapper"
