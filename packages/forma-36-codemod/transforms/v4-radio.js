@@ -5,7 +5,6 @@ const {
   createComponent,
   addImport,
   renameProperties,
-  removeComponentImport,
   changeComponentName,
   changeProperties,
   deleteProperty,
@@ -13,12 +12,12 @@ const {
 const { getFormaImport, shouldSkipUpdateImport } = require('../utils/config');
 const { pipe } = require('./common/pipe');
 
-function selectCodemod(file, api) {
+function radioCodemod(file, api) {
   const j = api.jscodeshift;
   let source = file.source;
 
   const componentName = getComponentLocalName(j, source, {
-    componentName: 'Select',
+    componentName: 'RadioButton',
     importName: getFormaImport(),
   });
 
@@ -33,13 +32,15 @@ function selectCodemod(file, api) {
 
       modifiedAttributes = renameProperties(modifiedAttributes, {
         renameMap: {
+          checked: 'isChecked',
           required: 'isRequired',
-          hasError: 'isInvalid',
+          disabled: 'isDisabled',
+          labelText: 'aria-label',
         },
       });
 
       modifiedAttributes = deleteProperty(modifiedAttributes, {
-        propertyName: 'width',
+        propertyName: 'type',
       });
 
       return modifiedAttributes;
@@ -47,60 +48,65 @@ function selectCodemod(file, api) {
   });
 
   source = changeComponentName(j, source, {
-    componentName: 'Option',
-    outputComponentName: 'Select.Option',
+    componentName: 'RadioButton',
+    outputComponentName: 'Radio',
   });
 
   if (!shouldSkipUpdateImport()) {
-    source = removeComponentImport(j, source, {
-      componentName: 'Option',
-      importName: getFormaImport(),
-    });
     source = changeImport(j, source, {
       componentName,
       from: getFormaImport(),
       to: '@contentful/f36-components',
-      outputComponentName: 'Select',
+      outputComponentName: 'Radio',
     });
   }
 
   return source;
 }
 
-function selectFieldCodemod(file, api) {
+function radioButtonFieldCodemod(file, api) {
   const j = api.jscodeshift;
   let source = file.source;
 
   const componentName = getComponentLocalName(j, source, {
-    componentName: 'SelectField',
+    componentName: 'RadioButtonField',
     importName: getFormaImport(),
   });
 
   if (!componentName) {
     return source;
   }
+  let needToImportFormControl = false;
 
   source = j(source)
     .find(j.JSXElement, { openingElement: { name: { name: componentName } } })
     .forEach((p) => {
-      const options = p.value.children;
       let attributes = p.value.openingElement.attributes;
 
       attributes = renameProperties(attributes, {
         renameMap: {
           required: 'isRequired',
+          disabled: 'isDisabled',
+          checked: 'isChecked',
+          invalid: 'isInvalid',
+          formLabelProps: null,
+          labelIsLight: null,
+          helpTextProps: null,
         },
       });
 
       const id = getProperty(attributes, { propertyName: 'id' });
       const name = getProperty(attributes, { propertyName: 'name' });
       const labelText = getProperty(attributes, { propertyName: 'labelText' });
-      const helpText = getProperty(attributes, { propertyName: 'helpText' });
       const value = getProperty(attributes, { propertyName: 'value' });
+      const helpText = getProperty(attributes, { propertyName: 'helpText' });
       const validationMessage = getProperty(attributes, {
         propertyName: 'validationMessage',
       });
       const required = getProperty(attributes, { propertyName: 'isRequired' });
+      const disabled = getProperty(attributes, { propertyName: 'isDisabled' });
+      const invalid = getProperty(attributes, { propertyName: 'isInvalid' });
+      const checked = getProperty(attributes, { propertyName: 'isChecked' });
       const handlerProps = attributes.filter((attribute) =>
         ['onChange', 'onBlur'].includes(attribute.name?.name),
       );
@@ -115,19 +121,23 @@ function selectFieldCodemod(file, api) {
           : [j.jsxText(prop.value.value)];
       };
 
-      const Label = createComponent({
+      const radioProps = [
+        !validationMessage ? id : null,
+        helpText,
+        disabled,
+        name,
+        value,
+        checked,
+        ...handlerProps,
+        ...commonProps,
+      ].filter((prop) => prop);
+
+      const Radio = createComponent({
         j,
-        componentName: 'FormControl.Label',
+        componentName: 'Radio',
+        props: radioProps,
         children: getChildren(labelText),
       });
-
-      const HelpText =
-        helpText &&
-        createComponent({
-          j,
-          componentName: 'FormControl.HelpText',
-          children: getChildren(helpText),
-        });
 
       const ValidationMesage =
         validationMessage &&
@@ -137,59 +147,55 @@ function selectFieldCodemod(file, api) {
           children: getChildren(validationMessage),
         });
 
-      const selectProps = [value, ...handlerProps].filter((prop) => prop);
-      const Select = createComponent({
-        j,
-        componentName: 'Select',
-        props: selectProps,
-        children: options,
-      });
-
-      const content = [Label, Select, HelpText, ValidationMesage].reduce(
+      const FormControlContent = [Radio, ValidationMesage].reduce(
         (acc, c) => {
           return c ? [...acc, c, j.jsxText('\n')] : acc;
         },
         [j.jsxText('\n')],
       );
 
-      const formControlProps = [id, name, required, ...commonProps].filter(
-        (p) => p,
-      );
+      const formControlProps = [
+        id,
+        name,
+        required,
+        invalid,
+        ...commonProps,
+      ].filter((p) => p);
+
       const FormControl = createComponent({
         j,
         componentName: 'FormControl',
         props: formControlProps,
-        children: content,
+        children: FormControlContent,
       });
 
-      j(p).replaceWith(FormControl);
+      if (validationMessage) {
+        needToImportFormControl = true;
+        j(p).replaceWith(FormControl);
+      } else {
+        j(p).replaceWith(Radio);
+      }
     })
     .toSource();
 
-  source = changeComponentName(j, source, {
-    componentName: 'Option',
-    outputComponentName: 'Select.Option',
-  });
-
   if (!shouldSkipUpdateImport()) {
-    source = removeComponentImport(j, source, {
-      componentName: 'Option',
-      importName: getFormaImport(),
-    });
-    source = addImport(j, source, [
-      j.template.statement([
-        'import { FormControl, Select } from "@contentful/f36-components"',
-      ]),
-    ]).source;
+    if (needToImportFormControl) {
+      source = addImport(j, source, [
+        j.template.statement([
+          'import { FormControl } from "@contentful/f36-components"',
+        ]),
+      ]).source;
+    }
+
     source = changeImport(j, source, {
       componentName,
       from: getFormaImport(),
       to: '@contentful/f36-components',
-      outputComponentName: 'Select',
+      outputComponentName: 'Radio',
     });
   }
 
   return source;
 }
 
-module.exports = pipe([selectCodemod, selectFieldCodemod]);
+module.exports = pipe([radioCodemod, radioButtonFieldCodemod]);

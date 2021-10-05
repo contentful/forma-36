@@ -7,9 +7,8 @@ const {
   renameProperties,
 } = require('../utils');
 const { getFormaImport, shouldSkipUpdateImport } = require('../utils/config');
-const { pipe } = require('./common/pipe');
 
-function selectFieldCodemod(file, api) {
+module.exports = function checkboxFieldCodemod(file, api) {
   const j = api.jscodeshift;
   let source = file.source;
 
@@ -71,11 +70,18 @@ function selectFieldCodemod(file, api) {
         ...commonProps,
       ].filter((prop) => prop);
 
+      const getChildren = (prop) => {
+        if (!prop) return [];
+        return prop.value.type === 'JSXExpressionContainer'
+          ? [prop.value]
+          : [j.jsxText(prop.value.value)];
+      };
+
       const Checkbox = createComponent({
         j,
         componentName: 'Checkbox',
         props: checkboxProps,
-        children: [j.jsxText(labelText.value.value)],
+        children: getChildren(labelText),
       });
 
       const ValidationMesage =
@@ -83,7 +89,7 @@ function selectFieldCodemod(file, api) {
         createComponent({
           j,
           componentName: 'FormControl.ValidationMessage',
-          children: [j.jsxText(validationMessage.value.value)],
+          children: getChildren(validationMessage),
         });
 
       const FormControlContent = [Checkbox, ValidationMesage].reduce(
@@ -135,6 +141,4 @@ function selectFieldCodemod(file, api) {
   }
 
   return source;
-}
-
-module.exports = pipe([selectFieldCodemod]);
+};
