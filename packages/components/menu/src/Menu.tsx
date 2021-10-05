@@ -40,6 +40,9 @@ export interface MenuProps
    * If `true`, the Menu will close when a menu item is
    * clicked
    *
+   * Note: This prop will be propagated to all submenus,
+   * unless you will override it with props on submenu itself
+   *
    * @default true
    */
   closeOnSelect?: boolean;
@@ -47,13 +50,32 @@ export interface MenuProps
   /**
    * If true, the menu will close when you blur out it by clicking outside
    *
+   * Note: This prop will be propagated to all submenus,
+   * unless you will override it with props on submenu itself
+   *
    * @default true
    */
   closeOnBlur?: boolean;
+
+  /**
+   * If true, the menu will close when you hit the Esc key
+   *
+   * Note: This prop will be propagated to all submenus,
+   * unless you will override it with props on submenu itself
+   *
+   * @default true
+   */
+  closeOnEsc?: boolean;
 }
 
 export function Menu(props: MenuProps) {
-  const { closeOnSelect = true, closeOnBlur = true } = props;
+  const {
+    closeOnSelect = true,
+    closeOnBlur = true,
+    closeOnEsc = true,
+    children,
+    ...otherProps
+  } = props;
   const { isOpen, handleOpen, handleClose } = useMenuOpenState(props);
 
   const triggerRef = useRef<HTMLButtonElement>(null);
@@ -187,6 +209,11 @@ export function Menu(props: MenuProps) {
           }
         },
       }),
+      propsToPropagateToSubmenus: {
+        closeOnSelect,
+        closeOnBlur,
+        closeOnEsc,
+      },
     }),
     [
       menuId,
@@ -197,21 +224,23 @@ export function Menu(props: MenuProps) {
       handleOpen,
       focusMenuItem,
       closeOnBlur,
+      closeOnEsc,
     ],
   );
 
   return (
     <MenuContextProvider value={contextValue}>
       <Popover
-        {...props}
+        {...otherProps}
         isOpen={isOpen}
         onClose={closeAndFocusTrigger}
+        id={menuId}
+        closeOnEsc={closeOnEsc}
         // eslint-disable-next-line jsx-a11y/no-autofocus
         autoFocus={false}
-        id={menuId}
         closeOnBlur={false}
       >
-        {props.children}
+        {children}
       </Popover>
     </MenuContextProvider>
   );

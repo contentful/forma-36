@@ -200,7 +200,7 @@ export const WithSubmenu: Story<MenuProps> = (args) => {
       </Menu.Trigger>
       <Menu.List>
         <Menu.Item>Create an entry</Menu.Item>
-        <Submenu closeOnBlur={false} closeOnSelect={false}>
+        <Submenu>
           <SubmenuTrigger>Remove an entry</SubmenuTrigger>
           <Menu.List>
             <Menu.Item>Sub item 1</Menu.Item>

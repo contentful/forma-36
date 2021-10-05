@@ -87,6 +87,14 @@ export interface PopoverProps extends CommonProps {
    * @default true
    */
   id?: string;
+
+  /**
+   * The `X-axis` and `Y-axis` offset to position popper element
+   * from its trigger element. `[X, Y]`
+   *
+   * @default [1, 4]
+   */
+  offset?: [number, number];
 }
 
 export function Popover(props: PopoverProps) {
@@ -102,6 +110,7 @@ export function Popover(props: PopoverProps) {
     onClose,
     autoFocus = true,
     id,
+    offset = [1, 4],
   } = props;
 
   const [triggerElement, setTriggerElement] = useState<HTMLElement | null>(
@@ -121,7 +130,7 @@ export function Popover(props: PopoverProps) {
       {
         name: 'offset',
         options: {
-          offset: [1, 4],
+          offset,
         },
       },
       {

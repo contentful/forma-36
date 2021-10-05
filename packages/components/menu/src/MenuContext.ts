@@ -1,4 +1,5 @@
 import React, { ComponentPropsWithRef } from 'react';
+import { MenuProps } from '.';
 
 export type MenuContextType = {
   isOpen: boolean;
@@ -15,6 +16,10 @@ export type MenuContextType = {
   getMenuItemProps: (
     _props: ComponentPropsWithRef<'button'>,
   ) => ComponentPropsWithRef<'button'>;
+  propsToPropagateToSubmenus: Pick<
+    MenuProps,
+    'closeOnBlur' | 'closeOnEsc' | 'closeOnSelect'
+  >;
 };
 
 const MenuContext = React.createContext<MenuContextType | undefined>(undefined);
