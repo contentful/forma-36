@@ -68,7 +68,7 @@ export const Button = ({
   onClick,
   size = 'medium',
   testId = 'cf-ui-button',
-  type = href ? 'button' : undefined,
+  type = href ? undefined : 'button',
   ...otherProps
 }: ButtonProps) => {
   const classNames = cn(
