@@ -1,10 +1,10 @@
-import React, {
-  useCallback,
-  KeyboardEventHandler,
-  MouseEventHandler,
-} from 'react';
+import React from 'react';
 import { MenuTrigger } from '../MenuTrigger/MenuTrigger';
 import { MenuItem, MenuItemProps } from '../MenuItem/MenuItem';
+import { useSubmenuContext } from '../SubmenuContext';
+import { ChevronRightIcon } from '@contentful/f36-icons';
+import { cx } from 'emotion';
+import { getSubmenuTriggerStyles } from './SubmenuTrigger.styles';
 
 export type SubmenuTriggerProps = Omit<
   MenuItemProps<'button'>,
@@ -15,47 +15,22 @@ const _SubmenuTrigger = (
   props: SubmenuTriggerProps,
   ref: React.Ref<HTMLButtonElement>,
 ) => {
-  const { onKeyDown, onMouseOver, onMouseLeave } = props;
+  const { className, children } = props;
+  const { getSubmenuTriggerProps, isOpen } = useSubmenuContext();
 
-  const handleKeyDown = useCallback<KeyboardEventHandler<HTMLButtonElement>>(
-    (event) => {
-      if (event.key === 'ArrowRight') {
-        event.preventDefault();
-        (event.target as HTMLElement).click();
-      }
-
-      onKeyDown?.(event);
-    },
-    [onKeyDown],
-  );
-
-  const handleMouseOver = useCallback<MouseEventHandler<HTMLButtonElement>>(
-    (event) => {
-      (event.target as HTMLElement).click();
-
-      onMouseOver?.(event);
-    },
-    [onMouseOver],
-  );
-
-  const handleMouseLeave = useCallback<MouseEventHandler<HTMLButtonElement>>(
-    (event) => {
-      (event.target as HTMLElement).click();
-
-      onMouseLeave?.(event);
-    },
-    [onMouseLeave],
-  );
+  const styles = getSubmenuTriggerStyles();
 
   return (
     <MenuTrigger>
       <MenuItem
         {...props}
+        {...getSubmenuTriggerProps(props)}
+        className={cx(styles.root({ isActive: isOpen }), className)}
         ref={ref}
-        onKeyDown={handleKeyDown}
-        onMouseOver={handleMouseOver}
-        onMouseLeave={handleMouseLeave}
-      />
+      >
+        <span className={styles.content}>{children}</span>
+        <ChevronRightIcon className={styles.icon} />
+      </MenuItem>
     </MenuTrigger>
   );
 };

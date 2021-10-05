@@ -1,9 +1,13 @@
 import React, { ComponentPropsWithRef } from 'react';
 
 export type SubmenuContextType = {
+  isOpen: boolean;
   getSubmenuListProps: (
     _props: ComponentPropsWithRef<'div'>,
-  ) => ComponentPropsWithRef<'div'>;
+  ) => { 'data-parent-menu': string } & ComponentPropsWithRef<'div'>;
+  getSubmenuTriggerProps: (
+    _props: ComponentPropsWithRef<'button'>,
+  ) => ComponentPropsWithRef<'button'>;
 };
 
 const SubmenuContext = React.createContext<SubmenuContextType | undefined>(
