@@ -1,5 +1,14 @@
 import { TextField } from '@contentful/forma-36-react-components';
 
+const showValidationMessage = true;
+<TextField
+  id="conditional-validation"
+  name="conditional-validation"
+  labelText="Conditional validation"
+  onChange={() => {}}
+  validationMessage={showValidationMessage ? 'Some validation message' : ''}
+/>;
+
 <TextField
   id="inputId"
   name="email"

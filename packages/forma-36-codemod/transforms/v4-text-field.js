@@ -37,7 +37,6 @@ function textFieldCodemod(file, api) {
 
       // FormControl PROPS
       const formControlProps = [];
-
       const id = getProperty(attributes, { propertyName: 'id' });
       const isRequired = getProperty(attributes, {
         propertyName: 'isRequired',
@@ -66,72 +65,79 @@ function textFieldCodemod(file, api) {
       });
 
       // from textInputProps
-      const textInputProps = getProperty(attributes, {
+      const textInputPropsObj = getProperty(attributes, {
         propertyName: 'textInputProps',
-      }).value.expression.properties;
+      });
+      const propsFromTextInputProps = [];
 
-      let isDisabled = textInputProps.find(
-        ({ key }) => key.name === 'disabled',
-      );
-      if (isDisabled) {
-        const { value } = isDisabled;
+      if (textInputPropsObj) {
+        const { properties } = textInputPropsObj.value.expression;
 
-        let propertyValue = null; // passing "null" so the prop is added without a value because it's a boolean prop
+        let isDisabled = properties.find(({ key }) => key.name === 'disabled');
+        if (isDisabled) {
+          const { value } = isDisabled;
 
-        if (value.type === 'ConditionalExpression') {
-          propertyValue = j.jsxExpressionContainer(
-            j.conditionalExpression(
-              value.test,
-              value.consequent,
-              value.alternate,
-            ),
-          );
+          let propertyValue = null; // passing "null" so the prop is added without a value because it's a boolean prop
+
+          if (value.type === 'ConditionalExpression') {
+            propertyValue = j.jsxExpressionContainer(
+              j.conditionalExpression(
+                value.test,
+                value.consequent,
+                value.alternate,
+              ),
+            );
+          }
+
+          attributes = addProperty(attributes, {
+            j,
+            propertyName: 'isDisabled',
+            propertyValue,
+          });
+
+          isDisabled = getProperty(attributes, {
+            propertyName: 'isDisabled',
+          });
+
+          formControlProps.push(isDisabled);
         }
 
-        attributes = addProperty(attributes, {
-          j,
-          propertyName: 'isDisabled',
-          propertyValue,
-        });
+        // to be added to TextInput
+        let maxLength = properties.find(
+          (prop) => prop.key.name === 'maxLength',
+        );
+        if (maxLength) {
+          attributes = addProperty(attributes, {
+            j,
+            propertyName: 'maxLength',
+            propertyValue: j.jsxExpressionContainer(
+              j.numericLiteral(maxLength.value.value),
+            ),
+          });
 
-        isDisabled = getProperty(attributes, {
-          propertyName: 'isDisabled',
-        });
+          maxLength = getProperty(attributes, {
+            propertyName: 'maxLength',
+          });
 
-        formControlProps.push(isDisabled);
-      }
+          propsFromTextInputProps.push(maxLength);
+        }
 
-      // to be added to TextInput
-      let maxLength = textInputProps.find(
-        (prop) => prop.key.name === 'maxLength',
-      );
-      if (maxLength) {
-        attributes = addProperty(attributes, {
-          j,
-          propertyName: 'maxLength',
-          propertyValue: j.jsxExpressionContainer(
-            j.numericLiteral(maxLength.value.value),
-          ),
-        });
+        let placeholder = properties.find(
+          (prop) => prop.key.name === 'placeholder',
+        );
+        if (placeholder) {
+          attributes = addProperty(attributes, {
+            j,
+            propertyName: 'placeholder',
+            propertyValue: j.literal(placeholder.value.value),
+          });
 
-        maxLength = getProperty(attributes, {
-          propertyName: 'maxLength',
-        });
-      }
+          placeholder = getProperty(attributes, {
+            propertyName: 'placeholder',
+          });
 
-      let placeholder = textInputProps.find(
-        (prop) => prop.key.name === 'placeholder',
-      );
-      if (placeholder) {
-        attributes = addProperty(attributes, {
-          j,
-          propertyName: 'placeholder',
-          propertyValue: j.literal(placeholder.value.value),
-        });
-
-        placeholder = getProperty(attributes, {
-          propertyName: 'placeholder',
-        });
+          propsFromTextInputProps.push(placeholder);
+        }
       }
 
       const Label = createComponent({
@@ -147,10 +153,9 @@ function textFieldCodemod(file, api) {
           ...commonProps,
           name,
           value,
-          placeholder,
-          maxLength,
+          ...propsFromTextInputProps,
           ...handlerProps,
-        ],
+        ].filter((prop) => prop !== null),
         isSelfClosing: true,
       });
 
@@ -167,10 +172,42 @@ function textFieldCodemod(file, api) {
       }
 
       if (validationMessage) {
+        let children =
+          validationMessage.value.expression?.type === 'ConditionalExpression'
+            ? [j.jsxText(validationMessage.value.expression.consequent.value)]
+            : [j.jsxText(validationMessage.value.value)];
+
+        if (
+          validationMessage.value.expression?.type === 'ConditionalExpression'
+        ) {
+          const { expression } = validationMessage.value;
+          children = [j.jsxText(expression.consequent.value)];
+
+          attributes = addProperty(attributes, {
+            j,
+            propertyName: 'isInvalid',
+            propertyValue: j.jsxExpressionContainer(
+              j.conditionalExpression(
+                expression.test,
+                expression.consequent,
+                expression.alternate,
+              ),
+            ),
+          });
+
+          const isInvalid = getProperty(attributes, {
+            propertyName: 'isInvalid',
+          });
+
+          formControlProps.push(isInvalid);
+        } else {
+          children = [j.jsxText(validationMessage.value.value)];
+        }
+
         const ValidationMesage = createComponent({
           j,
           componentName: 'FormControl.ValidationMessage',
-          children: [j.jsxText(validationMessage.value.value)],
+          children,
         });
 
         childrenComponents.push(ValidationMesage);
@@ -184,7 +221,7 @@ function textFieldCodemod(file, api) {
       const FormControl = createComponent({
         j,
         componentName: 'FormControl',
-        props: formControlProps,
+        props: formControlProps.filter((prop) => prop !== null),
         children,
       });
 

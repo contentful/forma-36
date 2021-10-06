@@ -1,5 +1,14 @@
 import { FormControl, TextInput } from "@contentful/f36-components";
 
+const showValidationMessage = true;
+<FormControl id="conditional-validation" isInvalid={showValidationMessage}>
+  <FormControl.Label>Conditional validation</FormControl.Label>
+  <TextInput
+    name="conditional-validation"
+    onChange={() => {}} />
+  {showValidationMessage && <FormControl.ValidationMessage>Some validation message</FormControl.ValidationMessage>}
+</FormControl>;
+
 <FormControl id="inputId" isRequired isDisabled>
   <FormControl.Label>Label text</FormControl.Label>
   <TextInput
@@ -7,8 +16,8 @@ import { FormControl, TextInput } from "@contentful/f36-components";
     testId="test-id"
     name="email"
     value="some value"
-    placeholder="placeholder"
     maxLength={10}
+    placeholder="placeholder"
     onChange={() => {}}
     onBlur={() => {}} />
   <FormControl.HelpText>some help text</FormControl.HelpText>
@@ -23,8 +32,8 @@ const isDisabled = true;
     testId="test-id"
     name="email"
     value="some value"
-    placeholder="placeholder"
     maxLength={10}
+    placeholder="placeholder"
     onChange={() => {}}
     onBlur={() => {}} />
   <FormControl.HelpText>some help text</FormControl.HelpText>
