@@ -36,12 +36,11 @@ function textFieldCodemod(file, api) {
       });
 
       // FormControl PROPS
-      const formControlProps = [];
       const id = getProperty(attributes, { propertyName: 'id' });
       const isRequired = getProperty(attributes, {
         propertyName: 'isRequired',
       });
-      formControlProps.push(id, isRequired);
+      const formControlProps = [id, isRequired];
 
       // FormLabel
       const labelText = getProperty(attributes, { propertyName: 'labelText' });
@@ -55,6 +54,7 @@ function textFieldCodemod(file, api) {
       const handlerProps = attributes.filter((attribute) =>
         ['onChange', 'onBlur'].includes(attribute.name?.name),
       );
+      const textInputProps = [...commonProps, name, value, ...handlerProps];
 
       // HelpText Props
       const helpText = getProperty(attributes, { propertyName: 'helpText' });
@@ -68,78 +68,21 @@ function textFieldCodemod(file, api) {
       const textInputPropsObj = getProperty(attributes, {
         propertyName: 'textInputProps',
       });
-      const propsFromTextInputProps = [];
 
       if (textInputPropsObj) {
-        const { properties } = textInputPropsObj.value.expression;
-
-        let isDisabled = properties.find(({ key }) => key.name === 'disabled');
-        if (isDisabled) {
-          const { value } = isDisabled;
-
-          let propertyValue = null; // passing "null" so the prop is added without a value because it's a boolean prop
-
-          if (value.type === 'ConditionalExpression') {
-            propertyValue = j.jsxExpressionContainer(
-              j.conditionalExpression(
-                value.test,
-                value.consequent,
-                value.alternate,
-              ),
-            );
-          }
-
-          attributes = addProperty(attributes, {
+        const { isDisabled, maxLength, placeholder } = transformTextInputProps(
+          textInputPropsObj,
+          {
             j,
-            propertyName: 'isDisabled',
-            propertyValue,
-          });
-
-          isDisabled = getProperty(attributes, {
-            propertyName: 'isDisabled',
-          });
-
-          formControlProps.push(isDisabled);
-        }
-
-        // to be added to TextInput
-        let maxLength = properties.find(
-          (prop) => prop.key.name === 'maxLength',
+            attributes,
+          },
         );
-        if (maxLength) {
-          attributes = addProperty(attributes, {
-            j,
-            propertyName: 'maxLength',
-            propertyValue: j.jsxExpressionContainer(
-              j.numericLiteral(maxLength.value.value),
-            ),
-          });
 
-          maxLength = getProperty(attributes, {
-            propertyName: 'maxLength',
-          });
-
-          propsFromTextInputProps.push(maxLength);
-        }
-
-        let placeholder = properties.find(
-          (prop) => prop.key.name === 'placeholder',
-        );
-        if (placeholder) {
-          attributes = addProperty(attributes, {
-            j,
-            propertyName: 'placeholder',
-            propertyValue: j.literal(placeholder.value.value),
-          });
-
-          placeholder = getProperty(attributes, {
-            propertyName: 'placeholder',
-          });
-
-          propsFromTextInputProps.push(placeholder);
-        }
+        formControlProps.push(isDisabled);
+        textInputProps.push(maxLength, placeholder);
       }
 
+      // Creating components
       const Label = createComponent({
         j,
         componentName: 'FormControl.Label',
@@ -149,13 +92,7 @@ function textFieldCodemod(file, api) {
       const TextInput = createComponent({
         j,
         componentName: 'TextInput',
-        props: [
-          ...commonProps,
-          name,
-          value,
-          ...propsFromTextInputProps,
-          ...handlerProps,
-        ].filter((prop) => prop !== null),
+        props: textInputProps.filter((prop) => prop !== null),
         isSelfClosing: true,
       });
 
@@ -242,6 +179,66 @@ function textFieldCodemod(file, api) {
   }
 
   return source;
+}
+
+function transformTextInputProps(textInputPropsObj, { j, attributes }) {
+  const { properties } = textInputPropsObj.value.expression;
+
+  let isDisabled = properties.find(({ key }) => key.name === 'disabled');
+  if (isDisabled) {
+    const { value } = isDisabled;
+
+    let propertyValue =
+      value.type === 'ConditionalExpression'
+        ? j.jsxExpressionContainer(
+            j.conditionalExpression(
+              value.test,
+              value.consequent,
+              value.alternate,
+            ),
+          )
+        : null; // passing "null" so the prop is added without a value because it's a boolean prop
+
+    attributes = addProperty(attributes, {
+      j,
+      propertyName: 'isDisabled',
+      propertyValue,
+    });
+
+    isDisabled = getProperty(attributes, {
+      propertyName: 'isDisabled',
+    });
+  }
+
+  let maxLength = properties.find((prop) => prop.key.name === 'maxLength');
+  if (maxLength) {
+    attributes = addProperty(attributes, {
+      j,
+      propertyName: 'maxLength',
+      propertyValue: j.jsxExpressionContainer(
+        j.numericLiteral(maxLength.value.value),
+      ),
+    });
+
+    maxLength = getProperty(attributes, {
+      propertyName: 'maxLength',
+    });
+  }
+
+  let placeholder = properties.find((prop) => prop.key.name === 'placeholder');
+  if (placeholder) {
+    attributes = addProperty(attributes, {
+      j,
+      propertyName: 'placeholder',
+      propertyValue: j.literal(placeholder.value.value),
+    });
+
+    placeholder = getProperty(attributes, {
+      propertyName: 'placeholder',
+    });
+  }
+
+  return { isDisabled, placeholder, maxLength };
 }
 
 module.exports = pipe([textFieldCodemod]);

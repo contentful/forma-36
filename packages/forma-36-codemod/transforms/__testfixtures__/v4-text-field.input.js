@@ -1,5 +1,13 @@
 import { TextField } from '@contentful/forma-36-react-components';
 
+const prefix = 'prefix';
+<TextField
+  id={`${prefix}-name-input`}
+  name={`${prefix}-name-input`}
+  labelText="Prefix id"
+  onChange={() => {}}
+/>;
+
 const showValidationMessage = true;
 <TextField
   id="conditional-validation"
