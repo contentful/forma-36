@@ -12,6 +12,13 @@ const showValidationMessage = true;
   {showValidationMessage && <FormControl.ValidationMessage>Some validation message</FormControl.ValidationMessage>}
 </FormControl>;
 
+const hideValidationMessage = true;
+<FormControl id="conditional-validation" isInvalid={!hideValidationMessage}>
+  <FormControl.Label>Conditional validation</FormControl.Label>
+  <TextInput name="conditional-validation" onChange={() => {}} />
+  {!hideValidationMessage && <FormControl.ValidationMessage>Some validation message</FormControl.ValidationMessage>}
+</FormControl>;
+
 const isDisabled = true;
 <FormControl
   className="text-field-class-name"

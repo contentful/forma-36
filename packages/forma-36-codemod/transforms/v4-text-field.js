@@ -117,26 +117,34 @@ function textFieldCodemod(file, api) {
         let ValidationMessage;
 
         if (isConditional) {
-          const { expression } = validationMessage.value;
+          const {
+            expression: { test, consequent, alternate },
+          } = validationMessage.value;
+
+          // if "consequent" is Falsy, it means that the validation message should show when the condition in "test" is false
+          const condition = j.jsxIdentifier(
+            `${!consequent.value ? '!' : ''}${test.name}`,
+          );
+
+          // The message could be in both sides of the contional, so we do this to get the Truthy value
+          const message = [consequent, alternate].find(({ value }) => value);
 
           const Component = createComponent({
             j,
             componentName: 'FormControl.ValidationMessage',
-            children: [j.jsxText(expression.consequent.value)],
+            children: [message],
           });
 
           // Creates logical AND expression that will render FormControl.ValidationMessage if it's true
           ValidationMessage = j.jsxExpressionContainer(
-            j.logicalExpression('&&', expression.test, Component),
+            j.logicalExpression('&&', condition, Component),
           );
 
           // set the value of isInvalid prop in FormControl
           attributes = addProperty(attributes, {
             j,
             propertyName: 'isInvalid',
-            propertyValue: j.jsxExpressionContainer(
-              j.jsxIdentifier(expression.test.name),
-            ),
+            propertyValue: j.jsxExpressionContainer(condition),
           });
 
           const isInvalid = getProperty(attributes, {

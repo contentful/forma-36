@@ -17,6 +17,15 @@ const showValidationMessage = true;
   validationMessage={showValidationMessage ? 'Some validation message' : ''}
 />;
 
+const hideValidationMessage = true;
+<TextField
+  id="conditional-validation"
+  name="conditional-validation"
+  labelText="Conditional validation"
+  onChange={() => {}}
+  validationMessage={hideValidationMessage ? '' : 'Some validation message'}
+/>;
+
 const isDisabled = true;
 <TextField
   id="inputId"
