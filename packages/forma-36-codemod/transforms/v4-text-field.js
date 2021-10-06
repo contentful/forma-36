@@ -72,18 +72,16 @@ function textFieldCodemod(file, api) {
       });
 
       if (textInputPropsObj) {
-        const {
-          isDisabled,
-          maxLength,
-          placeholder,
-          testId,
-        } = transformTextInputProps(textInputPropsObj, {
-          j,
-          attributes,
-        });
+        const { isDisabled, ...otherProps } = transformTextInputProps(
+          textInputPropsObj,
+          {
+            j,
+            attributes,
+          },
+        );
 
         formControlProps.push(isDisabled);
-        textInputProps.push(maxLength, placeholder, testId);
+        textInputProps.push(...Object.values(otherProps));
       }
 
       // Creating components
@@ -96,7 +94,7 @@ function textFieldCodemod(file, api) {
       const TextInput = createComponent({
         j,
         componentName: 'TextInput',
-        props: textInputProps.filter((prop) => prop !== null),
+        props: textInputProps.filter((prop) => prop),
         isSelfClosing: true,
       });
 
@@ -171,7 +169,7 @@ function textFieldCodemod(file, api) {
       const FormControl = createComponent({
         j,
         componentName: 'FormControl',
-        props: formControlProps.filter((prop) => prop !== null),
+        props: formControlProps.filter((prop) => prop),
         children,
       });
 
@@ -197,74 +195,52 @@ function textFieldCodemod(file, api) {
 function transformTextInputProps(textInputPropsObj, { j, attributes }) {
   const { properties } = textInputPropsObj.value.expression;
 
-  let isDisabled = properties.find(({ key }) => key.name === 'disabled');
-  if (isDisabled) {
-    const { value } = isDisabled;
+  const newProps = {};
+  const propertiesMap = properties.reduce((acc, prop) => {
+    // we need to rename "disabled" to "isDisabled" for v4
+    const key = prop.key.name.replace(/disabled/, 'isDisabled');
 
-    let propertyValue =
-      value.type === 'ConditionalExpression'
-        ? j.jsxExpressionContainer(
-            j.conditionalExpression(
-              value.test,
-              value.consequent,
-              value.alternate,
-            ),
-          )
-        : null; // passing "null" so the prop is added without a value because it's a boolean prop
+    return { ...acc, [key]: prop };
+  }, {});
 
-    attributes = addProperty(attributes, {
+  Object.keys(propertiesMap).forEach((key) => {
+    let propertyValue;
+
+    if (isConditionalExpression(propertiesMap[key], j)) {
+      const { value } = propertiesMap[key];
+
+      propertyValue = j.jsxExpressionContainer(
+        j.conditionalExpression(value.test, value.consequent, value.alternate),
+      );
+    } else {
+      const { value } = propertiesMap[key].value;
+
+      propertyValue =
+        typeof value === 'number'
+          ? j.jsxExpressionContainer(j.numericLiteral(value))
+          : j.literal(value);
+    }
+
+    newProps[key] = getNewProp(attributes, {
       j,
-      propertyName: 'isDisabled',
+      propertyName: key,
       propertyValue,
     });
+  });
 
-    isDisabled = getProperty(attributes, {
-      propertyName: 'isDisabled',
-    });
-  }
+  return newProps;
+}
 
-  let testId = properties.find(({ key }) => key.name === 'testId');
-  if (testId) {
-    attributes = addProperty(attributes, {
-      j,
-      propertyName: 'testId',
-      propertyValue: j.literal(testId.value.value),
-    });
+function getNewProp(attributes, { j, propertyName, propertyValue }) {
+  attributes = addProperty(attributes, {
+    j,
+    propertyName,
+    propertyValue,
+  });
 
-    testId = getProperty(attributes, {
-      propertyName: 'testId',
-    });
-  }
-
-  let maxLength = properties.find((prop) => prop.key.name === 'maxLength');
-  if (maxLength) {
-    attributes = addProperty(attributes, {
-      j,
-      propertyName: 'maxLength',
-      propertyValue: j.jsxExpressionContainer(
-        j.numericLiteral(maxLength.value.value),
-      ),
-    });
-
-    maxLength = getProperty(attributes, {
-      propertyName: 'maxLength',
-    });
-  }
-
-  let placeholder = properties.find((prop) => prop.key.name === 'placeholder');
-  if (placeholder) {
-    attributes = addProperty(attributes, {
-      j,
-      propertyName: 'placeholder',
-      propertyValue: j.literal(placeholder.value.value),
-    });
-
-    placeholder = getProperty(attributes, {
-      propertyName: 'placeholder',
-    });
-  }
-
-  return { isDisabled, placeholder, maxLength, testId };
+  return getProperty(attributes, {
+    propertyName,
+  });
 }
 
 module.exports = pipe([textFieldCodemod]);

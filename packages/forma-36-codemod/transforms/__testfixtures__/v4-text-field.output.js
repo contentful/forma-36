@@ -32,8 +32,9 @@ const isDisabled = true;
     value="some value"
     onChange={() => {}}
     onBlur={() => {}}
-    maxLength={10}
+    type="text"
     placeholder="placeholder"
+    maxLength={10}
     testId="text-input-test-id" />
   <FormControl.HelpText>some help text</FormControl.HelpText>
   <FormControl.ValidationMessage>Some validation message</FormControl.ValidationMessage>
