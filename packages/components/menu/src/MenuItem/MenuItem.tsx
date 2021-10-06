@@ -45,7 +45,7 @@ function _MenuItem<E extends React.ElementType = typeof DEFAULT_TAG>(
     }
   }, [isInitiallyFocused, focusMenuItem]);
 
-  const Element: React.ElementType = as ?? DEFAULT_TAG;
+  const Element = (as ?? DEFAULT_TAG) as React.ElementType;
 
   return (
     <Element
