@@ -41,7 +41,10 @@ function textFieldCodemod(file, api) {
       const isRequired = getProperty(attributes, {
         propertyName: 'isRequired',
       });
-      const formControlProps = [id, isRequired];
+      const commonProps = attributes.filter((attribute) =>
+        ['testId', 'className'].includes(attribute.name?.name),
+      );
+      const formControlProps = [...commonProps, id, isRequired];
 
       // FormLabel
       const labelText = getProperty(attributes, { propertyName: 'labelText' });
@@ -49,13 +52,11 @@ function textFieldCodemod(file, api) {
       // TextInput PROPS
       const name = getProperty(attributes, { propertyName: 'name' });
       const value = getProperty(attributes, { propertyName: 'value' });
-      const commonProps = attributes.filter((attribute) =>
-        ['testId', 'className'].includes(attribute.name?.name),
-      );
+
       const handlerProps = attributes.filter((attribute) =>
         ['onChange', 'onBlur'].includes(attribute.name?.name),
       );
-      const textInputProps = [...commonProps, name, value, ...handlerProps];
+      const textInputProps = [name, value, ...handlerProps];
 
       // HelpText Props
       const helpText = getProperty(attributes, { propertyName: 'helpText' });
@@ -71,16 +72,18 @@ function textFieldCodemod(file, api) {
       });
 
       if (textInputPropsObj) {
-        const { isDisabled, maxLength, placeholder } = transformTextInputProps(
-          textInputPropsObj,
-          {
-            j,
-            attributes,
-          },
-        );
+        const {
+          isDisabled,
+          maxLength,
+          placeholder,
+          testId,
+        } = transformTextInputProps(textInputPropsObj, {
+          j,
+          attributes,
+        });
 
         formControlProps.push(isDisabled);
-        textInputProps.push(maxLength, placeholder);
+        textInputProps.push(maxLength, placeholder, testId);
       }
 
       // Creating components
@@ -212,6 +215,19 @@ function transformTextInputProps(textInputPropsObj, { j, attributes }) {
     });
   }
 
+  let testId = properties.find(({ key }) => key.name === 'testId');
+  if (testId) {
+    attributes = addProperty(attributes, {
+      j,
+      propertyName: 'testId',
+      propertyValue: j.literal(testId.value.value),
+    });
+
+    testId = getProperty(attributes, {
+      propertyName: 'testId',
+    });
+  }
+
   let maxLength = properties.find((prop) => prop.key.name === 'maxLength');
   if (maxLength) {
     attributes = addProperty(attributes, {
@@ -240,7 +256,7 @@ function transformTextInputProps(textInputPropsObj, { j, attributes }) {
     });
   }
 
-  return { isDisabled, placeholder, maxLength };
+  return { isDisabled, placeholder, maxLength, testId };
 }
 
 module.exports = pipe([textFieldCodemod]);

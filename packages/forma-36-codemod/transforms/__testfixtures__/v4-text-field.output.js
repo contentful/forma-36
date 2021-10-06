@@ -12,33 +12,22 @@ const showValidationMessage = true;
   {showValidationMessage && <FormControl.ValidationMessage>Some validation message</FormControl.ValidationMessage>}
 </FormControl>;
 
-<FormControl id="inputId" isRequired isDisabled>
-  <FormControl.Label>Label text</FormControl.Label>
-  <TextInput
-    className="text-field-class-name"
-    testId="test-id"
-    name="email"
-    value="some value"
-    onChange={() => {}}
-    onBlur={() => {}}
-    maxLength={10}
-    placeholder="placeholder" />
-  <FormControl.HelpText>some help text</FormControl.HelpText>
-  <FormControl.ValidationMessage>Some validation message</FormControl.ValidationMessage>
-</FormControl>;
-
 const isDisabled = true;
-<FormControl id="inputId" isRequired isDisabled={isDisabled ? true : false}>
+<FormControl
+  className="text-field-class-name"
+  testId="text-field-test-id"
+  id="inputId"
+  isRequired
+  isDisabled={isDisabled ? true : false}>
   <FormControl.Label>Label text</FormControl.Label>
   <TextInput
-    className="text-field-class-name"
-    testId="test-id"
     name="email"
     value="some value"
     onChange={() => {}}
     onBlur={() => {}}
     maxLength={10}
-    placeholder="placeholder" />
+    placeholder="placeholder"
+    testId="text-input-test-id" />
   <FormControl.HelpText>some help text</FormControl.HelpText>
   <FormControl.ValidationMessage>Some validation message</FormControl.ValidationMessage>
 </FormControl>;
