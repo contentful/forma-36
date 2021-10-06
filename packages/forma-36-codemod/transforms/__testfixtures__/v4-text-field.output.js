@@ -1,5 +1,4 @@
 import { FormControl, TextInput } from "@contentful/f36-components";
-
 const prefix = 'prefix';
 <FormControl id={`${prefix}-name-input`}>
   <FormControl.Label>Prefix id</FormControl.Label>

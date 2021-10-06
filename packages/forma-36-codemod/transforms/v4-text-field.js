@@ -9,6 +9,7 @@ const {
 } = require('../utils');
 const { getFormaImport, shouldSkipUpdateImport } = require('../utils/config');
 const { pipe } = require('./common/pipe');
+const { isConditionalExpression } = require('../utils/updateTernaryValues');
 
 function textFieldCodemod(file, api) {
   const j = api.jscodeshift;
@@ -109,26 +110,29 @@ function textFieldCodemod(file, api) {
       }
 
       if (validationMessage) {
-        let children =
-          validationMessage.value.expression?.type === 'ConditionalExpression'
-            ? [j.jsxText(validationMessage.value.expression.consequent.value)]
-            : [j.jsxText(validationMessage.value.value)];
+        const isConditional = isConditionalExpression(validationMessage, j);
+        let ValidationMessage;
 
-        if (
-          validationMessage.value.expression?.type === 'ConditionalExpression'
-        ) {
+        if (isConditional) {
           const { expression } = validationMessage.value;
-          children = [j.jsxText(expression.consequent.value)];
 
+          const Component = createComponent({
+            j,
+            componentName: 'FormControl.ValidationMessage',
+            children: [j.jsxText(expression.consequent.value)],
+          });
+
+          // Creates logical AND expression that will render FormControl.ValidationMessage if it's true
+          ValidationMessage = j.jsxExpressionContainer(
+            j.logicalExpression('&&', expression.test, Component),
+          );
+
+          // set the value of isInvalid prop in FormControl
           attributes = addProperty(attributes, {
             j,
             propertyName: 'isInvalid',
             propertyValue: j.jsxExpressionContainer(
-              j.conditionalExpression(
-                expression.test,
-                expression.consequent,
-                expression.alternate,
-              ),
+              j.jsxIdentifier(expression.test.name),
             ),
           });
 
@@ -138,16 +142,14 @@ function textFieldCodemod(file, api) {
 
           formControlProps.push(isInvalid);
         } else {
-          children = [j.jsxText(validationMessage.value.value)];
+          ValidationMessage = createComponent({
+            j,
+            componentName: 'FormControl.ValidationMessage',
+            children: [j.jsxText(validationMessage.value.value)],
+          });
         }
 
-        const ValidationMesage = createComponent({
-          j,
-          componentName: 'FormControl.ValidationMessage',
-          children,
-        });
-
-        childrenComponents.push(ValidationMesage);
+        childrenComponents.push(ValidationMessage);
       }
 
       const children = childrenComponents.reduce(
