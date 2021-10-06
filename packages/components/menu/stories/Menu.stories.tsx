@@ -204,6 +204,34 @@ export const WithSubmenu: Story<MenuProps> = (args) => {
           <Menu.SubmenuTrigger>Remove an entry</Menu.SubmenuTrigger>
           <Menu.List>
             <Menu.Item>Sub item 1</Menu.Item>
+            <Menu.Item>Sub item 2</Menu.Item>
+            <Menu.Item>Sub item 3</Menu.Item>
+          </Menu.List>
+        </Menu.Submenu>
+        <Menu.Item>Embed existing entry</Menu.Item>
+      </Menu.List>
+    </Menu>
+  );
+};
+
+export const WithMultipleSubmenus: Story<MenuProps> = (args) => {
+  return (
+    <Menu {...args}>
+      <Menu.Trigger>
+        <IconButton
+          variant="secondary"
+          icon={<MenuIcon />}
+          aria-label="toggle menu"
+        />
+      </Menu.Trigger>
+      <Menu.List>
+        <Menu.Item>Create an entry</Menu.Item>
+
+        <Menu.Submenu>
+          <Menu.SubmenuTrigger>Remove an entry</Menu.SubmenuTrigger>
+          <Menu.List>
+            <Menu.Item>Sub item 1</Menu.Item>
+
             <Menu.Submenu>
               <Menu.SubmenuTrigger>Submenu</Menu.SubmenuTrigger>
               <Menu.List>
@@ -212,10 +240,13 @@ export const WithSubmenu: Story<MenuProps> = (args) => {
                 <Menu.Item>Sub item 3</Menu.Item>
               </Menu.List>
             </Menu.Submenu>
+
             <Menu.Item>Sub item 3</Menu.Item>
           </Menu.List>
         </Menu.Submenu>
+
         <Menu.Item>Embed existing entry</Menu.Item>
+
         <Menu.Submenu>
           <Menu.SubmenuTrigger>Second submenu</Menu.SubmenuTrigger>
           <Menu.List>
@@ -251,5 +282,8 @@ WithInitialFocusedItem.parameters = {
   chromatic: { delay: 300 },
 };
 WithSubmenu.parameters = {
+  chromatic: { delay: 300 },
+};
+WithMultipleSubmenus.parameters = {
   chromatic: { delay: 300 },
 };
