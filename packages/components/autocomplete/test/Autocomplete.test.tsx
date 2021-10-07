@@ -24,16 +24,13 @@ const fruits: Fruit[] = [
 
 const fruitStrings = fruits.reduce((acc, fruit) => [...acc, fruit.name], []);
 
-const mockOnFilter = jest.fn();
+const mockOnInputValueChange = jest.fn();
 const mockOnSelectItem = jest.fn();
 
 describe('Autocomplete', () => {
   describe('items is an array of strings', () => {
-    const onFilter = (item: string, inputValue: string) =>
-      item.toLowerCase().includes(inputValue.toLowerCase());
-
-    it('filters the list and selects the first item', async () => {
-      renderComponent({ onFilter });
+    it('calls the callback on input value change and selects the first item', async () => {
+      renderComponent({});
 
       const input = screen.getByTestId('cf-autocomplete-input');
       const list = screen.getByTestId('cf-autocomplete-list');
@@ -50,13 +47,15 @@ describe('Autocomplete', () => {
         },
       });
 
+      // checks that onInputValueChange was called with the value we typed
+      expect(mockOnInputValueChange).toHaveBeenCalledWith('a');
+
       // checks if the list is visible and it only shows the filtered options
       await waitFor(() => {
         expect(list).toBeVisible();
-        expect(list.childElementCount).toBe(10);
       });
 
-      // press the ArrowDown key
+      // go to the list first item
       fireEvent.keyDown(input, {
         key: 'ArrowDown',
       });
@@ -77,7 +76,7 @@ describe('Autocomplete', () => {
     });
 
     it('clears the input after item is selected when "clearAfterSelect" is true', async () => {
-      renderComponent({ onFilter, clearAfterSelect: true });
+      renderComponent({ clearAfterSelect: true });
 
       const input = screen.getByTestId('cf-autocomplete-input');
       const list = screen.getByTestId('cf-autocomplete-list');
@@ -89,12 +88,12 @@ describe('Autocomplete', () => {
         },
       });
 
-      // checks if the list is visible and it only shows the filtered options
+      // checks if the list is visible
       await waitFor(() => {
         expect(list).toBeVisible();
       });
 
-      // press the ArrowDown key
+      // go to the list first item
       fireEvent.keyDown(input, {
         key: 'ArrowDown',
       });
@@ -110,18 +109,18 @@ describe('Autocomplete', () => {
       expect(mockOnSelectItem).toHaveBeenCalledWith('Apple 🍎');
     });
 
-    it('shows the value of the "noMatchesMessage" when the list has 0 filtered items', async () => {
+    it('shows the value of the "noMatchesMessage" when the list has 0 items', async () => {
       const noMatchesMessage = 'There is no Broccoli in the list';
 
-      renderComponent({ onFilter, noMatchesMessage });
+      renderComponent({ noMatchesMessage, items: [] });
 
       const input = screen.getByTestId('cf-autocomplete-input');
       const list = screen.getByTestId('cf-autocomplete-list');
 
-      // type an item that does not exist in the list
+      // type anything to open the list
       fireEvent.input(input, {
         target: {
-          value: 'broccoli',
+          value: 'a',
         },
       });
 
@@ -133,19 +132,19 @@ describe('Autocomplete', () => {
     });
 
     it('shows loading state when "isLoading" is true', async () => {
-      renderComponent({ onFilter, isLoading: true });
+      renderComponent({ isLoading: true });
 
       const input = screen.getByTestId('cf-autocomplete-input');
       const list = screen.getByTestId('cf-autocomplete-list');
 
-      // type an item that does not exist in the list
+      // type anything to open the list
       fireEvent.input(input, {
         target: {
           value: 'broccoli',
         },
       });
 
-      // checks if the list is visible and it shows the loading skeletons
+      // checks if the list is visible and it shows the loading state
       await waitFor(() => {
         expect(list).toBeVisible();
         expect(screen.queryAllByTestId('cf-ui-skeleton-form')).toHaveLength(3);
@@ -154,14 +153,11 @@ describe('Autocomplete', () => {
   });
 
   describe('items is an array of objects', () => {
-    const onFilter = (item: Fruit, inputValue: string) =>
-      item.name.toLowerCase().includes(inputValue.toLowerCase());
     const getItemName = (item: Fruit) => item.name;
 
-    it('filters the list and selects the first item', async () => {
+    it('selects the first item', async () => {
       renderComponent({
         items: fruits,
-        onFilter,
         itemToString: getItemName,
         renderItem: getItemName,
       });
@@ -181,10 +177,9 @@ describe('Autocomplete', () => {
         },
       });
 
-      // checks if the list is visible and it only shows the filtered options
+      // checks if the list is visible
       await waitFor(() => {
         expect(list).toBeVisible();
-        expect(list.childElementCount).toBe(10);
       });
 
       // press the ArrowDown key
@@ -215,7 +210,7 @@ describe('Autocomplete', () => {
 function renderComponent(customProps: Partial<AutocompleteProps>) {
   const props = {
     items: fruitStrings,
-    onFilter: mockOnFilter,
+    onInputValueChange: mockOnInputValueChange,
     onSelectItem: mockOnSelectItem,
     ...customProps,
   };

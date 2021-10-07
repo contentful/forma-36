@@ -44,10 +44,15 @@ function AutocompleteExample() {
   // This `useState` is going to store the selected fruit so we can show it in the UI
   const [selectedFruit, setSelectedFruit] = React.useState();
 
-  // This is the function that will be used by the `filter()` method to filter the "fruits" array
+  const [filteredItems, setFilteredItems] = useState(fruits);
+
+  // We filter the "fruits" array by the inputValue
   // we use 'toLowerCase()' to make the search case insensitive
-  const handleFilter = (item, inputValue) => {
-    item.toLowerCase().includes(inputValue.toLowerCase());
+  const handleInputValueChange = (value: string) => {
+    const newFilteredItems = fruits.filter((item) =>
+      item.toLowerCase().includes(value.toLowerCase()),
+    );
+    setFilteredItems(newFilteredItems);
   };
 
   // This function will be called once the user selects an item in the list of options
@@ -58,8 +63,8 @@ function AutocompleteExample() {
   return (
     <Stack flexDirection="column" alignItems="start">
       <Autocomplete
-        items={fruits}
-        onFilter={handleFilter}
+        items={filteredItems}
+        onInputValueChange={handleInputValueChange}
         onSelectItem={handleSelectItem}
       />
 
@@ -94,10 +99,14 @@ function AutocompleteExample() {
   ];
 
   const [selectedFruit, setSelectedFruit] = React.useState();
+  const [filteredItems, setFilteredItems] = useState(fruits);
 
-  const handleFilter = (item, inputValue) => {
+  const handleInputValueChange = (value: string) => {
     // This time, we need to tell the component to compare the property "name" of an item to the inputValue
-    item.name.toLowerCase().includes(inputValue.toLowerCase());
+    const newFilteredItems = fruits.filter((item) =>
+      item.name.toLowerCase().includes(value.toLowerCase()),
+    );
+    setFilteredItems(newFilteredItems);
   };
 
   const handleSelectItem = (item) => {
@@ -107,8 +116,8 @@ function AutocompleteExample() {
   return (
     <Stack flexDirection="column" alignItems="start">
       <Autocomplete
-        items={fruits}
-        onFilter={handleFilter}
+        items={filteredItems}
+        onInputValueChange={handleInputValueChange}
         onSelectItem={handleSelectItem}
         // This prop is the function that will tell the component how to extract a string that will be used as inputValue
         itemToString={(item) => item.name}
@@ -142,9 +151,13 @@ function AutocompleteExample() {
 
   // The state now stores an array of selected fruits, not just a string
   const [selectedFruits, setSelectedFruits] = React.useState([]);
+  const [filteredItems, setFilteredItems] = useState(fruits);
 
-  const handleFilter = (item, inputValue) => {
-    item.name.toLowerCase().includes(inputValue.toLowerCase());
+  const handleInputValueChange = (value: string) => {
+    const newFilteredItems = fruits.filter((item) =>
+      item.name.toLowerCase().includes(value.toLowerCase()),
+    );
+    setFilteredItems(newFilteredItems);
   };
 
   const handleSelectItem = (item) => {
@@ -155,8 +168,8 @@ function AutocompleteExample() {
   return (
     <Stack flexDirection="column" alignItems="start">
       <Autocomplete
-        items={fruits}
-        onFilter={handleFilter}
+        items={filteredItems}
+        onInputValueChange={handleInputValueChange}
         onSelectItem={handleSelectItem}
         itemToString={(item) => item.name}
         renderItem={(item) => item.name}
@@ -190,10 +203,14 @@ function AutocompleteExample() {
   ];
 
   const [selectedFruit, setSelectedFruit] = React.useState();
+  const [filteredItems, setFilteredItems] = useState(fruits);
   const [isInvalid, setIsInvalid] = React.useState(false);
 
-  const handleFilter = (item, inputValue) => {
-    item.toLowerCase().includes(inputValue.toLowerCase());
+  const handleInputValueChange = (value: string) => {
+    const newFilteredItems = fruits.filter((item) =>
+      item.toLowerCase().includes(value.toLowerCase()),
+    );
+    setFilteredItems(newFilteredItems);
   };
 
   const handleSelectItem = (item) => {
@@ -206,8 +223,8 @@ function AutocompleteExample() {
         <FormControl.Label>Favorite fruit:</FormControl.Label>
 
         <Autocomplete
-          items={fruits}
-          onFilter={handleFilter}
+          items={filteredItems}
+          onInputValueChange={handleInputValueChange}
           onSelectItem={handleSelectItem}
         />
 
