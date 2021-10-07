@@ -197,8 +197,18 @@ function transformTextInputProps(textInputPropsObj, { j, attributes }) {
 
   const newProps = {};
   const propertiesMap = properties.reduce((acc, prop) => {
-    // we need to rename "disabled" to "isDisabled" for v4
-    const key = prop.key.name.replace(/disabled/, 'isDisabled');
+    let key;
+
+    switch (prop.key.name) {
+      case 'disabled':
+        key = 'isDisabled';
+        break;
+      case 'inputRef':
+        key = 'ref';
+        break;
+      default:
+        key = prop.key.name;
+    }
 
     return { ...acc, [key]: prop };
   }, {});
@@ -212,6 +222,10 @@ function transformTextInputProps(textInputPropsObj, { j, attributes }) {
       propertyValue = j.jsxExpressionContainer(
         j.conditionalExpression(value.test, value.consequent, value.alternate),
       );
+    } else if (propertiesMap[key].value.type === 'Identifier') {
+      const { name } = propertiesMap[key].value;
+
+      propertyValue = j.jsxExpressionContainer(j.jsxIdentifier(name));
     } else {
       const { value } = propertiesMap[key].value;
 

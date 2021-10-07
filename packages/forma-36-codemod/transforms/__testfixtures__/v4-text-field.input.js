@@ -26,7 +26,17 @@ const hideValidationMessage = true;
   validationMessage={hideValidationMessage ? '' : 'Some validation message'}
 />;
 
+const value = 'input controlled value';
+<TextField
+  id="input"
+  name="input"
+  labelText="Controlled input"
+  value={value}
+  onChange={() => {}}
+/>;
+
 const isDisabled = true;
+const ref = {};
 <TextField
   id="inputId"
   name="email"
@@ -42,7 +52,8 @@ const isDisabled = true;
     placeholder: 'placeholder',
     disabled: isDisabled ? true : false,
     maxLength: 10,
-    testId: 'text-input-test-id'
+    testId: 'text-input-test-id',
+    inputRef: ref
   }}
   validationMessage="Some validation message"
   required

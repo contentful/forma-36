@@ -19,7 +19,14 @@ const hideValidationMessage = true;
   {!hideValidationMessage && <FormControl.ValidationMessage>Some validation message</FormControl.ValidationMessage>}
 </FormControl>;
 
+const value = 'input controlled value';
+<FormControl id="input">
+  <FormControl.Label>Controlled input</FormControl.Label>
+  <TextInput name="input" value={value} onChange={() => {}} />
+</FormControl>;
+
 const isDisabled = true;
+const ref = {};
 <FormControl
   className="text-field-class-name"
   testId="text-field-test-id"
@@ -35,7 +42,8 @@ const isDisabled = true;
     type="text"
     placeholder="placeholder"
     maxLength={10}
-    testId="text-input-test-id" />
+    testId="text-input-test-id"
+    ref={ref} />
   <FormControl.HelpText>some help text</FormControl.HelpText>
   <FormControl.ValidationMessage>Some validation message</FormControl.ValidationMessage>
 </FormControl>;
