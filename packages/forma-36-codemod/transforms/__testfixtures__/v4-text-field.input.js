@@ -1,5 +1,47 @@
 import { TextField } from '@contentful/forma-36-react-components';
 
+const {
+  id,
+  name,
+  labelText,
+  helpText,
+  value,
+  onChange,
+  onBlur,
+  isDisabled,
+  validationMessage,
+  required,
+  textInputProps,
+} = {
+  id: 'inputId',
+  name: 'inputName',
+  labelText: 'Input label',
+  helpText: 'Input help',
+  value: 'Value',
+  onChange: () => {},
+  onBlur: () => {},
+  isDisabled: false,
+  validationMessage: 'Validation message',
+  required,
+  textInputProps,
+};
+<TextField
+  id={id}
+  name={name}
+  labelText={labelText}
+  helpText={helpText}
+  value={value}
+  onChange={(e) => onChange(e)}
+  onBlur={onBlur}
+  textInputProps={{
+    disabled: isDisabled,
+    type: 'text',
+    ...textInputProps,
+  }}
+  validationMessage={validationMessage}
+  required={required}
+/>;
+
 const prefix = 'prefix';
 <TextField
   id={`${prefix}-name-input`}
@@ -26,16 +68,16 @@ const hideValidationMessage = true;
   validationMessage={hideValidationMessage ? '' : 'Some validation message'}
 />;
 
-const value = 'input controlled value';
+const controlledInputValue = 'input controlled value';
 <TextField
   id="input"
   name="input"
   labelText="Controlled input"
-  value={value}
+  value={controlledInputValue}
   onChange={() => {}}
 />;
 
-const isDisabled = true;
+const conditionalIsDisabled = true;
 const ref = {};
 <TextField
   id="inputId"
@@ -50,7 +92,7 @@ const ref = {};
   textInputProps={{
     type: 'text',
     placeholder: 'placeholder',
-    disabled: isDisabled ? true : false,
+    disabled: conditionalIsDisabled ? true : false,
     maxLength: 10,
     testId: 'text-input-test-id',
     inputRef: ref

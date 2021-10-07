@@ -1,4 +1,42 @@
 import { FormControl, TextInput } from "@contentful/f36-components";
+const {
+  id,
+  name,
+  labelText,
+  helpText,
+  value,
+  onChange,
+  onBlur,
+  isDisabled,
+  validationMessage,
+  required,
+  textInputProps,
+} = {
+  id: 'inputId',
+  name: 'inputName',
+  labelText: 'Input label',
+  helpText: 'Input help',
+  value: 'Value',
+  onChange: () => {},
+  onBlur: () => {},
+  isDisabled: false,
+  validationMessage: 'Validation message',
+  required,
+  textInputProps,
+};
+<FormControl id={id} isRequired={required} isDisabled={isDisabled} isInvalid={validationMessage}>
+  <FormControl.Label>{labelText}</FormControl.Label>
+  <TextInput
+    name={name}
+    value={value}
+    onChange={(e) => onChange(e)}
+    onBlur={onBlur}
+    type="text"
+    {...textInputProps} />
+  <FormControl.HelpText>{helpText}</FormControl.HelpText>
+  {validationMessage && <FormControl.ValidationMessage>{validationMessage}</FormControl.ValidationMessage>}
+</FormControl>;
+
 const prefix = 'prefix';
 <FormControl id={`${prefix}-name-input`}>
   <FormControl.Label>Prefix id</FormControl.Label>
@@ -19,20 +57,20 @@ const hideValidationMessage = true;
   {!hideValidationMessage && <FormControl.ValidationMessage>Some validation message</FormControl.ValidationMessage>}
 </FormControl>;
 
-const value = 'input controlled value';
+const controlledInputValue = 'input controlled value';
 <FormControl id="input">
   <FormControl.Label>Controlled input</FormControl.Label>
-  <TextInput name="input" value={value} onChange={() => {}} />
+  <TextInput name="input" value={controlledInputValue} onChange={() => {}} />
 </FormControl>;
 
-const isDisabled = true;
+const conditionalIsDisabled = true;
 const ref = {};
 <FormControl
   className="text-field-class-name"
   testId="text-field-test-id"
   id="inputId"
   isRequired
-  isDisabled={isDisabled ? true : false}>
+  isDisabled={conditionalIsDisabled ? true : false}>
   <FormControl.Label>Label text</FormControl.Label>
   <TextInput
     name="email"

@@ -88,7 +88,14 @@ function textFieldCodemod(file, api) {
       const Label = createComponent({
         j,
         componentName: 'FormControl.Label',
-        children: [j.jsxText(labelText.value.value)],
+        children: [
+          labelText.value.type === 'StringLiteral' ||
+          labelText.value.type === 'Literal'
+            ? j.jsxText(labelText.value.value)
+            : j.jsxExpressionContainer(
+                j.identifier(labelText.value.expression.name),
+              ),
+        ],
       });
 
       const TextInput = createComponent({
@@ -104,7 +111,14 @@ function textFieldCodemod(file, api) {
         const HelpText = createComponent({
           j,
           componentName: 'FormControl.HelpText',
-          children: [j.jsxText(helpText.value.value)],
+          children: [
+            helpText.value.type === 'StringLiteral' ||
+            helpText.value.type === 'Literal'
+              ? j.jsxText(helpText.value.value)
+              : j.jsxExpressionContainer(
+                  j.identifier(helpText.value.expression.name),
+                ),
+          ],
         });
 
         childrenComponents.push(HelpText);
@@ -150,7 +164,14 @@ function textFieldCodemod(file, api) {
           ValidationMessage = createComponent({
             j,
             componentName: 'FormControl.ValidationMessage',
-            children: [j.jsxText(validationMessage.value.value)],
+            children: [
+              validationMessage.value.type === 'StringLiteral' ||
+              validationMessage.value.type === 'Literal'
+                ? j.jsxText(validationMessage.value.value)
+                : j.jsxExpressionContainer(
+                    j.identifier(validationMessage.value.expression.name),
+                  ),
+            ],
           });
         }
 
@@ -194,6 +215,12 @@ function transformTextInputProps(textInputPropsObj, { j, attributes }) {
   const newProps = {};
   const propertiesMap = properties.reduce((acc, prop) => {
     let key;
+
+    if (!prop.key && prop.type === 'SpreadElement') {
+      // console.log(prop);
+      // key = prop.argument.name;
+      return acc;
+    }
 
     switch (prop.key.name) {
       case 'disabled':
