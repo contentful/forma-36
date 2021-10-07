@@ -21,7 +21,7 @@ function _Tabs(
   ref: React.Ref<HTMLDivElement>,
 ): React.ReactElement {
   const elementProps = {
-    testId,
+    'data-test-id': testId,
     style,
     ...otherProps,
   };

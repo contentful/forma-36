@@ -55,7 +55,7 @@ function _TabList(
   }, [focusedIndex, setSelectedTab]);
 
   const elementProps = {
-    testId,
+    'data-test-id': testId,
     className: styles.tabList,
     style,
     role: 'tablist',
