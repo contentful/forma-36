@@ -72,16 +72,22 @@ function textFieldCodemod(file, api) {
       });
 
       if (textInputPropsObj) {
-        const { isDisabled, ...otherProps } = transformTextInputProps(
-          textInputPropsObj,
-          {
-            j,
-            attributes,
-          },
-        );
+        const {
+          isDisabled,
+          spreadedPropsName,
+          ...otherProps
+        } = transformTextInputProps(textInputPropsObj, {
+          j,
+          attributes,
+        });
 
         formControlProps.push(isDisabled);
-        textInputProps.push(...Object.values(otherProps));
+        textInputProps.push(
+          ...Object.values(otherProps),
+          // this will add `{...spreadedPropsName}` to the Component
+          !!spreadedPropsName &&
+            j.jsxSpreadAttribute(j.identifier(spreadedPropsName)),
+        );
       }
 
       // Creating components
@@ -126,12 +132,13 @@ function textFieldCodemod(file, api) {
 
       if (validationMessage) {
         const isConditional = isConditionalExpression(validationMessage, j);
+        const { value } = validationMessage;
         let ValidationMessage;
 
         if (isConditional) {
           const {
             expression: { test, consequent, alternate },
-          } = validationMessage.value;
+          } = value;
 
           // if "consequent" is Falsy, it means that the validation message should show when the condition in "test" is false
           const condition = !consequent.value
@@ -160,18 +167,33 @@ function textFieldCodemod(file, api) {
           });
 
           formControlProps.push(isInvalid);
+        } else if (value.type === 'JSXExpressionContainer') {
+          const variableName = j.identifier(value.expression.name);
+
+          const Component = createComponent({
+            j,
+            componentName: 'FormControl.ValidationMessage',
+            children: [j.jsxExpressionContainer(variableName)],
+          });
+
+          // Creates logical AND expression that will render FormControl.ValidationMessage if the variable is not Falsy
+          ValidationMessage = j.jsxExpressionContainer(
+            j.logicalExpression('&&', variableName, Component),
+          );
+
+          // set the value of isInvalid prop in FormControl
+          const isInvalid = getNewProp(attributes, {
+            j,
+            propertyName: 'isInvalid',
+            propertyValue: j.jsxExpressionContainer(variableName),
+          });
+
+          formControlProps.push(isInvalid);
         } else {
           ValidationMessage = createComponent({
             j,
             componentName: 'FormControl.ValidationMessage',
-            children: [
-              validationMessage.value.type === 'StringLiteral' ||
-              validationMessage.value.type === 'Literal'
-                ? j.jsxText(validationMessage.value.value)
-                : j.jsxExpressionContainer(
-                    j.identifier(validationMessage.value.expression.name),
-                  ),
-            ],
+            children: [j.jsxText(value.value)],
           });
         }
 
@@ -209,6 +231,15 @@ function textFieldCodemod(file, api) {
   return source;
 }
 
+/**
+ * Function that will convert all the properties in the "textInputProps" object
+ * to the correct type that we need when passing them to FormControl and TextInput components.
+ * It will return an object where each key is the name of the prop and the value is the value of the prop
+ *
+ * @param textInputPropsObj
+ * @param options
+ * @returns {Object} newProps
+ */
 function transformTextInputProps(textInputPropsObj, { j, attributes }) {
   const { properties } = textInputPropsObj.value.expression;
 
@@ -216,12 +247,15 @@ function transformTextInputProps(textInputPropsObj, { j, attributes }) {
   const propertiesMap = properties.reduce((acc, prop) => {
     let key;
 
+    // A spreaded prop (e.g.: "...textInputProps", "...otherProps") does not have a key
+    // we don't include it in the propertiesMap and we put its name directly into newProps obj
+    // and later we use that name to create `{...spreadedProps}` in TextInput
     if (!prop.key && prop.type === 'SpreadElement') {
-      // console.log(prop);
-      // key = prop.argument.name;
+      newProps.spreadedPropsName = prop.argument.name;
       return acc;
     }
 
+    // rename props if necessary
     switch (prop.key.name) {
       case 'disabled':
         key = 'isDisabled';
@@ -268,6 +302,11 @@ function transformTextInputProps(textInputPropsObj, { j, attributes }) {
   return newProps;
 }
 
+/**
+ * Function that adds a new prop to attributes and returns it
+ *
+ * @returns property
+ */
 function getNewProp(attributes, { j, propertyName, propertyValue }) {
   attributes = addProperty(attributes, {
     j,

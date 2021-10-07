@@ -24,7 +24,11 @@ const {
   required,
   textInputProps,
 };
-<FormControl id={id} isRequired={required} isDisabled={isDisabled} isInvalid={validationMessage}>
+<FormControl
+  id={id}
+  isRequired={required}
+  isDisabled={isDisabled}
+  isInvalid={validationMessage}>
   <FormControl.Label>{labelText}</FormControl.Label>
   <TextInput
     name={name}
