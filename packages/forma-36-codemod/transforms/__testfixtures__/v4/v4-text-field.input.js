@@ -53,12 +53,13 @@ const prefix = 'prefix';
 />;
 
 const showValidationMessage = true;
+const message = 'Some validation message';
 <TextField
   id="conditional-validation"
   name="conditional-validation"
   labelText="Conditional validation"
   onChange={() => {}}
-  validationMessage={showValidationMessage ? 'Some validation message' : ''}
+  validationMessage={showValidationMessage ? message : ''}
 />;
 
 const hideValidationMessage = true;

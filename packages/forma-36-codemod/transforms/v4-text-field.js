@@ -138,12 +138,19 @@ function textFieldCodemod(file, api) {
           } = value;
 
           // if "consequent" is Falsy, it means that the validation message should show when the condition in "test" is false
-          const condition = !consequent.value
-            ? j.unaryExpression('!', j.identifier(test.name))
-            : j.jsxIdentifier(test.name);
+          const condition =
+            !consequent.value && consequent.type !== 'Identifier'
+              ? j.unaryExpression('!', j.identifier(test.name))
+              : j.jsxIdentifier(test.name);
 
           // The message could be in both sides of the contional, so we do this to get the Truthy value
-          const message = [consequent, alternate].find(({ value }) => value);
+          const message = [consequent.type, alternate.type].includes(
+            'Identifier',
+          )
+            ? j.jsxExpressionContainer(
+                j.identifier(consequent.name || alternate.name),
+              )
+            : [consequent, alternate].find(({ value }) => value);
 
           const Component = createComponent({
             j,

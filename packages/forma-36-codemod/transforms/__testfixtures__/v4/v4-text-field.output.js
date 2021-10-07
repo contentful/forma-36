@@ -50,10 +50,11 @@ const prefix = 'prefix';
 </FormControl>;
 
 const showValidationMessage = true;
+const message = 'Some validation message';
 <FormControl id="conditional-validation" isInvalid={showValidationMessage}>
   <FormControl.Label>Conditional validation</FormControl.Label>
   <TextInput name="conditional-validation" onChange={() => {}} />
-  {showValidationMessage && <FormControl.ValidationMessage>Some validation message</FormControl.ValidationMessage>}
+  {showValidationMessage && <FormControl.ValidationMessage>{message}</FormControl.ValidationMessage>}
 </FormControl>;
 
 const hideValidationMessage = true;
