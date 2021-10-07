@@ -120,9 +120,9 @@ function textFieldCodemod(file, api) {
           } = validationMessage.value;
 
           // if "consequent" is Falsy, it means that the validation message should show when the condition in "test" is false
-          const condition = j.jsxIdentifier(
-            `${!consequent.value ? '!' : ''}${test.name}`,
-          );
+          const condition = !consequent.value
+            ? j.unaryExpression('!', j.identifier(test.name))
+            : j.jsxIdentifier(test.name);
 
           // The message could be in both sides of the contional, so we do this to get the Truthy value
           const message = [consequent, alternate].find(({ value }) => value);
@@ -139,14 +139,10 @@ function textFieldCodemod(file, api) {
           );
 
           // set the value of isInvalid prop in FormControl
-          attributes = addProperty(attributes, {
+          const isInvalid = getNewProp(attributes, {
             j,
             propertyName: 'isInvalid',
             propertyValue: j.jsxExpressionContainer(condition),
-          });
-
-          const isInvalid = getProperty(attributes, {
-            propertyName: 'isInvalid',
           });
 
           formControlProps.push(isInvalid);
