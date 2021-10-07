@@ -34,7 +34,7 @@ describe('v4 codemods', () => {
     console.warn = jest.fn();
   });
 
-  tests.forEach((test) => defineTest(__dirname, test, null, test));
+  tests.forEach((test) => defineTest(__dirname, test, null, `v4/${test}`));
 
   describe('TextLink', () => {
     const templateWithNoTextLink = `
