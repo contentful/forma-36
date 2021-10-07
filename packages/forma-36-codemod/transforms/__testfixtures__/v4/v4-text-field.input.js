@@ -25,6 +25,7 @@ const {
   required,
   textInputProps,
 };
+const otherProps = {};
 <TextField
   id={id}
   name={name}
@@ -37,6 +38,7 @@ const {
     disabled: isDisabled,
     type: 'text',
     ...textInputProps,
+    ...otherProps,
   }}
   validationMessage={validationMessage}
   required={required}

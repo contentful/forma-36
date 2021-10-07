@@ -8,7 +8,6 @@ const {
   renameProperties,
 } = require('../utils');
 const { getFormaImport, shouldSkipUpdateImport } = require('../utils/config');
-const { pipe } = require('./common/pipe');
 const { isConditionalExpression } = require('../utils/updateTernaryValues');
 
 function textFieldCodemod(file, api) {
@@ -27,7 +26,6 @@ function textFieldCodemod(file, api) {
   source = j(source)
     .find(j.JSXElement, { openingElement: { name: { name: componentName } } })
     .forEach((nodePath) => {
-      // const options = nodePath.value.children;
       let attributes = nodePath.value.openingElement.attributes;
 
       attributes = renameProperties(attributes, {
@@ -74,7 +72,7 @@ function textFieldCodemod(file, api) {
       if (textInputPropsObj) {
         const {
           isDisabled,
-          spreadedPropsName,
+          spreadedPropsNames,
           ...otherProps
         } = transformTextInputProps(textInputPropsObj, {
           j,
@@ -82,11 +80,10 @@ function textFieldCodemod(file, api) {
         });
 
         formControlProps.push(isDisabled);
-        textInputProps.push(
-          ...Object.values(otherProps),
-          // this will add `{...spreadedPropsName}` to the Component
-          !!spreadedPropsName &&
-            j.jsxSpreadAttribute(j.identifier(spreadedPropsName)),
+        textInputProps.push(...Object.values(otherProps));
+        // this will add `{...spreadedPropsName}` to the TextInput Component
+        spreadedPropsNames.map((name) =>
+          textInputProps.push(j.jsxSpreadAttribute(j.identifier(name))),
         );
       }
 
@@ -243,7 +240,7 @@ function textFieldCodemod(file, api) {
 function transformTextInputProps(textInputPropsObj, { j, attributes }) {
   const { properties } = textInputPropsObj.value.expression;
 
-  const newProps = {};
+  const newProps = { spreadedPropsNames: [] };
   const propertiesMap = properties.reduce((acc, prop) => {
     let key;
 
@@ -251,7 +248,7 @@ function transformTextInputProps(textInputPropsObj, { j, attributes }) {
     // we don't include it in the propertiesMap and we put its name directly into newProps obj
     // and later we use that name to create `{...spreadedProps}` in TextInput
     if (!prop.key && prop.type === 'SpreadElement') {
-      newProps.spreadedPropsName = prop.argument.name;
+      newProps.spreadedPropsNames.push(prop.argument.name);
       return acc;
     }
 
@@ -319,4 +316,4 @@ function getNewProp(attributes, { j, propertyName, propertyValue }) {
   });
 }
 
-module.exports = pipe([textFieldCodemod]);
+module.exports = textFieldCodemod;

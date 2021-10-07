@@ -24,6 +24,7 @@ const {
   required,
   textInputProps,
 };
+const otherProps = {};
 <FormControl
   id={id}
   isRequired={required}
@@ -36,7 +37,8 @@ const {
     onChange={(e) => onChange(e)}
     onBlur={onBlur}
     type="text"
-    {...textInputProps} />
+    {...textInputProps}
+    {...otherProps} />
   <FormControl.HelpText>{helpText}</FormControl.HelpText>
   {validationMessage && <FormControl.ValidationMessage>{validationMessage}</FormControl.ValidationMessage>}
 </FormControl>;
