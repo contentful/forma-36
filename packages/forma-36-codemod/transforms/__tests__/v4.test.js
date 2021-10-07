@@ -26,6 +26,7 @@ describe('v4 codemods', () => {
     'v4-checkbox',
     'v4-form',
     'v4-radio',
+    'v4-entity-list',
   ];
 
   beforeEach(() => {
