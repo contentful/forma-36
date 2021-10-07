@@ -197,29 +197,44 @@ export const WithFormControl = () => {
   );
 };
 
+const fetchFruits = (filterBy?: string) =>
+  new Promise<typeof fruits>((resolve) => {
+    let result = fruits;
+    if (filterBy) {
+      result = fruits.filter((item) =>
+        item.name.toLowerCase().includes(filterBy.toLowerCase()),
+      );
+    }
+
+    setTimeout(() => {
+      resolve(result);
+    }, 800);
+  });
+
 export const WithAsyncData = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [selectedFruit, setSelectedFruit] = useState<Fruit>();
-  const [filteredItems, setFilteredItems] = useState(fruits);
+  const [items, setItems] = useState<Fruit[]>([]);
+
+  useEffect(() => {
+    setIsLoading(true);
+    fetchFruits().then((fruits) => {
+      setItems(fruits);
+      setIsLoading(false);
+    });
+  }, []);
 
   const handleInputValueChange = (value: string) => {
-    const newFilteredItems = fruits.filter((item) =>
-      item.name.toLowerCase().includes(value.toLowerCase()),
-    );
-    setFilteredItems(newFilteredItems);
+    setIsLoading(true);
+    fetchFruits(value).then((fruits) => {
+      setItems(fruits);
+      setIsLoading(false);
+    });
   };
 
   const handleSelectItem = (item: Fruit) => {
     setSelectedFruit(item);
   };
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 5000);
-
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <Stack
@@ -230,7 +245,7 @@ export const WithAsyncData = () => {
     >
       {/* It’s not necessary to pass "Fruit" (type of one item)  */}
       <Autocomplete<Fruit>
-        items={filteredItems}
+        items={items}
         onInputValueChange={handleInputValueChange}
         onSelectItem={handleSelectItem}
         itemToString={(item) => item.name}
