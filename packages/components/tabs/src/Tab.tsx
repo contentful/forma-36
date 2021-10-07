@@ -61,6 +61,7 @@ function _Tab(
       isDisabled={isDisabled}
       {...elementProps}
       {...otherProps}
+      variant="transparent"
       id={`${panelId}-control-tab`}
       ref={ref}
     >
