@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, waitFor, fireEvent } from '@testing-library/react';
+import { render, waitFor, fireEvent, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { Menu } from '../src';
@@ -261,5 +261,117 @@ describe('Menu', function () {
     });
 
     expect(document.activeElement).toBe(getByTestId('second-item'));
+  });
+
+  describe('Menu.Submenu', function () {
+    const renderMenuWithSubMenu = () =>
+      render(
+        <Menu isOpen={true}>
+          <Menu.Trigger>
+            <Button>Toggle</Button>
+          </Menu.Trigger>
+          <Menu.List testId="menu">
+            <Menu.Item testId="first-item">Create an entry</Menu.Item>
+            <Menu.Submenu>
+              <Menu.SubmenuTrigger testId="second-item">
+                Remove an entry
+              </Menu.SubmenuTrigger>
+              <Menu.List testId="submenu">
+                <Menu.Item testId="submenu-item-1">Sub item 1</Menu.Item>
+                <Menu.Item testId="submenu-item-2">Sub item 2</Menu.Item>
+                <Menu.Item testId="submenu-item-3">Sub item 3</Menu.Item>
+              </Menu.List>
+            </Menu.Submenu>
+            <Menu.Item testId="third-item">Embed existing entry</Menu.Item>
+          </Menu.List>
+        </Menu>,
+      );
+
+    it('should open submenu if item with submenu clicked', async () => {
+      const { getByTestId } = renderMenuWithSubMenu();
+
+      await waitFor(() => {
+        expect(getByTestId('menu')).toBeVisible();
+        expect(getByTestId('submenu')).not.toBeVisible();
+      });
+
+      await act(async () => {
+        userEvent.click(getByTestId('second-item'));
+      });
+
+      await waitFor(() => {
+        expect(getByTestId('submenu')).toBeVisible();
+      });
+    });
+
+    it('should open submenu if item with submenu is hovered and close when its unhovered', async () => {
+      const { getByTestId } = renderMenuWithSubMenu();
+
+      await waitFor(() => {
+        expect(getByTestId('menu')).toBeVisible();
+        expect(getByTestId('submenu')).not.toBeVisible();
+      });
+
+      await act(async () => {
+        userEvent.hover(getByTestId('second-item'));
+      });
+      await waitFor(() => {
+        expect(getByTestId('submenu')).toBeVisible();
+      });
+
+      await act(async () => {
+        userEvent.unhover(getByTestId('second-item'));
+      });
+      await waitFor(() => {
+        expect(getByTestId('submenu')).not.toBeVisible();
+      });
+    });
+
+    it('should open submenu if ArrowRight clicked on item with submenu', async () => {
+      const { getByTestId } = renderMenuWithSubMenu();
+
+      await waitFor(() => {
+        expect(getByTestId('menu')).toBeVisible();
+        expect(getByTestId('submenu')).not.toBeVisible();
+      });
+
+      await act(async () => {
+        fireEvent.keyDown(getByTestId('second-item'), {
+          key: 'ArrowRight',
+        });
+      });
+      await waitFor(() => {
+        expect(getByTestId('submenu')).toBeVisible();
+      });
+    });
+
+    it('should close submenu if ArrowLeft clicked on any item in submenu', async () => {
+      const { getByTestId } = renderMenuWithSubMenu();
+
+      await waitFor(() => {
+        expect(getByTestId('menu')).toBeVisible();
+        expect(getByTestId('submenu')).not.toBeVisible();
+      });
+
+      // open a submenu first
+      await act(async () => {
+        fireEvent.keyDown(getByTestId('second-item'), {
+          key: 'ArrowRight',
+        });
+      });
+      // verify it's open
+      await waitFor(() => {
+        expect(getByTestId('submenu')).toBeVisible();
+      });
+
+      await act(async () => {
+        fireEvent.keyDown(getByTestId('submenu-item-2'), {
+          key: 'ArrowLeft',
+        });
+      });
+      await waitFor(() => {
+        expect(getByTestId('submenu')).not.toBeVisible();
+      });
+    });
   });
 });

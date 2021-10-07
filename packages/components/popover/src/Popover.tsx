@@ -79,6 +79,22 @@ export interface PopoverProps extends CommonProps {
    * @default true
    */
   autoFocus?: boolean;
+
+  /**
+   * Popover id. Will be used as an `id` attribute on popover
+   * and as `aria-controls` attribute on trigger
+   *
+   * @default true
+   */
+  id?: string;
+
+  /**
+   * The `X-axis` and `Y-axis` offset to position popper element
+   * from its trigger element. `[X, Y]`
+   *
+   * @default [1, 4]
+   */
+  offset?: [number, number];
 }
 
 export function Popover(props: PopoverProps) {
@@ -93,6 +109,8 @@ export function Popover(props: PopoverProps) {
     closeOnEsc = true,
     onClose,
     autoFocus = true,
+    id,
+    offset = [1, 4],
   } = props;
 
   const [triggerElement, setTriggerElement] = useState<HTMLElement | null>(
@@ -112,7 +130,7 @@ export function Popover(props: PopoverProps) {
       {
         name: 'offset',
         options: {
-          offset: [1, 4],
+          offset,
         },
       },
       {
@@ -141,12 +159,14 @@ export function Popover(props: PopoverProps) {
   }, [isOpen, popoverElement]);
 
   useEffect(() => {
-    if (forceUpdate) {
+    if (isOpen && forceUpdate) {
       forceUpdate();
     }
-  }, [children, forceUpdate]);
+  }, [isOpen, forceUpdate]);
 
-  const popoverId = useId(null, 'popover-content');
+  const popoverGeneratedId = useId(null, 'popover-content');
+  const popoverId = id || popoverGeneratedId;
+
   const handleClose = useCallback(() => {
     if (onClose) {
       onClose();

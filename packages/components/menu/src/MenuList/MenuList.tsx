@@ -1,6 +1,7 @@
 import React from 'react';
 import { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
 import { useMenuContext } from '../MenuContext';
+import { useSubmenuContext } from '../SubmenuContext';
 import { Popover } from '@contentful/f36-popover';
 import { cx } from 'emotion';
 import { getMenuListStyles } from './MenuList.styles';
@@ -26,6 +27,7 @@ const _MenuList = (props: MenuListProps, ref: React.Ref<HTMLDivElement>) => {
   } = props;
 
   const { getMenuListProps } = useMenuContext();
+  const submenuContext = useSubmenuContext();
 
   let header: React.ReactElement | null = null;
   let footer: React.ReactElement | null = null;
@@ -52,11 +54,15 @@ const _MenuList = (props: MenuListProps, ref: React.Ref<HTMLDivElement>) => {
     hasStickyFooter: Boolean(footer),
   });
 
+  const extendedOtherProps = submenuContext
+    ? submenuContext.getSubmenuListProps(otherProps)
+    : otherProps;
+
   return (
     <Popover.Content
       role="menu"
-      {...otherProps}
-      {...getMenuListProps(otherProps, ref)}
+      {...extendedOtherProps}
+      {...getMenuListProps(extendedOtherProps, ref)}
       className={cx(styles.container, className)}
       testId={testId}
     >
