@@ -105,6 +105,11 @@ const TRANSFORMS_CHOICES = [
       'v4-radio: Converts RadioButton and RadioButtonField components from Forma v3 to v4',
     value: 'v4-radio',
   },
+  {
+    name: 'v4-entity-list: Converts EntityList components from Forma v3 to v4',
+    value: 'v4-entity-list',
+  },
+  // Add extra codemods - do not remove
 ];
 
 module.exports = {

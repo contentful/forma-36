@@ -26,6 +26,7 @@ describe('v4 codemods', () => {
     'v4-checkbox',
     'v4-form',
     'v4-radio',
+    'v4-entity-list',
   ];
 
   beforeEach(() => {
@@ -34,7 +35,7 @@ describe('v4 codemods', () => {
     console.warn = jest.fn();
   });
 
-  tests.forEach((test) => defineTest(__dirname, test, null, test));
+  tests.forEach((test) => defineTest(__dirname, test, null, `v4/${test}`));
 
   describe('TextLink', () => {
     const templateWithNoTextLink = `

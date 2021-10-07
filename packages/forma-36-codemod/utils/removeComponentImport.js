@@ -4,21 +4,19 @@ module.exports.removeComponentImport = function removeComponentImport(
   { importName, componentName },
 ) {
   return j(source)
-    .find(j.ImportDeclaration)
+    .find(j.ImportDeclaration, { source: { value: importName } })
     .forEach((dpath) => {
-      if (dpath.value.source.value === importName) {
-        const specifiers = j(dpath).find(j.ImportSpecifier);
+      const specifiers = j(dpath).find(j.ImportSpecifier);
 
-        specifiers.forEach((spath) => {
-          if (spath.value.imported.name === componentName) {
-            if (specifiers.length === 1) {
-              j(dpath).remove();
-            } else {
-              j(spath).remove();
-            }
+      specifiers.forEach((spath) => {
+        if (spath.value.imported.name === componentName) {
+          if (specifiers.length === 1) {
+            j(dpath).remove();
+          } else {
+            j(spath).remove();
           }
-        });
-      }
+        }
+      });
     })
     .toSource();
 };

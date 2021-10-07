@@ -50,4 +50,71 @@ module.exports = function (plop) {
       return actions;
     },
   });
+
+  plop.setGenerator('codemod', {
+    description: 'add new codemod',
+    prompts: [
+      {
+        type: 'list',
+        name: 'context',
+        message: 'context of the codemod',
+        choices: ['v4', 'color-tokens'],
+      },
+      {
+        type: 'input',
+        name: 'codemodName',
+        message: 'codemod name without the context',
+        validate: (answer) => Boolean(answer.length),
+      },
+      {
+        type: 'input',
+        name: 'description',
+        message: 'describe what the codemod does',
+        validate: (answer) => Boolean(answer.length),
+      },
+    ],
+    actions: function (data) {
+      const { context, codemodName, description } = data;
+      const transform = `${context}-${codemodName}`;
+      let actions = [];
+      actions.push({
+        type: 'add',
+        path: `../packages/forma-36-codemod/transforms/${transform}.js`,
+        templateFile: './plop-templates/codemod/transforms/transform.js',
+        data: { transform },
+      });
+      actions.push({
+        type: 'addMany',
+        destination: `../packages/forma-36-codemod/transforms/`,
+        base: './plop-templates/codemod/transforms/',
+        templateFiles:
+          './plop-templates/codemod/transforms/__testfixtures__/**',
+        data: { context, transform },
+      });
+      actions.push({
+        type: 'modify',
+        path:
+          '../packages/forma-36-codemod/transforms/__tests__/{{context}}.test.js',
+        pattern: /(const tests = \[\n)/,
+        template: "$1'{{transform}}',\n",
+        data: { context, transform },
+      });
+      actions.push({
+        type: 'modify',
+        path: '../packages/forma-36-codemod/bin/inquirer-choices.js',
+        pattern: /\s+(\/\/ Add extra codemods - not remove)/,
+        templateFile: './plop-templates/codemod/bin/inquirer-choices.hbs',
+        data: { transform, description },
+      });
+      actions.push({
+        type: 'modify',
+        pattern: /$(?![\r\n])/,
+        path: '../packages/forma-36-codemod/README.md',
+        templateFile: './plop-templates/codemod/README.hbs',
+        data: { transform, description },
+      });
+
+      return actions;
+    },
+  });
 };

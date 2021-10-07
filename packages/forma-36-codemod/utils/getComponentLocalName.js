@@ -6,17 +6,13 @@ module.exports.getComponentLocalName = function getComponentLocalName(
   let finalName = '';
 
   j(source)
-    .find(j.ImportDeclaration)
+    .find(j.ImportDeclaration, { source: { value: importName } })
     .forEach((path) => {
-      if (path.value.source.value === importName) {
-        j(path)
-          .find(j.ImportSpecifier)
-          .forEach((path) => {
-            if (path.value.imported.name === componentName) {
-              finalName = path.value.local.name;
-            }
-          });
-      }
+      j(path)
+        .find(j.ImportSpecifier, { imported: { name: componentName } })
+        .forEach((path) => {
+          finalName = path.value.local.name;
+        });
     });
 
   return finalName;
