@@ -33,9 +33,10 @@ export interface AutocompleteProps<ItemType = any>
   onSelectItem: (item: ItemType) => void;
   /**
    * This is the function that will be called for each "item" passed in the `items` prop.
-   * It receives the "item" as an argument and returns a ReactNode.
+   * It receives the "item" and "inputValue" as arguments and returns a ReactNode.
+   * The inputValue is passed in case you want to highlight the match on the render.
    */
-  renderItem?: (item: ItemType) => React.ReactNode;
+  renderItem?: (item: ItemType, inputValue: string) => React.ReactNode;
   /**
    * When using objects as `items`, we recommend passing a function that tells Downshift how to extract a string
    * from those objetcs to be used as inputValue
@@ -171,6 +172,32 @@ function _Autocomplete<ItemType>(
   const toggleProps = getToggleButtonProps();
   const menuProps = getMenuProps();
 
+  const highlightItem = (item) => {
+    const defaultReturn = renderItem ? renderItem(item, inputValue) : item;
+
+    if (!inputValue || renderItem) {
+      return defaultReturn;
+    }
+
+    const regex = new RegExp(
+      `(?<before>.*?)(?<match>${inputValue})(?<after>.*)`,
+      'i',
+    );
+    const matches = item.match(regex);
+    if (!matches) return defaultReturn;
+
+    const {
+      groups: { before, match, after },
+    } = matches;
+    return (
+      <>
+        {before}
+        <b>{match}</b>
+        {after}
+      </>
+    );
+  };
+
   return (
     <div
       data-test-id={testId}
@@ -256,7 +283,7 @@ function _Autocomplete<ItemType>(
                     ])}
                     data-test-id={`cf-autocomplete-list-item-${index}`}
                   >
-                    {renderItem ? renderItem(item) : item}
+                    {highlightItem(item)}
                   </li>
                 );
               })}
