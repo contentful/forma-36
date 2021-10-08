@@ -30,10 +30,14 @@ export const Basic = (args: FormControlInternalProps) => {
     <>
       <FormControl {...args}>
         <FormControl.Label isRequired>Name</FormControl.Label>
-        <TextInput />
-        <FormControl.HelpText>
-          Please enter your first name
-        </FormControl.HelpText>
+        <TextInput maxLength={10} />
+        <Flex justifyContent="space-between">
+          <FormControl.HelpText>
+            Please enter your first name
+          </FormControl.HelpText>
+          <FormControl.Counter />
+        </Flex>
+
         {args.isInvalid && (
           <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
         )}

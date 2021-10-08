@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useId } from '@contentful/f36-core';
 import type {
   CommonProps,
@@ -40,6 +40,8 @@ function _FormControl<E extends React.ElementType = typeof DEFAULT_TAG>(
   ref: React.Ref<any>,
 ) {
   const generatedId = useId(id, 'field-');
+  const [inputValue, setInputValue] = useState('');
+  const [maxLength, setMaxLength] = useState(0);
 
   const context = {
     id: generatedId,
@@ -47,6 +49,10 @@ function _FormControl<E extends React.ElementType = typeof DEFAULT_TAG>(
     isDisabled,
     isInvalid,
     isReadOnly,
+    inputValue,
+    setInputValue,
+    maxLength,
+    setMaxLength,
   };
 
   return (

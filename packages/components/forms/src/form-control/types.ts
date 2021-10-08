@@ -1,3 +1,5 @@
+import React from 'react';
+
 export interface FormControlContextProps {
   id?: string;
   /**
@@ -14,4 +16,8 @@ export interface FormControlContextProps {
   isDisabled?: boolean;
 
   isReadOnly?: boolean;
+  maxLength?: number;
+  inputValue?: string;
+  setMaxLength?: React.Dispatch<React.SetStateAction<number>>;
+  setInputValue?: React.Dispatch<React.SetStateAction<string>>;
 }
