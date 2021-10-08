@@ -44,11 +44,11 @@ function AutocompleteExample() {
   // This `useState` is going to store the selected fruit so we can show it in the UI
   const [selectedFruit, setSelectedFruit] = React.useState();
 
-  const [filteredItems, setFilteredItems] = useState(fruits);
+  const [filteredItems, setFilteredItems] = React.useState(fruits);
 
   // We filter the "fruits" array by the inputValue
   // we use 'toLowerCase()' to make the search case insensitive
-  const handleInputValueChange = (value: string) => {
+  const handleInputValueChange = (value) => {
     const newFilteredItems = fruits.filter((item) =>
       item.toLowerCase().includes(value.toLowerCase()),
     );
@@ -99,9 +99,9 @@ function AutocompleteExample() {
   ];
 
   const [selectedFruit, setSelectedFruit] = React.useState();
-  const [filteredItems, setFilteredItems] = useState(fruits);
+  const [filteredItems, setFilteredItems] = React.useState(fruits);
 
-  const handleInputValueChange = (value: string) => {
+  const handleInputValueChange = (value) => {
     // This time, we need to tell the component to compare the property "name" of an item to the inputValue
     const newFilteredItems = fruits.filter((item) =>
       item.name.toLowerCase().includes(value.toLowerCase()),
@@ -151,9 +151,9 @@ function AutocompleteExample() {
 
   // The state now stores an array of selected fruits, not just a string
   const [selectedFruits, setSelectedFruits] = React.useState([]);
-  const [filteredItems, setFilteredItems] = useState(fruits);
+  const [filteredItems, setFilteredItems] = React.useState(fruits);
 
-  const handleInputValueChange = (value: string) => {
+  const handleInputValueChange = (value) => {
     const newFilteredItems = fruits.filter((item) =>
       item.name.toLowerCase().includes(value.toLowerCase()),
     );
@@ -203,10 +203,10 @@ function AutocompleteExample() {
   ];
 
   const [selectedFruit, setSelectedFruit] = React.useState();
-  const [filteredItems, setFilteredItems] = useState(fruits);
+  const [filteredItems, setFilteredItems] = React.useState(fruits);
   const [isInvalid, setIsInvalid] = React.useState(false);
 
-  const handleInputValueChange = (value: string) => {
+  const handleInputValueChange = (value) => {
     const newFilteredItems = fruits.filter((item) =>
       item.toLowerCase().includes(value.toLowerCase()),
     );
@@ -236,6 +236,74 @@ function AutocompleteExample() {
       <Button onClick={() => setIsInvalid((prevState) => !prevState)}>
         Toggle error message
       </Button>
+
+      <Paragraph>Selected fruit: {selectedFruit}</Paragraph>
+    </Stack>
+  );
+}
+```
+
+### Example with fetching async data
+
+```jsx
+function AutocompleteExample() {
+  const fruits = [
+    'Apple 🍎',
+    'Ananas 🍍',
+    'Avocado 🥑',
+    'Banana 🍌',
+    'Coconut 🥥',
+  ];
+
+  const fetchFruits = (filterBy) =>
+    new Promise((resolve) => {
+      let result = fruits;
+      if (filterBy) {
+        result = fruits.filter((item) =>
+          item.toLowerCase().includes(filterBy.toLowerCase()),
+        );
+      }
+
+      setTimeout(() => {
+        resolve(result);
+      }, 800);
+    });
+
+  const [isLoading, setIsLoading] = React.useState(false);
+  const [selectedFruit, setSelectedFruit] = React.useState();
+  const [items, setItems] = React.useState([]);
+
+  // fetching data when component mounted
+  React.useEffect(() => {
+    setIsLoading(true);
+    fetchFruits().then((result) => {
+      setItems(result);
+      setIsLoading(false);
+    });
+  }, []);
+
+  // fetching data on each input value change
+  // NOTE: Consider using throttle/debounce here for better performance
+  const handleInputValueChange = (value) => {
+    setIsLoading(true);
+    fetchFruits(value).then((result) => {
+      setItems(result);
+      setIsLoading(false);
+    });
+  };
+
+  const handleSelectItem = (item) => {
+    setSelectedFruit(item);
+  };
+
+  return (
+    <Stack flexDirection="column" alignItems="start">
+      <Autocomplete
+        items={items}
+        onInputValueChange={handleInputValueChange}
+        onSelectItem={handleSelectItem}
+        isLoading={isLoading}
+      />
 
       <Paragraph>Selected fruit: {selectedFruit}</Paragraph>
     </Stack>

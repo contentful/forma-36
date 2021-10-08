@@ -212,7 +212,7 @@ const fetchFruits = (filterBy?: string) =>
   });
 
 export const WithAsyncData = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [selectedFruit, setSelectedFruit] = useState<Fruit>();
   const [items, setItems] = useState<Fruit[]>([]);
 
@@ -224,6 +224,7 @@ export const WithAsyncData = () => {
     });
   }, []);
 
+  // NOTE: Consider using throttle/debounce here for better performance
   const handleInputValueChange = (value: string) => {
     setIsLoading(true);
     fetchFruits(value).then((fruits) => {
