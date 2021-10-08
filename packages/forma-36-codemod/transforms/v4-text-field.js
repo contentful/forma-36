@@ -104,7 +104,7 @@ function textFieldCodemod(file, api) {
       const TextInput = createComponent({
         j,
         componentName: 'TextInput',
-        props: textInputProps.filter((prop) => prop),
+        props: textInputProps.filter(Boolean),
         isSelfClosing: true,
       });
 
