@@ -34,7 +34,7 @@ const _Checkbox = (props: CheckboxProps, ref: React.Ref<HTMLInputElement>) => {
     name,
   });
 
-  // Removes the isReadOnly property that comes from FormControl context.
+  // Removes the not needed properties that comes from FormControl context.
   const {
     inputValue,
     setInputValue,
