@@ -37,9 +37,14 @@ const fruitStrings = fruits.reduce((acc, fruit) => [...acc, fruit.name], []);
 
 export const Basic = (args: AutocompleteProps<string>) => {
   const [selectedFruit, setSelectedFruit] = useState<string>('');
+  const [filteredItems, setFilteredItems] = useState(fruitStrings);
 
-  const handleFilter = (item: string, inputValue: string) =>
-    item.toLowerCase().includes(inputValue.toLowerCase());
+  const handleInputValueChange = (value: string) => {
+    const newFilteredItems = fruitStrings.filter((item) =>
+      item.toLowerCase().includes(value.toLowerCase()),
+    );
+    setFilteredItems(newFilteredItems);
+  };
 
   const handleSelectItem = (item: string) => {
     setSelectedFruit(item);
@@ -55,8 +60,8 @@ export const Basic = (args: AutocompleteProps<string>) => {
       {/* It’s not necessary to pass "Fruit" (type of one item)  */}
       <Autocomplete<string>
         {...args}
-        items={fruitStrings}
-        onFilter={handleFilter}
+        items={filteredItems}
+        onInputValueChange={handleInputValueChange}
         onSelectItem={handleSelectItem}
       />
 
@@ -70,9 +75,14 @@ Basic.args = {
 
 export const UsingObjectsAsItems = (args: AutocompleteProps<Fruit>) => {
   const [selectedFruit, setSelectedFruit] = useState<Fruit>();
+  const [filteredItems, setFilteredItems] = useState(fruits);
 
-  const handleFilter = (item: Fruit, inputValue: string) =>
-    item.name.toLowerCase().includes(inputValue.toLowerCase());
+  const handleInputValueChange = (value: string) => {
+    const newFilteredItems = fruits.filter((item) =>
+      item.name.toLowerCase().includes(value.toLowerCase()),
+    );
+    setFilteredItems(newFilteredItems);
+  };
 
   const handleSelectItem = (item: Fruit) => {
     setSelectedFruit(item);
@@ -88,8 +98,8 @@ export const UsingObjectsAsItems = (args: AutocompleteProps<Fruit>) => {
       {/* It’s not necessary to pass "Fruit" (type of one item)  */}
       <Autocomplete<Fruit>
         {...args}
-        items={fruits}
-        onFilter={handleFilter}
+        items={filteredItems}
+        onInputValueChange={handleInputValueChange}
         onSelectItem={handleSelectItem}
         itemToString={(item) => item.name}
         renderItem={(item) => item.name}
@@ -105,9 +115,14 @@ UsingObjectsAsItems.args = {
 
 export const MultipleSelection = (args: AutocompleteProps<Fruit>) => {
   const [selectedFruits, setSelectedFruits] = useState<Fruit['name'][]>([]);
+  const [filteredItems, setFilteredItems] = useState(fruits);
 
-  const handleFilter = (item: Fruit, inputValue: string) =>
-    item.name.toLowerCase().includes(inputValue.toLowerCase());
+  const handleInputValueChange = (value: string) => {
+    const newFilteredItems = fruits.filter((item) =>
+      item.name.toLowerCase().includes(value.toLowerCase()),
+    );
+    setFilteredItems(newFilteredItems);
+  };
 
   const handleSelectItem = (item: Fruit) => {
     setSelectedFruits((prevState) => [...prevState, item.name]);
@@ -123,8 +138,8 @@ export const MultipleSelection = (args: AutocompleteProps<Fruit>) => {
       {/* It’s not necessary to pass "Fruit" (type of one item)  */}
       <Autocomplete<Fruit>
         {...args}
-        items={fruits}
-        onFilter={handleFilter}
+        items={filteredItems}
+        onInputValueChange={handleInputValueChange}
         onSelectItem={handleSelectItem}
         itemToString={(item) => item.name}
         renderItem={(item) => item.name}
@@ -145,9 +160,14 @@ export const MultipleSelection = (args: AutocompleteProps<Fruit>) => {
 
 export const WithFormControl = () => {
   const [selectedFruit, setSelectedFruit] = useState<Fruit>();
+  const [filteredItems, setFilteredItems] = useState(fruits);
 
-  const handleFilter = (item: Fruit, inputValue: string) =>
-    item.name.toLowerCase().includes(inputValue.toLowerCase());
+  const handleInputValueChange = (value: string) => {
+    const newFilteredItems = fruits.filter((item) =>
+      item.name.toLowerCase().includes(value.toLowerCase()),
+    );
+    setFilteredItems(newFilteredItems);
+  };
 
   const handleSelectItem = (item: Fruit) => {
     setSelectedFruit(item);
@@ -160,8 +180,8 @@ export const WithFormControl = () => {
 
         {/* It’s not necessary to pass "Fruit" (type of one item)  */}
         <Autocomplete<Fruit>
-          items={fruits}
-          onFilter={handleFilter}
+          items={filteredItems}
+          onInputValueChange={handleInputValueChange}
           onSelectItem={handleSelectItem}
           itemToString={(item) => item.name}
           renderItem={(item) => item.name}
@@ -177,24 +197,45 @@ export const WithFormControl = () => {
   );
 };
 
-export const WithAsyncData = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [selectedFruit, setSelectedFruit] = useState<Fruit>();
+const fetchFruits = (filterBy?: string) =>
+  new Promise<typeof fruits>((resolve) => {
+    let result = fruits;
+    if (filterBy) {
+      result = fruits.filter((item) =>
+        item.name.toLowerCase().includes(filterBy.toLowerCase()),
+      );
+    }
 
-  const handleFilter = (item: Fruit, inputValue: string) =>
-    item.name.toLowerCase().includes(inputValue.toLowerCase());
+    setTimeout(() => {
+      resolve(result);
+    }, 800);
+  });
+
+export const WithAsyncData = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [selectedFruit, setSelectedFruit] = useState<Fruit>();
+  const [items, setItems] = useState<Fruit[]>([]);
+
+  useEffect(() => {
+    setIsLoading(true);
+    fetchFruits().then((fruits) => {
+      setItems(fruits);
+      setIsLoading(false);
+    });
+  }, []);
+
+  // NOTE: Consider using throttle/debounce here for better performance
+  const handleInputValueChange = (value: string) => {
+    setIsLoading(true);
+    fetchFruits(value).then((fruits) => {
+      setItems(fruits);
+      setIsLoading(false);
+    });
+  };
 
   const handleSelectItem = (item: Fruit) => {
     setSelectedFruit(item);
   };
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 10000);
-
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <Stack
@@ -205,8 +246,8 @@ export const WithAsyncData = () => {
     >
       {/* It’s not necessary to pass "Fruit" (type of one item)  */}
       <Autocomplete<Fruit>
-        items={fruits}
-        onFilter={handleFilter}
+        items={items}
+        onInputValueChange={handleInputValueChange}
         onSelectItem={handleSelectItem}
         itemToString={(item) => item.name}
         renderItem={(item) => item.name}

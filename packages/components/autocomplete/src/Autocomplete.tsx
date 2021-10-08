@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { cx } from 'emotion';
 import { useCombobox } from 'downshift';
 
@@ -23,10 +23,9 @@ export interface AutocompleteProps<ItemType = any>
    */
   items: ItemType[];
   /**
-   * This is the function that will tell the component how the `items` should be filtered when the input value changes.
-   * It will be used in the `filter()` method of the array passed in the `items` prop and it needs two arguments: an item and the inputValue.
+   * Function called whenever the input value changes
    */
-  onFilter: (item: ItemType, inputValue: string) => void;
+  onInputValueChange?: (value: string) => void;
   /**
    * This is the function that will be called when the user selects one of the "options" in the list.
    * It receives the selected item as an argument and it needs to return a string that will be set as the value of `TextInput`.
@@ -96,7 +95,7 @@ function _Autocomplete<ItemType>(
     className,
     clearAfterSelect = false,
     items,
-    onFilter,
+    onInputValueChange,
     onSelectItem,
     renderItem,
     itemToString = (item: ItemType) => (item as unknown) as string,
@@ -117,7 +116,16 @@ function _Autocomplete<ItemType>(
 
   const styles = getAutocompleteStyles(listMaxHeight);
 
-  const [filteredItems, setFilteredItems] = useState(items);
+  const [inputValue, setInputValue] = useState('');
+
+  const handleInputValueChange = useCallback(
+    (value) => {
+      setInputValue(value);
+
+      onInputValueChange?.(value);
+    },
+    [onInputValueChange],
+  );
 
   const {
     getComboboxProps,
@@ -127,21 +135,16 @@ function _Autocomplete<ItemType>(
     getToggleButtonProps,
     highlightedIndex,
     isOpen,
-    setInputValue,
-    inputValue,
     toggleMenu,
   } = useCombobox({
-    items: filteredItems,
+    items,
+    inputValue,
     itemToString,
-    onStateChange: ({ inputValue, type, selectedItem }) => {
+    onInputValueChange: ({ inputValue }) => {
+      handleInputValueChange(inputValue);
+    },
+    onStateChange: ({ type, selectedItem }) => {
       switch (type) {
-        case useCombobox.stateChangeTypes.InputChange: {
-          const newFilteredItems = items.filter((item) =>
-            onFilter(item, inputValue),
-          );
-          setFilteredItems(newFilteredItems);
-          break;
-        }
         case useCombobox.stateChangeTypes.InputKeyDownEnter:
         case useCombobox.stateChangeTypes.ItemClick:
           if (selectedItem) {
@@ -149,7 +152,7 @@ function _Autocomplete<ItemType>(
           }
 
           if (clearAfterSelect) {
-            setInputValue('');
+            handleInputValueChange('');
           }
 
           break;
@@ -209,8 +212,7 @@ function _Autocomplete<ItemType>(
               }
               onClick={() => {
                 if (inputValue) {
-                  setInputValue('');
-                  setFilteredItems(items);
+                  handleInputValueChange('');
                 } else {
                   toggleMenu();
                 }
@@ -235,14 +237,14 @@ function _Autocomplete<ItemType>(
                 </li>
               ))}
 
-            {!isLoading && filteredItems.length === 0 && (
+            {!isLoading && items.length === 0 && (
               <li className={cx(styles.item, styles.disabled)}>
                 {noMatchesMessage}
               </li>
             )}
 
             {!isLoading &&
-              filteredItems.map((item, index) => {
+              items.map((item, index) => {
                 const itemProps = getItemProps({ item, index });
                 return (
                   <li
