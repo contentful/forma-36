@@ -82,7 +82,7 @@ function textFieldCodemod(file, api) {
         formControlProps.push(isDisabled);
         textInputProps.push(...Object.values(otherProps));
         // this will add `{...spreadedPropsName}` to the TextInput Component
-        spreadedPropsNames.map((name) =>
+        spreadedPropsNames.forEach((name) =>
           textInputProps.push(j.jsxSpreadAttribute(j.identifier(name))),
         );
       }
