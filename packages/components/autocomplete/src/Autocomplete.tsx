@@ -173,10 +173,8 @@ function _Autocomplete<ItemType>(
   const menuProps = getMenuProps();
 
   const highlightItem = (item) => {
-    const defaultReturn = renderItem ? renderItem(item, inputValue) : item;
-
-    if (!inputValue || renderItem) {
-      return defaultReturn;
+    if (!inputValue) {
+      return item;
     }
 
     const regex = new RegExp(
@@ -184,7 +182,7 @@ function _Autocomplete<ItemType>(
       'i',
     );
     const matches = item.match(regex);
-    if (!matches) return defaultReturn;
+    if (!matches) return item;
 
     const {
       groups: { before, match, after },
@@ -283,7 +281,9 @@ function _Autocomplete<ItemType>(
                     ])}
                     data-test-id={`cf-autocomplete-list-item-${index}`}
                   >
-                    {highlightItem(item)}
+                    {renderItem
+                      ? renderItem(item, inputValue)
+                      : highlightItem(item)}
                   </li>
                 );
               })}
