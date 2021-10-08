@@ -6,7 +6,7 @@ import { useFormControl } from '../form-control/FormControlContext';
 
 export type CounterProps = PropsWithHTMLElement<CommonProps, 'p'>;
 
-export const Counter = forwardRef<HTMLDivElement, CounterProps>(
+export const Counter = forwardRef<HTMLParagraphElement, CounterProps>(
   ({ testId = 'cf-ui-counter', ...otherProps }, ref) => {
     const { maxLength, inputValue } = useFormControl({});
     return Boolean(maxLength) && (
