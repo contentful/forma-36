@@ -9,18 +9,20 @@ export type CounterProps = PropsWithHTMLElement<CommonProps, 'p'>;
 export const Counter = forwardRef<HTMLParagraphElement, CounterProps>(
   ({ testId = 'cf-ui-counter', ...otherProps }, ref) => {
     const { maxLength, inputValue } = useFormControl({});
-    return Boolean(maxLength) && (
-      <Text
-        as="p"
-        fontColor="gray500"
-        fontSize="fontSizeM"
-        testId={testId}
-        marginTop="spacingXs"
-        {...otherProps}
-        ref={ref}
-      >
-        {inputValue.length} / {maxLength}
-      </Text>
+    return (
+      Boolean(maxLength) && (
+        <Text
+          as="p"
+          fontColor="gray700"
+          fontSize="fontSizeM"
+          testId={testId}
+          marginTop="spacingXs"
+          {...otherProps}
+          ref={ref}
+        >
+          {inputValue.length} / {maxLength}
+        </Text>
+      )
     );
   },
 );

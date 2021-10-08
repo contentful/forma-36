@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { cx } from 'emotion';
 
 import { BaseInput } from '../base-input';
@@ -18,20 +18,40 @@ const _Textarea = (
     isInvalid,
     isRequired,
     isReadOnly,
+    onChange,
     testId = 'cf-ui-textarea',
     id,
+    maxLength,
     ...otherProps
   }: TextareaProps,
   ref: React.Ref<HTMLTextAreaElement>,
 ) => {
-  const formProps = useFormControl({
+  const styles = getStyles();
+
+  const {
+    setMaxLength,
+    maxLength: contextMaxLength,
+    setInputValue,
+    inputValue: contextInputValue,
+    ...formProps
+  } = useFormControl({
     id,
     isInvalid,
     isDisabled,
     isRequired,
     isReadOnly,
   });
-  const styles = getStyles();
+
+  useEffect(() => {
+    if (maxLength !== undefined) {
+      setMaxLength(maxLength);
+    }
+  }, [maxLength, setMaxLength]);
+
+  const handleOnChange = (event) => {
+    setInputValue(event.target.value);
+    onChange?.(event);
+  };
 
   return (
     <BaseInput
@@ -44,6 +64,8 @@ const _Textarea = (
         [styles.disabled]: isDisabled,
         [styles.error]: isInvalid,
       })}
+      maxLength={maxLength}
+      onChange={maxLength ? handleOnChange : onChange}
     />
   );
 };

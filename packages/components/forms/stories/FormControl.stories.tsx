@@ -153,6 +153,41 @@ export const WithCheckboxGroup = (args: FormControlInternalProps) => {
   );
 };
 
+export const WithCharactersCount = (args: FormControlInternalProps) => {
+  return (
+    <>
+      <FormControl {...args}>
+        <FormControl.Label isRequired>Name</FormControl.Label>
+        <TextInput maxLength={10} />
+        <Flex justifyContent="space-between">
+          <FormControl.HelpText>
+            Please enter your first name
+          </FormControl.HelpText>
+          <FormControl.Counter />
+        </Flex>
+
+        {args.isInvalid && (
+          <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
+        )}
+      </FormControl>
+      <FormControl {...args}>
+        <FormControl.Label isRequired>Name</FormControl.Label>
+        <Textarea maxLength={10} />
+        <Flex justifyContent="space-between">
+          <FormControl.HelpText>
+            Please enter your first name
+          </FormControl.HelpText>
+          <FormControl.Counter />
+        </Flex>
+
+        {args.isInvalid && (
+          <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
+        )}
+      </FormControl>
+    </>
+  );
+};
+
 export const WithCustomLogic = (args: FormControlInternalProps) => {
   const [isDisabled, setIsDisabled] = React.useState(true);
   return (
