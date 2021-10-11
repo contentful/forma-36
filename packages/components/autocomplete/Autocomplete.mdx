@@ -18,7 +18,7 @@ It allows users to quickly search through and select from large collections of o
 - [How to use Autocomplete](#how-to-use-autocomplete)
 - [Best practices](#best-practices)
 - [Code examples](#code-examples)
-  - [Highlighting an item](#highlighting-an-item)
+  - [Highlighting an item with `getMatch`](#highlighting-an-item-with-getmatch)
   - [Using objects as items](#using-objects-as-items)
   - [Filling in a list of items](#filling-in-a-list-of-items)
   - [Error validation with FormControl](#error-validation-with-formcontrol)
@@ -88,67 +88,6 @@ function AutocompleteExample() {
 
 ## Code examples
 
-## Highlighting an item
-
-A common use case for Autocomplete components is to highlight the term that is being typed in the suggestions.
-Using the previous example, if a user types "ana" we want to show a list of suggestions where "ana" is _bold_.
-This is possible by using the `renderItem` prop and some regex:
-
-```jsx static=true
-<Autocomplete
-  items={filteredItems}
-  onInputValueChange={handleInputValueChange}
-  onSelectItem={handleSelectItem}
-  renderItem={(item, inputValue) => {
-    // First, we create a regex that groups:
-    // what comes before the match, the match, and what comes after the match
-    const regex = new RegExp(
-      `(?<before>.*?)(?<match>${inputValue})(?<after>.*)`,
-      'i',
-    );
-
-    // if there are no matches, we return the item
-    const matches = item.match(regex);
-    if (!matches) return item;
-
-    const {
-      groups: { before, match, after },
-    } = matches;
-
-    // if there are matches, we wrap "match" with a <b> tag to make it bold
-    return (
-      <>
-        {before}
-        <b>{match}</b>
-        {after}
-      </>
-    );
-  }}
-/>
-```
-
-#### highlightStringItem
-
-The logic of the `renderItem` above will work when `items` is an array of strings. Since that's a very common case,
-the autocomple package also provides a util function to highlight items that are strings. This is how to use it:
-
-```jsx static=true
-// We need to import the function from the `f36-autocomplete` package
-import {
-  Autocomplete,
-  highlightStringItem,
-} from '@contentful/f36-autocomplete';
-
-<Autocomplete
-  items={filteredItems}
-  onInputValueChange={handleInputValueChange}
-  onSelectItem={handleSelectItem}
-  // Use the `renderItem` prop with the `highlightStringItem` util
-  // to render the matched term wrapped in <b> tag
-  renderItem={(item, inputValue) => highlightStringItem(item, inputValue)}
-/>;
-```
-
 ### Using objects as `items`
 
 On the example in the ["How to use Autocomplete" section](#how-to-use-autocomplete), we showed how to create an Autocomplete with an array of string
@@ -204,6 +143,41 @@ Both `itemToString` and `renderItem` are necessary when passing objects as items
 
 If you are using Typescript, you can tell the Autocomplete what is the type of your items to make these functions strongly typed.
 You can do that by writing the component like this `<Autocomplete<ItemType> {...props}/>`
+
+## Highlighting an item with `getMatch`
+
+A common use case for Autocomplete components is to highlight in each suggestion what is typed in the input.
+Using the previous example, if a user types "ana" we want to show a list of suggestions where only "ana" is **bold**.
+This is possible by using the `renderItem` prop and the `getMatch` utility function:
+
+```jsx static=true
+// We need to import the function from the `f36-autocomplete` package
+import { Autocomplete, getMatch } from '@contentful/f36-autocomplete';
+
+// Everything stays the same, besides the `renderItem` prop
+<Autocomplete
+  items={filteredItems}
+  onInputValueChange={handleInputValueChange}
+  onSelectItem={handleSelectItem}
+  itemToString={(item) => item.name}
+  // Two arguments are provided to the `renderItem` prop: the item and the inputValue
+  renderItem={(item, inputValue) => {
+    // we pass `item.name` and the inputValue to getMatch and the util will return an object
+    // for our example, for the "Banana" item this will return { before: 'B' , match: 'ana', after: 'na' }
+    const { before, match, after } = getMatch(item.name, inputValue);
+
+    // Finally, we return a ReactNode
+    // this will return `<>B<b>ana</b>na 🍌</>` (the "ana" will be bold)
+    return (
+      <>
+        {before}
+        <b>{match}</b>
+        {after} {item.emoji}
+      </>
+    );
+  }}
+/>;
+```
 
 ### Filling in a list of items
 
