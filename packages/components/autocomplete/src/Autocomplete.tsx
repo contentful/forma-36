@@ -8,6 +8,7 @@ import { TextInput, TextInputProps } from '@contentful/f36-forms';
 import { CloseIcon, ChevronDownIcon } from '@contentful/f36-icons';
 import { SkeletonContainer, SkeletonBodyText } from '@contentful/f36-skeleton';
 import { Popover } from '@contentful/f36-popover';
+import { getMatch } from './utils';
 
 import { getAutocompleteStyles } from './Autocomplete.styles';
 
@@ -247,6 +248,7 @@ function _Autocomplete<ItemType>(
             {!isLoading &&
               items.map((item, index) => {
                 const itemProps = getItemProps({ item, index });
+
                 return (
                   <li
                     {...itemProps}
@@ -257,7 +259,13 @@ function _Autocomplete<ItemType>(
                     ])}
                     data-test-id={`cf-autocomplete-list-item-${index}`}
                   >
-                    {renderItem ? renderItem(item, inputValue) : item}
+                    {renderItem ? (
+                      renderItem(item, inputValue)
+                    ) : typeof item === 'string' ? (
+                      <HighlightedItem item={item} inputValue={inputValue} />
+                    ) : (
+                      item
+                    )}
                   </li>
                 );
               })}
@@ -265,6 +273,24 @@ function _Autocomplete<ItemType>(
         </Popover.Content>
       </Popover>
     </div>
+  );
+}
+
+function HighlightedItem({
+  item,
+  inputValue,
+}: {
+  item: string;
+  inputValue: string;
+}) {
+  const { before, match, after } = getMatch(item, inputValue);
+
+  return (
+    <>
+      {before}
+      <b>{match}</b>
+      {after}
+    </>
   );
 }
 
