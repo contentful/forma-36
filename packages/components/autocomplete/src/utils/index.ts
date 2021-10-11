@@ -1,0 +1,1 @@
+export { highlightStringItem } from './highlightItem';

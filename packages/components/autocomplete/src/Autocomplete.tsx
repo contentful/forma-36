@@ -172,30 +172,6 @@ function _Autocomplete<ItemType>(
   const toggleProps = getToggleButtonProps();
   const menuProps = getMenuProps();
 
-  const highlightItem = (item) => {
-    if (!inputValue) {
-      return item;
-    }
-
-    const regex = new RegExp(
-      `(?<before>.*?)(?<match>${inputValue})(?<after>.*)`,
-      'i',
-    );
-    const matches = item.match(regex);
-    if (!matches) return item;
-
-    const {
-      groups: { before, match, after },
-    } = matches;
-    return (
-      <>
-        {before}
-        <b>{match}</b>
-        {after}
-      </>
-    );
-  };
-
   return (
     <div
       data-test-id={testId}
@@ -281,9 +257,7 @@ function _Autocomplete<ItemType>(
                     ])}
                     data-test-id={`cf-autocomplete-list-item-${index}`}
                   >
-                    {renderItem
-                      ? renderItem(item, inputValue)
-                      : highlightItem(item)}
+                    {renderItem ? renderItem(item, inputValue) : item}
                   </li>
                 );
               })}

@@ -7,6 +7,7 @@ import { Paragraph } from '@contentful/f36-typography';
 
 import { Autocomplete } from '../src/Autocomplete';
 import type { AutocompleteProps } from '../src/Autocomplete';
+import { highlightStringItem } from '../src/utils/highlightItem';
 
 export default {
   title: 'Components/Autocomplete',
@@ -194,6 +195,42 @@ export const WithFormControl = () => {
 
       <Paragraph>Selected fruit: {selectedFruit?.name}</Paragraph>
     </>
+  );
+};
+
+export const HighlightingItems = () => {
+  const [selectedFruit, setSelectedFruit] = useState<string>('');
+  const [filteredItems, setFilteredItems] = useState(fruitStrings);
+
+  const handleInputValueChange = (value: string) => {
+    const newFilteredItems = fruitStrings.filter((item) =>
+      item.toLowerCase().includes(value.toLowerCase()),
+    );
+    setFilteredItems(newFilteredItems);
+  };
+
+  const handleSelectItem = (item: string) => {
+    setSelectedFruit(item);
+  };
+
+  return (
+    <Stack
+      style={{ minWidth: '300px' }}
+      flexDirection="column"
+      spacing="spacingM"
+      alignItems="start"
+    >
+      {/* It’s not necessary to pass "Fruit" (type of one item)  */}
+      <Autocomplete<string>
+        items={filteredItems}
+        onInputValueChange={handleInputValueChange}
+        onSelectItem={handleSelectItem}
+        // Using `highlightStringItem` util to render each matched item with <b>
+        renderItem={(item, inputValue) => highlightStringItem(item, inputValue)}
+      />
+
+      <Paragraph>Selected fruit: {selectedFruit}</Paragraph>
+    </Stack>
   );
 };
 
