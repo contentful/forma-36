@@ -16,16 +16,23 @@ It allows users to quickly search through and select from large collections of o
 ## Table of contents
 
 - [How to use Autocomplete](#how-to-use-autocomplete)
+- [Best practices](#best-practices)
 - [Code examples](#code-examples)
+  - [Highlighting an item](#highlighting-an-item)
+  - [Using objects as items](#using-objects-as-items)
+  - [Filling in a list of items](#filling-in-a-list-of-items)
+  - [Error validation with FormControl](#error-validation-with-formcontrol)
+  - [Fetching async data](#fetching-async-data)
 - [Content recommendations](#content-recommendations)
 - [Accessibility](#accessibility)
+- [Props](#props)
 
 ## How to use Autocomplete
 
 The Autocomplete requires 3 props to work:
 
 - `items`: It’s an array containing the items that will be shown as selectable options when the user types something in the `TextInput`.
-- `onFilter`: This function will be used by the `Autocomplete` in the `filter()` method to filter the `items` prop and only show the options that match what the user is typing.
+- `onInputValueChange`: This function will be called every time the user types something in the input.
   The component will pass the `item` which the filter method is currently interating and `inputValue` of the `Textinput`.
 - `onSelectItem`: This function is called when the user selects one of the options of the list. The component will pass the selected item as an argument to the function.
 
@@ -80,6 +87,67 @@ function AutocompleteExample() {
 - Consider using autocomplete over selects if a user will be choosing from a very long list, for example a country list.
 
 ## Code examples
+
+## Highlighting an item
+
+A common use case for Autocomplete components is to highlight the term that is being typed in the suggestions.
+Using the previous example, if a user types "ana" we want to show a list of suggestions where "ana" is _bold_.
+This is possible by using the `renderItem` prop and some regex:
+
+```jsx static=true
+<Autocomplete
+  items={filteredItems}
+  onInputValueChange={handleInputValueChange}
+  onSelectItem={handleSelectItem}
+  renderItem={(item, inputValue) => {
+    // First, we create a regex that groups:
+    // what comes before the match, the match, and what comes after the match
+    const regex = new RegExp(
+      `(?<before>.*?)(?<match>${inputValue})(?<after>.*)`,
+      'i',
+    );
+
+    // if there are no matches, we return the item
+    const matches = item.match(regex);
+    if (!matches) return item;
+
+    const {
+      groups: { before, match, after },
+    } = matches;
+
+    // if there are matches, we wrap "match" with a <b> tag to make it bold
+    return (
+      <>
+        {before}
+        <b>{match}</b>
+        {after}
+      </>
+    );
+  }}
+/>
+```
+
+#### highlightStringItem
+
+The logic of the `renderItem` above will work when `items` is an array of strings. Since that's a very common case,
+the autocomple package also provides a util function to highlight items that are strings. This is how to use it:
+
+```jsx static=true
+// We need to import the function from the `f36-autocomplete` package
+import {
+  Autocomplete,
+  highlightStringItem,
+} from '@contentful/f36-autocomplete';
+
+<Autocomplete
+  items={filteredItems}
+  onInputValueChange={handleInputValueChange}
+  onSelectItem={handleSelectItem}
+  // Use the `renderItem` prop with the `highlightStringItem` util
+  // to render the matched term wrapped in <b> tag
+  renderItem={(item, inputValue) => highlightStringItem(item, inputValue)}
+/>;
+```
 
 ### Using objects as `items`
 
@@ -137,7 +205,7 @@ Both `itemToString` and `renderItem` are necessary when passing objects as items
 If you are using Typescript, you can tell the Autocomplete what is the type of your items to make these functions strongly typed.
 You can do that by writing the component like this `<Autocomplete<ItemType> {...props}/>`
 
-### Filling in a list of items.
+### Filling in a list of items
 
 ```jsx
 function AutocompleteExample() {
@@ -243,7 +311,7 @@ function AutocompleteExample() {
 }
 ```
 
-### Example with fetching async data
+### Fetching async data
 
 ```jsx
 function AutocompleteExample() {
