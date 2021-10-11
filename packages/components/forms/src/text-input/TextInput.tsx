@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { BaseInput } from '../base-input';
 import { Flex } from '@contentful/f36-core';
 import { CopyButton } from '@contentful/f36-copybutton';
@@ -23,17 +23,35 @@ export const _TextInput = (
     withCopyButton,
     onCopy,
     size = 'medium',
+    maxLength,
     ...otherProps
   }: TextInputProps,
   ref: React.RefObject<HTMLInputElement>,
 ) => {
-  const formProps = useFormControl({
+  const {
+    setMaxLength,
+    maxLength: contextMaxLength,
+    setInputValue,
+    inputValue: contextInputValue,
+    ...formProps
+  } = useFormControl({
     id,
     isInvalid,
     isDisabled,
     isRequired,
     isReadOnly,
   });
+
+  useEffect(() => {
+    if (maxLength !== undefined) {
+      setMaxLength(maxLength);
+    }
+  }, [maxLength, setMaxLength]);
+
+  const handleOnChange = (event) => {
+    setInputValue(event.target.value);
+    onChange?.(event);
+  };
 
   const inputRef = useRef<HTMLInputElement>(null);
   const finalRef = ref || inputRef;
@@ -64,13 +82,14 @@ export const _TextInput = (
         {...formProps}
         testId={testId}
         ref={finalRef}
-        onChange={onChange}
+        onChange={maxLength ? handleOnChange : onChange}
         onFocus={onFocus}
         as="input"
         className={inputClass}
         value={value}
         defaultValue={defaultValue}
         size={size}
+        maxLength={maxLength}
       />
     );
   };

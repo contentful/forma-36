@@ -23,5 +23,9 @@ export const useFormControl = (
     isReadOnly: props.isReadOnly ?? context.isReadOnly,
     isRequired: props.isRequired ?? context.isRequired,
     id: props.id ?? context.id,
+    maxLength: context.maxLength,
+    inputValue: context.inputValue,
+    setMaxLength: context.setMaxLength,
+    setInputValue: context.setInputValue,
   };
 };

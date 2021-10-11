@@ -49,6 +49,36 @@ function FormaExample() {
 }
 ```
 
+### Example with counting characters for inpur or textarea
+
+```jsx
+function FormaExample() {
+  const [submited, setSubmited] = React.useState(false);
+  return (
+    <Form onSubmit={() => setSubmited(true)}>
+      <FormControl>
+        <FormControl.Label isRequired>user name</FormControl.Label>
+        <TextInput />
+        <FormControl.HelpText>Please enter your username</FormControl.HelpText>
+      </FormControl>
+      <FormControl {...args}>
+        <FormControl.Label isRequired>password</FormControl.Label>
+        <TextInput maxLength={10} />
+        <Flex justifyContent="space-between">
+          <FormControl.HelpText>
+            Password can only have 10 characters
+          </FormControl.HelpText>
+          <FormControl.Counter />
+        </Flex>
+      </FormControl>
+      <Button variant={'primary'} type="submit" isDisabled={submited}>
+        {submited ? 'Sumbited' : 'Click me to submit'}
+      </Button>
+    </Form>
+  );
+}
+```
+
 ### Example using solution like Formik
 
 ```jsx static=true

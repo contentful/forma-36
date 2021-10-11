@@ -30,10 +30,14 @@ export const Basic = (args: FormControlInternalProps) => {
     <>
       <FormControl {...args}>
         <FormControl.Label isRequired>Name</FormControl.Label>
-        <TextInput />
-        <FormControl.HelpText>
-          Please enter your first name
-        </FormControl.HelpText>
+        <TextInput maxLength={10} />
+        <Flex justifyContent="space-between">
+          <FormControl.HelpText>
+            Please enter your first name
+          </FormControl.HelpText>
+          <FormControl.Counter />
+        </Flex>
+
         {args.isInvalid && (
           <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
         )}
@@ -141,6 +145,41 @@ export const WithCheckboxGroup = (args: FormControlInternalProps) => {
           <Checkbox value="mustard">Mustard</Checkbox>
           <Checkbox value="mayo">Mayo</Checkbox>
         </CheckboxGroup>
+        {args.isInvalid && (
+          <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
+        )}
+      </FormControl>
+    </>
+  );
+};
+
+export const WithCharactersCount = (args: FormControlInternalProps) => {
+  return (
+    <>
+      <FormControl {...args}>
+        <FormControl.Label isRequired>Name</FormControl.Label>
+        <TextInput maxLength={10} />
+        <Flex justifyContent="space-between">
+          <FormControl.HelpText>
+            Please enter your first name
+          </FormControl.HelpText>
+          <FormControl.Counter />
+        </Flex>
+
+        {args.isInvalid && (
+          <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
+        )}
+      </FormControl>
+      <FormControl {...args}>
+        <FormControl.Label isRequired>Name</FormControl.Label>
+        <Textarea maxLength={10} />
+        <Flex justifyContent="space-between">
+          <FormControl.HelpText>
+            Please enter your first name
+          </FormControl.HelpText>
+          <FormControl.Counter />
+        </Flex>
+
         {args.isInvalid && (
           <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
         )}
