@@ -52,7 +52,7 @@
     "@types/react-transition-group": "4.4.3",
     "file-loader": "^6.2.0",
     "markdown-it": "^8.4.2",
-    "mini-css-extract-plugin": "^0.7.0",
+    "mini-css-extract-plugin": "^2.4.2",
     "optimize-css-assets-webpack-plugin": "6.0.1",
     "react": "16.14.0",
     "react-docgen-typescript-loader": "3.1.0",
