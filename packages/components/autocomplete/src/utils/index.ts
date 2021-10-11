@@ -1,1 +1,1 @@
-export { highlightStringItem } from './highlightItem';
+export { getMatch } from './getMatch';

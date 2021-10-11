@@ -7,7 +7,7 @@ import { Paragraph } from '@contentful/f36-typography';
 
 import { Autocomplete } from '../src/Autocomplete';
 import type { AutocompleteProps } from '../src/Autocomplete';
-import { highlightStringItem } from '../src/utils/highlightItem';
+import { getMatch } from '../src/utils';
 
 export default {
   title: 'Components/Autocomplete',
@@ -199,17 +199,17 @@ export const WithFormControl = () => {
 };
 
 export const HighlightingItems = () => {
-  const [selectedFruit, setSelectedFruit] = useState<string>('');
-  const [filteredItems, setFilteredItems] = useState(fruitStrings);
+  const [selectedFruit, setSelectedFruit] = useState<Fruit>();
+  const [filteredItems, setFilteredItems] = useState(fruits);
 
   const handleInputValueChange = (value: string) => {
-    const newFilteredItems = fruitStrings.filter((item) =>
-      item.toLowerCase().includes(value.toLowerCase()),
+    const newFilteredItems = fruits.filter((item) =>
+      item.name.toLowerCase().includes(value.toLowerCase()),
     );
     setFilteredItems(newFilteredItems);
   };
 
-  const handleSelectItem = (item: string) => {
+  const handleSelectItem = (item: Fruit) => {
     setSelectedFruit(item);
   };
 
@@ -221,15 +221,25 @@ export const HighlightingItems = () => {
       alignItems="start"
     >
       {/* It’s not necessary to pass "Fruit" (type of one item)  */}
-      <Autocomplete<string>
+      <Autocomplete<Fruit>
         items={filteredItems}
         onInputValueChange={handleInputValueChange}
         onSelectItem={handleSelectItem}
-        // Using `highlightStringItem` util to render each matched item with <b>
-        renderItem={(item, inputValue) => highlightStringItem(item, inputValue)}
+        itemToString={(item) => item.name}
+        renderItem={(item, inputValue) => {
+          const { before, match, after } = getMatch(item.name, inputValue);
+
+          return (
+            <>
+              {before}
+              <b>{match}</b>
+              {after}
+            </>
+          );
+        }}
       />
 
-      <Paragraph>Selected fruit: {selectedFruit}</Paragraph>
+      <Paragraph>Selected fruit: {selectedFruit?.name}</Paragraph>
     </Stack>
   );
 };

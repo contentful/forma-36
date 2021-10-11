@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { Autocomplete, AutocompleteProps } from '../src/Autocomplete';
-import { highlightStringItem } from '../src/utils';
+import { getMatch } from '../src/utils';
 
 interface Fruit {
   id: number;
@@ -151,35 +151,6 @@ describe('Autocomplete', () => {
         expect(screen.queryAllByTestId('cf-ui-skeleton-form')).toHaveLength(3);
       });
     });
-
-    it('when used with `highlightStringItem`, it will render each item with the matched text wrapped in <b> tag', async () => {
-      renderComponent({
-        renderItem: (item, inputValue) => highlightStringItem(item, inputValue),
-      });
-
-      const input = screen.getByTestId('cf-autocomplete-input');
-      const list = screen.getByTestId('cf-autocomplete-list');
-
-      // Type a text to be matched and open the list of suggestions
-      fireEvent.input(input, {
-        target: {
-          value: 'ana',
-        },
-      });
-
-      // checks if the list is visible and it only shows the filtered options
-      await waitFor(() => {
-        expect(list).toBeVisible();
-      });
-
-      // go to the list first item
-      fireEvent.keyDown(input, {
-        key: 'ArrowDown',
-      });
-
-      // checks if there are two highlighted children
-      expect(screen.queryAllByText(/ana/i)).toHaveLength(2);
-    });
   });
 
   describe('items is an array of objects', () => {
@@ -233,6 +204,48 @@ describe('Autocomplete', () => {
         id: 1,
         name: 'Apple 🍎',
       });
+    });
+
+    it('when used with `getMatch`, it will render each item with the matched text wrapped in <b> tag', async () => {
+      renderComponent({
+        items: fruits,
+        itemToString: (item: Fruit) => item.name,
+        // eslint-disable-next-line react/display-name
+        renderItem: (item, inputValue) => {
+          const { before, match, after } = getMatch(item.name, inputValue);
+
+          return (
+            <>
+              {before}
+              <b>{match}</b>
+              {after}
+            </>
+          );
+        },
+      });
+
+      const input = screen.getByTestId('cf-autocomplete-input');
+      const list = screen.getByTestId('cf-autocomplete-list');
+
+      // Type a text to be matched and open the list of suggestions
+      fireEvent.input(input, {
+        target: {
+          value: 'ana',
+        },
+      });
+
+      // checks if the list is visible and it only shows the filtered options
+      await waitFor(() => {
+        expect(list).toBeVisible();
+      });
+
+      // go to the list first item
+      fireEvent.keyDown(input, {
+        key: 'ArrowDown',
+      });
+
+      // checks if there are two highlighted children
+      expect(screen.queryAllByText(/ana/i)).toHaveLength(2);
     });
   });
 });
