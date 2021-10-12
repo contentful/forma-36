@@ -7,7 +7,7 @@ import { IconButton } from '@contentful/f36-button';
 import { TextInput, TextInputProps } from '@contentful/f36-forms';
 import { CloseIcon, ChevronDownIcon } from '@contentful/f36-icons';
 import { SkeletonContainer, SkeletonBodyText } from '@contentful/f36-skeleton';
-import { Popover } from '@contentful/f36-popover';
+import { Menu } from '@contentful/f36-menu';
 
 import { getAutocompleteStyles } from './Autocomplete.styles';
 
@@ -177,14 +177,12 @@ function _Autocomplete<ItemType>(
       className={cx(styles.autocomplete, className)}
       ref={ref}
     >
-      <Popover
-        // eslint-disable-next-line jsx-a11y/no-autofocus
-        autoFocus={false}
+      <Menu
         usePortal={false}
-        isOpen={isOpen}
+        defaultIsOpen={isOpen}
         isFullWidth={listWidth === 'full'}
       >
-        <Popover.Trigger>
+        <Menu.Trigger>
           <div {...comboboxProps} className={styles.combobox}>
             <TextInput
               {...inputProps}
@@ -196,6 +194,10 @@ function _Autocomplete<ItemType>(
               ref={mergeRefs(inputProps.ref, inputRef)}
               testId="cf-autocomplete-input"
               placeholder={placeholder}
+              onFocus={() => {
+                console.log('focus');
+                toggleMenu();
+              }}
             />
             <IconButton
               {...toggleProps}
@@ -221,48 +223,49 @@ function _Autocomplete<ItemType>(
               size="small"
             />
           </div>
-        </Popover.Trigger>
+        </Menu.Trigger>
 
-        <Popover.Content>
-          <ul
-            {...menuProps}
-            ref={mergeRefs(menuProps.ref, listRef)}
-            className={styles.list}
-            data-test-id="cf-autocomplete-list"
-          >
-            {isLoading &&
-              [...Array(3)].map((_, index) => (
-                <li key={index} className={cx(styles.item, styles.disabled)}>
-                  <ListItemLoadingState />
-                </li>
-              ))}
+        <Menu.List
+          {...menuProps}
+          ref={mergeRefs(menuProps.ref, listRef)}
+          className={styles.list}
+          data-test-id="cf-autocomplete-list"
+        >
+          {isLoading &&
+            [...Array(3)].map((_, index) => (
+              <Menu.Item
+                key={index}
+                className={cx(styles.item, styles.disabled)}
+              >
+                <ListItemLoadingState />
+              </Menu.Item>
+            ))}
 
-            {!isLoading && items.length === 0 && (
-              <li className={cx(styles.item, styles.disabled)}>
-                {noMatchesMessage}
-              </li>
-            )}
+          {!isLoading && items.length === 0 && (
+            <Menu.Item className={cx(styles.item, styles.disabled)}>
+              {noMatchesMessage}
+            </Menu.Item>
+          )}
 
-            {!isLoading &&
-              items.map((item, index) => {
-                const itemProps = getItemProps({ item, index });
-                return (
-                  <li
-                    {...itemProps}
-                    key={index}
-                    className={cx([
-                      styles.item,
-                      highlightedIndex === index && styles.highlighted,
-                    ])}
-                    data-test-id={`cf-autocomplete-list-item-${index}`}
-                  >
-                    {renderItem ? renderItem(item) : item}
-                  </li>
-                );
-              })}
-          </ul>
-        </Popover.Content>
-      </Popover>
+          {!isLoading &&
+            items.map((item, index) => {
+              const itemProps = getItemProps({ item, index });
+              return (
+                <Menu.Item
+                  {...itemProps}
+                  key={index}
+                  className={cx([
+                    styles.item,
+                    highlightedIndex === index && styles.highlighted,
+                  ])}
+                  data-test-id={`cf-autocomplete-list-item-${index}`}
+                >
+                  {renderItem ? renderItem(item) : item}
+                </Menu.Item>
+              );
+            })}
+        </Menu.List>
+      </Menu>
     </div>
   );
 }
