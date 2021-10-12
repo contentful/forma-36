@@ -1,11 +1,19 @@
-export function getMatch(item: string, inputValue: string) {
+/**
+ * Function that can be used to find a subsstring inside another string.
+ * It needs two strings, the second one will be used in a Regex expression
+ * to be matched to the first one.
+ * The function will return an object: containing the match, what comes before the match,
+ * and what comes after the match in the base string
+ *
+ * @param base
+ * @param match
+ * @returns
+ */
+export function getMatch(base: string, match: string) {
   const matchResult = { before: '', match: '', after: '' };
 
-  const regex = new RegExp(
-    `(?<before>.*?)(?<match>${inputValue})(?<after>.*)`,
-    'i',
-  );
-  const matches = item.match(regex);
+  const regex = new RegExp(`(?<before>.*?)(?<match>${match})(?<after>.*)`, 'i');
+  const matches = base.match(regex);
 
   if (matches) {
     matchResult.before = matches.groups.before;
