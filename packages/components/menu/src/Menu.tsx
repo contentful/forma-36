@@ -195,7 +195,7 @@ export function Menu(props: MenuProps) {
             return;
           }
 
-          handleClose();
+          closeAndFocusTrigger();
         },
       }),
       getMenuItemProps: (_props = {}) => ({
@@ -206,7 +206,7 @@ export function Menu(props: MenuProps) {
             (event.target as HTMLElement).getAttribute('aria-haspopup'),
           );
           if (closeOnSelect && !isSubmenuTrigger) {
-            handleClose();
+            closeAndFocusTrigger();
           }
         },
       }),
@@ -226,6 +226,7 @@ export function Menu(props: MenuProps) {
       focusMenuItem,
       closeOnBlur,
       closeOnEsc,
+      closeAndFocusTrigger,
     ],
   );
 
@@ -234,7 +235,7 @@ export function Menu(props: MenuProps) {
       <Popover
         {...otherProps}
         isOpen={isOpen}
-        onClose={closeAndFocusTrigger}
+        onClose={handleClose}
         id={menuId}
         closeOnEsc={closeOnEsc}
         // eslint-disable-next-line jsx-a11y/no-autofocus

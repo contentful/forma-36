@@ -167,11 +167,12 @@ export function Popover(props: PopoverProps) {
   const popoverGeneratedId = useId(null, 'popover-content');
   const popoverId = id || popoverGeneratedId;
 
-  const handleClose = useCallback(() => {
-    if (onClose) {
-      onClose();
-    }
-  }, [onClose]);
+  const closeAndFocusTrigger = useCallback(() => {
+    onClose?.();
+
+    // setTimeout trick to make it work with focus-lock
+    setTimeout(() => triggerElement?.focus({ preventScroll: true }), 0);
+  }, [onClose, triggerElement]);
 
   const contextValue: PopoverContextType = useMemo(
     () => ({
@@ -203,16 +204,16 @@ export function Popover(props: PopoverProps) {
 
           const targetIsPopover =
             popoverElement === relatedTarget ||
-            popoverElement.contains(relatedTarget);
+            popoverElement?.contains(relatedTarget);
           const targetIsTrigger =
             triggerElement === relatedTarget ||
-            triggerElement.contains(relatedTarget);
+            triggerElement?.contains(relatedTarget);
 
           if (targetIsPopover || targetIsTrigger) {
             return;
           }
 
-          handleClose();
+          closeAndFocusTrigger();
         },
         onKeyDown: (event: React.KeyboardEvent<HTMLDivElement>) => {
           if (_props.onKeyDown) {
@@ -220,7 +221,7 @@ export function Popover(props: PopoverProps) {
           }
 
           if (closeOnEsc && event.key === 'Escape') {
-            handleClose();
+            closeAndFocusTrigger();
           }
         },
       }),
@@ -235,7 +236,7 @@ export function Popover(props: PopoverProps) {
       closeOnBlur,
       popoverElement,
       triggerElement,
-      handleClose,
+      closeAndFocusTrigger,
     ],
   );
 
