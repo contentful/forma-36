@@ -1,3 +1,9 @@
+interface MatchObj {
+  before: string;
+  match: string;
+  after: string;
+}
+
 /**
  * Function that can be used to find a subsstring inside another string.
  * It needs two strings, the second one will be used in a Regex expression
@@ -7,9 +13,8 @@
  *
  * @param base
  * @param match
- * @returns
  */
-export function getMatch(base: string, match: string) {
+export function getMatch(base: string, match: string): MatchObj {
   const matchResult = { before: '', match: '', after: '' };
 
   const regex = new RegExp(`(?<before>.*?)(?<match>${match})(?<after>.*)`, 'i');
