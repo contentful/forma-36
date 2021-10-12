@@ -159,9 +159,42 @@ export type {
   PopoverContentProps,
   PopoverTriggerProps,
 } from '@contentful/f36-popover';
-export * from '@contentful/f36-modal';
-export * from '@contentful/f36-notification';
-export * from '@contentful/f36-asset';
+export {
+  Modal,
+  ModalConfirm,
+  ModalContent,
+  ModalControls,
+  ModalHeader,
+  ModalLauncher,
+} from '@contentful/f36-modal';
+export type {
+  ModalProps,
+  ModalConfirmProps,
+  ModalContentProps,
+  ModalControlsProps,
+  ModalHeaderProps,
+} from '@contentful/f36-modal';
+export {
+  Notification,
+  NotificationItem,
+  NotificationItemContainer,
+  NotificationsManager,
+} from '@contentful/f36-notification';
+export type {
+  NotificationsAPI,
+  NotificationItemProps,
+  NotificationVariant,
+  NotificationItemContainerProps,
+  NotificationsManagerProps,
+  NotificationProps,
+} from '@contentful/f36-notification';
+export { Asset, AssetIcon, isAssetType } from '@contentful/f36-asset';
+export type {
+  AssetProps,
+  AssetStatus,
+  AssetIconProps,
+  AssetType,
+} from '@contentful/f36-asset';
 export {
   Menu,
   MenuDivider,
@@ -169,6 +202,8 @@ export {
   MenuTrigger,
   MenuSectionTitle,
   MenuItem,
+  Submenu,
+  SubmenuTrigger,
 } from '@contentful/f36-menu';
 export type {
   MenuProps,
@@ -177,6 +212,8 @@ export type {
   MenuTriggerProps,
   MenuSectionTitleProps,
   MenuItemProps,
+  SubmenuProps,
+  SubmenuTriggerProps,
 } from '@contentful/f36-menu';
 export { Autocomplete } from '@contentful/f36-autocomplete';
 export type { AutocompleteProps } from '@contentful/f36-autocomplete';
