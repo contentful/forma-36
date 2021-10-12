@@ -26,6 +26,7 @@ You can use following components to build a menu:
 
 1. `<Menu>`: The main wrapper that provides nested components with all the context and state.
 1. `<Menu.Trigger>` The wrapper for the menu list trigger. Must be a direct child of `<Menu>`.
+   NOTE: 🚨 Ensure that the component that you pass accepts `ref`. Consider using `forwardRef` for functional components.
 1. `<Menu.List>`: The wrapper for the menu items. Must be a direct child of `<Menu>`.
 1. `<Menu.Item>` The trigger that handles menu selection. Must be a direct child of `<Menu.List>`.
 1. `<Menu.Divider>` A visual separator for menu items.

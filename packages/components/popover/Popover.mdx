@@ -28,6 +28,7 @@ It is a base for other more specific component, like `Menu`, `Autocomplete` and 
 ## Code examples
 
 - Pass trigger component as a child for `Popover.Trigger`.
+  NOTE: 🚨 Ensure that the component that you pass accepts `ref`. Consider using `forwardRef` for functional components.
 - Pass popover content as a child for `Popover.Content`
 
 ```tsx
@@ -55,9 +56,51 @@ function PopoverExample() {
 }
 ```
 
+## Trapping focus within Popover
+
+If the popover contains interactive elements that user can navigate through with `Tab`,
+consider using [react-focus-lock](https://github.com/theKashey/react-focus-lock) to trap the focus within Popover
+
+```tsx static=true
+// import { Popover } from '@contentful/f36-popover';
+
+// import { Button } from '@contentful/f36-button';
+// import { Stack } from '@contentful/f36-core';
+// import { Switch } from '@contentful/f36-forms';
+
+// import FocusLock from 'react-focus-lock';
+
+function PopoverExample() {
+  const [isOpen, setIsOpen] = React.useState(false);
+  return (
+    <Popover isOpen={isOpen} onClose={() => setIsOpen(false)}>
+      <Popover.Trigger>
+        <Button onClick={() => setIsOpen(!isOpen)}>Toggle</Button>
+      </Popover.Trigger>
+      <Popover.Content>
+        {/* Just wrap your content with FocusLock component */}
+        <FocusLock>
+          <Stack
+            padding="spacingM"
+            margin="none"
+            spacing="spacingS"
+            flexDirection="column"
+          >
+            <Switch>Option 1</Switch>
+            <Switch>Option 2</Switch>
+            <Switch>Option 3</Switch>
+          </Stack>
+        </FocusLock>
+      </Popover.Content>
+    </Popover>
+  );
+}
+```
+
 ## Content recommendations
 
 - Use an interactive element such as `button` for `Popover.Trigger`
+- If the popover contains interactive elements that user can navigate through with `Tab`, consider using [react-focus-lock](https://github.com/theKashey/react-focus-lock) to trap the focus within Popover
 
 ## Accessibility
 
