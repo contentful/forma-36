@@ -1,4 +1,4 @@
-import { FormControl, TextInput } from "@contentful/f36-components";
+import { FormControl, TextInput, Flex } from "@contentful/f36-components";
 const {
   id,
   name,
@@ -22,7 +22,7 @@ const {
   isDisabled: false,
   validationMessage: 'Validation message',
   required,
-  textInputProps,
+  textInputProps: {},
 };
 const otherProps = {};
 <FormControl
@@ -70,6 +70,15 @@ const controlledInputValue = 'input controlled value';
   <TextInput name="input" value={controlledInputValue} onChange={() => {}} />
 </FormControl>;
 
+<FormControl id="inputId">
+  <FormControl.Label>Counting characters</FormControl.Label>
+  <TextInput name="email" maxLength={10} />
+  <Flex justifyContent="space-between">
+    <FormControl.HelpText>Some help text</FormControl.HelpText>
+    <FormControl.Counter />
+  </Flex>
+</FormControl>;
+
 const conditionalIsDisabled = true;
 const ref = {};
 <FormControl
@@ -89,6 +98,9 @@ const ref = {};
     maxLength={10}
     testId="text-input-test-id"
     ref={ref} />
-  <FormControl.HelpText>some help text</FormControl.HelpText>
+  <Flex justifyContent="space-between">
+    <FormControl.HelpText>Some help text</FormControl.HelpText>
+    <FormControl.Counter />
+  </Flex>
   <FormControl.ValidationMessage>Some validation message</FormControl.ValidationMessage>
 </FormControl>;

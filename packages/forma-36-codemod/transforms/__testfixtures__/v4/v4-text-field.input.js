@@ -23,7 +23,7 @@ const {
   isDisabled: false,
   validationMessage: 'Validation message',
   required,
-  textInputProps,
+  textInputProps: {},
 };
 const otherProps = {};
 <TextField
@@ -80,6 +80,16 @@ const controlledInputValue = 'input controlled value';
   onChange={() => {}}
 />;
 
+<TextField
+  id="inputId"
+  name="email"
+  labelText="Counting characters"
+  textInputProps={{
+    maxLength: 10,
+  }}
+  helpText="Some help text"
+/>;
+
 const conditionalIsDisabled = true;
 const ref = {};
 <TextField
@@ -87,7 +97,7 @@ const ref = {};
   name="email"
   labelText="Label text"
   value="some value"
-  helpText="some help text"
+  helpText="Some help text"
   className="text-field-class-name"
   testId="text-field-test-id"
   onChange={() => {}}

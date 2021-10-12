@@ -13,6 +13,7 @@ const { isConditionalExpression } = require('../utils/updateTernaryValues');
 function textFieldCodemod(file, api) {
   const j = api.jscodeshift;
   let source = file.source;
+  let componentsToImport = ['FormControl', 'TextInput'];
 
   const componentName = getComponentLocalName(j, source, {
     componentName: 'TextField',
@@ -124,7 +125,42 @@ function textFieldCodemod(file, api) {
           ],
         });
 
-        childrenComponents.push(HelpText);
+        // If the maxLength prop exists, we need to create a Flex component
+        // and add to it the FormControl.Counter and FormControl.HelpText
+        const maxLengthProp = textInputProps
+          .filter(Boolean)
+          .find((prop) => prop.name?.name === 'maxLength');
+
+        if (maxLengthProp) {
+          const Counter = createComponent({
+            j,
+            componentName: 'FormControl.Counter',
+            isSelfClosing: true,
+          });
+
+          const Flex = createComponent({
+            j,
+            componentName: 'Flex',
+            props: [
+              j.jsxAttribute(
+                j.jsxIdentifier('justifyContent'),
+                j.literal('space-between'),
+              ),
+            ],
+            children: [HelpText, Counter].reduce(
+              (acc, child) => [...acc, child, j.jsxText('\n')],
+              [j.jsxText('\n')],
+            ),
+          });
+
+          if (!componentsToImport.includes('Flex')) {
+            componentsToImport.push('Flex');
+          }
+
+          childrenComponents.push(Flex);
+        } else {
+          childrenComponents.push(HelpText);
+        }
       }
 
       if (validationMessage) {
@@ -227,7 +263,9 @@ function textFieldCodemod(file, api) {
     });
     source = addImport(j, source, [
       j.template.statement([
-        'import { FormControl, TextInput } from "@contentful/f36-components"',
+        `import { ${componentsToImport.join(
+          ', ',
+        )} } from "@contentful/f36-components"`,
       ]),
     ]).source;
   }
