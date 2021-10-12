@@ -15,6 +15,8 @@ pre.prism-code {
   padding: var(--spacing-m);
   border-radius: var(--border-radius-medium);
   margin: var(--spacing-m) 0;
+  word-break: break-word;
+  white-space: break-spaces;
 }
 
 code {

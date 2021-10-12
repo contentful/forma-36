@@ -16,16 +16,23 @@ It allows users to quickly search through and select from large collections of o
 ## Table of contents
 
 - [How to use Autocomplete](#how-to-use-autocomplete)
+- [Best practices](#best-practices)
 - [Code examples](#code-examples)
+  - [Highlighting an item with `getMatch`](#highlighting-an-item-with-getmatch)
+  - [Using objects as items](#using-objects-as-items)
+  - [Filling in a list of items](#filling-in-a-list-of-items)
+  - [Error validation with FormControl](#error-validation-with-formcontrol)
+  - [Fetching async data](#fetching-async-data)
 - [Content recommendations](#content-recommendations)
 - [Accessibility](#accessibility)
+- [Props](#props)
 
 ## How to use Autocomplete
 
 The Autocomplete requires 3 props to work:
 
 - `items`: It’s an array containing the items that will be shown as selectable options when the user types something in the `TextInput`.
-- `onFilter`: This function will be used by the `Autocomplete` in the `filter()` method to filter the `items` prop and only show the options that match what the user is typing.
+- `onInputValueChange`: This function will be called every time the user types something in the input.
   The component will pass the `item` which the filter method is currently interating and `inputValue` of the `Textinput`.
 - `onSelectItem`: This function is called when the user selects one of the options of the list. The component will pass the selected item as an argument to the function.
 
@@ -137,7 +144,42 @@ Both `itemToString` and `renderItem` are necessary when passing objects as items
 If you are using Typescript, you can tell the Autocomplete what is the type of your items to make these functions strongly typed.
 You can do that by writing the component like this `<Autocomplete<ItemType> {...props}/>`
 
-### Filling in a list of items.
+## Highlighting an item with `getMatch`
+
+A common use case for Autocomplete components is to highlight in each suggestion what is typed in the input.
+Using the previous example, if a user types "ana" we want to show a list of suggestions where only "ana" is **bold**.
+This is possible by using the `renderItem` prop and the `getMatch` utility function:
+
+```jsx static=true
+// We need to import the function from the `f36-autocomplete` package
+import { Autocomplete, getMatch } from '@contentful/f36-autocomplete';
+
+// Everything stays the same, besides the `renderItem` prop
+<Autocomplete
+  items={filteredItems}
+  onInputValueChange={handleInputValueChange}
+  onSelectItem={handleSelectItem}
+  itemToString={(item) => item.name}
+  // Two arguments are provided to the `renderItem` prop: the item and the inputValue
+  renderItem={(item, inputValue) => {
+    // we pass `item.name` and the inputValue to getMatch and the util will return an object
+    // for our example, for the "Banana" item this will return { before: 'B' , match: 'ana', after: 'na' }
+    const { before, match, after } = getMatch(item.name, inputValue);
+
+    // Finally, we return a ReactNode
+    // this will return `<>B<b>ana</b>na 🍌</>` (the "ana" will be bold)
+    return (
+      <>
+        {before}
+        <b>{match}</b>
+        {after} {item.emoji}
+      </>
+    );
+  }}
+/>;
+```
+
+### Filling in a list of items
 
 ```jsx
 function AutocompleteExample() {
@@ -243,7 +285,7 @@ function AutocompleteExample() {
 }
 ```
 
-### Example with fetching async data
+### Fetching async data
 
 ```jsx
 function AutocompleteExample() {

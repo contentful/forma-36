@@ -7,6 +7,7 @@ import { Paragraph } from '@contentful/f36-typography';
 
 import { Autocomplete } from '../src/Autocomplete';
 import type { AutocompleteProps } from '../src/Autocomplete';
+import { getMatch } from '../src/utils';
 
 export default {
   title: 'Components/Autocomplete',
@@ -194,6 +195,52 @@ export const WithFormControl = () => {
 
       <Paragraph>Selected fruit: {selectedFruit?.name}</Paragraph>
     </>
+  );
+};
+
+export const HighlightingItems = () => {
+  const [selectedFruit, setSelectedFruit] = useState<Fruit>();
+  const [filteredItems, setFilteredItems] = useState(fruits);
+
+  const handleInputValueChange = (value: string) => {
+    const newFilteredItems = fruits.filter((item) =>
+      item.name.toLowerCase().includes(value.toLowerCase()),
+    );
+    setFilteredItems(newFilteredItems);
+  };
+
+  const handleSelectItem = (item: Fruit) => {
+    setSelectedFruit(item);
+  };
+
+  return (
+    <Stack
+      style={{ minWidth: '300px' }}
+      flexDirection="column"
+      spacing="spacingM"
+      alignItems="start"
+    >
+      {/* It’s not necessary to pass "Fruit" (type of one item)  */}
+      <Autocomplete<Fruit>
+        items={filteredItems}
+        onInputValueChange={handleInputValueChange}
+        onSelectItem={handleSelectItem}
+        itemToString={(item) => item.name}
+        renderItem={(item, inputValue) => {
+          const { before, match, after } = getMatch(item.name, inputValue);
+
+          return (
+            <>
+              {before}
+              <b>{match}</b>
+              {after}
+            </>
+          );
+        }}
+      />
+
+      <Paragraph>Selected fruit: {selectedFruit?.name}</Paragraph>
+    </Stack>
   );
 };
 
