@@ -8,6 +8,7 @@ import { TextInput, TextInputProps } from '@contentful/f36-forms';
 import { CloseIcon, ChevronDownIcon } from '@contentful/f36-icons';
 import { SkeletonContainer, SkeletonBodyText } from '@contentful/f36-skeleton';
 import { Menu } from '@contentful/f36-menu';
+import { getMatch } from './utils';
 
 import { getAutocompleteStyles } from './Autocomplete.styles';
 
@@ -33,9 +34,10 @@ export interface AutocompleteProps<ItemType = any>
   onSelectItem: (item: ItemType) => void;
   /**
    * This is the function that will be called for each "item" passed in the `items` prop.
-   * It receives the "item" as an argument and returns a ReactNode.
+   * It receives the "item" and "inputValue" as arguments and returns a ReactNode.
+   * The inputValue is passed in case you want to highlight the match on the render.
    */
-  renderItem?: (item: ItemType) => React.ReactNode;
+  renderItem?: (item: ItemType, inputValue: string) => React.ReactNode;
   /**
    * When using objects as `items`, we recommend passing a function that tells Downshift how to extract a string
    * from those objetcs to be used as inputValue
@@ -260,13 +262,37 @@ function _Autocomplete<ItemType>(
                   ])}
                   data-test-id={`cf-autocomplete-list-item-${index}`}
                 >
-                  {renderItem ? renderItem(item) : item}
+                  {renderItem ? (
+                    renderItem(item, inputValue)
+                  ) : typeof item === 'string' ? (
+                    <HighlightedItem item={item} inputValue={inputValue} />
+                  ) : (
+                    item
+                  )}
                 </Menu.Item>
               );
             })}
         </Menu.List>
       </Menu>
     </div>
+  );
+}
+
+function HighlightedItem({
+  item,
+  inputValue,
+}: {
+  item: string;
+  inputValue: string;
+}) {
+  const { before, match, after } = getMatch(item, inputValue);
+
+  return (
+    <>
+      {before}
+      <b>{match}</b>
+      {after}
+    </>
   );
 }
 
