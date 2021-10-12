@@ -109,6 +109,10 @@ const TRANSFORMS_CHOICES = [
     name: 'v4-entity-list: Converts EntityList components from Forma v3 to v4',
     value: 'v4-entity-list',
   },
+  {
+    name: 'v4-text-field: Converts TextField components from Forma v3 to v4',
+    value: 'v4-text-field',
+  },
   // Add extra codemods - do not remove
 ];
 

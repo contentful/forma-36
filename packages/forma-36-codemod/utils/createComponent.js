@@ -2,11 +2,18 @@ module.exports.createComponent = function createComponent({
   componentName,
   props = [],
   children = [],
+  isSelfClosing = false,
   j,
 }) {
+  const jsxIdentifier = j.jsxIdentifier(componentName);
+
+  if (isSelfClosing) {
+    return j.jsxElement(j.jsxOpeningElement(jsxIdentifier, props, true));
+  }
+
   return j.jsxElement(
-    j.jsxOpeningElement(j.jsxIdentifier(componentName), props),
-    j.jsxClosingElement(j.jsxIdentifier(componentName)),
+    j.jsxOpeningElement(jsxIdentifier, props),
+    j.jsxClosingElement(jsxIdentifier),
     children,
   );
 };
