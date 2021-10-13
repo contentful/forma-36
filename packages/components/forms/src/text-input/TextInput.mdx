@@ -13,7 +13,14 @@ typescript: ./TextInput.tsx
 ## Table of contents
 
 - [How to use TextInput](#how-to-use-TextInput)
-- [Component variations](#component-variations)
+- [Code examples](#code-examples)
+  - [Basic example](#basic-example)
+  - [TextInput with label](#textInput-with-label)
+- [TextInput variations](#textInput-variations)
+  - [TextInput with placeholder](#textInput-with-placeholder)
+  - [TextInput disabled](#textInput-disabled)
+  - [TextInput invalid](#textInput-invalid)
+  - [TextInput with copy button](#TextInput-with-copy-button)
 - [Content recommendations](#content-recommendations)
 - [Accessibility](#accessibility)
 - [Props](#props)
@@ -23,22 +30,93 @@ typescript: ./TextInput.tsx
 The TextInput component can be configured in a number of different ways. Use this guidance to determine the correct variation based on the context.
 
 TextInput is supporting different types of inputs, like `'text' | 'email' | 'file' | 'number' | 'password' | 'search' | 'url'`, where `text` is the default.
-Label property is always required and passed to the `<input />` as `aria-label`.
 
 ## Code examples
 
+### Basic example
+
 ```jsx
-<TextInput type="email" name="email" label="Email address" />
+<TextInput
+  type="email"
+  name="email"
+  label="Email address"
+  aria-label="Email input"
+/>
+```
+
+### TextInput with label
+
+In order to create a correct text input the recommendation is to add a label to any kind of input. In order to do that, we provide you couple of additional components that you can use to compose your inputs with labels, help or validation messages.
+Read more about [`FormControl`](/components/form-control)
+
+```jsx
+<FormControl>
+  <FormControl.Label>Add your email</FormControl.Label>
+  <TextInput
+    type="email"
+    name="email"
+    label="Email address"
+    placeholder="Email"
+  />
+  <FormControl.HelpText>Provide your email</FormControl.HelpText>
+  <FormControl.ValidationMessage>
+    Format of the email is not correct
+  </FormControl.ValidationMessage>
+</FormControl>
 ```
 
 ## TextInput variations
 
-### TextInput with copy button (`withCopyButton`)
+Keep in mind, that if you need to use an input without a label, you need to pass `aria-label` attribute to create an input that would be accessibile to assistive technologies, like screen readers.
+
+### TextInput with placeholder
+
+```jsx
+<TextInput
+  label="Token"
+  name="token"
+  id="input-2"
+  aria-label="token"
+  placeholder="Token"
+/>
+```
+
+### TextInput disabled
+
+```jsx
+<TextInput
+  label="Token"
+  name="token"
+  id="input-2"
+  aria-label="token"
+  isDisabled
+/>
+```
+
+### TextInput invalid
+
+```jsx
+<TextInput
+  label="Token"
+  name="token"
+  id="input-2"
+  aria-label="token"
+  isInvalid
+/>
+```
+
+### TextInput with copy button
 
 We provide a variant of the TextInput that is a composed with CopyButton. In order to use it add `withCopyButton` property to your implementation.
 
 ```jsx
-<TextInput label="Token" name="token" id="input-2" withCopyButton />
+<TextInput
+  label="Token"
+  name="token"
+  id="input-2"
+  withCopyButton
+  aria-label="token"
+/>
 ```
 
 ## Content recommendations
@@ -51,6 +129,7 @@ We provide a variant of the TextInput that is a composed with CopyButton. In ord
 
 - To ensure `TextInput` meets accessibility standards, provide `name` and `id`
 - Keep in mind that to provide that accessibile inputs, you need to use labels.
+- if you decide, that for some reason you would not use the label, please provide `aria-label` attribute to make it accessibile for technologies like screen readers.
 
 ## Props
 

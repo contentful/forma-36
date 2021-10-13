@@ -1,0 +1,39 @@
+---
+title: 'Migrate Forma 36 components from version 3 to version 4'
+---
+
+# How to migrate your Forma 36 v3 to v4
+
+This step-by-step guide gets you upgraded to Forma v4.
+
+We are releasing Forma 36 v4, where we would provide you a lot of fixes that the community was waiting for. A11y improvements, better developer experience, and big preface improvement. From now on Forma 36 will be split into separate packages, so if you need only one button, you can just use this package for your project. 🙌
+
+In order to get all the new goodies from Forma 36 v4, you would need to migrate your project to the new version. So we prepared some tools and guidance for you to do it easily.
+
+This guide takes you through:
+
+Upgrading the Forma 36 from version 3 to version 4
+Dealing with breaking changes
+
+## ☝️ Step 1: Package upgrade
+
+In version 4 we are introducing separated packages for our components.
+The big package of components is now split into smaller chunks that you can use separately.
+We introduced emotion to our components, so no more separate `css` files that you have to add to your project. It will work out of the box for you. [Learn how to install new Forma 36 packages](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#How-to-migrate-your-packages-to-v4)
+
+## ✌️ Step 2: Breaking changes in components
+
+We gathered all the requests and fixes that have been waiting for a while for the next version of the library and we fixed them in v4. Some components received breaking improvements, all of them got migrated to our [new code styleguide](https://github.com/contentful/forma-36/blob/forma-v4/docs/code-style-guide.md), so the API is now more consistent.
+
+We tried to provide you with a codemod for most of the components to allow you to migrate your project fast. For the components where it was impossible to create a codemod we provide you with detailed docs on how to do it.
+
+✅ Badge -> We decided to migrate Tag component to Badge. Have a look at the [detailed docs](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#How-to-migrate-your-Tag-to-Badge) on how to migrate your Tag into Badge in v4
+
+## 🤟 Step 4: Live long and prosper
+
+Hopefully, at this point, you’ve successfully upgraded to Forma v4. If so, congratulations and welcome to the world’s best way to develop your UI!!! 🎉🎉🎉
+
+If you had problems getting through this guide, or made it through the guide but still have problems, please take the following steps:
+
+Reach out to us on [Github](https://github.com/contentful/forma-36/issues) - submit the issue and we will help you out.
+Join us in our public community [Slack channel](https://join.slack.com/t/contentful-community/shared_invite/zt-f2u3vjyq-k2G7wu_ji4~Toywt955Ynw) and ask a question on the #forma36 channel. We are there to help you out!

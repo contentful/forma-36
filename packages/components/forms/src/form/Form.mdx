@@ -12,12 +12,28 @@ storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-form
 ## Table of contents
 
 - [How to use Form](#how-to-use-Form)
+- [Code examples](#code-examples)
+  - [Basic example](#basic-example)
+  - [Using character count](#using-character-count)
+  - [Using solution like Formik](#using-solution-like-formik)
 
 ## How to use Form
 
 - The `Form` component should wrap form elements into `<form />`
 - Provide an `onSubmit` handler for form validation and submission
 - state of the validation of the form should be maniputated from outside
+
+Go ahead and add some fields into your form:
+
+- [Form control](/components/form-control/)
+- [Text input](/components/text-input/)
+- [Textarea](/components/textarea/)
+- [Checkbox](/components/checkbox/)
+- [Radio](/components/radio/)
+- [Select](/components/select/)
+- [Switch](/components/switch/)
+
+## Code examples
 
 ### Basic example
 
@@ -49,7 +65,7 @@ function FormaExample() {
 }
 ```
 
-### Example with counting characters for inpur or textarea
+### Using character count
 
 ```jsx
 function FormaExample() {
@@ -61,7 +77,7 @@ function FormaExample() {
         <TextInput />
         <FormControl.HelpText>Please enter your username</FormControl.HelpText>
       </FormControl>
-      <FormControl {...args}>
+      <FormControl>
         <FormControl.Label isRequired>password</FormControl.Label>
         <TextInput maxLength={10} />
         <Flex justifyContent="space-between">
@@ -79,7 +95,7 @@ function FormaExample() {
 }
 ```
 
-### Example using solution like Formik
+### Using solution like formik
 
 ```jsx static=true
 import { Formik, Field } from 'formik';

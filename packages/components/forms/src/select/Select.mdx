@@ -14,9 +14,19 @@ Keep in mind that Select should not be used without the label.
 ## Table of contents
 
 - [How to use Select](#how-to-use-select)
+  - [Using as a controlled select](#using-as-a-controlled-select)
+  - [Using as an uncontrolled select](#using-as-an-uncontrolled-select)
+  - [Select vs dropdown](#select-vs-dropdown)
 - [Code examples](#code-examples)
+  - [Select with label](#select-state-with-label)
+  - [Select state disabled](#select-state-disabled)
+  - [Select with placeholder](#select-with-placeholder)
+  - [Select with error](#select-with-error)
 - [Content recommendations](#content-recommendations)
 - [Accessibility](#accessibility)
+- [Props](#props)
+  - [Select](#select)
+  - [Select Option](#select-option)
 
 ## How to use Select
 
@@ -33,19 +43,21 @@ To use the Select as controlled, you need to provide the value of one of the opt
 
 ```tsx static=true
 const ExampleControlled = () => {
-  const [selectValue, setSelectValue] = useState("optionOne");
+  const [selectValue, setSelectValue] = useState('optionOne');
   const handleOnChange = (event) => setSelectedValue(event.target.value);
 
   return (
-<Select
-  id="optionSelect-controlled"
-  name="optionSelect-controlled"
-  value={selectValue}
-  onChange={handleOnChange}
->
-  <Select.Option value="optionOne">Option 1</Select.Option>
-  <Select.Option value="optionTwo">Long Option 2</Select.Option>
-</Select>
+    <Select
+      id="optionSelect-controlled"
+      name="optionSelect-controlled"
+      value={selectValue}
+      onChange={handleOnChange}
+    >
+      <Select.Option value="optionOne">Option 1</Select.Option>
+      <Select.Option value="optionTwo">Long Option 2</Select.Option>
+    </Select>
+  );
+};
 ```
 
 ### Using as an uncontrolled select
@@ -80,7 +92,23 @@ To use the Select as uncontrolled, you shouldn't pass the value prop, if you wan
 </Select>
 ```
 
-### Select state (`isDisabled`)
+### Select with label
+
+In order to provide the best experience for your users consider using label that we provide for you in the [FormControl](/components/form-control/)
+
+```tsx
+// import { Select } from '@contentful/f36-components';
+
+<FormControl>
+  <FormControl.Label>Label for select</FormControl.Label>
+  <Select id="optionSelect" name="optionSelect">
+    <Select.Option value="optionOne">Option 1</Select.Option>
+    <Select.Option value="optionTwo">Long Option 2</Select.Option>
+  </Select>
+</FormControl>
+```
+
+### Select state disabled
 
 ```tsx
 // import { Select } from '@contentful/f36-components';
@@ -137,6 +165,6 @@ import { Props } from '@contentful/f36-docs-utils';
 
 <Props of="Select" />
 
-### Select.Option
+### Select Option
 
 <Props of="Option" />

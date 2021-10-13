@@ -25,6 +25,16 @@ module.exports = {
     promoTagText: '',
     menuLinks: [
       {
+        name: 'Migration guide',
+        link: '',
+        menuLinks: [
+          {
+            name: 'How to migrate components from v3 to v4',
+            link: '/guidelines/migration-guide',
+          },
+        ],
+      },
+      {
         name: 'Foundation',
         link: '',
         menuLinks: [
