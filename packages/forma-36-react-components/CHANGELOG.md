@@ -3,6 +3,33 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.98.7](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.98.6...@contentful/forma-36-react-components@3.98.7) (2021-10-11)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+## [3.98.6](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.98.5...@contentful/forma-36-react-components@3.98.6) (2021-10-08)
+
+**Note:** Version bump only for package @contentful/forma-36-react-components
+
+
+
+
+
+## [3.98.5](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.98.4...@contentful/forma-36-react-components@3.98.5) (2021-10-05)
+
+
+### Bug Fixes
+
+* remove button type attribute when href is defined ([#1379](https://github.com/contentful/forma-36/issues/1379)) ([405c44b](https://github.com/contentful/forma-36/commit/405c44bf62cb48672a35ee1f876b8328dbb1e850))
+
+
+
+
+
 ## [3.98.4](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.98.3...@contentful/forma-36-react-components@3.98.4) (2021-09-20)
 
 
