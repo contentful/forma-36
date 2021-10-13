@@ -23,7 +23,14 @@ export type {
   EntryCardProps,
   InlineEntryCardProps,
 } from '@contentful/f36-card';
-export { Flex, Grid, GridItem, Box, Stack } from '@contentful/f36-core';
+export {
+  Flex,
+  Grid,
+  GridItem,
+  Box,
+  Stack,
+  GlobalStyles,
+} from '@contentful/f36-core';
 export type {
   FlexProps,
   GridProps,
