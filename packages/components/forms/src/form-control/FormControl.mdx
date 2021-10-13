@@ -1,0 +1,84 @@
+---
+title: 'FormControl'
+type: 'component'
+status: 'stable'
+slug: /components/form-control/
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/forms/src/form-control'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-form-control--basic'
+---
+
+`Form` is a wrapper component to enhence layout with input label, counter or validation message.
+
+## Table of contents
+
+- [How to use FormControl](#how-to-use-FormControl)
+
+## How to use FormControl
+
+- The `FormControl` component should wrap basic form componets
+- It will provide standart layout components for form elements
+
+### Basic example
+
+```jsx
+function FormaExample() {
+  return (
+    <FormControl isRequired>
+      <FormControl.Label>Name</FormControl.Label>
+      <TextInput />
+      <FormControl.HelpText>Please enter your first name</FormControl.HelpText>
+    </FormControl>
+  );
+}
+```
+
+### Example with invalid input
+
+```jsx
+function FormaExample() {
+  return (
+    <FormControl isInvalid>
+      <FormControl.Label>Name</FormControl.Label>
+      <TextInput />
+      <FormControl.HelpText>Please enter your first name</FormControl.HelpText>
+      <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
+    </FormControl>
+  );
+}
+```
+
+### Example of Select component with FormControl
+
+```jsx
+function FormaExample() {
+  return (
+    <FormControl>
+      <FormControl.Label>Name</FormControl.Label>
+      <Select defaultValue="optionTwo">
+        <Select.Option value="optionOne">Option 1</Select.Option>
+        <Select.Option value="optionTwo">Option 2</Select.Option>
+      </Select>
+      <FormControl.HelpText>Please select an option</FormControl.HelpText>
+    </FormControl>
+  );
+}
+```
+
+### Example with character count
+
+```jsx
+function FormaExample() {
+  return (
+    <FormControl>
+      <FormControl.Label isRequired>Name</FormControl.Label>
+      <TextInput maxLength={8} />
+      <Flex justifyContent="space-between">
+        <FormControl.HelpText>
+          Name should be no longer than 8 characters
+        </FormControl.HelpText>
+        <FormControl.Counter />
+      </Flex>
+    </FormControl>
+  );
+}
+```
