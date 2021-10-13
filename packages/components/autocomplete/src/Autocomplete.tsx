@@ -23,6 +23,12 @@ export interface AutocompleteProps<ItemType = any>
    * It’s an array of data to be used as "options" by the autocomplete component.
    */
   items: ItemType[];
+
+  /**
+   * Tells if the item is a object with groups
+   */
+
+  isGrouped?: boolean;
   /**
    * Function called whenever the input value changes
    */
@@ -113,6 +119,7 @@ function _Autocomplete<ItemType>(
     listWidth = 'auto',
     listMaxHeight = 180,
     isLoading = false,
+    isGrouped = false,
     testId = 'cf-autocomplete',
   } = props;
 
@@ -129,6 +136,12 @@ function _Autocomplete<ItemType>(
     [onInputValueChange],
   );
 
+  const joinGroupItems = (groups) => {
+    return groups.reduce((a, b) => {
+      return a.items.concat(b.items);
+    });
+  };
+
   const {
     getComboboxProps,
     getInputProps,
@@ -139,7 +152,7 @@ function _Autocomplete<ItemType>(
     isOpen,
     toggleMenu,
   } = useCombobox({
-    items,
+    items: isGrouped ? joinGroupItems(items) : items,
     inputValue,
     itemToString,
     onInputValueChange: ({ inputValue }) => {
@@ -173,6 +186,31 @@ function _Autocomplete<ItemType>(
   const toggleProps = getToggleButtonProps();
   const menuProps = getMenuProps();
 
+  const renderAutocompleteItems = (items) => {
+    return items.map((item, index) => {
+      const itemProps = getItemProps({ item, index });
+      return (
+        <Menu.Item
+          {...itemProps}
+          key={index}
+          className={cx([
+            styles.item,
+            highlightedIndex === index && styles.highlighted,
+          ])}
+          data-test-id={`cf-autocomplete-list-item-${index}`}
+        >
+          {renderItem ? (
+            renderItem(item, inputValue)
+          ) : typeof item === 'string' ? (
+            <HighlightedItem item={item} inputValue={inputValue} />
+          ) : (
+            item
+          )}
+        </Menu.Item>
+      );
+    });
+  };
+
   return (
     <div
       data-test-id={testId}
@@ -181,13 +219,18 @@ function _Autocomplete<ItemType>(
     >
       <Menu
         usePortal={false}
-        defaultIsOpen={isOpen}
+        isOpen={isOpen}
         isFullWidth={listWidth === 'full'}
       >
         <Menu.Trigger>
           <div {...comboboxProps} className={styles.combobox}>
             <TextInput
               {...inputProps}
+              onFocus={() => {
+                if (!isOpen) {
+                  toggleMenu();
+                }
+              }}
               id={id}
               isInvalid={isInvalid}
               isDisabled={isDisabled}
@@ -196,10 +239,6 @@ function _Autocomplete<ItemType>(
               ref={mergeRefs(inputProps.ref, inputRef)}
               testId="cf-autocomplete-input"
               placeholder={placeholder}
-              onFocus={() => {
-                console.log('focus');
-                toggleMenu();
-              }}
             />
             <IconButton
               {...toggleProps}
@@ -250,28 +289,19 @@ function _Autocomplete<ItemType>(
           )}
 
           {!isLoading &&
-            items.map((item, index) => {
-              const itemProps = getItemProps({ item, index });
+            isGrouped &&
+            items.map((group, index) => {
               return (
-                <Menu.Item
-                  {...itemProps}
-                  key={index}
-                  className={cx([
-                    styles.item,
-                    highlightedIndex === index && styles.highlighted,
-                  ])}
-                  data-test-id={`cf-autocomplete-list-item-${index}`}
-                >
-                  {renderItem ? (
-                    renderItem(item, inputValue)
-                  ) : typeof item === 'string' ? (
-                    <HighlightedItem item={item} inputValue={inputValue} />
-                  ) : (
-                    item
-                  )}
-                </Menu.Item>
+                <div key={index}>
+                  <Menu.SectionTitle key={index}>
+                    {group.title}
+                  </Menu.SectionTitle>
+                  {renderAutocompleteItems(group.items)}
+                </div>
               );
             })}
+
+          {!isLoading && !isGrouped && renderAutocompleteItems(items)}
         </Menu.List>
       </Menu>
     </div>

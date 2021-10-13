@@ -19,6 +19,11 @@ interface Fruit {
   name: string;
 }
 
+interface GroceryList {
+  title: string;
+  items: Fruit[];
+}
+
 const fruits: Fruit[] = [
   { id: 1, name: 'Apple 🍎' },
   { id: 2, name: 'Ananas 🍍' },
@@ -32,6 +37,21 @@ const fruits: Fruit[] = [
   { id: 10, name: 'Strawberry 🍓' },
   { id: 11, name: 'Tangerine 🍊' },
   { id: 12, name: 'Tomato 🍅' },
+];
+
+const groceryList: GroceryList[] = [
+  {
+    title: 'Fruit',
+    items: fruits,
+  },
+  {
+    title: 'Vegetables',
+    items: [
+      { id: 1, name: 'Cucumber' },
+      { id: 2, name: 'Paprika' },
+      { id: 3, name: 'Brokkolie' },
+    ],
+  },
 ];
 
 const fruitStrings = fruits.reduce((acc, fruit) => [...acc, fruit.name], []);
@@ -64,6 +84,7 @@ export const Basic = (args: AutocompleteProps<string>) => {
         items={filteredItems}
         onInputValueChange={handleInputValueChange}
         onSelectItem={handleSelectItem}
+        listWidth={'full'}
       />
 
       <Paragraph>Selected fruit: {selectedFruit}</Paragraph>
@@ -71,6 +92,54 @@ export const Basic = (args: AutocompleteProps<string>) => {
   );
 };
 Basic.args = {
+  placeholder: 'Search your favorite fruit',
+};
+
+export const UsingGroupedItems = (args: AutocompleteProps<GroceryList>) => {
+  const [selectedItem, setSelectedItem] = useState<Fruit>();
+  const [filteredItems, setFilteredItems] = useState(groceryList);
+
+  const handleInputValueChange = (value: string) => {
+    const newFilteredItems = groceryList.map((group) => {
+      return {
+        ...group,
+        items: group.items.filter((item) =>
+          item.name.toLowerCase().includes(value.toLowerCase()),
+        ),
+      };
+    });
+    setFilteredItems(newFilteredItems);
+  };
+
+  const handleSelectItem = (item: Fruit) => {
+    console.log('handle select', item);
+    setSelectedItem(item);
+  };
+
+  return (
+    <Stack
+      style={{ minWidth: '300px' }}
+      flexDirection="column"
+      spacing="spacingM"
+      alignItems="start"
+    >
+      {/* It’s not necessary to pass "Fruit" (type of one item)  */}
+      <Autocomplete<GroceryList>
+        {...args}
+        items={filteredItems}
+        isGrouped={true}
+        renderItem={(item) => item.name}
+        itemToString={(item) => item.name}
+        onInputValueChange={handleInputValueChange}
+        onSelectItem={handleSelectItem}
+        listWidth="full"
+      />
+
+      <Paragraph>Selected Item: {selectedItem?.name}</Paragraph>
+    </Stack>
+  );
+};
+UsingGroupedItems.args = {
   placeholder: 'Search your favorite fruit',
 };
 
