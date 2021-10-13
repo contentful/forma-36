@@ -2,23 +2,8 @@
 
 ## How to migrate your packages to v4
 
-There are 2 ways of using Forma 36 components in v4.
-We are introducing separate packages for all the components. You will be able to use chosen components separately.
-For example, you need only `Button` component in your project, you can add this package like:
-
-When using NPM
-
-```
-npm install @contentul/f36-button@next-v4
-```
-
-When using YARN
-
-```
-yarn add @contentul/f36-button@next-v4
-```
-
-We still provide an option to install a package that contains all of the components. We separate only icons from the main package. If you need to use our icons, please install them separately. You can do that, by running:
+Install a package that contains all of the components from Forma 36. Tree-shaking will take care of your build, so it will include only comonents that you use.
+We separate only icons from the main package. If you need to use our icons, please install them separately. You can do that, by running:
 
 When using NPM
 
@@ -31,6 +16,21 @@ When using YARN
 
 ```yarn add @contentul/f36-components@next-v4
 yarn add @contentful/f36-icons@next-v4
+```
+
+We provide an option to install separate packages. You will be able to use chosen components separately.
+For example, you need only `Button` component in your project, you can add this package like:
+
+When using NPM
+
+```
+npm install @contentul/f36-button@next-v4
+```
+
+When using YARN
+
+```
+yarn add @contentul/f36-button@next-v4
 ```
 
 ## Components
