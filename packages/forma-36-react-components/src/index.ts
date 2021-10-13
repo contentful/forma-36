@@ -99,6 +99,7 @@ export {
   ValidationMessage,
   Select,
   Form,
+  Counter,
 } from '@contentful/f36-forms';
 export type {
   CheckboxProps,
