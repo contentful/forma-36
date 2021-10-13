@@ -21,64 +21,48 @@ storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-form
 ### Basic example
 
 ```jsx
-function FormaExample() {
-  return (
-    <FormControl isRequired>
-      <FormControl.Label>Name</FormControl.Label>
-      <TextInput />
-      <FormControl.HelpText>Please enter your first name</FormControl.HelpText>
-    </FormControl>
-  );
-}
+<FormControl isRequired>
+  <FormControl.Label>Name</FormControl.Label>
+  <TextInput />
+  <FormControl.HelpText>Please enter your first name</FormControl.HelpText>
+</FormControl>
 ```
 
 ### Example with invalid input
 
 ```jsx
-function FormaExample() {
-  return (
-    <FormControl isInvalid>
-      <FormControl.Label>Name</FormControl.Label>
-      <TextInput />
-      <FormControl.HelpText>Please enter your first name</FormControl.HelpText>
-      <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
-    </FormControl>
-  );
-}
+<FormControl isInvalid>
+  <FormControl.Label>Name</FormControl.Label>
+  <TextInput />
+  <FormControl.HelpText>Please enter your first name</FormControl.HelpText>
+  <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
+</FormControl>
 ```
 
 ### Example of Select component with FormControl
 
 ```jsx
-function FormaExample() {
-  return (
-    <FormControl>
-      <FormControl.Label>Name</FormControl.Label>
-      <Select defaultValue="optionTwo">
-        <Select.Option value="optionOne">Option 1</Select.Option>
-        <Select.Option value="optionTwo">Option 2</Select.Option>
-      </Select>
-      <FormControl.HelpText>Please select an option</FormControl.HelpText>
-    </FormControl>
-  );
-}
+<FormControl>
+  <FormControl.Label>Name</FormControl.Label>
+  <Select defaultValue="optionTwo">
+    <Select.Option value="optionOne">Option 1</Select.Option>
+    <Select.Option value="optionTwo">Option 2</Select.Option>
+  </Select>
+  <FormControl.HelpText>Please select an option</FormControl.HelpText>
+</FormControl>
 ```
 
 ### Example with character count
 
 ```jsx
-function FormaExample() {
-  return (
-    <FormControl>
-      <FormControl.Label isRequired>Name</FormControl.Label>
-      <TextInput maxLength={8} />
-      <Flex justifyContent="space-between">
-        <FormControl.HelpText>
-          Name should be no longer than 8 characters
-        </FormControl.HelpText>
-        <FormControl.Counter />
-      </Flex>
-    </FormControl>
-  );
-}
+<FormControl>
+  <FormControl.Label isRequired>Name</FormControl.Label>
+  <TextInput maxLength={8} />
+  <Flex justifyContent="space-between">
+    <FormControl.HelpText>
+      Name should be no longer than 8 characters
+    </FormControl.HelpText>
+    <FormControl.Counter />
+  </Flex>
+</FormControl>
 ```
