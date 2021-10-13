@@ -40,12 +40,7 @@ export const WithFocusLock: Story<PopoverProps> = (args) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <Popover
-      {...args}
-      isOpen={isOpen}
-      onClose={() => setIsOpen(false)}
-      closeOnBlur={false}
-    >
+    <Popover {...args} isOpen={isOpen} onClose={() => setIsOpen(false)}>
       <Popover.Trigger>
         <Button onClick={() => setIsOpen(!isOpen)}>Toggle</Button>
       </Popover.Trigger>
