@@ -1,4 +1,4 @@
-# @contentful/f36-pill
+# @contentful/f36-modal
 
 This package is part of the pre-release. This means it is unsupported and subject to breaking changes without warning.
 

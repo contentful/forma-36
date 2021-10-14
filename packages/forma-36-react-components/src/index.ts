@@ -30,6 +30,7 @@ export {
   Box,
   Stack,
   GlobalStyles,
+  ScreenReaderOnly,
 } from '@contentful/f36-core';
 export type {
   FlexProps,
@@ -41,6 +42,7 @@ export type {
   PaddingProps,
   StackProps,
   Spacing,
+  ScreenReaderOnlyProps,
 } from '@contentful/f36-core';
 export { DragHandle } from '@contentful/f36-drag-handle';
 export type { DragHandleProps } from '@contentful/f36-drag-handle';

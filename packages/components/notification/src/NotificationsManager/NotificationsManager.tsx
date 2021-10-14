@@ -1,7 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import { cx } from 'emotion';
 
-import { useAsyncState } from '@contentful/f36-core';
+import { useAsyncState } from './useAsyncState';
 import { NotificationCta, NotificationVariant } from '../types';
 import { NotificationItemContainer } from '../NotificationItem';
 import { getStyles } from './NotificationsManager.styles';

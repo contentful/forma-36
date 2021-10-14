@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { generateIcon } from '@contentful/f36-icon';
 
-export const CloudUpload = generateIcon({
+export const CloudUpload = /*#__PURE__*/ generateIcon({
   name: 'CloudUpload',
   path: (
     <Fragment>

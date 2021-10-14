@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { action } from '@storybook/addon-actions';
-import { Radio, RadioGroup, RadioGroupProps } from '../src/radio';
+import { Radio, RadioGroup, RadioGroupProps } from '../src';
 
 export default {
   title: 'Form Elements/Radio/RadioGroup',

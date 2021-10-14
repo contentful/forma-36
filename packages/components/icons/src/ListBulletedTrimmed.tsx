@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { generateIcon } from '@contentful/f36-icon';
 
-export const ListBulletedTrimmed = generateIcon({
+export const ListBulletedTrimmed = /*#__PURE__*/ generateIcon({
   name: 'ListBulletedTrimmed',
   path: (
     <Fragment>

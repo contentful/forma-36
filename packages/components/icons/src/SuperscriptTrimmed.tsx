@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { generateIcon } from '@contentful/f36-icon';
 
-export const SuperscriptTrimmed = generateIcon({
+export const SuperscriptTrimmed = /*#__PURE__*/ generateIcon({
   name: 'SuperscriptTrimmed',
   path: (
     <Fragment>

@@ -8,8 +8,6 @@ storybook: 'https://f36-storybook.contentful.com/?path=/docs/components-workbenc
 typescript: ./src/Workbench.tsx,./src/WorkbenchHeader/WorkbenchHeader.tsx,./src/WorkbenchContent/WorkbenchContent.tsx,./src/WorkbenchSidebar/WorkbenchSidebar.tsx
 ---
 
-import { Props } from '@contentful/f36-docs-utils';
-
 An app shell that structures regions of content and interaction.
 The workbench assembles the outer app shell which defines regions to structure content and interactions.
 This component is not included in `@contentful/f36-components`
@@ -57,18 +55,22 @@ The right sidebar provides secondary interactions depending on the current view 
 - The left sidebar serves as secondary navigation and provides predefined and user-defined filters
 - It should not include any view actions like adding or removing content
 
-## Props of Workbench
+## Props
+
+import { Props } from '@contentful/f36-docs-utils';
+
+### `Workbench`
 
 <Props of="Workbench" />
 
-## Props of Workbench.Header
+### `Workbench.Header`
 
 <Props of="WorkbenchHeader" />
 
-## Props of Workbench.Content
+### `Workbench.Content`
 
 <Props of="WorkbenchContent" />
 
-## Props of Workbench.Sidebar
+### `Workbench.Sidebar`
 
 <Props of="WorkbenchSidebar" />

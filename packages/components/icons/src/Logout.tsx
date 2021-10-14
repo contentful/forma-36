@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { generateIcon } from '@contentful/f36-icon';
 
-export const Logout = generateIcon({
+export const Logout = /*#__PURE__*/ generateIcon({
   name: 'Logout',
   path: (
     <Fragment>

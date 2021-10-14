@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { generateIcon } from '@contentful/f36-icon';
 
-export const CheckCircleTrimmed = generateIcon({
+export const CheckCircleTrimmed = /*#__PURE__*/ generateIcon({
   name: 'CheckCircleTrimmed',
   path: (
     <Fragment>
