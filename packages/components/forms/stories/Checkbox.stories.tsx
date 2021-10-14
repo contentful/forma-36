@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { SectionHeading } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
-import { Checkbox, CheckboxProps } from '../src/checkbox';
+import { Checkbox, CheckboxProps } from '../src';
 
 export default {
   title: 'Form Elements/Checkbox',
