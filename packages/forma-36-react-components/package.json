@@ -14,7 +14,7 @@
   "browserslist": "extends @contentful/browserslist-config",
   "scripts": {
     "build:clean": "rm -rf dist",
-    "build": "yarn build:clean && parcel build src/index.ts && yarn size",
+    "build": "yarn build:clean && parcel build && yarn size",
     "size": "size-limit",
     "semantic-release": "semantic-release"
   },
