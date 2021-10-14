@@ -22,13 +22,13 @@ export interface AutocompleteProps<ItemType = any>
   /**
    * It’s an array of data to be used as "options" by the autocomplete component.
    */
-  items: ItemType[];
+  items: any;
 
   /**
    * Tells if the item is a object with groups
    */
-
   isGrouped?: boolean;
+
   /**
    * Function called whenever the input value changes
    */
@@ -123,6 +123,11 @@ function _Autocomplete<ItemType>(
     testId = 'cf-autocomplete',
   } = props;
 
+  interface GroupType {
+    groupTitle: string;
+    options: ItemType[];
+  }
+
   const styles = getAutocompleteStyles(listMaxHeight);
 
   const [inputValue, setInputValue] = useState('');
@@ -136,10 +141,8 @@ function _Autocomplete<ItemType>(
     [onInputValueChange],
   );
 
-  const joinGroupItems = (groups) => {
-    return groups.reduce((a, b) => {
-      return a.items.concat(b.items);
-    });
+  const joinGroupItems = (groups: GroupType[]): ItemType[] => {
+    return groups.reduce((a, b) => [...a, ...b.options], []);
   };
 
   const {
@@ -185,31 +188,6 @@ function _Autocomplete<ItemType>(
   const comboboxProps = getComboboxProps();
   const toggleProps = getToggleButtonProps();
   const menuProps = getMenuProps();
-
-  const renderAutocompleteItems = (items) => {
-    return items.map((item, index) => {
-      const itemProps = getItemProps({ item, index });
-      return (
-        <Menu.Item
-          {...itemProps}
-          key={index}
-          className={cx([
-            styles.item,
-            highlightedIndex === index && styles.highlighted,
-          ])}
-          data-test-id={`cf-autocomplete-list-item-${index}`}
-        >
-          {renderItem ? (
-            renderItem(item, inputValue)
-          ) : typeof item === 'string' ? (
-            <HighlightedItem item={item} inputValue={inputValue} />
-          ) : (
-            item
-          )}
-        </Menu.Item>
-      );
-    });
-  };
 
   return (
     <div
@@ -290,31 +268,83 @@ function _Autocomplete<ItemType>(
 
           {!isLoading &&
             isGrouped &&
-            items.map((group, index) => {
+            items.map((group: GroupType, index: number) => {
               return (
                 <div key={index}>
                   <Menu.SectionTitle key={index}>
-                    {group.title}
+                    {group.groupTitle}
                   </Menu.SectionTitle>
-                  {renderAutocompleteItems(group.items)}
+                  <AutocompleteItems
+                    items={group.options}
+                    highlightedIndex={highlightedIndex}
+                    getItemProps={getItemProps}
+                    styles={styles}
+                    renderItem={renderItem}
+                    inputValue={inputValue}
+                  />
                 </div>
               );
             })}
 
-          {!isLoading && !isGrouped && renderAutocompleteItems(items)}
+          {!isLoading && !isGrouped && (
+            <AutocompleteItems
+              items={items}
+              highlightedIndex={highlightedIndex}
+              getItemProps={getItemProps}
+              styles={styles}
+              renderItem={renderItem}
+              inputValue={inputValue}
+            />
+          )}
         </Menu.List>
       </Menu>
     </div>
   );
 }
 
-function HighlightedItem({
+const AutocompleteItems = ({
+  items,
+  highlightedIndex,
+  getItemProps,
+  styles,
+  renderItem,
+  inputValue,
+}) => {
+  return (
+    <>
+      {items.map((item, index) => {
+        const itemProps = getItemProps({ item, index });
+        return (
+          <Menu.Item
+            {...itemProps}
+            key={index}
+            className={cx([
+              styles.item,
+              highlightedIndex === index && styles.highlighted,
+            ])}
+            data-test-id={`cf-autocomplete-list-item-${index}`}
+          >
+            {renderItem ? (
+              renderItem(item, inputValue)
+            ) : typeof item === 'string' ? (
+              <HighlightedItem item={item} inputValue={inputValue} />
+            ) : (
+              item
+            )}
+          </Menu.Item>
+        );
+      })}
+    </>
+  );
+};
+
+const HighlightedItem = ({
   item,
   inputValue,
 }: {
   item: string;
   inputValue: string;
-}) {
+}) => {
   const { before, match, after } = getMatch(item, inputValue);
 
   return (
@@ -324,15 +354,15 @@ function HighlightedItem({
       {after}
     </>
   );
-}
+};
 
-function ListItemLoadingState() {
+const ListItemLoadingState = () => {
   return (
     <SkeletonContainer svgHeight={16}>
       <SkeletonBodyText numberOfLines={1} />
     </SkeletonContainer>
   );
-}
+};
 
 /**
  * The Autocomplete is a component that will show a `TextInput` where a user can type any word which will be used
