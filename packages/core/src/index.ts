@@ -25,4 +25,5 @@ export { ScreenReaderOnly } from './ScreenReaderOnly';
 export type { ScreenReaderOnlyProps } from './ScreenReaderOnly';
 
 export { useId } from './hooks';
-export { mergeRefs, getEntityStatusStyles } from './utils';
+export { mergeRefs } from './utils/mergeRefs';
+export { getEntityStatusStyles } from './utils/getEntityStatusStyles';
