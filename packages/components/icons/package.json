@@ -4,7 +4,7 @@
   "description": "Forma 36: Icon components",
   "license": "MIT",
   "scripts": {
-    "build": "node scripts/preBuild.js && parcel build src/index.ts"
+    "build": "node scripts/preBuild.js && parcel build"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",

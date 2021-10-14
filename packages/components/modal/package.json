@@ -3,7 +3,7 @@
   "version": "4.0.0",
   "description": "Forma 36: Modal component",
   "scripts": {
-    "build": "parcel build"
+    "build": "parcel build index.ts"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",

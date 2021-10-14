@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import ReactModal from 'react-modal';
 
 import { Box } from '@contentful/f36-core';
