@@ -6,9 +6,6 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     // allows react jsx in tsx files
     "jsx": "react",
-    // Eventually turn off, one we have no more assumed default exports.
-    // Allow default imports from modules with no default export.
-    "allowSyntheticDefaultImports": true,
     // allows importing of json files, needed for locales as of right now
     "resolveJsonModule": true,
     // Search under node_modules for non-relative imports.
