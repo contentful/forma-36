@@ -79,19 +79,6 @@ for (const pkg of packages) {
     'should have valid browserlist configuration',
   );
 
-  const topIndexExists = fs.existsSync(path.join(pkg, '..', 'index.ts'));
-  if (topIndexExists) {
-    const contents = fs.readFileSync(path.join(pkg, '..', 'index.ts'));
-    softAssert(
-      /export \* from '.\/src';/.test(contents),
-      `contents of ${path.join(
-        pkg,
-        '..',
-        'index.ts',
-      )} are not "export * from './src';"`,
-    );
-  }
-  softAssert(topIndexExists, `${pkg} is missing an index.ts`);
   softAssert(
     fs.existsSync(path.join(pkg, '..', 'src', 'index.ts')),
     `${pkg} is missing a src/index.ts`,
