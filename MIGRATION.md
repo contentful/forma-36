@@ -2,7 +2,7 @@
 
 ## How to migrate your packages to v4
 
-Install a package that contains all of the components from Forma 36. Tree-shaking will take care of your build, so it will include only comonents that you use.
+Install a package that contains all of the components from Forma 36. Tree-shaking will take care of your build, so it will include only components that you use.
 We separate only icons from the main package. If you need to use our icons, please install them separately. You can do that, by running:
 
 When using NPM
