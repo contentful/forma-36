@@ -5,6 +5,7 @@ status: 'stable'
 slug: /components/form-control/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/components/forms/src/form-control'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-form-control--basic'
+typescript: ./FormControl.tsx,../form-label/FormLabel.tsx,../help-text/HelpText.tsx,../validation-message/ValidationMessage.tsx
 ---
 
 `FormControl` is a wrapper component to enhance layout with input label, counter, or validation message.
@@ -15,8 +16,17 @@ storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-form
 
 ## How to use FormControl
 
-- The `FormControl` component should wrap basic form components like `TextInput`, `Textarea` or `Select`. If you need a label and help text with your input, you would need to wrap it in the `FormControl` and use our `FormControl.Label` and `FormControl.HelpText`
-- It will provide standart layout components for form elements
+- FormControl provides context to form elements: `isRequired`, `isDisabled`, `isInvalid`, `isReadOnly`
+- Compound components of FormControl are: `Label`, `HelpText`, `ValidationMessage`, `Counter`. These components provide additional visual context and hints for users.
+- For information on how to use FormControl in Form, check guide for Form.
+
+## Design guidelines
+
+To uphold a consistent look and exporience for your application, it's best to follow the same desight layout guidelines for all inputs, for example:
+
+- `Label` should be first
+- An input component should follow
+- `ValidationMessage` should be appearing directly under the input, to clearly indicate that it is invalid
 
 ### Basic example
 
@@ -34,8 +44,8 @@ storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-form
 <FormControl isInvalid>
   <FormControl.Label>Name</FormControl.Label>
   <TextInput />
-  <FormControl.HelpText>Please enter your first name</FormControl.HelpText>
   <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
+  <FormControl.HelpText>Please enter your first name</FormControl.HelpText>
 </FormControl>
 ```
 
@@ -49,6 +59,42 @@ storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-form
     <Select.Option value="optionTwo">Option 2</Select.Option>
   </Select>
   <FormControl.HelpText>Please select an option</FormControl.HelpText>
+</FormControl>
+```
+
+### Example of RagioGroup component with FormControl
+
+```jsx
+<FormControl>
+  <FormControl.Label>Radio group options</FormControl.Label>
+  <RadioGroup name="radio-options" defaultValue="option 1">
+    <Radio value="option 1" id="option-1" helpText="Help text for option 1">
+      Option 1
+    </Radio>
+    <Radio value="option 2" id="option-2" helpText="Help text for option 2">
+      Option 2
+    </Radio>
+  </RadioGroup>
+  <FormControl.HelpText>Please, select an option</FormControl.HelpText>
+</FormControl>
+```
+
+### Example of CheckboxGroup component with FormControl
+
+```jsx
+<FormControl isRequired>
+  <FormControl.Label>Checkbox group options</FormControl.Label>
+  <CheckboxGroup name="checkbox-options">
+    <Checkbox value="option 1" id="option-1" helpText="Some help text">
+      Option 1
+    </Checkbox>
+    <Checkbox value="option 2" id="option-2" helpText="Another help text">
+      Option 2
+    </Checkbox>
+  </CheckboxGroup>
+  <FormControl.HelpText>
+    Please, select at least one option
+  </FormControl.HelpText>
 </FormControl>
 ```
 
@@ -66,3 +112,23 @@ storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-form
   </Flex>
 </FormControl>
 ```
+
+### Props
+
+import { Props } from '@contentful/f36-docs-utils';
+
+### FormControl
+
+<Props of="FormControl" />
+
+### Label
+
+<Props of="FormLabel" />
+
+### HelpText
+
+<Props of="HelpText" />
+
+### ValidationMessage
+
+<Props of="ValidationMessage" />
