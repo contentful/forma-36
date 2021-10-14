@@ -39,7 +39,7 @@ function ModalExample() {
       <Modal title="Centered modal" isShown={isShown}>
         {() => (
           <React.Fragment>
-            <Modal.Header title="Title" />
+            <Modal.Header title="Title" onClose={() => setShown(false)} />
             <Modal.Content>Hello from controlled modal window</Modal.Content>
             <Modal.Controls>
               <Button buttonType="positive" onClick={() => setShown(false)}>
@@ -89,7 +89,7 @@ function ModalExample() {
       <Modal title="Centered modal" isShown={isShown} position={position}>
         {() => (
           <React.Fragment>
-            <Modal.Header title="Title" />
+            <Modal.Header title="Title" onClose={() => setShown(false)} />
             <Modal.Content>Hello from controlled modal window</Modal.Content>
             <Modal.Controls>
               <Button buttonType="positive" onClick={() => setShown(false)}>
@@ -139,7 +139,7 @@ function ModalExample() {
       <Modal title="Centered modal" isShown={isShown} size={size}>
         {() => (
           <React.Fragment>
-            <Modal.Header title="Title" />
+            <Modal.Header title="Title" onClose={() => setShown(false)} />
             <Modal.Content>Hello from controlled modal window</Modal.Content>
             <Modal.Controls>
               <Button buttonType="positive" onClick={() => setShown(false)}>
