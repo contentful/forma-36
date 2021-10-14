@@ -3,7 +3,7 @@
     // we can explicitly declare `any`, but we don't want to infer `any`
     "noImplicitAny": false,
     // maybe bump to 'esNext'?
-    "target": "es6",
+    "target": "es2018",
     // allows react jsx in tsx files
     "jsx": "react",
     // Eventually turn off, one we have no more assumed default exports.
@@ -21,18 +21,8 @@
     "isolatedModules": true,
     // Import non-ES modules as default imports.
     "esModuleInterop": true,
-    // if 'target' is updated, this should be updated as well
-    "lib": [
-      "es6",
-      "dom",
-      "dom.iterable",
-      "es2016.array.include",
-      "es2017.object",
-      "es2017.intl",
-      "esnext.intl"
-    ],
     "paths": {
-      "@/scripts/*": ["./scripts/*"],
+      "@/scripts/*": ["./scripts/*"]
     },
     "skipLibCheck": false,
     "typeRoots": ["node_modules/@types", "./types"]

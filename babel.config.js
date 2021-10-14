@@ -1,16 +1,4 @@
 module.exports = {
-  presets: [
-    [
-      '@babel/preset-react',
-      {
-        targets: {
-          node: 'current',
-        },
-      },
-    ],
-    '@parcel/babel-preset-env',
-    ['@babel/preset-typescript', { allExtensions: true, isTSX: true }],
-  ],
   plugins: [
     [
       'babel-plugin-emotion',
@@ -22,23 +10,5 @@ module.exports = {
         cssPropOptimization: true,
       },
     ],
-    [
-      '@parcel/babel-plugin-transform-runtime',
-      {
-        version: '^7.6.2',
-      },
-    ],
-    [
-      '@babel/plugin-proposal-decorators',
-      {
-        legacy: true,
-      },
-    ],
-    '@babel/plugin-proposal-class-properties',
-    '@babel/plugin-proposal-export-default-from',
-    '@babel/plugin-proposal-export-namespace-from',
-    '@babel/plugin-syntax-class-properties',
-    'transform-glob-import',
-    'babel-plugin-macros',
   ],
 };
