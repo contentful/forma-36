@@ -35,7 +35,7 @@ yarn add @contentul/f36-button@next-v4
 
 ## Components
 
-### Badge
+### Tag becomes Badge
 
 #### Changes in v4
 
