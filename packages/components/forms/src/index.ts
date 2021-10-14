@@ -9,3 +9,4 @@ export * from './switch';
 export * from './textarea';
 export * from './select';
 export * from './form';
+export * from './counter';
