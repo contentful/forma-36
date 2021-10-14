@@ -14,7 +14,8 @@ npm install @contentful/f36-icons@next-v4
 
 When using YARN
 
-```yarn add @contentul/f36-components@next-v4
+```
+yarn add @contentul/f36-components@next-v4
 yarn add @contentful/f36-icons@next-v4
 ```
 
@@ -33,11 +34,9 @@ When using YARN
 yarn add @contentul/f36-button@next-v4
 ```
 
-## Components
+## Changes per Component in v4
 
 ### Tag becomes Badge
-
-#### Changes in v4
 
 Do you remember `<Tag>` component?
 We noticed that this component is used more as a visual indicator in the interface than a tag. That's why in v4 we decided to migrate it to `<Badge>` component. The property `entityStatusType` was migrated to be a separate component `EntityStatusBadge`.
@@ -60,7 +59,6 @@ To migrate your v3 `Tag` component to v4 `Badge` you can simply run the [codemod
 
 `npx @contentful/f36-codemod <transform> <path> [...options]`
 
-Follow the prompt and chose the `v4-badge` option from the list.
 What codemod will do for you, and what you can do yourself manually if you decide to do so, is:
 
 it transforms:

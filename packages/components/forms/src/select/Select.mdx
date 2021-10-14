@@ -18,7 +18,8 @@ Keep in mind that Select should not be used without the label.
   - [Using as an uncontrolled select](#using-as-an-uncontrolled-select)
   - [Select vs dropdown](#select-vs-dropdown)
 - [Code examples](#code-examples)
-  - [Select with label](#select-state-with-label)
+  - [Select with label](#select-with-label)
+  - [Select with validation](#select-with-validation)
   - [Select state disabled](#select-state-disabled)
   - [Select with placeholder](#select-with-placeholder)
   - [Select with error](#select-with-error)
@@ -105,6 +106,26 @@ In order to provide the best experience for your users consider using label that
     <Select.Option value="optionOne">Option 1</Select.Option>
     <Select.Option value="optionTwo">Long Option 2</Select.Option>
   </Select>
+</FormControl>
+```
+
+### Select with validation
+
+There might be cases where you would need to include the help text or validation message into your form. Read more about those elements in [FormControl documentation](/components/form-control/)
+
+```tsx
+// import { Select } from '@contentful/f36-components';
+
+<FormControl>
+  <FormControl.Label>Label for select</FormControl.Label>
+  <Select id="optionSelect" name="optionSelect">
+    <Select.Option value="optionOne">Option 1</Select.Option>
+    <Select.Option value="optionTwo">Long Option 2</Select.Option>
+  </Select>
+  <FormControl.HelpText>Help text for your select</FormControl.HelpText>
+  <FormControl.ValidationMessage>
+    Validation message
+  </FormControl.ValidationMessage>
 </FormControl>
 ```
 

@@ -15,7 +15,7 @@ storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-form
 - [Code examples](#code-examples)
   - [Basic example](#basic-example)
   - [Using character count](#using-character-count)
-  - [Using solution like Formik](#using-solution-like-formik)
+  - [Intergrations](#intergrations)
 
 ## How to use Form
 
@@ -95,52 +95,6 @@ function FormaExample() {
 }
 ```
 
-### Using solution like formik
+### Intergrations
 
-```jsx static=true
-import { Formik, Field } from 'formik';
-import { Form, FormControl, TextInput } from '@contentful/f36-forms';
-import { Button } from '@contentful/f36-button';
-
-function ExampleUsingFormik() {
-  function validateName(value) {
-    let error;
-    if (!value) {
-      error = 'Name is required';
-    }
-    return error;
-  }
-
-  return (
-    <Formik
-      onSubmit={(values, actions) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          actions.setSubmitting(false);
-        }, 1000);
-      }}
-    >
-      {(props) => (
-        <Form>
-          <Field name="name" validate={validateName}>
-            {({ field, form }) => (
-              <FormControl isInvalid={form.errors.name}>
-                <FormControl.Label>First name</FormControl.Label>
-                <TextInput {...field} id="name" placeholder="name" />
-                {form.errors.name && (
-                  <FormControl.ValidationMessage>
-                    {form.errors.name}
-                  </FormControl.ValidationMessage>
-                )}
-              </FormControl>
-            )}
-          </Field>
-          <Button variant="primary" type="submit">
-            Sumbit
-          </Button>
-        </Form>
-      )}
-    </Formik>
-  );
-}
-```
+It is possible to integrate the form with solutions like [Formik](/integrations/formik/) or [React form hook](/integrations/react-hook-form/)
