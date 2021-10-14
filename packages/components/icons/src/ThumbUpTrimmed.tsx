@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { generateIcon } from '@contentful/f36-icon';
 
-export const ThumbUpTrimmed = generateIcon({
+export const ThumbUpTrimmed = /*#__PURE__*/ generateIcon({
   name: 'ThumbUpTrimmed',
   path: (
     <Fragment>

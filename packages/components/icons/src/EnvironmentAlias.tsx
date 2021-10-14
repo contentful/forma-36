@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { generateIcon } from '@contentful/f36-icon';
 
-export const EnvironmentAlias = generateIcon({
+export const EnvironmentAlias = /*#__PURE__*/ generateIcon({
   name: 'EnvironmentAlias',
   path: (
     <Fragment>

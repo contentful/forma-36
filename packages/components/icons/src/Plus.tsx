@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { generateIcon } from '@contentful/f36-icon';
 
-export const Plus = generateIcon({
+export const Plus = /*#__PURE__*/ generateIcon({
   name: 'Plus',
   path: (
     <Fragment>

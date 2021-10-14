@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { generateIcon } from '@contentful/f36-icon';
 
-export const EmbeddedEntryInline = generateIcon({
+export const EmbeddedEntryInline = /*#__PURE__*/ generateIcon({
   name: 'EmbeddedEntryInline',
   path: (
     <Fragment>

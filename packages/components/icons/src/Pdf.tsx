@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { generateIcon } from '@contentful/f36-icon';
 
-export const Pdf = generateIcon({
+export const Pdf = /*#__PURE__*/ generateIcon({
   name: 'Pdf',
   viewBox: '0 0 24 24',
   path: (
