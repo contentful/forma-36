@@ -57,7 +57,7 @@ you can just do:
 
 To migrate your v3 `Tag` component to v4 `Badge` you can simply run the [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod) that we prepared for this occasion, like:
 
-`npx @contentful/f36-codemod <transform> <path> [...options]`
+`npx @contentful/f36-codemod`
 
 What codemod will do for you, and what you can do yourself manually if you decide to do so, is:
 
