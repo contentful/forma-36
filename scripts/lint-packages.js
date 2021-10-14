@@ -96,10 +96,10 @@ for (const pkg of packages) {
   );
 
   const readme = path.join(path.dirname(pkg), 'README.md');
-  if (fs.existsSync(readme)) {
+  if (!fs.existsSync(readme)) {
     fs.writeFileSync(
       readme,
-      `# ${json.name}\n\nThis package is part of [forma-36](https://github.com/contentful/forma-36). See the repo for more details.\n`,
+      `# ${json.name}\n\nThis package is part of the pre-release. This means it is unsupported and subject to breaking changes without warning.\n\nPlease use official, supported version of the library [forma-36](https://github.com/contentful/forma-36/tree/master/packages/forma-36-react-components), [NPM](https://www.npmjs.com/package/@contentful/forma-36-react-components).\n`,
     );
   }
 }
