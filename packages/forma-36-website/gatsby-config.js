@@ -29,8 +29,8 @@ module.exports = {
         link: '',
         menuLinks: [
           {
-            name: 'How to migrate components from v3 to v4',
-            link: '/guidelines/migration-guide',
+            name: 'Migration from v3 to v4',
+            link: '/migration-v3-to-v4',
           },
         ],
       },
