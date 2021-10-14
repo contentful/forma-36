@@ -2,8 +2,8 @@
   "compilerOptions": {
     // we can explicitly declare `any`, but we don't want to infer `any`
     "noImplicitAny": false,
-    // maybe bump to 'esNext'?
-    "target": "es2018",
+    "target": "es6",
+    "lib": ["dom", "dom.iterable", "esnext"],
     // allows react jsx in tsx files
     "jsx": "react",
     // Eventually turn off, one we have no more assumed default exports.
