@@ -88,6 +88,7 @@ const checkActive = (item, currentPath) => {
 const checkCategory = (name) =>
   name === 'Foundation' ||
   name === 'Guidelines' ||
+  name === 'Migration guide' ||
   name === 'Components' ||
   name === 'Integrations';
 

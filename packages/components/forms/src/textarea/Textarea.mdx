@@ -14,6 +14,7 @@ typescript: './TextArea.tsx'
 
 - [How to use Textarea](#how-to-use-textarea)
 - [Examples](#examples)
+  - [with label](#with-label)
   - [isRequired](#isrequired)
   - [isDisabled](#isdisabled)
   - [isInvalid](#isinvalid)
@@ -29,6 +30,21 @@ This component is renders a form element, therefore it should be used within the
 
 ```tsx
 <Textarea id="textarea" name="description" label="description" />
+```
+
+## With label
+
+In order to create a correct textarea input the recommendation is to add a label to any kind of input. In order to do that, we provide you couple of additional components that you can use to compose your inputs with labels, help or validation messages.
+Read more about [`FormControl`](/components/form-control)
+
+```jsx
+<FormControl>
+  <FormControl.Label>Tell me more about yourself</FormControl.Label>
+  <Textarea id="textarea" name="description" label="description" isRequired />
+  <FormControl.HelpText>
+    Some additional information if needed
+  </FormControl.HelpText>
+</FormControl>
 ```
 
 ### isRequired
