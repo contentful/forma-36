@@ -42,7 +42,7 @@ export function AutocompleteItems<ItemType>(
               styles.item,
               highlightedIndex === itemIndex && styles.highlighted,
             ])}
-            data-test-id={`cf-autocomplete-list-item-${index}`}
+            testId={`cf-autocomplete-list-item-${itemIndex}`}
           >
             {renderItem ? (
               renderItem(item, inputValue)

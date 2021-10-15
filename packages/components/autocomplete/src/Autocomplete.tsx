@@ -168,11 +168,9 @@ function _Autocomplete<ItemType>(
           if (selectedItem) {
             onSelectItem(selectedItem);
           }
-
           if (clearAfterSelect) {
             handleInputValueChange('');
           }
-
           break;
         default:
           break;
