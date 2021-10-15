@@ -98,53 +98,6 @@ Basic.args = {
   placeholder: 'Search your favorite fruit',
 };
 
-export const UsingGroupedItems = (args: AutocompleteProps<GroceryList>) => {
-  const [selectedItem, setSelectedItem] = useState<Produce>();
-  const [filteredItems, setFilteredItems] = useState(groceryList);
-
-  const handleInputValueChange = (value: string) => {
-    const newFilteredItems = groceryList.map((group) => {
-      return {
-        ...group,
-        items: group.options.filter((item) =>
-          item.name.toLowerCase().includes(value.toLowerCase()),
-        ),
-      };
-    });
-    setFilteredItems(newFilteredItems);
-  };
-
-  const handleSelectItem = (item: Produce) => {
-    setSelectedItem(item);
-  };
-
-  return (
-    <Stack
-      style={{ minWidth: '300px' }}
-      flexDirection="column"
-      spacing="spacingM"
-      alignItems="start"
-    >
-      {/* It’s not necessary to pass "Fruit" (type of one item)  */}
-      <Autocomplete<Produce>
-        {...args}
-        items={filteredItems}
-        isGrouped={true}
-        renderItem={(item) => item.name}
-        itemToString={(item) => item.name}
-        onInputValueChange={handleInputValueChange}
-        onSelectItem={handleSelectItem}
-        listWidth="full"
-      />
-
-      <Paragraph>Selected Item: {selectedItem?.name}</Paragraph>
-    </Stack>
-  );
-};
-UsingGroupedItems.args = {
-  placeholder: 'Search your favorite fruit',
-};
-
 export const UsingObjectsAsItems = (args: AutocompleteProps<Produce>) => {
   const [selectedFruit, setSelectedFruit] = useState<Produce>();
   const [filteredItems, setFilteredItems] = useState(fruits);
@@ -156,7 +109,7 @@ export const UsingObjectsAsItems = (args: AutocompleteProps<Produce>) => {
     setFilteredItems(newFilteredItems);
   };
 
-  const handleSelectItem = (item) => {
+  const handleSelectItem = (item: Produce) => {
     setSelectedFruit(item);
   };
 
@@ -185,7 +138,57 @@ UsingObjectsAsItems.args = {
   placeholder: 'Search your favorite fruit',
 };
 
-export const MultipleSelection = (args: AutocompleteProps<>) => {
+export const UsingGroupedItems = (args: AutocompleteProps<GroceryList>) => {
+  const [selectedItem, setSelectedItem] = useState<Produce>();
+  const [filteredItems, setFilteredItems] = useState(groceryList);
+
+  const handleInputValueChange = (value: string) => {
+    const newFilteredItems = groceryList.map((group) => {
+      return {
+        ...group,
+        options: group.options.filter((item: Produce) =>
+          item.name.toLowerCase().includes(value.toLowerCase()),
+        ),
+      };
+    });
+    setFilteredItems(newFilteredItems);
+  };
+
+  const handleSelectItem = (item: Produce) => {
+    setSelectedItem(item);
+  };
+
+  return (
+    <Stack
+      style={{ minWidth: '300px' }}
+      flexDirection="column"
+      spacing="spacingM"
+      alignItems="start"
+    >
+      {/* It’s not necessary to pass "Fruit" (type of one item)  */}
+      <Autocomplete<Produce>
+        {...args}
+        items={filteredItems}
+        isGrouped={true}
+        renderItem={(item) => item.name}
+        itemToString={(item) => {
+          console.log(item);
+          return item.name;
+        }}
+        onInputValueChange={handleInputValueChange}
+        onSelectItem={handleSelectItem}
+        listWidth="full"
+      />
+
+      <Paragraph>Selected Item: {selectedItem?.name}</Paragraph>
+    </Stack>
+  );
+};
+UsingGroupedItems.args = {
+  placeholder: 'Search your favorite fruit',
+};
+
+export const MultipleSelection = (args: AutocompleteProps<Produce>) => {
   const [selectedFruits, setSelectedFruits] = useState<['name'][]>([]);
   const [filteredItems, setFilteredItems] = useState(fruits);
 

@@ -8,8 +8,8 @@ import { TextInput, TextInputProps } from '@contentful/f36-forms';
 import { CloseIcon, ChevronDownIcon } from '@contentful/f36-icons';
 import { SkeletonContainer, SkeletonBodyText } from '@contentful/f36-skeleton';
 import { Menu } from '@contentful/f36-menu';
-import { getMatch } from './utils';
 
+import { AutocompleteItems } from './AutocompleteItems';
 import { getAutocompleteStyles } from './Autocomplete.styles';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -188,6 +188,7 @@ function _Autocomplete<ItemType>(
   const comboboxProps = getComboboxProps();
   const toggleProps = getToggleButtonProps();
   const menuProps = getMenuProps();
+  let elementStartIndex = 0;
 
   return (
     <div
@@ -269,7 +270,7 @@ function _Autocomplete<ItemType>(
           {!isLoading &&
             isGrouped &&
             items.map((group: GroupType, index: number) => {
-              return (
+              const render = (
                 <div key={index}>
                   <Menu.SectionTitle key={index}>
                     {group.groupTitle}
@@ -278,20 +279,22 @@ function _Autocomplete<ItemType>(
                     items={group.options}
                     highlightedIndex={highlightedIndex}
                     getItemProps={getItemProps}
-                    styles={styles}
                     renderItem={renderItem}
                     inputValue={inputValue}
+                    elementStartIndex={elementStartIndex}
                   />
                 </div>
               );
+              elementStartIndex += group.options.length;
+              return render;
             })}
 
           {!isLoading && !isGrouped && (
             <AutocompleteItems
               items={items}
+              elementStartIndex={elementStartIndex}
               highlightedIndex={highlightedIndex}
               getItemProps={getItemProps}
-              styles={styles}
               renderItem={renderItem}
               inputValue={inputValue}
             />
@@ -301,60 +304,6 @@ function _Autocomplete<ItemType>(
     </div>
   );
 }
-
-const AutocompleteItems = ({
-  items,
-  highlightedIndex,
-  getItemProps,
-  styles,
-  renderItem,
-  inputValue,
-}) => {
-  return (
-    <>
-      {items.map((item, index) => {
-        const itemProps = getItemProps({ item, index });
-        return (
-          <Menu.Item
-            {...itemProps}
-            key={index}
-            className={cx([
-              styles.item,
-              highlightedIndex === index && styles.highlighted,
-            ])}
-            data-test-id={`cf-autocomplete-list-item-${index}`}
-          >
-            {renderItem ? (
-              renderItem(item, inputValue)
-            ) : typeof item === 'string' ? (
-              <HighlightedItem item={item} inputValue={inputValue} />
-            ) : (
-              item
-            )}
-          </Menu.Item>
-        );
-      })}
-    </>
-  );
-};
-
-const HighlightedItem = ({
-  item,
-  inputValue,
-}: {
-  item: string;
-  inputValue: string;
-}) => {
-  const { before, match, after } = getMatch(item, inputValue);
-
-  return (
-    <>
-      {before}
-      <b>{match}</b>
-      {after}
-    </>
-  );
-};
 
 const ListItemLoadingState = () => {
   return (
