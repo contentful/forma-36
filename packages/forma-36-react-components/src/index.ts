@@ -225,7 +225,7 @@ export type {
   SubmenuProps,
   SubmenuTriggerProps,
 } from '@contentful/f36-menu';
-export { Autocomplete } from '@contentful/f36-autocomplete';
+export { Autocomplete, getMatch } from '@contentful/f36-autocomplete';
 export type { AutocompleteProps } from '@contentful/f36-autocomplete';
 export { DateTime, RelativeDateTime } from '@contentful/f36-datetime';
 export type {
