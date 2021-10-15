@@ -8,7 +8,7 @@ export interface StackInternalProps
   extends CommonProps,
     MarginProps,
     PaddingProps,
-    Pick<FlexInternalProps, 'isInline' | 'alignItems'> {
+    Pick<FlexInternalProps, 'isInline' | 'alignItems' | 'fullWidth'> {
   /**
    * Defines how flexbox items are ordered within a flexbox container. */
   flexDirection?: 'row' | 'column';
