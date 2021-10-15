@@ -8,11 +8,24 @@ storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-form
 typescript: ./FormControl.tsx,../form-label/FormLabel.tsx,../help-text/HelpText.tsx,../validation-message/ValidationMessage.tsx
 ---
 
-`FormControl` is a wrapper component to enhance layout with input label, counter, or validation message.
+`FormControl` is a wrapper component to enhance layout with input label, help text, counter or validation message.
 
 ## Table of contents
 
-- [How to use FormControl](#how-to-use-FormControl)
+- [How to use FormControl](#how-to-use-formcontrol)
+- [Design guidelines](#design-guidelines)
+- [Usage examples](#usage-examples)
+  - [Basic example](#basic-example)
+  - [Invalid input](#example-with-invalid-input)
+  - [Select component with FormControl](#example-of-select-component-with-formcontrol)
+  - [RagioGroup component with FormControl](#example-of-ragiogroup-component-with-formcontrol)
+  - [CheckboxGroup component with FormControl](#example-of-checkboxgroup-component-with-formcontrol)
+  - [Example with character count](#example-with-character-count)
+- [Props](#Props)
+  - [FormControl](#formcontrol)
+  - [Label](#label)
+  - [HelpText](#helptext)
+  - [ValidationMessage](#validationmessage)
 
 ## How to use FormControl
 
@@ -24,10 +37,13 @@ typescript: ./FormControl.tsx,../form-label/FormLabel.tsx,../help-text/HelpText.
 
 To uphold a consistent look and experience for your application, we recommend following the same design layout guidelines for all inputs:
 
-- `Label` is a required element that all your inputs should have to pass the a11y requirements. It should be placed on top of the input, so it would be first in your HTML structure. 
+- `Label` is a required element that all your inputs should have to pass the a11y requirements. It should be placed on top of the input, so it would be first in your HTML structure.
 - An input component should follow the label
 - `HelpText` should appear under the input, when you need to display some additional information to the user
 - `ValidationMessage` should be appearing directly under the input or under `HelpText` if displayed, to clearly indicate that it is invalid
+- `TextInput` and `Textarea` components can have an option of counting characters. In that case, we recommend aligning HelpText and Counter by using the Flex component and placed them right below the input. Have a look on the example over [here](#example-with-character-count)
+
+## Usage examples
 
 ### Basic example
 
