@@ -262,6 +262,10 @@ module.exports = {
                 link: '/components/form/',
               },
               {
+                name: 'FormControl',
+                link: '/components/form-control/',
+              },
+              {
                 name: 'Radio',
                 link: '/components/radio/',
               },

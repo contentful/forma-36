@@ -1,0 +1,151 @@
+---
+title: 'FormControl'
+type: 'component'
+status: 'stable'
+slug: /components/form-control/
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/forms/src/form-control'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-form-control--basic'
+typescript: ./FormControl.tsx,../form-label/FormLabel.tsx,../help-text/HelpText.tsx,../validation-message/ValidationMessage.tsx
+---
+
+`FormControl` is a wrapper component to enhance layout with input label, help text, counter or validation message.
+
+## Table of contents
+
+- [How to use FormControl](#how-to-use-formcontrol)
+- [Design guidelines](#design-guidelines)
+- [Usage examples](#usage-examples)
+  - [Basic example](#basic-example)
+  - [Invalid input](#example-with-invalid-input)
+  - [Select component with FormControl](#example-of-select-component-with-formcontrol)
+  - [RagioGroup component with FormControl](#example-of-ragiogroup-component-with-formcontrol)
+  - [CheckboxGroup component with FormControl](#example-of-checkboxgroup-component-with-formcontrol)
+  - [Example with character count](#example-with-character-count)
+- [Props](#Props)
+  - [FormControl](#formcontrol)
+  - [Label](#label)
+  - [HelpText](#helptext)
+  - [ValidationMessage](#validationmessage)
+
+## How to use FormControl
+
+- FormControl provides context to form elements: `isRequired`, `isDisabled`, `isInvalid`, `isReadOnly`
+- Compound components of FormControl are: `Label`, `HelpText`, `ValidationMessage`, `Counter`. These components provide additional visual context and hints for users.
+- For more information on how to use FormControl in Form, check the guide for [Form](/components/form).
+
+## Design guidelines
+
+To uphold a consistent look and experience for your application, we recommend following the same design layout guidelines for all inputs:
+
+- `Label` is a required element that all your inputs should have to pass the a11y requirements. It should be placed on top of the input, so it would be first in your HTML structure.
+- An input component should follow the label
+- `HelpText` should appear under the input, when you need to display some additional information to the user
+- `ValidationMessage` should be appearing directly under the input or under `HelpText` if displayed, to clearly indicate that it is invalid
+- `TextInput` and `Textarea` components can have an option of counting characters. In that case, we recommend aligning HelpText and Counter by using the Flex component and placed them right below the input. Have a look on the example over [here](#example-with-character-count)
+
+## Usage examples
+
+### Basic example
+
+```jsx
+<FormControl isRequired>
+  <FormControl.Label>Name</FormControl.Label>
+  <TextInput />
+  <FormControl.HelpText>Please enter your first name</FormControl.HelpText>
+</FormControl>
+```
+
+### Example with invalid input
+
+```jsx
+<FormControl isInvalid>
+  <FormControl.Label>Name</FormControl.Label>
+  <TextInput />
+  <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
+  <FormControl.HelpText>Please enter your first name</FormControl.HelpText>
+</FormControl>
+```
+
+### Example of Select component with FormControl
+
+```jsx
+<FormControl>
+  <FormControl.Label>Name</FormControl.Label>
+  <Select defaultValue="optionTwo">
+    <Select.Option value="optionOne">Option 1</Select.Option>
+    <Select.Option value="optionTwo">Option 2</Select.Option>
+  </Select>
+  <FormControl.HelpText>Please select an option</FormControl.HelpText>
+</FormControl>
+```
+
+### Example of RagioGroup component with FormControl
+
+```jsx
+<FormControl>
+  <FormControl.Label>Radio group options</FormControl.Label>
+  <RadioGroup name="radio-options" defaultValue="option 1">
+    <Radio value="option 1" id="option-1" helpText="Help text for option 1">
+      Option 1
+    </Radio>
+    <Radio value="option 2" id="option-2" helpText="Help text for option 2">
+      Option 2
+    </Radio>
+  </RadioGroup>
+  <FormControl.HelpText>Please, select an option</FormControl.HelpText>
+</FormControl>
+```
+
+### Example of CheckboxGroup component with FormControl
+
+```jsx
+<FormControl isRequired>
+  <FormControl.Label>Checkbox group options</FormControl.Label>
+  <CheckboxGroup name="checkbox-options">
+    <Checkbox value="option 1" id="option-1" helpText="Some help text">
+      Option 1
+    </Checkbox>
+    <Checkbox value="option 2" id="option-2" helpText="Another help text">
+      Option 2
+    </Checkbox>
+  </CheckboxGroup>
+  <FormControl.HelpText>
+    Please, select at least one option
+  </FormControl.HelpText>
+</FormControl>
+```
+
+### Example with character count
+
+```jsx
+<FormControl>
+  <FormControl.Label isRequired>Name</FormControl.Label>
+  <TextInput maxLength={8} />
+  <Flex justifyContent="space-between">
+    <FormControl.HelpText>
+      Name should be no longer than 8 characters
+    </FormControl.HelpText>
+    <FormControl.Counter />
+  </Flex>
+</FormControl>
+```
+
+### Props
+
+import { Props } from '@contentful/f36-docs-utils';
+
+### FormControl
+
+<Props of="FormControl" />
+
+### Label
+
+<Props of="FormLabel" />
+
+### HelpText
+
+<Props of="HelpText" />
+
+### ValidationMessage
+
+<Props of="ValidationMessage" />
