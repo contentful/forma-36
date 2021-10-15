@@ -111,8 +111,24 @@ function textFieldCodemod(file, api) {
 
       const childrenComponents = [Label, TextInput];
 
+      // If the maxLength prop exists, we need to create a Flex component
+      // and add to it the FormControl.Counter and FormControl.HelpText
+      let Counter;
+      let HelpText;
+      const maxLengthProp = textInputProps
+        .filter(Boolean)
+        .find((prop) => prop.name?.name === 'maxLength');
+
+      if (maxLengthProp) {
+        Counter = createComponent({
+          j,
+          componentName: 'FormControl.Counter',
+          isSelfClosing: true,
+        });
+      }
+
       if (helpText) {
-        const HelpText = createComponent({
+        HelpText = createComponent({
           j,
           componentName: 'FormControl.HelpText',
           children: [
@@ -124,43 +140,34 @@ function textFieldCodemod(file, api) {
                 ),
           ],
         });
+      }
 
-        // If the maxLength prop exists, we need to create a Flex component
-        // and add to it the FormControl.Counter and FormControl.HelpText
-        const maxLengthProp = textInputProps
-          .filter(Boolean)
-          .find((prop) => prop.name?.name === 'maxLength');
+      if (Counter) {
+        const flexJustifyContent = HelpText ? 'space-between' : 'flex-end';
+        const flexChildren = [HelpText, Counter].filter(Boolean);
 
-        if (maxLengthProp) {
-          const Counter = createComponent({
-            j,
-            componentName: 'FormControl.Counter',
-            isSelfClosing: true,
-          });
-
-          const Flex = createComponent({
-            j,
-            componentName: 'Flex',
-            props: [
-              j.jsxAttribute(
-                j.jsxIdentifier('justifyContent'),
-                j.literal('space-between'),
-              ),
-            ],
-            children: [HelpText, Counter].reduce(
-              (acc, child) => [...acc, child, j.jsxText('\n')],
-              [j.jsxText('\n')],
+        const Flex = createComponent({
+          j,
+          componentName: 'Flex',
+          props: [
+            j.jsxAttribute(
+              j.jsxIdentifier('justifyContent'),
+              j.literal(flexJustifyContent),
             ),
-          });
+          ],
+          children: flexChildren.reduce(
+            (acc, child) => [...acc, child, j.jsxText('\n')],
+            [j.jsxText('\n')],
+          ),
+        });
 
-          if (!componentsToImport.includes('Flex')) {
-            componentsToImport.push('Flex');
-          }
-
-          childrenComponents.push(Flex);
-        } else {
-          childrenComponents.push(HelpText);
+        if (!componentsToImport.includes('Flex')) {
+          componentsToImport.push('Flex');
         }
+
+        childrenComponents.push(Flex);
+      } else if (HelpText && !Counter) {
+        childrenComponents.push(HelpText);
       }
 
       if (validationMessage) {

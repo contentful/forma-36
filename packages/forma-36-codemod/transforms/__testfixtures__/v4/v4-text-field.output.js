@@ -71,10 +71,18 @@ const controlledInputValue = 'input controlled value';
 </FormControl>;
 
 <FormControl id="inputId">
-  <FormControl.Label>Counting characters</FormControl.Label>
+  <FormControl.Label>Counting characters and HelpText</FormControl.Label>
   <TextInput name="email" maxLength={10} />
   <Flex justifyContent="space-between">
     <FormControl.HelpText>Some help text</FormControl.HelpText>
+    <FormControl.Counter />
+  </Flex>
+</FormControl>;
+
+<FormControl id="inputId">
+  <FormControl.Label>Counting characters</FormControl.Label>
+  <TextInput name="email" maxLength={10} />
+  <Flex justifyContent="flex-end">
     <FormControl.Counter />
   </Flex>
 </FormControl>;

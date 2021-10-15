@@ -83,11 +83,20 @@ const controlledInputValue = 'input controlled value';
 <TextField
   id="inputId"
   name="email"
-  labelText="Counting characters"
+  labelText="Counting characters and HelpText"
   textInputProps={{
     maxLength: 10,
   }}
   helpText="Some help text"
+/>;
+
+<TextField
+  id="inputId"
+  name="email"
+  labelText="Counting characters"
+  textInputProps={{
+    maxLength: 10,
+  }}
 />;
 
 const conditionalIsDisabled = true;
