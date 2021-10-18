@@ -43,13 +43,15 @@ const _Textarea = (
   });
 
   useEffect(() => {
-    if (maxLength !== undefined) {
+    if (maxLength !== undefined && typeof setMaxLength === 'function') {
       setMaxLength(maxLength);
     }
   }, [maxLength, setMaxLength]);
 
   const handleOnChange = (event) => {
-    setInputValue(event.target.value);
+    if (typeof setInputValue === 'function') {
+      setInputValue(event.target.value);
+    }
     onChange?.(event);
   };
 
