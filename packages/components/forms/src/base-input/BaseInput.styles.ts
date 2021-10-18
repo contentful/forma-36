@@ -60,7 +60,6 @@ const getStyles = ({ as, isDisabled, isInvalid, size }) => ({
     },
 
     '&:focus': {
-      zIndex: tokens.zIndexDefault,
       borderColor: isInvalid
         ? tokens.red600
         : isDisabled

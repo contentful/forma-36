@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { generateIcon } from '@contentful/f36-icon';
 
-export const HeadingTwoTrimmed = generateIcon({
+export const HeadingTwoTrimmed = /*#__PURE__*/ generateIcon({
   name: 'HeadingTwoTrimmed',
   path: (
     <Fragment>

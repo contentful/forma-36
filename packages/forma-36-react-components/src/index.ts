@@ -23,7 +23,15 @@ export type {
   EntryCardProps,
   InlineEntryCardProps,
 } from '@contentful/f36-card';
-export { Flex, Grid, GridItem, Box, Stack } from '@contentful/f36-core';
+export {
+  Flex,
+  Grid,
+  GridItem,
+  Box,
+  Stack,
+  GlobalStyles,
+  ScreenReaderOnly,
+} from '@contentful/f36-core';
 export type {
   FlexProps,
   GridProps,
@@ -34,6 +42,7 @@ export type {
   PaddingProps,
   StackProps,
   Spacing,
+  ScreenReaderOnlyProps,
 } from '@contentful/f36-core';
 export { DragHandle } from '@contentful/f36-drag-handle';
 export type { DragHandleProps } from '@contentful/f36-drag-handle';
@@ -92,6 +101,7 @@ export {
   ValidationMessage,
   Select,
   Form,
+  Counter,
 } from '@contentful/f36-forms';
 export type {
   CheckboxProps,
@@ -159,9 +169,42 @@ export type {
   PopoverContentProps,
   PopoverTriggerProps,
 } from '@contentful/f36-popover';
-export * from '@contentful/f36-modal';
-export * from '@contentful/f36-notification';
-export * from '@contentful/f36-asset';
+export {
+  Modal,
+  ModalConfirm,
+  ModalContent,
+  ModalControls,
+  ModalHeader,
+  ModalLauncher,
+} from '@contentful/f36-modal';
+export type {
+  ModalProps,
+  ModalConfirmProps,
+  ModalContentProps,
+  ModalControlsProps,
+  ModalHeaderProps,
+} from '@contentful/f36-modal';
+export {
+  Notification,
+  NotificationItem,
+  NotificationItemContainer,
+  NotificationsManager,
+} from '@contentful/f36-notification';
+export type {
+  NotificationsAPI,
+  NotificationItemProps,
+  NotificationVariant,
+  NotificationItemContainerProps,
+  NotificationsManagerProps,
+  NotificationProps,
+} from '@contentful/f36-notification';
+export { Asset, AssetIcon, isAssetType } from '@contentful/f36-asset';
+export type {
+  AssetProps,
+  AssetStatus,
+  AssetIconProps,
+  AssetType,
+} from '@contentful/f36-asset';
 export {
   Menu,
   MenuDivider,
@@ -169,6 +212,8 @@ export {
   MenuTrigger,
   MenuSectionTitle,
   MenuItem,
+  Submenu,
+  SubmenuTrigger,
 } from '@contentful/f36-menu';
 export type {
   MenuProps,
@@ -177,6 +222,8 @@ export type {
   MenuTriggerProps,
   MenuSectionTitleProps,
   MenuItemProps,
+  SubmenuProps,
+  SubmenuTriggerProps,
 } from '@contentful/f36-menu';
 export { Autocomplete } from '@contentful/f36-autocomplete';
 export type { AutocompleteProps } from '@contentful/f36-autocomplete';

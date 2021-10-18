@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { generateIcon } from '@contentful/f36-icon';
 
-export const FormatUnderlined = generateIcon({
+export const FormatUnderlined = /*#__PURE__*/ generateIcon({
   name: 'FormatUnderlined',
   path: (
     <Fragment>

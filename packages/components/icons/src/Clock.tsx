@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { generateIcon } from '@contentful/f36-icon';
 
-export const Clock = generateIcon({
+export const Clock = /*#__PURE__*/ generateIcon({
   name: 'Clock',
   path: (
     <Fragment>

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { generateIcon } from '@contentful/f36-icon';
 
-export const CopyTrimmed = generateIcon({
+export const CopyTrimmed = /*#__PURE__*/ generateIcon({
   name: 'CopyTrimmed',
   path: (
     <Fragment>

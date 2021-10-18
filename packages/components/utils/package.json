@@ -18,7 +18,7 @@
     "url": "https://github.com/contentful/forma-36"
   },
   "scripts": {
-    "build": "parcel build index.ts"
+    "build": "parcel build"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",

@@ -88,3 +88,7 @@ Migrates `Tooltip` component from Forma@v3 to Forma@v4
 #### `v4-entity-list`
 
 Converts EntityList components from Forma v3 to v4
+
+#### `v4-text-field`
+
+Migrates `TextField` component from Forma@v3 to Forma@v4

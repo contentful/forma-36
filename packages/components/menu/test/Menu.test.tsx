@@ -150,7 +150,7 @@ describe('Menu', function () {
   });
 
   it('should focus NEXT/PREVIOUS item when ArrowDown/ArrowUp clicked accordingly', async () => {
-    const { getByTestId, getByRole } = render(
+    const { getByTestId } = render(
       <Menu isOpen={true}>
         <Menu.Trigger>
           <Button>Toggle</Button>
@@ -164,24 +164,26 @@ describe('Menu', function () {
     );
 
     await waitFor(() => {
-      expect(getByRole('menu')).toBeInTheDocument();
+      expect(document.activeElement).toBe(getByTestId('first-item'));
     });
-
-    expect(document.activeElement).toBe(getByTestId('first-item'));
 
     fireEvent.keyDown(document.activeElement, {
       key: 'ArrowDown',
     });
-    expect(document.activeElement).toBe(getByTestId('second-item'));
+    await waitFor(() => {
+      expect(document.activeElement).toBe(getByTestId('second-item'));
+    });
 
     fireEvent.keyDown(document.activeElement, {
       key: 'ArrowUp',
     });
-    expect(document.activeElement).toBe(getByTestId('first-item'));
+    await waitFor(() => {
+      expect(document.activeElement).toBe(getByTestId('first-item'));
+    });
   });
 
   it('should focus FIRST item when ArrowDown clicked and focus was on the last item', async () => {
-    const { getByTestId, getByRole } = render(
+    const { getByTestId } = render(
       <Menu isOpen={true}>
         <Menu.Trigger>
           <Button>Toggle</Button>
@@ -195,10 +197,8 @@ describe('Menu', function () {
     );
 
     await waitFor(() => {
-      expect(getByRole('menu')).toBeInTheDocument();
+      expect(document.activeElement).toBe(getByTestId('first-item'));
     });
-
-    expect(document.activeElement).toBe(getByTestId('first-item'));
 
     fireEvent.keyDown(document.activeElement, {
       key: 'ArrowDown',
@@ -206,16 +206,20 @@ describe('Menu', function () {
     fireEvent.keyDown(document.activeElement, {
       key: 'ArrowDown',
     });
-    expect(document.activeElement).toBe(getByTestId('third-item'));
+    await waitFor(() => {
+      expect(document.activeElement).toBe(getByTestId('third-item'));
+    });
 
     fireEvent.keyDown(document.activeElement, {
       key: 'ArrowDown',
     });
-    expect(document.activeElement).toBe(getByTestId('first-item'));
+    await waitFor(() => {
+      expect(document.activeElement).toBe(getByTestId('first-item'));
+    });
   });
 
   it('should focus LAST item when ArrowUp clicked and focus was on the first item', async () => {
-    const { getByTestId, getByRole } = render(
+    const { getByTestId } = render(
       <Menu isOpen={true}>
         <Menu.Trigger>
           <Button>Toggle</Button>
@@ -229,19 +233,19 @@ describe('Menu', function () {
     );
 
     await waitFor(() => {
-      expect(getByRole('menu')).toBeInTheDocument();
+      expect(document.activeElement).toBe(getByTestId('first-item'));
     });
-
-    expect(document.activeElement).toBe(getByTestId('first-item'));
 
     fireEvent.keyDown(document.activeElement, {
       key: 'ArrowUp',
     });
-    expect(document.activeElement).toBe(getByTestId('third-item'));
+    await waitFor(() => {
+      expect(document.activeElement).toBe(getByTestId('third-item'));
+    });
   });
 
   it('should focus item if isInitiallyFocused prop passed', async () => {
-    const { getByTestId, getByRole } = render(
+    const { getByTestId } = render(
       <Menu isOpen={true}>
         <Menu.Trigger>
           <Button>Toggle</Button>
@@ -257,10 +261,8 @@ describe('Menu', function () {
     );
 
     await waitFor(() => {
-      expect(getByRole('menu')).toBeInTheDocument();
+      expect(document.activeElement).toBe(getByTestId('second-item'));
     });
-
-    expect(document.activeElement).toBe(getByTestId('second-item'));
   });
 
   describe('Menu.Submenu', function () {

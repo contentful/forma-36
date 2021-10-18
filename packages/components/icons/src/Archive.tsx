@@ -1,7 +1,7 @@
 import React from 'react';
 import { generateIcon } from '@contentful/f36-icon';
 
-export const Archive = generateIcon({
+export const Archive = /*#__PURE__*/ generateIcon({
   name: 'Archive',
   viewBox: '0 0 24 24',
   path: (

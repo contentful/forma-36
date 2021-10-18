@@ -3,7 +3,7 @@
   "version": "4.0.0",
   "description": "Forma 36: Skeleton component",
   "scripts": {
-    "build": "parcel build index.ts"
+    "build": "parcel build"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",

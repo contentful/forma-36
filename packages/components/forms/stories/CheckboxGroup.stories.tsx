@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { action } from '@storybook/addon-actions';
-import { Checkbox, CheckboxGroup, CheckboxGroupProps } from '../src/checkbox';
+import { Checkbox, CheckboxGroup, CheckboxGroupProps } from '../src';
 
 export default {
   title: 'Form Elements/Checkbox/CheckboxGroup',

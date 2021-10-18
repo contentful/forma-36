@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { generateIcon } from '@contentful/f36-icon';
 
-export const ShoppingCart = generateIcon({
+export const ShoppingCart = /*#__PURE__*/ generateIcon({
   name: 'ShoppingCart',
   path: (
     <Fragment>

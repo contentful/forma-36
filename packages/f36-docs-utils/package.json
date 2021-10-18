@@ -17,8 +17,8 @@
     "url": "https://github.com/contentful/forma-36"
   },
   "scripts": {
-    "build": "parcel build index.ts",
-    "watch": "parcel watch index.ts"
+    "build": "parcel build",
+    "watch": "parcel watch"
   },
   "dependencies": {
     "constate": "^3.2.0",
