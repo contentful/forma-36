@@ -186,7 +186,7 @@ UsingGroupedItems.args = {
 };
 
 export const MultipleSelection = (args: AutocompleteProps<Produce>) => {
-  const [selectedFruits, setSelectedFruits] = useState<['name'][]>([]);
+  const [selectedFruits, setSelectedFruits] = useState<Array<string>>([]);
   const [filteredItems, setFilteredItems] = useState(fruits);
 
   const handleInputValueChange = (value: string) => {
