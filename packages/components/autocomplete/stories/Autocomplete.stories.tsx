@@ -171,10 +171,7 @@ export const UsingGroupedItems = (args: AutocompleteProps<GroceryList>) => {
         items={filteredItems}
         isGrouped={true}
         renderItem={(item) => item.name}
-        itemToString={(item) => {
-          console.log(item);
-          return item.name;
-        }}
+        itemToString={(item) => item.name}
         onInputValueChange={handleInputValueChange}
         onSelectItem={handleSelectItem}
         listWidth="full"

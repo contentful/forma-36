@@ -20,6 +20,7 @@ It allows users to quickly search through and select from large collections of o
 - [Code examples](#code-examples)
   - [Highlighting an item with `getMatch`](#highlighting-an-item-with-getmatch)
   - [Using objects as items](#using-objects-as-items)
+  - [Using grouped object as items](#using-grouped-objects-as-items)
   - [Filling in a list of items](#filling-in-a-list-of-items)
   - [Error validation with FormControl](#error-validation-with-formcontrol)
   - [Fetching async data](#fetching-async-data)
@@ -227,6 +228,80 @@ function AutocompleteExample() {
           ))}
         </ul>
       </span>
+    </Stack>
+  );
+}
+```
+
+### Using grouped objects as `items`
+
+As an extension of ["Use objects as items" section](#use-objects-as-items), you are also able to use a nested object to group your entries.
+The most important part of making this work is the shape of the grouped object. The options themselve work exactly as in the object example and require the `itemToString`
+and `renderItem` functions.
+Besides the correct shape of the object the Autocomplete component needs to receive the prop `isGrouped=true`
+
+```jsx
+function AutocompleteExample() {
+  // This is the array which contains each group as an  object. Every group object needs to have a groupTitle and the array of items needs to be named options.
+  const shoppingList = [
+    {
+      groupTitle: 'Fruits',
+      options: [
+        { id: 1, name: 'Apple', emoji: '🍎' },
+        { id: 2, name: 'Ananas', emoji: '🍍' },
+        { id: 3, name: 'Avocado', emoji: '🥑' },
+        { id: 4, name: 'Banana', emoji: '🍌' },
+        { id: 5, name: 'Coconut', emoji: '🥥' },
+      ],
+    },
+    {
+      groupTitle: 'Vegetables',
+      options: [
+        { id: 1, name: 'Cucumber', emoji: '🥒' },
+        { id: 2, name: 'Pumpkin', emoji: '🎃' },
+        { id: 3, name: 'Brokkolie', emoji: '🥦' },
+        { id: 4, name: 'Pepper', emoji: '🫑' },
+      ],
+    },
+  ];
+
+  const [selectedItem, setSelectedItem] = React.useState();
+  const [filteredItems, setFilteredItems] = React.useState(shoppingList);
+
+  const handleInputValueChange = (value) => {
+    // we have to make sure to filter each of the groups based on the items shape.
+    // be aware this is just a basic example and you might need to apply a more advanced filter algorithm
+    const newFilteredItems = groceryList.map((group) => {
+      return {
+        ...group,
+        options: group.options.filter((item) =>
+          item.name.toLowerCase().includes(value.toLowerCase()),
+        ),
+      };
+    });
+    setFilteredItems(newFilteredItems);
+  };
+
+  const handleSelectItem = (item) => {
+    setSelectedItem(item);
+  };
+
+  return (
+    <Stack flexDirection="column" alignItems="start">
+      <Autocomplete
+        items={filteredItems}
+        // this is the imporant prop that tells the component to deal with grouped options
+        isGrouped={true}
+        onInputValueChange={handleInputValueChange}
+        onSelectItem={handleSelectItem}
+        // This prop is the function that will tell the component how to extract a string that will be used as inputValue
+        itemToString={(item) => item.name}
+        // This prop is the function that will tell the component how to render each item in the options list
+        // In this example the first item will render "Apple 🍎"
+        renderItem={(item) => `${item.name} ${item.emoji}`}
+      />
+
+      <Paragraph>Selected item from shopping list: {selectedItem}</Paragraph>
     </Stack>
   );
 }
