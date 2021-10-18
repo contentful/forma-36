@@ -99,9 +99,13 @@ export function Menu(props: MenuProps) {
       );
 
       if (menuItems.length > 0 && focusedIndex < menuItems.length) {
-        (menuItems[focusedIndex] as HTMLElement).focus({
-          preventScroll: false,
-        });
+        // timeout trick to prevent scroll from jumping
+        // when the popover is not positioned correctly yet in the opening phase
+        setTimeout(() => {
+          (menuItems[focusedIndex] as HTMLElement).focus({
+            preventScroll: false,
+          });
+        }, 0);
       }
     }
   }, [isOpen, focusedIndex]);
