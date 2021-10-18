@@ -14,7 +14,7 @@ interface MatchObj {
  * @param base
  * @param match
  */
-export function getMatch(base: string, match: string): MatchObj {
+export function getStringMatch(base: string, match: string): MatchObj {
   const matchResult = { before: '', match: '', after: '' };
 
   const regex = new RegExp(`(?<before>.*?)(?<match>${match})(?<after>.*)`, 'i');

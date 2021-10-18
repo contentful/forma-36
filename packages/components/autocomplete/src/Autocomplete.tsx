@@ -8,7 +8,7 @@ import { TextInput, TextInputProps } from '@contentful/f36-forms';
 import { CloseIcon, ChevronDownIcon } from '@contentful/f36-icons';
 import { SkeletonContainer, SkeletonBodyText } from '@contentful/f36-skeleton';
 import { Popover } from '@contentful/f36-popover';
-import { getMatch } from './utils';
+import { getStringMatch } from '@contentful/f36-utils';
 
 import { getAutocompleteStyles } from './Autocomplete.styles';
 
@@ -283,7 +283,7 @@ function HighlightedItem({
   item: string;
   inputValue: string;
 }) {
-  const { before, match, after } = getMatch(item, inputValue);
+  const { before, match, after } = getStringMatch(item, inputValue);
 
   return (
     <>

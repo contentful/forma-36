@@ -1,1 +1,0 @@
-export { getMatch } from './getMatch';
