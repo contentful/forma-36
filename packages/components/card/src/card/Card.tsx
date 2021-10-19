@@ -16,7 +16,7 @@ import { getBaseCardStyles } from '../base-card/BaseCard.styles';
 
 export type CardInternalProps = Omit<
   BaseCardInternalProps,
-  'header' | 'ref' | 'type'
+  'header' | 'ref' | 'type' | 'href'
 > & {
   /**
    * Padding size to apply to the component

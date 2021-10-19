@@ -38,6 +38,9 @@ export type BaseCardInternalProps = CommonProps &
      * An array of Menu elements used to render an actions menu
      */
     actions?: React.ReactNodeArray;
+    /**
+     * Handle tag for Card component
+     */
     as?: CardElement;
     /**
      * If the card is selectable and has no title, it will need a aria-label to help screen readers identify it
@@ -47,6 +50,10 @@ export type BaseCardInternalProps = CommonProps &
      * Badge component to show in Card header
      */
     badge?: ReactElement;
+    /**
+     * Passing href into the Card. You need to also add property as="a" to make it rendered as <a />
+     */
+    href?: string;
     /**
      * Child nodes to be rendered in the component
      */
