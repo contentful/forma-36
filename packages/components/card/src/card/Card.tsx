@@ -67,19 +67,7 @@ function _Card<E extends React.ElementType = typeof DEFAULT_TAG>(
 
   return (
     <BaseCard
-      contentBodyProps={
-        padding === 'large'
-          ? {
-              className: styles.contentWithLargePadding,
-            }
-          : padding === 'none'
-          ? {
-              className: styles.contentWithNoPadding,
-            }
-          : {
-              className: styles.contentWithDefaultPadding,
-            }
-      }
+      contentBodyProps={{ className: styles.content({ padding }) }}
       {...otherProps}
       header={hasHeader ? header : null}
       ref={forwardedRef}
