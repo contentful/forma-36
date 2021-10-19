@@ -11,7 +11,7 @@ import { Box } from '@contentful/f36-core';
 import { FormControlContext } from './FormControlContext';
 import type { FormControlContextProps } from './types';
 
-const DEFAULT_TAG = 'div';
+const FORM_CONTROL_DEFAULT_TAG = 'div';
 
 export interface FormControlInternalProps
   extends FormControlContextProps,
@@ -22,10 +22,12 @@ export interface FormControlInternalProps
 }
 
 export type FormControlProps<
-  E extends React.ElementType = typeof DEFAULT_TAG
+  E extends React.ElementType = typeof FORM_CONTROL_DEFAULT_TAG
 > = PolymorphicProps<FormControlInternalProps, E>;
 
-function _FormControl<E extends React.ElementType = typeof DEFAULT_TAG>(
+function _FormControl<
+  E extends React.ElementType = typeof FORM_CONTROL_DEFAULT_TAG
+>(
   {
     isInvalid,
     isRequired,
@@ -58,7 +60,7 @@ function _FormControl<E extends React.ElementType = typeof DEFAULT_TAG>(
   return (
     <FormControlContext.Provider value={context}>
       <Box
-        as={DEFAULT_TAG}
+        as={FORM_CONTROL_DEFAULT_TAG}
         ref={ref}
         role="group"
         testId={testId}
@@ -73,5 +75,5 @@ function _FormControl<E extends React.ElementType = typeof DEFAULT_TAG>(
 
 export const FormControl: PolymorphicComponent<
   FormControlInternalProps,
-  typeof DEFAULT_TAG
+  typeof FORM_CONTROL_DEFAULT_TAG
 > = React.forwardRef(_FormControl);

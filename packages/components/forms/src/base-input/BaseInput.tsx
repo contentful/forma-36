@@ -14,22 +14,22 @@ import {
 import getInputStyles from './BaseInput.styles';
 import { BaseInputInternalProps } from './types';
 
-const DEFAULT_TAG = 'input';
+const INPUT_DEFAULT_TAG = 'input';
 
 export type BaseInputProps<
-  E extends React.ElementType = typeof DEFAULT_TAG
+  E extends React.ElementType = typeof INPUT_DEFAULT_TAG
 > = PolymorphicProps<
   BaseInputInternalProps,
   E,
   'disabled' | 'required' | 'readOnly'
 >;
 
-function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
+function _BaseInput<E extends React.ElementType = typeof INPUT_DEFAULT_TAG>(
   props: BaseInputProps<E>,
   ref: React.Ref<HTMLInputElement | HTMLTextAreaElement>,
 ) {
   const {
-    as = DEFAULT_TAG,
+    as = INPUT_DEFAULT_TAG,
     className,
     isDisabled,
     isReadOnly,
@@ -144,6 +144,6 @@ function _BaseInput<E extends React.ElementType = typeof DEFAULT_TAG>(
 
 export const BaseInput: PolymorphicComponent<
   BaseInputInternalProps,
-  typeof DEFAULT_TAG,
+  typeof INPUT_DEFAULT_TAG,
   'disabled'
 > = React.forwardRef(_BaseInput);

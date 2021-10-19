@@ -10,7 +10,7 @@ import { useMenuContext } from '../MenuContext';
 import { useId } from '@contentful/f36-core';
 import { getMenuItemStyles } from './MenuItem.styles';
 
-const DEFAULT_TAG = 'button';
+const MENU_ITEM_DEFAULT_TAG = 'button';
 
 interface MenuItemInternalProps extends CommonProps {
   children?: React.ReactNode;
@@ -23,10 +23,10 @@ interface MenuItemInternalProps extends CommonProps {
 }
 
 export type MenuItemProps<
-  E extends React.ElementType = typeof DEFAULT_TAG
+  E extends React.ElementType = typeof MENU_ITEM_DEFAULT_TAG
 > = PolymorphicProps<MenuItemInternalProps, E>;
 
-function _MenuItem<E extends React.ElementType = typeof DEFAULT_TAG>(
+function _MenuItem<E extends React.ElementType = typeof MENU_ITEM_DEFAULT_TAG>(
   props: MenuItemProps<E>,
   ref: React.Ref<any>,
 ) {
@@ -45,7 +45,7 @@ function _MenuItem<E extends React.ElementType = typeof DEFAULT_TAG>(
     }
   }, [isInitiallyFocused, focusMenuItem]);
 
-  const Element = (as ?? DEFAULT_TAG) as React.ElementType;
+  const Element = (as ?? MENU_ITEM_DEFAULT_TAG) as React.ElementType;
 
   return (
     <Element
@@ -64,5 +64,5 @@ function _MenuItem<E extends React.ElementType = typeof DEFAULT_TAG>(
 
 export const MenuItem: PolymorphicComponent<
   MenuItemInternalProps,
-  typeof DEFAULT_TAG
+  typeof MENU_ITEM_DEFAULT_TAG
 > = React.forwardRef(_MenuItem);

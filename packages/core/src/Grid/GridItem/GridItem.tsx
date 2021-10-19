@@ -8,7 +8,7 @@ import { useBox } from '../../Box';
 import type { MarginProps, PaddingProps, CommonProps } from '../../types';
 import type * as CSS from 'csstype';
 
-const DEFAULT_TAG = 'div';
+const GRID_ITEM_DEFAULT_TAG = 'div';
 
 export interface GridItemInternalProps
   extends CommonProps,
@@ -38,10 +38,10 @@ export interface GridItemInternalProps
 }
 
 export type GridItemProps<
-  E extends React.ElementType = typeof DEFAULT_TAG
+  E extends React.ElementType = typeof GRID_ITEM_DEFAULT_TAG
 > = PolymorphicProps<GridItemInternalProps, E>;
 
-function _GridItem<E extends React.ElementType = typeof DEFAULT_TAG>(
+function _GridItem<E extends React.ElementType = typeof GRID_ITEM_DEFAULT_TAG>(
   {
     children,
     columnStart,
@@ -84,5 +84,5 @@ function _GridItem<E extends React.ElementType = typeof DEFAULT_TAG>(
 
 export const GridItem: PolymorphicComponent<
   GridItemInternalProps,
-  typeof DEFAULT_TAG
+  typeof GRID_ITEM_DEFAULT_TAG
 > = React.forwardRef(_GridItem);

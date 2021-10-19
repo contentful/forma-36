@@ -14,7 +14,7 @@ import { BaseCard } from '../base-card/BaseCard';
 import type { BaseCardInternalProps } from '../base-card/BaseCard';
 import { getEntryCardStyles } from './EntryCard.styles';
 
-const DEFAULT_TAG = 'article';
+const ENTRY_CARD_DEFAULT_TAG = 'article';
 
 export type EntryCardInternalProps = Omit<
   BaseCardInternalProps,
@@ -27,10 +27,12 @@ export type EntryCardInternalProps = Omit<
 };
 
 export type EntryCardProps<
-  E extends React.ElementType = typeof DEFAULT_TAG
+  E extends React.ElementType = typeof ENTRY_CARD_DEFAULT_TAG
 > = PolymorphicProps<EntryCardInternalProps, E>;
 
-function _EntryCard<E extends React.ElementType = typeof DEFAULT_TAG>(
+function _EntryCard<
+  E extends React.ElementType = typeof ENTRY_CARD_DEFAULT_TAG
+>(
   {
     actions,
     children,
@@ -49,7 +51,7 @@ function _EntryCard<E extends React.ElementType = typeof DEFAULT_TAG>(
 
   return (
     <BaseCard
-      as={DEFAULT_TAG}
+      as={ENTRY_CARD_DEFAULT_TAG}
       {...otherProps}
       actions={actions}
       badge={badge}
@@ -76,5 +78,5 @@ function _EntryCard<E extends React.ElementType = typeof DEFAULT_TAG>(
 
 export const EntryCard: PolymorphicComponent<
   EntryCardInternalProps,
-  typeof DEFAULT_TAG
+  typeof ENTRY_CARD_DEFAULT_TAG
 > = forwardRef(_EntryCard);

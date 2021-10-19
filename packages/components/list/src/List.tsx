@@ -7,7 +7,7 @@ import {
   PolymorphicComponent,
 } from '@contentful/f36-core';
 
-const DEFAULT_TAG = 'ul';
+const LIST_DEFAULT_TAG = 'ul';
 
 export interface ListInternalProps extends CommonProps {
   as?: 'ul' | 'ol';
@@ -15,14 +15,14 @@ export interface ListInternalProps extends CommonProps {
 }
 
 export type ListProps<
-  E extends React.ElementType = typeof DEFAULT_TAG
+  E extends React.ElementType = typeof LIST_DEFAULT_TAG
 > = PolymorphicProps<ListInternalProps, E>;
 
 /**
  * List is component that helps with vertical indexing of content.
  * Every list item begins with a bullet or a number.
  */
-function _List<E extends React.ElementType = typeof DEFAULT_TAG>(
+function _List<E extends React.ElementType = typeof LIST_DEFAULT_TAG>(
   {
     as,
     className,
@@ -32,7 +32,7 @@ function _List<E extends React.ElementType = typeof DEFAULT_TAG>(
   }: ListProps<E>,
   ref: React.Ref<any>,
 ) {
-  const Element: React.ElementType = as || DEFAULT_TAG;
+  const Element: React.ElementType = as || LIST_DEFAULT_TAG;
 
   return (
     <Element
@@ -53,5 +53,5 @@ function _List<E extends React.ElementType = typeof DEFAULT_TAG>(
 
 export const List: PolymorphicComponent<
   ListInternalProps,
-  typeof DEFAULT_TAG
+  typeof LIST_DEFAULT_TAG
 > = React.forwardRef(_List);

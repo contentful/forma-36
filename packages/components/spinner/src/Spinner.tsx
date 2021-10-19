@@ -6,7 +6,7 @@ import type { CommonProps, PropsWithHTMLElement } from '@contentful/f36-core';
 import type { SpinnerSize, SpinnerVariant } from './types';
 import { getStyles } from './Spinner.styles';
 
-const DEFAULT_TAG = 'div';
+const SPINNER_DEFAULT_TAG = 'div';
 
 const variants: { [key in SpinnerVariant]: string } = {
   default: tokens.gray700,
@@ -47,7 +47,7 @@ export const Spinner = forwardRef<HTMLDivElement, SpinnerProps>(
     const styles = getStyles();
     return (
       <Box
-        as={DEFAULT_TAG}
+        as={SPINNER_DEFAULT_TAG}
         display="inline-block"
         {...otherProps}
         className={cx(styles.root({ size, customSize }), className)}
