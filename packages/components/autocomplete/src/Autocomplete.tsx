@@ -141,10 +141,6 @@ function _Autocomplete<ItemType>(
     [onInputValueChange],
   );
 
-  const joinGroupItems = (groups: GroupType[]): ItemType[] => {
-    return groups.reduce((a, b) => [...a, ...b.options], []);
-  };
-
   const {
     getComboboxProps,
     getInputProps,
@@ -155,7 +151,9 @@ function _Autocomplete<ItemType>(
     isOpen,
     toggleMenu,
   } = useCombobox({
-    items: isGrouped ? joinGroupItems(items) : items,
+    items: isGrouped
+      ? items.reduce((a: GroupType[], b: GroupType) => [...a, ...b.options], [])
+      : items,
     inputValue,
     itemToString,
     onInputValueChange: ({ inputValue }) => {

@@ -58,13 +58,13 @@ export function AutocompleteItems<ItemType>(
   );
 }
 
-const HighlightedItem = ({
+function HighlightedItem({
   item,
   inputValue,
 }: {
   item: string;
   inputValue: string;
-}) => {
+}) {
   const { before, match, after } = getStringMatch(item, inputValue);
 
   return (
@@ -74,4 +74,4 @@ const HighlightedItem = ({
       {after}
     </>
   );
-};
+}
