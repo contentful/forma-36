@@ -28,6 +28,7 @@ describe('v4 codemods', () => {
     'v4-text-link',
     'v4-tooltip',
     'v4-typography',
+    'v4-notification',
   ];
 
   beforeEach(() => {
