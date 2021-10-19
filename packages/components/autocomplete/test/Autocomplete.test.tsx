@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { getStringMatch } from '@contentful/f36-utils';
 import { Autocomplete, AutocompleteProps } from '../src/Autocomplete';
-import { getMatch } from '../src/utils';
 
 interface Fruit {
   id: number;
@@ -229,13 +229,16 @@ describe('Autocomplete', () => {
       });
     });
 
-    it('when used with `getMatch`, it will render each item with the matched text wrapped in <b> tag', async () => {
+    it('when used with `getStringMatch`, it will render each item with the matched text wrapped in <b> tag', async () => {
       renderComponent({
         items: fruits,
         itemToString: (item: Fruit) => item.name,
         // eslint-disable-next-line react/display-name
         renderItem: (item, inputValue) => {
-          const { before, match, after } = getMatch(item.name, inputValue);
+          const { before, match, after } = getStringMatch(
+            item.name,
+            inputValue,
+          );
 
           return (
             <>

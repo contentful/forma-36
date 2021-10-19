@@ -4,10 +4,10 @@ import type { Meta } from '@storybook/react/types-6-0';
 import { Stack } from '@contentful/f36-core';
 import { FormControl } from '@contentful/f36-forms';
 import { Paragraph } from '@contentful/f36-typography';
+import { getStringMatch } from '@contentful/f36-utils';
 
 import { Autocomplete } from '../src/Autocomplete';
 import type { AutocompleteProps } from '../src/Autocomplete';
-import { getMatch } from '../src/utils';
 
 export default {
   title: 'Components/Autocomplete',
@@ -298,7 +298,10 @@ export const HighlightingItems = () => {
         onSelectItem={handleSelectItem}
         itemToString={(item) => item.name}
         renderItem={(item, inputValue) => {
-          const { before, match, after } = getMatch(item.name, inputValue);
+          const { before, match, after } = getStringMatch(
+            item.name,
+            inputValue,
+          );
 
           return (
             <>

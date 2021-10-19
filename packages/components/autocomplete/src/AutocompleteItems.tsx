@@ -1,7 +1,7 @@
 import React from 'react';
 import { Menu } from '@contentful/f36-menu';
 import { cx } from 'emotion';
-import { getMatch } from './utils';
+import { getStringMatch } from '@contentful/f36-utils';
 import { getAutocompleteStyles } from './Autocomplete.styles';
 
 interface AutocompleteItemsProps<ItemType = any> {
@@ -65,7 +65,7 @@ const HighlightedItem = ({
   item: string;
   inputValue: string;
 }) => {
-  const { before, match, after } = getMatch(item, inputValue);
+  const { before, match, after } = getStringMatch(item, inputValue);
 
   return (
     <>

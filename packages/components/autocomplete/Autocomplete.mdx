@@ -18,7 +18,7 @@ It allows users to quickly search through and select from large collections of o
 - [How to use Autocomplete](#how-to-use-autocomplete)
 - [Best practices](#best-practices)
 - [Code examples](#code-examples)
-  - [Highlighting an item with `getMatch`](#highlighting-an-item-with-getmatch)
+  - [Highlighting an item with `getStringMatch`](#highlighting-an-item-with-getmatch)
   - [Using objects as items](#using-objects-as-items)
   - [Using grouped object as items](#using-grouped-objects-as-items)
   - [Filling in a list of items](#filling-in-a-list-of-items)
@@ -145,15 +145,16 @@ Both `itemToString` and `renderItem` are necessary when passing objects as items
 If you are using Typescript, you can tell the Autocomplete what is the type of your items to make these functions strongly typed.
 You can do that by writing the component like this `<Autocomplete<ItemType> {...props}/>`
 
-## Highlighting an item with `getMatch`
+## Highlighting an item with `getStringMatch`
 
 A common use case for Autocomplete components is to highlight in each suggestion what is typed in the input.
 Using the previous example, if a user types "ana" we want to show a list of suggestions where only "ana" is **bold**.
-This is possible by using the `renderItem` prop and the `getMatch` utility function:
+This is possible by using the `renderItem` prop and the `getStringMatch` utility function:
 
 ```jsx static=true
-// We need to import the function from the `f36-autocomplete` package
-import { Autocomplete, getMatch } from '@contentful/f36-autocomplete';
+// We need to import the function from the `f36-utils` package
+import { getStringMatch } from '@contentful/f36-utils';
+import { Autocomplete } from '@contentful/f36-autocomplete';
 
 // Everything stays the same, besides the `renderItem` prop
 <Autocomplete
@@ -163,9 +164,9 @@ import { Autocomplete, getMatch } from '@contentful/f36-autocomplete';
   itemToString={(item) => item.name}
   // Two arguments are provided to the `renderItem` prop: the item and the inputValue
   renderItem={(item, inputValue) => {
-    // we pass `item.name` and the inputValue to getMatch and the util will return an object
+    // we pass `item.name` and the inputValue to getStringMatch and the util will return an object
     // for our example, for the "Banana" item this will return { before: 'B' , match: 'ana', after: 'na' }
-    const { before, match, after } = getMatch(item.name, inputValue);
+    const { before, match, after } = getStringMatch(item.name, inputValue);
 
     // Finally, we return a ReactNode
     // this will return `<>B<b>ana</b>na 🍌</>` (the "ana" will be bold)
