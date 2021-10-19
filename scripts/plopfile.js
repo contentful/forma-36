@@ -102,7 +102,7 @@ module.exports = function (plop) {
       actions.push({
         type: 'modify',
         path: '../packages/forma-36-codemod/bin/inquirer-choices.js',
-        pattern: /\s+(\/\/ Add extra codemods - not remove)/,
+        pattern: /\s+(\/\/ Add extra codemods - do not remove)/,
         templateFile: './plop-templates/codemod/bin/inquirer-choices.hbs',
         data: { transform, description },
       });
