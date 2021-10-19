@@ -169,7 +169,7 @@ export const UsingGroupedItems = (args: AutocompleteProps<GroceryList>) => {
       <Autocomplete<Produce>
         {...args}
         items={filteredItems}
-        isGrouped={true}
+        isGrouped
         renderItem={(item) => item.name}
         itemToString={(item) => item.name}
         onInputValueChange={handleInputValueChange}
