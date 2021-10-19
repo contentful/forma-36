@@ -17,7 +17,12 @@ export interface AutocompleteProps<ItemType = any>
   extends CommonProps,
     Pick<
       TextInputProps,
-      'isDisabled' | 'isInvalid' | 'isReadOnly' | 'isRequired' | 'id'
+      | 'isDisabled'
+      | 'isInvalid'
+      | 'isReadOnly'
+      | 'isRequired'
+      | 'id'
+      | 'defaultValue'
     > {
   /**
    * It’s an array of data to be used as "options" by the autocomplete component.
@@ -96,6 +101,7 @@ function _Autocomplete<ItemType>(
     id,
     className,
     clearAfterSelect = false,
+    defaultValue = '',
     items,
     onInputValueChange,
     onSelectItem,
@@ -118,7 +124,7 @@ function _Autocomplete<ItemType>(
 
   const styles = getAutocompleteStyles(listMaxHeight);
 
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState(defaultValue);
 
   const handleInputValueChange = useCallback(
     (value) => {
