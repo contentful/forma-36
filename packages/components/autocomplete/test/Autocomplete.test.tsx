@@ -57,7 +57,7 @@ describe('Autocomplete', () => {
       renderComponent({});
 
       const input = screen.getByTestId('cf-autocomplete-input');
-      const list = screen.getByTestId('cf-ui-menu-list');
+      const list = screen.getByTestId('cf-autocomplete-list');
       const listFirstItem = screen.getByTestId('cf-autocomplete-list-item-0');
 
       // list is initially closed
@@ -103,7 +103,7 @@ describe('Autocomplete', () => {
       renderComponent({ clearAfterSelect: true });
 
       const input = screen.getByTestId('cf-autocomplete-input');
-      const list = screen.getByTestId('cf-ui-menu-list');
+      const container = screen.getByTestId('cf-autocomplete-container');
 
       // Type one letter in the input to open the list
       fireEvent.input(input, {
@@ -114,7 +114,7 @@ describe('Autocomplete', () => {
 
       // checks if the list is visible
       await waitFor(() => {
-        expect(list).toBeVisible();
+        expect(container).toBeVisible();
       });
 
       // go to the list first item
@@ -128,7 +128,7 @@ describe('Autocomplete', () => {
       });
 
       // checks if the list got closed and the value of the input is an empty string
-      expect(list).not.toBeVisible();
+      expect(container).not.toBeVisible();
       expect(input.getAttribute('value')).toBe('');
       expect(mockOnSelectItem).toHaveBeenCalledWith('Apple 🍎');
     });
@@ -139,7 +139,7 @@ describe('Autocomplete', () => {
       renderComponent({ noMatchesMessage, items: [] });
 
       const input = screen.getByTestId('cf-autocomplete-input');
-      const list = screen.getByTestId('cf-ui-menu-list');
+      const list = screen.getByTestId('cf-autocomplete-list');
 
       // type anything to open the list
       fireEvent.input(input, {
@@ -159,7 +159,7 @@ describe('Autocomplete', () => {
       renderComponent({ isLoading: true });
 
       const input = screen.getByTestId('cf-autocomplete-input');
-      const list = screen.getByTestId('cf-ui-menu-list');
+      const container = screen.getByTestId('cf-autocomplete-container');
 
       // type anything to open the list
       fireEvent.input(input, {
@@ -170,7 +170,7 @@ describe('Autocomplete', () => {
 
       // checks if the list is visible and it shows the loading state
       await waitFor(() => {
-        expect(list).toBeVisible();
+        expect(container).toBeVisible();
         expect(screen.queryAllByTestId('cf-ui-skeleton-form')).toHaveLength(3);
       });
     });
@@ -187,7 +187,7 @@ describe('Autocomplete', () => {
       });
 
       const input = screen.getByTestId('cf-autocomplete-input');
-      const list = screen.getByTestId('cf-ui-menu-list');
+      const list = screen.getByTestId('cf-autocomplete-list');
       const listFirstItem = screen.getByTestId('cf-autocomplete-list-item-0');
 
       // list is initially closed
@@ -251,7 +251,7 @@ describe('Autocomplete', () => {
       });
 
       const input = screen.getByTestId('cf-autocomplete-input');
-      const list = screen.getByTestId('cf-ui-menu-list');
+      const list = screen.getByTestId('cf-autocomplete-list');
 
       // Type a text to be matched and open the list of suggestions
       fireEvent.input(input, {
@@ -284,10 +284,10 @@ describe('Autocomplete', () => {
         renderItem: (item: Fruit) => item.name,
       });
       const input = screen.getByTestId('cf-autocomplete-input');
-      const list = screen.getByTestId('cf-ui-menu-list');
+      const container = screen.getByTestId('cf-autocomplete-container');
       // list is initially closed
-      expect(list).not.toBeVisible();
-      expect(list.childElementCount).toBe(2);
+      expect(container).not.toBeVisible();
+      expect(container.childElementCount).toBe(2);
 
       // Type one letter in the input to open the list
       fireEvent.input(input, {
@@ -298,12 +298,12 @@ describe('Autocomplete', () => {
 
       // checks if the list is visible
       await waitFor(() => {
-        expect(list).toBeVisible();
+        expect(container).toBeVisible();
       });
 
-      expect(screen.queryAllByTestId('cf-ui-menu-section-title')).toHaveLength(
-        2,
-      );
+      expect(
+        screen.queryAllByTestId('cf-autocomplete-grouptitle'),
+      ).toHaveLength(2);
     });
     it('selects the first item', async () => {
       renderComponent({
@@ -313,11 +313,11 @@ describe('Autocomplete', () => {
         renderItem: (item: Fruit) => item.name,
       });
       const input = screen.getByTestId('cf-autocomplete-input');
-      const list = screen.getByTestId('cf-ui-menu-list');
+      const container = screen.getByTestId('cf-autocomplete-container');
       const firstItem = screen.getByTestId('cf-autocomplete-list-item-0');
       // list is initially closed
-      expect(list).not.toBeVisible();
-      expect(list.childElementCount).toBe(2);
+      expect(container).not.toBeVisible();
+      expect(container.childElementCount).toBe(2);
 
       // Type one letter in the input to open the list
       fireEvent.input(input, {
@@ -328,7 +328,7 @@ describe('Autocomplete', () => {
 
       // checks if the list is visible
       await waitFor(() => {
-        expect(list).toBeVisible();
+        expect(container).toBeVisible();
       });
 
       // press the ArrowDown key
@@ -343,7 +343,7 @@ describe('Autocomplete', () => {
       });
 
       // checks if the list got closed and the value of the input is the one we selected
-      expect(list).not.toBeVisible();
+      expect(container).not.toBeVisible();
       expect(input.getAttribute('value')).toBe('Apple 🍎');
       expect(mockOnSelectItem).toHaveBeenCalledWith({
         id: 1,

@@ -250,7 +250,7 @@ function _Autocomplete<ItemType>(
           {...menuProps}
           ref={mergeRefs(menuProps.ref, listRef)}
           className={styles.content}
-          data-test-id="cf-autocomplete-list"
+          testId="cf-autocomplete-container"
         >
           {isLoading &&
             [...Array(3)].map((_, index) => (
@@ -272,6 +272,7 @@ function _Autocomplete<ItemType>(
                 <div key={index}>
                   <SectionHeading
                     key={index}
+                    data-test-id="cf-autocomplete-grouptitle"
                     marginBottom="none"
                     className={styles.groupTitle}
                   >

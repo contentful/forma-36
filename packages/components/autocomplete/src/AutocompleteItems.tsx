@@ -29,7 +29,7 @@ export function AutocompleteItems<ItemType>(
   const styles = getAutocompleteStyles(listMaxHeight);
 
   return (
-    <ul className={styles.list}>
+    <ul className={styles.list} data-test-id="cf-autocomplete-list">
       {items.map((item: ItemType, index: number) => {
         const itemIndex = elementStartIndex + index;
         const itemProps = getItemProps({ item, index: itemIndex });
@@ -41,7 +41,7 @@ export function AutocompleteItems<ItemType>(
               styles.item,
               highlightedIndex === itemIndex && styles.highlighted,
             ])}
-            testId={`cf-autocomplete-list-item-${itemIndex}`}
+            data-test-id={`cf-autocomplete-list-item-${itemIndex}`}
           >
             {renderItem ? (
               renderItem(item, inputValue)
