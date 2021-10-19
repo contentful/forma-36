@@ -1,10 +1,10 @@
 import React, { useMemo, useState, useEffect, useCallback } from 'react';
-import { CommonProps, useId, mergeRefs } from '@contentful/f36-core';
+import { useId, mergeRefs } from '@contentful/f36-core';
 import { Placement, Modifier } from '@popperjs/core';
 import { PopoverContextProvider, PopoverContextType } from './PopoverContext';
 import { usePopper } from 'react-popper';
 
-export interface PopoverProps extends CommonProps {
+export interface PopoverProps {
   children: React.ReactNode;
 
   /**

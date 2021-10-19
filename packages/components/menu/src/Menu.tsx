@@ -5,7 +5,7 @@ import React, {
   useRef,
   useEffect,
 } from 'react';
-import { CommonProps, mergeRefs, useId } from '@contentful/f36-core';
+import { mergeRefs, useId } from '@contentful/f36-core';
 import { useArrowKeyNavigation } from '@contentful/f36-utils';
 import { Popover, PopoverProps } from '@contentful/f36-popover';
 import { MenuContextProvider, MenuContextType } from './MenuContext';
@@ -13,8 +13,7 @@ import { MenuContextProvider, MenuContextType } from './MenuContext';
 const MENU_ITEMS_SELECTOR = '[role="menuitem"]:not(:disabled)';
 
 export interface MenuProps
-  extends CommonProps,
-    Omit<PopoverProps, 'autoFocus' | 'id' | 'closeOnBlur'> {
+  extends Omit<PopoverProps, 'autoFocus' | 'id' | 'closeOnBlur'> {
   /**
    * If `true`, the Menu will be opened in controlled mode.
    * By default the Menu is uncontrolled
