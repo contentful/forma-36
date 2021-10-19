@@ -199,7 +199,7 @@ module.exports = {
             link: '/components/autocomplete/',
           },
           {
-            name: 'Badge',
+            name: 'Badge (old Tag)',
             link: '/components/badge/',
           },
           {
