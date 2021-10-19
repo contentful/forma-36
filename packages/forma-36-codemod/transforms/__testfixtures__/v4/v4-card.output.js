@@ -9,3 +9,8 @@ import { Card } from "@contentful/f36-components";
 <Card isSelected>
   Selectable card content
 </Card>;
+
+<Card padding="none">
+  Selectable card content
+</Card>;
+

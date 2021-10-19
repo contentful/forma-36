@@ -21,7 +21,7 @@ export type CardInternalProps = Omit<
   /**
    * Padding size to apply to the component
    */
-  padding?: 'default' | 'large';
+  padding?: 'default' | 'large' | 'none';
 };
 
 export type CardProps<
@@ -68,9 +68,17 @@ function _Card<E extends React.ElementType = typeof DEFAULT_TAG>(
   return (
     <BaseCard
       contentBodyProps={
-        padding === 'large' && {
-          className: styles.contentWithLargePadding,
-        }
+        padding === 'large'
+          ? {
+              className: styles.contentWithLargePadding,
+            }
+          : padding === 'none'
+          ? {
+              className: styles.contentWithNoPadding,
+            }
+          : {
+              className: styles.contentWithDefaultPadding,
+            }
       }
       {...otherProps}
       header={hasHeader ? header : null}

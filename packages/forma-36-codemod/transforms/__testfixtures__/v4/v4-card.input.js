@@ -8,3 +8,7 @@ import { Card } from "@contentful/forma-36-react-components";
 <Card selected>
   Selectable card content
 </Card>;
+
+<Card padding="none">
+  Selectable card content
+</Card>;
