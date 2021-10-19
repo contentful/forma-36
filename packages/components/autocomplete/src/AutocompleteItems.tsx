@@ -1,5 +1,4 @@
 import React from 'react';
-import { Menu } from '@contentful/f36-menu';
 import { cx } from 'emotion';
 import { getStringMatch } from '@contentful/f36-utils';
 import { getAutocompleteStyles } from './Autocomplete.styles';
@@ -30,12 +29,12 @@ export function AutocompleteItems<ItemType>(
   const styles = getAutocompleteStyles(listMaxHeight);
 
   return (
-    <>
+    <ul className={styles.list}>
       {items.map((item: ItemType, index: number) => {
         const itemIndex = elementStartIndex + index;
         const itemProps = getItemProps({ item, index: itemIndex });
         return (
-          <Menu.Item
+          <li
             {...itemProps}
             key={itemIndex}
             className={cx([
@@ -51,10 +50,10 @@ export function AutocompleteItems<ItemType>(
             ) : (
               item
             )}
-          </Menu.Item>
+          </li>
         );
       })}
-    </>
+    </ul>
   );
 }
 

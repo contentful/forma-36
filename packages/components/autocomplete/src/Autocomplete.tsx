@@ -7,7 +7,8 @@ import { IconButton } from '@contentful/f36-button';
 import { TextInput, TextInputProps } from '@contentful/f36-forms';
 import { CloseIcon, ChevronDownIcon } from '@contentful/f36-icons';
 import { SkeletonContainer, SkeletonBodyText } from '@contentful/f36-skeleton';
-import { Menu } from '@contentful/f36-menu';
+import { Popover } from '@contentful/f36-popover';
+import { SectionHeading } from '@contentful/f36-typography';
 
 import { AutocompleteItems } from './AutocompleteItems';
 import { getAutocompleteStyles } from './Autocomplete.styles';
@@ -192,12 +193,12 @@ function _Autocomplete<ItemType>(
       className={cx(styles.autocomplete, className)}
       ref={ref}
     >
-      <Menu
+      <Popover
         usePortal={false}
         isOpen={isOpen}
         isFullWidth={listWidth === 'full'}
       >
-        <Menu.Trigger>
+        <Popover.Trigger>
           <div {...comboboxProps} className={styles.combobox}>
             <TextInput
               {...inputProps}
@@ -239,28 +240,25 @@ function _Autocomplete<ItemType>(
               size="small"
             />
           </div>
-        </Menu.Trigger>
+        </Popover.Trigger>
 
-        <Menu.List
+        <Popover.Content
           {...menuProps}
           ref={mergeRefs(menuProps.ref, listRef)}
-          className={styles.list}
+          className={styles.content}
           data-test-id="cf-autocomplete-list"
         >
           {isLoading &&
             [...Array(3)].map((_, index) => (
-              <Menu.Item
-                key={index}
-                className={cx(styles.item, styles.disabled)}
-              >
+              <div key={index} className={cx(styles.item, styles.disabled)}>
                 <ListItemLoadingState />
-              </Menu.Item>
+              </div>
             ))}
 
           {!isLoading && items.length === 0 && (
-            <Menu.Item className={cx(styles.item, styles.disabled)}>
+            <div className={cx(styles.item, styles.disabled)}>
               {noMatchesMessage}
-            </Menu.Item>
+            </div>
           )}
 
           {!isLoading &&
@@ -268,10 +266,14 @@ function _Autocomplete<ItemType>(
             items.map((group: GroupType, index: number) => {
               const render = (
                 <div key={index}>
-                  <Menu.SectionTitle key={index}>
+                  <SectionHeading
+                    key={index}
+                    marginBottom="none"
+                    className={styles.groupTitle}
+                  >
                     {group.groupTitle}
-                  </Menu.SectionTitle>
-                  <AutocompleteItems
+                  </SectionHeading>
+                  <AutocompleteItems<ItemType>
                     items={group.options}
                     highlightedIndex={highlightedIndex}
                     getItemProps={getItemProps}
@@ -286,7 +288,7 @@ function _Autocomplete<ItemType>(
             })}
 
           {!isLoading && !isGrouped && (
-            <AutocompleteItems
+            <AutocompleteItems<ItemType>
               items={items}
               elementStartIndex={elementStartIndex}
               highlightedIndex={highlightedIndex}
@@ -295,8 +297,8 @@ function _Autocomplete<ItemType>(
               inputValue={inputValue}
             />
           )}
-        </Menu.List>
-      </Menu>
+        </Popover.Content>
+      </Popover>
     </div>
   );
 }
