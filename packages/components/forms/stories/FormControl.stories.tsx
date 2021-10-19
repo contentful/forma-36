@@ -46,7 +46,7 @@ export const Basic = (args: FormControlInternalProps) => {
       <FormControl {...args}>
         <FormControl.Label>Description</FormControl.Label>
         <Textarea />
-        <FormControl.HelpText>Tell me about youself</FormControl.HelpText>
+        <FormControl.HelpText>Tell me about yourself</FormControl.HelpText>
         {args.isInvalid && (
           <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
         )}

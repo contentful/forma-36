@@ -6,6 +6,7 @@ import getStyles from './BaseCheckbox.styles';
 import { Text } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
 import { HelpText } from '../help-text/HelpText';
+import { useFormControl } from '../form-control/FormControlContext';
 
 export type BaseCheckboxProps = PropsWithHTMLElement<
   BaseCheckboxInternalProps & { label?: string },
@@ -45,6 +46,7 @@ function _BaseCheckbox(
 
   const inputRef = useRef<HTMLInputElement>(null);
   const finalRef = ref || inputRef;
+  const { id: formFieldId } = useFormControl({});
 
   useEffect(() => {
     if (finalRef.current) {
@@ -120,7 +122,9 @@ function _BaseCheckbox(
           required={isRequired}
           aria-required={isRequired ? 'true' : undefined}
           aria-invalid={isInvalid ? 'true' : undefined}
-          aria-describedby={helpText && `${id}-helptext`}
+          aria-describedby={`${formFieldId}-${
+            isInvalid ? `validation` : `helptext`
+          }`}
           id={id}
           name={name}
         />
