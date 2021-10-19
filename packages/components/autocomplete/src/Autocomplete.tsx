@@ -22,6 +22,7 @@ export interface AutocompleteProps<ItemType = any>
     > {
   /**
    * It’s an array of data to be used as "options" by the autocomplete component.
+   * defined as any, because in this moment we do not know if items is a group
    */
   items: any;
 
@@ -124,6 +125,9 @@ function _Autocomplete<ItemType>(
     testId = 'cf-autocomplete',
   } = props;
 
+  /*
+   * GroupType depends on ItemType
+   */
   interface GroupType {
     groupTitle: string;
     options: ItemType[];
