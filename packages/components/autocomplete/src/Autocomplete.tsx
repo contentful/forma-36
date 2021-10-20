@@ -14,23 +14,12 @@ import { AutocompleteItems } from './AutocompleteItems';
 import { getAutocompleteStyles } from './Autocomplete.styles';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export interface AutocompleteProps<ItemType = any>
+interface AutocompleteCommonProps<ItemType = any>
   extends CommonProps,
     Pick<
       TextInputProps,
       'isDisabled' | 'isInvalid' | 'isReadOnly' | 'isRequired' | 'id'
     > {
-  /**
-   * It’s an array of data to be used as "options" by the autocomplete component.
-   * defined as any, because in this moment we do not know if items is a group
-   */
-  items: any;
-
-  /**
-   * Tells if the item is a object with groups
-   */
-  isGrouped?: boolean;
-
   /**
    * Function called whenever the input value changes
    */
@@ -96,15 +85,49 @@ export interface AutocompleteProps<ItemType = any>
   isLoading?: boolean;
 }
 
+type AutocompleteItemProps<ItemType> = AutocompleteCommonProps<ItemType> & {
+  /**
+   * It’s an array of data to be used as "options" by the autocomplete component.
+   * defined as any, because in this moment we do not know if items is a group
+   */
+  items: ItemType[];
+};
+
+type AutocompleteGroupProps<ItemType> = AutocompleteCommonProps<ItemType> & {
+  /**
+   * It’s an array of data to be used as "options" by the autocomplete component.
+   * defined as any, because in this moment we do not know if items is a group
+   */
+  items: {
+    groupTitle: string;
+    options: ItemType[];
+  }[];
+
+  /**
+   * Tells if the item is a object with groups
+   */
+  isGrouped: true;
+};
+
+export type AutocompleteProps<T> =
+  | AutocompleteItemProps<T>
+  | AutocompleteGroupProps<T>;
+
+const checkIsGrouped = <ItemType extends any>(
+  props: AutocompleteProps<ItemType>,
+): props is AutocompleteGroupProps<ItemType> =>
+  'isGrouped' in props && props.isGrouped;
+
 function _Autocomplete<ItemType>(
   props: AutocompleteProps<ItemType>,
   ref: React.Ref<HTMLDivElement>,
 ) {
+  const isGrouped = checkIsGrouped<ItemType>(props);
+
   const {
     id,
     className,
     clearAfterSelect = false,
-    items,
     onInputValueChange,
     onSelectItem,
     renderItem,
@@ -121,7 +144,6 @@ function _Autocomplete<ItemType>(
     listWidth = 'auto',
     listMaxHeight = 180,
     isLoading = false,
-    isGrouped = false,
     testId = 'cf-autocomplete',
   } = props;
 
@@ -157,8 +179,11 @@ function _Autocomplete<ItemType>(
     toggleMenu,
   } = useCombobox({
     items: isGrouped
-      ? items.reduce((a: GroupType[], b: GroupType) => [...a, ...b.options], [])
-      : items,
+      ? props.items.reduce(
+          (a: GroupType[], b: GroupType) => [...a, ...b.options],
+          [],
+        )
+      : props.items,
     inputValue,
     itemToString,
     onInputValueChange: ({ inputValue }) => {
@@ -169,7 +194,7 @@ function _Autocomplete<ItemType>(
         case useCombobox.stateChangeTypes.InputKeyDownEnter:
         case useCombobox.stateChangeTypes.ItemClick:
           if (selectedItem) {
-            onSelectItem(selectedItem);
+            onSelectItem(selectedItem as ItemType);
           }
           if (clearAfterSelect) {
             handleInputValueChange('');
@@ -259,7 +284,7 @@ function _Autocomplete<ItemType>(
               </div>
             ))}
 
-          {!isLoading && items.length === 0 && (
+          {!isLoading && props.items.length === 0 && (
             <div className={cx(styles.item, styles.disabled)}>
               {noMatchesMessage}
             </div>
@@ -267,7 +292,7 @@ function _Autocomplete<ItemType>(
 
           {!isLoading &&
             isGrouped &&
-            items.map((group: GroupType, index: number) => {
+            props.items.map((group: GroupType, index: number) => {
               const render = (
                 <div key={index}>
                   <SectionHeading
@@ -294,7 +319,7 @@ function _Autocomplete<ItemType>(
 
           {!isLoading && !isGrouped && (
             <AutocompleteItems<ItemType>
-              items={items}
+              items={props.items}
               elementStartIndex={elementStartIndex}
               highlightedIndex={highlightedIndex}
               getItemProps={getItemProps}
@@ -322,5 +347,7 @@ const ListItemLoadingState = () => {
  * Once one of the options is selected, that option becomes the value of the `TextInput`.
  */
 export const Autocomplete = React.forwardRef(_Autocomplete) as <T>(
-  props: AutocompleteProps<T> & { ref?: React.Ref<HTMLDivElement> },
+  props: AutocompleteProps<T> & {
+    ref?: React.Ref<HTMLDivElement>;
+  },
 ) => ReturnType<typeof _Autocomplete>;
