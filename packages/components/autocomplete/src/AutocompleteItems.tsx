@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { HTMLAttributes } from 'react';
 import { cx } from 'emotion';
+
 import { getStringMatch } from '@contentful/f36-utils';
 import { getAutocompleteStyles } from './Autocomplete.styles';
+import { UseComboboxGetItemPropsOptions } from 'downshift';
 
-interface AutocompleteItemsProps<ItemType = any> {
+interface AutocompleteItemsProps<ItemType> {
   items: ItemType[];
   elementStartIndex: number;
   highlightedIndex: number;
-  getItemProps: (...options: any[]) => void;
+  getItemProps: (
+    options: UseComboboxGetItemPropsOptions<ItemType>,
+  ) => HTMLAttributes<HTMLLIElement>;
   renderItem: (item: ItemType, inputValue: string) => React.ReactNode;
   inputValue: string;
   listMaxHeight?: number;

@@ -10,7 +10,7 @@ interface Fruit {
 
 interface GroceryList {
   groupTitle: string;
-  options: any;
+  options: Fruit[];
 }
 
 const fruits: Fruit[] = [
@@ -46,7 +46,10 @@ const groceryList: GroceryList[] = [
   },
 ];
 
-const fruitStrings = fruits.reduce((acc, fruit) => [...acc, fruit.name], []);
+const fruitStrings = fruits.reduce(
+  (acc, fruit) => [...acc, fruit.name],
+  [] as string[],
+);
 
 const mockOnInputValueChange = jest.fn();
 const mockOnSelectItem = jest.fn();
@@ -233,7 +236,6 @@ describe('Autocomplete', () => {
       renderComponent({
         items: fruits,
         itemToString: (item: Fruit) => item.name,
-        // eslint-disable-next-line react/display-name
         renderItem: (item, inputValue) => {
           const { before, match, after } = getStringMatch(
             item.name,
@@ -246,7 +248,7 @@ describe('Autocomplete', () => {
               <b>{match}</b>
               {after}
             </>
-          );
+          ) as JSX.Element;
         },
       });
 
@@ -277,7 +279,7 @@ describe('Autocomplete', () => {
 
   describe('items is a nested object with groups', () => {
     it('renders the group titles', async () => {
-      renderComponent({
+      renderComponent<Fruit>({
         isGrouped: true,
         items: groceryList,
         itemToString: (item: Fruit) => item.name,
@@ -306,7 +308,7 @@ describe('Autocomplete', () => {
       ).toHaveLength(2);
     });
     it('selects the first item', async () => {
-      renderComponent({
+      renderComponent<Fruit>({
         isGrouped: true,
         items: groceryList,
         itemToString: (item: Fruit) => item.name,
@@ -353,13 +355,14 @@ describe('Autocomplete', () => {
   });
 });
 
-function renderComponent(customProps: Partial<AutocompleteProps>) {
+function renderComponent<ItemType>(
+  customProps: Partial<AutocompleteProps<ItemType>>,
+) {
   const props = {
-    items: fruitStrings,
+    items: (fruitStrings || customProps.items) as ItemType[],
     onInputValueChange: mockOnInputValueChange,
     onSelectItem: mockOnSelectItem,
     ...customProps,
   };
-
   render(<Autocomplete {...props} />);
 }

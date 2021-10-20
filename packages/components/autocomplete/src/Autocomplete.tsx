@@ -4,7 +4,7 @@ import { useCombobox } from 'downshift';
 
 import { CommonProps, mergeRefs } from '@contentful/f36-core';
 import { IconButton } from '@contentful/f36-button';
-import { TextInput, TextInputProps } from '@contentful/f36-forms';
+import { TextInput, TextInputProps } from '@contentful/f36-forms/src';
 import { CloseIcon, ChevronDownIcon } from '@contentful/f36-icons';
 import { SkeletonContainer, SkeletonBodyText } from '@contentful/f36-skeleton';
 import { Popover } from '@contentful/f36-popover';
@@ -13,8 +13,13 @@ import { SectionHeading } from '@contentful/f36-typography';
 import { AutocompleteItems } from './AutocompleteItems';
 import { getAutocompleteStyles } from './Autocomplete.styles';
 
+export interface GenericGroupType<ItemType> {
+  groupTitle: string;
+  options: ItemType[];
+}
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export interface AutocompleteProps<ItemType = any>
+export interface AutocompleteProps<ItemType>
   extends CommonProps,
     Pick<
       TextInputProps,
@@ -24,7 +29,7 @@ export interface AutocompleteProps<ItemType = any>
    * It’s an array of data to be used as "options" by the autocomplete component.
    * defined as any, because in this moment we do not know if items is a group
    */
-  items: any;
+  items: ItemType[] | GenericGroupType<ItemType>[];
 
   /**
    * Tells if the item is a object with groups
@@ -121,17 +126,10 @@ function _Autocomplete<ItemType>(
     listWidth = 'auto',
     listMaxHeight = 180,
     isLoading = false,
-    isGrouped = false,
     testId = 'cf-autocomplete',
   } = props;
 
-  /*
-   * GroupType depends on ItemType
-   */
-  interface GroupType {
-    groupTitle: string;
-    options: ItemType[];
-  }
+  type GroupType = GenericGroupType<ItemType>;
 
   const styles = getAutocompleteStyles(listMaxHeight);
 
@@ -146,6 +144,16 @@ function _Autocomplete<ItemType>(
     [onInputValueChange],
   );
 
+  // This is required to infer correct typings when differentiating groups and items
+  const isGrouped = isUsingGroups(props.isGrouped ?? false, items);
+
+  const flattenItems = isGrouped
+    ? items.reduce(
+        (acc: ItemType[], group: GroupType) => [...acc, ...group.options],
+        [],
+      )
+    : items;
+
   const {
     getComboboxProps,
     getInputProps,
@@ -156,9 +164,7 @@ function _Autocomplete<ItemType>(
     isOpen,
     toggleMenu,
   } = useCombobox({
-    items: isGrouped
-      ? items.reduce((a: GroupType[], b: GroupType) => [...a, ...b.options], [])
-      : items,
+    items: flattenItems,
     inputValue,
     itemToString,
     onInputValueChange: ({ inputValue }) => {
@@ -278,7 +284,7 @@ function _Autocomplete<ItemType>(
                   >
                     {group.groupTitle}
                   </SectionHeading>
-                  <AutocompleteItems<ItemType>
+                  <AutocompleteItems
                     items={group.options}
                     highlightedIndex={highlightedIndex}
                     getItemProps={getItemProps}
@@ -293,7 +299,7 @@ function _Autocomplete<ItemType>(
             })}
 
           {!isLoading && !isGrouped && (
-            <AutocompleteItems<ItemType>
+            <AutocompleteItems
               items={items}
               elementStartIndex={elementStartIndex}
               highlightedIndex={highlightedIndex}
@@ -315,6 +321,13 @@ const ListItemLoadingState = () => {
     </SkeletonContainer>
   );
 };
+
+function isUsingGroups<ItemType>(
+  isGrouped: boolean,
+  items: ItemType[] | GenericGroupType<ItemType>[],
+): items is GenericGroupType<ItemType>[] {
+  return isGrouped;
+}
 
 /**
  * The Autocomplete is a component that will show a `TextInput` where a user can type any word which will be used
