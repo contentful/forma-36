@@ -125,6 +125,7 @@ function _Autocomplete<ItemType>(
     listRef,
     listWidth = 'auto',
     listMaxHeight = 180,
+    isGrouped = false,
     isLoading = false,
     testId = 'cf-autocomplete',
   } = props;
@@ -144,10 +145,7 @@ function _Autocomplete<ItemType>(
     [onInputValueChange],
   );
 
-  // This is required to infer correct typings when differentiating groups and items
-  const isGrouped = isUsingGroups(props.isGrouped ?? false, items);
-
-  const flattenItems = isGrouped
+  const flattenItems = isUsingGroups(isGrouped, items)
     ? items.reduce(
         (acc: ItemType[], group: GroupType) => [...acc, ...group.options],
         [],
@@ -272,7 +270,7 @@ function _Autocomplete<ItemType>(
           )}
 
           {!isLoading &&
-            isGrouped &&
+            isUsingGroups(isGrouped, items) &&
             items.map((group: GroupType, index: number) => {
               const render = (
                 <div key={index}>
@@ -298,7 +296,7 @@ function _Autocomplete<ItemType>(
               return render;
             })}
 
-          {!isLoading && !isGrouped && (
+          {!isLoading && !isUsingGroups(isGrouped, items) && (
             <AutocompleteItems
               items={items}
               elementStartIndex={elementStartIndex}
@@ -322,6 +320,7 @@ const ListItemLoadingState = () => {
   );
 };
 
+// This is required to infer correct typings when differentiating groups and items
 function isUsingGroups<ItemType>(
   isGrouped: boolean,
   items: ItemType[] | GenericGroupType<ItemType>[],
