@@ -39,16 +39,11 @@ function _Card<E extends React.ElementType = typeof DEFAULT_TAG>(
   }: CardProps<E>,
   forwardedRef: React.Ref<HTMLElement>,
 ) {
-  const styles = getCardStyles();
+  const styles = getCardStyles({ padding });
   const baseStyles = getBaseCardStyles();
   const hasHeader = title || icon || badge || actions;
   const header = (
-    <Flex
-      className={cx(
-        styles.header({ padding }),
-        actions && styles.headerWithActions({ padding }),
-      )}
-    >
+    <Flex className={cx(styles.header, actions && styles.headerWithActions)}>
       {title && (
         <Flex as="header" flexGrow={1}>
           <Heading marginBottom="none">{title}</Heading>
@@ -67,7 +62,7 @@ function _Card<E extends React.ElementType = typeof DEFAULT_TAG>(
 
   return (
     <BaseCard
-      contentBodyProps={{ className: styles.content({ padding }) }}
+      contentBodyProps={{ className: styles.content }}
       {...otherProps}
       header={hasHeader ? header : null}
       ref={forwardedRef}
