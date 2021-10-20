@@ -4,7 +4,7 @@ import { useCombobox } from 'downshift';
 
 import { CommonProps, mergeRefs } from '@contentful/f36-core';
 import { IconButton } from '@contentful/f36-button';
-import { TextInput, TextInputProps } from '@contentful/f36-forms/src';
+import { TextInput, TextInputProps } from '@contentful/f36-forms';
 import { CloseIcon, ChevronDownIcon } from '@contentful/f36-icons';
 import { SkeletonContainer, SkeletonBodyText } from '@contentful/f36-skeleton';
 import { Popover } from '@contentful/f36-popover';
