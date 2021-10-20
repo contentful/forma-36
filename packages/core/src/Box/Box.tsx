@@ -4,7 +4,7 @@ import { css, cx } from 'emotion';
 import type { MarginProps, PaddingProps, CommonProps } from '../types';
 import { getSpacingStyles } from '../utils/getSpacingStyles';
 
-const DEFAULT_TAG: React.ElementType = 'div';
+const BOX_DEFAULT_TAG: React.ElementType = 'div';
 
 import { PolymorphicProps, PolymorphicComponent } from '../Primitive/Primitive';
 
@@ -21,10 +21,10 @@ export interface BoxInternalProps
 }
 
 export type BoxProps<
-  E extends React.ElementType = typeof DEFAULT_TAG
+  E extends React.ElementType = typeof BOX_DEFAULT_TAG
 > = PolymorphicProps<BoxInternalProps, E>;
 
-export function useBox<E extends React.ElementType = typeof DEFAULT_TAG>(
+export function useBox<E extends React.ElementType = typeof BOX_DEFAULT_TAG>(
   props: BoxProps<E>,
 ) {
   const {
@@ -41,7 +41,7 @@ export function useBox<E extends React.ElementType = typeof DEFAULT_TAG>(
     paddingRight,
     paddingTop,
     testId,
-    as: Element = DEFAULT_TAG,
+    as: Element = BOX_DEFAULT_TAG,
     ...otherProps
   } = props;
   const boxProps = {
@@ -75,7 +75,7 @@ export function useBox<E extends React.ElementType = typeof DEFAULT_TAG>(
   };
 }
 
-function _Box<E extends React.ElementType = typeof DEFAULT_TAG>(
+function _Box<E extends React.ElementType = typeof BOX_DEFAULT_TAG>(
   props: BoxProps<E>,
   ref: React.Ref<any>,
 ) {
@@ -90,5 +90,5 @@ function _Box<E extends React.ElementType = typeof DEFAULT_TAG>(
 
 export const Box: PolymorphicComponent<
   BoxInternalProps,
-  typeof DEFAULT_TAG
+  typeof BOX_DEFAULT_TAG
 > = React.forwardRef(_Box);

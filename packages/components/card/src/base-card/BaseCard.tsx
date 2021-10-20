@@ -28,7 +28,7 @@ import {
   SkeletonDisplayText,
 } from '@contentful/f36-skeleton';
 
-export const DEFAULT_TAG = 'article';
+export const BASE_CARD_DEFAULT_TAG = 'article';
 
 export type CardElement = 'a' | 'article' | 'button' | 'div';
 
@@ -106,10 +106,10 @@ export type BaseCardInternalProps = CommonProps &
   };
 
 export type BaseCardProps<
-  E extends React.ElementType = typeof DEFAULT_TAG
+  E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG
 > = PolymorphicProps<BaseCardInternalProps, E>;
 
-function _BaseCard<E extends React.ElementType = typeof DEFAULT_TAG>(
+function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
   {
     actions,
     actionsButtonProps,
@@ -250,7 +250,7 @@ function _BaseCard<E extends React.ElementType = typeof DEFAULT_TAG>(
       aria-pressed={
         otherProps.as === 'button' ? (isSelected ? 'true' : 'false') : undefined
       }
-      as={DEFAULT_TAG}
+      as={BASE_CARD_DEFAULT_TAG}
       className={cx(
         styles.root({
           hasHeader,
@@ -312,5 +312,5 @@ function _BaseCard<E extends React.ElementType = typeof DEFAULT_TAG>(
 
 export const BaseCard: PolymorphicComponent<
   BaseCardInternalProps,
-  typeof DEFAULT_TAG
+  typeof BASE_CARD_DEFAULT_TAG
 > = forwardRef(_BaseCard);

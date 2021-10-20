@@ -10,7 +10,7 @@ import {
 import type { HeadingElement } from './Heading';
 import { Text } from './Text';
 
-const DEFAULT_TAG = 'h3';
+const SECTION_HEADING_DEFAULT_TAG = 'h3';
 
 export interface SectionHeadingInternalProps extends CommonProps, MarginProps {
   as?: HeadingElement;
@@ -18,10 +18,12 @@ export interface SectionHeadingInternalProps extends CommonProps, MarginProps {
 }
 
 export type SectionHeadingProps<
-  E extends React.ElementType = typeof DEFAULT_TAG
+  E extends React.ElementType = typeof SECTION_HEADING_DEFAULT_TAG
 > = PolymorphicProps<SectionHeadingInternalProps, E>;
 
-function _SectionHeading<E extends React.ElementType = typeof DEFAULT_TAG>(
+function _SectionHeading<
+  E extends React.ElementType = typeof SECTION_HEADING_DEFAULT_TAG
+>(
   {
     children,
     className,
@@ -32,7 +34,7 @@ function _SectionHeading<E extends React.ElementType = typeof DEFAULT_TAG>(
 ) {
   return (
     <Text
-      as={DEFAULT_TAG}
+      as={SECTION_HEADING_DEFAULT_TAG}
       testId={testId}
       marginBottom="spacingL"
       fontWeight="fontWeightDemiBold"
@@ -56,5 +58,5 @@ function _SectionHeading<E extends React.ElementType = typeof DEFAULT_TAG>(
 
 export const SectionHeading: PolymorphicComponent<
   SectionHeadingInternalProps,
-  typeof DEFAULT_TAG
+  typeof SECTION_HEADING_DEFAULT_TAG
 > = React.forwardRef(_SectionHeading);

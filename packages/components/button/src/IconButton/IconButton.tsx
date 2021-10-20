@@ -15,16 +15,15 @@ interface IconButtonInternalProps
   'aria-label': string;
 }
 
-const DEFAULT_TAG = 'button';
+const ICON_BUTTON_DEFAULT_TAG = 'button';
 
 export type IconButtonProps<
-  E extends React.ElementType = typeof DEFAULT_TAG
+  E extends React.ElementType = typeof ICON_BUTTON_DEFAULT_TAG
 > = PolymorphicProps<IconButtonInternalProps, E, 'disabled'>;
 
-function _IconButton<E extends React.ElementType = typeof DEFAULT_TAG>(
-  props: IconButtonProps<E>,
-  ref: React.Ref<any>,
-) {
+function _IconButton<
+  E extends React.ElementType = typeof ICON_BUTTON_DEFAULT_TAG
+>(props: IconButtonProps<E>, ref: React.Ref<any>) {
   const {
     testId = 'cf-ui-icon-button',
     variant = 'transparent',
@@ -53,6 +52,6 @@ function _IconButton<E extends React.ElementType = typeof DEFAULT_TAG>(
 
 export const IconButton: PolymorphicComponent<
   IconButtonInternalProps,
-  typeof DEFAULT_TAG,
+  typeof ICON_BUTTON_DEFAULT_TAG,
   'disabled'
 > = React.forwardRef(_IconButton);

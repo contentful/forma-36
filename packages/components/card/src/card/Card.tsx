@@ -8,7 +8,7 @@ import { Heading } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
 import { Icon } from '@contentful/f36-icon';
 
-import { BaseCard, DEFAULT_TAG } from '../base-card/BaseCard';
+import { BaseCard, BASE_CARD_DEFAULT_TAG } from '../base-card/BaseCard';
 import type { BaseCardInternalProps } from '../base-card/BaseCard';
 import { CardActions } from '../base-card/CardActions';
 import { getCardStyles } from './Card.styles';
@@ -25,10 +25,10 @@ export type CardInternalProps = Omit<
 };
 
 export type CardProps<
-  E extends React.ElementType = typeof DEFAULT_TAG
+  E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG
 > = PolymorphicProps<CardInternalProps, E>;
 
-function _Card<E extends React.ElementType = typeof DEFAULT_TAG>(
+function _Card<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
   {
     actions,
     badge,
@@ -81,5 +81,5 @@ function _Card<E extends React.ElementType = typeof DEFAULT_TAG>(
 
 export const Card: PolymorphicComponent<
   CardInternalProps,
-  typeof DEFAULT_TAG
+  typeof BASE_CARD_DEFAULT_TAG
 > = forwardRef(_Card);

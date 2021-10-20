@@ -9,7 +9,7 @@ import {
 import { styles } from './TextLink.styles';
 import { TextLinkVariant } from './types';
 
-const DEFAULT_TAG = 'a';
+const TEX_LINK_DEFAULT_TAG = 'a';
 
 interface TextLinkInternalProps extends CommonProps {
   children?: React.ReactNode;
@@ -40,10 +40,10 @@ interface TextLinkInternalProps extends CommonProps {
 }
 
 export type TextLinkProps<
-  E extends React.ElementType = typeof DEFAULT_TAG
+  E extends React.ElementType = typeof TEX_LINK_DEFAULT_TAG
 > = PolymorphicProps<TextLinkInternalProps, E, 'disabled'>;
 
-function _TextLink<E extends React.ElementType = typeof DEFAULT_TAG>(
+function _TextLink<E extends React.ElementType = typeof TEX_LINK_DEFAULT_TAG>(
   props: TextLinkProps<E>,
   ref: React.Ref<any>,
 ) {
@@ -56,7 +56,7 @@ function _TextLink<E extends React.ElementType = typeof DEFAULT_TAG>(
     icon,
     alignIcon = 'start',
     isDisabled,
-    as = DEFAULT_TAG,
+    as = TEX_LINK_DEFAULT_TAG,
     ...otherProps
   } = props;
 
@@ -126,6 +126,6 @@ function _TextLink<E extends React.ElementType = typeof DEFAULT_TAG>(
 
 export const TextLink: PolymorphicComponent<
   TextLinkInternalProps,
-  typeof DEFAULT_TAG,
+  typeof TEX_LINK_DEFAULT_TAG,
   'disabled'
 > = React.forwardRef(_TextLink);

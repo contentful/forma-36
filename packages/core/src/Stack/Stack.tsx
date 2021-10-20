@@ -22,12 +22,12 @@ export interface StackInternalProps
 }
 
 export type StackProps<
-  E extends React.ElementType = typeof DEFAULT_TAG
+  E extends React.ElementType = typeof STACK_DEFAULT_TAG
 > = PolymorphicProps<StackInternalProps, E>;
 
-const DEFAULT_TAG = 'div';
+const STACK_DEFAULT_TAG = 'div';
 
-function _Stack<E extends React.ElementType = typeof DEFAULT_TAG>(
+function _Stack<E extends React.ElementType = typeof STACK_DEFAULT_TAG>(
   {
     flexDirection = 'row',
     alignItems = 'center',
@@ -41,7 +41,7 @@ function _Stack<E extends React.ElementType = typeof DEFAULT_TAG>(
 ) {
   const { boxProps, Element } = useBox<React.ElementType>({
     ...otherProps,
-    as: as || DEFAULT_TAG,
+    as: as || STACK_DEFAULT_TAG,
   });
   return (
     <Flex
@@ -61,5 +61,5 @@ function _Stack<E extends React.ElementType = typeof DEFAULT_TAG>(
 
 export const Stack: PolymorphicComponent<
   StackInternalProps,
-  typeof DEFAULT_TAG
+  typeof STACK_DEFAULT_TAG
 > = React.forwardRef(_Stack);

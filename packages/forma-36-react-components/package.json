@@ -2,10 +2,10 @@
   "name": "@contentful/f36-components",
   "description": "Contentful UI Component Library",
   "version": "4.0.0",
-  "main": "dist/main.js",
-  "module": "dist/module.js",
-  "types": "dist/types.d.ts",
-  "source": "src/index.ts",
+  "main": "dist/f36-components.umd.js",
+  "types": "dist/index.d.ts",
+  "module": "./dist/f36-components.module.js",
+  "exports": "./dist/f36-components.modern.js",
   "license": "MIT",
   "files": [
     "dist"
@@ -14,7 +14,7 @@
   "browserslist": "extends @contentful/browserslist-config",
   "scripts": {
     "build:clean": "rm -rf dist",
-    "build": "yarn build:clean && parcel build && yarn size",
+    "build": "yarn build:clean && microbundle src/index.ts && yarn size",
     "size": "size-limit",
     "semantic-release": "semantic-release"
   },

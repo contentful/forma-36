@@ -39,13 +39,13 @@ export interface GridInternalProps
   alignContent?: CSS.Property.AlignContent;
 }
 
-const DEFAULT_TAG = 'div';
+const GRID_DEFAULT_TAG = 'div';
 
 export type GridProps<
-  E extends React.ElementType = typeof DEFAULT_TAG
+  E extends React.ElementType = typeof GRID_DEFAULT_TAG
 > = PolymorphicProps<GridInternalProps, E>;
 
-function _Grid<E extends React.ElementType = typeof DEFAULT_TAG>(
+function _Grid<E extends React.ElementType = typeof GRID_DEFAULT_TAG>(
   {
     alignContent,
     children,
@@ -70,7 +70,7 @@ function _Grid<E extends React.ElementType = typeof DEFAULT_TAG>(
 
   const { boxProps, Element } = useBox<React.ElementType>({
     ...otherProps,
-    as: as || DEFAULT_TAG,
+    as: as || GRID_DEFAULT_TAG,
   });
 
   return (
@@ -98,5 +98,5 @@ function _Grid<E extends React.ElementType = typeof DEFAULT_TAG>(
 
 export const Grid: PolymorphicComponent<
   GridInternalProps,
-  typeof DEFAULT_TAG
+  typeof GRID_DEFAULT_TAG
 > = React.forwardRef(_Grid);
