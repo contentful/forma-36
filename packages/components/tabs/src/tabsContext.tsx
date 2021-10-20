@@ -5,8 +5,10 @@ export const TabsContext = React.createContext({
   setSelectedTab: undefined,
 });
 
-export const TabsContextProvider = ({ defaultTab, children }) => {
-  const [selectedTab, setSelectedTab] = React.useState(defaultTab);
+export const TabsContextProvider = ({ defaultTab, currentTab, children }) => {
+  const [selectedTab, setSelectedTab] = React.useState(
+    currentTab ? currentTab : defaultTab,
+  );
   return (
     <TabsContext.Provider value={{ selectedTab, setSelectedTab }}>
       {children}

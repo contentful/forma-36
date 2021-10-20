@@ -38,6 +38,50 @@ Be aware that the users will not see all the content at the same time. Make sure
 </Tabs>
 ```
 
+### Controlled Tabs
+
+```jsx
+// import { Tabs } from '@contentful/f36-tabs';
+
+() => {
+  const [currentTab, setCurrentTab] = React.useState('first');
+  return (
+    <Tabs defaultTab="first" currentTab={currentTab}>
+      <Tabs.List>
+        <Tabs.Tab
+          panelId="first"
+          onSelect={(id) => {
+            setCurrentTab(id);
+          }}
+        >
+          First
+        </Tabs.Tab>
+        <Tabs.Tab
+          panelId="second"
+          onSelect={(id) => {
+            setCurrentTab(id);
+          }}
+        >
+          Second
+        </Tabs.Tab>
+        <Tabs.Tab
+          panelId="third"
+          isDisabled
+          onSelect={(id) => {
+            setCurrentTab(id);
+          }}
+        >
+          Third (disabled)
+        </Tabs.Tab>
+      </Tabs.List>
+      <Tabs.Panel id="first">content first tab</Tabs.Panel>
+      <Tabs.Panel id="second">content second tab</Tabs.Panel>
+      <Tabs.Panel id="third">content third tab</Tabs.Panel>
+    </Tabs>
+  );
+};
+```
+
 ### with vertical divider
 
 ```jsx
