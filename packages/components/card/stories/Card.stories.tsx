@@ -100,7 +100,6 @@ export const WithLinkAndTarget: Story<CardProps<'a'>> = (args) => {
 };
 
 WithLinkAndTarget.args = {
-  as: 'a',
   href: 'https://f36.contentful.com/',
   target: '_blank',
   title: 'Forma 36',

@@ -51,7 +51,7 @@ export type BaseCardInternalProps = CommonProps &
      */
     badge?: ReactElement;
     /**
-     * Passing href into the Card. You need to also add property as="a" to make it rendered as <a />
+     * Passing href into the Card and rendering it as <a />
      */
     href?: string;
     /**
@@ -257,7 +257,7 @@ function _BaseCard<E extends React.ElementType = typeof DEFAULT_TAG>(
       aria-pressed={
         otherProps.as === 'button' ? (isSelected ? 'true' : 'false') : undefined
       }
-      as={DEFAULT_TAG}
+      as={href ? 'a' : DEFAULT_TAG}
       className={cx(
         styles.root({
           hasHeader,
