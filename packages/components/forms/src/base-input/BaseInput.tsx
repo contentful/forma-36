@@ -120,6 +120,7 @@ function _BaseInput<E extends React.ElementType = typeof INPUT_DEFAULT_TAG>(
       aria-readonly={isReadOnly ? 'true' : undefined}
       aria-required={isRequired ? 'true' : undefined}
       aria-invalid={isInvalid ? 'true' : undefined}
+      aria-describedby={`${id}-${isInvalid ? `validation` : `helptext`}`}
       disabled={isDisabled}
       required={isRequired}
       onChange={handleChange}

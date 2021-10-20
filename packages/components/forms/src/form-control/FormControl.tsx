@@ -29,6 +29,7 @@ function _FormControl<
   E extends React.ElementType = typeof FORM_CONTROL_DEFAULT_TAG
 >(
   {
+    as,
     isInvalid,
     isRequired,
     isDisabled,
@@ -44,6 +45,7 @@ function _FormControl<
   const generatedId = useId(id, 'field-');
   const [inputValue, setInputValue] = useState('');
   const [maxLength, setMaxLength] = useState(0);
+  const roleAttr = as === 'fieldset' ? undefined : 'group';
 
   const context = {
     id: generatedId,
@@ -62,7 +64,7 @@ function _FormControl<
       <Box
         as={FORM_CONTROL_DEFAULT_TAG}
         ref={ref}
-        role="group"
+        role={roleAttr}
         testId={testId}
         marginBottom={marginBottom}
         {...otherProps}
