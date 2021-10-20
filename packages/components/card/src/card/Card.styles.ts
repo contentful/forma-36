@@ -1,24 +1,40 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 
-export const getCardStyles = () => {
+export const getCardStyles = ({ padding }) => {
+  let paddingValue;
+
+  switch (padding) {
+    case 'large':
+      paddingValue = tokens.spacingL;
+      break;
+    case 'none':
+      paddingValue = '0px';
+      break;
+    default:
+      paddingValue = tokens.spacingM;
+  }
+
   return {
-    contentWithLargePadding: css({
-      paddingBottom: tokens.spacingL,
-      paddingLeft: tokens.spacingL,
-      paddingRight: tokens.spacingL,
+    content: css({
+      paddingBottom: paddingValue,
+      paddingLeft: paddingValue,
+      paddingRight: paddingValue,
     }),
-    header: ({ padding }) =>
-      css({
-        gridColumn: 'content',
-        gridRow: 'header',
-        padding: padding === 'large' ? tokens.spacingL : tokens.spacingM,
-      }),
-    headerWithActions: ({ padding }) =>
-      css({
-        alignItems: 'flex-end',
-        paddingRight: tokens.spacingXs,
-        paddingTop: padding === 'large' ? tokens.spacingM : tokens.spacingXs,
-      }),
+    header: css({
+      gridColumn: 'content',
+      gridRow: 'header',
+      padding: paddingValue,
+    }),
+    headerWithActions: css({
+      alignItems: 'flex-end',
+      paddingRight: tokens.spacingXs,
+      paddingTop:
+        padding === 'large'
+          ? tokens.spacingM
+          : padding === 'none'
+          ? '0px'
+          : tokens.spacingXs,
+    }),
   };
 };
