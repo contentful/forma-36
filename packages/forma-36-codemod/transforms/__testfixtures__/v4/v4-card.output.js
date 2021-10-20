@@ -9,3 +9,7 @@ import { Card } from "@contentful/f36-components";
 <Card isSelected>
   Selectable card content
 </Card>;
+
+<Card as="a" href="example.com">
+  Selectable card content
+</Card>;
