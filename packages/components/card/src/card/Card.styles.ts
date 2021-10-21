@@ -36,5 +36,8 @@ export const getCardStyles = ({ padding }) => {
           ? '0px'
           : tokens.spacingXs,
     }),
+    root: css({
+      paddingTop: padding === 'none' && 0,
+    }),
   };
 };
