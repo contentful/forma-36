@@ -37,9 +37,9 @@ function _Tab(
 
   const handleClick = useCallback(
     (e: MouseEvent<HTMLElement>) => {
-      if (onSelect && !isDisabled) {
+      if (!isDisabled) {
         setSelectedTab(panelId);
-        onSelect(panelId, e);
+        onSelect?.(panelId, e);
       }
     },
     [isDisabled, panelId, onSelect, setSelectedTab],

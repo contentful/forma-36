@@ -24,8 +24,6 @@ Be aware that the users will not see all the content at the same time. Make sure
 ## Code examples
 
 ```jsx
-// import { Tabs } from '@contentful/f36-tabs';
-
 <Tabs defaultTab="first">
   <Tabs.List variant="vertical-divider">
     <Tabs.Tab panelId="first">First</Tabs.Tab>
@@ -34,14 +32,39 @@ Be aware that the users will not see all the content at the same time. Make sure
   </Tabs.List>
   <Tabs.Panel id="first">Content for the first tab</Tabs.Panel>
   <Tabs.Panel id="second">Content for the second tab</Tabs.Panel>
-  <Tabs.Panel id="third">Content for the second tab</Tabs.Panel>
+  <Tabs.Panel id="third">Content for the third tab</Tabs.Panel>
 </Tabs>
+```
+
+### Controlled Tabs
+
+```jsx
+() => {
+  const [currentTab, setCurrentTab] = React.useState('first');
+  return (
+    <Tabs currentTab={currentTab}>
+      <Tabs.List>
+        <Tabs.Tab panelId="first" onSelect={setCurrentTab}>
+          First
+        </Tabs.Tab>
+        <Tabs.Tab panelId="second" onSelect={setCurrentTab}>
+          Second
+        </Tabs.Tab>
+        <Tabs.Tab panelId="third" isDisabled onSelect={setCurrentTab}>
+          Third (disabled)
+        </Tabs.Tab>
+      </Tabs.List>
+      <Tabs.Panel id="first">content first tab</Tabs.Panel>
+      <Tabs.Panel id="second">content second tab</Tabs.Panel>
+      <Tabs.Panel id="third">content third tab</Tabs.Panel>
+    </Tabs>
+  );
+};
 ```
 
 ### with vertical divider
 
 ```jsx
-// import { Tabs } from '@contentful/f36-tabs';
 <Tabs defaultTab="first">
   <Tabs.List variant="vertical-divider">
     <Tabs.Tab panelId="first">First</Tabs.Tab>
@@ -50,7 +73,7 @@ Be aware that the users will not see all the content at the same time. Make sure
   </Tabs.List>
   <Tabs.Panel id="first">Content for the first tab</Tabs.Panel>
   <Tabs.Panel id="second">Content for the second tab</Tabs.Panel>
-  <Tabs.Panel id="third">Content for the second tab</Tabs.Panel>
+  <Tabs.Panel id="third">Content for the third tab</Tabs.Panel>
 </Tabs>
 ```
 

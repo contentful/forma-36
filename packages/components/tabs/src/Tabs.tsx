@@ -6,7 +6,8 @@ export interface TabsProps extends CommonProps {
   /**
    * default active Tab
    */
-  defaultTab: string;
+  defaultTab?: string;
+  currentTab?: string;
 }
 
 function _Tabs(
@@ -16,6 +17,7 @@ function _Tabs(
     testId = 'cf-ui-tabs',
     style,
     defaultTab,
+    currentTab,
     ...otherProps
   }: TabsProps,
   ref: React.Ref<HTMLDivElement>,
@@ -27,7 +29,7 @@ function _Tabs(
   };
 
   return (
-    <TabsContextProvider defaultTab={defaultTab}>
+    <TabsContextProvider defaultTab={defaultTab} currentTab={currentTab}>
       <div {...elementProps} ref={ref}>
         {children}
       </div>

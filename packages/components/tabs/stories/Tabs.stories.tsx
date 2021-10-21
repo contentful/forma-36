@@ -60,6 +60,47 @@ export const Basic: Story = (args) => {
   );
 };
 
+export const Controlled: Story = (args) => {
+  const [currentTab, setCurrentTab] = React.useState('first');
+  return (
+    <Tabs currentTab={currentTab} {...args}>
+      <Tabs.List>
+        <Tabs.Tab
+          panelId="first"
+          onSelect={(id: string) => {
+            action('onSelect')(id);
+            setCurrentTab(id);
+          }}
+        >
+          First
+        </Tabs.Tab>
+        <Tabs.Tab
+          panelId="second"
+          onSelect={(id: string) => {
+            action('onSelect')(id);
+            setCurrentTab(id);
+          }}
+        >
+          Second
+        </Tabs.Tab>
+        <Tabs.Tab
+          panelId="third"
+          isDisabled
+          onSelect={(id: string) => {
+            action('onSelect')(id);
+            setCurrentTab(id);
+          }}
+        >
+          Third (disabled)
+        </Tabs.Tab>
+      </Tabs.List>
+      <Tabs.Panel id="first">content first tab</Tabs.Panel>
+      <Tabs.Panel id="second">content second tab</Tabs.Panel>
+      <Tabs.Panel id="third">content third tab</Tabs.Panel>
+    </Tabs>
+  );
+};
+
 export const Overview: Story = () => {
   const onSelect = (id: string) => {
     action('onSelect')(id);
@@ -67,11 +108,11 @@ export const Overview: Story = () => {
 
   return (
     <>
-      <SectionHeading as="h3" marginBottom="spacingS">
+      <SectionHeading as="h3" marginBottom="spacingM">
         Tabs default
       </SectionHeading>
 
-      <Flex marginBottom="spacingS" flexDirection="column">
+      <Flex marginBottom="spacingXl" flexDirection="column">
         <Tabs defaultTab="first">
           <Tabs.List>
             <Tabs.Tab panelId="first" onSelect={onSelect}>
@@ -90,11 +131,11 @@ export const Overview: Story = () => {
         </Tabs>
       </Flex>
 
-      <SectionHeading as="h3" marginBottom="spacingS">
+      <SectionHeading as="h3" marginBottom="spacingM">
         Tabs with horizontal divider
       </SectionHeading>
 
-      <Flex marginBottom="spacingS" flexDirection="column">
+      <Flex marginBottom="spacingXl" flexDirection="column">
         <Tabs defaultTab="first">
           <Tabs.List variant="horizontal-divider">
             <Tabs.Tab panelId="first" onSelect={onSelect}>
@@ -113,11 +154,11 @@ export const Overview: Story = () => {
         </Tabs>
       </Flex>
 
-      <SectionHeading as="h3" marginBottom="spacingS">
+      <SectionHeading as="h3" marginBottom="spacingM">
         Tabs with vertical divider
       </SectionHeading>
 
-      <Flex marginBottom="spacingS" flexDirection="column">
+      <Flex marginBottom="spacingXl" flexDirection="column">
         <Tabs defaultTab="first">
           <Tabs.List variant="vertical-divider">
             <Tabs.Tab panelId="first" onSelect={onSelect}>
