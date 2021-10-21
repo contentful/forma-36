@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+
+import { Global } from '@emotion/core';
 import { css, cx } from 'emotion';
-import { useStaticQuery, graphql } from 'gatsby';
-import { GlobalStyles, Flex } from '@contentful/f36-core';
-import './Layout.css';
+
+import { Flex } from '@contentful/f36-core';
+import { getGlobalStyles } from './Layout.styles';
 
 import Header from './Header';
 import Promo from './Promo';
@@ -28,6 +31,8 @@ const styles = {
 };
 
 export default function Layout({ location, pageContext, children }) {
+  const globalStyles = getGlobalStyles();
+
   useEffect(() => {
     // track page visit only when the page is mounted
     if (window.analytics) {
@@ -66,7 +71,8 @@ export default function Layout({ location, pageContext, children }) {
 
   return (
     <>
-      <GlobalStyles />
+      <Global styles={globalStyles} />
+
       <Helmet
         title={siteMetadata.title}
         meta={[
