@@ -11,7 +11,6 @@
 
 .Textarea__textarea {
   composes: focus-border--default from './../../styles/settings/a11y.css';
-  resize: vertical;
   outline: none;
   box-shadow: var(--inset-box-shadow-default);
   border: 1px solid var(--color-element-mid);

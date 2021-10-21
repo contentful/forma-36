@@ -24,6 +24,7 @@ export interface TextareaProps {
   required?: boolean;
   disabled?: boolean;
   value?: string;
+  resize?: 'none' | 'both' | 'horizontal' | 'vertical' | 'block' | 'inline';
   rows?: number;
   error?: boolean;
   onChange?: ChangeEventHandler<HTMLTextAreaElement>;
@@ -48,6 +49,7 @@ export const Textarea = ({
   onKeyDown,
   placeholder,
   required = false,
+  resize = 'vertical',
   rows,
   testId = 'cf-ui-textarea',
   textareaRef,
@@ -111,6 +113,9 @@ export const Textarea = ({
         value={disabled ? value : valueState}
         onKeyDown={handleKeyDown}
         required={required}
+        style={{
+          resize: resize,
+        }}
         ref={textareaRef}
         {...otherProps}
       />
