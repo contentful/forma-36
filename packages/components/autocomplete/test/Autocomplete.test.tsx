@@ -8,6 +8,11 @@ interface Fruit {
   name: string;
 }
 
+interface GroceryList {
+  groupTitle: string;
+  options: Fruit[];
+}
+
 const fruits: Fruit[] = [
   { id: 1, name: 'Apple 🍎' },
   { id: 2, name: 'Ananas 🍍' },
@@ -23,7 +28,28 @@ const fruits: Fruit[] = [
   { id: 12, name: 'Tomato 🍅' },
 ];
 
-const fruitStrings = fruits.reduce((acc, fruit) => [...acc, fruit.name], []);
+const vegetables: Fruit[] = [
+  { id: 1, name: 'Cucumber 🥒' },
+  { id: 2, name: 'Pumpkin 🎃' },
+  { id: 3, name: 'Brokkolie 🥦' },
+  { id: 4, name: 'Pepper 🫑' },
+];
+
+const groceryList: GroceryList[] = [
+  {
+    groupTitle: 'Fruit',
+    options: fruits,
+  },
+  {
+    groupTitle: 'Vegetable',
+    options: vegetables,
+  },
+];
+
+const fruitStrings = fruits.reduce(
+  (acc, fruit) => [...acc, fruit.name],
+  [] as string[],
+);
 
 const mockOnInputValueChange = jest.fn();
 const mockOnSelectItem = jest.fn();
@@ -80,7 +106,7 @@ describe('Autocomplete', () => {
       renderComponent({ clearAfterSelect: true });
 
       const input = screen.getByTestId('cf-autocomplete-input');
-      const list = screen.getByTestId('cf-autocomplete-list');
+      const container = screen.getByTestId('cf-autocomplete-container');
 
       // Type one letter in the input to open the list
       fireEvent.input(input, {
@@ -91,7 +117,7 @@ describe('Autocomplete', () => {
 
       // checks if the list is visible
       await waitFor(() => {
-        expect(list).toBeVisible();
+        expect(container).toBeVisible();
       });
 
       // go to the list first item
@@ -105,7 +131,7 @@ describe('Autocomplete', () => {
       });
 
       // checks if the list got closed and the value of the input is an empty string
-      expect(list).not.toBeVisible();
+      expect(container).not.toBeVisible();
       expect(input.getAttribute('value')).toBe('');
       expect(mockOnSelectItem).toHaveBeenCalledWith('Apple 🍎');
     });
@@ -136,7 +162,7 @@ describe('Autocomplete', () => {
       renderComponent({ isLoading: true });
 
       const input = screen.getByTestId('cf-autocomplete-input');
-      const list = screen.getByTestId('cf-autocomplete-list');
+      const container = screen.getByTestId('cf-autocomplete-container');
 
       // type anything to open the list
       fireEvent.input(input, {
@@ -147,7 +173,7 @@ describe('Autocomplete', () => {
 
       // checks if the list is visible and it shows the loading state
       await waitFor(() => {
-        expect(list).toBeVisible();
+        expect(container).toBeVisible();
         expect(screen.queryAllByTestId('cf-ui-skeleton-form')).toHaveLength(3);
       });
     });
@@ -210,7 +236,6 @@ describe('Autocomplete', () => {
       renderComponent({
         items: fruits,
         itemToString: (item: Fruit) => item.name,
-        // eslint-disable-next-line react/display-name
         renderItem: (item, inputValue) => {
           const { before, match, after } = getStringMatch(
             item.name,
@@ -223,7 +248,7 @@ describe('Autocomplete', () => {
               <b>{match}</b>
               {after}
             </>
-          );
+          ) as JSX.Element;
         },
       });
 
@@ -251,15 +276,93 @@ describe('Autocomplete', () => {
       expect(screen.queryAllByText(/ana/i)).toHaveLength(2);
     });
   });
+
+  describe('items is a nested object with groups', () => {
+    it('renders the group titles', async () => {
+      renderComponent<Fruit>({
+        isGrouped: true,
+        items: groceryList,
+        itemToString: (item: Fruit) => item.name,
+        renderItem: (item: Fruit) => item.name,
+      });
+      const input = screen.getByTestId('cf-autocomplete-input');
+      const container = screen.getByTestId('cf-autocomplete-container');
+      // list is initially closed
+      expect(container).not.toBeVisible();
+      expect(container.childElementCount).toBe(2);
+
+      // Type one letter in the input to open the list
+      fireEvent.input(input, {
+        target: {
+          value: 'a',
+        },
+      });
+
+      // checks if the list is visible
+      await waitFor(() => {
+        expect(container).toBeVisible();
+      });
+
+      expect(
+        screen.queryAllByTestId('cf-autocomplete-grouptitle'),
+      ).toHaveLength(2);
+    });
+    it('selects the first item', async () => {
+      renderComponent<Fruit>({
+        isGrouped: true,
+        items: groceryList,
+        itemToString: (item: Fruit) => item.name,
+        renderItem: (item: Fruit) => item.name,
+      });
+      const input = screen.getByTestId('cf-autocomplete-input');
+      const container = screen.getByTestId('cf-autocomplete-container');
+      const firstItem = screen.getByTestId('cf-autocomplete-list-item-0');
+      // list is initially closed
+      expect(container).not.toBeVisible();
+      expect(container.childElementCount).toBe(2);
+
+      // Type one letter in the input to open the list
+      fireEvent.input(input, {
+        target: {
+          value: 'a',
+        },
+      });
+
+      // checks if the list is visible
+      await waitFor(() => {
+        expect(container).toBeVisible();
+      });
+
+      // press the ArrowDown key
+      fireEvent.keyDown(input, {
+        key: 'ArrowDown',
+      });
+      expect(firstItem.getAttribute('aria-selected')).toBe('true');
+
+      // press Enter to select the item
+      fireEvent.keyDown(input, {
+        key: 'Enter',
+      });
+
+      // checks if the list got closed and the value of the input is the one we selected
+      expect(container).not.toBeVisible();
+      expect(input.getAttribute('value')).toBe('Apple 🍎');
+      expect(mockOnSelectItem).toHaveBeenCalledWith({
+        id: 1,
+        name: 'Apple 🍎',
+      });
+    });
+  });
 });
 
-function renderComponent(customProps: Partial<AutocompleteProps>) {
+function renderComponent<ItemType>(
+  customProps: Partial<AutocompleteProps<ItemType>>,
+) {
   const props = {
-    items: fruitStrings,
+    items: (fruitStrings || customProps.items) as ItemType[],
     onInputValueChange: mockOnInputValueChange,
     onSelectItem: mockOnSelectItem,
     ...customProps,
   };
-
   render(<Autocomplete {...props} />);
 }

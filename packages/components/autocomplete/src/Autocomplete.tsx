@@ -8,12 +8,18 @@ import { TextInput, TextInputProps } from '@contentful/f36-forms';
 import { CloseIcon, ChevronDownIcon } from '@contentful/f36-icons';
 import { SkeletonContainer, SkeletonBodyText } from '@contentful/f36-skeleton';
 import { Popover } from '@contentful/f36-popover';
-import { getStringMatch } from '@contentful/f36-utils';
+import { SectionHeading } from '@contentful/f36-typography';
 
+import { AutocompleteItems } from './AutocompleteItems';
 import { getAutocompleteStyles } from './Autocomplete.styles';
 
+export interface GenericGroupType<ItemType> {
+  groupTitle: string;
+  options: ItemType[];
+}
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export interface AutocompleteProps<ItemType = any>
+export interface AutocompleteProps<ItemType>
   extends CommonProps,
     Pick<
       TextInputProps,
@@ -26,8 +32,15 @@ export interface AutocompleteProps<ItemType = any>
     > {
   /**
    * It’s an array of data to be used as "options" by the autocomplete component.
+   * defined as any, because in this moment we do not know if items is a group
    */
-  items: ItemType[];
+  items: ItemType[] | GenericGroupType<ItemType>[];
+
+  /**
+   * Tells if the item is a object with groups
+   */
+  isGrouped?: boolean;
+
   /**
    * Function called whenever the input value changes
    */
@@ -118,9 +131,12 @@ function _Autocomplete<ItemType>(
     listRef,
     listWidth = 'auto',
     listMaxHeight = 180,
+    isGrouped = false,
     isLoading = false,
     testId = 'cf-autocomplete',
   } = props;
+
+  type GroupType = GenericGroupType<ItemType>;
 
   const styles = getAutocompleteStyles(listMaxHeight);
 
@@ -135,6 +151,13 @@ function _Autocomplete<ItemType>(
     [onInputValueChange],
   );
 
+  const flattenItems = isUsingGroups(isGrouped, items)
+    ? items.reduce(
+        (acc: ItemType[], group: GroupType) => [...acc, ...group.options],
+        [],
+      )
+    : items;
+
   const {
     getComboboxProps,
     getInputProps,
@@ -145,7 +168,7 @@ function _Autocomplete<ItemType>(
     isOpen,
     toggleMenu,
   } = useCombobox({
-    items,
+    items: flattenItems,
     inputValue,
     itemToString,
     onInputValueChange: ({ inputValue }) => {
@@ -158,11 +181,9 @@ function _Autocomplete<ItemType>(
           if (selectedItem) {
             onSelectItem(selectedItem);
           }
-
           if (clearAfterSelect) {
             handleInputValueChange('');
           }
-
           break;
         default:
           break;
@@ -178,6 +199,7 @@ function _Autocomplete<ItemType>(
   const comboboxProps = getComboboxProps();
   const toggleProps = getToggleButtonProps();
   const menuProps = getMenuProps();
+  let elementStartIndex = 0;
 
   return (
     <div
@@ -186,8 +208,6 @@ function _Autocomplete<ItemType>(
       ref={ref}
     >
       <Popover
-        // eslint-disable-next-line jsx-a11y/no-autofocus
-        autoFocus={false}
         usePortal={false}
         isOpen={isOpen}
         isFullWidth={listWidth === 'full'}
@@ -196,6 +216,11 @@ function _Autocomplete<ItemType>(
           <div {...comboboxProps} className={styles.combobox}>
             <TextInput
               {...inputProps}
+              onFocus={() => {
+                if (!isOpen) {
+                  toggleMenu();
+                }
+              }}
               id={id}
               isInvalid={isInvalid}
               isDisabled={isDisabled}
@@ -231,81 +256,82 @@ function _Autocomplete<ItemType>(
           </div>
         </Popover.Trigger>
 
-        <Popover.Content>
-          <ul
-            {...menuProps}
-            ref={mergeRefs(menuProps.ref, listRef)}
-            className={styles.list}
-            data-test-id="cf-autocomplete-list"
-          >
-            {isLoading &&
-              [...Array(3)].map((_, index) => (
-                <li key={index} className={cx(styles.item, styles.disabled)}>
-                  <ListItemLoadingState />
-                </li>
-              ))}
+        <Popover.Content
+          {...menuProps}
+          ref={mergeRefs(menuProps.ref, listRef)}
+          className={styles.content}
+          testId="cf-autocomplete-container"
+        >
+          {isLoading &&
+            [...Array(3)].map((_, index) => (
+              <div key={index} className={cx(styles.item, styles.disabled)}>
+                <ListItemLoadingState />
+              </div>
+            ))}
 
-            {!isLoading && items.length === 0 && (
-              <li className={cx(styles.item, styles.disabled)}>
-                {noMatchesMessage}
-              </li>
-            )}
+          {!isLoading && items.length === 0 && (
+            <div className={cx(styles.item, styles.disabled)}>
+              {noMatchesMessage}
+            </div>
+          )}
 
-            {!isLoading &&
-              items.map((item, index) => {
-                const itemProps = getItemProps({ item, index });
-
-                return (
-                  <li
-                    {...itemProps}
+          {!isLoading &&
+            isUsingGroups(isGrouped, items) &&
+            items.map((group: GroupType, index: number) => {
+              const render = (
+                <div key={index}>
+                  <SectionHeading
                     key={index}
-                    className={cx([
-                      styles.item,
-                      highlightedIndex === index && styles.highlighted,
-                    ])}
-                    data-test-id={`cf-autocomplete-list-item-${index}`}
+                    data-test-id="cf-autocomplete-grouptitle"
+                    marginBottom="none"
+                    className={styles.groupTitle}
                   >
-                    {renderItem ? (
-                      renderItem(item, inputValue)
-                    ) : typeof item === 'string' ? (
-                      <HighlightedItem item={item} inputValue={inputValue} />
-                    ) : (
-                      item
-                    )}
-                  </li>
-                );
-              })}
-          </ul>
+                    {group.groupTitle}
+                  </SectionHeading>
+                  <AutocompleteItems
+                    items={group.options}
+                    highlightedIndex={highlightedIndex}
+                    getItemProps={getItemProps}
+                    renderItem={renderItem}
+                    inputValue={inputValue}
+                    elementStartIndex={elementStartIndex}
+                  />
+                </div>
+              );
+              elementStartIndex += group.options.length;
+              return render;
+            })}
+
+          {!isLoading && !isUsingGroups(isGrouped, items) && (
+            <AutocompleteItems
+              items={items}
+              elementStartIndex={elementStartIndex}
+              highlightedIndex={highlightedIndex}
+              getItemProps={getItemProps}
+              renderItem={renderItem}
+              inputValue={inputValue}
+            />
+          )}
         </Popover.Content>
       </Popover>
     </div>
   );
 }
 
-function HighlightedItem({
-  item,
-  inputValue,
-}: {
-  item: string;
-  inputValue: string;
-}) {
-  const { before, match, after } = getStringMatch(item, inputValue);
-
-  return (
-    <>
-      {before}
-      <b>{match}</b>
-      {after}
-    </>
-  );
-}
-
-function ListItemLoadingState() {
+const ListItemLoadingState = () => {
   return (
     <SkeletonContainer svgHeight={16}>
       <SkeletonBodyText numberOfLines={1} />
     </SkeletonContainer>
   );
+};
+
+// This is required to infer correct typings when differentiating groups and items
+function isUsingGroups<ItemType>(
+  isGrouped: boolean,
+  items: ItemType[] | GenericGroupType<ItemType>[],
+): items is GenericGroupType<ItemType>[] {
+  return isGrouped;
 }
 
 /**

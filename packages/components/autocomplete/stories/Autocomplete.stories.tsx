@@ -14,12 +14,17 @@ export default {
   component: Autocomplete,
 } as Meta;
 
-interface Fruit {
+interface Produce {
   id: number;
   name: string;
 }
 
-const fruits: Fruit[] = [
+interface GroceryList {
+  groupTitle: string;
+  options: any;
+}
+
+const fruits: Produce[] = [
   { id: 1, name: 'Apple 🍎' },
   { id: 2, name: 'Ananas 🍍' },
   { id: 3, name: 'Avocado 🥑' },
@@ -32,6 +37,24 @@ const fruits: Fruit[] = [
   { id: 10, name: 'Strawberry 🍓' },
   { id: 11, name: 'Tangerine 🍊' },
   { id: 12, name: 'Tomato 🍅' },
+];
+
+const veggis: Produce[] = [
+  { id: 1, name: 'Cucumber 🥒' },
+  { id: 2, name: 'Pumpkin 🎃' },
+  { id: 3, name: 'Brokkolie 🥦' },
+  { id: 4, name: 'Pepper 🫑' },
+];
+
+const groceryList: GroceryList[] = [
+  {
+    groupTitle: 'Fruit',
+    options: fruits,
+  },
+  {
+    groupTitle: 'Vegetables',
+    options: veggis,
+  },
 ];
 
 const fruitStrings = fruits.reduce((acc, fruit) => [...acc, fruit.name], []);
@@ -64,6 +87,7 @@ export const Basic = (args: AutocompleteProps<string>) => {
         items={filteredItems}
         onInputValueChange={handleInputValueChange}
         onSelectItem={handleSelectItem}
+        listWidth={'full'}
       />
 
       <Paragraph>Selected fruit: {selectedFruit}</Paragraph>
@@ -74,8 +98,8 @@ Basic.args = {
   placeholder: 'Search your favorite fruit',
 };
 
-export const UsingObjectsAsItems = (args: AutocompleteProps<Fruit>) => {
-  const [selectedFruit, setSelectedFruit] = useState<Fruit>();
+export const UsingObjectsAsItems = (args: AutocompleteProps<Produce>) => {
+  const [selectedFruit, setSelectedFruit] = useState<Produce>();
   const [filteredItems, setFilteredItems] = useState(fruits);
 
   const handleInputValueChange = (value: string) => {
@@ -85,7 +109,7 @@ export const UsingObjectsAsItems = (args: AutocompleteProps<Fruit>) => {
     setFilteredItems(newFilteredItems);
   };
 
-  const handleSelectItem = (item: Fruit) => {
+  const handleSelectItem = (item: Produce) => {
     setSelectedFruit(item);
   };
 
@@ -97,7 +121,7 @@ export const UsingObjectsAsItems = (args: AutocompleteProps<Fruit>) => {
       alignItems="start"
     >
       {/* It’s not necessary to pass "Fruit" (type of one item)  */}
-      <Autocomplete<Fruit>
+      <Autocomplete<Produce>
         {...args}
         items={filteredItems}
         onInputValueChange={handleInputValueChange}
@@ -114,8 +138,55 @@ UsingObjectsAsItems.args = {
   placeholder: 'Search your favorite fruit',
 };
 
-export const MultipleSelection = (args: AutocompleteProps<Fruit>) => {
-  const [selectedFruits, setSelectedFruits] = useState<Fruit['name'][]>([]);
+export const UsingGroupedItems = (args: AutocompleteProps<GroceryList>) => {
+  const [selectedItem, setSelectedItem] = useState<Produce>();
+  const [filteredItems, setFilteredItems] = useState(groceryList);
+
+  const handleInputValueChange = (value: string) => {
+    const newFilteredItems = groceryList.map((group) => {
+      return {
+        ...group,
+        options: group.options.filter((item: Produce) =>
+          item.name.toLowerCase().includes(value.toLowerCase()),
+        ),
+      };
+    });
+    setFilteredItems(newFilteredItems);
+  };
+
+  const handleSelectItem = (item: Produce) => {
+    setSelectedItem(item);
+  };
+
+  return (
+    <Stack
+      style={{ minWidth: '300px' }}
+      flexDirection="column"
+      spacing="spacingM"
+      alignItems="start"
+    >
+      {/* It’s not necessary to pass "Fruit" (type of one item)  */}
+      <Autocomplete<Produce>
+        {...args}
+        items={filteredItems}
+        isGrouped
+        renderItem={(item) => item.name}
+        itemToString={(item) => item.name}
+        onInputValueChange={handleInputValueChange}
+        onSelectItem={handleSelectItem}
+        listWidth="full"
+      />
+
+      <Paragraph>Selected Item: {selectedItem?.name}</Paragraph>
+    </Stack>
+  );
+};
+UsingGroupedItems.args = {
+  placeholder: 'Search your favorite fruit',
+};
+
+export const MultipleSelection = (args: AutocompleteProps<Produce>) => {
+  const [selectedFruits, setSelectedFruits] = useState<Array<string>>([]);
   const [filteredItems, setFilteredItems] = useState(fruits);
 
   const handleInputValueChange = (value: string) => {
@@ -125,7 +196,7 @@ export const MultipleSelection = (args: AutocompleteProps<Fruit>) => {
     setFilteredItems(newFilteredItems);
   };
 
-  const handleSelectItem = (item: Fruit) => {
+  const handleSelectItem = (item: Produce) => {
     setSelectedFruits((prevState) => [...prevState, item.name]);
   };
 
@@ -137,7 +208,7 @@ export const MultipleSelection = (args: AutocompleteProps<Fruit>) => {
       alignItems="start"
     >
       {/* It’s not necessary to pass "Fruit" (type of one item)  */}
-      <Autocomplete<Fruit>
+      <Autocomplete<Produce>
         {...args}
         items={filteredItems}
         onInputValueChange={handleInputValueChange}
@@ -160,7 +231,7 @@ export const MultipleSelection = (args: AutocompleteProps<Fruit>) => {
 };
 
 export const WithFormControl = () => {
-  const [selectedFruit, setSelectedFruit] = useState<Fruit>();
+  const [selectedFruit, setSelectedFruit] = useState<Produce>();
   const [filteredItems, setFilteredItems] = useState(fruits);
 
   const handleInputValueChange = (value: string) => {
@@ -170,7 +241,7 @@ export const WithFormControl = () => {
     setFilteredItems(newFilteredItems);
   };
 
-  const handleSelectItem = (item: Fruit) => {
+  const handleSelectItem = (item: Produce) => {
     setSelectedFruit(item);
   };
 
@@ -180,7 +251,7 @@ export const WithFormControl = () => {
         <FormControl.Label>Favorite fruit:</FormControl.Label>
 
         {/* It’s not necessary to pass "Fruit" (type of one item)  */}
-        <Autocomplete<Fruit>
+        <Autocomplete<Produce>
           items={filteredItems}
           onInputValueChange={handleInputValueChange}
           onSelectItem={handleSelectItem}
@@ -199,7 +270,7 @@ export const WithFormControl = () => {
 };
 
 export const HighlightingItems = () => {
-  const [selectedFruit, setSelectedFruit] = useState<Fruit>();
+  const [selectedFruit, setSelectedFruit] = useState<Produce>();
   const [filteredItems, setFilteredItems] = useState(fruits);
 
   const handleInputValueChange = (value: string) => {
@@ -209,7 +280,7 @@ export const HighlightingItems = () => {
     setFilteredItems(newFilteredItems);
   };
 
-  const handleSelectItem = (item: Fruit) => {
+  const handleSelectItem = (item: Produce) => {
     setSelectedFruit(item);
   };
 
@@ -221,7 +292,7 @@ export const HighlightingItems = () => {
       alignItems="start"
     >
       {/* It’s not necessary to pass "Fruit" (type of one item)  */}
-      <Autocomplete<Fruit>
+      <Autocomplete<Produce>
         items={filteredItems}
         onInputValueChange={handleInputValueChange}
         onSelectItem={handleSelectItem}
@@ -263,8 +334,8 @@ const fetchFruits = (filterBy?: string) =>
 
 export const WithAsyncData = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [selectedFruit, setSelectedFruit] = useState<Fruit>();
-  const [items, setItems] = useState<Fruit[]>([]);
+  const [selectedFruit, setSelectedFruit] = useState<Produce>();
+  const [items, setItems] = useState<Produce[]>([]);
 
   useEffect(() => {
     setIsLoading(true);
@@ -283,7 +354,7 @@ export const WithAsyncData = () => {
     });
   };
 
-  const handleSelectItem = (item: Fruit) => {
+  const handleSelectItem = (item: Produce) => {
     setSelectedFruit(item);
   };
 
@@ -295,7 +366,7 @@ export const WithAsyncData = () => {
       alignItems="start"
     >
       {/* It’s not necessary to pass "Fruit" (type of one item)  */}
-      <Autocomplete<Fruit>
+      <Autocomplete<Produce>
         items={items}
         onInputValueChange={handleInputValueChange}
         onSelectItem={handleSelectItem}

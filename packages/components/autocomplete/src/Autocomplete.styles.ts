@@ -15,12 +15,18 @@ export const getAutocompleteStyles = (listMaxHeight: number) => ({
     right: '4px',
     zIndex: 1,
   }),
+  content: css({
+    overflow: 'auto',
+    maxHeight: `${listMaxHeight}px`,
+  }),
   list: css({
-    overflowY: 'auto',
     listStyle: 'none',
     padding: `${tokens.spacingXs} 0`,
     margin: 0,
-    maxHeight: `${listMaxHeight}px`,
+  }),
+  groupTitle: css({
+    padding: `${tokens.spacingXs} ${tokens.spacingM}`,
+    lineHeight: tokens.lineHeightM,
   }),
   item: css({
     display: 'block',
