@@ -6,7 +6,7 @@ export interface TabsProps extends CommonProps {
   /**
    * default active Tab
    */
-  defaultTab: string;
+  defaultTab?: string;
   currentTab?: string;
 }
 
