@@ -121,7 +121,7 @@ will become:
 </Button>;
 ```
 
-#### How to migrate your Tag to Badge
+#### How to migrate your Button components
 
 To migrate your v3 `Button` component to the version 4 you can simply run the [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod) that we prepared for this occasion, like:
 
