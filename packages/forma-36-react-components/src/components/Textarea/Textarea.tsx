@@ -24,7 +24,7 @@ export interface TextareaProps {
   required?: boolean;
   disabled?: boolean;
   value?: string;
-  resize?: 'none' | 'both' | 'horizontal' | 'vertical' | 'block' | 'inline';
+  resize?: 'none' | 'both' | 'horizontal' | 'vertical';
   rows?: number;
   error?: boolean;
   onChange?: ChangeEventHandler<HTMLTextAreaElement>;
@@ -91,10 +91,17 @@ export const Textarea = ({
   );
 
   const widthClass = `Textarea--${width}`;
-  const classNames = cn(styles['Textarea'], className, styles[widthClass], {
-    [styles['Textarea--disabled']]: disabled,
-    [styles['Textarea--negative']]: error,
-  });
+  const resizeClass = `Textarea--resize-${resize}`;
+  const classNames = cn(
+    styles['Textarea'],
+    className,
+    styles[widthClass],
+    styles[resizeClass],
+    {
+      [styles['Textarea--disabled']]: disabled,
+      [styles['Textarea--negative']]: error,
+    },
+  );
 
   return (
     <div className={classNames}>
@@ -113,9 +120,6 @@ export const Textarea = ({
         value={disabled ? value : valueState}
         onKeyDown={handleKeyDown}
         required={required}
-        style={{
-          resize: resize,
-        }}
         ref={textareaRef}
         {...otherProps}
       />

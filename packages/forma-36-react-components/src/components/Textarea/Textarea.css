@@ -62,3 +62,27 @@
     }
   }
 }
+
+.Textarea--resize-none {
+  & .Textarea__textarea {
+    resize: none;
+  }
+}
+
+.Textarea--resize-both {
+  & .Textarea__textarea {
+    resize: both;
+  }
+}
+
+.Textarea--resize-horizontal {
+  & .Textarea__textarea {
+    resize: horizontal;
+  }
+}
+
+.Textarea--resize-vertical {
+  & .Textarea__textarea {
+    resize: vertical;
+  }
+}
