@@ -1,43 +1,28 @@
 import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
+import { CardProps } from '..';
 
-export const getCardStyles = ({ padding }) => {
-  let paddingValue;
-
+const getCardPaddingValue = (padding: CardProps['padding']) => {
   switch (padding) {
     case 'large':
-      paddingValue = tokens.spacingL;
-      break;
+      return tokens.spacingL;
     case 'none':
-      paddingValue = '0px';
-      break;
+      return 0;
     default:
-      paddingValue = tokens.spacingM;
+      return tokens.spacingM;
   }
-
-  return {
-    content: css({
-      paddingBottom: paddingValue,
-      paddingLeft: paddingValue,
-      paddingRight: paddingValue,
-    }),
-    header: css({
-      gridColumn: 'content',
-      gridRow: 'header',
-      padding: paddingValue,
-    }),
-    headerWithActions: css({
-      alignItems: 'flex-end',
-      paddingRight: tokens.spacingXs,
-      paddingTop:
-        padding === 'large'
-          ? tokens.spacingM
-          : padding === 'none'
-          ? '0px'
-          : tokens.spacingXs,
-    }),
-    root: css({
-      paddingTop: padding === 'none' && 0,
-    }),
-  };
 };
+
+export const getCardStyles = ({ padding }) => ({
+  content: css({
+    padding: 0,
+  }),
+  header: css({
+    gridColumn: 'content',
+    gridRow: 'header',
+    marginBottom: tokens.spacingM,
+  }),
+  root: css({
+    padding: getCardPaddingValue(padding),
+  }),
+});

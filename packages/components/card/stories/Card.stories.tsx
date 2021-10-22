@@ -313,7 +313,7 @@ export const Overview: Story<CardProps> = () => {
         </Flex>
       </Flex>
       <SectionHeading as="h3" marginBottom="spacingS" marginTop="spacingL">
-        Large none
+        None Padding
       </SectionHeading>
 
       <Flex flexWrap="wrap">

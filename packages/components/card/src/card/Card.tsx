@@ -20,6 +20,8 @@ export type CardInternalProps = Omit<
 > & {
   /**
    * Padding size to apply to the component
+   *
+   * @default default
    */
   padding?: 'default' | 'large' | 'none';
 };
@@ -35,37 +37,39 @@ function _Card<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
     icon,
     padding = 'default',
     title,
+    className,
     ...otherProps
   }: CardProps<E>,
   forwardedRef: React.Ref<HTMLElement>,
 ) {
   const styles = getCardStyles({ padding });
   const baseStyles = getBaseCardStyles();
-  const hasHeader = title || icon || badge || actions;
-  const header = (
-    <Flex className={cx(styles.header, actions && styles.headerWithActions)}>
-      {title && (
-        <Flex as="header" flexGrow={1}>
-          <Heading marginBottom="none">{title}</Heading>
-        </Flex>
-      )}
-
-      {icon && <Icon as={icon} className={baseStyles.headerItem} />}
-      {badge && (
-        <Flex alignItems="center" className={baseStyles.headerItem}>
-          {badge}
-        </Flex>
-      )}
-      {actions && <CardActions>{actions}</CardActions>}
-    </Flex>
-  );
+  const hasHeader = Boolean(title || icon || badge || actions);
 
   return (
     <BaseCard
-      className={styles.root}
+      className={cx(styles.root, className)}
       contentBodyProps={{ className: styles.content }}
       {...otherProps}
-      header={hasHeader ? header : null}
+      header={
+        hasHeader && (
+          <Flex alignItems="center" className={cx(styles.header)}>
+            {title && (
+              <Flex as="header" flexGrow={1}>
+                <Heading marginBottom="none">{title}</Heading>
+              </Flex>
+            )}
+
+            {icon && <Icon as={icon} className={baseStyles.headerItem} />}
+            {badge && (
+              <Flex alignItems="center" className={baseStyles.headerItem}>
+                {badge}
+              </Flex>
+            )}
+            {actions && <CardActions>{actions}</CardActions>}
+          </Flex>
+        )
+      }
       ref={forwardedRef}
     />
   );
