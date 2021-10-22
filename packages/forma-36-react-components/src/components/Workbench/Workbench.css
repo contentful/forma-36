@@ -82,7 +82,8 @@
 
 .Workbench__header-description__text {
   font-family: var(--font-stack-primary);
-  color: var(--content-width-text);
+  color: var(--color-text-dark);
+  margin: 0;
   white-space: nowrap;
 }
 
