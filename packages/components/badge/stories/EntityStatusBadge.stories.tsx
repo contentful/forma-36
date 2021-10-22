@@ -2,14 +2,14 @@ import React from 'react';
 import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 
-import { Badge } from '../src/Badge';
-import { BadgeInternalProps } from '../src/Badge';
+import { EntityStatusBadge } from '../src/EntityStatusBadge';
+import { EntityStatusBadgeProps } from '../src/EntityStatusBadge';
 
 export default {
-  title: 'Components/Badge',
-  component: Badge,
+  title: 'Components/EntityStatusBadge',
+  component: EntityStatusBadge,
   parameters: {
-    propTypes: [Badge['__docgenInfo']],
+    propTypes: [EntityStatusBadge['__docgenInfo']],
   },
   argTypes: {
     className: { control: { disable: true } },
@@ -18,88 +18,67 @@ export default {
   },
 };
 
-export const Basic = (args: BadgeInternalProps) => <Badge {...args} />;
+export const Basic = (args: EntityStatusBadgeProps) => (
+  <EntityStatusBadge {...args} />
+);
 
 Basic.args = {
   size: 'default',
-  variant: 'primary',
-  children: 'Published',
+  entityStatus: 'published',
 };
 
 export const Overview = () => (
   <>
     <SectionHeading as="h3" marginBottom="spacingS">
-      Badge variants & sizes
+      EntityStatusBadge variants & sizes
     </SectionHeading>
 
     <Flex marginBottom="spacingM" alignItems="center">
       <Flex marginRight="spacingS">
-        <Badge variant="primary">primary</Badge>
+        <EntityStatusBadge entityStatus="published" />
       </Flex>
       <Flex marginRight="spacingS">
-        <Badge variant="primary" size="small">
-          primary
-        </Badge>
+        <EntityStatusBadge entityStatus="published" size="small" />
       </Flex>
     </Flex>
     <Flex marginBottom="spacingM" alignItems="center">
       <Flex marginRight="spacingS">
-        <Badge variant="primary-filled">primary filled</Badge>
+        <EntityStatusBadge entityStatus="new" />
       </Flex>
       <Flex marginRight="spacingS">
-        <Badge variant="primary-filled" size="small">
-          primary filled
-        </Badge>
+        <EntityStatusBadge entityStatus="new" size="small" />
       </Flex>
     </Flex>
     <Flex marginBottom="spacingM" alignItems="center">
       <Flex marginRight="spacingS">
-        <Badge variant="positive">positive</Badge>
+        <EntityStatusBadge entityStatus="changed" />
       </Flex>
       <Flex marginRight="spacingS">
-        <Badge variant="positive" size="small">
-          positive
-        </Badge>
+        <EntityStatusBadge entityStatus="changed" size="small" />
       </Flex>
     </Flex>
     <Flex marginBottom="spacingM" alignItems="center">
       <Flex marginRight="spacingS">
-        <Badge variant="negative">negative</Badge>
+        <EntityStatusBadge entityStatus="deleted" />
       </Flex>
       <Flex marginRight="spacingS">
-        <Badge variant="negative" size="small">
-          negative
-        </Badge>
+        <EntityStatusBadge entityStatus="deleted" size="small" />
       </Flex>
     </Flex>
     <Flex marginBottom="spacingM" alignItems="center">
       <Flex marginRight="spacingS">
-        <Badge variant="warning">warning</Badge>
+        <EntityStatusBadge entityStatus="draft" />
       </Flex>
       <Flex marginRight="spacingS">
-        <Badge variant="warning" size="small">
-          warning
-        </Badge>
+        <EntityStatusBadge entityStatus="draft" size="small" />
       </Flex>
     </Flex>
     <Flex marginBottom="spacingM" alignItems="center">
       <Flex marginRight="spacingS">
-        <Badge variant="secondary">secondary</Badge>
+        <EntityStatusBadge entityStatus="archived" />
       </Flex>
       <Flex marginRight="spacingS">
-        <Badge variant="secondary" size="small">
-          secondary
-        </Badge>
-      </Flex>
-    </Flex>
-    <Flex marginBottom="spacingM" alignItems="center">
-      <Flex marginRight="spacingS">
-        <Badge variant="featured">featured</Badge>
-      </Flex>
-      <Flex marginRight="spacingS">
-        <Badge variant="featured" size="small">
-          featured
-        </Badge>
+        <EntityStatusBadge entityStatus="archived" size="small" />
       </Flex>
     </Flex>
   </>
