@@ -10,6 +10,7 @@ exports[`renders the component 1`] = `
     data-test-id="cf-ui-textarea"
     id="someInput"
     name="userEmail"
+    style="resize: vertical;"
   />
 </div>
 `;
@@ -25,6 +26,7 @@ exports[`renders the component as required 1`] = `
     id="someInput"
     name="userEmail"
     required=""
+    style="resize: vertical;"
   />
 </div>
 `;
@@ -40,6 +42,7 @@ exports[`renders the component with a max length 1`] = `
     id="someInput"
     maxlength="10"
     name="userEmail"
+    style="resize: vertical;"
   />
 </div>
 `;
@@ -54,6 +57,7 @@ exports[`renders the component with a test id 1`] = `
     data-test-id="someTestId"
     id="someInput"
     name="userEmail"
+    style="resize: vertical;"
   />
 </div>
 `;
@@ -68,6 +72,7 @@ exports[`renders the component with an additional class name 1`] = `
     data-test-id="cf-ui-textarea"
     id="someInput"
     name="userEmail"
+    style="resize: vertical;"
   />
 </div>
 `;
@@ -82,6 +87,7 @@ exports[`renders the component with an onBlur prop 1`] = `
     data-test-id="cf-ui-textarea"
     id="someInput"
     name="userEmail"
+    style="resize: vertical;"
   />
 </div>
 `;
@@ -96,6 +102,7 @@ exports[`renders the component with an onChange prop 1`] = `
     data-test-id="cf-ui-textarea"
     id="someInput"
     name="userEmail"
+    style="resize: vertical;"
   />
 </div>
 `;
@@ -111,6 +118,7 @@ exports[`renders the component with disabled prop 1`] = `
     disabled=""
     id="someInput"
     name="userEmail"
+    style="resize: vertical;"
   />
 </div>
 `;
@@ -125,6 +133,7 @@ exports[`renders the component with error prop 1`] = `
     data-test-id="cf-ui-textarea"
     id="someInput"
     name="userEmail"
+    style="resize: vertical;"
   />
 </div>
 `;
@@ -140,6 +149,7 @@ exports[`renders the component with rows defined 1`] = `
     id="someInput"
     name="userEmail"
     rows="2"
+    style="resize: vertical;"
   />
 </div>
 `;
@@ -154,6 +164,7 @@ exports[`renders the component with small width 1`] = `
     data-test-id="cf-ui-textarea"
     id="someInput"
     name="userEmail"
+    style="resize: vertical;"
   />
 </div>
 `;
@@ -168,6 +179,7 @@ exports[`renders the component with value prop 1`] = `
     data-test-id="cf-ui-textarea"
     id="someInput"
     name="userEmail"
+    style="resize: vertical;"
   >
     1234
   </textarea>

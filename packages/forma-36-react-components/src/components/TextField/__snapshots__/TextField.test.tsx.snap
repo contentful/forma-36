@@ -339,6 +339,7 @@ exports[`renders the component with as textarea 1`] = `
       data-test-id="cf-ui-textarea"
       id="someComponent"
       name="someComponent"
+      style="resize: vertical;"
     />
   </div>
 </div>
