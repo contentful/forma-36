@@ -106,7 +106,7 @@ function AutocompleteExample() {
     { id: 5, name: 'Coconut', emoji: '🥥' },
   ];
 
-  const [selectedFruit, setSelectedFruit] = React.useState();
+  const [selectedFruit, setSelectedFruit] = React.useState({ name: '' });
   const [filteredItems, setFilteredItems] = React.useState(fruits);
 
   const handleInputValueChange = (value) => {
@@ -134,7 +134,7 @@ function AutocompleteExample() {
         renderItem={(item) => `${item.name} ${item.emoji}`}
       />
 
-      <Paragraph>Selected fruit: {selectedFruit}</Paragraph>
+      <Paragraph>Selected fruit: {selectedFruit.name}</Paragraph>
     </Stack>
   );
 }
@@ -266,13 +266,13 @@ function AutocompleteExample() {
     },
   ];
 
-  const [selectedItem, setSelectedItem] = React.useState();
+  const [selectedItem, setSelectedItem] = React.useState({ name: '' });
   const [filteredItems, setFilteredItems] = React.useState(shoppingList);
 
   const handleInputValueChange = (value) => {
     // we have to make sure to filter each of the groups based on the items shape.
     // be aware this is just a basic example and you might need to apply a more advanced filter algorithm
-    const newFilteredItems = groceryList.map((group) => {
+    const newFilteredItems = shoppingList.map((group) => {
       return {
         ...group,
         options: group.options.filter((item) =>
@@ -296,13 +296,15 @@ function AutocompleteExample() {
         onInputValueChange={handleInputValueChange}
         onSelectItem={handleSelectItem}
         // This prop is the function that will tell the component how to extract a string that will be used as inputValue
-        itemToString={(item) => item.name}
+        itemToString={(item) => `${item.name} ${item.emoji}`}
         // This prop is the function that will tell the component how to render each item in the options list
         // In this example the first item will render "Apple 🍎"
         renderItem={(item) => `${item.name} ${item.emoji}`}
       />
 
-      <Paragraph>Selected item from shopping list: {selectedItem}</Paragraph>
+      <Paragraph>
+        Selected item from shopping list: {selectedItem.name}
+      </Paragraph>
     </Stack>
   );
 }
