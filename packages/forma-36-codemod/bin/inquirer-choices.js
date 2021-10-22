@@ -121,6 +121,10 @@ const TRANSFORMS_CHOICES = [
     name: 'v4-notification: Migrate Notification component from v3 to v4',
     value: 'v4-notification',
   },
+  {
+    name: 'v4-asset-card: Migrate AssetCard components from v3 to v4',
+    value: 'v4-asset-card',
+  },
   // Add extra codemods - do not remove
 ];
 
