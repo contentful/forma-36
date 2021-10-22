@@ -1,6 +1,5 @@
-import React, { useCallback, useState } from 'react';
-import type { MouseEventHandler } from 'react';
-import { Button } from '@contentful/f36-button';
+import React from 'react';
+import { IconButton } from '@contentful/f36-button';
 import type { ButtonProps } from '@contentful/f36-button';
 import { MoreHorizontalIcon } from '@contentful/f36-icons';
 import { Menu } from '@contentful/f36-menu';
@@ -21,35 +20,15 @@ export const CardActions = ({
   children,
 }: CardActionsProps): React.ReactElement => {
   const styles = getCardActionsStyles();
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleActionClick = useCallback<MouseEventHandler>(
-    (event) => {
-      event.preventDefault();
-      setIsOpen(!isOpen);
-    },
-    [isOpen, setIsOpen],
-  );
 
   return (
-    <Menu
-      isOpen={isOpen}
-      onOpen={() => {
-        setIsOpen(true);
-      }}
-      onClose={() => {
-        setIsOpen(false);
-      }}
-    >
+    <Menu>
       <Menu.Trigger>
-        <Button
+        <IconButton
           aria-label="Actions"
-          startIcon={<MoreHorizontalIcon />}
+          icon={<MoreHorizontalIcon />}
           {...buttonProps}
-          className={
-            buttonProps ? cx(styles.root, buttonProps.className) : styles.root
-          }
-          onClick={handleActionClick}
+          className={cx(styles.root, buttonProps?.className)}
           variant="transparent"
         />
       </Menu.Trigger>
