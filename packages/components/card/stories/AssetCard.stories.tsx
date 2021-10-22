@@ -4,6 +4,7 @@ import { Flex } from '@contentful/f36-core';
 import { SectionHeading } from '@contentful/f36-typography';
 import { MenuItem } from '@contentful/f36-menu';
 import * as icons from '@contentful/f36-icons';
+import { Icon } from '@contentful/f36-icon';
 
 import { AssetCard } from '../src';
 import type { AssetCardProps } from '../src';
@@ -35,7 +36,7 @@ export default {
 type Args = AssetCardProps & { icon?: string };
 
 export const Default: Story<Args> = (args) => {
-  return <AssetCard icon={icons[args.icon]} {...args} />;
+  return <AssetCard icon={<Icon as={icons[args.icon]} />} {...args} />;
 };
 
 Default.args = {
@@ -51,7 +52,7 @@ const actions: React.ReactNodeArray = [
 ];
 
 export const WithLoadingState: Story<Args> = (args) => {
-  return <AssetCard icon={icons[args.icon]} {...args} />;
+  return <AssetCard icon={<Icon as={icons[args.icon]} />} {...args} />;
 };
 
 WithLoadingState.args = {
@@ -72,7 +73,7 @@ export const Overview: Story<Args> = () => {
           </SectionHeading>
 
           <AssetCard
-            icon={icons.ClockIcon}
+            icon={<Icon as={icons.ClockIcon} />}
             src="https://via.placeholder.com/400x400"
             title="Asset title"
             type="image"
@@ -132,7 +133,7 @@ export const Overview: Story<Args> = () => {
           </SectionHeading>
 
           <AssetCard
-            icon={icons.ClockIcon}
+            icon={<Icon as={icons.ClockIcon} />}
             size="small"
             src="https://via.placeholder.com/400x400"
             title="Asset title"
