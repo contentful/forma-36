@@ -211,6 +211,8 @@ function _Autocomplete<ItemType>(
         usePortal={false}
         isOpen={isOpen}
         isFullWidth={listWidth === 'full'}
+        // eslint-disable-next-line jsx-a11y/no-autofocus
+        autoFocus={false}
       >
         <Popover.Trigger>
           <div {...comboboxProps} className={styles.combobox}>
