@@ -36,7 +36,7 @@ export default {
 type Args = AssetCardProps & { icon?: string };
 
 export const Default: Story<Args> = (args) => {
-  return <AssetCard icon={<Icon as={icons[args.icon]} />} {...args} />;
+  return <AssetCard {...args} icon={<Icon as={icons[args.icon]} />} />;
 };
 
 Default.args = {
@@ -52,7 +52,7 @@ const actions: React.ReactNodeArray = [
 ];
 
 export const WithLoadingState: Story<Args> = (args) => {
-  return <AssetCard icon={<Icon as={icons[args.icon]} />} {...args} />;
+  return <AssetCard {...args} icon={<Icon as={icons[args.icon]} />} />;
 };
 
 WithLoadingState.args = {
