@@ -11,7 +11,6 @@
 
 .Textarea__textarea {
   composes: focus-border--default from './../../styles/settings/a11y.css';
-  resize: vertical;
   outline: none;
   box-shadow: var(--inset-box-shadow-default);
   border: 1px solid var(--color-element-mid);
@@ -61,5 +60,29 @@
     &:focus {
       box-shadow: var(--glow-negative);
     }
+  }
+}
+
+.Textarea--resize-none {
+  & .Textarea__textarea {
+    resize: none;
+  }
+}
+
+.Textarea--resize-both {
+  & .Textarea__textarea {
+    resize: both;
+  }
+}
+
+.Textarea--resize-horizontal {
+  & .Textarea__textarea {
+    resize: horizontal;
+  }
+}
+
+.Textarea--resize-vertical {
+  & .Textarea__textarea {
+    resize: vertical;
   }
 }
