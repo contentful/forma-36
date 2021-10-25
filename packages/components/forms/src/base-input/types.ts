@@ -77,4 +77,9 @@ export interface BaseInputInternalProps extends CommonProps {
    * @default medium
    */
   size?: 'small' | 'medium';
+  /**
+   * Sets whether an element is resizable, and if so, in which directions
+   * @default vertical
+   */
+  resize?: 'none' | 'both' | 'horizontal' | 'vertical';
 }

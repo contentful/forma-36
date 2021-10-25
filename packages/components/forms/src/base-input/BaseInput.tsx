@@ -50,9 +50,10 @@ function _BaseInput<E extends React.ElementType = typeof INPUT_DEFAULT_TAG>(
     icon,
     defaultValue,
     size = 'medium',
+    resize = 'vertical',
     ...otherProps
   } = props;
-  const styles = getInputStyles({ as, isDisabled, isInvalid, size });
+  const styles = getInputStyles({ as, isDisabled, isInvalid, size, resize });
 
   const handleFocus = useCallback(
     (e: FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
