@@ -3,6 +3,20 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.99.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.98.9...@contentful/forma-36-react-components@3.99.0) (2021-10-25)
+
+
+### Features
+
+* add resize prop [EXT-3236]' ([3f5707e](https://github.com/contentful/forma-36/commit/3f5707e1b6a137d7860c9e0b9662a848be95d850))
+* update test snapshots ([b8b76b4](https://github.com/contentful/forma-36/commit/b8b76b421b5c27626ccd8aae4b71c2fc0a3c067c))
+* update test snapshots ([83dd6ee](https://github.com/contentful/forma-36/commit/83dd6ee07df7b1eb0051635df279e12ad61999f6))
+* use BEM for styling ([0a07f18](https://github.com/contentful/forma-36/commit/0a07f189a3db558c0a423149e793a40df4ff4a10))
+
+
+
+
+
 ## [3.98.9](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.98.8...@contentful/forma-36-react-components@3.98.9) (2021-10-22)
 
 
