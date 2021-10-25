@@ -129,6 +129,7 @@ export { default as Subscript } from './Subscript';
 export { default as SubscriptTrimmed } from './SubscriptTrimmed';
 export { default as Superscript } from './Superscript';
 export { default as SuperscriptTrimmed } from './SuperscriptTrimmed';
+export { default as Tab } from './Tab';
 export { default as Table } from './Table';
 export { default as Tags } from './Tags';
 export { default as Text } from './Text';
