@@ -96,3 +96,7 @@ Migrates `TextField` component from Forma@v3 to Forma@v4
 #### `v4-notification`
 
 Migrate Notification component from v3 to v4
+
+#### `v4-asset-card`
+
+Migrate AssetCard components from v3 to v4
