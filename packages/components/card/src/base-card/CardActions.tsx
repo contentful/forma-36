@@ -29,6 +29,7 @@ export const CardActions = ({
           icon={<MoreHorizontalIcon />}
           {...buttonProps}
           className={cx(styles.root, buttonProps?.className)}
+          size="small"
           variant="transparent"
         />
       </Menu.Trigger>
