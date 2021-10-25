@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.98.9](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.98.8...@contentful/forma-36-react-components@3.98.9) (2021-10-22)
+
+
+### Bug Fixes
+
+* **workbench:** remove inherited margin on description ([#1436](https://github.com/contentful/forma-36/issues/1436)) ([e3d8c76](https://github.com/contentful/forma-36/commit/e3d8c764f12270c21ac837088da93729a7aa6700))
+
+
+
+
+
 ## [3.98.8](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.98.7...@contentful/forma-36-react-components@3.98.8) (2021-10-18)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
