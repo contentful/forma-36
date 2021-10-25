@@ -16,6 +16,7 @@ import type {
   PolymorphicProps,
 } from '@contentful/f36-core';
 import { Icon, IconComponent } from '@contentful/f36-icon';
+import { Text } from '@contentful/f36-typography';
 import type { ButtonProps } from '@contentful/f36-button';
 import { DragHandle } from '@contentful/f36-drag-handle';
 
@@ -158,8 +159,8 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
   const defaultHeader =
     type || icon || badge || actions ? (
       <Flex className={cx(styles.header, actions && styles.headerWithActions)}>
-        <Flex as="footer" flexGrow={1}>
-          {type}
+        <Flex flexGrow={1}>
+          <Text fontColor="gray600">{type}</Text>
         </Flex>
         {icon && <Icon as={icon} className={styles.headerItem} />}
         {badge && (

@@ -46,11 +46,9 @@ export const AssetCard = ({
   const styles = getAssetCardStyles();
   const badge = status ? <EntityStatusBadge entityStatus={status} /> : null;
   const header =
-    type || icon || badge || actions ? (
+    icon || badge || actions ? (
       <Flex className={cx(styles.header, actions && styles.headerWithActions)}>
-        <Flex as="footer" flexGrow={1}>
-          {type}
-        </Flex>
+        <Flex flexGrow={1} />
         {icon}
         {badge && (
           <Flex alignItems="center" className={styles.headerItem}>
