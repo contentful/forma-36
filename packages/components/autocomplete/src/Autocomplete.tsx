@@ -242,9 +242,9 @@ function _Autocomplete<ItemType>(
               variant="transparent"
               icon={
                 inputValue ? (
-                  <CloseIcon aria-label="Clear" />
+                  <CloseIcon aria-label="Clear" variant="muted" />
                 ) : (
-                  <ChevronDownIcon aria-label="Show list" />
+                  <ChevronDownIcon aria-label="Show list" variant="muted" />
                 )
               }
               onClick={() => {
