@@ -102,7 +102,7 @@ import { Badge, EntityStatusBadge } from '@contentful/f36-components';
 Button in version 4 of Forma 36 does not change much visually but we provide some API improvements, that we hope you gonna be happy with. All the changes are based on our codestyleguide, which allows us to create consistent, easy to use API. For example:
 
 ```tsx static=true
-<Button buttonType=" primary" loading>
+<Button buttonType="primary" loading>
   Primary
 </Button>;
 <Button buttonType=" primary" disabled>
