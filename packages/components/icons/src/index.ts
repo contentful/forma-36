@@ -149,6 +149,7 @@ export { Subscript as SubscriptIcon } from './Subscript';
 export { SubscriptTrimmed as SubscriptTrimmedIcon } from './SubscriptTrimmed';
 export { Superscript as SuperscriptIcon } from './Superscript';
 export { SuperscriptTrimmed as SuperscriptTrimmedIcon } from './SuperscriptTrimmed';
+export { Tab as TabIcon } from './Tab';
 export { Table as TableIcon } from './Table';
 export { Tags as TagsIcon } from './Tags';
 export { Text as TextIcon } from './Text';
