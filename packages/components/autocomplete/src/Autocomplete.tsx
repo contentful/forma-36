@@ -244,7 +244,7 @@ function _Autocomplete<ItemType>(
                 inputValue ? (
                   <CloseIcon aria-label="Clear" />
                 ) : (
-                  <ChevronDownIcon aria-label="Show list" />
+                  <ChevronDownIcon aria-label="Show list" variant="muted" />
                 )
               }
               onClick={() => {
