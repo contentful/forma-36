@@ -1,0 +1,144 @@
+---
+title: 'Badge'
+type: 'component'
+status: 'stable'
+slug: /components/badge/
+github: 'https://github.com/contentful/forma-36/tree/master/packages/components/badge'
+storybook: 'https://f36-storybook.contentful.com/?path=/story/components-badge--basic'
+typescript: ./Badge.tsx
+---
+
+Badge is used to label or highlight items in the interface.
+
+## Table of contents
+
+- [Table of contents](#table-of-contents)
+- [How to use Badge](#how-to-use-badge)
+- [Component variants](#component-variants)
+  - [Badge types](#badge-types)
+  - [Badge sizes](#badge-sizes)
+- [Content recommendations](#content-recommendations)
+- [Accessibility](#accessibility)
+- [Props](#props)
+
+## How to use Badge
+
+- badges are used to inform users of the status of an element in the interface
+- keep in mind the recommended color coding for each of variant
+
+## Component variants
+
+### Badge types
+
+- **Primary** - used for the entity that has been changed
+
+```jsx
+<Badge variant="primary">changed</Badge>
+```
+
+- **Primary filled** - used to highlight a new functionality or to indicate changes in the interface.
+
+```jsx
+<Badge variant="primary-filled">new</Badge>
+```
+
+- **Positive** - used for the entity that has been published
+
+```jsx
+<Badge variant="positive">published</Badge>
+```
+
+- **Negative** - used for the entity that has been deleted.
+
+```jsx
+<Badge variant="negative">deleted</Badge>
+```
+
+- **Warning** - used for the entity that has been deleted.
+
+```jsx
+<Badge variant="warning">draft</Badge>
+```
+
+- **Secondary** - used for all the secondary elements, for example in the list of versions:
+
+```jsx
+<Badge variant="secondary">current</Badge>
+```
+
+- **Featured** - used for featured entities that should be highlighted.
+
+```jsx
+<Badge variant="featured">trial</Badge>
+```
+
+### Badge sizes
+
+- **default**
+
+```jsx
+<Badge variant="positive">published</Badge>
+```
+
+- **small**
+
+```jsx
+<Badge variant="primary-filled" size="small">
+  new
+</Badge>
+```
+
+### EntityStatusBadge
+
+For easy and quick usage of Badge in Contentful products, in extentions and apps we provide additional component called `EntityStatusBadge`. It's used in the Cotnentful entity to mark their status.
+
+EntityStatusBadge can have different mark following statuses. Those values are passed as a `entityStatus` property and displayed as a content in the badge:
+
+- published
+- draft
+- archived
+- changed
+- deleted
+- new
+
+```tsx
+<EntityStatusBadge entityStatus="published" />
+```
+
+```tsx
+<EntityStatusBadge entityStatus="draft" />
+```
+
+```tsx
+<EntityStatusBadge entityStatus="archived" />
+```
+
+```tsx
+<EntityStatusBadge entityStatus="changed" />
+```
+
+```tsx
+<EntityStatusBadge entityStatus="deleted" />
+```
+
+```tsx
+<EntityStatusBadge entityStatus="new" />
+```
+
+## Content recommendations
+
+- try to use labels with short, scannable text
+- try to use a single word to describe the status of an element
+- try to describe the status in the past tense, like changed or archived
+
+## Accessibility
+
+- text must be clear enough for color-blind users to be able to understand immediately without needing to rely only on the color.
+
+## Props
+
+import { Props } from '@contentful/f36-docs-utils';
+
+<Props of="Badge" />
+
+`Badge` also accepts all HTML attributes (as React properties) that are applicable to the usual `div` tag.
