@@ -105,7 +105,7 @@ Button in version 4 of Forma 36 does not change much visually but we provide som
 <Button buttonType="primary" loading>
   Primary
 </Button>;
-<Button buttonType=" primary" disabled>
+<Button buttonType="primary" disabled>
   Primary
 </Button>;
 ```
