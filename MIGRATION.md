@@ -116,7 +116,7 @@ will become:
 <Button variant="primary" isLoading>
   Primary
 </Button>;
-<Button variant=" primary" isDisabled>
+<Button variant="primary" isDisabled>
   Primary
 </Button>;
 ```
