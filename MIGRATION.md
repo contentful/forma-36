@@ -113,7 +113,7 @@ Button in version 4 of Forma 36 does not change much visually but we provide som
 will become:
 
 ```tsx static=true
-<Button variant=" primary" isLoading>
+<Button variant="primary" isLoading>
   Primary
 </Button>;
 <Button variant=" primary" isDisabled>
