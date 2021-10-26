@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.100.0](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.99.1...@contentful/forma-36-react-components@3.100.0) (2021-10-26)
+
+
+### Features
+
+* **icons:** add Tab icon ([#1448](https://github.com/contentful/forma-36/issues/1448)) ([0b00e4a](https://github.com/contentful/forma-36/commit/0b00e4a02dde10f96ad646e3f3a62677d9c1f88b))
+
+
+
+
+
 ## [3.99.1](https://github.com/contentful/forma-36/compare/@contentful/forma-36-react-components@3.99.0...@contentful/forma-36-react-components@3.99.1) (2021-10-25)
 
 **Note:** Version bump only for package @contentful/forma-36-react-components
