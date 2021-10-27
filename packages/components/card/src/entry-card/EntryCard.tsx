@@ -1,10 +1,9 @@
 import React, { forwardRef } from 'react';
-import type { ReactElement } from 'react';
+
 import truncate from 'truncate';
 import { cx } from 'emotion';
 import { Flex } from '@contentful/f36-core';
 import type {
-  EntityStatus,
   PolymorphicComponent,
   PolymorphicProps,
 } from '@contentful/f36-core';
@@ -12,42 +11,11 @@ import { EntityStatusBadge } from '@contentful/f36-badge';
 import { Subheading, Paragraph } from '@contentful/f36-typography';
 
 import { BaseCard } from '../base-card/BaseCard';
-import type { BaseCardInternalProps } from '../base-card/BaseCard.types';
+
 import { getEntryCardStyles } from './EntryCard.styles';
+import { EntryCardInternalProps, EntryCardSize } from './EntryCard.types';
 
 const ENTRY_CARD_DEFAULT_TAG = 'article';
-
-export type EntryCardSize = 'default' | 'small' | 'auto';
-
-export type EntryCardInternalProps = Omit<
-  BaseCardInternalProps,
-  'badge' | 'header' | 'padding' | 'ref' | 'type' | 'title'
-> & {
-  /**
-   * The title of the entry
-   */
-  title?: string;
-  /**
-   * The description of the entry
-   */
-  description?: string;
-  /**
-   * The content type of the entry
-   */
-  contentType?: string;
-  /**
-   * The publish status of the entry
-   */
-  status?: EntityStatus;
-  /**
-   * The thumbnail of the entry
-   */
-  thumbnailElement?: ReactElement;
-  /**
-   * Changes the height of the component. When small will also ensure thumbnail and description aren't rendered
-   */
-  size?: EntryCardSize;
-};
 
 export type EntryCardProps<
   E extends React.ElementType = typeof ENTRY_CARD_DEFAULT_TAG
@@ -131,14 +99,7 @@ function _EntryCard<
         </Flex>
 
         {thumbnailElement && (
-          <figure
-            className={cx(
-              styles.thumbnail,
-              size === 'small' && styles.thumbnailSmall,
-            )}
-          >
-            {thumbnailElement}
-          </figure>
+          <figure className={styles.thumbnail(size)}>{thumbnailElement}</figure>
         )}
       </Flex>
     </BaseCard>
