@@ -17,7 +17,7 @@ const getSizeStyles = ({ size }): CSSObject => {
   };
 };
 
-const getStyles = ({ as, isDisabled, isInvalid, size }) => ({
+const getStyles = ({ as, isDisabled, isInvalid, size, resize }) => ({
   rootComponentWithIcon: css({
     position: 'relative',
     display: 'flex',
@@ -39,8 +39,8 @@ const getStyles = ({ as, isDisabled, isInvalid, size }) => ({
     cursor: isDisabled ? 'not-allowed' : 'auto',
     width: '100%',
 
-    // if the input is a textarea, the height is resizeble and size should be ignored
-    ...(as === 'textarea' ? { resize: 'vertical' } : getSizeStyles({ size })),
+    // if the input is a textarea, the resize prop is applied and size should be ignored
+    ...(as === 'textarea' ? { resize } : getSizeStyles({ size })),
 
     '&::placeholder': {
       color: tokens.gray500,

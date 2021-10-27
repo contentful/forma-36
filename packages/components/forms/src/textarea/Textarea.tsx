@@ -21,6 +21,7 @@ const _Textarea = (
     onChange,
     testId = 'cf-ui-textarea',
     id,
+    resize = 'vertical',
     maxLength,
     ...otherProps
   }: TextareaProps,
@@ -67,6 +68,7 @@ const _Textarea = (
         [styles.error]: isInvalid,
       })}
       maxLength={maxLength}
+      resize={resize}
       onChange={maxLength ? handleOnChange : onChange}
     />
   );
