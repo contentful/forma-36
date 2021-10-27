@@ -139,7 +139,7 @@ export const Overview: Story<CardProps> = () => {
             Default
           </SectionHeading>
 
-          <Card icon={ClockIcon} title="Forma 36">
+          <Card icon={<ClockIcon />} title="Forma 36">
             <Text>
               Forma 36 is an open-source design system by Contentful created
               with the intent to reduce the overhead of creating UI by providing

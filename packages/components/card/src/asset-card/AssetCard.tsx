@@ -6,17 +6,14 @@ import { Asset } from '@contentful/f36-asset';
 import type { AssetStatus, AssetType } from '@contentful/f36-asset';
 
 import { BaseCard } from '../base-card/BaseCard';
-import type { BaseCardInternalProps } from '../base-card/BaseCard';
-import { CardActions } from '../base-card/CardActions';
+import type { BaseCardInternalProps } from '../base-card/BaseCard.types';
 import { getAssetCardStyles } from './AssetCard.styles';
+import { DefaultCardHeader } from '../base-card/DefaultCardHeader';
 
 import { SkeletonContainer, SkeletonImage } from '@contentful/f36-skeleton';
 
 export interface AssetCardInternalProps
-  extends Omit<
-    BaseCardInternalProps,
-    'badge' | 'header' | 'padding' | 'ref' | 'icon'
-  > {
+  extends Omit<BaseCardInternalProps, 'badge' | 'header' | 'padding' | 'ref'> {
   size?: 'small' | 'default';
   src?: string;
   status?: AssetStatus;
@@ -24,7 +21,6 @@ export interface AssetCardInternalProps
    * Type of the entity represented by the card. Shown in the header of the card
    */
   type?: AssetType;
-  icon?: React.ReactElement | null;
 }
 
 export type AssetCardProps = AssetCardInternalProps;
@@ -47,16 +43,7 @@ export const AssetCard = ({
   const badge = status ? <EntityStatusBadge entityStatus={status} /> : null;
   const header =
     icon || badge || actions ? (
-      <Flex className={cx(styles.header, actions && styles.headerWithActions)}>
-        <Flex flexGrow={1} />
-        {icon}
-        {badge && (
-          <Flex alignItems="center" className={styles.headerItem}>
-            {badge}
-          </Flex>
-        )}
-        {actions && <CardActions>{actions}</CardActions>}
-      </Flex>
+      <DefaultCardHeader icon={icon} badge={badge} actions={actions} />
     ) : null;
 
   if (isLoading) {

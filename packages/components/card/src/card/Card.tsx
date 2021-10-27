@@ -6,13 +6,11 @@ import type {
 } from '@contentful/f36-core';
 import { Heading } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
-import { Icon } from '@contentful/f36-icon';
 
 import { BaseCard, BASE_CARD_DEFAULT_TAG } from '../base-card/BaseCard';
-import type { BaseCardInternalProps } from '../base-card/BaseCard';
+import type { BaseCardInternalProps } from '../base-card/BaseCard.types';
 import { CardActions } from '../base-card/CardActions';
 import { getCardStyles } from './Card.styles';
-import { getBaseCardStyles } from '../base-card/BaseCard.styles';
 
 export type CardInternalProps = Omit<
   BaseCardInternalProps,
@@ -43,7 +41,6 @@ function _Card<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
   forwardedRef: React.Ref<HTMLElement>,
 ) {
   const styles = getCardStyles({ padding });
-  const baseStyles = getBaseCardStyles();
   const hasHeader = Boolean(title || icon || badge || actions);
 
   return (
@@ -59,10 +56,13 @@ function _Card<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
                 <Heading marginBottom="none">{title}</Heading>
               </Flex>
             )}
-
-            {icon && <Icon as={icon} className={baseStyles.headerItem} />}
+            {icon && (
+              <Flex alignItems="center" marginLeft="spacingXs">
+                {icon}
+              </Flex>
+            )}
             {badge && (
-              <Flex alignItems="center" className={baseStyles.headerItem}>
+              <Flex alignItems="center" marginLeft="spacingXs">
                 {badge}
               </Flex>
             )}

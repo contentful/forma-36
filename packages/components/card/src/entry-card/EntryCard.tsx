@@ -1,34 +1,60 @@
 import React, { forwardRef } from 'react';
-import type { ReactElement, ReactNode } from 'react';
+
+import truncate from 'truncate';
 import { cx } from 'emotion';
 import { Flex } from '@contentful/f36-core';
 import type {
-  EntityStatus,
   PolymorphicComponent,
   PolymorphicProps,
 } from '@contentful/f36-core';
 import { EntityStatusBadge } from '@contentful/f36-badge';
-import { Heading } from '@contentful/f36-typography';
+import { Subheading, Paragraph } from '@contentful/f36-typography';
 
 import { BaseCard } from '../base-card/BaseCard';
-import type { BaseCardInternalProps } from '../base-card/BaseCard';
+
 import { getEntryCardStyles } from './EntryCard.styles';
+import { EntryCardInternalProps, EntryCardSize } from './EntryCard.types';
 
 const ENTRY_CARD_DEFAULT_TAG = 'article';
-
-export type EntryCardInternalProps = Omit<
-  BaseCardInternalProps,
-  'badge' | 'header' | 'padding' | 'ref'
-> & {
-  children?: ReactElement | ReactNode;
-  src?: string;
-  status?: EntityStatus;
-  thumbnail?: ReactElement;
-};
 
 export type EntryCardProps<
   E extends React.ElementType = typeof ENTRY_CARD_DEFAULT_TAG
 > = PolymorphicProps<EntryCardInternalProps, E>;
+
+function EntryCardTitle({ title }: { title?: string }) {
+  if (!title) {
+    return null;
+  }
+
+  const truncatedTitle = truncate(title, 255, {});
+
+  return (
+    <Subheading
+      title={title.length > 255 ? title : ''}
+      testId="title"
+      as="h1"
+      marginBottom="none"
+    >
+      {truncatedTitle}
+    </Subheading>
+  );
+}
+
+function EntryCardDescription({
+  description,
+  size,
+}: {
+  size: EntryCardSize;
+  description?: string;
+}) {
+  if (!description || size === 'small') {
+    return null;
+  }
+
+  const truncatedDescription = truncate(description, 95, {});
+
+  return <Paragraph marginBottom="none">{truncatedDescription}</Paragraph>;
+}
 
 function _EntryCard<
   E extends React.ElementType = typeof ENTRY_CARD_DEFAULT_TAG
@@ -39,9 +65,11 @@ function _EntryCard<
     className,
     src,
     status,
-    thumbnail,
+    thumbnailElement,
+    description,
     title,
-    type,
+    size,
+    contentType,
     ...otherProps
   }: EntryCardProps<E>,
   forwardedRef: React.Ref<any>,
@@ -57,20 +85,22 @@ function _EntryCard<
       badge={badge}
       className={cx(styles.root, className)}
       ref={forwardedRef}
-      type={type}
+      type={contentType}
     >
       <Flex
-        alignItems="flex-start"
-        className={styles.content}
+        alignItems="center"
+        className={styles.content(size)}
         flexDirection="row"
       >
-        <Flex flexDirection="column" flexGrow={1}>
-          {title && <Heading>{title}</Heading>}
-
+        <Flex flexDirection="column" flexGrow={1} gap="spacingS">
+          <EntryCardTitle title={title} />
+          <EntryCardDescription size={size} description={description} />
           {children}
         </Flex>
 
-        {thumbnail && <Flex marginLeft="spacingXs">{thumbnail}</Flex>}
+        {thumbnailElement && (
+          <figure className={styles.thumbnail(size)}>{thumbnailElement}</figure>
+        )}
       </Flex>
     </BaseCard>
   );
