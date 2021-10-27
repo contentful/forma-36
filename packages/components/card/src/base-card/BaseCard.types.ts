@@ -35,10 +35,6 @@ export type BaseCardInternalProps = CommonProps &
      */
     contentBodyProps?: { className?: string };
     /**
-     * Props to pass to the drag handle component
-     */
-    dragHandleProps?: { className?: string };
-    /**
      * Custom header element to render
      */
     header?: ReactElement;
@@ -78,6 +74,14 @@ export type BaseCardInternalProps = CommonProps &
      * Render the component with a drag handle
      */
     withDragHandle?: boolean;
+    /**
+     * Custom drag handle renderer. Useful, when integrating cards with drag-n-drop libraries
+     */
+    dragHandleRender?: (props: {
+      isDragging?: boolean;
+      drag: React.ReactElement;
+    }) => React.ReactElement;
+
     /**
      * Loading state for the component - when true will display loading feedback to the user
      */

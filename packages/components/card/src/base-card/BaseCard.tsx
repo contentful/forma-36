@@ -40,7 +40,6 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
     children,
     className,
     contentBodyProps,
-    dragHandleProps,
     header,
     href,
     icon,
@@ -60,14 +59,15 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
     title,
     type,
     withDragHandle,
+    dragHandleRender,
     isLoading,
     ...otherProps
   }: BaseCardProps<E>,
   forwardedRef: React.Ref<HTMLElement>,
 ) {
   const styles = getBaseCardStyles();
-  const [isFocused, setisFocused] = useState(isFocusedProp ?? false);
-  const [isHovered, setisHovered] = useState(isHoveredProp ?? false);
+  const [isFocused, setIsFocused] = useState(isFocusedProp ?? false);
+  const [isHovered, setIsHovered] = useState(isHoveredProp ?? false);
   const isInteractive = Boolean(onClick || href || withDragHandle);
   const hasHeader = Boolean(header);
   const defaultHeader =
@@ -83,7 +83,7 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
 
   const handleFocus = useCallback<FocusEventHandler<HTMLElement>>(
     (event) => {
-      setisFocused(true);
+      setIsFocused(true);
 
       if (onFocus) {
         onFocus(event);
@@ -94,7 +94,7 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
 
   const handleBlur = useCallback<FocusEventHandler<HTMLElement>>(
     (event) => {
-      setisFocused(false);
+      setIsFocused(false);
 
       if (onBlur) {
         onBlur(event);
@@ -105,7 +105,7 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
 
   const handleMouseEnter = useCallback<MouseEventHandler<HTMLElement>>(
     (event) => {
-      setisHovered(true);
+      setIsHovered(true);
 
       if (onMouseEnter) {
         onMouseEnter(event);
@@ -116,7 +116,7 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
 
   const handleMouseLeave = useCallback<MouseEventHandler<HTMLElement>>(
     (event) => {
-      setisHovered(false);
+      setIsHovered(false);
 
       if (onMouseLeave) {
         onMouseLeave(event);
@@ -159,6 +159,14 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
     );
   }
 
+  const drag = (
+    <DragHandle
+      className={styles.dragHandle}
+      isActive={isDragging}
+      label="Reorder entry"
+    />
+  );
+
   return (
     <Box
       aria-label={title || ariaLabel}
@@ -198,17 +206,11 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
       ref={forwardedRef}
       testId={testId}
     >
-      {withDragHandle && (
-        <DragHandle
-          className={
-            dragHandleProps?.className
-              ? cx(styles.dragHandle, dragHandleProps?.className)
-              : styles.dragHandle
-          }
-          isActive={isDragging}
-          label="Reorder entry"
-        />
-      )}
+      {withDragHandle
+        ? dragHandleRender
+          ? dragHandleRender({ drag, isDragging })
+          : drag
+        : null}
 
       {header ?? defaultHeader}
 
