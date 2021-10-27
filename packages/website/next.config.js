@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const withMDX = require('@next/mdx')({
-  extension: /\.mdx$/,
+  extension: /\.mdx?$/,
 });
 
 module.exports = withMDX({

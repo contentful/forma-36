@@ -113,6 +113,15 @@
   margin-left: 0.5rem;
 }
 
+.links {
+  display: flex;
+  flex-direction: column;
+}
+
+.links > * {
+  margin: 0.5rem 0;
+}
+
 @media (max-width: 600px) {
   .grid {
     width: 100%;
