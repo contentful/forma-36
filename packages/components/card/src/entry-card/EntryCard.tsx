@@ -11,7 +11,7 @@ import { EntityStatusBadge } from '@contentful/f36-badge';
 import { Heading } from '@contentful/f36-typography';
 
 import { BaseCard } from '../base-card/BaseCard';
-import type { BaseCardInternalProps } from '../base-card/BaseCard';
+import type { BaseCardInternalProps } from '../base-card/BaseCard.types';
 import { getEntryCardStyles } from './EntryCard.styles';
 
 const ENTRY_CARD_DEFAULT_TAG = 'article';

@@ -10,31 +10,6 @@ export const getAssetCardStyles = () => {
     contentBody: css({
       padding: 0,
     }),
-    header: css({
-      alignItems: 'center',
-      borderBottomColor: tokens.gray200,
-      borderBottomStyle: 'solid',
-      borderBottomWidth: 1,
-      borderTopLeftRadius: tokens.borderRadiusMedium,
-      borderTopRightRadius: tokens.borderRadiusMedium,
-      boxSizing: 'border-box',
-      color: tokens.gray600,
-      fontSize: tokens.fontSizeM,
-      fontWeight: tokens.fontWeightNormal,
-      gridColumn: 'content',
-      gridRow: 'header',
-      lineHeight: tokens.lineHeightM,
-      paddingBottom: tokens.spacingXs,
-      paddingLeft: tokens.spacingM,
-      paddingRight: tokens.spacingXs,
-      paddingTop: tokens.spacingXs,
-      minHeight: '37px',
-    }),
-    headerWithActions: css({
-      paddingBottom: 0,
-      paddingRight: tokens.spacingXs,
-      paddingTop: 0,
-    }),
     root: ({ isSelected, size }) => {
       const styles: ObjectInterpolation<undefined> = {
         borderRadius: tokens.borderRadiusMedium,
