@@ -3,7 +3,7 @@ import { css, cx } from 'emotion';
 import { Text } from '@contentful/f36-typography';
 
 import { BaseCard } from '../base-card/BaseCard';
-import type { EntryCardInternalProps } from '../entry-card/EntryCard';
+import type { EntryCardInternalProps } from '../entry-card/EntryCard.types';
 import { getInlineEntryCardStyles } from './InlineEntryCard.styles';
 import { CardActions } from '../base-card/CardActions';
 
