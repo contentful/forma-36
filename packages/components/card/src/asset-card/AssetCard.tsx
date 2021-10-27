@@ -13,10 +13,7 @@ import { getAssetCardStyles } from './AssetCard.styles';
 import { SkeletonContainer, SkeletonImage } from '@contentful/f36-skeleton';
 
 export interface AssetCardInternalProps
-  extends Omit<
-    BaseCardInternalProps,
-    'badge' | 'header' | 'padding' | 'ref' | 'icon'
-  > {
+  extends Omit<BaseCardInternalProps, 'badge' | 'header' | 'padding' | 'ref'> {
   size?: 'small' | 'default';
   src?: string;
   status?: AssetStatus;
@@ -24,7 +21,6 @@ export interface AssetCardInternalProps
    * Type of the entity represented by the card. Shown in the header of the card
    */
   type?: AssetType;
-  icon?: React.ReactElement | null;
 }
 
 export type AssetCardProps = AssetCardInternalProps;
@@ -49,9 +45,13 @@ export const AssetCard = ({
     icon || badge || actions ? (
       <Flex className={cx(styles.header, actions && styles.headerWithActions)}>
         <Flex flexGrow={1} />
-        {icon}
+        {icon && (
+          <Flex alignItems="center" marginLeft="spacingXs">
+            {icon}
+          </Flex>
+        )}
         {badge && (
-          <Flex alignItems="center" className={styles.headerItem}>
+          <Flex alignItems="center" marginLeft="spacingXs">
             {badge}
           </Flex>
         )}

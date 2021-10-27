@@ -15,7 +15,6 @@ import type {
   PolymorphicComponent,
   PolymorphicProps,
 } from '@contentful/f36-core';
-import { Icon, IconComponent } from '@contentful/f36-icon';
 import { Text } from '@contentful/f36-typography';
 import type { ButtonProps } from '@contentful/f36-button';
 import { DragHandle } from '@contentful/f36-drag-handle';
@@ -74,7 +73,7 @@ export type BaseCardInternalProps = CommonProps &
     /**
      * Icon to show in the Card header
      */
-    icon?: IconComponent;
+    icon?: React.ReactElement | null;
     /**
      * Props to pass to the action menu button
      */
@@ -162,9 +161,13 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
         <Flex flexGrow={1}>
           <Text fontColor="gray600">{type}</Text>
         </Flex>
-        {icon && <Icon as={icon} className={styles.headerItem} />}
+        {icon && (
+          <Flex alignItems="center" marginLeft="spacingXs">
+            {icon}
+          </Flex>
+        )}
         {badge && (
-          <Flex alignItems="center" className={styles.headerItem}>
+          <Flex alignItems="center" marginLeft="spacingXs">
             {badge}
           </Flex>
         )}

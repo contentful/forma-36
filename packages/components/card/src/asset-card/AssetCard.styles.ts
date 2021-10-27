@@ -30,9 +30,6 @@ export const getAssetCardStyles = () => {
       paddingTop: tokens.spacingXs,
       minHeight: '37px',
     }),
-    headerItem: css({
-      marginLeft: tokens.spacingXs,
-    }),
     headerWithActions: css({
       paddingBottom: 0,
       paddingRight: tokens.spacingXs,
