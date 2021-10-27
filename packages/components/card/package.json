@@ -18,7 +18,8 @@
     "@contentful/f36-tokens": "^4.0.0",
     "@contentful/f36-typography": "^4.0.0",
     "@contentful/f36-skeleton": "^4.0.0",
-    "emotion": "^10.0.17"
+    "emotion": "^10.0.17",
+    "truncate": "^2.0.1"
   },
   "peerDependencies": {
     "react": ">=16.8"
