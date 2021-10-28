@@ -19,6 +19,8 @@ export const getInlineEntryCardStyles = () => {
         borderBottomLeftRadius: 0,
         borderTopLeftRadius: 0,
         display: 'inline-flex',
+        width: 'auto',
+        verticalAlign: 'middle',
         paddingBottom: 0,
         paddingTop: 0,
         paddingLeft: tokens.spacingS,
