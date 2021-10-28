@@ -60,29 +60,27 @@ export const SelectableCards: Story<CardProps> = () => {
   return (
     <div style={{ maxWidth: '280px' }}>
       <Heading>What is your favorite food?</Heading>
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          marginTop: '1rem',
-        }}
-      >
-        <Card onClick={() => setTaco(!taco)} isSelected={taco}>
+      <Flex justifyContent="space-between" gap="spacingM">
+        <Card as="button" onClick={() => setTaco(!taco)} isSelected={taco}>
           <span style={{ fontSize: '3rem' }} role="img" aria-label="taco">
             🌮
           </span>
         </Card>
-        <Card onClick={() => setPizza(!pizza)} isSelected={pizza}>
+        <Card as="button" onClick={() => setPizza(!pizza)} isSelected={pizza}>
           <span style={{ fontSize: '3rem' }} role="img" aria-label="pizza">
             🍕
           </span>
         </Card>
-        <Card onClick={() => setBroccoli(!broccoli)} isSelected={broccoli}>
+        <Card
+          as="button"
+          onClick={() => setBroccoli(!broccoli)}
+          isSelected={broccoli}
+        >
           <span style={{ fontSize: '3rem' }} role="img" aria-label="broccoli">
             🥦
           </span>
         </Card>
-      </div>
+      </Flex>
     </div>
   );
 };
