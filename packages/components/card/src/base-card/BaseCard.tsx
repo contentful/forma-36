@@ -211,16 +211,9 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
           ? dragHandleRender({ drag, isDragging })
           : drag
         : null}
-      <div className={styles.wrapper}>
+      <div className={styles.wrapper} data-card-part="wrapper">
         {header ?? defaultHeader}
-
-        <div
-          className={
-            contentBodyProps?.className
-              ? cx(styles.contentBody, contentBodyProps.className)
-              : styles.contentBody
-          }
-        >
+        <div className={styles.contentBody} data-card-part="content">
           {children}
         </div>
       </div>

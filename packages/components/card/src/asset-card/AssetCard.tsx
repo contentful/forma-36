@@ -65,7 +65,6 @@ export const AssetCard = ({
       className={cx(styles.root({ isSelected, size }), className)}
       header={header}
       isSelected={isSelected}
-      contentBodyProps={{ className: styles.contentBody }}
       title={title}
       withDragHandle={withDragHandle}
     >

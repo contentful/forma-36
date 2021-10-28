@@ -7,9 +7,6 @@ export const getAssetCardStyles = () => {
     asset: css({
       height: '100%',
     }),
-    contentBody: css({
-      padding: 0,
-    }),
     root: ({ isSelected, size }) => {
       const styles: ObjectInterpolation<undefined> = {
         borderRadius: tokens.borderRadiusMedium,
@@ -24,6 +21,9 @@ export const getAssetCardStyles = () => {
             : `calc(1rem * (300 / ${tokens.fontBaseDefault}))`,
         padding: 0,
         textAlign: 'center',
+        '[data-card-part="content"]': {
+          padding: 0,
+        },
       };
 
       if (isSelected) {

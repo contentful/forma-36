@@ -46,7 +46,6 @@ function _Card<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
   return (
     <BaseCard
       className={cx(styles.root, className)}
-      contentBodyProps={{ className: styles.content }}
       {...otherProps}
       header={
         hasHeader && (

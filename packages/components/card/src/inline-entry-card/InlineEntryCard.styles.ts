@@ -19,12 +19,17 @@ export const getInlineEntryCardStyles = () => {
         borderBottomLeftRadius: 0,
         borderTopLeftRadius: 0,
         display: 'inline-flex',
-        flexDirection: 'row-reverse',
         paddingBottom: 0,
         paddingTop: 0,
         paddingLeft: tokens.spacingS,
         paddingRight: tokens.spacing2Xs,
-
+        '[data-card-part="content"]': {
+          padding: 0,
+        },
+        '[data-card-part="wrapper"]': {
+          display: 'inline-flex',
+          flexDirection: 'row-reverse',
+        },
         '&::before': {
           backgroundColor: statusColors.color,
           bottom: 0,

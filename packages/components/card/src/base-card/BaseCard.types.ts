@@ -31,10 +31,6 @@ export type BaseCardInternalProps = CommonProps &
      */
     children?: ReactNode;
     /**
-     * Props to pass to the content body div
-     */
-    contentBodyProps?: { className?: string };
-    /**
      * Custom header element to render
      */
     header?: ReactElement;
