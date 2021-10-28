@@ -36,7 +36,7 @@ function _Card<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
     padding = 'default',
     title,
     className,
-    testId = 'cf-ui--card',
+    testId = 'cf-ui-card',
     ...otherProps
   }: CardProps<E>,
   forwardedRef: React.Ref<HTMLElement>,
