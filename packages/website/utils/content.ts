@@ -4,18 +4,12 @@ import matter from 'gray-matter';
 
 const componentsPath = path.resolve('../../packages/components');
 
-const slugToFilepathMap: { [key: string]: string } = {
-  button: `${componentsPath}/button/Button.mdx`,
-  card: `${componentsPath}/card/src/card/README.mdx`,
-  form: `${componentsPath}/forms/src/form/Form.mdx`,
-  'form-control': `${componentsPath}/forms/src/form-control/FormControl.mdx`,
-  'text-input': `${componentsPath}/forms/src/text-input/TextInput.mdx`,
-  textarea: `${componentsPath}/forms/src/textarea/Textarea.mdx`,
-  'skeleton-row': `${componentsPath}/skeleton/src/SkeletonRow/README.mdx`,
-};
-
 function getPageBySlug(slug: string) {
-  const fullPath = slugToFilepathMap[slug];
+  // read JSON file that maps each slug to a mdx file
+  const rawdata = fs.readFileSync('utils/mdxFilepathBySlug.json');
+  const mdxFilepathBySlug = JSON.parse((rawdata as unknown) as string);
+
+  const fullPath = mdxFilepathBySlug[slug];
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
 
@@ -92,10 +86,18 @@ async function fetchFiles(targetPath: any) {
   return fetchedFiles;
 }
 
-async function geltAllSlugs() {
+async function geltAllMDX() {
   const allMDX = await fetchFiles(componentsPath);
+  const mdxData = allMDX.map((filepath) => getSlugByFilepath(filepath));
 
-  return allMDX.map((filepath) => getSlugByFilepath(filepath));
+  // Saving a map of slugs and the filepath to their mdx in a JSON file
+  const mdxFilepathBySlug = mdxData.reduce((acc, mdx) => {
+    return { ...acc, [mdx.slug]: mdx.filepath };
+  }, {});
+  const data = JSON.stringify(mdxFilepathBySlug, null, 2);
+  fs.writeFileSync('utils/mdxFilepathBySlug.json', data);
+
+  return mdxData;
 }
 
-export { geltAllSlugs, getPageBySlug };
+export { geltAllMDX, getPageBySlug };

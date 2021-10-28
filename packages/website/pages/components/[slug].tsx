@@ -7,7 +7,7 @@ import html from 'remark-html';
 // import { Stack, Button } from '@contentful/f36-components';
 // import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 
-import { geltAllSlugs, getPageBySlug } from '../../utils/content';
+import { geltAllMDX, getPageBySlug } from '../../utils/content';
 
 export default function ComponentPage(props: any) {
   console.log('ComponentPage: ', props);
@@ -51,7 +51,7 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
 }
 
 export async function getStaticPaths() {
-  const pages = await geltAllSlugs();
+  const pages = await geltAllMDX();
 
   const paths = pages.map((page) => {
     return {
