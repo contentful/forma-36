@@ -4,12 +4,10 @@ import ErrorPage from 'next/error';
 import { remark } from 'remark';
 import html from 'remark-html';
 
-// import { Stack } from '@contentful/f36-core';
-import { Stack, Button } from '@contentful/f36-components';
+// import { Stack, Button } from '@contentful/f36-components';
+// import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 
-import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
-
-import { getAllPages, getPageBySlug } from '../../utils/content';
+import { geltAllSlugs, getPageBySlug } from '../../utils/content';
 
 export default function ComponentPage(props: any) {
   console.log('ComponentPage: ', props);
@@ -23,11 +21,13 @@ export default function ComponentPage(props: any) {
     <div>
       <h1>{props.data.title}</h1>
 
-      <LiveProvider scope={{ Stack, Button }} code={props.previews[0]}>
-        <LivePreview />
-        <LiveEditor />
-        <LiveError />
-      </LiveProvider>
+      {/* {props.previews && (
+        <LiveProvider scope={{ Stack, Button }} code={props.previews[0]}>
+          <LivePreview />
+          <LiveEditor />
+          <LiveError />
+        </LiveProvider>
+      )} */}
 
       <div dangerouslySetInnerHTML={{ __html: props.content }} />
     </div>
@@ -35,9 +35,8 @@ export default function ComponentPage(props: any) {
 }
 
 export async function getStaticProps({ params }: { params: { slug: string } }) {
-  // console.log('getStaticProps >>>>>');
   const page = getPageBySlug(params.slug);
-  // console.log(page);
+
   const result = await remark()
     .use(html)
     .process(page.content || '');
@@ -52,16 +51,18 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
 }
 
 export async function getStaticPaths() {
-  const pages = getAllPages();
-  // console.log('getStaticPaths >>>', pages);
+  const pages = await geltAllSlugs();
+
+  const paths = pages.map((page) => {
+    return {
+      params: {
+        slug: page.slug,
+      },
+    };
+  });
+
   return {
-    paths: pages.map((page) => {
-      return {
-        params: {
-          slug: page.slug,
-        },
-      };
-    }),
+    paths,
     fallback: false,
   };
 }
