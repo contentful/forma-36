@@ -26,7 +26,7 @@ export default {
 
 export const Default: Story<CardProps> = ({ children, ...args }) => {
   return (
-    <Card {...args}>
+    <Card {...args} as="button">
       <Text>{children}</Text>
     </Card>
   );

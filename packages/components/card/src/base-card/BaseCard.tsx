@@ -211,17 +211,18 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
           ? dragHandleRender({ drag, isDragging })
           : drag
         : null}
+      <div className={styles.wrapper}>
+        {header ?? defaultHeader}
 
-      {header ?? defaultHeader}
-
-      <div
-        className={
-          contentBodyProps?.className
-            ? cx(styles.contentBody, contentBodyProps.className)
-            : styles.contentBody
-        }
-      >
-        {children}
+        <div
+          className={
+            contentBodyProps?.className
+              ? cx(styles.contentBody, contentBodyProps.className)
+              : styles.contentBody
+          }
+        >
+          {children}
+        </div>
       </div>
     </Box>
   );

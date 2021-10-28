@@ -11,12 +11,17 @@ export const getBaseCardStyles = () => {
       paddingLeft: tokens.spacingM,
       paddingRight: tokens.spacingM,
     }),
+    wrapper: css({
+      flex: '1 1 0',
+      display: 'grid',
+      gridTemplateRows: '[header] auto [content] minmax(0, 1fr)',
+      gridTemplateColumns: 'auto [content] minmax(0, 1fr)',
+      overflow: 'hidden',
+    }),
     dragHandle: css({
       borderBottomLeftRadius: tokens.borderRadiusMedium,
       borderTopLeftRadius: tokens.borderRadiusMedium,
-      height: '100%',
-      gridColumn: 'dragHandle',
-      gridRow: 'header / span 2',
+      cursor: 'grab',
     }),
     root: ({ hasHeader, isFocused, isHovered, isSelected }) => {
       const styles: ObjectInterpolation<undefined> = {
@@ -26,9 +31,7 @@ export const getBaseCardStyles = () => {
         borderStyle: 'solid',
         borderWidth: 1,
         color: tokens.gray900,
-        display: 'grid',
-        gridTemplateColumns: '[dragHandle] auto [content] minmax(0, 1fr)',
-        gridTemplateRows: '[header] auto [content] minmax(0, 1fr)',
+        display: 'flex',
         fontSize: tokens.fontSizeM,
         fontWeight: tokens.fontWeightNormal,
         lineHeight: tokens.lineHeightM,
