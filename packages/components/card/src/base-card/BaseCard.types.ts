@@ -1,4 +1,4 @@
-import type { ReactElement, ReactNode } from 'react';
+import type { MouseEventHandler, ReactElement, ReactNode } from 'react';
 import type { ButtonProps } from '@contentful/f36-button';
 import type { CommonProps, MarginProps } from '@contentful/f36-core';
 
@@ -42,6 +42,10 @@ export type BaseCardInternalProps = CommonProps &
      * Props to pass to the action menu button
      */
     actionsButtonProps?: Partial<ButtonProps<'button'>>;
+    /**
+     * Click event handler
+     */
+    onClick?: MouseEventHandler<HTMLElement>;
     /**
      * Applies dragging styles to the card and drag handle
      */

@@ -38,6 +38,10 @@ const getHeaderStyles = () => {
   };
 };
 
+export const stopEventPropagation = (e: React.MouseEvent<HTMLElement>) => {
+  e.stopPropagation();
+};
+
 export function DefaultCardHeader(
   props: Pick<
     BaseCardInternalProps,
@@ -47,7 +51,11 @@ export function DefaultCardHeader(
   const { icon, type, actions, actionsButtonProps, badge } = props;
   const styles = getHeaderStyles();
   return (
-    <Flex className={cx(styles.header, actions && styles.headerWithActions)}>
+    <Flex
+      className={cx(styles.header, actions && styles.headerWithActions)}
+      // don't propagate click event, so onClick handler on the card is not triggered
+      onClick={stopEventPropagation}
+    >
       <Flex flexGrow={1}>
         {type && <Text fontColor="gray600">{type}</Text>}
       </Flex>
