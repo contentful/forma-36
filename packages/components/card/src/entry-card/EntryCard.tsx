@@ -69,6 +69,7 @@ function _EntryCard<
     description,
     title,
     size,
+    testId = 'cf-ui-entry-card',
     contentType,
     ...otherProps
   }: EntryCardProps<E>,
@@ -86,6 +87,7 @@ function _EntryCard<
       className={cx(styles.root, className)}
       ref={forwardedRef}
       type={contentType}
+      testId={testId}
     >
       <Flex
         alignItems="center"

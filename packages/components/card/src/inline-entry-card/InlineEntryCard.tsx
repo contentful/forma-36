@@ -22,6 +22,7 @@ export const InlineEntryCard = ({
   status,
   title,
   isLoading,
+  testId = 'cf-ui-inline-entry-card',
   ...otherProps
 }: InlineEntryCardInternalProps) => {
   const styles = getInlineEntryCardStyles();
@@ -48,6 +49,7 @@ export const InlineEntryCard = ({
       {...otherProps}
       className={cx(styles.root({ status }), className)}
       header={header}
+      testId={testId}
     >
       <Text>{title}</Text>
     </BaseCard>

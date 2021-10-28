@@ -37,6 +37,7 @@ export const AssetCard = ({
   type,
   withDragHandle = true,
   isLoading,
+  testId = 'cf-ui-asset-card',
   ...otherProps
 }: AssetCardInternalProps) => {
   const styles = getAssetCardStyles();
@@ -67,6 +68,7 @@ export const AssetCard = ({
       isSelected={isSelected}
       title={title}
       withDragHandle={withDragHandle}
+      testId={testId}
     >
       <Flex alignItems="center" fullHeight justifyContent="center">
         <Asset

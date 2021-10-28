@@ -55,7 +55,7 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
     onMouseLeave,
     rel = 'noreferrer',
     target,
-    testId = 'cf-ui-card',
+    testId = 'cf-ui-base-card',
     title,
     type,
     withDragHandle,
