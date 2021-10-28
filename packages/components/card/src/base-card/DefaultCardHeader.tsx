@@ -29,6 +29,7 @@ const getHeaderStyles = () => {
       paddingRight: tokens.spacingXs,
       paddingTop: tokens.spacingXs,
       minHeight: '37px',
+      cursor: 'default',
     }),
     headerWithActions: css({
       paddingBottom: 0,
