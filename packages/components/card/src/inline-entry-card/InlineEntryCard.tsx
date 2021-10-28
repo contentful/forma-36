@@ -1,5 +1,5 @@
 import React from 'react';
-import { css, cx } from 'emotion';
+import { cx } from 'emotion';
 import { Text } from '@contentful/f36-typography';
 
 import { BaseCard } from '../base-card/BaseCard';
@@ -22,6 +22,7 @@ export const InlineEntryCard = ({
   status,
   title,
   isLoading,
+  testId = 'cf-ui-inline-entry-card',
   ...otherProps
 }: InlineEntryCardInternalProps) => {
   const styles = getInlineEntryCardStyles();
@@ -47,8 +48,8 @@ export const InlineEntryCard = ({
     <BaseCard
       {...otherProps}
       className={cx(styles.root({ status }), className)}
-      contentBodyProps={{ className: css({ padding: 0 }) }}
       header={header}
+      testId={testId}
     >
       <Text>{title}</Text>
     </BaseCard>

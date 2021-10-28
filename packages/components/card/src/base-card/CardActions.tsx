@@ -31,6 +31,7 @@ export const CardActions = ({
           className={cx(styles.root, buttonProps?.className)}
           size="small"
           variant="transparent"
+          testId="cf-ui-card-actions"
         />
       </Menu.Trigger>
       <Menu.List>{children}</Menu.List>

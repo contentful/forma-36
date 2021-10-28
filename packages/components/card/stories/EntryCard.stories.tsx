@@ -24,7 +24,18 @@ export default {
 } as Meta;
 
 export const Default: Story<EntryCardProps> = (args) => {
-  return <EntryCard {...args} />;
+  return (
+    <EntryCard
+      {...args}
+      onClick={() => {
+        alert('click on item');
+      }}
+      actions={[
+        <MenuItem key="copy">Copy</MenuItem>,
+        <MenuItem key="delete">Delete</MenuItem>,
+      ]}
+    />
+  );
 };
 
 Default.args = {

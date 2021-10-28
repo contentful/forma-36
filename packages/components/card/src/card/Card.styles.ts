@@ -14,9 +14,6 @@ const getCardPaddingValue = (padding: CardProps['padding']) => {
 };
 
 export const getCardStyles = ({ padding }) => ({
-  content: css({
-    padding: 0,
-  }),
   header: css({
     gridColumn: 'content',
     gridRow: 'header',
@@ -24,5 +21,8 @@ export const getCardStyles = ({ padding }) => ({
   }),
   root: css({
     padding: getCardPaddingValue(padding),
+    '[data-card-part="content"]': {
+      padding: 0,
+    },
   }),
 });

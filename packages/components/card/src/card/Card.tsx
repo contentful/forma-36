@@ -36,6 +36,7 @@ function _Card<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
     padding = 'default',
     title,
     className,
+    testId = 'cf-ui-card',
     ...otherProps
   }: CardProps<E>,
   forwardedRef: React.Ref<HTMLElement>,
@@ -46,8 +47,8 @@ function _Card<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
   return (
     <BaseCard
       className={cx(styles.root, className)}
-      contentBodyProps={{ className: styles.content }}
       {...otherProps}
+      testId={testId}
       header={
         hasHeader && (
           <Flex alignItems="center" className={cx(styles.header)}>

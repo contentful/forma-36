@@ -22,7 +22,7 @@ import {
   SkeletonDisplayText,
 } from '@contentful/f36-skeleton';
 
-import { DefaultCardHeader } from './DefaultCardHeader';
+import { DefaultCardHeader, stopEventPropagation } from './DefaultCardHeader';
 import type { BaseCardInternalProps } from './BaseCard.types';
 
 export const BASE_CARD_DEFAULT_TAG = 'article';
@@ -55,7 +55,7 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
     onMouseLeave,
     rel = 'noreferrer',
     target,
-    testId = 'cf-ui-card',
+    testId = 'cf-ui-base-card',
     title,
     type,
     withDragHandle,
@@ -164,6 +164,7 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
       className={styles.dragHandle}
       isActive={isDragging}
       label="Reorder entry"
+      onClick={stopEventPropagation}
     />
   );
 
@@ -211,17 +212,11 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
           ? dragHandleRender({ drag, isDragging })
           : drag
         : null}
-
-      {header ?? defaultHeader}
-
-      <div
-        className={
-          contentBodyProps?.className
-            ? cx(styles.contentBody, contentBodyProps.className)
-            : styles.contentBody
-        }
-      >
-        {children}
+      <div className={styles.wrapper} data-card-part="wrapper">
+        {header ?? defaultHeader}
+        <div className={styles.contentBody} data-card-part="content">
+          {children}
+        </div>
       </div>
     </Box>
   );

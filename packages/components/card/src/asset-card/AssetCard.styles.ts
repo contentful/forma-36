@@ -7,20 +7,23 @@ export const getAssetCardStyles = () => {
     asset: css({
       height: '100%',
     }),
-    contentBody: css({
-      padding: 0,
-    }),
     root: ({ isSelected, size }) => {
       const styles: ObjectInterpolation<undefined> = {
         borderRadius: tokens.borderRadiusMedium,
+        minWidth: `calc(1rem * (120 / ${tokens.fontBaseDefault}))`,
+        maxWidth:
+          size === 'small'
+            ? `calc(1rem * (240 / ${tokens.fontBaseDefault}))`
+            : `calc(1rem * (340 / ${tokens.fontBaseDefault}))`,
         height:
           size === 'small'
-            ? // 192px
-              `calc(12px * ${tokens.fontBaseDefault})`
-            : // 304px
-              `calc(19px * ${tokens.fontBaseDefault})`,
+            ? `calc(1rem * (188 / ${tokens.fontBaseDefault}))`
+            : `calc(1rem * (300 / ${tokens.fontBaseDefault}))`,
         padding: 0,
         textAlign: 'center',
+        '[data-card-part="content"]': {
+          padding: 0,
+        },
       };
 
       if (isSelected) {
