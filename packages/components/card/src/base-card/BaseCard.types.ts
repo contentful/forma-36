@@ -2,7 +2,7 @@ import type { MouseEventHandler, ReactElement, ReactNode } from 'react';
 import type { ButtonProps } from '@contentful/f36-button';
 import type { CommonProps, MarginProps } from '@contentful/f36-core';
 
-export type CardElement = 'a' | 'article' | 'button' | 'div';
+export type CardElement = 'a' | 'article' | 'button' | 'div' | 'fieldset';
 
 export type BaseCardInternalProps = CommonProps &
   MarginProps & {
