@@ -44,6 +44,10 @@ const groceryList: GroceryList[] = [
     groupTitle: 'Vegetable',
     options: vegetables,
   },
+  {
+    groupTitle: 'Sweet',
+    options: [],
+  },
 ];
 
 const fruitStrings = fruits.reduce(
@@ -306,6 +310,22 @@ describe('Autocomplete', () => {
       expect(
         screen.queryAllByTestId('cf-autocomplete-grouptitle'),
       ).toHaveLength(2);
+    });
+    it("doesn't render an empty group", async () => {
+      renderComponent<Fruit>({
+        isGrouped: true,
+        items: groceryList,
+        itemToString: (item: Fruit) => item.name,
+        renderItem: (item: Fruit) => item.name,
+      });
+
+      const renderedGroupTitles = screen
+        .getAllByTestId('cf-autocomplete-grouptitle')
+        .map((node) => node.textContent);
+
+      expect(renderedGroupTitles).toContain('Fruit');
+      expect(renderedGroupTitles).toContain('Vegetable');
+      expect(renderedGroupTitles).not.toContain('Sweet');
     });
     it('selects the first item', async () => {
       renderComponent<Fruit>({

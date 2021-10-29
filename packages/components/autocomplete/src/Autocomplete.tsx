@@ -282,6 +282,9 @@ function _Autocomplete<ItemType>(
           {!isLoading &&
             isUsingGroups(isGrouped, items) &&
             items.map((group: GroupType, index: number) => {
+              if (group.options.length === 0) {
+                return null;
+              }
               const render = (
                 <div key={index}>
                   <SectionHeading
