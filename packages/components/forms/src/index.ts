@@ -34,3 +34,5 @@ export { Form } from './form/Form';
 export type { FormProps } from './form/Form';
 export { Counter } from './counter/Counter';
 export type { CounterProps } from './counter/Counter';
+export { InputGroup } from './input-group/InputGroup';
+export type { InputGroupProps } from './input-group/types';

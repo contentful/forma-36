@@ -1,0 +1,36 @@
+import { css } from 'emotion';
+import tokens from '@contentful/f36-tokens';
+import type { GetStyleArguments } from './types';
+
+const getInputGroupStyle = ({ spacing }) => {
+  if (spacing !== 'none') {
+    return {};
+  }
+
+  return {
+    '& *': {
+      borderRadius: '0 !important',
+    },
+    '& > *': {
+      boxShadow: 'none !important',
+      marginRight: '-1px',
+      zIndex: tokens.zIndexDefault,
+      '&:first-child, &:first-child > input': {
+        borderBottomLeftRadius: `${tokens.borderRadiusMedium} !important`,
+        borderTopLeftRadius: `${tokens.borderRadiusMedium} !important`,
+      },
+      '&:last-child, &:last-child > input': {
+        borderBottomRightRadius: `${tokens.borderRadiusMedium} !important`,
+        borderTopRightRadius: `${tokens.borderRadiusMedium} !important`,
+        marginRight: 0,
+      },
+      '&:focus, &:focus-within': {
+        zIndex: tokens.zIndexDefault + 1,
+      },
+    },
+  };
+};
+
+export default ({ spacing }: GetStyleArguments) => ({
+  inputGroup: css(getInputGroupStyle({ spacing })),
+});
