@@ -246,3 +246,87 @@ import {
   Active button
 </Button>;
 ```
+
+### Flex
+
+Flex component is now part of the `@contentful/f36-core` package. The only improvement that was done for Flex component in version 4 was to align properties with our (codestyleguide)[./docs/code-style-guide.md]. This way, we hope, we provided you API that is more aligned and consistent. For example:
+
+```tsx
+<Flex inlineFlex />
+```
+
+will become:
+
+```tsx
+<Flex isInline />
+```
+
+#### How to migrate your Flex components
+
+Run the [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod) to migrate your v3 `Flex` component to the new version:
+
+`npx @contentful/f36-codemod`
+
+If you decide to do it manually, you would need to transform you exising code:
+
+```tsx static=true
+import { Flex } from '@contentful/forma-36-react-components';
+
+<Flex htmlTag="div" />;
+
+<Flex flexDirection="column" className="test" inlineFlex />;
+
+<Flex flexDirection="row" noShrink />;
+```
+
+into:
+
+```tsx static=true
+import { Flex } from '@contentful/f36-components';
+
+<Flex as="div" />;
+
+<Flex flexDirection="column" className="test" isInline />;
+
+<Flex flexDirection="row" flexShrink={0} />;
+```
+
+### Grid
+
+Grid component is now part of the `@contentful/f36-core` package. The same as for Flex component, the only improvement that was done for Grid in version 4 was the alignment of the properties with our (codestyleguide)[./docs/code-style-guide.md]:
+
+#### How to migrate your Grid components
+
+Run the [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod) to migrate your v3 `Grid` component to the new version:
+
+`npx @contentful/f36-codemod`
+
+If you decide to do it manually, you would need to transform you exising code:
+
+```tsx static=true
+import { Grid, GridItem } from '@contentful/forma-36-react-components';
+
+<Grid columns="1fr 2fr 1fr 2fr 1fr 2fr" columnGap="spacingM" inline>
+  <GridItem />
+  <GridItem htmlTag="span" />
+  <GridItem />
+  <GridItem />
+  <GridItem />
+  <GridItem />
+</Grid>;
+```
+
+into:
+
+```tsx static=true
+import { Grid, GridItem } from '@contentful/f36-components';
+
+<Grid columns="1fr 2fr 1fr 2fr 1fr 2fr" columnGap="spacingM" isInline>
+  <GridItem />
+  <GridItem as="span" />
+  <GridItem />
+  <GridItem />
+  <GridItem />
+  <GridItem />
+</Grid>;
+```
