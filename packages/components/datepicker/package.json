@@ -30,7 +30,7 @@
   "devDependencies": {
     "@contentful/forma-36-react-components": "^3.100.1",
     "@testing-library/jest-dom": "5.11.6",
-    "@testing-library/react": "11.2.2",
+    "@testing-library/react": "12.1.2",
     "@types/jest": "25.2.3",
     "@types/pikaday": "^1.7.4",
     "date-fns": "^2.6.0"
