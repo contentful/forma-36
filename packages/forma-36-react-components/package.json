@@ -67,7 +67,7 @@
     "rollup-plugin-replace": "^2.1.1",
     "rollup-plugin-terser": "^4.0.4",
     "semantic-release": "^17.4.2",
-    "size-limit": "^4.5.5"
+    "size-limit": "^6.0.4"
   },
   "repository": {
     "type": "git",
