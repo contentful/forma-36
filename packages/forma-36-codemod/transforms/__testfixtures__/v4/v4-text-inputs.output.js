@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TextInput, Textarea } from "@contentful/f36-components";
+import { CopyButton, TextInput, Textarea } from "@contentful/f36-components";
 
 <TextInput
   id="someInput"
@@ -26,7 +26,10 @@ import { TextInput, Textarea } from "@contentful/f36-components";
   isReadOnly
   onChange={() => {}} />;
 
-<TextInput id="someInput" name="userEmail" aria-label="userEmail" withCopyButton />;
+<TextInput.Group>
+  <TextInput id="someInput" name="userEmail" aria-label="userEmail" />
+  <CopyButton />
+</TextInput.Group>;
 
 <Textarea
   id="someInput"
