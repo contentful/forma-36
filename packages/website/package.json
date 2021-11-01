@@ -9,8 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@contentful/f36-components": "next-v4",
-    "@contentful/f36-core": "next-v4",
+    "@contentful/f36-components": "^4.0.0",
+    "@contentful/f36-core": "^4.0.0",
     "@mdx-js/loader": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@next/mdx": "^11.1.2",
@@ -23,7 +23,7 @@
     "remark-html": "^15.0.0"
   },
   "devDependencies": {
-    "@types/react": "17.0.30",
+    "@types/react": "16.14.2",
     "eslint": "8.0.1",
     "eslint-config-next": "11.1.2",
     "typescript": "4.4.4"
