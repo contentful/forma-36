@@ -118,6 +118,47 @@ export const Overview = () => {
           />
         </InputGroup>
       </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Input group disabled
+      </SectionHeading>
+      <Flex marginBottom="spacingM" fullWidth>
+        <InputGroup>
+          <Button isDisabled variant="primary">
+            Button
+          </Button>
+          <TextInput
+            isDisabled
+            aria-label="Text Input"
+            id="TextInput4"
+            defaultValue="Some value"
+          />
+          <IconButton
+            isDisabled
+            variant="secondary"
+            icon={<LockIcon />}
+            aria-label="Lock"
+          />
+        </InputGroup>
+      </Flex>
+      <SectionHeading as="h3" marginBottom="spacingS">
+        Input group invalid
+      </SectionHeading>
+      <Flex marginBottom="spacingM" fullWidth>
+        <InputGroup>
+          <Button variant="primary">Button</Button>
+          <TextInput
+            isInvalid
+            aria-label="Text Input"
+            id="TextInput4"
+            defaultValue="Some value"
+          />
+          <IconButton
+            variant="secondary"
+            icon={<LockIcon />}
+            aria-label="Lock"
+          />
+        </InputGroup>
+      </Flex>
     </Flex>
   );
 };

@@ -12,9 +12,11 @@ const getInputGroupStyle = ({ spacing }) => {
       borderRadius: '0 !important',
     },
     '& > *': {
-      boxShadow: 'none !important',
       marginRight: '-1px',
       zIndex: tokens.zIndexDefault,
+      '&:not(: focus)': {
+        boxShadow: 'none !important',
+      },
       '&:first-child, &:first-child > input': {
         borderBottomLeftRadius: `${tokens.borderRadiusMedium} !important`,
         borderTopLeftRadius: `${tokens.borderRadiusMedium} !important`,

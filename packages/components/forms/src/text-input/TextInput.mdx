@@ -20,7 +20,6 @@ typescript: ./TextInput.tsx
   - [TextInput with placeholder](#textInput-with-placeholder)
   - [TextInput disabled](#textInput-disabled)
   - [TextInput invalid](#textInput-invalid)
-  - [TextInput with copy button](#TextInput-with-copy-button)
 - [Content recommendations](#content-recommendations)
 - [Accessibility](#accessibility)
 - [Props](#props)
@@ -102,20 +101,6 @@ Keep in mind, that if you need to use an input without a label, you need to pass
   id="input-2"
   aria-label="token"
   isInvalid
-/>
-```
-
-### TextInput with copy button
-
-We provide a variant of the TextInput that is a composed with CopyButton. In order to use it add `withCopyButton` property to your implementation.
-
-```jsx
-<TextInput
-  label="Token"
-  name="token"
-  id="input-2"
-  withCopyButton
-  aria-label="token"
 />
 ```
 
