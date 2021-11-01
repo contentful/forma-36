@@ -1,5 +1,19 @@
 # Migration
 
+## Table of contents
+
+- [Table of contents](#table-of-contents)
+- [How to migrate your packages to v4](#How-to-migrate-your-packages-to-v4)
+- [Changes per Component in v4](#Changes-per-component-in-v4)
+  - [Tag becomes Badge](#Tag-becomes-Badge)
+    - [How to migrate your Tag to Badge](#How-to-migrate-your-Tag-to-Badge)
+  - [Button](#button)
+    - [How to migrate your Button components](#How-to-migrate-your-Button-components)
+  - [Flex](#flex)
+    - [How to migrate your Flex components](#How-to-migrate-your-Flex-components)
+  - [Grid](#grid)
+    - [How to migrate your Grid components](#How-to-migrate-your-Grid-components)
+
 ## How to migrate your packages to v4
 
 Install a package that contains all of the components from Forma 36. Tree-shaking will take care of your build, so it will include only components that you use.
@@ -34,7 +48,7 @@ When using YARN
 yarn add @contentul/f36-button@next-v4
 ```
 
-## Changes per Component in v4
+## Changes per component in v4
 
 ### Tag becomes Badge
 
