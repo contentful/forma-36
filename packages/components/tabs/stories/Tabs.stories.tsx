@@ -85,13 +85,12 @@ export const Controlled: Story = (args) => {
         </Tabs.Tab>
         <Tabs.Tab
           panelId="third"
-          isDisabled
           onSelect={(id: string) => {
             action('onSelect')(id);
             setCurrentTab(id);
           }}
         >
-          Third (disabled)
+          Third
         </Tabs.Tab>
       </Tabs.List>
       <Tabs.Panel id="first">content first tab</Tabs.Panel>

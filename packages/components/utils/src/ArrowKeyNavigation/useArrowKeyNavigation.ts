@@ -19,11 +19,12 @@ const ARROW_KEY_TYPES = {
 };
 
 export const useArrowKeyNavigation = ({
+  initialFocusedIndex = 0,
   itemsContainerRef,
   itemsSelector,
   keyType = 'vertical',
 }: UseArrowKeyNavigationProps) => {
-  const [focusedIndex, setFocusedIndex] = useState<number>(0);
+  const [focusedIndex, setFocusedIndex] = useState<number>(initialFocusedIndex);
 
   const handleArrowsKeyDown = useCallback(
     (event: React.KeyboardEvent) => {

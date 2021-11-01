@@ -28,8 +28,10 @@ function _TabList(
   const styles = getTabsStyles({ className, variant });
   const listRef = React.useRef(null);
 
-  const { setSelectedTab } = useTabsContext();
+  const { selectedTab, setSelectedTab, initialIndex } = useTabsContext();
+
   const { focusedIndex, handleArrowsKeyDown } = useArrowKeyNavigation({
+    initialFocusedIndex: initialIndex,
     itemsContainerRef: listRef,
     itemsSelector: TABLIST_ITEMS_SELECTOR,
     keyType: 'horizontal',
@@ -49,10 +51,9 @@ function _TabList(
         focusedElement.focus({
           preventScroll: true,
         });
-        setSelectedTab(focusedElement.getAttribute('aria-controls'));
       }
     }
-  }, [focusedIndex, setSelectedTab]);
+  }, [focusedIndex, selectedTab, setSelectedTab]);
 
   const elementProps = {
     'data-test-id': testId,

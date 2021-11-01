@@ -1,6 +1,16 @@
 import React from 'react';
 import type { CommonProps } from '@contentful/f36-core';
 import { TabsContextProvider } from './tabsContext';
+
+const calculateIndexMap = (children) => {
+  const tabListArray = React.Children.toArray(children).find(
+    (child: any) => child.type.displayName === 'TabList',
+  ) as any;
+  return tabListArray.props.children.map((item, index) => ({
+    index,
+    id: item.props.panelId,
+  }));
+};
 export interface TabsProps extends CommonProps {
   children?: React.ReactNode;
   /**
@@ -29,7 +39,11 @@ function _Tabs(
   };
 
   return (
-    <TabsContextProvider defaultTab={defaultTab} currentTab={currentTab}>
+    <TabsContextProvider
+      defaultTab={defaultTab}
+      currentTab={currentTab}
+      indexMap={calculateIndexMap(children)}
+    >
       <div {...elementProps} ref={ref}>
         {children}
       </div>
