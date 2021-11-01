@@ -5,7 +5,7 @@ status: 'stable'
 slug: /components/text-input/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/components/forms/src/text-input'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-textinput--basic'
-typescript: ./TextInput.tsx
+typescript: ./TextInput.tsx,./input-group/InputGroup.tsx
 ---
 
 `TextInput` is a form component, that allows users to input text or numbers and should be used in a form context.
@@ -16,6 +16,7 @@ typescript: ./TextInput.tsx
 - [Code examples](#code-examples)
   - [Basic example](#basic-example)
   - [TextInput with label](#textInput-with-label)
+  - [TextInput with buttons](#textInput-with-buttons)
 - [TextInput variations](#textInput-variations)
   - [TextInput with placeholder](#textInput-with-placeholder)
   - [TextInput disabled](#textInput-disabled)
@@ -62,6 +63,43 @@ Read more about [`FormControl`](/components/form-control)
     Format of the email is not correct
   </FormControl.ValidationMessage>
 </FormControl>
+```
+
+### TextInput with buttons
+
+`TextInput.Group` enables user to set a button at the start or end of a input, being able to have a spacing or be collapsed.
+Example of usage:
+
+```jsx
+// import { LockIcon } from '@contentful/f36-icons';
+// import { IconButton } from '@contentful/f36-button';
+// import { TextInput } from '@contentful/f36-forms';
+
+<TextInput.Group>
+  <TextInput
+    aria-label="some-label"
+    id="TextInput1"
+    defaultValue="Some value"
+  />
+  <IconButton variant="secondary" icon={<LockIcon />} aria-label="Lock" />
+</TextInput.Group>
+```
+
+Example of spaced `InputGroup`.
+
+```jsx
+// import { LockIcon } from '@contentful/f36-icons';
+// import { IconButton } from '@contentful/f36-button';
+// import { TextInput } from '@contentful/f36-forms';
+
+<TextInput.Group spacing="spacingS">
+  <TextInput
+    aria-label="some-label"
+    id="TextInput2"
+    defaultValue="Some value"
+  />
+  <IconButton variant="secondary" icon={<LockIcon />} aria-label="Lock" />
+</TextInput.Group>
 ```
 
 ## TextInput variations
@@ -120,4 +158,10 @@ Keep in mind, that if you need to use an input without a label, you need to pass
 
 import { Props } from '@contentful/f36-docs-utils';
 
+### TextInput
+
 <Props of="TextInput" />
+
+### TextInput.Group
+
+<Props of="InputGroup" />

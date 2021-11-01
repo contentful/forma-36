@@ -3,11 +3,11 @@ import { IconButton, Button } from '@contentful/f36-button';
 import { LockIcon } from '@contentful/f36-icons';
 import { SectionHeading } from '@contentful/f36-typography';
 import { Flex } from '@contentful/f36-core';
-import { TextInput, InputGroup, InputGroupProps } from '../src';
+import { TextInput, InputGroupProps } from '../src';
 
 export default {
   title: 'Form Elements/InputGroup',
-  component: InputGroup,
+  component: TextInput.Group,
   argTypes: {
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
@@ -16,14 +16,14 @@ export default {
 
 export const Basic = (args: InputGroupProps) => {
   return (
-    <InputGroup {...args}>
+    <TextInput.Group {...args}>
       <TextInput
         aria-label="Text Input"
         id="TextInput1"
         defaultValue="Some value"
       />
       <IconButton variant="secondary" icon={<LockIcon />} aria-label="Lock" />
-    </InputGroup>
+    </TextInput.Group>
   );
 };
 
@@ -38,7 +38,7 @@ export const Overview = () => {
         Input group spaced
       </SectionHeading>
       <Flex marginBottom="spacingM" fullWidth>
-        <InputGroup spacing="spacingS">
+        <TextInput.Group spacing="spacingS">
           <Button variant="primary">Button</Button>
           <TextInput
             aria-label="Text Input"
@@ -50,20 +50,20 @@ export const Overview = () => {
             icon={<LockIcon />}
             aria-label="Lock"
           />
-        </InputGroup>
+        </TextInput.Group>
       </Flex>
       <Flex marginBottom="spacingM" fullWidth>
-        <InputGroup spacing="spacingS">
+        <TextInput.Group spacing="spacingS">
           <Button variant="primary">Button</Button>
           <TextInput
             aria-label="Text Input"
             id="TextInput2"
             defaultValue="Some value"
           />
-        </InputGroup>
+        </TextInput.Group>
       </Flex>
       <Flex marginBottom="spacingL" fullWidth>
-        <InputGroup spacing="spacingS">
+        <TextInput.Group spacing="spacingS">
           <TextInput
             aria-label="Text Input"
             id="TextInput3"
@@ -74,13 +74,13 @@ export const Overview = () => {
             icon={<LockIcon />}
             aria-label="Lock"
           />
-        </InputGroup>
+        </TextInput.Group>
       </Flex>
       <SectionHeading as="h3" marginBottom="spacingS">
         Input group collapsed
       </SectionHeading>
       <Flex marginBottom="spacingM" fullWidth>
-        <InputGroup>
+        <TextInput.Group>
           <Button variant="primary">Button</Button>
           <TextInput
             aria-label="Text Input"
@@ -92,20 +92,20 @@ export const Overview = () => {
             icon={<LockIcon />}
             aria-label="Lock"
           />
-        </InputGroup>
+        </TextInput.Group>
       </Flex>
       <Flex marginBottom="spacingM" fullWidth>
-        <InputGroup>
+        <TextInput.Group>
           <Button variant="primary">Button</Button>
           <TextInput
             aria-label="Text Input"
             id="TextInput5"
             defaultValue="Some value"
           />
-        </InputGroup>
+        </TextInput.Group>
       </Flex>
       <Flex marginBottom="spacingL" fullWidth>
-        <InputGroup>
+        <TextInput.Group>
           <TextInput
             aria-label="Text Input"
             id="TextInput6"
@@ -116,13 +116,13 @@ export const Overview = () => {
             icon={<LockIcon />}
             aria-label="Lock"
           />
-        </InputGroup>
+        </TextInput.Group>
       </Flex>
       <SectionHeading as="h3" marginBottom="spacingS">
         Input group disabled
       </SectionHeading>
       <Flex marginBottom="spacingM" fullWidth>
-        <InputGroup>
+        <TextInput.Group>
           <Button isDisabled variant="primary">
             Button
           </Button>
@@ -138,13 +138,13 @@ export const Overview = () => {
             icon={<LockIcon />}
             aria-label="Lock"
           />
-        </InputGroup>
+        </TextInput.Group>
       </Flex>
       <SectionHeading as="h3" marginBottom="spacingS">
         Input group invalid
       </SectionHeading>
       <Flex marginBottom="spacingM" fullWidth>
-        <InputGroup>
+        <TextInput.Group>
           <Button variant="primary">Button</Button>
           <TextInput
             isInvalid
@@ -157,7 +157,7 @@ export const Overview = () => {
             icon={<LockIcon />}
             aria-label="Lock"
           />
-        </InputGroup>
+        </TextInput.Group>
       </Flex>
     </Flex>
   );
