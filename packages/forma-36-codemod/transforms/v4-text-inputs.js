@@ -64,9 +64,7 @@ function copyButtonCodemod(file, api) {
             const value = getProperty(modifiedAttributes, {
               propertyName: 'value',
             });
-            const copyButtonProps = value
-              ? [j.jsxAttribute(j.jsxIdentifier('text'), value)]
-              : [];
+            const copyButtonProps = value ? [value] : [];
 
             const copyButton = createComponent({
               componentName: 'CopyButton',
