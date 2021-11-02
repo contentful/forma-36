@@ -1,6 +1,3 @@
 export { Tabs } from './CompoundTabs';
-export { Tab } from './Tab';
-export { TabPanel } from './TabPanel';
-export type { TabProps } from './Tab';
-export type { TabPanelProps } from './TabPanel';
-export type { TabsProps } from './Tabs';
+export { Tab, TabList, TabPanel } from './Tabs';
+export type { TabProps, TabPanelProps, TabsProps, TabListProps } from './Tabs';

@@ -42,15 +42,11 @@ Be aware that the users will not see all the content at the same time. Make sure
 () => {
   const [currentTab, setCurrentTab] = React.useState('first');
   return (
-    <Tabs currentTab={currentTab}>
+    <Tabs currentTab={currentTab} onTabChange={setCurrentTab}>
       <Tabs.List>
-        <Tabs.Tab panelId="first" onSelect={setCurrentTab}>
-          First
-        </Tabs.Tab>
-        <Tabs.Tab panelId="second" onSelect={setCurrentTab}>
-          Second
-        </Tabs.Tab>
-        <Tabs.Tab panelId="third" isDisabled onSelect={setCurrentTab}>
+        <Tabs.Tab panelId="first">First</Tabs.Tab>
+        <Tabs.Tab panelId="second">Second</Tabs.Tab>
+        <Tabs.Tab panelId="third" isDisabled>
           Third (disabled)
         </Tabs.Tab>
       </Tabs.List>
