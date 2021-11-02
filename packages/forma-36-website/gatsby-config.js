@@ -70,17 +70,7 @@ module.exports = {
         menuLinks: [
           {
             name: 'Accessibility',
-            link: '',
-            menuLinks: [
-              {
-                name: 'Accessibility Principiles',
-                link: '/guidelines/accessibility/',
-              },
-              {
-                name: 'ScreenReaderOnly Helper Component',
-                link: '/components/ScreenReaderOnly/',
-              },
-            ],
+            link: '/guidelines/accessibility/',
           },
           {
             name: 'Copy',
@@ -328,6 +318,10 @@ module.exports = {
           {
             name: 'Pill',
             link: '/components/pill/',
+          },
+          {
+            name: 'ScreenReaderOnly',
+            link: '/components/screen-reader-only/',
           },
           {
             name: 'Skeletons',
