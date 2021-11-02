@@ -321,7 +321,7 @@ module.exports = {
           },
           {
             name: 'ScreenReaderOnly',
-            link: '/components/ScreenReaderOnly/',
+            link: '/components/screen-reader-only/',
           },
           {
             name: 'Skeletons',
