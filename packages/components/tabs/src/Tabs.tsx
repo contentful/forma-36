@@ -18,11 +18,11 @@ export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
       onTabChange,
       children,
       testId = 'cf-ui-tabs',
-      ...rest
+      ...otherProps
     } = props;
     return (
       <RadixTabs.Root
-        {...rest}
+        {...otherProps}
         defaultValue={defaultTab}
         value={currentTab}
         onValueChange={onTabChange}
@@ -57,7 +57,7 @@ export const TabList = React.forwardRef<HTMLDivElement, TabListProps>(
       variant,
       children,
       testId = 'cf-ui-tab-list',
-      ...rest
+      ...otherProps
     } = props;
     const styles = getTabsStyles({
       className,
@@ -65,7 +65,7 @@ export const TabList = React.forwardRef<HTMLDivElement, TabListProps>(
     });
     return (
       <RadixTabs.List
-        {...rest}
+        {...otherProps}
         data-test-id={testId}
         className={styles.tabList}
         ref={ref}
@@ -89,12 +89,12 @@ export const TabPanel = React.forwardRef<HTMLDivElement, TabPanelProps>(
       testId = 'cf-ui-tab-panel',
       id,
       className,
-      ...rest
+      ...otherProps
     } = props;
     const styles = getTabPanelStyles({ className });
     return (
       <RadixTabs.Content data-test-id={testId} value={id} asChild>
-        <div {...rest} ref={ref} className={styles.tabPanel}>
+        <div {...otherProps} ref={ref} className={styles.tabPanel}>
           {children}
         </div>
       </RadixTabs.Content>
@@ -122,7 +122,7 @@ export const Tab = React.forwardRef<HTMLDivElement, TabProps>((props, ref) => {
     panelId,
     isDisabled,
     className,
-    ...rest
+    ...otherProps
   } = props;
 
   const styles = getTabStyles({ className, isDisabled });
@@ -133,7 +133,7 @@ export const Tab = React.forwardRef<HTMLDivElement, TabProps>((props, ref) => {
       data-test-id={testId}
       asChild
     >
-      <div {...rest} className={styles.tab} ref={ref}>
+      <div {...otherProps} className={styles.tab} ref={ref}>
         <span>{children}</span>
       </div>
     </RadixTabs.Trigger>
