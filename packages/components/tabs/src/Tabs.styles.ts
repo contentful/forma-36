@@ -30,11 +30,11 @@ const styles = {
     '&:hover:before, &:hover:focus': {
       opacity: '0.5',
     },
-  } as CSSObject,
-  tabSelected: {
-    color: tokens.colorPrimary,
-    '&:before, &:hover:before, &:hover:focus': {
-      opacity: '1',
+    '&[data-state="active"]': {
+      color: tokens.colorPrimary,
+      '&:before, &:hover:before, &:hover:focus': {
+        opacity: '1',
+      },
     },
   } as CSSObject,
   tabDisabled: {
@@ -51,9 +51,8 @@ const styles = {
   },
 };
 
-export const getTabStyles = ({ className, isSelected, isDisabled }) => ({
+export const getTabStyles = ({ className, isDisabled }) => ({
   tab: cx(css(styles.tab), className, {
-    [css(styles.tabSelected)]: isSelected,
     [css(styles.tabDisabled)]: isDisabled,
   }),
 });

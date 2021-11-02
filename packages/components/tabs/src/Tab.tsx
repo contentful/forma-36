@@ -33,7 +33,7 @@ function _Tab(
 ): React.ReactElement {
   const { selectedTab, setSelectedTab } = useTabsContext();
   const isSelected = panelId === selectedTab;
-  const styles = getTabStyles({ className, isSelected, isDisabled });
+  const styles = getTabStyles({ className, isDisabled });
 
   const handleClick = useCallback(
     (e: MouseEvent<HTMLElement>) => {

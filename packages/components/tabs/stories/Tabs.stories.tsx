@@ -24,31 +24,17 @@ export default {
 export const Basic: Story = (args) => {
   return (
     <div>
-      <Tabs defaultTab="first" {...args}>
+      <Tabs
+        {...args}
+        defaultTab="first"
+        onTabChange={(id: string) => {
+          action('onSelect')(id);
+        }}
+      >
         <Tabs.List>
-          <Tabs.Tab
-            panelId="first"
-            onSelect={(id: string) => {
-              action('onSelect')(id);
-            }}
-          >
-            First
-          </Tabs.Tab>
-          <Tabs.Tab
-            panelId="second"
-            onSelect={(id: string) => {
-              action('onSelect')(id);
-            }}
-          >
-            Second
-          </Tabs.Tab>
-          <Tabs.Tab
-            panelId="third"
-            isDisabled
-            onSelect={(id: string) => {
-              action('onSelect')(id);
-            }}
-          >
+          <Tabs.Tab panelId="first">First</Tabs.Tab>
+          <Tabs.Tab panelId="second">Second</Tabs.Tab>
+          <Tabs.Tab panelId="third" isDisabled>
             Third (disabled)
           </Tabs.Tab>
         </Tabs.List>
@@ -63,34 +49,11 @@ export const Basic: Story = (args) => {
 export const Controlled: Story = (args) => {
   const [currentTab, setCurrentTab] = React.useState('first');
   return (
-    <Tabs currentTab={currentTab} {...args}>
+    <Tabs {...args} currentTab={currentTab} onTabChange={setCurrentTab}>
       <Tabs.List>
-        <Tabs.Tab
-          panelId="first"
-          onSelect={(id: string) => {
-            action('onSelect')(id);
-            setCurrentTab(id);
-          }}
-        >
-          First
-        </Tabs.Tab>
-        <Tabs.Tab
-          panelId="second"
-          onSelect={(id: string) => {
-            action('onSelect')(id);
-            setCurrentTab(id);
-          }}
-        >
-          Second
-        </Tabs.Tab>
-        <Tabs.Tab
-          panelId="third"
-          isDisabled
-          onSelect={(id: string) => {
-            action('onSelect')(id);
-            setCurrentTab(id);
-          }}
-        >
+        <Tabs.Tab panelId="first">First</Tabs.Tab>
+        <Tabs.Tab panelId="second">Second</Tabs.Tab>
+        <Tabs.Tab panelId="third" isDisabled>
           Third (disabled)
         </Tabs.Tab>
       </Tabs.List>
@@ -113,17 +76,11 @@ export const Overview: Story = () => {
       </SectionHeading>
 
       <Flex marginBottom="spacingXl" flexDirection="column">
-        <Tabs defaultTab="first">
+        <Tabs defaultTab="first" onTabChange={onSelect}>
           <Tabs.List>
-            <Tabs.Tab panelId="first" onSelect={onSelect}>
-              First
-            </Tabs.Tab>
-            <Tabs.Tab panelId="second" onSelect={onSelect}>
-              Second
-            </Tabs.Tab>
-            <Tabs.Tab panelId="third" onSelect={onSelect}>
-              Third
-            </Tabs.Tab>
+            <Tabs.Tab panelId="first">First</Tabs.Tab>
+            <Tabs.Tab panelId="second">Second</Tabs.Tab>
+            <Tabs.Tab panelId="third">Third</Tabs.Tab>
           </Tabs.List>
           <Tabs.Panel id="first">content first tab</Tabs.Panel>
           <Tabs.Panel id="second">content second tab</Tabs.Panel>
@@ -136,17 +93,11 @@ export const Overview: Story = () => {
       </SectionHeading>
 
       <Flex marginBottom="spacingXl" flexDirection="column">
-        <Tabs defaultTab="first">
+        <Tabs defaultTab="first" onTabChange={onSelect}>
           <Tabs.List variant="horizontal-divider">
-            <Tabs.Tab panelId="first" onSelect={onSelect}>
-              First
-            </Tabs.Tab>
-            <Tabs.Tab panelId="second" onSelect={onSelect}>
-              Second
-            </Tabs.Tab>
-            <Tabs.Tab panelId="third" onSelect={onSelect}>
-              Third
-            </Tabs.Tab>
+            <Tabs.Tab panelId="first">First</Tabs.Tab>
+            <Tabs.Tab panelId="second">Second</Tabs.Tab>
+            <Tabs.Tab panelId="third">Third</Tabs.Tab>
           </Tabs.List>
           <Tabs.Panel id="first">content first tab</Tabs.Panel>
           <Tabs.Panel id="second">content second tab</Tabs.Panel>
@@ -159,17 +110,11 @@ export const Overview: Story = () => {
       </SectionHeading>
 
       <Flex marginBottom="spacingXl" flexDirection="column">
-        <Tabs defaultTab="first">
+        <Tabs defaultTab="first" onTabChange={onSelect}>
           <Tabs.List variant="vertical-divider">
-            <Tabs.Tab panelId="first" onSelect={onSelect}>
-              First
-            </Tabs.Tab>
-            <Tabs.Tab panelId="second" onSelect={onSelect}>
-              Second
-            </Tabs.Tab>
-            <Tabs.Tab panelId="third" onSelect={onSelect}>
-              Third
-            </Tabs.Tab>
+            <Tabs.Tab panelId="first">First</Tabs.Tab>
+            <Tabs.Tab panelId="second">Second</Tabs.Tab>
+            <Tabs.Tab panelId="third">Third</Tabs.Tab>
           </Tabs.List>
           <Tabs.Panel id="first">content first tab</Tabs.Panel>
           <Tabs.Panel id="second">content second tab</Tabs.Panel>
