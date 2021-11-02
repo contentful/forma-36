@@ -16,6 +16,9 @@ interface MenuItemInternalProps extends CommonProps {
   children?: React.ReactNode;
   as?: 'a' | 'button';
 
+  /** Renders item as disabled */
+  isDisabled?: boolean;
+
   /**
    * Sets focus on item
    */
