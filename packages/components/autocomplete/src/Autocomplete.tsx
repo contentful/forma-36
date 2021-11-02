@@ -8,7 +8,7 @@ import { TextInput, TextInputProps } from '@contentful/f36-forms';
 import { CloseIcon, ChevronDownIcon } from '@contentful/f36-icons';
 import { SkeletonContainer, SkeletonBodyText } from '@contentful/f36-skeleton';
 import { Popover } from '@contentful/f36-popover';
-import { SectionHeading } from '@contentful/f36-typography';
+import { Subheading, SectionHeading } from '@contentful/f36-typography';
 
 import { AutocompleteItems } from './AutocompleteItems';
 import { getAutocompleteStyles } from './Autocomplete.styles';
@@ -275,13 +275,18 @@ function _Autocomplete<ItemType>(
 
           {!isLoading && items.length === 0 && (
             <div className={cx(styles.item, styles.disabled)}>
-              {noMatchesMessage}
+              <Subheading margin="spacingXs" className="styles.NoMatchesTitle">
+                {noMatchesMessage}
+              </Subheading>
             </div>
           )}
 
           {!isLoading &&
             isUsingGroups(isGrouped, items) &&
             items.map((group: GroupType, index: number) => {
+              if (group.options.length < 1) {
+                return;
+              }
               const render = (
                 <div key={index}>
                   <SectionHeading
@@ -306,16 +311,18 @@ function _Autocomplete<ItemType>(
               return render;
             })}
 
-          {!isLoading && !isUsingGroups(isGrouped, items) && (
-            <AutocompleteItems
-              items={items}
-              elementStartIndex={elementStartIndex}
-              highlightedIndex={highlightedIndex}
-              getItemProps={getItemProps}
-              renderItem={renderItem}
-              inputValue={inputValue}
-            />
-          )}
+          {!isLoading &&
+            !isUsingGroups(isGrouped, items) &&
+            items.length > 0 && (
+              <AutocompleteItems
+                items={items}
+                elementStartIndex={elementStartIndex}
+                highlightedIndex={highlightedIndex}
+                getItemProps={getItemProps}
+                renderItem={renderItem}
+                inputValue={inputValue}
+              />
+            )}
         </Popover.Content>
       </Popover>
     </div>
