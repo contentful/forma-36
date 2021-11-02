@@ -1,7 +1,7 @@
 import React from 'react';
 import type { CommonProps } from '@contentful/f36-core';
 import * as RadixTabs from '@radix-ui/react-tabs';
-import { getTabsStyles, getTabStyles } from './Tabs.styles';
+import { getTabsStyles, getTabStyles, getTabPanelStyles } from './Tabs.styles';
 
 export interface TabsProps extends CommonProps {
   children?: React.ReactNode;
@@ -84,10 +84,19 @@ export interface TabPanelProps extends CommonProps {
 
 export const TabPanel = React.forwardRef<HTMLDivElement, TabPanelProps>(
   (props, ref) => {
-    const { children, testId = 'cf-ui-tab-panel', id, ...rest } = props;
+    const {
+      children,
+      testId = 'cf-ui-tab-panel',
+      id,
+      className,
+      ...rest
+    } = props;
+    const styles = getTabPanelStyles({ className });
     return (
-      <RadixTabs.Content {...rest} data-test-id={testId} value={id} ref={ref}>
-        {children}
+      <RadixTabs.Content data-test-id={testId} value={id} asChild>
+        <div {...rest} ref={ref} className={styles.tabPanel}>
+          {children}
+        </div>
       </RadixTabs.Content>
     );
   },
@@ -124,8 +133,8 @@ export const Tab = React.forwardRef<HTMLDivElement, TabProps>((props, ref) => {
       data-test-id={testId}
       asChild
     >
-      <div className={styles.tab} {...rest} ref={ref}>
-        {children}
+      <div {...rest} className={styles.tab} ref={ref}>
+        <span>{children}</span>
       </div>
     </RadixTabs.Trigger>
   );

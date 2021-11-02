@@ -17,6 +17,11 @@ const styles = {
     padding: `0 ${tokens.spacingM}`,
     fontFamily: tokens.fontStackPrimary,
     border: 'none',
+    cursor: 'default',
+    outline: 'none',
+    '&:focus': {
+      boxShadow: tokens.glowPrimary,
+    },
     '&:before': {
       content: '""',
       position: 'absolute',
@@ -35,6 +40,11 @@ const styles = {
       '&:before, &:hover:before, &:hover:focus': {
         opacity: '1',
       },
+    },
+    '> span': {
+      display: 'flex',
+      alignSelf: 'center',
+      cursor: 'default',
     },
   } as CSSObject,
   tabDisabled: {
@@ -62,4 +72,16 @@ export const getTabsStyles = ({ className, variant }) => ({
     [css(styles.tabDividerHorizontal)]: variant === 'horizontal-divider',
     [css(styles.tabDividerVertical)]: variant === 'vertical-divider',
   }),
+});
+
+export const getTabPanelStyles = ({ className }: { className: string }) => ({
+  tabPanel: cx(
+    css({
+      outline: 'none',
+      '&:focus': {
+        boxShadow: tokens.glowPrimary,
+      },
+    }),
+    className,
+  ),
 });
