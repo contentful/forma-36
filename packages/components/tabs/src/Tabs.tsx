@@ -10,27 +10,32 @@ export interface TabsProps extends CommonProps {
   onTabChange?: (tab: string) => void;
 }
 
-export const Tabs = (props: TabsProps) => {
-  const {
-    defaultTab,
-    currentTab,
-    onTabChange,
-    children,
-    testId = 'cf-ui-tabs',
-    ...rest
-  } = props;
-  return (
-    <RadixTabs.Root
-      {...rest}
-      defaultValue={defaultTab}
-      value={currentTab}
-      onValueChange={onTabChange}
-      data-test-id={testId}
-    >
-      {children}
-    </RadixTabs.Root>
-  );
-};
+export const Tabs = React.forwardRef<HTMLDivElement, TabsProps>(
+  (props, ref) => {
+    const {
+      defaultTab,
+      currentTab,
+      onTabChange,
+      children,
+      testId = 'cf-ui-tabs',
+      ...rest
+    } = props;
+    return (
+      <RadixTabs.Root
+        {...rest}
+        defaultValue={defaultTab}
+        value={currentTab}
+        onValueChange={onTabChange}
+        data-test-id={testId}
+        ref={ref}
+      >
+        {children}
+      </RadixTabs.Root>
+    );
+  },
+);
+
+Tabs.displayName = 'Tabs';
 
 export interface TabListProps extends CommonProps {
   /**
@@ -45,38 +50,49 @@ export interface TabListProps extends CommonProps {
   children?: React.ReactNode;
 }
 
-export const TabList = (props: TabListProps) => {
-  const {
-    className,
-    variant,
-    children,
-    testId = 'cf-ui-tab-list',
-    ...rest
-  } = props;
-  const styles = getTabsStyles({
-    className,
-    variant,
-  });
-  return (
-    <RadixTabs.List {...rest} data-test-id={testId} className={styles.tabList}>
-      {children}
-    </RadixTabs.List>
-  );
-};
+export const TabList = React.forwardRef<HTMLDivElement, TabListProps>(
+  (props, ref) => {
+    const {
+      className,
+      variant,
+      children,
+      testId = 'cf-ui-tab-list',
+      ...rest
+    } = props;
+    const styles = getTabsStyles({
+      className,
+      variant,
+    });
+    return (
+      <RadixTabs.List
+        {...rest}
+        data-test-id={testId}
+        className={styles.tabList}
+        ref={ref}
+      >
+        {children}
+      </RadixTabs.List>
+    );
+  },
+);
+TabList.displayName = 'TabList';
 
 export interface TabPanelProps extends CommonProps {
   id: string;
   children: React.ReactNode;
 }
 
-export const TabPanel = (props: TabPanelProps) => {
-  const { children, testId = 'cf-ui-tab-panel', id, ...rest } = props;
-  return (
-    <RadixTabs.Content {...rest} data-test-id={testId} value={id}>
-      {children}
-    </RadixTabs.Content>
-  );
-};
+export const TabPanel = React.forwardRef<HTMLDivElement, TabPanelProps>(
+  (props, ref) => {
+    const { children, testId = 'cf-ui-tab-panel', id, ...rest } = props;
+    return (
+      <RadixTabs.Content {...rest} data-test-id={testId} value={id} ref={ref}>
+        {children}
+      </RadixTabs.Content>
+    );
+  },
+);
+TabPanel.displayName = 'TabPanel';
 
 export interface TabProps extends CommonProps {
   /**
@@ -90,7 +106,7 @@ export interface TabProps extends CommonProps {
   children: React.ReactNode;
 }
 
-export const Tab = (props: TabProps) => {
+export const Tab = React.forwardRef<HTMLDivElement, TabProps>((props, ref) => {
   const {
     children,
     testId = 'cf-ui-tab',
@@ -108,9 +124,11 @@ export const Tab = (props: TabProps) => {
       data-test-id={testId}
       asChild
     >
-      <div className={styles.tab} {...rest}>
+      <div className={styles.tab} {...rest} ref={ref}>
         {children}
       </div>
     </RadixTabs.Trigger>
   );
-};
+});
+
+Tab.displayName = 'Tab';
