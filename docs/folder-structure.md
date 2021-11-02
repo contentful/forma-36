@@ -52,7 +52,7 @@ In these cases, the folder structure of the package will look more like this:
     index.ts
     Button.tsx
   /stories
-    # stories for storybook
+    # stories for storybook of each component inside the package
   /test
     # test files
   README.mdx
