@@ -16,10 +16,11 @@ const styles = {
     position: 'relative',
     padding: `0 ${tokens.spacingM}`,
     fontFamily: tokens.fontStackPrimary,
+    fontWeight: tokens.fontWeightDemiBold,
     border: 'none',
-    cursor: 'default',
+    cursor: 'pointer',
     outline: 'none',
-    '&:focus': {
+    '&:focus-visible': {
       boxShadow: tokens.glowPrimary,
     },
     '&:before': {
@@ -44,7 +45,7 @@ const styles = {
     '> span': {
       display: 'flex',
       alignSelf: 'center',
-      cursor: 'default',
+      cursor: 'inherit',
     },
   } as CSSObject,
   tabDisabled: {
@@ -78,7 +79,7 @@ export const getTabPanelStyles = ({ className }: { className: string }) => ({
   tabPanel: cx(
     css({
       outline: 'none',
-      '&:focus': {
+      '&:focus-visible': {
         boxShadow: tokens.glowPrimary,
       },
     }),
