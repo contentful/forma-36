@@ -1,4 +1,4 @@
-import { Tabs as OriginalTabs, Tab, TabPanel, TabList } from './NewTabs';
+import { Tabs as OriginalTabs, Tab, TabPanel, TabList } from './Tabs';
 
 type CompoundTabs = typeof OriginalTabs & {
   Panel: typeof TabPanel;

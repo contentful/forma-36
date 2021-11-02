@@ -1,40 +1,116 @@
 import React from 'react';
 import type { CommonProps } from '@contentful/f36-core';
-import { TabsContextProvider } from './tabsContext';
+import * as RadixTabs from '@radix-ui/react-tabs';
+import { getTabsStyles, getTabStyles } from './Tabs.styles';
+
 export interface TabsProps extends CommonProps {
   children?: React.ReactNode;
-  /**
-   * default active Tab
-   */
   defaultTab?: string;
   currentTab?: string;
+  onTabChange?: (tab: string) => void;
 }
 
-function _Tabs(
-  {
-    className,
-    children,
-    testId = 'cf-ui-tabs',
-    style,
+export const Tabs = (props: TabsProps) => {
+  const {
     defaultTab,
     currentTab,
-    ...otherProps
-  }: TabsProps,
-  ref: React.Ref<HTMLDivElement>,
-): React.ReactElement {
-  const elementProps = {
-    'data-test-id': testId,
-    style,
-    ...otherProps,
-  };
-
+    onTabChange,
+    children,
+    testId = 'cf-ui-tabs',
+    ...rest
+  } = props;
   return (
-    <TabsContextProvider defaultTab={defaultTab} currentTab={currentTab}>
-      <div {...elementProps} ref={ref}>
-        {children}
-      </div>
-    </TabsContextProvider>
+    <RadixTabs.Root
+      {...rest}
+      defaultValue={defaultTab}
+      value={currentTab}
+      onValueChange={onTabChange}
+      data-test-id={testId}
+    >
+      {children}
+    </RadixTabs.Root>
   );
+};
+
+export interface TabListProps extends CommonProps {
+  /**
+   * visual variant of TabList
+   */
+  variant?: 'default' | 'horizontal-divider' | 'vertical-divider';
+  /**
+   * When true, keyboard navigation will loop from last tab to first, and vice versa.
+   * @default true
+   */
+  loop?: boolean;
+  children?: React.ReactNode;
 }
 
-export const Tabs = React.forwardRef(_Tabs);
+export const TabList = (props: TabListProps) => {
+  const {
+    className,
+    variant,
+    children,
+    testId = 'cf-ui-tab-list',
+    ...rest
+  } = props;
+  const styles = getTabsStyles({
+    className,
+    variant,
+  });
+  return (
+    <RadixTabs.List {...rest} data-test-id={testId} className={styles.tabList}>
+      {children}
+    </RadixTabs.List>
+  );
+};
+
+export interface TabPanelProps extends CommonProps {
+  id: string;
+  children: React.ReactNode;
+}
+
+export const TabPanel = (props: TabPanelProps) => {
+  const { children, testId = 'cf-ui-tab-panel', id, ...rest } = props;
+  return (
+    <RadixTabs.Content {...rest} data-test-id={testId} value={id}>
+      {children}
+    </RadixTabs.Content>
+  );
+};
+
+export interface TabProps extends CommonProps {
+  /**
+   * A unique id that associates the tab with a panel.
+   */
+  panelId: string;
+  /**
+   * When true, prevents the user from interacting with the tab.
+   */
+  isDisabled?: boolean;
+  children: React.ReactNode;
+}
+
+export const Tab = (props: TabProps) => {
+  const {
+    children,
+    testId = 'cf-ui-tab',
+    panelId,
+    isDisabled,
+    className,
+    ...rest
+  } = props;
+
+  const styles = getTabStyles({ className, isDisabled });
+  return (
+    <RadixTabs.Trigger
+      disabled={isDisabled}
+      value={panelId}
+      data-test-id={testId}
+      asChild
+    >
+      <div className={styles.tab} {...rest}>
+        {children}
+      </div>
+    </RadixTabs.Trigger>
+  );
+};
