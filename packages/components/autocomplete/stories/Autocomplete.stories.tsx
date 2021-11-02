@@ -148,14 +148,22 @@ export const UsingGroupedItems = (args: AutocompleteProps<GroceryList>) => {
   const [filteredItems, setFilteredItems] = useState(groceryList);
 
   const handleInputValueChange = (value: string) => {
-    const newFilteredItems = groceryList.map((group) => {
-      return {
-        ...group,
-        options: group.options.filter((item: Produce) =>
+    const newFilteredItems = groceryList
+      .map((group) => {
+        const filteredOptions = group.options.filter((item: Produce) =>
           item.name.toLowerCase().includes(value.toLowerCase()),
-        ),
-      };
-    });
+        );
+        if (filteredOptions.length > 0) {
+          return {
+            ...group,
+            options: filteredOptions,
+          };
+        }
+        return undefined;
+      })
+      .filter((group: GroceryList | undefined): group is GroceryList => {
+        return !!group;
+      });
     setFilteredItems(newFilteredItems);
   };
 
