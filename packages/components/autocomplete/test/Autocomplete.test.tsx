@@ -146,7 +146,7 @@ describe('Autocomplete', () => {
       renderComponent({ noMatchesMessage, items: [] });
 
       const input = screen.getByTestId('cf-autocomplete-input');
-      const list = screen.getByTestId('cf-autocomplete-list');
+      const list = screen.getByTestId('cf-autocomplete-container');
 
       // type anything to open the list
       fireEvent.input(input, {
