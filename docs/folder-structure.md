@@ -1,7 +1,31 @@
 # F36 Folder Structure
 
 To make it easy to maintain our files and folders we ask every contributor to follow this folder structure.
-Every package has its own folder, except for components which should be kept in the folder `/components` (every component must have its own folder).
+Every package that should be published must have its own folder inside the `packages` directory,
+with the exception of UI components that should have their folder and files created inside the `packages/components` directory.
+
+```
+/packages
+  /components
+    /autocomplete
+      README.mdx
+      package.json
+    /button
+      README.mdx
+      package.json
+    /forms
+      README.mdx
+      package.json
+  /forma-36-codemod
+    README.mdx
+    package.json
+  /forma-36-tokens
+    README.mdx
+    package.json
+  /forma-36-website
+    README.mdx
+    package.json
+```
 
 ## Table of contents
 
@@ -22,12 +46,14 @@ The basic folder structure of a component looks like this:
     MyComponent.tsx
     MyComponent.styles.ts
   /stories
-    # stories for storybook
+    # stories for storybook of each component inside the package
   /test
     # test files
   README.mdx
   package.json
 ```
+
+If you run `yarn generate component`, this structure will be generated for you automatically.
 
 ### Packages with more than one component
 
@@ -77,7 +103,7 @@ Another possible case is that the package has a component and some utility funct
     index.ts
     DateTime.tsx
   /stories
-    # stories for storybook
+    # stories for storybook of each component inside the package
   /test
     # test files
   README.mdx
