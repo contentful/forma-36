@@ -22,6 +22,8 @@ const getStyles = ({ as, isDisabled, isInvalid, size, resize }) => ({
     position: 'relative',
     display: 'flex',
     width: '100%',
+    zIndex:
+      isInvalid || isDisabled ? tokens.zIndexDefault + 1 : tokens.zIndexDefault,
   }),
   input: css({
     outline: 'none',
@@ -38,6 +40,8 @@ const getStyles = ({ as, isDisabled, isInvalid, size, resize }) => ({
     margin: 0,
     cursor: isDisabled ? 'not-allowed' : 'auto',
     width: '100%',
+    zIndex:
+      isInvalid || isDisabled ? tokens.zIndexDefault + 1 : tokens.zIndexDefault,
 
     // if the input is a textarea, the resize prop is applied and size should be ignored
     ...(as === 'textarea' ? { resize } : getSizeStyles({ size })),

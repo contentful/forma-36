@@ -5,7 +5,7 @@ status: 'stable'
 slug: /components/text-input/
 github: 'https://github.com/contentful/forma-36/tree/master/packages/components/forms/src/text-input'
 storybook: 'https://f36-storybook.contentful.com/?path=/story/form-elements-textinput--basic'
-typescript: ./TextInput.tsx
+typescript: ./TextInput.tsx,./input-group/InputGroup.tsx
 ---
 
 `TextInput` is a form component, that allows users to input text or numbers and should be used in a form context.
@@ -16,11 +16,11 @@ typescript: ./TextInput.tsx
 - [Code examples](#code-examples)
   - [Basic example](#basic-example)
   - [TextInput with label](#textInput-with-label)
+  - [TextInput with buttons](#textInput-with-buttons)
 - [TextInput variations](#textInput-variations)
   - [TextInput with placeholder](#textInput-with-placeholder)
   - [TextInput disabled](#textInput-disabled)
   - [TextInput invalid](#textInput-invalid)
-  - [TextInput with copy button](#TextInput-with-copy-button)
 - [Content recommendations](#content-recommendations)
 - [Accessibility](#accessibility)
 - [Props](#props)
@@ -65,6 +65,43 @@ Read more about [`FormControl`](/components/form-control)
 </FormControl>
 ```
 
+### TextInput with buttons
+
+`TextInput.Group` enables the user to set a button at the start or end of an input, with some spacing or collapsed.
+Example of usage:
+
+```jsx
+// import { LockIcon } from '@contentful/f36-icons';
+// import { IconButton } from '@contentful/f36-button';
+// import { TextInput } from '@contentful/f36-forms';
+
+<TextInput.Group>
+  <TextInput
+    aria-label="some-label"
+    id="TextInput1"
+    defaultValue="Some value"
+  />
+  <IconButton variant="secondary" icon={<LockIcon />} aria-label="Lock" />
+</TextInput.Group>
+```
+
+Example of spaced `InputGroup`.
+
+```jsx
+// import { LockIcon } from '@contentful/f36-icons';
+// import { IconButton } from '@contentful/f36-button';
+// import { TextInput } from '@contentful/f36-forms';
+
+<TextInput.Group spacing="spacingS">
+  <TextInput
+    aria-label="some-label"
+    id="TextInput2"
+    defaultValue="Some value"
+  />
+  <IconButton variant="secondary" icon={<LockIcon />} aria-label="Lock" />
+</TextInput.Group>
+```
+
 ## TextInput variations
 
 Keep in mind, that if you need to use an input without a label, you need to pass `aria-label` attribute to create an input that would be accessibile to assistive technologies, like screen readers.
@@ -105,20 +142,6 @@ Keep in mind, that if you need to use an input without a label, you need to pass
 />
 ```
 
-### TextInput with copy button
-
-We provide a variant of the TextInput that is a composed with CopyButton. In order to use it add `withCopyButton` property to your implementation.
-
-```jsx
-<TextInput
-  label="Token"
-  name="token"
-  id="input-2"
-  withCopyButton
-  aria-label="token"
-/>
-```
-
 ## Content recommendations
 
 - Use direct and succinct copy that helps the user to successfully complete the form
@@ -135,4 +158,10 @@ We provide a variant of the TextInput that is a composed with CopyButton. In ord
 
 import { Props } from '@contentful/f36-docs-utils';
 
+### TextInput
+
 <Props of="TextInput" />
+
+### TextInput.Group
+
+<Props of="InputGroup" />
