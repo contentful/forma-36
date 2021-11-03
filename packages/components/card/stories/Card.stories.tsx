@@ -4,7 +4,6 @@ import { Flex } from '@contentful/f36-core';
 import { Heading, SectionHeading, Text } from '@contentful/f36-typography';
 import { ClockIcon } from '@contentful/f36-icons';
 import { MenuItem } from '@contentful/f36-menu';
-import { EntityStatusBadge } from '@contentful/f36-badge';
 
 import { Card } from '../src';
 import type { CardProps } from '../src';
