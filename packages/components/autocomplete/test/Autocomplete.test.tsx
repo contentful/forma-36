@@ -282,18 +282,11 @@ describe('Autocomplete', () => {
   });
 
   describe('items is a nested object with groups', () => {
-    it('renders the group titles', async () => {
-      renderComponent<Fruit>({
-        isGrouped: true,
-        items: groceryList,
-        itemToString: (item: Fruit) => item.name,
-        renderItem: (item: Fruit) => item.name,
-      });
+    const openDropdown = async () => {
       const input = screen.getByTestId('cf-autocomplete-input');
       const container = screen.getByTestId('cf-autocomplete-container');
       // list is initially closed
       expect(container).not.toBeVisible();
-      expect(container.childElementCount).toBe(2);
 
       // Type one letter in the input to open the list
       fireEvent.input(input, {
@@ -306,7 +299,20 @@ describe('Autocomplete', () => {
       await waitFor(() => {
         expect(container).toBeVisible();
       });
+      return { input, container };
+    };
 
+    it('renders the group titles', async () => {
+      renderComponent<Fruit>({
+        isGrouped: true,
+        items: groceryList,
+        itemToString: (item: Fruit) => item.name,
+        renderItem: (item: Fruit) => item.name,
+      });
+
+      const { container } = await openDropdown();
+
+      expect(container.childElementCount).toBe(2);
       expect(
         screen.queryAllByTestId('cf-autocomplete-grouptitle'),
       ).toHaveLength(2);
@@ -318,6 +324,8 @@ describe('Autocomplete', () => {
         itemToString: (item: Fruit) => item.name,
         renderItem: (item: Fruit) => item.name,
       });
+
+      await openDropdown();
 
       const renderedGroupTitles = screen
         .getAllByTestId('cf-autocomplete-grouptitle')
@@ -334,24 +342,12 @@ describe('Autocomplete', () => {
         itemToString: (item: Fruit) => item.name,
         renderItem: (item: Fruit) => item.name,
       });
-      const input = screen.getByTestId('cf-autocomplete-input');
-      const container = screen.getByTestId('cf-autocomplete-container');
+
       const firstItem = screen.getByTestId('cf-autocomplete-list-item-0');
-      // list is initially closed
-      expect(container).not.toBeVisible();
+
+      const { container, input } = await openDropdown();
+
       expect(container.childElementCount).toBe(2);
-
-      // Type one letter in the input to open the list
-      fireEvent.input(input, {
-        target: {
-          value: 'a',
-        },
-      });
-
-      // checks if the list is visible
-      await waitFor(() => {
-        expect(container).toBeVisible();
-      });
 
       // press the ArrowDown key
       fireEvent.keyDown(input, {
@@ -370,6 +366,26 @@ describe('Autocomplete', () => {
       expect(mockOnSelectItem).toHaveBeenCalledWith({
         id: 1,
         name: 'Apple 🍎',
+      });
+    });
+    it('shows the value of the "noMatchesMessage" when every group is empty', async () => {
+      const noMatchesMessage = 'There is no Broccoli in the list';
+      const emptyGroup = {
+        groupTitle: 'Fruit',
+        options: [],
+      };
+
+      renderComponent<Fruit>({
+        isGrouped: true,
+        items: [emptyGroup],
+        noMatchesMessage,
+      });
+
+      await openDropdown();
+
+      // checks if the list is visible and it only shows the "No matches" message
+      await waitFor(() => {
+        expect(screen.getByText(noMatchesMessage)).toBeVisible();
       });
     });
   });

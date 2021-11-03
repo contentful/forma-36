@@ -158,6 +158,10 @@ function _Autocomplete<ItemType>(
       )
     : items;
 
+  const isShowingNoMatches = isUsingGroups(isGrouped, items)
+    ? items.every((group: GroupType) => group.options.length === 0)
+    : items.length === 0;
+
   const {
     getComboboxProps,
     getInputProps,
@@ -273,7 +277,7 @@ function _Autocomplete<ItemType>(
               </div>
             ))}
 
-          {!isLoading && items.length === 0 && (
+          {!isLoading && isShowingNoMatches && (
             <div className={cx(styles.item, styles.disabled)}>
               <Subheading margin="none" className={styles.noMatchesTitle}>
                 {noMatchesMessage}
