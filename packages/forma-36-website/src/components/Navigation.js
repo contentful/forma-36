@@ -36,6 +36,10 @@ const styles = {
     margin-top: 0;
   `,
 
+  hidden: css`
+    display: none;
+  `,
+
   link: css`
     display: flex;
     justify-content: space-between;
@@ -123,13 +127,12 @@ const MenuListItem = React.forwardRef(
                 icon={isExpanded ? 'ChevronDown' : 'ChevronRight'}
               />
             </div>
-            {isExpanded && (
-              <MenuList
-                menuItems={item.menuLinks}
-                currentPath={currentPath}
-                hierarchyLevel={hierarchyLevel + 1}
-              />
-            )}
+            <MenuList
+              isHidden={!isExpanded}
+              menuItems={item.menuLinks}
+              currentPath={currentPath}
+              hierarchyLevel={hierarchyLevel + 1}
+            />
           </>
         ) : (
           <Link
@@ -161,7 +164,12 @@ MenuListItem.defaultProps = {
   hierarchyLevel: 0,
 };
 
-const MenuList = ({ menuItems, currentPath, hierarchyLevel }) => {
+const MenuList = ({
+  menuItems,
+  currentPath,
+  hierarchyLevel,
+  isHidden = false,
+}) => {
   const activeRef = useRef(null);
   useEffect(() => {
     if (activeRef.current) {
@@ -169,7 +177,7 @@ const MenuList = ({ menuItems, currentPath, hierarchyLevel }) => {
     }
   }, []);
   return (
-    <ul css={styles.list}>
+    <ul css={[styles.list, isHidden && styles.hidden]}>
       {menuItems.map((item, index) => {
         const active = checkActive(item, currentPath);
         return (
