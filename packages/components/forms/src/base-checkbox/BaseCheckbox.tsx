@@ -137,7 +137,10 @@ function _BaseCheckbox(
         {children}
       </Text>
       {helpText && (
-        <HelpText id={`${id}-helptext`} className={styles.helpText}>
+        <HelpText
+          id={id ? `${id}-helptext` : undefined}
+          className={styles.helpText}
+        >
           {helpText}
         </HelpText>
       )}

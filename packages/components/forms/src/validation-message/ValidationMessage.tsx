@@ -32,7 +32,7 @@ export const ValidationMessage = forwardRef<
       ref={ref}
       testId={testId}
       alignItems="center"
-      id={`${id}-validation`}
+      id={id ? `${id}-validation` : undefined}
       aria-live="assertive"
     >
       <Flex marginRight="spacing2Xs">

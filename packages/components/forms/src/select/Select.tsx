@@ -85,9 +85,13 @@ const _Select = (
         required={formProps.isRequired}
         aria-required={formProps.isRequired ? 'true' : undefined}
         aria-invalid={formProps.isInvalid ? true : undefined}
-        aria-describedby={`${formProps.id}-${
-          formProps.isInvalid ? `validation` : `helptext`
-        }`}
+        aria-describedby={
+          formProps.id
+            ? `${formProps.id}-${
+                formProps.isInvalid ? `validation` : `helptext`
+              }`
+            : undefined
+        }
         disabled={formProps.isDisabled}
         defaultValue={defaultValue}
         value={value}
