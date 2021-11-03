@@ -275,7 +275,7 @@ function _Autocomplete<ItemType>(
 
           {!isLoading && items.length === 0 && (
             <div className={cx(styles.item, styles.disabled)}>
-              <Subheading margin="spacingXs" className="styles.NoMatchesTitle">
+              <Subheading margin="none" className={styles.noMatchesTitle}>
                 {noMatchesMessage}
               </Subheading>
             </div>
