@@ -189,7 +189,7 @@ const MenuList = ({
     }
   }, []);
   return (
-    <ul css={[styles.list, isHidden && styles.hidden]}>
+    <ul className={cx([styles.list, isHidden && styles.hidden])}>
       {menuItems.map((item, index) => {
         const active = checkActive(item, currentPath);
         return (
