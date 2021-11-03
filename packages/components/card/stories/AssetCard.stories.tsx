@@ -96,19 +96,6 @@ export const Overview: Story<Args> = () => {
 
         <Flex flexDirection="column" marginRight="spacingM">
           <SectionHeading as="h3" marginBottom="spacingS">
-            Focus
-          </SectionHeading>
-
-          <AssetCard
-            src="https://via.placeholder.com/200x300"
-            status="published"
-            title="Asset title"
-            type="image"
-          />
-        </Flex>
-
-        <Flex flexDirection="column" marginRight="spacingM">
-          <SectionHeading as="h3" marginBottom="spacingS">
             Selected
           </SectionHeading>
 
@@ -150,20 +137,6 @@ export const Overview: Story<Args> = () => {
             isHovered
             size="small"
             src="https://via.placeholder.com/200x300"
-            title="Asset title"
-            type="image"
-          />
-        </Flex>
-
-        <Flex flexDirection="column" marginRight="spacingM">
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Focus
-          </SectionHeading>
-
-          <AssetCard
-            size="small"
-            src="https://via.placeholder.com/200x300"
-            status="published"
             title="Asset title"
             type="image"
           />

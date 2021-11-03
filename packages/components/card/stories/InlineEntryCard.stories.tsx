@@ -92,24 +92,6 @@ export const Overview: Story<InlineEntryCardProps> = () => {
           marginRight="spacingM"
         >
           <SectionHeading as="h3" marginBottom="spacingS">
-            Focus
-          </SectionHeading>
-          <InlineEntryCard
-            actions={[
-              <MenuItem key="copy">Copy</MenuItem>,
-              <MenuItem key="delete">Delete</MenuItem>,
-            ]}
-            status="changed"
-            title="Forma 36"
-          />
-        </Flex>
-
-        <Flex
-          flexDirection="column"
-          marginBottom="spacingM"
-          marginRight="spacingM"
-        >
-          <SectionHeading as="h3" marginBottom="spacingS">
             Selected
           </SectionHeading>
 

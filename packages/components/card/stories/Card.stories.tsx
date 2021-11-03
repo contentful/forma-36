@@ -180,27 +180,6 @@ export const Overview: Story<CardProps> = () => {
           marginRight="spacingM"
         >
           <SectionHeading as="h3" marginBottom="spacingS">
-            Focus
-          </SectionHeading>
-          <Card
-            badge={<EntityStatusBadge entityStatus="draft" />}
-            title="Forma 36"
-          >
-            <Text>
-              Forma 36 is an open-source design system by Contentful created
-              with the intent to reduce the overhead of creating UI by providing
-              tools and guidance for digital teams building and extending
-              Contentful products.
-            </Text>
-          </Card>
-        </Flex>
-
-        <Flex
-          flexDirection="column"
-          marginBottom="spacingM"
-          marginRight="spacingM"
-        >
-          <SectionHeading as="h3" marginBottom="spacingS">
             Selected
           </SectionHeading>
 
@@ -273,28 +252,6 @@ export const Overview: Story<CardProps> = () => {
           marginRight="spacingM"
         >
           <SectionHeading as="h3" marginBottom="spacingS">
-            Focus
-          </SectionHeading>
-          <Card
-            badge={<EntityStatusBadge entityStatus="draft" />}
-            padding="large"
-            title="Forma 36"
-          >
-            <Text>
-              Forma 36 is an open-source design system by Contentful created
-              with the intent to reduce the overhead of creating UI by providing
-              tools and guidance for digital teams building and extending
-              Contentful products.
-            </Text>
-          </Card>
-        </Flex>
-
-        <Flex
-          flexDirection="column"
-          marginBottom="spacingM"
-          marginRight="spacingM"
-        >
-          <SectionHeading as="h3" marginBottom="spacingS">
             Selected
           </SectionHeading>
 
@@ -348,28 +305,6 @@ export const Overview: Story<CardProps> = () => {
               <MenuItem key="remove">Remove</MenuItem>,
             ]}
             isHovered
-            padding="none"
-            title="Forma 36"
-          >
-            <Text>
-              Forma 36 is an open-source design system by Contentful created
-              with the intent to reduce the overhead of creating UI by providing
-              tools and guidance for digital teams building and extending
-              Contentful products.
-            </Text>
-          </Card>
-        </Flex>
-
-        <Flex
-          flexDirection="column"
-          marginBottom="spacingM"
-          marginRight="spacingM"
-        >
-          <SectionHeading as="h3" marginBottom="spacingS">
-            Focus
-          </SectionHeading>
-          <Card
-            badge={<EntityStatusBadge entityStatus="draft" />}
             padding="none"
             title="Forma 36"
           >
