@@ -44,7 +44,7 @@ function _BaseCard<E extends React.ElementType = typeof BASE_CARD_DEFAULT_TAG>(
     href,
     icon,
     isDragging = false,
-    isFocused: isFocusedProp,
+    isFocused,
     isHovered: isHoveredProp,
     isSelected = false,
     onBlur,
