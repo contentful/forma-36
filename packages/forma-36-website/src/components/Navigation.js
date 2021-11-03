@@ -104,6 +104,12 @@ const MenuListItem = React.forwardRef(
       setIsExpanded(!isExpanded);
     };
 
+    const handleKeyDown = (event) => {
+      if (event.nativeEvent.code === 'Enter') {
+        handleToggle(event);
+      }
+    };
+
     const itemOffset = { paddingLeft: `${1 + hierarchyLevel}rem` };
 
     return (
@@ -113,6 +119,9 @@ const MenuListItem = React.forwardRef(
             <div
               css={[styles.link, styles.linkGroup, itemOffset]}
               onClick={handleToggle}
+              onKeyDown={handleKeyDown}
+              // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+              tabIndex={0}
             >
               {isCategory ? (
                 <SectionHeading>{item.name}</SectionHeading>
