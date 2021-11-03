@@ -23,7 +23,7 @@ export const getBaseCardStyles = () => {
       borderTopLeftRadius: tokens.borderRadiusMedium,
       cursor: 'grab',
     }),
-    root: ({ hasHeader, isFocused, isHovered, isSelected }) => {
+    root: ({ hasHeader, isHovered, isSelected }) => {
       const styles: ObjectInterpolation<undefined> = {
         backgroundColor: tokens.colorWhite,
         borderColor: tokens.gray300,
@@ -40,6 +40,12 @@ export const getBaseCardStyles = () => {
         textDecoration: 'none',
         transition: `border-color ${tokens.transitionDurationDefault} ${tokens.transitionEasingDefault},
     box-shadow ${tokens.transitionDurationShort} ${tokens.transitionEasingDefault}`,
+
+        '&:focus': css({
+          borderColor: tokens.colorPrimary,
+          boxShadow: tokens.glowPrimary,
+          outline: '0',
+        }),
       };
 
       if (!hasHeader) {
@@ -49,12 +55,6 @@ export const getBaseCardStyles = () => {
       if (isHovered) {
         styles.borderColor = tokens.colorPrimary;
         styles.cursor = 'pointer';
-      }
-
-      if (isFocused) {
-        styles.borderColor = tokens.colorPrimary;
-        styles.boxShadow = tokens.glowPrimary;
-        styles.outline = 0;
       }
 
       if (isSelected) {
