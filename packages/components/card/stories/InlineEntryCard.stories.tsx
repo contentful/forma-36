@@ -99,7 +99,6 @@ export const Overview: Story<InlineEntryCardProps> = () => {
               <MenuItem key="copy">Copy</MenuItem>,
               <MenuItem key="delete">Delete</MenuItem>,
             ]}
-            isFocused
             status="changed"
             title="Forma 36"
           />

@@ -115,7 +115,6 @@ export const Overview: Story<EntryCardProps> = () => {
           {['default', 'small'].map((size) => (
             <EntryCard
               key={size}
-              isFocused
               status="changed"
               thumbnailElement={thumbnail}
               title="Forma 36"

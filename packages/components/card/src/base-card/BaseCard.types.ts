@@ -51,10 +51,6 @@ export type BaseCardInternalProps = CommonProps &
      */
     isDragging?: boolean;
     /**
-     * Applies focus styles to the card
-     */
-    isFocused?: boolean;
-    /**
      * Applies hover styles to the card
      */
     isHovered?: boolean;

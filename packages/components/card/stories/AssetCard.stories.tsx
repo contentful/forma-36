@@ -100,7 +100,6 @@ export const Overview: Story<Args> = () => {
           </SectionHeading>
 
           <AssetCard
-            isFocused
             src="https://via.placeholder.com/200x300"
             status="published"
             title="Asset title"
@@ -162,7 +161,6 @@ export const Overview: Story<Args> = () => {
           </SectionHeading>
 
           <AssetCard
-            isFocused
             size="small"
             src="https://via.placeholder.com/200x300"
             status="published"

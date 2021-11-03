@@ -184,7 +184,6 @@ export const Overview: Story<CardProps> = () => {
           </SectionHeading>
           <Card
             badge={<EntityStatusBadge entityStatus="draft" />}
-            isFocused
             title="Forma 36"
           >
             <Text>
@@ -278,7 +277,6 @@ export const Overview: Story<CardProps> = () => {
           </SectionHeading>
           <Card
             badge={<EntityStatusBadge entityStatus="draft" />}
-            isFocused
             padding="large"
             title="Forma 36"
           >
@@ -372,7 +370,6 @@ export const Overview: Story<CardProps> = () => {
           </SectionHeading>
           <Card
             badge={<EntityStatusBadge entityStatus="draft" />}
-            isFocused
             padding="none"
             title="Forma 36"
           >
