@@ -30,6 +30,7 @@ with the exception of UI components that should have their folder and files crea
 ## Table of contents
 
 - [Components](#components)
+  - [Test files](#test-files)
   - [Packages with more than one component](#packages-with-more-than-one-component)
   - [Packages with utility functions](#packages-with-utility-functions)
   - [Why do we use MDX?](#why-do-we-use-mdx)
@@ -44,16 +45,31 @@ The basic folder structure of a component looks like this:
   /src
     index.ts
     MyComponent.tsx
+    MyComponent.test.tsx
     MyComponent.styles.ts
   /stories
     # stories for storybook of each component inside the package
-  /test
-    # test files
   README.mdx
   package.json
 ```
 
 If you run `yarn generate component`, this structure will be generated for you automatically.
+
+### Test files
+
+As you can see from the example above, we want to keep our test files close to what they are testing.
+If your tests need supporting mocks and you need them to be in a separate files, we ask you to create a `__mocks__` folder close to the test file,
+like this:
+
+```
+/my-component
+  /src
+    /__mocks__
+      myMocks.ts
+    index.ts
+    MyComponent.tsx
+    MyComponent.test.tsx
+```
 
 ### Packages with more than one component
 
@@ -67,20 +83,22 @@ In these cases, the folder structure of the package will look more like this:
       README.mdx
       index.ts
       ButtonGroup.tsx
+      ButtonGroup.test.tsx
     /IconButton
       README.mdx
       index.ts
       IconButton.tsx
+      IconButton.test.tsx
     /ToggleButton
       README.mdx
       index.ts
-      IconButton.tsx
+      ToggleButton.tsx
+      ToggleButton.test.tsx
     index.ts
     Button.tsx
+    Button.test.tsx
   /stories
     # stories for storybook of each component inside the package
-  /test
-    # test files
   README.mdx
   package.json
 ```
@@ -96,16 +114,17 @@ Another possible case is that the package has a component and some utility funct
       README.mdx
       index.ts
       RelativeDateTime.tsx
+      RelativeDateTime.test.tsx
     /utils
       README.mdx
       index.ts
       formatDateTimeUtils.ts
+      formatDateTimeUtils.test.ts
     index.ts
     DateTime.tsx
+    DateTime.test.tsx
   /stories
     # stories for storybook of each component inside the package
-  /test
-    # test files
   README.mdx
   package.json
 ```
