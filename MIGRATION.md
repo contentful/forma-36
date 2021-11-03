@@ -3,16 +3,16 @@
 ## Table of contents
 
 - [Table of contents](#table-of-contents)
-- [How to migrate your packages to v4](#How-to-migrate-your-packages-to-v4)
-- [Changes per Component in v4](#Changes-per-component-in-v4)
-  - [Tag becomes Badge](#Tag-becomes-Badge)
-    - [How to migrate your Tag to Badge](#How-to-migrate-your-Tag-to-Badge)
+- [How to migrate your packages to v4](#how-to-migrate-your-packages-to-v4)
+- [Changes per Component in v4](#changes-per-component-in-v4)
+  - [Tag becomes Badge](#tag-becomes-Badge)
+    - [How to migrate your Tag to Badge](#how-to-migrate-your-Tag-to-Badge)
   - [Button](#button)
-    - [How to migrate your Button components](#How-to-migrate-your-Button-components)
+    - [How to migrate your Button components](#how-to-migrate-your-gutton-components)
   - [Flex](#flex)
-    - [How to migrate your Flex components](#How-to-migrate-your-Flex-components)
+    - [How to migrate your Flex components](#how-to-migrate-your-flex-components)
   - [Grid](#grid)
-    - [How to migrate your Grid components](#How-to-migrate-your-Grid-components)
+    - [How to migrate your Grid components](#how-to-migrate-your-grid-components)
 
 ## How to migrate your packages to v4
 
