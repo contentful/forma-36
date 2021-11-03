@@ -7,10 +7,12 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: 'Forma 36 - The Contentful Design System',
-    promoText: ``,
-    promoLink: '',
-    promoLinkText: '',
-    promoTagText: '',
+    promoText: `We want to hear from you!`,
+    promoLink:
+      'https://docs.google.com/forms/d/e/1FAIpQLSfYVm_bfPGt-LcjGDYjjsKEUk7pAHx9Xo15AvcpIag2hhyQ2Q/viewform?usp=sf_link',
+    promoLinkText:
+      'Share your experience with components in this 2 min survey.',
+    promoTagText: 'Components survey',
     menuLinks: [
       {
         name: 'Foundation',
