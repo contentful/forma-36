@@ -4,8 +4,7 @@
   "private": true,
   "license": "MIT",
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "main": "dist/main.js",
   "types": "dist/types.d.ts",
