@@ -148,17 +148,13 @@ export const UsingGroupedItems = (args: AutocompleteProps<GroceryList>) => {
   const [filteredItems, setFilteredItems] = useState(groceryList);
 
   const handleInputValueChange = (value: string) => {
-    const newFilteredItems: GroceryList[] = [];
-    groceryList.forEach((group) => {
-      const filteredOptions = group.options.filter((item: Produce) =>
-        item.name.toLowerCase().includes(value.toLowerCase()),
-      );
-      if (filteredOptions.length > 0) {
-        newFilteredItems.push({
-          groupTitle: group.groupTitle,
-          options: filteredOptions,
-        });
-      }
+    const newFilteredItems = groceryList.map((group) => {
+      return {
+        ...group,
+        options: group.options.filter((item: Produce) =>
+          item.name.toLowerCase().includes(value.toLowerCase()),
+        ),
+      };
     });
     setFilteredItems(newFilteredItems);
   };
