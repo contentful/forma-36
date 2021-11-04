@@ -1,4 +1,3 @@
-import { set as mockDateSet, reset as mockDateReset } from 'mockdate';
 import dayjs from 'dayjs';
 
 import {
@@ -10,16 +9,17 @@ import {
 import * as TestCases from './__mocks__/dates';
 
 describe('Relative datetime utility functions', function () {
-  const today = dayjs();
+  // Fix time to avoid non-deterministic behaviour
+  const today = dayjs('2021-11-03T08:19:05.729Z');
   const tomorrow = today.add(1, 'day');
   const yesterday = today.subtract(1, 'day');
 
   beforeEach(() => {
-    mockDateSet(new Date(today.format()));
+    jest.useFakeTimers().setSystemTime(new Date(today.format()).getTime());
   });
 
   afterEach(() => {
-    mockDateReset();
+    jest.useRealTimers();
   });
 
   describe('formatRelativeDateTime', function () {
