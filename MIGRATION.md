@@ -286,7 +286,7 @@ const AccessAlarm = (props) => {
 };
 ```
 
-Or a custom icon can be rendered as a child with standart html tags:
+There is an option to render custom icon as a child with standard HTML tags:
 
 ```tsx static=true
 import { Icon } from '@contentful/f36-icon';
