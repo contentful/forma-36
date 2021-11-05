@@ -25,14 +25,14 @@ We separate only icons from the main package. If you need to use our icons, plea
 
 When using NPM
 
-```bash
+```sh
 npm install @contentul/f36-components@next-v4
 npm install @contentful/f36-icons@next-v4
 ```
 
 When using YARN
 
-```bash
+```sh
 yarn add @contentul/f36-components@next-v4
 yarn add @contentful/f36-icons@next-v4
 ```
@@ -42,13 +42,13 @@ For example, you need only `Button` component in your project, you can add this 
 
 When using NPM
 
-```bash
+```sh
 npm install @contentul/f36-button@next-v4
 ```
 
 When using YARN
 
-```bash
+```sh
 yarn add @contentul/f36-button@next-v4
 ```
 
