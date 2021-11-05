@@ -66,7 +66,7 @@ const styles = {
   `,
 
   category: css`
-    margin-top: ${tokens.spacingL};
+    margin-top: ${tokens.spacingM};
 
     &:first-of-type {
       margin-top: 0;
