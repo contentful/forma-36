@@ -1,0 +1,114 @@
+---
+title: 'Welcome to Forma 36'
+---
+
+## Setup
+
+### Install Forma 36 components in the React app
+
+Inside your React project directory, install Forma 36 by running either of the following:
+
+When using NPM:
+
+```bash static=true
+npm i @contentful/f36-components
+```
+
+When using YARN:
+
+```bash static=true
+yarn add @contentful/f36-components`
+```
+
+### Install Forma 36 icons in the React app
+
+We decided to make a separate package out of icons and this way we make sure that the main bundle will stay small. If you need icons you would need to install a separate package to use tham. Inside your React project directory, install Forma 36 by running either of the following:
+
+When using NPM:
+
+```bash static=true
+npm i @contentful/f36-icons
+```
+
+When using YARN:
+
+```bash static=true
+yarn add @contentful/f36-icons`
+```
+
+#### Installing Forma 36 components as separate packages
+
+We provide also an option to install separate packages if that's something that you need for your project. For example, you can install just button package:
+
+When using NPM:
+
+```bash static=true
+npm i @contentful/f36-button
+```
+
+When using YARN:
+
+```bash static=true
+yarn add @contentful/f36-button`
+```
+
+The above option is available, but our recommendation is to use the `@contentful/f36-components` package. Three shakings will make your bundle contain only components that you actually import and need.
+
+## How to use Forma 36
+
+As soon as you have `@contentful/f36-components` added to your project, you can go ahead and start using them in your app. For example you might need a [button](./components/button):
+
+```tsx static=true
+import * as React from 'react';
+import { Button } from '@contentful/f36-components';
+
+const YourComponent = () => (
+  <>
+    <Button variant="primary">Your button</Button>
+  </>
+);
+```
+
+## Try out Forma 36 in the Codesandbox
+
+<iframe
+  src="https://codesandbox.io/embed/contentful-forma-36-template-v4-x-x-k78l0?autoresize=1&fontsize=14&hidenavigation=1&theme=dark"
+  style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+  title="Contentful - Forma 36 template (v4.x.x)"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
+## How to use GlobalStyles
+
+In order to control browser default styles, we provide GlobalStyles component. `GlobalStyles` component is using `Global` components from emotion under the hood.
+All you need to do is to add `GlobalStyles` component somewhere at the beginning of your project, have a look at the example:
+
+```jsx static=true
+import ReactDOM from 'react-dom';
+import { GlobalStyles } from '@contentful/f36-components';
+
+import App from './App';
+
+const rootElement = document.getElementById('root');
+ReactDOM.render(
+  <>
+    <GlobalStyles />
+    <App />
+  </>,
+  rootElement,
+);
+```
+
+## How to use Forma 36 when builing Contentful apps
+
+Apps are packages that simplify customization and integration by modifying your space in Contentful. An app can help adapt Contentful to individual business processes and integrate with other services.
+You are able to extend the capabilities of Contentful to meet your specific needs. Apps empower creators to build efficient workflows and adapt to the needs of the business.
+
+Using apps, a huge variety of enhancements to the Contentful web app are possible. From small field editor improvements to deeply integrated full-page applications, the App Framework makes customizing the web app effortless.
+Forma 36 is here to help you build great, consistent Apps that will extend your experience in Contentful webapp.
+Learn more about [App framework](https://www.contentful.com/developers/docs/extensibility/app-framework/)
+
+## Additional learning
+
+Forma 36 components are build using [TypeScript](https://www.typescriptlang.org/) and [React](https://reactjs.org/) 📚

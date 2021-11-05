@@ -25,14 +25,12 @@ module.exports = {
     promoTagText: '',
     menuLinks: [
       {
+        name: 'Getting started',
+        link: '/getting-started',
+      },
+      {
         name: 'Migration guide',
-        link: '',
-        menuLinks: [
-          {
-            name: 'Migration from v3 to v4',
-            link: '/migration-v3-to-v4',
-          },
-        ],
+        link: '/migration-v3-to-v4',
       },
       {
         name: 'Foundation',
@@ -103,20 +101,6 @@ module.exports = {
           {
             name: 'Keyboard shortcuts',
             link: '/guidelines/keyboard-shortcuts/',
-          },
-        ],
-      },
-      {
-        name: 'Integrations',
-        link: '',
-        menuLinks: [
-          {
-            name: 'React Hook Form',
-            link: '/integrations/react-hook-form/',
-          },
-          {
-            name: 'Formik',
-            link: '/integrations/formik/',
           },
         ],
       },
@@ -240,7 +224,7 @@ module.exports = {
           },
 
           {
-            name: 'Form Elements',
+            name: 'Form Components',
             link: '',
             menuLinks: [
               {
@@ -376,6 +360,20 @@ module.exports = {
           {
             name: 'Workbench',
             link: '/components/workbench/',
+          },
+        ],
+      },
+      {
+        name: 'Integrations',
+        link: '',
+        menuLinks: [
+          {
+            name: 'React Hook Form',
+            link: '/integrations/react-hook-form/',
+          },
+          {
+            name: 'Formik',
+            link: '/integrations/formik/',
           },
         ],
       },
