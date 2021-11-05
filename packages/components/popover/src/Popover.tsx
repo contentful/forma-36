@@ -213,7 +213,7 @@ export function Popover(props: PopoverProps) {
             return;
           }
 
-          closeAndFocusTrigger();
+          onClose();
         },
         onKeyDown: (event: React.KeyboardEvent<HTMLDivElement>) => {
           if (_props.onKeyDown) {
@@ -237,6 +237,7 @@ export function Popover(props: PopoverProps) {
       popoverElement,
       triggerElement,
       closeAndFocusTrigger,
+      onClose,
     ],
   );
 
