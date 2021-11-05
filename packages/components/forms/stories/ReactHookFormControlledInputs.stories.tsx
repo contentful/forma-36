@@ -6,7 +6,6 @@ import { Button } from '@contentful/f36-button';
 
 import {
   Checkbox,
-  CheckboxGroup,
   Form,
   FormControl,
   Radio,
@@ -181,7 +180,7 @@ export const WithCheckboxGroup = () => {
       <FormControl>
         <FormControl.Label>Favorite fruits</FormControl.Label>
 
-        <CheckboxGroup name="favorite-fruits">
+        <Checkbox.Group name="favorite-fruits">
           <ControlledCheckbox control={control} id="apples" value="apples">
             Apples
           </ControlledCheckbox>
@@ -193,7 +192,7 @@ export const WithCheckboxGroup = () => {
           <ControlledCheckbox control={control} id="peaches" value="peaches">
             Peaches
           </ControlledCheckbox>
-        </CheckboxGroup>
+        </Checkbox.Group>
       </FormControl>
 
       <Button variant="primary" type="submit">

@@ -18,8 +18,8 @@ typescript: ./FormControl.tsx,../form-label/FormLabel.tsx,../help-text/HelpText.
   - [Basic example](#basic-example)
   - [Invalid input](#example-with-invalid-input)
   - [Select component with FormControl](#example-of-select-component-with-formcontrol)
-  - [RagioGroup component with FormControl](#example-of-ragiogroup-component-with-formcontrol)
-  - [CheckboxGroup component with FormControl](#example-of-checkboxgroup-component-with-formcontrol)
+  - [Ragio Group component with FormControl](#example-of-ragio-group-component-with-formcontrol)
+  - [Checkbo xGroup component with FormControl](#example-of-checkbox-group-component-with-formcontrol)
   - [Example with character count](#example-with-character-count)
 - [Props](#Props)
   - [FormControl](#formcontrol)
@@ -79,7 +79,7 @@ To uphold a consistent look and experience for your application, we recommend fo
 </FormControl>
 ```
 
-### Example of RagioGroup component with FormControl
+### Example of Ragio Group component with FormControl
 
 ```jsx
 <FormControl>
@@ -96,19 +96,19 @@ To uphold a consistent look and experience for your application, we recommend fo
 </FormControl>
 ```
 
-### Example of CheckboxGroup component with FormControl
+### Example of Checkbox Group component with FormControl
 
 ```jsx
 <FormControl isRequired>
   <FormControl.Label>Checkbox group options</FormControl.Label>
-  <CheckboxGroup name="checkbox-options">
+  <Checkbox.Group name="checkbox-options">
     <Checkbox value="option 1" id="option-1" helpText="Some help text">
       Option 1
     </Checkbox>
     <Checkbox value="option 2" id="option-2" helpText="Another help text">
       Option 2
     </Checkbox>
-  </CheckboxGroup>
+  </Checkbox.Group>
   <FormControl.HelpText>
     Please, select at least one option
   </FormControl.HelpText>

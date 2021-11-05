@@ -106,12 +106,12 @@ export const FormikForm = () => {
           {/* Checkbox group */}
           <Field name="checkboxGroup">
             {({ field }) => (
-              {/* For CheckboxGroup we need to pass the field props into the CheckboxGroup component */}
-              <CheckboxGroup {...field}>
+              {/* For Checkbox.Group we need to pass the field props into the Checkbox.Group component */}
+              <Checkbox.Group {...field}>
                 <Checkbox value="apples">Apples</Checkbox>
                 <Checkbox value="pears">Pears</Checkbox>
                 <Checkbox value="peaches">Peaches</Checkbox>
-              </CheckboxGroup>
+              </Checkbox.Group>
             )}
           </Field>
 

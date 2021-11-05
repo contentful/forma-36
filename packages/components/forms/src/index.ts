@@ -2,9 +2,8 @@ export { HelpText } from './help-text/HelpText';
 export type { HelpTextProps } from './help-text/HelpText';
 export { ValidationMessage } from './validation-message/ValidationMessage';
 export type { ValidationMessageProps } from './validation-message/ValidationMessage';
-export { Checkbox } from './checkbox/Checkbox';
+export { Checkbox } from './checkbox/CompoundCheckbox';
 export type { CheckboxProps } from './checkbox/Checkbox';
-export { CheckboxGroup } from './checkbox/CheckboxGroup';
 export type { CheckboxGroupProps } from './checkbox/CheckboxGroup';
 export { FormControl } from './form-control/CompoundFormControl';
 export type {
