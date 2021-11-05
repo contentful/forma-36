@@ -9,7 +9,6 @@ import {
   CheckboxGroup,
   Form,
   FormControl,
-  RadioGroup,
   Radio,
   Select,
   Textarea,
@@ -105,7 +104,7 @@ export const Basic = () => {
               <FormControl>
                 <FormControl.Label>Favorite fruit</FormControl.Label>
 
-                <RadioGroup {...field}>
+                <Radio.Group {...field}>
                   <Radio id="apples" value="apples">
                     Apples
                   </Radio>
@@ -115,7 +114,7 @@ export const Basic = () => {
                   <Radio id="peaches" value="peaches">
                     Peaches
                   </Radio>
-                </RadioGroup>
+                </Radio.Group>
               </FormControl>
             )}
           </Field>
@@ -233,7 +232,7 @@ export const WithUseFormik = () => {
       <FormControl>
         <FormControl.Label>Favorit fruit</FormControl.Label>
 
-        <RadioGroup
+        <Radio.Group
           name="favoriteFruit"
           value={formik.values.favoriteFruit}
           onChange={formik.handleChange}
@@ -247,7 +246,7 @@ export const WithUseFormik = () => {
           <Radio id="peaches" value="peaches">
             Peaches
           </Radio>
-        </RadioGroup>
+        </Radio.Group>
       </FormControl>
 
       <FormControl

@@ -9,7 +9,6 @@ import {
   Checkbox,
   CheckboxGroup,
   Radio,
-  RadioGroup,
 } from '../src';
 import { Flex, Box } from '@contentful/f36-core';
 import { TextLink } from '@contentful/f36-text-link';
@@ -119,7 +118,7 @@ export const WithCheckboxGroup = (args: FormControlInternalProps) => {
 
       <FormControl as="fieldset" {...args}>
         <FormControl.Label>Burger patty</FormControl.Label>
-        <RadioGroup name="burger-patty">
+        <Radio.Group name="burger-patty">
           <Radio
             value="beef"
             helpText="Grass-fed cows from Erdhof Hohenzollerdamm"
@@ -132,7 +131,7 @@ export const WithCheckboxGroup = (args: FormControlInternalProps) => {
           >
             Beyound meat (vegan)
           </Radio>
-        </RadioGroup>
+        </Radio.Group>
         {args.isInvalid && (
           <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
         )}

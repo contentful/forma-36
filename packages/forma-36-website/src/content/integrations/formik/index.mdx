@@ -16,7 +16,6 @@ import {
   Form,
   FormControl,
   Radio,
-  RadioGroup,
   Select,
   Textarea,
   TextInput,
@@ -95,12 +94,12 @@ export const FormikForm = () => {
           {/* Radio group */}
           <Field name="radioGroup">
             {({ field }) => (
-              {/* For RadioGroup we need to pass the field props into the RadioGroup component */}
-              <RadioGroup {...field}>
+              {/* For Radio.Group we need to pass the field props into the Radio.Group component */}
+              <Radio.Group {...field}>
                 <Radio value="apples">Apples</Radio>
                 <Radio value="pears">Pears</Radio>
                 <Radio value="peaches">Peaches</Radio>
-              </RadioGroup>
+              </Radio.Group>
             )}
           </Field>
 

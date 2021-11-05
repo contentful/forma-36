@@ -9,7 +9,6 @@ import {
   CheckboxGroup,
   Form,
   FormControl,
-  RadioGroup,
   Radio,
   Select,
   Textarea,
@@ -119,7 +118,7 @@ export const WithRadioGroup = () => {
       <FormControl>
         <FormControl.Label>Fruits</FormControl.Label>
 
-        <RadioGroup defaultValue="apples">
+        <Radio.Group defaultValue="apples">
           <Radio
             id="uncontrolled-apples"
             value="apples"
@@ -141,7 +140,7 @@ export const WithRadioGroup = () => {
           >
             Peaches
           </Radio>
-        </RadioGroup>
+        </Radio.Group>
       </FormControl>
 
       <Button variant="primary" type="submit">

@@ -10,7 +10,6 @@ import {
   CheckboxGroup,
   Form,
   FormControl,
-  RadioGroup,
   Radio,
   Select,
   Textarea,
@@ -77,11 +76,11 @@ const MockForm = ({ handleData }) => {
 
           <Field name="radioGroup">
             {({ field }) => (
-              <RadioGroup {...field}>
+              <Radio.Group {...field}>
                 <Radio value="apples">Apples</Radio>
                 <Radio value="pears">Pears</Radio>
                 <Radio value="peaches">Peaches</Radio>
-              </RadioGroup>
+              </Radio.Group>
             )}
           </Field>
 

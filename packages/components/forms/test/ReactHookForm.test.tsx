@@ -9,7 +9,6 @@ import {
   Checkbox,
   Form,
   FormControl,
-  RadioGroup,
   Radio,
   Select,
   Textarea,
@@ -60,7 +59,7 @@ const MockForm = ({ handleData }) => {
         </Select>
       </FormControl>
 
-      <RadioGroup name="radioGroup" defaultValue="apples">
+      <Radio.Group name="radioGroup" defaultValue="apples">
         <Radio id="apples" value="apples" {...register('radioGroup')}>
           Apples
         </Radio>
@@ -70,7 +69,7 @@ const MockForm = ({ handleData }) => {
         <Radio id="peaches" value="peaches" {...register('radioGroup')}>
           Peaches
         </Radio>
-      </RadioGroup>
+      </Radio.Group>
 
       <FormControl isInvalid={Boolean(errors.checkbox)}>
         <Checkbox

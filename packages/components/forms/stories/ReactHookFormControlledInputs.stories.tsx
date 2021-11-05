@@ -9,7 +9,6 @@ import {
   CheckboxGroup,
   Form,
   FormControl,
-  RadioGroup,
   Radio,
   Select,
   Textarea,
@@ -245,8 +244,8 @@ function ControlledSelect(props) {
 function ControlledRadioGroup(props) {
   const { ref, inputProps } = useReactHookFormController(props);
   return (
-    <RadioGroup {...inputProps} ref={ref}>
+    <Radio.Group {...inputProps} ref={ref}>
       {props.children}
-    </RadioGroup>
+    </Radio.Group>
   );
 }

@@ -16,9 +16,8 @@ export type {
   FormLabelInternalProps,
   FormLabelProps,
 } from './form-label/FormLabel';
-export { Radio } from './radio/Radio';
+export { Radio } from './radio/CompoundRadio';
 export type { RadioProps } from './radio/Radio';
-export { RadioGroup } from './radio/RadioGroup';
 export type { RadioGroupProps } from './radio/RadioGroup';
 export { TextInput } from './text-input/CompoundTextInput';
 export type { TextInputProps } from './text-input/types';
