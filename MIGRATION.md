@@ -275,7 +275,7 @@ import { ChevronLeftIcon } from '@contentful/f36-icons';
 <ChevronLeftIcon size="small" variant="primary" />;
 ```
 
-In order to use an iicon from a third-party library, simply pass it as `as` prop:
+In order to use an icon from a third-party library, simply pass it as `as` prop:
 
 ```tsx static=true
 import { Icon } from '@contentful/f36-icons';
@@ -286,7 +286,7 @@ const AccessAlarm = (props) => {
 };
 ```
 
-Or a custom icon can be rendered as a child with standart html tags:
+There is an option to render custom icon as a child with standard HTML tags:
 
 ```tsx static=true
 import { Icon } from '@contentful/f36-icon';
