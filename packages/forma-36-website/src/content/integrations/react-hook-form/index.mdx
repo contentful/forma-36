@@ -78,8 +78,8 @@ export const ReactHookForm = () => {
         </Select>
       </FormControl>
 
-      <FormControl>
-        <FormControl.Label>Martial status</FormControl.Label>
+      <FormControl as="fieldset">
+        <FormControl.Label as="legend">Martial status</FormControl.Label>
 
         {/* When using RadioGroup, it’s necessary to register each Radio with the same "name" */}
         <RadioGroup defaultValue="single">

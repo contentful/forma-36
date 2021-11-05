@@ -84,8 +84,8 @@ We also provide the `CheckboxGroup` component that helps when using multiple che
 - `onChange`: Handler that will be executed when any checkbox inside the group receives the event of change.
 
 ```jsx
-<React.Fragment>
-  <FormControl.Label marginBottom="none">
+<FormControl as="fieldset">
+  <FormControl.Label as="legend" marginBottom="none">
     Checkbox group options
   </FormControl.Label>
   <Paragraph>Subtitle with more information if needed</Paragraph>
@@ -97,7 +97,7 @@ We also provide the `CheckboxGroup` component that helps when using multiple che
       Option 2
     </Checkbox>
   </CheckboxGroup>
-</React.Fragment>
+</FormControl>
 ```
 
 ## Code examples
@@ -163,7 +163,9 @@ The Checkbox can be rendered as disabled with the `isDisabled` property.
 
 ## Accessibility
 
-- To ensure `Checkbox` meets accessibility standards, provide `name` and `id`
+- To ensure `Checkbox` meets accessibility standards, provide `name` and `id`;
+- When using `Checkbox.Group` it whould be wrapper by a `fieldset` and have a `legend`.
+  - We also provide `FormControl` and `FormControl.Label` that can be rendered as `fieldset` and `legend`
 
 ## Props
 
