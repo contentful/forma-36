@@ -278,7 +278,7 @@ function _Autocomplete<ItemType>(
             ))}
 
           {!isLoading && isShowingNoMatches && (
-            <div className={cx(styles.item, styles.disabled)}>
+            <div className={styles.item}>
               <Subheading className={styles.noMatchesTitle}>
                 {noMatchesMessage}
               </Subheading>
