@@ -1,50 +1,48 @@
 ---
-title: 'Migrate Forma 36 components from version 3 to version 4'
+title: 'Migrating Forma 36 components to version 4'
 ---
 
 # How to migrate your Forma 36 v3 to v4
 
-This step-by-step guide gets you upgraded to Forma v4.
+This step by step guide details how to migrate your Forma 36 components from v3 to v4.
 
-We are releasing Forma 36 v4, where we would provide you a lot of fixes that the community was waiting for. A11y improvements, better developer experience, and big preface improvement. From now on Forma 36 will be split into separate packages, so if you need only one button, you can just use this package for your project. 🙌
+Forma 36 v4 contains multiple fixes requested by the community, such as accessibility improvements, better developer experience, and big parformance improvements.
 
-In order to get all the new goodies from Forma 36 v4, you would need to migrate your project to the new version. So we prepared some tools and guidance for you to do it easily.
+Starting with v4, Forma 36 is split into separate packages, enabling you to download only the specific package for the component you need. 🙌
 
-This guide takes you through:
+To get the latest updates, you must migrate your project to version 4 of Forma 36. This guide offers you tools and guidance to do it easily by:
 
-Upgrading the Forma 36 from version 3 to version 4
-Dealing with breaking changes
+- Upgrading the Forma 36 from version 3 to version 4
+- Dealing with breaking changes
 
 ## ☝️ Step 1: Package upgrade
 
-In version 4 we are introducing separated packages for our components.
-The big package of components is now split into smaller chunks that you can use separately.
-We introduced emotion to our components, so no more separate `css` files that you have to add to your project. It will work out of the box for you. [Learn how to install new Forma 36 packages](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#How-to-migrate-your-packages-to-v4)
+In version 4, our components are separated into packages. The big package is split into smaller ones that you can use separately.
+We introduced emotion to our components, so you no longer have to add separate css files to your project. It will work out of the box. [Learn how to install the new Forma 36 packages](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#How-to-migrate-your-packages-to-v4)
 
 ## ✌️ Step 2: Breaking changes in components
 
-We gathered all the requests and fixes that have been waiting for a while for the next version of the library and we fixed them in v4. Some components received breaking improvements, all of them got migrated to our [new code styleguide](https://github.com/contentful/forma-36/blob/forma-v4/docs/code-style-guide.md), so the API is now more consistent.
+All the requests and fixes that have been waiting for the next version of the library have been fixed in version 4. The API is now more consistent as some components received major improvements, and all of them were migrated to our [new code style guide](https://github.com/contentful/forma-36/blob/forma-v4/docs/code-style-guide.md).
 
-We tried to provide you with a codemod for most of the components to allow you to migrate your project fast. For the components where it was impossible to create a codemod we provide you with detailed docs on how to do it.
+To migrate your project easily, we provided you with a codemod for most of the components. For the ones that do not have a codemod, we created detailed documentation on how to do it.
 
-✅ Tag becomes Badge -> We decided to migrate Tag component to Badge. Have a look at the [detailed docs](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-tag-to-badge) on how to migrate your Tag into Badge in v4.
+✅ Tag becomes Badge: We migrated the Tag component to Badge. For more information on how to migrate your Tag to Badge, see [the detailed documentation](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-tag-to-badge).
 
-✅ Button API improvements -> Some of the properties of the Button were migrated or changed. Have a look at the [detailed docs](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-button-components) on how to migrate your Button components to version 4.
+✅ Button API improvements: Some properties of the Button components were migrated or changed. For more information on how to migrate your Button components, see [the detailed documentation](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-button-components).
 
-✅ Icon -> Now you can use any icon from our library directly as a component, or wrap an external icon in our `Icon` component to use consistent sizing and styling. Checkout [detailed docs](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-icon-components) for more information.
+✅ Icon: Now you can use any icon from our library directly as a component, or wrap an external icon in our Icon component to use consistent sizing and styling. For more information on how to migrate your Icon components, see [the detailed documentation](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-icon-components).
 
-✅ IconButton -> Now you can pass any icon as an element to Icon button component. Checkout [detailed docs](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-iconbutton-components) for more information.
+✅ IconButton: Now you can pass any icon as an element to IconButton component. For more information on how to migrate your IconButton components, see [the detailed documentation](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-iconbutton-components).
 
-✅ Flex -> Some of the properties of the Flex were migrated or changed. Go ahead and check out [detailed docs](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-flex-components) on how to migrate your Flex components.
+✅ Flex: Some properties of the Flex components were migrated or changed. For more information on how to migrate your Flex components, see [the detailed documentation](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-flex-components).
 
-✅ Grid -> Same as for Flex, the main change in version 4 is some properties that were slightly aligned. Go ahead and check out [detailed docs](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-grid-components) on how to migrate your Flex components.
+✅ Grid: Some properties of the Grid components were migrated or changed. For more information on how to migrate your Grid components, see [the detailed documentation](https://github.com/contentful/forma-36/blob/forma-v4/MIGRATION.md#how-to-migrate-your-grid-components).
 
 ## 🤟 Step 3: Have a great time using Forma 36
 
-Hopefully, at this point, you’ve successfully upgraded to Forma v4. If so, congratulations and welcome to new version of Forma 36!!! 🎉🎉🎉
+You have successfully upgraded to Forma v4, so congratulations and welcome to the new version of Forma 36! 🎉🎉🎉
+For any questions or issues, you can:
 
-If you had problems getting through this guide, or made it through the guide but still have problems, please take the following steps:
+- Reach out to us on [Github](https://github.com/contentful/forma-36/issues): submit an issue and we will help you out.
 
-Reach out to us on [Github](https://github.com/contentful/forma-36/issues) - submit the issue and we will help you out.
-
-Join us in our public community [Slack channel](https://join.slack.com/t/contentful-community/shared_invite/zt-f2u3vjyq-k2G7wu_ji4~Toywt955Ynw) and ask a question on the #forma36 channel. We are there to help you out!
+- Join our public community [Slack](https://join.slack.com/t/contentful-community/shared_invite/zt-f2u3vjyq-k2G7wu_ji4~Toywt955Ynw) and ask a question on the #forma36 channel. We are there to help you out!
