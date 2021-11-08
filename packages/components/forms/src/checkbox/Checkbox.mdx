@@ -75,10 +75,10 @@ You can use the Checkbox as an uncontrolled input, for that you can:
 
 import { FormControl } from '@contentful/f36-forms';
 
-We also provide the `Checkbox.Group` component that helps when using multiple checkboxes, you can pass the spacing value and some common properties to be replicated to the checkboxes.
+We also provide the `Checkbox.Group` component that helps when using multiple checkboxes. You can pass some common properties on the `Checkbox.Group` level and they will be passed to the checkboxes inside the group.
 
 - `spacing`: This will set how much space should be between the inputs;
-- `name`: This will set all checkboxes with this name;
+- `name`: By setting this property on the `Checkbox.Group` level, you will set it automatically for all the checkboxes in the group;
 - `defaultValue`: This accepts an array that set the `defaultChecked` property for checkboxes which the value exists in the array;
 - `value`: Same as `defaultValue` but this one sets the `isChecked` property, making the checkbox group controlled;
 - `onChange`: Handler that will be executed when any checkbox inside the group receives the event of change.

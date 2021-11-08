@@ -88,11 +88,11 @@ You can use the Radio as an uncontrolled input, for that you can:
 
 import { FormControl } from '@contentful/f36-forms';
 
-We also provide the `Radio.Group` component that helps when using multiple radio, you can pass the spacing value and some common properties to be replicated to the radios.
+We also provide the `Radio.Group` component that helps when using multiple radios. You can pass some common properties on the `Radio.Group` level and they will be passed to the radios inside the group.
 
 - `spacing`: This will set how much space should be between the inputs;
-- `name`: This will set all radios with this name;
-- `defaultValue`: This accepts a value that set the `defaultChecked` property for the radio that have the same value.
+- `name`: By setting this property on the `Radio.Group` level, you will set it automatically for all the radios in the group;
+- `defaultValue`: This accepts a value that set the `defaultChecked` property for the radio that have the same value;
 - `value`: Same as `defaultValue` but this one sets the `isChecked` property, making the radio group controlled;
 - `onChange`: Handler that will be executed when any radio inside the group receives the event of change.
 
