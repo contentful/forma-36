@@ -1,58 +1,62 @@
 ---
-title: 'Welcome to Forma 36'
+title: 'Getting started'
 ---
 
-## Setup
+## Installation
 
-### Install Forma 36 components in the React app
+### Install components
 
 Inside your React project directory, install Forma 36 by running either of the following:
 
-When using NPM:
+**When using NPM:**
 
 ```bash static=true
 npm i @contentful/f36-components
 ```
 
-When using YARN:
+**When using Yarn:**
 
 ```bash static=true
 yarn add @contentful/f36-components`
 ```
 
-### Install Forma 36 icons in the React app
+#### Installing components as separate packages
 
-We decided to make a separate package out of icons and this way we make sure that the main bundle will stay small. If you need icons you would need to install a separate package to use tham. Inside your React project directory, install Forma 36 by running either of the following:
+ou can install Forma 36 React components as separate packages if that's what you need for your project. For example, here's how to install just the button:
 
-When using NPM:
-
-```bash static=true
-npm i @contentful/f36-icons
-```
-
-When using YARN:
-
-```bash static=true
-yarn add @contentful/f36-icons`
-```
-
-#### Installing Forma 36 components as separate packages
-
-We provide also an option to install separate packages if that's something that you need for your project. For example, you can install just button package:
-
-When using NPM:
+**When using NPM:**
 
 ```bash static=true
 npm i @contentful/f36-button
 ```
 
-When using YARN:
+**When using Yarn:**
 
 ```bash static=true
 yarn add @contentful/f36-button`
 ```
 
-The above option is available, but our recommendation is to use the `@contentful/f36-components` package. Three shaking will make your bundle contain only components that you actually import and need.
+The above option is available, but our recommendation is to use the `@contentful/f36-components` package. Tree shaking will make your bundle contain only components that you actually import and need.
+
+### Install icons
+
+Forma 36 icons are a separate package to reduce the size of the main bundle. If you need to use icons in your project, install them separatly by running either of the following:
+
+**When using NPM:**
+
+```bash static=true
+npm i @contentful/f36-icons
+```
+
+**When using Yarn:**
+
+```bash static=true
+yarn add @contentful/f36-icons`
+```
+
+#### Additional learning
+
+Forma 36 components are build using [TypeScript](https://www.typescriptlang.org/) and [React](https://reactjs.org/) 📚
 
 ## How to use Forma 36
 
@@ -81,8 +85,7 @@ const YourComponent = () => (
 
 ## How to use GlobalStyles
 
-In order to control browser default styles, we provide GlobalStyles component. `GlobalStyles` component is using `Global` components from emotion under the hood.
-All you need to do is to add `GlobalStyles` component somewhere at the beginning of your project, have a look at the example:
+Control default browser styles with the `GlobalStyles` component. The GlobalStyles component uses the Global component from [Emotion](https://emotion.sh/docs/globals) under the hood. Import GlobalStyles somewhere at the beginning of your project like in the example below:
 
 ```jsx static=true
 import ReactDOM from 'react-dom';
@@ -100,15 +103,8 @@ ReactDOM.render(
 );
 ```
 
-## How to use Forma 36 when builing Contentful apps
+## Building Contentful apps using Forma 36
 
 Apps are packages that simplify customization and integration by modifying your space in Contentful. An app can help adapt Contentful to individual business processes and integrate with other services.
-You are able to extend the capabilities of Contentful to meet your specific needs. Apps empower creators to build efficient workflows and adapt to the needs of the business.
 
-Using apps, a huge variety of enhancements to the Contentful web app are possible. From small field editor improvements to deeply integrated full-page applications, the App Framework makes customizing the web app effortless.
-Forma 36 is here to help you build great, consistent Apps that will extend your experience in Contentful webapp.
-Learn more about [App framework](https://www.contentful.com/developers/docs/extensibility/app-framework/)
-
-## Additional learning
-
-Forma 36 components are build using [TypeScript](https://www.typescriptlang.org/) and [React](https://reactjs.org/) 📚
+From small field editor improvements to deeply integrated full-page applications, Forma 36 is here to help you efficiently build apps with the [Contentful App Framework](https://www.contentful.com/developers/docs/extensibility/app-framework/).
