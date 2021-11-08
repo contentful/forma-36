@@ -25,7 +25,7 @@ export interface PopoverProps {
   /**
    * Callback fired when the popover closes
    */
-  onClose?: Function;
+  onClose?: () => void;
 
   /**
    * Determines the preferred position of the Popover. This position is not
@@ -213,7 +213,7 @@ export function Popover(props: PopoverProps) {
             return;
           }
 
-          closeAndFocusTrigger();
+          onClose?.();
         },
         onKeyDown: (event: React.KeyboardEvent<HTMLDivElement>) => {
           if (_props.onKeyDown) {
@@ -237,6 +237,7 @@ export function Popover(props: PopoverProps) {
       popoverElement,
       triggerElement,
       closeAndFocusTrigger,
+      onClose,
     ],
   );
 
