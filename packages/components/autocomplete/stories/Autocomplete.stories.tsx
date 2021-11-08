@@ -55,6 +55,11 @@ const groceryList: GroceryList[] = [
     groupTitle: 'Vegetables',
     options: veggis,
   },
+  /* Empty groups are not rendered  */
+  {
+    groupTitle: 'Sweet',
+    options: [],
+  },
 ];
 
 const fruitStrings = fruits.reduce((acc, fruit) => [...acc, fruit.name], []);

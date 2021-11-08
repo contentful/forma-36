@@ -8,7 +8,7 @@ import { TextInput, TextInputProps } from '@contentful/f36-forms';
 import { CloseIcon, ChevronDownIcon } from '@contentful/f36-icons';
 import { SkeletonContainer, SkeletonBodyText } from '@contentful/f36-skeleton';
 import { Popover } from '@contentful/f36-popover';
-import { SectionHeading } from '@contentful/f36-typography';
+import { Subheading, SectionHeading } from '@contentful/f36-typography';
 
 import { AutocompleteItems } from './AutocompleteItems';
 import { getAutocompleteStyles } from './Autocomplete.styles';
@@ -124,7 +124,7 @@ function _Autocomplete<ItemType>(
     isDisabled,
     isRequired,
     isReadOnly,
-    noMatchesMessage = 'No matches',
+    noMatchesMessage = 'No matches found',
     placeholder = 'Search',
     inputRef,
     toggleRef,
@@ -157,6 +157,10 @@ function _Autocomplete<ItemType>(
         [],
       )
     : items;
+
+  const isShowingNoMatches = isUsingGroups(isGrouped, items)
+    ? items.every((group: GroupType) => group.options.length === 0)
+    : items.length === 0;
 
   const {
     getComboboxProps,
@@ -273,15 +277,20 @@ function _Autocomplete<ItemType>(
               </div>
             ))}
 
-          {!isLoading && items.length === 0 && (
-            <div className={cx(styles.item, styles.disabled)}>
-              {noMatchesMessage}
+          {!isLoading && isShowingNoMatches && (
+            <div className={styles.item}>
+              <Subheading className={styles.noMatchesTitle}>
+                {noMatchesMessage}
+              </Subheading>
             </div>
           )}
 
           {!isLoading &&
             isUsingGroups(isGrouped, items) &&
             items.map((group: GroupType, index: number) => {
+              if (group.options.length < 1) {
+                return;
+              }
               const render = (
                 <div key={index}>
                   <SectionHeading
@@ -306,16 +315,18 @@ function _Autocomplete<ItemType>(
               return render;
             })}
 
-          {!isLoading && !isUsingGroups(isGrouped, items) && (
-            <AutocompleteItems
-              items={items}
-              elementStartIndex={elementStartIndex}
-              highlightedIndex={highlightedIndex}
-              getItemProps={getItemProps}
-              renderItem={renderItem}
-              inputValue={inputValue}
-            />
-          )}
+          {!isLoading &&
+            !isUsingGroups(isGrouped, items) &&
+            items.length > 0 && (
+              <AutocompleteItems
+                items={items}
+                elementStartIndex={elementStartIndex}
+                highlightedIndex={highlightedIndex}
+                getItemProps={getItemProps}
+                renderItem={renderItem}
+                inputValue={inputValue}
+              />
+            )}
         </Popover.Content>
       </Popover>
     </div>
