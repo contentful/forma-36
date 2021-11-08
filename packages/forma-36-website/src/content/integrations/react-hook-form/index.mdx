@@ -77,8 +77,8 @@ export const ReactHookForm = () => {
         </Select>
       </FormControl>
 
-      <FormControl>
-        <FormControl.Label>Martial status</FormControl.Label>
+      <FormControl as="fieldset">
+        <FormControl.Label as="legend">Martial status</FormControl.Label>
 
         {/*
           When using Radio.Group, it’s necessary to register each Radio with the same "name".

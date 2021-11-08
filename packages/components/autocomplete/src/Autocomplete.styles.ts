@@ -29,6 +29,10 @@ export const getAutocompleteStyles = (listMaxHeight: number) => ({
     padding: `${tokens.spacingXs} ${tokens.spacingM}`,
     lineHeight: tokens.lineHeightM,
   }),
+  noMatchesTitle: css({
+    color: tokens.gray500,
+    margin: `${tokens.spacingM} 0 ${tokens.spacingM} 0`,
+  }),
   item: css({
     display: 'block',
     padding: `${tokens.spacingXs} ${tokens.spacingM}`,

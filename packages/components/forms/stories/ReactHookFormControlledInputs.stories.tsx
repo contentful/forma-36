@@ -140,8 +140,8 @@ export const WithRadioGroup = () => {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      <FormControl>
-        <FormControl.Label>Favorite fruit</FormControl.Label>
+      <FormControl as="fieldset">
+        <FormControl.Label as="legend">Favorite fruit</FormControl.Label>
 
         {/**
          * We need to pass an empty string as default value otherwise react will trigger the uncontrolled inputs warning
@@ -177,8 +177,8 @@ export const WithCheckboxGroup = () => {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      <FormControl>
-        <FormControl.Label>Favorite fruits</FormControl.Label>
+      <FormControl as="fieldset">
+        <FormControl.Label as="legend">Favorite fruits</FormControl.Label>
 
         <Checkbox.Group name="favorite-fruits">
           <ControlledCheckbox control={control} id="apples" value="apples">

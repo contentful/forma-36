@@ -114,8 +114,8 @@ export const WithRadioGroup = () => {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      <FormControl>
-        <FormControl.Label>Fruits</FormControl.Label>
+      <FormControl as="fieldset">
+        <FormControl.Label as="legend">Fruits</FormControl.Label>
 
         <Radio.Group defaultValue="apples">
           <Radio
@@ -156,8 +156,8 @@ export const WithCheckboxGroup = () => {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
-      <FormControl>
-        <FormControl.Label>Fruits</FormControl.Label>
+      <FormControl as="fieldset">
+        <FormControl.Label as="legend">Fruits</FormControl.Label>
 
         <Checkbox.Group name="uncontrolled-fruits" defaultValue={['apples']}>
           <Checkbox

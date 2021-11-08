@@ -84,8 +84,8 @@ export const Invalid = (args: FormControlInternalProps) => {
 export const WithCheckboxGroup = (args: FormControlInternalProps) => {
   return (
     <>
-      <FormControl {...args}>
-        <FormControl.Label marginBottom="none">
+      <FormControl as="fieldset" {...args}>
+        <FormControl.Label as="legend" marginBottom="none">
           Select your ingredients
         </FormControl.Label>
         <Paragraph>No extra costs</Paragraph>
@@ -116,7 +116,7 @@ export const WithCheckboxGroup = (args: FormControlInternalProps) => {
       </FormControl>
 
       <FormControl as="fieldset" {...args}>
-        <FormControl.Label>Burger patty</FormControl.Label>
+        <FormControl.Label as="legend">Burger patty</FormControl.Label>
         <Radio.Group name="burger-patty">
           <Radio
             value="beef"
@@ -136,8 +136,8 @@ export const WithCheckboxGroup = (args: FormControlInternalProps) => {
         )}
       </FormControl>
 
-      <FormControl {...args}>
-        <FormControl.Label>Condiments</FormControl.Label>
+      <FormControl as="fieldset" {...args}>
+        <FormControl.Label as="legend">Condiments</FormControl.Label>
         <Checkbox.Group name="condiments">
           <Checkbox value="ketchup">Ketchup</Checkbox>
           <Checkbox value="mustard">Mustard</Checkbox>

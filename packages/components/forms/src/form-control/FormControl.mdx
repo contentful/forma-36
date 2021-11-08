@@ -82,8 +82,8 @@ To uphold a consistent look and experience for your application, we recommend fo
 ### Example of Radio Group component with FormControl
 
 ```jsx
-<FormControl>
-  <FormControl.Label>Radio group options</FormControl.Label>
+<FormControl as="fieldset">
+  <FormControl.Label as="legend">Radio group options</FormControl.Label>
   <Radio.Group name="radio-options" defaultValue="option 1">
     <Radio value="option 1" id="option-1" helpText="Help text for option 1">
       Option 1
@@ -99,8 +99,8 @@ To uphold a consistent look and experience for your application, we recommend fo
 ### Example of Checkbox Group component with FormControl
 
 ```jsx
-<FormControl isRequired>
-  <FormControl.Label>Checkbox group options</FormControl.Label>
+<FormControl as="fieldset" isRequired>
+  <FormControl.Label as="legend">Checkbox group options</FormControl.Label>
   <Checkbox.Group name="checkbox-options">
     <Checkbox value="option 1" id="option-1" helpText="Some help text">
       Option 1

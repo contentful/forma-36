@@ -97,8 +97,10 @@ We also provide the `Radio.Group` component that helps when using multiple radio
 - `onChange`: Handler that will be executed when any radio inside the group receives the event of change.
 
 ```jsx
-<React.Fragment>
-  <FormControl.Label marginBottom="none">Radio group options</FormControl.Label>
+<FormControl as="fieldset">
+  <FormControl.Label as="legend" marginBottom="none">
+    Radio group options
+  </FormControl.Label>
   <Paragraph>Subtitle with more information if needed</Paragraph>
   <Radio.Group name="radio-options" defaultValue="option 1">
     <Radio value="option 1" id="option-1" helpText="Help text for option 1">
@@ -170,6 +172,7 @@ The Radio can be rendered as disabled with the `isDisabled` property.
 ## Accessibility
 
 - To ensure `Radio` meets accessibility standards, provide `name` and `id`
+- When using `Radio.Group` it should be wrapped in a `<FormControl as="fieldset">` and have a `<FormControl.Label as="legend">`
 
 ## Props
 

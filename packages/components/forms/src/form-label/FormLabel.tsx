@@ -1,10 +1,14 @@
 import { cx } from 'emotion';
 import React, { forwardRef } from 'react';
 import type { ReactNode } from 'react';
-import type { PropsWithHTMLElement } from '@contentful/f36-core';
 import { getFormLabelStyles } from './FormLabel.styles';
 import { useFormControl } from '../form-control/FormControlContext';
-import { CommonProps, MarginProps } from '@contentful/f36-core';
+import type {
+  CommonProps,
+  MarginProps,
+  PolymorphicProps,
+  PolymorphicComponent,
+} from '@contentful/f36-core';
 import { Text } from '@contentful/f36-typography';
 
 export interface FormLabelInternalProps extends CommonProps, MarginProps {
@@ -25,38 +29,55 @@ export interface FormLabelInternalProps extends CommonProps, MarginProps {
    * @default "required"
    */
   requiredText?: string;
+  /**
+   * Defines how the element will be rendered
+   * @default label
+   */
+  as?: 'label' | 'legend';
 }
 
-export type FormLabelProps = PropsWithHTMLElement<
-  FormLabelInternalProps,
-  'label'
->;
+const FORM_LABEL_DEFAULT_TAG = 'label';
 
-function _FormLabel(
+export type FormLabelProps<
+  E extends React.ElementType = typeof FORM_LABEL_DEFAULT_TAG
+> = PolymorphicProps<FormLabelInternalProps, E>;
+
+function _FormLabel<
+  E extends React.ElementType = typeof FORM_LABEL_DEFAULT_TAG
+>(
   {
+    as,
     children,
     className,
     isRequired,
     requiredText = 'required',
     testId = 'cf-ui-form-label',
     ...otherProps
-  }: FormLabelProps,
+  }: FormLabelProps<E>,
   forwardedRef: React.Ref<HTMLLabelElement>,
 ) {
   const styles = getFormLabelStyles();
   const formControlProps = useFormControl({ isRequired });
 
   const id = formControlProps.id ? formControlProps.id + '-label' : undefined;
-  const htmlFor = otherProps['htmlFor'] || formControlProps.id;
+
+  const labelProps =
+    as !== 'legend'
+      ? {
+          htmlFor: otherProps.htmlFor || formControlProps.id,
+        }
+      : {};
+
+  const Element: React.ElementType = as || FORM_LABEL_DEFAULT_TAG;
 
   return (
     <Text
-      as="label"
+      as={Element}
       marginBottom="spacingXs"
       {...otherProps}
       fontColor="gray900"
       id={id}
-      htmlFor={htmlFor}
+      {...labelProps}
       className={cx(styles.root, className)}
       ref={forwardedRef}
       testId={testId}
@@ -69,4 +90,7 @@ function _FormLabel(
   );
 }
 
-export const FormLabel = forwardRef(_FormLabel);
+export const FormLabel: PolymorphicComponent<
+  FormLabelInternalProps,
+  typeof FORM_LABEL_DEFAULT_TAG
+> = forwardRef(_FormLabel);
