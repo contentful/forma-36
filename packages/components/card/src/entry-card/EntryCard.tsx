@@ -67,6 +67,7 @@ function _EntryCard<
     status,
     thumbnailElement,
     description,
+    withDragHandle = false,
     title,
     size,
     testId = 'cf-ui-entry-card',
@@ -85,6 +86,7 @@ function _EntryCard<
       actions={actions}
       badge={badge}
       className={cx(styles.root, className)}
+      withDragHandle={withDragHandle}
       ref={forwardedRef}
       type={contentType}
       testId={testId}
