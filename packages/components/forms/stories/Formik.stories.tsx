@@ -102,8 +102,10 @@ export const Basic = () => {
 
           <Field name="favoritFruit">
             {({ field }) => (
-              <FormControl>
-                <FormControl.Label>Favorite fruit</FormControl.Label>
+              <FormControl as="fieldset">
+                <FormControl.Label as="legend">
+                  Favorite fruit
+                </FormControl.Label>
 
                 <RadioGroup {...field}>
                   <Radio id="apples" value="apples">
@@ -122,8 +124,8 @@ export const Basic = () => {
 
           <Field name="fruits">
             {({ field }) => (
-              <FormControl>
-                <FormControl.Label>Fruits</FormControl.Label>
+              <FormControl as="fieldset">
+                <FormControl.Label as="legend">Fruits</FormControl.Label>
 
                 <CheckboxGroup {...field}>
                   <Checkbox id="apples" value="apples">
@@ -230,8 +232,8 @@ export const WithUseFormik = () => {
         )}
       </FormControl>
 
-      <FormControl>
-        <FormControl.Label>Favorit fruit</FormControl.Label>
+      <FormControl as="fieldset">
+        <FormControl.Label as="legend">Favorit fruit</FormControl.Label>
 
         <RadioGroup
           name="favoriteFruit"
