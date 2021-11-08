@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { action } from '@storybook/addon-actions';
-import { Radio, RadioGroup, RadioGroupProps } from '../src';
+import { Radio, RadioGroupProps } from '../src';
 
 export default {
   title: 'Form Elements/Radio/RadioGroup',
-  component: RadioGroup,
+  component: Radio.Group,
   argTypes: {
     className: { control: { disable: true } },
     testId: { control: { disable: true } },
@@ -27,14 +27,14 @@ export const Basic = (args: RadioGroupProps) => {
   }, [value]);
 
   return (
-    <RadioGroup {...args} value={groupState} onChange={handleOnChange}>
+    <Radio.Group {...args} value={groupState} onChange={handleOnChange}>
       <Radio value="apples">Apples</Radio>
       <Radio value="pears">Pears</Radio>
       <Radio value="peaches">Peaches</Radio>
       <Radio value="mangos">Mangos</Radio>
       <Radio value="kiwis">Kiwis</Radio>
       <Radio value="bananas">Bananas</Radio>
-    </RadioGroup>
+    </Radio.Group>
   );
 };
 
@@ -53,14 +53,14 @@ Basic.args = {
 
 export const Uncontrolled = (args: RadioGroupProps) => {
   return (
-    <RadioGroup {...args}>
+    <Radio.Group {...args}>
       <Radio value="apples">Apples</Radio>
       <Radio value="pears">Pears</Radio>
       <Radio value="peaches">Peaches</Radio>
       <Radio value="mangos">Mangos</Radio>
       <Radio value="kiwis">Kiwis</Radio>
       <Radio value="bananas">Bananas</Radio>
-    </RadioGroup>
+    </Radio.Group>
   );
 };
 

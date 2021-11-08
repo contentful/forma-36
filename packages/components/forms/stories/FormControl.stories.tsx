@@ -7,9 +7,7 @@ import {
   Textarea,
   Select,
   Checkbox,
-  CheckboxGroup,
   Radio,
-  RadioGroup,
 } from '../src';
 import { Flex, Box } from '@contentful/f36-core';
 import { TextLink } from '@contentful/f36-text-link';
@@ -92,7 +90,7 @@ export const WithCheckboxGroup = (args: FormControlInternalProps) => {
         </FormControl.Label>
         <Paragraph>No extra costs</Paragraph>
 
-        <CheckboxGroup name="ingredients">
+        <Checkbox.Group name="ingredients">
           <Checkbox
             value="pickled-onions"
             helpText="Red onion sliced paper-thin, pickled in lime and gentle sea salt"
@@ -111,7 +109,7 @@ export const WithCheckboxGroup = (args: FormControlInternalProps) => {
           >
             Double-fried fries
           </Checkbox>
-        </CheckboxGroup>
+        </Checkbox.Group>
         {args.isInvalid && (
           <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
         )}
@@ -119,7 +117,7 @@ export const WithCheckboxGroup = (args: FormControlInternalProps) => {
 
       <FormControl as="fieldset" {...args}>
         <FormControl.Label as="legend">Burger patty</FormControl.Label>
-        <RadioGroup name="burger-patty">
+        <Radio.Group name="burger-patty">
           <Radio
             value="beef"
             helpText="Grass-fed cows from Erdhof Hohenzollerdamm"
@@ -132,7 +130,7 @@ export const WithCheckboxGroup = (args: FormControlInternalProps) => {
           >
             Beyound meat (vegan)
           </Radio>
-        </RadioGroup>
+        </Radio.Group>
         {args.isInvalid && (
           <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
         )}
@@ -140,11 +138,11 @@ export const WithCheckboxGroup = (args: FormControlInternalProps) => {
 
       <FormControl as="fieldset" {...args}>
         <FormControl.Label as="legend">Condiments</FormControl.Label>
-        <CheckboxGroup name="condiments">
+        <Checkbox.Group name="condiments">
           <Checkbox value="ketchup">Ketchup</Checkbox>
           <Checkbox value="mustard">Mustard</Checkbox>
           <Checkbox value="mayo">Mayo</Checkbox>
-        </CheckboxGroup>
+        </Checkbox.Group>
         {args.isInvalid && (
           <FormControl.ValidationMessage>Error</FormControl.ValidationMessage>
         )}
