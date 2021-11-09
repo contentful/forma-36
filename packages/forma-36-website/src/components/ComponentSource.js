@@ -36,7 +36,7 @@ const styles = {
 };
 
 export default function ComponentSource({ children }) {
-  const [showSource, setShowSource] = useState(false);
+  const [showSource, setShowSource] = useState(true);
 
   const handleToggle = () => {
     setShowSource((prevState) => !prevState);
