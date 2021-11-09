@@ -659,3 +659,80 @@ Notification.success(notificationText, {
 
 Notification.setPlacement(placement, { offset: 0 });
 ```
+
+## Modal
+
+API of Modal didn't change a lot in the version 4. The way of using Modal still stayed the same. The main logical change is moving buttons from the left to right side in the `<Modal.Controls>` component. That's why we recommend to swap action buttons - primary action should the one that is displayed as a first one from the right in the Modal. Have a look how to do it:
+
+In the version 3:
+
+```tsx
+<Modal.Controls>
+  <Button variant="primary" />
+  <Button variant="secondary" />
+</Modal.Controls>
+```
+
+In the version 4:
+
+```tsx
+<Modal.Controls>
+  <Button variant="secondary" size="small" />
+  <Button variant="primary" size="small" />
+</Modal.Controls>
+```
+
+### How to migrate your Modal components
+
+Run the [codemod](https://github.com/contentful/forma-36/tree/forma-v4/packages/forma-36-codemod) to migrate your v3 `Modal` component to the new version:
+
+`npx @contentful/f36-codemod`
+
+If you decide to do it manually, you would need to transform you existing code:
+
+```tsx
+import {
+  Modal,
+  ModalHeader,
+  ModalConfirm,
+  ModalControls,
+  ModalContent,
+  ModalLauncher,
+} from '@contentful/forma-36-react-components';
+
+<ModalConfirm
+  onSecondary={() => {}}
+  isSecondaryLoading
+  secondaryIntent="primary"
+  secondaryLabel="secondary label"
+  secondaryTestId="secondary id"
+>
+  Confirm content
+</ModalConfirm>;
+<ModalHeader isNotWrapped>Header content</ModalHeader>;
+<ModalContent></ModalContent>;
+<Modal.Controls>
+  <Button buttonType="primary" />
+  <Button buttonType="secondary" />
+</Modal.Controls>;
+```
+
+into:
+
+```tsx
+import {
+  Modal,
+  ModalHeader,
+  ModalControls,
+  ModalContent,
+  ModalConfirm,
+  ModalLauncher,
+} from '@contentful/f36-components';
+
+<ModalConfirm>Confirm content</ModalConfirm>;
+<ModalHeader>Header content</ModalHeader>;
+<Modal.Controls>
+  <Button variant="secondary" size="small" />
+  <Button variant="primary" size="small" />
+</Modal.Controls>;
+```

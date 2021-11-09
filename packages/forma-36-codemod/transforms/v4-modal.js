@@ -47,7 +47,9 @@ module.exports = pipe([
   }),
   modifyPropsCodemod({
     componentName: 'ModalHeader',
-    renameMap: {},
+    renameMap: {
+      isNotWrapped: null,
+    },
   }),
   modifyPropsCodemod({
     componentName: 'ModalControls',
@@ -59,7 +61,13 @@ module.exports = pipe([
   }),
   modifyPropsCodemod({
     componentName: 'ModalConfirm',
-    renameMap: {},
+    renameMap: {
+      onSecondary: null,
+      isSecondaryLoading: null,
+      secondaryIntent: null,
+      secondaryLabel: null,
+      secondaryTestId: null,
+    },
   }),
   modifyPropsCodemod({
     componentName: 'ModalLauncher',
