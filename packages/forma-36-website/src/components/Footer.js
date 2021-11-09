@@ -12,7 +12,7 @@ const styles = {
     justify-content: space-between;
     width: 960px;
     margin: 0 auto;
-    padding: ${tokens.spacing2Xl} ${tokens.spacingL};
+    padding: ${tokens.spacing2Xl} 0;
   `,
 
   svg: css`
