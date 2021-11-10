@@ -662,7 +662,7 @@ Notification.setPlacement(placement, { offset: 0 });
 
 ## Modal
 
-API of Modal didn't change a lot in the version 4. The way of using Modal still stayed the same. The main logical change is moving buttons from the left to right side in the `<Modal.Controls>` component. That's why we recommend to swap action buttons - primary action should the one that is displayed as a first one from the right in the Modal. Have a look how to do it:
+In version 4 the Modal component buttons were moved from the left to the right side of the `<Modal.Controls>` component. We now recommend swapping action buttons, the primary action should be displayed as the first one from the right in the Modal. Have a look how to do it:
 
 In the version 3:
 
